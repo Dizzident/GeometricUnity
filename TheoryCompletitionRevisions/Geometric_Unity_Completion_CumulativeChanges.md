@@ -1548,11 +1548,73 @@ The draft explicitly writes (\Upsilon_\omega=S_\omega-T_\omega) and uses it as t
 
 ### 32. Family of Shiab operators
 
-**Type:** indispensable operator family
-**Role:** named as a distinct chapter and needed for the operator formulation of the theory
-**Classification:** **Ambiguous**
+## Family of Shiab Operators and Branch Choice
 
-They are clearly indispensable in the draft architecture, but in the visible extracted text there is no actual definition, only the chapter heading and its conceptual prominence. This is one of the clearest places where the completion document will need reconstruction or reattachment of the source section.
+**Type:** indispensable operator family  
+**Role:** operator layer mediating curvature contraction, first-order bosonic dynamics, and fermionic square-root structure  
+**Classification:** **Completed as a branch-classified family**
+
+The earlier manuscript correctly identified the Shiab layer as indispensable but left it architecturally ambiguous. This section closes that blocker by formalizing Shiab operators as a family of admissible first-order differential operators together with an explicit branch-selection rule.
+
+### 32.1 Definition of the family
+
+**Definition 32.1.1 (Admissible Shiab family).**  
+An admissible Shiab family is a collection
+\[
+\Sigma=\{\Sigma_\alpha\}_{\alpha\in I}
+\]
+of first-order differential operators acting on the relevant curvature/torsion bundles such that each \(\Sigma_\alpha\):
+
+1. is defined on the Sobolev branch fixed in Chapter 15;
+2. is natural with respect to bundle isomorphisms preserving the distinguished-connection branch;
+3. yields a swerved-curvature term
+\[
+S^{(\alpha)}_\omega:=\Sigma_\alpha(F_{A_\omega});
+\]
+4. is equivariant under the same corrected symmetry branch used for augmented torsion; and
+5. admits a formal adjoint on the chosen energy space.
+
+This definition deliberately treats Shiab as a family, not as a uniquely determined operator. That reflects the source material faithfully while making later equations typable.
+
+### 32.2 Branch selection
+
+**Inserted Choice IX.32.2.1 (Minimal compatible Shiab branch).**  
+For the remainder of the mainline manuscript, the active branch is the minimal compatible Shiab operator \(\Sigma_{\mathrm{mc}}\), defined to be any member of the admissible family satisfying all of the following:
+
+1. first-order principal symbol compatible with the metric branch induced on the observed side;
+2. corrected-gauge equivariance with respect to \(H^{\tau_{A_0}}\);
+3. existence of a formally self-adjoint or symmetrizable second-order composite needed for the bosonic Euler–Lagrange system;
+4. compatibility with the computational lowering map of Chapters 33–38.
+
+**Reason for insertion:** a unique canonical Shiab operator is not derived in the source, but later PDEs and numerics require one active branch.  
+**Minimality assessment:** branch-selecting.  
+**Affected sections:** Chapters 20–24 and 33–42.  
+**Whether removable:** yes, if a uniqueness theorem is later proved.  
+**Prediction sensitivity:** high.
+
+### 32.3 Operational consequences
+
+**Definition 32.3.1 (Swerved curvature on the active branch).**  
+On the active branch,
+\[
+S_\omega:=\Sigma_{\mathrm{mc}}(F_{A_\omega}).
+\]
+The first-order bosonic master field is therefore fixed as
+\[
+\Upsilon_\omega:=S_\omega-T^{\mathrm{aug}}_\omega.
+\]
+
+**Proposition 32.3.2 (Branch dependence is explicit).**  
+Every formula involving \(S_\omega\), \(\Upsilon_\omega\), or any Dirac-like factorization depending on Shiab data is branch-sensitive unless a later theorem proves invariance under change of admissible \(\Sigma_\alpha\).
+
+**Proof:** immediate from the family definition.
+
+### 32.4 What is now closed and what remains open
+
+The blocker is now closed in the precise sense relevant to the completion document: later equations no longer rely on an unnamed operator. They rely on a declared branch of a declared family. The remaining open problem is stronger and cleaner than before.
+
+**Open Problem OP.32.4.1.**  
+Classify the admissible Shiab family up to corrected-gauge equivalence and determine whether a unique canonical representative exists.
 
 ### 33. Dirac-like fermionic operator (D!!!/_{\omega})
 
@@ -3165,17 +3227,192 @@ If you want the next step, I’d make it the companion section **“Index, Signa
 
 ## Part IV — Field Content and Symmetry Structure
 
+
+### 8.8 Closed observerse branch
+
+The completion document now fixes the minimum closed branch of observerse data used downstream.
+
+**Inserted Assumption IA.8.8.1 (Closed observerse branch).**  
+For the remainder of the manuscript, unless a later section explicitly states otherwise, an admissible observerse means a quintuple
+\[
+\mathcal O_{\mathrm{cl}}=(X,Y,\pi,\mathcal I,g_Y)
+\]
+with the following properties:
+
+1. \(\pi:Y\to X\) is a smooth surjective submersion;
+2. every \(\iota\in\mathcal I\) is a smooth local section of \(\pi\);
+3. \(TY\) admits a splitting \(TY=V\oplus H\) with \(V=\ker d\pi\);
+4. \(g_Y\) is a smooth metric on \(Y\) for which every admissible \(\iota\) is metrically admissible;
+5. the pullback metric \(g_X^{(\iota)}:=\iota^*g_Y\) has Lorentzian signature on the observational branch used for physics-facing sections.
+
+**Reason for insertion:** later chimeric, spinor, and recovery sections repeatedly assume exactly this structure without collecting it into one reusable branch.  
+**Minimality assessment:** strengthening but conservative relative to the document’s later ambitions.  
+**Affected sections:** Chapters 9–13, 25–29, 39–42.  
+**Whether removable:** only by replacing it with a weaker observerse theory and reproving the downstream constructions.  
+**Prediction sensitivity:** high for interpretation, low for purely formal bundle manipulations.
+
+**Proposition 8.8.2 (Typed recovery on a closed observerse branch).**  
+On a closed observerse branch, every native tensor, differential form, connection, or associated-bundle section on \(Y\) determines an observed object on each admissible chart \(U\subset X\) by pullback and, when necessary, by projection along the splitting \(TY=V\oplus H\). Therefore the observation mechanism is a typed functorial operation rather than an informal reading procedure.
+
+**Proof status:** immediate once the splitting and admissibility data are fixed.
+
+**Open Problem OP.8.8.3.**  
+Give intrinsic existence and uniqueness criteria for closed observerse branches compatible with the Einsteinian observerse proposal. The present manuscript now specifies what such a branch must contain; it does not yet prove when one exists.
+
 ### 14. Native Field Content
 
 > The current source material addresses native versus observed field content across the Core Thesis and Scope Statement, Minimal Concept Inventory, Observerse Formalization, Physical Dictionary Completion, and Prediction Registry.
 
 ### 15. Function Spaces and Configuration Spaces
 
-> The current source material treats this chapter indirectly through the formalization and implementation sections. A standalone function-space chapter remains to be completed.
+## Function Spaces and Configuration Spaces
+
+This section closes the analytical blocker that was previously left as a placeholder. The purpose is not to claim that the draft already supplied a finished PDE theory. The purpose is to fix a conservative analytical model under which every later variational, gauge-theoretic, and numerical statement has an explicit domain. Wherever the source does not justify a stronger statement, the completion document resolves the gap by inserted assumptions that are chosen to be removable later if a smoother or weaker theory is proved.
+
+### 15.1 Analytical philosophy
+
+The draft names three infinite-dimensional spaces \((A,H,N)\) but does not globally fix whether they are smooth, Sobolev, Fréchet, Hilbert, or merely formal placeholders. That is too weak for a completion manuscript because gauge actions, differentiability of the action functional, weak solutions, gauge fixing, linearization, and computational lowering all depend on these choices. The present section therefore adopts one conservative analytical branch.
+
+**Inserted Assumption IA.15.1 (Sobolev analytical branch).**  
+Fix an integer \(s>\dim(Y)/2+2\). All configuration objects are modeled on Sobolev spaces of order \(H^s\) unless a later subsection explicitly strengthens the regularity.
+
+**Reason for insertion:** This is the minimal standard choice that gives multiplication, composition, and gauge action continuity needed for a workable nonlinear PDE and numerical theory.  
+**Minimality assessment:** conservative.  
+**Affected sections:** Chapters 15–24, 33–38, and all simulation sections.  
+**Whether removable:** yes, if a smooth Fréchet or weak-distributional theory is later proved.  
+**Prediction sensitivity:** low at the structural level, medium for quantitative numerics.
+
+### 15.2 Configuration spaces
+
+Let \(P_{\mathrm{main}}\to Y\) be the main principal bundle with compact or reductive structure group \(K\), and let \(\mathrm{ad}(P_{\mathrm{main}})\) be its adjoint bundle.
+
+**Definition 15.2.1 (Connection space).**  
+The admissible connection space is the affine Hilbert manifold
+\[
+\mathcal A^s(A_0):=A_0+H^s\Omega^1\bigl(Y,\mathrm{ad}(P_{\mathrm{main}})\bigr),
+\]
+modeled on
+\[
+\mathcal N^s:=H^s\Omega^1\bigl(Y,\mathrm{ad}(P_{\mathrm{main}})\bigr).
+\]
+The dependence on a reference connection \(A_0\) is affine, not physical.
+
+**Definition 15.2.2 (Gauge group).**  
+The admissible gauge group is
+\[
+\mathcal H^{s+1}:=H^{s+1}\Gamma\bigl(\mathrm{Aut}_K(P_{\mathrm{main}})\bigr),
+\]
+with action on \(\mathcal A^s\) given by the usual bundle-gauge formula. The extra derivative in the exponent is required so the action on \(H^s\)-connections is well-defined and continuously differentiable.
+
+**Definition 15.2.3 (Unified-field space).**  
+Let \(E_\omega\to Y\) denote the total associated bundle carrying the unified field \(\omega\). Then
+\[
+\mathcal W^s:=H^s\Gamma(E_\omega)
+\]
+is the admissible configuration space for \(\omega\), and the total bosonic configuration space is
+\[
+\mathfrak C_B^s:=\mathcal A^s\times \mathcal W^s.
+\]
+If a fermionic branch is included, the total configuration space is
+\[
+\mathfrak C^s:=\mathcal A^s\times \mathcal W^s\times H^s\Gamma(\mathbb S_{\mathrm{top}}(C)\otimes E_F),
+\]
+where \(E_F\) is the chosen internal fermion bundle.
+
+### 15.3 Function-space closures required later
+
+**Definition 15.3.1 (Energy space).**  
+The energy space for weak bosonic solutions is the completion of \(\mathfrak C_B^s\) under the norm generated by the quadratic terms appearing in the chosen bosonic Lagrangian branch. At minimum this norm must control
+\[
+\|F_A\|_{L^2},\qquad \|T^{\mathrm{aug}}(A,\omega)\|_{L^2},\qquad \|\omega\|_{H^1},
+\]
+and any additional Shiab-dependent first-order terms.
+
+**Inserted Assumption IA.15.3 (Coercive energy branch).**  
+The chosen bosonic branch is restricted to those operator and sign conventions for which the quadratic part of the second-order action is coercive modulo gauge on the selected background class.
+
+**Reason for insertion:** without this, weak existence and numerics are not honestly formulable.  
+**Minimality assessment:** branch-selecting.  
+**Affected sections:** bosonic PDE chapter, linearization chapter, simulation chapters.  
+**Whether removable:** possibly, if a different well-posedness mechanism is proved.  
+**Prediction sensitivity:** medium.
+
+### 15.4 Gauge fixing and slices
+
+**Definition 15.4.1 (Background-covariant Coulomb slice).**  
+Relative to the distinguished connection \(A_0\), the local gauge slice through \(A\in\mathcal A^s\) is defined by the condition
+\[
+d_{A_0}^*(A-A_0)=0.
+\]
+This is adopted as the default analytical gauge in the completion document.
+
+**Proposition 15.4.2 (Local slice, conditional form).**  
+Assume the stabilizer of \(A_0\) is finite-dimensional and the elliptic operator \(d_{A_0}^*d_{A_0}\) has closed range on the chosen Sobolev branch. Then each \(A\) sufficiently close to \(A_0\) is gauge-equivalent to a representative satisfying the background-covariant Coulomb condition.
+
+**Proof status:** standard by the usual implicit-function/slice argument once the principal-bundle branch is fixed; full proof deferred.
+
+### 15.5 PDE closure requirements
+
+The completion document now fixes the minimum ingredients required before any displayed equation counts as a PDE rather than as symbolic structure.
+
+**Completion Rule CR.15.5.1 (PDE closure rule).**  
+A bosonic or fermionic equation may be called a closed PDE system only if all of the following are specified in the same branch:
+
+1. configuration space and regularity class;
+2. operator domains and codomains;
+3. gauge action and gauge-fixing condition or gauge-invariant weak formulation;
+4. boundary or asymptotic conditions;
+5. constraint equations, if any;
+6. precise notion of solution: smooth, weak, mild, or distributional.
+
+**Definition 15.5.2 (Closed bosonic branch).**  
+A closed bosonic branch consists of
+\[
+(P_{\mathrm{main}},\mathcal A^s,\mathcal H^{s+1},\mathcal W^s,A_0,T^{\mathrm{aug}},\Sigma_\alpha,\mathcal B),
+\]
+where \(\Sigma_\alpha\) is a chosen Shiab branch and \(\mathcal B\) is a complete package of boundary/asymptotic data. Only after this tuple is fixed may one write the first-order and second-order bosonic systems as actual PDEs.
+
+### 15.6 Constraint handling and numerical lowering interface
+
+**Definition 15.6.1 (Constraint projector).**  
+For computational lowering, every closed branch must provide a projector
+\[
+\Pi_{\mathrm{phys}}: \mathfrak C^s \to \mathfrak C^s
+\]
+onto the gauge-fixed constraint manifold used by the solver. This may be realized by exact gauge fixing, penalty enforcement, or projection after each iteration, but one method must be declared branchwise.
+
+**Dependency note.**  
+This section resolves the placeholder status of the analytical chapter and unlocks later honest use of the terms “equation,” “linearization,” “solver,” and “simulation.” What remains open is not whether any analytical branch exists, but which branch is physically and mathematically preferred.
 
 ### 16. Inhomogeneous Gauge Group
 
-> The current source material identifies this as central but not fully closed. Its present status is most clearly documented in the Minimal Concept Inventory, Dependency Map, Distinguished Connection chapter, and Open Problems Register.
+## Inhomogeneous Gauge Group
+
+This chapter is now closed at the level needed by the completion manuscript. The inhomogeneous gauge group is treated as the affine symmetry object acting on the connection space once both ordinary gauge rotation and adjoint-valued translation are admitted.
+
+**Definition 16.1 (Inhomogeneous gauge group).**  
+Let
+\[
+G:=\mathcal H^{s+1}\ltimes \mathcal N^s
+\]
+with multiplication
+\[
+(h_1,\eta_1)\cdot (h_2,\eta_2):=\bigl(h_1h_2,\,\eta_1+\mathrm{Ad}(h_1^{-1})\eta_2\bigr).
+\]
+Its action on \(\mathcal A^s\) relative to the distinguished connection \(A_0\) is
+\[
+(h,\eta)\cdot A:=h^{-1}Ah+h^{-1}d_{A_0}h+\eta.
+\]
+
+**Inserted Convention 16.2.**  
+This right-translation convention is fixed globally for the remainder of the completion document. Equivalent left-action conventions are treated as notationally different but mathematically equivalent branches.
+
+**Proposition 16.3.**  
+With the above multiplication law, the displayed formula defines a genuine action of \(G\) on \(\mathcal A^s\).
+
+**Proof:** direct calculation.
+
+This chapter should now be read jointly with Chapter 17, where \(A_0\), the tilted embedding, and augmented torsion are completed on top of this group law.
 
 ### 17. Distinguished Connection and Tilted Gauge Structure
 
@@ -3475,9 +3712,58 @@ This section should end by listing its proof obligations.
 
 The short version of the section’s status is: the draft defines enough to identify the intended symmetry mechanism, implies a coherent affine-gauge strategy centered on (A_0), and proves a few key equivariance formulas; but it still needs explicit group-theoretic, bundle-theoretic, and analytic closure before one can say that GU has a closed symmetry story rather than a promising symmetry scaffold.
 
+
+### 17.7 Completed distinguished-connection branch
+
+The previous prose described the architecture correctly but still ended by saying the symmetry layer was not mathematically closed. That is no longer the right status for the completion document. What is now fixed is a branchwise closure sufficient for downstream work.
+
+**Definition 17.7.1 (Completed distinguished-connection branch).**  
+A completed distinguished-connection branch is a tuple
+\[
+\mathfrak D=(P_{\mathrm{main}},\mathcal A^s,\mathcal H^{s+1},\mathcal N^s,A_0,\tau_{A_0},H^{\tau_{A_0}},\mu_{A_0},T^{\mathrm{aug}})
+\]
+with the meanings assigned in Chapters 15–17 and satisfying the equivariance rule for augmented torsion.
+
+**Definition 17.7.2 (Tilted embedding).**  
+The tilted embedding is fixed by
+\[
+\tau_{A_0}(h):=(h,-h^{-1}d_{A_0}h),
+\]
+so that the ordinary gauge defect is absorbed into the inhomogeneous symmetry datum.
+
+**Definition 17.7.3 (Completed augmented torsion branch).**  
+The active augmented torsion is any branch-defined bundle-valued two-form
+\[
+T^{\mathrm{aug}}_\omega=T(B_\omega)-T(A_\omega)+\mathcal C(A_0;A_\omega,B_\omega)
+\]
+for which
+\[
+T^{\mathrm{aug}}_{g\cdot \tau_{A_0}(h)}=\mathrm{Ad}(h^{-1})T^{\mathrm{aug}}_g
+\]
+holds on the declared Sobolev branch.
+
+**Completion Rule CR.17.7.4.**  
+Only torsion formulas satisfying corrected-gauge equivariance may appear in later dynamical chapters.
+
+**Proposition 17.7.5.**  
+Within a completed distinguished-connection branch, \(A_0\) is intrinsic to the branch data and not a removable gauge artifact. Changing \(A_0\) changes the branch and therefore must be tracked in provenance and prediction records.
+
+**Proof:** immediate from the definitions of \(d_{A_0}\), \(\tau_{A_0}\), and the gauge slice.
+
 ### 19. Shiab Operators
 
-> The present manuscript repeatedly identifies the Shiab operators as structurally central and branch-sensitive, but no fully standalone canonical treatment is yet present in the source. The current status appears in the Minimal Concept Inventory, Dependency Map, Distinguished Connection chapter, and Open Problems Register.
+## Shiab Operators
+
+This chapter now adopts the completed family-and-branch formulation introduced earlier in the concept inventory and makes it the operative rule for the dynamics chapters.
+
+**Definition 19.1 (Operative Shiab branch).**  
+The operative Shiab branch for the mainline completion document is the minimal compatible operator \(\Sigma_{\mathrm{mc}}\) selected in Chapter 32. All downstream occurrences of swerved curvature, first-order bosonic structure, and fermionic square-root language are to be interpreted relative to this branch unless a subsection explicitly announces a branch change.
+
+**Completion Rule CR.19.2.**  
+No downstream equation may write an undecorated Shiab operator as though it were canonical. One must either write \(\Sigma\) for the family or \(\Sigma_{\mathrm{mc}}\) for the active branch.
+
+**Dependency note.**  
+This chapter should now be read as resolved at the manuscript level: the remaining problem is not absence of a usable operator, but non-uniqueness of admissible branches.
 
 ---
 
@@ -4420,108 +4706,73 @@ I can write the next section as **Representation Decomposition and Observed Boso
 
 ## Prediction Registry
 
-This section converts the draft’s phenomenological output claims into a disciplined registry. Its purpose is not to certify that the framework already makes successful predictions in the ordinary physics sense. Its purpose is to separate four different kinds of outward-facing claims that the draft currently mixes together: **exact predictions**, **approximate predictions**, **postdictions**, and **speculative interpretive claims**. The completion document needs this separation because the draft often moves directly from geometric construction to physical interpretation, while the completion methodology explicitly requires that derivation, interpretation, and empirical contact be disentangled.  
+This section closes the empirical-output blocker by turning the manuscript’s outward-facing claims into typed objects with explicit provenance, observable maps, and falsifiers. The earlier version separated exact predictions, approximate predictions, postdictions, and speculative claims. That classification is retained, but it is now made operational rather than merely descriptive.
 
-A claim belongs in the **exact prediction** class only if the completed formalism would output a discrete structural result with no fit-dependent free choice at the point of comparison: for example, a branching pattern, representation content, or exact operator-theoretic consequence. A claim belongs in the **approximate prediction** class if the draft gives a mechanism that could in principle yield semi-quantitative or quantitative observables, but does not yet provide the completed dynamics, numerical solution, or error bars needed for a clean test. A claim is a **postdiction** when it is presented as recovering or reinterpreting already-known physics, such as Einstein, Dirac, Yang–Mills, Higgs-like, Lorentz, or Standard-Model field content. A claim is a **speculative interpretive claim** when the draft offers a physical reading, explanatory narrative, or possible ontology that is not yet pinned to a closed derivation or observational pipeline. This four-way split matches the completion outline’s requirement that outputs be classified by evidentiary strength and traceability. 
+### 28.1 Prediction object schema
 
-The draft itself gives a strong reason to build this registry. It explicitly says the author can offer “algebraic predictions” about the internal quantum numbers of new particles, while also acknowledging that energy scales and sharper phenomenological consequences would require additional quantum-field-theoretic development not yet supplied. That is exactly the profile of a registry containing both stronger structural claims and weaker unfinished ones. 
+**Definition 28.1.1 (Typed prediction entry).**  
+A prediction entry is a record
+\[
+\mathsf P=(\mathrm{ID},\mathrm{Class},\mathrm{FormalSource},\mathrm{BranchData},\mathrm{ObservableMap},\mathrm{ExternalTarget},\mathrm{Support},\mathrm{Falsifier},\mathrm{Status})
+\]
+with the following fields:
 
-### Registry standards
+1. **ID**: stable registry identifier;
+2. **Class**: one of Exact Structural, Approximate Quantitative, Postdictive Recovery, or Speculative Interpretive;
+3. **FormalSource**: the exact theorem, definition, branch choice, or numerical pipeline step from which the claim is derived;
+4. **BranchData**: the observerse, \(A_0\), torsion, Shiab, and regularity choices on which the claim depends;
+5. **ObservableMap**: a typed map from formal output to an observable or comparison datum;
+6. **ExternalTarget**: the measured or otherwise externally specified object being compared against;
+7. **Support**: exact derivation, heuristic, numerical indication, or fit-assisted reconstruction;
+8. **Falsifier**: a concrete failure condition;
+9. **Status**: Active, Conditional, Blocked, Falsified, or Retired.
 
-Each entry below records five things:
+**Completion Rule CR.28.1.2.**  
+No phenomenological statement may be called a prediction anywhere else in the manuscript unless it can be inserted into the schema above.
 
-1. the claim,
-2. its current category,
-3. what the draft appears to support,
-4. what is still missing before the claim can be counted as a real empirical output,
-5. and what would falsify it.
+### 28.2 Observable-map discipline
 
----
+**Definition 28.2.1 (Observable map).**  
+Given a closed formal branch \(\mathfrak B\), an observable map is a typed transformation
+\[
+\mathcal O_{\mathrm{map}}^{\mathfrak B}:\mathfrak M_{\mathfrak B}\to \mathfrak D_{\mathrm{obs}},
+\]
+from the branch’s mathematical output space \(\mathfrak M_{\mathfrak B}\) to a comparison domain \(\mathfrak D_{\mathrm{obs}}\) such as spectra, branching data, symmetry classes, correlation functions, effective couplings, or imaging/visualization summaries.
 
-### A. Exact predictions
+**Inserted Assumption IA.28.2.2 (No naked comparison).**  
+A comparison with external observation is inadmissible unless the manuscript explicitly states the observable map used to perform that comparison.
 
-These are the strongest candidate outputs of the framework, but in the present draft they are mostly **exact structural targets** rather than completed exact phenomenological predictions. They are “exact” in kind, not yet “exactly verified.”
+**Reason for insertion:** without this, the document can slide from geometry to empirical language by verbal analogy alone.  
+**Minimality assessment:** conservative.  
+**Affected sections:** Chapters 28–42.  
+**Whether removable:** no; it is a methodological guardrail.  
+**Prediction sensitivity:** high.
 
-| Claim                                                                                                                                    | Current status                            | Why it belongs here                                                                                                                                                                                                                                                                           | What is missing                                                                                                                                   | Falsifier                                                                                                                  |
-| ---------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| Observed fermions arise from an observation-induced split of topological spinors into spacetime spinors tensored with internal factors   | **Exact structural prediction candidate** | The draft explicitly states that observed topological spinors on (X) appear as spacetime spinors tensored with “internal” quantum numbers. That is a discrete structural claim, not a fit.                                                                                                    | Full representation-theoretic uniqueness, normalization of the split, and proof that the observed factor reproduces the intended particle content | Failure to derive the required branching and observed bundle decomposition uniquely                                        |
-| Internal quantum numbers of matter are algebraically encoded by the GU spinorial/normal-bundle structure rather than primitively posited | **Exact structural prediction candidate** | The draft explicitly claims algebraic predictions for internal quantum numbers and ties them to the geometric construction.                                                                                                                                                                   | Explicit branching tables, charge assignments, and proof that the resulting representations match known matter without ad hoc insertion           | Derived representation content disagrees with observed quantum numbers or is non-unique under admissible choices           |
-| The first-order bosonic equation implies the second-order bosonic equation as a Dirac-pair relation                                      | **Exact formal prediction**               | The draft states that the first-order equation (\Upsilon_\omega=0) stands to the second-order equation (D_\omega^*\Upsilon_\omega=0) in a square-root-like relation, and that the second-order Euler–Lagrange equations are automatically satisfied if the first-order theory is satisfied.   | Full operator-domain specification and proof under normalized assumptions                                                                         | Counterexample showing solutions of the first-order system fail to satisfy the second-order one in the completed formalism |
-| The observed low-energy fermion package is not primitively chiral but emerges from branching/decoupling of a larger non-chiral theory    | **Exact structural prediction candidate** | The draft presents effective chirality as arising from decoupling in a fundamentally non-chiral setup and displays the relevant branching pattern.                                                                                                                                            | A full low-energy reduction theorem showing when and how the decoupling occurs                                                                    | Proof that the branch structure cannot reproduce observed chiral behavior without extra inserted assumptions               |
+### 28.3 Active registry
 
-### B. Approximate predictions
+| ID | Class | Formal source | Branch data | Observable map | External target | Support | Falsifier | Status |
+|---|---|---|---|---|---|---|---|---|
+| PR-01 | Exact Structural | Topological-spinor observation branch plus decomposition rules | Closed observerse branch; active representation branch | Branching/decomposition of observed spinor bundle | Required observed spinor-factor pattern | Structural derivation target | No unique decomposition matching the required observed factorization | Conditional |
+| PR-02 | Exact Structural | First-order bosonic branch with active Shiab choice | Sobolev branch; distinguished-connection branch; \(\Sigma_{\mathrm{mc}}\) | Solution implication map \(\Upsilon_\omega=0\Rightarrow D_\omega^*\Upsilon_\omega=0\) | Internal consistency of bosonic sector | Formal derivation target | Counterexample in the declared branch | Conditional |
+| PR-03 | Approximate Quantitative | Observed-field decomposition plus scalar/Yukawa interpretation branch | Closed observerse branch; active fermion/scalar branch | Effective-coupling extraction map | Higgs-like / Yukawa-like observed data | Heuristic-to-numerical target | No stable extraction or only unconstrained fit freedom | Blocked |
+| PR-04 | Approximate Quantitative | Algebraic internal-quantum-number branch | Representation branch; branch-selected matter identification | Representation-to-spectrum map | New-particle search space | Structural plus phenomenological target | No consistent spectrum or irreducible overproduction | Blocked |
+| PR-05 | Postdictive Recovery | Recovery pipeline for Einstein/Yang–Mills/Dirac-like sectors | Closed observerse branch; active bosonic and fermionic branches | Recovery map to effective observed equations | Known low-energy field equations | Interpretive with partial formal support | Failure to recover the claimed effective equation class | Conditional |
+| PR-06 | Speculative Interpretive | 2+1 family / imposter-generation narrative | Active representation branch | No accepted quantitative map yet | Family-structure interpretation | Heuristic only | Any rigorous branch yields incompatible family counting or no controlled low-energy decoupling | Blocked |
 
-These are claims that look like predictions in intent, but the draft does not yet supply the dynamical closure, scale-setting, or numerical machinery required to test them as direct outputs.
+### 28.4 Falsification statuses
 
-| Claim                                                                                                          | Current status             | Why it belongs here                                                                                                                                                                      | What is missing                                                                                             | Falsifier                                                                                                                              |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| New particles with specific internal quantum numbers should exist                                              | **Approximate prediction** | The draft explicitly says it offers algebraic predictions of internal quantum numbers for new particles, but also admits it lacks the QFT work needed to sharpen them to energy scales.  | Mass spectrum, production channels, stability analysis, decay modes, and experimental reach                 | No consistent completed spectrum or all allowed completions push states beyond meaningful detectability while losing explanatory value |
-| Higgs-like sector should be geometrically reorganized rather than inserted as a primitive scalar sector        | **Approximate prediction** | The draft ties Higgs-like behavior to GU fields and Klein–Gordon-like equations, but the exact observational sector is not fully derived.                                                | Explicit scalar spectrum, effective potential, vacuum structure, and coupling extraction                    | Completed theory fails to reproduce any viable Higgs-like effective sector                                                             |
-| CKM-like mixing and Yukawa-like couplings emerge from subfields of (\omega) rather than being inserted by hand | **Approximate prediction** | The draft explicitly says subfields of (\omega) accommodate CKM, Higgs-like soft masses, and Yukawa couplings.                                                                           | Concrete map from operator entries to mixing angles and masses, plus numerical fit-vs-prediction separation | No stable extraction of mixing structure or only arbitrary-fit freedom with no predictive constraint                                   |
-| Effective fermion masses may be tied to curvature-dependent mechanisms in suitable regimes                     | **Approximate prediction** | The stylized chirality discussion links a massive Dirac equation to approximately constant scalar curvature (R(y)).                                                                      | A real model, not just a stylized argument; dynamical background selection and observed-mass comparison     | Completed dynamics shows no physically meaningful mass-generation regime                                                               |
-| Additional dark/looking-glass/Rarita–Schwinger sectors should appear alongside observed fermions               | **Approximate prediction** | The draft states that (\chi) contains observed fermions plus dark spinorial matter, looking-glass matter, and more.                                                                      | Observable signatures, stability, couplings to visible matter, cosmological consequences                    | The completed model removes these sectors, makes them inconsistent, or produces signatures already excluded                            |
+**Definition 28.4.1 (Registry statuses).**  
+A prediction entry is:
 
-### C. Postdictions
+- **Active** if its observable map and external target are already implemented;
+- **Conditional** if the claim is mathematically typed but awaits proof or numerical realization;
+- **Blocked** if an upstream branch choice or formal construction is still missing;
+- **Falsified** if the defined falsifier has occurred;
+- **Retired** if the claim is withdrawn because its supporting branch is abandoned.
 
-These are not new predictions in the strict sense. They are claims that the GU framework can recover, reorganize, or reinterpret already-known physics. They may still be valuable, but they should not be presented as novel forecasts.
+### 28.5 Consequence for the manuscript
 
-| Claim                                                                                                    | Current status  | Why it is a postdiction                                                                                                                                                              | What is missing                                                                                             | Falsifier                                                                           |
-| -------------------------------------------------------------------------------------------------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| Recovery of Einstein-like gravitational equations from the first-order bosonic equation                  | **Postdiction** | The draft explicitly says one can “locate and recover” the more familiar Einstein field equation terms from the GU equation.                                                         | Precise projection theorem, identification of geometric vs matter terms, and classical-limit proof          | Completed recovery does not yield the claimed Einsteinian structure                 |
-| Recovery of Yang–Mills–Maxwell-like equations from the second-order bosonic theory                       | **Postdiction** | The draft explicitly labels (D_\omega^*F_{A_\omega}=J_\omega^B) a Yang–Mills–Maxwell-like equation.                                                                                  | Exact relation between GU fields and standard gauge variables, gauge group reduction, source interpretation | No coherent reduction to recognizable gauge dynamics                                |
-| Recovery of a Dirac-like fermionic equation from the GU fermionic operator                               | **Postdiction** | The draft says the fermionic operator can be made to look closer to Dirac theory and subsumes Dirac operators.                                                                       | Operator normalization, domain, adjoint, and observed-sector restriction                                    | The derived operator cannot reproduce standard Dirac behavior in the required limit |
-| Recovery of Higgs/Klein–Gordon-like dynamics from the second-order sector                                | **Postdiction** | The draft explicitly aligns the second-order bosonic equation with a Higgs version of Klein–Gordon and lists a Higgs potential location.                                             | Explicit scalar degrees of freedom, potential, vacuum, and effective low-energy reduction                   | No viable scalar effective sector emerges                                           |
-| Recovery of Standard Model-like field content and family structure as the target output of the framework | **Postdiction** | The completion audit identifies equation (1.1) as the target “recovery map” for Einstein, Yang–Mills–Maxwell, Dirac, Higgs, Yukawa, Lorentz group, internal symmetry, and families.  | The actual recovery theorem and full decomposition chain                                                    | Any completed derivation fails to match the target observed structure               |
-
-### D. Speculative interpretive claims
-
-These claims may be physically suggestive, but they are presently too interpretive, too ontological, or too underdetermined to count as predictions at all. They should be tracked, not advertised as outcomes.
-
-| Claim                                                                                                                   | Current status                     | Why it is speculative                                                                                                                                                                                                               | What would be needed to upgrade it                                                                                   | Falsifier                                                       |
-| ----------------------------------------------------------------------------------------------------------------------- | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
-| Space-time is not fundamental and must be recovered from observerse                                                     | **Speculative interpretive claim** | This is a central thesis of the draft, but it is an interpretive ontology until a rigorous recovery theorem and observational discriminator are given.                                                                              | A theorem showing recovery plus at least one structural or phenomenological discriminator from ordinary formulations | Recovery fails or yields no nontrivial physical distinction     |
-| Metric and other field content are native to different spaces                                                           | **Speculative interpretive claim** | The draft explicitly presents this as a conceptual possibility and explanatory reorganization, not yet as a uniquely established consequence.                                                                                       | A closed native/invasive field theory with observable consequences                                                   | No consistent native/invasive formulation survives completion   |
-| Chirality is merely effective rather than fundamental                                                                   | **Speculative interpretive claim** | The draft argues for this in a stylized model, but the real observed sector is not yet fully derived.                                                                                                                               | A full low-energy theorem and anomaly-compatible phenomenology                                                       | Derived theory requires fundamental chirality after all         |
-| Three generations may really be a 2+1 structure with an “imposter” generation                                           | **Speculative interpretive claim** | This is a bold explanatory proposal, but in the current materials it is still a suggested mechanism rather than a completed derivation. The completion outline already treats family structure as a target requiring further work.  | Concrete representation/deformation mechanism and experimentally distinguishable signatures                          | No derivation exists or signatures contradict known flavor data |
-| Supersymmetry may already be present in non-spacetime form through (\nu) and (\zeta) rather than ordinary superpartners | **Speculative interpretive claim** | The draft explicitly floats this as a possible framework and immediately signals discomfort with pushing it further.                                                                                                                | A mathematically explicit non-spacetime SUSY structure with observational consequences                               | No consistent symmetry algebra or no observable role            |
-
----
-
-### What the registry shows
-
-The registry makes one point immediately clear: the draft’s strongest outward-facing claims are mostly **structural** rather than **numerical**. Its most defensible “predictions” are claims about how observed field content, chirality, and internal quantum numbers are supposed to arise from geometry. Its weaker claims are the ones physics readers will care about most experimentally: masses, scales, couplings, new-particle searches, dark-sector signatures, and quantitative flavor observables. The draft itself acknowledges this gap when it says the internal-quantum-number predictions would need help from quantum field theorists to sharpen into energy-scale predictions. 
-
-That means the completion document should forbid the word **prediction** from being used without a subtype. Every future claim should be tagged as one of:
-
-* **Exact structural prediction**
-* **Approximate phenomenological prediction**
-* **Postdiction / recovery claim**
-* **Speculative interpretive claim**
-
-This is not merely stylistic. It is necessary for traceability and falsifiability, which the completion roadmap already makes a formal requirement. 
-
-### Priority ranking for follow-up completion
-
-The highest-priority upgrades are the ones that can move entries upward in evidentiary strength without requiring a full quantum completion.
-
-First priority is representation theory: derive the internal quantum-number content, family structure, and observed branching cleanly and uniquely. Those are the best candidates to convert speculative or approximate entries into exact structural predictions.
-
-Second priority is low-energy effective extraction: identify which pieces of (\omega), (\chi), and the bosonic operators correspond to observed gauge bosons, fermions, Higgs-like degrees of freedom, and mixing data.
-
-Third priority is numerical phenomenology: only after the above is stable should the framework attempt masses, couplings, or search-relevant forecasts.
-
-### Registry rule for the rest of the completion document
-
-No claim should appear later in the completion document as a plain “prediction” unless it is accompanied by:
-
-1. its registry category,
-2. the formal source from which it is derived,
-3. the remaining assumptions needed,
-4. and a concrete falsifier.
-
-That rule is the minimum needed to keep the completion document honest about the difference between what the draft already gives, what it may eventually yield, and what is still only an interpretive ambition.
-
-### 29. Higgs Sector Reinterpretation
+The prediction layer is now closed in the sense needed for verifiability readiness. The document no longer has permission to speak of “predictions” in an untyped way. What remains open is whether any given active or conditional entry will survive proof, implementation, and comparison. That is an empirical and mathematical question; the bookkeeping problem is now solved.
 
 ## Prediction Registry
 
