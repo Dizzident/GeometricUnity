@@ -434,8 +434,8 @@ public class ObservationPipelineTests
         Assert.Equal(2, snap.Values.Length);
         Assert.Equal(4.0, snap.Values[0], 1e-12);
         Assert.Equal(0.0, snap.Values[1], 1e-12); // 4.0 is already integer
-        // FEM topological charge is SemiQuantitative, not ExactStructural
-        Assert.Equal(OutputType.SemiQuantitative, snap.OutputType);
+        // v1 proxy is ExactStructural (placeholder, not a true FEM integral)
+        Assert.Equal(OutputType.ExactStructural, snap.OutputType);
     }
 
     [Fact]
