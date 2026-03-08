@@ -2,7 +2,7 @@
 ## Reorganized Cohesive Draft
 
 > Editor's note: this version reorganizes the existing material into the outline established at the beginning of the source document. It prioritizes coherence, reading order, and dependency flow. Where the source file already contained substantive prose, that prose has been moved under the most natural chapter. Where the outline called for a section that was not yet fully written in the source, the section is retained as a structured placeholder rather than filled with invented content.
-> Revision note (March 7, 2026): this version has been extended with a consolidated high-confidence completion pass covering notation normalization, assumption discipline, claim-status refinement, functional-analytic scaffolding, bosonic PDE completion requirements, mathematical-to-computational lowering requirements, and a tightened falsification/validation framework. These additions are intended to supersede earlier partial or duplicate placeholder treatments where overlap occurs.
+> Revision note (March 7, 2026): this version has been extended with a consolidated high-confidence completion pass covering notation normalization, assumption discipline, claim-status refinement, observerse closure, chimeric/spinor formalization, Zorro metric-to-connection transmission, principal-bundle and gauge-structure closure, an intrinsic distinguished-connection branch, functional-analytic scaffolding, bosonic PDE completion requirements, mathematical-to-computational lowering requirements, and a tightened falsification/validation framework. These additions are intended to supersede earlier partial or duplicate placeholder treatments where overlap occurs.
 
 
 ---
@@ -1427,10 +1427,10 @@ The draft relies on standard Levi-Civita machinery and explicitly invokes it in 
 ### 18. Induced connection on (Y) (Zorro construction)
 
 **Type:** indispensable object/map
-**Role:** transfers metric choice on (X) into connection data on (Y)
-**Classification:** **Partially defined**
+**Role:** transfers observed metric choice on (X) into horizontal and chimeric connection data on (Y)
+**Classification:** **Defined enough**
 
-The transmission chain is stated as a core idea, but the full construction is not supplied at the same level of precision as the observerse or chimeric bundle definitions.
+The completion document now defines the Zorro transmission as the pullback Levi-Civita connection on the horizontal factor together with its direct-sum extension to the chimeric bundle, while explicitly marking principal-bundle liftability as a separate assumption rather than leaving the whole construction informal.
 
 ### 19. Space of connections (A)
 
@@ -1444,9 +1444,9 @@ It is clearly important from the table of contents and later connection formulas
 
 **Type:** indispensable object
 **Role:** origin for the affine connection space and cure for gauge-covariance pathologies
-**Classification:** **Partially defined**
+**Classification:** **Defined enough**
 
-The draft makes (A_0) central and uses it to define (d_0), the tilted map, and the bi-connection map, but its intrinsic construction is not fully pinned down in the exposed text.
+The completion document now constructs \(A_0\) intrinsically relative to the normalized branch as a selected representative in the lift class of the Zorro-induced chimeric connection, with any remaining nonuniqueness recorded as an explicit branch choice.
 
 ### 21. Exterior derivative twisted by (A_0): (d_0=d_{A_0})
 
@@ -1480,25 +1480,25 @@ They are explicitly introduced as the two natural sections determined by the bi-
 
 **Type:** indispensable object
 **Role:** replacement symmetry framework mixing gauge transformations and translations of connection data
-**Classification:** **Partially defined**
+**Classification:** **Defined enough**
 
-It is clearly central from chapters 5 and 6 and is used in formulas for (\mu_{A_0}), but the complete group law and analytic setting are not fully available in the extracted text.
+The completion document now fixes \(G\) as a semidirect product of an admissible translation space of adjoint-valued one-forms with the ordinary gauge subgroup \(H\), and it states the induced affine action on the connection space explicitly.
 
 ### 25. Gauge group (H)
 
 **Type:** indispensable object
 **Role:** subgroup acting through tilted gauge transformations and equivariance
-**Classification:** **Partially defined**
+**Classification:** **Defined enough**
 
-Its role is visible, especially in the equivariance of (\mu_{A_0}), but a self-contained definition is not present in the visible excerpts.
+The completion document now fixes \(H\) as the ordinary vertical principal-bundle automorphism group associated with the chosen subgroup reduction of the main principal bundle, so its action and its relation to \(G\) are no longer implicit.
 
 ### 26. Tilted map (\tau_{A_0})
 
 **Type:** indispensable operator
 **Role:** encodes the special embedding of gauge transformations into the inhomogeneous group
-**Classification:** **Partially defined**
+**Classification:** **Defined enough**
 
-The contents list and equivariance formulas show it is essential, but the visible text does not contain its actual definition.
+The completion document now defines \(\tau_{A_0}(h)\) as the inhomogeneous element whose translation component compensates the ordinary gauge transform of \(A_0\), thereby fixing \(A_0\) under the tilted action.
 
 ---
 
@@ -2370,7 +2370,73 @@ This chapter upgrades the manuscript from a thematic sequence to a dependency-aw
 
 ### 7. Minimal Starting Data and Admissible Structures
 
-> The present source material discusses these issues principally through the Core Thesis and Scope Statement, the Minimal Concept Inventory, and the later formalization chapters. A dedicated standalone rewrite of Chapter 7 remains to be completed.
+## Minimal Starting Data and Admissible Structures
+
+This chapter closes the normalization-and-assumption blocker by fixing the minimum background data needed by every later construction. The objective is not to prove the theory, but to stop later chapters from silently changing ambient category, regularity, branch, or bundle backbone.
+
+### 7.1 Primitive topological data
+
+**Axiom 7.1.1 (Base manifold).**  
+\((X)\) is a smooth, connected, oriented four-manifold.
+
+**Axiom 7.1.2 (Spinorial admissibility).**  
+Whenever a later section invokes spinorial constructions, the relevant spin or \(\mathrm{Spin}^c\) obstruction is assumed to be resolved on the branch in use.
+
+### 7.2 Regularity and locality discipline
+
+**Inserted Assumption IA.7.2.1 (Smooth-category default).**  
+Unless a later analytical chapter explicitly weakens regularity, all manifolds, bundles, metrics, connections, and sections are \(C^\infty\).
+
+**Inserted Convention IC.7.2.2 (Local-first existence).**  
+A construction counts as available once it is defined locally on sufficiently small open sets of \(X\), unless global existence is separately labeled and proved.
+
+### 7.3 Admissible observerse branch data
+
+**Definition 7.3.1 (Admissible observerse branch).**  
+An admissible observerse branch is a tuple
+\[
+\mathfrak B=(X,Y,\pi,\mathcal I,\sigma)
+\]
+where \(X\) is the base manifold, \(Y\) is a smooth manifold or fibered space, \(\pi:Y\to X\) is a smooth surjective submersion on the branch under study, \(\mathcal I\) is a nonempty class of local sections \(\iota:U\to Y\) with \(\pi\circ\iota=\mathrm{id}_U\), and \(\sigma\) is the fixed signature sector whenever a metric branch is used.
+
+**Definition 7.3.2 (Metric branch).**  
+A metric branch is an admissible observerse branch together with a smooth metric \(g_Y\) on \(Y\) such that each chosen observation \(\iota\in\mathcal I\) yields a nondegenerate pullback metric \(g_X^{(\iota)}:=\iota^*g_Y\) of signature \(\sigma\).
+
+**Inserted Assumption IA.7.3.3 (Fixed-signature operational branch).**  
+All chapters that invoke Levi-Civita, Clifford, spinorial, gauge-reduction, or variational constructions operate on one fixed metric branch.
+
+### 7.4 Split-capable branch data
+
+**Inserted Assumption IA.7.4.1 (Split-capable observerse branch).**  
+Whenever the chimeric bundle, Zorro transmission, or principal-bundle reduction are used, the branch admits a smooth vertical bundle \(V:=\ker(d\pi)\subset TY\) and a smooth complementary horizontal subbundle \(H\subset TY\) with \(TY=V\oplus H\).
+
+**Completion Rule CR.7.4.2 (Exact-sequence before splitting).**  
+Definitions should be stated first using canonical exact-sequence or pullback data and only later rewritten using a chosen splitting, so noncanonical tangent data are not mistaken for intrinsic observerse data.
+
+### 7.5 Principal-bundle backbone
+
+**Inserted Assumption IA.7.5.1 (Existence of the main principal bundle).**  
+There exists a principal bundle \(P_{\mathrm{main}}\to Y\) with structure group \(K\) such that the chimeric bundle and all later bosonic and fermionic bundles arise as associated bundles of \(P_{\mathrm{main}}\), and any later subgroup \(H\) is a reduction of this same bundle.
+
+**Inserted Assumption IA.7.5.2 (Representation compatibility).**  
+All representation spaces used to define the later field content are finite-rank smooth associated bundles unless a later section explicitly introduces an infinite-dimensional completion.
+
+### 7.6 Background connection package
+
+**Definition 7.6.1 (Admissible background connection package).**  
+An admissible background connection package consists of a Levi-Civita connection on the observed metric branch of \(X\), a vertical metric connection on \(V\) whenever the Frobenius metric is used, and a principal connection on \(P_{\mathrm{main}}\) whenever gauge-covariant constructions are invoked.
+
+### 7.7 Dependency discipline promoted to mathematics
+
+**Proposition 7.7.1 (Downstream dependency discipline).**  
+Every later formal definition must identify whether it depends on base topological data alone, observerse branch data, a metric branch, a chosen splitting, principal-bundle/reduction data, or a reference connection package.
+
+**Proof.** This is immediate from the role of the present chapter: changing any one of these layers changes the meaning of multiple downstream objects, so suppressing the dependency would conflate intrinsic data with branch-selected or connection-selected data. ∎
+
+### 7.8 Section summary
+
+The document now has an explicit background category. Later chapters are no longer allowed to import hidden assumptions about regularity, signature, splitting, principal-bundle existence, or reference connections while pretending to work from the draft alone.
+
 
 ### 8. The Observerse Formalism
 
@@ -3219,11 +3285,157 @@ If you want the next step, I’d make it the companion section **“Index, Signa
 
 ### 12. Reversing the Fundamental Theorem
 
-> The current source material treats this topic through the observerse, chimeric, and spinor chapters, together with the connection/torsion chapter below. A dedicated standalone rewrite of Chapter 12 remains to be completed.
+## Zorro / Metric-to-Connection Transmission
+
+This chapter closes the Zorro blocker by turning the draft’s metric-to-connection slogan into a typed transmission program. The observed metric on \(X\) is now used to generate horizontal and chimeric connection data on \(Y\), while the remaining principal-bundle lift issue is isolated explicitly.
+
+### 12.1 Input data
+
+Work on a closed metric observerse branch. Fix an observation \(\iota:U\to Y\), the induced metric \(g_X^{(\iota)}=\iota^*g_Y\), its Levi-Civita connection \(\nabla^{g_X^{(\iota)}}\), and a chosen splitting \(TY=V\oplus H\).
+
+### 12.2 Horizontal transmission
+
+**Definition 12.2.1 (Horizontal Levi-Civita lift).**  
+The horizontal Levi-Civita lift is the pullback connection
+\[
+\nabla^H:=\pi^*(\nabla^{g_X^{(\iota)}})
+\]
+on \(H\cong\pi^*TX\), equivalently on \(H^*\cong\pi^*T^*X\).
+
+### 12.3 Chimeric transmission
+
+**Definition 12.3.1 (Zorro-induced chimeric connection).**  
+If \(V\) carries a chosen metric connection \(\nabla^V\), define
+\[
+\nabla^C_{\mathrm Z}:=\nabla^V\oplus \nabla^H
+\]
+on \(C=V\oplus H^*\).
+
+### 12.4 Transmission theorem
+
+**Theorem 12.4.1 (Metric-to-chimeric transmission).**  
+On a closed metric observerse branch equipped with a splitting \(TY=V\oplus H\) and a vertical metric connection \(\nabla^V\), the observed Levi-Civita connection determines canonically a connection on \(H\), a dual connection on \(H^*\), and a direct-sum metric connection \(\nabla^C_{\mathrm Z}\) on the chimeric bundle.
+
+**Proof.** Pull back the Levi-Civita connection through \(H\cong\pi^*TX\), dualize to \(H^*\), and take the direct sum with the chosen vertical metric connection. ∎
+
+### 12.5 Principal-bundle liftability
+
+**Inserted Assumption IA.12.5.1 (Liftability of the Zorro-induced connection).**  
+The structure group and representation defining \(C\) are such that \(\nabla^C_{\mathrm Z}\) lifts to at least one principal connection on \(P_{\mathrm{main}}\).
+
+**Definition 12.5.2 (Zorro lift set).**  
+\(\mathcal Z(\nabla^C_{\mathrm Z})\) is the set of principal connections on \(P_{\mathrm{main}}\) whose induced associated-bundle connection on \(C\) equals \(\nabla^C_{\mathrm Z}\).
+
+### 12.6 Spinor bridge input
+
+**Proposition 12.6.1 (Connection input for metric-spinor comparison).**  
+Under the liftability and spinorial-admissibility assumptions, the Zorro-induced chimeric connection provides the metric-compatible connection data needed to compare topological chimeric spinors with metric spinors on the observed branch.
+
+**Proof status:** sketched.
+
+### 12.7 Remaining obligations
+
+**Completion Rule CR.12.7.1.**  
+In this document, “Zorro” means a typed transmission from observed metric data on \(X\) to horizontal and chimeric connection data on \(Y\), not a claim that all upstairs geometry is uniquely determined by the base metric.
+
+**Open Problem OP.12.7.2.**  
+Determine whether the principal-bundle lift is unique, unique up to gauge, or genuinely branch-dependent.
+
+### 12.8 Section summary
+
+The document now has a usable Zorro layer: explicit inputs, a canonical horizontal lift, a chimeric connection induced from observed metric data, and a clearly stated remaining gap at the principal-bundle lift stage.
+
 
 ### 13. Main Principal Bundle and Structure Group
 
-> The current source material repeatedly identifies the principal-bundle layer as essential but underdefined. Its present status is captured most clearly in the Minimal Concept Inventory, Dependency Map, Claim-Status Ledger, and Open Problems Register.
+## Main Principal Bundle, Gauge Structure, and Distinguished Connection
+
+This chapter closes the principal-bundle/gauge-structure blocker and the distinguished-connection blocker together. The main principal bundle, the ordinary gauge subgroup \(H\), the inhomogeneous extension \(G\), the tilted map, and the distinguished connection \(A_0\) are now typed as one coherent branch.
+
+### 13.1 Main principal bundle
+
+**Definition 13.1.1 (Main principal bundle).**  
+Let \(P_{\mathrm{main}}\to Y\) be the principal \(K\)-bundle supplied by IA.7.5.1. The chimeric bundle and all later bosonic and fermionic bundles are treated as associated bundles of \(P_{\mathrm{main}}\).
+
+### 13.2 Gauge subgroup and inhomogeneous extension
+
+**Definition 13.2.1 (Gauge subgroup \(H\)).**  
+\(H\) is the Lie subgroup of \(K\) acting on \(P_{\mathrm{main}}\) by ordinary vertical principal-bundle automorphisms.
+
+**Definition 13.2.2 (Inhomogeneous gauge group \(G\)).**  
+Let \(\mathcal A(P_{\mathrm{main}})\) be the affine space of admissible principal connections. Define
+\[
+G:=\mathcal V\rtimes H,
+\]
+where \(\mathcal V\) is an admissible additive space of \(\operatorname{ad}(P_{\mathrm{main}})\)-valued one-forms on \(Y\), acted on by \(H\) through the induced adjoint action.
+
+**Proposition 13.2.3 (Affine action of \(G\) on connections).**  
+\[
+(u,h)\cdot A = h^{-1}Ah + h^{-1}dh + u.
+\]
+
+**Proof.** The \(H\)-part is the ordinary gauge transformation law; the additive part is affine translation in connection space. ∎
+
+### 13.3 Tilted map
+
+**Definition 13.3.1 (Tilted map associated to a reference connection).**  
+For a distinguished connection \(A_0\), define
+\[
+\tau_{A_0}:H\to G,\qquad \tau_{A_0}(h):=(A_0-h\cdot A_0,\ h).
+\]
+
+**Proposition 13.3.2 (Fixing property).**  
+For all \(h\in H\), \(\tau_{A_0}(h)\cdot A_0=A_0\).
+
+**Proof.** Substitute the definition into the affine action formula. ∎
+
+### 13.4 Intrinsic distinguished-connection branch
+
+**Definition 13.4.1 (Reference-lift class).**  
+A reference-lift class is a nonempty subset of the Zorro lift set consisting of principal connections compatible with the chosen reduction and representation data of the branch.
+
+**Inserted Choice IX.13.4.2 (Canonical representative rule).**  
+Choose \(A_0\) to be a representative in the reference-lift class that induces the Zorro chimeric connection, preserves the chosen reduction to \(H\), and is normalized to have zero additive translation component relative to the chosen split origin. If uniqueness is not yet proved, \(A_0\) is the selected branch representative.
+
+**Definition 13.4.3 (Distinguished connection \(A_0\)).**  
+The distinguished connection \(A_0\) is the connection selected by IX.13.4.2 from the reference-lift class of the Zorro-induced chimeric connection.
+
+### 13.5 Stabilizer and bi-connection data
+
+**Definition 13.5.1 (Tilted stabilizer).**  
+\[
+\operatorname{Stab}_G(A_0)=\{g\in G\mid g\cdot A_0=A_0\}.
+\]
+
+**Definition 13.5.2 (Bi-connection map).**  
+\[
+\mu_{A_0}:G\to\mathcal A(P_{\mathrm{main}})\times\mathcal A(P_{\mathrm{main}}),\qquad
+\mu_{A_0}(g):=(A_0,\ g\cdot A_0).
+\]
+
+### 13.6 Closed branch theorem
+
+**Theorem 13.6.1 (Closed principal-bundle branch).**  
+Under IA.7.5.1, IA.12.5.1, and IX.13.4.2, the tuple
+\[
+(P_{\mathrm{main}},H,G,\tau_{A_0},A_0)
+\]
+defines a closed gauge-and-connection branch sufficient for writing tilted gauge actions, the distinguished covariant differential \(d_{A_0}\), the bi-connection map, and the later \(A_\omega\)- and \(B_\omega\)-connections.
+
+**Proof.** Each ingredient is now explicitly defined, and the only remaining conditional steps are the liftability and branch-selection assumptions, both of which are visible. ∎
+
+### 13.7 Remaining proof obligations
+
+**Open Problem OP.13.7.1.**  
+Prove uniqueness of \(A_0\) or classify the residual nonuniqueness of the reference-lift class.
+
+**Open Problem OP.13.7.2.**  
+Determine the analytically and physically correct choice of translation space \(\mathcal V\).
+
+### 13.8 Section summary
+
+The document now has a main principal bundle, an ordinary gauge subgroup \(H\), an inhomogeneous extension \(G\), a typed tilted map, and a distinguished connection \(A_0\) constructed from the observerse-plus-Zorro branch rather than inserted as an unexplained primitive.
+
 
 ---
 
