@@ -9420,6 +9420,167 @@ The result is a disciplined bridge:
 
 That bridge is the minimum machinery required for the later empirical claims of the completion document to count as more than interpretation.
 
+
+## First Concrete Validation Records
+
+The protocol above is now strong enough to admit a first batch of **concrete validation records**. These are intentionally chosen from the easiest admissible targets: they sit on already-completed internal structures, they do not require speculative particle-identification machinery, and they can fail cleanly.
+
+They should be read as **branch-local executable records**, not as completed empirical successes. Each record specifies what would count as a pass, what would count as a failure, and which layer would be falsified by failure.
+
+### Validation Record V.1 — Gauge-covariant augmented-torsion consistency
+
+* **Claim ID**: PR-STR-AT-001
+* **Prediction class**: exact structural
+* **Formal source**: Augmented / Displaced Torsion Completion; Distinguished Connection, Gauge Structure, and Torsion; Function Spaces and Regularity; Deformation Complex and Linearization Program
+* **Dependencies**: observerse branch \(b\), typed principal bundle \(P_{\mathrm{main}}\), tilted-gauge datum \(\tau\), distinguished connection \(A_0\), active augmented torsion branch \(T^{\mathrm{aug}}_\omega\)
+* **Inserted assumptions and choices**: elliptic-background analytic branch; active corrected-gauge-equivariant torsion extractor \(\Theta_{A_0}\)
+* **Observable extraction map**: the observable is not a phenomenological quantity but the structural residual
+  \[
+  \mathcal O_{\mathrm{AT}}(A,\omega;g)=
+  \left\|
+  T^{\mathrm{aug}}_{g\cdot(A,\omega)}-
+  \rho_g\,T^{\mathrm{aug}}_{(A,\omega)}
+  \right\|_{H^{s-1}},
+  \]
+  where \(\rho_g\) is the declared representation action on the torsion target space \(\mathcal T\)
+* **Auxiliary model**: none beyond the declared Sobolev norm and background branch
+* **Numerical method**: symbolic verification for the formal branch plus finite-dimensional discretization checks on a family of gauge-related perturbations
+* **External data source**: none; this is an internal mathematical validation target
+* **Comparison rule**: pass if \(\mathcal O_{\mathrm{AT}}=0\) in the formal branch and converges to zero under refinement in the numerical branch; fail if a branch-consistent counterexample yields a nonzero residual bounded away from zero
+* **Tolerance model**: symbolic layer exact; numerical layer split into truncation error, discretization error, and solver tolerance
+* **Outcome**: pending
+* **Falsifier status**: a stable nonzero residual is a **structural falsifier** of the active augmented-torsion branch, not of GU as a whole unless all admissible branches fail
+* **Reproducibility package location**: to be supplied with symbolic notebook and discretization harness
+* **Notes on branch sensitivity**: this record is branch-local in the choice of \(\Theta_{A_0}\), \(\rho_g\), and norm package
+
+This is the cleanest first validation target because it tests whether the newly completed augmented-torsion object actually behaves like a well-typed gauge-covariant field rather than merely carrying a name.
+
+### Validation Record V.2 — Shiab principal-symbol / ellipticity consistency
+
+* **Claim ID**: PR-STR-SH-001
+* **Prediction class**: exact structural
+* **Formal source**: Shiab Operator Completion; Function Spaces and Regularity; Deformation Complex and Linearization Program
+* **Dependencies**: active Shiab branch \(\Sigma_{\mathrm{mc}}\), target space \(\mathcal T\), regularity branch \(\mathcal K^s\to\mathcal T^{s-1}\), gauge-fixed perturbation operator
+* **Inserted assumptions and choices**: elliptic-background branch; declared principal symbol \(\sigma(\Sigma_{\mathrm{mc}})(x,\xi)\)
+* **Observable extraction map**: the extracted observable is the principal-symbol defect
+  \[
+  \mathcal O_{\Sigma}(x,\xi)=
+  \det\bigl(
+  \sigma(\Sigma_{\mathrm{mc}})^*\sigma(\Sigma_{\mathrm{mc}})
+  \bigr)(x,\xi),
+  \qquad \xi\neq 0,
+  \]
+  together with the gauge-fixed composite spectrum on the selected background
+* **Auxiliary model**: local trivialization and background metric package used to represent the symbol
+* **Numerical method**: symbolic principal-symbol computation plus sampled cotangent-direction tests on discretized backgrounds
+* **External data source**: none; this is internal analytic validation
+* **Comparison rule**: pass if the symbol satisfies the declared ellipticity/nondegeneracy condition on the active branch and the gauge-fixed composite has the expected sign/coercivity pattern; fail if the symbol degenerates on the declared admissible branch without an alternative well-posedness mechanism
+* **Tolerance model**: exact symbolic check where possible; numerical spectral checks require mesh-refinement convergence and condition-number reporting
+* **Outcome**: pending
+* **Falsifier status**: failure is a **dynamical / analytic falsifier** of the active Shiab branch and may force a different operator branch or a weaker well-posedness claim
+* **Reproducibility package location**: to be supplied with symbol notebook and operator test harness
+* **Notes on branch sensitivity**: strongly branch-sensitive to the active choice of \(\Pi_{\mathcal T}\), \(\mathcal K_{A_0}\), and \(\mathcal L_{A_0}\)
+
+This record is important because the Shiab operator now sits at the center of the bosonic master field. If its principal-symbol behavior is unstable, later PDE and simulation claims must be weakened immediately.
+
+### Validation Record V.3 — Branch-preserving numerical convergence of the bosonic master field
+
+* **Claim ID**: PR-NUM-BM-001
+* **Prediction class**: semi-quantitative
+* **Formal source**: Augmented / Displaced Torsion Completion; Shiab Operator Completion; Variational Closure of the First- and Second-Order Lagrangians; Function Spaces and Regularity
+* **Dependencies**: active bosonic master field \(\Upsilon_\omega=S_\omega-T^{\mathrm{aug}}_\omega\), finite-energy branch, numerical-lowering interface, chosen background/boundary data
+* **Inserted assumptions and choices**: fixed discretization family, gauge-fixing rule, branch-preserving projection scheme, and stopping criterion
+* **Observable extraction map**: for mesh scale \(h\), define
+  \[
+  \mathcal O_{\mathrm{conv}}(h)=\|\Upsilon^{(h)}_\omega\|_{L^2},
+  \qquad
+  \mathcal O_{\mathrm{diff}}(h)=\|I_h\Upsilon^{(h)}_\omega-\Upsilon^{(h/2)}_\omega\|_{L^2},
+  \]
+  where \(I_h\) is the declared inter-grid transfer operator
+* **Auxiliary model**: boundary conditions, solver, quadrature, and inter-grid transfer package
+* **Numerical method**: refinement study on nested discretizations with independently repeated solves
+* **External data source**: none; this is an end-to-end computational validation target
+* **Comparison rule**: pass if residual and inter-grid defect decrease in the declared order range or at least monotonically toward a stable limit compatible with the weak-solution branch; fail if convergence stalls, diverges, or becomes gauge-artifact dominated
+* **Tolerance model**: separated into solver tolerance, discretization error, quadrature error, and branch-sensitivity error
+* **Outcome**: pending
+* **Falsifier status**: failure is first an **implementation or lowering falsifier**; repeated failure across independent implementations becomes a **simulation falsifier** of the active computational branch
+* **Reproducibility package location**: to be supplied with discretization code, solver parameters, and refinement logs
+* **Notes on branch sensitivity**: this record does not validate physical phenomenology; it validates the existence of a stable branch-preserving numerical path from the continuum formulation to a computed master-field residual
+
+This is the first truly end-to-end validation record because it touches the operator stack, the variational stack, and the numerical-lowering stack together.
+
+### Validation Record V.4 — Linearized gauge compatibility and deformation-space finiteness
+
+* **Claim ID**: PR-DEF-LIN-001
+* **Prediction class**: exact structural / semi-quantitative hybrid
+* **Formal source**: Deformation Complex and Linearization Program; Function Spaces and Regularity; Variational Closure
+* **Dependencies**: solution background \(z_\star\), infinitesimal gauge operator \(R_{z_\star}\), linearized field operator \(L_{z_\star}\), gauge-fixed perturbation operator, elliptic-background branch
+* **Inserted assumptions and choices**: admissible background regularity; chosen gauge-fixing operator; finite-domain/boundary package where needed
+* **Observable extraction map**: two observables are extracted:
+  \[
+  \mathcal O_{\mathrm{gauge}}(u)=\|L_{z_\star}(R_{z_\star}u)\|_{H^{s-2}},
+  \]
+  and the finite-dimensionality indicators
+  \[
+  \mathcal O_{H^1}=\dim \ker(\mathcal L_{z_\star}^{\mathrm{gf}}),
+  \qquad
+  \mathcal O_{H^2}=\dim \operatorname{coker}(\mathcal L_{z_\star}^{\mathrm{gf}}),
+  \]
+  computed analytically or numerically on the selected branch
+* **Auxiliary model**: spectral truncation or finite-element approximation for the gauge-fixed operator where closed-form computation is unavailable
+* **Numerical method**: operator assembly, nullspace computation, and perturbative spectral checks on branch-admissible backgrounds
+* **External data source**: none; this is an internal perturbative-validation target
+* **Comparison rule**: pass if gauge compatibility residual vanishes and the gauge-fixed operator has finite-dimensional kernel/cokernel on the declared elliptic branch; fail if gauge compatibility breaks or the perturbation problem is not Fredholm on backgrounds where the branch asserts it should be
+* **Tolerance model**: exact symbolic tolerance for formal identities; spectral thresholding and conditioning controls for numerical dimensions
+* **Outcome**: pending
+* **Falsifier status**: failure is a **deformation-theoretic falsifier** of the active branch and weakens later stability and moduli claims
+* **Reproducibility package location**: to be supplied with linearization scripts and spectral test data
+* **Notes on branch sensitivity**: depends strongly on the chosen background and gauge-fixing package; should be rerun on multiple representative backgrounds before escalating any negative conclusion
+
+This record is the natural bridge between the formal deformation complex and any later claim about perturbative stability, local moduli, or linear-response observables.
+
+### Validation Record V.5 — Observed-decomposition branch coherence
+
+* **Claim ID**: PR-OBS-DEC-001
+* **Prediction class**: exact structural
+* **Formal source**: Observed Field-Content Decomposition and Observable Extraction; Prediction Registry; Falsification and Validation Protocol
+* **Dependencies**: observation branch \((\iota,b)\), observed decomposition map \(\mathfrak D_{\mathrm{obs}}^{(\iota,b)}\), auxiliary package \(\mathfrak A\), prediction-record schema
+* **Inserted assumptions and choices**: selected projection family and admissible auxiliary model for observed-sector interpretation
+* **Observable extraction map**: the output is the branch-coherence indicator
+  \[
+  \mathcal O_{\mathrm{coh}}(z)=
+  \mathbf 1\bigl[
+  \mathcal E^{(\iota,b,\mathfrak A)}\circ
+  \mathfrak D^{(\iota,b)}_{\mathrm{obs}}(z)
+  \text{ is well-typed and branch-consistent}
+  \bigr],
+  \]
+  together with a typed defect report listing missing maps, mixed branches, and undeclared auxiliary inputs
+* **Auxiliary model**: the chosen empirical interpretation package \(\mathfrak A\)
+* **Numerical method**: not required unless the decomposition is evaluated on simulated solutions
+* **External data source**: none for the coherence check itself
+* **Comparison rule**: pass if the decomposition-to-observable chain is fully typed with no mixed branches or hidden assumptions; fail if any step of the claimed empirical pipeline is untyped, branch-mixed, or dependency-incomplete
+* **Tolerance model**: none; this is a logical admissibility check
+* **Outcome**: pending
+* **Falsifier status**: failure is an **invalid-comparison outcome**, not a failed physical prediction; it blocks the associated empirical claim from entering the registry
+* **Reproducibility package location**: to be supplied with branch manifests and dependency reports
+* **Notes on branch sensitivity**: intentionally harsh; this record exists to prevent premature phenomenology
+
+This record is important because it enforces the document’s central discipline: no claim counts as “compared to observation” until the full decomposition and auxiliary map are explicit and coherent.
+
+### Immediate use of these records
+
+These five records define the first admissible validation wave:
+
+1. **V.1** checks that augmented torsion is a real covariant object.
+2. **V.2** checks that the Shiab branch supports the declared analytic program.
+3. **V.3** checks that the continuum-to-numerical lowering is stable enough to produce reproducible bosonic residuals.
+4. **V.4** checks that the perturbative / deformation program is not empty rhetoric.
+5. **V.5** checks that any move toward observation is branch-clean before phenomenology is attempted.
+
+Together they give the document its first **actual test queue**. None yet proves the theory physically right. But each one can now succeed or fail in a way that is localizable, reproducible, and non-rhetorical. That is the minimum standard needed before advancing to richer quantitative validation records.
+
+
 ---
 
 ## Part X — Delivery Plan
