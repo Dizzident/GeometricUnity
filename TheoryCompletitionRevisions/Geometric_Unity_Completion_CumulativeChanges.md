@@ -4810,7 +4810,205 @@ The short status summary is: the draft already gives a geometric origin story fo
 
 ### 24. Deformation Complex
 
-> The deformation-complex layer is identified repeatedly in the source as an essential dependency and analysis tool, but a full standalone rewrite is not yet present in the file.
+## Deformation Complex and Linearization Program
+
+This section closes the deformation-complex layer at the minimal level needed for perturbative analysis, local stability questions, and numerical sensitivity diagnostics. The source material repeatedly treats deformation theory as downstream of stabilized gauge structure, operator choice, and variational closure. The present completion therefore does not attempt a universal moduli theory for every speculative branch. Instead it fixes one typed deformation package for any closed bosonic branch and records exactly what remains open beyond that package.
+
+### 24.1 Background branch and tangent model
+
+Fix a closed bosonic branch
+\[
+\mathfrak B=(P_{\mathrm{main}},\mathcal A^s,\mathcal H^{s+1},\mathcal W^s,A_0,T^{\mathrm{aug}},\Sigma_\alpha,\mathcal B)
+\]
+in the sense of Definition 15.5.2, together with the chosen residual or Euler--Lagrange operator
+\[
+\mathcal E_{\mathfrak B}:\mathfrak C_B^s\to \mathfrak Y_B^{s-r},
+\]
+where \(r=1\) for first-order residual branches and \(r=2\) for second-order variational branches. Let
+\[
+z_\star=(A_\star,\omega_\star)\in \mathfrak C_B^s
+\]
+be a background solution satisfying \(\mathcal E_{\mathfrak B}(z_\star)=0\).
+
+**Definition 24.1.1 (Bosonic tangent space).**  
+The infinitesimal bosonic deformation space at \(z_\star\) is
+\[
+T_{z_\star}\mathfrak C_B^s
+:=
+H^s\Omega^1\bigl(Y,\mathrm{ad}(P_{\mathrm{main}})\bigr)
+\oplus H^s\Gamma(E_\omega),
+\]
+where the first summand records connection deformations and the second records deformations of the additional bosonic field content carried by the active branch.
+
+**Inserted Convention 24.1.2.**  
+On the minimal active bosonic branch, the second summand is allowed to be trivial or gauge-inert. This keeps the deformation package compatible with branches in which the connection sector is primary and the remaining bosonic fields are auxiliary.
+
+### 24.2 Infinitesimal gauge action
+
+The inhomogeneous gauge group has already been fixed branchwise. The deformation complex requires its infinitesimal action.
+
+**Definition 24.2.1 (Infinitesimal gauge parameter space).**  
+Let
+\[
+\mathfrak g^{s+1}:=H^{s+1}\Gamma\bigl(\mathrm{ad}(P_{\mathrm{main}})\bigr)\oplus \mathcal N^s
+\]
+denote the Lie algebra of infinitesimal inhomogeneous gauge parameters on the active analytical branch.
+
+**Definition 24.2.2 (Infinitesimal gauge operator).**  
+The infinitesimal gauge action at \(z_\star\) is the bounded linear map
+\[
+R_{z_\star}:\mathfrak g^{s+1}\to T_{z_\star}\mathfrak C_B^s,
+\]
+defined as the derivative of the declared branchwise gauge action. On the connection component of the minimal active branch,
+\[
+R_{z_\star}(\xi,\nu)_A
+=
+-d_{A_0}\xi + \nu + [A_\star-A_0,\xi],
+\]
+while the \(\omega\)-component is the linearized action induced by the chosen bosonic representation. If the active branch treats \(\omega\) as gauge-inert, then
+\[
+R_{z_\star}(\xi,\nu)_\omega=0.
+\]
+
+**Completion Rule CR.24.2.3.**  
+No deformation statement may be called complete unless the infinitesimal action on every field appearing in \(\mathfrak C_B^s\) is declared explicitly or declared trivial.
+
+### 24.3 Residual linearization and gauge compatibility
+
+**Definition 24.3.1 (Linearized field operator).**  
+The linearized bosonic field operator at \(z_\star\) is
+\[
+L_{z_\star}:=D\mathcal E_{\mathfrak B}\big|_{z_\star}:
+T_{z_\star}\mathfrak C_B^s\to \mathfrak Y_B^{s-r}.
+\]
+
+For first-order branches one may take \(\mathcal E_{\mathfrak B}=\Upsilon\), so that \(L_{z_\star}=D\Upsilon|_{z_\star}\). For second-order variational branches one takes the gauge-fixed Euler--Lagrange operator, so \(L_{z_\star}\) is the Hessian-style linearization relevant to stability and solver design.
+
+**Proposition 24.3.2 (Infinitesimal gauge covariance, branch-local form).**  
+If the active bosonic branch is corrected-gauge covariant, then
+\[
+L_{z_\star}\circ R_{z_\star}=0
+\]
+on any background solution \(z_\star\).
+
+**Proof sketch.** Differentiate the branchwise covariance identity for \(\mathcal E_{\mathfrak B}\) along a one-parameter family of gauge transformations through the identity and use \(\mathcal E_{\mathfrak B}(z_\star)=0\).
+
+This is the exact point where the earlier covariance work on augmented torsion and Shiab enters the perturbative theory: without corrected-gauge covariance there is no honest deformation complex, only a linearized operator with unresolved gauge defect.
+
+### 24.4 Gauge-fixed deformation complex
+
+To make stability and local moduli questions well posed, the completion document fixes a slice-based version of the complex.
+
+**Definition 24.4.1 (Slice operator).**  
+Let
+\[
+\mathcal S_{z_\star}:T_{z_\star}\mathfrak C_B^s\to H^{s-1}\Gamma\bigl(\mathrm{ad}(P_{\mathrm{main}})\bigr)
+\]
+be the gauge-fixing operator attached to the background-covariant Coulomb condition of Section 15.4, extended trivially on gauge-inert components.
+
+**Definition 24.4.2 (Gauge-fixed linearized operator).**  
+Define
+\[
+\widetilde L_{z_\star}(\delta z)
+:=
+\bigl(L_{z_\star}(\delta z),\mathcal S_{z_\star}(\delta z)\bigr).
+\]
+This is the operator used for ellipticity, Fredholmness, and numerical Jacobian assembly.
+
+**Definition 24.4.3 (Minimal deformation complex).**  
+The minimal bosonic deformation complex at \(z_\star\) is
+\[
+0
+\longrightarrow
+\mathfrak g^{s+1}
+\xrightarrow{\ R_{z_\star}\ }
+T_{z_\star}\mathfrak C_B^s
+\xrightarrow{\ L_{z_\star}\ }
+\mathfrak Y_B^{s-r}
+\longrightarrow 0,
+\]
+and the gauge-fixed perturbation package is
+\[
+0
+\longrightarrow
+\mathfrak g^{s+1}
+\xrightarrow{\ R_{z_\star}\ }
+T_{z_\star}\mathfrak C_B^s
+\xrightarrow{\ \widetilde L_{z_\star}\ }
+\mathfrak Y_B^{s-r}\oplus H^{s-1}\Gamma\bigl(\mathrm{ad}(P_{\mathrm{main}})\bigr).
+\]
+
+**Definition 24.4.4 (Cohomology of the bosonic branch).**  
+Define
+\[
+H^0_{z_\star}:=\ker R_{z_\star},
+\qquad
+H^1_{z_\star}:=\ker L_{z_\star}/\operatorname{im}R_{z_\star},
+\qquad
+H^2_{z_\star}:=\operatorname{coker}L_{z_\star}.
+\]
+These are interpreted respectively as infinitesimal stabilizers, genuine infinitesimal deformations modulo gauge, and first obstruction space.
+
+### 24.5 Linearized Hessian and stability semantics
+
+**Definition 24.5.1 (Gauge-fixed Hessian branch).**  
+For a second-order variational branch, define the gauge-fixed Hessian operator
+\[
+\mathcal H_{z_\star}:=\widetilde L_{z_\star}^{\,*}\widetilde L_{z_\star},
+\]
+where the adjoint is taken with respect to the declared \(L^2\)-type pairing on the analytical branch.
+
+**Interpretation rule 24.5.2.**  
+The signs and spectral location of \(\mathcal H_{z_\star}\) govern the local solver semantics of the branch:
+
+1. strictly positive spectrum on the slice indicates coercive local stability;
+2. small eigenvalues indicate soft or weakly constrained deformation directions;
+3. a nontrivial kernel on the slice signals either genuine moduli or unresolved residual gauge/constraint degeneracy;
+4. negative modes indicate saddle behavior of the variational functional.
+
+This is the minimal stability dictionary required before speaking about stiffness, mode content, or deformation trajectories in the computational chapters.
+
+### 24.6 Elliptic/Fredholm closure of the deformation package
+
+**Proposition 24.6.1 (Finite-dimensional perturbation package, conditional form).**  
+Assume the active branch satisfies the analytical admissibility conditions of Section 15.6, including gauge-fixed ellipticity on the Euclidean background branch. Then the gauge-fixed operator
+\[
+\widetilde L_{z_\star}:T_{z_\star}\mathfrak C_B^s\to \mathfrak Y_B^{s-r}\oplus H^{s-1}\Gamma\bigl(\mathrm{ad}(P_{\mathrm{main}})\bigr)
+\]
+is Fredholm, and the spaces \(H^0_{z_\star}\), \(H^1_{z_\star}\), and \(H^2_{z_\star}\) are finite-dimensional.
+
+**Proof status:** conditional on the branchwise principal-symbol and slice hypotheses already adopted in the analytical chapter; standard elliptic-complex reasoning thereafter.
+
+**Corollary 24.6.2 (Local moduli heuristic, conditional form).**  
+If \(H^2_{z_\star}=0\), then the branch admits a formally unobstructed local deformation theory near \([z_\star]\), modeled to first order on \(H^1_{z_\star}\). If \(H^2_{z_\star}\neq 0\), obstruction equations must be solved at higher order before any local moduli claim is made.
+
+This is intentionally modest. It closes the perturbative and obstruction language needed by the completion manuscript without pretending to have proved a full Kuranishi theory for every GU branch.
+
+### 24.7 Computational lowering of the deformation package
+
+**Definition 24.7.1 (Lowered deformation package).**  
+A computational realization of the deformation complex must lower:
+
+1. the infinitesimal gauge map \(R_{z_\star}\) to a discrete gauge Jacobian \(R_h\);
+2. the linearized field operator \(L_{z_\star}\) to a discrete Jacobian or matrix-free tangent map \(L_h\);
+3. the gauge-fixed operator \(\widetilde L_{z_\star}\) to the assembled perturbation operator used by Newton, Krylov, spectral, or continuation methods;
+4. the cohomology diagnostics to discrete nullity, cokernel, and near-kernel indicators.
+
+**Completion Rule CR.24.7.2.**  
+A numerical branch may claim deformation-awareness only if it reports at least one of the following around a declared background state: null-space dimension, smallest singular values, signed Hessian spectrum on the slice, or instability/soft-mode indicators with branch metadata.
+
+### 24.8 What is now closed and what remains open
+
+This section closes the deformation-complex layer at the level of:
+
+- typed cochain spaces,
+- explicit infinitesimal gauge action,
+- explicit linearized operator,
+- explicit gauge-fixed perturbation operator,
+- finite-dimensional cohomology targets on the elliptic branch,
+- and a computational lowering interface for stability diagnostics.
+
+What remains open is not whether a deformation package exists, but which branch is physically preferred and whether richer nonlinear moduli theory, gluing theory, and fermionic-coupled deformation theory can be proved.
 
 ---
 
@@ -5580,7 +5778,7 @@ An item may be mathematically critical but computationally only medium, or physi
 | OP-19 | **Variational derivation, boundary terms, and PDE classification for the second-order equations**                         |          **Critical** |              High |           **Critical** | The completion plan explicitly lists Euler–Lagrange derivation, constraints, boundary terms, well-posedness questions, and PDE classification as unfinished.                                                        | No rigorous claim of dynamical completion or simulation readiness is possible.                                                        |
 | OP-20 | **Regularity assumptions for admissible fields**                                                                          |                  High |               Low |           **Critical** | The style/status sheet uses Sobolev regularity as a paradigmatic inserted assumption required for variational analysis.                                                                                             | Solvers, weak formulations, and discretizations cannot be justified or compared consistently.                                         |
 | OP-21 | **Boson–fermion coupling map and Yukawa/Higgs reinterpretation**                                                          |                  High |      **Critical** |                   High | The completion plan makes this its own chapter and flags consistency, anomaly, stability, and open completion tasks.                                                                                                | Claims about replacement or reinterpretation of the Higgs/Yukawa sectors remain speculative.                                          |
-| OP-22 | **Deformation complex definition and moduli interpretation**                                                              |                  High |            Medium |                   High | The completion outline treats the deformation complex as unfinished, including cochain spaces, linearization, obstruction theory, and computational consequences.                                                   | There is no stable perturbative theory, no clean notion of infinitesimal symmetry, and no robust benchmark for numerical sensitivity. |
+| OP-22 | **Full nonlinear moduli theory and coupled deformation interpretation**                                                   |                Medium |            Medium |                 Medium | A minimal bosonic deformation complex, gauge-fixed linearization, cohomology package, and stability interface are now fixed, but full nonlinear moduli theory, gluing, and coupled boson--fermion deformation theory remain open. | Perturbative analysis is now possible, but branch-independent global moduli claims and fully coupled stability theory still require further work. |
 | OP-23 | **Representation decomposition of observed bosons**                                                                       |                  High |      **Critical** |                 Medium | The completion plan explicitly requires branching computations and asks that identifications be sorted into exact, approximate, or conjectural.                                                                     | Standard Model correspondence remains interpretive rather than derivational.                                                          |
 | OP-24 | **Fermionic quantum-number assignment and family structure**                                                              |                  High |      **Critical** |                 Medium | The completion plan flags missing representation-theoretic steps for quantum numbers and family structure.                                                                                                          | Particle-identification claims cannot yet be treated as more than conjectural or phenomenological.                                    |
 | OP-25 | **Three-family vs 2+1 imposter-generation mechanism**                                                                     |                Medium |      **Critical** |                    Low | The completion plan explicitly treats this as a proposal requiring a mathematical mechanism, support criteria, and refutation criteria.                                                                             | One of the draft’s sharpest phenomenological claims remains ungrounded mathematically.                                                |
@@ -10533,7 +10731,7 @@ An item may be mathematically critical but computationally only medium, or physi
 | OP-19 | **Variational derivation, boundary terms, and PDE classification for the second-order equations**                         |          **Critical** |              High |           **Critical** | The completion plan explicitly lists Euler–Lagrange derivation, constraints, boundary terms, well-posedness questions, and PDE classification as unfinished.                                                        | No rigorous claim of dynamical completion or simulation readiness is possible.                                                        |
 | OP-20 | **Regularity assumptions for admissible fields**                                                                          |                  High |               Low |           **Critical** | The style/status sheet uses Sobolev regularity as a paradigmatic inserted assumption required for variational analysis.                                                                                             | Solvers, weak formulations, and discretizations cannot be justified or compared consistently.                                         |
 | OP-21 | **Boson–fermion coupling map and Yukawa/Higgs reinterpretation**                                                          |                  High |      **Critical** |                   High | The completion plan makes this its own chapter and flags consistency, anomaly, stability, and open completion tasks.                                                                                                | Claims about replacement or reinterpretation of the Higgs/Yukawa sectors remain speculative.                                          |
-| OP-22 | **Deformation complex definition and moduli interpretation**                                                              |                  High |            Medium |                   High | The completion outline treats the deformation complex as unfinished, including cochain spaces, linearization, obstruction theory, and computational consequences.                                                   | There is no stable perturbative theory, no clean notion of infinitesimal symmetry, and no robust benchmark for numerical sensitivity. |
+| OP-22 | **Full nonlinear moduli theory and coupled deformation interpretation**                                                   |                Medium |            Medium |                 Medium | A minimal bosonic deformation complex, gauge-fixed linearization, cohomology package, and stability interface are now fixed, but full nonlinear moduli theory, gluing, and coupled boson--fermion deformation theory remain open. | Perturbative analysis is now possible, but branch-independent global moduli claims and fully coupled stability theory still require further work. |
 | OP-23 | **Representation decomposition of observed bosons**                                                                       |                  High |      **Critical** |                 Medium | The completion plan explicitly requires branching computations and asks that identifications be sorted into exact, approximate, or conjectural.                                                                     | Standard Model correspondence remains interpretive rather than derivational.                                                          |
 | OP-24 | **Fermionic quantum-number assignment and family structure**                                                              |                  High |      **Critical** |                 Medium | The completion plan flags missing representation-theoretic steps for quantum numbers and family structure.                                                                                                          | Particle-identification claims cannot yet be treated as more than conjectural or phenomenological.                                    |
 | OP-25 | **Three-family vs 2+1 imposter-generation mechanism**                                                                     |                Medium |      **Critical** |                    Low | The completion plan explicitly treats this as a proposal requiring a mathematical mechanism, support criteria, and refutation criteria.                                                                             | One of the draft’s sharpest phenomenological claims remains ungrounded mathematically.                                                |
@@ -10850,7 +11048,7 @@ An item may be mathematically critical but computationally only medium, or physi
 | OP-19 | **Variational derivation, boundary terms, and PDE classification for the second-order equations**                         |          **Critical** |              High |           **Critical** | The completion plan explicitly lists Euler–Lagrange derivation, constraints, boundary terms, well-posedness questions, and PDE classification as unfinished.                                                        | No rigorous claim of dynamical completion or simulation readiness is possible.                                                        |
 | OP-20 | **Regularity assumptions for admissible fields**                                                                          |                  High |               Low |           **Critical** | The style/status sheet uses Sobolev regularity as a paradigmatic inserted assumption required for variational analysis.                                                                                             | Solvers, weak formulations, and discretizations cannot be justified or compared consistently.                                         |
 | OP-21 | **Boson–fermion coupling map and Yukawa/Higgs reinterpretation**                                                          |                  High |      **Critical** |                   High | The completion plan makes this its own chapter and flags consistency, anomaly, stability, and open completion tasks.                                                                                                | Claims about replacement or reinterpretation of the Higgs/Yukawa sectors remain speculative.                                          |
-| OP-22 | **Deformation complex definition and moduli interpretation**                                                              |                  High |            Medium |                   High | The completion outline treats the deformation complex as unfinished, including cochain spaces, linearization, obstruction theory, and computational consequences.                                                   | There is no stable perturbative theory, no clean notion of infinitesimal symmetry, and no robust benchmark for numerical sensitivity. |
+| OP-22 | **Full nonlinear moduli theory and coupled deformation interpretation**                                                   |                Medium |            Medium |                 Medium | A minimal bosonic deformation complex, gauge-fixed linearization, cohomology package, and stability interface are now fixed, but full nonlinear moduli theory, gluing, and coupled boson--fermion deformation theory remain open. | Perturbative analysis is now possible, but branch-independent global moduli claims and fully coupled stability theory still require further work. |
 | OP-23 | **Representation decomposition of observed bosons**                                                                       |                  High |      **Critical** |                 Medium | The completion plan explicitly requires branching computations and asks that identifications be sorted into exact, approximate, or conjectural.                                                                     | Standard Model correspondence remains interpretive rather than derivational.                                                          |
 | OP-24 | **Fermionic quantum-number assignment and family structure**                                                              |                  High |      **Critical** |                 Medium | The completion plan flags missing representation-theoretic steps for quantum numbers and family structure.                                                                                                          | Particle-identification claims cannot yet be treated as more than conjectural or phenomenological.                                    |
 | OP-25 | **Three-family vs 2+1 imposter-generation mechanism**                                                                     |                Medium |      **Critical** |                    Low | The completion plan explicitly treats this as a proposal requiring a mathematical mechanism, support criteria, and refutation criteria.                                                                             | One of the draft’s sharpest phenomenological claims remains ungrounded mathematically.                                                |
@@ -11256,7 +11454,7 @@ The document now records the following variational proof obligations explicitly.
 
 **VO-6.** Complete the fermionic variational branch, including the operator domain, adjoint convention, and coupling terms.
 
-**VO-7.** Give a gauge-fixed deformation complex or linearized Hessian for the completed bosonic branch so that local stability and solver semantics can be discussed without ambiguity.
+**VO-7.** Extend the now-fixed bosonic deformation complex to the coupled boson--fermion branch, including the precise mixed linearization blocks and their gauge-compatibility identities.
 
 ### 9. Status consequences for the manuscript
 
