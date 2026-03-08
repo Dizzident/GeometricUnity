@@ -5555,41 +5555,43 @@ The manuscript now has a typed route from GU branch solutions on \(Y\) to branch
 
 ## Prediction Registry
 
-This section closes the empirical-output blocker by turning the manuscript’s outward-facing claims into typed objects with explicit provenance, observable maps, and falsifiers. The earlier version separated exact predictions, approximate predictions, postdictions, and speculative claims. That classification is retained, but it is now made operational rather than merely descriptive.
+This section now serves as the document’s operational prediction ledger rather than a loose catalog of outward-facing claims. The goal is to force every prediction, postdiction, or phenomenological comparison to identify its formal branch, its observable map, its auxiliary modeling package, and its falsifier. Combined with the observed-field decomposition and deformation program, this is the point at which the manuscript becomes auditable as a verification program rather than merely suggestive.
 
 ### 28.1 Prediction object schema
 
 **Definition 28.1.1 (Typed prediction entry).**  
 A prediction entry is a record
 \[
-\mathsf P=(\mathrm{ID},\mathrm{Class},\mathrm{FormalSource},\mathrm{BranchData},\mathrm{ObservableMap},\mathrm{ExternalTarget},\mathrm{Support},\mathrm{Falsifier},\mathrm{Status})
+\mathsf P=(\mathrm{ID},\mathrm{Class},\mathrm{FormalSource},\mathrm{BranchData},\mathrm{ObservableMap},\mathrm{AuxiliaryPackage},\mathrm{ExternalTarget},\mathrm{ComparisonRule},\mathrm{Support},\mathrm{Falsifier},\mathrm{Status})
 \]
 with the following fields:
 
 1. **ID**: stable registry identifier;
-2. **Class**: one of Exact Structural, Approximate Quantitative, Postdictive Recovery, or Speculative Interpretive;
+2. **Class**: one of Exact Structural, Semi-Quantitative, Quantitative, Postdictive Recovery, or Speculative Interpretive;
 3. **FormalSource**: the exact theorem, definition, branch choice, or numerical pipeline step from which the claim is derived;
-4. **BranchData**: the observerse, \(A_0\), torsion, Shiab, and regularity choices on which the claim depends;
+4. **BranchData**: the observerse, chimeric, principal-bundle, distinguished-connection, torsion, Shiab, regularity, and deformation choices on which the claim depends;
 5. **ObservableMap**: a typed map from formal output to an observable or comparison datum;
-6. **ExternalTarget**: the measured or otherwise externally specified object being compared against;
-7. **Support**: exact derivation, heuristic, numerical indication, or fit-assisted reconstruction;
-8. **Falsifier**: a concrete failure condition;
-9. **Status**: Active, Conditional, Blocked, Falsified, or Retired.
+6. **AuxiliaryPackage**: every additional modeling choice needed to instantiate the observable map in practice;
+7. **ExternalTarget**: the measured or otherwise externally specified object being compared against;
+8. **ComparisonRule**: logical match, interval consistency, residual test, likelihood score, posterior predictive check, or another explicitly named rule;
+9. **Support**: exact derivation, conditional proof target, numerical indication, heuristic, or fit-assisted reconstruction;
+10. **Falsifier**: a concrete failure condition;
+11. **Status**: Active, Conditional, Blocked, Falsified, or Retired.
 
 **Completion Rule CR.28.1.2.**  
 No phenomenological statement may be called a prediction anywhere else in the manuscript unless it can be inserted into the schema above.
 
-### 28.2 Observable-map discipline
+### 28.2 Observable-map and branch discipline
 
-**Definition 28.2.1 (Observable map).**  
-Given a closed formal branch \(\mathfrak B\), an observable map is a typed transformation
+**Definition 28.2.1 (Operational observable map).**  
+Given a closed formal branch \(\mathfrak B\), an operational observable map is a typed transformation
 \[
-\mathcal O_{\mathrm{map}}^{\mathfrak B}:\mathfrak M_{\mathfrak B}\to \mathfrak D_{\mathrm{obs}},
+\mathcal O_{\mathrm{map}}^{\mathfrak B,\mathfrak A}:\mathfrak M_{\mathfrak B}\to \mathfrak D_{\mathrm{obs}},
 \]
-from the branch’s mathematical output space \(\mathfrak M_{\mathfrak B}\) to a comparison domain \(\mathfrak D_{\mathrm{obs}}\) such as spectra, branching data, symmetry classes, correlation functions, effective couplings, or imaging/visualization summaries.
+where \(\mathfrak M_{\mathfrak B}\) is the branch’s mathematical output space, \(\mathfrak A\) is the declared auxiliary package, and \(\mathfrak D_{\mathrm{obs}}\) is a comparison domain such as spectra, branching data, symmetry classes, correlation functions, effective couplings, or imaging/visualization summaries.
 
 **Inserted Assumption IA.28.2.2 (No naked comparison).**  
-A comparison with external observation is inadmissible unless the manuscript explicitly states the observable map used to perform that comparison.
+A comparison with external observation is inadmissible unless the manuscript explicitly states the observable map and auxiliary package used to perform that comparison.
 
 **Reason for insertion:** without this, the document can slide from geometry to empirical language by verbal analogy alone.  
 **Minimality assessment:** conservative.  
@@ -5597,31 +5599,72 @@ A comparison with external observation is inadmissible unless the manuscript exp
 **Whether removable:** no; it is a methodological guardrail.  
 **Prediction sensitivity:** high.
 
-### 28.3 Active registry
+**Definition 28.2.3 (Branch-local prediction validity).**  
+A prediction entry is *branch-valid* if every field, operator, and comparison object appearing in the entry is defined on the same declared completion branch. An entry that mixes incompatible observerse, torsion, Shiab, regularity, or low-energy-identification branches is invalid and may not be used in validation tables.
 
-| ID | Class | Formal source | Branch data | Observable map | External target | Support | Falsifier | Status |
-|---|---|---|---|---|---|---|---|---|
-| PR-01 | Exact Structural | Topological-spinor observation branch plus decomposition rules | Closed observerse branch; active representation branch | Branching/decomposition of observed spinor bundle | Required observed spinor-factor pattern | Structural derivation target | No unique decomposition matching the required observed factorization | Conditional |
-| PR-02 | Exact Structural | First-order bosonic branch with active Shiab choice | Sobolev branch; distinguished-connection branch; \(\Sigma_{\mathrm{mc}}\) | Solution implication map \(\Upsilon_\omega=0\Rightarrow D_\omega^*\Upsilon_\omega=0\) | Internal consistency of bosonic sector | Formal derivation target | Counterexample in the declared branch | Conditional |
-| PR-03 | Approximate Quantitative | Observed-field decomposition plus scalar/Yukawa interpretation branch | Closed observerse branch; active fermion/scalar branch | Effective-coupling extraction map | Higgs-like / Yukawa-like observed data | Heuristic-to-numerical target | No stable extraction or only unconstrained fit freedom | Blocked |
-| PR-04 | Approximate Quantitative | Algebraic internal-quantum-number branch | Representation branch; branch-selected matter identification | Representation-to-spectrum map | New-particle search space | Structural plus phenomenological target | No consistent spectrum or irreducible overproduction | Blocked |
-| PR-05 | Postdictive Recovery | Recovery pipeline for Einstein/Yang–Mills/Dirac-like sectors | Closed observerse branch; active bosonic and fermionic branches | Recovery map to effective observed equations | Known low-energy field equations | Interpretive with partial formal support | Failure to recover the claimed effective equation class | Conditional |
-| PR-06 | Speculative Interpretive | 2+1 family / imposter-generation narrative | Active representation branch | No accepted quantitative map yet | Family-structure interpretation | Heuristic only | Any rigorous branch yields incompatible family counting or no controlled low-energy decoupling | Blocked |
+### 28.3 Prediction classes
 
-### 28.4 Falsification statuses
+The manuscript now distinguishes five classes rather than collapsing everything into a generic notion of prediction:
 
-**Definition 28.4.1 (Registry statuses).**  
+- **Exact Structural**: a discrete structural result with no fit-dependent freedom at the point of comparison;
+- **Semi-Quantitative**: an interval, hierarchy, sign, ordering, or restricted-parameter statement;
+- **Quantitative**: a numerical prediction with units, normalization, and uncertainty budget;
+- **Postdictive Recovery**: recovery of known observed structures or equations from the GU branch;
+- **Speculative Interpretive**: a physical reading that has not yet been upgraded into a disciplined observable claim.
+
+Only the first three count as predictive outputs in the strict empirical sense. Postdictive and speculative entries remain in the registry so that the manuscript can track them honestly without overstating them.
+
+### 28.4 Active registry
+
+| ID | Class | Formal source | Branch data | Observable map | Auxiliary package | External target | Comparison rule | Support | Falsifier | Status |
+|---|---|---|---|---|---|---|---|---|---|---|
+| PR-01 | Exact Structural | Topological-spinor observation branch plus observed decomposition rules | Closed observerse branch; active chimeric and representation branches | Branching/decomposition of observed spinor bundle | None beyond branch fixing | Required observed spinor-factor pattern | Logical structural match | Structural derivation target | No unique decomposition matching the required observed factorization | Conditional |
+| PR-02 | Exact Structural | First-order bosonic branch with active Shiab choice and variational closure | Sobolev branch; distinguished-connection branch; active Shiab branch | Solution implication map \(\Upsilon_\omega=0\Rightarrow D\Upsilon^*_{(A,\omega)}(\Upsilon_\omega)=0\) | Gauge fixing and background regularity package | Internal consistency of bosonic sector | Proof or counterexample in the declared branch | Formal derivation target | Counterexample in the declared branch | Conditional |
+| PR-03 | Semi-Quantitative | Observed-field decomposition plus scalar/Yukawa interpretation branch | Closed observerse branch; active fermion/scalar branch | Effective-coupling extraction map | Vacuum-selection and low-energy truncation package | Higgs-like / Yukawa-like observed data | Interval / hierarchy consistency | Heuristic-to-numerical target | No stable extraction or only unconstrained fit freedom | Blocked |
+| PR-04 | Semi-Quantitative | Algebraic internal-quantum-number branch | Representation branch; branch-selected matter identification | Representation-to-spectrum map | Spectral identification and low-energy matching package | New-particle search space | Allowed / excluded representation comparison | Structural plus phenomenological target | No consistent spectrum or irreducible overproduction | Blocked |
+| PR-05 | Postdictive Recovery | Recovery pipeline for Einstein/Yang–Mills/Dirac-like sectors | Closed observerse branch; active bosonic and fermionic branches | Recovery map to effective observed equations | Reduction ansatz and normalization package | Known low-energy field equations | Equation-class match under stated limits | Interpretive with partial formal support | Failure to recover the claimed effective equation class | Conditional |
+| PR-06 | Speculative Interpretive | 2+1 family / imposter-generation narrative | Active representation branch | No accepted quantitative map yet | None acceptable yet | Family-structure interpretation | None admissible yet | Heuristic only | Any rigorous branch yields incompatible family counting or no controlled low-energy decoupling | Blocked |
+| PR-07 | Exact Structural | Deformation complex and elliptic branch analysis | Elliptic-background branch; active gauge-fixed deformation branch | Obstruction/stability extraction map | Gauge-fixing and Fredholm package | Finite-dimensional perturbative moduli and stability structure | Logical finite-dimensionality / sign test | Conditional theorem target | Infinite-dimensional kernel in the stated elliptic branch or sign-indefinite instability contrary to claim | Conditional |
+| PR-08 | Quantitative | Numerical lowering plus observable extraction pipeline | Fully declared simulation branch; discretization package | End-to-end numerical observable map | Mesh, solver, convergence, and statistical packages | Simulation-produced observables compared to external datasets | Residual / likelihood / posterior predictive rule | Implementation target only | Non-convergent discretization or failure under refinement and held-out comparison | Blocked |
+
+### 28.5 Registry status transitions
+
+**Definition 28.5.1 (Registry statuses).**  
 A prediction entry is:
 
-- **Active** if its observable map and external target are already implemented;
+- **Active** if its observable map, auxiliary package, and external target are already implemented;
 - **Conditional** if the claim is mathematically typed but awaits proof or numerical realization;
-- **Blocked** if an upstream branch choice or formal construction is still missing;
+- **Blocked** if an upstream branch choice, derivation, or implementation is still missing;
 - **Falsified** if the defined falsifier has occurred;
 - **Retired** if the claim is withdrawn because its supporting branch is abandoned.
 
-### 28.5 Consequence for the manuscript
+**Rule 28.5.2 (No silent promotion).**  
+An entry may move upward in evidentiary strength only by an explicit registry update. In particular, a speculative or postdictive claim may not be informally redescribed as predictive without a new observable map, auxiliary package, and comparison rule.
 
-The prediction layer is now closed in the sense needed for verifiability readiness. The document no longer has permission to speak of “predictions” in an untyped way. What remains open is whether any given active or conditional entry will survive proof, implementation, and comparison. That is an empirical and mathematical question; the bookkeeping problem is now solved.
+### 28.6 Prediction record template
+
+Every future prediction inserted into the document should be recorded in the following minimal template:
+
+```text
+ID:
+Class:
+FormalSource:
+BranchData:
+ObservableMap:
+AuxiliaryPackage:
+ExternalTarget:
+ComparisonRule:
+Support:
+Falsifier:
+Status:
+ReproducibilityArtifacts:
+```
+
+The final field is mandatory in practice even though it is omitted from Definition 28.1.1 for brevity; once a prediction advances to Active status it must point to code, symbolic derivation, or numerical artifacts sufficient for reproduction.
+
+### 28.7 Consequence for the manuscript
+
+The prediction layer is now closed in the sense needed for verifiability readiness. The document no longer has permission to speak of “predictions” in an untyped way, and it now has a mechanism for distinguishing structural success, numerical underdevelopment, auxiliary-model failure, and true branch-level falsification. What remains open is whether any given conditional or blocked entry will survive proof, implementation, and comparison. That is an empirical and mathematical question; the bookkeeping problem is now solved.
 
 ## Prediction Registry
 
@@ -8907,324 +8950,156 @@ That rule is the minimum needed to keep the completion document honest about the
 
 ## Falsification and Validation Protocol
 
-This section defines the protocol by which any Geometric Unity output is converted into an observable claim and compared against actual observation. Its purpose is procedural, not rhetorical. The completion document does not assume that GU is correct. It assumes only that, if the framework is to become assessable, then every outward-facing claim must pass through an auditable chain from formal construction to observational comparison. That requirement is already built into the completion scaffold: observed physics must come only after the observation machinery, principal-bundle setup, and dynamical equations are fixed, and the final empirical layer must include a comparison-to-observation framework, explicit falsification criteria, and reproducibility requirements.  
+This section tightens the manuscript’s validation interface into a branch-aware comparison protocol. Its purpose is procedural rather than rhetorical: the completion document does not assume that GU is correct, only that any claim put forward as empirically assessable must travel through an auditable chain from formal branch choice to observable extraction to external comparison to falsification status.
 
-The protocol also follows the document-wide status discipline. A phenomenological statement is never to be cited as if it were a theorem, and no prediction is to be presented without a declared status and dependency chain. This matters especially here because the GU draft contains both strong structural ambitions and incomplete phenomenological claims, including explicit statements that some “algebraic predictions” exist at the level of internal quantum numbers while energy-scale predictions would require further work. The validation protocol therefore begins by classifying outputs before it compares them to data.  
+### 41.1 Governing rule
 
-### 1. Purpose and governing rule
+**Protocol Rule PR.41.1.1 (Typed empirical admissibility).**  
+No GU claim may enter empirical comparison unless it has first been expressed as a typed prediction entry with:
 
-The governing rule is:
+1. a unique formal source,
+2. a branch-valid observable map,
+3. a declared auxiliary package,
+4. an external target,
+5. a comparison rule,
+6. a falsifier,
+7. and a reproducibility package.
 
-**No GU claim may enter empirical comparison unless it has first been expressed as a typed observational output with an explicit derivation path, an observable map, a comparison rule, and a falsifier.**
+This rule prevents three failure modes: interpretive claims being treated as predictions, formal objects being compared directly to experiment without an observable model, and failed numerical instantiations being confused with failure of the entire completion program.
 
-This rule prevents three failure modes that the completion document is designed to avoid. First, it prevents purely interpretive statements from being treated as predictions. Second, it prevents formal objects from being compared directly to experiment without an intermediate observable model. Third, it prevents failed numerical instantiations from being confused with failure of the entire completion program. The completion document explicitly separates formal completion, computational readiness, and falsifiability readiness, and this protocol sits exactly at that interface. 
+### 41.2 Admitted empirical output classes
 
-### 2. Output classes admitted into the protocol
+Every candidate output must be placed into one of the five registry classes. Only the first three are admitted into direct empirical comparison:
 
-Every candidate output must be placed into one of the three empirical-output classes already anticipated by the completion outline:
+1. **Exact Structural output**;
+2. **Semi-Quantitative output**;
+3. **Quantitative output**;
+4. **Postdictive Recovery**;
+5. **Speculative Interpretive claim**.
 
-1. **Exact structural output**
-2. **Semi-quantitative output**
-3. **Quantitative output** 
+Postdictive and speculative entries may appear in discussion and planning sections, but they do not count as validated predictive outputs until they are upgraded into one of the first three classes.
 
-These are interpreted as follows.
+### 41.3 The eight-stage validation pipeline
 
-An **exact structural output** is a discrete claim such as a representation content, branching pattern, charge assignment, chirality pattern, multiplicity statement, or operator-theoretic implication. Such outputs are not compared to floating-point measurements directly; they are compared to established structural facts of observed physics. A failure here is a structural falsifier.
-
-A **semi-quantitative output** is a claim that predicts hierarchy, ordering, sign, allowed-versus-forbidden channel, qualitative running behavior, or scale relation up to bounded uncertainty or unresolved model dependence. Such outputs are compared using admissible tolerance bands and ranking criteria rather than exact numerical equality.
-
-A **quantitative output** is a numerical prediction with units, normalization, uncertainty, and a reproducible derivation path. Only these outputs may be compared to measured central values and error bars in the standard sense.
-
-A claim that is only an interpretive identification, programmatic goal, or phenomenological analogy is not yet an admitted output of this protocol. It must remain outside the comparison stage until it is upgraded. This is required by the status hierarchy. 
-
-### 3. The seven-stage validation pipeline
-
-Every admitted output must pass through the following seven stages.
+Every admitted output must pass through the following stages.
 
 #### Stage 1 — Formal source fixation
 
-The claim must be attached to a unique formal source in the completed GU framework. This means identifying:
+The claim must be attached to a unique formal source in the completed GU framework, including the theorem, definition, branch choice, or numerical-lowering step from which it arises. No comparison is admissible before the claim’s mathematical origin is fixed.
 
-* the underlying bundles, operators, and fields involved,
-* the relevant completion choices and inserted assumptions,
-* the theorem, proposition, or conjectural mechanism from which the claim arises,
-* and the exact branch of completion used if multiple branches remain open.
+#### Stage 2 — Branch coherence check
 
-No observational comparison is allowed before the claim’s formal origin is fixed. This follows directly from the dependency map, which places prediction claims only after the observation machinery, dynamics, deformation theory, and observed-field decompositions are completed. 
+The claim must pass a branch-validity audit. All observerse, chimeric, principal-bundle, distinguished-connection, torsion, Shiab, regularity, deformation, and low-energy-identification ingredients must live on the same declared completion branch. Mixed-branch claims are invalid.
 
-#### Stage 2 — Observable extraction map
+#### Stage 3 — Observable extraction map
 
-The formal claim must then be translated into an **observable extraction map**
-[
-\mathcal O:\ \text{GU output space} \longrightarrow \text{observable space}.
-]
+The formal claim must be translated into a typed observable map
+\[
+\mathcal O^{(\mathfrak B,\mathfrak A)}:\mathfrak M_{\mathfrak B}\to \mathfrak D_{\mathrm{obs}},
+\]
+where \(\mathfrak B\) is the formal branch and \(\mathfrak A\) is the auxiliary package. This map is the explicit rule telling us how a GU object becomes a checkable output.
 
-This map is the heart of the protocol. It is the explicit rule that tells us how a formal GU object becomes something that can be checked. Examples include:
+#### Stage 4 — Auxiliary model declaration
 
-* representation content (\mapsto) observed charge multiplets,
-* operator spectrum (\mapsto) particle mass candidates,
-* effective interaction terms (\mapsto) couplings or mixing matrices,
-* low-energy bosonic reduction (\mapsto) Einstein/Yang–Mills/Higgs sector observables,
-* deformation stability (\mapsto) whether a predicted sector is robust or fine-tuned.
+Every extra ingredient needed to instantiate the observable map must be declared: low-energy reductions, symmetry breaking, vacuum selection, truncation, renormalization prescription, background choice, numerical discretization, and statistical model. Hidden auxiliary assumptions invalidate the comparison.
 
-The draft already provides intended “locations within GU” for many standard physical ingredients, but that appendix is only a placement guide, not yet an observable map. The completion document must therefore require that each such intended location be upgraded into a mathematically explicit extraction rule before any validation claim is made. 
+#### Stage 5 — Prediction instantiation
 
-#### Stage 3 — Auxiliary model declaration
+Once the observable map and auxiliary package are fixed, the claim is instantiated into a structural, semi-quantitative, or quantitative prediction record. Each record must include predicted value or structure, units and normalization if applicable, uncertainty decomposition, assumptions, numerical method if any, and the exact external dataset to be used.
 
-Most phenomenological comparisons will require auxiliary modeling beyond the raw GU formalism. This must be declared explicitly. Such auxiliary ingredients may include:
+#### Stage 6 — Comparison against external observations
 
-* low-energy reduction ansätze,
-* symmetry-breaking or vacuum-selection choices,
-* effective-field truncations,
-* renormalization prescriptions,
-* background choices,
-* numerical discretization schemes,
-* statistical likelihood models.
+Comparison must use a type-appropriate rule:
 
-These are not to be hidden. They are part of the comparison pipeline and may materially affect predictions. The ambiguity register in the completion scaffold already requires identifying which choices are cosmetic and which materially affect predictions. The validation protocol inherits that requirement and makes it operational. 
+- **Exact Structural**: logical match, mismatch, or underdetermination;
+- **Semi-Quantitative**: interval consistency, ordering consistency, sign consistency, hierarchy consistency, or ranked likelihood;
+- **Quantitative**: residuals, normalized residuals, chi-square-type metrics, likelihood scores, posterior predictive checks, or another declared statistical rule.
 
-#### Stage 4 — Prediction instantiation
+#### Stage 7 — Falsification decision
 
-Once the observable map and auxiliary model are fixed, the claim is instantiated into one of three deliverables:
+Each comparison must terminate in one of five outcomes:
 
-* a structural prediction record,
-* a semi-quantitative prediction record,
-* or a quantitative prediction record.
+- **Validated within declared scope**;
+- **Provisionally consistent but underdetermined**;
+- **Tension requiring revision**;
+- **Falsified for this branch/instantiation**;
+- **Invalid comparison**.
 
-Each record must include:
+The last category is new and important: it is used when the comparison itself was improperly formed, for example because the observable map was not explicit, the branch data were mixed, or the auxiliary package was hidden.
 
-* predicted value or structure,
-* units and normalization if applicable,
-* uncertainty decomposition,
-* assumptions used,
-* numerical method if any,
-* and the exact external data set to be used for comparison.
+#### Stage 8 — Reproducibility package
 
-At this stage the output becomes a registry item eligible for validation.
+No comparison result counts unless it ships with a reproducibility package containing the formal source references, all assumptions and inserted choices, observable-extraction code or symbolic derivation, solver settings, external data identifiers, comparison scripts, and versioned output artifacts.
 
-#### Stage 5 — Comparison against external observations
+### 41.4 Comparison records
 
-The prediction is then compared to actual observations using a comparison rule appropriate to its type.
+**Definition 41.4.1 (Validation record).**  
+A validation record is a tuple
+\[
+\mathsf V=(\mathrm{PredictionID},\mathrm{Dataset},\mathrm{ComparisonRule},\mathrm{Outcome},\mathrm{FailureScope},\mathrm{Artifacts})
+\]
+where:
 
-For **exact structural outputs**, comparison is Boolean or logical-constraint based: match, mismatch, or underdetermined. For example, if GU predicts a representation branching inconsistent with observed charge assignments, that is immediate falsification at the structural level.
+- **PredictionID** points to a registry entry;
+- **Dataset** identifies the external comparison target;
+- **ComparisonRule** is the declared structural or statistical rule;
+- **Outcome** is one of the five pipeline outcomes above;
+- **FailureScope** specifies whether any failure attaches to the raw structural claim, the chosen branch, the auxiliary package, the numerical implementation, or the broader mechanism;
+- **Artifacts** points to the reproducibility package.
 
-For **semi-quantitative outputs**, comparison is based on interval consistency, ordering consistency, sign consistency, hierarchy consistency, or likelihood ranking relative to alternatives.
+This prevents the manuscript from reporting “success” or “failure” without specifying what exactly succeeded or failed.
 
-For **quantitative outputs**, comparison uses standard statistical machinery: residuals, normalized residuals, chi-square-type metrics, likelihood scores, posterior predictive checks, or other explicitly declared goodness-of-fit measures. The completion outline already calls for a statistical comparison methodology, tolerance bands, and reproducibility requirements; those become mandatory here. 
-
-#### Stage 6 — Falsification decision
-
-Each comparison must terminate in one of four outcomes:
-
-* **Validated within declared scope**
-* **Provisionally consistent but underdetermined**
-* **Tension requiring revision**
-* **Falsified for this branch/instantiation**
-
-The phrase “validated within declared scope” is intentionally narrow. It does not mean the full theory is proved true. It means only that a specific claim, under specified assumptions and observable mapping, is consistent with the selected observations.
-
-A falsification decision must always specify **what** was falsified:
-
-* the raw structural claim,
-* the chosen representation branch,
-* the auxiliary low-energy model,
-* the numerical implementation,
-* or the broader GU mechanism itself.
-
-This is essential because the draft itself distinguishes general ideas from particular instantiations, and the completion document must not allow that distinction to become an excuse for evading clear failure. The protocol therefore records both local falsification and branch-level survival status. 
-
-#### Stage 7 — Reproducibility package
-
-No comparison result counts unless it is reproducible. Each validation result must therefore ship with a reproducibility package containing:
-
-* the exact formal source references,
-* all assumptions and inserted choices,
-* the observable extraction code or symbolic derivation,
-* numerical solver settings,
-* external data identifiers,
-* statistical scripts,
-* and versioned output artifacts.
-
-This requirement is already implied by the executable-mathematics and simulation architecture sections of the completion scaffold, including symbolic reference implementations, discretization choices, output products, and validation against reference implementations. 
-
-### 4. Observable types and comparison modes
+### 41.5 Observable families and preferred comparison modes
 
 The protocol distinguishes five observable families.
 
-#### 4.1 Structural observables
+#### 41.5.1 Structural observables
 
-These include group reductions, representation content, charge assignments, chirality patterns, multiplicities, family counts, and allowed operator couplings.
+These include group reductions, representation content, charge assignments, chirality patterns, multiplicities, family counts, and allowed operator couplings. They should be tested first because structural disagreement is the cleanest and cheapest falsifier.
 
-These are tested against known structural facts. They require no floating-point fit, only a rigorous extraction of observed content from the formalism. Structural disagreement is the cleanest kind of falsification and should be prioritized first. This matches the completion roadmap’s emphasis on decomposition and branching results before deeper phenomenology. 
+#### 41.5.2 Effective-field observables
 
-#### 4.2 Effective-field observables
+These include whether GU reduces to Einstein-like, Yang–Mills-like, Dirac-like, and Higgs/Klein–Gordon-like sectors in the claimed limits. Validation here means proving and then testing the reduction map, not merely asserting resemblance.
 
-These include whether GU reduces to Einstein-like, Yang–Mills-like, Dirac-like, and Higgs/Klein–Gordon-like sectors in the claimed limits. The draft explicitly presents first- and second-order equations as the source of these recoveries. Validation here means proving and then testing the reduction map, not merely asserting resemblance.  
-
-#### 4.3 Spectral observables
+#### 41.5.3 Spectral observables
 
 These include masses, effective masses, eigenvalue gaps, mode multiplicities, and stability spectra derived from operators or linearized deformation theory. These require a completed operator theory plus declared numerical methods.
 
-#### 4.4 Coupling observables
+#### 41.5.4 Coupling observables
 
-These include effective gauge couplings, mixing matrices, Yukawa-like quantities, and vacuum-expectation-value-derived effective parameters. Since the draft explicitly places Yukawa couplings and the cosmological constant in VEV-type structures, any comparison here must specify the vacuum-selection rule and effective truncation used. 
+These include effective gauge couplings, mixing matrices, Yukawa-like quantities, and vacuum-expectation-value-derived effective parameters. Any comparison here must specify the vacuum-selection rule and effective truncation used.
 
-#### 4.5 New-sector observables
+#### 41.5.5 New-sector observables
 
-These include predicted new particles, dark or looking-glass sectors, exotic spinorial content, or deviations from Standard-Model expectations. The draft explicitly claims algebraic predictions for internal quantum numbers of new particles, but also acknowledges that turning those into energy-scale statements requires additional work. The protocol therefore requires that such claims remain structural or semi-quantitative until a mass-and-production model is truly derived. 
+These include predicted new particles, dark or looking-glass sectors, exotic spinorial content, or deviations from Standard-Model expectations. Such claims remain structural or semi-quantitative unless a mass-and-production model is genuinely derived.
 
-### 5. External data requirements
+### 41.6 Falsification scope discipline
 
-No claim may be compared to “experiment in general.” Each comparison must declare its external data source category. The minimum categories are:
+**Rule 41.6.1 (Scoped falsification).**  
+Every negative comparison must identify the narrowest justified failure scope:
 
-* accepted structural facts of established theory/experiment,
-* curated experimental measurements,
-* astronomical or cosmological observations where relevant,
-* collider bounds and exclusion regions where relevant,
-* lattice or numerical benchmark data where a direct experiment is unavailable,
-* and internal symbolic/numerical cross-checks for formal reductions.
+1. raw structural claim failure;
+2. branch-choice failure;
+3. auxiliary-model failure;
+4. numerical implementation failure;
+5. broader mechanism failure.
 
-For each external source, the protocol must record:
+The manuscript may escalate from a local failure to a broader failure only if the narrower possibilities have been ruled out. This keeps the framework honest without allowing local implementation errors to masquerade as deep theoretical refutations.
 
-* source name,
-* version or release,
-* date accessed,
-* preprocessing applied,
-* and reason that this source is appropriate.
+### 41.7 Minimal active-validation targets
 
-The completion scaffold already says the framework should produce numerically traceable outputs and compare them to external data with reproducibility requirements. This section makes those source declarations mandatory. 
+To keep the verification program concrete, the next admissible validation targets should be:
 
-### 6. Statistical and logical comparison rules
+1. structural extraction of observed spinor/gauge decomposition;
+2. branch-local recovery of Einstein/Yang–Mills/Dirac-like sectors;
+3. perturbative stability and finite-dimensional obstruction data in the elliptic branch;
+4. one end-to-end numerical observable with convergence and refinement checks.
 
-The comparison rule depends on the output class.
+These targets are ordered by cost and diagnostic value: structural tests first, numerical tests last.
 
-For **structural outputs**, use logical consistency tests:
-[
-\text{Pass},\ \text{Fail},\ \text{Underdetermined}.
-]
-No p-values are needed for a charge mismatch or incorrect branching rule.
+### 41.8 Consequence for the manuscript
 
-For **semi-quantitative outputs**, use ordered or interval comparisons:
-[
-\text{Predicted interval} \cap \text{Observed interval} \neq \varnothing,
-]
-plus rank-order checks, sign checks, and monotonicity tests.
-
-For **quantitative outputs**, use declared metrics such as:
-[
-r_i = \frac{O_i - P_i}{\sigma_i},
-\qquad
-\chi^2 = \sum_i r_i^2,
-]
-or other appropriately justified likelihood-based criteria. The key rule is that the metric must be fixed before looking at the result.
-
-In all cases, tolerance bands must be declared in advance and split into:
-
-* observational uncertainty,
-* numerical uncertainty,
-* model-truncation uncertainty,
-* and completion-choice uncertainty.
-
-This decomposition prevents an apparent agreement from being driven entirely by loosely controlled assumptions.
-
-### 7. Falsifier taxonomy
-
-The completion scaffold already anticipates structural, representation-theoretic, dynamical, phenomenological, and simulation falsifiers. The protocol turns these into an operational taxonomy. 
-
-#### 7.1 Structural falsifiers
-
-A structural falsifier occurs when the framework cannot produce the required observed decomposition, representation content, charge pattern, family structure, or operator compatibility. These are the strongest and cleanest falsifiers.
-
-#### 7.2 Representation-theoretic falsifiers
-
-A representation-theoretic falsifier occurs when the branching from GU structures to observed matter/gauge sectors is inconsistent, non-unique in a way that destroys predictive force, or incompatible with known quantum numbers.
-
-#### 7.3 Dynamical falsifiers
-
-A dynamical falsifier occurs when the completed equations are ill-posed, inconsistent, fail to reduce to the claimed effective equations, or yield no physically acceptable solutions in the regime where the draft claims recovery.
-
-#### 7.4 Phenomenological falsifiers
-
-A phenomenological falsifier occurs when an extracted observable disagrees with measured or established observational data beyond declared tolerances.
-
-#### 7.5 Simulation falsifiers
-
-A simulation falsifier occurs when independent implementations of the same formally specified output do not agree, or when numerical convergence fails in a way that invalidates the claimed observable extraction.
-
-### 8. Validation order
-
-The protocol imposes a strict order of validation.
-
-First come **internal mathematical consistency checks**: notation, bundles, signatures, representations, gauge covariance, variational consistency, dimensional analysis, and classical limits. These are already listed in the mathematical validation program and must be passed before any phenomenology is trusted. 
-
-Second come **recovery checks**: can the claimed Einstein-like, Yang–Mills-like, Dirac-like, and Higgs-like sectors actually be extracted in the stated limits? The draft explicitly treats these as central recovery claims, so they are the natural intermediate benchmark.  
-
-Third come **structural phenomenology checks**: charge assignments, family patterns, representation content, and chirality structure.
-
-Only after those pass should the protocol advance to **numerical phenomenology** such as masses, couplings, and new-particle search regions.
-
-This order is not optional. It follows the dependency map’s rule that observed physics must come after the observation mechanism and dynamics are locked down. 
-
-### 9. Validation record template
-
-Every tested claim should be entered in a standard validation record with these fields:
-
-**Validation Record V.n**
-
-* **Claim ID**
-* **Prediction class**: exact structural / semi-quantitative / quantitative
-* **Formal source**
-* **Dependencies**
-* **Inserted assumptions and choices**
-* **Observable extraction map**
-* **Auxiliary model**
-* **Numerical method**, if any
-* **External data source**
-* **Comparison rule**
-* **Tolerance model**
-* **Outcome**
-* **Falsifier status**
-* **Reproducibility package location**
-* **Notes on branch sensitivity**
-
-This template keeps the empirical layer auditable and prevents later prose from overstating what has actually been tested.
-
-### 10. Minimal standard for saying “compared to observation”
-
-The completion document may say that a GU claim has been compared to observation only if all of the following are true:
-
-1. the claim has a declared status,
-2. the formal source is fixed,
-3. the observable extraction map is explicit,
-4. all auxiliary assumptions are listed,
-5. the external data source is named,
-6. the comparison rule is declared in advance,
-7. the result is reproducible,
-8. and a falsifier is stated.
-
-Without those eight items, the document may say only that a comparison program is proposed, not that a real validation has occurred.
-
-### 11. Scope note
-
-This protocol is intentionally stronger than the draft’s rhetorical discussion of the scientific method. The completion document is not the place to defend broad theoretical ambition by loosening empirical standards. Its job is to make GU assessable. A completion program succeeds here not by proving the theory true, but by ensuring that every meaningful claim can, in principle and eventually in practice, survive or fail under explicit comparison to actual observations. That is exactly the standard set by the completion scaffold’s goals of computational readiness and falsifiability readiness. 
-
-The result is a disciplined bridge:
-
-[
-\text{formal GU construction}
-;\to;
-\text{typed prediction}
-;\to;
-\text{observable extraction}
-;\to;
-\text{external data comparison}
-;\to;
-\text{validation or falsification decision}.
-]
-
-That bridge is the minimum machinery required for the later empirical claims of the completion document to count as more than interpretation.
-
-### 42. Falsification Criteria
+The falsification protocol is now closed enough for the document to support explicit validation records. The remaining gap is no longer procedural but substantive: actual proofs, simulations, and comparisons must still be carried out. What this section accomplishes is that any future success or failure can now be reported with branch control, comparison discipline, and scoped falsification rather than rhetorical ambiguity.
 
 ## Falsification and Validation Protocol
 
