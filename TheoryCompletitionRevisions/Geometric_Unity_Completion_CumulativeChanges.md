@@ -9581,6 +9581,262 @@ These five records define the first admissible validation wave:
 Together they give the document its first **actual test queue**. None yet proves the theory physically right. But each one can now succeed or fail in a way that is localizable, reproducible, and non-rhetorical. That is the minimum standard needed before advancing to richer quantitative validation records.
 
 
+## Worked Validation Record W.1 — Instantiated augmented-torsion covariance test
+
+This worked record turns **V.1** into an executable symbolic-plus-numerical test item. Its purpose is not to prove full physical correctness. Its purpose is to demonstrate exactly how one structural validation record is instantiated on a declared branch.
+
+### W.1.1 Branch declaration
+
+We fix the active branch data as follows.
+
+- observerse branch: a branch-admissible local observation chart with fixed pullback package;
+- gauge branch: the typed principal bundle branch from the principal-bundle closure chapter;
+- distinguished connection branch: the active chosen-
+  or-intrinsic branch for \(A_0\);
+- augmented-torsion branch:
+  \[
+  T^{\mathrm{aug}}_\omega = \Theta_{A_0}(A_\omega,B_\omega);
+  \]
+- corrected gauge action: \(g\cdot(A_\omega,B_\omega)\) with representation action \(\rho_g\) on the torsion target space \(\mathcal T\);
+- analytic branch: the elliptic-background Sobolev package already fixed in the regularity chapter.
+
+The branch-local test claim is:
+\[
+T^{\mathrm{aug}}_{g\cdot(A,\omega)}=\rho_g\,T^{\mathrm{aug}}_{(A,\omega)}
+\]
+for every admissible gauge transformation \(g\) in the selected test family.
+
+### W.1.2 Background and test family
+
+We choose a smooth background configuration \(z_\star=(A_\star,\omega_\star)\) on a compact test domain or compactly supported chart patch satisfying the regularity assumptions of the active branch. Around this background, define a one-parameter perturbation family
+\[
+A_\varepsilon=A_\star+\varepsilon a,
+\qquad
+\omega_\varepsilon=\omega_\star+\varepsilon \eta,
+\]
+with \((a,\eta)\) chosen in the admissible tangent space.
+
+Choose an infinitesimal gauge parameter \(u\) and finite test family
+\[
+g_t=\exp(tu),\qquad |t|\le t_{\max},
+\]
+small enough that all transformed configurations remain in the same declared branch.
+
+### W.1.3 Symbolic first-order covariance check
+
+Define the infinitesimal covariance defect
+\[
+\delta_{\mathrm{cov}}(u;A,\omega)
+=
+\left.\frac{d}{dt}\right|_{t=0}
+\Bigl[
+T^{\mathrm{aug}}_{g_t\cdot(A,\omega)}-\rho_{g_t}T^{\mathrm{aug}}_{(A,\omega)}
+\Bigr].
+\]
+The symbolic branch passes the first-order test if
+\[
+\delta_{\mathrm{cov}}(u;A,\omega)=0
+\]
+identically for every admissible \(u\).
+
+For the active branch, this expands as
+\[
+D\Theta_{A_0}|_{(A,\omega)}\bigl(R_{(A,\omega)}u\bigr)
+-
+\rho_*(u)\,\Theta_{A_0}(A,\omega)=0,
+\]
+where \(R_{(A,\omega)}\) is the infinitesimal gauge action and \(\rho_*\) is the induced Lie-algebra action on \(\mathcal T\). This identity is the symbolic source of the numerical record below.
+
+### W.1.4 Finite-transformation residual test
+
+For finite \(t\), define the branch-local residual
+\[
+\mathcal O_{\mathrm{AT}}(t;A,\omega,u)=
+\left\|
+T^{\mathrm{aug}}_{g_t\cdot(A,\omega)}-\rho_{g_t}T^{\mathrm{aug}}_{(A,\omega)}
+\right\|_{H^{s-1}}.
+\]
+The instantiated comparison rule is:
+
+- symbolic target: exact vanishing of the first-order defect;
+- finite-transformation target: \(\mathcal O_{\mathrm{AT}}(t)=\mathcal O(t^2)\) as \(t\to 0\) when the symbolic identity holds;
+- discretized target: under refinement, the measured defect converges to zero at the expected branch-local order once truncation and solver error are controlled.
+
+A branch-consistent stable lower bound
+\[
+\inf_h \sup_{|t|\le t_{\max}} \mathcal O^{(h)}_{\mathrm{AT}}(t) > c > 0
+\]
+is recorded as a falsifying outcome for this augmented-torsion branch.
+
+### W.1.5 Discrete instantiation package
+
+The minimum executable package for W.1 is:
+
+1. a reference symbolic implementation of \(\Theta_{A_0}\), \(\rho_g\), and the infinitesimal defect;
+2. a discrete field container for \((A,\omega)\);
+3. a discrete gauge-action implementation;
+4. a discrete torsion extractor \(\Theta^{(h)}_{A_0}\);
+5. norm evaluation in a branch-compatible discrete analogue of \(H^{s-1}\);
+6. a refinement ladder \(h_0>h_1>\cdots>h_n\);
+7. an error ledger splitting symbolic defect, truncation error, solver tolerance, and representation-action mismatch.
+
+The residual evaluator must be run on at least three families:
+
+- background-only gauge orbit \((A_\star,\omega_\star)\);
+- perturbed orbit \((A_\varepsilon,\omega_\varepsilon)\);
+- mixed perturbation-and-gauge family with varying \(t\) and \(\varepsilon\).
+
+### W.1.6 Worked record entry
+
+**Worked validation record ID**: W-AT-COV-001
+
+**Formal source**: Validation Record V.1; Augmented / Displaced Torsion Completion; Deformation Complex and Linearization Program
+
+**Symbolic observable**:
+\[
+\delta_{\mathrm{cov}}(u;A,\omega)
+\]
+
+**Numerical observable**:
+\[
+\mathcal O_{\mathrm{AT}}^{(h)}(t;A,\omega,u)
+\]
+
+**Comparison rule**: pass if the symbolic defect vanishes identically and the numerical defect converges to zero under refinement with no branch-mixing or gauge-action mismatch; conditional pass if only the numerical branch has been run but residuals show consistent refinement decay; fail if a stable nonzero defect survives symbolic or discrete evaluation.
+
+**Tolerance model**: symbolic tolerance exact; numerical tolerance decomposed into truncation, iterative solve, discrete gauge-action, and norm-estimation error.
+
+**Current status**: instantiated template complete; symbolic proof pending; numerical harness pending.
+
+**Escalation rule**: a failure first demotes the active extractor \(\Theta_{A_0}\); repeated failures across alternative extractors escalate to a challenge against the corrected-gauge torsion strategy itself.
+
+This worked record demonstrates the intended validation style for internal structural claims: the object, branch, observable, test family, tolerance model, and failure semantics are all explicit.
+
+## Worked Validation Record W.2 — Instantiated Shiab principal-symbol and ellipticity test
+
+This worked record turns **V.2** into an executable operator-side validation item. The purpose is to make the document’s analytic claims concrete: if the active Shiab branch is said to support the elliptic-background program, the principal symbol and gauge-fixed composite must exhibit that structure on an explicit test family.
+
+### W.2.1 Branch declaration
+
+We fix the active Shiab branch
+\[
+\Sigma_{\mathrm{mc}}(\Xi)
+=
+\Pi_{\mathcal T}\bigl(\mathcal K_{A_0}(d_{B_\omega}\Xi)\bigr)
++\mathcal L_{A_0}(T^{\mathrm{aug}}_\omega,\Xi),
+\]
+with mapping
+\[
+\Sigma_{\mathrm{mc}}:\mathcal K^s\to\mathcal T^{s-1}.
+\]
+The active analytic branch is the elliptic-background branch from the regularity chapter, with a gauge-fixed second-order composite of Hessian type.
+
+The test claim is not that \(\Sigma_{\mathrm{mc}}\) is canonically unique. The test claim is only that the **active branch** satisfies the declared principal-symbol and coercivity properties needed by the downstream PDE program.
+
+### W.2.2 Background and cotangent test family
+
+Choose a branch-admissible background \(z_\star=(A_\star,\omega_\star)\) and local trivialization over a chart domain. For each nonzero cotangent direction \(\xi\in T_x^*M\setminus\{0\}\), define the principal symbol
+\[
+\sigma\bigl(\Sigma_{\mathrm{mc}}\bigr)(x,\xi):\mathcal K_x\to\mathcal T_x.
+\]
+The gauge-fixed second-order symbol is then
+\[
+\sigma\bigl(\mathcal B_{\mathrm{mc}}^{\mathrm{gf}}\bigr)(x,\xi)
+=
+\sigma\bigl((\Sigma_{\mathrm{mc}}^{\mathrm{gf}})^*\Sigma_{\mathrm{mc}}^{\mathrm{gf}}\bigr)(x,\xi).
+\]
+The sampled test family consists of:
+
+- representative points \(x_j\) in each chart of the background atlas;
+- normalized cotangent directions \(\hat\xi_k\) spanning the unit cosphere to the required resolution;
+- branch-admissible perturbation sectors in \(\mathcal K_x\) used to test rank and conditioning.
+
+### W.2.3 Symbolic symbol computation
+
+The symbolic layer computes the first-order symbol by keeping only the highest-derivative term in the active Shiab branch. For the active branch this gives
+\[
+\sigma\bigl(\Sigma_{\mathrm{mc}}\bigr)(x,\xi)\cdot\Xi
+=
+\Pi_{\mathcal T}\bigl(\mathcal K_{A_0}(i\,\xi\otimes \Xi)\bigr),
+\]
+while the lower-order coupling term \(\mathcal L_{A_0}(T^{\mathrm{aug}}_\omega,\Xi)\) does not contribute to the principal symbol.
+
+The symbolic pass condition is one of the following, depending on the declared branch:
+
+- **elliptic branch**: \(\sigma(\Sigma_{\mathrm{mc}})(x,\xi)\) has branch-declared maximal rank for all \(\xi\neq 0\), equivalently the Hermitian symbol
+  \[
+  H_\Sigma(x,\xi)=\sigma(\Sigma_{\mathrm{mc}})^*\sigma(\Sigma_{\mathrm{mc}})(x,\xi)
+  \]
+  is positive definite on the physical/gauge-fixed subspace;
+- **weaker branch**: degeneracy is allowed only if an explicit alternative well-posedness mechanism was already declared.
+
+### W.2.4 Gauge-fixed ellipticity and coercivity test
+
+The operator-side observable is the symbol defect function
+\[
+\mathcal O_{\Sigma}(x,\xi)=\lambda_{\min}^+\bigl(H_\Sigma(x,\xi)\bigr),
+\]
+where \(\lambda_{\min}^+\) denotes the smallest positive eigenvalue on the declared physical or gauge-fixed subspace.
+
+The gauge-fixed composite observable is
+\[
+\mathcal O_{\mathrm{gf}}(x,\xi)=\lambda_{\min}\bigl(\sigma(\mathcal B_{\mathrm{mc}}^{\mathrm{gf}})(x,\xi)\bigr).
+\]
+The instantiated comparison rule is:
+
+- symbolic pass if the symbol is nondegenerate on the declared subspace for all \(\xi\neq 0\);
+- numerical pass if sampled values of \(\mathcal O_{\Sigma}\) and \(\mathcal O_{\mathrm{gf}}\) stay uniformly positive above a refinement-stable threshold;
+- fail if genuine branch-admissible symbol degeneracy is found with no previously declared alternative mechanism.
+
+### W.2.5 Discrete instantiation package
+
+The minimum executable package for W.2 is:
+
+1. a symbolic notebook deriving \(\sigma(\Sigma_{\mathrm{mc}})\) from the active branch formula;
+2. a local basis implementation for \(\mathcal K_x\) and \(\mathcal T_x\);
+3. code to assemble the symbol matrix for each sampled \((x,\hat\xi)\);
+4. a gauge-fixing projector or gauge-fixed basis reduction;
+5. eigenvalue and condition-number reporting;
+6. a refinement or sampling-density ladder on the unit cosphere;
+7. a defect report distinguishing true symbol degeneracy from numerical ill-conditioning.
+
+The operator harness must report:
+
+- minimum sampled \(\mathcal O_{\Sigma}\);
+- minimum sampled \(\mathcal O_{\mathrm{gf}}\);
+- condition numbers of the symbol matrices;
+- any detected null directions and whether they are pure gauge or physical.
+
+### W.2.6 Worked record entry
+
+**Worked validation record ID**: W-SH-SYM-001
+
+**Formal source**: Validation Record V.2; Shiab Operator Completion; Function Spaces and Regularity; Deformation Complex and Linearization Program
+
+**Symbolic observable**:
+\[
+H_\Sigma(x,\xi)=\sigma(\Sigma_{\mathrm{mc}})^*\sigma(\Sigma_{\mathrm{mc}})(x,\xi)
+\]
+
+**Numerical observables**:
+\[
+\mathcal O_{\Sigma}(x,\xi),
+\qquad
+\mathcal O_{\mathrm{gf}}(x,\xi).
+\]
+
+**Comparison rule**: pass if the symbolic derivation confirms the declared principal-symbol structure and the sampled gauge-fixed symbol remains uniformly nondegenerate on the admissible branch; conditional pass if symbolic structure is clear but numerical sampling remains incomplete; fail if a genuine physical null direction survives gauge-fixing on a branch that claims ellipticity.
+
+**Tolerance model**: symbolic tolerance exact; numerical tolerance decomposed into floating-point spectral error, basis-conditioning error, gauge-fixing error, and sampling-resolution error on the unit cosphere.
+
+**Current status**: instantiated template complete; symbolic derivation pending; operator harness pending.
+
+**Escalation rule**: a failure first demotes the active Shiab branch or its ellipticity claim; repeated failures across admissible Shiab branches weaken the broader analytic program and force a different well-posedness strategy.
+
+This worked record is the operator-theoretic companion to W.1. Together they give the validation program one concrete instantiated record on the torsion/covariance side and one on the symbol/analytic side.
+
+
+
 ---
 
 ## Part X — Delivery Plan
