@@ -2,6 +2,8 @@
 ## Reorganized Cohesive Draft
 
 > Editor's note: this version reorganizes the existing material into the outline established at the beginning of the source document. It prioritizes coherence, reading order, and dependency flow. Where the source file already contained substantive prose, that prose has been moved under the most natural chapter. Where the outline called for a section that was not yet fully written in the source, the section is retained as a structured placeholder rather than filled with invented content.
+> Revision note (March 7, 2026): this version has been extended with a consolidated high-confidence completion pass covering notation normalization, assumption discipline, claim-status refinement, functional-analytic scaffolding, bosonic PDE completion requirements, mathematical-to-computational lowering requirements, and a tightened falsification/validation framework. These additions are intended to supersede earlier partial or duplicate placeholder treatments where overlap occurs.
+
 
 ---
 
@@ -10245,3 +10247,287 @@ Fourth, lower the stabilized branch into computable objects, discrete residual s
 This register should be read as a **completion-program instrument**, not as an indictment of the draft. The draft itself states that it is stitched together from heterogeneous sources, contains notation and methodological drift, and is expected to contain missing components and unresolved issues; the completion document’s purpose is precisely to expose those missing derivations, undefined objects, hidden assumptions, ambiguities, and computational prerequisites without silently repairing them.  
 
 I can turn this into a stricter appendix format next, with IDs like **OP.8.1**, **OP.17.3**, status tags such as **[UNPROVED] [AMBIGUOUS] [SIM-DEPENDENT]**, and a final column for **dependencies / owner chapter / completion criterion**.
+
+
+---
+
+# Consolidated High-Confidence Completion Pass
+
+This consolidated pass updates the manuscript with the parts of the completion program that can be advanced without pretending to resolve the genuinely hard research blockers. It is deliberately conservative. It does not claim to solve the observerse-existence problem, the topological-to-metric spinor bridge, the Zorro transmission theorem, the canonical Shiab classification, or the full observed-field recovery problem. Instead, it upgrades the document wherever the missing work is primarily organizational, formal, analytic, computational, or procedural rather than dependent on a missing breakthrough.
+
+The aim of this pass is to convert previously partial sections into auditable, reusable machinery. In particular, the additions below are intended to make the document better at five things: maintaining notation stability across chapters, forcing every nontrivial closure step into the assumption ledger, separating mathematical support levels from interpretation, exposing the exact analytic prerequisites for variational and PDE work, and enforcing a reproducible bridge from formal output to simulation and observation.
+
+## Integrated Notation and Symbol Governance Addendum
+
+The notation chapters already identify the main sources of drift. This addendum turns those observations into mandatory downstream rules.
+
+First, all symbols that refer to individual geometric objects must be distinguished from symbols that refer to spaces of such objects. Thus an individual connection is written \(A\), but the admissible affine space of connections is written \(\mathcal A\); an individual section is written \(\psi\) or \(\omega\), but the ambient section spaces are written \(\Gamma(E)\), \(\mathcal H\), or \(\mathcal N\) once analytically completed. No chapter may write the same undecorated letter for both an object and its function space.
+
+Second, the two-space nature of the program is to remain visible at all times. Metrics are therefore written \(g_X\) on \(X\) and \(g_Y\) on \(Y\), with induced relations stated explicitly. Levi-Civita connections, curvature tensors, Hodge operators, and spinor structures inherit the same space-sensitive decoration when ambiguity is possible.
+
+Third, spinorial notation must separate topological/chimeric spinors from metric spinors. The document therefore reserves notation such as \(\mathbb S_{\mathrm{top}}(C)\) for topological or chimeric spinor bundles and \(\mathbb S_{\mathrm{met}}(TY,g_Y)\) or \(\mathbb S_{\mathrm{met}}(TX,g_X)\) for metric spinor bundles. Any chapter that moves from one to the other must explicitly identify the completion step or conjectural bridge used.
+
+Fourth, the chimeric bundle may not be referenced as if it were canonical unless the relevant dependency data are present. Its first appearance in any formal chapter must state the roles of the vertical bundle \(V\), the horizontal bundle \(H\) or \(H^*\), the projection \(\pi:Y\to X\), and any connection or metric data on which the horizontal splitting depends.
+
+Fifth, the principal-bundle and gauge chapters must keep the following notational separation: \(P_{\mathrm{main}}\) for the main principal bundle, \(\pi_P\) for its bundle projection, \(G\) for the inhomogeneous gauge group, \(H\) for a stabilizer or subgroup only when formally defined, and \(\tau\) always with stated domain and codomain. No chapter may speak of “the tilted map” without a typed signature.
+
+Sixth, torsion notation is fixed as follows unless a later chapter proves a superior normalization. Ordinary torsion of a connection \(\nabla\) is written \(T^{\nabla}\). The augmented or displaced torsion used in the GU bosonic sector is written \(T^{\mathrm{aug}}_{\omega}\) when it depends on the field \(\omega\), or \(T^{\mathrm{aug}}\) only when dependence is suppressed by context.
+
+Seventh, the Shiab construction is not to be treated as a canonically unique operator unless a later theorem proves uniqueness. The default notation is therefore a family \(\Sigma=\{\Sigma_\alpha\}_{\alpha\in I}\), together with an inserted branch choice if a specific representative is adopted for computation or phenomenology.
+
+Eighth, bundle projections and algebraic projections must remain symbolically distinct. The letter \(\pi\) is reserved for bundle or base projections. Projection-like algebraic operators retain explicit descriptive subscripts such as \(P_E\) for Einsteinian contraction or \(\Pi_{\mathrm{obs}}\) for observed-sector extraction maps.
+
+Ninth, every symbol introduced in a chapter must carry one of three support states on first appearance: draft-native, completion-inserted, or branch-selected. This rule keeps notation from smuggling in hidden closure assumptions.
+
+## Assumption Ledger Reinforcement
+
+The assumption ledger is strengthened by the following completion rule.
+
+Any step needed to make a definition well-typed, a theorem stateable, a variational calculation legal, a PDE problem well-posed, or a numerical discretization meaningful must be explicitly placed into one of four ledger classes:
+
+1. **Inserted Assumption** when mathematical closure is added that is not visibly proved in the draft.
+2. **Inserted Convention** when a normalization or editorial choice is adopted to prevent notation or branch drift.
+3. **Inserted Choice** when one non-unique branch is selected for downstream work.
+4. **Deferred Proof Obligation** when the statement is used only prospectively and is not yet admitted as support.
+
+The following assumptions are now admitted as part of the document’s high-confidence completion layer.
+
+### IA-F1 (Functional-analytic completion of configuration spaces)
+The spaces \(\mathcal A\), \(\mathcal H\), and \(\mathcal N\) are taken to be analytically completed spaces of admissible fields rather than merely formal smooth placeholders. In a compact or compact-with-controlled-boundary setting, the default prototype choice is Sobolev regularity \(H^s\) with \(s\) large enough to make the nonlinear products appearing in the reduced bosonic and fermionic functionals well defined.
+
+### IA-F2 (Boundary and asymptotic data must be part of the problem statement)
+No variational or PDE statement is considered complete without explicit boundary conditions, asymptotic conditions, or compact-support hypotheses sufficient to make integrations by parts and constraint statements meaningful.
+
+### IA-F3 (Gauge quotienting is secondary to typed configuration spaces)
+Until the gauge structure is fully closed, analytical work may be carried out on unreduced configuration spaces, provided the chapter states whether a result is gauge-covariant, gauge-fixed, or only pre-quotient.
+
+### IA-F4 (Branch-local closure is admissible)
+A local completion branch may be analyzed, simulated, or compared with observation without claiming that all alternative branches have been ruled out. Every such result must identify the exact inserted choice that fixed the branch.
+
+### IA-F5 (Observable extraction is external to raw formal output)
+No formal field or operator is automatically an observable. Every comparison to physics must pass through a typed extraction map. This is not optional interpretation; it is part of the document’s completion discipline.
+
+## Claim-Status Refinement Addendum
+
+The claim-status ledger is upgraded by a simple rule: every nontrivial statement used downstream must be support-typed not only by role but by proof level.
+
+The approved proof-level tags are:
+
+- **[DEFINED]** for fixed meaning only;
+- **[DERIVED]** for proved mathematical consequence within the document;
+- **[ASSUMED]** for inserted assumptions required for closure;
+- **[CONJECTURAL]** for structured but unproved claims;
+- **[MAPPING]** for formal-to-physical identifications;
+- **[BRANCH-LOCAL]** for claims valid only after an inserted choice.
+
+A proposition may therefore appear as “Proposition [ASSUMED][BRANCH-LOCAL]” if it depends on an inserted regularity choice and a selected Shiab representative. A phenomenological statement may appear as “Mapping [CONJECTURAL]” if the underlying extraction map is only partially formalized. This two-axis labeling prevents the familiar failure mode in which a mathematically weak statement is rhetorically stabilized by its location in the text.
+
+The document now adopts the following demotions as part of the new understanding.
+
+1. Any statement identifying a GU field component directly with Einstein, Yang–Mills, Dirac, Higgs, Yukawa, or family content is a **Phenomenological Mapping** unless a completed extraction theorem is present.
+2. Any statement that depends on an unresolved topological-to-metric spinor bridge remains **Conjectural** even if the surrounding bundle language is formal.
+3. Any operator statement depending on a non-canonical Shiab choice is **Branch-Local** unless invariance across the admissible family is proved.
+4. Any computational claim is **Branch-Local** and **Assumption-Dependent** unless the exact lowering map, discretization, and solver semantics are fixed.
+
+## Functional-Analytic Scaffolding for \(\mathcal A\), \(\mathcal H\), and \(\mathcal N\)
+
+This section supplies the minimum analytic closure needed to turn the geometric manuscript into something that can support variational statements, PDE questions, and numerical lowering.
+
+### 1. Configuration spaces
+
+Let \(M\) denote the working domain of a selected branch, typically \(Y\) for native fields and \(X\) for observed reductions. The configuration spaces are introduced in three layers.
+
+**Field layer.** Let \(E_{\omega}\to M\) denote the bundle carrying the unified field \(\omega\), let \(E_{\psi}\to M\) denote any spinorial or fermionic bundle selected in the branch under study, and let \(\operatorname{Conn}(P_{\mathrm{main}})\) denote the affine bundle of admissible principal connections.
+
+**Smooth prototype layer.** The formal smooth configuration spaces are
+\[
+\mathcal A_\infty = \Gamma^\infty(\operatorname{Conn}(P_{\mathrm{main}})),\qquad
+\mathcal H_\infty = \Gamma^\infty(E_{\omega}),\qquad
+\mathcal N_\infty = \Gamma^\infty(E_{\psi}).
+\]
+These are useful for symbolic derivations but are not yet sufficient for analysis.
+
+**Analytic completion layer.** For a branch requiring Sobolev control, choose \(s > \dim(M)/2 + k\), where \(k\) is the highest derivative order needed to interpret the nonlinear terms classically. Then define
+\[
+\mathcal A = H^s\text{-connections on }P_{\mathrm{main}},\qquad
+\mathcal H = H^s(M,E_{\omega}),\qquad
+\mathcal N = H^s(M,E_{\psi})\text{ or }H^{s-1/2}\text{ when boundary trace theory is central.}
+\]
+When the problem is elliptic or variational, one may instead work with mixed regularity pairs such as \((H^s,H^{s-1})\) for fields and curvature-like quantities. The exact choice must be declared locally.
+
+### 2. Tangent models and admissible variations
+
+At a configuration \((A,\omega,\psi)\in \mathcal A\times \mathcal H\times \mathcal N\), the formal tangent directions are taken to be
+\[
+T_A\mathcal A \cong H^s(M,T^*M\otimes \operatorname{ad}P_{\mathrm{main}}),\quad
+T_\omega\mathcal H \cong H^s(M,E_{\omega}),\quad
+T_\psi\mathcal N \cong H^s(M,E_{\psi}).
+\]
+If gauge quotienting is imposed, the tangent model must be replaced by a slice, a gauge-fixed subspace, or a deformation complex. Until then, first variation calculations are performed on the unreduced configuration space and only later tested for gauge covariance.
+
+### 3. Functionals and first variation legality
+
+A branch-local action functional has the form
+\[
+\mathscr S(A,\omega,\psi) = \int_M \mathcal L(A,\omega,\psi,\nabla A,\nabla\omega,\nabla\psi,\ldots)\, d\mu,
+\]
+where the omitted arguments may include curvature, torsion, augmented torsion, Shiab-family operators, or lower-order algebraic contractions. Such a functional is admitted into the completion document only if the following are specified:
+
+- the regularity class of every argument,
+- the measure and density convention,
+- the boundary or asymptotic conditions that kill or control boundary terms,
+- and whether the functional is gauge-invariant, gauge-covariant, or gauge-fixed.
+
+A first variation formula is considered complete only when all integration-by-parts steps are justified under the stated regularity and boundary hypotheses.
+
+### 4. PDE classification obligations
+
+Once first and second variations are written, the corresponding equations must be typed. Each branch must declare whether its bosonic and fermionic equations are expected to be elliptic, hyperbolic, mixed-type, constrained evolution, or an auxiliary gauge-fixed system. This requirement matters for well-posedness, discretization, and interpretation. No solver strategy may be chosen before the branch declares its PDE type.
+
+### 5. Default prototype branch for minimal analysis
+
+For a conservative minimal branch, the document now admits the following default prototype assumption set:
+
+- compact spatial domain or compactified model domain,
+- Sobolev regularity high enough for nonlinear closure,
+- gauge-fixed local chart or slice,
+- classical strong solutions sought first,
+- residual minimization or weak formulation used only after the strong form is typed.
+
+This does not solve the full GU analytic problem. It does provide a disciplined baseline branch in which symbolic derivation, residual construction, and numerical experiments can be honestly discussed.
+
+## Bosonic Equations Completion Addendum
+
+The bosonic chapters already identify first-order and second-order structures, but they still need a clearer distinction between equation display and dynamical completion. This addendum supplies that distinction.
+
+### 1. What counts as completed bosonic dynamics
+
+A bosonic branch is considered dynamically complete only when all of the following are present:
+
+1. the exact dynamical variables and their bundles;
+2. the action functional or equivalent first-order generating structure;
+3. the admissible variation class;
+4. the resulting Euler–Lagrange equations in typed form;
+5. the boundary/asymptotic conditions;
+6. the constraint set, if any;
+7. the gauge covariance or gauge-fixing semantics;
+8. the PDE classification;
+9. the reduction rule from native equations on \(Y\) to observed equations on \(X\), if a claimed physical recovery is made.
+
+Without these nine items, the document may present equations, but it may not present a completed bosonic sector.
+
+### 2. Minimum typed bosonic template
+
+For any selected branch, the bosonic equations should be restated in the following schematic typed form:
+\[
+\mathcal E_{\mathrm{bos}}(A,\omega;\Sigma_\alpha,T^{\mathrm{aug}}_{\omega},g_Y,\text{branch data}) = 0.
+\]
+Here \(\Sigma_\alpha\) denotes the chosen Shiab-family representative, \(T^{\mathrm{aug}}_{\omega}\) denotes augmented torsion or its branch-specific replacement, and “branch data” denotes all inserted choices required to make the operator meaningful. This notation is intentionally explicit about non-canonicity.
+
+### 3. First-order versus second-order status
+
+The first-order presentation is admitted as structurally useful, but it is not automatically equivalent to the second-order system. Any chapter claiming equivalence must specify whether the second-order equations are obtained by elimination, variation, integrability, or a formal adjoint construction. If the equivalence is only heuristic, it must be labeled heuristic.
+
+### 4. Variational closure requirements
+
+If the second-order bosonic system is claimed to arise from an action, the completion document now requires the local display of:
+
+- the exact Lagrangian density,
+- the independent variables being varied,
+- the role of background structures,
+- all boundary terms produced in the variation,
+- and the regularity assumptions under which the functional derivative exists.
+
+A second-order equation written without this information is treated as a target form, not a completed derivation.
+
+### 5. Linearization and stability obligation
+
+Every completed bosonic branch must include a linearization step around a declared background solution or background configuration. The linearized operator determines local stability, spectral behavior, and whether the numerical backend should expect stiffness, constraints, or mixed modes. No computational branch is accepted as mature without this linearized model.
+
+## Mathematical-to-Computational Lowering Addendum
+
+The computational chapters are upgraded here from architectural sketches to strict acceptance criteria.
+
+### 1. Lowering principle
+
+Every formal object used in a simulation or validation claim must possess a typed discrete analogue. If an object has no explicit discrete representation, it is not yet part of the executable branch.
+
+The minimum lowering table is:
+
+- manifold chart or atlas \(\rightsquigarrow\) mesh, lattice, sample atlas, or coordinate patch system;
+- vector bundle \(\rightsquigarrow\) typed field container with transition semantics;
+- principal connection \(\rightsquigarrow\) discrete connection data or gauge-link representation;
+- curvature \(\rightsquigarrow\) discrete holonomy, residual stencil, or derived tensor field;
+- augmented torsion \(\rightsquigarrow\) explicit discrete tensor-like field or residual operator term;
+- operator \(\Sigma_\alpha\) \(\rightsquigarrow\) sparse linear or nonlinear operator with declared stencil / assembly rule;
+- action functional \(\rightsquigarrow\) scalar objective, residual norm, or weak-form assembly;
+- observable extraction map \(\mathcal O\) \(\rightsquigarrow\) reproducible post-processing function.
+
+### 2. Required metadata for every lowered object
+
+Each lowered object must carry:
+
+- a symbolic source reference,
+- a branch identifier,
+- units or normalization semantics where meaningful,
+- domain and codomain typing,
+- discretization provenance,
+- and a validation status against a symbolic or manufactured-solution reference.
+
+This metadata is not optional. It is what prevents a fast CUDA/Vulkan implementation from drifting away from the mathematics it is supposed to instantiate.
+
+### 3. Residual-first rule
+
+The first executable form of a branch should be a residual evaluator, not a full production solver. The reason is methodological: a residual evaluator exposes whether the lowering map is coherent before introducing solver-specific failure modes. A branch is therefore considered computationally initialized once it can:
+
+1. assemble all fields into typed state objects,
+2. evaluate the branch-local residuals,
+3. evaluate boundary and constraint residuals,
+4. emit extracted observables,
+5. and compare these against symbolic reference outputs on test cases.
+
+### 4. Reference implementation requirement
+
+Every performance-oriented backend must be paired with a slower symbolic or high-clarity reference implementation. CUDA, GPU, and Vulkan kernels are downstream of correctness, not substitutes for it. A numerical result is only admitted into the document if it can be traced back to a reference implementation on reduced tests.
+
+### 5. Minimal GU v1 acceptance criterion refinement
+
+Minimal GU v1 is now sharpened as follows. A branch counts as a valid Minimal GU v1 implementation only if every formal object used in its equations and every quantity used in its claimed observables appears in the lowering table with an implemented typed counterpart. Missing even one of these objects demotes the result to a partial prototype.
+
+## Falsification and Validation Tightening Addendum
+
+The validation framework is strengthened by making three distinctions mandatory: formal source, extraction rule, and comparison scope.
+
+### 1. Formal source discipline
+
+A prediction is not a sentence in prose. It is a tuple
+\[
+\mathbf P = (\text{formal source},\ \text{branch data},\ \mathcal O,\ \text{auxiliary model},\ \text{comparison rule}).
+\]
+If any component of this tuple is missing, the prediction is not yet admitted into the registry.
+
+### 2. Structural-first falsification
+
+The document now explicitly prioritizes structural falsification over numerical fitting. If a branch yields incompatible representation content, wrong multiplicity, impossible charge assignments, inconsistent chirality, or an invalid recovery limit, that branch is considered structurally falsified before any parameter fitting is attempted. This is the cleanest and most honest failure mode.
+
+### 3. Comparison-scope rule
+
+Every validation statement must say what is being tested: the raw branch, the extraction map, the auxiliary effective model, the numerical implementation, or some combination thereof. The phrase “GU is consistent with observation” is forbidden unless the scope is narrowed to a specific branch and registry item.
+
+### 4. Negative-result preservation
+
+The document now adopts a preservation rule for failures. Any branch-level falsification, numerical instability, or extraction-map failure must remain recorded in the registry rather than silently replaced by a better-performing branch. This is essential to keep the completion program scientific rather than merely adaptive.
+
+### 5. Reproducibility minimum
+
+Every admitted validation item must be reproducible from a package containing the symbolic source, branch selection, code revision, data revision, solver settings, extraction script, and resulting artifact identifiers. This package is part of the claim, not an optional supplement.
+
+## Final Synthesis of the High-Confidence Pass
+
+After this pass, the document is in a better state in the following precise sense.
+
+It now has a stricter notation-governance layer, a reinforced assumption ledger, a two-axis claim-status discipline, an explicit analytic scaffold for configuration spaces and variations, a clearer statement of what bosonic dynamical completion requires, a hard acceptance rule for mathematical-to-computational lowering, and a tighter falsification protocol that refuses to confuse prose interpretation with registry-grade prediction.
+
+What this pass does **not** do is close the genuinely hard research gaps. It does not prove global observerse existence, does not derive the topological-to-metric spinor bridge, does not settle the inhomogeneous gauge-group closure, does not classify the Shiab family canonically, does not derive the full native-to-observed extraction mechanism, and does not validate any specific physical branch. Those remain the real blockers.
+
+But the manuscript is now better prepared for those blockers. When one of them is addressed later, the result can be inserted into a cleaner analytic, computational, and falsification framework rather than into a document that still suffers from unresolved support-level confusion.
