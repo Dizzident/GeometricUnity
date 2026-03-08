@@ -1,0 +1,32 @@
+{
+  "description": "Toy 2D fiber bundle geometry for testing and debugging",
+  "baseSpace": {
+    "spaceId": "X_h",
+    "dimension": 2,
+    "label": "base_X_h"
+  },
+  "ambientSpace": {
+    "spaceId": "Y_h",
+    "dimension": 5,
+    "label": "ambient_Y_h"
+  },
+  "discretizationType": "simplicial",
+  "quadratureRuleId": "simplex-2d-centroid",
+  "basisFamilyId": "P1-simplex-2d",
+  "baseMesh": {
+    "embeddingDimension": 2,
+    "simplicialDimension": 2,
+    "vertexCount": 5,
+    "cellCount": 4,
+    "description": "Unit square split into 4 triangles with center vertex"
+  },
+  "ambientMesh": {
+    "embeddingDimension": 5,
+    "simplicialDimension": 2,
+    "fiberSize": 3,
+    "description": "5D ambient mesh with 3 fiber points per X vertex"
+  },
+  "projectionType": "many-to-one-fiber-projection",
+  "observationType": "section-vertex-aligned",
+  "notes": "Created by ToyGeometryFactory.CreateToy2D(). Suitable for CPU debugging."
+}

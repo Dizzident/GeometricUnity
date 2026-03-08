@@ -53,6 +53,12 @@ BenchmarkDotNet.Artifacts/
 *.dll.lib
 *.exp
 *.pdb
+native/build/
+CMakeCache.txt
+CMakeFiles/
+
+# Benchmark output
+benchmark-results/
 
 # User-specific
 *.rsuser

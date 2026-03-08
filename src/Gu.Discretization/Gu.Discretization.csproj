@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Gu.Core\Gu.Core.csproj" />
+    <ProjectReference Include="..\Gu.Geometry\Gu.Geometry.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,33 @@
+<Solution>
+  <Folder Name="/apps/">
+    <Project Path="apps/Gu.Benchmarks/Gu.Benchmarks.csproj" />
+    <Project Path="apps/Gu.Cli/Gu.Cli.csproj" />
+    <Project Path="apps/Gu.Workbench/Gu.Workbench.csproj" />
+    <Project Path="src/Gu.Core/Gu.Core.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/Gu.Artifacts/Gu.Artifacts.csproj" />
+    <Project Path="src/Gu.Branching/Gu.Branching.csproj" />
+    <Project Path="src/Gu.Discretization/Gu.Discretization.csproj" />
+    <Project Path="src/Gu.ExternalComparison/Gu.ExternalComparison.csproj" />
+    <Project Path="src/Gu.Geometry/Gu.Geometry.csproj" />
+    <Project Path="src/Gu.Interop/Gu.Interop.csproj" />
+    <Project Path="src/Gu.Math/Gu.Math.csproj" />
+    <Project Path="src/Gu.Observation/Gu.Observation.csproj" />
+    <Project Path="src/Gu.ReferenceCpu/Gu.ReferenceCpu.csproj" />
+    <Project Path="src/Gu.Solvers/Gu.Solvers.csproj" />
+    <Project Path="src/Gu.Symbolic/Gu.Symbolic.csproj" />
+    <Project Path="src/Gu.Validation/Gu.Validation.csproj" />
+    <Project Path="src/Gu.VulkanViewer/Gu.VulkanViewer.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Gu.Core.Tests/Gu.Core.Tests.csproj" />
+    <Project Path="tests/Gu.Geometry.Tests/Gu.Geometry.Tests.csproj" />
+    <Project Path="tests/Gu.ReferenceCpu.Tests/Gu.ReferenceCpu.Tests.csproj" />
+    <Project Path="tests/Gu.Artifacts.Tests/Gu.Artifacts.Tests.csproj" />
+    <Project Path="tests/Gu.ExternalComparison.Tests/Gu.ExternalComparison.Tests.csproj" />
+    <Project Path="tests/Gu.Validation.Tests/Gu.Validation.Tests.csproj" />
+    <Project Path="tests/Gu.Interop.Tests/Gu.Interop.Tests.csproj" />
+    <Project Path="tests/Gu.VulkanViewer.Tests/Gu.VulkanViewer.Tests.csproj" />
+  </Folder>
+</Solution>

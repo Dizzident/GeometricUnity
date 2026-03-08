@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/validation.schema.json",
+  "title": "ValidationBundle",
+  "description": "A bundle of validation records for a run.",
+  "type": "object",
+  "required": ["branch", "records", "allPassed"],
+  "properties": {
+    "branch": {
+      "type": "object",
+      "required": ["branchId", "schemaVersion"],
+      "properties": {
+        "branchId": { "type": "string" },
+        "schemaVersion": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["ruleId", "category", "passed", "timestamp"],
+        "properties": {
+          "ruleId": { "type": "string" },
+          "category": { "type": "string" },
+          "passed": { "type": "boolean" },
+          "measuredValue": { "type": "number" },
+          "tolerance": { "type": "number" },
+          "detail": { "type": "string" },
+          "timestamp": { "type": "string", "format": "date-time" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "allPassed": { "type": "boolean" }
+  },
+  "additionalProperties": false
+}

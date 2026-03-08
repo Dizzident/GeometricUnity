@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/geometry.schema.json",
+  "title": "GeometryContext",
+  "description": "Contains both the semantic and discrete geometry information.",
+  "type": "object",
+  "required": [
+    "baseSpace",
+    "ambientSpace",
+    "discretizationType",
+    "quadratureRuleId",
+    "basisFamilyId",
+    "projectionBinding",
+    "observationBinding",
+    "patches"
+  ],
+  "properties": {
+    "baseSpace": { "$ref": "#/$defs/SpaceRef" },
+    "ambientSpace": { "$ref": "#/$defs/SpaceRef" },
+    "discretizationType": { "type": "string" },
+    "quadratureRuleId": { "type": "string" },
+    "basisFamilyId": { "type": "string" },
+    "projectionBinding": { "$ref": "#/$defs/GeometryBinding" },
+    "observationBinding": { "$ref": "#/$defs/GeometryBinding" },
+    "patches": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/PatchInfo" }
+    },
+    "geometryPayload": {
+      "type": "string",
+      "contentEncoding": "base64",
+      "description": "Optional opaque geometry payload"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "SpaceRef": {
+      "type": "object",
+      "required": ["spaceId", "dimension"],
+      "properties": {
+        "spaceId": { "type": "string" },
+        "dimension": { "type": "integer" },
+        "label": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "GeometryBinding": {
+      "type": "object",
+      "required": ["bindingType", "sourceSpace", "targetSpace"],
+      "properties": {
+        "bindingType": { "type": "string" },
+        "sourceSpace": { "$ref": "#/$defs/SpaceRef" },
+        "targetSpace": { "$ref": "#/$defs/SpaceRef" },
+        "mappingStrategy": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "PatchInfo": {
+      "type": "object",
+      "required": ["patchId", "elementCount"],
+      "properties": {
+        "patchId": { "type": "string" },
+        "elementCount": { "type": "integer" },
+        "topologyType": { "type": "string" },
+        "metadata": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

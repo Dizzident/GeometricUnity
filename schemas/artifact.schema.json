@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/artifact.schema.json",
+  "title": "ArtifactBundle",
+  "description": "Complete artifact package for a run, including state, validation, and replay contract.",
+  "type": "object",
+  "required": [
+    "artifactId",
+    "branch",
+    "replayContract",
+    "provenance",
+    "createdAt"
+  ],
+  "properties": {
+    "artifactId": { "type": "string" },
+    "branch": { "$ref": "#/$defs/BranchRef" },
+    "replayContract": { "$ref": "#/$defs/ReplayContract" },
+    "validationBundle": { "$ref": "#/$defs/ValidationBundle" },
+    "observedState": { "$ref": "#/$defs/ObservedState" },
+    "integrity": { "$ref": "#/$defs/IntegrityBundle" },
+    "provenance": { "$ref": "#/$defs/ProvenanceMeta" },
+    "createdAt": { "type": "string", "format": "date-time" }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "BranchRef": {
+      "type": "object",
+      "required": ["branchId", "schemaVersion"],
+      "properties": {
+        "branchId": { "type": "string" },
+        "schemaVersion": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "ProvenanceMeta": {
+      "type": "object",
+      "required": ["createdAt", "codeRevision", "branch"],
+      "properties": {
+        "createdAt": { "type": "string", "format": "date-time" },
+        "codeRevision": { "type": "string" },
+        "branch": { "$ref": "#/$defs/BranchRef" },
+        "backend": { "type": "string" },
+        "notes": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "ReplayContract": {
+      "type": "object",
+      "required": ["branchManifest", "deterministic", "backendId"],
+      "properties": {
+        "branchManifest": { "type": "object" },
+        "deterministic": { "type": "boolean" },
+        "randomSeed": { "type": "integer" },
+        "backendId": { "type": "string" },
+        "nonDeterminismDeclaration": { "type": "string" },
+        "replayTier": { "type": "string", "enum": ["R0", "R1", "R2", "R3"], "default": "R1" }
+      },
+      "additionalProperties": false
+    },
+    "ValidationBundle": {
+      "type": "object",
+      "required": ["branch", "records", "allPassed"],
+      "properties": {
+        "branch": { "$ref": "#/$defs/BranchRef" },
+        "records": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/ValidationRecord" }
+        },
+        "allPassed": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "ValidationRecord": {
+      "type": "object",
+      "required": ["ruleId", "category", "passed", "timestamp"],
+      "properties": {
+        "ruleId": { "type": "string" },
+        "category": { "type": "string" },
+        "passed": { "type": "boolean" },
+        "measuredValue": { "type": "number" },
+        "tolerance": { "type": "number" },
+        "detail": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "additionalProperties": false
+    },
+    "ObservedState": {
+      "type": "object",
+      "required": ["observationBranchId", "observables", "provenance"],
+      "properties": {
+        "observationBranchId": { "type": "string" },
+        "observables": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/ObservableSnapshot" }
+        },
+        "provenance": { "$ref": "#/$defs/ProvenanceMeta" }
+      },
+      "additionalProperties": false
+    },
+    "ObservableSnapshot": {
+      "type": "object",
+      "required": ["observableId", "outputType", "values"],
+      "properties": {
+        "observableId": { "type": "string" },
+        "outputType": { "type": "string", "enum": ["ExactStructural", "SemiQuantitative", "Quantitative"] },
+        "values": { "type": "array", "items": { "type": "number" } },
+        "normalization": { "type": "object" },
+        "signature": { "type": "object" }
+      },
+      "additionalProperties": false
+    },
+    "IntegrityBundle": {
+      "type": "object",
+      "required": ["contentHash", "computedAt"],
+      "properties": {
+        "contentHash": { "type": "string" },
+        "hashAlgorithm": { "type": "string", "default": "SHA-256" },
+        "computedAt": { "type": "string", "format": "date-time" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

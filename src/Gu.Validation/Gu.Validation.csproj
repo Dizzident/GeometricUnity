@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\Gu.Core\Gu.Core.csproj" />
+    <ProjectReference Include="..\Gu.Branching\Gu.Branching.csproj" />
+    <ProjectReference Include="..\Gu.Math\Gu.Math.csproj" />
+  </ItemGroup>
+</Project>

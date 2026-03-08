@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Gu.Core\Gu.Core.csproj" />
+    <ProjectReference Include="..\Gu.Geometry\Gu.Geometry.csproj" />
+    <ProjectReference Include="..\Gu.Solvers\Gu.Solvers.csproj" />
+    <ProjectReference Include="..\Gu.Artifacts\Gu.Artifacts.csproj" />
+    <ProjectReference Include="..\Gu.ExternalComparison\Gu.ExternalComparison.csproj" />
+  </ItemGroup>
+
+</Project>

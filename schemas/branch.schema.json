@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/branch.schema.json",
+  "title": "BranchManifest",
+  "description": "The single most important control object. Defines the active branch configuration for a Minimal GU v1 run.",
+  "type": "object",
+  "required": [
+    "branchId",
+    "schemaVersion",
+    "sourceEquationRevision",
+    "codeRevision",
+    "activeGeometryBranch",
+    "activeObservationBranch",
+    "activeTorsionBranch",
+    "activeShiabBranch",
+    "activeGaugeStrategy",
+    "baseDimension",
+    "ambientDimension",
+    "differentialFormMetricId",
+    "lieAlgebraId",
+    "basisConventionId",
+    "componentOrderId",
+    "adjointConventionId",
+    "pairingConventionId",
+    "normConventionId",
+    "insertedAssumptionIds",
+    "insertedChoiceIds"
+  ],
+  "properties": {
+    "branchId": {
+      "type": "string",
+      "description": "Unique branch identifier"
+    },
+    "schemaVersion": {
+      "type": "string",
+      "description": "Schema version for this manifest format"
+    },
+    "sourceEquationRevision": {
+      "type": "string",
+      "description": "Source-equation revision this branch is based on"
+    },
+    "codeRevision": {
+      "type": "string",
+      "description": "Code revision (e.g., git SHA) that built this manifest"
+    },
+    "activeGeometryBranch": {
+      "type": "string",
+      "description": "Active geometry branch identifier"
+    },
+    "activeObservationBranch": {
+      "type": "string",
+      "description": "Active observation branch identifier"
+    },
+    "activeTorsionBranch": {
+      "type": "string",
+      "description": "Active torsion branch identifier (IX-1)"
+    },
+    "activeShiabBranch": {
+      "type": "string",
+      "description": "Active Shiab branch identifier (IX-2)"
+    },
+    "activeGaugeStrategy": {
+      "type": "string",
+      "description": "Active gauge strategy (IA-4)"
+    },
+    "baseDimension": {
+      "type": "integer",
+      "description": "Base manifold dimension dim(X)"
+    },
+    "ambientDimension": {
+      "type": "integer",
+      "description": "Ambient/total space dimension dim(Y)"
+    },
+    "differentialFormMetricId": {
+      "type": "string",
+      "description": "Differential form metric identifier, separate from Lie algebra pairing"
+    },
+    "lieAlgebraId": {
+      "type": "string",
+      "description": "Lie algebra identifier for the gauge group (IX-3)"
+    },
+    "basisConventionId": {
+      "type": "string",
+      "description": "Basis convention identifier (Section 11)"
+    },
+    "componentOrderId": {
+      "type": "string",
+      "description": "Component ordering convention identifier (Section 11.1)"
+    },
+    "adjointConventionId": {
+      "type": "string",
+      "description": "Adjoint convention identifier (Section 11.2)"
+    },
+    "pairingConventionId": {
+      "type": "string",
+      "description": "Pairing convention identifier (Section 11.3)"
+    },
+    "normConventionId": {
+      "type": "string",
+      "description": "Norm convention identifier"
+    },
+    "insertedAssumptionIds": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Inserted assumptions active in this branch (IA-1 through IA-6)"
+    },
+    "insertedChoiceIds": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Inserted choices active in this branch (IX-1 through IX-5)"
+    },
+    "parameters": {
+      "type": "object",
+      "additionalProperties": { "type": "string" },
+      "description": "Arbitrary branch parameters"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/observed.schema.json",
+  "title": "ObservedState",
+  "description": "The observed state: X-space quantities extracted through sigma_h*.",
+  "type": "object",
+  "required": ["observationBranchId", "observables", "provenance"],
+  "properties": {
+    "observationBranchId": {
+      "type": "string",
+      "description": "Observation branch identifier"
+    },
+    "observables": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["observableId", "outputType", "values"],
+        "properties": {
+          "observableId": { "type": "string" },
+          "outputType": {
+            "type": "string",
+            "enum": ["ExactStructural", "SemiQuantitative", "Quantitative"]
+          },
+          "values": {
+            "type": "array",
+            "items": { "type": "number" }
+          },
+          "normalization": {
+            "type": "object",
+            "properties": {
+              "schemeId": { "type": "string" },
+              "scaleFactor": { "type": "number" },
+              "description": { "type": "string" }
+            }
+          },
+          "signature": { "type": "object" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["createdAt", "codeRevision", "branch"],
+      "properties": {
+        "createdAt": { "type": "string", "format": "date-time" },
+        "codeRevision": { "type": "string" },
+        "branch": {
+          "type": "object",
+          "required": ["branchId", "schemaVersion"],
+          "properties": {
+            "branchId": { "type": "string" },
+            "schemaVersion": { "type": "string" }
+          }
+        },
+        "backend": { "type": "string" },
+        "notes": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

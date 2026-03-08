@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Gu.Core\Gu.Core.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Artifacts\Gu.Artifacts.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Validation\Gu.Validation.csproj" />
+  </ItemGroup>
+
+</Project>

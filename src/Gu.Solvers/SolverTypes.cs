@@ -70,6 +70,15 @@ public sealed class ConvergenceRecord
     /// <summary>Gauge violation norm.</summary>
     public required double GaugeViolation { get; init; }
 
+    /// <summary>
+    /// Ratio of gauge violation to physics residual norm: GaugeViolation / ResidualNorm.
+    /// If this ratio grows during iteration, lambda is too small (gauge modes dominate).
+    /// If physics residual plateaus while gauge violation is small, the solver is healthy.
+    /// Returns 0 when ResidualNorm is 0 (to avoid division by zero).
+    /// </summary>
+    public double GaugeToPhysicsRatio =>
+        ResidualNorm > 0 ? GaugeViolation / ResidualNorm : 0.0;
+
     /// <summary>Step norm ||delta_omega||.</summary>
     public required double StepNorm { get; init; }
 

@@ -1,0 +1,32 @@
+{
+  "description": "Toy 3D fiber bundle geometry for testing and debugging",
+  "baseSpace": {
+    "spaceId": "X_h",
+    "dimension": 3,
+    "label": "base_X_h"
+  },
+  "ambientSpace": {
+    "spaceId": "Y_h",
+    "dimension": 9,
+    "label": "ambient_Y_h"
+  },
+  "discretizationType": "simplicial",
+  "quadratureRuleId": "simplex-3d-centroid",
+  "basisFamilyId": "P1-simplex-3d",
+  "baseMesh": {
+    "embeddingDimension": 3,
+    "simplicialDimension": 3,
+    "vertexCount": 5,
+    "cellCount": 2,
+    "description": "2 tetrahedra sharing a face"
+  },
+  "ambientMesh": {
+    "embeddingDimension": 9,
+    "simplicialDimension": 3,
+    "fiberSize": 2,
+    "description": "9D ambient mesh with 2 fiber points per X vertex"
+  },
+  "projectionType": "many-to-one-fiber-projection",
+  "observationType": "section-vertex-aligned",
+  "notes": "Created by ToyGeometryFactory.CreateToy3D(). Suitable for CPU debugging."
+}
