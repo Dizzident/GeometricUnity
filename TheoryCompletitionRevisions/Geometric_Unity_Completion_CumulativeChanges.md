@@ -1995,15 +1995,310 @@ I can turn this into a **chapter-ready dependency table** with columns for “Co
 
 ### 4. Source Audit of the Draft
 
-> This chapter remains only partially populated in the source material. The present reorganization preserves its position in the document and routes its closest existing content into later chapters such as the notation normalization, claim-status ledger, minimal concept inventory, dependency map, and open problems register.
+## Source Audit of the Draft
+
+This chapter converts the manuscript from a thematic draft into an auditable completion program. Its task is not to decide whether the theory is correct. Its task is to identify, for each major component of the draft, what is already present, what is only partially present, what is ambiguous, what is contradictory or branch-sensitive, and what must be inserted in order for downstream mathematics, simulation, and observational comparison to proceed in a disciplined way.
+
+The audit confirms the central diagnosis stated elsewhere in this completion document: the surviving draft contains a recognizable geometric program, but that program is distributed unevenly across motivational prose, partially formal constructions, operator-level aspirations, and phenomenological interpretation. The result is that many core objects are named before their exact type, regularity class, dependence on prior choices, or proof obligations are fixed. In a completion manuscript, this is not a cosmetic problem. It is the reason later sections can appear more mature than they actually are. The source audit therefore acts as the gating layer for all later completion work.
+
+### 4.1 Audit method
+
+Each component of the source draft is classified using the following statuses:
+
+- **Present**: enough material exists in the source to restate the object or claim in normalized form without adding new mathematical content beyond editorial clarification.
+- **Partial**: the source clearly intends the object or claim, but leaves missing hypotheses, missing maps, missing regularity assumptions, missing equations, or unresolved notation.
+- **Ambiguous**: the source uses the object or claim in more than one way, or leaves its role underdetermined.
+- **Branch-sensitive**: more than one plausible completion is available, and the manuscript must preserve that forking explicitly rather than silently choose one.
+- **Inserted-for-completion**: the completion document must add a convention, analytical framework, or admissibility assumption in order to make the surrounding formalism executable.
+- **Blocked**: the section cannot be completed honestly until earlier dependencies are normalized.
+
+### 4.2 Audit summary by major component
+
+| Component | Source status | Main issue | Completion consequence |
+|---|---|---|---|
+| Core thesis and observerse motivation | Present | Broad claims exceed presently formalized machinery | Can be kept if separated from derived claims |
+| Spaces \((X,Y)\) and observation logic | Partial | Admissibility, locality, and pullback domain restrictions need explicit closure | Blocks observed-field claims if left implicit |
+| Native vs invasive field distinction | Partial | Depends on exact observation-map formalism | Usable after observerse normalization |
+| Chimeric bundle and \(V/H\) split | Partial / Ambiguous | Canonicity and dependence on connection/metric choices not fixed globally | Blocks stable spinor and field-content claims |
+| Topological spinor sector | Partial | Bundle-level construction exists conceptually, but transfer to metric spinors is incomplete | Blocks fermionic interpretability |
+| Main principal bundle and unified field content | Partial | Type of the bundle, field representation, and admissible sections need normalization | Blocks gauge and variational layers |
+| Inhomogeneous gauge group \(G\) and tilted map \(\tau\) | Partial / Ambiguous | Domain, codomain, action, and stabilizer dependence are not fixed once and for all | Blocks symmetry closure |
+| Distinguished connection \(A_0\) | Partial | Ambient bundle, uniqueness status, and construction data remain underdefined | Blocks torsion and operator layers |
+| Augmented/displaced torsion | Partial / Ambiguous | Symbol, type, and transformation law not stabilized | Blocks equation reuse |
+| Shiab operator family | Partial / Branch-sensitive | Family exists conceptually, but no canonical member is justified globally | Blocks fermionic and bosonic operator equations |
+| Function spaces \((\mathcal A,\mathcal H,\mathcal N)\) | Ambiguous | No final regularity/topology assignment in the source | Blocks PDE and computational well-posedness |
+| First- and second-order Lagrangians | Partial | Depend on unresolved operator and torsion choices | Blocks trustworthy dynamics |
+| Deformation complex | Partial | Depends on stabilized equations and gauge action | Cannot precede variational closure |
+| Recovery of observed bosonic/fermionic content | Partial / Conjectural | Formal decomposition and physical identification are mixed | Must be rewritten as mapping plus support status |
+| Prediction and validation claims | Blocked | Observable extraction map is not yet globally fixed | Cannot be treated as verified output |
+
+### 4.3 What the source already gives strongly
+
+The draft already gives enough material to preserve the following as genuine source-native pillars of the program:
+
+1. a two-space architecture rather than an ordinary space-time-first architecture;
+2. a distinction between native and observed field content;
+3. a chimeric or mixed geometric layer intended to mediate bosonic and fermionic structure;
+4. an inhomogeneous gauge-and-connection layer rather than a purely standard gauge presentation;
+5. a variational ambition involving first- and second-order structures;
+6. a claimed route from formal geometry to observed physics through decomposition and observation.
+
+These six pillars justify continuing the completion project. They are strong enough to preserve the draft's identity. They are not strong enough, in their current form, to count as a closed theory.
+
+### 4.4 Main audit findings
+
+#### Finding A. The draft is structurally richer than its present formal closure.
+
+The manuscript names most of the objects needed for a distinctive program, but repeatedly stops one level short of reusability. Objects appear before their type is fixed, equations appear before their operator choices are normalized, and interpretations appear before their derivation status is stabilized.
+
+#### Finding B. Tier-1 normalization is a genuine prerequisite, not editorial polish.
+
+The audit confirms that the notation dictionary, assumption ledger, source audit itself, normalized core vocabulary, and dependency graph are foundational deliverables. They are required because the source draft otherwise allows silent movement between definitions, inserted assumptions, and interpretations.
+
+#### Finding C. The deepest current blocker is not numerical implementation but pre-dynamical closure.
+
+Simulation and observational comparison are downstream problems. The immediate blocker layer is earlier: observerse admissibility, chimeric-bundle closure, stabilized symmetry data, distinguished connection, operator family, and regularity classes.
+
+#### Finding D. Several later claims must be demoted in status until earlier branches are fixed.
+
+Any statement that depends on a canonical Shiab operator, a unique augmented torsion, a unique recovery map, or a closed observed-field decomposition must remain conditional until those branches are resolved or explicitly selected.
+
+### 4.5 Tier-1 blocker register
+
+The following items are the completion-program blockers that unlock the rest of the manuscript:
+
+| Tier-1 blocker | Why it blocks downstream work | Unlocks |
+|---|---|---|
+| Global notation dictionary | Prevents symbol drift across spaces, bundles, operators, and projections | All later formal chapters |
+| Assumption ledger | Prevents inserted assumptions from being mistaken for source-native derivations | Every proof-status and phenomenology chapter |
+| Source audit | Establishes what is truly in the source versus what completion adds | Honest chapter-by-chapter rewriting |
+| Normalized core vocabulary | Fixes the minimum set of indispensable objects and their roles | Observerse, bundle, spinor, and symmetry chapters |
+| Master dependency graph | Prevents writing observed physics before observation and dynamics are defined | Writing order for the rest of the manuscript |
+
+### 4.6 Immediate editorial consequences
+
+From this point onward, every unresolved object in the source must be handled by one of four moves only:
+
+1. **normalize it** if the source already determines it sufficiently;
+2. **mark it branch-sensitive** if more than one completion remains live;
+3. **insert a local assumption** if execution requires a completion choice now;
+4. **defer it explicitly** if its prerequisites are not yet settled.
+
+No fifth move is allowed. In particular, the manuscript must not silently promote an interpretive claim into a derived result, and it must not silently upgrade a convenient analytical assumption into source-native theory content.
+
+### 4.7 Deliverables produced by this audit
+
+This audit chapter is completed together with four concrete Tier-1 deliverables inserted into this manuscript:
+
+- a completed **Normalized Core Vocabulary** chapter;
+- a completed **Master Dependency Graph** chapter;
+- a completed **Appendix B. Global Notation Dictionary**;
+- a completed **Appendix C. Assumption Ledger**.
+
+These sections together complete the first dependency layer of the manuscript and create a stable base for the later mathematical chapters.
+
 
 ### 5. Normalized Core Vocabulary
 
-> The most substantial currently available material for this chapter appears in the Minimal Concept Inventory above and in the notation and status registries.
+## Normalized Core Vocabulary
+
+This chapter fixes the smallest vocabulary that must remain stable for the manuscript to be internally coherent. It does not attempt to close the full theory. It identifies the indispensable objects, states their role in the program, and records whether each object is presently defined enough, only partially defined, or still branch-sensitive.
+
+### 5.1 Rule for inclusion
+
+An object belongs in the normalized core vocabulary if removing it would make at least one later chapter unintelligible or impossible to state without replacement. The chapter therefore includes spaces, maps, bundles, fields, operators, variational objects, and output layers that are structurally indispensable even when their final completion remains pending.
+
+### 5.2 Core vocabulary table
+
+| Object | Normalized name / notation | Role in the manuscript | Present status |
+|---|---|---|---|
+| Base observed space | \(X\) | observed or observationally accessed space | Defined enough |
+| Derived/native space | \(Y\) | space carrying native geometric/field content | Defined enough |
+| Observation map | \(\iota\) or admissible observation map | links \(X\) and \(Y\), enabling pullback/observation | Partial |
+| Observerse | \((X,Y,\iota)\) | replaces single-space starting point | Partial |
+| Native fields | fields native to \(Y\) | objects whose primary definition is on \(Y\) | Partial |
+| Invasive/observed fields | pullback or observed fields on \(X\) | observationally induced content | Partial |
+| Vertical subbundle | \(V\) | one half of mixed/chimeric structure | Partial |
+| Horizontal subbundle | \(H\) | complementary geometric data, often connection-dependent | Partial / Branch-sensitive |
+| Chimeric bundle | \(C\) | mixed bundle built from \(V\) and \(H\)-data | Partial / Ambiguous |
+| Topological spinor bundle | \(\mathbb S_{\mathrm{top}}(C)\) | pre-metric or chimeric spinor layer | Partial |
+| Metric spinor bundle | \(\mathbb S_{\mathrm{met}}(TY,g_Y)\), etc. | physically interpretable metric spinor layer | Partial |
+| Metric on \(X\) | \(g_X\) | observed or Einsteinian metric data | Partial |
+| Metric on \(Y\) | \(g_Y\) | native/derived metric data | Partial |
+| Main principal bundle | \(P_{\mathrm{main}}\) | principal-bundle carrier of unified connection data | Partial |
+| Structure / gauge group | \(G\) | inhomogeneous symmetry group of the unified layer | Partial / Ambiguous |
+| Tilted map | \(\tau\) | branch-specific symmetry map central to gauge structure | Ambiguous |
+| Stabilizer subgroup | \(\mathrm{Stab}(\cdot)\) or named subgroup | fixes relation between chosen datum and \(G\) action | Partial |
+| Connection space | \(\mathcal A\) | admissible affine space of connections | Inserted-for-completion until analysis chapter closes |
+| Distinguished connection | \(A_0\) | chosen / distinguished connection entering operators and torsion | Partial |
+| Unified field | \(\omega\) | native field content on \(Y\) in the draft architecture | Partial |
+| Ordinary torsion | \(T^\nabla\) | standard torsion of a chosen connection | Defined enough conceptually |
+| Augmented torsion | \(T^{\mathrm{aug}}\) | modified torsion central to later dynamics | Partial / Ambiguous |
+| Shiab operator family | \(\Sigma=\{\Sigma_\alpha\}_{\alpha\in I}\) | operator family used in dynamical constructions | Partial / Branch-sensitive |
+| Bosonic function space | \(\mathcal H\) or normalized replacement | admissible bosonic field space | Ambiguous |
+| Fermionic function space | \(\mathcal N\) or normalized replacement | admissible fermionic field space | Ambiguous |
+| First-order Lagrangian | \(\mathcal L_1\) | first dynamical layer | Partial |
+| Second-order Lagrangian | \(\mathcal L_2\) | second dynamical layer / Euler–Lagrange closure | Partial |
+| Deformation complex | \(\mathcal D\) or chapter-local notation | linearized consistency and moduli layer | Partial |
+| Einsteinian projection | \(P_E\) | algebraic projection / contraction used in observed-field reading | Partial |
+| Observable extraction map | \(\mathcal O\) | map from formal outputs to empirical observables | Blocked |
+| Prediction registry entry | typed prediction record | unit of falsifiable comparison | Blocked |
+
+### 5.3 Vocabulary closure rules
+
+The core vocabulary is governed by the following closure rules.
+
+**Rule CV.1.** No later chapter may introduce a new indispensable primitive silently. If a later chapter requires a new object that is not reducible to the vocabulary above, that object must be added here or declared a branch-specific extension.
+
+**Rule CV.2.** Any object listed as partial, ambiguous, or branch-sensitive must carry its status forward locally when used later. Later prose may not behave as though the object has become canonical by familiarity alone.
+
+**Rule CV.3.** The normalized vocabulary distinguishes three levels: source-native objects, completion-inserted analytical objects, and observational-output objects. Those levels may interact, but they must not be conflated.
+
+### 5.4 What is already stable enough for downstream use
+
+The following vocabulary is stable enough to use immediately across the manuscript without further conceptual invention:
+
+- the existence of two spaces \(X\) and \(Y\);
+- the observerse as a triple structure rather than a single manifold setup;
+- the distinction between native and observed field content;
+- the need for a mixed/chimeric geometric layer;
+- the existence of a principal-bundle / connection / operator / Lagrangian pathway;
+- the existence of a downstream observable-comparison stage.
+
+These are the manuscript's architectural constants.
+
+### 5.5 What remains unstable even after normalization
+
+The vocabulary remains deliberately non-final in the following places:
+
+- whether \(H\) is canonical or chosen;
+- whether \(C\) is defined before or after specific metric data are fixed;
+- the exact type and action of \(G\);
+- the exact domain and codomain of \(\tau\);
+- whether there is a canonical distinguished connection \(A_0\) or only a chosen branch;
+- whether augmented torsion is unique or completion-dependent;
+- whether the Shiab operator admits a preferred representative;
+- the analytical topology and regularity class of \(\mathcal A,\mathcal H,\mathcal N\);
+- the exact map from formal quantities to observables.
+
+These unstable items are not defects in the vocabulary chapter. They are exactly the unresolved items the later mathematical chapters must either settle or preserve as branching points.
+
+### 5.6 Completion consequence
+
+With this chapter in place, later sections now have a controlled primitive language. The rest of the manuscript may still be incomplete, but it should no longer be unclear about which objects are indispensable, what role each object plays, and which ones remain unresolved in a way that blocks later work.
+
 
 ### 6. Master Dependency Graph
 
-> The most substantial currently available material for this chapter appears in the dependency map in Part I and in the dependency notes contained in the reader’s guide.
+## Master Dependency Graph
+
+This chapter converts the earlier informal writing-order advice into a chapter-level dependency graph. Its purpose is to prevent the manuscript from presenting downstream claims before the objects they rely on have been fixed. The graph is logical rather than historical: it states what must be completed before something else can be stated rigorously.
+
+### 6.1 Dependency rule
+
+For this manuscript, object or chapter **A** depends on object or chapter **B** if A cannot be stated, interpreted, or tested without making a hidden assumption about B. Whenever such a dependency exists, the manuscript must either complete B first or mark A as conditional on B.
+
+### 6.2 Tiered dependency graph
+
+#### Tier 1 — normalization layer
+
+1. Global notation dictionary  
+2. Assumption ledger  
+3. Source audit  
+4. Normalized core vocabulary  
+5. Master dependency graph  
+
+These items do not solve the theory, but they determine how every later claim is allowed to appear.
+
+#### Tier 2 — pre-dynamical geometric layer
+
+6. Minimal starting data and admissible structures  
+7. Observerse formalization  
+8. Native versus observed field rules  
+9. Chimeric bundle and horizontal/vertical decomposition  
+10. Proto-Riemannian and topological spinor structure  
+
+These items create the geometric stage on which field content can live.
+
+#### Tier 3 — symmetry and connection layer
+
+11. Main principal bundle  
+12. Unified field content  
+13. Admissible function spaces and regularity classes  
+14. Inhomogeneous gauge group \(G\) and tilted structure \(\tau\)  
+15. Distinguished connection \(A_0\)  
+16. Augmented torsion  
+17. Shiab operator family and branch choice  
+
+These items make it possible to write meaningful equations.
+
+#### Tier 4 — dynamical layer
+
+18. First-order Lagrangian  
+19. Second-order Lagrangian  
+20. Bosonic equations  
+21. Fermionic equations  
+22. Deformation complex / linearization program  
+
+These items determine what the theory predicts internally before any observational reading is attempted.
+
+#### Tier 5 — interpretation and test layer
+
+23. Observed field-content decomposition  
+24. Physical dictionary mapping  
+25. Prediction registry  
+26. Falsification and validation protocol  
+27. Computational lowering and simulation framework  
+28. External observation comparison  
+
+These items convert formal outputs into assessable claims.
+
+### 6.3 Dependency table for the main bottlenecks
+
+| Node | Immediate dependencies | Needed for |
+|---|---|---|
+| Observerse formalization | Tier 1 normalization | Native/invasive fields, pullback geometry, observed metrics |
+| Chimeric bundle | Observerse, admissible structures | Topological spinors, mixed field content |
+| Topological spinors | Chimeric bundle, admissible bundle data | Fermionic sector, metric-spinor bridge |
+| Main principal bundle | Core vocabulary, admissible structures | Gauge group, connection space, unified field content |
+| Function spaces | Principal bundle, field-content typing | Variational theory, PDE closure, numerics |
+| Gauge group \(G\) and \(\tau\) | Principal bundle, field content | Distinguished connection, symmetry closure |
+| Distinguished connection \(A_0\) | Gauge structure, function spaces | Torsion, Shiab operators, dynamical couplings |
+| Augmented torsion | \(A_0\), bundle typing | Bosonic equations, field decomposition |
+| Shiab operator family | \(A_0\), spinor layer, function spaces | Bosonic and fermionic dynamics |
+| Lagrangians | Torsion and operator choices | Euler–Lagrange equations, deformation theory |
+| Observed field decomposition | Observerse, dynamics, algebraic projections | Physical dictionary and predictions |
+| Prediction registry | Observed decomposition, observable map | Falsification and external comparison |
+| Simulation framework | Function spaces, equations, observable extraction | Reproducible computation and benchmarking |
+
+### 6.4 Hard blocker statements
+
+The graph yields the following hard blocker statements.
+
+**Blocker D.1.** No observed-physics chapter is complete until the observerse, decomposition rules, and dynamical equations are all fixed.
+
+**Blocker D.2.** No trustworthy fermionic chapter is complete until the chimeric-bundle, spinor, distinguished-connection, and operator-family layers are all fixed.
+
+**Blocker D.3.** No simulation chapter is trustworthy until the function spaces, equations, boundary/initial data conventions, and observable extraction rules are fixed.
+
+**Blocker D.4.** No claim of comparison with observation is admissible until a typed prediction record exists with explicit formal source, observable map, assumptions, external data source, and falsifier.
+
+### 6.5 Practical writing order implied by the graph
+
+The dependency graph implies the following writing order for honest completion work:
+
+1. finish Tier 1 completely;
+2. close observerse and admissible-structure chapters;
+3. close chimeric, spinor, and principal-bundle chapters;
+4. fix function spaces, gauge structure, distinguished connection, torsion, and operator branch;
+5. only then write full bosonic and fermionic equations;
+6. only then write observed-field decomposition and physical mapping chapters;
+7. only then write predictions, falsification protocol, and simulation benchmarks.
+
+### 6.6 Completion consequence
+
+This chapter upgrades the manuscript from a thematic sequence to a dependency-aware program. The later chapters are now constrained by an explicit graph, so any remaining incompleteness can be described honestly as either upstream, downstream, or blocked-by-branch-choice rather than merely “not yet written.”
+
 
 ---
 
@@ -2657,6 +2952,426 @@ This section should end by listing its local proof obligations.
 Those obligations align exactly with the completion roadmap’s separation between spinor formalization, principal-bundle stabilization, fermionic dynamics, and observed field-content recovery.  
 
 If you want, I can write the next section in the same style for **Distinguished Connection, Gauge Structure, and Torsion**.
+
+### 11A. Mathematical Completion Insertions
+
+Below is a drop-in section in the document’s house style. I used the document’s required label classes, status blocks, and chapter-scoped numbering conventions, and I kept the inserted assumptions explicit because the style sheet requires that silent supplementation be avoided.   
+
+You will likely want to place this in the mathematical completion / executable mathematics portion and renumber the chapter index if needed.
+
+---
+
+## Mathematical Completion Insertions
+
+This section records a conservative set of mathematical completion steps that can be added without claiming closure of the full physical theory. The purpose is to convert several partially specified geometric and variational structures into explicit bundle-level objects and derived formal statements suitable for later analytical and computational use.
+
+The items below are intentionally narrow. They address only those gaps that can be closed by standard differential geometry, Clifford-module theory, and variational analysis, while leaving unresolved operator-specific and phenomenological questions explicitly unresolved.
+
+### Inserted Convention IC.21.1 (Fixed-signature metric-bundle branch)
+
+For the purposes of formal completion, let (\sigma=(p,q)) be a fixed nondegenerate signature on a smooth oriented four-manifold (X), and restrict the observerse bundle to metrics of that fixed signature.
+
+More precisely, define
+[
+Y_\sigma
+:=
+{(x,g_x)\mid x\in X,\ g_x\in \mathrm{Sym}^2(T_x^*X),\ \mathrm{sig}(g_x)=\sigma},
+]
+with projection
+[
+\pi:Y_\sigma\to X,\qquad \pi(x,g_x)=x.
+]
+
+**Status:** inserted
+**Source basis:** completion-inserted
+**Dependencies:** A.7.1
+**Used later in:** D.21.1, P.21.1, P.21.2, D.21.2
+**Proof status:** none
+**Prediction sensitivity:** low
+
+**Discussion.** This is a branch-fixing convention rather than a substantive physical claim. It converts the metric bundle discussion into a smooth fixed-signature bundle so that vertical and horizontal structures can be written canonically. The completion document’s own rules permit such branch-fixing where several valid continuations exist, provided the choice is stated explicitly. 
+
+---
+
+### Definition D.21.1 (Vertical bundle, horizontal cotangent bundle, and canonical exact sequences)
+
+Let (Y_\sigma) be as above. The **vertical bundle** (V\subset TY_\sigma) is defined by
+[
+V:=\ker(d\pi).
+]
+
+The **horizontal cotangent bundle** is defined by
+[
+H^* := \pi^*T^*X \subset T^*Y_\sigma
+]
+via the pullback injection ((d\pi)^*:\pi^*T^*X\hookrightarrow T^*Y_\sigma).
+
+Accordingly there are canonical short exact sequences
+[
+0\to V\to TY_\sigma\xrightarrow{d\pi}\pi^*TX\to 0,
+]
+and dually
+[
+0\to H^*=\pi^*T^*X\to T^*Y_\sigma\to V^*\to 0.
+]
+
+**Status:** formal
+**Source basis:** mixed
+**Dependencies:** IC.21.1
+**Used later in:** P.21.1, D.21.2, P.21.2, T.21.1
+**Proof status:** complete
+**Prediction sensitivity:** none
+
+**Derivation.** Since the fixed-signature nondegenerate forms form an open subset of the vector bundle (\mathrm{Sym}^2(T^*X)), the total space (Y_\sigma) is a smooth fiber bundle over (X). The vertical tangent at ((x,g)) is the tangent to the fiber (\pi^{-1}(x)), hence is canonically identified with the tangent space to an open subset of (\mathrm{Sym}^2(T_x^*X)). The exact sequence for (TY_\sigma) is then the standard sequence for a smooth fiber bundle, and the dual sequence follows by dualization.
+
+**Dependency note.** This definition stabilizes the previously drifting use of “vertical,” “horizontal,” and “cotangent pullback” language by assigning each one a canonical bundle-level meaning.
+
+**Unresolved issue.** No Ehresmann connection on (TY_\sigma) is fixed here. Only the cotangent pullback subbundle (H^*=\pi^*T^*X) is fixed canonically.
+
+---
+
+### Proposition P.21.1 (Canonical identification of the vertical bundle)
+
+For each ((x,g)\in Y_\sigma), there is a canonical identification
+[
+V_{(x,g)} \cong \mathrm{Sym}^2(T_x^*X).
+]
+Consequently,
+[
+V\cong \pi^*(\mathrm{Sym}^2 T^*X)
+]
+as vector bundles over (Y_\sigma), and
+[
+\operatorname{rank}(V)=\frac{n(n+1)}2
+]
+in dimension (n=\dim X).
+
+In particular, for (\dim X=4),
+[
+\operatorname{rank}(V)=10.
+]
+
+**Status:** formal
+**Source basis:** completion-derived
+**Dependencies:** D.21.1
+**Used later in:** D.21.2, P.21.2
+**Proof status:** complete
+**Prediction sensitivity:** none
+
+**Proof.** For fixed (x), the fiber (\pi^{-1}(x)) is an open subset of the affine space (\mathrm{Sym}^2(T_x^*X)) cut out by the nondegeneracy and signature conditions. The tangent space to an open subset of a finite-dimensional vector space is canonically the vector space itself. Hence
+[
+T_g(\pi^{-1}(x)) \cong \mathrm{Sym}^2(T_x^*X),
+]
+which is exactly the vertical tangent at ((x,g)). The rank count is the standard dimension of symmetric bilinear forms.
+
+---
+
+### Definition D.21.2 (Chimeric bundle and its natural split metric)
+
+Define the **chimeric bundle**
+[
+C:=V\oplus H^*.
+]
+
+Let the metric on (H^*) be the pullback of the base metric (g), and let the metric on (V\cong \pi^*(\mathrm{Sym}^2T^*X)) be the Frobenius-type bilinear form
+[
+\langle h,k\rangle_F := \operatorname{tr}(g^{-1}h, g^{-1}k),
+\qquad
+h,k\in \mathrm{Sym}^2(T_x^*X).
+]
+
+Equip (C) with the direct-sum bilinear form
+[
+G_C := \langle\cdot,\cdot\rangle_F \oplus \pi^*g^{-1}.
+]
+
+**Status:** formal
+**Source basis:** mixed
+**Dependencies:** D.21.1, P.21.1
+**Used later in:** P.21.2, IA.21.2, T.21.2
+**Proof status:** none
+**Prediction sensitivity:** low
+
+**Discussion.** This supplies a concrete metric structure on the chimeric bundle. It should be regarded as a conservative completion of the document’s intent to combine the vertical metric degrees of freedom and the pulled-back horizontal cotangent structure into a single bundle with an explicit bilinear form.
+
+**Unresolved issue.** Other admissible vertical bilinear forms may exist. This section fixes the Frobenius form because it is canonical once (g) is given and suffices for bundle rank, signature, Clifford, and variational constructions.
+
+---
+
+### Proposition P.21.2 (Rank and signature of the chimeric bundle)
+
+Let (X) be four-dimensional and let the base signature be Lorentzian ((1,3)). Then the chimeric bundle (C=V\oplus H^*) has rank
+[
+\operatorname{rank}(C)=14
+]
+and the natural split metric (G_C) has signature
+[
+\operatorname{sig}(C)=(8,6).
+]
+
+More generally, if (g) has signature ((p,q)), then the Frobenius metric on (V) has signature
+[
+\left(\frac{p(p+1)}2+\frac{q(q+1)}2,\ pq\right),
+]
+and therefore
+[
+\operatorname{sig}(C)
+=====================
+
+\left(\frac{p(p+1)}2+\frac{q(q+1)}2 + p,\ pq+q\right).
+]
+
+**Status:** formal
+**Source basis:** completion-derived
+**Dependencies:** P.21.1, D.21.2
+**Used later in:** IA.21.2, T.21.2
+**Proof status:** complete
+**Prediction sensitivity:** low
+
+**Proof.** The rank statement follows from
+[
+\operatorname{rank}(C)=\operatorname{rank}(V)+\operatorname{rank}(H^*)
+=\frac{n(n+1)}2+n.
+]
+For (n=4), this gives (10+4=14).
+
+For the signature statement, identify (h\in \mathrm{Sym}^2(T_x^*X)) with the (g)-self-adjoint endomorphism (A=g^{-1}h). In a (g)-orthonormal basis with (g=\mathrm{diag}(I_p,-I_q)), every such (A) has block form
+[
+A=
+\begin{pmatrix}
+U & C\
+-C^T & W
+\end{pmatrix},
+]
+where (U^T=U) and (W^T=W). Then
+[
+\operatorname{tr}(A^2)=\operatorname{tr}(U^2)+\operatorname{tr}(W^2)-2\operatorname{tr}(CC^T).
+]
+Thus the positive directions come from the symmetric blocks (U) and (W), contributing
+[
+\frac{p(p+1)}2+\frac{q(q+1)}2,
+]
+and the negative directions come from the mixed block (C), contributing (pq). For Lorentzian ((p,q)=(1,3)), the vertical signature is ((7,3)). Adding the horizontal cotangent signature ((1,3)) yields
+[
+(7,3)\oplus(1,3)=(8,6).
+]
+
+**Dependency note.** This result closes the rank/signature ambiguity sufficiently to permit later Clifford-bundle and spinor-module constructions.
+
+**Unresolved issue.** Whether this signature is physically privileged is not established here. The present statement is purely geometric.
+
+---
+
+### Inserted Assumption IA.21.1 (Sobolev regularity for admissible bosonic and fermionic fields)
+
+For analytical and variational purposes, admissible bosonic fields are taken to lie in Sobolev classes of order (k> \frac{\dim X}{2}+1), and admissible spinor fields are taken in the corresponding Sobolev section spaces over the chosen spinor bundle.
+
+In dimension four, choose
+[
+k\ge 3,
+]
+and set
+[
+\mathcal C^B_k := H^k(X,E_B),
+\qquad
+\mathcal C^F_k := H^k(X,\mathbb S_C),
+]
+where (E_B) denotes the relevant bosonic bundle data and (\mathbb S_C) the chimeric spinor bundle when defined.
+
+**Reason for insertion:** The draft-level objects are not assigned stable regularity classes, but the variational theory, linearization theory, and computational lowering all require function spaces and topologies.
+**Minimality assessment:** conservative
+**Affected sections:** bosonic equations, fermionic sector, simulation lowering, variational analysis
+**Whether removable:** removable if and when a finer analytical framework is specified
+**Prediction sensitivity:** low to medium
+
+**Status:** inserted
+**Source basis:** completion-inserted
+**Dependencies:** D.21.2
+**Used later in:** T.21.1, IA.21.2, computational realization sections
+**Proof status:** none
+**Prediction sensitivity:** medium
+
+**Discussion.** In four dimensions, (H^k) with (k>2+1) is sufficient to control nonlinear products and first-order differential expressions in the standard Sobolev framework. This assumption is deliberately conservative and is inserted only to make the variational and computational program mathematically executable.
+
+---
+
+### Inserted Assumption IA.21.2 (Spin or Spin(^c) admissibility of the chimeric bundle)
+
+Assume that the metric bundle branch and chimeric metric chosen above admit a compatible Clifford-module realization. Concretely, assume either:
+
+1. the orthonormal frame bundle of (C) admits a (\mathrm{Spin}(8,6))-lift, or
+2. more weakly, (C) admits a (\mathrm{Spin}^c(8,6))-lift together with a fixed determinant-line choice sufficient to define a chimeric spinor bundle.
+
+**Reason for insertion:** The completion program requires a bundle-level fermionic realization, but the existence conditions for a global spinorial lift on the chimeric bundle are not supplied by the source material.
+**Minimality assessment:** strengthening
+**Affected sections:** topological spinor formalization, fermionic sector completion, Dirac-type operators, computational lowering
+**Whether removable:** removable only if the draft-native existence argument is reconstructed
+**Prediction sensitivity:** medium
+
+**Status:** inserted
+**Source basis:** completion-inserted
+**Dependencies:** D.21.2, P.21.2
+**Used later in:** T.21.2, fermionic sector, implementation strategy
+**Proof status:** none
+**Prediction sensitivity:** medium
+
+**Discussion.** This is a genuine structural insertion, not a cosmetic normalization. Without it, the tensor-product spinor story can at best be local.
+
+---
+
+### Theorem T.21.1 (First-order bosonic solutions imply second-order Euler–Lagrange solutions)
+
+Let (\mathcal C_k^B) be an admissible bosonic configuration space as in IA.21.1, let (\mathcal E_{k-1}) be a Hilbert target bundle of first-order bosonic residuals, and let
+[
+\Upsilon:\mathcal C_k^B \to \mathcal E_{k-1}
+]
+be a Fréchet differentiable first-order field map. Define the quadratic bosonic action
+[
+I_2(\omega) := \frac12 |\Upsilon(\omega)|_{L^2}^2.
+]
+
+If (D_\omega:=d\Upsilon_\omega) admits an (L^2)-adjoint (D_\omega^*), then every solution of the first-order equation
+[
+\Upsilon(\omega)=0
+]
+is a critical point of (I_2), and therefore satisfies the second-order Euler–Lagrange equation
+[
+D_\omega^*,\Upsilon(\omega)=0.
+]
+
+**Status:** formal
+**Source basis:** completion-derived
+**Dependencies:** IA.21.1
+**Used later in:** bosonic equations completion, minimal GU v1, numerical residual formulation
+**Proof status:** complete
+**Prediction sensitivity:** none
+
+**Proof.** For any variation (\eta\in T_\omega\mathcal C_k^B),
+[
+dI_2(\omega)[\eta]
+==================
+
+# \left\langle d\Upsilon_\omega[\eta],\Upsilon(\omega)\right\rangle_{L^2}
+
+\left\langle D_\omega\eta,\Upsilon(\omega)\right\rangle_{L^2}.
+]
+Assuming (D_\omega^*) exists,
+[
+dI_2(\omega)[\eta]
+==================
+
+\left\langle \eta, D_\omega^*\Upsilon(\omega)\right\rangle_{L^2}.
+]
+Hence the Euler–Lagrange equation is
+[
+D_\omega^*\Upsilon(\omega)=0.
+]
+If (\Upsilon(\omega)=0), then the right-hand side vanishes identically, so (\omega) is a critical point.
+
+**Dependency note.** This theorem justifies the “square-root to quadratic action” relation at the level of general variational structure. It does not identify the specific draft-native operator family; it only shows that once such a first-order operator is defined and regular enough, the implication to a second-order Euler–Lagrange equation is automatic.
+
+**Unresolved issue.** No converse is claimed. A second-order critical point need not solve the first-order equation.
+
+---
+
+### Theorem T.21.2 (Bundle-level factorization of chimeric Clifford modules)
+
+Assume IA.21.2. Then, locally on (Y_\sigma), the Clifford bundle of the chimeric bundle (C=V\oplus H^*) factors as a graded tensor product
+[
+\mathrm{Cl}(C,G_C)\cong \mathrm{Cl}(V,\langle\cdot,\cdot\rangle_F),\widehat\otimes,\mathrm{Cl}(H^*,\pi^*g^{-1}),
+]
+and any corresponding local irreducible Clifford-module bundle may be written as
+[
+\mathbb S_C \cong \mathbb S_V ,\widehat\otimes, \mathbb S_H.
+]
+
+If, in addition, (\nabla^V) and (\nabla^H) are compatible metric connections on (V) and (H^*), then they induce a local chimeric spinor connection of the form
+[
+\nabla^{\mathbb S_C}
+====================
+
+\nabla^{\mathbb S_V}\otimes 1 + 1\otimes \nabla^{\mathbb S_H},
+]
+and the associated Dirac-type operator decomposes locally into the standard graded sum of the vertical and horizontal Dirac-type pieces.
+
+**Status:** formal
+**Source basis:** completion-derived
+**Dependencies:** D.21.2, P.21.2, IA.21.2
+**Used later in:** fermionic sector completion, implementation strategy, minimal GU v1
+**Proof status:** sketched
+**Prediction sensitivity:** low to medium
+
+**Proof sketch.** For orthogonal direct sums of quadratic vector bundles, the Clifford algebra is the graded tensor product of the Clifford algebras of the summands. Module factorization follows from the standard construction of irreducible modules for orthogonal sums. Connection and Dirac decomposition then follow from the induced action on the graded tensor product, with the usual grading operator inserted on one factor when needed to preserve Clifford parity.
+
+**Dependency note.** This theorem upgrades the chimeric-spinor narrative from slogan level to bundle level, subject to the stated lift assumption.
+
+**Unresolved issue.** Global uniqueness, chirality reduction, and physically interpretable representation branching are not established here.
+
+---
+
+### Corollary C.21.1 (Minimal formally executable chimeric fermion package)
+
+Under IA.21.1 and IA.21.2, the quadruple
+[
+(Y_\sigma,\ C,\ \mathbb S_C,\ \nabla^{\mathbb S_C})
+]
+provides a minimally coherent fermionic geometric package sufficient for:
+
+1. writing local Clifford multiplication on the chimeric bundle,
+2. defining Sobolev-class spinor fields,
+3. constructing a local Dirac-type operator, and
+4. lowering the resulting structures into discrete numerical objects in a later computational chapter.
+
+**Status:** formal
+**Source basis:** completion-derived
+**Dependencies:** D.21.2, IA.21.1, IA.21.2, T.21.2
+**Used later in:** mathematical-to-computational lowering, prototype roadmap
+**Proof status:** immediate
+**Prediction sensitivity:** low
+
+**Discussion.** This corollary should not be read as recovery of a realistic fermion sector. It records only that a mathematically serviceable chimeric fermion package now exists for later formal and computational work.
+
+---
+
+### Open Problem OP.21.1 (Intrinsic definition of the distinguished connection)
+
+The present section does not define the distinguished connection (A_0) intrinsically. Any later use of a preferred connection must therefore either:
+
+1. derive it from normalized bundle data,
+2. introduce it by an explicit inserted assumption or choice, or
+3. treat all statements depending on it as conditional.
+
+**Status:** open
+**Source basis:** mixed
+**Dependencies:** none
+**Used later in:** gauge structure, augmented torsion, operator family, bosonic equations
+**Proof status:** deferred
+**Prediction sensitivity:** high
+
+---
+
+### Open Problem OP.21.2 (Definition of augmented torsion and operator family)
+
+The present section does not define the augmented torsion (T_\omega) or the full operator family underlying the draft’s bosonic and fermionic equations. Consequently, the results above establish only the surrounding geometric and variational envelope, not the full dynamical content of the theory.
+
+**Status:** open
+**Source basis:** mixed
+**Dependencies:** T.21.1, T.21.2
+**Used later in:** bosonic equations completion, fermionic sector completion, simulation framework
+**Proof status:** deferred
+**Prediction sensitivity:** high
+
+---
+
+### Section summary
+
+The constructions in this section complete four gaps that are mathematical rather than phenomenological. First, they stabilize the observerse bundle as a fixed-signature metric bundle with canonical vertical and pulled-back horizontal cotangent structure. Second, they compute the rank and natural split signature of the chimeric bundle. Third, they state the minimum admissibility assumptions needed to write a bundle-level chimeric spinor sector. Fourth, they prove the general first-order-to-second-order variational implication needed for the bosonic square-root narrative.
+
+What remains unresolved is not hidden. The distinguished connection, augmented torsion, operator family, and observed-sector decomposition are still open. Those are the next points at which completion can no longer proceed by ordinary differential geometry alone and must instead either recover draft-native constructions or introduce carefully labeled new assumptions.
+
+---
+
+If you want the next step, I’d make it the companion section **“Index, Signature, and Adjoint Conventions”** so this insertion can hook cleanly into the bosonic and fermionic chapters.
 
 ### 12. Reversing the Fundamental Theorem
 
@@ -9225,11 +9940,169 @@ The source outline already specifies this appendix as the mapping from the origi
 
 ### Appendix B. Global Notation Dictionary
 
-A full appendix-style notation dictionary remains to be extracted from the notation normalization work.
+This appendix extracts the document-wide notation rules required for stable downstream writing. It is not the final mathematical glossary for the theory. It is the completion-program dictionary that prevents one symbol from changing role silently across chapters.
+
+#### B.1 Spaces and maps
+
+| Symbol | Meaning | Notes |
+|---|---|---|
+| \(X\) | observed/base space | never interchangeable with \(Y\) |
+| \(Y\) | native/derived space | carries primary native geometric content |
+| \(\iota\) | observation map | chapter-local variants must state domain and codomain explicitly |
+| \(\pi\) | bundle projection | reserved for projection maps, never for principal bundles |
+| \(\mathcal O\) | observable extraction map | reserved for formal-to-empirical output mapping |
+
+#### B.2 Metrics and related data
+
+| Symbol | Meaning | Notes |
+|---|---|---|
+| \(g_X\) | metric on \(X\) | use whenever both spaces are in play |
+| \(g_Y\) | metric on \(Y\) | induced/native role must be stated locally |
+| \(\mathrm{Met}(X)\) | metric bundle or admissible metric family on \(X\) | exact analytical model may be chapter-dependent |
+| \(\mathrm{Met}(Y)\) | metric bundle or admissible metric family on \(Y\) | same normalization rule |
+
+#### B.3 Bundles and decomposition data
+
+| Symbol | Meaning | Notes |
+|---|---|---|
+| \(V\) | vertical subbundle | first formal use must state how defined |
+| \(H\) | horizontal subbundle | first formal use must state whether canonical or chosen |
+| \(C\) | chimeric bundle | do not use before the defining relation to \(V\) and \(H\) is stated |
+| \(P_{\mathrm{main}}\) | main principal bundle | reserve descriptive subscripts for principal bundles |
+| \(P_E\) | Einsteinian projection / contraction | not a principal bundle |
+
+#### B.4 Spinors and related structures
+
+| Symbol | Meaning | Notes |
+|---|---|---|
+| \(\mathbb S_{\mathrm{top}}(C)\) | topological/chimeric spinor bundle | use for pre-metric spinor structure |
+| \(\mathbb S_{\mathrm{met}}(TY,g_Y)\) | metric spinor bundle on \(TY\) | adapt similarly for \(TX\) when needed |
+| source slash-\(S\) notation | quotation-only form | retain only when citing source formulas verbatim |
+
+#### B.5 Connections, torsion, and operators
+
+| Symbol | Meaning | Notes |
+|---|---|---|
+| \(A\) | individual connection | never use for a space of connections |
+| \(\mathcal A\) | admissible affine space of connections | analytical model specified later |
+| \(A_0\) | distinguished connection | branch dependence must be stated if not canonical |
+| \(T^\nabla\) | ordinary torsion | standard torsion of the indicated connection |
+| \(T^{\mathrm{aug}}\) | augmented/displaced torsion | distinct from ordinary torsion in every chapter |
+| \(\Sigma=\{\Sigma_\alpha\}_{\alpha\in I}\) | Shiab operator family | do not write a single canonical Shiab operator unless a choice is explicitly made |
+
+#### B.6 Symmetry and gauge data
+
+| Symbol | Meaning | Notes |
+|---|---|---|
+| \(G\) | inhomogeneous gauge / symmetry group | exact structure fixed in the gauge chapter |
+| \(\tau\) | tilted symmetry map | first formal use must state domain and codomain |
+| \(\mathrm{Stab}(\cdot)\) | stabilizer subgroup | object stabilized must be identified locally |
+
+#### B.7 Function spaces and variational objects
+
+| Symbol | Meaning | Notes |
+|---|---|---|
+| \(\mathcal H\) | admissible bosonic field space | regularity deferred to analytical chapter |
+| \(\mathcal N\) | admissible fermionic field space | same rule |
+| \(\mathcal L_1\) | first-order Lagrangian | reserve for normalized first dynamical layer |
+| \(\mathcal L_2\) | second-order Lagrangian | reserve for normalized second dynamical layer |
+| \(\mathcal D\) | deformation complex / linearization package | exact shape chapter-local but role stable |
+
+#### B.8 Mandatory notation rules
+
+1. \(X\) and \(Y\) are never interchangeable.  
+2. Metrics are decorated whenever both spaces may be in play.  
+3. Plain letters denote individual geometric objects; calligraphic letters denote spaces of such objects.  
+4. Principal bundles use a descriptive \(P_{\bullet}\) notation; projection maps use \(\pi\).  
+5. Topological and metric spinor objects may not share the same undecorated symbol when the distinction matters.  
+6. Ordinary torsion and augmented torsion must always have distinct notation.  
+7. Any non-canonical operator must be written as a family until a branch choice is made explicitly.  
+8. Any object depending on an inserted assumption must declare that dependence at first use.  
+
+#### B.9 Known source-level notation hazards
+
+The source draft uses several symbols in overloaded ways. The main hazards are:
+
+- \(A\) used for both a connection and a space of connections;
+- \(g\) used for metrics on both \(X\) and \(Y\);
+- unstable spinor notation across topological and metric settings;
+- unstable use of \(P\) for both principal-bundle and projection-like meanings;
+- insufficiently typed use of \(\tau\), \(T^{\mathrm{aug}}\), and the Shiab operators.
+
+This appendix resolves those hazards for the completion document even where the underlying mathematics remains to be completed later.
+
 
 ### Appendix C. Assumption Ledger
 
-A full appendix-style assumption ledger remains to be extracted from the claim-status and formalization layers.
+This appendix collects the document-wide inserted assumptions that are required for mathematical closure, analytical executability, or writing discipline. It does not claim that these assumptions belong to the original draft in fully explicit form. The purpose of the ledger is to make completion choices visible and auditable.
+
+#### C.1 Ledger usage rule
+
+Every inserted assumption must be cited locally the first time it is used in a chapter whose argument would fail without it. If a later chapter no longer needs the assumption because the result has been proved or replaced by a stronger theorem, that later chapter should say so explicitly.
+
+#### C.2 Global inserted assumptions
+
+| ID | Assumption | Why inserted | Scope |
+|---|---|---|---|
+| IA-G1 | All later chapters use the normalized notation conventions of Appendix B. | Prevents source symbol drift from reappearing. | Global |
+| IA-G2 | The source audit classifications in Chapter 4 govern claim status unless a later chapter explicitly upgrades or downgrades them. | Prevents silent status inflation. | Global |
+| IA-G3 | Any branch-sensitive object must be treated as non-canonical until a branch is explicitly selected. | Prevents hidden uniqueness assumptions. | Global |
+
+#### C.3 Observerse and pullback assumptions
+
+| ID | Assumption | Why inserted | Scope |
+|---|---|---|---|
+| IA-O1 | Admissible observation maps are at least smooth enough for the pullback operations used in the relevant chapter. | The source uses pullback geometry without a single global regularity declaration. | Observerse, metrics, decomposition |
+| IA-O2 | Observerse constructions are local on \(X\) unless global existence is separately proved. | Prevents global claims from outrunning available construction data. | Observerse and downstream local geometry |
+| IA-O3 | Whenever pullback metric data are used, the observation map is restricted to a domain on which the relevant pullback object is nondegenerate. | Needed for metric and spinor constructions. | Metric-dependent chapters |
+| IA-O4 | A signature sector is fixed whenever metric-spinor or variational constructions require one. | The source does not globally stabilize signature choice. | Spinor, PDE, and Lagrangian chapters |
+
+#### C.4 Bundle and spinor assumptions
+
+| ID | Assumption | Why inserted | Scope |
+|---|---|---|---|
+| IA-B1 | The horizontal data \(H\) are treated as chosen data whenever canonicity is not proved. | The source does not globally prove a canonical horizontal split. | Chimeric bundle chapters |
+| IA-B2 | The chimeric bundle \(C\) is used only after its dependence on \(V\), \(H\), and any metric/connection choice is stated locally. | Prevents silent movement between competing definitions. | Chimeric and spinor chapters |
+| IA-B3 | Whenever a metric spinor bundle is used, the required spin or spin\(^c\) admissibility condition is assumed or explicitly recorded as an open problem. | The source intends spinorial structure without global closure of all topological prerequisites. | Fermionic and metric-spinor chapters |
+
+#### C.5 Gauge, connection, and operator assumptions
+
+| ID | Assumption | Why inserted | Scope |
+|---|---|---|---|
+| IA-GC1 | \(\mathcal A\) denotes an admissible affine space of connections equipped with whatever regularity class is specified in the analytical chapter. | The source names the space but does not globally fix its analytical model. | Gauge, variational, and computational chapters |
+| IA-GC2 | The distinguished connection \(A_0\) is treated as chosen data unless uniqueness or canonical construction is proved in the relevant chapter. | Prevents unearned canonicity. | Torsion and operator chapters |
+| IA-GC3 | Augmented torsion \(T^{\mathrm{aug}}\) is treated as branch-dependent until a unique transformation law is established. | The source does not yet stabilize a single canonical form. | Dynamical chapters |
+| IA-GC4 | The Shiab operator is treated as a family \(\Sigma\), with any selected representative declared explicitly. | The source itself indicates operator-choice sensitivity. | Bosonic and fermionic dynamics |
+| IA-GC5 | The exact group-theoretic data of \(G\) and \(\tau\) remain provisional until fixed in the symmetry chapter. | Prevents later equations from assuming a final symmetry law prematurely. | Symmetry and connection chapters |
+
+#### C.6 Analytical and computational assumptions
+
+| ID | Assumption | Why inserted | Scope |
+|---|---|---|---|
+| IA-A1 | Function spaces \(\mathcal A,\mathcal H,\mathcal N\) are assigned regularity classes sufficient for variation, linearization, and discretization in the relevant chapter. | The source does not yet select final Sobolev/Hilbert/smooth models globally. | PDE and simulation chapters |
+| IA-A2 | Any computational lowering step preserves typed dependence on the branch choices used in the continuous theory. | Prevents code from silently freezing unresolved mathematics. | Computational specification |
+| IA-A3 | Numerical experiments do not count as theory confirmation unless linked to a typed prediction record and an observable extraction map. | Prevents simulation from outrunning validation logic. | Simulation and comparison chapters |
+
+#### C.7 Phenomenology and validation assumptions
+
+| ID | Assumption | Why inserted | Scope |
+|---|---|---|---|
+| IA-P1 | Any identification of formal objects with observed physical content is treated as a phenomenological mapping unless a derivation has already been completed in the manuscript. | Prevents interpretive claims from being presented as theorems. | Physical dictionary and prediction chapters |
+| IA-P2 | No observational comparison is admissible without an explicit formal source, observable map, assumptions list, external data source, and falsifier. | Enforces the falsification discipline of the manuscript. | Prediction and validation chapters |
+
+#### C.8 Retirement rule for inserted assumptions
+
+Inserted assumptions are not meant to become invisible. A later chapter may retire an assumption only by one of the following moves:
+
+1. proving the needed result directly;
+2. replacing the assumption with a weaker theorem-backed hypothesis;
+3. restricting the chapter to a branch where the assumption becomes definitional;
+4. explicitly leaving the issue open and preserving the assumption as active.
+
+#### C.9 Assumption summary
+
+The manuscript now has an explicit ledger for the completion choices it relies on. This does not weaken the document. It is what allows later mathematical closure, simulation planning, and observational comparison to remain honest about what is source-native and what has been added to make the program executable.
+
 
 ### Appendix D. Proof Obligation List
 
