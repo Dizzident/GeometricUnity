@@ -1,0 +1,213 @@
+# Geometric Unity — Minimal GU v1
+
+A reproducible research engine implementing the first executable bosonic branch of Eric Weinstein's Geometric Unity framework. Connection-centered, observerse-based, explicitly discretized, with CPU reference backend, CUDA acceleration, and Vulkan visualization.
+
+## Overview
+
+This system implements the **minimal bosonic executable branch** of the Geometric Unity completion program:
+
+- **Connection omega** on a principal bundle P → Y is the primary dynamical variable
+- **Curvature** F_omega, **torsion** T_omega, and **Shiab** S_omega define the residual Upsilon = S - T
+- **Variational objective** I2(omega) = (1/2) ∫ ⟨Upsilon, Upsilon⟩ dμ drives the solver
+- **Observation pipeline** maps Y-space quantities to X-space observables via pullback σ_h*
+- **Branch manifest** controls all choices — no silent hardcoding
+
+The system is designed as a **research platform**, not a one-off solver.
+
+## Requirements
+
+- [.NET 10 SDK](https://dotnet.microsoft.com/download)
+- (Optional) CUDA Toolkit 13.1+ for GPU acceleration
+- (Optional) Vulkan SDK 1.4+ for visualization
+
+## Building
+
+```bash
+dotnet build
+```
+
+## Running Tests
+
+```bash
+dotnet build && dotnet test --no-build
+```
+
+There are 897+ tests across 8 test projects covering core types, geometry, reference CPU operators, interop, validation, artifacts, observation, and external comparison.
+
+## CLI Usage
+
+The `Gu.Cli` application provides commands for working with branch manifests, run folders, and replay validation.
+
+```bash
+# Run the CLI
+dotnet run --project apps/Gu.Cli -- <command> [args]
+```
+
+### Commands
+
+**Create a branch manifest:**
+```bash
+dotnet run --project apps/Gu.Cli -- create-branch [branchId] [outputPath]
+```
+Creates an empty branch manifest JSON file. Default branch ID is `minimal-gu-v1`.
+
+**Create an environment spec:**
+```bash
+dotnet run --project apps/Gu.Cli -- create-environment [environmentId] [branchId] [outputPath]
+```
+Creates an empty environment specification for running controlled experiments.
+
+**Initialize a run folder:**
+```bash
+dotnet run --project apps/Gu.Cli -- init-run <run-folder> [branchId]
+```
+Creates a canonical run folder with the standard directory structure, branch manifest, and runtime info.
+
+**Validate replay:**
+```bash
+dotnet run --project apps/Gu.Cli -- validate-replay <original-run-folder> <replay-run-folder> [tier]
+```
+Validates that a replay run matches the original at the specified tier (R0/R1/R2/R3). Default tier is R2.
+
+**Verify integrity:**
+```bash
+dotnet run --project apps/Gu.Cli -- verify-integrity <run-folder>
+```
+Computes or verifies SHA-256 integrity hashes for all files in a run folder.
+
+## Running Benchmarks
+
+```bash
+dotnet run --project apps/Gu.Benchmarks
+```
+
+Runs scaling benchmarks (Mode A residual-only), solve benchmarks (Mode B gradient descent), and CPU/GPU parity benchmarks. Results are written to `benchmark-results/`.
+
+## Project Structure
+
+```
+GeometricUnity/
+├── apps/
+│   ├── Gu.Cli/              # Command-line interface
+│   ├── Gu.Workbench/         # Interactive workbench (Vulkan)
+│   └── Gu.Benchmarks/        # Performance benchmarks
+├── src/
+│   ├── Gu.Core/              # Core types: BranchManifest, FieldTensor, TensorSignature, etc.
+│   ├── Gu.Math/              # Lie algebras, structure constants, pairings
+│   ├── Gu.Branching/         # Branch operators: ITorsionBranchOperator, IShiabBranchOperator
+│   ├── Gu.Geometry/          # Simplicial meshes, projections, quadrature
+│   ├── Gu.Discretization/    # Discrete exterior calculus, covariant derivatives
+│   ├── Gu.ReferenceCpu/      # CPU reference: curvature, torsion, Shiab, Jacobian, pipeline
+│   ├── Gu.Solvers/           # Solver modes (A/B/C), gauge penalty, convergence
+│   ├── Gu.Observation/       # Observation pipeline: pullback, transforms, output typing
+│   ├── Gu.Validation/        # Algebraic validation rules, parity checking
+│   ├── Gu.Artifacts/         # Run folders, replay contracts, integrity hashing
+│   ├── Gu.Interop/           # Native interop, GPU buffers, CUDA backend
+│   ├── Gu.VulkanViewer/      # Vulkan visualization (read-only from artifacts)
+│   ├── Gu.ExternalComparison/# External comparison engine
+│   └── Gu.Symbolic/          # Symbolic computation (placeholder)
+├── tests/                    # 8 test projects
+├── native/                   # CUDA kernels (C/CUDA)
+├── examples/                 # Toy 2D/3D geometries for debugging
+└── schemas/                  # JSON schemas for core types
+```
+
+## Architecture
+
+The system enforces three hard separations:
+
+1. **C# orchestration** — types, metadata, control flow, serialization
+2. **Native/CUDA compute** — numerical kernels for heavy workloads
+3. **Vulkan visualization** — read-only, artifact-driven diagnostics
+
+### Core Pipeline
+
+```
+omega (connection)
+  → F_omega (curvature)
+  → T_omega (torsion branch) + S_omega (Shiab branch)
+  → Upsilon = S - T (residual)
+  → I2 = (1/2) ⟨Upsilon, Upsilon⟩ (objective)
+  → J = dUpsilon/domega (Jacobian)
+  → G = J^T M Upsilon (gradient)
+  → solver update → iterate
+  → sigma_h* pullback → observed state
+  → validation → artifacts
+```
+
+### Solver Modes
+
+- **Mode A** — Residual-only: assemble and inspect Upsilon without solving
+- **Mode B** — Objective minimization: gradient descent with optional gauge penalty
+- **Mode C** — Stationarity solve: drive ||J^T M Upsilon|| → 0
+
+### Replay Tiers
+
+- **R0** — Schema-only (archival)
+- **R1** — Observable-invariant structural replay
+- **R2** — Numerical replay (required for validation)
+- **R3** — Bit-exact cross-backend replay (required for parity claims)
+
+## Canonical Run Folder
+
+Every run produces a self-contained artifact folder:
+
+```
+run/
+  manifest/       # branch.json, geometry.json, runtime.json
+  state/          # initial_state.bin, final_state.bin, derived/
+  residuals/      # residual_bundle.json
+  linearization/  # linearization_bundle.json
+  observed/       # observed_state.json
+  validation/     # validation_bundle.json, records/
+  integrity/      # SHA-256 hashes
+  replay/         # replay_contract.json
+  logs/           # solver.log, environment.txt
+```
+
+## Examples
+
+Toy geometries are provided for testing and debugging:
+
+- `examples/toy_branch_2d/` — 2D base manifold (unit square, 4 triangles)
+- `examples/toy_branch_3d/` — 3D base manifold
+
+These are small enough for CPU debugging and step-through verification.
+
+## Workbench (Visualization)
+
+The Vulkan-based workbench loads run folder artifacts for diagnostic visualization and export:
+
+```bash
+dotnet run --project apps/Gu.Workbench -- <run-folder> [options]
+  --export-obj <path>       Export mesh to OBJ format
+  --export-ply <path>       Export mesh to PLY format
+  --export-csv <path>       Export convergence history to CSV
+  --color-scheme <scheme>   viridis | plasma | coolwarm | diverging
+```
+
+Visualization is strictly **read-only** — it consumes artifact snapshots and never modifies computation state.
+
+## Key Design Principles
+
+- **Branch manifest controls everything** — all variable choices (torsion operator, Shiab operator, Lie algebra, gauge parameters) are declared in the manifest and serialized into artifacts
+- **CPU reference before CUDA trust** — every GPU kernel must match a verified CPU reference implementation
+- **Observation discipline** — no Y-space quantity reaches comparison without passing through the σ_h* pullback
+- **Failed runs are first-class artifacts** — negative results are preserved, never silently replaced
+- **No silent hardcoding** — when a formula is not uniquely determined, it becomes a branch-defined interface (Section 23)
+
+## Codebase
+
+- ~235 C# source files (~16,600 lines)
+- ~125 test files (~22,500 lines)
+- 4 native source files (CUDA/Vulkan)
+- Phase 1 (Minimal GU v1): **Complete** — all 13 milestones (M0-M12)
+- Phase 2 (research instrumentation): Planned — branch-independence studies, PDE classification, linearization/stability analysis
+
+## Theory Context
+
+The `TheoryCompletitionRevisions/` directory contains the evolving Geometric Unity Completion manuscript. The software implements the executable portion of this completion program. See `IMPLEMENTATION_PLAN.md` for the full technical specification.
+
+## License
+
+See LICENSE file for details.
