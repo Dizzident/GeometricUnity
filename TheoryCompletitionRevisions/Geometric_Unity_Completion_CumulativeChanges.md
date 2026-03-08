@@ -2154,8 +2154,8 @@ Each component of the source draft is classified using the following statuses:
 | Function spaces \((\mathcal A,\mathcal H,\mathcal N)\) | Ambiguous | No final regularity/topology assignment in the source | Blocks PDE and computational well-posedness |
 | First- and second-order Lagrangians | Branch-defined / Partial | Minimal bosonic variational branch is now typed and sourced; richer branches and fermionic completion remain open | Dynamics now auditable but not fully closed |
 | Deformation complex | Partial | Depends on stabilized equations and gauge action | Cannot precede variational closure |
-| Recovery of observed bosonic/fermionic content | Partial / Conjectural | Formal decomposition and physical identification are mixed | Must be rewritten as mapping plus support status |
-| Prediction and validation claims | Blocked | Observable extraction map is not yet globally fixed | Cannot be treated as verified output |
+| Recovery of observed bosonic/fermionic content | Branch-defined / Partial | A typed branch-local decomposition map is now fixed, but uniqueness and full low-energy identification remain open | Supports structural extraction; quantitative recovery still deferred |
+| Prediction and validation claims | Branch-defined / Partial | Observable extraction is now typed through a declared map and auxiliary-model interface, but branch sensitivity remains | Can now be tracked honestly as scoped outputs rather than global verification |
 
 ### 4.3 What the source already gives strongly
 
@@ -2266,8 +2266,8 @@ An object belongs in the normalized core vocabulary if removing it would make at
 | Second-order Lagrangian | \(\mathcal L_2\) | second dynamical layer / Euler–Lagrange closure | Partial |
 | Deformation complex | \(\mathcal D\) or chapter-local notation | linearized consistency and moduli layer | Partial |
 | Einsteinian projection | \(P_E\) | algebraic projection / contraction used in observed-field reading | Partial |
-| Observable extraction map | \(\mathcal O\) | map from formal outputs to empirical observables | Blocked |
-| Prediction registry entry | typed prediction record | unit of falsifiable comparison | Blocked |
+| Observable extraction map | \(\mathcal O\) | map from formal outputs to empirical observables | Branch-defined |
+| Prediction registry entry | typed prediction record | unit of falsifiable comparison | Defined enough structurally |
 
 ### 5.3 Vocabulary closure rules
 
@@ -5172,6 +5172,189 @@ I can write the next section as **Representation Decomposition and Observed Boso
 
 ### 28. Three Families, 2+1 Structure, and Imposter Generation
 
+## Observed Field-Content Decomposition and Observable Extraction
+
+This section completes the next major post-variational blocker by separating three things that the draft often treats together in prose: formal GU fields on \(Y\), branch-local observed sectors on \(X\), and empirical observables extracted from those observed sectors. The present completion does **not** claim that the physically correct decomposition is now unique. It does fix a typed and auditable branch on which later prediction and falsification records can be based.
+
+### 24.1 Inputs and branch data
+
+Fix a closed observerse branch \((X,Y,\pi,\mathcal I,g_Y)\), a completed bosonic branch \((A_\omega, B_\omega, T^{\mathrm{aug}}_\omega, \Sigma_{\mathrm{mc}}, \Upsilon_\omega)\), and when needed a fermionic branch \((\Psi_{\mathrm{top}},D_F)\). Fix also a chosen observation \(\iota:U\to Y\) and a branch label \(b\) recording all inserted assumptions and completions used upstream.
+
+**Definition 24.1.1 (Observed-decomposition data).**  
+Observed-decomposition data on \((U,\iota,b)\) consist of:
+
+1. the observation operator \(\mathrm{Obs}_\iota\);
+2. a finite family of algebraic or differential projection maps
+   \[
+   \Pi^{(b)}_{\mathrm{grav}},\quad \Pi^{(b)}_{\mathrm{gauge}},\quad \Pi^{(b)}_{\mathrm{scalar}},\quad \Pi^{(b)}_{\mathrm{ferm}},\quad \Pi^{(b)}_{\mathrm{int}},
+   \]
+   each acting on the appropriate observed bundle after pullback to \(U\);
+3. a declared auxiliary package \(\mathfrak A\) consisting of any low-energy truncation, vacuum-selection rule, symmetry-breaking choice, renormalization prescription, discretization scheme, or statistical comparison rule required downstream.
+
+### 24.2 Admissible projection family
+
+**Definition 24.2.1 (Admissible projection family).**  
+A family \(\Pi^{(b)}=\{\Pi^{(b)}_\alpha\}\) is admissible for the observed-field chapter if:
+
+1. each projector is typed on a specified observed bundle or function space;
+2. each projector is local or pseudolocal in a way compatible with the regularity class fixed in Chapter 15;
+3. each projector is equivariant under the residual gauge symmetry of the chosen branch, or its covariance failure is explicitly declared as part of \(\mathfrak A\);
+4. each projector preserves the support status of the object it acts on: derived objects remain derived, approximate identifications remain approximate, and conjectural identifications remain conjectural;
+5. the family is stable under restriction to smaller open sets and therefore compatible with the observerse local-to-global discipline.
+
+These conditions are the minimum needed to prevent the observed decomposition from being a purely narrative step.
+
+### 24.3 Branch-local observed bosonic sectors
+
+**Definition 24.3.1 (Observed gravitational sector).**  
+The branch-local observed metric is
+\[
+ g_{\mathrm{obs}}^{(\iota,b)} := \iota^* g_Y,
+\]
+and the observed gravitational residual is the projected bosonic master field
+\[
+ \mathcal E_{\mathrm{grav}}^{(\iota,b)} := \Pi^{(b)}_{\mathrm{grav}}\bigl(\mathrm{Obs}_\iota(\Upsilon_\omega)\bigr).
+\]
+A gravitational recovery statement is admissible only after a theorem or branch-local proposition identifies the vanishing or smallness of \(\mathcal E_{\mathrm{grav}}^{(\iota,b)}\) with the target Einstein-like equations.
+
+**Definition 24.3.2 (Observed gauge sector).**  
+The branch-local observed gauge residual is
+\[
+ \mathcal E_{\mathrm{gauge}}^{(\iota,b)} := \Pi^{(b)}_{\mathrm{gauge}}\bigl(\mathrm{Obs}_\iota(\Upsilon_\omega)\bigr),
+\]
+with associated observed curvature extracted from
+\[
+ F_{\mathrm{obs}}^{(\iota,b)} := \Pi^{(b)}_{\mathrm{gauge}}\bigl(\mathrm{Obs}_\iota(F_{A_\omega})\bigr).
+\]
+Any Yang–Mills-, Maxwell-, or internal-gauge reading must cite the exact projector and residual subgroup on which this interpretation is made.
+
+**Definition 24.3.3 (Observed scalar / vacuum sector).**  
+The observed scalar sector is the projected observed field
+\[
+ \Phi_{\mathrm{obs}}^{(\iota,b)} := \Pi^{(b)}_{\mathrm{scalar}}\bigl(\mathrm{Obs}_\iota(\omega)\bigr).
+\]
+Any Higgs-, Klein–Gordon-, VEV-, Yukawa-, or cosmological-constant reading is branch-sensitive and must be declared together with the vacuum-selection rule contained in \(\mathfrak A\).
+
+### 24.4 Branch-local observed fermionic sectors
+
+**Definition 24.4.1 (Observed fermionic field).**  
+Given a topological spinor field \(\Psi_{\mathrm{top}}\), the branch-local observed fermionic field is
+\[
+ \Psi_{\mathrm{obs}}^{(\iota,b)} := \Pi^{(b)}_{\mathrm{ferm}}\bigl(\mathrm{Obs}_\iota(\Psi_{\mathrm{top}})\bigr).
+\]
+If the branch includes a local factorization
+\[
+ \mathbb S_{\mathrm{top}}(C)|_U \cong \mathbb S(TX,g_{\mathrm{obs}})\otimes \mathbb S(N_\iota),
+\]
+then the observed internal quantum-number carrier is defined by
+\[
+ Q_{\mathrm{obs}}^{(\iota,b)} := \Pi^{(b)}_{\mathrm{int}}\bigl(\mathbb S(N_\iota)\bigr).
+\]
+This remains a branch-local and possibly only approximate identification until the representation-theoretic decomposition is fully proved.
+
+**Definition 24.4.2 (Family / chirality extraction package).**  
+A family or chirality claim is admissible only if it is produced by a typed map from \(Q_{\mathrm{obs}}^{(\iota,b)}\) and \(\Psi_{\mathrm{obs}}^{(\iota,b)}\) to a discrete structural record, such as multiplicities, chirality assignments, charge labels, or branching multiplicities. Narrative physical analogy does not count as extraction.
+
+### 24.5 The observed-field decomposition map
+
+**Definition 24.5.1 (Observed-field decomposition map).**  
+The branch-local observed-field decomposition map is
+\[
+ \mathfrak D^{(\iota,b)}_{\mathrm{obs}}:
+ \mathrm{Sol}_b(Y) \longrightarrow
+ \mathfrak G_{\mathrm{obs}}(U)\times
+ \mathfrak B_{\mathrm{obs}}(U)\times
+ \mathfrak F_{\mathrm{obs}}(U)\times
+ \mathfrak Q_{\mathrm{obs}}(U),
+\]
+where \(\mathrm{Sol}_b(Y)\) is the solution space of the chosen GU branch, \(\mathfrak G_{\mathrm{obs}}\) is the gravitational output class, \(\mathfrak B_{\mathrm{obs}}\) the non-gravitational bosonic output class, \(\mathfrak F_{\mathrm{obs}}\) the observed fermionic output class, and \(\mathfrak Q_{\mathrm{obs}}\) the internal-quantum-number / representation output class.
+
+Concretely,
+\[
+ \mathfrak D^{(\iota,b)}_{\mathrm{obs}}(s)
+ :=
+ \bigl(
+ g_{\mathrm{obs}}^{(\iota,b)}(s),
+ \mathcal E_{\mathrm{grav}}^{(\iota,b)}(s),
+ F_{\mathrm{obs}}^{(\iota,b)}(s),
+ \Phi_{\mathrm{obs}}^{(\iota,b)}(s),
+ \Psi_{\mathrm{obs}}^{(\iota,b)}(s),
+ Q_{\mathrm{obs}}^{(\iota,b)}(s)
+ \bigr),
+\]
+with omitted entries permitted when a branch does not yet support them.
+
+**Proposition 24.5.2 (Minimal closure of observed decomposition).**  
+Assume the closed observerse branch of Chapter 8, the principal-bundle and distinguished-connection closure of Chapters 12–13, the augmented-torsion and Shiab branches of Chapters 16–17, and the bosonic variational closure of Chapter 20. Then for every chosen observation \(\iota\) and admissible projector family \(\Pi^{(b)}\), the map \(\mathfrak D^{(\iota,b)}_{\mathrm{obs}}\) is a well-typed branch-local construction on the declared regularity class.
+
+**Proof.** Each constituent object is already typed in the earlier chapters, and Chapter 15 supplies the regularity class on which pullback, projection, and operator evaluation are defined. The only unresolved issue is not definability but uniqueness and physical correctness of the chosen projector family. ∎
+
+### 24.6 Observable extraction map
+
+**Definition 24.6.1 (Observable extraction map).**  
+The observable extraction map is the composition
+\[
+ \mathcal O^{(\iota,b,\mathfrak A)}
+ :=
+ \mathcal E^{(\iota,b,\mathfrak A)}\circ
+ \mathfrak D^{(\iota,b)}_{\mathrm{obs}},
+\]
+where
+\[
+ \mathcal E^{(\iota,b,\mathfrak A)}:
+ \mathfrak G_{\mathrm{obs}}\times
+ \mathfrak B_{\mathrm{obs}}\times
+ \mathfrak F_{\mathrm{obs}}\times
+ \mathfrak Q_{\mathrm{obs}}
+ \longrightarrow
+ \mathrm{Obs}_{\mathrm{struct}}\sqcup
+ \mathrm{Obs}_{\mathrm{semi}}\sqcup
+ \mathrm{Obs}_{\mathrm{quant}}
+\]
+is a declared extraction rule into one of the three admissible empirical-output classes.
+
+The auxiliary package \(\mathfrak A\) is part of the definition because many physically meaningful observables are not obtained from raw observed fields alone. They also require low-energy reduction, vacuum choice, effective truncation, numerical discretization, and comparison conventions.
+
+**Definition 24.6.2 (Admitted empirical output classes).**  
+The extraction map may output only:
+
+1. **exact structural observables** (representation content, charge labels, family multiplicities, chirality assignments, allowed couplings);
+2. **semi-quantitative observables** (ordering, sign, hierarchy, allowed-versus-forbidden channels, scale relations up to declared uncertainty);
+3. **quantitative observables** (numerical values with units, normalization, uncertainty decomposition, and reproducible derivation path).
+
+Interpretive identifications and ontological claims are not admissible outputs of \(\mathcal O\) until upgraded into one of these classes.
+
+### 24.7 Prediction record interface
+
+**Definition 24.7.1 (Typed prediction record).**  
+A prediction record \(\mathrm{PR}\) is admissible only if it contains:
+
+1. a claim identifier and output class;
+2. the formal source branch \(b\);
+3. the chosen observation \(\iota\) or stated observation class;
+4. the observed-field decomposition map \(\mathfrak D^{(\iota,b)}_{\mathrm{obs}}\);
+5. the observable extraction map \(\mathcal O^{(\iota,b,\mathfrak A)}\);
+6. the auxiliary package \(\mathfrak A\);
+7. the external dataset or structural fact against which comparison will be made;
+8. the comparison rule and tolerance model;
+9. the falsifier target specifying what would count as failure.
+
+This definition upgrades prediction and validation from a prose intention into a typed interface.
+
+### 24.8 What remains open
+
+The present section resolves the **definability** blocker for observed-field extraction, not the **uniqueness** blocker. The main remaining proof obligations are:
+
+1. prove branch-independent or branch-classified projector families for the observed sectors;
+2. derive a unique representation-theoretic reduction for the internal quantum-number carrier;
+3. prove recovery theorems linking \(\mathcal E^{(\iota,b)}_{\mathrm{grav}}\), \(\mathcal E^{(\iota,b)}_{\mathrm{gauge}}\), and \(\Phi^{(\iota,b)}_{\mathrm{obs}}\) to the target Einstein-, Yang–Mills-, Dirac-, and Higgs-like equations;
+4. prove that quantitative observables obtained after auxiliary modeling are stable under discretization and branch-local perturbations.
+
+### 24.9 Section summary
+
+The manuscript now has a typed route from GU branch solutions on \(Y\) to branch-local observed sectors on \(X\), and from there to admissible empirical outputs. This does not yet prove that the extracted sectors are unique or physically correct. It does mean the document can now distinguish clearly between raw formal objects, observed decompositions, auxiliary modeling choices, and final observables. That is the minimum closure needed before prediction records and falsification claims can be treated as auditable rather than aspirational.
+
+
 ## Prediction Registry
 
 This section closes the empirical-output blocker by turning the manuscript’s outward-facing claims into typed objects with explicit provenance, observable maps, and falsifiers. The earlier version separated exact predictions, approximate predictions, postdictions, and speculative claims. That classification is retained, but it is now made operational rather than merely descriptive.
@@ -5401,7 +5584,7 @@ An item may be mathematically critical but computationally only medium, or physi
 | OP-23 | **Representation decomposition of observed bosons**                                                                       |                  High |      **Critical** |                 Medium | The completion plan explicitly requires branching computations and asks that identifications be sorted into exact, approximate, or conjectural.                                                                     | Standard Model correspondence remains interpretive rather than derivational.                                                          |
 | OP-24 | **Fermionic quantum-number assignment and family structure**                                                              |                  High |      **Critical** |                 Medium | The completion plan flags missing representation-theoretic steps for quantum numbers and family structure.                                                                                                          | Particle-identification claims cannot yet be treated as more than conjectural or phenomenological.                                    |
 | OP-25 | **Three-family vs 2+1 imposter-generation mechanism**                                                                     |                Medium |      **Critical** |                    Low | The completion plan explicitly treats this as a proposal requiring a mathematical mechanism, support criteria, and refutation criteria.                                                                             | One of the draft’s sharpest phenomenological claims remains ungrounded mathematically.                                                |
-| OP-26 | **Observed field extraction procedure**                                                                                   |                  High |      **Critical** |                   High | The concept inventory classifies observed bosonic and fermionic sectors as ambiguous because extraction is not tightly defined.                                                                                     | Prediction and comparison layers cannot trace outputs to formal sources.                                                              |
+| OP-26 | **Observed field extraction procedure**                                                                                   |                Medium |          High |                 Medium | A typed branch-local decomposition and observable extraction interface are now fixed, but uniqueness of projector families and full recovery theorems remain open.                                                    | Structural prediction records are now possible, but quantitative and branch-independent comparison still require further proof.        |
 | OP-27 | **Traceability from assumptions to observables**                                                                          |                Medium |      **Critical** |           **Critical** | The completion outline requires explicit traceability in the phenomenological output layer and in comparison-to-observation.                                                                                        | Numerical outputs would not support disciplined falsification.                                                                        |
 | OP-28 | **Computable object model for manifolds, bundles, sections, connections, torsion, operators, and functionals**            |                Medium |               Low |           **Critical** | The computational chapters explicitly demand typed computable geometric objects and a symbolic data model.                                                                                                          | No executable realization can be claimed, even for a minimal branch.                                                                  |
 | OP-29 | **Mathematical-to-computational lowering completeness**                                                                   |                Medium |               Low |           **Critical** | Minimal GU v1 states that every major formal object must be lowered to a discrete typed object; if any map is missing, the model is only a partial prototype.                                                       | Prevents any honest claim of simulation readiness.                                                                                    |
@@ -10354,7 +10537,7 @@ An item may be mathematically critical but computationally only medium, or physi
 | OP-23 | **Representation decomposition of observed bosons**                                                                       |                  High |      **Critical** |                 Medium | The completion plan explicitly requires branching computations and asks that identifications be sorted into exact, approximate, or conjectural.                                                                     | Standard Model correspondence remains interpretive rather than derivational.                                                          |
 | OP-24 | **Fermionic quantum-number assignment and family structure**                                                              |                  High |      **Critical** |                 Medium | The completion plan flags missing representation-theoretic steps for quantum numbers and family structure.                                                                                                          | Particle-identification claims cannot yet be treated as more than conjectural or phenomenological.                                    |
 | OP-25 | **Three-family vs 2+1 imposter-generation mechanism**                                                                     |                Medium |      **Critical** |                    Low | The completion plan explicitly treats this as a proposal requiring a mathematical mechanism, support criteria, and refutation criteria.                                                                             | One of the draft’s sharpest phenomenological claims remains ungrounded mathematically.                                                |
-| OP-26 | **Observed field extraction procedure**                                                                                   |                  High |      **Critical** |                   High | The concept inventory classifies observed bosonic and fermionic sectors as ambiguous because extraction is not tightly defined.                                                                                     | Prediction and comparison layers cannot trace outputs to formal sources.                                                              |
+| OP-26 | **Observed field extraction procedure**                                                                                   |                Medium |          High |                 Medium | A typed branch-local decomposition and observable extraction interface are now fixed, but uniqueness of projector families and full recovery theorems remain open.                                                    | Structural prediction records are now possible, but quantitative and branch-independent comparison still require further proof.        |
 | OP-27 | **Traceability from assumptions to observables**                                                                          |                Medium |      **Critical** |           **Critical** | The completion outline requires explicit traceability in the phenomenological output layer and in comparison-to-observation.                                                                                        | Numerical outputs would not support disciplined falsification.                                                                        |
 | OP-28 | **Computable object model for manifolds, bundles, sections, connections, torsion, operators, and functionals**            |                Medium |               Low |           **Critical** | The computational chapters explicitly demand typed computable geometric objects and a symbolic data model.                                                                                                          | No executable realization can be claimed, even for a minimal branch.                                                                  |
 | OP-29 | **Mathematical-to-computational lowering completeness**                                                                   |                Medium |               Low |           **Critical** | Minimal GU v1 states that every major formal object must be lowered to a discrete typed object; if any map is missing, the model is only a partial prototype.                                                       | Prevents any honest claim of simulation readiness.                                                                                    |
@@ -10671,7 +10854,7 @@ An item may be mathematically critical but computationally only medium, or physi
 | OP-23 | **Representation decomposition of observed bosons**                                                                       |                  High |      **Critical** |                 Medium | The completion plan explicitly requires branching computations and asks that identifications be sorted into exact, approximate, or conjectural.                                                                     | Standard Model correspondence remains interpretive rather than derivational.                                                          |
 | OP-24 | **Fermionic quantum-number assignment and family structure**                                                              |                  High |      **Critical** |                 Medium | The completion plan flags missing representation-theoretic steps for quantum numbers and family structure.                                                                                                          | Particle-identification claims cannot yet be treated as more than conjectural or phenomenological.                                    |
 | OP-25 | **Three-family vs 2+1 imposter-generation mechanism**                                                                     |                Medium |      **Critical** |                    Low | The completion plan explicitly treats this as a proposal requiring a mathematical mechanism, support criteria, and refutation criteria.                                                                             | One of the draft’s sharpest phenomenological claims remains ungrounded mathematically.                                                |
-| OP-26 | **Observed field extraction procedure**                                                                                   |                  High |      **Critical** |                   High | The concept inventory classifies observed bosonic and fermionic sectors as ambiguous because extraction is not tightly defined.                                                                                     | Prediction and comparison layers cannot trace outputs to formal sources.                                                              |
+| OP-26 | **Observed field extraction procedure**                                                                                   |                Medium |          High |                 Medium | A typed branch-local decomposition and observable extraction interface are now fixed, but uniqueness of projector families and full recovery theorems remain open.                                                    | Structural prediction records are now possible, but quantitative and branch-independent comparison still require further proof.        |
 | OP-27 | **Traceability from assumptions to observables**                                                                          |                Medium |      **Critical** |           **Critical** | The completion outline requires explicit traceability in the phenomenological output layer and in comparison-to-observation.                                                                                        | Numerical outputs would not support disciplined falsification.                                                                        |
 | OP-28 | **Computable object model for manifolds, bundles, sections, connections, torsion, operators, and functionals**            |                Medium |               Low |           **Critical** | The computational chapters explicitly demand typed computable geometric objects and a symbolic data model.                                                                                                          | No executable realization can be claimed, even for a minimal branch.                                                                  |
 | OP-29 | **Mathematical-to-computational lowering completeness**                                                                   |                Medium |               Low |           **Critical** | Minimal GU v1 states that every major formal object must be lowered to a discrete typed object; if any map is missing, the model is only a partial prototype.                                                       | Prevents any honest claim of simulation readiness.                                                                                    |
