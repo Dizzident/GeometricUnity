@@ -3,6 +3,7 @@
 
 > Editor's note: this version reorganizes the existing material into the outline established at the beginning of the source document. It prioritizes coherence, reading order, and dependency flow. Where the source file already contained substantive prose, that prose has been moved under the most natural chapter. Where the outline called for a section that was not yet fully written in the source, the section is retained as a structured placeholder rather than filled with invented content.
 > Revision note (March 7, 2026): this version has been extended with a consolidated high-confidence completion pass covering notation normalization, assumption discipline, claim-status refinement, observerse closure, chimeric/spinor formalization, Zorro metric-to-connection transmission, principal-bundle and gauge-structure closure, an intrinsic distinguished-connection branch, functional-analytic scaffolding, bosonic PDE completion requirements, mathematical-to-computational lowering requirements, and a tightened falsification/validation framework. These additions are intended to supersede earlier partial or duplicate placeholder treatments where overlap occurs.
+> Additional revision note (March 7, 2026, second completion pass): the document now includes an explicit blocker-resolution sequence matching the dependency plan: global observerse closure, canonical versus semi-canonical chimeric realization, typed principal-bundle and tilted-gauge closure, intrinsic-versus-chosen distinguished-connection discipline, and a deferred-obligations program for the remaining topological-spinor items. The goal of this pass is not to claim final physical closure, but to make the dependency chain auditable and usable by later proof, simulation, and falsification sections.
 
 
 ---
@@ -2548,7 +2549,7 @@ An ambient observerse is any branch in which \((Y)\) is not identified with the 
 
 The Einsteinian observerse is the branch needed by the downstream chimeric and spinor sections. The ambient case remains important, but it does not yet carry the same degree of closure in the source material.
 
-### 8.7 Locality, existence, and branch control
+### 8.7 Global admissibility and local-to-global closure
 
 **Inserted Assumption 8.7.1 (Smooth regularity).**  
 All observerse data are \(C^\infty\) unless a later analytical chapter explicitly weakens regularity.
@@ -2559,9 +2560,20 @@ All observerse constructions are local on \((X)\) unless global existence is sep
 **Inserted Assumption 8.7.3 (Signature branch fixation).**  
 Whenever metric-spinor, Clifford, or variational constructions are used, a fixed admissible signature sector is chosen once and carried consistently through the relevant branch.
 
-These inserted assumptions do not add physical content. They close the formal loopholes that would otherwise infect every downstream construction.
+**Definition 8.7.4 (Globally admissible observerse branch).**  
+An observerse branch \((X,Y,\pi,\mathcal I)\) is globally admissible for a stated downstream chapter if:
 
-### 8.8 Observerse dependency theorem
+1. the relevant local observations exist on an open cover \(\{U_lpha\}\) of \(X\);
+2. the induced pulled-back objects agree on overlaps up to the equivalence relation natural to that chapter (equality, bundle isomorphism, gauge equivalence, or Clifford-module equivalence);
+3. the transition data satisfy the cocycle identities required to descend local constructions to globally defined objects; and
+4. every extra structure used in the descent is listed explicitly as canonical, chosen, or inserted.
+
+This definition is the minimum closure condition needed to prevent later chapters from silently moving between local and global statements.
+
+**Open Problem 8.7.5 (Global observerse descent).**  
+For each branch actually used later, determine whether the locally admissible observation data descend globally without extra inserted choices, descend only up to gauge or module equivalence, or fail to descend because of topological obstructions.
+
+### 8.8 Observerse dependency discipline and obstruction ledger
 
 **Proposition 8.8.1 (Observerse dependency discipline).**  
 Any later object in the completion document that depends on observation must state whether it depends on:
@@ -2574,9 +2586,15 @@ Any later object in the completion document that depends on observation must sta
 **Proof.**  
 This is immediate from the typed structure of Definitions 8.2.1–8.5.1. Different downstream objects enter at different levels of dependence, and failure to state that dependence would conflate canonical data with chosen or observed data. ∎
 
+**Inserted Convention 8.8.2 (Observerse obstruction ledger).**  
+Whenever a construction is only local or branch-dependent, the chapter using it must record the obstruction under one of the following labels: global section existence, overlap compatibility, signature incompatibility, spinorial liftability, connection-choice dependence, or principal-bundle lift dependence.
+
+**Corollary 8.8.3 (What this blocker unlocks).**  
+Once a branch is globally admissible in the sense above, later chapters may depend on it to define vertical/horizontal bundles, chimeric bundles, topological spinors, pulled-back metric structures, and observed-field extraction without reintroducing silent locality assumptions.
+
 ### 8.9 Section summary
 
-The Tier 1 observerse blocker is therefore resolved to the following extent. The observerse is now a normalized piece of data \((X,Y,\pi,\mathcal I)\); admissibility has been separated into weak, bundle, and metric forms; native and observed fields have been given precise status; the observation map has been promoted to a typed operation; the principal branches of the observerse have been cleanly separated; and the locality and signature assumptions required by later chapters have been made explicit. What remains outside this section is not the meaning of the observerse, but the later problem of how particular bundle, spinor, connection, and operator structures are induced from it.
+The observerse blocker is therefore resolved to the following extent. The observerse is now a normalized piece of data \((X,Y,\pi,\mathcal I)\); admissibility has been separated into weak, bundle, metric, and chapter-specific global forms; native and observed fields have been given precise status; the observation map has been promoted to a typed operation; the principal branches of the observerse have been cleanly separated; and an explicit obstruction ledger now controls which later constructions are local, global, canonical, or chosen. What remains outside this section is no longer the meaning of the observerse itself, but the branch-by-branch proof problem of global descent for specific bundle, spinor, connection, and operator structures.
 
 
 ### 10. The Chimeric Bundle Construction
@@ -2719,9 +2737,21 @@ These identifications are semi-canonical relative to the chosen splitting, not c
 
 This repairs a recurring overstatement in the weaker draft prose. The chimeric bundle is structurally prior to a preferred tangent splitting, not identical to one by default.
 
-### 10.6 Compatibility ledger
+### 10.6 Canonical versus semi-canonical realizations
 
-**Open Obligation 10.6.1.**  
+**Definition 10.6.1 (Canonical chimeric data).**  
+The canonical chimeric data of the Einsteinian branch are the bundles \(V\), \(H^*=\pi^*T^*X\), \(H=(H^*)^*\), \(C=V\oplus H^*\), \(C^*=V^*\oplus H\), and the branch-fixed metric \(g_C\). None of these require a tangent splitting of \(TY\).
+
+**Definition 10.6.2 (Semi-canonical realization).**  
+A semi-canonical realization of the chimeric bundle is any realization of the abstract data above inside tangent or cotangent ambient structures after choosing extra data such as a horizontal lift \(\widetilde H\subset TY\), a connection, or a metric-dependent identification.
+
+**Completion Rule CR.10.6.3.**  
+No later theorem may identify \(C\) with a tangent-side bundle without naming the extra realization data used to do so.
+
+**Compatibility ledger 10.6.4.**  
+Every tangent-level realization must record compatibility with: \((i)\) the observerse projection \(\pi\), \((ii)\) the chosen signature branch for \(g_C\), \((iii)\) the Zorro transmission when used later, and \((iv)\) any pulled-back observation data.
+
+**Open Obligation 10.6.5.**  
 The following items remain to be proved or specified later and are not completed in the present Tier 1 section:
 
 1. existence of a preferred horizontal lift \(\widetilde H\subset TY\);
@@ -2836,7 +2866,7 @@ The chosen tangent splitting identifies chimeric data with tangent plus normal d
 
 This proposition is the rigorous form of the draft’s intended bridge from pre-metric fermionic structure on \((Y)\) to observed space-time spinors with an internal factor on \((X)\).
 
-### 11.6 What this section completes and what it does not
+### 11.6 Deferred obligations after Tier 1 closure
 
 **Completed at Tier 1.**  
 This section now fixes:
@@ -2847,7 +2877,7 @@ This section now fixes:
 4. the correct use of the exponential property; and
 5. the conditional local bridge from topological to observed metric spinors.
 
-**Deferred beyond Tier 1.**  
+**Deferred but now typed.**  
 This section does not yet define:
 
 1. a canonical spin connection on \(\mathbb S_{\mathrm{top}}\);
@@ -2855,6 +2885,12 @@ This section does not yet define:
 3. a preferred bilinear pairing or adjoint convention for action principles;
 4. a representation-theoretic branching calculation to observed fermion families; or
 5. global uniqueness/existence results for the bridge map \(\Phi_\iota\).
+
+**Proof-obligation program 11.6.1.**  
+Each deferred item must be resolved under one of three labels: \((a)\) canonical construction proved, \((b)\) branch-dependent construction with explicit inserted choice, or \((c)\) unavailable at the present stage and therefore excluded from later dynamics.
+
+**Definition 11.6.2 (Admissible spinorial continuation).**  
+A later fermionic chapter is admissible only if it specifies: the chosen lift branch (spin, local spin, or \(\mathrm{Spin}^c\)); the connection used on \(\mathbb S_{\mathrm{top}}\); the bilinear or adjoint convention; and whether the operator used is intrinsic to \((C,g_C)\) or imported through bridge data.
 
 These are real downstream obligations, but they are no longer blockers to stating the topological-spinor layer coherently.
 
@@ -3376,6 +3412,18 @@ where \(\mathcal V\) is an admissible additive space of \(\operatorname{ad}(P_{\
 
 **Proof.** The \(H\)-part is the ordinary gauge transformation law; the additive part is affine translation in connection space. ∎
 
+### 13.2A Typed closure of the main principal bundle and tilted gauge data
+
+**Completion Rule CR.13.2A.1.**  
+All later uses of the gauge layer must distinguish four typed objects: the structure group \(K\) of \(P_{\mathrm{main}}\), the ordinary gauge subgroup \(H\) acting by vertical bundle automorphisms, the additive translation space \(\mathcal V\subset \Omega^1(Y,\mathrm{ad}(P_{\mathrm{main}}))\), and the inhomogeneous extension \(G=\mathcal V
+times H\).
+
+**Definition 13.2A.2 (Typed tilted datum).**  
+A tilted datum is a pair \((A_0,	au_{A_0})\) consisting of a distinguished connection \(A_0\in\mathcal A(P_{\mathrm{main}})\) and a map \(	au_{A_0}:H	o G\) whose translation component lies in \(\mathcal V\). In this completion branch, the domain and codomain of \(	au_{A_0}\) are now fixed once and for all.
+
+**Corollary 13.2A.3 (What this blocker unlocks).**  
+With the typing above fixed, later chapters may state the stabilizer of \(A_0\), the bi-connection map, augmented torsion equivariance, and the \(A_\omega\)- / \(B_\omega\)-connection formulas without leaving the ambient principal-bundle category implicit.
+
 ### 13.3 Tilted map
 
 **Definition 13.3.1 (Tilted map associated to a reference connection).**  
@@ -3389,16 +3437,22 @@ For all \(h\in H\), \(\tau_{A_0}(h)\cdot A_0=A_0\).
 
 **Proof.** Substitute the definition into the affine action formula. ∎
 
-### 13.4 Intrinsic distinguished-connection branch
+### 13.4 Intrinsic versus chosen distinguished connection
 
 **Definition 13.4.1 (Reference-lift class).**  
 A reference-lift class is a nonempty subset of the Zorro lift set consisting of principal connections compatible with the chosen reduction and representation data of the branch.
 
-**Inserted Choice IX.13.4.2 (Canonical representative rule).**  
-Choose \(A_0\) to be a representative in the reference-lift class that induces the Zorro chimeric connection, preserves the chosen reduction to \(H\), and is normalized to have zero additive translation component relative to the chosen split origin. If uniqueness is not yet proved, \(A_0\) is the selected branch representative.
+**Theorem target TT.13.4.2 (Intrinsic distinguished-connection theorem).**  
+Prove that the reference-lift class contains a unique element characterized by naturality with respect to the observerse projection, compatibility with the Zorro-induced chimeric connection, and invariance under the chosen reduction data.
 
-**Definition 13.4.3 (Distinguished connection \(A_0\)).**  
-The distinguished connection \(A_0\) is the connection selected by IX.13.4.2 from the reference-lift class of the Zorro-induced chimeric connection.
+**Inserted Choice IX.13.4.3 (Chosen distinguished-connection branch).**  
+Until TT.13.4.2 is proved, choose \(A_0\) to be a representative in the reference-lift class that induces the Zorro chimeric connection, preserves the chosen reduction to \(H\), and is normalized to have zero additive translation component relative to the chosen split origin. If uniqueness is not yet proved, \(A_0\) is the selected branch representative rather than a theoremically canonical object.
+
+**Definition 13.4.4 (Distinguished connection \(A_0\)).**  
+The distinguished connection \(A_0\) is the connection selected by IX.13.4.3 from the reference-lift class of the Zorro-induced chimeric connection.
+
+**Completion Rule CR.13.4.5.**  
+Every later use of \(A_0\) must specify whether it relies only on the existence of the chosen branch representative or on the stronger unproved claim that \(A_0\) is intrinsically canonical.
 
 ### 13.5 Stabilizer and bi-connection data
 
@@ -3434,7 +3488,7 @@ Determine the analytically and physically correct choice of translation space \(
 
 ### 13.8 Section summary
 
-The document now has a main principal bundle, an ordinary gauge subgroup \(H\), an inhomogeneous extension \(G\), a typed tilted map, and a distinguished connection \(A_0\) constructed from the observerse-plus-Zorro branch rather than inserted as an unexplained primitive.
+The document now has a main principal bundle, an ordinary gauge subgroup \(H\), an inhomogeneous extension \(G\), a typed tilted map with fixed domain and codomain, and a distinguished connection \(A_0\) constructed from the observerse-plus-Zorro branch rather than inserted as an unexplained primitive. The only unresolved strengthening is uniqueness: the branch now supports all downstream formal uses on the basis of a chosen representative, while the stronger claim of intrinsic canonicity remains an explicit theorem target.
 
 
 ---
