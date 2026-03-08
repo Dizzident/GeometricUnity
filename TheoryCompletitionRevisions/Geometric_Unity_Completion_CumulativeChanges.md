@@ -165,8 +165,8 @@ The normalization policy is as follows. First, each symbol is assigned exactly o
 | (\tau)                                | Tilted map into (G)                                                                   | homomorphism / structural map for tilted action        | partially defined and downstream of (A_0)                                                                        |
 | (\mathrm{Stab}(A_0))                  | Stabilizer subgroup of (A_0)                                                          | subgroup of (G)                                        | conceptually present; notation should be fixed explicitly                                                        |
 | (T^{\mathrm{aug}})                    | Augmented or displaced torsion                                                        | modified torsion object                                | ambiguous in formula-level realization; concept present, notation unstable                                       |
-| (\Sigma)                              | Family of Shiab operators                                                             | operator family                                        | partially defined as a family, not yet canonically selected                                                      |
-| (L_B,L_F)                             | Bosonic and fermionic Lagrangian sectors                                              | action densities                                       | present structurally, but term-by-term notation requires completion                                              |
+| (\Sigma)                              | Family of Shiab operators                                                             | operator family                                        | completed as a typed family with an explicit active branch \(\Sigma_{\mathrm{mc}}\); uniqueness remains open |
+| (L_B,L_F)                             | Bosonic and fermionic Lagrangian sectors                                              | action densities                                       | bosonic minimal branch typed; richer bosonic branches and fermionic closure still require completion            |
 | (\mathcal H,\mathcal N)               | Auxiliary function spaces appearing with (\mathcal A)                                 | analytical spaces                                      | ambiguous in the draft unless defined with regularity and topology                                               |
 | (\Gamma(E))                           | Sections of bundle (E)                                                                | standard functional notation                           | inserted normalization for consistency                                                                           |
 | (\Omega^k(X,E))                       | (E)-valued (k)-forms on (X)                                                           | standard differential-form notation                    | already used in the draft and retained                                                                           |
@@ -197,7 +197,7 @@ The fifth ambiguity is the status of (G), (\tau), and the tilted gauge structure
 
 The sixth ambiguity concerns augmented or displaced torsion. The draft clearly elevates this to a named object immediately after the distinguished-connection machinery, which indicates that it is structurally important. But the notation is not standardized in the surviving outline and source snippets: one sees the concept, but not yet a unique formula-level symbol and transformation law that can be reused later without re-derivation. The completion document should therefore introduce a single symbol such as (T^{\mathrm{aug}}), specify whether it is a tensor, affine correction term, or bundle-valued form, and distinguish it from ordinary torsion (T^\nabla).  
 
-The seventh ambiguity concerns the Shiab operators. The draft contains a “family of Shiab operators” and a subsection on “Thoughts on Operator Choice,” which strongly suggests that the notation refers to a non-canonical family rather than a uniquely fixed operator. That means no later equation may simply write “the Shiab operator” without either specifying the chosen member or introducing an inserted choice that selects one. The normalized notation should therefore refer first to a family (\Sigma={\Sigma_\alpha}_{\alpha\in I}), with any canonical representative introduced only later by explicit choice. 
+The seventh ambiguity concerns the Shiab operators. The draft contains a “family of Shiab operators” and a subsection on “Thoughts on Operator Choice,” which strongly suggests that the notation refers to a non-canonical family rather than a uniquely fixed operator. That ambiguity is now closed operationally by fixing the notation first to a family \(\Sigma=\{\Sigma_\alpha\}_{\alpha\in I}\) and then to the active branch \(\Sigma_{\mathrm{mc}}\). No later equation may write “the Shiab operator” unless it means the declared active branch or explicitly reopens branch dependence. 
 
 The eighth ambiguity is the inconsistent use of projection-style notation. The draft uses (P_E) for Einsteinian projection, while the broader completion framework also needs (P) or (P_{\mathrm{main}}) for principal bundles and possibly other projection maps such as (\pi:Y\to X). Without normalization, (P) risks meaning a principal bundle, a projection operator, or a base projection. The completion document therefore reserves (\pi) for bundle projections, (P_{\mathrm{main}}) for the main principal bundle, and (P_E) for the Einsteinian algebraic contraction map. 
 
@@ -1031,12 +1031,12 @@ The draft explicitly defines (\mu_{A_0}:G\to A\times A) and the induced (A_\omeg
 **Dependencies:** D.17.1, D.16.1
 **Proof status:** definition-level only 
 
-**Definition D.18.1 (Augmented or displaced torsion (T_\omega)).**
-(T_\omega) is introduced as the modified torsion object needed in the bosonic field equations.
-**Status:** formal
-**Source basis:** draft-native
+**Definition D.18.1 (Augmented or displaced torsion (T^{\mathrm{aug}}_\omega)).**
+The active branch defines augmented torsion as a corrected torsion object built from the bi-connection pair \((A_\omega,B_\omega)\) and a declared torsion extractor on the completed distinguished-connection branch.
+**Status:** formalized on the active branch
+**Source basis:** draft-native plus inserted completion branch
 **Dependencies:** D.17.2
-**Warning:** full formula not visible in the present extracted text 
+**Proof status:** equivariance required by branch definition; uniqueness deferred
 
 **Definition D.18.2 (Swerved curvature (S_\omega)).**
 The draft labels the curvature-derived term in the first-order bosonic equation as swerved curvature or swervature.
@@ -1052,11 +1052,11 @@ The central bosonic quantity is (\Upsilon_\omega=S_\omega-T_\omega).
 **Dependencies:** D.18.1, D.18.2  
 
 **Definition D.19.1 (Shiab operator family).**
-The draft architecture clearly requires a family of Shiab operators, but the visible text does not contain a stable full definition.
-**Status:** formal but incomplete
-**Source basis:** draft-native
-**Dependencies:** operator chapter
-**Warning:** this is one of the strongest ambiguity points in the source  
+The Shiab layer is now fixed as a typed family \(\Sigma=\{\Sigma_\alpha\}_{\alpha\in I}\) of first-order operators \(\Sigma_\alpha:\mathcal K^s\to \mathcal T^{s-1}\) together with the active minimal compatible branch \(\Sigma_{\mathrm{mc}}\).
+**Status:** completed as a branch-defined operator family
+**Source basis:** completion-inserted on a draft-native operator layer
+**Dependencies:** D.15.1, D.18.1, D.18.2, operator chapter
+**Warning:** uniqueness remains open even though the active branch is now fixed  
 
 ### C. Propositions
 
@@ -1525,9 +1525,9 @@ The map (P_E:\Lambda^2(TX)\otimes\Lambda^2(TX)\to S^2(TX)) is written explicitly
 
 **Type:** indispensable object
 **Role:** central corrective term restoring a usable gravity-like equation in the new formalism
-**Classification:** **Partially defined**
+**Classification:** **Completed as a branch-defined corrected torsion object**
 
-It is absolutely central and appears in the first-order equation, but the full definition is not visible in the extracted text; what is visible is its conceptual motivation and its occurrence in equations.
+The document now fixes augmented torsion branchwise as a corrected torsion built from the bi-connection pair \((A_\omega,B_\omega)\), together with an explicitly declared torsion target and corrected-gauge equivariance requirement. What remains open is uniqueness of the branch and comparison among alternative admissible torsion extractors, not absence of a usable formal definition.
 
 ### 30. Swerved curvature / swervature (S_\omega)
 
@@ -1555,69 +1555,129 @@ The draft explicitly writes (\Upsilon_\omega=S_\omega-T_\omega) and uses it as t
 
 **Type:** indispensable operator family  
 **Role:** operator layer mediating curvature contraction, first-order bosonic dynamics, and fermionic square-root structure  
-**Classification:** **Completed as a branch-classified family**
+**Classification:** **Completed as a typed branch-defined operator family with an explicit active branch**
 
-The earlier manuscript correctly identified the Shiab layer as indispensable but left it architecturally ambiguous. This section closes that blocker by formalizing Shiab operators as a family of admissible first-order differential operators together with an explicit branch-selection rule.
+The earlier manuscript correctly identified the Shiab layer as indispensable but left it architecturally ambiguous. This section closes that blocker more strongly than before: Shiab operators are now formalized as a typed admissible family of first-order differential operators, an explicit active branch is fixed, and the relation of that branch to swerved curvature, the bosonic master field, adjoints, and later lowering steps is stated in one place.
 
-### 32.1 Definition of the family
+### 32.1 Domain, codomain, and admissibility
+
+Fix the Sobolev branch from Chapter 15 and let
+\[
+\mathcal K^s:=H^s\!\left(X;\Lambda^2T^*X\otimes \operatorname{ad}(P_{\mathrm{main}})\right)
+\]
+be the curvature space and
+\[
+\mathcal T^{s-1}
+\]
+the corrected torsion target already fixed in the augmented-torsion chapter. A Shiab operator is required to map curvature-type data to the same target type as the swerved-curvature contribution appearing in the bosonic first-order equation.
 
 **Definition 32.1.1 (Admissible Shiab family).**  
 An admissible Shiab family is a collection
 \[
-\Sigma=\{\Sigma_\alpha\}_{\alpha\in I}
+\Sigma=\{\Sigma_\alpha\}_{\alpha\in I},\qquad \Sigma_\alpha:\mathcal K^s\to \mathcal T^{s-1},
 \]
-of first-order differential operators acting on the relevant curvature/torsion bundles such that each \(\Sigma_\alpha\):
+of first-order differential operators such that each \(\Sigma_\alpha\):
 
 1. is defined on the Sobolev branch fixed in Chapter 15;
-2. is natural with respect to bundle isomorphisms preserving the distinguished-connection branch;
-3. yields a swerved-curvature term
+2. is natural with respect to bundle isomorphisms preserving the distinguished-connection branch \((A_0,\tau_{A_0},H^{\tau_{A_0}})\);
+3. has principal symbol determined only by the metric/contraction branch and not by extra coordinate choices;
+4. is equivariant under the corrected symmetry branch used for augmented torsion;
+5. admits a formal adjoint on the chosen energy space; and
+6. produces a swerved-curvature term
 \[
-S^{(\alpha)}_\omega:=\Sigma_\alpha(F_{A_\omega});
+S^{(\alpha)}_\omega:=\Sigma_\alpha(F_{A_\omega})\in \mathcal T^{s-1}.
 \]
-4. is equivariant under the same corrected symmetry branch used for augmented torsion; and
-5. admits a formal adjoint on the chosen energy space.
 
 This definition deliberately treats Shiab as a family, not as a uniquely determined operator. That reflects the source material faithfully while making later equations typable.
 
-### 32.2 Branch selection
+### 32.2 Explicit active branch
+
+The document now fixes one concrete admissible branch instead of leaving the active operator schematic.
 
 **Inserted Choice IX.32.2.1 (Minimal compatible Shiab branch).**  
-For the remainder of the mainline manuscript, the active branch is the minimal compatible Shiab operator \(\Sigma_{\mathrm{mc}}\), defined to be any member of the admissible family satisfying all of the following:
+For the remainder of the mainline manuscript, the active branch is the minimal compatible Shiab operator \(\Sigma_{\mathrm{mc}}\) defined by
+\[
+\Sigma_{\mathrm{mc}}(\Xi)
+:=
+\Pi_{\mathcal T}\Big(\mathcal K_{A_0}(d_{B_\omega}\Xi)\Big)
++\mathcal L_{A_0}\big(T^{\mathrm{aug}}_\omega,\Xi\big),
+\qquad \Xi\in \mathcal K^s.
+\]
+Here:
 
-1. first-order principal symbol compatible with the metric branch induced on the observed side;
-2. corrected-gauge equivariance with respect to \(H^{\tau_{A_0}}\);
-3. existence of a formally self-adjoint or symmetrizable second-order composite needed for the bosonic Euler–Lagrange system;
-4. compatibility with the computational lowering map of Chapters 33–38.
+- \(d_{B_\omega}\) is the covariant exterior derivative determined by the second member of the bi-connection pair \((A_\omega,B_\omega)\);
+- \(\mathcal K_{A_0}\) is the fixed background algebraic contraction built from the normalized Einsteinian projection branch, the background metric data, and the \(A_0\)-determined bundle identifications;
+- \(\Pi_{\mathcal T}\) is the declared projection into the corrected torsion target; and
+- \(\mathcal L_{A_0}\) is a zero-order correction term chosen so that corrected-gauge equivariance holds and the second-order bosonic composite is formally self-adjoint or symmetrizable on the chosen energy branch.
+
+This is the minimal branch in the sense that its first-order part uses only already-declared data \((B_\omega, P_E, A_0, \Pi_{\mathcal T})\), while the lower-order correction term is included only to restore the covariance/self-adjointness properties demanded elsewhere in the manuscript.
 
 **Reason for insertion:** a unique canonical Shiab operator is not derived in the source, but later PDEs and numerics require one active branch.  
-**Minimality assessment:** branch-selecting.  
+**Minimality assessment:** branch-selecting, but now formula-level rather than merely schematic.  
 **Affected sections:** Chapters 20–24 and 33–42.  
 **Whether removable:** yes, if a uniqueness theorem is later proved.  
 **Prediction sensitivity:** high.
 
-### 32.3 Operational consequences
+### 32.3 Principal symbol and adjoint
 
-**Definition 32.3.1 (Swerved curvature on the active branch).**  
+**Definition 32.3.1 (Principal symbol of the active branch).**  
+The principal symbol of \(\Sigma_{\mathrm{mc}}\) at a covector \(\xi\in T_x^*X\) is
+\[
+\sigma_1(\Sigma_{\mathrm{mc}})(x,\xi)
+=
+\Pi_{\mathcal T}\circ \mathcal K_{A_0}(x)\circ (\xi\wedge \cdot).
+\]
+Thus the leading symbol is first-order, background-natural, and independent of the lower-order correction \(\mathcal L_{A_0}\).
+
+**Definition 32.3.2 (Formal adjoint and energy pairing).**  
+On the chosen Hilbert/Sobolev branch, the formal adjoint
+\[
+\Sigma_{\mathrm{mc}}^*:\mathcal T^{s-1}\to \mathcal K^{s-2}
+\]
+is defined relative to the background pairing induced by \(g_X\), the bundle metric, and the target pairing on \(\mathcal T\). The active branch is required to satisfy the energy estimate needed for the bosonic second-order composite
+\[
+\mathcal B_{\mathrm{mc}}:=\Sigma_{\mathrm{mc}}^*\Sigma_{\mathrm{mc}}
+\]
+to be symmetric or symmetrizable on the selected domain.
+
+### 32.4 Operational consequences
+
+**Definition 32.4.1 (Swerved curvature on the active branch).**  
 On the active branch,
 \[
-S_\omega:=\Sigma_{\mathrm{mc}}(F_{A_\omega}).
+S_\omega:=\Sigma_{\mathrm{mc}}(F_{A_\omega})
+=\Pi_{\mathcal T}\Big(\mathcal K_{A_0}(d_{B_\omega}F_{A_\omega})\Big)
++\mathcal L_{A_0}\big(T^{\mathrm{aug}}_\omega,F_{A_\omega}\big).
 \]
 The first-order bosonic master field is therefore fixed as
 \[
 \Upsilon_\omega:=S_\omega-T^{\mathrm{aug}}_\omega.
 \]
 
-**Proposition 32.3.2 (Branch dependence is explicit).**  
+**Proposition 32.4.2 (Corrected-gauge covariance of the active branch).**  
+Assuming the corrected action is the one fixed in the principal-bundle chapter and assuming \(\mathcal L_{A_0}\) is chosen from the admissible class above, the active Shiab branch is corrected-gauge equivariant:
+\[
+\Sigma_{\mathrm{mc}}(\Xi\cdot h)=\Sigma_{\mathrm{mc}}(\Xi)\cdot h,
+\qquad h\in H^{\tau_{A_0}}.
+\]
+Consequently \(S_\omega\) and \(\Upsilon_\omega\) transform in the same target representation as \(T^{\mathrm{aug}}_\omega\).
+
+**Proof sketch.** The first-order part is equivariant by construction of \(d_{B_\omega}\), \(\mathcal K_{A_0}\), and \(\Pi_{\mathcal T}\). The zero-order correction \(\mathcal L_{A_0}\) is restricted to the admissible class precisely to preserve the same transformed target type.
+
+**Proposition 32.4.3 (Branch dependence is explicit).**  
 Every formula involving \(S_\omega\), \(\Upsilon_\omega\), or any Dirac-like factorization depending on Shiab data is branch-sensitive unless a later theorem proves invariance under change of admissible \(\Sigma_\alpha\).
 
 **Proof:** immediate from the family definition.
 
-### 32.4 What is now closed and what remains open
+### 32.5 What is now closed and what remains open
 
-The blocker is now closed in the precise sense relevant to the completion document: later equations no longer rely on an unnamed operator. They rely on a declared branch of a declared family. The remaining open problem is stronger and cleaner than before.
+The blocker is now closed at formula level in the sense relevant to the completion document: later equations no longer rely on an unnamed operator or on a merely schematic family. They rely on a typed family and on a declared active branch with explicit first-order and lower-order pieces. What remains open is not definability but uniqueness/classification.
 
-**Open Problem OP.32.4.1.**  
+**Open Problem OP.32.5.1.**  
 Classify the admissible Shiab family up to corrected-gauge equivalence and determine whether a unique canonical representative exists.
+
+**Open Problem OP.32.5.2.**  
+Determine whether the lower-order correction \(\mathcal L_{A_0}\) can be chosen canonically from the distinguished-connection and augmented-torsion data alone, or whether it remains an unavoidable branch choice.
 
 ### 33. Dirac-like fermionic operator (D!!!/_{\omega})
 
@@ -2092,7 +2152,7 @@ Each component of the source draft is classified using the following statuses:
 | Augmented/displaced torsion | Partial / Ambiguous | Symbol, type, and transformation law not stabilized | Blocks equation reuse |
 | Shiab operator family | Partial / Branch-sensitive | Family exists conceptually, but no canonical member is justified globally | Blocks fermionic and bosonic operator equations |
 | Function spaces \((\mathcal A,\mathcal H,\mathcal N)\) | Ambiguous | No final regularity/topology assignment in the source | Blocks PDE and computational well-posedness |
-| First- and second-order Lagrangians | Partial | Depend on unresolved operator and torsion choices | Blocks trustworthy dynamics |
+| First- and second-order Lagrangians | Branch-defined / Partial | Minimal bosonic variational branch is now typed and sourced; richer branches and fermionic completion remain open | Dynamics now auditable but not fully closed |
 | Deformation complex | Partial | Depends on stabilized equations and gauge action | Cannot precede variational closure |
 | Recovery of observed bosonic/fermionic content | Partial / Conjectural | Formal decomposition and physical identification are mixed | Must be rewritten as mapping plus support status |
 | Prediction and validation claims | Blocked | Observable extraction map is not yet globally fixed | Cannot be treated as verified output |
@@ -2331,7 +2391,7 @@ These items convert formal outputs into assessable claims.
 | Distinguished connection \(A_0\) | Gauge structure, function spaces | Torsion, Shiab operators, dynamical couplings |
 | Augmented torsion | \(A_0\), bundle typing | Bosonic equations, field decomposition |
 | Shiab operator family | \(A_0\), spinor layer, function spaces | Bosonic and fermionic dynamics |
-| Lagrangians | Torsion and operator choices | Euler–Lagrange equations, deformation theory |
+| Lagrangians | Torsion, operator, and analytic branch choices | Euler–Lagrange equations, deformation theory, proof obligations |
 | Observed field decomposition | Observerse, dynamics, algebraic projections | Physical dictionary and predictions |
 | Prediction registry | Observed decomposition, observable map | Falsification and external comparison |
 | Simulation framework | Function spaces, equations, observable extraction | Reproducible computation and benchmarking |
@@ -3640,17 +3700,91 @@ A closed bosonic branch consists of
 \]
 where \(\Sigma_\alpha\) is a chosen Shiab branch and \(\mathcal B\) is a complete package of boundary/asymptotic data. Only after this tuple is fixed may one write the first-order and second-order bosonic systems as actual PDEs.
 
-### 15.6 Constraint handling and numerical lowering interface
+### 15.6 Linearization, ellipticity, and admissible operator branches
 
-**Definition 15.6.1 (Constraint projector).**  
+**Definition 15.6.1 (Linearized bosonic operator).**  
+Let
+\[
+\mathcal E_B(A,\omega)=0
+\]
+denote the chosen bosonic Euler--Lagrange branch written in background-covariant gauge. Its linearization at a background solution \((A_\star,\omega_\star)\in \mathfrak C_B^s\) is the bounded map
+\[
+D\mathcal E_Big|_{(A_\star,\omega_\star)}:
+H^s\Omega^1igl(Y,\mathrm{ad}(P_{\mathrm{main}})igr)\oplus H^s\Gamma(E_\omega)
+\longrightarrow
+H^{s-2}\Omega^1igl(Y,\mathrm{ad}(P_{\mathrm{main}})igr)\oplus H^{s-2}\Gamma(E_\omega),
+\]
+after adjoining the gauge-fixing operator needed to remove infinitesimal gauge degeneracy.
+
+**Completion Rule CR.15.6.2 (Admissible analytic branch).**  
+A bosonic operator branch \((T^{\mathrm{aug}},\Sigma_lpha,\mathcal B_{lpha})\) is analytically admissible only if:
+
+1. each displayed nonlinear term extends continuously on the chosen Sobolev classes;
+2. the gauge-fixed linearization is Fredholm between the declared Sobolev spaces;
+3. the principal symbol of the gauge-fixed second-order branch is positive-definite, or otherwise a precise hyperbolic/parabolic well-posedness mechanism is stated;
+4. the branch admits an energy estimate strong enough to control the declared notion of solution.
+
+**Inserted Assumption IA.15.6 (Elliptic-background branch).**  
+Unless a later chapter explicitly declares a Lorentzian or time-evolution branch, the completion document works on the Euclidean/elliptic background branch for analytical closure. In this branch, all principal symbol statements are interpreted as elliptic statements after gauge fixing.
+
+**Reason for insertion:** the surviving draft does not yet supply a closed hyperbolic Cauchy theory, but the variational and numerical program still needs one analytically closed branch.  
+**Minimality assessment:** conservative and branch-selecting.  
+**Affected sections:** bosonic equations, linearization, solver design, falsification protocol.  
+**Whether removable:** yes, if a satisfactory Lorentzian branch is later constructed.  
+**Prediction sensitivity:** low for structural comparisons, medium for dynamical claims.
+
+### 15.7 Boundary conditions and finite-energy classes
+
+**Definition 15.7.1 (Boundary package).**  
+A boundary package \(\mathcal B\) for a closed branch consists of:
+
+- either compact-manifold boundary conditions (Dirichlet, Neumann, mixed, or gauge-compatible elliptic data), or
+- noncompact asymptotic falloff conditions strong enough to make the action, energy norm, and observable extraction finite.
+
+**Inserted Assumption IA.15.7 (Default finite-energy branch).**  
+Unless a later section specifies otherwise, the default bosonic comparison branch is either:
+
+1. a compact manifold without boundary, or
+2. a noncompact manifold with fields approaching a fixed background at a rate sufficient to ensure
+\[
+F_A\in L^2,
+\qquad
+T^{\mathrm{aug}}(A,\omega)\in L^2,
+\qquad
+\omega\in H^1,
+\]
+and the corresponding Shiab-dependent terms in \(L^2\).
+
+**Reason for insertion:** displayed variational and numerical quantities are otherwise not guaranteed to be finite.  
+**Minimality assessment:** conservative.  
+**Affected sections:** action functionals, weak solutions, simulation, observable extraction.  
+**Whether removable:** yes, if a different renormalized or flux-based framework is adopted.  
+**Prediction sensitivity:** medium.
+
+### 15.8 Constraint handling and numerical lowering interface
+
+**Definition 15.8.1 (Constraint projector).**  
 For computational lowering, every closed branch must provide a projector
 \[
-\Pi_{\mathrm{phys}}: \mathfrak C^s \to \mathfrak C^s
+\Pi_{\mathrm{phys}}: \mathfrak C^s 	o \mathfrak C^s
 \]
 onto the gauge-fixed constraint manifold used by the solver. This may be realized by exact gauge fixing, penalty enforcement, or projection after each iteration, but one method must be declared branchwise.
 
+**Definition 15.8.2 (Lowering-compatible discretization).**  
+A discretization is lowering-compatible only if it preserves, up to controlled truncation error, the following data from the continuous branch:
+
+1. the declared gauge condition or constraint projector;
+2. the principal symbol class of the gauge-fixed operator;
+3. the coercive or conserved quadratic form used for stability;
+4. the typed output map needed later for observable extraction.
+
+**Proposition 15.8.3 (Minimal numerical well-posedness target, conditional form).**  
+For any closed elliptic bosonic branch satisfying Rules 15.5.1 and 15.6.2 together with Assumptions IA.15.3, IA.15.6, and IA.15.7, the completion document may legitimately target finite-dimensional Galerkin, finite-element, finite-volume, or lattice discretizations that converge to weak solutions on bounded-energy subsequences, provided consistency and discrete stability are verified branchwise.
+
+**Proof status:** deferred; this is a programmatic admissibility target, not yet a proved theorem of the source theory.
+
 **Dependency note.**  
-This section resolves the placeholder status of the analytical chapter and unlocks later honest use of the terms “equation,” “linearization,” “solver,” and “simulation.” What remains open is not whether any analytical branch exists, but which branch is physically and mathematically preferred.
+This section now resolves the placeholder status of the analytical chapter strongly enough to unlock later honest use of the terms “equation,” “linearization,” “weak solution,” “solver,” and “simulation.” What remains open is not whether an analytical branch exists, but which branch is mathematically optimal and physically preferred.
 
 ### 16. Inhomogeneous Gauge Group
 
@@ -3988,35 +4122,101 @@ The previous prose described the architecture correctly but still ended by sayin
 **Definition 17.7.1 (Completed distinguished-connection branch).**  
 A completed distinguished-connection branch is a tuple
 \[
-\mathfrak D=(P_{\mathrm{main}},\mathcal A^s,\mathcal H^{s+1},\mathcal N^s,A_0,\tau_{A_0},H^{\tau_{A_0}},\mu_{A_0},T^{\mathrm{aug}})
+\mathfrak D=(P_{\mathrm{main}},\mathcal A^s,\mathcal H^{s+1},\mathcal N^s,A_0,	au_{A_0},H^{	au_{A_0}},\mu_{A_0},\mathcal T,\Theta_{A_0},T^{\mathrm{aug}})
 \]
-with the meanings assigned in Chapters 15–17 and satisfying the equivariance rule for augmented torsion.
+with the meanings assigned in Chapters 15–17 and satisfying the equivariance rule for augmented torsion. Here \(\mathcal T\) is the declared torsion target space and \(\Theta_{A_0}\) is the torsion extractor used by the active branch.
 
 **Definition 17.7.2 (Tilted embedding).**  
 The tilted embedding is fixed by
 \[
-\tau_{A_0}(h):=(h,-h^{-1}d_{A_0}h),
+	au_{A_0}(h):=(h,-h^{-1}d_{A_0}h),
 \]
 so that the ordinary gauge defect is absorbed into the inhomogeneous symmetry datum.
 
-**Definition 17.7.3 (Completed augmented torsion branch).**  
-The active augmented torsion is any branch-defined bundle-valued two-form
+**Definition 17.7.3 (Torsion target space).**  
+The torsion target space of the active branch is a Sobolev-completed bundle-valued two-form space
 \[
-T^{\mathrm{aug}}_\omega=T(B_\omega)-T(A_\omega)+\mathcal C(A_0;A_\omega,B_\omega)
+\mathcal T:=\Omega^2_s(Y,E_T)
 \]
-for which
+for a branch-declared associated bundle \(E_T\). In an observed metric realization one may take \(E_T=TY\) or the observed tangent bundle; in a purely native branch one may instead use the associated bundle selected by the chimeric realization. The target bundle must be declared before any formula using \(T^{\mathrm{aug}}\) is admitted into the manuscript.
+
+**Definition 17.7.4 (Torsion extractor).**  
+A torsion extractor on the branch \(\mathfrak D\) is a map
 \[
-T^{\mathrm{aug}}_{g\cdot \tau_{A_0}(h)}=\mathrm{Ad}(h^{-1})T^{\mathrm{aug}}_g
+\Theta_{A_0}:\mathcal A^s	imes\mathcal A^s	o \mathcal T
 \]
-holds on the declared Sobolev branch.
+with the following properties:
 
-**Completion Rule CR.17.7.4.**  
-Only torsion formulas satisfying corrected-gauge equivariance may appear in later dynamical chapters.
+1. it is well-typed on the declared Sobolev branch;
+2. it depends only on the completed distinguished-connection data and the ordered pair of associated connections;
+3. it is equivariant under the right \(H^{	au_{A_0}}\)-action; and
+4. when restricted to a branch with a genuine tangent-valued torsion operator, it reduces to a corrected expression built from ordinary torsions and branch-declared affine counterterms.
 
-**Proposition 17.7.5.**  
+This definition makes explicit what the earlier draft only suggested: augmented torsion is not ordinary torsion by another name, but a corrected torsion extracted from the bi-connection data.
+
+**Inserted Choice IX.17.7.5 (Minimal admissible augmented-torsion branch).**  
+For the mainline completion document, the active augmented-torsion branch is the minimal admissible branch determined by
+\[
+T^{\mathrm{aug}}_\omega:=\Theta_{A_0}(A_\omega,B_\omega),
+\]
+where, whenever a tangent-valued torsion operator is available on the declared realization,
+\[
+\Theta_{A_0}(A,B):=T(B)-T(A)+\mathcal C_{A_0}(A,B).
+\]
+Here \(\mathcal C_{A_0}(A,B)\) is a branch-declared affine correction term with the normalization
+\[
+\mathcal C_{A_0}(A_0,A_0)=0
+\]
+and chosen so that corrected-gauge equivariance holds. The conservative default used by the mainline manuscript is the smallest admissible \(\mathcal C_{A_0}\) compatible with that equivariance requirement.
+
+**Definition 17.7.6 (Completed augmented torsion branch).**  
+The active augmented torsion is the bundle-valued two-form
+\[
+T^{\mathrm{aug}}_\omega=T(B_\omega)-T(A_\omega)+\mathcal C_{A_0}(A_\omega,B_\omega)
+\]
+when ordinary torsions \(T(A_\omega)\) and \(T(B_\omega)\) are available on the declared realization, and otherwise is defined abstractly by
+\[
+T^{\mathrm{aug}}_\omega:=\Theta_{A_0}(A_\omega,B_\omega).
+\]
+This keeps the manuscript honest across branches where principal-connection data do not canonically determine a tangent torsion without extra realization data.
+
+**Proposition 17.7.7 (Corrected-gauge equivariance).**  
+On the active branch, augmented torsion satisfies
+\[
+T^{\mathrm{aug}}_{g\cdot 	au_{A_0}(h)}=\mathrm{Ad}(h^{-1})T^{\mathrm{aug}}_g
+\]
+for the declared right \(H^{	au_{A_0}}\)-action.
+
+**Status note.**  
+This proposition is adopted as a branch requirement because clean corrected-gauge equivariance is the very reason augmented torsion is introduced in the source architecture. A branch that fails this property is inadmissible for the mainline document.
+
+**Proposition 17.7.8 (Reduction to ordinary torsion defect).**  
+If the correction term vanishes and the two associated connections coincide, then
+\[
+T^{\mathrm{aug}}_\omega=0.
+\]
+More generally, \(T^{\mathrm{aug}}_\omega\) measures the branch-declared torsional defect between the two associated connections generated by the unified field.
+
+**Proof.** immediate from Definition 17.7.6.
+
+**Completion Rule CR.17.7.9.**  
+Only torsion formulas satisfying corrected-gauge equivariance and declaring their torsion target space may appear in later dynamical chapters. Any undecorated occurrence of \(T_\omega\) is to be read as \(T^{\mathrm{aug}}_\omega\) on the active branch.
+
+**Proposition 17.7.10.**  
 Within a completed distinguished-connection branch, \(A_0\) is intrinsic to the branch data and not a removable gauge artifact. Changing \(A_0\) changes the branch and therefore must be tracked in provenance and prediction records.
 
-**Proof:** immediate from the definitions of \(d_{A_0}\), \(\tau_{A_0}\), and the gauge slice.
+**Proof:** immediate from the definitions of \(d_{A_0}\), \(	au_{A_0}\), the gauge slice, and the correction term \(\mathcal C_{A_0}\).
+
+**What this resolves.**  
+This completion closes the main formal gap around augmented torsion. The document now specifies:
+
+1. what space augmented torsion lands in;
+2. how it is extracted from the bi-connection pair;
+3. how ordinary torsion and corrected torsion are related without being conflated;
+4. what property makes an augmented-torsion branch admissible; and
+5. what still remains open, namely uniqueness and comparison among admissible correction terms.
+
+The remaining research problem is therefore no longer “what is augmented torsion supposed to be?” but rather “which admissible augmented-torsion branch, if any, is physically or mathematically preferred?”
 
 ### 19. Shiab Operators
 
@@ -10709,6 +10909,220 @@ A second-order equation written without this information is treated as a target 
 ### 5. Linearization and stability obligation
 
 Every completed bosonic branch must include a linearization step around a declared background solution or background configuration. The linearized operator determines local stability, spectral behavior, and whether the numerical backend should expect stiffness, constraints, or mixed modes. No computational branch is accepted as mature without this linearized model.
+
+## Variational Closure of the First- and Second-Order Lagrangians
+
+This section completes the next missing layer in the dependency chain: the Lagrangian architecture is no longer treated as a pair of suggestive labels but as a typed variational program with declared branches, admissible variations, and explicit proof obligations. The point is not to claim that every derivation is now proved. The point is to make it impossible to mistake a displayed equation for a completed variational theorem.
+
+### 1. Variational data that must be declared
+
+Fix a working branch on a domain \(M\), with native fields typically posed on \(Y\) and observed reductions posed on \(X\). A variational branch is admitted only after the following data are declared:
+
+1. the configuration variables \((A,\omega,\psi)\) and their bundle types;
+2. the background structures used in the density, pairings, and adjoints;
+3. the active augmented-torsion branch \(T^{\mathrm{aug}}_\omega\);
+4. the active Shiab branch \(\Sigma_\alpha\), with \(\Sigma_{\mathrm{mc}}\) the default minimal-compatible choice;
+5. the boundary/asymptotic conditions under which integration by parts is legal;
+6. the regularity class chosen in the analytic chapter;
+7. whether the branch is gauge-invariant, gauge-covariant, or gauge-fixed before variation.
+
+Without these seven items, a displayed Lagrangian is treated only as a formal target expression.
+
+### 2. First-order bosonic variational branch
+
+The document now fixes the first-order bosonic branch by taking the master bosonic quantity
+\[
+\Upsilon_\omega = S_\omega - T^{\mathrm{aug}}_\omega,
+\]
+where \(S_\omega\) is the swerved-curvature term produced by the active Shiab branch and \(T^{\mathrm{aug}}_\omega\) is the branch-local augmented torsion already fixed earlier.
+
+The first-order bosonic action is admitted in the following branch-local form:
+\[
+\mathscr S_1^B(A,\omega)
+=
+\int_M \mathcal L_1^B(A,\omega)\,d\mu,
+\qquad
+\mathcal L_1^B(A,\omega)
+=
+\langle \Lambda_{A_0},\Upsilon_\omega\rangle + \mathcal V_1(A,\omega).
+\]
+Here:
+
+- \(\Lambda_{A_0}\) is an auxiliary multiplier or pairing field in the target bundle dual to \(\mathcal T\), chosen so that the first-order branch really enforces \(\Upsilon_\omega=0\) as an Euler-Lagrange condition;
+- \(\mathcal V_1\) denotes optional lower-order correction terms or gauge-fixing terms declared explicitly in the branch metadata;
+- the pairing is the one induced by the background metric/pairing branch already fixed in the analytic and Shiab sections.
+
+This is the minimal honest first-order closure: the first-order equation is no longer merely written down, but is now tied to a concrete multiplier-type variational mechanism.
+
+**Inserted Assumption VA.1 (First-order multiplier branch).** Unless a fully intrinsic first-order density is extracted from the source draft, the completion document adopts the multiplier realization above as the active branch that generates the equation \(\Upsilon_\omega=0\).
+
+### 3. First-order Euler-Lagrange statement
+
+Under the regularity, pairing, and boundary assumptions declared for the branch, variation with respect to \(\Lambda_{A_0}\) yields
+\[
+\Upsilon_\omega = 0.
+\]
+Variation with respect to the underlying bosonic variables \((A,\omega)\) yields the adjoint constraint
+\[
+D\Upsilon_{(A,\omega)}^*(\Lambda_{A_0}) + D\mathcal V_1|_{(A,\omega)} = 0,
+\]
+where \(D\Upsilon_{(A,\omega)}\) is the Fréchet derivative of the master bosonic field with respect to the active branch variables.
+
+This separates two claims that had previously risked being conflated:
+
+- the displayed first-order equation \(\Upsilon_\omega=0\), and
+- the full stationarity system of the chosen first-order action.
+
+Only the first is currently treated as branch-defined. The second is now typed and visible, but still depends on the exact choice of \(\mathcal V_1\) and of the multiplier semantics.
+
+### 4. Second-order bosonic variational branch
+
+The second-order bosonic action is now fixed in the conservative branch that the manuscript had already been circling around:
+\[
+\mathscr S_2^B(A,\omega)
+=
+\frac12 \int_M \|\Upsilon_\omega\|^2\,d\mu + \int_M \mathcal V_2(A,\omega)\,d\mu.
+\]
+The term \(\mathcal V_2\) is optional and must be declared explicitly whenever gauge-fixing, constraint stabilization, or boundary penalties are added. In the minimal compatible branch one sets \(\mathcal V_2=0\).
+
+The first variation is therefore
+\[
+\delta \mathscr S_2^B
+=
+\int_M \langle D\Upsilon_{(A,\omega)}(\delta A,\delta \omega),\Upsilon_\omega\rangle\,d\mu
++ \delta\!\int_M \mathcal V_2\,d\mu,
+\]
+so, after justified integration by parts,
+\[
+D\Upsilon_{(A,\omega)}^*(\Upsilon_\omega) + D\mathcal V_2|_{(A,\omega)} = 0.
+\]
+In the minimal branch this becomes
+\[
+D\Upsilon_{(A,\omega)}^*(\Upsilon_\omega)=0.
+\]
+This is the completed variational source of the compact second-order bosonic equation stated elsewhere in the manuscript.
+
+### 5. Relation to the Yang--Mills/Maxwell-like reading
+
+Whenever the branch identifies the leading part of \(D\Upsilon^*\Upsilon\) with a gauge-covariant divergence of curvature, the completion document permits the schematic rewriting
+\[
+D_\omega^*F_{A_\omega}=J_\omega^B,
+\]
+provided the branch metadata explicitly states:
+
+- which part of \(D\Upsilon^*\Upsilon\) is being read as \(D_\omega^*F_{A_\omega}\),
+- which lower-order or torsion-induced terms are absorbed into \(J_\omega^B\),
+- and whether this is an identity, an asymptotic reduction, or a phenomenological reading.
+
+This prevents the compact Yang--Mills/Maxwell-like equation from silently hiding branch-dependent lower-order structure.
+
+### 6. First-order implies second-order: corrected status
+
+The document now upgrades the status of the claim “first-order implies second-order” from an informal slogan to a branch-local proposition with explicit hypotheses.
+
+**Proposition VC.6.1 (First-order branch implies second-order stationarity under variational compatibility).** Suppose:
+
+1. the second-order action is the minimal compatible branch \(\mathscr S_2^B=\frac12\int_M\|\Upsilon_\omega\|^2 d\mu\);
+2. the branch regularity is high enough for the first variation and formal adjoint to exist;
+3. the boundary/asymptotic conditions remove the boundary contribution from the variation;
+4. \(\Upsilon_\omega=0\) holds strongly.
+
+Then the second-order Euler-Lagrange equation
+\[
+D\Upsilon_{(A,\omega)}^*(\Upsilon_\omega)=0
+\]
+holds automatically.
+
+**Proof.** Under hypotheses (1)--(4), the right-hand side vanishes because it is linear in \(\Upsilon_\omega\). \(\square\)
+
+This is the strongest version that can be honestly claimed at present. It is not yet a theorem about every possible corrected branch with extra \(\mathcal V_2\), boundary terms, or distributional solution concept.
+
+### 7. Fermionic variational placeholder with typed obligations
+
+The source material still does not determine a unique fermionic operator branch. The completion document therefore stops short of claiming a finished fermionic action, but it now fixes the minimum admissible template:
+\[
+\mathscr S^F(\psi;A,\omega)
+=
+\int_M \langle \psi, \mathcal D_{\omega,\alpha}\psi\rangle\,d\mu
++ \int_M \mathcal Y(A,\omega,\psi)\,d\mu,
+\]
+where \(\mathcal D_{\omega,\alpha}\) is a chosen branch of the fermionic differential operator and \(\mathcal Y\) collects Yukawa-like or lower-order coupling terms.
+
+A fermionic branch is considered variationally complete only when:
+
+- the bundle carrying \(\psi\) is fixed globally or branch-locally;
+- the adjoint or reality convention is declared;
+- the relation to the topological-spinor bridge is stated;
+- and the variation rule for \(\bar\psi\) or the chosen real form is explicit.
+
+Until then, the fermionic action remains a typed placeholder rather than a completed derivation.
+
+### 8. Proof-obligation register for the variational layer
+
+The document now records the following variational proof obligations explicitly.
+
+**VO-1.** Prove that the active first-order branch really arises from an intrinsic GU density rather than only from the inserted multiplier realization.
+
+**VO-2.** Prove corrected-gauge covariance or gauge invariance of \(\mathscr S_1^B\) for the active branch, including the multiplier sector.
+
+**VO-3.** Prove that the second-order branch \(\mathscr S_2^B\) is differentiable on the declared Sobolev configuration spaces and that the displayed first-variation formula is legal.
+
+**VO-4.** Prove the precise relation between the compact equation \(D\Upsilon^*\Upsilon=0\) and the Yang--Mills/Maxwell-like equation \(D_\omega^*F_{A_\omega}=J_\omega^B\), including the exact definition of \(J_\omega^B\).
+
+**VO-5.** Classify which added lower-order correction terms \(\mathcal V_1,\mathcal V_2\) preserve the implication from the first-order branch to the second-order branch.
+
+**VO-6.** Complete the fermionic variational branch, including the operator domain, adjoint convention, and coupling terms.
+
+**VO-7.** Give a gauge-fixed deformation complex or linearized Hessian for the completed bosonic branch so that local stability and solver semantics can be discussed without ambiguity.
+
+### 9. Status consequences for the manuscript
+
+After this update, the document adopts the following stronger status rules:
+
+1. the compact second-order bosonic equation is now treated as **variationally sourced** on the minimal compatible branch, not merely as a displayed equation;
+2. the claim that first-order solutions imply second-order stationarity is now treated as **proved only for the minimal branch** stated above;
+3. every richer branch with added potential, boundary, or gauge-fixing terms remains **Branch-Local** until its proof obligations are discharged;
+4. the fermionic variational layer remains **Partial**, but it is now typed tightly enough that its missing pieces are auditable rather than implicit.
+
+## Variational-Proof Interface Addendum
+
+This addendum bridges the new Lagrangian closure to the proof culture used elsewhere in the manuscript.
+
+### 1. What counts as a completed derivation
+
+A variational derivation is considered completed only when all of the following are present in the same branch:
+
+- exact action density;
+- domain and codomain of every varied field;
+- regularity hypotheses;
+- all background structures used in pairings and adjoints;
+- boundary/asymptotic conditions;
+- full first variation;
+- identification of the Euler--Lagrange operator;
+- and a statement of gauge covariance or the exact gauge-fixing semantics.
+
+A chapter that gives only the final Euler--Lagrange equation without this package is treated as a destination formula, not a completed proof.
+
+### 2. Linearization package
+
+For every completed bosonic variational branch, the document now requires the linearization pair
+\[
+D\Upsilon_{(A_\star,\omega_\star)}
+\qquad\text{and}\qquad
+D\Upsilon_{(A_\star,\omega_\star)}^*D\Upsilon_{(A_\star,\omega_\star)}
+\]
+about a declared background configuration. The first is the residual linearization relevant to manufactured-solution tests and Newton-like methods. The second is the Hessian-style operator relevant to stability, ellipticity, and preconditioning. Neither may remain implicit in a branch that claims computational readiness.
+
+### 3. Proof-citation discipline
+
+Any later section that invokes “the Lagrangian,” “the Euler--Lagrange equation,” or “first-order implies second-order” must now cite the exact branch and one of:
+
+- a completed derivation in the manuscript,
+- a proof obligation identifier from the list above,
+- or an inserted assumption stating that the derivation is being adopted rather than proved.
+
+This is the mechanism that prevents later phenomenological or computational chapters from borrowing variational authority they have not yet earned.
+
 
 ## Mathematical-to-Computational Lowering Addendum
 
