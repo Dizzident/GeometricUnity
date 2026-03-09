@@ -447,6 +447,54 @@ int gu_copy_gpu(double* d_dst, const double* d_src, int n) {
     return (err == cudaSuccess) ? 0 : -1;
 }
 
+/* ---- CUDA runtime wrappers --------------------------------------------- */
+
+static cudaError_t g_last_cuda_error = cudaSuccess;
+
+int gu_cuda_device_init(void) {
+    g_last_cuda_error = cudaSetDevice(0);
+    return (int)g_last_cuda_error;
+}
+
+int gu_cuda_device_reset(void) {
+    g_last_cuda_error = cudaDeviceReset();
+    return (int)g_last_cuda_error;
+}
+
+int gu_cuda_malloc(void** devptr, size_t size) {
+    g_last_cuda_error = cudaMalloc(devptr, size);
+    return (int)g_last_cuda_error;
+}
+
+int gu_cuda_free(void* devptr) {
+    g_last_cuda_error = cudaFree(devptr);
+    return (int)g_last_cuda_error;
+}
+
+int gu_cuda_memcpy_h2d(void* dst, const void* src, size_t count) {
+    g_last_cuda_error = cudaMemcpy(dst, src, count, cudaMemcpyHostToDevice);
+    return (int)g_last_cuda_error;
+}
+
+int gu_cuda_memcpy_d2h(void* dst, const void* src, size_t count) {
+    g_last_cuda_error = cudaMemcpy(dst, src, count, cudaMemcpyDeviceToHost);
+    return (int)g_last_cuda_error;
+}
+
+int gu_cuda_memcpy_d2d(void* dst, const void* src, size_t count) {
+    g_last_cuda_error = cudaMemcpy(dst, src, count, cudaMemcpyDeviceToDevice);
+    return (int)g_last_cuda_error;
+}
+
+int gu_cuda_memset(void* devptr, int value, size_t count) {
+    g_last_cuda_error = cudaMemset(devptr, value, count);
+    return (int)g_last_cuda_error;
+}
+
+const char* gu_cuda_get_last_error_string(void) {
+    return cudaGetErrorString(g_last_cuda_error);
+}
+
 } /* extern "C" */
 
 #else /* !__CUDACC__ -- Plain C compilation for reference/testing */
@@ -644,6 +692,46 @@ int gu_scale_gpu(double* x, double alpha, int n) {
 int gu_copy_gpu(double* dst, const double* src, int n) {
     for (int i = 0; i < n; i++) dst[i] = src[i];
     return 0;
+}
+
+/* CUDA runtime wrapper stubs (CPU fallback -- never called in non-CUDA builds,
+   but needed by the linker since gu_cuda_core.c references them) */
+
+int gu_cuda_device_init(void) { return 0; }
+int gu_cuda_device_reset(void) { return 0; }
+
+int gu_cuda_malloc(void** devptr, size_t size) {
+    *devptr = calloc(1, size);
+    return (*devptr) ? 0 : -1;
+}
+
+int gu_cuda_free(void* devptr) {
+    free(devptr);
+    return 0;
+}
+
+int gu_cuda_memcpy_h2d(void* dst, const void* src, size_t count) {
+    memcpy(dst, src, count);
+    return 0;
+}
+
+int gu_cuda_memcpy_d2h(void* dst, const void* src, size_t count) {
+    memcpy(dst, src, count);
+    return 0;
+}
+
+int gu_cuda_memcpy_d2d(void* dst, const void* src, size_t count) {
+    memcpy(dst, src, count);
+    return 0;
+}
+
+int gu_cuda_memset(void* devptr, int value, size_t count) {
+    memset(devptr, value, count);
+    return 0;
+}
+
+const char* gu_cuda_get_last_error_string(void) {
+    return "no CUDA";
 }
 
 #endif /* __CUDACC__ */

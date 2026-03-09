@@ -20,6 +20,16 @@
     <ProjectReference Include="..\..\src\Gu.Branching\Gu.Branching.csproj" />
     <ProjectReference Include="..\..\src\Gu.Solvers\Gu.Solvers.csproj" />
     <ProjectReference Include="..\..\src\Gu.Interop\Gu.Interop.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Geometry\Gu.Geometry.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Math\Gu.Math.csproj" />
+  </ItemGroup>
+
+  <!-- Copy native library to test output directory if it exists -->
+  <ItemGroup>
+    <None Include="..\..\native\build\libgu_cuda_core.so"
+          Condition="Exists('..\..\native\build\libgu_cuda_core.so')"
+          CopyToOutputDirectory="PreserveNewest"
+          Link="libgu_cuda_core.so" />
   </ItemGroup>
 
 </Project>

@@ -20,6 +20,30 @@
 #include <math.h>
 
 /* -------------------------------------------------------------------------
+ * CUDA error checking helper
+ * ------------------------------------------------------------------------- */
+
+#ifdef GU_HAS_CUDA
+#define CUDA_CHECK(call, func_name) do { \
+    int _err = (call); \
+    if (_err != 0) { \
+        set_error(GU_ERROR_CUDA_ERROR, \
+                  gu_cuda_get_last_error_string(), func_name); \
+        return GU_ERROR_CUDA_ERROR; \
+    } \
+} while(0)
+
+#define CUDA_CHECK_HANDLE(call, func_name) do { \
+    int _err = (call); \
+    if (_err != 0) { \
+        set_error(GU_ERROR_CUDA_ERROR, \
+                  gu_cuda_get_last_error_string(), func_name); \
+        return -1; \
+    } \
+} while(0)
+#endif
+
+/* -------------------------------------------------------------------------
  * Internal state
  * ------------------------------------------------------------------------- */
 
@@ -105,7 +129,7 @@ gu_error_code_t gu_initialize(const gu_manifest_snapshot_t* manifest) {
     g_state.next_handle = 1; /* handle 0 is reserved/invalid */
 
 #ifdef GU_HAS_CUDA
-    /* TODO: CUDA device initialization, context creation */
+    CUDA_CHECK(gu_cuda_device_init(), "gu_initialize");
 #endif
 
     return GU_SUCCESS;
@@ -129,17 +153,21 @@ void gu_shutdown(void) {
     /* Free all allocated buffers */
     for (int i = 0; i < MAX_BUFFERS; i++) {
         if (g_state.buffers[i].active && g_state.buffers[i].data) {
+#ifdef GU_HAS_CUDA
+            gu_cuda_free(g_state.buffers[i].data);
+#else
             free(g_state.buffers[i].data);
+#endif
             g_state.buffers[i].data = NULL;
             g_state.buffers[i].active = 0;
         }
     }
 
-    /* Free physics data */
+    /* Free physics data (always host memory) */
     free_physics_data();
 
 #ifdef GU_HAS_CUDA
-    /* TODO: CUDA cleanup, context destruction */
+    gu_cuda_device_reset();
 #endif
 
     g_state.initialized = 0;
@@ -174,10 +202,10 @@ gu_buffer_handle_t gu_allocate_buffer(int32_t total_elements, int32_t bytes_per_
     size_t byte_count = (size_t)total_elements * (size_t)bytes_per_element;
 
 #ifdef GU_HAS_CUDA
-    /* TODO: cudaMalloc */
     double* data = NULL;
-    set_error(GU_ERROR_CUDA_ERROR, "CUDA allocation not implemented", "gu_allocate_buffer");
-    return -1;
+    CUDA_CHECK_HANDLE(gu_cuda_malloc((void**)&data, byte_count), "gu_allocate_buffer");
+    /* Zero the device memory to match CPU calloc behavior */
+    CUDA_CHECK_HANDLE(gu_cuda_memset(data, 0, byte_count), "gu_allocate_buffer");
 #else
     double* data = (double*)calloc((size_t)total_elements, (size_t)bytes_per_element);
 #endif
@@ -219,7 +247,7 @@ gu_error_code_t gu_upload_buffer(gu_buffer_handle_t handle, const void* data, si
     }
 
 #ifdef GU_HAS_CUDA
-    /* TODO: cudaMemcpy(buf->data, data, byte_count, cudaMemcpyHostToDevice) */
+    CUDA_CHECK(gu_cuda_memcpy_h2d(buf->data, data, byte_count), "gu_upload_buffer");
 #else
     memcpy(buf->data, data, byte_count);
 #endif
@@ -247,7 +275,7 @@ gu_error_code_t gu_download_buffer(gu_buffer_handle_t handle, void* data, size_t
     size_t copy_bytes = byte_count < max_bytes ? byte_count : max_bytes;
 
 #ifdef GU_HAS_CUDA
-    /* TODO: cudaMemcpy(data, buf->data, copy_bytes, cudaMemcpyDeviceToHost) */
+    CUDA_CHECK(gu_cuda_memcpy_d2h(data, buf->data, copy_bytes), "gu_download_buffer");
 #else
     memcpy(data, buf->data, copy_bytes);
 #endif
@@ -263,7 +291,7 @@ gu_error_code_t gu_free_buffer(gu_buffer_handle_t handle) {
     }
 
 #ifdef GU_HAS_CUDA
-    /* TODO: cudaFree(g_state.buffers[handle].data) */
+    CUDA_CHECK(gu_cuda_free(g_state.buffers[handle].data), "gu_free_buffer");
 #else
     free(g_state.buffers[handle].data);
 #endif
@@ -276,9 +304,14 @@ gu_error_code_t gu_free_buffer(gu_buffer_handle_t handle) {
 }
 
 /* -------------------------------------------------------------------------
- * Compute kernels (CPU reference fallback)
+ * Compute kernels
  *
- * When GU_HAS_CUDA is defined, these dispatch to GPU kernel launches.
+ * When GU_HAS_CUDA is defined, these dispatch to GPU kernel launches
+ * via the functions in gu_cuda_kernels.h. Physics kernels (curvature,
+ * torsion, shiab) use the CPU-side approach for correctness: copy omega
+ * from device to host, run the validated CPU physics kernel, copy the
+ * result back to device.
+ *
  * Otherwise they execute directly on CPU using the same algorithm.
  * ------------------------------------------------------------------------- */
 
@@ -301,6 +334,41 @@ gu_error_code_t gu_evaluate_curvature(gu_buffer_handle_t omega, gu_buffer_handle
     physics_data_t* p = &g_state.physics;
 
     if (p->has_topology && p->has_structure_constants) {
+#ifdef GU_HAS_CUDA
+        /* Copy omega from device to host, run CPU physics kernel, copy result back */
+        size_t omega_bytes = (size_t)omega_buf->element_count * sizeof(double);
+        size_t curv_bytes = (size_t)curv_buf->element_count * sizeof(double);
+        double* h_omega = (double*)malloc(omega_bytes);
+        double* h_curv = (double*)malloc(curv_bytes);
+        if (!h_omega || !h_curv) {
+            free(h_omega); free(h_curv);
+            set_error(GU_ERROR_ALLOCATION_FAILED, "Host staging alloc failed", "gu_evaluate_curvature");
+            return GU_ERROR_ALLOCATION_FAILED;
+        }
+        int cuda_rc = gu_cuda_memcpy_d2h(h_omega, omega_buf->data, omega_bytes);
+        if (cuda_rc != 0) {
+            free(h_omega); free(h_curv);
+            set_error(GU_ERROR_CUDA_ERROR, gu_cuda_get_last_error_string(), "gu_evaluate_curvature");
+            return GU_ERROR_CUDA_ERROR;
+        }
+        int rc = gu_curvature_assemble_physics(
+            h_omega, h_curv,
+            p->face_boundary_edges, p->face_boundary_orientations,
+            p->structure_constants,
+            p->header.face_count, p->header.edge_count,
+            p->header.dim_g, p->header.max_edges_per_face);
+        if (rc != 0) {
+            free(h_omega); free(h_curv);
+            set_error(GU_ERROR_CUDA_ERROR, "Curvature kernel failed", "gu_evaluate_curvature");
+            return GU_ERROR_CUDA_ERROR;
+        }
+        cuda_rc = gu_cuda_memcpy_h2d(curv_buf->data, h_curv, curv_bytes);
+        free(h_omega); free(h_curv);
+        if (cuda_rc != 0) {
+            set_error(GU_ERROR_CUDA_ERROR, gu_cuda_get_last_error_string(), "gu_evaluate_curvature");
+            return GU_ERROR_CUDA_ERROR;
+        }
+#else
         /* Real physics: F = d(omega) + (1/2)[omega, omega] */
         int rc = gu_curvature_assemble_physics(
             omega_buf->data, curv_buf->data,
@@ -312,11 +380,18 @@ gu_error_code_t gu_evaluate_curvature(gu_buffer_handle_t omega, gu_buffer_handle
             set_error(GU_ERROR_CUDA_ERROR, "Curvature kernel failed", "gu_evaluate_curvature");
             return GU_ERROR_CUDA_ERROR;
         }
+#endif
     } else {
         /* Fallback: identity stub (F = omega) */
         int count = omega_buf->element_count < curv_buf->element_count
             ? omega_buf->element_count : curv_buf->element_count;
+#ifdef GU_HAS_CUDA
+        CUDA_CHECK(gu_cuda_memcpy_d2d(curv_buf->data, omega_buf->data,
+                                       (size_t)count * sizeof(double)),
+                   "gu_evaluate_curvature");
+#else
         memcpy(curv_buf->data, omega_buf->data, (size_t)count * sizeof(double));
+#endif
     }
 
     clear_error();
@@ -342,6 +417,41 @@ gu_error_code_t gu_evaluate_torsion(gu_buffer_handle_t omega, gu_buffer_handle_t
     physics_data_t* p = &g_state.physics;
 
     if (p->has_topology && p->has_structure_constants && p->has_a0) {
+#ifdef GU_HAS_CUDA
+        /* Copy omega from device to host, run CPU physics kernel, copy result back */
+        size_t omega_bytes = (size_t)omega_buf->element_count * sizeof(double);
+        size_t torsion_bytes = (size_t)torsion_buf->element_count * sizeof(double);
+        double* h_omega = (double*)malloc(omega_bytes);
+        double* h_torsion = (double*)malloc(torsion_bytes);
+        if (!h_omega || !h_torsion) {
+            free(h_omega); free(h_torsion);
+            set_error(GU_ERROR_ALLOCATION_FAILED, "Host staging alloc failed", "gu_evaluate_torsion");
+            return GU_ERROR_ALLOCATION_FAILED;
+        }
+        int cuda_rc = gu_cuda_memcpy_d2h(h_omega, omega_buf->data, omega_bytes);
+        if (cuda_rc != 0) {
+            free(h_omega); free(h_torsion);
+            set_error(GU_ERROR_CUDA_ERROR, gu_cuda_get_last_error_string(), "gu_evaluate_torsion");
+            return GU_ERROR_CUDA_ERROR;
+        }
+        int rc = gu_torsion_assemble_physics(
+            h_omega, p->a0_coefficients, h_torsion,
+            p->face_boundary_edges, p->face_boundary_orientations,
+            p->structure_constants,
+            p->header.face_count, p->header.edge_count,
+            p->header.dim_g, p->header.max_edges_per_face);
+        if (rc != 0) {
+            free(h_omega); free(h_torsion);
+            set_error(GU_ERROR_CUDA_ERROR, "Torsion kernel failed", "gu_evaluate_torsion");
+            return GU_ERROR_CUDA_ERROR;
+        }
+        cuda_rc = gu_cuda_memcpy_h2d(torsion_buf->data, h_torsion, torsion_bytes);
+        free(h_omega); free(h_torsion);
+        if (cuda_rc != 0) {
+            set_error(GU_ERROR_CUDA_ERROR, gu_cuda_get_last_error_string(), "gu_evaluate_torsion");
+            return GU_ERROR_CUDA_ERROR;
+        }
+#else
         /* Real physics: T^aug = d_{A0}(omega - A0) */
         int rc = gu_torsion_assemble_physics(
             omega_buf->data, p->a0_coefficients, torsion_buf->data,
@@ -353,9 +463,16 @@ gu_error_code_t gu_evaluate_torsion(gu_buffer_handle_t omega, gu_buffer_handle_t
             set_error(GU_ERROR_CUDA_ERROR, "Torsion kernel failed", "gu_evaluate_torsion");
             return GU_ERROR_CUDA_ERROR;
         }
+#endif
     } else {
         /* Fallback: trivial torsion T = 0 */
+#ifdef GU_HAS_CUDA
+        CUDA_CHECK(gu_cuda_memset(torsion_buf->data, 0,
+                                   (size_t)torsion_buf->element_count * sizeof(double)),
+                   "gu_evaluate_torsion");
+#else
         memset(torsion_buf->data, 0, (size_t)torsion_buf->element_count * sizeof(double));
+#endif
     }
 
     clear_error();
@@ -381,6 +498,44 @@ gu_error_code_t gu_evaluate_shiab(gu_buffer_handle_t omega, gu_buffer_handle_t s
     physics_data_t* p = &g_state.physics;
 
     if (p->has_topology && p->has_structure_constants) {
+#ifdef GU_HAS_CUDA
+        /*
+         * Identity Shiab: S = F = d(omega) + (1/2)[omega, omega].
+         * Copy omega D->H, compute curvature on CPU, copy result H->D.
+         */
+        size_t omega_bytes = (size_t)omega_buf->element_count * sizeof(double);
+        size_t shiab_bytes = (size_t)shiab_buf->element_count * sizeof(double);
+        double* h_omega = (double*)malloc(omega_bytes);
+        double* h_shiab = (double*)malloc(shiab_bytes);
+        if (!h_omega || !h_shiab) {
+            free(h_omega); free(h_shiab);
+            set_error(GU_ERROR_ALLOCATION_FAILED, "Host staging alloc failed", "gu_evaluate_shiab");
+            return GU_ERROR_ALLOCATION_FAILED;
+        }
+        int cuda_rc = gu_cuda_memcpy_d2h(h_omega, omega_buf->data, omega_bytes);
+        if (cuda_rc != 0) {
+            free(h_omega); free(h_shiab);
+            set_error(GU_ERROR_CUDA_ERROR, gu_cuda_get_last_error_string(), "gu_evaluate_shiab");
+            return GU_ERROR_CUDA_ERROR;
+        }
+        int rc = gu_curvature_assemble_physics(
+            h_omega, h_shiab,
+            p->face_boundary_edges, p->face_boundary_orientations,
+            p->structure_constants,
+            p->header.face_count, p->header.edge_count,
+            p->header.dim_g, p->header.max_edges_per_face);
+        if (rc != 0) {
+            free(h_omega); free(h_shiab);
+            set_error(GU_ERROR_CUDA_ERROR, "Shiab kernel failed", "gu_evaluate_shiab");
+            return GU_ERROR_CUDA_ERROR;
+        }
+        cuda_rc = gu_cuda_memcpy_h2d(shiab_buf->data, h_shiab, shiab_bytes);
+        free(h_omega); free(h_shiab);
+        if (cuda_rc != 0) {
+            set_error(GU_ERROR_CUDA_ERROR, gu_cuda_get_last_error_string(), "gu_evaluate_shiab");
+            return GU_ERROR_CUDA_ERROR;
+        }
+#else
         /*
          * Identity Shiab: S = F = d(omega) + (1/2)[omega, omega].
          * Compute curvature directly into the shiab output buffer.
@@ -395,11 +550,18 @@ gu_error_code_t gu_evaluate_shiab(gu_buffer_handle_t omega, gu_buffer_handle_t s
             set_error(GU_ERROR_CUDA_ERROR, "Shiab kernel failed", "gu_evaluate_shiab");
             return GU_ERROR_CUDA_ERROR;
         }
+#endif
     } else {
         /* Fallback: identity Shiab S = omega (stub) */
         int count = omega_buf->element_count < shiab_buf->element_count
             ? omega_buf->element_count : shiab_buf->element_count;
+#ifdef GU_HAS_CUDA
+        CUDA_CHECK(gu_cuda_memcpy_d2d(shiab_buf->data, omega_buf->data,
+                                       (size_t)count * sizeof(double)),
+                   "gu_evaluate_shiab");
+#else
         memcpy(shiab_buf->data, omega_buf->data, (size_t)count * sizeof(double));
+#endif
     }
 
     clear_error();
@@ -429,16 +591,19 @@ gu_error_code_t gu_evaluate_residual(gu_buffer_handle_t shiab, gu_buffer_handle_
     buffer_entry_t* t_buf = &g_state.buffers[torsion];
     buffer_entry_t* r_buf = &g_state.buffers[residual_out];
 
-#ifdef GU_HAS_CUDA
-    /* TODO: launch residual CUDA kernel */
-    set_error(GU_ERROR_CUDA_ERROR, "CUDA residual kernel not implemented", "gu_evaluate_residual");
-    return GU_ERROR_CUDA_ERROR;
-#else
-    /* CPU reference: Upsilon = S - T */
     int count = s_buf->element_count;
     if (t_buf->element_count < count) count = t_buf->element_count;
     if (r_buf->element_count < count) count = r_buf->element_count;
 
+#ifdef GU_HAS_CUDA
+    /* Launch GPU kernel: r[i] = s[i] - t[i] */
+    int rc = gu_residual_assemble_gpu(s_buf->data, t_buf->data, r_buf->data, count);
+    if (rc != 0) {
+        set_error(GU_ERROR_CUDA_ERROR, "CUDA residual kernel failed", "gu_evaluate_residual");
+        return GU_ERROR_CUDA_ERROR;
+    }
+#else
+    /* CPU reference: Upsilon = S - T */
     for (int i = 0; i < count; i++) {
         r_buf->data[i] = s_buf->data[i] - t_buf->data[i];
     }
@@ -465,9 +630,12 @@ gu_error_code_t gu_evaluate_objective(gu_buffer_handle_t residual, double* objec
     buffer_entry_t* r_buf = &g_state.buffers[residual];
 
 #ifdef GU_HAS_CUDA
-    /* TODO: parallel reduction on GPU */
-    set_error(GU_ERROR_CUDA_ERROR, "CUDA objective kernel not implemented", "gu_evaluate_objective");
-    return GU_ERROR_CUDA_ERROR;
+    /* GPU parallel reduction: I2_h = (1/2) sum(r_i^2) */
+    int rc = gu_objective_assemble_gpu(r_buf->data, r_buf->element_count, objective_out);
+    if (rc != 0) {
+        set_error(GU_ERROR_CUDA_ERROR, "CUDA objective kernel failed", "gu_evaluate_objective");
+        return GU_ERROR_CUDA_ERROR;
+    }
 #else
     /* CPU reference: I2_h = (1/2) sum(r_i^2) */
     double sum = 0.0;
@@ -504,13 +672,16 @@ gu_error_code_t gu_axpy(gu_buffer_handle_t y_handle, double alpha, gu_buffer_han
     buffer_entry_t* y_buf = &g_state.buffers[y_handle];
     buffer_entry_t* x_buf = &g_state.buffers[x_handle];
 
-#ifdef GU_HAS_CUDA
-    /* TODO: cublasDaxpy */
-    set_error(GU_ERROR_CUDA_ERROR, "CUDA axpy not implemented", "gu_axpy");
-    return GU_ERROR_CUDA_ERROR;
-#else
     int count = n < y_buf->element_count ? n : y_buf->element_count;
     if (x_buf->element_count < count) count = x_buf->element_count;
+
+#ifdef GU_HAS_CUDA
+    int rc = gu_axpy_gpu(y_buf->data, alpha, x_buf->data, count);
+    if (rc != 0) {
+        set_error(GU_ERROR_CUDA_ERROR, "CUDA axpy kernel failed", "gu_axpy");
+        return GU_ERROR_CUDA_ERROR;
+    }
+#else
     for (int i = 0; i < count; i++) {
         y_buf->data[i] += alpha * x_buf->data[i];
     }
@@ -542,13 +713,16 @@ gu_error_code_t gu_inner_product(gu_buffer_handle_t u_handle, gu_buffer_handle_t
     buffer_entry_t* u_buf = &g_state.buffers[u_handle];
     buffer_entry_t* v_buf = &g_state.buffers[v_handle];
 
-#ifdef GU_HAS_CUDA
-    /* TODO: cublasDdot or custom parallel reduction */
-    set_error(GU_ERROR_CUDA_ERROR, "CUDA inner_product not implemented", "gu_inner_product");
-    return GU_ERROR_CUDA_ERROR;
-#else
     int count = n < u_buf->element_count ? n : u_buf->element_count;
     if (v_buf->element_count < count) count = v_buf->element_count;
+
+#ifdef GU_HAS_CUDA
+    int rc = gu_inner_product_gpu(u_buf->data, v_buf->data, count, result_out);
+    if (rc != 0) {
+        set_error(GU_ERROR_CUDA_ERROR, "CUDA inner_product kernel failed", "gu_inner_product");
+        return GU_ERROR_CUDA_ERROR;
+    }
+#else
     double sum = 0.0;
     for (int i = 0; i < count; i++) {
         sum += u_buf->data[i] * v_buf->data[i];
@@ -572,12 +746,15 @@ gu_error_code_t gu_scale(gu_buffer_handle_t x_handle, double alpha, int32_t n) {
 
     buffer_entry_t* x_buf = &g_state.buffers[x_handle];
 
-#ifdef GU_HAS_CUDA
-    /* TODO: cublasDscal */
-    set_error(GU_ERROR_CUDA_ERROR, "CUDA scale not implemented", "gu_scale");
-    return GU_ERROR_CUDA_ERROR;
-#else
     int count = n < x_buf->element_count ? n : x_buf->element_count;
+
+#ifdef GU_HAS_CUDA
+    int rc = gu_scale_gpu(x_buf->data, alpha, count);
+    if (rc != 0) {
+        set_error(GU_ERROR_CUDA_ERROR, "CUDA scale kernel failed", "gu_scale");
+        return GU_ERROR_CUDA_ERROR;
+    }
+#else
     for (int i = 0; i < count; i++) {
         x_buf->data[i] *= alpha;
     }
@@ -604,13 +781,16 @@ gu_error_code_t gu_copy(gu_buffer_handle_t dst_handle, gu_buffer_handle_t src_ha
     buffer_entry_t* dst_buf = &g_state.buffers[dst_handle];
     buffer_entry_t* src_buf = &g_state.buffers[src_handle];
 
-#ifdef GU_HAS_CUDA
-    /* TODO: cudaMemcpy device-to-device */
-    set_error(GU_ERROR_CUDA_ERROR, "CUDA copy not implemented", "gu_copy");
-    return GU_ERROR_CUDA_ERROR;
-#else
     int count = n < dst_buf->element_count ? n : dst_buf->element_count;
     if (src_buf->element_count < count) count = src_buf->element_count;
+
+#ifdef GU_HAS_CUDA
+    int rc = gu_copy_gpu(dst_buf->data, src_buf->data, count);
+    if (rc != 0) {
+        set_error(GU_ERROR_CUDA_ERROR, "CUDA copy failed", "gu_copy");
+        return GU_ERROR_CUDA_ERROR;
+    }
+#else
     memcpy(dst_buf->data, src_buf->data, (size_t)count * sizeof(double));
 #endif
 

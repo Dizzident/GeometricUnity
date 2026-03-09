@@ -13,6 +13,7 @@
 #define GU_CUDA_KERNELS_H
 
 #include <stdint.h>
+#include <stddef.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -127,6 +128,29 @@ int gu_axpy_gpu(double* d_y, double alpha, const double* d_x, int n);
 int gu_inner_product_gpu(const double* d_u, const double* d_v, int n, double* result_out);
 int gu_scale_gpu(double* d_x, double alpha, int n);
 int gu_copy_gpu(double* d_dst, const double* d_src, int n);
+
+/* =========================================================================
+ * CUDA runtime wrappers
+ *
+ * These wrap cudaMalloc/cudaFree/cudaMemcpy so that gu_cuda_core.c (compiled
+ * by gcc, not nvcc) can perform device memory management without including
+ * <cuda_runtime.h>.
+ *
+ * Return 0 on success, non-zero CUDA error code on failure.
+ * On failure, gu_cuda_get_last_error_string() returns the error description.
+ * ========================================================================= */
+
+int gu_cuda_device_init(void);
+int gu_cuda_device_reset(void);
+
+int gu_cuda_malloc(void** devptr, size_t size);
+int gu_cuda_free(void* devptr);
+int gu_cuda_memcpy_h2d(void* dst, const void* src, size_t count);
+int gu_cuda_memcpy_d2h(void* dst, const void* src, size_t count);
+int gu_cuda_memcpy_d2d(void* dst, const void* src, size_t count);
+int gu_cuda_memset(void* devptr, int value, size_t count);
+
+const char* gu_cuda_get_last_error_string(void);
 
 #ifdef __cplusplus
 }
