@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/stability_atlas.schema.json",
+  "title": "StabilityAtlas",
+  "description": "A stability atlas: collection of continuation paths, Hessian records, principal-symbol samples, and bifurcation indicators for a parameter family.",
+  "type": "object",
+  "required": [
+    "atlasId",
+    "branchManifestId",
+    "familyDescription",
+    "paths",
+    "hessianRecords",
+    "symbolSamples",
+    "linearizationRecords",
+    "bifurcationIndicators",
+    "timestamp"
+  ],
+  "properties": {
+    "atlasId": {
+      "type": "string",
+      "description": "Unique atlas identifier"
+    },
+    "branchManifestId": {
+      "type": "string",
+      "description": "Branch manifest ID for this atlas"
+    },
+    "familyDescription": {
+      "type": "string",
+      "description": "Description of the parameter family studied"
+    },
+    "paths": {
+      "type": "array",
+      "items": { "$ref": "continuation_result.schema.json" },
+      "description": "Continuation paths in this atlas"
+    },
+    "hessianRecords": {
+      "type": "array",
+      "description": "Hessian records at sampled background states"
+    },
+    "symbolSamples": {
+      "type": "array",
+      "items": { "$ref": "principal_symbol.schema.json" },
+      "description": "Principal-symbol samples from PDE studies"
+    },
+    "linearizationRecords": {
+      "type": "array",
+      "description": "Linearization records at sampled background states"
+    },
+    "bifurcationIndicators": {
+      "type": "array",
+      "description": "Detected singularity/bifurcation indicators"
+    },
+    "discretizationNotes": {
+      "type": "string",
+      "description": "Notes on discretization sensitivity"
+    },
+    "theoremStatusNotes": {
+      "type": "string",
+      "description": "Theorem status notes"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when this atlas was generated"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/continuation_result.schema.json",
+  "title": "ContinuationResult",
+  "description": "Full result of a pseudo-arclength continuation run including the path of converged steps, termination reason, and detected events.",
+  "type": "object",
+  "required": [
+    "spec",
+    "path",
+    "terminationReason",
+    "totalSteps",
+    "totalArclength",
+    "lambdaMin",
+    "lambdaMax",
+    "allEvents",
+    "timestamp"
+  ],
+  "properties": {
+    "spec": { "$ref": "#/$defs/ContinuationSpec" },
+    "path": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/ContinuationStep" },
+      "description": "Converged steps along the continuation path"
+    },
+    "terminationReason": {
+      "type": "string",
+      "enum": ["reached-end", "max-steps", "min-step-size", "corrector-failure", "singular-point", "user-requested"],
+      "description": "Why continuation terminated"
+    },
+    "totalSteps": {
+      "type": "integer",
+      "description": "Total number of steps completed"
+    },
+    "totalArclength": {
+      "type": "number",
+      "description": "Total arclength traversed"
+    },
+    "lambdaMin": {
+      "type": "number",
+      "description": "Minimum parameter value reached"
+    },
+    "lambdaMax": {
+      "type": "number",
+      "description": "Maximum parameter value reached"
+    },
+    "allEvents": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/ContinuationEvent" },
+      "description": "All events detected across all steps"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when this result was produced"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "ContinuationSpec": {
+      "type": "object",
+      "required": [
+        "parameterName",
+        "lambdaStart",
+        "lambdaEnd",
+        "initialStepSize",
+        "maxSteps",
+        "minStepSize",
+        "maxStepSize",
+        "correctorTolerance",
+        "maxCorrectorIterations",
+        "branchManifestId"
+      ],
+      "properties": {
+        "parameterName": { "type": "string", "description": "Name of the continuation parameter" },
+        "lambdaStart": { "type": "number", "description": "Starting parameter value" },
+        "lambdaEnd": { "type": "number", "description": "Target ending parameter value" },
+        "initialStepSize": { "type": "number", "description": "Initial step size in arclength" },
+        "maxSteps": { "type": "integer", "description": "Maximum number of continuation steps" },
+        "minStepSize": { "type": "number", "description": "Minimum allowed step size" },
+        "maxStepSize": { "type": "number", "description": "Maximum allowed step size" },
+        "correctorTolerance": { "type": "number", "description": "Convergence tolerance for the corrector" },
+        "maxCorrectorIterations": { "type": "integer", "description": "Maximum corrector iterations per step" },
+        "branchManifestId": { "type": "string", "description": "Branch manifest ID" },
+        "probeSpectrum": { "type": "boolean", "description": "Whether to probe spectrum at each step" },
+        "spectrumProbeCount": { "type": "integer", "description": "Number of eigenvalues to probe" }
+      },
+      "additionalProperties": false
+    },
+    "ContinuationStep": {
+      "type": "object",
+      "required": [
+        "stepIndex",
+        "lambda",
+        "arclength",
+        "stepSize",
+        "residualNorm",
+        "correctorIterations",
+        "correctorConverged",
+        "events"
+      ],
+      "properties": {
+        "stepIndex": { "type": "integer", "description": "Step index (0-based)" },
+        "lambda": { "type": "number", "description": "Parameter value at this step" },
+        "arclength": { "type": "number", "description": "Arclength along the path" },
+        "stepSize": { "type": "number", "description": "Step size used" },
+        "residualNorm": { "type": "number", "description": "Residual norm at this step" },
+        "correctorIterations": { "type": "integer", "description": "Number of corrector iterations" },
+        "correctorConverged": { "type": "boolean", "description": "Whether corrector converged" },
+        "spectrumResult": { "description": "Spectrum probe result (null if not probed)" },
+        "events": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/ContinuationEvent" },
+          "description": "Events detected at this step"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ContinuationEvent": {
+      "type": "object",
+      "required": ["kind", "lambda", "description", "severity"],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "SingularValueCollapse",
+            "HessianSignChange",
+            "StepRejectionBurst",
+            "ExtractorFailure",
+            "BranchMergeSplitCandidate",
+            "GaugeSliceBreakdown"
+          ],
+          "description": "Kind of event detected"
+        },
+        "lambda": { "type": "number", "description": "Parameter value at event" },
+        "description": { "type": "string", "description": "Human-readable description" },
+        "severity": {
+          "type": "string",
+          "enum": ["info", "warning", "critical"],
+          "description": "Event severity"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

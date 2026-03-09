@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/canonicity_evidence.schema.json",
+  "title": "CanonicityEvidenceRecord",
+  "description": "A single piece of evidence relevant to a canonicity docket.",
+  "type": "object",
+  "required": [
+    "evidenceId",
+    "studyId",
+    "verdict",
+    "maxObservedDeviation",
+    "tolerance",
+    "timestamp"
+  ],
+  "properties": {
+    "evidenceId": {
+      "type": "string",
+      "description": "Unique evidence record identifier"
+    },
+    "studyId": {
+      "type": "string",
+      "description": "Study that produced this evidence"
+    },
+    "verdict": {
+      "type": "string",
+      "enum": ["consistent", "inconsistent", "inconclusive"],
+      "description": "Verdict of the evidence"
+    },
+    "maxObservedDeviation": {
+      "type": "number",
+      "description": "Maximum observed deviation across compared branches"
+    },
+    "tolerance": {
+      "type": "number",
+      "description": "Tolerance used for the comparison"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the evidence was produced"
+    }
+  },
+  "additionalProperties": false
+}

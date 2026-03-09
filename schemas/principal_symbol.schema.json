@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/principal_symbol.schema.json",
+  "title": "PrincipalSymbolRecord",
+  "description": "Records the principal symbol of a linearized operator at a single sample point (cell, covector).",
+  "type": "object",
+  "required": [
+    "cellIndex",
+    "covector",
+    "symbolMatrix",
+    "eigenvalues",
+    "isSymmetric",
+    "symmetryError",
+    "definitenessIndicator",
+    "rankDeficiency",
+    "gaugeNullDimension",
+    "classification",
+    "branchManifestId",
+    "gaugeStudyMode",
+    "operatorId"
+  ],
+  "properties": {
+    "cellIndex": {
+      "type": "integer",
+      "description": "Cell (face/element) index where the symbol was sampled"
+    },
+    "covector": {
+      "type": "array",
+      "items": { "type": "number" },
+      "description": "Covector xi at which the symbol was evaluated"
+    },
+    "symbolMatrix": {
+      "type": "array",
+      "items": { "type": "array", "items": { "type": "number" } },
+      "description": "The symbol matrix sigma(x, xi) in row-major order"
+    },
+    "eigenvalues": {
+      "type": "array",
+      "items": { "type": "number" },
+      "description": "Eigenvalues of the symbol matrix, sorted ascending"
+    },
+    "isSymmetric": {
+      "type": "boolean",
+      "description": "Whether the symbol matrix is symmetric"
+    },
+    "symmetryError": {
+      "type": "number",
+      "description": "Symmetry error: max |S - S^T| / max |S|"
+    },
+    "definitenessIndicator": {
+      "type": "string",
+      "description": "Definiteness classification of the symbol matrix"
+    },
+    "rankDeficiency": {
+      "type": "integer",
+      "description": "Number of zero eigenvalues"
+    },
+    "gaugeNullDimension": {
+      "type": "integer",
+      "description": "Estimated gauge-null space dimension"
+    },
+    "classification": {
+      "type": "string",
+      "enum": ["EllipticLike", "HyperbolicLike", "Mixed", "Degenerate", "Unresolved"],
+      "description": "Local PDE classification"
+    },
+    "branchManifestId": {
+      "type": "string",
+      "description": "Branch manifest ID"
+    },
+    "gaugeStudyMode": {
+      "type": "string",
+      "enum": ["GaugeFree", "GaugeFixed"],
+      "description": "Gauge study mode used"
+    },
+    "operatorId": {
+      "type": "string",
+      "description": "Operator probed: J, L_tilde, or H"
+    }
+  },
+  "additionalProperties": false
+}

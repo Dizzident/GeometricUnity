@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Gu.Core\Gu.Core.csproj" />
+    <ProjectReference Include="..\Gu.Observation\Gu.Observation.csproj" />
+    <ProjectReference Include="..\Gu.Phase2.Semantics\Gu.Phase2.Semantics.csproj" />
+  </ItemGroup>
+
+</Project>

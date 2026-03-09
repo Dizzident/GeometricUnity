@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Gu.Core\Gu.Core.csproj" />
+    <ProjectReference Include="..\Gu.ExternalComparison\Gu.ExternalComparison.csproj" />
+    <ProjectReference Include="..\Gu.Phase2.Semantics\Gu.Phase2.Semantics.csproj" />
+    <ProjectReference Include="..\Gu.Phase2.Recovery\Gu.Phase2.Recovery.csproj" />
+    <ProjectReference Include="..\Gu.Phase2.Canonicity\Gu.Phase2.Canonicity.csproj" />
+  </ItemGroup>
+
+</Project>

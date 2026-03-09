@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/branch_variant.schema.json",
+  "title": "BranchVariantManifest",
+  "description": "Declares a single branch variant within a branch family. No default branch settings may remain implicit.",
+  "type": "object",
+  "required": [
+    "id",
+    "parentFamilyId",
+    "a0Variant",
+    "biConnectionVariant",
+    "torsionVariant",
+    "shiabVariant",
+    "observationVariant",
+    "extractionVariant",
+    "gaugeVariant",
+    "regularityVariant",
+    "pairingVariant",
+    "expectedClaimCeiling"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique variant identifier"
+    },
+    "parentFamilyId": {
+      "type": "string",
+      "description": "Parent family identifier"
+    },
+    "a0Variant": {
+      "type": "string",
+      "description": "Distinguished connection A0 variant identifier"
+    },
+    "biConnectionVariant": {
+      "type": "string",
+      "description": "Bi-connection constructor variant identifier"
+    },
+    "torsionVariant": {
+      "type": "string",
+      "description": "Torsion extractor variant identifier"
+    },
+    "shiabVariant": {
+      "type": "string",
+      "description": "Shiab operator variant identifier"
+    },
+    "observationVariant": {
+      "type": "string",
+      "description": "Observation/extraction projector family variant"
+    },
+    "extractionVariant": {
+      "type": "string",
+      "description": "Observed-sector extraction map variant"
+    },
+    "gaugeVariant": {
+      "type": "string",
+      "description": "Gauge-fixing/slice realization variant"
+    },
+    "regularityVariant": {
+      "type": "string",
+      "description": "Analytic regularity branch variant"
+    },
+    "pairingVariant": {
+      "type": "string",
+      "description": "Adjoint/Hessian pairing conventions variant"
+    },
+    "expectedClaimCeiling": {
+      "type": "string",
+      "description": "Highest claim class this variant is expected to support"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Human-readable notes"
+    }
+  },
+  "additionalProperties": false
+}

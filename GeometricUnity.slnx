@@ -14,6 +14,16 @@
     <Project Path="src/Gu.Interop/Gu.Interop.csproj" />
     <Project Path="src/Gu.Math/Gu.Math.csproj" />
     <Project Path="src/Gu.Observation/Gu.Observation.csproj" />
+    <Project Path="src/Gu.Phase2.Branches/Gu.Phase2.Branches.csproj" />
+    <Project Path="src/Gu.Phase2.Canonicity/Gu.Phase2.Canonicity.csproj" />
+    <Project Path="src/Gu.Phase2.Execution/Gu.Phase2.Execution.csproj" />
+    <Project Path="src/Gu.Phase2.Recovery/Gu.Phase2.Recovery.csproj" />
+    <Project Path="src/Gu.Phase2.Semantics/Gu.Phase2.Semantics.csproj" />
+    <Project Path="src/Gu.Phase2.Stability/Gu.Phase2.Stability.csproj" />
+    <Project Path="src/Gu.Phase2.Continuation/Gu.Phase2.Continuation.csproj" />
+    <Project Path="src/Gu.Phase2.Predictions/Gu.Phase2.Predictions.csproj" />
+    <Project Path="src/Gu.Phase2.Comparison/Gu.Phase2.Comparison.csproj" />
+    <Project Path="src/Gu.Phase2.Reporting/Gu.Phase2.Reporting.csproj" />
     <Project Path="src/Gu.ReferenceCpu/Gu.ReferenceCpu.csproj" />
     <Project Path="src/Gu.Solvers/Gu.Solvers.csproj" />
     <Project Path="src/Gu.Validation/Gu.Validation.csproj" />
@@ -33,5 +43,15 @@
     <Project Path="tests/Gu.Math.Tests/Gu.Math.Tests.csproj" />
     <Project Path="tests/Gu.Branching.Tests/Gu.Branching.Tests.csproj" />
     <Project Path="tests/Gu.Discretization.Tests/Gu.Discretization.Tests.csproj" />
+    <Project Path="tests/Gu.Phase2.Branches.Tests/Gu.Phase2.Branches.Tests.csproj" />
+    <Project Path="tests/Gu.Phase2.Canonicity.Tests/Gu.Phase2.Canonicity.Tests.csproj" />
+    <Project Path="tests/Gu.Phase2.Execution.Tests/Gu.Phase2.Execution.Tests.csproj" />
+    <Project Path="tests/Gu.Phase2.Recovery.Tests/Gu.Phase2.Recovery.Tests.csproj" />
+    <Project Path="tests/Gu.Phase2.Semantics.Tests/Gu.Phase2.Semantics.Tests.csproj" />
+    <Project Path="tests/Gu.Phase2.Stability.Tests/Gu.Phase2.Stability.Tests.csproj" />
+    <Project Path="tests/Gu.Phase2.Continuation.Tests/Gu.Phase2.Continuation.Tests.csproj" />
+    <Project Path="tests/Gu.Phase2.Predictions.Tests/Gu.Phase2.Predictions.Tests.csproj" />
+    <Project Path="tests/Gu.Phase2.Comparison.Tests/Gu.Phase2.Comparison.Tests.csproj" />
+    <Project Path="tests/Gu.Phase2.Reporting.Tests/Gu.Phase2.Reporting.Tests.csproj" />
   </Folder>
 </Solution>

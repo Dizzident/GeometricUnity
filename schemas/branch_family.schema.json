@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/branch_family.schema.json",
+  "title": "BranchFamilyManifest",
+  "description": "Groups a family of branch variants for a Phase II study.",
+  "type": "object",
+  "required": [
+    "familyId",
+    "description",
+    "variants",
+    "defaultEquivalence",
+    "createdAt"
+  ],
+  "properties": {
+    "familyId": {
+      "type": "string",
+      "description": "Unique family identifier"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of what this family studies"
+    },
+    "variants": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "branch_variant.schema.json" },
+      "description": "Branch variants in this family"
+    },
+    "defaultEquivalence": {
+      "$ref": "equivalence_spec.schema.json",
+      "description": "Default equivalence specification for comparing variants"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this family was created"
+    }
+  },
+  "additionalProperties": false
+}

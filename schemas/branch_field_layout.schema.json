@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/branch_field_layout.schema.json",
+  "title": "BranchFieldLayout",
+  "description": "Describes the field-content layout for a branch variant.",
+  "type": "object",
+  "required": [
+    "connectionBlocks",
+    "auxiliaryBosonicBlocks",
+    "gaugeActionRules",
+    "observationEligibility"
+  ],
+  "properties": {
+    "connectionBlocks": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/fieldBlockDescriptor" },
+      "description": "Connection blocks in this layout"
+    },
+    "auxiliaryBosonicBlocks": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/fieldBlockDescriptor" },
+      "description": "Auxiliary bosonic blocks (may be empty)"
+    },
+    "gaugeActionRules": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Gauge action rules describing how gauge acts on each block"
+    },
+    "observationEligibility": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Which blocks are eligible for observation/extraction"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "fieldBlockDescriptor": {
+      "type": "object",
+      "required": ["blockId", "fieldType", "dofCount", "signature"],
+      "properties": {
+        "blockId": {
+          "type": "string",
+          "description": "Unique block identifier within the layout"
+        },
+        "fieldType": {
+          "type": "string",
+          "description": "Field type (e.g. connection, auxiliary-scalar)"
+        },
+        "dofCount": {
+          "type": "integer",
+          "description": "Degrees of freedom count for this block"
+        },
+        "signature": {
+          "type": "object",
+          "description": "TensorSignature for this block"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

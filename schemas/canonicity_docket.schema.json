@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/canonicity_docket.schema.json",
+  "title": "CanonicityDocket",
+  "description": "Tracks the canonicity status of a branch-sensitive object class.",
+  "type": "object",
+  "required": [
+    "objectClass",
+    "activeRepresentative",
+    "equivalenceRelationId",
+    "admissibleComparisonClass",
+    "downstreamClaimsBlockedUntilClosure",
+    "currentEvidence",
+    "knownCounterexamples",
+    "pendingTheorems",
+    "studyReports",
+    "status"
+  ],
+  "properties": {
+    "objectClass": {
+      "type": "string",
+      "description": "Object class this docket tracks"
+    },
+    "activeRepresentative": {
+      "type": "string",
+      "description": "Currently active representative for this object class"
+    },
+    "equivalenceRelationId": {
+      "type": "string",
+      "description": "Equivalence relation identifier used for comparison"
+    },
+    "admissibleComparisonClass": {
+      "type": "string",
+      "description": "Admissible comparison class"
+    },
+    "downstreamClaimsBlockedUntilClosure": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Claims blocked until this docket is closed"
+    },
+    "currentEvidence": {
+      "type": "array",
+      "items": { "$ref": "canonicity_evidence.schema.json" },
+      "description": "Current evidence records"
+    },
+    "knownCounterexamples": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Known counterexamples to closure"
+    },
+    "pendingTheorems": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Pending theorems that could close this docket"
+    },
+    "studyReports": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Study report identifiers"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["Open", "EvidenceAccumulating", "ClosedByTheorem", "ClosedByClassification", "Falsified"],
+      "description": "Docket status"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/research_report.schema.json",
+  "title": "ResearchReport",
+  "description": "A research report generated from a batch run. Per Section 14.4, every report must state what is branch-local, comparison-ready, open, numerical-only, physically uninterpreted, and ruled out.",
+  "type": "object",
+  "required": [
+    "reportId",
+    "batchId",
+    "branchLocalConclusions",
+    "comparisonReadyConclusions",
+    "openItems",
+    "numericalOnlyResults",
+    "uninterpretedOutputs",
+    "ruledOutClaims",
+    "dockets",
+    "generatedAt"
+  ],
+  "properties": {
+    "reportId": { "type": "string", "description": "Unique report identifier" },
+    "batchId": { "type": "string", "description": "Batch ID this report was generated from" },
+    "branchLocalConclusions": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/ReportItem" },
+      "description": "Conclusions holding within a single branch only"
+    },
+    "comparisonReadyConclusions": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/ReportItem" },
+      "description": "Conclusions validated across branches, ready for external comparison"
+    },
+    "openItems": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/ReportItem" },
+      "description": "Unresolved items requiring follow-up"
+    },
+    "numericalOnlyResults": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/ReportItem" },
+      "description": "Numerical results without physical interpretation or theorem backing"
+    },
+    "uninterpretedOutputs": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/ReportItem" },
+      "description": "Structural outputs without recovery-gate passage"
+    },
+    "ruledOutClaims": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/ReportItem" },
+      "description": "Claims ruled out by this study"
+    },
+    "dockets": {
+      "type": "array",
+      "description": "Aggregated canonicity dockets"
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when report was generated"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "ReportItem": {
+      "type": "object",
+      "required": ["summary", "sourceCategory", "sourceStudyId", "evidenceStrength"],
+      "properties": {
+        "summary": { "type": "string", "description": "Short summary" },
+        "sourceCategory": {
+          "type": "string",
+          "enum": ["sweep", "stability", "comparison", "canonicity", "batch"],
+          "description": "Source category"
+        },
+        "sourceStudyId": { "type": "string", "description": "Study ID that produced this item" },
+        "branchManifestId": { "type": "string", "description": "Branch manifest ID, if branch-specific" },
+        "evidenceStrength": {
+          "type": "string",
+          "enum": ["strong", "moderate", "weak", "numerical-only"],
+          "description": "Evidence strength classification"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

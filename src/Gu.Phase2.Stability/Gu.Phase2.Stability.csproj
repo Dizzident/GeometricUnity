@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Gu.Core\Gu.Core.csproj" />
+    <ProjectReference Include="..\Gu.Branching\Gu.Branching.csproj" />
+    <ProjectReference Include="..\Gu.Math\Gu.Math.csproj" />
+    <ProjectReference Include="..\Gu.Geometry\Gu.Geometry.csproj" />
+    <ProjectReference Include="..\Gu.Solvers\Gu.Solvers.csproj" />
+    <ProjectReference Include="..\Gu.ReferenceCpu\Gu.ReferenceCpu.csproj" />
+    <ProjectReference Include="..\Gu.Phase2.Branches\Gu.Phase2.Branches.csproj" />
+  </ItemGroup>
+
+</Project>
