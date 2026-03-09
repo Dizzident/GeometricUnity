@@ -22,12 +22,13 @@
 #include <stdlib.h>
 
 /* =========================================================================
- * Lie bracket helper
+ * Lie bracket helper (used by CPU fallback path)
  *
  * Computes [x, y]_c = sum_{a,b} f^c_{ab} * x_a * y_b
  * where structure_constants are indexed as [a * dim * dim + b * dim + c].
  * ========================================================================= */
 
+#ifndef __CUDACC__
 static void lie_bracket(
     const double* x, const double* y,
     const double* structure_constants,
@@ -43,6 +44,7 @@ static void lie_bracket(
         result[c] = sum;
     }
 }
+#endif
 
 /* =========================================================================
  * Physics kernel implementations (CPU path)
@@ -75,7 +77,6 @@ __global__ void gu_curvature_physics_kernel(
     double dOmega[16]; /* dim_g <= 16 assumed */
     double wedgeTerm[16];
     double omegaI[16], omegaJ[16];
-    double bracket[16];
 
     for (int a = 0; a < dim_g; a++) {
         dOmega[a] = 0.0;
@@ -151,7 +152,6 @@ __global__ void gu_torsion_physics_kernel(
     double dAlpha[16];
     double bracketTerm[16];
     double a0I[16], a0J[16], alphaI[16], alphaJ[16];
-    double bracket1[16], bracket2[16];
 
     for (int a = 0; a < dim_g; a++) {
         dAlpha[a] = 0.0;

@@ -35,9 +35,10 @@ if(GU_ENABLE_CUDA)
     target_include_directories(gu_cuda_core PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/gu_cuda_kernels/include)
 
-    # CUDA architecture targets (compute capability 7.0+ for Volta and newer)
+    # CUDA architecture targets (compute capability 8.0+ for Ampere and newer)
+    # CUDA 13.x dropped support for compute_70/75 (Volta/Turing)
     set_target_properties(gu_cuda_core PROPERTIES
-        CUDA_ARCHITECTURES "70;75;80;86;89;90")
+        CUDA_ARCHITECTURES "80;86;89;90")
 else()
     # Without CUDA, compile the .cu file as plain C for CPU-fallback testing.
     # Rename extension so CMake compiles it as C.
