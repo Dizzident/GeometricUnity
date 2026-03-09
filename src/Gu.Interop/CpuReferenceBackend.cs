@@ -156,6 +156,30 @@ public sealed class CpuReferenceBackend : INativeBackend
 
     public ErrorPacket? GetLastError() => _lastError;
 
+    private MeshTopologyData? _topology;
+    private AlgebraUploadData? _algebra;
+    private double[]? _a0;
+
+    public void UploadMeshTopology(MeshTopologyData topology)
+    {
+        EnsureNotDisposed();
+        _topology = topology ?? throw new ArgumentNullException(nameof(topology));
+    }
+
+    public void UploadAlgebraData(AlgebraUploadData algebra)
+    {
+        EnsureNotDisposed();
+        _algebra = algebra ?? throw new ArgumentNullException(nameof(algebra));
+    }
+
+    public void UploadBackgroundConnection(ReadOnlySpan<double> a0Coefficients, int edgeCount, int dimG)
+    {
+        EnsureNotDisposed();
+        _a0 = a0Coefficients.ToArray();
+    }
+
+    public bool HasPhysicsData => _topology != null && _algebra != null;
+
     public void Dispose()
     {
         if (!_disposed)

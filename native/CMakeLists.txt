@@ -54,12 +54,22 @@ endif()
 # Math library (needed for sqrt on some platforms)
 target_link_libraries(gu_cuda_core PRIVATE m)
 
-# gu_vulkan_native -- Vulkan rendering bridge (stub)
+# gu_vulkan_native -- Vulkan rendering bridge
 add_library(gu_vulkan_native SHARED
     gu_vulkan_native/src/gu_vulkan_bridge.c)
 
 target_include_directories(gu_vulkan_native
     PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/gu_vulkan_native/include)
+
+# Link Vulkan and math libraries
+find_package(Vulkan)
+if(Vulkan_FOUND)
+    target_link_libraries(gu_vulkan_native PRIVATE Vulkan::Vulkan m)
+    target_compile_definitions(gu_vulkan_native PRIVATE GU_HAS_VULKAN=1)
+else()
+    message(WARNING "Vulkan not found - gu_vulkan_native will build without GPU rendering")
+    target_link_libraries(gu_vulkan_native PRIVATE m)
+endif()
 
 # Install rules
 install(TARGETS gu_cuda_core gu_vulkan_native

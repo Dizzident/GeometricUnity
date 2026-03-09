@@ -70,6 +70,16 @@ typedef struct {
     int32_t mesh_vertex_count;
 } gu_manifest_snapshot_t;
 
+/* Extended mesh topology descriptor for physics kernel data */
+typedef struct {
+    int32_t edge_count;
+    int32_t face_count;
+    int32_t vertex_count;
+    int32_t embedding_dimension;
+    int32_t max_edges_per_face;  /* typically 3 for triangular faces */
+    int32_t dim_g;               /* Lie algebra dimension */
+} gu_mesh_topology_header_t;
+
 /* Opaque handle to a GPU buffer */
 typedef int32_t gu_buffer_handle_t;
 
@@ -104,6 +114,83 @@ gu_error_code_t gu_copy(gu_buffer_handle_t dst, gu_buffer_handle_t src, int32_t 
 
 /* Error reporting */
 const gu_error_packet_t* gu_get_last_error(void);
+
+/* =========================================================================
+ * Extended data upload functions (GAP-9)
+ *
+ * These upload mesh topology and Lie algebra data required by physics kernels.
+ * Must be called after gu_initialize() and before any compute kernel dispatch.
+ * ========================================================================= */
+
+/**
+ * Upload mesh topology: face-boundary-edge incidence and orientations.
+ *
+ * @param header            Mesh topology dimensions
+ * @param face_boundary_edges      Flat array [face_count * max_edges_per_face] of edge indices per face.
+ *                                 Padded with -1 if a face has fewer than max_edges_per_face boundary edges.
+ * @param face_boundary_orientations Flat array [face_count * max_edges_per_face] of +1/-1 signs.
+ * @param edge_vertices     Flat array [edge_count * 2] of vertex indices per edge: {v0, v1}.
+ * @return GU_SUCCESS or error code.
+ */
+gu_error_code_t gu_upload_mesh_topology(
+    const gu_mesh_topology_header_t* header,
+    const int32_t* face_boundary_edges,
+    const int32_t* face_boundary_orientations,
+    const int32_t* edge_vertices);
+
+/**
+ * Upload vertex coordinates.
+ *
+ * @param vertex_coords  Flat array [vertex_count * embedding_dimension] of doubles.
+ * @param vertex_count   Number of vertices.
+ * @param embedding_dim  Dimension of the embedding space.
+ * @return GU_SUCCESS or error code.
+ */
+gu_error_code_t gu_upload_vertex_coordinates(
+    const double* vertex_coords,
+    int32_t vertex_count,
+    int32_t embedding_dim);
+
+/**
+ * Upload Lie algebra structure constants f^c_{ab}.
+ *
+ * @param structure_constants  Flat array [dim * dim * dim] indexed as [a*dim*dim + b*dim + c].
+ * @param dim                  Lie algebra dimension (e.g. 3 for su(2)).
+ * @return GU_SUCCESS or error code.
+ */
+gu_error_code_t gu_upload_structure_constants(
+    const double* structure_constants,
+    int32_t dim);
+
+/**
+ * Upload Lie algebra invariant metric g_{ab}.
+ *
+ * @param metric  Flat array [dim * dim] row-major symmetric matrix.
+ * @param dim     Lie algebra dimension.
+ * @return GU_SUCCESS or error code.
+ */
+gu_error_code_t gu_upload_invariant_metric(
+    const double* metric,
+    int32_t dim);
+
+/**
+ * Upload background connection A0.
+ *
+ * @param a0_coefficients  Flat array [edge_count * dim_g] of connection coefficients.
+ * @param edge_count       Number of edges.
+ * @param dim_g            Lie algebra dimension.
+ * @return GU_SUCCESS or error code.
+ */
+gu_error_code_t gu_upload_background_connection(
+    const double* a0_coefficients,
+    int32_t edge_count,
+    int32_t dim_g);
+
+/**
+ * Query whether topology and algebra data have been uploaded.
+ * @return 1 if all data uploaded, 0 otherwise.
+ */
+int32_t gu_has_physics_data(void);
 
 #ifdef __cplusplus
 }

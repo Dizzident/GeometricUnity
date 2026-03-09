@@ -28,6 +28,17 @@ internal static partial class NativeBindings
         public int MeshVertexCount;
     }
 
+    [StructLayout(LayoutKind.Sequential)]
+    internal struct NativeMeshTopologyHeader
+    {
+        public int EdgeCount;
+        public int FaceCount;
+        public int VertexCount;
+        public int EmbeddingDimension;
+        public int MaxEdgesPerFace;
+        public int DimG;
+    }
+
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
     internal struct NativeErrorPacket
     {
@@ -93,4 +104,37 @@ internal static partial class NativeBindings
     // Error reporting
     [LibraryImport(LibName, EntryPoint = "gu_get_last_error")]
     internal static partial nint GetLastError();
+
+    // Extended data upload (GAP-9)
+    [LibraryImport(LibName, EntryPoint = "gu_upload_mesh_topology")]
+    internal static partial int UploadMeshTopology(
+        in NativeMeshTopologyHeader header,
+        nint faceBoundaryEdges,
+        nint faceBoundaryOrientations,
+        nint edgeVertices);
+
+    [LibraryImport(LibName, EntryPoint = "gu_upload_vertex_coordinates")]
+    internal static partial int UploadVertexCoordinates(
+        nint vertexCoords,
+        int vertexCount,
+        int embeddingDim);
+
+    [LibraryImport(LibName, EntryPoint = "gu_upload_structure_constants")]
+    internal static partial int UploadStructureConstants(
+        nint structureConstants,
+        int dim);
+
+    [LibraryImport(LibName, EntryPoint = "gu_upload_invariant_metric")]
+    internal static partial int UploadInvariantMetric(
+        nint metric,
+        int dim);
+
+    [LibraryImport(LibName, EntryPoint = "gu_upload_background_connection")]
+    internal static partial int UploadBackgroundConnection(
+        nint a0Coefficients,
+        int edgeCount,
+        int dimG);
+
+    [LibraryImport(LibName, EntryPoint = "gu_has_physics_data")]
+    internal static partial int HasPhysicsData();
 }

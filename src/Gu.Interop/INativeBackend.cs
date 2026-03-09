@@ -72,4 +72,26 @@ public interface INativeBackend : IDisposable
     /// Returns null if no error occurred.
     /// </summary>
     ErrorPacket? GetLastError();
+
+    /// <summary>
+    /// Upload mesh topology data (face-boundary-edge incidence, orientations, edge-vertex connectivity).
+    /// Required before physics kernels can execute real computations.
+    /// </summary>
+    void UploadMeshTopology(MeshTopologyData topology);
+
+    /// <summary>
+    /// Upload Lie algebra structure constants and invariant metric.
+    /// Required before physics kernels can execute real computations.
+    /// </summary>
+    void UploadAlgebraData(AlgebraUploadData algebra);
+
+    /// <summary>
+    /// Upload background connection A0 coefficients.
+    /// </summary>
+    void UploadBackgroundConnection(ReadOnlySpan<double> a0Coefficients, int edgeCount, int dimG);
+
+    /// <summary>
+    /// Query whether mesh topology and algebra data have been uploaded.
+    /// </summary>
+    bool HasPhysicsData { get; }
 }

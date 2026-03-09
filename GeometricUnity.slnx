@@ -16,7 +16,6 @@
     <Project Path="src/Gu.Observation/Gu.Observation.csproj" />
     <Project Path="src/Gu.ReferenceCpu/Gu.ReferenceCpu.csproj" />
     <Project Path="src/Gu.Solvers/Gu.Solvers.csproj" />
-    <Project Path="src/Gu.Symbolic/Gu.Symbolic.csproj" />
     <Project Path="src/Gu.Validation/Gu.Validation.csproj" />
     <Project Path="src/Gu.VulkanViewer/Gu.VulkanViewer.csproj" />
   </Folder>
@@ -29,5 +28,10 @@
     <Project Path="tests/Gu.Validation.Tests/Gu.Validation.Tests.csproj" />
     <Project Path="tests/Gu.Interop.Tests/Gu.Interop.Tests.csproj" />
     <Project Path="tests/Gu.VulkanViewer.Tests/Gu.VulkanViewer.Tests.csproj" />
+    <Project Path="tests/Gu.Observation.Tests/Gu.Observation.Tests.csproj" />
+    <Project Path="tests/Gu.Solvers.Tests/Gu.Solvers.Tests.csproj" />
+    <Project Path="tests/Gu.Math.Tests/Gu.Math.Tests.csproj" />
+    <Project Path="tests/Gu.Branching.Tests/Gu.Branching.Tests.csproj" />
+    <Project Path="tests/Gu.Discretization.Tests/Gu.Discretization.Tests.csproj" />
   </Folder>
 </Solution>

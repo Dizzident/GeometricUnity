@@ -161,6 +161,87 @@ public sealed class CudaNativeBackend : INativeBackend
         };
     }
 
+    public unsafe void UploadMeshTopology(MeshTopologyData topology)
+    {
+        ArgumentNullException.ThrowIfNull(topology);
+        EnsureNotDisposed();
+        EnsureInitialized();
+
+        var header = new NativeBindings.NativeMeshTopologyHeader
+        {
+            EdgeCount = topology.EdgeCount,
+            FaceCount = topology.FaceCount,
+            VertexCount = topology.VertexCount,
+            EmbeddingDimension = topology.EmbeddingDimension,
+            MaxEdgesPerFace = topology.MaxEdgesPerFace,
+            DimG = topology.DimG,
+        };
+
+        fixed (int* edgesPtr = topology.FaceBoundaryEdges)
+        fixed (int* orientsPtr = topology.FaceBoundaryOrientations)
+        fixed (int* edgeVertsPtr = topology.EdgeVertices)
+        {
+            int result = NativeBindings.UploadMeshTopology(
+                in header,
+                (nint)edgesPtr,
+                (nint)orientsPtr,
+                (nint)edgeVertsPtr);
+            CheckResult(result, "gu_upload_mesh_topology");
+        }
+
+        if (topology.VertexCoordinates != null)
+        {
+            fixed (double* coordsPtr = topology.VertexCoordinates)
+            {
+                int result = NativeBindings.UploadVertexCoordinates(
+                    (nint)coordsPtr,
+                    topology.VertexCount,
+                    topology.EmbeddingDimension);
+                CheckResult(result, "gu_upload_vertex_coordinates");
+            }
+        }
+    }
+
+    public unsafe void UploadAlgebraData(AlgebraUploadData algebra)
+    {
+        ArgumentNullException.ThrowIfNull(algebra);
+        EnsureNotDisposed();
+        EnsureInitialized();
+
+        fixed (double* scPtr = algebra.StructureConstants)
+        {
+            int result = NativeBindings.UploadStructureConstants((nint)scPtr, algebra.Dimension);
+            CheckResult(result, "gu_upload_structure_constants");
+        }
+
+        fixed (double* metricPtr = algebra.InvariantMetric)
+        {
+            int result = NativeBindings.UploadInvariantMetric((nint)metricPtr, algebra.Dimension);
+            CheckResult(result, "gu_upload_invariant_metric");
+        }
+    }
+
+    public unsafe void UploadBackgroundConnection(ReadOnlySpan<double> a0Coefficients, int edgeCount, int dimG)
+    {
+        EnsureNotDisposed();
+        EnsureInitialized();
+
+        fixed (double* a0Ptr = a0Coefficients)
+        {
+            int result = NativeBindings.UploadBackgroundConnection((nint)a0Ptr, edgeCount, dimG);
+            CheckResult(result, "gu_upload_background_connection");
+        }
+    }
+
+    public bool HasPhysicsData
+    {
+        get
+        {
+            EnsureNotDisposed();
+            return NativeBindings.HasPhysicsData() != 0;
+        }
+    }
+
     public void Dispose()
     {
         if (!_disposed)

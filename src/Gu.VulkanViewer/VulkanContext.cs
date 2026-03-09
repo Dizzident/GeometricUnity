@@ -1,38 +1,32 @@
 namespace Gu.VulkanViewer;
 
 /// <summary>
-/// Stub for Vulkan 1.4 rendering context initialization.
+/// High-level Vulkan rendering context for the Geometric Unity workbench.
+/// Delegates to <see cref="NativeVulkanBridge"/> for actual Vulkan operations
+/// via the native gu_vulkan_native library.
 ///
-/// This class documents the initialization sequence required for a real Vulkan
-/// renderer. The actual Vulkan rendering pipeline (instance creation, device
-/// selection, swapchain, render passes, pipelines, command buffers) is deferred
-/// to a future milestone. The current milestone focuses on the data preparation
-/// layer: field-to-color mapping, mesh export, and convergence diagnostics.
+/// Provides a unified API that accepts <see cref="VisualizationData"/> from
+/// <see cref="IFieldVisualizer"/> implementations and <see cref="ViewPayload"/>
+/// objects from <see cref="ViewPayloadBuilder"/>, rendering to screen or
+/// exporting to image files.
 ///
-/// When implemented, the Vulkan context will:
-/// 1. Create a VkInstance with validation layers (VK_LAYER_KHRONOS_validation).
-/// 2. Select a physical device with graphics + compute queue families.
-/// 3. Create a logical device with required features (Vulkan 1.4 baseline).
-/// 4. Set up a swapchain for presentation (if windowed) or off-screen framebuffer.
-/// 5. Create render passes for mesh visualization with vertex coloring.
-/// 6. Build graphics pipelines for:
-///    - Triangle mesh rendering with per-vertex color.
-///    - Wireframe overlay for mesh edges.
-///    - 2D overlay for convergence plots and color bar legend.
-/// 7. Allocate vertex/index buffers from <see cref="VisualizationData"/>.
-/// 8. Record and submit command buffers each frame.
-///
-/// Integration point: accepts <see cref="VisualizationData"/> from
-/// <see cref="IFieldVisualizer"/> implementations and renders to screen or
-/// exports to image files.
+/// The native bridge handles:
+/// 1. VkInstance creation with validation layers (VK_LAYER_KHRONOS_validation).
+/// 2. Physical device selection with graphics queue family.
+/// 3. Logical device creation with Vulkan 1.4 baseline features.
+/// 4. Swapchain or offscreen framebuffer setup.
+/// 5. Render passes for mesh visualization with per-vertex color.
+/// 6. Graphics pipelines for triangle mesh, wireframe overlay, and 2D plot overlay.
+/// 7. Vertex/index buffer allocation and upload.
+/// 8. Command buffer recording and submission.
 /// </summary>
 public sealed class VulkanContext : IDisposable
 {
+    private readonly NativeVulkanBridge _bridge = new();
     private bool _disposed;
 
     /// <summary>
     /// Whether the Vulkan context has been initialized.
-    /// Always false in the current stub implementation.
     /// </summary>
     public bool IsInitialized { get; private set; }
 
@@ -58,68 +52,105 @@ public sealed class VulkanContext : IDisposable
     };
 
     /// <summary>
-    /// Initializes the Vulkan context (stub).
-    /// In the real implementation this would create the instance, device, and swapchain.
+    /// Initializes the Vulkan context via the native bridge.
+    /// Creates the Vulkan instance, selects a physical device, creates logical device,
+    /// and sets up the rendering pipeline.
     /// </summary>
     /// <param name="enableValidation">Whether to enable Vulkan validation layers.</param>
+    /// <param name="width">Framebuffer width in pixels.</param>
+    /// <param name="height">Framebuffer height in pixels.</param>
     /// <returns>True if initialization succeeded.</returns>
-    public bool Initialize(bool enableValidation = true)
+    public bool Initialize(bool enableValidation = true, int width = 1920, int height = 1080)
     {
-        // STUB: Real implementation would:
-        // 1. vkCreateInstance with VK_API_VERSION_1_4
-        // 2. Setup debug messenger if enableValidation
-        // 3. Enumerate physical devices, pick one with graphics queue
-        // 4. vkCreateDevice with queue create infos
-        // 5. Create command pool and allocate command buffers
+        EnsureNotDisposed();
 
-        IsInitialized = true;
-        return true;
+        if (IsInitialized)
+            return true;
+
+        try
+        {
+            _bridge.Initialize(width, height, enableValidation);
+            IsInitialized = true;
+            return true;
+        }
+        catch (InvalidOperationException)
+        {
+            return false;
+        }
     }
 
     /// <summary>
-    /// Uploads visualization data to GPU buffers (stub).
+    /// Uploads visualization data (positions, colors, indices) to GPU buffers.
     /// </summary>
     /// <param name="data">The prepared visualization data.</param>
-    /// <exception cref="InvalidOperationException">Thrown if context is not initialized.</exception>
     public void UploadVisualizationData(VisualizationData data)
     {
         ArgumentNullException.ThrowIfNull(data);
+        EnsureNotDisposed();
+        EnsureInitialized();
 
-        if (!IsInitialized)
+        var payload = new FieldViewPayload
         {
-            throw new InvalidOperationException("VulkanContext must be initialized before uploading data.");
-        }
-
-        // STUB: Real implementation would:
-        // 1. Create staging buffer for positions + colors
-        // 2. Map memory, copy vertex data
-        // 3. Create device-local vertex buffer
-        // 4. Transfer via command buffer
-        // 5. Create index buffer similarly
-        // 6. Record draw commands
+            FieldData = data,
+            FieldMode = "raw",
+            FieldLabel = "uploaded",
+            CoefficientCount = data.VertexCount,
+            FieldNorm = 0.0,
+        };
+        _bridge.UploadPayload(payload);
     }
 
     /// <summary>
-    /// Renders the current scene to an image file (stub).
+    /// Uploads a view payload to the native renderer.
+    /// Supports geometry, field, residual, and convergence payloads.
     /// </summary>
-    /// <param name="outputPath">Path for the output image.</param>
+    /// <param name="payload">The view payload to upload.</param>
+    public void UploadPayload(ViewPayload payload)
+    {
+        ArgumentNullException.ThrowIfNull(payload);
+        EnsureNotDisposed();
+        EnsureInitialized();
+
+        _bridge.UploadPayload(payload);
+    }
+
+    /// <summary>
+    /// Renders the current frame to the display.
+    /// </summary>
+    public void RenderFrame()
+    {
+        EnsureNotDisposed();
+        EnsureInitialized();
+
+        _bridge.RenderFrame();
+    }
+
+    /// <summary>
+    /// Renders the current scene to an image file.
+    /// </summary>
+    /// <param name="outputPath">Path for the output image (PNG).</param>
     /// <param name="width">Image width in pixels.</param>
     /// <param name="height">Image height in pixels.</param>
     public void RenderToFile(string outputPath, int width = 1920, int height = 1080)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(outputPath);
+        EnsureNotDisposed();
+        EnsureInitialized();
 
-        if (!IsInitialized)
-        {
-            throw new InvalidOperationException("VulkanContext must be initialized before rendering.");
-        }
+        _bridge.RenderToFile(outputPath, width, height);
+    }
 
-        // STUB: Real implementation would:
-        // 1. Create offscreen framebuffer at specified resolution
-        // 2. Record render pass with mesh draw commands
-        // 3. Submit and wait for completion
-        // 4. Read back pixels from framebuffer
-        // 5. Encode as PNG/PPM and write to outputPath
+    /// <summary>
+    /// Sets the camera view parameters.
+    /// </summary>
+    public void SetCamera(
+        float eyeX, float eyeY, float eyeZ,
+        float targetX, float targetY, float targetZ,
+        float upX = 0f, float upY = 1f, float upZ = 0f)
+    {
+        EnsureNotDisposed();
+
+        _bridge.SetCamera(eyeX, eyeY, eyeZ, targetX, targetY, targetZ, upX, upY, upZ);
     }
 
     /// <inheritdoc/>
@@ -128,11 +159,21 @@ public sealed class VulkanContext : IDisposable
         if (_disposed) return;
         _disposed = true;
 
-        // STUB: Real implementation would:
-        // 1. vkDeviceWaitIdle
-        // 2. Destroy all Vulkan resources in reverse creation order
-        // 3. Destroy device, debug messenger, instance
-
+        _bridge.Dispose();
         IsInitialized = false;
+    }
+
+    private void EnsureNotDisposed()
+    {
+        ObjectDisposedException.ThrowIf(_disposed, this);
+    }
+
+    private void EnsureInitialized()
+    {
+        if (!IsInitialized)
+        {
+            throw new InvalidOperationException(
+                "VulkanContext must be initialized before use. Call Initialize() first.");
+        }
     }
 }

@@ -14,6 +14,7 @@
  */
 
 #include "gu_interop_types.h"
+#include "gu_cuda_kernels.h"
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
@@ -31,6 +32,30 @@ typedef struct {
     int active;
 } buffer_entry_t;
 
+/* Physics data storage -- mesh topology and Lie algebra */
+typedef struct {
+    /* Mesh topology */
+    gu_mesh_topology_header_t header;
+    int32_t* face_boundary_edges;       /* [face_count * max_edges_per_face] */
+    int32_t* face_boundary_orientations;/* [face_count * max_edges_per_face] */
+    int32_t* edge_vertices;             /* [edge_count * 2] */
+    double* vertex_coords;              /* [vertex_count * embedding_dim] */
+
+    /* Lie algebra */
+    double* structure_constants;        /* [dim_g^3] f^c_{ab} */
+    double* invariant_metric;           /* [dim_g^2] g_{ab} */
+
+    /* Background connection */
+    double* a0_coefficients;            /* [edge_count * dim_g] */
+
+    /* Flags */
+    int has_topology;
+    int has_vertices;
+    int has_structure_constants;
+    int has_metric;
+    int has_a0;
+} physics_data_t;
+
 static struct {
     int initialized;
     gu_manifest_snapshot_t manifest;
@@ -38,6 +63,7 @@ static struct {
     int32_t next_handle;
     gu_error_packet_t last_error;
     int has_error;
+    physics_data_t physics;
 } g_state = {0};
 
 /* -------------------------------------------------------------------------
@@ -85,6 +111,18 @@ gu_error_code_t gu_initialize(const gu_manifest_snapshot_t* manifest) {
     return GU_SUCCESS;
 }
 
+static void free_physics_data(void) {
+    physics_data_t* p = &g_state.physics;
+    free(p->face_boundary_edges);       p->face_boundary_edges = NULL;
+    free(p->face_boundary_orientations);p->face_boundary_orientations = NULL;
+    free(p->edge_vertices);             p->edge_vertices = NULL;
+    free(p->vertex_coords);             p->vertex_coords = NULL;
+    free(p->structure_constants);       p->structure_constants = NULL;
+    free(p->invariant_metric);          p->invariant_metric = NULL;
+    free(p->a0_coefficients);           p->a0_coefficients = NULL;
+    memset(p, 0, sizeof(*p));
+}
+
 void gu_shutdown(void) {
     if (!g_state.initialized) return;
 
@@ -96,6 +134,9 @@ void gu_shutdown(void) {
             g_state.buffers[i].active = 0;
         }
     }
+
+    /* Free physics data */
+    free_physics_data();
 
 #ifdef GU_HAS_CUDA
     /* TODO: CUDA cleanup, context destruction */
@@ -257,21 +298,26 @@ gu_error_code_t gu_evaluate_curvature(gu_buffer_handle_t omega, gu_buffer_handle
 
     buffer_entry_t* omega_buf = &g_state.buffers[omega];
     buffer_entry_t* curv_buf = &g_state.buffers[curvature_out];
+    physics_data_t* p = &g_state.physics;
 
-#ifdef GU_HAS_CUDA
-    /* TODO: launch curvature CUDA kernel */
-    set_error(GU_ERROR_CUDA_ERROR, "CUDA curvature kernel not implemented", "gu_evaluate_curvature");
-    return GU_ERROR_CUDA_ERROR;
-#else
-    /*
-     * CPU reference curvature: F = d(omega) + (1/2)[omega, omega]
-     * For the reference stub, copy omega -> curvature (identity map).
-     * The full implementation requires mesh topology and Lie algebra structure constants.
-     */
-    int count = omega_buf->element_count < curv_buf->element_count
-        ? omega_buf->element_count : curv_buf->element_count;
-    memcpy(curv_buf->data, omega_buf->data, (size_t)count * sizeof(double));
-#endif
+    if (p->has_topology && p->has_structure_constants) {
+        /* Real physics: F = d(omega) + (1/2)[omega, omega] */
+        int rc = gu_curvature_assemble_physics(
+            omega_buf->data, curv_buf->data,
+            p->face_boundary_edges, p->face_boundary_orientations,
+            p->structure_constants,
+            p->header.face_count, p->header.edge_count,
+            p->header.dim_g, p->header.max_edges_per_face);
+        if (rc != 0) {
+            set_error(GU_ERROR_CUDA_ERROR, "Curvature kernel failed", "gu_evaluate_curvature");
+            return GU_ERROR_CUDA_ERROR;
+        }
+    } else {
+        /* Fallback: identity stub (F = omega) */
+        int count = omega_buf->element_count < curv_buf->element_count
+            ? omega_buf->element_count : curv_buf->element_count;
+        memcpy(curv_buf->data, omega_buf->data, (size_t)count * sizeof(double));
+    }
 
     clear_error();
     return GU_SUCCESS;
@@ -291,16 +337,26 @@ gu_error_code_t gu_evaluate_torsion(gu_buffer_handle_t omega, gu_buffer_handle_t
         return GU_ERROR_INVALID_ARGUMENT;
     }
 
+    buffer_entry_t* omega_buf = &g_state.buffers[omega];
     buffer_entry_t* torsion_buf = &g_state.buffers[torsion_out];
+    physics_data_t* p = &g_state.physics;
 
-#ifdef GU_HAS_CUDA
-    /* TODO: launch torsion CUDA kernel */
-    set_error(GU_ERROR_CUDA_ERROR, "CUDA torsion kernel not implemented", "gu_evaluate_torsion");
-    return GU_ERROR_CUDA_ERROR;
-#else
-    /* CPU reference: trivial torsion T = 0 */
-    memset(torsion_buf->data, 0, (size_t)torsion_buf->element_count * sizeof(double));
-#endif
+    if (p->has_topology && p->has_structure_constants && p->has_a0) {
+        /* Real physics: T^aug = d_{A0}(omega - A0) */
+        int rc = gu_torsion_assemble_physics(
+            omega_buf->data, p->a0_coefficients, torsion_buf->data,
+            p->face_boundary_edges, p->face_boundary_orientations,
+            p->structure_constants,
+            p->header.face_count, p->header.edge_count,
+            p->header.dim_g, p->header.max_edges_per_face);
+        if (rc != 0) {
+            set_error(GU_ERROR_CUDA_ERROR, "Torsion kernel failed", "gu_evaluate_torsion");
+            return GU_ERROR_CUDA_ERROR;
+        }
+    } else {
+        /* Fallback: trivial torsion T = 0 */
+        memset(torsion_buf->data, 0, (size_t)torsion_buf->element_count * sizeof(double));
+    }
 
     clear_error();
     return GU_SUCCESS;
@@ -322,17 +378,29 @@ gu_error_code_t gu_evaluate_shiab(gu_buffer_handle_t omega, gu_buffer_handle_t s
 
     buffer_entry_t* omega_buf = &g_state.buffers[omega];
     buffer_entry_t* shiab_buf = &g_state.buffers[shiab_out];
+    physics_data_t* p = &g_state.physics;
 
-#ifdef GU_HAS_CUDA
-    /* TODO: launch shiab CUDA kernel */
-    set_error(GU_ERROR_CUDA_ERROR, "CUDA Shiab kernel not implemented", "gu_evaluate_shiab");
-    return GU_ERROR_CUDA_ERROR;
-#else
-    /* CPU reference: identity Shiab S = F (copy omega, matching CpuReferenceBackend) */
-    int count = omega_buf->element_count < shiab_buf->element_count
-        ? omega_buf->element_count : shiab_buf->element_count;
-    memcpy(shiab_buf->data, omega_buf->data, (size_t)count * sizeof(double));
-#endif
+    if (p->has_topology && p->has_structure_constants) {
+        /*
+         * Identity Shiab: S = F = d(omega) + (1/2)[omega, omega].
+         * Compute curvature directly into the shiab output buffer.
+         */
+        int rc = gu_curvature_assemble_physics(
+            omega_buf->data, shiab_buf->data,
+            p->face_boundary_edges, p->face_boundary_orientations,
+            p->structure_constants,
+            p->header.face_count, p->header.edge_count,
+            p->header.dim_g, p->header.max_edges_per_face);
+        if (rc != 0) {
+            set_error(GU_ERROR_CUDA_ERROR, "Shiab kernel failed", "gu_evaluate_shiab");
+            return GU_ERROR_CUDA_ERROR;
+        }
+    } else {
+        /* Fallback: identity Shiab S = omega (stub) */
+        int count = omega_buf->element_count < shiab_buf->element_count
+            ? omega_buf->element_count : shiab_buf->element_count;
+        memcpy(shiab_buf->data, omega_buf->data, (size_t)count * sizeof(double));
+    }
 
     clear_error();
     return GU_SUCCESS;
@@ -548,6 +616,211 @@ gu_error_code_t gu_copy(gu_buffer_handle_t dst_handle, gu_buffer_handle_t src_ha
 
     clear_error();
     return GU_SUCCESS;
+}
+
+/* -------------------------------------------------------------------------
+ * Extended data upload (GAP-9)
+ *
+ * Upload mesh topology, Lie algebra, and background connection data
+ * required by real physics kernels.
+ * ------------------------------------------------------------------------- */
+
+gu_error_code_t gu_upload_mesh_topology(
+    const gu_mesh_topology_header_t* header,
+    const int32_t* face_boundary_edges,
+    const int32_t* face_boundary_orientations,
+    const int32_t* edge_vertices)
+{
+    if (!g_state.initialized) {
+        set_error(GU_ERROR_NOT_INITIALIZED, "Backend not initialized", "gu_upload_mesh_topology");
+        return GU_ERROR_NOT_INITIALIZED;
+    }
+    if (!header || !face_boundary_edges || !face_boundary_orientations || !edge_vertices) {
+        set_error(GU_ERROR_INVALID_ARGUMENT, "NULL argument", "gu_upload_mesh_topology");
+        return GU_ERROR_INVALID_ARGUMENT;
+    }
+    if (header->face_count <= 0 || header->edge_count <= 0 || header->max_edges_per_face <= 0) {
+        set_error(GU_ERROR_INVALID_ARGUMENT, "Invalid topology dimensions", "gu_upload_mesh_topology");
+        return GU_ERROR_INVALID_ARGUMENT;
+    }
+
+    physics_data_t* p = &g_state.physics;
+
+    /* Free any previously uploaded topology */
+    free(p->face_boundary_edges);
+    free(p->face_boundary_orientations);
+    free(p->edge_vertices);
+
+    p->header = *header;
+
+    size_t face_edge_count = (size_t)header->face_count * (size_t)header->max_edges_per_face;
+    size_t edge_vert_count = (size_t)header->edge_count * 2;
+
+    p->face_boundary_edges = (int32_t*)malloc(face_edge_count * sizeof(int32_t));
+    p->face_boundary_orientations = (int32_t*)malloc(face_edge_count * sizeof(int32_t));
+    p->edge_vertices = (int32_t*)malloc(edge_vert_count * sizeof(int32_t));
+
+    if (!p->face_boundary_edges || !p->face_boundary_orientations || !p->edge_vertices) {
+        free(p->face_boundary_edges);       p->face_boundary_edges = NULL;
+        free(p->face_boundary_orientations);p->face_boundary_orientations = NULL;
+        free(p->edge_vertices);             p->edge_vertices = NULL;
+        set_error(GU_ERROR_ALLOCATION_FAILED, "Failed to allocate topology arrays", "gu_upload_mesh_topology");
+        return GU_ERROR_ALLOCATION_FAILED;
+    }
+
+    memcpy(p->face_boundary_edges, face_boundary_edges, face_edge_count * sizeof(int32_t));
+    memcpy(p->face_boundary_orientations, face_boundary_orientations, face_edge_count * sizeof(int32_t));
+    memcpy(p->edge_vertices, edge_vertices, edge_vert_count * sizeof(int32_t));
+
+    p->has_topology = 1;
+    clear_error();
+    return GU_SUCCESS;
+}
+
+gu_error_code_t gu_upload_vertex_coordinates(
+    const double* vertex_coords,
+    int32_t vertex_count,
+    int32_t embedding_dim)
+{
+    if (!g_state.initialized) {
+        set_error(GU_ERROR_NOT_INITIALIZED, "Backend not initialized", "gu_upload_vertex_coordinates");
+        return GU_ERROR_NOT_INITIALIZED;
+    }
+    if (!vertex_coords) {
+        set_error(GU_ERROR_INVALID_ARGUMENT, "vertex_coords is NULL", "gu_upload_vertex_coordinates");
+        return GU_ERROR_INVALID_ARGUMENT;
+    }
+    if (vertex_count <= 0 || embedding_dim <= 0) {
+        set_error(GU_ERROR_INVALID_ARGUMENT, "Invalid vertex dimensions", "gu_upload_vertex_coordinates");
+        return GU_ERROR_INVALID_ARGUMENT;
+    }
+
+    physics_data_t* p = &g_state.physics;
+    free(p->vertex_coords);
+
+    size_t count = (size_t)vertex_count * (size_t)embedding_dim;
+    p->vertex_coords = (double*)malloc(count * sizeof(double));
+    if (!p->vertex_coords) {
+        set_error(GU_ERROR_ALLOCATION_FAILED, "Failed to allocate vertex array", "gu_upload_vertex_coordinates");
+        return GU_ERROR_ALLOCATION_FAILED;
+    }
+
+    memcpy(p->vertex_coords, vertex_coords, count * sizeof(double));
+    p->header.vertex_count = vertex_count;
+    p->header.embedding_dimension = embedding_dim;
+    p->has_vertices = 1;
+
+    clear_error();
+    return GU_SUCCESS;
+}
+
+gu_error_code_t gu_upload_structure_constants(
+    const double* structure_constants,
+    int32_t dim)
+{
+    if (!g_state.initialized) {
+        set_error(GU_ERROR_NOT_INITIALIZED, "Backend not initialized", "gu_upload_structure_constants");
+        return GU_ERROR_NOT_INITIALIZED;
+    }
+    if (!structure_constants) {
+        set_error(GU_ERROR_INVALID_ARGUMENT, "structure_constants is NULL", "gu_upload_structure_constants");
+        return GU_ERROR_INVALID_ARGUMENT;
+    }
+    if (dim <= 0) {
+        set_error(GU_ERROR_INVALID_ARGUMENT, "dim must be positive", "gu_upload_structure_constants");
+        return GU_ERROR_INVALID_ARGUMENT;
+    }
+
+    physics_data_t* p = &g_state.physics;
+    free(p->structure_constants);
+
+    size_t count = (size_t)dim * (size_t)dim * (size_t)dim;
+    p->structure_constants = (double*)malloc(count * sizeof(double));
+    if (!p->structure_constants) {
+        set_error(GU_ERROR_ALLOCATION_FAILED, "Failed to allocate structure constants", "gu_upload_structure_constants");
+        return GU_ERROR_ALLOCATION_FAILED;
+    }
+
+    memcpy(p->structure_constants, structure_constants, count * sizeof(double));
+    p->header.dim_g = dim;
+    p->has_structure_constants = 1;
+
+    clear_error();
+    return GU_SUCCESS;
+}
+
+gu_error_code_t gu_upload_invariant_metric(
+    const double* metric,
+    int32_t dim)
+{
+    if (!g_state.initialized) {
+        set_error(GU_ERROR_NOT_INITIALIZED, "Backend not initialized", "gu_upload_invariant_metric");
+        return GU_ERROR_NOT_INITIALIZED;
+    }
+    if (!metric) {
+        set_error(GU_ERROR_INVALID_ARGUMENT, "metric is NULL", "gu_upload_invariant_metric");
+        return GU_ERROR_INVALID_ARGUMENT;
+    }
+    if (dim <= 0) {
+        set_error(GU_ERROR_INVALID_ARGUMENT, "dim must be positive", "gu_upload_invariant_metric");
+        return GU_ERROR_INVALID_ARGUMENT;
+    }
+
+    physics_data_t* p = &g_state.physics;
+    free(p->invariant_metric);
+
+    size_t count = (size_t)dim * (size_t)dim;
+    p->invariant_metric = (double*)malloc(count * sizeof(double));
+    if (!p->invariant_metric) {
+        set_error(GU_ERROR_ALLOCATION_FAILED, "Failed to allocate metric array", "gu_upload_invariant_metric");
+        return GU_ERROR_ALLOCATION_FAILED;
+    }
+
+    memcpy(p->invariant_metric, metric, count * sizeof(double));
+    p->has_metric = 1;
+
+    clear_error();
+    return GU_SUCCESS;
+}
+
+gu_error_code_t gu_upload_background_connection(
+    const double* a0_coefficients,
+    int32_t edge_count,
+    int32_t dim_g)
+{
+    if (!g_state.initialized) {
+        set_error(GU_ERROR_NOT_INITIALIZED, "Backend not initialized", "gu_upload_background_connection");
+        return GU_ERROR_NOT_INITIALIZED;
+    }
+    if (!a0_coefficients) {
+        set_error(GU_ERROR_INVALID_ARGUMENT, "a0_coefficients is NULL", "gu_upload_background_connection");
+        return GU_ERROR_INVALID_ARGUMENT;
+    }
+    if (edge_count <= 0 || dim_g <= 0) {
+        set_error(GU_ERROR_INVALID_ARGUMENT, "Invalid A0 dimensions", "gu_upload_background_connection");
+        return GU_ERROR_INVALID_ARGUMENT;
+    }
+
+    physics_data_t* p = &g_state.physics;
+    free(p->a0_coefficients);
+
+    size_t count = (size_t)edge_count * (size_t)dim_g;
+    p->a0_coefficients = (double*)malloc(count * sizeof(double));
+    if (!p->a0_coefficients) {
+        set_error(GU_ERROR_ALLOCATION_FAILED, "Failed to allocate A0 array", "gu_upload_background_connection");
+        return GU_ERROR_ALLOCATION_FAILED;
+    }
+
+    memcpy(p->a0_coefficients, a0_coefficients, count * sizeof(double));
+    p->has_a0 = 1;
+
+    clear_error();
+    return GU_SUCCESS;
+}
+
+int32_t gu_has_physics_data(void) {
+    physics_data_t* p = &g_state.physics;
+    return p->has_topology && p->has_structure_constants && p->has_metric;
 }
 
 /* -------------------------------------------------------------------------
