@@ -94,7 +94,7 @@ public class PipelineIntegrationTests
         // Fragility detection should flag outlier
         var fragility = analyzer.DetectFragility(sweep, MakeEquivalence());
         Assert.Equal(2, fragility.Count);
-        Assert.True(fragility.Any(r => r.IsFragile));
+        Assert.Contains(fragility, r => r.IsFragile);
 
         // Docket should record counterexample
         var docket = CanonicityDocketBuilder.CreateOpen("shiab", "identity-shiab", "output-eq", "identity-shiab");
@@ -288,7 +288,7 @@ public class PipelineIntegrationTests
 
         // NegativeResultArtifacts should be produced for failures
         Assert.True(result.NegativeArtifacts.Count >= 1);
-        Assert.True(result.NegativeArtifacts.Any(a => a.OriginalTestId == "pred-bad"));
+        Assert.Contains(result.NegativeArtifacts, a => a.OriginalTestId == "pred-bad");
     }
 
     // --- Study: Recovery DAG + gate enforcement ---

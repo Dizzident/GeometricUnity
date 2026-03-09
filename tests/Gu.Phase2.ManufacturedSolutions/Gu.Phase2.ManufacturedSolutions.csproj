@@ -28,6 +28,9 @@
     <ProjectReference Include="..\..\src\Gu.Phase2.Execution\Gu.Phase2.Execution.csproj" />
     <ProjectReference Include="..\..\src\Gu.Phase2.Stability\Gu.Phase2.Stability.csproj" />
     <ProjectReference Include="..\..\src\Gu.Phase2.Continuation\Gu.Phase2.Continuation.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase2.Recovery\Gu.Phase2.Recovery.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase2.Predictions\Gu.Phase2.Predictions.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase2.Comparison\Gu.Phase2.Comparison.csproj" />
     <ProjectReference Include="..\Gu.Phase2.Branches.Tests\Gu.Phase2.Branches.Tests.csproj" />
   </ItemGroup>
 

@@ -164,6 +164,162 @@ public class CoulombSliceOperatorTests
         Assert.True(constNorm < 1e-10, $"Gauge Laplacian on constant xi should be zero, got norm = {constNorm:E6}");
     }
 
+    [Fact]
+    public void CoulombSliceOperator_FlatA0_AgreesWithFlatCodifferential()
+    {
+        // Regression: when A0 is zero, covariant d_{A0}^* == flat d^*
+        var mesh = SingleTriangle();
+        var algebra = LieAlgebraFactory.CreateSu2WithTracePairing();
+        int dimG = algebra.Dimension;
+        var gauge = new CoulombGaugePenalty(mesh, dimG, 1.0);
+
+        // Flat operator (no A0)
+        var flatOp = new CoulombSliceOperator(gauge, mesh, dimG, algebra.BasisOrderId);
+
+        // Covariant operator with zero A0
+        var zeroA0 = new double[mesh.EdgeCount * dimG];
+        var covariantOp = new CoulombSliceOperator(gauge, mesh, dimG, algebra.BasisOrderId,
+            algebra: algebra, backgroundConnection: zeroA0);
+
+        var rng = new Random(123);
+        var betaCoeffs = new double[mesh.EdgeCount * dimG];
+        for (int i = 0; i < betaCoeffs.Length; i++)
+            betaCoeffs[i] = rng.NextDouble() * 2.0 - 1.0;
+        var beta = new FieldTensor
+        {
+            Label = "beta",
+            Signature = flatOp.InputSignature,
+            Coefficients = betaCoeffs,
+            Shape = new[] { mesh.EdgeCount * dimG },
+        };
+
+        var flatResult = flatOp.Apply(beta);
+        var covariantResult = covariantOp.Apply(beta);
+
+        for (int i = 0; i < flatResult.Coefficients.Length; i++)
+        {
+            Assert.Equal(flatResult.Coefficients[i], covariantResult.Coefficients[i], 12);
+        }
+
+        // Also check transpose
+        var phiCoeffs = new double[mesh.VertexCount * dimG];
+        for (int i = 0; i < phiCoeffs.Length; i++)
+            phiCoeffs[i] = rng.NextDouble() * 2.0 - 1.0;
+        var phi = new FieldTensor
+        {
+            Label = "phi",
+            Signature = flatOp.OutputSignature,
+            Coefficients = phiCoeffs,
+            Shape = new[] { mesh.VertexCount * dimG },
+        };
+
+        var flatTranspose = flatOp.ApplyTranspose(phi);
+        var covariantTranspose = covariantOp.ApplyTranspose(phi);
+
+        for (int i = 0; i < flatTranspose.Coefficients.Length; i++)
+        {
+            Assert.Equal(flatTranspose.Coefficients[i], covariantTranspose.Coefficients[i], 12);
+        }
+    }
+
+    [Fact]
+    public void CoulombSliceOperator_NonFlatA0_DifferentFromFlatCodifferential()
+    {
+        // For non-zero A0, the covariant codifferential should differ from flat
+        var mesh = SingleTriangle();
+        var algebra = LieAlgebraFactory.CreateSu2WithTracePairing();
+        int dimG = algebra.Dimension;
+        var gauge = new CoulombGaugePenalty(mesh, dimG, 1.0);
+
+        // Flat operator (no A0)
+        var flatOp = new CoulombSliceOperator(gauge, mesh, dimG, algebra.BasisOrderId);
+
+        // Non-zero A0: put a non-trivial su(2) connection on each edge
+        var rng = new Random(456);
+        var a0 = new double[mesh.EdgeCount * dimG];
+        for (int i = 0; i < a0.Length; i++)
+            a0[i] = rng.NextDouble() * 2.0 - 1.0;
+
+        var covariantOp = new CoulombSliceOperator(gauge, mesh, dimG, algebra.BasisOrderId,
+            algebra: algebra, backgroundConnection: a0);
+
+        // Input beta must be chosen so the bracket [A0, beta] is non-zero.
+        // For su(2), [T_1, T_2] = T_3 etc., so random A0 and beta will have non-zero bracket.
+        var betaCoeffs = new double[mesh.EdgeCount * dimG];
+        for (int i = 0; i < betaCoeffs.Length; i++)
+            betaCoeffs[i] = rng.NextDouble() * 2.0 - 1.0;
+        var beta = new FieldTensor
+        {
+            Label = "beta",
+            Signature = flatOp.InputSignature,
+            Coefficients = betaCoeffs,
+            Shape = new[] { mesh.EdgeCount * dimG },
+        };
+
+        var flatResult = flatOp.Apply(beta);
+        var covariantResult = covariantOp.Apply(beta);
+
+        // The results should differ
+        double diffNorm = 0;
+        for (int i = 0; i < flatResult.Coefficients.Length; i++)
+        {
+            double d = flatResult.Coefficients[i] - covariantResult.Coefficients[i];
+            diffNorm += d * d;
+        }
+        diffNorm = System.Math.Sqrt(diffNorm);
+
+        Assert.True(diffNorm > 1e-10,
+            $"Covariant and flat codifferential should differ for non-zero A0, got diff norm = {diffNorm:E6}");
+    }
+
+    [Fact]
+    public void Transpose_SatisfiesAdjointProperty_WithNonFlatA0()
+    {
+        // Test: <C*v, w> == <v, C^T*w> with covariant operator
+        var mesh = SingleTriangle();
+        var algebra = LieAlgebraFactory.CreateSu2WithTracePairing();
+        int dimG = algebra.Dimension;
+        var gauge = new CoulombGaugePenalty(mesh, dimG, 1.0);
+
+        var rng = new Random(789);
+        var a0 = new double[mesh.EdgeCount * dimG];
+        for (int i = 0; i < a0.Length; i++)
+            a0[i] = rng.NextDouble() * 2.0 - 1.0;
+
+        var sliceOp = new CoulombSliceOperator(gauge, mesh, dimG, algebra.BasisOrderId,
+            algebra: algebra, backgroundConnection: a0);
+
+        var vCoeffs = new double[sliceOp.InputDimension];
+        for (int i = 0; i < vCoeffs.Length; i++)
+            vCoeffs[i] = rng.NextDouble() * 2.0 - 1.0;
+        var v = new FieldTensor
+        {
+            Label = "v",
+            Signature = sliceOp.InputSignature,
+            Coefficients = vCoeffs,
+            Shape = new[] { sliceOp.InputDimension },
+        };
+
+        var wCoeffs = new double[sliceOp.OutputDimension];
+        for (int i = 0; i < wCoeffs.Length; i++)
+            wCoeffs[i] = rng.NextDouble() * 2.0 - 1.0;
+        var w = new FieldTensor
+        {
+            Label = "w",
+            Signature = sliceOp.OutputSignature,
+            Coefficients = wCoeffs,
+            Shape = new[] { sliceOp.OutputDimension },
+        };
+
+        var cv = sliceOp.Apply(v);
+        var ctw = sliceOp.ApplyTranspose(w);
+
+        double lhs = Dot(cv.Coefficients, w.Coefficients);
+        double rhs = Dot(v.Coefficients, ctw.Coefficients);
+
+        Assert.Equal(lhs, rhs, 10);
+    }
+
     private static double Dot(double[] a, double[] b)
     {
         double sum = 0;

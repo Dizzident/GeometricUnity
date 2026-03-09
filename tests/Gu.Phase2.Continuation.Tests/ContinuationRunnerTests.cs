@@ -153,6 +153,62 @@ public class ContinuationRunnerTests
             new ContinuationRunner(null!, (s, l, t, m) => (s, 0, true)));
     }
 
+    [Fact]
+    public void Run_WithExtractorFailure_EmitsExtractorFailureEvent()
+    {
+        var runner = new ContinuationRunner(
+            evaluateResidual: (state, lambda) => (MakeTensor(0.0), 0.0),
+            solveCorrector: (predicted, lambda, tol, maxIter) =>
+                (MakeTensor(lambda), 1, true),
+            extractorDelegate: coeffs => coeffs[0] < 0.5 ? true : false);
+
+        var spec = MakeSpec(lambdaStart: 0.0, lambdaEnd: 1.0, maxSteps: 20);
+        var result = runner.Run(spec, MakeTensor(0.0));
+
+        Assert.Contains(result.AllEvents, e => e.Kind == ContinuationEventKind.ExtractorFailure);
+    }
+
+    [Fact]
+    public void Run_WithSharpTangentChange_EmitsBranchMergeSplitCandidate()
+    {
+        int stepCount = 0;
+        var runner = new ContinuationRunner(
+            evaluateResidual: (state, lambda) => (MakeTensor(0.0), 0.0),
+            solveCorrector: (predicted, lambda, tol, maxIter) =>
+            {
+                stepCount++;
+                // First few steps go in +1 direction, then reverse to -1
+                double value = stepCount <= 3 ? lambda : -lambda;
+                return (MakeTensor(value), 1, true);
+            });
+
+        var spec = MakeSpec(lambdaStart: 0.0, lambdaEnd: 1.0, maxSteps: 10, stepSize: 0.1);
+        var result = runner.Run(spec, MakeTensor(0.0));
+
+        Assert.Contains(result.AllEvents, e => e.Kind == ContinuationEventKind.BranchMergeSplitCandidate);
+    }
+
+    [Fact]
+    public void Run_WithGaugeDrift_EmitsGaugeSliceBreakdown()
+    {
+        int stepCount = 0;
+        var runner = new ContinuationRunner(
+            evaluateResidual: (state, lambda) => (MakeTensor(0.0), 0.0),
+            solveCorrector: (predicted, lambda, tol, maxIter) =>
+                (MakeTensor(lambda), 1, true),
+            gaugeResidualNormDelegate: coeffs =>
+            {
+                stepCount++;
+                // Return a large gauge residual on step 3+
+                return stepCount >= 3 ? 1.0 : 0.0;
+            });
+
+        var spec = MakeSpec(lambdaStart: 0.0, lambdaEnd: 1.0, maxSteps: 10);
+        var result = runner.Run(spec, MakeTensor(0.0));
+
+        Assert.Contains(result.AllEvents, e => e.Kind == ContinuationEventKind.GaugeSliceBreakdown);
+    }
+
     private static FieldTensor MakeTensor(double value)
     {
         return new FieldTensor

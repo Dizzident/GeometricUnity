@@ -44,6 +44,8 @@ public sealed class Phase2CudaBackend : IPhase2JacobianKernel, IPhase2HessianKer
     public unsafe void ApplyJv(ReadOnlySpan<double> u, ReadOnlySpan<double> v, Span<double> result,
         BranchVariantManifest variant)
     {
+        RejectNonZeroInput(u, nameof(ApplyJv));
+        RejectNonZeroInput(v, nameof(ApplyJv));
         EnsureReady();
 
         fixed (double* uPtr = u, vPtr = v, rPtr = result)
@@ -59,6 +61,8 @@ public sealed class Phase2CudaBackend : IPhase2JacobianKernel, IPhase2HessianKer
     public unsafe void ApplyJtw(ReadOnlySpan<double> u, ReadOnlySpan<double> w, Span<double> result,
         BranchVariantManifest variant)
     {
+        RejectNonZeroInput(u, nameof(ApplyJtw));
+        RejectNonZeroInput(w, nameof(ApplyJtw));
         EnsureReady();
 
         fixed (double* uPtr = u, wPtr = w, rPtr = result)
@@ -74,6 +78,8 @@ public sealed class Phase2CudaBackend : IPhase2JacobianKernel, IPhase2HessianKer
     public unsafe void ApplyHv(ReadOnlySpan<double> u, ReadOnlySpan<double> v, Span<double> result,
         BranchVariantManifest variant, double lambda)
     {
+        RejectNonZeroInput(u, nameof(ApplyHv));
+        RejectNonZeroInput(v, nameof(ApplyHv));
         EnsureReady();
 
         fixed (double* uPtr = u, vPtr = v, rPtr = result)
@@ -93,6 +99,7 @@ public sealed class Phase2CudaBackend : IPhase2JacobianKernel, IPhase2HessianKer
         int fieldDof,
         int residualDof)
     {
+        RejectNonZeroInput(connectionStates, nameof(EvaluateBatch));
         EnsureReady();
         int batchSize = variants.Count;
         var branchFlags = new int[batchSize];
@@ -127,6 +134,19 @@ public sealed class Phase2CudaBackend : IPhase2JacobianKernel, IPhase2HessianKer
         if (variant.BiConnectionVariant.Contains("minus", StringComparison.OrdinalIgnoreCase))
             flags |= (1 << 4);
         return flags;
+    }
+
+    private static void RejectNonZeroInput(ReadOnlySpan<double> data, string methodName)
+    {
+        for (int i = 0; i < data.Length; i++)
+        {
+            if (data[i] != 0.0)
+            {
+                throw new NotSupportedException(
+                    $"Phase2CudaBackend.{methodName}: CUDA kernels are stubs that return zeros. " +
+                    "Non-zero input detected - use CPU backend for real computation.");
+            }
+        }
     }
 
     private void EnsureReady()

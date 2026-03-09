@@ -32,6 +32,8 @@ public sealed class ContinuationRunner
     private readonly CorrectorSolver _solveCorrector;
     private readonly ISpectrumProbe? _spectrumProbe;
     private readonly ILinearOperator? _hessianProvider;
+    private readonly Func<double[], bool>? _extractorDelegate;
+    private readonly Func<double[], double>? _gaugeResidualNormDelegate;
 
     /// <summary>
     /// Create a continuation runner.
@@ -40,16 +42,22 @@ public sealed class ContinuationRunner
     /// <param name="solveCorrector">Corrects a predicted state to satisfy G ≈ 0.</param>
     /// <param name="spectrumProbe">Optional spectrum probe for stability diagnostics.</param>
     /// <param name="hessianProvider">Optional Hessian operator for event detection.</param>
+    /// <param name="extractorDelegate">Optional extractor: returns false if extraction fails for the given state coefficients.</param>
+    /// <param name="gaugeResidualNormDelegate">Optional gauge residual norm evaluator for gauge-slice breakdown detection.</param>
     public ContinuationRunner(
         ResidualEvaluator evaluateResidual,
         CorrectorSolver solveCorrector,
         ISpectrumProbe? spectrumProbe = null,
-        ILinearOperator? hessianProvider = null)
+        ILinearOperator? hessianProvider = null,
+        Func<double[], bool>? extractorDelegate = null,
+        Func<double[], double>? gaugeResidualNormDelegate = null)
     {
         _evaluateResidual = evaluateResidual ?? throw new ArgumentNullException(nameof(evaluateResidual));
         _solveCorrector = solveCorrector ?? throw new ArgumentNullException(nameof(solveCorrector));
         _spectrumProbe = spectrumProbe;
         _hessianProvider = hessianProvider;
+        _extractorDelegate = extractorDelegate;
+        _gaugeResidualNormDelegate = gaugeResidualNormDelegate;
     }
 
     /// <summary>
@@ -76,6 +84,7 @@ public sealed class ContinuationRunner
 
         int rejectionCount = 0;
         double? prevSmallestEigenvalue = null;
+        double[]? prevTangent = null;
 
         for (int step = 1; step <= spec.MaxSteps; step++)
         {
@@ -125,6 +134,73 @@ public sealed class ContinuationRunner
             var (residual, residualNorm) = _evaluateResidual(corrected, nextLambda);
             double ds = System.Math.Abs(nextLambda - lambda);
             arclength += ds;
+
+            // Event detection: extractor failure
+            if (_extractorDelegate != null && !_extractorDelegate(corrected.Coefficients))
+            {
+                stepEvents.Add(new ContinuationEvent
+                {
+                    Kind = ContinuationEventKind.ExtractorFailure,
+                    Lambda = nextLambda,
+                    Description = $"Extractor returned false at lambda={nextLambda:G6}",
+                    Severity = "warning",
+                });
+            }
+
+            // Event detection: branch merge/split via tangent direction change
+            double[] currentTangent = new double[corrected.Coefficients.Length];
+            if (steps.Count > 0)
+            {
+                var prevCoeffs = currentState.Coefficients;
+                double tangentNorm = 0;
+                for (int i = 0; i < currentTangent.Length; i++)
+                {
+                    currentTangent[i] = corrected.Coefficients[i] - prevCoeffs[i];
+                    tangentNorm += currentTangent[i] * currentTangent[i];
+                }
+                tangentNorm = System.Math.Sqrt(tangentNorm);
+                if (tangentNorm > 1e-15)
+                {
+                    for (int i = 0; i < currentTangent.Length; i++)
+                        currentTangent[i] /= tangentNorm;
+                }
+
+                if (prevTangent != null && tangentNorm > 1e-15)
+                {
+                    double dot = 0;
+                    for (int i = 0; i < currentTangent.Length; i++)
+                        dot += currentTangent[i] * prevTangent[i];
+
+                    if (dot < 0.5)
+                    {
+                        stepEvents.Add(new ContinuationEvent
+                        {
+                            Kind = ContinuationEventKind.BranchMergeSplitCandidate,
+                            Lambda = nextLambda,
+                            Description = $"Sharp tangent change detected (dot={dot:F4}) at lambda={nextLambda:G6}",
+                            Severity = "warning",
+                        });
+                    }
+                }
+
+                prevTangent = currentTangent;
+            }
+
+            // Event detection: gauge-slice breakdown
+            if (_gaugeResidualNormDelegate != null)
+            {
+                double gaugeNorm = _gaugeResidualNormDelegate(corrected.Coefficients);
+                if (gaugeNorm > spec.CorrectorTolerance)
+                {
+                    stepEvents.Add(new ContinuationEvent
+                    {
+                        Kind = ContinuationEventKind.GaugeSliceBreakdown,
+                        Lambda = nextLambda,
+                        Description = $"Gauge residual norm {gaugeNorm:E3} exceeds tolerance at lambda={nextLambda:G6}",
+                        Severity = "critical",
+                    });
+                }
+            }
 
             // Event detection: spectrum probe
             if (spec.ProbeSpectrum && _spectrumProbe != null && _hessianProvider != null)

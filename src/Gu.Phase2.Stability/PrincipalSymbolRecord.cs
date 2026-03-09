@@ -85,4 +85,11 @@ public sealed class PrincipalSymbolRecord
     /// </summary>
     [JsonPropertyName("operatorId")]
     public required string OperatorId { get; init; }
+
+    /// <summary>
+    /// Normalized covector direction xi/|xi|. Null when the covector has zero norm.
+    /// Allows callers to separate angular dependence from magnitude dependence.
+    /// </summary>
+    [JsonPropertyName("covectorDirection")]
+    public double[]? CovectorDirection { get; init; }
 }

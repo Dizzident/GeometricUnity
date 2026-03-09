@@ -55,7 +55,8 @@ public sealed class PrincipalSymbolSampler
         int localDim,
         string branchManifestId,
         GaugeStudyMode gaugeStudyMode,
-        string operatorId)
+        string operatorId,
+        int operatorOrder = 1)
     {
         ArgumentNullException.ThrowIfNull(op);
         ArgumentNullException.ThrowIfNull(covector);
@@ -72,6 +73,19 @@ public sealed class PrincipalSymbolSampler
 
         var covectorNorm = L2Norm(covector);
 
+        // Compute normalized covector direction xi/|xi|
+        double[]? covectorDirection = null;
+        if (covectorNorm > 0)
+        {
+            covectorDirection = new double[covector.Length];
+            for (int k = 0; k < covector.Length; k++)
+                covectorDirection[k] = covector[k] / covectorNorm;
+        }
+
+        // For order-k operator: sigma(t*xi) = t^k * sigma(xi)
+        // Probe with unit perturbation and normalize by |xi|^k
+        double normFactor = covectorNorm > 0 ? System.Math.Pow(covectorNorm, operatorOrder) : 1.0;
+
         for (int j = 0; j < localDim; j++)
         {
             // Create a perturbation: unit vector in direction j, localized at cellIndex
@@ -79,8 +93,7 @@ public sealed class PrincipalSymbolSampler
             int globalIdx = cellIndex * localDim + j;
             if (globalIdx < delta.Length)
             {
-                // Scale by covector norm to probe the principal symbol level
-                delta[globalIdx] = covectorNorm > 0 ? covectorNorm : 1.0;
+                delta[globalIdx] = 1.0;
             }
 
             var deltaT = new FieldTensor
@@ -99,10 +112,7 @@ public sealed class PrincipalSymbolSampler
                 int outIdx = cellIndex * localDim + i;
                 if (outIdx < response.Coefficients.Length)
                 {
-                    symbolMatrix[i][j] = response.Coefficients[outIdx];
-                    // Normalize by covector norm squared for principal symbol scaling
-                    if (covectorNorm > 0)
-                        symbolMatrix[i][j] /= (covectorNorm * covectorNorm);
+                    symbolMatrix[i][j] = response.Coefficients[outIdx] / normFactor;
                 }
             }
         }
@@ -131,6 +141,7 @@ public sealed class PrincipalSymbolSampler
             BranchManifestId = branchManifestId,
             GaugeStudyMode = gaugeStudyMode,
             OperatorId = operatorId,
+            CovectorDirection = covectorDirection,
         };
     }
 

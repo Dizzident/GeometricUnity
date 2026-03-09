@@ -174,4 +174,59 @@ public class Phase2CudaInteropTests
         backend.Dispose();
         backend.Dispose(); // Should not throw
     }
+
+    [Fact]
+    public void Phase2CudaBackend_ApplyJv_ThrowsForNonZeroInput()
+    {
+        using var backend = new Phase2CudaBackend();
+        var variant = TestVariant();
+        var u = new double[] { 1.0, 0.0, 0.0 };
+        var v = new double[3];
+        var result = new double[3];
+
+        var ex = Assert.Throws<NotSupportedException>(() =>
+            backend.ApplyJv(u, v, result, variant));
+        Assert.Contains("CUDA kernels are stubs", ex.Message);
+    }
+
+    [Fact]
+    public void Phase2CudaBackend_ApplyJtw_ThrowsForNonZeroInput()
+    {
+        using var backend = new Phase2CudaBackend();
+        var variant = TestVariant();
+        var u = new double[3];
+        var w = new double[] { 0.0, 0.5, 0.0 };
+        var result = new double[3];
+
+        var ex = Assert.Throws<NotSupportedException>(() =>
+            backend.ApplyJtw(u, w, result, variant));
+        Assert.Contains("CUDA kernels are stubs", ex.Message);
+    }
+
+    [Fact]
+    public void Phase2CudaBackend_ApplyHv_ThrowsForNonZeroInput()
+    {
+        using var backend = new Phase2CudaBackend();
+        var variant = TestVariant();
+        var u = new double[] { 0.0, 0.0, 1e-15 };
+        var v = new double[3];
+        var result = new double[3];
+
+        var ex = Assert.Throws<NotSupportedException>(() =>
+            backend.ApplyHv(u, v, result, variant, 1.0));
+        Assert.Contains("CUDA kernels are stubs", ex.Message);
+    }
+
+    [Fact]
+    public void Phase2CudaBackend_EvaluateBatch_ThrowsForNonZeroInput()
+    {
+        using var backend = new Phase2CudaBackend();
+        var variants = new[] { TestVariant() };
+        var states = new double[] { 0.0, 0.0, 1.0 };
+        var residuals = new double[3];
+
+        var ex = Assert.Throws<NotSupportedException>(() =>
+            backend.EvaluateBatch(variants, states, residuals, 3, 3));
+        Assert.Contains("CUDA kernels are stubs", ex.Message);
+    }
 }
