@@ -143,6 +143,22 @@ public sealed class CudaNativeBackend : INativeBackend
         return objective;
     }
 
+    public void EvaluateJacobianAction(PackedBuffer omega, PackedBuffer delta, PackedBuffer jvOut)
+    {
+        EnsureNotDisposed();
+        EnsureInitialized();
+        int result = NativeBindings.EvaluateJacobianAction(omega.BufferId, delta.BufferId, jvOut.BufferId);
+        CheckResult(result, "gu_evaluate_jacobian_action");
+    }
+
+    public void EvaluateAdjointAction(PackedBuffer omega, PackedBuffer v, PackedBuffer jtvOut)
+    {
+        EnsureNotDisposed();
+        EnsureInitialized();
+        int result = NativeBindings.EvaluateAdjointAction(omega.BufferId, v.BufferId, jtvOut.BufferId);
+        CheckResult(result, "gu_evaluate_adjoint_action");
+    }
+
     public ErrorPacket? GetLastError()
     {
         nint ptr = NativeBindings.GetLastError();
@@ -240,6 +256,39 @@ public sealed class CudaNativeBackend : INativeBackend
             EnsureNotDisposed();
             return NativeBindings.HasPhysicsData() != 0;
         }
+    }
+
+    public void Axpy(PackedBuffer y, double alpha, PackedBuffer x, int n)
+    {
+        EnsureNotDisposed();
+        EnsureInitialized();
+        int result = NativeBindings.Axpy(y.BufferId, alpha, x.BufferId, n);
+        CheckResult(result, "gu_axpy");
+    }
+
+    public double InnerProduct(PackedBuffer u, PackedBuffer v, int n)
+    {
+        EnsureNotDisposed();
+        EnsureInitialized();
+        int result = NativeBindings.InnerProduct(u.BufferId, v.BufferId, n, out double value);
+        CheckResult(result, "gu_inner_product");
+        return value;
+    }
+
+    public void Scale(PackedBuffer x, double alpha, int n)
+    {
+        EnsureNotDisposed();
+        EnsureInitialized();
+        int result = NativeBindings.Scale(x.BufferId, alpha, n);
+        CheckResult(result, "gu_scale");
+    }
+
+    public void Copy(PackedBuffer dst, PackedBuffer src, int n)
+    {
+        EnsureNotDisposed();
+        EnsureInitialized();
+        int result = NativeBindings.Copy(dst.BufferId, src.BufferId, n);
+        CheckResult(result, "gu_copy");
     }
 
     public void Dispose()

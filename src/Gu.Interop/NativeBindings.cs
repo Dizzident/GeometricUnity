@@ -101,6 +101,13 @@ internal static partial class NativeBindings
     [LibraryImport(LibName, EntryPoint = "gu_copy")]
     internal static partial int Copy(int dst, int src, int n);
 
+    // Jacobian/adjoint operations (CUDA Stage 2)
+    [LibraryImport(LibName, EntryPoint = "gu_evaluate_jacobian_action")]
+    internal static partial int EvaluateJacobianAction(int omega, int delta, int jvOut);
+
+    [LibraryImport(LibName, EntryPoint = "gu_evaluate_adjoint_action")]
+    internal static partial int EvaluateAdjointAction(int omega, int v, int jtvOut);
+
     // Error reporting
     [LibraryImport(LibName, EntryPoint = "gu_get_last_error")]
     internal static partial nint GetLastError();

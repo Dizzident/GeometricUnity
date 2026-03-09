@@ -102,6 +102,74 @@ int gu_shiab_identity(
     int n);
 
 /* =========================================================================
+ * Jacobian/adjoint kernel dispatch functions (CUDA Stage 2)
+ * ========================================================================= */
+
+/**
+ * Compute Jacobian-vector product: Jv = (dUpsilon/domega) * delta.
+ * For identity Shiab + augmented torsion:
+ *   J*delta = dF/domega(delta) - dT/domega(delta)
+ *
+ * Curvature linearization: dF/domega(delta) = d(delta) + 0.5*sum_{i<j}([omega_i,delta_j]+[delta_i,omega_j])
+ * Torsion linearization: dT/domega(delta) = d_{A0}(delta) = d(delta) + [A0 wedge delta]
+ *
+ * @param omega       Connection [edge_count * dim_g]
+ * @param delta       Perturbation [edge_count * dim_g]
+ * @param jv_out      Output J*delta [face_count * dim_g]
+ * @param a0          Background connection [edge_count * dim_g] (may be NULL for zero A0)
+ * @param face_boundary_edges    [face_count * max_edges_per_face]
+ * @param face_boundary_orientations [face_count * max_edges_per_face]
+ * @param structure_constants    f^c_{ab} [dim_g^3]
+ * @param face_count  Number of faces
+ * @param edge_count  Number of edges
+ * @param dim_g       Lie algebra dimension
+ * @param max_edges_per_face  Max boundary edges per face
+ * @return 0 on success, -1 on failure
+ */
+int gu_jacobian_action_physics(
+    const double* omega,
+    const double* delta,
+    double* jv_out,
+    const double* a0,
+    const int32_t* face_boundary_edges,
+    const int32_t* face_boundary_orientations,
+    const double* structure_constants,
+    int face_count,
+    int edge_count,
+    int dim_g,
+    int max_edges_per_face);
+
+/**
+ * Compute adjoint action: J^T*v.
+ * Uses column-by-column Jacobian application (basis vector approach).
+ *
+ * @param omega       Connection [edge_count * dim_g]
+ * @param v           Input vector [face_count * dim_g]
+ * @param jtv_out     Output J^T*v [edge_count * dim_g]
+ * @param a0          Background connection [edge_count * dim_g] (may be NULL)
+ * @param face_boundary_edges    [face_count * max_edges_per_face]
+ * @param face_boundary_orientations [face_count * max_edges_per_face]
+ * @param structure_constants    f^c_{ab} [dim_g^3]
+ * @param face_count  Number of faces
+ * @param edge_count  Number of edges
+ * @param dim_g       Lie algebra dimension
+ * @param max_edges_per_face  Max boundary edges per face
+ * @return 0 on success, -1 on failure
+ */
+int gu_adjoint_action_physics(
+    const double* omega,
+    const double* v,
+    double* jtv_out,
+    const double* a0,
+    const int32_t* face_boundary_edges,
+    const int32_t* face_boundary_orientations,
+    const double* structure_constants,
+    int face_count,
+    int edge_count,
+    int dim_g,
+    int max_edges_per_face);
+
+/* =========================================================================
  * Legacy stub dispatch functions (backward compatible)
  * ========================================================================= */
 

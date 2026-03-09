@@ -106,6 +106,10 @@ gu_error_code_t gu_evaluate_shiab(gu_buffer_handle_t omega, gu_buffer_handle_t s
 gu_error_code_t gu_evaluate_residual(gu_buffer_handle_t shiab, gu_buffer_handle_t torsion, gu_buffer_handle_t residual_out);
 gu_error_code_t gu_evaluate_objective(gu_buffer_handle_t residual, double* objective_out);
 
+/* Compute kernels -- Jacobian/adjoint (CUDA Stage 2) */
+gu_error_code_t gu_evaluate_jacobian_action(gu_buffer_handle_t omega, gu_buffer_handle_t delta, gu_buffer_handle_t jv_out);
+gu_error_code_t gu_evaluate_adjoint_action(gu_buffer_handle_t omega, gu_buffer_handle_t v, gu_buffer_handle_t jtv_out);
+
 /* Compute kernels -- solver primitives (M10) */
 gu_error_code_t gu_axpy(gu_buffer_handle_t y, double alpha, gu_buffer_handle_t x, int32_t n);
 gu_error_code_t gu_inner_product(gu_buffer_handle_t u, gu_buffer_handle_t v, int32_t n, double* result_out);

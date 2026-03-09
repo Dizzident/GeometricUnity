@@ -799,6 +799,171 @@ gu_error_code_t gu_copy(gu_buffer_handle_t dst_handle, gu_buffer_handle_t src_ha
 }
 
 /* -------------------------------------------------------------------------
+ * Jacobian/adjoint operations (CUDA Stage 2)
+ * ------------------------------------------------------------------------- */
+
+gu_error_code_t gu_evaluate_jacobian_action(gu_buffer_handle_t omega, gu_buffer_handle_t delta,
+                                             gu_buffer_handle_t jv_out) {
+    if (!g_state.initialized) {
+        set_error(GU_ERROR_NOT_INITIALIZED, "Backend not initialized", "gu_evaluate_jacobian_action");
+        return GU_ERROR_NOT_INITIALIZED;
+    }
+    if (omega <= 0 || omega >= MAX_BUFFERS || !g_state.buffers[omega].active) {
+        set_error(GU_ERROR_INVALID_ARGUMENT, "Invalid omega handle", "gu_evaluate_jacobian_action");
+        return GU_ERROR_INVALID_ARGUMENT;
+    }
+    if (delta <= 0 || delta >= MAX_BUFFERS || !g_state.buffers[delta].active) {
+        set_error(GU_ERROR_INVALID_ARGUMENT, "Invalid delta handle", "gu_evaluate_jacobian_action");
+        return GU_ERROR_INVALID_ARGUMENT;
+    }
+    if (jv_out <= 0 || jv_out >= MAX_BUFFERS || !g_state.buffers[jv_out].active) {
+        set_error(GU_ERROR_INVALID_ARGUMENT, "Invalid jv_out handle", "gu_evaluate_jacobian_action");
+        return GU_ERROR_INVALID_ARGUMENT;
+    }
+
+    buffer_entry_t* omega_buf = &g_state.buffers[omega];
+    buffer_entry_t* delta_buf = &g_state.buffers[delta];
+    buffer_entry_t* jv_buf = &g_state.buffers[jv_out];
+    physics_data_t* p = &g_state.physics;
+
+    if (!p->has_topology || !p->has_structure_constants) {
+        set_error(GU_ERROR_INVALID_ARGUMENT, "Physics data not uploaded", "gu_evaluate_jacobian_action");
+        return GU_ERROR_INVALID_ARGUMENT;
+    }
+
+#ifdef GU_HAS_CUDA
+    /* Stage D->H, compute on CPU, stage H->D */
+    size_t omega_bytes = (size_t)omega_buf->element_count * sizeof(double);
+    size_t delta_bytes = (size_t)delta_buf->element_count * sizeof(double);
+    size_t jv_bytes = (size_t)jv_buf->element_count * sizeof(double);
+    double* h_omega = (double*)malloc(omega_bytes);
+    double* h_delta = (double*)malloc(delta_bytes);
+    double* h_jv = (double*)malloc(jv_bytes);
+    if (!h_omega || !h_delta || !h_jv) {
+        free(h_omega); free(h_delta); free(h_jv);
+        set_error(GU_ERROR_ALLOCATION_FAILED, "Host staging alloc failed", "gu_evaluate_jacobian_action");
+        return GU_ERROR_ALLOCATION_FAILED;
+    }
+    int cuda_rc = gu_cuda_memcpy_d2h(h_omega, omega_buf->data, omega_bytes);
+    if (cuda_rc != 0) { free(h_omega); free(h_delta); free(h_jv);
+        set_error(GU_ERROR_CUDA_ERROR, gu_cuda_get_last_error_string(), "gu_evaluate_jacobian_action");
+        return GU_ERROR_CUDA_ERROR; }
+    cuda_rc = gu_cuda_memcpy_d2h(h_delta, delta_buf->data, delta_bytes);
+    if (cuda_rc != 0) { free(h_omega); free(h_delta); free(h_jv);
+        set_error(GU_ERROR_CUDA_ERROR, gu_cuda_get_last_error_string(), "gu_evaluate_jacobian_action");
+        return GU_ERROR_CUDA_ERROR; }
+    int rc = gu_jacobian_action_physics(
+        h_omega, h_delta, h_jv, p->a0_coefficients,
+        p->face_boundary_edges, p->face_boundary_orientations,
+        p->structure_constants,
+        p->header.face_count, p->header.edge_count,
+        p->header.dim_g, p->header.max_edges_per_face);
+    if (rc != 0) { free(h_omega); free(h_delta); free(h_jv);
+        set_error(GU_ERROR_CUDA_ERROR, "Jacobian action kernel failed", "gu_evaluate_jacobian_action");
+        return GU_ERROR_CUDA_ERROR; }
+    cuda_rc = gu_cuda_memcpy_h2d(jv_buf->data, h_jv, jv_bytes);
+    free(h_omega); free(h_delta); free(h_jv);
+    if (cuda_rc != 0) {
+        set_error(GU_ERROR_CUDA_ERROR, gu_cuda_get_last_error_string(), "gu_evaluate_jacobian_action");
+        return GU_ERROR_CUDA_ERROR; }
+#else
+    int rc = gu_jacobian_action_physics(
+        omega_buf->data, delta_buf->data, jv_buf->data, p->a0_coefficients,
+        p->face_boundary_edges, p->face_boundary_orientations,
+        p->structure_constants,
+        p->header.face_count, p->header.edge_count,
+        p->header.dim_g, p->header.max_edges_per_face);
+    if (rc != 0) {
+        set_error(GU_ERROR_CUDA_ERROR, "Jacobian action kernel failed", "gu_evaluate_jacobian_action");
+        return GU_ERROR_CUDA_ERROR;
+    }
+#endif
+
+    clear_error();
+    return GU_SUCCESS;
+}
+
+gu_error_code_t gu_evaluate_adjoint_action(gu_buffer_handle_t omega, gu_buffer_handle_t v,
+                                            gu_buffer_handle_t jtv_out) {
+    if (!g_state.initialized) {
+        set_error(GU_ERROR_NOT_INITIALIZED, "Backend not initialized", "gu_evaluate_adjoint_action");
+        return GU_ERROR_NOT_INITIALIZED;
+    }
+    if (omega <= 0 || omega >= MAX_BUFFERS || !g_state.buffers[omega].active) {
+        set_error(GU_ERROR_INVALID_ARGUMENT, "Invalid omega handle", "gu_evaluate_adjoint_action");
+        return GU_ERROR_INVALID_ARGUMENT;
+    }
+    if (v <= 0 || v >= MAX_BUFFERS || !g_state.buffers[v].active) {
+        set_error(GU_ERROR_INVALID_ARGUMENT, "Invalid v handle", "gu_evaluate_adjoint_action");
+        return GU_ERROR_INVALID_ARGUMENT;
+    }
+    if (jtv_out <= 0 || jtv_out >= MAX_BUFFERS || !g_state.buffers[jtv_out].active) {
+        set_error(GU_ERROR_INVALID_ARGUMENT, "Invalid jtv_out handle", "gu_evaluate_adjoint_action");
+        return GU_ERROR_INVALID_ARGUMENT;
+    }
+
+    buffer_entry_t* omega_buf = &g_state.buffers[omega];
+    buffer_entry_t* v_buf = &g_state.buffers[v];
+    buffer_entry_t* jtv_buf = &g_state.buffers[jtv_out];
+    physics_data_t* p = &g_state.physics;
+
+    if (!p->has_topology || !p->has_structure_constants) {
+        set_error(GU_ERROR_INVALID_ARGUMENT, "Physics data not uploaded", "gu_evaluate_adjoint_action");
+        return GU_ERROR_INVALID_ARGUMENT;
+    }
+
+#ifdef GU_HAS_CUDA
+    size_t omega_bytes = (size_t)omega_buf->element_count * sizeof(double);
+    size_t v_bytes = (size_t)v_buf->element_count * sizeof(double);
+    size_t jtv_bytes = (size_t)jtv_buf->element_count * sizeof(double);
+    double* h_omega = (double*)malloc(omega_bytes);
+    double* h_v = (double*)malloc(v_bytes);
+    double* h_jtv = (double*)malloc(jtv_bytes);
+    if (!h_omega || !h_v || !h_jtv) {
+        free(h_omega); free(h_v); free(h_jtv);
+        set_error(GU_ERROR_ALLOCATION_FAILED, "Host staging alloc failed", "gu_evaluate_adjoint_action");
+        return GU_ERROR_ALLOCATION_FAILED;
+    }
+    int cuda_rc = gu_cuda_memcpy_d2h(h_omega, omega_buf->data, omega_bytes);
+    if (cuda_rc != 0) { free(h_omega); free(h_v); free(h_jtv);
+        set_error(GU_ERROR_CUDA_ERROR, gu_cuda_get_last_error_string(), "gu_evaluate_adjoint_action");
+        return GU_ERROR_CUDA_ERROR; }
+    cuda_rc = gu_cuda_memcpy_d2h(h_v, v_buf->data, v_bytes);
+    if (cuda_rc != 0) { free(h_omega); free(h_v); free(h_jtv);
+        set_error(GU_ERROR_CUDA_ERROR, gu_cuda_get_last_error_string(), "gu_evaluate_adjoint_action");
+        return GU_ERROR_CUDA_ERROR; }
+    int rc = gu_adjoint_action_physics(
+        h_omega, h_v, h_jtv, p->a0_coefficients,
+        p->face_boundary_edges, p->face_boundary_orientations,
+        p->structure_constants,
+        p->header.face_count, p->header.edge_count,
+        p->header.dim_g, p->header.max_edges_per_face);
+    if (rc != 0) { free(h_omega); free(h_v); free(h_jtv);
+        set_error(GU_ERROR_CUDA_ERROR, "Adjoint action kernel failed", "gu_evaluate_adjoint_action");
+        return GU_ERROR_CUDA_ERROR; }
+    cuda_rc = gu_cuda_memcpy_h2d(jtv_buf->data, h_jtv, jtv_bytes);
+    free(h_omega); free(h_v); free(h_jtv);
+    if (cuda_rc != 0) {
+        set_error(GU_ERROR_CUDA_ERROR, gu_cuda_get_last_error_string(), "gu_evaluate_adjoint_action");
+        return GU_ERROR_CUDA_ERROR; }
+#else
+    int rc = gu_adjoint_action_physics(
+        omega_buf->data, v_buf->data, jtv_buf->data, p->a0_coefficients,
+        p->face_boundary_edges, p->face_boundary_orientations,
+        p->structure_constants,
+        p->header.face_count, p->header.edge_count,
+        p->header.dim_g, p->header.max_edges_per_face);
+    if (rc != 0) {
+        set_error(GU_ERROR_CUDA_ERROR, "Adjoint action kernel failed", "gu_evaluate_adjoint_action");
+        return GU_ERROR_CUDA_ERROR;
+    }
+#endif
+
+    clear_error();
+    return GU_SUCCESS;
+}
+
+/* -------------------------------------------------------------------------
  * Extended data upload (GAP-9)
  *
  * Upload mesh topology, Lie algebra, and background connection data

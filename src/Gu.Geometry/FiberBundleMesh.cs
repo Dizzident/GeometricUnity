@@ -102,6 +102,8 @@ public sealed class FiberBundleMesh
         {
             SpaceId = "X_h",
             Dimension = BaseMesh.EmbeddingDimension,
+            EdgeCount = BaseMesh.EdgeCount,
+            FaceCount = BaseMesh.FaceCount,
             Label = "base_X_h",
         };
 
@@ -109,6 +111,8 @@ public sealed class FiberBundleMesh
         {
             SpaceId = "Y_h",
             Dimension = AmbientMesh.EmbeddingDimension,
+            EdgeCount = AmbientMesh.EdgeCount,
+            FaceCount = AmbientMesh.FaceCount,
             Label = "ambient_Y_h",
         };
 

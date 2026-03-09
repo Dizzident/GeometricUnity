@@ -1,0 +1,93 @@
+{
+  "environmentId": "toy-2d-consistency",
+  "branch": {
+    "branchId": "toy-2d-su2-identity-shiab",
+    "schemaVersion": "1.0.0"
+  },
+  "scenarioType": "toy-consistency",
+  "geometry": {
+    "baseSpace": {
+      "spaceId": "X_h",
+      "dimension": 2,
+      "label": "base_X_h"
+    },
+    "ambientSpace": {
+      "spaceId": "Y_h",
+      "dimension": 5,
+      "label": "ambient_Y_h"
+    },
+    "discretizationType": "simplicial",
+    "quadratureRuleId": "simplex-2d-centroid",
+    "basisFamilyId": "P1-simplex-2d",
+    "projectionBinding": {
+      "bindingType": "projection",
+      "sourceSpace": {
+        "spaceId": "Y_h",
+        "dimension": 5
+      },
+      "targetSpace": {
+        "spaceId": "X_h",
+        "dimension": 2
+      },
+      "mappingStrategy": "many-to-one-fiber-projection"
+    },
+    "observationBinding": {
+      "bindingType": "observation",
+      "sourceSpace": {
+        "spaceId": "X_h",
+        "dimension": 2
+      },
+      "targetSpace": {
+        "spaceId": "Y_h",
+        "dimension": 5
+      },
+      "mappingStrategy": "section-vertex-aligned"
+    },
+    "patches": [
+      {
+        "patchId": "base-patch-0",
+        "elementCount": 4,
+        "topologyType": "simplicial",
+        "metadata": {
+          "description": "Unit square split into 4 triangles with center vertex",
+          "vertexCount": "5",
+          "edgeCount": "8"
+        }
+      }
+    ]
+  },
+  "boundaryConditions": {
+    "conditionType": "none"
+  },
+  "initialConditions": {
+    "conditionType": "flat-connection"
+  },
+  "gaugeConditions": {
+    "strategyType": "penalty",
+    "penaltyCoefficient": 1.0
+  },
+  "observableRequests": [
+    {
+      "observableId": "residual-norm",
+      "outputType": "Quantitative"
+    },
+    {
+      "observableId": "curvature-field",
+      "outputType": "Quantitative"
+    },
+    {
+      "observableId": "topological-charge",
+      "outputType": "ExactStructural"
+    }
+  ],
+  "comparisonTemplateIds": [],
+  "provenance": {
+    "createdAt": "2026-03-09T00:00:00Z",
+    "codeRevision": "minimal-gu-v1",
+    "branch": {
+      "branchId": "toy-2d-su2-identity-shiab",
+      "schemaVersion": "1.0.0"
+    },
+    "notes": "Toy 2D consistency environment for CPU debugging and testing"
+  }
+}

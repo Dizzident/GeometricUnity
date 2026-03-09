@@ -65,15 +65,24 @@ public sealed class GpuSolverBackend : ISolverBackend, IDisposable
         ArgumentNullException.ThrowIfNull(omega);
         ArgumentNullException.ThrowIfNull(a0);
 
-        int n = omega.Coefficients.Length;
-        var layout = BufferLayoutDescriptor.CreateSoA("gpu-field", new[] { "c" }, n);
+        // omega is edge-valued: edge_count * dimG
+        int nOmega = omega.Coefficients.Length;
+        var omegaLayout = BufferLayoutDescriptor.CreateSoA("omega", new[] { "c" }, nOmega);
+
+        // curvature/torsion/Shiab/residual are face-valued: face_count * dimG
+        int dimG = _manifest!.LieAlgebraDimension;
+        int faceCount = geometry.AmbientSpace.FaceCount
+            ?? throw new InvalidOperationException(
+                "GeometryContext.AmbientSpace.FaceCount must be set for GPU buffer allocation.");
+        int nFace = faceCount * dimG;
+        var faceLayout = BufferLayoutDescriptor.CreateSoA("face-field", new[] { "c" }, nFace);
 
         // Allocate GPU buffers for each stage
-        var omegaBuf = _nativeBackend.AllocateBuffer(layout);
-        var curvatureBuf = _nativeBackend.AllocateBuffer(layout);
-        var torsionBuf = _nativeBackend.AllocateBuffer(layout);
-        var shiabBuf = _nativeBackend.AllocateBuffer(layout);
-        var residualBuf = _nativeBackend.AllocateBuffer(layout);
+        var omegaBuf = _nativeBackend.AllocateBuffer(omegaLayout);
+        var curvatureBuf = _nativeBackend.AllocateBuffer(faceLayout);
+        var torsionBuf = _nativeBackend.AllocateBuffer(faceLayout);
+        var shiabBuf = _nativeBackend.AllocateBuffer(faceLayout);
+        var residualBuf = _nativeBackend.AllocateBuffer(faceLayout);
 
         try
         {
@@ -92,11 +101,11 @@ public sealed class GpuSolverBackend : ISolverBackend, IDisposable
             // Stage 4: Residual Upsilon = S - T
             _nativeBackend.EvaluateResidual(shiabBuf, torsionBuf, residualBuf);
 
-            // Download results
-            var curvatureData = new double[n];
-            var torsionData = new double[n];
-            var shiabData = new double[n];
-            var residualData = new double[n];
+            // Download results (face-valued)
+            var curvatureData = new double[nFace];
+            var torsionData = new double[nFace];
+            var shiabData = new double[nFace];
+            var residualData = new double[nFace];
 
             _nativeBackend.DownloadBuffer(curvatureBuf, curvatureData);
             _nativeBackend.DownloadBuffer(torsionBuf, torsionData);
@@ -107,6 +116,8 @@ public sealed class GpuSolverBackend : ISolverBackend, IDisposable
             var curvatureSig = CreateOutputSignature(omega.Signature, "curvature-2form", "2");
             var residualSig = CreateOutputSignature(omega.Signature, "residual-field", "0");
 
+            var faceShape = new[] { nFace };
+
             return new DerivedState
             {
                 CurvatureF = new FieldTensor
@@ -114,28 +125,28 @@ public sealed class GpuSolverBackend : ISolverBackend, IDisposable
                     Label = "F_h",
                     Signature = curvatureSig,
                     Coefficients = curvatureData,
-                    Shape = omega.Shape,
+                    Shape = faceShape,
                 },
                 TorsionT = new FieldTensor
                 {
                     Label = "T_h",
                     Signature = residualSig,
                     Coefficients = torsionData,
-                    Shape = omega.Shape,
+                    Shape = faceShape,
                 },
                 ShiabS = new FieldTensor
                 {
                     Label = "S_h",
                     Signature = residualSig,
                     Coefficients = shiabData,
-                    Shape = omega.Shape,
+                    Shape = faceShape,
                 },
                 ResidualUpsilon = new FieldTensor
                 {
                     Label = "Upsilon_h",
                     Signature = residualSig,
                     Coefficients = residualData,
-                    Shape = omega.Shape,
+                    Shape = faceShape,
                 },
             };
         }
@@ -174,9 +185,9 @@ public sealed class GpuSolverBackend : ISolverBackend, IDisposable
     }
 
     /// <summary>
-    /// Build Jacobian operator.
-    /// GPU Jacobian dispatch is not yet implemented (planned for M10).
-    /// Throws NotSupportedException.
+    /// Build a matrix-free GPU Jacobian operator.
+    /// Returns a GpuLinearOperator that dispatches J*v and J^T*v to the native backend.
+    /// The omega connection is uploaded once; each Apply call uploads the perturbation vector.
     /// </summary>
     public ILinearOperator BuildJacobian(
         FieldTensor omega,
@@ -185,21 +196,42 @@ public sealed class GpuSolverBackend : ISolverBackend, IDisposable
         BranchManifest manifest,
         GeometryContext geometry)
     {
-        throw new NotSupportedException(
-            "GPU Jacobian is not yet implemented. Use CpuSolverBackend for Jacobian operations. " +
-            "GPU Jacobian dispatch is planned for Milestone 10.");
+        ObjectDisposedException.ThrowIf(_disposed, this);
+        EnsureInitialized();
+        ArgumentNullException.ThrowIfNull(omega);
+
+        int edgeN = omega.Coefficients.Length;
+        int dimG = _manifest!.LieAlgebraDimension;
+        int faceCount = geometry.AmbientSpace.FaceCount
+            ?? throw new InvalidOperationException(
+                "GeometryContext.AmbientSpace.FaceCount must be set for GPU Jacobian.");
+        int faceN = faceCount * dimG;
+
+        // Upload omega to a persistent buffer for the operator's lifetime
+        var edgeLayout = BufferLayoutDescriptor.CreateSoA("jac-omega", new[] { "c" }, edgeN);
+        var omegaBuf = _nativeBackend.AllocateBuffer(edgeLayout);
+        _nativeBackend.UploadBuffer(omegaBuf, omega.Coefficients);
+
+        return new GpuLinearOperator(
+            _nativeBackend,
+            omegaBuf,
+            edgeN,
+            faceN,
+            omega.Signature,
+            omega.Shape.ToArray());
     }
 
     /// <summary>
-    /// Compute gradient G = J^T M Upsilon.
-    /// GPU gradient dispatch is not yet implemented (planned for M10).
-    /// Throws NotSupportedException.
+    /// Compute gradient G = J^T * Upsilon via GPU adjoint action.
+    /// For the simplified case (no mass matrix), this is just J^T * upsilon.
     /// </summary>
     public FieldTensor ComputeGradient(ILinearOperator jacobian, FieldTensor upsilon)
     {
-        throw new NotSupportedException(
-            "GPU gradient is not yet implemented. Use CpuSolverBackend for gradient operations. " +
-            "GPU gradient dispatch is planned for Milestone 10.");
+        ObjectDisposedException.ThrowIf(_disposed, this);
+        ArgumentNullException.ThrowIfNull(jacobian);
+        ArgumentNullException.ThrowIfNull(upsilon);
+
+        return jacobian.ApplyTranspose(upsilon);
     }
 
     /// <summary>

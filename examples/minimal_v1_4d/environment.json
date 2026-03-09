@@ -1,0 +1,96 @@
+{
+  "environmentId": "minimal-v1-4d-consistency",
+  "branch": {
+    "branchId": "minimal-gu-v1-4d",
+    "schemaVersion": "1.0.0"
+  },
+  "scenarioType": "toy-consistency",
+  "geometry": {
+    "baseSpace": {
+      "spaceId": "X_h",
+      "dimension": 4,
+      "label": "base_X_h"
+    },
+    "ambientSpace": {
+      "spaceId": "Y_h",
+      "dimension": 14,
+      "label": "ambient_Y_h"
+    },
+    "discretizationType": "simplicial",
+    "quadratureRuleId": "simplex-4d-centroid",
+    "basisFamilyId": "P1-simplex-4d",
+    "projectionBinding": {
+      "bindingType": "projection",
+      "sourceSpace": {
+        "spaceId": "Y_h",
+        "dimension": 14
+      },
+      "targetSpace": {
+        "spaceId": "X_h",
+        "dimension": 4
+      },
+      "mappingStrategy": "many-to-one-fiber-projection"
+    },
+    "observationBinding": {
+      "bindingType": "observation",
+      "sourceSpace": {
+        "spaceId": "X_h",
+        "dimension": 4
+      },
+      "targetSpace": {
+        "spaceId": "Y_h",
+        "dimension": 14
+      },
+      "mappingStrategy": "section-vertex-aligned"
+    },
+    "patches": [
+      {
+        "patchId": "base-patch-0",
+        "elementCount": 2,
+        "topologyType": "simplicial",
+        "metadata": {
+          "description": "Minimal 4D simplicial mesh: 2 pentatopes sharing a tetrahedron",
+          "vertexCount": "6"
+        }
+      }
+    ]
+  },
+  "boundaryConditions": {
+    "conditionType": "none"
+  },
+  "initialConditions": {
+    "conditionType": "flat-connection"
+  },
+  "gaugeConditions": {
+    "strategyType": "penalty",
+    "penaltyCoefficient": 1.0
+  },
+  "observableRequests": [
+    {
+      "observableId": "residual-norm",
+      "outputType": "Quantitative"
+    },
+    {
+      "observableId": "curvature-field",
+      "outputType": "Quantitative"
+    },
+    {
+      "observableId": "topological-charge",
+      "outputType": "ExactStructural"
+    },
+    {
+      "observableId": "objective-value",
+      "outputType": "Quantitative"
+    }
+  ],
+  "comparisonTemplateIds": [],
+  "provenance": {
+    "createdAt": "2026-03-09T00:00:00Z",
+    "codeRevision": "minimal-gu-v1",
+    "branch": {
+      "branchId": "minimal-gu-v1-4d",
+      "schemaVersion": "1.0.0"
+    },
+    "notes": "Minimal GU v1 at physical dimensions: dim(X)=4, dim(Y)=14 with su(2) gauge group"
+  }
+}

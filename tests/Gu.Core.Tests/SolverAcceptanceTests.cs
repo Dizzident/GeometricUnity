@@ -221,9 +221,10 @@ public class SolverAcceptanceTests
     public void SolverOptions_AllModesExist()
     {
         var modes = Enum.GetValues<SolveMode>();
-        Assert.Equal(3, modes.Length);
+        Assert.Equal(4, modes.Length);
         Assert.Contains(SolveMode.ResidualOnly, modes);
         Assert.Contains(SolveMode.ObjectiveMinimization, modes);
         Assert.Contains(SolveMode.StationaritySolve, modes);
+        Assert.Contains(SolveMode.BranchSensitivity, modes);
     }
 }

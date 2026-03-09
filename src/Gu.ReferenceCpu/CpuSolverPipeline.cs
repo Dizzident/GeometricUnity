@@ -179,6 +179,76 @@ public sealed class CpuSolverPipeline
         var omega = new ConnectionField(_mesh, _algebra, omegaCoefficients);
         return Execute(omega, null, manifest, geometry, options);
     }
+
+    /// <summary>
+    /// Execute branch sensitivity analysis (Mode D).
+    /// Sweeps the same initial conditions under multiple branch manifests.
+    /// </summary>
+    /// <param name="initialOmega">Initial connection field (same for all branches, or null for zero).</param>
+    /// <param name="a0">Distinguished connection A0 (same for all branches, or null for flat).</param>
+    /// <param name="manifests">Branch manifests to sweep. Must contain at least 2.</param>
+    /// <param name="geometry">Geometry context (same for all branches).</param>
+    /// <param name="innerOptions">Solver options for the inner solve (mode A, B, or C).</param>
+    public BranchComparisonResult ExecuteBranchSensitivity(
+        ConnectionField? initialOmega,
+        ConnectionField? a0,
+        IReadOnlyList<BranchManifest> manifests,
+        GeometryContext geometry,
+        SolverOptions innerOptions)
+    {
+        var omega = initialOmega ?? ConnectionField.Zero(_mesh, _algebra);
+        var a0Field = a0 ?? ConnectionField.Zero(_mesh, _algebra);
+
+        var massMatrix = new CpuMassMatrix(_mesh, _algebra);
+        var backend = new CpuSolverBackend(_mesh, _algebra, _torsion, _shiab, massMatrix);
+        var runner = new BranchSensitivityRunner(backend, innerOptions);
+
+        return runner.Sweep(
+            omega.ToFieldTensor(),
+            a0Field.ToFieldTensor(),
+            manifests,
+            geometry);
+    }
+
+    /// <summary>
+    /// Execute a branch sweep producing full artifact bundles per branch (GAP-9).
+    /// </summary>
+    public BranchSweepResult ExecuteBranchSweep(
+        ConnectionField? initialOmega,
+        ConnectionField? a0,
+        IReadOnlyList<BranchManifest> manifests,
+        GeometryContext geometry,
+        SolverOptions innerOptions)
+    {
+        if (manifests is null) throw new ArgumentNullException(nameof(manifests));
+        if (manifests.Count < 2)
+            throw new ArgumentException("Branch sweep requires at least 2 branch manifests.", nameof(manifests));
+
+        var entries = new List<BranchSweepEntry>(manifests.Count);
+
+        foreach (var manifest in manifests)
+        {
+            var pipelineResult = Execute(initialOmega, a0, manifest, geometry, innerOptions);
+            var sr = pipelineResult.SolverResult;
+
+            entries.Add(new BranchSweepEntry
+            {
+                Manifest = manifest,
+                Converged = sr.Converged,
+                TerminationReason = sr.TerminationReason,
+                FinalObjective = sr.FinalObjective,
+                FinalResidualNorm = sr.FinalResidualNorm,
+                Iterations = sr.Iterations,
+                ArtifactBundle = pipelineResult.ArtifactBundle,
+            });
+        }
+
+        return new BranchSweepResult
+        {
+            Entries = entries,
+            InnerMode = innerOptions.Mode,
+        };
+    }
 }
 
 /// <summary>

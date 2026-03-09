@@ -928,3 +928,150 @@ public class SolverTests
         };
     }
 }
+
+public class BranchSweepTests
+{
+    private static SimplicialMesh SingleTriangle() =>
+        MeshTopologyBuilder.Build(
+            embeddingDimension: 2,
+            simplicialDimension: 2,
+            vertexCoordinates: new double[] { 0, 0, 1, 0, 0, 1 },
+            vertexCount: 3,
+            cellVertices: new[] { new[] { 0, 1, 2 } });
+
+    private static BranchManifest MakeManifest(string branchId, string shiabBranch, string torsionBranch) => new()
+    {
+        BranchId = branchId,
+        SchemaVersion = "1.0.0",
+        SourceEquationRevision = "r1",
+        CodeRevision = "test",
+        ActiveGeometryBranch = "simplicial",
+        ActiveObservationBranch = "sigma-pullback",
+        ActiveTorsionBranch = torsionBranch,
+        ActiveShiabBranch = shiabBranch,
+        ActiveGaugeStrategy = "penalty",
+        BaseDimension = 4,
+        AmbientDimension = 14,
+        LieAlgebraId = "su2",
+        BasisConventionId = "canonical",
+        ComponentOrderId = "face-major",
+        AdjointConventionId = "adjoint-explicit",
+        PairingConventionId = "pairing-trace",
+        NormConventionId = "norm-l2-quadrature",
+        DifferentialFormMetricId = "hodge-standard",
+        InsertedAssumptionIds = Array.Empty<string>(),
+        InsertedChoiceIds = new[] { "IX-1", "IX-2" },
+    };
+
+    private static GeometryContext DummyGeometry() => new()
+    {
+        BaseSpace = new SpaceRef { SpaceId = "X_h", Dimension = 4 },
+        AmbientSpace = new SpaceRef { SpaceId = "Y_h", Dimension = 14 },
+        DiscretizationType = "simplicial",
+        QuadratureRuleId = "centroid",
+        BasisFamilyId = "P1",
+        ProjectionBinding = new GeometryBinding
+        {
+            BindingType = "projection",
+            SourceSpace = new SpaceRef { SpaceId = "Y_h", Dimension = 14 },
+            TargetSpace = new SpaceRef { SpaceId = "X_h", Dimension = 4 },
+        },
+        ObservationBinding = new GeometryBinding
+        {
+            BindingType = "observation",
+            SourceSpace = new SpaceRef { SpaceId = "X_h", Dimension = 4 },
+            TargetSpace = new SpaceRef { SpaceId = "Y_h", Dimension = 14 },
+        },
+        Patches = Array.Empty<PatchInfo>(),
+    };
+
+    [Fact]
+    public void BranchSweep_TwoBranches_ProducesDistinctProvenanceTaggedArtifacts()
+    {
+        var mesh = SingleTriangle();
+        var algebra = LieAlgebraFactory.CreateSu2WithTracePairing();
+        var torsion = new TrivialTorsionCpu(mesh, algebra);
+        var shiab = new IdentityShiabCpu(mesh, algebra);
+        var pipeline = new CpuSolverPipeline(mesh, algebra, torsion, shiab);
+
+        var manifests = new[]
+        {
+            MakeManifest("branch-identity-shiab", "identity-shiab", "trivial"),
+            MakeManifest("branch-alt-torsion", "identity-shiab", "augmented"),
+        };
+
+        var innerOptions = new SolverOptions
+        {
+            Mode = SolveMode.ResidualOnly,
+        };
+
+        var result = pipeline.ExecuteBranchSweep(null, null, manifests, DummyGeometry(), innerOptions);
+
+        // Verify structure
+        Assert.Equal(2, result.BranchCount);
+        Assert.Equal(SolveMode.ResidualOnly, result.InnerMode);
+
+        // Verify each entry has an artifact bundle with correct provenance
+        var entry0 = result.Entries[0];
+        var entry1 = result.Entries[1];
+
+        Assert.Equal("branch-identity-shiab", entry0.Manifest.BranchId);
+        Assert.Equal("branch-alt-torsion", entry1.Manifest.BranchId);
+
+        // Artifact bundles should have distinct IDs
+        Assert.NotEqual(entry0.ArtifactBundle.ArtifactId, entry1.ArtifactBundle.ArtifactId);
+
+        // Each artifact should be provenance-tagged with the correct branch
+        Assert.Equal("branch-identity-shiab", entry0.ArtifactBundle.Branch.BranchId);
+        Assert.Equal("branch-alt-torsion", entry1.ArtifactBundle.Branch.BranchId);
+
+        // Both should have replay contracts
+        Assert.NotNull(entry0.ArtifactBundle.ReplayContract);
+        Assert.NotNull(entry1.ArtifactBundle.ReplayContract);
+        Assert.Equal("branch-identity-shiab", entry0.ArtifactBundle.ReplayContract.BranchManifest.BranchId);
+        Assert.Equal("branch-alt-torsion", entry1.ArtifactBundle.ReplayContract.BranchManifest.BranchId);
+
+        // Provenance should reference correct branch
+        Assert.Equal("branch-identity-shiab", entry0.ArtifactBundle.Provenance.Branch.BranchId);
+        Assert.Equal("branch-alt-torsion", entry1.ArtifactBundle.Provenance.Branch.BranchId);
+    }
+
+    [Fact]
+    public void BranchSweep_ConvergedDivergedLists()
+    {
+        var mesh = SingleTriangle();
+        var algebra = LieAlgebraFactory.CreateSu2WithTracePairing();
+        var torsion = new TrivialTorsionCpu(mesh, algebra);
+        var shiab = new IdentityShiabCpu(mesh, algebra);
+        var pipeline = new CpuSolverPipeline(mesh, algebra, torsion, shiab);
+
+        var manifests = new[]
+        {
+            MakeManifest("b1", "identity-shiab", "trivial"),
+            MakeManifest("b2", "identity-shiab", "trivial"),
+        };
+
+        // Mode A never converges
+        var innerOptions = new SolverOptions { Mode = SolveMode.ResidualOnly };
+        var result = pipeline.ExecuteBranchSweep(null, null, manifests, DummyGeometry(), innerOptions);
+
+        Assert.Empty(result.ConvergedBranches);
+        Assert.Equal(2, result.DivergedBranches.Count);
+    }
+
+    [Fact]
+    public void BranchSweep_LessThanTwoBranches_Throws()
+    {
+        var mesh = SingleTriangle();
+        var algebra = LieAlgebraFactory.CreateSu2WithTracePairing();
+        var torsion = new TrivialTorsionCpu(mesh, algebra);
+        var shiab = new IdentityShiabCpu(mesh, algebra);
+        var pipeline = new CpuSolverPipeline(mesh, algebra, torsion, shiab);
+
+        var manifests = new[] { MakeManifest("b1", "identity-shiab", "trivial") };
+        var innerOptions = new SolverOptions { Mode = SolveMode.ResidualOnly };
+
+        Assert.Throws<ArgumentException>(
+            () => pipeline.ExecuteBranchSweep(null, null, manifests, DummyGeometry(), innerOptions));
+    }
+}

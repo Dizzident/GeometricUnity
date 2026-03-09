@@ -463,8 +463,8 @@ public class NativeParityTests
 
     private static GeometryContext CreateGeometryContext()
     {
-        var baseSpace = new SpaceRef { SpaceId = "X_h", Dimension = 4 };
-        var ambientSpace = new SpaceRef { SpaceId = "Y_h", Dimension = 14 };
+        var baseSpace = new SpaceRef { SpaceId = "X_h", Dimension = 4, FaceCount = 5 };
+        var ambientSpace = new SpaceRef { SpaceId = "Y_h", Dimension = 14, FaceCount = 5, EdgeCount = 5 };
         return new GeometryContext
         {
             BaseSpace = baseSpace,

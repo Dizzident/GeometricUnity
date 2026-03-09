@@ -46,14 +46,14 @@
     },
     "ReplayContract": {
       "type": "object",
-      "required": ["branchManifest", "deterministic", "backendId"],
+      "required": ["branchManifest", "deterministic", "backendId", "replayTier"],
       "properties": {
         "branchManifest": { "type": "object" },
         "deterministic": { "type": "boolean" },
         "randomSeed": { "type": "integer" },
         "backendId": { "type": "string" },
         "nonDeterminismDeclaration": { "type": "string" },
-        "replayTier": { "type": "string", "enum": ["R0", "R1", "R2", "R3"], "default": "R1" }
+        "replayTier": { "type": "string", "enum": ["R0", "R1", "R2", "R3"] }
       },
       "additionalProperties": false
     },

@@ -35,6 +35,8 @@ switch (args[0])
         return SolveCommand(args);
     case "reproduce":
         return Reproduce(args);
+    case "sweep":
+        return SweepBranches(args);
     default:
         Console.Error.WriteLine($"Unknown command: {args[0]}");
         PrintUsage();
@@ -226,7 +228,7 @@ static int RunSolver(string[] args)
 {
     if (args.Length < 2)
     {
-        Console.Error.WriteLine("Usage: gu run <run-folder> [--backend cpu|cuda] [--mode A|B|C] [--lie-algebra su2|su3] [--max-iter N] [--step-size S]");
+        Console.Error.WriteLine("Usage: gu run <run-folder> [--backend cpu|cuda] [--mode A|B|C|D] [--lie-algebra su2|su3] [--max-iter N] [--step-size S] [--branches b1.json,b2.json]");
         return 1;
     }
 
@@ -291,6 +293,7 @@ static int RunSolver(string[] args)
         "A" => SolveMode.ResidualOnly,
         "B" => SolveMode.ObjectiveMinimization,
         "C" => SolveMode.StationaritySolve,
+        "D" => SolveMode.BranchSensitivity,
         _ => SolveMode.ResidualOnly,
     };
 
@@ -304,6 +307,71 @@ static int RunSolver(string[] args)
     var torsion = new TrivialTorsionCpu(yMesh, algebra);
     var shiab = new IdentityShiabCpu(yMesh, algebra);
     var pipeline = new CpuSolverPipeline(yMesh, algebra, torsion, shiab);
+
+    // Mode D: branch sensitivity sweep
+    if (solveMode == SolveMode.BranchSensitivity)
+    {
+        var branchesFlag = ParseFlag(args, "--branches", "");
+        if (string.IsNullOrEmpty(branchesFlag))
+        {
+            Console.Error.WriteLine("Mode D requires --branches flag with comma-separated branch manifest JSON files.");
+            return 1;
+        }
+
+        var branchFiles = branchesFlag.Split(',', StringSplitOptions.RemoveEmptyEntries);
+        var branchManifests = new List<BranchManifest>();
+        foreach (var file in branchFiles)
+        {
+            if (!File.Exists(file))
+            {
+                Console.Error.WriteLine($"Branch manifest file not found: {file}");
+                return 1;
+            }
+            var json = File.ReadAllText(file);
+            var m = GuJsonDefaults.Deserialize<BranchManifest>(json);
+            if (m is null)
+            {
+                Console.Error.WriteLine($"Failed to deserialize branch manifest: {file}");
+                return 1;
+            }
+            branchManifests.Add(m);
+        }
+
+        Console.WriteLine($"  Branches: {branchManifests.Count}");
+        foreach (var m in branchManifests)
+            Console.WriteLine($"    - {m.BranchId}");
+
+        var innerOptions = new SolverOptions
+        {
+            Mode = SolveMode.ResidualOnly,
+            MaxIterations = maxIter,
+            InitialStepSize = stepSize,
+        };
+
+        var sweepResult = pipeline.ExecuteBranchSensitivity(
+            null, null, branchManifests, geometry, innerOptions);
+
+        Console.WriteLine();
+        Console.WriteLine($"Branch sensitivity complete:");
+        Console.WriteLine($"  Branches swept: {sweepResult.BranchCount}");
+        Console.WriteLine($"  Converged: {string.Join(", ", sweepResult.ConvergedBranches)}");
+        Console.WriteLine($"  Diverged: {string.Join(", ", sweepResult.DivergedBranches)}");
+        Console.WriteLine($"  Best objective: {sweepResult.BestObjective:E6}");
+        Console.WriteLine($"  Worst residual norm: {sweepResult.WorstResidualNorm:E6}");
+
+        foreach (var br in sweepResult.BranchResults)
+        {
+            Console.WriteLine();
+            Console.WriteLine($"  Branch: {br.Manifest.BranchId}");
+            Console.WriteLine($"    Converged: {br.SolverResult.Converged}");
+            Console.WriteLine($"    Iterations: {br.SolverResult.Iterations}");
+            Console.WriteLine($"    Final objective: {br.SolverResult.FinalObjective:E6}");
+            Console.WriteLine($"    Final residual norm: {br.SolverResult.FinalResidualNorm:E6}");
+            Console.WriteLine($"    Termination: {br.SolverResult.TerminationReason}");
+        }
+
+        return 0;
+    }
 
     var options = new SolverOptions
     {
@@ -392,6 +460,7 @@ static int RunSolver(string[] args)
         SolveMode.ResidualOnly => "A",
         SolveMode.ObjectiveMinimization => "B",
         SolveMode.StationaritySolve => "C",
+        SolveMode.BranchSensitivity => "D",
         _ => "A",
     };
     var scriptContent = $$"""
@@ -401,13 +470,21 @@ static int RunSolver(string[] args)
         # Date: {{DateTimeOffset.UtcNow:O}}
         set -euo pipefail
         REPLAY_DIR="${1:-replay-$(date +%Y%m%d%H%M%S)}"
-        dotnet run --project "$(dirname "$0")/../../apps/Gu.Cli" -- \
+        SOLVE_ARGS=( \
             solve "$REPLAY_DIR" \
             --backend {{backend}} \
             --mode {{modeFlag}} \
             --lie-algebra {{lieAlgebra}} \
             --max-iter {{maxIter}} \
-            --step-size {{stepSize}}
+            --step-size {{stepSize}} \
+        )
+        # Try installed CLI first, then dotnet run from repo root
+        if command -v gu &>/dev/null; then
+            gu "${SOLVE_ARGS[@]}"
+        else
+            SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+            dotnet run --project "$SCRIPT_DIR/../../apps/Gu.Cli" -- "${SOLVE_ARGS[@]}"
+        fi
         echo "Replay written to: $REPLAY_DIR"
         echo "To validate: dotnet run --project apps/Gu.Cli -- validate-replay {{runPath}} $REPLAY_DIR"
         """;
@@ -424,7 +501,7 @@ static int SolveCommand(string[] args)
 {
     if (args.Length < 2)
     {
-        Console.Error.WriteLine("Usage: gu solve <run-folder> [--backend cpu|cuda] [--mode A|B|C] [--lie-algebra su2|su3] [--max-iter N] [--step-size S]");
+        Console.Error.WriteLine("Usage: gu solve <run-folder> [--backend cpu|cuda] [--mode A|B|C|D] [--lie-algebra su2|su3] [--max-iter N] [--step-size S] [--branches b1.json,b2.json]");
         return 1;
     }
 
@@ -537,6 +614,115 @@ static int Reproduce(string[] args)
     return 0;
 }
 
+static int SweepBranches(string[] args)
+{
+    if (args.Length < 2)
+    {
+        Console.Error.WriteLine("Usage: gu sweep --branches b1.json,b2.json [--output <dir>] [--lie-algebra su2|su3] [--max-iter N] [--step-size S] [--mode A|B|C]");
+        return 1;
+    }
+
+    var branchesFlag = ParseFlag(args, "--branches", "");
+    if (string.IsNullOrEmpty(branchesFlag))
+    {
+        Console.Error.WriteLine("--branches flag is required with comma-separated branch manifest JSON files.");
+        return 1;
+    }
+
+    var outputDir = ParseFlag(args, "--output", "sweep-" + DateTimeOffset.UtcNow.ToString("yyyyMMddHHmmss"));
+    var lieAlgebra = ParseFlag(args, "--lie-algebra", "su2");
+    var maxIter = int.Parse(ParseFlag(args, "--max-iter", "100"));
+    var stepSize = double.Parse(ParseFlag(args, "--step-size", "0.01"));
+    var innerMode = ParseFlag(args, "--mode", "A").ToUpperInvariant() switch
+    {
+        "B" => SolveMode.ObjectiveMinimization,
+        "C" => SolveMode.StationaritySolve,
+        _ => SolveMode.ResidualOnly,
+    };
+
+    var branchFiles = branchesFlag.Split(',', StringSplitOptions.RemoveEmptyEntries);
+    var manifests = new List<BranchManifest>();
+    foreach (var file in branchFiles)
+    {
+        if (!File.Exists(file))
+        {
+            Console.Error.WriteLine($"Branch manifest file not found: {file}");
+            return 1;
+        }
+        var json = File.ReadAllText(file);
+        var m = GuJsonDefaults.Deserialize<BranchManifest>(json);
+        if (m is null)
+        {
+            Console.Error.WriteLine($"Failed to deserialize branch manifest: {file}");
+            return 1;
+        }
+        manifests.Add(m);
+    }
+
+    if (manifests.Count < 2)
+    {
+        Console.Error.WriteLine("Branch sweep requires at least 2 branch manifests.");
+        return 1;
+    }
+
+    var algebra = CreateAlgebra(lieAlgebra);
+    var bundle = ToyGeometryFactory.CreateToy2D();
+    var geometry = bundle.ToGeometryContext("centroid", "P1");
+
+    Console.WriteLine("Branch sensitivity sweep");
+    Console.WriteLine($"  Inner mode: {innerMode}");
+    Console.WriteLine($"  Lie algebra: {algebra.Label} (dim={algebra.Dimension})");
+    Console.WriteLine($"  Branches: {manifests.Count}");
+    foreach (var m in manifests)
+        Console.WriteLine($"    - {m.BranchId}");
+
+    var torsion = new TrivialTorsionCpu(bundle.AmbientMesh, algebra);
+    var shiab = new IdentityShiabCpu(bundle.AmbientMesh, algebra);
+    var pipeline = new CpuSolverPipeline(bundle.AmbientMesh, algebra, torsion, shiab);
+
+    var innerOptions = new SolverOptions
+    {
+        Mode = innerMode,
+        MaxIterations = maxIter,
+        InitialStepSize = stepSize,
+    };
+
+    var sweepResult = pipeline.ExecuteBranchSweep(null, null, manifests, geometry, innerOptions);
+
+    // Write results to output directory
+    Directory.CreateDirectory(outputDir);
+    var sweepJson = GuJsonDefaults.Serialize(sweepResult);
+    File.WriteAllText(Path.Combine(outputDir, "sweep_result.json"), sweepJson);
+
+    // Write per-branch artifact bundles
+    foreach (var entry in sweepResult.Entries)
+    {
+        var branchDir = Path.Combine(outputDir, entry.Manifest.BranchId);
+        var writer = new RunFolderWriter(branchDir);
+        writer.WriteArtifactBundle(entry.ArtifactBundle);
+    }
+
+    Console.WriteLine();
+    Console.WriteLine($"Sweep complete:");
+    Console.WriteLine($"  Branches: {sweepResult.BranchCount}");
+    Console.WriteLine($"  Converged: {string.Join(", ", sweepResult.ConvergedBranches)}");
+    Console.WriteLine($"  Diverged: {string.Join(", ", sweepResult.DivergedBranches)}");
+    Console.WriteLine($"  Output: {outputDir}");
+
+    foreach (var entry in sweepResult.Entries)
+    {
+        Console.WriteLine();
+        Console.WriteLine($"  Branch: {entry.Manifest.BranchId}");
+        Console.WriteLine($"    Converged: {entry.Converged}");
+        Console.WriteLine($"    Iterations: {entry.Iterations}");
+        Console.WriteLine($"    Final objective: {entry.FinalObjective:E6}");
+        Console.WriteLine($"    Final residual: {entry.FinalResidualNorm:E6}");
+        Console.WriteLine($"    Termination: {entry.TerminationReason}");
+    }
+
+    return 0;
+}
+
 static void PrintUsage()
 {
     Console.WriteLine("Geometric Unity CLI");
@@ -548,14 +734,17 @@ static void PrintUsage()
     Console.WriteLine("  gu run <run-folder> [options]               Run solver on existing run folder");
     Console.WriteLine("  gu solve <run-folder> [options]             Init + run in one step");
     Console.WriteLine("  gu reproduce <run-folder> [replay] [--validate]  Reproduce a run from its replay contract");
+    Console.WriteLine("  gu sweep --branches b1,b2 [--output dir]   Sweep branches and compare results");
     Console.WriteLine("  gu validate-replay <orig> <replay> [tier]   Validate replay (R0/R1/R2/R3)");
     Console.WriteLine("  gu verify-integrity <run-folder>            Verify or compute integrity hashes");
     Console.WriteLine("  gu validate-schema <file> <schema>          Validate JSON against a schema");
     Console.WriteLine();
     Console.WriteLine("Run/Solve options:");
     Console.WriteLine("  --backend cpu|cuda     Compute backend (default: cpu)");
-    Console.WriteLine("  --mode A|B|C           Solver mode (A=residual, B=minimize, C=stationarity)");
+    Console.WriteLine("  --mode A|B|C|D         Solver mode (A=residual, B=minimize, C=stationarity, D=branch-sensitivity)");
+    Console.WriteLine("  --branches f1,f2,...   Branch manifest JSON files (Mode D / sweep)");
     Console.WriteLine("  --lie-algebra su2|su3  Lie algebra (default: su2)");
     Console.WriteLine("  --max-iter N           Max iterations (default: 100)");
     Console.WriteLine("  --step-size S          Initial step size (default: 0.01)");
+    Console.WriteLine("  --output <dir>         Output directory for sweep results");
 }

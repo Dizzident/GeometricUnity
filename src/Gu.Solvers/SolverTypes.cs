@@ -15,6 +15,24 @@ public enum SolveMode
 
     /// <summary>Mode C: Stationarity solve (J^T M Upsilon + gauge = 0).</summary>
     StationaritySolve,
+
+    /// <summary>Mode D: Branch sensitivity analysis (sweep multiple branch manifests).</summary>
+    BranchSensitivity,
+}
+
+/// <summary>
+/// Solver method for optimization (Mode B/C).
+/// </summary>
+public enum SolverMethod
+{
+    /// <summary>Gradient descent with backtracking line search.</summary>
+    GradientDescent,
+
+    /// <summary>Nonlinear conjugate gradient (Polak-Ribiere with restart).</summary>
+    ConjugateGradient,
+
+    /// <summary>Gauss-Newton: solve J^T J delta = -J^T M Upsilon via CG.</summary>
+    GaussNewton,
 }
 
 /// <summary>
@@ -24,6 +42,9 @@ public sealed class SolverOptions
 {
     /// <summary>Solve mode.</summary>
     public required SolveMode Mode { get; init; }
+
+    /// <summary>Solver method for optimization (Mode B/C). Default: GradientDescent.</summary>
+    public SolverMethod Method { get; init; } = SolverMethod.GradientDescent;
 
     /// <summary>Maximum number of iterations (modes B, C).</summary>
     public int MaxIterations { get; init; } = 100;
@@ -48,6 +69,12 @@ public sealed class SolverOptions
 
     /// <summary>Maximum line search reductions.</summary>
     public int MaxBacktrackSteps { get; init; } = 20;
+
+    /// <summary>Maximum CG iterations for Gauss-Newton inner solve. Default: 50.</summary>
+    public int MaxCgIterations { get; init; } = 50;
+
+    /// <summary>CG convergence tolerance (relative residual). Default: 1e-6.</summary>
+    public double CgTolerance { get; init; } = 1e-6;
 }
 
 /// <summary>

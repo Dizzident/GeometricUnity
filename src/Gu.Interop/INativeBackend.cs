@@ -94,4 +94,46 @@ public interface INativeBackend : IDisposable
     /// Query whether mesh topology and algebra data have been uploaded.
     /// </summary>
     bool HasPhysicsData { get; }
+
+    /// <summary>
+    /// Compute Jacobian-vector product: Jv = (dUpsilon/domega) * delta.
+    /// The Jacobian is the linearization of the residual map at the current omega.
+    /// dUpsilon/domega = dS/domega - dT/domega.
+    /// For identity Shiab + trivial torsion: J*delta = d(delta) + 0.5*sum_{i&lt;j}([omega_i,delta_j]+[delta_i,omega_j]).
+    /// </summary>
+    /// <param name="omega">Current connection (edge-valued).</param>
+    /// <param name="delta">Perturbation direction (edge-valued).</param>
+    /// <param name="jvOut">Output: J*delta (face-valued).</param>
+    void EvaluateJacobianAction(PackedBuffer omega, PackedBuffer delta, PackedBuffer jvOut);
+
+    /// <summary>
+    /// Compute adjoint (transpose) action: JTv = (dUpsilon/domega)^T * v.
+    /// Maps a face-valued field to an edge-valued field.
+    /// </summary>
+    /// <param name="omega">Current connection (edge-valued).</param>
+    /// <param name="v">Input vector (face-valued).</param>
+    /// <param name="jtvOut">Output: J^T*v (edge-valued).</param>
+    void EvaluateAdjointAction(PackedBuffer omega, PackedBuffer v, PackedBuffer jtvOut);
+
+    // --- GPU solver primitives (BLAS-like) for on-device Krylov iterations ---
+
+    /// <summary>
+    /// AXPY: y = y + alpha * x (in-place on y buffer).
+    /// </summary>
+    void Axpy(PackedBuffer y, double alpha, PackedBuffer x, int n);
+
+    /// <summary>
+    /// Compute inner product: result = sum(u[i] * v[i]).
+    /// </summary>
+    double InnerProduct(PackedBuffer u, PackedBuffer v, int n);
+
+    /// <summary>
+    /// Scale: x = alpha * x (in-place).
+    /// </summary>
+    void Scale(PackedBuffer x, double alpha, int n);
+
+    /// <summary>
+    /// Copy: dst = src.
+    /// </summary>
+    void Copy(PackedBuffer dst, PackedBuffer src, int n);
 }

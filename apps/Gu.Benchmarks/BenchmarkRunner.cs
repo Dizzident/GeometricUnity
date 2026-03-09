@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using System.Text.Json;
 using Gu.Core;
+using Gu.Geometry;
 using Gu.Interop;
 using Gu.Solvers;
 
@@ -545,6 +546,136 @@ public sealed class BenchmarkRunner
     {
         sc[a * dim * dim + b * dim + c] = value;
         sc[b * dim * dim + a * dim + c] = -value;
+    }
+
+    /// <summary>
+    /// Run scaling benchmarks using real simplicial meshes of increasing size.
+    /// Measures CPU residual evaluation (Mode A) at each scale.
+    /// </summary>
+    public IReadOnlyList<BenchmarkReport> RunMeshScalingBenchmark(
+        string benchmarkId,
+        int[] targetFaceCounts)
+    {
+        var reports = new List<BenchmarkReport>();
+
+        foreach (int target in targetFaceCounts)
+        {
+            var mesh = SimplicialMeshGenerator.CreateUniform2D(target);
+            int edgeCount = mesh.EdgeCount;
+            int faceCount = mesh.FaceCount;
+            int dimG = 3; // su(2)
+
+            var manifestSnapshot = new ManifestSnapshot
+            {
+                BaseDimension = 2,
+                AmbientDimension = 2,
+                LieAlgebraDimension = dimG,
+                LieAlgebraId = "su2",
+                MeshCellCount = faceCount,
+                MeshVertexCount = mesh.VertexCount,
+                ComponentOrderId = "order-row-major",
+                TorsionBranchId = "trivial",
+                ShiabBranchId = "identity",
+            };
+
+            int edgeN = edgeCount * dimG;
+            int faceN = faceCount * dimG;
+
+            var omegaData = new double[edgeN];
+            var rng = new Random(42);
+            for (int i = 0; i < edgeN; i++)
+                omegaData[i] = 0.1 * (rng.NextDouble() - 0.5);
+
+            using var nativeBackend = new CpuReferenceBackend();
+            nativeBackend.Initialize(manifestSnapshot);
+
+            // Upload mesh topology and algebra
+            var topology = CreateSyntheticTopologyFromMesh(mesh, dimG);
+            var algebra = CreateSyntheticAlgebraData(dimG);
+            nativeBackend.UploadMeshTopology(topology);
+            nativeBackend.UploadAlgebraData(algebra);
+            nativeBackend.UploadBackgroundConnection(new double[edgeN], edgeCount, dimG);
+
+            var edgeLayout = BufferLayoutDescriptor.CreateSoA("edge", new[] { "c" }, edgeN);
+            var faceLayout = BufferLayoutDescriptor.CreateSoA("face", new[] { "c" }, faceN);
+
+            var omegaBuf = nativeBackend.AllocateBuffer(edgeLayout);
+            var curvBuf = nativeBackend.AllocateBuffer(faceLayout);
+
+            nativeBackend.UploadBuffer(omegaBuf, omegaData);
+
+            // Time curvature evaluation
+            var sw = Stopwatch.StartNew();
+            nativeBackend.EvaluateCurvature(omegaBuf, curvBuf);
+            sw.Stop();
+
+            var curvData = new double[faceN];
+            nativeBackend.DownloadBuffer(curvBuf, curvData);
+            double norm = 0;
+            for (int i = 0; i < faceN; i++)
+                norm += curvData[i] * curvData[i];
+
+            nativeBackend.FreeBuffer(omegaBuf);
+            nativeBackend.FreeBuffer(curvBuf);
+
+            reports.Add(new BenchmarkReport
+            {
+                BenchmarkId = $"{benchmarkId}-{faceCount}",
+                Description = $"Mesh scaling: {faceCount} faces, {edgeCount} edges, {mesh.VertexCount} verts",
+                BackendId = "cpu-reference",
+                ProblemSize = faceCount,
+                Iterations = 1,
+                TotalTimeMs = sw.Elapsed.TotalMilliseconds,
+                PerIterationTimeMs = sw.Elapsed.TotalMilliseconds,
+                FinalObjective = 0.5 * norm,
+                Converged = true,
+                TerminationReason = "Curvature evaluation complete",
+            });
+        }
+
+        return reports;
+    }
+
+    /// <summary>
+    /// Create mesh topology data from a real SimplicialMesh.
+    /// </summary>
+    private static MeshTopologyData CreateSyntheticTopologyFromMesh(SimplicialMesh mesh, int dimG)
+    {
+        int faceCount = mesh.FaceCount;
+        int edgeCount = mesh.EdgeCount;
+        int maxEdgesPerFace = 3;
+
+        var faceBoundaryEdges = new int[faceCount * maxEdgesPerFace];
+        var faceBoundaryOrientations = new int[faceCount * maxEdgesPerFace];
+
+        for (int f = 0; f < faceCount; f++)
+        {
+            for (int e = 0; e < maxEdgesPerFace; e++)
+            {
+                faceBoundaryEdges[f * maxEdgesPerFace + e] = mesh.FaceBoundaryEdges[f][e];
+                faceBoundaryOrientations[f * maxEdgesPerFace + e] = mesh.FaceBoundaryOrientations[f][e];
+            }
+        }
+
+        var edgeVertices = new int[edgeCount * 2];
+        for (int e = 0; e < edgeCount; e++)
+        {
+            edgeVertices[e * 2] = mesh.Edges[e][0];
+            edgeVertices[e * 2 + 1] = mesh.Edges[e][1];
+        }
+
+        return new MeshTopologyData
+        {
+            EdgeCount = edgeCount,
+            FaceCount = faceCount,
+            VertexCount = mesh.VertexCount,
+            EmbeddingDimension = mesh.EmbeddingDimension,
+            MaxEdgesPerFace = maxEdgesPerFace,
+            DimG = dimG,
+            FaceBoundaryEdges = faceBoundaryEdges,
+            FaceBoundaryOrientations = faceBoundaryOrientations,
+            EdgeVertices = edgeVertices,
+        };
     }
 
     private static ManifestSnapshot CreateManifestSnapshot(int cellCount) => new()

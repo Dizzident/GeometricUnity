@@ -84,28 +84,91 @@ public class GpuSolverBackendTests
     }
 
     [Fact]
-    public void EvaluateDerived_CurvatureMatchesStub()
+    public void EvaluateDerived_FaceValuedBuffersHaveCorrectSize()
     {
-        using var backend = CreateInitializedBackend();
+        // Verify that face-valued outputs (F, T, S, Upsilon) have size faceCount*dimG,
+        // NOT the same size as edge-valued omega
+        var native = new CpuReferenceBackend();
+        using var backend = new GpuSolverBackend(native, ownsBackend: true);
+        backend.Initialize(CreateManifest());
 
+        // Use a geometry context with 3 faces (nFace = 3*3 = 9)
+        var baseSpace = new SpaceRef { SpaceId = "X_h", Dimension = 4, FaceCount = 3 };
+        var ambientSpace = new SpaceRef { SpaceId = "Y_h", Dimension = 14, FaceCount = 3, EdgeCount = 5 };
+        var geometry = new GeometryContext
+        {
+            BaseSpace = baseSpace,
+            AmbientSpace = ambientSpace,
+            DiscretizationType = "simplicial",
+            QuadratureRuleId = "midpoint",
+            BasisFamilyId = "whitney-0",
+            ProjectionBinding = new GeometryBinding
+            {
+                BindingType = "projection",
+                SourceSpace = ambientSpace,
+                TargetSpace = baseSpace,
+            },
+            ObservationBinding = new GeometryBinding
+            {
+                BindingType = "observation",
+                SourceSpace = baseSpace,
+                TargetSpace = ambientSpace,
+            },
+            Patches = new[] { new PatchInfo { PatchId = "patch-0", ElementCount = 10 } },
+        };
+
+        // omega is edge-valued with 15 elements (5 edges * 3 dimG)
         var omega = new FieldTensor
         {
             Label = "omega_h",
             Signature = CreateSignature(),
-            Coefficients = new double[] { 1.0, 2.0, 3.0 },
-            Shape = new[] { 3 },
+            Coefficients = new double[15],
+            Shape = new[] { 15 },
         };
         var a0 = new FieldTensor
         {
             Label = "a0_h",
             Signature = CreateSignature(),
-            Coefficients = new double[3],
-            Shape = new[] { 3 },
+            Coefficients = new double[15],
+            Shape = new[] { 15 },
+        };
+
+        var derived = backend.EvaluateDerived(omega, a0, CreateBranchManifest(), geometry);
+
+        // Face-valued outputs should be faceCount(3) * dimG(3) = 9, NOT 15
+        Assert.Equal(9, derived.CurvatureF.Coefficients.Length);
+        Assert.Equal(9, derived.TorsionT.Coefficients.Length);
+        Assert.Equal(9, derived.ShiabS.Coefficients.Length);
+        Assert.Equal(9, derived.ResidualUpsilon.Coefficients.Length);
+    }
+
+    [Fact]
+    public void EvaluateDerived_CurvatureMatchesStub()
+    {
+        using var backend = CreateInitializedBackend();
+
+        // omega is edge-valued (edgeCount * dimG); curvature is face-valued (faceCount * dimG)
+        // With FaceCount=2 and dimG=3, nFace=6
+        var omega = new FieldTensor
+        {
+            Label = "omega_h",
+            Signature = CreateSignature(),
+            Coefficients = new double[] { 1.0, 2.0, 3.0, 4.0, 5.0, 6.0 },
+            Shape = new[] { 6 },
+        };
+        var a0 = new FieldTensor
+        {
+            Label = "a0_h",
+            Signature = CreateSignature(),
+            Coefficients = new double[6],
+            Shape = new[] { 6 },
         };
 
         var derived = backend.EvaluateDerived(omega, a0, CreateBranchManifest(), CreateGeometryContext());
 
-        // Stub: curvature = omega (identity)
+        // Stub (no topology): curvature = copy of min(omega, curvature) elements
+        // Both are size 6 (nFace=6, omega=6), so full copy
+        Assert.Equal(6, derived.CurvatureF.Coefficients.Length);
         Assert.Equal(omega.Coefficients, derived.CurvatureF.Coefficients);
     }
 
@@ -118,20 +181,21 @@ public class GpuSolverBackendTests
         {
             Label = "omega_h",
             Signature = CreateSignature(),
-            Coefficients = new double[] { 5.0, 10.0, 15.0 },
-            Shape = new[] { 3 },
+            Coefficients = new double[] { 5.0, 10.0, 15.0, 20.0, 25.0, 30.0 },
+            Shape = new[] { 6 },
         };
         var a0 = new FieldTensor
         {
             Label = "a0_h",
             Signature = CreateSignature(),
-            Coefficients = new double[3],
-            Shape = new[] { 3 },
+            Coefficients = new double[6],
+            Shape = new[] { 6 },
         };
 
         var derived = backend.EvaluateDerived(omega, a0, CreateBranchManifest(), CreateGeometryContext());
 
-        // Stub: torsion = 0
+        // Stub: torsion = 0, face-valued (faceCount * dimG = 6)
+        Assert.Equal(6, derived.TorsionT.Coefficients.Length);
         Assert.All(derived.TorsionT.Coefficients, v => Assert.Equal(0.0, v));
     }
 
@@ -140,25 +204,27 @@ public class GpuSolverBackendTests
     {
         using var backend = CreateInitializedBackend();
 
+        // Use size matching nFace = faceCount(2) * dimG(3) = 6
         var omega = new FieldTensor
         {
             Label = "omega_h",
             Signature = CreateSignature(),
-            Coefficients = new double[] { 3.0, 4.0, 5.0, 6.0 },
-            Shape = new[] { 4 },
+            Coefficients = new double[] { 3.0, 4.0, 5.0, 6.0, 7.0, 8.0 },
+            Shape = new[] { 6 },
         };
         var a0 = new FieldTensor
         {
             Label = "a0_h",
             Signature = CreateSignature(),
-            Coefficients = new double[4],
-            Shape = new[] { 4 },
+            Coefficients = new double[6],
+            Shape = new[] { 6 },
         };
 
         var derived = backend.EvaluateDerived(omega, a0, CreateBranchManifest(), CreateGeometryContext());
 
-        // Stub: S = omega, T = 0, so Upsilon = omega - 0 = omega
-        for (int i = 0; i < omega.Coefficients.Length; i++)
+        // Stub: S = omega (copied), T = 0, so Upsilon = omega - 0 = omega
+        Assert.Equal(6, derived.ResidualUpsilon.Coefficients.Length);
+        for (int i = 0; i < 6; i++)
         {
             Assert.Equal(omega.Coefficients[i], derived.ResidualUpsilon.Coefficients[i]);
         }
@@ -203,7 +269,7 @@ public class GpuSolverBackendTests
     }
 
     [Fact]
-    public void BuildJacobian_ThrowsNotSupported()
+    public void BuildJacobian_ReturnsOperator()
     {
         using var backend = CreateInitializedBackend();
 
@@ -211,16 +277,16 @@ public class GpuSolverBackendTests
         {
             Label = "omega",
             Signature = CreateSignature(),
-            Coefficients = new double[3],
-            Shape = new[] { 3 },
+            Coefficients = new double[] { 1.0, 2.0, 3.0, 4.0, 5.0, 6.0 },
+            Shape = new[] { 6 },
         };
 
-        Assert.Throws<NotSupportedException>(() =>
-            backend.BuildJacobian(omega, omega, omega, CreateBranchManifest(), CreateGeometryContext()));
+        var jacobian = backend.BuildJacobian(omega, omega, omega, CreateBranchManifest(), CreateGeometryContext());
+        Assert.NotNull(jacobian);
     }
 
     [Fact]
-    public void ComputeGradient_ThrowsNotSupported()
+    public void ComputeGradient_NullJacobian_ThrowsArgumentNull()
     {
         using var backend = CreateInitializedBackend();
 
@@ -232,7 +298,7 @@ public class GpuSolverBackendTests
             Shape = new[] { 3 },
         };
 
-        Assert.Throws<NotSupportedException>(() =>
+        Assert.Throws<ArgumentNullException>(() =>
             backend.ComputeGradient(null!, v));
     }
 
@@ -334,8 +400,8 @@ public class GpuSolverBackendTests
 
     private static GeometryContext CreateGeometryContext()
     {
-        var baseSpace = new SpaceRef { SpaceId = "X_h", Dimension = 4 };
-        var ambientSpace = new SpaceRef { SpaceId = "Y_h", Dimension = 14 };
+        var baseSpace = new SpaceRef { SpaceId = "X_h", Dimension = 4, FaceCount = 2 };
+        var ambientSpace = new SpaceRef { SpaceId = "Y_h", Dimension = 14, FaceCount = 2, EdgeCount = 4 };
         return new GeometryContext
         {
             BaseSpace = baseSpace,

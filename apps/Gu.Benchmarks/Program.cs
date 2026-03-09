@@ -70,9 +70,20 @@ catch (Exception ex) when (ex is DllNotFoundException or EntryPointNotFoundExcep
     Console.WriteLine($"  Skipped: CUDA library not available ({ex.GetType().Name})");
 }
 
+// 6. Mesh-based scaling benchmark (real simplicial meshes)
+Console.WriteLine();
+Console.WriteLine("--- Mesh Scaling Benchmark (Real Simplicial Meshes) ---");
+var meshScalingSizes = new[] { 100, 1_000, 10_000, 100_000 };
+var meshScalingReports = runner.RunMeshScalingBenchmark("mesh-scaling", meshScalingSizes);
+foreach (var report in meshScalingReports)
+{
+    Console.WriteLine($"  {report.Description}: {report.TotalTimeMs,8:F2}ms, I2={report.FinalObjective:E4}");
+}
+
 // Write all reports
 string outputDir = Path.Combine(Directory.GetCurrentDirectory(), "benchmark-results");
 var allReports = new List<BenchmarkReport>(scalingReports) { solveReport, cpuReport, gpuReport, gpuCpuReport, gpuGpuReport };
+allReports.AddRange(meshScalingReports);
 BenchmarkRunner.WriteReports(outputDir, allReports);
 Console.WriteLine();
 Console.WriteLine($"Reports written to: {outputDir}");
