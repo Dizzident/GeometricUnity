@@ -67,3 +67,4 @@ launchSettings.json
 # JetBrains Rider
 .idea/
 *.sln.iml
+/runs

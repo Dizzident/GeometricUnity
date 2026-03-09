@@ -14,6 +14,7 @@
     <ProjectReference Include="..\..\src\Gu.Observation\Gu.Observation.csproj" />
     <ProjectReference Include="..\..\src\Gu.Math\Gu.Math.csproj" />
     <ProjectReference Include="..\..\src\Gu.Branching\Gu.Branching.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Interop\Gu.Interop.csproj" />
   </ItemGroup>
 
 </Project>

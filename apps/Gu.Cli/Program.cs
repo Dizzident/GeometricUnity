@@ -3,6 +3,7 @@ using Gu.Core;
 using Gu.Core.Factories;
 using Gu.Core.Serialization;
 using Gu.Geometry;
+using Gu.Interop;
 using Gu.Math;
 using Gu.Observation;
 using Gu.ReferenceCpu;
@@ -246,9 +247,9 @@ static int RunSolver(string[] args)
     var maxIter = int.Parse(ParseFlag(args, "--max-iter", "100"));
     var stepSize = double.Parse(ParseFlag(args, "--step-size", "0.01"));
 
-    if (backend != "cpu")
+    if (backend != "cpu" && backend != "cuda")
     {
-        Console.Error.WriteLine($"Backend '{backend}' is not yet implemented. Only 'cpu' is currently supported.");
+        Console.Error.WriteLine($"Backend '{backend}' is not supported. Supported: cpu, cuda");
         return 1;
     }
 
@@ -298,6 +299,7 @@ static int RunSolver(string[] args)
     };
 
     Console.WriteLine($"Running solver...");
+    Console.WriteLine($"  Backend: {backend}");
     Console.WriteLine($"  Mode: {solveMode} ({mode})");
     Console.WriteLine($"  Lie algebra: {algebra.Label} (dim={algebra.Dimension})");
     Console.WriteLine($"  Mesh: Y_h {yMesh.VertexCount} vertices, {yMesh.EdgeCount} edges, {yMesh.FaceCount} faces");
@@ -380,7 +382,196 @@ static int RunSolver(string[] args)
         InitialStepSize = stepSize,
     };
 
-    var result = pipeline.Execute(null, null, manifest, geometry, options);
+    PipelineResult result;
+    string backendId;
+
+    if (backend == "cuda")
+    {
+        // CUDA path: use CudaSolverBackend wrapping a native backend
+        INativeBackend nativeBackend;
+        try
+        {
+            nativeBackend = new CudaNativeBackend();
+            _ = nativeBackend.Version; // Probe to verify native library loads
+            Console.WriteLine("  CUDA native backend loaded successfully.");
+        }
+        catch (Exception ex) when (ex is DllNotFoundException or EntryPointNotFoundException or TypeLoadException)
+        {
+            Console.WriteLine($"  CUDA native library not available ({ex.GetType().Name}), falling back to CPU reference backend.");
+            nativeBackend = new CpuReferenceBackend();
+        }
+
+        backendId = nativeBackend.Version.BackendId;
+
+        // Initialize with manifest snapshot
+        var snapshot = ManifestSnapshot.FromManifest(
+            manifest, algebra.Dimension, yMesh.FaceCount, yMesh.VertexCount);
+        nativeBackend.Initialize(snapshot);
+
+        // Upload mesh topology
+        int dimG = algebra.Dimension;
+        int maxEdgesPerFace = 3;
+        var faceBoundaryEdges = new int[yMesh.FaceCount * maxEdgesPerFace];
+        var faceBoundaryOrientations = new int[yMesh.FaceCount * maxEdgesPerFace];
+        for (int f = 0; f < yMesh.FaceCount; f++)
+        {
+            for (int e = 0; e < maxEdgesPerFace; e++)
+            {
+                faceBoundaryEdges[f * maxEdgesPerFace + e] = yMesh.FaceBoundaryEdges[f][e];
+                faceBoundaryOrientations[f * maxEdgesPerFace + e] = yMesh.FaceBoundaryOrientations[f][e];
+            }
+        }
+        var edgeVertices = new int[yMesh.EdgeCount * 2];
+        for (int e = 0; e < yMesh.EdgeCount; e++)
+        {
+            edgeVertices[e * 2] = yMesh.Edges[e][0];
+            edgeVertices[e * 2 + 1] = yMesh.Edges[e][1];
+        }
+        nativeBackend.UploadMeshTopology(new MeshTopologyData
+        {
+            EdgeCount = yMesh.EdgeCount,
+            FaceCount = yMesh.FaceCount,
+            VertexCount = yMesh.VertexCount,
+            EmbeddingDimension = yMesh.EmbeddingDimension,
+            MaxEdgesPerFace = maxEdgesPerFace,
+            DimG = dimG,
+            FaceBoundaryEdges = faceBoundaryEdges,
+            FaceBoundaryOrientations = faceBoundaryOrientations,
+            EdgeVertices = edgeVertices,
+        });
+
+        // Upload algebra data (structure constants and metric are already flat arrays)
+        nativeBackend.UploadAlgebraData(new AlgebraUploadData
+        {
+            Dimension = dimG,
+            StructureConstants = (double[])algebra.StructureConstants.Clone(),
+            InvariantMetric = (double[])algebra.InvariantMetric.Clone(),
+        });
+
+        // Upload zero background connection
+        int edgeN = yMesh.EdgeCount * dimG;
+        nativeBackend.UploadBackgroundConnection(new double[edgeN], yMesh.EdgeCount, dimG);
+
+        // Create CudaSolverBackend and run
+        using var cudaBackend = new CudaSolverBackend(nativeBackend, ownsNative: true);
+        cudaBackend.Initialize(snapshot);
+
+        var orchestrator = new SolverOrchestrator(cudaBackend, options);
+
+        // Create initial omega (zero connection)
+        var omegaCoeffs = new double[edgeN];
+        var sig = new TensorSignature
+        {
+            AmbientSpaceId = "Y_h",
+            CarrierType = "connection-1form",
+            Degree = "1",
+            LieAlgebraBasisId = "basis-standard",
+            ComponentOrderId = "face-major",
+            MemoryLayout = "dense-row-major",
+            NumericPrecision = "float64",
+        };
+        var omegaTensor = new FieldTensor
+        {
+            Label = "omega_h",
+            Signature = sig,
+            Coefficients = omegaCoeffs,
+            Shape = new[] { yMesh.EdgeCount, dimG },
+        };
+        var a0Tensor = new FieldTensor
+        {
+            Label = "a0",
+            Signature = sig,
+            Coefficients = new double[edgeN],
+            Shape = new[] { yMesh.EdgeCount, dimG },
+        };
+
+        var cudaSolverResult = orchestrator.Solve(omegaTensor, a0Tensor, manifest, geometry);
+
+        // Package into PipelineResult for uniform downstream handling
+        var now = DateTimeOffset.UtcNow;
+        var cudaBranchRef = new BranchRef
+        {
+            BranchId = manifest.BranchId,
+            SchemaVersion = manifest.SchemaVersion,
+        };
+        var provenance = new ProvenanceMeta
+        {
+            CreatedAt = now,
+            CodeRevision = manifest.CodeRevision,
+            Branch = cudaBranchRef,
+            Backend = backendId,
+            Notes = $"CUDA backend: {options.Mode}, {cudaSolverResult.Iterations} iterations, " +
+                    $"converged={cudaSolverResult.Converged}, reason={cudaSolverResult.TerminationReason}",
+        };
+        var initialState = new DiscreteState
+        {
+            Branch = cudaBranchRef,
+            Geometry = geometry,
+            Omega = omegaTensor,
+            Provenance = provenance,
+        };
+        var finalState = new DiscreteState
+        {
+            Branch = cudaBranchRef,
+            Geometry = geometry,
+            Omega = cudaSolverResult.FinalOmega,
+            Provenance = provenance,
+        };
+        var replayContract = new ReplayContract
+        {
+            BranchManifest = manifest,
+            Deterministic = true,
+            BackendId = backendId,
+            ReplayTier = "R2",
+        };
+        var artifactBundle = new ArtifactBundle
+        {
+            ArtifactId = $"cuda-solve-{manifest.BranchId}-{now:yyyyMMddHHmmss}",
+            Branch = cudaBranchRef,
+            ReplayContract = replayContract,
+            Provenance = provenance,
+            CreatedAt = now,
+            InitialState = initialState,
+            FinalState = finalState,
+            DerivedState = cudaSolverResult.FinalDerivedState,
+            Geometry = geometry,
+        };
+
+        result = new PipelineResult
+        {
+            SolverResult = cudaSolverResult,
+            ArtifactBundle = artifactBundle,
+            DiagnosticLog = new List<string>
+            {
+                $"Backend: {backendId}",
+                $"Mode: {options.Mode}",
+                $"Converged: {cudaSolverResult.Converged}",
+                $"Iterations: {cudaSolverResult.Iterations}",
+                $"Final objective: {cudaSolverResult.FinalObjective:E6}",
+            },
+            ConvergenceSummary = new ConvergenceSummary
+            {
+                TotalIterations = cudaSolverResult.Iterations,
+                InitialObjective = cudaSolverResult.History.Count > 0 ? cudaSolverResult.History[0].Objective : 0,
+                FinalObjective = cudaSolverResult.FinalObjective,
+                ObjectiveReductionRatio = 0,
+                FinalGradientNorm = cudaSolverResult.FinalGradientNorm,
+                FinalGaugeViolation = cudaSolverResult.History.Count > 0 ? cudaSolverResult.History[^1].GaugeViolation : 0,
+                IsStagnated = false,
+                StagnationDetectedAtIteration = null,
+            },
+            FinalConnection = ConnectionField.Zero(yMesh, algebra),
+            BiConnectionA = ConnectionField.Zero(yMesh, algebra),
+            BiConnectionB = ConnectionField.Zero(yMesh, algebra),
+        };
+    }
+    else
+    {
+        // CPU path: use CpuSolverPipeline
+        backendId = "cpu-reference";
+        result = pipeline.Execute(null, null, manifest, geometry, options);
+    }
+
     var solverResult = result.SolverResult;
 
     Console.WriteLine();
