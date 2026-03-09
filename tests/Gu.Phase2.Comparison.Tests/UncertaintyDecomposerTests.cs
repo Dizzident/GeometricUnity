@@ -33,6 +33,36 @@ public sealed class UncertaintyDecomposerTests
         ArtifactLinks = ["artifact-001"],
     };
 
+    private static readonly BranchRef TestBranchRef = new()
+    {
+        BranchId = "branch-001",
+        SchemaVersion = "1.0",
+    };
+
+    private static readonly BranchManifest TestManifest = new()
+    {
+        BranchId = "branch-001",
+        SchemaVersion = "1.0",
+        SourceEquationRevision = "v1",
+        CodeRevision = "abc123",
+        ActiveGeometryBranch = "flat-3d",
+        ActiveObservationBranch = "default",
+        ActiveTorsionBranch = "augmented",
+        ActiveShiabBranch = "identity",
+        ActiveGaugeStrategy = "coulomb",
+        BaseDimension = 4,
+        AmbientDimension = 14,
+        LieAlgebraId = "su2",
+        BasisConventionId = "standard",
+        ComponentOrderId = "lexicographic",
+        AdjointConventionId = "standard",
+        PairingConventionId = "trace",
+        NormConventionId = "L2",
+        DifferentialFormMetricId = "hodge-L2",
+        InsertedAssumptionIds = [],
+        InsertedChoiceIds = [],
+    };
+
     private static BranchRunRecord MakeBranchRun(
         bool converged = true,
         double residualNorm = 1e-6,
@@ -41,31 +71,43 @@ public sealed class UncertaintyDecomposerTests
         Variant = new BranchVariantManifest
         {
             Id = "variant-001",
-            FamilyId = "family-001",
-            Parameters = new Dictionary<string, double> { ["alpha"] = 1.0 },
+            ParentFamilyId = "family-001",
+            A0Variant = "flat",
+            BiConnectionVariant = "symmetric",
+            TorsionVariant = "augmented",
+            ShiabVariant = "identity",
+            ObservationVariant = "default",
+            ExtractionVariant = "default",
+            GaugeVariant = "coulomb",
+            RegularityVariant = "smooth",
+            PairingVariant = "trace",
+            ExpectedClaimCeiling = "ExactStructuralConsequence",
         },
-        Manifest = new BranchManifest
-        {
-            BranchId = "branch-001",
-            DimX = 4,
-            DimY = 14,
-            LieAlgebraId = "su2",
-            PairingId = "trace",
-            DifferentialFormMetricId = "hodge-L2",
-            BiConnectionScheme = "symmetric",
-            ShiabOperatorId = "identity",
-        },
+        Manifest = TestManifest,
         Converged = converged,
         TerminationReason = converged ? "converged" : "max_iterations",
         FinalObjective = finalObjective,
         FinalResidualNorm = residualNorm,
         Iterations = 100,
-        SolveMode = SolveMode.ModeB,
+        SolveMode = SolveMode.ObjectiveMinimization,
         ArtifactBundle = new ArtifactBundle
         {
-            BundleId = "bundle-001",
-            ManifestId = "branch-001",
-            Artifacts = [],
+            ArtifactId = "artifact-001",
+            Branch = TestBranchRef,
+            ReplayContract = new ReplayContract
+            {
+                BranchManifest = TestManifest,
+                Deterministic = true,
+                BackendId = "cpu-reference",
+                ReplayTier = "R2",
+            },
+            Provenance = new ProvenanceMeta
+            {
+                CreatedAt = DateTimeOffset.UtcNow,
+                CodeRevision = "abc123",
+                Branch = TestBranchRef,
+            },
+            CreatedAt = DateTimeOffset.UtcNow,
         },
     };
 

@@ -1,16 +1,20 @@
-# Geometric Unity — Minimal GU v1
+# Geometric Unity
 
-A reproducible research engine implementing the first executable bosonic branch of Eric Weinstein's Geometric Unity framework. Connection-centered, observerse-based, explicitly discretized, with CPU reference backend, CUDA acceleration, and Vulkan visualization.
+A reproducible research engine implementing the first executable bosonic branch of Eric Weinstein's Geometric Unity framework. Connection-centered, observerse-based, explicitly discretized, with CPU reference backend, CUDA acceleration, Vulkan visualization, and a full Phase II research instrumentation layer for systematic branch-independence studies, PDE classification, stability analysis, and comparison campaigns.
 
 ## Overview
 
 This system implements the **minimal bosonic executable branch** of the Geometric Unity completion program:
 
-- **Connection omega** on a principal bundle P → Y is the primary dynamical variable
+- **Connection omega** on a principal bundle P -> Y is the primary dynamical variable
 - **Curvature** F_omega, **torsion** T_omega, and **Shiab** S_omega define the residual Upsilon = S - T
-- **Variational objective** I2(omega) = (1/2) ∫ ⟨Upsilon, Upsilon⟩ dμ drives the solver
-- **Observation pipeline** maps Y-space quantities to X-space observables via pullback σ_h*
+- **Variational objective** I2(omega) = (1/2) integral of Upsilon, Upsilon drives the solver
+- **Observation pipeline** maps Y-space quantities to X-space observables via pullback sigma_h*
 - **Branch manifest** controls all choices — no silent hardcoding
+- **Branch families** (Phase II) parameterize variant choices for systematic independence studies
+- **Linearization workbench** classifies PDE type, computes spectra, and probes stability
+- **Recovery graphs** trace the full chain from native fields to physical identification
+- **Comparison campaigns** validate predictions against external datasets with uncertainty decomposition
 
 The system is designed as a **research platform**, not a one-off solver.
 
@@ -32,7 +36,7 @@ dotnet build
 dotnet build && dotnet test --no-build
 ```
 
-There are 897+ tests across 8 test projects covering core types, geometry, reference CPU operators, interop, validation, artifacts, observation, and external comparison.
+There are 1,631 tests across 23 test projects covering core types, geometry, reference CPU operators, interop, validation, artifacts, observation, external comparison, and all Phase II modules (semantics, branches, execution, canonicity, stability, recovery, continuation, predictions, comparison, reporting).
 
 ## CLI Usage
 
@@ -88,28 +92,38 @@ Runs scaling benchmarks (Mode A residual-only), solve benchmarks (Mode B gradien
 ```
 GeometricUnity/
 ├── apps/
-│   ├── Gu.Cli/              # Command-line interface
-│   ├── Gu.Workbench/         # Interactive workbench (Vulkan)
-│   └── Gu.Benchmarks/        # Performance benchmarks
+│   ├── Gu.Cli/                    # Command-line interface
+│   ├── Gu.Workbench/              # Interactive workbench (Vulkan)
+│   └── Gu.Benchmarks/             # Performance benchmarks
 ├── src/
-│   ├── Gu.Core/              # Core types: BranchManifest, FieldTensor, TensorSignature, etc.
-│   ├── Gu.Math/              # Lie algebras, structure constants, pairings
-│   ├── Gu.Branching/         # Branch operators: ITorsionBranchOperator, IShiabBranchOperator
-│   ├── Gu.Geometry/          # Simplicial meshes, projections, quadrature
-│   ├── Gu.Discretization/    # Discrete exterior calculus, covariant derivatives
-│   ├── Gu.ReferenceCpu/      # CPU reference: curvature, torsion, Shiab, Jacobian, pipeline
-│   ├── Gu.Solvers/           # Solver modes (A/B/C), gauge penalty, convergence
-│   ├── Gu.Observation/       # Observation pipeline: pullback, transforms, output typing
-│   ├── Gu.Validation/        # Algebraic validation rules, parity checking
-│   ├── Gu.Artifacts/         # Run folders, replay contracts, integrity hashing
-│   ├── Gu.Interop/           # Native interop, GPU buffers, CUDA backend
-│   ├── Gu.VulkanViewer/      # Vulkan visualization (read-only from artifacts)
-│   ├── Gu.ExternalComparison/# External comparison engine
-│   └── Gu.Symbolic/          # Symbolic computation (placeholder)
-├── tests/                    # 8 test projects
-├── native/                   # CUDA kernels (C/CUDA)
-├── examples/                 # Toy 2D/3D geometries for debugging
-└── schemas/                  # JSON schemas for core types
+│   ├── Gu.Core/                   # Core types: BranchManifest, FieldTensor, TensorSignature
+│   ├── Gu.Math/                   # Lie algebras, structure constants, pairings
+│   ├── Gu.Branching/              # Branch operators: torsion, Shiab interfaces
+│   ├── Gu.Geometry/               # Simplicial meshes, projections, quadrature
+│   ├── Gu.Discretization/         # Discrete exterior calculus, covariant derivatives
+│   ├── Gu.ReferenceCpu/           # CPU reference: curvature, torsion, Shiab, Jacobian
+│   ├── Gu.Solvers/                # Solver modes (A/B/C), gauge penalty, convergence
+│   ├── Gu.Observation/            # Observation pipeline: pullback, transforms
+│   ├── Gu.Validation/             # Algebraic validation rules, parity checking
+│   ├── Gu.Artifacts/              # Run folders, replay contracts, integrity hashing
+│   ├── Gu.Interop/                # Native interop, GPU buffers, CUDA backend
+│   ├── Gu.VulkanViewer/           # Vulkan visualization (read-only from artifacts)
+│   ├── Gu.ExternalComparison/     # External comparison engine
+│   ├── Gu.Symbolic/               # Symbolic computation (placeholder)
+│   ├── Gu.Phase2.Semantics/       # Branch family manifests, variant specs, claim classes
+│   ├── Gu.Phase2.Branches/        # Variant resolution, operator dispatch, validation
+│   ├── Gu.Phase2.Execution/       # Phase II branch sweep runner, run records
+│   ├── Gu.Phase2.Canonicity/      # Canonicity analysis, pairwise distance, fragility
+│   ├── Gu.Phase2.Stability/       # Linearization workbench, Hessian, spectra, PDE classification
+│   ├── Gu.Phase2.Recovery/        # Recovery DAG, identification gate, claim demotion
+│   ├── Gu.Phase2.Continuation/    # Pseudo-arclength continuation, stability atlas
+│   ├── Gu.Phase2.Predictions/     # Prediction test records, uncertainty budgets
+│   ├── Gu.Phase2.Comparison/      # Comparison campaigns, dataset adapters, strategies
+│   └── Gu.Phase2.Reporting/       # Research reports, dashboards, batch runner
+├── tests/                         # 23 test projects (Phase I + Phase II)
+├── native/                        # CUDA kernels (C/CUDA)
+├── examples/                      # Toy 2D/3D/4D geometries for debugging
+└── schemas/                       # JSON schemas for core and Phase II types
 ```
 
 ## Architecture
@@ -139,7 +153,24 @@ omega (connection)
 
 - **Mode A** — Residual-only: assemble and inspect Upsilon without solving
 - **Mode B** — Objective minimization: gradient descent with optional gauge penalty
-- **Mode C** — Stationarity solve: drive ||J^T M Upsilon|| → 0
+- **Mode C** — Stationarity solve: drive ||J^T M Upsilon|| -> 0
+- **Mode D** — Branch sensitivity: sweep variant parameters and compare outcomes
+
+### Phase II Research Pipeline
+
+```
+Branch family (variant parameters)
+  -> Phase2BranchSweepRunner (parallel variant execution)
+  -> CanonicityAnalyzer (pairwise distance, fragility, equivalence classes)
+  -> LinearizationWorkbench (Hessian, spectrum, PDE classification)
+  -> ContinuationRunner (pseudo-arclength, bifurcation detection)
+  -> StabilityAtlasBuilder (stability regions over parameter space)
+  -> RecoveryGraph (native -> observed -> extracted -> identified)
+  -> IdentificationGate (6-field physical ID with claim demotion)
+  -> PredictionValidator (uncertainty decomposition, falsifiers)
+  -> CampaignRunner (structural/semi-quantitative/quantitative comparison)
+  -> ResearchReportGenerator (summary, dashboards, negative results)
+```
 
 ### Replay Tiers
 
@@ -198,15 +229,16 @@ Visualization is strictly **read-only** — it consumes artifact snapshots and n
 
 ## Codebase
 
-- ~235 C# source files (~16,600 lines)
-- ~125 test files (~22,500 lines)
-- 4 native source files (CUDA/Vulkan)
+- ~370 C# source files (~27,500 lines)
+- ~215 test files (~37,500 lines)
+- 15 native source files (CUDA/Vulkan)
+- 1,631 tests across 23 test projects
 - Phase 1 (Minimal GU v1): **Complete** — all 13 milestones (M0-M12)
-- Phase 2 (research instrumentation): Planned — branch-independence studies, PDE classification, linearization/stability analysis
+- Phase 2 (Research Instrumentation): **Complete** — all 10 milestones (M13-M22)
 
 ## Theory Context
 
-The `TheoryCompletitionRevisions/` directory contains the evolving Geometric Unity Completion manuscript. The software implements the executable portion of this completion program. See `IMPLEMENTATION_PLAN.md` for the full technical specification.
+The `TheoryCompletitionRevisions/` directory contains the evolving Geometric Unity Completion manuscript. The software implements the executable portion of this completion program. See `IMPLEMENTATION_PLAN.md` (Phase I) and `IMPLEMENTATION_PLAN_P2.md` (Phase II) for the full technical specifications.
 
 ## License
 
