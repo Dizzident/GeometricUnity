@@ -8,4 +8,10 @@
     <ProjectReference Include="..\..\src\Gu.Solvers\Gu.Solvers.csproj" />
     <ProjectReference Include="..\..\src\Gu.Interop\Gu.Interop.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\native\build\libgu_cuda_core.so"
+          Condition="Exists('..\..\native\build\libgu_cuda_core.so')"
+          CopyToOutputDirectory="PreserveNewest"
+          Link="libgu_cuda_core.so" />
+  </ItemGroup>
 </Project>

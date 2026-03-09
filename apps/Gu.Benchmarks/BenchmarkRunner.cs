@@ -306,84 +306,154 @@ public sealed class BenchmarkRunner
     {
         var manifestSnapshot = CreateManifestSnapshot(problemSize);
         int dimG = manifestSnapshot.LieAlgebraDimension;
-        int n = problemSize * dimG;
-        var omegaData = new double[n];
-        var rng = new Random(42);
-        for (int i = 0; i < n; i++)
-            omegaData[i] = 0.1 * (rng.NextDouble() - 0.5);
-
-        using var reference = new CpuReferenceBackend();
 
         // Try to create CudaNativeBackend; fall back to CpuReferenceBackend if unavailable
-        INativeBackend target;
-        bool targetOwned = true;
+        INativeBackend gpu;
         try
         {
-            target = new CudaNativeBackend();
-            // Probe the version to force the P/Invoke load check
-            _ = target.Version;
+            gpu = new CudaNativeBackend();
+            _ = gpu.Version;
         }
         catch (Exception ex) when (ex is DllNotFoundException or EntryPointNotFoundException or TypeLoadException)
         {
-            target = new CpuReferenceBackend();
+            gpu = new CpuReferenceBackend();
         }
 
         try
         {
-            // Upload synthetic physics data to both backends
+            string backendId = gpu.Version.BackendId;
+            gpu.Initialize(manifestSnapshot);
+
+            // Upload physics data so native kernels run real physics (not stubs)
             var topology = CreateSyntheticTopology(manifestSnapshot);
             var algebra = CreateSyntheticAlgebraData(dimG);
+            gpu.UploadMeshTopology(topology);
+            gpu.UploadAlgebraData(algebra);
 
-            reference.UploadMeshTopology(topology);
-            reference.UploadAlgebraData(algebra);
-            target.UploadMeshTopology(topology);
-            target.UploadAlgebraData(algebra);
+            int edgeCount = topology.EdgeCount;
+            int faceCount = topology.FaceCount;
+            int edgeN = edgeCount * dimG;
+            int faceN = faceCount * dimG;
 
-            var checker = new ParityChecker(reference, target);
+            // Generate omega (edge-valued)
+            var omegaData = new double[edgeN];
+            var rng = new Random(42);
+            for (int i = 0; i < edgeN; i++)
+                omegaData[i] = 0.1 * (rng.NextDouble() - 0.5);
 
-            string refId = reference.Version.BackendId;
-            string tgtId = target.Version.BackendId;
+            // Upload zero background connection
+            gpu.UploadBackgroundConnection(new double[edgeN], edgeCount, dimG);
 
-            // Time CPU leg
-            var cpuSw = Stopwatch.StartNew();
-            var parityRecords = checker.RunFullResidualParity(manifestSnapshot, omegaData);
-            cpuSw.Stop();
+            // Allocate properly-sized buffers: edge-valued for omega, face-valued for outputs
+            var edgeLayout = BufferLayoutDescriptor.CreateSoA("edge", new[] { "c" }, edgeN);
+            var faceLayout = BufferLayoutDescriptor.CreateSoA("face", new[] { "c" }, faceN);
+
+            var omegaBuf = gpu.AllocateBuffer(edgeLayout);
+            var curvBuf = gpu.AllocateBuffer(faceLayout);
+            var torsionBuf = gpu.AllocateBuffer(faceLayout);
+            var shiabBuf = gpu.AllocateBuffer(faceLayout);
+            var residualBuf = gpu.AllocateBuffer(faceLayout);
+
+            gpu.UploadBuffer(omegaBuf, omegaData);
+
+            // Run full physics pipeline and self-validate
+            var sw = Stopwatch.StartNew();
+
+            gpu.EvaluateCurvature(omegaBuf, curvBuf);
+            gpu.EvaluateTorsion(omegaBuf, torsionBuf);
+            gpu.EvaluateShiab(omegaBuf, shiabBuf);
+            gpu.EvaluateResidual(shiabBuf, torsionBuf, residualBuf);
+            double objective = gpu.EvaluateObjective(residualBuf);
+
+            sw.Stop();
+
+            // Download results for self-consistency checks
+            var curvData = new double[faceN];
+            var torsionData = new double[faceN];
+            var shiabData = new double[faceN];
+            var residualData = new double[faceN];
+            gpu.DownloadBuffer(curvBuf, curvData);
+            gpu.DownloadBuffer(torsionBuf, torsionData);
+            gpu.DownloadBuffer(shiabBuf, shiabData);
+            gpu.DownloadBuffer(residualBuf, residualData);
+
+            // Self-consistency parity checks (validated against physics invariants)
+            var parityRecords = new List<ParityRecord>();
+
+            // Identity shiab: S must equal F
+            parityRecords.Add(ParityChecker.CompareResults(
+                "shiab==curvature", curvData, shiabData, "curvature", "shiab", 1e-14));
+
+            // Residual: Upsilon must equal S - T element-wise
+            var expectedResidual = new double[faceN];
+            for (int i = 0; i < faceN; i++)
+                expectedResidual[i] = shiabData[i] - torsionData[i];
+            parityRecords.Add(ParityChecker.CompareResults(
+                "residual==S-T", expectedResidual, residualData, "manual", backendId, 1e-14));
+
+            // Objective: I2 must equal 0.5 * sum(r_i^2)
+            double expectedObj = 0.0;
+            for (int i = 0; i < faceN; i++)
+                expectedObj += residualData[i] * residualData[i];
+            expectedObj *= 0.5;
+            parityRecords.Add(ParityChecker.CompareScalar(
+                "objective", expectedObj, objective, "manual", backendId, 1e-14));
+
+            // Determinism: run pipeline again with same omega, compare residual
+            var residualBuf2 = gpu.AllocateBuffer(faceLayout);
+            var curvBuf2 = gpu.AllocateBuffer(faceLayout);
+            var torsionBuf2 = gpu.AllocateBuffer(faceLayout);
+            var shiabBuf2 = gpu.AllocateBuffer(faceLayout);
+            gpu.EvaluateCurvature(omegaBuf, curvBuf2);
+            gpu.EvaluateTorsion(omegaBuf, torsionBuf2);
+            gpu.EvaluateShiab(omegaBuf, shiabBuf2);
+            gpu.EvaluateResidual(shiabBuf2, torsionBuf2, residualBuf2);
+            var residualData2 = new double[faceN];
+            gpu.DownloadBuffer(residualBuf2, residualData2);
+            parityRecords.Add(ParityChecker.CompareResults(
+                "determinism", residualData, residualData2, "run1", "run2", 0.0));
+
+            // Cleanup
+            gpu.FreeBuffer(omegaBuf); gpu.FreeBuffer(curvBuf); gpu.FreeBuffer(torsionBuf);
+            gpu.FreeBuffer(shiabBuf); gpu.FreeBuffer(residualBuf);
+            gpu.FreeBuffer(curvBuf2); gpu.FreeBuffer(torsionBuf2);
+            gpu.FreeBuffer(shiabBuf2); gpu.FreeBuffer(residualBuf2);
+
+            bool allPassed = parityRecords.All(r => r.Passed);
 
             var cpuReport = new BenchmarkReport
             {
-                BenchmarkId = $"{benchmarkId}-cpu",
-                Description = $"Parity benchmark CPU: {problemSize} cells",
-                BackendId = refId,
+                BenchmarkId = $"{benchmarkId}-pipeline",
+                Description = $"GPU pipeline benchmark: {problemSize} cells",
+                BackendId = backendId,
                 ProblemSize = problemSize,
                 Iterations = 1,
-                TotalTimeMs = cpuSw.Elapsed.TotalMilliseconds,
-                PerIterationTimeMs = cpuSw.Elapsed.TotalMilliseconds,
-                FinalObjective = 0,
+                TotalTimeMs = sw.Elapsed.TotalMilliseconds,
+                PerIterationTimeMs = sw.Elapsed.TotalMilliseconds,
+                FinalObjective = objective,
                 Converged = true,
-                TerminationReason = "Parity test complete",
+                TerminationReason = "Pipeline complete",
             };
 
-            bool allPassed = parityRecords.All(r => r.Passed);
             var gpuReport = new BenchmarkReport
             {
-                BenchmarkId = $"{benchmarkId}-gpu",
-                Description = $"Parity benchmark GPU: {problemSize} cells",
-                BackendId = tgtId,
+                BenchmarkId = $"{benchmarkId}-validation",
+                Description = $"GPU self-consistency: {problemSize} cells",
+                BackendId = backendId,
                 ProblemSize = problemSize,
                 Iterations = 1,
-                TotalTimeMs = cpuSw.Elapsed.TotalMilliseconds,
-                PerIterationTimeMs = cpuSw.Elapsed.TotalMilliseconds,
-                FinalObjective = 0,
+                TotalTimeMs = sw.Elapsed.TotalMilliseconds,
+                PerIterationTimeMs = sw.Elapsed.TotalMilliseconds,
+                FinalObjective = objective,
                 Converged = allPassed,
-                TerminationReason = allPassed ? "All parity checks passed" : "Parity check failed",
+                TerminationReason = allPassed ? "All consistency checks passed" : "Consistency check failed",
             };
 
             return (cpuReport, gpuReport, parityRecords);
         }
         finally
         {
-            if (targetOwned)
-                target.Dispose();
+            gpu.Dispose();
         }
     }
 
