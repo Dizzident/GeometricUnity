@@ -19,7 +19,7 @@ namespace Gu.Solvers;
 /// divergence-based) can be implemented by subclassing or
 /// providing a custom IGaugePenalty.
 /// </summary>
-public sealed class GaugePenaltyTerm
+public sealed class GaugePenaltyTerm : IGaugePenalty
 {
     /// <summary>Penalty coefficient lambda.</summary>
     public double Lambda { get; }

@@ -36,6 +36,18 @@ public enum SolverMethod
 }
 
 /// <summary>
+/// Strategy for gauge fixing in the solver.
+/// </summary>
+public enum GaugeStrategy
+{
+    /// <summary>Simple L2 penalty: (lambda/2) * ||omega||^2.</summary>
+    L2Penalty,
+
+    /// <summary>Proper Coulomb gauge: (lambda/2) * ||d^*(omega - omega_ref)||^2.</summary>
+    Coulomb,
+}
+
+/// <summary>
 /// Options for the solver.
 /// </summary>
 public sealed class SolverOptions
@@ -60,6 +72,14 @@ public sealed class SolverOptions
 
     /// <summary>Gauge penalty coefficient lambda (IA-4).</summary>
     public double GaugePenaltyLambda { get; init; } = 0.0;
+
+    /// <summary>
+    /// Gauge fixing strategy. Default: L2Penalty (simple norm penalty).
+    /// When set to Coulomb, the solver uses the proper Coulomb gauge
+    /// penalty (lambda/2)||d^*(omega - omega_ref)||^2 if a GaugePenalty
+    /// instance is provided to the SolverOrchestrator.
+    /// </summary>
+    public GaugeStrategy GaugeStrategy { get; init; } = GaugeStrategy.L2Penalty;
 
     /// <summary>Backtracking line search: Armijo parameter.</summary>
     public double ArmijoParameter { get; init; } = 1e-4;

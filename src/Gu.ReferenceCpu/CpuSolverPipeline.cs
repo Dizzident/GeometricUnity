@@ -68,7 +68,15 @@ public sealed class CpuSolverPipeline
         // 3. Create solver backend and orchestrator
         var massMatrix = new CpuMassMatrix(_mesh, _algebra);
         var backend = new CpuSolverBackend(_mesh, _algebra, _torsion, _shiab, massMatrix);
-        var orchestrator = new SolverOrchestrator(backend, options);
+
+        // Build gauge penalty based on strategy
+        IGaugePenalty? gaugePenalty = options.GaugeStrategy switch
+        {
+            GaugeStrategy.Coulomb => new CoulombGaugePenalty(_mesh, _algebra.Dimension, options.GaugePenaltyLambda),
+            _ => null, // null = orchestrator falls back to default L2 penalty
+        };
+
+        var orchestrator = new SolverOrchestrator(backend, options, gaugePenalty);
 
         // 4. Run the solver
         var omegaTensor = omega.ToFieldTensor();

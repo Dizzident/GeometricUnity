@@ -16,11 +16,22 @@ public sealed class SolverOrchestrator
 {
     private readonly ISolverBackend _backend;
     private readonly SolverOptions _options;
+    private readonly IGaugePenalty? _gaugePenalty;
 
-    public SolverOrchestrator(ISolverBackend backend, SolverOptions options)
+    public SolverOrchestrator(ISolverBackend backend, SolverOptions options, IGaugePenalty? gaugePenalty = null)
     {
         _backend = backend ?? throw new ArgumentNullException(nameof(backend));
         _options = options ?? throw new ArgumentNullException(nameof(options));
+        _gaugePenalty = gaugePenalty;
+    }
+
+    /// <summary>
+    /// Returns the gauge penalty to use: injected instance if provided,
+    /// otherwise a default L2 penalty from options.
+    /// </summary>
+    private IGaugePenalty GetGaugePenalty()
+    {
+        return _gaugePenalty ?? new GaugePenaltyTerm(_options.GaugePenaltyLambda);
     }
 
     /// <summary>
@@ -106,7 +117,7 @@ public sealed class SolverOrchestrator
     {
         var history = new List<ConvergenceRecord>();
         var diagnostics = new ConvergenceDiagnostics();
-        var gaugePenalty = new GaugePenaltyTerm(_options.GaugePenaltyLambda);
+        var gaugePenalty = GetGaugePenalty();
         var omega = CloneField(initialOmega);
 
         for (int iter = 0; iter < _options.MaxIterations; iter++)
@@ -224,7 +235,7 @@ public sealed class SolverOrchestrator
     {
         var history = new List<ConvergenceRecord>();
         var diagnostics = new ConvergenceDiagnostics();
-        var gaugePenalty = new GaugePenaltyTerm(_options.GaugePenaltyLambda);
+        var gaugePenalty = GetGaugePenalty();
         var omega = CloneField(initialOmega);
 
         for (int iter = 0; iter < _options.MaxIterations; iter++)
@@ -319,7 +330,7 @@ public sealed class SolverOrchestrator
     {
         var history = new List<ConvergenceRecord>();
         var diagnostics = new ConvergenceDiagnostics();
-        var gaugePenalty = new GaugePenaltyTerm(_options.GaugePenaltyLambda);
+        var gaugePenalty = GetGaugePenalty();
         var omega = CloneField(initialOmega);
         FieldTensor? prevGradient = null;
         FieldTensor? searchDirection = null;
@@ -422,7 +433,7 @@ public sealed class SolverOrchestrator
     {
         var history = new List<ConvergenceRecord>();
         var diagnostics = new ConvergenceDiagnostics();
-        var gaugePenalty = new GaugePenaltyTerm(_options.GaugePenaltyLambda);
+        var gaugePenalty = GetGaugePenalty();
         var omega = CloneField(initialOmega);
         FieldTensor? prevGradient = null;
         FieldTensor? searchDirection = null;
@@ -522,7 +533,7 @@ public sealed class SolverOrchestrator
     {
         var history = new List<ConvergenceRecord>();
         var diagnostics = new ConvergenceDiagnostics();
-        var gaugePenalty = new GaugePenaltyTerm(_options.GaugePenaltyLambda);
+        var gaugePenalty = GetGaugePenalty();
         var omega = CloneField(initialOmega);
 
         for (int iter = 0; iter < _options.MaxIterations; iter++)
@@ -611,7 +622,7 @@ public sealed class SolverOrchestrator
     {
         var history = new List<ConvergenceRecord>();
         var diagnostics = new ConvergenceDiagnostics();
-        var gaugePenalty = new GaugePenaltyTerm(_options.GaugePenaltyLambda);
+        var gaugePenalty = GetGaugePenalty();
         var omega = CloneField(initialOmega);
 
         for (int iter = 0; iter < _options.MaxIterations; iter++)
