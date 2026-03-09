@@ -1,0 +1,252 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/comparison_campaign.schema.json",
+  "title": "ComparisonCampaign",
+  "description": "Comparison campaign types: spec, result, run record, failure record, and negative result artifact (Section 13).",
+  "type": "object",
+  "$defs": {
+    "ComparisonCampaignSpec": {
+      "type": "object",
+      "description": "Specification for a comparison campaign (Section 13.1).",
+      "required": [
+        "campaignId",
+        "environmentIds",
+        "branchSubsetIds",
+        "observedOutputClassIds",
+        "comparisonAssetIds",
+        "mode",
+        "calibrationPolicy"
+      ],
+      "properties": {
+        "campaignId": {
+          "type": "string",
+          "description": "Unique campaign identifier"
+        },
+        "environmentIds": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Environment IDs included in this campaign"
+        },
+        "branchSubsetIds": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Branch subset IDs to compare"
+        },
+        "observedOutputClassIds": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Observed output class IDs to compare"
+        },
+        "comparisonAssetIds": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Comparison asset IDs to compare against"
+        },
+        "mode": {
+          "type": "string",
+          "enum": ["Structural", "SemiQuantitative", "Quantitative"],
+          "description": "Comparison mode"
+        },
+        "calibrationPolicy": {
+          "type": "string",
+          "enum": ["fixed", "fitted", "inverse", "sensitivity-only"],
+          "description": "Calibration policy"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ComparisonRunRecord": {
+      "type": "object",
+      "description": "Result of a single comparison within a campaign.",
+      "required": [
+        "testId",
+        "mode",
+        "score",
+        "passed",
+        "uncertainty",
+        "resolvedClaimClass",
+        "summary"
+      ],
+      "properties": {
+        "testId": {
+          "type": "string",
+          "description": "Test ID from the PredictionTestRecord"
+        },
+        "mode": {
+          "type": "string",
+          "enum": ["Structural", "SemiQuantitative", "Quantitative"],
+          "description": "Comparison mode used"
+        },
+        "score": {
+          "type": "number",
+          "description": "Comparison score (interpretation depends on mode)"
+        },
+        "passed": {
+          "type": "boolean",
+          "description": "Whether this comparison is considered a pass"
+        },
+        "uncertainty": {
+          "$ref": "prediction_test_record.schema.json#/$defs/UncertaintyRecord",
+          "description": "Uncertainty decomposition for this comparison"
+        },
+        "resolvedClaimClass": {
+          "type": "string",
+          "enum": [
+            "ExactStructuralConsequence",
+            "ApproximateStructuralSurrogate",
+            "PostdictionTarget",
+            "SpeculativeInterpretation",
+            "Inadmissible"
+          ],
+          "description": "Resolved claim class after validation and comparison"
+        },
+        "summary": {
+          "type": "string",
+          "description": "Human-readable summary of the comparison outcome"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ComparisonFailureRecord": {
+      "type": "object",
+      "description": "First-class artifact for a failed comparison (Section 13.5).",
+      "required": [
+        "testId",
+        "failureReason",
+        "failureLevel",
+        "falsifiesRecord",
+        "blocksCampaign",
+        "demotedClaimClass"
+      ],
+      "properties": {
+        "testId": {
+          "type": "string",
+          "description": "Test ID that failed"
+        },
+        "failureReason": {
+          "type": "string",
+          "description": "Reason for failure"
+        },
+        "failureLevel": {
+          "type": "string",
+          "enum": ["numerical", "branch-local", "extraction", "empirical"],
+          "description": "Failure level"
+        },
+        "falsifiesRecord": {
+          "type": "boolean",
+          "description": "Whether this failure falsifies the prediction record"
+        },
+        "blocksCampaign": {
+          "type": "boolean",
+          "description": "Whether this failure blocks the entire campaign"
+        },
+        "demotedClaimClass": {
+          "type": "string",
+          "enum": [
+            "ExactStructuralConsequence",
+            "ApproximateStructuralSurrogate",
+            "PostdictionTarget",
+            "SpeculativeInterpretation",
+            "Inadmissible"
+          ],
+          "description": "The demoted claim class resulting from this failure"
+        }
+      },
+      "additionalProperties": false
+    },
+    "NegativeResultArtifact": {
+      "type": "object",
+      "description": "First-class artifact for negative/failed comparison results (Section 13.5). Wraps a ComparisonFailureRecord with campaign and prediction context.",
+      "required": [
+        "artifactId",
+        "campaignId",
+        "failure",
+        "originalTestId",
+        "attemptedMode",
+        "branchManifestId",
+        "isFalsification",
+        "createdAt"
+      ],
+      "properties": {
+        "artifactId": {
+          "type": "string",
+          "description": "Unique artifact identifier"
+        },
+        "campaignId": {
+          "type": "string",
+          "description": "Campaign ID that produced this negative result"
+        },
+        "failure": {
+          "$ref": "#/$defs/ComparisonFailureRecord",
+          "description": "The failure record with full details"
+        },
+        "originalTestId": {
+          "type": "string",
+          "description": "Original test ID of the prediction that failed"
+        },
+        "attemptedMode": {
+          "type": "string",
+          "enum": ["Structural", "SemiQuantitative", "Quantitative"],
+          "description": "Comparison mode that was attempted"
+        },
+        "branchManifestId": {
+          "type": "string",
+          "description": "Branch manifest ID for traceability"
+        },
+        "isFalsification": {
+          "type": "boolean",
+          "description": "Whether this negative result falsifies the underlying prediction"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when this artifact was created"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ComparisonCampaignResult": {
+      "type": "object",
+      "description": "Result of a comparison campaign execution. Failures are never filtered.",
+      "required": [
+        "campaignId",
+        "runRecords",
+        "failures",
+        "completedAt"
+      ],
+      "properties": {
+        "campaignId": {
+          "type": "string",
+          "description": "Campaign ID that produced this result"
+        },
+        "runRecords": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/ComparisonRunRecord" },
+          "description": "Successful comparison run records"
+        },
+        "failures": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/ComparisonFailureRecord" },
+          "description": "Failure records -- preserved as first-class artifacts"
+        },
+        "calibration": {
+          "$ref": "prediction_test_record.schema.json#/$defs/CalibrationRecord",
+          "description": "Calibration record used, if calibration was applied"
+        },
+        "completedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when the campaign completed"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "oneOf": [
+    { "$ref": "#/$defs/ComparisonCampaignSpec" },
+    { "$ref": "#/$defs/ComparisonCampaignResult" },
+    { "$ref": "#/$defs/ComparisonRunRecord" },
+    { "$ref": "#/$defs/ComparisonFailureRecord" },
+    { "$ref": "#/$defs/NegativeResultArtifact" }
+  ]
+}

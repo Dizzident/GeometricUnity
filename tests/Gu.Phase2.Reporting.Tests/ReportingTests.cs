@@ -2,6 +2,7 @@ using Gu.Core;
 using Gu.Phase2.Canonicity;
 using Gu.Phase2.Continuation;
 using Gu.Phase2.Execution;
+using Gu.Phase2.Recovery;
 using Gu.Phase2.Reporting;
 using Gu.Phase2.Reporting.Artifacts;
 using Gu.Phase2.Semantics;
@@ -98,6 +99,8 @@ public class ReportingTests
                 FinalResidualNorm = allConverged ? 1e-8 : 0.5,
                 Iterations = 10,
                 SolveMode = SolveMode.ObjectiveMinimization,
+                ExtractionSucceeded = false,
+                ComparisonAdmissible = false,
                 ArtifactBundle = new ArtifactBundle
                 {
                     ArtifactId = "art-v1",
@@ -216,6 +219,7 @@ public class ReportingTests
                 NegativeModeThreshold = -1e-8,
             },
         ],
+        RecoveryStudies = [],
         ComparisonCampaignIds = ["campaign-1"],
     };
 
@@ -233,6 +237,7 @@ public class ReportingTests
             {
                 ["stability-1"] = DummyContinuationResult(withEvents),
             },
+            RecoveryResults = new Dictionary<string, IReadOnlyList<PhysicalIdentificationRecord>>(),
             ExecutedCampaignIds = ["campaign-1"],
             BatchStarted = DateTimeOffset.UtcNow.AddMinutes(-5),
             BatchCompleted = DateTimeOffset.UtcNow,

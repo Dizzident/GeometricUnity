@@ -4,6 +4,7 @@ using Gu.Geometry;
 using Gu.Observation;
 using Gu.Phase2.Branches;
 using Gu.Phase2.Semantics;
+using Gu.Phase2.Stability;
 using Gu.Solvers;
 
 namespace Gu.Phase2.Execution;
@@ -61,13 +62,16 @@ public sealed class Phase2BranchSweepRunner
     /// <param name="family">Branch family manifest.</param>
     /// <param name="baseManifest">Base Phase I manifest providing shared configuration.</param>
     /// <param name="geometry">Geometry context (same for all branches).</param>
+    /// <param name="stabilityProbe">Optional callback to compute per-branch stability diagnostics
+    /// from the solver result. When null, StabilityDiagnostics is not populated.</param>
     public Phase2BranchSweepResult Sweep(
         string environmentId,
         FieldTensor initialOmega,
         FieldTensor a0,
         BranchFamilyManifest family,
         BranchManifest baseManifest,
-        GeometryContext geometry)
+        GeometryContext geometry,
+        Func<SolverResult, BranchManifest, GeometryContext, HessianSummary>? stabilityProbe = null)
     {
         ArgumentNullException.ThrowIfNull(environmentId);
         ArgumentNullException.ThrowIfNull(initialOmega);
@@ -84,7 +88,7 @@ public sealed class Phase2BranchSweepRunner
         foreach (var variant in family.Variants)
         {
             var record = RunSingleBranch(
-                environmentId, initialOmega, a0, variant, baseManifest, geometry);
+                environmentId, initialOmega, a0, variant, baseManifest, geometry, stabilityProbe);
             records.Add(record);
         }
 
@@ -108,7 +112,8 @@ public sealed class Phase2BranchSweepRunner
         FieldTensor a0,
         BranchVariantManifest variant,
         BranchManifest baseManifest,
-        GeometryContext geometry)
+        GeometryContext geometry,
+        Func<SolverResult, BranchManifest, GeometryContext, HessianSummary>? stabilityProbe = null)
     {
         // 1. Resolve operators via dispatch
         var resolvedOps = _operatorDispatch.Resolve(variant, baseManifest);
@@ -125,6 +130,13 @@ public sealed class Phase2BranchSweepRunner
         {
             observedState = ExtractObservations(
                 variant, baseManifest, solverResult, geometry);
+        }
+
+        // 3b. Compute stability diagnostics if probe is provided
+        HessianSummary? stabilityDiagnostics = null;
+        if (stabilityProbe != null)
+        {
+            stabilityDiagnostics = stabilityProbe(solverResult, manifest, geometry);
         }
 
         // 4. Build artifact bundle
@@ -171,6 +183,13 @@ public sealed class Phase2BranchSweepRunner
             Geometry = geometry,
         };
 
+        // Extraction succeeds if we attempted observation and got a non-null result
+        bool extractionSucceeded = observedState != null;
+
+        // Comparison admissible if extraction succeeded and observed state has at least one observable
+        bool comparisonAdmissible = extractionSucceeded
+            && observedState!.Observables.Count > 0;
+
         return new BranchRunRecord
         {
             Variant = variant,
@@ -182,6 +201,9 @@ public sealed class Phase2BranchSweepRunner
             Iterations = solverResult.Iterations,
             SolveMode = _innerOptions.Mode,
             ObservedState = observedState,
+            ExtractionSucceeded = extractionSucceeded,
+            ComparisonAdmissible = comparisonAdmissible,
+            StabilityDiagnostics = stabilityDiagnostics,
             ArtifactBundle = artifactBundle,
         };
     }

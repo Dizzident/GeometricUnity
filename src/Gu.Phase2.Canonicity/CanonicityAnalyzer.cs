@@ -1,6 +1,7 @@
 using Gu.Core;
 using Gu.Phase2.Execution;
 using Gu.Phase2.Semantics;
+using Gu.Phase2.Stability;
 
 namespace Gu.Phase2.Canonicity;
 
@@ -107,6 +108,51 @@ public sealed class CanonicityAnalyzer
         return new PairwiseDistanceMatrix
         {
             MetricId = "D_conv",
+            BranchIds = branchIds,
+            Distances = distances,
+        };
+    }
+
+    /// <summary>
+    /// Compute D_stab: pairwise stability distances based on Hessian spectrum diagnostics.
+    /// For each pair (i,j), measures:
+    ///   - abs diff in SmallestEigenvalue
+    ///   - abs diff in NegativeModeCount
+    ///   - abs diff in SoftModeCount
+    /// Normalized by equivalence.Tolerances["stability"] (default 1.0).
+    /// Returns NaN if either branch has no StabilityDiagnostics.
+    /// </summary>
+    public PairwiseDistanceMatrix ComputeStabilityDistances(
+        Phase2BranchSweepResult sweepResult,
+        EquivalenceSpec equivalence)
+    {
+        ArgumentNullException.ThrowIfNull(sweepResult);
+        ArgumentNullException.ThrowIfNull(equivalence);
+
+        var records = sweepResult.RunRecords;
+        int n = records.Count;
+        var branchIds = records.Select(r => r.Variant.Id).ToList();
+        var distances = new double[n, n];
+
+        double normalization = equivalence.Tolerances.TryGetValue("stability", out var tol) ? tol : 1.0;
+        if (normalization <= 0) normalization = 1.0;
+
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = i + 1; j < n; j++)
+            {
+                double dist = ComputeStabilityDistance(
+                    records[i].StabilityDiagnostics,
+                    records[j].StabilityDiagnostics,
+                    normalization);
+                distances[i, j] = dist;
+                distances[j, i] = dist;
+            }
+        }
+
+        return new PairwiseDistanceMatrix
+        {
+            MetricId = "D_stab",
             BranchIds = branchIds,
             Distances = distances,
         };
@@ -293,6 +339,120 @@ public sealed class CanonicityAnalyzer
     }
 
     /// <summary>
+    /// Compute failure mode matrix: classifies how each branch failed and
+    /// builds a pairwise same-failure-mode boolean matrix.
+    /// </summary>
+    public FailureModeMatrix ComputeFailureModes(Phase2BranchSweepResult sweepResult)
+    {
+        ArgumentNullException.ThrowIfNull(sweepResult);
+
+        var records = sweepResult.RunRecords;
+        int n = records.Count;
+        var branchIds = records.Select(r => r.Variant.Id).ToList();
+        var modes = records.Select(ClassifyFailureMode).ToList();
+        var sameMode = new bool[n, n];
+
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++)
+                sameMode[i, j] = modes[i] == modes[j];
+
+        return new FailureModeMatrix
+        {
+            BranchIds = branchIds,
+            PrimaryFailureModes = modes,
+            SameFailureMode = sameMode,
+        };
+    }
+
+    /// <summary>
+    /// Classify the failure mode of a branch run.
+    /// Returns null if the branch converged normally with observed output.
+    /// </summary>
+    public static string? ClassifyFailureMode(BranchRunRecord record)
+    {
+        if (record.Converged && record.ObservedState != null)
+            return null;
+
+        if (record.Converged && record.ObservedState == null)
+            return "extractor-failed";
+
+        var reason = record.TerminationReason;
+
+        if (reason.Contains("diverge", StringComparison.OrdinalIgnoreCase))
+            return "solver-diverged";
+
+        if (reason.Contains("stagnat", StringComparison.OrdinalIgnoreCase)
+            || reason.Contains("stalled", StringComparison.OrdinalIgnoreCase))
+            return "solver-stagnated";
+
+        if (reason.Contains("iteration", StringComparison.OrdinalIgnoreCase))
+            return "max-iterations";
+
+        if (reason.Contains("gauge", StringComparison.OrdinalIgnoreCase))
+            return "gauge-breakdown";
+
+        if (reason.Contains("not-attempted", StringComparison.OrdinalIgnoreCase)
+            || reason.Contains("skipped", StringComparison.OrdinalIgnoreCase))
+            return "not-attempted";
+
+        return "solver-diverged";
+    }
+
+    /// <summary>
+    /// Build extraction agreement matrix: Agrees[i,j] is true when both branches
+    /// have the same ExtractionSucceeded status.
+    /// </summary>
+    public ExtractionAgreementMatrix ComputeExtractionAgreement(
+        Phase2BranchSweepResult sweepResult)
+    {
+        ArgumentNullException.ThrowIfNull(sweepResult);
+
+        var records = sweepResult.RunRecords;
+        int n = records.Count;
+        var branchIds = records.Select(r => r.Variant.Id).ToList();
+        var statuses = records.Select(r => r.ExtractionSucceeded).ToList();
+        var agrees = new bool[n, n];
+
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++)
+                agrees[i, j] = statuses[i] == statuses[j];
+
+        return new ExtractionAgreementMatrix
+        {
+            BranchIds = branchIds,
+            ExtractionStatuses = statuses,
+            Agrees = agrees,
+        };
+    }
+
+    /// <summary>
+    /// Build comparison admissibility agreement matrix: Agrees[i,j] is true when both
+    /// branches have the same ComparisonAdmissible status.
+    /// </summary>
+    public AdmissibilityAgreementMatrix ComputeAdmissibilityAgreement(
+        Phase2BranchSweepResult sweepResult)
+    {
+        ArgumentNullException.ThrowIfNull(sweepResult);
+
+        var records = sweepResult.RunRecords;
+        int n = records.Count;
+        var branchIds = records.Select(r => r.Variant.Id).ToList();
+        var statuses = records.Select(r => r.ComparisonAdmissible).ToList();
+        var agrees = new bool[n, n];
+
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++)
+                agrees[i, j] = statuses[i] == statuses[j];
+
+        return new AdmissibilityAgreementMatrix
+        {
+            BranchIds = branchIds,
+            AdmissibilityStatuses = statuses,
+            Agrees = agrees,
+        };
+    }
+
+    /// <summary>
     /// Classify a branch run into a qualitative convergence class.
     /// </summary>
     public static QualitativeClass ClassifyBranch(BranchRunRecord record)
@@ -339,6 +499,19 @@ public sealed class CanonicityAnalyzer
             sumSq += d * d;
         }
         return System.Math.Sqrt(sumSq);
+    }
+
+    private static double ComputeStabilityDistance(
+        HessianSummary? a, HessianSummary? b, double normalization)
+    {
+        if (a == null || b == null)
+            return double.NaN;
+
+        double dist = System.Math.Abs(a.SmallestEigenvalue - b.SmallestEigenvalue)
+                    + System.Math.Abs(a.NegativeModeCount - b.NegativeModeCount)
+                    + System.Math.Abs(a.SoftModeCount - b.SoftModeCount);
+
+        return dist / normalization;
     }
 
     private static bool HasNaN(PairwiseDistanceMatrix matrix)

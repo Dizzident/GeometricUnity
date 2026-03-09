@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/branch_sweep_result.schema.json",
+  "title": "Phase2BranchSweepResult",
+  "description": "Result of a Phase II branch sweep across a branch family. Contains per-branch run records and sweep metadata.",
+  "type": "object",
+  "$defs": {
+    "BranchRunRecord": {
+      "type": "object",
+      "description": "Complete record of a single branch variant run within a Phase II branch sweep.",
+      "required": [
+        "variant",
+        "manifest",
+        "converged",
+        "terminationReason",
+        "finalObjective",
+        "finalResidualNorm",
+        "iterations",
+        "solveMode",
+        "extractionSucceeded",
+        "comparisonAdmissible",
+        "artifactBundle"
+      ],
+      "properties": {
+        "variant": {
+          "$ref": "branch_variant.schema.json",
+          "description": "Branch variant manifest used for this run"
+        },
+        "manifest": {
+          "$ref": "branch.schema.json",
+          "description": "Phase I manifest generated from the variant"
+        },
+        "converged": {
+          "type": "boolean",
+          "description": "Whether the solver converged"
+        },
+        "terminationReason": {
+          "type": "string",
+          "description": "Termination reason"
+        },
+        "finalObjective": {
+          "type": "number",
+          "description": "Final objective value"
+        },
+        "finalResidualNorm": {
+          "type": "number",
+          "description": "Final residual norm"
+        },
+        "iterations": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Iteration count"
+        },
+        "solveMode": {
+          "type": "string",
+          "enum": ["ResidualOnly", "ObjectiveMinimization", "StationaritySolve"],
+          "description": "Solve mode used"
+        },
+        "observedState": {
+          "$ref": "observed.schema.json",
+          "description": "Observed state extracted via observation pipeline, if executed"
+        },
+        "extractionSucceeded": {
+          "type": "boolean",
+          "description": "Whether the observation extraction pipeline produced valid output"
+        },
+        "comparisonAdmissible": {
+          "type": "boolean",
+          "description": "Whether the output meets comparison admissibility criteria"
+        },
+        "stabilityDiagnostics": {
+          "$ref": "#/$defs/HessianSummary",
+          "description": "Per-branch stability summary computed by LinearizationWorkbench, if enabled"
+        },
+        "artifactBundle": {
+          "$ref": "artifact.schema.json",
+          "description": "Artifact bundle for replay"
+        }
+      },
+      "additionalProperties": false
+    },
+    "HessianSummary": {
+      "type": "object",
+      "description": "Summary of Hessian spectrum diagnostics for a single branch run.",
+      "required": [
+        "smallestEigenvalue",
+        "negativeModeCount",
+        "softModeCount",
+        "nearKernelCount",
+        "stabilityClassification",
+        "gaugeHandlingMode"
+      ],
+      "properties": {
+        "smallestEigenvalue": {
+          "type": "number",
+          "description": "Smallest eigenvalue of the Hessian H"
+        },
+        "negativeModeCount": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of negative eigenvalues (saddle directions)"
+        },
+        "softModeCount": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of soft modes (small positive eigenvalues)"
+        },
+        "nearKernelCount": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of near-kernel modes"
+        },
+        "stabilityClassification": {
+          "type": "string",
+          "enum": [
+            "strictly-positive-on-slice",
+            "soft-modes-present",
+            "near-zero-kernel",
+            "negative-modes-saddle"
+          ],
+          "description": "Stability classification based on eigenvalue spectrum"
+        },
+        "gaugeHandlingMode": {
+          "type": "string",
+          "description": "Gauge handling mode used for the Hessian computation"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "family",
+    "environmentId",
+    "runRecords",
+    "innerMode",
+    "sweepStarted",
+    "sweepCompleted"
+  ],
+  "properties": {
+    "family": {
+      "$ref": "branch_family.schema.json",
+      "description": "Family manifest that was swept"
+    },
+    "environmentId": {
+      "type": "string",
+      "description": "Environment identifier"
+    },
+    "runRecords": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/BranchRunRecord" },
+      "description": "Per-branch run records"
+    },
+    "innerMode": {
+      "type": "string",
+      "enum": ["ResidualOnly", "ObjectiveMinimization", "StationaritySolve"],
+      "description": "Inner solve mode used for all branches"
+    },
+    "sweepStarted": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the sweep started"
+    },
+    "sweepCompleted": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the sweep completed"
+    }
+  },
+  "additionalProperties": false
+}

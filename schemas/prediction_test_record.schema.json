@@ -1,0 +1,206 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/prediction_test_record.schema.json",
+  "title": "PredictionTestRecord",
+  "description": "Prediction test records with full provenance chain from formal source to falsifier (Section 5.7). Includes ComparisonAsset, UncertaintyRecord, and CalibrationRecord.",
+  "type": "object",
+  "$defs": {
+    "UncertaintyRecord": {
+      "type": "object",
+      "description": "Decomposes uncertainty into its constituent sources. A value of -1 indicates unestimated.",
+      "required": [
+        "discretization",
+        "solver",
+        "branch",
+        "extraction",
+        "calibration",
+        "dataAsset"
+      ],
+      "properties": {
+        "discretization": {
+          "type": "number",
+          "description": "Discretization uncertainty (mesh/grid effects)"
+        },
+        "solver": {
+          "type": "number",
+          "description": "Solver convergence uncertainty"
+        },
+        "branch": {
+          "type": "number",
+          "description": "Branch-dependence uncertainty"
+        },
+        "extraction": {
+          "type": "number",
+          "description": "Extraction/observation pipeline uncertainty"
+        },
+        "calibration": {
+          "type": "number",
+          "description": "Calibration procedure uncertainty"
+        },
+        "dataAsset": {
+          "type": "number",
+          "description": "External data asset uncertainty"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ComparisonAsset": {
+      "type": "object",
+      "description": "External comparison asset with full metadata (Section 13.2).",
+      "required": [
+        "assetId",
+        "sourceCitation",
+        "acquisitionDate",
+        "preprocessingDescription",
+        "admissibleUseStatement",
+        "domainOfValidity",
+        "uncertaintyModel",
+        "comparisonVariables"
+      ],
+      "properties": {
+        "assetId": {
+          "type": "string",
+          "description": "Unique asset identifier"
+        },
+        "sourceCitation": {
+          "type": "string",
+          "description": "Source citation / origin metadata"
+        },
+        "acquisitionDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date the data was acquired"
+        },
+        "preprocessingDescription": {
+          "type": "string",
+          "description": "Description of preprocessing applied to the raw data"
+        },
+        "admissibleUseStatement": {
+          "type": "string",
+          "description": "Statement of how this asset may be used in comparisons"
+        },
+        "domainOfValidity": {
+          "type": "string",
+          "description": "Regime or domain of validity for this data"
+        },
+        "uncertaintyModel": {
+          "$ref": "#/$defs/UncertaintyRecord",
+          "description": "Uncertainty model for this asset"
+        },
+        "comparisonVariables": {
+          "type": "object",
+          "additionalProperties": { "type": "string" },
+          "description": "Comparison variable definitions (variable-name -> description)"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CalibrationRecord": {
+      "type": "object",
+      "description": "Records the calibration strategy used in a campaign (Section 13.4). No hidden tuning allowed.",
+      "required": [
+        "calibrationId",
+        "policy",
+        "parameters",
+        "fitMethod"
+      ],
+      "properties": {
+        "calibrationId": {
+          "type": "string",
+          "description": "Unique calibration identifier"
+        },
+        "policy": {
+          "type": "string",
+          "enum": ["fixed", "fitted", "inverse", "sensitivity-only"],
+          "description": "Calibration policy"
+        },
+        "parameters": {
+          "type": "object",
+          "additionalProperties": { "type": "number" },
+          "description": "Calibrated parameter values (parameter-name -> value)"
+        },
+        "fitMethod": {
+          "type": "string",
+          "enum": ["a-priori", "least-squares", "inverse-solve", "free"],
+          "description": "Method used for calibration"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "testId",
+    "claimClass",
+    "formalSource",
+    "branchManifestId",
+    "observableMapId",
+    "theoremDependencyStatus",
+    "numericalDependencyStatus",
+    "approximationStatus",
+    "falsifier",
+    "artifactLinks"
+  ],
+  "properties": {
+    "testId": {
+      "type": "string",
+      "description": "Unique test identifier"
+    },
+    "claimClass": {
+      "type": "string",
+      "enum": [
+        "ExactStructuralConsequence",
+        "ApproximateStructuralSurrogate",
+        "PostdictionTarget",
+        "SpeculativeInterpretation",
+        "Inadmissible"
+      ],
+      "description": "Claimed class for this prediction"
+    },
+    "formalSource": {
+      "type": "string",
+      "description": "Formal mathematical source for the prediction"
+    },
+    "branchManifestId": {
+      "type": "string",
+      "description": "Branch manifest ID under which this prediction was produced"
+    },
+    "observableMapId": {
+      "type": "string",
+      "description": "Observable map ID linking to the recovery graph"
+    },
+    "theoremDependencyStatus": {
+      "type": "string",
+      "enum": ["closed", "open", "partial"],
+      "description": "Theorem dependency status"
+    },
+    "numericalDependencyStatus": {
+      "type": "string",
+      "enum": ["converged", "exploratory", "failed"],
+      "description": "Numerical dependency status"
+    },
+    "approximationStatus": {
+      "type": "string",
+      "enum": ["exact", "leading-order", "surrogate"],
+      "description": "Approximation status"
+    },
+    "externalComparisonAsset": {
+      "$ref": "#/$defs/ComparisonAsset",
+      "description": "External comparison asset, if applicable"
+    },
+    "falsifier": {
+      "type": "string",
+      "minLength": 1,
+      "description": "What would disprove this prediction. Must not be empty."
+    },
+    "artifactLinks": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Links to artifact bundles that produced this prediction"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Human-readable notes"
+    }
+  },
+  "additionalProperties": false
+}

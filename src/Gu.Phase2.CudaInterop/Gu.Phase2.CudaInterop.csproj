@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gu.Core\Gu.Core.csproj" />
+    <ProjectReference Include="..\Gu.Branching\Gu.Branching.csproj" />
+    <ProjectReference Include="..\Gu.Interop\Gu.Interop.csproj" />
+    <ProjectReference Include="..\Gu.Phase2.Semantics\Gu.Phase2.Semantics.csproj" />
+  </ItemGroup>
+</Project>

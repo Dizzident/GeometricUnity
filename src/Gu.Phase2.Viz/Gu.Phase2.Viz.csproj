@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Gu.Core\Gu.Core.csproj" />
+    <ProjectReference Include="..\Gu.Geometry\Gu.Geometry.csproj" />
+    <ProjectReference Include="..\Gu.VulkanViewer\Gu.VulkanViewer.csproj" />
+    <ProjectReference Include="..\Gu.Phase2.Stability\Gu.Phase2.Stability.csproj" />
+    <ProjectReference Include="..\Gu.Phase2.Execution\Gu.Phase2.Execution.csproj" />
+    <ProjectReference Include="..\Gu.Phase2.Continuation\Gu.Phase2.Continuation.csproj" />
+    <ProjectReference Include="..\Gu.Phase2.Canonicity\Gu.Phase2.Canonicity.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,6 +1,7 @@
 using Gu.Phase2.Canonicity;
 using Gu.Phase2.Continuation;
 using Gu.Phase2.Execution;
+using Gu.Phase2.Recovery;
 using Gu.Phase2.Reporting;
 using Gu.Phase2.Semantics;
 
@@ -220,10 +221,12 @@ public class ResearchReportGeneratorTests
                 BatchId = "batch-1",
                 Sweeps = [],
                 StabilityStudies = [],
+                RecoveryStudies = [],
                 ComparisonCampaignIds = [],
             },
             SweepResults = sweepDict,
             StabilityResults = stabilityDict,
+            RecoveryResults = new Dictionary<string, IReadOnlyList<PhysicalIdentificationRecord>>(),
             ExecutedCampaignIds = [],
             BatchStarted = DateTimeOffset.UtcNow,
             BatchCompleted = DateTimeOffset.UtcNow,

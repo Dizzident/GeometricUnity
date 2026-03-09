@@ -15,6 +15,7 @@ public sealed class StabilityAtlasBuilder
     private readonly List<HessianRecord> _hessianRecords = new();
     private readonly List<PrincipalSymbolRecord> _symbolSamples = new();
     private readonly List<LinearizationRecord> _linearizationRecords = new();
+    private readonly List<GaugeFixedLinearizationRecord> _gaugeFixedLinearizationRecords = new();
     private string? _discretizationNotes;
     private string? _theoremStatusNotes;
 
@@ -49,6 +50,12 @@ public sealed class StabilityAtlasBuilder
         return this;
     }
 
+    public StabilityAtlasBuilder AddGaugeFixedLinearizationRecord(GaugeFixedLinearizationRecord record)
+    {
+        _gaugeFixedLinearizationRecords.Add(record ?? throw new ArgumentNullException(nameof(record)));
+        return this;
+    }
+
     public StabilityAtlasBuilder WithDiscretizationNotes(string notes)
     {
         _discretizationNotes = notes;
@@ -62,7 +69,8 @@ public sealed class StabilityAtlasBuilder
     }
 
     /// <summary>
-    /// Build the stability atlas. Extracts bifurcation indicators from continuation events.
+    /// Build the stability atlas. Extracts bifurcation indicators from continuation events
+    /// and converts them to typed <see cref="BifurcationIndicatorRecord"/> objects.
     /// </summary>
     public StabilityAtlas Build()
     {
@@ -77,6 +85,7 @@ public sealed class StabilityAtlasBuilder
         var bifurcationIndicators = _paths
             .SelectMany(p => p.AllEvents)
             .Where(e => bifurcationKinds.Contains(e.Kind))
+            .Select((e, i) => ConvertToIndicator(e, i))
             .ToList();
 
         return new StabilityAtlas
@@ -88,10 +97,36 @@ public sealed class StabilityAtlasBuilder
             HessianRecords = _hessianRecords,
             SymbolSamples = _symbolSamples,
             LinearizationRecords = _linearizationRecords,
+            GaugeFixedLinearizationRecords = _gaugeFixedLinearizationRecords,
             BifurcationIndicators = bifurcationIndicators,
             DiscretizationNotes = _discretizationNotes,
             TheoremStatusNotes = _theoremStatusNotes,
             Timestamp = DateTimeOffset.UtcNow,
+        };
+    }
+
+    /// <summary>
+    /// Infer bifurcation kind from <see cref="ContinuationEventKind"/>.
+    /// </summary>
+    public static string InferKind(ContinuationEventKind eventKind) => eventKind switch
+    {
+        ContinuationEventKind.SingularValueCollapse => "fold",
+        ContinuationEventKind.HessianSignChange => "sign-change",
+        ContinuationEventKind.BranchMergeSplitCandidate => "branch-point",
+        _ => "unknown",
+    };
+
+    private static BifurcationIndicatorRecord ConvertToIndicator(ContinuationEvent e, int index)
+    {
+        return new BifurcationIndicatorRecord
+        {
+            IndicatorId = $"bif-{index}",
+            Lambda = e.Lambda,
+            Kind = InferKind(e.Kind),
+            TriggeringEvent = e.Kind,
+            Confidence = "numerical-only",
+            TheoremDependencyStatus = "unverified",
+            Description = e.Description,
         };
     }
 }

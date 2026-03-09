@@ -1,3 +1,4 @@
+using System.Text.Json;
 using Gu.Core;
 using Gu.Phase2.Semantics;
 
@@ -221,5 +222,95 @@ public class BranchFamilyManifestSemanticTests
 
         Assert.Equal("fam-1", family.FamilyId);
         Assert.Single(family.Variants);
+    }
+}
+
+public class RecoveryStudySpecTests
+{
+    [Fact]
+    public void CanConstructWithAllFields()
+    {
+        var spec = new RecoveryStudySpec
+        {
+            StudyId = "recovery-1",
+            SweepResultId = "sweep-result-1",
+            RecoveryGraphId = "graph-1",
+            EnforceIdentificationGate = true,
+            MaxAllowedClaimClass = "numerical-only",
+        };
+
+        Assert.Equal("recovery-1", spec.StudyId);
+        Assert.Equal("sweep-result-1", spec.SweepResultId);
+        Assert.Equal("graph-1", spec.RecoveryGraphId);
+        Assert.True(spec.EnforceIdentificationGate);
+        Assert.Equal("numerical-only", spec.MaxAllowedClaimClass);
+    }
+
+    [Fact]
+    public void JsonRoundTrip_PreservesAllFields()
+    {
+        var original = new RecoveryStudySpec
+        {
+            StudyId = "recovery-rt",
+            SweepResultId = "sweep-42",
+            RecoveryGraphId = "dag-main",
+            EnforceIdentificationGate = false,
+            MaxAllowedClaimClass = "branch-local-numerical",
+        };
+
+        var json = JsonSerializer.Serialize(original);
+        var deserialized = JsonSerializer.Deserialize<RecoveryStudySpec>(json);
+
+        Assert.NotNull(deserialized);
+        Assert.Equal(original.StudyId, deserialized.StudyId);
+        Assert.Equal(original.SweepResultId, deserialized.SweepResultId);
+        Assert.Equal(original.RecoveryGraphId, deserialized.RecoveryGraphId);
+        Assert.Equal(original.EnforceIdentificationGate, deserialized.EnforceIdentificationGate);
+        Assert.Equal(original.MaxAllowedClaimClass, deserialized.MaxAllowedClaimClass);
+    }
+
+    [Fact]
+    public void JsonPropertyNames_AreCorrect()
+    {
+        var spec = new RecoveryStudySpec
+        {
+            StudyId = "s1",
+            SweepResultId = "sr1",
+            RecoveryGraphId = "rg1",
+            EnforceIdentificationGate = true,
+            MaxAllowedClaimClass = "numerical-only",
+        };
+
+        var json = JsonSerializer.Serialize(spec);
+        Assert.Contains("\"studyId\"", json);
+        Assert.Contains("\"sweepResultId\"", json);
+        Assert.Contains("\"recoveryGraphId\"", json);
+        Assert.Contains("\"enforceIdentificationGate\"", json);
+        Assert.Contains("\"maxAllowedClaimClass\"", json);
+    }
+
+    [Fact]
+    public void ResearchBatchSpec_IncludesRecoveryStudies()
+    {
+        var recoverySpec = new RecoveryStudySpec
+        {
+            StudyId = "recovery-batch",
+            SweepResultId = "sweep-1",
+            RecoveryGraphId = "graph-1",
+            EnforceIdentificationGate = true,
+            MaxAllowedClaimClass = "numerical-only",
+        };
+
+        var batchSpec = new ResearchBatchSpec
+        {
+            BatchId = "batch-with-recovery",
+            Sweeps = [],
+            StabilityStudies = [],
+            RecoveryStudies = [recoverySpec],
+            ComparisonCampaignIds = [],
+        };
+
+        Assert.Single(batchSpec.RecoveryStudies);
+        Assert.Equal("recovery-batch", batchSpec.RecoveryStudies[0].StudyId);
     }
 }

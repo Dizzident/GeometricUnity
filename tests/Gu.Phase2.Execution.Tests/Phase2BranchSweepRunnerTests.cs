@@ -186,6 +186,79 @@ public class Phase2BranchSweepRunnerTests
         Assert.Equal(0.0, omega.Coefficients[0]);
     }
 
+    [Fact]
+    public void Sweep_WithStabilityProbe_PopulatesDiagnostics()
+    {
+        var (runner, family, baseManifest) = CreateTestRunnerAndFamily();
+        var omega = MakeZeroField("omega_h", "1");
+        var a0 = MakeZeroField("A0_h", "1");
+
+        var result = runner.Sweep("env-1", omega, a0, family, baseManifest, MakeGeometry(),
+            stabilityProbe: (_, _, _) => new Gu.Phase2.Stability.HessianSummary
+            {
+                SmallestEigenvalue = 0.5,
+                NegativeModeCount = 0,
+                SoftModeCount = 1,
+                NearKernelCount = 0,
+                StabilityClassification = "soft-modes-present",
+                GaugeHandlingMode = "coulomb-slice",
+            });
+
+        Assert.All(result.RunRecords, r =>
+        {
+            Assert.NotNull(r.StabilityDiagnostics);
+            Assert.Equal(0.5, r.StabilityDiagnostics!.SmallestEigenvalue);
+            Assert.Equal("soft-modes-present", r.StabilityDiagnostics.StabilityClassification);
+        });
+    }
+
+    [Fact]
+    public void Sweep_WithoutStabilityProbe_DiagnosticsNull()
+    {
+        var (runner, family, baseManifest) = CreateTestRunnerAndFamily();
+        var omega = MakeZeroField("omega_h", "1");
+        var a0 = MakeZeroField("A0_h", "1");
+
+        var result = runner.Sweep("env-1", omega, a0, family, baseManifest, MakeGeometry());
+
+        Assert.All(result.RunRecords, r => Assert.Null(r.StabilityDiagnostics));
+    }
+
+    [Fact]
+    public void Sweep_TwoBranches_DifferentStability()
+    {
+        var (runner, family, baseManifest) = CreateTestRunnerAndFamily();
+        var omega = MakeZeroField("omega_h", "1");
+        var a0 = MakeZeroField("A0_h", "1");
+
+        int callIndex = 0;
+        var result = runner.Sweep("env-1", omega, a0, family, baseManifest, MakeGeometry(),
+            stabilityProbe: (_, _, _) =>
+            {
+                callIndex++;
+                return new Gu.Phase2.Stability.HessianSummary
+                {
+                    SmallestEigenvalue = callIndex == 1 ? 1.0 : -0.5,
+                    NegativeModeCount = callIndex == 1 ? 0 : 2,
+                    SoftModeCount = 0,
+                    NearKernelCount = 0,
+                    StabilityClassification = callIndex == 1
+                        ? "strictly-positive-on-slice"
+                        : "negative-modes-saddle",
+                    GaugeHandlingMode = "coulomb-slice",
+                };
+            });
+
+        Assert.Equal(2, result.RunRecords.Count);
+        Assert.Equal("strictly-positive-on-slice",
+            result.RunRecords[0].StabilityDiagnostics!.StabilityClassification);
+        Assert.Equal("negative-modes-saddle",
+            result.RunRecords[1].StabilityDiagnostics!.StabilityClassification);
+        Assert.NotEqual(
+            result.RunRecords[0].StabilityDiagnostics!.SmallestEigenvalue,
+            result.RunRecords[1].StabilityDiagnostics!.SmallestEigenvalue);
+    }
+
     // ---- Helpers ----
 
     private static (Phase2BranchSweepRunner runner, BranchFamilyManifest family, BranchManifest baseManifest) CreateTestRunnerAndFamily(

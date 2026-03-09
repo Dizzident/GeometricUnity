@@ -166,6 +166,39 @@ public sealed class LinearizationWorkbench
     }
 
     /// <summary>
+    /// Validate L_tilde and produce a GaugeFixedLinearizationRecord with gauge metadata.
+    /// </summary>
+    public GaugeFixedLinearizationRecord ValidateGaugeFixedLinearization(
+        BackgroundStateRecord background,
+        BranchManifest manifest,
+        GeometryContext geometry,
+        double gaugeLambda,
+        string baseLinearizationId,
+        int gaugeNullDimension,
+        bool gaugeNullSuppressed,
+        double? smallestSliceSingularValue,
+        FieldTensor perturbation,
+        double fdEpsilon = 1e-7,
+        double fdTolerance = 1e-4)
+    {
+        var baseRecord = ValidateGaugeFixedOperator(
+            background, manifest, geometry, gaugeLambda, perturbation, fdEpsilon, fdTolerance);
+
+        return new GaugeFixedLinearizationRecord
+        {
+            BackgroundStateId = background.Id,
+            BranchManifestId = manifest.BranchId,
+            BaseLinearizationId = baseLinearizationId,
+            GaugeHandlingMode = "coulomb-slice",
+            GaugeLambda = gaugeLambda,
+            GaugeNullDimension = gaugeNullDimension,
+            GaugeNullSuppressed = gaugeNullSuppressed,
+            SmallestSliceSingularValue = smallestSliceSingularValue,
+            ValidationStatus = baseRecord.ValidationStatus,
+        };
+    }
+
+    /// <summary>
     /// Validate L_tilde via finite differences.
     /// </summary>
     public LinearizationRecord ValidateGaugeFixedOperator(

@@ -228,7 +228,8 @@ public class StabilityAtlasTests
             HessianRecords = Array.Empty<Gu.Phase2.Stability.HessianRecord>(),
             SymbolSamples = Array.Empty<Gu.Phase2.Stability.PrincipalSymbolRecord>(),
             LinearizationRecords = Array.Empty<Gu.Phase2.Stability.LinearizationRecord>(),
-            BifurcationIndicators = Array.Empty<ContinuationEvent>(),
+            GaugeFixedLinearizationRecords = Array.Empty<Gu.Phase2.Stability.GaugeFixedLinearizationRecord>(),
+            BifurcationIndicators = Array.Empty<BifurcationIndicatorRecord>(),
             Timestamp = DateTimeOffset.UtcNow,
         };
 
@@ -285,7 +286,8 @@ public class StabilityAtlasTests
             HessianRecords = Array.Empty<Gu.Phase2.Stability.HessianRecord>(),
             SymbolSamples = Array.Empty<Gu.Phase2.Stability.PrincipalSymbolRecord>(),
             LinearizationRecords = Array.Empty<Gu.Phase2.Stability.LinearizationRecord>(),
-            BifurcationIndicators = Array.Empty<ContinuationEvent>(),
+            GaugeFixedLinearizationRecords = Array.Empty<Gu.Phase2.Stability.GaugeFixedLinearizationRecord>(),
+            BifurcationIndicators = Array.Empty<BifurcationIndicatorRecord>(),
             Timestamp = DateTimeOffset.UtcNow,
         };
 
@@ -372,7 +374,10 @@ public class StabilityAtlasBuilderTests
 
         // Only bifurcation-relevant events should be in bifurcationIndicators
         Assert.Single(atlas.BifurcationIndicators);
-        Assert.Equal(ContinuationEventKind.HessianSignChange, atlas.BifurcationIndicators[0].Kind);
+        Assert.Equal("sign-change", atlas.BifurcationIndicators[0].Kind);
+        Assert.Equal(ContinuationEventKind.HessianSignChange, atlas.BifurcationIndicators[0].TriggeringEvent);
+        Assert.Equal(0.5, atlas.BifurcationIndicators[0].Lambda);
+        Assert.Equal("numerical-only", atlas.BifurcationIndicators[0].Confidence);
     }
 
     [Fact]
@@ -463,5 +468,95 @@ public class StabilityAtlasBuilderTests
             MaxCorrectorIterations = 10,
             BranchManifestId = "branch-1",
         };
+    }
+}
+
+public class BifurcationIndicatorRecordTests
+{
+    [Fact]
+    public void CanConstruct_WithRequiredFields()
+    {
+        var record = new BifurcationIndicatorRecord
+        {
+            IndicatorId = "bif-0",
+            Lambda = 0.5,
+            Kind = "sign-change",
+            TriggeringEvent = ContinuationEventKind.HessianSignChange,
+            Confidence = "numerical-only",
+            TheoremDependencyStatus = "unverified",
+            Description = "Sign change at lambda=0.5",
+        };
+
+        Assert.Equal("bif-0", record.IndicatorId);
+        Assert.Equal(0.5, record.Lambda);
+        Assert.Equal("sign-change", record.Kind);
+        Assert.Equal(ContinuationEventKind.HessianSignChange, record.TriggeringEvent);
+        Assert.Null(record.ModeIndex);
+        Assert.Null(record.EigenvalueAtDetection);
+        Assert.Equal("numerical-only", record.Confidence);
+        Assert.Equal("unverified", record.TheoremDependencyStatus);
+    }
+
+    [Fact]
+    public void CanConstruct_WithOptionalFields()
+    {
+        var record = new BifurcationIndicatorRecord
+        {
+            IndicatorId = "bif-1",
+            Lambda = 0.7,
+            Kind = "fold",
+            TriggeringEvent = ContinuationEventKind.SingularValueCollapse,
+            ModeIndex = 2,
+            EigenvalueAtDetection = -0.003,
+            Confidence = "strong-numerical",
+            TheoremDependencyStatus = "verified",
+            Description = "Fold detected via sigma_min collapse",
+        };
+
+        Assert.Equal(2, record.ModeIndex);
+        Assert.Equal(-0.003, record.EigenvalueAtDetection);
+        Assert.Equal("strong-numerical", record.Confidence);
+    }
+
+    [Fact]
+    public void InferKind_MapsEventKindsCorrectly()
+    {
+        Assert.Equal("fold", StabilityAtlasBuilder.InferKind(ContinuationEventKind.SingularValueCollapse));
+        Assert.Equal("sign-change", StabilityAtlasBuilder.InferKind(ContinuationEventKind.HessianSignChange));
+        Assert.Equal("branch-point", StabilityAtlasBuilder.InferKind(ContinuationEventKind.BranchMergeSplitCandidate));
+        Assert.Equal("unknown", StabilityAtlasBuilder.InferKind(ContinuationEventKind.StepRejectionBurst));
+        Assert.Equal("unknown", StabilityAtlasBuilder.InferKind(ContinuationEventKind.ExtractorFailure));
+        Assert.Equal("unknown", StabilityAtlasBuilder.InferKind(ContinuationEventKind.GaugeSliceBreakdown));
+    }
+
+    [Fact]
+    public void JsonRoundTrip_PreservesAllFields()
+    {
+        var record = new BifurcationIndicatorRecord
+        {
+            IndicatorId = "bif-rt",
+            Lambda = 0.42,
+            Kind = "hopf-candidate",
+            TriggeringEvent = ContinuationEventKind.HessianSignChange,
+            ModeIndex = 3,
+            EigenvalueAtDetection = 0.001,
+            Confidence = "theorem-supported",
+            TheoremDependencyStatus = "proven",
+            Description = "Hopf candidate at lambda=0.42",
+        };
+
+        var json = Gu.Core.Serialization.GuJsonDefaults.Serialize(record);
+        var deserialized = Gu.Core.Serialization.GuJsonDefaults.Deserialize<BifurcationIndicatorRecord>(json);
+
+        Assert.NotNull(deserialized);
+        Assert.Equal("bif-rt", deserialized!.IndicatorId);
+        Assert.Equal(0.42, deserialized.Lambda);
+        Assert.Equal("hopf-candidate", deserialized.Kind);
+        Assert.Equal(ContinuationEventKind.HessianSignChange, deserialized.TriggeringEvent);
+        Assert.Equal(3, deserialized.ModeIndex);
+        Assert.Equal(0.001, deserialized.EigenvalueAtDetection);
+        Assert.Equal("theorem-supported", deserialized.Confidence);
+        Assert.Equal("proven", deserialized.TheoremDependencyStatus);
+        Assert.Equal("Hopf candidate at lambda=0.42", deserialized.Description);
     }
 }

@@ -26,6 +26,7 @@
     <ProjectReference Include="..\..\src\Gu.Phase2.Semantics\Gu.Phase2.Semantics.csproj" />
     <ProjectReference Include="..\..\src\Gu.Phase2.Branches\Gu.Phase2.Branches.csproj" />
     <ProjectReference Include="..\..\src\Gu.Phase2.Execution\Gu.Phase2.Execution.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase2.Stability\Gu.Phase2.Stability.csproj" />
     <ProjectReference Include="..\Gu.Phase2.Branches.Tests\Gu.Phase2.Branches.Tests.csproj" />
   </ItemGroup>
 

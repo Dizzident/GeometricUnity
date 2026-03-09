@@ -115,6 +115,8 @@ internal static class TestHelpers
         FinalResidualNorm = converged ? 1e-8 : 2.0,
         Iterations = converged ? 50 : 1000,
         SolveMode = SolveMode.ObjectiveMinimization,
+        ExtractionSucceeded = false,
+        ComparisonAdmissible = false,
         ArtifactBundle = MakeArtifactBundle(),
     };
 
@@ -220,6 +222,7 @@ internal static class TestHelpers
         StabilityStudies = Enumerable.Range(0, stabilityCount)
             .Select(i => MakeStabilitySpec($"stability-{i:D3}"))
             .ToList(),
+        RecoveryStudies = [],
         ComparisonCampaignIds = Enumerable.Range(0, campaignCount)
             .Select(i => $"campaign-{i:D3}")
             .ToList(),

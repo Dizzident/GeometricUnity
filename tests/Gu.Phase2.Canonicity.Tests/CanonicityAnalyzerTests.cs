@@ -3,6 +3,7 @@ using Gu.Phase2.Branches;
 using Gu.Phase2.Canonicity;
 using Gu.Phase2.Execution;
 using Gu.Phase2.Semantics;
+using Gu.Phase2.Stability;
 using Gu.Solvers;
 
 namespace Gu.Phase2.Canonicity.Tests;
@@ -115,7 +116,10 @@ public class CanonicityAnalyzerTests
         double residualNorm,
         int iterations,
         string terminationReason = "converged",
-        ObservedState? observedState = null) => new()
+        ObservedState? observedState = null,
+        bool? extractionSucceeded = null,
+        bool? comparisonAdmissible = null,
+        HessianSummary? stabilityDiagnostics = null) => new()
     {
         Variant = MakeVariant(variantId),
         Manifest = MakeManifest(variantId),
@@ -126,6 +130,9 @@ public class CanonicityAnalyzerTests
         Iterations = iterations,
         SolveMode = SolveMode.ObjectiveMinimization,
         ObservedState = observedState,
+        ExtractionSucceeded = extractionSucceeded ?? (observedState != null),
+        ComparisonAdmissible = comparisonAdmissible ?? (observedState != null && observedState.Observables.Count > 0),
+        StabilityDiagnostics = stabilityDiagnostics,
         ArtifactBundle = MakeArtifact(variantId),
     };
 
@@ -547,5 +554,290 @@ public class CanonicityAnalyzerTests
                 Assert.Equal(matrix.Distances[i, j], matrix.Distances[j, i]);
             }
         }
+    }
+
+    // --- Failure Mode Matrix Tests ---
+
+    [Fact]
+    public void FailureModes_AllConverged_AllNull()
+    {
+        var obs = MakeObservedState(new[] { 1.0, 2.0 });
+        var sweep = MakeSweep(
+            MakeRunRecord("v1", true, 1e-10, 1e-8, 50, observedState: obs),
+            MakeRunRecord("v2", true, 1e-10, 1e-8, 60, observedState: obs));
+
+        var analyzer = new CanonicityAnalyzer();
+        var matrix = analyzer.ComputeFailureModes(sweep);
+
+        Assert.Equal(2, matrix.BranchIds.Count);
+        Assert.All(matrix.PrimaryFailureModes, mode => Assert.Null(mode));
+        // All converged = same failure mode (null == null)
+        Assert.True(matrix.SameFailureMode[0, 1]);
+        Assert.True(matrix.SameFailureMode[1, 0]);
+    }
+
+    [Fact]
+    public void FailureModes_SameFailure_Detected()
+    {
+        var sweep = MakeSweep(
+            MakeRunRecord("v1", false, 1.0, 1.0, 100, terminationReason: "diverged"),
+            MakeRunRecord("v2", false, 2.0, 2.0, 100, terminationReason: "diverged rapidly"));
+
+        var analyzer = new CanonicityAnalyzer();
+        var matrix = analyzer.ComputeFailureModes(sweep);
+
+        Assert.Equal("solver-diverged", matrix.PrimaryFailureModes[0]);
+        Assert.Equal("solver-diverged", matrix.PrimaryFailureModes[1]);
+        Assert.True(matrix.SameFailureMode[0, 1]);
+    }
+
+    [Fact]
+    public void FailureModes_DifferentFailures_Distinguished()
+    {
+        var sweep = MakeSweep(
+            MakeRunRecord("v1", false, 1.0, 1.0, 100, terminationReason: "diverged"),
+            MakeRunRecord("v2", false, 0.5, 0.5, 100, terminationReason: "Stagnation detected"),
+            MakeRunRecord("v3", false, 0.5, 0.5, 1000, terminationReason: "MaxIterations reached"));
+
+        var analyzer = new CanonicityAnalyzer();
+        var matrix = analyzer.ComputeFailureModes(sweep);
+
+        Assert.Equal("solver-diverged", matrix.PrimaryFailureModes[0]);
+        Assert.Equal("solver-stagnated", matrix.PrimaryFailureModes[1]);
+        Assert.Equal("max-iterations", matrix.PrimaryFailureModes[2]);
+        Assert.False(matrix.SameFailureMode[0, 1]);
+        Assert.False(matrix.SameFailureMode[0, 2]);
+        Assert.False(matrix.SameFailureMode[1, 2]);
+    }
+
+    [Fact]
+    public void FailureModes_ExtractorFailed_Detected()
+    {
+        // Converged but no ObservedState
+        var sweep = MakeSweep(
+            MakeRunRecord("v1", true, 1e-10, 1e-8, 50, observedState: null));
+
+        var analyzer = new CanonicityAnalyzer();
+        var matrix = analyzer.ComputeFailureModes(sweep);
+
+        Assert.Equal("extractor-failed", matrix.PrimaryFailureModes[0]);
+    }
+
+    [Fact]
+    public void FailureModes_DefaultsToSolverDiverged_ForUnknownReason()
+    {
+        var sweep = MakeSweep(
+            MakeRunRecord("v1", false, 1.0, 1.0, 50, terminationReason: "SomeUnknownReason"));
+
+        var analyzer = new CanonicityAnalyzer();
+        var matrix = analyzer.ComputeFailureModes(sweep);
+
+        Assert.Equal("solver-diverged", matrix.PrimaryFailureModes[0]);
+    }
+
+    // --- Extraction Agreement Tests ---
+
+    [Fact]
+    public void ExtractionAgreement_BothExtracted_AllAgree()
+    {
+        var obs = MakeObservedState(new[] { 1.0, 2.0 });
+        var sweep = MakeSweep(
+            MakeRunRecord("v1", true, 1e-10, 1e-8, 50, observedState: obs),
+            MakeRunRecord("v2", true, 1e-10, 1e-8, 50, observedState: obs));
+
+        var analyzer = new CanonicityAnalyzer();
+        var matrix = analyzer.ComputeExtractionAgreement(sweep);
+
+        Assert.True(matrix.AllAgree);
+        Assert.True(matrix.Agrees[0, 1]);
+        Assert.True(matrix.ExtractionStatuses[0]);
+        Assert.True(matrix.ExtractionStatuses[1]);
+    }
+
+    [Fact]
+    public void ExtractionAgreement_OneExtracted_Disagree()
+    {
+        var obs = MakeObservedState(new[] { 1.0, 2.0 });
+        var sweep = MakeSweep(
+            MakeRunRecord("v1", true, 1e-10, 1e-8, 50, observedState: obs),
+            MakeRunRecord("v2", true, 1e-10, 1e-8, 50, observedState: null));
+
+        var analyzer = new CanonicityAnalyzer();
+        var matrix = analyzer.ComputeExtractionAgreement(sweep);
+
+        Assert.False(matrix.AllAgree);
+        Assert.False(matrix.Agrees[0, 1]);
+        Assert.True(matrix.ExtractionStatuses[0]);
+        Assert.False(matrix.ExtractionStatuses[1]);
+    }
+
+    [Fact]
+    public void ExtractionAgreement_NeitherExtracted_AllAgree()
+    {
+        var sweep = MakeSweep(
+            MakeRunRecord("v1", true, 1e-10, 1e-8, 50),
+            MakeRunRecord("v2", true, 1e-10, 1e-8, 50));
+
+        var analyzer = new CanonicityAnalyzer();
+        var matrix = analyzer.ComputeExtractionAgreement(sweep);
+
+        Assert.True(matrix.AllAgree);
+        Assert.False(matrix.ExtractionStatuses[0]);
+    }
+
+    // --- Admissibility Agreement Tests ---
+
+    [Fact]
+    public void AdmissibilityAgreement_BothAdmissible_AllAgree()
+    {
+        var obs = MakeObservedState(new[] { 1.0, 2.0 });
+        var sweep = MakeSweep(
+            MakeRunRecord("v1", true, 1e-10, 1e-8, 50, observedState: obs),
+            MakeRunRecord("v2", true, 1e-10, 1e-8, 50, observedState: obs));
+
+        var analyzer = new CanonicityAnalyzer();
+        var matrix = analyzer.ComputeAdmissibilityAgreement(sweep);
+
+        Assert.True(matrix.AllAgree);
+        Assert.True(matrix.Agrees[0, 1]);
+    }
+
+    [Fact]
+    public void AdmissibilityAgreement_OneInadmissible_Disagree()
+    {
+        var obs = MakeObservedState(new[] { 1.0, 2.0 });
+        var sweep = MakeSweep(
+            MakeRunRecord("v1", true, 1e-10, 1e-8, 50, observedState: obs),
+            MakeRunRecord("v2", true, 1e-10, 1e-8, 50, observedState: obs,
+                comparisonAdmissible: false));
+
+        var analyzer = new CanonicityAnalyzer();
+        var matrix = analyzer.ComputeAdmissibilityAgreement(sweep);
+
+        Assert.False(matrix.AllAgree);
+        Assert.False(matrix.Agrees[0, 1]);
+        Assert.True(matrix.AdmissibilityStatuses[0]);
+        Assert.False(matrix.AdmissibilityStatuses[1]);
+    }
+
+    // --- Stability Distance (D_stab) Tests ---
+
+    private static HessianSummary MakeStabilitySummary(
+        double smallestEigenvalue,
+        int negativeModeCount = 0,
+        int softModeCount = 0,
+        int nearKernelCount = 0,
+        string classification = "strictly-positive-on-slice") => new()
+    {
+        SmallestEigenvalue = smallestEigenvalue,
+        NegativeModeCount = negativeModeCount,
+        SoftModeCount = softModeCount,
+        NearKernelCount = nearKernelCount,
+        StabilityClassification = classification,
+        GaugeHandlingMode = "coulomb-slice",
+    };
+
+    private static readonly EquivalenceSpec StabilityEquivalence = new()
+    {
+        Id = "eq-stab-test",
+        Name = "Stability Equivalence",
+        ComparedObjectClasses = new[] { "stability" },
+        NormalizationProcedure = "none",
+        AllowedTransformations = Array.Empty<string>(),
+        Metrics = new[] { "D_stab" },
+        Tolerances = new Dictionary<string, double> { ["stability"] = 1.0 },
+        InterpretationRule = "all-within-tolerance",
+    };
+
+    [Fact]
+    public void StabilityDistances_IdenticalStability_ZeroDistance()
+    {
+        var stab = MakeStabilitySummary(1.0);
+        var sweep = MakeSweep(
+            MakeRunRecord("v1", true, 1e-10, 1e-8, 50, stabilityDiagnostics: stab),
+            MakeRunRecord("v2", true, 1e-10, 1e-8, 55, stabilityDiagnostics: stab));
+
+        var analyzer = new CanonicityAnalyzer();
+        var matrix = analyzer.ComputeStabilityDistances(sweep, StabilityEquivalence);
+
+        Assert.Equal("D_stab", matrix.MetricId);
+        Assert.Equal(0.0, matrix.Distances[0, 1]);
+        Assert.Equal(0.0, matrix.Distances[1, 0]);
+        Assert.Equal(0.0, matrix.Distances[0, 0]);
+    }
+
+    [Fact]
+    public void StabilityDistances_DifferentNegativeModeCount_NonZero()
+    {
+        var stab1 = MakeStabilitySummary(1.0, negativeModeCount: 0);
+        var stab2 = MakeStabilitySummary(1.0, negativeModeCount: 2);
+        var sweep = MakeSweep(
+            MakeRunRecord("v1", true, 1e-10, 1e-8, 50, stabilityDiagnostics: stab1),
+            MakeRunRecord("v2", true, 1e-10, 1e-8, 50, stabilityDiagnostics: stab2));
+
+        var analyzer = new CanonicityAnalyzer();
+        var matrix = analyzer.ComputeStabilityDistances(sweep, StabilityEquivalence);
+
+        // |1.0-1.0| + |0-2| + |0-0| = 2.0, normalized by 1.0
+        Assert.Equal(2.0, matrix.Distances[0, 1], precision: 10);
+    }
+
+    [Fact]
+    public void StabilityDistances_MissingStabilityData_NaN()
+    {
+        var stab = MakeStabilitySummary(1.0);
+        var sweep = MakeSweep(
+            MakeRunRecord("v1", true, 1e-10, 1e-8, 50, stabilityDiagnostics: stab),
+            MakeRunRecord("v2", true, 1e-10, 1e-8, 50, stabilityDiagnostics: null));
+
+        var analyzer = new CanonicityAnalyzer();
+        var matrix = analyzer.ComputeStabilityDistances(sweep, StabilityEquivalence);
+
+        Assert.True(double.IsNaN(matrix.Distances[0, 1]));
+        Assert.True(double.IsNaN(matrix.Distances[1, 0]));
+    }
+
+    [Fact]
+    public void StabilityDistances_DifferentEigenvalues_CorrectMetric()
+    {
+        var stab1 = MakeStabilitySummary(0.5, softModeCount: 1);
+        var stab2 = MakeStabilitySummary(-0.3, negativeModeCount: 1, softModeCount: 2);
+        var sweep = MakeSweep(
+            MakeRunRecord("v1", true, 1e-10, 1e-8, 50, stabilityDiagnostics: stab1),
+            MakeRunRecord("v2", true, 1e-10, 1e-8, 50, stabilityDiagnostics: stab2));
+
+        var analyzer = new CanonicityAnalyzer();
+        var matrix = analyzer.ComputeStabilityDistances(sweep, StabilityEquivalence);
+
+        // |0.5-(-0.3)| + |0-1| + |1-2| = 0.8 + 1 + 1 = 2.8
+        Assert.Equal(2.8, matrix.Distances[0, 1], precision: 10);
+    }
+
+    [Fact]
+    public void StabilityDistances_CustomNormalization()
+    {
+        var stab1 = MakeStabilitySummary(1.0);
+        var stab2 = MakeStabilitySummary(3.0);
+        var eqWithNorm = new EquivalenceSpec
+        {
+            Id = "eq-norm",
+            Name = "Normalized Stability",
+            ComparedObjectClasses = new[] { "stability" },
+            NormalizationProcedure = "none",
+            AllowedTransformations = Array.Empty<string>(),
+            Metrics = new[] { "D_stab" },
+            Tolerances = new Dictionary<string, double> { ["stability"] = 2.0 },
+            InterpretationRule = "all-within-tolerance",
+        };
+
+        var sweep = MakeSweep(
+            MakeRunRecord("v1", true, 1e-10, 1e-8, 50, stabilityDiagnostics: stab1),
+            MakeRunRecord("v2", true, 1e-10, 1e-8, 50, stabilityDiagnostics: stab2));
+
+        var analyzer = new CanonicityAnalyzer();
+        var matrix = analyzer.ComputeStabilityDistances(sweep, eqWithNorm);
+
+        // |1.0-3.0| / 2.0 = 1.0
+        Assert.Equal(1.0, matrix.Distances[0, 1], precision: 10);
     }
 }

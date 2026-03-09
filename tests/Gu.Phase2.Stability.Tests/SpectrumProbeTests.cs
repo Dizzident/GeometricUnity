@@ -138,7 +138,14 @@ public class SpectrumProbeTests
     }
 
     [Fact]
-    public void Lobpcg_Probe_DelegatesToLanczos()
+    public void Lobpcg_MethodId_IsLobpcg()
+    {
+        var probe = new LobpcgSpectrumProbe();
+        Assert.Equal("lobpcg", probe.MethodId);
+    }
+
+    [Fact]
+    public void Lobpcg_AgreesWithLanczos_OnHessianEigenvalues()
     {
         var mesh = SingleTriangle();
         var algebra = LieAlgebraFactory.CreateSu2WithTracePairing();
@@ -157,13 +164,57 @@ public class SpectrumProbeTests
             "bg-lobpcg", omega.ToFieldTensor(), a0.ToFieldTensor(),
             manifest, geometry, solverConverged: true);
 
+        var lanczos = new LanczosSpectrumProbe();
+        var lobpcg = new LobpcgSpectrumProbe();
+        int numEv = 2;
+
+        var lanczosRecord = workbench.ProbeHessianSpectrum(
+            bg, manifest, geometry, gaugeLambda: 1.0, lanczos, numEigenvalues: numEv);
+        var lobpcgRecord = workbench.ProbeHessianSpectrum(
+            bg, manifest, geometry, gaugeLambda: 1.0, lobpcg, numEigenvalues: numEv);
+
+        Assert.True(lobpcgRecord.ObtainedCount > 0, "LOBPCG should compute eigenvalues");
+        Assert.Equal("lobpcg", lobpcgRecord.ProbeMethod);
+
+        // Both should produce non-negative eigenvalues for PSD Hessian
+        int common = System.Math.Min(lanczosRecord.ObtainedCount, lobpcgRecord.ObtainedCount);
+        for (int i = 0; i < common; i++)
+        {
+            Assert.True(lobpcgRecord.Values[i] >= -1e-8,
+                $"LOBPCG eigenvalue {i} should be non-negative, got {lobpcgRecord.Values[i]:E6}");
+            // Eigenvalues should agree within tolerance
+            double relDiff = System.Math.Abs(lanczosRecord.Values[i] - lobpcgRecord.Values[i]) /
+                (1.0 + System.Math.Abs(lanczosRecord.Values[i]));
+            Assert.True(relDiff < 1e-4,
+                $"Eigenvalue {i}: Lanczos={lanczosRecord.Values[i]:E6}, LOBPCG={lobpcgRecord.Values[i]:E6}, relDiff={relDiff:E6}");
+        }
+    }
+
+    [Fact]
+    public void Lobpcg_HandlesNearDegenerateEigenvalues()
+    {
+        // Create a simple symmetric operator with known near-degenerate eigenvalues
+        var nearDegOp = new DiagonalOperator(new[] { 0.1, 0.1001, 0.5, 1.0, 2.0 });
         var probe = new LobpcgSpectrumProbe();
-        Assert.Equal("lanczos-delegated", probe.MethodId);
+        var result = probe.ComputeSmallestEigenvalues(nearDegOp, 3);
 
-        var record = workbench.ProbeHessianSpectrum(
-            bg, manifest, geometry, gaugeLambda: 1.0, probe, numEigenvalues: 2);
+        Assert.True(result.Values.Length >= 2, "Should compute at least 2 eigenvalues");
+        // First two eigenvalues should be near 0.1 and 0.1001
+        Assert.True(System.Math.Abs(result.Values[0] - 0.1) < 1e-4,
+            $"First eigenvalue should be ~0.1, got {result.Values[0]:E6}");
+        Assert.True(System.Math.Abs(result.Values[1] - 0.1001) < 1e-4,
+            $"Second eigenvalue should be ~0.1001, got {result.Values[1]:E6}");
+    }
 
-        Assert.True(record.ObtainedCount > 0);
+    [Fact]
+    public void Lobpcg_ReturnsEigenvectors()
+    {
+        var diagOp = new DiagonalOperator(new[] { 3.0, 1.0, 2.0, 5.0, 4.0 });
+        var probe = new LobpcgSpectrumProbe();
+        var result = probe.ComputeSmallestEigenvalues(diagOp, 2);
+
+        Assert.NotNull(result.Vectors);
+        Assert.True(result.Vectors.Length >= 2, "Should return eigenvectors");
     }
 
     [Fact]

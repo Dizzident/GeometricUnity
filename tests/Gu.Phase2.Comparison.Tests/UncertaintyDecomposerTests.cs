@@ -90,6 +90,8 @@ public sealed class UncertaintyDecomposerTests
         FinalResidualNorm = residualNorm,
         Iterations = 100,
         SolveMode = SolveMode.ObjectiveMinimization,
+        ExtractionSucceeded = converged,
+        ComparisonAdmissible = converged,
         ArtifactBundle = new ArtifactBundle
         {
             ArtifactId = "artifact-001",

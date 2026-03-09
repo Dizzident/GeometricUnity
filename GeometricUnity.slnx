@@ -24,10 +24,12 @@
     <Project Path="src/Gu.Phase2.Predictions/Gu.Phase2.Predictions.csproj" />
     <Project Path="src/Gu.Phase2.Comparison/Gu.Phase2.Comparison.csproj" />
     <Project Path="src/Gu.Phase2.Reporting/Gu.Phase2.Reporting.csproj" />
+    <Project Path="src/Gu.Phase2.CudaInterop/Gu.Phase2.CudaInterop.csproj" />
     <Project Path="src/Gu.ReferenceCpu/Gu.ReferenceCpu.csproj" />
     <Project Path="src/Gu.Solvers/Gu.Solvers.csproj" />
     <Project Path="src/Gu.Validation/Gu.Validation.csproj" />
     <Project Path="src/Gu.VulkanViewer/Gu.VulkanViewer.csproj" />
+    <Project Path="src/Gu.Phase2.Viz/Gu.Phase2.Viz.csproj" />
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/Gu.Core.Tests/Gu.Core.Tests.csproj" />
@@ -53,5 +55,10 @@
     <Project Path="tests/Gu.Phase2.Predictions.Tests/Gu.Phase2.Predictions.Tests.csproj" />
     <Project Path="tests/Gu.Phase2.Comparison.Tests/Gu.Phase2.Comparison.Tests.csproj" />
     <Project Path="tests/Gu.Phase2.Reporting.Tests/Gu.Phase2.Reporting.Tests.csproj" />
+    <Project Path="tests/Gu.Phase2.IntegrationTests/Gu.Phase2.IntegrationTests.csproj" />
+    <Project Path="tests/Gu.Phase2.ManufacturedSolutions/Gu.Phase2.ManufacturedSolutions.csproj" />
+    <Project Path="tests/Gu.Phase2.GoldenArtifacts/Gu.Phase2.GoldenArtifacts.csproj" />
+    <Project Path="tests/Gu.Phase2.CudaInterop.Tests/Gu.Phase2.CudaInterop.Tests.csproj" />
+    <Project Path="tests/Gu.Phase2.Viz.Tests/Gu.Phase2.Viz.Tests.csproj" />
   </Folder>
 </Solution>

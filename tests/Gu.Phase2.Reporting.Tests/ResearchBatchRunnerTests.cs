@@ -2,6 +2,7 @@ using Gu.Core;
 using Gu.Phase2.Canonicity;
 using Gu.Phase2.Continuation;
 using Gu.Phase2.Execution;
+using Gu.Phase2.Recovery;
 using Gu.Phase2.Reporting;
 using Gu.Phase2.Semantics;
 using Gu.Solvers;
@@ -199,17 +200,86 @@ public class ResearchBatchRunnerTests
         Assert.Equal(5, result.TotalBranchRuns);
     }
 
+    [Fact]
+    public void Run_ExecutesRecoveryStudiesInOrder()
+    {
+        var callOrder = new List<string>();
+        var recoveryResult = new List<PhysicalIdentificationRecord>
+        {
+            new()
+            {
+                IdentificationId = "pid-1",
+                FormalSource = "native-state-1",
+                ObservationExtractionMap = "sigma-pullback-standard",
+                SupportStatus = "numerical-only",
+                ApproximationStatus = "leading-order",
+                ComparisonTarget = "mass-ratio",
+                Falsifier = "mass-ratio > 10",
+                ResolvedClaimClass = ClaimClass.PostdictionTarget,
+            },
+        };
+
+        var runner = new ResearchBatchRunner(
+            _ => MakeSweepResult(0),
+            _ => MakeContinuationResult(0),
+            spec =>
+            {
+                callOrder.Add(spec.StudyId);
+                return recoveryResult;
+            });
+
+        var recoveryStudies = new[]
+        {
+            MakeRecoverySpec("recovery-1"),
+            MakeRecoverySpec("recovery-2"),
+        };
+        var spec = MakeBatchSpec("batch-recovery",
+            sweeps: [], stabilityStudies: [], campaignIds: [],
+            recoveryStudies: recoveryStudies);
+        var result = runner.Run(spec);
+
+        Assert.Equal(2, result.RecoveryResults.Count);
+        Assert.Equal(["recovery-1", "recovery-2"], callOrder);
+        Assert.Same(recoveryResult, result.RecoveryResults["recovery-1"]);
+    }
+
+    [Fact]
+    public void Run_NoRecoveryExecutor_SkipsRecoveryStudies()
+    {
+        var runner = new ResearchBatchRunner(
+            _ => MakeSweepResult(0),
+            _ => MakeContinuationResult(0));
+
+        var spec = MakeBatchSpec("batch-no-recovery",
+            sweeps: [], stabilityStudies: [], campaignIds: [],
+            recoveryStudies: [MakeRecoverySpec("recovery-1")]);
+        var result = runner.Run(spec);
+
+        Assert.Empty(result.RecoveryResults);
+    }
+
     // --- Helpers ---
+
+    private static RecoveryStudySpec MakeRecoverySpec(string studyId) => new()
+    {
+        StudyId = studyId,
+        SweepResultId = "sweep-result-1",
+        RecoveryGraphId = "graph-1",
+        EnforceIdentificationGate = true,
+        MaxAllowedClaimClass = "numerical-only",
+    };
 
     private static ResearchBatchSpec MakeBatchSpec(
         string batchId,
         IReadOnlyList<BranchSweepSpec> sweeps,
         IReadOnlyList<StabilityStudySpec> stabilityStudies,
-        IReadOnlyList<string> campaignIds) => new()
+        IReadOnlyList<string> campaignIds,
+        IReadOnlyList<RecoveryStudySpec>? recoveryStudies = null) => new()
     {
         BatchId = batchId,
         Sweeps = sweeps,
         StabilityStudies = stabilityStudies,
+        RecoveryStudies = recoveryStudies ?? [],
         ComparisonCampaignIds = campaignIds,
     };
 
@@ -329,6 +399,8 @@ public class ResearchBatchRunnerTests
             FinalResidualNorm = converged ? 1e-10 : 1.0,
             Iterations = 10,
             SolveMode = SolveMode.ResidualOnly,
+            ExtractionSucceeded = false,
+            ComparisonAdmissible = false,
             ArtifactBundle = new ArtifactBundle
             {
                 ArtifactId = $"art-{variantId}",

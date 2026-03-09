@@ -1,0 +1,191 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/study_spec.schema.json",
+  "title": "StudySpec",
+  "description": "Study specification types for Phase II research batches (Section 8.5). Covers BranchSweepSpec, StabilityStudySpec, RecoveryStudySpec, and ResearchBatchSpec.",
+  "type": "object",
+  "$defs": {
+    "BranchSweepSpec": {
+      "type": "object",
+      "description": "Specification for a branch sweep study.",
+      "required": [
+        "studyId",
+        "environmentId",
+        "familyId",
+        "variantIds",
+        "innerSolveMode",
+        "equivalence"
+      ],
+      "properties": {
+        "studyId": {
+          "type": "string",
+          "description": "Unique study identifier"
+        },
+        "environmentId": {
+          "type": "string",
+          "description": "Environment to run all variants against"
+        },
+        "familyId": {
+          "type": "string",
+          "description": "Branch family identifier"
+        },
+        "variantIds": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Variant IDs to include in the sweep"
+        },
+        "innerSolveMode": {
+          "type": "string",
+          "enum": ["ResidualOnly", "ObjectiveMinimization", "StationaritySolve"],
+          "description": "Solver mode"
+        },
+        "equivalence": {
+          "$ref": "equivalence_spec.schema.json",
+          "description": "Equivalence specification for comparing variants"
+        }
+      },
+      "additionalProperties": false
+    },
+    "StabilityStudySpec": {
+      "type": "object",
+      "description": "Specification for a stability study.",
+      "required": [
+        "studyId",
+        "backgroundStateId",
+        "branchManifestId",
+        "gaugeHandlingMode",
+        "requestedModeCount",
+        "spectrumProbeMethod",
+        "softModeThreshold",
+        "nearKernelThreshold",
+        "negativeModeThreshold"
+      ],
+      "properties": {
+        "studyId": {
+          "type": "string",
+          "description": "Unique study identifier"
+        },
+        "backgroundStateId": {
+          "type": "string",
+          "description": "Background state to linearize around"
+        },
+        "branchManifestId": {
+          "type": "string",
+          "description": "Branch manifest ID for the linearization"
+        },
+        "gaugeHandlingMode": {
+          "type": "string",
+          "description": "Gauge handling mode: gauge-free, coulomb-slice, etc."
+        },
+        "requestedModeCount": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Number of eigenvalues/modes to compute"
+        },
+        "spectrumProbeMethod": {
+          "type": "string",
+          "enum": ["lanczos", "lobpcg", "arnoldi", "randomized-svd"],
+          "description": "Spectrum probe method"
+        },
+        "softModeThreshold": {
+          "type": "number",
+          "description": "Eigenvalues below this are soft modes"
+        },
+        "nearKernelThreshold": {
+          "type": "number",
+          "description": "Eigenvalues below this are near-kernel modes"
+        },
+        "negativeModeThreshold": {
+          "type": "number",
+          "description": "Eigenvalues below this are negative modes"
+        }
+      },
+      "additionalProperties": false
+    },
+    "RecoveryStudySpec": {
+      "type": "object",
+      "description": "Specification for a recovery study.",
+      "required": [
+        "studyId",
+        "sweepResultId",
+        "recoveryGraphId",
+        "enforceIdentificationGate",
+        "maxAllowedClaimClass"
+      ],
+      "properties": {
+        "studyId": {
+          "type": "string",
+          "description": "Unique study identifier"
+        },
+        "sweepResultId": {
+          "type": "string",
+          "description": "Branch sweep result ID to use as input native state"
+        },
+        "recoveryGraphId": {
+          "type": "string",
+          "description": "Recovery graph definition ID"
+        },
+        "enforceIdentificationGate": {
+          "type": "boolean",
+          "description": "Whether to enforce physical-identification gate on all terminal nodes"
+        },
+        "maxAllowedClaimClass": {
+          "type": "string",
+          "enum": [
+            "ExactStructuralConsequence",
+            "ApproximateStructuralSurrogate",
+            "PostdictionTarget",
+            "SpeculativeInterpretation",
+            "Inadmissible"
+          ],
+          "description": "Maximum allowed claim class for gate-passing outputs"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ResearchBatchSpec": {
+      "type": "object",
+      "description": "Specification for a research batch composing multiple studies.",
+      "required": [
+        "batchId",
+        "sweeps",
+        "stabilityStudies",
+        "recoveryStudies",
+        "comparisonCampaignIds"
+      ],
+      "properties": {
+        "batchId": {
+          "type": "string",
+          "description": "Unique batch identifier"
+        },
+        "sweeps": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/BranchSweepSpec" },
+          "description": "Branch sweep studies in this batch"
+        },
+        "stabilityStudies": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/StabilityStudySpec" },
+          "description": "Stability studies in this batch"
+        },
+        "recoveryStudies": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/RecoveryStudySpec" },
+          "description": "Recovery studies in this batch"
+        },
+        "comparisonCampaignIds": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Comparison campaign IDs to run"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "oneOf": [
+    { "$ref": "#/$defs/BranchSweepSpec" },
+    { "$ref": "#/$defs/StabilityStudySpec" },
+    { "$ref": "#/$defs/RecoveryStudySpec" },
+    { "$ref": "#/$defs/ResearchBatchSpec" }
+  ]
+}

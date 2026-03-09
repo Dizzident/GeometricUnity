@@ -8,6 +8,7 @@
     <ProjectReference Include="..\Gu.Solvers\Gu.Solvers.csproj" />
     <ProjectReference Include="..\Gu.Phase2.Semantics\Gu.Phase2.Semantics.csproj" />
     <ProjectReference Include="..\Gu.Phase2.Branches\Gu.Phase2.Branches.csproj" />
+    <ProjectReference Include="..\Gu.Phase2.Stability\Gu.Phase2.Stability.csproj" />
   </ItemGroup>
 
 </Project>

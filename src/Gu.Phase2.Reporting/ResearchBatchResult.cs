@@ -1,6 +1,7 @@
 using System.Text.Json.Serialization;
 using Gu.Phase2.Continuation;
 using Gu.Phase2.Execution;
+using Gu.Phase2.Recovery;
 using Gu.Phase2.Semantics;
 
 namespace Gu.Phase2.Reporting;
@@ -23,6 +24,10 @@ public sealed class ResearchBatchResult
     /// <summary>Per-stability-study continuation results, keyed by study ID.</summary>
     [JsonPropertyName("stabilityResults")]
     public required IReadOnlyDictionary<string, ContinuationResult> StabilityResults { get; init; }
+
+    /// <summary>Per-recovery-study identification records, keyed by study ID.</summary>
+    [JsonPropertyName("recoveryResults")]
+    public required IReadOnlyDictionary<string, IReadOnlyList<PhysicalIdentificationRecord>> RecoveryResults { get; init; }
 
     /// <summary>Comparison campaign IDs that were executed.</summary>
     [JsonPropertyName("executedCampaignIds")]

@@ -48,9 +48,13 @@ public sealed class StabilityAtlas
     [JsonPropertyName("linearizationRecords")]
     public required IReadOnlyList<LinearizationRecord> LinearizationRecords { get; init; }
 
+    /// <summary>Gauge-fixed linearization records (L_tilde with gauge metadata).</summary>
+    [JsonPropertyName("gaugeFixedLinearizationRecords")]
+    public required IReadOnlyList<GaugeFixedLinearizationRecord> GaugeFixedLinearizationRecords { get; init; }
+
     /// <summary>Detected singularity/bifurcation indicators across all paths.</summary>
     [JsonPropertyName("bifurcationIndicators")]
-    public required IReadOnlyList<ContinuationEvent> BifurcationIndicators { get; init; }
+    public required IReadOnlyList<BifurcationIndicatorRecord> BifurcationIndicators { get; init; }
 
     /// <summary>Notes on discretization sensitivity.</summary>
     [JsonPropertyName("discretizationNotes")]

@@ -76,6 +76,36 @@ public sealed class StabilityStudySpec
 }
 
 /// <summary>
+/// Specification for a recovery study (Section 8.5).
+/// Links a branch sweep result to a recovery graph for systematic recovery execution.
+/// </summary>
+public sealed class RecoveryStudySpec
+{
+    /// <summary>Unique study identifier.</summary>
+    [JsonPropertyName("studyId")]
+    public required string StudyId { get; init; }
+
+    /// <summary>Branch sweep result ID to use as input native state.</summary>
+    [JsonPropertyName("sweepResultId")]
+    public required string SweepResultId { get; init; }
+
+    /// <summary>Recovery graph definition ID.</summary>
+    [JsonPropertyName("recoveryGraphId")]
+    public required string RecoveryGraphId { get; init; }
+
+    /// <summary>Whether to enforce physical-identification gate on all terminal nodes.</summary>
+    [JsonPropertyName("enforceIdentificationGate")]
+    public required bool EnforceIdentificationGate { get; init; }
+
+    /// <summary>
+    /// Maximum allowed claim class for gate-passing outputs.
+    /// Outputs exceeding this are automatically demoted.
+    /// </summary>
+    [JsonPropertyName("maxAllowedClaimClass")]
+    public required string MaxAllowedClaimClass { get; init; }
+}
+
+/// <summary>
 /// Specification for a research batch composing multiple studies (Section 8.5).
 /// Must preserve per-study branch and artifact boundaries.
 /// </summary>
@@ -92,6 +122,10 @@ public sealed class ResearchBatchSpec
     /// <summary>Stability studies in this batch.</summary>
     [JsonPropertyName("stabilityStudies")]
     public required IReadOnlyList<StabilityStudySpec> StabilityStudies { get; init; }
+
+    /// <summary>Recovery studies in this batch.</summary>
+    [JsonPropertyName("recoveryStudies")]
+    public required IReadOnlyList<RecoveryStudySpec> RecoveryStudies { get; init; }
 
     /// <summary>Comparison campaign IDs to run.</summary>
     [JsonPropertyName("comparisonCampaignIds")]
