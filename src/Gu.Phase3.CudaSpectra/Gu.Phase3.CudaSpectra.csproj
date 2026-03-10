@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Gu.Phase3.CudaSpectra.Tests" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gu.Core\Gu.Core.csproj" />
+    <ProjectReference Include="..\Gu.Branching\Gu.Branching.csproj" />
+    <ProjectReference Include="..\Gu.Geometry\Gu.Geometry.csproj" />
+    <ProjectReference Include="..\Gu.Math\Gu.Math.csproj" />
+    <ProjectReference Include="..\Gu.Interop\Gu.Interop.csproj" />
+    <ProjectReference Include="..\Gu.Phase3.Spectra\Gu.Phase3.Spectra.csproj" />
+    <ProjectReference Include="..\Gu.Phase3.Backgrounds\Gu.Phase3.Backgrounds.csproj" />
+    <ProjectReference Include="..\Gu.Phase3.GaugeReduction\Gu.Phase3.GaugeReduction.csproj" />
+  </ItemGroup>
+</Project>

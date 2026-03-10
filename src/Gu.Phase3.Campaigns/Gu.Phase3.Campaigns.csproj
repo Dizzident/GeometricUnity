@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Gu.Phase3.Campaigns.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Gu.Core\Gu.Core.csproj" />
+    <ProjectReference Include="..\Gu.Phase3.Registry\Gu.Phase3.Registry.csproj" />
+    <ProjectReference Include="..\Gu.Phase3.ModeTracking\Gu.Phase3.ModeTracking.csproj" />
+    <ProjectReference Include="..\Gu.Phase3.Spectra\Gu.Phase3.Spectra.csproj" />
+  </ItemGroup>
+
+</Project>

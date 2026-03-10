@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/background_study.schema.json",
+  "title": "BackgroundStudySpec",
+  "description": "Specification for a Phase III background atlas study.",
+  "type": "object",
+  "required": ["studyId", "specs"],
+  "properties": {
+    "studyId": {
+      "type": "string",
+      "description": "Unique study identifier"
+    },
+    "specs": {
+      "type": "array",
+      "description": "Background specifications to solve",
+      "items": { "$ref": "#/$defs/BackgroundSpec" }
+    },
+    "deduplicationThreshold": {
+      "type": "number",
+      "description": "State distance threshold for deduplication",
+      "default": 1e-6
+    },
+    "rankingCriteria": {
+      "type": "string",
+      "description": "Ranking criteria for admitted backgrounds",
+      "enum": ["admissibility-then-residual", "residual-then-stationarity", "stationarity-then-residual"],
+      "default": "admissibility-then-residual"
+    },
+    "notes": {
+      "type": ["string", "null"],
+      "description": "Human-readable notes"
+    }
+  },
+  "$defs": {
+    "BackgroundSpec": {
+      "type": "object",
+      "required": ["specId", "environmentId", "branchManifestId", "seed", "solveOptions"],
+      "properties": {
+        "specId": { "type": "string" },
+        "environmentId": { "type": "string" },
+        "branchManifestId": { "type": "string" },
+        "seed": { "$ref": "#/$defs/BackgroundSeed" },
+        "solveOptions": { "$ref": "#/$defs/BackgroundSolveOptions" },
+        "gaugeChoice": { "type": ["string", "null"] },
+        "continuationCoordinates": {
+          "type": ["object", "null"],
+          "additionalProperties": { "type": "number" }
+        },
+        "notes": { "type": ["string", "null"] }
+      }
+    },
+    "BackgroundSeed": {
+      "type": "object",
+      "required": ["kind"],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": ["Trivial", "SymmetricAnsatz", "Continuation", "CoarseGridTransfer", "Explicit"]
+        },
+        "continuationSourceId": { "type": ["string", "null"] },
+        "label": { "type": ["string", "null"] }
+      }
+    },
+    "BackgroundSolveOptions": {
+      "type": "object",
+      "required": ["solveMode"],
+      "properties": {
+        "solveMode": {
+          "type": "string",
+          "enum": ["ResidualOnly", "ObjectiveMinimization", "StationaritySolve"]
+        },
+        "solverMethod": { "type": "string" },
+        "maxIterations": { "type": "integer" },
+        "initialStepSize": { "type": "number" },
+        "gaugePenaltyLambda": { "type": "number" },
+        "toleranceResidualDiagnostic": { "type": "number" },
+        "toleranceStationary": { "type": "number" },
+        "toleranceResidualStrict": { "type": "number" }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="coverlet.collector" Version="6.0.4" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <PackageReference Include="xunit" Version="2.9.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Gu.Core\Gu.Core.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Solvers\Gu.Solvers.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Branching\Gu.Branching.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Geometry\Gu.Geometry.csproj" />
+    <ProjectReference Include="..\..\src\Gu.ReferenceCpu\Gu.ReferenceCpu.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase2.Semantics\Gu.Phase2.Semantics.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Math\Gu.Math.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase2.Stability\Gu.Phase2.Stability.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase3.Backgrounds\Gu.Phase3.Backgrounds.csproj" />
+  </ItemGroup>
+
+</Project>

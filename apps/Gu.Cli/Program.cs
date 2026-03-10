@@ -6,6 +6,7 @@ using Gu.Geometry;
 using Gu.Interop;
 using Gu.Math;
 using Gu.Observation;
+using Gu.Phase3.Backgrounds;
 using Gu.ReferenceCpu;
 using Gu.Solvers;
 using Gu.Validation;
@@ -38,6 +39,10 @@ switch (args[0])
         return Reproduce(args);
     case "sweep":
         return SweepBranches(args);
+    case "create-background-study":
+        return CreateBackgroundStudy(args);
+    case "solve-backgrounds":
+        return SolveBackgrounds(args);
     default:
         Console.Error.WriteLine($"Unknown command: {args[0]}");
         PrintUsage();
@@ -914,6 +919,194 @@ static int SweepBranches(string[] args)
     return 0;
 }
 
+static int CreateBackgroundStudy(string[] args)
+{
+    var outputPath = args.Length > 1 ? args[1] : "background-study.json";
+    var lieAlgebra = ParseFlag(args, "--lie-algebra", "su2");
+    var mode = ParseFlag(args, "--mode", "B");
+    var seedCount = int.Parse(ParseFlag(args, "--seeds", "3"));
+
+    var solveMode = mode.ToUpperInvariant() switch
+    {
+        "A" => SolveMode.ResidualOnly,
+        "C" => SolveMode.StationaritySolve,
+        _ => SolveMode.ObjectiveMinimization,
+    };
+
+    var specs = new List<BackgroundSpec>();
+    for (int i = 0; i < seedCount; i++)
+    {
+        specs.Add(new BackgroundSpec
+        {
+            SpecId = $"bg-spec-{i}",
+            EnvironmentId = "env-default",
+            BranchManifestId = "minimal-gu-v1",
+            Seed = new BackgroundSeed
+            {
+                Kind = i == 0 ? BackgroundSeedKind.Trivial : BackgroundSeedKind.SymmetricAnsatz,
+                Label = $"seed-{i}",
+            },
+            SolveOptions = new BackgroundSolveOptions
+            {
+                SolveMode = solveMode,
+                MaxIterations = 200,
+                ToleranceResidualDiagnostic = 1e-4,
+                ToleranceStationary = 1e-6,
+                ToleranceResidualStrict = 1e-8,
+            },
+        });
+    }
+
+    var study = new BackgroundStudySpec
+    {
+        StudyId = $"bg-study-{DateTimeOffset.UtcNow:yyyyMMddHHmmss}",
+        Specs = specs,
+    };
+
+    BackgroundAtlasSerializer.WriteStudy(study, outputPath);
+    Console.WriteLine($"Created background study: {outputPath}");
+    Console.WriteLine($"  Specs: {specs.Count}");
+    Console.WriteLine($"  Solve mode: {solveMode}");
+    return 0;
+}
+
+static int SolveBackgrounds(string[] args)
+{
+    if (args.Length < 2)
+    {
+        Console.Error.WriteLine("Usage: gu solve-backgrounds <study.json> [--output <dir>] [--lie-algebra su2|su3]");
+        return 1;
+    }
+
+    var studyPath = args[1];
+    if (!File.Exists(studyPath))
+    {
+        Console.Error.WriteLine($"Study file not found: {studyPath}");
+        return 1;
+    }
+
+    var outputDir = ParseFlag(args, "--output", Path.Combine(Path.GetDirectoryName(studyPath) ?? ".", "backgrounds"));
+    var lieAlgebra = ParseFlag(args, "--lie-algebra", "su2");
+
+    var studyJson = File.ReadAllText(studyPath);
+    var study = BackgroundAtlasSerializer.DeserializeStudy(studyJson);
+    if (study is null)
+    {
+        Console.Error.WriteLine("Failed to deserialize background study.");
+        return 1;
+    }
+
+    Console.WriteLine($"Solving background study: {study.StudyId}");
+    Console.WriteLine($"  Specs: {study.Specs.Count}");
+
+    // Set up geometry and solver
+    var algebra = CreateAlgebra(lieAlgebra);
+    var bundle = ToyGeometryFactory.CreateToy2D();
+    var mesh = bundle.AmbientMesh;
+    var geometry = bundle.ToGeometryContext("centroid", "P1");
+    var torsion = new TrivialTorsionCpu(mesh, algebra);
+    var shiab = new IdentityShiabCpu(mesh, algebra);
+    var backend = new CpuSolverBackend(mesh, algebra, torsion, shiab);
+
+    int edgeN = mesh.EdgeCount * algebra.Dimension;
+    var a0 = new FieldTensor
+    {
+        Label = "a0",
+        Signature = new TensorSignature
+        {
+            AmbientSpaceId = "Y_h",
+            CarrierType = "connection-1form",
+            Degree = "1",
+            LieAlgebraBasisId = "canonical",
+            ComponentOrderId = "edge-major",
+            MemoryLayout = "dense-row-major",
+        },
+        Coefficients = new double[edgeN],
+        Shape = new[] { mesh.EdgeCount, algebra.Dimension },
+    };
+
+    var manifest = new BranchManifest
+    {
+        BranchId = "minimal-gu-v1",
+        SchemaVersion = "1.0.0",
+        SourceEquationRevision = "r1",
+        CodeRevision = "cli-bg-study",
+        LieAlgebraId = algebra.AlgebraId,
+        BaseDimension = bundle.BaseMesh.EmbeddingDimension,
+        AmbientDimension = bundle.AmbientMesh.EmbeddingDimension,
+        ActiveGeometryBranch = "simplicial",
+        ActiveObservationBranch = "sigma-pullback",
+        ActiveTorsionBranch = "trivial",
+        ActiveShiabBranch = "identity-shiab",
+        ActiveGaugeStrategy = "penalty",
+        PairingConventionId = algebra.PairingId == "trace" ? "pairing-trace" : "pairing-killing",
+        BasisConventionId = "canonical",
+        ComponentOrderId = "face-major",
+        AdjointConventionId = "adjoint-explicit",
+        NormConventionId = "norm-l2-quadrature",
+        DifferentialFormMetricId = "hodge-standard",
+        InsertedAssumptionIds = Array.Empty<string>(),
+        InsertedChoiceIds = new[] { "IX-1", "IX-2" },
+    };
+
+    var branchRef = new BranchRef
+    {
+        BranchId = manifest.BranchId,
+        SchemaVersion = manifest.SchemaVersion,
+    };
+    var provenance = new ProvenanceMeta
+    {
+        CreatedAt = DateTimeOffset.UtcNow,
+        CodeRevision = manifest.CodeRevision,
+        Branch = branchRef,
+        Backend = "cpu-reference",
+    };
+
+    var manifests = new Dictionary<string, BranchManifest> { [manifest.BranchId] = manifest };
+    var geometries = new Dictionary<string, GeometryContext> { ["env-default"] = geometry };
+    var a0s = new Dictionary<string, FieldTensor> { ["env-default"] = a0 };
+
+    var builder = new BackgroundAtlasBuilder(backend);
+    var atlas = builder.Build(study, manifests, geometries, a0s, provenance);
+
+    // Write atlas
+    Directory.CreateDirectory(outputDir);
+    var atlasPath = Path.Combine(outputDir, "atlas.json");
+    BackgroundAtlasSerializer.WriteAtlas(atlas, atlasPath);
+
+    // Write individual records
+    var recordsDir = Path.Combine(outputDir, "background_records");
+    Directory.CreateDirectory(recordsDir);
+    foreach (var bg in atlas.Backgrounds)
+    {
+        BackgroundAtlasSerializer.WriteRecord(bg, Path.Combine(recordsDir, $"{bg.BackgroundId}.json"));
+    }
+    foreach (var bg in atlas.RejectedBackgrounds)
+    {
+        BackgroundAtlasSerializer.WriteRecord(bg, Path.Combine(recordsDir, $"{bg.BackgroundId}.json"));
+    }
+
+    Console.WriteLine();
+    Console.WriteLine($"Background atlas built:");
+    Console.WriteLine($"  Atlas ID: {atlas.AtlasId}");
+    Console.WriteLine($"  Total attempts: {atlas.TotalAttempts}");
+    Console.WriteLine($"  Admitted: {atlas.Backgrounds.Count}");
+    Console.WriteLine($"  Rejected: {atlas.RejectedBackgrounds.Count}");
+    foreach (var (level, count) in atlas.AdmissibilityCounts)
+        Console.WriteLine($"    {level}: {count}");
+
+    foreach (var bg in atlas.Backgrounds)
+    {
+        Console.WriteLine($"  {bg.BackgroundId}: {bg.AdmissibilityLevel} " +
+                          $"residual={bg.ResidualNorm:E6} stationarity={bg.StationarityNorm:E6}");
+    }
+
+    Console.WriteLine();
+    Console.WriteLine($"Atlas written to: {atlasPath}");
+    Console.WriteLine($"Records written to: {recordsDir}");
+    return 0;
+}
+
 static void PrintUsage()
 {
     Console.WriteLine("Geometric Unity CLI");
@@ -926,6 +1119,8 @@ static void PrintUsage()
     Console.WriteLine("  gu solve <run-folder> [options]             Init + run in one step");
     Console.WriteLine("  gu reproduce <run-folder> [replay] [--validate]  Reproduce a run from its replay contract");
     Console.WriteLine("  gu sweep --branches b1,b2 [--output dir]   Sweep branches and compare results");
+    Console.WriteLine("  gu create-background-study [output.json]   Create a background study spec");
+    Console.WriteLine("  gu solve-backgrounds <study.json> [opts]   Solve backgrounds and build atlas");
     Console.WriteLine("  gu validate-replay <orig> <replay> [tier]   Validate replay (R0/R1/R2/R3)");
     Console.WriteLine("  gu verify-integrity <run-folder>            Verify or compute integrity hashes");
     Console.WriteLine("  gu validate-schema <file> <schema>          Validate JSON against a schema");

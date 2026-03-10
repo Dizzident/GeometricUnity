@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/background_record.schema.json",
+  "title": "BackgroundRecord",
+  "description": "Complete record of a solved background state for Phase III.",
+  "type": "object",
+  "required": [
+    "backgroundId",
+    "environmentId",
+    "branchManifestId",
+    "geometryFingerprint",
+    "stateArtifactRef",
+    "residualNorm",
+    "stationarityNorm",
+    "admissibilityLevel",
+    "metrics",
+    "replayTierAchieved",
+    "provenance"
+  ],
+  "properties": {
+    "backgroundId": { "type": "string" },
+    "environmentId": { "type": "string" },
+    "branchManifestId": { "type": "string" },
+    "continuationCoordinates": {
+      "type": ["object", "null"],
+      "additionalProperties": { "type": "number" }
+    },
+    "geometryFingerprint": { "type": "string" },
+    "gaugeChoice": { "type": ["string", "null"] },
+    "stateArtifactRef": { "type": "string" },
+    "residualNorm": { "type": "number" },
+    "stationarityNorm": { "type": "number" },
+    "admissibilityLevel": {
+      "type": "string",
+      "enum": ["B0", "B1", "B2", "Rejected"]
+    },
+    "metrics": {
+      "type": "object",
+      "required": ["residualNorm", "stationarityNorm", "objectiveValue", "gaugeViolation", "solverIterations", "solverConverged", "terminationReason"],
+      "properties": {
+        "residualNorm": { "type": "number" },
+        "stationarityNorm": { "type": "number" },
+        "objectiveValue": { "type": "number" },
+        "gaugeViolation": { "type": "number" },
+        "solverIterations": { "type": "integer" },
+        "solverConverged": { "type": "boolean" },
+        "terminationReason": { "type": "string" }
+      }
+    },
+    "solveTraceRef": { "type": ["string", "null"] },
+    "replayTierAchieved": { "type": "string" },
+    "provenance": { "type": "object" },
+    "rejectionReason": { "type": ["string", "null"] },
+    "notes": { "type": ["string", "null"] }
+  }
+}
