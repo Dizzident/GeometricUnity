@@ -22,6 +22,7 @@
     <ProjectReference Include="..\..\src\Gu.Geometry\Gu.Geometry.csproj" />
     <ProjectReference Include="..\..\src\Gu.Phase3.Spectra\Gu.Phase3.Spectra.csproj" />
     <ProjectReference Include="..\..\src\Gu.Phase3.ModeTracking\Gu.Phase3.ModeTracking.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase3.Observables\Gu.Phase3.Observables.csproj" />
   </ItemGroup>
 
 </Project>

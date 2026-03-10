@@ -216,8 +216,8 @@ public class BosonCampaignTests
         var result = runner.Run(spec, registry,
             new Dictionary<string, BosonTargetProfile>(), descriptors);
 
-        Assert.Equal(1, result.Results.Count);
-        Assert.Equal(ComparisonVerdict.Compatible, result.Results[0].Verdict);
+        var singleResult = Assert.Single(result.Results);
+        Assert.Equal(ComparisonVerdict.Compatible, singleResult.Verdict);
     }
 
     [Fact]

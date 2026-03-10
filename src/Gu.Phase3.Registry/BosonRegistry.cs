@@ -90,4 +90,63 @@ public sealed class BosonRegistry
         var result = JsonSerializer.Deserialize<BosonRegistry>(json, options);
         return result ?? throw new InvalidOperationException("Failed to deserialize BosonRegistry.");
     }
+
+    /// <summary>
+    /// Compute the diff from this (base) registry to another registry.
+    /// </summary>
+    public RegistryDiff Diff(BosonRegistry other)
+    {
+        ArgumentNullException.ThrowIfNull(other);
+
+        var baseIds = new HashSet<string>(_candidates.Select(c => c.CandidateId));
+        var otherIds = new HashSet<string>(other.Candidates.Select(c => c.CandidateId));
+
+        var newIds = otherIds.Except(baseIds).ToList();
+        var removedIds = baseIds.Except(otherIds).ToList();
+
+        var baseLookup = _candidates.ToDictionary(c => c.CandidateId);
+        var otherLookup = other.Candidates.ToDictionary(c => c.CandidateId);
+
+        var claimChanges = new List<ClaimClassChange>();
+        var demotionChanges = new List<DemotionChange>();
+
+        foreach (var id in baseIds.Intersect(otherIds))
+        {
+            var baseRecord = baseLookup[id];
+            var otherRecord = otherLookup[id];
+
+            if (baseRecord.ClaimClass != otherRecord.ClaimClass)
+            {
+                claimChanges.Add(new ClaimClassChange
+                {
+                    CandidateId = id,
+                    Before = baseRecord.ClaimClass,
+                    After = otherRecord.ClaimClass,
+                });
+            }
+
+            var baseReasons = new HashSet<DemotionReason>(
+                baseRecord.Demotions.Select(d => d.Reason));
+            var addedDemotions = otherRecord.Demotions
+                .Where(d => !baseReasons.Contains(d.Reason))
+                .ToList();
+
+            if (addedDemotions.Count > 0)
+            {
+                demotionChanges.Add(new DemotionChange
+                {
+                    CandidateId = id,
+                    Added = addedDemotions,
+                });
+            }
+        }
+
+        return new RegistryDiff
+        {
+            NewCandidateIds = newIds,
+            RemovedCandidateIds = removedIds,
+            ClaimClassChanges = claimChanges,
+            DemotionChanges = demotionChanges,
+        };
+    }
 }

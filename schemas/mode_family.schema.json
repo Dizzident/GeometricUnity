@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/mode_family.schema.json",
+  "title": "ModeFamilyRecord",
+  "description": "A mode family: a set of modes across different contexts identified as the same physical mode by the matching engine.",
+  "type": "object",
+  "required": [
+    "familyId",
+    "memberModeIds",
+    "contextIds",
+    "meanEigenvalue",
+    "eigenvalueSpread",
+    "isStable",
+    "ambiguityCount",
+    "alignments"
+  ],
+  "properties": {
+    "familyId": {
+      "type": "string",
+      "description": "Unique family identifier"
+    },
+    "memberModeIds": {
+      "type": "array",
+      "description": "Mode IDs that belong to this family, across all contexts",
+      "items": { "type": "string" }
+    },
+    "contextIds": {
+      "type": "array",
+      "description": "Context IDs (background IDs, branch IDs, etc.) in which this family has members",
+      "items": { "type": "string" }
+    },
+    "meanEigenvalue": {
+      "type": "number",
+      "description": "Mean eigenvalue across all members"
+    },
+    "eigenvalueSpread": {
+      "type": "number",
+      "description": "Eigenvalue spread across all members",
+      "minimum": 0
+    },
+    "isStable": {
+      "type": "boolean",
+      "description": "Whether the family is stable (all members matched with high confidence)"
+    },
+    "ambiguityCount": {
+      "type": "integer",
+      "description": "Number of ambiguous matches in this family's history",
+      "minimum": 0
+    },
+    "alignments": {
+      "type": "array",
+      "description": "Alignment records tracing how modes were matched across contexts",
+      "items": { "$ref": "#/$defs/ModeAlignmentRecord" }
+    }
+  },
+  "$defs": {
+    "ModeAlignmentRecord": {
+      "type": "object",
+      "required": ["sourceModeId", "targetModeId", "metrics", "alignmentType", "confidence"],
+      "properties": {
+        "sourceModeId": {
+          "type": "string",
+          "description": "Mode ID in context A (source)"
+        },
+        "targetModeId": {
+          "type": "string",
+          "description": "Mode ID in context B (target)"
+        },
+        "metrics": { "$ref": "#/$defs/ModeMatchMetricSet" },
+        "alignmentType": {
+          "type": "string",
+          "description": "Alignment type: matched, birth, death, split, merge, avoided-crossing",
+          "enum": ["matched", "birth", "death", "split", "merge", "avoided-crossing"]
+        },
+        "confidence": {
+          "type": "number",
+          "description": "Confidence level [0, 1]. Low confidence indicates ambiguity.",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "ambiguityNotes": {
+          "type": ["string", "null"],
+          "description": "Ambiguity notes (if matching was ambiguous)"
+        }
+      }
+    },
+    "ModeMatchMetricSet": {
+      "type": "object",
+      "required": ["featureDistance", "aggregateScore", "isMatch"],
+      "properties": {
+        "nativeOverlap": {
+          "type": ["number", "null"],
+          "description": "O1: Native inner product overlap |v1^T M_state v2|"
+        },
+        "observedSignatureOverlap": {
+          "type": ["number", "null"],
+          "description": "O2: Observed signature overlap similarity(Obs(v1), Obs(v2))"
+        },
+        "featureDistance": {
+          "type": "number",
+          "description": "O3: Invariant feature distance. Lower = more similar."
+        },
+        "aggregateScore": {
+          "type": "number",
+          "description": "Weighted aggregate score. Higher = better match. Range [0, 1]."
+        },
+        "isMatch": {
+          "type": "boolean",
+          "description": "Whether the aggregate score exceeds the matching threshold"
+        }
+      }
+    }
+  }
+}

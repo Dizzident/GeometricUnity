@@ -96,6 +96,13 @@ public class SpectralKernelFactoryTests
     }
 
     [Fact]
+    public void GetCudaStatus_ReturnsNotAvailable_WhenCudaUnavailable()
+    {
+        var status = SpectralKernelFactory.GetCudaStatus();
+        Assert.Equal(CudaVerificationStatus.NotAvailable, status);
+    }
+
+    [Fact]
     public void CreateKernel_NullBundle_Throws()
     {
         var factory = new SpectralKernelFactory(new CudaSpectralConfig());

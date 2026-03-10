@@ -1,0 +1,227 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/boson_report.schema.json",
+  "title": "BosonAtlasReport",
+  "description": "A complete boson atlas report: the top-level output of a Phase III study.",
+  "type": "object",
+  "required": [
+    "reportId",
+    "studyId",
+    "registryVersion",
+    "spectrumSheets",
+    "stabilitySummaries",
+    "ambiguityEntries",
+    "negativeResults",
+    "campaignResults",
+    "claimClassCounts",
+    "generatedAt"
+  ],
+  "properties": {
+    "reportId": {
+      "type": "string",
+      "description": "Unique report identifier"
+    },
+    "studyId": {
+      "type": "string",
+      "description": "Study identifier that produced this report"
+    },
+    "registryVersion": {
+      "type": "string",
+      "description": "Registry version used for this report"
+    },
+    "spectrumSheets": {
+      "type": "array",
+      "description": "Per-background spectral summaries",
+      "items": { "$ref": "#/$defs/SpectrumSheet" }
+    },
+    "stabilitySummaries": {
+      "type": "array",
+      "description": "Per-candidate stability assessments",
+      "items": { "$ref": "#/$defs/StabilitySummary" }
+    },
+    "ambiguityEntries": {
+      "type": "array",
+      "description": "Ambiguity map entries",
+      "items": { "$ref": "#/$defs/AmbiguityMapEntry" }
+    },
+    "negativeResults": {
+      "type": "array",
+      "description": "Negative result summaries",
+      "items": { "$ref": "#/$defs/NegativeResultSummary" }
+    },
+    "campaignResults": {
+      "type": "array",
+      "description": "Campaign results included in this report",
+      "items": { "$ref": "#/$defs/BosonCampaignResult" }
+    },
+    "totalCandidates": {
+      "type": "integer",
+      "description": "Total candidates in the registry"
+    },
+    "claimClassCounts": {
+      "type": "object",
+      "description": "Count of candidates at or above each claim class",
+      "additionalProperties": { "type": "integer" }
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when this report was generated"
+    }
+  },
+  "$defs": {
+    "SpectrumSheet": {
+      "type": "object",
+      "required": ["backgroundId", "eigenvalues", "multiplicities", "gaugeLeaks", "convergenceStatus"],
+      "properties": {
+        "backgroundId": { "type": "string" },
+        "eigenvalues": {
+          "type": "array",
+          "items": { "type": "number" }
+        },
+        "multiplicities": {
+          "type": "array",
+          "items": { "type": "integer" }
+        },
+        "gaugeLeaks": {
+          "type": "array",
+          "items": { "type": "number" }
+        },
+        "modeCount": { "type": "integer" },
+        "convergenceStatus": { "type": "string" }
+      }
+    },
+    "StabilitySummary": {
+      "type": "object",
+      "required": ["candidateId", "currentClaimClass", "overallAssessment"],
+      "properties": {
+        "candidateId": { "type": "string" },
+        "branchStability": { "type": "number" },
+        "refinementStability": { "type": "number" },
+        "backendStability": { "type": "number" },
+        "observationStability": { "type": "number" },
+        "demotionCount": { "type": "integer" },
+        "currentClaimClass": {
+          "type": "string",
+          "enum": [
+            "C0_NumericalMode",
+            "C1_LocalPersistentMode",
+            "C2_BranchStableBosonicCandidate",
+            "C3_ObservedStableCandidate",
+            "C4_PhysicalAnalogyCandidate",
+            "C5_StrongIdentificationCandidate"
+          ]
+        },
+        "overallAssessment": {
+          "type": "string",
+          "description": "Overall stability assessment: stable, fragile, or unstable"
+        }
+      }
+    },
+    "AmbiguityMapEntry": {
+      "type": "object",
+      "required": ["candidateId", "ambiguityType", "notes"],
+      "properties": {
+        "candidateId": { "type": "string" },
+        "ambiguityType": {
+          "type": "string",
+          "description": "Type of ambiguity: matching, identification, or comparison"
+        },
+        "notes": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "alternativeCount": { "type": "integer" }
+      }
+    },
+    "NegativeResultSummary": {
+      "type": "object",
+      "required": ["candidateId", "resultType", "description"],
+      "properties": {
+        "candidateId": { "type": "string" },
+        "resultType": {
+          "type": "string",
+          "description": "Type of negative result: demotion, comparison-incompatible, comparison-underdetermined, insufficient-evidence"
+        },
+        "description": { "type": "string" },
+        "originalClaimClass": {
+          "type": ["string", "null"],
+          "enum": [
+            "C0_NumericalMode",
+            "C1_LocalPersistentMode",
+            "C2_BranchStableBosonicCandidate",
+            "C3_ObservedStableCandidate",
+            "C4_PhysicalAnalogyCandidate",
+            "C5_StrongIdentificationCandidate",
+            null
+          ]
+        },
+        "finalClaimClass": {
+          "type": ["string", "null"],
+          "enum": [
+            "C0_NumericalMode",
+            "C1_LocalPersistentMode",
+            "C2_BranchStableBosonicCandidate",
+            "C3_ObservedStableCandidate",
+            "C4_PhysicalAnalogyCandidate",
+            "C5_StrongIdentificationCandidate",
+            null
+          ]
+        }
+      }
+    },
+    "BosonCampaignResult": {
+      "type": "object",
+      "required": ["campaignId", "mode", "results", "negativeResults"],
+      "properties": {
+        "campaignId": { "type": "string" },
+        "mode": {
+          "type": "string",
+          "enum": ["InternalTargetProfile", "ExternalAnalogy"]
+        },
+        "results": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/BosonComparisonResult" }
+        },
+        "negativeResults": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/BosonComparisonResult" }
+        },
+        "candidatesCompared": { "type": "integer" },
+        "targetsUsed": { "type": "integer" },
+        "completedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "BosonComparisonResult": {
+      "type": "object",
+      "required": ["candidateId", "targetId", "verdict"],
+      "properties": {
+        "candidateId": { "type": "string" },
+        "targetId": { "type": "string" },
+        "verdict": {
+          "type": "string",
+          "description": "Comparison verdict"
+        },
+        "compatibilityScore": { "type": "number" },
+        "notes": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "candidateClaimClass": {
+          "type": "string",
+          "enum": [
+            "C0_NumericalMode",
+            "C1_LocalPersistentMode",
+            "C2_BranchStableBosonicCandidate",
+            "C3_ObservedStableCandidate",
+            "C4_PhysicalAnalogyCandidate",
+            "C5_StrongIdentificationCandidate"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -17,8 +17,11 @@ public sealed class DemotionConfig
     /// <summary>Backend stability threshold.</summary>
     public double BackendStabilityThreshold { get; init; } = 0.8;
 
-    /// <summary>Observation stability threshold.</summary>
-    public double ObservationStabilityThreshold { get; init; } = 0.5;
+    /// <summary>Observation instability threshold. Scores below this trigger demotion by 1.</summary>
+    public double ObservationInstabilityThreshold { get; init; } = 0.4;
+
+    /// <summary>Ambiguous matching threshold. AmbiguityCount above this triggers demotion by 1.</summary>
+    public int AmbiguousMatchingThreshold { get; init; } = 2;
 }
 
 /// <summary>
@@ -126,30 +129,125 @@ public sealed class DemotionEngine
             currentClass = newClass;
         }
 
+        // Rule 5: Unverified GPU -> cap at C1
+        // Enforces IA-5: no high-claim candidate depends on unverified GPU-only logic.
+        if (candidate.ComputedWithUnverifiedGpu &&
+            currentClass > BosonClaimClass.C1_LocalPersistentMode)
+        {
+            var newClass = BosonClaimClass.C1_LocalPersistentMode;
+            demotions.Add(new BosonDemotionRecord
+            {
+                CandidateId = candidate.CandidateId,
+                Reason = DemotionReason.BackendFragility,
+                PreviousClaimClass = currentClass,
+                DemotedClaimClass = newClass,
+                Details = "Contributing modes computed with unverified GPU backend. Claim class capped at C1 per IA-5.",
+            });
+            currentClass = newClass;
+        }
+
+        // Rule 6: Observation instability -> demote by 1
+        if (candidate.ObservationStabilityScore < _config.ObservationInstabilityThreshold &&
+            currentClass > BosonClaimClass.C0_NumericalMode)
+        {
+            var newClass = (BosonClaimClass)System.Math.Max(0, (int)currentClass - 1);
+            demotions.Add(new BosonDemotionRecord
+            {
+                CandidateId = candidate.CandidateId,
+                Reason = DemotionReason.ObservationInstability,
+                PreviousClaimClass = currentClass,
+                DemotedClaimClass = newClass,
+                Details = $"Observation stability {candidate.ObservationStabilityScore:F4} < threshold {_config.ObservationInstabilityThreshold:F4}",
+                TriggerValue = candidate.ObservationStabilityScore,
+                Threshold = _config.ObservationInstabilityThreshold,
+            });
+            currentClass = newClass;
+        }
+
+        // Rule 7: Ambiguous matching -> demote by 1
+        if (candidate.AmbiguityCount > _config.AmbiguousMatchingThreshold &&
+            currentClass > BosonClaimClass.C0_NumericalMode)
+        {
+            var newClass = (BosonClaimClass)System.Math.Max(0, (int)currentClass - 1);
+            demotions.Add(new BosonDemotionRecord
+            {
+                CandidateId = candidate.CandidateId,
+                Reason = DemotionReason.AmbiguousMatching,
+                PreviousClaimClass = currentClass,
+                DemotedClaimClass = newClass,
+                Details = $"Ambiguity count {candidate.AmbiguityCount} > threshold {_config.AmbiguousMatchingThreshold}",
+                TriggerValue = candidate.AmbiguityCount,
+                Threshold = _config.AmbiguousMatchingThreshold,
+            });
+            currentClass = newClass;
+        }
+
         // Return updated record if demoted
         if (currentClass != candidate.ClaimClass)
         {
-            return new CandidateBosonRecord
-            {
-                CandidateId = candidate.CandidateId,
-                PrimaryFamilyId = candidate.PrimaryFamilyId,
-                ContributingModeIds = candidate.ContributingModeIds,
-                BackgroundSet = candidate.BackgroundSet,
-                BranchVariantSet = candidate.BranchVariantSet,
-                MassLikeEnvelope = candidate.MassLikeEnvelope,
-                MultiplicityEnvelope = candidate.MultiplicityEnvelope,
-                GaugeLeakEnvelope = candidate.GaugeLeakEnvelope,
-                BranchStabilityScore = candidate.BranchStabilityScore,
-                RefinementStabilityScore = candidate.RefinementStabilityScore,
-                BackendStabilityScore = candidate.BackendStabilityScore,
-                ObservationStabilityScore = candidate.ObservationStabilityScore,
-                ClaimClass = currentClass,
-                Demotions = demotions,
-                AmbiguityNotes = candidate.AmbiguityNotes,
-                RegistryVersion = candidate.RegistryVersion,
-            };
+            return CopyWithDemotion(candidate, currentClass, demotions);
         }
 
         return candidate;
+    }
+
+    /// <summary>
+    /// Apply comparison mismatch demotion externally (called by campaign runner).
+    /// If all comparison results are incompatible, cap claim class at C1.
+    /// </summary>
+    public CandidateBosonRecord ApplyComparisonMismatch(
+        CandidateBosonRecord record,
+        bool allResultsIncompatible)
+    {
+        ArgumentNullException.ThrowIfNull(record);
+
+        if (!allResultsIncompatible || record.ClaimClass <= BosonClaimClass.C1_LocalPersistentMode)
+            return record;
+
+        var newClass = BosonClaimClass.C1_LocalPersistentMode;
+        var demotions = new List<BosonDemotionRecord>(record.Demotions)
+        {
+            new BosonDemotionRecord
+            {
+                CandidateId = record.CandidateId,
+                Reason = DemotionReason.ComparisonMismatch,
+                PreviousClaimClass = record.ClaimClass,
+                DemotedClaimClass = newClass,
+                Details = "All comparison campaign results incompatible. Claim class capped at C1.",
+            },
+        };
+
+        return CopyWithDemotion(record, newClass, demotions);
+    }
+
+    private static CandidateBosonRecord CopyWithDemotion(
+        CandidateBosonRecord source,
+        BosonClaimClass newClass,
+        List<BosonDemotionRecord> demotions)
+    {
+        return new CandidateBosonRecord
+        {
+            CandidateId = source.CandidateId,
+            PrimaryFamilyId = source.PrimaryFamilyId,
+            ContributingModeIds = source.ContributingModeIds,
+            BackgroundSet = source.BackgroundSet,
+            BranchVariantSet = source.BranchVariantSet,
+            MassLikeEnvelope = source.MassLikeEnvelope,
+            MultiplicityEnvelope = source.MultiplicityEnvelope,
+            GaugeLeakEnvelope = source.GaugeLeakEnvelope,
+            PolarizationEnvelope = source.PolarizationEnvelope,
+            SymmetryEnvelope = source.SymmetryEnvelope,
+            InteractionProxyEnvelope = source.InteractionProxyEnvelope,
+            BranchStabilityScore = source.BranchStabilityScore,
+            RefinementStabilityScore = source.RefinementStabilityScore,
+            BackendStabilityScore = source.BackendStabilityScore,
+            ObservationStabilityScore = source.ObservationStabilityScore,
+            ComputedWithUnverifiedGpu = source.ComputedWithUnverifiedGpu,
+            ClaimClass = newClass,
+            Demotions = demotions,
+            AmbiguityCount = source.AmbiguityCount,
+            AmbiguityNotes = source.AmbiguityNotes,
+            RegistryVersion = source.RegistryVersion,
+        };
     }
 }

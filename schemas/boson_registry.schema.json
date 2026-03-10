@@ -1,0 +1,235 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/boson_registry.schema.json",
+  "title": "BosonRegistry",
+  "description": "The boson registry: a collection of candidate boson records with claim classification and demotion history.",
+  "type": "object",
+  "required": ["registryVersion", "candidates"],
+  "properties": {
+    "registryVersion": {
+      "type": "string",
+      "description": "Registry version string"
+    },
+    "candidates": {
+      "type": "array",
+      "description": "All registered candidate boson records",
+      "items": { "$ref": "#/$defs/CandidateBosonRecord" }
+    }
+  },
+  "$defs": {
+    "CandidateBosonRecord": {
+      "type": "object",
+      "required": [
+        "candidateId",
+        "primaryFamilyId",
+        "contributingModeIds",
+        "backgroundSet",
+        "massLikeEnvelope",
+        "multiplicityEnvelope",
+        "gaugeLeakEnvelope",
+        "claimClass",
+        "registryVersion"
+      ],
+      "properties": {
+        "candidateId": {
+          "type": "string",
+          "description": "Unique candidate identifier"
+        },
+        "primaryFamilyId": {
+          "type": "string",
+          "description": "Primary mode family ID from tracking"
+        },
+        "contributingModeIds": {
+          "type": "array",
+          "description": "All contributing mode IDs",
+          "items": { "type": "string" }
+        },
+        "backgroundSet": {
+          "type": "array",
+          "description": "Background IDs where this candidate was observed",
+          "items": { "type": "string" }
+        },
+        "branchVariantSet": {
+          "type": "array",
+          "description": "Branch variant IDs where this candidate persists",
+          "items": { "type": "string" }
+        },
+        "massLikeEnvelope": {
+          "type": "array",
+          "description": "Mass-like scale envelope: [min, mean, max] across contexts",
+          "items": { "type": "number" },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "multiplicityEnvelope": {
+          "type": "array",
+          "description": "Multiplicity envelope: [min, mean, max] across contexts",
+          "items": { "type": "integer" },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "gaugeLeakEnvelope": {
+          "type": "array",
+          "description": "Gauge leak score envelope: [min, mean, max]",
+          "items": { "type": "number" },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "branchStabilityScore": {
+          "type": "number",
+          "description": "Branch stability score [0, 1]. Higher = more stable."
+        },
+        "refinementStabilityScore": {
+          "type": "number",
+          "description": "Refinement stability score [0, 1]"
+        },
+        "backendStabilityScore": {
+          "type": "number",
+          "description": "Backend stability score [0, 1]"
+        },
+        "observationStabilityScore": {
+          "type": "number",
+          "description": "Observation stability score [0, 1]"
+        },
+        "claimClass": {
+          "type": "string",
+          "description": "Current claim class",
+          "enum": [
+            "C0_NumericalMode",
+            "C1_LocalPersistentMode",
+            "C2_BranchStableBosonicCandidate",
+            "C3_ObservedStableCandidate",
+            "C4_PhysicalAnalogyCandidate",
+            "C5_StrongIdentificationCandidate"
+          ]
+        },
+        "demotions": {
+          "type": "array",
+          "description": "Demotion history",
+          "items": { "$ref": "#/$defs/BosonDemotionRecord" }
+        },
+        "computedWithUnverifiedGpu": {
+          "type": "boolean",
+          "description": "Whether any contributing mode was computed with an unverified GPU backend"
+        },
+        "polarizationEnvelope": {
+          "oneOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "required": ["dominantClass", "minFraction", "maxFraction"],
+              "properties": {
+                "dominantClass": { "type": "string", "description": "Most frequent dominant polarization class" },
+                "minFraction": { "type": "number", "description": "Minimum dominance fraction" },
+                "maxFraction": { "type": "number", "description": "Maximum dominance fraction" }
+              }
+            }
+          ],
+          "description": "Aggregated polarization across contributing modes (null if no property vectors provided)"
+        },
+        "symmetryEnvelope": {
+          "oneOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "required": ["unionLabels"],
+              "properties": {
+                "minParity": { "type": ["integer", "null"], "description": "Minimum parity eigenvalue" },
+                "maxParity": { "type": ["integer", "null"], "description": "Maximum parity eigenvalue" },
+                "unionLabels": { "type": "array", "items": { "type": "string" }, "description": "Union of all symmetry labels" }
+              }
+            }
+          ],
+          "description": "Aggregated symmetry across contributing modes (null if no property vectors provided)"
+        },
+        "interactionProxyEnvelope": {
+          "oneOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "required": ["minCubicResponse", "maxCubicResponse", "proxyCount"],
+              "properties": {
+                "minCubicResponse": { "type": "number", "description": "Minimum |CubicResponse|" },
+                "maxCubicResponse": { "type": "number", "description": "Maximum |CubicResponse|" },
+                "proxyCount": { "type": "integer", "description": "Total count of interaction proxy records" }
+              }
+            }
+          ],
+          "description": "Aggregated interaction proxies across contributing modes (null if no modes have interaction proxies)"
+        },
+        "ambiguityCount": {
+          "type": "integer",
+          "description": "Number of ambiguous matches from the contributing mode family"
+        },
+        "ambiguityNotes": {
+          "type": "array",
+          "description": "Ambiguity notes (matching ambiguities, multiple identifications)",
+          "items": { "type": "string" }
+        },
+        "registryVersion": {
+          "type": "string",
+          "description": "Registry version when this record was last updated"
+        }
+      }
+    },
+    "BosonDemotionRecord": {
+      "type": "object",
+      "required": ["candidateId", "reason", "previousClaimClass", "demotedClaimClass", "details"],
+      "properties": {
+        "candidateId": {
+          "type": "string",
+          "description": "Candidate ID that was demoted"
+        },
+        "reason": {
+          "type": "string",
+          "description": "Reason for demotion",
+          "enum": [
+            "GaugeLeak",
+            "RefinementFragility",
+            "BranchFragility",
+            "ObservationInstability",
+            "ComparisonMismatch",
+            "BackendFragility",
+            "AmbiguousMatching"
+          ]
+        },
+        "previousClaimClass": {
+          "type": "string",
+          "description": "Claim class before demotion",
+          "enum": [
+            "C0_NumericalMode",
+            "C1_LocalPersistentMode",
+            "C2_BranchStableBosonicCandidate",
+            "C3_ObservedStableCandidate",
+            "C4_PhysicalAnalogyCandidate",
+            "C5_StrongIdentificationCandidate"
+          ]
+        },
+        "demotedClaimClass": {
+          "type": "string",
+          "description": "Claim class after demotion",
+          "enum": [
+            "C0_NumericalMode",
+            "C1_LocalPersistentMode",
+            "C2_BranchStableBosonicCandidate",
+            "C3_ObservedStableCandidate",
+            "C4_PhysicalAnalogyCandidate",
+            "C5_StrongIdentificationCandidate"
+          ]
+        },
+        "details": {
+          "type": "string",
+          "description": "Diagnostic details about the demotion trigger"
+        },
+        "triggerValue": {
+          "type": ["number", "null"],
+          "description": "Metric value that triggered the demotion"
+        },
+        "threshold": {
+          "type": ["number", "null"],
+          "description": "Threshold that was exceeded"
+        }
+      }
+    }
+  }
+}

@@ -19,6 +19,15 @@ public sealed class ModeMatchMetricSet
     public double? NativeOverlap { get; init; }
 
     /// <summary>
+    /// O2: Observed signature overlap similarity(Obs(v1), Obs(v2)).
+    /// Only available when ObservedModeSignature objects are provided.
+    /// Null if not computable (no signatures available).
+    /// </summary>
+    [JsonPropertyName("observedSignatureOverlap")]
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    public double? ObservedSignatureOverlap { get; init; }
+
+    /// <summary>
     /// O3: Invariant feature distance (eigenvalue, energy fractions, symmetry, etc.).
     /// Always computable. Lower = more similar.
     /// </summary>

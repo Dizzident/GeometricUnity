@@ -3,6 +3,7 @@ using Gu.Core;
 using Gu.Geometry;
 using Gu.Math;
 using Gu.Phase3.Observables;
+using Gu.Phase3.Spectra;
 using Gu.ReferenceCpu;
 
 namespace Gu.Phase3.Observables.Tests;
@@ -164,5 +165,40 @@ public class LinearizedObservationOperatorTests
             double expected = sig1.ObservedCoefficients[i] + sig2.ObservedCoefficients[i];
             Assert.Equal(expected, sigSum.ObservedCoefficients[i], 10);
         }
+    }
+
+    [Fact]
+    public void NormalizationStability_L2Unit_vs_MaxBlockNorm_HighOverlap()
+    {
+        // Build observation operator
+        var bundle = ToyGeometryFactory.CreateToy2D();
+        var pullback = new PullbackOperator(bundle);
+        int connDim = bundle.AmbientMesh.EdgeCount;
+
+        var jacobian = new FaceMockJacobian(connDim, bundle);
+        var obsOp = new LinearizedObservationOperator(jacobian, pullback, "test-bg");
+
+        // Create a non-trivial mode vector
+        var rawMode = new double[connDim];
+        for (int i = 0; i < connDim; i++)
+            rawMode[i] = (i + 1) * 0.3 - 0.5;
+
+        // Normalize with L2Unit convention
+        var modeL2 = ModeNormalizer.NormalizeL2(rawMode);
+
+        // Normalize with MaxBlockNorm convention (dimG=3 for su(2))
+        var modeMaxBlock = ModeNormalizer.NormalizeMaxBlockNorm(rawMode, dimG: 3);
+
+        // Compute observed signatures for both normalizations
+        var sigA = obsOp.Apply(modeL2, "mode-l2");
+        var sigB = obsOp.Apply(modeMaxBlock, "mode-maxblock");
+
+        // The observation operator is linear, so D_Obs(alpha * v) = alpha * D_Obs(v).
+        // Since both normalizations are just different positive scalings of the same
+        // direction, the observed signatures should be proportional (same direction).
+        // L2Overlap measures cosine similarity, which is 1.0 for proportional vectors.
+        double overlap = ObservedOverlapMetrics.L2Overlap(sigA, sigB);
+        Assert.True(overlap > 0.99,
+            $"L2 overlap between L2Unit and MaxBlockNorm observed signatures should be > 0.99, got {overlap}");
     }
 }

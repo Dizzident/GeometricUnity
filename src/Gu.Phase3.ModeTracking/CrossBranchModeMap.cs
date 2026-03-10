@@ -35,4 +35,16 @@ public sealed class CrossBranchModeMap
     /// <summary>Number of ambiguous matches.</summary>
     [JsonPropertyName("ambiguousCount")]
     public int AmbiguousCount => Alignments.Count(a => a.AmbiguityNotes != null);
+
+    /// <summary>Number of split events (one source to multiple targets).</summary>
+    [JsonPropertyName("splitCount")]
+    public int SplitCount => Alignments.Count(a => a.AlignmentType == "split");
+
+    /// <summary>Number of merge events (multiple sources to one target).</summary>
+    [JsonPropertyName("mergeCount")]
+    public int MergeCount => Alignments.Count(a => a.AlignmentType == "merge");
+
+    /// <summary>Number of avoided-crossing events.</summary>
+    [JsonPropertyName("avoidedCrossingCount")]
+    public int AvoidedCrossingCount => Alignments.Count(a => a.AlignmentType == "avoided-crossing");
 }

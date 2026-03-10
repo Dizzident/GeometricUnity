@@ -60,4 +60,8 @@ public sealed class SpectrumBundle
     /// <summary>Maximum orthogonality defect among computed modes: max |v_i^T M v_j| for i != j.</summary>
     [JsonPropertyName("maxOrthogonalityDefect")]
     public required double MaxOrthogonalityDefect { get; init; }
+
+    /// <summary>Backend used to compute this spectrum: "cpu" or "cuda".</summary>
+    [JsonPropertyName("computedWithBackend")]
+    public string ComputedWithBackend { get; init; } = "cpu";
 }

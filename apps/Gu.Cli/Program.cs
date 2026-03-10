@@ -1,3 +1,4 @@
+using System.Text.Json;
 using Gu.Artifacts;
 using Gu.Core;
 using Gu.Core.Factories;
@@ -7,6 +8,13 @@ using Gu.Interop;
 using Gu.Math;
 using Gu.Observation;
 using Gu.Phase3.Backgrounds;
+using Gu.Phase3.Campaigns;
+using Gu.Phase3.GaugeReduction;
+using Gu.Phase3.ModeTracking;
+using Gu.Phase3.Properties;
+using Gu.Phase3.Registry;
+using Gu.Phase3.Reporting;
+using Gu.Phase3.Spectra;
 using Gu.ReferenceCpu;
 using Gu.Solvers;
 using Gu.Validation;
@@ -43,6 +51,16 @@ switch (args[0])
         return CreateBackgroundStudy(args);
     case "solve-backgrounds":
         return SolveBackgrounds(args);
+    case "compute-spectrum":
+        return ComputeSpectrum(args);
+    case "track-modes":
+        return TrackModes(args);
+    case "build-boson-registry":
+        return BuildBosonRegistry(args);
+    case "run-boson-campaign":
+        return RunBosonCampaign(args);
+    case "export-boson-report":
+        return ExportBosonReport(args);
     default:
         Console.Error.WriteLine($"Unknown command: {args[0]}");
         PrintUsage();
@@ -1107,6 +1125,633 @@ static int SolveBackgrounds(string[] args)
     return 0;
 }
 
+static int ComputeSpectrum(string[] args)
+{
+    if (args.Length < 3)
+    {
+        Console.Error.WriteLine("Usage: gu compute-spectrum <runFolder> <backgroundId> [--num-modes N] [--formulation p1|p2]");
+        return 1;
+    }
+
+    var runFolder = args[1];
+    var backgroundId = args[2];
+    var numModes = int.Parse(ParseFlag(args, "--num-modes", "10"));
+    var formulationFlag = ParseFlag(args, "--formulation", "p1");
+
+    var formulation = formulationFlag.ToLowerInvariant() switch
+    {
+        "p2" => PhysicalModeFormulation.ProjectedComplement,
+        _ => PhysicalModeFormulation.PenaltyFixed,
+    };
+
+    // Load background record
+    var bgPath = Path.Combine(runFolder, "backgrounds", $"{backgroundId}.json");
+    if (!File.Exists(bgPath))
+    {
+        // Try background_records subfolder
+        bgPath = Path.Combine(runFolder, "backgrounds", "background_records", $"{backgroundId}.json");
+    }
+    if (!File.Exists(bgPath))
+    {
+        Console.Error.WriteLine($"Background not found: {bgPath}");
+        return 1;
+    }
+
+    var bgJson = File.ReadAllText(bgPath);
+    var bgRecord = GuJsonDefaults.Deserialize<BackgroundRecord>(bgJson);
+    if (bgRecord is null)
+    {
+        Console.Error.WriteLine($"Failed to deserialize background: {bgPath}");
+        return 1;
+    }
+
+    Console.WriteLine($"Computing spectrum for background: {backgroundId}");
+    Console.WriteLine($"  Admissibility: {bgRecord.AdmissibilityLevel}");
+    Console.WriteLine($"  Formulation: {formulation}");
+    Console.WriteLine($"  Num modes: {numModes}");
+
+    // Set up geometry and solver (same as solve-backgrounds)
+    var lieAlgebra = ParseFlag(args, "--lie-algebra", "su2");
+    var algebra = CreateAlgebra(lieAlgebra);
+    var bundle = ToyGeometryFactory.CreateToy2D();
+    var mesh = bundle.AmbientMesh;
+    var geometry = bundle.ToGeometryContext("centroid", "P1");
+
+    var manifest = new BranchManifest
+    {
+        BranchId = bgRecord.BranchManifestId,
+        SchemaVersion = "1.0.0",
+        SourceEquationRevision = "r1",
+        CodeRevision = "cli-spectrum",
+        LieAlgebraId = algebra.AlgebraId,
+        BaseDimension = bundle.BaseMesh.EmbeddingDimension,
+        AmbientDimension = bundle.AmbientMesh.EmbeddingDimension,
+        ActiveGeometryBranch = "simplicial",
+        ActiveObservationBranch = "sigma-pullback",
+        ActiveTorsionBranch = "trivial",
+        ActiveShiabBranch = "identity-shiab",
+        ActiveGaugeStrategy = "penalty",
+        PairingConventionId = algebra.PairingId == "trace" ? "pairing-trace" : "pairing-killing",
+        BasisConventionId = "canonical",
+        ComponentOrderId = "face-major",
+        AdjointConventionId = "adjoint-explicit",
+        NormConventionId = "norm-l2-quadrature",
+        DifferentialFormMetricId = "hodge-standard",
+        InsertedAssumptionIds = Array.Empty<string>(),
+        InsertedChoiceIds = new[] { "IX-1", "IX-2" },
+    };
+
+    int edgeN = mesh.EdgeCount * algebra.Dimension;
+    var sig = new TensorSignature
+    {
+        AmbientSpaceId = "Y_h",
+        CarrierType = "connection-1form",
+        Degree = "1",
+        LieAlgebraBasisId = "canonical",
+        ComponentOrderId = "edge-major",
+        MemoryLayout = "dense-row-major",
+    };
+    var omega = new FieldTensor
+    {
+        Label = "omega_h",
+        Signature = sig,
+        Coefficients = new double[edgeN],
+        Shape = new[] { mesh.EdgeCount, algebra.Dimension },
+    };
+    var a0 = new FieldTensor
+    {
+        Label = "a0",
+        Signature = sig,
+        Coefficients = new double[edgeN],
+        Shape = new[] { mesh.EdgeCount, algebra.Dimension },
+    };
+
+    // Build operator bundle
+    var torsion = new TrivialTorsionCpu(mesh, algebra);
+    var shiab = new IdentityShiabCpu(mesh, algebra);
+    var backend = new CpuSolverBackend(mesh, algebra, torsion, shiab);
+    var assembler = new CpuResidualAssembler(mesh, algebra, torsion, shiab);
+    var residualMass = new CpuMassMatrix(mesh, algebra);
+
+    var operatorType = bgRecord.AdmissibilityLevel == AdmissibilityLevel.B2
+        ? SpectralOperatorType.GaussNewton
+        : SpectralOperatorType.FullHessian;
+
+    var opSpec = new LinearizedOperatorSpec
+    {
+        BackgroundId = backgroundId,
+        OperatorType = operatorType,
+        Formulation = formulation,
+        BackgroundAdmissibility = bgRecord.AdmissibilityLevel,
+    };
+
+    var bundleBuilder = new OperatorBundleBuilder(mesh, algebra, assembler, residualMass, backend);
+    var opBundle = bundleBuilder.Build(opSpec, omega, a0, manifest, geometry);
+
+    Console.WriteLine($"  Operator bundle: {opBundle.BundleId}");
+    Console.WriteLine($"  Operator type: {opBundle.OperatorType}");
+    Console.WriteLine($"  State dimension: {opBundle.StateDimension}");
+
+    // Solve eigenproblem
+    var eigSpec = new GeneralizedEigenproblemSpec
+    {
+        NumEigenvalues = numModes,
+    };
+
+    var pipeline = new EigensolverPipeline();
+    var spectrum = pipeline.Solve(opBundle, eigSpec);
+
+    Console.WriteLine($"  Convergence: {spectrum.ConvergenceStatus}");
+    Console.WriteLine($"  Modes found: {spectrum.Modes.Count}");
+
+    foreach (var mode in spectrum.Modes)
+    {
+        Console.WriteLine($"    mode {mode.ModeIndex}: eigenvalue={mode.Eigenvalue:E6} " +
+                          $"residual={mode.ResidualNorm:E6} leak={mode.GaugeLeakScore:F4}");
+    }
+
+    // Write spectrum bundle
+    var spectraDir = Path.Combine(runFolder, "spectra");
+    Directory.CreateDirectory(spectraDir);
+    var spectrumPath = Path.Combine(spectraDir, $"{backgroundId}_spectrum.json");
+    File.WriteAllText(spectrumPath, GuJsonDefaults.Serialize(spectrum));
+
+    // Write individual mode records
+    var modesDir = Path.Combine(spectraDir, "modes");
+    Directory.CreateDirectory(modesDir);
+    foreach (var mode in spectrum.Modes)
+    {
+        var modePath = Path.Combine(modesDir, $"{mode.ModeId}.json");
+        File.WriteAllText(modePath, GuJsonDefaults.Serialize(mode));
+    }
+
+    Console.WriteLine();
+    Console.WriteLine($"Spectrum written to: {spectrumPath}");
+    Console.WriteLine($"Mode records written to: {modesDir}");
+    return 0;
+}
+
+static int TrackModes(string[] args)
+{
+    if (args.Length < 2)
+    {
+        Console.Error.WriteLine("Usage: gu track-modes <runFolder> [--context continuation|branch|refinement]");
+        return 1;
+    }
+
+    var runFolder = args[1];
+    var contextFlag = ParseFlag(args, "--context", "continuation");
+
+    var contextType = contextFlag.ToLowerInvariant() switch
+    {
+        "branch" => TrackingContextType.BranchSweep,
+        "refinement" => TrackingContextType.Refinement,
+        _ => TrackingContextType.Continuation,
+    };
+
+    // Load all spectrum bundles
+    var spectraDir = Path.Combine(runFolder, "spectra");
+    if (!Directory.Exists(spectraDir))
+    {
+        Console.Error.WriteLine($"Spectra directory not found: {spectraDir}");
+        return 1;
+    }
+
+    var spectrumFiles = Directory.GetFiles(spectraDir, "*_spectrum.json");
+    if (spectrumFiles.Length == 0)
+    {
+        Console.Error.WriteLine($"No spectrum bundles found in: {spectraDir}");
+        return 1;
+    }
+
+    var spectra = new List<SpectrumBundle>();
+    foreach (var file in spectrumFiles.OrderBy(f => f))
+    {
+        var json = File.ReadAllText(file);
+        var sb = GuJsonDefaults.Deserialize<SpectrumBundle>(json);
+        if (sb != null)
+            spectra.Add(sb);
+    }
+
+    Console.WriteLine($"Mode tracking: {contextType}");
+    Console.WriteLine($"  Spectra loaded: {spectra.Count}");
+
+    if (spectra.Count < 2)
+    {
+        Console.Error.WriteLine("Need at least 2 spectra for mode tracking.");
+        return 1;
+    }
+
+    var config = new TrackingConfig { ContextType = contextType };
+    var engine = new ModeMatchingEngine(config);
+
+    IReadOnlyList<ModeFamilyRecord> families;
+
+    if (contextType == TrackingContextType.BranchSweep)
+    {
+        // Cross-branch matching: match each pair against the first spectrum
+        var reference = spectra[0];
+        var allAlignments = new List<ModeAlignmentRecord>();
+        foreach (var target in spectra.Skip(1))
+        {
+            var alignments = engine.Match(reference, target);
+            allAlignments.AddRange(alignments);
+        }
+        var crossMap = new CrossBranchModeMap
+        {
+            SourceBranchId = spectra[0].BackgroundId,
+            TargetBranchId = spectra[^1].BackgroundId,
+            Alignments = allAlignments,
+        };
+
+        Console.WriteLine($"  Matched: {crossMap.MatchedCount}");
+        Console.WriteLine($"  Births: {crossMap.BirthCount}");
+        Console.WriteLine($"  Deaths: {crossMap.DeathCount}");
+        Console.WriteLine($"  Splits: {crossMap.SplitCount}");
+        Console.WriteLine($"  Merges: {crossMap.MergeCount}");
+
+        // Build families from the continuation path for output consistency
+        families = engine.BuildFamilies(spectra);
+    }
+    else
+    {
+        // Continuation / refinement: build families along path
+        families = engine.BuildFamilies(spectra);
+    }
+
+    Console.WriteLine($"  Families built: {families.Count}");
+    Console.WriteLine($"  Stable families: {families.Count(f => f.IsStable)}");
+
+    // Write mode families
+    var modesDir = Path.Combine(runFolder, "modes");
+    Directory.CreateDirectory(modesDir);
+    var familiesPath = Path.Combine(modesDir, "mode_families.json");
+    File.WriteAllText(familiesPath, GuJsonDefaults.Serialize(families));
+
+    foreach (var fam in families)
+    {
+        Console.WriteLine($"    {fam.FamilyId}: {fam.MemberModeIds.Count} members, " +
+                          $"mean_eig={fam.MeanEigenvalue:E6}, stable={fam.IsStable}, " +
+                          $"ambiguity={fam.AmbiguityCount}");
+    }
+
+    Console.WriteLine();
+    Console.WriteLine($"Families written to: {familiesPath}");
+    return 0;
+}
+
+static int BuildBosonRegistry(string[] args)
+{
+    if (args.Length < 2)
+    {
+        Console.Error.WriteLine("Usage: gu build-boson-registry <runFolder>");
+        return 1;
+    }
+
+    var runFolder = args[1];
+
+    // Load mode families
+    var familiesPath = Path.Combine(runFolder, "modes", "mode_families.json");
+    if (!File.Exists(familiesPath))
+    {
+        Console.Error.WriteLine($"Mode families not found: {familiesPath}");
+        return 1;
+    }
+
+    var familiesJson = File.ReadAllText(familiesPath);
+    var families = GuJsonDefaults.Deserialize<List<ModeFamilyRecord>>(familiesJson);
+    if (families is null || families.Count == 0)
+    {
+        Console.Error.WriteLine("Failed to deserialize mode families or empty list.");
+        return 1;
+    }
+
+    // Load spectrum bundles for property lookup
+    var spectraDir = Path.Combine(runFolder, "spectra");
+    var spectraByBackground = new Dictionary<string, SpectrumBundle>();
+    if (Directory.Exists(spectraDir))
+    {
+        foreach (var file in Directory.GetFiles(spectraDir, "*_spectrum.json"))
+        {
+            var json = File.ReadAllText(file);
+            var sb = GuJsonDefaults.Deserialize<SpectrumBundle>(json);
+            if (sb != null)
+                spectraByBackground[sb.BackgroundId] = sb;
+        }
+    }
+
+    // Load property vectors if present
+    Dictionary<string, Gu.Phase3.Properties.BosonPropertyVector>? propertyVectors = null;
+    var propsDir = Path.Combine(runFolder, "properties");
+    if (Directory.Exists(propsDir))
+    {
+        propertyVectors = new Dictionary<string, Gu.Phase3.Properties.BosonPropertyVector>();
+        foreach (var file in Directory.GetFiles(propsDir, "*.json"))
+        {
+            var json = File.ReadAllText(file);
+            var pv = GuJsonDefaults.Deserialize<Gu.Phase3.Properties.BosonPropertyVector>(json);
+            if (pv != null)
+                propertyVectors[pv.ModeId] = pv;
+        }
+    }
+
+    Console.WriteLine($"Building boson registry...");
+    Console.WriteLine($"  Families: {families.Count}");
+    Console.WriteLine($"  Spectra: {spectraByBackground.Count}");
+    Console.WriteLine($"  Property vectors: {propertyVectors?.Count ?? 0}");
+
+    var builder = new CandidateBosonBuilder();
+    var candidates = builder.BuildFromFamilies(families, spectraByBackground, propertyVectors);
+
+    var registry = new BosonRegistry();
+    foreach (var candidate in candidates)
+        registry.Register(candidate);
+
+    Console.WriteLine($"  Candidates: {registry.Count}");
+    foreach (var cls in Enum.GetValues<BosonClaimClass>())
+    {
+        int count = registry.CountAboveClass(cls);
+        if (count > 0)
+            Console.WriteLine($"    >= {cls}: {count}");
+    }
+
+    // Write registry
+    var bosonsDir = Path.Combine(runFolder, "bosons");
+    Directory.CreateDirectory(bosonsDir);
+    var registryPath = Path.Combine(bosonsDir, "registry.json");
+    File.WriteAllText(registryPath, registry.ToJson());
+
+    Console.WriteLine();
+    Console.WriteLine($"Registry written to: {registryPath}");
+    return 0;
+}
+
+static int RunBosonCampaign(string[] args)
+{
+    if (args.Length < 2)
+    {
+        Console.Error.WriteLine("Usage: gu run-boson-campaign <runFolder> [--campaign <campaignSpec.json>]");
+        return 1;
+    }
+
+    var runFolder = args[1];
+    var campaignSpecPath = ParseFlag(args, "--campaign", "");
+
+    // Load registry
+    var registryPath = Path.Combine(runFolder, "bosons", "registry.json");
+    if (!File.Exists(registryPath))
+    {
+        Console.Error.WriteLine($"Registry not found: {registryPath}");
+        return 1;
+    }
+
+    var registryJson = File.ReadAllText(registryPath);
+    var registry = BosonRegistry.FromJson(registryJson);
+
+    // Load or create campaign spec
+    BosonCampaignSpec campaignSpec;
+    if (!string.IsNullOrEmpty(campaignSpecPath) && File.Exists(campaignSpecPath))
+    {
+        var specJson = File.ReadAllText(campaignSpecPath);
+        var spec = GuJsonDefaults.Deserialize<BosonCampaignSpec>(specJson);
+        if (spec is null)
+        {
+            Console.Error.WriteLine($"Failed to deserialize campaign spec: {campaignSpecPath}");
+            return 1;
+        }
+        campaignSpec = spec;
+    }
+    else
+    {
+        // Generate default campaign spec (BC1 with standard target profiles)
+        campaignSpec = new BosonCampaignSpec
+        {
+            CampaignId = $"campaign-{DateTimeOffset.UtcNow:yyyyMMddHHmmss}",
+            Mode = BosonComparisonMode.InternalTargetProfile,
+            TargetProfileIds = new[] { "massless-vector", "massive-scalar" },
+            MinClaimClass = BosonClaimClass.C0_NumericalMode,
+            IncludeDemoted = true,
+        };
+    }
+
+    Console.WriteLine($"Running boson campaign: {campaignSpec.CampaignId}");
+    Console.WriteLine($"  Mode: {campaignSpec.Mode}");
+    Console.WriteLine($"  Registry candidates: {registry.Count}");
+
+    // Create default target profiles for BC1
+    var profiles = new Dictionary<string, BosonTargetProfile>
+    {
+        ["massless-vector"] = new BosonTargetProfile
+        {
+            ProfileId = "massless-vector",
+            Label = "Massless vector-like",
+            MassRange = new[] { 0.0, 0.01 },
+            MaxGaugeLeak = 0.1,
+        },
+        ["massive-scalar"] = new BosonTargetProfile
+        {
+            ProfileId = "massive-scalar",
+            Label = "Massive scalar-like",
+            MassRange = new[] { 0.1, 100.0 },
+            MaxGaugeLeak = 0.3,
+        },
+    };
+
+    var descriptors = new Dictionary<string, ExternalAnalogyDescriptor>();
+
+    var runner = new BosonCampaignRunner();
+    var result = runner.Run(campaignSpec, registry, profiles, descriptors);
+
+    Console.WriteLine($"  Candidates compared: {result.CandidatesCompared}");
+    Console.WriteLine($"  Targets used: {result.TargetsUsed}");
+    Console.WriteLine($"  Total results: {result.Results.Count}");
+    Console.WriteLine($"  Negative results: {result.NegativeResults.Count}");
+
+    // Write results
+    var campaignsDir = Path.Combine(runFolder, "campaigns", "boson_campaigns");
+    Directory.CreateDirectory(campaignsDir);
+    var resultPath = Path.Combine(campaignsDir, $"{result.CampaignId}.json");
+    File.WriteAllText(resultPath, GuJsonDefaults.Serialize(result));
+
+    Console.WriteLine();
+    Console.WriteLine($"Campaign result written to: {resultPath}");
+    return 0;
+}
+
+static int ExportBosonReport(string[] args)
+{
+    if (args.Length < 2)
+    {
+        Console.Error.WriteLine("Usage: gu export-boson-report <runFolder> [--output <path>]");
+        return 1;
+    }
+
+    var runFolder = args[1];
+    var outputOverride = ParseFlag(args, "--output", "");
+
+    // Load registry
+    var registryPath = Path.Combine(runFolder, "bosons", "registry.json");
+    if (!File.Exists(registryPath))
+    {
+        Console.Error.WriteLine($"Registry not found: {registryPath}");
+        return 1;
+    }
+
+    var registryJson = File.ReadAllText(registryPath);
+    var registry = BosonRegistry.FromJson(registryJson);
+
+    // Load campaign results
+    var campaignResults = new List<BosonCampaignResult>();
+    var campaignsDir = Path.Combine(runFolder, "campaigns", "boson_campaigns");
+    if (Directory.Exists(campaignsDir))
+    {
+        foreach (var file in Directory.GetFiles(campaignsDir, "*.json"))
+        {
+            var json = File.ReadAllText(file);
+            var cr = GuJsonDefaults.Deserialize<BosonCampaignResult>(json);
+            if (cr != null)
+                campaignResults.Add(cr);
+        }
+    }
+
+    // Load spectrum bundles to build spectrum sheets
+    var spectrumSheets = new List<SpectrumSheet>();
+    var spectraDir = Path.Combine(runFolder, "spectra");
+    if (Directory.Exists(spectraDir))
+    {
+        foreach (var file in Directory.GetFiles(spectraDir, "*_spectrum.json"))
+        {
+            var json = File.ReadAllText(file);
+            var sb = GuJsonDefaults.Deserialize<SpectrumBundle>(json);
+            if (sb != null)
+            {
+                spectrumSheets.Add(new SpectrumSheet
+                {
+                    BackgroundId = sb.BackgroundId,
+                    Eigenvalues = sb.Modes.Select(m => m.Eigenvalue).ToList(),
+                    Multiplicities = sb.Modes.Select(m => 1).ToList(),
+                    GaugeLeaks = sb.Modes.Select(m => m.GaugeLeakScore).ToList(),
+                    ModeCount = sb.Modes.Count,
+                    ConvergenceStatus = sb.ConvergenceStatus,
+                });
+            }
+        }
+    }
+
+    Console.WriteLine($"Exporting boson atlas report...");
+    Console.WriteLine($"  Registry candidates: {registry.Count}");
+    Console.WriteLine($"  Campaign results: {campaignResults.Count}");
+    Console.WriteLine($"  Spectrum sheets: {spectrumSheets.Count}");
+
+    var generator = new BosonAtlasReportGenerator();
+    var studyId = Path.GetFileName(runFolder) ?? "unknown-study";
+    var report = generator.Generate(studyId, registry, campaignResults, spectrumSheets);
+
+    // Determine output paths
+    string reportsDir;
+    if (!string.IsNullOrEmpty(outputOverride))
+    {
+        reportsDir = Path.GetDirectoryName(outputOverride) ?? runFolder;
+    }
+    else
+    {
+        reportsDir = Path.Combine(runFolder, "reports");
+    }
+    Directory.CreateDirectory(reportsDir);
+
+    // Write JSON report
+    var jsonPath = !string.IsNullOrEmpty(outputOverride)
+        ? outputOverride
+        : Path.Combine(reportsDir, "boson_atlas.json");
+    File.WriteAllText(jsonPath, BosonAtlasReportGenerator.ToJson(report));
+
+    // Write Markdown summary
+    var mdPath = Path.ChangeExtension(jsonPath, ".md");
+    var md = GenerateMarkdownReport(report);
+    File.WriteAllText(mdPath, md);
+
+    Console.WriteLine($"  Total candidates: {report.TotalCandidates}");
+    Console.WriteLine($"  Negative results: {report.NegativeResults.Count}");
+    Console.WriteLine($"  Ambiguity entries: {report.AmbiguityEntries.Count}");
+    Console.WriteLine();
+    Console.WriteLine($"JSON report: {jsonPath}");
+    Console.WriteLine($"Markdown report: {mdPath}");
+    return 0;
+}
+
+static string GenerateMarkdownReport(BosonAtlasReport report)
+{
+    var sb = new System.Text.StringBuilder();
+    sb.AppendLine("# Boson Atlas Report");
+    sb.AppendLine();
+    sb.AppendLine($"- **Report ID:** {report.ReportId}");
+    sb.AppendLine($"- **Study ID:** {report.StudyId}");
+    sb.AppendLine($"- **Registry Version:** {report.RegistryVersion}");
+    sb.AppendLine($"- **Generated:** {report.GeneratedAt:O}");
+    sb.AppendLine($"- **Total Candidates:** {report.TotalCandidates}");
+    sb.AppendLine();
+
+    sb.AppendLine("## Claim Class Distribution");
+    sb.AppendLine();
+    foreach (var (cls, count) in report.ClaimClassCounts)
+        sb.AppendLine($"- {cls}: {count}");
+    sb.AppendLine();
+
+    if (report.SpectrumSheets.Count > 0)
+    {
+        sb.AppendLine("## Spectrum Sheets");
+        sb.AppendLine();
+        foreach (var sheet in report.SpectrumSheets)
+        {
+            sb.AppendLine($"### Background: {sheet.BackgroundId}");
+            sb.AppendLine($"- Modes: {sheet.ModeCount}");
+            sb.AppendLine($"- Convergence: {sheet.ConvergenceStatus}");
+            if (sheet.Eigenvalues.Count > 0)
+                sb.AppendLine($"- Eigenvalue range: [{sheet.Eigenvalues.Min():E4}, {sheet.Eigenvalues.Max():E4}]");
+            sb.AppendLine();
+        }
+    }
+
+    if (report.StabilitySummaries.Count > 0)
+    {
+        sb.AppendLine("## Stability Summaries");
+        sb.AppendLine();
+        sb.AppendLine("| Candidate | Branch | Refinement | Backend | Observation | Assessment |");
+        sb.AppendLine("|-----------|--------|------------|---------|-------------|------------|");
+        foreach (var s in report.StabilitySummaries)
+        {
+            sb.AppendLine($"| {s.CandidateId} | {s.BranchStability:F2} | {s.RefinementStability:F2} | " +
+                          $"{s.BackendStability:F2} | {s.ObservationStability:F2} | {s.OverallAssessment} |");
+        }
+        sb.AppendLine();
+    }
+
+    if (report.NegativeResults.Count > 0)
+    {
+        sb.AppendLine("## Negative Results");
+        sb.AppendLine();
+        foreach (var neg in report.NegativeResults)
+            sb.AppendLine($"- **{neg.CandidateId}** ({neg.ResultType}): {neg.Description}");
+        sb.AppendLine();
+    }
+
+    if (report.CampaignResults.Count > 0)
+    {
+        sb.AppendLine("## Campaign Results");
+        sb.AppendLine();
+        foreach (var cr in report.CampaignResults)
+        {
+            sb.AppendLine($"### Campaign: {cr.CampaignId}");
+            sb.AppendLine($"- Candidates compared: {cr.CandidatesCompared}");
+            sb.AppendLine($"- Targets used: {cr.TargetsUsed}");
+            sb.AppendLine($"- Results: {cr.Results.Count} total, {cr.NegativeResults.Count} negative");
+            sb.AppendLine();
+        }
+    }
+
+    return sb.ToString();
+}
+
 static void PrintUsage()
 {
     Console.WriteLine("Geometric Unity CLI");
@@ -1121,6 +1766,11 @@ static void PrintUsage()
     Console.WriteLine("  gu sweep --branches b1,b2 [--output dir]   Sweep branches and compare results");
     Console.WriteLine("  gu create-background-study [output.json]   Create a background study spec");
     Console.WriteLine("  gu solve-backgrounds <study.json> [opts]   Solve backgrounds and build atlas");
+    Console.WriteLine("  gu compute-spectrum <run> <bgId> [opts]    Compute spectrum for a background");
+    Console.WriteLine("  gu track-modes <runFolder> [--context ...]  Track modes across spectra");
+    Console.WriteLine("  gu build-boson-registry <runFolder>         Build candidate boson registry");
+    Console.WriteLine("  gu run-boson-campaign <runFolder> [opts]    Run boson comparison campaign");
+    Console.WriteLine("  gu export-boson-report <runFolder> [opts]   Export boson atlas report");
     Console.WriteLine("  gu validate-replay <orig> <replay> [tier]   Validate replay (R0/R1/R2/R3)");
     Console.WriteLine("  gu verify-integrity <run-folder>            Verify or compute integrity hashes");
     Console.WriteLine("  gu validate-schema <file> <schema>          Validate JSON against a schema");
@@ -1133,4 +1783,10 @@ static void PrintUsage()
     Console.WriteLine("  --max-iter N           Max iterations (default: 100)");
     Console.WriteLine("  --step-size S          Initial step size (default: 0.01)");
     Console.WriteLine("  --output <dir>         Output directory for sweep results");
+    Console.WriteLine();
+    Console.WriteLine("Phase III Spectral/Boson options:");
+    Console.WriteLine("  --num-modes N          Number of modes to compute (default: 10)");
+    Console.WriteLine("  --formulation p1|p2    Physical mode formulation (default: p1)");
+    Console.WriteLine("  --context continuation|branch|refinement  Tracking context type");
+    Console.WriteLine("  --campaign <file>      Campaign spec JSON file");
 }

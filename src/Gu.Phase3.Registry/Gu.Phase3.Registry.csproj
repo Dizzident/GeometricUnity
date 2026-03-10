@@ -8,6 +8,7 @@
     <ProjectReference Include="..\Gu.Core\Gu.Core.csproj" />
     <ProjectReference Include="..\Gu.Phase3.Spectra\Gu.Phase3.Spectra.csproj" />
     <ProjectReference Include="..\Gu.Phase3.ModeTracking\Gu.Phase3.ModeTracking.csproj" />
+    <ProjectReference Include="..\Gu.Phase3.Properties\Gu.Phase3.Properties.csproj" />
   </ItemGroup>
 
 </Project>

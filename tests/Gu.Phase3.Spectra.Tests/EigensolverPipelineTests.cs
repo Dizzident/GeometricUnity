@@ -330,6 +330,50 @@ public class EigensolverPipelineTests
     }
 
     [Fact]
+    public void LanczosSolver_NonTrivialMass_AgreesWithDense()
+    {
+        // H = diag(h_i), M = diag(m_i) with non-trivial M (not identity)
+        // Generalized eigenvalues: h_i / m_i = 1, 2, 3, ..., 10
+        int n = 10;
+        var mDiag = new double[] { 2, 3, 5, 7, 9, 11, 13, 15, 17, 19 };
+        var hDiag = new double[n];
+        for (int i = 0; i < n; i++)
+            hDiag[i] = (i + 1) * mDiag[i];
+        var bundle = MakeDiagonalBundle(hDiag, mDiag);
+
+        // Solve with dense
+        var denseSpec = new GeneralizedEigenproblemSpec
+        {
+            NumEigenvalues = 5,
+            SolverMethod = "explicit-dense",
+        };
+        var denseResult = new EigensolverPipeline().Solve(bundle, denseSpec);
+
+        // Solve with Lanczos
+        var lanczosSpec = new GeneralizedEigenproblemSpec
+        {
+            NumEigenvalues = 5,
+            SolverMethod = "lanczos",
+            MaxIterations = 100,
+            ConvergenceTolerance = 1e-10,
+        };
+        var lanczosResult = new EigensolverPipeline().Solve(bundle, lanczosSpec);
+
+        Assert.Equal(5, denseResult.Modes.Count);
+        Assert.Equal(5, lanczosResult.Modes.Count);
+
+        for (int k = 0; k < 5; k++)
+        {
+            double denseEig = denseResult.Modes[k].Eigenvalue;
+            double lanczosEig = lanczosResult.Modes[k].Eigenvalue;
+            double relError = System.Math.Abs(denseEig - lanczosEig)
+                              / System.Math.Max(1e-15, System.Math.Abs(denseEig));
+            Assert.True(relError < 1e-4,
+                $"Mode {k}: dense={denseEig:G6}, lanczos={lanczosEig:G6}, relError={relError:E2}");
+        }
+    }
+
+    [Fact]
     public void AutoMethodSelection_ChoosesDenseForSmallProblems()
     {
         var hDiag = new double[] { 1, 4, 9 };
@@ -346,6 +390,136 @@ public class EigensolverPipelineTests
         var result = pipeline.Solve(bundle, spec);
 
         Assert.Equal("explicit-dense", result.SolverMethod);
+    }
+
+    [Fact]
+    public void BlockEnergyFractions_SumToOne()
+    {
+        var hDiag = new double[] { 1, 4, 9 };
+        var mDiag = new double[] { 1, 1, 1 };
+        var bundle = MakeDiagonalBundle(hDiag, mDiag);
+
+        var spec = new GeneralizedEigenproblemSpec
+        {
+            NumEigenvalues = 3,
+            SolverMethod = "explicit-dense",
+        };
+
+        var pipeline = new EigensolverPipeline();
+        var result = pipeline.Solve(bundle, spec);
+
+        foreach (var mode in result.Modes)
+        {
+            Assert.NotNull(mode.BlockEnergyFractions);
+            double sum = mode.BlockEnergyFractions!.Values.Sum();
+            Assert.Equal(1.0, sum, 6);
+        }
+    }
+
+    [Fact]
+    public void TensorEnergyFractions_AreNonNegative()
+    {
+        var hDiag = new double[] { 1, 4, 9 };
+        var mDiag = new double[] { 1, 1, 1 };
+        var bundle = MakeDiagonalBundle(hDiag, mDiag);
+
+        var spec = new GeneralizedEigenproblemSpec
+        {
+            NumEigenvalues = 3,
+            SolverMethod = "explicit-dense",
+        };
+
+        var pipeline = new EigensolverPipeline();
+        var result = pipeline.Solve(bundle, spec);
+
+        foreach (var mode in result.Modes)
+        {
+            Assert.NotNull(mode.TensorEnergyFractions);
+            foreach (var kvp in mode.TensorEnergyFractions!)
+            {
+                Assert.True(kvp.Value >= 0,
+                    $"TensorEnergyFractions[\"{kvp.Key}\"] = {kvp.Value} is negative");
+            }
+        }
+    }
+
+    [Fact]
+    public void ModeRecord_NewFields_DefaultToNull()
+    {
+        var mode = new ModeRecord
+        {
+            ModeId = "test",
+            BackgroundId = "bg",
+            OperatorType = SpectralOperatorType.GaussNewton,
+            Eigenvalue = 1.0,
+            ResidualNorm = 0.0,
+            NormalizationConvention = "unit-M-norm",
+            GaugeLeakScore = 0.0,
+            ModeVector = new double[] { 1.0 },
+            ModeIndex = 0,
+        };
+
+        Assert.Null(mode.ModeVectorArtifactRef);
+        Assert.Null(mode.ObservedSignatureRef);
+    }
+
+    [Fact]
+    public void ModeRecord_JsonRoundTrip_IncludesNewFields()
+    {
+        var mode = new ModeRecord
+        {
+            ModeId = "rt-test",
+            BackgroundId = "bg-rt",
+            OperatorType = SpectralOperatorType.GaussNewton,
+            Eigenvalue = 2.5,
+            ResidualNorm = 1e-8,
+            NormalizationConvention = "unit-M-norm",
+            GaugeLeakScore = 0.01,
+            ModeVector = new double[] { 0.5, 0.5, 0.5, 0.5 },
+            ModeIndex = 0,
+            BlockEnergyFractions = new Dictionary<string, double> { ["connection"] = 1.0 },
+            TensorEnergyFractions = new Dictionary<string, double> { ["connection-1form"] = 1.0 },
+            ModeVectorArtifactRef = "artifacts/mode-0.bin",
+            ObservedSignatureRef = "obs/sig-0.json",
+        };
+
+        var json = JsonSerializer.Serialize(mode, new JsonSerializerOptions { WriteIndented = true });
+        var deserialized = JsonSerializer.Deserialize<ModeRecord>(json);
+
+        Assert.NotNull(deserialized);
+        Assert.Equal("rt-test", deserialized!.ModeId);
+        Assert.NotNull(deserialized.BlockEnergyFractions);
+        Assert.Equal(1.0, deserialized.BlockEnergyFractions!["connection"]);
+        Assert.NotNull(deserialized.TensorEnergyFractions);
+        Assert.Equal(1.0, deserialized.TensorEnergyFractions!["connection-1form"]);
+        Assert.Equal("artifacts/mode-0.bin", deserialized.ModeVectorArtifactRef);
+        Assert.Equal("obs/sig-0.json", deserialized.ObservedSignatureRef);
+    }
+
+    [Fact]
+    public void ModeRecord_JsonRoundTrip_NullOptionalFields()
+    {
+        var mode = new ModeRecord
+        {
+            ModeId = "null-test",
+            BackgroundId = "bg-null",
+            OperatorType = SpectralOperatorType.GaussNewton,
+            Eigenvalue = 1.0,
+            ResidualNorm = 0.0,
+            NormalizationConvention = "unit-M-norm",
+            GaugeLeakScore = 0.0,
+            ModeVector = new double[] { 1.0 },
+            ModeIndex = 0,
+        };
+
+        var json = JsonSerializer.Serialize(mode);
+        var deserialized = JsonSerializer.Deserialize<ModeRecord>(json);
+
+        Assert.NotNull(deserialized);
+        Assert.Null(deserialized!.BlockEnergyFractions);
+        Assert.Null(deserialized.TensorEnergyFractions);
+        Assert.Null(deserialized.ModeVectorArtifactRef);
+        Assert.Null(deserialized.ObservedSignatureRef);
     }
 
     [Fact]

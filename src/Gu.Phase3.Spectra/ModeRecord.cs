@@ -53,4 +53,31 @@ public sealed class ModeRecord
     /// <summary>Index within the spectrum (0-based, sorted by eigenvalue ascending).</summary>
     [JsonPropertyName("modeIndex")]
     public required int ModeIndex { get; init; }
+
+    /// <summary>
+    /// Energy fraction per tensor signature label (e.g., "connection-1form" -> 1.0).
+    /// Values are non-negative and sum to 1.0.
+    /// </summary>
+    [JsonPropertyName("tensorEnergyFractions")]
+    public Dictionary<string, double>? TensorEnergyFractions { get; init; }
+
+    /// <summary>
+    /// Energy fraction per state-space block (e.g., per Lie algebra component).
+    /// Values are non-negative and sum to 1.0.
+    /// </summary>
+    [JsonPropertyName("blockEnergyFractions")]
+    public Dictionary<string, double>? BlockEnergyFractions { get; init; }
+
+    /// <summary>
+    /// Artifact path reference for the stored mode vector on disk.
+    /// Set when mode vectors are serialized to an artifact bundle.
+    /// </summary>
+    [JsonPropertyName("modeVectorArtifactRef")]
+    public string? ModeVectorArtifactRef { get; init; }
+
+    /// <summary>
+    /// Reference to the computed observed mode signature (set by M29 Observables pipeline).
+    /// </summary>
+    [JsonPropertyName("observedSignatureRef")]
+    public string? ObservedSignatureRef { get; init; }
 }

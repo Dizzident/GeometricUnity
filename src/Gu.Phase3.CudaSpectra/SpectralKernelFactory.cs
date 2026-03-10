@@ -59,6 +59,22 @@ public sealed class SpectralKernelFactory
         return false;
     }
 
+    /// <summary>
+    /// Returns the current CUDA verification status.
+    /// When CUDA is not available, returns <see cref="CudaVerificationStatus.NotAvailable"/>.
+    /// When available but parity checks have not been run, returns
+    /// <see cref="CudaVerificationStatus.AvailableUnverified"/>.
+    /// </summary>
+    public static CudaVerificationStatus GetCudaStatus()
+    {
+        if (!IsCudaAvailable())
+            return CudaVerificationStatus.NotAvailable;
+
+        // When CUDA becomes available, this should be updated to track
+        // whether parity checks have been run and passed.
+        return CudaVerificationStatus.AvailableUnverified;
+    }
+
     /// <summary>Configuration used by this factory.</summary>
     public CudaSpectralConfig Config => _config;
 }

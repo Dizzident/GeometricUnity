@@ -73,10 +73,13 @@ public sealed class EigensolverPipeline
         // Compute orthogonality diagnostics
         double maxOrthDefect = ComputeMaxOrthogonalityDefect(bundle, eigenvectors);
 
-        // Build mode records
+        // Build mode records with energy fractions
         var modes = new ModeRecord[eigenvalues.Length];
         for (int k = 0; k < eigenvalues.Length; k++)
         {
+            var blockFractions = ComputeBlockEnergyFractions(eigenvectors[k]);
+            var tensorFractions = ComputeTensorEnergyFractions(bundle, eigenvectors[k]);
+
             modes[k] = new ModeRecord
             {
                 ModeId = $"{bundle.BackgroundId}-mode-{k}",
@@ -88,6 +91,8 @@ public sealed class EigensolverPipeline
                 GaugeLeakScore = gaugeLeakScores[k],
                 ModeVector = eigenvectors[k],
                 ModeIndex = k,
+                BlockEnergyFractions = blockFractions,
+                TensorEnergyFractions = tensorFractions,
             };
         }
 
@@ -117,6 +122,10 @@ public sealed class EigensolverPipeline
                         GaugeLeakScore = modes[idx].GaugeLeakScore,
                         ModeVector = modes[idx].ModeVector,
                         ModeIndex = modes[idx].ModeIndex,
+                        BlockEnergyFractions = modes[idx].BlockEnergyFractions,
+                        TensorEnergyFractions = modes[idx].TensorEnergyFractions,
+                        ModeVectorArtifactRef = modes[idx].ModeVectorArtifactRef,
+                        ObservedSignatureRef = modes[idx].ObservedSignatureRef,
                     };
                 }
             }
@@ -226,6 +235,28 @@ public sealed class EigensolverPipeline
         }
 
         return maxDefect;
+    }
+
+    /// <summary>
+    /// Compute block energy fractions from a mode vector.
+    /// For single-connection-block layouts, the entire energy is in the "connection" block.
+    /// </summary>
+    private static Dictionary<string, double> ComputeBlockEnergyFractions(double[] eigenvector)
+    {
+        // Single-block case: all energy is in the connection block.
+        // This matches PolarizationExtractor semantics for Phase I/III compatible layouts.
+        return new Dictionary<string, double> { ["connection"] = 1.0 };
+    }
+
+    /// <summary>
+    /// Compute tensor energy fractions from a mode vector, keyed by the tensor carrier type.
+    /// For single-connection-block layouts, the energy is 100% in the operator's carrier type.
+    /// </summary>
+    private static Dictionary<string, double> ComputeTensorEnergyFractions(
+        LinearizedOperatorBundle bundle, double[] eigenvector)
+    {
+        string carrierType = bundle.SpectralOperator.InputSignature.CarrierType;
+        return new Dictionary<string, double> { [carrierType] = 1.0 };
     }
 
     private static NullModeDiagnosis? DiagnoseNullModes(

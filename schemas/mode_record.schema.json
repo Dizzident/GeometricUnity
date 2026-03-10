@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/mode_record.schema.json",
+  "title": "ModeRecord",
+  "description": "A single computed eigenmode from a spectral solve.",
+  "type": "object",
+  "required": [
+    "modeId",
+    "backgroundId",
+    "operatorType",
+    "eigenvalue",
+    "residualNorm",
+    "normalizationConvention",
+    "gaugeLeakScore",
+    "modeVector",
+    "modeIndex"
+  ],
+  "properties": {
+    "modeId": {
+      "type": "string",
+      "description": "Unique mode identifier"
+    },
+    "backgroundId": {
+      "type": "string",
+      "description": "Background state ID"
+    },
+    "operatorType": {
+      "type": "string",
+      "description": "Which operator type produced this mode (GaussNewton or FullHessian)",
+      "enum": ["GaussNewton", "FullHessian"]
+    },
+    "eigenvalue": {
+      "type": "number",
+      "description": "Eigenvalue"
+    },
+    "residualNorm": {
+      "type": "number",
+      "description": "Residual norm ||H v - lambda M v|| / ||v||_M",
+      "minimum": 0
+    },
+    "normalizationConvention": {
+      "type": "string",
+      "description": "Normalization convention: unit-M-norm or unit-L2-norm"
+    },
+    "multiplicityClusterId": {
+      "type": ["string", "null"],
+      "description": "Multiplicity cluster ID (assigned by spectral clustering)"
+    },
+    "gaugeLeakScore": {
+      "type": "number",
+      "description": "Gauge leak score: fraction of mode energy in gauge subspace",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "modeVector": {
+      "type": "array",
+      "description": "Mode vector coefficients",
+      "items": { "type": "number" }
+    },
+    "nullModeDiagnosis": {
+      "type": ["object", "null"],
+      "description": "Null mode diagnosis (set for modes with |eigenvalue| near zero)"
+    },
+    "modeIndex": {
+      "type": "integer",
+      "description": "Index within the spectrum (0-based, sorted by eigenvalue ascending)",
+      "minimum": 0
+    },
+    "tensorEnergyFractions": {
+      "type": ["object", "null"],
+      "description": "Energy fraction per tensor signature label. Values are non-negative and sum to 1.0.",
+      "additionalProperties": { "type": "number" }
+    },
+    "blockEnergyFractions": {
+      "type": ["object", "null"],
+      "description": "Energy fraction per state-space block. Values are non-negative and sum to 1.0.",
+      "additionalProperties": { "type": "number" }
+    },
+    "modeVectorArtifactRef": {
+      "type": ["string", "null"],
+      "description": "Artifact path reference for the stored mode vector on disk"
+    },
+    "observedSignatureRef": {
+      "type": ["string", "null"],
+      "description": "Reference to the computed observed mode signature (set by M29 Observables pipeline)"
+    }
+  }
+}

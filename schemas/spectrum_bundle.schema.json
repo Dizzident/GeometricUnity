@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/spectrum_bundle.schema.json",
+  "title": "SpectrumBundle",
+  "description": "Complete result of a spectral solve: eigenvalues, modes, clusters, and diagnostics.",
+  "type": "object",
+  "required": [
+    "spectrumId",
+    "backgroundId",
+    "operatorBundleId",
+    "operatorType",
+    "formulation",
+    "solverMethod",
+    "stateDimension",
+    "modes",
+    "clusters",
+    "convergenceStatus",
+    "iterationsUsed",
+    "maxOrthogonalityDefect",
+    "computedWithBackend"
+  ],
+  "properties": {
+    "spectrumId": {
+      "type": "string",
+      "description": "Unique bundle identifier"
+    },
+    "backgroundId": {
+      "type": "string",
+      "description": "Background state ID"
+    },
+    "operatorBundleId": {
+      "type": "string",
+      "description": "Operator bundle ID that produced this spectrum"
+    },
+    "operatorType": {
+      "type": "string",
+      "description": "Operator type used (GaussNewton or FullHessian)",
+      "enum": ["GaussNewton", "FullHessian"]
+    },
+    "formulation": {
+      "type": "string",
+      "description": "Physical mode formulation (PenaltyFixed, ProjectedComplement, or QuotientAware)",
+      "enum": ["PenaltyFixed", "ProjectedComplement", "QuotientAware"]
+    },
+    "solverMethod": {
+      "type": "string",
+      "description": "Solver method used"
+    },
+    "stateDimension": {
+      "type": "integer",
+      "description": "State-space dimension",
+      "minimum": 1
+    },
+    "modes": {
+      "type": "array",
+      "description": "Computed modes, sorted by eigenvalue ascending",
+      "items": { "$ref": "mode_record.schema.json" }
+    },
+    "clusters": {
+      "type": "array",
+      "description": "Spectral clusters (groups of near-degenerate eigenvalues)",
+      "items": { "$ref": "#/$defs/ModeCluster" }
+    },
+    "nullModeDiagnosis": {
+      "oneOf": [{ "type": "null" }, { "$ref": "#/$defs/NullModeDiagnosis" }],
+      "description": "Null mode diagnosis (if applicable)"
+    },
+    "convergenceStatus": {
+      "type": "string",
+      "description": "Convergence status: converged, partially-converged, or failed"
+    },
+    "iterationsUsed": {
+      "type": "integer",
+      "description": "Number of iterations used",
+      "minimum": 0
+    },
+    "maxOrthogonalityDefect": {
+      "type": "number",
+      "description": "Maximum orthogonality defect among computed modes: max |v_i^T M v_j| for i != j",
+      "minimum": 0
+    },
+    "computedWithBackend": {
+      "type": "string",
+      "description": "Backend used to compute this spectrum: cpu or cuda",
+      "default": "cpu"
+    }
+  },
+  "$defs": {
+    "ModeCluster": {
+      "type": "object",
+      "required": ["clusterId", "modeIndices", "meanEigenvalue", "eigenvalueSpread"],
+      "properties": {
+        "clusterId": { "type": "string" },
+        "modeIndices": {
+          "type": "array",
+          "items": { "type": "integer" }
+        },
+        "multiplicity": { "type": "integer", "minimum": 1 },
+        "meanEigenvalue": { "type": "number" },
+        "eigenvalueSpread": { "type": "number" },
+        "spectralGapToNext": { "type": ["number", "null"] }
+      }
+    },
+    "NullModeDiagnosis": {
+      "type": "object",
+      "required": ["nullThreshold", "nullModeCount", "gaugeNullCount", "nullEigenvalues", "nullGaugeLeakScores", "gaugeLeakThreshold"],
+      "properties": {
+        "nullThreshold": { "type": "number" },
+        "nullModeCount": { "type": "integer", "minimum": 0 },
+        "gaugeNullCount": { "type": "integer", "minimum": 0 },
+        "physicalNullCount": { "type": "integer" },
+        "nullEigenvalues": {
+          "type": "array",
+          "items": { "type": "number" }
+        },
+        "nullGaugeLeakScores": {
+          "type": "array",
+          "items": { "type": "number" }
+        },
+        "gaugeLeakThreshold": { "type": "number" }
+      }
+    }
+  }
+}
