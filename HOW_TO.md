@@ -18,11 +18,12 @@ A comprehensive guide to building, running, testing, and exploring the Geometric
 10. [Artifacts, Replay, and Reproducibility](#10-artifacts-replay-and-reproducibility)
 11. [Running and Writing Tests](#11-running-and-writing-tests)
 12. [Phase II: Research Instrumentation](#12-phase-ii-research-instrumentation)
-13. [Vulkan Visualization and Export](#13-vulkan-visualization-and-export)
-14. [Benchmarking](#14-benchmarking)
-15. [Key Physics and Conventions](#15-key-physics-and-conventions)
-16. [Exploring the Codebase](#16-exploring-the-codebase)
-17. [Common Pitfalls and Troubleshooting](#17-common-pitfalls-and-troubleshooting)
+13. [Phase III: Boson Spectrum Extraction](#13-phase-iii-boson-spectrum-extraction)
+14. [Vulkan Visualization and Export](#14-vulkan-visualization-and-export)
+15. [Benchmarking](#15-benchmarking)
+16. [Key Physics and Conventions](#16-key-physics-and-conventions)
+17. [Exploring the Codebase](#17-exploring-the-codebase)
+18. [Common Pitfalls and Troubleshooting](#18-common-pitfalls-and-troubleshooting)
 
 ---
 
@@ -37,7 +38,7 @@ A comprehensive guide to building, running, testing, and exploring the Geometric
 
 ### Optional
 
-- **CUDA 13.1+** for GPU acceleration (Phase I CUDA kernels, Phase II stubs)
+- **CUDA 13.1+** for GPU acceleration (Phase I CUDA kernels, Phase III GPU Lanczos)
   ```bash
   nvcc --version
   ```
@@ -73,7 +74,7 @@ dotnet build
 dotnet clean && dotnet build
 ```
 
-The solution uses the `.slnx` format (new in .NET 10). The file `GeometricUnity.slnx` lists all 26 source projects, 3 application projects, and 28 test projects.
+The solution uses the `.slnx` format (new in .NET 10). The file `GeometricUnity.slnx` lists all 36 source projects, 3 application projects, and 38 test projects.
 
 ### Global Settings
 
@@ -104,7 +105,7 @@ GeometricUnity/
 │   ├── Gu.Workbench/                  # Vulkan visualization tool
 │   └── Gu.Benchmarks/                 # Performance benchmarking
 │
-├── src/                               # Source libraries (26 projects)
+├── src/                               # Source libraries (36 projects)
 │   ├── Gu.Core/                       # Core types: BranchManifest, FieldTensor, etc.
 │   ├── Gu.Math/                       # Lie algebras, structure constants, pairings
 │   ├── Gu.Geometry/                   # Simplicial meshes, projections, quadrature
@@ -130,19 +131,29 @@ GeometricUnity/
 │   ├── Gu.Phase2.Comparison/          # Comparison campaigns, dataset adapters
 │   ├── Gu.Phase2.Reporting/           # Research reports, dashboards, batch runner
 │   ├── Gu.Phase2.CudaInterop/         # Phase II GPU acceleration (stubs)
-│   └── Gu.Phase2.Viz/                 # Phase II visualization
+│   ├── Gu.Phase2.Viz/                 # Phase II visualization
+│   ├── Gu.Phase3.Backgrounds/         # Background atlas: stationary connection catalog
+│   ├── Gu.Phase3.GaugeReduction/      # Gauge reduction, Coulomb slice, zero-mode removal
+│   ├── Gu.Phase3.Spectra/             # Lanczos eigensolver, spectrum bundles
+│   ├── Gu.Phase3.ModeTracking/        # Mode family tracking, split/merge/crossing detection
+│   ├── Gu.Phase3.Properties/          # Mass, spin, charge extraction from eigenmodes
+│   ├── Gu.Phase3.Observables/         # Observation normalization, dispersion fitting
+│   ├── Gu.Phase3.Registry/            # Candidate boson registry, claim classification
+│   ├── Gu.Phase3.CudaSpectra/         # GPU-accelerated Lanczos (CUDA)
+│   ├── Gu.Phase3.Campaigns/           # Boson comparison campaigns
+│   └── Gu.Phase3.Reporting/           # Boson atlas reports, dashboards
 │
-├── tests/                             # Test projects (28 projects, ~1631 tests)
+├── tests/                             # Test projects (38 projects, ~2252 tests)
 ├── native/                            # CUDA/Vulkan native code (CMake)
 ├── examples/                          # Toy geometries for testing
 │   ├── toy_branch_2d/                 # 2D unit square (simplest)
 │   ├── toy_branch_3d/                 # 3D test geometry
 │   └── minimal_v1_4d/                 # 4D production reference (dim(X)=4, dim(Y)=14)
-├── schemas/                           # 18 JSON schema files
+├── schemas/                           # 26 JSON schema files
 ├── benchmark-results/                 # Performance test results
 ├── IMPLEMENTATION_PLAN.md             # Phase I plan (M0-M12)
 ├── IMPLEMENTATION_PLAN_P2.md          # Phase II plan (M13-M22)
-├── IMPLEMENTATION_PLAN_P3.md          # Phase III plan (boson extraction)
+├── IMPLEMENTATION_PLAN_P3.md          # Phase III plan (M23-M32, boson extraction)
 └── ARCHITECTURE_P2.md                 # Phase II architecture document
 ```
 
@@ -304,7 +315,63 @@ Computes or verifies SHA-256 hashes for all files in the run folder.
 dotnet run --project apps/Gu.Cli -- validate-schema <file> <schema>
 ```
 
-Validates a JSON file against one of the 18 JSON schemas in `schemas/`.
+Validates a JSON file against one of the 26 JSON schemas in `schemas/`.
+
+### `create-background-study` — Generate a Background Study Spec
+
+```bash
+dotnet run --project apps/Gu.Cli -- create-background-study [output.json]
+```
+
+Creates a background study spec JSON file for sweeping stationary background connections.
+
+### `solve-backgrounds` — Build a Background Atlas
+
+```bash
+dotnet run --project apps/Gu.Cli -- solve-backgrounds <study.json> [--output <dir>] [--lie-algebra su2|su3]
+```
+
+Runs the solver over all backgrounds defined in the study spec and writes a `BackgroundAtlas` to disk.
+
+### `compute-spectrum` — Compute Fluctuation Spectrum
+
+```bash
+dotnet run --project apps/Gu.Cli -- compute-spectrum <run-folder> <backgroundId> [--num-modes N] [--formulation p1|p2]
+```
+
+Runs Lanczos on the Hessian at a given background and writes a `SpectrumBundle` artifact. GPU verification is enforced when `--formulation p2` is used and CUDA is available.
+
+### `track-modes` — Track Mode Families
+
+```bash
+dotnet run --project apps/Gu.Cli -- track-modes <run-folder> [--context continuation|branch|refinement]
+```
+
+Matches eigenmodes across multiple spectrum bundles using overlap metric O2, detecting split/merge/avoided-crossing events. Writes `ModeFamily` records.
+
+### `build-boson-registry` — Assemble Candidate Boson Registry
+
+```bash
+dotnet run --project apps/Gu.Cli -- build-boson-registry <run-folder>
+```
+
+Assigns claim classes (C0-C5) to candidate bosons using 7 demotion rules, producing a `BosonRegistry` artifact.
+
+### `run-boson-campaign` — Execute Boson Comparison Campaign
+
+```bash
+dotnet run --project apps/Gu.Cli -- run-boson-campaign <run-folder> [--campaign <campaignSpec.json>]
+```
+
+Runs structured comparison campaigns (structural/semi-quantitative/quantitative) between registry candidates and external datasets.
+
+### `export-boson-report` — Export Boson Atlas Report
+
+```bash
+dotnet run --project apps/Gu.Cli -- export-boson-report <run-folder> [options]
+```
+
+Generates a `BosonReport` document with summary tables, per-candidate dashboards, campaign outcomes, and negative results.
 
 ---
 
@@ -845,6 +912,17 @@ dotnet test --no-build --filter "Category=Integration"
 | `Gu.ExternalComparison.Tests` | ~59 | Comparison adapters, strategies |
 | `Gu.Branching.Tests` | ~50 | Operator dispatch |
 | `Gu.Phase2.*.Tests` | ~344 | All Phase II modules |
+| `Gu.Phase3.Backgrounds.Tests` | — | Background atlas, admissibility grading |
+| `Gu.Phase3.GaugeReduction.Tests` | — | Coulomb slice, zero-mode removal |
+| `Gu.Phase3.Spectra.Tests` | — | Lanczos M-orthogonality, dense vs sparse agreement |
+| `Gu.Phase3.ModeTracking.Tests` | — | Split/merge/crossing detection, cross-branch maps |
+| `Gu.Phase3.Properties.Tests` | — | Mass/spin/charge extraction |
+| `Gu.Phase3.Observables.Tests` | — | Dispersion fitting, normalization stability |
+| `Gu.Phase3.Registry.Tests` | — | Claim classification, demotion rules, RegistryDiff |
+| `Gu.Phase3.CudaSpectra.Tests` | — | GPU verification enforcement |
+| `Gu.Phase3.Campaigns.Tests` | — | Boson comparison campaigns |
+| `Gu.Phase3.Reporting.Tests` | — | Boson atlas report generation |
+| **Total** | **~2,252** | **38 test projects** |
 
 ### Writing New Tests
 
@@ -1089,7 +1167,138 @@ var results = campaign.Run(predictions, externalData, comparisonStrategy);
 
 ---
 
-## 13. Vulkan Visualization and Export
+## 13. Phase III: Boson Spectrum Extraction
+
+Phase III adds a boson spectrum extraction pipeline on top of Phase I and II. It computes the fluctuation spectrum around stationary background connections and assembles a catalog of candidate bosons.
+
+### Background Atlas
+
+A **BackgroundStudySpec** defines a sweep over background connections:
+
+```bash
+# Generate a study spec
+dotnet run --project apps/Gu.Cli -- create-background-study backgrounds.json
+
+# Solve all backgrounds and build the atlas
+dotnet run --project apps/Gu.Cli -- solve-backgrounds backgrounds.json --output atlas/ --lie-algebra su2
+```
+
+The `BackgroundAtlasBuilder` grades each background by admissibility (convergence, torsion norm, Hessian signature) and writes a `BackgroundAtlas` containing all `BackgroundRecord` entries.
+
+### Spectrum Computation
+
+Compute the fluctuation spectrum at a specific background using Lanczos:
+
+```bash
+dotnet run --project apps/Gu.Cli -- compute-spectrum atlas/ bg-001 --num-modes 20 --formulation p1
+```
+
+The Lanczos solver uses M-orthogonalization with a CG-based M^{-1} solve (Golub-Ye variant) and primal-space reorthogonalization. Results are stored as a `SpectrumBundle` with `ComputedWithBackend` provenance. GPU verification is enforced for the `p2` formulation.
+
+```csharp
+var probe = new LanczosSpectrumProbe(maxIterations: 200, numEigenvalues: 20);
+var bundle = probe.Compute(hessian, massMatrix, background);
+
+Console.WriteLine($"Backend: {bundle.ComputedWithBackend}");
+Console.WriteLine($"GPU verified: {bundle.GpuVerified}");
+foreach (var mode in bundle.Modes)
+    Console.WriteLine($"  lambda={mode.Eigenvalue:E6}, norm={mode.EigenvectorNorm:E3}");
+```
+
+### Mode Tracking
+
+Track eigenmodes across backgrounds to form mode families:
+
+```bash
+dotnet run --project apps/Gu.Cli -- track-modes atlas/ --context branch
+```
+
+The `ModeMatchingEngine` computes the O2 overlap metric (weights 0.3/0.4/0.3 over energy, signature, and spatial profile) and detects:
+- **Split**: one mode diverges into two
+- **Merge**: two modes converge into one
+- **Avoided crossing**: modes exchange identity near a degeneracy
+
+```csharp
+var engine = new ModeMatchingEngine();
+var families = engine.TrackAcrossBundles(bundles, context: TrackingContext.Branch);
+
+foreach (var family in families)
+{
+    Console.WriteLine($"Family {family.FamilyId}: {family.MemberCount} modes");
+    if (family.HasAvoidedCrossing)
+        Console.WriteLine($"  Avoided crossing at background {family.CrossingBackgroundId}");
+}
+```
+
+### Property Extraction
+
+Extract physical properties from mode families:
+
+```csharp
+// Mass from dispersion fit
+var massExtractor = new DispersionFitMassExtractor();
+var mass = massExtractor.Extract(family, dispersions);
+
+// Spin from tensor structure
+var spinExtractor = new SpinExtractor(algebra);
+var spin = spinExtractor.Extract(modeRecord);
+
+// Charge from gauge transformation behavior
+var chargeExtractor = new ChargeExtractor(algebra);
+var charge = chargeExtractor.Extract(modeRecord);
+```
+
+Each `ModeRecord` carries:
+- `BlockEnergyFractions` / `TensorEnergyFractions` (energy decomposition)
+- `Polarization`, `Symmetry`, `InteractionProxy` (envelope fields on `CandidateBosonRecord`)
+- Artifact references to the originating `SpectrumBundle`
+
+### Candidate Boson Registry
+
+Assemble and classify all candidate bosons:
+
+```bash
+dotnet run --project apps/Gu.Cli -- build-boson-registry atlas/
+```
+
+The `BosonRegistry` assigns claim classes C0-C5 using 7 demotion rules:
+- `ConvergenceFailure`, `CanonicityDispute`, `StabilityInstability`, `ExtractionAmbiguity` (Phase II rules)
+- `ObservationInstability`, `ComparisonMismatch`, `AmbiguousMatching` (Phase III additions)
+
+`ComparisonOutcome` values: `Compatible`, `Incompatible`, `Underdetermined`, `InsufficientEvidence` — never forces a unique match.
+
+### Boson Comparison Campaign
+
+```bash
+dotnet run --project apps/Gu.Cli -- run-boson-campaign atlas/ --campaign campaign.json
+```
+
+Campaigns compare registry candidates against external datasets with structural/semi-quantitative/quantitative strategies.
+
+### Boson Report
+
+```bash
+dotnet run --project apps/Gu.Cli -- export-boson-report atlas/ --output report.json
+```
+
+Produces a `BosonReport` with per-candidate summaries, campaign outcomes, a `RegistryDiff` (changes since last run), and preserved negative results.
+
+### Phase III JSON Schemas
+
+| Schema | Validates |
+|--------|-----------|
+| `background_record.schema.json` | `BackgroundRecord` |
+| `background_study.schema.json` | `BackgroundStudySpec` |
+| `spectrum_bundle.schema.json` | `SpectrumBundle` |
+| `mode_record.schema.json` | `ModeRecord` |
+| `mode_family.schema.json` | `ModeFamily` |
+| `boson_registry.schema.json` | `BosonRegistry` |
+| `boson_campaign.schema.json` | `BosonCampaignSpec` |
+| `boson_report.schema.json` | `BosonReport` |
+
+---
+
+## 14. Vulkan Visualization and Export
 
 ### Launching the Workbench
 
@@ -1138,7 +1347,7 @@ var vizData = visualizer.PrepareVisualization(curvatureField, mesh);
 
 ---
 
-## 14. Benchmarking
+## 15. Benchmarking
 
 ### Running Benchmarks
 
@@ -1169,7 +1378,7 @@ Benchmark reports include:
 
 ---
 
-## 15. Key Physics and Conventions
+## 16. Key Physics and Conventions
 
 ### Core Equation
 
@@ -1265,7 +1474,7 @@ where J = dUpsilon/domega is the Jacobian.
 
 ---
 
-## 16. Exploring the Codebase
+## 17. Exploring the Codebase
 
 ### Finding Key Types
 
@@ -1287,7 +1496,7 @@ where J = dUpsilon/domega is the Jacobian.
 
 ### JSON Schemas
 
-18 JSON schemas in `schemas/` define the contract for all JSON files:
+26 JSON schemas in `schemas/` define the contract for all JSON files:
 
 | Schema | Validates |
 |--------|-----------|
@@ -1305,6 +1514,14 @@ where J = dUpsilon/domega is the Jacobian.
 | `comparison_campaign.schema.json` | ComparisonCampaignSpec |
 | `research_report.schema.json` | ResearchReportDocument |
 | `branch_sweep_result.schema.json` | BranchSweepResult |
+| `background_record.schema.json` | BackgroundRecord |
+| `background_study.schema.json` | BackgroundStudySpec |
+| `spectrum_bundle.schema.json` | SpectrumBundle |
+| `mode_record.schema.json` | ModeRecord |
+| `mode_family.schema.json` | ModeFamily |
+| `boson_registry.schema.json` | BosonRegistry |
+| `boson_campaign.schema.json` | BosonCampaignSpec |
+| `boson_report.schema.json` | BosonReport |
 
 ### Reading the Implementation Plans
 
@@ -1312,12 +1529,12 @@ where J = dUpsilon/domega is the Jacobian.
 |----------|-------|----------|
 | `IMPLEMENTATION_PLAN.md` | 1,830 | Phase I (M0-M12): core bosonic dynamics |
 | `IMPLEMENTATION_PLAN_P2.md` | 1,898 | Phase II (M13-M22): research instrumentation |
-| `IMPLEMENTATION_PLAN_P3.md` | 1,643 | Phase III: boson spectrum extraction |
+| `IMPLEMENTATION_PLAN_P3.md` | 1,643 | Phase III (M23-M32): boson spectrum extraction |
 | `ARCHITECTURE_P2.md` | 815 | Phase II architecture details |
 
 ---
 
-## 17. Common Pitfalls and Troubleshooting
+## 18. Common Pitfalls and Troubleshooting
 
 ### Build Issues
 
@@ -1441,6 +1658,20 @@ dF/domega(delta) = d(delta) + 0.5 * sum_{i<j}([omega_i, delta_j] + [delta_i, ome
 | `IPhase2BatchKernel` | Gu.Phase2.CudaInterop | GPU batch processing |
 | `ISpectrumProbe` | Gu.Phase2.Stability | Eigenvalue computation |
 
+### Phase III Interfaces
+
+| Interface | Module | Purpose |
+|-----------|--------|---------|
+| `IBackgroundSolver` | Gu.Phase3.Backgrounds | Solve a single background connection |
+| `IAdmissibilityGrader` | Gu.Phase3.Backgrounds | Grade background admissibility |
+| `IGaugeReductionOperator` | Gu.Phase3.GaugeReduction | Apply Coulomb slice / remove zero modes |
+| `ILanczosProbe` | Gu.Phase3.Spectra | Lanczos M-orthogonal eigensolver |
+| `IModeMatchingEngine` | Gu.Phase3.ModeTracking | Compute O2 overlap, detect events |
+| `IMassExtractor` | Gu.Phase3.Properties | Extract mass from mode family |
+| `ISpinExtractor` | Gu.Phase3.Properties | Extract spin from tensor structure |
+| `IChargeExtractor` | Gu.Phase3.Properties | Extract gauge charge |
+| `IBosonCampaignStrategy` | Gu.Phase3.Campaigns | Compare candidates vs external data |
+
 ## Appendix C: Suggested Explorations
 
 ### For Understanding the Core Physics
@@ -1472,9 +1703,18 @@ dF/domega(delta) = d(delta) + 0.5 * sum_{i<j}([omega_i, delta_j] + [delta_i, ome
 4. Compute Hessian eigenvalues at a converged solution
 5. Run pseudo-arclength continuation on gauge-lambda
 
+### For Understanding Phase III
+
+1. Create a background study spec and solve a small sweep (2-3 backgrounds)
+2. Compute the spectrum at each background with `compute-spectrum`
+3. Track modes across the spectrum bundles and inspect the mode families
+4. Build a boson registry and examine the claim class assignments and demotion reasons
+5. Run a comparison campaign and inspect `ComparisonOutcome` values
+
 ### For Performance Analysis
 
 1. Run benchmarks on increasing mesh sizes
 2. Compare gradient descent vs conjugate gradient vs Gauss-Newton
 3. Profile time per iteration across solver methods
 4. If CUDA available, compare CPU vs GPU parity and timing
+5. Compare CPU vs GPU Lanczos timing with `compute-spectrum --formulation p2`

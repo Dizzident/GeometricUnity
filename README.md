@@ -1,6 +1,6 @@
 # Geometric Unity
 
-A reproducible research engine implementing the first executable bosonic branch of Eric Weinstein's Geometric Unity framework. Connection-centered, observerse-based, explicitly discretized, with CPU reference backend, CUDA acceleration, Vulkan visualization, and a full Phase II research instrumentation layer for systematic branch-independence studies, PDE classification, stability analysis, and comparison campaigns.
+A reproducible research engine implementing the first executable bosonic branch of Eric Weinstein's Geometric Unity framework. Connection-centered, observerse-based, explicitly discretized, with CPU reference backend, CUDA acceleration, Vulkan visualization, a full Phase II research instrumentation layer for systematic branch-independence studies, and a Phase III boson spectrum extraction pipeline for candidate boson identification and comparison campaigns.
 
 ## Overview
 
@@ -15,6 +15,10 @@ This system implements the **minimal bosonic executable branch** of the Geometri
 - **Linearization workbench** classifies PDE type, computes spectra, and probes stability
 - **Recovery graphs** trace the full chain from native fields to physical identification
 - **Comparison campaigns** validate predictions against external datasets with uncertainty decomposition
+- **Background atlas** (Phase III) builds a catalog of stationary background connections
+- **Boson spectrum** (Phase III) extracts fluctuation eigenmodes via Lanczos on the Hessian
+- **Mode tracking** (Phase III) follows mode families across backgrounds with split/merge detection
+- **Candidate boson registry** (Phase III) assembles, classifies, and compares candidate particles
 
 The system is designed as a **research platform**, not a one-off solver.
 
@@ -36,7 +40,7 @@ dotnet build
 dotnet build && dotnet test --no-build
 ```
 
-There are 1,631 tests across 23 test projects covering core types, geometry, reference CPU operators, interop, validation, artifacts, observation, external comparison, and all Phase II modules (semantics, branches, execution, canonicity, stability, recovery, continuation, predictions, comparison, reporting).
+There are 2,252 tests across 38 test projects covering core types, geometry, reference CPU operators, interop, validation, artifacts, observation, external comparison, all Phase II modules (semantics, branches, execution, canonicity, stability, recovery, continuation, predictions, comparison, reporting), and all Phase III modules (backgrounds, gauge reduction, spectra, mode tracking, properties, observables, registry, CUDA spectra, campaigns, reporting).
 
 ## CLI Usage
 
@@ -79,6 +83,17 @@ dotnet run --project apps/Gu.Cli -- verify-integrity <run-folder>
 ```
 Computes or verifies SHA-256 integrity hashes for all files in a run folder.
 
+**Phase III — Boson Spectrum:**
+```bash
+dotnet run --project apps/Gu.Cli -- create-background-study [output.json]
+dotnet run --project apps/Gu.Cli -- solve-backgrounds <study.json> [--output <dir>] [--lie-algebra su2|su3]
+dotnet run --project apps/Gu.Cli -- compute-spectrum <run-folder> <backgroundId> [--num-modes N] [--formulation p1|p2]
+dotnet run --project apps/Gu.Cli -- track-modes <run-folder> [--context continuation|branch|refinement]
+dotnet run --project apps/Gu.Cli -- build-boson-registry <run-folder>
+dotnet run --project apps/Gu.Cli -- run-boson-campaign <run-folder> [--campaign <campaignSpec.json>]
+dotnet run --project apps/Gu.Cli -- export-boson-report <run-folder> [options]
+```
+
 ## Running Benchmarks
 
 ```bash
@@ -95,14 +110,14 @@ GeometricUnity/
 │   ├── Gu.Cli/                    # Command-line interface
 │   ├── Gu.Workbench/              # Interactive workbench (Vulkan)
 │   └── Gu.Benchmarks/             # Performance benchmarks
-├── src/
+├── src/                           # 36 source libraries
 │   ├── Gu.Core/                   # Core types: BranchManifest, FieldTensor, TensorSignature
 │   ├── Gu.Math/                   # Lie algebras, structure constants, pairings
 │   ├── Gu.Branching/              # Branch operators: torsion, Shiab interfaces
 │   ├── Gu.Geometry/               # Simplicial meshes, projections, quadrature
 │   ├── Gu.Discretization/         # Discrete exterior calculus, covariant derivatives
 │   ├── Gu.ReferenceCpu/           # CPU reference: curvature, torsion, Shiab, Jacobian
-│   ├── Gu.Solvers/                # Solver modes (A/B/C), gauge penalty, convergence
+│   ├── Gu.Solvers/                # Solver modes (A/B/C/D), gauge penalty, convergence
 │   ├── Gu.Observation/            # Observation pipeline: pullback, transforms
 │   ├── Gu.Validation/             # Algebraic validation rules, parity checking
 │   ├── Gu.Artifacts/              # Run folders, replay contracts, integrity hashing
@@ -119,11 +134,23 @@ GeometricUnity/
 │   ├── Gu.Phase2.Continuation/    # Pseudo-arclength continuation, stability atlas
 │   ├── Gu.Phase2.Predictions/     # Prediction test records, uncertainty budgets
 │   ├── Gu.Phase2.Comparison/      # Comparison campaigns, dataset adapters, strategies
-│   └── Gu.Phase2.Reporting/       # Research reports, dashboards, batch runner
-├── tests/                         # 23 test projects (Phase I + Phase II)
+│   ├── Gu.Phase2.Reporting/       # Research reports, dashboards, batch runner
+│   ├── Gu.Phase2.CudaInterop/     # Phase II GPU acceleration (stubs)
+│   ├── Gu.Phase2.Viz/             # Phase II visualization
+│   ├── Gu.Phase3.Backgrounds/     # Background atlas: stationary connection catalog
+│   ├── Gu.Phase3.GaugeReduction/  # Gauge reduction, Coulomb slice, zero-mode removal
+│   ├── Gu.Phase3.Spectra/         # Lanczos eigensolver, spectrum bundles
+│   ├── Gu.Phase3.ModeTracking/    # Mode family tracking, split/merge/crossing detection
+│   ├── Gu.Phase3.Properties/      # Mass, spin, charge extraction from eigenmodes
+│   ├── Gu.Phase3.Observables/     # Observation normalization, dispersion fitting
+│   ├── Gu.Phase3.Registry/        # Candidate boson registry, claim classification
+│   ├── Gu.Phase3.CudaSpectra/     # GPU-accelerated Lanczos (CUDA)
+│   ├── Gu.Phase3.Campaigns/       # Boson comparison campaigns
+│   └── Gu.Phase3.Reporting/       # Boson atlas reports, dashboards
+├── tests/                         # 38 test projects (Phase I + Phase II + Phase III)
 ├── native/                        # CUDA kernels (C/CUDA)
 ├── examples/                      # Toy 2D/3D/4D geometries for debugging
-└── schemas/                       # JSON schemas for core and Phase II types
+└── schemas/                       # 26 JSON schemas for all phases
 ```
 
 ## Architecture
@@ -170,6 +197,24 @@ Branch family (variant parameters)
   -> PredictionValidator (uncertainty decomposition, falsifiers)
   -> CampaignRunner (structural/semi-quantitative/quantitative comparison)
   -> ResearchReportGenerator (summary, dashboards, negative results)
+```
+
+### Phase III Boson Spectrum Pipeline
+
+```
+BackgroundStudySpec (parameter sweep over background connections)
+  -> BackgroundAtlasBuilder (solve + catalog stationary backgrounds)
+  -> GaugeReductionOperator (Coulomb slice, zero-mode removal)
+  -> LanczosSpectrumProbe (M-orthogonal Krylov, GPU-accelerated)
+  -> SpectrumBundle (eigenmodes with ComputedWithBackend provenance)
+  -> ModeMatchingEngine (overlap O2, split/merge/avoided-crossing detection)
+  -> ModeFamily / ModeFamilyTracker (cross-background mode threading)
+  -> MassExtractor / SpinExtractor / ChargeExtractor (property extraction)
+  -> DispersionFitMassExtractor (dispersion curve fitting)
+  -> CandidateBosonRecord (Polarization, Symmetry, InteractionProxy envelope)
+  -> BosonRegistry (claim classes C0-C5, 7 demotion rules)
+  -> BosonCampaignRunner (comparison campaigns)
+  -> BosonReportGenerator (atlas report, dashboards)
 ```
 
 ### Replay Tiers
@@ -229,16 +274,17 @@ Visualization is strictly **read-only** — it consumes artifact snapshots and n
 
 ## Codebase
 
-- ~370 C# source files (~27,500 lines)
-- ~215 test files (~37,500 lines)
+- ~450 C# source files
+- ~250 test files
 - 15 native source files (CUDA/Vulkan)
-- 1,631 tests across 23 test projects
+- 2,252 tests across 38 test projects
 - Phase 1 (Minimal GU v1): **Complete** — all 13 milestones (M0-M12)
 - Phase 2 (Research Instrumentation): **Complete** — all 10 milestones (M13-M22)
+- Phase 3 (Boson Spectrum Extraction): **Complete** — all 10 milestones (M23-M32) + all 12 gap closures
 
 ## Theory Context
 
-The `TheoryCompletitionRevisions/` directory contains the evolving Geometric Unity Completion manuscript. The software implements the executable portion of this completion program. See `IMPLEMENTATION_PLAN.md` (Phase I) and `IMPLEMENTATION_PLAN_P2.md` (Phase II) for the full technical specifications.
+The `TheoryCompletitionRevisions/` directory contains the evolving Geometric Unity Completion manuscript. The software implements the executable portion of this completion program. See `IMPLEMENTATION_PLAN.md` (Phase I), `IMPLEMENTATION_PLAN_P2.md` (Phase II), and `IMPLEMENTATION_PLAN_P3.md` (Phase III) for the full technical specifications.
 
 ## License
 
