@@ -34,7 +34,7 @@ public sealed class DiracParityChecker
     /// <summary>Full parity report across all tested operations.</summary>
     public sealed class ParityReport
     {
-        public required IReadOnlyList<ParityResult> Results { get; init; }
+        public required List<ParityResult> Results { get; init; }
         public bool AllPassed => Results.All(r => r.Passed);
         public double WorstError => Results.Count > 0 ? Results.Max(r => r.MaxRelativeError) : 0.0;
     }

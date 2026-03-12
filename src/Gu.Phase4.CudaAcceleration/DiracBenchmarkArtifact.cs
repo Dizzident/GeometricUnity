@@ -50,7 +50,7 @@ public sealed class DiracBenchmarkArtifact
     public required string GpuVerificationStatus { get; init; }
 
     [JsonPropertyName("operationBenchmarks")]
-    public required IReadOnlyList<DiracOperationBenchmark> OperationBenchmarks { get; init; }
+    public required List<DiracOperationBenchmark> OperationBenchmarks { get; init; }
 
     [JsonPropertyName("provenance")]
     public required ProvenanceMeta Provenance { get; init; }

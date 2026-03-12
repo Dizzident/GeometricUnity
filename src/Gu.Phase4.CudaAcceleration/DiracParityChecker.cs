@@ -28,7 +28,7 @@ public sealed class DiracParityCheckResult
     public required bool Passed { get; init; }
     public required double MaxAbsoluteError { get; init; }
     public required double MaxRelativeError { get; init; }
-    public IReadOnlyList<string> Notes { get; init; } = Array.Empty<string>();
+    public List<string> Notes { get; init; } = new();
     public required ProvenanceMeta Provenance { get; init; }
 }
 
@@ -38,7 +38,7 @@ public sealed class DiracParityCheckResult
 public sealed class DiracParityReport
 {
     public required string ReportId { get; init; }
-    public required IReadOnlyList<DiracParityCheckResult> Checks { get; init; }
+    public required List<DiracParityCheckResult> Checks { get; init; }
     public required bool AllPassed { get; init; }
     public required string GpuVerificationStatus { get; init; }
     public required ProvenanceMeta Provenance { get; init; }

@@ -167,6 +167,6 @@ public sealed class DiracValidationReport
     public required bool IsStorageValid { get; init; }
     public required double HermiticityResidual { get; init; }
     public required string HermiticityStatus { get; init; }
-    public required IReadOnlyList<string> Messages { get; init; }
+    public required List<string> Messages { get; init; }
     public bool IsValid => IsShapeValid && IsStorageValid;
 }
