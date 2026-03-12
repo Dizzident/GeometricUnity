@@ -211,16 +211,39 @@ public sealed class GaugeReductionWorkbench
         if (basis.Rank == 0 || basis.SingularValues.Count == 0)
             return null;
 
-        // The smallest retained singular value
-        double smallestRetained = basis.SingularValues[basis.Rank - 1];
+        double minRetained = basis.SingularValues[basis.SingularValues.Count - 1];
 
-        // We need to check if there are discarded singular values
-        // The GaugeBasis only stores retained singular values, so we can't
-        // directly access discarded ones. We use the SVD cutoff as proxy.
+        // Find the largest discarded singular value: first SV in AllSingularValues strictly below minRetained
+        double maxDiscarded = 0;
+        foreach (double sv in basis.AllSingularValues)
+        {
+            if (sv < minRetained - 1e-15)
+            {
+                maxDiscarded = sv;
+                break;
+            }
+        }
+
+        // No discarded singular values — cannot compute ratio
+        if (maxDiscarded < 1e-30)
+            return null;
+
+        return minRetained / maxDiscarded;
+    }
+
+    /// <summary>
+    /// Compute the old proxy-based spectral gap (kept for comparison).
+    /// </summary>
+    private static double? ComputeSpectralGapApproximate(GaugeBasis basis)
+    {
+        if (basis.Rank == 0 || basis.SingularValues.Count == 0)
+            return null;
+
+        double smallestRetained = basis.SingularValues[basis.SingularValues.Count - 1];
         double cutoffValue = basis.SingularValues[0] * basis.SvdCutoff;
 
         if (cutoffValue < 1e-30)
-            return smallestRetained; // No meaningful discarded values
+            return smallestRetained;
 
         return smallestRetained / cutoffValue;
     }

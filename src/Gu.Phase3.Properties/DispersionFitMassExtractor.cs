@@ -1,97 +1,86 @@
 namespace Gu.Phase3.Properties;
 
 /// <summary>
-/// Extracts mass-like scales from dispersion relation fitting.
+/// Extracts mass-like scales by fitting the relativistic dispersion relation omega^2 = m^2 + k^2.
 ///
-/// Given a list of (backgroundParameter, massLikeScale) pairs sampled across
-/// a continuation path, fits a linear dispersion relation and returns a
-/// mass-like scale record with ExtractionMethod = "dispersion-fit".
-///
-/// // Full dispersion fit requires campaign-level continuation data (Phase IV)
+/// Requires multiple (k, omega^2) data points from either varying mesh sizes or
+/// varying periodic-boundary wavevectors. For single-mode eigenvalue extraction use
+/// <see cref="MassLikeScaleExtractor"/>. For background-parameter sweep fitting use
+/// <see cref="LinearInterpolationMassExtractor"/>.
 /// </summary>
 public static class DispersionFitMassExtractor
 {
     /// <summary>
-    /// Compute a dispersion-fit mass-like scale from sampled data points.
+    /// Fit the dispersion relation omega^2 = m^2 + k^2 to recover the mass m.
     ///
-    /// Current implementation: linear slope fit via finite differences.
-    /// A full dispersion relation fit (e.g., omega^2 = m^2 + k^2) requires
-    /// campaign-level continuation data and is deferred to Phase IV.
+    /// Uses ordinary least squares on the model: omega^2_j = m^2 + k^2_j.
+    /// Equivalently, minimizes sum_j (omega^2_j - m^2 - k^2_j)^2 over m^2.
+    /// The OLS estimate is: m^2 = mean(omega^2_j - k^2_j).
+    ///
+    /// Special cases:
+    /// - If m^2 ~ 0 (|m^2| &lt; tolerance), notes "massless" in the record.
+    /// - If m^2 &lt; 0, notes "tachyonic" and returns negative MassLikeScale.
+    /// - If only one point is provided, a fit cannot be validated; notes "single-point-fallback".
     /// </summary>
     /// <param name="modeId">Mode ID for provenance.</param>
     /// <param name="backgroundId">Background ID for provenance.</param>
     /// <param name="operatorType">Operator type string for provenance.</param>
-    /// <param name="samples">
-    /// List of (backgroundParameter, massLikeScale) pairs sampled across
-    /// a continuation path or parameter sweep.
-    /// </param>
+    /// <param name="kValues">Momentum magnitudes k_j (&gt;= 0).</param>
+    /// <param name="eigenvalueSquareds">Corresponding eigenvalues omega^2_j.</param>
+    /// <param name="masslessTolerance">Threshold below which |m^2| is considered massless. Default 1e-8.</param>
     /// <returns>A <see cref="MassLikeScaleRecord"/> with ExtractionMethod="dispersion-fit".</returns>
-    public static MassLikeScaleRecord Compute(
+    public static MassLikeScaleRecord ComputeFromDispersion(
         string modeId,
         string backgroundId,
         string operatorType,
-        IReadOnlyList<(double BackgroundParameter, double MassLikeScale)> samples)
+        IReadOnlyList<double> kValues,
+        IReadOnlyList<double> eigenvalueSquareds,
+        double masslessTolerance = 1e-8)
     {
         ArgumentNullException.ThrowIfNull(modeId);
         ArgumentNullException.ThrowIfNull(backgroundId);
         ArgumentNullException.ThrowIfNull(operatorType);
-        ArgumentNullException.ThrowIfNull(samples);
+        ArgumentNullException.ThrowIfNull(kValues);
+        ArgumentNullException.ThrowIfNull(eigenvalueSquareds);
 
-        if (samples.Count == 0)
-            throw new ArgumentException("At least one sample is required.", nameof(samples));
+        if (kValues.Count == 0)
+            throw new ArgumentException("At least one data point is required.", nameof(kValues));
 
-        // Linear slope fit: use average finite differences as the fitted mass-like scale.
-        // For a single point, just return that point's mass-like scale.
-        double fittedScale;
-        double representativeEigenvalue;
+        if (kValues.Count != eigenvalueSquareds.Count)
+            throw new ArgumentException(
+                $"kValues ({kValues.Count}) and eigenvalueSquareds ({eigenvalueSquareds.Count}) must have the same length.");
 
-        if (samples.Count == 1)
-        {
-            fittedScale = samples[0].MassLikeScale;
-            representativeEigenvalue = fittedScale * fittedScale;
-        }
+        // OLS estimate: m^2 = mean(omega^2_j - k^2_j)
+        double sumResiduals = 0.0;
+        for (int j = 0; j < kValues.Count; j++)
+            sumResiduals += eigenvalueSquareds[j] - kValues[j] * kValues[j];
+
+        double mSquared = sumResiduals / kValues.Count;
+
+        // Derive mass-like scale and representative eigenvalue
+        double massLikeScale;
+        if (mSquared >= 0)
+            massLikeScale = System.Math.Sqrt(mSquared);
         else
-        {
-            // Linear regression: massLikeScale = a + b * backgroundParameter
-            // Intercept 'a' is the fitted mass-like scale at backgroundParameter = 0.
-            double sumX = 0, sumY = 0, sumXX = 0, sumXY = 0;
-            for (int i = 0; i < samples.Count; i++)
-            {
-                double x = samples[i].BackgroundParameter;
-                double y = samples[i].MassLikeScale;
-                sumX += x;
-                sumY += y;
-                sumXX += x * x;
-                sumXY += x * y;
-            }
+            massLikeScale = -System.Math.Sqrt(-mSquared);
 
-            int n = samples.Count;
-            double denom = n * sumXX - sumX * sumX;
-
-            if (System.Math.Abs(denom) < 1e-30)
-            {
-                // All samples at the same parameter value; use mean mass-like scale
-                fittedScale = sumY / n;
-            }
-            else
-            {
-                // Intercept: a = (sumY * sumXX - sumX * sumXY) / denom
-                fittedScale = (sumY * sumXX - sumX * sumXY) / denom;
-            }
-
-            representativeEigenvalue = fittedScale >= 0
-                ? fittedScale * fittedScale
-                : -(fittedScale * fittedScale);
-        }
+        string? notes = null;
+        if (kValues.Count == 1)
+            notes = "single-point-fallback";
+        else if (System.Math.Abs(mSquared) < masslessTolerance)
+            notes = "massless";
+        else if (mSquared < 0)
+            notes = "tachyonic";
 
         return new MassLikeScaleRecord
         {
             ModeId = modeId,
-            Eigenvalue = representativeEigenvalue,
-            MassLikeScale = fittedScale,
+            Eigenvalue = mSquared,
+            MassLikeScale = massLikeScale,
             ExtractionMethod = "dispersion-fit",
             OperatorType = operatorType,
             BackgroundId = backgroundId,
+            Notes = notes,
         };
     }
 }

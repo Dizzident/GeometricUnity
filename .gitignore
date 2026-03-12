@@ -68,3 +68,4 @@ launchSettings.json
 .idea/
 *.sln.iml
 /runs
+/run

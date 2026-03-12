@@ -80,5 +80,6 @@
     <Project Path="tests/Gu.Phase3.Registry.Tests/Gu.Phase3.Registry.Tests.csproj" />
     <Project Path="tests/Gu.Phase3.Campaigns.Tests/Gu.Phase3.Campaigns.Tests.csproj" />
     <Project Path="tests/Gu.Phase3.CudaSpectra.Tests/Gu.Phase3.CudaSpectra.Tests.csproj" />
+    <Project Path="tests/Gu.Workbench.Tests/Gu.Workbench.Tests.csproj" />
   </Folder>
 </Solution>

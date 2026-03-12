@@ -23,6 +23,7 @@
     <ProjectReference Include="..\..\src\Gu.Phase3.Registry\Gu.Phase3.Registry.csproj" />
     <ProjectReference Include="..\..\src\Gu.Phase3.Campaigns\Gu.Phase3.Campaigns.csproj" />
     <ProjectReference Include="..\..\src\Gu.Phase3.Reporting\Gu.Phase3.Reporting.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase3.Observables\Gu.Phase3.Observables.csproj" />
   </ItemGroup>
 
 </Project>

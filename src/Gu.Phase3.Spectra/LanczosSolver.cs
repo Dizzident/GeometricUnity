@@ -29,9 +29,9 @@ internal static class LanczosSolver
 {
     /// <summary>
     /// Solve H v = lambda M v for the smallest numEig eigenvalues.
-    /// Returns (eigenvalues, eigenvectors, iterations, convergenceStatus).
+    /// Returns (eigenvalues, eigenvectors, iterations, convergenceStatus, diagnosticNotes).
     /// </summary>
-    public static (double[] Eigenvalues, double[][] Eigenvectors, int Iterations, string Status) Solve(
+    public static (double[] Eigenvalues, double[][] Eigenvectors, int Iterations, string Status, List<string> DiagnosticNotes) Solve(
         LinearizedOperatorBundle bundle,
         int numEig,
         int maxIter,
@@ -39,6 +39,7 @@ internal static class LanczosSolver
     {
         int n = bundle.StateDimension;
         int krylovDim = System.Math.Min(System.Math.Max(2 * numEig + 10, 20), n);
+        var diagnosticNotes = new List<string>();
 
         // Random starting vector
         var rng = new Random(42);
@@ -137,8 +138,9 @@ internal static class LanczosSolver
 
         // Solve tridiagonal eigenproblem
         int kDim = alpha.Count;
-        var (ritzValues, ritzVectors) = SolveTridiagonal(
+        var (ritzValues, ritzVectors, tridiagNotes) = SolveTridiagonal(
             alpha.ToArray(), beta.ToArray(), kDim);
+        diagnosticNotes.AddRange(tridiagNotes);
 
         // Sort by eigenvalue ascending, take first numEig
         var indices = Enumerable.Range(0, kDim)
@@ -170,7 +172,7 @@ internal static class LanczosSolver
         for (int k = 0; k < count; k++)
             MNormalize(eigenvectors[k], bundle, n, sig);
 
-        return (eigenvalues, eigenvectors, iter, status);
+        return (eigenvalues, eigenvectors, iter, status, diagnosticNotes);
     }
 
     private static double[] ApplyMass(double[] v, LinearizedOperatorBundle bundle, int n, TensorSignature sig)
@@ -255,11 +257,13 @@ internal static class LanczosSolver
 
     /// <summary>
     /// Solve the tridiagonal eigenproblem using Jacobi on the tridiagonal matrix.
-    /// Returns (eigenvalues, eigenvector_matrix_row_major).
+    /// Returns (eigenvalues, eigenvector_matrix_row_major, diagnosticNotes).
     /// Eigenvector i is stored as row i: V[i * n + 0 .. i * n + n-1].
     /// </summary>
-    private static (double[], double[]) SolveTridiagonal(double[] alpha, double[] betaArr, int n)
+    private static (double[], double[], List<string>) SolveTridiagonal(double[] alpha, double[] betaArr, int n)
     {
+        var notes = new List<string>();
+
         // Build symmetric tridiagonal matrix
         var T = new double[n * n];
         for (int i = 0; i < n; i++)
@@ -270,22 +274,44 @@ internal static class LanczosSolver
             T[(i + 1) * n + i] = betaArr[i];
         }
 
-        // Jacobi eigendecomposition
+        // Jacobi eigendecomposition with dimension-scaled iteration limit
         var V = new double[n * n];
         for (int i = 0; i < n; i++) V[i * n + i] = 1.0;
 
-        JacobiEigenTridiag(T, V, n);
+        int maxJacobiIter = System.Math.Max(200, 10 * n);
+        JacobiEigenTridiag(T, V, n, maxJacobiIter);
+
+        // Check Jacobi convergence: max off-diagonal vs Frobenius norm
+        double maxOffDiag = 0;
+        double frobSq = 0;
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                double val = T[i * n + j];
+                frobSq += val * val;
+                if (i != j && System.Math.Abs(val) > maxOffDiag)
+                    maxOffDiag = System.Math.Abs(val);
+            }
+        }
+        double frobNorm = System.Math.Sqrt(frobSq);
+        // Warn only when off-diagonal residual is large relative to Frobenius norm.
+        // JacobiEigenTridiag stops when sum-of-squares-of-off-diagonals < 1e-14,
+        // which gives max-off-diag ~ O(1e-7) for typical Krylov dimensions.
+        // Threshold 1e-6 * frobNorm distinguishes genuine non-convergence from
+        // expected floating-point residual.
+        if (frobNorm > 0 && maxOffDiag > 1e-6 * frobNorm)
+            notes.Add($"Jacobi did not converge: max off-diag = {maxOffDiag:E3}");
 
         var eigenvalues = new double[n];
         for (int i = 0; i < n; i++)
             eigenvalues[i] = T[i * n + i];
 
-        return (eigenvalues, V);
+        return (eigenvalues, V, notes);
     }
 
-    private static void JacobiEigenTridiag(double[] matrix, double[] vectors, int n)
+    private static void JacobiEigenTridiag(double[] matrix, double[] vectors, int n, int maxIter)
     {
-        const int maxIter = 200;
         const double tolVal = 1e-14;
 
         for (int iter = 0; iter < maxIter; iter++)

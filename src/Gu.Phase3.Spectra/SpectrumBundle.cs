@@ -64,4 +64,10 @@ public sealed class SpectrumBundle
     /// <summary>Backend used to compute this spectrum: "cpu" or "cuda".</summary>
     [JsonPropertyName("computedWithBackend")]
     public string ComputedWithBackend { get; init; } = "cpu";
+
+    /// <summary>
+    /// Diagnostic notes emitted during the solve (e.g., convergence warnings).
+    /// </summary>
+    [JsonPropertyName("diagnosticNotes")]
+    public List<string> DiagnosticNotes { get; init; } = new();
 }

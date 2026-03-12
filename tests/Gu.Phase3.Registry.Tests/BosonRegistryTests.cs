@@ -1158,4 +1158,86 @@ public class BosonRegistryTests
         Assert.Single(diff.DemotionChanges[0].Added);
         Assert.Equal(DemotionReason.ObservationInstability, diff.DemotionChanges[0].Added[0].Reason);
     }
+
+    [Fact]
+    public void FromJson_RoundTrip_PreservesCandidates()
+    {
+        var registry = new BosonRegistry();
+        registry.Register(MakeCandidate("c-1", BosonClaimClass.C0_NumericalMode));
+        registry.Register(MakeCandidate("c-2", BosonClaimClass.C2_BranchStableBosonicCandidate));
+        registry.Register(MakeCandidate("c-3", BosonClaimClass.C4_PhysicalAnalogyCandidate));
+
+        var json = registry.ToJson();
+        var restored = BosonRegistry.FromJson(json);
+
+        Assert.Equal(3, restored.Count);
+        Assert.Equal(BosonClaimClass.C0_NumericalMode,
+            restored.Candidates.Single(c => c.CandidateId == "c-1").ClaimClass);
+        Assert.Equal(BosonClaimClass.C2_BranchStableBosonicCandidate,
+            restored.Candidates.Single(c => c.CandidateId == "c-2").ClaimClass);
+        Assert.Equal(BosonClaimClass.C4_PhysicalAnalogyCandidate,
+            restored.Candidates.Single(c => c.CandidateId == "c-3").ClaimClass);
+    }
+
+    [Fact]
+    public void RegistryDiff_DuplicateDemotionReason_BothDetected()
+    {
+        // Base: candidate with one ComparisonMismatch demotion
+        var baseDemotion = new BosonDemotionRecord
+        {
+            CandidateId = "c-1",
+            Reason = DemotionReason.ComparisonMismatch,
+            PreviousClaimClass = BosonClaimClass.C3_ObservedStableCandidate,
+            DemotedClaimClass = BosonClaimClass.C2_BranchStableBosonicCandidate,
+            Details = "mismatch-1",
+        };
+        var baseCandidate = new CandidateBosonRecord
+        {
+            CandidateId = "c-1",
+            PrimaryFamilyId = "f-c-1",
+            ContributingModeIds = new[] { "m-c-1" },
+            BackgroundSet = new[] { "bg-1" },
+            MassLikeEnvelope = new[] { 1.0, 1.0, 1.0 },
+            MultiplicityEnvelope = new[] { 1, 1, 1 },
+            GaugeLeakEnvelope = new[] { 0.01, 0.01, 0.01 },
+            ClaimClass = BosonClaimClass.C2_BranchStableBosonicCandidate,
+            Demotions = new[] { baseDemotion },
+            RegistryVersion = "1.0.0",
+        };
+        var baseRegistry = new BosonRegistry();
+        baseRegistry.Register(baseCandidate);
+
+        // Other: same candidate now with a second ComparisonMismatch demotion (different details)
+        var secondDemotion = new BosonDemotionRecord
+        {
+            CandidateId = "c-1",
+            Reason = DemotionReason.ComparisonMismatch,
+            PreviousClaimClass = BosonClaimClass.C2_BranchStableBosonicCandidate,
+            DemotedClaimClass = BosonClaimClass.C1_LocalPersistentMode,
+            Details = "mismatch-2",
+        };
+        var otherCandidate = new CandidateBosonRecord
+        {
+            CandidateId = "c-1",
+            PrimaryFamilyId = "f-c-1",
+            ContributingModeIds = new[] { "m-c-1" },
+            BackgroundSet = new[] { "bg-1" },
+            MassLikeEnvelope = new[] { 1.0, 1.0, 1.0 },
+            MultiplicityEnvelope = new[] { 1, 1, 1 },
+            GaugeLeakEnvelope = new[] { 0.01, 0.01, 0.01 },
+            ClaimClass = BosonClaimClass.C1_LocalPersistentMode,
+            Demotions = new[] { baseDemotion, secondDemotion },
+            RegistryVersion = "1.0.0",
+        };
+        var otherRegistry = new BosonRegistry();
+        otherRegistry.Register(otherCandidate);
+
+        var diff = baseRegistry.Diff(otherRegistry);
+
+        Assert.Single(diff.DemotionChanges);
+        Assert.Equal("c-1", diff.DemotionChanges[0].CandidateId);
+        Assert.Single(diff.DemotionChanges[0].Added);
+        Assert.Equal(DemotionReason.ComparisonMismatch, diff.DemotionChanges[0].Added[0].Reason);
+        Assert.Equal("mismatch-2", diff.DemotionChanges[0].Added[0].Details);
+    }
 }

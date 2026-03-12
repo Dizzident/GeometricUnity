@@ -11,6 +11,10 @@
     <ProjectReference Include="..\..\src\Gu.Artifacts\Gu.Artifacts.csproj" />
     <ProjectReference Include="..\..\src\Gu.VulkanViewer\Gu.VulkanViewer.csproj" />
     <ProjectReference Include="..\..\src\Gu.ExternalComparison\Gu.ExternalComparison.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase3.Backgrounds\Gu.Phase3.Backgrounds.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase3.Spectra\Gu.Phase3.Spectra.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase3.ModeTracking\Gu.Phase3.ModeTracking.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase3.Registry\Gu.Phase3.Registry.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1138,6 +1138,14 @@ static int ComputeSpectrum(string[] args)
     var numModes = int.Parse(ParseFlag(args, "--num-modes", "10"));
     var formulationFlag = ParseFlag(args, "--formulation", "p1");
 
+    if (formulationFlag.ToLowerInvariant() is "p3" or "quotientaware")
+    {
+        Console.Error.WriteLine(
+            "Error: --formulation p3 (QuotientAware) is not yet implemented. " +
+            "Use --formulation p2 for equivalent physical results, or --formulation p1.");
+        return 1;
+    }
+
     var formulation = formulationFlag.ToLowerInvariant() switch
     {
         "p2" => PhysicalModeFormulation.ProjectedComplement,
@@ -1285,9 +1293,34 @@ static int ComputeSpectrum(string[] args)
         File.WriteAllText(modePath, GuJsonDefaults.Serialize(mode));
     }
 
+    // Write observed mode signatures via the Phase III observation pipeline
+    var signaturesDir = Path.Combine(runFolder, "observables", "mode_signatures");
+    Directory.CreateDirectory(signaturesDir);
+
+    var omegaConn = new ConnectionField(mesh, algebra, omega.Coefficients);
+    var curvatureF = CurvatureAssembler.Assemble(omegaConn).ToFieldTensor();
+    var jacobian = assembler.BuildJacobian(
+        omegaConn,
+        new ConnectionField(mesh, algebra, a0.Coefficients),
+        curvatureF,
+        manifest,
+        geometry);
+    var pullback = new PullbackOperator(bundle);
+    var linObs = new Gu.Phase3.Observables.LinearizedObservationOperator(jacobian, pullback, backgroundId);
+    var obsP3Pipeline = new Gu.Phase3.Observables.ObservationPipeline(linObs);
+    var obsResult = obsP3Pipeline.Run(spectrum.Modes);
+
+    foreach (var modeSig in obsResult.Signatures)
+    {
+        var sigPath = Path.Combine(signaturesDir, $"{modeSig.ModeId}.json");
+        File.WriteAllText(sigPath, GuJsonDefaults.Serialize(modeSig));
+    }
+
+    Console.WriteLine($"  Observed signatures written: {obsResult.ModeCount}");
     Console.WriteLine();
     Console.WriteLine($"Spectrum written to: {spectrumPath}");
     Console.WriteLine($"Mode records written to: {modesDir}");
+    Console.WriteLine($"Mode signatures written to: {signaturesDir}");
     return 0;
 }
 
@@ -1342,6 +1375,22 @@ static int TrackModes(string[] args)
         return 1;
     }
 
+    // Load pre-computed observed mode signatures (written by compute-spectrum)
+    var signaturesDir = Path.Combine(runFolder, "observables", "mode_signatures");
+    List<Gu.Phase3.Observables.ObservedModeSignature>? observedSignatures = null;
+    if (Directory.Exists(signaturesDir))
+    {
+        observedSignatures = new List<Gu.Phase3.Observables.ObservedModeSignature>();
+        foreach (var sigFile in Directory.GetFiles(signaturesDir, "*.json"))
+        {
+            var sigJson = File.ReadAllText(sigFile);
+            var loadedSig = GuJsonDefaults.Deserialize<Gu.Phase3.Observables.ObservedModeSignature>(sigJson);
+            if (loadedSig != null)
+                observedSignatures.Add(loadedSig);
+        }
+        Console.WriteLine($"  Observed signatures loaded: {observedSignatures.Count}");
+    }
+
     var config = new TrackingConfig { ContextType = contextType };
     var engine = new ModeMatchingEngine(config);
 
@@ -1354,7 +1403,7 @@ static int TrackModes(string[] args)
         var allAlignments = new List<ModeAlignmentRecord>();
         foreach (var target in spectra.Skip(1))
         {
-            var alignments = engine.Match(reference, target);
+            var alignments = engine.Match(reference, target, signatures: observedSignatures);
             allAlignments.AddRange(alignments);
         }
         var crossMap = new CrossBranchModeMap

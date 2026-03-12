@@ -318,6 +318,29 @@ public class OperatorBundleBuilderTests
     }
 
     [Fact]
+    public void OperatorBundleBuilder_QuotientAware_ThrowsNotSupported()
+    {
+        var (mesh, algebra, assembler, mass, backend) = SetupInfrastructure();
+        var builder = new OperatorBundleBuilder(mesh, algebra, assembler, mass, backend);
+
+        var omega = ConnectionField.Zero(mesh, algebra).ToFieldTensor();
+        var a0 = ConnectionField.Zero(mesh, algebra).ToFieldTensor();
+
+        var spec = new LinearizedOperatorSpec
+        {
+            BackgroundId = "bg-p3",
+            OperatorType = SpectralOperatorType.FullHessian,
+            BackgroundAdmissibility = AdmissibilityLevel.B1,
+            Formulation = PhysicalModeFormulation.QuotientAware,
+        };
+
+        var ex = Assert.Throws<NotSupportedException>(() =>
+            builder.Build(spec, omega, a0, TestHelpers.TestManifest(), TestHelpers.DummyGeometry()));
+        Assert.True(ex.Message.Contains("QuotientAware") || ex.Message.Contains("P3"),
+            $"Exception message should mention QuotientAware or P3, got: {ex.Message}");
+    }
+
+    [Fact]
     public void Constructor_ThrowsOnNullArgs()
     {
         var (mesh, algebra, assembler, mass, backend) = SetupInfrastructure();

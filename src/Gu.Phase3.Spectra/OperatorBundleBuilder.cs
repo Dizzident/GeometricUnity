@@ -56,6 +56,13 @@ public sealed class OperatorBundleBuilder
         ArgumentNullException.ThrowIfNull(manifest);
         ArgumentNullException.ThrowIfNull(geometry);
 
+        // Guard: QuotientAware (P3) is not yet implemented
+        if (spec.Formulation == PhysicalModeFormulation.QuotientAware)
+            throw new NotSupportedException(
+                "PhysicalModeFormulation.QuotientAware (P3) is not yet implemented. " +
+                "Use ProjectedComplement (P2) for equivalent physical results. " +
+                "P3 is a computational optimization of P2, not a different physical answer.");
+
         // PHYSICS CONSTRAINT #1: Enforce GN-only-for-B2 rule
         if (spec.OperatorType == SpectralOperatorType.GaussNewton &&
             spec.BackgroundAdmissibility != AdmissibilityLevel.B2)

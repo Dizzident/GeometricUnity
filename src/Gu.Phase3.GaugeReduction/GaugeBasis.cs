@@ -22,6 +22,9 @@ public sealed class GaugeBasis
     /// <summary>Singular values from the SVD of the gauge image.</summary>
     public IReadOnlyList<double> SingularValues { get; }
 
+    /// <summary>All singular values from the SVD, sorted descending (before cutoff filtering).</summary>
+    public IReadOnlyList<double> AllSingularValues { get; }
+
     /// <summary>Number of retained basis vectors (effective gauge rank).</summary>
     public int Rank => Vectors.Count;
 
@@ -43,6 +46,7 @@ public sealed class GaugeBasis
     private GaugeBasis(
         IReadOnlyList<double[]> vectors,
         IReadOnlyList<double> singularValues,
+        IReadOnlyList<double> allSingularValues,
         int expectedRank,
         double svdCutoff,
         string backgroundId,
@@ -50,6 +54,7 @@ public sealed class GaugeBasis
     {
         Vectors = vectors;
         SingularValues = singularValues;
+        AllSingularValues = allSingularValues;
         ExpectedRank = expectedRank;
         SvdCutoff = svdCutoff;
         BackgroundId = backgroundId;
@@ -113,9 +118,11 @@ public sealed class GaugeBasis
 
         var vectors = new List<double[]>();
         var sigmas = new List<double>();
+        var allSigmas = new List<double>();
 
         for (int k = 0; k < minDim; k++)
         {
+            allSigmas.Add(svdResult.SingularValues[k]);
             if (svdResult.SingularValues[k] > absCutoff)
             {
                 var col = new double[connDim];
@@ -129,6 +136,7 @@ public sealed class GaugeBasis
         return new GaugeBasis(
             vectors,
             sigmas,
+            allSigmas,
             linearization.ExpectedGaugeRank,
             svdCutoff,
             linearization.BackgroundId,
@@ -204,9 +212,11 @@ public sealed class GaugeBasis
 
         var vectors = new List<double[]>();
         var sigmas = new List<double>();
+        var allSigmas = new List<double>();
 
         for (int k = 0; k < minDim; k++)
         {
+            allSigmas.Add(svdResult.SingularValues[k]);
             if (svdResult.SingularValues[k] > absCutoff)
             {
                 // Undo M^{1/2} scaling: q = M^{-1/2} u_w
@@ -257,6 +267,7 @@ public sealed class GaugeBasis
         return new GaugeBasis(
             vectors,
             sigmas,
+            allSigmas,
             linearization.ExpectedGaugeRank,
             svdCutoff,
             linearization.BackgroundId,
@@ -331,7 +342,7 @@ public sealed class GaugeBasis
     /// </summary>
     private static double[] JacobiEigen(double[] matrix, double[] vectors, int n)
     {
-        const int maxIter = 200;
+        int maxIter = System.Math.Max(200, 10 * n);
         const double tol = 1e-14;
 
         for (int iter = 0; iter < maxIter; iter++)

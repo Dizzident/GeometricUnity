@@ -46,6 +46,14 @@ public sealed class ConstraintDefectReport
     [JsonPropertyName("conditionNumber")]
     public double ConditionNumber { get; init; }
 
+    /// <summary>
+    /// Approximate spectral gap using the old proxy value
+    /// (smallest retained SV / (largest SV * SvdCutoff)).
+    /// Kept for comparison with the corrected SpectralGap.
+    /// </summary>
+    [JsonPropertyName("spectralGapApproximate")]
+    public double? SpectralGapApproximate { get; init; }
+
     /// <summary>Human-readable diagnostic notes.</summary>
     [JsonPropertyName("diagnosticNotes")]
     public IReadOnlyList<string> DiagnosticNotes { get; init; } = Array.Empty<string>();
@@ -78,6 +86,17 @@ public sealed class ConstraintDefectReport
             notes.Add($"Near-singular gauge basis: condition ratio = {condNum:E3}.");
         }
 
+        // Compute old proxy-based approximate spectral gap for comparison
+        double? approxGap = null;
+        if (basis.SingularValues.Count > 0)
+        {
+            double smallestRetained = basis.SingularValues[basis.SingularValues.Count - 1];
+            double cutoffValue = basis.SingularValues[0] * basis.SvdCutoff;
+            approxGap = cutoffValue < 1e-30
+                ? smallestRetained
+                : smallestRetained / cutoffValue;
+        }
+
         return new ConstraintDefectReport
         {
             BackgroundId = basis.BackgroundId,
@@ -86,6 +105,7 @@ public sealed class ConstraintDefectReport
             SingularValues = basis.SingularValues.ToArray(),
             SvdCutoff = basis.SvdCutoff,
             ConditionNumber = condNum,
+            SpectralGapApproximate = approxGap,
             DiagnosticNotes = notes,
         };
     }

@@ -40,4 +40,8 @@ public sealed class MassLikeScaleRecord
     /// <summary>Branch manifest ID for provenance.</summary>
     [JsonPropertyName("branchManifestId")]
     public string? BranchManifestId { get; init; }
+
+    /// <summary>Optional diagnostic note (e.g. "massless", "tachyonic", "single-point-fallback").</summary>
+    [JsonPropertyName("notes")]
+    public string? Notes { get; init; }
 }

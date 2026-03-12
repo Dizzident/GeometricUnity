@@ -77,6 +77,12 @@ public sealed class LinearizedOperatorBundle
     /// </summary>
     public FieldTensor ApplySpectral(FieldTensor v)
     {
+        if (Formulation == PhysicalModeFormulation.QuotientAware)
+            throw new NotSupportedException(
+                "PhysicalModeFormulation.QuotientAware (P3) is not yet implemented. " +
+                "Use ProjectedComplement (P2) for equivalent physical results. " +
+                "P3 is a computational optimization of P2, not a different physical answer.");
+
         if (Formulation == PhysicalModeFormulation.ProjectedComplement && PhysicalProjector is not null)
         {
             // P_phys^T H P_phys v
@@ -93,6 +99,12 @@ public sealed class LinearizedOperatorBundle
     /// </summary>
     public FieldTensor ApplyMass(FieldTensor v)
     {
+        if (Formulation == PhysicalModeFormulation.QuotientAware)
+            throw new NotSupportedException(
+                "PhysicalModeFormulation.QuotientAware (P3) is not yet implemented. " +
+                "Use ProjectedComplement (P2) for equivalent physical results. " +
+                "P3 is a computational optimization of P2, not a different physical answer.");
+
         if (Formulation == PhysicalModeFormulation.ProjectedComplement && PhysicalProjector is not null)
         {
             var pv = PhysicalProjector.Apply(v);

@@ -83,12 +83,61 @@ public static class Program
                 }
             }
 
+            // Load and print Phase III diagnostic views if Phase III folder structure is present
+            PrintPhase3Views(runFolderPath);
+
             return 0;
         }
         catch (Exception ex)
         {
             Console.Error.WriteLine($"Error: {ex.Message}");
             return 1;
+        }
+    }
+
+    private static void PrintPhase3Views(string runFolderPath)
+    {
+        // Only attempt Phase III loading if at least one expected subdirectory exists
+        bool hasBackgrounds = Directory.Exists(Path.Combine(runFolderPath, "backgrounds"));
+        bool hasSpectra = Directory.Exists(Path.Combine(runFolderPath, "spectra"));
+        bool hasModes = Directory.Exists(Path.Combine(runFolderPath, "modes"));
+        bool hasBosons = Directory.Exists(Path.Combine(runFolderPath, "bosons"));
+
+        if (!hasBackgrounds && !hasSpectra && !hasModes && !hasBosons)
+            return;
+
+        Console.WriteLine("\n--- Phase III Diagnostic Views ---");
+
+        var loader = new Phase3ArtifactLoader();
+        var snapshot = loader.LoadPhase3Folder(runFolderPath);
+
+        Console.WriteLine($"  Background atlas loaded: {snapshot.BackgroundAtlas is not null}");
+        Console.WriteLine($"  Spectra loaded:          {snapshot.Spectra.Count}");
+        Console.WriteLine($"  Mode families loaded:    {snapshot.ModeFamilies.Count}");
+        Console.WriteLine($"  Boson registry loaded:   {snapshot.BosonRegistry is not null}");
+
+        var views = loader.PreparePhase3Views(snapshot);
+        Console.WriteLine($"  Views prepared:          {views.Count}");
+        Console.WriteLine();
+
+        foreach (var view in views)
+        {
+            if (view is BackgroundAtlasBrowserView bab)
+                Console.WriteLine(bab.Print());
+            else if (view is SpectralLadderView sl)
+                Console.WriteLine(sl.Print());
+            else if (view is EigenModeAmplitudeView ema)
+                Console.WriteLine(ema.Print());
+            else if (view is GaugeLeakView gl)
+                Console.WriteLine(gl.Print());
+            else if (view is BranchModeTrackView bmt)
+                Console.WriteLine(bmt.Print());
+            else if (view is BosonFamilyCardView bfc)
+                Console.WriteLine(bfc.Print());
+            else if (view is ObservedSignatureView osv)
+                Console.WriteLine(osv.Print());
+            else if (view is AmbiguityHeatmapView ahv)
+                Console.WriteLine(ahv.Print());
         }
     }
 

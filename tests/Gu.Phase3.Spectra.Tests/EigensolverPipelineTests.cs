@@ -542,4 +542,46 @@ public class EigensolverPipelineTests
         foreach (var mode in result.Modes)
             Assert.Equal(0.0, mode.GaugeLeakScore);
     }
+
+    [Fact]
+    public void LanczosSolver_LargeKrylovDim_JacobiConverges()
+    {
+        // 50×50 diagonal problem with identity mass.
+        // The dimension-scaled maxJacobiIter = max(200, 10*krylovDim) ensures
+        // the tridiagonal Jacobi step converges for larger Krylov dimensions.
+        int n = 50;
+        var hDiag = new double[n];
+        var mDiag = new double[n];
+        for (int i = 0; i < n; i++)
+        {
+            hDiag[i] = i + 1.0;
+            mDiag[i] = 1.0;
+        }
+        var bundle = MakeDiagonalBundle(hDiag, mDiag);
+
+        var spec = new GeneralizedEigenproblemSpec
+        {
+            NumEigenvalues = 5,
+            MaxIterations = 100,
+            SolverMethod = "lanczos",
+        };
+
+        var pipeline = new EigensolverPipeline();
+        var result = pipeline.Solve(bundle, spec);
+
+        // Lanczos with limited Krylov window on a 50-dim problem should return modes
+        Assert.Contains("converged", result.ConvergenceStatus);
+        Assert.Equal(5, result.Modes.Count);
+
+        // All eigenvalues should be positive (diag entries are 1..50)
+        foreach (var mode in result.Modes)
+            Assert.True(mode.Eigenvalue > 0,
+                $"Mode {mode.ModeIndex} eigenvalue {mode.Eigenvalue:E3} is not positive");
+
+        // Jacobi should converge on this well-conditioned problem — no convergence warning
+        bool hasJacobiWarning = result.DiagnosticNotes.Any(
+            n => n.Contains("Jacobi did not converge", StringComparison.OrdinalIgnoreCase));
+        Assert.False(hasJacobiWarning,
+            $"Unexpected Jacobi convergence warning: {string.Join("; ", result.DiagnosticNotes)}");
+    }
 }

@@ -323,6 +323,76 @@ public class ModeTrackingTests
     }
 
     [Fact]
+    public void HungarianAlgorithm_NearDegenerateSpectrum_AssignmentIsOptimal()
+    {
+        // 4x4 cost matrix where a greedy assignment gives suboptimal total cost.
+        // cost[i,j] = [[1,2,3,4],[2,4,6,8],[3,6,9,12],[4,1,2,3]]
+        //
+        // Greedy (pick min in row order, avoiding used columns):
+        //   row 0 -> col 0 (cost 1)
+        //   row 1 -> col 1 (cost 4)  [col 0 taken]
+        //   row 2 -> col 2 (cost 9)  [cols 0,1 taken]
+        //   row 3 -> col 3 (cost 3)  [cols 0,1,2 taken]
+        //   greedy total = 1+4+9+3 = 17
+        //
+        // Optimal assignment (verified by exhaustive check):
+        //   row 0 -> col 0 (cost 1)
+        //   row 1 -> col 2 (cost 6)  -- wait, let's verify
+        //
+        // Exhaustive check of all 24 permutations:
+        //   (0,1,2,3): 1+4+9+3 = 17
+        //   (0,1,3,2): 1+4+12+2 = 19
+        //   (0,2,1,3): 1+6+6+3 = 16
+        //   (0,2,3,1): 1+6+12+1 = 20
+        //   (0,3,1,2): 1+8+6+2 = 17
+        //   (0,3,2,1): 1+8+9+1 = 19
+        //   (1,0,2,3): 2+2+9+3 = 16
+        //   (1,0,3,2): 2+2+12+2 = 18
+        //   (1,2,0,3): 2+6+3+3 = 14  <-- candidate
+        //   (1,2,3,0): 2+6+12+4 = 24
+        //   (1,3,0,2): 2+8+3+2 = 15
+        //   (1,3,2,0): 2+8+9+4 = 23
+        //   (2,0,1,3): 3+2+6+3 = 14  <-- candidate
+        //   (2,0,3,1): 3+2+12+1 = 18
+        //   (2,1,0,3): 3+4+3+3 = 13  <-- candidate
+        //   (2,1,3,0): 3+4+12+4 = 23
+        //   (2,3,0,1): 3+8+3+1 = 15
+        //   (2,3,1,0): 3+8+6+4 = 21
+        //   (3,0,1,2): 4+2+6+2 = 14
+        //   (3,0,2,1): 4+2+9+1 = 16
+        //   (3,1,0,2): 4+4+3+2 = 13  <-- candidate
+        //   (3,1,2,0): 4+4+9+4 = 21
+        //   (3,2,0,1): 4+6+3+1 = 14
+        //   (3,2,1,0): 4+6+6+4 = 20
+        //
+        // Optimal total cost = 13, achieved by (2,1,0,3) or (3,1,0,2).
+        var costMatrix = new double[4, 4]
+        {
+            {  1,  2,  3,  4 },
+            {  2,  4,  6,  8 },
+            {  3,  6,  9, 12 },
+            {  4,  1,  2,  3 },
+        };
+
+        var assignment = HungarianAlgorithm.Solve(costMatrix);
+
+        // All 4 rows must be assigned to distinct columns
+        Assert.Equal(4, assignment.Length);
+        Assert.Equal(4, assignment.Distinct().Count()); // all unique
+        Assert.All(assignment, col => Assert.InRange(col, 0, 3));
+
+        // Compute total cost of returned assignment
+        double totalCost = 0;
+        for (int i = 0; i < 4; i++)
+            totalCost += costMatrix[i, assignment[i]];
+
+        // Must be strictly better than the greedy result (17) and equal to optimal (13)
+        Assert.True(totalCost < 17,
+            $"Expected cost < greedy cost 17, got {totalCost} with assignment [{string.Join(",", assignment)}]");
+        Assert.Equal(13.0, totalCost, 1e-10);
+    }
+
+    [Fact]
     public void ModeFeatureVector_Distance_SimilarModesAreClose()
     {
         var a = new ModeFeatureVector

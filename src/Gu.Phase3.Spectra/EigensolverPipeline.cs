@@ -46,6 +46,7 @@ public sealed class EigensolverPipeline
         double[][] eigenvectors;
         int iterations;
         string convergenceStatus;
+        var diagnosticNotes = new List<string>();
 
         switch (method)
         {
@@ -56,8 +57,10 @@ public sealed class EigensolverPipeline
                 break;
 
             case "lanczos":
-                (eigenvalues, eigenvectors, iterations, convergenceStatus) =
+                List<string> lanczosDiag;
+                (eigenvalues, eigenvectors, iterations, convergenceStatus, lanczosDiag) =
                     LanczosSolver.Solve(bundle, numEig, spec.MaxIterations, spec.ConvergenceTolerance);
+                diagnosticNotes.AddRange(lanczosDiag);
                 break;
 
             default:
@@ -151,6 +154,7 @@ public sealed class EigensolverPipeline
             ConvergenceStatus = convergenceStatus,
             IterationsUsed = iterations,
             MaxOrthogonalityDefect = maxOrthDefect,
+            DiagnosticNotes = diagnosticNotes,
         };
     }
 
