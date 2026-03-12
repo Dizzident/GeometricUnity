@@ -37,7 +37,15 @@ public sealed class Phase4Report
     [JsonPropertyName("registrySummary")]
     public required UnifiedRegistrySummary RegistrySummary { get; init; }
 
-    /// <summary>Negative result descriptions (demotions, incompatible comparisons, etc.).</summary>
+    /// <summary>
+    /// Structured negative result dashboard: unstable chirality, fragile couplings,
+    /// broken family clusters. Negative results are first-class outputs.
+    /// Null only for legacy/stub reports; Phase4ReportBuilder always populates this.
+    /// </summary>
+    [JsonPropertyName("negativeResultDashboard")]
+    public NegativeResultDashboard? NegativeResultDashboard { get; init; }
+
+    /// <summary>Additional freeform negative result descriptions.</summary>
     [JsonPropertyName("negativeResults")]
     public required List<string> NegativeResults { get; init; }
 

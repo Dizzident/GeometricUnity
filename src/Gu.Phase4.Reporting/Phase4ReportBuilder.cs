@@ -10,12 +10,14 @@ namespace Gu.Phase4.Reporting;
 /// and a unified particle registry.
 ///
 /// Follows the Phase III ReportBuilder fluent accumulation pattern.
-/// Call AddNegativeResult / AddCouplingMatrix to accumulate entries, then Build().
+/// Call AddNegativeResult / AddCouplingMatrix / AddFamilyCluster to accumulate entries,
+/// then Build().
 /// </summary>
 public sealed class Phase4ReportBuilder
 {
     private readonly string _studyId;
     private readonly List<CouplingMatrixSummary> _couplingMatrices = new();
+    private readonly List<FamilyClusterRecord> _familyClusters = new();
     private readonly List<string> _negativeResults = new();
 
     /// <summary>Threshold above which a family is considered "stable".</summary>
@@ -26,6 +28,11 @@ public sealed class Phase4ReportBuilder
 
     /// <summary>Maximum number of top candidates to include in the registry summary.</summary>
     private const int TopCandidateCount = 20;
+
+    // Thresholds for negative result classification
+    private const double BrokenClusterPersistenceThreshold = 0.3;
+    private const double BrokenClusterAmbiguityThreshold = 0.7;
+    private const double UnstableGaugeLeakThreshold = 0.3;
 
     public Phase4ReportBuilder(string studyId)
     {
@@ -38,6 +45,14 @@ public sealed class Phase4ReportBuilder
     {
         ArgumentNullException.ThrowIfNull(summary);
         _couplingMatrices.Add(summary);
+        return this;
+    }
+
+    /// <summary>Add a family cluster record (from M41) for negative result analysis.</summary>
+    public Phase4ReportBuilder AddFamilyCluster(FamilyClusterRecord cluster)
+    {
+        ArgumentNullException.ThrowIfNull(cluster);
+        _familyClusters.Add(cluster);
         return this;
     }
 
@@ -67,6 +82,7 @@ public sealed class Phase4ReportBuilder
         var fermionSummary = BuildFermionAtlasSummary(atlas);
         var couplingSummary = BuildCouplingAtlasSummary();
         var registrySummary = BuildUnifiedRegistrySummary(registry);
+        var dashboard = BuildNegativeResultDashboard(atlas, registry);
 
         return new Phase4Report
         {
@@ -75,6 +91,7 @@ public sealed class Phase4ReportBuilder
             FermionAtlas = fermionSummary,
             CouplingAtlas = couplingSummary,
             RegistrySummary = registrySummary,
+            NegativeResultDashboard = dashboard,
             NegativeResults = _negativeResults.ToList(),
             Provenance = provenance,
             GeneratedAt = DateTimeOffset.UtcNow,
@@ -84,6 +101,116 @@ public sealed class Phase4ReportBuilder
     // ------------------------------------------------------------------
     // Private builders
     // ------------------------------------------------------------------
+
+    private NegativeResultDashboard BuildNegativeResultDashboard(
+        FermionFamilyAtlas atlas,
+        UnifiedParticleRegistry registry)
+    {
+        var unstableChirality = new List<UnstableChiralityEntry>();
+        var fragileCouplings = new List<FragileCouplingEntry>();
+        var brokenClusters = new List<BrokenFamilyClusterEntry>();
+        var additionalNotes = new List<string>(_negativeResults);
+
+        // Unstable chirality: mixed/trivial chirality or high gauge leakage
+        foreach (var family in atlas.Families)
+        {
+            bool isMixedOrTrivial = family.DominantChiralityProfile is "mixed" or "undetermined" or "trivial";
+            bool isHighLeakage = family.AverageGaugeLeakScore > UnstableGaugeLeakThreshold;
+            bool isAmbiguous = family.AmbiguityNotes.Count > 0;
+
+            if (isMixedOrTrivial || isHighLeakage || isAmbiguous)
+            {
+                string status = isMixedOrTrivial ? family.DominantChiralityProfile : "ambiguous";
+                (double left, double right) = family.DominantChiralityProfile switch
+                {
+                    "left"  => (0.9, 0.1),
+                    "right" => (0.1, 0.9),
+                    _       => (0.5, 0.5),
+                };
+                string reason = isMixedOrTrivial
+                    ? $"Chirality profile '{family.DominantChiralityProfile}' is not definite-left or definite-right."
+                    : isHighLeakage
+                        ? $"Gauge leakage score {family.AverageGaugeLeakScore:F3} exceeds threshold {UnstableGaugeLeakThreshold}."
+                        : $"Family '{family.FamilyId}' has {family.AmbiguityNotes.Count} ambiguity note(s).";
+                unstableChirality.Add(new UnstableChiralityEntry
+                {
+                    FamilyId = family.FamilyId,
+                    ChiralityStatus = status,
+                    LeftProjection = left,
+                    RightProjection = right,
+                    LeakageNorm = family.AverageGaugeLeakScore,
+                    Reason = reason,
+                });
+            }
+        }
+
+        // Fragile couplings: below noise floor
+        foreach (var matrix in _couplingMatrices)
+        {
+            if (matrix.MaxEntry <= CouplingNoiseFloor)
+            {
+                fragileCouplings.Add(new FragileCouplingEntry
+                {
+                    BosonModeId = matrix.BosonModeId,
+                    MaxMagnitude = matrix.MaxEntry,
+                    FrobeniusNorm = matrix.FrobeniusNorm,
+                    FermionPairCount = matrix.FermionPairCount,
+                    FragilityReason = "below-noise-floor",
+                });
+            }
+        }
+
+        // Broken family clusters: low persistence, high ambiguity, or split/merge notes
+        foreach (var cluster in _familyClusters)
+        {
+            bool isLowPersistence = cluster.MeanBranchPersistence < BrokenClusterPersistenceThreshold;
+            bool isHighAmbiguity = cluster.AmbiguityScore > BrokenClusterAmbiguityThreshold;
+            bool hasSplitNote = cluster.ClusteringNotes.Any(n =>
+                n.IndexOf("split", StringComparison.OrdinalIgnoreCase) >= 0);
+            bool hasMergeNote = cluster.ClusteringNotes.Any(n =>
+                n.IndexOf("merge", StringComparison.OrdinalIgnoreCase) >= 0);
+
+            string? failureMode = null;
+            if (isLowPersistence) failureMode = "low-persistence";
+            else if (isHighAmbiguity) failureMode = "high-ambiguity";
+            else if (hasSplitNote) failureMode = "split-detected";
+            else if (hasMergeNote) failureMode = "merge-detected";
+
+            if (failureMode is not null)
+            {
+                brokenClusters.Add(new BrokenFamilyClusterEntry
+                {
+                    ClusterId = cluster.ClusterId,
+                    MeanPersistence = cluster.MeanBranchPersistence,
+                    AmbiguityScore = cluster.AmbiguityScore,
+                    MemberCount = cluster.MemberFamilyIds.Count,
+                    FailureMode = failureMode,
+                    DemotionReason = $"Cluster '{cluster.ClusterId}' failed with mode '{failureMode}'.",
+                });
+            }
+        }
+
+        // Collect registry demotions into additional notes
+        foreach (var candidate in registry.Candidates)
+        {
+            foreach (var demotion in candidate.Demotions)
+            {
+                additionalNotes.Add(
+                    $"[demotion] {candidate.ParticleId}: {demotion.Reason} — {demotion.Details} " +
+                    $"({demotion.FromClaimClass} → {demotion.ToClaimClass})");
+            }
+        }
+
+        return new NegativeResultDashboard
+        {
+            DashboardId = $"neg-dashboard-{_studyId}",
+            StudyId = _studyId,
+            UnstableChiralityEntries = unstableChirality,
+            FragileCouplingEntries = fragileCouplings,
+            BrokenFamilyClusterEntries = brokenClusters,
+            AdditionalNotes = additionalNotes,
+        };
+    }
 
     private FermionAtlasSummary BuildFermionAtlasSummary(FermionFamilyAtlas atlas)
     {
