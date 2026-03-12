@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Gu.Phase4.Couplings.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Gu.Core\Gu.Core.csproj" />
+    <ProjectReference Include="..\Gu.Phase4.Dirac\Gu.Phase4.Dirac.csproj" />
+    <ProjectReference Include="..\Gu.Phase4.Chirality\Gu.Phase4.Chirality.csproj" />
+    <ProjectReference Include="..\Gu.Phase3.Spectra\Gu.Phase3.Spectra.csproj" />
+    <ProjectReference Include="..\Gu.Phase3.Registry\Gu.Phase3.Registry.csproj" />
+  </ItemGroup>
+
+</Project>

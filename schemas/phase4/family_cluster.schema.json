@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/phase4/family_cluster.schema.json",
+  "title": "FamilyClusterRecord",
+  "description": "A generation-like cluster of fermionic mode families produced by the Phase IV family clustering algorithm.",
+  "type": "object",
+  "required": [
+    "clusterId",
+    "memberFamilyIds",
+    "clusteringMethod",
+    "ambiguityScore",
+    "isStableCluster"
+  ],
+  "properties": {
+    "clusterId": {
+      "type": "string",
+      "description": "Unique cluster identifier (conservative label, not a physical particle name)"
+    },
+    "memberFamilyIds": {
+      "type": "array",
+      "description": "Fermion mode family IDs belonging to this cluster",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "clusteringMethod": {
+      "type": "string",
+      "description": "Algorithm used to form this cluster",
+      "enum": ["RuleBasedConjugationChirality", "HierarchicalClustering", "Combined"]
+    },
+    "ambiguityScore": {
+      "type": "number",
+      "description": "Ambiguity score for this cluster assignment [0, 1]. Higher = more uncertain.",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "isStableCluster": {
+      "type": "boolean",
+      "description": "Whether the cluster assignment is stable (low ambiguity, consistent across branches)"
+    },
+    "featureVectorSummary": {
+      "type": "object",
+      "description": "Summary of the feature vectors used to form this cluster",
+      "properties": {
+        "meanMassLikeScale": {
+          "type": ["number", "null"],
+          "description": "Mean mass-like invariant across cluster members"
+        },
+        "chiralProfile": {
+          "type": ["string", "null"],
+          "description": "Chirality profile summary: left-dominant, right-dominant, mixed, ambiguous"
+        },
+        "conjugationPattern": {
+          "type": ["string", "null"],
+          "description": "Conjugation pair pattern: paired, self-conjugate, unpaired, ambiguous"
+        },
+        "meanBranchStability": {
+          "type": ["number", "null"],
+          "description": "Mean branch stability across cluster members",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "couplingProfileLabel": {
+          "type": ["string", "null"],
+          "description": "Boson coupling profile label for this cluster"
+        }
+      }
+    },
+    "conjugateClusterId": {
+      "type": ["string", "null"],
+      "description": "Cluster ID of the conjugate partner cluster, if identified"
+    },
+    "ambiguityNotes": {
+      "type": "array",
+      "description": "Ambiguity notes explaining uncertain cluster assignments",
+      "items": { "type": "string" }
+    },
+    "provenance": {
+      "type": "object",
+      "description": "Provenance metadata",
+      "properties": {
+        "phase": { "type": "string" },
+        "computedAt": { "type": "string", "format": "date-time" }
+      }
+    }
+  }
+}

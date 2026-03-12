@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/phase4/conjugation_policy.schema.json",
+  "title": "ConjugationPolicy",
+  "description": "Policy controlling conjugation pair detection, charge-conjugation symmetry checks, and Majorana condition enforcement in the Phase IV fermionic pipeline.",
+  "type": "object",
+  "required": [
+    "policyId",
+    "schemaVersion",
+    "conjugationConventionId",
+    "conjugatePairMatchThreshold",
+    "reportConjugatePairs"
+  ],
+  "properties": {
+    "policyId": {
+      "type": "string",
+      "description": "Unique identifier for this conjugation policy"
+    },
+    "schemaVersion": {
+      "type": "string",
+      "description": "Schema version string"
+    },
+    "conjugationConventionId": {
+      "type": "string",
+      "description": "Reference to the conjugation convention used (must match spinor spec)"
+    },
+    "conjugatePairMatchThreshold": {
+      "type": "number",
+      "description": "Minimum inner-product overlap to identify a mode as a conjugate partner",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "reportConjugatePairs": {
+      "type": "boolean",
+      "description": "Whether to report detected conjugate pairs in fermion mode records"
+    },
+    "checkMajoranaCondition": {
+      "type": "boolean",
+      "description": "Whether to check and report the Majorana self-conjugacy condition",
+      "default": true
+    },
+    "majoranaResidualThreshold": {
+      "type": "number",
+      "description": "Maximum residual ||psi - C psi^*|| / ||psi|| for Majorana candidate classification",
+      "minimum": 0,
+      "default": 1e-4
+    },
+    "demoteOnUnpairedModes": {
+      "type": "boolean",
+      "description": "Whether to demote candidates with unpaired conjugate modes when pairing is expected",
+      "default": false
+    },
+    "eigenvalueSymmetryTolerance": {
+      "type": "number",
+      "description": "Tolerance for checking that conjugate pairs have equal-magnitude eigenvalues",
+      "minimum": 0,
+      "default": 1e-6
+    },
+    "provenance": {
+      "type": "object",
+      "description": "Provenance metadata",
+      "properties": {
+        "phase": { "type": "string" },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

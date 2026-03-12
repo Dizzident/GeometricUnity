@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/phase4/spinor_representation.schema.json",
+  "title": "SpinorRepresentationSpec",
+  "description": "Specification of spinor representation, Clifford algebra conventions, chirality, and conjugation for Phase IV fermionic computations.",
+  "type": "object",
+  "required": [
+    "spinorSpecId",
+    "schemaVersion",
+    "cliffordSignatureId",
+    "gammaBasisConventionId",
+    "chiralityConventionId",
+    "conjugationConventionId",
+    "innerProductConventionId",
+    "numericField",
+    "blockDimensions"
+  ],
+  "properties": {
+    "spinorSpecId": {
+      "type": "string",
+      "description": "Unique identifier for this spinor representation spec"
+    },
+    "schemaVersion": {
+      "type": "string",
+      "description": "Schema version string"
+    },
+    "cliffordSignatureId": {
+      "type": "string",
+      "description": "Clifford algebra signature identifier (e.g. lorentz-like-v1, euclidean-v1)"
+    },
+    "gammaBasisConventionId": {
+      "type": "string",
+      "description": "Gamma matrix basis convention identifier"
+    },
+    "chiralityConventionId": {
+      "type": "string",
+      "description": "Chirality convention identifier (e.g. chirality-standard-v1)"
+    },
+    "conjugationConventionId": {
+      "type": "string",
+      "description": "Conjugation convention identifier (e.g. dirac-adjoint-v1, majorana-v1)"
+    },
+    "innerProductConventionId": {
+      "type": "string",
+      "description": "Fermion inner product convention identifier"
+    },
+    "numericField": {
+      "type": "string",
+      "description": "Numeric field: real64 or complex64",
+      "enum": ["real64", "complex64"]
+    },
+    "blockDimensions": {
+      "type": "object",
+      "description": "Block dimension parameters for spinor components",
+      "required": ["spinorComponents"],
+      "properties": {
+        "spinorComponents": {
+          "type": "integer",
+          "description": "Total spinor dimension = 2^floor(dimY/2) over the complex field",
+          "minimum": 1
+        },
+        "chiralitySplit": {
+          "type": "integer",
+          "description": "Number of chiral components per chirality sector (= spinorComponents/2). Only meaningful when ySpaceDimension is even.",
+          "minimum": 1
+        }
+      }
+    },
+    "ySpaceDimension": {
+      "type": "integer",
+      "description": "Dimension of the observerse Y used for Clifford algebra construction. Determines spinor size (2^floor(dimY/2)) and whether chirality is nontrivial.",
+      "minimum": 1
+    },
+    "chiralityApplicable": {
+      "type": "boolean",
+      "description": "Whether a nontrivial chirality operator exists. True iff ySpaceDimension is even. When false, the product of all gammas is proportional to the identity and spinors do NOT decompose into Weyl sectors. This MUST be set correctly — chirality analysis is skipped when false."
+    },
+    "metricSignatureOnY": {
+      "type": "string",
+      "description": "Metric signature convention on Y: Riemannian (all +), Lorentzian, or mixed. Controls the form of the fermionic inner product and the reality/hermiticity properties of the gamma matrices. MUST be a branch parameter.",
+      "enum": ["Riemannian", "Lorentzian", "Mixed", "BranchDetermined"]
+    },
+    "gaugeRepresentationId": {
+      "type": "string",
+      "description": "How the gauge group acts on spinors: a branch parameter. E.g. 'adjoint-v1' (rho(T_a)_bc = f^c_ab via structure constants). Determines the gauge-coupled term omega_mu^a * rho(T_a) in the Dirac operator and the total spinor-with-gauge block size per cell = spinorDim * dimG."
+    },
+    "insertedAssumptionIds": {
+      "type": "array",
+      "description": "List of Phase IV inserted assumption IDs relevant to this spec",
+      "items": { "type": "string" }
+    },
+    "provenance": {
+      "type": "object",
+      "description": "Provenance metadata for this spec",
+      "properties": {
+        "phase": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "notes": { "type": "string" }
+      }
+    },
+    "validationResult": {
+      "$ref": "#/$defs/CliffordValidationResult"
+    }
+  },
+  "$defs": {
+    "CliffordValidationResult": {
+      "type": "object",
+      "required": ["passed", "anticommutatorMaxResidual"],
+      "properties": {
+        "passed": {
+          "type": "boolean",
+          "description": "Whether the Clifford algebra anti-commutation relations were satisfied"
+        },
+        "anticommutatorMaxResidual": {
+          "type": "number",
+          "description": "Maximum residual from anti-commutator check {gamma_mu, gamma_nu} = 2 g_{mu nu} I",
+          "minimum": 0
+        },
+        "chiralitySquaredResidual": {
+          "type": ["number", "null"],
+          "description": "Residual from gamma5^2 = I check",
+          "minimum": 0
+        },
+        "conjugationConsistencyResidual": {
+          "type": ["number", "null"],
+          "description": "Residual from conjugation consistency check",
+          "minimum": 0
+        },
+        "diagnosticNotes": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Diagnostic notes from validation"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Gu.Phase4.Observation.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Gu.Core\Gu.Core.csproj" />
+    <ProjectReference Include="..\Gu.Phase4.Chirality\Gu.Phase4.Chirality.csproj" />
+    <ProjectReference Include="..\Gu.Phase4.Fermions\Gu.Phase4.Fermions.csproj" />
+    <ProjectReference Include="..\Gu.Phase4.FamilyClustering\Gu.Phase4.FamilyClustering.csproj" />
+    <ProjectReference Include="..\Gu.Phase4.Couplings\Gu.Phase4.Couplings.csproj" />
+    <ProjectReference Include="..\Gu.Phase4.Registry\Gu.Phase4.Registry.csproj" />
+  </ItemGroup>
+
+</Project>

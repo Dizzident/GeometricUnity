@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Gu.Phase4.Chirality.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Gu.Core\Gu.Core.csproj" />
+    <ProjectReference Include="..\Gu.Phase4.Spin\Gu.Phase4.Spin.csproj" />
+    <ProjectReference Include="..\Gu.Phase4.Fermions\Gu.Phase4.Fermions.csproj" />
+    <ProjectReference Include="..\Gu.Phase3.Backgrounds\Gu.Phase3.Backgrounds.csproj" />
+    <ProjectReference Include="..\Gu.Phase4.Dirac\Gu.Phase4.Dirac.csproj" />
+  </ItemGroup>
+
+</Project>

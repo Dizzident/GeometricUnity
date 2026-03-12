@@ -40,6 +40,16 @@
     <Project Path="src/Gu.Phase3.Registry/Gu.Phase3.Registry.csproj" />
     <Project Path="src/Gu.Phase3.Campaigns/Gu.Phase3.Campaigns.csproj" />
     <Project Path="src/Gu.Phase3.CudaSpectra/Gu.Phase3.CudaSpectra.csproj" />
+    <Project Path="src/Gu.Phase4.Spin/Gu.Phase4.Spin.csproj" />
+    <Project Path="src/Gu.Phase4.Fermions/Gu.Phase4.Fermions.csproj" />
+    <Project Path="src/Gu.Phase4.Dirac/Gu.Phase4.Dirac.csproj" />
+    <Project Path="src/Gu.Phase4.Chirality/Gu.Phase4.Chirality.csproj" />
+    <Project Path="src/Gu.Phase4.FamilyClustering/Gu.Phase4.FamilyClustering.csproj" />
+    <Project Path="src/Gu.Phase4.Couplings/Gu.Phase4.Couplings.csproj" />
+    <Project Path="src/Gu.Phase4.Registry/Gu.Phase4.Registry.csproj" />
+    <Project Path="src/Gu.Phase4.Observation/Gu.Phase4.Observation.csproj" />
+    <Project Path="src/Gu.Phase4.Comparison/Gu.Phase4.Comparison.csproj" />
+    <Project Path="src/Gu.Phase4.Reporting/Gu.Phase4.Reporting.csproj" />
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/Gu.Core.Tests/Gu.Core.Tests.csproj" />
@@ -81,5 +91,16 @@
     <Project Path="tests/Gu.Phase3.Campaigns.Tests/Gu.Phase3.Campaigns.Tests.csproj" />
     <Project Path="tests/Gu.Phase3.CudaSpectra.Tests/Gu.Phase3.CudaSpectra.Tests.csproj" />
     <Project Path="tests/Gu.Workbench.Tests/Gu.Workbench.Tests.csproj" />
+    <Project Path="tests/Gu.TheoryConformance.Tests/Gu.TheoryConformance.Tests.csproj" />
+    <Project Path="tests/Gu.Phase4.Spin.Tests/Gu.Phase4.Spin.Tests.csproj" />
+    <Project Path="tests/Gu.Phase4.Fermions.Tests/Gu.Phase4.Fermions.Tests.csproj" />
+    <Project Path="tests/Gu.Phase4.Dirac.Tests/Gu.Phase4.Dirac.Tests.csproj" />
+    <Project Path="tests/Gu.Phase4.Chirality.Tests/Gu.Phase4.Chirality.Tests.csproj" />
+    <Project Path="tests/Gu.Phase4.FamilyClustering.Tests/Gu.Phase4.FamilyClustering.Tests.csproj" />
+    <Project Path="tests/Gu.Phase4.Couplings.Tests/Gu.Phase4.Couplings.Tests.csproj" />
+    <Project Path="tests/Gu.Phase4.Registry.Tests/Gu.Phase4.Registry.Tests.csproj" />
+    <Project Path="tests/Gu.Phase4.Observation.Tests/Gu.Phase4.Observation.Tests.csproj" />
+    <Project Path="tests/Gu.Phase4.Comparison.Tests/Gu.Phase4.Comparison.Tests.csproj" />
+    <Project Path="tests/Gu.Phase4.Reporting.Tests/Gu.Phase4.Reporting.Tests.csproj" />
   </Folder>
 </Solution>

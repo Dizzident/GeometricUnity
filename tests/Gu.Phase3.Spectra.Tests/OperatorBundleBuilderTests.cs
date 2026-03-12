@@ -356,4 +356,77 @@ public class OperatorBundleBuilderTests
         Assert.Throws<ArgumentNullException>(() =>
             new OperatorBundleBuilder(mesh, algebra, assembler, mass, null!));
     }
+
+    // P4-C1: two distinct stored backgrounds must produce distinct operator bundles
+
+    [Fact]
+    public void Build_TwoDistinctOmegaStates_ProduceDistinctOperatorMatrices()
+    {
+        // This test verifies the P4-C1 requirement: a non-zero persisted omega
+        // state produces a different operator bundle than the zero state.
+        var (mesh, algebra, assembler, mass, backend) = SetupInfrastructure();
+        var builder = new OperatorBundleBuilder(mesh, algebra, assembler, mass, backend);
+        var manifest = TestHelpers.TestManifest();
+        var geometry = TestHelpers.DummyGeometry();
+
+        var spec = new LinearizedOperatorSpec
+        {
+            BackgroundId = "bg-state-compare",
+            OperatorType = SpectralOperatorType.FullHessian,
+            BackgroundAdmissibility = AdmissibilityLevel.B1,
+            Formulation = PhysicalModeFormulation.PenaltyFixed,
+        };
+
+        // Background A: zero omega
+        var omegaZero = ConnectionField.Zero(mesh, algebra).ToFieldTensor();
+        var a0 = ConnectionField.Zero(mesh, algebra).ToFieldTensor();
+        var bundleA = builder.Build(spec, omegaZero, a0, manifest, geometry);
+
+        // Background B: nonzero omega (simulates a nontrivially solved background)
+        int edgeN = mesh.EdgeCount * algebra.Dimension;
+        var omegaCoeffs = new double[edgeN];
+        for (int i = 0; i < edgeN; i++)
+            omegaCoeffs[i] = 0.05 * ((i % 5) - 2); // small but nonzero
+        var omegaNonzero = new FieldTensor
+        {
+            Label = "omega_nontrivial",
+            Signature = omegaZero.Signature,
+            Coefficients = omegaCoeffs,
+            Shape = omegaZero.Shape,
+        };
+        var bundleB = builder.Build(spec, omegaNonzero, a0, manifest, geometry);
+
+        // Both bundles target the same background ID (the spec is same); the key is that
+        // different omega inputs produce different operator matrices.
+
+        // The operator matrices must differ: at least one element differs
+        var matA = bundleA.SpectralOperator;
+        var matB = bundleB.SpectralOperator;
+        Assert.Equal(matA.InputDimension, matB.InputDimension);
+
+        bool anyDifference = false;
+        // Build a probe FieldTensor (unit vector in first component)
+        var probeCoeffs = new double[matA.InputDimension];
+        probeCoeffs[0] = 1.0;
+        var probeShape = omegaZero.Shape;
+        var probeTensor = new FieldTensor
+        {
+            Label = "probe",
+            Signature = omegaZero.Signature,
+            Coefficients = probeCoeffs,
+            Shape = probeShape,
+        };
+        var outA = matA.Apply(probeTensor);
+        var outB = matB.Apply(probeTensor);
+        for (int i = 0; i < outA.Coefficients.Length; i++)
+        {
+            if (System.Math.Abs(outA.Coefficients[i] - outB.Coefficients[i]) > 1e-14)
+            {
+                anyDifference = true;
+                break;
+            }
+        }
+        Assert.True(anyDifference,
+            "Two backgrounds with different omega states must produce different operator matrix outputs");
+    }
 }

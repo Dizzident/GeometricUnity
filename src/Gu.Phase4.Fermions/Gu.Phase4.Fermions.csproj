@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Gu.Phase4.Fermions.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Gu.Core\Gu.Core.csproj" />
+    <ProjectReference Include="..\Gu.Math\Gu.Math.csproj" />
+    <ProjectReference Include="..\Gu.Phase4.Spin\Gu.Phase4.Spin.csproj" />
+  </ItemGroup>
+
+</Project>

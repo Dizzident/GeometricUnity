@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/phase4/fermion_field_layout.schema.json",
+  "title": "FermionFieldLayout",
+  "description": "Layout descriptor for a discrete fermionic field on Y_h, specifying the cell-to-spinor-block structure, total state-space size, and storage conventions.",
+  "type": "object",
+  "required": [
+    "layoutId",
+    "branchManifestId",
+    "spinorSpecId",
+    "meshId",
+    "cellCount",
+    "spinorDimPerCell",
+    "gaugeDimPerCell",
+    "totalStateDimension"
+  ],
+  "properties": {
+    "layoutId": {
+      "type": "string",
+      "description": "Unique identifier for this field layout"
+    },
+    "branchManifestId": {
+      "type": "string",
+      "description": "Branch manifest ID governing this layout"
+    },
+    "spinorSpecId": {
+      "type": "string",
+      "description": "SpinorRepresentationSpec ID defining spinor block size"
+    },
+    "meshId": {
+      "type": "string",
+      "description": "Mesh/geometry ID for Y_h"
+    },
+    "cellCount": {
+      "type": "integer",
+      "description": "Number of cells in Y_h",
+      "minimum": 1
+    },
+    "spinorDimPerCell": {
+      "type": "integer",
+      "description": "Spinor dimension per cell = 2^floor(dimY/2)",
+      "minimum": 1
+    },
+    "gaugeDimPerCell": {
+      "type": "integer",
+      "description": "Gauge group dimension dimG per cell (e.g., 3 for su(2), 8 for su(3)). The total block size per cell is spinorDimPerCell * gaugeDimPerCell.",
+      "minimum": 1
+    },
+    "totalStateDimension": {
+      "type": "integer",
+      "description": "Total state-space dimension = cellCount * spinorDimPerCell * gaugeDimPerCell",
+      "minimum": 1
+    },
+    "storageOrder": {
+      "type": "string",
+      "description": "Storage order convention: cell-major (outer index = cell) or spinor-major",
+      "enum": ["CellMajor", "SpinorMajor"],
+      "default": "CellMajor"
+    },
+    "innerProductConventionId": {
+      "type": "string",
+      "description": "Fermionic inner product convention: must match spinor spec. For Riemannian Y: sum_c psi[c]^dagger phi[c] * vol(c)."
+    },
+    "massMatrixStorageRef": {
+      "type": ["string", "null"],
+      "description": "Artifact path for the serialized mass matrix M_psi (block-diagonal, vol(c)*I per cell). May be null if mass matrix is computed on demand."
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "phase": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "backgroundId": { "type": "string" }
+      }
+    }
+  }
+}

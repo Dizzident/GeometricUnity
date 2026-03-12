@@ -61,6 +61,8 @@ switch (args[0])
         return RunBosonCampaign(args);
     case "export-boson-report":
         return ExportBosonReport(args);
+    case "generate-phase4-report":
+        return GeneratePhase4Report(args);
     default:
         Console.Error.WriteLine($"Unknown command: {args[0]}");
         PrintUsage();
@@ -252,7 +254,7 @@ static int RunSolver(string[] args)
 {
     if (args.Length < 2)
     {
-        Console.Error.WriteLine("Usage: gu run <run-folder> [--backend cpu|cuda] [--mode A|B|C|D] [--lie-algebra su2|su3] [--max-iter N] [--step-size S] [--branches b1.json,b2.json]");
+        Console.Error.WriteLine("Usage: gu run <run-folder> [--backend cpu|cuda] [--mode A|B|C|D] [--lie-algebra su2|su3] [--max-iter N] [--step-size S] [--branches b1.json,b2.json] [--manifest path.json] [--omega path.json] [--a0 path.json]");
         return 1;
     }
 
@@ -269,6 +271,9 @@ static int RunSolver(string[] args)
     var lieAlgebra = ParseFlag(args, "--lie-algebra", "su2");
     var maxIter = int.Parse(ParseFlag(args, "--max-iter", "100"));
     var stepSize = double.Parse(ParseFlag(args, "--step-size", "0.01"));
+    var manifestFlag = ParseFlag(args, "--manifest", "");
+    var omegaFlag = ParseFlag(args, "--omega", "");
+    var a0Flag = ParseFlag(args, "--a0", "");
 
     if (backend != "cpu" && backend != "cuda")
     {
@@ -286,30 +291,140 @@ static int RunSolver(string[] args)
     // Create Lie algebra
     var algebra = CreateAlgebra(lieAlgebra);
 
-    // Build manifest with correct settings for the run
-    var manifest = new BranchManifest
+    // Load branch manifest: explicit --manifest flag > persisted run folder > default
+    string consumedManifestPath;
+    BranchManifest manifest;
+    if (!string.IsNullOrEmpty(manifestFlag))
     {
-        BranchId = "minimal-gu-v1",
-        SchemaVersion = "1.0.0",
-        SourceEquationRevision = "r1",
-        CodeRevision = "cli-run",
-        LieAlgebraId = algebra.AlgebraId,
-        BaseDimension = bundle.BaseMesh.EmbeddingDimension,
-        AmbientDimension = bundle.AmbientMesh.EmbeddingDimension,
-        ActiveGeometryBranch = "simplicial",
-        ActiveObservationBranch = "sigma-pullback",
-        ActiveTorsionBranch = "trivial",
-        ActiveShiabBranch = "identity-shiab",
-        ActiveGaugeStrategy = "penalty",
-        PairingConventionId = algebra.PairingId == "trace" ? "pairing-trace" : "pairing-killing",
-        BasisConventionId = "canonical",
-        ComponentOrderId = "face-major",
-        AdjointConventionId = "adjoint-explicit",
-        NormConventionId = "norm-l2-quadrature",
-        DifferentialFormMetricId = "hodge-standard",
-        InsertedAssumptionIds = Array.Empty<string>(),
-        InsertedChoiceIds = new[] { "IX-1", "IX-2" },
-    };
+        if (!File.Exists(manifestFlag))
+        {
+            Console.Error.WriteLine($"Manifest file not found: {manifestFlag}");
+            return 1;
+        }
+        var loaded = GuJsonDefaults.Deserialize<BranchManifest>(File.ReadAllText(manifestFlag));
+        if (loaded is null)
+        {
+            Console.Error.WriteLine($"Failed to deserialize manifest: {manifestFlag}");
+            return 1;
+        }
+        manifest = loaded;
+        consumedManifestPath = manifestFlag;
+        Console.WriteLine($"  Branch manifest: loaded from --manifest flag: {manifestFlag}");
+    }
+    else
+    {
+        var persistedManifestPath = Path.Combine(runPath, RunFolderLayout.BranchManifestFile);
+        var loadedFromFolder = File.Exists(persistedManifestPath)
+            ? GuJsonDefaults.Deserialize<BranchManifest>(File.ReadAllText(persistedManifestPath))
+            : null;
+        if (loadedFromFolder is not null)
+        {
+            manifest = loadedFromFolder;
+            consumedManifestPath = persistedManifestPath;
+            Console.WriteLine($"  Branch manifest: loaded from run folder: {persistedManifestPath}");
+        }
+        else
+        {
+            manifest = new BranchManifest
+            {
+                BranchId = "minimal-gu-v1",
+                SchemaVersion = "1.0.0",
+                SourceEquationRevision = "r1",
+                CodeRevision = "cli-run",
+                LieAlgebraId = algebra.AlgebraId,
+                BaseDimension = bundle.BaseMesh.EmbeddingDimension,
+                AmbientDimension = bundle.AmbientMesh.EmbeddingDimension,
+                ActiveGeometryBranch = "simplicial",
+                ActiveObservationBranch = "sigma-pullback",
+                ActiveTorsionBranch = "trivial",
+                ActiveShiabBranch = "identity-shiab",
+                ActiveGaugeStrategy = "penalty",
+                PairingConventionId = algebra.PairingId == "trace" ? "pairing-trace" : "pairing-killing",
+                BasisConventionId = "canonical",
+                ComponentOrderId = "face-major",
+                AdjointConventionId = "adjoint-explicit",
+                NormConventionId = "norm-l2-quadrature",
+                DifferentialFormMetricId = "hodge-standard",
+                InsertedAssumptionIds = Array.Empty<string>(),
+                InsertedChoiceIds = new[] { "IX-1", "IX-2" },
+            };
+            consumedManifestPath = "default-toy-manifest";
+            Console.WriteLine($"  Branch manifest: default (no persisted manifest found)");
+        }
+    }
+
+    // Load initial omega: explicit --omega flag > persisted final state > zero
+    string consumedOmegaPath;
+    FieldTensor? initialOmega = null;
+    int edgeN = yMesh.EdgeCount * algebra.Dimension;
+
+    if (!string.IsNullOrEmpty(omegaFlag))
+    {
+        if (!File.Exists(omegaFlag))
+        {
+            Console.Error.WriteLine($"Omega file not found: {omegaFlag}");
+            return 1;
+        }
+        var loadedOmega = GuJsonDefaults.Deserialize<FieldTensor>(File.ReadAllText(omegaFlag));
+        if (loadedOmega is not null && loadedOmega.Coefficients.Length == edgeN)
+        {
+            initialOmega = loadedOmega;
+            consumedOmegaPath = omegaFlag;
+            Console.WriteLine($"  Initial omega: loaded from --omega flag: {omegaFlag}");
+        }
+        else
+        {
+            Console.Error.WriteLine($"Omega file dimension mismatch (expected {edgeN} coefficients): {omegaFlag}");
+            return 1;
+        }
+    }
+    else
+    {
+        var finalStatePath = Path.Combine(runPath, RunFolderLayout.FinalStateFile);
+        var finalState = File.Exists(finalStatePath)
+            ? GuJsonDefaults.Deserialize<DiscreteState>(File.ReadAllText(finalStatePath))
+            : null;
+        if (finalState?.Omega is not null && finalState.Omega.Coefficients.Length == edgeN)
+        {
+            initialOmega = finalState.Omega;
+            consumedOmegaPath = finalStatePath;
+            Console.WriteLine($"  Initial omega: loaded from persisted final state: {finalStatePath}");
+        }
+        else
+        {
+            consumedOmegaPath = "zero (no persisted state found)";
+            Console.WriteLine($"  Initial omega: zero (no persisted state found)");
+        }
+    }
+
+    // Load A0: explicit --a0 flag > zero
+    string consumedA0Path;
+    FieldTensor? initialA0 = null;
+
+    if (!string.IsNullOrEmpty(a0Flag))
+    {
+        if (!File.Exists(a0Flag))
+        {
+            Console.Error.WriteLine($"A0 file not found: {a0Flag}");
+            return 1;
+        }
+        var loadedA0 = GuJsonDefaults.Deserialize<FieldTensor>(File.ReadAllText(a0Flag));
+        if (loadedA0 is not null && loadedA0.Coefficients.Length == edgeN)
+        {
+            initialA0 = loadedA0;
+            consumedA0Path = a0Flag;
+            Console.WriteLine($"  Initial A0: loaded from --a0 flag: {a0Flag}");
+        }
+        else
+        {
+            Console.Error.WriteLine($"A0 file dimension mismatch (expected {edgeN} coefficients): {a0Flag}");
+            return 1;
+        }
+    }
+    else
+    {
+        consumedA0Path = "zero (default)";
+    }
 
     // Parse solve mode
     var solveMode = mode.ToUpperInvariant() switch
@@ -471,9 +586,10 @@ static int RunSolver(string[] args)
             InvariantMetric = (double[])algebra.InvariantMetric.Clone(),
         });
 
-        // Upload zero background connection
-        int edgeN = yMesh.EdgeCount * dimG;
-        nativeBackend.UploadBackgroundConnection(new double[edgeN], yMesh.EdgeCount, dimG);
+        // Upload background connection (use loaded A0 if provided, else zero)
+        int cudaEdgeN = yMesh.EdgeCount * dimG;
+        var a0Coeffs = initialA0?.Coefficients ?? new double[cudaEdgeN];
+        nativeBackend.UploadBackgroundConnection(a0Coeffs, yMesh.EdgeCount, dimG);
 
         // Create CudaSolverBackend and run
         using var cudaBackend = new CudaSolverBackend(nativeBackend, ownsNative: true);
@@ -481,8 +597,7 @@ static int RunSolver(string[] args)
 
         var orchestrator = new SolverOrchestrator(cudaBackend, options);
 
-        // Create initial omega (zero connection)
-        var omegaCoeffs = new double[edgeN];
+        // Build initial omega tensor (use loaded state if available, else zero)
         var sig = new TensorSignature
         {
             AmbientSpaceId = "Y_h",
@@ -493,18 +608,18 @@ static int RunSolver(string[] args)
             MemoryLayout = "dense-row-major",
             NumericPrecision = "float64",
         };
-        var omegaTensor = new FieldTensor
+        var omegaTensor = initialOmega ?? new FieldTensor
         {
             Label = "omega_h",
             Signature = sig,
-            Coefficients = omegaCoeffs,
+            Coefficients = new double[cudaEdgeN],
             Shape = new[] { yMesh.EdgeCount, dimG },
         };
-        var a0Tensor = new FieldTensor
+        var a0Tensor = initialA0 ?? new FieldTensor
         {
             Label = "a0",
             Signature = sig,
-            Coefficients = new double[edgeN],
+            Coefficients = new double[cudaEdgeN],
             Shape = new[] { yMesh.EdgeCount, dimG },
         };
 
@@ -524,7 +639,9 @@ static int RunSolver(string[] args)
             Branch = cudaBranchRef,
             Backend = backendId,
             Notes = $"CUDA backend: {options.Mode}, {cudaSolverResult.Iterations} iterations, " +
-                    $"converged={cudaSolverResult.Converged}, reason={cudaSolverResult.TerminationReason}",
+                    $"converged={cudaSolverResult.Converged}, reason={cudaSolverResult.TerminationReason}; " +
+                    $"P4-C1 provenance: manifestSource={consumedManifestPath}, " +
+                    $"omegaSource={consumedOmegaPath}, a0Source={consumedA0Path}",
         };
         var initialState = new DiscreteState
         {
@@ -590,9 +707,15 @@ static int RunSolver(string[] args)
     }
     else
     {
-        // CPU path: use CpuSolverPipeline
+        // CPU path: use CpuSolverPipeline; pass loaded omega/A0 if available
         backendId = "cpu-reference";
-        result = pipeline.Execute(null, null, manifest, geometry, options);
+        var cpuOmega = initialOmega is not null
+            ? new ConnectionField(yMesh, algebra, initialOmega.Coefficients)
+            : null;
+        var cpuA0 = initialA0 is not null
+            ? new ConnectionField(yMesh, algebra, initialA0.Coefficients)
+            : null;
+        result = pipeline.Execute(cpuOmega, cpuA0, manifest, geometry, options);
     }
 
     var solverResult = result.SolverResult;
@@ -628,6 +751,8 @@ static int RunSolver(string[] args)
             CreatedAt = DateTimeOffset.UtcNow,
             CodeRevision = manifest.CodeRevision,
             Branch = branchRef,
+            Notes = $"P4-C1 provenance: manifestSource={consumedManifestPath}, " +
+                    $"omegaSource={consumedOmegaPath}, a0Source={consumedA0Path}",
         },
     };
 
@@ -655,12 +780,18 @@ static int RunSolver(string[] args)
     var runtime = RuntimeInfo.CaptureCurrentEnvironment("cpu-reference");
     writer.WriteRuntime(runtime);
 
-    // Write solver log
+    // Write solver log (with P4-C1 provenance appended)
     var logPath = Path.Combine(runPath, RunFolderLayout.SolverLogFile);
     var logDir = Path.GetDirectoryName(logPath);
     if (logDir is not null)
         Directory.CreateDirectory(logDir);
-    File.WriteAllLines(logPath, result.DiagnosticLog);
+    var fullLog = new List<string>(result.DiagnosticLog)
+    {
+        $"P4-C1 provenance: manifestSource={consumedManifestPath}",
+        $"P4-C1 provenance: omegaSource={consumedOmegaPath}",
+        $"P4-C1 provenance: a0Source={consumedA0Path}",
+    };
+    File.WriteAllLines(logPath, fullLog);
 
     // Compute integrity hashes
     var hashes = IntegrityHasher.ComputeRunFolderHashes(runPath);
@@ -751,6 +882,24 @@ static string ParseFlag(string[] args, string flag, string defaultValue)
             return args[i + 1];
     }
     return defaultValue;
+}
+
+/// <summary>
+/// Locate the persisted omega state tensor for a given background ID.
+/// Checks background_states/{bgId}_omega.json in the run folder hierarchy.
+/// Returns the path if found, otherwise null.
+/// </summary>
+static string? FindBackgroundOmegaState(string runFolder, string backgroundId)
+{
+    // Check backgrounds/background_states/{bgId}_omega.json (solve-backgrounds output)
+    var path1 = Path.Combine(runFolder, "backgrounds", "background_states", $"{backgroundId}_omega.json");
+    if (File.Exists(path1)) return path1;
+
+    // Check direct background_states subdir
+    var path2 = Path.Combine(runFolder, "background_states", $"{backgroundId}_omega.json");
+    if (File.Exists(path2)) return path2;
+
+    return null;
 }
 
 static int Reproduce(string[] args)
@@ -1085,7 +1234,7 @@ static int SolveBackgrounds(string[] args)
     var a0s = new Dictionary<string, FieldTensor> { ["env-default"] = a0 };
 
     var builder = new BackgroundAtlasBuilder(backend);
-    var atlas = builder.Build(study, manifests, geometries, a0s, provenance);
+    var atlas = builder.Build(study, manifests, geometries, a0s, provenance, out var solvedStates);
 
     // Write atlas
     Directory.CreateDirectory(outputDir);
@@ -1102,6 +1251,15 @@ static int SolveBackgrounds(string[] args)
     foreach (var bg in atlas.RejectedBackgrounds)
     {
         BackgroundAtlasSerializer.WriteRecord(bg, Path.Combine(recordsDir, $"{bg.BackgroundId}.json"));
+    }
+
+    // Persist solved omega tensors alongside records so compute-spectrum can load them
+    var statesDir = Path.Combine(outputDir, "background_states");
+    Directory.CreateDirectory(statesDir);
+    foreach (var (bgId, omegaTensor) in solvedStates)
+    {
+        var statePath = Path.Combine(statesDir, $"{bgId}_omega.json");
+        File.WriteAllText(statePath, GuJsonDefaults.Serialize(omegaTensor));
     }
 
     Console.WriteLine();
@@ -1122,6 +1280,7 @@ static int SolveBackgrounds(string[] args)
     Console.WriteLine();
     Console.WriteLine($"Atlas written to: {atlasPath}");
     Console.WriteLine($"Records written to: {recordsDir}");
+    Console.WriteLine($"State tensors written to: {statesDir} ({solvedStates.Count} omega files)");
     return 0;
 }
 
@@ -1178,36 +1337,54 @@ static int ComputeSpectrum(string[] args)
     Console.WriteLine($"  Formulation: {formulation}");
     Console.WriteLine($"  Num modes: {numModes}");
 
-    // Set up geometry and solver (same as solve-backgrounds)
+    // Set up geometry and solver
     var lieAlgebra = ParseFlag(args, "--lie-algebra", "su2");
     var algebra = CreateAlgebra(lieAlgebra);
     var bundle = ToyGeometryFactory.CreateToy2D();
     var mesh = bundle.AmbientMesh;
     var geometry = bundle.ToGeometryContext("centroid", "P1");
 
-    var manifest = new BranchManifest
+    // Load persisted branch manifest from run folder if available, otherwise construct default
+    string consumedManifestSource;
+    BranchManifest manifest;
+    var persistedManifestPath = Path.Combine(runFolder, RunFolderLayout.BranchManifestFile);
+    var loadedManifest = File.Exists(persistedManifestPath)
+        ? GuJsonDefaults.Deserialize<BranchManifest>(File.ReadAllText(persistedManifestPath))
+        : null;
+    if (loadedManifest is not null)
     {
-        BranchId = bgRecord.BranchManifestId,
-        SchemaVersion = "1.0.0",
-        SourceEquationRevision = "r1",
-        CodeRevision = "cli-spectrum",
-        LieAlgebraId = algebra.AlgebraId,
-        BaseDimension = bundle.BaseMesh.EmbeddingDimension,
-        AmbientDimension = bundle.AmbientMesh.EmbeddingDimension,
-        ActiveGeometryBranch = "simplicial",
-        ActiveObservationBranch = "sigma-pullback",
-        ActiveTorsionBranch = "trivial",
-        ActiveShiabBranch = "identity-shiab",
-        ActiveGaugeStrategy = "penalty",
-        PairingConventionId = algebra.PairingId == "trace" ? "pairing-trace" : "pairing-killing",
-        BasisConventionId = "canonical",
-        ComponentOrderId = "face-major",
-        AdjointConventionId = "adjoint-explicit",
-        NormConventionId = "norm-l2-quadrature",
-        DifferentialFormMetricId = "hodge-standard",
-        InsertedAssumptionIds = Array.Empty<string>(),
-        InsertedChoiceIds = new[] { "IX-1", "IX-2" },
-    };
+        manifest = loadedManifest;
+        consumedManifestSource = persistedManifestPath;
+        Console.WriteLine($"  Branch manifest: loaded from {persistedManifestPath}");
+    }
+    else
+    {
+        manifest = new BranchManifest
+        {
+            BranchId = bgRecord.BranchManifestId,
+            SchemaVersion = "1.0.0",
+            SourceEquationRevision = "r1",
+            CodeRevision = "cli-spectrum",
+            LieAlgebraId = algebra.AlgebraId,
+            BaseDimension = bundle.BaseMesh.EmbeddingDimension,
+            AmbientDimension = bundle.AmbientMesh.EmbeddingDimension,
+            ActiveGeometryBranch = "simplicial",
+            ActiveObservationBranch = "sigma-pullback",
+            ActiveTorsionBranch = "trivial",
+            ActiveShiabBranch = "identity-shiab",
+            ActiveGaugeStrategy = "penalty",
+            PairingConventionId = algebra.PairingId == "trace" ? "pairing-trace" : "pairing-killing",
+            BasisConventionId = "canonical",
+            ComponentOrderId = "face-major",
+            AdjointConventionId = "adjoint-explicit",
+            NormConventionId = "norm-l2-quadrature",
+            DifferentialFormMetricId = "hodge-standard",
+            InsertedAssumptionIds = Array.Empty<string>(),
+            InsertedChoiceIds = new[] { "IX-1", "IX-2" },
+        };
+        consumedManifestSource = "default-toy-manifest";
+        Console.WriteLine($"  Branch manifest: default (no persisted manifest found)");
+    }
 
     int edgeN = mesh.EdgeCount * algebra.Dimension;
     var sig = new TensorSignature
@@ -1219,13 +1396,46 @@ static int ComputeSpectrum(string[] args)
         ComponentOrderId = "edge-major",
         MemoryLayout = "dense-row-major",
     };
-    var omega = new FieldTensor
+
+    // Load persisted omega state for this background if available; fall back to zero
+    string consumedOmegaSource;
+    FieldTensor omega;
+    var stateFilePath = FindBackgroundOmegaState(runFolder, backgroundId);
+    if (stateFilePath is not null)
     {
-        Label = "omega_h",
-        Signature = sig,
-        Coefficients = new double[edgeN],
-        Shape = new[] { mesh.EdgeCount, algebra.Dimension },
-    };
+        var loadedOmega = GuJsonDefaults.Deserialize<FieldTensor>(File.ReadAllText(stateFilePath));
+        if (loadedOmega is not null && loadedOmega.Coefficients.Length == edgeN)
+        {
+            omega = loadedOmega;
+            consumedOmegaSource = stateFilePath;
+            Console.WriteLine($"  Omega state: loaded from {stateFilePath}");
+        }
+        else
+        {
+            omega = new FieldTensor
+            {
+                Label = "omega_h",
+                Signature = sig,
+                Coefficients = new double[edgeN],
+                Shape = new[] { mesh.EdgeCount, algebra.Dimension },
+            };
+            consumedOmegaSource = "zero (state file dimension mismatch)";
+            Console.WriteLine($"  Omega state: zero (state file dimension mismatch)");
+        }
+    }
+    else
+    {
+        omega = new FieldTensor
+        {
+            Label = "omega_h",
+            Signature = sig,
+            Coefficients = new double[edgeN],
+            Shape = new[] { mesh.EdgeCount, algebra.Dimension },
+        };
+        consumedOmegaSource = "zero (no persisted state found)";
+        Console.WriteLine($"  Omega state: zero (no persisted state found)");
+    }
+
     var a0 = new FieldTensor
     {
         Label = "a0",
@@ -1268,6 +1478,12 @@ static int ComputeSpectrum(string[] args)
 
     var pipeline = new EigensolverPipeline();
     var spectrum = pipeline.Solve(opBundle, eigSpec);
+
+    // Record provenance: which manifest and background state were consumed
+    spectrum.DiagnosticNotes.Add($"P4-C1 provenance: backgroundId={backgroundId}");
+    spectrum.DiagnosticNotes.Add($"P4-C1 provenance: backgroundRecordPath={bgPath}");
+    spectrum.DiagnosticNotes.Add($"P4-C1 provenance: manifestSource={consumedManifestSource}");
+    spectrum.DiagnosticNotes.Add($"P4-C1 provenance: omegaSource={consumedOmegaSource}");
 
     Console.WriteLine($"  Convergence: {spectrum.ConvergenceStatus}");
     Console.WriteLine($"  Modes found: {spectrum.Modes.Count}");
@@ -1801,6 +2017,164 @@ static string GenerateMarkdownReport(BosonAtlasReport report)
     return sb.ToString();
 }
 
+static int GeneratePhase4Report(string[] args)
+{
+    if (args.Length < 2)
+    {
+        Console.Error.WriteLine("Usage: gu generate-phase4-report <runFolder> [--output <path>]");
+        return 1;
+    }
+
+    var runFolder = args[1];
+    var outputOverride = ParseFlag(args, "--output", "");
+
+    // Load unified particle registry
+    var registryPath = Path.Combine(runFolder, "particle_registry", "unified_particle_registry.json");
+    if (!File.Exists(registryPath))
+    {
+        // Fall back to checking for registry in the bosons folder
+        var fallback = Path.Combine(runFolder, "bosons", "unified_registry.json");
+        registryPath = File.Exists(fallback) ? fallback : registryPath;
+    }
+
+    // Load fermion families atlas (best-effort; empty atlas if not found)
+    var atlasPath = Path.Combine(runFolder, "fermions", "fermion_families.json");
+    var couplingPath = Path.Combine(runFolder, "fermions", "couplings", "coupling_atlas.json");
+
+    Console.WriteLine($"Generating Phase IV report for run folder: {runFolder}");
+
+    Gu.Phase4.Registry.UnifiedParticleRegistry registry;
+    if (File.Exists(registryPath))
+    {
+        var json = File.ReadAllText(registryPath);
+        registry = Gu.Phase4.Registry.UnifiedParticleRegistry.FromJson(json);
+        Console.WriteLine($"  Loaded unified registry: {registry.Count} candidates");
+    }
+    else
+    {
+        Console.WriteLine($"  No unified particle registry found at {registryPath}; using empty registry.");
+        registry = new Gu.Phase4.Registry.UnifiedParticleRegistry();
+    }
+
+    // Build minimal atlas from disk or empty
+    Gu.Phase4.FamilyClustering.FermionFamilyAtlas atlas;
+    if (File.Exists(atlasPath))
+    {
+        var json = File.ReadAllText(atlasPath);
+        var options = new System.Text.Json.JsonSerializerOptions
+        {
+            Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() },
+        };
+        atlas = System.Text.Json.JsonSerializer.Deserialize<Gu.Phase4.FamilyClustering.FermionFamilyAtlas>(json, options)
+            ?? new Gu.Phase4.FamilyClustering.FermionFamilyAtlas
+            {
+                AtlasId = "empty",
+                BranchFamilyId = "unknown",
+                ContextIds = new List<string>(),
+                BackgroundIds = new List<string>(),
+                Families = new List<Gu.Phase4.Fermions.FermionModeFamily>(),
+                Provenance = new Gu.Core.ProvenanceMeta
+                {
+                    CreatedAt = DateTimeOffset.UtcNow,
+                    CodeRevision = "cli-generated",
+                    Branch = new Gu.Core.BranchRef { BranchId = "unknown", SchemaVersion = "1.0.0" },
+                },
+            };
+        Console.WriteLine($"  Loaded fermion family atlas: {atlas.Families.Count} families");
+    }
+    else
+    {
+        Console.WriteLine($"  No fermion family atlas found; using empty atlas.");
+        atlas = new Gu.Phase4.FamilyClustering.FermionFamilyAtlas
+        {
+            AtlasId = "empty",
+            BranchFamilyId = "unknown",
+            ContextIds = new List<string>(),
+            BackgroundIds = new List<string>(),
+            Families = new List<Gu.Phase4.Fermions.FermionModeFamily>(),
+            Provenance = new Gu.Core.ProvenanceMeta
+            {
+                CreatedAt = DateTimeOffset.UtcNow,
+                CodeRevision = "cli-generated",
+                Branch = new Gu.Core.BranchRef { BranchId = "unknown", SchemaVersion = "1.0.0" },
+            },
+        };
+    }
+
+    Gu.Phase4.Couplings.CouplingAtlas couplingAtlas;
+    if (File.Exists(couplingPath))
+    {
+        var json = File.ReadAllText(couplingPath);
+        var options = new System.Text.Json.JsonSerializerOptions
+        {
+            Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() },
+        };
+        couplingAtlas = System.Text.Json.JsonSerializer.Deserialize<Gu.Phase4.Couplings.CouplingAtlas>(json, options)
+            ?? BuildEmptyCouplingAtlas();
+        Console.WriteLine($"  Loaded coupling atlas: {couplingAtlas.Couplings.Count} couplings");
+    }
+    else
+    {
+        Console.WriteLine($"  No coupling atlas found; using empty coupling atlas.");
+        couplingAtlas = BuildEmptyCouplingAtlas();
+    }
+
+    var provenance = new Gu.Core.ProvenanceMeta
+    {
+        CreatedAt = DateTimeOffset.UtcNow,
+        CodeRevision = "cli-generated",
+        Branch = new Gu.Core.BranchRef { BranchId = "unknown", SchemaVersion = "1.0.0" },
+    };
+
+    var studyId = Path.GetFileName(runFolder.TrimEnd(Path.DirectorySeparatorChar)) ?? "unknown-study";
+    var generator = new Gu.Phase4.Reporting.Phase4ReportGenerator();
+    var report = generator.Generate(studyId, registry, atlas, couplingAtlas, provenance);
+
+    // Summary
+    var formatter = new Gu.Phase4.Reporting.ReportSummaryFormatter();
+    Console.WriteLine();
+    Console.WriteLine(formatter.FormatOneLiner(report));
+    Console.WriteLine();
+
+    // Determine output directory
+    string reportsDir = !string.IsNullOrEmpty(outputOverride)
+        ? Path.GetDirectoryName(outputOverride) ?? runFolder
+        : Path.Combine(runFolder, "reports");
+    Directory.CreateDirectory(reportsDir);
+
+    // Write JSON report
+    var jsonPath = !string.IsNullOrEmpty(outputOverride)
+        ? outputOverride
+        : Path.Combine(reportsDir, "phase4_report.json");
+    Gu.Phase4.Reporting.Phase4ReportSerializer.WriteToFile(report, jsonPath);
+
+    // Write text summary
+    var mdPath = Path.ChangeExtension(jsonPath, ".md");
+    File.WriteAllText(mdPath, formatter.Format(report));
+
+    Console.WriteLine($"JSON report : {jsonPath}");
+    Console.WriteLine($"Text report : {mdPath}");
+    return 0;
+}
+
+static Gu.Phase4.Couplings.CouplingAtlas BuildEmptyCouplingAtlas()
+{
+    return new Gu.Phase4.Couplings.CouplingAtlas
+    {
+        AtlasId = "empty",
+        FermionBackgroundId = "unknown",
+        BosonRegistryVersion = "1.0.0",
+        Couplings = new List<Gu.Phase4.Couplings.BosonFermionCouplingRecord>(),
+        NormalizationConvention = "unit-mode-norms",
+        Provenance = new Gu.Core.ProvenanceMeta
+        {
+            CreatedAt = DateTimeOffset.UtcNow,
+            CodeRevision = "cli-generated",
+            Branch = new Gu.Core.BranchRef { BranchId = "unknown", SchemaVersion = "1.0.0" },
+        },
+    };
+}
+
 static void PrintUsage()
 {
     Console.WriteLine("Geometric Unity CLI");
@@ -1820,6 +2194,7 @@ static void PrintUsage()
     Console.WriteLine("  gu build-boson-registry <runFolder>         Build candidate boson registry");
     Console.WriteLine("  gu run-boson-campaign <runFolder> [opts]    Run boson comparison campaign");
     Console.WriteLine("  gu export-boson-report <runFolder> [opts]   Export boson atlas report");
+    Console.WriteLine("  gu generate-phase4-report <runFolder> [opts] Generate Phase IV fermionic sector report");
     Console.WriteLine("  gu validate-replay <orig> <replay> [tier]   Validate replay (R0/R1/R2/R3)");
     Console.WriteLine("  gu verify-integrity <run-folder>            Verify or compute integrity hashes");
     Console.WriteLine("  gu validate-schema <file> <schema>          Validate JSON against a schema");
@@ -1832,6 +2207,9 @@ static void PrintUsage()
     Console.WriteLine("  --max-iter N           Max iterations (default: 100)");
     Console.WriteLine("  --step-size S          Initial step size (default: 0.01)");
     Console.WriteLine("  --output <dir>         Output directory for sweep results");
+    Console.WriteLine("  --manifest path.json   Explicit branch manifest to load (overrides run-folder manifest)");
+    Console.WriteLine("  --omega path.json      Initial omega tensor file (overrides persisted final state)");
+    Console.WriteLine("  --a0 path.json         Background connection A0 tensor file (default: zero)");
     Console.WriteLine();
     Console.WriteLine("Phase III Spectral/Boson options:");
     Console.WriteLine("  --num-modes N          Number of modes to compute (default: 10)");

@@ -313,4 +313,168 @@ public class BackgroundAtlasBuilderTests
         Assert.Equal(2, atlas.TotalAttempts);
         Assert.True(atlas.AdmissibilityCounts.ContainsKey("Rejected"));
     }
+
+    // P4-C1: Build overload returns solved state tensors keyed by BackgroundId
+
+    [Fact]
+    public void BuildWithStates_ReturnsSolvedOmegaTensors()
+    {
+        var (backend, geometry, a0, manifest, _) = SetupToy();
+        var builder = new BackgroundAtlasBuilder(backend);
+
+        var study = new BackgroundStudySpec
+        {
+            StudyId = "study-states",
+            Specs = new[]
+            {
+                new BackgroundSpec
+                {
+                    SpecId = "spec-s1",
+                    EnvironmentId = "env-1",
+                    BranchManifestId = "branch-1",
+                    Seed = new BackgroundSeed { Kind = BackgroundSeedKind.Trivial },
+                    SolveOptions = new BackgroundSolveOptions
+                    {
+                        SolveMode = SolveMode.ResidualOnly,
+                        ToleranceResidualDiagnostic = 10.0,
+                        ToleranceStationary = 10.0,
+                        ToleranceResidualStrict = 10.0,
+                    },
+                },
+            },
+        };
+
+        var manifests = new Dictionary<string, BranchManifest> { ["branch-1"] = manifest };
+        var geometries = new Dictionary<string, GeometryContext> { ["env-1"] = geometry };
+        var a0s = new Dictionary<string, FieldTensor> { ["env-1"] = a0 };
+
+        var atlas = builder.Build(study, manifests, geometries, a0s, TestHelpers.MakeProvenance(),
+            out var solvedStates);
+
+        Assert.NotNull(solvedStates);
+        // All admitted backgrounds should have a solved state tensor
+        foreach (var bg in atlas.Backgrounds)
+        {
+            Assert.True(solvedStates.ContainsKey(bg.BackgroundId),
+                $"Expected solvedStates to contain key {bg.BackgroundId}");
+            var tensor = solvedStates[bg.BackgroundId];
+            Assert.NotNull(tensor.Coefficients);
+            Assert.True(tensor.Coefficients.Length > 0);
+        }
+    }
+
+    [Fact]
+    public void BuildWithStates_TwoDistinctSeeds_ProduceStatesWithSameShape()
+    {
+        var (backend, geometry, a0, manifest, algebra) = SetupToy();
+        var bundle = ToyGeometryFactory.CreateToy2D();
+        var mesh = bundle.AmbientMesh;
+        var builder = new BackgroundAtlasBuilder(backend);
+
+        // Seed A: explicit nonzero initial state
+        int edgeN = mesh.EdgeCount * algebra.Dimension;
+        var explicitCoeffs = new double[edgeN];
+        for (int i = 0; i < edgeN; i++)
+            explicitCoeffs[i] = 0.1 * (i % 3);
+        var explicitSeed = new FieldTensor
+        {
+            Label = "omega_explicit",
+            Signature = a0.Signature,
+            Coefficients = explicitCoeffs,
+            Shape = new[] { mesh.EdgeCount, algebra.Dimension },
+        };
+
+        var study = new BackgroundStudySpec
+        {
+            StudyId = "study-two-seeds",
+            DeduplicationThreshold = 0.0, // disable dedup so both survive
+            Specs = new[]
+            {
+                new BackgroundSpec
+                {
+                    SpecId = "spec-trivial",
+                    EnvironmentId = "env-1",
+                    BranchManifestId = "branch-1",
+                    Seed = new BackgroundSeed { Kind = BackgroundSeedKind.Trivial },
+                    SolveOptions = new BackgroundSolveOptions
+                    {
+                        SolveMode = SolveMode.ResidualOnly,
+                        ToleranceResidualDiagnostic = 100.0,
+                        ToleranceStationary = 100.0,
+                        ToleranceResidualStrict = 100.0,
+                    },
+                },
+                new BackgroundSpec
+                {
+                    SpecId = "spec-explicit",
+                    EnvironmentId = "env-1",
+                    BranchManifestId = "branch-1",
+                    Seed = new BackgroundSeed
+                    {
+                        Kind = BackgroundSeedKind.Explicit,
+                        InitialState = explicitSeed,
+                    },
+                    SolveOptions = new BackgroundSolveOptions
+                    {
+                        SolveMode = SolveMode.ResidualOnly,
+                        ToleranceResidualDiagnostic = 100.0,
+                        ToleranceStationary = 100.0,
+                        ToleranceResidualStrict = 100.0,
+                    },
+                },
+            },
+        };
+
+        var manifests = new Dictionary<string, BranchManifest> { ["branch-1"] = manifest };
+        var geometries = new Dictionary<string, GeometryContext> { ["env-1"] = geometry };
+        var a0s = new Dictionary<string, FieldTensor> { ["env-1"] = a0 };
+
+        builder.Build(study, manifests, geometries, a0s, TestHelpers.MakeProvenance(),
+            out var solvedStates);
+
+        // Both backgrounds should produce state tensors of the same shape
+        Assert.Equal(2, solvedStates.Count);
+        var stateList = solvedStates.Values.ToList();
+        Assert.Equal(stateList[0].Coefficients.Length, stateList[1].Coefficients.Length);
+    }
+
+    [Fact]
+    public void BuildWithStates_OriginalOverloadUnchanged()
+    {
+        // The original Build(5-arg) overload must continue to work unchanged
+        var (backend, geometry, a0, manifest, _) = SetupToy();
+        var builder = new BackgroundAtlasBuilder(backend);
+
+        var study = new BackgroundStudySpec
+        {
+            StudyId = "study-compat",
+            Specs = new[]
+            {
+                new BackgroundSpec
+                {
+                    SpecId = "spec-compat",
+                    EnvironmentId = "env-1",
+                    BranchManifestId = "branch-1",
+                    Seed = new BackgroundSeed { Kind = BackgroundSeedKind.Trivial },
+                    SolveOptions = new BackgroundSolveOptions
+                    {
+                        SolveMode = SolveMode.ResidualOnly,
+                        ToleranceResidualDiagnostic = 10.0,
+                        ToleranceStationary = 10.0,
+                        ToleranceResidualStrict = 10.0,
+                    },
+                },
+            },
+        };
+
+        var manifests = new Dictionary<string, BranchManifest> { ["branch-1"] = manifest };
+        var geometries = new Dictionary<string, GeometryContext> { ["env-1"] = geometry };
+        var a0s = new Dictionary<string, FieldTensor> { ["env-1"] = a0 };
+
+        // Must not throw; returns same atlas as before
+        var atlas = builder.Build(study, manifests, geometries, a0s, TestHelpers.MakeProvenance());
+
+        Assert.NotNull(atlas);
+        Assert.Equal("study-compat", atlas.StudyId);
+    }
 }

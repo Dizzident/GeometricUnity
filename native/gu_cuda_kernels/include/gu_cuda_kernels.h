@@ -198,6 +198,165 @@ int gu_scale_gpu(double* d_x, double alpha, int n);
 int gu_copy_gpu(double* d_dst, const double* d_src, int n);
 
 /* =========================================================================
+ * Phase IV Dirac kernel dispatch functions (M44)
+ *
+ * Fermionic operator kernels for the discrete Dirac operator on Y_h.
+ *
+ * All spinor vectors are interleaved complex: [Re_0, Im_0, Re_1, Im_1, ...].
+ * spinor_dof = 2 * cell_count * spinor_dim * gauge_dim  (interleaved real length).
+ *
+ * Gamma matrices are uploaded once at initialization via gu_dirac_upload_gammas.
+ * They are stored as device constants for the lifetime of the kernel context.
+ * ========================================================================= */
+
+/**
+ * Upload gamma matrices to device constants.
+ * Must be called once before any gu_dirac_* kernel invocations.
+ *
+ * @param gamma_re       Flat row-major real parts: [mu * spinor_dim^2 + row * spinor_dim + col]
+ * @param gamma_im       Flat row-major imag parts: same layout
+ * @param chirality_re   Chirality matrix real part [spinor_dim^2], NULL for odd dimY
+ * @param chirality_im   Chirality matrix imag part [spinor_dim^2], NULL for odd dimY
+ * @param spacetime_dim  Number of gamma matrices (dimY)
+ * @param spinor_dim     Spinor dimension (2^floor(dimY/2))
+ * @return 0 on success, -1 on failure
+ */
+int gu_dirac_upload_gammas(
+    const double* gamma_re,
+    const double* gamma_im,
+    const double* chirality_re,
+    const double* chirality_im,
+    int spacetime_dim,
+    int spinor_dim);
+
+/**
+ * Apply a single gamma matrix: result = Gamma_mu * spinor (per cell).
+ *
+ * @param spinor_in      Input spinor [spinor_dof]
+ * @param result_out     Output [spinor_dof]
+ * @param mu             Gamma index in [0, spacetime_dim)
+ * @param cell_count     Number of cells
+ * @param spinor_dim     Spinor dimension
+ * @param gauge_dim      Gauge representation dimension
+ * @return 0 on success, -1 on failure
+ */
+int gu_dirac_gamma_action_gpu(
+    const double* spinor_in,
+    double* result_out,
+    int mu,
+    int cell_count,
+    int spinor_dim,
+    int gauge_dim);
+
+/**
+ * Apply the full discrete Dirac operator: result = D_h * spinor.
+ *
+ * D_h = sum_mu Gamma_mu * nabla_spin_mu (vertex-based finite difference).
+ * Gauge coupling enters through the uploaded spin connection coefficients.
+ *
+ * @param spinor_in            Input spinor [spinor_dof]
+ * @param result_out           Output [spinor_dof]
+ * @param gauge_coupling_coeff Gauge coupling part of spin connection [edge_count * spinor_dim * spinor_dim * 2]
+ * @param vertex_edge_incidence Vertex-edge incidence [vertex_count * max_edges_per_vertex]
+ * @param vertex_edge_orient    Vertex-edge orientations [vertex_count * max_edges_per_vertex]
+ * @param vertex_count          Number of mesh vertices
+ * @param edge_count            Number of mesh edges
+ * @param cell_count            Number of mesh cells (= vertex_count for vertex-based)
+ * @param spinor_dim            Spinor dimension
+ * @param gauge_dim             Gauge representation dimension
+ * @param max_edges_per_vertex  Padding width for incidence arrays
+ * @return 0 on success, -1 on failure
+ */
+int gu_dirac_apply_gpu(
+    const double* spinor_in,
+    double* result_out,
+    const double* gauge_coupling_coeff,
+    const int32_t* vertex_edge_incidence,
+    const int32_t* vertex_edge_orient,
+    int vertex_count,
+    int edge_count,
+    int cell_count,
+    int spinor_dim,
+    int gauge_dim,
+    int max_edges_per_vertex);
+
+/**
+ * Apply the fermionic mass operator: result = M_psi * spinor.
+ * M_psi = diag(vol_cell * I_spinor). For uniform vol=1.0 this is identity.
+ *
+ * @param spinor_in    Input spinor [spinor_dof]
+ * @param result_out   Output [spinor_dof]
+ * @param cell_volumes Cell volumes [cell_count]. NULL => uniform volume 1.0.
+ * @param spinor_dof   Total interleaved spinor array length
+ * @param cell_count   Number of cells
+ * @param spinor_dim   Spinor dimension per cell
+ * @param gauge_dim    Gauge dimension per cell
+ * @return 0 on success, -1 on failure
+ */
+int gu_dirac_mass_apply_gpu(
+    const double* spinor_in,
+    double* result_out,
+    const double* cell_volumes,
+    int spinor_dof,
+    int cell_count,
+    int spinor_dim,
+    int gauge_dim);
+
+/**
+ * Apply chirality projector: result = P_L * spinor (left=1) or P_R * spinor (left=0).
+ * P_L = (I - Gamma_chi) / 2, P_R = (I + Gamma_chi) / 2.
+ * Requires gu_dirac_upload_gammas to have been called with non-NULL chirality matrices.
+ *
+ * @param spinor_in   Input spinor [spinor_dof]
+ * @param result_out  Output [spinor_dof]
+ * @param left        1 for P_L, 0 for P_R
+ * @param cell_count  Number of cells
+ * @param spinor_dim  Spinor dimension
+ * @param gauge_dim   Gauge dimension
+ * @return 0 on success, -1 on failure (-2 if chirality matrix not uploaded)
+ */
+int gu_dirac_chirality_project_gpu(
+    const double* spinor_in,
+    double* result_out,
+    int left,
+    int cell_count,
+    int spinor_dim,
+    int gauge_dim);
+
+/**
+ * Compute boson-fermion coupling proxy scalar:
+ *   g = <spinorI, delta_D[bosonK] spinorJ>
+ * where delta_D[b_k] = Gamma^mu * b_k_mu^a * rho(T_a) (analytical variation).
+ *
+ * Returns real and imaginary parts of the scalar g.
+ *
+ * @param spinor_i       Left spinor [spinor_dof]
+ * @param spinor_j       Right spinor [spinor_dof]
+ * @param boson_k        Boson mode vector [edge_count * gauge_dim]
+ * @param result_re_out  Output real part (scalar)
+ * @param result_im_out  Output imaginary part (scalar)
+ * @param spinor_dof     Total interleaved spinor array length
+ * @param edge_count     Number of mesh edges
+ * @param cell_count     Number of cells
+ * @param spinor_dim     Spinor dimension
+ * @param gauge_dim      Gauge dimension
+ * @param spacetime_dim  Number of gamma matrices
+ * @return 0 on success, -1 on failure
+ */
+int gu_dirac_coupling_proxy_gpu(
+    const double* spinor_i,
+    const double* spinor_j,
+    const double* boson_k,
+    double* result_re_out,
+    double* result_im_out,
+    int spinor_dof,
+    int edge_count,
+    int cell_count,
+    int spinor_dim,
+    int gauge_dim,
+    int spacetime_dim);
+
+/* =========================================================================
  * CUDA runtime wrappers
  *
  * These wrap cudaMalloc/cudaFree/cudaMemcpy so that gu_cuda_core.c (compiled

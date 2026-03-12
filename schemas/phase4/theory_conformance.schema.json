@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/phase4/theory_conformance.schema.json",
+  "title": "ConformanceResult",
+  "description": "Machine-readable summary artifact from the theory-conformance harness (P4-C2). Records whether the active runtime branch matches the declared assumptions and lowerings in ASSUMPTIONS.md.",
+  "type": "object",
+  "required": [
+    "conformanceId",
+    "schemaVersion",
+    "branchManifestId",
+    "overallPassed",
+    "checks",
+    "generatedAt"
+  ],
+  "properties": {
+    "conformanceId": {
+      "type": "string",
+      "description": "Unique identifier for this conformance result"
+    },
+    "schemaVersion": {
+      "type": "string",
+      "description": "Schema version string"
+    },
+    "branchManifestId": {
+      "type": "string",
+      "description": "Branch manifest ID that was validated"
+    },
+    "overallPassed": {
+      "type": "boolean",
+      "description": "Whether all required conformance checks passed"
+    },
+    "checks": {
+      "type": "array",
+      "description": "Individual conformance check results",
+      "items": { "$ref": "#/$defs/ConformanceCheck" }
+    },
+    "silentFallbacksDetected": {
+      "type": "array",
+      "description": "Silent fallback-to-trivial-state execution paths detected during conformance testing",
+      "items": { "type": "string" }
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when this conformance result was generated"
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "phase": { "type": "string" },
+        "codeRevision": { "type": "string" },
+        "artifactRef": { "type": "string" }
+      }
+    }
+  },
+  "$defs": {
+    "ConformanceCheck": {
+      "type": "object",
+      "required": ["checkId", "checkDescription", "category", "passed"],
+      "properties": {
+        "checkId": {
+          "type": "string",
+          "description": "Unique check identifier (e.g. CONF-TORSION-01)"
+        },
+        "checkDescription": {
+          "type": "string",
+          "description": "Human-readable description of what this check validates"
+        },
+        "category": {
+          "type": "string",
+          "description": "Category of the check",
+          "enum": [
+            "TorsionBranch",
+            "ShibaBranch",
+            "PairingConvention",
+            "ObservationBranch",
+            "GeometryBranch",
+            "ArtifactProvenance",
+            "SilentFallbackDetection",
+            "BranchVsTheoryAlignment"
+          ]
+        },
+        "passed": {
+          "type": "boolean",
+          "description": "Whether this check passed"
+        },
+        "expected": {
+          "type": ["string", "null"],
+          "description": "Expected value or condition"
+        },
+        "actual": {
+          "type": ["string", "null"],
+          "description": "Actual value or condition found"
+        },
+        "notes": {
+          "type": ["string", "null"],
+          "description": "Diagnostic notes explaining a failure or providing context"
+        }
+      }
+    }
+  }
+}

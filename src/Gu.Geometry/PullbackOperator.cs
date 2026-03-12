@@ -235,6 +235,52 @@ public sealed class PullbackOperator
     }
 
     /// <summary>
+    /// Pull back a multi-component cell field from Y_h to X_h using sigma_h.
+    /// Each cell has componentsPerCell values (e.g., spinor DoFs: 2*dofsPerCell for Re/Im interleaving).
+    /// No orientation correction is needed — cells are volumes, not antisymmetric forms.
+    /// </summary>
+    /// <param name="yField">Field on Y_h. Shape: [AmbientMesh.CellCount, componentsPerCell].</param>
+    /// <param name="componentsPerCell">Number of components per cell. For fermion spinors with
+    /// Re/Im interleaving, pass 2*dofsPerCell.</param>
+    /// <returns>Field on X_h with same components per cell.</returns>
+    public FieldTensor ApplyCellField(FieldTensor yField, int componentsPerCell)
+    {
+        int expectedLength = _bundle.AmbientMesh.CellCount * componentsPerCell;
+        if (yField.Coefficients.Length != expectedLength)
+            throw new ArgumentException(
+                $"Expected {expectedLength} coefficients ({_bundle.AmbientMesh.CellCount} Y cells * {componentsPerCell} components), got {yField.Coefficients.Length}.");
+
+        var xCoeffs = new double[_bundle.BaseMesh.CellCount * componentsPerCell];
+
+        for (int xc = 0; xc < _bundle.BaseMesh.CellCount; xc++)
+        {
+            int yCell = _bundle.XCellToYCell[xc];
+            Array.Copy(
+                yField.Coefficients, yCell * componentsPerCell,
+                xCoeffs, xc * componentsPerCell,
+                componentsPerCell);
+        }
+
+        return new FieldTensor
+        {
+            Label = $"sigma_h*({yField.Label})",
+            Signature = new TensorSignature
+            {
+                AmbientSpaceId = "X_h",
+                CarrierType = yField.Signature.CarrierType,
+                Degree = yField.Signature.Degree,
+                LieAlgebraBasisId = yField.Signature.LieAlgebraBasisId,
+                ComponentOrderId = yField.Signature.ComponentOrderId,
+                NumericPrecision = yField.Signature.NumericPrecision,
+                MemoryLayout = yField.Signature.MemoryLayout,
+                BackendPacking = yField.Signature.BackendPacking,
+            },
+            Coefficients = xCoeffs,
+            Shape = new[] { _bundle.BaseMesh.CellCount, componentsPerCell },
+        };
+    }
+
+    /// <summary>
     /// Sorts three vertex indices into canonical order (ascending) and returns
     /// the permutation sign (+1 for even, -1 for odd permutation).
     /// </summary>

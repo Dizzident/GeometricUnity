@@ -1,0 +1,193 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/phase4/fermion_mode_family.schema.json",
+  "title": "FermionModeFamily",
+  "description": "A family of fermionic modes tracked across backgrounds, branches, and refinement levels, with chirality and conjugation invariants.",
+  "type": "object",
+  "required": [
+    "familyId",
+    "memberModeIds",
+    "contextIds",
+    "meanEigenvalue",
+    "eigenvalueSpread",
+    "isStable",
+    "ambiguityCount",
+    "alignments"
+  ],
+  "properties": {
+    "familyId": {
+      "type": "string",
+      "description": "Unique fermion mode family identifier"
+    },
+    "memberModeIds": {
+      "type": "array",
+      "description": "Fermion mode IDs belonging to this family across all contexts",
+      "items": { "type": "string" }
+    },
+    "contextIds": {
+      "type": "array",
+      "description": "Context IDs (background IDs, branch IDs) in which this family has members",
+      "items": { "type": "string" }
+    },
+    "meanEigenvalue": {
+      "type": "number",
+      "description": "Mean eigenvalue across all member modes"
+    },
+    "eigenvalueSpread": {
+      "type": "number",
+      "description": "Eigenvalue spread across all member modes",
+      "minimum": 0
+    },
+    "isStable": {
+      "type": "boolean",
+      "description": "Whether the family is stable (all members matched with high confidence)"
+    },
+    "ambiguityCount": {
+      "type": "integer",
+      "description": "Number of ambiguous matches in this family's history",
+      "minimum": 0
+    },
+    "chiralProfileSummary": {
+      "$ref": "#/$defs/ChiralProfileSummary"
+    },
+    "conjugationFamilySummary": {
+      "$ref": "#/$defs/ConjugationFamilySummary"
+    },
+    "alignments": {
+      "type": "array",
+      "description": "Alignment records tracing how modes were matched across contexts",
+      "items": { "$ref": "#/$defs/FermionModeAlignmentRecord" }
+    },
+    "familyClusterId": {
+      "type": ["string", "null"],
+      "description": "Generation/family cluster ID assigned by the clustering algorithm"
+    },
+    "ambiguityNotes": {
+      "type": "array",
+      "description": "Ambiguity notes accumulated during tracking",
+      "items": { "type": "string" }
+    }
+  },
+  "$defs": {
+    "ChiralProfileSummary": {
+      "type": "object",
+      "required": ["meanChiralBalance", "chiralBalanceSpread", "dominantChirality"],
+      "properties": {
+        "meanChiralBalance": {
+          "type": "number",
+          "description": "Mean chiral balance (R-L)/(R+L) across family members",
+          "minimum": -1,
+          "maximum": 1
+        },
+        "chiralBalanceSpread": {
+          "type": "number",
+          "description": "Standard deviation of chiral balance across family members",
+          "minimum": 0
+        },
+        "dominantChirality": {
+          "type": "string",
+          "description": "Consensus dominant chirality: left, right, mixed, or ambiguous",
+          "enum": ["left", "right", "mixed", "ambiguous"]
+        },
+        "isChiralStable": {
+          "type": "boolean",
+          "description": "Whether the chirality profile is stable across contexts"
+        }
+      }
+    },
+    "ConjugationFamilySummary": {
+      "type": "object",
+      "required": ["conjugateFamilyId", "pairingConsistency"],
+      "properties": {
+        "conjugateFamilyId": {
+          "type": ["string", "null"],
+          "description": "Family ID of the conjugate partner family, if identified"
+        },
+        "pairingConsistency": {
+          "type": "number",
+          "description": "Fraction of members that have a consistent conjugate partner assignment [0, 1]",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "isMajoranaFamilyCandidate": {
+          "type": "boolean",
+          "description": "Whether this family is a candidate Majorana family (self-conjugate)"
+        }
+      }
+    },
+    "FermionModeAlignmentRecord": {
+      "type": "object",
+      "required": ["sourceModeId", "targetModeId", "metrics", "alignmentType", "confidence"],
+      "properties": {
+        "sourceModeId": {
+          "type": "string",
+          "description": "Mode ID in context A"
+        },
+        "targetModeId": {
+          "type": "string",
+          "description": "Mode ID in context B"
+        },
+        "metrics": { "$ref": "#/$defs/FermionModeMatchMetricSet" },
+        "alignmentType": {
+          "type": "string",
+          "description": "Alignment type: matched, birth, death, split, merge, avoided-crossing",
+          "enum": ["matched", "birth", "death", "split", "merge", "avoided-crossing"]
+        },
+        "confidence": {
+          "type": "number",
+          "description": "Confidence level [0, 1]. Low confidence indicates ambiguity.",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "ambiguityNotes": {
+          "type": ["string", "null"],
+          "description": "Ambiguity notes if matching was ambiguous"
+        }
+      }
+    },
+    "FermionModeMatchMetricSet": {
+      "type": "object",
+      "required": ["featureDistance", "aggregateScore", "isMatch"],
+      "properties": {
+        "eigenvalueOverlap": {
+          "type": ["number", "null"],
+          "description": "Eigenvalue band similarity score"
+        },
+        "eigenspaceOverlap": {
+          "type": ["number", "null"],
+          "description": "Eigenspace inner-product overlap"
+        },
+        "chiralProfileSimilarity": {
+          "type": ["number", "null"],
+          "description": "Chirality profile similarity score"
+        },
+        "conjugationConsistency": {
+          "type": ["number", "null"],
+          "description": "Conjugation relation consistency score"
+        },
+        "observedSignatureSimilarity": {
+          "type": ["number", "null"],
+          "description": "Observed-signature similarity score"
+        },
+        "couplingProfileSimilarity": {
+          "type": ["number", "null"],
+          "description": "Boson-fermion coupling profile similarity score"
+        },
+        "featureDistance": {
+          "type": "number",
+          "description": "Invariant feature distance. Lower = more similar."
+        },
+        "aggregateScore": {
+          "type": "number",
+          "description": "Weighted aggregate score. Higher = better match. Range [0, 1].",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "isMatch": {
+          "type": "boolean",
+          "description": "Whether the aggregate score exceeds the matching threshold"
+        }
+      }
+    }
+  }
+}

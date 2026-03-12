@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/phase4/chirality_policy.schema.json",
+  "title": "ChiralityPolicy",
+  "description": "Policy controlling how chirality decompositions are computed, reported, and used for candidate demotion in the Phase IV fermionic pipeline.",
+  "type": "object",
+  "required": [
+    "policyId",
+    "schemaVersion",
+    "chiralProjectorConvention",
+    "chiralImbalanceThreshold",
+    "reportChiralDecomposition"
+  ],
+  "properties": {
+    "policyId": {
+      "type": "string",
+      "description": "Unique identifier for this chirality policy"
+    },
+    "schemaVersion": {
+      "type": "string",
+      "description": "Schema version string"
+    },
+    "chiralProjectorConvention": {
+      "type": "string",
+      "description": "Sign convention for chiral projectors. 'left-is-minus' (east-coast): P_L=(1-Gamma_chi)/2, P_R=(1+Gamma_chi)/2. 'left-is-plus' (west-coast): P_L=(1+Gamma_chi)/2, P_R=(1-Gamma_chi)/2. This is a branch parameter — must be recorded on every FermionModeRecord so chirality labels are unambiguous across runs.",
+      "enum": ["left-is-minus", "left-is-plus"]
+    },
+    "chiralImbalanceThreshold": {
+      "type": "number",
+      "description": "Maximum allowed chiral imbalance |L-R|/(L+R) before a mode is flagged",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "reportChiralDecomposition": {
+      "type": "boolean",
+      "description": "Whether to include full chirality decomposition in fermion mode records. Has no effect when the spinor spec declares chiralityApplicable=false (odd dimY)."
+    },
+    "skipChiralityForOddDimY": {
+      "type": "boolean",
+      "description": "When true, all chirality analysis is skipped if the spinor spec has chiralityApplicable=false (odd-dimensional Y — product of all gammas is proportional to identity, no Weyl decomposition exists). When false, an error is raised if chirality is requested on an odd-dimensional space. Default: true.",
+      "default": true
+    },
+    "demoteOnChiralInstability": {
+      "type": "boolean",
+      "description": "Whether to demote candidates when chirality profile is unstable across branches",
+      "default": true
+    },
+    "chiralStabilityWindowFraction": {
+      "type": "number",
+      "description": "Maximum fractional variation in chiral balance across branches for a stable candidate",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.2
+    },
+    "includeVectorComponents": {
+      "type": "boolean",
+      "description": "Whether to compute and report left/right chirality component vectors",
+      "default": false
+    },
+    "provenance": {
+      "type": "object",
+      "description": "Provenance metadata",
+      "properties": {
+        "phase": { "type": "string" },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

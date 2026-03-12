@@ -1,0 +1,106 @@
+{
+  "environmentId": "bosonic-validation-001-env",
+  "studyId": "bosonic_validation_001",
+  "branch": {
+    "branchId": "bosonic-validation-001",
+    "schemaVersion": "1.0.0"
+  },
+  "scenarioType": "nontrivial-bosonic-validation",
+  "geometry": {
+    "baseSpace": {
+      "spaceId": "X_h",
+      "dimension": 3,
+      "label": "base_X_h"
+    },
+    "ambientSpace": {
+      "spaceId": "Y_h",
+      "dimension": 9,
+      "label": "ambient_Y_h"
+    },
+    "discretizationType": "simplicial",
+    "quadratureRuleId": "simplex-3d-centroid",
+    "basisFamilyId": "P1-simplex-3d",
+    "projectionBinding": {
+      "bindingType": "projection",
+      "sourceSpace": {
+        "spaceId": "Y_h",
+        "dimension": 9
+      },
+      "targetSpace": {
+        "spaceId": "X_h",
+        "dimension": 3
+      },
+      "mappingStrategy": "many-to-one-fiber-projection"
+    },
+    "observationBinding": {
+      "bindingType": "observation",
+      "sourceSpace": {
+        "spaceId": "X_h",
+        "dimension": 3
+      },
+      "targetSpace": {
+        "spaceId": "Y_h",
+        "dimension": 9
+      },
+      "mappingStrategy": "section-vertex-aligned"
+    },
+    "patches": [
+      {
+        "patchId": "base-patch-0",
+        "elementCount": 1,
+        "topologyType": "simplicial",
+        "metadata": {
+          "description": "Single tetrahedron in 3D",
+          "vertexCount": "4"
+        }
+      }
+    ]
+  },
+  "boundaryConditions": {
+    "conditionType": "none"
+  },
+  "initialConditions": {
+    "conditionType": "nonzero-varying-connection",
+    "description": "omega set per-edge with a linear ramp on generator 0 and inverse ramp on generator 1; A0 also nonzero on generator 1 with distinct ramp to activate augmented torsion nontrivially",
+    "omegaProfile": {
+      "description": "edge e gets omega_0 = 0.3*(e+1)/edgeCount on gen 0, omega_1 = 0.1*(edgeCount-e)/edgeCount on gen 1",
+      "note": "Varying profile breaks boundary-operator cancellation, producing nonzero d(omega) and nonzero Jacobian"
+    },
+    "a0Profile": {
+      "description": "edge e gets a0_1 = 0.2*(e+0.5)/edgeCount on gen 1",
+      "note": "Distinct ramp from omega ensures T = d_A0(omega-A0) is nontrivial; dT/domega != dS/domega"
+    }
+  },
+  "gaugeConditions": {
+    "strategyType": "penalty",
+    "penaltyCoefficient": 1.0
+  },
+  "observableRequests": [
+    {
+      "observableId": "residual-norm",
+      "outputType": "Quantitative"
+    },
+    {
+      "observableId": "curvature-field",
+      "outputType": "Quantitative"
+    },
+    {
+      "observableId": "topological-charge",
+      "outputType": "ExactStructural"
+    },
+    {
+      "observableId": "objective-value",
+      "outputType": "Quantitative"
+    }
+  ],
+  "comparisonTemplateIds": [],
+  "provenance": {
+    "createdAt": "2026-03-12T00:00:00Z",
+    "codeRevision": "phase4-p4c3",
+    "branch": {
+      "branchId": "bosonic-validation-001",
+      "schemaVersion": "1.0.0"
+    },
+    "notes": "P4-C3: Nontrivial bosonic validation. augmented-torsion (T^aug = d_A0(omega-A0)) + identity-shiab (S=F) with nonzero omega and A0. Designed to produce nontrivial Upsilon = S - T chain."
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "policyId": "family-clustering-conservative-v1",
+  "schemaVersion": "1.0.0",
+  "clusteringMethodOrder": [
+    "RuleBasedConjugationChirality",
+    "HierarchicalClustering"
+  ],
+  "ruleBasedPolicy": {
+    "requireConjugatePairConsistency": true,
+    "requireChiralProfileStability": true,
+    "chiralProfileStabilityThreshold": 0.8
+  },
+  "hierarchicalPolicy": {
+    "linkageMethod": "complete",
+    "distanceMetric": "feature-vector-euclidean",
+    "maxClusterDiameter": 0.5,
+    "minClusterSize": 1
+  },
+  "featureWeights": {
+    "massLikeInvariant": 0.3,
+    "chiralitySummary": 0.2,
+    "conjugationPattern": 0.2,
+    "branchStability": 0.15,
+    "observedSignature": 0.1,
+    "couplingProfile": 0.05
+  },
+  "ambiguityScoreThreshold": 0.4,
+  "outputConservativeLabels": true,
+  "provenance": {
+    "phase": "IV"
+  }
+}

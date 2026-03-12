@@ -1,0 +1,87 @@
+{
+  "studyId": "Phase4-FermionFamily-Atlas-001",
+  "studyVersion": "1.0.0",
+  "milestone": "M45",
+  "description": "End-to-end Phase IV fermionic pipeline reference study. Produces FermionFamilyAtlas, CouplingAtlas, and UnifiedParticleRegistry for Toy2D su(2) background.",
+
+  "geometry": {
+    "meshType": "Toy2D",
+    "baseDimension": 2,
+    "ambientDimension": 5,
+    "discretizationType": "simplicial",
+    "note": "dimY=5 gives nontrivial X-chirality (dimX=2 is even) with trivial Y-chirality"
+  },
+
+  "gaugeGroup": {
+    "algebra": "su2",
+    "dimension": 3,
+    "representation": "adjoint"
+  },
+
+  "spinor": {
+    "cliffordSignature": "Riemannian",
+    "spinorDimension": 4,
+    "dofPerCell": 12,
+    "note": "Cl(5,0), spinorDim=4, dofPerCell = spinorDim * dimG = 4 * 3 = 12"
+  },
+
+  "omegaProfile": {
+    "profileId": "cos-sin-su2-v1",
+    "formula": "omega_e = cos(pi * mx_e) * T_1 + sin(pi * mx_e) * T_2",
+    "variable": "mx_e = x-coordinate of midpoint of edge e",
+    "rationale": "Generates curvature in all 3 su(2) directions via [T_1,T_2]=i*T_3. Breaks boundary-operator cancellation. Constant omega gives trivially zero Jacobian.",
+    "physicistNote": "Per physicist guidance: use spatially varying omega for nontrivial gauge coupling. Linear ramp is too impoverished. cos-sin profile is the approved M45 choice."
+  },
+
+  "a0Profile": {
+    "profileId": "zero",
+    "description": "A0 = 0 (flat reference connection). Augmented torsion T^aug = d_A0(omega - A0) = d(omega) in this case.",
+    "note": "Can be set to nonzero in future study variants to test augmented-torsion nontriviality independently"
+  },
+
+  "spectralSolver": {
+    "solverType": "LanczosFermion",
+    "numEigenvalues": 6,
+    "maxIterations": 200,
+    "tolerance": 1e-10,
+    "note": "Solve D_h^dagger D_h phi = lambda M_psi phi; take sqrt for Dirac eigenvalues"
+  },
+
+  "familyTracking": {
+    "minBranchPersistenceThreshold": 0.3,
+    "minBranchPersistenceForC2": 0.6,
+    "eigenvalueProximityRelTol": 0.15,
+    "ambiguityScoreThreshold": 0.5,
+    "note": "M39 FermionTrackingConfig defaults"
+  },
+
+  "couplingProxy": {
+    "minCouplingMagnitudeThreshold": 0.01,
+    "normalizationConvention": "raw",
+    "note": "M40 CouplingConfig defaults; couplings below threshold excluded from atlas"
+  },
+
+  "registry": {
+    "registryVersion": "1.0.0",
+    "schemaVersion": "1.0.0",
+    "minBranchStabilityForInteractionC1": 0.5
+  },
+
+  "outputPaths": {
+    "fermionFamilyAtlas": "output/fermion_family_atlas.json",
+    "familyClusterReport": "output/family_cluster_report.json",
+    "couplingAtlas": "output/coupling_atlas.json",
+    "unifiedRegistry": "output/unified_particle_registry.json",
+    "studyReport": "output/REPORT.md"
+  },
+
+  "provenance": {
+    "createdAt": "2026-03-12T00:00:00Z",
+    "codeRevision": "phase4-m45-scaffold",
+    "branch": {
+      "branchId": "phase4-fermion-family-atlas-001",
+      "schemaVersion": "1.0.0"
+    },
+    "notes": "M45 scaffold. Runner to be implemented after M44 CUDA parity closure. Omega profile cos-sin-su2-v1 per physicist guidance."
+  }
+}

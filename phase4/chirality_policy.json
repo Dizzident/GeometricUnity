@@ -1,0 +1,13 @@
+{
+  "policyId": "chirality-standard-v1",
+  "schemaVersion": "1.0.0",
+  "chiralProjectorConvention": "left-is-minus",
+  "chiralImbalanceThreshold": 0.1,
+  "reportChiralDecomposition": true,
+  "demoteOnChiralInstability": true,
+  "chiralStabilityWindowFraction": 0.2,
+  "includeVectorComponents": false,
+  "provenance": {
+    "phase": "IV"
+  }
+}

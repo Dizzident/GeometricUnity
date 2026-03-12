@@ -1,0 +1,14 @@
+{
+  "policyId": "conjugation-dirac-adjoint-v1",
+  "schemaVersion": "1.0.0",
+  "conjugationConventionId": "dirac-adjoint-v1",
+  "conjugatePairMatchThreshold": 0.9,
+  "reportConjugatePairs": true,
+  "checkMajoranaCondition": true,
+  "majoranaResidualThreshold": 1e-4,
+  "demoteOnUnpairedModes": false,
+  "eigenvalueSymmetryTolerance": 1e-6,
+  "provenance": {
+    "phase": "IV"
+  }
+}

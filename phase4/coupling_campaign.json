@@ -1,0 +1,16 @@
+{
+  "campaignId": "coupling-campaign-bg-001-v1",
+  "schemaVersion": "1.0.0",
+  "bosonRegistrySource": "phase3-boson-registry",
+  "fermionModeStudyId": "fermion-modes-bg-001",
+  "minBosonClaimClass": "C1_LocalPersistentMode",
+  "minFermionStabilityScore": 0.5,
+  "couplingNormalizationConvention": "unit-mode-norms",
+  "recordSymmetryHints": true,
+  "recordBranchStability": true,
+  "recordRefinementStability": true,
+  "ambiguityThreshold": 0.3,
+  "provenance": {
+    "phase": "IV"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/phase4/boson_fermion_coupling.schema.json",
+  "title": "BosonFermionCouplingRecord",
+  "description": "A record of a boson-fermion coupling proxy extracted from the background-dependent Dirac operator variation in Phase IV.",
+  "type": "object",
+  "required": [
+    "couplingId",
+    "bosonCandidateId",
+    "fermionModeIdI",
+    "fermionModeIdJ",
+    "backgroundId",
+    "couplingMagnitude",
+    "branchManifestId"
+  ],
+  "properties": {
+    "couplingId": {
+      "type": "string",
+      "description": "Unique coupling record identifier"
+    },
+    "bosonCandidateId": {
+      "type": "string",
+      "description": "Candidate boson ID from the Phase III boson registry"
+    },
+    "fermionModeIdI": {
+      "type": "string",
+      "description": "First fermionic mode ID in the coupling pair"
+    },
+    "fermionModeIdJ": {
+      "type": "string",
+      "description": "Second fermionic mode ID in the coupling pair"
+    },
+    "backgroundId": {
+      "type": "string",
+      "description": "Background record ID where this coupling was evaluated"
+    },
+    "branchManifestId": {
+      "type": "string",
+      "description": "Branch manifest ID governing the coupling computation"
+    },
+    "couplingMagnitude": {
+      "type": "number",
+      "description": "Magnitude of the coupling proxy |<phi_i | delta D[b_k] | phi_j>|",
+      "minimum": 0
+    },
+    "couplingPhase": {
+      "type": ["number", "null"],
+      "description": "Phase of the coupling proxy in radians (null for real-valued computations)"
+    },
+    "normalizationConvention": {
+      "type": "string",
+      "description": "Normalization convention used for the coupling",
+      "default": "unit-mode-norms"
+    },
+    "symmetryHints": {
+      "type": "array",
+      "description": "Symmetry and selection-rule hints inferred for this coupling",
+      "items": { "type": "string" }
+    },
+    "branchStabilityScore": {
+      "type": ["number", "null"],
+      "description": "Branch stability score for this coupling [0, 1]",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "refinementStabilityScore": {
+      "type": ["number", "null"],
+      "description": "Refinement stability score for this coupling [0, 1]",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "ambiguityNotes": {
+      "type": "array",
+      "description": "Ambiguity notes for this coupling (e.g., multiple boson overlaps)",
+      "items": { "type": "string" }
+    },
+    "provenance": {
+      "type": "object",
+      "description": "Provenance metadata",
+      "properties": {
+        "phase": { "type": "string" },
+        "computedAt": { "type": "string", "format": "date-time" }
+      }
+    }
+  }
+}

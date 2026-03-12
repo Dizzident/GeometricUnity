@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/phase4/fermion_mode.schema.json",
+  "title": "FermionModeRecord",
+  "description": "A single computed fermionic eigenmode from a Dirac-type spectral solve in Phase IV.",
+  "type": "object",
+  "required": [
+    "modeId",
+    "backgroundId",
+    "bundleId",
+    "eigenvalue",
+    "residualNorm",
+    "gaugeLeakScore",
+    "modeIndex",
+    "normalizationConvention"
+  ],
+  "properties": {
+    "modeId": {
+      "type": "string",
+      "description": "Unique fermion mode identifier"
+    },
+    "backgroundId": {
+      "type": "string",
+      "description": "Background record ID from which this mode was computed"
+    },
+    "bundleId": {
+      "type": "string",
+      "description": "DiracOperatorBundle ID used for the spectral solve"
+    },
+    "branchManifestId": {
+      "type": "string",
+      "description": "Branch manifest ID"
+    },
+    "eigenvalue": {
+      "type": "number",
+      "description": "Eigenvalue of the Dirac operator for this mode"
+    },
+    "residualNorm": {
+      "type": "number",
+      "description": "Residual norm ||D psi - lambda psi|| / ||psi||",
+      "minimum": 0
+    },
+    "normalizationConvention": {
+      "type": "string",
+      "description": "Normalization convention: unit-L2-norm or unit-inner-product-norm"
+    },
+    "gaugeLeakScore": {
+      "type": "number",
+      "description": "Gauge leak score: fraction of mode energy in gauge subspace",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "modeIndex": {
+      "type": "integer",
+      "description": "Index within the fermionic spectrum (0-based, sorted by |eigenvalue| ascending)",
+      "minimum": 0
+    },
+    "chiralityDecomposition": {
+      "$ref": "#/$defs/ChiralityDecomposition"
+    },
+    "conjugatePairModeId": {
+      "type": ["string", "null"],
+      "description": "Mode ID of the conjugate partner mode, if identified"
+    },
+    "conjugatePairOverlap": {
+      "type": ["number", "null"],
+      "description": "Inner-product overlap with conjugate partner mode",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "isMajoranaCandidate": {
+      "type": ["boolean", "null"],
+      "description": "Whether this mode satisfies the Majorana self-conjugacy condition"
+    },
+    "majoranaResidual": {
+      "type": ["number", "null"],
+      "description": "Residual from Majorana condition check",
+      "minimum": 0
+    },
+    "modeVector": {
+      "type": "array",
+      "description": "Mode vector coefficients (may be empty if stored externally)",
+      "items": { "type": "number" }
+    },
+    "modeVectorArtifactRef": {
+      "type": ["string", "null"],
+      "description": "Artifact path reference for the stored mode vector on disk"
+    },
+    "observedSignatureRef": {
+      "type": ["string", "null"],
+      "description": "Reference to the computed observed fermion signature"
+    },
+    "blockEnergyFractions": {
+      "type": ["object", "null"],
+      "description": "Energy fraction per state-space block. Values are non-negative and sum to 1.0.",
+      "additionalProperties": { "type": "number" }
+    },
+    "tensorEnergyFractions": {
+      "type": ["object", "null"],
+      "description": "Energy fraction per tensor signature label. Values are non-negative and sum to 1.0.",
+      "additionalProperties": { "type": "number" }
+    },
+    "stabilityRecord": {
+      "$ref": "#/$defs/FermionStabilityRecord"
+    }
+  },
+  "$defs": {
+    "ChiralityDecomposition": {
+      "type": "object",
+      "required": ["leftFraction", "rightFraction", "chiralBalance"],
+      "properties": {
+        "leftFraction": {
+          "type": "number",
+          "description": "Fraction of mode energy in the left-chiral sector",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "rightFraction": {
+          "type": "number",
+          "description": "Fraction of mode energy in the right-chiral sector",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "chiralBalance": {
+          "type": "number",
+          "description": "Chiral balance (R - L) / (R + L); -1 = purely left, +1 = purely right",
+          "minimum": -1,
+          "maximum": 1
+        },
+        "dominantChirality": {
+          "type": "string",
+          "description": "Dominant chirality sector: left, right, or mixed",
+          "enum": ["left", "right", "mixed"]
+        },
+        "imbalanceFlagTriggered": {
+          "type": "boolean",
+          "description": "Whether the chiral imbalance exceeded the configured threshold"
+        }
+      }
+    },
+    "FermionStabilityRecord": {
+      "type": "object",
+      "required": ["refinementPersistenceScore", "branchPersistenceScore"],
+      "properties": {
+        "refinementPersistenceScore": {
+          "type": "number",
+          "description": "Stability score across mesh refinement levels [0, 1]",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "branchPersistenceScore": {
+          "type": "number",
+          "description": "Stability score across branch variants [0, 1]",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "chiralProfileStability": {
+          "type": ["number", "null"],
+          "description": "Stability of chirality profile across contexts [0, 1]",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "conjugationConsistency": {
+          "type": ["number", "null"],
+          "description": "Consistency of conjugate-pair assignment across contexts [0, 1]",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    }
+  }
+}

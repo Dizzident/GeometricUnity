@@ -1,0 +1,22 @@
+{
+  "spinorSpecId": "spinor-complex-v1",
+  "schemaVersion": "1.0.0",
+  "cliffordSignatureId": "lorentz-like-v1",
+  "gammaBasisConventionId": "gamma-basis-standard-v1",
+  "chiralityConventionId": "chirality-standard-v1",
+  "conjugationConventionId": "dirac-adjoint-v1",
+  "innerProductConventionId": "fermion-innerproduct-v1",
+  "numericField": "complex64",
+  "blockDimensions": {
+    "spinorComponents": 4
+  },
+  "ySpaceDimension": 5,
+  "chiralityApplicable": false,
+  "metricSignatureOnY": "Riemannian",
+  "gaugeRepresentationId": "adjoint-v1",
+  "insertedAssumptionIds": ["P4-IA-001", "P4-IA-002", "P4-IA-003"],
+  "provenance": {
+    "phase": "IV",
+    "notes": "Toy dimY=5 (odd): no nontrivial chirality operator exists. Spinors are 4-component complex (2^floor(5/2)=4). Riemannian metric on Y gives Hermitian gammas and positive-definite inner product psi^dagger phi."
+  }
+}

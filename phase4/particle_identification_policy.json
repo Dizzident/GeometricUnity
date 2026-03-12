@@ -1,0 +1,39 @@
+{
+  "policyId": "particle-identification-conservative-v1",
+  "schemaVersion": "1.0.0",
+  "claimClassThresholds": {
+    "C1_LocalPersistentMode": {
+      "minRefinementPersistence": 0.5
+    },
+    "C2_BranchStableCandidate": {
+      "minBranchPersistenceScore": 0.7,
+      "minRefinementPersistenceScore": 0.7
+    },
+    "C3_ObservedStableCandidate": {
+      "minObservationConfidence": 0.7,
+      "minBranchPersistenceScore": 0.7
+    },
+    "C4_PhysicalAnalogyCandidate": {
+      "requireComparisonEvidence": true,
+      "acceptableComparisonVerdicts": ["Compatible"]
+    },
+    "C5_StrongIdentificationCandidate": {
+      "requireMultipleCompatibleComparisons": true,
+      "minCompatibleComparisonCount": 2,
+      "maxAmbiguityCount": 0
+    }
+  },
+  "demotionRules": {
+    "gaugeLeakThreshold": 0.1,
+    "refinementFragilityThreshold": 0.3,
+    "branchFragilityThreshold": 0.3,
+    "observationInstabilityThreshold": 0.4,
+    "chiralInstabilityWindowFraction": 0.3,
+    "ambiguousMatchingThreshold": 3
+  },
+  "preserveAmbiguity": true,
+  "preventPrematureOverIdentification": true,
+  "provenance": {
+    "phase": "IV"
+  }
+}

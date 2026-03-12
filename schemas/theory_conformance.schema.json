@@ -1,0 +1,89 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "theory_conformance",
+  "title": "Theory Conformance Artifact",
+  "description": "Machine-readable conformance summary verifying that a runtime execution is internally consistent with its declared branch-local assumptions. A passing artifact does NOT imply theory-level validity, canonicity of the branch, or that outputs match physical reality. See ASSUMPTIONS.md.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "conformanceId",
+    "branchId",
+    "evaluatedAt",
+    "overallPass",
+    "checks",
+    "validationScope",
+    "scopeDisclaimer"
+  ],
+  "properties": {
+    "conformanceId": {
+      "type": "string",
+      "description": "Unique identifier for this conformance evaluation run."
+    },
+    "branchId": {
+      "type": "string",
+      "description": "Branch ID under which conformance was checked."
+    },
+    "evaluatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of conformance evaluation."
+    },
+    "overallPass": {
+      "type": "boolean",
+      "description": "Overall pass/fail. False if any check fails. Trivial-state checks are informational and do not contribute to failure."
+    },
+    "checks": {
+      "type": "array",
+      "description": "Individual conformance check results.",
+      "items": {
+        "$ref": "#/definitions/conformanceCheck"
+      }
+    },
+    "validationScope": {
+      "type": "string",
+      "enum": ["branch-local"],
+      "description": "Scope declaration. Always 'branch-local'. This field is mandatory and enforced to prevent misinterpretation of passing conformance as theory-level validation."
+    },
+    "scopeDisclaimer": {
+      "type": "string",
+      "description": "Human-readable disclaimer about what passing conformance means and does not mean. Must reference branch-local scope and ASSUMPTIONS.md."
+    }
+  },
+  "definitions": {
+    "conformanceCheck": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "checkId",
+        "category",
+        "passed",
+        "detail",
+        "validationType"
+      ],
+      "properties": {
+        "checkId": {
+          "type": "string",
+          "description": "Unique check identifier (kebab-case)."
+        },
+        "category": {
+          "type": "string",
+          "enum": ["branch-identity", "trivial-state", "scope-boundary"],
+          "description": "Check category. branch-identity: runtime operator IDs match declared manifest. trivial-state: execution path is trivial or zero-state (informational only). scope-boundary: conformance scope is properly declared."
+        },
+        "passed": {
+          "type": "boolean",
+          "description": "Whether the check passed."
+        },
+        "detail": {
+          "type": "string",
+          "description": "Human-readable description of the check result, including which values were compared."
+        },
+        "validationType": {
+          "type": "string",
+          "enum": ["branch-local"],
+          "description": "Validation type. Always 'branch-local' in this harness."
+        }
+      }
+    }
+  }
+}

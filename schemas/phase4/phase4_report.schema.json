@@ -1,0 +1,202 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/phase4/phase4_report.schema.json",
+  "title": "Phase4Report",
+  "description": "A complete Phase IV report: the top-level output combining fermionic modes, couplings, family clusters, and the unified particle registry.",
+  "type": "object",
+  "required": [
+    "reportId",
+    "studyId",
+    "registryVersion",
+    "fermionSpectrumSheets",
+    "chiralitySummaries",
+    "couplingSummaries",
+    "familyClusterSummaries",
+    "unifiedRegistrySummary",
+    "ambiguityEntries",
+    "negativeResults",
+    "claimClassCounts",
+    "generatedAt"
+  ],
+  "properties": {
+    "reportId": {
+      "type": "string",
+      "description": "Unique report identifier"
+    },
+    "studyId": {
+      "type": "string",
+      "description": "Phase IV study identifier that produced this report"
+    },
+    "registryVersion": {
+      "type": "string",
+      "description": "Unified particle registry version used for this report"
+    },
+    "fermionSpectrumSheets": {
+      "type": "array",
+      "description": "Per-background fermionic spectral summaries",
+      "items": { "$ref": "#/$defs/FermionSpectrumSheet" }
+    },
+    "chiralitySummaries": {
+      "type": "array",
+      "description": "Per-candidate chirality assessments",
+      "items": { "$ref": "#/$defs/CandidateChiralitySummary" }
+    },
+    "couplingSummaries": {
+      "type": "array",
+      "description": "Boson-fermion coupling summaries",
+      "items": { "$ref": "#/$defs/CouplingSummary" }
+    },
+    "familyClusterSummaries": {
+      "type": "array",
+      "description": "Family cluster summaries",
+      "items": { "$ref": "#/$defs/FamilyClusterSummary" }
+    },
+    "unifiedRegistrySummary": {
+      "$ref": "#/$defs/UnifiedRegistrySummary"
+    },
+    "ambiguityEntries": {
+      "type": "array",
+      "description": "Ambiguity map entries across the unified registry",
+      "items": { "$ref": "#/$defs/AmbiguityMapEntry" }
+    },
+    "negativeResults": {
+      "type": "array",
+      "description": "Negative result summaries",
+      "items": { "$ref": "#/$defs/NegativeResultSummary" }
+    },
+    "claimClassCounts": {
+      "type": "object",
+      "description": "Count of candidates at or above each claim class, keyed by particle type and class",
+      "additionalProperties": { "type": "integer" }
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when this report was generated"
+    }
+  },
+  "$defs": {
+    "FermionSpectrumSheet": {
+      "type": "object",
+      "required": ["backgroundId", "eigenvalues", "gaugeLeaks", "convergenceStatus", "modeCount"],
+      "properties": {
+        "backgroundId": { "type": "string" },
+        "eigenvalues": {
+          "type": "array",
+          "items": { "type": "number" }
+        },
+        "gaugeLeaks": {
+          "type": "array",
+          "items": { "type": "number" }
+        },
+        "chiralBalances": {
+          "type": "array",
+          "description": "Chiral balance for each mode",
+          "items": { "type": "number" }
+        },
+        "modeCount": { "type": "integer", "minimum": 0 },
+        "convergenceStatus": { "type": "string" }
+      }
+    },
+    "CandidateChiralitySummary": {
+      "type": "object",
+      "required": ["particleId", "dominantChirality", "isChiralStable"],
+      "properties": {
+        "particleId": { "type": "string" },
+        "dominantChirality": {
+          "type": "string",
+          "enum": ["left", "right", "mixed", "ambiguous"]
+        },
+        "meanChiralBalance": { "type": "number", "minimum": -1, "maximum": 1 },
+        "isChiralStable": { "type": "boolean" },
+        "chiralImbalanceFlagged": { "type": "boolean" }
+      }
+    },
+    "CouplingSummary": {
+      "type": "object",
+      "required": ["interactionId", "bosonParticleId", "fermionParticleIdI", "fermionParticleIdJ", "meanCouplingMagnitude"],
+      "properties": {
+        "interactionId": { "type": "string" },
+        "bosonParticleId": { "type": "string" },
+        "fermionParticleIdI": { "type": "string" },
+        "fermionParticleIdJ": { "type": "string" },
+        "meanCouplingMagnitude": { "type": "number", "minimum": 0 },
+        "branchStability": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "FamilyClusterSummary": {
+      "type": "object",
+      "required": ["clusterId", "memberCount", "isStableCluster", "ambiguityScore"],
+      "properties": {
+        "clusterId": { "type": "string" },
+        "memberCount": { "type": "integer", "minimum": 1 },
+        "isStableCluster": { "type": "boolean" },
+        "ambiguityScore": { "type": "number", "minimum": 0, "maximum": 1 },
+        "chiralProfile": { "type": ["string", "null"] },
+        "conjugateClusterId": { "type": ["string", "null"] }
+      }
+    },
+    "UnifiedRegistrySummary": {
+      "type": "object",
+      "required": ["totalBosonCandidates", "totalFermionCandidates", "totalInteractionRecords"],
+      "properties": {
+        "totalBosonCandidates": { "type": "integer", "minimum": 0 },
+        "totalFermionCandidates": { "type": "integer", "minimum": 0 },
+        "totalInteractionRecords": { "type": "integer", "minimum": 0 },
+        "totalFamilyClusters": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "AmbiguityMapEntry": {
+      "type": "object",
+      "required": ["particleId", "ambiguityType", "notes"],
+      "properties": {
+        "particleId": { "type": "string" },
+        "ambiguityType": {
+          "type": "string",
+          "description": "Type of ambiguity: matching, identification, comparison, chirality, conjugation"
+        },
+        "notes": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "alternativeCount": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "NegativeResultSummary": {
+      "type": "object",
+      "required": ["particleId", "resultType", "description"],
+      "properties": {
+        "particleId": { "type": "string" },
+        "resultType": {
+          "type": "string",
+          "description": "Type of negative result: demotion, comparison-incompatible, comparison-underdetermined, insufficient-evidence, chiral-instability"
+        },
+        "description": { "type": "string" },
+        "originalClaimClass": {
+          "type": ["string", "null"],
+          "enum": [
+            "C0_NumericalMode",
+            "C1_LocalPersistentMode",
+            "C2_BranchStableCandidate",
+            "C3_ObservedStableCandidate",
+            "C4_PhysicalAnalogyCandidate",
+            "C5_StrongIdentificationCandidate",
+            null
+          ]
+        },
+        "finalClaimClass": {
+          "type": ["string", "null"],
+          "enum": [
+            "C0_NumericalMode",
+            "C1_LocalPersistentMode",
+            "C2_BranchStableCandidate",
+            "C3_ObservedStableCandidate",
+            "C4_PhysicalAnalogyCandidate",
+            "C5_StrongIdentificationCandidate",
+            null
+          ]
+        }
+      }
+    }
+  }
+}

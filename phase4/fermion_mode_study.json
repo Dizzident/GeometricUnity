@@ -1,0 +1,20 @@
+{
+  "studyId": "fermion-modes-bg-001",
+  "backgroundSelector": {
+    "source": "phase3-background-atlas",
+    "minimumReplayTier": "R2"
+  },
+  "spectralTarget": {
+    "region": "lowest-magnitude",
+    "count": 64,
+    "solver": "Arnoldi"
+  },
+  "reductionPolicy": {
+    "gaugeReduction": true,
+    "nullspaceDeflation": true
+  },
+  "stabilityPolicy": {
+    "requireRefinementCheck": true,
+    "requireBranchSweep": true
+  }
+}

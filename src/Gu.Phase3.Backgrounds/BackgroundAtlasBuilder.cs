@@ -32,6 +32,25 @@ public sealed class BackgroundAtlasBuilder
         IReadOnlyDictionary<string, GeometryContext> geometries,
         IReadOnlyDictionary<string, FieldTensor> a0s,
         ProvenanceMeta provenance)
+        => Build(study, manifests, geometries, a0s, provenance, out _);
+
+    /// <summary>
+    /// Build a background atlas from a study specification, also returning
+    /// the solved omega state tensors keyed by BackgroundId for persistence.
+    /// </summary>
+    /// <param name="study">Study specification listing all background specs.</param>
+    /// <param name="manifests">Branch manifests keyed by BranchManifestId.</param>
+    /// <param name="geometries">Geometry contexts keyed by EnvironmentId.</param>
+    /// <param name="a0s">Background connections keyed by EnvironmentId.</param>
+    /// <param name="provenance">Provenance metadata for the atlas.</param>
+    /// <param name="solvedStates">Output: solved omega tensors keyed by BackgroundId.</param>
+    public BackgroundAtlas Build(
+        BackgroundStudySpec study,
+        IReadOnlyDictionary<string, BranchManifest> manifests,
+        IReadOnlyDictionary<string, GeometryContext> geometries,
+        IReadOnlyDictionary<string, FieldTensor> a0s,
+        ProvenanceMeta provenance,
+        out IReadOnlyDictionary<string, FieldTensor> solvedStates)
     {
         ArgumentNullException.ThrowIfNull(study);
         ArgumentNullException.ThrowIfNull(manifests);
@@ -73,6 +92,7 @@ public sealed class BackgroundAtlasBuilder
                 counts[level.ToString()] = count;
         }
 
+        solvedStates = allStates;
         return new BackgroundAtlas
         {
             AtlasId = $"atlas-{study.StudyId}-{DateTimeOffset.UtcNow:yyyyMMddHHmmss}",

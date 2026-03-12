@@ -24,6 +24,11 @@
     <ProjectReference Include="..\..\src\Gu.Phase3.Campaigns\Gu.Phase3.Campaigns.csproj" />
     <ProjectReference Include="..\..\src\Gu.Phase3.Reporting\Gu.Phase3.Reporting.csproj" />
     <ProjectReference Include="..\..\src\Gu.Phase3.Observables\Gu.Phase3.Observables.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase4.Fermions\Gu.Phase4.Fermions.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase4.Couplings\Gu.Phase4.Couplings.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase4.FamilyClustering\Gu.Phase4.FamilyClustering.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase4.Registry\Gu.Phase4.Registry.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase4.Reporting\Gu.Phase4.Reporting.csproj" />
   </ItemGroup>
 
 </Project>

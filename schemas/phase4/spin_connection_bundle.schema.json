@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/phase4/spin_connection_bundle.schema.json",
+  "title": "SpinConnectionBundle",
+  "description": "A serialized spin connection on Y_h with two physically distinct parts: the Levi-Civita part (from Y_h geometry) and the gauge-coupling part (from bosonic omega via representation rho(T_a)). These are independent: changing the mesh affects only the LC part; changing the bosonic background affects only the gauge-coupling part. The variation dD_h/domega comes ONLY from the gauge-coupling part.",
+  "type": "object",
+  "required": [
+    "bundleId",
+    "spinorSpecId",
+    "branchManifestId",
+    "leviCivitaSourceId",
+    "gaugeCouplingSourceId",
+    "gaugeRepresentationId"
+  ],
+  "properties": {
+    "bundleId": {
+      "type": "string",
+      "description": "Unique identifier for this spin connection bundle"
+    },
+    "spinorSpecId": {
+      "type": "string",
+      "description": "SpinorRepresentationSpec ID this bundle was assembled for"
+    },
+    "branchManifestId": {
+      "type": "string",
+      "description": "Branch manifest ID governing the spin connection construction"
+    },
+    "leviCivitaSourceId": {
+      "type": "string",
+      "description": "Source ID for the Levi-Civita spin connection Omega^LC_spin. References the geometry/mesh artifact from which LC coefficients were computed. When the flat LC assumption is active (P4-IA-003), set to 'flat-assumption-P4-IA-003' — do NOT use null. This makes the choice explicit and auditable."
+    },
+    "leviCivitaStorageRef": {
+      "type": ["string", "null"],
+      "description": "Artifact path for the serialized LC connection coefficients. Null when flat assumption is active."
+    },
+    "gaugeCouplingSourceId": {
+      "type": "string",
+      "description": "Source ID for the gauge-coupling part: references the bosonic BackgroundRecord from which omega was extracted. This is the backgroundId. Changing this ID changes the boson-fermion coupling vertex."
+    },
+    "gaugeRepresentationId": {
+      "type": "string",
+      "description": "Gauge representation ID specifying rho(T_a): how gauge generators act on spinors. Branch parameter. Default: adjoint-v1."
+    },
+    "gaugeCouplingStorageRef": {
+      "type": ["string", "null"],
+      "description": "Artifact path for the serialized gauge-coupling coefficients omega_mu^a * rho(T_a)"
+    },
+    "flatLcAssumptionActive": {
+      "type": "boolean",
+      "description": "Whether the flat LC assumption P4-IA-003 is active (LC part set to zero). When true, leviCivitaSourceId must be 'flat-assumption-P4-IA-003'."
+    },
+    "provenance": {
+      "type": "object",
+      "description": "Provenance metadata",
+      "properties": {
+        "phase": { "type": "string" },
+        "assembledAt": { "type": "string", "format": "date-time" },
+        "codeRevision": { "type": "string" }
+      }
+    }
+  }
+}

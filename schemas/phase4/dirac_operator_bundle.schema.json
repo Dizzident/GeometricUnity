@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/phase4/dirac_operator_bundle.schema.json",
+  "title": "DiracOperatorBundle",
+  "description": "A serialized Dirac-type operator assembled from a bosonic background for Phase IV fermionic spectral computations.",
+  "type": "object",
+  "required": [
+    "bundleId",
+    "backgroundId",
+    "spinorSpecId",
+    "branchManifestId",
+    "operatorRows",
+    "operatorCols",
+    "assembledAt",
+    "replayTier"
+  ],
+  "properties": {
+    "bundleId": {
+      "type": "string",
+      "description": "Unique identifier for this operator bundle"
+    },
+    "backgroundId": {
+      "type": "string",
+      "description": "Background record ID from which this operator was assembled"
+    },
+    "spinorSpecId": {
+      "type": "string",
+      "description": "Spinor representation spec ID used for assembly"
+    },
+    "branchManifestId": {
+      "type": "string",
+      "description": "Branch manifest ID governing operator construction"
+    },
+    "operatorRows": {
+      "type": "integer",
+      "description": "Number of rows in the operator matrix",
+      "minimum": 1
+    },
+    "operatorCols": {
+      "type": "integer",
+      "description": "Number of columns in the operator matrix",
+      "minimum": 1
+    },
+    "assembledAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the operator was assembled"
+    },
+    "replayTier": {
+      "type": "string",
+      "description": "Replay tier of the source background",
+      "enum": ["R0", "R1", "R2", "R3"]
+    },
+    "sparseNonzeroCount": {
+      "type": ["integer", "null"],
+      "description": "Number of nonzero entries in the sparse operator representation",
+      "minimum": 0
+    },
+    "operatorStorageRef": {
+      "type": ["string", "null"],
+      "description": "Artifact path reference for the serialized operator on disk"
+    },
+    "massLikeTermIds": {
+      "type": "array",
+      "description": "IDs of mass-like / correction blocks added per branch manifest",
+      "items": { "type": "string" }
+    },
+    "torsionCorrectionApplied": {
+      "type": "boolean",
+      "description": "Whether a torsion-dependent M_branch correction block was included"
+    },
+    "cBranchCorrectionApplied": {
+      "type": "boolean",
+      "description": "Whether a C_branch geometric coupling correction block was included"
+    },
+    "spinConnectionRef": {
+      "type": ["string", "null"],
+      "description": "SpinConnectionBundle ID used during assembly. The SpinConnectionBundle carries the full provenance chain: leviCivitaSourceId (geometry/mesh artifact) and gaugeCouplingSourceId (bosonic background). Two DiracOperatorBundles with the same leviCivitaSourceId but different gaugeCouplingSourceIds share the same LC part — their difference is the coupling proxy variation dD/domega."
+    },
+    "structureValidation": {
+      "$ref": "#/$defs/OperatorStructureValidation"
+    },
+    "provenance": {
+      "type": "object",
+      "description": "Provenance metadata",
+      "properties": {
+        "phase": { "type": "string" },
+        "assemblyCommand": { "type": "string" },
+        "codeRevision": { "type": "string" },
+        "backgroundProvenance": { "type": "string" }
+      }
+    }
+  },
+  "$defs": {
+    "OperatorStructureValidation": {
+      "type": "object",
+      "required": ["passed", "hermiticityResidual"],
+      "properties": {
+        "passed": {
+          "type": "boolean",
+          "description": "Whether the operator passed structural validation"
+        },
+        "hermiticityResidual": {
+          "type": ["number", "null"],
+          "description": "REQUIRED diagnostic: residual from hermiticity check ||D_h - D_h^dagger|| / ||D_h||. Physicist-mandated for Riemannian signature. Large values indicate discretization or assembly errors. Null only when operator size makes computation infeasible.",
+          "minimum": 0
+        },
+        "antiHermitianResidual": {
+          "type": ["number", "null"],
+          "description": "Residual from anti-hermiticity check ||D + D^dag|| / ||D||",
+          "minimum": 0
+        },
+        "gamma5HermitianResidual": {
+          "type": ["number", "null"],
+          "description": "Residual from gamma5-hermiticity check ||gamma5 D gamma5 - D^dag|| / ||D||",
+          "minimum": 0
+        },
+        "diagnosticNotes": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}

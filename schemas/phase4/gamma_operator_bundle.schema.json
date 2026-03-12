@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/phase4/gamma_operator_bundle.schema.json",
+  "title": "GammaOperatorBundle",
+  "description": "Metadata for a set of assembled gamma matrices satisfying the Clifford algebra anti-commutation relations for a given spinor representation spec.",
+  "type": "object",
+  "required": [
+    "bundleId",
+    "spinorSpecId",
+    "ySpaceDimension",
+    "spinorDimension",
+    "metricSignatureOnY",
+    "validationResult"
+  ],
+  "properties": {
+    "bundleId": {
+      "type": "string",
+      "description": "Unique identifier for this gamma operator bundle"
+    },
+    "spinorSpecId": {
+      "type": "string",
+      "description": "SpinorRepresentationSpec ID this bundle implements"
+    },
+    "ySpaceDimension": {
+      "type": "integer",
+      "description": "Dimension n of Y, determining number of gamma matrices",
+      "minimum": 1
+    },
+    "spinorDimension": {
+      "type": "integer",
+      "description": "Spinor dimension = 2^floor(n/2)",
+      "minimum": 1
+    },
+    "metricSignatureOnY": {
+      "type": "string",
+      "description": "Metric signature convention on Y",
+      "enum": ["Riemannian", "Lorentzian", "Mixed", "BranchDetermined"]
+    },
+    "chiralityOperators": {
+      "type": "object",
+      "description": "Three distinct chirality operators. Y-chirality = X-chirality * F-chirality (up to sign). Each only exists when the corresponding subspace dimension is even. For odd dimY (e.g. toy dimY=5): yChiralityIncluded=false, but xChiralityIncluded may still be true if dimX is even.",
+      "properties": {
+        "yChiralityIncluded": {
+          "type": "boolean",
+          "description": "Y-chirality (full): Gamma_chi = i^{n/2} * Gamma_1 * ... * Gamma_n. True only when ySpaceDimension is even. Decomposes spinors into two Weyl reps of dimension 2^{n/2-1}."
+        },
+        "xChiralityIncluded": {
+          "type": "boolean",
+          "description": "X-chirality (base): product of dim(X) horizontal gammas. Relates to observed 4D chirality. True when baseDimension is even."
+        },
+        "fChiralityIncluded": {
+          "type": "boolean",
+          "description": "F-chirality (fiber): product of dim(F) vertical gammas. True when fiberDimension is even."
+        },
+        "baseDimension": {
+          "type": ["integer", "null"],
+          "description": "Dimension of the base space X",
+          "minimum": 1
+        },
+        "fiberDimension": {
+          "type": ["integer", "null"],
+          "description": "Dimension of the fiber F (= dimY - dimX)",
+          "minimum": 1
+        }
+      }
+    },
+    "gammaStorageRef": {
+      "type": ["string", "null"],
+      "description": "Artifact path reference for the serialized gamma matrices on disk"
+    },
+    "validationResult": {
+      "type": "object",
+      "required": ["passed", "anticommutatorMaxResidual"],
+      "properties": {
+        "passed": {
+          "type": "boolean",
+          "description": "Whether the Clifford algebra anti-commutation relations were satisfied"
+        },
+        "anticommutatorMaxResidual": {
+          "type": "number",
+          "description": "Maximum residual from {Gamma_mu, Gamma_nu} = 2 g_{mu,nu} I check",
+          "minimum": 0
+        },
+        "chiralitySquaredResidual": {
+          "type": ["number", "null"],
+          "description": "Residual from Gamma_chi^2 = I check (null for odd dimY)",
+          "minimum": 0
+        },
+        "chiralityAnticommutatorResidual": {
+          "type": ["number", "null"],
+          "description": "Residual from {Gamma_chi, Gamma_mu} = 0 check (null for odd dimY)",
+          "minimum": 0
+        },
+        "hermitianResidual": {
+          "type": ["number", "null"],
+          "description": "Maximum deviation from Gamma_mu = Gamma_mu^dagger (for Riemannian signature)",
+          "minimum": 0
+        },
+        "diagnosticNotes": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "phase": { "type": "string" },
+        "assembledAt": { "type": "string", "format": "date-time" }
+      }
+    }
+  }
+}
