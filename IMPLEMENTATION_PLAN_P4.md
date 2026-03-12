@@ -1095,9 +1095,110 @@ All must integrate with existing schema validation and replay contracts.
 
 ---
 
+# 9.4 Corrective prerequisites from current Phase III validation
+
+Before Claude begins new fermionic-sector work, Claude must close the following
+Phase III correctness gaps. These are prerequisites, not optional cleanup.
+
+Reason:
+Phase IV should not stack a fermionic and unified-particle layer on top of
+bosonic execution paths that still hardcode toy defaults, bypass saved runtime
+state, or lack a formal conformance harness to the branch assumptions now
+recorded in `ASSUMPTIONS.md`.
+
+## P4-C1 — Make runtime commands consume real persisted branch state
+
+Claude must patch the existing bosonic CLI/runtime so the main execution paths
+consume saved branch/environment/background artifacts instead of reconstructing
+fresh toy defaults internally.
+
+Minimum required corrections:
+
+1. `gu run` must load and honor the persisted branch manifest, geometry, and
+   environment/run-folder inputs when present.
+2. `gu solve` must support nontrivial initial `omega` and `A0` inputs instead of
+   always defaulting to zero-state smoke-test behavior.
+3. `gu compute-spectrum` must build its operator bundle from the selected stored
+   `BackgroundRecord` state rather than from newly constructed zero tensors.
+4. The command provenance written into artifacts must explicitly state which
+   manifest, geometry, and background state were consumed.
+
+Completion criteria:
+
+- two distinct stored backgrounds produce distinct operator bundles or spectra
+  when their underlying states differ,
+- replayed runs preserve the same loaded branch/background identity,
+- the CLI no longer silently substitutes a toy runtime branch for persisted state.
+
+## P4-C2 — Add a theory-conformance harness for branch-local assumptions
+
+Claude must add a formal conformance layer that checks whether the executable
+branch matches the assumptions and declared lowerings in `ASSUMPTIONS.md`.
+
+This is not a proof engine.
+It is a disciplined validation harness.
+
+Minimum required coverage:
+
+1. explicit tests that confirm the active runtime torsion branch, Shiab branch,
+   pairing convention, observation branch, and geometry branch match declared
+   artifact provenance;
+2. tests that detect silent fallback to trivial or zero-state execution paths;
+3. tests that distinguish branch-local validation from theory-level validation
+   in reports and claim classes;
+4. a machine-readable summary artifact for conformance results.
+
+Deliverables:
+
+- `tests/Gu.TheoryConformance.Tests/`
+- `schemas/theory_conformance.schema.json`
+- `reports/templates/theory_conformance.md`
+
+Completion criteria:
+
+- the conformance suite fails when a runtime path silently diverges from the
+  declared branch assumptions,
+- a run can emit a conformance artifact alongside its usual residual/spectrum
+  artifacts.
+
+## P4-C3 — Add one nontrivial bosonic validation study before Phase IV fermions
+
+Claude must implement and document a nontrivial bosonic validation study that is
+stronger than the current zero-state smoke tests.
+
+The study must:
+
+1. use an explicit nonzero initial `omega`,
+2. use at least one nontrivial torsion or Shiab branch beyond the trivial
+   baseline,
+3. produce residual, Jacobian, gradient, observation, and spectrum artifacts from
+   the same declared branch,
+4. preserve negative results if the branch is unstable or branch-fragile.
+
+Suggested minimum deliverables:
+
+- a committed study config under `examples/` or `studies/`,
+- a scripted runner,
+- a markdown report summarizing what was tested and what is still unvalidated,
+- regression tests that ensure the study keeps producing nontrivial outputs.
+
+Completion criteria:
+
+- the study produces nonzero intermediate fields and a nontrivial artifact chain,
+- the resulting report clearly distinguishes branch-consistent execution from
+  physical validation of the original draft.
+
+These three prerequisites must be completed before M33.
+
+---
+
 # 10. Detailed implementation milestones
 
 The repo documentation currently treats the earlier implementation layers as the formal foundation, so this Phase IV plan should be implemented as a **new continuation layer** following the in-progress Phase III boson work rather than as a rewrite of the earlier engine.
+
+However, M33-M45 assume that P4-C1 through P4-C3 above are already complete.
+If they are not complete, Claude must treat those corrective milestones as the
+first Phase IV work.
 
 Use milestone numbering after Phase III.
 
