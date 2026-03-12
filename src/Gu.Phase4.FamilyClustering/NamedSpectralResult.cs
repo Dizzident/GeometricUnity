@@ -20,5 +20,5 @@ public sealed class NamedSpectralResult
     public required string BackgroundId { get; init; }
 
     /// <summary>The modes from this spectral context, sorted by ascending |lambda|.</summary>
-    public required List<FermionModeRecord> Modes { get; init; }
+    public required IReadOnlyList<FermionModeRecord> Modes { get; init; }
 }

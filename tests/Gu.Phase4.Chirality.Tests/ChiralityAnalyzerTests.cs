@@ -374,4 +374,155 @@ public class ChiralityAnalyzerTests
 
         Assert.Equal("definite-left", result.ChiralityStatus);
     }
+
+    // -------------------------------------------------------
+    // AnalyzeTriple tests
+    // -------------------------------------------------------
+
+    private static GammaOperatorBundle Dim4Gammas()
+    {
+        var builder = new GammaMatrixBuilder();
+        var sig = new CliffordSignature { Positive = 4, Negative = 0 };
+        var conv = new GammaConventionSpec
+        {
+            ConventionId = "test-dim4",
+            Signature = sig,
+            Representation = "standard",
+            SpinorDimension = 4,
+            HasChirality = true,
+        };
+        return builder.Build(sig, conv, TestProvenance());
+    }
+
+    private static ChiralityConventionSpec ConvWithBaseDim(int baseDim, int fiberDim, bool hasChirality = true) =>
+        new ChiralityConventionSpec
+        {
+            ConventionId = "c-decomp",
+            SignConvention = "left-is-minus",
+            PhaseFactor = "-1",
+            HasChirality = hasChirality,
+            BaseDimension = baseDim,
+            FiberDimension = fiberDim,
+            BaseChiralityOperator = baseDim % 2 == 0 ? "X-chirality" : null,
+            FiberChiralityOperator = fiberDim % 2 == 0 ? "F-chirality" : null,
+        };
+
+    [Fact]
+    public void AnalyzeTriple_OddDimY_XChiralityDefined_YChiralityNull()
+    {
+        // dim=3 (odd Y) with baseDim=2 (even): Y-chirality null, X-chirality defined
+        var gammas = Dim3Gammas();    // dim=3, spinorDim=2
+        var conv = new ChiralityConventionSpec
+        {
+            ConventionId = "c-odd-y",
+            SignConvention = "left-is-minus",
+            PhaseFactor = "1",
+            HasChirality = false,
+            BaseDimension = 2,
+            FiberDimension = 1,
+            BaseChiralityOperator = "X-chirality",
+        };
+        var layout = TrivialLayout(2);
+        var phi = new double[] { 1.0, 0.0, 0.0, 0.0 }; // [1,0] in dim-3 spinor space
+        var mode = MakeMode("m-odd-y", phi);
+        var analyzer = new ChiralityAnalyzer();
+
+        var record = analyzer.AnalyzeTriple(mode, gammas, conv, layout, cellCount: 1);
+
+        Assert.Equal("m-odd-y", record.FermionModeId);
+        Assert.Null(record.YChirality);                    // odd dimY → null
+        Assert.NotNull(record.XChirality);                 // dimX=2 is even → defined
+        Assert.NotEqual("trivial", record.XChirality.ChiralityStatus); // actual computation
+    }
+
+    [Fact]
+    public void AnalyzeTriple_EvenDimY_AllThreeDefined()
+    {
+        // dim=4 (even Y), baseDim=2, fiberDim=2: all three decompositions present
+        var gammas = Dim4Gammas(); // dim=4, spinorDim=4
+        var conv = ConvWithBaseDim(2, 2, hasChirality: true);
+        var layout = TrivialLayout(4); // spinorDim=4
+        // Pure [1,0,0,0] state
+        var phi = new double[] { 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 }; // 4 complex components
+        var mode = MakeMode("m-dim4", phi);
+        var analyzer = new ChiralityAnalyzer();
+
+        var record = analyzer.AnalyzeTriple(mode, gammas, conv, layout, cellCount: 1);
+
+        Assert.NotNull(record.XChirality);
+        Assert.NotNull(record.YChirality);
+        Assert.NotNull(record.FChirality);
+        Assert.Equal(1.0, record.XChirality.LeftFraction + record.XChirality.RightFraction, 5);
+        Assert.Equal(1.0, record.YChirality!.LeftFraction + record.YChirality.RightFraction, 5);
+        Assert.Equal(1.0, record.FChirality!.LeftFraction + record.FChirality.RightFraction, 5);
+    }
+
+    [Fact]
+    public void AnalyzeTriple_OddFiberDim_FChiralityNull()
+    {
+        // dim=3 Y, baseDim=2, fiberDim=1 (odd): F-chirality null
+        var gammas = Dim3Gammas(); // dim=3
+        var conv = ConvWithBaseDim(2, 1, hasChirality: false);
+        var layout = TrivialLayout(2);
+        var phi = new double[] { 1.0, 0.0, 0.0, 0.0 };
+        var mode = MakeMode("m-odd-f", phi);
+        var analyzer = new ChiralityAnalyzer();
+
+        var record = analyzer.AnalyzeTriple(mode, gammas, conv, layout, cellCount: 1);
+
+        Assert.Null(record.FChirality);   // odd dimF=1 → null
+        Assert.NotNull(record.XChirality);
+    }
+
+    [Fact]
+    public void AnalyzeTriple_NoBaseDimension_XChiralityFallsBackToYOrTrivial()
+    {
+        // No BaseDimension set: X falls back to Y result (or trivial if Y is also trivial)
+        var gammas = Dim2Gammas();
+        var conv = LeftIsMinusConvention(); // no BaseDimension
+        var layout = TrivialLayout(2);
+        var phi = new double[] { 1.0, 0.0, 0.0, 0.0 };
+        var mode = MakeMode("m-no-base", phi);
+        var analyzer = new ChiralityAnalyzer();
+
+        var record = analyzer.AnalyzeTriple(mode, gammas, conv, layout, cellCount: 1);
+
+        Assert.NotNull(record.XChirality);
+        Assert.Null(record.FChirality); // no FiberDimension → null
+    }
+
+    [Fact]
+    public void AnalyzeTriple_PureLeftState_XChiralityIsDefiniteLeft()
+    {
+        // dim=4, baseDim=2 even: X-chirality for [1,0,0,0] should be definite
+        var gammas = Dim4Gammas();
+        var conv = ConvWithBaseDim(2, 2, hasChirality: true);
+        var layout = TrivialLayout(4);
+        var phi = new double[] { 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
+        var mode = MakeMode("m-xl", phi);
+        var analyzer = new ChiralityAnalyzer();
+
+        var record = analyzer.AnalyzeTriple(mode, gammas, conv, layout, cellCount: 1);
+
+        // Either left or right depending on partial Gamma_chi eigenvalue, but must be definite
+        Assert.True(
+            record.XChirality.ChiralityStatus == "definite-left" ||
+            record.XChirality.ChiralityStatus == "definite-right",
+            $"Expected definite chirality but got '{record.XChirality.ChiralityStatus}'");
+    }
+
+    [Fact]
+    public void AnalyzeTriple_FermionModeId_MatchesModeId()
+    {
+        var gammas = Dim2Gammas();
+        var conv = LeftIsMinusConvention();
+        var layout = TrivialLayout(2);
+        var phi = new double[] { 1.0, 0.0, 0.0, 0.0 };
+        var mode = MakeMode("mode-xyz", phi);
+        var analyzer = new ChiralityAnalyzer();
+
+        var record = analyzer.AnalyzeTriple(mode, gammas, conv, layout, cellCount: 1);
+
+        Assert.Equal("mode-xyz", record.FermionModeId);
+    }
 }

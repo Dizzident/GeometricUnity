@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="coverlet.collector" Version="6.0.4" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <PackageReference Include="xunit" Version="2.9.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Gu.Core\Gu.Core.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Geometry\Gu.Geometry.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase3.Backgrounds\Gu.Phase3.Backgrounds.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase3.Registry\Gu.Phase3.Registry.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase4.Spin\Gu.Phase4.Spin.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase4.Fermions\Gu.Phase4.Fermions.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase4.Dirac\Gu.Phase4.Dirac.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase4.Chirality\Gu.Phase4.Chirality.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase4.Couplings\Gu.Phase4.Couplings.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase4.FamilyClustering\Gu.Phase4.FamilyClustering.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase4.Registry\Gu.Phase4.Registry.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase4.Observation\Gu.Phase4.Observation.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase4.Reporting\Gu.Phase4.Reporting.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Include the study orchestrator source directly -->
+    <Compile Include="..\..\studies\phase4_fermion_family_atlas_001\Phase4FermionFamilyAtlasStudy.cs" />
+  </ItemGroup>
+
+</Project>

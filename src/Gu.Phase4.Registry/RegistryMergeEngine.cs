@@ -148,9 +148,9 @@ public sealed class RegistryMergeEngine
                 Reason = "LowObservation",
                 Details = $"Observation stability {observationConfidence:F3} below threshold {_config.MinObservationConfidence:F3}.",
                 FromClaimClass = claimClass,
-                ToClaimClass = "C2_BranchStableBosonicCandidate",
+                ToClaimClass = "C2_BranchStableCandidate",
             });
-            claimClass = "C2_BranchStableBosonicCandidate";
+            claimClass = "C2_BranchStableCandidate";
         }
 
         return new UnifiedParticleRecord
@@ -184,7 +184,7 @@ public sealed class RegistryMergeEngine
 
         // Upgrade to C2 if well-persisted
         if (cluster.MeanBranchPersistence >= _config.MinBranchPersistenceForC2)
-            claimClass = "C2_BranchStableBosonicCandidate";
+            claimClass = "C2_BranchStableCandidate";
 
         // Downgrade if persistence is low
         if (cluster.MeanBranchPersistence < _config.MinBranchPersistenceThreshold && ParseLevel(claimClass) >= 2)
@@ -248,7 +248,7 @@ public sealed class RegistryMergeEngine
         string claimClass = "C1_LocalPersistentMode";
 
         if (family.BranchPersistenceScore >= _config.MinBranchPersistenceForC2)
-            claimClass = "C2_BranchStableBosonicCandidate";
+            claimClass = "C2_BranchStableCandidate";
 
         if (family.BranchPersistenceScore < _config.MinBranchPersistenceThreshold && ParseLevel(claimClass) >= 2)
         {
@@ -336,7 +336,7 @@ public sealed class RegistryMergeEngine
     {
         BosonClaimClass.C0_NumericalMode => "C0_NumericalMode",
         BosonClaimClass.C1_LocalPersistentMode => "C1_LocalPersistentMode",
-        BosonClaimClass.C2_BranchStableBosonicCandidate => "C2_BranchStableBosonicCandidate",
+        BosonClaimClass.C2_BranchStableBosonicCandidate => "C2_BranchStableCandidate",
         BosonClaimClass.C3_ObservedStableCandidate => "C3_ObservedStableCandidate",
         BosonClaimClass.C4_PhysicalAnalogyCandidate => "C4_PhysicalAnalogyCandidate",
         BosonClaimClass.C5_StrongIdentificationCandidate => "C5_StrongIdentificationCandidate",
@@ -354,7 +354,7 @@ public sealed class RegistryMergeEngine
         {
             0 => "C0_NumericalMode",
             1 => "C1_LocalPersistentMode",
-            2 => "C2_BranchStableBosonicCandidate",
+            2 => "C2_BranchStableCandidate",
             3 => "C3_ObservedStableCandidate",
             4 => "C4_PhysicalAnalogyCandidate",
             _ => claimClass,

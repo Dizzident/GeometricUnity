@@ -119,7 +119,7 @@ public sealed class UnifiedRegistryBuilderTests
             new[] { cluster }, null, null, TestProvenance());
 
         var record = registry.Candidates[0];
-        Assert.Equal("C2", record.ClaimClass);
+        Assert.Equal("C2_BranchStableCandidate", record.ClaimClass);
         Assert.NotEmpty(record.Demotions);
         Assert.Contains(record.Demotions, d => d.Reason == "LowPersistence");
     }
@@ -135,7 +135,7 @@ public sealed class UnifiedRegistryBuilderTests
             new[] { cluster }, null, null, TestProvenance());
 
         var record = registry.Candidates[0];
-        Assert.Equal("C3", record.ClaimClass);
+        Assert.Equal("C3_ObservedStableCandidate", record.ClaimClass);
     }
 
     [Fact]
@@ -170,7 +170,7 @@ public sealed class UnifiedRegistryBuilderTests
             new[] { boson }, null, TestProvenance());
 
         var record = registry.Candidates[0];
-        Assert.Equal("C1", record.ClaimClass);
+        Assert.Equal("C1_LocalPersistentMode", record.ClaimClass);
         Assert.Contains(record.Demotions, d => d.Reason == "UnverifiedGpu");
     }
 
@@ -186,7 +186,7 @@ public sealed class UnifiedRegistryBuilderTests
             new[] { boson }, null, TestProvenance());
 
         var record = registry.Candidates[0];
-        Assert.Equal("C0", record.ClaimClass);
+        Assert.Equal("C0_NumericalMode", record.ClaimClass);
         Assert.Empty(record.Demotions);
     }
 
@@ -224,7 +224,7 @@ public sealed class UnifiedRegistryBuilderTests
 
         var interactions = registry.QueryByType(UnifiedParticleType.Interaction);
         Assert.Single(interactions);
-        Assert.Equal("C0", interactions[0].ClaimClass);
+        Assert.Equal("C0_NumericalMode", interactions[0].ClaimClass);
     }
 
     [Fact]

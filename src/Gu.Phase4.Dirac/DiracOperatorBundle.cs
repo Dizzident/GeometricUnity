@@ -78,11 +78,13 @@ public sealed class DiracOperatorBundle
     [JsonPropertyName("hermiticityTolerance")]
     public double HermiticityTolerance { get; init; } = 1e-10;
 
-    /// <summary>True if the M_branch (torsion mass-like) term was included.</summary>
+    /// <summary>True if the M_branch (torsion mass-like) term was included.
+    /// When false: M_branch = 0 per assumption P4-IA-004.</summary>
     [JsonPropertyName("massBranchTermIncluded")]
     public required bool MassBranchTermIncluded { get; init; }
 
-    /// <summary>True if the C_branch (geometric coupling) term was included.</summary>
+    /// <summary>True if the C_branch (geometric coupling correction) term was included.
+    /// When false: C_branch = 0 per assumption P4-IA-005.</summary>
     [JsonPropertyName("correctionTermIncluded")]
     public required bool CorrectionTermIncluded { get; init; }
 

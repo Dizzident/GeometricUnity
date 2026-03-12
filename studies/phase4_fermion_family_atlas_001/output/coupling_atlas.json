@@ -1,0 +1,80 @@
+{
+  "atlasId": "coupling-atlas-001",
+  "fermionBackgroundId": "bg-toy2d-cos-sin-su2-v1",
+  "normalizationConvention": "unit-modes",
+  "couplingCount": 108,
+  "nonzeroCouplings": 72,
+  "maxMagnitude": 0.9927400835385288,
+  "topCouplings": [
+    {
+      "CouplingId": "coupling-boson-synthetic-02-mode-bg-toy2d-cos-sin-su2-v1-001-mode-bg-toy2d-cos-sin-su2-v1-003",
+      "BosonModeId": "boson-synthetic-02",
+      "FermionModeIdI": "mode-bg-toy2d-cos-sin-su2-v1-001",
+      "FermionModeIdJ": "mode-bg-toy2d-cos-sin-su2-v1-003",
+      "CouplingProxyMagnitude": 0.9927400835385288
+    },
+    {
+      "CouplingId": "coupling-boson-synthetic-02-mode-bg-toy2d-cos-sin-su2-v1-003-mode-bg-toy2d-cos-sin-su2-v1-001",
+      "BosonModeId": "boson-synthetic-02",
+      "FermionModeIdI": "mode-bg-toy2d-cos-sin-su2-v1-003",
+      "FermionModeIdJ": "mode-bg-toy2d-cos-sin-su2-v1-001",
+      "CouplingProxyMagnitude": 0.9927400835385284
+    },
+    {
+      "CouplingId": "coupling-boson-synthetic-00-mode-bg-toy2d-cos-sin-su2-v1-005-mode-bg-toy2d-cos-sin-su2-v1-004",
+      "BosonModeId": "boson-synthetic-00",
+      "FermionModeIdI": "mode-bg-toy2d-cos-sin-su2-v1-005",
+      "FermionModeIdJ": "mode-bg-toy2d-cos-sin-su2-v1-004",
+      "CouplingProxyMagnitude": 0.9294862129491083
+    },
+    {
+      "CouplingId": "coupling-boson-synthetic-00-mode-bg-toy2d-cos-sin-su2-v1-004-mode-bg-toy2d-cos-sin-su2-v1-005",
+      "BosonModeId": "boson-synthetic-00",
+      "FermionModeIdI": "mode-bg-toy2d-cos-sin-su2-v1-004",
+      "FermionModeIdJ": "mode-bg-toy2d-cos-sin-su2-v1-005",
+      "CouplingProxyMagnitude": 0.929486212949108
+    },
+    {
+      "CouplingId": "coupling-boson-synthetic-00-mode-bg-toy2d-cos-sin-su2-v1-003-mode-bg-toy2d-cos-sin-su2-v1-004",
+      "BosonModeId": "boson-synthetic-00",
+      "FermionModeIdI": "mode-bg-toy2d-cos-sin-su2-v1-003",
+      "FermionModeIdJ": "mode-bg-toy2d-cos-sin-su2-v1-004",
+      "CouplingProxyMagnitude": 0.8692690719612556
+    },
+    {
+      "CouplingId": "coupling-boson-synthetic-00-mode-bg-toy2d-cos-sin-su2-v1-004-mode-bg-toy2d-cos-sin-su2-v1-003",
+      "BosonModeId": "boson-synthetic-00",
+      "FermionModeIdI": "mode-bg-toy2d-cos-sin-su2-v1-004",
+      "FermionModeIdJ": "mode-bg-toy2d-cos-sin-su2-v1-003",
+      "CouplingProxyMagnitude": 0.8692690719612556
+    },
+    {
+      "CouplingId": "coupling-boson-synthetic-02-mode-bg-toy2d-cos-sin-su2-v1-001-mode-bg-toy2d-cos-sin-su2-v1-001",
+      "BosonModeId": "boson-synthetic-02",
+      "FermionModeIdI": "mode-bg-toy2d-cos-sin-su2-v1-001",
+      "FermionModeIdJ": "mode-bg-toy2d-cos-sin-su2-v1-001",
+      "CouplingProxyMagnitude": 0.7830482645114175
+    },
+    {
+      "CouplingId": "coupling-boson-synthetic-00-mode-bg-toy2d-cos-sin-su2-v1-002-mode-bg-toy2d-cos-sin-su2-v1-005",
+      "BosonModeId": "boson-synthetic-00",
+      "FermionModeIdI": "mode-bg-toy2d-cos-sin-su2-v1-002",
+      "FermionModeIdJ": "mode-bg-toy2d-cos-sin-su2-v1-005",
+      "CouplingProxyMagnitude": 0.758904961568706
+    },
+    {
+      "CouplingId": "coupling-boson-synthetic-00-mode-bg-toy2d-cos-sin-su2-v1-005-mode-bg-toy2d-cos-sin-su2-v1-002",
+      "BosonModeId": "boson-synthetic-00",
+      "FermionModeIdI": "mode-bg-toy2d-cos-sin-su2-v1-005",
+      "FermionModeIdJ": "mode-bg-toy2d-cos-sin-su2-v1-002",
+      "CouplingProxyMagnitude": 0.7589049615687059
+    },
+    {
+      "CouplingId": "coupling-boson-synthetic-00-mode-bg-toy2d-cos-sin-su2-v1-004-mode-bg-toy2d-cos-sin-su2-v1-002",
+      "BosonModeId": "boson-synthetic-00",
+      "FermionModeIdI": "mode-bg-toy2d-cos-sin-su2-v1-004",
+      "FermionModeIdJ": "mode-bg-toy2d-cos-sin-su2-v1-002",
+      "CouplingProxyMagnitude": 0.7508759581790782
+    }
+  ]
+}

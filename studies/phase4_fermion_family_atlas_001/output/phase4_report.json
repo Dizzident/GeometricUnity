@@ -1,0 +1,291 @@
+{
+  "reportId": "phase4-report-Phase4-FermionFamily-Atlas-001-20260312224110",
+  "schemaVersion": "1.0.0",
+  "studyId": "Phase4-FermionFamily-Atlas-001",
+  "fermionAtlas": {
+    "summaryId": "fermion-atlas-summary-phase4-fermion-family-atlas-001",
+    "schemaVersion": "1.0.0",
+    "familySheets": [
+      {
+        "familyId": "ferm-family-0000",
+        "meanEigenvalue": 0.17198881544315503,
+        "eigenvalueSpread": 0,
+        "memberCount": 1,
+        "isStable": true,
+        "claimClass": "C2_BranchStableCandidate",
+        "memberModeIds": [
+          "mode-bg-toy-cos-sin-su2-v1-000"
+        ]
+      },
+      {
+        "familyId": "ferm-family-0001",
+        "meanEigenvalue": 0.6366579220903751,
+        "eigenvalueSpread": 0,
+        "memberCount": 1,
+        "isStable": true,
+        "claimClass": "C2_BranchStableCandidate",
+        "memberModeIds": [
+          "mode-bg-toy-cos-sin-su2-v1-001"
+        ]
+      },
+      {
+        "familyId": "ferm-family-0002",
+        "meanEigenvalue": 0.9091412533682451,
+        "eigenvalueSpread": 0,
+        "memberCount": 1,
+        "isStable": true,
+        "claimClass": "C2_BranchStableCandidate",
+        "memberModeIds": [
+          "mode-bg-toy-cos-sin-su2-v1-002"
+        ]
+      },
+      {
+        "familyId": "ferm-family-0003",
+        "meanEigenvalue": 1.4763177333758462,
+        "eigenvalueSpread": 0,
+        "memberCount": 1,
+        "isStable": true,
+        "claimClass": "C2_BranchStableCandidate",
+        "memberModeIds": [
+          "mode-bg-toy-cos-sin-su2-v1-003"
+        ]
+      },
+      {
+        "familyId": "ferm-family-0004",
+        "meanEigenvalue": 1.9264206594190294,
+        "eigenvalueSpread": 0,
+        "memberCount": 1,
+        "isStable": true,
+        "claimClass": "C2_BranchStableCandidate",
+        "memberModeIds": [
+          "mode-bg-toy-cos-sin-su2-v1-004"
+        ]
+      },
+      {
+        "familyId": "ferm-family-0005",
+        "meanEigenvalue": 2.2457010755966884,
+        "eigenvalueSpread": 0,
+        "memberCount": 1,
+        "isStable": true,
+        "claimClass": "C2_BranchStableCandidate",
+        "memberModeIds": [
+          "mode-bg-toy-cos-sin-su2-v1-005"
+        ]
+      }
+    ],
+    "chiralitySummaries": [
+      {
+        "familyId": "ferm-family-0000",
+        "leftProjection": 0.5,
+        "rightProjection": 0.5,
+        "leakageNorm": 0,
+        "chiralityType": "Y",
+        "chiralityStatus": "mixed",
+        "diagnosticNotes": null
+      },
+      {
+        "familyId": "ferm-family-0001",
+        "leftProjection": 0.5,
+        "rightProjection": 0.5,
+        "leakageNorm": 0,
+        "chiralityType": "Y",
+        "chiralityStatus": "mixed",
+        "diagnosticNotes": null
+      },
+      {
+        "familyId": "ferm-family-0002",
+        "leftProjection": 0.5,
+        "rightProjection": 0.5,
+        "leakageNorm": 0,
+        "chiralityType": "Y",
+        "chiralityStatus": "mixed",
+        "diagnosticNotes": null
+      },
+      {
+        "familyId": "ferm-family-0003",
+        "leftProjection": 0.5,
+        "rightProjection": 0.5,
+        "leakageNorm": 0,
+        "chiralityType": "Y",
+        "chiralityStatus": "mixed",
+        "diagnosticNotes": null
+      },
+      {
+        "familyId": "ferm-family-0004",
+        "leftProjection": 0.5,
+        "rightProjection": 0.5,
+        "leakageNorm": 0,
+        "chiralityType": "Y",
+        "chiralityStatus": "mixed",
+        "diagnosticNotes": null
+      },
+      {
+        "familyId": "ferm-family-0005",
+        "leftProjection": 0.5,
+        "rightProjection": 0.5,
+        "leakageNorm": 0,
+        "chiralityType": "Y",
+        "chiralityStatus": "mixed",
+        "diagnosticNotes": null
+      }
+    ],
+    "conjugationSummaries": [
+      {
+        "familyId": "ferm-family-0000",
+        "hasConjugatePair": false,
+        "pairedFamilyId": null,
+        "pairingScore": 0
+      },
+      {
+        "familyId": "ferm-family-0001",
+        "hasConjugatePair": false,
+        "pairedFamilyId": null,
+        "pairingScore": 0
+      },
+      {
+        "familyId": "ferm-family-0002",
+        "hasConjugatePair": false,
+        "pairedFamilyId": null,
+        "pairingScore": 0
+      },
+      {
+        "familyId": "ferm-family-0003",
+        "hasConjugatePair": false,
+        "pairedFamilyId": null,
+        "pairingScore": 0
+      },
+      {
+        "familyId": "ferm-family-0004",
+        "hasConjugatePair": false,
+        "pairedFamilyId": null,
+        "pairingScore": 0
+      },
+      {
+        "familyId": "ferm-family-0005",
+        "hasConjugatePair": false,
+        "pairedFamilyId": null,
+        "pairingScore": 0
+      }
+    ],
+    "totalFamilies": 6,
+    "stableFamilies": 6,
+    "ambiguousFamilies": 0
+  },
+  "couplingAtlas": {
+    "summaryId": "coupling-summary-coupling-phase4-toy-v1",
+    "schemaVersion": "1.0.0",
+    "couplingMatrices": [],
+    "totalCouplings": 0,
+    "nonzeroCouplings": 0,
+    "maxCouplingMagnitude": 0
+  },
+  "registrySummary": {
+    "summaryId": "registry-summary-20260312224110",
+    "schemaVersion": "1.0.0",
+    "totalBosons": 0,
+    "totalFermions": 3,
+    "totalInteractions": 0,
+    "claimClassCounts": {
+      "C2": 1,
+      "C3": 2
+    },
+    "topCandidates": [
+      {
+        "candidateId": "fermion-registry-phase4-toy-v1-0001",
+        "particleType": "Fermion",
+        "claimClass": "C3_ObservedStableCandidate",
+        "massLikeValue": 0.7728995877293101,
+        "demotionCount": 0
+      },
+      {
+        "candidateId": "fermion-registry-phase4-toy-v1-0002",
+        "particleType": "Fermion",
+        "claimClass": "C3_ObservedStableCandidate",
+        "massLikeValue": 1.8828131561305212,
+        "demotionCount": 0
+      },
+      {
+        "candidateId": "fermion-registry-phase4-toy-v1-0000",
+        "particleType": "Fermion",
+        "claimClass": "C2_BranchStableCandidate",
+        "massLikeValue": 0.17198881544315503,
+        "demotionCount": 0
+      }
+    ]
+  },
+  "negativeResultDashboard": {
+    "dashboardId": "neg-dashboard-Phase4-FermionFamily-Atlas-001",
+    "studyId": "Phase4-FermionFamily-Atlas-001",
+    "unstableChiralityEntries": [
+      {
+        "familyId": "ferm-family-0000",
+        "chiralityStatus": "mixed",
+        "leftProjection": 0.5,
+        "rightProjection": 0.5,
+        "leakageNorm": 0,
+        "reason": "Chirality profile \u0027mixed\u0027 is not definite-left or definite-right."
+      },
+      {
+        "familyId": "ferm-family-0001",
+        "chiralityStatus": "mixed",
+        "leftProjection": 0.5,
+        "rightProjection": 0.5,
+        "leakageNorm": 0,
+        "reason": "Chirality profile \u0027mixed\u0027 is not definite-left or definite-right."
+      },
+      {
+        "familyId": "ferm-family-0002",
+        "chiralityStatus": "mixed",
+        "leftProjection": 0.5,
+        "rightProjection": 0.5,
+        "leakageNorm": 0,
+        "reason": "Chirality profile \u0027mixed\u0027 is not definite-left or definite-right."
+      },
+      {
+        "familyId": "ferm-family-0003",
+        "chiralityStatus": "mixed",
+        "leftProjection": 0.5,
+        "rightProjection": 0.5,
+        "leakageNorm": 0,
+        "reason": "Chirality profile \u0027mixed\u0027 is not definite-left or definite-right."
+      },
+      {
+        "familyId": "ferm-family-0004",
+        "chiralityStatus": "mixed",
+        "leftProjection": 0.5,
+        "rightProjection": 0.5,
+        "leakageNorm": 0,
+        "reason": "Chirality profile \u0027mixed\u0027 is not definite-left or definite-right."
+      },
+      {
+        "familyId": "ferm-family-0005",
+        "chiralityStatus": "mixed",
+        "leftProjection": 0.5,
+        "rightProjection": 0.5,
+        "leakageNorm": 0,
+        "reason": "Chirality profile \u0027mixed\u0027 is not definite-left or definite-right."
+      }
+    ],
+    "fragileCouplingEntries": [],
+    "brokenFamilyClusterEntries": [],
+    "additionalNotes": [],
+    "totalNegativeResults": 6
+  },
+  "negativeResults": [
+    "[ambiguity] fermion-registry-phase4-toy-v1-0000: Singleton cluster: no matching family found within proximity threshold.",
+    "[ambiguity] fermion-registry-phase4-toy-v1-0000: Dominant chirality is undetermined; physical identification requires M43 observation.",
+    "[ambiguity] fermion-registry-phase4-toy-v1-0001: Dominant chirality is undetermined; physical identification requires M43 observation.",
+    "[ambiguity] fermion-registry-phase4-toy-v1-0002: Dominant chirality is undetermined; physical identification requires M43 observation."
+  ],
+  "provenance": {
+    "createdAt": "2026-03-12T22:41:08.8633147+00:00",
+    "codeRevision": "phase4-study-v1",
+    "branch": {
+      "branchId": "phase4-fermion-family-atlas-001",
+      "schemaVersion": "1.0.0"
+    },
+    "backend": null,
+    "notes": null
+  },
+  "generatedAt": "2026-03-12T22:41:10.073368+00:00"
+}

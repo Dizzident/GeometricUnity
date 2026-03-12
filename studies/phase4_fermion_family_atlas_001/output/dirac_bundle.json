@@ -1,0 +1,12 @@
+{
+  "operatorId": "dirac-bg-toy2d-cos-sin-su2-v1-spinor-cl5-riem-v1",
+  "fermionBackgroundId": "bg-toy2d-cos-sin-su2-v1",
+  "matrixShape": [
+    180,
+    180
+  ],
+  "isHermitian": true,
+  "hermiticityResidual": 0,
+  "totalDof": 180,
+  "hasExplicitMatrix": true
+}

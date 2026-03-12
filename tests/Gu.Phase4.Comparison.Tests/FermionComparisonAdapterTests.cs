@@ -1,4 +1,5 @@
 using Gu.Core;
+using Gu.Phase4.Chirality;
 using Gu.Phase4.Comparison;
 using Gu.Phase4.FamilyClustering;
 using Gu.Phase4.Observation;
@@ -39,6 +40,7 @@ public sealed class FermionComparisonAdapterTests
         {
             ClusterId = clusterId,
             ObservedChirality = chirality,
+            XChirality = FermionObservationBuilder.SynthesizeXChirality(clusterId, chirality),
             MassLikeEnvelope = new[] { meanMass * 0.9, meanMass, meanMass * 1.1 },
             HasConjugatePair = false,
             BranchPersistenceScore = 1.0,

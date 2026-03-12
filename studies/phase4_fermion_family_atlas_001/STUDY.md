@@ -2,7 +2,16 @@
 
 **Study ID:** Phase4-FermionFamily-Atlas-001
 **Milestone:** M45 — End-to-end Phase IV reference study
-**Status:** Scaffold (pending M44 CUDA parity closure)
+**Status:** Complete — all 13 stages implemented, 15 integration tests passing
+
+## Scope Disclaimer
+
+> **This study demonstrates branch-consistent pipeline execution. It does NOT constitute physical validation.**
+
+The results produced by this study are candidate outputs from a discrete computation on a Toy2D
+mesh with su(2) gauge group. No claims are made about their correspondence to physical particles,
+masses, or Standard Model representations. All candidates carry explicit claim classes (C0-C5)
+that reflect the degree of evidence, not confirmed physics.
 
 ## Purpose
 

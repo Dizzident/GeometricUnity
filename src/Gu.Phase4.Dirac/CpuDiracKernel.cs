@@ -201,11 +201,11 @@ public sealed class CpuDiracKernel : IDiracKernel
             throw new ArgumentException($"spinorJ length {spinorJ.Length} != {expected}");
 
         // Analytical variation: delta_D[b_k] = Gamma^mu * b_k_mu^a * rho(T_a)
-        // Under P4-IA-004 (trivial gauge representation, rho = identity scalar),
-        // and P4-IA-003 (flat LC, LC drops out):
-        //   delta_D[b_k] psi = sum_mu b_k_mu * Gamma_mu * psi
+        // Under P4-IA-003 (flat LC, LC drops out) and adjoint gauge representation
+        // (branch param GaugeRepresentationId = "adjoint"):
+        //   delta_D[b_k] psi = sum_mu [sum_a b_k_mu^a * rho_adj(T_a)] * Gamma_mu * psi
         //
-        // where b_k_mu = sum_a b_k_mu^a (summed over gauge index, trivial rep)
+        // where b_k_mu^a is the boson coefficient on edge for direction mu and generator a
         //
         // g = <phi_i, delta_D phi_j> = sum_mu b_k_mu * <phi_i, Gamma_mu phi_j>
         //

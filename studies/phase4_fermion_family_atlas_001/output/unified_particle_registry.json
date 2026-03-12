@@ -1,0 +1,121 @@
+{
+  "registryVersion": "1.0.0",
+  "schemaVersion": "1.0.0",
+  "candidates": [
+    {
+      "particleId": "fermion-registry-phase4-toy-v1-0000",
+      "schemaVersion": "1.0.0",
+      "particleType": "Fermion",
+      "primarySourceId": "cluster-0",
+      "contributingSourceIds": [
+        "ferm-family-0000"
+      ],
+      "branchVariantSet": [],
+      "backgroundSet": [],
+      "chirality": "mixed",
+      "massLikeEnvelope": [
+        0.17198881544315503,
+        0.17198881544315503,
+        0.17198881544315503
+      ],
+      "branchStabilityScore": 1,
+      "observationConfidence": 0,
+      "comparisonEvidenceScore": 0,
+      "claimClass": "C2_BranchStableCandidate",
+      "computedWithUnverifiedGpu": false,
+      "demotions": [],
+      "ambiguityNotes": [
+        "Singleton cluster: no matching family found within proximity threshold.",
+        "Dominant chirality is undetermined; physical identification requires M43 observation."
+      ],
+      "registryVersion": "1.0.0",
+      "provenance": {
+        "createdAt": "2026-03-12T22:41:08.8633147+00:00",
+        "codeRevision": "phase4-study-v1",
+        "branch": {
+          "branchId": "phase4-fermion-family-atlas-001",
+          "schemaVersion": "1.0.0"
+        },
+        "backend": null,
+        "notes": null
+      }
+    },
+    {
+      "particleId": "fermion-registry-phase4-toy-v1-0001",
+      "schemaVersion": "1.0.0",
+      "particleType": "Fermion",
+      "primarySourceId": "cluster-1",
+      "contributingSourceIds": [
+        "ferm-family-0001",
+        "ferm-family-0002"
+      ],
+      "branchVariantSet": [],
+      "backgroundSet": [],
+      "chirality": "mixed",
+      "massLikeEnvelope": [
+        0.6366579220903751,
+        0.7728995877293101,
+        0.9091412533682451
+      ],
+      "branchStabilityScore": 1,
+      "observationConfidence": 0,
+      "comparisonEvidenceScore": 0,
+      "claimClass": "C3_ObservedStableCandidate",
+      "computedWithUnverifiedGpu": false,
+      "demotions": [],
+      "ambiguityNotes": [
+        "Dominant chirality is undetermined; physical identification requires M43 observation."
+      ],
+      "registryVersion": "1.0.0",
+      "provenance": {
+        "createdAt": "2026-03-12T22:41:08.8633147+00:00",
+        "codeRevision": "phase4-study-v1",
+        "branch": {
+          "branchId": "phase4-fermion-family-atlas-001",
+          "schemaVersion": "1.0.0"
+        },
+        "backend": null,
+        "notes": null
+      }
+    },
+    {
+      "particleId": "fermion-registry-phase4-toy-v1-0002",
+      "schemaVersion": "1.0.0",
+      "particleType": "Fermion",
+      "primarySourceId": "cluster-2",
+      "contributingSourceIds": [
+        "ferm-family-0003",
+        "ferm-family-0004",
+        "ferm-family-0005"
+      ],
+      "branchVariantSet": [],
+      "backgroundSet": [],
+      "chirality": "mixed",
+      "massLikeEnvelope": [
+        1.4763177333758462,
+        1.8828131561305212,
+        2.2457010755966884
+      ],
+      "branchStabilityScore": 1,
+      "observationConfidence": 0,
+      "comparisonEvidenceScore": 0,
+      "claimClass": "C3_ObservedStableCandidate",
+      "computedWithUnverifiedGpu": false,
+      "demotions": [],
+      "ambiguityNotes": [
+        "Dominant chirality is undetermined; physical identification requires M43 observation."
+      ],
+      "registryVersion": "1.0.0",
+      "provenance": {
+        "createdAt": "2026-03-12T22:41:08.8633147+00:00",
+        "codeRevision": "phase4-study-v1",
+        "branch": {
+          "branchId": "phase4-fermion-family-atlas-001",
+          "schemaVersion": "1.0.0"
+        },
+        "backend": null,
+        "notes": null
+      }
+    }
+  ]
+}

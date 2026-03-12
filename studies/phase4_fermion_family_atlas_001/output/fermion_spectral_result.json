@@ -1,0 +1,138 @@
+{
+  "bundleId": "spectral-bundle-bg-toy2d-cos-sin-su2-v1",
+  "fermionBackgroundId": "bg-toy2d-cos-sin-su2-v1",
+  "modeCount": 6,
+  "chiralityAnalysisAvailable": false,
+  "conjugationAnalysisApplied": true,
+  "gaugeLeakSummary": {
+    "backgroundId": "bg-toy2d-cos-sin-su2-v1",
+    "totalModes": 6,
+    "highLeakModeCount": 0,
+    "leakThreshold": 0.5,
+    "meanLeakScore": 0,
+    "maxLeakScore": 0,
+    "highLeakModeIds": []
+  },
+  "modes": [
+    {
+      "ModeId": "mode-bg-toy2d-cos-sin-su2-v1-000",
+      "EigenvalueRe": 2.780284886830759E-07,
+      "EigenvalueIm": 0,
+      "ResidualNorm": 7.892617137088655,
+      "ChiralityDecomposition": {
+        "leftFraction": 0.5,
+        "rightFraction": 0.5,
+        "mixedFraction": 0,
+        "signConvention": "left-is-minus"
+      },
+      "ConjugationPairing": {
+        "hasPair": false,
+        "partnerModeId": null,
+        "partnerEigenvalue": null,
+        "conjugationType": "hermitian",
+        "notes": null
+      },
+      "GaugeLeakScore": 0
+    },
+    {
+      "ModeId": "mode-bg-toy2d-cos-sin-su2-v1-001",
+      "EigenvalueRe": -2.549728884467793,
+      "EigenvalueIm": 0,
+      "ResidualNorm": 7.939654180425935,
+      "ChiralityDecomposition": {
+        "leftFraction": 0.5,
+        "rightFraction": 0.5,
+        "mixedFraction": 0,
+        "signConvention": "left-is-minus"
+      },
+      "ConjugationPairing": {
+        "hasPair": false,
+        "partnerModeId": null,
+        "partnerEigenvalue": null,
+        "conjugationType": "hermitian",
+        "notes": null
+      },
+      "GaugeLeakScore": 0
+    },
+    {
+      "ModeId": "mode-bg-toy2d-cos-sin-su2-v1-002",
+      "EigenvalueRe": 2.8905428077071624,
+      "EigenvalueIm": 0,
+      "ResidualNorm": 13.608903310240668,
+      "ChiralityDecomposition": {
+        "leftFraction": 0.5,
+        "rightFraction": 0.5,
+        "mixedFraction": 0,
+        "signConvention": "left-is-minus"
+      },
+      "ConjugationPairing": {
+        "hasPair": false,
+        "partnerModeId": null,
+        "partnerEigenvalue": null,
+        "conjugationType": "hermitian",
+        "notes": null
+      },
+      "GaugeLeakScore": 0
+    },
+    {
+      "ModeId": "mode-bg-toy2d-cos-sin-su2-v1-003",
+      "EigenvalueRe": -3.59416127299221,
+      "EigenvalueIm": 0,
+      "ResidualNorm": 8.397981185726014,
+      "ChiralityDecomposition": {
+        "leftFraction": 0.5,
+        "rightFraction": 0.5,
+        "mixedFraction": 0,
+        "signConvention": "left-is-minus"
+      },
+      "ConjugationPairing": {
+        "hasPair": false,
+        "partnerModeId": null,
+        "partnerEigenvalue": null,
+        "conjugationType": "hermitian",
+        "notes": null
+      },
+      "GaugeLeakScore": 0
+    },
+    {
+      "ModeId": "mode-bg-toy2d-cos-sin-su2-v1-004",
+      "EigenvalueRe": 5.1445884359550025,
+      "EigenvalueIm": 0,
+      "ResidualNorm": 10.649424107977618,
+      "ChiralityDecomposition": {
+        "leftFraction": 0.5,
+        "rightFraction": 0.5,
+        "mixedFraction": 0,
+        "signConvention": "left-is-minus"
+      },
+      "ConjugationPairing": {
+        "hasPair": false,
+        "partnerModeId": null,
+        "partnerEigenvalue": null,
+        "conjugationType": "hermitian",
+        "notes": null
+      },
+      "GaugeLeakScore": 0
+    },
+    {
+      "ModeId": "mode-bg-toy2d-cos-sin-su2-v1-005",
+      "EigenvalueRe": 7.231138746949456,
+      "EigenvalueIm": 0,
+      "ResidualNorm": 14.015797300706671,
+      "ChiralityDecomposition": {
+        "leftFraction": 0.5,
+        "rightFraction": 0.5,
+        "mixedFraction": 0,
+        "signConvention": "left-is-minus"
+      },
+      "ConjugationPairing": {
+        "hasPair": false,
+        "partnerModeId": null,
+        "partnerEigenvalue": null,
+        "conjugationType": "hermitian",
+        "notes": null
+      },
+      "GaugeLeakScore": 0
+    }
+  ]
+}

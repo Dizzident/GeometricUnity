@@ -1,0 +1,30 @@
+{
+  "studyId": "Phase4-FermionFamily-Atlas-001",
+  "studyVersion": "1.0.0",
+  "omegaProfile": "cos-sin-su2-v1",
+  "pipelineStagesCompleted": [
+    "mesh-construction",
+    "bosonic-background",
+    "spinor-spec",
+    "spin-connection",
+    "dirac-operator",
+    "fermionic-spectrum",
+    "chirality-analysis",
+    "fermion-family-atlas",
+    "family-clustering",
+    "coupling-atlas",
+    "unified-registry",
+    "observation-pipeline",
+    "report-generation"
+  ],
+  "branchLocalChecks": {
+    "diracIsHermitian": true,
+    "hermiticityResidual": 0,
+    "modesFound": 6,
+    "familiesFound": 6,
+    "clustersFound": 3,
+    "couplingEntriesFound": 108,
+    "registryCandidates": 111
+  },
+  "provenanceCodeRevision": "phase4-m45-study-v1"
+}

@@ -74,7 +74,8 @@ public static class FermionComparisonCampaignRunner
         ArgumentNullException.ThrowIfNull(references);
         ArgumentNullException.ThrowIfNull(provenance);
 
-        var observations = FermionObservationBuilder.BuildAll(clusters, provenance);
+        var pipeline = new FermionObservationPipeline();
+        var observations = pipeline.ObserveClusters(clusters, provenance);
         var adapter = new FermionComparisonAdapter(massLikeScaleTolerance);
         var records = adapter.CompareAll(observations, references, provenance);
 
@@ -93,7 +94,7 @@ public static class FermionComparisonCampaignRunner
             UnderdeterminedCount = underdetermined,
             NotApplicableCount = notApplicable,
             ComparisonRecords = records,
-            ObservationSummaries = observations,
+            ObservationSummaries = observations.ToList(),
             Provenance = provenance,
         };
     }

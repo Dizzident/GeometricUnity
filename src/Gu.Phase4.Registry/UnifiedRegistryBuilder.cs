@@ -14,17 +14,17 @@ namespace Gu.Phase4.Registry;
 /// 3. For each CouplingAtlas record (optional): create records of type Interaction.
 /// 4. Apply demotion rules:
 ///    - If any contributing source has ComputedWithUnverifiedGpu: cap claim class at C1.
-///    - If branchStabilityScore < StabilityThreshold: demote to C2 max.
-///    - If ambiguityScore > AmbiguityThreshold: add AmbiguousMatching demotion note.
-/// 5. Assign claim classes:
-///    - C0: not yet evaluated
-///    - C1: computed but unverified (e.g., unverified GPU)
-///    - C2: unstable (low branch persistence)
-///    - C3: stable but no comparison
-///    - C4: stable + comparison compatible
-///    - C5: stable + repeated comparison compatible
+///    - If branchStabilityScore &lt; StabilityThreshold: demote to C2 max.
+///    - If ambiguityScore &gt; AmbiguityThreshold: add AmbiguousMatching demotion note.
+/// 5. Assign claim classes (canonical full-name format, ARCH_P4.md §ParticleClaimClass):
+///    - C0_NumericalMode: not yet evaluated
+///    - C1_LocalPersistentMode: computed but unverified (e.g., unverified GPU)
+///    - C2_BranchStableCandidate: unstable (low branch persistence)
+///    - C3_ObservedStableCandidate: stable but no comparison
+///    - C4_PhysicalAnalogyCandidate: stable + comparison compatible
+///    - C5_StrongIdentificationCandidate: stable + repeated comparison compatible
 ///
-/// The builder operates conservatively: when in doubt, C0 is assigned.
+/// The builder operates conservatively: when in doubt, C0_NumericalMode is assigned.
 /// </summary>
 public sealed class UnifiedRegistryBuilder
 {
@@ -115,18 +115,19 @@ public sealed class UnifiedRegistryBuilder
         ProvenanceMeta provenance)
     {
         var demotions = new List<ParticleClaimDemotion>();
-        string claimClass = "C3"; // default: stable, no comparison yet
+        // Default: stable, no comparison yet — canonical full-name format (BLOCKER-M42-1 fix)
+        string claimClass = "C3_ObservedStableCandidate";
 
         // Demotion: low branch persistence
         if (cluster.MeanBranchPersistence < _config.StabilityThreshold)
         {
-            claimClass = "C2";
+            claimClass = "C2_BranchStableCandidate";
             demotions.Add(new ParticleClaimDemotion
             {
                 Reason = "LowPersistence",
                 Details = $"Mean branch persistence {cluster.MeanBranchPersistence:F3} < threshold {_config.StabilityThreshold:F3}.",
-                FromClaimClass = "C3",
-                ToClaimClass = "C2",
+                FromClaimClass = "C3_ObservedStableCandidate",
+                ToClaimClass = "C2_BranchStableCandidate",
             });
         }
 
@@ -142,10 +143,11 @@ public sealed class UnifiedRegistryBuilder
             });
         }
 
-        // If singleton with no strong evidence, downgrade to C0
+        // If singleton with no strong evidence, downgrade to C2
         if (cluster.ClusteringMethod == "singleton" && cluster.MemberFamilyIds.Count == 1)
         {
-            if (claimClass == "C3") claimClass = "C2"; // provisional
+            if (claimClass == "C3_ObservedStableCandidate")
+                claimClass = "C2_BranchStableCandidate"; // provisional
         }
 
         return new UnifiedParticleRecord
@@ -178,20 +180,21 @@ public sealed class UnifiedRegistryBuilder
     {
         var demotions = new List<ParticleClaimDemotion>();
 
-        // Translate Phase III claim class to unified class (C0-C5 prefix)
-        string claimClass = "C" + (int)boson.ClaimClass;
+        // Translate Phase III claim class to unified class (canonical full-name format, BLOCKER-M42-1 fix)
+        string claimClass = BosonClaimToString(boson.ClaimClass);
 
         // Propagate GPU demotion
-        if (boson.ComputedWithUnverifiedGpu && claimClass != "C0" && claimClass != "C1")
+        int claimLevel = UnifiedParticleRegistry.ParseClaimClassLevel(claimClass);
+        if (boson.ComputedWithUnverifiedGpu && claimLevel > 1)
         {
             demotions.Add(new ParticleClaimDemotion
             {
                 Reason = "UnverifiedGpu",
                 Details = "Boson computed with unverified GPU backend; capped at C1.",
                 FromClaimClass = claimClass,
-                ToClaimClass = "C1",
+                ToClaimClass = "C1_LocalPersistentMode",
             });
-            claimClass = "C1";
+            claimClass = "C1_LocalPersistentMode";
         }
 
         return new UnifiedParticleRecord
@@ -241,10 +244,27 @@ public sealed class UnifiedRegistryBuilder
             BranchStabilityScore = coupling.BranchStabilityScore,
             ObservationConfidence = 0.0,
             ComparisonEvidenceScore = 0.0,
-            ClaimClass = "C0", // interactions are always C0 until M43 observation
+            ClaimClass = "C0_NumericalMode", // interactions are always C0 until M43 observation
             ComputedWithUnverifiedGpu = false,
             RegistryVersion = registryVersion,
             Provenance = provenance,
         };
     }
+
+    // --- Helpers ---
+
+    /// <summary>
+    /// Map Phase III BosonClaimClass enum to canonical unified claim class string.
+    /// C2 maps to type-agnostic "C2_BranchStableCandidate" (BLOCKER-M42-1, BLOCKER-M42-2 fix).
+    /// </summary>
+    private static string BosonClaimToString(BosonClaimClass c) => c switch
+    {
+        BosonClaimClass.C0_NumericalMode => "C0_NumericalMode",
+        BosonClaimClass.C1_LocalPersistentMode => "C1_LocalPersistentMode",
+        BosonClaimClass.C2_BranchStableBosonicCandidate => "C2_BranchStableCandidate",
+        BosonClaimClass.C3_ObservedStableCandidate => "C3_ObservedStableCandidate",
+        BosonClaimClass.C4_PhysicalAnalogyCandidate => "C4_PhysicalAnalogyCandidate",
+        BosonClaimClass.C5_StrongIdentificationCandidate => "C5_StrongIdentificationCandidate",
+        _ => "C0_NumericalMode",
+    };
 }

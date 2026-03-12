@@ -126,7 +126,7 @@ public static class FermionObservationBuilder
     /// Used when full per-mode eigenvectors are not available (cluster-level summary).
     /// Convention: "left-is-minus" (standard GU convention).
     /// </summary>
-    internal static ChiralityDecomposition SynthesizeXChirality(string modeId, string chiralityTag)
+    public static ChiralityDecomposition SynthesizeXChirality(string modeId, string chiralityTag)
     {
         (double left, double right, string status) = chiralityTag switch
         {

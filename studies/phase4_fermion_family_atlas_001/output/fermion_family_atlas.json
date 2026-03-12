@@ -1,0 +1,113 @@
+{
+  "atlasId": "fermion-atlas-001",
+  "branchFamilyId": "branch-family-toy2d-v1",
+  "totalFamilies": 6,
+  "summary": {
+    "totalFamilies": 6,
+    "persistentFamilies": 6,
+    "leftChiralFamilies": 0,
+    "rightChiralFamilies": 0,
+    "mixedChiralFamilies": 6,
+    "familiesWithConjugatePair": 0,
+    "meanBranchPersistence": 1,
+    "notes": []
+  },
+  "families": [
+    {
+      "FamilyId": "ferm-family-0000",
+      "EigenvalueMagnitudeEnvelope": [
+        2.780284886830759E-07,
+        2.7941863112649125E-07,
+        2.808087735699066E-07
+      ],
+      "DominantChiralityProfile": "mixed",
+      "HasConjugationPair": false,
+      "ConjugateFamilyId": null,
+      "BranchPersistenceScore": 1,
+      "MemberModeIds": [
+        "mode-bg-toy2d-cos-sin-su2-v1-000",
+        "mode-bg-toy2d-cos-sin-su2-v1-000-p"
+      ]
+    },
+    {
+      "FamilyId": "ferm-family-0001",
+      "EigenvalueMagnitudeEnvelope": [
+        2.549728884467793,
+        2.562477528890132,
+        2.5752261733124713
+      ],
+      "DominantChiralityProfile": "mixed",
+      "HasConjugationPair": false,
+      "ConjugateFamilyId": null,
+      "BranchPersistenceScore": 1,
+      "MemberModeIds": [
+        "mode-bg-toy2d-cos-sin-su2-v1-001",
+        "mode-bg-toy2d-cos-sin-su2-v1-001-p"
+      ]
+    },
+    {
+      "FamilyId": "ferm-family-0002",
+      "EigenvalueMagnitudeEnvelope": [
+        2.8905428077071624,
+        2.904995521745698,
+        2.919448235784234
+      ],
+      "DominantChiralityProfile": "mixed",
+      "HasConjugationPair": false,
+      "ConjugateFamilyId": null,
+      "BranchPersistenceScore": 1,
+      "MemberModeIds": [
+        "mode-bg-toy2d-cos-sin-su2-v1-002",
+        "mode-bg-toy2d-cos-sin-su2-v1-002-p"
+      ]
+    },
+    {
+      "FamilyId": "ferm-family-0003",
+      "EigenvalueMagnitudeEnvelope": [
+        3.59416127299221,
+        3.612132079357171,
+        3.630102885722132
+      ],
+      "DominantChiralityProfile": "mixed",
+      "HasConjugationPair": false,
+      "ConjugateFamilyId": null,
+      "BranchPersistenceScore": 1,
+      "MemberModeIds": [
+        "mode-bg-toy2d-cos-sin-su2-v1-003",
+        "mode-bg-toy2d-cos-sin-su2-v1-003-p"
+      ]
+    },
+    {
+      "FamilyId": "ferm-family-0004",
+      "EigenvalueMagnitudeEnvelope": [
+        5.1445884359550025,
+        5.170311378134778,
+        5.196034320314553
+      ],
+      "DominantChiralityProfile": "mixed",
+      "HasConjugationPair": false,
+      "ConjugateFamilyId": null,
+      "BranchPersistenceScore": 1,
+      "MemberModeIds": [
+        "mode-bg-toy2d-cos-sin-su2-v1-004",
+        "mode-bg-toy2d-cos-sin-su2-v1-004-p"
+      ]
+    },
+    {
+      "FamilyId": "ferm-family-0005",
+      "EigenvalueMagnitudeEnvelope": [
+        7.231138746949456,
+        7.2672944406842035,
+        7.30345013441895
+      ],
+      "DominantChiralityProfile": "mixed",
+      "HasConjugationPair": false,
+      "ConjugateFamilyId": null,
+      "BranchPersistenceScore": 1,
+      "MemberModeIds": [
+        "mode-bg-toy2d-cos-sin-su2-v1-005",
+        "mode-bg-toy2d-cos-sin-su2-v1-005-p"
+      ]
+    }
+  ]
+}
