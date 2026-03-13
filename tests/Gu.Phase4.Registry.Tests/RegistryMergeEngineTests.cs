@@ -260,6 +260,46 @@ public sealed class RegistryMergeEngineTests
     }
 
     // -----------------------------------------------------------------------
+    // GAP-2: ObservationConfidence wired from observationConfidenceByClusterId
+    // -----------------------------------------------------------------------
+
+    [Fact]
+    public void Build_ObservationConfidence_PopulatedFromLookup_WhenProvided()
+    {
+        // RegistryMergeEngine builds fermion clusters starting at C1/C2, not C3,
+        // so LowObservation demotion requires a C3+ starting point (see UnifiedRegistryBuilder tests).
+        // Here we verify ObservationConfidence is populated correctly from the lookup.
+        var clusters = new[]
+        {
+            MakeFamilyCluster("cluster-0", "left", 1.0, meanPersistence: 0.9),
+        };
+        var observationConfidence = new Dictionary<string, double> { ["cluster-0"] = 0.3 };
+
+        var engine = new RegistryMergeEngine(RegistryMergeConfig.Default);
+        var result = engine.Build(null, clusters, null, null, TestProvenance(),
+            observationConfidenceByClusterId: observationConfidence);
+
+        Assert.Single(result.Candidates);
+        var record = result.Candidates[0];
+        Assert.Equal(0.3, record.ObservationConfidence, precision: 10);
+    }
+
+    [Fact]
+    public void Build_ObservationConfidence_DefaultsToZero_WhenNotProvided()
+    {
+        var clusters = new[]
+        {
+            MakeFamilyCluster("cluster-0", "left", 1.0, meanPersistence: 0.9),
+        };
+
+        var engine = new RegistryMergeEngine(RegistryMergeConfig.Default);
+        var result = engine.Build(null, clusters, null, null, TestProvenance());
+
+        Assert.Single(result.Candidates);
+        Assert.Equal(0.0, result.Candidates[0].ObservationConfidence, precision: 10);
+    }
+
+    // -----------------------------------------------------------------------
     // Helpers
     // -----------------------------------------------------------------------
 

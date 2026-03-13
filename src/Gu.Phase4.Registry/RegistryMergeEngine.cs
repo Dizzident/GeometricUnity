@@ -42,12 +42,29 @@ public sealed class RegistryMergeEngine
     /// Build a UnifiedParticleRegistry from all available Phase III/IV sources.
     /// Any argument may be null (treated as empty).
     /// </summary>
+    /// <param name="bosonRegistry">Phase III boson registry (optional).</param>
+    /// <param name="familyClusters">Phase IV family cluster records (optional).</param>
+    /// <param name="fermionAtlas">Phase IV fermion family atlas (optional, fallback when no clusters).</param>
+    /// <param name="couplingAtlas">Phase IV coupling atlas (optional).</param>
+    /// <param name="provenance">Provenance metadata.</param>
+    /// <param name="observationConfidenceByClusterId">
+    /// Lookup of cluster ID → observation confidence (e.g. BranchPersistenceScore from
+    /// FermionObservationSummary). When provided, ObservationConfidence is populated from
+    /// this lookup instead of defaulting to 0.0, and the LowObservation demotion rule fires
+    /// for C3+ fermion candidates below MinObservationConfidence.
+    /// </param>
+    /// <param name="interactionConfidenceByBosonModeId">
+    /// Lookup of boson mode ID → observation confidence for interaction records.
+    /// When provided, ObservationConfidence for coupling-derived records is set from this lookup.
+    /// </param>
     public UnifiedParticleRegistry Build(
         BosonRegistry? bosonRegistry,
         IReadOnlyList<FamilyClusterRecord>? familyClusters,
         FermionFamilyAtlas? fermionAtlas,
         CouplingAtlas? couplingAtlas,
-        ProvenanceMeta provenance)
+        ProvenanceMeta provenance,
+        IReadOnlyDictionary<string, double>? observationConfidenceByClusterId = null,
+        IReadOnlyDictionary<string, double>? interactionConfidenceByBosonModeId = null)
     {
         ArgumentNullException.ThrowIfNull(provenance);
 
@@ -71,7 +88,7 @@ public sealed class RegistryMergeEngine
         {
             foreach (var cluster in familyClusters)
             {
-                var record = BuildFromFamilyCluster(cluster, provenance);
+                var record = BuildFromFamilyCluster(cluster, provenance, observationConfidenceByClusterId);
                 registry.Register(record);
             }
         }
@@ -81,7 +98,7 @@ public sealed class RegistryMergeEngine
         {
             foreach (var family in fermionAtlas.Families)
             {
-                var record = BuildFromFermionFamily(family, provenance);
+                var record = BuildFromFermionFamily(family, provenance, observationConfidenceByClusterId);
                 registry.Register(record);
             }
         }
@@ -91,7 +108,7 @@ public sealed class RegistryMergeEngine
         {
             foreach (var coupling in couplingAtlas.Couplings)
             {
-                var record = BuildFromCoupling(coupling, provenance);
+                var record = BuildFromCoupling(coupling, provenance, interactionConfidenceByBosonModeId);
                 registry.Register(record);
             }
         }
@@ -175,7 +192,10 @@ public sealed class RegistryMergeEngine
         };
     }
 
-    private UnifiedParticleRecord BuildFromFamilyCluster(FamilyClusterRecord cluster, ProvenanceMeta provenance)
+    private UnifiedParticleRecord BuildFromFamilyCluster(
+        FamilyClusterRecord cluster,
+        ProvenanceMeta provenance,
+        IReadOnlyDictionary<string, double>? observationConfidenceByClusterId)
     {
         var demotions = new List<ParticleClaimDemotion>();
 
@@ -216,6 +236,29 @@ public sealed class RegistryMergeEngine
             }
         }
 
+        // Observation confidence from FermionObservationSummary.BranchPersistenceScore (GAP-2)
+        double observationConfidence = 0.0;
+        bool hasObsData = false;
+        if (observationConfidenceByClusterId is not null
+            && observationConfidenceByClusterId.TryGetValue(cluster.ClusterId, out double confVal))
+        {
+            observationConfidence = confVal;
+            hasObsData = true;
+        }
+
+        // LowObservation demotion: fires only when real observation data was supplied and confidence is low
+        if (hasObsData && observationConfidence < _config.MinObservationConfidence && ParseLevel(claimClass) >= 3)
+        {
+            demotions.Add(new ParticleClaimDemotion
+            {
+                Reason = "LowObservation",
+                Details = $"Observation confidence {observationConfidence:F3} below threshold {_config.MinObservationConfidence:F3}.",
+                FromClaimClass = claimClass,
+                ToClaimClass = "C2_BranchStableCandidate",
+            });
+            claimClass = "C2_BranchStableCandidate";
+        }
+
         // Collect background/branch info from cluster's provenance (cluster doesn't have its own sets)
         var backgroundSet = new List<string> { cluster.Provenance.Branch?.BranchId ?? "unknown" };
         var branchVariantSet = new List<string> { cluster.Provenance.Branch?.BranchId ?? "unknown" };
@@ -231,7 +274,7 @@ public sealed class RegistryMergeEngine
             Chirality = cluster.DominantChirality,
             MassLikeEnvelope = cluster.EigenvalueMagnitudeEnvelope,
             BranchStabilityScore = cluster.MeanBranchPersistence,
-            ObservationConfidence = 0.0,
+            ObservationConfidence = observationConfidence,
             ComparisonEvidenceScore = 0.0,
             ClaimClass = claimClass,
             ComputedWithUnverifiedGpu = false,
@@ -242,7 +285,10 @@ public sealed class RegistryMergeEngine
         };
     }
 
-    private UnifiedParticleRecord BuildFromFermionFamily(FermionModeFamily family, ProvenanceMeta provenance)
+    private UnifiedParticleRecord BuildFromFermionFamily(
+        FermionModeFamily family,
+        ProvenanceMeta provenance,
+        IReadOnlyDictionary<string, double>? observationConfidenceByClusterId)
     {
         var demotions = new List<ParticleClaimDemotion>();
         string claimClass = "C1_LocalPersistentMode";
@@ -262,6 +308,29 @@ public sealed class RegistryMergeEngine
             claimClass = "C1_LocalPersistentMode";
         }
 
+        // Observation confidence from lookup (GAP-2); family ID is used as the key for atlas fallback path
+        double observationConfidence = 0.0;
+        bool hasObsData = false;
+        if (observationConfidenceByClusterId is not null
+            && observationConfidenceByClusterId.TryGetValue(family.FamilyId, out double confVal))
+        {
+            observationConfidence = confVal;
+            hasObsData = true;
+        }
+
+        // LowObservation demotion: fires only when real observation data was supplied and confidence is low
+        if (hasObsData && observationConfidence < _config.MinObservationConfidence && ParseLevel(claimClass) >= 3)
+        {
+            demotions.Add(new ParticleClaimDemotion
+            {
+                Reason = "LowObservation",
+                Details = $"Observation confidence {observationConfidence:F3} below threshold {_config.MinObservationConfidence:F3}.",
+                FromClaimClass = claimClass,
+                ToClaimClass = "C2_BranchStableCandidate",
+            });
+            claimClass = "C2_BranchStableCandidate";
+        }
+
         double eigenMean = family.EigenvalueMagnitudeEnvelope[1];
         var envelope = new[] { family.EigenvalueMagnitudeEnvelope[0], eigenMean, family.EigenvalueMagnitudeEnvelope[2] };
 
@@ -276,7 +345,7 @@ public sealed class RegistryMergeEngine
             Chirality = family.DominantChiralityProfile,
             MassLikeEnvelope = envelope,
             BranchStabilityScore = family.BranchPersistenceScore,
-            ObservationConfidence = 0.0,
+            ObservationConfidence = observationConfidence,
             ComparisonEvidenceScore = 0.0,
             ClaimClass = claimClass,
             ComputedWithUnverifiedGpu = false,
@@ -287,7 +356,10 @@ public sealed class RegistryMergeEngine
         };
     }
 
-    private UnifiedParticleRecord BuildFromCoupling(BosonFermionCouplingRecord coupling, ProvenanceMeta provenance)
+    private UnifiedParticleRecord BuildFromCoupling(
+        BosonFermionCouplingRecord coupling,
+        ProvenanceMeta provenance,
+        IReadOnlyDictionary<string, double>? interactionConfidenceByBosonModeId)
     {
         var demotions = new List<ParticleClaimDemotion>();
 
@@ -297,6 +369,14 @@ public sealed class RegistryMergeEngine
         // Upgrade to C1 if coupling is stable across branches
         if (coupling.BranchStabilityScore >= _config.MinBranchStabilityForInteractionC1)
             claimClass = "C1_LocalPersistentMode";
+
+        // Observation confidence from InteractionObservationSummary (GAP-2)
+        double observationConfidence = 0.0;
+        if (interactionConfidenceByBosonModeId is not null
+            && interactionConfidenceByBosonModeId.TryGetValue(coupling.BosonModeId, out double confVal))
+        {
+            observationConfidence = confVal;
+        }
 
         double couplingMag = coupling.CouplingProxyMagnitude;
         var envelope = new[] { couplingMag, couplingMag, couplingMag };
@@ -317,7 +397,7 @@ public sealed class RegistryMergeEngine
             Chirality = null,
             MassLikeEnvelope = envelope,
             BranchStabilityScore = coupling.BranchStabilityScore,
-            ObservationConfidence = 0.0,
+            ObservationConfidence = observationConfidence,
             ComparisonEvidenceScore = 0.0,
             ClaimClass = claimClass,
             ComputedWithUnverifiedGpu = false,

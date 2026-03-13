@@ -110,6 +110,11 @@ public class CpuSpinConnectionBuilderTests
             "layout-su2", spec, gaugeDimension: 3, TestProvenance(),
             insertedAssumptionIds: new[] { "P4-IA-003" });
 
+    private static FermionFieldLayout MakeSu3Layout(SpinorRepresentationSpec spec) =>
+        FermionFieldLayoutFactory.BuildStandardLayout(
+            "layout-su3", spec, gaugeDimension: 8, TestProvenance(),
+            insertedAssumptionIds: new[] { "P4-IA-003" });
+
     // -------------------------------------------------------
     // Tests
     // -------------------------------------------------------
@@ -365,5 +370,177 @@ public class CpuSpinConnectionBuilderTests
 
         Assert.Throws<ArgumentException>(() =>
             builder.Build(bg, badOmega, spec, layout, mesh, TestProvenance()));
+    }
+
+    // -------------------------------------------------------
+    // GAP-7: su(3) gauge support tests
+    // -------------------------------------------------------
+
+    [Fact]
+    public void Build_Su3Gauge_ProducesNonzeroGaugeCoupling()
+    {
+        // GAP-7: CpuSpinConnectionBuilder with dimG=8 (su(3)) must produce a non-zero
+        // GaugeCouplingCoefficients array when the bosonic background is nonzero.
+        var mesh = SingleTriangle();
+        var spec = Dim2Spec();
+        var layout = MakeSu3Layout(spec);
+        var bg = MakeBackgroundRecord("bg-su3", "m1");
+        int dimG = 8;
+        int edgeCount = mesh.EdgeCount; // 3
+        var bosonicState = new double[edgeCount * dimG];
+        // Set edge 0, a=0 component (T_1 direction) to 1.0
+        // f_{012} = f^2_{01} = 1.0 → G[1,2] and G[2,1] should be nonzero
+        bosonicState[0 * dimG + 0] = 1.0;
+
+        var builder = new CpuSpinConnectionBuilder();
+        var bundle = builder.Build(bg, bosonicState, spec, layout, mesh, TestProvenance());
+
+        // At least one element must be nonzero
+        Assert.Contains(bundle.GaugeCouplingCoefficients, v => v != 0.0);
+    }
+
+    [Fact]
+    public void Build_Su3Gauge_CorrectShape()
+    {
+        // Shape must be edgeCount * dimG * dimG * 2
+        var mesh = SingleTriangle();
+        var spec = Dim2Spec();
+        var layout = MakeSu3Layout(spec);
+        var bg = MakeBackgroundRecord("bg-su3-shape", "m1");
+        int dimG = 8;
+        var bosonicState = new double[mesh.EdgeCount * dimG];
+        var builder = new CpuSpinConnectionBuilder();
+
+        var bundle = builder.Build(bg, bosonicState, spec, layout, mesh, TestProvenance());
+
+        Assert.Equal(mesh.EdgeCount * dimG * dimG * 2, bundle.GaugeCouplingCoefficients.Length);
+        Assert.Equal("adjoint", bundle.GaugeRepresentationId);
+        Assert.Equal(8, bundle.GaugeDimension);
+    }
+
+    [Fact]
+    public void Build_Su3Gauge_ZeroOmega_ZeroGaugeCoupling()
+    {
+        // With zero bosonic state, gauge coupling must be zero
+        var mesh = SingleTriangle();
+        var spec = Dim2Spec();
+        var layout = MakeSu3Layout(spec);
+        var bg = MakeBackgroundRecord("bg-su3-zero", "m1");
+        int dimG = 8;
+        var bosonicState = new double[mesh.EdgeCount * dimG]; // all zeros
+
+        var builder = new CpuSpinConnectionBuilder();
+        var bundle = builder.Build(bg, bosonicState, spec, layout, mesh, TestProvenance());
+
+        Assert.All(bundle.GaugeCouplingCoefficients, v => Assert.Equal(0.0, v));
+    }
+
+    [Fact]
+    public void Build_Su3Gauge_Antisymmetry_f012()
+    {
+        // f_{012} = 1 → for omega_e^0 = 1, G_e[1,2] = f[0,1,2] = 1, G_e[2,1] = f[0,2,1] = -1
+        var mesh = SingleTriangle();
+        var spec = Dim2Spec();
+        var layout = MakeSu3Layout(spec);
+        var bg = MakeBackgroundRecord("bg-su3-antisym", "m1");
+        int dimG = 8;
+        var bosonicState = new double[mesh.EdgeCount * dimG];
+        bosonicState[0 * dimG + 0] = 1.0; // edge 0, a=0
+
+        var builder = new CpuSpinConnectionBuilder();
+        var bundle = builder.Build(bg, bosonicState, spec, layout, mesh, TestProvenance());
+
+        // Edge 0: G[1,2] = f[0,1,2] = f^2_{01} = 1.0 (from LieAlgebraFactory su(3) f_{123}=1)
+        int gcBase = 0 * dimG * dimG * 2; // edge 0
+        double G12_re = bundle.GaugeCouplingCoefficients[gcBase + (1 * dimG + 2) * 2];
+        double G21_re = bundle.GaugeCouplingCoefficients[gcBase + (2 * dimG + 1) * 2];
+
+        Assert.Equal(1.0, G12_re, 8);
+        Assert.Equal(-1.0, G21_re, 8);
+        // Antisymmetry
+        Assert.Equal(-G12_re, G21_re, 8);
+    }
+
+    [Fact]
+    public void Build_UnsupportedDimG_ThrowsNotSupportedException()
+    {
+        // GAP-7: dimG values other than 1, 3, 8 must throw NotSupportedException
+        // (was: silent zero fallback)
+        var mesh = SingleTriangle();
+        var spec = Dim2Spec();
+        // Build a layout with an unsupported gauge dimension (e.g., 2)
+        var layout = FermionFieldLayoutFactory.BuildStandardLayout(
+            "layout-unsupported", spec, gaugeDimension: 2, TestProvenance(),
+            insertedAssumptionIds: new[] { "P4-IA-003" });
+        var bg = MakeBackgroundRecord("bg-bad", "m1");
+        var bosonicState = new double[mesh.EdgeCount * 2]; // dimG=2
+
+        var builder = new CpuSpinConnectionBuilder();
+
+        Assert.Throws<NotSupportedException>(() =>
+            builder.Build(bg, bosonicState, spec, layout, mesh, TestProvenance()));
+    }
+
+    [Fact]
+    public void Build_Su3Gauge_CasimirIdentity()
+    {
+        // Physicist sanity check: for su(3) in the adjoint rep,
+        // sum_{a,c} f_{abc} * f_{adc} = 3 * delta_{bd}  (quadratic Casimir C_2(adj) = 3).
+        // We verify this directly from the structure constants, independent of the builder.
+        // This confirms the Gell-Mann normalization used by LieAlgebraFactory.CreateSu3().
+        var su3 = Gu.Math.LieAlgebraFactory.CreateSu3();
+        int dimG = su3.Dimension; // 8
+        var f = new double[dimG, dimG, dimG];
+        for (int a = 0; a < dimG; a++)
+            for (int b = 0; b < dimG; b++)
+                for (int c = 0; c < dimG; c++)
+                    f[a, b, c] = su3.GetStructureConstant(a, b, c);
+
+        // Check sum_{a,c} f_{abc} * f_{adc} = 3 * delta_{bd} for all b, d
+        const double casimir = 3.0;
+        const double tol = 1e-10;
+        for (int b = 0; b < dimG; b++)
+        {
+            for (int d = 0; d < dimG; d++)
+            {
+                double sum = 0.0;
+                for (int a = 0; a < dimG; a++)
+                    for (int c = 0; c < dimG; c++)
+                        sum += f[a, b, c] * f[a, d, c];
+                double expected = (b == d) ? casimir : 0.0;
+                Assert.True(System.Math.Abs(sum - expected) < tol,
+                    $"Casimir check failed at b={b} d={d}: got {sum}, expected {expected}");
+            }
+        }
+    }
+
+    [Fact]
+    public void Build_Su3Gauge_JacobiIdentity()
+    {
+        // Stronger consistency check: the Jacobi identity must hold for all structure constants.
+        // sum_d (f_{ade}*f_{bcd} + f_{bde}*f_{cad} + f_{cde}*f_{abd}) = 0  for all a,b,c,e
+        // This verifies total antisymmetry is correctly set across all permutations.
+        var su3 = Gu.Math.LieAlgebraFactory.CreateSu3();
+        int dimG = su3.Dimension; // 8
+        var f = new double[dimG, dimG, dimG];
+        for (int a = 0; a < dimG; a++)
+            for (int b = 0; b < dimG; b++)
+                for (int c = 0; c < dimG; c++)
+                    f[a, b, c] = su3.GetStructureConstant(a, b, c);
+
+        const double tol = 1e-10;
+        for (int a = 0; a < dimG; a++)
+        for (int b = 0; b < dimG; b++)
+        for (int c = 0; c < dimG; c++)
+        for (int e = 0; e < dimG; e++)
+        {
+            double sum = 0.0;
+            for (int d = 0; d < dimG; d++)
+                sum += f[a, d, e] * f[b, c, d]
+                     + f[b, d, e] * f[c, a, d]
+                     + f[c, d, e] * f[a, b, d];
+            Assert.True(System.Math.Abs(sum) < tol,
+                $"Jacobi identity failed at a={a} b={b} c={c} e={e}: got {sum}");
+        }
     }
 }

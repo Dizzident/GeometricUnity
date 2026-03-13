@@ -9,6 +9,7 @@ using Gu.Phase4.Couplings;
 using Gu.Phase4.Dirac;
 using Gu.Phase4.FamilyClustering;
 using Gu.Phase4.Fermions;
+using Gu.Phase4.Comparison;
 using Gu.Phase4.Observation;
 using Gu.Phase4.Registry;
 using Gu.Phase4.Reporting;
@@ -29,7 +30,7 @@ namespace Gu.Studies.Phase4FermionFamilyAtlas001;
 ///   7. Track modes (FermionModeTracker, FermionFamilyAtlasBuilder)
 ///   8. Cluster families (FamilyClusteringEngine)
 ///   9. Build coupling atlas (CouplingProxyEngine + DiracVariationComputer)
-///  10. Build registry (UnifiedRegistryBuilder)
+///  10. Build registry (RegistryMergeEngine with stub boson registry — GAP-5)
 ///  11. Generate report (Phase4ReportGenerator)
 ///  12. Write artifacts to studies/phase4_fermion_family_atlas_001/artifacts/
 ///
@@ -131,24 +132,47 @@ public sealed class Phase4FermionFamilyAtlasStudy
         var couplingAtlas = BuildCouplingAtlas(
             diracBundle, gammas, layout, yMesh, modes, background.BackgroundId, provenance);
 
-        // Step 10: Build unified registry
-        var registryConfig = UnifiedRegistryConfig.Default;
-        var registryBuilder = new UnifiedRegistryBuilder(registryConfig);
-        var registry = registryBuilder.Build(
-            StudyId,
-            StudyVersion,
-            clusters,
-            null,            // no Phase III boson candidates for this in-process study
-            new List<CouplingAtlas> { couplingAtlas },
-            provenance);
-
-        // Step 11: Observation pipeline (fermion clusters -> X_h summaries)
+        // Step 10: Observation pipeline (fermion clusters -> X_h summaries)
+        // Run BEFORE registry so observation confidence feeds into claim class assignment.
         var observationPipeline = new FermionObservationPipeline();
         IReadOnlyList<Gu.Phase4.Observation.FermionObservationSummary> fermionObservations =
             observationPipeline.ObserveClusters(clusters, provenance);
         var interactionObservations = observationPipeline.ObserveInteractions(couplingAtlas, provenance);
 
-        // Step 12: Generate report
+        // Build observation confidence lookups for registry (GAP-2)
+        var observationConfidenceByClusterId = fermionObservations
+            .ToDictionary(obs => obs.ClusterId, obs => obs.BranchPersistenceScore);
+        var interactionConfidenceByBosonModeId = interactionObservations
+            .ToDictionary(obs => obs.BosonModeId, obs => obs.MeanCouplingMagnitude);
+
+        // Step 11: Build unified registry using RegistryMergeEngine (GAP-5 fix).
+        // Construct a minimal stub Phase III boson registry so the unified registry
+        // contains at least one boson alongside the Phase IV fermion candidates.
+        // In a full pipeline run, this would be loaded from a persisted Phase III run folder.
+        var stubBosonRegistry = BuildStubBosonRegistry(background.BackgroundId, provenance);
+        var registryMergeConfig = RegistryMergeConfig.Default;
+        var registryMergeEngine = new RegistryMergeEngine(registryMergeConfig);
+        var registry = registryMergeEngine.Build(
+            stubBosonRegistry,
+            clusters,
+            fermionAtlas,
+            couplingAtlas,
+            provenance,
+            observationConfidenceByClusterId,
+            interactionConfidenceByBosonModeId);
+
+        // Step 12: Comparison campaign (GAP-3): compare observed fermion clusters against
+        // placeholder references. Two references: one left-chiral, one right-chiral.
+        // This fulfils M43 DoD: "at least one comparison campaign involving fermionic candidates."
+        var candidateReferences = BuildCandidateReferences();
+        var comparisonCampaign = FermionComparisonCampaignRunner.Run(
+            campaignId: $"campaign-{StudyId}-v1",
+            clusters: clusters,
+            references: candidateReferences,
+            massLikeScaleTolerance: 0.5,
+            provenance: provenance);
+
+        // Step 13: Generate report
         var reportGenerator = new Phase4ReportGenerator();
         var report = reportGenerator.Generate(
             StudyId,
@@ -157,12 +181,12 @@ public sealed class Phase4FermionFamilyAtlasStudy
             couplingAtlas,
             provenance);
 
-        // Step 13: Write artifacts
+        // Step 14: Write artifacts
         var artifactPaths = WriteArtifacts(
             artifactsDir, diracBundle, spectralBundle, fermionAtlas,
-            clusters, couplingAtlas, registry, report, provenance);
+            clusters, couplingAtlas, registry, comparisonCampaign, report, provenance);
 
-        // Step 14: Write REPORT.md
+        // Step 15: Write REPORT.md
         string reportMdPath = WriteReportMd(artifactsDir, report, fermionAtlas, registry, clusters);
 
         return new Phase4StudyResult
@@ -178,7 +202,9 @@ public sealed class Phase4FermionFamilyAtlasStudy
             Clusters = clusters,
             CouplingAtlas = couplingAtlas,
             Registry = registry,
+            ConsumedBosonRegistryId = stubBosonRegistry.RegistryVersion,
             Report = report,
+            ComparisonCampaign = comparisonCampaign,
             FermionObservations = fermionObservations.ToList<Gu.Phase4.Observation.FermionObservationSummary>(),
             InteractionObservations = interactionObservations.ToList(),
             ArtifactPaths = artifactPaths,
@@ -500,6 +526,84 @@ public sealed class Phase4FermionFamilyAtlasStudy
             provenance);
     }
 
+    /// <summary>
+    /// Build a minimal stub Phase III boson registry for the unified registry merge (GAP-5).
+    ///
+    /// In a full pipeline this would be loaded from a persisted Phase III run folder.
+    /// The stub contains one synthetic C1-class bosonic candidate representing a single
+    /// bosonic mode from the background connection, providing the cross-phase merge context
+    /// required by RegistryMergeEngine.Build().
+    /// </summary>
+    private static BosonRegistry BuildStubBosonRegistry(string backgroundId, ProvenanceMeta provenance)
+    {
+        var stubBoson = new CandidateBosonRecord
+        {
+            CandidateId = $"stub-boson-{backgroundId}-001",
+            PrimaryFamilyId = $"stub-family-{backgroundId}-001",
+            ContributingModeIds = new[] { $"stub-mode-{backgroundId}-001" },
+            BackgroundSet = new[] { backgroundId },
+            BranchVariantSet = new[] { "stub-variant" },
+            MassLikeEnvelope = new[] { 0.5, 1.0, 1.5 },
+            MultiplicityEnvelope = new[] { 1, 1, 1 },
+            GaugeLeakEnvelope = new[] { 0.0, 0.0, 0.0 },
+            BranchStabilityScore = 0.9,
+            RefinementStabilityScore = 0.9,
+            ObservationStabilityScore = 0.9,
+            ClaimClass = Gu.Phase3.Registry.BosonClaimClass.C1_LocalPersistentMode,
+            ComputedWithUnverifiedGpu = false,
+            AmbiguityCount = 0,
+            AmbiguityNotes = Array.Empty<string>(),
+            RegistryVersion = StudyVersion,
+        };
+
+        var registry = new BosonRegistry();
+        registry.Register(stubBoson);
+        return registry;
+    }
+
+    /// <summary>
+    /// Build placeholder FermionCandidateReference records for the comparison campaign (GAP-3).
+    ///
+    /// These are intentionally minimal placeholder references — NOT real physical particle data.
+    /// One left-chiral reference and one right-chiral reference are provided to ensure the
+    /// comparison pipeline runs for a variety of cluster chiralities.
+    ///
+    /// MassLikeEnvelope is null so these always produce "underdetermined" outcomes unless
+    /// chirality explicitly matches, keeping the comparison conservative.
+    /// </summary>
+    private static IReadOnlyList<FermionCandidateReference> BuildCandidateReferences()
+    {
+        return new List<FermionCandidateReference>
+        {
+            new FermionCandidateReference
+            {
+                ReferenceId = "ref-left-chiral-cluster-placeholder-001",
+                Label = "placeholder-left-chiral-cluster",
+                ExpectedChirality = "left",
+                ExpectedMassLikeEnvelope = null, // unconstrained → underdetermined outcome
+                ExpectsConjugatePair = false,
+                Notes = new List<string>
+                {
+                    "Placeholder reference for testing comparison pipeline (GAP-3).",
+                    "NOT a physical particle reference — no mass-like scale constraint applied.",
+                },
+            },
+            new FermionCandidateReference
+            {
+                ReferenceId = "ref-right-chiral-cluster-placeholder-001",
+                Label = "placeholder-right-chiral-cluster",
+                ExpectedChirality = "right",
+                ExpectedMassLikeEnvelope = null, // unconstrained → underdetermined outcome
+                ExpectsConjugatePair = false,
+                Notes = new List<string>
+                {
+                    "Placeholder reference for testing comparison pipeline (GAP-3).",
+                    "NOT a physical particle reference — no mass-like scale constraint applied.",
+                },
+            },
+        };
+    }
+
     // -----------------------------------------------------------------------
     // Artifact writing
     // -----------------------------------------------------------------------
@@ -516,6 +620,7 @@ public sealed class Phase4FermionFamilyAtlasStudy
         IReadOnlyList<FamilyClusterRecord> clusters,
         CouplingAtlas couplingAtlas,
         UnifiedParticleRegistry registry,
+        FermionComparisonCampaign comparisonCampaign,
         Phase4Report report,
         ProvenanceMeta provenance)
     {
@@ -627,6 +732,8 @@ public sealed class Phase4FermionFamilyAtlasStudy
 
         WriteJson("unified_particle_registry.json", registry);
 
+        WriteJson("fermion_comparison_campaign.json", comparisonCampaign);
+
         WriteJson("phase4_report.json", report);
 
         // Conformance artifact
@@ -647,8 +754,9 @@ public sealed class Phase4FermionFamilyAtlasStudy
                 "fermion-family-atlas",
                 "family-clustering",
                 "coupling-atlas",
-                "unified-registry",
                 "observation-pipeline",
+                "unified-registry",
+                "comparison-campaign",
                 "report-generation",
             },
             branchLocalChecks = new
@@ -660,6 +768,7 @@ public sealed class Phase4FermionFamilyAtlasStudy
                 clustersFound = clusters.Count,
                 couplingEntriesFound = couplingAtlas.Couplings.Count,
                 registryCandidates = registry.Count,
+                comparisonRecordCount = comparisonCampaign.ComparisonRecords.Count,
             },
             provenanceCodeRevision = provenance.CodeRevision,
             generatedAt = DateTimeOffset.UtcNow,
@@ -824,7 +933,14 @@ public sealed class Phase4StudyResult
     public required IReadOnlyList<FamilyClusterRecord> Clusters { get; init; }
     public required CouplingAtlas CouplingAtlas { get; init; }
     public required UnifiedParticleRegistry Registry { get; init; }
+    /// <summary>
+    /// Tracks which Phase III boson registry was consumed in the unified registry merge (GAP-5).
+    /// For the in-process study this is the stub registry version; for full pipeline runs,
+    /// this would be the version string from the loaded Phase III registry.
+    /// </summary>
+    public required string ConsumedBosonRegistryId { get; init; }
     public required Phase4Report Report { get; init; }
+    public required Gu.Phase4.Comparison.FermionComparisonCampaign ComparisonCampaign { get; init; }
     public required List<Gu.Phase4.Observation.FermionObservationSummary> FermionObservations { get; init; }
     public required List<InteractionObservationSummary> InteractionObservations { get; init; }
     public required Dictionary<string, string> ArtifactPaths { get; init; }

@@ -418,6 +418,91 @@ public sealed class Phase4FermionFamilyAtlas001Tests : IDisposable
     }
 
     // -----------------------------------------------------------------------
+    // Test 16: UnifiedRegistry contains both bosons and fermions (GAP-5)
+    // -----------------------------------------------------------------------
+
+    [Fact]
+    public void UnifiedRegistry_ContainsBothBosonsAndFermions()
+    {
+        var result = GetOrRunStudy();
+        var registry = result.Registry;
+
+        // Must have at least one boson record (from the stub Phase III boson registry)
+        var bosons = registry.QueryByType(UnifiedParticleType.Boson);
+        Assert.True(bosons.Count >= 1,
+            $"UnifiedRegistry expected at least 1 boson record, got {bosons.Count}. " +
+            "RegistryMergeEngine.Build() must be called with a non-null bosonRegistry (GAP-5).");
+
+        // Must have at least one fermion record (from Phase IV clustering)
+        var fermions = registry.QueryByType(UnifiedParticleType.Fermion);
+        Assert.True(fermions.Count >= 1,
+            $"UnifiedRegistry expected at least 1 fermion record, got {fermions.Count}.");
+
+        // ConsumedBosonRegistryId must be set (tracks which boson registry was merged)
+        Assert.NotEmpty(result.ConsumedBosonRegistryId);
+    }
+
+    // -----------------------------------------------------------------------
+    // Test 17: ComparisonCampaign has at least one record (GAP-3)
+    // -----------------------------------------------------------------------
+
+    [Fact]
+    public void ComparisonCampaign_HasAtLeastOneRecord()
+    {
+        var result = GetOrRunStudy();
+        var campaign = result.ComparisonCampaign;
+
+        Assert.NotNull(campaign);
+        Assert.NotEmpty(campaign.CampaignId);
+        Assert.True(campaign.ComparisonRecords.Count >= 1,
+            $"Expected at least 1 comparison record, got {campaign.ComparisonRecords.Count}. " +
+            "FermionComparisonCampaignRunner must be called in the M45 study (GAP-3).");
+    }
+
+    // -----------------------------------------------------------------------
+    // Test 18: ComparisonCampaign outcomes are valid values (GAP-3)
+    // -----------------------------------------------------------------------
+
+    [Fact]
+    public void ComparisonCampaign_OutcomesAreValidValues()
+    {
+        var result = GetOrRunStudy();
+        var campaign = result.ComparisonCampaign;
+
+        var validOutcomes = new HashSet<string>
+        {
+            "compatible", "incompatible", "underdetermined", "not-applicable",
+        };
+
+        foreach (var record in campaign.ComparisonRecords)
+        {
+            Assert.True(validOutcomes.Contains(record.Outcome),
+                $"Comparison record {record.ComparisonId} has invalid outcome '{record.Outcome}'. " +
+                $"Expected one of: {string.Join(", ", validOutcomes)}.");
+            Assert.NotEmpty(record.ComparisonId);
+            Assert.NotEmpty(record.ClusterId);
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // Test 19: ComparisonCampaign artifact is written to disk (GAP-3)
+    // -----------------------------------------------------------------------
+
+    [Fact]
+    public void ComparisonCampaign_ArtifactIsWrittenToDisk()
+    {
+        var result = GetOrRunStudy();
+
+        Assert.True(result.ArtifactPaths.ContainsKey("fermion_comparison_campaign"),
+            "Artifact key 'fermion_comparison_campaign' not found in ArtifactPaths. " +
+            "WriteArtifacts must write the campaign JSON (GAP-3).");
+        Assert.True(File.Exists(result.ArtifactPaths["fermion_comparison_campaign"]),
+            $"Campaign artifact file does not exist at {result.ArtifactPaths["fermion_comparison_campaign"]}.");
+        Assert.True(new FileInfo(result.ArtifactPaths["fermion_comparison_campaign"]).Length > 0,
+            "Campaign artifact file is empty.");
+    }
+
+    // -----------------------------------------------------------------------
     // Private helpers
     // -----------------------------------------------------------------------
 

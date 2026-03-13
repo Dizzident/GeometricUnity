@@ -1,5 +1,7 @@
+using Gu.Artifacts;
 using Gu.Branching;
 using Gu.Core;
+using Gu.Core.Serialization;
 using Gu.Geometry;
 using Gu.Math;
 using Gu.Phase3.Backgrounds;
@@ -417,5 +419,63 @@ public sealed class BosonicValidationStudy001Tests
             .Max(System.Math.Abs);
         Assert.True(maxF > 0.0,
             $"ArtifactBundle.DerivedState must contain nonzero curvature F; max |F| = {maxF}");
+    }
+
+    // ===== P4-C1 Parity: CLI-driven and in-process-driven runs share the same branch identity =====
+
+    /// <summary>
+    /// Verifies the P4-C1 parity requirement: writing the study branch manifest to a canonical
+    /// run folder (as the CLI 'run' command does) and then reading it back yields the same
+    /// branchId as the in-process StudyManifest(). This confirms the CLI does not silently
+    /// substitute a toy/default branch for the persisted study branch.
+    ///
+    /// The CLI flow is:
+    ///   gu init-run {outputDir}
+    ///   cp branch.json {outputDir}/manifest/branch.json   (overrides default)
+    ///   gu run {outputDir} --backend cpu --mode A ...
+    ///
+    /// The written manifest/branch.json carries branchId="bosonic-validation-001".
+    /// The in-process StudyManifest() also has BranchId="bosonic-validation-001".
+    /// Both must agree for P4-C1 parity.
+    /// </summary>
+    [Fact]
+    public void Study001_CliRunFolder_BranchId_MatchesInProcessManifest()
+    {
+        // In-process branch identity
+        var inProcessManifest = StudyManifest();
+        var expectedBranchId = inProcessManifest.BranchId; // "bosonic-validation-001"
+
+        // Simulate the CLI 'init-run' + branch manifest copy into a temp run folder
+        var tempRunFolder = Path.Combine(Path.GetTempPath(), $"gu-bv001-parity-{System.Guid.NewGuid():N}");
+        try
+        {
+            var writer = new RunFolderWriter(tempRunFolder);
+            writer.CreateDirectories();
+
+            // Write the study manifest exactly as the CLI would after 'cp branch.json manifest/branch.json'
+            writer.WriteBranchManifest(inProcessManifest);
+
+            // Read back via JSON exactly as the CLI 'run' command would load it
+            var manifestPath = Path.Combine(tempRunFolder, RunFolderLayout.BranchManifestFile);
+            Assert.True(File.Exists(manifestPath),
+                $"CLI artifact manifest/branch.json must exist in run folder: {manifestPath}");
+
+            var json = File.ReadAllText(manifestPath);
+            var loaded = GuJsonDefaults.Deserialize<BranchManifest>(json);
+            Assert.NotNull(loaded);
+
+            // P4-C1 parity: CLI-written branchId must match in-process study branchId
+            Assert.Equal(expectedBranchId, loaded!.BranchId);
+
+            // Verify the study-specific branches are also preserved (not overwritten with defaults)
+            Assert.Equal("augmented-torsion-v1", loaded.ActiveTorsionBranch);
+            Assert.Equal("identity-shiab-v1", loaded.ActiveShiabBranch);
+            Assert.Equal("su2", loaded.LieAlgebraId);
+        }
+        finally
+        {
+            if (Directory.Exists(tempRunFolder))
+                Directory.Delete(tempRunFolder, recursive: true);
+        }
     }
 }

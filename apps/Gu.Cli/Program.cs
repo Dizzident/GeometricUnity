@@ -15,6 +15,13 @@ using Gu.Phase3.Properties;
 using Gu.Phase3.Registry;
 using Gu.Phase3.Reporting;
 using Gu.Phase3.Spectra;
+using Gu.Phase4.Chirality;
+using Gu.Phase4.Couplings;
+using Gu.Phase4.Dirac;
+using Gu.Phase4.FamilyClustering;
+using Gu.Phase4.Fermions;
+using Gu.Phase4.Registry;
+using Gu.Phase4.Spin;
 using Gu.ReferenceCpu;
 using Gu.Solvers;
 using Gu.Validation;
@@ -62,7 +69,24 @@ switch (args[0])
     case "export-boson-report":
         return ExportBosonReport(args);
     case "generate-phase4-report":
+    case "report-phase4":
         return GeneratePhase4Report(args);
+    case "build-spin-spec":
+        return BuildSpinSpec(args);
+    case "assemble-dirac":
+        return AssembleDirac(args);
+    case "solve-fermion-modes":
+        return SolveFermionModes(args);
+    case "analyze-chirality":
+        return AnalyzeChirality(args);
+    case "analyze-conjugation":
+        return AnalyzeConjugation(args);
+    case "extract-couplings":
+        return ExtractCouplings(args);
+    case "build-family-clusters":
+        return BuildFamilyClusters(args);
+    case "build-unified-registry":
+        return BuildUnifiedRegistry(args);
     default:
         Console.Error.WriteLine($"Unknown command: {args[0]}");
         PrintUsage();
@@ -2157,6 +2181,865 @@ static int GeneratePhase4Report(string[] args)
     return 0;
 }
 
+// ---------------------------------------------------------------------------
+// Phase IV CLI commands (GAP-1)
+// ---------------------------------------------------------------------------
+
+static ProvenanceMeta BuildP4Provenance(string runFolder, string codeRevision = "cli-phase4")
+{
+    // Load branch manifest from run folder for P4-C1 provenance notes
+    var manifestPath = Path.Combine(runFolder, RunFolderLayout.BranchManifestFile);
+    string manifestSource = File.Exists(manifestPath) ? manifestPath : "no-persisted-manifest";
+    string branchId = "unknown";
+    string schemaVersion = "1.0.0";
+    if (File.Exists(manifestPath))
+    {
+        var m = GuJsonDefaults.Deserialize<BranchManifest>(File.ReadAllText(manifestPath));
+        if (m is not null) { branchId = m.BranchId; schemaVersion = m.SchemaVersion; }
+    }
+    return new ProvenanceMeta
+    {
+        CreatedAt = DateTimeOffset.UtcNow,
+        CodeRevision = codeRevision,
+        Branch = new BranchRef { BranchId = branchId, SchemaVersion = schemaVersion },
+        Notes = $"P4-C1 provenance: manifestSource={manifestSource}, runFolder={runFolder}",
+    };
+}
+
+static SpinorRepresentationSpec BuildDefaultSpinorSpec(ProvenanceMeta provenance)
+{
+    // Default: Cl(5,0) Riemannian, dimY=5, spinorDim=4, su(2) gauge (dimG=3)
+    // Matches the Phase4-FermionFamily-Atlas-001 study defaults.
+    var sig = new CliffordSignature { Positive = 5, Negative = 0 };
+    return new SpinorRepresentationSpec
+    {
+        SpinorSpecId = "spinor-cl5-riem-v1",
+        SpacetimeDimension = 5,
+        CliffordSignature = sig,
+        GammaConvention = new GammaConventionSpec
+        {
+            ConventionId = "dirac-tensor-product-v1",
+            Signature = sig,
+            Representation = "standard",
+            SpinorDimension = 4,
+            HasChirality = false,
+        },
+        ChiralityConvention = new ChiralityConventionSpec
+        {
+            ConventionId = "chirality-trivial-v1",
+            SignConvention = "left-is-minus",
+            PhaseFactor = "trivial",
+            HasChirality = false,
+            FullChiralityOperator = null,
+            BaseChiralityOperator = "X-chirality",
+            FiberChiralityOperator = null,
+            BaseDimension = 2,
+            FiberDimension = 3,
+        },
+        ConjugationConvention = new ConjugationConventionSpec
+        {
+            ConventionId = "hermitian-v1",
+            ConjugationType = "hermitian",
+            HasChargeConjugation = true,
+        },
+        SpinorComponents = 4,
+        ChiralitySplit = 0,
+        InsertedAssumptionIds = new List<string> { "P4-IA-003", "P4-IA-001" },
+        Provenance = provenance,
+    };
+}
+
+static int BuildSpinSpec(string[] args)
+{
+    if (args.Length < 2)
+    {
+        Console.Error.WriteLine("Usage: gu build-spin-spec <runFolder> [<outSpec>] [--dim-y N] [--dim-g N]");
+        return 1;
+    }
+
+    var runFolder = args[1];
+    var outSpec = args.Length > 2 && !args[2].StartsWith("--") ? args[2] : "";
+    int dimY = int.Parse(ParseFlag(args, "--dim-y", "5"));
+    int dimG = int.Parse(ParseFlag(args, "--dim-g", "3"));
+
+    if (!Directory.Exists(runFolder))
+    {
+        Console.Error.WriteLine($"Run folder not found: {runFolder}");
+        return 1;
+    }
+
+    var provenance = BuildP4Provenance(runFolder);
+    var spinorSpec = BuildDefaultSpinorSpec(provenance);
+
+    // Serialize
+    var json = JsonSerializer.Serialize(spinorSpec, new JsonSerializerOptions
+    {
+        WriteIndented = true,
+        Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() },
+    });
+
+    // Determine output path
+    var fermionsDir = Path.Combine(runFolder, "fermions");
+    Directory.CreateDirectory(fermionsDir);
+    var outPath = !string.IsNullOrEmpty(outSpec) ? outSpec
+        : Path.Combine(fermionsDir, "spinor_representation.json");
+
+    File.WriteAllText(outPath, json);
+    Console.WriteLine($"Written spinor spec: {outPath}");
+    Console.WriteLine($"  SpinorSpecId: {spinorSpec.SpinorSpecId}");
+    Console.WriteLine($"  SpacetimeDimension: {spinorSpec.SpacetimeDimension}");
+    Console.WriteLine($"  SpinorComponents: {spinorSpec.SpinorComponents}");
+
+    // Schema validation (best-effort)
+    var schemaPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+        "../../../../schemas/phase4/spinor_representation.schema.json");
+    if (!File.Exists(schemaPath))
+        schemaPath = Path.Combine(Directory.GetCurrentDirectory(), "schemas/phase4/spinor_representation.schema.json");
+    if (File.Exists(schemaPath))
+    {
+        var result = SchemaValidator.ValidateWithSchemaFile(json, schemaPath);
+        Console.WriteLine(result.IsValid ? "  Schema: valid" : $"  Schema: INVALID — {string.Join(", ", result.Errors)}");
+    }
+
+    return 0;
+}
+
+static int AssembleDirac(string[] args)
+{
+    if (args.Length < 2)
+    {
+        Console.Error.WriteLine("Usage: gu assemble-dirac <runFolder> [--spin-spec <path>] [--background-id <id>] [--out <path>]");
+        return 1;
+    }
+
+    var runFolder = args[1];
+    if (!Directory.Exists(runFolder))
+    {
+        Console.Error.WriteLine($"Run folder not found: {runFolder}");
+        return 1;
+    }
+
+    var spinSpecFlag = ParseFlag(args, "--spin-spec", "");
+    var backgroundIdFlag = ParseFlag(args, "--background-id", "");
+    var outFlag = ParseFlag(args, "--out", "");
+
+    var provenance = BuildP4Provenance(runFolder);
+    var fermionsDir = Path.Combine(runFolder, "fermions");
+    Directory.CreateDirectory(fermionsDir);
+
+    // Load spinor spec
+    SpinorRepresentationSpec spinorSpec;
+    var specPath = !string.IsNullOrEmpty(spinSpecFlag) ? spinSpecFlag
+        : Path.Combine(fermionsDir, "spinor_representation.json");
+    if (File.Exists(specPath))
+    {
+        spinorSpec = JsonSerializer.Deserialize<SpinorRepresentationSpec>(File.ReadAllText(specPath),
+            new JsonSerializerOptions { Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() } })
+            ?? BuildDefaultSpinorSpec(provenance);
+        Console.WriteLine($"  Loaded spinor spec: {specPath}");
+    }
+    else
+    {
+        spinorSpec = BuildDefaultSpinorSpec(provenance);
+        Console.WriteLine("  No spinor spec found; using default Cl(5,0) spec.");
+    }
+
+    // Load background record
+    var bgDir = Path.Combine(runFolder, "backgrounds", "background_states");
+    string? bgOmegaPath = null;
+    string backgroundId = backgroundIdFlag;
+    if (string.IsNullOrEmpty(backgroundId))
+    {
+        // Try to find first background omega file
+        if (Directory.Exists(bgDir))
+        {
+            var omegaFiles = Directory.GetFiles(bgDir, "*_omega.json");
+            if (omegaFiles.Length > 0)
+            {
+                bgOmegaPath = omegaFiles[0];
+                backgroundId = Path.GetFileName(bgOmegaPath).Replace("_omega.json", "");
+            }
+        }
+    }
+    else
+    {
+        bgOmegaPath = FindBackgroundOmegaState(runFolder, backgroundId);
+    }
+
+    // Build geometry (toy 2D if no background is loaded)
+    var bundle = ToyGeometryFactory.CreateToy2D();
+    var yMesh = bundle.AmbientMesh;
+    int dimG = 3; // su(2)
+
+    double[] bosonicState;
+    BackgroundRecord background;
+    if (bgOmegaPath is not null && File.Exists(bgOmegaPath))
+    {
+        var omegaTensor = GuJsonDefaults.Deserialize<FieldTensor>(File.ReadAllText(bgOmegaPath));
+        bosonicState = omegaTensor?.Coefficients ?? new double[yMesh.EdgeCount * dimG];
+        background = new BackgroundRecord
+        {
+            BackgroundId = backgroundId,
+            EnvironmentId = "cli-env",
+            BranchManifestId = provenance.Branch?.BranchId ?? "unknown",
+            GeometryFingerprint = $"toy2d-vert{yMesh.VertexCount}-edge{yMesh.EdgeCount}",
+            StateArtifactRef = bgOmegaPath,
+            ResidualNorm = 0.0,
+            StationarityNorm = 0.0,
+            AdmissibilityLevel = Gu.Phase3.Backgrounds.AdmissibilityLevel.B0,
+            Metrics = new Gu.Phase3.Backgrounds.BackgroundMetrics
+            {
+                ResidualNorm = 0.0,
+                StationarityNorm = 0.0,
+                ObjectiveValue = 0.0,
+                GaugeViolation = 0.0,
+                SolverIterations = 0,
+                SolverConverged = true,
+                TerminationReason = "loaded-from-run-folder",
+                GaussNewtonValid = false,
+            },
+            ReplayTierAchieved = "R0",
+            Provenance = provenance,
+        };
+        Console.WriteLine($"  Loaded background omega: {bgOmegaPath}");
+    }
+    else
+    {
+        // Use zero bosonic state
+        bosonicState = new double[yMesh.EdgeCount * dimG];
+        background = new BackgroundRecord
+        {
+            BackgroundId = string.IsNullOrEmpty(backgroundId) ? "bg-zero" : backgroundId,
+            EnvironmentId = "cli-env",
+            BranchManifestId = provenance.Branch?.BranchId ?? "unknown",
+            GeometryFingerprint = $"toy2d-vert{yMesh.VertexCount}-edge{yMesh.EdgeCount}",
+            StateArtifactRef = "inline:zero",
+            ResidualNorm = 0.0,
+            StationarityNorm = 0.0,
+            AdmissibilityLevel = Gu.Phase3.Backgrounds.AdmissibilityLevel.B0,
+            Metrics = new Gu.Phase3.Backgrounds.BackgroundMetrics
+            {
+                ResidualNorm = 0.0,
+                StationarityNorm = 0.0,
+                ObjectiveValue = 0.0,
+                GaugeViolation = 0.0,
+                SolverIterations = 0,
+                SolverConverged = true,
+                TerminationReason = "zero-state",
+                GaussNewtonValid = false,
+            },
+            ReplayTierAchieved = "R0",
+            Provenance = provenance,
+        };
+        Console.WriteLine("  No background omega found; using zero bosonic state.");
+    }
+
+    // Build layout
+    var layout = FermionFieldLayoutFactory.BuildStandardLayout(
+        "layout-cli-v1", spinorSpec, dimG, provenance, new List<string> { "P4-IA-003" });
+
+    // Build gamma matrices
+    var gammaBuilder = new GammaMatrixBuilder();
+    var gammas = gammaBuilder.Build(spinorSpec.CliffordSignature, spinorSpec.GammaConvention, provenance);
+
+    // Build spin connection
+    var connBuilder = new CpuSpinConnectionBuilder();
+    var spinConnection = connBuilder.Build(background, bosonicState, spinorSpec, layout, yMesh, provenance);
+
+    // Assemble Dirac operator
+    var assembler = new CpuDiracOperatorAssembler();
+    var diracBundle = assembler.Assemble(spinConnection, gammas, layout, yMesh, provenance);
+
+    // Write output
+    var outPath = !string.IsNullOrEmpty(outFlag) ? outFlag
+        : Path.Combine(fermionsDir, $"dirac_bundle_{background.BackgroundId}.json");
+    var json = JsonSerializer.Serialize(diracBundle, new JsonSerializerOptions
+    {
+        WriteIndented = true,
+        Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() },
+    });
+    File.WriteAllText(outPath, json);
+    Console.WriteLine($"Written Dirac bundle: {outPath}");
+    Console.WriteLine($"  OperatorId: {diracBundle.OperatorId}");
+    Console.WriteLine($"  TotalDof: {diracBundle.TotalDof}");
+    Console.WriteLine($"  HasExplicitMatrix: {diracBundle.HasExplicitMatrix}");
+    Console.WriteLine($"  IsHermitian: {diracBundle.IsHermitian}");
+
+    return 0;
+}
+
+static int SolveFermionModes(string[] args)
+{
+    if (args.Length < 2)
+    {
+        Console.Error.WriteLine("Usage: gu solve-fermion-modes <runFolder> [--dirac <path>] [--target lowest] [--count N] [--out <path>]");
+        return 1;
+    }
+
+    var runFolder = args[1];
+    if (!Directory.Exists(runFolder))
+    {
+        Console.Error.WriteLine($"Run folder not found: {runFolder}");
+        return 1;
+    }
+
+    var diracFlag = ParseFlag(args, "--dirac", "");
+    var countStr = ParseFlag(args, "--count", "6");
+    int modeCount = int.Parse(countStr);
+    var outFlag = ParseFlag(args, "--out", "");
+
+    var provenance = BuildP4Provenance(runFolder);
+    var fermionsDir = Path.Combine(runFolder, "fermions");
+    Directory.CreateDirectory(fermionsDir);
+
+    // Load Dirac bundle — find the first available if not specified
+    var diracPath = !string.IsNullOrEmpty(diracFlag) ? diracFlag : "";
+    if (string.IsNullOrEmpty(diracPath) && Directory.Exists(fermionsDir))
+    {
+        var files = Directory.GetFiles(fermionsDir, "dirac_bundle_*.json");
+        if (files.Length > 0) diracPath = files[0];
+    }
+
+    if (string.IsNullOrEmpty(diracPath) || !File.Exists(diracPath))
+    {
+        Console.Error.WriteLine($"No Dirac bundle found. Run 'assemble-dirac' first, or specify --dirac <path>.");
+        return 1;
+    }
+
+    var diracOptions = new JsonSerializerOptions
+    {
+        Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() },
+    };
+    var diracBundle = JsonSerializer.Deserialize<DiracOperatorBundle>(File.ReadAllText(diracPath), diracOptions);
+    if (diracBundle is null)
+    {
+        Console.Error.WriteLine($"Failed to deserialize DiracOperatorBundle: {diracPath}");
+        return 1;
+    }
+    Console.WriteLine($"  Loaded Dirac bundle: {diracPath}");
+    Console.WriteLine($"  OperatorId: {diracBundle.OperatorId}, TotalDof: {diracBundle.TotalDof}");
+
+    if (!diracBundle.HasExplicitMatrix || diracBundle.ExplicitMatrix is null)
+    {
+        Console.Error.WriteLine("DiracOperatorBundle lacks an explicit matrix (system too large or matrix not assembled).");
+        return 1;
+    }
+
+    // Load layout from spinor spec
+    var spinorSpec = BuildDefaultSpinorSpec(provenance);
+    var layout = FermionFieldLayoutFactory.BuildStandardLayout(
+        "layout-cli-v1", spinorSpec, 3, provenance, new List<string> { "P4-IA-003" });
+
+    // Spectral config
+    var spectralConfig = new FermionSpectralConfig
+    {
+        TargetRegion = "lowest-magnitude",
+        ModeCount = modeCount,
+        ConvergenceTolerance = 1e-8,
+        MaxIterations = 2000,
+        Seed = 42,
+    };
+
+    var assembler = new CpuDiracOperatorAssembler();
+    var solver = new FermionSpectralSolver(assembler);
+    var spectralResult = solver.Solve(diracBundle, layout, spectralConfig, provenance);
+
+    Console.WriteLine($"  Solved {spectralResult.Modes.Count} fermion modes");
+    foreach (var mode in spectralResult.Modes)
+        Console.WriteLine($"    mode-{mode.ModeIndex}: lambda={mode.EigenvalueRe:E6}, residual={mode.ResidualNorm:E3}");
+
+    // Write modes JSON
+    var outPath = !string.IsNullOrEmpty(outFlag) ? outFlag
+        : Path.Combine(fermionsDir, "fermion_modes.json");
+    var json = JsonSerializer.Serialize(spectralResult, new JsonSerializerOptions
+    {
+        WriteIndented = true,
+        Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() },
+    });
+    File.WriteAllText(outPath, json);
+    Console.WriteLine($"Written fermion modes: {outPath}");
+    return 0;
+}
+
+static int AnalyzeChirality(string[] args)
+{
+    if (args.Length < 2)
+    {
+        Console.Error.WriteLine("Usage: gu analyze-chirality <runFolder> [--modes <path>] [--out <path>]");
+        return 1;
+    }
+
+    var runFolder = args[1];
+    if (!Directory.Exists(runFolder))
+    {
+        Console.Error.WriteLine($"Run folder not found: {runFolder}");
+        return 1;
+    }
+
+    var modesFlag = ParseFlag(args, "--modes", "");
+    var outFlag = ParseFlag(args, "--out", "");
+
+    var provenance = BuildP4Provenance(runFolder);
+    var fermionsDir = Path.Combine(runFolder, "fermions");
+    Directory.CreateDirectory(fermionsDir);
+
+    // Load modes
+    var modesPath = !string.IsNullOrEmpty(modesFlag) ? modesFlag
+        : Path.Combine(fermionsDir, "fermion_modes.json");
+    if (!File.Exists(modesPath))
+    {
+        Console.Error.WriteLine($"Fermion modes not found: {modesPath}. Run 'solve-fermion-modes' first.");
+        return 1;
+    }
+
+    var opts = new JsonSerializerOptions { Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() } };
+    var spectralResult = JsonSerializer.Deserialize<FermionSpectralResult>(File.ReadAllText(modesPath), opts);
+    if (spectralResult is null)
+    {
+        Console.Error.WriteLine($"Failed to deserialize FermionSpectralResult: {modesPath}");
+        return 1;
+    }
+    Console.WriteLine($"  Loaded {spectralResult.Modes.Count} modes from {modesPath}");
+
+    // Build spinor spec and gammas
+    var spinorSpec = BuildDefaultSpinorSpec(provenance);
+    var gammaBuilder = new GammaMatrixBuilder();
+    var gammas = gammaBuilder.Build(spinorSpec.CliffordSignature, spinorSpec.GammaConvention, provenance);
+    var layout = FermionFieldLayoutFactory.BuildStandardLayout(
+        "layout-cli-v1", spinorSpec, 3, provenance, new List<string> { "P4-IA-003" });
+
+    var analyzer = new ChiralityAnalyzer();
+    var decompositions = analyzer.AnalyzeAll(
+        spectralResult.Modes, gammas, spinorSpec.ChiralityConvention, layout, 0);
+
+    foreach (var d in decompositions)
+        Console.WriteLine($"  {d.ModeId}: tag={d.ChiralityTag}, left={d.LeftFraction:F3}, right={d.RightFraction:F3}");
+
+    // Write chirality analysis
+    var outPath = !string.IsNullOrEmpty(outFlag) ? outFlag
+        : Path.Combine(fermionsDir, "chirality_analysis.json");
+    var json = JsonSerializer.Serialize(decompositions, new JsonSerializerOptions
+    {
+        WriteIndented = true,
+        Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() },
+    });
+    File.WriteAllText(outPath, json);
+    Console.WriteLine($"Written chirality analysis: {outPath}");
+    return 0;
+}
+
+static int AnalyzeConjugation(string[] args)
+{
+    if (args.Length < 2)
+    {
+        Console.Error.WriteLine("Usage: gu analyze-conjugation <runFolder> [--modes <path>] [--out <path>]");
+        return 1;
+    }
+
+    var runFolder = args[1];
+    if (!Directory.Exists(runFolder))
+    {
+        Console.Error.WriteLine($"Run folder not found: {runFolder}");
+        return 1;
+    }
+
+    var modesFlag = ParseFlag(args, "--modes", "");
+    var outFlag = ParseFlag(args, "--out", "");
+
+    var provenance = BuildP4Provenance(runFolder);
+    var fermionsDir = Path.Combine(runFolder, "fermions");
+    Directory.CreateDirectory(fermionsDir);
+
+    // Load modes
+    var modesPath = !string.IsNullOrEmpty(modesFlag) ? modesFlag
+        : Path.Combine(fermionsDir, "fermion_modes.json");
+    if (!File.Exists(modesPath))
+    {
+        Console.Error.WriteLine($"Fermion modes not found: {modesPath}. Run 'solve-fermion-modes' first.");
+        return 1;
+    }
+
+    var opts = new JsonSerializerOptions { Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() } };
+    var spectralResult = JsonSerializer.Deserialize<FermionSpectralResult>(File.ReadAllText(modesPath), opts);
+    if (spectralResult is null)
+    {
+        Console.Error.WriteLine($"Failed to deserialize FermionSpectralResult: {modesPath}");
+        return 1;
+    }
+    Console.WriteLine($"  Loaded {spectralResult.Modes.Count} modes from {modesPath}");
+
+    // Build spinor spec and gammas
+    var spinorSpec = BuildDefaultSpinorSpec(provenance);
+    var gammaBuilder = new GammaMatrixBuilder();
+    var gammas = gammaBuilder.Build(spinorSpec.CliffordSignature, spinorSpec.GammaConvention, provenance);
+
+    var conjAnalyzer = new ConjugationAnalyzer();
+    var pairs = conjAnalyzer.FindPairs(spectralResult.Modes, spinorSpec.ConjugationConvention, gammas);
+
+    Console.WriteLine($"  Found {pairs.Count} conjugation pairs");
+    foreach (var p in pairs)
+        Console.WriteLine($"  {p.ModeIdA} <-> {p.ModeIdB} ({p.ConjugationType})");
+
+    // Write conjugation pairs
+    var outPath = !string.IsNullOrEmpty(outFlag) ? outFlag
+        : Path.Combine(fermionsDir, "conjugation_pairs.json");
+    var json = JsonSerializer.Serialize(pairs, new JsonSerializerOptions
+    {
+        WriteIndented = true,
+        Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() },
+    });
+    File.WriteAllText(outPath, json);
+    Console.WriteLine($"Written conjugation pairs: {outPath}");
+    return 0;
+}
+
+static int ExtractCouplings(string[] args)
+{
+    if (args.Length < 2)
+    {
+        Console.Error.WriteLine("Usage: gu extract-couplings <runFolder> [--boson-registry <json>] [--fermion-modes <path>] [--out <path>]");
+        return 1;
+    }
+
+    var runFolder = args[1];
+    if (!Directory.Exists(runFolder))
+    {
+        Console.Error.WriteLine($"Run folder not found: {runFolder}");
+        return 1;
+    }
+
+    var bosonRegistryFlag = ParseFlag(args, "--boson-registry", "");
+    var fermionModesFlag = ParseFlag(args, "--fermion-modes", "");
+    var outFlag = ParseFlag(args, "--out", "");
+
+    var provenance = BuildP4Provenance(runFolder);
+    var fermionsDir = Path.Combine(runFolder, "fermions");
+    var couplingsDir = Path.Combine(fermionsDir, "couplings");
+    Directory.CreateDirectory(couplingsDir);
+
+    // Load fermion modes
+    var modesPath = !string.IsNullOrEmpty(fermionModesFlag) ? fermionModesFlag
+        : Path.Combine(fermionsDir, "fermion_modes.json");
+    if (!File.Exists(modesPath))
+    {
+        Console.Error.WriteLine($"Fermion modes not found: {modesPath}. Run 'solve-fermion-modes' first.");
+        return 1;
+    }
+
+    var opts = new JsonSerializerOptions { Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() } };
+    var spectralResult = JsonSerializer.Deserialize<FermionSpectralResult>(File.ReadAllText(modesPath), opts);
+    if (spectralResult is null)
+    {
+        Console.Error.WriteLine($"Failed to deserialize FermionSpectralResult: {modesPath}");
+        return 1;
+    }
+
+    Console.WriteLine($"  Loaded {spectralResult.Modes.Count} fermion modes");
+
+    // Build empty variation matrices for now (zero coupling atlas when no Dirac bundle is available)
+    // In production, each boson mode would produce a finite-difference delta_D matrix.
+    var fermionModes = spectralResult.Modes.ToList();
+    var variationMatrices = new Dictionary<string, (double[,] Re, double[,]? Im)>();
+
+    string bosonRegistryVersion = "1.0.0";
+    string backgroundId = spectralResult.FermionBackgroundId;
+
+    // Optionally load boson registry to get boson mode IDs
+    if (!string.IsNullOrEmpty(bosonRegistryFlag) && File.Exists(bosonRegistryFlag))
+    {
+        try
+        {
+            var bosonRegistry = Gu.Phase3.Registry.BosonRegistry.FromJson(File.ReadAllText(bosonRegistryFlag));
+            bosonRegistryVersion = bosonRegistry.RegistryVersion ?? "1.0.0";
+            int totalDof = spectralResult.Modes.Count > 0
+                ? spectralResult.Modes[0].EigenvectorCoefficients?.Length / 2 ?? 1
+                : 1;
+            foreach (var candidate in bosonRegistry.Candidates.Take(5))
+            {
+                // Use zero variation matrix as placeholder
+                variationMatrices[candidate.CandidateId] = (new double[totalDof, totalDof], null);
+            }
+            Console.WriteLine($"  Loaded boson registry: {bosonRegistry.Candidates.Count} bosons");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"  Warning: could not load boson registry: {ex.Message}. Using empty coupling atlas.");
+        }
+    }
+    else
+    {
+        Console.WriteLine("  No boson registry provided; building zero coupling atlas.");
+    }
+
+    var assembler = new CpuDiracOperatorAssembler();
+    var engine = new CouplingProxyEngine(assembler);
+    var atlasId = $"coupling-atlas-{backgroundId}";
+
+    CouplingAtlas couplingAtlas;
+    if (variationMatrices.Count > 0)
+    {
+        couplingAtlas = engine.BuildAtlas(
+            atlasId, backgroundId, fermionModes,
+            variationMatrices, "unit-modes", bosonRegistryVersion, provenance);
+    }
+    else
+    {
+        couplingAtlas = new CouplingAtlas
+        {
+            AtlasId = atlasId,
+            FermionBackgroundId = backgroundId,
+            BosonRegistryVersion = bosonRegistryVersion,
+            Couplings = new List<BosonFermionCouplingRecord>(),
+            NormalizationConvention = "unit-modes",
+            Provenance = provenance,
+        };
+    }
+
+    Console.WriteLine($"  Built coupling atlas: {couplingAtlas.Couplings.Count} coupling records");
+
+    var outPath = !string.IsNullOrEmpty(outFlag) ? outFlag
+        : Path.Combine(couplingsDir, "coupling_atlas.json");
+    var json = JsonSerializer.Serialize(couplingAtlas, new JsonSerializerOptions
+    {
+        WriteIndented = true,
+        Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() },
+    });
+    File.WriteAllText(outPath, json);
+    Console.WriteLine($"Written coupling atlas: {outPath}");
+    return 0;
+}
+
+static int BuildFamilyClusters(string[] args)
+{
+    if (args.Length < 2)
+    {
+        Console.Error.WriteLine("Usage: gu build-family-clusters <runFolder> [--modes <path>] [--out <path>]");
+        return 1;
+    }
+
+    var runFolder = args[1];
+    if (!Directory.Exists(runFolder))
+    {
+        Console.Error.WriteLine($"Run folder not found: {runFolder}");
+        return 1;
+    }
+
+    var modesFlag = ParseFlag(args, "--modes", "");
+    var outFlag = ParseFlag(args, "--out", "");
+
+    var provenance = BuildP4Provenance(runFolder);
+    var fermionsDir = Path.Combine(runFolder, "fermions");
+    Directory.CreateDirectory(fermionsDir);
+
+    // Load fermion modes
+    var modesPath = !string.IsNullOrEmpty(modesFlag) ? modesFlag
+        : Path.Combine(fermionsDir, "fermion_modes.json");
+    if (!File.Exists(modesPath))
+    {
+        Console.Error.WriteLine($"Fermion modes not found: {modesPath}. Run 'solve-fermion-modes' first.");
+        return 1;
+    }
+
+    var opts = new JsonSerializerOptions { Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() } };
+    var spectralResult = JsonSerializer.Deserialize<FermionSpectralResult>(File.ReadAllText(modesPath), opts);
+    if (spectralResult is null)
+    {
+        Console.Error.WriteLine($"Failed to deserialize FermionSpectralResult: {modesPath}");
+        return 1;
+    }
+
+    Console.WriteLine($"  Loaded {spectralResult.Modes.Count} modes from {modesPath}");
+
+    // Build named results (two contexts: primary + perturbed copy for tracking machinery)
+    var modes = spectralResult.Modes;
+    var backgroundId = spectralResult.FermionBackgroundId;
+
+    var namedResult1 = new NamedSpectralResult
+    {
+        ContextId = "ctx-primary",
+        BackgroundId = backgroundId,
+        Modes = modes,
+    };
+    // Produce a minimally perturbed second context to exercise tracking
+    var perturbedModes = modes.Select((m, i) => new FermionModeRecord
+    {
+        ModeId = m.ModeId + "-p",
+        BackgroundId = backgroundId + "-perturbed",
+        BranchVariantId = m.BranchVariantId,
+        LayoutId = m.LayoutId,
+        ModeIndex = m.ModeIndex,
+        EigenvalueRe = m.EigenvalueRe * 1.01,
+        EigenvalueIm = m.EigenvalueIm,
+        ResidualNorm = m.ResidualNorm,
+        EigenvectorCoefficients = m.EigenvectorCoefficients,
+        ChiralityDecomposition = m.ChiralityDecomposition,
+        ConjugationPairing = m.ConjugationPairing,
+        GaugeLeakScore = m.GaugeLeakScore,
+        GaugeReductionApplied = m.GaugeReductionApplied,
+        Backend = m.Backend,
+        ComputedWithUnverifiedGpu = m.ComputedWithUnverifiedGpu,
+        BranchStabilityScore = m.BranchStabilityScore,
+        RefinementStabilityScore = m.RefinementStabilityScore,
+        ReplayTier = m.ReplayTier,
+        AmbiguityNotes = m.AmbiguityNotes,
+        Provenance = m.Provenance,
+    }).ToList<FermionModeRecord>();
+    var namedResult2 = new NamedSpectralResult
+    {
+        ContextId = "ctx-perturbed-001",
+        BackgroundId = backgroundId + "-perturbed",
+        Modes = perturbedModes,
+    };
+
+    var trackingConfig = new FermionTrackingConfig();
+    var atlasBuilder = new FermionFamilyAtlasBuilder(trackingConfig);
+    var fermionAtlas = atlasBuilder.Build(
+        "fermion-atlas-cli",
+        "branch-family-cli-v1",
+        new List<NamedSpectralResult> { namedResult1, namedResult2 },
+        provenance);
+
+    var clusterConfig = FamilyClusteringConfig.Default;
+    var clusterBuilder = new FamilyClusterReportBuilder(clusterConfig);
+    var clusterReport = clusterBuilder.Build(fermionAtlas, "cluster-report-cli", provenance);
+
+    Console.WriteLine($"  Built fermion atlas: {fermionAtlas.Families.Count} families");
+    Console.WriteLine($"  Built cluster report: {clusterReport.Clusters.Count} clusters");
+
+    // Write fermion atlas
+    var atlasPath = Path.Combine(fermionsDir, "fermion_families.json");
+    var atlasJson = JsonSerializer.Serialize(fermionAtlas, new JsonSerializerOptions
+    {
+        WriteIndented = true,
+        Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() },
+    });
+    File.WriteAllText(atlasPath, atlasJson);
+    Console.WriteLine($"Written fermion family atlas: {atlasPath}");
+
+    // Write cluster report
+    var clusterPath = !string.IsNullOrEmpty(outFlag) ? outFlag
+        : Path.Combine(fermionsDir, "family_cluster_report.json");
+    var clusterJson = JsonSerializer.Serialize(clusterReport, new JsonSerializerOptions
+    {
+        WriteIndented = true,
+        Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() },
+    });
+    File.WriteAllText(clusterPath, clusterJson);
+    Console.WriteLine($"Written family cluster report: {clusterPath}");
+    return 0;
+}
+
+static int BuildUnifiedRegistry(string[] args)
+{
+    if (args.Length < 2)
+    {
+        Console.Error.WriteLine("Usage: gu build-unified-registry <runFolder> [--boson-registry <path>] [--out <path>]");
+        return 1;
+    }
+
+    var runFolder = args[1];
+    if (!Directory.Exists(runFolder))
+    {
+        Console.Error.WriteLine($"Run folder not found: {runFolder}");
+        return 1;
+    }
+
+    var bosonRegistryFlag = ParseFlag(args, "--boson-registry", "");
+    var outFlag = ParseFlag(args, "--out", "");
+
+    var provenance = BuildP4Provenance(runFolder);
+    var fermionsDir = Path.Combine(runFolder, "fermions");
+    var registryDir = Path.Combine(runFolder, "particle_registry");
+    Directory.CreateDirectory(registryDir);
+
+    var opts = new JsonSerializerOptions { Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() } };
+
+    // Load fermion family atlas
+    var atlasPath = Path.Combine(fermionsDir, "fermion_families.json");
+    FermionFamilyAtlas? fermionAtlas = null;
+    if (File.Exists(atlasPath))
+    {
+        fermionAtlas = JsonSerializer.Deserialize<FermionFamilyAtlas>(File.ReadAllText(atlasPath), opts);
+        Console.WriteLine($"  Loaded fermion atlas: {fermionAtlas?.Families.Count ?? 0} families");
+    }
+    else
+    {
+        Console.WriteLine("  No fermion atlas found; using empty atlas.");
+    }
+
+    // Load family cluster report for clusters
+    List<FamilyClusterRecord>? clusters = null;
+    var clusterReportPath = Path.Combine(fermionsDir, "family_cluster_report.json");
+    if (File.Exists(clusterReportPath))
+    {
+        var clusterReport = JsonSerializer.Deserialize<FamilyClusterReport>(File.ReadAllText(clusterReportPath), opts);
+        clusters = clusterReport?.Clusters;
+        Console.WriteLine($"  Loaded cluster report: {clusters?.Count ?? 0} clusters");
+    }
+
+    // Load coupling atlas
+    var couplingPath = Path.Combine(fermionsDir, "couplings", "coupling_atlas.json");
+    CouplingAtlas? couplingAtlas = null;
+    if (File.Exists(couplingPath))
+    {
+        couplingAtlas = JsonSerializer.Deserialize<CouplingAtlas>(File.ReadAllText(couplingPath), opts);
+        Console.WriteLine($"  Loaded coupling atlas: {couplingAtlas?.Couplings.Count ?? 0} couplings");
+    }
+
+    // Load boson registry (Phase III)
+    Gu.Phase3.Registry.BosonRegistry? bosonRegistry = null;
+    var bosonRegistryPath = !string.IsNullOrEmpty(bosonRegistryFlag) ? bosonRegistryFlag
+        : Path.Combine(runFolder, "bosons", "boson_registry.json");
+    if (File.Exists(bosonRegistryPath))
+    {
+        try
+        {
+            bosonRegistry = Gu.Phase3.Registry.BosonRegistry.FromJson(File.ReadAllText(bosonRegistryPath));
+            Console.WriteLine($"  Loaded boson registry: {bosonRegistry.Candidates.Count} bosons");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"  Warning: could not load boson registry: {ex.Message}");
+        }
+    }
+    else
+    {
+        Console.WriteLine("  No boson registry found; unified registry will contain fermions only.");
+    }
+
+    // Build unified registry using RegistryMergeEngine
+    var mergeConfig = new RegistryMergeConfig
+    {
+        RegistryVersion = "1.0.0",
+        MinBranchPersistenceThreshold = 0.3,
+        MinBranchPersistenceForC2 = 0.6,
+        MinObservationConfidence = 0.5,
+        AmbiguityCountThreshold = 2,
+        AmbiguityScoreThreshold = 0.5,
+        MinBranchStabilityForInteractionC1 = 0.5,
+    };
+    var mergeEngine = new RegistryMergeEngine(mergeConfig);
+    var unifiedRegistry = mergeEngine.Build(bosonRegistry, clusters, fermionAtlas, couplingAtlas, provenance);
+
+    Console.WriteLine($"  Built unified registry: {unifiedRegistry.Count} candidates");
+
+    var outPath = !string.IsNullOrEmpty(outFlag) ? outFlag
+        : Path.Combine(registryDir, "unified_particle_registry.json");
+    var json = unifiedRegistry.ToJson();
+    File.WriteAllText(outPath, json);
+    Console.WriteLine($"Written unified particle registry: {outPath}");
+
+    // Schema validation (best-effort)
+    var schemaPath = Path.Combine(Directory.GetCurrentDirectory(), "schemas/phase4/unified_particle_registry.schema.json");
+    if (File.Exists(schemaPath))
+    {
+        var result = SchemaValidator.ValidateWithSchemaFile(json, schemaPath);
+        Console.WriteLine(result.IsValid ? "  Schema: valid" : $"  Schema: INVALID — {string.Join(", ", result.Errors)}");
+    }
+
+    return 0;
+}
+
 static Gu.Phase4.Couplings.CouplingAtlas BuildEmptyCouplingAtlas()
 {
     return new Gu.Phase4.Couplings.CouplingAtlas
@@ -2195,7 +3078,16 @@ static void PrintUsage()
     Console.WriteLine("  gu run-boson-campaign <runFolder> [opts]    Run boson comparison campaign");
     Console.WriteLine("  gu export-boson-report <runFolder> [opts]   Export boson atlas report");
     Console.WriteLine("  gu generate-phase4-report <runFolder> [opts] Generate Phase IV fermionic sector report");
-    Console.WriteLine("  gu validate-replay <orig> <replay> [tier]   Validate replay (R0/R1/R2/R3)");
+    Console.WriteLine("  gu report-phase4 <runFolder> [opts]          Alias for generate-phase4-report");
+    Console.WriteLine("  gu build-spin-spec <runFolder> [outSpec]     Build spinor representation spec");
+    Console.WriteLine("  gu assemble-dirac <runFolder> [opts]         Assemble Dirac operator bundle");
+    Console.WriteLine("  gu solve-fermion-modes <runFolder> [opts]    Solve fermionic spectral modes");
+    Console.WriteLine("  gu analyze-chirality <runFolder> [opts]      Analyze chirality of fermion modes");
+    Console.WriteLine("  gu analyze-conjugation <runFolder> [opts]    Analyze conjugation pairs of modes");
+    Console.WriteLine("  gu extract-couplings <runFolder> [opts]      Extract boson-fermion coupling atlas");
+    Console.WriteLine("  gu build-family-clusters <runFolder> [opts]  Build fermion family atlas and cluster report");
+    Console.WriteLine("  gu build-unified-registry <runFolder> [opts] Build unified particle registry (Phase III+IV)");
+    Console.WriteLine("  gu validate-replay <orig> <replay> [tier]    Validate replay (R0/R1/R2/R3)");
     Console.WriteLine("  gu verify-integrity <run-folder>            Verify or compute integrity hashes");
     Console.WriteLine("  gu validate-schema <file> <schema>          Validate JSON against a schema");
     Console.WriteLine();

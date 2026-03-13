@@ -1,6 +1,7 @@
 using System.Numerics;
 using Gu.Core;
 using Gu.Geometry;
+using Gu.Math;
 using Gu.Phase3.Backgrounds;
 using Gu.Phase4.Fermions;
 using Gu.Phase4.Spin;
@@ -154,9 +155,40 @@ public sealed class CpuSpinConnectionBuilder : ISpinConnectionBuilder
             return result;
         }
 
-        // For other dimG values: use zero gauge coupling (conservative fallback).
-        // Downstream can detect this via the AssemblyMethod field.
-        return result;
+        if (dimG == 8)
+        {
+            // su(3): structure constants f_{abc} from LieAlgebraFactory (Gell-Mann basis).
+            // [rho_adj(T_a)]_{bc} = f_{abc} (totally antisymmetric, all-real).
+            // LieAlgebra.GetStructureConstant(a, b, c) returns f^c_{ab} = f_{abc} for su(3).
+            var su3 = LieAlgebraFactory.CreateSu3();
+            var f = BuildSu3StructureConstants(su3);
+
+            for (int e = 0; e < edgeCount; e++)
+            {
+                // Accumulate G_e_{bc} = sum_a omega_e^a * f[a,b,c]
+                var G = new double[dimG, dimG]; // real matrix (su(3) structure constants are real)
+                for (int a = 0; a < dimG; a++)
+                {
+                    double omega_a = bosonicState[e * dimG + a];
+                    for (int b = 0; b < dimG; b++)
+                        for (int c = 0; c < dimG; c++)
+                            G[b, c] += omega_a * f[a, b, c];
+                }
+
+                int baseIdx = e * dimG * dimG * 2;
+                for (int b = 0; b < dimG; b++)
+                    for (int c = 0; c < dimG; c++)
+                    {
+                        result[baseIdx + (b * dimG + c) * 2]     = G[b, c]; // Re
+                        result[baseIdx + (b * dimG + c) * 2 + 1] = 0.0;    // Im
+                    }
+            }
+            return result;
+        }
+
+        throw new NotSupportedException(
+            $"Gauge dimension {dimG} is not supported by CpuSpinConnectionBuilder. " +
+            $"Supported dimensions: 1 (trivial/u(1)), 3 (su(2)), 8 (su(3)).");
     }
 
     /// <summary>
@@ -169,6 +201,25 @@ public sealed class CpuSpinConnectionBuilder : ISpinConnectionBuilder
         f[0, 1, 2] = 1.0; f[0, 2, 1] = -1.0;
         f[1, 0, 2] = -1.0; f[1, 2, 0] = 1.0;
         f[2, 0, 1] = 1.0; f[2, 1, 0] = -1.0;
+        return f;
+    }
+
+    /// <summary>
+    /// Build su(3) structure constants f[a,b,c] from LieAlgebraFactory.CreateSu3().
+    ///
+    /// The LieAlgebra stores f^c_{ab} (coefficient of T_c in [T_a, T_b]) at index
+    /// [a * dim * dim + b * dim + c]. For the totally antisymmetric su(3) structure constants,
+    /// f^c_{ab} = f_{abc}, so GetStructureConstant(a, b, c) gives the adjoint matrix element
+    /// [rho_adj(T_a)]_{bc} = f_{abc} directly.
+    /// </summary>
+    private static double[,,] BuildSu3StructureConstants(LieAlgebra su3)
+    {
+        int dim = su3.Dimension; // 8 for su(3)
+        var f = new double[dim, dim, dim];
+        for (int a = 0; a < dim; a++)
+            for (int b = 0; b < dim; b++)
+                for (int c = 0; c < dim; c++)
+                    f[a, b, c] = su3.GetStructureConstant(a, b, c);
         return f;
     }
 

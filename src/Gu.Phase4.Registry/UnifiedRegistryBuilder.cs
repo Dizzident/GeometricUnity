@@ -38,13 +38,26 @@ public sealed class UnifiedRegistryBuilder
     /// <summary>
     /// Build a registry from family clusters, boson candidates, and (optionally) coupling atlases.
     /// </summary>
+    /// <param name="registryId">Registry identifier.</param>
+    /// <param name="registryVersion">Registry version string.</param>
+    /// <param name="fermionClusters">Phase IV family cluster records.</param>
+    /// <param name="bosonCandidates">Phase III boson candidates (optional).</param>
+    /// <param name="couplingAtlases">Phase IV coupling atlases (optional).</param>
+    /// <param name="provenance">Provenance metadata.</param>
+    /// <param name="observationConfidenceByClusterId">
+    /// Lookup of cluster ID → observation confidence (e.g. BranchPersistenceScore from
+    /// FermionObservationSummary). When provided, ObservationConfidence is populated from
+    /// this lookup and the LowObservation demotion rule fires for C3+ candidates below
+    /// StabilityThreshold. Pass null to retain the default 0.0 behaviour.
+    /// </param>
     public UnifiedParticleRegistry Build(
         string registryId,
         string registryVersion,
         IReadOnlyList<FamilyClusterRecord> fermionClusters,
         IReadOnlyList<CandidateBosonRecord>? bosonCandidates,
         IReadOnlyList<CouplingAtlas>? couplingAtlases,
-        ProvenanceMeta provenance)
+        ProvenanceMeta provenance,
+        IReadOnlyDictionary<string, double>? observationConfidenceByClusterId = null)
     {
         ArgumentNullException.ThrowIfNull(registryId);
         ArgumentNullException.ThrowIfNull(registryVersion);
@@ -59,7 +72,7 @@ public sealed class UnifiedRegistryBuilder
         foreach (var cluster in fermionClusters)
         {
             string particleId = $"fermion-{registryId}-{fermionIdx:D4}";
-            var record = BuildFermionRecord(particleId, cluster, registryVersion, provenance);
+            var record = BuildFermionRecord(particleId, cluster, registryVersion, provenance, observationConfidenceByClusterId);
             records.Add(record);
             fermionIdx++;
         }
@@ -112,7 +125,8 @@ public sealed class UnifiedRegistryBuilder
         string particleId,
         FamilyClusterRecord cluster,
         string registryVersion,
-        ProvenanceMeta provenance)
+        ProvenanceMeta provenance,
+        IReadOnlyDictionary<string, double>? observationConfidenceByClusterId)
     {
         var demotions = new List<ParticleClaimDemotion>();
         // Default: stable, no comparison yet — canonical full-name format (BLOCKER-M42-1 fix)
@@ -150,6 +164,32 @@ public sealed class UnifiedRegistryBuilder
                 claimClass = "C2_BranchStableCandidate"; // provisional
         }
 
+        // Observation confidence from FermionObservationSummary.BranchPersistenceScore (GAP-2)
+        // Only set and apply when the caller provides a confidence lookup (observationConfidenceByClusterId != null).
+        // When null is passed, no observation data was provided and we skip the LowObservation demotion.
+        double observationConfidence = 0.0;
+        bool hasObservationData = false;
+        if (observationConfidenceByClusterId is not null
+            && observationConfidenceByClusterId.TryGetValue(cluster.ClusterId, out double confVal2))
+        {
+            observationConfidence = confVal2;
+            hasObservationData = true;
+        }
+
+        // LowObservation demotion: fires only when real observation data was supplied and confidence is low
+        int claimLevel = UnifiedParticleRegistry.ParseClaimClassLevel(claimClass);
+        if (hasObservationData && observationConfidence < _config.StabilityThreshold && claimLevel >= 3)
+        {
+            demotions.Add(new ParticleClaimDemotion
+            {
+                Reason = "LowObservation",
+                Details = $"Observation confidence {observationConfidence:F3} below threshold {_config.StabilityThreshold:F3}.",
+                FromClaimClass = claimClass,
+                ToClaimClass = "C2_BranchStableCandidate",
+            });
+            claimClass = "C2_BranchStableCandidate";
+        }
+
         return new UnifiedParticleRecord
         {
             ParticleId = particleId,
@@ -161,8 +201,8 @@ public sealed class UnifiedRegistryBuilder
             Chirality = cluster.DominantChirality,
             MassLikeEnvelope = cluster.EigenvalueMagnitudeEnvelope,
             BranchStabilityScore = cluster.MeanBranchPersistence,
-            ObservationConfidence = 0.0, // not yet through M43
-            ComparisonEvidenceScore = 0.0, // not yet through M43
+            ObservationConfidence = observationConfidence,
+            ComparisonEvidenceScore = 0.0,
             ClaimClass = claimClass,
             ComputedWithUnverifiedGpu = false, // unknown at this stage
             Demotions = demotions,

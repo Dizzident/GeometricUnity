@@ -24,7 +24,10 @@
     <ProjectReference Include="..\..\src\Gu.Phase3.Campaigns\Gu.Phase3.Campaigns.csproj" />
     <ProjectReference Include="..\..\src\Gu.Phase3.Reporting\Gu.Phase3.Reporting.csproj" />
     <ProjectReference Include="..\..\src\Gu.Phase3.Observables\Gu.Phase3.Observables.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase4.Spin\Gu.Phase4.Spin.csproj" />
     <ProjectReference Include="..\..\src\Gu.Phase4.Fermions\Gu.Phase4.Fermions.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase4.Dirac\Gu.Phase4.Dirac.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase4.Chirality\Gu.Phase4.Chirality.csproj" />
     <ProjectReference Include="..\..\src\Gu.Phase4.Couplings\Gu.Phase4.Couplings.csproj" />
     <ProjectReference Include="..\..\src\Gu.Phase4.FamilyClustering\Gu.Phase4.FamilyClustering.csproj" />
     <ProjectReference Include="..\..\src\Gu.Phase4.Registry\Gu.Phase4.Registry.csproj" />

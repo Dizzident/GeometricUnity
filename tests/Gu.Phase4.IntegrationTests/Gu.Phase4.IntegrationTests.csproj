@@ -28,6 +28,7 @@
     <ProjectReference Include="..\..\src\Gu.Phase4.FamilyClustering\Gu.Phase4.FamilyClustering.csproj" />
     <ProjectReference Include="..\..\src\Gu.Phase4.Registry\Gu.Phase4.Registry.csproj" />
     <ProjectReference Include="..\..\src\Gu.Phase4.Observation\Gu.Phase4.Observation.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase4.Comparison\Gu.Phase4.Comparison.csproj" />
     <ProjectReference Include="..\..\src\Gu.Phase4.Reporting\Gu.Phase4.Reporting.csproj" />
   </ItemGroup>
 

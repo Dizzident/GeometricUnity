@@ -346,4 +346,70 @@ public sealed class UnifiedRegistryBuilderTests
         Assert.Equal(1, registry.CountAboveClass("C2"));
         Assert.Equal(0, registry.CountAboveClass("C4"));
     }
+
+    // -----------------------------------------------------------------------
+    // GAP-2: LowObservation demotion via observationConfidenceByClusterId
+    // -----------------------------------------------------------------------
+
+    [Fact]
+    public void Build_LowObservationConfidence_DemotesC3ToC2WithLowObservationRecord()
+    {
+        // A high-persistence cluster would normally be C3; low observation confidence demotes it to C2.
+        var builder = new UnifiedRegistryBuilder(UnifiedRegistryConfig.Default);
+        var cluster = MakeCluster("c0", 1.0, "left", branchPersistence: 0.9); // would be C3
+
+        // BranchPersistenceScore = 0.3 is below StabilityThreshold = 0.5
+        var observationConfidence = new Dictionary<string, double> { ["c0"] = 0.3 };
+
+        var registry = builder.Build(
+            "reg-gap2-low", "v1",
+            new[] { cluster }, null, null, TestProvenance(),
+            observationConfidenceByClusterId: observationConfidence);
+
+        var record = registry.Candidates[0];
+        Assert.Equal("C2_BranchStableCandidate", record.ClaimClass);
+        Assert.Equal(0.3, record.ObservationConfidence, precision: 10);
+        Assert.Contains(record.Demotions, d => d.Reason == "LowObservation");
+    }
+
+    [Fact]
+    public void Build_HighObservationConfidence_NotDemotedByLowObservation()
+    {
+        // A high-persistence cluster with high observation confidence stays at C3.
+        var builder = new UnifiedRegistryBuilder(UnifiedRegistryConfig.Default);
+        var cluster = MakeCluster("c0", 1.0, "left", branchPersistence: 0.9); // would be C3
+
+        // BranchPersistenceScore = 0.9 is above StabilityThreshold = 0.5 — no LowObservation demotion
+        var observationConfidence = new Dictionary<string, double> { ["c0"] = 0.9 };
+
+        var registry = builder.Build(
+            "reg-gap2-high", "v1",
+            new[] { cluster }, null, null, TestProvenance(),
+            observationConfidenceByClusterId: observationConfidence);
+
+        var record = registry.Candidates[0];
+        Assert.Equal("C3_ObservedStableCandidate", record.ClaimClass);
+        Assert.Equal(0.9, record.ObservationConfidence, precision: 10);
+        Assert.DoesNotContain(record.Demotions, d => d.Reason == "LowObservation");
+    }
+
+    [Fact]
+    public void Build_ObservationConfidenceNull_DefaultsToZero_NoLowObservationDemotion()
+    {
+        // Without observation confidence dict, ObservationConfidence = 0.0 and
+        // LowObservation demotion does NOT fire (null means "no data", not "poor data").
+        var builder = new UnifiedRegistryBuilder(UnifiedRegistryConfig.Default);
+        var cluster = MakeCluster("c0", 1.0, "left", branchPersistence: 0.9);
+
+        var registry = builder.Build(
+            "reg-gap2-null", "v1",
+            new[] { cluster }, null, null, TestProvenance(),
+            observationConfidenceByClusterId: null);
+
+        var record = registry.Candidates[0];
+        Assert.Equal(0.0, record.ObservationConfidence, precision: 10);
+        // C3 is preserved — no LowObservation demotion without data
+        Assert.Equal("C3_ObservedStableCandidate", record.ClaimClass);
+        Assert.DoesNotContain(record.Demotions, d => d.Reason == "LowObservation");
+    }
 }
