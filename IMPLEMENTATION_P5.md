@@ -15,8 +15,13 @@ It assumes:
   recovery graph, comparison campaigns, reporting.
 - Phase III is complete: background atlas, bosonic spectra, mode tracking,
   property extraction, candidate boson registry.
-- Phase IV is complete: fermionic sector, unified particle registry, and the
-  corrective prerequisites added to `IMPLEMENTATION_PLAN_P4.md`.
+- Phase IV feature work is present: fermionic sector, unified particle
+  registry, and the corrective prerequisites added to
+  `IMPLEMENTATION_PLAN_P4.md`.
+- In the current repository state, several of those corrective prerequisites are
+  still only partially closed in the CLI/runtime and checked-in artifacts. Phase
+  V work must treat those items as entry gaps to close, not as already-settled
+  validation evidence.
 
 It also assumes the current branch-local decisions are recorded in
 `ASSUMPTIONS.md`.
@@ -129,6 +134,142 @@ The central discipline is:
 > Claims may be promoted only when they survive declared branch variation,
 > refinement checks, environment changes, observation-chain validation, and
 > quantitative comparison rules.
+
+## 2.1 Phase V Entry Gaps Still Open In The Repository
+
+Before any Phase V branch-robustness or quantitative-validation claim is taken
+seriously, the following repository-state gaps must be closed.
+
+These are not new physics requirements. They are implementation and provenance
+requirements needed so that Phase V studies measure the intended branch and
+background rather than a toy fallback.
+
+### G-001 Runtime branch selection is still bypassed in core CLI paths
+
+The repository contains explicit branch-resolution machinery, but the active CLI
+solve/runtime paths still instantiate trivial torsion and identity Shiab
+directly in the main execution flow.
+
+Required closure:
+
+- `gu run` / `gu solve` must resolve torsion and Shiab from the persisted branch
+  manifest rather than hardcoding the simplest executable operators.
+- `solve-backgrounds` and `compute-spectrum` must use the same resolved operator
+  family, so background studies and downstream spectra are branch-consistent.
+- Replay and provenance artifacts must record both the declared branch IDs and
+  the actually instantiated operator implementations.
+
+Impact if left open:
+
+Phase V branch-fragility measurements will be invalid because the runtime will
+ silently collapse admissible branch variation back to one hardcoded shortcut.
+
+### G-002 The practical default solve path is still the trivial validation path
+
+Out-of-the-box CLI solving still tends toward:
+
+- zero `omega`,
+- zero `A0`,
+- residual-only Mode A evaluation,
+- toy geometry.
+
+Required closure:
+
+- `gu solve` must provide a nontrivial validation path that is first-class in
+  practice, not only via hand-supplied overrides.
+- Default or recommended solve flows should prefer persisted states, declared
+  seeds, or selected Phase III backgrounds over fresh zero-state execution.
+- Reports and validation dossiers must explicitly distinguish residual-only
+  inspection runs from genuine objective/stationarity solves.
+
+Impact if left open:
+
+Phase V could appear to pass because the code runs on the trivial zero-residual
+ branch rather than because a meaningful background survived validation.
+
+### G-003 Toy geometry and synthetic backgrounds still dominate end-to-end paths
+
+The repository still relies heavily on toy geometries and synthetic in-process
+ backgrounds for the main executable Phase IV path.
+
+Required closure:
+
+- Phase IV/Phase V study runners must consume selected Phase III solved
+  backgrounds rather than fabricating inline bosonic profiles as the main path.
+- End-to-end CLI paths must ingest persisted geometry/background state instead
+  of rebuilding `ToyGeometryFactory.CreateToy2D()` by default.
+- Validation dossiers must separate toy studies, structured analytic studies,
+  and imported environments as different evidence tiers.
+
+Impact if left open:
+
+Phase V environment ladders and refinement studies will still be measuring the
+ toy scaffold rather than the stored executable background family.
+
+### G-004 `compute-spectrum` is only partially corrected
+
+The current `compute-spectrum` path now consumes a persisted solved `omega`
+tensor when available, but it still rebuilds other critical context from
+fallback shortcuts.
+
+Required closure:
+
+- Load the full stored solved background context, not only `omega`.
+- Stop rebuilding zero `A0`, toy geometry, and hardcoded trivial/identity
+  operator branches when the persisted study state says otherwise.
+- Add an end-to-end regression proving that two different stored backgrounds
+  produce different CLI spectrum artifacts for the correct reason.
+
+Impact if left open:
+
+Phase V spectra may still be partially detached from the background they claim
+to validate.
+
+### G-005 Phase IV family/coupling workflows still use branch-local shortcuts
+
+Several Phase IV workflows are still scaffolded with synthetic stand-ins rather
+than true cross-branch or cross-phase inputs.
+
+Current shortcut classes include:
+
+- family clustering from a perturbed duplicate spectrum instead of real branch
+  variants,
+- Dirac assembly from synthesized background records,
+- coupling extraction from placeholder/zero variation matrices unless real
+  perturbation data is supplied,
+- stub boson registries in the reference study.
+
+Required closure:
+
+- Family-tracking studies used for Phase V evidence must run on real admissible
+  branch/background variants.
+- Coupling studies used for validation must consume real boson perturbations and
+  solved fermion backgrounds, not zero placeholders.
+- Unified registries used for dossiers must merge real persisted Phase III/IV
+  artifacts wherever available.
+
+Impact if left open:
+
+Phase V robustness numbers would be reporting shortcut sensitivity, not theory
+ sensitivity.
+
+### G-006 Checked-in study artifacts are not yet trustworthy validation evidence
+
+The repository contains checked-in reports/artifacts whose contents can lag the
+ current code and tests.
+
+Required closure:
+
+- Any study output cited as Phase V evidence must be regenerated from the
+  current code path and tied to a reproducible command sequence.
+- Validation dossiers must record whether evidence is:
+  implemented, tested, and actually rerun end-to-end from the current tree.
+- Stale checked-in artifacts must not be treated as validation proof.
+
+Impact if left open:
+
+Phase V can overstate progress by relying on historical output that no longer
+matches the executable pipeline.
 
 ---
 
