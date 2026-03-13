@@ -16,6 +16,8 @@
 #ifndef GU_PHASE2_CUDA_H
 #define GU_PHASE2_CUDA_H
 
+#include <stdint.h>
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -40,6 +42,30 @@ int gu_phase2_init(const gu_phase2_config_t* config);
  * Shutdown Phase II CUDA resources.
  */
 int gu_phase2_shutdown(void);
+
+/**
+ * Upload face-boundary topology used by Jacobian/Hessian kernels.
+ */
+int gu_phase2_upload_face_topology(
+    const int32_t* face_boundary_edges,
+    const int32_t* face_boundary_orientations,
+    int face_count,
+    int max_edges_per_face);
+
+/**
+ * Upload Lie-algebra structure constants f^c_{ab}.
+ */
+int gu_phase2_upload_structure_constants(
+    const double* structure_constants,
+    int dim_g);
+
+/**
+ * Upload the background connection A0 used by augmented torsion branches.
+ */
+int gu_phase2_upload_background_connection(
+    const double* a0,
+    int edge_count,
+    int dim_g);
 
 /* =========================================================================
  * Priority 1: Jacobian actions (Jv and J^Tw)
@@ -124,6 +150,14 @@ int gu_phase2_batch_residual(
     const double* connection_states, double* residuals_out,
     int batch_size, int field_dof, int residual_dof,
     const int* branch_flags_array);
+
+/* Internal shared state accessors used across translation units. */
+int gu_phase2_is_initialized(void);
+const gu_phase2_config_t* gu_phase2_get_config(void);
+const int32_t* gu_phase2_get_face_boundary_edges(void);
+const int32_t* gu_phase2_get_face_boundary_orientations(void);
+const double* gu_phase2_get_structure_constants(void);
+const double* gu_phase2_get_background_connection(void);
 
 #ifdef __cplusplus
 }

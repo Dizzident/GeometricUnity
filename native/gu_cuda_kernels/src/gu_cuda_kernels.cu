@@ -47,6 +47,415 @@ static void lie_bracket(
 #endif
 
 /* =========================================================================
+ * Phase IV Dirac host helpers
+ *
+ * These functions operate on host memory and are shared by both the plain-C
+ * build and the nvcc build. The current managed dispatch passes host arrays
+ * directly through P/Invoke, so these implementations are the parity ground
+ * truth even when the CUDA library is linked.
+ * ========================================================================= */
+
+static double* g_dirac_gamma_re = NULL;
+static double* g_dirac_gamma_im = NULL;
+static double* g_dirac_chirality_re = NULL;
+static double* g_dirac_chirality_im = NULL;
+static int g_dirac_spacetime_dim = 0;
+static int g_dirac_spinor_dim = 0;
+static int g_dirac_has_chirality = 0;
+
+static void gu_dirac_clear_uploaded_gammas(void)
+{
+    free(g_dirac_gamma_re);
+    free(g_dirac_gamma_im);
+    free(g_dirac_chirality_re);
+    free(g_dirac_chirality_im);
+    g_dirac_gamma_re = NULL;
+    g_dirac_gamma_im = NULL;
+    g_dirac_chirality_re = NULL;
+    g_dirac_chirality_im = NULL;
+    g_dirac_spacetime_dim = 0;
+    g_dirac_spinor_dim = 0;
+    g_dirac_has_chirality = 0;
+}
+
+static int gu_dirac_upload_gammas_host(
+    const double* gamma_re,
+    const double* gamma_im,
+    const double* chirality_re,
+    const double* chirality_im,
+    int spacetime_dim,
+    int spinor_dim)
+{
+    size_t gamma_count;
+    size_t chirality_count;
+
+    if (!gamma_re || !gamma_im || spacetime_dim <= 0 || spinor_dim <= 0)
+        return -1;
+
+    gamma_count = (size_t)spacetime_dim * (size_t)spinor_dim * (size_t)spinor_dim;
+    chirality_count = (size_t)spinor_dim * (size_t)spinor_dim;
+
+    gu_dirac_clear_uploaded_gammas();
+
+    g_dirac_gamma_re = (double*)malloc(gamma_count * sizeof(double));
+    g_dirac_gamma_im = (double*)malloc(gamma_count * sizeof(double));
+    if (!g_dirac_gamma_re || !g_dirac_gamma_im)
+    {
+        gu_dirac_clear_uploaded_gammas();
+        return -1;
+    }
+
+    memcpy(g_dirac_gamma_re, gamma_re, gamma_count * sizeof(double));
+    memcpy(g_dirac_gamma_im, gamma_im, gamma_count * sizeof(double));
+
+    if (chirality_re && chirality_im)
+    {
+        g_dirac_chirality_re = (double*)malloc(chirality_count * sizeof(double));
+        g_dirac_chirality_im = (double*)malloc(chirality_count * sizeof(double));
+        if (!g_dirac_chirality_re || !g_dirac_chirality_im)
+        {
+            gu_dirac_clear_uploaded_gammas();
+            return -1;
+        }
+
+        memcpy(g_dirac_chirality_re, chirality_re, chirality_count * sizeof(double));
+        memcpy(g_dirac_chirality_im, chirality_im, chirality_count * sizeof(double));
+        g_dirac_has_chirality = 1;
+    }
+
+    g_dirac_spacetime_dim = spacetime_dim;
+    g_dirac_spinor_dim = spinor_dim;
+    return 0;
+}
+
+static void gu_dirac_apply_matrix_to_block(
+    const double* matrix_re,
+    const double* matrix_im,
+    const double* input_block,
+    double* output_block,
+    int spinor_dim)
+{
+    int row;
+
+    for (row = 0; row < spinor_dim; row++)
+    {
+        double sum_re = 0.0;
+        double sum_im = 0.0;
+        int col;
+
+        for (col = 0; col < spinor_dim; col++)
+        {
+            int mat_idx = row * spinor_dim + col;
+            double a_re = matrix_re[mat_idx];
+            double a_im = matrix_im[mat_idx];
+            double b_re = input_block[col * 2];
+            double b_im = input_block[col * 2 + 1];
+            sum_re += a_re * b_re - a_im * b_im;
+            sum_im += a_re * b_im + a_im * b_re;
+        }
+
+        output_block[row * 2] = sum_re;
+        output_block[row * 2 + 1] = sum_im;
+    }
+}
+
+static int gu_dirac_gamma_action_host(
+    const double* spinor_in,
+    double* result_out,
+    int mu,
+    int cell_count,
+    int spinor_dim,
+    int gauge_dim)
+{
+    int cell;
+
+    if (!spinor_in || !result_out)
+        return -1;
+    if (!g_dirac_gamma_re || !g_dirac_gamma_im)
+        return -1;
+    if (mu < 0 || mu >= g_dirac_spacetime_dim || spinor_dim != g_dirac_spinor_dim)
+        return -1;
+
+    for (cell = 0; cell < cell_count; cell++)
+    {
+        int g;
+        for (g = 0; g < gauge_dim; g++)
+        {
+            int base_idx = (cell * spinor_dim * gauge_dim + g * spinor_dim) * 2;
+            gu_dirac_apply_matrix_to_block(
+                &g_dirac_gamma_re[mu * spinor_dim * spinor_dim],
+                &g_dirac_gamma_im[mu * spinor_dim * spinor_dim],
+                &spinor_in[base_idx],
+                &result_out[base_idx],
+                spinor_dim);
+        }
+    }
+
+    return 0;
+}
+
+static int gu_dirac_mass_apply_host(
+    const double* spinor_in,
+    double* result_out,
+    const double* cell_volumes,
+    int spinor_dof,
+    int cell_count,
+    int spinor_dim,
+    int gauge_dim)
+{
+    int cell;
+    int block_len = spinor_dim * gauge_dim * 2;
+
+    if (!spinor_in || !result_out || spinor_dof <= 0)
+        return -1;
+    if (!cell_volumes)
+    {
+        memcpy(result_out, spinor_in, (size_t)spinor_dof * sizeof(double));
+        return 0;
+    }
+
+    for (cell = 0; cell < cell_count; cell++)
+    {
+        double volume = cell_volumes[cell];
+        int offset = cell * block_len;
+        int i;
+        for (i = 0; i < block_len; i++)
+            result_out[offset + i] = volume * spinor_in[offset + i];
+    }
+
+    return 0;
+}
+
+static int gu_dirac_chirality_project_host(
+    const double* spinor_in,
+    double* result_out,
+    int left,
+    int cell_count,
+    int spinor_dim,
+    int gauge_dim)
+{
+    int cell;
+    double sign = left ? -1.0 : 1.0;
+
+    if (!spinor_in || !result_out)
+        return -1;
+    if (!g_dirac_has_chirality || !g_dirac_chirality_re || !g_dirac_chirality_im)
+        return -2;
+    if (spinor_dim != g_dirac_spinor_dim)
+        return -1;
+
+    for (cell = 0; cell < cell_count; cell++)
+    {
+        int g;
+        for (g = 0; g < gauge_dim; g++)
+        {
+            int base_idx = (cell * spinor_dim * gauge_dim + g * spinor_dim) * 2;
+            double* gamma_psi = (double*)malloc((size_t)spinor_dim * 2U * sizeof(double));
+            int s;
+
+            if (!gamma_psi)
+                return -1;
+
+            gu_dirac_apply_matrix_to_block(
+                g_dirac_chirality_re,
+                g_dirac_chirality_im,
+                &spinor_in[base_idx],
+                gamma_psi,
+                spinor_dim);
+
+            for (s = 0; s < spinor_dim; s++)
+            {
+                double in_re = spinor_in[base_idx + s * 2];
+                double in_im = spinor_in[base_idx + s * 2 + 1];
+                double chi_re = gamma_psi[s * 2];
+                double chi_im = gamma_psi[s * 2 + 1];
+                result_out[base_idx + s * 2] = 0.5 * (in_re + sign * chi_re);
+                result_out[base_idx + s * 2 + 1] = 0.5 * (in_im + sign * chi_im);
+            }
+
+            free(gamma_psi);
+        }
+    }
+
+    return 0;
+}
+
+static int gu_dirac_apply_host(
+    const double* spinor_in,
+    double* result_out,
+    const double* edge_direction_coeff,
+    const int32_t* edge_vertices,
+    int edge_count,
+    int cell_count,
+    int spinor_dim,
+    int gauge_dim,
+    int spacetime_dim)
+{
+    int edge_idx;
+    size_t spinor_dof = (size_t)cell_count * (size_t)spinor_dim * (size_t)gauge_dim * 2U;
+
+    if (!spinor_in || !result_out || !edge_direction_coeff || !edge_vertices)
+        return -1;
+    if (!g_dirac_gamma_re || !g_dirac_gamma_im)
+        return -1;
+    if (spinor_dim != g_dirac_spinor_dim || spacetime_dim != g_dirac_spacetime_dim)
+        return -1;
+
+    memset(result_out, 0, spinor_dof * sizeof(double));
+
+    for (edge_idx = 0; edge_idx < edge_count; edge_idx++)
+    {
+        const double* coeff = &edge_direction_coeff[edge_idx * spacetime_dim];
+        int v = edge_vertices[edge_idx * 2];
+        int w = edge_vertices[edge_idx * 2 + 1];
+        int mu = -1;
+        double weight = 0.0;
+        double max_abs = 0.0;
+        int dim_idx;
+
+        if (v < 0 || w < 0 || v >= cell_count || w >= cell_count)
+            continue;
+
+        for (dim_idx = 0; dim_idx < spacetime_dim; dim_idx++)
+        {
+            double abs_coeff = fabs(coeff[dim_idx]);
+            if (abs_coeff > max_abs)
+            {
+                max_abs = abs_coeff;
+                mu = dim_idx;
+                weight = coeff[dim_idx];
+            }
+        }
+
+        if (mu < 0 || max_abs < 1e-14)
+            continue;
+
+        for (dim_idx = 0; dim_idx < gauge_dim; dim_idx++)
+        {
+            double* diff = (double*)malloc((size_t)spinor_dim * 2U * sizeof(double));
+            double* gamma_diff = (double*)malloc((size_t)spinor_dim * 2U * sizeof(double));
+            int v_base = (v * spinor_dim * gauge_dim + dim_idx * spinor_dim) * 2;
+            int w_base = (w * spinor_dim * gauge_dim + dim_idx * spinor_dim) * 2;
+            int s;
+
+            if (!diff || !gamma_diff)
+            {
+                free(diff);
+                free(gamma_diff);
+                return -1;
+            }
+
+            for (s = 0; s < spinor_dim; s++)
+            {
+                diff[s * 2] = weight * (spinor_in[w_base + s * 2] - spinor_in[v_base + s * 2]);
+                diff[s * 2 + 1] = weight * (spinor_in[w_base + s * 2 + 1] - spinor_in[v_base + s * 2 + 1]);
+            }
+
+            gu_dirac_apply_matrix_to_block(
+                &g_dirac_gamma_re[mu * spinor_dim * spinor_dim],
+                &g_dirac_gamma_im[mu * spinor_dim * spinor_dim],
+                diff,
+                gamma_diff,
+                spinor_dim);
+
+            for (s = 0; s < spinor_dim; s++)
+            {
+                result_out[v_base + s * 2] += gamma_diff[s * 2];
+                result_out[v_base + s * 2 + 1] += gamma_diff[s * 2 + 1];
+                result_out[w_base + s * 2] -= gamma_diff[s * 2];
+                result_out[w_base + s * 2 + 1] -= gamma_diff[s * 2 + 1];
+            }
+
+            free(diff);
+            free(gamma_diff);
+        }
+    }
+
+    return 0;
+}
+
+static int gu_dirac_coupling_proxy_host(
+    const double* spinor_i,
+    const double* spinor_j,
+    const double* boson_k,
+    double* result_re_out,
+    double* result_im_out,
+    int spinor_dof,
+    int edge_count,
+    int cell_count,
+    int spinor_dim,
+    int gauge_dim,
+    int spacetime_dim)
+{
+    double* delta_phi_j;
+    double* temp;
+    int mu;
+    int k;
+
+    if (!spinor_i || !spinor_j || !boson_k || !result_re_out || !result_im_out)
+        return -1;
+    if (spacetime_dim != g_dirac_spacetime_dim)
+        return -1;
+
+    delta_phi_j = (double*)calloc((size_t)spinor_dof, sizeof(double));
+    temp = (double*)calloc((size_t)spinor_dof, sizeof(double));
+    if (!delta_phi_j || !temp)
+    {
+        free(delta_phi_j);
+        free(temp);
+        return -1;
+    }
+
+    for (mu = 0; mu < spacetime_dim; mu++)
+    {
+        double b_mu_mean = 0.0;
+        int count = edge_count * gauge_dim;
+
+        if (count > 0)
+        {
+            for (k = 0; k < count; k++)
+                b_mu_mean += boson_k[k];
+            b_mu_mean /= (double)count;
+        }
+
+        if (fabs(b_mu_mean) < 1e-30)
+            continue;
+
+        if (gu_dirac_gamma_action_host(
+                spinor_j,
+                temp,
+                mu,
+                cell_count,
+                spinor_dim,
+                gauge_dim) != 0)
+        {
+            free(delta_phi_j);
+            free(temp);
+            return -1;
+        }
+
+        for (k = 0; k < spinor_dof; k++)
+            delta_phi_j[k] += b_mu_mean * temp[k];
+    }
+
+    *result_re_out = 0.0;
+    *result_im_out = 0.0;
+    for (k = 0; k + 1 < spinor_dof; k += 2)
+    {
+        double phi_re = spinor_i[k];
+        double phi_im = spinor_i[k + 1];
+        double delta_re = delta_phi_j[k];
+        double delta_im = delta_phi_j[k + 1];
+        *result_re_out += phi_re * delta_re + phi_im * delta_im;
+        *result_im_out += phi_re * delta_im - phi_im * delta_re;
+    }
+
+    free(delta_phi_j);
+    free(temp);
+    return 0;
+}
+
+/* =========================================================================
  * Physics kernel implementations (CPU path)
  *
  * These implement the real discrete operators. The CUDA device kernel
@@ -447,6 +856,114 @@ int gu_copy_gpu(double* d_dst, const double* d_src, int n) {
     return (err == cudaSuccess) ? 0 : -1;
 }
 
+/* --- Phase IV Dirac dispatch (host parity path) --- */
+
+int gu_dirac_upload_gammas(
+    const double* gamma_re,
+    const double* gamma_im,
+    const double* chirality_re,
+    const double* chirality_im,
+    int spacetime_dim,
+    int spinor_dim)
+{
+    return gu_dirac_upload_gammas_host(
+        gamma_re, gamma_im, chirality_re, chirality_im, spacetime_dim, spinor_dim);
+}
+
+int gu_dirac_gamma_action_gpu(
+    const double* spinor_in,
+    double* result_out,
+    int mu,
+    int cell_count,
+    int spinor_dim,
+    int gauge_dim)
+{
+    return gu_dirac_gamma_action_host(spinor_in, result_out, mu, cell_count, spinor_dim, gauge_dim);
+}
+
+int gu_dirac_apply_gpu(
+    const double* spinor_in,
+    double* result_out,
+    const double* edge_direction_coeff,
+    const int32_t* vertex_edge_incidence,
+    const int32_t* vertex_edge_orient,
+    const int32_t* edge_vertices,
+    int vertex_count,
+    int edge_count,
+    int cell_count,
+    int spinor_dim,
+    int gauge_dim,
+    int max_edges_per_vertex,
+    int spacetime_dim)
+{
+    (void)vertex_edge_incidence;
+    (void)vertex_edge_orient;
+    (void)vertex_count;
+    (void)max_edges_per_vertex;
+    return gu_dirac_apply_host(
+        spinor_in,
+        result_out,
+        edge_direction_coeff,
+        edge_vertices,
+        edge_count,
+        cell_count,
+        spinor_dim,
+        gauge_dim,
+        spacetime_dim);
+}
+
+int gu_dirac_mass_apply_gpu(
+    const double* spinor_in,
+    double* result_out,
+    const double* cell_volumes,
+    int spinor_dof,
+    int cell_count,
+    int spinor_dim,
+    int gauge_dim)
+{
+    return gu_dirac_mass_apply_host(
+        spinor_in, result_out, cell_volumes, spinor_dof, cell_count, spinor_dim, gauge_dim);
+}
+
+int gu_dirac_chirality_project_gpu(
+    const double* spinor_in,
+    double* result_out,
+    int left,
+    int cell_count,
+    int spinor_dim,
+    int gauge_dim)
+{
+    return gu_dirac_chirality_project_host(
+        spinor_in, result_out, left, cell_count, spinor_dim, gauge_dim);
+}
+
+int gu_dirac_coupling_proxy_gpu(
+    const double* spinor_i,
+    const double* spinor_j,
+    const double* boson_k,
+    double* result_re_out,
+    double* result_im_out,
+    int spinor_dof,
+    int edge_count,
+    int cell_count,
+    int spinor_dim,
+    int gauge_dim,
+    int spacetime_dim)
+{
+    return gu_dirac_coupling_proxy_host(
+        spinor_i,
+        spinor_j,
+        boson_k,
+        result_re_out,
+        result_im_out,
+        spinor_dof,
+        edge_count,
+        cell_count,
+        spinor_dim,
+        gauge_dim,
+        spacetime_dim);
+}
+
 /* ---- CUDA runtime wrappers --------------------------------------------- */
 
 static cudaError_t g_last_cuda_error = cudaSuccess;
@@ -692,6 +1209,114 @@ int gu_scale_gpu(double* x, double alpha, int n) {
 int gu_copy_gpu(double* dst, const double* src, int n) {
     for (int i = 0; i < n; i++) dst[i] = src[i];
     return 0;
+}
+
+/* Phase IV Dirac dispatch (CPU reference path) */
+
+int gu_dirac_upload_gammas(
+    const double* gamma_re,
+    const double* gamma_im,
+    const double* chirality_re,
+    const double* chirality_im,
+    int spacetime_dim,
+    int spinor_dim)
+{
+    return gu_dirac_upload_gammas_host(
+        gamma_re, gamma_im, chirality_re, chirality_im, spacetime_dim, spinor_dim);
+}
+
+int gu_dirac_gamma_action_gpu(
+    const double* spinor_in,
+    double* result_out,
+    int mu,
+    int cell_count,
+    int spinor_dim,
+    int gauge_dim)
+{
+    return gu_dirac_gamma_action_host(spinor_in, result_out, mu, cell_count, spinor_dim, gauge_dim);
+}
+
+int gu_dirac_apply_gpu(
+    const double* spinor_in,
+    double* result_out,
+    const double* edge_direction_coeff,
+    const int32_t* vertex_edge_incidence,
+    const int32_t* vertex_edge_orient,
+    const int32_t* edge_vertices,
+    int vertex_count,
+    int edge_count,
+    int cell_count,
+    int spinor_dim,
+    int gauge_dim,
+    int max_edges_per_vertex,
+    int spacetime_dim)
+{
+    (void)vertex_edge_incidence;
+    (void)vertex_edge_orient;
+    (void)vertex_count;
+    (void)max_edges_per_vertex;
+    return gu_dirac_apply_host(
+        spinor_in,
+        result_out,
+        edge_direction_coeff,
+        edge_vertices,
+        edge_count,
+        cell_count,
+        spinor_dim,
+        gauge_dim,
+        spacetime_dim);
+}
+
+int gu_dirac_mass_apply_gpu(
+    const double* spinor_in,
+    double* result_out,
+    const double* cell_volumes,
+    int spinor_dof,
+    int cell_count,
+    int spinor_dim,
+    int gauge_dim)
+{
+    return gu_dirac_mass_apply_host(
+        spinor_in, result_out, cell_volumes, spinor_dof, cell_count, spinor_dim, gauge_dim);
+}
+
+int gu_dirac_chirality_project_gpu(
+    const double* spinor_in,
+    double* result_out,
+    int left,
+    int cell_count,
+    int spinor_dim,
+    int gauge_dim)
+{
+    return gu_dirac_chirality_project_host(
+        spinor_in, result_out, left, cell_count, spinor_dim, gauge_dim);
+}
+
+int gu_dirac_coupling_proxy_gpu(
+    const double* spinor_i,
+    const double* spinor_j,
+    const double* boson_k,
+    double* result_re_out,
+    double* result_im_out,
+    int spinor_dof,
+    int edge_count,
+    int cell_count,
+    int spinor_dim,
+    int gauge_dim,
+    int spacetime_dim)
+{
+    return gu_dirac_coupling_proxy_host(
+        spinor_i,
+        spinor_j,
+        boson_k,
+        result_re_out,
+        result_im_out,
+        spinor_dof,
+        edge_count,
+        cell_count,
+        spinor_dim,
+        gauge_dim,
+        spacetime_dim);
 }
 
 /* CUDA runtime wrapper stubs (CPU fallback -- never called in non-CUDA builds,

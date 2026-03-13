@@ -1,4 +1,5 @@
 using System.Runtime.InteropServices;
+using Gu.Interop;
 using Gu.Phase2.Semantics;
 
 namespace Gu.Phase2.CudaInterop;
@@ -44,8 +45,6 @@ public sealed class Phase2CudaBackend : IPhase2JacobianKernel, IPhase2HessianKer
     public unsafe void ApplyJv(ReadOnlySpan<double> u, ReadOnlySpan<double> v, Span<double> result,
         BranchVariantManifest variant)
     {
-        RejectNonZeroInput(u, nameof(ApplyJv));
-        RejectNonZeroInput(v, nameof(ApplyJv));
         EnsureReady();
 
         fixed (double* uPtr = u, vPtr = v, rPtr = result)
@@ -61,8 +60,6 @@ public sealed class Phase2CudaBackend : IPhase2JacobianKernel, IPhase2HessianKer
     public unsafe void ApplyJtw(ReadOnlySpan<double> u, ReadOnlySpan<double> w, Span<double> result,
         BranchVariantManifest variant)
     {
-        RejectNonZeroInput(u, nameof(ApplyJtw));
-        RejectNonZeroInput(w, nameof(ApplyJtw));
         EnsureReady();
 
         fixed (double* uPtr = u, wPtr = w, rPtr = result)
@@ -78,8 +75,6 @@ public sealed class Phase2CudaBackend : IPhase2JacobianKernel, IPhase2HessianKer
     public unsafe void ApplyHv(ReadOnlySpan<double> u, ReadOnlySpan<double> v, Span<double> result,
         BranchVariantManifest variant, double lambda)
     {
-        RejectNonZeroInput(u, nameof(ApplyHv));
-        RejectNonZeroInput(v, nameof(ApplyHv));
         EnsureReady();
 
         fixed (double* uPtr = u, vPtr = v, rPtr = result)
@@ -99,7 +94,6 @@ public sealed class Phase2CudaBackend : IPhase2JacobianKernel, IPhase2HessianKer
         int fieldDof,
         int residualDof)
     {
-        RejectNonZeroInput(connectionStates, nameof(EvaluateBatch));
         EnsureReady();
         int batchSize = variants.Count;
         var branchFlags = new int[batchSize];
@@ -114,6 +108,34 @@ public sealed class Phase2CudaBackend : IPhase2JacobianKernel, IPhase2HessianKer
                 batchSize, fieldDof, residualDof,
                 (nint)bfPtr);
             CheckResult(rc, "gu_phase2_batch_residual");
+        }
+    }
+
+    /// <summary>
+    /// Upload the topology/algebra data required by the native Phase II kernels.
+    /// </summary>
+    public unsafe void UploadPhysicsData(MeshTopologyData topology, AlgebraUploadData algebra, ReadOnlySpan<double> a0)
+    {
+        ArgumentNullException.ThrowIfNull(topology);
+        ArgumentNullException.ThrowIfNull(algebra);
+        EnsureReady();
+
+        fixed (int* edgesPtr = topology.FaceBoundaryEdges, orientsPtr = topology.FaceBoundaryOrientations)
+        fixed (double* structurePtr = algebra.StructureConstants)
+        fixed (double* a0Ptr = a0)
+        {
+            int rc = Phase2NativeBindings.UploadFaceTopology(
+                (nint)edgesPtr,
+                (nint)orientsPtr,
+                topology.FaceCount,
+                topology.MaxEdgesPerFace);
+            CheckResult(rc, "gu_phase2_upload_face_topology");
+
+            rc = Phase2NativeBindings.UploadStructureConstants((nint)structurePtr, algebra.Dimension);
+            CheckResult(rc, "gu_phase2_upload_structure_constants");
+
+            rc = Phase2NativeBindings.UploadBackgroundConnection((nint)a0Ptr, topology.EdgeCount, algebra.Dimension);
+            CheckResult(rc, "gu_phase2_upload_background_connection");
         }
     }
 
@@ -134,19 +156,6 @@ public sealed class Phase2CudaBackend : IPhase2JacobianKernel, IPhase2HessianKer
         if (variant.BiConnectionVariant.Contains("minus", StringComparison.OrdinalIgnoreCase))
             flags |= (1 << 4);
         return flags;
-    }
-
-    private static void RejectNonZeroInput(ReadOnlySpan<double> data, string methodName)
-    {
-        for (int i = 0; i < data.Length; i++)
-        {
-            if (data[i] != 0.0)
-            {
-                throw new NotSupportedException(
-                    $"Phase2CudaBackend.{methodName}: CUDA kernels are stubs that return zeros. " +
-                    "Non-zero input detected - use CPU backend for real computation.");
-            }
-        }
     }
 
     private void EnsureReady()

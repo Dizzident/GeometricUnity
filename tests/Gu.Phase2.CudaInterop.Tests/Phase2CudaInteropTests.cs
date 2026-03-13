@@ -176,7 +176,7 @@ public class Phase2CudaInteropTests
     }
 
     [Fact]
-    public void Phase2CudaBackend_ApplyJv_ThrowsForNonZeroInput()
+    public void Phase2CudaBackend_ApplyJv_StillRequiresInitialization_ForNonZeroInput()
     {
         using var backend = new Phase2CudaBackend();
         var variant = TestVariant();
@@ -184,13 +184,13 @@ public class Phase2CudaInteropTests
         var v = new double[3];
         var result = new double[3];
 
-        var ex = Assert.Throws<NotSupportedException>(() =>
+        var ex = Assert.Throws<InvalidOperationException>(() =>
             backend.ApplyJv(u, v, result, variant));
-        Assert.Contains("CUDA kernels are stubs", ex.Message);
+        Assert.Contains("not initialized", ex.Message, StringComparison.OrdinalIgnoreCase);
     }
 
     [Fact]
-    public void Phase2CudaBackend_ApplyJtw_ThrowsForNonZeroInput()
+    public void Phase2CudaBackend_ApplyJtw_StillRequiresInitialization_ForNonZeroInput()
     {
         using var backend = new Phase2CudaBackend();
         var variant = TestVariant();
@@ -198,13 +198,13 @@ public class Phase2CudaInteropTests
         var w = new double[] { 0.0, 0.5, 0.0 };
         var result = new double[3];
 
-        var ex = Assert.Throws<NotSupportedException>(() =>
+        var ex = Assert.Throws<InvalidOperationException>(() =>
             backend.ApplyJtw(u, w, result, variant));
-        Assert.Contains("CUDA kernels are stubs", ex.Message);
+        Assert.Contains("not initialized", ex.Message, StringComparison.OrdinalIgnoreCase);
     }
 
     [Fact]
-    public void Phase2CudaBackend_ApplyHv_ThrowsForNonZeroInput()
+    public void Phase2CudaBackend_ApplyHv_StillRequiresInitialization_ForNonZeroInput()
     {
         using var backend = new Phase2CudaBackend();
         var variant = TestVariant();
@@ -212,21 +212,21 @@ public class Phase2CudaInteropTests
         var v = new double[3];
         var result = new double[3];
 
-        var ex = Assert.Throws<NotSupportedException>(() =>
+        var ex = Assert.Throws<InvalidOperationException>(() =>
             backend.ApplyHv(u, v, result, variant, 1.0));
-        Assert.Contains("CUDA kernels are stubs", ex.Message);
+        Assert.Contains("not initialized", ex.Message, StringComparison.OrdinalIgnoreCase);
     }
 
     [Fact]
-    public void Phase2CudaBackend_EvaluateBatch_ThrowsForNonZeroInput()
+    public void Phase2CudaBackend_EvaluateBatch_StillRequiresInitialization_ForNonZeroInput()
     {
         using var backend = new Phase2CudaBackend();
         var variants = new[] { TestVariant() };
         var states = new double[] { 0.0, 0.0, 1.0 };
         var residuals = new double[3];
 
-        var ex = Assert.Throws<NotSupportedException>(() =>
+        var ex = Assert.Throws<InvalidOperationException>(() =>
             backend.EvaluateBatch(variants, states, residuals, 3, 3));
-        Assert.Contains("CUDA kernels are stubs", ex.Message);
+        Assert.Contains("not initialized", ex.Message, StringComparison.OrdinalIgnoreCase);
     }
 }

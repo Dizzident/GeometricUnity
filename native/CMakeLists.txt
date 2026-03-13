@@ -55,6 +55,53 @@ endif()
 # Math library (needed for sqrt on some platforms)
 target_link_libraries(gu_cuda_core PRIVATE m)
 
+# gu_phase2_cuda -- Phase II Jacobian/Hessian/batch kernels
+if(GU_ENABLE_CUDA)
+    add_library(gu_phase2_cuda SHARED
+        gu_phase2_cuda/src/gu_phase2_init.cu
+        gu_phase2_cuda/src/jacobian_actions.cu
+        gu_phase2_cuda/src/hessian_actions.cu
+        gu_phase2_cuda/src/branch_kernels.cu
+        gu_phase2_cuda/src/spectrum_probes.cu
+        gu_phase2_cuda/src/continuation_kernels.cu)
+else()
+    configure_file(
+        ${CMAKE_CURRENT_SOURCE_DIR}/gu_phase2_cuda/src/gu_phase2_init.cu
+        ${CMAKE_CURRENT_BINARY_DIR}/gu_phase2_init_cpu.c
+        COPYONLY)
+    configure_file(
+        ${CMAKE_CURRENT_SOURCE_DIR}/gu_phase2_cuda/src/jacobian_actions.cu
+        ${CMAKE_CURRENT_BINARY_DIR}/gu_phase2_jacobian_actions_cpu.c
+        COPYONLY)
+    configure_file(
+        ${CMAKE_CURRENT_SOURCE_DIR}/gu_phase2_cuda/src/hessian_actions.cu
+        ${CMAKE_CURRENT_BINARY_DIR}/gu_phase2_hessian_actions_cpu.c
+        COPYONLY)
+    configure_file(
+        ${CMAKE_CURRENT_SOURCE_DIR}/gu_phase2_cuda/src/branch_kernels.cu
+        ${CMAKE_CURRENT_BINARY_DIR}/gu_phase2_branch_kernels_cpu.c
+        COPYONLY)
+    configure_file(
+        ${CMAKE_CURRENT_SOURCE_DIR}/gu_phase2_cuda/src/spectrum_probes.cu
+        ${CMAKE_CURRENT_BINARY_DIR}/gu_phase2_spectrum_probes_cpu.c
+        COPYONLY)
+    configure_file(
+        ${CMAKE_CURRENT_SOURCE_DIR}/gu_phase2_cuda/src/continuation_kernels.cu
+        ${CMAKE_CURRENT_BINARY_DIR}/gu_phase2_continuation_kernels_cpu.c
+        COPYONLY)
+    add_library(gu_phase2_cuda SHARED
+        ${CMAKE_CURRENT_BINARY_DIR}/gu_phase2_init_cpu.c
+        ${CMAKE_CURRENT_BINARY_DIR}/gu_phase2_jacobian_actions_cpu.c
+        ${CMAKE_CURRENT_BINARY_DIR}/gu_phase2_hessian_actions_cpu.c
+        ${CMAKE_CURRENT_BINARY_DIR}/gu_phase2_branch_kernels_cpu.c
+        ${CMAKE_CURRENT_BINARY_DIR}/gu_phase2_spectrum_probes_cpu.c
+        ${CMAKE_CURRENT_BINARY_DIR}/gu_phase2_continuation_kernels_cpu.c)
+endif()
+
+target_include_directories(gu_phase2_cuda
+    PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/gu_phase2_cuda/include)
+target_link_libraries(gu_phase2_cuda PRIVATE m)
+
 # gu_vulkan_native -- Vulkan rendering bridge
 add_library(gu_vulkan_native SHARED
     gu_vulkan_native/src/gu_vulkan_bridge.c)
@@ -73,6 +120,6 @@ else()
 endif()
 
 # Install rules
-install(TARGETS gu_cuda_core gu_vulkan_native
+install(TARGETS gu_cuda_core gu_phase2_cuda gu_vulkan_native
     LIBRARY DESTINATION lib
     RUNTIME DESTINATION bin)

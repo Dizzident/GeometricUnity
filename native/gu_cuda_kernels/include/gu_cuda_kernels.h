@@ -256,29 +256,35 @@ int gu_dirac_gamma_action_gpu(
  *
  * @param spinor_in            Input spinor [spinor_dof]
  * @param result_out           Output [spinor_dof]
- * @param gauge_coupling_coeff Gauge coupling part of spin connection [edge_count * spinor_dim * spinor_dim * 2]
+ * @param edge_direction_coeff Prepacked edge-direction coefficients [edge_count * spacetime_dim].
+ *                             Each edge stores the directional finite-difference weight used by
+ *                             the matrix-free CPU reference (typically dominant-direction / |e|).
  * @param vertex_edge_incidence Vertex-edge incidence [vertex_count * max_edges_per_vertex]
  * @param vertex_edge_orient    Vertex-edge orientations [vertex_count * max_edges_per_vertex]
+ * @param edge_vertices         Edge endpoints [edge_count * 2]
  * @param vertex_count          Number of mesh vertices
  * @param edge_count            Number of mesh edges
  * @param cell_count            Number of mesh cells (= vertex_count for vertex-based)
  * @param spinor_dim            Spinor dimension
  * @param gauge_dim             Gauge representation dimension
  * @param max_edges_per_vertex  Padding width for incidence arrays
+ * @param spacetime_dim         Number of gamma matrices / edge-direction channels
  * @return 0 on success, -1 on failure
  */
 int gu_dirac_apply_gpu(
     const double* spinor_in,
     double* result_out,
-    const double* gauge_coupling_coeff,
+    const double* edge_direction_coeff,
     const int32_t* vertex_edge_incidence,
     const int32_t* vertex_edge_orient,
+    const int32_t* edge_vertices,
     int vertex_count,
     int edge_count,
     int cell_count,
     int spinor_dim,
     int gauge_dim,
-    int max_edges_per_vertex);
+    int max_edges_per_vertex,
+    int spacetime_dim);
 
 /**
  * Apply the fermionic mass operator: result = M_psi * spinor.

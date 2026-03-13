@@ -70,6 +70,16 @@ public sealed class CpuDiracKernel : IDiracKernel
     /// <inheritdoc />
     public int SpacetimeDimension => _gammas.Signature.Dimension;
 
+    internal DiracOperatorBundle Bundle => _bundle;
+    internal GammaOperatorBundle Gammas => _gammas;
+    internal SimplicialMesh Mesh => _mesh;
+    internal FermionFieldLayout Layout => _layout;
+    internal SpinConnectionBundle Connection => _connection;
+    internal CpuDiracOperatorAssembler Assembler => _assembler;
+    internal int CellCount => _cellCount;
+    internal int GaugeDimension => _gaugeDim;
+    internal int SpinorBlockDimension => _spinorDim;
+
     /// <inheritdoc />
     public void ApplyGamma(int mu, ReadOnlySpan<double> spinor, Span<double> result)
     {

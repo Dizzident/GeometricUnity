@@ -27,6 +27,24 @@ internal static partial class Phase2NativeBindings
     [LibraryImport(LibName, EntryPoint = "gu_phase2_shutdown")]
     internal static partial int Shutdown();
 
+    [LibraryImport(LibName, EntryPoint = "gu_phase2_upload_face_topology")]
+    internal static partial int UploadFaceTopology(
+        nint faceBoundaryEdges,
+        nint faceBoundaryOrientations,
+        int faceCount,
+        int maxEdgesPerFace);
+
+    [LibraryImport(LibName, EntryPoint = "gu_phase2_upload_structure_constants")]
+    internal static partial int UploadStructureConstants(
+        nint structureConstants,
+        int dimG);
+
+    [LibraryImport(LibName, EntryPoint = "gu_phase2_upload_background_connection")]
+    internal static partial int UploadBackgroundConnection(
+        nint a0,
+        int edgeCount,
+        int dimG);
+
     /// <summary>Compute Jv: Jacobian action at connection u on direction v.</summary>
     [LibraryImport(LibName, EntryPoint = "gu_phase2_jacobian_action")]
     internal static partial int JacobianAction(

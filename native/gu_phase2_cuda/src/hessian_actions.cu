@@ -11,31 +11,61 @@
 
 #include "gu_phase2_cuda.h"
 #include <string.h>
+#include <stdlib.h>
 
 int gu_phase2_hessian_action(
     const double* u, const double* v, double* result,
     int edge_count, int face_count, int dim_g,
     double lambda, int branch_flags)
 {
+    double* jv;
+    double* jtjv;
+    int field_size;
+    int residual_size;
+    int i;
+    int rc;
+
     if (!u || !v || !result)
         return -1;
-    if (edge_count <= 0 || dim_g <= 0)
+    if (edge_count <= 0 || face_count <= 0 || dim_g <= 0)
         return -2;
+    if (!gu_phase2_is_initialized())
+        return -3;
 
-    int field_size = edge_count * dim_g;
-
-    /* Zero output */
+    field_size = edge_count * dim_g;
+    residual_size = face_count * dim_g;
     memset(result, 0, (size_t)field_size * sizeof(double));
 
-    /* CPU fallback: Hessian action stub.
-     * H = J^T M_R J + lambda C^T M_0 C
-     * Full implementation composes Jacobian and gauge operator actions.
-     * This stub returns zero for the flat-connection case. */
-    (void)u;
-    (void)v;
-    (void)face_count;
-    (void)lambda;
-    (void)branch_flags;
+    jv = (double*)calloc((size_t)residual_size, sizeof(double));
+    jtjv = (double*)calloc((size_t)field_size, sizeof(double));
+    if (!jv || !jtjv)
+    {
+        free(jv);
+        free(jtjv);
+        return -4;
+    }
+
+    rc = gu_phase2_jacobian_action(u, v, jv, edge_count, face_count, dim_g, branch_flags);
+    if (rc != 0)
+    {
+        free(jv);
+        free(jtjv);
+        return rc;
+    }
+
+    rc = gu_phase2_adjoint_action(u, jv, jtjv, edge_count, face_count, dim_g, branch_flags);
+    if (rc != 0)
+    {
+        free(jv);
+        free(jtjv);
+        return rc;
+    }
+
+    for (i = 0; i < field_size; i++)
+        result[i] = jtjv[i] + lambda * v[i];
+
+    free(jv);
+    free(jtjv);
 
     return 0;
 }
