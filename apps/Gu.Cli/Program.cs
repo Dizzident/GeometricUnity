@@ -22,6 +22,11 @@ using Gu.Phase4.FamilyClustering;
 using Gu.Phase4.Fermions;
 using Gu.Phase4.Registry;
 using Gu.Phase4.Spin;
+using Gu.Phase5.BranchIndependence;
+using Gu.Phase5.Convergence;
+using Gu.Phase5.Dossiers;
+using Gu.Phase5.Environments;
+using Gu.Phase5.QuantitativeValidation;
 using Gu.ReferenceCpu;
 using Gu.Solvers;
 using Gu.Validation;
@@ -87,6 +92,20 @@ switch (args[0])
         return BuildFamilyClusters(args);
     case "build-unified-registry":
         return BuildUnifiedRegistry(args);
+    case "branch-robustness":
+        return BranchRobustness(args);
+    case "refinement-study":
+        return RefinementStudy(args);
+    case "import-environment":
+        return ImportEnvironment(args);
+    case "build-structured-environment":
+        return BuildStructuredEnvironment(args);
+    case "validate-quantitative":
+        return ValidateQuantitative(args);
+    case "build-validation-dossier":
+        return BuildValidationDossier(args);
+    case "verify-study-freshness":
+        return VerifyStudyFreshness(args);
     default:
         Console.Error.WriteLine($"Unknown command: {args[0]}");
         PrintUsage();
@@ -926,6 +945,40 @@ static string? FindBackgroundOmegaState(string runFolder, string backgroundId)
     return null;
 }
 
+/// <summary>
+/// Locate the persisted A0 tensor written by solve-backgrounds.
+/// Returns the path if found, otherwise null.
+/// </summary>
+static string? FindBackgroundA0State(string runFolder)
+{
+    // Check backgrounds/background_states/a0.json (solve-backgrounds output)
+    var path1 = Path.Combine(runFolder, "backgrounds", "background_states", "a0.json");
+    if (File.Exists(path1)) return path1;
+
+    // Check direct background_states subdir
+    var path2 = Path.Combine(runFolder, "background_states", "a0.json");
+    if (File.Exists(path2)) return path2;
+
+    return null;
+}
+
+/// <summary>
+/// Locate the persisted geometry context written by solve-backgrounds.
+/// Returns the path if found, otherwise null.
+/// </summary>
+static string? FindBackgroundGeometry(string runFolder)
+{
+    // Check backgrounds/manifest/geometry.json (solve-backgrounds output)
+    var path1 = Path.Combine(runFolder, "backgrounds", "manifest", "geometry.json");
+    if (File.Exists(path1)) return path1;
+
+    // Check canonical run folder manifest/geometry.json
+    var path2 = Path.Combine(runFolder, "manifest", "geometry.json");
+    if (File.Exists(path2)) return path2;
+
+    return null;
+}
+
 static int Reproduce(string[] args)
 {
     if (args.Length < 2)
@@ -1286,6 +1339,12 @@ static int SolveBackgrounds(string[] args)
         File.WriteAllText(statePath, GuJsonDefaults.Serialize(omegaTensor));
     }
 
+    // Persist geometry and A0 so compute-spectrum can load full background context
+    var manifestDir = Path.Combine(outputDir, "manifest");
+    Directory.CreateDirectory(manifestDir);
+    File.WriteAllText(Path.Combine(manifestDir, "geometry.json"), GuJsonDefaults.Serialize(geometry));
+    File.WriteAllText(Path.Combine(statesDir, "a0.json"), GuJsonDefaults.Serialize(a0));
+
     Console.WriteLine();
     Console.WriteLine($"Background atlas built:");
     Console.WriteLine($"  Atlas ID: {atlas.AtlasId}");
@@ -1366,7 +1425,33 @@ static int ComputeSpectrum(string[] args)
     var algebra = CreateAlgebra(lieAlgebra);
     var bundle = ToyGeometryFactory.CreateToy2D();
     var mesh = bundle.AmbientMesh;
-    var geometry = bundle.ToGeometryContext("centroid", "P1");
+
+    // Load persisted geometry context from run folder if available; fall back to toy geometry context
+    string consumedGeometrySource;
+    GeometryContext geometry;
+    var persistedGeometryPath = FindBackgroundGeometry(runFolder);
+    if (persistedGeometryPath is not null)
+    {
+        var loadedGeometry = GuJsonDefaults.Deserialize<GeometryContext>(File.ReadAllText(persistedGeometryPath));
+        if (loadedGeometry is not null)
+        {
+            geometry = loadedGeometry;
+            consumedGeometrySource = persistedGeometryPath;
+            Console.WriteLine($"  Geometry: loaded from {persistedGeometryPath}");
+        }
+        else
+        {
+            geometry = bundle.ToGeometryContext("centroid", "P1");
+            consumedGeometrySource = "toy-2d (geometry file unreadable)";
+            Console.WriteLine($"  Geometry: toy-2d (geometry file unreadable)");
+        }
+    }
+    else
+    {
+        geometry = bundle.ToGeometryContext("centroid", "P1");
+        consumedGeometrySource = "toy-2d (no persisted geometry found)";
+        Console.WriteLine($"  Geometry: toy-2d (no persisted geometry found)");
+    }
 
     // Load persisted branch manifest from run folder if available, otherwise construct default
     string consumedManifestSource;
@@ -1460,13 +1545,44 @@ static int ComputeSpectrum(string[] args)
         Console.WriteLine($"  Omega state: zero (no persisted state found)");
     }
 
-    var a0 = new FieldTensor
+    // Load persisted A0 state if available; fall back to zero
+    string consumedA0Source;
+    FieldTensor a0;
+    var a0FilePath = FindBackgroundA0State(runFolder);
+    if (a0FilePath is not null)
     {
-        Label = "a0",
-        Signature = sig,
-        Coefficients = new double[edgeN],
-        Shape = new[] { mesh.EdgeCount, algebra.Dimension },
-    };
+        var loadedA0 = GuJsonDefaults.Deserialize<FieldTensor>(File.ReadAllText(a0FilePath));
+        if (loadedA0 is not null && loadedA0.Coefficients.Length == edgeN)
+        {
+            a0 = loadedA0;
+            consumedA0Source = a0FilePath;
+            Console.WriteLine($"  A0 state: loaded from {a0FilePath}");
+        }
+        else
+        {
+            a0 = new FieldTensor
+            {
+                Label = "a0",
+                Signature = sig,
+                Coefficients = new double[edgeN],
+                Shape = new[] { mesh.EdgeCount, algebra.Dimension },
+            };
+            consumedA0Source = "zero (A0 file dimension mismatch)";
+            Console.WriteLine($"  A0 state: zero (A0 file dimension mismatch)");
+        }
+    }
+    else
+    {
+        a0 = new FieldTensor
+        {
+            Label = "a0",
+            Signature = sig,
+            Coefficients = new double[edgeN],
+            Shape = new[] { mesh.EdgeCount, algebra.Dimension },
+        };
+        consumedA0Source = "zero (no persisted A0 found)";
+        Console.WriteLine($"  A0 state: zero (no persisted A0 found)");
+    }
 
     // Build operator bundle
     var torsion = new TrivialTorsionCpu(mesh, algebra);
@@ -1508,6 +1624,8 @@ static int ComputeSpectrum(string[] args)
     spectrum.DiagnosticNotes.Add($"P4-C1 provenance: backgroundRecordPath={bgPath}");
     spectrum.DiagnosticNotes.Add($"P4-C1 provenance: manifestSource={consumedManifestSource}");
     spectrum.DiagnosticNotes.Add($"P4-C1 provenance: omegaSource={consumedOmegaSource}");
+    spectrum.DiagnosticNotes.Add($"P4-C1 provenance: a0Source={consumedA0Source}");
+    spectrum.DiagnosticNotes.Add($"P4-C1 provenance: geometrySource={consumedGeometrySource}");
 
     Console.WriteLine($"  Convergence: {spectrum.ConvergenceStatus}");
     Console.WriteLine($"  Modes found: {spectrum.Modes.Count}");
@@ -3058,6 +3176,360 @@ static Gu.Phase4.Couplings.CouplingAtlas BuildEmptyCouplingAtlas()
     };
 }
 
+// ---------------------------------------------------------------------------
+// Phase V CLI commands
+// ---------------------------------------------------------------------------
+
+static ProvenanceMeta BuildP5Provenance(string codeRevision = "cli-phase5")
+{
+    return new ProvenanceMeta
+    {
+        CreatedAt = DateTimeOffset.UtcNow,
+        CodeRevision = codeRevision,
+        Branch = new BranchRef { BranchId = "unknown", SchemaVersion = "1.0.0" },
+        Notes = "Phase V CLI provenance.",
+    };
+}
+
+static int BranchRobustness(string[] args)
+{
+    var studyPath = ParseFlag(args, "--study", "");
+    var valuesPath = ParseFlag(args, "--values", "");
+    var outFlag = ParseFlag(args, "--out", "");
+
+    if (string.IsNullOrEmpty(studyPath))
+    {
+        Console.Error.WriteLine("Usage: gu branch-robustness --study <study.json> --values <values.json> [--out <record.json>]");
+        return 1;
+    }
+    if (string.IsNullOrEmpty(valuesPath))
+    {
+        Console.Error.WriteLine("Usage: gu branch-robustness --study <study.json> --values <values.json> [--out <record.json>]");
+        return 1;
+    }
+    if (!File.Exists(studyPath))
+    {
+        Console.Error.WriteLine($"Study file not found: {studyPath}");
+        return 1;
+    }
+    if (!File.Exists(valuesPath))
+    {
+        Console.Error.WriteLine($"Values file not found: {valuesPath}");
+        return 1;
+    }
+
+    var spec = JsonSerializer.Deserialize<BranchRobustnessStudySpec>(File.ReadAllText(studyPath),
+        new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+    if (spec is null)
+    {
+        Console.Error.WriteLine($"Failed to deserialize BranchRobustnessStudySpec: {studyPath}");
+        return 1;
+    }
+
+    var quantityValues = JsonSerializer.Deserialize<Dictionary<string, double[]>>(File.ReadAllText(valuesPath),
+        new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+    if (quantityValues is null)
+    {
+        Console.Error.WriteLine($"Failed to deserialize quantity values: {valuesPath}");
+        return 1;
+    }
+
+    var provenance = BuildP5Provenance();
+    var engine = new BranchRobustnessEngine(spec);
+    var record = engine.Run(quantityValues, provenance);
+
+    var resultJson = JsonSerializer.Serialize(record, new JsonSerializerOptions { WriteIndented = true });
+    if (!string.IsNullOrEmpty(outFlag))
+    {
+        File.WriteAllText(outFlag, resultJson);
+        Console.WriteLine($"Written branch robustness record: {outFlag}");
+    }
+    else
+    {
+        Console.WriteLine(resultJson);
+    }
+    Console.WriteLine("branch-robustness done.");
+    return 0;
+}
+
+static int RefinementStudy(string[] args)
+{
+    var specPath = ParseFlag(args, "--spec", "");
+    var outFlag = ParseFlag(args, "--out", "");
+
+    if (string.IsNullOrEmpty(specPath))
+    {
+        Console.Error.WriteLine("Usage: gu refinement-study --spec <spec.json> [--out <result.json>]");
+        return 1;
+    }
+    if (!File.Exists(specPath))
+    {
+        Console.Error.WriteLine($"Spec file not found: {specPath}");
+        return 1;
+    }
+
+    var spec = JsonSerializer.Deserialize<RefinementStudySpec>(File.ReadAllText(specPath),
+        new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+    if (spec is null)
+    {
+        Console.Error.WriteLine($"Failed to deserialize RefinementStudySpec: {specPath}");
+        return 1;
+    }
+
+    // The runner requires a pipelineExecutor delegate; the CLI provides an empty executor
+    // (no live solver at CLI level). Real usage should call the runner programmatically
+    // with a solver-backed executor.
+    var runner = new RefinementStudyRunner();
+    var result = runner.Run(spec, _ => new Dictionary<string, double>());
+
+    var resultJson = JsonSerializer.Serialize(result, new JsonSerializerOptions { WriteIndented = true });
+    if (!string.IsNullOrEmpty(outFlag))
+    {
+        File.WriteAllText(outFlag, resultJson);
+        Console.WriteLine($"Written refinement study result: {outFlag}");
+    }
+    else
+    {
+        Console.WriteLine(resultJson);
+    }
+    Console.WriteLine("refinement-study done.");
+    return 0;
+}
+
+static int ImportEnvironment(string[] args)
+{
+    var specPath = ParseFlag(args, "--spec", "");
+    var outFlag = ParseFlag(args, "--out", "");
+
+    if (string.IsNullOrEmpty(specPath))
+    {
+        Console.Error.WriteLine("Usage: gu import-environment --spec <spec.json> [--out <record.json>]");
+        return 1;
+    }
+    if (!File.Exists(specPath))
+    {
+        Console.Error.WriteLine($"Spec file not found: {specPath}");
+        return 1;
+    }
+
+    var spec = JsonSerializer.Deserialize<EnvironmentImportSpec>(File.ReadAllText(specPath),
+        new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+    if (spec is null)
+    {
+        Console.Error.WriteLine($"Failed to deserialize EnvironmentImportSpec: {specPath}");
+        return 1;
+    }
+
+    var record = EnvironmentImporter.Import(spec);
+
+    var resultJson = JsonSerializer.Serialize(record, new JsonSerializerOptions { WriteIndented = true });
+    if (!string.IsNullOrEmpty(outFlag))
+    {
+        File.WriteAllText(outFlag, resultJson);
+        Console.WriteLine($"Written environment record: {outFlag}");
+    }
+    else
+    {
+        Console.WriteLine(resultJson);
+    }
+    Console.WriteLine("import-environment done.");
+    return 0;
+}
+
+static int BuildStructuredEnvironment(string[] args)
+{
+    var specPath = ParseFlag(args, "--spec", "");
+    var outFlag = ParseFlag(args, "--out", "");
+
+    if (string.IsNullOrEmpty(specPath))
+    {
+        Console.Error.WriteLine("Usage: gu build-structured-environment --spec <spec.json> [--out <record.json>]");
+        return 1;
+    }
+    if (!File.Exists(specPath))
+    {
+        Console.Error.WriteLine($"Spec file not found: {specPath}");
+        return 1;
+    }
+
+    var spec = JsonSerializer.Deserialize<StructuredEnvironmentSpec>(File.ReadAllText(specPath),
+        new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+    if (spec is null)
+    {
+        Console.Error.WriteLine($"Failed to deserialize StructuredEnvironmentSpec: {specPath}");
+        return 1;
+    }
+
+    var record = StructuredEnvironmentGenerator.Generate(spec);
+
+    var resultJson = JsonSerializer.Serialize(record, new JsonSerializerOptions { WriteIndented = true });
+    if (!string.IsNullOrEmpty(outFlag))
+    {
+        File.WriteAllText(outFlag, resultJson);
+        Console.WriteLine($"Written structured environment record: {outFlag}");
+    }
+    else
+    {
+        Console.WriteLine(resultJson);
+    }
+    Console.WriteLine("build-structured-environment done.");
+    return 0;
+}
+
+static int ValidateQuantitative(string[] args)
+{
+    var observablesPath = ParseFlag(args, "--observables", "");
+    var targetsPath = ParseFlag(args, "--targets", "");
+    var outFlag = ParseFlag(args, "--out", "");
+
+    if (string.IsNullOrEmpty(observablesPath) || string.IsNullOrEmpty(targetsPath))
+    {
+        Console.Error.WriteLine("Usage: gu validate-quantitative --observables <obs.json> --targets <targets.json> [--out <scorecard.json>]");
+        return 1;
+    }
+    if (!File.Exists(observablesPath))
+    {
+        Console.Error.WriteLine($"Observables file not found: {observablesPath}");
+        return 1;
+    }
+    if (!File.Exists(targetsPath))
+    {
+        Console.Error.WriteLine($"Targets file not found: {targetsPath}");
+        return 1;
+    }
+
+    var observables = JsonSerializer.Deserialize<List<QuantitativeObservableRecord>>(File.ReadAllText(observablesPath),
+        new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+    if (observables is null)
+    {
+        Console.Error.WriteLine($"Failed to deserialize observables: {observablesPath}");
+        return 1;
+    }
+
+    var targetTable = ExternalTargetTable.FromJson(File.ReadAllText(targetsPath));
+
+    var policy = new CalibrationPolicy
+    {
+        PolicyId = "cli-standard",
+        Mode = "standard",
+        SigmaThreshold = 5.0,
+        RequireFullUncertainty = false,
+    };
+
+    var provenance = BuildP5Provenance();
+    var runner = new QuantitativeValidationRunner();
+    var studyId = $"cli-validation-{DateTimeOffset.UtcNow:yyyyMMddHHmmss}";
+    var scoreCard = runner.Run(studyId, observables, targetTable, policy, provenance);
+
+    var resultJson = JsonSerializer.Serialize(scoreCard, new JsonSerializerOptions { WriteIndented = true });
+    if (!string.IsNullOrEmpty(outFlag))
+    {
+        File.WriteAllText(outFlag, resultJson);
+        Console.WriteLine($"Written consistency scorecard: {outFlag}");
+    }
+    else
+    {
+        Console.WriteLine(resultJson);
+    }
+    Console.WriteLine("validate-quantitative done.");
+    return 0;
+}
+
+static int BuildValidationDossier(string[] args)
+{
+    var manifestPath = ParseFlag(args, "--study-manifest", "");
+    var outFlag = ParseFlag(args, "--out", "");
+
+    if (string.IsNullOrEmpty(manifestPath))
+    {
+        Console.Error.WriteLine("Usage: gu build-validation-dossier --study-manifest <manifest.json> [--out <dossier.json>]");
+        return 1;
+    }
+    if (!File.Exists(manifestPath))
+    {
+        Console.Error.WriteLine($"Study manifest not found: {manifestPath}");
+        return 1;
+    }
+
+    var studies = JsonSerializer.Deserialize<List<StudyManifest>>(File.ReadAllText(manifestPath),
+        new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true,
+            Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() },
+        });
+    if (studies is null)
+    {
+        Console.Error.WriteLine($"Failed to deserialize study manifests: {manifestPath}");
+        return 1;
+    }
+
+    var provenance = BuildP5Provenance();
+    var dossierId = $"dossier-{DateTimeOffset.UtcNow:yyyyMMddHHmmss}";
+    var dossier = DossierAssembler.Assemble(dossierId, "Phase V Validation Dossier", studies, provenance);
+
+    var resultJson = JsonSerializer.Serialize(dossier, new JsonSerializerOptions
+    {
+        WriteIndented = true,
+        Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() },
+    });
+    if (!string.IsNullOrEmpty(outFlag))
+    {
+        File.WriteAllText(outFlag, resultJson);
+        Console.WriteLine($"Written validation dossier: {outFlag}");
+    }
+    else
+    {
+        Console.WriteLine(resultJson);
+    }
+    Console.WriteLine("build-validation-dossier done.");
+    return 0;
+}
+
+static int VerifyStudyFreshness(string[] args)
+{
+    var dossierPath = ParseFlag(args, "--dossier", "");
+
+    if (string.IsNullOrEmpty(dossierPath))
+    {
+        Console.Error.WriteLine("Usage: gu verify-study-freshness --dossier <dossier.json>");
+        return 1;
+    }
+    if (!File.Exists(dossierPath))
+    {
+        Console.Error.WriteLine($"Dossier file not found: {dossierPath}");
+        return 1;
+    }
+
+    var dossier = JsonSerializer.Deserialize<ValidationDossier>(File.ReadAllText(dossierPath),
+        new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true,
+            Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() },
+        });
+    if (dossier is null)
+    {
+        Console.Error.WriteLine($"Failed to deserialize ValidationDossier: {dossierPath}");
+        return 1;
+    }
+
+    Console.WriteLine($"Dossier: {dossier.DossierId}");
+    Console.WriteLine($"Title: {dossier.Title}");
+    Console.WriteLine($"Overall evidence tier: {dossier.OverallEvidenceTier}");
+    Console.WriteLine($"Acceptable as evidence: {dossier.IsAcceptableAsEvidence}");
+    Console.WriteLine($"Verdict: {dossier.EvidenceVerdict}");
+    if (dossier.StaleStudyIds.Count > 0)
+    {
+        Console.WriteLine($"Stale studies: {string.Join(", ", dossier.StaleStudyIds)}");
+    }
+    if (dossier.AssemblyNotes is not null)
+    {
+        foreach (var note in dossier.AssemblyNotes)
+            Console.WriteLine($"  {note}");
+    }
+    Console.WriteLine("verify-study-freshness done.");
+    return dossier.IsAcceptableAsEvidence ? 0 : 1;
+}
+
 static void PrintUsage()
 {
     Console.WriteLine("Geometric Unity CLI");
@@ -3087,6 +3559,13 @@ static void PrintUsage()
     Console.WriteLine("  gu extract-couplings <runFolder> [opts]      Extract boson-fermion coupling atlas");
     Console.WriteLine("  gu build-family-clusters <runFolder> [opts]  Build fermion family atlas and cluster report");
     Console.WriteLine("  gu build-unified-registry <runFolder> [opts] Build unified particle registry (Phase III+IV)");
+    Console.WriteLine("  gu branch-robustness --study <f> --values <f> [--out <f>]  Phase V branch robustness study");
+    Console.WriteLine("  gu refinement-study --spec <f> [--out <f>]   Phase V refinement convergence study");
+    Console.WriteLine("  gu import-environment --spec <f> [--out <f>] Import external geometry as environment record");
+    Console.WriteLine("  gu build-structured-environment --spec <f> [--out <f>]  Generate structured analytic environment");
+    Console.WriteLine("  gu validate-quantitative --observables <f> --targets <f> [--out <f>]  Quantitative validation");
+    Console.WriteLine("  gu build-validation-dossier --study-manifest <f> [--out <f>]  Build Phase V validation dossier");
+    Console.WriteLine("  gu verify-study-freshness --dossier <f>      Verify study freshness / G-006 compliance");
     Console.WriteLine("  gu validate-replay <orig> <replay> [tier]    Validate replay (R0/R1/R2/R3)");
     Console.WriteLine("  gu verify-integrity <run-folder>            Verify or compute integrity hashes");
     Console.WriteLine("  gu validate-schema <file> <schema>          Validate JSON against a schema");
