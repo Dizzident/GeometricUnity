@@ -63,7 +63,7 @@ public sealed class BackgroundAtlasBuilder
 
         foreach (var spec in study.Specs)
         {
-            var (record, state) = SolveOneBackground(spec, manifests, geometries, a0s, provenance);
+            var (record, state) = SolveOneBackground(spec, manifests, geometries, a0s, provenance, study.EnvironmentTier);
             allRecords.Add(record);
             if (state is not null)
                 allStates[record.BackgroundId] = state;
@@ -103,6 +103,7 @@ public sealed class BackgroundAtlasBuilder
             TotalAttempts = allRecords.Count,
             Provenance = provenance,
             AdmissibilityCounts = counts,
+            EnvironmentTier = study.EnvironmentTier,
         };
     }
 
@@ -114,16 +115,17 @@ public sealed class BackgroundAtlasBuilder
         IReadOnlyDictionary<string, BranchManifest> manifests,
         IReadOnlyDictionary<string, GeometryContext> geometries,
         IReadOnlyDictionary<string, FieldTensor> a0s,
-        ProvenanceMeta provenance)
+        ProvenanceMeta provenance,
+        string? environmentTier = null)
     {
         if (!manifests.TryGetValue(spec.BranchManifestId, out var manifest))
-            return (CreateRejectedRecord(spec, provenance, $"Branch manifest '{spec.BranchManifestId}' not found."), null);
+            return (CreateRejectedRecord(spec, provenance, $"Branch manifest '{spec.BranchManifestId}' not found.", environmentTier), null);
 
         if (!geometries.TryGetValue(spec.EnvironmentId, out var geometry))
-            return (CreateRejectedRecord(spec, provenance, $"Geometry for environment '{spec.EnvironmentId}' not found."), null);
+            return (CreateRejectedRecord(spec, provenance, $"Geometry for environment '{spec.EnvironmentId}' not found.", environmentTier), null);
 
         if (!a0s.TryGetValue(spec.EnvironmentId, out var a0))
-            return (CreateRejectedRecord(spec, provenance, $"Background connection for environment '{spec.EnvironmentId}' not found."), null);
+            return (CreateRejectedRecord(spec, provenance, $"Background connection for environment '{spec.EnvironmentId}' not found.", environmentTier), null);
 
         // Build initial omega from seed
         var omega = BuildInitialOmega(spec.Seed, a0);
@@ -178,13 +180,14 @@ public sealed class BackgroundAtlasBuilder
             ReplayTierAchieved = "R2",
             Provenance = provenance,
             RejectionReason = rejectionReason,
+            EnvironmentTier = environmentTier,
         };
 
         return (record, solverResult.FinalOmega);
     }
 
     private static BackgroundRecord CreateRejectedRecord(
-        BackgroundSpec spec, ProvenanceMeta provenance, string reason)
+        BackgroundSpec spec, ProvenanceMeta provenance, string reason, string? environmentTier = null)
     {
         return new BackgroundRecord
         {
@@ -212,6 +215,7 @@ public sealed class BackgroundAtlasBuilder
             ReplayTierAchieved = "R0",
             Provenance = provenance,
             RejectionReason = reason,
+            EnvironmentTier = environmentTier,
         };
     }
 

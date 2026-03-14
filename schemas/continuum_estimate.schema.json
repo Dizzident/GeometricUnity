@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/continuum_estimate.schema.json",
+  "title": "ContinuumEstimateRecord",
+  "description": "Richardson extrapolation result for a single quantity across a refinement ladder (M47). Provides a continuum limit estimate Q_0 and convergence order p via Q(h) = Q_0 + C * h^p.",
+  "type": "object",
+  "required": ["quantityId", "extrapolatedValue", "errorBand", "convergenceOrder", "convergenceClassification", "confidenceNote", "runRecords"],
+  "properties": {
+    "quantityId": {
+      "type": "string",
+      "description": "Identifier of the quantity being extrapolated"
+    },
+    "extrapolatedValue": {
+      "type": "number",
+      "description": "Richardson-extrapolated continuum limit Q_0"
+    },
+    "errorBand": {
+      "type": "number",
+      "description": "Estimated error band (absolute). Derived from fit residual or classical formula error estimate.",
+      "minimum": 0
+    },
+    "convergenceOrder": {
+      "type": "number",
+      "description": "Estimated convergence order p from Q(h) = Q_0 + C * h^p fit",
+      "exclusiveMinimum": 0
+    },
+    "convergenceClassification": {
+      "type": "string",
+      "description": "Convergence classification: 'convergent', 'weakly-convergent', 'non-convergent', or 'insufficient-data'",
+      "enum": ["convergent", "weakly-convergent", "non-convergent", "insufficient-data"]
+    },
+    "confidenceNote": {
+      "type": "string",
+      "description": "Diagnostic note about the quality or reliability of this estimate"
+    },
+    "runRecords": {
+      "type": "array",
+      "description": "Individual run records for each refinement level that contributed to this estimate",
+      "items": { "$ref": "#/$defs/RefinementRunRecord" }
+    }
+  },
+  "$defs": {
+    "RefinementRunRecord": {
+      "type": "object",
+      "required": ["levelId", "meshParameter", "computedValue"],
+      "properties": {
+        "levelId": {
+          "type": "string",
+          "description": "Refinement level identifier"
+        },
+        "meshParameter": {
+          "type": "number",
+          "description": "Mesh parameter h for this level",
+          "exclusiveMinimum": 0
+        },
+        "computedValue": {
+          "type": "number",
+          "description": "Quantity value computed at this refinement level"
+        },
+        "failed": {
+          "type": "boolean",
+          "description": "True if the solver failed at this refinement level",
+          "default": false
+        },
+        "failureReason": {
+          "type": "string",
+          "description": "Reason for failure (null if not failed)"
+        }
+      }
+    }
+  }
+}

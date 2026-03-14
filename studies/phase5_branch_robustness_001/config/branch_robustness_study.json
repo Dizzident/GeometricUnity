@@ -1,0 +1,21 @@
+{
+  "studyId": "phase5-branch-robustness-001",
+  "schemaVersion": "1.0.0",
+  "description": "Phase V M46 branch-independence study: checks bosonic and fermionic eigenvalue stability across three admissible branch variants (trivial-torsion, augmented-torsion, identity-shiab). Demonstrates the branch-robustness machinery works end-to-end.",
+  "branchVariantIds": [
+    "trivial-torsion-identity-shiab",
+    "augmented-torsion-identity-shiab",
+    "trivial-torsion-alternative-shiab"
+  ],
+  "targetQuantityIds": [
+    "bosonic-eigenvalue-0",
+    "bosonic-eigenvalue-1",
+    "fermionic-eigenvalue-0",
+    "fermionic-eigenvalue-1",
+    "coupling-proxy-00"
+  ],
+  "absoluteTolerance": 1e-4,
+  "relativeTolerance": 0.01,
+  "environmentId": null,
+  "referenceBranchVariantId": "trivial-torsion-identity-shiab"
+}

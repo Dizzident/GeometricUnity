@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/environment_campaign.schema.json",
+  "title": "EnvironmentCampaignSpec",
+  "description": "Specification for a Phase V environment campaign: runs a pipeline over multiple environments and collects target quantities for cross-environment comparison.",
+  "type": "object",
+  "required": ["campaignId", "schemaVersion", "environmentIds", "branchManifestId", "targetQuantities", "provenance"],
+  "properties": {
+    "campaignId": {
+      "type": "string",
+      "description": "Unique campaign identifier"
+    },
+    "schemaVersion": {
+      "type": "string",
+      "description": "Schema version for forward compatibility",
+      "default": "1.0"
+    },
+    "environmentIds": {
+      "type": "array",
+      "description": "List of environment IDs to include in this campaign",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "branchManifestId": {
+      "type": "string",
+      "description": "Branch manifest ID to use for all environments in this campaign"
+    },
+    "targetQuantities": {
+      "type": "array",
+      "description": "List of physical quantity IDs to extract from each environment run",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "provenance": {
+      "type": "object",
+      "description": "Provenance metadata for this campaign spec",
+      "required": ["createdAt", "codeRevision", "branch"],
+      "properties": {
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "codeRevision": {
+          "type": "string"
+        },
+        "branch": {
+          "type": "object"
+        },
+        "backend": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/validation_dossier.schema.json",
+  "title": "ValidationDossier",
+  "description": "Top-level Phase V validation dossier. Aggregates study manifests, negative results, and claim escalation records. G-006: stale artifacts are excluded from acceptable evidence.",
+  "type": "object",
+  "required": [
+    "dossierId",
+    "title",
+    "studies",
+    "overallEvidenceTier",
+    "evidenceVerdict",
+    "isAcceptableAsEvidence",
+    "staleStudyIds",
+    "assembledAt"
+  ],
+  "properties": {
+    "dossierId": {
+      "type": "string",
+      "description": "Unique identifier for this dossier."
+    },
+    "title": {
+      "type": "string",
+      "description": "Human-readable title."
+    },
+    "studies": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/StudyManifest" },
+      "description": "All study contributions included in this dossier."
+    },
+    "overallEvidenceTier": {
+      "type": "string",
+      "enum": ["StaleCheckedIn", "RegeneratedCpu", "RegeneratedVerifiedCpu", "CrossBackendVerified"],
+      "description": "Minimum evidence tier across all studies."
+    },
+    "evidenceVerdict": {
+      "type": "string",
+      "description": "Human-readable verdict explaining whether this dossier is acceptable as Phase V evidence."
+    },
+    "isAcceptableAsEvidence": {
+      "type": "boolean",
+      "description": "True if all studies have been regenerated from current code."
+    },
+    "staleStudyIds": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Study IDs with stale or missing reproducibility bundles."
+    },
+    "assemblyNotes": {
+      "type": ["array", "null"],
+      "items": { "type": "string" },
+      "description": "Notes from the assembler."
+    },
+    "assembledAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this dossier was assembled."
+    },
+    "provenance": {
+      "type": ["object", "null"],
+      "description": "Provenance metadata."
+    }
+  },
+  "$defs": {
+    "StudyManifest": {
+      "type": "object",
+      "required": ["studyId", "description", "runFolder"],
+      "properties": {
+        "studyId": { "type": "string" },
+        "description": { "type": "string" },
+        "runFolder": { "type": "string" },
+        "reproducibility": {
+          "type": ["object", "null"],
+          "description": "Reproducibility bundle. Null = stale."
+        },
+        "provenance": { "type": ["object", "null"] }
+      }
+    }
+  }
+}

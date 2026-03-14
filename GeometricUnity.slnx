@@ -51,6 +51,13 @@
     <Project Path="src/Gu.Phase4.Observation/Gu.Phase4.Observation.csproj" />
     <Project Path="src/Gu.Phase4.Comparison/Gu.Phase4.Comparison.csproj" />
     <Project Path="src/Gu.Phase4.Reporting/Gu.Phase4.Reporting.csproj" />
+    <Project Path="src/Gu.Phase5.BranchIndependence/Gu.Phase5.BranchIndependence.csproj" />
+    <Project Path="src/Gu.Phase5.Convergence/Gu.Phase5.Convergence.csproj" />
+    <Project Path="src/Gu.Phase5.Environments/Gu.Phase5.Environments.csproj" />
+    <Project Path="src/Gu.Phase5.QuantitativeValidation/Gu.Phase5.QuantitativeValidation.csproj" />
+    <Project Path="src/Gu.Phase5.Falsification/Gu.Phase5.Falsification.csproj" />
+    <Project Path="src/Gu.Phase5.Dossiers/Gu.Phase5.Dossiers.csproj" />
+    <Project Path="src/Gu.Phase5.Reporting/Gu.Phase5.Reporting.csproj" />
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/Gu.Core.Tests/Gu.Core.Tests.csproj" />
@@ -106,5 +113,12 @@
     <Project Path="tests/Gu.Phase4.Comparison.Tests/Gu.Phase4.Comparison.Tests.csproj" />
     <Project Path="tests/Gu.Phase4.Reporting.Tests/Gu.Phase4.Reporting.Tests.csproj" />
     <Project Path="tests/Gu.Phase4.IntegrationTests/Gu.Phase4.IntegrationTests.csproj" />
+    <Project Path="tests/Gu.Phase5.BranchIndependence.Tests/Gu.Phase5.BranchIndependence.Tests.csproj" />
+    <Project Path="tests/Gu.Phase5.Convergence.Tests/Gu.Phase5.Convergence.Tests.csproj" />
+    <Project Path="tests/Gu.Phase5.Environments.Tests/Gu.Phase5.Environments.Tests.csproj" />
+    <Project Path="tests/Gu.Phase5.QuantitativeValidation.Tests/Gu.Phase5.QuantitativeValidation.Tests.csproj" />
+    <Project Path="tests/Gu.Phase5.Falsification.Tests/Gu.Phase5.Falsification.Tests.csproj" />
+    <Project Path="tests/Gu.Phase5.Dossiers.Tests/Gu.Phase5.Dossiers.Tests.csproj" />
+    <Project Path="tests/Gu.Phase5.Reporting.Tests/Gu.Phase5.Reporting.Tests.csproj" />
   </Folder>
 </Solution>

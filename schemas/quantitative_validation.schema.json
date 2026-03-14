@@ -1,0 +1,187 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/quantitative_validation.schema.json",
+  "title": "ConsistencyScoreCard",
+  "description": "Quantitative validation scorecard produced by M49 QuantitativeValidationRunner. Compares computed observables against external targets using pull statistics. All toy targets carry targetProvenance='synthetic-toy-v1' and evidenceTier='toy-placeholder'.",
+  "type": "object",
+  "required": ["studyId", "schemaVersion", "matches", "totalPassed", "totalFailed", "overallScore", "calibrationPolicyId", "provenance"],
+  "properties": {
+    "studyId": {
+      "type": "string",
+      "description": "Unique study identifier for this validation run"
+    },
+    "schemaVersion": {
+      "type": "string",
+      "description": "Schema version for forward compatibility",
+      "default": "1.0"
+    },
+    "matches": {
+      "type": "array",
+      "description": "All target match records from this validation run",
+      "items": { "$ref": "#/$defs/TargetMatchRecord" }
+    },
+    "totalPassed": {
+      "type": "integer",
+      "description": "Number of target comparisons where pull <= sigmaThreshold",
+      "minimum": 0
+    },
+    "totalFailed": {
+      "type": "integer",
+      "description": "Number of target comparisons where pull > sigmaThreshold",
+      "minimum": 0
+    },
+    "overallScore": {
+      "type": "number",
+      "description": "Fraction of comparisons that passed: totalPassed / (totalPassed + totalFailed). NaN if no matches."
+    },
+    "calibrationPolicyId": {
+      "type": "string",
+      "description": "ID of the CalibrationPolicy used for this run"
+    },
+    "provenance": { "$ref": "#/$defs/ProvenanceMeta" }
+  },
+  "$defs": {
+    "TargetMatchRecord": {
+      "type": "object",
+      "required": ["observableId", "targetLabel", "targetValue", "targetUncertainty", "computedValue", "computedUncertainty", "pull", "passed"],
+      "properties": {
+        "observableId": {
+          "type": "string",
+          "description": "Observable identifier being matched"
+        },
+        "targetLabel": {
+          "type": "string",
+          "description": "Human-readable label for the target (e.g., particle name or ratio description)"
+        },
+        "targetValue": {
+          "type": "number",
+          "description": "Target reference value. For toy studies, use eigenvalue ratios normalized to largest eigenvalue."
+        },
+        "targetUncertainty": {
+          "type": "number",
+          "description": "Target 1-sigma uncertainty. Set to a large value for toy-placeholder targets.",
+          "minimum": 0
+        },
+        "computedValue": {
+          "type": "number",
+          "description": "Computed observable value from the GU pipeline"
+        },
+        "computedUncertainty": {
+          "type": "number",
+          "description": "Computed total uncertainty. -1 means unestimated (never zero)."
+        },
+        "pull": {
+          "type": "number",
+          "description": "Pull statistic: |computed - target| / sqrt(sigma_computed^2 + sigma_target^2). If sigma_computed=-1 (unestimated), uses sigma_target only in denominator.",
+          "minimum": 0
+        },
+        "passed": {
+          "type": "boolean",
+          "description": "True if pull <= sigmaThreshold from the calibration policy (default 5.0)"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Optional diagnostic notes (e.g., 'computed uncertainty unestimated')"
+        }
+      }
+    },
+    "QuantitativeUncertainty": {
+      "type": "object",
+      "description": "Four independent uncertainty sources. Each field is -1 if unestimated (never zero). Total = sqrt(sum of squares of estimated components).",
+      "properties": {
+        "branchVariation": {
+          "type": "number",
+          "description": "Uncertainty from branch choice variation. -1 = unestimated.",
+          "default": -1
+        },
+        "refinementError": {
+          "type": "number",
+          "description": "Uncertainty from finite mesh refinement (discretization error). -1 = unestimated.",
+          "default": -1
+        },
+        "extractionError": {
+          "type": "number",
+          "description": "Uncertainty from the extraction/fitting method (e.g., eigenvalue ratio extraction). -1 = unestimated.",
+          "default": -1
+        },
+        "environmentSensitivity": {
+          "type": "number",
+          "description": "Uncertainty from environment (geometry) choice. -1 = unestimated.",
+          "default": -1
+        },
+        "totalUncertainty": {
+          "type": "number",
+          "description": "Total uncertainty = sqrt(branchVariation^2 + refinementError^2 + extractionError^2 + environmentSensitivity^2) over estimated components only. -1 if no components estimated.",
+          "default": -1
+        }
+      }
+    },
+    "CalibrationPolicy": {
+      "type": "object",
+      "required": ["policyId", "mode"],
+      "properties": {
+        "policyId": {
+          "type": "string",
+          "description": "Unique policy identifier"
+        },
+        "mode": {
+          "type": "string",
+          "description": "Calibration mode (e.g., 'standard', 'strict')"
+        },
+        "sigmaThreshold": {
+          "type": "number",
+          "description": "Maximum allowed pull for a comparison to pass",
+          "default": 5.0,
+          "exclusiveMinimum": 0
+        },
+        "requireFullUncertainty": {
+          "type": "boolean",
+          "description": "If true, fail any observable with unestimated computed uncertainty",
+          "default": false
+        }
+      }
+    },
+    "ExternalTarget": {
+      "type": "object",
+      "required": ["label", "observableId", "value", "uncertainty", "source"],
+      "properties": {
+        "label": {
+          "type": "string",
+          "description": "Human-readable label"
+        },
+        "observableId": {
+          "type": "string",
+          "description": "Observable ID this target applies to"
+        },
+        "value": {
+          "type": "number",
+          "description": "Target value. For toy studies, use eigenvalue ratios (normalize to largest eigenvalue), not raw eigenvalues."
+        },
+        "uncertainty": {
+          "type": "number",
+          "description": "Target 1-sigma uncertainty",
+          "minimum": 0
+        },
+        "source": {
+          "type": "string",
+          "description": "Provenance string. Must be 'synthetic-toy-v1' for all Phase V toy targets."
+        },
+        "evidenceTier": {
+          "type": "string",
+          "description": "Evidence tier. Must be 'toy-placeholder' for all Phase V toy targets. Never 'physical-prediction'."
+        }
+      }
+    },
+    "ProvenanceMeta": {
+      "type": "object",
+      "required": ["createdAt", "codeRevision", "branch"],
+      "properties": {
+        "createdAt": { "type": "string", "format": "date-time" },
+        "codeRevision": { "type": "string" },
+        "branch": { "type": "object" },
+        "backend": { "type": "string" },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

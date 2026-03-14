@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/branch_robustness_record.schema.json",
+  "title": "BranchRobustnessRecord",
+  "description": "Result record for a M46 branch-robustness study. Contains pairwise distance matrices, equivalence classes, fragility scores, and invariance candidates.",
+  "type": "object",
+  "required": [
+    "recordId",
+    "studyId",
+    "branchVariantIds",
+    "distanceMatrices",
+    "equivalenceClasses",
+    "fragilityRecords",
+    "invarianceCandidates",
+    "overallSummary",
+    "provenance"
+  ],
+  "properties": {
+    "recordId": {
+      "type": "string",
+      "description": "Unique record identifier."
+    },
+    "schemaVersion": {
+      "type": "string",
+      "default": "1.0.0"
+    },
+    "studyId": {
+      "type": "string",
+      "description": "Study spec that produced this record."
+    },
+    "branchVariantIds": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Branch variant IDs evaluated."
+    },
+    "distanceMatrices": {
+      "type": "object",
+      "description": "Pairwise distance matrices, one per target quantity.",
+      "additionalProperties": { "$ref": "#/$defs/BranchDistanceMatrix" }
+    },
+    "equivalenceClasses": {
+      "type": "object",
+      "description": "Equivalence classes for each target quantity.",
+      "additionalProperties": {
+        "type": "array",
+        "items": { "$ref": "#/$defs/BranchEquivalenceClass" }
+      }
+    },
+    "fragilityRecords": {
+      "type": "object",
+      "description": "Fragility records, one per target quantity.",
+      "additionalProperties": { "$ref": "#/$defs/FragilityRecord" }
+    },
+    "invarianceCandidates": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/InvarianceCandidateRecord" },
+      "description": "Quantities that appear branch-invariant across the evaluated family."
+    },
+    "overallSummary": {
+      "type": "string",
+      "enum": ["robust", "fragile", "mixed", "inconclusive"],
+      "description": "Overall study summary."
+    },
+    "diagnosticNotes": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "provenance": {
+      "type": "object",
+      "description": "Provenance metadata."
+    }
+  },
+  "$defs": {
+    "BranchDistanceMatrix": {
+      "type": "object",
+      "required": ["targetQuantityId", "branchVariantIds", "quantityValues", "distances", "maxDistance", "meanDistance", "referenceScale"],
+      "properties": {
+        "schemaVersion": { "type": "string" },
+        "targetQuantityId": { "type": "string" },
+        "branchVariantIds": { "type": "array", "items": { "type": "string" } },
+        "quantityValues": { "type": "array", "items": { "type": "number" } },
+        "distances": { "type": "array", "items": { "type": "number" } },
+        "maxDistance": { "type": "number" },
+        "meanDistance": { "type": "number" },
+        "referenceScale": { "type": "number" }
+      }
+    },
+    "BranchEquivalenceClass": {
+      "type": "object",
+      "required": ["targetQuantityId", "memberBranchVariantIds", "meanValue", "maxDeviationFromMean", "absoluteTolerance", "relativeTolerance"],
+      "properties": {
+        "schemaVersion": { "type": "string" },
+        "targetQuantityId": { "type": "string" },
+        "memberBranchVariantIds": { "type": "array", "items": { "type": "string" } },
+        "meanValue": { "type": "number" },
+        "maxDeviationFromMean": { "type": "number" },
+        "absoluteTolerance": { "type": "number" },
+        "relativeTolerance": { "type": "number" }
+      }
+    },
+    "FragilityRecord": {
+      "type": "object",
+      "required": ["targetQuantityId", "fragilityScore", "maxPairwiseDistance", "referenceScale", "classification", "maxDistancePair", "variantCount"],
+      "properties": {
+        "schemaVersion": { "type": "string" },
+        "targetQuantityId": { "type": "string" },
+        "fragilityScore": { "type": "number" },
+        "maxPairwiseDistance": { "type": "number" },
+        "referenceScale": { "type": "number" },
+        "classification": {
+          "type": "string",
+          "enum": ["invariant", "robust", "fragile", "indeterminate"]
+        },
+        "maxDistancePair": { "type": "array", "items": { "type": "string" }, "minItems": 2, "maxItems": 2 },
+        "variantCount": { "type": "integer" }
+      }
+    },
+    "InvarianceCandidateRecord": {
+      "type": "object",
+      "required": ["targetQuantityId", "branchFamilySize", "meanValue", "maxAbsDeviation", "fragilityScore", "absoluteTolerance", "relativeTolerance", "sourceStudyId"],
+      "properties": {
+        "schemaVersion": { "type": "string" },
+        "targetQuantityId": { "type": "string" },
+        "branchFamilySize": { "type": "integer" },
+        "meanValue": { "type": "number" },
+        "maxAbsDeviation": { "type": "number" },
+        "fragilityScore": { "type": "number" },
+        "absoluteTolerance": { "type": "number" },
+        "relativeTolerance": { "type": "number" },
+        "sourceStudyId": { "type": "string" },
+        "invarianceNote": { "type": "string" }
+      }
+    }
+  }
+}

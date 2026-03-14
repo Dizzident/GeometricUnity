@@ -47,4 +47,8 @@ public sealed class BackgroundAtlas
     /// <summary>Count of backgrounds at each admissibility level.</summary>
     [JsonPropertyName("admissibilityCounts")]
     public required IReadOnlyDictionary<string, int> AdmissibilityCounts { get; init; }
+
+    /// <summary>G-003: geometry tier of the environment used (toy/structured/imported).</summary>
+    [JsonPropertyName("environmentTier")]
+    public string? EnvironmentTier { get; init; }
 }

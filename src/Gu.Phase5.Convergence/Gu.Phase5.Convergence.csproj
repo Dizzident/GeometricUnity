@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Gu.Phase5.Convergence.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Gu.Core\Gu.Core.csproj" />
+    <ProjectReference Include="..\Gu.Math\Gu.Math.csproj" />
+    <ProjectReference Include="..\Gu.Geometry\Gu.Geometry.csproj" />
+    <ProjectReference Include="..\Gu.Phase3.Backgrounds\Gu.Phase3.Backgrounds.csproj" />
+    <ProjectReference Include="..\Gu.Phase3.Spectra\Gu.Phase3.Spectra.csproj" />
+    <ProjectReference Include="..\Gu.Phase5.BranchIndependence\Gu.Phase5.BranchIndependence.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -148,6 +148,13 @@ Impact:
 Out-of-the-box CLI solves tend to land on the trivial zero-residual branch and
 therefore are weak mathematical validation tests.
 
+Status (updated G-002):
+`gu run` / `gu solve` now emit a `[G-002] WARNING` when the trivial validation
+path is detected (Mode A + zero seed) and write a `SolveRunClassification` record
+to `logs/solve_run_classification.json`. The `solve-backgrounds` command also
+classifies each spec. The zero-seed default remains for backward compatibility but
+is no longer silent.
+
 ### A-012 Positive-definite trace pairing is often used for executable stability
 
 Many optimization and objective-based tests use the trace pairing rather than a
@@ -198,8 +205,12 @@ Impact:
 Current Phase III spectrum artifacts are not valid evidence about the specific
 stored background that the command name suggests.
 
-Status:
-This should be treated as a defect to fix, not as a stable design choice.
+Status (RESOLVED by G-004):
+`compute-spectrum` now loads the persisted omega state from
+`background_states/{bgId}_omega.json` and per-background manifest from
+`background_states/{bgId}_manifest.json` (both written by `solve-backgrounds`).
+The fallback to zero is retained only when no persisted state exists, with a
+logged warning. Spectrum artifacts now represent the actual solved background.
 
 ---
 
@@ -222,3 +233,115 @@ It cannot by itself establish:
 Impact:
 All current validation language should be phrased as branch-local executable
 validation unless stronger evidence is added.
+
+---
+
+## 7. Phase V validation assumptions
+
+### A-018 Richardson extrapolation uses a single mesh parameter proxy
+
+Phase V (M47) Richardson extrapolation uses the `MeshParameter` field from
+`RefinementLevel` directly as `h`. The formal ARCH_P5.md specification called for
+`h = max(h_X, h_F)` where h_X and h_F are separate X-space and fiber-space mesh
+parameters. The current implementation conflates these into one scalar.
+
+Impact:
+Convergence rate estimates and continuum extrapolations are branch-local to the
+single-parameter parameterization. The distinction between X-space and fiber-space
+refinement is not tracked.
+
+Status:
+Acceptable for MVP. Fix requires introducing separate h_X and h_F fields to
+RefinementLevel and updating RichardsonExtrapolator.
+
+---
+
+### A-019 Four of seven falsifier types are reserved placeholders
+
+Phase V (M50) FalsifierEvaluator actively evaluates three of the seven defined
+falsifier types: BranchFragility, NonConvergence, and QuantitativeMismatch.
+The remaining four — ObservationInstability, EnvironmentInstability,
+RepresentationContent, and CouplingInconsistency — are defined as string constants
+in FalsifierTypes but are not connected to any input data source.
+
+Impact:
+False-negative risk: studies with observation-pipeline instability or environment
+sensitivity will not trigger falsifiers from these four types. The `FalsifierTypes`
+string constants remain available for external use or future wiring.
+
+Status:
+Deferred. Input data types for these falsifiers (observation replay, environment
+variance records, representation diffs) are not yet available.
+
+---
+
+### A-020 External quantitative targets use synthetic-toy-v1 placeholder data
+
+Phase V (M49, M53) quantitative validation targets are not sourced from real
+experimental data. The reference study uses `targetProvenance = "synthetic-toy-v1"`
+and `evidenceTier = "toy-placeholder"`. Target values are eigenvalue ratios
+constructed to match the toy-geometry solve outputs.
+
+Impact:
+Pull statistics and pass/fail verdicts in the reference study are self-consistent
+but do not constitute evidence for or against the physical theory.
+
+Status:
+This is explicitly by design for the current evidence tier. Upgrading to
+"structured" or "imported" evidence requires real background solutions and
+physically-motivated observables.
+
+---
+
+### A-021 Phase V validation is branch-local relative to the declared branch family
+
+All Phase V branch-independence studies (M46) measure variation within a declared
+family of branch variants. The branch family is defined by the study spec and
+may not span the full space of valid GU branches. Invariance within the declared
+family does not imply invariance across all possible branches.
+
+Impact:
+"Branch-invariant" results should be read as "branch-invariant within the declared
+family under declared tolerances." Expanding the family may change the invariance
+verdict.
+
+Status:
+This is a fundamental limitation of the finite-sample branch methodology.
+Always report branch family size and variant IDs alongside invariance verdicts.
+
+---
+
+### A-023 `solve-backgrounds` requires explicit manifest flags to use non-trivial branch operators
+
+`solve-backgrounds` now supports `--manifest <path>` and `--manifest-dir <dir>`
+flags to load branch manifests for each `BranchManifestId` declared in the study
+spec. Without these flags, the command falls back to an inline default manifest
+with `ActiveTorsionBranch = "trivial"` and `ActiveShiabBranch = "identity-shiab"`.
+
+Impact:
+Background atlas studies that do not pass explicit manifest files use trivial/identity
+branch operators regardless of the `BranchManifestId` declared in the study spec.
+A `[G-001] WARNING` is emitted to stderr when the fallback is used. Per-background
+manifests are written to `background_states/{bgId}_manifest.json` so that
+`compute-spectrum` can read the exact manifest used to solve each background.
+
+Status (added G-001):
+The fallback is intentional for backward compatibility. Remove it and require
+explicit manifests once all study specs carry accurate manifest file paths.
+
+---
+
+### A-022 Claim escalation requires all six gates to pass simultaneously
+
+Phase V claim escalation (M51) promotes a candidate by one claim class level only
+if all six mandatory gates (branch-robust, refinement-bounded, multi-environment,
+observation-chain-valid, quantitative-match, no-active-fatal-falsifier) pass.
+Partial evidence does not promote.
+
+Impact:
+Candidates that pass five of six gates are treated identically to candidates that
+pass zero. There is no partial-credit or "evidence weight" promotion path.
+
+Status:
+Conservative by design. Future work may introduce a weighted escalation pathway,
+but this requires physics guidance on how to combine partial evidence.

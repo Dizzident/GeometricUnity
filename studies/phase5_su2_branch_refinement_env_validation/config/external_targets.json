@@ -1,0 +1,56 @@
+{
+  "tableId": "su2-branch-refinement-env-targets-v1",
+  "description": "Synthetic toy targets for Phase V M53 reference study. All values are eigenvalue RATIOS (ratio of eigenvalue i to eigenvalue 0). All targets use targetProvenance=synthetic-toy-v1 and evidenceTier=toy-placeholder with 30-50% uncertainties.",
+  "targets": [
+    {
+      "observableId": "bosonic-eigenvalue-ratio-1",
+      "label": "bosonic-mode-1-ratio",
+      "value": 0.1,
+      "uncertainty": 0.04,
+      "source": "synthetic-toy-v1",
+      "targetProvenance": "synthetic-toy-v1",
+      "evidenceTier": "toy-placeholder",
+      "notes": "Ratio of second bosonic eigenvalue to first; 40% uncertainty (toy placeholder)"
+    },
+    {
+      "observableId": "bosonic-eigenvalue-ratio-2",
+      "label": "bosonic-mode-2-ratio",
+      "value": 1.0,
+      "uncertainty": 0.4,
+      "source": "synthetic-toy-v1",
+      "targetProvenance": "synthetic-toy-v1",
+      "evidenceTier": "toy-placeholder",
+      "notes": "Ratio of third bosonic eigenvalue to first; 40% uncertainty (toy placeholder)"
+    },
+    {
+      "observableId": "bosonic-eigenvalue-ratio-3",
+      "label": "bosonic-mode-3-ratio",
+      "value": 5.0,
+      "uncertainty": 2.0,
+      "source": "synthetic-toy-v1",
+      "targetProvenance": "synthetic-toy-v1",
+      "evidenceTier": "toy-placeholder",
+      "notes": "Ratio of fourth bosonic eigenvalue to first; 40% uncertainty (toy placeholder)"
+    },
+    {
+      "observableId": "fermionic-eigenvalue-ratio-1",
+      "label": "fermionic-mode-1-ratio",
+      "value": 0.05,
+      "uncertainty": 0.02,
+      "source": "synthetic-toy-v1",
+      "targetProvenance": "synthetic-toy-v1",
+      "evidenceTier": "toy-placeholder",
+      "notes": "Ratio of second fermionic eigenvalue to first; 40% uncertainty (toy placeholder)"
+    },
+    {
+      "observableId": "fermionic-eigenvalue-ratio-2",
+      "label": "fermionic-mode-2-ratio",
+      "value": 2.0,
+      "uncertainty": 0.8,
+      "source": "synthetic-toy-v1",
+      "targetProvenance": "synthetic-toy-v1",
+      "evidenceTier": "toy-placeholder",
+      "notes": "Ratio of third fermionic eigenvalue to first; 40% uncertainty (toy placeholder)"
+    }
+  ]
+}

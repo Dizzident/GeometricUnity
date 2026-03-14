@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Gu.Phase5.Falsification.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Gu.Core\Gu.Core.csproj" />
+    <ProjectReference Include="..\Gu.Phase3.Registry\Gu.Phase3.Registry.csproj" />
+    <ProjectReference Include="..\Gu.Phase4.Registry\Gu.Phase4.Registry.csproj" />
+    <ProjectReference Include="..\Gu.Phase5.BranchIndependence\Gu.Phase5.BranchIndependence.csproj" />
+    <ProjectReference Include="..\Gu.Phase5.Convergence\Gu.Phase5.Convergence.csproj" />
+    <ProjectReference Include="..\Gu.Phase5.QuantitativeValidation\Gu.Phase5.QuantitativeValidation.csproj" />
+  </ItemGroup>
+
+</Project>

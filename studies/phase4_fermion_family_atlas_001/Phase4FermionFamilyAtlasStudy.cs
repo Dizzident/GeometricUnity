@@ -60,7 +60,14 @@ public sealed class Phase4FermionFamilyAtlasStudy
     /// <summary>
     /// Run the full pipeline and return the study result.
     /// </summary>
-    public Phase4StudyResult Run(string artifactsDir)
+    /// <param name="artifactsDir">Output directory for artifacts.</param>
+    /// <param name="phase3ArtifactsDir">
+    /// Optional path to a Phase III run folder containing persisted bosonic spectra and registry.
+    /// When provided, <see cref="BuildCouplingAtlas"/> uses real bosonic eigenvectors and
+    /// <see cref="LoadOrBuildBosonRegistry"/> loads the persisted registry rather than a stub.
+    /// G-005: primary path prefers real persisted Phase III artifacts over synthetic stand-ins.
+    /// </param>
+    public Phase4StudyResult Run(string artifactsDir, string? phase3ArtifactsDir = null)
     {
         ArgumentNullException.ThrowIfNull(artifactsDir);
         Directory.CreateDirectory(artifactsDir);
@@ -111,9 +118,9 @@ public sealed class Phase4FermionFamilyAtlasStudy
 
         var modes = spectralBundle.SpectralResult.Modes;
 
-        // Step 7: Build fermion family atlas (multi-context: use same result twice for demonstration)
-        // Real production runs would use multiple branch variants; here we use a single context
-        // with a deterministic perturbation to generate a second variant.
+        // Step 7: Build fermion family atlas.
+        // G-005: Use a single authoritative context. Do NOT fabricate a perturbed duplicate.
+        // Real branch sweeps would supply multiple contexts from distinct solved backgrounds.
         var namedResults = BuildNamedResults(modes, background.BackgroundId);
         var trackingConfig = new FermionTrackingConfig();
         var atlasBuilder = new FermionFamilyAtlasBuilder(trackingConfig);
@@ -128,9 +135,10 @@ public sealed class Phase4FermionFamilyAtlasStudy
         var clusteringEngine = new FamilyClusteringEngine(clusteringConfig);
         var clusters = clusteringEngine.Cluster(fermionAtlas.Families, provenance);
 
-        // Step 9: Build coupling atlas
+        // Step 9: Build coupling atlas (G-005: pass phase3ArtifactsDir for real boson perturbations)
         var couplingAtlas = BuildCouplingAtlas(
-            diracBundle, gammas, layout, yMesh, modes, background.BackgroundId, provenance);
+            diracBundle, gammas, layout, yMesh, modes, background.BackgroundId, provenance,
+            phase3ArtifactsDir);
 
         // Step 10: Observation pipeline (fermion clusters -> X_h summaries)
         // Run BEFORE registry so observation confidence feeds into claim class assignment.
@@ -146,10 +154,8 @@ public sealed class Phase4FermionFamilyAtlasStudy
             .ToDictionary(obs => obs.BosonModeId, obs => obs.MeanCouplingMagnitude);
 
         // Step 11: Build unified registry using RegistryMergeEngine (GAP-5 fix).
-        // Construct a minimal stub Phase III boson registry so the unified registry
-        // contains at least one boson alongside the Phase IV fermion candidates.
-        // In a full pipeline run, this would be loaded from a persisted Phase III run folder.
-        var stubBosonRegistry = BuildStubBosonRegistry(background.BackgroundId, provenance);
+        // G-005: primary path loads from persisted Phase III artifacts; falls back to stub with warning.
+        var stubBosonRegistry = LoadOrBuildBosonRegistry(background.BackgroundId, provenance, phase3ArtifactsDir);
         var registryMergeConfig = RegistryMergeConfig.Default;
         var registryMergeEngine = new RegistryMergeEngine(registryMergeConfig);
         var registry = registryMergeEngine.Build(
@@ -356,12 +362,9 @@ public sealed class Phase4FermionFamilyAtlasStudy
     /// <summary>
     /// Build NamedSpectralResult list for atlas construction.
     ///
-    /// For this single-context study, we use two contexts:
-    ///   1. The primary result from the main solve.
-    ///   2. A perturbed copy (modes with a small eigenvalue shift, simulating a second
-    ///      branch variant) to exercise the tracking machinery.
-    ///
-    /// This is an architectural demonstration, not a physical branch sweep.
+    /// G-005: Returns a single authoritative context from the primary solve.
+    /// Do NOT fabricate a perturbed duplicate as a stand-in for a second branch variant.
+    /// Real multi-context atlases must be driven by distinct solved backgrounds.
     /// </summary>
     private static List<NamedSpectralResult> BuildNamedResults(
         IReadOnlyList<FermionModeRecord> modes,
@@ -374,58 +377,9 @@ public sealed class Phase4FermionFamilyAtlasStudy
             Modes = modes,
         };
 
-        // Build a second context with slightly perturbed eigenvalues (1% shift).
-        // This exercises mode tracking without requiring a full re-solve.
-        var perturbedModes = PerturbModes(modes, backgroundId, perturbFraction: 0.01);
-        var result2 = new NamedSpectralResult
-        {
-            ContextId = "ctx-perturbed-001",
-            BackgroundId = backgroundId + "-perturbed",
-            Modes = perturbedModes,
-        };
-
-        return new List<NamedSpectralResult> { result1, result2 };
-    }
-
-    /// <summary>
-    /// Build a slightly perturbed copy of the modes for multi-context atlas construction.
-    /// Eigenvalues are scaled by (1 + perturbFraction) and mode IDs are suffixed.
-    /// Chirality decomposition is preserved (same spinor structure).
-    /// </summary>
-    private static IReadOnlyList<FermionModeRecord> PerturbModes(
-        IReadOnlyList<FermionModeRecord> modes,
-        string backgroundId,
-        double perturbFraction)
-    {
-        var result = new List<FermionModeRecord>(modes.Count);
-        double factor = 1.0 + perturbFraction;
-        foreach (var m in modes)
-        {
-            result.Add(new FermionModeRecord
-            {
-                ModeId = m.ModeId + "-p",
-                BackgroundId = backgroundId + "-perturbed",
-                BranchVariantId = m.BranchVariantId + "-perturbed",
-                LayoutId = m.LayoutId,
-                ModeIndex = m.ModeIndex,
-                EigenvalueRe = m.EigenvalueRe * factor,
-                EigenvalueIm = m.EigenvalueIm * factor,
-                ResidualNorm = m.ResidualNorm,
-                EigenvectorCoefficients = m.EigenvectorCoefficients,
-                ChiralityDecomposition = m.ChiralityDecomposition,
-                ConjugationPairing = m.ConjugationPairing,
-                GaugeLeakScore = m.GaugeLeakScore,
-                GaugeReductionApplied = m.GaugeReductionApplied,
-                Backend = m.Backend,
-                ComputedWithUnverifiedGpu = m.ComputedWithUnverifiedGpu,
-                BranchStabilityScore = m.BranchStabilityScore,
-                RefinementStabilityScore = m.RefinementStabilityScore,
-                ReplayTier = m.ReplayTier,
-                AmbiguityNotes = m.AmbiguityNotes,
-                Provenance = m.Provenance,
-            });
-        }
-        return result;
+        // G-005: Single-context is the correct primary path when no real second branch
+        // variant is available. Do NOT add a fabricated perturbed duplicate.
+        return new List<NamedSpectralResult> { result1 };
     }
 
     /// <summary>
@@ -445,7 +399,8 @@ public sealed class Phase4FermionFamilyAtlasStudy
         SimplicialMesh yMesh,
         IReadOnlyList<FermionModeRecord> modes,
         string backgroundId,
-        ProvenanceMeta provenance)
+        ProvenanceMeta provenance,
+        string? phase3ArtifactsDir = null)
     {
         int edgeCount = yMesh.EdgeCount;
         int vertexCount = yMesh.VertexCount;
@@ -465,9 +420,6 @@ public sealed class Phase4FermionFamilyAtlasStudy
             cellsPerEdge[e] = new[] { v0, v1 };
         }
 
-        // Build variation matrices for a set of synthetic "boson modes".
-        // Each boson mode is a unit perturbation in one (edge_group, gauge) direction.
-        // We use 3 representative boson modes to keep the atlas tractable.
         var modesWithVectors = modes.Where(m => m.EigenvectorCoefficients != null).ToList();
         if (modesWithVectors.Count == 0)
         {
@@ -484,35 +436,44 @@ public sealed class Phase4FermionFamilyAtlasStudy
         }
 
         int spinorDim = gammas.SpinorDimension;
-        int dofsPerCell = spinorDim * DimG;
-        int totalDof = vertexCount * dofsPerCell;
-
         var variationMatrices = new Dictionary<string, (double[,] Re, double[,]? Im)>();
 
-        // Generate 3 synthetic boson modes:
-        // b0: unit perturbation in T_1 direction (cosine profile along x)
-        // b1: unit perturbation in T_2 direction (sine profile along x)
-        // b2: constant T_3 perturbation
-        for (int bIdx = 0; bIdx < 3; bIdx++)
+        // G-005: Primary path — try to load real bosonic spectral eigenvectors from Phase III.
+        // Each bosonic mode eigenvector lives in connection space (edgeCount * dimG) and
+        // represents a real perturbation direction from the solved bosonic background.
+        bool loadedRealBosons = TryLoadBosonPerturbations(
+            phase3ArtifactsDir, edgeCount, DimG, gammas, vertexCount, spinorDim,
+            edgeLengths, cellsPerEdge, edgeDirections, variationMatrices);
+
+        if (!loadedRealBosons)
         {
-            var deltaOmega = new double[edgeCount * DimG];
-            for (int e = 0; e < edgeCount; e++)
+            // G-005 fallback: use synthetic delta-omega perturbations.
+            // These are NOT real bosonic modes. Labeled with "-synthetic-" prefix.
+            Console.WriteLine(
+                "  G-005 WARNING: No real Phase III bosonic spectral data found. " +
+                "Coupling atlas will use synthetic perturbation directions as fallback. " +
+                "Provide phase3ArtifactsDir pointing to a Phase III run folder for real results.");
+            for (int bIdx = 0; bIdx < 3; bIdx++)
             {
-                int v0 = yMesh.Edges[e][0];
-                double mx = yMesh.VertexCoordinates[v0 * dim];
-                if (bIdx == 0)
-                    deltaOmega[e * DimG + 0] = System.Math.Cos(Pi * mx);
-                else if (bIdx == 1)
-                    deltaOmega[e * DimG + 1] = System.Math.Sin(Pi * mx);
-                else
-                    deltaOmega[e * DimG + 2] = 1.0;
+                var deltaOmega = new double[edgeCount * DimG];
+                for (int e = 0; e < edgeCount; e++)
+                {
+                    int v0 = yMesh.Edges[e][0];
+                    double mx = yMesh.VertexCoordinates[v0 * dim];
+                    if (bIdx == 0)
+                        deltaOmega[e * DimG + 0] = System.Math.Cos(Pi * mx);
+                    else if (bIdx == 1)
+                        deltaOmega[e * DimG + 1] = System.Math.Sin(Pi * mx);
+                    else
+                        deltaOmega[e * DimG + 2] = 1.0;
+                }
+
+                var (reVar, imVar) = DiracVariationComputer.ComputeAnalytical(
+                    deltaOmega, gammas, vertexCount, spinorDim, DimG,
+                    edgeLengths, cellsPerEdge, edgeDirections);
+
+                variationMatrices[$"boson-synthetic-{bIdx:D2}"] = (reVar, imVar);
             }
-
-            var (reVar, imVar) = DiracVariationComputer.ComputeAnalytical(
-                deltaOmega, gammas, vertexCount, spinorDim, DimG,
-                edgeLengths, cellsPerEdge, edgeDirections);
-
-            variationMatrices[$"boson-synthetic-{bIdx:D2}"] = (reVar, imVar);
         }
 
         var couplingEngine = new CouplingProxyEngine(new CpuDiracOperatorAssembler());
@@ -527,15 +488,110 @@ public sealed class Phase4FermionFamilyAtlasStudy
     }
 
     /// <summary>
-    /// Build a minimal stub Phase III boson registry for the unified registry merge (GAP-5).
-    ///
-    /// In a full pipeline this would be loaded from a persisted Phase III run folder.
-    /// The stub contains one synthetic C1-class bosonic candidate representing a single
-    /// bosonic mode from the background connection, providing the cross-phase merge context
-    /// required by RegistryMergeEngine.Build().
+    /// Try to load real bosonic eigenvectors from Phase III spectra/ directory.
+    /// Returns true if at least one real bosonic perturbation was loaded.
     /// </summary>
-    private static BosonRegistry BuildStubBosonRegistry(string backgroundId, ProvenanceMeta provenance)
+    private static bool TryLoadBosonPerturbations(
+        string? phase3ArtifactsDir,
+        int edgeCount,
+        int dimG,
+        GammaOperatorBundle gammas,
+        int vertexCount,
+        int spinorDim,
+        double[] edgeLengths,
+        int[][] cellsPerEdge,
+        double[][] edgeDirections,
+        Dictionary<string, (double[,] Re, double[,]? Im)> variationMatrices)
     {
+        if (string.IsNullOrEmpty(phase3ArtifactsDir))
+            return false;
+
+        var spectraDir = Path.Combine(phase3ArtifactsDir, "spectra");
+        if (!Directory.Exists(spectraDir))
+            return false;
+
+        bool loaded = false;
+        foreach (var specFile in Directory.EnumerateFiles(spectraDir, "*.json").Take(3))
+        {
+            try
+            {
+                var specJson = File.ReadAllText(specFile);
+                using var doc = JsonDocument.Parse(specJson);
+                if (!doc.RootElement.TryGetProperty("modes", out var modesEl))
+                    continue;
+                foreach (var modeEl in modesEl.EnumerateArray().Take(3))
+                {
+                    if (!modeEl.TryGetProperty("eigenvectorCoefficients", out var evEl))
+                        continue;
+                    var arr = evEl.Deserialize<double[]>();
+                    if (arr is null || arr.Length != edgeCount * dimG)
+                        continue;
+                    var modeId = modeEl.TryGetProperty("modeId", out var midEl)
+                        ? midEl.GetString() ?? "boson-real-mode"
+                        : "boson-real-mode";
+                    var (reVar, imVar) = DiracVariationComputer.ComputeAnalytical(
+                        arr, gammas, vertexCount, spinorDim, dimG,
+                        edgeLengths, cellsPerEdge, edgeDirections);
+                    variationMatrices[modeId] = (reVar, imVar);
+                    loaded = true;
+                }
+            }
+            catch (Exception)
+            {
+                // Skip unreadable spectral files.
+            }
+        }
+        return loaded;
+    }
+
+    /// <summary>
+    /// Load a Phase III boson registry from persisted artifacts, or build a minimal
+    /// synthetic stub when no persisted data is available (G-005 fix).
+    ///
+    /// Primary path: loads from &lt;phase3ArtifactsDir&gt;/bosons/boson_registry.json.
+    /// Fallback: builds one synthetic C1-class record with an explicit warning.
+    /// </summary>
+    private static BosonRegistry LoadOrBuildBosonRegistry(
+        string backgroundId,
+        ProvenanceMeta provenance,
+        string? phase3ArtifactsDir)
+    {
+        // G-005: Primary path — try to load from persisted Phase III artifacts.
+        if (!string.IsNullOrEmpty(phase3ArtifactsDir))
+        {
+            var registryPath = Path.Combine(phase3ArtifactsDir, "bosons", "boson_registry.json");
+            if (File.Exists(registryPath))
+            {
+                try
+                {
+                    var loaded = BosonRegistry.FromJson(File.ReadAllText(registryPath));
+                    Console.WriteLine(
+                        $"  G-005: Loaded real Phase III boson registry from {registryPath} " +
+                        $"({loaded.Candidates.Count} candidates).");
+                    return loaded;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(
+                        $"  G-005 WARNING: Failed to load boson registry from {registryPath}: {ex.Message}");
+                }
+            }
+            else
+            {
+                Console.WriteLine(
+                    $"  G-005 WARNING: No boson_registry.json at {registryPath}. " +
+                    "Using synthetic stub. Run 'build-boson-registry' on a Phase III run folder first.");
+            }
+        }
+        else
+        {
+            Console.WriteLine(
+                "  G-005 WARNING: No phase3ArtifactsDir provided. " +
+                "Unified registry will use a synthetic stub boson record as fallback. " +
+                "Pass a Phase III run folder path to use real persisted bosons.");
+        }
+
+        // Fallback: build minimal synthetic stub.
         var stubBoson = new CandidateBosonRecord
         {
             CandidateId = $"stub-boson-{backgroundId}-001",

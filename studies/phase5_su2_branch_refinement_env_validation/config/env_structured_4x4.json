@@ -1,0 +1,18 @@
+{
+  "environmentId": "env-structured-4x4",
+  "schemaVersion": "1.0",
+  "generatorId": "refined-toy-2d",
+  "parameters": {
+    "rows": 4,
+    "cols": 4
+  },
+  "baseDimension": 2,
+  "ambientDimension": 2,
+  "description": "Structured 4x4 triangulated mesh (16 triangles). Used as the structured environment tier for Phase V M48/M53 reference study. Enables environment-sensitivity comparison against the 2x2 toy mesh.",
+  "provenance": {
+    "createdAt": "2026-03-14T00:00:00+00:00",
+    "codeRevision": "phase5-m53-ref-study-v1",
+    "branch": { "branchId": "env-structured-4x4", "schemaVersion": "1.0" },
+    "backend": "cpu"
+  }
+}

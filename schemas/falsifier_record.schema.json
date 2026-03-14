@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "falsifier_record.schema.json",
+  "title": "FalsifierRecord",
+  "description": "A single falsifier triggered by a condition that challenges the validity of a candidate or study result (M50).",
+  "type": "object",
+  "required": [
+    "falsifierId",
+    "falsifierType",
+    "severity",
+    "targetId",
+    "branchId",
+    "description",
+    "evidence",
+    "active",
+    "provenance"
+  ],
+  "properties": {
+    "falsifierId": {
+      "type": "string",
+      "description": "Unique falsifier identifier."
+    },
+    "schemaVersion": {
+      "type": "string",
+      "description": "Schema version.",
+      "default": "1.0.0"
+    },
+    "falsifierType": {
+      "type": "string",
+      "description": "Falsifier type ID.",
+      "enum": [
+        "branch-fragility",
+        "non-convergence",
+        "observation-instability",
+        "environment-instability",
+        "quantitative-mismatch",
+        "representation-content",
+        "coupling-inconsistency"
+      ]
+    },
+    "severity": {
+      "type": "string",
+      "description": "Falsifier severity level.",
+      "enum": ["fatal", "high", "medium", "low"]
+    },
+    "targetId": {
+      "type": "string",
+      "description": "Identifier of the candidate or quantity this falsifier targets."
+    },
+    "branchId": {
+      "type": "string",
+      "description": "Branch ID where the condition was triggered."
+    },
+    "environmentId": {
+      "type": ["string", "null"],
+      "description": "Environment ID where triggered (null if environment-agnostic)."
+    },
+    "triggerValue": {
+      "type": ["number", "null"],
+      "description": "Trigger value that caused this falsifier to fire (e.g., fragility score)."
+    },
+    "threshold": {
+      "type": ["number", "null"],
+      "description": "Threshold value that was exceeded."
+    },
+    "description": {
+      "type": "string",
+      "description": "Human-readable description of what was triggered."
+    },
+    "evidence": {
+      "type": "string",
+      "description": "Evidence source (e.g., record type and ID)."
+    },
+    "active": {
+      "type": "boolean",
+      "description": "Whether this falsifier is currently active. Inactive falsifiers are preserved for record-keeping but not applied to demotions."
+    },
+    "provenance": {
+      "$ref": "artifact.schema.json#/$defs/ProvenanceMeta"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,64 @@
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using Gu.Core;
+using Gu.Phase3.Reporting;
+
+namespace Gu.Phase5.Reporting;
+
+/// <summary>
+/// Top-level Phase V validation report (M53).
+/// Aggregates branch independence, convergence, falsification, and negative-result
+/// summaries from a complete Phase V campaign.
+/// </summary>
+public sealed class Phase5Report
+{
+    /// <summary>Unique report identifier.</summary>
+    [JsonPropertyName("reportId")]
+    public required string ReportId { get; init; }
+
+    /// <summary>Schema version.</summary>
+    [JsonPropertyName("schemaVersion")]
+    public required string SchemaVersion { get; init; }
+
+    /// <summary>Study identifier this report covers.</summary>
+    [JsonPropertyName("studyId")]
+    public required string StudyId { get; init; }
+
+    /// <summary>Dossier IDs included in this report.</summary>
+    [JsonPropertyName("dossierIds")]
+    public required IReadOnlyList<string> DossierIds { get; init; }
+
+    /// <summary>Branch-independence atlas (null if not computed).</summary>
+    [JsonPropertyName("branchIndependenceAtlas")]
+    public BranchIndependenceAtlas? BranchIndependenceAtlas { get; init; }
+
+    /// <summary>Convergence atlas (null if not computed).</summary>
+    [JsonPropertyName("convergenceAtlas")]
+    public ConvergenceAtlas? ConvergenceAtlas { get; init; }
+
+    /// <summary>Falsification dashboard (null if not computed).</summary>
+    [JsonPropertyName("falsificationDashboard")]
+    public FalsificationDashboard? FalsificationDashboard { get; init; }
+
+    /// <summary>Negative results preserved from all phases.</summary>
+    [JsonPropertyName("negativeResultSummary")]
+    public IReadOnlyList<NegativeResultEntry>? NegativeResultSummary { get; init; }
+
+    /// <summary>Provenance metadata.</summary>
+    [JsonPropertyName("provenance")]
+    public required ProvenanceMeta Provenance { get; init; }
+
+    /// <summary>Timestamp when this report was generated.</summary>
+    [JsonPropertyName("generatedAt")]
+    public required DateTimeOffset GeneratedAt { get; init; }
+
+    /// <summary>Serialize to JSON.</summary>
+    public string ToJson(bool indented = true)
+        => JsonSerializer.Serialize(this, new JsonSerializerOptions { WriteIndented = indented });
+
+    /// <summary>Deserialize from JSON.</summary>
+    public static Phase5Report FromJson(string json)
+        => JsonSerializer.Deserialize<Phase5Report>(json,
+               new JsonSerializerOptions { PropertyNameCaseInsensitive = true })
+           ?? throw new InvalidOperationException("Failed to deserialize Phase5Report.");
+}

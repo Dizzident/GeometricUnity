@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/environment_record.schema.json",
+  "title": "EnvironmentRecord",
+  "description": "Record describing a geometry environment for Phase V studies, including mesh topology, admissibility checks, and provenance.",
+  "type": "object",
+  "required": ["environmentId", "geometryTier", "geometryFingerprint", "baseDimension", "ambientDimension", "edgeCount", "faceCount", "admissibility", "provenance"],
+  "properties": {
+    "environmentId": {
+      "type": "string",
+      "description": "Unique environment identifier"
+    },
+    "geometryTier": {
+      "type": "string",
+      "description": "Geometry tier: toy, structured, imported",
+      "enum": ["toy", "structured", "imported"]
+    },
+    "geometryFingerprint": {
+      "type": "string",
+      "description": "Hash fingerprint of the mesh geometry (SHA-256 of topology + coordinates)"
+    },
+    "baseDimension": {
+      "type": "integer",
+      "description": "Intrinsic dimension of the base manifold",
+      "minimum": 1
+    },
+    "ambientDimension": {
+      "type": "integer",
+      "description": "Dimension of the ambient embedding space",
+      "minimum": 1
+    },
+    "edgeCount": {
+      "type": "integer",
+      "description": "Number of 1-simplices (edges) in the mesh",
+      "minimum": 0
+    },
+    "faceCount": {
+      "type": "integer",
+      "description": "Number of 2-simplices (faces) in the mesh",
+      "minimum": 0
+    },
+    "admissibility": {
+      "type": "object",
+      "description": "Admissibility report for this environment",
+      "$ref": "#/$defs/EnvironmentAdmissibilityReport"
+    },
+    "sourceSpec": {
+      "type": "string",
+      "description": "Optional reference to the source spec (environmentId, path, or identifier) that generated this record"
+    },
+    "provenance": {
+      "$ref": "#/$defs/ProvenanceMeta"
+    }
+  },
+  "$defs": {
+    "EnvironmentAdmissibilityReport": {
+      "type": "object",
+      "required": ["level", "checks", "passed"],
+      "properties": {
+        "level": {
+          "type": "string",
+          "description": "Overall admissibility level: admissible or inadmissible",
+          "enum": ["admissible", "inadmissible"]
+        },
+        "checks": {
+          "type": "array",
+          "description": "Individual admissibility check results",
+          "items": { "$ref": "#/$defs/AdmissibilityCheck" }
+        },
+        "passed": {
+          "type": "boolean",
+          "description": "True if all checks passed"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Optional human-readable notes about failed checks"
+        }
+      }
+    },
+    "AdmissibilityCheck": {
+      "type": "object",
+      "required": ["checkId", "description", "passed"],
+      "properties": {
+        "checkId": {
+          "type": "string",
+          "description": "Check identifier (e.g., mesh-valid, dimension-match, connectivity, orientation)"
+        },
+        "description": {
+          "type": "string",
+          "description": "Human-readable description of the check"
+        },
+        "passed": {
+          "type": "boolean",
+          "description": "Whether this check passed"
+        },
+        "value": {
+          "type": "number",
+          "description": "Optional observed value for the check"
+        },
+        "threshold": {
+          "type": "number",
+          "description": "Optional threshold used in the check"
+        }
+      }
+    },
+    "ProvenanceMeta": {
+      "type": "object",
+      "required": ["createdAt", "codeRevision", "branch"],
+      "properties": {
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp of creation"
+        },
+        "codeRevision": {
+          "type": "string",
+          "description": "Git SHA or code revision identifier"
+        },
+        "branch": {
+          "type": "object",
+          "description": "Branch reference"
+        },
+        "backend": {
+          "type": "string",
+          "description": "Backend identifier"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Optional notes"
+        }
+      }
+    }
+  }
+}

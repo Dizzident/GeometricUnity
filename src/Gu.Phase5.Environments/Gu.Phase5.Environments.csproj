@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Gu.Phase5.Environments.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Gu.Core\Gu.Core.csproj" />
+    <ProjectReference Include="..\Gu.Geometry\Gu.Geometry.csproj" />
+    <ProjectReference Include="..\Gu.Phase3.Backgrounds\Gu.Phase3.Backgrounds.csproj" />
+    <ProjectReference Include="..\Gu.Artifacts\Gu.Artifacts.csproj" />
+  </ItemGroup>
+
+</Project>

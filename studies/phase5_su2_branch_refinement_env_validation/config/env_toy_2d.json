@@ -1,0 +1,18 @@
+{
+  "environmentId": "env-toy-2d-trivial",
+  "schemaVersion": "1.0",
+  "generatorId": "refined-toy-2d",
+  "parameters": {
+    "rows": 2,
+    "cols": 2
+  },
+  "baseDimension": 2,
+  "ambientDimension": 2,
+  "description": "Minimal toy 2D triangulated mesh (2x2 grid, 4 triangles). Used as the toy environment tier for Phase V M48/M53 reference study.",
+  "provenance": {
+    "createdAt": "2026-03-14T00:00:00+00:00",
+    "codeRevision": "phase5-m53-ref-study-v1",
+    "branch": { "branchId": "env-toy-2d-trivial", "schemaVersion": "1.0" },
+    "backend": "cpu"
+  }
+}

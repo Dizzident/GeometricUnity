@@ -1,6 +1,6 @@
 # HOW TO: Geometric Unity Research Platform
 
-A comprehensive guide to building, running, testing, and exploring the Geometric Unity (GU) codebase — the first executable bosonic branch of Eric Weinstein's Geometric Unity completion program.
+A comprehensive guide to building, running, testing, and exploring the Geometric Unity (GU) codebase — the first executable bosonic and fermionic branch of Eric Weinstein's Geometric Unity completion program, with quantitative validation via Phase V.
 
 ---
 
@@ -19,11 +19,13 @@ A comprehensive guide to building, running, testing, and exploring the Geometric
 11. [Running and Writing Tests](#11-running-and-writing-tests)
 12. [Phase II: Research Instrumentation](#12-phase-ii-research-instrumentation)
 13. [Phase III: Boson Spectrum Extraction](#13-phase-iii-boson-spectrum-extraction)
-14. [Vulkan Visualization and Export](#14-vulkan-visualization-and-export)
-15. [Benchmarking](#15-benchmarking)
-16. [Key Physics and Conventions](#16-key-physics-and-conventions)
-17. [Exploring the Codebase](#17-exploring-the-codebase)
-18. [Common Pitfalls and Troubleshooting](#18-common-pitfalls-and-troubleshooting)
+14. [Phase IV: Fermionic Spectrum](#14-phase-iv-fermionic-spectrum)
+15. [Phase V: Quantitative Validation](#15-phase-v-quantitative-validation)
+16. [Vulkan Visualization and Export](#16-vulkan-visualization-and-export)
+17. [Benchmarking](#17-benchmarking)
+18. [Key Physics and Conventions](#18-key-physics-and-conventions)
+19. [Exploring the Codebase](#19-exploring-the-codebase)
+20. [Common Pitfalls and Troubleshooting](#20-common-pitfalls-and-troubleshooting)
 
 ---
 
@@ -74,7 +76,7 @@ dotnet build
 dotnet clean && dotnet build
 ```
 
-The solution uses the `.slnx` format (new in .NET 10). The file `GeometricUnity.slnx` lists all 36 source projects, 3 application projects, and 38 test projects.
+The solution uses the `.slnx` format (new in .NET 10). The file `GeometricUnity.slnx` lists all 50 source projects, 3 application projects, and 52 test projects.
 
 ### Global Settings
 
@@ -143,7 +145,7 @@ GeometricUnity/
 │   ├── Gu.Phase3.Campaigns/           # Boson comparison campaigns
 │   └── Gu.Phase3.Reporting/           # Boson atlas reports, dashboards
 │
-├── tests/                             # Test projects (38 projects, ~2252 tests)
+├── tests/                             # Test projects (52 projects, ~2961 tests)
 ├── native/                            # CUDA/Vulkan native code (CMake)
 ├── examples/                          # Toy geometries for testing
 │   ├── toy_branch_2d/                 # 2D unit square (simplest)
@@ -922,7 +924,7 @@ dotnet test --no-build --filter "Category=Integration"
 | `Gu.Phase3.CudaSpectra.Tests` | — | GPU verification enforcement |
 | `Gu.Phase3.Campaigns.Tests` | — | Boson comparison campaigns |
 | `Gu.Phase3.Reporting.Tests` | — | Boson atlas report generation |
-| **Total** | **~2,252** | **38 test projects** |
+| **Total** | **~2,961** | **52 test projects** |
 
 ### Writing New Tests
 
@@ -1298,7 +1300,189 @@ Produces a `BosonReport` with per-candidate summaries, campaign outcomes, a `Reg
 
 ---
 
-## 14. Vulkan Visualization and Export
+## 14. Phase IV: Fermionic Spectrum
+
+Phase IV adds the fermionic sector: a Dirac operator on the spin bundle over Y, fermionic mode extraction, chirality classification, family clustering, and coupling extraction.
+
+### Spin Connection and Dirac Assembly
+
+```bash
+# Build the spin connection spec from a branch manifest
+dotnet run --project apps/Gu.Cli -- build-spin-spec branch.json --out spin_spec.json
+
+# Assemble the Dirac operator bundle
+dotnet run --project apps/Gu.Cli -- assemble-dirac spin_spec.json --out dirac_bundle.json
+```
+
+The `CpuSpinConnectionBuilder` constructs the spin connection for su(2) (dimG=3) or su(3) (dimG=8). The `DiracOperatorAssembler` assembles D_A using the spin connection and background field.
+
+### Fermionic Mode Extraction
+
+```bash
+dotnet run --project apps/Gu.Cli -- solve-fermion-modes dirac_bundle.json --num-modes 10 --out fermion_modes/
+```
+
+The fermionic mass-like scale is the **absolute eigenvalue** |λ| directly — not sqrt(|λ|). This differs from the bosonic convention.
+
+```csharp
+// Key physics: mass ~ |lambda|, NOT sqrt(|lambda|)
+var massLike = System.Math.Abs(mode.Eigenvalue);
+```
+
+### Chirality Classification
+
+Phase IV implements three chirality operators:
+- **X-chirality** (primary) — chirality on the base manifold X
+- **Y-chirality** — chirality on the observerse Y
+- **F-chirality** — fiber chirality
+
+```bash
+dotnet run --project apps/Gu.Cli -- analyze-chirality fermion_modes.json --out chirality.json
+dotnet run --project apps/Gu.Cli -- analyze-conjugation fermion_modes.json --out conjugation.json
+```
+
+When `dim(Y)` is odd, all modes get `chiralityTag = "trivial"` — this is a negative result entry, not a failure.
+
+### Family Clustering
+
+```bash
+dotnet run --project apps/Gu.Cli -- build-family-clusters fermion_modes.json --out clusters.json
+```
+
+Near-degenerate fermionic triplets are grouped into candidate families. Labels are conservative: `"cluster-N"` — never physical particle names.
+
+### Coupling Extraction and Unified Registry
+
+```bash
+dotnet run --project apps/Gu.Cli -- extract-couplings boson_registry.json fermion_modes.json --out couplings.json
+dotnet run --project apps/Gu.Cli -- build-unified-registry boson_registry.json fermion_modes.json --out unified_registry.json
+```
+
+The `RegistryMergeEngine` builds a `UnifiedParticleRegistry` combining boson and fermion candidates. Fermion comparison outcomes use: `{compatible, incompatible, underdetermined, not-applicable}` (not "insufficient-evidence").
+
+### Reference Study
+
+```bash
+cd studies/phase4_fermion_family_atlas_001
+./run_study.sh   # Runs all 8 Phase IV CLI commands end-to-end
+```
+
+---
+
+## 15. Phase V: Quantitative Validation
+
+Phase V adds a validation layer that tests branch-independence, refinement convergence, environment sensitivity, quantitative target matching, and falsification. It does not add new CUDA kernels — it is a pure post-processing layer over Phases I-IV.
+
+### Branch-Independence Study (M46)
+
+Measures how much quantities vary across a family of branch variants:
+
+```bash
+dotnet run --project apps/Gu.Cli -- branch-robustness branch_robustness_study.json \
+  --values quantity_values.json --out branch_robustness_record.json
+```
+
+```csharp
+var engine = new BranchRobustnessEngine(spec);
+var record = engine.Run(quantityValuesByVariant, provenance);
+
+Console.WriteLine($"Overall: {record.OverallSummary}");  // robust/fragile/mixed/inconclusive
+foreach (var (qty, fragility) in record.FragilityRecords)
+    Console.WriteLine($"  {qty}: score={fragility.FragilityScore:F3} ({fragility.Classification})");
+```
+
+**Fragility score** = maxDistanceToNeighbor / (meanDistanceToFamily + 1e-14). Score > 0.5 → "fragile".
+
+### Refinement Convergence (M47)
+
+Richardson extrapolation across ≥ 3 mesh refinement levels:
+
+```csharp
+var runner = new RefinementStudyRunner();
+var result = runner.Run(spec, level => SolveAtLevel(level));
+
+foreach (var estimate in result.ContinuumEstimates)
+    Console.WriteLine($"  {estimate.QuantityId}: Q_inf={estimate.ExtrapolatedValue:G4} ± {estimate.ErrorBand:G4} ({estimate.ConvergenceClassification})");
+```
+
+### Quantitative Validation (M49)
+
+Pull statistic p = |Q_comp - Q_target| / sqrt(σ_c² + σ_t²). Pass threshold: 5.0 (default).
+
+```csharp
+var matcher = new TargetMatcher(policy);
+var scoreCard = matcher.Match(observables, targetTable);
+
+foreach (var match in scoreCard.Matches)
+    Console.WriteLine($"  {match.ObservableId}: pull={match.Pull:F2}, {(match.Passed ? "PASS" : "FAIL")}");
+```
+
+External targets use eigenvalue **ratios** (not raw eigenvalues) to avoid scale dependence.
+
+### Falsification (M50)
+
+Seven falsifier types with four severity levels:
+
+| Severity | Demotion |
+|----------|----------|
+| fatal    | cap at C0 |
+| high     | demote by 2 |
+| medium   | demote by 1 |
+| low      | warning only |
+
+```csharp
+var evaluator = new FalsifierEvaluator();
+var summary = evaluator.Evaluate(studyId, branchRecord, convergenceRecords,
+    convergenceFailures, scoreCard, policy, provenance);
+
+Console.WriteLine($"Active fatal: {summary.ActiveFatalCount}");
+Console.WriteLine($"Active high: {summary.ActiveHighCount}");
+```
+
+Currently active falsifier types: `branch-fragility`, `non-convergence`, `quantitative-mismatch`. Four additional types (`observation-instability`, `environment-instability`, `representation-content`, `coupling-inconsistency`) are defined but not yet wired to input data (see PHASE_5_OPEN_ISSUES.md).
+
+### Claim Escalation (M51)
+
+A candidate is promoted by 1 claim class level when **all 6 gates** pass simultaneously:
+
+1. `branch-robust` — survives branch variations
+2. `refinement-bounded` — error band < 10% of extrapolated value
+3. `multi-environment` — computed on ≥ 2 environment tiers
+4. `observation-chain-valid` — full observation provenance present
+5. `quantitative-match` — ≥ 1 target match passed
+6. `no-active-fatal-falsifier` — no fatal falsifier active
+
+### Full Phase V Campaign (M53)
+
+```bash
+dotnet run --project apps/Gu.Cli -- run-phase5-campaign campaign_spec.json \
+  --targets external_targets.json --observables observables.json --out report.json
+```
+
+### Reference Study
+
+```bash
+cd studies/phase5_su2_branch_refinement_env_validation
+./run_study.sh     # Full Phase V campaign for 4-variant SU(2) branch family
+./artifacts/reproduce.sh  # Reproduce all artifacts from scratch
+```
+
+### Schemas
+
+| File | Type |
+|------|------|
+| `branch_robustness_study.schema.json` | `BranchRobustnessStudySpec` |
+| `branch_robustness_record.schema.json` | `BranchRobustnessRecord` |
+| `branch_distance_matrix.schema.json` | `BranchDistanceMatrix` |
+| `environment_campaign.schema.json` | `EnvironmentCampaignSpec` |
+| `environment_record.schema.json` | `EnvironmentRecord` |
+| `quantitative_validation.schema.json` | `ConsistencyScoreCard` |
+| `validation_dossier.schema.json` | `ValidationDossier` |
+| `falsifier_record.schema.json` | `FalsifierRecord` |
+
+---
+
+## 16. Vulkan Visualization and Export
 
 ### Launching the Workbench
 
@@ -1347,7 +1531,7 @@ var vizData = visualizer.PrepareVisualization(curvatureField, mesh);
 
 ---
 
-## 15. Benchmarking
+## 17. Benchmarking
 
 ### Running Benchmarks
 
@@ -1378,7 +1562,7 @@ Benchmark reports include:
 
 ---
 
-## 16. Key Physics and Conventions
+## 18. Key Physics and Conventions
 
 ### Core Equation
 
@@ -1474,7 +1658,7 @@ where J = dUpsilon/domega is the Jacobian.
 
 ---
 
-## 17. Exploring the Codebase
+## 19. Exploring the Codebase
 
 ### Finding Key Types
 
@@ -1534,7 +1718,7 @@ where J = dUpsilon/domega is the Jacobian.
 
 ---
 
-## 18. Common Pitfalls and Troubleshooting
+## 20. Common Pitfalls and Troubleshooting
 
 ### Build Issues
 

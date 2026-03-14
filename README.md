@@ -1,10 +1,10 @@
 # Geometric Unity
 
-A reproducible research engine implementing the first executable bosonic branch of Eric Weinstein's Geometric Unity framework. Connection-centered, observerse-based, explicitly discretized, with CPU reference backend, CUDA acceleration, Vulkan visualization, a full Phase II research instrumentation layer for systematic branch-independence studies, and a Phase III boson spectrum extraction pipeline for candidate boson identification and comparison campaigns.
+A reproducible research engine implementing the first executable bosonic and fermionic branch of Eric Weinstein's Geometric Unity framework. Connection-centered, observerse-based, explicitly discretized, with CPU reference backend, CUDA acceleration, Vulkan visualization, a Phase II research instrumentation layer, a Phase III boson spectrum extraction pipeline, a Phase IV fermionic spectrum and family-clustering layer, and a Phase V quantitative validation and falsification framework.
 
 ## Overview
 
-This system implements the **minimal bosonic executable branch** of the Geometric Unity completion program:
+This system implements the **minimal bosonic and fermionic executable branch** of the Geometric Unity completion program:
 
 - **Connection omega** on a principal bundle P -> Y is the primary dynamical variable
 - **Curvature** F_omega, **torsion** T_omega, and **Shiab** S_omega define the residual Upsilon = S - T
@@ -19,6 +19,17 @@ This system implements the **minimal bosonic executable branch** of the Geometri
 - **Boson spectrum** (Phase III) extracts fluctuation eigenmodes via Lanczos on the Hessian
 - **Mode tracking** (Phase III) follows mode families across backgrounds with split/merge detection
 - **Candidate boson registry** (Phase III) assembles, classifies, and compares candidate particles
+- **Fermionic spectrum** (Phase IV) extracts Dirac eigenmodes on the spin bundle over Y
+- **Chirality and conjugation** (Phase IV) classifies fermionic modes by X/Y/F-chirality operators
+- **Family clustering** (Phase IV) groups near-degenerate fermionic triplets into candidate families
+- **Coupling extraction** (Phase IV) computes interaction proxies between bosonic and fermionic modes
+- **Unified registry** (Phase IV) merges boson and fermion candidate records with claim classes C0-C5
+- **Branch-independence validation** (Phase V) measures how much outputs vary across branch variants
+- **Continuum extrapolation** (Phase V) applies Richardson extrapolation across mesh refinement levels
+- **Quantitative validation** (Phase V) computes pull statistics against external targets with 4-source uncertainty
+- **Falsification engine** (Phase V) fires 7 typed falsifiers that demote or cap candidate claim classes
+- **Claim escalation** (Phase V) promotes candidates through 6 mandatory gates to higher evidence tiers
+- **Validation dossiers** (Phase V) assemble all Phase V evidence into per-study dossier artifacts
 
 The system is designed as a **research platform**, not a one-off solver.
 
@@ -40,7 +51,7 @@ dotnet build
 dotnet build && dotnet test --no-build
 ```
 
-There are 2,252 tests across 38 test projects covering core types, geometry, reference CPU operators, interop, validation, artifacts, observation, external comparison, all Phase II modules (semantics, branches, execution, canonicity, stability, recovery, continuation, predictions, comparison, reporting), and all Phase III modules (backgrounds, gauge reduction, spectra, mode tracking, properties, observables, registry, CUDA spectra, campaigns, reporting).
+There are 2,961 tests across 52 test projects covering core types, geometry, reference CPU operators, interop, validation, artifacts, observation, external comparison, all Phase II modules (semantics, branches, execution, canonicity, stability, recovery, continuation, predictions, comparison, reporting), all Phase III modules (backgrounds, gauge reduction, spectra, mode tracking, properties, observables, registry, CUDA spectra, campaigns, reporting), all Phase IV modules (spin, fermions, Dirac, chirality, family clustering, couplings, registry, observation, comparison, reporting, CUDA acceleration), and all Phase V modules (branch independence, convergence, environments, quantitative validation, falsification, dossiers, reporting).
 
 ## CLI Usage
 
@@ -94,6 +105,24 @@ dotnet run --project apps/Gu.Cli -- run-boson-campaign <run-folder> [--campaign 
 dotnet run --project apps/Gu.Cli -- export-boson-report <run-folder> [options]
 ```
 
+**Phase IV — Fermionic Spectrum:**
+```bash
+dotnet run --project apps/Gu.Cli -- build-spin-spec <branchManifest.json> [--out <spinSpec.json>]
+dotnet run --project apps/Gu.Cli -- assemble-dirac <spinSpec.json> [--out <diracBundle.json>]
+dotnet run --project apps/Gu.Cli -- solve-fermion-modes <diracBundle.json> [--num-modes N] [--out <dir>]
+dotnet run --project apps/Gu.Cli -- analyze-chirality <fermionModes.json> [--out <chirality.json>]
+dotnet run --project apps/Gu.Cli -- analyze-conjugation <fermionModes.json> [--out <conjugation.json>]
+dotnet run --project apps/Gu.Cli -- extract-couplings <bosonRegistry.json> <fermionModes.json> [--out <couplings.json>]
+dotnet run --project apps/Gu.Cli -- build-family-clusters <fermionModes.json> [--out <clusters.json>]
+dotnet run --project apps/Gu.Cli -- build-unified-registry <bosonRegistry.json> <fermionModes.json> [--out <registry.json>]
+```
+
+**Phase V — Quantitative Validation:**
+```bash
+dotnet run --project apps/Gu.Cli -- branch-robustness <studySpec.json> [--values <quantityValues.json>] [--out <output.json>]
+dotnet run --project apps/Gu.Cli -- run-phase5-campaign <campaignSpec.json> [--targets <targets.json>] [--observables <obs.json>] [--out <report.json>]
+```
+
 ## Running Benchmarks
 
 ```bash
@@ -110,7 +139,7 @@ GeometricUnity/
 │   ├── Gu.Cli/                    # Command-line interface
 │   ├── Gu.Workbench/              # Interactive workbench (Vulkan)
 │   └── Gu.Benchmarks/             # Performance benchmarks
-├── src/                           # 36 source libraries
+├── src/                           # 50 source libraries
 │   ├── Gu.Core/                   # Core types: BranchManifest, FieldTensor, TensorSignature
 │   ├── Gu.Math/                   # Lie algebras, structure constants, pairings
 │   ├── Gu.Branching/              # Branch operators: torsion, Shiab interfaces
@@ -146,11 +175,29 @@ GeometricUnity/
 │   ├── Gu.Phase3.Registry/        # Candidate boson registry, claim classification
 │   ├── Gu.Phase3.CudaSpectra/     # GPU-accelerated Lanczos (CUDA)
 │   ├── Gu.Phase3.Campaigns/       # Boson comparison campaigns
-│   └── Gu.Phase3.Reporting/       # Boson atlas reports, dashboards
-├── tests/                         # 38 test projects (Phase I + Phase II + Phase III)
+│   ├── Gu.Phase3.Reporting/       # Boson atlas reports, dashboards
+│   ├── Gu.Phase4.Spin/            # Spin connection builder on bundle over Y
+│   ├── Gu.Phase4.Fermions/        # Fermionic mode extraction infrastructure
+│   ├── Gu.Phase4.Dirac/           # Dirac operator assembly (CPU + GPU stub)
+│   ├── Gu.Phase4.Chirality/       # X/Y/F-chirality operators and classification
+│   ├── Gu.Phase4.FamilyClustering/# Near-degenerate triplet → family cluster grouping
+│   ├── Gu.Phase4.Couplings/       # Interaction proxy extraction, coupling matrix
+│   ├── Gu.Phase4.Registry/        # Fermion registry, unified particle registry
+│   ├── Gu.Phase4.Observation/     # Fermionic observation pipeline
+│   ├── Gu.Phase4.Comparison/      # Fermion comparison campaigns
+│   ├── Gu.Phase4.Reporting/       # Phase IV reports and dashboards
+│   ├── Gu.Phase4.CudaAcceleration/# GPU Dirac solve (stub; TODO(M44-GPU))
+│   ├── Gu.Phase5.BranchIndependence/ # Branch-robustness engine, fragility scores (M46)
+│   ├── Gu.Phase5.Convergence/     # Richardson extrapolation, convergence classification (M47)
+│   ├── Gu.Phase5.Environments/    # Structured/imported environments, admissibility (M48)
+│   ├── Gu.Phase5.QuantitativeValidation/ # Uncertainty propagation, pull statistics (M49)
+│   ├── Gu.Phase5.Falsification/   # 7 falsifier types, severity policy, registry demotion (M50)
+│   ├── Gu.Phase5.Dossiers/        # Claim escalation, negative-result ledger, dossiers (M51-M52)
+│   └── Gu.Phase5.Reporting/       # Phase V reports, atlases, falsification dashboard (M53)
+├── tests/                         # 52 test projects (Phase I + II + III + IV + V)
 ├── native/                        # CUDA kernels (C/CUDA)
 ├── examples/                      # Toy 2D/3D/4D geometries for debugging
-└── schemas/                       # 26 JSON schemas for all phases
+└── schemas/                       # 38+ JSON schemas for all phases
 ```
 
 ## Architecture
@@ -217,6 +264,41 @@ BackgroundStudySpec (parameter sweep over background connections)
   -> BosonReportGenerator (atlas report, dashboards)
 ```
 
+### Phase IV Fermionic Spectrum Pipeline
+
+```
+SpinConnectionSpec (spin group, Lie algebra, background connection)
+  -> CpuSpinConnectionBuilder (spin connection on bundle over Y)
+  -> DiracOperatorAssembler (Dirac operator D_A on spinor bundle)
+  -> GpuDiracKernelStub (GPU dispatch; TODO(M44-GPU))
+  -> FermionModeExtractor (eigenvalue solve: mass ~ |lambda|, NOT sqrt)
+  -> ChiralityAnalyzer (Y-chirality, X-chirality (primary), F-chirality)
+  -> ConjugationAnalyzer (C-conjugation, CPT classification)
+  -> FamilyClusterEngine (near-degenerate triplet → "cluster-N" label)
+  -> CouplingExtractor (interaction proxy between bosons and fermions)
+  -> FermionRegistry (claim classes C0-C5 analog, demotion rules)
+  -> RegistryMergeEngine (UnifiedParticleRegistry: bosons + fermions)
+  -> FermionComparisonCampaignRunner (fermion comparison campaigns)
+  -> Phase4ReportGenerator (unified registry reports)
+```
+
+### Phase V Quantitative Validation Pipeline
+
+```
+Phase5CampaignSpec (branch family, refinement spec, env campaign, targets)
+  -> BranchRobustnessEngine (pairwise distances, equivalence classes, fragility)
+  -> RefinementStudyRunner (Richardson extrapolation, convergence classification)
+  -> StructuredEnvironmentGenerator / EnvironmentImporter (M48 environments)
+  -> UncertaintyPropagator (4-source quadrature: branch, refinement, extraction, env)
+  -> TargetMatcher (pull statistic |Δ|/sqrt(σ_c²+σ_t²), pass ≤ 5σ default)
+  -> FalsifierEvaluator (7 falsifier types, fatal/high/medium/low severity)
+  -> RegistryDemotionIntegrator (fatal→C0, high→-2, medium→-1, low→warning)
+  -> Phase5DossierAssembler (branch+convergence+env+quant+falsifiers → dossier)
+  -> ClaimEscalationRecord (6 mandatory gates for promotion)
+  -> NegativeResultLedger (branch-fragility, non-convergence, mismatch, etc.)
+  -> Phase5ReportGenerator (atlases, dashboards, markdown report)
+```
+
 ### Replay Tiers
 
 - **R0** — Schema-only (archival)
@@ -274,17 +356,19 @@ Visualization is strictly **read-only** — it consumes artifact snapshots and n
 
 ## Codebase
 
-- ~450 C# source files
-- ~250 test files
+- ~600 C# source files
+- ~350 test files
 - 15 native source files (CUDA/Vulkan)
-- 2,252 tests across 38 test projects
+- 2,961 tests across 52 test projects
 - Phase 1 (Minimal GU v1): **Complete** — all 13 milestones (M0-M12)
 - Phase 2 (Research Instrumentation): **Complete** — all 10 milestones (M13-M22)
-- Phase 3 (Boson Spectrum Extraction): **Complete** — all 10 milestones (M23-M32) + all 12 gap closures
+- Phase 3 (Boson Spectrum Extraction): **Complete** — all 10 milestones (M23-M32) + all 23 gap closures
+- Phase 4 (Fermionic Spectrum): **Complete** — all 13 milestones (M33-M45) + all 8 gap closures
+- Phase 5 (Quantitative Validation): **Complete** — all 8 milestones (M46-M53) + all 6 entry gap closures
 
 ## Theory Context
 
-The `TheoryCompletitionRevisions/` directory contains the evolving Geometric Unity Completion manuscript. The software implements the executable portion of this completion program. See `IMPLEMENTATION_PLAN.md` (Phase I), `IMPLEMENTATION_PLAN_P2.md` (Phase II), and `IMPLEMENTATION_PLAN_P3.md` (Phase III) for the full technical specifications.
+The `TheoryCompletitionRevisions/` directory contains the evolving Geometric Unity Completion manuscript. The software implements the executable portion of this completion program. See `IMPLEMENTATION_PLAN.md` (Phase I), `IMPLEMENTATION_PLAN_P2.md` (Phase II), `IMPLEMENTATION_PLAN_P3.md` (Phase III), `IMPLEMENTATION_PLAN_P4.md` (Phase IV), and `IMPLEMENTATION_P5.md` (Phase V) for the full technical specifications.
 
 ## License
 

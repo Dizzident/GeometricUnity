@@ -51,6 +51,9 @@ public static class RunFolderLayout
     public const string SolverLogFile = "logs/solver.log";
     public const string EnvironmentFile = "logs/environment.txt";
 
+    /// <summary>G-002: solve run classification record.</summary>
+    public const string SolveRunClassificationFile = "logs/solve_run_classification.json";
+
     /// <summary>
     /// All directories that must be created for a canonical run folder.
     /// </summary>

@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/refinement_study.schema.json",
+  "title": "RefinementStudySpec",
+  "description": "Specification for a multi-level mesh refinement study (M47). Defines the refinement ladder and target quantities for Richardson extrapolation and convergence analysis.",
+  "type": "object",
+  "required": ["studyId", "schemaVersion", "branchManifestId", "targetQuantities", "refinementLevels", "provenance"],
+  "properties": {
+    "studyId": {
+      "type": "string",
+      "description": "Unique identifier for this refinement study"
+    },
+    "schemaVersion": {
+      "type": "string",
+      "description": "Schema version for forward compatibility",
+      "default": "1.0"
+    },
+    "branchManifestId": {
+      "type": "string",
+      "description": "Branch manifest ID that defines the computational setup"
+    },
+    "targetQuantities": {
+      "type": "array",
+      "description": "List of quantity IDs to analyze for convergence",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "refinementLevels": {
+      "type": "array",
+      "description": "Ordered list of refinement levels (coarsest to finest)",
+      "items": { "$ref": "#/$defs/RefinementLevel" },
+      "minItems": 2
+    },
+    "provenance": { "$ref": "#/$defs/ProvenanceMeta" }
+  },
+  "$defs": {
+    "RefinementLevel": {
+      "type": "object",
+      "required": ["levelId", "meshParameter"],
+      "properties": {
+        "levelId": {
+          "type": "string",
+          "description": "Unique level identifier (e.g., 'L0', 'L1', 'L2')"
+        },
+        "meshParameter": {
+          "type": "number",
+          "description": "Mesh parameter h (edge length or similar). Smaller = finer mesh.",
+          "exclusiveMinimum": 0
+        },
+        "description": {
+          "type": "string",
+          "description": "Optional human-readable description (e.g., '4x4 mesh')"
+        }
+      }
+    },
+    "ProvenanceMeta": {
+      "type": "object",
+      "required": ["createdAt", "codeRevision", "branch"],
+      "properties": {
+        "createdAt": { "type": "string", "format": "date-time" },
+        "codeRevision": { "type": "string" },
+        "branch": { "type": "object" },
+        "backend": { "type": "string" },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

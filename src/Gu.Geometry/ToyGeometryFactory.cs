@@ -132,6 +132,82 @@ public static class ToyGeometryFactory
     }
 
     /// <summary>
+    /// G-003: Creates a structured 2D grid fiber bundle mesh with trivial fiber (BaseMesh == AmbientMesh).
+    /// Produces 2 * rows * cols triangles via diagonal splitting of each quad cell.
+    /// </summary>
+    public static FiberBundleMesh CreateStructured2D(int rows, int cols)
+    {
+        int nv_x = cols + 1;
+        int nv_y = rows + 1;
+        int vertCount = nv_x * nv_y;
+        int cellCount = 2 * rows * cols;
+
+        // Vertex coordinates: unit grid [0,1]x[0,1]
+        var coords = new double[vertCount * 2];
+        for (int r = 0; r < nv_y; r++)
+        {
+            for (int c = 0; c < nv_x; c++)
+            {
+                int v = r * nv_x + c;
+                coords[v * 2 + 0] = (double)c / cols;
+                coords[v * 2 + 1] = (double)r / rows;
+            }
+        }
+
+        // Triangulate: each quad (r,c)-(r,c+1)-(r+1,c)-(r+1,c+1) → 2 triangles
+        var cells = new int[cellCount][];
+        int ci = 0;
+        for (int r = 0; r < rows; r++)
+        {
+            for (int c = 0; c < cols; c++)
+            {
+                int v00 = r * nv_x + c;
+                int v10 = r * nv_x + c + 1;
+                int v01 = (r + 1) * nv_x + c;
+                int v11 = (r + 1) * nv_x + c + 1;
+                cells[ci++] = new[] { v00, v10, v01 };
+                cells[ci++] = new[] { v10, v11, v01 };
+            }
+        }
+
+        var mesh = MeshTopologyBuilder.Build(
+            embeddingDimension: 2,
+            simplicialDimension: 2,
+            vertexCoordinates: coords,
+            vertexCount: vertCount,
+            cellVertices: cells);
+
+        // Trivial fiber: BaseMesh == AmbientMesh, identity maps
+        var xToY = new int[vertCount];
+        var fiberVerts = new int[vertCount][];
+        for (int v = 0; v < vertCount; v++)
+        {
+            xToY[v] = v;
+            fiberVerts[v] = new[] { v };
+        }
+
+        var yToX = new int[vertCount];
+        for (int v = 0; v < vertCount; v++) yToX[v] = v;
+
+        var cellMap = new int[cellCount];
+        for (int c = 0; c < cellCount; c++) cellMap[c] = c;
+
+        var sectionCoeffs = new double[cellCount][];
+        for (int c = 0; c < cellCount; c++) sectionCoeffs[c] = new[] { 1.0, 0.0, 0.0 };
+
+        return new FiberBundleMesh
+        {
+            BaseMesh = mesh,
+            AmbientMesh = mesh,
+            YVertexToXVertex = yToX,
+            FiberVerticesPerXVertex = fiberVerts,
+            XVertexToYVertex = xToY,
+            XCellToYCell = cellMap,
+            SectionCoefficients = sectionCoeffs,
+        };
+    }
+
+    /// <summary>
     /// Creates a 2D toy product bundle mesh using ProductBundleMesh:
     /// - X_h: single triangle in 2D (dimX=2, simpDim=2)
     /// - F_h: single edge in 1D (dimF=1, simpDim=1)

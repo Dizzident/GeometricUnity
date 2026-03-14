@@ -1,0 +1,22 @@
+{
+  "campaignId": "phase5-su2-env-campaign",
+  "schemaVersion": "1.0",
+  "environmentIds": [
+    "env-toy-2d-trivial",
+    "env-structured-4x4"
+  ],
+  "branchManifestId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+  "targetQuantities": [
+    "bosonic-eigenvalue-ratio-1",
+    "bosonic-eigenvalue-ratio-2",
+    "bosonic-eigenvalue-ratio-3",
+    "fermionic-eigenvalue-ratio-1",
+    "fermionic-eigenvalue-ratio-2"
+  ],
+  "provenance": {
+    "createdAt": "2026-03-14T00:00:00+00:00",
+    "codeRevision": "phase5-m53-ref-study-v1",
+    "branch": { "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega", "schemaVersion": "1.0" },
+    "backend": "cpu"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/branch_robustness_study.schema.json",
+  "title": "BranchRobustnessStudySpec",
+  "description": "Specification for a M46 branch-independence study. Declares branch family, target quantities, and tolerances for a branch-robustness sweep.",
+  "type": "object",
+  "required": [
+    "studyId",
+    "branchVariantIds",
+    "targetQuantityIds"
+  ],
+  "properties": {
+    "studyId": {
+      "type": "string",
+      "description": "Unique study identifier."
+    },
+    "schemaVersion": {
+      "type": "string",
+      "default": "1.0.0"
+    },
+    "description": {
+      "type": "string",
+      "description": "Human-readable description of the study goal."
+    },
+    "branchVariantIds": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "description": "List of branch variant IDs to include in the sweep."
+    },
+    "targetQuantityIds": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "description": "Target quantity IDs to track across branch variants."
+    },
+    "absoluteTolerance": {
+      "type": "number",
+      "default": 1e-6,
+      "description": "Absolute tolerance for equivalence classification."
+    },
+    "relativeTolerance": {
+      "type": "number",
+      "default": 1e-4,
+      "description": "Relative tolerance for equivalence classification."
+    },
+    "environmentId": {
+      "type": ["string", "null"],
+      "description": "Environment ID to use for all branch evaluations. Null = default toy environment."
+    },
+    "referenceBranchVariantId": {
+      "type": ["string", "null"],
+      "description": "Reference branch variant ID for distance normalization. Null = use first variant."
+    }
+  },
+  "additionalProperties": false
+}

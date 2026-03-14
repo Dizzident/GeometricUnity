@@ -503,6 +503,113 @@ public sealed class Phase4FermionFamilyAtlas001Tests : IDisposable
     }
 
     // -----------------------------------------------------------------------
+    // Test 20: G-005 regression — persisted Phase III registry is loaded when available
+    // -----------------------------------------------------------------------
+
+    /// <summary>
+    /// G-005 regression: when a real Phase III boson_registry.json is present on disk,
+    /// the study must load it and merge its candidates into the unified registry.
+    /// The stub fallback must NOT be used when a persisted registry exists.
+    ///
+    /// Proves: two runs with different stored artifacts produce different unified registries.
+    /// </summary>
+    [Fact]
+    public void G005_PersistedBosonRegistry_IsLoadedInsteadOfStub()
+    {
+        // Arrange: build a Phase III-style boson registry with a sentinel candidate ID.
+        var sentinelCandidateId = "g005-regression-sentinel-boson-001";
+        var sentinelRegistry = new Gu.Phase3.Registry.BosonRegistry();
+        sentinelRegistry.Register(new Gu.Phase3.Registry.CandidateBosonRecord
+        {
+            CandidateId = sentinelCandidateId,
+            PrimaryFamilyId = "sentinel-family-001",
+            ContributingModeIds = new[] { "sentinel-mode-001" },
+            BackgroundSet = new[] { "bg-toy2d-cos-sin-su2-v1" },
+            BranchVariantSet = new[] { "sentinel-variant" },
+            MassLikeEnvelope = new[] { 1.0, 2.0, 3.0 },
+            MultiplicityEnvelope = new[] { 1, 1, 1 },
+            GaugeLeakEnvelope = new[] { 0.0, 0.0, 0.0 },
+            BranchStabilityScore = 0.95,
+            RefinementStabilityScore = 0.95,
+            ObservationStabilityScore = 0.95,
+            ClaimClass = Gu.Phase3.Registry.BosonClaimClass.C1_LocalPersistentMode,
+            ComputedWithUnverifiedGpu = false,
+            AmbiguityCount = 0,
+            AmbiguityNotes = Array.Empty<string>(),
+            RegistryVersion = "sentinel-v1.0",
+        });
+        string sentinelJson = sentinelRegistry.ToJson();
+
+        // Write the sentinel registry to a temp Phase III artifacts dir.
+        string phase3Dir = Path.Combine(Path.GetTempPath(), $"gu-g005-phase3-{Guid.NewGuid():N}");
+        string bosonsDir = Path.Combine(phase3Dir, "bosons");
+        Directory.CreateDirectory(bosonsDir);
+        File.WriteAllText(Path.Combine(bosonsDir, "boson_registry.json"), sentinelJson);
+
+        string artifactsDir = Path.Combine(Path.GetTempPath(), $"gu-g005-artifacts-{Guid.NewGuid():N}");
+        Directory.CreateDirectory(artifactsDir);
+
+        try
+        {
+            // Act: run the study with phase3ArtifactsDir pointing to the sentinel dir.
+            var study = new Phase4FermionFamilyAtlasStudy();
+            var result = study.Run(artifactsDir, phase3ArtifactsDir: phase3Dir);
+
+            // Assert 1: the study ran to completion
+            Assert.NotNull(result);
+
+            // Assert 2: the unified registry JSON on disk contains the sentinel candidate ID.
+            // If the stub was used instead, the sentinel ID would NOT appear.
+            Assert.True(result.ArtifactPaths.ContainsKey("unified_particle_registry"),
+                "unified_particle_registry artifact not written");
+            string registryJson = File.ReadAllText(result.ArtifactPaths["unified_particle_registry"]);
+            Assert.Contains(sentinelCandidateId, registryJson,
+                StringComparison.Ordinal);
+        }
+        finally
+        {
+            // Cleanup temp dirs.
+            try { Directory.Delete(phase3Dir, recursive: true); } catch { /* best-effort */ }
+            try { Directory.Delete(artifactsDir, recursive: true); } catch { /* best-effort */ }
+        }
+    }
+
+    /// <summary>
+    /// G-005 regression: when no phase3ArtifactsDir is provided, the fallback synthetic stub
+    /// is used and the unified registry does NOT contain the sentinel candidate ID.
+    /// Proves that the two code paths (real vs. stub) produce different artifacts.
+    /// </summary>
+    [Fact]
+    public void G005_WithoutPhase3Dir_UsesStubbedRegistry_NotSentinel()
+    {
+        string sentinelCandidateId = "g005-regression-sentinel-boson-001";
+        string artifactsDir = Path.Combine(Path.GetTempPath(), $"gu-g005-stub-artifacts-{Guid.NewGuid():N}");
+        Directory.CreateDirectory(artifactsDir);
+
+        try
+        {
+            // Act: run without any phase3ArtifactsDir (no persisted registry).
+            var study = new Phase4FermionFamilyAtlasStudy();
+            var result = study.Run(artifactsDir, phase3ArtifactsDir: null);
+
+            Assert.NotNull(result);
+
+            // Assert: the sentinel ID must NOT be present — the stub was used.
+            Assert.True(result.ArtifactPaths.ContainsKey("unified_particle_registry"),
+                "unified_particle_registry artifact not written");
+            string registryJson = File.ReadAllText(result.ArtifactPaths["unified_particle_registry"]);
+            Assert.DoesNotContain(sentinelCandidateId, registryJson, StringComparison.Ordinal);
+
+            // The stub uses StudyVersion ("1.0.0"), not "sentinel-v1.0".
+            Assert.NotEqual("sentinel-v1.0", result.ConsumedBosonRegistryId);
+        }
+        finally
+        {
+            try { Directory.Delete(artifactsDir, recursive: true); } catch { /* best-effort */ }
+        }
+    }
+
+    // -----------------------------------------------------------------------
     // Private helpers
     // -----------------------------------------------------------------------
 

@@ -32,6 +32,14 @@
     <ProjectReference Include="..\..\src\Gu.Phase4.FamilyClustering\Gu.Phase4.FamilyClustering.csproj" />
     <ProjectReference Include="..\..\src\Gu.Phase4.Registry\Gu.Phase4.Registry.csproj" />
     <ProjectReference Include="..\..\src\Gu.Phase4.Reporting\Gu.Phase4.Reporting.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase4.Observation\Gu.Phase4.Observation.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase5.BranchIndependence\Gu.Phase5.BranchIndependence.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase5.Convergence\Gu.Phase5.Convergence.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase5.Dossiers\Gu.Phase5.Dossiers.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase5.Environments\Gu.Phase5.Environments.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase5.Falsification\Gu.Phase5.Falsification.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase5.QuantitativeValidation\Gu.Phase5.QuantitativeValidation.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase5.Reporting\Gu.Phase5.Reporting.csproj" />
   </ItemGroup>
 
 </Project>

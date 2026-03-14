@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/branch_distance_matrix.schema.json",
+  "title": "BranchDistanceMatrix",
+  "description": "Pairwise distance matrix over branch variants for one target quantity (M46). Entry [i,j] = |Q(branch_i) - Q(branch_j)|.",
+  "type": "object",
+  "required": [
+    "targetQuantityId",
+    "branchVariantIds",
+    "quantityValues",
+    "distances",
+    "maxDistance",
+    "meanDistance",
+    "referenceScale"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "default": "1.0.0"
+    },
+    "targetQuantityId": {
+      "type": "string",
+      "description": "Target quantity ID this matrix measures."
+    },
+    "branchVariantIds": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Ordered list of branch variant IDs (row/column labels)."
+    },
+    "quantityValues": {
+      "type": "array",
+      "items": { "type": "number" },
+      "description": "Raw quantity values per branch variant."
+    },
+    "distances": {
+      "type": "array",
+      "items": { "type": "number" },
+      "description": "Flat row-major N×N distance matrix. Entry [i*N+j] = |Q(i) - Q(j)|."
+    },
+    "maxDistance": {
+      "type": "number",
+      "description": "Maximum pairwise distance across the branch family."
+    },
+    "meanDistance": {
+      "type": "number",
+      "description": "Mean pairwise distance (off-diagonal average)."
+    },
+    "referenceScale": {
+      "type": "number",
+      "description": "Reference scale for normalization: |Q(reference branch)| + 1e-30."
+    }
+  },
+  "additionalProperties": false
+}

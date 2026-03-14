@@ -85,4 +85,8 @@ public sealed class BackgroundRecord
     /// <summary>Human-readable notes.</summary>
     [JsonPropertyName("notes")]
     public string? Notes { get; init; }
+
+    /// <summary>G-003: geometry tier of the environment used (toy/structured/imported).</summary>
+    [JsonPropertyName("environmentTier")]
+    public string? EnvironmentTier { get; init; }
 }

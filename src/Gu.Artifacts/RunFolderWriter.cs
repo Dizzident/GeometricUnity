@@ -230,6 +230,12 @@ public sealed class RunFolderWriter
     }
 
     /// <summary>
+    /// G-002: Write a SolveRunClassification record to the run folder.
+    /// </summary>
+    public void WriteSolveRunClassification(SolveRunClassification classification)
+        => WriteJson(RunFolderLayout.SolveRunClassificationFile, classification);
+
+    /// <summary>
     /// Read a JSON artifact from the run folder.
     /// </summary>
     public T? ReadJson<T>(string relativePath)

@@ -28,8 +28,12 @@
  * where structure_constants are indexed as [a * dim * dim + b * dim + c].
  * ========================================================================= */
 
-#ifndef __CUDACC__
-static void lie_bracket(
+/* lie_bracket: available in both CUDA (__host__) and plain-C builds. */
+static
+#ifdef __CUDACC__
+__host__
+#endif
+void lie_bracket(
     const double* x, const double* y,
     const double* structure_constants,
     int dim_g, double* result)
@@ -44,7 +48,6 @@ static void lie_bracket(
         result[c] = sum;
     }
 }
-#endif
 
 /* =========================================================================
  * Phase IV Dirac host helpers
@@ -1010,6 +1013,113 @@ int gu_cuda_memset(void* devptr, int value, size_t count) {
 
 const char* gu_cuda_get_last_error_string(void) {
     return cudaGetErrorString(g_last_cuda_error);
+}
+
+/* =========================================================================
+ * CPU-reference implementations of Jacobian/Adjoint physics operators.
+ * Provided here so the CUDA build path exports the symbols required by
+ * gu_cuda_core.c. Marked __host__ to prevent nvcc from emitting device code.
+ * ========================================================================= */
+
+int gu_jacobian_action_physics(
+    const double* omega, const double* delta, double* jv_out,
+    const double* a0,
+    const int32_t* face_boundary_edges,
+    const int32_t* face_boundary_orientations,
+    const double* structure_constants,
+    int face_count, int edge_count, int dim_g, int max_edges_per_face)
+{
+    double* omegaI = (double*)malloc((size_t)dim_g * sizeof(double));
+    double* deltaJ = (double*)malloc((size_t)dim_g * sizeof(double));
+    double* deltaI = (double*)malloc((size_t)dim_g * sizeof(double));
+    double* omegaJ = (double*)malloc((size_t)dim_g * sizeof(double));
+    double* bracket = (double*)malloc((size_t)dim_g * sizeof(double));
+    if (!omegaI || !deltaJ || !deltaI || !omegaJ || !bracket) {
+        free(omegaI); free(deltaJ); free(deltaI); free(omegaJ); free(bracket);
+        return -1;
+    }
+    for (int fi = 0; fi < face_count; fi++) {
+        const int32_t* edges = &face_boundary_edges[fi * max_edges_per_face];
+        const int32_t* orients = &face_boundary_orientations[fi * max_edges_per_face];
+        int nEdges = 0;
+        for (int i = 0; i < max_edges_per_face; i++) { if (edges[i] < 0) break; nEdges++; }
+        for (int a = 0; a < dim_g; a++) {
+            double d = 0.0;
+            for (int i = 0; i < nEdges; i++) d += orients[i] * delta[edges[i] * dim_g + a];
+            jv_out[fi * dim_g + a] = d;
+        }
+        for (int i = 0; i < nEdges; i++) {
+            for (int j = i + 1; j < nEdges; j++) {
+                int ei = edges[i], ej = edges[j], si = orients[i], sj = orients[j];
+                for (int a = 0; a < dim_g; a++) {
+                    omegaI[a] = si * omega[ei * dim_g + a]; omegaJ[a] = sj * omega[ej * dim_g + a];
+                    deltaI[a] = si * delta[ei * dim_g + a]; deltaJ[a] = sj * delta[ej * dim_g + a];
+                }
+                lie_bracket(omegaI, deltaJ, structure_constants, dim_g, bracket);
+                for (int a = 0; a < dim_g; a++) jv_out[fi * dim_g + a] += 0.5 * bracket[a];
+                lie_bracket(deltaI, omegaJ, structure_constants, dim_g, bracket);
+                for (int a = 0; a < dim_g; a++) jv_out[fi * dim_g + a] += 0.5 * bracket[a];
+            }
+        }
+        if (a0 != NULL) {
+            for (int a = 0; a < dim_g; a++) {
+                double d = 0.0;
+                for (int i = 0; i < nEdges; i++) d += orients[i] * delta[edges[i] * dim_g + a];
+                jv_out[fi * dim_g + a] -= d;
+            }
+            for (int i = 0; i < nEdges; i++) {
+                for (int j = i + 1; j < nEdges; j++) {
+                    int ei = edges[i], ej = edges[j], si = orients[i], sj = orients[j];
+                    double a0I[16], a0J[16], dI[16], dJ[16];
+                    for (int a = 0; a < dim_g; a++) {
+                        a0I[a] = si * a0[ei * dim_g + a]; a0J[a] = sj * a0[ej * dim_g + a];
+                        dI[a]  = si * delta[ei * dim_g + a]; dJ[a] = sj * delta[ej * dim_g + a];
+                    }
+                    lie_bracket(a0I, dJ, structure_constants, dim_g, bracket);
+                    for (int a = 0; a < dim_g; a++) jv_out[fi * dim_g + a] -= bracket[a];
+                    lie_bracket(dI, a0J, structure_constants, dim_g, bracket);
+                    for (int a = 0; a < dim_g; a++) jv_out[fi * dim_g + a] -= bracket[a];
+                }
+            }
+        } else {
+            for (int a = 0; a < dim_g; a++) {
+                double d = 0.0;
+                for (int i = 0; i < nEdges; i++) d += orients[i] * delta[edges[i] * dim_g + a];
+                jv_out[fi * dim_g + a] -= d;
+            }
+        }
+    }
+    free(omegaI); free(deltaJ); free(deltaI); free(omegaJ); free(bracket);
+    return 0;
+}
+
+int gu_adjoint_action_physics(
+    const double* omega, const double* v, double* jtv_out,
+    const double* a0,
+    const int32_t* face_boundary_edges,
+    const int32_t* face_boundary_orientations,
+    const double* structure_constants,
+    int face_count, int edge_count, int dim_g, int max_edges_per_face)
+{
+    int edge_n = edge_count * dim_g;
+    int face_n = face_count * dim_g;
+    memset(jtv_out, 0, (size_t)edge_n * sizeof(double));
+    double* ek  = (double*)calloc((size_t)edge_n, sizeof(double));
+    double* jek = (double*)malloc((size_t)face_n * sizeof(double));
+    if (!ek || !jek) { free(ek); free(jek); return -1; }
+    for (int k = 0; k < edge_n; k++) {
+        ek[k] = 1.0;
+        int rc = gu_jacobian_action_physics(omega, ek, jek, a0,
+            face_boundary_edges, face_boundary_orientations, structure_constants,
+            face_count, edge_count, dim_g, max_edges_per_face);
+        if (rc != 0) { free(ek); free(jek); return -1; }
+        double dot = 0.0;
+        for (int i = 0; i < face_n; i++) dot += jek[i] * v[i];
+        jtv_out[k] = dot;
+        ek[k] = 0.0;
+    }
+    free(ek); free(jek);
+    return 0;
 }
 
 } /* extern "C" */
