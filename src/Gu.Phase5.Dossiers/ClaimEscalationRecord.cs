@@ -140,6 +140,13 @@ public sealed class EscalationGateResult
     public string? Evidence { get; init; }
 
     /// <summary>
+    /// Candidate-specific evidence identifiers that were joined for this gate.
+    /// Empty means no candidate-linked evidence was available.
+    /// </summary>
+    [JsonPropertyName("evidenceRecordIds")]
+    public IReadOnlyList<string>? EvidenceRecordIds { get; init; }
+
+    /// <summary>
     /// Whether this gate is required for the proposed escalation.
     /// If a required gate fails, the escalation is blocked.
     /// </summary>

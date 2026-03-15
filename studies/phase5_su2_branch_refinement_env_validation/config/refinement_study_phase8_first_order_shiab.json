@@ -1,0 +1,24 @@
+{
+  "studyId": "phase5-su2-refinement-ladder-first-order-shiab-phase8",
+  "schemaVersion": "1.0",
+  "branchManifestId": "phase8-real-atlas-first-order-shiab",
+  "shiabVariantId": "first-order-curvature",
+  "targetQuantities": [
+    "residual-norm",
+    "stationarity-norm",
+    "objective-value",
+    "gauge-violation",
+    "solver-iterations"
+  ],
+  "refinementLevels": [
+    { "levelId": "L0-2x2", "meshParameterX": 1.0, "meshParameterF": 1.0, "description": "2x2 toy mesh" },
+    { "levelId": "L1-4x4", "meshParameterX": 0.5, "meshParameterF": 0.5, "description": "4x4 structured mesh" },
+    { "levelId": "L2-8x8", "meshParameterX": 0.25, "meshParameterF": 0.25, "description": "8x8 structured mesh" }
+  ],
+  "provenance": {
+    "createdAt": "2026-03-20T00:00:00+00:00",
+    "codeRevision": "phase8-first-order-curvature-companion-v1",
+    "branch": { "branchId": "phase8-real-atlas-first-order-shiab", "schemaVersion": "1.0" },
+    "backend": "cpu"
+  }
+}

@@ -40,7 +40,8 @@ public sealed class Phase5DossierAssembler
         string freshness,
         ProvenanceMeta provenance,
         IReadOnlyList<ObservationChainRecord>? observationChainRecords = null,
-        SidecarSummary? sidecarSummary = null)
+        SidecarSummary? sidecarSummary = null,
+        IReadOnlyList<EnvironmentVarianceRecord>? environmentVarianceRecords = null)
     {
         ArgumentNullException.ThrowIfNull(studyId);
         ArgumentNullException.ThrowIfNull(environmentTiersCovered);
@@ -55,6 +56,7 @@ public sealed class Phase5DossierAssembler
             falsifiers,
             environmentTiersCovered,
             observationChainRecords,
+            environmentVarianceRecords,
             provenance);
 
         // Collect negative results from falsifier summary and convergence failures
@@ -96,6 +98,7 @@ public sealed class Phase5DossierAssembler
         FalsifierSummary? falsifiers,
         IReadOnlyList<string> environmentTiersCovered,
         IReadOnlyList<ObservationChainRecord>? observationChainRecords,
+        IReadOnlyList<EnvironmentVarianceRecord>? environmentVarianceRecords,
         ProvenanceMeta provenance)
     {
         if (registry is null)
@@ -108,56 +111,115 @@ public sealed class Phase5DossierAssembler
         {
             counter++;
             var gates = new List<EscalationGateResult>();
+            var candidateObservationRecords = (observationChainRecords ?? Array.Empty<ObservationChainRecord>())
+                .Where(r => r.CandidateId == candidate.ParticleId && r.PrimarySourceId == candidate.PrimarySourceId)
+                .ToList();
+            var candidateObservableIds = candidateObservationRecords
+                .Select(r => r.ObservableId)
+                .Where(id => !string.IsNullOrWhiteSpace(id))
+                .Distinct(StringComparer.Ordinal)
+                .OrderBy(id => id, StringComparer.Ordinal)
+                .ToList();
 
             // Gate 1: BranchRobust
-            bool branchRobust = IsBranchRobust(branchRecord, candidate.PrimarySourceId);
+            var branchEvidenceIds = candidate.BranchVariantSet
+                .Where(id => !string.IsNullOrWhiteSpace(id))
+                .Distinct(StringComparer.Ordinal)
+                .OrderBy(id => id, StringComparer.Ordinal)
+                .ToList();
+            bool branchEvidenceJoin = branchRecord is not null &&
+                branchEvidenceIds.Count >= 2 &&
+                branchEvidenceIds.All(id => branchRecord.BranchVariantIds.Contains(id, StringComparer.Ordinal));
+            bool branchRobust = branchEvidenceJoin &&
+                branchRecord!.OverallSummary is "robust" or "invariant";
             gates.Add(new EscalationGateResult
             {
                 GateId = EscalationGates.BranchRobust,
                 Description = "Candidate survives admissible branch variations (invariance class covers > 50% of variants).",
                 Passed = branchRobust,
-                Evidence = branchRecord is null ? "No branch record available." : (branchRobust ? "Passed." : "Failed — not invariant."),
+                EvidenceRecordIds = branchEvidenceIds,
+                Evidence = branchRecord is null
+                    ? "No branch record available."
+                    : branchEvidenceIds.Count == 0
+                        ? "No candidate-linked branch variant IDs were present in the registry record."
+                        : !branchEvidenceJoin
+                            ? "Candidate branch variant IDs did not produce a candidate-specific join to the branch study."
+                            : "Candidate-linked branch variant IDs join to a robust overall branch study result.",
                 Required = true,
             });
 
             // Gate 2: RefinementBounded
-            bool refinementBounded = IsRefinementBounded(convergenceRecords, candidate.PrimarySourceId);
+            var refinementEvidenceIds = candidate.BackgroundSet
+                .Where(id => !string.IsNullOrWhiteSpace(id))
+                .Distinct(StringComparer.Ordinal)
+                .OrderBy(id => id, StringComparer.Ordinal)
+                .ToList();
+            bool refinementBounded = convergenceRecords is not null &&
+                refinementEvidenceIds.Count > 0 &&
+                convergenceRecords.Any(HasBoundedRelativeError);
             gates.Add(new EscalationGateResult
             {
                 GateId = EscalationGates.RefinementBounded,
                 Description = "Continuum estimate has error band < 10% of extrapolated value.",
                 Passed = refinementBounded,
-                Evidence = convergenceRecords is null ? "No convergence records." : (refinementBounded ? "Passed." : "Error band too large or not converged."),
+                EvidenceRecordIds = refinementEvidenceIds,
+                Evidence = convergenceRecords is null
+                    ? "No convergence records."
+                    : refinementEvidenceIds.Count == 0
+                        ? "No candidate-linked background IDs were present in the registry record."
+                        : refinementBounded
+                            ? "Candidate-linked background IDs join to bounded refinement evidence."
+                            : "Candidate-linked refinement evidence is absent or unbounded.",
                 Required = true,
             });
 
             // Gate 3: MultiEnvironment
-            bool multiEnv = environmentTiersCovered.Count >= 2;
+            var environmentVarianceEvidence = (environmentVarianceRecords ?? Array.Empty<EnvironmentVarianceRecord>())
+                .Where(r => candidateObservableIds.Contains(r.QuantityId, StringComparer.Ordinal))
+                .ToList();
+            var environmentVarianceEvidenceIds = environmentVarianceEvidence
+                .Select(r => r.RecordId)
+                .Where(id => !string.IsNullOrWhiteSpace(id))
+                .Distinct(StringComparer.Ordinal)
+                .OrderBy(id => id, StringComparer.Ordinal)
+                .ToList();
+            bool multiEnv = environmentVarianceEvidence.Any(r => HasMultipleEnvironmentTiers(r.EnvironmentTierId));
             gates.Add(new EscalationGateResult
             {
                 GateId = EscalationGates.MultiEnvironment,
                 Description = "Quantity computed on at least 2 distinct environment tiers.",
                 Passed = multiEnv,
-                Evidence = $"Environment tiers covered: {environmentTiersCovered.Count}.",
+                EvidenceRecordIds = environmentVarianceEvidenceIds,
+                Evidence = environmentVarianceEvidence.Count == 0
+                    ? $"No candidate-linked environment-variance records. Global environment count={environmentTiersCovered.Count}, but global coverage does not satisfy the candidate-specific gate."
+                    : multiEnv
+                        ? "Candidate-linked environment-variance records span more than one environment tier."
+                        : "Candidate-linked environment evidence remains single-tier.",
                 Required = true,
             });
 
             // Gate 4: ObservationChainValid — use observation chain records when available (WP-6)
             bool obsValid;
             string obsEvidence;
+            var observationEvidenceIds = candidateObservationRecords
+                .Select(r => BuildObservationEvidenceId(r))
+                .Distinct(StringComparer.Ordinal)
+                .OrderBy(id => id, StringComparer.Ordinal)
+                .ToList();
             if (observationChainRecords is not null && observationChainRecords.Count > 0)
             {
                 // Gate passes if at least one record for this candidate satisfies all conditions
-                obsValid = IsObservationChainValid(observationChainRecords, candidate.ParticleId, candidate.PrimarySourceId);
+                obsValid = candidateObservationRecords.Any(IsObservationChainRecordValid);
                 obsEvidence = obsValid
                     ? "ObservationChainRecord: complete, passed, low sensitivity."
-                    : "No ObservationChainRecord satisfies all gate conditions (complete + passed + sensitivity <= 0.3).";
+                    : observationEvidenceIds.Count == 0
+                        ? "No candidate-linked ObservationChainRecord."
+                        : "Candidate-linked observation records exist, but none satisfy the gate conditions.";
             }
             else
             {
-                // Fallback: use observation confidence
-                obsValid = candidate.ObservationConfidence > 0;
-                obsEvidence = $"ObservationConfidence={candidate.ObservationConfidence:G4} (no chain records provided).";
+                obsValid = false;
+                obsEvidence = $"No observation-chain artifacts were supplied. ObservationConfidence={candidate.ObservationConfidence:G4} is retained as context only and does not satisfy the candidate-specific gate.";
             }
             gates.Add(new EscalationGateResult
             {
@@ -165,28 +227,56 @@ public sealed class Phase5DossierAssembler
                 Description = "Observation provenance chain is complete and low-sensitivity.",
                 Passed = obsValid,
                 Evidence = obsEvidence,
+                EvidenceRecordIds = observationEvidenceIds,
                 Required = true,
             });
 
             // Gate 5: QuantitativeMatch
-            bool quantMatch = HasQuantitativeMatch(scoreCard, candidate.PrimarySourceId);
+            var candidateMatches = (scoreCard?.Matches ?? Array.Empty<TargetMatchRecord>())
+                .Where(m => candidateObservableIds.Contains(m.ObservableId, StringComparer.Ordinal))
+                .ToList();
+            var quantitativeEvidenceIds = candidateMatches
+                .Select(BuildTargetMatchEvidenceId)
+                .Distinct(StringComparer.Ordinal)
+                .OrderBy(id => id, StringComparer.Ordinal)
+                .ToList();
+            bool quantMatch = candidateMatches.Any(m => m.Passed);
             gates.Add(new EscalationGateResult
             {
                 GateId = EscalationGates.QuantitativeMatch,
                 Description = "At least one target match passed for this candidate.",
                 Passed = quantMatch,
-                Evidence = scoreCard is null ? "No scorecard available." : (quantMatch ? "Passed." : "No passing target match."),
+                EvidenceRecordIds = quantitativeEvidenceIds,
+                Evidence = scoreCard is null
+                    ? "No scorecard available."
+                    : candidateMatches.Count == 0
+                        ? "No candidate-linked target matches were found."
+                        : quantMatch
+                            ? "Candidate-linked target match passed."
+                            : "Candidate-linked target matches exist, but none passed.",
                 Required = true,
             });
 
             // Gate 6: NoActiveFatalFalsifier
-            bool noFatalFalsifier = !HasActiveFatalFalsifier(falsifiers, candidate.ParticleId, candidate.PrimarySourceId);
+            var fatalFalsifiers = (falsifiers?.Falsifiers ?? Array.Empty<FalsifierRecord>())
+                .Where(f =>
+                    f.Active &&
+                    f.Severity == FalsifierSeverity.Fatal &&
+                    (f.TargetId == candidate.ParticleId || f.TargetId == candidate.PrimarySourceId))
+                .ToList();
+            var fatalEvidenceIds = fatalFalsifiers
+                .Select(f => f.FalsifierId)
+                .Distinct(StringComparer.Ordinal)
+                .OrderBy(id => id, StringComparer.Ordinal)
+                .ToList();
+            bool noFatalFalsifier = fatalFalsifiers.Count == 0;
             gates.Add(new EscalationGateResult
             {
                 GateId = EscalationGates.NoActiveFatalFalsifier,
                 Description = "No active fatal falsifier targets this candidate.",
                 Passed = noFatalFalsifier,
                 Evidence = noFatalFalsifier ? "No active fatal falsifiers." : "Active fatal falsifier found.",
+                EvidenceRecordIds = fatalEvidenceIds,
                 Required = true,
             });
 
@@ -251,57 +341,31 @@ public sealed class Phase5DossierAssembler
     ///   4. AuxiliaryModelSensitivity &lt;= 0.3
     /// Join: CandidateId == particleId AND PrimarySourceId == primarySourceId.
     /// </summary>
-    private static bool IsObservationChainValid(
-        IReadOnlyList<ObservationChainRecord> records,
-        string particleId,
-        string primarySourceId)
+    private static bool IsObservationChainRecordValid(ObservationChainRecord record)
+        => record.CompletenessStatus == "complete" &&
+           record.Passed &&
+           record.SensitivityScore <= 0.3 &&
+           record.AuxiliaryModelSensitivity <= 0.3;
+
+    private static bool HasBoundedRelativeError(ContinuumEstimateRecord record)
     {
-        return records.Any(r =>
-            r.CandidateId == particleId &&
-            r.PrimarySourceId == primarySourceId &&
-            r.CompletenessStatus == "complete" &&
-            r.Passed &&
-            r.SensitivityScore <= 0.3 &&
-            r.AuxiliaryModelSensitivity <= 0.3);
+        double relError = record.ExtrapolatedValue != 0
+            ? System.Math.Abs(record.ErrorBand / record.ExtrapolatedValue)
+            : record.ErrorBand;
+        return relError < 0.1;
     }
 
-    private static bool IsBranchRobust(BranchRobustnessRecord? branchRecord, string primarySourceId)
-    {
-        if (branchRecord is null) return false;
-        // A quantity is considered branch-robust if it is classified "invariant" or "robust"
-        // in FragilityRecords (i.e., the equivalence class covers the branch family).
-        return branchRecord.FragilityRecords.Values
-            .Any(fr => fr.Classification is "invariant" or "robust");
-    }
+    private static bool HasMultipleEnvironmentTiers(string environmentTierId)
+        => environmentTierId
+            .Split('+', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+            .Distinct(StringComparer.Ordinal)
+            .Count() >= 2;
 
-    private static bool IsRefinementBounded(
-        IReadOnlyList<ContinuumEstimateRecord>? convergenceRecords,
-        string primarySourceId)
-    {
-        if (convergenceRecords is null || convergenceRecords.Count == 0) return false;
-        return convergenceRecords.Any(r =>
-        {
-            double relError = r.ExtrapolatedValue != 0
-                ? System.Math.Abs(r.ErrorBand / r.ExtrapolatedValue)
-                : r.ErrorBand;
-            return relError < 0.1;
-        });
-    }
+    private static string BuildObservationEvidenceId(ObservationChainRecord record)
+        => $"observation-chain:{record.CandidateId}:{record.PrimarySourceId}:{record.ObservableId}";
 
-    private static bool HasQuantitativeMatch(ConsistencyScoreCard? scoreCard, string primarySourceId)
-    {
-        if (scoreCard is null) return false;
-        return scoreCard.Matches.Any(m => m.Passed);
-    }
-
-    private static bool HasActiveFatalFalsifier(FalsifierSummary? falsifiers, string particleId, string primarySourceId)
-    {
-        if (falsifiers is null) return false;
-        return falsifiers.Falsifiers.Any(f =>
-            f.Active &&
-            f.Severity == FalsifierSeverity.Fatal &&
-            (f.TargetId == particleId || f.TargetId == primarySourceId));
-    }
+    private static string BuildTargetMatchEvidenceId(TargetMatchRecord match)
+        => $"target-match:{match.ObservableId}:{match.TargetLabel}:{match.ComputedEnvironmentId ?? "unknown-env"}";
 
     private static List<NegativeResultEntry> CollectNegativeResults(
         FalsifierSummary? falsifiers,

@@ -29,8 +29,8 @@ public class Phase5DossierAssemblerTests
         ParticleType = UnifiedParticleType.Boson,
         PrimarySourceId = $"src-{id}",
         ContributingSourceIds = new List<string> { $"src-{id}" },
-        BranchVariantSet = new List<string> { "v1" },
-        BackgroundSet = new List<string> { "bg1" },
+        BranchVariantSet = new List<string> { "v1", "v2" },
+        BackgroundSet = new List<string> { "bg1", "bg2" },
         MassLikeEnvelope = new double[] { 1.0, 2.0 },
         ClaimClass = claimClass,
         ObservationConfidence = obsConfidence,
@@ -121,7 +121,7 @@ public class Phase5DossierAssemblerTests
         {
             new TargetMatchRecord
             {
-                ObservableId = "obs-1",
+                ObservableId = "obs-test-1",
                 TargetLabel = "pdg-ref",
                 TargetValue = 100.0,
                 TargetUncertainty = 1.0,
@@ -137,6 +137,20 @@ public class Phase5DossierAssemblerTests
         CalibrationPolicyId = "default",
         Provenance = MakeProvenance(),
     };
+
+    private static IReadOnlyList<EnvironmentVarianceRecord> MakeEnvironmentVariance(string quantityId = "obs-test-1") =>
+        new List<EnvironmentVarianceRecord>
+        {
+            new EnvironmentVarianceRecord
+            {
+                RecordId = $"env-var-{quantityId}",
+                QuantityId = quantityId,
+                EnvironmentTierId = "toy+structured",
+                RelativeStdDev = 0.08,
+                Flagged = false,
+                Provenance = MakeProvenance(),
+            },
+        };
 
     private static FalsifierSummary MakeEmptyFalsifiers() => new FalsifierSummary
     {
@@ -236,7 +250,9 @@ public class Phase5DossierAssemblerTests
             registry: registry,
             environmentTiersCovered: new List<string> { "coarse", "medium" },
             freshness: "fresh",
-            provenance: MakeProvenance());
+            provenance: MakeProvenance(),
+            observationChainRecords: [MakeObsChainRecord("p-001", "src-p-001")],
+            environmentVarianceRecords: MakeEnvironmentVariance());
 
         Assert.Single(dossier.ClaimEscalations);
         var esc = dossier.ClaimEscalations[0];
@@ -244,6 +260,7 @@ public class Phase5DossierAssemblerTests
         Assert.Equal("escalation", esc.Direction);
         Assert.True(esc.AllGatesPassed);
         Assert.Equal("C3_BranchStableCandidate", esc.ProposedClaimClass);
+        Assert.All(esc.GateResults, gate => Assert.NotNull(gate.EvidenceRecordIds));
     }
 
     [Fact]
@@ -637,6 +654,51 @@ public class Phase5DossierAssemblerTests
         Assert.Contains("p-a", ids);
         Assert.Contains("p-b", ids);
         Assert.Contains("p-c", ids);
+    }
+
+    [Fact]
+    public void Assemble_CandidateSpecificQuantitativeJoin_DoesNotLeakAcrossCandidates()
+    {
+        var registry = MakeRegistry(
+            MakeCandidate("p-pass", claimClass: "C2_ReproducibleMode"),
+            MakeCandidate("p-block", claimClass: "C2_ReproducibleMode"));
+
+        var dossier = _assembler.Assemble(
+            studyId: "study-candidate-specific",
+            branchRecord: MakeRobustBranchRecord(),
+            convergenceRecords: MakeBoundedConvergence(),
+            convergenceFailures: null,
+            environments: null,
+            scoreCard: MakePassingScorecard(),
+            falsifiers: MakeEmptyFalsifiers(),
+            registry: registry,
+            environmentTiersCovered: ["toy", "structured"],
+            freshness: "fresh",
+            provenance: MakeProvenance(),
+            observationChainRecords:
+            [
+                MakeObsChainRecord("p-pass", "src-p-pass"),
+                new ObservationChainRecord
+                {
+                    CandidateId = "p-block",
+                    PrimarySourceId = "src-p-block",
+                    ObservableId = "obs-unmatched",
+                    CompletenessStatus = "complete",
+                    SensitivityScore = 0.1,
+                    AuxiliaryModelSensitivity = 0.08,
+                    Passed = true,
+                    Provenance = MakeProvenance(),
+                },
+            ],
+            environmentVarianceRecords: MakeEnvironmentVariance());
+
+        var passingCandidate = dossier.ClaimEscalations.Single(e => e.CandidateId == "p-pass");
+        var blockedCandidate = dossier.ClaimEscalations.Single(e => e.CandidateId == "p-block");
+
+        Assert.True(passingCandidate.GateResults.Single(g => g.GateId == EscalationGates.QuantitativeMatch).Passed);
+        Assert.False(blockedCandidate.GateResults.Single(g => g.GateId == EscalationGates.QuantitativeMatch).Passed);
+        Assert.NotEmpty(passingCandidate.GateResults.Single(g => g.GateId == EscalationGates.QuantitativeMatch).EvidenceRecordIds!);
+        Assert.Empty(blockedCandidate.GateResults.Single(g => g.GateId == EscalationGates.QuantitativeMatch).EvidenceRecordIds!);
     }
 
     [Fact]

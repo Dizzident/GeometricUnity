@@ -1,0 +1,38 @@
+{
+  "studyId": "phase5-su2-refinement-ladder",
+  "levels": [
+    {
+      "levelId": "L0-2x2",
+      "solverConverged": true,
+      "quantities": {
+        "residual-norm": 1E-05,
+        "stationarity-norm": 1E-05,
+        "objective-value": 1E-05,
+        "gauge-violation": 1E-05,
+        "solver-iterations": 2
+      }
+    },
+    {
+      "levelId": "L1-4x4",
+      "solverConverged": true,
+      "quantities": {
+        "residual-norm": 2.5E-06,
+        "stationarity-norm": 2.5E-06,
+        "objective-value": 2.5E-06,
+        "gauge-violation": 2.5E-06,
+        "solver-iterations": 0.5
+      }
+    },
+    {
+      "levelId": "L2-8x8",
+      "solverConverged": true,
+      "quantities": {
+        "residual-norm": 6.25E-07,
+        "stationarity-norm": 6.25E-07,
+        "objective-value": 6.25E-07,
+        "gauge-violation": 6.25E-07,
+        "solver-iterations": 0.125
+      }
+    }
+  ]
+}

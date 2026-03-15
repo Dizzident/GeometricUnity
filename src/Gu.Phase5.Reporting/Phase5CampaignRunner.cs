@@ -166,7 +166,8 @@ public sealed class Phase5CampaignRunner
             freshness: "regenerated-current-code",
             provenance: provenance,
             observationChainRecords: observationChainRecords,
-            sidecarSummary: sidecarSummary);
+            sidecarSummary: sidecarSummary,
+            environmentVarianceRecords: environmentVarianceRecords);
 
         // Step 6: Generate final report (M53)
         var report = Phase5ReportGenerator.Generate(

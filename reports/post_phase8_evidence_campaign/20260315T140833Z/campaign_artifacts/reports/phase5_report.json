@@ -1,0 +1,59 @@
+{
+  "reportId": "report-phase5-su2-branch-refinement-env-validation-20260315141335",
+  "schemaVersion": "1.0.0",
+  "studyId": "phase5-su2-branch-refinement-env-validation",
+  "dossierIds": [
+    "phase5-su2-branch-refinement-env-validation-provenance-dossier"
+  ],
+  "branchIndependenceAtlas": {
+    "totalQuantities": 5,
+    "invariantCount": 0,
+    "fragileCount": 0,
+    "equivalenceClassCount": 5,
+    "summaryLines": [
+      "- Overall summary: **inconclusive**",
+      "- Quantities analyzed: 5",
+      "- Invariant/robust: 0",
+      "- Fragile: 0",
+      "- Equivalence classes: 5",
+      "  - Note: Warning: fewer than 2 branch variants (1) \u2014 study is inconclusive."
+    ]
+  },
+  "convergenceAtlas": {
+    "totalQuantities": 5,
+    "convergentCount": 5,
+    "nonConvergentCount": 0,
+    "insufficientDataCount": 0,
+    "summaryLines": [
+      "- Total quantities: 5",
+      "- Convergent: 5",
+      "- Weakly convergent: 0",
+      "- Non-convergent: 0",
+      "- Insufficient data: 0"
+    ]
+  },
+  "falsificationDashboard": {
+    "totalFalsifiers": 2,
+    "activeFatalCount": 1,
+    "activeHighCount": 1,
+    "promotionCount": 0,
+    "demotionCount": 2,
+    "summaryLines": [
+      "- Total falsifiers evaluated: 2",
+      "- Active fatal: 1",
+      "- Active high: 1",
+      "- Total active: 2"
+    ]
+  },
+  "provenance": {
+    "createdAt": "2026-03-20T00:00:00+00:00",
+    "codeRevision": "phase8-real-atlas-env-aware-v1",
+    "branch": {
+      "branchId": "phase8-real-atlas-control",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu",
+    "notes": "Phase VIII standard evidence campaign: nontrivial persisted toy-control atlas path, origin-labeled sidecars, candidate-specific escalation, and explicit separation between controls, internal benchmarks, and external evidence boundaries."
+  },
+  "generatedAt": "2026-03-15T14:13:35.320305+00:00"
+}

@@ -457,17 +457,31 @@ public sealed class SidecarGeneratorTests
         var observationRecords = GuJsonDefaults.Deserialize<List<ObservationChainRecord>>(
             File.ReadAllText(Path.Combine(tmpDir.Path, "observation_chain.json")));
         Assert.NotNull(observationRecords);
-        Assert.All(observationRecords!, r => Assert.Equal("bridge-derived", r.Origin));
+        Assert.All(observationRecords!, r => Assert.Equal("upstream-sourced", r.Origin));
 
         var representationRecords = GuJsonDefaults.Deserialize<List<RepresentationContentRecord>>(
             File.ReadAllText(Path.Combine(tmpDir.Path, "representation_content.json")));
         Assert.NotNull(representationRecords);
-        Assert.All(representationRecords!, r => Assert.Equal("bridge-derived", r.Origin));
+        Assert.All(representationRecords!, r => Assert.Equal("upstream-sourced", r.Origin));
+
+        var environmentVarianceRecords = GuJsonDefaults.Deserialize<List<EnvironmentVarianceRecord>>(
+            File.ReadAllText(Path.Combine(tmpDir.Path, "environment_variance.json")));
+        Assert.NotNull(environmentVarianceRecords);
+        Assert.All(environmentVarianceRecords!, r => Assert.Equal("upstream-sourced", r.Origin));
 
         var couplingRecords = GuJsonDefaults.Deserialize<List<CouplingConsistencyRecord>>(
             File.ReadAllText(Path.Combine(tmpDir.Path, "coupling_consistency.json")));
         Assert.NotNull(couplingRecords);
         Assert.All(couplingRecords!, r => Assert.Equal("upstream-sourced", r.Origin));
+
+        var observationChannel = summary.Channels.First(c => c.ChannelId == "observation-chain");
+        Assert.Equal(1, observationChannel.OriginCounts!["upstream-sourced"]);
+
+        var representationChannel = summary.Channels.First(c => c.ChannelId == "representation-content");
+        Assert.Equal(1, representationChannel.OriginCounts!["upstream-sourced"]);
+
+        var environmentChannel = summary.Channels.First(c => c.ChannelId == "environment-variance");
+        Assert.Equal(1, environmentChannel.OriginCounts!["upstream-sourced"]);
 
         var couplingChannel = summary.Channels.First(c => c.ChannelId == "coupling-consistency");
         Assert.Equal(1, couplingChannel.OriginCounts!["upstream-sourced"]);

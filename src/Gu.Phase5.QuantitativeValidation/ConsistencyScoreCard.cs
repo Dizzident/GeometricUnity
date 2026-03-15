@@ -38,6 +38,14 @@ public sealed class ConsistencyScoreCard
     [JsonPropertyName("calibrationPolicyId")]
     public required string CalibrationPolicyId { get; init; }
 
+    /// <summary>Counts of matches by benchmark class.</summary>
+    [JsonPropertyName("benchmarkClassCounts")]
+    public IReadOnlyDictionary<string, int>? BenchmarkClassCounts { get; init; }
+
+    /// <summary>Counts of failed matches by benchmark class.</summary>
+    [JsonPropertyName("failedBenchmarkClassCounts")]
+    public IReadOnlyDictionary<string, int>? FailedBenchmarkClassCounts { get; init; }
+
     /// <summary>Provenance metadata.</summary>
     [JsonPropertyName("provenance")]
     public required ProvenanceMeta Provenance { get; init; }

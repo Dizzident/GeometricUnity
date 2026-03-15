@@ -1,0 +1,92 @@
+{
+  "studyId": "phase8-real-bridge-atlas-first-order-shiab",
+  "specs": [
+    {
+      "specId": "phase8-first-order-bg-0",
+      "environmentId": "env-default",
+      "branchManifestId": "phase8-real-atlas-first-order-shiab",
+      "seed": {
+        "kind": "Trivial",
+        "label": "seed-0"
+      },
+      "solveOptions": {
+        "solveMode": "ObjectiveMinimization",
+        "solverMethod": "GradientDescent",
+        "maxIterations": 1000,
+        "initialStepSize": 0.002,
+        "gaugePenaltyLambda": 0.0,
+        "gaugeStrategy": "L2Penalty",
+        "toleranceResidualDiagnostic": 0.0001,
+        "toleranceStationary": 1e-06,
+        "toleranceResidualStrict": 1e-08
+      }
+    },
+    {
+      "specId": "phase8-first-order-bg-1",
+      "environmentId": "env-default",
+      "branchManifestId": "phase8-real-atlas-first-order-shiab",
+      "seed": {
+        "kind": "SymmetricAnsatz",
+        "label": "seed-1"
+      },
+      "solveOptions": {
+        "solveMode": "ObjectiveMinimization",
+        "solverMethod": "GradientDescent",
+        "maxIterations": 1000,
+        "initialStepSize": 0.002,
+        "gaugePenaltyLambda": 0.0,
+        "gaugeStrategy": "L2Penalty",
+        "toleranceResidualDiagnostic": 0.0001,
+        "toleranceStationary": 1e-06,
+        "toleranceResidualStrict": 1e-08
+      }
+    },
+    {
+      "specId": "phase8-first-order-bg-2",
+      "environmentId": "env-default",
+      "branchManifestId": "phase8-real-atlas-first-order-shiab",
+      "seed": {
+        "kind": "SymmetricAnsatz",
+        "label": "seed-2"
+      },
+      "solveOptions": {
+        "solveMode": "ObjectiveMinimization",
+        "solverMethod": "GradientDescent",
+        "maxIterations": 1000,
+        "initialStepSize": 0.002,
+        "gaugePenaltyLambda": 0.0,
+        "gaugeStrategy": "L2Penalty",
+        "toleranceResidualDiagnostic": 0.0001,
+        "toleranceStationary": 1e-06,
+        "toleranceResidualStrict": 1e-08
+      }
+    },
+    {
+      "specId": "phase8-first-order-bg-3",
+      "environmentId": "env-default",
+      "branchManifestId": "phase8-real-atlas-first-order-shiab",
+      "seed": {
+        "kind": "SymmetricAnsatz",
+        "label": "seed-3"
+      },
+      "solveOptions": {
+        "solveMode": "ObjectiveMinimization",
+        "solverMethod": "GradientDescent",
+        "maxIterations": 1000,
+        "initialStepSize": 0.002,
+        "gaugePenaltyLambda": 0.0,
+        "gaugeStrategy": "L2Penalty",
+        "toleranceResidualDiagnostic": 0.0001,
+        "toleranceStationary": 1e-06,
+        "toleranceResidualStrict": 1e-08
+      }
+    }
+  ],
+  "deduplicationThreshold": 0.0,
+  "rankingCriteria": "admissibility-then-residual",
+  "notes": "Phase VIII paired Shiab atlas study. This broadens the standard evidence path to first-order-curvature using the same nontrivial objective-solve seed family as the standard atlas.",
+  "environmentTier": "toy",
+  "manifestSearchPaths": [
+    "manifests"
+  ]
+}

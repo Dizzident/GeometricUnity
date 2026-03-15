@@ -74,6 +74,10 @@ public sealed class TargetMatchRecord
     [JsonPropertyName("targetEvidenceTier")]
     public string? TargetEvidenceTier { get; init; }
 
+    /// <summary>Benchmark class for the matched target.</summary>
+    [JsonPropertyName("targetBenchmarkClass")]
+    public string? TargetBenchmarkClass { get; init; }
+
     /// <summary>Requested environment ID selector from the target, if any.</summary>
     [JsonPropertyName("targetEnvironmentId")]
     public string? TargetEnvironmentId { get; init; }

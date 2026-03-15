@@ -60,6 +60,13 @@ public sealed class QuantitativeValidationRunner
         int passed = matches.Count(m => m.Passed);
         int failed = matches.Count(m => !m.Passed);
         double score = matches.Count > 0 ? (double)passed / matches.Count : double.NaN;
+        var benchmarkClassCounts = matches
+            .GroupBy(m => string.IsNullOrWhiteSpace(m.TargetBenchmarkClass) ? "unspecified" : m.TargetBenchmarkClass!, StringComparer.Ordinal)
+            .ToDictionary(g => g.Key, g => g.Count(), StringComparer.Ordinal);
+        var failedBenchmarkClassCounts = matches
+            .Where(m => !m.Passed)
+            .GroupBy(m => string.IsNullOrWhiteSpace(m.TargetBenchmarkClass) ? "unspecified" : m.TargetBenchmarkClass!, StringComparer.Ordinal)
+            .ToDictionary(g => g.Key, g => g.Count(), StringComparer.Ordinal);
 
         return new ConsistencyScoreCard
         {
@@ -70,6 +77,8 @@ public sealed class QuantitativeValidationRunner
             TotalFailed = failed,
             OverallScore = score,
             CalibrationPolicyId = policy.PolicyId,
+            BenchmarkClassCounts = benchmarkClassCounts,
+            FailedBenchmarkClassCounts = failedBenchmarkClassCounts,
             Provenance = provenance,
         };
     }

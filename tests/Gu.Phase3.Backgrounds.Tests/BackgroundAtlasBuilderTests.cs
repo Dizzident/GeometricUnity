@@ -477,4 +477,91 @@ public class BackgroundAtlasBuilderTests
         Assert.NotNull(atlas);
         Assert.Equal("study-compat", atlas.StudyId);
     }
+
+    [Fact]
+    public void Build_SymmetricAnsatzSeedWithoutExplicitState_ProducesNonZeroSolvedState()
+    {
+        var (backend, geometry, a0, manifest, _) = SetupToy();
+        var builder = new BackgroundAtlasBuilder(backend);
+
+        var study = new BackgroundStudySpec
+        {
+            StudyId = "study-symmetric-ansatz",
+            Specs = new[]
+            {
+                new BackgroundSpec
+                {
+                    SpecId = "spec-ansatz",
+                    EnvironmentId = "env-1",
+                    BranchManifestId = "branch-1",
+                    Seed = new BackgroundSeed
+                    {
+                        Kind = BackgroundSeedKind.SymmetricAnsatz,
+                        Label = "ansatz-alpha",
+                    },
+                    SolveOptions = new BackgroundSolveOptions
+                    {
+                        SolveMode = SolveMode.ObjectiveMinimization,
+                        ToleranceResidualDiagnostic = 100.0,
+                        ToleranceStationary = 100.0,
+                        ToleranceResidualStrict = 100.0,
+                    },
+                },
+            },
+        };
+
+        var manifests = new Dictionary<string, BranchManifest> { ["branch-1"] = manifest };
+        var geometries = new Dictionary<string, GeometryContext> { ["env-1"] = geometry };
+        var a0s = new Dictionary<string, FieldTensor> { ["env-1"] = a0 };
+
+        var atlas = builder.Build(study, manifests, geometries, a0s, TestHelpers.MakeProvenance(), out var solvedStates);
+
+        var background = Assert.Single(atlas.Backgrounds);
+        Assert.True(solvedStates.TryGetValue(background.BackgroundId, out var solvedState));
+        Assert.Contains(solvedState.Coefficients, c => System.Math.Abs(c) > 1e-12);
+    }
+
+    [Fact]
+    public void Build_SymmetricAnsatzSeed_IsDeterministicForSameLabel()
+    {
+        var (backend, geometry, a0, manifest, _) = SetupToy();
+        var builder = new BackgroundAtlasBuilder(backend);
+
+        BackgroundStudySpec CreateStudy(string studyId) => new()
+        {
+            StudyId = studyId,
+            Specs = new[]
+            {
+                new BackgroundSpec
+                {
+                    SpecId = studyId,
+                    EnvironmentId = "env-1",
+                    BranchManifestId = "branch-1",
+                    Seed = new BackgroundSeed
+                    {
+                        Kind = BackgroundSeedKind.SymmetricAnsatz,
+                        Label = "shared-ansatz",
+                    },
+                    SolveOptions = new BackgroundSolveOptions
+                    {
+                        SolveMode = SolveMode.ResidualOnly,
+                        ToleranceResidualDiagnostic = 100.0,
+                        ToleranceStationary = 100.0,
+                        ToleranceResidualStrict = 100.0,
+                    },
+                },
+            },
+        };
+
+        var manifests = new Dictionary<string, BranchManifest> { ["branch-1"] = manifest };
+        var geometries = new Dictionary<string, GeometryContext> { ["env-1"] = geometry };
+        var a0s = new Dictionary<string, FieldTensor> { ["env-1"] = a0 };
+
+        builder.Build(CreateStudy("study-symmetric-a"), manifests, geometries, a0s, TestHelpers.MakeProvenance(), out var firstStates);
+        builder.Build(CreateStudy("study-symmetric-b"), manifests, geometries, a0s, TestHelpers.MakeProvenance(), out var secondStates);
+
+        var first = Assert.Single(firstStates.Values);
+        var second = Assert.Single(secondStates.Values);
+        Assert.Equal(first.Coefficients, second.Coefficients);
+    }
 }

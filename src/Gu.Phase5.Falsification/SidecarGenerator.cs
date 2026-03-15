@@ -217,7 +217,7 @@ public static class SidecarGenerator
                 RelativeStdDev = relativeStdDev,
                 Flagged = relativeStdDev > 0.3,
                 Notes = $"Derived from {perEnvironment.Count} environment-specific observable record(s): {string.Join(", ", perEnvironment.Select(o => o.EnvironmentId))}.",
-                Origin = "bridge-derived",
+                Origin = upstreamArtifacts?.ObservablesPath is not null ? "upstream-sourced" : "bridge-derived",
                 SourceArtifactRefs = CollectArtifactRefs(
                     upstreamArtifacts?.ObservablesPath,
                     upstreamArtifacts?.EnvironmentRecordPaths),
@@ -394,8 +394,8 @@ public static class SidecarGenerator
                 SensitivityScore = sensitivity,
                 AuxiliaryModelSensitivity = auxiliarySensitivity,
                 Passed = completeness == "complete" && sensitivity <= 0.3 && auxiliarySensitivity <= 0.3,
-                Notes = $"Bridge-derived from persisted spectral artifact '{backgroundId}' and registry observation confidence {candidate.ObservationConfidence:G3}.",
-                Origin = "bridge-derived",
+                Notes = $"Built from persisted spectral artifact '{backgroundId}' and registry observation confidence {candidate.ObservationConfidence:G3}.",
+                Origin = "upstream-sourced",
                 SourceArtifactRefs = CollectArtifactRefs(
                     upstreamArtifacts.FermionSpectralResultPath,
                     upstreamArtifacts.RegistryPath,
@@ -451,7 +451,7 @@ public static class SidecarGenerator
                 InconsistencyDescription = missing > 0
                     ? $"Candidate '{candidate.ParticleId}' exposes only {observed} persisted family source(s); at least {expected} are required for the reference representation-content check."
                     : $"Candidate '{candidate.ParticleId}' satisfies the reference representation-content check.",
-                Origin = "bridge-derived",
+                Origin = "upstream-sourced",
                 SourceArtifactRefs = CollectArtifactRefs(
                     upstreamArtifacts.FermionFamilyAtlasPath,
                     upstreamArtifacts.RegistryPath),

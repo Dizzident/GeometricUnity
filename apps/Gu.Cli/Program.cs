@@ -1313,10 +1313,6 @@ static int SolveBackgrounds(string[] args)
     var bundle = ToyGeometryFactory.CreateToy2D();
     var mesh = bundle.AmbientMesh;
     var geometry = bundle.ToGeometryContext("centroid", "P1");
-    var torsion = new TrivialTorsionCpu(mesh, algebra);
-    var shiab = new IdentityShiabCpu(mesh, algebra);
-    var backend = new CpuSolverBackend(mesh, algebra, torsion, shiab);
-
     int edgeN = mesh.EdgeCount * algebra.Dimension;
     var a0 = new FieldTensor
     {
@@ -1352,19 +1348,23 @@ static int SolveBackgrounds(string[] args)
     var geometries = new Dictionary<string, GeometryContext> { ["env-default"] = geometry };
     var a0s = new Dictionary<string, FieldTensor> { ["env-default"] = a0 };
 
-    var builder = new BackgroundAtlasBuilder(backend);
+    var builder = new BackgroundAtlasBuilder((spec, manifest, geometryContext) =>
+        CreateReferenceCpuBackend(mesh, algebra, manifest));
     var atlas = builder.Build(study, manifests, geometries, a0s, provenance, out var solvedStates);
 
     // D-002/D-003: Classify the solve run and persist per-background manifest files
-    var runClassification = SolveRunClassification.Classify("A", false, false, false);
+    var runClassificationsBySpecId = study.Specs.ToDictionary(
+        spec => spec.SpecId,
+        ClassifyBackgroundSolve,
+        StringComparer.Ordinal);
     Directory.CreateDirectory(outputDir);
     var statesDir = Path.Combine(outputDir, "background_states");
     Directory.CreateDirectory(statesDir);
 
     // Enrich all background records with RunClassification, persisted state refs,
     // and consumed manifest artifact refs.
-    var enrichedBackgrounds = EnrichBackgroundRecords(atlas.Backgrounds, runClassification, manifestArtifactRefs, statesDir);
-    var enrichedRejected = EnrichBackgroundRecords(atlas.RejectedBackgrounds, runClassification, manifestArtifactRefs, statesDir);
+    var enrichedBackgrounds = EnrichBackgroundRecords(atlas.Backgrounds, runClassificationsBySpecId, manifestArtifactRefs, statesDir);
+    var enrichedRejected = EnrichBackgroundRecords(atlas.RejectedBackgrounds, runClassificationsBySpecId, manifestArtifactRefs, statesDir);
 
     // D-003: Write per-background manifest files
     foreach (var bg in enrichedBackgrounds.Concat(enrichedRejected))
@@ -1447,13 +1447,17 @@ static int SolveBackgrounds(string[] args)
 /// </summary>
 static IReadOnlyList<BackgroundRecord> EnrichBackgroundRecords(
     IReadOnlyList<BackgroundRecord> records,
-    SolveRunClassification runClassification,
+    IReadOnlyDictionary<string, SolveRunClassification> runClassificationsBySpecId,
     IReadOnlyDictionary<string, string> manifestArtifactRefs,
     string statesDir)
 {
     var enriched = new List<BackgroundRecord>(records.Count);
     foreach (var r in records)
     {
+        var runClassification = TryExtractBackgroundSpecId(r.BackgroundId) is { } specId &&
+                                runClassificationsBySpecId.TryGetValue(specId, out var classified)
+            ? classified
+            : SolveRunClassification.Classify("A", false, false, false);
         manifestArtifactRefs.TryGetValue(r.BranchManifestId, out var mRef);
         var persistedStateRef = r.AdmissibilityLevel == AdmissibilityLevel.Rejected
             ? r.StateArtifactRef
@@ -1487,6 +1491,70 @@ static IReadOnlyList<BackgroundRecord> EnrichBackgroundRecords(
     }
     return enriched;
 }
+
+static string? TryExtractBackgroundSpecId(string backgroundId)
+{
+    if (!backgroundId.StartsWith("bg-", StringComparison.Ordinal))
+        return null;
+
+    var body = backgroundId[3..];
+    if (body.EndsWith("-rejected", StringComparison.Ordinal))
+        return body[..^"-rejected".Length];
+
+    int lastDash = body.LastIndexOf('-');
+    return lastDash > 0 ? body[..lastDash] : body;
+}
+
+static SolveRunClassification ClassifyBackgroundSolve(BackgroundSpec spec)
+{
+    var modeFlag = SolveModeToFlag(spec.SolveOptions.SolveMode);
+    bool hasExplicitOmega = spec.Seed.InitialState?.Coefficients.Any(c => System.Math.Abs(c) > 1e-12) == true ||
+        spec.Seed.Kind == BackgroundSeedKind.SymmetricAnsatz;
+    bool hasPersistedOmega = spec.Seed.Kind is BackgroundSeedKind.Continuation or BackgroundSeedKind.CoarseGridTransfer &&
+        !string.IsNullOrWhiteSpace(spec.Seed.ContinuationSourceId);
+    var seedSourceOverride = spec.Seed.Kind == BackgroundSeedKind.SymmetricAnsatz ? "symmetric-ansatz" : null;
+    return SolveRunClassification.Classify(modeFlag, hasPersistedOmega, hasExplicitOmega, false, seedSourceOverride);
+}
+
+static string SolveModeToFlag(SolveMode solveMode) => solveMode switch
+{
+    SolveMode.ObjectiveMinimization => "B",
+    SolveMode.StationaritySolve => "C",
+    _ => "A",
+};
+
+static CpuSolverBackend CreateReferenceCpuBackend(
+    SimplicialMesh mesh,
+    LieAlgebra algebra,
+    BranchManifest manifest)
+{
+    var torsion = ResolveTorsionOperator(mesh, algebra, manifest);
+    var shiab = ResolveShiabOperator(mesh, algebra, manifest);
+    BranchOperatorRegistry.ValidateCarrierMatch(torsion, shiab);
+    return new CpuSolverBackend(mesh, algebra, torsion, shiab);
+}
+
+static ITorsionBranchOperator ResolveTorsionOperator(
+    SimplicialMesh mesh,
+    LieAlgebra algebra,
+    BranchManifest manifest) => manifest.ActiveTorsionBranch switch
+{
+    "trivial" or "trivial-torsion" => new TrivialTorsionCpu(mesh, algebra),
+    "augmented-torsion" => new AugmentedTorsionCpu(mesh, algebra),
+    _ => throw new InvalidOperationException(
+        $"Unsupported torsion branch '{manifest.ActiveTorsionBranch}' in CLI background solve path."),
+};
+
+static IShiabBranchOperator ResolveShiabOperator(
+    SimplicialMesh mesh,
+    LieAlgebra algebra,
+    BranchManifest manifest) => manifest.ActiveShiabBranch switch
+{
+    "identity-shiab" => new IdentityShiabCpu(mesh, algebra),
+    "first-order-curvature" => new FirstOrderShiabOperator(mesh, algebra),
+    _ => throw new InvalidOperationException(
+        $"Unsupported Shiab branch '{manifest.ActiveShiabBranch}' in CLI background solve path."),
+};
 
 static int ComputeSpectrum(string[] args)
 {
@@ -3937,7 +4005,7 @@ static int RunPhase5Campaign(string[] args)
     File.WriteAllText(Path.Combine(outDir, "reports", "phase5_report.json"), reportJson);
 
     // reports/phase5_report.md
-    var md = GeneratePhase5ReportMarkdown(result.Report, spec.CampaignId);
+    var md = GeneratePhase5ReportMarkdown(result.Report, spec.CampaignId, result.TypedDossier.QuantitativeComparison);
     File.WriteAllText(Path.Combine(outDir, "reports", "phase5_report.md"), md);
 
     Console.WriteLine($"Phase V campaign complete. Output: {outDir}");
@@ -4066,7 +4134,10 @@ static int BuildPhase5Sidecars(string[] args)
     return 0;
 }
 
-static string GeneratePhase5ReportMarkdown(Phase5Report report, string campaignId)
+static string GeneratePhase5ReportMarkdown(
+    Phase5Report report,
+    string campaignId,
+    ConsistencyScoreCard? scoreCard = null)
 {
     var sb = new System.Text.StringBuilder();
     sb.AppendLine($"# Phase V Validation Report: {campaignId}");
@@ -4087,6 +4158,23 @@ static string GeneratePhase5ReportMarkdown(Phase5Report report, string campaignI
     {
         sb.AppendLine($"- Convergent quantities: {report.ConvergenceAtlas.ConvergentCount}");
         sb.AppendLine($"- Non-convergent: {report.ConvergenceAtlas.NonConvergentCount}");
+    }
+    sb.AppendLine();
+    sb.AppendLine("## Quantitative");
+    if (scoreCard is not null)
+    {
+        sb.AppendLine($"- Passed matches: {scoreCard.TotalPassed}");
+        sb.AppendLine($"- Failed matches: {scoreCard.TotalFailed}");
+        if (scoreCard.BenchmarkClassCounts is { Count: > 0 })
+        {
+            foreach (var entry in scoreCard.BenchmarkClassCounts.OrderBy(kv => kv.Key, StringComparer.Ordinal))
+                sb.AppendLine($"- Benchmark class `{entry.Key}`: {entry.Value} match(es)");
+        }
+        if (scoreCard.FailedBenchmarkClassCounts is { Count: > 0 })
+        {
+            foreach (var entry in scoreCard.FailedBenchmarkClassCounts.OrderBy(kv => kv.Key, StringComparer.Ordinal))
+                sb.AppendLine($"- Failed `{entry.Key}` matches: {entry.Value}");
+        }
     }
     sb.AppendLine();
     sb.AppendLine("## Falsification");

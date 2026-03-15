@@ -37,6 +37,13 @@ public sealed class ExternalTarget
     [JsonPropertyName("evidenceTier")]
     public string? EvidenceTier { get; init; }
 
+    /// <summary>
+    /// Benchmark class used for reporting separation.
+    /// Examples: "control", "internal-benchmark", "external-measurement".
+    /// </summary>
+    [JsonPropertyName("benchmarkClass")]
+    public string? BenchmarkClass { get; init; }
+
     /// <summary>Optional environment ID that this target must be matched against.</summary>
     [JsonPropertyName("targetEnvironmentId")]
     public string? TargetEnvironmentId { get; init; }

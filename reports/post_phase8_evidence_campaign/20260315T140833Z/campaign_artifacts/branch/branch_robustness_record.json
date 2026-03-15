@@ -1,0 +1,14 @@
+{
+  "totalQuantities": 5,
+  "invariantCount": 0,
+  "fragileCount": 0,
+  "equivalenceClassCount": 5,
+  "summaryLines": [
+    "- Overall summary: **inconclusive**",
+    "- Quantities analyzed: 5",
+    "- Invariant/robust: 0",
+    "- Fragile: 0",
+    "- Equivalence classes: 5",
+    "  - Note: Warning: fewer than 2 branch variants (1) \u2014 study is inconclusive."
+  ]
+}

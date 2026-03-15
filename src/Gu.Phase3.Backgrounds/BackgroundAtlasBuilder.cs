@@ -11,11 +11,17 @@ namespace Gu.Phase3.Backgrounds;
 /// </summary>
 public sealed class BackgroundAtlasBuilder
 {
-    private readonly ISolverBackend _backend;
+    private readonly ISolverBackend? _backend;
+    private readonly Func<BackgroundSpec, BranchManifest, GeometryContext, ISolverBackend>? _backendFactory;
 
     public BackgroundAtlasBuilder(ISolverBackend backend)
     {
         _backend = backend ?? throw new ArgumentNullException(nameof(backend));
+    }
+
+    public BackgroundAtlasBuilder(Func<BackgroundSpec, BranchManifest, GeometryContext, ISolverBackend> backendFactory)
+    {
+        _backendFactory = backendFactory ?? throw new ArgumentNullException(nameof(backendFactory));
     }
 
     /// <summary>
@@ -132,10 +138,13 @@ public sealed class BackgroundAtlasBuilder
 
         // Solve
         var solverOptions = spec.SolveOptions.ToSolverOptions();
+        var backend = _backendFactory?.Invoke(spec, manifest, geometry)
+            ?? _backend
+            ?? throw new InvalidOperationException("No solver backend or backend factory was configured.");
         SolverResult solverResult;
         try
         {
-            var orchestrator = new SolverOrchestrator(_backend, solverOptions);
+            var orchestrator = new SolverOrchestrator(backend, solverOptions);
             solverResult = orchestrator.Solve(omega, a0, manifest, geometry);
         }
         catch (Exception ex)
@@ -221,10 +230,18 @@ public sealed class BackgroundAtlasBuilder
 
     private static FieldTensor BuildInitialOmega(BackgroundSeed seed, FieldTensor a0)
     {
-        if (seed.Kind == BackgroundSeedKind.Explicit || seed.Kind == BackgroundSeedKind.SymmetricAnsatz)
+        if (seed.Kind == BackgroundSeedKind.Explicit)
         {
             if (seed.InitialState is not null)
                 return seed.InitialState;
+        }
+
+        if (seed.Kind == BackgroundSeedKind.SymmetricAnsatz)
+        {
+            if (seed.InitialState is not null)
+                return seed.InitialState;
+
+            return BuildSymmetricAnsatzOmega(seed, a0);
         }
 
         // Trivial / Continuation / CoarseGridTransfer: start from zero
@@ -233,6 +250,28 @@ public sealed class BackgroundAtlasBuilder
             Label = "omega_initial",
             Signature = a0.Signature,
             Coefficients = new double[a0.Coefficients.Length],
+            Shape = a0.Shape.ToArray(),
+        };
+    }
+
+    private static FieldTensor BuildSymmetricAnsatzOmega(BackgroundSeed seed, FieldTensor a0)
+    {
+        var coefficients = new double[a0.Coefficients.Length];
+        int labelHash = System.Math.Abs((seed.Label ?? "symmetric-ansatz").GetHashCode());
+        double amplitude = 0.02 + (labelHash % 5) * 0.005;
+        double phase = 0.15 * ((labelHash % 7) + 1);
+
+        for (int i = 0; i < coefficients.Length; i++)
+        {
+            double angle = phase + 0.21 * (i + 1);
+            coefficients[i] = amplitude * System.Math.Sin(angle);
+        }
+
+        return new FieldTensor
+        {
+            Label = "omega_symmetric_ansatz",
+            Signature = a0.Signature,
+            Coefficients = coefficients,
             Shape = a0.Shape.ToArray(),
         };
     }

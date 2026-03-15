@@ -1,7 +1,7 @@
 {
   "studyId": "phase5-su2-refinement-ladder",
   "schemaVersion": "1.0",
-  "branchManifestId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+  "branchManifestId": "phase8-real-atlas-control",
   "targetQuantities": [
     "residual-norm",
     "stationarity-norm",
@@ -15,9 +15,9 @@
     { "levelId": "L2-8x8", "meshParameterX": 0.25, "meshParameterF": 0.25, "description": "8x8 structured mesh" }
   ],
   "provenance": {
-    "createdAt": "2026-03-16T00:00:00+00:00",
-    "codeRevision": "phase6-bridge-reference-atlas-v1",
-    "branch": { "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega", "schemaVersion": "1.0" },
+    "createdAt": "2026-03-20T00:00:00+00:00",
+    "codeRevision": "phase8-real-atlas-env-aware-v1",
+    "branch": { "branchId": "phase8-real-atlas-control", "schemaVersion": "1.0" },
     "backend": "cpu"
   }
 }

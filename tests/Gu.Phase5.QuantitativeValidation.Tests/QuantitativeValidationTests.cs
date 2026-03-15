@@ -267,6 +267,55 @@ public sealed class QuantitativeValidationTests
     }
 
     [Fact]
+    public void QuantitativeValidationRunner_PreservesBenchmarkClassOnMatchesAndCounts()
+    {
+        var observables = new List<QuantitativeObservableRecord>
+        {
+            new QuantitativeObservableRecord
+            {
+                ObservableId = "obs-bench",
+                Value = 1.0,
+                Uncertainty = UncertaintyPropagator.Propagate(0.1, null, null, null),
+                BranchId = "branch-1",
+                EnvironmentId = "env-imported",
+                ExtractionMethod = "ratio",
+                Provenance = MakeProvenance(),
+            },
+        };
+
+        var table = new ExternalTargetTable
+        {
+            TableId = "bench-table",
+            Targets =
+            [
+                new ExternalTarget
+                {
+                    Label = "internal-benchmark-target",
+                    ObservableId = "obs-bench",
+                    Value = 1.0,
+                    Uncertainty = 0.1,
+                    Source = "repo-benchmark",
+                    BenchmarkClass = "internal-benchmark",
+                },
+            ],
+        };
+
+        var runner = new QuantitativeValidationRunner();
+        var scoreCard = runner.Run(
+            "study-benchmark-class",
+            observables,
+            table,
+            StandardPolicy,
+            MakeProvenance(),
+            [MakeEnvironmentRecord("env-imported", "imported", 24, 8)]);
+
+        Assert.Single(scoreCard.Matches);
+        Assert.Equal("internal-benchmark", scoreCard.Matches[0].TargetBenchmarkClass);
+        Assert.Equal(1, scoreCard.BenchmarkClassCounts!["internal-benchmark"]);
+        Assert.Equal(0, scoreCard.FailedBenchmarkClassCounts!.Count);
+    }
+
+    [Fact]
     public void ConsistencyScoreCard_AllFail_OverallScore0()
     {
         var matches = new List<TargetMatchRecord>

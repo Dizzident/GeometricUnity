@@ -1,0 +1,21 @@
+{
+  "environmentId": "env-imported-repo-benchmark",
+  "schemaVersion": "1.0",
+  "sourcePath": "studies/phase5_su2_branch_refinement_env_validation/datasets/phase8_repo_import_mesh.json",
+  "sourceFormat": "gu-json",
+  "geometryTier": "imported",
+  "description": "Phase VIII imported benchmark mesh sourced from a checked-in repository dataset. This is a real imported file path with real content hash inside the repository, but it is still an internal benchmark rather than an external dataset.",
+  "datasetId": "repo-internal-phase8-import-mesh-v1",
+  "sourceHash": "sha256-9009ef7d0cf69d1285b821444f5f20b345dbc5925d4674756ac6e4158dad194f",
+  "conversionVersion": "gu-json-native-v1",
+  "provenance": {
+    "createdAt": "2026-03-20T00:00:00+00:00",
+    "codeRevision": "phase8-imported-repo-benchmark-v1",
+    "branch": {
+      "branchId": "phase8-real-atlas-control",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu",
+    "notes": "Phase VIII imported benchmark path: checked-in repository mesh with real content hash and import contract, still not external evidence."
+  }
+}

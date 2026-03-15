@@ -65,6 +65,7 @@ public static class TargetMatcher
                 TargetSource = target.Source,
                 TargetProvenance = target.TargetProvenance,
                 TargetEvidenceTier = target.EvidenceTier,
+                TargetBenchmarkClass = target.BenchmarkClass,
                 TargetEnvironmentId = target.TargetEnvironmentId,
                 TargetEnvironmentTier = target.TargetEnvironmentTier,
             };
@@ -111,6 +112,7 @@ public static class TargetMatcher
             TargetSource = target.Source,
             TargetProvenance = target.TargetProvenance,
             TargetEvidenceTier = target.EvidenceTier,
+            TargetBenchmarkClass = target.BenchmarkClass,
             TargetEnvironmentId = target.TargetEnvironmentId,
             TargetEnvironmentTier = target.TargetEnvironmentTier,
         };
@@ -157,6 +159,7 @@ public static class TargetMatcher
                 TargetSource = target.Source,
                 TargetProvenance = target.TargetProvenance,
                 TargetEvidenceTier = target.EvidenceTier,
+                TargetBenchmarkClass = target.BenchmarkClass,
                 TargetEnvironmentId = target.TargetEnvironmentId,
                 TargetEnvironmentTier = target.TargetEnvironmentTier,
             };
@@ -199,6 +202,7 @@ public static class TargetMatcher
             TargetSource = target.Source,
             TargetProvenance = target.TargetProvenance,
             TargetEvidenceTier = target.EvidenceTier,
+            TargetBenchmarkClass = target.BenchmarkClass,
             TargetEnvironmentId = target.TargetEnvironmentId,
             TargetEnvironmentTier = target.TargetEnvironmentTier,
         };
@@ -247,6 +251,7 @@ public static class TargetMatcher
                 TargetSource = target.Source,
                 TargetProvenance = target.TargetProvenance,
                 TargetEvidenceTier = target.EvidenceTier,
+                TargetBenchmarkClass = target.BenchmarkClass,
                 TargetEnvironmentId = target.TargetEnvironmentId,
                 TargetEnvironmentTier = target.TargetEnvironmentTier,
             };
@@ -300,6 +305,7 @@ public static class TargetMatcher
             TargetSource = target.Source,
             TargetProvenance = target.TargetProvenance,
             TargetEvidenceTier = target.EvidenceTier,
+            TargetBenchmarkClass = target.BenchmarkClass,
             TargetEnvironmentId = target.TargetEnvironmentId,
             TargetEnvironmentTier = target.TargetEnvironmentTier,
         };

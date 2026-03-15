@@ -23,6 +23,7 @@ public sealed class SolveRunClassification
     /// Source of the initial omega seed. One of:
     ///   "zero-seed"       – fresh zero initialisation (trivial validation path).
     ///   "persisted-state" – loaded from an existing final_state.json in the run folder.
+    ///   "symmetric-ansatz" – generated from a declared non-zero ansatz seed.
     ///   "explicit-omega"  – supplied via --omega flag.
     ///   "explicit-a0"     – A0 supplied via --a0 flag (omega may still be zero).
     /// </summary>
@@ -61,7 +62,8 @@ public sealed class SolveRunClassification
         string modeFlag,
         bool hasPersistedOmega,
         bool hasExplicitOmega,
-        bool hasExplicitA0)
+        bool hasExplicitA0,
+        string? seedSourceOverride = null)
     {
         var runType = modeFlag.ToUpperInvariant() switch
         {
@@ -72,7 +74,9 @@ public sealed class SolveRunClassification
         };
 
         string seedSource;
-        if (hasExplicitOmega)
+        if (!string.IsNullOrWhiteSpace(seedSourceOverride))
+            seedSource = seedSourceOverride;
+        else if (hasExplicitOmega)
             seedSource = "explicit-omega";
         else if (hasPersistedOmega)
             seedSource = "persisted-state";

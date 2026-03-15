@@ -1,0 +1,92 @@
+{
+  "studyId": "phase8-real-bridge-atlas",
+  "specs": [
+    {
+      "specId": "phase8-bg-0",
+      "environmentId": "env-default",
+      "branchManifestId": "phase8-real-atlas-control",
+      "seed": {
+        "kind": "Trivial",
+        "label": "seed-0"
+      },
+      "solveOptions": {
+        "solveMode": "ObjectiveMinimization",
+        "solverMethod": "GradientDescent",
+        "maxIterations": 1000,
+        "initialStepSize": 0.002,
+        "gaugePenaltyLambda": 0.0,
+        "gaugeStrategy": "L2Penalty",
+        "toleranceResidualDiagnostic": 0.0001,
+        "toleranceStationary": 1e-06,
+        "toleranceResidualStrict": 1e-08
+      }
+    },
+    {
+      "specId": "phase8-bg-1",
+      "environmentId": "env-default",
+      "branchManifestId": "phase8-real-atlas-control",
+      "seed": {
+        "kind": "SymmetricAnsatz",
+        "label": "seed-1"
+      },
+      "solveOptions": {
+        "solveMode": "ObjectiveMinimization",
+        "solverMethod": "GradientDescent",
+        "maxIterations": 1000,
+        "initialStepSize": 0.002,
+        "gaugePenaltyLambda": 0.0,
+        "gaugeStrategy": "L2Penalty",
+        "toleranceResidualDiagnostic": 0.0001,
+        "toleranceStationary": 1e-06,
+        "toleranceResidualStrict": 1e-08
+      }
+    },
+    {
+      "specId": "phase8-bg-2",
+      "environmentId": "env-default",
+      "branchManifestId": "phase8-real-atlas-control",
+      "seed": {
+        "kind": "SymmetricAnsatz",
+        "label": "seed-2"
+      },
+      "solveOptions": {
+        "solveMode": "ObjectiveMinimization",
+        "solverMethod": "GradientDescent",
+        "maxIterations": 1000,
+        "initialStepSize": 0.002,
+        "gaugePenaltyLambda": 0.0,
+        "gaugeStrategy": "L2Penalty",
+        "toleranceResidualDiagnostic": 0.0001,
+        "toleranceStationary": 1e-06,
+        "toleranceResidualStrict": 1e-08
+      }
+    },
+    {
+      "specId": "phase8-bg-3",
+      "environmentId": "env-default",
+      "branchManifestId": "phase8-real-atlas-control",
+      "seed": {
+        "kind": "SymmetricAnsatz",
+        "label": "seed-3"
+      },
+      "solveOptions": {
+        "solveMode": "ObjectiveMinimization",
+        "solverMethod": "GradientDescent",
+        "maxIterations": 1000,
+        "initialStepSize": 0.002,
+        "gaugePenaltyLambda": 0.0,
+        "gaugeStrategy": "L2Penalty",
+        "toleranceResidualDiagnostic": 0.0001,
+        "toleranceStationary": 1e-06,
+        "toleranceResidualStrict": 1e-08
+      }
+    }
+  ],
+  "deduplicationThreshold": 0.0,
+  "rankingCriteria": "admissibility-then-residual",
+  "notes": "Phase VIII standard atlas study. This remains toy-geometry control evidence, but the admitted paths must now be solver-produced nontrivial objective solves rather than trivial residual-only zero-seed inspections.",
+  "environmentTier": "toy",
+  "manifestSearchPaths": [
+    "manifests"
+  ]
+}
