@@ -3442,11 +3442,15 @@ static int BranchRobustness(string[] args)
         return 1;
     }
 
-    var quantityValues = JsonSerializer.Deserialize<Dictionary<string, double[]>>(File.ReadAllText(valuesPath),
-        new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-    if (quantityValues is null)
+    IReadOnlyDictionary<string, double[]> quantityValues;
+    try
+    {
+        quantityValues = BranchQuantityValuesLoader.Load(valuesPath, spec.BranchVariantIds);
+    }
+    catch (InvalidDataException ex)
     {
         Console.Error.WriteLine($"Failed to deserialize quantity values: {valuesPath}");
+        Console.Error.WriteLine(ex.Message);
         return 1;
     }
 
@@ -3879,12 +3883,14 @@ static int RunPhase5Campaign(string[] args)
             artifacts.Observables,
             artifacts.TargetTable,
             artifacts.Registry,
+            candidateProvenanceLinks: artifacts.CandidateProvenanceLinks,
             observationChainRecords: artifacts.ObservationChainRecords,
             environmentRecords: artifacts.EnvironmentRecords,
             environmentVarianceRecords: artifacts.EnvironmentVarianceRecords,
             representationContentRecords: artifacts.RepresentationContentRecords,
             couplingConsistencyRecords: artifacts.CouplingConsistencyRecords,
-            sidecarSummary: artifacts.SidecarSummary);
+            sidecarSummary: artifacts.SidecarSummary,
+            refinementBridgeManifest: artifacts.RefinementBridgeManifest);
     }
     catch (Exception ex)
     {
@@ -3917,6 +3923,8 @@ static int RunPhase5Campaign(string[] args)
     CopyIfExists(Path.Combine(specDir, spec.ObservablesPath), Path.Combine(inputsDir, "observables.json"));
     CopyIfExists(Path.Combine(specDir, spec.ExternalTargetTablePath), Path.Combine(inputsDir, "external_targets.json"));
     CopyIfExists(Path.Combine(specDir, spec.RegistryPath), Path.Combine(inputsDir, "registry.json"));
+    if (artifacts.RefinementBridgeManifest is not null)
+        CopyIfExists(Path.Combine(Path.GetDirectoryName(Path.Combine(specDir, spec.RefinementValuesPath)) ?? specDir, "bridge_manifest.json"), Path.Combine(inputsDir, "bridge_manifest.json"));
     if (spec.ObservationChainPath is not null)
         CopyIfExists(Path.Combine(specDir, spec.ObservationChainPath), Path.Combine(inputsDir, "observation_chain.json"));
     if (spec.EnvironmentVariancePath is not null)
@@ -3926,6 +3934,7 @@ static int RunPhase5Campaign(string[] args)
     if (spec.CouplingConsistencyPath is not null)
         CopyIfExists(Path.Combine(specDir, spec.CouplingConsistencyPath), Path.Combine(inputsDir, "coupling_consistency.json"));
     CopyIfExists(Path.Combine(specDir, "sidecar_summary.json"), Path.Combine(inputsDir, "sidecar_summary.json"));
+    CopyIfExists(Path.Combine(specDir, "candidate_provenance_links.json"), Path.Combine(inputsDir, "candidate_provenance_links.json"));
     for (int i = 0; i < spec.EnvironmentRecordPaths.Count; i++)
         CopyIfExists(Path.Combine(specDir, spec.EnvironmentRecordPaths[i]), Path.Combine(inputsDir, $"env_record_{i}.json"));
 
@@ -4158,6 +4167,13 @@ static string GeneratePhase5ReportMarkdown(
     {
         sb.AppendLine($"- Convergent quantities: {report.ConvergenceAtlas.ConvergentCount}");
         sb.AppendLine($"- Non-convergent: {report.ConvergenceAtlas.NonConvergentCount}");
+        foreach (var line in report.ConvergenceAtlas.SummaryLines
+            .Where(line => line.StartsWith("- Evidence source:", StringComparison.Ordinal) ||
+                           line.StartsWith("- Refinement seed family:", StringComparison.Ordinal) ||
+                           line.StartsWith("- Direct solver-backed refinement family:", StringComparison.Ordinal)))
+        {
+            sb.AppendLine(line);
+        }
     }
     sb.AppendLine();
     sb.AppendLine("## Quantitative");

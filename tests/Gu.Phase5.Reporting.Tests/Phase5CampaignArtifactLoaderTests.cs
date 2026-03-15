@@ -4,6 +4,7 @@ using Gu.Core.Serialization;
 using Gu.Phase4.Registry;
 using Gu.Phase5.BranchIndependence;
 using Gu.Phase5.Convergence;
+using Gu.Phase5.Dossiers;
 using Gu.Phase5.Environments;
 using Gu.Phase5.Falsification;
 using Gu.Phase5.QuantitativeValidation;
@@ -95,6 +96,22 @@ public sealed class Phase5CampaignArtifactLoaderTests : IDisposable
                 Quantities = new Dictionary<string, double> { ["q1"] = 2.015625 },
             },
         ],
+    };
+
+    private BridgeManifest MakeBridgeManifest(int sourceRecordCount = 3) => new BridgeManifest
+    {
+        ManifestId = "bridge-test-001",
+        SourceAtlasPath = "/tmp/atlas.json",
+        SourceRecordIds = Enumerable.Range(0, sourceRecordCount)
+            .Select(i => $"bg-{i}")
+            .ToList(),
+        SourceStateArtifactRefs = Enumerable.Range(0, sourceRecordCount)
+            .Select(i => $"states/bg-{i}.json")
+            .ToList(),
+        DerivedVariantIds = Enumerable.Range(0, sourceRecordCount)
+            .Select(i => $"V{i + 1}")
+            .ToList(),
+        Provenance = MakeProvenance(),
     };
 
     private EnvironmentRecord MakeEnvironmentRecord() => new EnvironmentRecord
@@ -213,6 +230,20 @@ public sealed class Phase5CampaignArtifactLoaderTests : IDisposable
     }
 
     [Fact]
+    public void ArtifactLoader_LoadsInferredBridgeManifest_WhenPresent()
+    {
+        var spec = WriteArtifactsAndMakeSpec();
+        File.WriteAllText(
+            Path.Combine(_tempDir, "bridge_manifest.json"),
+            GuJsonDefaults.Serialize(MakeBridgeManifest()));
+
+        var artifacts = Phase5CampaignArtifactLoader.Load(spec, _tempDir);
+
+        Assert.NotNull(artifacts.RefinementBridgeManifest);
+        Assert.Equal(3, artifacts.RefinementBridgeManifest!.SourceRecordIds.Count);
+    }
+
+    [Fact]
     public void ArtifactLoader_LoadsReferenceStudyCampaignArtifacts()
     {
         var repoRoot = FindRepoRoot();
@@ -241,6 +272,9 @@ public sealed class Phase5CampaignArtifactLoaderTests : IDisposable
     public void RunFull_ViaArtifactLoader_ProducesCompleteResult()
     {
         var spec = WriteArtifactsAndMakeSpec();
+        File.WriteAllText(
+            Path.Combine(_tempDir, "bridge_manifest.json"),
+            GuJsonDefaults.Serialize(MakeBridgeManifest()));
         var artifacts = Phase5CampaignArtifactLoader.Load(spec, _tempDir);
 
         // Build executors from the loaded artifacts (mirrors RunPhase5Campaign in CLI)
@@ -267,7 +301,8 @@ public sealed class Phase5CampaignArtifactLoaderTests : IDisposable
             refinementExecutor,
             artifacts.Observables,
             artifacts.TargetTable,
-            artifacts.Registry);
+            artifacts.Registry,
+            refinementBridgeManifest: artifacts.RefinementBridgeManifest);
 
         Assert.NotNull(result);
         Assert.Equal("wp3-integration-campaign", result.Report.StudyId);
@@ -276,6 +311,10 @@ public sealed class Phase5CampaignArtifactLoaderTests : IDisposable
         Assert.NotNull(result.ProvenanceDossier);
         // Study manifests: exactly two (positive + negative)
         Assert.Equal(2, result.StudyManifests.Count);
+        Assert.Contains(result.Report.ConvergenceAtlas!.SummaryLines,
+            line => line.Contains("bridge-derived", StringComparison.Ordinal));
+        Assert.Contains(result.Report.ConvergenceAtlas!.SummaryLines,
+            line => line.Contains("multi-variant admitted atlas", StringComparison.Ordinal));
     }
 
     /// <summary>
@@ -310,6 +349,239 @@ public sealed class Phase5CampaignArtifactLoaderTests : IDisposable
             Assert.NotNull(commands);
             Assert.Contains(commands, cmd => cmd.Contains("run-phase5-campaign"));
         });
+    }
+
+    [Fact]
+    public void RunFull_CandidateProvenanceLinks_OnlyLinkedCandidatesGainBranchAndRefinementEvidenceIds()
+    {
+        var spec = WriteArtifactsAndMakeSpec();
+        File.WriteAllText(
+            Path.Combine(_tempDir, "bridge_manifest.json"),
+            GuJsonDefaults.Serialize(MakeBridgeManifest()));
+
+        var registry = new UnifiedParticleRegistry
+        {
+            Candidates =
+            [
+                new UnifiedParticleRecord
+                {
+                    ParticleId = "cand-linked",
+                    ParticleType = UnifiedParticleType.Fermion,
+                    PrimarySourceId = "src-linked",
+                    ContributingSourceIds = ["src-linked"],
+                    BranchVariantSet = [],
+                    BackgroundSet = [],
+                    Chirality = "mixed",
+                    MassLikeEnvelope = [1.0, 1.0, 1.0],
+                    BranchStabilityScore = 1.0,
+                    ObservationConfidence = 0.9,
+                    ComparisonEvidenceScore = 0.0,
+                    ClaimClass = "C2_BranchStableCandidate",
+                    ComputedWithUnverifiedGpu = false,
+                    RegistryVersion = "1.0.0",
+                    Provenance = MakeProvenance(),
+                },
+                new UnifiedParticleRecord
+                {
+                    ParticleId = "cand-unlinked",
+                    ParticleType = UnifiedParticleType.Fermion,
+                    PrimarySourceId = "src-unlinked",
+                    ContributingSourceIds = ["src-unlinked"],
+                    BranchVariantSet = [],
+                    BackgroundSet = [],
+                    Chirality = "mixed",
+                    MassLikeEnvelope = [1.0, 1.0, 1.0],
+                    BranchStabilityScore = 1.0,
+                    ObservationConfidence = 0.9,
+                    ComparisonEvidenceScore = 0.0,
+                    ClaimClass = "C2_BranchStableCandidate",
+                    ComputedWithUnverifiedGpu = false,
+                    RegistryVersion = "1.0.0",
+                    Provenance = MakeProvenance(),
+                },
+            ],
+        };
+        File.WriteAllText(Path.Combine(_tempDir, "registry.json"), GuJsonDefaults.Serialize(registry));
+
+        File.WriteAllText(
+            Path.Combine(_tempDir, "candidate_provenance_links.json"),
+            GuJsonDefaults.Serialize(new List<CandidateProvenanceLinkRecord>
+            {
+                new CandidateProvenanceLinkRecord
+                {
+                    CandidateId = "cand-linked",
+                    BranchVariantIds = ["V1", "V2"],
+                    BackgroundIds = ["bg-0", "bg-1"],
+                },
+            }));
+
+        File.WriteAllText(
+            Path.Combine(_tempDir, "observables.json"),
+            GuJsonDefaults.Serialize(new List<QuantitativeObservableRecord>
+            {
+                new QuantitativeObservableRecord
+                {
+                    ObservableId = "obs-linked",
+                    Value = 1.0,
+                    Uncertainty = new QuantitativeUncertainty { TotalUncertainty = 0.1 },
+                    BranchId = "V1",
+                    EnvironmentId = "env-toy",
+                    RefinementLevel = "L2",
+                    ExtractionMethod = "test",
+                    Provenance = MakeProvenance(),
+                },
+                new QuantitativeObservableRecord
+                {
+                    ObservableId = "obs-unlinked",
+                    Value = 1.0,
+                    Uncertainty = new QuantitativeUncertainty { TotalUncertainty = 0.1 },
+                    BranchId = "V1",
+                    EnvironmentId = "env-toy",
+                    RefinementLevel = "L2",
+                    ExtractionMethod = "test",
+                    Provenance = MakeProvenance(),
+                },
+            }));
+
+        File.WriteAllText(
+            Path.Combine(_tempDir, "observation_chain.json"),
+            GuJsonDefaults.Serialize(new List<ObservationChainRecord>
+            {
+                new ObservationChainRecord
+                {
+                    CandidateId = "cand-linked",
+                    PrimarySourceId = "src-linked",
+                    ObservableId = "obs-linked",
+                    CompletenessStatus = "complete",
+                    SensitivityScore = 0.1,
+                    AuxiliaryModelSensitivity = 0.1,
+                    Passed = true,
+                    Provenance = MakeProvenance(),
+                },
+                new ObservationChainRecord
+                {
+                    CandidateId = "cand-unlinked",
+                    PrimarySourceId = "src-unlinked",
+                    ObservableId = "obs-unlinked",
+                    CompletenessStatus = "complete",
+                    SensitivityScore = 0.1,
+                    AuxiliaryModelSensitivity = 0.1,
+                    Passed = true,
+                    Provenance = MakeProvenance(),
+                },
+            }));
+
+        File.WriteAllText(
+            Path.Combine(_tempDir, "environment_variance.json"),
+            GuJsonDefaults.Serialize(new List<EnvironmentVarianceRecord>
+            {
+                new EnvironmentVarianceRecord
+                {
+                    RecordId = "env-var-obs-linked",
+                    QuantityId = "obs-linked",
+                    EnvironmentTierId = "toy+structured",
+                    RelativeStdDev = 0.01,
+                    Flagged = false,
+                    Provenance = MakeProvenance(),
+                },
+                new EnvironmentVarianceRecord
+                {
+                    RecordId = "env-var-obs-unlinked",
+                    QuantityId = "obs-unlinked",
+                    EnvironmentTierId = "toy+structured",
+                    RelativeStdDev = 0.01,
+                    Flagged = false,
+                    Provenance = MakeProvenance(),
+                },
+            }));
+
+        var targetTable = new ExternalTargetTable
+        {
+            TableId = "linked-targets",
+            Targets =
+            [
+                new ExternalTarget
+                {
+                    ObservableId = "obs-linked",
+                    Label = "target-linked",
+                    Value = 1.0,
+                    Uncertainty = 0.1,
+                    Source = "test",
+                    DistributionModel = "gaussian",
+                },
+                new ExternalTarget
+                {
+                    ObservableId = "obs-unlinked",
+                    Label = "target-unlinked",
+                    Value = 1.0,
+                    Uncertainty = 0.1,
+                    Source = "test",
+                    DistributionModel = "gaussian",
+                },
+            ],
+        };
+        File.WriteAllText(Path.Combine(_tempDir, "targets.json"), GuJsonDefaults.Serialize(targetTable));
+
+        var specWithSidecars = new Phase5CampaignSpec
+        {
+            CampaignId = spec.CampaignId,
+            SchemaVersion = spec.SchemaVersion,
+            BranchFamilySpec = spec.BranchFamilySpec,
+            RefinementSpec = spec.RefinementSpec,
+            EnvironmentCampaignSpec = spec.EnvironmentCampaignSpec,
+            ExternalTargetTablePath = "targets.json",
+            BranchQuantityValuesPath = spec.BranchQuantityValuesPath,
+            RefinementValuesPath = spec.RefinementValuesPath,
+            ObservablesPath = "observables.json",
+            EnvironmentRecordPaths = spec.EnvironmentRecordPaths,
+            RegistryPath = "registry.json",
+            ObservationChainPath = "observation_chain.json",
+            EnvironmentVariancePath = "environment_variance.json",
+            CalibrationPolicy = spec.CalibrationPolicy,
+            FalsificationPolicy = spec.FalsificationPolicy,
+            Provenance = spec.Provenance,
+        };
+
+        var artifacts = Phase5CampaignArtifactLoader.Load(specWithSidecars, _tempDir);
+
+        Func<string, IReadOnlyDictionary<string, double[]>> branchExecutor = variantId =>
+        {
+            var level = artifacts.BranchQuantityValues.Levels.First(l => l.LevelId == variantId);
+            return level.Quantities.ToDictionary(kv => kv.Key, kv => new[] { kv.Value });
+        };
+
+        Func<RefinementLevel, IReadOnlyDictionary<string, double>> refinementExecutor = level =>
+            artifacts.RefinementValues.Levels.First(l => l.LevelId == level.LevelId).Quantities;
+
+        var runner = new Phase5CampaignRunner();
+        var result = runner.RunFull(
+            specWithSidecars,
+            branchExecutor,
+            refinementExecutor,
+            artifacts.Observables,
+            artifacts.TargetTable,
+            artifacts.Registry,
+            candidateProvenanceLinks: artifacts.CandidateProvenanceLinks,
+            observationChainRecords: artifacts.ObservationChainRecords,
+            environmentRecords: artifacts.EnvironmentRecords,
+            environmentVarianceRecords: artifacts.EnvironmentVarianceRecords,
+            refinementBridgeManifest: artifacts.RefinementBridgeManifest);
+
+        var linkedEscalation = result.TypedDossier.ClaimEscalations.Single(e => e.CandidateId == "cand-linked");
+        var unlinkedEscalation = result.TypedDossier.ClaimEscalations.Single(e => e.CandidateId == "cand-unlinked");
+        var linkedBranchEvidence = linkedEscalation.GateResults.Single(g => g.GateId == EscalationGates.BranchRobust).EvidenceRecordIds;
+        var linkedRefinementEvidence = linkedEscalation.GateResults.Single(g => g.GateId == EscalationGates.RefinementBounded).EvidenceRecordIds;
+        var unlinkedBranchEvidence = unlinkedEscalation.GateResults.Single(g => g.GateId == EscalationGates.BranchRobust).EvidenceRecordIds;
+        var unlinkedRefinementEvidence = unlinkedEscalation.GateResults.Single(g => g.GateId == EscalationGates.RefinementBounded).EvidenceRecordIds;
+
+        Assert.NotNull(linkedBranchEvidence);
+        Assert.NotNull(linkedRefinementEvidence);
+        Assert.NotNull(unlinkedBranchEvidence);
+        Assert.NotNull(unlinkedRefinementEvidence);
+        Assert.Equal(["V1", "V2"], linkedBranchEvidence);
+        Assert.Equal(["bg-0", "bg-1"], linkedRefinementEvidence);
+        Assert.Empty(unlinkedBranchEvidence);
+        Assert.Empty(unlinkedRefinementEvidence);
     }
 
     /// <summary>

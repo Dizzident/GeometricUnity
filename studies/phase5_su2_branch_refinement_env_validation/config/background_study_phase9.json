@@ -1,0 +1,152 @@
+{
+  "studyId": "phase9-real-bridge-atlas",
+  "specs": [
+    {
+      "specId": "phase9-bg-0",
+      "environmentId": "env-default",
+      "branchManifestId": "phase8-real-atlas-control",
+      "seed": {
+        "kind": "Trivial",
+        "label": "seed-0"
+      },
+      "solveOptions": {
+        "solveMode": "ObjectiveMinimization",
+        "solverMethod": "GradientDescent",
+        "maxIterations": 3000,
+        "initialStepSize": 0.001,
+        "gaugePenaltyLambda": 0.0,
+        "gaugeStrategy": "L2Penalty",
+        "toleranceResidualDiagnostic": 0.0001,
+        "toleranceStationary": 1e-06,
+        "toleranceResidualStrict": 1e-08
+      }
+    },
+    {
+      "specId": "phase9-bg-1",
+      "environmentId": "env-default",
+      "branchManifestId": "phase8-real-atlas-control",
+      "seed": {
+        "kind": "SymmetricAnsatz",
+        "label": "seed-1"
+      },
+      "solveOptions": {
+        "solveMode": "ObjectiveMinimization",
+        "solverMethod": "ConjugateGradient",
+        "maxIterations": 5000,
+        "initialStepSize": 0.01,
+        "gaugePenaltyLambda": 0.0,
+        "gaugeStrategy": "L2Penalty",
+        "toleranceResidualDiagnostic": 0.0001,
+        "toleranceStationary": 1e-06,
+        "toleranceResidualStrict": 1e-08
+      }
+    },
+    {
+      "specId": "phase9-bg-2",
+      "environmentId": "env-default",
+      "branchManifestId": "phase8-real-atlas-control",
+      "seed": {
+        "kind": "SymmetricAnsatz",
+        "label": "seed-1"
+      },
+      "solveOptions": {
+        "solveMode": "ObjectiveMinimization",
+        "solverMethod": "GaussNewton",
+        "maxIterations": 500,
+        "initialStepSize": 0.01,
+        "gaugePenaltyLambda": 0.0,
+        "gaugeStrategy": "L2Penalty",
+        "toleranceResidualDiagnostic": 0.0001,
+        "toleranceStationary": 1e-06,
+        "toleranceResidualStrict": 1e-08
+      }
+    },
+    {
+      "specId": "phase9-bg-3",
+      "environmentId": "env-default",
+      "branchManifestId": "phase8-real-atlas-control",
+      "seed": {
+        "kind": "SymmetricAnsatz",
+        "label": "seed-5"
+      },
+      "solveOptions": {
+        "solveMode": "ObjectiveMinimization",
+        "solverMethod": "ConjugateGradient",
+        "maxIterations": 5000,
+        "initialStepSize": 0.01,
+        "gaugePenaltyLambda": 0.0,
+        "gaugeStrategy": "L2Penalty",
+        "toleranceResidualDiagnostic": 0.0001,
+        "toleranceStationary": 1e-06,
+        "toleranceResidualStrict": 1e-08
+      }
+    },
+    {
+      "specId": "phase9-bg-4",
+      "environmentId": "env-default",
+      "branchManifestId": "phase8-real-atlas-control",
+      "seed": {
+        "kind": "SymmetricAnsatz",
+        "label": "seed-5"
+      },
+      "solveOptions": {
+        "solveMode": "ObjectiveMinimization",
+        "solverMethod": "GaussNewton",
+        "maxIterations": 500,
+        "initialStepSize": 0.01,
+        "gaugePenaltyLambda": 0.0,
+        "gaugeStrategy": "L2Penalty",
+        "toleranceResidualDiagnostic": 0.0001,
+        "toleranceStationary": 1e-06,
+        "toleranceResidualStrict": 1e-08
+      }
+    },
+    {
+      "specId": "phase9-bg-5",
+      "environmentId": "env-default",
+      "branchManifestId": "phase8-real-atlas-control",
+      "seed": {
+        "kind": "SymmetricAnsatz",
+        "label": "seed-7"
+      },
+      "solveOptions": {
+        "solveMode": "ObjectiveMinimization",
+        "solverMethod": "ConjugateGradient",
+        "maxIterations": 5000,
+        "initialStepSize": 0.01,
+        "gaugePenaltyLambda": 0.0,
+        "gaugeStrategy": "L2Penalty",
+        "toleranceResidualDiagnostic": 0.0001,
+        "toleranceStationary": 1e-06,
+        "toleranceResidualStrict": 1e-08
+      }
+    },
+    {
+      "specId": "phase9-bg-6",
+      "environmentId": "env-default",
+      "branchManifestId": "phase8-real-atlas-control",
+      "seed": {
+        "kind": "SymmetricAnsatz",
+        "label": "seed-7"
+      },
+      "solveOptions": {
+        "solveMode": "ObjectiveMinimization",
+        "solverMethod": "GaussNewton",
+        "maxIterations": 500,
+        "initialStepSize": 0.01,
+        "gaugePenaltyLambda": 0.0,
+        "gaugeStrategy": "L2Penalty",
+        "toleranceResidualDiagnostic": 0.0001,
+        "toleranceStationary": 1e-06,
+        "toleranceResidualStrict": 1e-08
+      }
+    }
+  ],
+  "deduplicationThreshold": 0.0,
+  "rankingCriteria": "admissibility-then-residual",
+  "notes": "Phase IX standard atlas study. This preserves the existing admissibility thresholds while broadening the admitted nontrivial family using a solver-method sweep that actually converges several symmetric-ansatz seeds.",
+  "environmentTier": "toy",
+  "manifestSearchPaths": [
+    "manifests"
+  ]
+}

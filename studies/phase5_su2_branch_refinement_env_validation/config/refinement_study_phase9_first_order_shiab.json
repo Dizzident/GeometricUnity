@@ -1,7 +1,8 @@
 {
-  "studyId": "phase5-su2-refinement-ladder",
+  "studyId": "phase5-su2-refinement-ladder-first-order-shiab-phase9",
   "schemaVersion": "1.0",
-  "branchManifestId": "phase8-real-atlas-control",
+  "branchManifestId": "phase8-real-atlas-first-order-shiab",
+  "shiabVariantId": "first-order-curvature",
   "targetQuantities": [
     "residual-norm",
     "stationarity-norm",
@@ -16,8 +17,8 @@
   ],
   "provenance": {
     "createdAt": "2026-03-20T00:00:00+00:00",
-    "codeRevision": "phase9-real-atlas-env-aware-v1",
-    "branch": { "branchId": "phase8-real-atlas-control", "schemaVersion": "1.0" },
+    "codeRevision": "phase9-first-order-curvature-companion-v1",
+    "branch": { "branchId": "phase8-real-atlas-first-order-shiab", "schemaVersion": "1.0" },
     "backend": "cpu"
   }
 }

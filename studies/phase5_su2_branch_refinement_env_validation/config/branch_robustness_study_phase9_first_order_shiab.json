@@ -1,0 +1,22 @@
+{
+  "studyId": "phase9-su2-branch-refinement-env-validation-first-order-shiab",
+  "schemaVersion": "1.0.0",
+  "description": "Bridge-backed Phase IX paired Shiab study: four persisted first-order-curvature background records exported through BackgroundRecordBranchVariantBridge and compared on solver stability quantities.",
+  "branchVariantIds": [
+    "bg-variant-ff83c64b9aee66eb",
+    "bg-variant-7f4d7d66bccf16a7",
+    "bg-variant-b5808969577e2378",
+    "bg-variant-d34a3607c736e262"
+  ],
+  "targetQuantityIds": [
+    "residual-norm",
+    "stationarity-norm",
+    "objective-value",
+    "gauge-violation",
+    "solver-iterations"
+  ],
+  "absoluteTolerance": 1e-5,
+  "relativeTolerance": 0.1,
+  "environmentId": "env-structured-4x4",
+  "referenceBranchVariantId": "bg-variant-ff83c64b9aee66eb"
+}

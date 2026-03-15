@@ -49,12 +49,14 @@ public sealed class Phase5CampaignRunner
         IReadOnlyList<QuantitativeObservableRecord> observablesSource,
         ExternalTargetTable targetTable,
         UnifiedParticleRegistry? registry = null,
+        IReadOnlyList<CandidateProvenanceLinkRecord>? candidateProvenanceLinks = null,
         IReadOnlyList<ObservationChainRecord>? observationChainRecords = null,
         IReadOnlyList<EnvironmentRecord>? environmentRecords = null,
         IReadOnlyList<EnvironmentVarianceRecord>? environmentVarianceRecords = null,
         IReadOnlyList<RepresentationContentRecord>? representationContentRecords = null,
         IReadOnlyList<CouplingConsistencyRecord>? couplingConsistencyRecords = null,
-        SidecarSummary? sidecarSummary = null)
+        SidecarSummary? sidecarSummary = null,
+        BridgeManifest? refinementBridgeManifest = null)
     {
         ArgumentNullException.ThrowIfNull(spec);
         ArgumentNullException.ThrowIfNull(branchPipelineExecutor);
@@ -152,6 +154,10 @@ public sealed class Phase5CampaignRunner
             provenance);
 
         // Step 5c: Typed technical dossier (Phase5ValidationDossier) — scientific content
+        var effectiveRegistry = registry is null
+            ? null
+            : CandidateProvenanceLinker.Apply(registry, candidateProvenanceLinks);
+
         var typedDossierAssembler = new Phase5DossierAssembler();
         var typedDossier = typedDossierAssembler.Assemble(
             studyId: spec.CampaignId,
@@ -161,7 +167,7 @@ public sealed class Phase5CampaignRunner
             environments: environmentRecords,
             scoreCard: scoreCard,
             falsifiers: falsifiers,
-            registry: registry,
+            registry: effectiveRegistry,
             environmentTiersCovered: spec.EnvironmentCampaignSpec.EnvironmentIds,
             freshness: "regenerated-current-code",
             provenance: provenance,
@@ -176,6 +182,7 @@ public sealed class Phase5CampaignRunner
             provenance: provenance,
             branchRecord: branchRecord,
             refinementResult: refinementResult,
+            refinementBridgeManifest: refinementBridgeManifest,
             falsifiers: falsifiers);
 
         return new Phase5CampaignResult

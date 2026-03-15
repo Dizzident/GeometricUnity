@@ -47,6 +47,19 @@ public sealed class Phase5CampaignArtifacts
 
     /// <summary>Sidecar generation summary inferred from sidecar_summary.json when present.</summary>
     public SidecarSummary? SidecarSummary { get; init; }
+
+    /// <summary>
+    /// Optional bridge manifest inferred from the refinement values directory.
+    /// When present, this captures whether convergence evidence is bridge-derived and
+    /// how many admitted atlas records seeded the ladder.
+    /// </summary>
+    public BridgeManifest? RefinementBridgeManifest { get; init; }
+
+    /// <summary>
+    /// Optional candidate-specific provenance links inferred from candidate_provenance_links.json
+    /// in the campaign config directory.
+    /// </summary>
+    public IReadOnlyList<CandidateProvenanceLinkRecord>? CandidateProvenanceLinks { get; init; }
 }
 
 /// <summary>
@@ -146,6 +159,26 @@ public static class Phase5CampaignArtifactLoader
                 File.ReadAllText(inferredSummaryPath));
         }
 
+        // 12. Bridge manifest (optional, inferred from the refinement values directory)
+        BridgeManifest? refinementBridgeManifest = null;
+        var inferredBridgeManifestPath = Path.Combine(
+            Path.GetDirectoryName(refinementValuesPath) ?? specDir,
+            "bridge_manifest.json");
+        if (File.Exists(inferredBridgeManifestPath))
+        {
+            refinementBridgeManifest = GuJsonDefaults.Deserialize<BridgeManifest>(
+                File.ReadAllText(inferredBridgeManifestPath));
+        }
+
+        // 13. Candidate-specific provenance links (optional)
+        IReadOnlyList<CandidateProvenanceLinkRecord>? candidateProvenanceLinks = null;
+        var inferredCandidateLinksPath = Path.Combine(specDir, "candidate_provenance_links.json");
+        if (File.Exists(inferredCandidateLinksPath))
+        {
+            candidateProvenanceLinks = GuJsonDefaults.Deserialize<List<CandidateProvenanceLinkRecord>>(
+                File.ReadAllText(inferredCandidateLinksPath));
+        }
+
         return new Phase5CampaignArtifacts
         {
             BranchQuantityValues = branchValues,
@@ -159,6 +192,8 @@ public static class Phase5CampaignArtifactLoader
             RepresentationContentRecords = repContentRecords,
             CouplingConsistencyRecords = couplingRecords,
             SidecarSummary = sidecarSummary,
+            RefinementBridgeManifest = refinementBridgeManifest,
+            CandidateProvenanceLinks = candidateProvenanceLinks,
         };
     }
 

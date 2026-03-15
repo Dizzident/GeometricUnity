@@ -2,9 +2,12 @@
   "campaignId": "phase5-su2-branch-refinement-env-validation",
   "schemaVersion": "1.1.0",
   "branchFamilySpec": {
-    "studyId": "phase8-su2-real-bridge-backed-branch-family",
+    "studyId": "phase9-su2-real-bridge-backed-branch-family",
     "branchVariantIds": [
-      "bg-variant-b072647f4a847ff0"
+      "bg-variant-95ee11778cc7ac01",
+      "bg-variant-d840fea6e6d36748",
+      "bg-variant-d84f5d66fd98b842",
+      "bg-variant-53b598740d9569b4"
     ],
     "targetQuantityIds": [
       "residual-norm",
@@ -34,7 +37,7 @@
     ],
     "provenance": {
       "createdAt": "2026-03-20T00:00:00+00:00",
-      "codeRevision": "phase8-real-atlas-env-aware-v1",
+      "codeRevision": "phase9-real-atlas-env-aware-v1",
       "branch": { "branchId": "phase8-real-atlas-control", "schemaVersion": "1.0" },
       "backend": "cpu"
     }
@@ -57,7 +60,7 @@
     ],
     "provenance": {
       "createdAt": "2026-03-20T00:00:00+00:00",
-      "codeRevision": "phase8-real-atlas-env-aware-v1",
+      "codeRevision": "phase9-real-atlas-env-aware-v1",
       "branch": { "branchId": "phase8-real-atlas-control", "schemaVersion": "1.0" },
       "backend": "cpu"
     }
@@ -71,10 +74,10 @@
   "falsificationPolicy": {},
   "provenance": {
     "createdAt": "2026-03-20T00:00:00+00:00",
-    "codeRevision": "phase8-real-atlas-env-aware-v1",
+    "codeRevision": "phase9-real-atlas-env-aware-v1",
     "branch": { "branchId": "phase8-real-atlas-control", "schemaVersion": "1.0" },
     "backend": "cpu",
-    "notes": "Phase VIII standard evidence campaign: nontrivial persisted toy-control atlas path, origin-labeled sidecars, candidate-specific escalation, and explicit separation between controls, internal benchmarks, and external evidence boundaries."
+    "notes": "Phase IX standard evidence campaign: multi-variant admitted atlas on the same strict thresholds, bridge-derived convergence sourced from multiple admitted backgrounds, unchanged benchmark separation, and candidate-specific escalation that still fails closed when candidate-linked branch/background provenance is absent."
   },
   "branchQuantityValuesPath": "branch_quantity_values.json",
   "refinementValuesPath": "refinement_values.json",

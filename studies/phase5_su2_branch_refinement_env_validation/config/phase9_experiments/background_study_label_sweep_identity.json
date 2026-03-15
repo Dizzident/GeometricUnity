@@ -1,0 +1,172 @@
+{
+  "studyId": "phase9-label-sweep-identity",
+  "specs": [
+    {
+      "specId": "p9-id-bg-0",
+      "environmentId": "env-default",
+      "branchManifestId": "phase8-real-atlas-control",
+      "seed": {
+        "kind": "Trivial",
+        "label": "seed-0"
+      },
+      "solveOptions": {
+        "solveMode": "ObjectiveMinimization",
+        "solverMethod": "GradientDescent",
+        "maxIterations": 3000,
+        "initialStepSize": 0.001,
+        "gaugePenaltyLambda": 0.0,
+        "gaugeStrategy": "L2Penalty",
+        "toleranceResidualDiagnostic": 0.0001,
+        "toleranceStationary": 1e-06,
+        "toleranceResidualStrict": 1e-08
+      }
+    },
+    {
+      "specId": "p9-id-bg-1",
+      "environmentId": "env-default",
+      "branchManifestId": "phase8-real-atlas-control",
+      "seed": {
+        "kind": "SymmetricAnsatz",
+        "label": "seed-1"
+      },
+      "solveOptions": {
+        "solveMode": "ObjectiveMinimization",
+        "solverMethod": "GradientDescent",
+        "maxIterations": 3000,
+        "initialStepSize": 0.001,
+        "gaugePenaltyLambda": 0.0,
+        "gaugeStrategy": "L2Penalty",
+        "toleranceResidualDiagnostic": 0.0001,
+        "toleranceStationary": 1e-06,
+        "toleranceResidualStrict": 1e-08
+      }
+    },
+    {
+      "specId": "p9-id-bg-2",
+      "environmentId": "env-default",
+      "branchManifestId": "phase8-real-atlas-control",
+      "seed": {
+        "kind": "SymmetricAnsatz",
+        "label": "seed-2"
+      },
+      "solveOptions": {
+        "solveMode": "ObjectiveMinimization",
+        "solverMethod": "GradientDescent",
+        "maxIterations": 3000,
+        "initialStepSize": 0.001,
+        "gaugePenaltyLambda": 0.0,
+        "gaugeStrategy": "L2Penalty",
+        "toleranceResidualDiagnostic": 0.0001,
+        "toleranceStationary": 1e-06,
+        "toleranceResidualStrict": 1e-08
+      }
+    },
+    {
+      "specId": "p9-id-bg-3",
+      "environmentId": "env-default",
+      "branchManifestId": "phase8-real-atlas-control",
+      "seed": {
+        "kind": "SymmetricAnsatz",
+        "label": "seed-3"
+      },
+      "solveOptions": {
+        "solveMode": "ObjectiveMinimization",
+        "solverMethod": "GradientDescent",
+        "maxIterations": 3000,
+        "initialStepSize": 0.001,
+        "gaugePenaltyLambda": 0.0,
+        "gaugeStrategy": "L2Penalty",
+        "toleranceResidualDiagnostic": 0.0001,
+        "toleranceStationary": 1e-06,
+        "toleranceResidualStrict": 1e-08
+      }
+    },
+    {
+      "specId": "p9-id-bg-4",
+      "environmentId": "env-default",
+      "branchManifestId": "phase8-real-atlas-control",
+      "seed": {
+        "kind": "SymmetricAnsatz",
+        "label": "seed-4"
+      },
+      "solveOptions": {
+        "solveMode": "ObjectiveMinimization",
+        "solverMethod": "GradientDescent",
+        "maxIterations": 3000,
+        "initialStepSize": 0.001,
+        "gaugePenaltyLambda": 0.0,
+        "gaugeStrategy": "L2Penalty",
+        "toleranceResidualDiagnostic": 0.0001,
+        "toleranceStationary": 1e-06,
+        "toleranceResidualStrict": 1e-08
+      }
+    },
+    {
+      "specId": "p9-id-bg-5",
+      "environmentId": "env-default",
+      "branchManifestId": "phase8-real-atlas-control",
+      "seed": {
+        "kind": "SymmetricAnsatz",
+        "label": "seed-5"
+      },
+      "solveOptions": {
+        "solveMode": "ObjectiveMinimization",
+        "solverMethod": "GradientDescent",
+        "maxIterations": 3000,
+        "initialStepSize": 0.001,
+        "gaugePenaltyLambda": 0.0,
+        "gaugeStrategy": "L2Penalty",
+        "toleranceResidualDiagnostic": 0.0001,
+        "toleranceStationary": 1e-06,
+        "toleranceResidualStrict": 1e-08
+      }
+    },
+    {
+      "specId": "p9-id-bg-6",
+      "environmentId": "env-default",
+      "branchManifestId": "phase8-real-atlas-control",
+      "seed": {
+        "kind": "SymmetricAnsatz",
+        "label": "seed-6"
+      },
+      "solveOptions": {
+        "solveMode": "ObjectiveMinimization",
+        "solverMethod": "GradientDescent",
+        "maxIterations": 3000,
+        "initialStepSize": 0.001,
+        "gaugePenaltyLambda": 0.0,
+        "gaugeStrategy": "L2Penalty",
+        "toleranceResidualDiagnostic": 0.0001,
+        "toleranceStationary": 1e-06,
+        "toleranceResidualStrict": 1e-08
+      }
+    },
+    {
+      "specId": "p9-id-bg-7",
+      "environmentId": "env-default",
+      "branchManifestId": "phase8-real-atlas-control",
+      "seed": {
+        "kind": "SymmetricAnsatz",
+        "label": "seed-7"
+      },
+      "solveOptions": {
+        "solveMode": "ObjectiveMinimization",
+        "solverMethod": "GradientDescent",
+        "maxIterations": 3000,
+        "initialStepSize": 0.001,
+        "gaugePenaltyLambda": 0.0,
+        "gaugeStrategy": "L2Penalty",
+        "toleranceResidualDiagnostic": 0.0001,
+        "toleranceStationary": 1e-06,
+        "toleranceResidualStrict": 1e-08
+      }
+    }
+  ],
+  "deduplicationThreshold": 0.0,
+  "rankingCriteria": "admissibility-then-residual",
+  "notes": "Phase IX experiment: broader symmetric-ansatz label sweep on the identity-shiab path with tighter gradient-descent step size and longer budget.",
+  "environmentTier": "toy",
+  "manifestSearchPaths": [
+    "manifests"
+  ]
+}

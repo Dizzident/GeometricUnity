@@ -22,6 +22,7 @@ public static class Phase5ReportGenerator
         ProvenanceMeta provenance,
         BranchRobustnessRecord? branchRecord = null,
         RefinementStudyResult? refinementResult = null,
+        BridgeManifest? refinementBridgeManifest = null,
         FalsifierSummary? falsifiers = null,
         IReadOnlyList<Phase3Reporting.NegativeResultEntry>? negativeResults = null)
     {
@@ -36,7 +37,7 @@ public static class Phase5ReportGenerator
             : null;
 
         ConvergenceAtlas? convergenceAtlas = refinementResult is not null
-            ? BuildConvergenceAtlas(refinementResult)
+            ? BuildConvergenceAtlas(refinementResult, refinementBridgeManifest)
             : null;
 
         FalsificationDashboard? falsificationDashboard = falsifiers is not null
@@ -155,7 +156,9 @@ public static class Phase5ReportGenerator
         };
     }
 
-    private static ConvergenceAtlas BuildConvergenceAtlas(RefinementStudyResult result)
+    private static ConvergenceAtlas BuildConvergenceAtlas(
+        RefinementStudyResult result,
+        BridgeManifest? refinementBridgeManifest)
     {
         int total = result.ContinuumEstimates.Count + result.FailureRecords.Count;
         int convergent = result.ContinuumEstimates.Count(e =>
@@ -175,6 +178,20 @@ public static class Phase5ReportGenerator
             $"- Non-convergent: {nonConvergent}",
             $"- Insufficient data: {insufficientData}",
         };
+
+        if (refinementBridgeManifest is not null)
+        {
+            int sourceCount = refinementBridgeManifest.SourceRecordIds.Count;
+            lines.Add($"- Evidence source: bridge-derived from {sourceCount} admitted background record(s).");
+            lines.Add(sourceCount >= 2
+                ? "- Refinement seed family: multi-variant admitted atlas."
+                : "- Refinement seed family: single admitted background (still realism-limited).");
+            lines.Add("- Direct solver-backed refinement family: no.");
+        }
+        else
+        {
+            lines.Add("- Evidence source: direct/unspecified refinement inputs.");
+        }
 
         return new ConvergenceAtlas
         {
