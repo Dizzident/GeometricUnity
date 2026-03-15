@@ -1,1 +1,59 @@
-[]
+[
+  {
+    "recordId": "rep-fermion-registry-phase4-toy-v1-0000",
+    "candidateId": "fermion-registry-phase4-toy-v1-0000",
+    "expectedModeCount": 2,
+    "observedModeCount": 1,
+    "missingRequiredCount": 1,
+    "structuralMismatchScore": 0.35,
+    "consistent": false,
+    "inconsistencyDescription": "Candidate \u0027fermion-registry-phase4-toy-v1-0000\u0027 exposes only 1 contributing source(s); at least 2 are required for the reference representation-content check.",
+    "provenance": {
+      "createdAt": "2026-03-15T02:24:13.0595752+00:00",
+      "codeRevision": "cli",
+      "branch": {
+        "branchId": "cli",
+        "schemaVersion": "1.0.0"
+      },
+      "backend": "cpu"
+    }
+  },
+  {
+    "recordId": "rep-fermion-registry-phase4-toy-v1-0001",
+    "candidateId": "fermion-registry-phase4-toy-v1-0001",
+    "expectedModeCount": 2,
+    "observedModeCount": 2,
+    "missingRequiredCount": 0,
+    "structuralMismatchScore": 0.04,
+    "consistent": true,
+    "inconsistencyDescription": "Candidate \u0027fermion-registry-phase4-toy-v1-0001\u0027 satisfies the reference representation-content check.",
+    "provenance": {
+      "createdAt": "2026-03-15T02:24:13.0595752+00:00",
+      "codeRevision": "cli",
+      "branch": {
+        "branchId": "cli",
+        "schemaVersion": "1.0.0"
+      },
+      "backend": "cpu"
+    }
+  },
+  {
+    "recordId": "rep-fermion-registry-phase4-toy-v1-0002",
+    "candidateId": "fermion-registry-phase4-toy-v1-0002",
+    "expectedModeCount": 3,
+    "observedModeCount": 3,
+    "missingRequiredCount": 0,
+    "structuralMismatchScore": 0.08,
+    "consistent": true,
+    "inconsistencyDescription": "Candidate \u0027fermion-registry-phase4-toy-v1-0002\u0027 satisfies the reference representation-content check.",
+    "provenance": {
+      "createdAt": "2026-03-15T02:24:13.0595752+00:00",
+      "codeRevision": "cli",
+      "branch": {
+        "branchId": "cli",
+        "schemaVersion": "1.0.0"
+      },
+      "backend": "cpu"
+    }
+  }
+]

@@ -1,84 +1,97 @@
 {
-  "tableId": "su2-branch-refinement-env-targets-v2",
-  "description": "Target table for Phase VI reference campaign. All targets carry explicit distributionModel. Targets are labeled by evidence tier: toy-placeholder (arbitrary synthetic), derived-synthetic (analytically constructed from known model), or evidence-grade (externally motivated). Phase VI rule D-P6-005: every target must have an explicit distributionModel.",
+  "tableId": "su2-branch-refinement-env-targets-v3",
+  "description": "Target table for the bridge-backed reference campaign. It mixes toy-placeholder controls, derived-synthetic checks, and one stronger evidence-grade benchmark that is anchored to imported-geometry provenance rather than direct experiment. This is still not real-world physics evidence, but it is strong enough to separate control-study success from benchmark mismatch.",
   "targets": [
     {
       "observableId": "bosonic-eigenvalue-ratio-1",
-      "label": "bosonic-mode-1-ratio",
+      "label": "bosonic-mode-1-ratio-control",
       "value": 0.1,
-      "uncertainty": 0.04,
+      "uncertainty": 0.03,
       "source": "synthetic-toy-v1",
       "targetProvenance": "synthetic-toy-v1",
       "evidenceTier": "toy-placeholder",
       "distributionModel": "gaussian",
-      "notes": "Ratio of second bosonic eigenvalue to first; 40% uncertainty. Gaussian: no physical justification for heavy tails at this tier."
+      "notes": "Control-study target aligned with the historical toy reference table."
     },
     {
       "observableId": "bosonic-eigenvalue-ratio-2",
-      "label": "bosonic-mode-2-ratio",
+      "label": "bosonic-mode-2-ratio-control",
       "value": 1.0,
+      "uncertainty": 0.25,
+      "source": "synthetic-toy-v1",
+      "targetProvenance": "synthetic-toy-v1",
+      "evidenceTier": "toy-placeholder",
+      "distributionModel": "gaussian",
+      "notes": "Control-study target aligned with the historical toy reference table."
+    },
+    {
+      "observableId": "bosonic-eigenvalue-ratio-3",
+      "label": "bosonic-mode-3-ratio-control",
+      "value": 5.0,
+      "uncertainty": 1.0,
+      "source": "synthetic-toy-v1",
+      "targetProvenance": "synthetic-toy-v1",
+      "evidenceTier": "toy-placeholder",
+      "distributionModel": "gaussian",
+      "notes": "Control-study target aligned with the historical toy reference table."
+    },
+    {
+      "observableId": "fermionic-eigenvalue-ratio-1",
+      "label": "fermionic-mode-1-ratio-control",
+      "value": 0.05,
+      "uncertainty": 0.015,
+      "source": "synthetic-toy-v1",
+      "targetProvenance": "synthetic-toy-v1",
+      "evidenceTier": "toy-placeholder",
+      "distributionModel": "gaussian",
+      "notes": "Control-study target aligned with the historical toy reference table."
+    },
+    {
+      "observableId": "fermionic-eigenvalue-ratio-2",
+      "label": "fermionic-mode-2-ratio-control",
+      "value": 2.0,
       "uncertainty": 0.4,
       "source": "synthetic-toy-v1",
       "targetProvenance": "synthetic-toy-v1",
       "evidenceTier": "toy-placeholder",
       "distributionModel": "gaussian",
-      "notes": "Ratio of third bosonic eigenvalue to first; 40% uncertainty. Gaussian: symmetric placeholder."
-    },
-    {
-      "observableId": "bosonic-eigenvalue-ratio-3",
-      "label": "bosonic-mode-3-ratio",
-      "value": 5.0,
-      "uncertainty": 2.0,
-      "source": "synthetic-toy-v1",
-      "targetProvenance": "synthetic-toy-v1",
-      "evidenceTier": "toy-placeholder",
-      "distributionModel": "gaussian",
-      "notes": "Ratio of fourth bosonic eigenvalue to first; 40% uncertainty. Gaussian: symmetric placeholder."
-    },
-    {
-      "observableId": "fermionic-eigenvalue-ratio-1",
-      "label": "fermionic-mode-1-ratio",
-      "value": 0.05,
-      "uncertainty": 0.02,
-      "source": "synthetic-toy-v1",
-      "targetProvenance": "synthetic-toy-v1",
-      "evidenceTier": "toy-placeholder",
-      "distributionModel": "gaussian",
-      "notes": "Ratio of second fermionic eigenvalue to first; 40% uncertainty. Gaussian: symmetric placeholder."
-    },
-    {
-      "observableId": "fermionic-eigenvalue-ratio-2",
-      "label": "fermionic-mode-2-ratio",
-      "value": 2.0,
-      "uncertainty": 0.8,
-      "source": "synthetic-toy-v1",
-      "targetProvenance": "synthetic-toy-v1",
-      "evidenceTier": "toy-placeholder",
-      "distributionModel": "gaussian",
-      "notes": "Ratio of third fermionic eigenvalue to first; 40% uncertainty. Gaussian: symmetric placeholder."
+      "notes": "Control-study target aligned with the historical toy reference table."
     },
     {
       "observableId": "bosonic-eigenvalue-ratio-1",
       "label": "bosonic-mode-1-ratio-derived-synthetic",
-      "value": 0.08,
-      "uncertainty": 0.025,
-      "source": "derived-synthetic-su2-model-v1",
-      "targetProvenance": "derived-synthetic-su2-model-v1",
+      "value": 0.085,
+      "uncertainty": 0.015,
+      "source": "derived-synthetic-su2-model-v2",
+      "targetProvenance": "derived-synthetic-su2-model-v2",
       "evidenceTier": "derived-synthetic",
       "distributionModel": "gaussian",
-      "notes": "Derived-synthetic: ratio analytically constructed from a known SU(2) toy model spectrum. Gaussian is correct — analytically derived ratios have symmetric error propagation; gaussian-asymmetric would require physical justification for directional uncertainty (physicist guidance)."
+      "notes": "Derived-synthetic check from the executable SU(2) toy model; useful for checking whether the structured-environment observable stays near the analytic reference."
     },
     {
       "observableId": "fermionic-eigenvalue-ratio-1",
       "label": "fermionic-mode-1-ratio-small-sample",
       "value": 0.06,
-      "uncertainty": 0.03,
+      "uncertainty": 0.02,
       "source": "synthetic-small-sample-v1",
       "targetProvenance": "synthetic-small-sample-v1",
       "evidenceTier": "toy-placeholder",
       "distributionModel": "student-t",
       "studentTDegreesOfFreedom": 4.0,
-      "notes": "Small-sample example: N=5 samples, nu=N-1=4 (physicist guidance: nu=4 gives scale factor sqrt(4/2)=sqrt(2)~1.414, meaningfully wider than Gaussian; never use nu<=2 as variance is undefined). Not evidence-grade."
+      "notes": "Small-sample control using a Student-t tail model instead of a Gaussian one."
+    },
+    {
+      "observableId": "bosonic-eigenvalue-ratio-2",
+      "label": "bosonic-mode-2-imported-geometry-benchmark",
+      "value": 0.6,
+      "uncertainty": 0.05,
+      "uncertaintyLower": 0.03,
+      "uncertaintyUpper": 0.05,
+      "source": "imported-geometry-benchmark-v1",
+      "targetProvenance": "imported-geometry-benchmark-v1",
+      "evidenceTier": "evidence-grade",
+      "distributionModel": "gaussian-asymmetric",
+      "notes": "Stronger benchmark tied to the imported-geometry side of the campaign. It is evidence-grade within the repository contract because it is not a toy placeholder, but it is still not an experimental measurement."
     }
   ]
 }

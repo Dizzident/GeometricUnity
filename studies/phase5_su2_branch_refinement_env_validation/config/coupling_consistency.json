@@ -1,1 +1,53 @@
-[]
+[
+  {
+    "recordId": "cpl-fermion-registry-phase4-toy-v1-0000",
+    "candidateId": "fermion-registry-phase4-toy-v1-0000",
+    "couplingType": "mass-envelope-proxy",
+    "relativeSpread": 0,
+    "consistent": true,
+    "notes": "Derived from the candidate mass-like envelope [0.171989, 0.171989, 0.171989].",
+    "provenance": {
+      "createdAt": "2026-03-15T02:24:13.0595752+00:00",
+      "codeRevision": "cli",
+      "branch": {
+        "branchId": "cli",
+        "schemaVersion": "1.0.0"
+      },
+      "backend": "cpu"
+    }
+  },
+  {
+    "recordId": "cpl-fermion-registry-phase4-toy-v1-0001",
+    "candidateId": "fermion-registry-phase4-toy-v1-0001",
+    "couplingType": "mass-envelope-proxy",
+    "relativeSpread": 0.17627343551728025,
+    "consistent": true,
+    "notes": "Derived from the candidate mass-like envelope [0.636658, 0.7729, 0.909141].",
+    "provenance": {
+      "createdAt": "2026-03-15T02:24:13.0595752+00:00",
+      "codeRevision": "cli",
+      "branch": {
+        "branchId": "cli",
+        "schemaVersion": "1.0.0"
+      },
+      "backend": "cpu"
+    }
+  },
+  {
+    "recordId": "cpl-fermion-registry-phase4-toy-v1-0002",
+    "candidateId": "fermion-registry-phase4-toy-v1-0002",
+    "couplingType": "mass-envelope-proxy",
+    "relativeSpread": 0.20590715663141979,
+    "consistent": true,
+    "notes": "Derived from the candidate mass-like envelope [1.47632, 1.86828, 2.2457].",
+    "provenance": {
+      "createdAt": "2026-03-15T02:24:13.0595752+00:00",
+      "codeRevision": "cli",
+      "branch": {
+        "branchId": "cli",
+        "schemaVersion": "1.0.0"
+      },
+      "backend": "cpu"
+    }
+  }
+]

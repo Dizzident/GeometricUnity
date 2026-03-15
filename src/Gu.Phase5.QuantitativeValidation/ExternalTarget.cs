@@ -4,8 +4,8 @@ namespace Gu.Phase5.QuantitativeValidation;
 
 /// <summary>
 /// An external target value for quantitative comparison (M49).
-/// Physics note: all targets for M53 must carry targetProvenance="synthetic-toy-v1"
-/// and evidenceTier="toy-placeholder". Never label as physical predictions.
+/// Physics note: the reference campaign may mix toy-placeholder controls, derived-synthetic
+/// checks, and stronger benchmark targets. None of these labels implies experimental truth.
 /// </summary>
 public sealed class ExternalTarget
 {

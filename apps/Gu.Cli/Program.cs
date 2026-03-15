@@ -3938,6 +3938,8 @@ static int RunPhase5Campaign(string[] args)
     Console.WriteLine($"  convergence/refinement_study_result.json");
     Console.WriteLine($"  quantitative/consistency_scorecard.json");
     Console.WriteLine($"  falsification/falsifier_summary.json");
+    if (artifacts.SidecarSummary is not null)
+        Console.WriteLine($"  falsification/sidecar_summary.json");
     Console.WriteLine($"  dossiers/phase5_validation_dossier.json");
     Console.WriteLine($"  dossiers/validation_dossier.json");
     Console.WriteLine($"  dossiers/study_manifest.json");
@@ -4075,8 +4077,8 @@ static string GeneratePhase5ReportMarkdown(Phase5Report report, string campaignI
     sb.AppendLine();
     sb.AppendLine("---");
     sb.AppendLine();
-    sb.AppendLine("**IMPORTANT:** All targets in this study are synthetic toy placeholders.");
-    sb.AppendLine("These are NOT physical predictions and carry no experimental authority.");
+    sb.AppendLine("**IMPORTANT:** This study mixes control-study targets and stronger benchmark targets.");
+    sb.AppendLine("None of them is a real-world experimental measurement or a physical prediction.");
     sb.AppendLine();
     sb.AppendLine("**Reproduction command:**");
     sb.AppendLine("```bash");

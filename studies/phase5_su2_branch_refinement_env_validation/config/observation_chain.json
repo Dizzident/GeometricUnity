@@ -1,1 +1,71 @@
-[]
+[
+  {
+    "candidateId": "fermion-registry-phase4-toy-v1-0000",
+    "primarySourceId": "cluster-0",
+    "observableId": "bosonic-eigenvalue-ratio-1",
+    "nativeArtifactRef": "registry:fermion-registry-phase4-toy-v1-0000",
+    "observedArtifactRef": "observable:bosonic-eigenvalue-ratio-1:env-imported-synthetic-example",
+    "extractionArtifactRef": "extraction:eigenvalue-ratio:bosonic-eigenvalue-ratio-1",
+    "auxiliaryModelId": "phase5-sidecar-extractor-eigenvalue-ratio",
+    "completenessStatus": "complete",
+    "sensitivityScore": 0.155,
+    "auxiliaryModelSensitivity": 0.11,
+    "passed": true,
+    "notes": "Derived from registry candidate \u0027fermion-registry-phase4-toy-v1-0000\u0027 and observable \u0027bosonic-eigenvalue-ratio-1\u0027 across 3 declared environment tier(s).",
+    "provenance": {
+      "createdAt": "2026-03-15T02:24:13.0595752+00:00",
+      "codeRevision": "cli",
+      "branch": {
+        "branchId": "cli",
+        "schemaVersion": "1.0.0"
+      },
+      "backend": "cpu"
+    }
+  },
+  {
+    "candidateId": "fermion-registry-phase4-toy-v1-0001",
+    "primarySourceId": "cluster-1",
+    "observableId": "bosonic-eigenvalue-ratio-2",
+    "nativeArtifactRef": "registry:fermion-registry-phase4-toy-v1-0001",
+    "observedArtifactRef": "observable:bosonic-eigenvalue-ratio-2:env-imported-synthetic-example",
+    "extractionArtifactRef": "extraction:eigenvalue-ratio:bosonic-eigenvalue-ratio-2",
+    "auxiliaryModelId": "phase5-sidecar-extractor-eigenvalue-ratio",
+    "completenessStatus": "complete",
+    "sensitivityScore": 0.14061224489795918,
+    "auxiliaryModelSensitivity": 0.10040816326530612,
+    "passed": true,
+    "notes": "Derived from registry candidate \u0027fermion-registry-phase4-toy-v1-0001\u0027 and observable \u0027bosonic-eigenvalue-ratio-2\u0027 across 3 declared environment tier(s).",
+    "provenance": {
+      "createdAt": "2026-03-15T02:24:13.0595752+00:00",
+      "codeRevision": "cli",
+      "branch": {
+        "branchId": "cli",
+        "schemaVersion": "1.0.0"
+      },
+      "backend": "cpu"
+    }
+  },
+  {
+    "candidateId": "fermion-registry-phase4-toy-v1-0002",
+    "primarySourceId": "cluster-2",
+    "observableId": "bosonic-eigenvalue-ratio-3",
+    "nativeArtifactRef": "registry:fermion-registry-phase4-toy-v1-0002",
+    "observedArtifactRef": "observable:bosonic-eigenvalue-ratio-3:env-imported-synthetic-example",
+    "extractionArtifactRef": "extraction:eigenvalue-ratio:bosonic-eigenvalue-ratio-3",
+    "auxiliaryModelId": "phase5-sidecar-extractor-eigenvalue-ratio",
+    "completenessStatus": "complete",
+    "sensitivityScore": 0.17294117647058824,
+    "auxiliaryModelSensitivity": 0.1219607843137255,
+    "passed": true,
+    "notes": "Derived from registry candidate \u0027fermion-registry-phase4-toy-v1-0002\u0027 and observable \u0027bosonic-eigenvalue-ratio-3\u0027 across 3 declared environment tier(s).",
+    "provenance": {
+      "createdAt": "2026-03-15T02:24:13.0595752+00:00",
+      "codeRevision": "cli",
+      "branch": {
+        "branchId": "cli",
+        "schemaVersion": "1.0.0"
+      },
+      "backend": "cpu"
+    }
+  }
+]

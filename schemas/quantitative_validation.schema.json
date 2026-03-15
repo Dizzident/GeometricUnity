@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "gu://schemas/quantitative_validation.schema.json",
   "title": "ConsistencyScoreCard",
-  "description": "Quantitative validation scorecard produced by M49 QuantitativeValidationRunner. Compares computed observables against external targets using pull statistics. All toy targets carry targetProvenance='synthetic-toy-v1' and evidenceTier='toy-placeholder'.",
+  "description": "Quantitative validation scorecard produced by M49 QuantitativeValidationRunner. Compares computed observables against external targets using pull statistics. Reference campaigns may mix toy-placeholder controls, derived-synthetic checks, and stronger benchmark targets.",
   "type": "object",
   "required": ["studyId", "schemaVersion", "matches", "totalPassed", "totalFailed", "overallScore", "calibrationPolicyId", "provenance"],
   "properties": {
@@ -164,11 +164,11 @@
         },
         "source": {
           "type": "string",
-          "description": "Provenance string. Must be 'synthetic-toy-v1' for all Phase V toy targets."
+          "description": "Provenance string for the target source."
         },
         "evidenceTier": {
           "type": "string",
-          "description": "Evidence tier. Must be 'toy-placeholder' for all Phase V toy targets. Never 'physical-prediction'."
+          "description": "Evidence tier label, for example 'toy-placeholder', 'derived-synthetic', or 'evidence-grade'. Never 'physical-prediction'."
         }
       }
     },

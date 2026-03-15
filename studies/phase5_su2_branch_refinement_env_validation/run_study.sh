@@ -3,25 +3,12 @@
 # Study: phase5_su2_branch_refinement_env_validation
 #
 # What this study demonstrates:
-#   - 4-variant su(2) branch family covering torsion x bi-connection choices
-#   - Branch robustness analysis (M46): eigenvalue ratio stability across variants
-#   - Toy + structured 4x4 + imported environment validation (M48, D-P6-004)
-#   - Quantitative comparison against targets with explicit distributionModel (M49, D-P6-005)
-#   - Observation chain + sidecar evidence coverage (P6-M3, D-P6-002)
-#   - Campaign spec validated before run (P6-M1, D-P6-001)
+#   - Bridge-backed branch and refinement evidence exported from a persisted background atlas
+#   - Toy + structured 4x4 + imported environment records with explicit provenance fields
+#   - Sidecar generation with explicit observation / environment / representation / coupling coverage
+#   - Quantitative comparison that separates toy-placeholder controls from stronger benchmark targets
+#   - Campaign spec validation before run, including schema and environment-tier checks
 #   - Positive/mixed dossier + negative dossier assembly (M51/M52)
-#
-# Branch variants:
-#   V1: identity-shiab + trivial-torsion   + simple-A0-omega  (reference)
-#   V2: identity-shiab + augmented-torsion + simple-A0-omega
-#   V3: identity-shiab + trivial-torsion   + A0-plus-minus-omega
-#   V4: identity-shiab + augmented-torsion + A0-plus-minus-omega
-#
-# External targets (eigenvalue RATIOS, synthetic-toy-v1, toy-placeholder, ~40% uncertainty):
-#   bosonic:  [0.1, 1.0, 5.0]
-#   fermionic: [0.05, 2.0]
-#
-# Note: All targets are toy-placeholder — NOT physical predictions.
 #
 # Reproduction command (D-005):
 #   dotnet run --project apps/Gu.Cli -- run-phase5-campaign --spec config/campaign.json --out-dir artifacts
@@ -33,6 +20,7 @@ STUDY_DIR="${REPO_ROOT}/studies/phase5_su2_branch_refinement_env_validation"
 CONFIG_DIR="${STUDY_DIR}/config"
 ARTIFACTS_DIR="${STUDY_DIR}/artifacts"
 CLI="${REPO_ROOT}/apps/Gu.Cli"
+REGISTRY_PATH="${REPO_ROOT}/studies/phase4_fermion_family_atlas_001/output/unified_particle_registry.json"
 
 echo "=== Phase VI Reference Campaign: su2-branch-refinement-env-validation ==="
 echo "Study dir: ${STUDY_DIR}"
@@ -50,11 +38,20 @@ dotnet test --no-build --configuration Release \
   -nologo 2>&1 || true
 
 echo ""
-echo "--- Step 1: Generate sidecar evidence files (P6-M3 / D-P6-002) ---"
+echo "--- Step 1: Export bridge-backed branch/refinement values (P6-M2 / D-P6-003) ---"
+dotnet run --no-build --configuration Release \
+  --project "${CLI}" -- \
+  export-phase5-bridge-values \
+  --atlas "${CONFIG_DIR}/background_atlas.json" \
+  --refinement-spec "${CONFIG_DIR}/refinement_study.json" \
+  --out-dir "${CONFIG_DIR}" 2>&1
+
+echo ""
+echo "--- Step 2: Generate sidecar evidence files (P6-M3 / D-P6-002) ---"
 dotnet run --no-build --configuration Release \
   --project "${CLI}" -- \
   build-phase5-sidecars \
-  --registry "${CONFIG_DIR}/registry.json" \
+  --registry "${REGISTRY_PATH}" \
   --observables "${CONFIG_DIR}/observables.json" \
   --environment-record "${CONFIG_DIR}/env_toy_record.json" \
   --environment-record "${CONFIG_DIR}/env_structured_4x4_record.json" \
@@ -62,7 +59,7 @@ dotnet run --no-build --configuration Release \
   --out-dir "${CONFIG_DIR}" 2>&1
 
 echo ""
-echo "--- Step 2: Validate campaign spec (P6-M1 / D-P6-001) ---"
+echo "--- Step 3: Validate campaign spec (P6-M1 / D-P6-001) ---"
 dotnet run --no-build --configuration Release \
   --project "${CLI}" -- \
   validate-phase5-campaign-spec \
@@ -70,14 +67,15 @@ dotnet run --no-build --configuration Release \
   --require-reference-sidecars 2>&1
 
 echo ""
-echo "=== Step 3: Running Phase V/VI campaign (D-005: run-phase5-campaign) ==="
+echo "=== Step 4: Running Phase V/VI campaign (D-005: run-phase5-campaign) ==="
 mkdir -p "${ARTIFACTS_DIR}"
 
 dotnet run --no-build --configuration Release \
   --project "${CLI}" -- \
   run-phase5-campaign \
   --spec "${CONFIG_DIR}/campaign.json" \
-  --out-dir "${ARTIFACTS_DIR}" 2>&1
+  --out-dir "${ARTIFACTS_DIR}" \
+  --validate-first 2>&1
 
 echo ""
 echo "=== Study complete ==="
@@ -94,9 +92,9 @@ echo "  Report JSON:          ${ARTIFACTS_DIR}/reports/phase5_report.json"
 echo "  Report Markdown:      ${ARTIFACTS_DIR}/reports/phase5_report.md"
 echo ""
 echo "Key study properties (Phase VI):"
-echo "  [x] 4-variant su(2) branch family (torsion x bi-connection)"
+echo "  [x] Bridge-backed branch family exported from persisted background_atlas.json"
 echo "  [x] Toy + structured 4x4 + imported environment evidence (D-P6-004)"
-echo "  [x] Eigenvalue ratio targets with explicit distributionModel (D-P6-005)"
+echo "  [x] Quantitative targets with explicit distributionModel and mixed evidence tiers (D-P6-005)"
 echo "  [x] Sidecar files generated and declared (D-P6-001 / D-P6-002)"
 echo "  [x] Campaign spec validated before run (P6-M1)"
 echo "  [x] falsifier_summary.json carries evaluation coverage counts (D-P6-002)"
@@ -104,8 +102,8 @@ echo "  [x] observationChainSummary present in phase5_validation_dossier.json"
 echo "  [x] Both typed and provenance dossiers produced (D-006)"
 echo "  [x] Reproduction command: run-phase5-campaign (D-005)"
 echo ""
-echo "IMPORTANT: All targets are synthetic toy placeholders (evidenceTier=toy-placeholder)."
-echo "These are NOT physical predictions and carry no experimental authority."
+echo "IMPORTANT: The campaign now distinguishes control-study targets from a stronger benchmark target,"
+echo "but none of the quantitative targets in this study is a real-world experimental measurement."
 echo ""
 echo "To reproduce:"
 echo "  bash studies/phase5_su2_branch_refinement_env_validation/run_study.sh"

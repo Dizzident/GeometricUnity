@@ -1,1 +1,87 @@
-[]
+[
+  {
+    "recordId": "env-var-bosonic-eigenvalue-ratio-1",
+    "quantityId": "bosonic-eigenvalue-ratio-1",
+    "environmentTierId": "imported\u002Bstructured\u002Btoy",
+    "relativeStdDev": 0.08122786587080687,
+    "flagged": false,
+    "notes": "Derived from 3 environment-specific observable record(s): env-structured-4x4, env-toy-2d-trivial, env-imported-synthetic-example.",
+    "provenance": {
+      "createdAt": "2026-03-15T02:24:13.0595752+00:00",
+      "codeRevision": "cli",
+      "branch": {
+        "branchId": "cli",
+        "schemaVersion": "1.0.0"
+      },
+      "backend": "cpu"
+    }
+  },
+  {
+    "recordId": "env-var-bosonic-eigenvalue-ratio-2",
+    "quantityId": "bosonic-eigenvalue-ratio-2",
+    "environmentTierId": "imported\u002Bstructured\u002Btoy",
+    "relativeStdDev": 0.0282043451378447,
+    "flagged": false,
+    "notes": "Derived from 3 environment-specific observable record(s): env-structured-4x4, env-toy-2d-trivial, env-imported-synthetic-example.",
+    "provenance": {
+      "createdAt": "2026-03-15T02:24:13.0595752+00:00",
+      "codeRevision": "cli",
+      "branch": {
+        "branchId": "cli",
+        "schemaVersion": "1.0.0"
+      },
+      "backend": "cpu"
+    }
+  },
+  {
+    "recordId": "env-var-bosonic-eigenvalue-ratio-3",
+    "quantityId": "bosonic-eigenvalue-ratio-3",
+    "environmentTierId": "imported\u002Bstructured\u002Btoy",
+    "relativeStdDev": 0.0243409913783556,
+    "flagged": false,
+    "notes": "Derived from 3 environment-specific observable record(s): env-structured-4x4, env-toy-2d-trivial, env-imported-synthetic-example.",
+    "provenance": {
+      "createdAt": "2026-03-15T02:24:13.0595752+00:00",
+      "codeRevision": "cli",
+      "branch": {
+        "branchId": "cli",
+        "schemaVersion": "1.0.0"
+      },
+      "backend": "cpu"
+    }
+  },
+  {
+    "recordId": "env-var-fermionic-eigenvalue-ratio-1",
+    "quantityId": "fermionic-eigenvalue-ratio-1",
+    "environmentTierId": "imported\u002Bstructured\u002Btoy",
+    "relativeStdDev": 0.03227227540248601,
+    "flagged": false,
+    "notes": "Derived from 3 environment-specific observable record(s): env-structured-4x4, env-toy-2d-trivial, env-imported-synthetic-example.",
+    "provenance": {
+      "createdAt": "2026-03-15T02:24:13.0595752+00:00",
+      "codeRevision": "cli",
+      "branch": {
+        "branchId": "cli",
+        "schemaVersion": "1.0.0"
+      },
+      "backend": "cpu"
+    }
+  },
+  {
+    "recordId": "env-var-fermionic-eigenvalue-ratio-2",
+    "quantityId": "fermionic-eigenvalue-ratio-2",
+    "environmentTierId": "imported\u002Bstructured\u002Btoy",
+    "relativeStdDev": 0.028217139152768304,
+    "flagged": false,
+    "notes": "Derived from 3 environment-specific observable record(s): env-structured-4x4, env-toy-2d-trivial, env-imported-synthetic-example.",
+    "provenance": {
+      "createdAt": "2026-03-15T02:24:13.0595752+00:00",
+      "codeRevision": "cli",
+      "branch": {
+        "branchId": "cli",
+        "schemaVersion": "1.0.0"
+      },
+      "backend": "cpu"
+    }
+  }
+]
