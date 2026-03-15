@@ -94,7 +94,8 @@ public sealed class Phase5CampaignRunner
             observablesSource,
             targetTable,
             spec.CalibrationPolicy,
-            provenance);
+            provenance,
+            environmentRecords);
 
         // Step 4: Falsifier evaluation (M50)
         var falsifierEvaluator = new FalsifierEvaluator();

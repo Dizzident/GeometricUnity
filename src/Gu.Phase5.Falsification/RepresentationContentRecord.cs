@@ -8,7 +8,7 @@ namespace Gu.Phase5.Falsification;
 /// Used to trigger RepresentationContent falsifiers when mode counts or structure
 /// are inconsistent with expected representation content.
 /// </summary>
-public sealed class RepresentationContentRecord
+public sealed class RepresentationContentRecord : ISidecarEvidenceRecord
 {
     /// <summary>Identifier for this record.</summary>
     [JsonPropertyName("recordId")]
@@ -47,6 +47,14 @@ public sealed class RepresentationContentRecord
     /// <summary>Optional description of the inconsistency.</summary>
     [JsonPropertyName("inconsistencyDescription")]
     public string? InconsistencyDescription { get; init; }
+
+    /// <summary>Origin classification for this sidecar record.</summary>
+    [JsonPropertyName("origin")]
+    public string Origin { get; init; } = "heuristic";
+
+    /// <summary>Artifact references used to support this record.</summary>
+    [JsonPropertyName("sourceArtifactRefs")]
+    public IReadOnlyList<string>? SourceArtifactRefs { get; init; }
 
     /// <summary>Provenance of the backend that produced this record.</summary>
     [JsonPropertyName("provenance")]

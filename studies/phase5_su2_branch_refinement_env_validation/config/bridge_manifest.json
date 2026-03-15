@@ -1,26 +1,32 @@
 {
-  "manifestId": "bridge-phase6-reference-background-atlas-20260315T022406Z",
+  "manifestId": "bridge-atlas-phase7-real-bridge-atlas-20260315130333-20260315T130546Z",
   "sourceAtlasPath": "/home/josh/Documents/GitHub/GeometricUnity/studies/phase5_su2_branch_refinement_env_validation/config/background_atlas.json",
   "sourceRecordIds": [
-    "bg-phase6-v1",
-    "bg-phase6-v2",
-    "bg-phase6-v3",
-    "bg-phase6-v4"
+    "bg-phase7-bg-0-20260315130333",
+    "bg-phase7-bg-1-20260315130333",
+    "bg-phase7-bg-2-20260315130333",
+    "bg-phase7-bg-3-20260315130333"
+  ],
+  "sourceStateArtifactRefs": [
+    "studies/phase5_su2_branch_refinement_env_validation/upstream/phase7_real_atlas/background_states/bg-phase7-bg-0-20260315130333_omega.json",
+    "studies/phase5_su2_branch_refinement_env_validation/upstream/phase7_real_atlas/background_states/bg-phase7-bg-1-20260315130333_omega.json",
+    "studies/phase5_su2_branch_refinement_env_validation/upstream/phase7_real_atlas/background_states/bg-phase7-bg-2-20260315130333_omega.json",
+    "studies/phase5_su2_branch_refinement_env_validation/upstream/phase7_real_atlas/background_states/bg-phase7-bg-3-20260315130333_omega.json"
   ],
   "derivedVariantIds": [
-    "bg-variant-ca9db26f64fb3512",
-    "bg-variant-fc228fbd099d34cd",
-    "bg-variant-3c091fddace3b85f",
-    "bg-variant-4eeababb3ec0022f"
+    "bg-variant-87bfcd04a1b8109d",
+    "bg-variant-cb5790add48b36f3",
+    "bg-variant-4f769ab7983db9ca",
+    "bg-variant-488c9302eab6d0c2"
   ],
   "provenance": {
-    "createdAt": "2026-03-15T02:24:06.2685068+00:00",
+    "createdAt": "2026-03-15T13:05:46.570074+00:00",
     "codeRevision": "export-phase5-bridge-values",
     "branch": {
-      "branchId": "phase5-su2-bridge-backed-reference",
+      "branchId": "phase7-real-bridge-atlas",
       "schemaVersion": "1.0"
     },
     "backend": "cpu",
-    "notes": "Bridge export from atlas phase6-reference-background-atlas"
+    "notes": "Bridge export from atlas atlas-phase7-real-bridge-atlas-20260315130333"
   }
 }

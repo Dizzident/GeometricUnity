@@ -1,0 +1,14 @@
+Campaign spec validation: OK
+Phase V campaign complete. Output: reports/post_phase7_evidence_campaign/20260315T130526Z/campaign_artifacts
+  inputs/campaign.json  (+ supporting input copies)
+  branch/branch_robustness_record.json
+  convergence/refinement_study_result.json
+  quantitative/consistency_scorecard.json
+  falsification/falsifier_summary.json
+  falsification/sidecar_summary.json
+  dossiers/phase5_validation_dossier.json
+  dossiers/validation_dossier.json
+  dossiers/study_manifest.json
+  reports/phase5_report.json
+  reports/phase5_report.md
+run-phase5-campaign done.

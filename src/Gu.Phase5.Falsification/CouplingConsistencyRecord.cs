@@ -8,7 +8,7 @@ namespace Gu.Phase5.Falsification;
 /// Used to trigger CouplingInconsistency falsifiers when coupling proxies vary excessively
 /// across branch variants.
 /// </summary>
-public sealed class CouplingConsistencyRecord
+public sealed class CouplingConsistencyRecord : ISidecarEvidenceRecord
 {
     /// <summary>Identifier for this record.</summary>
     [JsonPropertyName("recordId")]
@@ -36,6 +36,14 @@ public sealed class CouplingConsistencyRecord
     /// <summary>Optional description.</summary>
     [JsonPropertyName("notes")]
     public string? Notes { get; init; }
+
+    /// <summary>Origin classification for this sidecar record.</summary>
+    [JsonPropertyName("origin")]
+    public string Origin { get; init; } = "heuristic";
+
+    /// <summary>Artifact references used to support this record.</summary>
+    [JsonPropertyName("sourceArtifactRefs")]
+    public IReadOnlyList<string>? SourceArtifactRefs { get; init; }
 
     /// <summary>Provenance of the backend that produced this record.</summary>
     [JsonPropertyName("provenance")]

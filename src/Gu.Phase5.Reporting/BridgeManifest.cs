@@ -24,11 +24,15 @@ public sealed class BridgeManifest
     [JsonPropertyName("sourceRecordIds")]
     public required IReadOnlyList<string> SourceRecordIds { get; init; }
 
+    /// <summary>Persisted state artifact refs from the source atlas, in the same order as SourceRecordIds.</summary>
+    [JsonPropertyName("sourceStateArtifactRefs")]
+    public required IReadOnlyList<string> SourceStateArtifactRefs { get; init; }
+
     /// <summary>
-    /// Derived branch-variant IDs produced by
-    /// <see cref="BackgroundRecordBranchVariantBridge.DeriveVariantId"/>, in the same order
-    /// as <see cref="SourceRecordIds"/>.
-    /// </summary>
+     /// Derived branch-variant IDs produced by
+     /// <see cref="BackgroundRecordBranchVariantBridge.DeriveVariantId"/>, in the same order
+     /// as <see cref="SourceRecordIds"/>.
+     /// </summary>
     [JsonPropertyName("derivedVariantIds")]
     public required IReadOnlyList<string> DerivedVariantIds { get; init; }
 

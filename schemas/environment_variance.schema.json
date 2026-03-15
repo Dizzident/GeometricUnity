@@ -38,6 +38,16 @@
         "type": ["string", "null"],
         "description": "Optional description or notes."
       },
+      "origin": {
+        "type": "string",
+        "description": "Origin classification for this sidecar record.",
+        "enum": ["upstream-sourced", "bridge-derived", "heuristic"]
+      },
+      "sourceArtifactRefs": {
+        "type": ["array", "null"],
+        "description": "Artifact references used to support this record.",
+        "items": { "type": "string" }
+      },
       "provenance": {
         "type": ["object", "null"],
         "description": "Provenance of the backend that produced this record."

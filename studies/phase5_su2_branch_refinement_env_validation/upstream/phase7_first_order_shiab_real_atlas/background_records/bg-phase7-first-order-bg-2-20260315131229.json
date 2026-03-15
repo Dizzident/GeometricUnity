@@ -1,0 +1,40 @@
+{
+  "backgroundId": "bg-phase7-first-order-bg-2-20260315131229",
+  "environmentId": "env-default",
+  "branchManifestId": "phase7-real-atlas-first-order-shiab",
+  "geometryFingerprint": "simplicial-X_h-Y_h-centroid-P1",
+  "stateArtifactRef": "studies/phase5_su2_branch_refinement_env_validation/upstream/phase7_first_order_shiab_real_atlas/background_states/bg-phase7-first-order-bg-2-20260315131229_omega.json",
+  "residualNorm": 0,
+  "stationarityNorm": 0,
+  "admissibilityLevel": "B2",
+  "metrics": {
+    "residualNorm": 0,
+    "stationarityNorm": 0,
+    "objectiveValue": 0,
+    "gaugeViolation": 0,
+    "solverIterations": 0,
+    "solverConverged": true,
+    "terminationReason": "Objective below tolerance",
+    "gaussNewtonValid": true
+  },
+  "replayTierAchieved": "R2",
+  "provenance": {
+    "createdAt": "2026-03-15T13:12:29.5069947+00:00",
+    "codeRevision": "phase7-real-atlas-first-order-shiab",
+    "branch": {
+      "branchId": "phase7-real-atlas-first-order-shiab",
+      "schemaVersion": "1.0.0"
+    },
+    "backend": "cpu-reference"
+  },
+  "environmentTier": "toy",
+  "runClassification": {
+    "runType": "residual-inspection",
+    "seedSource": "zero-seed",
+    "isTrivialValidationPath": true,
+    "validationNote": "Residual-only inspection on zero seed. Not a genuine objective/stationarity solve. Phase V dossiers must not cite this as evidence of meaningful background validation. Recommended: supply --mode B or --mode C with a persisted seed for nontrivial validation.",
+    "solverMode": "A",
+    "classifiedAt": "2026-03-15T13:12:29.5271396+00:00"
+  },
+  "consumedManifestArtifactRef": "studies/phase5_su2_branch_refinement_env_validation/upstream/phase7_first_order_shiab_real_atlas/background_states/bg-phase7-first-order-bg-2-20260315131229_manifest.json"
+}

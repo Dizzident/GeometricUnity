@@ -29,9 +29,21 @@ public sealed class ExternalTarget
     [JsonPropertyName("source")]
     public required string Source { get; init; }
 
+    /// <summary>Optional provenance string distinct from Source when the target was bridged or normalized.</summary>
+    [JsonPropertyName("targetProvenance")]
+    public string? TargetProvenance { get; init; }
+
     /// <summary>Evidence tier (e.g., "toy-placeholder").</summary>
     [JsonPropertyName("evidenceTier")]
     public string? EvidenceTier { get; init; }
+
+    /// <summary>Optional environment ID that this target must be matched against.</summary>
+    [JsonPropertyName("targetEnvironmentId")]
+    public string? TargetEnvironmentId { get; init; }
+
+    /// <summary>Optional environment tier that this target must be matched against.</summary>
+    [JsonPropertyName("targetEnvironmentTier")]
+    public string? TargetEnvironmentTier { get; init; }
 
     /// <summary>
     /// Distribution model for this target.
@@ -51,4 +63,8 @@ public sealed class ExternalTarget
     /// <summary>Degrees of freedom for Student-t targets. Required when DistributionModel == "student-t".</summary>
     [JsonPropertyName("studentTDegreesOfFreedom")]
     public double? StudentTDegreesOfFreedom { get; init; }
+
+    /// <summary>Optional diagnostic notes for this target.</summary>
+    [JsonPropertyName("notes")]
+    public string? Notes { get; init; }
 }

@@ -1,0 +1,13 @@
+{
+  "totalQuantities": 5,
+  "convergentCount": 5,
+  "nonConvergentCount": 0,
+  "insufficientDataCount": 0,
+  "summaryLines": [
+    "- Total quantities: 5",
+    "- Convergent: 5",
+    "- Weakly convergent: 0",
+    "- Non-convergent: 0",
+    "- Insufficient data: 0"
+  ]
+}

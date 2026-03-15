@@ -46,6 +46,14 @@
             "type": "integer",
             "description": "Number of records written to the output sidecar file.",
             "minimum": 0
+          },
+          "originCounts": {
+            "type": ["object", "null"],
+            "description": "Breakdown of record origins for this channel.",
+            "additionalProperties": {
+              "type": "integer",
+              "minimum": 0
+            }
           }
         },
         "additionalProperties": false

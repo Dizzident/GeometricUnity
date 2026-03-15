@@ -1,7 +1,9 @@
 using Gu.Core;
 using Gu.Core.Serialization;
 using Gu.Phase4.Registry;
+using Gu.Phase5.Environments;
 using Gu.Phase5.Falsification;
+using Gu.Phase5.QuantitativeValidation;
 
 namespace Gu.Phase5.Falsification.Tests;
 
@@ -22,6 +24,83 @@ public sealed class SidecarGeneratorTests
     };
 
     private static UnifiedParticleRegistry EmptyRegistry() => new UnifiedParticleRegistry();
+
+    private static UnifiedParticleRegistry SampleRegistry()
+    {
+        var registry = new UnifiedParticleRegistry();
+        registry.Register(new UnifiedParticleRecord
+        {
+            ParticleId = "cand-1",
+            ParticleType = UnifiedParticleType.Fermion,
+            PrimarySourceId = "cluster-1",
+            ContributingSourceIds = new List<string> { "ferm-family-0001", "ferm-family-0002" },
+            BranchVariantSet = new List<string>(),
+            BackgroundSet = new List<string>(),
+            Chirality = "mixed",
+            MassLikeEnvelope = new[] { 0.6, 0.7, 0.8 },
+            BranchStabilityScore = 1.0,
+            ObservationConfidence = 0.9,
+            ComparisonEvidenceScore = 0.0,
+            ClaimClass = "C3_ObservedStableCandidate",
+            RegistryVersion = "1.0.0",
+            Provenance = MakeProvenance(),
+        });
+        return registry;
+    }
+
+    private static IReadOnlyList<QuantitativeObservableRecord> SampleObservables() =>
+    [
+        new QuantitativeObservableRecord
+        {
+            ObservableId = "obs-1",
+            Value = 1.0,
+            Uncertainty = new QuantitativeUncertainty { TotalUncertainty = 0.03 },
+            BranchId = "branch-1",
+            EnvironmentId = "env-structured",
+            RefinementLevel = "L1",
+            ExtractionMethod = "ratio",
+            Provenance = MakeProvenance(),
+        },
+        new QuantitativeObservableRecord
+        {
+            ObservableId = "obs-1",
+            Value = 1.1,
+            Uncertainty = new QuantitativeUncertainty { TotalUncertainty = 0.05 },
+            BranchId = "branch-1",
+            EnvironmentId = "env-toy",
+            RefinementLevel = "L0",
+            ExtractionMethod = "ratio",
+            Provenance = MakeProvenance(),
+        },
+    ];
+
+    private static IReadOnlyList<EnvironmentRecord> SampleEnvironments() =>
+    [
+        new EnvironmentRecord
+        {
+            EnvironmentId = "env-toy",
+            GeometryTier = "toy",
+            GeometryFingerprint = "toy-fp",
+            BaseDimension = 2,
+            AmbientDimension = 2,
+            EdgeCount = 4,
+            FaceCount = 2,
+            Admissibility = new EnvironmentAdmissibilityReport { Level = "toy", Checks = [], Passed = true },
+            Provenance = MakeProvenance(),
+        },
+        new EnvironmentRecord
+        {
+            EnvironmentId = "env-structured",
+            GeometryTier = "structured",
+            GeometryFingerprint = "structured-fp",
+            BaseDimension = 2,
+            AmbientDimension = 2,
+            EdgeCount = 16,
+            FaceCount = 8,
+            Admissibility = new EnvironmentAdmissibilityReport { Level = "structured", Checks = [], Passed = true },
+            Provenance = MakeProvenance(),
+        },
+    ];
 
     // ------------------------------------------------------------------
     // Absent vs. skipped channel distinction
@@ -280,6 +359,118 @@ public sealed class SidecarGeneratorTests
 
         var envChannel = loaded.Channels.First(c => c.ChannelId == "environment-variance");
         Assert.Equal("absent", envChannel.Status);
+    }
+
+    [Fact]
+    public void GenerateSidecars_ExplicitRecordOrigins_AppearInSummary()
+    {
+        using var tmpDir = new TempDirectory();
+        var provenance = MakeProvenance();
+
+        var summary = SidecarGenerator.GenerateSidecars(
+            EmptyRegistry(),
+            observables: null,
+            envRecords: null,
+            outDir: tmpDir.Path,
+            studyId: "study-origin-summary",
+            provenance: provenance,
+            observationChainRecords:
+            [
+                new ObservationChainRecord
+                {
+                    CandidateId = "cand-A",
+                    PrimarySourceId = "src-A",
+                    ObservableId = "obs-1",
+                    CompletenessStatus = "complete",
+                    SensitivityScore = 0.1,
+                    AuxiliaryModelSensitivity = 0.1,
+                    Passed = true,
+                    Origin = "bridge-derived",
+                    SourceArtifactRefs = ["artifact-a.json"],
+                    Provenance = provenance,
+                },
+            ]);
+
+        var obsChannel = summary.Channels.First(c => c.ChannelId == "observation-chain");
+        Assert.NotNull(obsChannel.OriginCounts);
+        Assert.Equal(1, obsChannel.OriginCounts!["bridge-derived"]);
+    }
+
+    [Fact]
+    public void GenerateSidecars_WithPersistedPhase4Artifacts_UsesNonHeuristicOrigins()
+    {
+        using var tmpDir = new TempDirectory();
+        var provenance = MakeProvenance();
+        var registry = SampleRegistry();
+        var observables = SampleObservables();
+        var environments = SampleEnvironments();
+
+        var registryPath = Path.Combine(tmpDir.Path, "registry.json");
+        var observablesPath = Path.Combine(tmpDir.Path, "observables.json");
+        File.WriteAllText(registryPath, registry.ToJson());
+        File.WriteAllText(observablesPath, GuJsonDefaults.Serialize(observables));
+
+        var familyAtlasPath = Path.Combine(tmpDir.Path, "fermion_family_atlas.json");
+        File.WriteAllText(familyAtlasPath, """
+{
+  "families": [
+    { "FamilyId": "ferm-family-0001", "MemberModeIds": ["mode-1", "mode-2"] },
+    { "FamilyId": "ferm-family-0002", "MemberModeIds": ["mode-3", "mode-4"] }
+  ]
+}
+""");
+
+        var couplingAtlasPath = Path.Combine(tmpDir.Path, "coupling_atlas.json");
+        File.WriteAllText(couplingAtlasPath, """
+{
+  "topCouplings": [
+    { "FermionModeIdI": "mode-1", "FermionModeIdJ": "mode-3", "CouplingProxyMagnitude": 0.5 },
+    { "FermionModeIdI": "mode-2", "FermionModeIdJ": "mode-4", "CouplingProxyMagnitude": 0.55 }
+  ]
+}
+""");
+
+        var spectralPath = Path.Combine(tmpDir.Path, "fermion_spectral_result.json");
+        File.WriteAllText(spectralPath, """
+{
+  "fermionBackgroundId": "bg-phase4",
+  "modeCount": 4
+}
+""");
+
+        var summary = SidecarGenerator.GenerateSidecars(
+            registry,
+            observables,
+            environments,
+            tmpDir.Path,
+            "study-upstream-artifacts",
+            provenance,
+            upstreamArtifacts: new SidecarUpstreamArtifacts
+            {
+                RegistryPath = registryPath,
+                ObservablesPath = observablesPath,
+                FermionFamilyAtlasPath = familyAtlasPath,
+                CouplingAtlasPath = couplingAtlasPath,
+                FermionSpectralResultPath = spectralPath,
+            });
+
+        var observationRecords = GuJsonDefaults.Deserialize<List<ObservationChainRecord>>(
+            File.ReadAllText(Path.Combine(tmpDir.Path, "observation_chain.json")));
+        Assert.NotNull(observationRecords);
+        Assert.All(observationRecords!, r => Assert.Equal("bridge-derived", r.Origin));
+
+        var representationRecords = GuJsonDefaults.Deserialize<List<RepresentationContentRecord>>(
+            File.ReadAllText(Path.Combine(tmpDir.Path, "representation_content.json")));
+        Assert.NotNull(representationRecords);
+        Assert.All(representationRecords!, r => Assert.Equal("bridge-derived", r.Origin));
+
+        var couplingRecords = GuJsonDefaults.Deserialize<List<CouplingConsistencyRecord>>(
+            File.ReadAllText(Path.Combine(tmpDir.Path, "coupling_consistency.json")));
+        Assert.NotNull(couplingRecords);
+        Assert.All(couplingRecords!, r => Assert.Equal("upstream-sourced", r.Origin));
+
+        var couplingChannel = summary.Channels.First(c => c.ChannelId == "coupling-consistency");
+        Assert.Equal(1, couplingChannel.OriginCounts!["upstream-sourced"]);
     }
 
     // ------------------------------------------------------------------

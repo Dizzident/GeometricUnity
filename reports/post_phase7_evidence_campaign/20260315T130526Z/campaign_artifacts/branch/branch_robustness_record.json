@@ -1,0 +1,13 @@
+{
+  "totalQuantities": 5,
+  "invariantCount": 5,
+  "fragileCount": 0,
+  "equivalenceClassCount": 5,
+  "summaryLines": [
+    "- Overall summary: **robust**",
+    "- Quantities analyzed: 5",
+    "- Invariant/robust: 5",
+    "- Fragile: 0",
+    "- Equivalence classes: 5"
+  ]
+}

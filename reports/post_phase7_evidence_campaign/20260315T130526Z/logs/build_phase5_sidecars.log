@@ -1,0 +1,5 @@
+build-phase5-sidecars complete. Output: studies/phase5_su2_branch_refinement_env_validation/config
+  observation-chain: evaluated (input=3, output=3)
+  environment-variance: evaluated (input=5, output=5)
+  representation-content: evaluated (input=3, output=3)
+  coupling-consistency: evaluated (input=3, output=3)

@@ -1,0 +1,5 @@
+Bridge export complete. Output: studies/phase5_su2_branch_refinement_env_validation/config
+  branch_quantity_values.json  (4 branch variants)
+  refinement_values.json       (3 refinement levels)
+  bridge_manifest.json         (manifestId: bridge-atlas-phase7-real-bridge-atlas-20260315130333-20260315T130546Z)
+export-phase5-bridge-values done.

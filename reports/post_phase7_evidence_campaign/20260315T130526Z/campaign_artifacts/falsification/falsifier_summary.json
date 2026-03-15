@@ -1,0 +1,107 @@
+{
+  "studyId": "phase5-su2-branch-refinement-env-validation",
+  "schemaVersion": "1.0.0",
+  "falsifiers": [
+    {
+      "falsifierId": "falsifier-0001",
+      "schemaVersion": "1.0.0",
+      "falsifierType": "quantitative-mismatch",
+      "severity": "high",
+      "targetId": "bosonic-eigenvalue-ratio-2",
+      "branchId": "unknown",
+      "environmentId": "env-imported-synthetic-example",
+      "triggerValue": 5.37401153701776,
+      "description": "Observable \u0027bosonic-eigenvalue-ratio-2\u0027 failed target match \u0027bosonic-mode-2-imported-geometry-benchmark\u0027: pull=5.374 (computed=0.98, target=0.6).",
+      "evidence": "TargetMatchRecord observableId=bosonic-eigenvalue-ratio-2 targetLabel=bosonic-mode-2-imported-geometry-benchmark computedEnvironmentId=env-imported-synthetic-example",
+      "active": true,
+      "provenance": {
+        "createdAt": "2026-03-16T00:00:00+00:00",
+        "codeRevision": "phase7-real-atlas-env-aware-v1",
+        "branch": {
+          "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu",
+        "notes": "Phase VII standard evidence campaign: real persisted toy-control atlas for the bridge path, origin-labeled sidecars, multi-environment observables, and environment-aware mixed target tiers."
+      }
+    },
+    {
+      "falsifierId": "falsifier-0002",
+      "schemaVersion": "1.0.0",
+      "falsifierType": "representation-content",
+      "severity": "fatal",
+      "targetId": "fermion-registry-phase4-toy-v1-0000",
+      "branchId": "unknown",
+      "triggerValue": 1,
+      "threshold": 0,
+      "description": "Candidate \u0027fermion-registry-phase4-toy-v1-0000\u0027 exposes only 1 persisted family source(s); at least 2 are required for the reference representation-content check.",
+      "evidence": "RepresentationContentRecord recordId=rep-fermion-registry-phase4-toy-v1-0000 candidateId=fermion-registry-phase4-toy-v1-0000 missingRequiredCount=1",
+      "active": true,
+      "provenance": {
+        "createdAt": "2026-03-16T00:00:00+00:00",
+        "codeRevision": "phase7-real-atlas-env-aware-v1",
+        "branch": {
+          "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu",
+        "notes": "Phase VII standard evidence campaign: real persisted toy-control atlas for the bridge path, origin-labeled sidecars, multi-environment observables, and environment-aware mixed target tiers."
+      }
+    }
+  ],
+  "activeFatalCount": 1,
+  "activeHighCount": 1,
+  "totalActiveCount": 2,
+  "observationRecordCount": 3,
+  "environmentRecordCount": 5,
+  "representationRecordCount": 3,
+  "couplingRecordCount": 3,
+  "evaluationCoverage": [
+    {
+      "channelId": "observation-chain",
+      "status": "evaluated",
+      "inputCount": 3,
+      "outputCount": 3,
+      "originCounts": {
+        "bridge-derived": 3
+      }
+    },
+    {
+      "channelId": "environment-variance",
+      "status": "evaluated",
+      "inputCount": 5,
+      "outputCount": 5,
+      "originCounts": {
+        "bridge-derived": 5
+      }
+    },
+    {
+      "channelId": "representation-content",
+      "status": "evaluated",
+      "inputCount": 3,
+      "outputCount": 3,
+      "originCounts": {
+        "bridge-derived": 3
+      }
+    },
+    {
+      "channelId": "coupling-consistency",
+      "status": "evaluated",
+      "inputCount": 3,
+      "outputCount": 3,
+      "originCounts": {
+        "upstream-sourced": 3
+      }
+    }
+  ],
+  "provenance": {
+    "createdAt": "2026-03-16T00:00:00+00:00",
+    "codeRevision": "phase7-real-atlas-env-aware-v1",
+    "branch": {
+      "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu",
+    "notes": "Phase VII standard evidence campaign: real persisted toy-control atlas for the bridge path, origin-labeled sidecars, multi-environment observables, and environment-aware mixed target tiers."
+  }
+}

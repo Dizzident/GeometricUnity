@@ -20,7 +20,8 @@ public static class TargetMatcher
     public static TargetMatchRecord Match(
         QuantitativeObservableRecord computed,
         ExternalTarget target,
-        CalibrationPolicy policy)
+        CalibrationPolicy policy,
+        string? computedEnvironmentTier = null)
     {
         ArgumentNullException.ThrowIfNull(computed);
         ArgumentNullException.ThrowIfNull(target);
@@ -28,16 +29,17 @@ public static class TargetMatcher
 
         return target.DistributionModel switch
         {
-            "gaussian-asymmetric" => MatchAsymmetric(computed, target, policy),
-            "student-t" => MatchStudentT(computed, target, policy),
-            _ => MatchGaussian(computed, target, policy),
+            "gaussian-asymmetric" => MatchAsymmetric(computed, target, policy, computedEnvironmentTier),
+            "student-t" => MatchStudentT(computed, target, policy, computedEnvironmentTier),
+            _ => MatchGaussian(computed, target, policy, computedEnvironmentTier),
         };
     }
 
     private static TargetMatchRecord MatchGaussian(
         QuantitativeObservableRecord computed,
         ExternalTarget target,
-        CalibrationPolicy policy)
+        CalibrationPolicy policy,
+        string? computedEnvironmentTier)
     {
         double sigmaComputed = computed.Uncertainty.TotalUncertainty;
         bool hasComputedSigma = sigmaComputed >= 0;
@@ -56,6 +58,15 @@ public static class TargetMatcher
                 Pull = double.PositiveInfinity,
                 Passed = false,
                 Notes = "Computed uncertainty unestimated; RequireFullUncertainty=true → failed.",
+                ComputedEnvironmentId = computed.EnvironmentId,
+                ComputedEnvironmentTier = computedEnvironmentTier,
+                ComputedBranchId = computed.BranchId,
+                ComputedRefinementLevel = computed.RefinementLevel,
+                TargetSource = target.Source,
+                TargetProvenance = target.TargetProvenance,
+                TargetEvidenceTier = target.EvidenceTier,
+                TargetEnvironmentId = target.TargetEnvironmentId,
+                TargetEnvironmentTier = target.TargetEnvironmentTier,
             };
         }
 
@@ -93,6 +104,15 @@ public static class TargetMatcher
             Pull = pull,
             Passed = passed,
             Notes = note,
+            ComputedEnvironmentId = computed.EnvironmentId,
+            ComputedEnvironmentTier = computedEnvironmentTier,
+            ComputedBranchId = computed.BranchId,
+            ComputedRefinementLevel = computed.RefinementLevel,
+            TargetSource = target.Source,
+            TargetProvenance = target.TargetProvenance,
+            TargetEvidenceTier = target.EvidenceTier,
+            TargetEnvironmentId = target.TargetEnvironmentId,
+            TargetEnvironmentTier = target.TargetEnvironmentTier,
         };
     }
 
@@ -105,7 +125,8 @@ public static class TargetMatcher
     private static TargetMatchRecord MatchAsymmetric(
         QuantitativeObservableRecord computed,
         ExternalTarget target,
-        CalibrationPolicy policy)
+        CalibrationPolicy policy,
+        string? computedEnvironmentTier)
     {
         double residual = computed.Value - target.Value;
         double sigmaTarget = residual >= 0
@@ -129,6 +150,15 @@ public static class TargetMatcher
                 Pull = double.PositiveInfinity,
                 Passed = false,
                 Notes = "Computed uncertainty unestimated; RequireFullUncertainty=true → failed.",
+                ComputedEnvironmentId = computed.EnvironmentId,
+                ComputedEnvironmentTier = computedEnvironmentTier,
+                ComputedBranchId = computed.BranchId,
+                ComputedRefinementLevel = computed.RefinementLevel,
+                TargetSource = target.Source,
+                TargetProvenance = target.TargetProvenance,
+                TargetEvidenceTier = target.EvidenceTier,
+                TargetEnvironmentId = target.TargetEnvironmentId,
+                TargetEnvironmentTier = target.TargetEnvironmentTier,
             };
         }
 
@@ -162,6 +192,15 @@ public static class TargetMatcher
             Pull = pull,
             Passed = pull <= policy.SigmaThreshold,
             Notes = note,
+            ComputedEnvironmentId = computed.EnvironmentId,
+            ComputedEnvironmentTier = computedEnvironmentTier,
+            ComputedBranchId = computed.BranchId,
+            ComputedRefinementLevel = computed.RefinementLevel,
+            TargetSource = target.Source,
+            TargetProvenance = target.TargetProvenance,
+            TargetEvidenceTier = target.EvidenceTier,
+            TargetEnvironmentId = target.TargetEnvironmentId,
+            TargetEnvironmentTier = target.TargetEnvironmentTier,
         };
     }
 
@@ -174,13 +213,14 @@ public static class TargetMatcher
     private static TargetMatchRecord MatchStudentT(
         QuantitativeObservableRecord computed,
         ExternalTarget target,
-        CalibrationPolicy policy)
+        CalibrationPolicy policy,
+        string? computedEnvironmentTier)
     {
         double nu = target.StudentTDegreesOfFreedom ?? 0;
         if (nu <= 0)
         {
             // Degenerate: fall back to Gaussian
-            return MatchGaussian(computed, target, policy);
+            return MatchGaussian(computed, target, policy, computedEnvironmentTier);
         }
 
         double sigmaComputed = computed.Uncertainty.TotalUncertainty;
@@ -200,6 +240,15 @@ public static class TargetMatcher
                 Pull = double.PositiveInfinity,
                 Passed = false,
                 Notes = "Computed uncertainty unestimated; RequireFullUncertainty=true → failed.",
+                ComputedEnvironmentId = computed.EnvironmentId,
+                ComputedEnvironmentTier = computedEnvironmentTier,
+                ComputedBranchId = computed.BranchId,
+                ComputedRefinementLevel = computed.RefinementLevel,
+                TargetSource = target.Source,
+                TargetProvenance = target.TargetProvenance,
+                TargetEvidenceTier = target.EvidenceTier,
+                TargetEnvironmentId = target.TargetEnvironmentId,
+                TargetEnvironmentTier = target.TargetEnvironmentTier,
             };
         }
 
@@ -244,6 +293,15 @@ public static class TargetMatcher
             Pull = pull,
             Passed = pull <= policy.SigmaThreshold,
             Notes = note,
+            ComputedEnvironmentId = computed.EnvironmentId,
+            ComputedEnvironmentTier = computedEnvironmentTier,
+            ComputedBranchId = computed.BranchId,
+            ComputedRefinementLevel = computed.RefinementLevel,
+            TargetSource = target.Source,
+            TargetProvenance = target.TargetProvenance,
+            TargetEvidenceTier = target.EvidenceTier,
+            TargetEnvironmentId = target.TargetEnvironmentId,
+            TargetEnvironmentTier = target.TargetEnvironmentTier,
         };
     }
 }

@@ -210,6 +210,7 @@ public sealed class BridgeValueExporterTests
             Assert.Equal(exported.ManifestId, loaded.ManifestId);
             Assert.Equal(exported.SourceAtlasPath, loaded.SourceAtlasPath);
             Assert.Equal(exported.SourceRecordIds, loaded.SourceRecordIds);
+            Assert.Equal(exported.SourceStateArtifactRefs, loaded.SourceStateArtifactRefs);
             Assert.Equal(exported.DerivedVariantIds, loaded.DerivedVariantIds);
         }
         finally
@@ -250,6 +251,26 @@ public sealed class BridgeValueExporterTests
             Assert.Equal(2, manifest.SourceRecordIds.Count);
             Assert.Contains("bg-A", manifest.SourceRecordIds);
             Assert.Contains("bg-B", manifest.SourceRecordIds);
+            Assert.Contains("artifacts/states/bg-A.json", manifest.SourceStateArtifactRefs);
+            Assert.Contains("artifacts/states/bg-B.json", manifest.SourceStateArtifactRefs);
+        }
+        finally
+        {
+            if (Directory.Exists(outDir)) Directory.Delete(outDir, recursive: true);
+        }
+    }
+
+    [Fact]
+    public void Export_BridgeManifest_SourceStateArtifactRefs_MatchAtlasStateRefs()
+    {
+        var records = new[] { MakeRecord("bg-A"), MakeRecord("bg-B") };
+        var atlas = MakeAtlas(records);
+        var spec = MakeRefinementSpec();
+        var outDir = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        try
+        {
+            var manifest = BridgeValueExporter.Export(atlas, spec, "/tmp/atlas.json", outDir, MakeProvenance());
+            Assert.Equal(records.Select(r => r.StateArtifactRef).ToArray(), manifest.SourceStateArtifactRefs);
         }
         finally
         {

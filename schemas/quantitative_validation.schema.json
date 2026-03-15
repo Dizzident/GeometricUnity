@@ -82,6 +82,42 @@
         "notes": {
           "type": "string",
           "description": "Optional diagnostic notes (e.g., 'computed uncertainty unestimated')"
+        },
+        "computedEnvironmentId": {
+          "type": ["string", "null"],
+          "description": "Environment ID of the computed observable that supplied this match."
+        },
+        "computedEnvironmentTier": {
+          "type": ["string", "null"],
+          "description": "Environment tier of the computed observable that supplied this match."
+        },
+        "computedBranchId": {
+          "type": ["string", "null"],
+          "description": "Branch ID of the computed observable that supplied this match."
+        },
+        "computedRefinementLevel": {
+          "type": ["string", "null"],
+          "description": "Refinement level of the computed observable that supplied this match."
+        },
+        "targetSource": {
+          "type": ["string", "null"],
+          "description": "Source label from the target table."
+        },
+        "targetProvenance": {
+          "type": ["string", "null"],
+          "description": "Optional provenance label from the target table."
+        },
+        "targetEvidenceTier": {
+          "type": ["string", "null"],
+          "description": "Evidence tier label from the target table."
+        },
+        "targetEnvironmentId": {
+          "type": ["string", "null"],
+          "description": "Requested environment ID selector from the target."
+        },
+        "targetEnvironmentTier": {
+          "type": ["string", "null"],
+          "description": "Requested environment tier selector from the target."
         }
       }
     },
@@ -169,6 +205,22 @@
         "evidenceTier": {
           "type": "string",
           "description": "Evidence tier label, for example 'toy-placeholder', 'derived-synthetic', or 'evidence-grade'. Never 'physical-prediction'."
+        },
+        "targetProvenance": {
+          "type": "string",
+          "description": "Optional provenance string distinct from source when the target was bridged or normalized."
+        },
+        "targetEnvironmentId": {
+          "type": "string",
+          "description": "Optional environment ID selector for this target."
+        },
+        "targetEnvironmentTier": {
+          "type": "string",
+          "description": "Optional environment tier selector for this target."
+        },
+        "notes": {
+          "type": "string",
+          "description": "Optional diagnostic notes for the target."
         }
       }
     },

@@ -293,6 +293,42 @@ public sealed class Phase5CampaignSpecValidatorTests : IDisposable
         Assert.Empty(result.Errors);
     }
 
+    [Fact]
+    public void Validate_DuplicateObservableEnvironmentsWithoutTargetSelector_ReportsError()
+    {
+        var spec = MakeValidSpec(_tempDir);
+
+        File.WriteAllText(
+            Path.Combine(_tempDir, "observables.json"),
+            GuJsonDefaults.Serialize(new[]
+            {
+                new QuantitativeObservableRecord
+                {
+                    ObservableId = "q1",
+                    Value = 1.0,
+                    Uncertainty = new QuantitativeUncertainty { TotalUncertainty = 0.03 },
+                    BranchId = "V1",
+                    EnvironmentId = "env-toy",
+                    ExtractionMethod = "validator",
+                    Provenance = MakeProvenance(),
+                },
+                new QuantitativeObservableRecord
+                {
+                    ObservableId = "q1",
+                    Value = 1.1,
+                    Uncertainty = new QuantitativeUncertainty { TotalUncertainty = 0.02 },
+                    BranchId = "V1",
+                    EnvironmentId = "env-structured",
+                    ExtractionMethod = "validator",
+                    Provenance = MakeProvenance(),
+                },
+            }));
+
+        var result = Phase5CampaignSpecValidator.Validate(spec, _tempDir, requireReferenceSidecars: false);
+        Assert.False(result.IsValid);
+        Assert.Contains(result.Errors, e => e.Contains("targetEnvironmentId or targetEnvironmentTier"));
+    }
+
     // -----------------------------------------------------------------------
     // Tests: missing required files
     // -----------------------------------------------------------------------

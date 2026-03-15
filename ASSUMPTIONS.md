@@ -126,6 +126,13 @@ Impact:
 Current CLI runs validate the simplest executable Shiab branch, not the strongest
 documented active branch.
 
+Status (updated Phase VII):
+The standard Phase VII evidence campaign still uses the identity-shiab branch.
+A linked Phase VII companion run now exercises `first-order-curvature` on the same
+real persisted toy-control atlas path, but it remains a trivial residual-inspection
+control run and is not yet integrated into the main evidence campaign. Shiab scope
+therefore remains only partially expanded.
+
 ### A-010 Variational residual minimization is chosen over physical time evolution
 
 The executable branch is organized around residual/objective minimization and

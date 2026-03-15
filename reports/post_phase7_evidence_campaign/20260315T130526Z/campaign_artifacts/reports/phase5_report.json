@@ -1,0 +1,58 @@
+{
+  "reportId": "report-phase5-su2-branch-refinement-env-validation-20260315130620",
+  "schemaVersion": "1.0.0",
+  "studyId": "phase5-su2-branch-refinement-env-validation",
+  "dossierIds": [
+    "phase5-su2-branch-refinement-env-validation-provenance-dossier"
+  ],
+  "branchIndependenceAtlas": {
+    "totalQuantities": 5,
+    "invariantCount": 5,
+    "fragileCount": 0,
+    "equivalenceClassCount": 5,
+    "summaryLines": [
+      "- Overall summary: **robust**",
+      "- Quantities analyzed: 5",
+      "- Invariant/robust: 5",
+      "- Fragile: 0",
+      "- Equivalence classes: 5"
+    ]
+  },
+  "convergenceAtlas": {
+    "totalQuantities": 5,
+    "convergentCount": 5,
+    "nonConvergentCount": 0,
+    "insufficientDataCount": 0,
+    "summaryLines": [
+      "- Total quantities: 5",
+      "- Convergent: 5",
+      "- Weakly convergent: 0",
+      "- Non-convergent: 0",
+      "- Insufficient data: 0"
+    ]
+  },
+  "falsificationDashboard": {
+    "totalFalsifiers": 2,
+    "activeFatalCount": 1,
+    "activeHighCount": 1,
+    "promotionCount": 0,
+    "demotionCount": 2,
+    "summaryLines": [
+      "- Total falsifiers evaluated: 2",
+      "- Active fatal: 1",
+      "- Active high: 1",
+      "- Total active: 2"
+    ]
+  },
+  "provenance": {
+    "createdAt": "2026-03-16T00:00:00+00:00",
+    "codeRevision": "phase7-real-atlas-env-aware-v1",
+    "branch": {
+      "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu",
+    "notes": "Phase VII standard evidence campaign: real persisted toy-control atlas for the bridge path, origin-labeled sidecars, multi-environment observables, and environment-aware mixed target tiers."
+  },
+  "generatedAt": "2026-03-15T13:06:20.0201661+00:00"
+}

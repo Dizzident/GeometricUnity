@@ -1,0 +1,35 @@
+{
+  "environmentId": "env-structured-4x4",
+  "geometryTier": "structured",
+  "geometryFingerprint": "structured-4x4-triangulated-v1",
+  "baseDimension": 2,
+  "ambientDimension": 2,
+  "edgeCount": 40,
+  "faceCount": 16,
+  "admissibility": {
+    "level": "structured",
+    "checks": [
+      {
+        "checkId": "min-face-count",
+        "description": "Face count meets structured-tier minimum (>= 4)",
+        "passed": true,
+        "value": 16.0,
+        "threshold": 4.0
+      },
+      {
+        "checkId": "mesh-dimension-match",
+        "description": "Base dimension matches ambient dimension (no co-dimension)",
+        "passed": true
+      }
+    ],
+    "passed": true,
+    "notes": "Structured 4x4 triangulated mesh (16 triangles). Used as structured-tier environment for Phase V M48/M53 and Phase VI reference study."
+  },
+  "sourceSpec": "config/env_structured_4x4.json",
+  "provenance": {
+    "createdAt": "2026-03-14T00:00:00+00:00",
+    "codeRevision": "phase6-m4-env-upgrade-v1",
+    "branch": { "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega", "schemaVersion": "1.0" },
+    "backend": "cpu"
+  }
+}

@@ -1361,9 +1361,10 @@ static int SolveBackgrounds(string[] args)
     var statesDir = Path.Combine(outputDir, "background_states");
     Directory.CreateDirectory(statesDir);
 
-    // Enrich all background records with RunClassification and ConsumedManifestArtifactRef
-    var enrichedBackgrounds = EnrichBackgroundRecords(atlas.Backgrounds, runClassification, manifestArtifactRefs);
-    var enrichedRejected = EnrichBackgroundRecords(atlas.RejectedBackgrounds, runClassification, manifestArtifactRefs);
+    // Enrich all background records with RunClassification, persisted state refs,
+    // and consumed manifest artifact refs.
+    var enrichedBackgrounds = EnrichBackgroundRecords(atlas.Backgrounds, runClassification, manifestArtifactRefs, statesDir);
+    var enrichedRejected = EnrichBackgroundRecords(atlas.RejectedBackgrounds, runClassification, manifestArtifactRefs, statesDir);
 
     // D-003: Write per-background manifest files
     foreach (var bg in enrichedBackgrounds.Concat(enrichedRejected))
@@ -1447,12 +1448,19 @@ static int SolveBackgrounds(string[] args)
 static IReadOnlyList<BackgroundRecord> EnrichBackgroundRecords(
     IReadOnlyList<BackgroundRecord> records,
     SolveRunClassification runClassification,
-    IReadOnlyDictionary<string, string> manifestArtifactRefs)
+    IReadOnlyDictionary<string, string> manifestArtifactRefs,
+    string statesDir)
 {
     var enriched = new List<BackgroundRecord>(records.Count);
     foreach (var r in records)
     {
         manifestArtifactRefs.TryGetValue(r.BranchManifestId, out var mRef);
+        var persistedStateRef = r.AdmissibilityLevel == AdmissibilityLevel.Rejected
+            ? r.StateArtifactRef
+            : Path.Combine(statesDir, $"{r.BackgroundId}_omega.json");
+        var persistedManifestRef = string.IsNullOrWhiteSpace(mRef)
+            ? null
+            : Path.Combine(statesDir, $"{r.BackgroundId}_manifest.json");
         enriched.Add(new BackgroundRecord
         {
             BackgroundId = r.BackgroundId,
@@ -1461,7 +1469,7 @@ static IReadOnlyList<BackgroundRecord> EnrichBackgroundRecords(
             ContinuationCoordinates = r.ContinuationCoordinates,
             GeometryFingerprint = r.GeometryFingerprint,
             GaugeChoice = r.GaugeChoice,
-            StateArtifactRef = r.StateArtifactRef,
+            StateArtifactRef = persistedStateRef,
             ResidualNorm = r.ResidualNorm,
             StationarityNorm = r.StationarityNorm,
             AdmissibilityLevel = r.AdmissibilityLevel,
@@ -1474,7 +1482,7 @@ static IReadOnlyList<BackgroundRecord> EnrichBackgroundRecords(
             Notes = r.Notes,
             EnvironmentTier = r.EnvironmentTier,
             RunClassification = runClassification,
-            ConsumedManifestArtifactRef = mRef,
+            ConsumedManifestArtifactRef = persistedManifestRef,
         });
     }
     return enriched;
@@ -4025,13 +4033,32 @@ static int BuildPhase5Sidecars(string[] args)
     // Null channels are treated as absent; derived channels become evaluated or skipped
     // based on whether the supporting inputs are rich enough to populate records.
     var studyId = Path.GetFileNameWithoutExtension(registryPath);
+    var registryDir = Path.GetDirectoryName(Path.GetFullPath(registryPath)) ?? ".";
+    string? InferFromRegistryDir(string fileName)
+    {
+        var candidate = Path.Combine(registryDir, fileName);
+        return File.Exists(candidate) ? candidate : null;
+    }
+
+    var upstreamArtifacts = new SidecarUpstreamArtifacts
+    {
+        RegistryPath = Path.GetFullPath(registryPath),
+        ObservablesPath = string.IsNullOrWhiteSpace(observablesPath) ? null : Path.GetFullPath(observablesPath),
+        EnvironmentRecordPaths = envRecordPaths.Select(Path.GetFullPath).ToList(),
+        FermionFamilyAtlasPath = InferFromRegistryDir("fermion_family_atlas.json"),
+        CouplingAtlasPath = InferFromRegistryDir("coupling_atlas.json"),
+        FermionSpectralResultPath = InferFromRegistryDir("fermion_spectral_result.json"),
+        Phase4ReportPath = InferFromRegistryDir("phase4_report.json"),
+    };
+
     var summary = SidecarGenerator.GenerateSidecars(
         registry,
         observables,
         envRecords,
         outDir,
         studyId,
-        provenance);
+        provenance,
+        upstreamArtifacts: upstreamArtifacts);
 
     Console.WriteLine($"build-phase5-sidecars complete. Output: {outDir}");
     foreach (var ch in summary.Channels)

@@ -28,6 +28,10 @@ public sealed class SidecarChannelStatus
     /// <summary>Number of records written to the output sidecar file.</summary>
     [JsonPropertyName("outputCount")]
     public required int OutputCount { get; init; }
+
+    /// <summary>Breakdown of record origins for this channel.</summary>
+    [JsonPropertyName("originCounts")]
+    public IReadOnlyDictionary<string, int>? OriginCounts { get; init; }
 }
 
 /// <summary>

@@ -207,6 +207,10 @@ public static class Phase5CampaignSpecValidator
         try
         {
             var table = GuJsonDefaults.Deserialize<ExternalTargetTable>(File.ReadAllText(resolved));
+            var observablesPath = ResolvePath(spec.ObservablesPath, specDir);
+            var observables = File.Exists(observablesPath)
+                ? GuJsonDefaults.Deserialize<List<QuantitativeObservableRecord>>(File.ReadAllText(observablesPath))
+                : null;
             if (table is null)
             {
                 errors.Add("externalTargetTablePath: failed to deserialize ExternalTargetTable.");
@@ -220,6 +224,23 @@ public static class Phase5CampaignSpecValidator
                                      || string.Equals(t.EvidenceTier, "evidence-grade", StringComparison.OrdinalIgnoreCase)))
             {
                 errors.Add("externalTargetTablePath: reference campaign must distinguish toy-placeholder targets from stronger target tiers.");
+            }
+
+            var duplicatedObservableIds = (observables ?? [])
+                .GroupBy(o => o.ObservableId, StringComparer.Ordinal)
+                .Where(g => g.Select(o => o.EnvironmentId).Distinct(StringComparer.Ordinal).Count() > 1)
+                .Select(g => g.Key)
+                .ToHashSet(StringComparer.Ordinal);
+
+            foreach (var target in table.Targets.Where(t => duplicatedObservableIds.Contains(t.ObservableId)))
+            {
+                if (string.IsNullOrWhiteSpace(target.TargetEnvironmentId) &&
+                    string.IsNullOrWhiteSpace(target.TargetEnvironmentTier))
+                {
+                    errors.Add(
+                        $"externalTargetTablePath: target '{target.Label}' for observableId '{target.ObservableId}' " +
+                        "must declare targetEnvironmentId or targetEnvironmentTier because multiple environment-specific observables exist.");
+                }
             }
         }
         catch (Exception ex)

@@ -18,7 +18,7 @@ namespace Gu.Phase5.Falsification;
 ///   3. SensitivityScore &lt;= 0.3
 ///   4. AuxiliaryModelSensitivity &lt;= 0.3
 /// </summary>
-public sealed class ObservationChainRecord
+public sealed class ObservationChainRecord : ISidecarEvidenceRecord
 {
     /// <summary>Joins to UnifiedParticleRecord.ParticleId.</summary>
     [JsonPropertyName("candidateId")]
@@ -67,6 +67,14 @@ public sealed class ObservationChainRecord
     /// <summary>Optional notes about the observation chain result.</summary>
     [JsonPropertyName("notes")]
     public string? Notes { get; init; }
+
+    /// <summary>Origin classification for this sidecar record.</summary>
+    [JsonPropertyName("origin")]
+    public string Origin { get; init; } = "heuristic";
+
+    /// <summary>Artifact references used to support this record.</summary>
+    [JsonPropertyName("sourceArtifactRefs")]
+    public IReadOnlyList<string>? SourceArtifactRefs { get; init; }
 
     /// <summary>Provenance metadata.</summary>
     [JsonPropertyName("provenance")]

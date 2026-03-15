@@ -169,12 +169,12 @@ public sealed class FalsifierEvaluator
                 severity: policy.QuantitativeMismatchSeverity,
                 targetId: match.ObservableId,
                 branchId: "unknown",
-                environmentId: null,
+                environmentId: match.ComputedEnvironmentId,
                 triggerValue: match.Pull,
                 threshold: null,
                 description: $"Observable '{match.ObservableId}' failed target match '{match.TargetLabel}': " +
                              $"pull={match.Pull:G4} (computed={match.ComputedValue:G4}, target={match.TargetValue:G4}).",
-                evidence: $"TargetMatchRecord observableId={match.ObservableId} targetLabel={match.TargetLabel}",
+                evidence: $"TargetMatchRecord observableId={match.ObservableId} targetLabel={match.TargetLabel} computedEnvironmentId={match.ComputedEnvironmentId ?? "unknown"}",
                 active: true,
                 provenance: provenance);
         }

@@ -1,5 +1,6 @@
 using System.Text.Json;
 using Gu.Core;
+using Gu.Phase5.Environments;
 using Gu.Phase5.QuantitativeValidation;
 
 namespace Gu.Phase5.QuantitativeValidation.Tests;
@@ -33,6 +34,25 @@ public sealed class QuantitativeValidationTests
         SigmaThreshold = 3.0,
         RequireFullUncertainty = true,
     };
+
+    private static EnvironmentRecord MakeEnvironmentRecord(string environmentId, string tier, int edgeCount, int faceCount)
+        => new()
+        {
+            EnvironmentId = environmentId,
+            GeometryTier = tier,
+            GeometryFingerprint = $"{tier}-{environmentId}-fp",
+            BaseDimension = 2,
+            AmbientDimension = 2,
+            EdgeCount = edgeCount,
+            FaceCount = faceCount,
+            Admissibility = new EnvironmentAdmissibilityReport
+            {
+                Level = tier,
+                Checks = new List<AdmissibilityCheck>(),
+                Passed = true,
+            },
+            Provenance = MakeProvenance(),
+        };
 
     // ─────────────────── UncertaintyPropagator ───────────────────
 
@@ -452,6 +472,121 @@ public sealed class QuantitativeValidationTests
         Assert.Single(card.Matches);
         Assert.Equal(0.6, card.Matches[0].Pull, precision: 10);
         Assert.True(card.Matches[0].Passed);
+    }
+
+    [Fact]
+    public void Runner_TargetEnvironmentTier_SelectsRequestedEnvironment()
+    {
+        var observables = new List<QuantitativeObservableRecord>
+        {
+            new()
+            {
+                ObservableId = "obs-1",
+                Value = 0.11,
+                Uncertainty = UncertaintyPropagator.Propagate(0.02, null, null, null),
+                BranchId = "branch-a",
+                EnvironmentId = "env-toy",
+                RefinementLevel = "L0",
+                ExtractionMethod = "ratio",
+                Provenance = MakeProvenance(),
+            },
+            new()
+            {
+                ObservableId = "obs-1",
+                Value = 0.91,
+                Uncertainty = UncertaintyPropagator.Propagate(0.01, null, null, null),
+                BranchId = "branch-a",
+                EnvironmentId = "env-structured",
+                RefinementLevel = "L1",
+                ExtractionMethod = "ratio",
+                Provenance = MakeProvenance(),
+            },
+        };
+
+        var table = new ExternalTargetTable
+        {
+            TableId = "t-env-aware",
+            Targets = new List<ExternalTarget>
+            {
+                new()
+                {
+                    Label = "structured-target",
+                    ObservableId = "obs-1",
+                    Value = 0.9,
+                    Uncertainty = 0.05,
+                    Source = "test-source",
+                    TargetEnvironmentTier = "structured",
+                },
+            },
+        };
+
+        var environments = new List<EnvironmentRecord>
+        {
+            MakeEnvironmentRecord("env-toy", "toy", edgeCount: 4, faceCount: 2),
+            MakeEnvironmentRecord("env-structured", "structured", edgeCount: 16, faceCount: 8),
+        };
+
+        var runner = new QuantitativeValidationRunner();
+        var card = runner.Run("study-env-aware", observables, table, StandardPolicy, MakeProvenance(), environments);
+
+        var match = Assert.Single(card.Matches);
+        Assert.Equal("env-structured", match.ComputedEnvironmentId);
+        Assert.Equal("structured", match.ComputedEnvironmentTier);
+        Assert.Equal("structured", match.TargetEnvironmentTier);
+        Assert.Equal(0.91, match.ComputedValue, precision: 10);
+    }
+
+    [Fact]
+    public void Runner_DuplicateCandidatesWithoutSelector_UsesDeterministicLowestUncertainty()
+    {
+        var observables = new List<QuantitativeObservableRecord>
+        {
+            new()
+            {
+                ObservableId = "obs-1",
+                Value = 0.3,
+                Uncertainty = UncertaintyPropagator.Propagate(0.04, null, null, null),
+                BranchId = "branch-a",
+                EnvironmentId = "env-b",
+                RefinementLevel = "L0",
+                ExtractionMethod = "ratio",
+                Provenance = MakeProvenance(),
+            },
+            new()
+            {
+                ObservableId = "obs-1",
+                Value = 0.8,
+                Uncertainty = UncertaintyPropagator.Propagate(0.01, null, null, null),
+                BranchId = "branch-a",
+                EnvironmentId = "env-a",
+                RefinementLevel = "L2",
+                ExtractionMethod = "ratio",
+                Provenance = MakeProvenance(),
+            },
+        };
+
+        var table = new ExternalTargetTable
+        {
+            TableId = "t-lowest-sigma",
+            Targets = new List<ExternalTarget>
+            {
+                new()
+                {
+                    Label = "implicit-selection-target",
+                    ObservableId = "obs-1",
+                    Value = 0.8,
+                    Uncertainty = 0.05,
+                    Source = "test-source",
+                },
+            },
+        };
+
+        var runner = new QuantitativeValidationRunner();
+        var card = runner.Run("study-implicit", observables, table, StandardPolicy, MakeProvenance());
+
+        var match = Assert.Single(card.Matches);
+        Assert.Equal("env-a", match.ComputedEnvironmentId);
+        Assert.Equal(0.8, match.ComputedValue, precision: 10);
     }
 
     // ─────────────────── CalibrationPolicy ───────────────────

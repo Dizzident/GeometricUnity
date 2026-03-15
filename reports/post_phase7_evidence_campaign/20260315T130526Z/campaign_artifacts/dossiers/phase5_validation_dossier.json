@@ -1,0 +1,1558 @@
+{
+  "dossierId": "dossier-phase5-su2-branch-refinement-env-validation",
+  "schemaVersion": "1.0.0",
+  "studyId": "phase5-su2-branch-refinement-env-validation",
+  "branchFamilySummary": {
+    "recordId": "phase7-su2-real-bridge-backed-branch-family-result",
+    "schemaVersion": "1.0.0",
+    "studyId": "phase7-su2-real-bridge-backed-branch-family",
+    "branchVariantIds": [
+      "bg-variant-87bfcd04a1b8109d",
+      "bg-variant-cb5790add48b36f3",
+      "bg-variant-4f769ab7983db9ca",
+      "bg-variant-488c9302eab6d0c2"
+    ],
+    "distanceMatrices": {
+      "residual-norm": {
+        "schemaVersion": "1.0.0",
+        "targetQuantityId": "residual-norm",
+        "branchVariantIds": [
+          "bg-variant-87bfcd04a1b8109d",
+          "bg-variant-cb5790add48b36f3",
+          "bg-variant-4f769ab7983db9ca",
+          "bg-variant-488c9302eab6d0c2"
+        ],
+        "quantityValues": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "distances": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "maxDistance": 0,
+        "meanDistance": 0,
+        "referenceScale": 1E-30
+      },
+      "stationarity-norm": {
+        "schemaVersion": "1.0.0",
+        "targetQuantityId": "stationarity-norm",
+        "branchVariantIds": [
+          "bg-variant-87bfcd04a1b8109d",
+          "bg-variant-cb5790add48b36f3",
+          "bg-variant-4f769ab7983db9ca",
+          "bg-variant-488c9302eab6d0c2"
+        ],
+        "quantityValues": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "distances": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "maxDistance": 0,
+        "meanDistance": 0,
+        "referenceScale": 1E-30
+      },
+      "objective-value": {
+        "schemaVersion": "1.0.0",
+        "targetQuantityId": "objective-value",
+        "branchVariantIds": [
+          "bg-variant-87bfcd04a1b8109d",
+          "bg-variant-cb5790add48b36f3",
+          "bg-variant-4f769ab7983db9ca",
+          "bg-variant-488c9302eab6d0c2"
+        ],
+        "quantityValues": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "distances": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "maxDistance": 0,
+        "meanDistance": 0,
+        "referenceScale": 1E-30
+      },
+      "gauge-violation": {
+        "schemaVersion": "1.0.0",
+        "targetQuantityId": "gauge-violation",
+        "branchVariantIds": [
+          "bg-variant-87bfcd04a1b8109d",
+          "bg-variant-cb5790add48b36f3",
+          "bg-variant-4f769ab7983db9ca",
+          "bg-variant-488c9302eab6d0c2"
+        ],
+        "quantityValues": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "distances": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "maxDistance": 0,
+        "meanDistance": 0,
+        "referenceScale": 1E-30
+      },
+      "solver-iterations": {
+        "schemaVersion": "1.0.0",
+        "targetQuantityId": "solver-iterations",
+        "branchVariantIds": [
+          "bg-variant-87bfcd04a1b8109d",
+          "bg-variant-cb5790add48b36f3",
+          "bg-variant-4f769ab7983db9ca",
+          "bg-variant-488c9302eab6d0c2"
+        ],
+        "quantityValues": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "distances": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "maxDistance": 0,
+        "meanDistance": 0,
+        "referenceScale": 1E-30
+      }
+    },
+    "equivalenceClasses": {
+      "residual-norm": [
+        {
+          "schemaVersion": "1.0.0",
+          "targetQuantityId": "residual-norm",
+          "memberBranchVariantIds": [
+            "bg-variant-87bfcd04a1b8109d",
+            "bg-variant-cb5790add48b36f3",
+            "bg-variant-4f769ab7983db9ca",
+            "bg-variant-488c9302eab6d0c2"
+          ],
+          "meanValue": 0,
+          "maxDeviationFromMean": 0,
+          "absoluteTolerance": 1E-05,
+          "relativeTolerance": 0.1
+        }
+      ],
+      "stationarity-norm": [
+        {
+          "schemaVersion": "1.0.0",
+          "targetQuantityId": "stationarity-norm",
+          "memberBranchVariantIds": [
+            "bg-variant-87bfcd04a1b8109d",
+            "bg-variant-cb5790add48b36f3",
+            "bg-variant-4f769ab7983db9ca",
+            "bg-variant-488c9302eab6d0c2"
+          ],
+          "meanValue": 0,
+          "maxDeviationFromMean": 0,
+          "absoluteTolerance": 1E-05,
+          "relativeTolerance": 0.1
+        }
+      ],
+      "objective-value": [
+        {
+          "schemaVersion": "1.0.0",
+          "targetQuantityId": "objective-value",
+          "memberBranchVariantIds": [
+            "bg-variant-87bfcd04a1b8109d",
+            "bg-variant-cb5790add48b36f3",
+            "bg-variant-4f769ab7983db9ca",
+            "bg-variant-488c9302eab6d0c2"
+          ],
+          "meanValue": 0,
+          "maxDeviationFromMean": 0,
+          "absoluteTolerance": 1E-05,
+          "relativeTolerance": 0.1
+        }
+      ],
+      "gauge-violation": [
+        {
+          "schemaVersion": "1.0.0",
+          "targetQuantityId": "gauge-violation",
+          "memberBranchVariantIds": [
+            "bg-variant-87bfcd04a1b8109d",
+            "bg-variant-cb5790add48b36f3",
+            "bg-variant-4f769ab7983db9ca",
+            "bg-variant-488c9302eab6d0c2"
+          ],
+          "meanValue": 0,
+          "maxDeviationFromMean": 0,
+          "absoluteTolerance": 1E-05,
+          "relativeTolerance": 0.1
+        }
+      ],
+      "solver-iterations": [
+        {
+          "schemaVersion": "1.0.0",
+          "targetQuantityId": "solver-iterations",
+          "memberBranchVariantIds": [
+            "bg-variant-87bfcd04a1b8109d",
+            "bg-variant-cb5790add48b36f3",
+            "bg-variant-4f769ab7983db9ca",
+            "bg-variant-488c9302eab6d0c2"
+          ],
+          "meanValue": 0,
+          "maxDeviationFromMean": 0,
+          "absoluteTolerance": 1E-05,
+          "relativeTolerance": 0.1
+        }
+      ]
+    },
+    "fragilityRecords": {
+      "residual-norm": {
+        "schemaVersion": "1.0.0",
+        "targetQuantityId": "residual-norm",
+        "fragilityScore": 0,
+        "maxDistanceToNeighbor": 0,
+        "meanDistanceToFamily": 0,
+        "classification": "invariant",
+        "maxDistancePair": [
+          "bg-variant-87bfcd04a1b8109d",
+          "bg-variant-87bfcd04a1b8109d"
+        ],
+        "variantCount": 4
+      },
+      "stationarity-norm": {
+        "schemaVersion": "1.0.0",
+        "targetQuantityId": "stationarity-norm",
+        "fragilityScore": 0,
+        "maxDistanceToNeighbor": 0,
+        "meanDistanceToFamily": 0,
+        "classification": "invariant",
+        "maxDistancePair": [
+          "bg-variant-87bfcd04a1b8109d",
+          "bg-variant-87bfcd04a1b8109d"
+        ],
+        "variantCount": 4
+      },
+      "objective-value": {
+        "schemaVersion": "1.0.0",
+        "targetQuantityId": "objective-value",
+        "fragilityScore": 0,
+        "maxDistanceToNeighbor": 0,
+        "meanDistanceToFamily": 0,
+        "classification": "invariant",
+        "maxDistancePair": [
+          "bg-variant-87bfcd04a1b8109d",
+          "bg-variant-87bfcd04a1b8109d"
+        ],
+        "variantCount": 4
+      },
+      "gauge-violation": {
+        "schemaVersion": "1.0.0",
+        "targetQuantityId": "gauge-violation",
+        "fragilityScore": 0,
+        "maxDistanceToNeighbor": 0,
+        "meanDistanceToFamily": 0,
+        "classification": "invariant",
+        "maxDistancePair": [
+          "bg-variant-87bfcd04a1b8109d",
+          "bg-variant-87bfcd04a1b8109d"
+        ],
+        "variantCount": 4
+      },
+      "solver-iterations": {
+        "schemaVersion": "1.0.0",
+        "targetQuantityId": "solver-iterations",
+        "fragilityScore": 0,
+        "maxDistanceToNeighbor": 0,
+        "meanDistanceToFamily": 0,
+        "classification": "invariant",
+        "maxDistancePair": [
+          "bg-variant-87bfcd04a1b8109d",
+          "bg-variant-87bfcd04a1b8109d"
+        ],
+        "variantCount": 4
+      }
+    },
+    "invarianceCandidates": [
+      {
+        "schemaVersion": "1.0.0",
+        "targetQuantityId": "residual-norm",
+        "branchFamilySize": 4,
+        "meanValue": 0,
+        "maxAbsDeviation": 0,
+        "fragilityScore": 0,
+        "absoluteTolerance": 1E-05,
+        "relativeTolerance": 0.1,
+        "sourceStudyId": "phase7-su2-real-bridge-backed-branch-family",
+        "invarianceNote": "Branch-invariant within declared tolerances. Does not imply physical significance. Downstream refinement and quantitative checks required."
+      },
+      {
+        "schemaVersion": "1.0.0",
+        "targetQuantityId": "stationarity-norm",
+        "branchFamilySize": 4,
+        "meanValue": 0,
+        "maxAbsDeviation": 0,
+        "fragilityScore": 0,
+        "absoluteTolerance": 1E-05,
+        "relativeTolerance": 0.1,
+        "sourceStudyId": "phase7-su2-real-bridge-backed-branch-family",
+        "invarianceNote": "Branch-invariant within declared tolerances. Does not imply physical significance. Downstream refinement and quantitative checks required."
+      },
+      {
+        "schemaVersion": "1.0.0",
+        "targetQuantityId": "objective-value",
+        "branchFamilySize": 4,
+        "meanValue": 0,
+        "maxAbsDeviation": 0,
+        "fragilityScore": 0,
+        "absoluteTolerance": 1E-05,
+        "relativeTolerance": 0.1,
+        "sourceStudyId": "phase7-su2-real-bridge-backed-branch-family",
+        "invarianceNote": "Branch-invariant within declared tolerances. Does not imply physical significance. Downstream refinement and quantitative checks required."
+      },
+      {
+        "schemaVersion": "1.0.0",
+        "targetQuantityId": "gauge-violation",
+        "branchFamilySize": 4,
+        "meanValue": 0,
+        "maxAbsDeviation": 0,
+        "fragilityScore": 0,
+        "absoluteTolerance": 1E-05,
+        "relativeTolerance": 0.1,
+        "sourceStudyId": "phase7-su2-real-bridge-backed-branch-family",
+        "invarianceNote": "Branch-invariant within declared tolerances. Does not imply physical significance. Downstream refinement and quantitative checks required."
+      },
+      {
+        "schemaVersion": "1.0.0",
+        "targetQuantityId": "solver-iterations",
+        "branchFamilySize": 4,
+        "meanValue": 0,
+        "maxAbsDeviation": 0,
+        "fragilityScore": 0,
+        "absoluteTolerance": 1E-05,
+        "relativeTolerance": 0.1,
+        "sourceStudyId": "phase7-su2-real-bridge-backed-branch-family",
+        "invarianceNote": "Branch-invariant within declared tolerances. Does not imply physical significance. Downstream refinement and quantitative checks required."
+      }
+    ],
+    "overallSummary": "robust",
+    "diagnosticNotes": [],
+    "provenance": {
+      "createdAt": "2026-03-16T00:00:00+00:00",
+      "codeRevision": "phase7-real-atlas-env-aware-v1",
+      "branch": {
+        "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+        "schemaVersion": "1.0"
+      },
+      "backend": "cpu",
+      "notes": "Phase VII standard evidence campaign: real persisted toy-control atlas for the bridge path, origin-labeled sidecars, multi-environment observables, and environment-aware mixed target tiers."
+    }
+  },
+  "refinementSummary": [
+    {
+      "quantityId": "residual-norm",
+      "extrapolatedValue": 0,
+      "errorBand": 6.25E-07,
+      "convergenceOrder": 2,
+      "convergenceClassification": "convergent",
+      "confidenceNote": "Monotone decrease; estimated order p=2.00.",
+      "runRecords": [
+        {
+          "levelId": "L0-2x2",
+          "meshParameter": 1,
+          "quantities": {
+            "residual-norm": 1E-05,
+            "stationarity-norm": 1E-05,
+            "objective-value": 1E-05,
+            "gauge-violation": 1E-05,
+            "solver-iterations": 2
+          },
+          "converged": true,
+          "residualNorm": 0,
+          "provenance": {
+            "createdAt": "2026-03-16T00:00:00+00:00",
+            "codeRevision": "phase7-real-atlas-env-aware-v1",
+            "branch": {
+              "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+              "schemaVersion": "1.0"
+            },
+            "backend": "cpu"
+          }
+        },
+        {
+          "levelId": "L1-4x4",
+          "meshParameter": 0.5,
+          "quantities": {
+            "residual-norm": 2.5E-06,
+            "stationarity-norm": 2.5E-06,
+            "objective-value": 2.5E-06,
+            "gauge-violation": 2.5E-06,
+            "solver-iterations": 0.5
+          },
+          "converged": true,
+          "residualNorm": 0,
+          "provenance": {
+            "createdAt": "2026-03-16T00:00:00+00:00",
+            "codeRevision": "phase7-real-atlas-env-aware-v1",
+            "branch": {
+              "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+              "schemaVersion": "1.0"
+            },
+            "backend": "cpu"
+          }
+        },
+        {
+          "levelId": "L2-8x8",
+          "meshParameter": 0.25,
+          "quantities": {
+            "residual-norm": 6.25E-07,
+            "stationarity-norm": 6.25E-07,
+            "objective-value": 6.25E-07,
+            "gauge-violation": 6.25E-07,
+            "solver-iterations": 0.125
+          },
+          "converged": true,
+          "residualNorm": 0,
+          "provenance": {
+            "createdAt": "2026-03-16T00:00:00+00:00",
+            "codeRevision": "phase7-real-atlas-env-aware-v1",
+            "branch": {
+              "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+              "schemaVersion": "1.0"
+            },
+            "backend": "cpu"
+          }
+        }
+      ]
+    },
+    {
+      "quantityId": "stationarity-norm",
+      "extrapolatedValue": 0,
+      "errorBand": 6.25E-07,
+      "convergenceOrder": 2,
+      "convergenceClassification": "convergent",
+      "confidenceNote": "Monotone decrease; estimated order p=2.00.",
+      "runRecords": [
+        {
+          "levelId": "L0-2x2",
+          "meshParameter": 1,
+          "quantities": {
+            "residual-norm": 1E-05,
+            "stationarity-norm": 1E-05,
+            "objective-value": 1E-05,
+            "gauge-violation": 1E-05,
+            "solver-iterations": 2
+          },
+          "converged": true,
+          "residualNorm": 0,
+          "provenance": {
+            "createdAt": "2026-03-16T00:00:00+00:00",
+            "codeRevision": "phase7-real-atlas-env-aware-v1",
+            "branch": {
+              "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+              "schemaVersion": "1.0"
+            },
+            "backend": "cpu"
+          }
+        },
+        {
+          "levelId": "L1-4x4",
+          "meshParameter": 0.5,
+          "quantities": {
+            "residual-norm": 2.5E-06,
+            "stationarity-norm": 2.5E-06,
+            "objective-value": 2.5E-06,
+            "gauge-violation": 2.5E-06,
+            "solver-iterations": 0.5
+          },
+          "converged": true,
+          "residualNorm": 0,
+          "provenance": {
+            "createdAt": "2026-03-16T00:00:00+00:00",
+            "codeRevision": "phase7-real-atlas-env-aware-v1",
+            "branch": {
+              "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+              "schemaVersion": "1.0"
+            },
+            "backend": "cpu"
+          }
+        },
+        {
+          "levelId": "L2-8x8",
+          "meshParameter": 0.25,
+          "quantities": {
+            "residual-norm": 6.25E-07,
+            "stationarity-norm": 6.25E-07,
+            "objective-value": 6.25E-07,
+            "gauge-violation": 6.25E-07,
+            "solver-iterations": 0.125
+          },
+          "converged": true,
+          "residualNorm": 0,
+          "provenance": {
+            "createdAt": "2026-03-16T00:00:00+00:00",
+            "codeRevision": "phase7-real-atlas-env-aware-v1",
+            "branch": {
+              "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+              "schemaVersion": "1.0"
+            },
+            "backend": "cpu"
+          }
+        }
+      ]
+    },
+    {
+      "quantityId": "objective-value",
+      "extrapolatedValue": 0,
+      "errorBand": 6.25E-07,
+      "convergenceOrder": 2,
+      "convergenceClassification": "convergent",
+      "confidenceNote": "Monotone decrease; estimated order p=2.00.",
+      "runRecords": [
+        {
+          "levelId": "L0-2x2",
+          "meshParameter": 1,
+          "quantities": {
+            "residual-norm": 1E-05,
+            "stationarity-norm": 1E-05,
+            "objective-value": 1E-05,
+            "gauge-violation": 1E-05,
+            "solver-iterations": 2
+          },
+          "converged": true,
+          "residualNorm": 0,
+          "provenance": {
+            "createdAt": "2026-03-16T00:00:00+00:00",
+            "codeRevision": "phase7-real-atlas-env-aware-v1",
+            "branch": {
+              "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+              "schemaVersion": "1.0"
+            },
+            "backend": "cpu"
+          }
+        },
+        {
+          "levelId": "L1-4x4",
+          "meshParameter": 0.5,
+          "quantities": {
+            "residual-norm": 2.5E-06,
+            "stationarity-norm": 2.5E-06,
+            "objective-value": 2.5E-06,
+            "gauge-violation": 2.5E-06,
+            "solver-iterations": 0.5
+          },
+          "converged": true,
+          "residualNorm": 0,
+          "provenance": {
+            "createdAt": "2026-03-16T00:00:00+00:00",
+            "codeRevision": "phase7-real-atlas-env-aware-v1",
+            "branch": {
+              "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+              "schemaVersion": "1.0"
+            },
+            "backend": "cpu"
+          }
+        },
+        {
+          "levelId": "L2-8x8",
+          "meshParameter": 0.25,
+          "quantities": {
+            "residual-norm": 6.25E-07,
+            "stationarity-norm": 6.25E-07,
+            "objective-value": 6.25E-07,
+            "gauge-violation": 6.25E-07,
+            "solver-iterations": 0.125
+          },
+          "converged": true,
+          "residualNorm": 0,
+          "provenance": {
+            "createdAt": "2026-03-16T00:00:00+00:00",
+            "codeRevision": "phase7-real-atlas-env-aware-v1",
+            "branch": {
+              "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+              "schemaVersion": "1.0"
+            },
+            "backend": "cpu"
+          }
+        }
+      ]
+    },
+    {
+      "quantityId": "gauge-violation",
+      "extrapolatedValue": 0,
+      "errorBand": 6.25E-07,
+      "convergenceOrder": 2,
+      "convergenceClassification": "convergent",
+      "confidenceNote": "Monotone decrease; estimated order p=2.00.",
+      "runRecords": [
+        {
+          "levelId": "L0-2x2",
+          "meshParameter": 1,
+          "quantities": {
+            "residual-norm": 1E-05,
+            "stationarity-norm": 1E-05,
+            "objective-value": 1E-05,
+            "gauge-violation": 1E-05,
+            "solver-iterations": 2
+          },
+          "converged": true,
+          "residualNorm": 0,
+          "provenance": {
+            "createdAt": "2026-03-16T00:00:00+00:00",
+            "codeRevision": "phase7-real-atlas-env-aware-v1",
+            "branch": {
+              "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+              "schemaVersion": "1.0"
+            },
+            "backend": "cpu"
+          }
+        },
+        {
+          "levelId": "L1-4x4",
+          "meshParameter": 0.5,
+          "quantities": {
+            "residual-norm": 2.5E-06,
+            "stationarity-norm": 2.5E-06,
+            "objective-value": 2.5E-06,
+            "gauge-violation": 2.5E-06,
+            "solver-iterations": 0.5
+          },
+          "converged": true,
+          "residualNorm": 0,
+          "provenance": {
+            "createdAt": "2026-03-16T00:00:00+00:00",
+            "codeRevision": "phase7-real-atlas-env-aware-v1",
+            "branch": {
+              "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+              "schemaVersion": "1.0"
+            },
+            "backend": "cpu"
+          }
+        },
+        {
+          "levelId": "L2-8x8",
+          "meshParameter": 0.25,
+          "quantities": {
+            "residual-norm": 6.25E-07,
+            "stationarity-norm": 6.25E-07,
+            "objective-value": 6.25E-07,
+            "gauge-violation": 6.25E-07,
+            "solver-iterations": 0.125
+          },
+          "converged": true,
+          "residualNorm": 0,
+          "provenance": {
+            "createdAt": "2026-03-16T00:00:00+00:00",
+            "codeRevision": "phase7-real-atlas-env-aware-v1",
+            "branch": {
+              "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+              "schemaVersion": "1.0"
+            },
+            "backend": "cpu"
+          }
+        }
+      ]
+    },
+    {
+      "quantityId": "solver-iterations",
+      "extrapolatedValue": 0,
+      "errorBand": 0.125,
+      "convergenceOrder": 2,
+      "convergenceClassification": "convergent",
+      "confidenceNote": "Monotone decrease; estimated order p=2.00.",
+      "runRecords": [
+        {
+          "levelId": "L0-2x2",
+          "meshParameter": 1,
+          "quantities": {
+            "residual-norm": 1E-05,
+            "stationarity-norm": 1E-05,
+            "objective-value": 1E-05,
+            "gauge-violation": 1E-05,
+            "solver-iterations": 2
+          },
+          "converged": true,
+          "residualNorm": 0,
+          "provenance": {
+            "createdAt": "2026-03-16T00:00:00+00:00",
+            "codeRevision": "phase7-real-atlas-env-aware-v1",
+            "branch": {
+              "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+              "schemaVersion": "1.0"
+            },
+            "backend": "cpu"
+          }
+        },
+        {
+          "levelId": "L1-4x4",
+          "meshParameter": 0.5,
+          "quantities": {
+            "residual-norm": 2.5E-06,
+            "stationarity-norm": 2.5E-06,
+            "objective-value": 2.5E-06,
+            "gauge-violation": 2.5E-06,
+            "solver-iterations": 0.5
+          },
+          "converged": true,
+          "residualNorm": 0,
+          "provenance": {
+            "createdAt": "2026-03-16T00:00:00+00:00",
+            "codeRevision": "phase7-real-atlas-env-aware-v1",
+            "branch": {
+              "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+              "schemaVersion": "1.0"
+            },
+            "backend": "cpu"
+          }
+        },
+        {
+          "levelId": "L2-8x8",
+          "meshParameter": 0.25,
+          "quantities": {
+            "residual-norm": 6.25E-07,
+            "stationarity-norm": 6.25E-07,
+            "objective-value": 6.25E-07,
+            "gauge-violation": 6.25E-07,
+            "solver-iterations": 0.125
+          },
+          "converged": true,
+          "residualNorm": 0,
+          "provenance": {
+            "createdAt": "2026-03-16T00:00:00+00:00",
+            "codeRevision": "phase7-real-atlas-env-aware-v1",
+            "branch": {
+              "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+              "schemaVersion": "1.0"
+            },
+            "backend": "cpu"
+          }
+        }
+      ]
+    }
+  ],
+  "convergenceFailures": [],
+  "environmentSummary": [
+    {
+      "environmentId": "env-toy-2d-trivial",
+      "geometryTier": "toy",
+      "geometryFingerprint": "toy-2x2-trivial-v1",
+      "baseDimension": 2,
+      "ambientDimension": 2,
+      "edgeCount": 4,
+      "faceCount": 2,
+      "admissibility": {
+        "level": "toy",
+        "checks": [],
+        "passed": true,
+        "notes": "Toy 2x2 environment for Phase V M53 reference study"
+      },
+      "sourceSpec": "config/env_toy_2d.json",
+      "provenance": {
+        "createdAt": "2026-03-14T00:00:00+00:00",
+        "codeRevision": "phase5-m53-ref-study-v1",
+        "branch": {
+          "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "environmentId": "env-structured-4x4",
+      "geometryTier": "structured",
+      "geometryFingerprint": "structured-4x4-triangulated-v1",
+      "baseDimension": 2,
+      "ambientDimension": 2,
+      "edgeCount": 40,
+      "faceCount": 16,
+      "admissibility": {
+        "level": "structured",
+        "checks": [
+          {
+            "checkId": "min-face-count",
+            "description": "Face count meets structured-tier minimum (\u003E= 4)",
+            "passed": true,
+            "value": 16,
+            "threshold": 4
+          },
+          {
+            "checkId": "mesh-dimension-match",
+            "description": "Base dimension matches ambient dimension (no co-dimension)",
+            "passed": true
+          }
+        ],
+        "passed": true,
+        "notes": "Structured 4x4 triangulated mesh (16 triangles). Used as structured-tier environment for Phase V M48/M53 and Phase VI reference study."
+      },
+      "sourceSpec": "config/env_structured_4x4.json",
+      "provenance": {
+        "createdAt": "2026-03-14T00:00:00+00:00",
+        "codeRevision": "phase6-m4-env-upgrade-v1",
+        "branch": {
+          "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "environmentId": "env-imported-synthetic-example",
+      "geometryTier": "imported",
+      "geometryFingerprint": "imported-synthetic-su2-2d-v1",
+      "baseDimension": 2,
+      "ambientDimension": 2,
+      "edgeCount": 24,
+      "faceCount": 8,
+      "admissibility": {
+        "level": "imported",
+        "checks": [
+          {
+            "checkId": "dataset-provenance-present",
+            "description": "Imported tier requires datasetId, sourceHash, and conversionVersion",
+            "passed": true
+          },
+          {
+            "checkId": "min-face-count",
+            "description": "Face count meets imported-tier minimum (\u003E= 4)",
+            "passed": true,
+            "value": 8,
+            "threshold": 4
+          }
+        ],
+        "passed": true,
+        "notes": "SYNTHETIC EXAMPLE: This is a fabricated imported-tier record for testing and reference purposes only. No real external dataset was used. In a real evidence-grade campaign, replace datasetId/sourceHash/conversionVersion with genuine values from the actual imported mesh source."
+      },
+      "datasetId": "synthetic-example-dataset-su2-2d-001",
+      "sourceHash": "sha256-0000000000000000000000000000000000000000000000000000000000000000",
+      "conversionVersion": "gu-mesh-converter-v1.0-example",
+      "provenance": {
+        "createdAt": "2026-03-14T00:00:00+00:00",
+        "codeRevision": "phase6-m4-env-upgrade-v1",
+        "branch": {
+          "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    }
+  ],
+  "quantitativeComparison": {
+    "studyId": "phase5-su2-branch-refinement-env-validation",
+    "schemaVersion": "1.0.0",
+    "matches": [
+      {
+        "observableId": "bosonic-eigenvalue-ratio-1",
+        "targetLabel": "bosonic-mode-1-ratio-control",
+        "targetValue": 0.1,
+        "targetUncertainty": 0.03,
+        "computedValue": 0.11,
+        "computedUncertainty": 0.018,
+        "pull": 0.2858309752375146,
+        "passed": true,
+        "computedEnvironmentId": "env-toy-2d-trivial",
+        "computedEnvironmentTier": "toy",
+        "computedBranchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+        "computedRefinementLevel": "L0-2x2",
+        "targetSource": "synthetic-toy-v1",
+        "targetProvenance": "synthetic-toy-v1",
+        "targetEvidenceTier": "toy-placeholder",
+        "targetEnvironmentTier": "toy"
+      },
+      {
+        "observableId": "bosonic-eigenvalue-ratio-2",
+        "targetLabel": "bosonic-mode-2-ratio-control",
+        "targetValue": 1,
+        "targetUncertainty": 0.25,
+        "computedValue": 1.05,
+        "computedUncertainty": 0.08,
+        "pull": 0.190484829439865,
+        "passed": true,
+        "computedEnvironmentId": "env-toy-2d-trivial",
+        "computedEnvironmentTier": "toy",
+        "computedBranchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+        "computedRefinementLevel": "L0-2x2",
+        "targetSource": "synthetic-toy-v1",
+        "targetProvenance": "synthetic-toy-v1",
+        "targetEvidenceTier": "toy-placeholder",
+        "targetEnvironmentTier": "toy"
+      },
+      {
+        "observableId": "bosonic-eigenvalue-ratio-3",
+        "targetLabel": "bosonic-mode-3-ratio-control",
+        "targetValue": 5,
+        "targetUncertainty": 1,
+        "computedValue": 5.41,
+        "computedUncertainty": 0.46,
+        "pull": 0.37248108559821574,
+        "passed": true,
+        "computedEnvironmentId": "env-toy-2d-trivial",
+        "computedEnvironmentTier": "toy",
+        "computedBranchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+        "computedRefinementLevel": "L0-2x2",
+        "targetSource": "synthetic-toy-v1",
+        "targetProvenance": "synthetic-toy-v1",
+        "targetEvidenceTier": "toy-placeholder",
+        "targetEnvironmentTier": "toy"
+      },
+      {
+        "observableId": "fermionic-eigenvalue-ratio-1",
+        "targetLabel": "fermionic-mode-1-ratio-control",
+        "targetValue": 0.05,
+        "targetUncertainty": 0.015,
+        "computedValue": 0.055,
+        "computedUncertainty": 0.008,
+        "pull": 0.29411764705882343,
+        "passed": true,
+        "computedEnvironmentId": "env-toy-2d-trivial",
+        "computedEnvironmentTier": "toy",
+        "computedBranchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+        "computedRefinementLevel": "L0-2x2",
+        "targetSource": "synthetic-toy-v1",
+        "targetProvenance": "synthetic-toy-v1",
+        "targetEvidenceTier": "toy-placeholder",
+        "targetEnvironmentTier": "toy"
+      },
+      {
+        "observableId": "fermionic-eigenvalue-ratio-2",
+        "targetLabel": "fermionic-mode-2-ratio-control",
+        "targetValue": 2,
+        "targetUncertainty": 0.4,
+        "computedValue": 2,
+        "computedUncertainty": 0.15,
+        "pull": 0,
+        "passed": true,
+        "computedEnvironmentId": "env-toy-2d-trivial",
+        "computedEnvironmentTier": "toy",
+        "computedBranchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+        "computedRefinementLevel": "L0-2x2",
+        "targetSource": "synthetic-toy-v1",
+        "targetProvenance": "synthetic-toy-v1",
+        "targetEvidenceTier": "toy-placeholder",
+        "targetEnvironmentTier": "toy"
+      },
+      {
+        "observableId": "bosonic-eigenvalue-ratio-1",
+        "targetLabel": "bosonic-mode-1-ratio-derived-synthetic",
+        "targetValue": 0.085,
+        "targetUncertainty": 0.015,
+        "computedValue": 0.091,
+        "computedUncertainty": 0.01,
+        "pull": 0.33282011773513703,
+        "passed": true,
+        "computedEnvironmentId": "env-structured-4x4",
+        "computedEnvironmentTier": "structured",
+        "computedBranchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+        "computedRefinementLevel": "L1-4x4",
+        "targetSource": "derived-synthetic-su2-model-v2",
+        "targetProvenance": "derived-synthetic-su2-model-v2",
+        "targetEvidenceTier": "derived-synthetic",
+        "targetEnvironmentTier": "structured"
+      },
+      {
+        "observableId": "fermionic-eigenvalue-ratio-1",
+        "targetLabel": "fermionic-mode-1-ratio-small-sample",
+        "targetValue": 0.06,
+        "targetUncertainty": 0.02,
+        "computedValue": 0.055,
+        "computedUncertainty": 0.008,
+        "pull": 0.1641330410746531,
+        "passed": true,
+        "notes": "student-t; nu=4.",
+        "computedEnvironmentId": "env-toy-2d-trivial",
+        "computedEnvironmentTier": "toy",
+        "computedBranchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+        "computedRefinementLevel": "L0-2x2",
+        "targetSource": "synthetic-small-sample-v1",
+        "targetProvenance": "synthetic-small-sample-v1",
+        "targetEvidenceTier": "toy-placeholder",
+        "targetEnvironmentTier": "toy"
+      },
+      {
+        "observableId": "bosonic-eigenvalue-ratio-2",
+        "targetLabel": "bosonic-mode-2-imported-geometry-benchmark",
+        "targetValue": 0.6,
+        "targetUncertainty": 0.05,
+        "computedValue": 0.98,
+        "computedUncertainty": 0.05,
+        "pull": 5.37401153701776,
+        "passed": false,
+        "notes": "gaussian-asymmetric; using upper sigma=0.05.",
+        "computedEnvironmentId": "env-imported-synthetic-example",
+        "computedEnvironmentTier": "imported",
+        "computedBranchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+        "computedRefinementLevel": "imported-example",
+        "targetSource": "imported-geometry-benchmark-v1",
+        "targetProvenance": "imported-geometry-benchmark-v1",
+        "targetEvidenceTier": "evidence-grade",
+        "targetEnvironmentId": "env-imported-synthetic-example",
+        "targetEnvironmentTier": "imported"
+      }
+    ],
+    "totalPassed": 7,
+    "totalFailed": 1,
+    "overallScore": 0.875,
+    "calibrationPolicyId": "phase5-sigma5-policy",
+    "provenance": {
+      "createdAt": "2026-03-16T00:00:00+00:00",
+      "codeRevision": "phase7-real-atlas-env-aware-v1",
+      "branch": {
+        "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+        "schemaVersion": "1.0"
+      },
+      "backend": "cpu",
+      "notes": "Phase VII standard evidence campaign: real persisted toy-control atlas for the bridge path, origin-labeled sidecars, multi-environment observables, and environment-aware mixed target tiers."
+    }
+  },
+  "falsifierSummary": {
+    "studyId": "phase5-su2-branch-refinement-env-validation",
+    "schemaVersion": "1.0.0",
+    "falsifiers": [
+      {
+        "falsifierId": "falsifier-0001",
+        "schemaVersion": "1.0.0",
+        "falsifierType": "quantitative-mismatch",
+        "severity": "high",
+        "targetId": "bosonic-eigenvalue-ratio-2",
+        "branchId": "unknown",
+        "environmentId": "env-imported-synthetic-example",
+        "triggerValue": 5.37401153701776,
+        "description": "Observable \u0027bosonic-eigenvalue-ratio-2\u0027 failed target match \u0027bosonic-mode-2-imported-geometry-benchmark\u0027: pull=5.374 (computed=0.98, target=0.6).",
+        "evidence": "TargetMatchRecord observableId=bosonic-eigenvalue-ratio-2 targetLabel=bosonic-mode-2-imported-geometry-benchmark computedEnvironmentId=env-imported-synthetic-example",
+        "active": true,
+        "provenance": {
+          "createdAt": "2026-03-16T00:00:00+00:00",
+          "codeRevision": "phase7-real-atlas-env-aware-v1",
+          "branch": {
+            "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+            "schemaVersion": "1.0"
+          },
+          "backend": "cpu",
+          "notes": "Phase VII standard evidence campaign: real persisted toy-control atlas for the bridge path, origin-labeled sidecars, multi-environment observables, and environment-aware mixed target tiers."
+        }
+      },
+      {
+        "falsifierId": "falsifier-0002",
+        "schemaVersion": "1.0.0",
+        "falsifierType": "representation-content",
+        "severity": "fatal",
+        "targetId": "fermion-registry-phase4-toy-v1-0000",
+        "branchId": "unknown",
+        "triggerValue": 1,
+        "threshold": 0,
+        "description": "Candidate \u0027fermion-registry-phase4-toy-v1-0000\u0027 exposes only 1 persisted family source(s); at least 2 are required for the reference representation-content check.",
+        "evidence": "RepresentationContentRecord recordId=rep-fermion-registry-phase4-toy-v1-0000 candidateId=fermion-registry-phase4-toy-v1-0000 missingRequiredCount=1",
+        "active": true,
+        "provenance": {
+          "createdAt": "2026-03-16T00:00:00+00:00",
+          "codeRevision": "phase7-real-atlas-env-aware-v1",
+          "branch": {
+            "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+            "schemaVersion": "1.0"
+          },
+          "backend": "cpu",
+          "notes": "Phase VII standard evidence campaign: real persisted toy-control atlas for the bridge path, origin-labeled sidecars, multi-environment observables, and environment-aware mixed target tiers."
+        }
+      }
+    ],
+    "activeFatalCount": 1,
+    "activeHighCount": 1,
+    "totalActiveCount": 2,
+    "observationRecordCount": 3,
+    "environmentRecordCount": 5,
+    "representationRecordCount": 3,
+    "couplingRecordCount": 3,
+    "evaluationCoverage": [
+      {
+        "channelId": "observation-chain",
+        "status": "evaluated",
+        "inputCount": 3,
+        "outputCount": 3,
+        "originCounts": {
+          "bridge-derived": 3
+        }
+      },
+      {
+        "channelId": "environment-variance",
+        "status": "evaluated",
+        "inputCount": 5,
+        "outputCount": 5,
+        "originCounts": {
+          "bridge-derived": 5
+        }
+      },
+      {
+        "channelId": "representation-content",
+        "status": "evaluated",
+        "inputCount": 3,
+        "outputCount": 3,
+        "originCounts": {
+          "bridge-derived": 3
+        }
+      },
+      {
+        "channelId": "coupling-consistency",
+        "status": "evaluated",
+        "inputCount": 3,
+        "outputCount": 3,
+        "originCounts": {
+          "upstream-sourced": 3
+        }
+      }
+    ],
+    "provenance": {
+      "createdAt": "2026-03-16T00:00:00+00:00",
+      "codeRevision": "phase7-real-atlas-env-aware-v1",
+      "branch": {
+        "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+        "schemaVersion": "1.0"
+      },
+      "backend": "cpu",
+      "notes": "Phase VII standard evidence campaign: real persisted toy-control atlas for the bridge path, origin-labeled sidecars, multi-environment observables, and environment-aware mixed target tiers."
+    }
+  },
+  "claimEscalations": [
+    {
+      "recordId": "escalation-0001",
+      "schemaVersion": "1.0.0",
+      "candidateId": "fermion-registry-phase4-toy-v1-0000",
+      "registryType": "fermion",
+      "currentClaimClass": "C2_BranchStableCandidate",
+      "proposedClaimClass": "C0_NumericalMode",
+      "direction": "demotion",
+      "gateResults": [
+        {
+          "gateId": "branch-robust",
+          "description": "Candidate survives admissible branch variations (invariance class covers \u003E 50% of variants).",
+          "passed": true,
+          "evidence": "Passed.",
+          "required": true
+        },
+        {
+          "gateId": "refinement-bounded",
+          "description": "Continuum estimate has error band \u003C 10% of extrapolated value.",
+          "passed": true,
+          "evidence": "Passed.",
+          "required": true
+        },
+        {
+          "gateId": "multi-environment",
+          "description": "Quantity computed on at least 2 distinct environment tiers.",
+          "passed": true,
+          "evidence": "Environment tiers covered: 3.",
+          "required": true
+        },
+        {
+          "gateId": "observation-chain-valid",
+          "description": "Observation provenance chain is complete and low-sensitivity.",
+          "passed": true,
+          "evidence": "ObservationChainRecord: complete, passed, low sensitivity.",
+          "required": true
+        },
+        {
+          "gateId": "quantitative-match",
+          "description": "At least one target match passed for this candidate.",
+          "passed": true,
+          "evidence": "Passed.",
+          "required": true
+        },
+        {
+          "gateId": "no-active-fatal-falsifier",
+          "description": "No active fatal falsifier targets this candidate.",
+          "passed": false,
+          "evidence": "Active fatal falsifier found.",
+          "required": true
+        }
+      ],
+      "allGatesPassed": false,
+      "demotionOrBlockReason": "Fatal falsifier active \u2014 demoted to C0.",
+      "sourceStudyId": "phase5-dossier-assembler",
+      "evidenceTier": "RegeneratedCpu",
+      "recordedAt": "2026-03-15T13:06:20.016431+00:00",
+      "provenance": {
+        "createdAt": "2026-03-16T00:00:00+00:00",
+        "codeRevision": "phase7-real-atlas-env-aware-v1",
+        "branch": {
+          "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu",
+        "notes": "Phase VII standard evidence campaign: real persisted toy-control atlas for the bridge path, origin-labeled sidecars, multi-environment observables, and environment-aware mixed target tiers."
+      }
+    },
+    {
+      "recordId": "escalation-0002",
+      "schemaVersion": "1.0.0",
+      "candidateId": "fermion-registry-phase4-toy-v1-0001",
+      "registryType": "fermion",
+      "currentClaimClass": "C3_ObservedStableCandidate",
+      "proposedClaimClass": "C4_ObservationConsistentCandidate",
+      "direction": "escalation",
+      "gateResults": [
+        {
+          "gateId": "branch-robust",
+          "description": "Candidate survives admissible branch variations (invariance class covers \u003E 50% of variants).",
+          "passed": true,
+          "evidence": "Passed.",
+          "required": true
+        },
+        {
+          "gateId": "refinement-bounded",
+          "description": "Continuum estimate has error band \u003C 10% of extrapolated value.",
+          "passed": true,
+          "evidence": "Passed.",
+          "required": true
+        },
+        {
+          "gateId": "multi-environment",
+          "description": "Quantity computed on at least 2 distinct environment tiers.",
+          "passed": true,
+          "evidence": "Environment tiers covered: 3.",
+          "required": true
+        },
+        {
+          "gateId": "observation-chain-valid",
+          "description": "Observation provenance chain is complete and low-sensitivity.",
+          "passed": true,
+          "evidence": "ObservationChainRecord: complete, passed, low sensitivity.",
+          "required": true
+        },
+        {
+          "gateId": "quantitative-match",
+          "description": "At least one target match passed for this candidate.",
+          "passed": true,
+          "evidence": "Passed.",
+          "required": true
+        },
+        {
+          "gateId": "no-active-fatal-falsifier",
+          "description": "No active fatal falsifier targets this candidate.",
+          "passed": true,
+          "evidence": "No active fatal falsifiers.",
+          "required": true
+        }
+      ],
+      "allGatesPassed": true,
+      "sourceStudyId": "phase5-dossier-assembler",
+      "evidenceTier": "RegeneratedCpu",
+      "recordedAt": "2026-03-15T13:06:20.0165001+00:00",
+      "provenance": {
+        "createdAt": "2026-03-16T00:00:00+00:00",
+        "codeRevision": "phase7-real-atlas-env-aware-v1",
+        "branch": {
+          "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu",
+        "notes": "Phase VII standard evidence campaign: real persisted toy-control atlas for the bridge path, origin-labeled sidecars, multi-environment observables, and environment-aware mixed target tiers."
+      }
+    },
+    {
+      "recordId": "escalation-0003",
+      "schemaVersion": "1.0.0",
+      "candidateId": "fermion-registry-phase4-toy-v1-0002",
+      "registryType": "fermion",
+      "currentClaimClass": "C3_ObservedStableCandidate",
+      "proposedClaimClass": "C4_ObservationConsistentCandidate",
+      "direction": "escalation",
+      "gateResults": [
+        {
+          "gateId": "branch-robust",
+          "description": "Candidate survives admissible branch variations (invariance class covers \u003E 50% of variants).",
+          "passed": true,
+          "evidence": "Passed.",
+          "required": true
+        },
+        {
+          "gateId": "refinement-bounded",
+          "description": "Continuum estimate has error band \u003C 10% of extrapolated value.",
+          "passed": true,
+          "evidence": "Passed.",
+          "required": true
+        },
+        {
+          "gateId": "multi-environment",
+          "description": "Quantity computed on at least 2 distinct environment tiers.",
+          "passed": true,
+          "evidence": "Environment tiers covered: 3.",
+          "required": true
+        },
+        {
+          "gateId": "observation-chain-valid",
+          "description": "Observation provenance chain is complete and low-sensitivity.",
+          "passed": true,
+          "evidence": "ObservationChainRecord: complete, passed, low sensitivity.",
+          "required": true
+        },
+        {
+          "gateId": "quantitative-match",
+          "description": "At least one target match passed for this candidate.",
+          "passed": true,
+          "evidence": "Passed.",
+          "required": true
+        },
+        {
+          "gateId": "no-active-fatal-falsifier",
+          "description": "No active fatal falsifier targets this candidate.",
+          "passed": true,
+          "evidence": "No active fatal falsifiers.",
+          "required": true
+        }
+      ],
+      "allGatesPassed": true,
+      "sourceStudyId": "phase5-dossier-assembler",
+      "evidenceTier": "RegeneratedCpu",
+      "recordedAt": "2026-03-15T13:06:20.0165023+00:00",
+      "provenance": {
+        "createdAt": "2026-03-16T00:00:00+00:00",
+        "codeRevision": "phase7-real-atlas-env-aware-v1",
+        "branch": {
+          "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu",
+        "notes": "Phase VII standard evidence campaign: real persisted toy-control atlas for the bridge path, origin-labeled sidecars, multi-environment observables, and environment-aware mixed target tiers."
+      }
+    }
+  ],
+  "negativeResults": [
+    {
+      "entryId": "neg-0001",
+      "schemaVersion": "1.0.0",
+      "category": "representation-content",
+      "description": "Candidate \u0027fermion-registry-phase4-toy-v1-0000\u0027 exposes only 1 persisted family source(s); at least 2 are required for the reference representation-content check.",
+      "affectedCandidateIds": [],
+      "sourceStudyId": "phase5-dossier-assembler",
+      "impliesDemotion": true,
+      "recommendedAction": "demote-candidate",
+      "evidenceTier": "RegeneratedCpu",
+      "recordedAt": "2026-03-15T13:06:20.016832+00:00"
+    }
+  ],
+  "observationChainSummary": [
+    {
+      "candidateId": "fermion-registry-phase4-toy-v1-0000",
+      "primarySourceId": "cluster-0",
+      "observableId": "bosonic-eigenvalue-ratio-1",
+      "nativeArtifactRef": "spectral:bg-toy2d-cos-sin-su2-v1",
+      "observedArtifactRef": "observable:bosonic-eigenvalue-ratio-1:env-imported-synthetic-example",
+      "extractionArtifactRef": "registry:fermion-registry-phase4-toy-v1-0000",
+      "auxiliaryModelId": "phase4-observation-pipeline-bridge",
+      "completenessStatus": "complete",
+      "sensitivityScore": 0.2,
+      "auxiliaryModelSensitivity": 0.16,
+      "passed": true,
+      "notes": "Bridge-derived from persisted spectral artifact \u0027bg-toy2d-cos-sin-su2-v1\u0027 and registry observation confidence 0.",
+      "origin": "bridge-derived",
+      "sourceArtifactRefs": [
+        "/home/josh/Documents/GitHub/GeometricUnity/studies/phase4_fermion_family_atlas_001/output/fermion_spectral_result.json",
+        "/home/josh/Documents/GitHub/GeometricUnity/studies/phase4_fermion_family_atlas_001/output/unified_particle_registry.json",
+        "/home/josh/Documents/GitHub/GeometricUnity/studies/phase5_su2_branch_refinement_env_validation/config/observables.json"
+      ],
+      "provenance": {
+        "createdAt": "2026-03-15T13:05:59.8983816+00:00",
+        "codeRevision": "cli",
+        "branch": {
+          "branchId": "cli",
+          "schemaVersion": "1.0.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "candidateId": "fermion-registry-phase4-toy-v1-0001",
+      "primarySourceId": "cluster-1",
+      "observableId": "bosonic-eigenvalue-ratio-2",
+      "nativeArtifactRef": "spectral:bg-toy2d-cos-sin-su2-v1",
+      "observedArtifactRef": "observable:bosonic-eigenvalue-ratio-2:env-imported-synthetic-example",
+      "extractionArtifactRef": "registry:fermion-registry-phase4-toy-v1-0001",
+      "auxiliaryModelId": "phase4-observation-pipeline-bridge",
+      "completenessStatus": "complete",
+      "sensitivityScore": 0.22,
+      "auxiliaryModelSensitivity": 0.18,
+      "passed": true,
+      "notes": "Bridge-derived from persisted spectral artifact \u0027bg-toy2d-cos-sin-su2-v1\u0027 and registry observation confidence 0.",
+      "origin": "bridge-derived",
+      "sourceArtifactRefs": [
+        "/home/josh/Documents/GitHub/GeometricUnity/studies/phase4_fermion_family_atlas_001/output/fermion_spectral_result.json",
+        "/home/josh/Documents/GitHub/GeometricUnity/studies/phase4_fermion_family_atlas_001/output/unified_particle_registry.json",
+        "/home/josh/Documents/GitHub/GeometricUnity/studies/phase5_su2_branch_refinement_env_validation/config/observables.json"
+      ],
+      "provenance": {
+        "createdAt": "2026-03-15T13:05:59.8983816+00:00",
+        "codeRevision": "cli",
+        "branch": {
+          "branchId": "cli",
+          "schemaVersion": "1.0.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "candidateId": "fermion-registry-phase4-toy-v1-0002",
+      "primarySourceId": "cluster-2",
+      "observableId": "bosonic-eigenvalue-ratio-3",
+      "nativeArtifactRef": "spectral:bg-toy2d-cos-sin-su2-v1",
+      "observedArtifactRef": "observable:bosonic-eigenvalue-ratio-3:env-imported-synthetic-example",
+      "extractionArtifactRef": "registry:fermion-registry-phase4-toy-v1-0002",
+      "auxiliaryModelId": "phase4-observation-pipeline-bridge",
+      "completenessStatus": "complete",
+      "sensitivityScore": 0.24000000000000002,
+      "auxiliaryModelSensitivity": 0.2,
+      "passed": true,
+      "notes": "Bridge-derived from persisted spectral artifact \u0027bg-toy2d-cos-sin-su2-v1\u0027 and registry observation confidence 0.",
+      "origin": "bridge-derived",
+      "sourceArtifactRefs": [
+        "/home/josh/Documents/GitHub/GeometricUnity/studies/phase4_fermion_family_atlas_001/output/fermion_spectral_result.json",
+        "/home/josh/Documents/GitHub/GeometricUnity/studies/phase4_fermion_family_atlas_001/output/unified_particle_registry.json",
+        "/home/josh/Documents/GitHub/GeometricUnity/studies/phase5_su2_branch_refinement_env_validation/config/observables.json"
+      ],
+      "provenance": {
+        "createdAt": "2026-03-15T13:05:59.8983816+00:00",
+        "codeRevision": "cli",
+        "branch": {
+          "branchId": "cli",
+          "schemaVersion": "1.0.0"
+        },
+        "backend": "cpu"
+      }
+    }
+  ],
+  "sidecarCoverage": {
+    "studyId": "unified_particle_registry",
+    "schemaVersion": "1.0.0",
+    "channels": [
+      {
+        "channelId": "observation-chain",
+        "status": "evaluated",
+        "inputCount": 3,
+        "outputCount": 3,
+        "originCounts": {
+          "bridge-derived": 3
+        }
+      },
+      {
+        "channelId": "environment-variance",
+        "status": "evaluated",
+        "inputCount": 5,
+        "outputCount": 5,
+        "originCounts": {
+          "bridge-derived": 5
+        }
+      },
+      {
+        "channelId": "representation-content",
+        "status": "evaluated",
+        "inputCount": 3,
+        "outputCount": 3,
+        "originCounts": {
+          "bridge-derived": 3
+        }
+      },
+      {
+        "channelId": "coupling-consistency",
+        "status": "evaluated",
+        "inputCount": 3,
+        "outputCount": 3,
+        "originCounts": {
+          "upstream-sourced": 3
+        }
+      }
+    ],
+    "provenance": {
+      "createdAt": "2026-03-15T13:05:59.8983816+00:00",
+      "codeRevision": "cli",
+      "branch": {
+        "branchId": "cli",
+        "schemaVersion": "1.0.0"
+      },
+      "backend": "cpu"
+    }
+  },
+  "freshness": "regenerated-current-code",
+  "generatedAt": "2026-03-15T13:06:20.0169286+00:00",
+  "provenance": {
+    "createdAt": "2026-03-16T00:00:00+00:00",
+    "codeRevision": "phase7-real-atlas-env-aware-v1",
+    "branch": {
+      "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu",
+    "notes": "Phase VII standard evidence campaign: real persisted toy-control atlas for the bridge path, origin-labeled sidecars, multi-environment observables, and environment-aware mixed target tiers."
+  }
+}

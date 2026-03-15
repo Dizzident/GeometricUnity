@@ -7,7 +7,7 @@ namespace Gu.Phase5.Falsification;
 /// Records the variance of a computed quantity across environment tiers (M50).
 /// Used to trigger EnvironmentInstability falsifiers when variance is excessive.
 /// </summary>
-public sealed class EnvironmentVarianceRecord
+public sealed class EnvironmentVarianceRecord : ISidecarEvidenceRecord
 {
     /// <summary>Identifier for this variance record.</summary>
     [JsonPropertyName("recordId")]
@@ -36,6 +36,14 @@ public sealed class EnvironmentVarianceRecord
     /// <summary>Optional description or notes.</summary>
     [JsonPropertyName("notes")]
     public string? Notes { get; init; }
+
+    /// <summary>Origin classification for this sidecar record.</summary>
+    [JsonPropertyName("origin")]
+    public string Origin { get; init; } = "bridge-derived";
+
+    /// <summary>Artifact references used to support this record.</summary>
+    [JsonPropertyName("sourceArtifactRefs")]
+    public IReadOnlyList<string>? SourceArtifactRefs { get; init; }
 
     /// <summary>Provenance of the backend that produced this record.</summary>
     [JsonPropertyName("provenance")]

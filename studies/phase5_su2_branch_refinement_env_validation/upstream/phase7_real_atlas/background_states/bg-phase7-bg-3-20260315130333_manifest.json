@@ -1,0 +1,39 @@
+{
+  "branchId": "phase7-real-atlas-control",
+  "schemaVersion": "1.0.0",
+  "sourceEquationRevision": "manuscript-r1",
+  "codeRevision": "phase7-real-atlas-control",
+  "activeGeometryBranch": "simplicial-patch-v1",
+  "activeObservationBranch": "sigma-pullback-v1",
+  "activeTorsionBranch": "trivial-torsion",
+  "activeShiabBranch": "identity-shiab",
+  "activeGaugeStrategy": "penalty",
+  "baseDimension": 2,
+  "ambientDimension": 5,
+  "lieAlgebraId": "su2",
+  "basisConventionId": "standard-basis",
+  "componentOrderId": "edge-major",
+  "adjointConventionId": "killing-form",
+  "pairingConventionId": "trace-pairing",
+  "normConventionId": "L2-norm",
+  "differentialFormMetricId": "hodge-standard",
+  "insertedAssumptionIds": [
+    "IA-1",
+    "IA-2",
+    "IA-3",
+    "IA-4",
+    "IA-5",
+    "IA-6"
+  ],
+  "insertedChoiceIds": [
+    "IX-1",
+    "IX-2",
+    "IX-3",
+    "IX-4",
+    "IX-5"
+  ],
+  "parameters": {
+    "gaugePenaltyWeight": "1.0",
+    "solverMaxIter": "200"
+  }
+}

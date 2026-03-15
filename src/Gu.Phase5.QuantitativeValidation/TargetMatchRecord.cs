@@ -45,4 +45,40 @@ public sealed class TargetMatchRecord
     /// <summary>Optional note (e.g., "computed uncertainty unestimated, using target sigma only").</summary>
     [JsonPropertyName("notes")]
     public string? Notes { get; init; }
+
+    /// <summary>Environment ID of the computed observable that supplied this match.</summary>
+    [JsonPropertyName("computedEnvironmentId")]
+    public string? ComputedEnvironmentId { get; init; }
+
+    /// <summary>Environment tier of the computed observable that supplied this match.</summary>
+    [JsonPropertyName("computedEnvironmentTier")]
+    public string? ComputedEnvironmentTier { get; init; }
+
+    /// <summary>Branch ID of the computed observable that supplied this match.</summary>
+    [JsonPropertyName("computedBranchId")]
+    public string? ComputedBranchId { get; init; }
+
+    /// <summary>Refinement level of the computed observable that supplied this match.</summary>
+    [JsonPropertyName("computedRefinementLevel")]
+    public string? ComputedRefinementLevel { get; init; }
+
+    /// <summary>Target source label carried through from the external target table.</summary>
+    [JsonPropertyName("targetSource")]
+    public string? TargetSource { get; init; }
+
+    /// <summary>Optional target provenance label carried through from the external target table.</summary>
+    [JsonPropertyName("targetProvenance")]
+    public string? TargetProvenance { get; init; }
+
+    /// <summary>Evidence tier for the matched target.</summary>
+    [JsonPropertyName("targetEvidenceTier")]
+    public string? TargetEvidenceTier { get; init; }
+
+    /// <summary>Requested environment ID selector from the target, if any.</summary>
+    [JsonPropertyName("targetEnvironmentId")]
+    public string? TargetEnvironmentId { get; init; }
+
+    /// <summary>Requested environment tier selector from the target, if any.</summary>
+    [JsonPropertyName("targetEnvironmentTier")]
+    public string? TargetEnvironmentTier { get; init; }
 }

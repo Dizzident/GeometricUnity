@@ -48,6 +48,7 @@ public static class BridgeValueExporter
         // --- 1. Branch quantity values ---
         // One level per admitted background record; level ID = derived variant ID.
         var sourceRecordIds = new List<string>();
+        var sourceStateArtifactRefs = new List<string>();
         var derivedVariantIds = new List<string>();
         var branchLevels = new List<RefinementQuantityValueLevel>();
 
@@ -57,6 +58,7 @@ public static class BridgeValueExporter
             var quantities = BackgroundRecordBranchVariantBridge.ExtractQuantityValues(record);
 
             sourceRecordIds.Add(record.BackgroundId);
+            sourceStateArtifactRefs.Add(record.StateArtifactRef);
             derivedVariantIds.Add(variantId);
 
             // Flatten single-element arrays → scalar for the value table
@@ -146,6 +148,7 @@ public static class BridgeValueExporter
             ManifestId = manifestId,
             SourceAtlasPath = atlasSourcePath,
             SourceRecordIds = sourceRecordIds,
+            SourceStateArtifactRefs = sourceStateArtifactRefs,
             DerivedVariantIds = derivedVariantIds,
             Provenance = provenance,
         };

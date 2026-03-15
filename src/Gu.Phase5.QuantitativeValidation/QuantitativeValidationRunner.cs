@@ -1,4 +1,5 @@
 using Gu.Core;
+using Gu.Phase5.Environments;
 
 namespace Gu.Phase5.QuantitativeValidation;
 
@@ -25,7 +26,8 @@ public sealed class QuantitativeValidationRunner
         IReadOnlyList<QuantitativeObservableRecord> observables,
         ExternalTargetTable targetTable,
         CalibrationPolicy policy,
-        ProvenanceMeta provenance)
+        ProvenanceMeta provenance,
+        IReadOnlyList<EnvironmentRecord>? environmentRecords = null)
     {
         ArgumentNullException.ThrowIfNull(studyId);
         ArgumentNullException.ThrowIfNull(observables);
@@ -33,21 +35,25 @@ public sealed class QuantitativeValidationRunner
         ArgumentNullException.ThrowIfNull(policy);
         ArgumentNullException.ThrowIfNull(provenance);
 
-        // Index observables by observableId (take first if duplicates)
-        var obsIndex = new Dictionary<string, QuantitativeObservableRecord>(StringComparer.Ordinal);
-        foreach (var obs in observables)
-        {
-            if (!obsIndex.ContainsKey(obs.ObservableId))
-                obsIndex[obs.ObservableId] = obs;
-        }
+        var envTierById = (environmentRecords ?? Array.Empty<EnvironmentRecord>())
+            .GroupBy(r => r.EnvironmentId, StringComparer.Ordinal)
+            .ToDictionary(g => g.Key, g => g.First().GeometryTier, StringComparer.Ordinal);
 
         var matches = new List<TargetMatchRecord>();
         foreach (var target in targetTable.Targets)
         {
-            if (!obsIndex.TryGetValue(target.ObservableId, out var obs))
+            var candidates = observables
+                .Where(obs => string.Equals(obs.ObservableId, target.ObservableId, StringComparison.Ordinal))
+                .Where(obs => MatchesRequestedEnvironment(obs, target, envTierById))
+                .ToList();
+
+            if (candidates.Count == 0)
                 continue; // No computed observable for this target — skip
 
-            var match = TargetMatcher.Match(obs, target, policy);
+            var obs = SelectObservable(candidates, envTierById);
+            envTierById.TryGetValue(obs.EnvironmentId, out var computedEnvironmentTier);
+
+            var match = TargetMatcher.Match(obs, target, policy, computedEnvironmentTier);
             matches.Add(match);
         }
 
@@ -66,5 +72,60 @@ public sealed class QuantitativeValidationRunner
             CalibrationPolicyId = policy.PolicyId,
             Provenance = provenance,
         };
+    }
+
+    private static bool MatchesRequestedEnvironment(
+        QuantitativeObservableRecord observable,
+        ExternalTarget target,
+        IReadOnlyDictionary<string, string> envTierById)
+    {
+        if (!string.IsNullOrWhiteSpace(target.TargetEnvironmentId) &&
+            !string.Equals(observable.EnvironmentId, target.TargetEnvironmentId, StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        if (!string.IsNullOrWhiteSpace(target.TargetEnvironmentTier))
+        {
+            envTierById.TryGetValue(observable.EnvironmentId, out var observableTier);
+            if (!string.Equals(observableTier, target.TargetEnvironmentTier, StringComparison.Ordinal))
+                return false;
+        }
+
+        return true;
+    }
+
+    private static QuantitativeObservableRecord SelectObservable(
+        IReadOnlyList<QuantitativeObservableRecord> candidates,
+        IReadOnlyDictionary<string, string> envTierById)
+    {
+        return candidates
+            .OrderBy(obs => obs.Uncertainty.TotalUncertainty < 0 ? 1 : 0)
+            .ThenBy(obs => obs.Uncertainty.TotalUncertainty < 0 ? double.PositiveInfinity : obs.Uncertainty.TotalUncertainty)
+            .ThenByDescending(obs => RefinementRank(obs.RefinementLevel))
+            .ThenByDescending(obs => EnvironmentTierRank(envTierById.TryGetValue(obs.EnvironmentId, out var tier) ? tier : null))
+            .ThenBy(obs => obs.EnvironmentId, StringComparer.Ordinal)
+            .ThenBy(obs => obs.BranchId, StringComparer.Ordinal)
+            .ThenBy(obs => obs.RefinementLevel ?? string.Empty, StringComparer.Ordinal)
+            .First();
+    }
+
+    private static int EnvironmentTierRank(string? tier) => tier switch
+    {
+        "imported" => 3,
+        "structured" => 2,
+        "toy" => 1,
+        _ => 0,
+    };
+
+    private static int RefinementRank(string? refinementLevel)
+    {
+        if (string.IsNullOrWhiteSpace(refinementLevel))
+            return 0;
+
+        if (refinementLevel.StartsWith('L') && refinementLevel.Length >= 2 && char.IsDigit(refinementLevel[1]))
+            return refinementLevel[1] - '0';
+
+        return 0;
     }
 }

@@ -1,0 +1,17 @@
+Solving background study: phase7-real-bridge-atlas-first-order-shiab
+  Specs: 4
+
+Background atlas built:
+  Atlas ID: atlas-phase7-real-bridge-atlas-first-order-shiab-20260315131229
+  Total attempts: 4
+  Admitted: 4
+  Rejected: 0
+    B2: 4
+  bg-phase7-first-order-bg-0-20260315131229: B2 residual=0.000000E+000 stationarity=0.000000E+000
+  bg-phase7-first-order-bg-1-20260315131229: B2 residual=0.000000E+000 stationarity=0.000000E+000
+  bg-phase7-first-order-bg-2-20260315131229: B2 residual=0.000000E+000 stationarity=0.000000E+000
+  bg-phase7-first-order-bg-3-20260315131229: B2 residual=0.000000E+000 stationarity=0.000000E+000
+
+Atlas written to: studies/phase5_su2_branch_refinement_env_validation/upstream/phase7_first_order_shiab_real_atlas/atlas.json
+Records written to: studies/phase5_su2_branch_refinement_env_validation/upstream/phase7_first_order_shiab_real_atlas/background_records
+State tensors written to: studies/phase5_su2_branch_refinement_env_validation/upstream/phase7_first_order_shiab_real_atlas/background_states (4 omega files)

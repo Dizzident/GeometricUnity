@@ -156,13 +156,21 @@ public sealed class TargetMatcherTests
             Value = target.Value,
             Uncertainty = target.Uncertainty,
             Source = target.Source,
+            TargetProvenance = "my-target-provenance",
+            EvidenceTier = "derived-synthetic",
+            TargetEnvironmentTier = "toy",
         };
 
-        var match = TargetMatcher.Match(obs, target, DefaultPolicy);
+        var match = TargetMatcher.Match(obs, target, DefaultPolicy, computedEnvironmentTier: "toy");
 
         Assert.Equal("my-target", match.TargetLabel);
         Assert.Equal(1.0, match.TargetValue);
         Assert.Equal(1.0, match.ComputedValue);
+        Assert.Equal("env-toy", match.ComputedEnvironmentId);
+        Assert.Equal("toy", match.ComputedEnvironmentTier);
+        Assert.Equal("derived-synthetic", match.TargetEvidenceTier);
+        Assert.Equal("my-target-provenance", match.TargetProvenance);
+        Assert.Equal("toy", match.TargetEnvironmentTier);
     }
 
     // ─── WP-11: distribution model tests ───
