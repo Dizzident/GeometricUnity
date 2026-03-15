@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/representation_content.schema.json",
+  "title": "RepresentationContentRecord",
+  "description": "Records a structural representation content check for a candidate (M50). Written as representation_content.json by build-phase5-sidecars (P6-M3).",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "recordId",
+      "candidateId",
+      "expectedModeCount",
+      "observedModeCount",
+      "consistent"
+    ],
+    "properties": {
+      "recordId": {
+        "type": "string",
+        "description": "Identifier for this record."
+      },
+      "candidateId": {
+        "type": "string",
+        "description": "Candidate or particle ID being checked."
+      },
+      "expectedModeCount": {
+        "type": "integer",
+        "description": "Expected number of modes for this representation.",
+        "minimum": 0
+      },
+      "observedModeCount": {
+        "type": "integer",
+        "description": "Observed number of modes in the spectrum.",
+        "minimum": 0
+      },
+      "missingRequiredCount": {
+        "type": "integer",
+        "description": "Number of required representation content items that are absent. Triggers Fatal falsifier when > 0.",
+        "minimum": 0
+      },
+      "structuralMismatchScore": {
+        "type": "number",
+        "description": "Structural mismatch score (0-1). Triggers High falsifier when > RepresentationContentThreshold.",
+        "minimum": 0,
+        "maximum": 1
+      },
+      "consistent": {
+        "type": "boolean",
+        "description": "Whether the mode count is consistent with the expected representation."
+      },
+      "inconsistencyDescription": {
+        "type": ["string", "null"],
+        "description": "Optional description of the inconsistency."
+      },
+      "provenance": {
+        "type": ["object", "null"],
+        "description": "Provenance of the backend that produced this record."
+      }
+    },
+    "additionalProperties": false
+  }
+}

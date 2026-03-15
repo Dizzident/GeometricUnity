@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/observation_chain.schema.json",
+  "title": "ObservationChainRecord",
+  "description": "Summarizes the observation pipeline chain for a single candidate/observable pair (WP-6/D-007). Written as observation_chain.json by build-phase5-sidecars (P6-M3).",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "candidateId",
+      "primarySourceId",
+      "observableId",
+      "completenessStatus",
+      "sensitivityScore",
+      "auxiliaryModelSensitivity",
+      "passed",
+      "provenance"
+    ],
+    "properties": {
+      "candidateId": {
+        "type": "string",
+        "description": "Joins to UnifiedParticleRecord.ParticleId."
+      },
+      "primarySourceId": {
+        "type": "string",
+        "description": "Joins to UnifiedParticleRecord.PrimarySourceId."
+      },
+      "observableId": {
+        "type": "string",
+        "description": "Observable identifier."
+      },
+      "nativeArtifactRef": {
+        "type": ["string", "null"],
+        "description": "Artifact reference for the native (pre-observation) artifact."
+      },
+      "observedArtifactRef": {
+        "type": ["string", "null"],
+        "description": "Artifact reference for the observed artifact."
+      },
+      "extractionArtifactRef": {
+        "type": ["string", "null"],
+        "description": "Artifact reference for the extracted observable."
+      },
+      "auxiliaryModelId": {
+        "type": ["string", "null"],
+        "description": "ID of the auxiliary model used for extraction."
+      },
+      "completenessStatus": {
+        "type": "string",
+        "description": "Completeness status.",
+        "enum": ["complete", "partial", "missing"]
+      },
+      "sensitivityScore": {
+        "type": "number",
+        "description": "Sensitivity score of the observable to extractor perturbations (0-1). Lower is better.",
+        "minimum": 0,
+        "maximum": 1
+      },
+      "auxiliaryModelSensitivity": {
+        "type": "number",
+        "description": "Sensitivity score of the auxiliary model (0-1). Lower is better.",
+        "minimum": 0,
+        "maximum": 1
+      },
+      "passed": {
+        "type": "boolean",
+        "description": "True if the observation chain passed all checks."
+      },
+      "notes": {
+        "type": ["string", "null"],
+        "description": "Optional notes about the observation chain result."
+      },
+      "provenance": {
+        "type": "object",
+        "description": "Provenance metadata."
+      }
+    },
+    "additionalProperties": false
+  }
+}

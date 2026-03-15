@@ -1,6 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Gu.Core;
+using Gu.Core.Serialization;
 
 namespace Gu.Phase5.Falsification;
 
@@ -34,17 +35,39 @@ public sealed class FalsifierSummary
     [JsonPropertyName("totalActiveCount")]
     public required int TotalActiveCount { get; init; }
 
+    /// <summary>Number of ObservationChainRecord inputs evaluated (P6-M3/D-P6-002).</summary>
+    [JsonPropertyName("observationRecordCount")]
+    public int ObservationRecordCount { get; init; }
+
+    /// <summary>Number of EnvironmentVarianceRecord inputs evaluated (P6-M3/D-P6-002).</summary>
+    [JsonPropertyName("environmentRecordCount")]
+    public int EnvironmentRecordCount { get; init; }
+
+    /// <summary>Number of RepresentationContentRecord inputs evaluated (P6-M3/D-P6-002).</summary>
+    [JsonPropertyName("representationRecordCount")]
+    public int RepresentationRecordCount { get; init; }
+
+    /// <summary>Number of CouplingConsistencyRecord inputs evaluated (P6-M3/D-P6-002).</summary>
+    [JsonPropertyName("couplingRecordCount")]
+    public int CouplingRecordCount { get; init; }
+
+    /// <summary>
+    /// Per-channel evaluation coverage from sidecar generation (P6-M3/D-P6-002).
+    /// Null when no sidecars were generated for this evaluation run.
+    /// </summary>
+    [JsonPropertyName("evaluationCoverage")]
+    public IReadOnlyList<SidecarChannelStatus>? EvaluationCoverage { get; init; }
+
     /// <summary>Provenance metadata.</summary>
     [JsonPropertyName("provenance")]
     public required ProvenanceMeta Provenance { get; init; }
 
     /// <summary>Serialize to JSON.</summary>
     public string ToJson(bool indented = true)
-        => JsonSerializer.Serialize(this, new JsonSerializerOptions { WriteIndented = indented });
+        => GuJsonDefaults.Serialize(this);
 
     /// <summary>Deserialize from JSON.</summary>
     public static FalsifierSummary FromJson(string json)
-        => JsonSerializer.Deserialize<FalsifierSummary>(json,
-               new JsonSerializerOptions { PropertyNameCaseInsensitive = true })
+        => GuJsonDefaults.Deserialize<FalsifierSummary>(json)
            ?? throw new InvalidOperationException("Failed to deserialize FalsifierSummary.");
 }

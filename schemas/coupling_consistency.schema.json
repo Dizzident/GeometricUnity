@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/coupling_consistency.schema.json",
+  "title": "CouplingConsistencyRecord",
+  "description": "Records coupling proxy consistency across branch variants for a candidate (M50). Written as coupling_consistency.json by build-phase5-sidecars (P6-M3).",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "recordId",
+      "candidateId",
+      "couplingType",
+      "relativeSpread",
+      "consistent"
+    ],
+    "properties": {
+      "recordId": {
+        "type": "string",
+        "description": "Identifier for this record."
+      },
+      "candidateId": {
+        "type": "string",
+        "description": "Candidate or particle ID being checked."
+      },
+      "couplingType": {
+        "type": "string",
+        "description": "Coupling type or label (e.g., 'gauge', 'yukawa')."
+      },
+      "relativeSpread": {
+        "type": "number",
+        "description": "Relative spread of the coupling proxy across branch variants: (max - min) / mean.",
+        "minimum": 0
+      },
+      "consistent": {
+        "type": "boolean",
+        "description": "Whether the coupling is consistent (spread below policy threshold)."
+      },
+      "notes": {
+        "type": ["string", "null"],
+        "description": "Optional description."
+      },
+      "provenance": {
+        "type": ["object", "null"],
+        "description": "Provenance of the backend that produced this record."
+      }
+    },
+    "additionalProperties": false
+  }
+}

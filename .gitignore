@@ -60,6 +60,10 @@ CMakeFiles/
 # Benchmark output
 benchmark-results/
 
+# Generated reports
+reports/phase5_gap_closure_batch/
+reports/tmp_test/
+
 # User-specific
 *.rsuser
 launchSettings.json

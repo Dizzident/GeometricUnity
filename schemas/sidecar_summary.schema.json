@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/sidecar_summary.schema.json",
+  "title": "SidecarSummary",
+  "description": "Summary of a sidecar generation run, reporting per-channel coverage. Written as sidecar_summary.json by build-phase5-sidecars (P6-M3/D-P6-002).",
+  "type": "object",
+  "required": ["studyId", "channels", "provenance"],
+  "properties": {
+    "studyId": {
+      "type": "string",
+      "description": "Study identifier."
+    },
+    "schemaVersion": {
+      "type": "string",
+      "description": "Schema version.",
+      "default": "1.0.0"
+    },
+    "channels": {
+      "type": "array",
+      "description": "Per-channel status records.",
+      "items": {
+        "type": "object",
+        "required": ["channelId", "status", "inputCount", "outputCount"],
+        "properties": {
+          "channelId": {
+            "type": "string",
+            "description": "Channel identifier.",
+            "enum": [
+              "observation-chain",
+              "environment-variance",
+              "representation-content",
+              "coupling-consistency"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "description": "Channel status: evaluated (records present), skipped (empty list supplied), absent (inputs were null).",
+            "enum": ["evaluated", "skipped", "absent"]
+          },
+          "inputCount": {
+            "type": "integer",
+            "description": "Number of input records supplied to this channel.",
+            "minimum": 0
+          },
+          "outputCount": {
+            "type": "integer",
+            "description": "Number of records written to the output sidecar file.",
+            "minimum": 0
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "description": "Provenance metadata."
+    }
+  },
+  "additionalProperties": false
+}

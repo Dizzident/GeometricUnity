@@ -1,0 +1,37 @@
+{
+  "environmentId": "env-imported-synthetic-example",
+  "geometryTier": "imported",
+  "geometryFingerprint": "imported-synthetic-su2-2d-v1",
+  "baseDimension": 2,
+  "ambientDimension": 2,
+  "edgeCount": 24,
+  "faceCount": 8,
+  "admissibility": {
+    "level": "imported",
+    "checks": [
+      {
+        "checkId": "dataset-provenance-present",
+        "description": "Imported tier requires datasetId, sourceHash, and conversionVersion",
+        "passed": true
+      },
+      {
+        "checkId": "min-face-count",
+        "description": "Face count meets imported-tier minimum (>= 4)",
+        "passed": true,
+        "value": 8.0,
+        "threshold": 4.0
+      }
+    ],
+    "passed": true,
+    "notes": "SYNTHETIC EXAMPLE: This is a fabricated imported-tier record for testing and reference purposes only. No real external dataset was used. In a real evidence-grade campaign, replace datasetId/sourceHash/conversionVersion with genuine values from the actual imported mesh source."
+  },
+  "datasetId": "synthetic-example-dataset-su2-2d-001",
+  "sourceHash": "sha256-0000000000000000000000000000000000000000000000000000000000000000",
+  "conversionVersion": "gu-mesh-converter-v1.0-example",
+  "provenance": {
+    "createdAt": "2026-03-14T00:00:00+00:00",
+    "codeRevision": "phase6-m4-env-upgrade-v1",
+    "branch": { "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega", "schemaVersion": "1.0" },
+    "backend": "cpu"
+  }
+}

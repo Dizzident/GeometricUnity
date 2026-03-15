@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/phase5_campaign.schema.json",
+  "title": "Phase5CampaignSpec",
+  "description": "Specification for a Phase V end-to-end campaign (M53). Drives the full pipeline: branch independence, convergence, environments, quantitative validation, falsification, claim escalation, dossier assembly.",
+  "type": "object",
+  "required": [
+    "campaignId",
+    "schemaVersion",
+    "branchFamilySpec",
+    "refinementSpec",
+    "environmentCampaignSpec",
+    "externalTargetTablePath",
+    "calibrationPolicy",
+    "falsificationPolicy",
+    "provenance",
+    "branchQuantityValuesPath",
+    "refinementValuesPath",
+    "observablesPath",
+    "environmentRecordPaths",
+    "registryPath"
+  ],
+  "properties": {
+    "campaignId": {
+      "type": "string",
+      "description": "Unique campaign identifier"
+    },
+    "schemaVersion": {
+      "type": "string",
+      "description": "Schema version. Use >= 1.1.0 for reference campaigns with sidecars.",
+      "default": "1.0.0"
+    },
+    "branchFamilySpec": {
+      "$ref": "#/$defs/BranchRobustnessStudySpec",
+      "description": "Branch-robustness study specification (M46)"
+    },
+    "refinementSpec": {
+      "$ref": "#/$defs/RefinementStudySpec",
+      "description": "Refinement study specification (M47)"
+    },
+    "environmentCampaignSpec": {
+      "$ref": "#/$defs/EnvironmentCampaignSpec",
+      "description": "Environment campaign specification (M48)"
+    },
+    "externalTargetTablePath": {
+      "type": "string",
+      "description": "Path to the external target table JSON file (M49)"
+    },
+    "calibrationPolicy": {
+      "$ref": "#/$defs/CalibrationPolicy",
+      "description": "Calibration policy for quantitative validation (M49)"
+    },
+    "falsificationPolicy": {
+      "type": "object",
+      "description": "Falsification policy (M50)"
+    },
+    "provenance": {
+      "$ref": "#/$defs/ProvenanceMeta",
+      "description": "Provenance metadata"
+    },
+    "branchQuantityValuesPath": {
+      "type": "string",
+      "description": "Path to the branch quantity values JSON file (RefinementQuantityValueTable format)"
+    },
+    "refinementValuesPath": {
+      "type": "string",
+      "description": "Path to the refinement values JSON file (RefinementQuantityValueTable format)"
+    },
+    "observablesPath": {
+      "type": "string",
+      "description": "Path to the observables JSON file (array of QuantitativeObservableRecord)"
+    },
+    "environmentRecordPaths": {
+      "type": "array",
+      "description": "Paths to environment record JSON files. Reference campaigns require at least 2 (toy + structured).",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "registryPath": {
+      "type": "string",
+      "description": "Path to the unified registry JSON file"
+    },
+    "observationChainPath": {
+      "type": ["string", "null"],
+      "description": "Optional path to the observation chain JSON file (array of ObservationChainRecord). Required in reference mode."
+    },
+    "environmentVariancePath": {
+      "type": ["string", "null"],
+      "description": "Optional path to the environment variance JSON file (array of EnvironmentVarianceRecord). Required in reference mode."
+    },
+    "representationContentPath": {
+      "type": ["string", "null"],
+      "description": "Optional path to the representation content JSON file (array of RepresentationContentRecord). Required in reference mode."
+    },
+    "couplingConsistencyPath": {
+      "type": ["string", "null"],
+      "description": "Optional path to the coupling consistency JSON file (array of CouplingConsistencyRecord). Required in reference mode."
+    }
+  },
+  "$defs": {
+    "BranchRobustnessStudySpec": {
+      "type": "object",
+      "required": ["studyId", "branchVariantIds", "targetQuantityIds"],
+      "properties": {
+        "studyId": { "type": "string" },
+        "branchVariantIds": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "targetQuantityIds": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        }
+      }
+    },
+    "RefinementStudySpec": {
+      "type": "object",
+      "required": ["studyId", "branchManifestId", "targetQuantities", "refinementLevels"],
+      "properties": {
+        "studyId": { "type": "string" },
+        "schemaVersion": { "type": "string" },
+        "branchManifestId": { "type": "string" },
+        "targetQuantities": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "refinementLevels": {
+          "type": "array",
+          "items": { "type": "object" },
+          "minItems": 2
+        },
+        "provenance": { "$ref": "#/$defs/ProvenanceMeta" }
+      }
+    },
+    "EnvironmentCampaignSpec": {
+      "type": "object",
+      "required": ["campaignId", "environmentIds", "branchManifestId", "targetQuantities"],
+      "properties": {
+        "campaignId": { "type": "string" },
+        "schemaVersion": { "type": "string" },
+        "environmentIds": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "branchManifestId": { "type": "string" },
+        "targetQuantities": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "provenance": { "$ref": "#/$defs/ProvenanceMeta" }
+      }
+    },
+    "CalibrationPolicy": {
+      "type": "object",
+      "required": ["policyId", "mode"],
+      "properties": {
+        "policyId": { "type": "string" },
+        "mode": { "type": "string", "enum": ["sigma", "chi2", "fixed"] },
+        "sigmaThreshold": { "type": "number" }
+      }
+    },
+    "ProvenanceMeta": {
+      "type": "object",
+      "required": ["createdAt", "codeRevision", "branch"],
+      "properties": {
+        "createdAt": { "type": "string", "format": "date-time" },
+        "codeRevision": { "type": "string" },
+        "branch": { "type": "object" },
+        "backend": { "type": "string" },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

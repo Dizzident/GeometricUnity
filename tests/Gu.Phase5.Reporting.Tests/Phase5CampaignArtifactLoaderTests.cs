@@ -358,6 +358,159 @@ public sealed class Phase5CampaignArtifactLoaderTests : IDisposable
         Assert.Null(artifacts.CouplingConsistencyRecords);
     }
 
+    // ─── P6-M4: Environment and target upgrade tests ───
+
+    /// <summary>
+    /// P6-M4: Reference campaign must include at least one toy AND one structured environment record (D-P6-004).
+    /// Verifies the upgraded campaign.json satisfies the multi-environment requirement.
+    /// </summary>
+    [Fact]
+    public void ReferenceStudyCampaign_HasToyAndStructuredEnvironments()
+    {
+        var repoRoot = FindRepoRoot();
+        var specPath = Path.Combine(
+            repoRoot,
+            "studies",
+            "phase5_su2_branch_refinement_env_validation",
+            "config",
+            "campaign.json");
+        var spec = GuJsonDefaults.Deserialize<Phase5CampaignSpec>(File.ReadAllText(specPath));
+        Assert.NotNull(spec);
+
+        var artifacts = Phase5CampaignArtifactLoader.Load(spec, Path.GetDirectoryName(specPath)!);
+
+        var tiers = artifacts.EnvironmentRecords.Select(r => r.GeometryTier).ToList();
+        Assert.Contains("toy", tiers);
+        Assert.Contains("structured", tiers);
+    }
+
+    /// <summary>
+    /// P6-M4: Reference campaign includes an imported environment record with all required provenance fields (D-P6-004).
+    /// </summary>
+    [Fact]
+    public void ReferenceStudyCampaign_ImportedEnvironmentHasRequiredProvenance()
+    {
+        var repoRoot = FindRepoRoot();
+        var specPath = Path.Combine(
+            repoRoot,
+            "studies",
+            "phase5_su2_branch_refinement_env_validation",
+            "config",
+            "campaign.json");
+        var spec = GuJsonDefaults.Deserialize<Phase5CampaignSpec>(File.ReadAllText(specPath));
+        Assert.NotNull(spec);
+
+        var artifacts = Phase5CampaignArtifactLoader.Load(spec, Path.GetDirectoryName(specPath)!);
+
+        var importedRecords = artifacts.EnvironmentRecords
+            .Where(r => r.GeometryTier == "imported")
+            .ToList();
+
+        Assert.NotEmpty(importedRecords);
+        foreach (var record in importedRecords)
+        {
+            Assert.NotNull(record.DatasetId);
+            Assert.NotEmpty(record.DatasetId);
+            Assert.NotNull(record.SourceHash);
+            Assert.NotEmpty(record.SourceHash);
+            Assert.NotNull(record.ConversionVersion);
+            Assert.NotEmpty(record.ConversionVersion);
+        }
+    }
+
+    /// <summary>
+    /// P6-M4: Reference campaign includes the 4 sidecar paths required by schema 1.1.0 (D-P6-001).
+    /// </summary>
+    [Fact]
+    public void ReferenceStudyCampaign_HasAllFourSidecarPaths()
+    {
+        var repoRoot = FindRepoRoot();
+        var specPath = Path.Combine(
+            repoRoot,
+            "studies",
+            "phase5_su2_branch_refinement_env_validation",
+            "config",
+            "campaign.json");
+        var spec = GuJsonDefaults.Deserialize<Phase5CampaignSpec>(File.ReadAllText(specPath));
+        Assert.NotNull(spec);
+
+        Assert.NotNull(spec.ObservationChainPath);
+        Assert.NotNull(spec.EnvironmentVariancePath);
+        Assert.NotNull(spec.RepresentationContentPath);
+        Assert.NotNull(spec.CouplingConsistencyPath);
+    }
+
+    /// <summary>
+    /// P6-M4: All targets in the reference study target table have an explicit distributionModel (D-P6-005).
+    /// </summary>
+    [Fact]
+    public void ReferenceStudyTargets_AllHaveExplicitDistributionModel()
+    {
+        var repoRoot = FindRepoRoot();
+        var specPath = Path.Combine(
+            repoRoot,
+            "studies",
+            "phase5_su2_branch_refinement_env_validation",
+            "config",
+            "campaign.json");
+        var spec = GuJsonDefaults.Deserialize<Phase5CampaignSpec>(File.ReadAllText(specPath));
+        Assert.NotNull(spec);
+
+        var artifacts = Phase5CampaignArtifactLoader.Load(spec, Path.GetDirectoryName(specPath)!);
+
+        Assert.NotEmpty(artifacts.TargetTable.Targets);
+        Assert.All(artifacts.TargetTable.Targets, t =>
+        {
+            Assert.NotNull(t.DistributionModel);
+            Assert.NotEmpty(t.DistributionModel);
+            // Must be one of the known distribution models
+            Assert.Contains(t.DistributionModel,
+                new[] { "gaussian", "gaussian-asymmetric", "student-t" });
+        });
+    }
+
+    /// <summary>
+    /// P6-M4: Reference campaign schema version must be 1.1.0 (D-P6-001).
+    /// </summary>
+    [Fact]
+    public void ReferenceStudyCampaign_SchemaVersionIs110()
+    {
+        var repoRoot = FindRepoRoot();
+        var specPath = Path.Combine(
+            repoRoot,
+            "studies",
+            "phase5_su2_branch_refinement_env_validation",
+            "config",
+            "campaign.json");
+        var spec = GuJsonDefaults.Deserialize<Phase5CampaignSpec>(File.ReadAllText(specPath));
+        Assert.NotNull(spec);
+
+        Assert.Equal("1.1.0", spec.SchemaVersion);
+    }
+
+    /// <summary>
+    /// P6-M4: A campaign with only toy environment records fails the "toy-only" check.
+    /// This test documents the expected behavior for the Phase VI validator (P6-M1).
+    /// Until the validator is implemented, we verify the spec loads and that the
+    /// environment tier list contains only "toy" — so any validator implementation
+    /// must reject it.
+    /// </summary>
+    [Fact]
+    public void ToyOnlyCampaign_EnvironmentTiers_ContainsOnlyToy()
+    {
+        // Build a spec with only a toy environment record
+        var spec = WriteArtifactsAndMakeSpec();
+        var artifacts = Phase5CampaignArtifactLoader.Load(spec, _tempDir);
+
+        var tiers = artifacts.EnvironmentRecords.Select(r => r.GeometryTier).ToList();
+        // The toy-only spec loaded from WriteArtifactsAndMakeSpec has only "toy" tier
+        Assert.DoesNotContain("structured", tiers);
+        Assert.DoesNotContain("imported", tiers);
+        Assert.Contains("toy", tiers);
+        // A Phase VI validator must reject this as a primary evidence campaign
+        // (tested in Phase5CampaignValidatorTests once P6-M1 is implemented)
+    }
+
     private static string FindRepoRoot()
     {
         var current = new DirectoryInfo(AppContext.BaseDirectory);

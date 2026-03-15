@@ -1,6 +1,6 @@
 {
-  "tableId": "su2-branch-refinement-env-targets-v1",
-  "description": "Synthetic toy targets for Phase V M53 reference study. All values are eigenvalue RATIOS (ratio of eigenvalue i to eigenvalue 0). All targets use targetProvenance=synthetic-toy-v1 and evidenceTier=toy-placeholder with 30-50% uncertainties.",
+  "tableId": "su2-branch-refinement-env-targets-v2",
+  "description": "Target table for Phase VI reference campaign. All targets carry explicit distributionModel. Targets are labeled by evidence tier: toy-placeholder (arbitrary synthetic), derived-synthetic (analytically constructed from known model), or evidence-grade (externally motivated). Phase VI rule D-P6-005: every target must have an explicit distributionModel.",
   "targets": [
     {
       "observableId": "bosonic-eigenvalue-ratio-1",
@@ -10,7 +10,8 @@
       "source": "synthetic-toy-v1",
       "targetProvenance": "synthetic-toy-v1",
       "evidenceTier": "toy-placeholder",
-      "notes": "Ratio of second bosonic eigenvalue to first; 40% uncertainty (toy placeholder)"
+      "distributionModel": "gaussian",
+      "notes": "Ratio of second bosonic eigenvalue to first; 40% uncertainty. Gaussian: no physical justification for heavy tails at this tier."
     },
     {
       "observableId": "bosonic-eigenvalue-ratio-2",
@@ -20,7 +21,8 @@
       "source": "synthetic-toy-v1",
       "targetProvenance": "synthetic-toy-v1",
       "evidenceTier": "toy-placeholder",
-      "notes": "Ratio of third bosonic eigenvalue to first; 40% uncertainty (toy placeholder)"
+      "distributionModel": "gaussian",
+      "notes": "Ratio of third bosonic eigenvalue to first; 40% uncertainty. Gaussian: symmetric placeholder."
     },
     {
       "observableId": "bosonic-eigenvalue-ratio-3",
@@ -30,7 +32,8 @@
       "source": "synthetic-toy-v1",
       "targetProvenance": "synthetic-toy-v1",
       "evidenceTier": "toy-placeholder",
-      "notes": "Ratio of fourth bosonic eigenvalue to first; 40% uncertainty (toy placeholder)"
+      "distributionModel": "gaussian",
+      "notes": "Ratio of fourth bosonic eigenvalue to first; 40% uncertainty. Gaussian: symmetric placeholder."
     },
     {
       "observableId": "fermionic-eigenvalue-ratio-1",
@@ -40,7 +43,8 @@
       "source": "synthetic-toy-v1",
       "targetProvenance": "synthetic-toy-v1",
       "evidenceTier": "toy-placeholder",
-      "notes": "Ratio of second fermionic eigenvalue to first; 40% uncertainty (toy placeholder)"
+      "distributionModel": "gaussian",
+      "notes": "Ratio of second fermionic eigenvalue to first; 40% uncertainty. Gaussian: symmetric placeholder."
     },
     {
       "observableId": "fermionic-eigenvalue-ratio-2",
@@ -50,7 +54,31 @@
       "source": "synthetic-toy-v1",
       "targetProvenance": "synthetic-toy-v1",
       "evidenceTier": "toy-placeholder",
-      "notes": "Ratio of third fermionic eigenvalue to first; 40% uncertainty (toy placeholder)"
+      "distributionModel": "gaussian",
+      "notes": "Ratio of third fermionic eigenvalue to first; 40% uncertainty. Gaussian: symmetric placeholder."
+    },
+    {
+      "observableId": "bosonic-eigenvalue-ratio-1",
+      "label": "bosonic-mode-1-ratio-derived-synthetic",
+      "value": 0.08,
+      "uncertainty": 0.025,
+      "source": "derived-synthetic-su2-model-v1",
+      "targetProvenance": "derived-synthetic-su2-model-v1",
+      "evidenceTier": "derived-synthetic",
+      "distributionModel": "gaussian",
+      "notes": "Derived-synthetic: ratio analytically constructed from a known SU(2) toy model spectrum. Gaussian is correct — analytically derived ratios have symmetric error propagation; gaussian-asymmetric would require physical justification for directional uncertainty (physicist guidance)."
+    },
+    {
+      "observableId": "fermionic-eigenvalue-ratio-1",
+      "label": "fermionic-mode-1-ratio-small-sample",
+      "value": 0.06,
+      "uncertainty": 0.03,
+      "source": "synthetic-small-sample-v1",
+      "targetProvenance": "synthetic-small-sample-v1",
+      "evidenceTier": "toy-placeholder",
+      "distributionModel": "student-t",
+      "studentTDegreesOfFreedom": 4.0,
+      "notes": "Small-sample example: N=5 samples, nu=N-1=4 (physicist guidance: nu=4 gives scale factor sqrt(4/2)=sqrt(2)~1.414, meaningfully wider than Gaussian; never use nu<=2 as variance is undefined). Not evidence-grade."
     }
   ]
 }

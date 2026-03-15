@@ -260,4 +260,182 @@ public sealed class TargetMatcherTests
         Assert.NotNull(match1.Notes);
         Assert.Contains("student-t", match1.Notes);
     }
+
+    // ─── P6-M4: Reference study distribution model regression ───
+
+    /// <summary>
+    /// The 5 toy-placeholder targets in the reference study external_targets.json all use
+    /// distributionModel="gaussian". Verify pull computation is consistent with Gaussian formula.
+    /// </summary>
+    [Theory]
+    [InlineData("bosonic-eigenvalue-ratio-1", 0.1, 0.04)]
+    [InlineData("bosonic-eigenvalue-ratio-2", 1.0, 0.4)]
+    [InlineData("bosonic-eigenvalue-ratio-3", 5.0, 2.0)]
+    [InlineData("fermionic-eigenvalue-ratio-1", 0.05, 0.02)]
+    [InlineData("fermionic-eigenvalue-ratio-2", 2.0, 0.8)]
+    public void ReferenceStudyToyTargets_GaussianModel_PullMatchesFormula(
+        string observableId, double targetValue, double targetSigma)
+    {
+        double computedValue = targetValue;  // exact match → pull = 0
+        var obs = new QuantitativeObservableRecord
+        {
+            ObservableId = observableId,
+            Value = computedValue,
+            Uncertainty = new QuantitativeUncertainty
+            {
+                BranchVariation = 0.01,
+                RefinementError = 0.01,
+                ExtractionError = 0,
+                EnvironmentSensitivity = 0,
+                TotalUncertainty = 0.02,
+            },
+            BranchId = "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+            EnvironmentId = "env-toy-2d-trivial",
+            ExtractionMethod = "eigenvalue-ratio",
+            Provenance = MakeProvenance(),
+        };
+        var target = new ExternalTarget
+        {
+            Label = observableId + "-toy",
+            ObservableId = observableId,
+            Value = targetValue,
+            Uncertainty = targetSigma,
+            Source = "synthetic-toy-v1",
+            EvidenceTier = "toy-placeholder",
+            DistributionModel = "gaussian",
+        };
+        var policy = new CalibrationPolicy
+        {
+            PolicyId = "phase5-sigma5-policy",
+            Mode = "sigma",
+            SigmaThreshold = 5.0,
+        };
+
+        var match = TargetMatcher.Match(obs, target, policy);
+
+        // Exact match → pull = 0
+        Assert.Equal(0.0, match.Pull, precision: 10);
+        Assert.True(match.Passed);
+    }
+
+    /// <summary>
+    /// The derived-synthetic target in the reference study uses distributionModel="gaussian"
+    /// (physicist guidance: analytically derived ratios have symmetric error propagation;
+    /// gaussian-asymmetric requires physical justification for directional uncertainty).
+    /// Verify it behaves identically to the standard gaussian formula.
+    /// </summary>
+    [Fact]
+    public void ReferenceStudyDerivedSynthetic_GaussianModel_SymmetricPull()
+    {
+        // Reference study derived-synthetic target: value=0.08, sigma=0.025
+        double targetValue = 0.08;
+        double targetSigma = 0.025;
+        double computedValue = 0.09;
+
+        var obs = new QuantitativeObservableRecord
+        {
+            ObservableId = "bosonic-eigenvalue-ratio-1",
+            Value = computedValue,
+            Uncertainty = new QuantitativeUncertainty
+            {
+                BranchVariation = 0,
+                RefinementError = 0,
+                ExtractionError = 0,
+                EnvironmentSensitivity = 0,
+                TotalUncertainty = 0,
+            },
+            BranchId = "V1",
+            EnvironmentId = "env-toy",
+            ExtractionMethod = "eigenvalue-ratio",
+            Provenance = MakeProvenance(),
+        };
+        var target = new ExternalTarget
+        {
+            Label = "bosonic-mode-1-ratio-derived-synthetic",
+            ObservableId = "bosonic-eigenvalue-ratio-1",
+            Value = targetValue,
+            Uncertainty = targetSigma,
+            Source = "derived-synthetic-su2-model-v1",
+            EvidenceTier = "derived-synthetic",
+            DistributionModel = "gaussian",
+        };
+        var policy = new CalibrationPolicy
+        {
+            PolicyId = "phase5-sigma5-policy",
+            Mode = "sigma",
+            SigmaThreshold = 5.0,
+        };
+
+        var match = TargetMatcher.Match(obs, target, policy);
+
+        // pull = |0.09 - 0.08| / sqrt(0 + 0.025^2) = 0.01 / 0.025 = 4.0 < 5.0 → passes
+        double expectedPull = System.Math.Abs(computedValue - targetValue) / targetSigma;
+        Assert.Equal(expectedPull, match.Pull, precision: 10);
+        Assert.True(match.Passed);
+    }
+
+    /// <summary>
+    /// The small-sample student-t target uses distributionModel="student-t" with nu=4
+    /// (physicist guidance: nu = N-1 for N=5 samples; scale = sqrt(4/2) = sqrt(2) ≈ 1.414).
+    /// Verify the student-t scaling is applied consistently.
+    /// </summary>
+    [Fact]
+    public void ReferenceStudySmallSample_StudentTTarget_Nu4_ScaledPullIsCorrect()
+    {
+        // Reference study student-t target: value=0.06, sigma=0.03, nu=4 (N-1 for N=5)
+        double targetValue = 0.06;
+        double targetSigma = 0.03;
+        double nu = 4.0;
+        double computedValue = 0.09; // 1-sigma raw deviation from target
+
+        var obs = new QuantitativeObservableRecord
+        {
+            ObservableId = "fermionic-eigenvalue-ratio-1",
+            Value = computedValue,
+            Uncertainty = new QuantitativeUncertainty
+            {
+                BranchVariation = 0,
+                RefinementError = 0,
+                ExtractionError = 0,
+                EnvironmentSensitivity = 0,
+                TotalUncertainty = 0,
+            },
+            BranchId = "V1",
+            EnvironmentId = "env-toy",
+            ExtractionMethod = "eigenvalue-ratio",
+            Provenance = MakeProvenance(),
+        };
+        var target = new ExternalTarget
+        {
+            Label = "fermionic-mode-1-ratio-small-sample",
+            ObservableId = "fermionic-eigenvalue-ratio-1",
+            Value = targetValue,
+            Uncertainty = targetSigma,
+            Source = "synthetic-small-sample-v1",
+            EvidenceTier = "toy-placeholder",
+            DistributionModel = "student-t",
+            StudentTDegreesOfFreedom = nu,
+        };
+        var policy = new CalibrationPolicy
+        {
+            PolicyId = "phase5-sigma5-policy",
+            Mode = "sigma",
+            SigmaThreshold = 5.0,
+        };
+
+        var match = TargetMatcher.Match(obs, target, policy);
+
+        // Expected: raw pull = |0.09 - 0.06| / sqrt(0 + 0.03^2) = 1.0
+        // scaled pull = 1.0 / sqrt(4/(4-2)) = 1.0 / sqrt(2) ≈ 0.7071
+        double tScale = System.Math.Sqrt(nu / (nu - 2.0));
+        double rawPull = System.Math.Abs(computedValue - targetValue) / targetSigma;
+        double expectedPull = rawPull / tScale;
+
+        Assert.Equal(expectedPull, match.Pull, precision: 10);
+        Assert.True(match.Passed);
+        Assert.NotNull(match.Notes);
+        Assert.Contains("student-t", match.Notes);
+        // nu=4: scale = sqrt(2), wider acceptance than gaussian
+        Assert.True(tScale > 1.0, "Student-t scale must be > 1 to widen acceptance vs gaussian");
+    }
 }

@@ -111,6 +111,12 @@ switch (args[0])
         return VerifyStudyFreshness(args);
     case "run-phase5-campaign":
         return RunPhase5Campaign(args);
+    case "export-phase5-bridge-values":
+        return ExportPhase5BridgeValues(args);
+    case "build-phase5-sidecars":
+        return BuildPhase5Sidecars(args);
+    case "validate-phase5-campaign-spec":
+        return ValidatePhase5CampaignSpec(args);
     default:
         Console.Error.WriteLine($"Unknown command: {args[0]}");
         PrintUsage();
@@ -3708,15 +3714,16 @@ static int RunPhase5Campaign(string[] args)
 {
     var specPath = ParseFlag(args, "--spec", "");
     var outDir = ParseFlag(args, "--out-dir", "");
+    var validateFirst = args.Contains("--validate-first");
 
     if (string.IsNullOrEmpty(specPath))
     {
-        Console.Error.WriteLine("Usage: gu run-phase5-campaign --spec <campaign.json> --out-dir <dir>");
+        Console.Error.WriteLine("Usage: gu run-phase5-campaign --spec <campaign.json> --out-dir <dir> [--validate-first]");
         return 1;
     }
     if (string.IsNullOrEmpty(outDir))
     {
-        Console.Error.WriteLine("Usage: gu run-phase5-campaign --spec <campaign.json> --out-dir <dir>");
+        Console.Error.WriteLine("Usage: gu run-phase5-campaign --spec <campaign.json> --out-dir <dir> [--validate-first]");
         return 1;
     }
     if (!File.Exists(specPath))
@@ -3734,6 +3741,20 @@ static int RunPhase5Campaign(string[] args)
     }
 
     var specDir = Path.GetDirectoryName(Path.GetFullPath(specPath))!;
+
+    // --validate-first: run Phase5CampaignSpecValidator before loading artifacts (D-P6-001)
+    if (validateFirst)
+    {
+        var validationResult = Phase5CampaignSpecValidator.Validate(spec, specDir, requireReferenceSidecars: true);
+        if (!validationResult.IsValid)
+        {
+            Console.Error.WriteLine($"Campaign spec validation failed ({validationResult.Errors.Count} error(s)):");
+            foreach (var error in validationResult.Errors)
+                Console.Error.WriteLine($"  - {error}");
+            return 1;
+        }
+        Console.WriteLine("Campaign spec validation: OK");
+    }
 
     // Load all campaign artifacts
     Phase5CampaignArtifacts artifacts;
@@ -3801,6 +3822,34 @@ static int RunPhase5Campaign(string[] args)
     Directory.CreateDirectory(Path.Combine(outDir, "falsification"));
     Directory.CreateDirectory(Path.Combine(outDir, "dossiers"));
     Directory.CreateDirectory(Path.Combine(outDir, "reports"));
+    Directory.CreateDirectory(Path.Combine(outDir, "inputs"));
+
+    // inputs/ — copy authoritative input files for concrete reproduction metadata (D-P6-006)
+    var absSpecPath = Path.GetFullPath(specPath);
+    var inputsDir = Path.Combine(outDir, "inputs");
+    File.Copy(absSpecPath, Path.Combine(inputsDir, "campaign.json"), overwrite: true);
+
+    static void CopyIfExists(string src, string dst)
+    {
+        if (File.Exists(src))
+            File.Copy(src, dst, overwrite: true);
+    }
+
+    CopyIfExists(Path.Combine(specDir, spec.BranchQuantityValuesPath), Path.Combine(inputsDir, "branch_quantity_values.json"));
+    CopyIfExists(Path.Combine(specDir, spec.RefinementValuesPath), Path.Combine(inputsDir, "refinement_values.json"));
+    CopyIfExists(Path.Combine(specDir, spec.ObservablesPath), Path.Combine(inputsDir, "observables.json"));
+    CopyIfExists(Path.Combine(specDir, spec.ExternalTargetTablePath), Path.Combine(inputsDir, "external_targets.json"));
+    CopyIfExists(Path.Combine(specDir, spec.RegistryPath), Path.Combine(inputsDir, "registry.json"));
+    if (spec.ObservationChainPath is not null)
+        CopyIfExists(Path.Combine(specDir, spec.ObservationChainPath), Path.Combine(inputsDir, "observation_chain.json"));
+    if (spec.EnvironmentVariancePath is not null)
+        CopyIfExists(Path.Combine(specDir, spec.EnvironmentVariancePath), Path.Combine(inputsDir, "environment_variance.json"));
+    if (spec.RepresentationContentPath is not null)
+        CopyIfExists(Path.Combine(specDir, spec.RepresentationContentPath), Path.Combine(inputsDir, "representation_content.json"));
+    if (spec.CouplingConsistencyPath is not null)
+        CopyIfExists(Path.Combine(specDir, spec.CouplingConsistencyPath), Path.Combine(inputsDir, "coupling_consistency.json"));
+    for (int i = 0; i < spec.EnvironmentRecordPaths.Count; i++)
+        CopyIfExists(Path.Combine(specDir, spec.EnvironmentRecordPaths[i]), Path.Combine(inputsDir, $"env_record_{i}.json"));
 
     // branch/branch_robustness_record.json
     var branchAtlas = result.Report.BranchIndependenceAtlas;
@@ -3826,11 +3875,21 @@ static int RunPhase5Campaign(string[] args)
     }
 
     // falsification/falsifier_summary.json
-    var falsificationDashboard = result.Report.FalsificationDashboard;
-    if (falsificationDashboard is not null)
+    // Write the full FalsifierSummary (with coverage counts) from the typed dossier when available;
+    // fall back to FalsificationDashboard for backward compatibility (D-P6-002).
+    if (result.TypedDossier.FalsifierSummary is not null)
     {
-        var falsJson = GuJsonDefaults.Serialize(falsificationDashboard);
+        var falsJson = GuJsonDefaults.Serialize(result.TypedDossier.FalsifierSummary);
         File.WriteAllText(Path.Combine(outDir, "falsification", "falsifier_summary.json"), falsJson);
+    }
+    else
+    {
+        var falsificationDashboard = result.Report.FalsificationDashboard;
+        if (falsificationDashboard is not null)
+        {
+            var falsJson = GuJsonDefaults.Serialize(falsificationDashboard);
+            File.WriteAllText(Path.Combine(outDir, "falsification", "falsifier_summary.json"), falsJson);
+        }
     }
 
     // dossiers/phase5_validation_dossier.json
@@ -3842,7 +3901,19 @@ static int RunPhase5Campaign(string[] args)
     File.WriteAllText(Path.Combine(outDir, "dossiers", "validation_dossier.json"), provenanceDossierJson);
 
     // dossiers/study_manifest.json — array of two StudyManifest entries
-    var manifestsJson = GuJsonDefaults.Serialize(result.StudyManifests);
+    // Update reproduction commands to reference the concrete copied inputs (D-P6-006)
+    var concreteReproCmd = $"dotnet run --project apps/Gu.Cli -- run-phase5-campaign --spec inputs/campaign.json --out-dir . --validate-first";
+    var updatedManifests = result.StudyManifests.Select(m => new StudyManifest
+    {
+        StudyId = m.StudyId,
+        Description = m.Description,
+        RunFolder = m.RunFolder,
+        Reproducibility = ReproducibilityBundle.CreateRegeneratedCpu(
+            codeRevision: m.Provenance?.CodeRevision ?? spec.Provenance.CodeRevision,
+            reproductionCommands: [concreteReproCmd]),
+        Provenance = m.Provenance,
+    }).ToList();
+    var manifestsJson = GuJsonDefaults.Serialize(updatedManifests);
     File.WriteAllText(Path.Combine(outDir, "dossiers", "study_manifest.json"), manifestsJson);
 
     // reports/phase5_report.json
@@ -3854,6 +3925,7 @@ static int RunPhase5Campaign(string[] args)
     File.WriteAllText(Path.Combine(outDir, "reports", "phase5_report.md"), md);
 
     Console.WriteLine($"Phase V campaign complete. Output: {outDir}");
+    Console.WriteLine($"  inputs/campaign.json  (+ supporting input copies)");
     Console.WriteLine($"  branch/branch_robustness_record.json");
     Console.WriteLine($"  convergence/refinement_study_result.json");
     Console.WriteLine($"  quantitative/consistency_scorecard.json");
@@ -3864,6 +3936,106 @@ static int RunPhase5Campaign(string[] args)
     Console.WriteLine($"  reports/phase5_report.json");
     Console.WriteLine($"  reports/phase5_report.md");
     Console.WriteLine("run-phase5-campaign done.");
+    return 0;
+}
+
+static int BuildPhase5Sidecars(string[] args)
+{
+    var registryPath = ParseFlag(args, "--registry", "");
+    var observablesPath = ParseFlag(args, "--observables", "");
+    var outDir = ParseFlag(args, "--out-dir", "");
+
+    if (string.IsNullOrEmpty(registryPath) || string.IsNullOrEmpty(outDir))
+    {
+        Console.Error.WriteLine("Usage: gu build-phase5-sidecars --registry <registry.json> --observables <observables.json> --environment-record <env.json>... --out-dir <dir>");
+        return 1;
+    }
+    if (!File.Exists(registryPath))
+    {
+        Console.Error.WriteLine($"Registry file not found: {registryPath}");
+        return 1;
+    }
+
+    // Parse multiple --environment-record flags
+    var envRecordPaths = new List<string>();
+    for (int i = 1; i < args.Length - 1; i++)
+    {
+        if (args[i] == "--environment-record")
+            envRecordPaths.Add(args[i + 1]);
+    }
+
+    // Load registry
+    var registryJson = File.ReadAllText(registryPath);
+    var registry = UnifiedParticleRegistry.FromJson(registryJson);
+
+    // Load observables (optional)
+    IReadOnlyList<QuantitativeObservableRecord>? observables = null;
+    if (!string.IsNullOrEmpty(observablesPath))
+    {
+        if (!File.Exists(observablesPath))
+        {
+            Console.Error.WriteLine($"Observables file not found: {observablesPath}");
+            return 1;
+        }
+        var obsJson = File.ReadAllText(observablesPath);
+        observables = GuJsonDefaults.Deserialize<List<QuantitativeObservableRecord>>(obsJson)
+            ?? new List<QuantitativeObservableRecord>();
+    }
+
+    // Load environment records
+    IReadOnlyList<EnvironmentRecord>? envRecords = null;
+    if (envRecordPaths.Count > 0)
+    {
+        var loaded = new List<EnvironmentRecord>();
+        foreach (var envPath in envRecordPaths)
+        {
+            if (!File.Exists(envPath))
+            {
+                Console.Error.WriteLine($"Environment record file not found: {envPath}");
+                return 1;
+            }
+            var envJson = File.ReadAllText(envPath);
+            var rec = GuJsonDefaults.Deserialize<EnvironmentRecord>(envJson);
+            if (rec is not null)
+                loaded.Add(rec);
+        }
+        envRecords = loaded;
+    }
+
+    // Build a minimal provenance
+    var provenance = new ProvenanceMeta
+    {
+        CreatedAt = DateTimeOffset.UtcNow,
+        CodeRevision = "cli",
+        Branch = new BranchRef { BranchId = "cli", SchemaVersion = "1.0.0" },
+        Backend = "cpu",
+    };
+
+    // Generate sidecars — all four channels are "absent" unless we have external sidecar inputs.
+    // The CLI command wires registry/observables/envRecords for future extension;
+    // current implementation produces the four sidecar files as empty-but-present arrays
+    // (status="skipped") so coverage accounting is explicit.
+    var studyId = Path.GetFileNameWithoutExtension(registryPath);
+    IReadOnlyList<ObservationChainRecord> emptyObsChain = new List<ObservationChainRecord>();
+    IReadOnlyList<EnvironmentVarianceRecord> emptyEnvVar = new List<EnvironmentVarianceRecord>();
+    IReadOnlyList<RepresentationContentRecord> emptyRepContent = new List<RepresentationContentRecord>();
+    IReadOnlyList<CouplingConsistencyRecord> emptyCoupling = new List<CouplingConsistencyRecord>();
+
+    var summary = SidecarGenerator.GenerateSidecars(
+        registry,
+        observables,
+        envRecords,
+        outDir,
+        studyId,
+        provenance,
+        observationChainRecords: emptyObsChain,
+        environmentVarianceRecords: emptyEnvVar,
+        representationContentRecords: emptyRepContent,
+        couplingConsistencyRecords: emptyCoupling);
+
+    Console.WriteLine($"build-phase5-sidecars complete. Output: {outDir}");
+    foreach (var ch in summary.Channels)
+        Console.WriteLine($"  {ch.ChannelId}: {ch.Status} (input={ch.InputCount}, output={ch.OutputCount})");
     return 0;
 }
 
@@ -3915,6 +4087,127 @@ static string GeneratePhase5ReportMarkdown(Phase5Report report, string campaignI
     return sb.ToString();
 }
 
+static int ExportPhase5BridgeValues(string[] args)
+{
+    var atlasPath = ParseFlag(args, "--atlas", "");
+    var refinementSpecPath = ParseFlag(args, "--refinement-spec", "");
+    var outDir = ParseFlag(args, "--out-dir", "");
+
+    if (string.IsNullOrEmpty(atlasPath))
+    {
+        Console.Error.WriteLine("Usage: gu export-phase5-bridge-values --atlas <atlas.json> --refinement-spec <spec.json> --out-dir <dir>");
+        return 1;
+    }
+    if (string.IsNullOrEmpty(refinementSpecPath))
+    {
+        Console.Error.WriteLine("Usage: gu export-phase5-bridge-values --atlas <atlas.json> --refinement-spec <spec.json> --out-dir <dir>");
+        return 1;
+    }
+    if (string.IsNullOrEmpty(outDir))
+    {
+        Console.Error.WriteLine("Usage: gu export-phase5-bridge-values --atlas <atlas.json> --refinement-spec <spec.json> --out-dir <dir>");
+        return 1;
+    }
+
+    if (!File.Exists(atlasPath))
+    {
+        Console.Error.WriteLine($"Atlas file not found: {atlasPath}");
+        return 1;
+    }
+    if (!File.Exists(refinementSpecPath))
+    {
+        Console.Error.WriteLine($"Refinement spec file not found: {refinementSpecPath}");
+        return 1;
+    }
+
+    var atlasJson = File.ReadAllText(atlasPath);
+    var atlas = BackgroundAtlasSerializer.DeserializeAtlas(atlasJson);
+    if (atlas is null)
+    {
+        Console.Error.WriteLine($"Failed to deserialize BackgroundAtlas: {atlasPath}");
+        return 1;
+    }
+
+    var specJson = File.ReadAllText(refinementSpecPath);
+    var refinementSpec = GuJsonDefaults.Deserialize<RefinementStudySpec>(specJson);
+    if (refinementSpec is null)
+    {
+        Console.Error.WriteLine($"Failed to deserialize RefinementStudySpec: {refinementSpecPath}");
+        return 1;
+    }
+
+    var provenance = new ProvenanceMeta
+    {
+        CreatedAt = DateTimeOffset.UtcNow,
+        CodeRevision = "export-phase5-bridge-values",
+        Branch = new BranchRef { BranchId = atlas.StudyId, SchemaVersion = "1.0" },
+        Backend = "cpu",
+        Notes = $"Bridge export from atlas {atlas.AtlasId}",
+    };
+
+    BridgeManifest manifest;
+    try
+    {
+        manifest = BridgeValueExporter.Export(
+            atlas,
+            refinementSpec,
+            atlasSourcePath: Path.GetFullPath(atlasPath),
+            outDir: outDir,
+            provenance: provenance);
+    }
+    catch (Exception ex)
+    {
+        Console.Error.WriteLine($"Bridge export failed: {ex.Message}");
+        return 1;
+    }
+
+    Console.WriteLine($"Bridge export complete. Output: {outDir}");
+    Console.WriteLine($"  branch_quantity_values.json  ({manifest.SourceRecordIds.Count} branch variants)");
+    Console.WriteLine($"  refinement_values.json       ({refinementSpec.RefinementLevels.Count} refinement levels)");
+    Console.WriteLine($"  bridge_manifest.json         (manifestId: {manifest.ManifestId})");
+    Console.WriteLine("export-phase5-bridge-values done.");
+    return 0;
+}
+
+static int ValidatePhase5CampaignSpec(string[] args)
+{
+    var specPath = ParseFlag(args, "--spec", "");
+    var requireSidecars = args.Contains("--require-reference-sidecars");
+
+    if (string.IsNullOrEmpty(specPath))
+    {
+        Console.Error.WriteLine("Usage: gu validate-phase5-campaign-spec --spec <campaign.json> [--require-reference-sidecars]");
+        return 1;
+    }
+    if (!File.Exists(specPath))
+    {
+        Console.Error.WriteLine($"Campaign spec file not found: {specPath}");
+        return 1;
+    }
+
+    var specJson = File.ReadAllText(specPath);
+    var spec = GuJsonDefaults.Deserialize<Phase5CampaignSpec>(specJson);
+    if (spec is null)
+    {
+        Console.Error.WriteLine($"Failed to deserialize Phase5CampaignSpec: {specPath}");
+        return 1;
+    }
+
+    var specDir = Path.GetDirectoryName(Path.GetFullPath(specPath))!;
+    var result = Phase5CampaignSpecValidator.Validate(spec, specDir, requireSidecars);
+
+    if (result.IsValid)
+    {
+        Console.WriteLine($"Campaign spec is valid: {specPath}");
+        return 0;
+    }
+
+    Console.Error.WriteLine($"Campaign spec validation failed ({result.Errors.Count} error(s)):");
+    foreach (var error in result.Errors)
+        Console.Error.WriteLine($"  - {error}");
+    return 1;
+}
+
 static void PrintUsage()
 {
     Console.WriteLine("Geometric Unity CLI");
@@ -3951,7 +4244,10 @@ static void PrintUsage()
     Console.WriteLine("  gu validate-quantitative --observables <f> --targets <f> [--out <f>]  Quantitative validation");
     Console.WriteLine("  gu build-validation-dossier --study-manifest <f> [--out <f>]  Build Phase V validation dossier");
     Console.WriteLine("  gu verify-study-freshness --dossier <f>      Verify study freshness / G-006 compliance");
-    Console.WriteLine("  gu run-phase5-campaign --spec <f> --out-dir <dir>  Run Phase V M53 end-to-end campaign");
+    Console.WriteLine("  gu run-phase5-campaign --spec <f> --out-dir <dir> [--validate-first]  Run Phase V M53 end-to-end campaign");
+    Console.WriteLine("  gu export-phase5-bridge-values --atlas <f> --refinement-spec <f> --out-dir <dir>  Export bridged branch/refinement value tables");
+    Console.WriteLine("  gu build-phase5-sidecars --registry <f> --observables <f> --environment-record <f>... --out-dir <dir>  Generate sidecar evidence files");
+    Console.WriteLine("  gu validate-phase5-campaign-spec --spec <f> [--require-reference-sidecars]  Validate campaign spec paths and reference requirements");
     Console.WriteLine("  gu validate-replay <orig> <replay> [tier]    Validate replay (R0/R1/R2/R3)");
     Console.WriteLine("  gu verify-integrity <run-folder>            Verify or compute integrity hashes");
     Console.WriteLine("  gu validate-schema <file> <schema>          Validate JSON against a schema");

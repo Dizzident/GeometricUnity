@@ -11,6 +11,7 @@
     <ProjectReference Include="..\Gu.Phase5.BranchIndependence\Gu.Phase5.BranchIndependence.csproj" />
     <ProjectReference Include="..\Gu.Phase5.Convergence\Gu.Phase5.Convergence.csproj" />
     <ProjectReference Include="..\Gu.Phase5.QuantitativeValidation\Gu.Phase5.QuantitativeValidation.csproj" />
+    <ProjectReference Include="..\Gu.Phase5.Environments\Gu.Phase5.Environments.csproj" />
   </ItemGroup>
 
 </Project>

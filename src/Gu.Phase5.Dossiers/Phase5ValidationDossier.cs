@@ -90,6 +90,14 @@ public sealed class Phase5ValidationDossier
     public IReadOnlyList<ObservationChainRecord>? ObservationChainSummary { get; init; }
 
     /// <summary>
+    /// Sidecar generation coverage summary (P6-M3/D-P6-002).
+    /// Null when no sidecars were generated for this study run.
+    /// Reports per-channel input counts and evaluated/skipped/absent status.
+    /// </summary>
+    [JsonPropertyName("sidecarCoverage")]
+    public SidecarSummary? SidecarCoverage { get; init; }
+
+    /// <summary>
     /// Freshness descriptor: "regenerated-current-code" if all studies were run
     /// from the current tree; "mixed" if some studies are stale.
     /// </summary>

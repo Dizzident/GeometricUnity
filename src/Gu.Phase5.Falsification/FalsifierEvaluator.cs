@@ -86,6 +86,10 @@ public sealed class FalsifierEvaluator
             ActiveFatalCount = fatalCount,
             ActiveHighCount = highCount,
             TotalActiveCount = active.Count,
+            ObservationRecordCount = observationRecords?.Count ?? 0,
+            EnvironmentRecordCount = environmentVarianceRecords?.Count ?? 0,
+            RepresentationRecordCount = representationContentRecords?.Count ?? 0,
+            CouplingRecordCount = couplingConsistencyRecords?.Count ?? 0,
             Provenance = provenance,
         };
     }

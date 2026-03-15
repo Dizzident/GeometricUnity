@@ -1,0 +1,39 @@
+{
+  "studyId": "registry",
+  "schemaVersion": "1.0.0",
+  "channels": [
+    {
+      "channelId": "observation-chain",
+      "status": "skipped",
+      "inputCount": 0,
+      "outputCount": 0
+    },
+    {
+      "channelId": "environment-variance",
+      "status": "skipped",
+      "inputCount": 0,
+      "outputCount": 0
+    },
+    {
+      "channelId": "representation-content",
+      "status": "skipped",
+      "inputCount": 0,
+      "outputCount": 0
+    },
+    {
+      "channelId": "coupling-consistency",
+      "status": "skipped",
+      "inputCount": 0,
+      "outputCount": 0
+    }
+  ],
+  "provenance": {
+    "createdAt": "2026-03-15T01:47:21.8538464+00:00",
+    "codeRevision": "cli",
+    "branch": {
+      "branchId": "cli",
+      "schemaVersion": "1.0.0"
+    },
+    "backend": "cpu"
+  }
+}

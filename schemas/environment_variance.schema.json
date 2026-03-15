@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/environment_variance.schema.json",
+  "title": "EnvironmentVarianceRecord",
+  "description": "Records variance of computed quantities across environment tiers (M50). Written as environment_variance.json by build-phase5-sidecars (P6-M3).",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "recordId",
+      "quantityId",
+      "environmentTierId",
+      "relativeStdDev"
+    ],
+    "properties": {
+      "recordId": {
+        "type": "string",
+        "description": "Identifier for this variance record."
+      },
+      "quantityId": {
+        "type": "string",
+        "description": "Quantity ID whose variance is measured."
+      },
+      "environmentTierId": {
+        "type": "string",
+        "description": "Environment tier ID where the variance was measured."
+      },
+      "relativeStdDev": {
+        "type": "number",
+        "description": "Relative standard deviation of the quantity across this environment tier (stddev / |mean|). Triggers EnvironmentInstability when > threshold.",
+        "minimum": 0
+      },
+      "flagged": {
+        "type": "boolean",
+        "description": "Whether this variance was flagged as excessive by upstream analysis."
+      },
+      "notes": {
+        "type": ["string", "null"],
+        "description": "Optional description or notes."
+      },
+      "provenance": {
+        "type": ["object", "null"],
+        "description": "Provenance of the backend that produced this record."
+      }
+    },
+    "additionalProperties": false
+  }
+}

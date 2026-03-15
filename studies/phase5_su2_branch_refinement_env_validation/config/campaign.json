@@ -1,6 +1,6 @@
 {
   "campaignId": "phase5-su2-branch-refinement-env-validation",
-  "schemaVersion": "1.0.0",
+  "schemaVersion": "1.1.0",
   "branchFamilySpec": {
     "studyId": "phase5-su2-branch-family",
     "branchVariantIds": [
@@ -45,7 +45,7 @@
   "environmentCampaignSpec": {
     "campaignId": "phase5-su2-env-campaign",
     "schemaVersion": "1.0",
-    "environmentIds": ["env-toy-2d-trivial"],
+    "environmentIds": ["env-toy-2d-trivial", "env-structured-4x4", "env-imported-synthetic-example"],
     "branchManifestId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
     "targetQuantities": [
       "bosonic-eigenvalue-ratio-1",
@@ -74,6 +74,14 @@
   "branchQuantityValuesPath": "branch_quantity_values_table.json",
   "refinementValuesPath": "refinement_values.json",
   "observablesPath": "observables.json",
-  "environmentRecordPaths": ["env_toy_record.json"],
-  "registryPath": "registry.json"
+  "environmentRecordPaths": [
+    "env_toy_record.json",
+    "env_structured_4x4_record.json",
+    "env_imported_example.json"
+  ],
+  "registryPath": "registry.json",
+  "observationChainPath": "observation_chain.json",
+  "environmentVariancePath": "environment_variance.json",
+  "representationContentPath": "representation_content.json",
+  "couplingConsistencyPath": "coupling_consistency.json"
 }
