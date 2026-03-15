@@ -37,4 +37,12 @@ public sealed class BackgroundStudySpec
     /// <summary>G-003: geometry tier of the environment used (toy/structured/imported).</summary>
     [JsonPropertyName("environmentTier")]
     public string? EnvironmentTier { get; init; }
+
+    /// <summary>
+    /// D-001: ordered list of directory paths to search for branch manifest files.
+    /// Each path is resolved relative to the study JSON file if relative.
+    /// Used as the third fallback in manifest resolution order.
+    /// </summary>
+    [JsonPropertyName("manifestSearchPaths")]
+    public IReadOnlyList<string>? ManifestSearchPaths { get; init; }
 }

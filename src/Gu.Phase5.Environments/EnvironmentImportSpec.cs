@@ -23,6 +23,15 @@ public sealed class EnvironmentImportSpec
     [JsonPropertyName("description")]
     public string? Description { get; init; }
 
+    [JsonPropertyName("datasetId")]
+    public string? DatasetId { get; init; }
+
+    [JsonPropertyName("sourceHash")]
+    public string? SourceHash { get; init; }
+
+    [JsonPropertyName("conversionVersion")]
+    public string? ConversionVersion { get; init; }
+
     [JsonPropertyName("provenance")]
     public required ProvenanceMeta Provenance { get; init; }
 }

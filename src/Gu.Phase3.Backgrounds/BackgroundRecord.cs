@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using Gu.Artifacts;
 using Gu.Core;
 
 namespace Gu.Phase3.Backgrounds;
@@ -89,4 +90,18 @@ public sealed class BackgroundRecord
     /// <summary>G-003: geometry tier of the environment used (toy/structured/imported).</summary>
     [JsonPropertyName("environmentTier")]
     public string? EnvironmentTier { get; init; }
+
+    /// <summary>
+    /// D-002: Classification of the solve run that produced this background record.
+    /// Embedded for single-source-of-truth persistence (not a separate classifications.json).
+    /// </summary>
+    [JsonPropertyName("runClassification")]
+    public SolveRunClassification? RunClassification { get; init; }
+
+    /// <summary>
+    /// D-002: Reference to the manifest artifact consumed during this background solve.
+    /// Set to the path of the persisted per-background manifest JSON file.
+    /// </summary>
+    [JsonPropertyName("consumedManifestArtifactRef")]
+    public string? ConsumedManifestArtifactRef { get; init; }
 }

@@ -25,6 +25,7 @@
     <ProjectReference Include="..\..\src\Gu.Math\Gu.Math.csproj" />
     <ProjectReference Include="..\..\src\Gu.Phase2.Stability\Gu.Phase2.Stability.csproj" />
     <ProjectReference Include="..\..\src\Gu.Phase3.Backgrounds\Gu.Phase3.Backgrounds.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Artifacts\Gu.Artifacts.csproj" />
   </ItemGroup>
 
 </Project>

@@ -36,6 +36,13 @@ public sealed class QuantitativeObservableRecord
     [JsonPropertyName("extractionMethod")]
     public required string ExtractionMethod { get; init; }
 
+    /// <summary>
+    /// Distribution model for this observable.
+    /// Allowed values: "gaussian" (default), "gaussian-asymmetric", "student-t".
+    /// </summary>
+    [JsonPropertyName("distributionModel")]
+    public string DistributionModel { get; init; } = "gaussian";
+
     /// <summary>Provenance metadata.</summary>
     [JsonPropertyName("provenance")]
     public required ProvenanceMeta Provenance { get; init; }

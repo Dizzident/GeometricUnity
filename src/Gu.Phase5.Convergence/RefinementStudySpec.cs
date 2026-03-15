@@ -38,6 +38,14 @@ public sealed class RefinementStudySpec
     [JsonPropertyName("extrapolationMethod")]
     public string ExtrapolationMethod { get; init; } = "richardson";
 
+    /// <summary>
+    /// Optional Shiab operator variant ID to use in refinement runs.
+    /// When null, the identity Shiab (S=F) is used.
+    /// Note: spelled ShiabVariantId, not ShibaVariantId.
+    /// </summary>
+    [JsonPropertyName("shiabVariantId")]
+    public string? ShiabVariantId { get; init; }
+
     /// <summary>Provenance metadata.</summary>
     [JsonPropertyName("provenance")]
     public required ProvenanceMeta Provenance { get; init; }

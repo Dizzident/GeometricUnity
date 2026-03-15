@@ -26,7 +26,10 @@ using Gu.Phase5.BranchIndependence;
 using Gu.Phase5.Convergence;
 using Gu.Phase5.Dossiers;
 using Gu.Phase5.Environments;
+using Gu.Phase5.Falsification;
 using Gu.Phase5.QuantitativeValidation;
+using Gu.Phase5.Reporting;
+using Gu.Branching;
 using Gu.ReferenceCpu;
 using Gu.Solvers;
 using Gu.Validation;
@@ -106,6 +109,8 @@ switch (args[0])
         return BuildValidationDossier(args);
     case "verify-study-freshness":
         return VerifyStudyFreshness(args);
+    case "run-phase5-campaign":
+        return RunPhase5Campaign(args);
     default:
         Console.Error.WriteLine($"Unknown command: {args[0]}");
         PrintUsage();
@@ -927,6 +932,16 @@ static string ParseFlag(string[] args, string flag, string defaultValue)
     return defaultValue;
 }
 
+static string? ParseOptionalFlag(string[] args, string flag)
+{
+    for (int i = 0; i < args.Length - 1; i++)
+    {
+        if (args[i] == flag)
+            return args[i + 1];
+    }
+    return null;
+}
+
 /// <summary>
 /// Locate the persisted omega state tensor for a given background ID.
 /// Checks background_states/{bgId}_omega.json in the run folder hierarchy.
@@ -1218,7 +1233,7 @@ static int SolveBackgrounds(string[] args)
 {
     if (args.Length < 2)
     {
-        Console.Error.WriteLine("Usage: gu solve-backgrounds <study.json> [--output <dir>] [--lie-algebra su2|su3]");
+        Console.Error.WriteLine("Usage: gu solve-backgrounds <study.json> [--output <dir>] [--lie-algebra su2|su3] [--manifest <path>] [--manifest-dir <dir>]");
         return 1;
     }
 
@@ -1231,6 +1246,8 @@ static int SolveBackgrounds(string[] args)
 
     var outputDir = ParseFlag(args, "--output", Path.Combine(Path.GetDirectoryName(studyPath) ?? ".", "backgrounds"));
     var lieAlgebra = ParseFlag(args, "--lie-algebra", "su2");
+    var manifestFlag = ParseOptionalFlag(args, "--manifest");
+    var manifestDirFlag = ParseOptionalFlag(args, "--manifest-dir");
 
     var studyJson = File.ReadAllText(studyPath);
     var study = BackgroundAtlasSerializer.DeserializeStudy(studyJson);
@@ -1242,6 +1259,48 @@ static int SolveBackgrounds(string[] args)
 
     Console.WriteLine($"Solving background study: {study.StudyId}");
     Console.WriteLine($"  Specs: {study.Specs.Count}");
+
+    // D-001: Resolve manifests per spec using the resolution chain
+    var studyDir = Path.GetDirectoryName(Path.GetFullPath(studyPath)) ?? ".";
+    var manifests = new Dictionary<string, BranchManifest>();
+    var manifestArtifactRefs = new Dictionary<string, string>(); // branchManifestId -> manifest path used
+
+    // Validate --manifest usage: only valid when all specs share the same BranchManifestId
+    if (manifestFlag is not null)
+    {
+        if (!ManifestResolver.ValidateExplicitManifestUsage(study.Specs, out var distinctIds) &&
+            distinctIds.Count > 1)
+        {
+            Console.Error.WriteLine(
+                $"Error: --manifest may only be used when all specs share the same BranchManifestId. " +
+                $"Found {distinctIds.Count} distinct IDs: {string.Join(", ", distinctIds)}");
+            return 1;
+        }
+    }
+
+    foreach (var spec in study.Specs)
+    {
+        if (manifests.ContainsKey(spec.BranchManifestId))
+            continue; // Already resolved this manifest ID
+
+        try
+        {
+            var (resolved, resolvedRef) = ManifestResolver.Resolve(
+                spec.BranchManifestId,
+                manifestFlag,
+                manifestDirFlag,
+                study.ManifestSearchPaths,
+                studyDir);
+
+            manifests[spec.BranchManifestId] = resolved;
+            manifestArtifactRefs[spec.BranchManifestId] = resolvedRef;
+        }
+        catch (ManifestResolutionException ex)
+        {
+            Console.Error.WriteLine($"Error: {ex.Message}");
+            return 1;
+        }
+    }
 
     // Set up geometry and solver
     var algebra = CreateAlgebra(lieAlgebra);
@@ -1269,70 +1328,78 @@ static int SolveBackgrounds(string[] args)
         Shape = new[] { mesh.EdgeCount, algebra.Dimension },
     };
 
-    var manifest = new BranchManifest
-    {
-        BranchId = "minimal-gu-v1",
-        SchemaVersion = "1.0.0",
-        SourceEquationRevision = "r1",
-        CodeRevision = "cli-bg-study",
-        LieAlgebraId = algebra.AlgebraId,
-        BaseDimension = bundle.BaseMesh.EmbeddingDimension,
-        AmbientDimension = bundle.AmbientMesh.EmbeddingDimension,
-        ActiveGeometryBranch = "simplicial",
-        ActiveObservationBranch = "sigma-pullback",
-        ActiveTorsionBranch = "trivial",
-        ActiveShiabBranch = "identity-shiab",
-        ActiveGaugeStrategy = "penalty",
-        PairingConventionId = algebra.PairingId == "trace" ? "pairing-trace" : "pairing-killing",
-        BasisConventionId = "canonical",
-        ComponentOrderId = "face-major",
-        AdjointConventionId = "adjoint-explicit",
-        NormConventionId = "norm-l2-quadrature",
-        DifferentialFormMetricId = "hodge-standard",
-        InsertedAssumptionIds = Array.Empty<string>(),
-        InsertedChoiceIds = new[] { "IX-1", "IX-2" },
-    };
-
+    // Use the first resolved manifest for provenance
+    var firstManifest = manifests.Values.First();
     var branchRef = new BranchRef
     {
-        BranchId = manifest.BranchId,
-        SchemaVersion = manifest.SchemaVersion,
+        BranchId = firstManifest.BranchId,
+        SchemaVersion = firstManifest.SchemaVersion,
     };
     var provenance = new ProvenanceMeta
     {
         CreatedAt = DateTimeOffset.UtcNow,
-        CodeRevision = manifest.CodeRevision,
+        CodeRevision = firstManifest.CodeRevision,
         Branch = branchRef,
         Backend = "cpu-reference",
     };
 
-    var manifests = new Dictionary<string, BranchManifest> { [manifest.BranchId] = manifest };
     var geometries = new Dictionary<string, GeometryContext> { ["env-default"] = geometry };
     var a0s = new Dictionary<string, FieldTensor> { ["env-default"] = a0 };
 
     var builder = new BackgroundAtlasBuilder(backend);
     var atlas = builder.Build(study, manifests, geometries, a0s, provenance, out var solvedStates);
 
-    // Write atlas
+    // D-002/D-003: Classify the solve run and persist per-background manifest files
+    var runClassification = SolveRunClassification.Classify("A", false, false, false);
     Directory.CreateDirectory(outputDir);
+    var statesDir = Path.Combine(outputDir, "background_states");
+    Directory.CreateDirectory(statesDir);
+
+    // Enrich all background records with RunClassification and ConsumedManifestArtifactRef
+    var enrichedBackgrounds = EnrichBackgroundRecords(atlas.Backgrounds, runClassification, manifestArtifactRefs);
+    var enrichedRejected = EnrichBackgroundRecords(atlas.RejectedBackgrounds, runClassification, manifestArtifactRefs);
+
+    // D-003: Write per-background manifest files
+    foreach (var bg in enrichedBackgrounds.Concat(enrichedRejected))
+    {
+        if (!manifestArtifactRefs.TryGetValue(bg.BranchManifestId, out var mRef))
+            continue;
+        var manifestDestPath = Path.Combine(statesDir, $"{bg.BackgroundId}_manifest.json");
+        if (manifests.TryGetValue(bg.BranchManifestId, out var mForBg))
+        {
+            File.WriteAllText(manifestDestPath, GuJsonDefaults.Serialize(mForBg));
+        }
+    }
+
+    // Write atlas (with enriched records)
+    var enrichedAtlas = new BackgroundAtlas
+    {
+        AtlasId = atlas.AtlasId,
+        StudyId = atlas.StudyId,
+        Backgrounds = enrichedBackgrounds,
+        RejectedBackgrounds = enrichedRejected,
+        RankingCriteria = atlas.RankingCriteria,
+        TotalAttempts = atlas.TotalAttempts,
+        Provenance = atlas.Provenance,
+        AdmissibilityCounts = atlas.AdmissibilityCounts,
+        EnvironmentTier = atlas.EnvironmentTier,
+    };
     var atlasPath = Path.Combine(outputDir, "atlas.json");
-    BackgroundAtlasSerializer.WriteAtlas(atlas, atlasPath);
+    BackgroundAtlasSerializer.WriteAtlas(enrichedAtlas, atlasPath);
 
     // Write individual records
     var recordsDir = Path.Combine(outputDir, "background_records");
     Directory.CreateDirectory(recordsDir);
-    foreach (var bg in atlas.Backgrounds)
+    foreach (var bg in enrichedBackgrounds)
     {
         BackgroundAtlasSerializer.WriteRecord(bg, Path.Combine(recordsDir, $"{bg.BackgroundId}.json"));
     }
-    foreach (var bg in atlas.RejectedBackgrounds)
+    foreach (var bg in enrichedRejected)
     {
         BackgroundAtlasSerializer.WriteRecord(bg, Path.Combine(recordsDir, $"{bg.BackgroundId}.json"));
     }
 
     // Persist solved omega tensors alongside records so compute-spectrum can load them
-    var statesDir = Path.Combine(outputDir, "background_states");
-    Directory.CreateDirectory(statesDir);
     foreach (var (bgId, omegaTensor) in solvedStates)
     {
         var statePath = Path.Combine(statesDir, $"{bgId}_omega.json");
@@ -1347,14 +1414,14 @@ static int SolveBackgrounds(string[] args)
 
     Console.WriteLine();
     Console.WriteLine($"Background atlas built:");
-    Console.WriteLine($"  Atlas ID: {atlas.AtlasId}");
-    Console.WriteLine($"  Total attempts: {atlas.TotalAttempts}");
-    Console.WriteLine($"  Admitted: {atlas.Backgrounds.Count}");
-    Console.WriteLine($"  Rejected: {atlas.RejectedBackgrounds.Count}");
-    foreach (var (level, count) in atlas.AdmissibilityCounts)
+    Console.WriteLine($"  Atlas ID: {enrichedAtlas.AtlasId}");
+    Console.WriteLine($"  Total attempts: {enrichedAtlas.TotalAttempts}");
+    Console.WriteLine($"  Admitted: {enrichedAtlas.Backgrounds.Count}");
+    Console.WriteLine($"  Rejected: {enrichedAtlas.RejectedBackgrounds.Count}");
+    foreach (var (level, count) in enrichedAtlas.AdmissibilityCounts)
         Console.WriteLine($"    {level}: {count}");
 
-    foreach (var bg in atlas.Backgrounds)
+    foreach (var bg in enrichedBackgrounds)
     {
         Console.WriteLine($"  {bg.BackgroundId}: {bg.AdmissibilityLevel} " +
                           $"residual={bg.ResidualNorm:E6} stationarity={bg.StationarityNorm:E6}");
@@ -1365,6 +1432,46 @@ static int SolveBackgrounds(string[] args)
     Console.WriteLine($"Records written to: {recordsDir}");
     Console.WriteLine($"State tensors written to: {statesDir} ({solvedStates.Count} omega files)");
     return 0;
+}
+
+/// <summary>
+/// Enrich background records with run classification and consumed manifest artifact ref.
+/// Returns new record instances (BackgroundRecord is init-only).
+/// </summary>
+static IReadOnlyList<BackgroundRecord> EnrichBackgroundRecords(
+    IReadOnlyList<BackgroundRecord> records,
+    SolveRunClassification runClassification,
+    IReadOnlyDictionary<string, string> manifestArtifactRefs)
+{
+    var enriched = new List<BackgroundRecord>(records.Count);
+    foreach (var r in records)
+    {
+        manifestArtifactRefs.TryGetValue(r.BranchManifestId, out var mRef);
+        enriched.Add(new BackgroundRecord
+        {
+            BackgroundId = r.BackgroundId,
+            EnvironmentId = r.EnvironmentId,
+            BranchManifestId = r.BranchManifestId,
+            ContinuationCoordinates = r.ContinuationCoordinates,
+            GeometryFingerprint = r.GeometryFingerprint,
+            GaugeChoice = r.GaugeChoice,
+            StateArtifactRef = r.StateArtifactRef,
+            ResidualNorm = r.ResidualNorm,
+            StationarityNorm = r.StationarityNorm,
+            AdmissibilityLevel = r.AdmissibilityLevel,
+            Metrics = r.Metrics,
+            SolveTraceRef = r.SolveTraceRef,
+            ReplayTierAchieved = r.ReplayTierAchieved,
+            Provenance = r.Provenance,
+            RejectionReason = r.RejectionReason,
+            PdeClassification = r.PdeClassification,
+            Notes = r.Notes,
+            EnvironmentTier = r.EnvironmentTier,
+            RunClassification = runClassification,
+            ConsumedManifestArtifactRef = mRef,
+        });
+    }
+    return enriched;
 }
 
 static int ComputeSpectrum(string[] args)
@@ -1453,46 +1560,73 @@ static int ComputeSpectrum(string[] args)
         Console.WriteLine($"  Geometry: toy-2d (no persisted geometry found)");
     }
 
-    // Load persisted branch manifest from run folder if available, otherwise construct default
+    // D-003: Load branch manifest using precedence order:
+    //   1. background_states/{backgroundId}_manifest.json  (per-background, from solve-backgrounds)
+    //   2. RunFolderLayout.BranchManifestFile               (run-folder manifest)
+    //   3. legacy generated default                         (with diagnostic note)
     string consumedManifestSource;
     BranchManifest manifest;
-    var persistedManifestPath = Path.Combine(runFolder, RunFolderLayout.BranchManifestFile);
-    var loadedManifest = File.Exists(persistedManifestPath)
-        ? GuJsonDefaults.Deserialize<BranchManifest>(File.ReadAllText(persistedManifestPath))
+
+    // Step 1: per-background manifest written by solve-backgrounds
+    var perBgManifestPath1 = Path.Combine(runFolder, "backgrounds", "background_states", $"{backgroundId}_manifest.json");
+    var perBgManifestPath2 = Path.Combine(runFolder, "background_states", $"{backgroundId}_manifest.json");
+    var perBgManifestPath = File.Exists(perBgManifestPath1) ? perBgManifestPath1
+                          : File.Exists(perBgManifestPath2) ? perBgManifestPath2
+                          : null;
+
+    var loadedPerBgManifest = perBgManifestPath is not null
+        ? GuJsonDefaults.Deserialize<BranchManifest>(File.ReadAllText(perBgManifestPath))
         : null;
-    if (loadedManifest is not null)
+
+    if (loadedPerBgManifest is not null)
     {
-        manifest = loadedManifest;
-        consumedManifestSource = persistedManifestPath;
-        Console.WriteLine($"  Branch manifest: loaded from {persistedManifestPath}");
+        manifest = loadedPerBgManifest;
+        consumedManifestSource = $"per-background:{perBgManifestPath}";
+        Console.WriteLine($"  Branch manifest: loaded from per-background file {perBgManifestPath}");
     }
     else
     {
-        manifest = new BranchManifest
+        // Step 2: run-folder manifest
+        var runFolderManifestPath = Path.Combine(runFolder, RunFolderLayout.BranchManifestFile);
+        var loadedRunFolderManifest = File.Exists(runFolderManifestPath)
+            ? GuJsonDefaults.Deserialize<BranchManifest>(File.ReadAllText(runFolderManifestPath))
+            : null;
+
+        if (loadedRunFolderManifest is not null)
         {
-            BranchId = bgRecord.BranchManifestId,
-            SchemaVersion = "1.0.0",
-            SourceEquationRevision = "r1",
-            CodeRevision = "cli-spectrum",
-            LieAlgebraId = algebra.AlgebraId,
-            BaseDimension = bundle.BaseMesh.EmbeddingDimension,
-            AmbientDimension = bundle.AmbientMesh.EmbeddingDimension,
-            ActiveGeometryBranch = "simplicial",
-            ActiveObservationBranch = "sigma-pullback",
-            ActiveTorsionBranch = "trivial",
-            ActiveShiabBranch = "identity-shiab",
-            ActiveGaugeStrategy = "penalty",
-            PairingConventionId = algebra.PairingId == "trace" ? "pairing-trace" : "pairing-killing",
-            BasisConventionId = "canonical",
-            ComponentOrderId = "face-major",
-            AdjointConventionId = "adjoint-explicit",
-            NormConventionId = "norm-l2-quadrature",
-            DifferentialFormMetricId = "hodge-standard",
-            InsertedAssumptionIds = Array.Empty<string>(),
-            InsertedChoiceIds = new[] { "IX-1", "IX-2" },
-        };
-        consumedManifestSource = "default-toy-manifest";
-        Console.WriteLine($"  Branch manifest: default (no persisted manifest found)");
+            manifest = loadedRunFolderManifest;
+            consumedManifestSource = $"run-folder:{runFolderManifestPath}";
+            Console.WriteLine($"  Branch manifest: loaded from run-folder {runFolderManifestPath}");
+        }
+        else
+        {
+            // Step 3: legacy generated default (backward compatibility)
+            manifest = new BranchManifest
+            {
+                BranchId = bgRecord.BranchManifestId,
+                SchemaVersion = "1.0.0",
+                SourceEquationRevision = "r1",
+                CodeRevision = "cli-spectrum",
+                LieAlgebraId = algebra.AlgebraId,
+                BaseDimension = bundle.BaseMesh.EmbeddingDimension,
+                AmbientDimension = bundle.AmbientMesh.EmbeddingDimension,
+                ActiveGeometryBranch = "simplicial",
+                ActiveObservationBranch = "sigma-pullback",
+                ActiveTorsionBranch = "trivial",
+                ActiveShiabBranch = "identity-shiab",
+                ActiveGaugeStrategy = "penalty",
+                PairingConventionId = algebra.PairingId == "trace" ? "pairing-trace" : "pairing-killing",
+                BasisConventionId = "canonical",
+                ComponentOrderId = "face-major",
+                AdjointConventionId = "adjoint-explicit",
+                NormConventionId = "norm-l2-quadrature",
+                DifferentialFormMetricId = "hodge-standard",
+                InsertedAssumptionIds = Array.Empty<string>(),
+                InsertedChoiceIds = new[] { "IX-1", "IX-2" },
+            };
+            consumedManifestSource = "default-toy-manifest (fallback: no per-background or run-folder manifest found)";
+            Console.WriteLine($"  Branch manifest: default (no persisted manifest found — using legacy fallback)");
+        }
     }
 
     int edgeN = mesh.EdgeCount * algebra.Dimension;
@@ -3255,16 +3389,22 @@ static int BranchRobustness(string[] args)
 static int RefinementStudy(string[] args)
 {
     var specPath = ParseFlag(args, "--spec", "");
+    var valuesPath = ParseFlag(args, "--values", "");
     var outFlag = ParseFlag(args, "--out", "");
 
-    if (string.IsNullOrEmpty(specPath))
+    if (string.IsNullOrEmpty(specPath) || string.IsNullOrEmpty(valuesPath))
     {
-        Console.Error.WriteLine("Usage: gu refinement-study --spec <spec.json> [--out <result.json>]");
+        Console.Error.WriteLine("Usage: gu refinement-study --spec <spec.json> --values <values.json> [--out <result.json>]");
         return 1;
     }
     if (!File.Exists(specPath))
     {
         Console.Error.WriteLine($"Spec file not found: {specPath}");
+        return 1;
+    }
+    if (!File.Exists(valuesPath))
+    {
+        Console.Error.WriteLine($"Values file not found: {valuesPath}");
         return 1;
     }
 
@@ -3276,11 +3416,45 @@ static int RefinementStudy(string[] args)
         return 1;
     }
 
-    // The runner requires a pipelineExecutor delegate; the CLI provides an empty executor
-    // (no live solver at CLI level). Real usage should call the runner programmatically
-    // with a solver-backed executor.
+    var valueTable = JsonSerializer.Deserialize<RefinementQuantityValueTable>(
+        File.ReadAllText(valuesPath),
+        new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+    if (valueTable is null)
+    {
+        Console.Error.WriteLine($"Failed to deserialize RefinementQuantityValueTable: {valuesPath}");
+        return 1;
+    }
+
+    // Validate that level IDs in values file match the spec
+    var specLevelIds = spec.RefinementLevels.Select(l => l.LevelId).ToHashSet();
+    var valueLevelIds = valueTable.Levels.Select(l => l.LevelId).ToHashSet();
+    var missingInValues = specLevelIds.Except(valueLevelIds).ToList();
+    var extraInValues = valueLevelIds.Except(specLevelIds).ToList();
+    if (missingInValues.Count > 0)
+    {
+        Console.Error.WriteLine($"Values file is missing level IDs: {string.Join(", ", missingInValues)}");
+        return 1;
+    }
+    if (extraInValues.Count > 0)
+    {
+        Console.Error.WriteLine($"Values file has extra level IDs not in spec: {string.Join(", ", extraInValues)}");
+        return 1;
+    }
+
+    var valueLookup = valueTable.Levels.ToDictionary(l => l.LevelId);
+
+    // Executor: look up pre-computed values; throw on solverConverged=false so runner records failure
+    IReadOnlyDictionary<string, double> pipelineExecutor(RefinementLevel level)
+    {
+        var entry = valueLookup[level.LevelId];
+        if (!entry.SolverConverged)
+            throw new InvalidOperationException(
+                $"Solver did not converge at level '{level.LevelId}' (solverConverged=false in values file).");
+        return entry.Quantities;
+    }
+
     var runner = new RefinementStudyRunner();
-    var result = runner.Run(spec, _ => new Dictionary<string, double>());
+    var result = runner.Run(spec, pipelineExecutor);
 
     var resultJson = JsonSerializer.Serialize(result, new JsonSerializerOptions { WriteIndented = true });
     if (!string.IsNullOrEmpty(outFlag))
@@ -3530,6 +3704,217 @@ static int VerifyStudyFreshness(string[] args)
     return dossier.IsAcceptableAsEvidence ? 0 : 1;
 }
 
+static int RunPhase5Campaign(string[] args)
+{
+    var specPath = ParseFlag(args, "--spec", "");
+    var outDir = ParseFlag(args, "--out-dir", "");
+
+    if (string.IsNullOrEmpty(specPath))
+    {
+        Console.Error.WriteLine("Usage: gu run-phase5-campaign --spec <campaign.json> --out-dir <dir>");
+        return 1;
+    }
+    if (string.IsNullOrEmpty(outDir))
+    {
+        Console.Error.WriteLine("Usage: gu run-phase5-campaign --spec <campaign.json> --out-dir <dir>");
+        return 1;
+    }
+    if (!File.Exists(specPath))
+    {
+        Console.Error.WriteLine($"Campaign spec file not found: {specPath}");
+        return 1;
+    }
+
+    var specJson = File.ReadAllText(specPath);
+    var spec = GuJsonDefaults.Deserialize<Phase5CampaignSpec>(specJson);
+    if (spec is null)
+    {
+        Console.Error.WriteLine($"Failed to deserialize Phase5CampaignSpec: {specPath}");
+        return 1;
+    }
+
+    var specDir = Path.GetDirectoryName(Path.GetFullPath(specPath))!;
+
+    // Load all campaign artifacts
+    Phase5CampaignArtifacts artifacts;
+    try
+    {
+        artifacts = Phase5CampaignArtifactLoader.Load(spec, specDir);
+    }
+    catch (ArtifactLoadException ex)
+    {
+        Console.Error.WriteLine($"Artifact load error: {ex.Message}");
+        return 1;
+    }
+
+    // Build branch executor from loaded branch quantity values table
+    // branchVariantIds are the level IDs in the branch quantity values table
+    Func<string, IReadOnlyDictionary<string, double[]>> branchExecutor = variantId =>
+    {
+        var level = artifacts.BranchQuantityValues.Levels
+            .FirstOrDefault(l => l.LevelId == variantId);
+        if (level is null)
+            return new Dictionary<string, double[]>();
+        return level.Quantities.ToDictionary(
+            kv => kv.Key,
+            kv => new double[] { kv.Value });
+    };
+
+    // Build refinement executor from loaded refinement values table
+    Func<RefinementLevel, IReadOnlyDictionary<string, double>> refinementExecutor = level =>
+    {
+        var valueLevel = artifacts.RefinementValues.Levels
+            .FirstOrDefault(l => l.LevelId == level.LevelId);
+        if (valueLevel is null)
+            return new Dictionary<string, double>();
+        return valueLevel.Quantities;
+    };
+
+    // Run the campaign
+    var runner = new Phase5CampaignRunner();
+    Phase5CampaignResult result;
+    try
+    {
+        result = runner.RunFull(
+            spec,
+            branchExecutor,
+            refinementExecutor,
+            artifacts.Observables,
+            artifacts.TargetTable,
+            artifacts.Registry,
+            observationChainRecords: artifacts.ObservationChainRecords,
+            environmentRecords: artifacts.EnvironmentRecords,
+            environmentVarianceRecords: artifacts.EnvironmentVarianceRecords,
+            representationContentRecords: artifacts.RepresentationContentRecords,
+            couplingConsistencyRecords: artifacts.CouplingConsistencyRecords);
+    }
+    catch (Exception ex)
+    {
+        Console.Error.WriteLine($"Campaign run failed: {ex.Message}");
+        return 1;
+    }
+
+    // Write output artifact tree
+    Directory.CreateDirectory(Path.Combine(outDir, "branch"));
+    Directory.CreateDirectory(Path.Combine(outDir, "convergence"));
+    Directory.CreateDirectory(Path.Combine(outDir, "quantitative"));
+    Directory.CreateDirectory(Path.Combine(outDir, "falsification"));
+    Directory.CreateDirectory(Path.Combine(outDir, "dossiers"));
+    Directory.CreateDirectory(Path.Combine(outDir, "reports"));
+
+    // branch/branch_robustness_record.json
+    var branchAtlas = result.Report.BranchIndependenceAtlas;
+    if (branchAtlas is not null)
+    {
+        var branchJson = GuJsonDefaults.Serialize(branchAtlas);
+        File.WriteAllText(Path.Combine(outDir, "branch", "branch_robustness_record.json"), branchJson);
+    }
+
+    // convergence/refinement_study_result.json
+    var convergenceAtlas = result.Report.ConvergenceAtlas;
+    if (convergenceAtlas is not null)
+    {
+        var convJson = GuJsonDefaults.Serialize(convergenceAtlas);
+        File.WriteAllText(Path.Combine(outDir, "convergence", "refinement_study_result.json"), convJson);
+    }
+
+    // quantitative/consistency_scorecard.json — from typed dossier
+    if (result.TypedDossier.QuantitativeComparison is not null)
+    {
+        var scorecardJson = GuJsonDefaults.Serialize(result.TypedDossier.QuantitativeComparison);
+        File.WriteAllText(Path.Combine(outDir, "quantitative", "consistency_scorecard.json"), scorecardJson);
+    }
+
+    // falsification/falsifier_summary.json
+    var falsificationDashboard = result.Report.FalsificationDashboard;
+    if (falsificationDashboard is not null)
+    {
+        var falsJson = GuJsonDefaults.Serialize(falsificationDashboard);
+        File.WriteAllText(Path.Combine(outDir, "falsification", "falsifier_summary.json"), falsJson);
+    }
+
+    // dossiers/phase5_validation_dossier.json
+    var typedDossierJson = GuJsonDefaults.Serialize(result.TypedDossier);
+    File.WriteAllText(Path.Combine(outDir, "dossiers", "phase5_validation_dossier.json"), typedDossierJson);
+
+    // dossiers/validation_dossier.json
+    var provenanceDossierJson = GuJsonDefaults.Serialize(result.ProvenanceDossier);
+    File.WriteAllText(Path.Combine(outDir, "dossiers", "validation_dossier.json"), provenanceDossierJson);
+
+    // dossiers/study_manifest.json — array of two StudyManifest entries
+    var manifestsJson = GuJsonDefaults.Serialize(result.StudyManifests);
+    File.WriteAllText(Path.Combine(outDir, "dossiers", "study_manifest.json"), manifestsJson);
+
+    // reports/phase5_report.json
+    var reportJson = GuJsonDefaults.Serialize(result.Report);
+    File.WriteAllText(Path.Combine(outDir, "reports", "phase5_report.json"), reportJson);
+
+    // reports/phase5_report.md
+    var md = GeneratePhase5ReportMarkdown(result.Report, spec.CampaignId);
+    File.WriteAllText(Path.Combine(outDir, "reports", "phase5_report.md"), md);
+
+    Console.WriteLine($"Phase V campaign complete. Output: {outDir}");
+    Console.WriteLine($"  branch/branch_robustness_record.json");
+    Console.WriteLine($"  convergence/refinement_study_result.json");
+    Console.WriteLine($"  quantitative/consistency_scorecard.json");
+    Console.WriteLine($"  falsification/falsifier_summary.json");
+    Console.WriteLine($"  dossiers/phase5_validation_dossier.json");
+    Console.WriteLine($"  dossiers/validation_dossier.json");
+    Console.WriteLine($"  dossiers/study_manifest.json");
+    Console.WriteLine($"  reports/phase5_report.json");
+    Console.WriteLine($"  reports/phase5_report.md");
+    Console.WriteLine("run-phase5-campaign done.");
+    return 0;
+}
+
+static string GeneratePhase5ReportMarkdown(Phase5Report report, string campaignId)
+{
+    var sb = new System.Text.StringBuilder();
+    sb.AppendLine($"# Phase V Validation Report: {campaignId}");
+    sb.AppendLine();
+    sb.AppendLine($"**Study ID:** {report.StudyId}");
+    sb.AppendLine($"**Report date:** {DateTimeOffset.UtcNow:yyyy-MM-dd}");
+    sb.AppendLine();
+    sb.AppendLine("## Branch Independence");
+    if (report.BranchIndependenceAtlas is not null)
+    {
+        sb.AppendLine($"- Invariant quantities: {report.BranchIndependenceAtlas.InvariantCount}");
+        sb.AppendLine($"- Fragile quantities: {report.BranchIndependenceAtlas.FragileCount}");
+        sb.AppendLine($"- Total analyzed: {report.BranchIndependenceAtlas.TotalQuantities}");
+    }
+    sb.AppendLine();
+    sb.AppendLine("## Convergence");
+    if (report.ConvergenceAtlas is not null)
+    {
+        sb.AppendLine($"- Convergent quantities: {report.ConvergenceAtlas.ConvergentCount}");
+        sb.AppendLine($"- Non-convergent: {report.ConvergenceAtlas.NonConvergentCount}");
+    }
+    sb.AppendLine();
+    sb.AppendLine("## Falsification");
+    if (report.FalsificationDashboard is not null)
+    {
+        sb.AppendLine($"- Total falsifiers: {report.FalsificationDashboard.TotalFalsifiers}");
+        sb.AppendLine($"- Active fatal: {report.FalsificationDashboard.ActiveFatalCount}");
+        sb.AppendLine($"- Active high: {report.FalsificationDashboard.ActiveHighCount}");
+        sb.AppendLine($"- Demotions: {report.FalsificationDashboard.DemotionCount}");
+    }
+    sb.AppendLine();
+    sb.AppendLine("## Dossiers");
+    foreach (var dossierId in report.DossierIds)
+        sb.AppendLine($"- {dossierId}");
+    sb.AppendLine();
+    sb.AppendLine("---");
+    sb.AppendLine();
+    sb.AppendLine("**IMPORTANT:** All targets in this study are synthetic toy placeholders.");
+    sb.AppendLine("These are NOT physical predictions and carry no experimental authority.");
+    sb.AppendLine();
+    sb.AppendLine("**Reproduction command:**");
+    sb.AppendLine("```bash");
+    sb.AppendLine("dotnet run --project apps/Gu.Cli -- run-phase5-campaign --spec <campaign.json> --out-dir <dir>");
+    sb.AppendLine("```");
+    return sb.ToString();
+}
+
 static void PrintUsage()
 {
     Console.WriteLine("Geometric Unity CLI");
@@ -3543,7 +3928,7 @@ static void PrintUsage()
     Console.WriteLine("  gu reproduce <run-folder> [replay] [--validate]  Reproduce a run from its replay contract");
     Console.WriteLine("  gu sweep --branches b1,b2 [--output dir]   Sweep branches and compare results");
     Console.WriteLine("  gu create-background-study [output.json]   Create a background study spec");
-    Console.WriteLine("  gu solve-backgrounds <study.json> [opts]   Solve backgrounds and build atlas");
+    Console.WriteLine("  gu solve-backgrounds <study.json> [--output <dir>] [--lie-algebra su2|su3] [--manifest <path>] [--manifest-dir <dir>]");
     Console.WriteLine("  gu compute-spectrum <run> <bgId> [opts]    Compute spectrum for a background");
     Console.WriteLine("  gu track-modes <runFolder> [--context ...]  Track modes across spectra");
     Console.WriteLine("  gu build-boson-registry <runFolder>         Build candidate boson registry");
@@ -3560,12 +3945,13 @@ static void PrintUsage()
     Console.WriteLine("  gu build-family-clusters <runFolder> [opts]  Build fermion family atlas and cluster report");
     Console.WriteLine("  gu build-unified-registry <runFolder> [opts] Build unified particle registry (Phase III+IV)");
     Console.WriteLine("  gu branch-robustness --study <f> --values <f> [--out <f>]  Phase V branch robustness study");
-    Console.WriteLine("  gu refinement-study --spec <f> [--out <f>]   Phase V refinement convergence study");
+    Console.WriteLine("  gu refinement-study --spec <f> --values <f> [--out <f>]  Phase V refinement convergence study");
     Console.WriteLine("  gu import-environment --spec <f> [--out <f>] Import external geometry as environment record");
     Console.WriteLine("  gu build-structured-environment --spec <f> [--out <f>]  Generate structured analytic environment");
     Console.WriteLine("  gu validate-quantitative --observables <f> --targets <f> [--out <f>]  Quantitative validation");
     Console.WriteLine("  gu build-validation-dossier --study-manifest <f> [--out <f>]  Build Phase V validation dossier");
     Console.WriteLine("  gu verify-study-freshness --dossier <f>      Verify study freshness / G-006 compliance");
+    Console.WriteLine("  gu run-phase5-campaign --spec <f> --out-dir <dir>  Run Phase V M53 end-to-end campaign");
     Console.WriteLine("  gu validate-replay <orig> <replay> [tier]    Validate replay (R0/R1/R2/R3)");
     Console.WriteLine("  gu verify-integrity <run-folder>            Verify or compute integrity hashes");
     Console.WriteLine("  gu validate-schema <file> <schema>          Validate JSON against a schema");

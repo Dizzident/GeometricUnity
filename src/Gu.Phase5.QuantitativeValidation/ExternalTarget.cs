@@ -32,4 +32,23 @@ public sealed class ExternalTarget
     /// <summary>Evidence tier (e.g., "toy-placeholder").</summary>
     [JsonPropertyName("evidenceTier")]
     public string? EvidenceTier { get; init; }
+
+    /// <summary>
+    /// Distribution model for this target.
+    /// Allowed values: "gaussian" (default), "gaussian-asymmetric", "student-t".
+    /// </summary>
+    [JsonPropertyName("distributionModel")]
+    public string DistributionModel { get; init; } = "gaussian";
+
+    /// <summary>Lower uncertainty (1-sigma equivalent) for asymmetric targets. Null = use Uncertainty.</summary>
+    [JsonPropertyName("uncertaintyLower")]
+    public double? UncertaintyLower { get; init; }
+
+    /// <summary>Upper uncertainty (1-sigma equivalent) for asymmetric targets. Null = use Uncertainty.</summary>
+    [JsonPropertyName("uncertaintyUpper")]
+    public double? UncertaintyUpper { get; init; }
+
+    /// <summary>Degrees of freedom for Student-t targets. Required when DistributionModel == "student-t".</summary>
+    [JsonPropertyName("studentTDegreesOfFreedom")]
+    public double? StudentTDegreesOfFreedom { get; init; }
 }

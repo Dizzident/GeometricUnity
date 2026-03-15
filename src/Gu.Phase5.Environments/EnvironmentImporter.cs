@@ -45,6 +45,20 @@ public static class EnvironmentImporter
             throw new InvalidOperationException(
                 $"Imported geometry failed admissibility checks: {admissibility.Notes}");
 
+        // For the imported tier, external provenance fields are required.
+        if (spec.GeometryTier == "imported")
+        {
+            if (string.IsNullOrWhiteSpace(spec.DatasetId))
+                throw new InvalidOperationException(
+                    "EnvironmentImportSpec.DatasetId is required for imported geometry tier.");
+            if (string.IsNullOrWhiteSpace(spec.SourceHash))
+                throw new InvalidOperationException(
+                    "EnvironmentImportSpec.SourceHash is required for imported geometry tier.");
+            if (string.IsNullOrWhiteSpace(spec.ConversionVersion))
+                throw new InvalidOperationException(
+                    "EnvironmentImportSpec.ConversionVersion is required for imported geometry tier.");
+        }
+
         string fingerprint = ComputeMeshFingerprint(mesh);
 
         return new EnvironmentRecord
@@ -58,6 +72,9 @@ public static class EnvironmentImporter
             FaceCount = mesh.FaceCount,
             Admissibility = admissibility,
             SourceSpec = spec.SourcePath,
+            DatasetId = spec.DatasetId,
+            SourceHash = spec.SourceHash,
+            ConversionVersion = spec.ConversionVersion,
             Provenance = spec.Provenance,
         };
     }

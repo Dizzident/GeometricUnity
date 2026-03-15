@@ -1,0 +1,38 @@
+{
+  "studyId": "phase5-su2-refinement-ladder",
+  "levels": [
+    {
+      "levelId": "L0-2x2",
+      "solverConverged": true,
+      "quantities": {
+        "bosonic-eigenvalue-ratio-1": 0.115,
+        "bosonic-eigenvalue-ratio-2": 1.08,
+        "bosonic-eigenvalue-ratio-3": 5.55,
+        "fermionic-eigenvalue-ratio-1": 0.051,
+        "fermionic-eigenvalue-ratio-2": 2.05
+      }
+    },
+    {
+      "levelId": "L1-4x4",
+      "solverConverged": true,
+      "quantities": {
+        "bosonic-eigenvalue-ratio-1": 0.112,
+        "bosonic-eigenvalue-ratio-2": 1.04,
+        "bosonic-eigenvalue-ratio-3": 5.35,
+        "fermionic-eigenvalue-ratio-1": 0.0495,
+        "fermionic-eigenvalue-ratio-2": 1.975
+      }
+    },
+    {
+      "levelId": "L2-8x8",
+      "solverConverged": true,
+      "quantities": {
+        "bosonic-eigenvalue-ratio-1": 0.111,
+        "bosonic-eigenvalue-ratio-2": 1.02,
+        "bosonic-eigenvalue-ratio-3": 5.32,
+        "fermionic-eigenvalue-ratio-1": 0.0488,
+        "fermionic-eigenvalue-ratio-2": 1.965
+      }
+    }
+  ]
+}

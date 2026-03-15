@@ -1,8 +1,10 @@
 using Gu.Artifacts;
 using Gu.Core;
+using Gu.Phase4.Registry;
 using Gu.Phase5.BranchIndependence;
 using Gu.Phase5.Convergence;
 using Gu.Phase5.Dossiers;
+using Gu.Phase5.Environments;
 using Gu.Phase5.Falsification;
 using Gu.Phase5.QuantitativeValidation;
 
@@ -16,7 +18,7 @@ namespace Gu.Phase5.Reporting;
 ///   2. Refinement/continuum study (M47)
 ///   3. Quantitative validation (M49)
 ///   4. Falsifier evaluation (M50)
-///   5. Dossier assembly (M51/M52)
+///   5. Dossier assembly (M51/M52) — both typed and provenance dossiers (WP-5/D-006)
 ///   6. Report generation (M53)
 ///
 /// Callback delegates keep this runner decoupled from specific solver implementations.
@@ -24,7 +26,7 @@ namespace Gu.Phase5.Reporting;
 public sealed class Phase5CampaignRunner
 {
     /// <summary>
-    /// Run the full Phase V campaign.
+    /// Run the full Phase V campaign and return both dossier types plus the report (WP-5).
     /// </summary>
     /// <param name="spec">Campaign specification.</param>
     /// <param name="branchPipelineExecutor">
@@ -38,13 +40,20 @@ public sealed class Phase5CampaignRunner
     /// Computed quantitative observables for comparison against external targets.
     /// </param>
     /// <param name="targetTable">External target table for quantitative validation.</param>
-    /// <returns>Final Phase5Report.</returns>
-    public Phase5Report Run(
+    /// <param name="registry">Optional unified particle registry for claim escalation.</param>
+    /// <returns>Phase5CampaignResult containing both dossier types and the final report.</returns>
+    public Phase5CampaignResult RunFull(
         Phase5CampaignSpec spec,
         Func<string, IReadOnlyDictionary<string, double[]>> branchPipelineExecutor,
         Func<RefinementLevel, IReadOnlyDictionary<string, double>> refinementPipelineExecutor,
         IReadOnlyList<QuantitativeObservableRecord> observablesSource,
-        ExternalTargetTable targetTable)
+        ExternalTargetTable targetTable,
+        UnifiedParticleRegistry? registry = null,
+        IReadOnlyList<ObservationChainRecord>? observationChainRecords = null,
+        IReadOnlyList<EnvironmentRecord>? environmentRecords = null,
+        IReadOnlyList<EnvironmentVarianceRecord>? environmentVarianceRecords = null,
+        IReadOnlyList<RepresentationContentRecord>? representationContentRecords = null,
+        IReadOnlyList<CouplingConsistencyRecord>? couplingConsistencyRecords = null)
     {
         ArgumentNullException.ThrowIfNull(spec);
         ArgumentNullException.ThrowIfNull(branchPipelineExecutor);
@@ -95,9 +104,12 @@ public sealed class Phase5CampaignRunner
             refinementResult.FailureRecords,
             scoreCard,
             spec.FalsificationPolicy,
-            provenance);
+            provenance,
+            environmentVarianceRecords: environmentVarianceRecords,
+            representationContentRecords: representationContentRecords,
+            couplingConsistencyRecords: couplingConsistencyRecords);
 
-        // Step 5: Dossier assembly (M51/M52)
+        // Step 5a: Study manifests — positive and negative (D-006)
         var posStudyManifest = new StudyManifest
         {
             StudyId = $"{spec.CampaignId}-positive",
@@ -105,7 +117,10 @@ public sealed class Phase5CampaignRunner
             RunFolder = "artifacts",
             Reproducibility = ReproducibilityBundle.CreateRegeneratedCpu(
                 codeRevision: provenance.CodeRevision,
-                reproductionCommands: ["dotnet run --project apps/Gu.Cli -- run-phase5-campaign"]),
+                reproductionCommands:
+                [
+                    $"dotnet run --project apps/Gu.Cli -- run-phase5-campaign --spec <campaign.json> --out-dir <dir>",
+                ]),
             Provenance = provenance,
         };
 
@@ -116,31 +131,69 @@ public sealed class Phase5CampaignRunner
             RunFolder = "artifacts",
             Reproducibility = ReproducibilityBundle.CreateRegeneratedCpu(
                 codeRevision: provenance.CodeRevision,
-                reproductionCommands: ["dotnet run --project apps/Gu.Cli -- run-phase5-campaign"]),
+                reproductionCommands:
+                [
+                    $"dotnet run --project apps/Gu.Cli -- run-phase5-campaign --spec <campaign.json> --out-dir <dir>",
+                ]),
             Provenance = provenance,
         };
 
-        var positiveDossier = DossierAssembler.Assemble(
-            $"{spec.CampaignId}-positive-dossier",
-            $"Phase V Positive/Mixed Dossier: {spec.CampaignId}",
-            [posStudyManifest],
+        var studyManifests = new List<StudyManifest> { posStudyManifest, negStudyManifest };
+
+        // Step 5b: Provenance/freshness dossier (ValidationDossier) — G-006 gate
+        var provenanceDossier = DossierAssembler.Assemble(
+            $"{spec.CampaignId}-provenance-dossier",
+            $"Phase V Provenance Dossier: {spec.CampaignId}",
+            studyManifests,
             provenance);
 
-        var negativeDossier = DossierAssembler.Assemble(
-            $"{spec.CampaignId}-negative-dossier",
-            $"Phase V Negative Result Dossier: {spec.CampaignId}",
-            [negStudyManifest],
-            provenance);
-
-        var dossiers = new List<ValidationDossier> { positiveDossier, negativeDossier };
+        // Step 5c: Typed technical dossier (Phase5ValidationDossier) — scientific content
+        var typedDossierAssembler = new Phase5DossierAssembler();
+        var typedDossier = typedDossierAssembler.Assemble(
+            studyId: spec.CampaignId,
+            branchRecord: branchRecord,
+            convergenceRecords: refinementResult.ContinuumEstimates,
+            convergenceFailures: refinementResult.FailureRecords,
+            environments: environmentRecords,
+            scoreCard: scoreCard,
+            falsifiers: falsifiers,
+            registry: registry,
+            environmentTiersCovered: spec.EnvironmentCampaignSpec.EnvironmentIds,
+            freshness: "regenerated-current-code",
+            provenance: provenance,
+            observationChainRecords: observationChainRecords);
 
         // Step 6: Generate final report (M53)
-        return Phase5ReportGenerator.Generate(
+        var report = Phase5ReportGenerator.Generate(
             studyId: spec.CampaignId,
-            dossiers: dossiers,
+            dossiers: [provenanceDossier],
             provenance: provenance,
             branchRecord: branchRecord,
             refinementResult: refinementResult,
             falsifiers: falsifiers);
+
+        return new Phase5CampaignResult
+        {
+            TypedDossier = typedDossier,
+            ProvenanceDossier = provenanceDossier,
+            StudyManifests = studyManifests,
+            Report = report,
+        };
+    }
+
+    /// <summary>
+    /// Run the full Phase V campaign and return the final Phase5Report.
+    /// For dual-dossier output, use <see cref="RunFull"/>.
+    /// </summary>
+    /// <returns>Final Phase5Report.</returns>
+    public Phase5Report Run(
+        Phase5CampaignSpec spec,
+        Func<string, IReadOnlyDictionary<string, double[]>> branchPipelineExecutor,
+        Func<RefinementLevel, IReadOnlyDictionary<string, double>> refinementPipelineExecutor,
+        IReadOnlyList<QuantitativeObservableRecord> observablesSource,
+        ExternalTargetTable targetTable)
+    {
+        return RunFull(spec, branchPipelineExecutor, refinementPipelineExecutor,
+            observablesSource, targetTable, registry: null).Report;
     }
 }

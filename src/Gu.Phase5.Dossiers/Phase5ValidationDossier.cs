@@ -80,6 +80,16 @@ public sealed class Phase5ValidationDossier
     public required IReadOnlyList<NegativeResultEntry> NegativeResults { get; init; }
 
     /// <summary>
+    /// Observation chain summary records (WP-6, D-007).
+    /// One record per candidate/observable pair evaluated.
+    /// Gate ObservationChainValid: at least one record with
+    ///   CompletenessStatus="complete", Passed=true, SensitivityScore &lt;= 0.3,
+    ///   AuxiliaryModelSensitivity &lt;= 0.3.
+    /// </summary>
+    [JsonPropertyName("observationChainSummary")]
+    public IReadOnlyList<ObservationChainRecord>? ObservationChainSummary { get; init; }
+
+    /// <summary>
     /// Freshness descriptor: "regenerated-current-code" if all studies were run
     /// from the current tree; "mixed" if some studies are stale.
     /// </summary>

@@ -1,0 +1,79 @@
+{
+  "campaignId": "phase5-su2-branch-refinement-env-validation",
+  "schemaVersion": "1.0.0",
+  "branchFamilySpec": {
+    "studyId": "phase5-su2-branch-family",
+    "branchVariantIds": [
+      "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+      "V2-identity-shiab-augmented-torsion-simple-a0-omega",
+      "V3-identity-shiab-trivial-torsion-a0-plus-minus-omega",
+      "V4-identity-shiab-augmented-torsion-a0-plus-minus-omega"
+    ],
+    "targetQuantityIds": [
+      "bosonic-eigenvalue-ratio-1",
+      "bosonic-eigenvalue-ratio-2",
+      "bosonic-eigenvalue-ratio-3",
+      "fermionic-eigenvalue-ratio-1",
+      "fermionic-eigenvalue-ratio-2"
+    ],
+    "absoluteTolerance": 1e-4,
+    "relativeTolerance": 0.05
+  },
+  "refinementSpec": {
+    "studyId": "phase5-su2-refinement-ladder",
+    "schemaVersion": "1.0",
+    "branchManifestId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+    "targetQuantities": [
+      "bosonic-eigenvalue-ratio-1",
+      "bosonic-eigenvalue-ratio-2",
+      "bosonic-eigenvalue-ratio-3",
+      "fermionic-eigenvalue-ratio-1",
+      "fermionic-eigenvalue-ratio-2"
+    ],
+    "refinementLevels": [
+      { "levelId": "L0-2x2", "meshParameterX": 1.0, "meshParameterF": 1.0, "description": "2x2 toy mesh" },
+      { "levelId": "L1-4x4", "meshParameterX": 0.5, "meshParameterF": 0.5, "description": "4x4 structured mesh" },
+      { "levelId": "L2-8x8", "meshParameterX": 0.25, "meshParameterF": 0.25, "description": "8x8 structured mesh" }
+    ],
+    "provenance": {
+      "createdAt": "2026-03-14T00:00:00+00:00",
+      "codeRevision": "phase5-m53-ref-study-v1",
+      "branch": { "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega", "schemaVersion": "1.0" },
+      "backend": "cpu"
+    }
+  },
+  "environmentCampaignSpec": {
+    "campaignId": "phase5-su2-env-campaign",
+    "schemaVersion": "1.0",
+    "environmentIds": ["env-toy-2d-trivial"],
+    "branchManifestId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+    "targetQuantities": [
+      "bosonic-eigenvalue-ratio-1",
+      "bosonic-eigenvalue-ratio-2"
+    ],
+    "provenance": {
+      "createdAt": "2026-03-14T00:00:00+00:00",
+      "codeRevision": "phase5-m53-ref-study-v1",
+      "branch": { "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega", "schemaVersion": "1.0" },
+      "backend": "cpu"
+    }
+  },
+  "externalTargetTablePath": "config/external_targets.json",
+  "calibrationPolicy": {
+    "policyId": "phase5-sigma5-policy",
+    "mode": "sigma",
+    "sigmaThreshold": 5.0
+  },
+  "falsificationPolicy": {},
+  "provenance": {
+    "createdAt": "2026-03-14T00:00:00+00:00",
+    "codeRevision": "phase5-m53-ref-study-v1",
+    "branch": { "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega", "schemaVersion": "1.0" },
+    "backend": "cpu"
+  },
+  "branchQuantityValuesPath": "config/branch_quantity_values_table.json",
+  "refinementValuesPath": "config/refinement_values.json",
+  "observablesPath": "config/observables.json",
+  "environmentRecordPaths": ["config/env_toy_record.json"],
+  "registryPath": "config/registry.json"
+}

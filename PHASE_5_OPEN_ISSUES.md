@@ -1,7 +1,7 @@
 # Phase V — Open Issues for Future Work
 
 **Date:** 2026-03-14
-**Phase V baseline:** 2961 tests passing, all 8 milestones (M46-M53) complete + 6 entry gaps (G-001 through G-006) closed.
+**Phase V baseline:** 3016 tests passing, all 8 milestones (M46-M53) complete + 6 entry gaps (G-001 through G-006) closed.
 
 This document captures known limitations, deferred work, and open questions from Phase V,
 following the convention of PHASE_3_OPEN_ISSUES.md. These are inputs to any Phase VI
@@ -21,6 +21,8 @@ or gap-closure planning.
 | ISSUE-6  | Shiab Variation in Convergence | Deferred     |
 | ISSUE-7  | GPU Compute in Phase V       | Out of Scope   |
 | ISSUE-8  | Non-Gaussian Pull Statistics | Deferred       |
+| ISSUE-9  | solve-backgrounds Manifest Loading | Partial  |
+| ISSUE-10 | solve-backgrounds Run Classification Persistence | Partial |
 
 ---
 
@@ -93,3 +95,21 @@ or gap-closure planning.
 **Description:** The pull statistic `p = |Q_comp - Q_target| / sqrt(σ_c² + σ_t²)` is derived from Gaussian error propagation. The pass threshold of 5.0 corresponds to the Gaussian 5-sigma convention. Non-Gaussian uncertainties (e.g., systematic biases, discrete discretization errors) are not modeled.
 **Why deferred:** Gaussian is the standard convention for toy-placeholder evidence. Non-Gaussian treatment requires a richer uncertainty model.
 **Future work:** Add a `DistributionModel` field to `ExternalTarget` and `QuantitativeObservableRecord`. Implement non-Gaussian pull alternatives (e.g., asymmetric uncertainties, Student-t).
+
+---
+
+## ISSUE-9: `solve-backgrounds` Manifest Loading Requires Explicit Flag
+**Area:** Entry Gap G-001 (CLI branch selection), `apps/Gu.Cli/Program.cs`
+**Status:** Partial — warning added, explicit override available
+**Description:** `solve-backgrounds` now accepts `--manifest <path>` and `--manifest-dir <dir>` to load declared branch manifests per spec. Without these flags, the command silently uses an inline default manifest (`ActiveTorsionBranch=trivial`, `ActiveShiabBranch=identity-shiab`) regardless of what `BranchManifestId` the study spec declares. A `[G-001] WARNING` is emitted but the default behavior still bypasses the declared manifest.
+**Why deferred:** The `BranchManifestId` in `BackgroundSpec` is a string key, not a file path. No convention for co-locating manifest files with study JSON files currently exists.
+**Future work:** Add a `ManifestSearchPaths` field to `BackgroundStudySpec` or a `manifest-registry.json` convention. Change the fallback from "silent inline default" to "hard error" once all study files carry manifest file paths.
+
+---
+
+## ISSUE-10: `solve-backgrounds` Run Classification Written to Console Only
+**Area:** Entry Gap G-002 (trivial validation path), `apps/Gu.Cli/Program.cs`
+**Status:** Partial — per-spec classification emitted to stdout/stderr but not persisted
+**Description:** For `gu run` / `gu solve`, a `SolveRunClassification` record is written to `logs/solve_run_classification.json` in the run folder. For `solve-backgrounds`, per-spec classification is logged to the console only; no per-spec classification artifact is written to the output directory.
+**Why deferred:** `solve-backgrounds` writes a shared output directory (not per-spec run folders), so the destination for per-spec classification records is unclear.
+**Future work:** Write a `classifications.json` alongside `atlas.json` in the output directory containing the per-spec run classifications. Alternatively, embed `RunClassification` in `BackgroundRecord`.

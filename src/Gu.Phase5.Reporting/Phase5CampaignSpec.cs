@@ -50,4 +50,42 @@ public sealed class Phase5CampaignSpec
     /// <summary>Provenance metadata.</summary>
     [JsonPropertyName("provenance")]
     public required ProvenanceMeta Provenance { get; init; }
+
+    // D-010: Additional artifact paths for analysis-first campaign runs
+
+    /// <summary>Path to the branch quantity values JSON file (RefinementQuantityValueTable format).</summary>
+    [JsonPropertyName("branchQuantityValuesPath")]
+    public required string BranchQuantityValuesPath { get; init; }
+
+    /// <summary>Path to the refinement values JSON file (RefinementQuantityValueTable format).</summary>
+    [JsonPropertyName("refinementValuesPath")]
+    public required string RefinementValuesPath { get; init; }
+
+    /// <summary>Path to the observables JSON file (array of QuantitativeObservableRecord).</summary>
+    [JsonPropertyName("observablesPath")]
+    public required string ObservablesPath { get; init; }
+
+    /// <summary>Paths to environment record JSON files.</summary>
+    [JsonPropertyName("environmentRecordPaths")]
+    public required IReadOnlyList<string> EnvironmentRecordPaths { get; init; }
+
+    /// <summary>Path to the unified registry JSON file.</summary>
+    [JsonPropertyName("registryPath")]
+    public required string RegistryPath { get; init; }
+
+    /// <summary>Optional path to the observation chain JSON file (array of ObservationChainRecord).</summary>
+    [JsonPropertyName("observationChainPath")]
+    public string? ObservationChainPath { get; init; }
+
+    /// <summary>Optional path to the environment variance JSON file (array of EnvironmentVarianceRecord).</summary>
+    [JsonPropertyName("environmentVariancePath")]
+    public string? EnvironmentVariancePath { get; init; }
+
+    /// <summary>Optional path to the representation content JSON file (array of RepresentationContentRecord).</summary>
+    [JsonPropertyName("representationContentPath")]
+    public string? RepresentationContentPath { get; init; }
+
+    /// <summary>Optional path to the coupling consistency JSON file (array of CouplingConsistencyRecord).</summary>
+    [JsonPropertyName("couplingConsistencyPath")]
+    public string? CouplingConsistencyPath { get; init; }
 }

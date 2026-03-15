@@ -9,11 +9,12 @@ namespace Gu.Phase5.Falsification;
 /// Evaluates falsifier conditions against Phase V study results (M50).
 ///
 /// Falsifier sources:
-///   BranchFragility       -- from BranchRobustnessRecord (fragility score > threshold)
-///   NonConvergence        -- from ConvergenceFailureRecord (any non-convergent quantity)
-///   QuantitativeMismatch  -- from ConsistencyScoreCard (failed target matches)
-///   ObservationInstability -- placeholder (reserved for observation chain sensitivity)
-///   EnvironmentInstability -- placeholder (reserved for environment variance)
+///   BranchFragility        -- from BranchRobustnessRecord (fragility score > threshold)
+///   NonConvergence         -- from ConvergenceFailureRecord (any non-convergent quantity)
+///   QuantitativeMismatch   -- from ConsistencyScoreCard (failed target matches)
+///   EnvironmentInstability -- from EnvironmentVarianceRecord (excessive tier variance)
+///   RepresentationContent  -- from RepresentationContentRecord (mode count mismatch)
+///   CouplingInconsistency  -- from CouplingConsistencyRecord (coupling spread > threshold)
 ///
 /// All triggered conditions produce FalsifierRecords.
 /// Non-convergence is a valid scientific result — always record it, never suppress it.
@@ -32,7 +33,11 @@ public sealed class FalsifierEvaluator
         IReadOnlyList<ConvergenceFailureRecord>? convergenceFailures,
         ConsistencyScoreCard? scoreCard,
         FalsificationPolicy policy,
-        ProvenanceMeta provenance)
+        ProvenanceMeta provenance,
+        IReadOnlyList<ObservationChainRecord>? observationRecords = null,
+        IReadOnlyList<EnvironmentVarianceRecord>? environmentVarianceRecords = null,
+        IReadOnlyList<RepresentationContentRecord>? representationContentRecords = null,
+        IReadOnlyList<CouplingConsistencyRecord>? couplingConsistencyRecords = null)
     {
         ArgumentNullException.ThrowIfNull(studyId);
         ArgumentNullException.ThrowIfNull(policy);
@@ -52,6 +57,22 @@ public sealed class FalsifierEvaluator
         // 3. Quantitative mismatch falsifiers
         if (scoreCard is not null)
             falsifiers.AddRange(EvaluateQuantitativeMismatch(scoreCard, policy, provenance));
+
+        // 4. Observation instability falsifiers (WP-7)
+        if (observationRecords is not null)
+            falsifiers.AddRange(EvaluateObservationInstability(observationRecords, policy, provenance));
+
+        // 5. Environment instability falsifiers
+        if (environmentVarianceRecords is not null)
+            falsifiers.AddRange(EvaluateEnvironmentInstability(environmentVarianceRecords, policy, provenance));
+
+        // 6. Representation content falsifiers
+        if (representationContentRecords is not null)
+            falsifiers.AddRange(EvaluateRepresentationContent(representationContentRecords, policy, provenance));
+
+        // 7. Coupling inconsistency falsifiers
+        if (couplingConsistencyRecords is not null)
+            falsifiers.AddRange(EvaluateCouplingInconsistency(couplingConsistencyRecords, policy, provenance));
 
         // Compute summary counts
         var active = falsifiers.Where(f => f.Active).ToList();
@@ -148,6 +169,129 @@ public sealed class FalsifierEvaluator
                 description: $"Observable '{match.ObservableId}' failed target match '{match.TargetLabel}': " +
                              $"pull={match.Pull:G4} (computed={match.ComputedValue:G4}, target={match.TargetValue:G4}).",
                 evidence: $"TargetMatchRecord observableId={match.ObservableId} targetLabel={match.TargetLabel}",
+                active: true,
+                provenance: provenance);
+        }
+    }
+
+    private IEnumerable<FalsifierRecord> EvaluateObservationInstability(
+        IReadOnlyList<ObservationChainRecord> records,
+        FalsificationPolicy policy,
+        ProvenanceMeta provenance)
+    {
+        // Trigger: SensitivityScore > ObservationInstabilityThreshold; severity: high
+        foreach (var record in records.Where(r => r.SensitivityScore > policy.ObservationInstabilityThreshold))
+        {
+            yield return MakeFalsifier(
+                type: FalsifierTypes.ObservationInstability,
+                severity: FalsifierSeverity.High,
+                targetId: record.CandidateId,
+                branchId: "unknown",
+                environmentId: null,
+                triggerValue: record.SensitivityScore,
+                threshold: policy.ObservationInstabilityThreshold,
+                description: $"Observation chain for candidate '{record.CandidateId}' / observable " +
+                             $"'{record.ObservableId}' has high sensitivity score " +
+                             $"{record.SensitivityScore:G4} > threshold {policy.ObservationInstabilityThreshold}.",
+                evidence: $"ObservationChainRecord candidateId={record.CandidateId} observableId={record.ObservableId}",
+                active: true,
+                provenance: provenance);
+        }
+    }
+
+    private IEnumerable<FalsifierRecord> EvaluateEnvironmentInstability(
+        IReadOnlyList<EnvironmentVarianceRecord> records,
+        FalsificationPolicy policy,
+        ProvenanceMeta provenance)
+    {
+        // Trigger: RelativeStdDev > EnvironmentInstabilityThreshold; severity: high
+        foreach (var record in records.Where(r => r.RelativeStdDev > policy.EnvironmentInstabilityThreshold))
+        {
+            yield return MakeFalsifier(
+                type: FalsifierTypes.EnvironmentInstability,
+                severity: policy.EnvironmentInstabilitySeverity,
+                targetId: record.QuantityId,
+                branchId: "unknown",
+                environmentId: record.EnvironmentTierId,
+                triggerValue: record.RelativeStdDev,
+                threshold: policy.EnvironmentInstabilityThreshold,
+                description: $"Quantity '{record.QuantityId}' has excessive relative std-dev " +
+                             $"{record.RelativeStdDev:G4} > threshold {policy.EnvironmentInstabilityThreshold} " +
+                             $"in environment tier '{record.EnvironmentTierId}'.",
+                evidence: $"EnvironmentVarianceRecord recordId={record.RecordId} quantityId={record.QuantityId}",
+                active: true,
+                provenance: provenance);
+        }
+    }
+
+    private IEnumerable<FalsifierRecord> EvaluateRepresentationContent(
+        IReadOnlyList<RepresentationContentRecord> records,
+        FalsificationPolicy policy,
+        ProvenanceMeta provenance)
+    {
+        foreach (var record in records)
+        {
+            // Trigger 1: MissingRequiredCount > 0 → Fatal
+            if (record.MissingRequiredCount > 0)
+            {
+                yield return MakeFalsifier(
+                    type: FalsifierTypes.RepresentationContent,
+                    severity: FalsifierSeverity.Fatal,
+                    targetId: record.CandidateId,
+                    branchId: "unknown",
+                    environmentId: null,
+                    triggerValue: record.MissingRequiredCount,
+                    threshold: 0,
+                    description: record.InconsistencyDescription ??
+                                 $"Candidate '{record.CandidateId}' is missing {record.MissingRequiredCount} " +
+                                 $"required representation content item(s). Expected modes: {record.ExpectedModeCount}, " +
+                                 $"observed: {record.ObservedModeCount}.",
+                    evidence: $"RepresentationContentRecord recordId={record.RecordId} candidateId={record.CandidateId} " +
+                              $"missingRequiredCount={record.MissingRequiredCount}",
+                    active: true,
+                    provenance: provenance);
+            }
+            // Trigger 2: StructuralMismatchScore > RepresentationContentThreshold → High
+            else if (record.StructuralMismatchScore > policy.RepresentationContentThreshold)
+            {
+                yield return MakeFalsifier(
+                    type: FalsifierTypes.RepresentationContent,
+                    severity: FalsifierSeverity.High,
+                    targetId: record.CandidateId,
+                    branchId: "unknown",
+                    environmentId: null,
+                    triggerValue: record.StructuralMismatchScore,
+                    threshold: policy.RepresentationContentThreshold,
+                    description: record.InconsistencyDescription ??
+                                 $"Candidate '{record.CandidateId}' structural mismatch score " +
+                                 $"{record.StructuralMismatchScore:G4} > threshold {policy.RepresentationContentThreshold}.",
+                    evidence: $"RepresentationContentRecord recordId={record.RecordId} candidateId={record.CandidateId} " +
+                              $"structuralMismatchScore={record.StructuralMismatchScore:G4}",
+                    active: true,
+                    provenance: provenance);
+            }
+        }
+    }
+
+    private IEnumerable<FalsifierRecord> EvaluateCouplingInconsistency(
+        IReadOnlyList<CouplingConsistencyRecord> records,
+        FalsificationPolicy policy,
+        ProvenanceMeta provenance)
+    {
+        foreach (var record in records.Where(r => r.RelativeSpread > policy.CouplingInconsistencyThreshold))
+        {
+            yield return MakeFalsifier(
+                type: FalsifierTypes.CouplingInconsistency,
+                severity: policy.CouplingInconsistencySeverity,
+                targetId: record.CandidateId,
+                branchId: "unknown",
+                environmentId: null,
+                triggerValue: record.RelativeSpread,
+                threshold: policy.CouplingInconsistencyThreshold,
+                description: $"Candidate '{record.CandidateId}' coupling '{record.CouplingType}' " +
+                             $"has excessive spread {record.RelativeSpread:G4} > threshold {policy.CouplingInconsistencyThreshold} " +
+                             $"across branch variants.",
+                evidence: $"CouplingConsistencyRecord recordId={record.RecordId} candidateId={record.CandidateId}",
                 active: true,
                 provenance: provenance);
         }

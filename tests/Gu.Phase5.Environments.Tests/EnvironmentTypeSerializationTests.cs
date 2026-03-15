@@ -125,6 +125,67 @@ public class EnvironmentTypeSerializationTests
         Assert.Equal("imported", deserialized.GeometryTier);
     }
 
+    // ─── WP-10: imported environment provenance ───
+
+    [Fact]
+    public void ImportedEnvironmentRecord_PreservesDatasetProvenance()
+    {
+        var report = new EnvironmentAdmissibilityReport
+        {
+            Level = "admissible",
+            Checks = [new AdmissibilityCheck { CheckId = "mesh-valid", Description = "ok", Passed = true }],
+            Passed = true,
+        };
+        var record = new EnvironmentRecord
+        {
+            EnvironmentId = "env-imported-wp10",
+            GeometryTier = "imported",
+            GeometryFingerprint = "fp-abc",
+            BaseDimension = 2,
+            AmbientDimension = 2,
+            EdgeCount = 3,
+            FaceCount = 1,
+            Admissibility = report,
+            DatasetId = "dataset-external-001",
+            SourceHash = "sha256-aabbccdd",
+            ConversionVersion = "converter-v1.2",
+            Provenance = TestProvenance(),
+        };
+
+        string json = GuJsonDefaults.Serialize(record);
+        var deserialized = GuJsonDefaults.Deserialize<EnvironmentRecord>(json);
+
+        Assert.NotNull(deserialized);
+        Assert.Equal("dataset-external-001", deserialized.DatasetId);
+        Assert.Equal("sha256-aabbccdd", deserialized.SourceHash);
+        Assert.Equal("converter-v1.2", deserialized.ConversionVersion);
+    }
+
+    [Fact]
+    public void EnvironmentImportSpec_SourceHash_RoundTrips()
+    {
+        var spec = new EnvironmentImportSpec
+        {
+            EnvironmentId = "env-imported-hash",
+            SchemaVersion = "1.0",
+            SourcePath = "/data/mesh.json",
+            SourceFormat = "gu-json",
+            GeometryTier = "imported",
+            DatasetId = "dataset-hash-test",
+            SourceHash = "sha256-deadbeef",
+            ConversionVersion = "v2.0",
+            Provenance = TestProvenance(),
+        };
+
+        string json = GuJsonDefaults.Serialize(spec);
+        var deserialized = GuJsonDefaults.Deserialize<EnvironmentImportSpec>(json);
+
+        Assert.NotNull(deserialized);
+        Assert.Equal("sha256-deadbeef", deserialized.SourceHash);
+        Assert.Equal("dataset-hash-test", deserialized.DatasetId);
+        Assert.Equal("v2.0", deserialized.ConversionVersion);
+    }
+
     [Fact]
     public void AdmissibilityCheck_WithOptionalFields_RoundTrips()
     {

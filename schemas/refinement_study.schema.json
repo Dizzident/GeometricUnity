@@ -36,15 +36,29 @@
   "$defs": {
     "RefinementLevel": {
       "type": "object",
-      "required": ["levelId", "meshParameter"],
+      "required": ["levelId"],
+      "oneOf": [
+        { "required": ["meshParameterX", "meshParameterF"] },
+        { "required": ["meshParameter"] }
+      ],
       "properties": {
         "levelId": {
           "type": "string",
           "description": "Unique level identifier (e.g., 'L0', 'L1', 'L2')"
         },
+        "meshParameterX": {
+          "type": "number",
+          "description": "Mesh parameter h_X for the base space X. Smaller = finer mesh.",
+          "exclusiveMinimum": 0
+        },
+        "meshParameterF": {
+          "type": "number",
+          "description": "Mesh parameter h_F for the fiber/field space. Smaller = finer mesh.",
+          "exclusiveMinimum": 0
+        },
         "meshParameter": {
           "type": "number",
-          "description": "Mesh parameter h (edge length or similar). Smaller = finer mesh.",
+          "description": "Legacy: single mesh parameter h. Sets both meshParameterX and meshParameterF to this value.",
           "exclusiveMinimum": 0
         },
         "description": {

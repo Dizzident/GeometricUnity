@@ -675,4 +675,126 @@ public class Phase5DossierAssemblerTests
 
         Assert.True(dossier.HasFatalFalsifier);
     }
+
+    // ─── WP-6: ObservationChainRecord tests ───
+
+    private static ObservationChainRecord MakeObsChainRecord(
+        string candidateId,
+        string primarySourceId,
+        string completenessStatus = "complete",
+        double sensitivityScore = 0.1,
+        double auxModelSensitivity = 0.08,
+        bool passed = true) => new ObservationChainRecord
+    {
+        CandidateId = candidateId,
+        PrimarySourceId = primarySourceId,
+        ObservableId = "obs-test-1",
+        CompletenessStatus = completenessStatus,
+        SensitivityScore = sensitivityScore,
+        AuxiliaryModelSensitivity = auxModelSensitivity,
+        Passed = passed,
+        Provenance = MakeProvenance(),
+    };
+
+    [Fact]
+    public void ObservationChainGate_NoRecord_Fails()
+    {
+        // Gate 4 fails when no observation chain records are provided
+        var candidate = MakeCandidate("p-obs-none", obsConfidence: 0.0); // obsConfidence=0 → gate fails
+        var registry = MakeRegistry([candidate]);
+        var assembler = new Phase5DossierAssembler();
+
+        var dossier = assembler.Assemble(
+            studyId: "obs-none-test",
+            branchRecord: null,
+            convergenceRecords: null,
+            convergenceFailures: null,
+            environments: null,
+            scoreCard: null,
+            falsifiers: null,
+            registry: registry,
+            environmentTiersCovered: ["env-toy", "env-structured"],
+            freshness: "regenerated",
+            provenance: MakeProvenance(),
+            observationChainRecords: []);  // empty list — gate should fail
+
+        Assert.Single(dossier.ClaimEscalations);
+        var escalation = dossier.ClaimEscalations[0];
+        var obsGate = escalation.GateResults.Single(g => g.GateId == EscalationGates.ObservationChainValid);
+        Assert.False(obsGate.Passed);
+    }
+
+    [Fact]
+    public void ObservationChainGate_CompleteLowSensitivityRecord_Passes()
+    {
+        // Gate 4 passes when a complete, low-sensitivity, passed record exists for the candidate
+        var candidate = MakeCandidate("p-obs-good");
+        var registry = MakeRegistry([candidate]);
+        var obsRecord = MakeObsChainRecord(
+            candidateId: "p-obs-good",
+            primarySourceId: "src-p-obs-good",
+            completenessStatus: "complete",
+            sensitivityScore: 0.12,
+            auxModelSensitivity: 0.08,
+            passed: true);
+
+        var assembler = new Phase5DossierAssembler();
+        var dossier = assembler.Assemble(
+            studyId: "obs-good-test",
+            branchRecord: MakeRobustBranchRecord(),
+            convergenceRecords: MakeBoundedConvergence(),
+            convergenceFailures: null,
+            environments: null,
+            scoreCard: MakePassingScorecard(),
+            falsifiers: null,
+            registry: registry,
+            environmentTiersCovered: ["env-toy", "env-structured"],
+            freshness: "regenerated",
+            provenance: MakeProvenance(),
+            observationChainRecords: [obsRecord]);
+
+        Assert.Single(dossier.ClaimEscalations);
+        var escalation = dossier.ClaimEscalations[0];
+        var obsGate = escalation.GateResults.Single(g => g.GateId == EscalationGates.ObservationChainValid);
+        Assert.True(obsGate.Passed);
+
+        // Observation chain is stored in the dossier
+        Assert.NotNull(dossier.ObservationChainSummary);
+        Assert.Single(dossier.ObservationChainSummary!);
+    }
+
+    [Fact]
+    public void ObservationChainGate_HighSensitivityRecord_Fails()
+    {
+        // Gate 4 fails when sensitivityScore > 0.3
+        var candidate = MakeCandidate("p-obs-sensitive");
+        var registry = MakeRegistry([candidate]);
+        var obsRecord = MakeObsChainRecord(
+            candidateId: "p-obs-sensitive",
+            primarySourceId: "src-p-obs-sensitive",
+            completenessStatus: "complete",
+            sensitivityScore: 0.44,   // exceeds 0.3 threshold
+            auxModelSensitivity: 0.35, // exceeds 0.3 threshold
+            passed: false);
+
+        var assembler = new Phase5DossierAssembler();
+        var dossier = assembler.Assemble(
+            studyId: "obs-sensitive-test",
+            branchRecord: null,
+            convergenceRecords: null,
+            convergenceFailures: null,
+            environments: null,
+            scoreCard: null,
+            falsifiers: null,
+            registry: registry,
+            environmentTiersCovered: ["env-toy"],
+            freshness: "regenerated",
+            provenance: MakeProvenance(),
+            observationChainRecords: [obsRecord]);
+
+        Assert.Single(dossier.ClaimEscalations);
+        var escalation = dossier.ClaimEscalations[0];
+        var obsGate = escalation.GateResults.Single(g => g.GateId == EscalationGates.ObservationChainValid);
+        Assert.False(obsGate.Passed);
+    }
 }

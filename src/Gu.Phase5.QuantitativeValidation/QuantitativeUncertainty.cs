@@ -29,6 +29,14 @@ public sealed class QuantitativeUncertainty
     [JsonPropertyName("totalUncertainty")]
     public double TotalUncertainty { get; init; } = -1;
 
+    /// <summary>Lower total uncertainty for asymmetric models. Null = use TotalUncertainty.</summary>
+    [JsonPropertyName("totalUncertaintyLower")]
+    public double? TotalUncertaintyLower { get; init; }
+
+    /// <summary>Upper total uncertainty for asymmetric models. Null = use TotalUncertainty.</summary>
+    [JsonPropertyName("totalUncertaintyUpper")]
+    public double? TotalUncertaintyUpper { get; init; }
+
     /// <summary>True if all four components are estimated (>= 0).</summary>
     [JsonIgnore]
     public bool IsFullyEstimated =>

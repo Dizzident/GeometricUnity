@@ -4,8 +4,9 @@ namespace Gu.Phase5.QuantitativeValidation;
 /// Compares a computed observable to an external target (M49).
 ///
 /// Pull statistic (physicist-confirmed):
-///   pull = |computed - target| / sqrt(sigma_computed^2 + sigma_target^2)
-///   passed = pull &lt;= sigmaThreshold
+///   gaussian:            pull = |computed - target| / sqrt(sigma_computed^2 + sigma_target^2)
+///   gaussian-asymmetric: choose lower or upper sigma based on sign of residual
+///   student-t:           pull = |computed - target| / sigma_target, normalized by Student-t DoF
 ///
 /// If computed uncertainty is unestimated (-1), uses sigma_target only in denominator
 /// (unless policy.RequireFullUncertainty = true, in which case the match fails).
@@ -14,6 +15,7 @@ public static class TargetMatcher
 {
     /// <summary>
     /// Compute a TargetMatchRecord for the given computed observable and external target.
+    /// Dispatches on target.DistributionModel.
     /// </summary>
     public static TargetMatchRecord Match(
         QuantitativeObservableRecord computed,
@@ -24,6 +26,19 @@ public static class TargetMatcher
         ArgumentNullException.ThrowIfNull(target);
         ArgumentNullException.ThrowIfNull(policy);
 
+        return target.DistributionModel switch
+        {
+            "gaussian-asymmetric" => MatchAsymmetric(computed, target, policy),
+            "student-t" => MatchStudentT(computed, target, policy),
+            _ => MatchGaussian(computed, target, policy),
+        };
+    }
+
+    private static TargetMatchRecord MatchGaussian(
+        QuantitativeObservableRecord computed,
+        ExternalTarget target,
+        CalibrationPolicy policy)
+    {
         double sigmaComputed = computed.Uncertainty.TotalUncertainty;
         bool hasComputedSigma = sigmaComputed >= 0;
         string? note = null;
@@ -56,7 +71,6 @@ public static class TargetMatcher
         double pull;
         if (denom < 1e-300)
         {
-            // Both uncertainties are zero or near-zero: exact comparison
             pull = System.Math.Abs(computed.Value - target.Value) < 1e-12
                 ? 0.0
                 : double.PositiveInfinity;
@@ -78,6 +92,157 @@ public static class TargetMatcher
             ComputedUncertainty = computed.Uncertainty.TotalUncertainty,
             Pull = pull,
             Passed = passed,
+            Notes = note,
+        };
+    }
+
+    /// <summary>
+    /// Asymmetric Gaussian: choose lower or upper sigma based on sign of (computed - target).
+    /// Residual > 0 (computed above target): use upper sigma.
+    /// Residual &lt; 0 (computed below target): use lower sigma.
+    /// Falls back to symmetric Uncertainty if the directional field is null.
+    /// </summary>
+    private static TargetMatchRecord MatchAsymmetric(
+        QuantitativeObservableRecord computed,
+        ExternalTarget target,
+        CalibrationPolicy policy)
+    {
+        double residual = computed.Value - target.Value;
+        double sigmaTarget = residual >= 0
+            ? (target.UncertaintyUpper ?? target.Uncertainty)
+            : (target.UncertaintyLower ?? target.Uncertainty);
+
+        double sigmaComputed = computed.Uncertainty.TotalUncertainty;
+        bool hasComputedSigma = sigmaComputed >= 0;
+        string? note = $"gaussian-asymmetric; using {(residual >= 0 ? "upper" : "lower")} sigma={sigmaTarget:G6}.";
+
+        if (!hasComputedSigma && policy.RequireFullUncertainty)
+        {
+            return new TargetMatchRecord
+            {
+                ObservableId = computed.ObservableId,
+                TargetLabel = target.Label,
+                TargetValue = target.Value,
+                TargetUncertainty = sigmaTarget,
+                ComputedValue = computed.Value,
+                ComputedUncertainty = sigmaComputed,
+                Pull = double.PositiveInfinity,
+                Passed = false,
+                Notes = "Computed uncertainty unestimated; RequireFullUncertainty=true → failed.",
+            };
+        }
+
+        if (!hasComputedSigma)
+        {
+            note += " Computed uncertainty unestimated; using target sigma only in pull denominator.";
+            sigmaComputed = 0;
+        }
+
+        double denom = System.Math.Sqrt(
+            sigmaComputed * sigmaComputed + sigmaTarget * sigmaTarget);
+
+        double pull;
+        if (denom < 1e-300)
+        {
+            pull = System.Math.Abs(residual) < 1e-12 ? 0.0 : double.PositiveInfinity;
+        }
+        else
+        {
+            pull = System.Math.Abs(residual) / denom;
+        }
+
+        return new TargetMatchRecord
+        {
+            ObservableId = computed.ObservableId,
+            TargetLabel = target.Label,
+            TargetValue = target.Value,
+            TargetUncertainty = sigmaTarget,
+            ComputedValue = computed.Value,
+            ComputedUncertainty = computed.Uncertainty.TotalUncertainty,
+            Pull = pull,
+            Passed = pull <= policy.SigmaThreshold,
+            Notes = note,
+        };
+    }
+
+    /// <summary>
+    /// Student-t: normalized pull = |computed - target| / sigma_target, then evaluate
+    /// against a Student-t distribution with the declared degrees of freedom.
+    /// The pull reported is the raw normalized residual. Passed = pull &lt;= sigmaThreshold.
+    /// If StudentTDegreesOfFreedom is null or &lt;= 0, falls back to Gaussian.
+    /// </summary>
+    private static TargetMatchRecord MatchStudentT(
+        QuantitativeObservableRecord computed,
+        ExternalTarget target,
+        CalibrationPolicy policy)
+    {
+        double nu = target.StudentTDegreesOfFreedom ?? 0;
+        if (nu <= 0)
+        {
+            // Degenerate: fall back to Gaussian
+            return MatchGaussian(computed, target, policy);
+        }
+
+        double sigmaComputed = computed.Uncertainty.TotalUncertainty;
+        bool hasComputedSigma = sigmaComputed >= 0;
+        string? note = $"student-t; nu={nu:G6}.";
+
+        if (!hasComputedSigma && policy.RequireFullUncertainty)
+        {
+            return new TargetMatchRecord
+            {
+                ObservableId = computed.ObservableId,
+                TargetLabel = target.Label,
+                TargetValue = target.Value,
+                TargetUncertainty = target.Uncertainty,
+                ComputedValue = computed.Value,
+                ComputedUncertainty = sigmaComputed,
+                Pull = double.PositiveInfinity,
+                Passed = false,
+                Notes = "Computed uncertainty unestimated; RequireFullUncertainty=true → failed.",
+            };
+        }
+
+        if (!hasComputedSigma)
+        {
+            note += " Computed uncertainty unestimated; using target sigma only.";
+            sigmaComputed = 0;
+        }
+
+        double denom = System.Math.Sqrt(
+            sigmaComputed * sigmaComputed + target.Uncertainty * target.Uncertainty);
+
+        double pull;
+        if (denom < 1e-300)
+        {
+            pull = System.Math.Abs(computed.Value - target.Value) < 1e-12 ? 0.0 : double.PositiveInfinity;
+        }
+        else
+        {
+            // Student-t normalized pull: scale by sqrt(nu/(nu-2)) for nu > 2 to match
+            // the standard deviation of the t-distribution; for nu <= 2 use raw ratio.
+            double rawPull = System.Math.Abs(computed.Value - target.Value) / denom;
+            if (nu > 2)
+            {
+                double tScale = System.Math.Sqrt(nu / (nu - 2.0));
+                pull = rawPull / tScale;
+            }
+            else
+            {
+                pull = rawPull;
+            }
+        }
+
+        return new TargetMatchRecord
+        {
+            ObservableId = computed.ObservableId,
+            TargetLabel = target.Label,
+            TargetValue = target.Value,
+            TargetUncertainty = target.Uncertainty,
+            ComputedValue = computed.Value,
+            ComputedUncertainty = computed.Uncertainty.TotalUncertainty,
+            Pull = pull,
+            Passed = pull <= policy.SigmaThreshold,
             Notes = note,
         };
     }

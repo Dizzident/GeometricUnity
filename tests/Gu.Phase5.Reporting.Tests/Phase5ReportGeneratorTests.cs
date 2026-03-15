@@ -60,15 +60,15 @@ public sealed class Phase5ReportGeneratorTests
             BranchManifestId = "branch-1",
             TargetQuantities = ["q1"],
             RefinementLevels = [
-                new RefinementLevel { LevelId = "L0", MeshParameter = 1.0 },
-                new RefinementLevel { LevelId = "L1", MeshParameter = 0.5 },
-                new RefinementLevel { LevelId = "L2", MeshParameter = 0.25 },
+                new RefinementLevel { LevelId = "L0", MeshParameterX = 1.0, MeshParameterF = 1.0 },
+                new RefinementLevel { LevelId = "L1", MeshParameterX = 0.5, MeshParameterF = 0.5 },
+                new RefinementLevel { LevelId = "L2", MeshParameterX = 0.25, MeshParameterF = 0.25 },
             ],
             Provenance = MakeProvenance(),
         };
         var runner = new RefinementStudyRunner();
         var result = runner.Run(spec, level =>
-            new Dictionary<string, double> { ["q1"] = 3.0 + level.MeshParameter * level.MeshParameter });
+            new Dictionary<string, double> { ["q1"] = 3.0 + level.EffectiveMeshParameter * level.EffectiveMeshParameter });
 
         var report = Phase5ReportGenerator.Generate(
             "study-1", [], MakeProvenance(),

@@ -60,7 +60,7 @@ public sealed class RefinementStudyRunner
             runRecords.Add(new RefinementRunRecord
             {
                 LevelId = level.LevelId,
-                MeshParameter = level.MeshParameter,
+                MeshParameter = level.EffectiveMeshParameter,
                 Quantities = quantities,
                 Converged = converged,
                 ResidualNorm = residual,

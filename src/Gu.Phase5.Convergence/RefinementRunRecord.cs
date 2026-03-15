@@ -12,7 +12,7 @@ public sealed class RefinementRunRecord
     [JsonPropertyName("levelId")]
     public required string LevelId { get; init; }
 
-    /// <summary>Mesh parameter h for this run.</summary>
+    /// <summary>Effective mesh parameter max(h_X, h_F) used for Richardson extrapolation.</summary>
     [JsonPropertyName("meshParameter")]
     public required double MeshParameter { get; init; }
 

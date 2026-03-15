@@ -1,0 +1,191 @@
+using Gu.Core.Serialization;
+using Gu.Phase4.Registry;
+using Gu.Phase5.Convergence;
+using Gu.Phase5.Dossiers;
+using Gu.Phase5.Environments;
+using Gu.Phase5.Falsification;
+using Gu.Phase5.QuantitativeValidation;
+
+namespace Gu.Phase5.Reporting;
+
+/// <summary>
+/// Loads all campaign input artifacts from the paths declared in a <see cref="Phase5CampaignSpec"/>.
+/// Implements D-004: the CLI is analysis-first — artifacts are loaded from persisted files.
+/// Optional artifact paths (observationChainPath, environmentVariancePath, etc.) yield null when absent.
+/// </summary>
+public sealed class Phase5CampaignArtifacts
+{
+    /// <summary>Branch quantity values table (required).</summary>
+    public required RefinementQuantityValueTable BranchQuantityValues { get; init; }
+
+    /// <summary>Refinement quantity values table (required).</summary>
+    public required RefinementQuantityValueTable RefinementValues { get; init; }
+
+    /// <summary>Quantitative observable records (required).</summary>
+    public required IReadOnlyList<QuantitativeObservableRecord> Observables { get; init; }
+
+    /// <summary>Environment records (required).</summary>
+    public required IReadOnlyList<EnvironmentRecord> EnvironmentRecords { get; init; }
+
+    /// <summary>External target table (required).</summary>
+    public required ExternalTargetTable TargetTable { get; init; }
+
+    /// <summary>Unified particle registry (required).</summary>
+    public required UnifiedParticleRegistry Registry { get; init; }
+
+    /// <summary>Observation chain records (optional, typed by WP-6).</summary>
+    public IReadOnlyList<ObservationChainRecord>? ObservationChainRecords { get; init; }
+
+    /// <summary>Environment variance records (optional, typed by WP-7).</summary>
+    public IReadOnlyList<EnvironmentVarianceRecord>? EnvironmentVarianceRecords { get; init; }
+
+    /// <summary>Representation content records (optional, typed by WP-7).</summary>
+    public IReadOnlyList<RepresentationContentRecord>? RepresentationContentRecords { get; init; }
+
+    /// <summary>Coupling consistency records (optional, typed by WP-7).</summary>
+    public IReadOnlyList<CouplingConsistencyRecord>? CouplingConsistencyRecords { get; init; }
+}
+
+/// <summary>
+/// Loads <see cref="Phase5CampaignArtifacts"/> from a campaign spec.
+/// Paths in the spec that are relative are resolved relative to the campaign spec file's directory.
+/// </summary>
+public static class Phase5CampaignArtifactLoader
+{
+    /// <summary>
+    /// Load all campaign artifacts described by <paramref name="spec"/>.
+    /// </summary>
+    /// <param name="spec">The campaign spec containing artifact paths.</param>
+    /// <param name="specDir">
+    /// Absolute directory of the campaign spec JSON file.
+    /// Used to resolve relative paths.
+    /// </param>
+    public static Phase5CampaignArtifacts Load(Phase5CampaignSpec spec, string specDir)
+    {
+        ArgumentNullException.ThrowIfNull(spec);
+        ArgumentException.ThrowIfNullOrWhiteSpace(specDir);
+
+        // 1. Branch quantity values
+        var branchValuesPath = ResolvePath(spec.BranchQuantityValuesPath, specDir);
+        var branchValues = LoadRequired<RefinementQuantityValueTable>(branchValuesPath, "branchQuantityValuesPath");
+
+        // 2. Refinement values
+        var refinementValuesPath = ResolvePath(spec.RefinementValuesPath, specDir);
+        var refinementValues = LoadRequired<RefinementQuantityValueTable>(refinementValuesPath, "refinementValuesPath");
+
+        // 3. Observables
+        var observablesPath = ResolvePath(spec.ObservablesPath, specDir);
+        var observables = LoadRequiredList<QuantitativeObservableRecord>(observablesPath, "observablesPath");
+
+        // 4. Environment records
+        var envRecords = new List<EnvironmentRecord>();
+        foreach (var envPath in spec.EnvironmentRecordPaths)
+        {
+            var absEnvPath = ResolvePath(envPath, specDir);
+            var record = LoadRequired<EnvironmentRecord>(absEnvPath, $"environmentRecordPaths[{envPath}]");
+            envRecords.Add(record);
+        }
+
+        // 5. External targets (from ExternalTargetTablePath)
+        var targetsPath = ResolvePath(spec.ExternalTargetTablePath, specDir);
+        var targetTable = LoadRequired<ExternalTargetTable>(targetsPath, "externalTargetTablePath");
+
+        // 6. Registry
+        var registryPath = ResolvePath(spec.RegistryPath, specDir);
+        var registry = LoadRequired<UnifiedParticleRegistry>(registryPath, "registryPath");
+
+        // 7. Observation chain records (optional, now typed — WP-6)
+        IReadOnlyList<ObservationChainRecord>? observationChainRecords = null;
+        if (spec.ObservationChainPath is not null)
+        {
+            var absPath = ResolvePath(spec.ObservationChainPath, specDir);
+            if (File.Exists(absPath))
+                observationChainRecords = GuJsonDefaults.Deserialize<List<ObservationChainRecord>>(
+                    File.ReadAllText(absPath));
+        }
+
+        // 8. Environment variance records (optional)
+        IReadOnlyList<EnvironmentVarianceRecord>? envVarianceRecords = null;
+        if (spec.EnvironmentVariancePath is not null)
+        {
+            var absPath = ResolvePath(spec.EnvironmentVariancePath, specDir);
+            if (File.Exists(absPath))
+                envVarianceRecords = GuJsonDefaults.Deserialize<List<EnvironmentVarianceRecord>>(
+                    File.ReadAllText(absPath));
+        }
+
+        // 9. Representation content records (optional)
+        IReadOnlyList<RepresentationContentRecord>? repContentRecords = null;
+        if (spec.RepresentationContentPath is not null)
+        {
+            var absPath = ResolvePath(spec.RepresentationContentPath, specDir);
+            if (File.Exists(absPath))
+                repContentRecords = GuJsonDefaults.Deserialize<List<RepresentationContentRecord>>(
+                    File.ReadAllText(absPath));
+        }
+
+        // 10. Coupling consistency records (optional)
+        IReadOnlyList<CouplingConsistencyRecord>? couplingRecords = null;
+        if (spec.CouplingConsistencyPath is not null)
+        {
+            var absPath = ResolvePath(spec.CouplingConsistencyPath, specDir);
+            if (File.Exists(absPath))
+                couplingRecords = GuJsonDefaults.Deserialize<List<CouplingConsistencyRecord>>(
+                    File.ReadAllText(absPath));
+        }
+
+        return new Phase5CampaignArtifacts
+        {
+            BranchQuantityValues = branchValues,
+            RefinementValues = refinementValues,
+            Observables = observables,
+            EnvironmentRecords = envRecords,
+            TargetTable = targetTable,
+            Registry = registry,
+            ObservationChainRecords = observationChainRecords,
+            EnvironmentVarianceRecords = envVarianceRecords,
+            RepresentationContentRecords = repContentRecords,
+            CouplingConsistencyRecords = couplingRecords,
+        };
+    }
+
+    private static string ResolvePath(string path, string baseDir)
+    {
+        return Path.IsPathRooted(path)
+            ? path
+            : Path.GetFullPath(Path.Combine(baseDir, path));
+    }
+
+    private static T LoadRequired<T>(string path, string fieldName)
+    {
+        if (!File.Exists(path))
+            throw new ArtifactLoadException($"Required artifact not found for field '{fieldName}': {path}");
+
+        var json = File.ReadAllText(path);
+        var value = GuJsonDefaults.Deserialize<T>(json);
+        if (value is null)
+            throw new ArtifactLoadException(
+                $"Failed to deserialize artifact for field '{fieldName}' at path: {path}");
+        return value;
+    }
+
+    private static IReadOnlyList<T> LoadRequiredList<T>(string path, string fieldName)
+    {
+        if (!File.Exists(path))
+            throw new ArtifactLoadException($"Required artifact not found for field '{fieldName}': {path}");
+
+        var json = File.ReadAllText(path);
+        var value = GuJsonDefaults.Deserialize<List<T>>(json);
+        if (value is null)
+            throw new ArtifactLoadException(
+                $"Failed to deserialize list artifact for field '{fieldName}' at path: {path}");
+        return value;
+    }
+
+}
+
+/// <summary>Exception thrown when a required campaign artifact cannot be loaded.</summary>
+public sealed class ArtifactLoadException : Exception
+{
+    public ArtifactLoadException(string message) : base(message) { }
+}

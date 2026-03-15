@@ -17,6 +17,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Gu.Core\Gu.Core.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase3.Backgrounds\Gu.Phase3.Backgrounds.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Phase4.Registry\Gu.Phase4.Registry.csproj" />
     <ProjectReference Include="..\..\src\Gu.Phase5.BranchIndependence\Gu.Phase5.BranchIndependence.csproj" />
     <ProjectReference Include="..\..\src\Gu.Phase5.Convergence\Gu.Phase5.Convergence.csproj" />
     <ProjectReference Include="..\..\src\Gu.Phase5.Dossiers\Gu.Phase5.Dossiers.csproj" />

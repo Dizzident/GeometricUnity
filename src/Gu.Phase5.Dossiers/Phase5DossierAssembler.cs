@@ -38,7 +38,8 @@ public sealed class Phase5DossierAssembler
         UnifiedParticleRegistry? registry,
         IReadOnlyList<string> environmentTiersCovered,
         string freshness,
-        ProvenanceMeta provenance)
+        ProvenanceMeta provenance,
+        IReadOnlyList<ObservationChainRecord>? observationChainRecords = null)
     {
         ArgumentNullException.ThrowIfNull(studyId);
         ArgumentNullException.ThrowIfNull(environmentTiersCovered);
@@ -52,6 +53,7 @@ public sealed class Phase5DossierAssembler
             scoreCard,
             falsifiers,
             environmentTiersCovered,
+            observationChainRecords,
             provenance);
 
         // Collect negative results from falsifier summary and convergence failures
@@ -71,6 +73,7 @@ public sealed class Phase5DossierAssembler
             EnvironmentSummary = environments,
             QuantitativeComparison = scoreCard,
             FalsifierSummary = falsifiers,
+            ObservationChainSummary = observationChainRecords,
             ClaimEscalations = escalations,
             NegativeResults = negativeResults,
             Freshness = freshness,
@@ -90,6 +93,7 @@ public sealed class Phase5DossierAssembler
         ConsistencyScoreCard? scoreCard,
         FalsifierSummary? falsifiers,
         IReadOnlyList<string> environmentTiersCovered,
+        IReadOnlyList<ObservationChainRecord>? observationChainRecords,
         ProvenanceMeta provenance)
     {
         if (registry is null)
@@ -136,14 +140,29 @@ public sealed class Phase5DossierAssembler
                 Required = true,
             });
 
-            // Gate 4: ObservationChainValid (simplified — check if candidate has observation confidence > 0)
-            bool obsValid = candidate.ObservationConfidence > 0;
+            // Gate 4: ObservationChainValid — use observation chain records when available (WP-6)
+            bool obsValid;
+            string obsEvidence;
+            if (observationChainRecords is not null && observationChainRecords.Count > 0)
+            {
+                // Gate passes if at least one record for this candidate satisfies all conditions
+                obsValid = IsObservationChainValid(observationChainRecords, candidate.ParticleId, candidate.PrimarySourceId);
+                obsEvidence = obsValid
+                    ? "ObservationChainRecord: complete, passed, low sensitivity."
+                    : "No ObservationChainRecord satisfies all gate conditions (complete + passed + sensitivity <= 0.3).";
+            }
+            else
+            {
+                // Fallback: use observation confidence
+                obsValid = candidate.ObservationConfidence > 0;
+                obsEvidence = $"ObservationConfidence={candidate.ObservationConfidence:G4} (no chain records provided).";
+            }
             gates.Add(new EscalationGateResult
             {
                 GateId = EscalationGates.ObservationChainValid,
-                Description = "Observation provenance chain is complete (observation confidence > 0).",
+                Description = "Observation provenance chain is complete and low-sensitivity.",
                 Passed = obsValid,
-                Evidence = $"ObservationConfidence={candidate.ObservationConfidence:G4}.",
+                Evidence = obsEvidence,
                 Required = true,
             });
 
@@ -220,6 +239,28 @@ public sealed class Phase5DossierAssembler
         }
 
         return results;
+    }
+
+    /// <summary>
+    /// ObservationChainValid gate: at least one record for the candidate satisfies all conditions:
+    ///   1. CompletenessStatus == "complete"
+    ///   2. Passed == true
+    ///   3. SensitivityScore &lt;= 0.3
+    ///   4. AuxiliaryModelSensitivity &lt;= 0.3
+    /// Join: CandidateId == particleId AND PrimarySourceId == primarySourceId.
+    /// </summary>
+    private static bool IsObservationChainValid(
+        IReadOnlyList<ObservationChainRecord> records,
+        string particleId,
+        string primarySourceId)
+    {
+        return records.Any(r =>
+            r.CandidateId == particleId &&
+            r.PrimarySourceId == primarySourceId &&
+            r.CompletenessStatus == "complete" &&
+            r.Passed &&
+            r.SensitivityScore <= 0.3 &&
+            r.AuxiliaryModelSensitivity <= 0.3);
     }
 
     private static bool IsBranchRobust(BranchRobustnessRecord? branchRecord, string primarySourceId)
