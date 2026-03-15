@@ -173,6 +173,30 @@ public sealed class RefinementStudyRunnerTests
             "Expected either a failure record or estimate for non-converging quantity.");
     }
 
+    [Fact]
+    public void Run_ConstantQuantity_ProducesContinuumEstimate()
+    {
+        var levels = new[]
+        {
+            Level("L0", 1.0),
+            Level("L1", 0.5),
+            Level("L2", 0.25),
+        };
+        var spec = MakeSpec(levels);
+        var runner = new RefinementStudyRunner();
+
+        var result = runner.Run(spec, _ =>
+            new Dictionary<string, double> { ["q1"] = 0.0 });
+
+        Assert.Single(result.ContinuumEstimates);
+        Assert.Empty(result.FailureRecords);
+
+        var estimate = result.ContinuumEstimates[0];
+        Assert.Equal("convergent", estimate.ConvergenceClassification);
+        Assert.Equal(0.0, estimate.ExtrapolatedValue, precision: 12);
+        Assert.Equal(0.0, estimate.ErrorBand, precision: 12);
+    }
+
     // WP-8 test (a): legacy single-h JSON input is still accepted and sets both X and F
     [Fact]
     public void RefinementLevel_LegacySingleH_DeserializesWithBothXAndF()

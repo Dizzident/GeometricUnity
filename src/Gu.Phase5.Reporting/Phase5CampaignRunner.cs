@@ -56,7 +56,7 @@ public sealed class Phase5CampaignRunner
         IReadOnlyList<RepresentationContentRecord>? representationContentRecords = null,
         IReadOnlyList<CouplingConsistencyRecord>? couplingConsistencyRecords = null,
         SidecarSummary? sidecarSummary = null,
-        BridgeManifest? refinementBridgeManifest = null)
+        RefinementEvidenceManifest? refinementEvidenceManifest = null)
     {
         ArgumentNullException.ThrowIfNull(spec);
         ArgumentNullException.ThrowIfNull(branchPipelineExecutor);
@@ -182,7 +182,7 @@ public sealed class Phase5CampaignRunner
             provenance: provenance,
             branchRecord: branchRecord,
             refinementResult: refinementResult,
-            refinementBridgeManifest: refinementBridgeManifest,
+            refinementEvidenceManifest: refinementEvidenceManifest,
             falsifiers: falsifiers);
 
         return new Phase5CampaignResult

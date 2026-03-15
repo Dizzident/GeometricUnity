@@ -102,6 +102,7 @@ public sealed class BridgeValueExporterTests
             Assert.True(File.Exists(Path.Combine(outDir, "branch_quantity_values.json")));
             Assert.True(File.Exists(Path.Combine(outDir, "refinement_values.json")));
             Assert.True(File.Exists(Path.Combine(outDir, "bridge_manifest.json")));
+            Assert.True(File.Exists(Path.Combine(outDir, "refinement_evidence_manifest.json")));
         }
         finally
         {
@@ -212,6 +213,30 @@ public sealed class BridgeValueExporterTests
             Assert.Equal(exported.SourceRecordIds, loaded.SourceRecordIds);
             Assert.Equal(exported.SourceStateArtifactRefs, loaded.SourceStateArtifactRefs);
             Assert.Equal(exported.DerivedVariantIds, loaded.DerivedVariantIds);
+        }
+        finally
+        {
+            if (Directory.Exists(outDir)) Directory.Delete(outDir, recursive: true);
+        }
+    }
+
+    [Fact]
+    public void Export_RefinementEvidenceManifest_ClassifiesBridgeDerived()
+    {
+        var atlas = MakeAtlas([MakeRecord("bg-001"), MakeRecord("bg-002")]);
+        var spec = MakeRefinementSpec();
+        var outDir = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        try
+        {
+            BridgeValueExporter.Export(atlas, spec, "/tmp/atlas.json", outDir, MakeProvenance());
+
+            var json = File.ReadAllText(Path.Combine(outDir, "refinement_evidence_manifest.json"));
+            var manifest = GuJsonDefaults.Deserialize<RefinementEvidenceManifest>(json);
+
+            Assert.NotNull(manifest);
+            Assert.Equal("bridge-derived", manifest!.EvidenceSource);
+            Assert.Equal(spec.StudyId, manifest.StudyId);
+            Assert.Equal(2, manifest.SourceRecordIds.Count);
         }
         finally
         {

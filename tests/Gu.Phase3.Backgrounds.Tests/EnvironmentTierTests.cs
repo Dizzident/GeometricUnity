@@ -226,4 +226,15 @@ public class EnvironmentTierTests
         Assert.Equal(32, s4x4.AmbientMesh.CellCount);
         Assert.Equal(128, s8x8.AmbientMesh.CellCount);
     }
+
+    [Fact]
+    public void ToyGeometryFactory_CreateStructuredFiberBundle2D_PreservesFiveDimensionalAmbientBranch()
+    {
+        var bundle = ToyGeometryFactory.CreateStructuredFiberBundle2D(4, 4);
+
+        Assert.Equal(2, bundle.BaseMesh.EmbeddingDimension);
+        Assert.Equal(5, bundle.AmbientMesh.EmbeddingDimension);
+        Assert.True(bundle.AmbientMesh.CellCount > bundle.BaseMesh.CellCount);
+        Assert.True(bundle.ValidateSection());
+    }
 }

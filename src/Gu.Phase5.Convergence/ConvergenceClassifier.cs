@@ -4,7 +4,8 @@ namespace Gu.Phase5.Convergence;
 /// Classifies convergence behavior from multi-level refinement data.
 ///
 /// Classifications (physicist-confirmed):
-///   "convergent"        -- successive |deltas| decrease monotonically and p > 0
+///   "convergent"        -- successive |deltas| decrease monotonically and p > 0,
+///                          or the series is exactly invariant across all levels
 ///   "weakly-convergent" -- deltas decrease on average but p &lt; 0.5 or non-monotone
 ///   "non-convergent"    -- deltas do not decrease (diverging or stagnant)
 ///   "insufficient-data" -- fewer than 3 refinement levels
@@ -29,6 +30,13 @@ public static class ConvergenceClassifier
         var deltas = new double[n - 1];
         for (int i = 0; i < n - 1; i++)
             deltas[i] = System.Math.Abs(values[i + 1] - values[i]);
+
+        bool exactInvariant = deltas.All(delta => delta <= 1e-15);
+        if (exactInvariant)
+        {
+            return ("convergent",
+                "Exact invariance across all refinement levels; observed deltas are zero.");
+        }
 
         // Check monotone decrease
         bool monotoneDecreasing = true;

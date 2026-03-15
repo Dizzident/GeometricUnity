@@ -14,6 +14,7 @@ namespace Gu.Phase5.Reporting;
 ///   <item><c>branch_quantity_values.json</c> — <see cref="RefinementQuantityValueTable"/> keyed by derived variant IDs</item>
 ///   <item><c>refinement_values.json</c>       — <see cref="RefinementQuantityValueTable"/> derived from refinement spec levels</item>
 ///   <item><c>bridge_manifest.json</c>          — <see cref="BridgeManifest"/> recording source record IDs and variant IDs</item>
+///   <item><c>refinement_evidence_manifest.json</c> — <see cref="RefinementEvidenceManifest"/> classifying the ladder as bridge-derived</item>
 /// </list>
 /// </summary>
 public static class BridgeValueExporter
@@ -156,6 +157,21 @@ public static class BridgeValueExporter
         File.WriteAllText(
             Path.Combine(outDir, "bridge_manifest.json"),
             GuJsonDefaults.Serialize(manifest));
+
+        var evidenceManifest = new RefinementEvidenceManifest
+        {
+            ManifestId = $"bridge-refinement-{atlas.AtlasId}-{DateTimeOffset.UtcNow:yyyyMMddTHHmmssZ}",
+            StudyId = refinementSpec.StudyId,
+            EvidenceSource = "bridge-derived",
+            SourceRecordIds = sourceRecordIds,
+            SourceArtifactRefs = sourceStateArtifactRefs,
+            Notes = $"Bridge export from atlas {atlas.AtlasId}.",
+            Provenance = provenance,
+        };
+
+        File.WriteAllText(
+            Path.Combine(outDir, "refinement_evidence_manifest.json"),
+            GuJsonDefaults.Serialize(evidenceManifest));
 
         return manifest;
     }

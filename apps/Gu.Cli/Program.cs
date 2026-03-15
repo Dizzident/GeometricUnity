@@ -113,6 +113,8 @@ switch (args[0])
         return RunPhase5Campaign(args);
     case "export-phase5-bridge-values":
         return ExportPhase5BridgeValues(args);
+    case "export-phase5-direct-refinement-values":
+        return ExportPhase5DirectRefinementValues(args);
     case "build-phase5-sidecars":
         return BuildPhase5Sidecars(args);
     case "validate-phase5-campaign-spec":
@@ -1310,25 +1312,21 @@ static int SolveBackgrounds(string[] args)
 
     // Set up geometry and solver
     var algebra = CreateAlgebra(lieAlgebra);
-    var bundle = ToyGeometryFactory.CreateToy2D();
-    var mesh = bundle.AmbientMesh;
-    var geometry = bundle.ToGeometryContext("centroid", "P1");
-    int edgeN = mesh.EdgeCount * algebra.Dimension;
-    var a0 = new FieldTensor
-    {
-        Label = "a0",
-        Signature = new TensorSignature
-        {
-            AmbientSpaceId = "Y_h",
-            CarrierType = "connection-1form",
-            Degree = "1",
-            LieAlgebraBasisId = "canonical",
-            ComponentOrderId = "edge-major",
-            MemoryLayout = "dense-row-major",
-        },
-        Coefficients = new double[edgeN],
-        Shape = new[] { mesh.EdgeCount, algebra.Dimension },
-    };
+    var bundlesByEnvironmentId = study.Specs
+        .Select(spec => spec.EnvironmentId)
+        .Distinct(StringComparer.Ordinal)
+        .ToDictionary(
+            environmentId => environmentId,
+            ResolveBackgroundEnvironment,
+            StringComparer.Ordinal);
+    var geometries = bundlesByEnvironmentId.ToDictionary(
+        kv => kv.Key,
+        kv => kv.Value.ToGeometryContext("centroid", "P1"),
+        StringComparer.Ordinal);
+    var a0s = bundlesByEnvironmentId.ToDictionary(
+        kv => kv.Key,
+        kv => CreateZeroConnection(kv.Value.AmbientMesh, algebra),
+        StringComparer.Ordinal);
 
     // Use the first resolved manifest for provenance
     var firstManifest = manifests.Values.First();
@@ -1345,11 +1343,8 @@ static int SolveBackgrounds(string[] args)
         Backend = "cpu-reference",
     };
 
-    var geometries = new Dictionary<string, GeometryContext> { ["env-default"] = geometry };
-    var a0s = new Dictionary<string, FieldTensor> { ["env-default"] = a0 };
-
     var builder = new BackgroundAtlasBuilder((spec, manifest, geometryContext) =>
-        CreateReferenceCpuBackend(mesh, algebra, manifest));
+        CreateReferenceCpuBackend(bundlesByEnvironmentId[spec.EnvironmentId].AmbientMesh, algebra, manifest));
     var atlas = builder.Build(study, manifests, geometries, a0s, provenance, out var solvedStates);
 
     // D-002/D-003: Classify the solve run and persist per-background manifest files
@@ -1416,8 +1411,9 @@ static int SolveBackgrounds(string[] args)
     // Persist geometry and A0 so compute-spectrum can load full background context
     var manifestDir = Path.Combine(outputDir, "manifest");
     Directory.CreateDirectory(manifestDir);
-    File.WriteAllText(Path.Combine(manifestDir, "geometry.json"), GuJsonDefaults.Serialize(geometry));
-    File.WriteAllText(Path.Combine(statesDir, "a0.json"), GuJsonDefaults.Serialize(a0));
+    var canonicalEnvironmentId = study.Specs.First().EnvironmentId;
+    File.WriteAllText(Path.Combine(manifestDir, "geometry.json"), GuJsonDefaults.Serialize(geometries[canonicalEnvironmentId]));
+    File.WriteAllText(Path.Combine(statesDir, "a0.json"), GuJsonDefaults.Serialize(a0s[canonicalEnvironmentId]));
 
     Console.WriteLine();
     Console.WriteLine($"Background atlas built:");
@@ -3890,7 +3886,7 @@ static int RunPhase5Campaign(string[] args)
             representationContentRecords: artifacts.RepresentationContentRecords,
             couplingConsistencyRecords: artifacts.CouplingConsistencyRecords,
             sidecarSummary: artifacts.SidecarSummary,
-            refinementBridgeManifest: artifacts.RefinementBridgeManifest);
+            refinementEvidenceManifest: artifacts.RefinementEvidenceManifest);
     }
     catch (Exception ex)
     {
@@ -3923,7 +3919,10 @@ static int RunPhase5Campaign(string[] args)
     CopyIfExists(Path.Combine(specDir, spec.ObservablesPath), Path.Combine(inputsDir, "observables.json"));
     CopyIfExists(Path.Combine(specDir, spec.ExternalTargetTablePath), Path.Combine(inputsDir, "external_targets.json"));
     CopyIfExists(Path.Combine(specDir, spec.RegistryPath), Path.Combine(inputsDir, "registry.json"));
-    if (artifacts.RefinementBridgeManifest is not null)
+    if (artifacts.RefinementEvidenceManifest is not null)
+        CopyIfExists(Path.Combine(Path.GetDirectoryName(Path.Combine(specDir, spec.RefinementValuesPath)) ?? specDir, "refinement_evidence_manifest.json"), Path.Combine(inputsDir, "refinement_evidence_manifest.json"));
+    if (artifacts.RefinementEvidenceManifest is not null &&
+        string.Equals(artifacts.RefinementEvidenceManifest.EvidenceSource, "bridge-derived", StringComparison.Ordinal))
         CopyIfExists(Path.Combine(Path.GetDirectoryName(Path.Combine(specDir, spec.RefinementValuesPath)) ?? specDir, "bridge_manifest.json"), Path.Combine(inputsDir, "bridge_manifest.json"));
     if (spec.ObservationChainPath is not null)
         CopyIfExists(Path.Combine(specDir, spec.ObservationChainPath), Path.Combine(inputsDir, "observation_chain.json"));
@@ -4296,7 +4295,107 @@ static int ExportPhase5BridgeValues(string[] args)
     Console.WriteLine($"  branch_quantity_values.json  ({manifest.SourceRecordIds.Count} branch variants)");
     Console.WriteLine($"  refinement_values.json       ({refinementSpec.RefinementLevels.Count} refinement levels)");
     Console.WriteLine($"  bridge_manifest.json         (manifestId: {manifest.ManifestId})");
+    Console.WriteLine("  refinement_evidence_manifest.json");
     Console.WriteLine("export-phase5-bridge-values done.");
+    return 0;
+}
+
+static int ExportPhase5DirectRefinementValues(string[] args)
+{
+    var refinementSpecPath = ParseFlag(args, "--spec", "");
+    var outDir = ParseFlag(args, "--out-dir", "");
+
+    if (string.IsNullOrEmpty(refinementSpecPath) || string.IsNullOrEmpty(outDir))
+    {
+        Console.Error.WriteLine("Usage: gu export-phase5-direct-refinement-values --spec <spec.json> --level-record <levelId=record.json>... --out-dir <dir>");
+        return 1;
+    }
+
+    if (!File.Exists(refinementSpecPath))
+    {
+        Console.Error.WriteLine($"Refinement spec file not found: {refinementSpecPath}");
+        return 1;
+    }
+
+    var levelRecordBindings = new Dictionary<string, string>(StringComparer.Ordinal);
+    for (int i = 1; i < args.Length - 1; i++)
+    {
+        if (!string.Equals(args[i], "--level-record", StringComparison.Ordinal))
+            continue;
+
+        var binding = args[i + 1];
+        var splitIndex = binding.IndexOf('=');
+        if (splitIndex <= 0 || splitIndex == binding.Length - 1)
+        {
+            Console.Error.WriteLine($"Invalid --level-record binding '{binding}'. Expected levelId=record.json.");
+            return 1;
+        }
+
+        levelRecordBindings[binding[..splitIndex]] = binding[(splitIndex + 1)..];
+    }
+
+    if (levelRecordBindings.Count == 0)
+    {
+        Console.Error.WriteLine("At least one --level-record binding is required.");
+        return 1;
+    }
+
+    var spec = GuJsonDefaults.Deserialize<RefinementStudySpec>(File.ReadAllText(refinementSpecPath));
+    if (spec is null)
+    {
+        Console.Error.WriteLine($"Failed to deserialize RefinementStudySpec: {refinementSpecPath}");
+        return 1;
+    }
+
+    var recordsByLevelId = new Dictionary<string, BackgroundRecord>(StringComparer.Ordinal);
+    var sourceArtifactRefsByLevelId = new Dictionary<string, string>(StringComparer.Ordinal);
+    foreach (var (levelId, recordPath) in levelRecordBindings)
+    {
+        if (!File.Exists(recordPath))
+        {
+            Console.Error.WriteLine($"Background record file not found for level '{levelId}': {recordPath}");
+            return 1;
+        }
+
+        var record = GuJsonDefaults.Deserialize<BackgroundRecord>(File.ReadAllText(recordPath));
+        if (record is null)
+        {
+            Console.Error.WriteLine($"Failed to deserialize BackgroundRecord: {recordPath}");
+            return 1;
+        }
+
+        recordsByLevelId[levelId] = record;
+        sourceArtifactRefsByLevelId[levelId] = Path.GetFullPath(recordPath);
+    }
+
+    RefinementEvidenceManifest manifest;
+    try
+    {
+        manifest = DirectRefinementValueExporter.Export(
+            spec,
+            recordsByLevelId,
+            sourceArtifactRefsByLevelId,
+            outDir,
+            provenance: new ProvenanceMeta
+            {
+                CreatedAt = DateTimeOffset.UtcNow,
+                CodeRevision = "export-phase5-direct-refinement-values",
+                Branch = new BranchRef { BranchId = spec.BranchManifestId, SchemaVersion = "1.0" },
+                Backend = "cpu",
+                Notes = "Direct solver-backed refinement export from persisted background records.",
+            },
+            notes: "Direct solver-backed refinement ladder assembled from executed background records.");
+    }
+    catch (Exception ex)
+    {
+        Console.Error.WriteLine($"Direct refinement export failed: {ex.Message}");
+        return 1;
+    }
+
+    Console.WriteLine($"Direct refinement export complete. Output: {outDir}");
+    Console.WriteLine("  refinement_values.json");
+    Console.WriteLine($"  refinement_evidence_manifest.json (manifestId: {manifest.ManifestId})");
+    Console.WriteLine("export-phase5-direct-refinement-values done.");
     return 0;
 }
 
@@ -4339,6 +4438,39 @@ static int ValidatePhase5CampaignSpec(string[] args)
     return 1;
 }
 
+static FiberBundleMesh ResolveBackgroundEnvironment(string environmentId)
+{
+    return environmentId switch
+    {
+        "env-default" => ToyGeometryFactory.CreateToy2D(),
+        "env-refinement-2x2" => ToyGeometryFactory.CreateStructuredFiberBundle2D(2, 2),
+        "env-refinement-4x4" => ToyGeometryFactory.CreateStructuredFiberBundle2D(4, 4),
+        "env-refinement-8x8" => ToyGeometryFactory.CreateStructuredFiberBundle2D(8, 8),
+        _ => throw new InvalidOperationException(
+            $"Unsupported background solve environment '{environmentId}'. Add an explicit geometry mapping before using it in solve-backgrounds."),
+    };
+}
+
+static FieldTensor CreateZeroConnection(SimplicialMesh mesh, LieAlgebra algebra)
+{
+    int edgeN = mesh.EdgeCount * algebra.Dimension;
+    return new FieldTensor
+    {
+        Label = "a0",
+        Signature = new TensorSignature
+        {
+            AmbientSpaceId = "Y_h",
+            CarrierType = "connection-1form",
+            Degree = "1",
+            LieAlgebraBasisId = "canonical",
+            ComponentOrderId = "edge-major",
+            MemoryLayout = "dense-row-major",
+        },
+        Coefficients = new double[edgeN],
+        Shape = new[] { mesh.EdgeCount, algebra.Dimension },
+    };
+}
+
 static void PrintUsage()
 {
     Console.WriteLine("Geometric Unity CLI");
@@ -4377,6 +4509,7 @@ static void PrintUsage()
     Console.WriteLine("  gu verify-study-freshness --dossier <f>      Verify study freshness / G-006 compliance");
     Console.WriteLine("  gu run-phase5-campaign --spec <f> --out-dir <dir> [--validate-first]  Run Phase V M53 end-to-end campaign");
     Console.WriteLine("  gu export-phase5-bridge-values --atlas <f> --refinement-spec <f> --out-dir <dir>  Export bridged branch/refinement value tables");
+    Console.WriteLine("  gu export-phase5-direct-refinement-values --spec <f> --level-record <levelId=record.json>... --out-dir <dir>  Export direct solver-backed refinement values");
     Console.WriteLine("  gu build-phase5-sidecars --registry <f> --observables <f> --environment-record <f>... --out-dir <dir>  Generate sidecar evidence files");
     Console.WriteLine("  gu validate-phase5-campaign-spec --spec <f> [--require-reference-sidecars]  Validate campaign spec paths and reference requirements");
     Console.WriteLine("  gu validate-replay <orig> <replay> [tier]    Validate replay (R0/R1/R2/R3)");

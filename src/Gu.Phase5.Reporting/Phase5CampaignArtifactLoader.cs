@@ -49,11 +49,11 @@ public sealed class Phase5CampaignArtifacts
     public SidecarSummary? SidecarSummary { get; init; }
 
     /// <summary>
-    /// Optional bridge manifest inferred from the refinement values directory.
-    /// When present, this captures whether convergence evidence is bridge-derived and
-    /// how many admitted atlas records seeded the ladder.
+    /// Optional refinement evidence manifest inferred from the refinement values directory.
+    /// When present, this captures whether convergence evidence is bridge-derived or
+    /// direct solver-backed and how many source records seeded the ladder.
     /// </summary>
-    public BridgeManifest? RefinementBridgeManifest { get; init; }
+    public RefinementEvidenceManifest? RefinementEvidenceManifest { get; init; }
 
     /// <summary>
     /// Optional candidate-specific provenance links inferred from candidate_provenance_links.json
@@ -160,14 +160,36 @@ public static class Phase5CampaignArtifactLoader
         }
 
         // 12. Bridge manifest (optional, inferred from the refinement values directory)
-        BridgeManifest? refinementBridgeManifest = null;
+        RefinementEvidenceManifest? refinementEvidenceManifest = null;
+        var inferredRefinementEvidenceManifestPath = Path.Combine(
+            Path.GetDirectoryName(refinementValuesPath) ?? specDir,
+            "refinement_evidence_manifest.json");
+        if (File.Exists(inferredRefinementEvidenceManifestPath))
+        {
+            refinementEvidenceManifest = GuJsonDefaults.Deserialize<RefinementEvidenceManifest>(
+                File.ReadAllText(inferredRefinementEvidenceManifestPath));
+        }
+
         var inferredBridgeManifestPath = Path.Combine(
             Path.GetDirectoryName(refinementValuesPath) ?? specDir,
             "bridge_manifest.json");
-        if (File.Exists(inferredBridgeManifestPath))
+        if (refinementEvidenceManifest is null && File.Exists(inferredBridgeManifestPath))
         {
-            refinementBridgeManifest = GuJsonDefaults.Deserialize<BridgeManifest>(
+            var bridgeManifest = GuJsonDefaults.Deserialize<BridgeManifest>(
                 File.ReadAllText(inferredBridgeManifestPath));
+            if (bridgeManifest is not null)
+            {
+                refinementEvidenceManifest = new RefinementEvidenceManifest
+                {
+                    ManifestId = $"legacy-bridge-{bridgeManifest.ManifestId}",
+                    StudyId = spec.RefinementSpec.StudyId,
+                    EvidenceSource = "bridge-derived",
+                    SourceRecordIds = bridgeManifest.SourceRecordIds,
+                    SourceArtifactRefs = bridgeManifest.SourceStateArtifactRefs,
+                    Notes = $"Legacy bridge manifest inferred from {Path.GetFileName(inferredBridgeManifestPath)}.",
+                    Provenance = bridgeManifest.Provenance,
+                };
+            }
         }
 
         // 13. Candidate-specific provenance links (optional)
@@ -192,7 +214,7 @@ public static class Phase5CampaignArtifactLoader
             RepresentationContentRecords = repContentRecords,
             CouplingConsistencyRecords = couplingRecords,
             SidecarSummary = sidecarSummary,
-            RefinementBridgeManifest = refinementBridgeManifest,
+            RefinementEvidenceManifest = refinementEvidenceManifest,
             CandidateProvenanceLinks = candidateProvenanceLinks,
         };
     }

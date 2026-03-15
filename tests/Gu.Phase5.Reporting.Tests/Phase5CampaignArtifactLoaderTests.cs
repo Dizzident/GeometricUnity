@@ -239,8 +239,31 @@ public sealed class Phase5CampaignArtifactLoaderTests : IDisposable
 
         var artifacts = Phase5CampaignArtifactLoader.Load(spec, _tempDir);
 
-        Assert.NotNull(artifacts.RefinementBridgeManifest);
-        Assert.Equal(3, artifacts.RefinementBridgeManifest!.SourceRecordIds.Count);
+        Assert.NotNull(artifacts.RefinementEvidenceManifest);
+        Assert.Equal("bridge-derived", artifacts.RefinementEvidenceManifest!.EvidenceSource);
+        Assert.Equal(3, artifacts.RefinementEvidenceManifest.SourceRecordIds.Count);
+    }
+
+    [Fact]
+    public void ArtifactLoader_LoadsExplicitRefinementEvidenceManifest_WhenPresent()
+    {
+        var spec = WriteArtifactsAndMakeSpec();
+        File.WriteAllText(
+            Path.Combine(_tempDir, "refinement_evidence_manifest.json"),
+            GuJsonDefaults.Serialize(new RefinementEvidenceManifest
+            {
+                ManifestId = "direct-refinement-001",
+                StudyId = spec.RefinementSpec.StudyId,
+                EvidenceSource = "direct-solver-backed",
+                SourceRecordIds = ["bg-L0", "bg-L1", "bg-L2"],
+                SourceArtifactRefs = ["/tmp/bg-L0.json", "/tmp/bg-L1.json", "/tmp/bg-L2.json"],
+                Provenance = MakeProvenance(),
+            }));
+
+        var artifacts = Phase5CampaignArtifactLoader.Load(spec, _tempDir);
+
+        Assert.NotNull(artifacts.RefinementEvidenceManifest);
+        Assert.Equal("direct-solver-backed", artifacts.RefinementEvidenceManifest!.EvidenceSource);
     }
 
     [Fact]
@@ -302,7 +325,7 @@ public sealed class Phase5CampaignArtifactLoaderTests : IDisposable
             artifacts.Observables,
             artifacts.TargetTable,
             artifacts.Registry,
-            refinementBridgeManifest: artifacts.RefinementBridgeManifest);
+            refinementEvidenceManifest: artifacts.RefinementEvidenceManifest);
 
         Assert.NotNull(result);
         Assert.Equal("wp3-integration-campaign", result.Report.StudyId);
@@ -565,7 +588,7 @@ public sealed class Phase5CampaignArtifactLoaderTests : IDisposable
             observationChainRecords: artifacts.ObservationChainRecords,
             environmentRecords: artifacts.EnvironmentRecords,
             environmentVarianceRecords: artifacts.EnvironmentVarianceRecords,
-            refinementBridgeManifest: artifacts.RefinementBridgeManifest);
+            refinementEvidenceManifest: artifacts.RefinementEvidenceManifest);
 
         var linkedEscalation = result.TypedDossier.ClaimEscalations.Single(e => e.CandidateId == "cand-linked");
         var unlinkedEscalation = result.TypedDossier.ClaimEscalations.Single(e => e.CandidateId == "cand-unlinked");

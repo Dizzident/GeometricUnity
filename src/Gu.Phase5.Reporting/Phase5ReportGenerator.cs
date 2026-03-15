@@ -22,7 +22,7 @@ public static class Phase5ReportGenerator
         ProvenanceMeta provenance,
         BranchRobustnessRecord? branchRecord = null,
         RefinementStudyResult? refinementResult = null,
-        BridgeManifest? refinementBridgeManifest = null,
+        RefinementEvidenceManifest? refinementEvidenceManifest = null,
         FalsifierSummary? falsifiers = null,
         IReadOnlyList<Phase3Reporting.NegativeResultEntry>? negativeResults = null)
     {
@@ -37,7 +37,7 @@ public static class Phase5ReportGenerator
             : null;
 
         ConvergenceAtlas? convergenceAtlas = refinementResult is not null
-            ? BuildConvergenceAtlas(refinementResult, refinementBridgeManifest)
+            ? BuildConvergenceAtlas(refinementResult, refinementEvidenceManifest)
             : null;
 
         FalsificationDashboard? falsificationDashboard = falsifiers is not null
@@ -158,7 +158,7 @@ public static class Phase5ReportGenerator
 
     private static ConvergenceAtlas BuildConvergenceAtlas(
         RefinementStudyResult result,
-        BridgeManifest? refinementBridgeManifest)
+        RefinementEvidenceManifest? refinementEvidenceManifest)
     {
         int total = result.ContinuumEstimates.Count + result.FailureRecords.Count;
         int convergent = result.ContinuumEstimates.Count(e =>
@@ -179,14 +179,23 @@ public static class Phase5ReportGenerator
             $"- Insufficient data: {insufficientData}",
         };
 
-        if (refinementBridgeManifest is not null)
+        if (refinementEvidenceManifest is not null)
         {
-            int sourceCount = refinementBridgeManifest.SourceRecordIds.Count;
-            lines.Add($"- Evidence source: bridge-derived from {sourceCount} admitted background record(s).");
-            lines.Add(sourceCount >= 2
-                ? "- Refinement seed family: multi-variant admitted atlas."
-                : "- Refinement seed family: single admitted background (still realism-limited).");
-            lines.Add("- Direct solver-backed refinement family: no.");
+            int sourceCount = refinementEvidenceManifest.SourceRecordIds.Count;
+            if (string.Equals(refinementEvidenceManifest.EvidenceSource, "direct-solver-backed", StringComparison.Ordinal))
+            {
+                lines.Add($"- Evidence source: direct solver-backed from {sourceCount} executed background record(s).");
+                lines.Add("- Refinement seed family: direct solver-backed ladder.");
+                lines.Add("- Direct solver-backed refinement family: yes.");
+            }
+            else
+            {
+                lines.Add($"- Evidence source: bridge-derived from {sourceCount} admitted background record(s).");
+                lines.Add(sourceCount >= 2
+                    ? "- Refinement seed family: multi-variant admitted atlas."
+                    : "- Refinement seed family: single admitted background (still realism-limited).");
+                lines.Add("- Direct solver-backed refinement family: no.");
+            }
         }
         else
         {

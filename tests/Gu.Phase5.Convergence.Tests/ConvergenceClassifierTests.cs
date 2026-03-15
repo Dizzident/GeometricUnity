@@ -58,16 +58,15 @@ public sealed class ConvergenceClassifierTests
     }
 
     [Fact]
-    public void Classify_ConstantSeries_IsNonConvergentOrWeakly()
+    public void Classify_ConstantSeries_IsConvergent()
     {
-        // Constant: no convergence happening
+        // Exact invariance across levels is a trivial converged limit.
         double[] hs = [1.0, 0.5, 0.25];
         double[] qs = [2.0, 2.0, 2.0];
 
-        var (cls, _) = ConvergenceClassifier.Classify(hs, qs);
+        var (cls, note) = ConvergenceClassifier.Classify(hs, qs);
 
-        // No change => order is undefined, but not convergent
-        Assert.True(cls is "non-convergent" or "weakly-convergent" or "convergent",
-            $"Unexpected classification: {cls}");
+        Assert.Equal("convergent", cls);
+        Assert.Contains("Exact invariance", note);
     }
 }

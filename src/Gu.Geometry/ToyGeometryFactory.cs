@@ -208,6 +208,125 @@ public static class ToyGeometryFactory
     }
 
     /// <summary>
+    /// Creates a structured 2D fiber-bundle geometry with the same 5D ambient/fiber layout as
+    /// <see cref="CreateToy2D"/>, but on a rows x cols refined base mesh.
+    /// </summary>
+    public static FiberBundleMesh CreateStructuredFiberBundle2D(int rows, int cols)
+    {
+        int nvX = cols + 1;
+        int nvY = rows + 1;
+        int xVertCount = nvX * nvY;
+        int xCellCount = 2 * rows * cols;
+
+        var xCoords = new double[xVertCount * 2];
+        for (int r = 0; r < nvY; r++)
+        {
+            for (int c = 0; c < nvX; c++)
+            {
+                int v = r * nvX + c;
+                xCoords[v * 2 + 0] = (double)c / cols;
+                xCoords[v * 2 + 1] = (double)r / rows;
+            }
+        }
+
+        var xCells = new int[xCellCount][];
+        int xci = 0;
+        for (int r = 0; r < rows; r++)
+        {
+            for (int c = 0; c < cols; c++)
+            {
+                int v00 = r * nvX + c;
+                int v10 = r * nvX + c + 1;
+                int v01 = (r + 1) * nvX + c;
+                int v11 = (r + 1) * nvX + c + 1;
+                xCells[xci++] = new[] { v00, v10, v01 };
+                xCells[xci++] = new[] { v10, v11, v01 };
+            }
+        }
+
+        var xMesh = MeshTopologyBuilder.Build(
+            embeddingDimension: 2,
+            simplicialDimension: 2,
+            vertexCoordinates: xCoords,
+            vertexCount: xVertCount,
+            cellVertices: xCells);
+
+        int fiberSize = 3;
+        int yVertCount = xVertCount * fiberSize;
+        int dimY = 5;
+        var yCoords = new double[yVertCount * dimY];
+        var yVertToXVert = new int[yVertCount];
+        var fiberVerts = new int[xVertCount][];
+        var xVertToYVert = new int[xVertCount];
+
+        for (int xv = 0; xv < xVertCount; xv++)
+        {
+            double x0 = xMesh.VertexCoordinates[xv * 2];
+            double x1 = xMesh.VertexCoordinates[xv * 2 + 1];
+
+            fiberVerts[xv] = new int[fiberSize];
+            for (int f = 0; f < fiberSize; f++)
+            {
+                int yv = xv * fiberSize + f;
+                fiberVerts[xv][f] = yv;
+                yVertToXVert[yv] = xv;
+
+                yCoords[yv * dimY + 0] = x0;
+                yCoords[yv * dimY + 1] = x1;
+                yCoords[yv * dimY + 2] = f * 0.1;
+                yCoords[yv * dimY + 3] = (f + 1) * 0.05;
+                yCoords[yv * dimY + 4] = (2 - f) * 0.1;
+            }
+
+            xVertToYVert[xv] = xv * fiberSize;
+        }
+
+        var yCells = new List<int[]>();
+        var xCellToYCell = new int[xMesh.CellCount];
+        for (int xc = 0; xc < xMesh.CellCount; xc++)
+        {
+            var xCell = xMesh.CellVertices[xc];
+            int a = xCell[0], b = xCell[1], c = xCell[2];
+
+            int ya = xVertToYVert[a];
+            int yb = xVertToYVert[b];
+            int yc = xVertToYVert[c];
+            xCellToYCell[xc] = yCells.Count;
+            yCells.Add(new[] { ya, yb, yc });
+
+            for (int f = 0; f < fiberSize - 1; f++)
+            {
+                int yaF = a * fiberSize + f;
+                int yaF1 = a * fiberSize + f + 1;
+                int ybF = b * fiberSize + f;
+                yCells.Add(new[] { yaF, yaF1, ybF });
+            }
+        }
+
+        var yMesh = MeshTopologyBuilder.Build(
+            embeddingDimension: dimY,
+            simplicialDimension: 2,
+            vertexCoordinates: yCoords,
+            vertexCount: yVertCount,
+            cellVertices: yCells.ToArray());
+
+        var sectionCoeffs = new double[xMesh.CellCount][];
+        for (int xc = 0; xc < xMesh.CellCount; xc++)
+            sectionCoeffs[xc] = new[] { 1.0, 0.0, 0.0 };
+
+        return new FiberBundleMesh
+        {
+            BaseMesh = xMesh,
+            AmbientMesh = yMesh,
+            YVertexToXVertex = yVertToXVert,
+            FiberVerticesPerXVertex = fiberVerts,
+            XVertexToYVertex = xVertToYVert,
+            XCellToYCell = xCellToYCell,
+            SectionCoefficients = sectionCoeffs,
+        };
+    }
+
+    /// <summary>
     /// Creates a 2D toy product bundle mesh using ProductBundleMesh:
     /// - X_h: single triangle in 2D (dimX=2, simpDim=2)
     /// - F_h: single edge in 1D (dimF=1, simpDim=1)

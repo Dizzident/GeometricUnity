@@ -79,6 +79,48 @@ public sealed class Phase5ReportGeneratorTests
     }
 
     [Fact]
+    public void Generate_WithDirectRefinementEvidence_DeclaresSolverBackedLadder()
+    {
+        var spec = new RefinementStudySpec
+        {
+            StudyId = "refine-study",
+            SchemaVersion = "1.0",
+            BranchManifestId = "branch-1",
+            TargetQuantities = ["q1"],
+            RefinementLevels = [
+                new RefinementLevel { LevelId = "L0", MeshParameterX = 1.0, MeshParameterF = 1.0 },
+                new RefinementLevel { LevelId = "L1", MeshParameterX = 0.5, MeshParameterF = 0.5 },
+                new RefinementLevel { LevelId = "L2", MeshParameterX = 0.25, MeshParameterF = 0.25 },
+            ],
+            Provenance = MakeProvenance(),
+        };
+        var runner = new RefinementStudyRunner();
+        var result = runner.Run(spec, level =>
+            new Dictionary<string, double> { ["q1"] = 3.0 + level.EffectiveMeshParameter * level.EffectiveMeshParameter });
+
+        var report = Phase5ReportGenerator.Generate(
+            "study-1",
+            [],
+            MakeProvenance(),
+            refinementResult: result,
+            refinementEvidenceManifest: new RefinementEvidenceManifest
+            {
+                ManifestId = "direct-001",
+                StudyId = spec.StudyId,
+                EvidenceSource = "direct-solver-backed",
+                SourceRecordIds = ["bg-L0", "bg-L1", "bg-L2"],
+                SourceArtifactRefs = ["/tmp/bg-L0.json", "/tmp/bg-L1.json", "/tmp/bg-L2.json"],
+                Provenance = MakeProvenance(),
+            });
+
+        Assert.NotNull(report.ConvergenceAtlas);
+        Assert.Contains(report.ConvergenceAtlas!.SummaryLines,
+            line => line.Contains("direct solver-backed", StringComparison.OrdinalIgnoreCase));
+        Assert.Contains(report.ConvergenceAtlas.SummaryLines,
+            line => line.Contains("yes.", StringComparison.Ordinal));
+    }
+
+    [Fact]
     public void ToMarkdown_ContainsStudyId()
     {
         var report = new Phase5Report

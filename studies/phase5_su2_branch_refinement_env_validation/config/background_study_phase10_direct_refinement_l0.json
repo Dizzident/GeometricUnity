@@ -1,0 +1,32 @@
+{
+  "studyId": "phase10-direct-refinement-standard-l0",
+  "specs": [
+    {
+      "specId": "phase10-direct-standard-l0",
+      "environmentId": "env-refinement-2x2",
+      "branchManifestId": "phase8-real-atlas-control",
+      "seed": {
+        "kind": "Trivial",
+        "label": "seed-0"
+      },
+      "solveOptions": {
+        "solveMode": "ObjectiveMinimization",
+        "solverMethod": "GradientDescent",
+        "maxIterations": 3000,
+        "initialStepSize": 0.001,
+        "gaugePenaltyLambda": 0.0,
+        "gaugeStrategy": "L2Penalty",
+        "toleranceResidualDiagnostic": 0.0001,
+        "toleranceStationary": 1e-06,
+        "toleranceResidualStrict": 1e-08
+      }
+    }
+  ],
+  "deduplicationThreshold": 0.0,
+  "rankingCriteria": "admissibility-then-residual",
+  "notes": "Phase X direct solver-backed refinement level L0 on the 2x2 structured fiber-bundle environment.",
+  "environmentTier": "structured",
+  "manifestSearchPaths": [
+    "manifests"
+  ]
+}

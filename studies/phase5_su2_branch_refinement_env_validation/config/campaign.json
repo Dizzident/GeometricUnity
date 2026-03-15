@@ -37,7 +37,7 @@
     ],
     "provenance": {
       "createdAt": "2026-03-20T00:00:00+00:00",
-      "codeRevision": "phase9-real-atlas-env-aware-v1",
+      "codeRevision": "phase10-direct-refinement-v1",
       "branch": { "branchId": "phase8-real-atlas-control", "schemaVersion": "1.0" },
       "backend": "cpu"
     }
@@ -60,7 +60,7 @@
     ],
     "provenance": {
       "createdAt": "2026-03-20T00:00:00+00:00",
-      "codeRevision": "phase9-real-atlas-env-aware-v1",
+      "codeRevision": "phase10-direct-refinement-v1",
       "branch": { "branchId": "phase8-real-atlas-control", "schemaVersion": "1.0" },
       "backend": "cpu"
     }
@@ -74,13 +74,13 @@
   "falsificationPolicy": {},
   "provenance": {
     "createdAt": "2026-03-20T00:00:00+00:00",
-    "codeRevision": "phase9-real-atlas-env-aware-v1",
+    "codeRevision": "phase10-direct-refinement-v1",
     "branch": { "branchId": "phase8-real-atlas-control", "schemaVersion": "1.0" },
     "backend": "cpu",
-    "notes": "Phase IX standard evidence campaign: multi-variant admitted atlas on the same strict thresholds, bridge-derived convergence sourced from multiple admitted backgrounds, unchanged benchmark separation, and candidate-specific escalation that still fails closed when candidate-linked branch/background provenance is absent."
+    "notes": "Phase X standard evidence campaign: branch study still uses the admitted multi-variant atlas on the same strict thresholds, refinement now points to a direct solver-backed ladder, bridge-derived convergence remains available separately for comparison, the imported benchmark remains repo-internal, and candidate-specific escalation still fails closed when candidate-linked branch/background provenance is absent."
   },
   "branchQuantityValuesPath": "branch_quantity_values.json",
-  "refinementValuesPath": "refinement_values.json",
+  "refinementValuesPath": "phase10_direct_refinement_standard/refinement_values.json",
   "observablesPath": "observables.json",
   "environmentRecordPaths": [
     "env_toy_record.json",
