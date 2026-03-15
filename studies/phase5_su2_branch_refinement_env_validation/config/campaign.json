@@ -58,7 +58,7 @@
       "backend": "cpu"
     }
   },
-  "externalTargetTablePath": "config/external_targets.json",
+  "externalTargetTablePath": "external_targets.json",
   "calibrationPolicy": {
     "policyId": "phase5-sigma5-policy",
     "mode": "sigma",
@@ -71,9 +71,9 @@
     "branch": { "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega", "schemaVersion": "1.0" },
     "backend": "cpu"
   },
-  "branchQuantityValuesPath": "config/branch_quantity_values_table.json",
-  "refinementValuesPath": "config/refinement_values.json",
-  "observablesPath": "config/observables.json",
-  "environmentRecordPaths": ["config/env_toy_record.json"],
-  "registryPath": "config/registry.json"
+  "branchQuantityValuesPath": "branch_quantity_values_table.json",
+  "refinementValuesPath": "refinement_values.json",
+  "observablesPath": "observables.json",
+  "environmentRecordPaths": ["env_toy_record.json"],
+  "registryPath": "registry.json"
 }

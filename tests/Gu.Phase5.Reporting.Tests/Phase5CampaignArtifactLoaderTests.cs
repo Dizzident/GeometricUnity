@@ -212,6 +212,27 @@ public sealed class Phase5CampaignArtifactLoaderTests : IDisposable
         Assert.NotNull(artifacts.Registry);
     }
 
+    [Fact]
+    public void ArtifactLoader_LoadsReferenceStudyCampaignArtifacts()
+    {
+        var repoRoot = FindRepoRoot();
+        var specPath = Path.Combine(
+            repoRoot,
+            "studies",
+            "phase5_su2_branch_refinement_env_validation",
+            "config",
+            "campaign.json");
+        var spec = GuJsonDefaults.Deserialize<Phase5CampaignSpec>(File.ReadAllText(specPath));
+        Assert.NotNull(spec);
+        var artifacts = Phase5CampaignArtifactLoader.Load(spec, Path.GetDirectoryName(specPath)!);
+
+        Assert.NotNull(artifacts.BranchQuantityValues);
+        Assert.NotNull(artifacts.RefinementValues);
+        Assert.NotEmpty(artifacts.EnvironmentRecords);
+        Assert.NotNull(artifacts.TargetTable);
+        Assert.NotNull(artifacts.Registry);
+    }
+
     /// <summary>
     /// WP-3 test 2: RunFull via artifact loader routes branch and refinement
     /// values into the executor delegates and produces a full output tree.
@@ -335,5 +356,19 @@ public sealed class Phase5CampaignArtifactLoaderTests : IDisposable
         Assert.Null(artifacts.EnvironmentVarianceRecords);
         Assert.Null(artifacts.RepresentationContentRecords);
         Assert.Null(artifacts.CouplingConsistencyRecords);
+    }
+
+    private static string FindRepoRoot()
+    {
+        var current = new DirectoryInfo(AppContext.BaseDirectory);
+        while (current is not null)
+        {
+            if (File.Exists(Path.Combine(current.FullName, "GeometricUnity.slnx")))
+                return current.FullName;
+
+            current = current.Parent;
+        }
+
+        throw new DirectoryNotFoundException("Could not locate repository root from test base directory.");
     }
 }
