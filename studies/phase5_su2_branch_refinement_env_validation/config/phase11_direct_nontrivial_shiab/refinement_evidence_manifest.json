@@ -1,0 +1,26 @@
+{
+  "manifestId": "direct-refinement-phase11-nontrivial-direct-refinement-shiab-ladder-20260315T184439Z",
+  "studyId": "phase11-nontrivial-direct-refinement-shiab-ladder",
+  "evidenceSource": "direct-solver-backed",
+  "sourceRecordIds": [
+    "bg-phase11-direct-nontrivial-shiab-l0-gn-20260315181820",
+    "bg-phase11-direct-nontrivial-shiab-l1-gn-20260315181830",
+    "bg-phase11-direct-nontrivial-shiab-l2-gn-20260315182314"
+  ],
+  "sourceArtifactRefs": [
+    "/home/josh/Documents/GitHub/GeometricUnity/studies/phase5_su2_branch_refinement_env_validation/upstream/phase11_direct_nontrivial_shiab_l0/background_records/bg-phase11-direct-nontrivial-shiab-l0-gn-20260315181820.json",
+    "/home/josh/Documents/GitHub/GeometricUnity/studies/phase5_su2_branch_refinement_env_validation/upstream/phase11_direct_nontrivial_shiab_l1/background_records/bg-phase11-direct-nontrivial-shiab-l1-gn-20260315181830.json",
+    "/home/josh/Documents/GitHub/GeometricUnity/studies/phase5_su2_branch_refinement_env_validation/upstream/phase11_direct_nontrivial_shiab_l2/background_records/bg-phase11-direct-nontrivial-shiab-l2-gn-20260315182314.json"
+  ],
+  "notes": "Direct solver-backed refinement ladder assembled from executed background records.",
+  "provenance": {
+    "createdAt": "2026-03-15T18:44:39.4256756+00:00",
+    "codeRevision": "export-phase5-direct-refinement-values",
+    "branch": {
+      "branchId": "phase8-real-atlas-first-order-shiab",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu",
+    "notes": "Direct solver-backed refinement export from persisted background records."
+  }
+}

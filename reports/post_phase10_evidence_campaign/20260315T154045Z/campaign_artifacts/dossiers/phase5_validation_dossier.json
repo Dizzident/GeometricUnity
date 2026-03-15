@@ -1,0 +1,1554 @@
+{
+  "dossierId": "dossier-phase5-su2-branch-refinement-env-validation",
+  "schemaVersion": "1.0.0",
+  "studyId": "phase5-su2-branch-refinement-env-validation",
+  "branchFamilySummary": {
+    "recordId": "phase9-su2-real-bridge-backed-branch-family-result",
+    "schemaVersion": "1.0.0",
+    "studyId": "phase9-su2-real-bridge-backed-branch-family",
+    "branchVariantIds": [
+      "bg-variant-95ee11778cc7ac01",
+      "bg-variant-d840fea6e6d36748",
+      "bg-variant-d84f5d66fd98b842",
+      "bg-variant-53b598740d9569b4"
+    ],
+    "distanceMatrices": {
+      "residual-norm": {
+        "schemaVersion": "1.0.0",
+        "targetQuantityId": "residual-norm",
+        "branchVariantIds": [
+          "bg-variant-95ee11778cc7ac01",
+          "bg-variant-d840fea6e6d36748",
+          "bg-variant-d84f5d66fd98b842",
+          "bg-variant-53b598740d9569b4"
+        ],
+        "quantityValues": [
+          0,
+          3.334643724900306E-10,
+          3.6467128483629812E-09,
+          4.7667142036368655E-09
+        ],
+        "distances": [
+          0,
+          3.334643724900306E-10,
+          3.6467128483629812E-09,
+          4.7667142036368655E-09,
+          3.334643724900306E-10,
+          0,
+          3.313248475872951E-09,
+          4.433249831146835E-09,
+          3.6467128483629812E-09,
+          3.313248475872951E-09,
+          0,
+          1.1200013552738843E-09,
+          4.7667142036368655E-09,
+          4.433249831146835E-09,
+          1.1200013552738843E-09,
+          0
+        ],
+        "maxDistance": 4.7667142036368655E-09,
+        "meanDistance": 2.9355651811305914E-09,
+        "referenceScale": 1E-30
+      },
+      "stationarity-norm": {
+        "schemaVersion": "1.0.0",
+        "targetQuantityId": "stationarity-norm",
+        "branchVariantIds": [
+          "bg-variant-95ee11778cc7ac01",
+          "bg-variant-d840fea6e6d36748",
+          "bg-variant-d84f5d66fd98b842",
+          "bg-variant-53b598740d9569b4"
+        ],
+        "quantityValues": [
+          0,
+          4.998941568171193E-10,
+          4.07650940253853E-09,
+          4.941414094312719E-09
+        ],
+        "distances": [
+          0,
+          4.998941568171193E-10,
+          4.07650940253853E-09,
+          4.941414094312719E-09,
+          4.998941568171193E-10,
+          0,
+          3.576615245721411E-09,
+          4.441519937495599E-09,
+          4.07650940253853E-09,
+          3.576615245721411E-09,
+          0,
+          8.649046917741885E-10,
+          4.941414094312719E-09,
+          4.441519937495599E-09,
+          8.649046917741885E-10,
+          0
+        ],
+        "maxDistance": 4.941414094312719E-09,
+        "meanDistance": 3.066809588109928E-09,
+        "referenceScale": 1E-30
+      },
+      "objective-value": {
+        "schemaVersion": "1.0.0",
+        "targetQuantityId": "objective-value",
+        "branchVariantIds": [
+          "bg-variant-95ee11778cc7ac01",
+          "bg-variant-d840fea6e6d36748",
+          "bg-variant-d84f5d66fd98b842",
+          "bg-variant-53b598740d9569b4"
+        ],
+        "quantityValues": [
+          0,
+          5.559924386008495E-20,
+          6.6492572992078246E-18,
+          1.1360782149576719E-17
+        ],
+        "distances": [
+          0,
+          5.559924386008495E-20,
+          6.6492572992078246E-18,
+          1.1360782149576719E-17,
+          5.559924386008495E-20,
+          0,
+          6.5936580553477394E-18,
+          1.1305182905716634E-17,
+          6.6492572992078246E-18,
+          6.5936580553477394E-18,
+          0,
+          4.711524850368894E-18,
+          1.1360782149576719E-17,
+          1.1305182905716634E-17,
+          4.711524850368894E-18,
+          0
+        ],
+        "maxDistance": 1.1360782149576719E-17,
+        "meanDistance": 6.779334084012982E-18,
+        "referenceScale": 1E-30
+      },
+      "gauge-violation": {
+        "schemaVersion": "1.0.0",
+        "targetQuantityId": "gauge-violation",
+        "branchVariantIds": [
+          "bg-variant-95ee11778cc7ac01",
+          "bg-variant-d840fea6e6d36748",
+          "bg-variant-d84f5d66fd98b842",
+          "bg-variant-53b598740d9569b4"
+        ],
+        "quantityValues": [
+          0,
+          0.13808600099514023,
+          0.2135837059280268,
+          0.1961852924797464
+        ],
+        "distances": [
+          0,
+          0.13808600099514023,
+          0.2135837059280268,
+          0.1961852924797464,
+          0.13808600099514023,
+          0,
+          0.07549770493288657,
+          0.05809929148460616,
+          0.2135837059280268,
+          0.07549770493288657,
+          0,
+          0.017398413448280414,
+          0.1961852924797464,
+          0.05809929148460616,
+          0.017398413448280414,
+          0
+        ],
+        "maxDistance": 0.2135837059280268,
+        "meanDistance": 0.11647506821144778,
+        "referenceScale": 1E-30
+      },
+      "solver-iterations": {
+        "schemaVersion": "1.0.0",
+        "targetQuantityId": "solver-iterations",
+        "branchVariantIds": [
+          "bg-variant-95ee11778cc7ac01",
+          "bg-variant-d840fea6e6d36748",
+          "bg-variant-d84f5d66fd98b842",
+          "bg-variant-53b598740d9569b4"
+        ],
+        "quantityValues": [
+          0,
+          2,
+          2,
+          2
+        ],
+        "distances": [
+          0,
+          2,
+          2,
+          2,
+          2,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        "maxDistance": 2,
+        "meanDistance": 1,
+        "referenceScale": 1E-30
+      }
+    },
+    "equivalenceClasses": {
+      "residual-norm": [
+        {
+          "schemaVersion": "1.0.0",
+          "targetQuantityId": "residual-norm",
+          "memberBranchVariantIds": [
+            "bg-variant-95ee11778cc7ac01",
+            "bg-variant-d840fea6e6d36748",
+            "bg-variant-d84f5d66fd98b842",
+            "bg-variant-53b598740d9569b4"
+          ],
+          "meanValue": 2.1867228561224693E-09,
+          "maxDeviationFromMean": 2.579991347514396E-09,
+          "absoluteTolerance": 1E-05,
+          "relativeTolerance": 0.1
+        }
+      ],
+      "stationarity-norm": [
+        {
+          "schemaVersion": "1.0.0",
+          "targetQuantityId": "stationarity-norm",
+          "memberBranchVariantIds": [
+            "bg-variant-95ee11778cc7ac01",
+            "bg-variant-d840fea6e6d36748",
+            "bg-variant-d84f5d66fd98b842",
+            "bg-variant-53b598740d9569b4"
+          ],
+          "meanValue": 2.3794544134170923E-09,
+          "maxDeviationFromMean": 2.5619596808956264E-09,
+          "absoluteTolerance": 1E-05,
+          "relativeTolerance": 0.1
+        }
+      ],
+      "objective-value": [
+        {
+          "schemaVersion": "1.0.0",
+          "targetQuantityId": "objective-value",
+          "memberBranchVariantIds": [
+            "bg-variant-95ee11778cc7ac01",
+            "bg-variant-d840fea6e6d36748",
+            "bg-variant-d84f5d66fd98b842",
+            "bg-variant-53b598740d9569b4"
+          ],
+          "meanValue": 4.516409673161157E-18,
+          "maxDeviationFromMean": 6.844372476415562E-18,
+          "absoluteTolerance": 1E-05,
+          "relativeTolerance": 0.1
+        }
+      ],
+      "gauge-violation": [
+        {
+          "schemaVersion": "1.0.0",
+          "targetQuantityId": "gauge-violation",
+          "memberBranchVariantIds": [
+            "bg-variant-95ee11778cc7ac01"
+          ],
+          "meanValue": 0,
+          "maxDeviationFromMean": 0,
+          "absoluteTolerance": 1E-05,
+          "relativeTolerance": 0.1
+        },
+        {
+          "schemaVersion": "1.0.0",
+          "targetQuantityId": "gauge-violation",
+          "memberBranchVariantIds": [
+            "bg-variant-d840fea6e6d36748"
+          ],
+          "meanValue": 0.13808600099514023,
+          "maxDeviationFromMean": 0,
+          "absoluteTolerance": 1E-05,
+          "relativeTolerance": 0.1
+        },
+        {
+          "schemaVersion": "1.0.0",
+          "targetQuantityId": "gauge-violation",
+          "memberBranchVariantIds": [
+            "bg-variant-d84f5d66fd98b842"
+          ],
+          "meanValue": 0.2135837059280268,
+          "maxDeviationFromMean": 0,
+          "absoluteTolerance": 1E-05,
+          "relativeTolerance": 0.1
+        },
+        {
+          "schemaVersion": "1.0.0",
+          "targetQuantityId": "gauge-violation",
+          "memberBranchVariantIds": [
+            "bg-variant-53b598740d9569b4"
+          ],
+          "meanValue": 0.1961852924797464,
+          "maxDeviationFromMean": 0,
+          "absoluteTolerance": 1E-05,
+          "relativeTolerance": 0.1
+        }
+      ],
+      "solver-iterations": [
+        {
+          "schemaVersion": "1.0.0",
+          "targetQuantityId": "solver-iterations",
+          "memberBranchVariantIds": [
+            "bg-variant-95ee11778cc7ac01"
+          ],
+          "meanValue": 0,
+          "maxDeviationFromMean": 0,
+          "absoluteTolerance": 1E-05,
+          "relativeTolerance": 0.1
+        },
+        {
+          "schemaVersion": "1.0.0",
+          "targetQuantityId": "solver-iterations",
+          "memberBranchVariantIds": [
+            "bg-variant-d840fea6e6d36748",
+            "bg-variant-d84f5d66fd98b842",
+            "bg-variant-53b598740d9569b4"
+          ],
+          "meanValue": 2,
+          "maxDeviationFromMean": 0,
+          "absoluteTolerance": 1E-05,
+          "relativeTolerance": 0.1
+        }
+      ]
+    },
+    "fragilityRecords": {
+      "residual-norm": {
+        "schemaVersion": "1.0.0",
+        "targetQuantityId": "residual-norm",
+        "fragilityScore": 1.6237752091230855,
+        "maxDistanceToNeighbor": 4.7667142036368655E-09,
+        "meanDistanceToFamily": 2.9355651811305914E-09,
+        "classification": "invariant",
+        "maxDistancePair": [
+          "bg-variant-95ee11778cc7ac01",
+          "bg-variant-53b598740d9569b4"
+        ],
+        "variantCount": 4
+      },
+      "stationarity-norm": {
+        "schemaVersion": "1.0.0",
+        "targetQuantityId": "stationarity-norm",
+        "fragilityScore": 1.6112503368214424,
+        "maxDistanceToNeighbor": 4.941414094312719E-09,
+        "meanDistanceToFamily": 3.066809588109928E-09,
+        "classification": "invariant",
+        "maxDistancePair": [
+          "bg-variant-95ee11778cc7ac01",
+          "bg-variant-53b598740d9569b4"
+        ],
+        "variantCount": 4
+      },
+      "objective-value": {
+        "schemaVersion": "1.0.0",
+        "targetQuantityId": "objective-value",
+        "fragilityScore": 0.00113530855136186,
+        "maxDistanceToNeighbor": 1.1360782149576719E-17,
+        "meanDistanceToFamily": 6.779334084012982E-18,
+        "classification": "invariant",
+        "maxDistancePair": [
+          "bg-variant-95ee11778cc7ac01",
+          "bg-variant-53b598740d9569b4"
+        ],
+        "variantCount": 4
+      },
+      "gauge-violation": {
+        "schemaVersion": "1.0.0",
+        "targetQuantityId": "gauge-violation",
+        "fragilityScore": 1.8337289619806922,
+        "maxDistanceToNeighbor": 0.2135837059280268,
+        "meanDistanceToFamily": 0.11647506821144778,
+        "classification": "fragile",
+        "maxDistancePair": [
+          "bg-variant-95ee11778cc7ac01",
+          "bg-variant-d84f5d66fd98b842"
+        ],
+        "variantCount": 4
+      },
+      "solver-iterations": {
+        "schemaVersion": "1.0.0",
+        "targetQuantityId": "solver-iterations",
+        "fragilityScore": 1.99999999999998,
+        "maxDistanceToNeighbor": 2,
+        "meanDistanceToFamily": 1,
+        "classification": "fragile",
+        "maxDistancePair": [
+          "bg-variant-95ee11778cc7ac01",
+          "bg-variant-d840fea6e6d36748"
+        ],
+        "variantCount": 4
+      }
+    },
+    "invarianceCandidates": [
+      {
+        "schemaVersion": "1.0.0",
+        "targetQuantityId": "residual-norm",
+        "branchFamilySize": 4,
+        "meanValue": 2.1867228561224693E-09,
+        "maxAbsDeviation": 4.7667142036368655E-09,
+        "fragilityScore": 1.6237752091230855,
+        "absoluteTolerance": 1E-05,
+        "relativeTolerance": 0.1,
+        "sourceStudyId": "phase9-su2-real-bridge-backed-branch-family",
+        "invarianceNote": "Branch-invariant within declared tolerances. Does not imply physical significance. Downstream refinement and quantitative checks required."
+      },
+      {
+        "schemaVersion": "1.0.0",
+        "targetQuantityId": "stationarity-norm",
+        "branchFamilySize": 4,
+        "meanValue": 2.3794544134170923E-09,
+        "maxAbsDeviation": 4.941414094312719E-09,
+        "fragilityScore": 1.6112503368214424,
+        "absoluteTolerance": 1E-05,
+        "relativeTolerance": 0.1,
+        "sourceStudyId": "phase9-su2-real-bridge-backed-branch-family",
+        "invarianceNote": "Branch-invariant within declared tolerances. Does not imply physical significance. Downstream refinement and quantitative checks required."
+      },
+      {
+        "schemaVersion": "1.0.0",
+        "targetQuantityId": "objective-value",
+        "branchFamilySize": 4,
+        "meanValue": 4.516409673161157E-18,
+        "maxAbsDeviation": 1.1360782149576719E-17,
+        "fragilityScore": 0.00113530855136186,
+        "absoluteTolerance": 1E-05,
+        "relativeTolerance": 0.1,
+        "sourceStudyId": "phase9-su2-real-bridge-backed-branch-family",
+        "invarianceNote": "Branch-invariant within declared tolerances. Does not imply physical significance. Downstream refinement and quantitative checks required."
+      }
+    ],
+    "overallSummary": "mixed",
+    "diagnosticNotes": [],
+    "provenance": {
+      "createdAt": "2026-03-20T00:00:00+00:00",
+      "codeRevision": "phase10-direct-refinement-v1",
+      "branch": {
+        "branchId": "phase8-real-atlas-control",
+        "schemaVersion": "1.0"
+      },
+      "backend": "cpu",
+      "notes": "Phase X standard evidence campaign: branch study still uses the admitted multi-variant atlas on the same strict thresholds, refinement now points to a direct solver-backed ladder, bridge-derived convergence remains available separately for comparison, the imported benchmark remains repo-internal, and candidate-specific escalation still fails closed when candidate-linked branch/background provenance is absent."
+    }
+  },
+  "refinementSummary": [],
+  "convergenceFailures": [
+    {
+      "quantityId": "residual-norm",
+      "failureType": "non-convergent",
+      "description": "Successive deltas not consistently decreasing (first=0, last=0).",
+      "observedValues": [
+        0,
+        0,
+        0
+      ],
+      "meshParameters": [
+        1,
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "quantityId": "stationarity-norm",
+      "failureType": "non-convergent",
+      "description": "Successive deltas not consistently decreasing (first=0, last=0).",
+      "observedValues": [
+        0,
+        0,
+        0
+      ],
+      "meshParameters": [
+        1,
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "quantityId": "objective-value",
+      "failureType": "non-convergent",
+      "description": "Successive deltas not consistently decreasing (first=0, last=0).",
+      "observedValues": [
+        0,
+        0,
+        0
+      ],
+      "meshParameters": [
+        1,
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "quantityId": "gauge-violation",
+      "failureType": "non-convergent",
+      "description": "Successive deltas not consistently decreasing (first=0, last=0).",
+      "observedValues": [
+        0,
+        0,
+        0
+      ],
+      "meshParameters": [
+        1,
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "quantityId": "solver-iterations",
+      "failureType": "non-convergent",
+      "description": "Successive deltas not consistently decreasing (first=0, last=0).",
+      "observedValues": [
+        0,
+        0,
+        0
+      ],
+      "meshParameters": [
+        1,
+        0.5,
+        0.25
+      ]
+    }
+  ],
+  "environmentSummary": [
+    {
+      "environmentId": "env-toy-2d-trivial",
+      "geometryTier": "toy",
+      "geometryFingerprint": "toy-2x2-trivial-v1",
+      "baseDimension": 2,
+      "ambientDimension": 2,
+      "edgeCount": 4,
+      "faceCount": 2,
+      "admissibility": {
+        "level": "toy",
+        "checks": [],
+        "passed": true,
+        "notes": "Toy 2x2 environment for Phase V M53 reference study"
+      },
+      "sourceSpec": "config/env_toy_2d.json",
+      "provenance": {
+        "createdAt": "2026-03-14T00:00:00+00:00",
+        "codeRevision": "phase5-m53-ref-study-v1",
+        "branch": {
+          "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "environmentId": "env-structured-4x4",
+      "geometryTier": "structured",
+      "geometryFingerprint": "structured-4x4-triangulated-v1",
+      "baseDimension": 2,
+      "ambientDimension": 2,
+      "edgeCount": 40,
+      "faceCount": 16,
+      "admissibility": {
+        "level": "structured",
+        "checks": [
+          {
+            "checkId": "min-face-count",
+            "description": "Face count meets structured-tier minimum (\u003E= 4)",
+            "passed": true,
+            "value": 16,
+            "threshold": 4
+          },
+          {
+            "checkId": "mesh-dimension-match",
+            "description": "Base dimension matches ambient dimension (no co-dimension)",
+            "passed": true
+          }
+        ],
+        "passed": true,
+        "notes": "Structured 4x4 triangulated mesh (16 triangles). Used as structured-tier environment for Phase V M48/M53 and Phase VI reference study."
+      },
+      "sourceSpec": "config/env_structured_4x4.json",
+      "provenance": {
+        "createdAt": "2026-03-14T00:00:00+00:00",
+        "codeRevision": "phase6-m4-env-upgrade-v1",
+        "branch": {
+          "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "environmentId": "env-imported-repo-benchmark",
+      "geometryTier": "imported",
+      "geometryFingerprint": "95537d50a165f62ab833abfbc02bbda407216656205220e14a67e84de25552cf",
+      "baseDimension": 2,
+      "ambientDimension": 2,
+      "edgeCount": 5,
+      "faceCount": 2,
+      "admissibility": {
+        "level": "admissible",
+        "checks": [
+          {
+            "checkId": "mesh-valid",
+            "description": "All face volumes are strictly positive (no degenerate faces)",
+            "passed": true,
+            "value": 0.5,
+            "threshold": 1E-14
+          },
+          {
+            "checkId": "dimension-match",
+            "description": "Base dimension is at least 1 and does not exceed ambient dimension",
+            "passed": true,
+            "value": 2,
+            "threshold": 2
+          },
+          {
+            "checkId": "connectivity",
+            "description": "Edge count is at least the base dimension (minimally connected)",
+            "passed": true,
+            "value": 5,
+            "threshold": 2
+          },
+          {
+            "checkId": "orientation",
+            "description": "Face count is positive (required for differential forms)",
+            "passed": true,
+            "value": 2,
+            "threshold": 1
+          }
+        ],
+        "passed": true
+      },
+      "sourceSpec": "studies/phase5_su2_branch_refinement_env_validation/datasets/phase8_repo_import_mesh.json",
+      "datasetId": "repo-internal-phase8-import-mesh-v1",
+      "sourceHash": "sha256-9009ef7d0cf69d1285b821444f5f20b345dbc5925d4674756ac6e4158dad194f",
+      "conversionVersion": "gu-json-native-v1",
+      "provenance": {
+        "createdAt": "2026-03-20T00:00:00+00:00",
+        "codeRevision": "phase8-imported-repo-benchmark-v1",
+        "branch": {
+          "branchId": "phase8-real-atlas-control",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu",
+        "notes": "Phase VIII imported benchmark path: checked-in repository mesh with real content hash and import contract, still not external evidence."
+      }
+    }
+  ],
+  "quantitativeComparison": {
+    "studyId": "phase5-su2-branch-refinement-env-validation",
+    "schemaVersion": "1.0.0",
+    "matches": [
+      {
+        "observableId": "bosonic-eigenvalue-ratio-1",
+        "targetLabel": "bosonic-mode-1-ratio-control",
+        "targetValue": 0.1,
+        "targetUncertainty": 0.03,
+        "computedValue": 0.11,
+        "computedUncertainty": 0.018,
+        "pull": 0.2858309752375146,
+        "passed": true,
+        "computedEnvironmentId": "env-toy-2d-trivial",
+        "computedEnvironmentTier": "toy",
+        "computedBranchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+        "computedRefinementLevel": "L0-2x2",
+        "targetSource": "synthetic-toy-v1",
+        "targetProvenance": "synthetic-toy-v1",
+        "targetEvidenceTier": "toy-placeholder",
+        "targetBenchmarkClass": "control",
+        "targetEnvironmentTier": "toy"
+      },
+      {
+        "observableId": "bosonic-eigenvalue-ratio-2",
+        "targetLabel": "bosonic-mode-2-ratio-control",
+        "targetValue": 1,
+        "targetUncertainty": 0.25,
+        "computedValue": 1.05,
+        "computedUncertainty": 0.08,
+        "pull": 0.190484829439865,
+        "passed": true,
+        "computedEnvironmentId": "env-toy-2d-trivial",
+        "computedEnvironmentTier": "toy",
+        "computedBranchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+        "computedRefinementLevel": "L0-2x2",
+        "targetSource": "synthetic-toy-v1",
+        "targetProvenance": "synthetic-toy-v1",
+        "targetEvidenceTier": "toy-placeholder",
+        "targetBenchmarkClass": "control",
+        "targetEnvironmentTier": "toy"
+      },
+      {
+        "observableId": "bosonic-eigenvalue-ratio-3",
+        "targetLabel": "bosonic-mode-3-ratio-control",
+        "targetValue": 5,
+        "targetUncertainty": 1,
+        "computedValue": 5.41,
+        "computedUncertainty": 0.46,
+        "pull": 0.37248108559821574,
+        "passed": true,
+        "computedEnvironmentId": "env-toy-2d-trivial",
+        "computedEnvironmentTier": "toy",
+        "computedBranchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+        "computedRefinementLevel": "L0-2x2",
+        "targetSource": "synthetic-toy-v1",
+        "targetProvenance": "synthetic-toy-v1",
+        "targetEvidenceTier": "toy-placeholder",
+        "targetBenchmarkClass": "control",
+        "targetEnvironmentTier": "toy"
+      },
+      {
+        "observableId": "fermionic-eigenvalue-ratio-1",
+        "targetLabel": "fermionic-mode-1-ratio-control",
+        "targetValue": 0.05,
+        "targetUncertainty": 0.015,
+        "computedValue": 0.055,
+        "computedUncertainty": 0.008,
+        "pull": 0.29411764705882343,
+        "passed": true,
+        "computedEnvironmentId": "env-toy-2d-trivial",
+        "computedEnvironmentTier": "toy",
+        "computedBranchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+        "computedRefinementLevel": "L0-2x2",
+        "targetSource": "synthetic-toy-v1",
+        "targetProvenance": "synthetic-toy-v1",
+        "targetEvidenceTier": "toy-placeholder",
+        "targetBenchmarkClass": "control",
+        "targetEnvironmentTier": "toy"
+      },
+      {
+        "observableId": "fermionic-eigenvalue-ratio-2",
+        "targetLabel": "fermionic-mode-2-ratio-control",
+        "targetValue": 2,
+        "targetUncertainty": 0.4,
+        "computedValue": 2,
+        "computedUncertainty": 0.15,
+        "pull": 0,
+        "passed": true,
+        "computedEnvironmentId": "env-toy-2d-trivial",
+        "computedEnvironmentTier": "toy",
+        "computedBranchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+        "computedRefinementLevel": "L0-2x2",
+        "targetSource": "synthetic-toy-v1",
+        "targetProvenance": "synthetic-toy-v1",
+        "targetEvidenceTier": "toy-placeholder",
+        "targetBenchmarkClass": "control",
+        "targetEnvironmentTier": "toy"
+      },
+      {
+        "observableId": "bosonic-eigenvalue-ratio-1",
+        "targetLabel": "bosonic-mode-1-ratio-derived-synthetic",
+        "targetValue": 0.085,
+        "targetUncertainty": 0.015,
+        "computedValue": 0.091,
+        "computedUncertainty": 0.01,
+        "pull": 0.33282011773513703,
+        "passed": true,
+        "computedEnvironmentId": "env-structured-4x4",
+        "computedEnvironmentTier": "structured",
+        "computedBranchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+        "computedRefinementLevel": "L1-4x4",
+        "targetSource": "derived-synthetic-su2-model-v2",
+        "targetProvenance": "derived-synthetic-su2-model-v2",
+        "targetEvidenceTier": "derived-synthetic",
+        "targetBenchmarkClass": "internal-benchmark",
+        "targetEnvironmentTier": "structured"
+      },
+      {
+        "observableId": "fermionic-eigenvalue-ratio-1",
+        "targetLabel": "fermionic-mode-1-ratio-small-sample",
+        "targetValue": 0.06,
+        "targetUncertainty": 0.02,
+        "computedValue": 0.055,
+        "computedUncertainty": 0.008,
+        "pull": 0.1641330410746531,
+        "passed": true,
+        "notes": "student-t; nu=4.",
+        "computedEnvironmentId": "env-toy-2d-trivial",
+        "computedEnvironmentTier": "toy",
+        "computedBranchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+        "computedRefinementLevel": "L0-2x2",
+        "targetSource": "synthetic-small-sample-v1",
+        "targetProvenance": "synthetic-small-sample-v1",
+        "targetEvidenceTier": "toy-placeholder",
+        "targetBenchmarkClass": "control",
+        "targetEnvironmentTier": "toy"
+      },
+      {
+        "observableId": "bosonic-eigenvalue-ratio-2",
+        "targetLabel": "bosonic-mode-2-imported-repo-benchmark",
+        "targetValue": 0.6,
+        "targetUncertainty": 0.05,
+        "computedValue": 0.98,
+        "computedUncertainty": 0.05,
+        "pull": 5.37401153701776,
+        "passed": false,
+        "notes": "gaussian-asymmetric; using upper sigma=0.05.",
+        "computedEnvironmentId": "env-imported-repo-benchmark",
+        "computedEnvironmentTier": "imported",
+        "computedBranchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+        "computedRefinementLevel": "imported-repo-benchmark",
+        "targetSource": "imported-repo-benchmark-v1",
+        "targetProvenance": "imported-repo-benchmark-v1",
+        "targetEvidenceTier": "evidence-grade",
+        "targetBenchmarkClass": "internal-benchmark",
+        "targetEnvironmentId": "env-imported-repo-benchmark",
+        "targetEnvironmentTier": "imported"
+      }
+    ],
+    "totalPassed": 7,
+    "totalFailed": 1,
+    "overallScore": 0.875,
+    "calibrationPolicyId": "phase5-sigma5-policy",
+    "benchmarkClassCounts": {
+      "control": 6,
+      "internal-benchmark": 2
+    },
+    "failedBenchmarkClassCounts": {
+      "internal-benchmark": 1
+    },
+    "provenance": {
+      "createdAt": "2026-03-20T00:00:00+00:00",
+      "codeRevision": "phase10-direct-refinement-v1",
+      "branch": {
+        "branchId": "phase8-real-atlas-control",
+        "schemaVersion": "1.0"
+      },
+      "backend": "cpu",
+      "notes": "Phase X standard evidence campaign: branch study still uses the admitted multi-variant atlas on the same strict thresholds, refinement now points to a direct solver-backed ladder, bridge-derived convergence remains available separately for comparison, the imported benchmark remains repo-internal, and candidate-specific escalation still fails closed when candidate-linked branch/background provenance is absent."
+    }
+  },
+  "falsifierSummary": {
+    "studyId": "phase5-su2-branch-refinement-env-validation",
+    "schemaVersion": "1.0.0",
+    "falsifiers": [
+      {
+        "falsifierId": "falsifier-0001",
+        "schemaVersion": "1.0.0",
+        "falsifierType": "branch-fragility",
+        "severity": "high",
+        "targetId": "gauge-violation",
+        "branchId": "phase9-su2-real-bridge-backed-branch-family",
+        "triggerValue": 1.8337289619806922,
+        "threshold": 0.5,
+        "description": "Quantity \u0027gauge-violation\u0027 is fragile across branch family (fragilityScore=1.834, threshold=0.5).",
+        "evidence": "FragilityRecord targetQuantityId=gauge-violation studyId=phase9-su2-real-bridge-backed-branch-family",
+        "active": true,
+        "provenance": {
+          "createdAt": "2026-03-20T00:00:00+00:00",
+          "codeRevision": "phase10-direct-refinement-v1",
+          "branch": {
+            "branchId": "phase8-real-atlas-control",
+            "schemaVersion": "1.0"
+          },
+          "backend": "cpu",
+          "notes": "Phase X standard evidence campaign: branch study still uses the admitted multi-variant atlas on the same strict thresholds, refinement now points to a direct solver-backed ladder, bridge-derived convergence remains available separately for comparison, the imported benchmark remains repo-internal, and candidate-specific escalation still fails closed when candidate-linked branch/background provenance is absent."
+        }
+      },
+      {
+        "falsifierId": "falsifier-0002",
+        "schemaVersion": "1.0.0",
+        "falsifierType": "branch-fragility",
+        "severity": "high",
+        "targetId": "solver-iterations",
+        "branchId": "phase9-su2-real-bridge-backed-branch-family",
+        "triggerValue": 1.99999999999998,
+        "threshold": 0.5,
+        "description": "Quantity \u0027solver-iterations\u0027 is fragile across branch family (fragilityScore=2, threshold=0.5).",
+        "evidence": "FragilityRecord targetQuantityId=solver-iterations studyId=phase9-su2-real-bridge-backed-branch-family",
+        "active": true,
+        "provenance": {
+          "createdAt": "2026-03-20T00:00:00+00:00",
+          "codeRevision": "phase10-direct-refinement-v1",
+          "branch": {
+            "branchId": "phase8-real-atlas-control",
+            "schemaVersion": "1.0"
+          },
+          "backend": "cpu",
+          "notes": "Phase X standard evidence campaign: branch study still uses the admitted multi-variant atlas on the same strict thresholds, refinement now points to a direct solver-backed ladder, bridge-derived convergence remains available separately for comparison, the imported benchmark remains repo-internal, and candidate-specific escalation still fails closed when candidate-linked branch/background provenance is absent."
+        }
+      },
+      {
+        "falsifierId": "falsifier-0003",
+        "schemaVersion": "1.0.0",
+        "falsifierType": "non-convergence",
+        "severity": "high",
+        "targetId": "residual-norm",
+        "branchId": "unknown",
+        "description": "Quantity \u0027residual-norm\u0027 convergence failure: non-convergent. Successive deltas not consistently decreasing (first=0, last=0).",
+        "evidence": "ConvergenceFailureRecord quantityId=residual-norm failureType=non-convergent",
+        "active": true,
+        "provenance": {
+          "createdAt": "2026-03-20T00:00:00+00:00",
+          "codeRevision": "phase10-direct-refinement-v1",
+          "branch": {
+            "branchId": "phase8-real-atlas-control",
+            "schemaVersion": "1.0"
+          },
+          "backend": "cpu",
+          "notes": "Phase X standard evidence campaign: branch study still uses the admitted multi-variant atlas on the same strict thresholds, refinement now points to a direct solver-backed ladder, bridge-derived convergence remains available separately for comparison, the imported benchmark remains repo-internal, and candidate-specific escalation still fails closed when candidate-linked branch/background provenance is absent."
+        }
+      },
+      {
+        "falsifierId": "falsifier-0004",
+        "schemaVersion": "1.0.0",
+        "falsifierType": "non-convergence",
+        "severity": "high",
+        "targetId": "stationarity-norm",
+        "branchId": "unknown",
+        "description": "Quantity \u0027stationarity-norm\u0027 convergence failure: non-convergent. Successive deltas not consistently decreasing (first=0, last=0).",
+        "evidence": "ConvergenceFailureRecord quantityId=stationarity-norm failureType=non-convergent",
+        "active": true,
+        "provenance": {
+          "createdAt": "2026-03-20T00:00:00+00:00",
+          "codeRevision": "phase10-direct-refinement-v1",
+          "branch": {
+            "branchId": "phase8-real-atlas-control",
+            "schemaVersion": "1.0"
+          },
+          "backend": "cpu",
+          "notes": "Phase X standard evidence campaign: branch study still uses the admitted multi-variant atlas on the same strict thresholds, refinement now points to a direct solver-backed ladder, bridge-derived convergence remains available separately for comparison, the imported benchmark remains repo-internal, and candidate-specific escalation still fails closed when candidate-linked branch/background provenance is absent."
+        }
+      },
+      {
+        "falsifierId": "falsifier-0005",
+        "schemaVersion": "1.0.0",
+        "falsifierType": "non-convergence",
+        "severity": "high",
+        "targetId": "objective-value",
+        "branchId": "unknown",
+        "description": "Quantity \u0027objective-value\u0027 convergence failure: non-convergent. Successive deltas not consistently decreasing (first=0, last=0).",
+        "evidence": "ConvergenceFailureRecord quantityId=objective-value failureType=non-convergent",
+        "active": true,
+        "provenance": {
+          "createdAt": "2026-03-20T00:00:00+00:00",
+          "codeRevision": "phase10-direct-refinement-v1",
+          "branch": {
+            "branchId": "phase8-real-atlas-control",
+            "schemaVersion": "1.0"
+          },
+          "backend": "cpu",
+          "notes": "Phase X standard evidence campaign: branch study still uses the admitted multi-variant atlas on the same strict thresholds, refinement now points to a direct solver-backed ladder, bridge-derived convergence remains available separately for comparison, the imported benchmark remains repo-internal, and candidate-specific escalation still fails closed when candidate-linked branch/background provenance is absent."
+        }
+      },
+      {
+        "falsifierId": "falsifier-0006",
+        "schemaVersion": "1.0.0",
+        "falsifierType": "non-convergence",
+        "severity": "high",
+        "targetId": "gauge-violation",
+        "branchId": "unknown",
+        "description": "Quantity \u0027gauge-violation\u0027 convergence failure: non-convergent. Successive deltas not consistently decreasing (first=0, last=0).",
+        "evidence": "ConvergenceFailureRecord quantityId=gauge-violation failureType=non-convergent",
+        "active": true,
+        "provenance": {
+          "createdAt": "2026-03-20T00:00:00+00:00",
+          "codeRevision": "phase10-direct-refinement-v1",
+          "branch": {
+            "branchId": "phase8-real-atlas-control",
+            "schemaVersion": "1.0"
+          },
+          "backend": "cpu",
+          "notes": "Phase X standard evidence campaign: branch study still uses the admitted multi-variant atlas on the same strict thresholds, refinement now points to a direct solver-backed ladder, bridge-derived convergence remains available separately for comparison, the imported benchmark remains repo-internal, and candidate-specific escalation still fails closed when candidate-linked branch/background provenance is absent."
+        }
+      },
+      {
+        "falsifierId": "falsifier-0007",
+        "schemaVersion": "1.0.0",
+        "falsifierType": "non-convergence",
+        "severity": "high",
+        "targetId": "solver-iterations",
+        "branchId": "unknown",
+        "description": "Quantity \u0027solver-iterations\u0027 convergence failure: non-convergent. Successive deltas not consistently decreasing (first=0, last=0).",
+        "evidence": "ConvergenceFailureRecord quantityId=solver-iterations failureType=non-convergent",
+        "active": true,
+        "provenance": {
+          "createdAt": "2026-03-20T00:00:00+00:00",
+          "codeRevision": "phase10-direct-refinement-v1",
+          "branch": {
+            "branchId": "phase8-real-atlas-control",
+            "schemaVersion": "1.0"
+          },
+          "backend": "cpu",
+          "notes": "Phase X standard evidence campaign: branch study still uses the admitted multi-variant atlas on the same strict thresholds, refinement now points to a direct solver-backed ladder, bridge-derived convergence remains available separately for comparison, the imported benchmark remains repo-internal, and candidate-specific escalation still fails closed when candidate-linked branch/background provenance is absent."
+        }
+      },
+      {
+        "falsifierId": "falsifier-0008",
+        "schemaVersion": "1.0.0",
+        "falsifierType": "quantitative-mismatch",
+        "severity": "high",
+        "targetId": "bosonic-eigenvalue-ratio-2",
+        "branchId": "unknown",
+        "environmentId": "env-imported-repo-benchmark",
+        "triggerValue": 5.37401153701776,
+        "description": "Observable \u0027bosonic-eigenvalue-ratio-2\u0027 failed target match \u0027bosonic-mode-2-imported-repo-benchmark\u0027: pull=5.374 (computed=0.98, target=0.6).",
+        "evidence": "TargetMatchRecord observableId=bosonic-eigenvalue-ratio-2 targetLabel=bosonic-mode-2-imported-repo-benchmark computedEnvironmentId=env-imported-repo-benchmark",
+        "active": true,
+        "provenance": {
+          "createdAt": "2026-03-20T00:00:00+00:00",
+          "codeRevision": "phase10-direct-refinement-v1",
+          "branch": {
+            "branchId": "phase8-real-atlas-control",
+            "schemaVersion": "1.0"
+          },
+          "backend": "cpu",
+          "notes": "Phase X standard evidence campaign: branch study still uses the admitted multi-variant atlas on the same strict thresholds, refinement now points to a direct solver-backed ladder, bridge-derived convergence remains available separately for comparison, the imported benchmark remains repo-internal, and candidate-specific escalation still fails closed when candidate-linked branch/background provenance is absent."
+        }
+      },
+      {
+        "falsifierId": "falsifier-0009",
+        "schemaVersion": "1.0.0",
+        "falsifierType": "representation-content",
+        "severity": "fatal",
+        "targetId": "fermion-registry-phase4-toy-v1-0000",
+        "branchId": "unknown",
+        "triggerValue": 1,
+        "threshold": 0,
+        "description": "Candidate \u0027fermion-registry-phase4-toy-v1-0000\u0027 exposes only 1 persisted family source(s); at least 2 are required for the reference representation-content check.",
+        "evidence": "RepresentationContentRecord recordId=rep-fermion-registry-phase4-toy-v1-0000 candidateId=fermion-registry-phase4-toy-v1-0000 missingRequiredCount=1",
+        "active": true,
+        "provenance": {
+          "createdAt": "2026-03-20T00:00:00+00:00",
+          "codeRevision": "phase10-direct-refinement-v1",
+          "branch": {
+            "branchId": "phase8-real-atlas-control",
+            "schemaVersion": "1.0"
+          },
+          "backend": "cpu",
+          "notes": "Phase X standard evidence campaign: branch study still uses the admitted multi-variant atlas on the same strict thresholds, refinement now points to a direct solver-backed ladder, bridge-derived convergence remains available separately for comparison, the imported benchmark remains repo-internal, and candidate-specific escalation still fails closed when candidate-linked branch/background provenance is absent."
+        }
+      }
+    ],
+    "activeFatalCount": 1,
+    "activeHighCount": 8,
+    "totalActiveCount": 9,
+    "observationRecordCount": 3,
+    "environmentRecordCount": 5,
+    "representationRecordCount": 3,
+    "couplingRecordCount": 3,
+    "evaluationCoverage": [
+      {
+        "channelId": "observation-chain",
+        "status": "evaluated",
+        "inputCount": 3,
+        "outputCount": 3,
+        "originCounts": {
+          "upstream-sourced": 3
+        }
+      },
+      {
+        "channelId": "environment-variance",
+        "status": "evaluated",
+        "inputCount": 5,
+        "outputCount": 5,
+        "originCounts": {
+          "upstream-sourced": 5
+        }
+      },
+      {
+        "channelId": "representation-content",
+        "status": "evaluated",
+        "inputCount": 3,
+        "outputCount": 3,
+        "originCounts": {
+          "upstream-sourced": 3
+        }
+      },
+      {
+        "channelId": "coupling-consistency",
+        "status": "evaluated",
+        "inputCount": 3,
+        "outputCount": 3,
+        "originCounts": {
+          "upstream-sourced": 3
+        }
+      }
+    ],
+    "provenance": {
+      "createdAt": "2026-03-20T00:00:00+00:00",
+      "codeRevision": "phase10-direct-refinement-v1",
+      "branch": {
+        "branchId": "phase8-real-atlas-control",
+        "schemaVersion": "1.0"
+      },
+      "backend": "cpu",
+      "notes": "Phase X standard evidence campaign: branch study still uses the admitted multi-variant atlas on the same strict thresholds, refinement now points to a direct solver-backed ladder, bridge-derived convergence remains available separately for comparison, the imported benchmark remains repo-internal, and candidate-specific escalation still fails closed when candidate-linked branch/background provenance is absent."
+    }
+  },
+  "claimEscalations": [
+    {
+      "recordId": "escalation-0001",
+      "schemaVersion": "1.0.0",
+      "candidateId": "fermion-registry-phase4-toy-v1-0000",
+      "registryType": "fermion",
+      "currentClaimClass": "C2_BranchStableCandidate",
+      "proposedClaimClass": "C0_NumericalMode",
+      "direction": "demotion",
+      "gateResults": [
+        {
+          "gateId": "branch-robust",
+          "description": "Candidate survives admissible branch variations (invariance class covers \u003E 50% of variants).",
+          "passed": false,
+          "evidence": "No candidate-linked branch variant IDs were present in the registry record.",
+          "evidenceRecordIds": [],
+          "required": true
+        },
+        {
+          "gateId": "refinement-bounded",
+          "description": "Continuum estimate has error band \u003C 10% of extrapolated value.",
+          "passed": false,
+          "evidence": "No candidate-linked background IDs were present in the registry record.",
+          "evidenceRecordIds": [],
+          "required": true
+        },
+        {
+          "gateId": "multi-environment",
+          "description": "Quantity computed on at least 2 distinct environment tiers.",
+          "passed": true,
+          "evidence": "Candidate-linked environment-variance records span more than one environment tier.",
+          "evidenceRecordIds": [
+            "env-var-bosonic-eigenvalue-ratio-1"
+          ],
+          "required": true
+        },
+        {
+          "gateId": "observation-chain-valid",
+          "description": "Observation provenance chain is complete and low-sensitivity.",
+          "passed": true,
+          "evidence": "ObservationChainRecord: complete, passed, low sensitivity.",
+          "evidenceRecordIds": [
+            "observation-chain:fermion-registry-phase4-toy-v1-0000:cluster-0:bosonic-eigenvalue-ratio-1"
+          ],
+          "required": true
+        },
+        {
+          "gateId": "quantitative-match",
+          "description": "At least one target match passed for this candidate.",
+          "passed": true,
+          "evidence": "Candidate-linked target match passed.",
+          "evidenceRecordIds": [
+            "target-match:bosonic-eigenvalue-ratio-1:bosonic-mode-1-ratio-control:env-toy-2d-trivial",
+            "target-match:bosonic-eigenvalue-ratio-1:bosonic-mode-1-ratio-derived-synthetic:env-structured-4x4"
+          ],
+          "required": true
+        },
+        {
+          "gateId": "no-active-fatal-falsifier",
+          "description": "No active fatal falsifier targets this candidate.",
+          "passed": false,
+          "evidence": "Active fatal falsifier found.",
+          "evidenceRecordIds": [
+            "falsifier-0009"
+          ],
+          "required": true
+        }
+      ],
+      "allGatesPassed": false,
+      "demotionOrBlockReason": "Fatal falsifier active \u2014 demoted to C0.",
+      "sourceStudyId": "phase5-dossier-assembler",
+      "evidenceTier": "RegeneratedCpu",
+      "recordedAt": "2026-03-15T15:41:08.0682953+00:00",
+      "provenance": {
+        "createdAt": "2026-03-20T00:00:00+00:00",
+        "codeRevision": "phase10-direct-refinement-v1",
+        "branch": {
+          "branchId": "phase8-real-atlas-control",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu",
+        "notes": "Phase X standard evidence campaign: branch study still uses the admitted multi-variant atlas on the same strict thresholds, refinement now points to a direct solver-backed ladder, bridge-derived convergence remains available separately for comparison, the imported benchmark remains repo-internal, and candidate-specific escalation still fails closed when candidate-linked branch/background provenance is absent."
+      }
+    },
+    {
+      "recordId": "escalation-0002",
+      "schemaVersion": "1.0.0",
+      "candidateId": "fermion-registry-phase4-toy-v1-0001",
+      "registryType": "fermion",
+      "currentClaimClass": "C3_ObservedStableCandidate",
+      "proposedClaimClass": "C3_ObservedStableCandidate",
+      "direction": "no-change",
+      "gateResults": [
+        {
+          "gateId": "branch-robust",
+          "description": "Candidate survives admissible branch variations (invariance class covers \u003E 50% of variants).",
+          "passed": false,
+          "evidence": "No candidate-linked branch variant IDs were present in the registry record.",
+          "evidenceRecordIds": [],
+          "required": true
+        },
+        {
+          "gateId": "refinement-bounded",
+          "description": "Continuum estimate has error band \u003C 10% of extrapolated value.",
+          "passed": false,
+          "evidence": "No candidate-linked background IDs were present in the registry record.",
+          "evidenceRecordIds": [],
+          "required": true
+        },
+        {
+          "gateId": "multi-environment",
+          "description": "Quantity computed on at least 2 distinct environment tiers.",
+          "passed": true,
+          "evidence": "Candidate-linked environment-variance records span more than one environment tier.",
+          "evidenceRecordIds": [
+            "env-var-bosonic-eigenvalue-ratio-2"
+          ],
+          "required": true
+        },
+        {
+          "gateId": "observation-chain-valid",
+          "description": "Observation provenance chain is complete and low-sensitivity.",
+          "passed": true,
+          "evidence": "ObservationChainRecord: complete, passed, low sensitivity.",
+          "evidenceRecordIds": [
+            "observation-chain:fermion-registry-phase4-toy-v1-0001:cluster-1:bosonic-eigenvalue-ratio-2"
+          ],
+          "required": true
+        },
+        {
+          "gateId": "quantitative-match",
+          "description": "At least one target match passed for this candidate.",
+          "passed": true,
+          "evidence": "Candidate-linked target match passed.",
+          "evidenceRecordIds": [
+            "target-match:bosonic-eigenvalue-ratio-2:bosonic-mode-2-imported-repo-benchmark:env-imported-repo-benchmark",
+            "target-match:bosonic-eigenvalue-ratio-2:bosonic-mode-2-ratio-control:env-toy-2d-trivial"
+          ],
+          "required": true
+        },
+        {
+          "gateId": "no-active-fatal-falsifier",
+          "description": "No active fatal falsifier targets this candidate.",
+          "passed": true,
+          "evidence": "No active fatal falsifiers.",
+          "evidenceRecordIds": [],
+          "required": true
+        }
+      ],
+      "allGatesPassed": false,
+      "demotionOrBlockReason": "Escalation held: required gates failed: [branch-robust, refinement-bounded].",
+      "sourceStudyId": "phase5-dossier-assembler",
+      "evidenceTier": "RegeneratedCpu",
+      "recordedAt": "2026-03-15T15:41:08.0685384+00:00",
+      "provenance": {
+        "createdAt": "2026-03-20T00:00:00+00:00",
+        "codeRevision": "phase10-direct-refinement-v1",
+        "branch": {
+          "branchId": "phase8-real-atlas-control",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu",
+        "notes": "Phase X standard evidence campaign: branch study still uses the admitted multi-variant atlas on the same strict thresholds, refinement now points to a direct solver-backed ladder, bridge-derived convergence remains available separately for comparison, the imported benchmark remains repo-internal, and candidate-specific escalation still fails closed when candidate-linked branch/background provenance is absent."
+      }
+    },
+    {
+      "recordId": "escalation-0003",
+      "schemaVersion": "1.0.0",
+      "candidateId": "fermion-registry-phase4-toy-v1-0002",
+      "registryType": "fermion",
+      "currentClaimClass": "C3_ObservedStableCandidate",
+      "proposedClaimClass": "C3_ObservedStableCandidate",
+      "direction": "no-change",
+      "gateResults": [
+        {
+          "gateId": "branch-robust",
+          "description": "Candidate survives admissible branch variations (invariance class covers \u003E 50% of variants).",
+          "passed": false,
+          "evidence": "No candidate-linked branch variant IDs were present in the registry record.",
+          "evidenceRecordIds": [],
+          "required": true
+        },
+        {
+          "gateId": "refinement-bounded",
+          "description": "Continuum estimate has error band \u003C 10% of extrapolated value.",
+          "passed": false,
+          "evidence": "No candidate-linked background IDs were present in the registry record.",
+          "evidenceRecordIds": [],
+          "required": true
+        },
+        {
+          "gateId": "multi-environment",
+          "description": "Quantity computed on at least 2 distinct environment tiers.",
+          "passed": true,
+          "evidence": "Candidate-linked environment-variance records span more than one environment tier.",
+          "evidenceRecordIds": [
+            "env-var-bosonic-eigenvalue-ratio-3"
+          ],
+          "required": true
+        },
+        {
+          "gateId": "observation-chain-valid",
+          "description": "Observation provenance chain is complete and low-sensitivity.",
+          "passed": true,
+          "evidence": "ObservationChainRecord: complete, passed, low sensitivity.",
+          "evidenceRecordIds": [
+            "observation-chain:fermion-registry-phase4-toy-v1-0002:cluster-2:bosonic-eigenvalue-ratio-3"
+          ],
+          "required": true
+        },
+        {
+          "gateId": "quantitative-match",
+          "description": "At least one target match passed for this candidate.",
+          "passed": true,
+          "evidence": "Candidate-linked target match passed.",
+          "evidenceRecordIds": [
+            "target-match:bosonic-eigenvalue-ratio-3:bosonic-mode-3-ratio-control:env-toy-2d-trivial"
+          ],
+          "required": true
+        },
+        {
+          "gateId": "no-active-fatal-falsifier",
+          "description": "No active fatal falsifier targets this candidate.",
+          "passed": true,
+          "evidence": "No active fatal falsifiers.",
+          "evidenceRecordIds": [],
+          "required": true
+        }
+      ],
+      "allGatesPassed": false,
+      "demotionOrBlockReason": "Escalation held: required gates failed: [branch-robust, refinement-bounded].",
+      "sourceStudyId": "phase5-dossier-assembler",
+      "evidenceTier": "RegeneratedCpu",
+      "recordedAt": "2026-03-15T15:41:08.0685541+00:00",
+      "provenance": {
+        "createdAt": "2026-03-20T00:00:00+00:00",
+        "codeRevision": "phase10-direct-refinement-v1",
+        "branch": {
+          "branchId": "phase8-real-atlas-control",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu",
+        "notes": "Phase X standard evidence campaign: branch study still uses the admitted multi-variant atlas on the same strict thresholds, refinement now points to a direct solver-backed ladder, bridge-derived convergence remains available separately for comparison, the imported benchmark remains repo-internal, and candidate-specific escalation still fails closed when candidate-linked branch/background provenance is absent."
+      }
+    }
+  ],
+  "negativeResults": [
+    {
+      "entryId": "neg-0001",
+      "schemaVersion": "1.0.0",
+      "category": "non-convergence",
+      "description": "Quantity \u0027residual-norm\u0027 did not converge: Successive deltas not consistently decreasing (first=0, last=0).",
+      "affectedCandidateIds": [],
+      "sourceStudyId": "phase5-dossier-assembler",
+      "impliesDemotion": false,
+      "recommendedAction": "flag-for-review",
+      "evidenceTier": "RegeneratedCpu",
+      "recordedAt": "2026-03-15T15:41:08.0688818+00:00"
+    },
+    {
+      "entryId": "neg-0002",
+      "schemaVersion": "1.0.0",
+      "category": "non-convergence",
+      "description": "Quantity \u0027stationarity-norm\u0027 did not converge: Successive deltas not consistently decreasing (first=0, last=0).",
+      "affectedCandidateIds": [],
+      "sourceStudyId": "phase5-dossier-assembler",
+      "impliesDemotion": false,
+      "recommendedAction": "flag-for-review",
+      "evidenceTier": "RegeneratedCpu",
+      "recordedAt": "2026-03-15T15:41:08.0688924+00:00"
+    },
+    {
+      "entryId": "neg-0003",
+      "schemaVersion": "1.0.0",
+      "category": "non-convergence",
+      "description": "Quantity \u0027objective-value\u0027 did not converge: Successive deltas not consistently decreasing (first=0, last=0).",
+      "affectedCandidateIds": [],
+      "sourceStudyId": "phase5-dossier-assembler",
+      "impliesDemotion": false,
+      "recommendedAction": "flag-for-review",
+      "evidenceTier": "RegeneratedCpu",
+      "recordedAt": "2026-03-15T15:41:08.0688926+00:00"
+    },
+    {
+      "entryId": "neg-0004",
+      "schemaVersion": "1.0.0",
+      "category": "non-convergence",
+      "description": "Quantity \u0027gauge-violation\u0027 did not converge: Successive deltas not consistently decreasing (first=0, last=0).",
+      "affectedCandidateIds": [],
+      "sourceStudyId": "phase5-dossier-assembler",
+      "impliesDemotion": false,
+      "recommendedAction": "flag-for-review",
+      "evidenceTier": "RegeneratedCpu",
+      "recordedAt": "2026-03-15T15:41:08.0688927+00:00"
+    },
+    {
+      "entryId": "neg-0005",
+      "schemaVersion": "1.0.0",
+      "category": "non-convergence",
+      "description": "Quantity \u0027solver-iterations\u0027 did not converge: Successive deltas not consistently decreasing (first=0, last=0).",
+      "affectedCandidateIds": [],
+      "sourceStudyId": "phase5-dossier-assembler",
+      "impliesDemotion": false,
+      "recommendedAction": "flag-for-review",
+      "evidenceTier": "RegeneratedCpu",
+      "recordedAt": "2026-03-15T15:41:08.0688928+00:00"
+    },
+    {
+      "entryId": "neg-0006",
+      "schemaVersion": "1.0.0",
+      "category": "representation-content",
+      "description": "Candidate \u0027fermion-registry-phase4-toy-v1-0000\u0027 exposes only 1 persisted family source(s); at least 2 are required for the reference representation-content check.",
+      "affectedCandidateIds": [],
+      "sourceStudyId": "phase5-dossier-assembler",
+      "impliesDemotion": true,
+      "recommendedAction": "demote-candidate",
+      "evidenceTier": "RegeneratedCpu",
+      "recordedAt": "2026-03-15T15:41:08.0689292+00:00"
+    }
+  ],
+  "observationChainSummary": [
+    {
+      "candidateId": "fermion-registry-phase4-toy-v1-0000",
+      "primarySourceId": "cluster-0",
+      "observableId": "bosonic-eigenvalue-ratio-1",
+      "nativeArtifactRef": "spectral:bg-toy2d-cos-sin-su2-v1",
+      "observedArtifactRef": "observable:bosonic-eigenvalue-ratio-1:env-imported-repo-benchmark",
+      "extractionArtifactRef": "registry:fermion-registry-phase4-toy-v1-0000",
+      "auxiliaryModelId": "phase4-observation-pipeline-bridge",
+      "completenessStatus": "complete",
+      "sensitivityScore": 0.2,
+      "auxiliaryModelSensitivity": 0.16,
+      "passed": true,
+      "notes": "Built from persisted spectral artifact \u0027bg-toy2d-cos-sin-su2-v1\u0027 and registry observation confidence 0.",
+      "origin": "upstream-sourced",
+      "sourceArtifactRefs": [
+        "/home/josh/Documents/GitHub/GeometricUnity/studies/phase4_fermion_family_atlas_001/output/fermion_spectral_result.json",
+        "/home/josh/Documents/GitHub/GeometricUnity/studies/phase4_fermion_family_atlas_001/output/unified_particle_registry.json",
+        "/home/josh/Documents/GitHub/GeometricUnity/studies/phase5_su2_branch_refinement_env_validation/config/observables.json"
+      ],
+      "provenance": {
+        "createdAt": "2026-03-15T14:46:41.6921496+00:00",
+        "codeRevision": "cli",
+        "branch": {
+          "branchId": "cli",
+          "schemaVersion": "1.0.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "candidateId": "fermion-registry-phase4-toy-v1-0001",
+      "primarySourceId": "cluster-1",
+      "observableId": "bosonic-eigenvalue-ratio-2",
+      "nativeArtifactRef": "spectral:bg-toy2d-cos-sin-su2-v1",
+      "observedArtifactRef": "observable:bosonic-eigenvalue-ratio-2:env-imported-repo-benchmark",
+      "extractionArtifactRef": "registry:fermion-registry-phase4-toy-v1-0001",
+      "auxiliaryModelId": "phase4-observation-pipeline-bridge",
+      "completenessStatus": "complete",
+      "sensitivityScore": 0.22,
+      "auxiliaryModelSensitivity": 0.18,
+      "passed": true,
+      "notes": "Built from persisted spectral artifact \u0027bg-toy2d-cos-sin-su2-v1\u0027 and registry observation confidence 0.",
+      "origin": "upstream-sourced",
+      "sourceArtifactRefs": [
+        "/home/josh/Documents/GitHub/GeometricUnity/studies/phase4_fermion_family_atlas_001/output/fermion_spectral_result.json",
+        "/home/josh/Documents/GitHub/GeometricUnity/studies/phase4_fermion_family_atlas_001/output/unified_particle_registry.json",
+        "/home/josh/Documents/GitHub/GeometricUnity/studies/phase5_su2_branch_refinement_env_validation/config/observables.json"
+      ],
+      "provenance": {
+        "createdAt": "2026-03-15T14:46:41.6921496+00:00",
+        "codeRevision": "cli",
+        "branch": {
+          "branchId": "cli",
+          "schemaVersion": "1.0.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "candidateId": "fermion-registry-phase4-toy-v1-0002",
+      "primarySourceId": "cluster-2",
+      "observableId": "bosonic-eigenvalue-ratio-3",
+      "nativeArtifactRef": "spectral:bg-toy2d-cos-sin-su2-v1",
+      "observedArtifactRef": "observable:bosonic-eigenvalue-ratio-3:env-imported-repo-benchmark",
+      "extractionArtifactRef": "registry:fermion-registry-phase4-toy-v1-0002",
+      "auxiliaryModelId": "phase4-observation-pipeline-bridge",
+      "completenessStatus": "complete",
+      "sensitivityScore": 0.24000000000000002,
+      "auxiliaryModelSensitivity": 0.2,
+      "passed": true,
+      "notes": "Built from persisted spectral artifact \u0027bg-toy2d-cos-sin-su2-v1\u0027 and registry observation confidence 0.",
+      "origin": "upstream-sourced",
+      "sourceArtifactRefs": [
+        "/home/josh/Documents/GitHub/GeometricUnity/studies/phase4_fermion_family_atlas_001/output/fermion_spectral_result.json",
+        "/home/josh/Documents/GitHub/GeometricUnity/studies/phase4_fermion_family_atlas_001/output/unified_particle_registry.json",
+        "/home/josh/Documents/GitHub/GeometricUnity/studies/phase5_su2_branch_refinement_env_validation/config/observables.json"
+      ],
+      "provenance": {
+        "createdAt": "2026-03-15T14:46:41.6921496+00:00",
+        "codeRevision": "cli",
+        "branch": {
+          "branchId": "cli",
+          "schemaVersion": "1.0.0"
+        },
+        "backend": "cpu"
+      }
+    }
+  ],
+  "sidecarCoverage": {
+    "studyId": "unified_particle_registry",
+    "schemaVersion": "1.0.0",
+    "channels": [
+      {
+        "channelId": "observation-chain",
+        "status": "evaluated",
+        "inputCount": 3,
+        "outputCount": 3,
+        "originCounts": {
+          "upstream-sourced": 3
+        }
+      },
+      {
+        "channelId": "environment-variance",
+        "status": "evaluated",
+        "inputCount": 5,
+        "outputCount": 5,
+        "originCounts": {
+          "upstream-sourced": 5
+        }
+      },
+      {
+        "channelId": "representation-content",
+        "status": "evaluated",
+        "inputCount": 3,
+        "outputCount": 3,
+        "originCounts": {
+          "upstream-sourced": 3
+        }
+      },
+      {
+        "channelId": "coupling-consistency",
+        "status": "evaluated",
+        "inputCount": 3,
+        "outputCount": 3,
+        "originCounts": {
+          "upstream-sourced": 3
+        }
+      }
+    ],
+    "provenance": {
+      "createdAt": "2026-03-15T14:46:41.6921496+00:00",
+      "codeRevision": "cli",
+      "branch": {
+        "branchId": "cli",
+        "schemaVersion": "1.0.0"
+      },
+      "backend": "cpu"
+    }
+  },
+  "freshness": "regenerated-current-code",
+  "generatedAt": "2026-03-15T15:41:08.0690139+00:00",
+  "provenance": {
+    "createdAt": "2026-03-20T00:00:00+00:00",
+    "codeRevision": "phase10-direct-refinement-v1",
+    "branch": {
+      "branchId": "phase8-real-atlas-control",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu",
+    "notes": "Phase X standard evidence campaign: branch study still uses the admitted multi-variant atlas on the same strict thresholds, refinement now points to a direct solver-backed ladder, bridge-derived convergence remains available separately for comparison, the imported benchmark remains repo-internal, and candidate-specific escalation still fails closed when candidate-linked branch/background provenance is absent."
+  }
+}

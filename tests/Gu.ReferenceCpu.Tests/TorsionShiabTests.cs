@@ -1010,4 +1010,5 @@ public class TorsionShiabTests
         double norm = FieldTensorOps.L2Norm(result);
         Assert.True(norm > 0, "Torsion should be non-zero when A0 is non-trivial in non-abelian algebra.");
     }
+
 }

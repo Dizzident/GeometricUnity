@@ -281,4 +281,67 @@ public sealed class FermionObservationPipelineTests
         var results = pipeline.ObserveInteractions(atlas, TestProvenance());
         Assert.Equal("my-atlas", results[0].AtlasId);
     }
+
+    // -------- ObservationPathLabel contract tests (P11-M10) --------
+
+    [Fact]
+    public void ObserveClusters_AllResults_HaveProxyObservationLabel()
+    {
+        // Per D-P11-010: all current fermion observations must be labeled proxy-observation.
+        var pipeline = new FermionObservationPipeline();
+        var clusters = new[]
+        {
+            MakeCluster("c0", "left"),
+            MakeCluster("c1", "right"),
+            MakeCluster("c2", "mixed"),
+        };
+
+        var results = pipeline.ObserveClusters(clusters, TestProvenance());
+
+        Assert.All(results, r =>
+            Assert.Equal(ObservationPathLabels.ProxyObservation, r.ObservationPathLabel));
+    }
+
+    [Fact]
+    public void ObserveClusters_Label_IsNeverFullPullback()
+    {
+        // Enforce D-P11-010: current pipeline must not produce full-pullback labels.
+        var pipeline = new FermionObservationPipeline();
+        var cluster = MakeCluster("c0", "left");
+
+        var results = pipeline.ObserveClusters(new[] { cluster }, TestProvenance());
+
+        Assert.NotEqual(ObservationPathLabels.FullPullback, results[0].ObservationPathLabel);
+    }
+
+    [Fact]
+    public void ObserveClusters_ProxyLabel_PresentInNotes()
+    {
+        // The note warning must be included so reports surface the proxy status.
+        var pipeline = new FermionObservationPipeline();
+        var cluster = MakeCluster("c0", "left");
+
+        var results = pipeline.ObserveClusters(new[] { cluster }, TestProvenance());
+
+        Assert.Contains(results[0].Notes,
+            n => n.Contains("proxy-observation", StringComparison.Ordinal));
+    }
+
+    [Fact]
+    public void ObservationPathLabels_ProxyObservation_HasExpectedValue()
+    {
+        Assert.Equal("proxy-observation", ObservationPathLabels.ProxyObservation);
+    }
+
+    [Fact]
+    public void ObservationPathLabels_FullPullback_HasExpectedValue()
+    {
+        Assert.Equal("full-pullback", ObservationPathLabels.FullPullback);
+    }
+
+    [Fact]
+    public void ObservationPathLabels_ProxyAndFullPullback_AreDistinct()
+    {
+        Assert.NotEqual(ObservationPathLabels.ProxyObservation, ObservationPathLabels.FullPullback);
+    }
 }

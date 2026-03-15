@@ -98,6 +98,16 @@ public sealed class Phase5ValidationDossier
     public SidecarSummary? SidecarCoverage { get; init; }
 
     /// <summary>
+    /// Geometry evidence tier for this dossier (P11-M7).
+    /// "toy-control" when the campaign geometry does not meet draft X^4/Observerse requirements.
+    /// "draft-aligned" when the base dimension is 4 and ambient dimension is 14 (not achievable
+    /// in current repository context).
+    /// Per D-P11-007: current campaigns are always "toy-control".
+    /// </summary>
+    [JsonPropertyName("geometryEvidenceTier")]
+    public string? GeometryEvidenceTier { get; init; }
+
+    /// <summary>
     /// Freshness descriptor: "regenerated-current-code" if all studies were run
     /// from the current tree; "mixed" if some studies are stale.
     /// </summary>

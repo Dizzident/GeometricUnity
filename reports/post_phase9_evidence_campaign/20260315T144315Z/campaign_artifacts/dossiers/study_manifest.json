@@ -1,0 +1,48 @@
+[
+  {
+    "studyId": "phase5-su2-branch-refinement-env-validation-positive",
+    "description": "Phase V campaign phase5-su2-branch-refinement-env-validation \u2014 positive evidence dossier",
+    "runFolder": "artifacts",
+    "reproducibility": {
+      "codeRevision": "phase9-real-atlas-env-aware-v1",
+      "reproductionCommands": [
+        "dotnet run --project apps/Gu.Cli -- run-phase5-campaign --spec inputs/campaign.json --out-dir . --validate-first"
+      ],
+      "regeneratedAt": "2026-03-15T14:47:03.6362119+00:00",
+      "evidenceTier": "RegeneratedCpu"
+    },
+    "provenance": {
+      "createdAt": "2026-03-20T00:00:00+00:00",
+      "codeRevision": "phase9-real-atlas-env-aware-v1",
+      "branch": {
+        "branchId": "phase8-real-atlas-control",
+        "schemaVersion": "1.0"
+      },
+      "backend": "cpu",
+      "notes": "Phase IX standard evidence campaign: multi-variant admitted atlas on the same strict thresholds, bridge-derived convergence sourced from multiple admitted backgrounds, unchanged benchmark separation, and candidate-specific escalation that still fails closed when candidate-linked branch/background provenance is absent."
+    }
+  },
+  {
+    "studyId": "phase5-su2-branch-refinement-env-validation-negative",
+    "description": "Phase V campaign phase5-su2-branch-refinement-env-validation \u2014 negative result dossier",
+    "runFolder": "artifacts",
+    "reproducibility": {
+      "codeRevision": "phase9-real-atlas-env-aware-v1",
+      "reproductionCommands": [
+        "dotnet run --project apps/Gu.Cli -- run-phase5-campaign --spec inputs/campaign.json --out-dir . --validate-first"
+      ],
+      "regeneratedAt": "2026-03-15T14:47:03.6362124+00:00",
+      "evidenceTier": "RegeneratedCpu"
+    },
+    "provenance": {
+      "createdAt": "2026-03-20T00:00:00+00:00",
+      "codeRevision": "phase9-real-atlas-env-aware-v1",
+      "branch": {
+        "branchId": "phase8-real-atlas-control",
+        "schemaVersion": "1.0"
+      },
+      "backend": "cpu",
+      "notes": "Phase IX standard evidence campaign: multi-variant admitted atlas on the same strict thresholds, bridge-derived convergence sourced from multiple admitted backgrounds, unchanged benchmark separation, and candidate-specific escalation that still fails closed when candidate-linked branch/background provenance is absent."
+    }
+  }
+]

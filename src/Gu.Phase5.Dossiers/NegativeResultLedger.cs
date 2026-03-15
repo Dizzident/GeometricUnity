@@ -121,6 +121,22 @@ public sealed class NegativeResultEntry
     [JsonPropertyName("evidenceTier")]
     public ArtifactEvidenceTier EvidenceTier { get; init; } = ArtifactEvidenceTier.RegeneratedCpu;
 
+    /// <summary>
+    /// Artifact paths that provide source evidence for this negative result.
+    /// Populated for representation-content entries so the blocker is traceable.
+    /// </summary>
+    [JsonPropertyName("sourceArtifactRefs")]
+    public IReadOnlyList<string>? SourceArtifactRefs { get; init; }
+
+    /// <summary>
+    /// Phase XI stabilization note. Non-null when this entry has been examined in Phase XI
+    /// and determined to be a stable scientific limitation that cannot be closed in the
+    /// current repository context. Records why the blocker cannot be resolved and what
+    /// artifact-backed evidence supports that determination.
+    /// </summary>
+    [JsonPropertyName("p11StabilizationNote")]
+    public string? P11StabilizationNote { get; init; }
+
     /// <summary>When this entry was recorded.</summary>
     [JsonPropertyName("recordedAt")]
     public required DateTimeOffset RecordedAt { get; init; }

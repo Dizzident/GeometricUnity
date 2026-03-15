@@ -45,6 +45,14 @@ public static class FermionObservationBuilder
         if (cluster.AmbiguityScore > 0.0)
             notes.Add($"Ambiguity score={cluster.AmbiguityScore:F3}; matching was not fully unambiguous.");
 
+        // Per D-P11-010: label all current observations as proxy-observation.
+        // Full sigma_h pullback from Y_h to X_h is not yet implemented.
+        notes.Add(
+            "Observation path: proxy-observation. " +
+            "This summary is produced from cluster-level spectral properties (chirality tag, " +
+            "eigenvalue envelope) without a full sigma_h pullback from Y to X. " +
+            "Do not treat this as full draft-aligned pullback evidence (D-P11-010).");
+
         return new FermionObservationSummary
         {
             ClusterId = cluster.ClusterId,
@@ -57,6 +65,7 @@ public static class FermionObservationBuilder
             BranchPersistenceScore = cluster.MeanBranchPersistence,
             AmbiguityScore = cluster.AmbiguityScore,
             IsTrivial = isTrivial,
+            ObservationPathLabel = ObservationPathLabels.ProxyObservation,
             Notes = notes,
             Provenance = provenance,
         };

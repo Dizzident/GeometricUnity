@@ -17,6 +17,7 @@
     <ProjectReference Include="..\Gu.Phase5.Falsification\Gu.Phase5.Falsification.csproj" />
     <ProjectReference Include="..\Gu.Phase5.Dossiers\Gu.Phase5.Dossiers.csproj" />
     <ProjectReference Include="..\Gu.Validation\Gu.Validation.csproj" />
+    <ProjectReference Include="..\Gu.ReferenceCpu\Gu.ReferenceCpu.csproj" />
   </ItemGroup>
 
 </Project>

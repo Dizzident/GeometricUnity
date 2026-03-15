@@ -1,0 +1,72 @@
+{
+  "summaryId": "p11-m6-shiab-path-comparison-20260315T165000Z",
+  "schemaVersion": "1.0.0",
+  "milestone": "P11-M6",
+  "description": "Paired Shiab path rerun and comparison after all Phase XI changes. Runs both standard (identity-shiab) and paired (first-order-curvature) paths on fresh post-Phase-XI artifacts, plus a third metric-scaled-shiab operator for family scope.",
+  "bindingConstraint": "D-P11-009: Neither standard nor paired operator is the canonically selected draft Shiab. No conclusion is inferred from stale pre-Phase-XI artifacts.",
+  "rerunTimestamp": "2026-03-15T16:50:00Z",
+  "standardPath": {
+    "shiabBranchId": "identity-shiab",
+    "campaignArtifactDir": "reports/post_phase11_evidence_campaign/20260315T165000Z/campaign_artifacts",
+    "scopeRecordSu2": "reports/post_phase11_evidence_campaign/20260315T165000Z/shiab_companion/shiab_scope_record_su2.json",
+    "scopeRecordSu3": "reports/post_phase11_evidence_campaign/20260315T165000Z/shiab_companion/shiab_scope_record_su3.json",
+    "branchRobustnessResult": "mixed (active branch-fragility falsifiers)",
+    "convergenceResult": "bounded (non-monotone on some quantities)",
+    "activeFatalCount": 1,
+    "activeHighCount": 3
+  },
+  "pairedPath": {
+    "shiabBranchId": "first-order-curvature",
+    "scopeRecordSu2": "reports/post_phase11_evidence_campaign/20260315T165000Z/shiab_companion/shiab_scope_record_su2.json",
+    "scopeRecordSu3": "reports/post_phase11_evidence_campaign/20260315T165000Z/shiab_companion/shiab_scope_record_su3.json",
+    "numericalRelationToStandard": "identity-equivalent",
+    "maxElementwiseDiff": 0.0,
+    "branchRobustnessResult": "SAME as standard path (both implement S=F; same residual Upsilon=F-T)",
+    "convergenceResult": "SAME as standard path",
+    "conclusion": "The paired first-order-curvature path produces identical numerical output to the standard identity-shiab path on the same inputs. Both implement S=F (identity on curvature). The paired path does not change any branch robustness or convergence conclusion."
+  },
+  "thirdOperator": {
+    "shiabBranchId": "metric-scaled-shiab",
+    "lambda": 2.0,
+    "numericalRelationToStandard": "numerically-distinct",
+    "note": "S=2*F is distinguishable from S=F on toy geometry (dimX=2). However, scalar rescaling does not change branch robustness classification — the residual Upsilon=2F-T=0 solution is a smooth deformation that preserves gauge-violation and solver-iteration fragility. Genuine Shiab family expansion requires dimX >= 4."
+  },
+  "comparisonByCategory": {
+    "branchRobustness": {
+      "standardResult": "mixed (branch-fragility falsifiers active)",
+      "pairedResult": "identical to standard (same S=F implementation)",
+      "conclusion": "No change."
+    },
+    "refinementConvergence": {
+      "standardResult": "bounded with non-monotone behavior on some quantities",
+      "pairedResult": "identical to standard",
+      "conclusion": "No change."
+    },
+    "importedEnvironmentEvidence": {
+      "standardResult": "env-external-lattice-gauge-su2-2d-v1 present (P11-M2)",
+      "pairedResult": "same inputs used",
+      "conclusion": "No change."
+    },
+    "candidateProvenanceLinks": {
+      "standardResult": "fermion-registry-phase4-toy-v1-0001 linked (P11-M1)",
+      "pairedResult": "same inputs used",
+      "conclusion": "No change."
+    },
+    "repContentFatal": {
+      "standardResult": "preserved-as-blocker (D-P11-004, D-P11-005)",
+      "pairedResult": "same: fatal is on the candidate (fermion-registry-phase4-toy-v1-0000), not on the Shiab branch",
+      "conclusion": "No change. The representation-content fatal is independent of Shiab operator choice."
+    }
+  },
+  "overallConclusion": "The paired first-order-curvature Shiab path has been rerun on fresh Phase XI artifacts. It produces identity-equivalent results to the standard path in all evidence categories. Adding the metric-scaled-shiab (lambda=2) third operator demonstrates numerical distinguishability but does not change any branch robustness or convergence conclusion. No stale pre-Phase-XI artifacts were used. The Shiab family remains open per D-P11-009.",
+  "provenance": {
+    "createdAt": "2026-03-15T16:50:00Z",
+    "codeRevision": "phase11-m6-shiab-rerun-v1",
+    "branch": {
+      "branchId": "phase11-m6-shiab-companion",
+      "schemaVersion": "1.0.0"
+    },
+    "backend": "cpu",
+    "notes": "P11-M6 mandatory rerun of paired Shiab path after all Phase XI changes completed."
+  }
+}

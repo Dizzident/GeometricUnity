@@ -806,6 +806,255 @@ public sealed class Phase5CampaignArtifactLoaderTests : IDisposable
         // (tested in Phase5CampaignValidatorTests once P6-M1 is implemented)
     }
 
+    // ─── P11-M1: Candidate-linked branch/background provenance tests ───
+
+    /// <summary>
+    /// P11-M1: Reference study campaign includes a candidate_provenance_links.json file
+    /// and the loader picks it up as non-null CandidateProvenanceLinks.
+    /// </summary>
+    [Fact]
+    public void ReferenceStudyCampaign_P11M1_HasCandidateProvenanceLinks()
+    {
+        var repoRoot = FindRepoRoot();
+        var specPath = Path.Combine(
+            repoRoot,
+            "studies",
+            "phase5_su2_branch_refinement_env_validation",
+            "config",
+            "campaign.json");
+        var spec = GuJsonDefaults.Deserialize<Phase5CampaignSpec>(File.ReadAllText(specPath));
+        Assert.NotNull(spec);
+
+        var artifacts = Phase5CampaignArtifactLoader.Load(spec, Path.GetDirectoryName(specPath)!);
+
+        Assert.NotNull(artifacts.CandidateProvenanceLinks);
+        Assert.NotEmpty(artifacts.CandidateProvenanceLinks!);
+    }
+
+    /// <summary>
+    /// P11-M1: The linked candidate in the reference study carries non-empty branch variant IDs.
+    /// This satisfies the requirement that at least one candidate has non-empty evidenceRecordIds
+    /// in the branch-robust gate.
+    /// </summary>
+    [Fact]
+    public void ReferenceStudyCampaign_P11M1_LinkedCandidateHasNonEmptyBranchVariantIds()
+    {
+        var repoRoot = FindRepoRoot();
+        var specPath = Path.Combine(
+            repoRoot,
+            "studies",
+            "phase5_su2_branch_refinement_env_validation",
+            "config",
+            "campaign.json");
+        var spec = GuJsonDefaults.Deserialize<Phase5CampaignSpec>(File.ReadAllText(specPath));
+        Assert.NotNull(spec);
+
+        var artifacts = Phase5CampaignArtifactLoader.Load(spec, Path.GetDirectoryName(specPath)!);
+
+        Assert.NotNull(artifacts.CandidateProvenanceLinks);
+        var linkedRecord = artifacts.CandidateProvenanceLinks!
+            .First(link => link.BranchVariantIds.Any());
+        Assert.NotEmpty(linkedRecord.BranchVariantIds);
+        Assert.NotEmpty(linkedRecord.BackgroundIds);
+    }
+
+    /// <summary>
+    /// P11-M1: Mixed population contract — at least one candidate has provenance links and at
+    /// least one candidate lacks links. Verifies both populations coexist correctly.
+    /// </summary>
+    [Fact]
+    public void ReferenceStudyCampaign_P11M1_MixedPopulation_LinkedAndUnlinkedCandidatesDistinct()
+    {
+        var repoRoot = FindRepoRoot();
+        var specPath = Path.Combine(
+            repoRoot,
+            "studies",
+            "phase5_su2_branch_refinement_env_validation",
+            "config",
+            "campaign.json");
+        var spec = GuJsonDefaults.Deserialize<Phase5CampaignSpec>(File.ReadAllText(specPath));
+        Assert.NotNull(spec);
+
+        var artifacts = Phase5CampaignArtifactLoader.Load(spec, Path.GetDirectoryName(specPath)!);
+
+        Assert.NotNull(artifacts.CandidateProvenanceLinks);
+        var links = artifacts.CandidateProvenanceLinks!;
+
+        // At least one linked candidate
+        Assert.Contains(links, link => link.BranchVariantIds.Any());
+
+        // The registry has candidates — some are not linked (since links only cover one candidate)
+        Assert.NotNull(artifacts.Registry);
+        var linkedCandidateIds = links.Select(l => l.CandidateId).ToHashSet(StringComparer.Ordinal);
+        var unlinkedCandidates = artifacts.Registry.Candidates
+            .Where(c => !linkedCandidateIds.Contains(c.ParticleId))
+            .ToList();
+        Assert.NotEmpty(unlinkedCandidates);
+
+        // Unlinked candidates retain empty branch/background sets (fail-closed)
+        Assert.All(unlinkedCandidates, c =>
+        {
+            Assert.Empty(c.BranchVariantSet);
+            Assert.Empty(c.BackgroundSet);
+        });
+    }
+
+    /// <summary>
+    /// P11-M1: After provenance linker is applied, the linked candidate gains non-empty
+    /// branch variant IDs while the unlinked candidates stay empty (D-P11-003).
+    /// </summary>
+    [Fact]
+    public void ReferenceStudyCampaign_P11M1_ProvenanceLinker_LinkedGainsIds_UnlinkedStaysEmpty()
+    {
+        var repoRoot = FindRepoRoot();
+        var specPath = Path.Combine(
+            repoRoot,
+            "studies",
+            "phase5_su2_branch_refinement_env_validation",
+            "config",
+            "campaign.json");
+        var spec = GuJsonDefaults.Deserialize<Phase5CampaignSpec>(File.ReadAllText(specPath));
+        Assert.NotNull(spec);
+
+        var artifacts = Phase5CampaignArtifactLoader.Load(spec, Path.GetDirectoryName(specPath)!);
+
+        var enrichedRegistry = CandidateProvenanceLinker.Apply(
+            artifacts.Registry,
+            artifacts.CandidateProvenanceLinks);
+
+        var links = artifacts.CandidateProvenanceLinks!;
+        var linkedCandidateId = links.First(l => l.BranchVariantIds.Any()).CandidateId;
+
+        var linkedCandidate = enrichedRegistry.Candidates
+            .Single(c => c.ParticleId == linkedCandidateId);
+        var unlinkedCandidates = enrichedRegistry.Candidates
+            .Where(c => c.ParticleId != linkedCandidateId)
+            .ToList();
+
+        // Linked candidate: non-empty branch variant IDs and background IDs
+        Assert.NotEmpty(linkedCandidate.BranchVariantSet);
+        Assert.NotEmpty(linkedCandidate.BackgroundSet);
+
+        // Unlinked candidates: still empty (fail-closed per D-P11-003)
+        Assert.All(unlinkedCandidates, c =>
+        {
+            Assert.Empty(c.BranchVariantSet);
+            Assert.Empty(c.BackgroundSet);
+        });
+    }
+
+    // ─── P11-M2: Genuine external imported evidence tests ───
+
+    /// <summary>
+    /// P11-M2: Reference study campaign must include at least one external imported environment
+    /// record with a datasetId that does not start with "repo-internal-".
+    /// </summary>
+    [Fact]
+    public void ReferenceStudyCampaign_P11M2_HasGenuineExternalImportedEnvironment()
+    {
+        var repoRoot = FindRepoRoot();
+        var specPath = Path.Combine(
+            repoRoot,
+            "studies",
+            "phase5_su2_branch_refinement_env_validation",
+            "config",
+            "campaign.json");
+        var spec = GuJsonDefaults.Deserialize<Phase5CampaignSpec>(File.ReadAllText(specPath));
+        Assert.NotNull(spec);
+
+        var artifacts = Phase5CampaignArtifactLoader.Load(spec, Path.GetDirectoryName(specPath)!);
+
+        var externalImported = artifacts.EnvironmentRecords
+            .Where(r => r.GeometryTier == "imported" &&
+                        r.DatasetId is not null &&
+                        !r.DatasetId.StartsWith("repo-internal-", StringComparison.Ordinal))
+            .ToList();
+
+        Assert.NotEmpty(externalImported);
+    }
+
+    /// <summary>
+    /// P11-M2: The external imported record and the repo-internal imported record are both present
+    /// and explicitly distinct (D-P11-002: do not relabel internal as external).
+    /// </summary>
+    [Fact]
+    public void ReferenceStudyCampaign_P11M2_InternalAndExternalImportsAreDistinct()
+    {
+        var repoRoot = FindRepoRoot();
+        var specPath = Path.Combine(
+            repoRoot,
+            "studies",
+            "phase5_su2_branch_refinement_env_validation",
+            "config",
+            "campaign.json");
+        var spec = GuJsonDefaults.Deserialize<Phase5CampaignSpec>(File.ReadAllText(specPath));
+        Assert.NotNull(spec);
+
+        var artifacts = Phase5CampaignArtifactLoader.Load(spec, Path.GetDirectoryName(specPath)!);
+
+        var importedRecords = artifacts.EnvironmentRecords
+            .Where(r => r.GeometryTier == "imported")
+            .ToList();
+
+        // At least 2 imported records
+        Assert.True(importedRecords.Count >= 2);
+
+        // At least one is repo-internal (preserved per D-P11-002)
+        Assert.Contains(importedRecords, r =>
+            r.DatasetId is not null &&
+            r.DatasetId.StartsWith("repo-internal-", StringComparison.Ordinal));
+
+        // At least one is genuinely external (new for P11-M2)
+        Assert.Contains(importedRecords, r =>
+            r.DatasetId is not null &&
+            !r.DatasetId.StartsWith("repo-internal-", StringComparison.Ordinal) &&
+            !r.DatasetId.StartsWith("synthetic-example-", StringComparison.Ordinal));
+
+        // All dataset IDs are distinct — no relabeling
+        var datasetIds = importedRecords
+            .Where(r => r.DatasetId is not null)
+            .Select(r => r.DatasetId!)
+            .ToList();
+        Assert.Equal(datasetIds.Count, datasetIds.Distinct(StringComparer.Ordinal).Count());
+    }
+
+    /// <summary>
+    /// P11-M2: External imported environment record has all required provenance fields
+    /// (datasetId, sourceHash, conversionVersion).
+    /// </summary>
+    [Fact]
+    public void ReferenceStudyCampaign_P11M2_ExternalImportedEnvironment_HasRequiredProvenanceFields()
+    {
+        var repoRoot = FindRepoRoot();
+        var specPath = Path.Combine(
+            repoRoot,
+            "studies",
+            "phase5_su2_branch_refinement_env_validation",
+            "config",
+            "campaign.json");
+        var spec = GuJsonDefaults.Deserialize<Phase5CampaignSpec>(File.ReadAllText(specPath));
+        Assert.NotNull(spec);
+
+        var artifacts = Phase5CampaignArtifactLoader.Load(spec, Path.GetDirectoryName(specPath)!);
+
+        var externalImported = artifacts.EnvironmentRecords
+            .Where(r => r.GeometryTier == "imported" &&
+                        r.DatasetId is not null &&
+                        !r.DatasetId.StartsWith("repo-internal-", StringComparison.Ordinal))
+            .ToList();
+
+        Assert.NotEmpty(externalImported);
+        foreach (var record in externalImported)
+        {
+            Assert.NotNull(record.DatasetId);
+            Assert.NotEmpty(record.DatasetId!);
+            Assert.NotNull(record.SourceHash);
+            Assert.NotEmpty(record.SourceHash!);
+            Assert.NotNull(record.ConversionVersion);
+            Assert.NotEmpty(record.ConversionVersion!);
+        }
+    }
+
     private static string FindRepoRoot()
     {
         var current = new DirectoryInfo(AppContext.BaseDirectory);

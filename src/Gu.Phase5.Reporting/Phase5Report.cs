@@ -44,6 +44,33 @@ public sealed class Phase5Report
     [JsonPropertyName("negativeResultSummary")]
     public IReadOnlyList<NegativeResultEntry>? NegativeResultSummary { get; init; }
 
+    /// <summary>
+    /// Shiab family scope record (P11-M9).
+    /// Documents which Shiab operators were exercised, whether they are mathematically
+    /// distinct, and the artifact-backed reason why expansion is blocked in repository context.
+    /// Per D-P11-009: neither current operator is the canonical draft operator.
+    /// Null when not computed for this report.
+    /// </summary>
+    [JsonPropertyName("shiabFamilyScope")]
+    public ShiabFamilyScopeRecord? ShiabFamilyScope { get; init; }
+
+    /// <summary>
+    /// Geometry evidence label (P11-M7).
+    /// "toy-control" when the campaign uses toy/structured low-dimensional geometry.
+    /// "draft-aligned" only when the campaign uses geometry consistent with the draft X^4/Observerse.
+    /// Per D-P11-007: current evidence is toy-control only.
+    /// Null when not set.
+    /// </summary>
+    [JsonPropertyName("geometryEvidenceLabel")]
+    public string? GeometryEvidenceLabel { get; init; }
+
+    /// <summary>
+    /// Explicit statement blocking X^4/Observerse recovery claims (P11-M7).
+    /// Populated when GeometryEvidenceLabel is "toy-control".
+    /// </summary>
+    [JsonPropertyName("observerseRecoveryBlock")]
+    public string? ObserverseRecoveryBlock { get; init; }
+
     /// <summary>Provenance metadata.</summary>
     [JsonPropertyName("provenance")]
     public required ProvenanceMeta Provenance { get; init; }

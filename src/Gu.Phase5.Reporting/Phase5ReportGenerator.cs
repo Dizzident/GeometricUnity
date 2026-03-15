@@ -16,6 +16,16 @@ public static class Phase5ReportGenerator
     /// <summary>
     /// Generate a Phase5Report from a list of dossiers and optional study artifacts.
     /// </summary>
+    /// <param name="shiabFamilyScope">
+    /// Optional Shiab family scope record (P11-M9). When provided, the report explicitly
+    /// states which Shiab operators were exercised and the artifact-backed boundary.
+    /// Per D-P11-009: neither current operator is the canonical draft operator.
+    /// </param>
+    /// <param name="geometryEvidenceLabel">
+    /// Optional geometry evidence label (P11-M7). When "toy-control" (or null, which
+    /// defaults to "toy-control"), the report emits a mechanical block on X^4/Observerse
+    /// recovery claims. Per D-P11-007: current evidence is toy-control only.
+    /// </param>
     public static Phase5Report Generate(
         string studyId,
         IReadOnlyList<Phase5Dossiers.ValidationDossier> dossiers,
@@ -24,7 +34,9 @@ public static class Phase5ReportGenerator
         RefinementStudyResult? refinementResult = null,
         RefinementEvidenceManifest? refinementEvidenceManifest = null,
         FalsifierSummary? falsifiers = null,
-        IReadOnlyList<Phase3Reporting.NegativeResultEntry>? negativeResults = null)
+        IReadOnlyList<Phase3Reporting.NegativeResultEntry>? negativeResults = null,
+        ShiabFamilyScopeRecord? shiabFamilyScope = null,
+        string? geometryEvidenceLabel = null)
     {
         ArgumentNullException.ThrowIfNull(studyId);
         ArgumentNullException.ThrowIfNull(dossiers);
@@ -44,6 +56,10 @@ public static class Phase5ReportGenerator
             ? BuildFalsificationDashboard(falsifiers)
             : null;
 
+        // P11-M7: default to toy-control if not specified (current repo context)
+        string effectiveGeomLabel = geometryEvidenceLabel ?? GeometryEvidenceClassifier.ToyControl;
+        string? observerseBlock = GeometryEvidenceClassifier.GetBlockStatement(effectiveGeomLabel);
+
         return new Phase5Report
         {
             ReportId = $"report-{studyId}-{DateTimeOffset.UtcNow:yyyyMMddHHmmss}",
@@ -54,6 +70,9 @@ public static class Phase5ReportGenerator
             ConvergenceAtlas = convergenceAtlas,
             FalsificationDashboard = falsificationDashboard,
             NegativeResultSummary = negativeResults,
+            ShiabFamilyScope = shiabFamilyScope,
+            GeometryEvidenceLabel = effectiveGeomLabel,
+            ObserverseRecoveryBlock = observerseBlock,
             Provenance = provenance,
             GeneratedAt = DateTimeOffset.UtcNow,
         };
@@ -113,6 +132,29 @@ public static class Phase5ReportGenerator
                 sb.AppendLine($"- [{entry.Description} (evidence: {entry.Evidence})");
             sb.AppendLine();
         }
+
+        // P11-M9: Shiab family scope section
+        if (report.ShiabFamilyScope is { } scope)
+        {
+            sb.AppendLine("## Shiab Family Scope");
+            sb.AppendLine($"- Standard path operators: {string.Join(", ", scope.StandardPathShiabIds)}");
+            sb.AppendLine($"- Paired path operators: {string.Join(", ", scope.PairedPathShiabIds.Count > 0 ? scope.PairedPathShiabIds : new[] { "(none)" })}");
+            sb.AppendLine($"- Operators mathematically distinct: {(scope.OperatorsAreMathematicallyDistinct ? "yes" : "no")}");
+            sb.AppendLine($"- Standard path branch result: {scope.StandardPathBranchResult}");
+            sb.AppendLine($"- Paired path branch result: {scope.PairedPathBranchResult}");
+            sb.AppendLine($"- Paired path changes conclusion: {(scope.PairedPathChangesConclusion ? "yes" : "no")}");
+            if (scope.ExpansionBlockedReason is not null)
+                sb.AppendLine($"- Expansion blocked: {scope.ExpansionBlockedReason}");
+            sb.AppendLine($"- {scope.FamilyOpenStatement}");
+            sb.AppendLine();
+        }
+
+        // P11-M7: Geometry evidence label and Observerse recovery block
+        sb.AppendLine("## Geometry Evidence");
+        sb.AppendLine($"- Geometry evidence label: **{report.GeometryEvidenceLabel ?? GeometryEvidenceClassifier.ToyControl}**");
+        if (report.ObserverseRecoveryBlock is not null)
+            sb.AppendLine($"- {report.ObserverseRecoveryBlock}");
+        sb.AppendLine();
 
         sb.AppendLine("## Provenance");
         sb.AppendLine($"- Code revision: {report.Provenance.CodeRevision}");

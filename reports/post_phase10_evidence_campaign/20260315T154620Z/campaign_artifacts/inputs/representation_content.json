@@ -1,0 +1,74 @@
+[
+  {
+    "recordId": "rep-fermion-registry-phase4-toy-v1-0000",
+    "candidateId": "fermion-registry-phase4-toy-v1-0000",
+    "expectedModeCount": 2,
+    "observedModeCount": 1,
+    "missingRequiredCount": 1,
+    "structuralMismatchScore": 0.35,
+    "consistent": false,
+    "inconsistencyDescription": "Candidate \u0027fermion-registry-phase4-toy-v1-0000\u0027 exposes only 1 persisted family source(s); at least 2 are required for the reference representation-content check.",
+    "origin": "upstream-sourced",
+    "sourceArtifactRefs": [
+      "/home/josh/Documents/GitHub/GeometricUnity/studies/phase4_fermion_family_atlas_001/output/fermion_family_atlas.json",
+      "/home/josh/Documents/GitHub/GeometricUnity/studies/phase4_fermion_family_atlas_001/output/unified_particle_registry.json"
+    ],
+    "provenance": {
+      "createdAt": "2026-03-15T14:46:41.6921496+00:00",
+      "codeRevision": "cli",
+      "branch": {
+        "branchId": "cli",
+        "schemaVersion": "1.0.0"
+      },
+      "backend": "cpu"
+    }
+  },
+  {
+    "recordId": "rep-fermion-registry-phase4-toy-v1-0001",
+    "candidateId": "fermion-registry-phase4-toy-v1-0001",
+    "expectedModeCount": 2,
+    "observedModeCount": 2,
+    "missingRequiredCount": 0,
+    "structuralMismatchScore": 0.04,
+    "consistent": true,
+    "inconsistencyDescription": "Candidate \u0027fermion-registry-phase4-toy-v1-0001\u0027 satisfies the reference representation-content check.",
+    "origin": "upstream-sourced",
+    "sourceArtifactRefs": [
+      "/home/josh/Documents/GitHub/GeometricUnity/studies/phase4_fermion_family_atlas_001/output/fermion_family_atlas.json",
+      "/home/josh/Documents/GitHub/GeometricUnity/studies/phase4_fermion_family_atlas_001/output/unified_particle_registry.json"
+    ],
+    "provenance": {
+      "createdAt": "2026-03-15T14:46:41.6921496+00:00",
+      "codeRevision": "cli",
+      "branch": {
+        "branchId": "cli",
+        "schemaVersion": "1.0.0"
+      },
+      "backend": "cpu"
+    }
+  },
+  {
+    "recordId": "rep-fermion-registry-phase4-toy-v1-0002",
+    "candidateId": "fermion-registry-phase4-toy-v1-0002",
+    "expectedModeCount": 3,
+    "observedModeCount": 3,
+    "missingRequiredCount": 0,
+    "structuralMismatchScore": 0.08,
+    "consistent": true,
+    "inconsistencyDescription": "Candidate \u0027fermion-registry-phase4-toy-v1-0002\u0027 satisfies the reference representation-content check.",
+    "origin": "upstream-sourced",
+    "sourceArtifactRefs": [
+      "/home/josh/Documents/GitHub/GeometricUnity/studies/phase4_fermion_family_atlas_001/output/fermion_family_atlas.json",
+      "/home/josh/Documents/GitHub/GeometricUnity/studies/phase4_fermion_family_atlas_001/output/unified_particle_registry.json"
+    ],
+    "provenance": {
+      "createdAt": "2026-03-15T14:46:41.6921496+00:00",
+      "codeRevision": "cli",
+      "branch": {
+        "branchId": "cli",
+        "schemaVersion": "1.0.0"
+      },
+      "backend": "cpu"
+    }
+  }
+]

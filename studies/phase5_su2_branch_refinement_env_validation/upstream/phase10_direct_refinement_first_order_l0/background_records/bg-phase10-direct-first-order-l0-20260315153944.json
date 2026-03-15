@@ -1,0 +1,40 @@
+{
+  "backgroundId": "bg-phase10-direct-first-order-l0-20260315153944",
+  "environmentId": "env-refinement-2x2",
+  "branchManifestId": "phase8-real-atlas-first-order-shiab",
+  "geometryFingerprint": "simplicial-X_h-Y_h-centroid-P1",
+  "stateArtifactRef": "studies/phase5_su2_branch_refinement_env_validation/upstream/phase10_direct_refinement_first_order_l0/background_states/bg-phase10-direct-first-order-l0-20260315153944_omega.json",
+  "residualNorm": 0,
+  "stationarityNorm": 0,
+  "admissibilityLevel": "B2",
+  "metrics": {
+    "residualNorm": 0,
+    "stationarityNorm": 0,
+    "objectiveValue": 0,
+    "gaugeViolation": 0,
+    "solverIterations": 0,
+    "solverConverged": true,
+    "terminationReason": "Objective below tolerance",
+    "gaussNewtonValid": true
+  },
+  "replayTierAchieved": "R2",
+  "provenance": {
+    "createdAt": "2026-03-15T15:39:44.464648+00:00",
+    "codeRevision": "phase8-real-atlas-first-order-shiab",
+    "branch": {
+      "branchId": "phase8-real-atlas-first-order-shiab",
+      "schemaVersion": "1.0.0"
+    },
+    "backend": "cpu-reference"
+  },
+  "environmentTier": "structured",
+  "runClassification": {
+    "runType": "objective-solve",
+    "seedSource": "zero-seed",
+    "isTrivialValidationPath": false,
+    "validationNote": "objective-solve on zero-seed.",
+    "solverMode": "B",
+    "classifiedAt": "2026-03-15T15:39:44.4807801+00:00"
+  },
+  "consumedManifestArtifactRef": "studies/phase5_su2_branch_refinement_env_validation/upstream/phase10_direct_refinement_first_order_l0/background_states/bg-phase10-direct-first-order-l0-20260315153944_manifest.json"
+}

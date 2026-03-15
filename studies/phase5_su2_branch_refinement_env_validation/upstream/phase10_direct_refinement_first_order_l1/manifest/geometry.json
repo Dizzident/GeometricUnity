@@ -1,0 +1,69 @@
+{
+  "baseSpace": {
+    "spaceId": "X_h",
+    "dimension": 2,
+    "edgeCount": 56,
+    "faceCount": 32,
+    "label": "base_X_h"
+  },
+  "ambientSpace": {
+    "spaceId": "Y_h",
+    "dimension": 5,
+    "edgeCount": 192,
+    "faceCount": 96,
+    "label": "ambient_Y_h"
+  },
+  "discretizationType": "simplicial",
+  "quadratureRuleId": "centroid",
+  "basisFamilyId": "P1",
+  "projectionBinding": {
+    "bindingType": "projection",
+    "sourceSpace": {
+      "spaceId": "Y_h",
+      "dimension": 5,
+      "edgeCount": 192,
+      "faceCount": 96,
+      "label": "ambient_Y_h"
+    },
+    "targetSpace": {
+      "spaceId": "X_h",
+      "dimension": 2,
+      "edgeCount": 56,
+      "faceCount": 32,
+      "label": "base_X_h"
+    },
+    "mappingStrategy": "many-to-one-fiber-projection"
+  },
+  "observationBinding": {
+    "bindingType": "observation",
+    "sourceSpace": {
+      "spaceId": "X_h",
+      "dimension": 2,
+      "edgeCount": 56,
+      "faceCount": 32,
+      "label": "base_X_h"
+    },
+    "targetSpace": {
+      "spaceId": "Y_h",
+      "dimension": 5,
+      "edgeCount": 192,
+      "faceCount": 96,
+      "label": "ambient_Y_h"
+    },
+    "mappingStrategy": "section-vertex-aligned"
+  },
+  "patches": [
+    {
+      "patchId": "Y_h_patch_0",
+      "elementCount": 96,
+      "topologyType": "simplicial",
+      "metadata": {
+        "simplicialDimension": "2",
+        "embeddingDimension": "5",
+        "vertexCount": "75",
+        "edgeCount": "192",
+        "faceCount": "96"
+      }
+    }
+  ]
+}

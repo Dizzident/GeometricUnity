@@ -1,0 +1,26 @@
+{
+  "manifestId": "direct-refinement-phase5-su2-refinement-ladder-first-order-shiab-phase9-20260315T154018Z",
+  "studyId": "phase5-su2-refinement-ladder-first-order-shiab-phase9",
+  "evidenceSource": "direct-solver-backed",
+  "sourceRecordIds": [
+    "bg-phase10-direct-first-order-l0-20260315153944",
+    "bg-phase10-direct-first-order-l1-20260315153944",
+    "bg-phase10-direct-first-order-l2-20260315153945"
+  ],
+  "sourceArtifactRefs": [
+    "/home/josh/Documents/GitHub/GeometricUnity/studies/phase5_su2_branch_refinement_env_validation/upstream/phase10_direct_refinement_first_order_l0/background_records/bg-phase10-direct-first-order-l0-20260315153944.json",
+    "/home/josh/Documents/GitHub/GeometricUnity/studies/phase5_su2_branch_refinement_env_validation/upstream/phase10_direct_refinement_first_order_l1/background_records/bg-phase10-direct-first-order-l1-20260315153944.json",
+    "/home/josh/Documents/GitHub/GeometricUnity/studies/phase5_su2_branch_refinement_env_validation/upstream/phase10_direct_refinement_first_order_l2/background_records/bg-phase10-direct-first-order-l2-20260315153945.json"
+  ],
+  "notes": "Direct solver-backed refinement ladder assembled from executed background records.",
+  "provenance": {
+    "createdAt": "2026-03-15T15:40:18.2891347+00:00",
+    "codeRevision": "export-phase5-direct-refinement-values",
+    "branch": {
+      "branchId": "phase8-real-atlas-first-order-shiab",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu",
+    "notes": "Direct solver-backed refinement export from persisted background records."
+  }
+}

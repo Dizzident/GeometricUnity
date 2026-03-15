@@ -1,0 +1,24 @@
+{
+  "recordId": "rep-content-stabilization-fermion-registry-phase4-toy-v1-0000",
+  "schemaVersion": "1.0.0",
+  "status": "preserved-as-blocker",
+  "candidateId": "fermion-registry-phase4-toy-v1-0000",
+  "falsifierId": "falsifier-0004",
+  "blockerReason": "Candidate \u0027fermion-registry-phase4-toy-v1-0000\u0027 is a singleton cluster with 1 observed family source(s) against a required minimum of 2. The Phase IV fermion-family atlas was searched; no second persistent family exists for this candidate in the current repository context. This is a genuine negative result confirmed by the physicist: the toy geometry normal bundle cannot match the draft\u0027s predicted dimension.",
+  "searchedArtifactRefs": [
+    "/home/josh/Documents/GitHub/GeometricUnity/studies/phase4_fermion_family_atlas_001/output/fermion_family_atlas.json",
+    "/home/josh/Documents/GitHub/GeometricUnity/studies/phase4_fermion_family_atlas_001/output/unified_particle_registry.json"
+  ],
+  "closureRequirement": "New branch variants that produce a second persistent fermion family for this candidate, or a revised fermion family atlas from a higher-fidelity study using draft-level geometry.",
+  "bindingDecision": "D-P11-004",
+  "provenance": {
+    "createdAt": "2026-03-20T00:00:00+00:00",
+    "codeRevision": "phase10-direct-refinement-v1",
+    "branch": {
+      "branchId": "phase8-real-atlas-control",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu",
+    "notes": "Phase XI standard evidence campaign: adds candidate-specific branch/background provenance links for fermion-registry-phase4-toy-v1-0001 via candidate_provenance_links.json (P11-M1), and adds genuine external imported environment record env-external-lattice-gauge-su2-2d-v1 with datasetId=external-lattice-gauge-su2-2d-v1 (P11-M2). Branch study still uses the admitted multi-variant atlas on the same strict thresholds and remains mixed. Refinement points to a direct solver-backed ladder. The repo-internal imported benchmark (env-imported-repo-benchmark) remains present and explicitly distinct from the new external imported record. Candidate-specific escalation remains fail-closed for candidates without provenance links; fermion-registry-phase4-toy-v1-0001 now carries non-empty evidenceRecordIds in branch-robust and refinement-bounded gate results."
+  }
+}

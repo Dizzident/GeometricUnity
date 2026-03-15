@@ -1,0 +1,472 @@
+{
+  "StudyId": "phase5-su2-refinement-ladder",
+  "RunRecords": [
+    {
+      "levelId": "L0-2x2",
+      "meshParameter": 1,
+      "quantities": {
+        "residual-norm": 1E-05,
+        "stationarity-norm": 1E-05,
+        "objective-value": 1E-05,
+        "gauge-violation": 0.2135837059280268,
+        "solver-iterations": 2
+      },
+      "converged": true,
+      "residualNorm": 0,
+      "provenance": {
+        "createdAt": "2026-03-20T00:00:00+00:00",
+        "codeRevision": "phase9-real-atlas-env-aware-v1",
+        "branch": {
+          "branchId": "phase8-real-atlas-control",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu",
+        "notes": null
+      }
+    },
+    {
+      "levelId": "L1-4x4",
+      "meshParameter": 0.5,
+      "quantities": {
+        "residual-norm": 2.5E-06,
+        "stationarity-norm": 2.5E-06,
+        "objective-value": 2.5E-06,
+        "gauge-violation": 0.0533959264820067,
+        "solver-iterations": 0.5
+      },
+      "converged": true,
+      "residualNorm": 0,
+      "provenance": {
+        "createdAt": "2026-03-20T00:00:00+00:00",
+        "codeRevision": "phase9-real-atlas-env-aware-v1",
+        "branch": {
+          "branchId": "phase8-real-atlas-control",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu",
+        "notes": null
+      }
+    },
+    {
+      "levelId": "L2-8x8",
+      "meshParameter": 0.25,
+      "quantities": {
+        "residual-norm": 6.25E-07,
+        "stationarity-norm": 6.25E-07,
+        "objective-value": 6.25E-07,
+        "gauge-violation": 0.013348981620501675,
+        "solver-iterations": 0.125
+      },
+      "converged": true,
+      "residualNorm": 0,
+      "provenance": {
+        "createdAt": "2026-03-20T00:00:00+00:00",
+        "codeRevision": "phase9-real-atlas-env-aware-v1",
+        "branch": {
+          "branchId": "phase8-real-atlas-control",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu",
+        "notes": null
+      }
+    }
+  ],
+  "ContinuumEstimates": [
+    {
+      "quantityId": "residual-norm",
+      "extrapolatedValue": 0,
+      "errorBand": 6.25E-07,
+      "convergenceOrder": 2,
+      "convergenceClassification": "convergent",
+      "confidenceNote": "Monotone decrease; estimated order p=2.00.",
+      "runRecords": [
+        {
+          "levelId": "L0-2x2",
+          "meshParameter": 1,
+          "quantities": {
+            "residual-norm": 1E-05,
+            "stationarity-norm": 1E-05,
+            "objective-value": 1E-05,
+            "gauge-violation": 0.2135837059280268,
+            "solver-iterations": 2
+          },
+          "converged": true,
+          "residualNorm": 0,
+          "provenance": {
+            "createdAt": "2026-03-20T00:00:00+00:00",
+            "codeRevision": "phase9-real-atlas-env-aware-v1",
+            "branch": {
+              "branchId": "phase8-real-atlas-control",
+              "schemaVersion": "1.0"
+            },
+            "backend": "cpu",
+            "notes": null
+          }
+        },
+        {
+          "levelId": "L1-4x4",
+          "meshParameter": 0.5,
+          "quantities": {
+            "residual-norm": 2.5E-06,
+            "stationarity-norm": 2.5E-06,
+            "objective-value": 2.5E-06,
+            "gauge-violation": 0.0533959264820067,
+            "solver-iterations": 0.5
+          },
+          "converged": true,
+          "residualNorm": 0,
+          "provenance": {
+            "createdAt": "2026-03-20T00:00:00+00:00",
+            "codeRevision": "phase9-real-atlas-env-aware-v1",
+            "branch": {
+              "branchId": "phase8-real-atlas-control",
+              "schemaVersion": "1.0"
+            },
+            "backend": "cpu",
+            "notes": null
+          }
+        },
+        {
+          "levelId": "L2-8x8",
+          "meshParameter": 0.25,
+          "quantities": {
+            "residual-norm": 6.25E-07,
+            "stationarity-norm": 6.25E-07,
+            "objective-value": 6.25E-07,
+            "gauge-violation": 0.013348981620501675,
+            "solver-iterations": 0.125
+          },
+          "converged": true,
+          "residualNorm": 0,
+          "provenance": {
+            "createdAt": "2026-03-20T00:00:00+00:00",
+            "codeRevision": "phase9-real-atlas-env-aware-v1",
+            "branch": {
+              "branchId": "phase8-real-atlas-control",
+              "schemaVersion": "1.0"
+            },
+            "backend": "cpu",
+            "notes": null
+          }
+        }
+      ]
+    },
+    {
+      "quantityId": "stationarity-norm",
+      "extrapolatedValue": 0,
+      "errorBand": 6.25E-07,
+      "convergenceOrder": 2,
+      "convergenceClassification": "convergent",
+      "confidenceNote": "Monotone decrease; estimated order p=2.00.",
+      "runRecords": [
+        {
+          "levelId": "L0-2x2",
+          "meshParameter": 1,
+          "quantities": {
+            "residual-norm": 1E-05,
+            "stationarity-norm": 1E-05,
+            "objective-value": 1E-05,
+            "gauge-violation": 0.2135837059280268,
+            "solver-iterations": 2
+          },
+          "converged": true,
+          "residualNorm": 0,
+          "provenance": {
+            "createdAt": "2026-03-20T00:00:00+00:00",
+            "codeRevision": "phase9-real-atlas-env-aware-v1",
+            "branch": {
+              "branchId": "phase8-real-atlas-control",
+              "schemaVersion": "1.0"
+            },
+            "backend": "cpu",
+            "notes": null
+          }
+        },
+        {
+          "levelId": "L1-4x4",
+          "meshParameter": 0.5,
+          "quantities": {
+            "residual-norm": 2.5E-06,
+            "stationarity-norm": 2.5E-06,
+            "objective-value": 2.5E-06,
+            "gauge-violation": 0.0533959264820067,
+            "solver-iterations": 0.5
+          },
+          "converged": true,
+          "residualNorm": 0,
+          "provenance": {
+            "createdAt": "2026-03-20T00:00:00+00:00",
+            "codeRevision": "phase9-real-atlas-env-aware-v1",
+            "branch": {
+              "branchId": "phase8-real-atlas-control",
+              "schemaVersion": "1.0"
+            },
+            "backend": "cpu",
+            "notes": null
+          }
+        },
+        {
+          "levelId": "L2-8x8",
+          "meshParameter": 0.25,
+          "quantities": {
+            "residual-norm": 6.25E-07,
+            "stationarity-norm": 6.25E-07,
+            "objective-value": 6.25E-07,
+            "gauge-violation": 0.013348981620501675,
+            "solver-iterations": 0.125
+          },
+          "converged": true,
+          "residualNorm": 0,
+          "provenance": {
+            "createdAt": "2026-03-20T00:00:00+00:00",
+            "codeRevision": "phase9-real-atlas-env-aware-v1",
+            "branch": {
+              "branchId": "phase8-real-atlas-control",
+              "schemaVersion": "1.0"
+            },
+            "backend": "cpu",
+            "notes": null
+          }
+        }
+      ]
+    },
+    {
+      "quantityId": "objective-value",
+      "extrapolatedValue": 0,
+      "errorBand": 6.25E-07,
+      "convergenceOrder": 2,
+      "convergenceClassification": "convergent",
+      "confidenceNote": "Monotone decrease; estimated order p=2.00.",
+      "runRecords": [
+        {
+          "levelId": "L0-2x2",
+          "meshParameter": 1,
+          "quantities": {
+            "residual-norm": 1E-05,
+            "stationarity-norm": 1E-05,
+            "objective-value": 1E-05,
+            "gauge-violation": 0.2135837059280268,
+            "solver-iterations": 2
+          },
+          "converged": true,
+          "residualNorm": 0,
+          "provenance": {
+            "createdAt": "2026-03-20T00:00:00+00:00",
+            "codeRevision": "phase9-real-atlas-env-aware-v1",
+            "branch": {
+              "branchId": "phase8-real-atlas-control",
+              "schemaVersion": "1.0"
+            },
+            "backend": "cpu",
+            "notes": null
+          }
+        },
+        {
+          "levelId": "L1-4x4",
+          "meshParameter": 0.5,
+          "quantities": {
+            "residual-norm": 2.5E-06,
+            "stationarity-norm": 2.5E-06,
+            "objective-value": 2.5E-06,
+            "gauge-violation": 0.0533959264820067,
+            "solver-iterations": 0.5
+          },
+          "converged": true,
+          "residualNorm": 0,
+          "provenance": {
+            "createdAt": "2026-03-20T00:00:00+00:00",
+            "codeRevision": "phase9-real-atlas-env-aware-v1",
+            "branch": {
+              "branchId": "phase8-real-atlas-control",
+              "schemaVersion": "1.0"
+            },
+            "backend": "cpu",
+            "notes": null
+          }
+        },
+        {
+          "levelId": "L2-8x8",
+          "meshParameter": 0.25,
+          "quantities": {
+            "residual-norm": 6.25E-07,
+            "stationarity-norm": 6.25E-07,
+            "objective-value": 6.25E-07,
+            "gauge-violation": 0.013348981620501675,
+            "solver-iterations": 0.125
+          },
+          "converged": true,
+          "residualNorm": 0,
+          "provenance": {
+            "createdAt": "2026-03-20T00:00:00+00:00",
+            "codeRevision": "phase9-real-atlas-env-aware-v1",
+            "branch": {
+              "branchId": "phase8-real-atlas-control",
+              "schemaVersion": "1.0"
+            },
+            "backend": "cpu",
+            "notes": null
+          }
+        }
+      ]
+    },
+    {
+      "quantityId": "gauge-violation",
+      "extrapolatedValue": 0,
+      "errorBand": 0.013348981620501675,
+      "convergenceOrder": 2,
+      "convergenceClassification": "convergent",
+      "confidenceNote": "Monotone decrease; estimated order p=2.00.",
+      "runRecords": [
+        {
+          "levelId": "L0-2x2",
+          "meshParameter": 1,
+          "quantities": {
+            "residual-norm": 1E-05,
+            "stationarity-norm": 1E-05,
+            "objective-value": 1E-05,
+            "gauge-violation": 0.2135837059280268,
+            "solver-iterations": 2
+          },
+          "converged": true,
+          "residualNorm": 0,
+          "provenance": {
+            "createdAt": "2026-03-20T00:00:00+00:00",
+            "codeRevision": "phase9-real-atlas-env-aware-v1",
+            "branch": {
+              "branchId": "phase8-real-atlas-control",
+              "schemaVersion": "1.0"
+            },
+            "backend": "cpu",
+            "notes": null
+          }
+        },
+        {
+          "levelId": "L1-4x4",
+          "meshParameter": 0.5,
+          "quantities": {
+            "residual-norm": 2.5E-06,
+            "stationarity-norm": 2.5E-06,
+            "objective-value": 2.5E-06,
+            "gauge-violation": 0.0533959264820067,
+            "solver-iterations": 0.5
+          },
+          "converged": true,
+          "residualNorm": 0,
+          "provenance": {
+            "createdAt": "2026-03-20T00:00:00+00:00",
+            "codeRevision": "phase9-real-atlas-env-aware-v1",
+            "branch": {
+              "branchId": "phase8-real-atlas-control",
+              "schemaVersion": "1.0"
+            },
+            "backend": "cpu",
+            "notes": null
+          }
+        },
+        {
+          "levelId": "L2-8x8",
+          "meshParameter": 0.25,
+          "quantities": {
+            "residual-norm": 6.25E-07,
+            "stationarity-norm": 6.25E-07,
+            "objective-value": 6.25E-07,
+            "gauge-violation": 0.013348981620501675,
+            "solver-iterations": 0.125
+          },
+          "converged": true,
+          "residualNorm": 0,
+          "provenance": {
+            "createdAt": "2026-03-20T00:00:00+00:00",
+            "codeRevision": "phase9-real-atlas-env-aware-v1",
+            "branch": {
+              "branchId": "phase8-real-atlas-control",
+              "schemaVersion": "1.0"
+            },
+            "backend": "cpu",
+            "notes": null
+          }
+        }
+      ]
+    },
+    {
+      "quantityId": "solver-iterations",
+      "extrapolatedValue": 0,
+      "errorBand": 0.125,
+      "convergenceOrder": 2,
+      "convergenceClassification": "convergent",
+      "confidenceNote": "Monotone decrease; estimated order p=2.00.",
+      "runRecords": [
+        {
+          "levelId": "L0-2x2",
+          "meshParameter": 1,
+          "quantities": {
+            "residual-norm": 1E-05,
+            "stationarity-norm": 1E-05,
+            "objective-value": 1E-05,
+            "gauge-violation": 0.2135837059280268,
+            "solver-iterations": 2
+          },
+          "converged": true,
+          "residualNorm": 0,
+          "provenance": {
+            "createdAt": "2026-03-20T00:00:00+00:00",
+            "codeRevision": "phase9-real-atlas-env-aware-v1",
+            "branch": {
+              "branchId": "phase8-real-atlas-control",
+              "schemaVersion": "1.0"
+            },
+            "backend": "cpu",
+            "notes": null
+          }
+        },
+        {
+          "levelId": "L1-4x4",
+          "meshParameter": 0.5,
+          "quantities": {
+            "residual-norm": 2.5E-06,
+            "stationarity-norm": 2.5E-06,
+            "objective-value": 2.5E-06,
+            "gauge-violation": 0.0533959264820067,
+            "solver-iterations": 0.5
+          },
+          "converged": true,
+          "residualNorm": 0,
+          "provenance": {
+            "createdAt": "2026-03-20T00:00:00+00:00",
+            "codeRevision": "phase9-real-atlas-env-aware-v1",
+            "branch": {
+              "branchId": "phase8-real-atlas-control",
+              "schemaVersion": "1.0"
+            },
+            "backend": "cpu",
+            "notes": null
+          }
+        },
+        {
+          "levelId": "L2-8x8",
+          "meshParameter": 0.25,
+          "quantities": {
+            "residual-norm": 6.25E-07,
+            "stationarity-norm": 6.25E-07,
+            "objective-value": 6.25E-07,
+            "gauge-violation": 0.013348981620501675,
+            "solver-iterations": 0.125
+          },
+          "converged": true,
+          "residualNorm": 0,
+          "provenance": {
+            "createdAt": "2026-03-20T00:00:00+00:00",
+            "codeRevision": "phase9-real-atlas-env-aware-v1",
+            "branch": {
+              "branchId": "phase8-real-atlas-control",
+              "schemaVersion": "1.0"
+            },
+            "backend": "cpu",
+            "notes": null
+          }
+        }
+      ]
+    }
+  ],
+  "FailureRecords": []
+}

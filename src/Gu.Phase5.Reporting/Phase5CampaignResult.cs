@@ -33,4 +33,13 @@ public sealed class Phase5CampaignResult
     /// <summary>Final Phase V validation report.</summary>
     [JsonPropertyName("report")]
     public required Phase5Report Report { get; init; }
+
+    /// <summary>
+    /// P11-M5 representation-content stabilization record. Non-null when a fatal
+    /// representation-content falsifier was active and examined during Phase XI.
+    /// Status "preserved-as-blocker" confirms the fatal is an unresolved scientific
+    /// limitation per D-P11-004.
+    /// </summary>
+    [JsonPropertyName("representationContentStabilization")]
+    public RepresentationContentStabilizationRecord? RepresentationContentStabilization { get; init; }
 }

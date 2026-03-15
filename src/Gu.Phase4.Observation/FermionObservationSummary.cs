@@ -79,6 +79,21 @@ public sealed class FermionObservationSummary
     [JsonPropertyName("isTrivial")]
     public bool IsTrivial { get; init; }
 
+    /// <summary>
+    /// Observation path label classifying how this observation was produced.
+    ///
+    /// "proxy-observation": produced from cluster-level spectral summaries (chirality
+    ///   tag, eigenvalue envelope) without a full sigma_h pullback from Y to X. This is
+    ///   the status of all current (Phase X and earlier) fermion observations. Per
+    ///   D-P11-010, proxy observations must not be described as full draft-aligned
+    ///   pullback evidence.
+    ///
+    /// "full-pullback": produced via a full sigma_h pullback path from Y_h to X_h.
+    ///   Not yet implemented in this repository.
+    /// </summary>
+    [JsonPropertyName("observationPathLabel")]
+    public required string ObservationPathLabel { get; init; }
+
     /// <summary>Observation notes (warnings, physics caveats).</summary>
     [JsonPropertyName("notes")]
     public List<string> Notes { get; init; } = new();
@@ -86,6 +101,26 @@ public sealed class FermionObservationSummary
     /// <summary>Provenance of this observation.</summary>
     [JsonPropertyName("provenance")]
     public required ProvenanceMeta Provenance { get; init; }
+}
+
+/// <summary>
+/// Well-known observation path label constants for FermionObservationSummary.
+/// Per D-P11-010: proxy observations must not be described as full pullback evidence.
+/// </summary>
+public static class ObservationPathLabels
+{
+    /// <summary>
+    /// The observation is produced from cluster-level spectral summaries without
+    /// performing a full sigma_h pullback. This is the status of all current
+    /// fermion observations (Phase X and earlier).
+    /// </summary>
+    public const string ProxyObservation = "proxy-observation";
+
+    /// <summary>
+    /// The observation is produced via a full sigma_h pullback path from Y_h to X_h.
+    /// Not yet implemented in this repository.
+    /// </summary>
+    public const string FullPullback = "full-pullback";
 }
 
 /// <summary>

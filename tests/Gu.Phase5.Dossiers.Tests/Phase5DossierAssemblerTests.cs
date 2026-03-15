@@ -859,4 +859,72 @@ public class Phase5DossierAssemblerTests
         var obsGate = escalation.GateResults.Single(g => g.GateId == EscalationGates.ObservationChainValid);
         Assert.False(obsGate.Passed);
     }
+
+    // ===== GeometryEvidenceTier tests (P11-M7) =====
+
+    [Fact]
+    public void Assemble_WithoutGeometryTier_DefaultsToToyControl()
+    {
+        // Per D-P11-007: when no tier is provided, the dossier must default to "toy-control".
+        var dossier = _assembler.Assemble(
+            studyId: "study-tier-default",
+            branchRecord: null,
+            convergenceRecords: null,
+            convergenceFailures: null,
+            environments: null,
+            scoreCard: null,
+            falsifiers: null,
+            registry: null,
+            environmentTiersCovered: Array.Empty<string>(),
+            freshness: "fresh",
+            provenance: MakeProvenance());
+
+        Assert.Equal("toy-control", dossier.GeometryEvidenceTier);
+    }
+
+    [Fact]
+    public void Assemble_WithExplicitToyControlTier_SetsToyControl()
+    {
+        var dossier = _assembler.Assemble(
+            studyId: "study-tier-explicit",
+            branchRecord: null,
+            convergenceRecords: null,
+            convergenceFailures: null,
+            environments: null,
+            scoreCard: null,
+            falsifiers: null,
+            registry: null,
+            environmentTiersCovered: Array.Empty<string>(),
+            freshness: "fresh",
+            provenance: MakeProvenance(),
+            geometryEvidenceTier: "toy-control");
+
+        Assert.Equal("toy-control", dossier.GeometryEvidenceTier);
+    }
+
+    [Fact]
+    public void Assemble_CurrentRepoCampaignDimensions_ProducesToyControlTier()
+    {
+        // The current Phase XI repo uses dim(X)=2 (not 4), so all campaigns are toy-control.
+        // This test documents the expected tier for the current repository state.
+        // Per D-P11-007: toy-control geometry must not be summarized as X^4 recovery.
+        const string expectedTier = "toy-control";
+
+        var dossier = _assembler.Assemble(
+            studyId: "study-tier-current-repo",
+            branchRecord: null,
+            convergenceRecords: null,
+            convergenceFailures: null,
+            environments: null,
+            scoreCard: null,
+            falsifiers: null,
+            registry: null,
+            environmentTiersCovered: Array.Empty<string>(),
+            freshness: "fresh",
+            provenance: MakeProvenance(),
+            geometryEvidenceTier: expectedTier);
+
+        Assert.Equal("toy-control", dossier.GeometryEvidenceTier);
+        Assert.NotEqual("draft-aligned", dossier.GeometryEvidenceTier);
+    }
 }

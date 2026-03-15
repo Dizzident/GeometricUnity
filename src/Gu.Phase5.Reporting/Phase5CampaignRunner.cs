@@ -173,7 +173,8 @@ public sealed class Phase5CampaignRunner
             provenance: provenance,
             observationChainRecords: observationChainRecords,
             sidecarSummary: sidecarSummary,
-            environmentVarianceRecords: environmentVarianceRecords);
+            environmentVarianceRecords: environmentVarianceRecords,
+            representationContentRecords: representationContentRecords);
 
         // Step 6: Generate final report (M53)
         var report = Phase5ReportGenerator.Generate(
@@ -185,12 +186,69 @@ public sealed class Phase5CampaignRunner
             refinementEvidenceManifest: refinementEvidenceManifest,
             falsifiers: falsifiers);
 
+        // Step 7: P11-M5 representation-content stabilization record.
+        // Produced whenever a fatal representation-content falsifier is active.
+        var repContentStabilization = BuildRepContentStabilization(
+            falsifiers, representationContentRecords, provenance);
+
         return new Phase5CampaignResult
         {
             TypedDossier = typedDossier,
             ProvenanceDossier = provenanceDossier,
             StudyManifests = studyManifests,
             Report = report,
+            RepresentationContentStabilization = repContentStabilization,
+        };
+    }
+
+    // ------------------------------------------------------------------
+    // Private helpers
+    // ------------------------------------------------------------------
+
+    /// <summary>
+    /// Produces a RepresentationContentStabilizationRecord when a fatal
+    /// representation-content falsifier is active (P11-M5).
+    /// Returns null if no such falsifier is present.
+    /// </summary>
+    private static RepresentationContentStabilizationRecord? BuildRepContentStabilization(
+        FalsifierSummary falsifiers,
+        IReadOnlyList<RepresentationContentRecord>? representationContentRecords,
+        ProvenanceMeta provenance)
+    {
+        var fatalRepFalsifier = falsifiers.Falsifiers
+            .FirstOrDefault(f =>
+                f.Active &&
+                f.Severity == FalsifierSeverity.Fatal &&
+                f.FalsifierType == FalsifierTypes.RepresentationContent);
+
+        if (fatalRepFalsifier is null)
+            return null;
+
+        var matchingRecord = representationContentRecords?
+            .FirstOrDefault(r => string.Equals(r.CandidateId, fatalRepFalsifier.TargetId, StringComparison.Ordinal));
+
+        return new RepresentationContentStabilizationRecord
+        {
+            RecordId = $"rep-content-stabilization-{fatalRepFalsifier.TargetId}",
+            Status = "preserved-as-blocker",
+            CandidateId = fatalRepFalsifier.TargetId,
+            FalsifierId = fatalRepFalsifier.FalsifierId,
+            BlockerReason =
+                matchingRecord is not null
+                    ? $"Candidate '{fatalRepFalsifier.TargetId}' is a singleton cluster with " +
+                      $"{matchingRecord.ObservedModeCount} observed family source(s) against a required " +
+                      $"minimum of {matchingRecord.ExpectedModeCount}. The Phase IV fermion-family atlas " +
+                      $"was searched; no second persistent family exists for this candidate in the current " +
+                      $"repository context. This is a genuine negative result confirmed by the physicist: " +
+                      $"the toy geometry normal bundle cannot match the draft's predicted dimension."
+                    : $"Fatal representation-content falsifier on candidate '{fatalRepFalsifier.TargetId}' " +
+                      $"cannot be closed without new physics results or a revised fermion family atlas.",
+            SearchedArtifactRefs = matchingRecord?.SourceArtifactRefs,
+            ClosureRequirement =
+                "New branch variants that produce a second persistent fermion family for this candidate, " +
+                "or a revised fermion family atlas from a higher-fidelity study using draft-level geometry.",
+            BindingDecision = "D-P11-004",
+            Provenance = provenance,
         };
     }
 

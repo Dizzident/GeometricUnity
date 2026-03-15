@@ -1,0 +1,38 @@
+{
+  "studyId": "phase11-nontrivial-direct-refinement-ladder",
+  "levels": [
+    {
+      "levelId": "L0-2x2",
+      "solverConverged": true,
+      "quantities": {
+        "residual-norm": 1.2409302479617708E-09,
+        "stationarity-norm": 2.1099612055824285E-09,
+        "objective-value": 7.699539401532309E-19,
+        "gauge-violation": 0.1972636403946273,
+        "solver-iterations": 2
+      }
+    },
+    {
+      "levelId": "L1-4x4",
+      "solverConverged": true,
+      "quantities": {
+        "residual-norm": 4.036703546419408E-08,
+        "stationarity-norm": 7.542687920924676E-08,
+        "objective-value": 8.147487760837512E-16,
+        "gauge-violation": 0.4216017120512833,
+        "solver-iterations": 2
+      }
+    },
+    {
+      "levelId": "L2-8x8",
+      "solverConverged": true,
+      "quantities": {
+        "residual-norm": 1.0605408972935811E-07,
+        "stationarity-norm": 1.9395834883747584E-07,
+        "objective-value": 5.623734974161371E-15,
+        "gauge-violation": 0.9960082470006864,
+        "solver-iterations": 2
+      }
+    }
+  ]
+}

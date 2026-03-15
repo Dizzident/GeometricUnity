@@ -1,0 +1,71 @@
+{
+  "dossierId": "phase5-su2-branch-refinement-env-validation-provenance-dossier",
+  "title": "Phase V Provenance Dossier: phase5-su2-branch-refinement-env-validation",
+  "studies": [
+    {
+      "studyId": "phase5-su2-branch-refinement-env-validation-positive",
+      "description": "Phase V campaign phase5-su2-branch-refinement-env-validation \u2014 positive evidence dossier",
+      "runFolder": "artifacts",
+      "reproducibility": {
+        "codeRevision": "phase10-direct-refinement-v1",
+        "reproductionCommands": [
+          "dotnet run --project apps/Gu.Cli -- run-phase5-campaign --spec \u003Ccampaign.json\u003E --out-dir \u003Cdir\u003E"
+        ],
+        "regeneratedAt": "2026-03-15T15:46:42.3542258+00:00",
+        "evidenceTier": "RegeneratedCpu"
+      },
+      "provenance": {
+        "createdAt": "2026-03-20T00:00:00+00:00",
+        "codeRevision": "phase10-direct-refinement-v1",
+        "branch": {
+          "branchId": "phase8-real-atlas-control",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu",
+        "notes": "Phase X standard evidence campaign: branch study still uses the admitted multi-variant atlas on the same strict thresholds, refinement now points to a direct solver-backed ladder, bridge-derived convergence remains available separately for comparison, the imported benchmark remains repo-internal, and candidate-specific escalation still fails closed when candidate-linked branch/background provenance is absent."
+      }
+    },
+    {
+      "studyId": "phase5-su2-branch-refinement-env-validation-negative",
+      "description": "Phase V campaign phase5-su2-branch-refinement-env-validation \u2014 negative result dossier",
+      "runFolder": "artifacts",
+      "reproducibility": {
+        "codeRevision": "phase10-direct-refinement-v1",
+        "reproductionCommands": [
+          "dotnet run --project apps/Gu.Cli -- run-phase5-campaign --spec \u003Ccampaign.json\u003E --out-dir \u003Cdir\u003E"
+        ],
+        "regeneratedAt": "2026-03-15T15:46:42.3542647+00:00",
+        "evidenceTier": "RegeneratedCpu"
+      },
+      "provenance": {
+        "createdAt": "2026-03-20T00:00:00+00:00",
+        "codeRevision": "phase10-direct-refinement-v1",
+        "branch": {
+          "branchId": "phase8-real-atlas-control",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu",
+        "notes": "Phase X standard evidence campaign: branch study still uses the admitted multi-variant atlas on the same strict thresholds, refinement now points to a direct solver-backed ladder, bridge-derived convergence remains available separately for comparison, the imported benchmark remains repo-internal, and candidate-specific escalation still fails closed when candidate-linked branch/background provenance is absent."
+      }
+    }
+  ],
+  "overallEvidenceTier": "RegeneratedCpu",
+  "evidenceVerdict": "All 2 studies regenerated from current code. Overall tier: regenerated-cpu. Acceptable as Phase V validation evidence.",
+  "isAcceptableAsEvidence": true,
+  "staleStudyIds": [],
+  "assemblyNotes": [
+    "study \u0027phase5-su2-branch-refinement-env-validation-positive\u0027 tier=\u0027regenerated-cpu\u0027 revision=\u0027phase10-direct-refinement-v1\u0027 \u2014 acceptable.",
+    "study \u0027phase5-su2-branch-refinement-env-validation-negative\u0027 tier=\u0027regenerated-cpu\u0027 revision=\u0027phase10-direct-refinement-v1\u0027 \u2014 acceptable."
+  ],
+  "assembledAt": "2026-03-15T15:46:42.3551512+00:00",
+  "provenance": {
+    "createdAt": "2026-03-20T00:00:00+00:00",
+    "codeRevision": "phase10-direct-refinement-v1",
+    "branch": {
+      "branchId": "phase8-real-atlas-control",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu",
+    "notes": "Phase X standard evidence campaign: branch study still uses the admitted multi-variant atlas on the same strict thresholds, refinement now points to a direct solver-backed ladder, bridge-derived convergence remains available separately for comparison, the imported benchmark remains repo-internal, and candidate-specific escalation still fails closed when candidate-linked branch/background provenance is absent."
+  }
+}

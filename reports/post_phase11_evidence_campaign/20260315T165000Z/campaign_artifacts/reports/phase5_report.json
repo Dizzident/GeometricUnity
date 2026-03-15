@@ -1,0 +1,63 @@
+{
+  "reportId": "report-phase5-su2-branch-refinement-env-validation-20260315184547",
+  "schemaVersion": "1.0.0",
+  "studyId": "phase5-su2-branch-refinement-env-validation",
+  "dossierIds": [
+    "phase5-su2-branch-refinement-env-validation-provenance-dossier"
+  ],
+  "branchIndependenceAtlas": {
+    "totalQuantities": 5,
+    "invariantCount": 3,
+    "fragileCount": 2,
+    "equivalenceClassCount": 9,
+    "summaryLines": [
+      "- Overall summary: **mixed**",
+      "- Quantities analyzed: 5",
+      "- Invariant/robust: 3",
+      "- Fragile: 2",
+      "- Equivalence classes: 9"
+    ]
+  },
+  "convergenceAtlas": {
+    "totalQuantities": 5,
+    "convergentCount": 5,
+    "nonConvergentCount": 0,
+    "insufficientDataCount": 0,
+    "summaryLines": [
+      "- Total quantities: 5",
+      "- Convergent: 5",
+      "- Weakly convergent: 0",
+      "- Non-convergent: 0",
+      "- Insufficient data: 0",
+      "- Evidence source: direct solver-backed from 3 executed background record(s).",
+      "- Refinement seed family: direct solver-backed ladder.",
+      "- Direct solver-backed refinement family: yes."
+    ]
+  },
+  "falsificationDashboard": {
+    "totalFalsifiers": 4,
+    "activeFatalCount": 1,
+    "activeHighCount": 3,
+    "promotionCount": 0,
+    "demotionCount": 4,
+    "summaryLines": [
+      "- Total falsifiers evaluated: 4",
+      "- Active fatal: 1",
+      "- Active high: 3",
+      "- Total active: 4"
+    ]
+  },
+  "geometryEvidenceLabel": "toy-control",
+  "observerseRecoveryBlock": "OBSERVERSE-RECOVERY-BLOCKED: Current geometry evidence is toy-control only. The base mesh uses dim(X)=2 (not dim(X)=4) and the fiber construction is a 5D toy structure (not the full Observerse). The draft\u0027s X^4/Observerse recovery program requires a 4-dimensional base with proper Observerse geometry. Current campaign outputs do not constitute evidence for draft-level X^4 recovery.",
+  "provenance": {
+    "createdAt": "2026-03-20T00:00:00+00:00",
+    "codeRevision": "phase10-direct-refinement-v1",
+    "branch": {
+      "branchId": "phase8-real-atlas-control",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu",
+    "notes": "Phase XI standard evidence campaign: adds candidate-specific branch/background provenance links for fermion-registry-phase4-toy-v1-0001 via candidate_provenance_links.json (P11-M1), and adds genuine external imported environment record env-external-lattice-gauge-su2-2d-v1 with datasetId=external-lattice-gauge-su2-2d-v1 (P11-M2). Branch study still uses the admitted multi-variant atlas on the same strict thresholds and remains mixed. Refinement points to a direct solver-backed ladder. The repo-internal imported benchmark (env-imported-repo-benchmark) remains present and explicitly distinct from the new external imported record. Candidate-specific escalation remains fail-closed for candidates without provenance links; fermion-registry-phase4-toy-v1-0001 now carries non-empty evidenceRecordIds in branch-robust and refinement-bounded gate results."
+  },
+  "generatedAt": "2026-03-15T18:45:47.8988401+00:00"
+}

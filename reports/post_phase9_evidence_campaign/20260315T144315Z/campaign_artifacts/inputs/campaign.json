@@ -1,0 +1,95 @@
+{
+  "campaignId": "phase5-su2-branch-refinement-env-validation",
+  "schemaVersion": "1.1.0",
+  "branchFamilySpec": {
+    "studyId": "phase9-su2-real-bridge-backed-branch-family",
+    "branchVariantIds": [
+      "bg-variant-95ee11778cc7ac01",
+      "bg-variant-d840fea6e6d36748",
+      "bg-variant-d84f5d66fd98b842",
+      "bg-variant-53b598740d9569b4"
+    ],
+    "targetQuantityIds": [
+      "residual-norm",
+      "stationarity-norm",
+      "objective-value",
+      "gauge-violation",
+      "solver-iterations"
+    ],
+    "absoluteTolerance": 1e-5,
+    "relativeTolerance": 0.1
+  },
+  "refinementSpec": {
+    "studyId": "phase5-su2-refinement-ladder",
+    "schemaVersion": "1.0",
+    "branchManifestId": "phase8-real-atlas-control",
+    "targetQuantities": [
+      "residual-norm",
+      "stationarity-norm",
+      "objective-value",
+      "gauge-violation",
+      "solver-iterations"
+    ],
+    "refinementLevels": [
+      { "levelId": "L0-2x2", "meshParameterX": 1.0, "meshParameterF": 1.0, "description": "2x2 toy mesh" },
+      { "levelId": "L1-4x4", "meshParameterX": 0.5, "meshParameterF": 0.5, "description": "4x4 structured mesh" },
+      { "levelId": "L2-8x8", "meshParameterX": 0.25, "meshParameterF": 0.25, "description": "8x8 structured mesh" }
+    ],
+    "provenance": {
+      "createdAt": "2026-03-20T00:00:00+00:00",
+      "codeRevision": "phase9-real-atlas-env-aware-v1",
+      "branch": { "branchId": "phase8-real-atlas-control", "schemaVersion": "1.0" },
+      "backend": "cpu"
+    }
+  },
+  "environmentCampaignSpec": {
+    "campaignId": "phase5-su2-env-campaign",
+    "schemaVersion": "1.0",
+    "environmentIds": [
+      "env-toy-2d-trivial",
+      "env-structured-4x4",
+      "env-imported-repo-benchmark"
+    ],
+    "branchManifestId": "phase8-real-atlas-control",
+    "targetQuantities": [
+      "bosonic-eigenvalue-ratio-1",
+      "bosonic-eigenvalue-ratio-2",
+      "bosonic-eigenvalue-ratio-3",
+      "fermionic-eigenvalue-ratio-1",
+      "fermionic-eigenvalue-ratio-2"
+    ],
+    "provenance": {
+      "createdAt": "2026-03-20T00:00:00+00:00",
+      "codeRevision": "phase9-real-atlas-env-aware-v1",
+      "branch": { "branchId": "phase8-real-atlas-control", "schemaVersion": "1.0" },
+      "backend": "cpu"
+    }
+  },
+  "externalTargetTablePath": "external_targets.json",
+  "calibrationPolicy": {
+    "policyId": "phase5-sigma5-policy",
+    "mode": "sigma",
+    "sigmaThreshold": 5.0
+  },
+  "falsificationPolicy": {},
+  "provenance": {
+    "createdAt": "2026-03-20T00:00:00+00:00",
+    "codeRevision": "phase9-real-atlas-env-aware-v1",
+    "branch": { "branchId": "phase8-real-atlas-control", "schemaVersion": "1.0" },
+    "backend": "cpu",
+    "notes": "Phase IX standard evidence campaign: multi-variant admitted atlas on the same strict thresholds, bridge-derived convergence sourced from multiple admitted backgrounds, unchanged benchmark separation, and candidate-specific escalation that still fails closed when candidate-linked branch/background provenance is absent."
+  },
+  "branchQuantityValuesPath": "branch_quantity_values.json",
+  "refinementValuesPath": "refinement_values.json",
+  "observablesPath": "observables.json",
+  "environmentRecordPaths": [
+    "env_toy_record.json",
+    "env_structured_4x4_record.json",
+    "env_imported_repo_benchmark.json"
+  ],
+  "registryPath": "../../phase4_fermion_family_atlas_001/output/unified_particle_registry.json",
+  "observationChainPath": "observation_chain.json",
+  "environmentVariancePath": "environment_variance.json",
+  "representationContentPath": "representation_content.json",
+  "couplingConsistencyPath": "coupling_consistency.json"
+}

@@ -24,6 +24,14 @@ namespace Gu.ReferenceCpu;
 /// - Vanishes when omega = A0 (no displacement = no torsion)
 /// - Lands in ad(P)-valued 2-forms (same carrier as F_h)
 /// - Gauge-equivariant by construction (d_{A0} is a covariant operator)
+///
+/// DRAFT-ALIGNMENT NOTE (D-P11-008, A-008):
+/// This operator is a "branch-local-surrogate" for the draft's group-level formula
+///   T_g = $ - epsilon^{-1} d_{A0} epsilon  (draft Section 7).
+/// It is NOT a literal formula-for-formula reproduction of the draft expression.
+/// Equivalence between this surrogate and the draft-form has NOT been derived or
+/// tested in this repository. Do not describe this operator as draft-exact.
+/// Call GetDraftAlignmentRecord() to obtain a machine-readable alignment record.
 /// </summary>
 public sealed class AugmentedTorsionCpu : ITorsionBranchOperator
 {
@@ -37,6 +45,14 @@ public sealed class AugmentedTorsionCpu : ITorsionBranchOperator
     }
 
     public string BranchId => "augmented-torsion";
+
+    /// <summary>
+    /// Returns a machine-readable record describing the draft-alignment status of
+    /// this torsion operator. Per D-P11-008, this operator is a "branch-local-surrogate"
+    /// and must not be described as draft-exact in reports or summaries.
+    /// </summary>
+    public TorsionDraftAlignmentRecord GetDraftAlignmentRecord(ProvenanceMeta provenance) =>
+        TorsionDraftAlignmentRecord.CreateSurrogate(provenance);
 
     public string OutputCarrierType => "curvature-2form";
 

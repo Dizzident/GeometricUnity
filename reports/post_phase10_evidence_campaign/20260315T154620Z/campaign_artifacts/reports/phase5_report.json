@@ -1,0 +1,61 @@
+{
+  "reportId": "report-phase5-su2-branch-refinement-env-validation-20260315154642",
+  "schemaVersion": "1.0.0",
+  "studyId": "phase5-su2-branch-refinement-env-validation",
+  "dossierIds": [
+    "phase5-su2-branch-refinement-env-validation-provenance-dossier"
+  ],
+  "branchIndependenceAtlas": {
+    "totalQuantities": 5,
+    "invariantCount": 3,
+    "fragileCount": 2,
+    "equivalenceClassCount": 9,
+    "summaryLines": [
+      "- Overall summary: **mixed**",
+      "- Quantities analyzed: 5",
+      "- Invariant/robust: 3",
+      "- Fragile: 2",
+      "- Equivalence classes: 9"
+    ]
+  },
+  "convergenceAtlas": {
+    "totalQuantities": 5,
+    "convergentCount": 5,
+    "nonConvergentCount": 0,
+    "insufficientDataCount": 0,
+    "summaryLines": [
+      "- Total quantities: 5",
+      "- Convergent: 5",
+      "- Weakly convergent: 0",
+      "- Non-convergent: 0",
+      "- Insufficient data: 0",
+      "- Evidence source: direct solver-backed from 3 executed background record(s).",
+      "- Refinement seed family: direct solver-backed ladder.",
+      "- Direct solver-backed refinement family: yes."
+    ]
+  },
+  "falsificationDashboard": {
+    "totalFalsifiers": 4,
+    "activeFatalCount": 1,
+    "activeHighCount": 3,
+    "promotionCount": 0,
+    "demotionCount": 4,
+    "summaryLines": [
+      "- Total falsifiers evaluated: 4",
+      "- Active fatal: 1",
+      "- Active high: 3",
+      "- Total active: 4"
+    ]
+  },
+  "provenance": {
+    "createdAt": "2026-03-20T00:00:00+00:00",
+    "codeRevision": "phase10-direct-refinement-v1",
+    "branch": {
+      "branchId": "phase8-real-atlas-control",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu",
+    "notes": "Phase X standard evidence campaign: branch study still uses the admitted multi-variant atlas on the same strict thresholds, refinement now points to a direct solver-backed ladder, bridge-derived convergence remains available separately for comparison, the imported benchmark remains repo-internal, and candidate-specific escalation still fails closed when candidate-linked branch/background provenance is absent."
+  },
+  "generatedAt": "2026-03-15T15:46:42.3619656+00:00"
+}

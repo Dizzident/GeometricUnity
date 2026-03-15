@@ -1,0 +1,153 @@
+{
+  "studyId": "phase5-su2-branch-refinement-env-validation",
+  "schemaVersion": "1.0.0",
+  "falsifiers": [
+    {
+      "falsifierId": "falsifier-0001",
+      "schemaVersion": "1.0.0",
+      "falsifierType": "branch-fragility",
+      "severity": "high",
+      "targetId": "gauge-violation",
+      "branchId": "phase9-su2-real-bridge-backed-branch-family",
+      "triggerValue": 1.8337289619806922,
+      "threshold": 0.5,
+      "description": "Quantity \u0027gauge-violation\u0027 is fragile across branch family (fragilityScore=1.834, threshold=0.5).",
+      "evidence": "FragilityRecord targetQuantityId=gauge-violation studyId=phase9-su2-real-bridge-backed-branch-family",
+      "active": true,
+      "provenance": {
+        "createdAt": "2026-03-20T00:00:00+00:00",
+        "codeRevision": "phase10-direct-refinement-v1",
+        "branch": {
+          "branchId": "phase8-real-atlas-control",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu",
+        "notes": "Phase XI standard evidence campaign: adds candidate-specific branch/background provenance links for fermion-registry-phase4-toy-v1-0001 via candidate_provenance_links.json (P11-M1), and adds genuine external imported environment record env-external-lattice-gauge-su2-2d-v1 with datasetId=external-lattice-gauge-su2-2d-v1 (P11-M2). Branch study still uses the admitted multi-variant atlas on the same strict thresholds and remains mixed. Refinement points to a direct solver-backed ladder. The repo-internal imported benchmark (env-imported-repo-benchmark) remains present and explicitly distinct from the new external imported record. Candidate-specific escalation remains fail-closed for candidates without provenance links; fermion-registry-phase4-toy-v1-0001 now carries non-empty evidenceRecordIds in branch-robust and refinement-bounded gate results."
+      }
+    },
+    {
+      "falsifierId": "falsifier-0002",
+      "schemaVersion": "1.0.0",
+      "falsifierType": "branch-fragility",
+      "severity": "high",
+      "targetId": "solver-iterations",
+      "branchId": "phase9-su2-real-bridge-backed-branch-family",
+      "triggerValue": 1.99999999999998,
+      "threshold": 0.5,
+      "description": "Quantity \u0027solver-iterations\u0027 is fragile across branch family (fragilityScore=2, threshold=0.5).",
+      "evidence": "FragilityRecord targetQuantityId=solver-iterations studyId=phase9-su2-real-bridge-backed-branch-family",
+      "active": true,
+      "provenance": {
+        "createdAt": "2026-03-20T00:00:00+00:00",
+        "codeRevision": "phase10-direct-refinement-v1",
+        "branch": {
+          "branchId": "phase8-real-atlas-control",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu",
+        "notes": "Phase XI standard evidence campaign: adds candidate-specific branch/background provenance links for fermion-registry-phase4-toy-v1-0001 via candidate_provenance_links.json (P11-M1), and adds genuine external imported environment record env-external-lattice-gauge-su2-2d-v1 with datasetId=external-lattice-gauge-su2-2d-v1 (P11-M2). Branch study still uses the admitted multi-variant atlas on the same strict thresholds and remains mixed. Refinement points to a direct solver-backed ladder. The repo-internal imported benchmark (env-imported-repo-benchmark) remains present and explicitly distinct from the new external imported record. Candidate-specific escalation remains fail-closed for candidates without provenance links; fermion-registry-phase4-toy-v1-0001 now carries non-empty evidenceRecordIds in branch-robust and refinement-bounded gate results."
+      }
+    },
+    {
+      "falsifierId": "falsifier-0003",
+      "schemaVersion": "1.0.0",
+      "falsifierType": "quantitative-mismatch",
+      "severity": "high",
+      "targetId": "bosonic-eigenvalue-ratio-2",
+      "branchId": "unknown",
+      "environmentId": "env-imported-repo-benchmark",
+      "triggerValue": 5.37401153701776,
+      "description": "Observable \u0027bosonic-eigenvalue-ratio-2\u0027 failed target match \u0027bosonic-mode-2-imported-repo-benchmark\u0027: pull=5.374 (computed=0.98, target=0.6).",
+      "evidence": "TargetMatchRecord observableId=bosonic-eigenvalue-ratio-2 targetLabel=bosonic-mode-2-imported-repo-benchmark computedEnvironmentId=env-imported-repo-benchmark",
+      "active": true,
+      "provenance": {
+        "createdAt": "2026-03-20T00:00:00+00:00",
+        "codeRevision": "phase10-direct-refinement-v1",
+        "branch": {
+          "branchId": "phase8-real-atlas-control",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu",
+        "notes": "Phase XI standard evidence campaign: adds candidate-specific branch/background provenance links for fermion-registry-phase4-toy-v1-0001 via candidate_provenance_links.json (P11-M1), and adds genuine external imported environment record env-external-lattice-gauge-su2-2d-v1 with datasetId=external-lattice-gauge-su2-2d-v1 (P11-M2). Branch study still uses the admitted multi-variant atlas on the same strict thresholds and remains mixed. Refinement points to a direct solver-backed ladder. The repo-internal imported benchmark (env-imported-repo-benchmark) remains present and explicitly distinct from the new external imported record. Candidate-specific escalation remains fail-closed for candidates without provenance links; fermion-registry-phase4-toy-v1-0001 now carries non-empty evidenceRecordIds in branch-robust and refinement-bounded gate results."
+      }
+    },
+    {
+      "falsifierId": "falsifier-0004",
+      "schemaVersion": "1.0.0",
+      "falsifierType": "representation-content",
+      "severity": "fatal",
+      "targetId": "fermion-registry-phase4-toy-v1-0000",
+      "branchId": "unknown",
+      "triggerValue": 1,
+      "threshold": 0,
+      "description": "Candidate \u0027fermion-registry-phase4-toy-v1-0000\u0027 exposes only 1 persisted family source(s); at least 2 are required for the reference representation-content check.",
+      "evidence": "RepresentationContentRecord recordId=rep-fermion-registry-phase4-toy-v1-0000 candidateId=fermion-registry-phase4-toy-v1-0000 missingRequiredCount=1",
+      "active": true,
+      "provenance": {
+        "createdAt": "2026-03-20T00:00:00+00:00",
+        "codeRevision": "phase10-direct-refinement-v1",
+        "branch": {
+          "branchId": "phase8-real-atlas-control",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu",
+        "notes": "Phase XI standard evidence campaign: adds candidate-specific branch/background provenance links for fermion-registry-phase4-toy-v1-0001 via candidate_provenance_links.json (P11-M1), and adds genuine external imported environment record env-external-lattice-gauge-su2-2d-v1 with datasetId=external-lattice-gauge-su2-2d-v1 (P11-M2). Branch study still uses the admitted multi-variant atlas on the same strict thresholds and remains mixed. Refinement points to a direct solver-backed ladder. The repo-internal imported benchmark (env-imported-repo-benchmark) remains present and explicitly distinct from the new external imported record. Candidate-specific escalation remains fail-closed for candidates without provenance links; fermion-registry-phase4-toy-v1-0001 now carries non-empty evidenceRecordIds in branch-robust and refinement-bounded gate results."
+      }
+    }
+  ],
+  "activeFatalCount": 1,
+  "activeHighCount": 3,
+  "totalActiveCount": 4,
+  "observationRecordCount": 3,
+  "environmentRecordCount": 5,
+  "representationRecordCount": 3,
+  "couplingRecordCount": 3,
+  "evaluationCoverage": [
+    {
+      "channelId": "observation-chain",
+      "status": "evaluated",
+      "inputCount": 3,
+      "outputCount": 3,
+      "originCounts": {
+        "upstream-sourced": 3
+      }
+    },
+    {
+      "channelId": "environment-variance",
+      "status": "evaluated",
+      "inputCount": 5,
+      "outputCount": 5,
+      "originCounts": {
+        "upstream-sourced": 5
+      }
+    },
+    {
+      "channelId": "representation-content",
+      "status": "evaluated",
+      "inputCount": 3,
+      "outputCount": 3,
+      "originCounts": {
+        "upstream-sourced": 3
+      }
+    },
+    {
+      "channelId": "coupling-consistency",
+      "status": "evaluated",
+      "inputCount": 3,
+      "outputCount": 3,
+      "originCounts": {
+        "upstream-sourced": 3
+      }
+    }
+  ],
+  "provenance": {
+    "createdAt": "2026-03-20T00:00:00+00:00",
+    "codeRevision": "phase10-direct-refinement-v1",
+    "branch": {
+      "branchId": "phase8-real-atlas-control",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu",
+    "notes": "Phase XI standard evidence campaign: adds candidate-specific branch/background provenance links for fermion-registry-phase4-toy-v1-0001 via candidate_provenance_links.json (P11-M1), and adds genuine external imported environment record env-external-lattice-gauge-su2-2d-v1 with datasetId=external-lattice-gauge-su2-2d-v1 (P11-M2). Branch study still uses the admitted multi-variant atlas on the same strict thresholds and remains mixed. Refinement points to a direct solver-backed ladder. The repo-internal imported benchmark (env-imported-repo-benchmark) remains present and explicitly distinct from the new external imported record. Candidate-specific escalation remains fail-closed for candidates without provenance links; fermion-registry-phase4-toy-v1-0001 now carries non-empty evidenceRecordIds in branch-robust and refinement-bounded gate results."
+  }
+}

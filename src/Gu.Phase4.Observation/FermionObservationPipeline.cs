@@ -86,6 +86,12 @@ public sealed class FermionObservationPipeline
             notes.Add("Trivial observation: chirality undetermined or singleton cluster.");
         if (cluster.AmbiguityScore > 0.5)
             notes.Add($"High ambiguity score ({cluster.AmbiguityScore:F2}); physical interpretation uncertain.");
+        // Per D-P11-010: label all current observations as proxy-observation.
+        notes.Add(
+            "Observation path: proxy-observation. " +
+            "This summary is produced from cluster-level spectral properties (chirality tag, " +
+            "eigenvalue envelope) without a full sigma_h pullback from Y to X. " +
+            "Do not treat this as full draft-aligned pullback evidence (D-P11-010).");
 
         return new FermionObservationSummary
         {
@@ -98,6 +104,7 @@ public sealed class FermionObservationPipeline
             BranchPersistenceScore = cluster.MeanBranchPersistence,
             AmbiguityScore = cluster.AmbiguityScore,
             IsTrivial = isTrivial,
+            ObservationPathLabel = ObservationPathLabels.ProxyObservation,
             Notes = notes,
             Provenance = provenance,
         };

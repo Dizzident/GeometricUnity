@@ -1,0 +1,41 @@
+{
+  "backgroundId": "bg-p9-fo-ms-3-20260315143358",
+  "environmentId": "env-default",
+  "branchManifestId": "phase8-real-atlas-first-order-shiab",
+  "geometryFingerprint": "simplicial-X_h-Y_h-centroid-P1",
+  "stateArtifactRef": "state-p9-fo-ms-3",
+  "residualNorm": 0.00014125122531131117,
+  "stationarityNorm": 0.00010810931756422447,
+  "admissibilityLevel": "Rejected",
+  "metrics": {
+    "residualNorm": 0.00014125122531131117,
+    "stationarityNorm": 0.00010810931756422447,
+    "objectiveValue": 9.975954325973398E-09,
+    "gaugeViolation": 0.1375442779133788,
+    "solverIterations": 825,
+    "solverConverged": true,
+    "terminationReason": "Objective below tolerance",
+    "gaussNewtonValid": false
+  },
+  "replayTierAchieved": "R2",
+  "provenance": {
+    "createdAt": "2026-03-15T14:33:55.5778817+00:00",
+    "codeRevision": "phase8-real-atlas-first-order-shiab",
+    "branch": {
+      "branchId": "phase8-real-atlas-first-order-shiab",
+      "schemaVersion": "1.0.0"
+    },
+    "backend": "cpu-reference"
+  },
+  "rejectionReason": "ResidualNorm=1.412512E-004 \u003E tol_diagnostic=1.000000E-004, StationarityNorm=1.081093E-004 \u003E tol_stationary=1.000000E-006",
+  "environmentTier": "toy",
+  "runClassification": {
+    "runType": "objective-solve",
+    "seedSource": "symmetric-ansatz",
+    "isTrivialValidationPath": false,
+    "validationNote": "objective-solve on symmetric-ansatz.",
+    "solverMode": "B",
+    "classifiedAt": "2026-03-15T14:33:59.9858962+00:00"
+  },
+  "consumedManifestArtifactRef": "studies/phase5_su2_branch_refinement_env_validation/upstream/phase9_experiments/method_sweep_first_order/background_states/bg-p9-fo-ms-3-20260315143358_manifest.json"
+}

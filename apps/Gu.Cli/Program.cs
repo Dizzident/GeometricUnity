@@ -119,6 +119,10 @@ switch (args[0])
         return BuildPhase5Sidecars(args);
     case "validate-phase5-campaign-spec":
         return ValidatePhase5CampaignSpec(args);
+    case "check-torsion-alignment":
+        return CheckTorsionAlignment(args);
+    case "check-shiab-scope":
+        return CheckShiabScope(args);
     default:
         Console.Error.WriteLine($"Unknown command: {args[0]}");
         PrintUsage();
@@ -3978,6 +3982,13 @@ static int RunPhase5Campaign(string[] args)
         }
     }
 
+    // falsification/rep_content_stabilization.json — P11-M5 explicit blocker record
+    if (result.RepresentationContentStabilization is not null)
+    {
+        var stabJson = GuJsonDefaults.Serialize(result.RepresentationContentStabilization);
+        File.WriteAllText(Path.Combine(outDir, "falsification", "rep_content_stabilization.json"), stabJson);
+    }
+
     // dossiers/phase5_validation_dossier.json
     var typedDossierJson = GuJsonDefaults.Serialize(result.TypedDossier);
     File.WriteAllText(Path.Combine(outDir, "dossiers", "phase5_validation_dossier.json"), typedDossierJson);
@@ -4469,6 +4480,265 @@ static FieldTensor CreateZeroConnection(SimplicialMesh mesh, LieAlgebra algebra)
         Coefficients = new double[edgeN],
         Shape = new[] { mesh.EdgeCount, algebra.Dimension },
     };
+}
+
+// ---------------------------------------------------------------------------
+// Phase XI: check-torsion-alignment (P11-M8)
+// ---------------------------------------------------------------------------
+
+static int CheckTorsionAlignment(string[] args)
+{
+    // Usage: gu check-torsion-alignment --lie-algebra su2|su3 [--xi-norm 0.01|0.1|1.0] [--out <record.json>]
+    var lieAlgebraId = ParseFlag(args, "--lie-algebra", "su2");
+    var xiNormStr = ParseFlag(args, "--xi-norm", "0.1");
+    var outPath = ParseFlag(args, "--out", "torsion_alignment_record.json");
+
+    if (!double.TryParse(xiNormStr, System.Globalization.NumberStyles.Any,
+            System.Globalization.CultureInfo.InvariantCulture, out double xiNorm) || xiNorm <= 0)
+    {
+        Console.Error.WriteLine($"Invalid --xi-norm value '{xiNormStr}'. Must be a positive number.");
+        return 1;
+    }
+
+    LieAlgebra algebra;
+    try
+    {
+        algebra = lieAlgebraId.ToLowerInvariant() switch
+        {
+            "su2" => LieAlgebraFactory.CreateSu2WithTracePairing(),
+            "su3" => LieAlgebraFactory.CreateSu3(),
+            _ => throw new InvalidOperationException($"Unknown Lie algebra: {lieAlgebraId}"),
+        };
+    }
+    catch (Exception ex)
+    {
+        Console.Error.WriteLine($"Failed to create Lie algebra '{lieAlgebraId}': {ex.Message}");
+        return 1;
+    }
+
+    // Build a small toy mesh (single triangle) for the alignment check
+    var mesh = MeshTopologyBuilder.Build(
+        embeddingDimension: 2,
+        simplicialDimension: 2,
+        vertexCoordinates: new double[] { 0, 0, 1, 0, 0, 1 },
+        vertexCount: 3,
+        cellVertices: new[] { new[] { 0, 1, 2 } });
+
+    var checker = new TorsionDraftAlignmentChecker(mesh, algebra);
+
+    // Build A0 = 0 and omega = A0 + xi, where xi is a perturbation of magnitude xiNorm
+    int dimG = algebra.Dimension;
+    int edgeCount = mesh.EdgeCount;
+    var a0Coeffs = new double[edgeCount * dimG]; // zero
+
+    // Build a normalized xi perturbation, then scale to xiNorm
+    var xiCoeffs = new double[edgeCount * dimG];
+    double rawNorm = 0;
+    for (int i = 0; i < xiCoeffs.Length; i++)
+    {
+        xiCoeffs[i] = (i % dimG == 0) ? 1.0 : 0.5;
+        rawNorm += xiCoeffs[i] * xiCoeffs[i];
+    }
+    rawNorm = System.Math.Sqrt(rawNorm);
+    for (int i = 0; i < xiCoeffs.Length; i++)
+        xiCoeffs[i] = xiCoeffs[i] / rawNorm * xiNorm;
+
+    var omegaCoeffs = new double[edgeCount * dimG];
+    for (int i = 0; i < omegaCoeffs.Length; i++)
+        omegaCoeffs[i] = a0Coeffs[i] + xiCoeffs[i];
+
+    var signature = new TensorSignature
+    {
+        AmbientSpaceId = "Y_h",
+        CarrierType = "connection-1form",
+        Degree = "1",
+        LieAlgebraBasisId = algebra.BasisOrderId,
+        ComponentOrderId = "edge-major",
+        NumericPrecision = "float64",
+        MemoryLayout = "dense-row-major",
+    };
+
+    var omega = new FieldTensor
+    {
+        Label = "omega",
+        Signature = signature,
+        Coefficients = omegaCoeffs,
+        Shape = new[] { edgeCount, dimG },
+    };
+    var a0 = new FieldTensor
+    {
+        Label = "a0",
+        Signature = signature,
+        Coefficients = a0Coeffs,
+        Shape = new[] { edgeCount, dimG },
+    };
+
+    var provenance = new ProvenanceMeta
+    {
+        CreatedAt = DateTimeOffset.UtcNow,
+        CodeRevision = "phase11-cli",
+        Branch = new BranchRef { BranchId = "torsion-alignment-check", SchemaVersion = "1.0.0" },
+        Notes = $"check-torsion-alignment: lie-algebra={lieAlgebraId}, xi-norm={xiNorm}",
+    };
+
+    TorsionAlignmentRecord record;
+    try
+    {
+        record = checker.ComputeAlignment(omega, a0, provenance);
+    }
+    catch (Exception ex)
+    {
+        Console.Error.WriteLine($"Alignment check failed: {ex.Message}");
+        return 1;
+    }
+
+    var json = GuJsonDefaults.Serialize(record);
+    File.WriteAllText(outPath, json);
+
+    Console.WriteLine($"Torsion draft-alignment check complete.");
+    Console.WriteLine($"  Lie algebra:          {lieAlgebraId}");
+    Console.WriteLine($"  xi norm (||omega-A0||): {record.EpsilonNorm:G6}");
+    Console.WriteLine($"  Surrogate norm:         {record.SurrogateNorm:G6}");
+    Console.WriteLine($"  Alignment residual:     {record.AlignmentResidualNorm:G6}");
+    Console.WriteLine($"  Surrogate boundary:     {record.SurrogateBoundary}");
+    Console.WriteLine($"  Output:                 {outPath}");
+    Console.WriteLine();
+    Console.WriteLine("NOTE (D-P11-008, A-008): This is a diagnostic check only.");
+    Console.WriteLine("The current operator T^aug = d_{{A0}}(omega - A0) remains a branch-local surrogate.");
+    Console.WriteLine("It is NOT a literal formula-for-formula reproduction of the draft's group-level T_g.");
+    return 0;
+}
+
+// Phase XI: check-shiab-scope (P11-M9)
+// ---------------------------------------------------------------------------
+
+static int CheckShiabScope(string[] args)
+{
+    // Usage: gu check-shiab-scope --lie-algebra su2|su3 [--out <record.json>]
+    var lieAlgebraId = ParseFlag(args, "--lie-algebra", "su2");
+    var outPath = ParseFlag(args, "--out", "shiab_scope_record.json");
+
+    LieAlgebra algebra;
+    try
+    {
+        algebra = lieAlgebraId.ToLowerInvariant() switch
+        {
+            "su2" => LieAlgebraFactory.CreateSu2WithTracePairing(),
+            "su3" => LieAlgebraFactory.CreateSu3(),
+            _ => throw new InvalidOperationException($"Unknown Lie algebra: {lieAlgebraId}"),
+        };
+    }
+    catch (Exception ex)
+    {
+        Console.Error.WriteLine($"Failed to create Lie algebra '{lieAlgebraId}': {ex.Message}");
+        return 1;
+    }
+
+    // Build a small toy mesh (single triangle) for the scope check
+    var mesh = MeshTopologyBuilder.Build(
+        embeddingDimension: 2,
+        simplicialDimension: 2,
+        vertexCoordinates: new double[] { 0, 0, 1, 0, 0, 1 },
+        vertexCount: 3,
+        cellVertices: new[] { new[] { 0, 1, 2 } });
+
+    int dimG = algebra.Dimension;
+    int edgeCount = mesh.EdgeCount;
+
+    // Build a nontrivial omega so that curvature is nonzero
+    var omegaCoeffs = new double[edgeCount * dimG];
+    for (int i = 0; i < omegaCoeffs.Length; i++)
+        omegaCoeffs[i] = (i % dimG == 0) ? 0.3 : 0.1;
+
+    var connectionSignature = new TensorSignature
+    {
+        AmbientSpaceId = "Y_h",
+        CarrierType = "connection-1form",
+        Degree = "1",
+        LieAlgebraBasisId = algebra.BasisOrderId,
+        ComponentOrderId = "edge-major",
+        NumericPrecision = "float64",
+        MemoryLayout = "dense-row-major",
+    };
+    var omega = new FieldTensor
+    {
+        Label = "omega",
+        Signature = connectionSignature,
+        Coefficients = omegaCoeffs,
+        Shape = new[] { edgeCount, dimG },
+    };
+
+    // Compute curvature F = d(omega) + (1/2)[omega, omega] using CurvatureAssembler
+    var omegaConn = new ConnectionField(mesh, algebra, omegaCoeffs);
+    var curvature = CurvatureAssembler.Assemble(omegaConn).ToFieldTensor();
+
+    var provenance = new ProvenanceMeta
+    {
+        CreatedAt = DateTimeOffset.UtcNow,
+        CodeRevision = "phase11-cli",
+        Branch = new BranchRef { BranchId = "shiab-scope-check", SchemaVersion = "1.0.0" },
+        Notes = $"check-shiab-scope: lie-algebra={lieAlgebraId}",
+    };
+
+    // Build both Shiab operators and a minimal manifest/geometry context
+    var standardOp = new IdentityShiabCpu(mesh, algebra);
+    var pairedOp = new FirstOrderShiabOperator(mesh, algebra);
+
+    var manifest = BranchManifestFactory.CreateEmpty("shiab-scope-check");
+    var geometry = new GeometryContext
+    {
+        BaseSpace = new SpaceRef { SpaceId = "X_h", Dimension = 2 },
+        AmbientSpace = new SpaceRef { SpaceId = "Y_h", Dimension = 2 },
+        ProjectionBinding = new GeometryBinding
+        {
+            BindingType = "projection",
+            SourceSpace = new SpaceRef { SpaceId = "Y_h", Dimension = 2 },
+            TargetSpace = new SpaceRef { SpaceId = "X_h", Dimension = 2 },
+        },
+        ObservationBinding = new GeometryBinding
+        {
+            BindingType = "observation",
+            SourceSpace = new SpaceRef { SpaceId = "X_h", Dimension = 2 },
+            TargetSpace = new SpaceRef { SpaceId = "Y_h", Dimension = 2 },
+        },
+        DiscretizationType = "simplicial",
+        QuadratureRuleId = "centroid",
+        BasisFamilyId = "P1",
+        Patches = Array.Empty<PatchInfo>(),
+    };
+
+    // The metric-scaled third operator uses lambda=2.0 to be numerically distinct from identity (S=F)
+    var thirdOp = new MetricScaledShiabOperator(mesh, algebra, 2.0);
+
+    var checker = new ShiabFamilyScopeChecker(mesh, algebra);
+
+    ShiabFamilyScopeRecord record;
+    try
+    {
+        // Three-operator check: identity-shiab, first-order-curvature, metric-scaled-shiab (P11-M9 + P11-M6 rerun)
+        record = checker.CheckThree(standardOp, pairedOp, thirdOp, curvature, omega, manifest, geometry, provenance);
+    }
+    catch (Exception ex)
+    {
+        Console.Error.WriteLine($"Shiab scope check failed: {ex.Message}");
+        return 1;
+    }
+
+    var json = GuJsonDefaults.Serialize(record);
+    File.WriteAllText(outPath, json);
+
+    bool distinct = record.OperatorsAreMathematicallyDistinct;
+    Console.WriteLine("Shiab family scope check complete (3-operator comparison).");
+    Console.WriteLine($"  Lie algebra:              {lieAlgebraId}");
+    Console.WriteLine($"  Standard operator:        {string.Join(", ", record.StandardPathShiabIds)}");
+    Console.WriteLine($"  Paired/third operators:   {string.Join(", ", record.PairedPathShiabIds)}");
+    Console.WriteLine($"  Mathematically distinct:  {distinct}");
+    Console.WriteLine($"  Output:                   {outPath}");
+    Console.WriteLine();
+    Console.WriteLine("NOTE (D-P11-009): None of the exercised operators is the canonically selected draft Shiab.");
+    Console.WriteLine("On dimX=2, Lambda^2(T*X) is 1-dimensional; only scalar-scaled Shiab variants are distinguishable.");
+    Console.WriteLine("Full Shiab family exploration requires dimX >= 4.");
+    return 0;
 }
 
 static void PrintUsage()

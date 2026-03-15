@@ -1,0 +1,16 @@
+{
+  "totalQuantities": 5,
+  "convergentCount": 0,
+  "nonConvergentCount": 5,
+  "insufficientDataCount": 0,
+  "summaryLines": [
+    "- Total quantities: 5",
+    "- Convergent: 0",
+    "- Weakly convergent: 0",
+    "- Non-convergent: 5",
+    "- Insufficient data: 0",
+    "- Evidence source: direct solver-backed from 3 executed background record(s).",
+    "- Refinement seed family: direct solver-backed ladder.",
+    "- Direct solver-backed refinement family: yes."
+  ]
+}

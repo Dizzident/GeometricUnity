@@ -46,6 +46,7 @@ public sealed class FermionComparisonAdapterTests
             BranchPersistenceScore = 1.0,
             AmbiguityScore = 0.0,
             IsTrivial = isTrivial,
+            ObservationPathLabel = ObservationPathLabels.ProxyObservation,
             Provenance = TestProvenance(),
         };
 

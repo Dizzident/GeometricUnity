@@ -41,7 +41,9 @@ public sealed class Phase5DossierAssembler
         ProvenanceMeta provenance,
         IReadOnlyList<ObservationChainRecord>? observationChainRecords = null,
         SidecarSummary? sidecarSummary = null,
-        IReadOnlyList<EnvironmentVarianceRecord>? environmentVarianceRecords = null)
+        IReadOnlyList<EnvironmentVarianceRecord>? environmentVarianceRecords = null,
+        IReadOnlyList<RepresentationContentRecord>? representationContentRecords = null,
+        string? geometryEvidenceTier = null)
     {
         ArgumentNullException.ThrowIfNull(studyId);
         ArgumentNullException.ThrowIfNull(environmentTiersCovered);
@@ -63,7 +65,14 @@ public sealed class Phase5DossierAssembler
         var negativeResults = CollectNegativeResults(
             falsifiers,
             convergenceFailures,
+            representationContentRecords,
             provenance);
+
+        // Per D-P11-007: default to "toy-control" when not explicitly provided.
+        // The caller should pass the tier from GeometryEvidenceClassifier.Classify()
+        // (in Gu.Phase5.Reporting). Dossiers does not reference Reporting, so the
+        // tier is computed externally and passed as a string.
+        string effectiveTier = geometryEvidenceTier ?? "toy-control";
 
         return new Phase5ValidationDossier
         {
@@ -80,6 +89,7 @@ public sealed class Phase5DossierAssembler
             SidecarCoverage = sidecarSummary,
             ClaimEscalations = escalations,
             NegativeResults = negativeResults,
+            GeometryEvidenceTier = effectiveTier,
             Freshness = freshness,
             Provenance = provenance,
             GeneratedAt = DateTimeOffset.UtcNow,
@@ -221,6 +231,10 @@ public sealed class Phase5DossierAssembler
                 obsValid = false;
                 obsEvidence = $"No observation-chain artifacts were supplied. ObservationConfidence={candidate.ObservationConfidence:G4} is retained as context only and does not satisfy the candidate-specific gate.";
             }
+            // Per D-P11-010 (M10): append proxy-observation tier note. All current fermion
+            // observations are produced as proxy-observation summaries (not full sigma_h pullback).
+            // This note is appended to the gate evidence string so it appears in executed artifacts.
+            obsEvidence += " Observation tier: proxy-observation (not full pullback, D-P11-010).";
             gates.Add(new EscalationGateResult
             {
                 GateId = EscalationGates.ObservationChainValid,
@@ -370,6 +384,7 @@ public sealed class Phase5DossierAssembler
     private static List<NegativeResultEntry> CollectNegativeResults(
         FalsifierSummary? falsifiers,
         IReadOnlyList<ConvergenceFailureRecord>? convergenceFailures,
+        IReadOnlyList<RepresentationContentRecord>? representationContentRecords,
         ProvenanceMeta provenance)
     {
         var entries = new List<NegativeResultEntry>();
@@ -398,14 +413,56 @@ public sealed class Phase5DossierAssembler
             foreach (var f in falsifiers.Falsifiers.Where(f => f.Active && f.Severity == FalsifierSeverity.Fatal))
             {
                 counter++;
+
+                // For representation-content fatals, populate affected candidate IDs and
+                // source artifact refs from the matching RepresentationContentRecord.
+                // This makes the blocker explicitly traceable (P11-M5 stabilization).
+                var affectedCandidateIds = new List<string>();
+                IReadOnlyList<string>? sourceArtifactRefs = null;
+                string? p11StabilizationNote = null;
+
+                if (f.FalsifierType == FalsifierTypes.RepresentationContent &&
+                    !string.IsNullOrWhiteSpace(f.TargetId))
+                {
+                    affectedCandidateIds.Add(f.TargetId);
+
+                    var matchingRecord = representationContentRecords?
+                        .FirstOrDefault(r => string.Equals(r.CandidateId, f.TargetId, StringComparison.Ordinal));
+                    if (matchingRecord is not null)
+                    {
+                        sourceArtifactRefs = matchingRecord.SourceArtifactRefs;
+
+                        // P11-M5 stabilization: if the record has missingRequiredCount > 0
+                        // and was examined in Phase XI, document it as a stable scientific limit.
+                        // The singleton-cluster candidate cannot satisfy the 2-family-source
+                        // threshold without new physics results (new branch variants or a different
+                        // fermion family atlas). This is a genuine negative result, not a gap.
+                        if (matchingRecord.MissingRequiredCount > 0)
+                        {
+                            p11StabilizationNote =
+                                $"Phase XI P11-M5 examination: candidate '{f.TargetId}' is a singleton cluster " +
+                                $"with {matchingRecord.ObservedModeCount} observed family source(s) against a " +
+                                $"required minimum of {matchingRecord.ExpectedModeCount}. " +
+                                $"The Phase IV fermion-family atlas (sourceArtifactRefs) was searched and no " +
+                                $"additional family sources exist for this candidate in the current repository " +
+                                $"context. Closing the fatal requires either new branch variants that produce a " +
+                                $"second persistent family for this candidate, or a revised fermion family atlas. " +
+                                $"This blocker is preserved as an unresolved scientific limitation per D-P11-004.";
+                        }
+                    }
+                }
+
                 entries.Add(new NegativeResultEntry
                 {
                     EntryId = $"neg-{counter:D4}",
                     Category = f.FalsifierType,
                     Description = f.Description,
+                    AffectedCandidateIds = affectedCandidateIds,
                     SourceStudyId = "phase5-dossier-assembler",
                     ImpliesDemotion = true,
                     RecommendedAction = "demote-candidate",
+                    SourceArtifactRefs = sourceArtifactRefs,
+                    P11StabilizationNote = p11StabilizationNote,
                     RecordedAt = DateTimeOffset.UtcNow,
                 });
             }

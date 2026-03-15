@@ -1,0 +1,32 @@
+{
+  "studyId": "phase11-direct-nontrivial-l0",
+  "specs": [
+    {
+      "specId": "phase11-direct-nontrivial-l0-gn",
+      "environmentId": "env-refinement-2x2",
+      "branchManifestId": "phase8-real-atlas-control",
+      "seed": {
+        "kind": "SymmetricAnsatz",
+        "label": "nontrivial-seed-l0"
+      },
+      "solveOptions": {
+        "solveMode": "ObjectiveMinimization",
+        "solverMethod": "GaussNewton",
+        "maxIterations": 500,
+        "initialStepSize": 0.01,
+        "gaugePenaltyLambda": 0.0,
+        "gaugeStrategy": "L2Penalty",
+        "toleranceResidualDiagnostic": 0.0001,
+        "toleranceStationary": 1e-06,
+        "toleranceResidualStrict": 1e-08
+      }
+    }
+  ],
+  "deduplicationThreshold": 0.0,
+  "rankingCriteria": "admissibility-then-residual",
+  "notes": "Phase XI nontrivial direct solver-backed refinement level L0 on the 2x2 structured fiber-bundle environment. Uses SymmetricAnsatz seed with GaussNewton solver to produce nonzero initial state and nontrivial solver trajectory.",
+  "environmentTier": "structured",
+  "manifestSearchPaths": [
+    "manifests"
+  ]
+}

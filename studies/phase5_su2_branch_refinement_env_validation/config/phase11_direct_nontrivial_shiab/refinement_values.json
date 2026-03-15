@@ -1,0 +1,38 @@
+{
+  "studyId": "phase11-nontrivial-direct-refinement-shiab-ladder",
+  "levels": [
+    {
+      "levelId": "L0-2x2",
+      "solverConverged": true,
+      "quantities": {
+        "residual-norm": 1.7743171418372248E-09,
+        "stationarity-norm": 3.078731720404218E-09,
+        "objective-value": 1.5741006599087092E-18,
+        "gauge-violation": 0.2007370632106488,
+        "solver-iterations": 2
+      }
+    },
+    {
+      "levelId": "L1-4x4",
+      "solverConverged": true,
+      "quantities": {
+        "residual-norm": 8.53551404472091E-09,
+        "stationarity-norm": 1.6761785361860776E-08,
+        "objective-value": 3.642750000381395E-17,
+        "gauge-violation": 0.3007631554875101,
+        "solver-iterations": 2
+      }
+    },
+    {
+      "levelId": "L2-8x8",
+      "solverConverged": true,
+      "quantities": {
+        "residual-norm": 2.52829611941323E-08,
+        "stationarity-norm": 4.541192094244365E-08,
+        "objective-value": 3.196140633719999E-16,
+        "gauge-violation": 0.7518324539869274,
+        "solver-iterations": 2
+      }
+    }
+  ]
+}

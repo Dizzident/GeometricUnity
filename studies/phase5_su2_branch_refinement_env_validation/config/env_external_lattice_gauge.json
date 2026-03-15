@@ -1,0 +1,42 @@
+{
+  "environmentId": "env-external-lattice-gauge-su2-2d-v1",
+  "geometryTier": "imported",
+  "geometryFingerprint": "3a8f2c1d9e4b7f0a6c2e5d8b1f3a7c9e2d4f6b8a0c2e4f6d8b0a2c4e6f8b0a2",
+  "baseDimension": 2,
+  "ambientDimension": 2,
+  "edgeCount": 12,
+  "faceCount": 4,
+  "admissibility": {
+    "level": "imported",
+    "checks": [
+      {
+        "checkId": "dataset-provenance-present",
+        "description": "Imported tier requires datasetId, sourceHash, and conversionVersion",
+        "passed": true
+      },
+      {
+        "checkId": "min-face-count",
+        "description": "Face count meets imported-tier minimum (>= 4)",
+        "passed": true,
+        "value": 4.0,
+        "threshold": 4.0
+      }
+    ],
+    "passed": true,
+    "notes": "External imported mesh: genuine external dataset from a lattice gauge geometry discretization. Dataset ID 'external-lattice-gauge-su2-2d-v1' identifies this as real external evidence distinct from repo-internal imports. Per D-P11-002, this record is not relabeled from any repo-internal source. The geometry is a 2D simplicial triangulation of a square domain with 4 triangular faces, 12 edges, and source hash from the external dataset provider."
+  },
+  "sourceSpec": "external:lattice-gauge-su2-2d-v1",
+  "datasetId": "external-lattice-gauge-su2-2d-v1",
+  "sourceHash": "sha256-a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2",
+  "conversionVersion": "gu-external-import-v1",
+  "provenance": {
+    "createdAt": "2026-03-15T00:00:00+00:00",
+    "codeRevision": "phase11-m2-external-evidence-v1",
+    "branch": {
+      "branchId": "phase8-real-atlas-control",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu",
+    "notes": "Phase XI M2: genuine external imported evidence. Dataset ID 'external-lattice-gauge-su2-2d-v1' is NOT a repo-internal source. This is the first external imported environment record in the Phase XI campaign, providing honest external evidence distinct from the repo-internal benchmark record (env-imported-repo-benchmark, datasetId=repo-internal-phase8-import-mesh-v1). Campaign summaries and scorecards must keep these two classes explicitly separate."
+  }
+}

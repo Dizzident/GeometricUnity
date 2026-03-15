@@ -1,0 +1,58 @@
+{
+  "environmentId": "env-imported-repo-benchmark",
+  "geometryTier": "imported",
+  "geometryFingerprint": "95537d50a165f62ab833abfbc02bbda407216656205220e14a67e84de25552cf",
+  "baseDimension": 2,
+  "ambientDimension": 2,
+  "edgeCount": 5,
+  "faceCount": 2,
+  "admissibility": {
+    "level": "admissible",
+    "checks": [
+      {
+        "checkId": "mesh-valid",
+        "description": "All face volumes are strictly positive (no degenerate faces)",
+        "passed": true,
+        "value": 0.5,
+        "threshold": 1E-14
+      },
+      {
+        "checkId": "dimension-match",
+        "description": "Base dimension is at least 1 and does not exceed ambient dimension",
+        "passed": true,
+        "value": 2,
+        "threshold": 2
+      },
+      {
+        "checkId": "connectivity",
+        "description": "Edge count is at least the base dimension (minimally connected)",
+        "passed": true,
+        "value": 5,
+        "threshold": 2
+      },
+      {
+        "checkId": "orientation",
+        "description": "Face count is positive (required for differential forms)",
+        "passed": true,
+        "value": 2,
+        "threshold": 1
+      }
+    ],
+    "passed": true,
+    "notes": null
+  },
+  "sourceSpec": "studies/phase5_su2_branch_refinement_env_validation/datasets/phase8_repo_import_mesh.json",
+  "datasetId": "repo-internal-phase8-import-mesh-v1",
+  "sourceHash": "sha256-9009ef7d0cf69d1285b821444f5f20b345dbc5925d4674756ac6e4158dad194f",
+  "conversionVersion": "gu-json-native-v1",
+  "provenance": {
+    "createdAt": "2026-03-20T00:00:00+00:00",
+    "codeRevision": "phase8-imported-repo-benchmark-v1",
+    "branch": {
+      "branchId": "phase8-real-atlas-control",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu",
+    "notes": "Phase VIII imported benchmark path: checked-in repository mesh with real content hash and import contract, still not external evidence."
+  }
+}

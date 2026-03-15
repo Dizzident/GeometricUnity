@@ -49,7 +49,8 @@ public sealed class FermionObservationBuilderTests
         Assert.Equal(1.5, summary.MassLikeEnvelope[1], precision: 10);
         Assert.Equal(0.9, summary.BranchPersistenceScore, precision: 10);
         Assert.False(summary.IsTrivial);
-        Assert.Empty(summary.Notes);
+        // Per D-P11-010: proxy-observation note is always included.
+        Assert.NotEmpty(summary.Notes);
     }
 
     [Fact]
@@ -132,5 +133,54 @@ public sealed class FermionObservationBuilderTests
         var summary = FermionObservationBuilder.Build(cluster, TestProvenance());
 
         Assert.Equal("1.0.0", summary.SchemaVersion);
+    }
+
+    // -------- ObservationPathLabel contract tests (P11-M10) --------
+
+    [Fact]
+    public void Build_ObservationPathLabel_IsProxyObservation()
+    {
+        // Per D-P11-010: all current observations must be labeled proxy-observation.
+        var cluster = MakeCluster("c0", "left");
+        var summary = FermionObservationBuilder.Build(cluster, TestProvenance());
+
+        Assert.Equal(ObservationPathLabels.ProxyObservation, summary.ObservationPathLabel);
+    }
+
+    [Fact]
+    public void Build_ObservationPathLabel_IsNeverFullPullback()
+    {
+        // Enforce D-P11-010: current builder must not produce full-pullback label.
+        var cluster = MakeCluster("c0", "right");
+        var summary = FermionObservationBuilder.Build(cluster, TestProvenance());
+
+        Assert.NotEqual(ObservationPathLabels.FullPullback, summary.ObservationPathLabel);
+    }
+
+    [Fact]
+    public void Build_Notes_ContainProxyObservationWarning()
+    {
+        // Reports that read the notes field will surface the proxy-observation caveat.
+        var cluster = MakeCluster("c0", "left");
+        var summary = FermionObservationBuilder.Build(cluster, TestProvenance());
+
+        Assert.Contains(summary.Notes,
+            n => n.Contains("proxy-observation", StringComparison.Ordinal));
+    }
+
+    [Fact]
+    public void BuildAll_AllSummaries_HaveProxyObservationLabel()
+    {
+        var clusters = new[]
+        {
+            MakeCluster("c0", "left"),
+            MakeCluster("c1", "right"),
+            MakeCluster("c2", "mixed"),
+        };
+
+        var summaries = FermionObservationBuilder.BuildAll(clusters, TestProvenance());
+
+        Assert.All(summaries, s =>
+            Assert.Equal(ObservationPathLabels.ProxyObservation, s.ObservationPathLabel));
     }
 }

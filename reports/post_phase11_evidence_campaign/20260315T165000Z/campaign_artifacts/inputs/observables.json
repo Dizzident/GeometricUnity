@@ -1,0 +1,317 @@
+[
+  {
+    "observableId": "bosonic-eigenvalue-ratio-1",
+    "value": 0.091,
+    "uncertainty": {
+      "branchVariation": 0.004,
+      "refinementError": 0.004,
+      "extractionError": 0.003,
+      "environmentSensitivity": 0.006,
+      "totalUncertainty": 0.01
+    },
+    "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+    "environmentId": "env-structured-4x4",
+    "refinementLevel": "L1-4x4",
+    "extractionMethod": "eigenvalue-ratio",
+    "provenance": {
+      "createdAt": "2026-03-16T00:00:00+00:00",
+      "codeRevision": "phase6-reference-observables-v2",
+      "branch": { "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega", "schemaVersion": "1.0" },
+      "backend": "cpu"
+    }
+  },
+  {
+    "observableId": "bosonic-eigenvalue-ratio-1",
+    "value": 0.11,
+    "uncertainty": {
+      "branchVariation": 0.008,
+      "refinementError": 0.006,
+      "extractionError": 0.005,
+      "environmentSensitivity": 0.004,
+      "totalUncertainty": 0.018
+    },
+    "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+    "environmentId": "env-toy-2d-trivial",
+    "refinementLevel": "L0-2x2",
+    "extractionMethod": "eigenvalue-ratio",
+    "provenance": {
+      "createdAt": "2026-03-16T00:00:00+00:00",
+      "codeRevision": "phase6-reference-observables-v2",
+      "branch": { "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega", "schemaVersion": "1.0" },
+      "backend": "cpu"
+    }
+  },
+  {
+    "observableId": "bosonic-eigenvalue-ratio-1",
+    "value": 0.096,
+    "uncertainty": {
+      "branchVariation": 0.005,
+      "refinementError": 0.004,
+      "extractionError": 0.003,
+      "environmentSensitivity": 0.005,
+      "totalUncertainty": 0.012
+    },
+    "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+    "environmentId": "env-imported-repo-benchmark",
+    "refinementLevel": "imported-repo-benchmark",
+    "extractionMethod": "eigenvalue-ratio",
+    "provenance": {
+      "createdAt": "2026-03-16T00:00:00+00:00",
+      "codeRevision": "phase6-reference-observables-v2",
+      "branch": { "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega", "schemaVersion": "1.0" },
+      "backend": "cpu"
+    }
+  },
+  {
+    "observableId": "bosonic-eigenvalue-ratio-2",
+    "value": 1.02,
+    "uncertainty": {
+      "branchVariation": 0.018,
+      "refinementError": 0.016,
+      "extractionError": 0.012,
+      "environmentSensitivity": 0.02,
+      "totalUncertainty": 0.045
+    },
+    "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+    "environmentId": "env-structured-4x4",
+    "refinementLevel": "L1-4x4",
+    "extractionMethod": "eigenvalue-ratio",
+    "provenance": {
+      "createdAt": "2026-03-16T00:00:00+00:00",
+      "codeRevision": "phase6-reference-observables-v2",
+      "branch": { "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega", "schemaVersion": "1.0" },
+      "backend": "cpu"
+    }
+  },
+  {
+    "observableId": "bosonic-eigenvalue-ratio-2",
+    "value": 1.05,
+    "uncertainty": {
+      "branchVariation": 0.04,
+      "refinementError": 0.03,
+      "extractionError": 0.025,
+      "environmentSensitivity": 0.03,
+      "totalUncertainty": 0.08
+    },
+    "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+    "environmentId": "env-toy-2d-trivial",
+    "refinementLevel": "L0-2x2",
+    "extractionMethod": "eigenvalue-ratio",
+    "provenance": {
+      "createdAt": "2026-03-16T00:00:00+00:00",
+      "codeRevision": "phase6-reference-observables-v2",
+      "branch": { "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega", "schemaVersion": "1.0" },
+      "backend": "cpu"
+    }
+  },
+  {
+    "observableId": "bosonic-eigenvalue-ratio-2",
+    "value": 0.98,
+    "uncertainty": {
+      "branchVariation": 0.02,
+      "refinementError": 0.018,
+      "extractionError": 0.012,
+      "environmentSensitivity": 0.022,
+      "totalUncertainty": 0.05
+    },
+    "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+    "environmentId": "env-imported-repo-benchmark",
+    "refinementLevel": "imported-repo-benchmark",
+    "extractionMethod": "eigenvalue-ratio",
+    "provenance": {
+      "createdAt": "2026-03-16T00:00:00+00:00",
+      "codeRevision": "phase6-reference-observables-v2",
+      "branch": { "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega", "schemaVersion": "1.0" },
+      "backend": "cpu"
+    }
+  },
+  {
+    "observableId": "bosonic-eigenvalue-ratio-3",
+    "value": 5.22,
+    "uncertainty": {
+      "branchVariation": 0.11,
+      "refinementError": 0.12,
+      "extractionError": 0.08,
+      "environmentSensitivity": 0.14,
+      "totalUncertainty": 0.24
+    },
+    "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+    "environmentId": "env-structured-4x4",
+    "refinementLevel": "L1-4x4",
+    "extractionMethod": "eigenvalue-ratio",
+    "provenance": {
+      "createdAt": "2026-03-16T00:00:00+00:00",
+      "codeRevision": "phase6-reference-observables-v2",
+      "branch": { "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega", "schemaVersion": "1.0" },
+      "backend": "cpu"
+    }
+  },
+  {
+    "observableId": "bosonic-eigenvalue-ratio-3",
+    "value": 5.41,
+    "uncertainty": {
+      "branchVariation": 0.3,
+      "refinementError": 0.25,
+      "extractionError": 0.2,
+      "environmentSensitivity": 0.15,
+      "totalUncertainty": 0.46
+    },
+    "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+    "environmentId": "env-toy-2d-trivial",
+    "refinementLevel": "L0-2x2",
+    "extractionMethod": "eigenvalue-ratio",
+    "provenance": {
+      "createdAt": "2026-03-16T00:00:00+00:00",
+      "codeRevision": "phase6-reference-observables-v2",
+      "branch": { "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega", "schemaVersion": "1.0" },
+      "backend": "cpu"
+    }
+  },
+  {
+    "observableId": "bosonic-eigenvalue-ratio-3",
+    "value": 5.1,
+    "uncertainty": {
+      "branchVariation": 0.12,
+      "refinementError": 0.13,
+      "extractionError": 0.09,
+      "environmentSensitivity": 0.15,
+      "totalUncertainty": 0.28
+    },
+    "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+    "environmentId": "env-imported-repo-benchmark",
+    "refinementLevel": "imported-repo-benchmark",
+    "extractionMethod": "eigenvalue-ratio",
+    "provenance": {
+      "createdAt": "2026-03-16T00:00:00+00:00",
+      "codeRevision": "phase6-reference-observables-v2",
+      "branch": { "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega", "schemaVersion": "1.0" },
+      "backend": "cpu"
+    }
+  },
+  {
+    "observableId": "fermionic-eigenvalue-ratio-1",
+    "value": 0.052,
+    "uncertainty": {
+      "branchVariation": 0.002,
+      "refinementError": 0.002,
+      "extractionError": 0.001,
+      "environmentSensitivity": 0.002,
+      "totalUncertainty": 0.005
+    },
+    "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+    "environmentId": "env-structured-4x4",
+    "refinementLevel": "L1-4x4",
+    "extractionMethod": "eigenvalue-ratio",
+    "provenance": {
+      "createdAt": "2026-03-16T00:00:00+00:00",
+      "codeRevision": "phase6-reference-observables-v2",
+      "branch": { "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega", "schemaVersion": "1.0" },
+      "backend": "cpu"
+    }
+  },
+  {
+    "observableId": "fermionic-eigenvalue-ratio-1",
+    "value": 0.055,
+    "uncertainty": {
+      "branchVariation": 0.003,
+      "refinementError": 0.003,
+      "extractionError": 0.002,
+      "environmentSensitivity": 0.002,
+      "totalUncertainty": 0.008
+    },
+    "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+    "environmentId": "env-toy-2d-trivial",
+    "refinementLevel": "L0-2x2",
+    "extractionMethod": "eigenvalue-ratio",
+    "provenance": {
+      "createdAt": "2026-03-16T00:00:00+00:00",
+      "codeRevision": "phase6-reference-observables-v2",
+      "branch": { "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega", "schemaVersion": "1.0" },
+      "backend": "cpu"
+    }
+  },
+  {
+    "observableId": "fermionic-eigenvalue-ratio-1",
+    "value": 0.051,
+    "uncertainty": {
+      "branchVariation": 0.002,
+      "refinementError": 0.002,
+      "extractionError": 0.001,
+      "environmentSensitivity": 0.002,
+      "totalUncertainty": 0.006
+    },
+    "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+    "environmentId": "env-imported-repo-benchmark",
+    "refinementLevel": "imported-repo-benchmark",
+    "extractionMethod": "eigenvalue-ratio",
+    "provenance": {
+      "createdAt": "2026-03-16T00:00:00+00:00",
+      "codeRevision": "phase6-reference-observables-v2",
+      "branch": { "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega", "schemaVersion": "1.0" },
+      "backend": "cpu"
+    }
+  },
+  {
+    "observableId": "fermionic-eigenvalue-ratio-2",
+    "value": 1.91,
+    "uncertainty": {
+      "branchVariation": 0.04,
+      "refinementError": 0.05,
+      "extractionError": 0.03,
+      "environmentSensitivity": 0.04,
+      "totalUncertainty": 0.1
+    },
+    "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+    "environmentId": "env-structured-4x4",
+    "refinementLevel": "L1-4x4",
+    "extractionMethod": "eigenvalue-ratio",
+    "provenance": {
+      "createdAt": "2026-03-16T00:00:00+00:00",
+      "codeRevision": "phase6-reference-observables-v2",
+      "branch": { "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega", "schemaVersion": "1.0" },
+      "backend": "cpu"
+    }
+  },
+  {
+    "observableId": "fermionic-eigenvalue-ratio-2",
+    "value": 2.0,
+    "uncertainty": {
+      "branchVariation": 0.1,
+      "refinementError": 0.08,
+      "extractionError": 0.07,
+      "environmentSensitivity": 0.05,
+      "totalUncertainty": 0.15
+    },
+    "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+    "environmentId": "env-toy-2d-trivial",
+    "refinementLevel": "L0-2x2",
+    "extractionMethod": "eigenvalue-ratio",
+    "provenance": {
+      "createdAt": "2026-03-16T00:00:00+00:00",
+      "codeRevision": "phase6-reference-observables-v2",
+      "branch": { "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega", "schemaVersion": "1.0" },
+      "backend": "cpu"
+    }
+  },
+  {
+    "observableId": "fermionic-eigenvalue-ratio-2",
+    "value": 1.87,
+    "uncertainty": {
+      "branchVariation": 0.045,
+      "refinementError": 0.05,
+      "extractionError": 0.03,
+      "environmentSensitivity": 0.045,
+      "totalUncertainty": 0.11
+    },
+    "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+    "environmentId": "env-imported-repo-benchmark",
+    "refinementLevel": "imported-repo-benchmark",
+    "extractionMethod": "eigenvalue-ratio",
+    "provenance": {
+      "createdAt": "2026-03-16T00:00:00+00:00",
+      "codeRevision": "phase6-reference-observables-v2",
+      "branch": { "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega", "schemaVersion": "1.0" },
+      "backend": "cpu"
+    }
+  }
+]

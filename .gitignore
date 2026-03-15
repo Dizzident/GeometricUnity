@@ -64,6 +64,9 @@ benchmark-results/
 reports/phase5_gap_closure_batch/
 reports/tmp_test/
 
+# External data
+data/external/
+
 # User-specific
 *.rsuser
 launchSettings.json

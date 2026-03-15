@@ -1,0 +1,38 @@
+{
+  "studyId": "phase5-su2-refinement-ladder-first-order-shiab-phase9",
+  "levels": [
+    {
+      "levelId": "L0-2x2",
+      "solverConverged": true,
+      "quantities": {
+        "residual-norm": 0,
+        "stationarity-norm": 0,
+        "objective-value": 0,
+        "gauge-violation": 0,
+        "solver-iterations": 0
+      }
+    },
+    {
+      "levelId": "L1-4x4",
+      "solverConverged": true,
+      "quantities": {
+        "residual-norm": 0,
+        "stationarity-norm": 0,
+        "objective-value": 0,
+        "gauge-violation": 0,
+        "solver-iterations": 0
+      }
+    },
+    {
+      "levelId": "L2-8x8",
+      "solverConverged": true,
+      "quantities": {
+        "residual-norm": 0,
+        "stationarity-norm": 0,
+        "objective-value": 0,
+        "gauge-violation": 0,
+        "solver-iterations": 0
+      }
+    }
+  ]
+}

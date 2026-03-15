@@ -96,4 +96,17 @@ public sealed class BranchManifest
     /// <summary>Arbitrary branch parameters.</summary>
     [JsonPropertyName("parameters")]
     public IReadOnlyDictionary<string, string>? Parameters { get; init; }
+
+    /// <summary>
+    /// Torsion draft-alignment status for this branch (P11-M8, D-P11-008).
+    /// Documents the relationship between the active torsion operator and the
+    /// draft's group-level formula T_g = $ - epsilon^{-1} d_{A0} epsilon.
+    ///
+    /// Default: "surrogate-first-order" — the current surrogate T^aug = d_{A0}(omega - A0)
+    /// agrees with the draft at first order in xi = omega - A0, but deviates at higher order.
+    ///
+    /// This field is metadata only — it does NOT change operator behavior.
+    /// </summary>
+    [JsonPropertyName("torsionDraftAlignment")]
+    public string TorsionDraftAlignment { get; init; } = "surrogate-first-order";
 }

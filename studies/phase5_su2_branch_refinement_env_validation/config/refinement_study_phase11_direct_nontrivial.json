@@ -1,0 +1,24 @@
+{
+  "studyId": "phase11-nontrivial-direct-refinement-ladder",
+  "schemaVersion": "1.0",
+  "branchManifestId": "phase8-real-atlas-control",
+  "targetQuantities": [
+    "residual-norm",
+    "stationarity-norm",
+    "objective-value",
+    "gauge-violation",
+    "solver-iterations"
+  ],
+  "refinementLevels": [
+    { "levelId": "L0-2x2", "meshParameterX": 1.0, "meshParameterF": 1.0, "description": "2x2 structured mesh, SymmetricAnsatz seed, GaussNewton" },
+    { "levelId": "L1-4x4", "meshParameterX": 0.5, "meshParameterF": 0.5, "description": "4x4 structured mesh, SymmetricAnsatz seed, GaussNewton" },
+    { "levelId": "L2-8x8", "meshParameterX": 0.25, "meshParameterF": 0.25, "description": "8x8 structured mesh, SymmetricAnsatz seed, GaussNewton" }
+  ],
+  "provenance": {
+    "createdAt": "2026-03-15T00:00:00+00:00",
+    "codeRevision": "phase11-direct-nontrivial-refinement-v1",
+    "branch": { "branchId": "phase8-real-atlas-control", "schemaVersion": "1.0" },
+    "backend": "cpu"
+  },
+  "notes": "Phase XI nontrivial direct solver-backed refinement ladder. Uses GaussNewton solver with SymmetricAnsatz seeds to produce non-zero admitted backgrounds on each refinement level. Residual, stationarity, objective, and gauge-violation are non-constant across levels. This ladder is distinct from the Phase X zero-invariant direct control ladder (phase10_direct_refinement_standard) and from the bridge-derived ladder."
+}

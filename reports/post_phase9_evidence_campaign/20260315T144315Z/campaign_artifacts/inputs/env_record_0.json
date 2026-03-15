@@ -1,0 +1,22 @@
+{
+  "environmentId": "env-toy-2d-trivial",
+  "geometryTier": "toy",
+  "geometryFingerprint": "toy-2x2-trivial-v1",
+  "baseDimension": 2,
+  "ambientDimension": 2,
+  "edgeCount": 4,
+  "faceCount": 2,
+  "admissibility": {
+    "level": "toy",
+    "checks": [],
+    "passed": true,
+    "notes": "Toy 2x2 environment for Phase V M53 reference study"
+  },
+  "sourceSpec": "config/env_toy_2d.json",
+  "provenance": {
+    "createdAt": "2026-03-14T00:00:00+00:00",
+    "codeRevision": "phase5-m53-ref-study-v1",
+    "branch": { "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega", "schemaVersion": "1.0" },
+    "backend": "cpu"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "recordId": "shiab-scope-three-20260315184954",
+  "schemaVersion": "1.0.0",
+  "standardPathShiabIds": [
+    "identity-shiab"
+  ],
+  "pairedPathShiabIds": [
+    "first-order-curvature",
+    "metric-scaled-shiab"
+  ],
+  "operatorsAreMathematicallyDistinct": true,
+  "standardPathBranchResult": "checked",
+  "pairedPathBranchResult": "checked",
+  "pairedPathChangesConclusion": true,
+  "familyOpenStatement": "FAMILY-OPEN: The draft (Section 8) leaves Shiab as an underdetermined family \u2014 the author states the family has \u0027a byzantine taxonomy\u0027 and the operator choice is intentionally underdetermined. Three-operator comparison: standard(identity-shiab) vs paired(first-order-curvature): identity-equivalent (max|diff|=0); standard vs metric-scaled-shiab: distinct (max|diff|=0.3); paired vs metric-scaled-shiab: max|diff|=0.3. The third operator (metric-scaled-shiab) is numerically distinct from the standard (max|diff|=0.3, max|output|=0.3). This constitutes a partial Shiab family expansion on the current toy geometry (dimX=2). On dimX=2, Lambda^2(T*X) is 1-dimensional; the only distinguishable Shiab variant is scalar scaling. This does NOT change the branch robustness conclusion \u2014 scalar rescaling of F shifts the solution uniformly and preserves gauge-violation and solver-iteration fragility behavior. Full Shiab family exploration (Ricci/Weyl decompositions) requires dimX \u003E= 4 per physicist guidance. None of the exercised operators is the canonically selected draft operator. All current branches carry draftAlignmentStatus=surrogate. The Shiab family remains open pending draft-aligned 4D geometry and physics guidance.",
+  "provenance": {
+    "createdAt": "2026-03-15T18:49:54.5599086+00:00",
+    "codeRevision": "phase11-cli",
+    "branch": {
+      "branchId": "shiab-scope-check",
+      "schemaVersion": "1.0.0"
+    },
+    "notes": "check-shiab-scope: lie-algebra=su3"
+  }
+}

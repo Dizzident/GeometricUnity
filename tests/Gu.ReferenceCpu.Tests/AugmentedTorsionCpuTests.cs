@@ -539,4 +539,265 @@ public class AugmentedTorsionCpuTests
             Assert.Equal(fdApprox, dT.Coefficients[i], 4);
         }
     }
+
+    // ===== Draft-alignment record tests (P11-M8) =====
+
+    private static ProvenanceMeta TestProvenance() => new()
+    {
+        CreatedAt = DateTimeOffset.UtcNow,
+        CodeRevision = "phase11-test",
+        Branch = new BranchRef { BranchId = "test-branch", SchemaVersion = "1.0.0" },
+        Backend = "cpu-reference",
+    };
+
+    [Fact]
+    public void GetDraftAlignmentRecord_StatusIsBranchLocalSurrogate()
+    {
+        var mesh = SingleTriangle();
+        var algebra = LieAlgebraFactory.CreateSu2WithTracePairing();
+        var torsion = new AugmentedTorsionCpu(mesh, algebra);
+
+        var record = torsion.GetDraftAlignmentRecord(TestProvenance());
+
+        Assert.Equal(DraftAlignmentStatuses.BranchLocalSurrogate, record.DraftAlignmentStatus);
+    }
+
+    [Fact]
+    public void GetDraftAlignmentRecord_EquivalenceDerived_IsFalse()
+    {
+        // Per D-P11-008: equivalence between surrogate and draft-form has NOT been derived.
+        var mesh = SingleTriangle();
+        var algebra = LieAlgebraFactory.CreateSu2WithTracePairing();
+        var torsion = new AugmentedTorsionCpu(mesh, algebra);
+
+        var record = torsion.GetDraftAlignmentRecord(TestProvenance());
+
+        Assert.False(record.EquivalenceDerived);
+        Assert.Null(record.EquivalenceConditions);
+    }
+
+    [Fact]
+    public void GetDraftAlignmentRecord_AssumptionIdIsA008()
+    {
+        var mesh = SingleTriangle();
+        var algebra = LieAlgebraFactory.CreateSu2WithTracePairing();
+        var torsion = new AugmentedTorsionCpu(mesh, algebra);
+
+        var record = torsion.GetDraftAlignmentRecord(TestProvenance());
+
+        Assert.Equal("A-008", record.AssumptionId);
+    }
+
+    [Fact]
+    public void GetDraftAlignmentRecord_DraftReferenceContainsSection7()
+    {
+        var mesh = SingleTriangle();
+        var algebra = LieAlgebraFactory.CreateSu2WithTracePairing();
+        var torsion = new AugmentedTorsionCpu(mesh, algebra);
+
+        var record = torsion.GetDraftAlignmentRecord(TestProvenance());
+
+        Assert.Contains("Section 7", record.DraftReference);
+    }
+
+    [Fact]
+    public void GetDraftAlignmentRecord_SurrogateDescriptionMentionsDraftFormula()
+    {
+        var mesh = SingleTriangle();
+        var algebra = LieAlgebraFactory.CreateSu2WithTracePairing();
+        var torsion = new AugmentedTorsionCpu(mesh, algebra);
+
+        var record = torsion.GetDraftAlignmentRecord(TestProvenance());
+
+        Assert.Contains("epsilon", record.SurrogateDescription);
+        Assert.Contains("d_{A0}(omega - A0)", record.SurrogateDescription);
+    }
+
+    [Fact]
+    public void GetDraftAlignmentRecord_IsNotDraftForm()
+    {
+        // This test enforces D-P11-008: the current torsion must NOT be labeled draft-form.
+        var mesh = SingleTriangle();
+        var algebra = LieAlgebraFactory.CreateSu2WithTracePairing();
+        var torsion = new AugmentedTorsionCpu(mesh, algebra);
+
+        var record = torsion.GetDraftAlignmentRecord(TestProvenance());
+
+        Assert.NotEqual(DraftAlignmentStatuses.DraftForm, record.DraftAlignmentStatus);
+    }
+
+    [Fact]
+    public void TorsionDraftAlignmentRecord_CreateSurrogate_CarriesProvenance()
+    {
+        var provenance = TestProvenance();
+        var record = TorsionDraftAlignmentRecord.CreateSurrogate(provenance);
+
+        Assert.Same(provenance, record.Provenance);
+    }
+
+    [Fact]
+    public void DraftAlignmentStatuses_DraftForm_DistinctFromSurrogate()
+    {
+        Assert.NotEqual(DraftAlignmentStatuses.DraftForm, DraftAlignmentStatuses.BranchLocalSurrogate);
+    }
+
+    // ===== TorsionDraftAlignmentChecker tests (P11-M8) =====
+
+    [Fact]
+    public void Checker_ZeroXi_ResidualIsZero()
+    {
+        // When omega = A0 (xi = 0), T^aug = 0 and T_g^{(1)} = 0, so residual = 0.
+        var mesh = SingleTriangle();
+        var algebra = LieAlgebraFactory.CreateSu2WithTracePairing();
+        var checker = new TorsionDraftAlignmentChecker(mesh, algebra);
+
+        var a0 = new ConnectionField(mesh, algebra);
+        a0.SetEdgeValue(0, new[] { 0.5, 0.1, 0.0 });
+        a0.SetEdgeValue(1, new[] { 0.0, 0.3, 0.2 });
+        a0.SetEdgeValue(2, new[] { 0.1, 0.0, 0.4 });
+        var a0Tensor = a0.ToFieldTensor();
+
+        // omega = A0 exactly (xi = 0)
+        var omega = new ConnectionField(mesh, algebra);
+        Array.Copy(a0.Coefficients, omega.Coefficients, a0.Coefficients.Length);
+        var omegaTensor = omega.ToFieldTensor();
+
+        var record = checker.ComputeAlignment(omegaTensor, a0Tensor, TestProvenance());
+
+        Assert.Equal(0.0, record.AlignmentResidualNorm, 12);
+        Assert.Equal(0.0, record.EpsilonNorm, 12);
+        Assert.Equal(SurrogateBoundaryValues.FirstOrderSurrogate, record.SurrogateBoundary);
+    }
+
+    [Fact]
+    public void Checker_SmallXi_ResidualIsFirstOrderSurrogate()
+    {
+        // For small xi (norm ~ 0.01), residual should be O(||xi||^2) and classified first-order-surrogate.
+        // When A0=0: T^aug(omega,0) = d(xi) and T_g^{(1)}(xi) = -d(-xi) = d(xi)
+        // so the first-order residual = d(xi) + (-d(xi)) = 0.
+        var mesh = SingleTriangle();
+        var algebra = LieAlgebraFactory.CreateSu2WithTracePairing();
+        var checker = new TorsionDraftAlignmentChecker(mesh, algebra);
+
+        int dimG = algebra.Dimension;
+        int edgeCount = mesh.EdgeCount;
+
+        double xiNorm = 0.01;
+        var a0Coeffs = new double[edgeCount * dimG]; // zero background
+        var xiCoeffs = new double[edgeCount * dimG];
+        // Simple unit perturbation scaled to xiNorm
+        xiCoeffs[0] = xiNorm; // only first component
+
+        var a0Tensor = new FieldTensor
+        {
+            Label = "a0", Signature = MakeSignature(algebra), Coefficients = a0Coeffs,
+            Shape = new[] { edgeCount, dimG }
+        };
+        var omegaCoeffs = (double[])a0Coeffs.Clone();
+        for (int i = 0; i < omegaCoeffs.Length; i++) omegaCoeffs[i] += xiCoeffs[i];
+        var omegaTensor = new FieldTensor
+        {
+            Label = "omega", Signature = MakeSignature(algebra), Coefficients = omegaCoeffs,
+            Shape = new[] { edgeCount, dimG }
+        };
+
+        var record = checker.ComputeAlignment(omegaTensor, a0Tensor, TestProvenance());
+
+        Assert.Equal(SurrogateBoundaryValues.FirstOrderSurrogate, record.SurrogateBoundary);
+        Assert.True(record.AlignmentResidualNorm <= record.EpsilonNorm,
+            $"Residual {record.AlignmentResidualNorm} should be <= xi norm {record.EpsilonNorm}");
+    }
+
+    [Fact]
+    public void Checker_Record_HasProvenance()
+    {
+        var mesh = SingleTriangle();
+        var algebra = LieAlgebraFactory.CreateSu2WithTracePairing();
+        var checker = new TorsionDraftAlignmentChecker(mesh, algebra);
+
+        int dimG = algebra.Dimension;
+        int edgeCount = mesh.EdgeCount;
+        var zero = new FieldTensor
+        {
+            Label = "z", Signature = MakeSignature(algebra),
+            Coefficients = new double[edgeCount * dimG],
+            Shape = new[] { edgeCount, dimG }
+        };
+
+        var prov = TestProvenance();
+        var record = checker.ComputeAlignment(zero, zero, prov);
+
+        Assert.Same(prov, record.Provenance);
+    }
+
+    [Fact]
+    public void Checker_SurrogateBoundaries_AreDistinct()
+    {
+        Assert.NotEqual(SurrogateBoundaryValues.FirstOrderSurrogate, SurrogateBoundaryValues.HigherOrderNeeded);
+    }
+
+    [Fact]
+    public void BranchManifest_DefaultTorsionDraftAlignment_IsSurrogateFirstOrder()
+    {
+        // BranchManifest default must document the surrogate status (not draft-exact).
+        var manifest = new BranchManifest
+        {
+            BranchId = "test",
+            SchemaVersion = "1.0.0",
+            SourceEquationRevision = "r1",
+            CodeRevision = "test",
+            ActiveGeometryBranch = "simplicial",
+            ActiveObservationBranch = "sigma-pullback",
+            ActiveTorsionBranch = "augmented-torsion",
+            ActiveShiabBranch = "identity-shiab",
+            ActiveGaugeStrategy = "penalty",
+            BaseDimension = 4,
+            AmbientDimension = 14,
+            LieAlgebraId = "su2",
+            BasisConventionId = "canonical",
+            ComponentOrderId = "face-major",
+            AdjointConventionId = "adjoint-explicit",
+            PairingConventionId = "pairing-trace",
+            NormConventionId = "norm-l2-quadrature",
+            DifferentialFormMetricId = "hodge-standard",
+            InsertedAssumptionIds = Array.Empty<string>(),
+            InsertedChoiceIds = Array.Empty<string>(),
+        };
+
+        Assert.Equal("surrogate-first-order", manifest.TorsionDraftAlignment);
+    }
+
+    [Fact]
+    public void Checker_AlignmentDescription_MentionsBothConstructions()
+    {
+        // AlignmentDescription must distinguish the covariant-derivative surrogate from
+        // the draft's bi-connection difference per architect/physicist guidance.
+        var mesh = SingleTriangle();
+        var algebra = LieAlgebraFactory.CreateSu2WithTracePairing();
+        var checker = new TorsionDraftAlignmentChecker(mesh, algebra);
+        int dimG = algebra.Dimension;
+        int edgeCount = mesh.EdgeCount;
+        var zero = new FieldTensor
+        {
+            Label = "z", Signature = MakeSignature(algebra),
+            Coefficients = new double[edgeCount * dimG],
+            Shape = new[] { edgeCount, dimG }
+        };
+        var record = checker.ComputeAlignment(zero, zero, TestProvenance());
+
+        Assert.Contains("d_{A0}", record.AlignmentDescription);
+        Assert.Contains("bi-connection", record.AlignmentDescription);
+        Assert.Contains("O(|omega - A0|^2)", record.AlignmentDescription);
+    }
+
+    private static TensorSignature MakeSignature(LieAlgebra algebra) => new()
+    {
+        AmbientSpaceId = "Y_h",
+        CarrierType = "connection-1form",
+        Degree = "1",
+        LieAlgebraBasisId = algebra.BasisOrderId,
+        ComponentOrderId = "edge-major",
+        NumericPrecision = "float64",
+        MemoryLayout = "dense-row-major",
+    };
 }

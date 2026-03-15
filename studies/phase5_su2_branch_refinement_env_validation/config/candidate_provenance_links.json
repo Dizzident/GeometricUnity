@@ -1,0 +1,17 @@
+[
+  {
+    "candidateId": "fermion-registry-phase4-toy-v1-0001",
+    "branchVariantIds": [
+      "bg-variant-95ee11778cc7ac01",
+      "bg-variant-d840fea6e6d36748",
+      "bg-variant-d84f5d66fd98b842",
+      "bg-variant-53b598740d9569b4"
+    ],
+    "backgroundIds": [
+      "bg-phase10-direct-standard-l0-20260315154018",
+      "bg-phase10-direct-standard-l1-20260315153944",
+      "bg-phase10-direct-standard-l2-20260315153945"
+    ],
+    "notes": "Phase XI M1: real candidate-linked branch/background provenance for fermion-registry-phase4-toy-v1-0001. Branch variant IDs from the Phase IX real atlas bridge manifest (bridge-atlas-phase9-real-bridge-atlas-20260315144506). Background IDs from the Phase X direct solver-backed refinement evidence manifest (direct-refinement-phase5-su2-refinement-ladder-20260315T154028Z). These are the honest executed IDs; the branch study result remains mixed and the BranchRobust gate remains fail-closed because gauge-violation and solver-iterations are still fragile. Non-empty evidenceRecordIds are now populated so downstream auditing can trace which campaign-level evidence was considered per candidate."
+  }
+]

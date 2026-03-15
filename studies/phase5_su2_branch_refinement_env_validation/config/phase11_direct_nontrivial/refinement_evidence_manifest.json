@@ -1,0 +1,26 @@
+{
+  "manifestId": "direct-refinement-phase11-nontrivial-direct-refinement-ladder-20260315T165002Z",
+  "studyId": "phase11-nontrivial-direct-refinement-ladder",
+  "evidenceSource": "direct-solver-backed",
+  "sourceRecordIds": [
+    "bg-phase11-direct-nontrivial-l0-gn-20260315164220",
+    "bg-phase11-direct-nontrivial-l1-gn-20260315164239",
+    "bg-phase11-direct-nontrivial-l2-gn-20260315164712"
+  ],
+  "sourceArtifactRefs": [
+    "/home/josh/Documents/GitHub/GeometricUnity/studies/phase5_su2_branch_refinement_env_validation/upstream/phase11_direct_nontrivial_l0/background_records/bg-phase11-direct-nontrivial-l0-gn-20260315164220.json",
+    "/home/josh/Documents/GitHub/GeometricUnity/studies/phase5_su2_branch_refinement_env_validation/upstream/phase11_direct_nontrivial_l1/background_records/bg-phase11-direct-nontrivial-l1-gn-20260315164239.json",
+    "/home/josh/Documents/GitHub/GeometricUnity/studies/phase5_su2_branch_refinement_env_validation/upstream/phase11_direct_nontrivial_l2/background_records/bg-phase11-direct-nontrivial-l2-gn-20260315164712.json"
+  ],
+  "notes": "Direct solver-backed refinement ladder assembled from executed background records.",
+  "provenance": {
+    "createdAt": "2026-03-15T16:50:02.1504684+00:00",
+    "codeRevision": "export-phase5-direct-refinement-values",
+    "branch": {
+      "branchId": "phase8-real-atlas-control",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu",
+    "notes": "Direct solver-backed refinement export from persisted background records."
+  }
+}

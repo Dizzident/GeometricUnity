@@ -1,0 +1,62 @@
+{
+  "atlasId": "atlas-phase11-direct-nontrivial-l1-20260315164239",
+  "studyId": "phase11-direct-nontrivial-l1",
+  "backgrounds": [
+    {
+      "backgroundId": "bg-phase11-direct-nontrivial-l1-gn-20260315164239",
+      "environmentId": "env-refinement-4x4",
+      "branchManifestId": "phase8-real-atlas-control",
+      "geometryFingerprint": "simplicial-X_h-Y_h-centroid-P1",
+      "stateArtifactRef": "studies/phase5_su2_branch_refinement_env_validation/upstream/phase11_direct_nontrivial_l1/background_states/bg-phase11-direct-nontrivial-l1-gn-20260315164239_omega.json",
+      "residualNorm": 4.036703546419408E-08,
+      "stationarityNorm": 7.542687920924676E-08,
+      "admissibilityLevel": "B1",
+      "metrics": {
+        "residualNorm": 4.036703546419408E-08,
+        "stationarityNorm": 7.542687920924676E-08,
+        "objectiveValue": 8.147487760837512E-16,
+        "gaugeViolation": 0.4216017120512833,
+        "solverIterations": 2,
+        "solverConverged": true,
+        "terminationReason": "Objective below tolerance",
+        "gaussNewtonValid": false
+      },
+      "replayTierAchieved": "R2",
+      "provenance": {
+        "createdAt": "2026-03-15T16:42:33.7381476+00:00",
+        "codeRevision": "phase8-real-atlas-control",
+        "branch": {
+          "branchId": "phase8-real-atlas-control",
+          "schemaVersion": "1.0.0"
+        },
+        "backend": "cpu-reference"
+      },
+      "environmentTier": "structured",
+      "runClassification": {
+        "runType": "objective-solve",
+        "seedSource": "symmetric-ansatz",
+        "isTrivialValidationPath": false,
+        "validationNote": "objective-solve on symmetric-ansatz.",
+        "solverMode": "B",
+        "classifiedAt": "2026-03-15T16:42:39.8760737+00:00"
+      },
+      "consumedManifestArtifactRef": "studies/phase5_su2_branch_refinement_env_validation/upstream/phase11_direct_nontrivial_l1/background_states/bg-phase11-direct-nontrivial-l1-gn-20260315164239_manifest.json"
+    }
+  ],
+  "rejectedBackgrounds": [],
+  "rankingCriteria": "admissibility-then-residual",
+  "totalAttempts": 1,
+  "provenance": {
+    "createdAt": "2026-03-15T16:42:33.7381476+00:00",
+    "codeRevision": "phase8-real-atlas-control",
+    "branch": {
+      "branchId": "phase8-real-atlas-control",
+      "schemaVersion": "1.0.0"
+    },
+    "backend": "cpu-reference"
+  },
+  "admissibilityCounts": {
+    "B1": 1
+  },
+  "environmentTier": "structured"
+}

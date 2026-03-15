@@ -1,0 +1,28 @@
+{
+  "manifestId": "bridge-refinement-atlas-phase9-real-bridge-atlas-20260315144506-20260315T154820Z",
+  "studyId": "phase5-su2-refinement-ladder",
+  "evidenceSource": "bridge-derived",
+  "sourceRecordIds": [
+    "bg-phase9-bg-0-20260315144501",
+    "bg-phase9-bg-2-20260315144502",
+    "bg-phase9-bg-6-20260315144506",
+    "bg-phase9-bg-4-20260315144504"
+  ],
+  "sourceArtifactRefs": [
+    "studies/phase5_su2_branch_refinement_env_validation/upstream/phase9_real_atlas/background_states/bg-phase9-bg-0-20260315144501_omega.json",
+    "studies/phase5_su2_branch_refinement_env_validation/upstream/phase9_real_atlas/background_states/bg-phase9-bg-2-20260315144502_omega.json",
+    "studies/phase5_su2_branch_refinement_env_validation/upstream/phase9_real_atlas/background_states/bg-phase9-bg-6-20260315144506_omega.json",
+    "studies/phase5_su2_branch_refinement_env_validation/upstream/phase9_real_atlas/background_states/bg-phase9-bg-4-20260315144504_omega.json"
+  ],
+  "notes": "Bridge export from atlas atlas-phase9-real-bridge-atlas-20260315144506.",
+  "provenance": {
+    "createdAt": "2026-03-15T15:48:20.1653732+00:00",
+    "codeRevision": "export-phase5-bridge-values",
+    "branch": {
+      "branchId": "phase9-real-bridge-atlas",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu",
+    "notes": "Bridge export from atlas atlas-phase9-real-bridge-atlas-20260315144506"
+  }
+}

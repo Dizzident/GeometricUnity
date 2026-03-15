@@ -64,6 +64,10 @@
       "provenance": {
         "type": ["object", "null"],
         "description": "Provenance of the backend that produced this record."
+      },
+      "p11StabilizationNote": {
+        "type": ["string", "null"],
+        "description": "Phase XI P11-M5 stabilization note. Non-null when this record has been examined in Phase XI and the representation-content fatal is a stable scientific limitation that cannot be closed in the current repository context."
       }
     },
     "additionalProperties": false

@@ -1,0 +1,152 @@
+{
+  "StudyId": "phase5-su2-refinement-ladder",
+  "RunRecords": [
+    {
+      "levelId": "L0-2x2",
+      "meshParameter": 1,
+      "quantities": {
+        "residual-norm": 0,
+        "stationarity-norm": 0,
+        "objective-value": 0,
+        "gauge-violation": 0,
+        "solver-iterations": 0
+      },
+      "converged": true,
+      "residualNorm": 0,
+      "provenance": {
+        "createdAt": "2026-03-20T00:00:00+00:00",
+        "codeRevision": "phase9-real-atlas-env-aware-v1",
+        "branch": {
+          "branchId": "phase8-real-atlas-control",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu",
+        "notes": null
+      }
+    },
+    {
+      "levelId": "L1-4x4",
+      "meshParameter": 0.5,
+      "quantities": {
+        "residual-norm": 0,
+        "stationarity-norm": 0,
+        "objective-value": 0,
+        "gauge-violation": 0,
+        "solver-iterations": 0
+      },
+      "converged": true,
+      "residualNorm": 0,
+      "provenance": {
+        "createdAt": "2026-03-20T00:00:00+00:00",
+        "codeRevision": "phase9-real-atlas-env-aware-v1",
+        "branch": {
+          "branchId": "phase8-real-atlas-control",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu",
+        "notes": null
+      }
+    },
+    {
+      "levelId": "L2-8x8",
+      "meshParameter": 0.25,
+      "quantities": {
+        "residual-norm": 0,
+        "stationarity-norm": 0,
+        "objective-value": 0,
+        "gauge-violation": 0,
+        "solver-iterations": 0
+      },
+      "converged": true,
+      "residualNorm": 0,
+      "provenance": {
+        "createdAt": "2026-03-20T00:00:00+00:00",
+        "codeRevision": "phase9-real-atlas-env-aware-v1",
+        "branch": {
+          "branchId": "phase8-real-atlas-control",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu",
+        "notes": null
+      }
+    }
+  ],
+  "ContinuumEstimates": [],
+  "FailureRecords": [
+    {
+      "quantityId": "residual-norm",
+      "failureType": "non-convergent",
+      "description": "Successive deltas not consistently decreasing (first=0, last=0).",
+      "observedValues": [
+        0,
+        0,
+        0
+      ],
+      "meshParameters": [
+        1,
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "quantityId": "stationarity-norm",
+      "failureType": "non-convergent",
+      "description": "Successive deltas not consistently decreasing (first=0, last=0).",
+      "observedValues": [
+        0,
+        0,
+        0
+      ],
+      "meshParameters": [
+        1,
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "quantityId": "objective-value",
+      "failureType": "non-convergent",
+      "description": "Successive deltas not consistently decreasing (first=0, last=0).",
+      "observedValues": [
+        0,
+        0,
+        0
+      ],
+      "meshParameters": [
+        1,
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "quantityId": "gauge-violation",
+      "failureType": "non-convergent",
+      "description": "Successive deltas not consistently decreasing (first=0, last=0).",
+      "observedValues": [
+        0,
+        0,
+        0
+      ],
+      "meshParameters": [
+        1,
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "quantityId": "solver-iterations",
+      "failureType": "non-convergent",
+      "description": "Successive deltas not consistently decreasing (first=0, last=0).",
+      "observedValues": [
+        0,
+        0,
+        0
+      ],
+      "meshParameters": [
+        1,
+        0.5,
+        0.25
+      ]
+    }
+  ]
+}

@@ -59,4 +59,13 @@ public sealed class RepresentationContentRecord : ISidecarEvidenceRecord
     /// <summary>Provenance of the backend that produced this record.</summary>
     [JsonPropertyName("provenance")]
     public ProvenanceMeta? Provenance { get; init; }
+
+    /// <summary>
+    /// Phase XI stabilization note. Non-null when this record has been examined in Phase XI
+    /// and the representation-content fatal has been determined to be a stable scientific
+    /// limitation that cannot be closed in the current repository context.
+    /// This note is propagated into the dossier negative result entry (P11-M5).
+    /// </summary>
+    [JsonPropertyName("p11StabilizationNote")]
+    public string? P11StabilizationNote { get; init; }
 }

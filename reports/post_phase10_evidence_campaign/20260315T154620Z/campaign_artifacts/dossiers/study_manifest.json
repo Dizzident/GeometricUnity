@@ -1,0 +1,48 @@
+[
+  {
+    "studyId": "phase5-su2-branch-refinement-env-validation-positive",
+    "description": "Phase V campaign phase5-su2-branch-refinement-env-validation \u2014 positive evidence dossier",
+    "runFolder": "artifacts",
+    "reproducibility": {
+      "codeRevision": "phase10-direct-refinement-v1",
+      "reproductionCommands": [
+        "dotnet run --project apps/Gu.Cli -- run-phase5-campaign --spec inputs/campaign.json --out-dir . --validate-first"
+      ],
+      "regeneratedAt": "2026-03-15T15:46:42.3779456+00:00",
+      "evidenceTier": "RegeneratedCpu"
+    },
+    "provenance": {
+      "createdAt": "2026-03-20T00:00:00+00:00",
+      "codeRevision": "phase10-direct-refinement-v1",
+      "branch": {
+        "branchId": "phase8-real-atlas-control",
+        "schemaVersion": "1.0"
+      },
+      "backend": "cpu",
+      "notes": "Phase X standard evidence campaign: branch study still uses the admitted multi-variant atlas on the same strict thresholds, refinement now points to a direct solver-backed ladder, bridge-derived convergence remains available separately for comparison, the imported benchmark remains repo-internal, and candidate-specific escalation still fails closed when candidate-linked branch/background provenance is absent."
+    }
+  },
+  {
+    "studyId": "phase5-su2-branch-refinement-env-validation-negative",
+    "description": "Phase V campaign phase5-su2-branch-refinement-env-validation \u2014 negative result dossier",
+    "runFolder": "artifacts",
+    "reproducibility": {
+      "codeRevision": "phase10-direct-refinement-v1",
+      "reproductionCommands": [
+        "dotnet run --project apps/Gu.Cli -- run-phase5-campaign --spec inputs/campaign.json --out-dir . --validate-first"
+      ],
+      "regeneratedAt": "2026-03-15T15:46:42.3779461+00:00",
+      "evidenceTier": "RegeneratedCpu"
+    },
+    "provenance": {
+      "createdAt": "2026-03-20T00:00:00+00:00",
+      "codeRevision": "phase10-direct-refinement-v1",
+      "branch": {
+        "branchId": "phase8-real-atlas-control",
+        "schemaVersion": "1.0"
+      },
+      "backend": "cpu",
+      "notes": "Phase X standard evidence campaign: branch study still uses the admitted multi-variant atlas on the same strict thresholds, refinement now points to a direct solver-backed ladder, bridge-derived convergence remains available separately for comparison, the imported benchmark remains repo-internal, and candidate-specific escalation still fails closed when candidate-linked branch/background provenance is absent."
+    }
+  }
+]

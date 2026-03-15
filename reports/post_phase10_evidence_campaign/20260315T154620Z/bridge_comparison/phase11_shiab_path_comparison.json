@@ -1,0 +1,59 @@
+{
+  "comparisonId": "phase11-shiab-path-comparison",
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-03-15T18:44:39+00:00",
+  "codeRevision": "phase11-m6-shiab-rerun-v1",
+  "standardPath": {
+    "branchManifestId": "phase8-real-atlas-control",
+    "shiabVariantId": "identity-shiab",
+    "branchResult": "mixed",
+    "branchFragileQuantities": ["gauge-violation", "solver-iterations"],
+    "branchInvariantQuantities": ["residual-norm", "stationarity-norm", "objective-value"],
+    "directControlLadder": {
+      "evidenceSource": "direct-solver-backed",
+      "ladderType": "zero-invariant-control",
+      "convergenceResult": "5/5 convergent (zero-invariant)"
+    },
+    "nontrivialDirectLadder": {
+      "evidenceSource": "direct-solver-backed",
+      "ladderType": "nontrivial-growing",
+      "levels": {
+        "L0-2x2": { "residualNorm": 1.24e-9, "gaugeViolation": 0.197, "solverIterations": 2 },
+        "L1-4x4": { "residualNorm": 4.04e-8, "gaugeViolation": 0.422, "solverIterations": 2 },
+        "L2-8x8": { "residualNorm": 1.06e-7, "gaugeViolation": 0.996, "solverIterations": 2 }
+      },
+      "convergenceResult": "solver-iterations trivially convergent (constant=2); residual/stationarity/gauge-violation non-convergent (values grow with refinement)",
+      "interpretation": "Negative evidence about continuum behavior of nontrivial solutions"
+    }
+  },
+  "pairedPath": {
+    "branchManifestId": "phase8-real-atlas-first-order-shiab",
+    "shiabVariantId": "first-order-curvature",
+    "branchResult": "mixed",
+    "branchFragileQuantities": ["gauge-violation", "solver-iterations"],
+    "branchInvariantQuantities": ["residual-norm", "stationarity-norm", "objective-value"],
+    "directControlLadder": {
+      "evidenceSource": "direct-solver-backed",
+      "ladderType": "zero-invariant-control",
+      "convergenceResult": "5/5 convergent (zero-invariant)"
+    },
+    "nontrivialDirectLadder": {
+      "evidenceSource": "direct-solver-backed",
+      "ladderType": "nontrivial-growing",
+      "levels": {
+        "L0-2x2": { "residualNorm": 1.7743171418372248e-9, "gaugeViolation": 0.2007370632106488, "solverIterations": 2 },
+        "L1-4x4": { "residualNorm": 8.53551404472091e-9, "gaugeViolation": 0.3007631554875101, "solverIterations": 2 },
+        "L2-8x8": { "residualNorm": 2.52829611941323e-8, "gaugeViolation": 0.7518324539869274, "solverIterations": 2 }
+      },
+      "convergenceResult": "solver-iterations trivially convergent (constant=2); residual/stationarity/gauge-violation non-convergent (values grow with refinement)",
+      "interpretation": "Negative evidence about continuum behavior of nontrivial solutions"
+    }
+  },
+  "conclusion": "Broader first-order-curvature Shiab scope does not change any project-level conclusion relative to identity-shiab. Both paths produce the same qualitative pattern: mixed branch boundary, growing residuals under nontrivial direct refinement (negative convergence evidence), and zero-invariant control ladders. The paired path residuals are of similar magnitude but slightly different scaling; gauge violations grow less steeply on the paired path. Neither path demonstrates continuum limit convergence for nontrivial solutions.",
+  "openItems": {
+    "P11-001": "Candidate-linked branch/background provenance still lacks real evidence IDs on both paths",
+    "P11-002": "Imported provenance is still repo-internal on both paths",
+    "P11-004": "Paired first-order Shiab branch evidence remains mixed (same as standard, confirmed by Phase XI rerun)",
+    "P11-006": "Representation-content fatal still active on both paths"
+  }
+}

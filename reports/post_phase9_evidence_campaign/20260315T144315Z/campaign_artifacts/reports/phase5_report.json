@@ -1,0 +1,61 @@
+{
+  "reportId": "report-phase5-su2-branch-refinement-env-validation-20260315144703",
+  "schemaVersion": "1.0.0",
+  "studyId": "phase5-su2-branch-refinement-env-validation",
+  "dossierIds": [
+    "phase5-su2-branch-refinement-env-validation-provenance-dossier"
+  ],
+  "branchIndependenceAtlas": {
+    "totalQuantities": 5,
+    "invariantCount": 3,
+    "fragileCount": 2,
+    "equivalenceClassCount": 9,
+    "summaryLines": [
+      "- Overall summary: **mixed**",
+      "- Quantities analyzed: 5",
+      "- Invariant/robust: 3",
+      "- Fragile: 2",
+      "- Equivalence classes: 9"
+    ]
+  },
+  "convergenceAtlas": {
+    "totalQuantities": 5,
+    "convergentCount": 5,
+    "nonConvergentCount": 0,
+    "insufficientDataCount": 0,
+    "summaryLines": [
+      "- Total quantities: 5",
+      "- Convergent: 5",
+      "- Weakly convergent: 0",
+      "- Non-convergent: 0",
+      "- Insufficient data: 0",
+      "- Evidence source: bridge-derived from 4 admitted background record(s).",
+      "- Refinement seed family: multi-variant admitted atlas.",
+      "- Direct solver-backed refinement family: no."
+    ]
+  },
+  "falsificationDashboard": {
+    "totalFalsifiers": 4,
+    "activeFatalCount": 1,
+    "activeHighCount": 3,
+    "promotionCount": 0,
+    "demotionCount": 4,
+    "summaryLines": [
+      "- Total falsifiers evaluated: 4",
+      "- Active fatal: 1",
+      "- Active high: 3",
+      "- Total active: 4"
+    ]
+  },
+  "provenance": {
+    "createdAt": "2026-03-20T00:00:00+00:00",
+    "codeRevision": "phase9-real-atlas-env-aware-v1",
+    "branch": {
+      "branchId": "phase8-real-atlas-control",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu",
+    "notes": "Phase IX standard evidence campaign: multi-variant admitted atlas on the same strict thresholds, bridge-derived convergence sourced from multiple admitted backgrounds, unchanged benchmark separation, and candidate-specific escalation that still fails closed when candidate-linked branch/background provenance is absent."
+  },
+  "generatedAt": "2026-03-15T14:47:03.6204679+00:00"
+}

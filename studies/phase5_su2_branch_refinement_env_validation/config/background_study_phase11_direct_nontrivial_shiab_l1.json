@@ -1,0 +1,32 @@
+{
+  "studyId": "phase11-direct-nontrivial-shiab-l1",
+  "specs": [
+    {
+      "specId": "phase11-direct-nontrivial-shiab-l1-gn",
+      "environmentId": "env-refinement-4x4",
+      "branchManifestId": "phase8-real-atlas-first-order-shiab",
+      "seed": {
+        "kind": "SymmetricAnsatz",
+        "label": "nontrivial-seed-shiab-l1"
+      },
+      "solveOptions": {
+        "solveMode": "ObjectiveMinimization",
+        "solverMethod": "GaussNewton",
+        "maxIterations": 500,
+        "initialStepSize": 0.01,
+        "gaugePenaltyLambda": 0.0,
+        "gaugeStrategy": "L2Penalty",
+        "toleranceResidualDiagnostic": 0.0001,
+        "toleranceStationary": 1e-06,
+        "toleranceResidualStrict": 1e-08
+      }
+    }
+  ],
+  "deduplicationThreshold": 0.0,
+  "rankingCriteria": "admissibility-then-residual",
+  "notes": "Phase XI nontrivial paired Shiab direct solver-backed refinement level L1 (4x4 mesh). Uses GaussNewton solver with SymmetricAnsatz seed on first-order-shiab branch manifest.",
+  "environmentTier": "structured",
+  "manifestSearchPaths": [
+    "manifests"
+  ]
+}
