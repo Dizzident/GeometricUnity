@@ -13,7 +13,13 @@
       "Bash(gcc:*)",
       "Bash(claude team:*)",
       "Bash(grep:*)",
-      "Bash(wc:*)"
+      "Bash(wc:*)",
+      "Bash(git stash:*)",
+      "Bash(find:*)",
+      "Bash(nm:*)",
+      "Bash(echo:*)",
+      "Bash(python3:*)",
+      "Bash(for proj:*)"
     ]
   }
 }
