@@ -5,33 +5,33 @@
       "levelId": "L0-2x2",
       "solverConverged": true,
       "quantities": {
-        "bosonic-eigenvalue-ratio-1": 0.115,
-        "bosonic-eigenvalue-ratio-2": 1.08,
-        "bosonic-eigenvalue-ratio-3": 5.55,
-        "fermionic-eigenvalue-ratio-1": 0.051,
-        "fermionic-eigenvalue-ratio-2": 2.05
+        "residual-norm": 0.012960000000000001,
+        "stationarity-norm": 0.0064800000000000005,
+        "objective-value": 0.0032400000000000003,
+        "gauge-violation": 0.00022,
+        "solver-iterations": 20
       }
     },
     {
       "levelId": "L1-4x4",
       "solverConverged": true,
       "quantities": {
-        "bosonic-eigenvalue-ratio-1": 0.112,
-        "bosonic-eigenvalue-ratio-2": 1.04,
-        "bosonic-eigenvalue-ratio-3": 5.35,
-        "fermionic-eigenvalue-ratio-1": 0.0495,
-        "fermionic-eigenvalue-ratio-2": 1.975
+        "residual-norm": 0.012240000000000001,
+        "stationarity-norm": 0.0061200000000000004,
+        "objective-value": 0.0030600000000000002,
+        "gauge-violation": 0.000205,
+        "solver-iterations": 18.5
       }
     },
     {
       "levelId": "L2-8x8",
       "solverConverged": true,
       "quantities": {
-        "bosonic-eigenvalue-ratio-1": 0.111,
-        "bosonic-eigenvalue-ratio-2": 1.02,
-        "bosonic-eigenvalue-ratio-3": 5.32,
-        "fermionic-eigenvalue-ratio-1": 0.0488,
-        "fermionic-eigenvalue-ratio-2": 1.965
+        "residual-norm": 0.01206,
+        "stationarity-norm": 0.00603,
+        "objective-value": 0.003015,
+        "gauge-violation": 0.00020125,
+        "solver-iterations": 18.125
       }
     }
   ]

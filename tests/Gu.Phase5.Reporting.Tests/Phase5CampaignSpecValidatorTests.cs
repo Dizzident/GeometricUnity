@@ -1,4 +1,6 @@
 using Gu.Core;
+using Gu.Core.Serialization;
+using Gu.Phase4.Registry;
 using Gu.Phase5.BranchIndependence;
 using Gu.Phase5.Convergence;
 using Gu.Phase5.Environments;
@@ -42,18 +44,121 @@ public sealed class Phase5CampaignSpecValidatorTests : IDisposable
     private Phase5CampaignSpec MakeValidSpec(string dir, string schemaVersion = "1.0.0",
         IReadOnlyList<string>? extraEnvPaths = null)
     {
-        // Create the required stub files
-        var requiredFiles = new[]
-        {
-            "targets.json",
-            "branch_quantity_values.json",
-            "refinement_values.json",
-            "observables.json",
-            "registry.json",
-            "env_toy.json",
-        };
-        foreach (var f in requiredFiles)
-            File.WriteAllText(Path.Combine(dir, f), "{}");
+        File.WriteAllText(
+            Path.Combine(dir, "targets.json"),
+            GuJsonDefaults.Serialize(new ExternalTargetTable
+            {
+                TableId = "validator-targets",
+                Targets =
+                [
+                    new ExternalTarget
+                    {
+                        Label = "toy-q1",
+                        ObservableId = "q1",
+                        Value = 1.0,
+                        Uncertainty = 0.1,
+                        Source = "synthetic-toy-v1",
+                        EvidenceTier = "toy-placeholder",
+                        DistributionModel = "gaussian",
+                    },
+                    new ExternalTarget
+                    {
+                        Label = "derived-q1",
+                        ObservableId = "q1",
+                        Value = 1.05,
+                        Uncertainty = 0.08,
+                        Source = "derived-synthetic-v1",
+                        EvidenceTier = "derived-synthetic",
+                        DistributionModel = "gaussian",
+                    },
+                ],
+            }));
+        File.WriteAllText(
+            Path.Combine(dir, "branch_quantity_values.json"),
+            GuJsonDefaults.Serialize(new RefinementQuantityValueTable
+            {
+                StudyId = "branch-values",
+                Levels =
+                [
+                    new RefinementQuantityValueLevel
+                    {
+                        LevelId = "V1",
+                        SolverConverged = true,
+                        Quantities = new Dictionary<string, double> { ["q1"] = 1.0 },
+                    },
+                    new RefinementQuantityValueLevel
+                    {
+                        LevelId = "V2",
+                        SolverConverged = true,
+                        Quantities = new Dictionary<string, double> { ["q1"] = 1.01 },
+                    },
+                ],
+            }));
+        File.WriteAllText(
+            Path.Combine(dir, "refinement_values.json"),
+            GuJsonDefaults.Serialize(new RefinementQuantityValueTable
+            {
+                StudyId = "refinement-values",
+                Levels =
+                [
+                    new RefinementQuantityValueLevel
+                    {
+                        LevelId = "L0",
+                        SolverConverged = true,
+                        Quantities = new Dictionary<string, double> { ["q1"] = 1.2 },
+                    },
+                    new RefinementQuantityValueLevel
+                    {
+                        LevelId = "L1",
+                        SolverConverged = true,
+                        Quantities = new Dictionary<string, double> { ["q1"] = 1.1 },
+                    },
+                ],
+            }));
+        File.WriteAllText(
+            Path.Combine(dir, "observables.json"),
+            GuJsonDefaults.Serialize(new[]
+            {
+                new QuantitativeObservableRecord
+                {
+                    ObservableId = "q1",
+                    Value = 1.0,
+                    Uncertainty = new QuantitativeUncertainty
+                    {
+                        BranchVariation = 0.02,
+                        RefinementError = 0.02,
+                        ExtractionError = 0.01,
+                        EnvironmentSensitivity = 0.01,
+                        TotalUncertainty = 0.03,
+                    },
+                    BranchId = "V1",
+                    EnvironmentId = "env-toy",
+                    ExtractionMethod = "validator",
+                    Provenance = MakeProvenance(),
+                },
+            }));
+        File.WriteAllText(
+            Path.Combine(dir, "registry.json"),
+            GuJsonDefaults.Serialize(new UnifiedParticleRegistry()));
+        File.WriteAllText(
+            Path.Combine(dir, "env_toy.json"),
+            GuJsonDefaults.Serialize(new EnvironmentRecord
+            {
+                EnvironmentId = "env-toy",
+                GeometryTier = "toy",
+                GeometryFingerprint = "toy-validator",
+                BaseDimension = 2,
+                AmbientDimension = 2,
+                EdgeCount = 4,
+                FaceCount = 2,
+                Admissibility = new EnvironmentAdmissibilityReport
+                {
+                    Level = "toy",
+                    Checks = [],
+                    Passed = true,
+                },
+                Provenance = MakeProvenance(),
+            }));
 
         var envPaths = new List<string> { "env_toy.json" };
         if (extraEnvPaths != null)
@@ -124,11 +229,39 @@ public sealed class Phase5CampaignSpecValidatorTests : IDisposable
     public void Validate_ValidReferenceSpec_WithAllSidecars_ReturnsValid()
     {
         // Create sidecar stubs and a second env record
-        File.WriteAllText(Path.Combine(_tempDir, "env_structured.json"), "{}");
+        File.WriteAllText(Path.Combine(_tempDir, "env_structured.json"), GuJsonDefaults.Serialize(new EnvironmentRecord
+        {
+            EnvironmentId = "env-structured",
+            GeometryTier = "structured",
+            GeometryFingerprint = "structured-validator",
+            BaseDimension = 2,
+            AmbientDimension = 2,
+            EdgeCount = 16,
+            FaceCount = 8,
+            Admissibility = new EnvironmentAdmissibilityReport
+            {
+                Level = "structured",
+                Checks = [],
+                Passed = true,
+            },
+            Provenance = MakeProvenance(),
+        }));
         File.WriteAllText(Path.Combine(_tempDir, "obs_chain.json"), "[]");
         File.WriteAllText(Path.Combine(_tempDir, "env_variance.json"), "[]");
         File.WriteAllText(Path.Combine(_tempDir, "rep_content.json"), "[]");
         File.WriteAllText(Path.Combine(_tempDir, "coupling_consistency.json"), "[]");
+        File.WriteAllText(Path.Combine(_tempDir, "sidecar_summary.json"), GuJsonDefaults.Serialize(new SidecarSummary
+        {
+            StudyId = "validator-sidecars",
+            Channels =
+            [
+                new SidecarChannelStatus { ChannelId = "observation-chain", Status = "skipped", InputCount = 0, OutputCount = 0 },
+                new SidecarChannelStatus { ChannelId = "environment-variance", Status = "skipped", InputCount = 0, OutputCount = 0 },
+                new SidecarChannelStatus { ChannelId = "representation-content", Status = "skipped", InputCount = 0, OutputCount = 0 },
+                new SidecarChannelStatus { ChannelId = "coupling-consistency", Status = "skipped", InputCount = 0, OutputCount = 0 },
+            ],
+            Provenance = MakeProvenance(),
+        }));
 
         var spec = MakeValidSpec(_tempDir, schemaVersion: "1.1.0",
             extraEnvPaths: ["env_structured.json"]);
@@ -225,6 +358,18 @@ public sealed class Phase5CampaignSpecValidatorTests : IDisposable
         File.WriteAllText(Path.Combine(_tempDir, "env_variance.json"), "[]");
         File.WriteAllText(Path.Combine(_tempDir, "rep_content.json"), "[]");
         File.WriteAllText(Path.Combine(_tempDir, "coupling_consistency.json"), "[]");
+        File.WriteAllText(Path.Combine(_tempDir, "sidecar_summary.json"), GuJsonDefaults.Serialize(new SidecarSummary
+        {
+            StudyId = "validator-sidecars",
+            Channels =
+            [
+                new SidecarChannelStatus { ChannelId = "observation-chain", Status = "skipped", InputCount = 0, OutputCount = 0 },
+                new SidecarChannelStatus { ChannelId = "environment-variance", Status = "skipped", InputCount = 0, OutputCount = 0 },
+                new SidecarChannelStatus { ChannelId = "representation-content", Status = "skipped", InputCount = 0, OutputCount = 0 },
+                new SidecarChannelStatus { ChannelId = "coupling-consistency", Status = "skipped", InputCount = 0, OutputCount = 0 },
+            ],
+            Provenance = MakeProvenance(),
+        }));
 
         // Only 1 env record (no extraEnvPaths)
         var spec = MakeValidSpec(_tempDir, schemaVersion: "1.1.0");
@@ -253,7 +398,7 @@ public sealed class Phase5CampaignSpecValidatorTests : IDisposable
 
         var result = Phase5CampaignSpecValidator.Validate(specWithSidecars, _tempDir, requireReferenceSidecars: true);
         Assert.False(result.IsValid);
-        Assert.Contains(result.Errors, e => e.Contains("at least 2 environment records"));
+        Assert.Contains(result.Errors, e => e.Contains("structured environment"));
     }
 
     [Fact]

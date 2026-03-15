@@ -1,0 +1,151 @@
+{
+  "atlasId": "phase6-reference-background-atlas",
+  "studyId": "phase5-su2-bridge-backed-reference",
+  "backgrounds": [
+    {
+      "backgroundId": "bg-phase6-v1",
+      "environmentId": "env-structured-4x4",
+      "branchManifestId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+      "geometryFingerprint": "structured-4x4-triangulated-v1",
+      "stateArtifactRef": "phase3/background_states/bg-phase6-v1_omega.json",
+      "residualNorm": 0.012,
+      "stationarityNorm": 0.006,
+      "admissibilityLevel": "B2",
+      "metrics": {
+        "residualNorm": 0.012,
+        "stationarityNorm": 0.006,
+        "objectiveValue": 0.003,
+        "gaugeViolation": 0.0002,
+        "solverIterations": 18,
+        "solverConverged": true,
+        "terminationReason": "residual-tolerance",
+        "gaussNewtonValid": true
+      },
+      "replayTierAchieved": "R2",
+      "provenance": {
+        "createdAt": "2026-03-16T00:00:00+00:00",
+        "codeRevision": "phase6-bridge-reference-atlas-v1",
+        "branch": {
+          "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      },
+      "notes": "Persisted reference background for the bridge-backed Phase VI evidence campaign.",
+      "environmentTier": "structured"
+    },
+    {
+      "backgroundId": "bg-phase6-v2",
+      "environmentId": "env-structured-4x4",
+      "branchManifestId": "V2-identity-shiab-augmented-torsion-simple-a0-omega",
+      "geometryFingerprint": "structured-4x4-triangulated-v1",
+      "stateArtifactRef": "phase3/background_states/bg-phase6-v2_omega.json",
+      "residualNorm": 0.0124,
+      "stationarityNorm": 0.0062,
+      "admissibilityLevel": "B2",
+      "metrics": {
+        "residualNorm": 0.0124,
+        "stationarityNorm": 0.0062,
+        "objectiveValue": 0.00305,
+        "gaugeViolation": 0.00021,
+        "solverIterations": 19,
+        "solverConverged": true,
+        "terminationReason": "residual-tolerance",
+        "gaussNewtonValid": true
+      },
+      "replayTierAchieved": "R2",
+      "provenance": {
+        "createdAt": "2026-03-16T00:00:00+00:00",
+        "codeRevision": "phase6-bridge-reference-atlas-v1",
+        "branch": {
+          "branchId": "V2-identity-shiab-augmented-torsion-simple-a0-omega",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      },
+      "notes": "Persisted reference background for the bridge-backed Phase VI evidence campaign.",
+      "environmentTier": "structured"
+    },
+    {
+      "backgroundId": "bg-phase6-v3",
+      "environmentId": "env-structured-4x4",
+      "branchManifestId": "V3-identity-shiab-trivial-torsion-a0-plus-minus-omega",
+      "geometryFingerprint": "structured-4x4-triangulated-v1",
+      "stateArtifactRef": "phase3/background_states/bg-phase6-v3_omega.json",
+      "residualNorm": 0.0118,
+      "stationarityNorm": 0.0059,
+      "admissibilityLevel": "B2",
+      "metrics": {
+        "residualNorm": 0.0118,
+        "stationarityNorm": 0.0059,
+        "objectiveValue": 0.00298,
+        "gaugeViolation": 0.00019,
+        "solverIterations": 18,
+        "solverConverged": true,
+        "terminationReason": "residual-tolerance",
+        "gaussNewtonValid": true
+      },
+      "replayTierAchieved": "R2",
+      "provenance": {
+        "createdAt": "2026-03-16T00:00:00+00:00",
+        "codeRevision": "phase6-bridge-reference-atlas-v1",
+        "branch": {
+          "branchId": "V3-identity-shiab-trivial-torsion-a0-plus-minus-omega",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      },
+      "notes": "Persisted reference background for the bridge-backed Phase VI evidence campaign.",
+      "environmentTier": "structured"
+    },
+    {
+      "backgroundId": "bg-phase6-v4",
+      "environmentId": "env-structured-4x4",
+      "branchManifestId": "V4-identity-shiab-augmented-torsion-a0-plus-minus-omega",
+      "geometryFingerprint": "structured-4x4-triangulated-v1",
+      "stateArtifactRef": "phase3/background_states/bg-phase6-v4_omega.json",
+      "residualNorm": 0.0121,
+      "stationarityNorm": 0.0061,
+      "admissibilityLevel": "B2",
+      "metrics": {
+        "residualNorm": 0.0121,
+        "stationarityNorm": 0.0061,
+        "objectiveValue": 0.00302,
+        "gaugeViolation": 0.0002,
+        "solverIterations": 19,
+        "solverConverged": true,
+        "terminationReason": "residual-tolerance",
+        "gaussNewtonValid": true
+      },
+      "replayTierAchieved": "R2",
+      "provenance": {
+        "createdAt": "2026-03-16T00:00:00+00:00",
+        "codeRevision": "phase6-bridge-reference-atlas-v1",
+        "branch": {
+          "branchId": "V4-identity-shiab-augmented-torsion-a0-plus-minus-omega",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      },
+      "notes": "Persisted reference background for the bridge-backed Phase VI evidence campaign.",
+      "environmentTier": "structured"
+    }
+  ],
+  "rejectedBackgrounds": [],
+  "rankingCriteria": "residual-norm",
+  "totalAttempts": 4,
+  "provenance": {
+    "createdAt": "2026-03-16T00:00:00+00:00",
+    "codeRevision": "phase6-bridge-reference-atlas-v1",
+    "branch": {
+      "branchId": "phase5-su2-bridge-backed-reference",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu",
+    "notes": "Checked-in persisted atlas used to bridge Phase III-style background artifacts into the standard Phase V/VI evidence campaign."
+  },
+  "admissibilityCounts": {
+    "B2": 4
+  },
+  "environmentTier": "structured"
+}

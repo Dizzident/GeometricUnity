@@ -3807,7 +3807,8 @@ static int RunPhase5Campaign(string[] args)
             environmentRecords: artifacts.EnvironmentRecords,
             environmentVarianceRecords: artifacts.EnvironmentVarianceRecords,
             representationContentRecords: artifacts.RepresentationContentRecords,
-            couplingConsistencyRecords: artifacts.CouplingConsistencyRecords);
+            couplingConsistencyRecords: artifacts.CouplingConsistencyRecords,
+            sidecarSummary: artifacts.SidecarSummary);
     }
     catch (Exception ex)
     {
@@ -3848,6 +3849,7 @@ static int RunPhase5Campaign(string[] args)
         CopyIfExists(Path.Combine(specDir, spec.RepresentationContentPath), Path.Combine(inputsDir, "representation_content.json"));
     if (spec.CouplingConsistencyPath is not null)
         CopyIfExists(Path.Combine(specDir, spec.CouplingConsistencyPath), Path.Combine(inputsDir, "coupling_consistency.json"));
+    CopyIfExists(Path.Combine(specDir, "sidecar_summary.json"), Path.Combine(inputsDir, "sidecar_summary.json"));
     for (int i = 0; i < spec.EnvironmentRecordPaths.Count; i++)
         CopyIfExists(Path.Combine(specDir, spec.EnvironmentRecordPaths[i]), Path.Combine(inputsDir, $"env_record_{i}.json"));
 
@@ -3915,6 +3917,12 @@ static int RunPhase5Campaign(string[] args)
     }).ToList();
     var manifestsJson = GuJsonDefaults.Serialize(updatedManifests);
     File.WriteAllText(Path.Combine(outDir, "dossiers", "study_manifest.json"), manifestsJson);
+
+    if (artifacts.SidecarSummary is not null)
+    {
+        var sidecarSummaryJson = GuJsonDefaults.Serialize(artifacts.SidecarSummary);
+        File.WriteAllText(Path.Combine(outDir, "falsification", "sidecar_summary.json"), sidecarSummaryJson);
+    }
 
     // reports/phase5_report.json
     var reportJson = GuJsonDefaults.Serialize(result.Report);
@@ -4011,27 +4019,17 @@ static int BuildPhase5Sidecars(string[] args)
         Backend = "cpu",
     };
 
-    // Generate sidecars — all four channels are "absent" unless we have external sidecar inputs.
-    // The CLI command wires registry/observables/envRecords for future extension;
-    // current implementation produces the four sidecar files as empty-but-present arrays
-    // (status="skipped") so coverage accounting is explicit.
+    // Generate sidecars from the supplied registry / observables / environment records.
+    // Null channels are treated as absent; derived channels become evaluated or skipped
+    // based on whether the supporting inputs are rich enough to populate records.
     var studyId = Path.GetFileNameWithoutExtension(registryPath);
-    IReadOnlyList<ObservationChainRecord> emptyObsChain = new List<ObservationChainRecord>();
-    IReadOnlyList<EnvironmentVarianceRecord> emptyEnvVar = new List<EnvironmentVarianceRecord>();
-    IReadOnlyList<RepresentationContentRecord> emptyRepContent = new List<RepresentationContentRecord>();
-    IReadOnlyList<CouplingConsistencyRecord> emptyCoupling = new List<CouplingConsistencyRecord>();
-
     var summary = SidecarGenerator.GenerateSidecars(
         registry,
         observables,
         envRecords,
         outDir,
         studyId,
-        provenance,
-        observationChainRecords: emptyObsChain,
-        environmentVarianceRecords: emptyEnvVar,
-        representationContentRecords: emptyRepContent,
-        couplingConsistencyRecords: emptyCoupling);
+        provenance);
 
     Console.WriteLine($"build-phase5-sidecars complete. Output: {outDir}");
     foreach (var ch in summary.Channels)

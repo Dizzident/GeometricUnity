@@ -3,20 +3,20 @@
   "schemaVersion": "1.0",
   "branchManifestId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
   "targetQuantities": [
-    "bosonic-eigenvalue-ratio-1",
-    "bosonic-eigenvalue-ratio-2",
-    "bosonic-eigenvalue-ratio-3",
-    "fermionic-eigenvalue-ratio-1",
-    "fermionic-eigenvalue-ratio-2"
+    "residual-norm",
+    "stationarity-norm",
+    "objective-value",
+    "gauge-violation",
+    "solver-iterations"
   ],
   "refinementLevels": [
-    { "levelId": "L0-2x2", "meshParameter": 1.0, "description": "2x2 toy mesh" },
-    { "levelId": "L1-4x4", "meshParameter": 0.5, "description": "4x4 structured mesh" },
-    { "levelId": "L2-8x8", "meshParameter": 0.25, "description": "8x8 structured mesh" }
+    { "levelId": "L0-2x2", "meshParameterX": 1.0, "meshParameterF": 1.0, "description": "2x2 toy mesh" },
+    { "levelId": "L1-4x4", "meshParameterX": 0.5, "meshParameterF": 0.5, "description": "4x4 structured mesh" },
+    { "levelId": "L2-8x8", "meshParameterX": 0.25, "meshParameterF": 0.25, "description": "8x8 structured mesh" }
   ],
   "provenance": {
-    "createdAt": "2026-03-14T00:00:00+00:00",
-    "codeRevision": "phase5-m53-ref-study-v1",
+    "createdAt": "2026-03-16T00:00:00+00:00",
+    "codeRevision": "phase6-bridge-reference-atlas-v1",
     "branch": { "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega", "schemaVersion": "1.0" },
     "backend": "cpu"
   }

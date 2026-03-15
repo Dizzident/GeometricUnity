@@ -25,6 +25,7 @@
     <ProjectReference Include="..\..\src\Gu.Phase5.Falsification\Gu.Phase5.Falsification.csproj" />
     <ProjectReference Include="..\..\src\Gu.Phase5.QuantitativeValidation\Gu.Phase5.QuantitativeValidation.csproj" />
     <ProjectReference Include="..\..\src\Gu.Phase5.Reporting\Gu.Phase5.Reporting.csproj" />
+    <ProjectReference Include="..\..\src\Gu.Artifacts\Gu.Artifacts.csproj" />
   </ItemGroup>
 
 </Project>

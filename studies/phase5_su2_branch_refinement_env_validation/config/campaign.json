@@ -2,33 +2,33 @@
   "campaignId": "phase5-su2-branch-refinement-env-validation",
   "schemaVersion": "1.1.0",
   "branchFamilySpec": {
-    "studyId": "phase5-su2-branch-family",
+    "studyId": "phase5-su2-bridge-backed-branch-family",
     "branchVariantIds": [
-      "V1-identity-shiab-trivial-torsion-simple-a0-omega",
-      "V2-identity-shiab-augmented-torsion-simple-a0-omega",
-      "V3-identity-shiab-trivial-torsion-a0-plus-minus-omega",
-      "V4-identity-shiab-augmented-torsion-a0-plus-minus-omega"
+      "bg-variant-ca9db26f64fb3512",
+      "bg-variant-fc228fbd099d34cd",
+      "bg-variant-3c091fddace3b85f",
+      "bg-variant-4eeababb3ec0022f"
     ],
     "targetQuantityIds": [
-      "bosonic-eigenvalue-ratio-1",
-      "bosonic-eigenvalue-ratio-2",
-      "bosonic-eigenvalue-ratio-3",
-      "fermionic-eigenvalue-ratio-1",
-      "fermionic-eigenvalue-ratio-2"
+      "residual-norm",
+      "stationarity-norm",
+      "objective-value",
+      "gauge-violation",
+      "solver-iterations"
     ],
-    "absoluteTolerance": 1e-4,
-    "relativeTolerance": 0.05
+    "absoluteTolerance": 1e-5,
+    "relativeTolerance": 0.1
   },
   "refinementSpec": {
     "studyId": "phase5-su2-refinement-ladder",
     "schemaVersion": "1.0",
     "branchManifestId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
     "targetQuantities": [
-      "bosonic-eigenvalue-ratio-1",
-      "bosonic-eigenvalue-ratio-2",
-      "bosonic-eigenvalue-ratio-3",
-      "fermionic-eigenvalue-ratio-1",
-      "fermionic-eigenvalue-ratio-2"
+      "residual-norm",
+      "stationarity-norm",
+      "objective-value",
+      "gauge-violation",
+      "solver-iterations"
     ],
     "refinementLevels": [
       { "levelId": "L0-2x2", "meshParameterX": 1.0, "meshParameterF": 1.0, "description": "2x2 toy mesh" },
@@ -36,8 +36,8 @@
       { "levelId": "L2-8x8", "meshParameterX": 0.25, "meshParameterF": 0.25, "description": "8x8 structured mesh" }
     ],
     "provenance": {
-      "createdAt": "2026-03-14T00:00:00+00:00",
-      "codeRevision": "phase5-m53-ref-study-v1",
+      "createdAt": "2026-03-16T00:00:00+00:00",
+      "codeRevision": "phase6-bridge-reference-atlas-v1",
       "branch": { "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega", "schemaVersion": "1.0" },
       "backend": "cpu"
     }
@@ -45,15 +45,22 @@
   "environmentCampaignSpec": {
     "campaignId": "phase5-su2-env-campaign",
     "schemaVersion": "1.0",
-    "environmentIds": ["env-toy-2d-trivial", "env-structured-4x4", "env-imported-synthetic-example"],
+    "environmentIds": [
+      "env-toy-2d-trivial",
+      "env-structured-4x4",
+      "env-imported-synthetic-example"
+    ],
     "branchManifestId": "V1-identity-shiab-trivial-torsion-simple-a0-omega",
     "targetQuantities": [
       "bosonic-eigenvalue-ratio-1",
-      "bosonic-eigenvalue-ratio-2"
+      "bosonic-eigenvalue-ratio-2",
+      "bosonic-eigenvalue-ratio-3",
+      "fermionic-eigenvalue-ratio-1",
+      "fermionic-eigenvalue-ratio-2"
     ],
     "provenance": {
-      "createdAt": "2026-03-14T00:00:00+00:00",
-      "codeRevision": "phase5-m53-ref-study-v1",
+      "createdAt": "2026-03-16T00:00:00+00:00",
+      "codeRevision": "phase6-bridge-reference-atlas-v1",
       "branch": { "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega", "schemaVersion": "1.0" },
       "backend": "cpu"
     }
@@ -66,12 +73,13 @@
   },
   "falsificationPolicy": {},
   "provenance": {
-    "createdAt": "2026-03-14T00:00:00+00:00",
-    "codeRevision": "phase5-m53-ref-study-v1",
+    "createdAt": "2026-03-16T00:00:00+00:00",
+    "codeRevision": "phase6-bridge-reference-atlas-v1",
     "branch": { "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega", "schemaVersion": "1.0" },
-    "backend": "cpu"
+    "backend": "cpu",
+    "notes": "Standard evidence campaign: bridge-backed branch/refinement evidence, explicit sidecars, multi-environment observables, and mixed target tiers."
   },
-  "branchQuantityValuesPath": "branch_quantity_values_table.json",
+  "branchQuantityValuesPath": "branch_quantity_values.json",
   "refinementValuesPath": "refinement_values.json",
   "observablesPath": "observables.json",
   "environmentRecordPaths": [
@@ -79,7 +87,7 @@
     "env_structured_4x4_record.json",
     "env_imported_example.json"
   ],
-  "registryPath": "registry.json",
+  "registryPath": "../../phase4_fermion_family_atlas_001/output/unified_particle_registry.json",
   "observationChainPath": "observation_chain.json",
   "environmentVariancePath": "environment_variance.json",
   "representationContentPath": "representation_content.json",

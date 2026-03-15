@@ -1,3 +1,8 @@
+using Gu.Core.Serialization;
+using Gu.Phase5.Environments;
+using Gu.Phase5.QuantitativeValidation;
+using Gu.Validation;
+
 namespace Gu.Phase5.Reporting;
 
 /// <summary>
@@ -39,6 +44,12 @@ public static class Phase5CampaignSpecValidator
         ArgumentNullException.ThrowIfNull(specDir);
 
         var errors = new List<string>();
+        var repoRoot = FindRepoRoot(specDir);
+        ValidateSchema(
+            GuJsonDefaults.Serialize(spec),
+            Path.Combine(repoRoot, "schemas", "phase5_campaign.schema.json"),
+            "phase5_campaign.schema.json",
+            errors);
 
         // --- Required file paths ---
         CheckFilePath(spec.ExternalTargetTablePath, "externalTargetTablePath", specDir, errors);
@@ -67,11 +78,6 @@ public static class Phase5CampaignSpecValidator
         // --- Reference campaign requirements ---
         if (requireReferenceSidecars)
         {
-            // Must have at least 2 environment records (toy + structured)
-            int envCount = spec.EnvironmentRecordPaths?.Count ?? 0;
-            if (envCount < 2)
-                errors.Add($"requireReferenceSidecars: at least 2 environment records required (toy + structured); found {envCount}.");
-
             // schemaVersion must be >= 1.1.0
             if (!IsVersionAtLeast(spec.SchemaVersion, MinReferenceSchemaVersion))
                 errors.Add($"requireReferenceSidecars: schemaVersion must be >= {MinReferenceSchemaVersion}; found \"{spec.SchemaVersion}\".");
@@ -81,6 +87,20 @@ public static class Phase5CampaignSpecValidator
             CheckSidecarPath(spec.EnvironmentVariancePath, "environmentVariancePath", specDir, errors);
             CheckSidecarPath(spec.RepresentationContentPath, "representationContentPath", specDir, errors);
             CheckSidecarPath(spec.CouplingConsistencyPath, "couplingConsistencyPath", specDir, errors);
+
+            var inferredSidecarSummaryPath = Path.Combine(specDir, "sidecar_summary.json");
+            if (!File.Exists(inferredSidecarSummaryPath))
+            {
+                errors.Add($"requireReferenceSidecars: sidecar_summary.json not found at \"{inferredSidecarSummaryPath}\".");
+            }
+            else
+            {
+                ValidateSchema(
+                    File.ReadAllText(inferredSidecarSummaryPath),
+                    Path.Combine(repoRoot, "schemas", "sidecar_summary.schema.json"),
+                    "sidecar_summary.schema.json",
+                    errors);
+            }
         }
         else
         {
@@ -94,6 +114,10 @@ public static class Phase5CampaignSpecValidator
             if (spec.CouplingConsistencyPath is not null)
                 CheckFilePath(spec.CouplingConsistencyPath, "couplingConsistencyPath", specDir, errors);
         }
+
+        ValidateEnvironmentEvidence(spec, specDir, requireReferenceSidecars, errors);
+        ValidateTargetTable(spec, specDir, errors);
+        ValidateSidecarSchemas(spec, specDir, repoRoot, errors);
 
         return new CampaignValidationResult
         {
@@ -123,6 +147,167 @@ public static class Phase5CampaignSpecValidator
             return;
         }
         CheckFilePath(path, fieldName, specDir, errors);
+    }
+
+    private static void ValidateEnvironmentEvidence(
+        Phase5CampaignSpec spec,
+        string specDir,
+        bool requireReferenceSidecars,
+        List<string> errors)
+    {
+        var tiers = new HashSet<string>(StringComparer.Ordinal);
+        foreach (var path in spec.EnvironmentRecordPaths)
+        {
+            var resolved = ResolvePath(path, specDir);
+            if (!File.Exists(resolved))
+                continue;
+
+            try
+            {
+                var record = GuJsonDefaults.Deserialize<EnvironmentRecord>(File.ReadAllText(resolved));
+                if (record is null)
+                {
+                    errors.Add($"environmentRecordPaths[{path}]: failed to deserialize EnvironmentRecord.");
+                    continue;
+                }
+
+                tiers.Add(record.GeometryTier);
+                if (record.GeometryTier == "imported" &&
+                    (string.IsNullOrWhiteSpace(record.DatasetId) ||
+                     string.IsNullOrWhiteSpace(record.SourceHash) ||
+                     string.IsNullOrWhiteSpace(record.ConversionVersion)))
+                {
+                    errors.Add($"environmentRecordPaths[{path}]: imported environment is missing datasetId/sourceHash/conversionVersion.");
+                }
+            }
+            catch (Exception ex)
+            {
+                errors.Add($"environmentRecordPaths[{path}]: failed to load EnvironmentRecord ({ex.Message}).");
+            }
+        }
+
+        if (requireReferenceSidecars)
+        {
+            if (!tiers.Contains("toy"))
+                errors.Add("requireReferenceSidecars: reference campaign must include a toy environment record.");
+            if (!tiers.Contains("structured"))
+                errors.Add("requireReferenceSidecars: reference campaign must include a structured environment record.");
+        }
+    }
+
+    private static void ValidateTargetTable(
+        Phase5CampaignSpec spec,
+        string specDir,
+        List<string> errors)
+    {
+        var resolved = ResolvePath(spec.ExternalTargetTablePath, specDir);
+        if (!File.Exists(resolved))
+            return;
+
+        try
+        {
+            var table = GuJsonDefaults.Deserialize<ExternalTargetTable>(File.ReadAllText(resolved));
+            if (table is null)
+            {
+                errors.Add("externalTargetTablePath: failed to deserialize ExternalTargetTable.");
+                return;
+            }
+
+            if (table.Targets.Any(t => string.IsNullOrWhiteSpace(t.DistributionModel)))
+                errors.Add("externalTargetTablePath: every target must declare distributionModel explicitly.");
+
+            if (!table.Targets.Any(t => string.Equals(t.EvidenceTier, "derived-synthetic", StringComparison.OrdinalIgnoreCase)
+                                     || string.Equals(t.EvidenceTier, "evidence-grade", StringComparison.OrdinalIgnoreCase)))
+            {
+                errors.Add("externalTargetTablePath: reference campaign must distinguish toy-placeholder targets from stronger target tiers.");
+            }
+        }
+        catch (Exception ex)
+        {
+            errors.Add($"externalTargetTablePath: failed to validate target table ({ex.Message}).");
+        }
+    }
+
+    private static void ValidateSidecarSchemas(
+        Phase5CampaignSpec spec,
+        string specDir,
+        string repoRoot,
+        List<string> errors)
+    {
+        ValidateSidecarSchema(spec.ObservationChainPath, "observationChainPath", "observation_chain.schema.json", specDir, repoRoot, errors);
+        ValidateSidecarSchema(spec.EnvironmentVariancePath, "environmentVariancePath", "environment_variance.schema.json", specDir, repoRoot, errors);
+        ValidateSidecarSchema(spec.RepresentationContentPath, "representationContentPath", "representation_content.schema.json", specDir, repoRoot, errors);
+        ValidateSidecarSchema(spec.CouplingConsistencyPath, "couplingConsistencyPath", "coupling_consistency.schema.json", specDir, repoRoot, errors);
+    }
+
+    private static void ValidateSidecarSchema(
+        string? relativePath,
+        string fieldName,
+        string schemaFileName,
+        string specDir,
+        string repoRoot,
+        List<string> errors)
+    {
+        if (string.IsNullOrWhiteSpace(relativePath))
+            return;
+
+        var resolved = ResolvePath(relativePath, specDir);
+        if (!File.Exists(resolved))
+            return;
+
+        ValidateSchema(
+            File.ReadAllText(resolved),
+            Path.Combine(repoRoot, "schemas", schemaFileName),
+            $"{fieldName}:{schemaFileName}",
+            errors);
+    }
+
+    private static void ValidateSchema(
+        string json,
+        string schemaPath,
+        string label,
+        List<string> errors)
+    {
+        if (!File.Exists(schemaPath))
+        {
+            errors.Add($"{label}: schema file not found at \"{schemaPath}\".");
+            return;
+        }
+
+        var result = SchemaValidator.ValidateWithSchemaFile(json, schemaPath);
+        if (!result.IsValid)
+        {
+            foreach (var error in result.Errors)
+                errors.Add($"{label}: {error}");
+        }
+    }
+
+    private static string ResolvePath(string path, string specDir)
+        => Path.IsPathRooted(path) ? path : Path.GetFullPath(Path.Combine(specDir, path));
+
+    private static string FindRepoRoot(string startDir)
+    {
+        foreach (var candidate in new[]
+                 {
+                     Path.GetFullPath(startDir),
+                     Directory.GetCurrentDirectory(),
+                     AppContext.BaseDirectory,
+                 })
+        {
+            var current = new DirectoryInfo(Path.GetFullPath(candidate));
+            while (current is not null)
+            {
+                if (Directory.Exists(Path.Combine(current.FullName, "schemas")) &&
+                    Directory.Exists(Path.Combine(current.FullName, "src")))
+                {
+                    return current.FullName;
+                }
+
+                current = current.Parent;
+            }
+        }
+
+        throw new DirectoryNotFoundException($"Could not locate repository root from \"{startDir}\".");
     }
 
     /// <summary>

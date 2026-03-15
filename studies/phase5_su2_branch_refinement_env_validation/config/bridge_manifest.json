@@ -1,0 +1,26 @@
+{
+  "manifestId": "bridge-phase6-reference-background-atlas-20260315T021614Z",
+  "sourceAtlasPath": "/home/josh/Documents/GitHub/GeometricUnity/studies/phase5_su2_branch_refinement_env_validation/config/background_atlas.json",
+  "sourceRecordIds": [
+    "bg-phase6-v1",
+    "bg-phase6-v2",
+    "bg-phase6-v3",
+    "bg-phase6-v4"
+  ],
+  "derivedVariantIds": [
+    "bg-variant-ca9db26f64fb3512",
+    "bg-variant-fc228fbd099d34cd",
+    "bg-variant-3c091fddace3b85f",
+    "bg-variant-4eeababb3ec0022f"
+  ],
+  "provenance": {
+    "createdAt": "2026-03-15T02:16:14.4197406+00:00",
+    "codeRevision": "export-phase5-bridge-values",
+    "branch": {
+      "branchId": "phase5-su2-bridge-backed-reference",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu",
+    "notes": "Bridge export from atlas phase6-reference-background-atlas"
+  }
+}

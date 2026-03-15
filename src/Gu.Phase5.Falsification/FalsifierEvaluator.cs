@@ -37,7 +37,8 @@ public sealed class FalsifierEvaluator
         IReadOnlyList<ObservationChainRecord>? observationRecords = null,
         IReadOnlyList<EnvironmentVarianceRecord>? environmentVarianceRecords = null,
         IReadOnlyList<RepresentationContentRecord>? representationContentRecords = null,
-        IReadOnlyList<CouplingConsistencyRecord>? couplingConsistencyRecords = null)
+        IReadOnlyList<CouplingConsistencyRecord>? couplingConsistencyRecords = null,
+        SidecarSummary? sidecarSummary = null)
     {
         ArgumentNullException.ThrowIfNull(studyId);
         ArgumentNullException.ThrowIfNull(policy);
@@ -90,6 +91,7 @@ public sealed class FalsifierEvaluator
             EnvironmentRecordCount = environmentVarianceRecords?.Count ?? 0,
             RepresentationRecordCount = representationContentRecords?.Count ?? 0,
             CouplingRecordCount = couplingConsistencyRecords?.Count ?? 0,
+            EvaluationCoverage = sidecarSummary?.Channels,
             Provenance = provenance,
         };
     }

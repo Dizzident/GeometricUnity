@@ -44,6 +44,9 @@ public sealed class Phase5CampaignArtifacts
 
     /// <summary>Coupling consistency records (optional, typed by WP-7).</summary>
     public IReadOnlyList<CouplingConsistencyRecord>? CouplingConsistencyRecords { get; init; }
+
+    /// <summary>Sidecar generation summary inferred from sidecar_summary.json when present.</summary>
+    public SidecarSummary? SidecarSummary { get; init; }
 }
 
 /// <summary>
@@ -134,6 +137,15 @@ public static class Phase5CampaignArtifactLoader
                     File.ReadAllText(absPath));
         }
 
+        // 11. Sidecar summary (optional, inferred from the campaign config directory)
+        SidecarSummary? sidecarSummary = null;
+        var inferredSummaryPath = Path.Combine(specDir, "sidecar_summary.json");
+        if (File.Exists(inferredSummaryPath))
+        {
+            sidecarSummary = GuJsonDefaults.Deserialize<SidecarSummary>(
+                File.ReadAllText(inferredSummaryPath));
+        }
+
         return new Phase5CampaignArtifacts
         {
             BranchQuantityValues = branchValues,
@@ -146,6 +158,7 @@ public static class Phase5CampaignArtifactLoader
             EnvironmentVarianceRecords = envVarianceRecords,
             RepresentationContentRecords = repContentRecords,
             CouplingConsistencyRecords = couplingRecords,
+            SidecarSummary = sidecarSummary,
         };
     }
 

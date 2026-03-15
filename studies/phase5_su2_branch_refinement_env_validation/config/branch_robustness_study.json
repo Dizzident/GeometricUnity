@@ -1,22 +1,22 @@
 {
   "studyId": "phase5-su2-branch-refinement-env-validation",
   "schemaVersion": "1.0.0",
-  "description": "Phase V M53 reference study: su(2) branch family with 4 variants (torsion x bi-connection), toy + structured 4x4 environments, 3-level refinement ladder, eigenvalue ratio targets.",
+  "description": "Bridge-backed Phase VI reference study: four persisted background records exported through BackgroundRecordBranchVariantBridge and compared on solver stability quantities.",
   "branchVariantIds": [
-    "V1-identity-shiab-trivial-torsion-simple-a0-omega",
-    "V2-identity-shiab-augmented-torsion-simple-a0-omega",
-    "V3-identity-shiab-trivial-torsion-a0-plus-minus-omega",
-    "V4-identity-shiab-augmented-torsion-a0-plus-minus-omega"
+    "bg-variant-ca9db26f64fb3512",
+    "bg-variant-fc228fbd099d34cd",
+    "bg-variant-3c091fddace3b85f",
+    "bg-variant-4eeababb3ec0022f"
   ],
   "targetQuantityIds": [
-    "bosonic-eigenvalue-ratio-1",
-    "bosonic-eigenvalue-ratio-2",
-    "bosonic-eigenvalue-ratio-3",
-    "fermionic-eigenvalue-ratio-1",
-    "fermionic-eigenvalue-ratio-2"
+    "residual-norm",
+    "stationarity-norm",
+    "objective-value",
+    "gauge-violation",
+    "solver-iterations"
   ],
-  "absoluteTolerance": 1e-4,
-  "relativeTolerance": 0.05,
-  "environmentId": "env-toy-4x4",
-  "referenceBranchVariantId": "V1-identity-shiab-trivial-torsion-simple-a0-omega"
+  "absoluteTolerance": 1e-5,
+  "relativeTolerance": 0.1,
+  "environmentId": "env-structured-4x4",
+  "referenceBranchVariantId": "bg-variant-ca9db26f64fb3512"
 }

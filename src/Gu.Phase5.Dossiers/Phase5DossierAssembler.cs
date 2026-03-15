@@ -39,7 +39,8 @@ public sealed class Phase5DossierAssembler
         IReadOnlyList<string> environmentTiersCovered,
         string freshness,
         ProvenanceMeta provenance,
-        IReadOnlyList<ObservationChainRecord>? observationChainRecords = null)
+        IReadOnlyList<ObservationChainRecord>? observationChainRecords = null,
+        SidecarSummary? sidecarSummary = null)
     {
         ArgumentNullException.ThrowIfNull(studyId);
         ArgumentNullException.ThrowIfNull(environmentTiersCovered);
@@ -74,6 +75,7 @@ public sealed class Phase5DossierAssembler
             QuantitativeComparison = scoreCard,
             FalsifierSummary = falsifiers,
             ObservationChainSummary = observationChainRecords,
+            SidecarCoverage = sidecarSummary,
             ClaimEscalations = escalations,
             NegativeResults = negativeResults,
             Freshness = freshness,

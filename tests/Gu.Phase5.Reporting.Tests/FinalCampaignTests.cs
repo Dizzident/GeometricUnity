@@ -1,3 +1,4 @@
+using Gu.Artifacts;
 using Gu.Core;
 using Gu.Core.Serialization;
 using Gu.Phase3.Backgrounds;

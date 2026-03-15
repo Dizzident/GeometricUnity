@@ -1,7 +1,53 @@
 {
-  "bosonic-eigenvalue-ratio-1": [0.11, 0.112, 0.109, 0.111],
-  "bosonic-eigenvalue-ratio-2": [1.02, 1.04, 1.01, 1.03],
-  "bosonic-eigenvalue-ratio-3": [5.3, 5.35, 5.28, 5.32],
-  "fermionic-eigenvalue-ratio-1": [0.048, 0.049, 0.047, 0.048],
-  "fermionic-eigenvalue-ratio-2": [1.95, 1.97, 1.94, 1.96]
+  "studyId": "phase6-reference-background-atlas",
+  "levels": [
+    {
+      "levelId": "bg-variant-ca9db26f64fb3512",
+      "solverConverged": true,
+      "quantities": {
+        "residual-norm": 0.012,
+        "stationarity-norm": 0.006,
+        "objective-value": 0.003,
+        "gauge-violation": 0.0002,
+        "solver-converged": 1,
+        "solver-iterations": 18
+      }
+    },
+    {
+      "levelId": "bg-variant-fc228fbd099d34cd",
+      "solverConverged": true,
+      "quantities": {
+        "residual-norm": 0.0124,
+        "stationarity-norm": 0.0062,
+        "objective-value": 0.00305,
+        "gauge-violation": 0.00021,
+        "solver-converged": 1,
+        "solver-iterations": 19
+      }
+    },
+    {
+      "levelId": "bg-variant-3c091fddace3b85f",
+      "solverConverged": true,
+      "quantities": {
+        "residual-norm": 0.0118,
+        "stationarity-norm": 0.0059,
+        "objective-value": 0.00298,
+        "gauge-violation": 0.00019,
+        "solver-converged": 1,
+        "solver-iterations": 18
+      }
+    },
+    {
+      "levelId": "bg-variant-4eeababb3ec0022f",
+      "solverConverged": true,
+      "quantities": {
+        "residual-norm": 0.0121,
+        "stationarity-norm": 0.0061,
+        "objective-value": 0.00302,
+        "gauge-violation": 0.0002,
+        "solver-converged": 1,
+        "solver-iterations": 19
+      }
+    }
+  ]
 }

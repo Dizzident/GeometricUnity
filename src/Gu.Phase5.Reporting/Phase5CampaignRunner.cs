@@ -53,7 +53,8 @@ public sealed class Phase5CampaignRunner
         IReadOnlyList<EnvironmentRecord>? environmentRecords = null,
         IReadOnlyList<EnvironmentVarianceRecord>? environmentVarianceRecords = null,
         IReadOnlyList<RepresentationContentRecord>? representationContentRecords = null,
-        IReadOnlyList<CouplingConsistencyRecord>? couplingConsistencyRecords = null)
+        IReadOnlyList<CouplingConsistencyRecord>? couplingConsistencyRecords = null,
+        SidecarSummary? sidecarSummary = null)
     {
         ArgumentNullException.ThrowIfNull(spec);
         ArgumentNullException.ThrowIfNull(branchPipelineExecutor);
@@ -105,9 +106,11 @@ public sealed class Phase5CampaignRunner
             scoreCard,
             spec.FalsificationPolicy,
             provenance,
+            observationRecords: observationChainRecords,
             environmentVarianceRecords: environmentVarianceRecords,
             representationContentRecords: representationContentRecords,
-            couplingConsistencyRecords: couplingConsistencyRecords);
+            couplingConsistencyRecords: couplingConsistencyRecords,
+            sidecarSummary: sidecarSummary);
 
         // Step 5a: Study manifests — positive and negative (D-006)
         var posStudyManifest = new StudyManifest
@@ -161,7 +164,8 @@ public sealed class Phase5CampaignRunner
             environmentTiersCovered: spec.EnvironmentCampaignSpec.EnvironmentIds,
             freshness: "regenerated-current-code",
             provenance: provenance,
-            observationChainRecords: observationChainRecords);
+            observationChainRecords: observationChainRecords,
+            sidecarSummary: sidecarSummary);
 
         // Step 6: Generate final report (M53)
         var report = Phase5ReportGenerator.Generate(
