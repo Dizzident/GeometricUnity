@@ -56,7 +56,7 @@ public sealed class CpuDiracOperatorAssembler : IDiracOperatorAssembler
 
         if (hasExplicit)
         {
-            explicitMatrix = BuildExplicitComplexMatrix(gammas, mesh, spinorDim, gaugeDim, dofsPerCell, totalDof);
+            explicitMatrix = BuildExplicitComplexMatrix(connection, gammas, mesh, spinorDim, gaugeDim, dofsPerCell, totalDof);
             hermResidual = ComputeHermiticityResidual(explicitMatrix, totalDof);
         }
 
@@ -138,7 +138,7 @@ public sealed class CpuDiracOperatorAssembler : IDiracOperatorAssembler
             throw new ArgumentException(
                 $"psi length {psi.Length} does not match expected {2 * totalDof}.");
 
-        return ApplyMatrixFree(gammas, mesh, spinorDim, gaugeDim, dofsPerCell, psi);
+        return ApplyMatrixFree(connection, gammas, mesh, spinorDim, gaugeDim, dofsPerCell, psi);
     }
 
     // -------------------------------------------------------
@@ -146,6 +146,7 @@ public sealed class CpuDiracOperatorAssembler : IDiracOperatorAssembler
     // -------------------------------------------------------
 
     private static double[] BuildExplicitComplexMatrix(
+        SpinConnectionBundle connection,
         GammaOperatorBundle gammas,
         Gu.Geometry.SimplicialMesh mesh,
         int spinorDim,
@@ -161,7 +162,7 @@ public sealed class CpuDiracOperatorAssembler : IDiracOperatorAssembler
             if (j > 0) e[(j - 1) * 2] = 0.0;
             e[j * 2] = 1.0;
 
-            var col = ApplyMatrixFree(gammas, mesh, spinorDim, gaugeDim, dofsPerCell, e);
+            var col = ApplyMatrixFree(connection, gammas, mesh, spinorDim, gaugeDim, dofsPerCell, e);
             for (int i = 0; i < totalDof; i++)
             {
                 M[(i * totalDof + j) * 2] = col[i * 2];
@@ -174,6 +175,7 @@ public sealed class CpuDiracOperatorAssembler : IDiracOperatorAssembler
     }
 
     private static double[] ApplyMatrixFree(
+        SpinConnectionBundle connection,
         GammaOperatorBundle gammas,
         Gu.Geometry.SimplicialMesh mesh,
         int spinorDim,
@@ -230,9 +232,95 @@ public sealed class CpuDiracOperatorAssembler : IDiracOperatorAssembler
                     output[wBase + 2 * r + 1] -= sum.Imaginary;
                 }
             }
+
+            AddGaugeCouplingContribution(
+                output,
+                psi,
+                connection,
+                gamma,
+                edgeIdx,
+                length,
+                v,
+                w,
+                spinorDim,
+                gaugeDim,
+                dofsPerCell);
         }
 
         return output;
+    }
+
+    private static void AddGaugeCouplingContribution(
+        double[] output,
+        double[] psi,
+        SpinConnectionBundle connection,
+        Complex[,] gamma,
+        int edgeIdx,
+        double length,
+        int v,
+        int w,
+        int spinorDim,
+        int gaugeDim,
+        int dofsPerCell)
+    {
+        if (length < 1e-14 || connection.GaugeCouplingCoefficients.Length == 0)
+            return;
+
+        double invLength = 1.0 / length;
+        int edgeOffset = edgeIdx * gaugeDim * gaugeDim * 2;
+        int vBase = 2 * (v * dofsPerCell);
+        int wBase = 2 * (w * dofsPerCell);
+
+        for (int sRow = 0; sRow < spinorDim; sRow++)
+        {
+            for (int gRow = 0; gRow < gaugeDim; gRow++)
+            {
+                double sumVRe = 0.0;
+                double sumVIm = 0.0;
+                double sumWRe = 0.0;
+                double sumWIm = 0.0;
+
+                for (int sCol = 0; sCol < spinorDim; sCol++)
+                {
+                    for (int gCol = 0; gCol < gaugeDim; gCol++)
+                    {
+                        int gaugeOffsetForward = edgeOffset + (gRow * gaugeDim + gCol) * 2;
+                        int gaugeOffsetBackward = edgeOffset + (gCol * gaugeDim + gRow) * 2;
+
+                        Complex gammaForward = gamma[sRow, sCol];
+                        Complex gammaBackward = Complex.Conjugate(gamma[sCol, sRow]);
+                        Complex gaugeForward = new(
+                            connection.GaugeCouplingCoefficients[gaugeOffsetForward],
+                            connection.GaugeCouplingCoefficients[gaugeOffsetForward + 1]);
+                        Complex gaugeBackward = Complex.Conjugate(new Complex(
+                            connection.GaugeCouplingCoefficients[gaugeOffsetBackward],
+                            connection.GaugeCouplingCoefficients[gaugeOffsetBackward + 1]));
+
+                        Complex coeffForward = gammaForward * gaugeForward * invLength;
+                        Complex coeffBackward = gammaBackward * gaugeBackward * invLength;
+
+                        int sourceW = wBase + 2 * (gCol * spinorDim + sCol);
+                        int sourceV = vBase + 2 * (gCol * spinorDim + sCol);
+                        Complex psiW = new(psi[sourceW], psi[sourceW + 1]);
+                        Complex psiV = new(psi[sourceV], psi[sourceV + 1]);
+
+                        Complex contribV = coeffForward * psiW;
+                        Complex contribW = coeffBackward * psiV;
+                        sumVRe += contribV.Real;
+                        sumVIm += contribV.Imaginary;
+                        sumWRe += contribW.Real;
+                        sumWIm += contribW.Imaginary;
+                    }
+                }
+
+                int targetV = vBase + 2 * (gRow * spinorDim + sRow);
+                int targetW = wBase + 2 * (gRow * spinorDim + sRow);
+                output[targetV] += sumVRe;
+                output[targetV + 1] += sumVIm;
+                output[targetW] += sumWRe;
+                output[targetW + 1] += sumWIm;
+            }
+        }
     }
 
     private static double[] ApplyExplicitMatrix(double[] M, int n, double[] psi)

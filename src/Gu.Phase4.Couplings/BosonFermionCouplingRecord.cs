@@ -51,6 +51,12 @@ public sealed class BosonFermionCouplingRecord
     [JsonPropertyName("branchStabilityScore")]
     public double BranchStabilityScore { get; init; }
 
+    [JsonPropertyName("variationMethod")]
+    public string VariationMethod { get; init; } = "unknown";
+
+    [JsonPropertyName("variationEvidenceId")]
+    public string? VariationEvidenceId { get; init; }
+
     [JsonPropertyName("provenance")]
     public required ProvenanceMeta Provenance { get; init; }
 }

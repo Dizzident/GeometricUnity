@@ -2,262 +2,196 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "gu://schemas/phase4/unified_particle_registry.schema.json",
   "title": "UnifiedParticleRegistry",
-  "description": "The unified candidate particle registry combining bosons, fermions, and interaction records with evidence-ranked claim classes and demotion history.",
+  "description": "Unified particle registry emitted by the Phase IV registry merge engine.",
   "type": "object",
   "required": [
     "registryVersion",
-    "bosonCandidates",
-    "fermionCandidates",
-    "interactionRecords"
+    "schemaVersion",
+    "candidates"
   ],
   "properties": {
     "registryVersion": {
-      "type": "string",
-      "description": "Registry version string"
+      "type": "string"
     },
-    "bosonCandidates": {
+    "schemaVersion": {
+      "type": "string"
+    },
+    "candidates": {
       "type": "array",
-      "description": "All registered candidate boson records (from Phase III, extended)",
-      "items": { "$ref": "#/$defs/UnifiedParticleRecord" }
-    },
-    "fermionCandidates": {
-      "type": "array",
-      "description": "All registered candidate fermion records (from Phase IV)",
-      "items": { "$ref": "#/$defs/UnifiedParticleRecord" }
-    },
-    "interactionRecords": {
-      "type": "array",
-      "description": "All registered boson-fermion interaction records",
-      "items": { "$ref": "#/$defs/InteractionRegistryRecord" }
-    },
-    "familyClusters": {
-      "type": "array",
-      "description": "Family cluster records from the clustering algorithm",
-      "items": { "type": "string", "description": "Family cluster ID" }
-    },
-    "generatedAt": {
-      "type": "string",
-      "format": "date-time",
-      "description": "Timestamp when this registry was generated"
+      "items": {
+        "$ref": "#/$defs/unifiedParticleRecord"
+      }
     }
   },
+  "additionalProperties": false,
   "$defs": {
-    "UnifiedParticleRecord": {
+    "provenance": {
+      "type": "object",
+      "required": [
+        "createdAt"
+      ],
+      "properties": {
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "codeRevision": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "branch": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "backend": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "particleClaimDemotion": {
+      "type": "object",
+      "required": [
+        "reason",
+        "details",
+        "fromClaimClass",
+        "toClaimClass"
+      ],
+      "properties": {
+        "reason": {
+          "type": "string"
+        },
+        "details": {
+          "type": "string"
+        },
+        "fromClaimClass": {
+          "type": "string"
+        },
+        "toClaimClass": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "unifiedParticleRecord": {
       "type": "object",
       "required": [
         "particleId",
+        "schemaVersion",
         "particleType",
         "primarySourceId",
+        "contributingSourceIds",
+        "branchVariantSet",
         "backgroundSet",
         "massLikeEnvelope",
+        "branchStabilityScore",
+        "observationConfidence",
+        "comparisonEvidenceScore",
         "claimClass",
-        "registryVersion"
+        "computedWithUnverifiedGpu",
+        "demotions",
+        "ambiguityNotes",
+        "registryVersion",
+        "provenance"
       ],
       "properties": {
         "particleId": {
-          "type": "string",
-          "description": "Unique candidate particle identifier"
+          "type": "string"
+        },
+        "schemaVersion": {
+          "type": "string"
         },
         "particleType": {
           "type": "string",
-          "description": "Particle type: boson or fermion",
-          "enum": ["boson", "fermion"]
+          "enum": [
+            "Boson",
+            "Fermion",
+            "Interaction"
+          ]
         },
         "primarySourceId": {
-          "type": "string",
-          "description": "Primary source record ID (boson candidate ID or fermion mode family ID)"
+          "type": "string"
         },
         "contributingSourceIds": {
           "type": "array",
-          "description": "All contributing source IDs",
-          "items": { "type": "string" }
-        },
-        "backgroundSet": {
-          "type": "array",
-          "description": "Background IDs where this candidate was observed",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         },
         "branchVariantSet": {
           "type": "array",
-          "description": "Branch variant IDs where this candidate persists",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
+        },
+        "backgroundSet": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "chirality": {
+          "type": [
+            "string",
+            "null"
+          ]
         },
         "massLikeEnvelope": {
           "type": "array",
-          "description": "Mass-like scale envelope: [min, mean, max] across contexts",
-          "items": { "type": "number" },
+          "items": {
+            "type": "number"
+          },
           "minItems": 3,
           "maxItems": 3
         },
-        "claimClass": {
-          "type": "string",
-          "description": "Current unified claim class",
-          "enum": [
-            "C0_NumericalMode",
-            "C1_LocalPersistentMode",
-            "C2_BranchStableCandidate",
-            "C3_ObservedStableCandidate",
-            "C4_PhysicalAnalogyCandidate",
-            "C5_StrongIdentificationCandidate"
-          ]
-        },
         "branchStabilityScore": {
-          "type": ["number", "null"],
-          "description": "Branch stability score [0, 1]",
-          "minimum": 0,
-          "maximum": 1
+          "type": "number"
         },
         "observationConfidence": {
-          "type": ["number", "null"],
-          "description": "Observation confidence score [0, 1]",
-          "minimum": 0,
-          "maximum": 1
+          "type": "number"
         },
-        "comparisonEvidence": {
-          "type": ["string", "null"],
-          "description": "Comparison evidence summary: Compatible, Incompatible, Underdetermined, InsufficientEvidence"
+        "comparisonEvidenceScore": {
+          "type": "number"
         },
-        "chiralitySummary": {
-          "type": ["string", "null"],
-          "description": "Chirality summary for fermions: left, right, mixed, ambiguous (null for bosons)"
+        "claimClass": {
+          "type": "string"
         },
-        "familyClusterId": {
-          "type": ["string", "null"],
-          "description": "Generation/family cluster ID for fermions (null for bosons)"
+        "computedWithUnverifiedGpu": {
+          "type": "boolean"
         },
         "demotions": {
           "type": "array",
-          "description": "Demotion history",
-          "items": { "$ref": "#/$defs/ParticleClaimDemotion" }
-        },
-        "ambiguityCount": {
-          "type": "integer",
-          "description": "Number of ambiguous matches or identifications",
-          "minimum": 0
+          "items": {
+            "$ref": "#/$defs/particleClaimDemotion"
+          }
         },
         "ambiguityNotes": {
           "type": "array",
-          "description": "Ambiguity notes",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         },
         "registryVersion": {
-          "type": "string",
-          "description": "Registry version when this record was last updated"
+          "type": "string"
+        },
+        "provenance": {
+          "$ref": "#/$defs/provenance"
         }
-      }
-    },
-    "InteractionRegistryRecord": {
-      "type": "object",
-      "required": [
-        "interactionId",
-        "bosonParticleId",
-        "fermionParticleIdI",
-        "fermionParticleIdJ",
-        "couplingMagnitudeEnvelope",
-        "branchStabilityScore"
-      ],
-      "properties": {
-        "interactionId": {
-          "type": "string",
-          "description": "Unique interaction record identifier"
-        },
-        "bosonParticleId": {
-          "type": "string",
-          "description": "Boson unified particle ID"
-        },
-        "fermionParticleIdI": {
-          "type": "string",
-          "description": "First fermion unified particle ID"
-        },
-        "fermionParticleIdJ": {
-          "type": "string",
-          "description": "Second fermion unified particle ID"
-        },
-        "couplingMagnitudeEnvelope": {
-          "type": "array",
-          "description": "Coupling magnitude envelope: [min, mean, max] across contexts",
-          "items": { "type": "number" },
-          "minItems": 3,
-          "maxItems": 3
-        },
-        "branchStabilityScore": {
-          "type": "number",
-          "description": "Branch stability of this coupling [0, 1]",
-          "minimum": 0,
-          "maximum": 1
-        },
-        "symmetryHints": {
-          "type": "array",
-          "description": "Symmetry and selection-rule hints",
-          "items": { "type": "string" }
-        },
-        "ambiguityNotes": {
-          "type": "array",
-          "description": "Ambiguity notes",
-          "items": { "type": "string" }
-        }
-      }
-    },
-    "ParticleClaimDemotion": {
-      "type": "object",
-      "required": ["particleId", "reason", "previousClaimClass", "demotedClaimClass", "details"],
-      "properties": {
-        "particleId": {
-          "type": "string",
-          "description": "Particle ID that was demoted"
-        },
-        "reason": {
-          "type": "string",
-          "description": "Reason for demotion",
-          "enum": [
-            "GaugeLeak",
-            "RefinementFragility",
-            "BranchFragility",
-            "ObservationInstability",
-            "ComparisonMismatch",
-            "BackendFragility",
-            "AmbiguousMatching",
-            "ChiralInstability",
-            "ConjugationInconsistency"
-          ]
-        },
-        "previousClaimClass": {
-          "type": "string",
-          "description": "Claim class before demotion",
-          "enum": [
-            "C0_NumericalMode",
-            "C1_LocalPersistentMode",
-            "C2_BranchStableCandidate",
-            "C3_ObservedStableCandidate",
-            "C4_PhysicalAnalogyCandidate",
-            "C5_StrongIdentificationCandidate"
-          ]
-        },
-        "demotedClaimClass": {
-          "type": "string",
-          "description": "Claim class after demotion",
-          "enum": [
-            "C0_NumericalMode",
-            "C1_LocalPersistentMode",
-            "C2_BranchStableCandidate",
-            "C3_ObservedStableCandidate",
-            "C4_PhysicalAnalogyCandidate",
-            "C5_StrongIdentificationCandidate"
-          ]
-        },
-        "details": {
-          "type": "string",
-          "description": "Diagnostic details about the demotion trigger"
-        },
-        "triggerValue": {
-          "type": ["number", "null"],
-          "description": "Metric value that triggered the demotion"
-        },
-        "threshold": {
-          "type": ["number", "null"],
-          "description": "Threshold that was exceeded"
-        }
-      }
+      },
+      "additionalProperties": true
     }
   }
 }

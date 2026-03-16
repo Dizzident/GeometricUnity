@@ -28,8 +28,35 @@ public sealed class DiracVariationBundle
     [JsonPropertyName("normalizationConvention")]
     public required string NormalizationConvention { get; init; }
 
+    [JsonPropertyName("variationMethod")]
+    public string VariationMethod { get; init; } = "finite-difference";
+
+    [JsonPropertyName("finiteDifferenceEpsilon")]
+    public double? FiniteDifferenceEpsilon { get; init; }
+
+    [JsonPropertyName("baseOperatorId")]
+    public string? BaseOperatorId { get; init; }
+
+    [JsonPropertyName("perturbedOperatorId")]
+    public string? PerturbedOperatorId { get; init; }
+
+    [JsonPropertyName("matrixShape")]
+    public int[]? MatrixShape { get; init; }
+
+    [JsonPropertyName("matrixArtifactRef")]
+    public string? MatrixArtifactRef { get; init; }
+
+    [JsonPropertyName("blocked")]
+    public bool Blocked { get; init; }
+
+    [JsonPropertyName("blockingReason")]
+    public string? BlockingReason { get; init; }
+
     [JsonPropertyName("symmetryNotes")]
     public List<string> SymmetryNotes { get; init; } = new();
+
+    [JsonPropertyName("diagnosticNotes")]
+    public List<string> DiagnosticNotes { get; init; } = new();
 
     [JsonPropertyName("provenance")]
     public required ProvenanceMeta Provenance { get; init; }

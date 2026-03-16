@@ -1,0 +1,52 @@
+{
+  "studyId": "phase12-joined-structured-l0",
+  "specs": [
+    {
+      "specId": "phase12-bg-a",
+      "environmentId": "env-refinement-2x2",
+      "branchManifestId": "phase8-real-atlas-control",
+      "seed": {
+        "kind": "SymmetricAnsatz",
+        "label": "phase12-seed-a"
+      },
+      "solveOptions": {
+        "solveMode": "ObjectiveMinimization",
+        "solverMethod": "GaussNewton",
+        "maxIterations": 500,
+        "initialStepSize": 0.01,
+        "gaugePenaltyLambda": 0.0,
+        "gaugeStrategy": "L2Penalty",
+        "toleranceResidualDiagnostic": 0.0001,
+        "toleranceStationary": 1e-06,
+        "toleranceResidualStrict": 1e-08
+      }
+    },
+    {
+      "specId": "phase12-bg-b",
+      "environmentId": "env-refinement-2x2",
+      "branchManifestId": "phase8-real-atlas-control",
+      "seed": {
+        "kind": "SymmetricAnsatz",
+        "label": "phase12-seed-b"
+      },
+      "solveOptions": {
+        "solveMode": "ObjectiveMinimization",
+        "solverMethod": "GaussNewton",
+        "maxIterations": 500,
+        "initialStepSize": 0.01,
+        "gaugePenaltyLambda": 0.0,
+        "gaugeStrategy": "L2Penalty",
+        "toleranceResidualDiagnostic": 0.0001,
+        "toleranceStationary": 1e-06,
+        "toleranceResidualStrict": 1e-08
+      }
+    }
+  ],
+  "deduplicationThreshold": 0.0,
+  "rankingCriteria": "admissibility-then-residual",
+  "notes": "Phase XII structured joined calculation family. Uses a minimal two-background env-refinement-2x2 run so bosonic spectra, fermion modes, and finite-difference couplings can be reproduced end to end from one persisted structured family.",
+  "environmentTier": "structured",
+  "manifestSearchPaths": [
+    "../../phase5_su2_branch_refinement_env_validation/config/manifests"
+  ]
+}

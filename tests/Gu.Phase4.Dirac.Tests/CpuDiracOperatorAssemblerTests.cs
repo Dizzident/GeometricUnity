@@ -197,6 +197,24 @@ public class CpuDiracOperatorAssemblerTests
     }
 
     [Fact]
+    public void Assemble_NonZeroOmega_ChangesExplicitMatrix()
+    {
+        var mesh = TwoTriangles();
+        var omegaZero = new double[mesh.EdgeCount];
+        var omegaNonzero = Enumerable.Range(0, mesh.EdgeCount).Select(i => 0.2 * (i + 1)).ToArray();
+
+        var (zeroBundle, _, _, _) = AssembleTwoTriangle(omegaZero);
+        var (nonzeroBundle, _, _, _) = AssembleTwoTriangle(omegaNonzero);
+
+        Assert.NotNull(zeroBundle.ExplicitMatrix);
+        Assert.NotNull(nonzeroBundle.ExplicitMatrix);
+        Assert.NotEqual(zeroBundle.ExplicitMatrix, nonzeroBundle.ExplicitMatrix);
+        Assert.True(
+            zeroBundle.ExplicitMatrix!.Zip(nonzeroBundle.ExplicitMatrix!, (a, b) => System.Math.Abs(a - b)).Any(delta => delta > 1e-12),
+            "A nonzero bosonic background should change the assembled Dirac operator.");
+    }
+
+    [Fact]
     public void Apply_ZeroOmega_ReturnsDerivativeOperator()
     {
         var (bundle, _, _, assembler) = AssembleTwoTriangle();

@@ -53,7 +53,10 @@ public sealed class CouplingProxyEngine
         double[,]? bosonVariationMatrixRe,
         double[,]? bosonVariationMatrixIm,
         string normalizationConvention,
-        ProvenanceMeta provenance)
+        ProvenanceMeta provenance,
+        string variationMethod = "unknown",
+        string? variationEvidenceId = null,
+        IReadOnlyList<string>? additionalNotes = null)
     {
         ArgumentNullException.ThrowIfNull(modeI);
         ArgumentNullException.ThrowIfNull(modeJ);
@@ -77,6 +80,8 @@ public sealed class CouplingProxyEngine
                 CouplingProxyMagnitude = 0.0,
                 NormalizationConvention = normalizationConvention,
                 SelectionRuleNotes = new List<string> { "Missing eigenvector or variation matrix; zero coupling returned." },
+                VariationMethod = variationMethod,
+                VariationEvidenceId = variationEvidenceId,
                 Provenance = provenance,
             };
         }
@@ -144,6 +149,9 @@ public sealed class CouplingProxyEngine
             CouplingProxyImaginary = gIm,
             CouplingProxyMagnitude = gMag,
             NormalizationConvention = normalizationConvention,
+            SelectionRuleNotes = additionalNotes?.ToList() ?? new List<string>(),
+            VariationMethod = variationMethod,
+            VariationEvidenceId = variationEvidenceId,
             Provenance = provenance,
         };
     }
