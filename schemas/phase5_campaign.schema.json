@@ -95,9 +95,37 @@
     "couplingConsistencyPath": {
       "type": ["string", "null"],
       "description": "Optional path to the coupling consistency JSON file (array of CouplingConsistencyRecord). Required in reference mode."
+    },
+    "targetCoverageBlockersPath": {
+      "type": ["string", "null"],
+      "description": "Optional path to explicit target coverage blocker records for targets that are intentionally not computable in the current campaign."
     }
   },
   "$defs": {
+    "TargetCoverageBlockerTable": {
+      "type": "object",
+      "required": ["tableId", "blockers"],
+      "properties": {
+        "tableId": { "type": "string" },
+        "blockers": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/TargetCoverageBlockerRecord" }
+        }
+      }
+    },
+    "TargetCoverageBlockerRecord": {
+      "type": "object",
+      "required": ["blockerId", "observableId", "blockerReason", "closureRequirement"],
+      "properties": {
+        "blockerId": { "type": "string" },
+        "observableId": { "type": "string" },
+        "targetLabel": { "type": ["string", "null"] },
+        "targetEnvironmentId": { "type": ["string", "null"] },
+        "targetEnvironmentTier": { "type": ["string", "null"] },
+        "blockerReason": { "type": "string" },
+        "closureRequirement": { "type": "string" }
+      }
+    },
     "BranchRobustnessStudySpec": {
       "type": "object",
       "required": ["studyId", "branchVariantIds", "targetQuantityIds"],

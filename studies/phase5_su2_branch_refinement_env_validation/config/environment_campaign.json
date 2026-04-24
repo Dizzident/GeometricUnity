@@ -4,7 +4,8 @@
   "environmentIds": [
     "env-toy-2d-trivial",
     "env-structured-4x4",
-    "env-imported-repo-benchmark"
+    "env-imported-repo-benchmark",
+    "env-zenodo-su2-plaquette-chain-p4-j0.5-g1.5-v1"
   ],
   "branchManifestId": "phase8-real-atlas-control",
   "targetQuantities": [

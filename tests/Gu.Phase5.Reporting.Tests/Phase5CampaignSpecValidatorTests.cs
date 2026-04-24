@@ -41,8 +41,11 @@ public sealed class Phase5CampaignSpecValidatorTests : IDisposable
     /// <summary>
     /// Creates a minimal valid spec referencing files that actually exist in <paramref name="dir"/>.
     /// </summary>
-    private Phase5CampaignSpec MakeValidSpec(string dir, string schemaVersion = "1.0.0",
-        IReadOnlyList<string>? extraEnvPaths = null)
+    private Phase5CampaignSpec MakeValidSpec(
+        string dir,
+        string schemaVersion = "1.0.0",
+        IReadOnlyList<string>? extraEnvPaths = null,
+        string? targetCoverageBlockersPath = null)
     {
         File.WriteAllText(
             Path.Combine(dir, "targets.json"),
@@ -208,6 +211,7 @@ public sealed class Phase5CampaignSpecValidatorTests : IDisposable
                 SigmaThreshold = 5.0,
             },
             FalsificationPolicy = new FalsificationPolicy(),
+            TargetCoverageBlockersPath = targetCoverageBlockersPath,
             Provenance = MakeProvenance(),
         };
     }
@@ -357,6 +361,53 @@ public sealed class Phase5CampaignSpecValidatorTests : IDisposable
         var result = Phase5CampaignSpecValidator.Validate(spec, _tempDir, requireReferenceSidecars: false);
         Assert.False(result.IsValid);
         Assert.Contains(result.Errors, e => e.Contains("missing-q") && e.Contains("no matching computed observable"));
+    }
+
+    [Fact]
+    public void Validate_TargetWithNoComputedObservableAndBlocker_ReturnsValid()
+    {
+        var spec = MakeValidSpec(_tempDir, targetCoverageBlockersPath: "target_coverage_blockers.json");
+
+        File.WriteAllText(
+            Path.Combine(_tempDir, "targets.json"),
+            GuJsonDefaults.Serialize(new ExternalTargetTable
+            {
+                TableId = "validator-targets",
+                Targets =
+                [
+                    new ExternalTarget
+                    {
+                        Label = "missing-q",
+                        ObservableId = "missing-q",
+                        Value = 1.0,
+                        Uncertainty = 0.1,
+                        Source = "derived-synthetic-v1",
+                        EvidenceTier = "derived-synthetic",
+                        DistributionModel = "gaussian",
+                    },
+                ],
+            }));
+
+        File.WriteAllText(
+            Path.Combine(_tempDir, "target_coverage_blockers.json"),
+            GuJsonDefaults.Serialize(new TargetCoverageBlockerTable
+            {
+                TableId = "blockers",
+                Blockers =
+                [
+                    new TargetCoverageBlockerRecord
+                    {
+                        BlockerId = "block-missing-q",
+                        ObservableId = "missing-q",
+                        TargetLabel = "missing-q",
+                        BlockerReason = "Observable generation has not been implemented for this target.",
+                        ClosureRequirement = "Generate the missing observable with uncertainty.",
+                    },
+                ],
+            }));
+
+        var result = Phase5CampaignSpecValidator.Validate(spec, _tempDir, requireReferenceSidecars: false);
+        Assert.True(result.IsValid, string.Join("; ", result.Errors));
     }
 
     // -----------------------------------------------------------------------

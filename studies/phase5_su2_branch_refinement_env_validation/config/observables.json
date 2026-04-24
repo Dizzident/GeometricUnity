@@ -313,5 +313,27 @@
       "branch": { "branchId": "V1-identity-shiab-trivial-torsion-simple-a0-omega", "schemaVersion": "1.0" },
       "backend": "cpu"
     }
+  },
+  {
+    "observableId": "bosonic-eigenvalue-ratio-1",
+    "value": 0.3889179657576827,
+    "uncertainty": {
+      "branchVariation": -1,
+      "refinementError": -1,
+      "extractionError": 0.001,
+      "environmentSensitivity": -1,
+      "totalUncertainty": 0.001
+    },
+    "branchId": "zenodo-su2lgt-periodic-k0",
+    "environmentId": "env-zenodo-su2-plaquette-chain-p4-j0.5-g1.5-v1",
+    "refinementLevel": "P4-j0.5-g1.5",
+    "extractionMethod": "adjacent-gap-ratio:index-0",
+    "provenance": {
+      "createdAt": "2026-04-24T00:00:00+00:00",
+      "codeRevision": "phase14-zenodo-su2lgt-v1",
+      "branch": { "branchId": "zenodo-su2lgt-periodic-k0", "schemaVersion": "1.0" },
+      "backend": "external-python",
+      "notes": "Derived from Zenodo DOI 10.5281/zenodo.16739090, su2lgt-main.zip sha256 f1d566b97ad3fee275afd36784edbf8f2067e4bed4d63bcc09abfedd8db0eb8c, periodic P=4 jmax=0.5 k=0 g^2=1.5 exact diagonalization eigenvalues."
+    }
   }
 ]

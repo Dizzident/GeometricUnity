@@ -115,6 +115,9 @@ public static class Phase5CampaignSpecValidator
                 CheckFilePath(spec.CouplingConsistencyPath, "couplingConsistencyPath", specDir, errors);
         }
 
+        if (spec.TargetCoverageBlockersPath is not null)
+            CheckFilePath(spec.TargetCoverageBlockersPath, "targetCoverageBlockersPath", specDir, errors);
+
         ValidateEnvironmentEvidence(spec, specDir, requireReferenceSidecars, errors);
         ValidateTargetTable(spec, specDir, errors);
         ValidateSidecarSchemas(spec, specDir, repoRoot, errors);
@@ -219,6 +222,7 @@ public static class Phase5CampaignSpecValidator
             }
 
             var environmentTiers = LoadEnvironmentTierMap(spec, specDir);
+            var targetCoverageBlockers = LoadTargetCoverageBlockers(spec, specDir, errors);
             if (table is null)
             {
                 errors.Add("externalTargetTablePath: failed to deserialize ExternalTargetTable.");
@@ -256,6 +260,9 @@ public static class Phase5CampaignSpecValidator
                 if (observables.Any(obs => TargetSelectorsMatch(obs, target, environmentTiers)))
                     continue;
 
+                if (HasTargetCoverageBlocker(target, targetCoverageBlockers))
+                    continue;
+
                 errors.Add(
                     $"externalTargetTablePath: target '{target.Label}' for observableId '{target.ObservableId}' " +
                     "has no matching computed observable after applying targetEnvironmentId/targetEnvironmentTier selectors.");
@@ -265,6 +272,62 @@ public static class Phase5CampaignSpecValidator
         {
             errors.Add($"externalTargetTablePath: failed to validate target table ({ex.Message}).");
         }
+    }
+
+    private static IReadOnlyList<TargetCoverageBlockerRecord> LoadTargetCoverageBlockers(
+        Phase5CampaignSpec spec,
+        string specDir,
+        List<string> errors)
+    {
+        if (string.IsNullOrWhiteSpace(spec.TargetCoverageBlockersPath))
+            return Array.Empty<TargetCoverageBlockerRecord>();
+
+        var resolved = ResolvePath(spec.TargetCoverageBlockersPath, specDir);
+        if (!File.Exists(resolved))
+            return Array.Empty<TargetCoverageBlockerRecord>();
+
+        try
+        {
+            var table = GuJsonDefaults.Deserialize<TargetCoverageBlockerTable>(File.ReadAllText(resolved));
+            if (table is null)
+            {
+                errors.Add("targetCoverageBlockersPath: failed to deserialize TargetCoverageBlockerTable.");
+                return Array.Empty<TargetCoverageBlockerRecord>();
+            }
+
+            foreach (var blocker in table.Blockers)
+            {
+                if (string.IsNullOrWhiteSpace(blocker.BlockerId))
+                    errors.Add("targetCoverageBlockersPath: every blocker must declare blockerId.");
+                if (string.IsNullOrWhiteSpace(blocker.ObservableId))
+                    errors.Add($"targetCoverageBlockersPath: blocker '{blocker.BlockerId}' must declare observableId.");
+                if (string.IsNullOrWhiteSpace(blocker.BlockerReason))
+                    errors.Add($"targetCoverageBlockersPath: blocker '{blocker.BlockerId}' must declare blockerReason.");
+                if (string.IsNullOrWhiteSpace(blocker.ClosureRequirement))
+                    errors.Add($"targetCoverageBlockersPath: blocker '{blocker.BlockerId}' must declare closureRequirement.");
+            }
+
+            return table.Blockers;
+        }
+        catch (Exception ex)
+        {
+            errors.Add($"targetCoverageBlockersPath: failed to validate blockers ({ex.Message}).");
+            return Array.Empty<TargetCoverageBlockerRecord>();
+        }
+    }
+
+    private static bool HasTargetCoverageBlocker(
+        ExternalTarget target,
+        IReadOnlyList<TargetCoverageBlockerRecord> blockers)
+    {
+        return blockers.Any(blocker =>
+            string.Equals(blocker.ObservableId, target.ObservableId, StringComparison.Ordinal) &&
+            (string.IsNullOrWhiteSpace(blocker.TargetLabel) ||
+             string.Equals(blocker.TargetLabel, target.Label, StringComparison.Ordinal)) &&
+            (string.IsNullOrWhiteSpace(blocker.TargetEnvironmentId) ||
+             string.Equals(blocker.TargetEnvironmentId, target.TargetEnvironmentId, StringComparison.Ordinal)) &&
+            (string.IsNullOrWhiteSpace(blocker.TargetEnvironmentTier) ||
+             string.Equals(blocker.TargetEnvironmentTier, target.TargetEnvironmentTier, StringComparison.Ordinal)));
     }
 
     private static IReadOnlyDictionary<string, string> LoadEnvironmentTierMap(

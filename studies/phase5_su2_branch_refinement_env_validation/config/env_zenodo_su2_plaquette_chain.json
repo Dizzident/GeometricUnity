@@ -1,0 +1,42 @@
+{
+  "environmentId": "env-zenodo-su2-plaquette-chain-p4-j0.5-g1.5-v1",
+  "geometryTier": "imported",
+  "geometryFingerprint": "sha256-f1d566b97ad3fee275afd36784edbf8f2067e4bed4d63bcc09abfedd8db0eb8c",
+  "baseDimension": 2,
+  "ambientDimension": 2,
+  "edgeCount": 12,
+  "faceCount": 4,
+  "admissibility": {
+    "level": "imported",
+    "checks": [
+      {
+        "checkId": "doi-source-present",
+        "description": "Imported benchmark is backed by a DOI-addressed Zenodo software archive.",
+        "passed": true
+      },
+      {
+        "checkId": "small-periodic-chain",
+        "description": "The benchmark uses a periodic SU(2) plaquette chain with P=4 and jmax=0.5.",
+        "passed": true,
+        "value": 4.0,
+        "threshold": 4.0
+      }
+    ],
+    "passed": true,
+    "notes": "External benchmark generated from Zenodo record 10.5281/zenodo.16739090, file su2lgt-main.zip, using the periodic k=0 exact diagonalization path for P=4, jmax=0.5, g^2=1.5."
+  },
+  "sourceSpec": "https://zenodo.org/records/16739090/files/su2lgt-main.zip?download=1",
+  "datasetId": "doi:10.5281/zenodo.16739090",
+  "sourceHash": "sha256-f1d566b97ad3fee275afd36784edbf8f2067e4bed4d63bcc09abfedd8db0eb8c",
+  "conversionVersion": "gu-zenodo-su2lgt-adjacent-gap-ratio-v1",
+  "provenance": {
+    "createdAt": "2026-04-24T00:00:00+00:00",
+    "codeRevision": "phase14-zenodo-su2lgt-v1",
+    "branch": {
+      "branchId": "zenodo-su2lgt-periodic-k0-p4-j0.5-g1.5",
+      "schemaVersion": "1.0"
+    },
+    "backend": "external-python",
+    "notes": "Downloaded archive md5 7c09478c1d2b2816d416e564695d0bc0. Eigenvalues were generated in ignored study-runs with the Zenodo package: create_basics.py; periodic/states_periodic_k0_undocumented.py 4 0.5 0; periodic/plaquette_periodic_k0.py 4 0.5 0; periodic/eigensystem_periodic_k0.py 4 0.5 0 1.5."
+  }
+}

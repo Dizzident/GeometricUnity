@@ -26,6 +26,7 @@ dotnet test --no-build
 dotnet run --project apps/Gu.Cli -- validate-quantitative \
   --observables <observables.json> \
   --targets <external_targets.json> \
+  --environment-records <env1.json,env2.json,...> \
   --fail-closed-target-coverage \
   --out study-runs/phase13_external_evidence_001/scorecard.json
 ```

@@ -105,6 +105,8 @@ switch (args[0])
         return BuildStructuredEnvironment(args);
     case "validate-quantitative":
         return ValidateQuantitative(args);
+    case "extract-spectrum-observable":
+        return ExtractSpectrumObservable(args);
     case "build-validation-dossier":
         return BuildValidationDossier(args);
     case "verify-study-freshness":
@@ -4168,11 +4170,12 @@ static int ValidateQuantitative(string[] args)
     var observablesPath = ParseFlag(args, "--observables", "");
     var targetsPath = ParseFlag(args, "--targets", "");
     var outFlag = ParseFlag(args, "--out", "");
+    var environmentRecordsFlag = ParseFlag(args, "--environment-records", "");
     var failClosedTargetCoverage = args.Contains("--fail-closed-target-coverage");
 
     if (string.IsNullOrEmpty(observablesPath) || string.IsNullOrEmpty(targetsPath))
     {
-        Console.Error.WriteLine("Usage: gu validate-quantitative --observables <obs.json> --targets <targets.json> [--out <scorecard.json>] [--fail-closed-target-coverage]");
+        Console.Error.WriteLine("Usage: gu validate-quantitative --observables <obs.json> --targets <targets.json> [--environment-records <env1.json,env2.json,...>] [--out <scorecard.json>] [--fail-closed-target-coverage]");
         return 1;
     }
     if (!File.Exists(observablesPath))
@@ -4195,6 +4198,16 @@ static int ValidateQuantitative(string[] args)
     }
 
     var targetTable = ExternalTargetTable.FromJson(File.ReadAllText(targetsPath));
+    IReadOnlyList<EnvironmentRecord> environmentRecords;
+    try
+    {
+        environmentRecords = LoadEnvironmentRecords(environmentRecordsFlag);
+    }
+    catch (Exception ex)
+    {
+        Console.Error.WriteLine($"Failed to load environment records: {ex.Message}");
+        return 1;
+    }
 
     var policy = new CalibrationPolicy
     {
@@ -4213,11 +4226,15 @@ static int ValidateQuantitative(string[] args)
         targetTable,
         policy,
         provenance,
+        environmentRecords,
         failClosedTargetCoverage: failClosedTargetCoverage);
 
     var resultJson = scoreCard.ToJson();
     if (!string.IsNullOrEmpty(outFlag))
     {
+        var outDir = Path.GetDirectoryName(Path.GetFullPath(outFlag));
+        if (!string.IsNullOrEmpty(outDir))
+            Directory.CreateDirectory(outDir);
         File.WriteAllText(outFlag, resultJson);
         Console.WriteLine($"Written consistency scorecard: {outFlag}");
     }
@@ -4227,6 +4244,121 @@ static int ValidateQuantitative(string[] args)
     }
     Console.WriteLine("validate-quantitative done.");
     return 0;
+}
+
+static int ExtractSpectrumObservable(string[] args)
+{
+    var eigenvaluesPath = ParseFlag(args, "--eigenvalues", "");
+    var observableId = ParseFlag(args, "--observable-id", "");
+    var environmentId = ParseFlag(args, "--environment-id", "");
+    var branchId = ParseFlag(args, "--branch-id", "external-spectrum");
+    var refinementLevel = ParseFlag(args, "--refinement-level", "");
+    var gapIndexFlag = ParseFlag(args, "--gap-index", "0");
+    var uncertaintyFlag = ParseFlag(args, "--uncertainty", "0.001");
+    var method = ParseFlag(args, "--method", "adjacent-gap-ratio");
+    var outFlag = ParseFlag(args, "--out", "");
+
+    if (string.IsNullOrEmpty(eigenvaluesPath) ||
+        string.IsNullOrEmpty(observableId) ||
+        string.IsNullOrEmpty(environmentId))
+    {
+        Console.Error.WriteLine("Usage: gu extract-spectrum-observable --eigenvalues <eigenvalues.json> --observable-id <id> --environment-id <id> [--branch-id <id>] [--refinement-level <level>] [--method adjacent-gap-ratio] [--gap-index <n>] [--uncertainty <sigma>] [--out <observable.json>]");
+        return 1;
+    }
+    if (!File.Exists(eigenvaluesPath))
+    {
+        Console.Error.WriteLine($"Eigenvalues file not found: {eigenvaluesPath}");
+        return 1;
+    }
+    if (!string.Equals(method, "adjacent-gap-ratio", StringComparison.Ordinal))
+    {
+        Console.Error.WriteLine($"Unsupported spectrum observable method: {method}");
+        return 1;
+    }
+    if (!int.TryParse(gapIndexFlag, out var gapIndex))
+    {
+        Console.Error.WriteLine($"Invalid --gap-index value: {gapIndexFlag}");
+        return 1;
+    }
+    if (!double.TryParse(uncertaintyFlag, out var uncertainty))
+    {
+        Console.Error.WriteLine($"Invalid --uncertainty value: {uncertaintyFlag}");
+        return 1;
+    }
+
+    double[]? eigenvalues;
+    try
+    {
+        eigenvalues = JsonSerializer.Deserialize<double[]>(File.ReadAllText(eigenvaluesPath),
+            new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+    }
+    catch (Exception ex)
+    {
+        Console.Error.WriteLine($"Failed to load eigenvalues: {ex.Message}");
+        return 1;
+    }
+    if (eigenvalues is null)
+    {
+        Console.Error.WriteLine($"Failed to deserialize eigenvalues: {eigenvaluesPath}");
+        return 1;
+    }
+
+    QuantitativeObservableRecord record;
+    try
+    {
+        record = SpectrumObservableExtractor.CreateAdjacentGapRatioRecord(
+            eigenvalues,
+            gapIndex,
+            observableId,
+            environmentId,
+            branchId,
+            string.IsNullOrWhiteSpace(refinementLevel) ? null : refinementLevel,
+            uncertainty,
+            BuildP5Provenance());
+    }
+    catch (Exception ex)
+    {
+        Console.Error.WriteLine($"Failed to extract spectrum observable: {ex.Message}");
+        return 1;
+    }
+
+    var resultJson = GuJsonDefaults.Serialize(record);
+    if (!string.IsNullOrEmpty(outFlag))
+    {
+        var outDir = Path.GetDirectoryName(Path.GetFullPath(outFlag));
+        if (!string.IsNullOrEmpty(outDir))
+            Directory.CreateDirectory(outDir);
+        File.WriteAllText(outFlag, resultJson);
+        Console.WriteLine($"Written spectrum observable: {outFlag}");
+    }
+    else
+    {
+        Console.WriteLine(resultJson);
+    }
+
+    Console.WriteLine("extract-spectrum-observable done.");
+    return 0;
+}
+
+static IReadOnlyList<EnvironmentRecord> LoadEnvironmentRecords(string environmentRecordsFlag)
+{
+    if (string.IsNullOrWhiteSpace(environmentRecordsFlag))
+        return Array.Empty<EnvironmentRecord>();
+
+    var records = new List<EnvironmentRecord>();
+    foreach (var path in environmentRecordsFlag.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries))
+    {
+        if (!File.Exists(path))
+            throw new FileNotFoundException($"file not found at \"{path}\".", path);
+
+        var record = GuJsonDefaults.Deserialize<EnvironmentRecord>(File.ReadAllText(path));
+        if (record is null)
+            throw new InvalidOperationException($"failed to deserialize EnvironmentRecord from \"{path}\".");
+
+        records.Add(record);
+    }
+
+    return records;
 }
 
 static int BuildValidationDossier(string[] args)
@@ -4470,6 +4602,8 @@ static int RunPhase5Campaign(string[] args)
         CopyIfExists(Path.Combine(specDir, spec.RepresentationContentPath), Path.Combine(inputsDir, "representation_content.json"));
     if (spec.CouplingConsistencyPath is not null)
         CopyIfExists(Path.Combine(specDir, spec.CouplingConsistencyPath), Path.Combine(inputsDir, "coupling_consistency.json"));
+    if (spec.TargetCoverageBlockersPath is not null)
+        CopyIfExists(Path.Combine(specDir, spec.TargetCoverageBlockersPath), Path.Combine(inputsDir, "target_coverage_blockers.json"));
     CopyIfExists(Path.Combine(specDir, "sidecar_summary.json"), Path.Combine(inputsDir, "sidecar_summary.json"));
     CopyIfExists(Path.Combine(specDir, "candidate_provenance_links.json"), Path.Combine(inputsDir, "candidate_provenance_links.json"));
     for (int i = 0; i < spec.EnvironmentRecordPaths.Count; i++)
@@ -4723,8 +4857,34 @@ static string GeneratePhase5ReportMarkdown(
     sb.AppendLine("## Quantitative");
     if (scoreCard is not null)
     {
+        if (scoreCard.TotalTargets is not null)
+            sb.AppendLine($"- Total targets: {scoreCard.TotalTargets}");
+        if (scoreCard.MatchedTargetCount is not null)
+            sb.AppendLine($"- Matched targets: {scoreCard.MatchedTargetCount}");
+        if (scoreCard.MissingTargetCount is not null)
+            sb.AppendLine($"- Missing targets: {scoreCard.MissingTargetCount}");
         sb.AppendLine($"- Passed matches: {scoreCard.TotalPassed}");
         sb.AppendLine($"- Failed matches: {scoreCard.TotalFailed}");
+        if (scoreCard.TargetCoverage is { Count: > 0 })
+        {
+            var missingTargets = scoreCard.TargetCoverage
+                .Where(t => t.Status != "matched")
+                .OrderBy(t => t.TargetLabel, StringComparer.Ordinal)
+                .ToList();
+            if (missingTargets.Count > 0)
+            {
+                sb.AppendLine("- Missing target coverage:");
+                foreach (var target in missingTargets)
+                {
+                    var selector = !string.IsNullOrWhiteSpace(target.TargetEnvironmentId)
+                        ? $" environmentId={target.TargetEnvironmentId}"
+                        : !string.IsNullOrWhiteSpace(target.TargetEnvironmentTier)
+                            ? $" environmentTier={target.TargetEnvironmentTier}"
+                            : string.Empty;
+                    sb.AppendLine($"  - {target.TargetLabel} (`{target.ObservableId}`{selector}): {target.Notes ?? target.Status}");
+                }
+            }
+        }
         if (scoreCard.BenchmarkClassCounts is { Count: > 0 })
         {
             foreach (var entry in scoreCard.BenchmarkClassCounts.OrderBy(kv => kv.Key, StringComparer.Ordinal))
@@ -4744,6 +4904,11 @@ static string GeneratePhase5ReportMarkdown(
         sb.AppendLine($"- Active fatal: {report.FalsificationDashboard.ActiveFatalCount}");
         sb.AppendLine($"- Active high: {report.FalsificationDashboard.ActiveHighCount}");
         sb.AppendLine($"- Demotions: {report.FalsificationDashboard.DemotionCount}");
+        if (report.FalsificationDashboard.ActiveFatalCount > 0 ||
+            report.FalsificationDashboard.ActiveHighCount > 0)
+        {
+            sb.AppendLine("- Claim status: blocked while fatal or high falsifiers remain active.");
+        }
     }
     sb.AppendLine();
     sb.AppendLine("## Dossiers");
@@ -5308,7 +5473,8 @@ static void PrintUsage()
     Console.WriteLine("  gu refinement-study --spec <f> --values <f> [--out <f>]  Phase V refinement convergence study");
     Console.WriteLine("  gu import-environment --spec <f> [--out <f>] Import external geometry as environment record");
     Console.WriteLine("  gu build-structured-environment --spec <f> [--out <f>]  Generate structured analytic environment");
-    Console.WriteLine("  gu validate-quantitative --observables <f> --targets <f> [--out <f>] [--fail-closed-target-coverage]  Quantitative validation");
+    Console.WriteLine("  gu validate-quantitative --observables <f> --targets <f> [--environment-records <csv>] [--out <f>] [--fail-closed-target-coverage]  Quantitative validation");
+    Console.WriteLine("  gu extract-spectrum-observable --eigenvalues <f> --observable-id <id> --environment-id <id> [--out <f>]  Extract spectrum-derived observable");
     Console.WriteLine("  gu build-validation-dossier --study-manifest <f> [--out <f>]  Build Phase V validation dossier");
     Console.WriteLine("  gu verify-study-freshness --dossier <f>      Verify study freshness / G-006 compliance");
     Console.WriteLine("  gu run-phase5-campaign --spec <f> --out-dir <dir> [--validate-first]  Run Phase V M53 end-to-end campaign");

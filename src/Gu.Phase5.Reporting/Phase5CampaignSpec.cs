@@ -88,4 +88,8 @@ public sealed class Phase5CampaignSpec
     /// <summary>Optional path to the coupling consistency JSON file (array of CouplingConsistencyRecord).</summary>
     [JsonPropertyName("couplingConsistencyPath")]
     public string? CouplingConsistencyPath { get; init; }
+
+    /// <summary>Optional path to explicit target coverage blocker records.</summary>
+    [JsonPropertyName("targetCoverageBlockersPath")]
+    public string? TargetCoverageBlockersPath { get; init; }
 }

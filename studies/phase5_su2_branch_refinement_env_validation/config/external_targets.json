@@ -112,17 +112,17 @@
     },
     {
       "observableId": "bosonic-eigenvalue-ratio-1",
-      "label": "bosonic-mode-1-external-lattice-gauge-benchmark",
-      "value": 0.09,
-      "uncertainty": 0.02,
-      "source": "external-lattice-gauge-su2-2d-v1",
-      "targetProvenance": "external-lattice-gauge-su2-2d-v1",
+      "label": "bosonic-mode-1-zenodo-su2-plaquette-chain-benchmark",
+      "value": 0.3889179657576827,
+      "uncertainty": 0.005,
+      "source": "doi:10.5281/zenodo.16739090",
+      "targetProvenance": "zenodo-su2lgt-periodic-k0-p4-j0.5-g1.5-v1",
       "evidenceTier": "evidence-grade",
       "benchmarkClass": "external-benchmark",
-      "targetEnvironmentId": "env-external-lattice-gauge-su2-2d-v1",
+      "targetEnvironmentId": "env-zenodo-su2-plaquette-chain-p4-j0.5-g1.5-v1",
       "targetEnvironmentTier": "imported",
       "distributionModel": "gaussian",
-      "notes": "Phase XI M2: genuine external benchmark target anchored to the external lattice gauge imported environment (datasetId=external-lattice-gauge-su2-2d-v1). This is the first external-benchmark class target in the campaign. The scorecard BenchmarkClassCounts will now explicitly list both 'internal-benchmark' and 'external-benchmark' as distinct categories, satisfying the D-P11-002 scorecard separation requirement."
+      "notes": "Phase XIV external benchmark sourced from Zenodo DOI 10.5281/zenodo.16739090. The target is the adjacent low-energy gap ratio min(E1-E0,E2-E1)/max(E1-E0,E2-E1) from the periodic SU(2) plaquette-chain exact diagonalization case P=4, jmax=0.5, k=0, g^2=1.5."
     }
   ]
 }

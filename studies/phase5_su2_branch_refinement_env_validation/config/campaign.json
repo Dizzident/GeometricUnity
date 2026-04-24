@@ -49,7 +49,7 @@
       "env-toy-2d-trivial",
       "env-structured-4x4",
       "env-imported-repo-benchmark",
-      "env-external-lattice-gauge-su2-2d-v1"
+      "env-zenodo-su2-plaquette-chain-p4-j0.5-g1.5-v1"
     ],
     "branchManifestId": "phase8-real-atlas-control",
     "targetQuantities": [
@@ -78,7 +78,7 @@
     "codeRevision": "phase10-direct-refinement-v1",
     "branch": { "branchId": "phase8-real-atlas-control", "schemaVersion": "1.0" },
     "backend": "cpu",
-    "notes": "Phase XI standard evidence campaign: adds candidate-specific branch/background provenance links for fermion-registry-phase4-toy-v1-0001 via candidate_provenance_links.json (P11-M1), and adds genuine external imported environment record env-external-lattice-gauge-su2-2d-v1 with datasetId=external-lattice-gauge-su2-2d-v1 (P11-M2). Branch study still uses the admitted multi-variant atlas on the same strict thresholds and remains mixed. Refinement points to a direct solver-backed ladder. The repo-internal imported benchmark (env-imported-repo-benchmark) remains present and explicitly distinct from the new external imported record. Candidate-specific escalation remains fail-closed for candidates without provenance links; fermion-registry-phase4-toy-v1-0001 now carries non-empty evidenceRecordIds in branch-robust and refinement-bounded gate results."
+    "notes": "Phase XIV standard evidence campaign: keeps candidate-specific branch/background provenance links for fermion-registry-phase4-toy-v1-0001, keeps the repo-internal imported benchmark, and replaces the placeholder external lattice-gauge target with a DOI-backed Zenodo SU(2) plaquette-chain exact-diagonalization benchmark (doi:10.5281/zenodo.16739090). Branch study still uses the admitted multi-variant atlas on strict thresholds and remains mixed. Candidate-specific escalation remains fail-closed while fatal/high falsifiers are active."
   },
   "branchQuantityValuesPath": "branch_quantity_values.json",
   "refinementValuesPath": "phase10_direct_refinement_standard/refinement_values.json",
@@ -87,11 +87,12 @@
     "env_toy_record.json",
     "env_structured_4x4_record.json",
     "env_imported_repo_benchmark.json",
-    "env_external_lattice_gauge.json"
+    "env_zenodo_su2_plaquette_chain.json"
   ],
   "registryPath": "../../phase4_fermion_family_atlas_001/output/unified_particle_registry.json",
   "observationChainPath": "observation_chain.json",
   "environmentVariancePath": "environment_variance.json",
   "representationContentPath": "representation_content.json",
-  "couplingConsistencyPath": "coupling_consistency.json"
+  "couplingConsistencyPath": "coupling_consistency.json",
+  "targetCoverageBlockersPath": "target_coverage_blockers.json"
 }
