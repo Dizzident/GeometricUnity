@@ -22,6 +22,22 @@ public sealed class ConsistencyScoreCard
     [JsonPropertyName("matches")]
     public required IReadOnlyList<TargetMatchRecord> Matches { get; init; }
 
+    /// <summary>Total external targets declared in the target table.</summary>
+    [JsonPropertyName("totalTargets")]
+    public int? TotalTargets { get; init; }
+
+    /// <summary>Number of external targets with at least one matching computed observable.</summary>
+    [JsonPropertyName("matchedTargetCount")]
+    public int? MatchedTargetCount { get; init; }
+
+    /// <summary>Number of external targets without a matching computed observable.</summary>
+    [JsonPropertyName("missingTargetCount")]
+    public int? MissingTargetCount { get; init; }
+
+    /// <summary>Coverage status for every target declared in the target table.</summary>
+    [JsonPropertyName("targetCoverage")]
+    public IReadOnlyList<TargetCoverageRecord>? TargetCoverage { get; init; }
+
     /// <summary>Count of matches that passed.</summary>
     [JsonPropertyName("totalPassed")]
     public required int TotalPassed { get; init; }

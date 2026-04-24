@@ -208,9 +208,17 @@ public static class Phase5CampaignSpecValidator
         {
             var table = GuJsonDefaults.Deserialize<ExternalTargetTable>(File.ReadAllText(resolved));
             var observablesPath = ResolvePath(spec.ObservablesPath, specDir);
-            var observables = File.Exists(observablesPath)
-                ? GuJsonDefaults.Deserialize<List<QuantitativeObservableRecord>>(File.ReadAllText(observablesPath))
-                : null;
+            IReadOnlyList<QuantitativeObservableRecord> observables = Array.Empty<QuantitativeObservableRecord>();
+            if (File.Exists(observablesPath))
+            {
+                var loadedObservables = GuJsonDefaults.Deserialize<List<QuantitativeObservableRecord>>(File.ReadAllText(observablesPath));
+                if (loadedObservables is null)
+                    errors.Add("observablesPath: failed to deserialize quantitative observables.");
+                else
+                    observables = loadedObservables;
+            }
+
+            var environmentTiers = LoadEnvironmentTierMap(spec, specDir);
             if (table is null)
             {
                 errors.Add("externalTargetTablePath: failed to deserialize ExternalTargetTable.");
@@ -226,7 +234,7 @@ public static class Phase5CampaignSpecValidator
                 errors.Add("externalTargetTablePath: reference campaign must distinguish toy-placeholder targets from stronger target tiers.");
             }
 
-            var duplicatedObservableIds = (observables ?? [])
+            var duplicatedObservableIds = observables
                 .GroupBy(o => o.ObservableId, StringComparer.Ordinal)
                 .Where(g => g.Select(o => o.EnvironmentId).Distinct(StringComparer.Ordinal).Count() > 1)
                 .Select(g => g.Key)
@@ -242,11 +250,71 @@ public static class Phase5CampaignSpecValidator
                         "must declare targetEnvironmentId or targetEnvironmentTier because multiple environment-specific observables exist.");
                 }
             }
+
+            foreach (var target in table.Targets)
+            {
+                if (observables.Any(obs => TargetSelectorsMatch(obs, target, environmentTiers)))
+                    continue;
+
+                errors.Add(
+                    $"externalTargetTablePath: target '{target.Label}' for observableId '{target.ObservableId}' " +
+                    "has no matching computed observable after applying targetEnvironmentId/targetEnvironmentTier selectors.");
+            }
         }
         catch (Exception ex)
         {
             errors.Add($"externalTargetTablePath: failed to validate target table ({ex.Message}).");
         }
+    }
+
+    private static IReadOnlyDictionary<string, string> LoadEnvironmentTierMap(
+        Phase5CampaignSpec spec,
+        string specDir)
+    {
+        var map = new Dictionary<string, string>(StringComparer.Ordinal);
+        foreach (var path in spec.EnvironmentRecordPaths)
+        {
+            var resolved = ResolvePath(path, specDir);
+            if (!File.Exists(resolved))
+                continue;
+
+            try
+            {
+                var record = GuJsonDefaults.Deserialize<EnvironmentRecord>(File.ReadAllText(resolved));
+                if (record is not null)
+                    map[record.EnvironmentId] = record.GeometryTier;
+            }
+            catch
+            {
+                // Detailed environment parse errors are reported by ValidateEnvironmentEvidence.
+            }
+        }
+
+        return map;
+    }
+
+    private static bool TargetSelectorsMatch(
+        QuantitativeObservableRecord observable,
+        ExternalTarget target,
+        IReadOnlyDictionary<string, string> environmentTiers)
+    {
+        if (!string.Equals(observable.ObservableId, target.ObservableId, StringComparison.Ordinal))
+            return false;
+
+        if (!string.IsNullOrWhiteSpace(target.TargetEnvironmentId) &&
+            !string.Equals(observable.EnvironmentId, target.TargetEnvironmentId, StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        if (!string.IsNullOrWhiteSpace(target.TargetEnvironmentTier))
+        {
+            environmentTiers.TryGetValue(observable.EnvironmentId, out var tier);
+            if (!string.Equals(tier, target.TargetEnvironmentTier, StringComparison.Ordinal))
+                return false;
+        }
+
+        return true;
     }
 
     private static void ValidateSidecarSchemas(

@@ -2395,12 +2395,13 @@ static int RunBosonCampaign(string[] args)
 {
     if (args.Length < 2)
     {
-        Console.Error.WriteLine("Usage: gu run-boson-campaign <runFolder> [--campaign <campaignSpec.json>]");
+        Console.Error.WriteLine("Usage: gu run-boson-campaign <runFolder> [--campaign <campaignSpec.json>] [--external-descriptors <descriptors.json>]");
         return 1;
     }
 
     var runFolder = args[1];
     var campaignSpecPath = ParseFlag(args, "--campaign", "");
+    var externalDescriptorsPath = ParseFlag(args, "--external-descriptors", "");
 
     // Load registry
     var registryPath = Path.Combine(runFolder, "bosons", "registry.json");
@@ -2463,6 +2464,42 @@ static int RunBosonCampaign(string[] args)
     };
 
     var descriptors = new Dictionary<string, ExternalAnalogyDescriptor>();
+    if (!string.IsNullOrWhiteSpace(externalDescriptorsPath))
+    {
+        try
+        {
+            descriptors = LoadExternalAnalogyDescriptors(externalDescriptorsPath);
+        }
+        catch (Exception ex)
+        {
+            Console.Error.WriteLine($"Failed to load external descriptors: {ex.Message}");
+            return 1;
+        }
+    }
+
+    if (campaignSpec.Mode == BosonComparisonMode.ExternalAnalogy)
+    {
+        if (campaignSpec.ExternalDescriptorIds.Count == 0)
+        {
+            Console.Error.WriteLine("ExternalAnalogy campaigns must declare at least one externalDescriptorId.");
+            return 1;
+        }
+
+        if (descriptors.Count == 0)
+        {
+            Console.Error.WriteLine("ExternalAnalogy campaigns require --external-descriptors <descriptors.json>.");
+            return 1;
+        }
+
+        var missingDescriptorIds = campaignSpec.ExternalDescriptorIds
+            .Where(id => !descriptors.ContainsKey(id))
+            .ToList();
+        if (missingDescriptorIds.Count > 0)
+        {
+            Console.Error.WriteLine($"External descriptor file is missing descriptor id(s): {string.Join(", ", missingDescriptorIds)}");
+            return 1;
+        }
+    }
 
     var runner = new BosonCampaignRunner();
     var result = runner.Run(campaignSpec, registry, profiles, descriptors);
@@ -2481,6 +2518,44 @@ static int RunBosonCampaign(string[] args)
     Console.WriteLine();
     Console.WriteLine($"Campaign result written to: {resultPath}");
     return 0;
+}
+
+static Dictionary<string, ExternalAnalogyDescriptor> LoadExternalAnalogyDescriptors(string path)
+{
+    if (!File.Exists(path))
+        throw new FileNotFoundException($"file not found at \"{path}\".", path);
+
+    var json = File.ReadAllText(path);
+    List<ExternalAnalogyDescriptor>? descriptors;
+
+    using (var document = JsonDocument.Parse(json))
+    {
+        var root = document.RootElement;
+        descriptors = root.ValueKind switch
+        {
+            JsonValueKind.Array => GuJsonDefaults.Deserialize<List<ExternalAnalogyDescriptor>>(json),
+            JsonValueKind.Object when root.TryGetProperty("descriptors", out var descriptorElement)
+                => JsonSerializer.Deserialize<List<ExternalAnalogyDescriptor>>(
+                    descriptorElement.GetRawText(),
+                    GuJsonDefaults.Options),
+            _ => throw new InvalidOperationException("expected a JSON array or an object with a descriptors array."),
+        };
+    }
+
+    if (descriptors is null)
+        throw new InvalidOperationException("descriptor JSON deserialized to null.");
+
+    var result = new Dictionary<string, ExternalAnalogyDescriptor>(StringComparer.Ordinal);
+    foreach (var descriptor in descriptors)
+    {
+        if (string.IsNullOrWhiteSpace(descriptor.DescriptorId))
+            throw new InvalidOperationException("every external descriptor must declare descriptorId.");
+
+        if (!result.TryAdd(descriptor.DescriptorId, descriptor))
+            throw new InvalidOperationException($"duplicate external descriptor id '{descriptor.DescriptorId}'.");
+    }
+
+    return result;
 }
 
 static int ExportBosonReport(string[] args)
@@ -4093,10 +4168,11 @@ static int ValidateQuantitative(string[] args)
     var observablesPath = ParseFlag(args, "--observables", "");
     var targetsPath = ParseFlag(args, "--targets", "");
     var outFlag = ParseFlag(args, "--out", "");
+    var failClosedTargetCoverage = args.Contains("--fail-closed-target-coverage");
 
     if (string.IsNullOrEmpty(observablesPath) || string.IsNullOrEmpty(targetsPath))
     {
-        Console.Error.WriteLine("Usage: gu validate-quantitative --observables <obs.json> --targets <targets.json> [--out <scorecard.json>]");
+        Console.Error.WriteLine("Usage: gu validate-quantitative --observables <obs.json> --targets <targets.json> [--out <scorecard.json>] [--fail-closed-target-coverage]");
         return 1;
     }
     if (!File.Exists(observablesPath))
@@ -4131,9 +4207,15 @@ static int ValidateQuantitative(string[] args)
     var provenance = BuildP5Provenance();
     var runner = new QuantitativeValidationRunner();
     var studyId = $"cli-validation-{DateTimeOffset.UtcNow:yyyyMMddHHmmss}";
-    var scoreCard = runner.Run(studyId, observables, targetTable, policy, provenance);
+    var scoreCard = runner.Run(
+        studyId,
+        observables,
+        targetTable,
+        policy,
+        provenance,
+        failClosedTargetCoverage: failClosedTargetCoverage);
 
-    var resultJson = JsonSerializer.Serialize(scoreCard, new JsonSerializerOptions { WriteIndented = true });
+    var resultJson = scoreCard.ToJson();
     if (!string.IsNullOrEmpty(outFlag))
     {
         File.WriteAllText(outFlag, resultJson);
@@ -5210,7 +5292,7 @@ static void PrintUsage()
     Console.WriteLine("  gu compute-spectrum <run> <bgId> [opts]    Compute spectrum for a background");
     Console.WriteLine("  gu track-modes <runFolder> [--context ...]  Track modes across spectra");
     Console.WriteLine("  gu build-boson-registry <runFolder>         Build candidate boson registry");
-    Console.WriteLine("  gu run-boson-campaign <runFolder> [opts]    Run boson comparison campaign");
+    Console.WriteLine("  gu run-boson-campaign <runFolder> [--campaign <f>] [--external-descriptors <f>]  Run boson comparison campaign");
     Console.WriteLine("  gu export-boson-report <runFolder> [opts]   Export boson atlas report");
     Console.WriteLine("  gu generate-phase4-report <runFolder> [opts] Generate Phase IV fermionic sector report");
     Console.WriteLine("  gu report-phase4 <runFolder> [opts]          Alias for generate-phase4-report");
@@ -5226,7 +5308,7 @@ static void PrintUsage()
     Console.WriteLine("  gu refinement-study --spec <f> --values <f> [--out <f>]  Phase V refinement convergence study");
     Console.WriteLine("  gu import-environment --spec <f> [--out <f>] Import external geometry as environment record");
     Console.WriteLine("  gu build-structured-environment --spec <f> [--out <f>]  Generate structured analytic environment");
-    Console.WriteLine("  gu validate-quantitative --observables <f> --targets <f> [--out <f>]  Quantitative validation");
+    Console.WriteLine("  gu validate-quantitative --observables <f> --targets <f> [--out <f>] [--fail-closed-target-coverage]  Quantitative validation");
     Console.WriteLine("  gu build-validation-dossier --study-manifest <f> [--out <f>]  Build Phase V validation dossier");
     Console.WriteLine("  gu verify-study-freshness --dossier <f>      Verify study freshness / G-006 compliance");
     Console.WriteLine("  gu run-phase5-campaign --spec <f> --out-dir <dir> [--validate-first]  Run Phase V M53 end-to-end campaign");

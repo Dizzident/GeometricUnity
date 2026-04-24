@@ -489,6 +489,78 @@ public sealed class QuantitativeValidationTests
         Assert.Equal(0, card.TotalPassed);
         Assert.Equal(0, card.TotalFailed);
         Assert.True(double.IsNaN(card.OverallScore));
+        Assert.Equal(1, card.TotalTargets);
+        Assert.Equal(0, card.MatchedTargetCount);
+        Assert.Equal(1, card.MissingTargetCount);
+    }
+
+    [Fact]
+    public void Runner_FailClosedTargetCoverage_RecordsMissingTargetsAsFailures()
+    {
+        var observables = new List<QuantitativeObservableRecord>();
+        var table = new ExternalTargetTable
+        {
+            TableId = "t1",
+            Targets = new List<ExternalTarget>
+            {
+                MakeTarget("obs-1", 1.0, 0.1, "missing-target"),
+            },
+        };
+
+        var runner = new QuantitativeValidationRunner();
+        var card = runner.Run(
+            "study-1",
+            observables,
+            table,
+            StandardPolicy,
+            MakeProvenance(),
+            failClosedTargetCoverage: true);
+
+        var match = Assert.Single(card.Matches);
+        Assert.False(match.Passed);
+        Assert.Equal("obs-1", match.ObservableId);
+        Assert.Equal("missing-target", match.TargetLabel);
+        Assert.Equal(1, card.TotalFailed);
+        Assert.Equal(0.0, card.OverallScore, precision: 10);
+        Assert.Contains("Target coverage failure", match.Notes);
+    }
+
+    [Fact]
+    public void Runner_TargetCoverage_SummarizesMatchedAndMissingTargets()
+    {
+        var observables = new List<QuantitativeObservableRecord>
+        {
+            MakeObservable("obs-1", 1.0, 0.1),
+        };
+        var table = new ExternalTargetTable
+        {
+            TableId = "t1",
+            Targets = new List<ExternalTarget>
+            {
+                MakeTarget("obs-1", 1.0, 0.1, "matched-target"),
+                MakeTarget("obs-missing", 2.0, 0.1, "missing-target"),
+            },
+        };
+
+        var runner = new QuantitativeValidationRunner();
+        var card = runner.Run("study-1", observables, table, StandardPolicy, MakeProvenance());
+
+        Assert.Equal(2, card.TotalTargets);
+        Assert.Equal(1, card.MatchedTargetCount);
+        Assert.Equal(1, card.MissingTargetCount);
+        Assert.Collection(card.TargetCoverage!,
+            c =>
+            {
+                Assert.Equal("matched-target", c.TargetLabel);
+                Assert.Equal("matched", c.Status);
+                Assert.Equal(1, c.CandidateCount);
+            },
+            c =>
+            {
+                Assert.Equal("missing-target", c.TargetLabel);
+                Assert.Equal("missing-computed-observable", c.Status);
+                Assert.Equal(0, c.CandidateCount);
+            });
     }
 
     [Fact]

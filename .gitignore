@@ -64,6 +64,11 @@ benchmark-results/
 reports/phase5_gap_closure_batch/
 reports/tmp_test/
 
+# Generated study outputs
+studies/**/output/
+study-runs/*
+!study-runs/.gitkeep
+
 # External data
 data/external/
 

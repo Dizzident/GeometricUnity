@@ -27,7 +27,8 @@ public sealed class QuantitativeValidationRunner
         ExternalTargetTable targetTable,
         CalibrationPolicy policy,
         ProvenanceMeta provenance,
-        IReadOnlyList<EnvironmentRecord>? environmentRecords = null)
+        IReadOnlyList<EnvironmentRecord>? environmentRecords = null,
+        bool failClosedTargetCoverage = false)
     {
         ArgumentNullException.ThrowIfNull(studyId);
         ArgumentNullException.ThrowIfNull(observables);
@@ -40,6 +41,7 @@ public sealed class QuantitativeValidationRunner
             .ToDictionary(g => g.Key, g => g.First().GeometryTier, StringComparer.Ordinal);
 
         var matches = new List<TargetMatchRecord>();
+        var targetCoverage = new List<TargetCoverageRecord>();
         foreach (var target in targetTable.Targets)
         {
             var candidates = observables
@@ -48,7 +50,14 @@ public sealed class QuantitativeValidationRunner
                 .ToList();
 
             if (candidates.Count == 0)
-                continue; // No computed observable for this target — skip
+            {
+                targetCoverage.Add(CreateCoverageRecord(target, 0, "missing-computed-observable"));
+                if (failClosedTargetCoverage)
+                    matches.Add(CreateMissingTargetMatch(target, policy));
+                continue;
+            }
+
+            targetCoverage.Add(CreateCoverageRecord(target, candidates.Count, "matched"));
 
             var obs = SelectObservable(candidates, envTierById);
             envTierById.TryGetValue(obs.EnvironmentId, out var computedEnvironmentTier);
@@ -73,6 +82,10 @@ public sealed class QuantitativeValidationRunner
             StudyId = studyId,
             SchemaVersion = "1.0.0",
             Matches = matches,
+            TotalTargets = targetTable.Targets.Count,
+            MatchedTargetCount = targetCoverage.Count(c => c.Status == "matched"),
+            MissingTargetCount = targetCoverage.Count(c => c.Status == "missing-computed-observable"),
+            TargetCoverage = targetCoverage,
             TotalPassed = passed,
             TotalFailed = failed,
             OverallScore = score,
@@ -82,6 +95,47 @@ public sealed class QuantitativeValidationRunner
             Provenance = provenance,
         };
     }
+
+    private static TargetCoverageRecord CreateCoverageRecord(
+        ExternalTarget target,
+        int candidateCount,
+        string status)
+    {
+        var note = status == "missing-computed-observable"
+            ? "No computed observable matched this target's observableId and environment selectors."
+            : null;
+
+        return new TargetCoverageRecord
+        {
+            ObservableId = target.ObservableId,
+            TargetLabel = target.Label,
+            Status = status,
+            CandidateCount = candidateCount,
+            TargetEnvironmentId = target.TargetEnvironmentId,
+            TargetEnvironmentTier = target.TargetEnvironmentTier,
+            Notes = note,
+        };
+    }
+
+    private static TargetMatchRecord CreateMissingTargetMatch(ExternalTarget target, CalibrationPolicy policy)
+        => new()
+        {
+            ObservableId = target.ObservableId,
+            TargetLabel = target.Label,
+            TargetValue = target.Value,
+            TargetUncertainty = target.Uncertainty,
+            ComputedValue = 0.0,
+            ComputedUncertainty = -1.0,
+            Pull = policy.SigmaThreshold + 1.0,
+            Passed = false,
+            Notes = "Target coverage failure: no computed observable matched this target's observableId and environment selectors.",
+            TargetSource = target.Source,
+            TargetProvenance = target.TargetProvenance,
+            TargetEvidenceTier = target.EvidenceTier,
+            TargetBenchmarkClass = target.BenchmarkClass,
+            TargetEnvironmentId = target.TargetEnvironmentId,
+            TargetEnvironmentTier = target.TargetEnvironmentTier,
+        };
 
     private static bool MatchesRequestedEnvironment(
         QuantitativeObservableRecord observable,

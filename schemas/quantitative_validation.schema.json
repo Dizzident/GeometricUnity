@@ -20,6 +20,26 @@
       "description": "All target match records from this validation run",
       "items": { "$ref": "#/$defs/TargetMatchRecord" }
     },
+    "totalTargets": {
+      "type": "integer",
+      "description": "Total external targets declared in the target table",
+      "minimum": 0
+    },
+    "matchedTargetCount": {
+      "type": "integer",
+      "description": "Number of external targets with at least one matching computed observable",
+      "minimum": 0
+    },
+    "missingTargetCount": {
+      "type": "integer",
+      "description": "Number of external targets without a matching computed observable",
+      "minimum": 0
+    },
+    "targetCoverage": {
+      "type": "array",
+      "description": "Coverage status for every target declared in the target table",
+      "items": { "$ref": "#/$defs/TargetCoverageRecord" }
+    },
     "totalPassed": {
       "type": "integer",
       "description": "Number of target comparisons where pull <= sigmaThreshold",
@@ -41,6 +61,42 @@
     "provenance": { "$ref": "#/$defs/ProvenanceMeta" }
   },
   "$defs": {
+    "TargetCoverageRecord": {
+      "type": "object",
+      "required": ["observableId", "targetLabel", "status", "candidateCount"],
+      "properties": {
+        "observableId": {
+          "type": "string",
+          "description": "Observable identifier requested by the target"
+        },
+        "targetLabel": {
+          "type": "string",
+          "description": "Human-readable target label"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["matched", "missing-computed-observable"],
+          "description": "Whether this target had at least one matching computed observable"
+        },
+        "candidateCount": {
+          "type": "integer",
+          "description": "Number of computed observables matching the target selectors",
+          "minimum": 0
+        },
+        "targetEnvironmentId": {
+          "type": ["string", "null"],
+          "description": "Requested environment ID selector from the target"
+        },
+        "targetEnvironmentTier": {
+          "type": ["string", "null"],
+          "description": "Requested environment tier selector from the target"
+        },
+        "notes": {
+          "type": ["string", "null"],
+          "description": "Optional diagnostic note for missing or ambiguous coverage"
+        }
+      }
+    },
     "TargetMatchRecord": {
       "type": "object",
       "required": ["observableId", "targetLabel", "targetValue", "targetUncertainty", "computedValue", "computedUncertainty", "pull", "passed"],

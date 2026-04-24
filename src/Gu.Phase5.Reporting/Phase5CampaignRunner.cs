@@ -97,7 +97,8 @@ public sealed class Phase5CampaignRunner
             targetTable,
             spec.CalibrationPolicy,
             provenance,
-            environmentRecords);
+            environmentRecords,
+            failClosedTargetCoverage: true);
 
         // Step 4: Falsifier evaluation (M50)
         var falsifierEvaluator = new FalsifierEvaluator();

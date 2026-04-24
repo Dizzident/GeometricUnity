@@ -329,6 +329,36 @@ public sealed class Phase5CampaignSpecValidatorTests : IDisposable
         Assert.Contains(result.Errors, e => e.Contains("targetEnvironmentId or targetEnvironmentTier"));
     }
 
+    [Fact]
+    public void Validate_TargetWithNoComputedObservable_ReportsCoverageError()
+    {
+        var spec = MakeValidSpec(_tempDir);
+
+        File.WriteAllText(
+            Path.Combine(_tempDir, "targets.json"),
+            GuJsonDefaults.Serialize(new ExternalTargetTable
+            {
+                TableId = "validator-targets",
+                Targets =
+                [
+                    new ExternalTarget
+                    {
+                        Label = "missing-q",
+                        ObservableId = "missing-q",
+                        Value = 1.0,
+                        Uncertainty = 0.1,
+                        Source = "derived-synthetic-v1",
+                        EvidenceTier = "derived-synthetic",
+                        DistributionModel = "gaussian",
+                    },
+                ],
+            }));
+
+        var result = Phase5CampaignSpecValidator.Validate(spec, _tempDir, requireReferenceSidecars: false);
+        Assert.False(result.IsValid);
+        Assert.Contains(result.Errors, e => e.Contains("missing-q") && e.Contains("no matching computed observable"));
+    }
+
     // -----------------------------------------------------------------------
     // Tests: missing required files
     // -----------------------------------------------------------------------
