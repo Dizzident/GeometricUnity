@@ -1,6 +1,39 @@
 # Geometric Unity
 
-A reproducible research engine implementing the first executable bosonic and fermionic branch of Eric Weinstein's Geometric Unity framework. Connection-centered, observerse-based, explicitly discretized, with CPU reference backend, CUDA acceleration, Vulkan visualization, a Phase II research instrumentation layer, a Phase III boson spectrum extraction pipeline, a Phase IV fermionic spectrum and family-clustering layer, and a Phase V quantitative validation and falsification framework.
+A reproducible research engine implementing an executable bosonic and fermionic branch of Eric Weinstein's Geometric Unity framework. Connection-centered, observer-based, explicitly discretized, with CPU reference backend, CUDA acceleration hooks, Vulkan visualization, a Phase II research instrumentation layer, a Phase III boson spectrum extraction pipeline, a Phase IV fermionic spectrum and family-clustering layer, and a Phase V quantitative validation and falsification framework.
+
+## Current Status
+
+This repository is currently a **benchmark and validation platform**, not yet a real particle-property prediction engine.
+
+What works now:
+
+- computed GU observables are serialized with provenance and uncertainty;
+- target tables compare computed observables against toy, internal, and external benchmark values;
+- target coverage fails closed when a declared target has no computed observable;
+- the reference Phase V campaign runs branch, refinement, environment, quantitative, falsification, dossier, and report stages;
+- the active external benchmark is DOI-backed: Zenodo record `10.5281/zenodo.16739090`, a pure SU(2) plaquette-chain exact-diagonalization benchmark;
+- generated/downloaded study outputs are kept under ignored `study-runs/`.
+
+Latest checked-in reference campaign status:
+
+- total targets: 9;
+- matched targets: 9;
+- missing targets: 0;
+- passed matches: 8;
+- failed matches: 1;
+- score: 8 / 9 = 0.8888888888888888.
+
+The remaining quantitative failure is `bosonic-mode-2-imported-repo-benchmark`: computed value `0.98`, target value `0.6`, pull `5.374`.
+
+What is not done yet:
+
+- no current observable is validated as a physical W/Z/Higgs/photon property;
+- no physical unit calibration to GeV or measured couplings exists yet;
+- no PDG-style experimental target campaign is active yet;
+- active fatal/high falsifiers still block physical prediction claims.
+
+See `IMPLEMENTATION_P15.md` for the next benchmark-repair milestone and `IMPLEMENTATION_P16.md` for the physical-observable mapping plan.
 
 ## Overview
 
@@ -14,11 +47,11 @@ This system implements the **minimal bosonic and fermionic executable branch** o
 - **Branch families** (Phase II) parameterize variant choices for systematic independence studies
 - **Linearization workbench** classifies PDE type, computes spectra, and probes stability
 - **Recovery graphs** trace the full chain from native fields to physical identification
-- **Comparison campaigns** validate predictions against external datasets with uncertainty decomposition
+- **Comparison campaigns** compare computed observables against target tables with uncertainty decomposition
 - **Background atlas** (Phase III) builds a catalog of stationary background connections
 - **Boson spectrum** (Phase III) extracts fluctuation eigenmodes via Lanczos on the Hessian
 - **Mode tracking** (Phase III) follows mode families across backgrounds with split/merge detection
-- **Candidate boson registry** (Phase III) assembles, classifies, and compares candidate particles
+- **Candidate boson registry** (Phase III) assembles and classifies candidate modes; physical particle naming remains gated
 - **Fermionic spectrum** (Phase IV) extracts Dirac eigenmodes on the spin bundle over Y
 - **Chirality and conjugation** (Phase IV) classifies fermionic modes by X/Y/F-chirality operators
 - **Family clustering** (Phase IV) groups near-degenerate fermionic triplets into candidate families
@@ -30,6 +63,9 @@ This system implements the **minimal bosonic and fermionic executable branch** o
 - **Falsification engine** (Phase V) fires 7 typed falsifiers that demote or cap candidate claim classes
 - **Claim escalation** (Phase V) promotes candidates through 6 mandatory gates to higher evidence tiers
 - **Validation dossiers** (Phase V) assemble all Phase V evidence into per-study dossier artifacts
+- **Target coverage blockers** (Phase XIV) make intentionally missing observables explicit
+- **Spectrum observable extraction** (Phase XIV) turns externally generated eigenvalue lists into quantitative observable records
+- **Physical-observable mapping plan** (Phase XVI) defines the bridge needed before real boson-property comparisons
 
 The system is designed as a **research platform**, not a one-off solver.
 
@@ -51,7 +87,7 @@ dotnet build
 dotnet build && dotnet test --no-build
 ```
 
-There are 2,961 tests across 52 test projects covering core types, geometry, reference CPU operators, interop, validation, artifacts, observation, external comparison, all Phase II modules (semantics, branches, execution, canonicity, stability, recovery, continuation, predictions, comparison, reporting), all Phase III modules (backgrounds, gauge reduction, spectra, mode tracking, properties, observables, registry, CUDA spectra, campaigns, reporting), all Phase IV modules (spin, fermions, Dirac, chirality, family clustering, couplings, registry, observation, comparison, reporting, CUDA acceleration), and all Phase V modules (branch independence, convergence, environments, quantitative validation, falsification, dossiers, reporting).
+There are 2,960+ tests across 52 test projects covering core types, geometry, reference CPU operators, interop, validation, artifacts, observation, external comparison, all Phase II modules, all Phase III modules, all Phase IV modules, and all Phase V modules.
 
 ## CLI Usage
 
@@ -119,9 +155,23 @@ dotnet run --project apps/Gu.Cli -- build-unified-registry <bosonRegistry.json> 
 
 **Phase V — Quantitative Validation:**
 ```bash
-dotnet run --project apps/Gu.Cli -- branch-robustness <studySpec.json> [--values <quantityValues.json>] [--out <output.json>]
-dotnet run --project apps/Gu.Cli -- run-phase5-campaign <campaignSpec.json> [--targets <targets.json>] [--observables <obs.json>] [--out <report.json>]
+dotnet run --project apps/Gu.Cli -- branch-robustness --study <studySpec.json> --values <quantityValues.json> [--out <output.json>]
+dotnet run --project apps/Gu.Cli -- validate-quantitative --observables <obs.json> --targets <targets.json> [--environment-records <env1.json,env2.json,...>] [--out <scorecard.json>] [--fail-closed-target-coverage]
+dotnet run --project apps/Gu.Cli -- extract-spectrum-observable --eigenvalues <eigenvalues.json> --observable-id <id> --environment-id <id> [--out <observable.json>]
+dotnet run --project apps/Gu.Cli -- validate-phase5-campaign-spec --spec <campaign.json> [--require-reference-sidecars]
+dotnet run --project apps/Gu.Cli -- run-phase5-campaign --spec <campaign.json> --out-dir <dir> [--validate-first]
 ```
+
+Reference campaign:
+
+```bash
+dotnet run --project apps/Gu.Cli -- run-phase5-campaign \
+  --spec studies/phase5_su2_branch_refinement_env_validation/config/campaign.json \
+  --out-dir study-runs/readme_reference_campaign \
+  --validate-first
+```
+
+Generated campaign outputs should go under `study-runs/`, which is ignored except for `.gitkeep`.
 
 ## Running Benchmarks
 
@@ -139,7 +189,7 @@ GeometricUnity/
 │   ├── Gu.Cli/                    # Command-line interface
 │   ├── Gu.Workbench/              # Interactive workbench (Vulkan)
 │   └── Gu.Benchmarks/             # Performance benchmarks
-├── src/                           # 50 source libraries
+├── src/                           # Source libraries
 │   ├── Gu.Core/                   # Core types: BranchManifest, FieldTensor, TensorSignature
 │   ├── Gu.Math/                   # Lie algebras, structure constants, pairings
 │   ├── Gu.Branching/              # Branch operators: torsion, Shiab interfaces
@@ -197,7 +247,7 @@ GeometricUnity/
 ├── tests/                         # 52 test projects (Phase I + II + III + IV + V)
 ├── native/                        # CUDA kernels (C/CUDA)
 ├── examples/                      # Toy 2D/3D/4D geometries for debugging
-└── schemas/                       # 38+ JSON schemas for all phases
+└── schemas/                       # JSON schemas for all phases
 ```
 
 ## Architecture
@@ -299,6 +349,28 @@ Phase5CampaignSpec (branch family, refinement spec, env campaign, targets)
   -> Phase5ReportGenerator (atlases, dashboards, markdown report)
 ```
 
+### Phase XIV External Benchmark Coverage
+
+```
+Zenodo SU(2) plaquette-chain package
+  -> ignored study-runs download / transient Python dependencies
+  -> checked-in eigenvalue fixture
+  -> SpectrumObservableExtractor
+  -> QuantitativeObservableRecord
+  -> Phase V target match
+```
+
+The active external benchmark is sourced from Zenodo DOI `10.5281/zenodo.16739090`. It is an external SU(2) lattice-gauge benchmark, not a real-world particle measurement.
+
+### Phase XVI Physical Observable Roadmap
+
+Phase XVI is the planned bridge from benchmark quantities to physical boson properties. It requires:
+
+- explicit mappings from computed GU artifacts to physical observables;
+- unit and scale calibration;
+- authoritative experimental target tables;
+- report gates that prevent benchmark success from being described as particle prediction.
+
 ### Replay Tiers
 
 - **R0** — Schema-only (archival)
@@ -359,7 +431,7 @@ Visualization is strictly **read-only** — it consumes artifact snapshots and n
 - ~600 C# source files
 - ~350 test files
 - 15 native source files (CUDA/Vulkan)
-- 2,961 tests across 52 test projects
+- 2,960+ tests across 52 test projects
 - Phase 1 (Minimal GU v1): **Complete** — all 13 milestones (M0-M12)
 - Phase 2 (Research Instrumentation): **Complete** — all 10 milestones (M13-M22)
 - Phase 3 (Boson Spectrum Extraction): **Complete** — all 10 milestones (M23-M32) + all 23 gap closures
@@ -368,7 +440,7 @@ Visualization is strictly **read-only** — it consumes artifact snapshots and n
 
 ## Theory Context
 
-The `TheoryCompletitionRevisions/` directory contains the evolving Geometric Unity Completion manuscript. The software implements the executable portion of this completion program. See `IMPLEMENTATION_PLAN.md` (Phase I), `IMPLEMENTATION_PLAN_P2.md` (Phase II), `IMPLEMENTATION_PLAN_P3.md` (Phase III), `IMPLEMENTATION_PLAN_P4.md` (Phase IV), and `IMPLEMENTATION_P5.md` (Phase V) for the full technical specifications.
+The `TheoryCompletitionRevisions/` directory contains the evolving Geometric Unity Completion manuscript. The software implements executable portions of this completion program and a validation framework around them. See `IMPLEMENTATION_PLAN.md` through `IMPLEMENTATION_P16.md` for the phase history and next milestones.
 
 ## License
 

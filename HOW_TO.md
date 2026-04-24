@@ -1,6 +1,27 @@
 # HOW TO: Geometric Unity Research Platform
 
-A comprehensive guide to building, running, testing, and exploring the Geometric Unity (GU) codebase — the first executable bosonic and fermionic branch of Eric Weinstein's Geometric Unity completion program, with quantitative validation via Phase V.
+A comprehensive guide to building, running, testing, and exploring the Geometric Unity (GU) codebase — an executable bosonic and fermionic branch of Eric Weinstein's Geometric Unity completion program, with quantitative validation and falsification via Phase V.
+
+## Current Status
+
+The project is currently a **benchmark and validation platform**, not a finished physical particle-property predictor.
+
+Current reference campaign status:
+
+- 9 declared targets;
+- 9 matched targets;
+- 0 missing targets;
+- 8 passing quantitative matches;
+- 1 failing quantitative match;
+- score: 8 / 9 = 0.8888888888888888.
+
+The active external benchmark is a DOI-backed pure SU(2) lattice-gauge plaquette-chain benchmark from Zenodo record `10.5281/zenodo.16739090`. The current observables are benchmark quantities such as `bosonic-eigenvalue-ratio-*`; they are not yet validated as W/Z/Higgs/photon properties.
+
+The next milestone documents are:
+
+- `IMPLEMENTATION_P15.md`: repair or preserve the remaining imported benchmark mismatch and active falsifiers;
+- `IMPLEMENTATION_P16.md`: add the physical-observable mapping contract needed before real boson-property comparisons;
+- later phases: unit calibration, PDG-style target integration, and the first physical boson comparison campaign.
 
 ---
 
@@ -76,7 +97,7 @@ dotnet build
 dotnet clean && dotnet build
 ```
 
-The solution uses the `.slnx` format (new in .NET 10). The file `GeometricUnity.slnx` lists all 50 source projects, 3 application projects, and 52 test projects.
+The solution uses the `.slnx` format (new in .NET 10). The file `GeometricUnity.slnx` lists the source projects, 3 application projects, and 52 test projects.
 
 ### Global Settings
 
@@ -107,7 +128,7 @@ GeometricUnity/
 │   ├── Gu.Workbench/                  # Vulkan visualization tool
 │   └── Gu.Benchmarks/                 # Performance benchmarking
 │
-├── src/                               # Source libraries (36 projects)
+├── src/                               # Source libraries
 │   ├── Gu.Core/                       # Core types: BranchManifest, FieldTensor, etc.
 │   ├── Gu.Math/                       # Lie algebras, structure constants, pairings
 │   ├── Gu.Geometry/                   # Simplicial meshes, projections, quadrature
@@ -145,13 +166,13 @@ GeometricUnity/
 │   ├── Gu.Phase3.Campaigns/           # Boson comparison campaigns
 │   └── Gu.Phase3.Reporting/           # Boson atlas reports, dashboards
 │
-├── tests/                             # Test projects (52 projects, ~2961 tests)
+├── tests/                             # Test projects (52 projects, 2,960+ tests)
 ├── native/                            # CUDA/Vulkan native code (CMake)
 ├── examples/                          # Toy geometries for testing
 │   ├── toy_branch_2d/                 # 2D unit square (simplest)
 │   ├── toy_branch_3d/                 # 3D test geometry
 │   └── minimal_v1_4d/                 # 4D production reference (dim(X)=4, dim(Y)=14)
-├── schemas/                           # 26 JSON schema files
+├── schemas/                           # JSON schema files
 ├── benchmark-results/                 # Performance test results
 ├── IMPLEMENTATION_PLAN.md             # Phase I plan (M0-M12)
 ├── IMPLEMENTATION_PLAN_P2.md          # Phase II plan (M13-M22)
@@ -317,7 +338,7 @@ Computes or verifies SHA-256 hashes for all files in the run folder.
 dotnet run --project apps/Gu.Cli -- validate-schema <file> <schema>
 ```
 
-Validates a JSON file against one of the 26 JSON schemas in `schemas/`.
+Validates a JSON file against one of the JSON schemas in `schemas/`.
 
 ### `create-background-study` — Generate a Background Study Spec
 
@@ -366,6 +387,8 @@ dotnet run --project apps/Gu.Cli -- run-boson-campaign <run-folder> [--campaign 
 ```
 
 Runs structured comparison campaigns (structural/semi-quantitative/quantitative) between registry candidates and external datasets.
+
+Current caveat: these campaigns classify and compare candidate modes, but they do not by themselves establish that a mode is a known physical boson. Phase XVI adds the explicit physical-observable mapping gate needed before W/Z/Higgs/photon claims.
 
 ### `export-boson-report` — Export Boson Atlas Report
 
@@ -924,7 +947,7 @@ dotnet test --no-build --filter "Category=Integration"
 | `Gu.Phase3.CudaSpectra.Tests` | — | GPU verification enforcement |
 | `Gu.Phase3.Campaigns.Tests` | — | Boson comparison campaigns |
 | `Gu.Phase3.Reporting.Tests` | — | Boson atlas report generation |
-| **Total** | **~2,961** | **52 test projects** |
+| **Total** | **2,960+** | **52 test projects** |
 
 ### Writing New Tests
 
@@ -1373,12 +1396,14 @@ cd studies/phase4_fermion_family_atlas_001
 
 Phase V adds a validation layer that tests branch-independence, refinement convergence, environment sensitivity, quantitative target matching, and falsification. It does not add new CUDA kernels — it is a pure post-processing layer over Phases I-IV.
 
+Phase XIV extended this layer with fail-closed target coverage blockers and a spectrum observable extractor. The active reference campaign now includes a DOI-backed Zenodo SU(2) plaquette-chain benchmark and has no missing quantitative targets.
+
 ### Branch-Independence Study (M46)
 
 Measures how much quantities vary across a family of branch variants:
 
 ```bash
-dotnet run --project apps/Gu.Cli -- branch-robustness branch_robustness_study.json \
+dotnet run --project apps/Gu.Cli -- branch-robustness --study branch_robustness_study.json \
   --values quantity_values.json --out branch_robustness_record.json
 ```
 
@@ -1409,15 +1434,38 @@ foreach (var estimate in result.ContinuumEstimates)
 
 Pull statistic p = |Q_comp - Q_target| / sqrt(σ_c² + σ_t²). Pass threshold: 5.0 (default).
 
-```csharp
-var matcher = new TargetMatcher(policy);
-var scoreCard = matcher.Match(observables, targetTable);
-
-foreach (var match in scoreCard.Matches)
-    Console.WriteLine($"  {match.ObservableId}: pull={match.Pull:F2}, {(match.Passed ? "PASS" : "FAIL")}");
+```bash
+dotnet run --project apps/Gu.Cli -- validate-quantitative \
+  --observables studies/phase5_su2_branch_refinement_env_validation/config/observables.json \
+  --targets studies/phase5_su2_branch_refinement_env_validation/config/external_targets.json \
+  --environment-records studies/phase5_su2_branch_refinement_env_validation/config/env_toy_record.json,studies/phase5_su2_branch_refinement_env_validation/config/env_structured_4x4_record.json,studies/phase5_su2_branch_refinement_env_validation/config/env_imported_repo_benchmark.json,studies/phase5_su2_branch_refinement_env_validation/config/env_zenodo_su2_plaquette_chain.json \
+  --fail-closed-target-coverage \
+  --out study-runs/howto_scorecard.json
 ```
 
-External targets use eigenvalue **ratios** (not raw eigenvalues) to avoid scale dependence.
+Targets are reference values with provenance, uncertainty, and optional environment selectors. The current target table mixes toy controls, internal benchmarks, and one DOI-backed external SU(2) benchmark. These are not yet PDG-style particle targets.
+
+### Spectrum Observable Extraction
+
+Use `extract-spectrum-observable` to turn an eigenvalue list into a quantitative observable record:
+
+```bash
+dotnet run --project apps/Gu.Cli -- extract-spectrum-observable \
+  --eigenvalues studies/phase5_su2_branch_refinement_env_validation/config/zenodo_su2_plaquette_chain_eigenvalues.json \
+  --observable-id bosonic-eigenvalue-ratio-1 \
+  --environment-id env-zenodo-su2-plaquette-chain-p4-j0.5-g1.5-v1 \
+  --branch-id zenodo-su2lgt-periodic-k0 \
+  --refinement-level P4-j0.5-g1.5 \
+  --gap-index 0 \
+  --uncertainty 0.001 \
+  --out study-runs/howto_zenodo_observable.json
+```
+
+The extractor computes an adjacent gap ratio:
+
+```text
+min(E[i+1]-E[i], E[i+2]-E[i+1]) / max(E[i+1]-E[i], E[i+2]-E[i+1])
+```
 
 ### Falsification (M50)
 
@@ -1455,8 +1503,14 @@ A candidate is promoted by 1 claim class level when **all 6 gates** pass simulta
 ### Full Phase V Campaign (M53)
 
 ```bash
-dotnet run --project apps/Gu.Cli -- run-phase5-campaign campaign_spec.json \
-  --targets external_targets.json --observables observables.json --out report.json
+dotnet run --project apps/Gu.Cli -- validate-phase5-campaign-spec \
+  --spec studies/phase5_su2_branch_refinement_env_validation/config/campaign.json \
+  --require-reference-sidecars
+
+dotnet run --project apps/Gu.Cli -- run-phase5-campaign \
+  --spec studies/phase5_su2_branch_refinement_env_validation/config/campaign.json \
+  --out-dir study-runs/howto_reference_campaign \
+  --validate-first
 ```
 
 ### Reference Study
@@ -1466,6 +1520,8 @@ cd studies/phase5_su2_branch_refinement_env_validation
 ./run_study.sh     # Full Phase V campaign for 4-variant SU(2) branch family
 ./artifacts/reproduce.sh  # Reproduce all artifacts from scratch
 ```
+
+For ad hoc campaigns, prefer writing output under `study-runs/`; that directory is ignored except for `.gitkeep`.
 
 ### Schemas
 
@@ -1680,7 +1736,7 @@ where J = dUpsilon/domega is the Jacobian.
 
 ### JSON Schemas
 
-26 JSON schemas in `schemas/` define the contract for all JSON files:
+JSON schemas in `schemas/` define the contract for repository JSON files:
 
 | Schema | Validates |
 |--------|-----------|
@@ -1706,6 +1762,15 @@ where J = dUpsilon/domega is the Jacobian.
 | `boson_registry.schema.json` | BosonRegistry |
 | `boson_campaign.schema.json` | BosonCampaignSpec |
 | `boson_report.schema.json` | BosonReport |
+| `phase5_campaign.schema.json` | Phase5CampaignSpec |
+
+### Current Phase Documents
+
+| Document | Purpose |
+|----------|---------|
+| `IMPLEMENTATION_P14.md` | Target coverage repair and DOI-backed Zenodo benchmark |
+| `IMPLEMENTATION_P15.md` | Remaining benchmark mismatch and falsifier cleanup |
+| `IMPLEMENTATION_P16.md` | Physical observable mapping plan before real boson comparisons |
 
 ### Reading the Implementation Plans
 
