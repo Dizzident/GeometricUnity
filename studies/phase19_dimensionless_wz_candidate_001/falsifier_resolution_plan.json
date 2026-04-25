@@ -1,0 +1,125 @@
+{
+  "tableId": "phase19-wz-falsifier-resolution-plan-v1",
+  "schemaVersion": "1.0.0",
+  "status": "blocked",
+  "sourceFalsifierSummaryPath": "study-runs/phase18_wz_physical_blocked_check/falsification/falsifier_summary.json",
+  "severeFalsifierPolicy": {
+    "severities": [
+      "fatal",
+      "high"
+    ],
+    "claimGateRule": "Physical W/Z prediction language remains blocked while any relevant active fatal or high falsifier is unresolved.",
+    "resolutionValues": [
+      "repair-required",
+      "evidence-demotion-required",
+      "carried-blocker"
+    ]
+  },
+  "activeSevereFalsifiers": [
+    {
+      "falsifierId": "falsifier-0001",
+      "falsifierType": "branch-fragility",
+      "severity": "high",
+      "targetId": "gauge-violation",
+      "branchId": "phase9-su2-real-bridge-backed-branch-family",
+      "triggerValue": 1.8337289619806922,
+      "threshold": 0.5,
+      "active": true,
+      "wzRelevance": "campaign-selector-gate",
+      "resolutionStatus": "carried-blocker",
+      "resolutionPlan": [
+        "Keep W/Z physical claim gate closed while gauge-violation branch fragility remains active.",
+        "Repair requires a branch-family artifact whose gauge-violation fragility is below the campaign threshold or a documented selector change that excludes this branch family from W/Z mode extraction for evidence-backed reasons."
+      ],
+      "evidenceRefs": [
+        "FragilityRecord targetQuantityId=gauge-violation studyId=phase9-su2-real-bridge-backed-branch-family",
+        "studies/phase5_su2_branch_refinement_env_validation/config/branch_quantity_values.json"
+      ]
+    },
+    {
+      "falsifierId": "falsifier-0002",
+      "falsifierType": "branch-fragility",
+      "severity": "high",
+      "targetId": "solver-iterations",
+      "branchId": "phase9-su2-real-bridge-backed-branch-family",
+      "triggerValue": 1.99999999999998,
+      "threshold": 0.5,
+      "active": true,
+      "wzRelevance": "campaign-selector-gate",
+      "resolutionStatus": "carried-blocker",
+      "resolutionPlan": [
+        "Keep W/Z physical claim gate closed while solver-iteration branch fragility remains active.",
+        "Repair requires a branch-family artifact whose solver-iteration fragility is below threshold or a documented selector change that removes this quantity from W/Z mode extraction for evidence-backed reasons."
+      ],
+      "evidenceRefs": [
+        "FragilityRecord targetQuantityId=solver-iterations studyId=phase9-su2-real-bridge-backed-branch-family",
+        "studies/phase5_su2_branch_refinement_env_validation/config/branch_quantity_values.json"
+      ]
+    },
+    {
+      "falsifierId": "falsifier-0003",
+      "falsifierType": "quantitative-mismatch",
+      "severity": "high",
+      "targetId": "physical-w-z-mass-ratio",
+      "branchId": "unknown",
+      "triggerValue": 6,
+      "active": true,
+      "wzRelevance": "direct-physical-target-gate",
+      "resolutionStatus": "evidence-demotion-required",
+      "resolutionPlan": [
+        "Treat the current mismatch as an invalid-comparison blocker because the campaign has no validated computed W/Z ratio source.",
+        "Keep target_coverage_blockers.json active until a selector-matched internal ratio with complete uncertainty exists.",
+        "After a validated ratio exists, re-evaluate this falsifier as a real physical mismatch rather than a placeholder computed=0 failure."
+      ],
+      "evidenceRefs": [
+        "TargetMatchRecord observableId=physical-w-z-mass-ratio targetLabel=pdg-w-z-mass-ratio computedEnvironmentId=unknown",
+        "studies/phase19_dimensionless_wz_candidate_001/target_coverage_blockers.json",
+        "studies/phase19_dimensionless_wz_candidate_001/internal_mode_source_inventory.json"
+      ]
+    },
+    {
+      "falsifierId": "falsifier-0004",
+      "falsifierType": "representation-content",
+      "severity": "fatal",
+      "targetId": "fermion-registry-phase4-toy-v1-0000",
+      "branchId": "unknown",
+      "triggerValue": 1,
+      "threshold": 0,
+      "active": true,
+      "wzRelevance": "global-claim-gate",
+      "resolutionStatus": "carried-blocker",
+      "resolutionPlan": [
+        "Keep physical claim gate closed while the fatal representation-content falsifier remains active in the campaign sidecar inputs.",
+        "Repair requires stronger upstream representation-content evidence for fermion-registry-phase4-toy-v1-0000 or an evidence-backed W/Z campaign scope that does not import this unresolved candidate-family blocker.",
+        "Do not bypass this falsifier by promoting W/Z mapping, calibration, or mode evidence."
+      ],
+      "evidenceRefs": [
+        "RepresentationContentRecord recordId=rep-fermion-registry-phase4-toy-v1-0000 candidateId=fermion-registry-phase4-toy-v1-0000 missingRequiredCount=1",
+        "studies/phase5_su2_branch_refinement_env_validation/config/representation_content.json"
+      ]
+    }
+  ],
+  "resolutionSummary": {
+    "activeFatalCount": 1,
+    "activeHighCount": 3,
+    "resolvedCount": 0,
+    "carriedBlockerCount": 3,
+    "evidenceDemotionRequiredCount": 1,
+    "physicalClaimAllowed": false,
+    "blockedReasons": [
+      "No internally computed W/Z mode source is currently usable.",
+      "The direct physical W/Z mismatch is not yet a valid prediction failure because the computed source is blocked.",
+      "Two branch-fragility falsifiers remain active on campaign selector quantities.",
+      "One fatal representation-content falsifier remains active in imported sidecar evidence."
+    ]
+  },
+  "provenance": {
+    "createdAt": "2026-04-25T00:00:00+00:00",
+    "codeRevision": "phase19-planning-artifacts",
+    "branch": {
+      "branchId": "phase19-unvalidated-wz-mode-identification",
+      "schemaVersion": "1.0"
+    },
+    "backend": "documented-falsifier-resolution"
+  }
+}

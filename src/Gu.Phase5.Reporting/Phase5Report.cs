@@ -83,6 +83,10 @@ public sealed class Phase5Report
     [JsonPropertyName("physicalPredictions")]
     public IReadOnlyList<PhysicalPredictionRecord>? PhysicalPredictions { get; init; }
 
+    /// <summary>Terminal physical prediction status: blocked, predicted, or failed.</summary>
+    [JsonPropertyName("physicalPredictionTerminalStatus")]
+    public PhysicalPredictionTerminalStatus? PhysicalPredictionTerminalStatus { get; init; }
+
     /// <summary>Provenance metadata.</summary>
     [JsonPropertyName("provenance")]
     public required ProvenanceMeta Provenance { get; init; }

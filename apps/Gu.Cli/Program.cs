@@ -4559,7 +4559,9 @@ static int RunPhase5Campaign(string[] args)
             refinementEvidenceManifest: artifacts.RefinementEvidenceManifest,
             observableClassifications: artifacts.ObservableClassifications,
             physicalObservableMappings: artifacts.PhysicalObservableMappings?.Mappings,
-            physicalCalibrations: artifacts.PhysicalCalibrations?.Calibrations);
+            physicalCalibrations: artifacts.PhysicalCalibrations?.Calibrations,
+            physicalModeRecords: artifacts.PhysicalModeRecords,
+            modeIdentificationEvidence: artifacts.ModeIdentificationEvidence);
     }
     catch (Exception ex)
     {
@@ -4957,6 +4959,13 @@ static string GeneratePhase5ReportMarkdown(
                     $"- {prediction.MappingId}: blocked. {string.Join(" ", prediction.BlockReasons)}");
             }
         }
+        sb.AppendLine();
+    }
+    if (report.PhysicalPredictionTerminalStatus is not null)
+    {
+        sb.AppendLine("## Physical Prediction Terminal Status");
+        foreach (var line in report.PhysicalPredictionTerminalStatus.SummaryLines)
+            sb.AppendLine($"- {line}");
         sb.AppendLine();
     }
     sb.AppendLine("## Dossiers");

@@ -196,6 +196,48 @@ public sealed class PhysicalObservableContractTests
     }
 
     [Fact]
+    public void PhysicalPredictionTerminalStatus_GateBlocked_ReturnsBlocked()
+    {
+        var gate = PhysicalClaimGate.Evaluate(
+            mappings: null,
+            classifications: null,
+            falsifiers: null,
+            calibrationAvailable: false,
+            physicalTargetEvidenceAvailable: false);
+
+        var status = PhysicalPredictionTerminalStatus.Evaluate(gate, predictions: [], scoreCard: null);
+
+        Assert.Equal("blocked", status.Status);
+        Assert.Contains(status.SummaryLines, line => line.Contains("claim gate is blocked", StringComparison.OrdinalIgnoreCase));
+    }
+
+    [Fact]
+    public void PhysicalPredictionTerminalStatus_PassingPhysicalTarget_ReturnsPredicted()
+    {
+        var gate = MakePassingPhysicalGate();
+        var prediction = MakePredictedPhysicalRecord("physical-w-z-mass-ratio");
+        var scoreCard = MakePhysicalScoreCard(passed: true);
+
+        var status = PhysicalPredictionTerminalStatus.Evaluate(gate, [prediction], scoreCard);
+
+        Assert.Equal("predicted", status.Status);
+        Assert.Contains(status.SummaryLines, line => line.Contains("passed", StringComparison.OrdinalIgnoreCase));
+    }
+
+    [Fact]
+    public void PhysicalPredictionTerminalStatus_FailingPhysicalTarget_ReturnsFailed()
+    {
+        var gate = MakePassingPhysicalGate();
+        var prediction = MakePredictedPhysicalRecord("physical-w-z-mass-ratio");
+        var scoreCard = MakePhysicalScoreCard(passed: false);
+
+        var status = PhysicalPredictionTerminalStatus.Evaluate(gate, [prediction], scoreCard);
+
+        Assert.Equal("failed", status.Status);
+        Assert.Contains(status.SummaryLines, line => line.Contains("failed", StringComparison.OrdinalIgnoreCase));
+    }
+
+    [Fact]
     public void PhysicalPredictionProjector_ValidatedInputs_EmitsPrediction()
     {
         var observables = new[]
@@ -352,6 +394,165 @@ public sealed class PhysicalObservableContractTests
     }
 
     [Fact]
+    public void PhysicalPredictionProjector_UnestimatedSourceUncertainty_BlocksPrediction()
+    {
+        var observables = new[]
+        {
+            new QuantitativeObservableRecord
+            {
+                ObservableId = "z-mass-internal",
+                Value = 1.0,
+                Uncertainty = new QuantitativeUncertainty { TotalUncertainty = -1 },
+                BranchId = "branch-a",
+                EnvironmentId = "env-physical",
+                ExtractionMethod = "unit-test",
+                Provenance = MakeProvenance(),
+            },
+        };
+        var mappings = new[]
+        {
+            new PhysicalObservableMapping
+            {
+                MappingId = "map-z-mass",
+                ParticleId = "z-boson",
+                PhysicalObservableType = "mass",
+                SourceComputedObservableId = "z-mass-internal",
+                TargetPhysicalObservableId = "physical-z-boson-mass-gev",
+                UnitFamily = "mass-energy",
+                Status = "validated",
+                Assumptions = ["test mapping"],
+                ClosureRequirements = [],
+            },
+        };
+        var classifications = new ObservableClassificationTable
+        {
+            TableId = "classifications",
+            Classifications =
+            [
+                new ObservableClassification
+                {
+                    ObservableId = "z-mass-internal",
+                    Classification = "physical-observable",
+                    Rationale = "validated test observable",
+                    PhysicalClaimAllowed = true,
+                },
+            ],
+        };
+        var calibrations = new PhysicalCalibrationTable
+        {
+            TableId = "calibrations",
+            Calibrations =
+            [
+                new PhysicalCalibrationRecord
+                {
+                    CalibrationId = "cal-z-mass",
+                    MappingId = "map-z-mass",
+                    SourceComputedObservableId = "z-mass-internal",
+                    SourceUnitFamily = "dimensionless",
+                    TargetUnitFamily = "mass-energy",
+                    TargetUnit = "GeV",
+                    ScaleFactor = 91.188,
+                    ScaleUncertainty = 0.002,
+                    Status = "validated",
+                    Method = "unit-test",
+                    Source = "unit-test",
+                    Assumptions = ["test calibration"],
+                    ClosureRequirements = [],
+                },
+            ],
+        };
+
+        var predictions = PhysicalPredictionProjector.Project(observables, mappings, classifications, calibrations);
+
+        var prediction = Assert.Single(predictions);
+        Assert.Equal("blocked", prediction.Status);
+        Assert.Contains(prediction.BlockReasons, reason => reason.Contains("total uncertainty is unestimated"));
+    }
+
+    [Fact]
+    public void PhysicalPredictionProjector_WzMappingWithoutValidatedModeEvidence_BlocksPrediction()
+    {
+        var observables = new[]
+        {
+            new QuantitativeObservableRecord
+            {
+                ObservableId = "candidate-w-z-vector-mode-ratio",
+                Value = 0.8,
+                Uncertainty = new QuantitativeUncertainty { TotalUncertainty = 0.01 },
+                BranchId = "branch-a",
+                EnvironmentId = "env-physical",
+                RefinementLevel = "L1",
+                ExtractionMethod = "positive-mode-ratio:w-mode/z-mode",
+                Provenance = MakeProvenance(),
+            },
+        };
+        var mappings = new[]
+        {
+            new PhysicalObservableMapping
+            {
+                MappingId = "map-wz-ratio",
+                ParticleId = "electroweak-sector",
+                PhysicalObservableType = "mass-ratio",
+                SourceComputedObservableId = "candidate-w-z-vector-mode-ratio",
+                TargetPhysicalObservableId = "physical-w-z-mass-ratio",
+                UnitFamily = "dimensionless",
+                Status = "validated",
+                Assumptions = ["test mapping"],
+                ClosureRequirements = [],
+            },
+        };
+        var classifications = new ObservableClassificationTable
+        {
+            TableId = "classifications",
+            Classifications =
+            [
+                new ObservableClassification
+                {
+                    ObservableId = "candidate-w-z-vector-mode-ratio",
+                    Classification = "physical-observable",
+                    Rationale = "validated test observable",
+                    PhysicalClaimAllowed = true,
+                },
+            ],
+        };
+        var calibrations = new PhysicalCalibrationTable
+        {
+            TableId = "calibrations",
+            Calibrations =
+            [
+                new PhysicalCalibrationRecord
+                {
+                    CalibrationId = "cal-wz-ratio",
+                    MappingId = "map-wz-ratio",
+                    SourceComputedObservableId = "candidate-w-z-vector-mode-ratio",
+                    SourceUnitFamily = "dimensionless",
+                    TargetUnitFamily = "dimensionless",
+                    TargetUnit = "dimensionless",
+                    ScaleFactor = 1.0,
+                    ScaleUncertainty = 0.0,
+                    Status = "validated",
+                    Method = "unit-test",
+                    Source = "unit-test",
+                    Assumptions = ["test calibration"],
+                    ClosureRequirements = [],
+                },
+            ],
+        };
+
+        var predictions = PhysicalPredictionProjector.Project(
+            observables,
+            mappings,
+            classifications,
+            calibrations,
+            physicalModeRecords: [],
+            modeIdentificationEvidence: []);
+
+        var prediction = Assert.Single(predictions);
+        Assert.Equal("blocked", prediction.Status);
+        Assert.Contains(prediction.BlockReasons, reason => reason.Contains("requires identified physical mode records"));
+    }
+
+    [Fact]
     public void Phase18PhysicalTargets_AreCitedAndInactive()
     {
         var repoRoot = FindRepoRoot();
@@ -447,4 +648,100 @@ public sealed class PhysicalObservableContractTests
 
         throw new DirectoryNotFoundException("Could not locate repository root.");
     }
+
+    private static PhysicalClaimGate MakePassingPhysicalGate()
+    {
+        var mappings = new[]
+        {
+            new PhysicalObservableMapping
+            {
+                MappingId = "map-wz-ratio",
+                ParticleId = "electroweak-sector",
+                PhysicalObservableType = "mass-ratio",
+                SourceComputedObservableId = "candidate-w-z-vector-mode-ratio",
+                TargetPhysicalObservableId = "physical-w-z-mass-ratio",
+                UnitFamily = "dimensionless",
+                Status = "validated",
+                Assumptions = ["test mapping"],
+                ClosureRequirements = [],
+            },
+        };
+        var classifications = new ObservableClassificationTable
+        {
+            TableId = "classifications",
+            Classifications =
+            [
+                new ObservableClassification
+                {
+                    ObservableId = "candidate-w-z-vector-mode-ratio",
+                    Classification = "physical-observable",
+                    Rationale = "validated test ratio",
+                    PhysicalClaimAllowed = true,
+                },
+            ],
+        };
+        var falsifiers = new FalsifierSummary
+        {
+            StudyId = "study-1",
+            Falsifiers = [],
+            ActiveFatalCount = 0,
+            ActiveHighCount = 0,
+            TotalActiveCount = 0,
+            Provenance = MakeProvenance(),
+        };
+
+        return PhysicalClaimGate.Evaluate(
+            mappings,
+            classifications,
+            falsifiers,
+            calibrationAvailable: true,
+            physicalTargetEvidenceAvailable: true);
+    }
+
+    private static PhysicalPredictionRecord MakePredictedPhysicalRecord(string targetObservableId) => new()
+    {
+        PredictionId = $"prediction-{targetObservableId}",
+        MappingId = "map-wz-ratio",
+        CalibrationId = "cal-wz-ratio",
+        SourceComputedObservableId = "candidate-w-z-vector-mode-ratio",
+        TargetPhysicalObservableId = targetObservableId,
+        ParticleId = "electroweak-sector",
+        PhysicalObservableType = "mass-ratio",
+        Value = 0.88136,
+        Uncertainty = 0.0001,
+        Unit = "dimensionless",
+        UnitFamily = "dimensionless",
+        Status = "predicted",
+        BlockReasons = [],
+    };
+
+    private static ConsistencyScoreCard MakePhysicalScoreCard(bool passed) => new()
+    {
+        StudyId = "study-1",
+        SchemaVersion = "1.0.0",
+        Matches =
+        [
+            new TargetMatchRecord
+            {
+                ObservableId = "physical-w-z-mass-ratio",
+                TargetLabel = "pdg-w-z-mass-ratio",
+                TargetValue = 0.88136,
+                TargetUncertainty = 0.00015,
+                ComputedValue = passed ? 0.88136 : 0.9,
+                ComputedUncertainty = 0.0001,
+                Pull = passed ? 0.0 : 99.0,
+                Passed = passed,
+                TargetEvidenceTier = "physical-prediction",
+                TargetBenchmarkClass = "physical-observable",
+            },
+        ],
+        TotalTargets = 1,
+        MatchedTargetCount = 1,
+        MissingTargetCount = 0,
+        TotalPassed = passed ? 1 : 0,
+        TotalFailed = passed ? 0 : 1,
+        OverallScore = passed ? 1.0 : 0.0,
+        CalibrationPolicyId = "test-policy",
+        Provenance = MakeProvenance(),
+    };
 }

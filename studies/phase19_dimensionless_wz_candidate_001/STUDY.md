@@ -28,6 +28,13 @@ be treated as a physical observable.
 - `target_coverage_blockers.json`: explicit blocker allowing a physical
   comparison campaign to run and report `blocked` without pretending the target
   is currently computable.
+- `internal_mode_source_inventory.json`: Phase XIX inventory of checked-in
+  internal artifacts that could source W/Z mode candidates, with external
+  physical targets explicitly excluded as computed sources.
+- `candidate_extraction_contract.json`: fail-closed extraction contract for
+  future W and Z candidate mode generation.
+- `falsifier_resolution_plan.json`: active severe-falsifier resolution plan for
+  the W/Z physical claim gate.
 
 ## Status
 

@@ -1,0 +1,186 @@
+{
+  "contractId": "phase19-wz-candidate-extraction-contract-v1",
+  "schemaVersion": "1.0.0",
+  "status": "blocked",
+  "algorithmId": "p19-wz-vector-mode-candidate-extraction-v1",
+  "purpose": "Define the fail-closed contract for converting internal computed artifacts into provisional or validated W and Z vector-boson mass-mode records.",
+  "forbiddenInputs": [
+    {
+      "inputClass": "external-physical-target",
+      "examples": [
+        "studies/phase18_experimental_targets_001/physical_targets.json",
+        "studies/phase19_dimensionless_wz_candidate_001/physical_targets.json"
+      ],
+      "reason": "External targets are comparison data only and cannot source computed mode values or identity."
+    },
+    {
+      "inputClass": "mass-proximity-identifier",
+      "examples": [
+        "select candidate closest to PDG W mass",
+        "select candidate closest to PDG Z mass",
+        "select candidate ratio closest to PDG W/Z ratio"
+      ],
+      "reason": "W/Z identity must be derived from internal representation, symmetry, and selector-matched evidence, not target agreement."
+    }
+  ],
+  "requiredInputs": [
+    {
+      "inputId": "computed-mode-source",
+      "requiredFields": [
+        "sourceArtifactPath",
+        "sourceModeId",
+        "sourceObservableId",
+        "modeValue",
+        "unitFamily",
+        "unit",
+        "branchId",
+        "environmentId",
+        "refinementLevel",
+        "provenance"
+      ],
+      "closureRequirement": "Provide individual computed W and Z mode candidates from internal artifacts."
+    },
+    {
+      "inputId": "identity-evidence",
+      "requiredFields": [
+        "modeId",
+        "particleId",
+        "modeKind",
+        "sourceObservableIds",
+        "branchId",
+        "environmentId",
+        "refinementLevel",
+        "derivationId",
+        "status"
+      ],
+      "closureRequirement": "Derive charged weak-vector and neutral weak-vector identities without using mass proximity to PDG values."
+    },
+    {
+      "inputId": "uncertainty-budget",
+      "requiredFields": [
+        "extractionUncertainty",
+        "branchVariation",
+        "refinementError",
+        "environmentSensitivity",
+        "totalUncertainty"
+      ],
+      "closureRequirement": "Estimate all uncertainty components for each mode and propagate the ratio uncertainty."
+    },
+    {
+      "inputId": "selector-coverage",
+      "requiredFields": [
+        "branchId",
+        "environmentId",
+        "refinementLevel",
+        "sourceArtifactRefs"
+      ],
+      "closureRequirement": "All mode, evidence, mapping, calibration, and observable records must agree on selectors or emit blocked records."
+    }
+  ],
+  "outputRecords": [
+    {
+      "recordType": "IdentifiedPhysicalModeRecord",
+      "requiredFields": [
+        "modeId",
+        "particleId",
+        "modeKind",
+        "observableId",
+        "value",
+        "uncertainty",
+        "unitFamily",
+        "unit",
+        "status",
+        "environmentId",
+        "branchId",
+        "refinementLevel",
+        "extractionMethod",
+        "assumptions",
+        "closureRequirements",
+        "provenance"
+      ],
+      "allowedStatuses": [
+        "blocked",
+        "provisional",
+        "validated"
+      ],
+      "validationGate": "validated requires selector-matched validated identity evidence and complete nonnegative uncertainty."
+    },
+    {
+      "recordType": "ModeIdentificationEvidence",
+      "requiredFields": [
+        "evidenceId",
+        "modeId",
+        "particleId",
+        "modeKind",
+        "sourceObservableIds",
+        "environmentId",
+        "branchId",
+        "refinementLevel",
+        "derivationId",
+        "status",
+        "assumptions",
+        "closureRequirements",
+        "provenance"
+      ],
+      "allowedStatuses": [
+        "blocked",
+        "provisional",
+        "validated"
+      ],
+      "validationGate": "validated requires internally checkable derivation ids, source observables, symmetry content, and representation content."
+    }
+  ],
+  "failClosedRules": [
+    {
+      "ruleId": "no-usable-source",
+      "condition": "internal_mode_source_inventory.usableSourceIds is empty",
+      "result": "emit blocked W and Z candidate records or keep existing provisional placeholders inactive"
+    },
+    {
+      "ruleId": "missing-identity-evidence",
+      "condition": "identity evidence is absent, provisional, ambiguous, or target-derived",
+      "result": "block promotion of mode records, mapping, calibration, and physical claim"
+    },
+    {
+      "ruleId": "missing-uncertainty",
+      "condition": "any required mode or ratio uncertainty component is negative or absent",
+      "result": "block ratio extraction for physical prediction"
+    },
+    {
+      "ruleId": "selector-mismatch",
+      "condition": "W and Z candidates do not share branch, environment, refinement, unit family, and validated evidence selectors",
+      "result": "block extraction and record selector closure requirements"
+    },
+    {
+      "ruleId": "severe-falsifier-active",
+      "condition": "any relevant active fatal or high falsifier remains unresolved",
+      "result": "block physical claim language even if a numerical ratio can be computed"
+    }
+  ],
+  "currentContractEvaluation": {
+    "result": "blocked",
+    "sourceInventoryPath": "studies/phase19_dimensionless_wz_candidate_001/internal_mode_source_inventory.json",
+    "blockingRuleIds": [
+      "no-usable-source",
+      "missing-identity-evidence",
+      "missing-uncertainty",
+      "severe-falsifier-active"
+    ],
+    "closureRequirements": [
+      "Generate individual W and Z mode candidates from internal computed sources.",
+      "Add W/Z mode-identification derivations independent of external target agreement.",
+      "Estimate mode and ratio uncertainty budgets.",
+      "Promote mapping and calibration only after evidence and uncertainty validate.",
+      "Resolve or explicitly carry severe falsifiers through the claim gate."
+    ]
+  },
+  "provenance": {
+    "createdAt": "2026-04-25T00:00:00+00:00",
+    "codeRevision": "phase19-planning-artifacts",
+    "branch": {
+      "branchId": "phase19-unvalidated-wz-mode-identification",
+      "schemaVersion": "1.0"
+    },
+    "backend": "documented-contract"
+  }
+}

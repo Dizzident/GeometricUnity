@@ -55,7 +55,9 @@ public static class PhysicalPredictionProjector
         IReadOnlyList<QuantitativeObservableRecord> observables,
         IReadOnlyList<PhysicalObservableMapping>? mappings,
         ObservableClassificationTable? classifications,
-        PhysicalCalibrationTable? calibrations)
+        PhysicalCalibrationTable? calibrations,
+        IReadOnlyList<IdentifiedPhysicalModeRecord>? physicalModeRecords = null,
+        IReadOnlyList<ModeIdentificationEvidenceRecord>? modeIdentificationEvidence = null)
     {
         ArgumentNullException.ThrowIfNull(observables);
 
@@ -74,6 +76,14 @@ public static class PhysicalPredictionProjector
             var observable = FindObservable(observables, mapping);
             if (observable is null)
                 blockReasons.Add("no computed observable matches the mapping selectors");
+            else
+            {
+                if (observable.Uncertainty.TotalUncertainty < 0)
+                    blockReasons.Add("source observable total uncertainty is unestimated");
+
+                if (IsWzMassRatioMapping(mapping))
+                    blockReasons.AddRange(ValidateWzModeEvidence(mapping, observable, physicalModeRecords, modeIdentificationEvidence));
+            }
 
             var classification = classifications?.Classifications.FirstOrDefault(c =>
                 string.Equals(c.ObservableId, mapping.SourceComputedObservableId, StringComparison.Ordinal));
@@ -100,6 +110,80 @@ public static class PhysicalPredictionProjector
         }
 
         return records;
+    }
+
+    internal static IReadOnlyList<string> ValidateWzModeEvidence(
+        PhysicalObservableMapping mapping,
+        QuantitativeObservableRecord observable,
+        IReadOnlyList<IdentifiedPhysicalModeRecord>? physicalModeRecords,
+        IReadOnlyList<ModeIdentificationEvidenceRecord>? modeIdentificationEvidence)
+    {
+        var errors = new List<string>();
+        if (!observable.ExtractionMethod.StartsWith("positive-mode-ratio:", StringComparison.Ordinal))
+        {
+            errors.Add("W/Z mass-ratio mapping source is not a positive mode-ratio observable");
+            return errors;
+        }
+
+        var sourceIds = ParsePositiveModeRatioSourceIds(observable.ExtractionMethod);
+        if (sourceIds is null)
+        {
+            errors.Add("W/Z mass-ratio source observable does not declare both ratio mode inputs");
+            return errors;
+        }
+
+        if (physicalModeRecords is null || physicalModeRecords.Count == 0)
+        {
+            errors.Add("W/Z mass-ratio mapping requires identified physical mode records");
+            return errors;
+        }
+
+        var modes = sourceIds
+            .Select(id => physicalModeRecords.FirstOrDefault(m =>
+                string.Equals(m.ObservableId, id, StringComparison.Ordinal) ||
+                string.Equals(m.ModeId, id, StringComparison.Ordinal)))
+            .ToList();
+
+        if (modes.Any(m => m is null))
+        {
+            errors.Add("W/Z mass-ratio mapping source modes are not present in identified physical mode records");
+            return errors;
+        }
+
+        var nonNullModes = modes.OfType<IdentifiedPhysicalModeRecord>().ToList();
+        if (!nonNullModes.Any(m => string.Equals(m.ParticleId, "w-boson", StringComparison.Ordinal)) ||
+            !nonNullModes.Any(m => string.Equals(m.ParticleId, "z-boson", StringComparison.Ordinal)))
+        {
+            errors.Add("W/Z mass-ratio mapping requires one validated W mode and one validated Z mode");
+        }
+
+        foreach (var mode in nonNullModes)
+        {
+            foreach (var error in PhysicalModeEvidenceValidator.ValidateForPrediction(mode, modeIdentificationEvidence))
+                errors.Add($"W/Z mass-ratio source {error}");
+        }
+
+        return errors;
+    }
+
+    internal static bool IsWzMassRatioMapping(PhysicalObservableMapping mapping)
+        => string.Equals(mapping.TargetPhysicalObservableId, "physical-w-z-mass-ratio", StringComparison.Ordinal) ||
+           (mapping.SourceComputedObservableId.Contains("w-z", StringComparison.OrdinalIgnoreCase) &&
+            mapping.PhysicalObservableType.Contains("mass-ratio", StringComparison.OrdinalIgnoreCase));
+
+    private static string[]? ParsePositiveModeRatioSourceIds(string extractionMethod)
+    {
+        const string Prefix = "positive-mode-ratio:";
+        if (!extractionMethod.StartsWith(Prefix, StringComparison.Ordinal))
+            return null;
+
+        var body = extractionMethod[Prefix.Length..];
+        var suffixStart = body.IndexOf(':', StringComparison.Ordinal);
+        if (suffixStart >= 0)
+            body = body[..suffixStart];
+
+        var parts = body.Split('/', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+        return parts.Length == 2 ? parts : null;
     }
 
     private static QuantitativeObservableRecord? FindObservable(

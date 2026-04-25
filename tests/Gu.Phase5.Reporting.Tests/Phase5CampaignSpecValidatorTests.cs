@@ -48,7 +48,9 @@ public sealed class Phase5CampaignSpecValidatorTests : IDisposable
         string? targetCoverageBlockersPath = null,
         string? physicalObservableMappingsPath = null,
         string? observableClassificationsPath = null,
-        string? physicalCalibrationPath = null)
+        string? physicalCalibrationPath = null,
+        string? physicalModeRecordsPath = null,
+        string? modeIdentificationEvidencePath = null)
     {
         File.WriteAllText(
             Path.Combine(dir, "targets.json"),
@@ -218,6 +220,8 @@ public sealed class Phase5CampaignSpecValidatorTests : IDisposable
             PhysicalObservableMappingsPath = physicalObservableMappingsPath,
             ObservableClassificationsPath = observableClassificationsPath,
             PhysicalCalibrationPath = physicalCalibrationPath,
+            PhysicalModeRecordsPath = physicalModeRecordsPath,
+            ModeIdentificationEvidencePath = modeIdentificationEvidencePath,
             Provenance = MakeProvenance(),
         };
     }
@@ -531,6 +535,51 @@ public sealed class Phase5CampaignSpecValidatorTests : IDisposable
         Assert.Contains(result.Errors, e => e.Contains("observable 'q1' has no explicit classification"));
     }
 
+    [Fact]
+    public void Validate_ValidatedWzMappingWithoutValidatedModeEvidence_ReportsError()
+    {
+        var spec = MakeValidSpec(
+            _tempDir,
+            physicalObservableMappingsPath: "physical_mappings.json",
+            physicalCalibrationPath: "physical_calibrations.json",
+            physicalModeRecordsPath: "physical_modes.json",
+            modeIdentificationEvidencePath: "mode_evidence.json");
+        WriteWzPhysicalTarget();
+        WriteWzObservable(totalUncertainty: 0.01, fullBudget: true);
+        WriteWzMappingTable(status: "validated");
+        WriteWzCalibrationTable(status: "validated", method: "dimensionless-identity-derivation:test");
+        WriteWzPhysicalModes(status: "provisional", uncertainty: 0.1);
+        WriteWzModeEvidence(status: "provisional");
+
+        var result = Phase5CampaignSpecValidator.Validate(spec, _tempDir, requireReferenceSidecars: false);
+
+        Assert.False(result.IsValid);
+        Assert.Contains(result.Errors, e => e.Contains("validated W/Z mapping 'map-wz-ratio'") && e.Contains("not 'validated'"));
+        Assert.Contains(result.Errors, e => e.Contains("provisional mode-identification evidence"));
+    }
+
+    [Fact]
+    public void Validate_ValidatedWzMappingWithIncompleteUncertaintyBudget_ReportsError()
+    {
+        var spec = MakeValidSpec(
+            _tempDir,
+            physicalObservableMappingsPath: "physical_mappings.json",
+            physicalCalibrationPath: "physical_calibrations.json",
+            physicalModeRecordsPath: "physical_modes.json",
+            modeIdentificationEvidencePath: "mode_evidence.json");
+        WriteWzPhysicalTarget();
+        WriteWzObservable(totalUncertainty: 0.01, fullBudget: false);
+        WriteWzMappingTable(status: "validated");
+        WriteWzCalibrationTable(status: "validated", method: "dimensionless-identity-derivation:test");
+        WriteWzPhysicalModes(status: "validated", uncertainty: 0.1);
+        WriteWzModeEvidence(status: "validated");
+
+        var result = Phase5CampaignSpecValidator.Validate(spec, _tempDir, requireReferenceSidecars: false);
+
+        Assert.False(result.IsValid);
+        Assert.Contains(result.Errors, e => e.Contains("validated W/Z mapping 'map-wz-ratio'") && e.Contains("complete source-observable uncertainty budget"));
+    }
+
     private void WritePhysicalTarget()
     {
         File.WriteAllText(
@@ -658,6 +707,213 @@ public sealed class Phase5CampaignSpecValidatorTests : IDisposable
                         Source = "test",
                         Assumptions = ["test calibration assumption"],
                         ClosureRequirements = ["Set the GeV scale."],
+                    },
+                ],
+            }));
+    }
+
+    private void WriteWzPhysicalTarget()
+    {
+        File.WriteAllText(
+            Path.Combine(_tempDir, "targets.json"),
+            GuJsonDefaults.Serialize(new ExternalTargetTable
+            {
+                TableId = "validator-targets",
+                Targets =
+                [
+                    new ExternalTarget
+                    {
+                        Label = "wz-ratio",
+                        ObservableId = "physical-w-z-mass-ratio",
+                        Value = 0.88136,
+                        Uncertainty = 0.00015,
+                        Source = "physical-target-test",
+                        EvidenceTier = "physical-prediction",
+                        BenchmarkClass = "physical-observable",
+                        ParticleId = "electroweak-sector",
+                        PhysicalObservableType = "mass-ratio",
+                        UnitFamily = "dimensionless",
+                        Unit = "dimensionless",
+                        Citation = "Unit test W/Z target citation.",
+                        SourceUrl = "https://example.test/wz-ratio",
+                        RetrievedAt = "2026-04-25",
+                        DistributionModel = "gaussian",
+                    },
+                ],
+            }));
+    }
+
+    private void WriteWzObservable(double totalUncertainty, bool fullBudget)
+    {
+        var component = fullBudget ? 0.005 : -1.0;
+        File.WriteAllText(
+            Path.Combine(_tempDir, "observables.json"),
+            GuJsonDefaults.Serialize(new[]
+            {
+                new QuantitativeObservableRecord
+                {
+                    ObservableId = "candidate-w-z-vector-mode-ratio",
+                    Value = 0.8,
+                    Uncertainty = new QuantitativeUncertainty
+                    {
+                        BranchVariation = component,
+                        RefinementError = component,
+                        ExtractionError = 0.005,
+                        EnvironmentSensitivity = component,
+                        TotalUncertainty = totalUncertainty,
+                    },
+                    BranchId = "branch",
+                    EnvironmentId = "env-toy",
+                    RefinementLevel = "L1",
+                    ExtractionMethod = "positive-mode-ratio:w-mode/z-mode",
+                    Provenance = MakeProvenance(),
+                },
+            }));
+    }
+
+    private void WriteWzMappingTable(string status)
+    {
+        File.WriteAllText(
+            Path.Combine(_tempDir, "physical_mappings.json"),
+            GuJsonDefaults.Serialize(new PhysicalObservableMappingTable
+            {
+                TableId = "physical-mappings",
+                Mappings =
+                [
+                    new PhysicalObservableMapping
+                    {
+                        MappingId = "map-wz-ratio",
+                        ParticleId = "electroweak-sector",
+                        PhysicalObservableType = "mass-ratio",
+                        SourceComputedObservableId = "candidate-w-z-vector-mode-ratio",
+                        TargetPhysicalObservableId = "physical-w-z-mass-ratio",
+                        RequiredEnvironmentId = "env-toy",
+                        RequiredBranchId = "branch",
+                        UnitFamily = "dimensionless",
+                        Status = status,
+                        Assumptions = ["test W/Z ratio mapping"],
+                        ClosureRequirements = ["Validate W and Z mode evidence."],
+                    },
+                ],
+            }));
+    }
+
+    private void WriteWzCalibrationTable(string status, string method)
+    {
+        File.WriteAllText(
+            Path.Combine(_tempDir, "physical_calibrations.json"),
+            GuJsonDefaults.Serialize(new PhysicalCalibrationTable
+            {
+                TableId = "physical-calibrations",
+                Calibrations =
+                [
+                    new PhysicalCalibrationRecord
+                    {
+                        CalibrationId = "cal-wz-ratio",
+                        MappingId = "map-wz-ratio",
+                        SourceComputedObservableId = "candidate-w-z-vector-mode-ratio",
+                        SourceUnitFamily = "dimensionless",
+                        TargetUnitFamily = "dimensionless",
+                        TargetUnit = "dimensionless",
+                        ScaleFactor = 1.0,
+                        ScaleUncertainty = 0.0,
+                        Status = status,
+                        Method = method,
+                        Source = "test",
+                        Assumptions = ["test dimensionless calibration"],
+                        ClosureRequirements = ["Validate W/Z identity normalization."],
+                    },
+                ],
+            }));
+    }
+
+    private void WriteWzPhysicalModes(string status, double uncertainty)
+    {
+        File.WriteAllText(
+            Path.Combine(_tempDir, "physical_modes.json"),
+            GuJsonDefaults.Serialize(new[]
+            {
+                new IdentifiedPhysicalModeRecord
+                {
+                    ModeId = "mode-w",
+                    ParticleId = "w-boson",
+                    ModeKind = "vector-boson-mass-mode",
+                    ObservableId = "w-mode",
+                    Value = 80.0,
+                    Uncertainty = uncertainty,
+                    UnitFamily = "mass-energy",
+                    Unit = "internal-mass-unit",
+                    Status = status,
+                    EnvironmentId = "env-toy",
+                    BranchId = "branch",
+                    RefinementLevel = "L1",
+                    ExtractionMethod = "test-w-mode",
+                    Assumptions = ["test mode"],
+                    ClosureRequirements = status == "validated" ? [] : ["validate W mode"],
+                    Provenance = MakeProvenance(),
+                },
+                new IdentifiedPhysicalModeRecord
+                {
+                    ModeId = "mode-z",
+                    ParticleId = "z-boson",
+                    ModeKind = "vector-boson-mass-mode",
+                    ObservableId = "z-mode",
+                    Value = 100.0,
+                    Uncertainty = uncertainty,
+                    UnitFamily = "mass-energy",
+                    Unit = "internal-mass-unit",
+                    Status = status,
+                    EnvironmentId = "env-toy",
+                    BranchId = "branch",
+                    RefinementLevel = "L1",
+                    ExtractionMethod = "test-z-mode",
+                    Assumptions = ["test mode"],
+                    ClosureRequirements = status == "validated" ? [] : ["validate Z mode"],
+                    Provenance = MakeProvenance(),
+                },
+            }));
+    }
+
+    private void WriteWzModeEvidence(string status)
+    {
+        File.WriteAllText(
+            Path.Combine(_tempDir, "mode_evidence.json"),
+            GuJsonDefaults.Serialize(new ModeIdentificationEvidenceTable
+            {
+                TableId = "mode-evidence",
+                Evidence =
+                [
+                    new ModeIdentificationEvidenceRecord
+                    {
+                        EvidenceId = "evidence-w",
+                        ModeId = "mode-w",
+                        ParticleId = "w-boson",
+                        ModeKind = "vector-boson-mass-mode",
+                        SourceObservableIds = ["source-w"],
+                        EnvironmentId = "env-toy",
+                        BranchId = "branch",
+                        RefinementLevel = "L1",
+                        DerivationId = "derive-w",
+                        Status = status,
+                        Assumptions = ["test evidence"],
+                        ClosureRequirements = status == "validated" ? [] : ["validate W evidence"],
+                        Provenance = MakeProvenance(),
+                    },
+                    new ModeIdentificationEvidenceRecord
+                    {
+                        EvidenceId = "evidence-z",
+                        ModeId = "mode-z",
+                        ParticleId = "z-boson",
+                        ModeKind = "vector-boson-mass-mode",
+                        SourceObservableIds = ["source-z"],
+                        EnvironmentId = "env-toy",
+                        BranchId = "branch",
+                        RefinementLevel = "L1",
+                        DerivationId = "derive-z",
+                        Status = status,
+                        Assumptions = ["test evidence"],
+                        ClosureRequirements = status == "validated" ? [] : ["validate Z evidence"],
+                        Provenance = MakeProvenance(),
                     },
                 ],
             }));

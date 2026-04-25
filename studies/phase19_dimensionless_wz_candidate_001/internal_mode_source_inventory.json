@@ -1,0 +1,269 @@
+{
+  "tableId": "phase19-internal-mode-source-inventory-v1",
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-04-25T00:00:00+00:00",
+  "inventoryPolicy": {
+    "classificationValues": [
+      "usable",
+      "insufficient",
+      "unrelated",
+      "excluded-external-target"
+    ],
+    "externalTargetRule": "External physical target tables are comparison data only and must not be used as sources of computed W or Z mode values.",
+    "usableSourceRequirements": [
+      "checked-in or reproducible internal computed artifact",
+      "non-target source values for individual candidate W and Z modes",
+      "branch, environment, and refinement selectors",
+      "source observable or mode ids",
+      "identity evidence independent of physical target agreement",
+      "estimated extraction uncertainty"
+    ]
+  },
+  "candidateSources": [
+    {
+      "sourceId": "phase12-background-family-boson-registry",
+      "classification": "insufficient",
+      "artifactPaths": [
+        "studies/phase12_joined_calculation_001/output/background_family/bosons/registry.json",
+        "studies/phase12_joined_calculation_001/output/background_family/modes/mode_families.json",
+        "studies/phase12_joined_calculation_001/output/background_family/reports/boson_atlas.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-a-20260315212202_spectrum.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-b-20260315212202_spectrum.json"
+      ],
+      "artifactRole": "Internal computed bosonic spectrum and boson candidate registry.",
+      "branchSelectors": [],
+      "environmentSelectors": [
+        "bg-phase12-bg-a-20260315212202",
+        "bg-phase12-bg-b-20260315212202"
+      ],
+      "refinementLevels": [],
+      "observableIds": [
+        "candidate-0",
+        "candidate-1",
+        "candidate-2",
+        "candidate-3",
+        "candidate-4",
+        "candidate-5",
+        "candidate-6",
+        "candidate-7",
+        "candidate-8",
+        "candidate-9",
+        "candidate-10",
+        "candidate-11"
+      ],
+      "availableComputedFields": [
+        "massLikeEnvelope",
+        "contributingModeIds",
+        "backgroundSet",
+        "eigenvalue",
+        "residualNorm",
+        "gaugeLeakScore",
+        "tensorEnergyFractions",
+        "blockEnergyFractions"
+      ],
+      "blockers": [
+        "No particle identity field identifies any candidate as W or Z.",
+        "All boson registry candidates are C0_NumericalMode after BranchFragility demotion.",
+        "The checked-in branchVariantSet values are empty, so branch selector coverage is incomplete.",
+        "No refinement ladder is present for these candidate modes.",
+        "No uncertainty budget is provided for extraction, branch variation, refinement error, or environment sensitivity.",
+        "The available target-profile campaign compares only internal massless-vector and massive-scalar profiles, not charged W or neutral Z weak-vector identities."
+      ]
+    },
+    {
+      "sourceId": "phase5-reference-bosonic-observables",
+      "classification": "insufficient",
+      "artifactPaths": [
+        "studies/phase5_su2_branch_refinement_env_validation/config/observables.json",
+        "studies/phase5_su2_branch_refinement_env_validation/config/environment_variance.json"
+      ],
+      "artifactRole": "Internal bosonic eigenvalue-ratio observables with uncertainty components and environment variance summaries.",
+      "branchSelectors": [
+        "V1-identity-shiab-trivial-torsion-simple-a0-omega",
+        "zenodo-su2lgt-periodic-k0"
+      ],
+      "environmentSelectors": [
+        "env-imported-repo-benchmark",
+        "env-structured-4x4",
+        "env-toy-2d-trivial",
+        "env-zenodo-su2-plaquette-chain-p4-j0.5-g1.5-v1"
+      ],
+      "refinementLevels": [
+        "L0-2x2",
+        "L1-4x4",
+        "imported-repo-benchmark",
+        "P4-j0.5-g1.5"
+      ],
+      "observableIds": [
+        "bosonic-eigenvalue-ratio-1",
+        "bosonic-eigenvalue-ratio-2",
+        "bosonic-eigenvalue-ratio-3"
+      ],
+      "availableComputedFields": [
+        "value",
+        "uncertainty.branchVariation",
+        "uncertainty.refinementError",
+        "uncertainty.extractionError",
+        "uncertainty.environmentSensitivity",
+        "uncertainty.totalUncertainty"
+      ],
+      "blockers": [
+        "Artifacts contain aggregate eigenvalue ratios, not individual W and Z mode values.",
+        "No source record links the ratios to charged weak-vector or neutral weak-vector particle identities.",
+        "The Zenodo-derived row is an external lattice benchmark-derived internal observable and cannot by itself identify physical W or Z modes.",
+        "One Zenodo row still has unestimated branch, refinement, and environment uncertainty components."
+      ]
+    },
+    {
+      "sourceId": "phase19-placeholder-identified-mode-records",
+      "classification": "insufficient",
+      "artifactPaths": [
+        "studies/phase19_dimensionless_wz_candidate_001/candidate_modes.json",
+        "studies/phase19_dimensionless_wz_candidate_001/mode_identification_evidence.json",
+        "studies/phase19_dimensionless_wz_candidate_001/candidate_observables.json"
+      ],
+      "artifactRole": "Inactive scaffold documenting the target shape for identified physical mode records and a W/Z ratio.",
+      "branchSelectors": [
+        "phase19-unvalidated-wz-mode-identification"
+      ],
+      "environmentSelectors": [
+        "phase19-inactive-physical-candidate"
+      ],
+      "refinementLevels": [
+        "not-active"
+      ],
+      "observableIds": [
+        "candidate-w-vector-mode-internal-mass",
+        "candidate-z-vector-mode-internal-mass",
+        "candidate-w-z-vector-mode-ratio"
+      ],
+      "availableComputedFields": [
+        "value",
+        "uncertainty",
+        "sourceObservableIds",
+        "status",
+        "closureRequirements"
+      ],
+      "blockers": [
+        "Mode records are explicitly provisional placeholders.",
+        "Mode values are not independently computed theory outputs.",
+        "Mode uncertainty is -1.",
+        "Mode evidence derivation ids are missing placeholders.",
+        "The ratio artifact uses placeholder inputs and must not be used as a physical prediction."
+      ]
+    },
+    {
+      "sourceId": "phase5-branch-refinement-environment-selectors",
+      "classification": "insufficient",
+      "artifactPaths": [
+        "studies/phase5_su2_branch_refinement_env_validation/config/branch_quantity_values.json",
+        "studies/phase5_su2_branch_refinement_env_validation/config/phase10_direct_refinement_standard/refinement_values.json",
+        "studies/phase5_su2_branch_refinement_env_validation/config/env_imported_repo_benchmark.json",
+        "studies/phase5_su2_branch_refinement_env_validation/config/env_structured_4x4_record.json",
+        "studies/phase5_su2_branch_refinement_env_validation/config/env_toy_record.json",
+        "studies/phase5_su2_branch_refinement_env_validation/config/env_zenodo_su2_plaquette_chain.json"
+      ],
+      "artifactRole": "Selector and robustness evidence used by the Phase XIX campaign.",
+      "branchSelectors": [
+        "bg-variant-53b598740d9569b4",
+        "bg-variant-95ee11778cc7ac01",
+        "bg-variant-d840fea6e6d36748",
+        "bg-variant-d84f5d66fd98b842"
+      ],
+      "environmentSelectors": [
+        "env-imported-repo-benchmark",
+        "env-structured-4x4",
+        "env-toy-2d-trivial",
+        "env-zenodo-su2-plaquette-chain-p4-j0.5-g1.5-v1"
+      ],
+      "refinementLevels": [
+        "L0-2x2",
+        "L1-4x4",
+        "L2-8x8"
+      ],
+      "observableIds": [
+        "gauge-violation",
+        "objective-value",
+        "residual-norm",
+        "solver-iterations",
+        "stationarity-norm"
+      ],
+      "availableComputedFields": [
+        "quantities",
+        "solverConverged"
+      ],
+      "blockers": [
+        "Artifacts provide campaign selectors and numerical health quantities, not W/Z vector-boson mass-mode values.",
+        "They can support future closure checks but cannot generate candidate W or Z records alone."
+      ]
+    },
+    {
+      "sourceId": "phase4-fermion-registry-and-spectral-result",
+      "classification": "unrelated",
+      "artifactPaths": [
+        "studies/phase4_fermion_family_atlas_001/output/fermion_spectral_result.json",
+        "studies/phase4_fermion_family_atlas_001/output/unified_particle_registry.json"
+      ],
+      "artifactRole": "Internal fermion spectral and registry outputs.",
+      "branchSelectors": [
+        "phase4-fermion-family-atlas-001"
+      ],
+      "environmentSelectors": [
+        "bg-toy2d-cos-sin-su2-v1"
+      ],
+      "refinementLevels": [],
+      "observableIds": [
+        "fermion-registry-phase4-toy-v1-0000",
+        "fermion-registry-phase4-toy-v1-0001",
+        "fermion-registry-phase4-toy-v1-0002"
+      ],
+      "availableComputedFields": [
+        "EigenvalueRe",
+        "ResidualNorm",
+        "massLikeEnvelope",
+        "chirality",
+        "claimClass"
+      ],
+      "blockers": [
+        "Artifacts are fermion-focused and do not provide vector-boson mass-mode candidates."
+      ]
+    },
+    {
+      "sourceId": "phase18-and-phase19-physical-target-tables",
+      "classification": "excluded-external-target",
+      "artifactPaths": [
+        "studies/phase18_experimental_targets_001/physical_targets.json",
+        "studies/phase19_dimensionless_wz_candidate_001/physical_targets.json"
+      ],
+      "artifactRole": "External PDG comparison targets.",
+      "branchSelectors": [],
+      "environmentSelectors": [],
+      "refinementLevels": [],
+      "observableIds": [
+        "physical-w-boson-mass-gev",
+        "physical-z-boson-mass-gev",
+        "physical-w-z-mass-ratio"
+      ],
+      "availableComputedFields": [],
+      "blockers": [
+        "External target values are not computed mode values and are excluded by policy."
+      ]
+    }
+  ],
+  "usableSourceIds": [],
+  "blockingSummary": [
+    "No checked-in artifact currently provides both individual computed W and Z vector-boson mass modes.",
+    "No checked-in artifact provides W/Z identity evidence independent of target agreement.",
+    "No checked-in artifact provides complete W/Z mode uncertainty components.",
+    "Existing selector and sidecar evidence can support validation after candidate generation, but cannot generate candidates by itself."
+  ],
+  "provenance": {
+    "createdAt": "2026-04-25T00:00:00+00:00",
+    "codeRevision": "phase19-planning-artifacts",
+    "branch": {
+      "branchId": "phase19-unvalidated-wz-mode-identification",
+      "schemaVersion": "1.0"
+    },
+    "backend": "documented-inventory"
+  }
+}

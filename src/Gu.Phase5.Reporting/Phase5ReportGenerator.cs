@@ -3,6 +3,7 @@ using Gu.Core;
 using Gu.Phase5.BranchIndependence;
 using Gu.Phase5.Convergence;
 using Gu.Phase5.Falsification;
+using Gu.Phase5.QuantitativeValidation;
 using Phase3Reporting = Gu.Phase3.Reporting;
 using Phase5Dossiers = Gu.Phase5.Dossiers;
 
@@ -40,6 +41,7 @@ public static class Phase5ReportGenerator
         ObservableClassificationTable? observableClassifications = null,
         IReadOnlyList<PhysicalObservableMapping>? physicalObservableMappings = null,
         IReadOnlyList<PhysicalPredictionRecord>? physicalPredictions = null,
+        ConsistencyScoreCard? scoreCard = null,
         bool physicalCalibrationAvailable = false,
         bool physicalTargetEvidenceAvailable = false)
     {
@@ -70,6 +72,10 @@ public static class Phase5ReportGenerator
             falsifiers,
             calibrationAvailable: physicalCalibrationAvailable,
             physicalTargetEvidenceAvailable: physicalTargetEvidenceAvailable);
+        var terminalStatus = PhysicalPredictionTerminalStatus.Evaluate(
+            physicalClaimGate,
+            physicalPredictions,
+            scoreCard);
 
         return new Phase5Report
         {
@@ -87,6 +93,7 @@ public static class Phase5ReportGenerator
             ObservableClassifications = observableClassifications,
             PhysicalClaimGate = physicalClaimGate,
             PhysicalPredictions = physicalPredictions,
+            PhysicalPredictionTerminalStatus = terminalStatus,
             Provenance = provenance,
             GeneratedAt = DateTimeOffset.UtcNow,
         };
@@ -205,6 +212,14 @@ public static class Phase5ReportGenerator
                         $"- {prediction.MappingId}: blocked. {string.Join(" ", prediction.BlockReasons)}");
                 }
             }
+            sb.AppendLine();
+        }
+
+        if (report.PhysicalPredictionTerminalStatus is { } terminal)
+        {
+            sb.AppendLine("## Physical Prediction Terminal Status");
+            foreach (var line in terminal.SummaryLines)
+                sb.AppendLine($"- {line}");
             sb.AppendLine();
         }
 

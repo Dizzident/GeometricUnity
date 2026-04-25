@@ -131,6 +131,7 @@ public static class Phase5CampaignSpecValidator
         ValidateEnvironmentEvidence(spec, specDir, requireReferenceSidecars, errors);
         ValidateTargetTable(spec, specDir, repoRoot, errors);
         ValidatePhysicalModesAndEvidence(spec, specDir, repoRoot, errors);
+        ValidateWzPhysicalPromotion(spec, specDir, repoRoot, errors);
         ValidateObservableClassifications(spec, specDir, repoRoot, errors);
         ValidateSidecarSchemas(spec, specDir, repoRoot, errors);
 
@@ -791,6 +792,100 @@ public static class Phase5CampaignSpecValidator
                 foreach (var error in PhysicalModeEvidenceValidator.ValidateForPrediction(mode, evidence))
                     errors.Add($"physicalModeRecordsPath: {error}");
             }
+        }
+    }
+
+    private static void ValidateWzPhysicalPromotion(
+        Phase5CampaignSpec spec,
+        string specDir,
+        string repoRoot,
+        List<string> errors)
+    {
+        var mappings = LoadPhysicalMappings(spec, specDir, repoRoot, errors);
+        var wzMappings = mappings
+            .Where(PhysicalPredictionProjector.IsWzMassRatioMapping)
+            .ToList();
+        if (wzMappings.Count == 0)
+            return;
+
+        var observables = LoadQuantitativeObservablesForPromotion(spec, specDir, errors);
+        var modes = LoadPhysicalModes(spec, specDir, repoRoot, errors);
+        var evidence = LoadModeIdentificationEvidence(spec, specDir, repoRoot, errors);
+        var calibrations = LoadPhysicalCalibrations(spec, specDir, repoRoot, errors);
+
+        foreach (var mapping in wzMappings.Where(m => string.Equals(m.Status, "validated", StringComparison.OrdinalIgnoreCase)))
+        {
+            var observable = observables.FirstOrDefault(o =>
+                string.Equals(o.ObservableId, mapping.SourceComputedObservableId, StringComparison.Ordinal) &&
+                (string.IsNullOrWhiteSpace(mapping.RequiredEnvironmentId) ||
+                 string.Equals(o.EnvironmentId, mapping.RequiredEnvironmentId, StringComparison.Ordinal)) &&
+                (string.IsNullOrWhiteSpace(mapping.RequiredBranchId) ||
+                 string.Equals(o.BranchId, mapping.RequiredBranchId, StringComparison.Ordinal)));
+
+            if (observable is null)
+            {
+                errors.Add($"physicalObservableMappingsPath: validated W/Z mapping '{mapping.MappingId}' has no matching computed source observable.");
+                continue;
+            }
+
+            if (observable.Uncertainty.TotalUncertainty < 0 ||
+                observable.Uncertainty.ExtractionError < 0 ||
+                observable.Uncertainty.BranchVariation < 0 ||
+                observable.Uncertainty.RefinementError < 0 ||
+                observable.Uncertainty.EnvironmentSensitivity < 0)
+            {
+                errors.Add($"physicalObservableMappingsPath: validated W/Z mapping '{mapping.MappingId}' requires a complete source-observable uncertainty budget.");
+            }
+
+            foreach (var error in PhysicalPredictionProjector.ValidateWzModeEvidence(mapping, observable, modes, evidence))
+                errors.Add($"physicalObservableMappingsPath: validated W/Z mapping '{mapping.MappingId}' {error}");
+        }
+
+        foreach (var calibration in calibrations.Where(c => string.Equals(c.Status, "validated", StringComparison.OrdinalIgnoreCase)))
+        {
+            var mapping = wzMappings.FirstOrDefault(m =>
+                string.Equals(m.MappingId, calibration.MappingId, StringComparison.Ordinal) &&
+                string.Equals(m.SourceComputedObservableId, calibration.SourceComputedObservableId, StringComparison.Ordinal));
+            if (mapping is null)
+                continue;
+
+            if (!string.Equals(mapping.Status, "validated", StringComparison.OrdinalIgnoreCase))
+            {
+                errors.Add($"physicalCalibrationPath: validated W/Z calibration '{calibration.CalibrationId}' requires a validated W/Z mapping.");
+            }
+
+            if (string.IsNullOrWhiteSpace(calibration.Method) ||
+                calibration.Method.Contains("placeholder", StringComparison.OrdinalIgnoreCase))
+            {
+                errors.Add($"physicalCalibrationPath: validated W/Z calibration '{calibration.CalibrationId}' requires a documented non-placeholder dimensionless derivation method.");
+            }
+        }
+    }
+
+    private static IReadOnlyList<QuantitativeObservableRecord> LoadQuantitativeObservablesForPromotion(
+        Phase5CampaignSpec spec,
+        string specDir,
+        List<string> errors)
+    {
+        var resolved = ResolvePath(spec.ObservablesPath, specDir);
+        if (!File.Exists(resolved))
+            return Array.Empty<QuantitativeObservableRecord>();
+
+        try
+        {
+            var observables = GuJsonDefaults.Deserialize<List<QuantitativeObservableRecord>>(File.ReadAllText(resolved));
+            if (observables is null)
+            {
+                errors.Add("observablesPath: failed to deserialize quantitative observables.");
+                return Array.Empty<QuantitativeObservableRecord>();
+            }
+
+            return observables;
+        }
+        catch (Exception ex)
+        {
+            errors.Add($"observablesPath: failed to load quantitative observables for W/Z promotion validation ({ex.Message}).");
+            return Array.Empty<QuantitativeObservableRecord>();
         }
     }
 

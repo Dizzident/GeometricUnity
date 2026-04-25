@@ -59,7 +59,9 @@ public sealed class Phase5CampaignRunner
         RefinementEvidenceManifest? refinementEvidenceManifest = null,
         ObservableClassificationTable? observableClassifications = null,
         IReadOnlyList<PhysicalObservableMapping>? physicalObservableMappings = null,
-        IReadOnlyList<PhysicalCalibrationRecord>? physicalCalibrations = null)
+        IReadOnlyList<PhysicalCalibrationRecord>? physicalCalibrations = null,
+        IReadOnlyList<IdentifiedPhysicalModeRecord>? physicalModeRecords = null,
+        ModeIdentificationEvidenceTable? modeIdentificationEvidence = null)
     {
         ArgumentNullException.ThrowIfNull(spec);
         ArgumentNullException.ThrowIfNull(branchPipelineExecutor);
@@ -190,7 +192,9 @@ public sealed class Phase5CampaignRunner
                 {
                     TableId = "campaign-physical-calibrations",
                     Calibrations = physicalCalibrations,
-                });
+                },
+            physicalModeRecords,
+            modeIdentificationEvidence?.Evidence);
 
         // Step 6: Generate final report (M53)
         var report = Phase5ReportGenerator.Generate(
@@ -204,6 +208,7 @@ public sealed class Phase5CampaignRunner
             observableClassifications: observableClassifications,
             physicalObservableMappings: physicalObservableMappings,
             physicalPredictions: physicalPredictions,
+            scoreCard: scoreCard,
             physicalCalibrationAvailable: physicalCalibrations?.Any(c =>
                 string.Equals(c.Status, "validated", StringComparison.OrdinalIgnoreCase)) == true,
             physicalTargetEvidenceAvailable: targetTable.Targets.Any(t =>
