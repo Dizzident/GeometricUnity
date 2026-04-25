@@ -169,10 +169,19 @@ The generated reference report still blocks physical predictions, as intended:
 
 ### P17-M7 First Dimensionless Physical Observable
 
-Status: pending.
+Status: scaffold complete; validated extraction pending.
 
 Implement a real computed physical observable, preferably a dimensionless one
 such as `physical-w-z-mass-ratio`, before attempting GeV scale setting.
+
+Progress:
+
+- added inactive `studies/phase19_dimensionless_wz_candidate_001`;
+- added a W/Z vector-mode ratio candidate observable artifact;
+- added provisional mapping to `physical-w-z-mass-ratio`;
+- added provisional dimensionless identity normalization;
+- added isolated PDG W/Z mass-ratio target evidence;
+- added tests proving the scaffold remains blocked and inactive.
 
 Definition of done:
 
@@ -180,6 +189,13 @@ Definition of done:
 - the extraction method is distinct from benchmark eigenvalue-ratio controls;
 - the observable is not activated unless the mapping and calibration are
   validated.
+
+Remaining:
+
+- replace the placeholder candidate value with an independently computed W/Z
+  mode-ratio observable;
+- derive and test the W/Z vector-mode identification rule;
+- estimate uncertainty components instead of using `-1` unestimated sentinels.
 
 ### P17-M8 First Physical Comparison Campaign
 

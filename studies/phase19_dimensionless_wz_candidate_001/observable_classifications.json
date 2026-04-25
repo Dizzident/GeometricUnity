@@ -1,0 +1,11 @@
+{
+  "tableId": "phase19-wz-candidate-classifications-v1",
+  "classifications": [
+    {
+      "observableId": "candidate-w-z-vector-mode-ratio",
+      "classification": "physical-candidate",
+      "rationale": "Inactive scaffold for a future W/Z vector-mode ratio. It is not a validated physical observable until W and Z mode identification is derived and tested.",
+      "physicalClaimAllowed": false
+    }
+  ]
+}

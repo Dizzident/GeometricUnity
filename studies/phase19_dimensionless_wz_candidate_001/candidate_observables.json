@@ -1,0 +1,26 @@
+[
+  {
+    "observableId": "candidate-w-z-vector-mode-ratio",
+    "value": 0.88136,
+    "uncertainty": {
+      "branchVariation": -1,
+      "refinementError": -1,
+      "extractionError": -1,
+      "environmentSensitivity": -1,
+      "totalUncertainty": -1
+    },
+    "branchId": "phase19-unvalidated-wz-mode-identification",
+    "environmentId": "phase19-inactive-physical-candidate",
+    "refinementLevel": "not-active",
+    "extractionMethod": "placeholder-w-z-vector-mode-ratio-candidate",
+    "provenance": {
+      "createdAt": "2026-04-25T00:00:00+00:00",
+      "codeRevision": "phase19-candidate-scaffold",
+      "branch": {
+        "branchId": "phase19-unvalidated-wz-mode-identification",
+        "schemaVersion": "1.0"
+      },
+      "backend": "documented-candidate"
+    }
+  }
+]

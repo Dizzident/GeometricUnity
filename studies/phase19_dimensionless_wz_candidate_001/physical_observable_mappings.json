@@ -1,0 +1,25 @@
+{
+  "tableId": "phase19-wz-candidate-mappings-v1",
+  "mappings": [
+    {
+      "mappingId": "provisional-w-z-vector-mode-ratio-to-pdg-mass-ratio",
+      "particleId": "electroweak-sector",
+      "physicalObservableType": "mass-ratio",
+      "sourceComputedObservableId": "candidate-w-z-vector-mode-ratio",
+      "targetPhysicalObservableId": "physical-w-z-mass-ratio",
+      "requiredEnvironmentId": "phase19-inactive-physical-candidate",
+      "requiredBranchId": "phase19-unvalidated-wz-mode-identification",
+      "unitFamily": "dimensionless",
+      "status": "provisional",
+      "assumptions": [
+        "The source quantity would need to be computed from identified W and Z vector modes.",
+        "The current value is a scaffold placeholder and must not be treated as a prediction."
+      ],
+      "closureRequirements": [
+        "Derive and test W and Z mode-identification rules.",
+        "Replace the placeholder candidate with an independently computed observable.",
+        "Validate uncertainty propagation from the extracted modes into the ratio."
+      ]
+    }
+  ]
+}

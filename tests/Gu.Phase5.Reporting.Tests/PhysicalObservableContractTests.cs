@@ -373,6 +373,46 @@ public sealed class PhysicalObservableContractTests
         });
     }
 
+    [Fact]
+    public void Phase19WzCandidate_IsInactiveAndBlockedByContract()
+    {
+        var repoRoot = FindRepoRoot();
+        var studyDir = Path.Combine(repoRoot, "studies", "phase19_dimensionless_wz_candidate_001");
+        var observables = GuJsonDefaults.Deserialize<List<QuantitativeObservableRecord>>(
+            File.ReadAllText(Path.Combine(studyDir, "candidate_observables.json")));
+        var classifications = GuJsonDefaults.Deserialize<ObservableClassificationTable>(
+            File.ReadAllText(Path.Combine(studyDir, "observable_classifications.json")));
+        var mappings = GuJsonDefaults.Deserialize<PhysicalObservableMappingTable>(
+            File.ReadAllText(Path.Combine(studyDir, "physical_observable_mappings.json")));
+        var calibrations = GuJsonDefaults.Deserialize<PhysicalCalibrationTable>(
+            File.ReadAllText(Path.Combine(studyDir, "physical_calibrations.json")));
+        var targets = GuJsonDefaults.Deserialize<ExternalTargetTable>(
+            File.ReadAllText(Path.Combine(studyDir, "physical_targets.json")));
+
+        Assert.NotNull(observables);
+        Assert.NotNull(classifications);
+        Assert.NotNull(mappings);
+        Assert.NotNull(calibrations);
+        Assert.NotNull(targets);
+        Assert.Equal("physical-candidate", classifications!.Classifications[0].Classification);
+        Assert.False(classifications.Classifications[0].PhysicalClaimAllowed);
+        Assert.Equal("provisional", mappings!.Mappings[0].Status);
+        Assert.Equal("provisional", calibrations!.Calibrations[0].Status);
+        Assert.Equal("physical-w-z-mass-ratio", targets!.Targets[0].ObservableId);
+
+        var predictions = PhysicalPredictionProjector.Project(
+            observables!,
+            mappings.Mappings,
+            classifications,
+            calibrations);
+
+        var prediction = Assert.Single(predictions);
+        Assert.Equal("blocked", prediction.Status);
+        Assert.Contains(prediction.BlockReasons, reason => reason.Contains("provisional"));
+        Assert.Contains(prediction.BlockReasons, reason => reason.Contains("not classified for physical claims"));
+        Assert.Contains(prediction.BlockReasons, reason => reason.Contains("no validated calibration"));
+    }
+
     private static string FindRepoRoot()
     {
         var current = new DirectoryInfo(Directory.GetCurrentDirectory());

@@ -1,0 +1,25 @@
+{
+  "tableId": "phase19-wz-candidate-calibrations-v1",
+  "calibrations": [
+    {
+      "calibrationId": "provisional-w-z-ratio-identity-normalization",
+      "mappingId": "provisional-w-z-vector-mode-ratio-to-pdg-mass-ratio",
+      "sourceComputedObservableId": "candidate-w-z-vector-mode-ratio",
+      "sourceUnitFamily": "dimensionless",
+      "targetUnitFamily": "dimensionless",
+      "targetUnit": "dimensionless",
+      "scaleFactor": 1.0,
+      "scaleUncertainty": 0.0,
+      "status": "provisional",
+      "method": "identity-normalization-placeholder",
+      "source": "phase19-dimensionless-candidate-scaffold",
+      "assumptions": [
+        "A dimensionless mass ratio can use identity normalization only after the source observable is shown to be the same physical ratio."
+      ],
+      "closureRequirements": [
+        "Validate that numerator and denominator are physical W and Z modes.",
+        "Propagate mode-extraction uncertainties into the ratio."
+      ]
+    }
+  ]
+}
