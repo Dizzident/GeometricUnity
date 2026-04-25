@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/mode_identification_evidence.schema.json",
+  "title": "ModeIdentificationEvidenceTable",
+  "type": "object",
+  "required": ["tableId", "evidence"],
+  "properties": {
+    "tableId": { "type": "string" },
+    "evidence": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/ModeIdentificationEvidenceRecord" }
+    }
+  },
+  "$defs": {
+    "ModeIdentificationEvidenceRecord": {
+      "type": "object",
+      "required": [
+        "evidenceId",
+        "modeId",
+        "particleId",
+        "modeKind",
+        "sourceObservableIds",
+        "environmentId",
+        "branchId",
+        "derivationId",
+        "status",
+        "assumptions",
+        "closureRequirements",
+        "provenance"
+      ],
+      "properties": {
+        "evidenceId": { "type": "string" },
+        "modeId": { "type": "string" },
+        "particleId": { "type": "string" },
+        "modeKind": { "type": "string" },
+        "sourceObservableIds": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "environmentId": { "type": "string" },
+        "branchId": { "type": "string" },
+        "refinementLevel": { "type": ["string", "null"] },
+        "derivationId": { "type": "string" },
+        "status": {
+          "type": "string",
+          "enum": ["validated", "provisional", "blocked"]
+        },
+        "assumptions": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "closureRequirements": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "provenance": { "type": "object" }
+      }
+    }
+  }
+}

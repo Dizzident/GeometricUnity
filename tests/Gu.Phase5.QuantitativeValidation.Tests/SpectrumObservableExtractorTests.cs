@@ -80,6 +80,86 @@ public sealed class SpectrumObservableExtractorTests
         };
     }
 
+    private static ModeIdentificationEvidenceRecord MakeEvidence(
+        string modeId,
+        string particleId,
+        string status = "validated",
+        string environmentId = "env-physical-candidate",
+        string branchId = "branch")
+    {
+        return new ModeIdentificationEvidenceRecord
+        {
+            EvidenceId = $"evidence-{modeId}",
+            ModeId = modeId,
+            ParticleId = particleId,
+            ModeKind = "vector-boson-mass-mode",
+            SourceObservableIds = [$"{modeId}-source"],
+            EnvironmentId = environmentId,
+            BranchId = branchId,
+            RefinementLevel = "L1",
+            DerivationId = $"derive-{modeId}",
+            Status = status,
+            Assumptions = ["unit test evidence"],
+            ClosureRequirements = status == "validated" ? [] : ["validate evidence"],
+            Provenance = MakeProvenance(),
+        };
+    }
+
+    [Fact]
+    public void CreatePositiveModeRatioRecord_WithValidatedEvidence_ProducesRatio()
+    {
+        var wMode = MakePhysicalMode("mode-w", "w-boson", "physical-mode-w", 80.0, 0.4);
+        var zMode = MakePhysicalMode("mode-z", "z-boson", "physical-mode-z", 100.0, 0.3);
+        var evidence = new[] { MakeEvidence("mode-w", "w-boson"), MakeEvidence("mode-z", "z-boson") };
+
+        var record = SpectrumObservableExtractor.CreatePositiveModeRatioRecord(
+            wMode,
+            zMode,
+            "physical-w-z-mass-ratio",
+            MakeProvenance(),
+            evidence,
+            requireValidatedEvidence: true);
+
+        Assert.Equal(0.8, record.Value, precision: 15);
+    }
+
+    [Fact]
+    public void CreatePositiveModeRatioRecord_WithMissingEvidence_Throws()
+    {
+        var wMode = MakePhysicalMode("mode-w", "w-boson", "physical-mode-w", 80.0, 0.4);
+        var zMode = MakePhysicalMode("mode-z", "z-boson", "physical-mode-z", 100.0, 0.3);
+
+        var ex = Assert.Throws<ArgumentException>(() =>
+            SpectrumObservableExtractor.CreatePositiveModeRatioRecord(
+                wMode,
+                zMode,
+                "physical-w-z-mass-ratio",
+                MakeProvenance(),
+                evidenceRecords: [],
+                requireValidatedEvidence: true));
+
+        Assert.Contains("no mode-identification evidence", ex.Message);
+    }
+
+    [Fact]
+    public void CreatePositiveModeRatioRecord_WithProvisionalEvidence_Throws()
+    {
+        var wMode = MakePhysicalMode("mode-w", "w-boson", "physical-mode-w", 80.0, 0.4);
+        var zMode = MakePhysicalMode("mode-z", "z-boson", "physical-mode-z", 100.0, 0.3);
+        var evidence = new[] { MakeEvidence("mode-w", "w-boson", status: "provisional"), MakeEvidence("mode-z", "z-boson") };
+
+        var ex = Assert.Throws<ArgumentException>(() =>
+            SpectrumObservableExtractor.CreatePositiveModeRatioRecord(
+                wMode,
+                zMode,
+                "physical-w-z-mass-ratio",
+                MakeProvenance(),
+                evidence,
+                requireValidatedEvidence: true));
+
+        Assert.Contains("provisional mode-identification evidence", ex.Message);
+    }
+
     [Fact]
     public void CreatePositiveModeRatioRecord_FromValidatedPhysicalModes_ProducesRatio()
     {

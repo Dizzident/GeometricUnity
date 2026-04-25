@@ -69,6 +69,12 @@ public sealed class Phase5CampaignArtifacts
 
     /// <summary>Optional Phase XVII physical scale-setting/calibration records.</summary>
     public PhysicalCalibrationTable? PhysicalCalibrations { get; init; }
+
+    /// <summary>Optional Phase XVIII identified physical mode records.</summary>
+    public IReadOnlyList<IdentifiedPhysicalModeRecord>? PhysicalModeRecords { get; init; }
+
+    /// <summary>Optional Phase XVIII mode-identification evidence records.</summary>
+    public ModeIdentificationEvidenceTable? ModeIdentificationEvidence { get; init; }
 }
 
 /// <summary>
@@ -238,6 +244,24 @@ public static class Phase5CampaignArtifactLoader
                     File.ReadAllText(absPath));
         }
 
+        IReadOnlyList<IdentifiedPhysicalModeRecord>? physicalModeRecords = null;
+        if (spec.PhysicalModeRecordsPath is not null)
+        {
+            var absPath = ResolvePath(spec.PhysicalModeRecordsPath, specDir);
+            if (File.Exists(absPath))
+                physicalModeRecords = GuJsonDefaults.Deserialize<List<IdentifiedPhysicalModeRecord>>(
+                    File.ReadAllText(absPath));
+        }
+
+        ModeIdentificationEvidenceTable? modeIdentificationEvidence = null;
+        if (spec.ModeIdentificationEvidencePath is not null)
+        {
+            var absPath = ResolvePath(spec.ModeIdentificationEvidencePath, specDir);
+            if (File.Exists(absPath))
+                modeIdentificationEvidence = GuJsonDefaults.Deserialize<ModeIdentificationEvidenceTable>(
+                    File.ReadAllText(absPath));
+        }
+
         return new Phase5CampaignArtifacts
         {
             BranchQuantityValues = branchValues,
@@ -256,6 +280,8 @@ public static class Phase5CampaignArtifactLoader
             ObservableClassifications = observableClassifications,
             PhysicalObservableMappings = physicalObservableMappings,
             PhysicalCalibrations = physicalCalibrations,
+            PhysicalModeRecords = physicalModeRecords,
+            ModeIdentificationEvidence = modeIdentificationEvidence,
         };
     }
 

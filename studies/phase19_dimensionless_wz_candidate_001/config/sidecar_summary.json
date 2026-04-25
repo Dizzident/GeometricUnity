@@ -1,0 +1,51 @@
+{
+  "studyId": "phase19-dimensionless-wz-physical-comparison-blocked",
+  "schemaVersion": "1.0.0",
+  "channels": [
+    {
+      "channelId": "observation-chain",
+      "status": "evaluated",
+      "inputCount": 3,
+      "outputCount": 3,
+      "originCounts": {
+        "upstream-sourced": 3
+      }
+    },
+    {
+      "channelId": "environment-variance",
+      "status": "evaluated",
+      "inputCount": 5,
+      "outputCount": 5,
+      "originCounts": {
+        "upstream-sourced": 5
+      }
+    },
+    {
+      "channelId": "representation-content",
+      "status": "evaluated",
+      "inputCount": 3,
+      "outputCount": 3,
+      "originCounts": {
+        "upstream-sourced": 3
+      }
+    },
+    {
+      "channelId": "coupling-consistency",
+      "status": "evaluated",
+      "inputCount": 3,
+      "outputCount": 3,
+      "originCounts": {
+        "upstream-sourced": 3
+      }
+    }
+  ],
+  "provenance": {
+    "createdAt": "2026-04-25T00:00:00+00:00",
+    "codeRevision": "phase18-wz-blocked-campaign",
+    "branch": {
+      "branchId": "phase19-unvalidated-wz-mode-identification",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "tableId": "phase19-wz-physical-target-blockers-v1",
+  "blockers": [
+    {
+      "blockerId": "blocked-physical-w-z-ratio-mode-identification",
+      "observableId": "physical-w-z-mass-ratio",
+      "targetLabel": "pdg-w-z-mass-ratio",
+      "blockerReason": "No validated W/Z mode-identification evidence exists, and the current mapping/calibration records are provisional.",
+      "closureRequirement": "Validate W and Z physical mode evidence, estimate uncertainties, and promote mapping/calibration only after the internal computed ratio exists."
+    }
+  ]
+}

@@ -123,9 +123,14 @@ public static class Phase5CampaignSpecValidator
             CheckFilePath(spec.ObservableClassificationsPath, "observableClassificationsPath", specDir, errors);
         if (spec.PhysicalCalibrationPath is not null)
             CheckFilePath(spec.PhysicalCalibrationPath, "physicalCalibrationPath", specDir, errors);
+        if (spec.PhysicalModeRecordsPath is not null)
+            CheckFilePath(spec.PhysicalModeRecordsPath, "physicalModeRecordsPath", specDir, errors);
+        if (spec.ModeIdentificationEvidencePath is not null)
+            CheckFilePath(spec.ModeIdentificationEvidencePath, "modeIdentificationEvidencePath", specDir, errors);
 
         ValidateEnvironmentEvidence(spec, specDir, requireReferenceSidecars, errors);
         ValidateTargetTable(spec, specDir, repoRoot, errors);
+        ValidatePhysicalModesAndEvidence(spec, specDir, repoRoot, errors);
         ValidateObservableClassifications(spec, specDir, repoRoot, errors);
         ValidateSidecarSchemas(spec, specDir, repoRoot, errors);
 
@@ -243,7 +248,8 @@ public static class Phase5CampaignSpecValidator
                 errors.Add("externalTargetTablePath: every target must declare distributionModel explicitly.");
 
             if (!table.Targets.Any(t => string.Equals(t.EvidenceTier, "derived-synthetic", StringComparison.OrdinalIgnoreCase)
-                                     || string.Equals(t.EvidenceTier, "evidence-grade", StringComparison.OrdinalIgnoreCase)))
+                                     || string.Equals(t.EvidenceTier, "evidence-grade", StringComparison.OrdinalIgnoreCase)
+                                     || string.Equals(t.EvidenceTier, "physical-prediction", StringComparison.OrdinalIgnoreCase)))
             {
                 errors.Add("externalTargetTablePath: reference campaign must distinguish toy-placeholder targets from stronger target tiers.");
             }
@@ -267,7 +273,7 @@ public static class Phase5CampaignSpecValidator
 
             foreach (var target in table.Targets)
             {
-                ValidatePhysicalTargetMapping(target, physicalMappings, physicalCalibrations, errors);
+                ValidatePhysicalTargetMapping(target, physicalMappings, physicalCalibrations, targetCoverageBlockers, errors);
 
                 if (observables.Any(obs => TargetSelectorsMatch(obs, target, environmentTiers)))
                     continue;
@@ -355,6 +361,7 @@ public static class Phase5CampaignSpecValidator
         ExternalTarget target,
         IReadOnlyList<PhysicalObservableMapping> mappings,
         IReadOnlyList<PhysicalCalibrationRecord> calibrations,
+        IReadOnlyList<TargetCoverageBlockerRecord> blockers,
         List<string> errors)
     {
         if (!IsPhysicalTarget(target))
@@ -402,6 +409,9 @@ public static class Phase5CampaignSpecValidator
             ValidatePhysicalTargetCalibration(target, validated, calibrations, errors);
             return;
         }
+
+        if (HasTargetCoverageBlocker(target, blockers))
+            return;
 
         var blocked = candidates.FirstOrDefault(m => string.Equals(m.Status, "blocked", StringComparison.OrdinalIgnoreCase));
         if (blocked is not null)
@@ -738,6 +748,148 @@ public static class Phase5CampaignSpecValidator
         catch (Exception ex)
         {
             errors.Add($"observableClassificationsPath: failed to validate classifications ({ex.Message}).");
+        }
+    }
+
+    private static void ValidatePhysicalModesAndEvidence(
+        Phase5CampaignSpec spec,
+        string specDir,
+        string repoRoot,
+        List<string> errors)
+    {
+        var modes = LoadPhysicalModes(spec, specDir, repoRoot, errors);
+        var evidence = LoadModeIdentificationEvidence(spec, specDir, repoRoot, errors);
+        if (modes.Count == 0)
+            return;
+
+        foreach (var mode in modes)
+        {
+            if (string.IsNullOrWhiteSpace(mode.ModeId))
+                errors.Add("physicalModeRecordsPath: every mode must declare modeId.");
+            if (string.IsNullOrWhiteSpace(mode.ParticleId))
+                errors.Add($"physicalModeRecordsPath: mode '{mode.ModeId}' must declare particleId.");
+            if (string.IsNullOrWhiteSpace(mode.ModeKind))
+                errors.Add($"physicalModeRecordsPath: mode '{mode.ModeId}' must declare modeKind.");
+            if (string.IsNullOrWhiteSpace(mode.ObservableId))
+                errors.Add($"physicalModeRecordsPath: mode '{mode.ModeId}' must declare observableId.");
+            if (string.IsNullOrWhiteSpace(mode.UnitFamily))
+                errors.Add($"physicalModeRecordsPath: mode '{mode.ModeId}' must declare unitFamily.");
+            if (string.IsNullOrWhiteSpace(mode.Unit))
+                errors.Add($"physicalModeRecordsPath: mode '{mode.ModeId}' must declare unit.");
+            if (!IsKnownMappingStatus(mode.Status))
+                errors.Add($"physicalModeRecordsPath: mode '{mode.ModeId}' has unknown status '{mode.Status}'.");
+            if (mode.Assumptions.Count == 0)
+                errors.Add($"physicalModeRecordsPath: mode '{mode.ModeId}' must declare at least one assumption.");
+            if (!string.Equals(mode.Status, "validated", StringComparison.OrdinalIgnoreCase) &&
+                mode.ClosureRequirements.Count == 0)
+            {
+                errors.Add($"physicalModeRecordsPath: non-validated mode '{mode.ModeId}' must declare closureRequirements.");
+            }
+
+            if (string.Equals(mode.Status, "validated", StringComparison.OrdinalIgnoreCase))
+            {
+                foreach (var error in PhysicalModeEvidenceValidator.ValidateForPrediction(mode, evidence))
+                    errors.Add($"physicalModeRecordsPath: {error}");
+            }
+        }
+    }
+
+    private static IReadOnlyList<IdentifiedPhysicalModeRecord> LoadPhysicalModes(
+        Phase5CampaignSpec spec,
+        string specDir,
+        string repoRoot,
+        List<string> errors)
+    {
+        if (string.IsNullOrWhiteSpace(spec.PhysicalModeRecordsPath))
+            return Array.Empty<IdentifiedPhysicalModeRecord>();
+
+        var resolved = ResolvePath(spec.PhysicalModeRecordsPath, specDir);
+        if (!File.Exists(resolved))
+            return Array.Empty<IdentifiedPhysicalModeRecord>();
+
+        ValidateSchema(
+            File.ReadAllText(resolved),
+            Path.Combine(repoRoot, "schemas", "identified_physical_mode.schema.json"),
+            "physicalModeRecordsPath:identified_physical_mode.schema.json",
+            errors);
+
+        try
+        {
+            var modes = GuJsonDefaults.Deserialize<List<IdentifiedPhysicalModeRecord>>(File.ReadAllText(resolved));
+            if (modes is null)
+            {
+                errors.Add("physicalModeRecordsPath: failed to deserialize identified physical modes.");
+                return Array.Empty<IdentifiedPhysicalModeRecord>();
+            }
+
+            return modes;
+        }
+        catch (Exception ex)
+        {
+            errors.Add($"physicalModeRecordsPath: failed to validate modes ({ex.Message}).");
+            return Array.Empty<IdentifiedPhysicalModeRecord>();
+        }
+    }
+
+    private static IReadOnlyList<ModeIdentificationEvidenceRecord> LoadModeIdentificationEvidence(
+        Phase5CampaignSpec spec,
+        string specDir,
+        string repoRoot,
+        List<string> errors)
+    {
+        if (string.IsNullOrWhiteSpace(spec.ModeIdentificationEvidencePath))
+            return Array.Empty<ModeIdentificationEvidenceRecord>();
+
+        var resolved = ResolvePath(spec.ModeIdentificationEvidencePath, specDir);
+        if (!File.Exists(resolved))
+            return Array.Empty<ModeIdentificationEvidenceRecord>();
+
+        ValidateSchema(
+            File.ReadAllText(resolved),
+            Path.Combine(repoRoot, "schemas", "mode_identification_evidence.schema.json"),
+            "modeIdentificationEvidencePath:mode_identification_evidence.schema.json",
+            errors);
+
+        try
+        {
+            var table = GuJsonDefaults.Deserialize<ModeIdentificationEvidenceTable>(File.ReadAllText(resolved));
+            if (table is null)
+            {
+                errors.Add("modeIdentificationEvidencePath: failed to deserialize ModeIdentificationEvidenceTable.");
+                return Array.Empty<ModeIdentificationEvidenceRecord>();
+            }
+
+            foreach (var evidence in table.Evidence)
+            {
+                if (string.IsNullOrWhiteSpace(evidence.EvidenceId))
+                    errors.Add("modeIdentificationEvidencePath: every evidence record must declare evidenceId.");
+                if (string.IsNullOrWhiteSpace(evidence.ModeId))
+                    errors.Add($"modeIdentificationEvidencePath: evidence '{evidence.EvidenceId}' must declare modeId.");
+                if (string.IsNullOrWhiteSpace(evidence.ParticleId))
+                    errors.Add($"modeIdentificationEvidencePath: evidence '{evidence.EvidenceId}' must declare particleId.");
+                if (string.IsNullOrWhiteSpace(evidence.ModeKind))
+                    errors.Add($"modeIdentificationEvidencePath: evidence '{evidence.EvidenceId}' must declare modeKind.");
+                if (evidence.SourceObservableIds.Count == 0)
+                    errors.Add($"modeIdentificationEvidencePath: evidence '{evidence.EvidenceId}' must declare sourceObservableIds.");
+                if (string.IsNullOrWhiteSpace(evidence.DerivationId))
+                    errors.Add($"modeIdentificationEvidencePath: evidence '{evidence.EvidenceId}' must declare derivationId.");
+                if (!IsKnownMappingStatus(evidence.Status))
+                    errors.Add($"modeIdentificationEvidencePath: evidence '{evidence.EvidenceId}' has unknown status '{evidence.Status}'.");
+                if (evidence.Assumptions.Count == 0)
+                    errors.Add($"modeIdentificationEvidencePath: evidence '{evidence.EvidenceId}' must declare at least one assumption.");
+                if (!string.Equals(evidence.Status, "validated", StringComparison.OrdinalIgnoreCase) &&
+                    evidence.ClosureRequirements.Count == 0)
+                {
+                    errors.Add($"modeIdentificationEvidencePath: non-validated evidence '{evidence.EvidenceId}' must declare closureRequirements.");
+                }
+            }
+
+            return table.Evidence;
+        }
+        catch (Exception ex)
+        {
+            errors.Add($"modeIdentificationEvidencePath: failed to validate evidence ({ex.Message}).");
+            return Array.Empty<ModeIdentificationEvidenceRecord>();
         }
     }
 

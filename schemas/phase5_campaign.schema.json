@@ -111,6 +111,14 @@
     "physicalCalibrationPath": {
       "type": ["string", "null"],
       "description": "Optional path to Phase XVII physical scale-setting/calibration records."
+    },
+    "physicalModeRecordsPath": {
+      "type": ["string", "null"],
+      "description": "Optional path to Phase XVIII identified physical mode records."
+    },
+    "modeIdentificationEvidencePath": {
+      "type": ["string", "null"],
+      "description": "Optional path to Phase XVIII physical mode-identification evidence records."
     }
   },
   "$defs": {

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/identified_physical_mode.schema.json",
+  "title": "IdentifiedPhysicalModeRecordArray",
+  "type": "array",
+  "items": { "$ref": "#/$defs/IdentifiedPhysicalModeRecord" },
+  "$defs": {
+    "IdentifiedPhysicalModeRecord": {
+      "type": "object",
+      "required": [
+        "modeId",
+        "particleId",
+        "modeKind",
+        "observableId",
+        "value",
+        "uncertainty",
+        "unitFamily",
+        "unit",
+        "status",
+        "environmentId",
+        "branchId",
+        "extractionMethod",
+        "assumptions",
+        "closureRequirements",
+        "provenance"
+      ],
+      "properties": {
+        "modeId": { "type": "string" },
+        "particleId": { "type": "string" },
+        "modeKind": { "type": "string" },
+        "observableId": { "type": "string" },
+        "value": { "type": "number" },
+        "uncertainty": { "type": "number" },
+        "unitFamily": {
+          "type": "string",
+          "enum": ["dimensionless", "mass-energy", "inverse-time"]
+        },
+        "unit": { "type": "string" },
+        "status": {
+          "type": "string",
+          "enum": ["validated", "provisional", "blocked"]
+        },
+        "environmentId": { "type": "string" },
+        "branchId": { "type": "string" },
+        "refinementLevel": { "type": ["string", "null"] },
+        "extractionMethod": { "type": "string" },
+        "assumptions": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "closureRequirements": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "provenance": { "type": "object" }
+      }
+    }
+  }
+}

@@ -382,6 +382,8 @@ public sealed class PhysicalObservableContractTests
             File.ReadAllText(Path.Combine(studyDir, "candidate_observables.json")));
         var modes = GuJsonDefaults.Deserialize<List<IdentifiedPhysicalModeRecord>>(
             File.ReadAllText(Path.Combine(studyDir, "candidate_modes.json")));
+        var evidence = GuJsonDefaults.Deserialize<ModeIdentificationEvidenceTable>(
+            File.ReadAllText(Path.Combine(studyDir, "mode_identification_evidence.json")));
         var classifications = GuJsonDefaults.Deserialize<ObservableClassificationTable>(
             File.ReadAllText(Path.Combine(studyDir, "observable_classifications.json")));
         var mappings = GuJsonDefaults.Deserialize<PhysicalObservableMappingTable>(
@@ -393,6 +395,7 @@ public sealed class PhysicalObservableContractTests
 
         Assert.NotNull(observables);
         Assert.NotNull(modes);
+        Assert.NotNull(evidence);
         Assert.NotNull(classifications);
         Assert.NotNull(mappings);
         Assert.NotNull(calibrations);
@@ -402,6 +405,12 @@ public sealed class PhysicalObservableContractTests
             Assert.Equal("provisional", mode.Status);
             Assert.True(mode.Uncertainty < 0);
             Assert.NotEmpty(mode.ClosureRequirements);
+        });
+        Assert.All(evidence!.Evidence, item =>
+        {
+            Assert.Equal("provisional", item.Status);
+            Assert.NotEmpty(item.SourceObservableIds);
+            Assert.NotEmpty(item.ClosureRequirements);
         });
         Assert.Equal("physical-candidate", classifications!.Classifications[0].Classification);
         Assert.False(classifications.Classifications[0].PhysicalClaimAllowed);

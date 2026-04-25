@@ -104,4 +104,12 @@ public sealed class Phase5CampaignSpec
     /// <summary>Optional path to physical scale-setting/calibration records (Phase XVII).</summary>
     [JsonPropertyName("physicalCalibrationPath")]
     public string? PhysicalCalibrationPath { get; init; }
+
+    /// <summary>Optional path to identified physical mode records (Phase XVIII).</summary>
+    [JsonPropertyName("physicalModeRecordsPath")]
+    public string? PhysicalModeRecordsPath { get; init; }
+
+    /// <summary>Optional path to physical mode-identification evidence records (Phase XVIII).</summary>
+    [JsonPropertyName("modeIdentificationEvidencePath")]
+    public string? ModeIdentificationEvidencePath { get; init; }
 }

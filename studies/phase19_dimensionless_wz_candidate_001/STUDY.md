@@ -15,6 +15,8 @@ be treated as a physical observable.
   W/Z vector-mode ratio.
 - `candidate_modes.json`: provisional W and Z identified-mode input records
   documenting the input shape required before a ratio can be computed.
+- `mode_identification_evidence.json`: provisional evidence records documenting
+  the missing W and Z mode-identification derivations.
 - `observable_classifications.json`: classifies the candidate as
   `physical-candidate`, not `physical-observable`.
 - `physical_observable_mappings.json`: provisional mapping from the candidate
@@ -23,6 +25,9 @@ be treated as a physical observable.
   normalization.
 - `physical_targets.json`: PDG W/Z mass-ratio target copied into this isolated
   study.
+- `target_coverage_blockers.json`: explicit blocker allowing a physical
+  comparison campaign to run and report `blocked` without pretending the target
+  is currently computable.
 
 ## Status
 
@@ -53,6 +58,10 @@ The quantitative validation library also defines `IdentifiedPhysicalModeRecord`
 for physics-facing mode inputs. Ratio extraction from these records requires
 both inputs to be `validated`, to share units, and to pass the same selector and
 uncertainty checks as generic quantitative mode records.
+
+Phase XVIII adds mode-identification evidence records. Prediction extraction
+can require validated evidence, in which case provisional placeholder modes are
+rejected before any ratio is produced.
 
 The checked-in candidate artifact names this extraction contract, but still
 uses placeholder inputs. That keeps the code path ready while preserving the

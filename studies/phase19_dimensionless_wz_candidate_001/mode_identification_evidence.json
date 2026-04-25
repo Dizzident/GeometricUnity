@@ -1,0 +1,65 @@
+{
+  "tableId": "phase19-wz-mode-identification-evidence-v1",
+  "evidence": [
+    {
+      "evidenceId": "provisional-w-vector-mode-identification",
+      "modeId": "candidate-w-vector-mode-placeholder",
+      "particleId": "w-boson",
+      "modeKind": "vector-boson-mass-mode",
+      "sourceObservableIds": [
+        "candidate-w-vector-mode-internal-mass"
+      ],
+      "environmentId": "phase19-inactive-physical-candidate",
+      "branchId": "phase19-unvalidated-wz-mode-identification",
+      "refinementLevel": "not-active",
+      "derivationId": "missing-w-vector-mode-derivation",
+      "status": "provisional",
+      "assumptions": [
+        "A future derivation must identify the W vector mode independently of PDG target values."
+      ],
+      "closureRequirements": [
+        "Derive and test the W vector-mode identification rule.",
+        "Connect the derived rule to a computed mode artifact with estimated uncertainty."
+      ],
+      "provenance": {
+        "createdAt": "2026-04-25T00:00:00+00:00",
+        "codeRevision": "phase19-candidate-scaffold",
+        "branch": {
+          "branchId": "phase19-unvalidated-wz-mode-identification",
+          "schemaVersion": "1.0"
+        },
+        "backend": "documented-candidate"
+      }
+    },
+    {
+      "evidenceId": "provisional-z-vector-mode-identification",
+      "modeId": "candidate-z-vector-mode-placeholder",
+      "particleId": "z-boson",
+      "modeKind": "vector-boson-mass-mode",
+      "sourceObservableIds": [
+        "candidate-z-vector-mode-internal-mass"
+      ],
+      "environmentId": "phase19-inactive-physical-candidate",
+      "branchId": "phase19-unvalidated-wz-mode-identification",
+      "refinementLevel": "not-active",
+      "derivationId": "missing-z-vector-mode-derivation",
+      "status": "provisional",
+      "assumptions": [
+        "A future derivation must identify the Z vector mode independently of PDG target values."
+      ],
+      "closureRequirements": [
+        "Derive and test the Z vector-mode identification rule.",
+        "Connect the derived rule to a computed mode artifact with estimated uncertainty."
+      ],
+      "provenance": {
+        "createdAt": "2026-04-25T00:00:00+00:00",
+        "codeRevision": "phase19-candidate-scaffold",
+        "branch": {
+          "branchId": "phase19-unvalidated-wz-mode-identification",
+          "schemaVersion": "1.0"
+        },
+        "backend": "documented-candidate"
+      }
+    }
+  ]
+}

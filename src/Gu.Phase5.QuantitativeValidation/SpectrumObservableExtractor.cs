@@ -131,9 +131,30 @@ public static class SpectrumObservableExtractor
         IdentifiedPhysicalModeRecord denominatorMode,
         string observableId,
         ProvenanceMeta provenance)
+        => CreatePositiveModeRatioRecord(
+            numeratorMode,
+            denominatorMode,
+            observableId,
+            provenance,
+            evidenceRecords: null,
+            requireValidatedEvidence: false);
+
+    public static QuantitativeObservableRecord CreatePositiveModeRatioRecord(
+        IdentifiedPhysicalModeRecord numeratorMode,
+        IdentifiedPhysicalModeRecord denominatorMode,
+        string observableId,
+        ProvenanceMeta provenance,
+        IReadOnlyList<ModeIdentificationEvidenceRecord>? evidenceRecords,
+        bool requireValidatedEvidence)
     {
         ArgumentNullException.ThrowIfNull(numeratorMode);
         ArgumentNullException.ThrowIfNull(denominatorMode);
+        if (requireValidatedEvidence)
+        {
+            PhysicalModeEvidenceValidator.ThrowIfInvalidForPrediction(numeratorMode, evidenceRecords);
+            PhysicalModeEvidenceValidator.ThrowIfInvalidForPrediction(denominatorMode, evidenceRecords);
+        }
+
         if (!string.Equals(numeratorMode.Status, "validated", StringComparison.OrdinalIgnoreCase))
             throw new ArgumentException("Numerator physical mode must be validated.", nameof(numeratorMode));
         if (!string.Equals(denominatorMode.Status, "validated", StringComparison.OrdinalIgnoreCase))

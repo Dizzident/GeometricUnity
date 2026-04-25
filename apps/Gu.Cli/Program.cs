@@ -4613,6 +4613,10 @@ static int RunPhase5Campaign(string[] args)
         CopyIfExists(Path.Combine(specDir, spec.PhysicalObservableMappingsPath), Path.Combine(inputsDir, "physical_observable_mappings.json"));
     if (spec.PhysicalCalibrationPath is not null)
         CopyIfExists(Path.Combine(specDir, spec.PhysicalCalibrationPath), Path.Combine(inputsDir, "physical_calibrations.json"));
+    if (spec.PhysicalModeRecordsPath is not null)
+        CopyIfExists(Path.Combine(specDir, spec.PhysicalModeRecordsPath), Path.Combine(inputsDir, "physical_mode_records.json"));
+    if (spec.ModeIdentificationEvidencePath is not null)
+        CopyIfExists(Path.Combine(specDir, spec.ModeIdentificationEvidencePath), Path.Combine(inputsDir, "mode_identification_evidence.json"));
     CopyIfExists(Path.Combine(specDir, "sidecar_summary.json"), Path.Combine(inputsDir, "sidecar_summary.json"));
     CopyIfExists(Path.Combine(specDir, "candidate_provenance_links.json"), Path.Combine(inputsDir, "candidate_provenance_links.json"));
     for (int i = 0; i < spec.EnvironmentRecordPaths.Count; i++)
