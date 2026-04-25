@@ -184,6 +184,9 @@ Progress:
 - added tests proving the scaffold remains blocked and inactive.
 - added reusable positive-mode ratio extraction support with uncertainty
   propagation in `SpectrumObservableExtractor`.
+- added a typed overload that creates the ratio from two quantitative mode
+  records only when environment, branch, refinement level, and total
+  uncertainty are consistent.
 
 Definition of done:
 

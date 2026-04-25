@@ -5,6 +5,97 @@ namespace Gu.Phase5.QuantitativeValidation.Tests;
 
 public sealed class SpectrumObservableExtractorTests
 {
+    private static QuantitativeObservableRecord MakeMode(
+        string observableId,
+        double value,
+        double uncertainty,
+        string environmentId = "env-physical-candidate",
+        string branchId = "branch",
+        string? refinementLevel = "L1")
+    {
+        return new QuantitativeObservableRecord
+        {
+            ObservableId = observableId,
+            Value = value,
+            Uncertainty = new QuantitativeUncertainty
+            {
+                BranchVariation = -1,
+                RefinementError = -1,
+                ExtractionError = uncertainty,
+                EnvironmentSensitivity = -1,
+                TotalUncertainty = uncertainty,
+            },
+            BranchId = branchId,
+            EnvironmentId = environmentId,
+            RefinementLevel = refinementLevel,
+            ExtractionMethod = "identified-mode-mass",
+            Provenance = new ProvenanceMeta
+            {
+                CreatedAt = DateTimeOffset.Parse("2026-04-25T00:00:00Z"),
+                CodeRevision = "test",
+                Branch = new BranchRef { BranchId = branchId, SchemaVersion = "1.0" },
+                Backend = "cpu",
+            },
+        };
+    }
+
+    private static ProvenanceMeta MakeProvenance() => new ProvenanceMeta
+    {
+        CreatedAt = DateTimeOffset.Parse("2026-04-25T00:00:00Z"),
+        CodeRevision = "test",
+        Branch = new BranchRef { BranchId = "wz-candidate", SchemaVersion = "1.0" },
+        Backend = "cpu",
+    };
+
+    [Fact]
+    public void CreatePositiveModeRatioRecord_FromModeRecords_RequiresSharedSelectors()
+    {
+        var numerator = MakeMode("w-vector-mode", 80.0, 0.4);
+        var denominator = MakeMode("z-vector-mode", 100.0, 0.3);
+
+        var record = SpectrumObservableExtractor.CreatePositiveModeRatioRecord(
+            numerator,
+            denominator,
+            "candidate-w-z-vector-mode-ratio",
+            MakeProvenance());
+
+        Assert.Equal(0.8, record.Value, precision: 15);
+        Assert.Equal("env-physical-candidate", record.EnvironmentId);
+        Assert.Equal("branch", record.BranchId);
+        Assert.Equal("L1", record.RefinementLevel);
+        Assert.Equal("positive-mode-ratio:w-vector-mode/z-vector-mode", record.ExtractionMethod);
+    }
+
+    [Fact]
+    public void CreatePositiveModeRatioRecord_FromDifferentEnvironments_Throws()
+    {
+        var numerator = MakeMode("w-vector-mode", 80.0, 0.4, environmentId: "env-a");
+        var denominator = MakeMode("z-vector-mode", 100.0, 0.3, environmentId: "env-b");
+
+        var ex = Assert.Throws<ArgumentException>(() =>
+            SpectrumObservableExtractor.CreatePositiveModeRatioRecord(
+                numerator,
+                denominator,
+                "candidate-w-z-vector-mode-ratio",
+                MakeProvenance()));
+        Assert.Contains("same environment", ex.Message);
+    }
+
+    [Fact]
+    public void CreatePositiveModeRatioRecord_FromUnestimatedUncertainty_Throws()
+    {
+        var numerator = MakeMode("w-vector-mode", 80.0, -1);
+        var denominator = MakeMode("z-vector-mode", 100.0, 0.3);
+
+        var ex = Assert.Throws<ArgumentException>(() =>
+            SpectrumObservableExtractor.CreatePositiveModeRatioRecord(
+                numerator,
+                denominator,
+                "candidate-w-z-vector-mode-ratio",
+                MakeProvenance()));
+        Assert.Contains("total uncertainty must be estimated", ex.Message);
+    }
+
     [Fact]
     public void CreatePositiveModeRatioRecord_PropagatesIndependentUncertainty()
     {

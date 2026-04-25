@@ -91,6 +91,41 @@ public static class SpectrumObservableExtractor
         };
     }
 
+    public static QuantitativeObservableRecord CreatePositiveModeRatioRecord(
+        QuantitativeObservableRecord numeratorMode,
+        QuantitativeObservableRecord denominatorMode,
+        string observableId,
+        ProvenanceMeta provenance)
+    {
+        ArgumentNullException.ThrowIfNull(numeratorMode);
+        ArgumentNullException.ThrowIfNull(denominatorMode);
+        if (string.IsNullOrWhiteSpace(observableId))
+            throw new ArgumentException("observableId is required.", nameof(observableId));
+        if (!string.Equals(numeratorMode.EnvironmentId, denominatorMode.EnvironmentId, StringComparison.Ordinal))
+            throw new ArgumentException("Mode ratio inputs must come from the same environment.");
+        if (!string.Equals(numeratorMode.BranchId, denominatorMode.BranchId, StringComparison.Ordinal))
+            throw new ArgumentException("Mode ratio inputs must come from the same branch.");
+        if (!string.Equals(numeratorMode.RefinementLevel, denominatorMode.RefinementLevel, StringComparison.Ordinal))
+            throw new ArgumentException("Mode ratio inputs must come from the same refinement level.");
+        if (numeratorMode.Uncertainty.TotalUncertainty < 0)
+            throw new ArgumentException("Numerator mode total uncertainty must be estimated.", nameof(numeratorMode));
+        if (denominatorMode.Uncertainty.TotalUncertainty < 0)
+            throw new ArgumentException("Denominator mode total uncertainty must be estimated.", nameof(denominatorMode));
+
+        return CreatePositiveModeRatioRecord(
+            numeratorMode.Value,
+            numeratorMode.Uncertainty.TotalUncertainty,
+            numeratorMode.ObservableId,
+            denominatorMode.Value,
+            denominatorMode.Uncertainty.TotalUncertainty,
+            denominatorMode.ObservableId,
+            observableId,
+            numeratorMode.EnvironmentId,
+            numeratorMode.BranchId,
+            numeratorMode.RefinementLevel,
+            provenance);
+    }
+
     public static double ComputeAdjacentGapRatio(IReadOnlyList<double> eigenvalues, int gapIndex)
     {
         ArgumentNullException.ThrowIfNull(eigenvalues);

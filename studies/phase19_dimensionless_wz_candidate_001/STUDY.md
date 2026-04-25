@@ -42,6 +42,11 @@ extractor. It computes `numerator / denominator` for two positive mode values
 and propagates independent numerator and denominator uncertainty into the
 dimensionless ratio.
 
+The extractor also accepts two quantitative mode records directly. That path
+requires shared environment, branch, and refinement selectors, and it rejects
+mode records with unestimated total uncertainty. This is the path a future
+validated W/Z comparison should use after W and Z modes are identified.
+
 The checked-in candidate artifact names this extraction contract, but still
 uses placeholder inputs. That keeps the code path ready while preserving the
 scientific block on W/Z mode identification.
