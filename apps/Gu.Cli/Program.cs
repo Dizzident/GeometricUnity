@@ -109,6 +109,8 @@ switch (args[0])
         return ExtractSpectrumObservable(args);
     case "generate-internal-vector-boson-sources":
         return GenerateInternalVectorBosonSources(args);
+    case "evaluate-internal-vector-boson-source-readiness":
+        return EvaluateInternalVectorBosonSourceReadiness(args);
     case "build-validation-dossier":
         return BuildValidationDossier(args);
     case "verify-study-freshness":
@@ -4411,6 +4413,52 @@ static int GenerateInternalVectorBosonSources(string[] args)
     }
 }
 
+static int EvaluateInternalVectorBosonSourceReadiness(string[] args)
+{
+    var sourcePath = ParseFlag(args, "--source-candidates", "");
+    var specPath = ParseFlag(args, "--spec", "");
+    var outPath = ParseFlag(args, "--out", "");
+
+    if (string.IsNullOrWhiteSpace(sourcePath) ||
+        string.IsNullOrWhiteSpace(specPath) ||
+        string.IsNullOrWhiteSpace(outPath))
+    {
+        Console.Error.WriteLine("Usage: gu evaluate-internal-vector-boson-source-readiness --source-candidates <source_candidates.json> --spec <source_readiness_campaign.json> --out <source_candidates.json>");
+        return 1;
+    }
+
+    try
+    {
+        var sourceTable = GuJsonDefaults.Deserialize<InternalVectorBosonSourceCandidateTable>(File.ReadAllText(sourcePath))
+            ?? throw new InvalidOperationException($"Failed to deserialize source candidate table from {sourcePath}.");
+        var spec = GuJsonDefaults.Deserialize<InternalVectorBosonSourceReadinessCampaignSpec>(File.ReadAllText(specPath))
+            ?? throw new InvalidOperationException($"Failed to deserialize source readiness campaign spec from {specPath}.");
+        var provenance = new ProvenanceMeta
+        {
+            CreatedAt = DateTimeOffset.Parse("2026-04-25T00:00:00+00:00"),
+            CodeRevision = "working-tree",
+            Branch = new BranchRef { BranchId = "phase21-source-readiness", SchemaVersion = "1.0" },
+            Backend = "cpu",
+        };
+
+        var result = InternalVectorBosonSourceReadinessValidator.Reevaluate(sourceTable, spec, provenance);
+        var directory = Path.GetDirectoryName(outPath);
+        if (!string.IsNullOrWhiteSpace(directory))
+            Directory.CreateDirectory(directory);
+        File.WriteAllText(outPath, GuJsonDefaults.Serialize(result));
+
+        Console.WriteLine($"evaluate-internal-vector-boson-source-readiness done. Output: {outPath}");
+        Console.WriteLine($"  terminalStatus: {result.TerminalStatus}");
+        Console.WriteLine($"  candidates: {result.Candidates.Count}");
+        return 0;
+    }
+    catch (Exception ex)
+    {
+        Console.Error.WriteLine($"evaluate-internal-vector-boson-source-readiness failed: {ex.Message}");
+        return 1;
+    }
+}
+
 static int BuildValidationDossier(string[] args)
 {
     var manifestPath = ParseFlag(args, "--study-manifest", "");
@@ -5583,6 +5631,7 @@ static void PrintUsage()
     Console.WriteLine("  gu validate-quantitative --observables <f> --targets <f> [--environment-records <csv>] [--out <f>] [--fail-closed-target-coverage]  Quantitative validation");
     Console.WriteLine("  gu extract-spectrum-observable --eigenvalues <f> --observable-id <id> --environment-id <id> [--out <f>]  Extract spectrum-derived observable");
     Console.WriteLine("  gu generate-internal-vector-boson-sources --registry <f> --families <f> --spectra-root <dir> --out <f>  Generate Phase XX source candidates");
+    Console.WriteLine("  gu evaluate-internal-vector-boson-source-readiness --source-candidates <f> --spec <f> --out <f>  Evaluate Phase XXI readiness");
     Console.WriteLine("  gu build-validation-dossier --study-manifest <f> [--out <f>]  Build Phase V validation dossier");
     Console.WriteLine("  gu verify-study-freshness --dossier <f>      Verify study freshness / G-006 compliance");
     Console.WriteLine("  gu run-phase5-campaign --spec <f> --out-dir <dir> [--validate-first]  Run Phase V M53 end-to-end campaign");

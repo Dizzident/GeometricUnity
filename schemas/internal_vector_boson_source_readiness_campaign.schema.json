@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/internal_vector_boson_source_readiness_campaign.schema.json",
+  "title": "InternalVectorBosonSourceReadinessCampaignSpec",
+  "type": "object",
+  "required": [
+    "campaignId",
+    "schemaVersion",
+    "branchVariantIds",
+    "refinementLevels",
+    "environmentIds",
+    "sourceQuantityIds",
+    "readinessPolicy",
+    "identityScope",
+    "provenance"
+  ],
+  "properties": {
+    "campaignId": { "type": "string" },
+    "schemaVersion": { "type": "string" },
+    "branchVariantIds": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "refinementLevels": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "environmentIds": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "sourceQuantityIds": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "readinessPolicy": { "$ref": "#/$defs/ReadinessPolicy" },
+    "identityScope": {
+      "type": "string",
+      "enum": ["identity-neutral-vector-boson-source-candidates"]
+    },
+    "provenance": { "type": "object" }
+  },
+  "$defs": {
+    "ReadinessPolicy": {
+      "type": "object",
+      "required": [
+        "policyId",
+        "minimumClaimClass",
+        "minimumBranchStabilityScore",
+        "minimumRefinementStabilityScore",
+        "maximumAmbiguityCount",
+        "allowedClaimClasses"
+      ],
+      "properties": {
+        "policyId": { "type": "string" },
+        "minimumClaimClass": { "type": "string" },
+        "minimumBranchStabilityScore": { "type": "number" },
+        "minimumRefinementStabilityScore": { "type": "number" },
+        "maximumAmbiguityCount": { "type": "integer", "minimum": 0 },
+        "requireBranchSelectors": { "type": "boolean" },
+        "requireRefinementCoverage": { "type": "boolean" },
+        "requireEnvironmentSelectors": { "type": "boolean" },
+        "requireCompleteUncertainty": { "type": "boolean" },
+        "allowedClaimClasses": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "manifestId": "phase21-source-readiness-spectra-manifest-v1",
+  "schemaVersion": "1.0.0",
+  "status": "source-blocked",
+  "sourcePolicy": {
+    "identityScope": "identity-neutral-vector-boson-source-candidates",
+    "phase12ArtifactsAreReadOnly": true,
+    "externalTargetsAllowedAsSources": false
+  },
+  "entries": [
+    {
+      "entryId": "phase12-bg-a-spectrum",
+      "spectrumPath": "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-a-20260315212202_spectrum.json",
+      "modesRoot": "studies/phase12_joined_calculation_001/output/background_family/spectra/modes",
+      "environmentId": "bg-phase12-bg-a-20260315212202",
+      "branchId": null,
+      "refinementLevel": null,
+      "status": "selector-blocked",
+      "blockers": [
+        "branch selector is absent from the checked-in Phase12 spectrum artifact",
+        "refinement level is absent from the checked-in Phase12 spectrum artifact"
+      ]
+    },
+    {
+      "entryId": "phase12-bg-b-spectrum",
+      "spectrumPath": "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-b-20260315212202_spectrum.json",
+      "modesRoot": "studies/phase12_joined_calculation_001/output/background_family/spectra/modes",
+      "environmentId": "bg-phase12-bg-b-20260315212202",
+      "branchId": null,
+      "refinementLevel": null,
+      "status": "selector-blocked",
+      "blockers": [
+        "branch selector is absent from the checked-in Phase12 spectrum artifact",
+        "refinement level is absent from the checked-in Phase12 spectrum artifact"
+      ]
+    }
+  ],
+  "summaryBlockers": [
+    "Phase12 spectra can be used as internal source material, but cannot satisfy Phase XXI readiness without branch selectors.",
+    "Phase12 spectra can be used as internal source material, but cannot satisfy Phase XXI readiness without refinement levels.",
+    "Phase XXI must generate new branch/refinement-aware spectra or provide an evidence-backed selector normalization layer."
+  ],
+  "provenance": {
+    "createdAt": "2026-04-25T00:00:00+00:00",
+    "codeRevision": "phase21-source-readiness-campaign",
+    "branch": {
+      "branchId": "phase21-source-readiness",
+      "schemaVersion": "1.0"
+    },
+    "backend": "documented-manifest"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "tableId": "phase21-candidate-mode-source-bridge-v1",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "source-blocked",
+  "sourceCandidateTablePath": "studies/phase21_source_readiness_campaign_001/source_candidates.json",
+  "readySourceCount": 0,
+  "candidateModeSources": [],
+  "blockedBridgeReason": "No Phase XXI identity-neutral source candidate reached candidate-source-ready status.",
+  "closureRequirements": [
+    "Generate or normalize branch/refinement-aware spectra before bridging source candidates.",
+    "Resolve ambiguous mode-family tracking before bridging source candidates.",
+    "Promote only candidates with claim class C2_BranchStableCandidate or stronger source-readiness evidence.",
+    "Estimate all source uncertainty components before bridging source candidates."
+  ],
+  "guardrails": [
+    "No W or Z particle identity is assigned by this bridge artifact.",
+    "No external physical target value is used as source data.",
+    "Blocked source candidates are not promoted to CandidateModeSourceRecord values."
+  ]
+}

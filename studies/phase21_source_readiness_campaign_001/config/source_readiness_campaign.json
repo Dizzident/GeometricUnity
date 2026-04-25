@@ -1,0 +1,60 @@
+{
+  "campaignId": "phase21-source-readiness-campaign-001",
+  "schemaVersion": "1.0.0",
+  "branchVariantIds": [
+    "bg-variant-53b598740d9569b4",
+    "bg-variant-95ee11778cc7ac01",
+    "bg-variant-d840fea6e6d36748",
+    "bg-variant-d84f5d66fd98b842"
+  ],
+  "refinementLevels": [
+    "L0-2x2",
+    "L1-4x4",
+    "L2-8x8"
+  ],
+  "environmentIds": [
+    "env-toy-2d-trivial",
+    "env-structured-4x4",
+    "env-imported-repo-benchmark",
+    "env-zenodo-su2-plaquette-chain-p4-j0.5-g1.5-v1"
+  ],
+  "sourceQuantityIds": [
+    "massLikeValue",
+    "sourceModeIds",
+    "sourceFamilyId",
+    "branchStabilityScore",
+    "refinementStabilityScore",
+    "ambiguityCount",
+    "gaugeLeakEnvelope",
+    "claimClass",
+    "uncertainty.branchVariation",
+    "uncertainty.refinementError",
+    "uncertainty.extractionError",
+    "uncertainty.environmentSensitivity",
+    "uncertainty.totalUncertainty"
+  ],
+  "readinessPolicy": {
+    "policyId": "phase21-standard-source-readiness",
+    "minimumClaimClass": "C2_BranchStableCandidate",
+    "minimumBranchStabilityScore": 0.5,
+    "minimumRefinementStabilityScore": 1.0,
+    "maximumAmbiguityCount": 0,
+    "requireBranchSelectors": true,
+    "requireRefinementCoverage": true,
+    "requireEnvironmentSelectors": true,
+    "requireCompleteUncertainty": true,
+    "allowedClaimClasses": [
+      "C2_BranchStableCandidate"
+    ]
+  },
+  "identityScope": "identity-neutral-vector-boson-source-candidates",
+  "provenance": {
+    "createdAt": "2026-04-25T00:00:00+00:00",
+    "codeRevision": "phase21-source-readiness-campaign",
+    "branch": {
+      "branchId": "phase21-source-readiness",
+      "schemaVersion": "1.0"
+    },
+    "backend": "documented-campaign"
+  }
+}
