@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/internal_vector_boson_source_candidate.schema.json",
+  "title": "InternalVectorBosonSourceCandidateTable",
+  "type": "object",
+  "required": ["tableId", "schemaVersion", "terminalStatus", "candidates", "summaryBlockers", "provenance"],
+  "properties": {
+    "tableId": { "type": "string" },
+    "schemaVersion": { "type": "string" },
+    "terminalStatus": {
+      "type": "string",
+      "enum": ["candidate-source-ready", "source-blocked"]
+    },
+    "candidates": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/InternalVectorBosonSourceCandidate" }
+    },
+    "summaryBlockers": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "provenance": { "type": "object" }
+  },
+  "$defs": {
+    "InternalVectorBosonSourceCandidate": {
+      "type": "object",
+      "required": [
+        "sourceCandidateId",
+        "sourceOrigin",
+        "modeRole",
+        "sourceArtifactPaths",
+        "sourceModeIds",
+        "massLikeValue",
+        "uncertainty",
+        "branchSelectors",
+        "environmentSelectors",
+        "refinementLevels",
+        "status",
+        "assumptions",
+        "closureRequirements",
+        "provenance"
+      ],
+      "properties": {
+        "sourceCandidateId": { "type": "string" },
+        "sourceOrigin": {
+          "type": "string",
+          "enum": ["internal-computed-artifact"]
+        },
+        "modeRole": {
+          "type": "string",
+          "enum": ["vector-boson-source-candidate"]
+        },
+        "sourceArtifactPaths": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "sourceModeIds": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "sourceFamilyId": { "type": ["string", "null"] },
+        "massLikeValue": { "type": "number" },
+        "uncertainty": { "type": "object" },
+        "branchSelectors": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "environmentSelectors": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "refinementLevels": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "branchStabilityScore": { "type": ["number", "null"] },
+        "refinementStabilityScore": { "type": ["number", "null"] },
+        "backendStabilityScore": { "type": ["number", "null"] },
+        "observationStabilityScore": { "type": ["number", "null"] },
+        "ambiguityCount": { "type": ["integer", "null"] },
+        "gaugeLeakEnvelope": {
+          "type": ["array", "null"],
+          "items": { "type": "number" }
+        },
+        "claimClass": { "type": ["string", "null"] },
+        "status": {
+          "type": "string",
+          "enum": ["candidate-source-ready", "source-blocked", "insufficient"]
+        },
+        "assumptions": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "closureRequirements": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "provenance": { "type": "object" }
+      }
+    }
+  }
+}

@@ -1,0 +1,788 @@
+{
+  "tableId": "phase20-internal-vector-boson-source-candidates-v1",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "source-blocked",
+  "candidates": [
+    {
+      "sourceCandidateId": "phase12-candidate-0",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase12_joined_calculation_001/output/background_family/bosons/registry.json",
+        "studies/phase12_joined_calculation_001/output/background_family/modes/mode_families.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-a-20260315212202_spectrum.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-b-20260315212202_spectrum.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-a-20260315212202-mode-0.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-b-20260315212202-mode-3.json"
+      ],
+      "sourceModeIds": [
+        "bg-phase12-bg-a-20260315212202-mode-0",
+        "bg-phase12-bg-b-20260315212202-mode-3"
+      ],
+      "sourceFamilyId": "family-0",
+      "massLikeValue": -1.09480935485173E-15,
+      "uncertainty": {
+        "branchVariation": -1,
+        "refinementError": -1,
+        "extractionError": 4.3443365781995663E-16,
+        "environmentSensitivity": 8.688673156399133E-16,
+        "totalUncertainty": -1
+      },
+      "branchSelectors": [],
+      "environmentSelectors": [
+        "bg-phase12-bg-a-20260315212202",
+        "bg-phase12-bg-b-20260315212202"
+      ],
+      "refinementLevels": [],
+      "branchStabilityScore": 0.3,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 1,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C0_NumericalMode",
+      "status": "source-blocked",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [
+        "branch selectors are missing from the Phase12 candidate.",
+        "mode family matching is ambiguous.",
+        "mode family is not marked stable.",
+        "candidate claim class is not strong enough for a ready source candidate.",
+        "source uncertainty budget is incomplete."
+      ],
+      "provenance": {
+        "createdAt": "2026-04-25T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase20-internal-vector-boson-sources",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase12-candidate-1",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase12_joined_calculation_001/output/background_family/bosons/registry.json",
+        "studies/phase12_joined_calculation_001/output/background_family/modes/mode_families.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-a-20260315212202_spectrum.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-b-20260315212202_spectrum.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-a-20260315212202-mode-1.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-b-20260315212202-mode-2.json"
+      ],
+      "sourceModeIds": [
+        "bg-phase12-bg-a-20260315212202-mode-1",
+        "bg-phase12-bg-b-20260315212202-mode-2"
+      ],
+      "sourceFamilyId": "family-1",
+      "massLikeValue": -1.1820633692915186E-15,
+      "uncertainty": {
+        "branchVariation": -1,
+        "refinementError": -1,
+        "extractionError": 1.2442795102600542E-16,
+        "environmentSensitivity": 2.4885590205201084E-16,
+        "totalUncertainty": -1
+      },
+      "branchSelectors": [],
+      "environmentSelectors": [
+        "bg-phase12-bg-a-20260315212202",
+        "bg-phase12-bg-b-20260315212202"
+      ],
+      "refinementLevels": [],
+      "branchStabilityScore": 0.3,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 1,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C0_NumericalMode",
+      "status": "source-blocked",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [
+        "branch selectors are missing from the Phase12 candidate.",
+        "mode family matching is ambiguous.",
+        "mode family is not marked stable.",
+        "candidate claim class is not strong enough for a ready source candidate.",
+        "source uncertainty budget is incomplete."
+      ],
+      "provenance": {
+        "createdAt": "2026-04-25T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase20-internal-vector-boson-sources",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase12-candidate-2",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase12_joined_calculation_001/output/background_family/bosons/registry.json",
+        "studies/phase12_joined_calculation_001/output/background_family/modes/mode_families.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-a-20260315212202_spectrum.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-b-20260315212202_spectrum.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-a-20260315212202-mode-2.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-b-20260315212202-mode-0.json"
+      ],
+      "sourceModeIds": [
+        "bg-phase12-bg-a-20260315212202-mode-2",
+        "bg-phase12-bg-b-20260315212202-mode-0"
+      ],
+      "sourceFamilyId": "family-2",
+      "massLikeValue": -1.267471559694956E-15,
+      "uncertainty": {
+        "branchVariation": -1,
+        "refinementError": -1,
+        "extractionError": 2.7175533643054123E-17,
+        "environmentSensitivity": 5.4351067286108245E-17,
+        "totalUncertainty": -1
+      },
+      "branchSelectors": [],
+      "environmentSelectors": [
+        "bg-phase12-bg-a-20260315212202",
+        "bg-phase12-bg-b-20260315212202"
+      ],
+      "refinementLevels": [],
+      "branchStabilityScore": 0.3,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 1,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C0_NumericalMode",
+      "status": "source-blocked",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [
+        "branch selectors are missing from the Phase12 candidate.",
+        "mode family matching is ambiguous.",
+        "mode family is not marked stable.",
+        "candidate claim class is not strong enough for a ready source candidate.",
+        "source uncertainty budget is incomplete."
+      ],
+      "provenance": {
+        "createdAt": "2026-04-25T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase20-internal-vector-boson-sources",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase12-candidate-3",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase12_joined_calculation_001/output/background_family/bosons/registry.json",
+        "studies/phase12_joined_calculation_001/output/background_family/modes/mode_families.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-a-20260315212202_spectrum.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-b-20260315212202_spectrum.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-a-20260315212202-mode-3.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-b-20260315212202-mode-1.json"
+      ],
+      "sourceModeIds": [
+        "bg-phase12-bg-a-20260315212202-mode-3",
+        "bg-phase12-bg-b-20260315212202-mode-1"
+      ],
+      "sourceFamilyId": "family-3",
+      "massLikeValue": -1.0718308835162143E-15,
+      "uncertainty": {
+        "branchVariation": -1,
+        "refinementError": -1,
+        "extractionError": 1.2732325252647582E-17,
+        "environmentSensitivity": 2.5464650505294967E-17,
+        "totalUncertainty": -1
+      },
+      "branchSelectors": [],
+      "environmentSelectors": [
+        "bg-phase12-bg-a-20260315212202",
+        "bg-phase12-bg-b-20260315212202"
+      ],
+      "refinementLevels": [],
+      "branchStabilityScore": 0.3,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 1,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C0_NumericalMode",
+      "status": "source-blocked",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [
+        "branch selectors are missing from the Phase12 candidate.",
+        "mode family matching is ambiguous.",
+        "mode family is not marked stable.",
+        "candidate claim class is not strong enough for a ready source candidate.",
+        "source uncertainty budget is incomplete."
+      ],
+      "provenance": {
+        "createdAt": "2026-04-25T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase20-internal-vector-boson-sources",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase12-candidate-4",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase12_joined_calculation_001/output/background_family/bosons/registry.json",
+        "studies/phase12_joined_calculation_001/output/background_family/modes/mode_families.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-a-20260315212202_spectrum.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-b-20260315212202_spectrum.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-a-20260315212202-mode-4.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-b-20260315212202-mode-4.json"
+      ],
+      "sourceModeIds": [
+        "bg-phase12-bg-a-20260315212202-mode-4",
+        "bg-phase12-bg-b-20260315212202-mode-4"
+      ],
+      "sourceFamilyId": "family-4",
+      "massLikeValue": -6.469576752969016E-16,
+      "uncertainty": {
+        "branchVariation": -1,
+        "refinementError": -1,
+        "extractionError": 8.36360220427453E-19,
+        "environmentSensitivity": 1.672720440854906E-18,
+        "totalUncertainty": -1
+      },
+      "branchSelectors": [],
+      "environmentSelectors": [
+        "bg-phase12-bg-a-20260315212202",
+        "bg-phase12-bg-b-20260315212202"
+      ],
+      "refinementLevels": [],
+      "branchStabilityScore": 0.3,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 1,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C0_NumericalMode",
+      "status": "source-blocked",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [
+        "branch selectors are missing from the Phase12 candidate.",
+        "mode family matching is ambiguous.",
+        "mode family is not marked stable.",
+        "candidate claim class is not strong enough for a ready source candidate.",
+        "source uncertainty budget is incomplete."
+      ],
+      "provenance": {
+        "createdAt": "2026-04-25T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase20-internal-vector-boson-sources",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase12-candidate-5",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase12_joined_calculation_001/output/background_family/bosons/registry.json",
+        "studies/phase12_joined_calculation_001/output/background_family/modes/mode_families.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-a-20260315212202_spectrum.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-b-20260315212202_spectrum.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-a-20260315212202-mode-5.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-b-20260315212202-mode-11.json"
+      ],
+      "sourceModeIds": [
+        "bg-phase12-bg-a-20260315212202-mode-5",
+        "bg-phase12-bg-b-20260315212202-mode-11"
+      ],
+      "sourceFamilyId": "family-5",
+      "massLikeValue": -1.8113295994279233E-16,
+      "uncertainty": {
+        "branchVariation": -1,
+        "refinementError": -1,
+        "extractionError": 4.605856904686622E-16,
+        "environmentSensitivity": 9.211713809373244E-16,
+        "totalUncertainty": -1
+      },
+      "branchSelectors": [],
+      "environmentSelectors": [
+        "bg-phase12-bg-a-20260315212202",
+        "bg-phase12-bg-b-20260315212202"
+      ],
+      "refinementLevels": [],
+      "branchStabilityScore": 0.3,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 1,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C0_NumericalMode",
+      "status": "source-blocked",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [
+        "branch selectors are missing from the Phase12 candidate.",
+        "mode family matching is ambiguous.",
+        "mode family is not marked stable.",
+        "candidate claim class is not strong enough for a ready source candidate.",
+        "source uncertainty budget is incomplete."
+      ],
+      "provenance": {
+        "createdAt": "2026-04-25T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase20-internal-vector-boson-sources",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase12-candidate-6",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase12_joined_calculation_001/output/background_family/bosons/registry.json",
+        "studies/phase12_joined_calculation_001/output/background_family/modes/mode_families.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-a-20260315212202_spectrum.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-b-20260315212202_spectrum.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-a-20260315212202-mode-6.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-b-20260315212202-mode-10.json"
+      ],
+      "sourceModeIds": [
+        "bg-phase12-bg-a-20260315212202-mode-6",
+        "bg-phase12-bg-b-20260315212202-mode-10"
+      ],
+      "sourceFamilyId": "family-6",
+      "massLikeValue": -2.071465879429306E-16,
+      "uncertainty": {
+        "branchVariation": -1,
+        "refinementError": -1,
+        "extractionError": 4.0137068844132876E-16,
+        "environmentSensitivity": 8.027413768826575E-16,
+        "totalUncertainty": -1
+      },
+      "branchSelectors": [],
+      "environmentSelectors": [
+        "bg-phase12-bg-a-20260315212202",
+        "bg-phase12-bg-b-20260315212202"
+      ],
+      "refinementLevels": [],
+      "branchStabilityScore": 0.3,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 1,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C0_NumericalMode",
+      "status": "source-blocked",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [
+        "branch selectors are missing from the Phase12 candidate.",
+        "mode family matching is ambiguous.",
+        "mode family is not marked stable.",
+        "candidate claim class is not strong enough for a ready source candidate.",
+        "source uncertainty budget is incomplete."
+      ],
+      "provenance": {
+        "createdAt": "2026-04-25T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase20-internal-vector-boson-sources",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase12-candidate-7",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase12_joined_calculation_001/output/background_family/bosons/registry.json",
+        "studies/phase12_joined_calculation_001/output/background_family/modes/mode_families.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-a-20260315212202_spectrum.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-b-20260315212202_spectrum.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-a-20260315212202-mode-7.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-b-20260315212202-mode-5.json"
+      ],
+      "sourceModeIds": [
+        "bg-phase12-bg-a-20260315212202-mode-7",
+        "bg-phase12-bg-b-20260315212202-mode-5"
+      ],
+      "sourceFamilyId": "family-7",
+      "massLikeValue": -5.330228263997574E-16,
+      "uncertainty": {
+        "branchVariation": -1,
+        "refinementError": -1,
+        "extractionError": 2.5627376666008326E-17,
+        "environmentSensitivity": 5.1254753332016554E-17,
+        "totalUncertainty": -1
+      },
+      "branchSelectors": [],
+      "environmentSelectors": [
+        "bg-phase12-bg-a-20260315212202",
+        "bg-phase12-bg-b-20260315212202"
+      ],
+      "refinementLevels": [],
+      "branchStabilityScore": 0.3,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 1,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C0_NumericalMode",
+      "status": "source-blocked",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [
+        "branch selectors are missing from the Phase12 candidate.",
+        "mode family matching is ambiguous.",
+        "mode family is not marked stable.",
+        "candidate claim class is not strong enough for a ready source candidate.",
+        "source uncertainty budget is incomplete."
+      ],
+      "provenance": {
+        "createdAt": "2026-04-25T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase20-internal-vector-boson-sources",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase12-candidate-8",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase12_joined_calculation_001/output/background_family/bosons/registry.json",
+        "studies/phase12_joined_calculation_001/output/background_family/modes/mode_families.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-a-20260315212202_spectrum.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-b-20260315212202_spectrum.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-a-20260315212202-mode-8.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-b-20260315212202-mode-9.json"
+      ],
+      "sourceModeIds": [
+        "bg-phase12-bg-a-20260315212202-mode-8",
+        "bg-phase12-bg-b-20260315212202-mode-9"
+      ],
+      "sourceFamilyId": "family-8",
+      "massLikeValue": -1.9513954819178973E-16,
+      "uncertainty": {
+        "branchVariation": -1,
+        "refinementError": -1,
+        "extractionError": 2.9391440099405563E-16,
+        "environmentSensitivity": 5.878288019881113E-16,
+        "totalUncertainty": -1
+      },
+      "branchSelectors": [],
+      "environmentSelectors": [
+        "bg-phase12-bg-a-20260315212202",
+        "bg-phase12-bg-b-20260315212202"
+      ],
+      "refinementLevels": [],
+      "branchStabilityScore": 0.3,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 1,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C0_NumericalMode",
+      "status": "source-blocked",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [
+        "branch selectors are missing from the Phase12 candidate.",
+        "mode family matching is ambiguous.",
+        "mode family is not marked stable.",
+        "candidate claim class is not strong enough for a ready source candidate.",
+        "source uncertainty budget is incomplete."
+      ],
+      "provenance": {
+        "createdAt": "2026-04-25T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase20-internal-vector-boson-sources",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase12-candidate-9",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase12_joined_calculation_001/output/background_family/bosons/registry.json",
+        "studies/phase12_joined_calculation_001/output/background_family/modes/mode_families.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-a-20260315212202_spectrum.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-b-20260315212202_spectrum.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-a-20260315212202-mode-9.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-b-20260315212202-mode-8.json"
+      ],
+      "sourceModeIds": [
+        "bg-phase12-bg-a-20260315212202-mode-9",
+        "bg-phase12-bg-b-20260315212202-mode-8"
+      ],
+      "sourceFamilyId": "family-9",
+      "massLikeValue": -1.8573316382557343E-16,
+      "uncertainty": {
+        "branchVariation": -1,
+        "refinementError": -1,
+        "extractionError": 2.6679951467348865E-16,
+        "environmentSensitivity": 5.335990293469773E-16,
+        "totalUncertainty": -1
+      },
+      "branchSelectors": [],
+      "environmentSelectors": [
+        "bg-phase12-bg-a-20260315212202",
+        "bg-phase12-bg-b-20260315212202"
+      ],
+      "refinementLevels": [],
+      "branchStabilityScore": 0.3,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 1,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C0_NumericalMode",
+      "status": "source-blocked",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [
+        "branch selectors are missing from the Phase12 candidate.",
+        "mode family matching is ambiguous.",
+        "mode family is not marked stable.",
+        "candidate claim class is not strong enough for a ready source candidate.",
+        "source uncertainty budget is incomplete."
+      ],
+      "provenance": {
+        "createdAt": "2026-04-25T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase20-internal-vector-boson-sources",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase12-candidate-10",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase12_joined_calculation_001/output/background_family/bosons/registry.json",
+        "studies/phase12_joined_calculation_001/output/background_family/modes/mode_families.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-a-20260315212202_spectrum.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-b-20260315212202_spectrum.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-a-20260315212202-mode-10.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-b-20260315212202-mode-6.json"
+      ],
+      "sourceModeIds": [
+        "bg-phase12-bg-a-20260315212202-mode-10",
+        "bg-phase12-bg-b-20260315212202-mode-6"
+      ],
+      "sourceFamilyId": "family-10",
+      "massLikeValue": -3.445404274077937E-16,
+      "uncertainty": {
+        "branchVariation": -1,
+        "refinementError": -1,
+        "extractionError": 4.987203923986688E-17,
+        "environmentSensitivity": 9.974407847973371E-17,
+        "totalUncertainty": -1
+      },
+      "branchSelectors": [],
+      "environmentSelectors": [
+        "bg-phase12-bg-a-20260315212202",
+        "bg-phase12-bg-b-20260315212202"
+      ],
+      "refinementLevels": [],
+      "branchStabilityScore": 0.3,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 1,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C0_NumericalMode",
+      "status": "source-blocked",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [
+        "branch selectors are missing from the Phase12 candidate.",
+        "mode family matching is ambiguous.",
+        "mode family is not marked stable.",
+        "candidate claim class is not strong enough for a ready source candidate.",
+        "source uncertainty budget is incomplete."
+      ],
+      "provenance": {
+        "createdAt": "2026-04-25T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase20-internal-vector-boson-sources",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase12-candidate-11",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase12_joined_calculation_001/output/background_family/bosons/registry.json",
+        "studies/phase12_joined_calculation_001/output/background_family/modes/mode_families.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-a-20260315212202_spectrum.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-b-20260315212202_spectrum.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-a-20260315212202-mode-11.json",
+        "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-b-20260315212202-mode-7.json"
+      ],
+      "sourceModeIds": [
+        "bg-phase12-bg-a-20260315212202-mode-11",
+        "bg-phase12-bg-b-20260315212202-mode-7"
+      ],
+      "sourceFamilyId": "family-11",
+      "massLikeValue": -7.80230558423299E-17,
+      "uncertainty": {
+        "branchVariation": -1,
+        "refinementError": -1,
+        "extractionError": 6.546245289642088E-17,
+        "environmentSensitivity": 1.3092490579284176E-16,
+        "totalUncertainty": -1
+      },
+      "branchSelectors": [],
+      "environmentSelectors": [
+        "bg-phase12-bg-a-20260315212202",
+        "bg-phase12-bg-b-20260315212202"
+      ],
+      "refinementLevels": [],
+      "branchStabilityScore": 0.3,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 1,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C0_NumericalMode",
+      "status": "source-blocked",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [
+        "branch selectors are missing from the Phase12 candidate.",
+        "mode family matching is ambiguous.",
+        "mode family is not marked stable.",
+        "candidate claim class is not strong enough for a ready source candidate.",
+        "source uncertainty budget is incomplete."
+      ],
+      "provenance": {
+        "createdAt": "2026-04-25T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase20-internal-vector-boson-sources",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    }
+  ],
+  "summaryBlockers": [
+    "No Phase12 candidate has complete branch selectors, refinement coverage, unambiguous stability, and full uncertainty.",
+    "Phase XX source generation remains blocked before W/Z identity testing."
+  ],
+  "provenance": {
+    "createdAt": "2026-04-25T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase20-internal-vector-boson-sources",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu"
+  }
+}

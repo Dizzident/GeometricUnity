@@ -107,6 +107,8 @@ switch (args[0])
         return ValidateQuantitative(args);
     case "extract-spectrum-observable":
         return ExtractSpectrumObservable(args);
+    case "generate-internal-vector-boson-sources":
+        return GenerateInternalVectorBosonSources(args);
     case "build-validation-dossier":
         return BuildValidationDossier(args);
     case "verify-study-freshness":
@@ -4361,6 +4363,54 @@ static IReadOnlyList<EnvironmentRecord> LoadEnvironmentRecords(string environmen
     return records;
 }
 
+static int GenerateInternalVectorBosonSources(string[] args)
+{
+    var registryPath = ParseFlag(args, "--registry", "");
+    var familiesPath = ParseFlag(args, "--families", "");
+    var spectraRoot = ParseFlag(args, "--spectra-root", "");
+    var outPath = ParseFlag(args, "--out", "");
+
+    if (string.IsNullOrWhiteSpace(registryPath) ||
+        string.IsNullOrWhiteSpace(familiesPath) ||
+        string.IsNullOrWhiteSpace(spectraRoot) ||
+        string.IsNullOrWhiteSpace(outPath))
+    {
+        Console.Error.WriteLine("Usage: gu generate-internal-vector-boson-sources --registry <registry.json> --families <mode_families.json> --spectra-root <dir> --out <source_candidates.json>");
+        return 1;
+    }
+
+    try
+    {
+        var provenance = new ProvenanceMeta
+        {
+            CreatedAt = DateTimeOffset.Parse("2026-04-25T00:00:00+00:00"),
+            CodeRevision = "working-tree",
+            Branch = new BranchRef { BranchId = "phase20-internal-vector-boson-sources", SchemaVersion = "1.0" },
+            Backend = "cpu",
+        };
+        var table = InternalVectorBosonSourceCandidateAdapter.GenerateFromPhase12(
+            registryPath,
+            familiesPath,
+            spectraRoot,
+            provenance);
+
+        var directory = Path.GetDirectoryName(outPath);
+        if (!string.IsNullOrWhiteSpace(directory))
+            Directory.CreateDirectory(directory);
+        File.WriteAllText(outPath, GuJsonDefaults.Serialize(table));
+
+        Console.WriteLine($"generate-internal-vector-boson-sources done. Output: {outPath}");
+        Console.WriteLine($"  terminalStatus: {table.TerminalStatus}");
+        Console.WriteLine($"  candidates: {table.Candidates.Count}");
+        return 0;
+    }
+    catch (Exception ex)
+    {
+        Console.Error.WriteLine($"generate-internal-vector-boson-sources failed: {ex.Message}");
+        return 1;
+    }
+}
+
 static int BuildValidationDossier(string[] args)
 {
     var manifestPath = ParseFlag(args, "--study-manifest", "");
@@ -5532,6 +5582,7 @@ static void PrintUsage()
     Console.WriteLine("  gu build-structured-environment --spec <f> [--out <f>]  Generate structured analytic environment");
     Console.WriteLine("  gu validate-quantitative --observables <f> --targets <f> [--environment-records <csv>] [--out <f>] [--fail-closed-target-coverage]  Quantitative validation");
     Console.WriteLine("  gu extract-spectrum-observable --eigenvalues <f> --observable-id <id> --environment-id <id> [--out <f>]  Extract spectrum-derived observable");
+    Console.WriteLine("  gu generate-internal-vector-boson-sources --registry <f> --families <f> --spectra-root <dir> --out <f>  Generate Phase XX source candidates");
     Console.WriteLine("  gu build-validation-dossier --study-manifest <f> [--out <f>]  Build Phase V validation dossier");
     Console.WriteLine("  gu verify-study-freshness --dossier <f>      Verify study freshness / G-006 compliance");
     Console.WriteLine("  gu run-phase5-campaign --spec <f> --out-dir <dir> [--validate-first]  Run Phase V M53 end-to-end campaign");
