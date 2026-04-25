@@ -380,6 +380,8 @@ public sealed class PhysicalObservableContractTests
         var studyDir = Path.Combine(repoRoot, "studies", "phase19_dimensionless_wz_candidate_001");
         var observables = GuJsonDefaults.Deserialize<List<QuantitativeObservableRecord>>(
             File.ReadAllText(Path.Combine(studyDir, "candidate_observables.json")));
+        var modes = GuJsonDefaults.Deserialize<List<IdentifiedPhysicalModeRecord>>(
+            File.ReadAllText(Path.Combine(studyDir, "candidate_modes.json")));
         var classifications = GuJsonDefaults.Deserialize<ObservableClassificationTable>(
             File.ReadAllText(Path.Combine(studyDir, "observable_classifications.json")));
         var mappings = GuJsonDefaults.Deserialize<PhysicalObservableMappingTable>(
@@ -390,10 +392,17 @@ public sealed class PhysicalObservableContractTests
             File.ReadAllText(Path.Combine(studyDir, "physical_targets.json")));
 
         Assert.NotNull(observables);
+        Assert.NotNull(modes);
         Assert.NotNull(classifications);
         Assert.NotNull(mappings);
         Assert.NotNull(calibrations);
         Assert.NotNull(targets);
+        Assert.All(modes!, mode =>
+        {
+            Assert.Equal("provisional", mode.Status);
+            Assert.True(mode.Uncertainty < 0);
+            Assert.NotEmpty(mode.ClosureRequirements);
+        });
         Assert.Equal("physical-candidate", classifications!.Classifications[0].Classification);
         Assert.False(classifications.Classifications[0].PhysicalClaimAllowed);
         Assert.Equal("provisional", mappings!.Mappings[0].Status);

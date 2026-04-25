@@ -187,6 +187,10 @@ Progress:
 - added a typed overload that creates the ratio from two quantitative mode
   records only when environment, branch, refinement level, and total
   uncertainty are consistent.
+- added `IdentifiedPhysicalModeRecord` and a fail-closed ratio path requiring
+  validated physical mode inputs with matching units.
+- added provisional Phase XIX W and Z mode records documenting the required
+  future input shape.
 
 Definition of done:
 

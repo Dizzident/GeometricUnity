@@ -13,6 +13,8 @@ be treated as a physical observable.
 
 - `candidate_observables.json`: an inactive candidate observable record for a
   W/Z vector-mode ratio.
+- `candidate_modes.json`: provisional W and Z identified-mode input records
+  documenting the input shape required before a ratio can be computed.
 - `observable_classifications.json`: classifies the candidate as
   `physical-candidate`, not `physical-observable`.
 - `physical_observable_mappings.json`: provisional mapping from the candidate
@@ -46,6 +48,11 @@ The extractor also accepts two quantitative mode records directly. That path
 requires shared environment, branch, and refinement selectors, and it rejects
 mode records with unestimated total uncertainty. This is the path a future
 validated W/Z comparison should use after W and Z modes are identified.
+
+The quantitative validation library also defines `IdentifiedPhysicalModeRecord`
+for physics-facing mode inputs. Ratio extraction from these records requires
+both inputs to be `validated`, to share units, and to pass the same selector and
+uncertainty checks as generic quantitative mode records.
 
 The checked-in candidate artifact names this extraction contract, but still
 uses placeholder inputs. That keeps the code path ready while preserving the

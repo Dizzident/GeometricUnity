@@ -47,6 +47,86 @@ public sealed class SpectrumObservableExtractorTests
         Backend = "cpu",
     };
 
+    private static IdentifiedPhysicalModeRecord MakePhysicalMode(
+        string modeId,
+        string particleId,
+        string observableId,
+        double value,
+        double uncertainty,
+        string status = "validated",
+        string unitFamily = "mass-energy",
+        string unit = "internal-mass-unit",
+        string environmentId = "env-physical-candidate",
+        string branchId = "branch")
+    {
+        return new IdentifiedPhysicalModeRecord
+        {
+            ModeId = modeId,
+            ParticleId = particleId,
+            ModeKind = "vector-boson-mass-mode",
+            ObservableId = observableId,
+            Value = value,
+            Uncertainty = uncertainty,
+            UnitFamily = unitFamily,
+            Unit = unit,
+            Status = status,
+            EnvironmentId = environmentId,
+            BranchId = branchId,
+            RefinementLevel = "L1",
+            ExtractionMethod = "identified-physical-mode:test",
+            Assumptions = ["unit test mode"],
+            ClosureRequirements = status == "validated" ? [] : ["validate mode identification"],
+            Provenance = MakeProvenance(),
+        };
+    }
+
+    [Fact]
+    public void CreatePositiveModeRatioRecord_FromValidatedPhysicalModes_ProducesRatio()
+    {
+        var wMode = MakePhysicalMode("mode-w", "w-boson", "physical-mode-w", 80.0, 0.4);
+        var zMode = MakePhysicalMode("mode-z", "z-boson", "physical-mode-z", 100.0, 0.3);
+
+        var record = SpectrumObservableExtractor.CreatePositiveModeRatioRecord(
+            wMode,
+            zMode,
+            "physical-w-z-mass-ratio",
+            MakeProvenance());
+
+        Assert.Equal(0.8, record.Value, precision: 15);
+        Assert.Equal("positive-mode-ratio:physical-mode-w/physical-mode-z", record.ExtractionMethod);
+        Assert.Equal("env-physical-candidate", record.EnvironmentId);
+    }
+
+    [Fact]
+    public void CreatePositiveModeRatioRecord_FromProvisionalPhysicalMode_Throws()
+    {
+        var wMode = MakePhysicalMode("mode-w", "w-boson", "physical-mode-w", 80.0, 0.4, status: "provisional");
+        var zMode = MakePhysicalMode("mode-z", "z-boson", "physical-mode-z", 100.0, 0.3);
+
+        var ex = Assert.Throws<ArgumentException>(() =>
+            SpectrumObservableExtractor.CreatePositiveModeRatioRecord(
+                wMode,
+                zMode,
+                "physical-w-z-mass-ratio",
+                MakeProvenance()));
+        Assert.Contains("must be validated", ex.Message);
+    }
+
+    [Fact]
+    public void CreatePositiveModeRatioRecord_FromDifferentPhysicalModeUnits_Throws()
+    {
+        var wMode = MakePhysicalMode("mode-w", "w-boson", "physical-mode-w", 80.0, 0.4, unit: "internal-a");
+        var zMode = MakePhysicalMode("mode-z", "z-boson", "physical-mode-z", 100.0, 0.3, unit: "internal-b");
+
+        var ex = Assert.Throws<ArgumentException>(() =>
+            SpectrumObservableExtractor.CreatePositiveModeRatioRecord(
+                wMode,
+                zMode,
+                "physical-w-z-mass-ratio",
+                MakeProvenance()));
+        Assert.Contains("share unit", ex.Message);
+    }
+
     [Fact]
     public void CreatePositiveModeRatioRecord_FromModeRecords_RequiresSharedSelectors()
     {

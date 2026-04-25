@@ -126,6 +126,54 @@ public static class SpectrumObservableExtractor
             provenance);
     }
 
+    public static QuantitativeObservableRecord CreatePositiveModeRatioRecord(
+        IdentifiedPhysicalModeRecord numeratorMode,
+        IdentifiedPhysicalModeRecord denominatorMode,
+        string observableId,
+        ProvenanceMeta provenance)
+    {
+        ArgumentNullException.ThrowIfNull(numeratorMode);
+        ArgumentNullException.ThrowIfNull(denominatorMode);
+        if (!string.Equals(numeratorMode.Status, "validated", StringComparison.OrdinalIgnoreCase))
+            throw new ArgumentException("Numerator physical mode must be validated.", nameof(numeratorMode));
+        if (!string.Equals(denominatorMode.Status, "validated", StringComparison.OrdinalIgnoreCase))
+            throw new ArgumentException("Denominator physical mode must be validated.", nameof(denominatorMode));
+        if (!string.Equals(numeratorMode.UnitFamily, denominatorMode.UnitFamily, StringComparison.Ordinal))
+            throw new ArgumentException("Mode ratio inputs must share unitFamily.");
+        if (!string.Equals(numeratorMode.Unit, denominatorMode.Unit, StringComparison.Ordinal))
+            throw new ArgumentException("Mode ratio inputs must share unit.");
+
+        var numeratorObservable = ToObservableRecord(numeratorMode);
+        var denominatorObservable = ToObservableRecord(denominatorMode);
+        return CreatePositiveModeRatioRecord(
+            numeratorObservable,
+            denominatorObservable,
+            observableId,
+            provenance);
+    }
+
+    private static QuantitativeObservableRecord ToObservableRecord(IdentifiedPhysicalModeRecord mode)
+    {
+        return new QuantitativeObservableRecord
+        {
+            ObservableId = mode.ObservableId,
+            Value = mode.Value,
+            Uncertainty = new QuantitativeUncertainty
+            {
+                BranchVariation = -1,
+                RefinementError = -1,
+                ExtractionError = mode.Uncertainty,
+                EnvironmentSensitivity = -1,
+                TotalUncertainty = mode.Uncertainty,
+            },
+            BranchId = mode.BranchId,
+            EnvironmentId = mode.EnvironmentId,
+            RefinementLevel = mode.RefinementLevel,
+            ExtractionMethod = mode.ExtractionMethod,
+            Provenance = mode.Provenance,
+        };
+    }
+
     public static double ComputeAdjacentGapRatio(IReadOnlyList<double> eigenvalues, int gapIndex)
     {
         ArgumentNullException.ThrowIfNull(eigenvalues);
