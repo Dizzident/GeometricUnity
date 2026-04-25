@@ -7,6 +7,90 @@ namespace Gu.Phase5.QuantitativeValidation;
 /// </summary>
 public static class SpectrumObservableExtractor
 {
+    public static double ComputePositiveModeRatio(double numeratorModeValue, double denominatorModeValue)
+    {
+        if (numeratorModeValue <= 0)
+            throw new ArgumentOutOfRangeException(nameof(numeratorModeValue), "Numerator mode value must be positive.");
+        if (denominatorModeValue <= 0)
+            throw new ArgumentOutOfRangeException(nameof(denominatorModeValue), "Denominator mode value must be positive.");
+
+        return numeratorModeValue / denominatorModeValue;
+    }
+
+    public static double PropagatePositiveModeRatioUncertainty(
+        double numeratorModeValue,
+        double numeratorModeUncertainty,
+        double denominatorModeValue,
+        double denominatorModeUncertainty)
+    {
+        if (numeratorModeValue <= 0)
+            throw new ArgumentOutOfRangeException(nameof(numeratorModeValue), "Numerator mode value must be positive.");
+        if (denominatorModeValue <= 0)
+            throw new ArgumentOutOfRangeException(nameof(denominatorModeValue), "Denominator mode value must be positive.");
+        if (numeratorModeUncertainty < 0)
+            throw new ArgumentOutOfRangeException(nameof(numeratorModeUncertainty), "Numerator mode uncertainty must be nonnegative.");
+        if (denominatorModeUncertainty < 0)
+            throw new ArgumentOutOfRangeException(nameof(denominatorModeUncertainty), "Denominator mode uncertainty must be nonnegative.");
+
+        var ratio = ComputePositiveModeRatio(numeratorModeValue, denominatorModeValue);
+        var relativeNumerator = numeratorModeUncertainty / numeratorModeValue;
+        var relativeDenominator = denominatorModeUncertainty / denominatorModeValue;
+        return ratio * System.Math.Sqrt(
+            System.Math.Pow(relativeNumerator, 2) +
+            System.Math.Pow(relativeDenominator, 2));
+    }
+
+    public static QuantitativeObservableRecord CreatePositiveModeRatioRecord(
+        double numeratorModeValue,
+        double numeratorModeUncertainty,
+        string numeratorModeId,
+        double denominatorModeValue,
+        double denominatorModeUncertainty,
+        string denominatorModeId,
+        string observableId,
+        string environmentId,
+        string branchId,
+        string? refinementLevel,
+        ProvenanceMeta provenance)
+    {
+        if (string.IsNullOrWhiteSpace(numeratorModeId))
+            throw new ArgumentException("numeratorModeId is required.", nameof(numeratorModeId));
+        if (string.IsNullOrWhiteSpace(denominatorModeId))
+            throw new ArgumentException("denominatorModeId is required.", nameof(denominatorModeId));
+        if (string.IsNullOrWhiteSpace(observableId))
+            throw new ArgumentException("observableId is required.", nameof(observableId));
+        if (string.IsNullOrWhiteSpace(environmentId))
+            throw new ArgumentException("environmentId is required.", nameof(environmentId));
+        if (string.IsNullOrWhiteSpace(branchId))
+            throw new ArgumentException("branchId is required.", nameof(branchId));
+
+        var value = ComputePositiveModeRatio(numeratorModeValue, denominatorModeValue);
+        var uncertainty = PropagatePositiveModeRatioUncertainty(
+            numeratorModeValue,
+            numeratorModeUncertainty,
+            denominatorModeValue,
+            denominatorModeUncertainty);
+
+        return new QuantitativeObservableRecord
+        {
+            ObservableId = observableId,
+            Value = value,
+            Uncertainty = new QuantitativeUncertainty
+            {
+                BranchVariation = -1,
+                RefinementError = -1,
+                ExtractionError = uncertainty,
+                EnvironmentSensitivity = -1,
+                TotalUncertainty = uncertainty,
+            },
+            BranchId = branchId,
+            EnvironmentId = environmentId,
+            RefinementLevel = refinementLevel,
+            ExtractionMethod = $"positive-mode-ratio:{numeratorModeId}/{denominatorModeId}",
+            Provenance = provenance,
+        };
+    }
+
     public static double ComputeAdjacentGapRatio(IReadOnlyList<double> eigenvalues, int gapIndex)
     {
         ArgumentNullException.ThrowIfNull(eigenvalues);

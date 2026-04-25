@@ -182,6 +182,8 @@ Progress:
 - added provisional dimensionless identity normalization;
 - added isolated PDG W/Z mass-ratio target evidence;
 - added tests proving the scaffold remains blocked and inactive.
+- added reusable positive-mode ratio extraction support with uncertainty
+  propagation in `SpectrumObservableExtractor`.
 
 Definition of done:
 
@@ -195,7 +197,8 @@ Remaining:
 - replace the placeholder candidate value with an independently computed W/Z
   mode-ratio observable;
 - derive and test the W/Z vector-mode identification rule;
-- estimate uncertainty components instead of using `-1` unestimated sentinels.
+- estimate branch, refinement, and environment uncertainty components instead
+  of using `-1` unestimated sentinels.
 
 ### P17-M8 First Physical Comparison Campaign
 

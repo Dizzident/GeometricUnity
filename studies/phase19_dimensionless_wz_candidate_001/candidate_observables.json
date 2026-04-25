@@ -12,7 +12,7 @@
     "branchId": "phase19-unvalidated-wz-mode-identification",
     "environmentId": "phase19-inactive-physical-candidate",
     "refinementLevel": "not-active",
-    "extractionMethod": "placeholder-w-z-vector-mode-ratio-candidate",
+    "extractionMethod": "positive-mode-ratio:w-vector-mode/z-vector-mode:placeholder-inputs",
     "provenance": {
       "createdAt": "2026-04-25T00:00:00+00:00",
       "codeRevision": "phase19-candidate-scaffold",

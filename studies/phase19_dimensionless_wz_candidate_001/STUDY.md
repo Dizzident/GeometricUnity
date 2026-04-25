@@ -35,6 +35,17 @@ The candidate is blocked from physical prediction because:
 - the extraction method is a placeholder contract, not a validated W/Z
   mode-identification calculation.
 
+## Extractor Support
+
+The quantitative validation library now has a reusable positive-mode ratio
+extractor. It computes `numerator / denominator` for two positive mode values
+and propagates independent numerator and denominator uncertainty into the
+dimensionless ratio.
+
+The checked-in candidate artifact names this extraction contract, but still
+uses placeholder inputs. That keeps the code path ready while preserving the
+scientific block on W/Z mode identification.
+
 ## Completion Requirements
 
 To promote this scaffold into an active physical campaign:
