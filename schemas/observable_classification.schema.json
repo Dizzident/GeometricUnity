@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/observable_classification.schema.json",
+  "title": "ObservableClassificationTable",
+  "type": "object",
+  "required": ["tableId", "classifications"],
+  "properties": {
+    "tableId": { "type": "string" },
+    "classifications": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/ObservableClassification" }
+    }
+  },
+  "$defs": {
+    "ObservableClassification": {
+      "type": "object",
+      "required": ["observableId", "classification", "rationale", "physicalClaimAllowed"],
+      "properties": {
+        "observableId": { "type": "string" },
+        "classification": {
+          "type": "string",
+          "enum": [
+            "internal-control",
+            "internal-benchmark",
+            "external-lattice-benchmark",
+            "physical-candidate",
+            "physical-observable"
+          ]
+        },
+        "rationale": { "type": "string" },
+        "physicalClaimAllowed": { "type": "boolean" }
+      }
+    }
+  }
+}

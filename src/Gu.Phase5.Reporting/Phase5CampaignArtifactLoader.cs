@@ -60,6 +60,15 @@ public sealed class Phase5CampaignArtifacts
     /// in the campaign config directory.
     /// </summary>
     public IReadOnlyList<CandidateProvenanceLinkRecord>? CandidateProvenanceLinks { get; init; }
+
+    /// <summary>Optional Phase XVI observable classifications.</summary>
+    public ObservableClassificationTable? ObservableClassifications { get; init; }
+
+    /// <summary>Optional Phase XVI physical observable mappings.</summary>
+    public PhysicalObservableMappingTable? PhysicalObservableMappings { get; init; }
+
+    /// <summary>Optional Phase XVII physical scale-setting/calibration records.</summary>
+    public PhysicalCalibrationTable? PhysicalCalibrations { get; init; }
 }
 
 /// <summary>
@@ -201,6 +210,34 @@ public static class Phase5CampaignArtifactLoader
                 File.ReadAllText(inferredCandidateLinksPath));
         }
 
+        // 14. Phase XVI observable classifications and physical mappings (optional)
+        ObservableClassificationTable? observableClassifications = null;
+        if (spec.ObservableClassificationsPath is not null)
+        {
+            var absPath = ResolvePath(spec.ObservableClassificationsPath, specDir);
+            if (File.Exists(absPath))
+                observableClassifications = GuJsonDefaults.Deserialize<ObservableClassificationTable>(
+                    File.ReadAllText(absPath));
+        }
+
+        PhysicalObservableMappingTable? physicalObservableMappings = null;
+        if (spec.PhysicalObservableMappingsPath is not null)
+        {
+            var absPath = ResolvePath(spec.PhysicalObservableMappingsPath, specDir);
+            if (File.Exists(absPath))
+                physicalObservableMappings = GuJsonDefaults.Deserialize<PhysicalObservableMappingTable>(
+                    File.ReadAllText(absPath));
+        }
+
+        PhysicalCalibrationTable? physicalCalibrations = null;
+        if (spec.PhysicalCalibrationPath is not null)
+        {
+            var absPath = ResolvePath(spec.PhysicalCalibrationPath, specDir);
+            if (File.Exists(absPath))
+                physicalCalibrations = GuJsonDefaults.Deserialize<PhysicalCalibrationTable>(
+                    File.ReadAllText(absPath));
+        }
+
         return new Phase5CampaignArtifacts
         {
             BranchQuantityValues = branchValues,
@@ -216,6 +253,9 @@ public static class Phase5CampaignArtifactLoader
             SidecarSummary = sidecarSummary,
             RefinementEvidenceManifest = refinementEvidenceManifest,
             CandidateProvenanceLinks = candidateProvenanceLinks,
+            ObservableClassifications = observableClassifications,
+            PhysicalObservableMappings = physicalObservableMappings,
+            PhysicalCalibrations = physicalCalibrations,
         };
     }
 

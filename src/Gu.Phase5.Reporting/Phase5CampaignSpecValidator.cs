@@ -117,9 +117,16 @@ public static class Phase5CampaignSpecValidator
 
         if (spec.TargetCoverageBlockersPath is not null)
             CheckFilePath(spec.TargetCoverageBlockersPath, "targetCoverageBlockersPath", specDir, errors);
+        if (spec.PhysicalObservableMappingsPath is not null)
+            CheckFilePath(spec.PhysicalObservableMappingsPath, "physicalObservableMappingsPath", specDir, errors);
+        if (spec.ObservableClassificationsPath is not null)
+            CheckFilePath(spec.ObservableClassificationsPath, "observableClassificationsPath", specDir, errors);
+        if (spec.PhysicalCalibrationPath is not null)
+            CheckFilePath(spec.PhysicalCalibrationPath, "physicalCalibrationPath", specDir, errors);
 
         ValidateEnvironmentEvidence(spec, specDir, requireReferenceSidecars, errors);
-        ValidateTargetTable(spec, specDir, errors);
+        ValidateTargetTable(spec, specDir, repoRoot, errors);
+        ValidateObservableClassifications(spec, specDir, repoRoot, errors);
         ValidateSidecarSchemas(spec, specDir, repoRoot, errors);
 
         return new CampaignValidationResult
@@ -201,6 +208,7 @@ public static class Phase5CampaignSpecValidator
     private static void ValidateTargetTable(
         Phase5CampaignSpec spec,
         string specDir,
+        string repoRoot,
         List<string> errors)
     {
         var resolved = ResolvePath(spec.ExternalTargetTablePath, specDir);
@@ -223,6 +231,8 @@ public static class Phase5CampaignSpecValidator
 
             var environmentTiers = LoadEnvironmentTierMap(spec, specDir);
             var targetCoverageBlockers = LoadTargetCoverageBlockers(spec, specDir, errors);
+            var physicalMappings = LoadPhysicalMappings(spec, specDir, repoRoot, errors);
+            var physicalCalibrations = LoadPhysicalCalibrations(spec, specDir, repoRoot, errors);
             if (table is null)
             {
                 errors.Add("externalTargetTablePath: failed to deserialize ExternalTargetTable.");
@@ -257,6 +267,8 @@ public static class Phase5CampaignSpecValidator
 
             foreach (var target in table.Targets)
             {
+                ValidatePhysicalTargetMapping(target, physicalMappings, physicalCalibrations, errors);
+
                 if (observables.Any(obs => TargetSelectorsMatch(obs, target, environmentTiers)))
                     continue;
 
@@ -272,6 +284,280 @@ public static class Phase5CampaignSpecValidator
         {
             errors.Add($"externalTargetTablePath: failed to validate target table ({ex.Message}).");
         }
+    }
+
+    private static IReadOnlyList<PhysicalObservableMapping> LoadPhysicalMappings(
+        Phase5CampaignSpec spec,
+        string specDir,
+        string repoRoot,
+        List<string> errors)
+    {
+        if (string.IsNullOrWhiteSpace(spec.PhysicalObservableMappingsPath))
+            return Array.Empty<PhysicalObservableMapping>();
+
+        var resolved = ResolvePath(spec.PhysicalObservableMappingsPath, specDir);
+        if (!File.Exists(resolved))
+            return Array.Empty<PhysicalObservableMapping>();
+
+        ValidateSchema(
+            File.ReadAllText(resolved),
+            Path.Combine(repoRoot, "schemas", "physical_observable_mapping.schema.json"),
+            "physicalObservableMappingsPath:physical_observable_mapping.schema.json",
+            errors);
+
+        try
+        {
+            var table = GuJsonDefaults.Deserialize<PhysicalObservableMappingTable>(File.ReadAllText(resolved));
+            if (table is null)
+            {
+                errors.Add("physicalObservableMappingsPath: failed to deserialize PhysicalObservableMappingTable.");
+                return Array.Empty<PhysicalObservableMapping>();
+            }
+
+            foreach (var mapping in table.Mappings)
+            {
+                if (string.IsNullOrWhiteSpace(mapping.MappingId))
+                    errors.Add("physicalObservableMappingsPath: every mapping must declare mappingId.");
+                if (string.IsNullOrWhiteSpace(mapping.ParticleId))
+                    errors.Add($"physicalObservableMappingsPath: mapping '{mapping.MappingId}' must declare particleId.");
+                if (string.IsNullOrWhiteSpace(mapping.PhysicalObservableType))
+                    errors.Add($"physicalObservableMappingsPath: mapping '{mapping.MappingId}' must declare physicalObservableType.");
+                if (string.IsNullOrWhiteSpace(mapping.SourceComputedObservableId))
+                    errors.Add($"physicalObservableMappingsPath: mapping '{mapping.MappingId}' must declare sourceComputedObservableId.");
+                if (string.Equals(mapping.Status, "validated", StringComparison.OrdinalIgnoreCase) &&
+                    string.IsNullOrWhiteSpace(mapping.TargetPhysicalObservableId))
+                {
+                    errors.Add($"physicalObservableMappingsPath: validated mapping '{mapping.MappingId}' must declare targetPhysicalObservableId.");
+                }
+                if (string.IsNullOrWhiteSpace(mapping.UnitFamily))
+                    errors.Add($"physicalObservableMappingsPath: mapping '{mapping.MappingId}' must declare unitFamily.");
+                if (!IsKnownMappingStatus(mapping.Status))
+                    errors.Add($"physicalObservableMappingsPath: mapping '{mapping.MappingId}' has unknown status '{mapping.Status}'.");
+                if (mapping.Assumptions.Count == 0)
+                    errors.Add($"physicalObservableMappingsPath: mapping '{mapping.MappingId}' must declare at least one assumption.");
+                if (string.Equals(mapping.Status, "blocked", StringComparison.OrdinalIgnoreCase) &&
+                    mapping.ClosureRequirements.Count == 0)
+                {
+                    errors.Add($"physicalObservableMappingsPath: blocked mapping '{mapping.MappingId}' must declare closureRequirements.");
+                }
+            }
+
+            return table.Mappings;
+        }
+        catch (Exception ex)
+        {
+            errors.Add($"physicalObservableMappingsPath: failed to validate mappings ({ex.Message}).");
+            return Array.Empty<PhysicalObservableMapping>();
+        }
+    }
+
+    private static void ValidatePhysicalTargetMapping(
+        ExternalTarget target,
+        IReadOnlyList<PhysicalObservableMapping> mappings,
+        IReadOnlyList<PhysicalCalibrationRecord> calibrations,
+        List<string> errors)
+    {
+        if (!IsPhysicalTarget(target))
+            return;
+
+        if (string.IsNullOrWhiteSpace(target.ParticleId))
+            errors.Add($"externalTargetTablePath: physical target '{target.Label}' must declare particleId.");
+        if (string.IsNullOrWhiteSpace(target.PhysicalObservableType))
+            errors.Add($"externalTargetTablePath: physical target '{target.Label}' must declare physicalObservableType.");
+        if (string.IsNullOrWhiteSpace(target.UnitFamily))
+            errors.Add($"externalTargetTablePath: physical target '{target.Label}' must declare unitFamily.");
+        ValidatePhysicalTargetEvidence(target, errors);
+
+        if (mappings.Count == 0)
+        {
+            errors.Add(
+                $"externalTargetTablePath: physical target '{target.Label}' cannot be compared because no physical observable mapping table is configured.");
+            return;
+        }
+
+        var candidates = mappings.Where(m =>
+            string.Equals(m.ParticleId, target.ParticleId, StringComparison.Ordinal) &&
+            string.Equals(m.PhysicalObservableType, target.PhysicalObservableType, StringComparison.Ordinal) &&
+            string.Equals(m.TargetPhysicalObservableId, target.ObservableId, StringComparison.Ordinal) &&
+            (string.IsNullOrWhiteSpace(target.UnitFamily) ||
+             string.Equals(m.UnitFamily, target.UnitFamily, StringComparison.Ordinal)) &&
+            (string.IsNullOrWhiteSpace(target.TargetEnvironmentId) ||
+             string.IsNullOrWhiteSpace(m.RequiredEnvironmentId) ||
+             string.Equals(m.RequiredEnvironmentId, target.TargetEnvironmentId, StringComparison.Ordinal)) &&
+            (string.IsNullOrWhiteSpace(target.TargetEnvironmentTier) ||
+             string.IsNullOrWhiteSpace(m.RequiredEnvironmentTier) ||
+             string.Equals(m.RequiredEnvironmentTier, target.TargetEnvironmentTier, StringComparison.Ordinal)))
+            .ToList();
+
+        if (candidates.Count == 0)
+        {
+            errors.Add(
+                $"externalTargetTablePath: physical target '{target.Label}' has no mapping for particle '{target.ParticleId}', observable type '{target.PhysicalObservableType}', and computed observable '{target.ObservableId}'.");
+            return;
+        }
+
+        var validated = candidates.FirstOrDefault(m => string.Equals(m.Status, "validated", StringComparison.OrdinalIgnoreCase));
+        if (validated is not null)
+        {
+            ValidatePhysicalTargetCalibration(target, validated, calibrations, errors);
+            return;
+        }
+
+        var blocked = candidates.FirstOrDefault(m => string.Equals(m.Status, "blocked", StringComparison.OrdinalIgnoreCase));
+        if (blocked is not null)
+        {
+            var closure = blocked.ClosureRequirements.Count == 0
+                ? "No closure requirement was provided."
+                : string.Join(" ", blocked.ClosureRequirements);
+            errors.Add(
+                $"externalTargetTablePath: physical target '{target.Label}' is blocked by mapping '{blocked.MappingId}'. Closure requirement: {closure}");
+            return;
+        }
+
+        errors.Add(
+            $"externalTargetTablePath: physical target '{target.Label}' has only provisional mappings; comparison requires a validated mapping.");
+    }
+
+    private static bool IsPhysicalTarget(ExternalTarget target)
+    {
+        return !string.IsNullOrWhiteSpace(target.ParticleId) ||
+               !string.IsNullOrWhiteSpace(target.PhysicalObservableType) ||
+               !string.IsNullOrWhiteSpace(target.UnitFamily) ||
+               string.Equals(target.BenchmarkClass, "physical-observable", StringComparison.OrdinalIgnoreCase) ||
+               string.Equals(target.EvidenceTier, "physical-prediction", StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static void ValidatePhysicalTargetEvidence(ExternalTarget target, List<string> errors)
+    {
+        if (string.IsNullOrWhiteSpace(target.Citation))
+            errors.Add($"externalTargetTablePath: physical target '{target.Label}' must declare citation.");
+        if (string.IsNullOrWhiteSpace(target.SourceUrl))
+            errors.Add($"externalTargetTablePath: physical target '{target.Label}' must declare sourceUrl.");
+        if (string.IsNullOrWhiteSpace(target.RetrievedAt))
+        {
+            errors.Add($"externalTargetTablePath: physical target '{target.Label}' must declare retrievedAt.");
+        }
+        else if (!DateOnly.TryParse(target.RetrievedAt, out _))
+        {
+            errors.Add($"externalTargetTablePath: physical target '{target.Label}' has invalid retrievedAt '{target.RetrievedAt}'; expected yyyy-MM-dd.");
+        }
+
+        if (string.IsNullOrWhiteSpace(target.Unit))
+            errors.Add($"externalTargetTablePath: physical target '{target.Label}' must declare unit.");
+    }
+
+    private static bool IsKnownMappingStatus(string status)
+        => string.Equals(status, "validated", StringComparison.OrdinalIgnoreCase) ||
+           string.Equals(status, "provisional", StringComparison.OrdinalIgnoreCase) ||
+           string.Equals(status, "blocked", StringComparison.OrdinalIgnoreCase);
+
+    private static IReadOnlyList<PhysicalCalibrationRecord> LoadPhysicalCalibrations(
+        Phase5CampaignSpec spec,
+        string specDir,
+        string repoRoot,
+        List<string> errors)
+    {
+        if (string.IsNullOrWhiteSpace(spec.PhysicalCalibrationPath))
+            return Array.Empty<PhysicalCalibrationRecord>();
+
+        var resolved = ResolvePath(spec.PhysicalCalibrationPath, specDir);
+        if (!File.Exists(resolved))
+            return Array.Empty<PhysicalCalibrationRecord>();
+
+        ValidateSchema(
+            File.ReadAllText(resolved),
+            Path.Combine(repoRoot, "schemas", "physical_calibration.schema.json"),
+            "physicalCalibrationPath:physical_calibration.schema.json",
+            errors);
+
+        try
+        {
+            var table = GuJsonDefaults.Deserialize<PhysicalCalibrationTable>(File.ReadAllText(resolved));
+            if (table is null)
+            {
+                errors.Add("physicalCalibrationPath: failed to deserialize PhysicalCalibrationTable.");
+                return Array.Empty<PhysicalCalibrationRecord>();
+            }
+
+            foreach (var calibration in table.Calibrations)
+            {
+                if (string.IsNullOrWhiteSpace(calibration.CalibrationId))
+                    errors.Add("physicalCalibrationPath: every calibration must declare calibrationId.");
+                if (string.IsNullOrWhiteSpace(calibration.MappingId))
+                    errors.Add($"physicalCalibrationPath: calibration '{calibration.CalibrationId}' must declare mappingId.");
+                if (string.IsNullOrWhiteSpace(calibration.SourceComputedObservableId))
+                    errors.Add($"physicalCalibrationPath: calibration '{calibration.CalibrationId}' must declare sourceComputedObservableId.");
+                if (string.IsNullOrWhiteSpace(calibration.TargetUnitFamily))
+                    errors.Add($"physicalCalibrationPath: calibration '{calibration.CalibrationId}' must declare targetUnitFamily.");
+                if (string.IsNullOrWhiteSpace(calibration.TargetUnit))
+                    errors.Add($"physicalCalibrationPath: calibration '{calibration.CalibrationId}' must declare targetUnit.");
+                if (!IsKnownMappingStatus(calibration.Status))
+                    errors.Add($"physicalCalibrationPath: calibration '{calibration.CalibrationId}' has unknown status '{calibration.Status}'.");
+                if (calibration.ScaleFactor <= 0)
+                    errors.Add($"physicalCalibrationPath: calibration '{calibration.CalibrationId}' must have scaleFactor > 0.");
+                if (calibration.ScaleUncertainty < 0)
+                    errors.Add($"physicalCalibrationPath: calibration '{calibration.CalibrationId}' must have scaleUncertainty >= 0.");
+                if (calibration.Assumptions.Count == 0)
+                    errors.Add($"physicalCalibrationPath: calibration '{calibration.CalibrationId}' must declare at least one assumption.");
+                if (string.Equals(calibration.Status, "blocked", StringComparison.OrdinalIgnoreCase) &&
+                    calibration.ClosureRequirements.Count == 0)
+                {
+                    errors.Add($"physicalCalibrationPath: blocked calibration '{calibration.CalibrationId}' must declare closureRequirements.");
+                }
+            }
+
+            return table.Calibrations;
+        }
+        catch (Exception ex)
+        {
+            errors.Add($"physicalCalibrationPath: failed to validate calibrations ({ex.Message}).");
+            return Array.Empty<PhysicalCalibrationRecord>();
+        }
+    }
+
+    private static void ValidatePhysicalTargetCalibration(
+        ExternalTarget target,
+        PhysicalObservableMapping mapping,
+        IReadOnlyList<PhysicalCalibrationRecord> calibrations,
+        List<string> errors)
+    {
+        if (calibrations.Count == 0)
+        {
+            errors.Add(
+                $"externalTargetTablePath: physical target '{target.Label}' cannot be compared because no physical calibration table is configured for validated mapping '{mapping.MappingId}'.");
+            return;
+        }
+
+        var candidates = calibrations.Where(c =>
+            string.Equals(c.MappingId, mapping.MappingId, StringComparison.Ordinal) &&
+            string.Equals(c.SourceComputedObservableId, mapping.SourceComputedObservableId, StringComparison.Ordinal) &&
+            (string.IsNullOrWhiteSpace(target.UnitFamily) ||
+             string.Equals(c.TargetUnitFamily, target.UnitFamily, StringComparison.Ordinal)))
+            .ToList();
+
+        if (candidates.Count == 0)
+        {
+            errors.Add(
+                $"externalTargetTablePath: physical target '{target.Label}' has no calibration for mapping '{mapping.MappingId}' and unit family '{target.UnitFamily}'.");
+            return;
+        }
+
+        if (candidates.Any(c => string.Equals(c.Status, "validated", StringComparison.OrdinalIgnoreCase)))
+            return;
+
+        var blocked = candidates.FirstOrDefault(c => string.Equals(c.Status, "blocked", StringComparison.OrdinalIgnoreCase));
+        if (blocked is not null)
+        {
+            var closure = blocked.ClosureRequirements.Count == 0
+                ? "No closure requirement was provided."
+                : string.Join(" ", blocked.ClosureRequirements);
+            errors.Add(
+                $"externalTargetTablePath: physical target '{target.Label}' is blocked by calibration '{blocked.CalibrationId}'. Closure requirement: {closure}");
+            return;
+        }
+
+        errors.Add(
+            $"externalTargetTablePath: physical target '{target.Label}' has only provisional calibrations; comparison requires a validated calibration.");
     }
 
     private static IReadOnlyList<TargetCoverageBlockerRecord> LoadTargetCoverageBlockers(
@@ -378,6 +664,81 @@ public static class Phase5CampaignSpecValidator
         }
 
         return true;
+    }
+
+    private static void ValidateObservableClassifications(
+        Phase5CampaignSpec spec,
+        string specDir,
+        string repoRoot,
+        List<string> errors)
+    {
+        if (string.IsNullOrWhiteSpace(spec.ObservableClassificationsPath))
+            return;
+
+        var resolved = ResolvePath(spec.ObservableClassificationsPath, specDir);
+        if (!File.Exists(resolved))
+            return;
+
+        ValidateSchema(
+            File.ReadAllText(resolved),
+            Path.Combine(repoRoot, "schemas", "observable_classification.schema.json"),
+            "observableClassificationsPath:observable_classification.schema.json",
+            errors);
+
+        try
+        {
+            var table = GuJsonDefaults.Deserialize<ObservableClassificationTable>(File.ReadAllText(resolved));
+            if (table is null)
+            {
+                errors.Add("observableClassificationsPath: failed to deserialize ObservableClassificationTable.");
+                return;
+            }
+
+            var knownClasses = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+            {
+                "internal-control",
+                "internal-benchmark",
+                "external-lattice-benchmark",
+                "physical-candidate",
+                "physical-observable",
+            };
+
+            foreach (var classification in table.Classifications)
+            {
+                if (string.IsNullOrWhiteSpace(classification.ObservableId))
+                    errors.Add("observableClassificationsPath: every classification must declare observableId.");
+                if (!knownClasses.Contains(classification.Classification))
+                    errors.Add($"observableClassificationsPath: observable '{classification.ObservableId}' has unknown classification '{classification.Classification}'.");
+                if (string.IsNullOrWhiteSpace(classification.Rationale))
+                    errors.Add($"observableClassificationsPath: observable '{classification.ObservableId}' must declare rationale.");
+                if (classification.PhysicalClaimAllowed &&
+                    !string.Equals(classification.Classification, "physical-observable", StringComparison.OrdinalIgnoreCase))
+                {
+                    errors.Add($"observableClassificationsPath: observable '{classification.ObservableId}' cannot allow physical claims unless classified as physical-observable.");
+                }
+            }
+
+            var observablesPath = ResolvePath(spec.ObservablesPath, specDir);
+            if (!File.Exists(observablesPath))
+                return;
+
+            var observables = GuJsonDefaults.Deserialize<List<QuantitativeObservableRecord>>(File.ReadAllText(observablesPath));
+            if (observables is null)
+                return;
+
+            var classifiedIds = table.Classifications
+                .Select(c => c.ObservableId)
+                .ToHashSet(StringComparer.Ordinal);
+            foreach (var observableId in observables.Select(o => o.ObservableId).Distinct(StringComparer.Ordinal))
+            {
+                if (!classifiedIds.Contains(observableId))
+                    errors.Add($"observableClassificationsPath: observable '{observableId}' has no explicit classification.");
+            }
+        }
+        catch (Exception ex)
+        {
+            errors.Add($"observableClassificationsPath: failed to validate classifications ({ex.Message}).");
+        }
     }
 
     private static void ValidateSidecarSchemas(

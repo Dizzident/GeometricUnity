@@ -92,4 +92,16 @@ public sealed class Phase5CampaignSpec
     /// <summary>Optional path to explicit target coverage blocker records.</summary>
     [JsonPropertyName("targetCoverageBlockersPath")]
     public string? TargetCoverageBlockersPath { get; init; }
+
+    /// <summary>Optional path to physical observable mapping records (Phase XVI).</summary>
+    [JsonPropertyName("physicalObservableMappingsPath")]
+    public string? PhysicalObservableMappingsPath { get; init; }
+
+    /// <summary>Optional path to observable classification records (Phase XVI).</summary>
+    [JsonPropertyName("observableClassificationsPath")]
+    public string? ObservableClassificationsPath { get; init; }
+
+    /// <summary>Optional path to physical scale-setting/calibration records (Phase XVII).</summary>
+    [JsonPropertyName("physicalCalibrationPath")]
+    public string? PhysicalCalibrationPath { get; init; }
 }

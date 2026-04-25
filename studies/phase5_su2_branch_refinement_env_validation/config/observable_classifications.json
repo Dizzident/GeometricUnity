@@ -1,0 +1,35 @@
+{
+  "tableId": "phase16-observable-classifications-v1",
+  "classifications": [
+    {
+      "observableId": "bosonic-eigenvalue-ratio-1",
+      "classification": "external-lattice-benchmark",
+      "rationale": "Used as a toy, structured, imported-repo, and Zenodo SU(2) benchmark ratio. It is not a W, Z, Higgs, or photon property.",
+      "physicalClaimAllowed": false
+    },
+    {
+      "observableId": "bosonic-eigenvalue-ratio-2",
+      "classification": "internal-benchmark",
+      "rationale": "Internal bosonic spectral ratio used for control and imported-repo benchmark comparison. No physical particle mapping is validated.",
+      "physicalClaimAllowed": false
+    },
+    {
+      "observableId": "bosonic-eigenvalue-ratio-3",
+      "classification": "internal-benchmark",
+      "rationale": "Internal bosonic spectral ratio used for benchmark behavior only. No physical particle mapping is validated.",
+      "physicalClaimAllowed": false
+    },
+    {
+      "observableId": "fermionic-eigenvalue-ratio-1",
+      "classification": "internal-benchmark",
+      "rationale": "Internal fermionic spectral ratio used for benchmark behavior only. It is not a physical boson observable.",
+      "physicalClaimAllowed": false
+    },
+    {
+      "observableId": "fermionic-eigenvalue-ratio-2",
+      "classification": "internal-benchmark",
+      "rationale": "Internal fermionic spectral ratio used for benchmark behavior only. It is not a physical boson observable.",
+      "physicalClaimAllowed": false
+    }
+  ]
+}

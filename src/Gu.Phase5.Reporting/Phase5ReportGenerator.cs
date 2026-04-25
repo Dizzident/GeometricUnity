@@ -36,7 +36,12 @@ public static class Phase5ReportGenerator
         FalsifierSummary? falsifiers = null,
         IReadOnlyList<Phase3Reporting.NegativeResultEntry>? negativeResults = null,
         ShiabFamilyScopeRecord? shiabFamilyScope = null,
-        string? geometryEvidenceLabel = null)
+        string? geometryEvidenceLabel = null,
+        ObservableClassificationTable? observableClassifications = null,
+        IReadOnlyList<PhysicalObservableMapping>? physicalObservableMappings = null,
+        IReadOnlyList<PhysicalPredictionRecord>? physicalPredictions = null,
+        bool physicalCalibrationAvailable = false,
+        bool physicalTargetEvidenceAvailable = false)
     {
         ArgumentNullException.ThrowIfNull(studyId);
         ArgumentNullException.ThrowIfNull(dossiers);
@@ -59,6 +64,12 @@ public static class Phase5ReportGenerator
         // P11-M7: default to toy-control if not specified (current repo context)
         string effectiveGeomLabel = geometryEvidenceLabel ?? GeometryEvidenceClassifier.ToyControl;
         string? observerseBlock = GeometryEvidenceClassifier.GetBlockStatement(effectiveGeomLabel);
+        var physicalClaimGate = PhysicalClaimGate.Evaluate(
+            physicalObservableMappings,
+            observableClassifications,
+            falsifiers,
+            calibrationAvailable: physicalCalibrationAvailable,
+            physicalTargetEvidenceAvailable: physicalTargetEvidenceAvailable);
 
         return new Phase5Report
         {
@@ -73,6 +84,9 @@ public static class Phase5ReportGenerator
             ShiabFamilyScope = shiabFamilyScope,
             GeometryEvidenceLabel = effectiveGeomLabel,
             ObserverseRecoveryBlock = observerseBlock,
+            ObservableClassifications = observableClassifications,
+            PhysicalClaimGate = physicalClaimGate,
+            PhysicalPredictions = physicalPredictions,
             Provenance = provenance,
             GeneratedAt = DateTimeOffset.UtcNow,
         };
@@ -155,6 +169,44 @@ public static class Phase5ReportGenerator
         if (report.ObserverseRecoveryBlock is not null)
             sb.AppendLine($"- {report.ObserverseRecoveryBlock}");
         sb.AppendLine();
+
+        if (report.ObservableClassifications is { } classifications)
+        {
+            sb.AppendLine("## Observable Classifications");
+            foreach (var classification in classifications.Classifications)
+            {
+                sb.AppendLine(
+                    $"- {classification.ObservableId}: {classification.Classification}; physical claim allowed: {(classification.PhysicalClaimAllowed ? "yes" : "no")}. {classification.Rationale}");
+            }
+            sb.AppendLine();
+        }
+
+        if (report.PhysicalClaimGate is { } gate)
+        {
+            sb.AppendLine("## Physical Claim Gate");
+            foreach (var line in gate.SummaryLines)
+                sb.AppendLine(line);
+            sb.AppendLine();
+        }
+
+        if (report.PhysicalPredictions is { Count: > 0 } predictions)
+        {
+            sb.AppendLine("## Physical Prediction Records");
+            foreach (var prediction in predictions)
+            {
+                if (string.Equals(prediction.Status, "predicted", StringComparison.OrdinalIgnoreCase))
+                {
+                    sb.AppendLine(
+                        $"- {prediction.TargetPhysicalObservableId}: {prediction.Value:G6} +/- {prediction.Uncertainty:G6} {prediction.Unit}; source {prediction.SourceComputedObservableId}; mapping {prediction.MappingId}.");
+                }
+                else
+                {
+                    sb.AppendLine(
+                        $"- {prediction.MappingId}: blocked. {string.Join(" ", prediction.BlockReasons)}");
+                }
+            }
+            sb.AppendLine();
+        }
 
         sb.AppendLine("## Provenance");
         sb.AppendLine($"- Code revision: {report.Provenance.CodeRevision}");

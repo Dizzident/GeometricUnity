@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/physical_observable_mapping.schema.json",
+  "title": "PhysicalObservableMappingTable",
+  "type": "object",
+  "required": ["tableId", "mappings"],
+  "properties": {
+    "tableId": { "type": "string" },
+    "mappings": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/PhysicalObservableMapping" }
+    }
+  },
+  "$defs": {
+    "PhysicalObservableMapping": {
+      "type": "object",
+      "required": [
+        "mappingId",
+        "particleId",
+        "physicalObservableType",
+        "sourceComputedObservableId",
+        "unitFamily",
+        "status",
+        "assumptions",
+        "closureRequirements"
+      ],
+      "properties": {
+        "mappingId": { "type": "string" },
+        "particleId": { "type": "string" },
+        "physicalObservableType": {
+          "type": "string",
+          "enum": ["mass", "mass-ratio", "width", "coupling", "branching-ratio", "mixing-angle", "masslessness"]
+        },
+        "sourceComputedObservableId": { "type": "string" },
+        "targetPhysicalObservableId": { "type": ["string", "null"], "minLength": 1 },
+        "requiredEnvironmentId": { "type": ["string", "null"] },
+        "requiredEnvironmentTier": { "type": ["string", "null"] },
+        "requiredBranchId": { "type": ["string", "null"] },
+        "unitFamily": {
+          "type": "string",
+          "enum": ["dimensionless", "mass-energy", "inverse-time"]
+        },
+        "status": {
+          "type": "string",
+          "enum": ["validated", "provisional", "blocked"]
+        },
+        "assumptions": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "closureRequirements": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}

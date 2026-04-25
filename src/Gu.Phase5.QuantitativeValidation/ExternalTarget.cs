@@ -44,6 +44,38 @@ public sealed class ExternalTarget
     [JsonPropertyName("benchmarkClass")]
     public string? BenchmarkClass { get; init; }
 
+    /// <summary>Physical particle identifier when this target is a real particle-property target.</summary>
+    [JsonPropertyName("particleId")]
+    public string? ParticleId { get; init; }
+
+    /// <summary>Physical observable type, for example mass, width, coupling, or branching-ratio.</summary>
+    [JsonPropertyName("physicalObservableType")]
+    public string? PhysicalObservableType { get; init; }
+
+    /// <summary>Unit family required by the physical target, for example dimensionless or mass-energy.</summary>
+    [JsonPropertyName("unitFamily")]
+    public string? UnitFamily { get; init; }
+
+    /// <summary>Target unit, for example GeV or dimensionless.</summary>
+    [JsonPropertyName("unit")]
+    public string? Unit { get; init; }
+
+    /// <summary>Canonical citation for physical target evidence.</summary>
+    [JsonPropertyName("citation")]
+    public string? Citation { get; init; }
+
+    /// <summary>Source URL for physical target evidence.</summary>
+    [JsonPropertyName("sourceUrl")]
+    public string? SourceUrl { get; init; }
+
+    /// <summary>Date the physical target source was retrieved, in yyyy-MM-dd format.</summary>
+    [JsonPropertyName("retrievedAt")]
+    public string? RetrievedAt { get; init; }
+
+    /// <summary>Confidence level for upper/lower-limit physical targets, for example 95% CL.</summary>
+    [JsonPropertyName("confidenceLevel")]
+    public string? ConfidenceLevel { get; init; }
+
     /// <summary>Optional environment ID that this target must be matched against.</summary>
     [JsonPropertyName("targetEnvironmentId")]
     public string? TargetEnvironmentId { get; init; }

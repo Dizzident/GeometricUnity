@@ -45,7 +45,10 @@ public sealed class Phase5CampaignSpecValidatorTests : IDisposable
         string dir,
         string schemaVersion = "1.0.0",
         IReadOnlyList<string>? extraEnvPaths = null,
-        string? targetCoverageBlockersPath = null)
+        string? targetCoverageBlockersPath = null,
+        string? physicalObservableMappingsPath = null,
+        string? observableClassificationsPath = null,
+        string? physicalCalibrationPath = null)
     {
         File.WriteAllText(
             Path.Combine(dir, "targets.json"),
@@ -212,6 +215,9 @@ public sealed class Phase5CampaignSpecValidatorTests : IDisposable
             },
             FalsificationPolicy = new FalsificationPolicy(),
             TargetCoverageBlockersPath = targetCoverageBlockersPath,
+            PhysicalObservableMappingsPath = physicalObservableMappingsPath,
+            ObservableClassificationsPath = observableClassificationsPath,
+            PhysicalCalibrationPath = physicalCalibrationPath,
             Provenance = MakeProvenance(),
         };
     }
@@ -408,6 +414,253 @@ public sealed class Phase5CampaignSpecValidatorTests : IDisposable
 
         var result = Phase5CampaignSpecValidator.Validate(spec, _tempDir, requireReferenceSidecars: false);
         Assert.True(result.IsValid, string.Join("; ", result.Errors));
+    }
+
+    [Fact]
+    public void Validate_PhysicalTargetWithoutMapping_ReportsPlainEnglishError()
+    {
+        var spec = MakeValidSpec(_tempDir);
+        WritePhysicalTarget();
+
+        var result = Phase5CampaignSpecValidator.Validate(spec, _tempDir, requireReferenceSidecars: false);
+
+        Assert.False(result.IsValid);
+        Assert.Contains(result.Errors, e => e.Contains("physical target 'w-mass'") && e.Contains("no physical observable mapping table"));
+    }
+
+    [Fact]
+    public void Validate_PhysicalTargetWithBlockedMapping_ReportsClosureRequirement()
+    {
+        var spec = MakeValidSpec(_tempDir, physicalObservableMappingsPath: "physical_mappings.json");
+        WritePhysicalTarget();
+        WriteMappingTable(status: "blocked");
+
+        var result = Phase5CampaignSpecValidator.Validate(spec, _tempDir, requireReferenceSidecars: false);
+
+        Assert.False(result.IsValid);
+        Assert.Contains(result.Errors, e => e.Contains("blocked by mapping 'map-w-mass'") && e.Contains("Calibrate the vector mass."));
+    }
+
+    [Fact]
+    public void Validate_NonPhysicalBenchmarkTargets_DoNotRequirePhysicalMappings()
+    {
+        var spec = MakeValidSpec(_tempDir);
+
+        var result = Phase5CampaignSpecValidator.Validate(spec, _tempDir, requireReferenceSidecars: false);
+
+        Assert.True(result.IsValid, string.Join("; ", result.Errors));
+    }
+
+    [Fact]
+    public void Validate_PhysicalTargetWithValidatedMapping_ReturnsValid()
+    {
+        var spec = MakeValidSpec(
+            _tempDir,
+            physicalObservableMappingsPath: "physical_mappings.json",
+            physicalCalibrationPath: "physical_calibrations.json");
+        WritePhysicalTarget();
+        WriteMappingTable(status: "validated");
+        WriteCalibrationTable(status: "validated");
+
+        var result = Phase5CampaignSpecValidator.Validate(spec, _tempDir, requireReferenceSidecars: false);
+
+        Assert.True(result.IsValid, string.Join("; ", result.Errors));
+    }
+
+    [Fact]
+    public void Validate_PhysicalTargetWithValidatedMappingButNoCalibration_ReportsError()
+    {
+        var spec = MakeValidSpec(_tempDir, physicalObservableMappingsPath: "physical_mappings.json");
+        WritePhysicalTarget();
+        WriteMappingTable(status: "validated");
+
+        var result = Phase5CampaignSpecValidator.Validate(spec, _tempDir, requireReferenceSidecars: false);
+
+        Assert.False(result.IsValid);
+        Assert.Contains(result.Errors, e => e.Contains("no physical calibration table") && e.Contains("map-w-mass"));
+    }
+
+    [Fact]
+    public void Validate_PhysicalTargetWithBlockedCalibration_ReportsClosureRequirement()
+    {
+        var spec = MakeValidSpec(
+            _tempDir,
+            physicalObservableMappingsPath: "physical_mappings.json",
+            physicalCalibrationPath: "physical_calibrations.json");
+        WritePhysicalTarget();
+        WriteMappingTable(status: "validated");
+        WriteCalibrationTable(status: "blocked");
+
+        var result = Phase5CampaignSpecValidator.Validate(spec, _tempDir, requireReferenceSidecars: false);
+
+        Assert.False(result.IsValid);
+        Assert.Contains(result.Errors, e => e.Contains("blocked by calibration 'cal-w-mass'") && e.Contains("Set the GeV scale."));
+    }
+
+    [Fact]
+    public void Validate_PhysicalTargetWithoutCitationMetadata_ReportsEvidenceErrors()
+    {
+        var spec = MakeValidSpec(_tempDir, physicalObservableMappingsPath: "physical_mappings.json");
+        WritePhysicalTargetWithoutCitationMetadata();
+        WriteMappingTable(status: "validated");
+
+        var result = Phase5CampaignSpecValidator.Validate(spec, _tempDir, requireReferenceSidecars: false);
+
+        Assert.False(result.IsValid);
+        Assert.Contains(result.Errors, e => e.Contains("physical target 'w-mass'") && e.Contains("citation"));
+        Assert.Contains(result.Errors, e => e.Contains("physical target 'w-mass'") && e.Contains("sourceUrl"));
+        Assert.Contains(result.Errors, e => e.Contains("physical target 'w-mass'") && e.Contains("retrievedAt"));
+        Assert.Contains(result.Errors, e => e.Contains("physical target 'w-mass'") && e.Contains("unit."));
+    }
+
+    [Fact]
+    public void Validate_ObservableClassificationPathRequiresEveryObservable()
+    {
+        var spec = MakeValidSpec(_tempDir, observableClassificationsPath: "observable_classifications.json");
+        File.WriteAllText(
+            Path.Combine(_tempDir, "observable_classifications.json"),
+            GuJsonDefaults.Serialize(new ObservableClassificationTable
+            {
+                TableId = "classifications",
+                Classifications = [],
+            }));
+
+        var result = Phase5CampaignSpecValidator.Validate(spec, _tempDir, requireReferenceSidecars: false);
+
+        Assert.False(result.IsValid);
+        Assert.Contains(result.Errors, e => e.Contains("observable 'q1' has no explicit classification"));
+    }
+
+    private void WritePhysicalTarget()
+    {
+        File.WriteAllText(
+            Path.Combine(_tempDir, "targets.json"),
+            GuJsonDefaults.Serialize(new ExternalTargetTable
+            {
+                TableId = "validator-targets",
+                Targets =
+                [
+                    new ExternalTarget
+                    {
+                        Label = "w-mass",
+                        ObservableId = "q1",
+                        Value = 80.0,
+                        Uncertainty = 0.1,
+                        Source = "physical-target-test",
+                        EvidenceTier = "physical-prediction",
+                        BenchmarkClass = "physical-observable",
+                        ParticleId = "w-boson",
+                        PhysicalObservableType = "mass",
+                        UnitFamily = "mass-energy",
+                        Unit = "GeV",
+                        Citation = "Unit test physical target citation.",
+                        SourceUrl = "https://example.test/w-mass",
+                        RetrievedAt = "2026-04-25",
+                        DistributionModel = "gaussian",
+                    },
+                    new ExternalTarget
+                    {
+                        Label = "derived-q1",
+                        ObservableId = "q1",
+                        Value = 1.05,
+                        Uncertainty = 0.08,
+                        Source = "derived-synthetic-v1",
+                        EvidenceTier = "derived-synthetic",
+                        DistributionModel = "gaussian",
+                    },
+                ],
+            }));
+    }
+
+    private void WritePhysicalTargetWithoutCitationMetadata()
+    {
+        File.WriteAllText(
+            Path.Combine(_tempDir, "targets.json"),
+            GuJsonDefaults.Serialize(new ExternalTargetTable
+            {
+                TableId = "validator-targets",
+                Targets =
+                [
+                    new ExternalTarget
+                    {
+                        Label = "w-mass",
+                        ObservableId = "q1",
+                        Value = 80.0,
+                        Uncertainty = 0.1,
+                        Source = "physical-target-test",
+                        EvidenceTier = "physical-prediction",
+                        BenchmarkClass = "physical-observable",
+                        ParticleId = "w-boson",
+                        PhysicalObservableType = "mass",
+                        UnitFamily = "mass-energy",
+                        DistributionModel = "gaussian",
+                    },
+                    new ExternalTarget
+                    {
+                        Label = "derived-q1",
+                        ObservableId = "q1",
+                        Value = 1.05,
+                        Uncertainty = 0.08,
+                        Source = "derived-synthetic-v1",
+                        EvidenceTier = "derived-synthetic",
+                        DistributionModel = "gaussian",
+                    },
+                ],
+            }));
+    }
+
+    private void WriteMappingTable(string status)
+    {
+        File.WriteAllText(
+            Path.Combine(_tempDir, "physical_mappings.json"),
+            GuJsonDefaults.Serialize(new PhysicalObservableMappingTable
+            {
+                TableId = "physical-mappings",
+                Mappings =
+                [
+                    new PhysicalObservableMapping
+                    {
+                        MappingId = "map-w-mass",
+                        ParticleId = "w-boson",
+                        PhysicalObservableType = "mass",
+                        SourceComputedObservableId = "q1",
+                        TargetPhysicalObservableId = "q1",
+                        UnitFamily = "mass-energy",
+                        Status = status,
+                        Assumptions = ["test assumption"],
+                        ClosureRequirements = ["Calibrate the vector mass."],
+                    },
+                ],
+            }));
+    }
+
+    private void WriteCalibrationTable(string status)
+    {
+        File.WriteAllText(
+            Path.Combine(_tempDir, "physical_calibrations.json"),
+            GuJsonDefaults.Serialize(new PhysicalCalibrationTable
+            {
+                TableId = "physical-calibrations",
+                Calibrations =
+                [
+                    new PhysicalCalibrationRecord
+                    {
+                        CalibrationId = "cal-w-mass",
+                        MappingId = "map-w-mass",
+                        SourceComputedObservableId = "q1",
+                        SourceUnitFamily = "dimensionless",
+                        TargetUnitFamily = "mass-energy",
+                        TargetUnit = "GeV",
+                        ScaleFactor = 80.0,
+                        ScaleUncertainty = 0.1,
+                        Status = status,
+                        Method = "test-scale-setting",
+                        Source = "test",
+                        Assumptions = ["test calibration assumption"],
+                        ClosureRequirements = ["Set the GeV scale."],
+                    },
+                ],
+            }));
     }
 
     // -----------------------------------------------------------------------

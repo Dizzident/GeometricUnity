@@ -4556,7 +4556,10 @@ static int RunPhase5Campaign(string[] args)
             representationContentRecords: artifacts.RepresentationContentRecords,
             couplingConsistencyRecords: artifacts.CouplingConsistencyRecords,
             sidecarSummary: artifacts.SidecarSummary,
-            refinementEvidenceManifest: artifacts.RefinementEvidenceManifest);
+            refinementEvidenceManifest: artifacts.RefinementEvidenceManifest,
+            observableClassifications: artifacts.ObservableClassifications,
+            physicalObservableMappings: artifacts.PhysicalObservableMappings?.Mappings,
+            physicalCalibrations: artifacts.PhysicalCalibrations?.Calibrations);
     }
     catch (Exception ex)
     {
@@ -4604,6 +4607,12 @@ static int RunPhase5Campaign(string[] args)
         CopyIfExists(Path.Combine(specDir, spec.CouplingConsistencyPath), Path.Combine(inputsDir, "coupling_consistency.json"));
     if (spec.TargetCoverageBlockersPath is not null)
         CopyIfExists(Path.Combine(specDir, spec.TargetCoverageBlockersPath), Path.Combine(inputsDir, "target_coverage_blockers.json"));
+    if (spec.ObservableClassificationsPath is not null)
+        CopyIfExists(Path.Combine(specDir, spec.ObservableClassificationsPath), Path.Combine(inputsDir, "observable_classifications.json"));
+    if (spec.PhysicalObservableMappingsPath is not null)
+        CopyIfExists(Path.Combine(specDir, spec.PhysicalObservableMappingsPath), Path.Combine(inputsDir, "physical_observable_mappings.json"));
+    if (spec.PhysicalCalibrationPath is not null)
+        CopyIfExists(Path.Combine(specDir, spec.PhysicalCalibrationPath), Path.Combine(inputsDir, "physical_calibrations.json"));
     CopyIfExists(Path.Combine(specDir, "sidecar_summary.json"), Path.Combine(inputsDir, "sidecar_summary.json"));
     CopyIfExists(Path.Combine(specDir, "candidate_provenance_links.json"), Path.Combine(inputsDir, "candidate_provenance_links.json"));
     for (int i = 0; i < spec.EnvironmentRecordPaths.Count; i++)
@@ -4911,6 +4920,41 @@ static string GeneratePhase5ReportMarkdown(
         }
     }
     sb.AppendLine();
+    if (report.ObservableClassifications is not null)
+    {
+        sb.AppendLine("## Observable Classifications");
+        foreach (var classification in report.ObservableClassifications.Classifications)
+        {
+            sb.AppendLine(
+                $"- {classification.ObservableId}: {classification.Classification}; physical claim allowed: {(classification.PhysicalClaimAllowed ? "yes" : "no")}. {classification.Rationale}");
+        }
+        sb.AppendLine();
+    }
+    if (report.PhysicalClaimGate is not null)
+    {
+        sb.AppendLine("## Physical Claim Gate");
+        foreach (var line in report.PhysicalClaimGate.SummaryLines)
+            sb.AppendLine(line);
+        sb.AppendLine();
+    }
+    if (report.PhysicalPredictions is { Count: > 0 })
+    {
+        sb.AppendLine("## Physical Prediction Records");
+        foreach (var prediction in report.PhysicalPredictions)
+        {
+            if (string.Equals(prediction.Status, "predicted", StringComparison.OrdinalIgnoreCase))
+            {
+                sb.AppendLine(
+                    $"- {prediction.TargetPhysicalObservableId}: {prediction.Value:G6} +/- {prediction.Uncertainty:G6} {prediction.Unit}; source {prediction.SourceComputedObservableId}; mapping {prediction.MappingId}.");
+            }
+            else
+            {
+                sb.AppendLine(
+                    $"- {prediction.MappingId}: blocked. {string.Join(" ", prediction.BlockReasons)}");
+            }
+        }
+        sb.AppendLine();
+    }
     sb.AppendLine("## Dossiers");
     foreach (var dossierId in report.DossierIds)
         sb.AppendLine($"- {dossierId}");

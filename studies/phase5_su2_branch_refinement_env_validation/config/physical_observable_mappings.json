@@ -1,0 +1,23 @@
+{
+  "tableId": "phase16-physical-observable-mappings-v1",
+  "mappings": [
+    {
+      "mappingId": "blocked-photon-masslessness-from-bosonic-ratio-1",
+      "particleId": "photon",
+      "physicalObservableType": "masslessness",
+      "sourceComputedObservableId": "bosonic-eigenvalue-ratio-1",
+      "targetPhysicalObservableId": "physical-photon-masslessness",
+      "requiredEnvironmentTier": "structured",
+      "unitFamily": "dimensionless",
+      "status": "blocked",
+      "assumptions": [
+        "A low bosonic eigenvalue-ratio would have to be shown to identify a protected gauge mode.",
+        "The current observable is an eigenvalue ratio in a benchmark calculation, not a calibrated particle mass."
+      ],
+      "closureRequirements": [
+        "Derive and test a gauge-mode identification map.",
+        "Add scale or dimensionless calibration machinery before any physical target comparison."
+      ]
+    }
+  ]
+}

@@ -71,6 +71,18 @@ public sealed class Phase5Report
     [JsonPropertyName("observerseRecoveryBlock")]
     public string? ObserverseRecoveryBlock { get; init; }
 
+    /// <summary>Phase XVI observable classifications included in the report.</summary>
+    [JsonPropertyName("observableClassifications")]
+    public ObservableClassificationTable? ObservableClassifications { get; init; }
+
+    /// <summary>Phase XVI fail-closed gate for real boson-prediction language.</summary>
+    [JsonPropertyName("physicalClaimGate")]
+    public PhysicalClaimGate? PhysicalClaimGate { get; init; }
+
+    /// <summary>Candidate physical prediction records. Blocked records are diagnostics only.</summary>
+    [JsonPropertyName("physicalPredictions")]
+    public IReadOnlyList<PhysicalPredictionRecord>? PhysicalPredictions { get; init; }
+
     /// <summary>Provenance metadata.</summary>
     [JsonPropertyName("provenance")]
     public required ProvenanceMeta Provenance { get; init; }

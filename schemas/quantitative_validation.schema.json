@@ -274,6 +274,38 @@
           "type": "string",
           "description": "Optional environment tier selector for this target."
         },
+        "particleId": {
+          "type": "string",
+          "description": "Physical particle identifier. Presence marks the target as a physical target requiring a validated physical observable mapping."
+        },
+        "physicalObservableType": {
+          "type": "string",
+          "description": "Physical observable type, for example mass, width, coupling, or branching-ratio."
+        },
+        "unitFamily": {
+          "type": "string",
+          "description": "Physical unit family required by the target."
+        },
+        "unit": {
+          "type": "string",
+          "description": "Physical target unit, for example GeV or dimensionless."
+        },
+        "citation": {
+          "type": "string",
+          "description": "Canonical citation for physical target evidence."
+        },
+        "sourceUrl": {
+          "type": "string",
+          "description": "Source URL for physical target evidence."
+        },
+        "retrievedAt": {
+          "type": "string",
+          "description": "Date the physical target source was retrieved, in yyyy-MM-dd format."
+        },
+        "confidenceLevel": {
+          "type": "string",
+          "description": "Confidence level for upper/lower-limit physical targets."
+        },
         "notes": {
           "type": "string",
           "description": "Optional diagnostic notes for the target."

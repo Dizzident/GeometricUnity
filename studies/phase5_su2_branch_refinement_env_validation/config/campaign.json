@@ -94,5 +94,8 @@
   "environmentVariancePath": "environment_variance.json",
   "representationContentPath": "representation_content.json",
   "couplingConsistencyPath": "coupling_consistency.json",
-  "targetCoverageBlockersPath": "target_coverage_blockers.json"
+  "targetCoverageBlockersPath": "target_coverage_blockers.json",
+  "physicalObservableMappingsPath": "physical_observable_mappings.json",
+  "observableClassificationsPath": "observable_classifications.json",
+  "physicalCalibrationPath": "physical_calibrations.json"
 }

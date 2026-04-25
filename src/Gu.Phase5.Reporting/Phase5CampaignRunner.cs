@@ -56,7 +56,10 @@ public sealed class Phase5CampaignRunner
         IReadOnlyList<RepresentationContentRecord>? representationContentRecords = null,
         IReadOnlyList<CouplingConsistencyRecord>? couplingConsistencyRecords = null,
         SidecarSummary? sidecarSummary = null,
-        RefinementEvidenceManifest? refinementEvidenceManifest = null)
+        RefinementEvidenceManifest? refinementEvidenceManifest = null,
+        ObservableClassificationTable? observableClassifications = null,
+        IReadOnlyList<PhysicalObservableMapping>? physicalObservableMappings = null,
+        IReadOnlyList<PhysicalCalibrationRecord>? physicalCalibrations = null)
     {
         ArgumentNullException.ThrowIfNull(spec);
         ArgumentNullException.ThrowIfNull(branchPipelineExecutor);
@@ -177,6 +180,18 @@ public sealed class Phase5CampaignRunner
             environmentVarianceRecords: environmentVarianceRecords,
             representationContentRecords: representationContentRecords);
 
+        var physicalPredictions = PhysicalPredictionProjector.Project(
+            observablesSource,
+            physicalObservableMappings,
+            observableClassifications,
+            physicalCalibrations is null
+                ? null
+                : new PhysicalCalibrationTable
+                {
+                    TableId = "campaign-physical-calibrations",
+                    Calibrations = physicalCalibrations,
+                });
+
         // Step 6: Generate final report (M53)
         var report = Phase5ReportGenerator.Generate(
             studyId: spec.CampaignId,
@@ -185,7 +200,15 @@ public sealed class Phase5CampaignRunner
             branchRecord: branchRecord,
             refinementResult: refinementResult,
             refinementEvidenceManifest: refinementEvidenceManifest,
-            falsifiers: falsifiers);
+            falsifiers: falsifiers,
+            observableClassifications: observableClassifications,
+            physicalObservableMappings: physicalObservableMappings,
+            physicalPredictions: physicalPredictions,
+            physicalCalibrationAvailable: physicalCalibrations?.Any(c =>
+                string.Equals(c.Status, "validated", StringComparison.OrdinalIgnoreCase)) == true,
+            physicalTargetEvidenceAvailable: targetTable.Targets.Any(t =>
+                !string.IsNullOrWhiteSpace(t.ParticleId) ||
+                !string.IsNullOrWhiteSpace(t.PhysicalObservableType)));
 
         // Step 7: P11-M5 representation-content stabilization record.
         // Produced whenever a fatal representation-content falsifier is active.

@@ -1,0 +1,26 @@
+{
+  "tableId": "phase17-physical-calibrations-v1",
+  "calibrations": [
+    {
+      "calibrationId": "blocked-photon-masslessness-normalization-v1",
+      "mappingId": "blocked-photon-masslessness-from-bosonic-ratio-1",
+      "sourceComputedObservableId": "bosonic-eigenvalue-ratio-1",
+      "sourceUnitFamily": "dimensionless",
+      "targetUnitFamily": "dimensionless",
+      "targetUnit": "normalized-zero-mode-indicator",
+      "scaleFactor": 1.0,
+      "scaleUncertainty": 0.0,
+      "status": "blocked",
+      "method": "not-yet-calibrated-placeholder",
+      "source": "phase17-planning",
+      "assumptions": [
+        "Dimensionless physical comparisons still require a declared normalization contract.",
+        "The current ratio has not been proven to be a protected photon masslessness indicator."
+      ],
+      "closureRequirements": [
+        "Define the zero-mode normalization observable and tests.",
+        "Show how uncertainty propagates from the benchmark ratio into the physical claim variable."
+      ]
+    }
+  ]
+}

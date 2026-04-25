@@ -99,6 +99,18 @@
     "targetCoverageBlockersPath": {
       "type": ["string", "null"],
       "description": "Optional path to explicit target coverage blocker records for targets that are intentionally not computable in the current campaign."
+    },
+    "physicalObservableMappingsPath": {
+      "type": ["string", "null"],
+      "description": "Optional path to Phase XVI physical observable mapping records."
+    },
+    "observableClassificationsPath": {
+      "type": ["string", "null"],
+      "description": "Optional path to Phase XVI observable classification records."
+    },
+    "physicalCalibrationPath": {
+      "type": ["string", "null"],
+      "description": "Optional path to Phase XVII physical scale-setting/calibration records."
     }
   },
   "$defs": {

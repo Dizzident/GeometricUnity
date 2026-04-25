@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gu://schemas/physical_calibration.schema.json",
+  "title": "PhysicalCalibrationTable",
+  "type": "object",
+  "required": ["tableId", "calibrations"],
+  "properties": {
+    "tableId": { "type": "string" },
+    "calibrations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/PhysicalCalibrationRecord" }
+    }
+  },
+  "$defs": {
+    "PhysicalCalibrationRecord": {
+      "type": "object",
+      "required": [
+        "calibrationId",
+        "mappingId",
+        "sourceComputedObservableId",
+        "sourceUnitFamily",
+        "targetUnitFamily",
+        "targetUnit",
+        "scaleFactor",
+        "scaleUncertainty",
+        "status",
+        "method",
+        "source",
+        "assumptions",
+        "closureRequirements"
+      ],
+      "properties": {
+        "calibrationId": { "type": "string" },
+        "mappingId": { "type": "string" },
+        "sourceComputedObservableId": { "type": "string" },
+        "sourceUnitFamily": {
+          "type": "string",
+          "enum": ["dimensionless", "mass-energy", "inverse-time"]
+        },
+        "targetUnitFamily": {
+          "type": "string",
+          "enum": ["dimensionless", "mass-energy", "inverse-time"]
+        },
+        "targetUnit": { "type": "string" },
+        "scaleFactor": { "type": "number", "exclusiveMinimum": 0 },
+        "scaleUncertainty": { "type": "number", "minimum": 0 },
+        "status": {
+          "type": "string",
+          "enum": ["validated", "provisional", "blocked"]
+        },
+        "method": { "type": "string" },
+        "source": { "type": "string" },
+        "assumptions": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "closureRequirements": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}
