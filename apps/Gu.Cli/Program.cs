@@ -119,6 +119,8 @@ switch (args[0])
         return EvaluateWzIdentityRuleReadiness(args);
     case "compute-wz-identity-features":
         return ComputeWzIdentityFeatures(args);
+    case "evaluate-electroweak-mixing-convention":
+        return EvaluateElectroweakMixingConvention(args);
     case "build-validation-dossier":
         return BuildValidationDossier(args);
     case "verify-study-freshness":
@@ -4685,6 +4687,47 @@ static int ComputeWzIdentityFeatures(string[] args)
     }
 }
 
+static int EvaluateElectroweakMixingConvention(string[] args)
+{
+    var identityFeaturesPath = ParseFlag(args, "--identity-features", "");
+    var mixingConventionPath = ParseFlag(args, "--mixing-convention", "");
+    var outPath = ParseFlag(args, "--out", "");
+    if (string.IsNullOrWhiteSpace(identityFeaturesPath) || string.IsNullOrWhiteSpace(outPath))
+    {
+        Console.Error.WriteLine("Usage: gu evaluate-electroweak-mixing-convention --identity-features <identity_features.json> [--mixing-convention <mixing_convention.json>] --out <readiness.json>");
+        return 1;
+    }
+
+    try
+    {
+        var provenance = new ProvenanceMeta
+        {
+            CreatedAt = DateTimeOffset.Parse("2026-04-26T00:00:00+00:00"),
+            CodeRevision = "working-tree",
+            Branch = new BranchRef { BranchId = "phase26-electroweak-mixing-convention", SchemaVersion = "1.0" },
+            Backend = "cpu",
+        };
+        var result = ElectroweakMixingConventionReadinessEvaluator.Evaluate(
+            File.ReadAllText(identityFeaturesPath),
+            string.IsNullOrWhiteSpace(mixingConventionPath) ? null : File.ReadAllText(mixingConventionPath),
+            provenance);
+
+        Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(outPath))!);
+        File.WriteAllText(outPath, GuJsonDefaults.Serialize(result));
+
+        Console.WriteLine($"evaluate-electroweak-mixing-convention done. Output: {outPath}");
+        Console.WriteLine($"  terminalStatus: {result.TerminalStatus}");
+        Console.WriteLine($"  sourceFeatureCount: {result.SourceFeatureCount}");
+        Console.WriteLine($"  chargeSectorAssignments: {result.ChargeSectorAssignments.Count}");
+        return 0;
+    }
+    catch (Exception ex)
+    {
+        Console.Error.WriteLine($"evaluate-electroweak-mixing-convention failed: {ex.Message}");
+        return 1;
+    }
+}
+
 static string ResolvePath(string specDir, string path)
 {
     if (Path.IsPathRooted(path) || File.Exists(path) || Directory.Exists(path))
@@ -5872,6 +5915,7 @@ static void PrintUsage()
     Console.WriteLine("  gu generate-wz-identity-hypotheses --candidate-mode-sources <f> --out-dir <dir>  Generate Phase XXIII W/Z identity hypotheses");
     Console.WriteLine("  gu evaluate-wz-identity-rule-readiness --candidate-mode-sources <f> --mode-families <f> --out <f>  Evaluate Phase XXIV W/Z identity-rule prerequisites");
     Console.WriteLine("  gu compute-wz-identity-features --mode-families <f> --phase12-mode-families <f> --mode-signature-root <dir> --coupling-atlases <csv> --out-dir <dir>  Compute Phase XXV internal identity features");
+    Console.WriteLine("  gu evaluate-electroweak-mixing-convention --identity-features <f> [--mixing-convention <f>] --out <f>  Evaluate Phase XXVI electroweak mixing convention readiness");
     Console.WriteLine("  gu build-validation-dossier --study-manifest <f> [--out <f>]  Build Phase V validation dossier");
     Console.WriteLine("  gu verify-study-freshness --dossier <f>      Verify study freshness / G-006 compliance");
     Console.WriteLine("  gu run-phase5-campaign --spec <f> --out-dir <dir> [--validate-first]  Run Phase V M53 end-to-end campaign");

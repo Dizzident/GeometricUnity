@@ -1,0 +1,22 @@
+{
+  "resultId": "phase26-electroweak-mixing-convention-readiness-v1",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "mixing-convention-blocked",
+  "algorithmId": "p26-electroweak-mixing-convention-readiness:v1",
+  "sourceFeatureCount": 12,
+  "chargeSectorAssignments": [],
+  "closureRequirements": [
+    "provide a validated internal electroweak mixing convention artifact",
+    "derive a U(1) generator and charge operator independent of external target values",
+    "declare which SU(2)-adjoint basis axis is neutral and which axes are charged"
+  ],
+  "provenance": {
+    "createdAt": "2026-04-26T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase26-electroweak-mixing-convention",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu"
+  }
+}
