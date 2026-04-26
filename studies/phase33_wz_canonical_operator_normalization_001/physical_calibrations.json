@@ -1,0 +1,24 @@
+{
+  "tableId": "phase33-wz-canonical-operator-physical-calibrations-v1",
+  "calibrations": [
+    {
+      "calibrationId": "phase33-canonical-operator-wz-normalization",
+      "mappingId": "phase28-w-z-vector-mode-ratio-to-physical-mass-ratio",
+      "sourceComputedObservableId": "physical-w-z-mass-ratio",
+      "sourceUnitFamily": "dimensionless",
+      "targetUnitFamily": "dimensionless",
+      "targetUnit": "dimensionless",
+      "scaleFactor": 1,
+      "scaleUncertainty": 0,
+      "status": "validated",
+      "method": "operator-normalization-closure:shared-internal-mass-operator-unit",
+      "source": "p33-wz-canonical-operator-normalization-deriver:v1",
+      "assumptions": [
+        "W and Z source modes are eigenvalues of the same internal mass-like operator unit",
+        "dimensionless W/Z ratios inherit no additional physical target scale from the shared internal operator unit",
+        "physical target values were not used to derive this scale"
+      ],
+      "closureRequirements": []
+    }
+  ]
+}

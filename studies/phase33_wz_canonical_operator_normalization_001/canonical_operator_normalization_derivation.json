@@ -1,0 +1,55 @@
+{
+  "resultId": "phase33-wz-canonical-operator-normalization-derivation-v1",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "wz-canonical-operator-normalization-derived",
+  "algorithmId": "p33-wz-canonical-operator-normalization-deriver:v1",
+  "operatorNormalizationDerivationId": "operator-normalization:shared-internal-mass-operator-unit:v1",
+  "selectedPairId": "phase22-phase12-candidate-0/phase22-phase12-candidate-2",
+  "sourceCandidateIds": [
+    "phase12-candidate-0",
+    "phase12-candidate-2"
+  ],
+  "wUnitFamily": "mass-energy",
+  "zUnitFamily": "mass-energy",
+  "wUnit": "internal-mass-unit",
+  "zUnit": "internal-mass-unit",
+  "normalizationConvention": "shared-internal-mass-operator-unit",
+  "dimensionlessWzScale": 1,
+  "targetIndependent": true,
+  "proxyOnly": false,
+  "derivedCalibration": {
+    "calibrationId": "phase33-canonical-operator-wz-normalization",
+    "mappingId": "phase28-w-z-vector-mode-ratio-to-physical-mass-ratio",
+    "sourceComputedObservableId": "physical-w-z-mass-ratio",
+    "sourceUnitFamily": "dimensionless",
+    "targetUnitFamily": "dimensionless",
+    "targetUnit": "dimensionless",
+    "scaleFactor": 1,
+    "scaleUncertainty": 0,
+    "status": "validated",
+    "method": "operator-normalization-closure:shared-internal-mass-operator-unit",
+    "source": "p33-wz-canonical-operator-normalization-deriver:v1",
+    "assumptions": [
+      "W and Z source modes are eigenvalues of the same internal mass-like operator unit",
+      "dimensionless W/Z ratios inherit no additional physical target scale from the shared internal operator unit",
+      "physical target values were not used to derive this scale"
+    ],
+    "closureRequirements": []
+  },
+  "diagnosis": [
+    "selected W/Z sources share unit \u0027mass-energy:internal-mass-unit\u0027 and extraction method \u0027p20-phase12-internal-vector-boson-source-adapter:v1\u0027",
+    "canonical shared-operator normalization scale is 1",
+    "canonical scale differs from P31 target-required scale by -0.020359141892823507",
+    "derivation is target-independent and proxy-free; it does not use coupling proxy magnitudes"
+  ],
+  "closureRequirements": [],
+  "provenance": {
+    "createdAt": "2026-04-26T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase33-wz-canonical-operator-normalization",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu"
+  }
+}

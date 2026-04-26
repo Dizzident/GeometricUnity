@@ -200,8 +200,11 @@ public static class WzOperatorNormalizationSourceAudit
         var derivation = FindString(root, "operatorNormalizationDerivationId") ??
                          FindString(root, "normalizationDerivationId") ??
                          FindString(root, "derivationId");
-        var proxyOnly = IsProxyOnly(kind, text);
-        var targetIndependent = scale is not null && !ContainsPhysicalTargetInput(root);
+        var explicitProxyOnly = FindBool(root, "proxyOnly");
+        var proxyOnly = explicitProxyOnly ?? IsProxyOnly(kind, text);
+        var explicitTargetIndependent = FindBool(root, "targetIndependent");
+        var targetIndependent = scale is not null &&
+            (explicitTargetIndependent == true || !ContainsPhysicalTargetInput(root));
         var referencesSelectedPair = !string.IsNullOrWhiteSpace(wSource) &&
             !string.IsNullOrWhiteSpace(zSource) &&
             referenced.Contains(wSource, StringComparer.Ordinal) &&
@@ -270,8 +273,7 @@ public static class WzOperatorNormalizationSourceAudit
     private static bool ContainsPhysicalTargetInput(JsonElement root)
         => ContainsProperty(root, "targetValue") ||
            ContainsProperty(root, "physicalTargetValue") ||
-           ContainsProperty(root, "requiredScaleToTarget") ||
-           ContainsString(root, "physical target");
+           ContainsProperty(root, "requiredScaleToTarget");
 
     private static IReadOnlyList<string> ExtractReferencedSourceCandidateIds(JsonElement root, string text)
     {
@@ -385,6 +387,31 @@ public static class WzOperatorNormalizationSourceAudit
         return null;
     }
 
+    private static bool? FindBool(JsonElement element, string propertyName)
+    {
+        if (element.ValueKind == JsonValueKind.Object)
+        {
+            foreach (var property in element.EnumerateObject())
+            {
+                if (property.NameEquals(propertyName) && property.Value.ValueKind is JsonValueKind.True or JsonValueKind.False)
+                    return property.Value.GetBoolean();
+                var child = FindBool(property.Value, propertyName);
+                if (child is not null)
+                    return child;
+            }
+        }
+        else if (element.ValueKind == JsonValueKind.Array)
+        {
+            foreach (var item in element.EnumerateArray())
+            {
+                var child = FindBool(item, propertyName);
+                if (child is not null)
+                    return child;
+            }
+        }
+        return null;
+    }
+
     private static bool ContainsProperty(JsonElement element, string propertyName)
     {
         if (element.ValueKind == JsonValueKind.Object)
@@ -403,17 +430,6 @@ public static class WzOperatorNormalizationSourceAudit
                     return true;
             }
         }
-        return false;
-    }
-
-    private static bool ContainsString(JsonElement element, string value)
-    {
-        if (element.ValueKind == JsonValueKind.String)
-            return element.GetString()?.Contains(value, StringComparison.OrdinalIgnoreCase) == true;
-        if (element.ValueKind == JsonValueKind.Object)
-            return element.EnumerateObject().Any(p => ContainsString(p.Value, value));
-        if (element.ValueKind == JsonValueKind.Array)
-            return element.EnumerateArray().Any(item => ContainsString(item, value));
         return false;
     }
 

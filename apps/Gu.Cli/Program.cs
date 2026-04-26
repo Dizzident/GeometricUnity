@@ -133,6 +133,8 @@ switch (args[0])
         return DiagnoseWzNormalizationClosure(args);
     case "audit-wz-operator-normalization-sources":
         return AuditWzOperatorNormalizationSources(args);
+    case "derive-wz-canonical-operator-normalization":
+        return DeriveWzCanonicalOperatorNormalization(args);
     case "build-validation-dossier":
         return BuildValidationDossier(args);
     case "verify-study-freshness":
@@ -5042,6 +5044,59 @@ static int AuditWzOperatorNormalizationSources(string[] args)
     }
 }
 
+static int DeriveWzCanonicalOperatorNormalization(string[] args)
+{
+    var p31DiagnosticPath = ParseFlag(args, "--p31-diagnostic", "");
+    var candidateModeSourcesPath = ParseFlag(args, "--candidate-mode-sources", "");
+    var outDir = ParseFlag(args, "--out-dir", "");
+    if (string.IsNullOrWhiteSpace(p31DiagnosticPath) ||
+        string.IsNullOrWhiteSpace(candidateModeSourcesPath) ||
+        string.IsNullOrWhiteSpace(outDir))
+    {
+        Console.Error.WriteLine("Usage: gu derive-wz-canonical-operator-normalization --p31-diagnostic <wz_normalization_closure_diagnostic.json> --candidate-mode-sources <candidate_mode_sources.json> --out-dir <dir>");
+        return 1;
+    }
+
+    try
+    {
+        var provenance = new ProvenanceMeta
+        {
+            CreatedAt = DateTimeOffset.Parse("2026-04-26T00:00:00+00:00"),
+            CodeRevision = "working-tree",
+            Branch = new BranchRef { BranchId = "phase33-wz-canonical-operator-normalization", SchemaVersion = "1.0" },
+            Backend = "cpu",
+        };
+        var result = WzCanonicalOperatorNormalizationDeriver.Derive(
+            File.ReadAllText(p31DiagnosticPath),
+            File.ReadAllText(candidateModeSourcesPath),
+            provenance);
+
+        Directory.CreateDirectory(outDir);
+        var derivationPath = Path.Combine(outDir, "canonical_operator_normalization_derivation.json");
+        File.WriteAllText(derivationPath, GuJsonDefaults.Serialize(result));
+        if (result.DerivedCalibration is not null)
+        {
+            var calibrationTable = new PhysicalCalibrationTable
+            {
+                TableId = "phase33-wz-canonical-operator-physical-calibrations-v1",
+                Calibrations = [result.DerivedCalibration],
+            };
+            File.WriteAllText(Path.Combine(outDir, "physical_calibrations.json"), GuJsonDefaults.Serialize(calibrationTable));
+        }
+
+        Console.WriteLine($"derive-wz-canonical-operator-normalization done. Output: {derivationPath}");
+        Console.WriteLine($"  terminalStatus: {result.TerminalStatus}");
+        Console.WriteLine($"  dimensionlessWzScale: {result.DimensionlessWzScale}");
+        Console.WriteLine($"  targetIndependent: {result.TargetIndependent}");
+        return result.TerminalStatus == "wz-canonical-operator-normalization-derived" ? 0 : 1;
+    }
+    catch (Exception ex)
+    {
+        Console.Error.WriteLine($"derive-wz-canonical-operator-normalization failed: {ex.Message}");
+        return 1;
+    }
+}
+
 static string ResolvePath(string specDir, string path)
 {
     if (Path.IsPathRooted(path) || File.Exists(path) || Directory.Exists(path))
@@ -6236,6 +6291,7 @@ static void PrintUsage()
     Console.WriteLine("  gu diagnose-wz-selector-variation --identity-readiness <f> --modes-root <dir> --target-table <f> --out <f>  Diagnose Phase XXX W/Z selector variation across branch/refinement/environment points");
     Console.WriteLine("  gu diagnose-wz-normalization-closure --ratio-diagnostic <f> --selector-diagnostic <f> --physical-calibrations <f> --out <f>  Diagnose Phase XXXI W/Z normalization/operator closure");
     Console.WriteLine("  gu audit-wz-operator-normalization-sources --p31-diagnostic <f> --artifact-roots <path[,path...]> --out <f>  Audit Phase XXXII W/Z operator normalization source candidates");
+    Console.WriteLine("  gu derive-wz-canonical-operator-normalization --p31-diagnostic <f> --candidate-mode-sources <f> --out-dir <dir>  Derive Phase XXXIII canonical shared-operator W/Z normalization");
     Console.WriteLine("  gu build-validation-dossier --study-manifest <f> [--out <f>]  Build Phase V validation dossier");
     Console.WriteLine("  gu verify-study-freshness --dossier <f>      Verify study freshness / G-006 compliance");
     Console.WriteLine("  gu run-phase5-campaign --spec <f> --out-dir <dir> [--validate-first]  Run Phase V M53 end-to-end campaign");
