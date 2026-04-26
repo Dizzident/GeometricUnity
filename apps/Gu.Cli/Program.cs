@@ -125,6 +125,8 @@ switch (args[0])
         return ApplyElectroweakChargeSectors(args);
     case "promote-wz-physical-prediction-artifacts":
         return PromoteWzPhysicalPredictionArtifacts(args);
+    case "diagnose-wz-ratio-failure":
+        return DiagnoseWzRatioFailure(args);
     case "build-validation-dossier":
         return BuildValidationDossier(args);
     case "verify-study-freshness":
@@ -4833,6 +4835,61 @@ static int PromoteWzPhysicalPredictionArtifacts(string[] args)
     }
 }
 
+static int DiagnoseWzRatioFailure(string[] args)
+{
+    var identityReadinessPath = ParseFlag(args, "--identity-readiness", "");
+    var mixingReadinessPath = ParseFlag(args, "--mixing-readiness", "");
+    var candidateSourcesPath = ParseFlag(args, "--candidate-mode-sources", "");
+    var modeFamiliesPath = ParseFlag(args, "--mode-families", "");
+    var targetTablePath = ParseFlag(args, "--target-table", "");
+    var outPath = ParseFlag(args, "--out", "");
+    if (string.IsNullOrWhiteSpace(identityReadinessPath) ||
+        string.IsNullOrWhiteSpace(mixingReadinessPath) ||
+        string.IsNullOrWhiteSpace(candidateSourcesPath) ||
+        string.IsNullOrWhiteSpace(modeFamiliesPath) ||
+        string.IsNullOrWhiteSpace(targetTablePath) ||
+        string.IsNullOrWhiteSpace(outPath))
+    {
+        Console.Error.WriteLine("Usage: gu diagnose-wz-ratio-failure --identity-readiness <identity_rule_readiness.json> --mixing-readiness <mixing_convention_readiness.json> --candidate-mode-sources <candidate_mode_sources.json> --mode-families <mode_families.json> --target-table <physical_targets.json> --out <diagnostic.json>");
+        return 1;
+    }
+
+    try
+    {
+        var provenance = new ProvenanceMeta
+        {
+            CreatedAt = DateTimeOffset.Parse("2026-04-26T00:00:00+00:00"),
+            CodeRevision = "working-tree",
+            Branch = new BranchRef { BranchId = "phase29-wz-ratio-failure-diagnostic", SchemaVersion = "1.0" },
+            Backend = "cpu",
+        };
+        var result = WzRatioFailureDiagnostic.Evaluate(
+            File.ReadAllText(identityReadinessPath),
+            File.ReadAllText(mixingReadinessPath),
+            File.ReadAllText(candidateSourcesPath),
+            File.ReadAllText(modeFamiliesPath),
+            File.ReadAllText(targetTablePath),
+            provenance);
+
+        Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(outPath))!);
+        File.WriteAllText(outPath, GuJsonDefaults.Serialize(result));
+
+        Console.WriteLine($"diagnose-wz-ratio-failure done. Output: {outPath}");
+        Console.WriteLine($"  terminalStatus: {result.TerminalStatus}");
+        Console.WriteLine($"  pairDiagnostics: {result.PairDiagnostics.Count}");
+        if (result.SelectedPair is not null)
+            Console.WriteLine($"  selectedPull: {result.SelectedPair.Pull}");
+        if (result.BestDiagnosticPair is not null)
+            Console.WriteLine($"  bestDiagnosticPair: {result.BestDiagnosticPair.PairId}");
+        return result.TerminalStatus == "wz-ratio-diagnostic-complete" ? 0 : 1;
+    }
+    catch (Exception ex)
+    {
+        Console.Error.WriteLine($"diagnose-wz-ratio-failure failed: {ex.Message}");
+        return 1;
+    }
+}
+
 static string ResolvePath(string specDir, string path)
 {
     if (Path.IsPathRooted(path) || File.Exists(path) || Directory.Exists(path))
@@ -6023,6 +6080,7 @@ static void PrintUsage()
     Console.WriteLine("  gu evaluate-electroweak-mixing-convention --identity-features <f> [--mixing-convention <f>] --out <f>  Evaluate Phase XXVI electroweak mixing convention readiness");
     Console.WriteLine("  gu apply-electroweak-charge-sectors --identity-features <f> --mode-families <f> --mixing-readiness <f> --out-dir <dir>  Apply Phase XXVII charge sectors to identity features");
     Console.WriteLine("  gu promote-wz-physical-prediction-artifacts --identity-readiness <f> --candidate-mode-sources <f> --mode-families <f> --out-dir <dir>  Promote Phase XXVIII W/Z identity rules into physical prediction campaign inputs");
+    Console.WriteLine("  gu diagnose-wz-ratio-failure --identity-readiness <f> --mixing-readiness <f> --candidate-mode-sources <f> --mode-families <f> --target-table <f> --out <f>  Diagnose Phase XXIX W/Z physical-ratio failure");
     Console.WriteLine("  gu build-validation-dossier --study-manifest <f> [--out <f>]  Build Phase V validation dossier");
     Console.WriteLine("  gu verify-study-freshness --dossier <f>      Verify study freshness / G-006 compliance");
     Console.WriteLine("  gu run-phase5-campaign --spec <f> --out-dir <dir> [--validate-first]  Run Phase V M53 end-to-end campaign");
