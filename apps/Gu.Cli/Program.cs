@@ -129,6 +129,8 @@ switch (args[0])
         return DiagnoseWzRatioFailure(args);
     case "diagnose-wz-selector-variation":
         return DiagnoseWzSelectorVariation(args);
+    case "diagnose-wz-normalization-closure":
+        return DiagnoseWzNormalizationClosure(args);
     case "build-validation-dossier":
         return BuildValidationDossier(args);
     case "verify-study-freshness":
@@ -4940,6 +4942,56 @@ static int DiagnoseWzSelectorVariation(string[] args)
     }
 }
 
+static int DiagnoseWzNormalizationClosure(string[] args)
+{
+    var ratioDiagnosticPath = ParseFlag(args, "--ratio-diagnostic", "");
+    var selectorDiagnosticPath = ParseFlag(args, "--selector-diagnostic", "");
+    var physicalCalibrationsPath = ParseFlag(args, "--physical-calibrations", "");
+    var outPath = ParseFlag(args, "--out", "");
+    if (string.IsNullOrWhiteSpace(ratioDiagnosticPath) ||
+        string.IsNullOrWhiteSpace(selectorDiagnosticPath) ||
+        string.IsNullOrWhiteSpace(physicalCalibrationsPath) ||
+        string.IsNullOrWhiteSpace(outPath))
+    {
+        Console.Error.WriteLine("Usage: gu diagnose-wz-normalization-closure --ratio-diagnostic <wz_ratio_failure_diagnostic.json> --selector-diagnostic <wz_selector_variation_diagnostic.json> --physical-calibrations <physical_calibrations.json> --out <diagnostic.json>");
+        return 1;
+    }
+
+    try
+    {
+        var provenance = new ProvenanceMeta
+        {
+            CreatedAt = DateTimeOffset.Parse("2026-04-26T00:00:00+00:00"),
+            CodeRevision = "working-tree",
+            Branch = new BranchRef { BranchId = "phase31-wz-normalization-closure-diagnostic", SchemaVersion = "1.0" },
+            Backend = "cpu",
+        };
+        var result = WzNormalizationClosureDiagnostic.Evaluate(
+            File.ReadAllText(ratioDiagnosticPath),
+            File.ReadAllText(selectorDiagnosticPath),
+            File.ReadAllText(physicalCalibrationsPath),
+            provenance);
+
+        Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(outPath))!);
+        File.WriteAllText(outPath, GuJsonDefaults.Serialize(result));
+
+        Console.WriteLine($"diagnose-wz-normalization-closure done. Output: {outPath}");
+        Console.WriteLine($"  terminalStatus: {result.TerminalStatus}");
+        Console.WriteLine($"  requiredScaleToTarget: {result.RequiredScaleToTarget}");
+        Console.WriteLine($"  declaredScaleFactor: {result.DeclaredScaleFactor}");
+        Console.WriteLine($"  derivationBackedScaleAvailable: {result.DerivationBackedScaleAvailable}");
+        return result.TerminalStatus == "wz-normalization-closure-ready" ||
+               result.TerminalStatus == "wz-normalization-closure-blocked"
+            ? 0
+            : 1;
+    }
+    catch (Exception ex)
+    {
+        Console.Error.WriteLine($"diagnose-wz-normalization-closure failed: {ex.Message}");
+        return 1;
+    }
+}
+
 static string ResolvePath(string specDir, string path)
 {
     if (Path.IsPathRooted(path) || File.Exists(path) || Directory.Exists(path))
@@ -6132,6 +6184,7 @@ static void PrintUsage()
     Console.WriteLine("  gu promote-wz-physical-prediction-artifacts --identity-readiness <f> --candidate-mode-sources <f> --mode-families <f> --out-dir <dir>  Promote Phase XXVIII W/Z identity rules into physical prediction campaign inputs");
     Console.WriteLine("  gu diagnose-wz-ratio-failure --identity-readiness <f> --mixing-readiness <f> --candidate-mode-sources <f> --mode-families <f> --target-table <f> --out <f>  Diagnose Phase XXIX W/Z physical-ratio failure");
     Console.WriteLine("  gu diagnose-wz-selector-variation --identity-readiness <f> --modes-root <dir> --target-table <f> --out <f>  Diagnose Phase XXX W/Z selector variation across branch/refinement/environment points");
+    Console.WriteLine("  gu diagnose-wz-normalization-closure --ratio-diagnostic <f> --selector-diagnostic <f> --physical-calibrations <f> --out <f>  Diagnose Phase XXXI W/Z normalization/operator closure");
     Console.WriteLine("  gu build-validation-dossier --study-manifest <f> [--out <f>]  Build Phase V validation dossier");
     Console.WriteLine("  gu verify-study-freshness --dossier <f>      Verify study freshness / G-006 compliance");
     Console.WriteLine("  gu run-phase5-campaign --spec <f> --out-dir <dir> [--validate-first]  Run Phase V M53 end-to-end campaign");

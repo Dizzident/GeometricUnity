@@ -1,0 +1,51 @@
+{
+  "resultId": "phase31-wz-normalization-closure-diagnostic-v1",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "wz-normalization-closure-blocked",
+  "algorithmId": "p31-wz-normalization-closure-diagnostic:v1",
+  "targetObservableId": "physical-w-z-mass-ratio",
+  "selectedPairId": "phase22-phase12-candidate-0/phase22-phase12-candidate-2",
+  "computedRatio": 0.8637742965335007,
+  "targetValue": 0.88136,
+  "requiredScaleToTarget": 1.0203591418928235,
+  "declaredScaleFactor": 1,
+  "declaredScaleUncertainty": 0,
+  "declaredScaleDelta": -0.020359141892823507,
+  "declaredCalibration": {
+    "calibrationId": "phase28-dimensionless-wz-ratio-identity-normalization",
+    "mappingId": "phase28-w-z-vector-mode-ratio-to-physical-mass-ratio",
+    "scaleFactor": 1,
+    "scaleUncertainty": 0,
+    "status": "validated",
+    "method": "dimensionless-identity-normalization-from-validated-wz-ratio",
+    "source": "phase28-wz-identity-rule-physical-artifact-promoter",
+    "isIdentityNormalization": true,
+    "hasOperatorDerivation": false,
+    "hasClosureRequirements": false
+  },
+  "selectorVariationExplainsMiss": false,
+  "derivationBackedScaleAvailable": false,
+  "normalizationChangeAllowed": false,
+  "diagnosis": [
+    "selected W/Z pair \u0027phase22-phase12-candidate-0/phase22-phase12-candidate-2\u0027 has ratio 0.8637742965335007 and requires scale 1.0203591418928235 to hit the target",
+    "selected pair remains outside the sigma-5 gate with pull -14.867815514417117",
+    "Phase30 selector variation did not move the ratio envelope over the physical target",
+    "declared calibration \u0027phase28-dimensionless-wz-ratio-identity-normalization\u0027 uses scale 1 with method \u0027dimensionless-identity-normalization-from-validated-wz-ratio\u0027",
+    "declared scale differs from the required scale by -0.020359141892823507",
+    "declared calibration is not an operator-derived normalization closure for the required scale"
+  ],
+  "closureRequirements": [
+    "selector variation does not cover the physical W/Z target",
+    "provide a derivation-backed normalization/operator scale independent of the physical W/Z target",
+    "current identity normalization scale is not the scale required by the physical target"
+  ],
+  "provenance": {
+    "createdAt": "2026-04-26T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase31-wz-normalization-closure-diagnostic",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu"
+  }
+}
