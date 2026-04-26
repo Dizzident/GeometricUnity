@@ -1,0 +1,1289 @@
+{
+  "resultId": "phase32-wz-operator-normalization-source-audit-v1",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "wz-operator-normalization-source-blocked",
+  "algorithmId": "p32-wz-operator-normalization-source-audit:v1",
+  "selectedPairId": "phase22-phase12-candidate-0/phase22-phase12-candidate-2",
+  "wSourceCandidateId": "phase12-candidate-0",
+  "zSourceCandidateId": "phase12-candidate-2",
+  "requiredScaleToTarget": 1.0203591418928235,
+  "sourceCount": 69,
+  "promotableSourceCount": 0,
+  "auditOnlySourceCount": 30,
+  "blockedSourceCount": 39,
+  "sources": [
+    {
+      "sourceId": "chirality_analysis_bg-phase12-bg-a-20260315212202",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/chirality_analysis_bg-phase12-bg-a-20260315212202.json",
+      "artifactKind": "json-array",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "chirality_analysis_bg-phase12-bg-b-20260315212202",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/chirality_analysis_bg-phase12-bg-b-20260315212202.json",
+      "artifactKind": "json-array",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "conjugation_pairs_bg-phase12-bg-a-20260315212202",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/conjugation_pairs_bg-phase12-bg-a-20260315212202.json",
+      "artifactKind": "json-array",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "conjugation_pairs_bg-phase12-bg-b-20260315212202",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/conjugation_pairs_bg-phase12-bg-b-20260315212202.json",
+      "artifactKind": "json-array",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "coupling_atlas_bg-phase12-bg-a-20260315212202",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/coupling_atlas_bg-phase12-bg-a-20260315212202.json",
+      "artifactKind": "coupling-atlas",
+      "referencedSourceCandidateIds": [
+        "phase12-candidate-0",
+        "phase12-candidate-1",
+        "phase12-candidate-10",
+        "phase12-candidate-11",
+        "phase12-candidate-2",
+        "phase12-candidate-3",
+        "phase12-candidate-4",
+        "phase12-candidate-5",
+        "phase12-candidate-6",
+        "phase12-candidate-7",
+        "phase12-candidate-8",
+        "phase12-candidate-9"
+      ],
+      "normalizationConvention": "unit-modes",
+      "proxyOnly": true,
+      "targetIndependent": false,
+      "referencesSelectedPair": true,
+      "promotionStatus": "audit-only",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not provide an operator/normalization derivation id",
+        "source is marked or inferred as proxy-only evidence",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "coupling_atlas_bg-phase12-bg-b-20260315212202",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/coupling_atlas_bg-phase12-bg-b-20260315212202.json",
+      "artifactKind": "coupling-atlas",
+      "referencedSourceCandidateIds": [
+        "phase12-candidate-0",
+        "phase12-candidate-1",
+        "phase12-candidate-10",
+        "phase12-candidate-11",
+        "phase12-candidate-2",
+        "phase12-candidate-3",
+        "phase12-candidate-4",
+        "phase12-candidate-5",
+        "phase12-candidate-6",
+        "phase12-candidate-7",
+        "phase12-candidate-8",
+        "phase12-candidate-9"
+      ],
+      "normalizationConvention": "unit-modes",
+      "proxyOnly": true,
+      "targetIndependent": false,
+      "referencesSelectedPair": true,
+      "promotionStatus": "audit-only",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not provide an operator/normalization derivation id",
+        "source is marked or inferred as proxy-only evidence",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-a-20260315212202-candidate-0",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-a-20260315212202-candidate-0.json",
+      "artifactKind": "dirac-variation-bundle",
+      "referencedSourceCandidateIds": [
+        "phase12-candidate-0"
+      ],
+      "normalizationConvention": "raw-boson-vector",
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "audit-only",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-a-20260315212202-candidate-0.matrix",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-a-20260315212202-candidate-0.matrix.json",
+      "artifactKind": "coupling-json",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": true,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is marked or inferred as proxy-only evidence",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-a-20260315212202-candidate-1",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-a-20260315212202-candidate-1.json",
+      "artifactKind": "dirac-variation-bundle",
+      "referencedSourceCandidateIds": [
+        "phase12-candidate-1"
+      ],
+      "normalizationConvention": "raw-boson-vector",
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "audit-only",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-a-20260315212202-candidate-1.matrix",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-a-20260315212202-candidate-1.matrix.json",
+      "artifactKind": "coupling-json",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": true,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is marked or inferred as proxy-only evidence",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-a-20260315212202-candidate-10",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-a-20260315212202-candidate-10.json",
+      "artifactKind": "dirac-variation-bundle",
+      "referencedSourceCandidateIds": [
+        "phase12-candidate-10"
+      ],
+      "normalizationConvention": "raw-boson-vector",
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "audit-only",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-a-20260315212202-candidate-10.matrix",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-a-20260315212202-candidate-10.matrix.json",
+      "artifactKind": "coupling-json",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": true,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is marked or inferred as proxy-only evidence",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-a-20260315212202-candidate-11",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-a-20260315212202-candidate-11.json",
+      "artifactKind": "dirac-variation-bundle",
+      "referencedSourceCandidateIds": [
+        "phase12-candidate-11"
+      ],
+      "normalizationConvention": "raw-boson-vector",
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "audit-only",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-a-20260315212202-candidate-11.matrix",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-a-20260315212202-candidate-11.matrix.json",
+      "artifactKind": "coupling-json",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": true,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is marked or inferred as proxy-only evidence",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-a-20260315212202-candidate-2",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-a-20260315212202-candidate-2.json",
+      "artifactKind": "dirac-variation-bundle",
+      "referencedSourceCandidateIds": [
+        "phase12-candidate-2"
+      ],
+      "normalizationConvention": "raw-boson-vector",
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "audit-only",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-a-20260315212202-candidate-2.matrix",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-a-20260315212202-candidate-2.matrix.json",
+      "artifactKind": "coupling-json",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": true,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is marked or inferred as proxy-only evidence",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-a-20260315212202-candidate-3",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-a-20260315212202-candidate-3.json",
+      "artifactKind": "dirac-variation-bundle",
+      "referencedSourceCandidateIds": [
+        "phase12-candidate-3"
+      ],
+      "normalizationConvention": "raw-boson-vector",
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "audit-only",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-a-20260315212202-candidate-3.matrix",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-a-20260315212202-candidate-3.matrix.json",
+      "artifactKind": "coupling-json",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": true,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is marked or inferred as proxy-only evidence",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-a-20260315212202-candidate-4",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-a-20260315212202-candidate-4.json",
+      "artifactKind": "dirac-variation-bundle",
+      "referencedSourceCandidateIds": [
+        "phase12-candidate-4"
+      ],
+      "normalizationConvention": "raw-boson-vector",
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "audit-only",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-a-20260315212202-candidate-4.matrix",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-a-20260315212202-candidate-4.matrix.json",
+      "artifactKind": "coupling-json",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": true,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is marked or inferred as proxy-only evidence",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-a-20260315212202-candidate-5",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-a-20260315212202-candidate-5.json",
+      "artifactKind": "dirac-variation-bundle",
+      "referencedSourceCandidateIds": [
+        "phase12-candidate-5"
+      ],
+      "normalizationConvention": "raw-boson-vector",
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "audit-only",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-a-20260315212202-candidate-5.matrix",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-a-20260315212202-candidate-5.matrix.json",
+      "artifactKind": "coupling-json",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": true,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is marked or inferred as proxy-only evidence",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-a-20260315212202-candidate-6",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-a-20260315212202-candidate-6.json",
+      "artifactKind": "dirac-variation-bundle",
+      "referencedSourceCandidateIds": [
+        "phase12-candidate-6"
+      ],
+      "normalizationConvention": "raw-boson-vector",
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "audit-only",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-a-20260315212202-candidate-6.matrix",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-a-20260315212202-candidate-6.matrix.json",
+      "artifactKind": "coupling-json",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": true,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is marked or inferred as proxy-only evidence",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-a-20260315212202-candidate-7",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-a-20260315212202-candidate-7.json",
+      "artifactKind": "dirac-variation-bundle",
+      "referencedSourceCandidateIds": [
+        "phase12-candidate-7"
+      ],
+      "normalizationConvention": "raw-boson-vector",
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "audit-only",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-a-20260315212202-candidate-7.matrix",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-a-20260315212202-candidate-7.matrix.json",
+      "artifactKind": "coupling-json",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": true,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is marked or inferred as proxy-only evidence",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-a-20260315212202-candidate-8",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-a-20260315212202-candidate-8.json",
+      "artifactKind": "dirac-variation-bundle",
+      "referencedSourceCandidateIds": [
+        "phase12-candidate-8"
+      ],
+      "normalizationConvention": "raw-boson-vector",
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "audit-only",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-a-20260315212202-candidate-8.matrix",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-a-20260315212202-candidate-8.matrix.json",
+      "artifactKind": "coupling-json",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": true,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is marked or inferred as proxy-only evidence",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-a-20260315212202-candidate-9",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-a-20260315212202-candidate-9.json",
+      "artifactKind": "dirac-variation-bundle",
+      "referencedSourceCandidateIds": [
+        "phase12-candidate-9"
+      ],
+      "normalizationConvention": "raw-boson-vector",
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "audit-only",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-a-20260315212202-candidate-9.matrix",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-a-20260315212202-candidate-9.matrix.json",
+      "artifactKind": "coupling-json",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": true,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is marked or inferred as proxy-only evidence",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-b-20260315212202-candidate-0",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-b-20260315212202-candidate-0.json",
+      "artifactKind": "dirac-variation-bundle",
+      "referencedSourceCandidateIds": [
+        "phase12-candidate-0"
+      ],
+      "normalizationConvention": "raw-boson-vector",
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "audit-only",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-b-20260315212202-candidate-0.matrix",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-b-20260315212202-candidate-0.matrix.json",
+      "artifactKind": "coupling-json",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": true,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is marked or inferred as proxy-only evidence",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-b-20260315212202-candidate-1",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-b-20260315212202-candidate-1.json",
+      "artifactKind": "dirac-variation-bundle",
+      "referencedSourceCandidateIds": [
+        "phase12-candidate-1"
+      ],
+      "normalizationConvention": "raw-boson-vector",
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "audit-only",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-b-20260315212202-candidate-1.matrix",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-b-20260315212202-candidate-1.matrix.json",
+      "artifactKind": "coupling-json",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": true,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is marked or inferred as proxy-only evidence",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-b-20260315212202-candidate-10",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-b-20260315212202-candidate-10.json",
+      "artifactKind": "dirac-variation-bundle",
+      "referencedSourceCandidateIds": [
+        "phase12-candidate-10"
+      ],
+      "normalizationConvention": "raw-boson-vector",
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "audit-only",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-b-20260315212202-candidate-10.matrix",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-b-20260315212202-candidate-10.matrix.json",
+      "artifactKind": "coupling-json",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": true,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is marked or inferred as proxy-only evidence",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-b-20260315212202-candidate-11",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-b-20260315212202-candidate-11.json",
+      "artifactKind": "dirac-variation-bundle",
+      "referencedSourceCandidateIds": [
+        "phase12-candidate-11"
+      ],
+      "normalizationConvention": "raw-boson-vector",
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "audit-only",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-b-20260315212202-candidate-11.matrix",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-b-20260315212202-candidate-11.matrix.json",
+      "artifactKind": "coupling-json",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": true,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is marked or inferred as proxy-only evidence",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-b-20260315212202-candidate-2",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-b-20260315212202-candidate-2.json",
+      "artifactKind": "dirac-variation-bundle",
+      "referencedSourceCandidateIds": [
+        "phase12-candidate-2"
+      ],
+      "normalizationConvention": "raw-boson-vector",
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "audit-only",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-b-20260315212202-candidate-2.matrix",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-b-20260315212202-candidate-2.matrix.json",
+      "artifactKind": "coupling-json",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": true,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is marked or inferred as proxy-only evidence",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-b-20260315212202-candidate-3",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-b-20260315212202-candidate-3.json",
+      "artifactKind": "dirac-variation-bundle",
+      "referencedSourceCandidateIds": [
+        "phase12-candidate-3"
+      ],
+      "normalizationConvention": "raw-boson-vector",
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "audit-only",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-b-20260315212202-candidate-3.matrix",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-b-20260315212202-candidate-3.matrix.json",
+      "artifactKind": "coupling-json",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": true,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is marked or inferred as proxy-only evidence",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-b-20260315212202-candidate-4",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-b-20260315212202-candidate-4.json",
+      "artifactKind": "dirac-variation-bundle",
+      "referencedSourceCandidateIds": [
+        "phase12-candidate-4"
+      ],
+      "normalizationConvention": "raw-boson-vector",
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "audit-only",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-b-20260315212202-candidate-4.matrix",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-b-20260315212202-candidate-4.matrix.json",
+      "artifactKind": "coupling-json",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": true,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is marked or inferred as proxy-only evidence",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-b-20260315212202-candidate-5",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-b-20260315212202-candidate-5.json",
+      "artifactKind": "dirac-variation-bundle",
+      "referencedSourceCandidateIds": [
+        "phase12-candidate-5"
+      ],
+      "normalizationConvention": "raw-boson-vector",
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "audit-only",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-b-20260315212202-candidate-5.matrix",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-b-20260315212202-candidate-5.matrix.json",
+      "artifactKind": "coupling-json",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": true,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is marked or inferred as proxy-only evidence",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-b-20260315212202-candidate-6",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-b-20260315212202-candidate-6.json",
+      "artifactKind": "dirac-variation-bundle",
+      "referencedSourceCandidateIds": [
+        "phase12-candidate-6"
+      ],
+      "normalizationConvention": "raw-boson-vector",
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "audit-only",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-b-20260315212202-candidate-6.matrix",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-b-20260315212202-candidate-6.matrix.json",
+      "artifactKind": "coupling-json",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": true,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is marked or inferred as proxy-only evidence",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-b-20260315212202-candidate-7",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-b-20260315212202-candidate-7.json",
+      "artifactKind": "dirac-variation-bundle",
+      "referencedSourceCandidateIds": [
+        "phase12-candidate-7"
+      ],
+      "normalizationConvention": "raw-boson-vector",
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "audit-only",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-b-20260315212202-candidate-7.matrix",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-b-20260315212202-candidate-7.matrix.json",
+      "artifactKind": "coupling-json",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": true,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is marked or inferred as proxy-only evidence",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-b-20260315212202-candidate-8",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-b-20260315212202-candidate-8.json",
+      "artifactKind": "dirac-variation-bundle",
+      "referencedSourceCandidateIds": [
+        "phase12-candidate-8"
+      ],
+      "normalizationConvention": "raw-boson-vector",
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "audit-only",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-b-20260315212202-candidate-8.matrix",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-b-20260315212202-candidate-8.matrix.json",
+      "artifactKind": "coupling-json",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": true,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is marked or inferred as proxy-only evidence",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-b-20260315212202-candidate-9",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-b-20260315212202-candidate-9.json",
+      "artifactKind": "dirac-variation-bundle",
+      "referencedSourceCandidateIds": [
+        "phase12-candidate-9"
+      ],
+      "normalizationConvention": "raw-boson-vector",
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "audit-only",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "variation-bg-phase12-bg-b-20260315212202-candidate-9.matrix",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-b-20260315212202-candidate-9.matrix.json",
+      "artifactKind": "coupling-json",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": true,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is marked or inferred as proxy-only evidence",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "dirac_bundle_bg-phase12-bg-a-20260315212202",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/dirac_bundle_bg-phase12-bg-a-20260315212202.json",
+      "artifactKind": "dirac-operator-bundle",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "audit-only",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "dirac_bundle_bg-phase12-bg-a-20260315212202.matrix",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/dirac_bundle_bg-phase12-bg-a-20260315212202.matrix.json",
+      "artifactKind": "json-array",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "dirac_bundle_bg-phase12-bg-b-20260315212202",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/dirac_bundle_bg-phase12-bg-b-20260315212202.json",
+      "artifactKind": "dirac-operator-bundle",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "audit-only",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "dirac_bundle_bg-phase12-bg-b-20260315212202.matrix",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/dirac_bundle_bg-phase12-bg-b-20260315212202.matrix.json",
+      "artifactKind": "json-array",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "family_cluster_report",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/family_cluster_report.json",
+      "artifactKind": "json",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "fermion_families",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/fermion_families.json",
+      "artifactKind": "json",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "fermion_modes_bg-phase12-bg-a-20260315212202",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/fermion_modes_bg-phase12-bg-a-20260315212202.json",
+      "artifactKind": "json",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "fermion_modes_bg-phase12-bg-b-20260315212202",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/fermion_modes_bg-phase12-bg-b-20260315212202.json",
+      "artifactKind": "json",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "layout_bg-phase12-bg-a-20260315212202",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/layout_bg-phase12-bg-a-20260315212202.json",
+      "artifactKind": "json",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "layout_bg-phase12-bg-b-20260315212202",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/layout_bg-phase12-bg-b-20260315212202.json",
+      "artifactKind": "json",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "spinor_representation",
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/spinor_representation.json",
+      "artifactKind": "json",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "identity_features",
+      "artifactPath": "studies/phase25_internal_electroweak_features_001/identity_features.json",
+      "artifactKind": "electroweak-feature-table",
+      "referencedSourceCandidateIds": [
+        "phase12-candidate-0",
+        "phase12-candidate-1",
+        "phase12-candidate-10",
+        "phase12-candidate-11",
+        "phase12-candidate-2",
+        "phase12-candidate-3",
+        "phase12-candidate-4",
+        "phase12-candidate-5",
+        "phase12-candidate-6",
+        "phase12-candidate-7",
+        "phase12-candidate-8",
+        "phase12-candidate-9"
+      ],
+      "proxyOnly": true,
+      "targetIndependent": false,
+      "referencesSelectedPair": true,
+      "promotionStatus": "audit-only",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not provide an operator/normalization derivation id",
+        "source is marked or inferred as proxy-only evidence",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "mode_families_with_charge_sectors",
+      "artifactPath": "studies/phase27_charge_sector_convention_001/mode_families_with_charge_sectors.json",
+      "artifactKind": "json",
+      "referencedSourceCandidateIds": [
+        "phase12-candidate-0",
+        "phase12-candidate-1",
+        "phase12-candidate-10",
+        "phase12-candidate-11",
+        "phase12-candidate-2",
+        "phase12-candidate-3",
+        "phase12-candidate-4",
+        "phase12-candidate-5",
+        "phase12-candidate-6",
+        "phase12-candidate-7",
+        "phase12-candidate-8",
+        "phase12-candidate-9"
+      ],
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": true,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "coupling_atlas",
+      "artifactPath": "studies/phase4_fermion_family_atlas_001/output/coupling_atlas.json",
+      "artifactKind": "coupling-json",
+      "referencedSourceCandidateIds": [],
+      "normalizationConvention": "unit-modes",
+      "proxyOnly": true,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "blocked",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is marked or inferred as proxy-only evidence",
+        "source is not proven target-independent"
+      ]
+    },
+    {
+      "sourceId": "dirac_bundle",
+      "artifactPath": "studies/phase4_fermion_family_atlas_001/output/dirac_bundle.json",
+      "artifactKind": "dirac-operator-bundle",
+      "referencedSourceCandidateIds": [],
+      "proxyOnly": false,
+      "targetIndependent": false,
+      "referencesSelectedPair": false,
+      "promotionStatus": "audit-only",
+      "promotionBlockers": [
+        "source does not provide a dimensionless W/Z normalization scale",
+        "source does not reference both selected W/Z source candidates",
+        "source does not provide an operator/normalization derivation id",
+        "source is not proven target-independent"
+      ]
+    }
+  ],
+  "diagnosis": [
+    "audited 69 JSON artifact(s) for target-independent W/Z operator normalization sources",
+    "required P31 scale remains 1.0203591418928235",
+    "no audited artifact satisfies the promotion rule for a physical W/Z normalization scale",
+    "28 artifact(s) were treated as proxy-only evidence and not promoted"
+  ],
+  "closureRequirements": [
+    "no promotable target-independent operator normalization source was found for the selected W/Z pair"
+  ],
+  "provenance": {
+    "createdAt": "2026-04-26T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase32-wz-operator-normalization-source-audit",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu"
+  }
+}
