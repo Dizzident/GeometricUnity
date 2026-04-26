@@ -117,6 +117,8 @@ switch (args[0])
         return GenerateWzIdentityHypotheses(args);
     case "evaluate-wz-identity-rule-readiness":
         return EvaluateWzIdentityRuleReadiness(args);
+    case "compute-wz-identity-features":
+        return ComputeWzIdentityFeatures(args);
     case "build-validation-dossier":
         return BuildValidationDossier(args);
     case "verify-study-freshness":
@@ -4629,6 +4631,60 @@ static int EvaluateWzIdentityRuleReadiness(string[] args)
     }
 }
 
+static int ComputeWzIdentityFeatures(string[] args)
+{
+    var modeFamiliesPath = ParseFlag(args, "--mode-families", "");
+    var phase12FamiliesPath = ParseFlag(args, "--phase12-mode-families", "");
+    var modeSignatureRoot = ParseFlag(args, "--mode-signature-root", "");
+    var couplingAtlasCsv = ParseFlag(args, "--coupling-atlases", "");
+    var outDir = ParseFlag(args, "--out-dir", "");
+    if (string.IsNullOrWhiteSpace(modeFamiliesPath) ||
+        string.IsNullOrWhiteSpace(phase12FamiliesPath) ||
+        string.IsNullOrWhiteSpace(modeSignatureRoot) ||
+        string.IsNullOrWhiteSpace(couplingAtlasCsv) ||
+        string.IsNullOrWhiteSpace(outDir))
+    {
+        Console.Error.WriteLine("Usage: gu compute-wz-identity-features --mode-families <phase22_mode_families.json> --phase12-mode-families <phase12_mode_families.json> --mode-signature-root <dir> --coupling-atlases <a.json,b.json> --out-dir <dir>");
+        return 1;
+    }
+
+    try
+    {
+        var couplingAtlasJsons = couplingAtlasCsv
+            .Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+            .Select(File.ReadAllText)
+            .ToList();
+        var provenance = new ProvenanceMeta
+        {
+            CreatedAt = DateTimeOffset.Parse("2026-04-26T00:00:00+00:00"),
+            CodeRevision = "working-tree",
+            Branch = new BranchRef { BranchId = "phase25-internal-electroweak-features", SchemaVersion = "1.0" },
+            Backend = "cpu",
+        };
+        var result = VectorBosonIdentityFeatureExtractor.Extract(
+            File.ReadAllText(modeFamiliesPath),
+            File.ReadAllText(phase12FamiliesPath),
+            modeSignatureRoot,
+            couplingAtlasJsons,
+            provenance);
+
+        Directory.CreateDirectory(outDir);
+        File.WriteAllText(Path.Combine(outDir, "identity_features.json"), GuJsonDefaults.Serialize(result));
+        File.WriteAllText(Path.Combine(outDir, "mode_families_with_identity_features.json"), result.EnrichedModeFamiliesJson);
+
+        Console.WriteLine($"compute-wz-identity-features done. Output: {outDir}");
+        Console.WriteLine($"  terminalStatus: {result.TerminalStatus}");
+        Console.WriteLine($"  featureRecords: {result.FeatureRecords.Count}");
+        Console.WriteLine($"  summaryBlockers: {result.SummaryBlockers.Count}");
+        return 0;
+    }
+    catch (Exception ex)
+    {
+        Console.Error.WriteLine($"compute-wz-identity-features failed: {ex.Message}");
+        return 1;
+    }
+}
+
 static string ResolvePath(string specDir, string path)
 {
     if (Path.IsPathRooted(path) || File.Exists(path) || Directory.Exists(path))
@@ -5815,6 +5871,7 @@ static void PrintUsage()
     Console.WriteLine("  gu run-internal-vector-boson-source-spectrum-campaign --spec <f> --out-dir <dir>  Run Phase XXII source spectrum campaign");
     Console.WriteLine("  gu generate-wz-identity-hypotheses --candidate-mode-sources <f> --out-dir <dir>  Generate Phase XXIII W/Z identity hypotheses");
     Console.WriteLine("  gu evaluate-wz-identity-rule-readiness --candidate-mode-sources <f> --mode-families <f> --out <f>  Evaluate Phase XXIV W/Z identity-rule prerequisites");
+    Console.WriteLine("  gu compute-wz-identity-features --mode-families <f> --phase12-mode-families <f> --mode-signature-root <dir> --coupling-atlases <csv> --out-dir <dir>  Compute Phase XXV internal identity features");
     Console.WriteLine("  gu build-validation-dossier --study-manifest <f> [--out <f>]  Build Phase V validation dossier");
     Console.WriteLine("  gu verify-study-freshness --dossier <f>      Verify study freshness / G-006 compliance");
     Console.WriteLine("  gu run-phase5-campaign --spec <f> --out-dir <dir> [--validate-first]  Run Phase V M53 end-to-end campaign");

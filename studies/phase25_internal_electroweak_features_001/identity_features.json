@@ -1,0 +1,332 @@
+{
+  "resultId": "phase25-internal-electroweak-identity-features-v1",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "identity-features-partial",
+  "algorithmId": "p25-internal-electroweak-feature-extractor:v1",
+  "featureRecords": [
+    {
+      "familyId": "phase22-family-phase12-candidate-0",
+      "sourceCandidateId": "phase12-candidate-0",
+      "electroweakMultipletId": "su2-adjoint-triplet:canonical-basis",
+      "algebraBasisSector": "canonical-su2-adjoint-axis-1",
+      "currentCouplingSignature": "finite-difference-current-profile:2448ea7904cfb0ae",
+      "basisEnergyFractions": [
+        0.1865097684015375,
+        0.6636395176414301,
+        0.14985071395703237
+      ],
+      "dominantBasisIndex": 1,
+      "couplingProfile": {
+        "profileHash": "2448ea7904cfb0ae",
+        "couplingCount": 288,
+        "nonzeroCount": 288,
+        "meanMagnitude": 0.057993823115516055,
+        "diagonalMeanMagnitude": 0.04899839326525817,
+        "offDiagonalMeanMagnitude": 0.05881158946553948,
+        "imaginaryMagnitudeFraction": 0.6193240132277071
+      },
+      "featureStatus": "partial",
+      "blockers": [
+        "charged/neutral sector remains unassigned because no electromagnetic or U(1)-mixing convention is present in the internal artifacts."
+      ]
+    },
+    {
+      "familyId": "phase22-family-phase12-candidate-1",
+      "sourceCandidateId": "phase12-candidate-1",
+      "electroweakMultipletId": "su2-adjoint-triplet:canonical-basis",
+      "algebraBasisSector": "canonical-su2-adjoint-axis-0",
+      "currentCouplingSignature": "finite-difference-current-profile:8b9ce8b6b35985f2",
+      "basisEnergyFractions": [
+        0.4919536539971505,
+        0.0355071206629419,
+        0.47253922533990755
+      ],
+      "dominantBasisIndex": 0,
+      "couplingProfile": {
+        "profileHash": "8b9ce8b6b35985f2",
+        "couplingCount": 288,
+        "nonzeroCount": 288,
+        "meanMagnitude": 0.0610228868508837,
+        "diagonalMeanMagnitude": 0.04857715744682389,
+        "offDiagonalMeanMagnitude": 0.06215431679670732,
+        "imaginaryMagnitudeFraction": 0.6285420082223411
+      },
+      "featureStatus": "partial",
+      "blockers": [
+        "charged/neutral sector remains unassigned because no electromagnetic or U(1)-mixing convention is present in the internal artifacts."
+      ]
+    },
+    {
+      "familyId": "phase22-family-phase12-candidate-10",
+      "sourceCandidateId": "phase12-candidate-10",
+      "electroweakMultipletId": "su2-adjoint-triplet:canonical-basis",
+      "algebraBasisSector": "canonical-su2-adjoint-axis-0",
+      "currentCouplingSignature": "finite-difference-current-profile:74b098fa56323e92",
+      "basisEnergyFractions": [
+        0.45689882889583383,
+        0.31293005840402455,
+        0.23017111270014168
+      ],
+      "dominantBasisIndex": 0,
+      "couplingProfile": {
+        "profileHash": "74b098fa56323e92",
+        "couplingCount": 288,
+        "nonzeroCount": 288,
+        "meanMagnitude": 0.054823135268183346,
+        "diagonalMeanMagnitude": 0.047943615258462725,
+        "offDiagonalMeanMagnitude": 0.05544854617815794,
+        "imaginaryMagnitudeFraction": 0.6292008834835052
+      },
+      "featureStatus": "partial",
+      "blockers": [
+        "charged/neutral sector remains unassigned because no electromagnetic or U(1)-mixing convention is present in the internal artifacts."
+      ]
+    },
+    {
+      "familyId": "phase22-family-phase12-candidate-11",
+      "sourceCandidateId": "phase12-candidate-11",
+      "electroweakMultipletId": "su2-adjoint-triplet:canonical-basis",
+      "algebraBasisSector": "canonical-su2-adjoint-axis-0",
+      "currentCouplingSignature": "finite-difference-current-profile:78f8fbf02133b131",
+      "basisEnergyFractions": [
+        0.5006399430088542,
+        0.40092728220944496,
+        0.09843277478170086
+      ],
+      "dominantBasisIndex": 0,
+      "couplingProfile": {
+        "profileHash": "78f8fbf02133b131",
+        "couplingCount": 288,
+        "nonzeroCount": 288,
+        "meanMagnitude": 0.0574984787858352,
+        "diagonalMeanMagnitude": 0.039131360763129126,
+        "offDiagonalMeanMagnitude": 0.0591682167878994,
+        "imaginaryMagnitudeFraction": 0.7090398939270623
+      },
+      "featureStatus": "partial",
+      "blockers": [
+        "charged/neutral sector remains unassigned because no electromagnetic or U(1)-mixing convention is present in the internal artifacts."
+      ]
+    },
+    {
+      "familyId": "phase22-family-phase12-candidate-2",
+      "sourceCandidateId": "phase12-candidate-2",
+      "electroweakMultipletId": "su2-adjoint-triplet:canonical-basis",
+      "algebraBasisSector": "canonical-su2-adjoint-axis-2",
+      "currentCouplingSignature": "finite-difference-current-profile:581c5b2f82ff6b85",
+      "basisEnergyFractions": [
+        0.3588884625567935,
+        0.09666871681961907,
+        0.5444428206235875
+      ],
+      "dominantBasisIndex": 2,
+      "couplingProfile": {
+        "profileHash": "581c5b2f82ff6b85",
+        "couplingCount": 288,
+        "nonzeroCount": 288,
+        "meanMagnitude": 0.06664817482236975,
+        "diagonalMeanMagnitude": 0.048669318613118955,
+        "offDiagonalMeanMagnitude": 0.068282616295938,
+        "imaginaryMagnitudeFraction": 0.6027804725269362
+      },
+      "featureStatus": "partial",
+      "blockers": [
+        "charged/neutral sector remains unassigned because no electromagnetic or U(1)-mixing convention is present in the internal artifacts."
+      ]
+    },
+    {
+      "familyId": "phase22-family-phase12-candidate-3",
+      "sourceCandidateId": "phase12-candidate-3",
+      "electroweakMultipletId": "su2-adjoint-triplet:canonical-basis",
+      "algebraBasisSector": "canonical-su2-adjoint-axis-0",
+      "currentCouplingSignature": "finite-difference-current-profile:8cae5bb3ecdbf4ac",
+      "basisEnergyFractions": [
+        0.5433911197951045,
+        0.3341259608819394,
+        0.12248291932295612
+      ],
+      "dominantBasisIndex": 0,
+      "couplingProfile": {
+        "profileHash": "8cae5bb3ecdbf4ac",
+        "couplingCount": 288,
+        "nonzeroCount": 288,
+        "meanMagnitude": 0.061687670314778315,
+        "diagonalMeanMagnitude": 0.04793772193758932,
+        "offDiagonalMeanMagnitude": 0.06293766562179552,
+        "imaginaryMagnitudeFraction": 0.5403817985987683
+      },
+      "featureStatus": "partial",
+      "blockers": [
+        "charged/neutral sector remains unassigned because no electromagnetic or U(1)-mixing convention is present in the internal artifacts."
+      ]
+    },
+    {
+      "familyId": "phase22-family-phase12-candidate-4",
+      "sourceCandidateId": "phase12-candidate-4",
+      "electroweakMultipletId": "su2-adjoint-triplet:canonical-basis",
+      "algebraBasisSector": "canonical-su2-adjoint-axis-1",
+      "currentCouplingSignature": "finite-difference-current-profile:7ae21bebe41d03cc",
+      "basisEnergyFractions": [
+        0.166832288389809,
+        0.6370496561551218,
+        0.1961180554550692
+      ],
+      "dominantBasisIndex": 1,
+      "couplingProfile": {
+        "profileHash": "7ae21bebe41d03cc",
+        "couplingCount": 288,
+        "nonzeroCount": 288,
+        "meanMagnitude": 0.05684789310784682,
+        "diagonalMeanMagnitude": 0.043338589870073385,
+        "offDiagonalMeanMagnitude": 0.058076011584008075,
+        "imaginaryMagnitudeFraction": 0.6240320585009994
+      },
+      "featureStatus": "partial",
+      "blockers": [
+        "charged/neutral sector remains unassigned because no electromagnetic or U(1)-mixing convention is present in the internal artifacts."
+      ]
+    },
+    {
+      "familyId": "phase22-family-phase12-candidate-5",
+      "sourceCandidateId": "phase12-candidate-5",
+      "electroweakMultipletId": "su2-adjoint-triplet:canonical-basis",
+      "algebraBasisSector": "canonical-su2-adjoint-axis-2",
+      "currentCouplingSignature": "finite-difference-current-profile:bc45e58d12a1bc17",
+      "basisEnergyFractions": [
+        0.10712925321213888,
+        0.23084825885006593,
+        0.6620224879377952
+      ],
+      "dominantBasisIndex": 2,
+      "couplingProfile": {
+        "profileHash": "bc45e58d12a1bc17",
+        "couplingCount": 288,
+        "nonzeroCount": 288,
+        "meanMagnitude": 0.05426211067831006,
+        "diagonalMeanMagnitude": 0.03242700460983811,
+        "offDiagonalMeanMagnitude": 0.0562471203208984,
+        "imaginaryMagnitudeFraction": 0.6291672380016575
+      },
+      "featureStatus": "partial",
+      "blockers": [
+        "charged/neutral sector remains unassigned because no electromagnetic or U(1)-mixing convention is present in the internal artifacts."
+      ]
+    },
+    {
+      "familyId": "phase22-family-phase12-candidate-6",
+      "sourceCandidateId": "phase12-candidate-6",
+      "electroweakMultipletId": "su2-adjoint-triplet:canonical-basis",
+      "algebraBasisSector": "canonical-su2-adjoint-axis-0",
+      "currentCouplingSignature": "finite-difference-current-profile:f56843a67141f377",
+      "basisEnergyFractions": [
+        0.5482584345805496,
+        0.33065219020197156,
+        0.12108937521747884
+      ],
+      "dominantBasisIndex": 0,
+      "couplingProfile": {
+        "profileHash": "f56843a67141f377",
+        "couplingCount": 288,
+        "nonzeroCount": 288,
+        "meanMagnitude": 0.05252321278321444,
+        "diagonalMeanMagnitude": 0.03384406198214963,
+        "offDiagonalMeanMagnitude": 0.05422131740149306,
+        "imaginaryMagnitudeFraction": 0.624261368758487
+      },
+      "featureStatus": "partial",
+      "blockers": [
+        "charged/neutral sector remains unassigned because no electromagnetic or U(1)-mixing convention is present in the internal artifacts."
+      ]
+    },
+    {
+      "familyId": "phase22-family-phase12-candidate-7",
+      "sourceCandidateId": "phase12-candidate-7",
+      "electroweakMultipletId": "su2-adjoint-triplet:canonical-basis",
+      "algebraBasisSector": "canonical-su2-adjoint-axis-1",
+      "currentCouplingSignature": "finite-difference-current-profile:7dd0725b3f5626aa",
+      "basisEnergyFractions": [
+        0.21448915723674689,
+        0.6429816955816535,
+        0.14252914718159954
+      ],
+      "dominantBasisIndex": 1,
+      "couplingProfile": {
+        "profileHash": "7dd0725b3f5626aa",
+        "couplingCount": 288,
+        "nonzeroCount": 288,
+        "meanMagnitude": 0.06232619349252519,
+        "diagonalMeanMagnitude": 0.048269986517123914,
+        "offDiagonalMeanMagnitude": 0.06360403049028895,
+        "imaginaryMagnitudeFraction": 0.6417236766182552
+      },
+      "featureStatus": "partial",
+      "blockers": [
+        "charged/neutral sector remains unassigned because no electromagnetic or U(1)-mixing convention is present in the internal artifacts."
+      ]
+    },
+    {
+      "familyId": "phase22-family-phase12-candidate-8",
+      "sourceCandidateId": "phase12-candidate-8",
+      "electroweakMultipletId": "su2-adjoint-triplet:canonical-basis",
+      "algebraBasisSector": "canonical-su2-adjoint-axis-1",
+      "currentCouplingSignature": "finite-difference-current-profile:fa54e5ad41214755",
+      "basisEnergyFractions": [
+        0.1725881119145683,
+        0.6473320253658642,
+        0.18007986271956739
+      ],
+      "dominantBasisIndex": 1,
+      "couplingProfile": {
+        "profileHash": "fa54e5ad41214755",
+        "couplingCount": 288,
+        "nonzeroCount": 288,
+        "meanMagnitude": 0.058570560057009224,
+        "diagonalMeanMagnitude": 0.03805794316207997,
+        "offDiagonalMeanMagnitude": 0.060435343411093675,
+        "imaginaryMagnitudeFraction": 0.5584530030873254
+      },
+      "featureStatus": "partial",
+      "blockers": [
+        "charged/neutral sector remains unassigned because no electromagnetic or U(1)-mixing convention is present in the internal artifacts."
+      ]
+    },
+    {
+      "familyId": "phase22-family-phase12-candidate-9",
+      "sourceCandidateId": "phase12-candidate-9",
+      "electroweakMultipletId": "su2-adjoint-triplet:canonical-basis",
+      "algebraBasisSector": "canonical-su2-adjoint-axis-2",
+      "currentCouplingSignature": "finite-difference-current-profile:e521c3fbf1ef9dd7",
+      "basisEnergyFractions": [
+        0.42527393937590885,
+        0.016036107773489076,
+        0.558689952850602
+      ],
+      "dominantBasisIndex": 2,
+      "couplingProfile": {
+        "profileHash": "e521c3fbf1ef9dd7",
+        "couplingCount": 288,
+        "nonzeroCount": 288,
+        "meanMagnitude": 0.059324330137152465,
+        "diagonalMeanMagnitude": 0.07563224138596984,
+        "offDiagonalMeanMagnitude": 0.05784179275089634,
+        "imaginaryMagnitudeFraction": 0.5728747837931879
+      },
+      "featureStatus": "partial",
+      "blockers": [
+        "charged/neutral sector remains unassigned because no electromagnetic or U(1)-mixing convention is present in the internal artifacts."
+      ]
+    }
+  ],
+  "summaryBlockers": [
+    "charged/neutral sector remains unassigned because no electromagnetic or U(1)-mixing convention is present in the internal artifacts."
+  ],
+  "provenance": {
+    "createdAt": "2026-04-26T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase25-internal-electroweak-features",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu"
+  }
+}
