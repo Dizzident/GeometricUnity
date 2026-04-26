@@ -1,0 +1,19 @@
+{
+  "conventionId": "phase27-canonical-su2-cartan-u1-mixing-convention-v1",
+  "schemaVersion": "1.0.0",
+  "status": "validated",
+  "electroweakMultipletId": "su2-adjoint-triplet:canonical-basis",
+  "u1GeneratorId": "canonical-u1-generator-from-su2-cartan-axis-2",
+  "chargeOperatorDerivationId": "canonical-su2-cartan-charge-operator-axis-2",
+  "neutralBasisAxisIndex": 2,
+  "chargedBasisAxisIndices": [
+    0,
+    1
+  ],
+  "externalTargetValuesUsed": false,
+  "assumptions": [
+    "Canonical SU(2) Cartan convention: axis 2 is the internal neutral Cartan axis.",
+    "Axes 0 and 1 are the transverse charged-sector basis axes under the declared Cartan convention.",
+    "This is an internal branch convention and does not use W, Z, photon, or PDG target values."
+  ]
+}

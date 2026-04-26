@@ -1,0 +1,22 @@
+{
+  "resultId": "phase27-electroweak-charge-sector-application-v1",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "charge-sectors-applied",
+  "algorithmId": "p27-electroweak-charge-sector-assignment-applier:v1",
+  "assignmentCount": 12,
+  "updatedFeatureRecordCount": 12,
+  "updatedModeFamilyCount": 12,
+  "chargedCount": 9,
+  "neutralCount": 3,
+  "unassignedCount": 0,
+  "closureRequirements": [],
+  "provenance": {
+    "createdAt": "2026-04-26T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase27-charge-sector-convention",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu"
+  }
+}

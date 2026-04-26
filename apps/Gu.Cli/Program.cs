@@ -121,6 +121,8 @@ switch (args[0])
         return ComputeWzIdentityFeatures(args);
     case "evaluate-electroweak-mixing-convention":
         return EvaluateElectroweakMixingConvention(args);
+    case "apply-electroweak-charge-sectors":
+        return ApplyElectroweakChargeSectors(args);
     case "build-validation-dossier":
         return BuildValidationDossier(args);
     case "verify-study-freshness":
@@ -4728,6 +4730,55 @@ static int EvaluateElectroweakMixingConvention(string[] args)
     }
 }
 
+static int ApplyElectroweakChargeSectors(string[] args)
+{
+    var identityFeaturesPath = ParseFlag(args, "--identity-features", "");
+    var modeFamiliesPath = ParseFlag(args, "--mode-families", "");
+    var mixingReadinessPath = ParseFlag(args, "--mixing-readiness", "");
+    var outDir = ParseFlag(args, "--out-dir", "");
+    if (string.IsNullOrWhiteSpace(identityFeaturesPath) ||
+        string.IsNullOrWhiteSpace(modeFamiliesPath) ||
+        string.IsNullOrWhiteSpace(mixingReadinessPath) ||
+        string.IsNullOrWhiteSpace(outDir))
+    {
+        Console.Error.WriteLine("Usage: gu apply-electroweak-charge-sectors --identity-features <identity_features.json> --mode-families <mode_families.json> --mixing-readiness <mixing_convention_readiness.json> --out-dir <dir>");
+        return 1;
+    }
+
+    try
+    {
+        var provenance = new ProvenanceMeta
+        {
+            CreatedAt = DateTimeOffset.Parse("2026-04-26T00:00:00+00:00"),
+            CodeRevision = "working-tree",
+            Branch = new BranchRef { BranchId = "phase27-charge-sector-convention", SchemaVersion = "1.0" },
+            Backend = "cpu",
+        };
+        var result = ElectroweakChargeSectorAssignmentApplier.Apply(
+            File.ReadAllText(identityFeaturesPath),
+            File.ReadAllText(modeFamiliesPath),
+            File.ReadAllText(mixingReadinessPath),
+            provenance);
+
+        Directory.CreateDirectory(outDir);
+        File.WriteAllText(Path.Combine(outDir, "charge_sector_application.json"), GuJsonDefaults.Serialize(result));
+        File.WriteAllText(Path.Combine(outDir, "identity_features_with_charge_sectors.json"), result.UpdatedIdentityFeaturesJson);
+        File.WriteAllText(Path.Combine(outDir, "mode_families_with_charge_sectors.json"), result.UpdatedModeFamiliesJson);
+
+        Console.WriteLine($"apply-electroweak-charge-sectors done. Output: {outDir}");
+        Console.WriteLine($"  terminalStatus: {result.TerminalStatus}");
+        Console.WriteLine($"  updatedFeatureRecords: {result.UpdatedFeatureRecordCount}");
+        Console.WriteLine($"  updatedModeFamilies: {result.UpdatedModeFamilyCount}");
+        Console.WriteLine($"  charged/neutral/unassigned: {result.ChargedCount}/{result.NeutralCount}/{result.UnassignedCount}");
+        return result.TerminalStatus == "charge-sectors-applied" ? 0 : 1;
+    }
+    catch (Exception ex)
+    {
+        Console.Error.WriteLine($"apply-electroweak-charge-sectors failed: {ex.Message}");
+        return 1;
+    }
+}
+
 static string ResolvePath(string specDir, string path)
 {
     if (Path.IsPathRooted(path) || File.Exists(path) || Directory.Exists(path))
@@ -5916,6 +5967,7 @@ static void PrintUsage()
     Console.WriteLine("  gu evaluate-wz-identity-rule-readiness --candidate-mode-sources <f> --mode-families <f> --out <f>  Evaluate Phase XXIV W/Z identity-rule prerequisites");
     Console.WriteLine("  gu compute-wz-identity-features --mode-families <f> --phase12-mode-families <f> --mode-signature-root <dir> --coupling-atlases <csv> --out-dir <dir>  Compute Phase XXV internal identity features");
     Console.WriteLine("  gu evaluate-electroweak-mixing-convention --identity-features <f> [--mixing-convention <f>] --out <f>  Evaluate Phase XXVI electroweak mixing convention readiness");
+    Console.WriteLine("  gu apply-electroweak-charge-sectors --identity-features <f> --mode-families <f> --mixing-readiness <f> --out-dir <dir>  Apply Phase XXVII charge sectors to identity features");
     Console.WriteLine("  gu build-validation-dossier --study-manifest <f> [--out <f>]  Build Phase V validation dossier");
     Console.WriteLine("  gu verify-study-freshness --dossier <f>      Verify study freshness / G-006 compliance");
     Console.WriteLine("  gu run-phase5-campaign --spec <f> --out-dir <dir> [--validate-first]  Run Phase V M53 end-to-end campaign");
