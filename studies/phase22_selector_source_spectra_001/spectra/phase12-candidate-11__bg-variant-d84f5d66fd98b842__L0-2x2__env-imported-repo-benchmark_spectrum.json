@@ -1,0 +1,31 @@
+{
+  "spectrumId": "phase12-candidate-11__bg-variant-d84f5d66fd98b842__L0-2x2__env-imported-repo-benchmark-spectrum",
+  "schemaVersion": "1.0.0",
+  "sourceCandidateId": "phase12-candidate-11",
+  "branchVariantId": "bg-variant-d84f5d66fd98b842",
+  "refinementLevel": "L0-2x2",
+  "environmentId": "env-imported-repo-benchmark",
+  "modeRecordIds": [
+    "phase12-candidate-11__bg-variant-d84f5d66fd98b842__L0-2x2__env-imported-repo-benchmark-mode"
+  ],
+  "massLikeValues": [
+    7.800060080685848E-17
+  ],
+  "sourceArtifactPaths": [
+    "studies/phase12_joined_calculation_001/output/background_family/bosons/registry.json",
+    "studies/phase12_joined_calculation_001/output/background_family/modes/mode_families.json",
+    "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-a-20260315212202_spectrum.json",
+    "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-b-20260315212202_spectrum.json",
+    "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-a-20260315212202-mode-11.json",
+    "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-b-20260315212202-mode-7.json"
+  ],
+  "provenance": {
+    "createdAt": "2026-04-26T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase22-selector-source-spectra",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu"
+  }
+}

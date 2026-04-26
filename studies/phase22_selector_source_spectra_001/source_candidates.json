@@ -1,0 +1,1351 @@
+{
+  "tableId": "phase22-selector-aware-source-candidates-v1",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "candidate-source-ready",
+  "candidates": [
+    {
+      "sourceCandidateId": "phase22-phase12-candidate-0",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase22_selector_source_spectra_001/spectra_manifest.json",
+        "studies/phase22_selector_source_spectra_001/mode_families.json"
+      ],
+      "sourceModeIds": [
+        "phase12-candidate-0__bg-variant-53b598740d9569b4__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-0__bg-variant-53b598740d9569b4__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-0__bg-variant-53b598740d9569b4__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-0__bg-variant-53b598740d9569b4__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-0__bg-variant-53b598740d9569b4__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-0__bg-variant-53b598740d9569b4__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-0__bg-variant-53b598740d9569b4__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-0__bg-variant-53b598740d9569b4__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-0__bg-variant-53b598740d9569b4__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-0__bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-0__bg-variant-53b598740d9569b4__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-0__bg-variant-53b598740d9569b4__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-0__bg-variant-95ee11778cc7ac01__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-0__bg-variant-95ee11778cc7ac01__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-0__bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-0__bg-variant-95ee11778cc7ac01__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-0__bg-variant-95ee11778cc7ac01__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-0__bg-variant-95ee11778cc7ac01__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-0__bg-variant-95ee11778cc7ac01__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-0__bg-variant-95ee11778cc7ac01__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-0__bg-variant-95ee11778cc7ac01__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-0__bg-variant-95ee11778cc7ac01__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-0__bg-variant-95ee11778cc7ac01__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-0__bg-variant-95ee11778cc7ac01__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-0__bg-variant-d840fea6e6d36748__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-0__bg-variant-d840fea6e6d36748__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-0__bg-variant-d840fea6e6d36748__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-0__bg-variant-d840fea6e6d36748__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-0__bg-variant-d840fea6e6d36748__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-0__bg-variant-d840fea6e6d36748__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-0__bg-variant-d840fea6e6d36748__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-0__bg-variant-d840fea6e6d36748__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-0__bg-variant-d840fea6e6d36748__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-0__bg-variant-d840fea6e6d36748__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-0__bg-variant-d840fea6e6d36748__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-0__bg-variant-d840fea6e6d36748__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-0__bg-variant-d84f5d66fd98b842__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-0__bg-variant-d84f5d66fd98b842__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-0__bg-variant-d84f5d66fd98b842__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-0__bg-variant-d84f5d66fd98b842__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-0__bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-0__bg-variant-d84f5d66fd98b842__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-0__bg-variant-d84f5d66fd98b842__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-0__bg-variant-d84f5d66fd98b842__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-0__bg-variant-d84f5d66fd98b842__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-0__bg-variant-d84f5d66fd98b842__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-0__bg-variant-d84f5d66fd98b842__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-0__bg-variant-d84f5d66fd98b842__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode"
+      ],
+      "sourceFamilyId": "phase22-family-phase12-candidate-0",
+      "massLikeValue": 1.0947045268560027E-15,
+      "uncertainty": {
+        "branchVariation": 2.971294234617058E-19,
+        "refinementError": 0,
+        "extractionError": 1.0000000000000006E-18,
+        "environmentSensitivity": 3.7964635661339394E-19,
+        "totalUncertainty": 1.1101428963770886E-18
+      },
+      "branchSelectors": [
+        "bg-variant-53b598740d9569b4",
+        "bg-variant-95ee11778cc7ac01",
+        "bg-variant-d840fea6e6d36748",
+        "bg-variant-d84f5d66fd98b842"
+      ],
+      "environmentSelectors": [
+        "env-imported-repo-benchmark",
+        "env-structured-4x4",
+        "env-toy-2d-trivial",
+        "env-zenodo-su2-plaquette-chain-p4-j0.5-g1.5-v1"
+      ],
+      "refinementLevels": [
+        "L0-2x2",
+        "L1-4x4",
+        "L2-8x8"
+      ],
+      "branchStabilityScore": 0.9997285756876195,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 0,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C2_BranchStableCandidate",
+      "status": "candidate-source-ready",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "selector-aware mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [],
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase22-phase12-candidate-1",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase22_selector_source_spectra_001/spectra_manifest.json",
+        "studies/phase22_selector_source_spectra_001/mode_families.json"
+      ],
+      "sourceModeIds": [
+        "phase12-candidate-1__bg-variant-53b598740d9569b4__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-1__bg-variant-53b598740d9569b4__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-1__bg-variant-53b598740d9569b4__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-1__bg-variant-53b598740d9569b4__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-1__bg-variant-53b598740d9569b4__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-1__bg-variant-53b598740d9569b4__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-1__bg-variant-53b598740d9569b4__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-1__bg-variant-53b598740d9569b4__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-1__bg-variant-53b598740d9569b4__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-1__bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-1__bg-variant-53b598740d9569b4__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-1__bg-variant-53b598740d9569b4__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-1__bg-variant-95ee11778cc7ac01__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-1__bg-variant-95ee11778cc7ac01__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-1__bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-1__bg-variant-95ee11778cc7ac01__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-1__bg-variant-95ee11778cc7ac01__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-1__bg-variant-95ee11778cc7ac01__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-1__bg-variant-95ee11778cc7ac01__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-1__bg-variant-95ee11778cc7ac01__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-1__bg-variant-95ee11778cc7ac01__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-1__bg-variant-95ee11778cc7ac01__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-1__bg-variant-95ee11778cc7ac01__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-1__bg-variant-95ee11778cc7ac01__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-1__bg-variant-d840fea6e6d36748__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-1__bg-variant-d840fea6e6d36748__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-1__bg-variant-d840fea6e6d36748__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-1__bg-variant-d840fea6e6d36748__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-1__bg-variant-d840fea6e6d36748__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-1__bg-variant-d840fea6e6d36748__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-1__bg-variant-d840fea6e6d36748__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-1__bg-variant-d840fea6e6d36748__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-1__bg-variant-d840fea6e6d36748__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-1__bg-variant-d840fea6e6d36748__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-1__bg-variant-d840fea6e6d36748__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-1__bg-variant-d840fea6e6d36748__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-1__bg-variant-d84f5d66fd98b842__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-1__bg-variant-d84f5d66fd98b842__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-1__bg-variant-d84f5d66fd98b842__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-1__bg-variant-d84f5d66fd98b842__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-1__bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-1__bg-variant-d84f5d66fd98b842__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-1__bg-variant-d84f5d66fd98b842__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-1__bg-variant-d84f5d66fd98b842__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-1__bg-variant-d84f5d66fd98b842__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-1__bg-variant-d84f5d66fd98b842__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-1__bg-variant-d84f5d66fd98b842__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-1__bg-variant-d84f5d66fd98b842__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode"
+      ],
+      "sourceFamilyId": "phase22-family-phase12-candidate-1",
+      "massLikeValue": 1.1819501867239086E-15,
+      "uncertainty": {
+        "branchVariation": 3.208100166995224E-19,
+        "refinementError": 0,
+        "extractionError": 1.0000000000000006E-18,
+        "environmentSensitivity": 4.0990337673778086E-19,
+        "totalUncertainty": 1.1273596786632845E-18
+      },
+      "branchSelectors": [
+        "bg-variant-53b598740d9569b4",
+        "bg-variant-95ee11778cc7ac01",
+        "bg-variant-d840fea6e6d36748",
+        "bg-variant-d84f5d66fd98b842"
+      ],
+      "environmentSelectors": [
+        "env-imported-repo-benchmark",
+        "env-structured-4x4",
+        "env-toy-2d-trivial",
+        "env-zenodo-su2-plaquette-chain-p4-j0.5-g1.5-v1"
+      ],
+      "refinementLevels": [
+        "L0-2x2",
+        "L1-4x4",
+        "L2-8x8"
+      ],
+      "branchStabilityScore": 0.9997285756876195,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 0,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C2_BranchStableCandidate",
+      "status": "candidate-source-ready",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "selector-aware mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [],
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase22-phase12-candidate-10",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase22_selector_source_spectra_001/spectra_manifest.json",
+        "studies/phase22_selector_source_spectra_001/mode_families.json"
+      ],
+      "sourceModeIds": [
+        "phase12-candidate-10__bg-variant-53b598740d9569b4__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-10__bg-variant-53b598740d9569b4__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-10__bg-variant-53b598740d9569b4__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-10__bg-variant-53b598740d9569b4__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-10__bg-variant-53b598740d9569b4__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-10__bg-variant-53b598740d9569b4__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-10__bg-variant-53b598740d9569b4__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-10__bg-variant-53b598740d9569b4__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-10__bg-variant-53b598740d9569b4__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-10__bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-10__bg-variant-53b598740d9569b4__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-10__bg-variant-53b598740d9569b4__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-10__bg-variant-95ee11778cc7ac01__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-10__bg-variant-95ee11778cc7ac01__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-10__bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-10__bg-variant-95ee11778cc7ac01__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-10__bg-variant-95ee11778cc7ac01__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-10__bg-variant-95ee11778cc7ac01__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-10__bg-variant-95ee11778cc7ac01__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-10__bg-variant-95ee11778cc7ac01__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-10__bg-variant-95ee11778cc7ac01__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-10__bg-variant-95ee11778cc7ac01__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-10__bg-variant-95ee11778cc7ac01__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-10__bg-variant-95ee11778cc7ac01__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-10__bg-variant-d840fea6e6d36748__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-10__bg-variant-d840fea6e6d36748__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-10__bg-variant-d840fea6e6d36748__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-10__bg-variant-d840fea6e6d36748__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-10__bg-variant-d840fea6e6d36748__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-10__bg-variant-d840fea6e6d36748__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-10__bg-variant-d840fea6e6d36748__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-10__bg-variant-d840fea6e6d36748__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-10__bg-variant-d840fea6e6d36748__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-10__bg-variant-d840fea6e6d36748__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-10__bg-variant-d840fea6e6d36748__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-10__bg-variant-d840fea6e6d36748__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-10__bg-variant-d84f5d66fd98b842__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-10__bg-variant-d84f5d66fd98b842__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-10__bg-variant-d84f5d66fd98b842__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-10__bg-variant-d84f5d66fd98b842__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-10__bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-10__bg-variant-d84f5d66fd98b842__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-10__bg-variant-d84f5d66fd98b842__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-10__bg-variant-d84f5d66fd98b842__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-10__bg-variant-d84f5d66fd98b842__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-10__bg-variant-d84f5d66fd98b842__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-10__bg-variant-d84f5d66fd98b842__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-10__bg-variant-d84f5d66fd98b842__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode"
+      ],
+      "sourceFamilyId": "phase22-family-phase12-candidate-10",
+      "massLikeValue": 3.445074376618695E-16,
+      "uncertainty": {
+        "branchVariation": 9.350769437731589E-20,
+        "refinementError": 0,
+        "extractionError": 1.0000000000000006E-18,
+        "environmentSensitivity": 1.1947606895367459E-19,
+        "totalUncertainty": 1.0114436316277768E-18
+      },
+      "branchSelectors": [
+        "bg-variant-53b598740d9569b4",
+        "bg-variant-95ee11778cc7ac01",
+        "bg-variant-d840fea6e6d36748",
+        "bg-variant-d84f5d66fd98b842"
+      ],
+      "environmentSelectors": [
+        "env-imported-repo-benchmark",
+        "env-structured-4x4",
+        "env-toy-2d-trivial",
+        "env-zenodo-su2-plaquette-chain-p4-j0.5-g1.5-v1"
+      ],
+      "refinementLevels": [
+        "L0-2x2",
+        "L1-4x4",
+        "L2-8x8"
+      ],
+      "branchStabilityScore": 0.9997285756876195,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 0,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C2_BranchStableCandidate",
+      "status": "candidate-source-ready",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "selector-aware mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [],
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase22-phase12-candidate-11",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase22_selector_source_spectra_001/spectra_manifest.json",
+        "studies/phase22_selector_source_spectra_001/mode_families.json"
+      ],
+      "sourceModeIds": [
+        "phase12-candidate-11__bg-variant-53b598740d9569b4__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-11__bg-variant-53b598740d9569b4__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-11__bg-variant-53b598740d9569b4__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-11__bg-variant-53b598740d9569b4__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-11__bg-variant-53b598740d9569b4__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-11__bg-variant-53b598740d9569b4__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-11__bg-variant-53b598740d9569b4__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-11__bg-variant-53b598740d9569b4__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-11__bg-variant-53b598740d9569b4__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-11__bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-11__bg-variant-53b598740d9569b4__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-11__bg-variant-53b598740d9569b4__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-11__bg-variant-95ee11778cc7ac01__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-11__bg-variant-95ee11778cc7ac01__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-11__bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-11__bg-variant-95ee11778cc7ac01__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-11__bg-variant-95ee11778cc7ac01__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-11__bg-variant-95ee11778cc7ac01__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-11__bg-variant-95ee11778cc7ac01__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-11__bg-variant-95ee11778cc7ac01__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-11__bg-variant-95ee11778cc7ac01__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-11__bg-variant-95ee11778cc7ac01__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-11__bg-variant-95ee11778cc7ac01__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-11__bg-variant-95ee11778cc7ac01__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-11__bg-variant-d840fea6e6d36748__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-11__bg-variant-d840fea6e6d36748__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-11__bg-variant-d840fea6e6d36748__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-11__bg-variant-d840fea6e6d36748__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-11__bg-variant-d840fea6e6d36748__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-11__bg-variant-d840fea6e6d36748__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-11__bg-variant-d840fea6e6d36748__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-11__bg-variant-d840fea6e6d36748__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-11__bg-variant-d840fea6e6d36748__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-11__bg-variant-d840fea6e6d36748__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-11__bg-variant-d840fea6e6d36748__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-11__bg-variant-d840fea6e6d36748__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-11__bg-variant-d84f5d66fd98b842__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-11__bg-variant-d84f5d66fd98b842__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-11__bg-variant-d84f5d66fd98b842__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-11__bg-variant-d84f5d66fd98b842__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-11__bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-11__bg-variant-d84f5d66fd98b842__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-11__bg-variant-d84f5d66fd98b842__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-11__bg-variant-d84f5d66fd98b842__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-11__bg-variant-d84f5d66fd98b842__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-11__bg-variant-d84f5d66fd98b842__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-11__bg-variant-d84f5d66fd98b842__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-11__bg-variant-d84f5d66fd98b842__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode"
+      ],
+      "sourceFamilyId": "phase22-family-phase12-candidate-11",
+      "massLikeValue": 7.801558513473296E-17,
+      "uncertainty": {
+        "branchVariation": 2.1175326550159105E-20,
+        "refinementError": 0,
+        "extractionError": 1.0000000000000006E-18,
+        "environmentSensitivity": 2.7056006373279798E-20,
+        "totalUncertainty": 1.0005900368959197E-18
+      },
+      "branchSelectors": [
+        "bg-variant-53b598740d9569b4",
+        "bg-variant-95ee11778cc7ac01",
+        "bg-variant-d840fea6e6d36748",
+        "bg-variant-d84f5d66fd98b842"
+      ],
+      "environmentSelectors": [
+        "env-imported-repo-benchmark",
+        "env-structured-4x4",
+        "env-toy-2d-trivial",
+        "env-zenodo-su2-plaquette-chain-p4-j0.5-g1.5-v1"
+      ],
+      "refinementLevels": [
+        "L0-2x2",
+        "L1-4x4",
+        "L2-8x8"
+      ],
+      "branchStabilityScore": 0.9997285756876195,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 0,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C2_BranchStableCandidate",
+      "status": "candidate-source-ready",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "selector-aware mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [],
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase22-phase12-candidate-2",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase22_selector_source_spectra_001/spectra_manifest.json",
+        "studies/phase22_selector_source_spectra_001/mode_families.json"
+      ],
+      "sourceModeIds": [
+        "phase12-candidate-2__bg-variant-53b598740d9569b4__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-2__bg-variant-53b598740d9569b4__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-2__bg-variant-53b598740d9569b4__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-2__bg-variant-53b598740d9569b4__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-2__bg-variant-53b598740d9569b4__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-2__bg-variant-53b598740d9569b4__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-2__bg-variant-53b598740d9569b4__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-2__bg-variant-53b598740d9569b4__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-2__bg-variant-53b598740d9569b4__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-2__bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-2__bg-variant-53b598740d9569b4__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-2__bg-variant-53b598740d9569b4__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-2__bg-variant-95ee11778cc7ac01__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-2__bg-variant-95ee11778cc7ac01__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-2__bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-2__bg-variant-95ee11778cc7ac01__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-2__bg-variant-95ee11778cc7ac01__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-2__bg-variant-95ee11778cc7ac01__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-2__bg-variant-95ee11778cc7ac01__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-2__bg-variant-95ee11778cc7ac01__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-2__bg-variant-95ee11778cc7ac01__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-2__bg-variant-95ee11778cc7ac01__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-2__bg-variant-95ee11778cc7ac01__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-2__bg-variant-95ee11778cc7ac01__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-2__bg-variant-d840fea6e6d36748__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-2__bg-variant-d840fea6e6d36748__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-2__bg-variant-d840fea6e6d36748__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-2__bg-variant-d840fea6e6d36748__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-2__bg-variant-d840fea6e6d36748__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-2__bg-variant-d840fea6e6d36748__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-2__bg-variant-d840fea6e6d36748__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-2__bg-variant-d840fea6e6d36748__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-2__bg-variant-d840fea6e6d36748__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-2__bg-variant-d840fea6e6d36748__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-2__bg-variant-d840fea6e6d36748__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-2__bg-variant-d840fea6e6d36748__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-2__bg-variant-d84f5d66fd98b842__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-2__bg-variant-d84f5d66fd98b842__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-2__bg-variant-d84f5d66fd98b842__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-2__bg-variant-d84f5d66fd98b842__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-2__bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-2__bg-variant-d84f5d66fd98b842__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-2__bg-variant-d84f5d66fd98b842__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-2__bg-variant-d84f5d66fd98b842__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-2__bg-variant-d84f5d66fd98b842__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-2__bg-variant-d84f5d66fd98b842__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-2__bg-variant-d84f5d66fd98b842__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-2__bg-variant-d84f5d66fd98b842__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode"
+      ],
+      "sourceFamilyId": "phase22-family-phase12-candidate-2",
+      "massLikeValue": 1.2673501992931155E-15,
+      "uncertainty": {
+        "branchVariation": 3.4398965638845063E-19,
+        "refinementError": 0,
+        "extractionError": 1.0000000000000006E-18,
+        "environmentSensitivity": 4.395203216130542E-19,
+        "totalUncertainty": 1.1452104596156499E-18
+      },
+      "branchSelectors": [
+        "bg-variant-53b598740d9569b4",
+        "bg-variant-95ee11778cc7ac01",
+        "bg-variant-d840fea6e6d36748",
+        "bg-variant-d84f5d66fd98b842"
+      ],
+      "environmentSelectors": [
+        "env-imported-repo-benchmark",
+        "env-structured-4x4",
+        "env-toy-2d-trivial",
+        "env-zenodo-su2-plaquette-chain-p4-j0.5-g1.5-v1"
+      ],
+      "refinementLevels": [
+        "L0-2x2",
+        "L1-4x4",
+        "L2-8x8"
+      ],
+      "branchStabilityScore": 0.9997285756876195,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 0,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C2_BranchStableCandidate",
+      "status": "candidate-source-ready",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "selector-aware mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [],
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase22-phase12-candidate-3",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase22_selector_source_spectra_001/spectra_manifest.json",
+        "studies/phase22_selector_source_spectra_001/mode_families.json"
+      ],
+      "sourceModeIds": [
+        "phase12-candidate-3__bg-variant-53b598740d9569b4__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-3__bg-variant-53b598740d9569b4__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-3__bg-variant-53b598740d9569b4__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-3__bg-variant-53b598740d9569b4__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-3__bg-variant-53b598740d9569b4__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-3__bg-variant-53b598740d9569b4__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-3__bg-variant-53b598740d9569b4__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-3__bg-variant-53b598740d9569b4__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-3__bg-variant-53b598740d9569b4__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-3__bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-3__bg-variant-53b598740d9569b4__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-3__bg-variant-53b598740d9569b4__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-3__bg-variant-95ee11778cc7ac01__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-3__bg-variant-95ee11778cc7ac01__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-3__bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-3__bg-variant-95ee11778cc7ac01__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-3__bg-variant-95ee11778cc7ac01__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-3__bg-variant-95ee11778cc7ac01__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-3__bg-variant-95ee11778cc7ac01__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-3__bg-variant-95ee11778cc7ac01__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-3__bg-variant-95ee11778cc7ac01__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-3__bg-variant-95ee11778cc7ac01__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-3__bg-variant-95ee11778cc7ac01__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-3__bg-variant-95ee11778cc7ac01__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-3__bg-variant-d840fea6e6d36748__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-3__bg-variant-d840fea6e6d36748__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-3__bg-variant-d840fea6e6d36748__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-3__bg-variant-d840fea6e6d36748__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-3__bg-variant-d840fea6e6d36748__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-3__bg-variant-d840fea6e6d36748__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-3__bg-variant-d840fea6e6d36748__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-3__bg-variant-d840fea6e6d36748__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-3__bg-variant-d840fea6e6d36748__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-3__bg-variant-d840fea6e6d36748__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-3__bg-variant-d840fea6e6d36748__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-3__bg-variant-d840fea6e6d36748__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-3__bg-variant-d84f5d66fd98b842__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-3__bg-variant-d84f5d66fd98b842__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-3__bg-variant-d84f5d66fd98b842__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-3__bg-variant-d84f5d66fd98b842__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-3__bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-3__bg-variant-d84f5d66fd98b842__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-3__bg-variant-d84f5d66fd98b842__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-3__bg-variant-d84f5d66fd98b842__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-3__bg-variant-d84f5d66fd98b842__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-3__bg-variant-d84f5d66fd98b842__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-3__bg-variant-d84f5d66fd98b842__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-3__bg-variant-d84f5d66fd98b842__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode"
+      ],
+      "sourceFamilyId": "phase22-family-phase12-candidate-3",
+      "massLikeValue": 1.0717282557091172E-15,
+      "uncertainty": {
+        "branchVariation": 2.90893104864607E-19,
+        "refinementError": 0,
+        "extractionError": 1.0000000000000006E-18,
+        "environmentSensitivity": 3.7167812645133454E-19,
+        "totalUncertainty": 1.1057863392808516E-18
+      },
+      "branchSelectors": [
+        "bg-variant-53b598740d9569b4",
+        "bg-variant-95ee11778cc7ac01",
+        "bg-variant-d840fea6e6d36748",
+        "bg-variant-d84f5d66fd98b842"
+      ],
+      "environmentSelectors": [
+        "env-imported-repo-benchmark",
+        "env-structured-4x4",
+        "env-toy-2d-trivial",
+        "env-zenodo-su2-plaquette-chain-p4-j0.5-g1.5-v1"
+      ],
+      "refinementLevels": [
+        "L0-2x2",
+        "L1-4x4",
+        "L2-8x8"
+      ],
+      "branchStabilityScore": 0.9997285756876195,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 0,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C2_BranchStableCandidate",
+      "status": "candidate-source-ready",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "selector-aware mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [],
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase22-phase12-candidate-4",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase22_selector_source_spectra_001/spectra_manifest.json",
+        "studies/phase22_selector_source_spectra_001/mode_families.json"
+      ],
+      "sourceModeIds": [
+        "phase12-candidate-4__bg-variant-53b598740d9569b4__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-4__bg-variant-53b598740d9569b4__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-4__bg-variant-53b598740d9569b4__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-4__bg-variant-53b598740d9569b4__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-4__bg-variant-53b598740d9569b4__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-4__bg-variant-53b598740d9569b4__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-4__bg-variant-53b598740d9569b4__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-4__bg-variant-53b598740d9569b4__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-4__bg-variant-53b598740d9569b4__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-4__bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-4__bg-variant-53b598740d9569b4__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-4__bg-variant-53b598740d9569b4__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-4__bg-variant-95ee11778cc7ac01__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-4__bg-variant-95ee11778cc7ac01__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-4__bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-4__bg-variant-95ee11778cc7ac01__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-4__bg-variant-95ee11778cc7ac01__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-4__bg-variant-95ee11778cc7ac01__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-4__bg-variant-95ee11778cc7ac01__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-4__bg-variant-95ee11778cc7ac01__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-4__bg-variant-95ee11778cc7ac01__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-4__bg-variant-95ee11778cc7ac01__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-4__bg-variant-95ee11778cc7ac01__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-4__bg-variant-95ee11778cc7ac01__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-4__bg-variant-d840fea6e6d36748__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-4__bg-variant-d840fea6e6d36748__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-4__bg-variant-d840fea6e6d36748__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-4__bg-variant-d840fea6e6d36748__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-4__bg-variant-d840fea6e6d36748__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-4__bg-variant-d840fea6e6d36748__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-4__bg-variant-d840fea6e6d36748__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-4__bg-variant-d840fea6e6d36748__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-4__bg-variant-d840fea6e6d36748__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-4__bg-variant-d840fea6e6d36748__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-4__bg-variant-d840fea6e6d36748__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-4__bg-variant-d840fea6e6d36748__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-4__bg-variant-d84f5d66fd98b842__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-4__bg-variant-d84f5d66fd98b842__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-4__bg-variant-d84f5d66fd98b842__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-4__bg-variant-d84f5d66fd98b842__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-4__bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-4__bg-variant-d84f5d66fd98b842__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-4__bg-variant-d84f5d66fd98b842__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-4__bg-variant-d84f5d66fd98b842__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-4__bg-variant-d84f5d66fd98b842__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-4__bg-variant-d84f5d66fd98b842__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-4__bg-variant-d84f5d66fd98b842__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-4__bg-variant-d84f5d66fd98b842__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode"
+      ],
+      "sourceFamilyId": "phase22-family-phase12-candidate-4",
+      "massLikeValue": 6.468957290994918E-16,
+      "uncertainty": {
+        "branchVariation": 1.755832284526997E-19,
+        "refinementError": 0,
+        "extractionError": 1.0000000000000006E-18,
+        "environmentSensitivity": 2.2434510923841487E-19,
+        "totalUncertainty": 1.0397885353056507E-18
+      },
+      "branchSelectors": [
+        "bg-variant-53b598740d9569b4",
+        "bg-variant-95ee11778cc7ac01",
+        "bg-variant-d840fea6e6d36748",
+        "bg-variant-d84f5d66fd98b842"
+      ],
+      "environmentSelectors": [
+        "env-imported-repo-benchmark",
+        "env-structured-4x4",
+        "env-toy-2d-trivial",
+        "env-zenodo-su2-plaquette-chain-p4-j0.5-g1.5-v1"
+      ],
+      "refinementLevels": [
+        "L0-2x2",
+        "L1-4x4",
+        "L2-8x8"
+      ],
+      "branchStabilityScore": 0.9997285756876195,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 0,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C2_BranchStableCandidate",
+      "status": "candidate-source-ready",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "selector-aware mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [],
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase22-phase12-candidate-5",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase22_selector_source_spectra_001/spectra_manifest.json",
+        "studies/phase22_selector_source_spectra_001/mode_families.json"
+      ],
+      "sourceModeIds": [
+        "phase12-candidate-5__bg-variant-53b598740d9569b4__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-5__bg-variant-53b598740d9569b4__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-5__bg-variant-53b598740d9569b4__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-5__bg-variant-53b598740d9569b4__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-5__bg-variant-53b598740d9569b4__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-5__bg-variant-53b598740d9569b4__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-5__bg-variant-53b598740d9569b4__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-5__bg-variant-53b598740d9569b4__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-5__bg-variant-53b598740d9569b4__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-5__bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-5__bg-variant-53b598740d9569b4__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-5__bg-variant-53b598740d9569b4__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-5__bg-variant-95ee11778cc7ac01__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-5__bg-variant-95ee11778cc7ac01__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-5__bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-5__bg-variant-95ee11778cc7ac01__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-5__bg-variant-95ee11778cc7ac01__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-5__bg-variant-95ee11778cc7ac01__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-5__bg-variant-95ee11778cc7ac01__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-5__bg-variant-95ee11778cc7ac01__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-5__bg-variant-95ee11778cc7ac01__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-5__bg-variant-95ee11778cc7ac01__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-5__bg-variant-95ee11778cc7ac01__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-5__bg-variant-95ee11778cc7ac01__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-5__bg-variant-d840fea6e6d36748__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-5__bg-variant-d840fea6e6d36748__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-5__bg-variant-d840fea6e6d36748__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-5__bg-variant-d840fea6e6d36748__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-5__bg-variant-d840fea6e6d36748__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-5__bg-variant-d840fea6e6d36748__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-5__bg-variant-d840fea6e6d36748__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-5__bg-variant-d840fea6e6d36748__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-5__bg-variant-d840fea6e6d36748__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-5__bg-variant-d840fea6e6d36748__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-5__bg-variant-d840fea6e6d36748__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-5__bg-variant-d840fea6e6d36748__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-5__bg-variant-d84f5d66fd98b842__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-5__bg-variant-d84f5d66fd98b842__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-5__bg-variant-d84f5d66fd98b842__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-5__bg-variant-d84f5d66fd98b842__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-5__bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-5__bg-variant-d84f5d66fd98b842__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-5__bg-variant-d84f5d66fd98b842__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-5__bg-variant-d84f5d66fd98b842__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-5__bg-variant-d84f5d66fd98b842__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-5__bg-variant-d84f5d66fd98b842__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-5__bg-variant-d84f5d66fd98b842__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-5__bg-variant-d84f5d66fd98b842__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode"
+      ],
+      "sourceFamilyId": "phase22-family-phase12-candidate-5",
+      "massLikeValue": 1.8111561646187786E-16,
+      "uncertainty": {
+        "branchVariation": 4.915918165952733E-20,
+        "refinementError": 0,
+        "extractionError": 1.0000000000000006E-18,
+        "environmentSensitivity": 6.281136345809682E-20,
+        "totalUncertainty": 1.0031759030802628E-18
+      },
+      "branchSelectors": [
+        "bg-variant-53b598740d9569b4",
+        "bg-variant-95ee11778cc7ac01",
+        "bg-variant-d840fea6e6d36748",
+        "bg-variant-d84f5d66fd98b842"
+      ],
+      "environmentSelectors": [
+        "env-imported-repo-benchmark",
+        "env-structured-4x4",
+        "env-toy-2d-trivial",
+        "env-zenodo-su2-plaquette-chain-p4-j0.5-g1.5-v1"
+      ],
+      "refinementLevels": [
+        "L0-2x2",
+        "L1-4x4",
+        "L2-8x8"
+      ],
+      "branchStabilityScore": 0.9997285756876195,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 0,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C2_BranchStableCandidate",
+      "status": "candidate-source-ready",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "selector-aware mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [],
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase22-phase12-candidate-6",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase22_selector_source_spectra_001/spectra_manifest.json",
+        "studies/phase22_selector_source_spectra_001/mode_families.json"
+      ],
+      "sourceModeIds": [
+        "phase12-candidate-6__bg-variant-53b598740d9569b4__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-6__bg-variant-53b598740d9569b4__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-6__bg-variant-53b598740d9569b4__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-6__bg-variant-53b598740d9569b4__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-6__bg-variant-53b598740d9569b4__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-6__bg-variant-53b598740d9569b4__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-6__bg-variant-53b598740d9569b4__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-6__bg-variant-53b598740d9569b4__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-6__bg-variant-53b598740d9569b4__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-6__bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-6__bg-variant-53b598740d9569b4__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-6__bg-variant-53b598740d9569b4__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-6__bg-variant-95ee11778cc7ac01__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-6__bg-variant-95ee11778cc7ac01__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-6__bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-6__bg-variant-95ee11778cc7ac01__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-6__bg-variant-95ee11778cc7ac01__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-6__bg-variant-95ee11778cc7ac01__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-6__bg-variant-95ee11778cc7ac01__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-6__bg-variant-95ee11778cc7ac01__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-6__bg-variant-95ee11778cc7ac01__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-6__bg-variant-95ee11778cc7ac01__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-6__bg-variant-95ee11778cc7ac01__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-6__bg-variant-95ee11778cc7ac01__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-6__bg-variant-d840fea6e6d36748__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-6__bg-variant-d840fea6e6d36748__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-6__bg-variant-d840fea6e6d36748__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-6__bg-variant-d840fea6e6d36748__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-6__bg-variant-d840fea6e6d36748__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-6__bg-variant-d840fea6e6d36748__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-6__bg-variant-d840fea6e6d36748__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-6__bg-variant-d840fea6e6d36748__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-6__bg-variant-d840fea6e6d36748__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-6__bg-variant-d840fea6e6d36748__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-6__bg-variant-d840fea6e6d36748__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-6__bg-variant-d840fea6e6d36748__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-6__bg-variant-d84f5d66fd98b842__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-6__bg-variant-d84f5d66fd98b842__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-6__bg-variant-d84f5d66fd98b842__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-6__bg-variant-d84f5d66fd98b842__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-6__bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-6__bg-variant-d84f5d66fd98b842__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-6__bg-variant-d84f5d66fd98b842__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-6__bg-variant-d84f5d66fd98b842__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-6__bg-variant-d84f5d66fd98b842__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-6__bg-variant-d84f5d66fd98b842__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-6__bg-variant-d84f5d66fd98b842__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-6__bg-variant-d84f5d66fd98b842__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode"
+      ],
+      "sourceFamilyId": "phase22-family-phase12-candidate-6",
+      "massLikeValue": 2.0712675365713514E-16,
+      "uncertainty": {
+        "branchVariation": 5.621923668699562E-20,
+        "refinementError": 0,
+        "extractionError": 1.0000000000000006E-18,
+        "environmentSensitivity": 7.183209300227531E-20,
+        "totalUncertainty": 1.0041516081542455E-18
+      },
+      "branchSelectors": [
+        "bg-variant-53b598740d9569b4",
+        "bg-variant-95ee11778cc7ac01",
+        "bg-variant-d840fea6e6d36748",
+        "bg-variant-d84f5d66fd98b842"
+      ],
+      "environmentSelectors": [
+        "env-imported-repo-benchmark",
+        "env-structured-4x4",
+        "env-toy-2d-trivial",
+        "env-zenodo-su2-plaquette-chain-p4-j0.5-g1.5-v1"
+      ],
+      "refinementLevels": [
+        "L0-2x2",
+        "L1-4x4",
+        "L2-8x8"
+      ],
+      "branchStabilityScore": 0.9997285756876195,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 0,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C2_BranchStableCandidate",
+      "status": "candidate-source-ready",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "selector-aware mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [],
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase22-phase12-candidate-7",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase22_selector_source_spectra_001/spectra_manifest.json",
+        "studies/phase22_selector_source_spectra_001/mode_families.json"
+      ],
+      "sourceModeIds": [
+        "phase12-candidate-7__bg-variant-53b598740d9569b4__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-7__bg-variant-53b598740d9569b4__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-7__bg-variant-53b598740d9569b4__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-7__bg-variant-53b598740d9569b4__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-7__bg-variant-53b598740d9569b4__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-7__bg-variant-53b598740d9569b4__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-7__bg-variant-53b598740d9569b4__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-7__bg-variant-53b598740d9569b4__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-7__bg-variant-53b598740d9569b4__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-7__bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-7__bg-variant-53b598740d9569b4__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-7__bg-variant-53b598740d9569b4__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-7__bg-variant-95ee11778cc7ac01__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-7__bg-variant-95ee11778cc7ac01__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-7__bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-7__bg-variant-95ee11778cc7ac01__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-7__bg-variant-95ee11778cc7ac01__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-7__bg-variant-95ee11778cc7ac01__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-7__bg-variant-95ee11778cc7ac01__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-7__bg-variant-95ee11778cc7ac01__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-7__bg-variant-95ee11778cc7ac01__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-7__bg-variant-95ee11778cc7ac01__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-7__bg-variant-95ee11778cc7ac01__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-7__bg-variant-95ee11778cc7ac01__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-7__bg-variant-d840fea6e6d36748__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-7__bg-variant-d840fea6e6d36748__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-7__bg-variant-d840fea6e6d36748__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-7__bg-variant-d840fea6e6d36748__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-7__bg-variant-d840fea6e6d36748__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-7__bg-variant-d840fea6e6d36748__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-7__bg-variant-d840fea6e6d36748__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-7__bg-variant-d840fea6e6d36748__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-7__bg-variant-d840fea6e6d36748__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-7__bg-variant-d840fea6e6d36748__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-7__bg-variant-d840fea6e6d36748__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-7__bg-variant-d840fea6e6d36748__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-7__bg-variant-d84f5d66fd98b842__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-7__bg-variant-d84f5d66fd98b842__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-7__bg-variant-d84f5d66fd98b842__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-7__bg-variant-d84f5d66fd98b842__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-7__bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-7__bg-variant-d84f5d66fd98b842__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-7__bg-variant-d84f5d66fd98b842__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-7__bg-variant-d84f5d66fd98b842__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-7__bg-variant-d84f5d66fd98b842__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-7__bg-variant-d84f5d66fd98b842__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-7__bg-variant-d84f5d66fd98b842__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-7__bg-variant-d84f5d66fd98b842__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode"
+      ],
+      "sourceFamilyId": "phase22-family-phase12-candidate-7",
+      "massLikeValue": 5.329717894641295E-16,
+      "uncertainty": {
+        "branchVariation": 1.446615014735496E-19,
+        "refinementError": 0,
+        "extractionError": 1.0000000000000006E-18,
+        "environmentSensitivity": 1.8483599280344202E-19,
+        "totalUncertainty": 1.0271763695900608E-18
+      },
+      "branchSelectors": [
+        "bg-variant-53b598740d9569b4",
+        "bg-variant-95ee11778cc7ac01",
+        "bg-variant-d840fea6e6d36748",
+        "bg-variant-d84f5d66fd98b842"
+      ],
+      "environmentSelectors": [
+        "env-imported-repo-benchmark",
+        "env-structured-4x4",
+        "env-toy-2d-trivial",
+        "env-zenodo-su2-plaquette-chain-p4-j0.5-g1.5-v1"
+      ],
+      "refinementLevels": [
+        "L0-2x2",
+        "L1-4x4",
+        "L2-8x8"
+      ],
+      "branchStabilityScore": 0.9997285756876194,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 0,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C2_BranchStableCandidate",
+      "status": "candidate-source-ready",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "selector-aware mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [],
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase22-phase12-candidate-8",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase22_selector_source_spectra_001/spectra_manifest.json",
+        "studies/phase22_selector_source_spectra_001/mode_families.json"
+      ],
+      "sourceModeIds": [
+        "phase12-candidate-8__bg-variant-53b598740d9569b4__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-8__bg-variant-53b598740d9569b4__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-8__bg-variant-53b598740d9569b4__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-8__bg-variant-53b598740d9569b4__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-8__bg-variant-53b598740d9569b4__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-8__bg-variant-53b598740d9569b4__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-8__bg-variant-53b598740d9569b4__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-8__bg-variant-53b598740d9569b4__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-8__bg-variant-53b598740d9569b4__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-8__bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-8__bg-variant-53b598740d9569b4__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-8__bg-variant-53b598740d9569b4__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-8__bg-variant-95ee11778cc7ac01__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-8__bg-variant-95ee11778cc7ac01__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-8__bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-8__bg-variant-95ee11778cc7ac01__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-8__bg-variant-95ee11778cc7ac01__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-8__bg-variant-95ee11778cc7ac01__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-8__bg-variant-95ee11778cc7ac01__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-8__bg-variant-95ee11778cc7ac01__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-8__bg-variant-95ee11778cc7ac01__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-8__bg-variant-95ee11778cc7ac01__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-8__bg-variant-95ee11778cc7ac01__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-8__bg-variant-95ee11778cc7ac01__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-8__bg-variant-d840fea6e6d36748__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-8__bg-variant-d840fea6e6d36748__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-8__bg-variant-d840fea6e6d36748__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-8__bg-variant-d840fea6e6d36748__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-8__bg-variant-d840fea6e6d36748__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-8__bg-variant-d840fea6e6d36748__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-8__bg-variant-d840fea6e6d36748__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-8__bg-variant-d840fea6e6d36748__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-8__bg-variant-d840fea6e6d36748__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-8__bg-variant-d840fea6e6d36748__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-8__bg-variant-d840fea6e6d36748__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-8__bg-variant-d840fea6e6d36748__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-8__bg-variant-d84f5d66fd98b842__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-8__bg-variant-d84f5d66fd98b842__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-8__bg-variant-d84f5d66fd98b842__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-8__bg-variant-d84f5d66fd98b842__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-8__bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-8__bg-variant-d84f5d66fd98b842__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-8__bg-variant-d84f5d66fd98b842__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-8__bg-variant-d84f5d66fd98b842__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-8__bg-variant-d84f5d66fd98b842__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-8__bg-variant-d84f5d66fd98b842__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-8__bg-variant-d84f5d66fd98b842__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-8__bg-variant-d84f5d66fd98b842__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode"
+      ],
+      "sourceFamilyId": "phase22-family-phase12-candidate-8",
+      "massLikeValue": 1.951208635800504E-16,
+      "uncertainty": {
+        "branchVariation": 5.2960546228288804E-20,
+        "refinementError": 0,
+        "extractionError": 1.0000000000000006E-18,
+        "environmentSensitivity": 6.76684193224275E-20,
+        "totalUncertainty": 1.0036851271342002E-18
+      },
+      "branchSelectors": [
+        "bg-variant-53b598740d9569b4",
+        "bg-variant-95ee11778cc7ac01",
+        "bg-variant-d840fea6e6d36748",
+        "bg-variant-d84f5d66fd98b842"
+      ],
+      "environmentSelectors": [
+        "env-imported-repo-benchmark",
+        "env-structured-4x4",
+        "env-toy-2d-trivial",
+        "env-zenodo-su2-plaquette-chain-p4-j0.5-g1.5-v1"
+      ],
+      "refinementLevels": [
+        "L0-2x2",
+        "L1-4x4",
+        "L2-8x8"
+      ],
+      "branchStabilityScore": 0.9997285756876195,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 0,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C2_BranchStableCandidate",
+      "status": "candidate-source-ready",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "selector-aware mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [],
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase22-phase12-candidate-9",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase22_selector_source_spectra_001/spectra_manifest.json",
+        "studies/phase22_selector_source_spectra_001/mode_families.json"
+      ],
+      "sourceModeIds": [
+        "phase12-candidate-9__bg-variant-53b598740d9569b4__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-9__bg-variant-53b598740d9569b4__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-9__bg-variant-53b598740d9569b4__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-9__bg-variant-53b598740d9569b4__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-9__bg-variant-53b598740d9569b4__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-9__bg-variant-53b598740d9569b4__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-9__bg-variant-53b598740d9569b4__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-9__bg-variant-53b598740d9569b4__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-9__bg-variant-53b598740d9569b4__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-9__bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-9__bg-variant-53b598740d9569b4__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-9__bg-variant-53b598740d9569b4__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-9__bg-variant-95ee11778cc7ac01__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-9__bg-variant-95ee11778cc7ac01__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-9__bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-9__bg-variant-95ee11778cc7ac01__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-9__bg-variant-95ee11778cc7ac01__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-9__bg-variant-95ee11778cc7ac01__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-9__bg-variant-95ee11778cc7ac01__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-9__bg-variant-95ee11778cc7ac01__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-9__bg-variant-95ee11778cc7ac01__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-9__bg-variant-95ee11778cc7ac01__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-9__bg-variant-95ee11778cc7ac01__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-9__bg-variant-95ee11778cc7ac01__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-9__bg-variant-d840fea6e6d36748__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-9__bg-variant-d840fea6e6d36748__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-9__bg-variant-d840fea6e6d36748__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-9__bg-variant-d840fea6e6d36748__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-9__bg-variant-d840fea6e6d36748__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-9__bg-variant-d840fea6e6d36748__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-9__bg-variant-d840fea6e6d36748__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-9__bg-variant-d840fea6e6d36748__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-9__bg-variant-d840fea6e6d36748__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-9__bg-variant-d840fea6e6d36748__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-9__bg-variant-d840fea6e6d36748__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-9__bg-variant-d840fea6e6d36748__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-9__bg-variant-d84f5d66fd98b842__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-9__bg-variant-d84f5d66fd98b842__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-9__bg-variant-d84f5d66fd98b842__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-9__bg-variant-d84f5d66fd98b842__L0-2x2__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-9__bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-9__bg-variant-d84f5d66fd98b842__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-9__bg-variant-d84f5d66fd98b842__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-9__bg-variant-d84f5d66fd98b842__L1-4x4__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode",
+        "phase12-candidate-9__bg-variant-d84f5d66fd98b842__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-9__bg-variant-d84f5d66fd98b842__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-9__bg-variant-d84f5d66fd98b842__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-9__bg-variant-d84f5d66fd98b842__L2-8x8__env-zenodo-su2-plaquette-chain-p4-j0-5-g1-5-v1-mode"
+      ],
+      "sourceFamilyId": "phase22-family-phase12-candidate-9",
+      "massLikeValue": 1.8571537987513725E-16,
+      "uncertainty": {
+        "branchVariation": 5.0407669281112073E-20,
+        "refinementError": 0,
+        "extractionError": 1.0000000000000006E-18,
+        "environmentSensitivity": 6.440657328708643E-20,
+        "totalUncertainty": 1.0033389954571387E-18
+      },
+      "branchSelectors": [
+        "bg-variant-53b598740d9569b4",
+        "bg-variant-95ee11778cc7ac01",
+        "bg-variant-d840fea6e6d36748",
+        "bg-variant-d84f5d66fd98b842"
+      ],
+      "environmentSelectors": [
+        "env-imported-repo-benchmark",
+        "env-structured-4x4",
+        "env-toy-2d-trivial",
+        "env-zenodo-su2-plaquette-chain-p4-j0.5-g1.5-v1"
+      ],
+      "refinementLevels": [
+        "L0-2x2",
+        "L1-4x4",
+        "L2-8x8"
+      ],
+      "branchStabilityScore": 0.9997285756876194,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 0,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C2_BranchStableCandidate",
+      "status": "candidate-source-ready",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "selector-aware mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [],
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    }
+  ],
+  "summaryBlockers": [
+    "12 source candidate(s) satisfy Phase XXI readiness policy."
+  ],
+  "provenance": {
+    "createdAt": "2026-04-26T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase22-selector-source-spectra",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu"
+  }
+}

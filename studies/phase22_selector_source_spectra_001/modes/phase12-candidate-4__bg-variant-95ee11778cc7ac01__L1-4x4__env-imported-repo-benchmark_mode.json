@@ -1,0 +1,34 @@
+{
+  "modeRecordId": "phase12-candidate-4__bg-variant-95ee11778cc7ac01__L1-4x4__env-imported-repo-benchmark-mode",
+  "sourceCandidateId": "phase12-candidate-4",
+  "sourceFamilyId": "family-4",
+  "branchVariantId": "bg-variant-95ee11778cc7ac01",
+  "refinementLevel": "L1-4x4",
+  "environmentId": "env-imported-repo-benchmark",
+  "massLikeValue": 6.469457712756761E-16,
+  "extractionError": 1E-18,
+  "gaugeLeakEnvelope": [
+    0,
+    0,
+    0
+  ],
+  "sourceArtifactPaths": [
+    "studies/phase12_joined_calculation_001/output/background_family/bosons/registry.json",
+    "studies/phase12_joined_calculation_001/output/background_family/modes/mode_families.json",
+    "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-a-20260315212202_spectrum.json",
+    "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-b-20260315212202_spectrum.json",
+    "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-a-20260315212202-mode-4.json",
+    "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-b-20260315212202-mode-4.json"
+  ],
+  "status": "computed",
+  "blockers": [],
+  "provenance": {
+    "createdAt": "2026-04-26T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase22-selector-source-spectra",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu"
+  }
+}

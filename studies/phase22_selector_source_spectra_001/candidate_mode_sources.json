@@ -1,0 +1,302 @@
+{
+  "tableId": "phase22-candidate-mode-source-bridge-v1",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "candidate-source-ready",
+  "sourceCandidateTablePath": "studies/phase22_selector_source_spectra_001/source_candidates.json",
+  "readySourceCount": 12,
+  "candidateModeSources": [
+    {
+      "sourceId": "phase22-phase12-candidate-0",
+      "sourceOrigin": "internal-computed-artifact",
+      "sourceArtifactKind": "computed-observable-table",
+      "sourceArtifactPath": "studies/phase22_selector_source_spectra_001/spectra_manifest.json",
+      "sourceObservableId": "phase22-phase12-candidate-0",
+      "value": 1.0947045268560027E-15,
+      "uncertainty": 1.1101428963770886E-18,
+      "unitFamily": "mass-energy",
+      "unit": "internal-mass-unit",
+      "environmentId": "env-imported-repo-benchmark",
+      "branchId": "bg-variant-53b598740d9569b4",
+      "refinementLevel": "L0-2x2",
+      "sourceExtractionMethod": "p20-phase12-internal-vector-boson-source-adapter:v1",
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceId": "phase22-phase12-candidate-1",
+      "sourceOrigin": "internal-computed-artifact",
+      "sourceArtifactKind": "computed-observable-table",
+      "sourceArtifactPath": "studies/phase22_selector_source_spectra_001/spectra_manifest.json",
+      "sourceObservableId": "phase22-phase12-candidate-1",
+      "value": 1.1819501867239086E-15,
+      "uncertainty": 1.1273596786632845E-18,
+      "unitFamily": "mass-energy",
+      "unit": "internal-mass-unit",
+      "environmentId": "env-imported-repo-benchmark",
+      "branchId": "bg-variant-53b598740d9569b4",
+      "refinementLevel": "L0-2x2",
+      "sourceExtractionMethod": "p20-phase12-internal-vector-boson-source-adapter:v1",
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceId": "phase22-phase12-candidate-10",
+      "sourceOrigin": "internal-computed-artifact",
+      "sourceArtifactKind": "computed-observable-table",
+      "sourceArtifactPath": "studies/phase22_selector_source_spectra_001/spectra_manifest.json",
+      "sourceObservableId": "phase22-phase12-candidate-10",
+      "value": 3.445074376618695E-16,
+      "uncertainty": 1.0114436316277768E-18,
+      "unitFamily": "mass-energy",
+      "unit": "internal-mass-unit",
+      "environmentId": "env-imported-repo-benchmark",
+      "branchId": "bg-variant-53b598740d9569b4",
+      "refinementLevel": "L0-2x2",
+      "sourceExtractionMethod": "p20-phase12-internal-vector-boson-source-adapter:v1",
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceId": "phase22-phase12-candidate-11",
+      "sourceOrigin": "internal-computed-artifact",
+      "sourceArtifactKind": "computed-observable-table",
+      "sourceArtifactPath": "studies/phase22_selector_source_spectra_001/spectra_manifest.json",
+      "sourceObservableId": "phase22-phase12-candidate-11",
+      "value": 7.801558513473296E-17,
+      "uncertainty": 1.0005900368959197E-18,
+      "unitFamily": "mass-energy",
+      "unit": "internal-mass-unit",
+      "environmentId": "env-imported-repo-benchmark",
+      "branchId": "bg-variant-53b598740d9569b4",
+      "refinementLevel": "L0-2x2",
+      "sourceExtractionMethod": "p20-phase12-internal-vector-boson-source-adapter:v1",
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceId": "phase22-phase12-candidate-2",
+      "sourceOrigin": "internal-computed-artifact",
+      "sourceArtifactKind": "computed-observable-table",
+      "sourceArtifactPath": "studies/phase22_selector_source_spectra_001/spectra_manifest.json",
+      "sourceObservableId": "phase22-phase12-candidate-2",
+      "value": 1.2673501992931155E-15,
+      "uncertainty": 1.1452104596156499E-18,
+      "unitFamily": "mass-energy",
+      "unit": "internal-mass-unit",
+      "environmentId": "env-imported-repo-benchmark",
+      "branchId": "bg-variant-53b598740d9569b4",
+      "refinementLevel": "L0-2x2",
+      "sourceExtractionMethod": "p20-phase12-internal-vector-boson-source-adapter:v1",
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceId": "phase22-phase12-candidate-3",
+      "sourceOrigin": "internal-computed-artifact",
+      "sourceArtifactKind": "computed-observable-table",
+      "sourceArtifactPath": "studies/phase22_selector_source_spectra_001/spectra_manifest.json",
+      "sourceObservableId": "phase22-phase12-candidate-3",
+      "value": 1.0717282557091172E-15,
+      "uncertainty": 1.1057863392808516E-18,
+      "unitFamily": "mass-energy",
+      "unit": "internal-mass-unit",
+      "environmentId": "env-imported-repo-benchmark",
+      "branchId": "bg-variant-53b598740d9569b4",
+      "refinementLevel": "L0-2x2",
+      "sourceExtractionMethod": "p20-phase12-internal-vector-boson-source-adapter:v1",
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceId": "phase22-phase12-candidate-4",
+      "sourceOrigin": "internal-computed-artifact",
+      "sourceArtifactKind": "computed-observable-table",
+      "sourceArtifactPath": "studies/phase22_selector_source_spectra_001/spectra_manifest.json",
+      "sourceObservableId": "phase22-phase12-candidate-4",
+      "value": 6.468957290994918E-16,
+      "uncertainty": 1.0397885353056507E-18,
+      "unitFamily": "mass-energy",
+      "unit": "internal-mass-unit",
+      "environmentId": "env-imported-repo-benchmark",
+      "branchId": "bg-variant-53b598740d9569b4",
+      "refinementLevel": "L0-2x2",
+      "sourceExtractionMethod": "p20-phase12-internal-vector-boson-source-adapter:v1",
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceId": "phase22-phase12-candidate-5",
+      "sourceOrigin": "internal-computed-artifact",
+      "sourceArtifactKind": "computed-observable-table",
+      "sourceArtifactPath": "studies/phase22_selector_source_spectra_001/spectra_manifest.json",
+      "sourceObservableId": "phase22-phase12-candidate-5",
+      "value": 1.8111561646187786E-16,
+      "uncertainty": 1.0031759030802628E-18,
+      "unitFamily": "mass-energy",
+      "unit": "internal-mass-unit",
+      "environmentId": "env-imported-repo-benchmark",
+      "branchId": "bg-variant-53b598740d9569b4",
+      "refinementLevel": "L0-2x2",
+      "sourceExtractionMethod": "p20-phase12-internal-vector-boson-source-adapter:v1",
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceId": "phase22-phase12-candidate-6",
+      "sourceOrigin": "internal-computed-artifact",
+      "sourceArtifactKind": "computed-observable-table",
+      "sourceArtifactPath": "studies/phase22_selector_source_spectra_001/spectra_manifest.json",
+      "sourceObservableId": "phase22-phase12-candidate-6",
+      "value": 2.0712675365713514E-16,
+      "uncertainty": 1.0041516081542455E-18,
+      "unitFamily": "mass-energy",
+      "unit": "internal-mass-unit",
+      "environmentId": "env-imported-repo-benchmark",
+      "branchId": "bg-variant-53b598740d9569b4",
+      "refinementLevel": "L0-2x2",
+      "sourceExtractionMethod": "p20-phase12-internal-vector-boson-source-adapter:v1",
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceId": "phase22-phase12-candidate-7",
+      "sourceOrigin": "internal-computed-artifact",
+      "sourceArtifactKind": "computed-observable-table",
+      "sourceArtifactPath": "studies/phase22_selector_source_spectra_001/spectra_manifest.json",
+      "sourceObservableId": "phase22-phase12-candidate-7",
+      "value": 5.329717894641295E-16,
+      "uncertainty": 1.0271763695900608E-18,
+      "unitFamily": "mass-energy",
+      "unit": "internal-mass-unit",
+      "environmentId": "env-imported-repo-benchmark",
+      "branchId": "bg-variant-53b598740d9569b4",
+      "refinementLevel": "L0-2x2",
+      "sourceExtractionMethod": "p20-phase12-internal-vector-boson-source-adapter:v1",
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceId": "phase22-phase12-candidate-8",
+      "sourceOrigin": "internal-computed-artifact",
+      "sourceArtifactKind": "computed-observable-table",
+      "sourceArtifactPath": "studies/phase22_selector_source_spectra_001/spectra_manifest.json",
+      "sourceObservableId": "phase22-phase12-candidate-8",
+      "value": 1.951208635800504E-16,
+      "uncertainty": 1.0036851271342002E-18,
+      "unitFamily": "mass-energy",
+      "unit": "internal-mass-unit",
+      "environmentId": "env-imported-repo-benchmark",
+      "branchId": "bg-variant-53b598740d9569b4",
+      "refinementLevel": "L0-2x2",
+      "sourceExtractionMethod": "p20-phase12-internal-vector-boson-source-adapter:v1",
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceId": "phase22-phase12-candidate-9",
+      "sourceOrigin": "internal-computed-artifact",
+      "sourceArtifactKind": "computed-observable-table",
+      "sourceArtifactPath": "studies/phase22_selector_source_spectra_001/spectra_manifest.json",
+      "sourceObservableId": "phase22-phase12-candidate-9",
+      "value": 1.8571537987513725E-16,
+      "uncertainty": 1.0033389954571387E-18,
+      "unitFamily": "mass-energy",
+      "unit": "internal-mass-unit",
+      "environmentId": "env-imported-repo-benchmark",
+      "branchId": "bg-variant-53b598740d9569b4",
+      "refinementLevel": "L0-2x2",
+      "sourceExtractionMethod": "p20-phase12-internal-vector-boson-source-adapter:v1",
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    }
+  ],
+  "guardrails": [
+    "No W or Z particle identity is assigned by this bridge artifact.",
+    "No external physical target value is used as source data.",
+    "Ready source records remain identity-neutral CandidateModeSourceRecord inputs only."
+  ]
+}
