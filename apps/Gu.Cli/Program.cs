@@ -127,6 +127,8 @@ switch (args[0])
         return PromoteWzPhysicalPredictionArtifacts(args);
     case "diagnose-wz-ratio-failure":
         return DiagnoseWzRatioFailure(args);
+    case "diagnose-wz-selector-variation":
+        return DiagnoseWzSelectorVariation(args);
     case "build-validation-dossier":
         return BuildValidationDossier(args);
     case "verify-study-freshness":
@@ -4890,6 +4892,54 @@ static int DiagnoseWzRatioFailure(string[] args)
     }
 }
 
+static int DiagnoseWzSelectorVariation(string[] args)
+{
+    var identityReadinessPath = ParseFlag(args, "--identity-readiness", "");
+    var modesRoot = ParseFlag(args, "--modes-root", "");
+    var targetTablePath = ParseFlag(args, "--target-table", "");
+    var outPath = ParseFlag(args, "--out", "");
+    if (string.IsNullOrWhiteSpace(identityReadinessPath) ||
+        string.IsNullOrWhiteSpace(modesRoot) ||
+        string.IsNullOrWhiteSpace(targetTablePath) ||
+        string.IsNullOrWhiteSpace(outPath))
+    {
+        Console.Error.WriteLine("Usage: gu diagnose-wz-selector-variation --identity-readiness <identity_rule_readiness.json> --modes-root <phase22/modes> --target-table <physical_targets.json> --out <diagnostic.json>");
+        return 1;
+    }
+
+    try
+    {
+        var provenance = new ProvenanceMeta
+        {
+            CreatedAt = DateTimeOffset.Parse("2026-04-26T00:00:00+00:00"),
+            CodeRevision = "working-tree",
+            Branch = new BranchRef { BranchId = "phase30-wz-selector-variation-diagnostic", SchemaVersion = "1.0" },
+            Backend = "cpu",
+        };
+        var result = WzSelectorVariationDiagnostic.Evaluate(
+            File.ReadAllText(identityReadinessPath),
+            modesRoot,
+            File.ReadAllText(targetTablePath),
+            provenance);
+
+        Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(outPath))!);
+        File.WriteAllText(outPath, GuJsonDefaults.Serialize(result));
+
+        Console.WriteLine($"diagnose-wz-selector-variation done. Output: {outPath}");
+        Console.WriteLine($"  terminalStatus: {result.TerminalStatus}");
+        Console.WriteLine($"  alignedPointCount: {result.AlignedPointCount}");
+        Console.WriteLine($"  passingPointCount: {result.PassingPointCount}");
+        if (result.ClosestPoint is not null)
+            Console.WriteLine($"  closestPoint: {result.ClosestPoint.PointId}");
+        return result.TerminalStatus == "selector-variation-diagnostic-complete" ? 0 : 1;
+    }
+    catch (Exception ex)
+    {
+        Console.Error.WriteLine($"diagnose-wz-selector-variation failed: {ex.Message}");
+        return 1;
+    }
+}
+
 static string ResolvePath(string specDir, string path)
 {
     if (Path.IsPathRooted(path) || File.Exists(path) || Directory.Exists(path))
@@ -6081,6 +6131,7 @@ static void PrintUsage()
     Console.WriteLine("  gu apply-electroweak-charge-sectors --identity-features <f> --mode-families <f> --mixing-readiness <f> --out-dir <dir>  Apply Phase XXVII charge sectors to identity features");
     Console.WriteLine("  gu promote-wz-physical-prediction-artifacts --identity-readiness <f> --candidate-mode-sources <f> --mode-families <f> --out-dir <dir>  Promote Phase XXVIII W/Z identity rules into physical prediction campaign inputs");
     Console.WriteLine("  gu diagnose-wz-ratio-failure --identity-readiness <f> --mixing-readiness <f> --candidate-mode-sources <f> --mode-families <f> --target-table <f> --out <f>  Diagnose Phase XXIX W/Z physical-ratio failure");
+    Console.WriteLine("  gu diagnose-wz-selector-variation --identity-readiness <f> --modes-root <dir> --target-table <f> --out <f>  Diagnose Phase XXX W/Z selector variation across branch/refinement/environment points");
     Console.WriteLine("  gu build-validation-dossier --study-manifest <f> [--out <f>]  Build Phase V validation dossier");
     Console.WriteLine("  gu verify-study-freshness --dossier <f>      Verify study freshness / G-006 compliance");
     Console.WriteLine("  gu run-phase5-campaign --spec <f> --out-dir <dir> [--validate-first]  Run Phase V M53 end-to-end campaign");
