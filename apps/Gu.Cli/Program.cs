@@ -115,6 +115,8 @@ switch (args[0])
         return RunInternalVectorBosonSourceSpectrumCampaign(args);
     case "generate-wz-identity-hypotheses":
         return GenerateWzIdentityHypotheses(args);
+    case "evaluate-wz-identity-rule-readiness":
+        return EvaluateWzIdentityRuleReadiness(args);
     case "build-validation-dossier":
         return BuildValidationDossier(args);
     case "verify-study-freshness":
@@ -4582,6 +4584,51 @@ static int GenerateWzIdentityHypotheses(string[] args)
     }
 }
 
+static int EvaluateWzIdentityRuleReadiness(string[] args)
+{
+    var sourcesPath = ParseFlag(args, "--candidate-mode-sources", "");
+    var modeFamiliesPath = ParseFlag(args, "--mode-families", "");
+    var outPath = ParseFlag(args, "--out", "");
+    if (string.IsNullOrWhiteSpace(sourcesPath) ||
+        string.IsNullOrWhiteSpace(modeFamiliesPath) ||
+        string.IsNullOrWhiteSpace(outPath))
+    {
+        Console.Error.WriteLine("Usage: gu evaluate-wz-identity-rule-readiness --candidate-mode-sources <candidate_mode_sources.json> --mode-families <mode_families.json> --out <identity_rule_readiness.json>");
+        return 1;
+    }
+
+    try
+    {
+        var bridge = GuJsonDefaults.Deserialize<CandidateModeSourceBridgeTable>(File.ReadAllText(sourcesPath))
+            ?? throw new InvalidOperationException($"Failed to deserialize candidate-mode source bridge from {sourcesPath}.");
+        var provenance = new ProvenanceMeta
+        {
+            CreatedAt = DateTimeOffset.Parse("2026-04-26T00:00:00+00:00"),
+            CodeRevision = "working-tree",
+            Branch = new BranchRef { BranchId = "phase24-wz-identity-rule-readiness", SchemaVersion = "1.0" },
+            Backend = "cpu",
+        };
+        var result = VectorBosonIdentityRuleReadinessEvaluator.Evaluate(
+            bridge.CandidateModeSources,
+            File.ReadAllText(modeFamiliesPath),
+            provenance);
+
+        Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(outPath))!);
+        File.WriteAllText(outPath, GuJsonDefaults.Serialize(result));
+
+        Console.WriteLine($"evaluate-wz-identity-rule-readiness done. Output: {outPath}");
+        Console.WriteLine($"  terminalStatus: {result.TerminalStatus}");
+        Console.WriteLine($"  coverageRecords: {result.Coverage.Count}");
+        Console.WriteLine($"  derivedRules: {result.DerivedRules.Count}");
+        return 0;
+    }
+    catch (Exception ex)
+    {
+        Console.Error.WriteLine($"evaluate-wz-identity-rule-readiness failed: {ex.Message}");
+        return 1;
+    }
+}
+
 static string ResolvePath(string specDir, string path)
 {
     if (Path.IsPathRooted(path) || File.Exists(path) || Directory.Exists(path))
@@ -5767,6 +5814,7 @@ static void PrintUsage()
     Console.WriteLine("  gu evaluate-internal-vector-boson-source-readiness --source-candidates <f> --spec <f> --out <f>  Evaluate Phase XXI readiness");
     Console.WriteLine("  gu run-internal-vector-boson-source-spectrum-campaign --spec <f> --out-dir <dir>  Run Phase XXII source spectrum campaign");
     Console.WriteLine("  gu generate-wz-identity-hypotheses --candidate-mode-sources <f> --out-dir <dir>  Generate Phase XXIII W/Z identity hypotheses");
+    Console.WriteLine("  gu evaluate-wz-identity-rule-readiness --candidate-mode-sources <f> --mode-families <f> --out <f>  Evaluate Phase XXIV W/Z identity-rule prerequisites");
     Console.WriteLine("  gu build-validation-dossier --study-manifest <f> [--out <f>]  Build Phase V validation dossier");
     Console.WriteLine("  gu verify-study-freshness --dossier <f>      Verify study freshness / G-006 compliance");
     Console.WriteLine("  gu run-phase5-campaign --spec <f> --out-dir <dir> [--validate-first]  Run Phase V M53 end-to-end campaign");
