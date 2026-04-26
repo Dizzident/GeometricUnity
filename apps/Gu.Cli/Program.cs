@@ -123,6 +123,8 @@ switch (args[0])
         return EvaluateElectroweakMixingConvention(args);
     case "apply-electroweak-charge-sectors":
         return ApplyElectroweakChargeSectors(args);
+    case "promote-wz-physical-prediction-artifacts":
+        return PromoteWzPhysicalPredictionArtifacts(args);
     case "build-validation-dossier":
         return BuildValidationDossier(args);
     case "verify-study-freshness":
@@ -4779,6 +4781,58 @@ static int ApplyElectroweakChargeSectors(string[] args)
     }
 }
 
+static int PromoteWzPhysicalPredictionArtifacts(string[] args)
+{
+    var identityReadinessPath = ParseFlag(args, "--identity-readiness", "");
+    var candidateSourcesPath = ParseFlag(args, "--candidate-mode-sources", "");
+    var modeFamiliesPath = ParseFlag(args, "--mode-families", "");
+    var outDir = ParseFlag(args, "--out-dir", "");
+    if (string.IsNullOrWhiteSpace(identityReadinessPath) ||
+        string.IsNullOrWhiteSpace(candidateSourcesPath) ||
+        string.IsNullOrWhiteSpace(modeFamiliesPath) ||
+        string.IsNullOrWhiteSpace(outDir))
+    {
+        Console.Error.WriteLine("Usage: gu promote-wz-physical-prediction-artifacts --identity-readiness <identity_rule_readiness.json> --candidate-mode-sources <candidate_mode_sources.json> --mode-families <mode_families.json> --out-dir <dir>");
+        return 1;
+    }
+
+    try
+    {
+        var provenance = new ProvenanceMeta
+        {
+            CreatedAt = DateTimeOffset.Parse("2026-04-26T00:00:00+00:00"),
+            CodeRevision = "working-tree",
+            Branch = new BranchRef { BranchId = "phase28-wz-physical-prediction-artifact-promotion", SchemaVersion = "1.0" },
+            Backend = "cpu",
+        };
+        var result = WzPhysicalPredictionArtifactPromoter.Promote(
+            File.ReadAllText(identityReadinessPath),
+            File.ReadAllText(candidateSourcesPath),
+            File.ReadAllText(modeFamiliesPath),
+            provenance);
+
+        Directory.CreateDirectory(outDir);
+        File.WriteAllText(Path.Combine(outDir, "promotion_result.json"), GuJsonDefaults.Serialize(result));
+        File.WriteAllText(Path.Combine(outDir, "physical_mode_records.json"), GuJsonDefaults.Serialize(result.PhysicalModeRecords));
+        File.WriteAllText(Path.Combine(outDir, "mode_identification_evidence.json"), GuJsonDefaults.Serialize(result.ModeIdentificationEvidence));
+        File.WriteAllText(Path.Combine(outDir, "observables.json"), GuJsonDefaults.Serialize(result.Observables));
+        File.WriteAllText(Path.Combine(outDir, "physical_observable_mappings.json"), GuJsonDefaults.Serialize(result.PhysicalObservableMappings));
+        File.WriteAllText(Path.Combine(outDir, "observable_classifications.json"), GuJsonDefaults.Serialize(result.ObservableClassifications));
+        File.WriteAllText(Path.Combine(outDir, "physical_calibrations.json"), GuJsonDefaults.Serialize(result.PhysicalCalibrations));
+
+        Console.WriteLine($"promote-wz-physical-prediction-artifacts done. Output: {outDir}");
+        Console.WriteLine($"  terminalStatus: {result.TerminalStatus}");
+        Console.WriteLine($"  physicalModeRecords: {result.PhysicalModeRecords.Count}");
+        Console.WriteLine($"  observables: {result.Observables.Count}");
+        return result.TerminalStatus == "physical-prediction-artifacts-ready" ? 0 : 1;
+    }
+    catch (Exception ex)
+    {
+        Console.Error.WriteLine($"promote-wz-physical-prediction-artifacts failed: {ex.Message}");
+        return 1;
+    }
+}
+
 static string ResolvePath(string specDir, string path)
 {
     if (Path.IsPathRooted(path) || File.Exists(path) || Directory.Exists(path))
@@ -5968,6 +6022,7 @@ static void PrintUsage()
     Console.WriteLine("  gu compute-wz-identity-features --mode-families <f> --phase12-mode-families <f> --mode-signature-root <dir> --coupling-atlases <csv> --out-dir <dir>  Compute Phase XXV internal identity features");
     Console.WriteLine("  gu evaluate-electroweak-mixing-convention --identity-features <f> [--mixing-convention <f>] --out <f>  Evaluate Phase XXVI electroweak mixing convention readiness");
     Console.WriteLine("  gu apply-electroweak-charge-sectors --identity-features <f> --mode-families <f> --mixing-readiness <f> --out-dir <dir>  Apply Phase XXVII charge sectors to identity features");
+    Console.WriteLine("  gu promote-wz-physical-prediction-artifacts --identity-readiness <f> --candidate-mode-sources <f> --mode-families <f> --out-dir <dir>  Promote Phase XXVIII W/Z identity rules into physical prediction campaign inputs");
     Console.WriteLine("  gu build-validation-dossier --study-manifest <f> [--out <f>]  Build Phase V validation dossier");
     Console.WriteLine("  gu verify-study-freshness --dossier <f>      Verify study freshness / G-006 compliance");
     Console.WriteLine("  gu run-phase5-campaign --spec <f> --out-dir <dir> [--validate-first]  Run Phase V M53 end-to-end campaign");

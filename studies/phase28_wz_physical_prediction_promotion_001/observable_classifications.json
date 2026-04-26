@@ -1,0 +1,11 @@
+{
+  "tableId": "phase28-wz-observable-classifications-v1",
+  "classifications": [
+    {
+      "observableId": "physical-w-z-mass-ratio",
+      "classification": "physical-observable",
+      "rationale": "P27 identity rules validate the W/Z mode identities, and P28 computes the dimensionless W/Z ratio from those internal modes.",
+      "physicalClaimAllowed": true
+    }
+  ]
+}

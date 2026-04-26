@@ -1,0 +1,51 @@
+{
+  "studyId": "phase28-wz-physical-prediction-promotion",
+  "schemaVersion": "1.0.0",
+  "channels": [
+    {
+      "channelId": "observation-chain",
+      "status": "evaluated",
+      "inputCount": 3,
+      "outputCount": 3,
+      "originCounts": {
+        "upstream-sourced": 3
+      }
+    },
+    {
+      "channelId": "environment-variance",
+      "status": "evaluated",
+      "inputCount": 5,
+      "outputCount": 5,
+      "originCounts": {
+        "upstream-sourced": 5
+      }
+    },
+    {
+      "channelId": "representation-content",
+      "status": "evaluated",
+      "inputCount": 3,
+      "outputCount": 3,
+      "originCounts": {
+        "upstream-sourced": 3
+      }
+    },
+    {
+      "channelId": "coupling-consistency",
+      "status": "evaluated",
+      "inputCount": 3,
+      "outputCount": 3,
+      "originCounts": {
+        "upstream-sourced": 3
+      }
+    }
+  ],
+  "provenance": {
+    "createdAt": "2026-04-26T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase28-wz-physical-prediction-promotion",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu"
+  }
+}
