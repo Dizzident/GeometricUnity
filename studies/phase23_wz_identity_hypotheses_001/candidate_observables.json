@@ -1,0 +1,27 @@
+[
+  {
+    "observableId": "candidate-w-z-vector-mode-ratio-from-p22-hypothesis",
+    "value": 0.06155803279807537,
+    "uncertainty": {
+      "branchVariation": -1,
+      "refinementError": -1,
+      "extractionError": 0.0007914705852460068,
+      "environmentSensitivity": -1,
+      "totalUncertainty": 0.0007914705852460068
+    },
+    "branchId": "bg-variant-53b598740d9569b4",
+    "environmentId": "env-imported-repo-benchmark",
+    "refinementLevel": "L0-2x2",
+    "extractionMethod": "positive-mode-ratio:candidate-w-vector-mode-from-p22-lowest-source/candidate-z-vector-mode-from-p22-highest-source",
+    "distributionModel": "gaussian",
+    "provenance": {
+      "createdAt": "2026-04-26T00:00:00+00:00",
+      "codeRevision": "working-tree",
+      "branch": {
+        "branchId": "phase23-wz-identity-hypotheses",
+        "schemaVersion": "1.0"
+      },
+      "backend": "cpu"
+    }
+  }
+]

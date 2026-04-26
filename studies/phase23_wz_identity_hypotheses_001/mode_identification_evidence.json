@@ -1,0 +1,67 @@
+{
+  "tableId": "phase23-wz-mode-identification-evidence-v1",
+  "evidence": [
+    {
+      "evidenceId": "provisional-candidate-w-vector-mode-from-p22-lowest-source-evidence",
+      "modeId": "candidate-w-vector-mode-from-p22-lowest-source",
+      "particleId": "w-boson",
+      "modeKind": "vector-boson-mass-mode",
+      "sourceObservableIds": [
+        "phase22-phase12-candidate-11"
+      ],
+      "environmentId": "env-imported-repo-benchmark",
+      "branchId": "bg-variant-53b598740d9569b4",
+      "refinementLevel": "L0-2x2",
+      "derivationId": "lowest-ready-source-ordering-is-not-a-derived-w-identity-rule",
+      "status": "provisional",
+      "assumptions": [
+        "ordering among ready P22 sources is a screening heuristic, not a physical identity derivation",
+        "no external physical target value was used to create this evidence record"
+      ],
+      "closureRequirements": [
+        "replace ordering heuristic with derived W/Z identity rule",
+        "test the identity rule across branch, refinement, and environment selectors"
+      ],
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase23-wz-identity-hypotheses",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "evidenceId": "provisional-candidate-z-vector-mode-from-p22-highest-source-evidence",
+      "modeId": "candidate-z-vector-mode-from-p22-highest-source",
+      "particleId": "z-boson",
+      "modeKind": "vector-boson-mass-mode",
+      "sourceObservableIds": [
+        "phase22-phase12-candidate-2"
+      ],
+      "environmentId": "env-imported-repo-benchmark",
+      "branchId": "bg-variant-53b598740d9569b4",
+      "refinementLevel": "L0-2x2",
+      "derivationId": "highest-ready-source-ordering-is-not-a-derived-z-identity-rule",
+      "status": "provisional",
+      "assumptions": [
+        "ordering among ready P22 sources is a screening heuristic, not a physical identity derivation",
+        "no external physical target value was used to create this evidence record"
+      ],
+      "closureRequirements": [
+        "replace ordering heuristic with derived W/Z identity rule",
+        "test the identity rule across branch, refinement, and environment selectors"
+      ],
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase23-wz-identity-hypotheses",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    }
+  ]
+}

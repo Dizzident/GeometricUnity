@@ -113,6 +113,8 @@ switch (args[0])
         return EvaluateInternalVectorBosonSourceReadiness(args);
     case "run-internal-vector-boson-source-spectrum-campaign":
         return RunInternalVectorBosonSourceSpectrumCampaign(args);
+    case "generate-wz-identity-hypotheses":
+        return GenerateWzIdentityHypotheses(args);
     case "build-validation-dossier":
         return BuildValidationDossier(args);
     case "verify-study-freshness":
@@ -4537,6 +4539,49 @@ static object BuildPhase22CandidateModeSources(InternalVectorBosonSourceCandidat
     };
 }
 
+static int GenerateWzIdentityHypotheses(string[] args)
+{
+    var sourcesPath = ParseFlag(args, "--candidate-mode-sources", "");
+    var outDir = ParseFlag(args, "--out-dir", "");
+    if (string.IsNullOrWhiteSpace(sourcesPath) || string.IsNullOrWhiteSpace(outDir))
+    {
+        Console.Error.WriteLine("Usage: gu generate-wz-identity-hypotheses --candidate-mode-sources <candidate_mode_sources.json> --out-dir <dir>");
+        return 1;
+    }
+
+    try
+    {
+        var bridge = GuJsonDefaults.Deserialize<CandidateModeSourceBridgeTable>(File.ReadAllText(sourcesPath))
+            ?? throw new InvalidOperationException($"Failed to deserialize candidate-mode source bridge from {sourcesPath}.");
+        var provenance = new ProvenanceMeta
+        {
+            CreatedAt = DateTimeOffset.Parse("2026-04-26T00:00:00+00:00"),
+            CodeRevision = "working-tree",
+            Branch = new BranchRef { BranchId = "phase23-wz-identity-hypotheses", SchemaVersion = "1.0" },
+            Backend = "cpu",
+        };
+        var result = VectorBosonIdentityHypothesisGenerator.Generate(bridge.CandidateModeSources, provenance);
+
+        Directory.CreateDirectory(outDir);
+        File.WriteAllText(Path.Combine(outDir, "candidate_modes.json"), GuJsonDefaults.Serialize(result.CandidateModes));
+        File.WriteAllText(Path.Combine(outDir, "mode_identification_evidence.json"), GuJsonDefaults.Serialize(result.ModeIdentificationEvidence));
+        File.WriteAllText(Path.Combine(outDir, "candidate_observables.json"), GuJsonDefaults.Serialize(result.CandidateObservables));
+        File.WriteAllText(Path.Combine(outDir, "physical_observable_mappings.json"), GuJsonDefaults.Serialize(result.PhysicalObservableMappings));
+        File.WriteAllText(Path.Combine(outDir, "identity_hypothesis_result.json"), GuJsonDefaults.Serialize(result));
+
+        Console.WriteLine($"generate-wz-identity-hypotheses done. Output: {outDir}");
+        Console.WriteLine($"  terminalStatus: {result.TerminalStatus}");
+        Console.WriteLine($"  candidateModes: {result.CandidateModes.Count}");
+        Console.WriteLine($"  candidateObservables: {result.CandidateObservables.Count}");
+        return 0;
+    }
+    catch (Exception ex)
+    {
+        Console.Error.WriteLine($"generate-wz-identity-hypotheses failed: {ex.Message}");
+        return 1;
+    }
+}
+
 static string ResolvePath(string specDir, string path)
 {
     if (Path.IsPathRooted(path) || File.Exists(path) || Directory.Exists(path))
@@ -5721,6 +5766,7 @@ static void PrintUsage()
     Console.WriteLine("  gu generate-internal-vector-boson-sources --registry <f> --families <f> --spectra-root <dir> --out <f>  Generate Phase XX source candidates");
     Console.WriteLine("  gu evaluate-internal-vector-boson-source-readiness --source-candidates <f> --spec <f> --out <f>  Evaluate Phase XXI readiness");
     Console.WriteLine("  gu run-internal-vector-boson-source-spectrum-campaign --spec <f> --out-dir <dir>  Run Phase XXII source spectrum campaign");
+    Console.WriteLine("  gu generate-wz-identity-hypotheses --candidate-mode-sources <f> --out-dir <dir>  Generate Phase XXIII W/Z identity hypotheses");
     Console.WriteLine("  gu build-validation-dossier --study-manifest <f> [--out <f>]  Build Phase V validation dossier");
     Console.WriteLine("  gu verify-study-freshness --dossier <f>      Verify study freshness / G-006 compliance");
     Console.WriteLine("  gu run-phase5-campaign --spec <f> --out-dir <dir> [--validate-first]  Run Phase V M53 end-to-end campaign");

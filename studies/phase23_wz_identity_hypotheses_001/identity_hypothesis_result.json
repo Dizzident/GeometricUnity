@@ -1,0 +1,205 @@
+{
+  "resultId": "phase23-wz-identity-hypotheses-v1",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "identity-blocked",
+  "candidateModes": [
+    {
+      "modeId": "candidate-w-vector-mode-from-p22-lowest-source",
+      "particleId": "w-boson",
+      "modeKind": "vector-boson-mass-mode",
+      "observableId": "phase22-phase12-candidate-11",
+      "value": 7.801558513473296E-17,
+      "uncertainty": 1.0005900368959197E-18,
+      "unitFamily": "mass-energy",
+      "unit": "internal-mass-unit",
+      "status": "provisional",
+      "environmentId": "env-imported-repo-benchmark",
+      "branchId": "bg-variant-53b598740d9569b4",
+      "refinementLevel": "L0-2x2",
+      "extractionMethod": "p23-wz-identity-hypothesis-screen:v1:phase22-phase12-candidate-11",
+      "assumptions": [
+        "mode is a W/Z identity hypothesis, not a validated physical identification",
+        "external target values were not used as source observables or selection criteria"
+      ],
+      "closureRequirements": [
+        "validate independent mode-identification evidence",
+        "validate physical observable mapping before comparison to real values"
+      ],
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase23-wz-identity-hypotheses",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "modeId": "candidate-z-vector-mode-from-p22-highest-source",
+      "particleId": "z-boson",
+      "modeKind": "vector-boson-mass-mode",
+      "observableId": "phase22-phase12-candidate-2",
+      "value": 1.2673501992931155E-15,
+      "uncertainty": 1.1452104596156499E-18,
+      "unitFamily": "mass-energy",
+      "unit": "internal-mass-unit",
+      "status": "provisional",
+      "environmentId": "env-imported-repo-benchmark",
+      "branchId": "bg-variant-53b598740d9569b4",
+      "refinementLevel": "L0-2x2",
+      "extractionMethod": "p23-wz-identity-hypothesis-screen:v1:phase22-phase12-candidate-2",
+      "assumptions": [
+        "mode is a W/Z identity hypothesis, not a validated physical identification",
+        "external target values were not used as source observables or selection criteria"
+      ],
+      "closureRequirements": [
+        "validate independent mode-identification evidence",
+        "validate physical observable mapping before comparison to real values"
+      ],
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase23-wz-identity-hypotheses",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    }
+  ],
+  "modeIdentificationEvidence": {
+    "tableId": "phase23-wz-mode-identification-evidence-v1",
+    "evidence": [
+      {
+        "evidenceId": "provisional-candidate-w-vector-mode-from-p22-lowest-source-evidence",
+        "modeId": "candidate-w-vector-mode-from-p22-lowest-source",
+        "particleId": "w-boson",
+        "modeKind": "vector-boson-mass-mode",
+        "sourceObservableIds": [
+          "phase22-phase12-candidate-11"
+        ],
+        "environmentId": "env-imported-repo-benchmark",
+        "branchId": "bg-variant-53b598740d9569b4",
+        "refinementLevel": "L0-2x2",
+        "derivationId": "lowest-ready-source-ordering-is-not-a-derived-w-identity-rule",
+        "status": "provisional",
+        "assumptions": [
+          "ordering among ready P22 sources is a screening heuristic, not a physical identity derivation",
+          "no external physical target value was used to create this evidence record"
+        ],
+        "closureRequirements": [
+          "replace ordering heuristic with derived W/Z identity rule",
+          "test the identity rule across branch, refinement, and environment selectors"
+        ],
+        "provenance": {
+          "createdAt": "2026-04-26T00:00:00+00:00",
+          "codeRevision": "working-tree",
+          "branch": {
+            "branchId": "phase23-wz-identity-hypotheses",
+            "schemaVersion": "1.0"
+          },
+          "backend": "cpu"
+        }
+      },
+      {
+        "evidenceId": "provisional-candidate-z-vector-mode-from-p22-highest-source-evidence",
+        "modeId": "candidate-z-vector-mode-from-p22-highest-source",
+        "particleId": "z-boson",
+        "modeKind": "vector-boson-mass-mode",
+        "sourceObservableIds": [
+          "phase22-phase12-candidate-2"
+        ],
+        "environmentId": "env-imported-repo-benchmark",
+        "branchId": "bg-variant-53b598740d9569b4",
+        "refinementLevel": "L0-2x2",
+        "derivationId": "highest-ready-source-ordering-is-not-a-derived-z-identity-rule",
+        "status": "provisional",
+        "assumptions": [
+          "ordering among ready P22 sources is a screening heuristic, not a physical identity derivation",
+          "no external physical target value was used to create this evidence record"
+        ],
+        "closureRequirements": [
+          "replace ordering heuristic with derived W/Z identity rule",
+          "test the identity rule across branch, refinement, and environment selectors"
+        ],
+        "provenance": {
+          "createdAt": "2026-04-26T00:00:00+00:00",
+          "codeRevision": "working-tree",
+          "branch": {
+            "branchId": "phase23-wz-identity-hypotheses",
+            "schemaVersion": "1.0"
+          },
+          "backend": "cpu"
+        }
+      }
+    ]
+  },
+  "candidateObservables": [
+    {
+      "observableId": "candidate-w-z-vector-mode-ratio-from-p22-hypothesis",
+      "value": 0.06155803279807537,
+      "uncertainty": {
+        "branchVariation": -1,
+        "refinementError": -1,
+        "extractionError": 0.0007914705852460068,
+        "environmentSensitivity": -1,
+        "totalUncertainty": 0.0007914705852460068
+      },
+      "branchId": "bg-variant-53b598740d9569b4",
+      "environmentId": "env-imported-repo-benchmark",
+      "refinementLevel": "L0-2x2",
+      "extractionMethod": "positive-mode-ratio:candidate-w-vector-mode-from-p22-lowest-source/candidate-z-vector-mode-from-p22-highest-source",
+      "distributionModel": "gaussian",
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase23-wz-identity-hypotheses",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    }
+  ],
+  "physicalObservableMappings": {
+    "tableId": "phase23-wz-candidate-mappings-v1",
+    "mappings": [
+      {
+        "mappingId": "blocked-p22-w-z-vector-mode-ratio-to-physical-mass-ratio",
+        "particleId": "electroweak-sector",
+        "physicalObservableType": "mass-ratio",
+        "sourceComputedObservableId": "candidate-w-z-vector-mode-ratio-from-p22-hypothesis",
+        "targetPhysicalObservableId": "physical-w-z-mass-ratio",
+        "requiredEnvironmentId": "env-imported-repo-benchmark",
+        "requiredBranchId": "bg-variant-53b598740d9569b4",
+        "unitFamily": "dimensionless",
+        "status": "blocked",
+        "assumptions": [
+          "The source ratio is computed from P22 identity-neutral source candidates.",
+          "External physical target values were not used to select or calibrate the pair."
+        ],
+        "closureRequirements": [
+          "Derive W and Z mode-identification rules independently of physical target values.",
+          "Validate the candidate mode-identification evidence records.",
+          "Promote physical observable mapping only after identity evidence is validated."
+        ]
+      }
+    ]
+  },
+  "closureRequirements": [
+    "derive W vector-mode identity rule independent of target values",
+    "derive Z vector-mode identity rule independent of target values",
+    "validate that the selected P22 source pair has electroweak W/Z identity",
+    "keep physical target values external until identity and mapping gates pass"
+  ],
+  "provenance": {
+    "createdAt": "2026-04-26T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase23-wz-identity-hypotheses",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu"
+  }
+}

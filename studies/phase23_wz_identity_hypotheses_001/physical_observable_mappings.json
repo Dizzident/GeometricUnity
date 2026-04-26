@@ -1,0 +1,25 @@
+{
+  "tableId": "phase23-wz-candidate-mappings-v1",
+  "mappings": [
+    {
+      "mappingId": "blocked-p22-w-z-vector-mode-ratio-to-physical-mass-ratio",
+      "particleId": "electroweak-sector",
+      "physicalObservableType": "mass-ratio",
+      "sourceComputedObservableId": "candidate-w-z-vector-mode-ratio-from-p22-hypothesis",
+      "targetPhysicalObservableId": "physical-w-z-mass-ratio",
+      "requiredEnvironmentId": "env-imported-repo-benchmark",
+      "requiredBranchId": "bg-variant-53b598740d9569b4",
+      "unitFamily": "dimensionless",
+      "status": "blocked",
+      "assumptions": [
+        "The source ratio is computed from P22 identity-neutral source candidates.",
+        "External physical target values were not used to select or calibrate the pair."
+      ],
+      "closureRequirements": [
+        "Derive W and Z mode-identification rules independently of physical target values.",
+        "Validate the candidate mode-identification evidence records.",
+        "Promote physical observable mapping only after identity evidence is validated."
+      ]
+    }
+  ]
+}
