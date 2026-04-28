@@ -1,0 +1,41 @@
+{
+  "resultId": "phase35-wz-selector-spectrum-independence-audit-v1",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "wz-selector-spectrum-independence-blocked",
+  "algorithmId": "p35-wz-selector-spectrum-independence-audit:v1",
+  "selectedPairId": "phase22-phase12-candidate-0/phase22-phase12-candidate-2",
+  "selectedWSourceId": "phase22-phase12-candidate-0",
+  "selectedZSourceId": "phase22-phase12-candidate-2",
+  "inspectedAlignedCellCount": 48,
+  "proxyOnlyCellCount": 48,
+  "solverBackedCellCount": 0,
+  "ratioMin": 0.8637742965335011,
+  "ratioMax": 0.8637742965335012,
+  "ratioMean": 0.8637742965335007,
+  "ratioInvariantAcrossSelectors": true,
+  "selectedSourceMethods": [
+    "p20-phase12-internal-vector-boson-source-adapter:v1"
+  ],
+  "diagnosis": [
+    "inspected 48 aligned selected W/Z selector spectrum cell(s)",
+    "proxy-only cells: 48; solver-backed cells: 0",
+    "selected source extraction method(s): p20-phase12-internal-vector-boson-source-adapter:v1",
+    "selected W/Z ratio is invariant across selector cells at mean 0.8637742965335007",
+    "selector spectra contain massLikeValues projections but no operator bundle, solver method, or mode list",
+    "next corrective work must replace selector proxy spectra with independent selector-specific operator/eigenvalue solves before physical W/Z prediction comparison"
+  ],
+  "closureRequirements": [
+    "selected W/Z selector spectra are proxy-only massLikeValues records with no solver/operator evidence",
+    "no selected W/Z selector spectrum cell is backed by an operator bundle, solver method, or mode list",
+    "selected W/Z ratio is invariant across selector cells, consistent with deterministic rescaling rather than independent eigenvalue extraction"
+  ],
+  "provenance": {
+    "createdAt": "2026-04-28T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase35-wz-selector-spectrum-independence-audit",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu"
+  }
+}

@@ -137,6 +137,8 @@ switch (args[0])
         return DeriveWzCanonicalOperatorNormalization(args);
     case "diagnose-wz-operator-spectrum-path":
         return DiagnoseWzOperatorSpectrumPath(args);
+    case "audit-wz-selector-spectrum-independence":
+        return AuditWzSelectorSpectrumIndependence(args);
     case "build-validation-dossier":
         return BuildValidationDossier(args);
     case "verify-study-freshness":
@@ -5152,6 +5154,53 @@ static int DiagnoseWzOperatorSpectrumPath(string[] args)
     }
 }
 
+static int AuditWzSelectorSpectrumIndependence(string[] args)
+{
+    var operatorSpectrumPathDiagnosticPath = ParseFlag(args, "--operator-spectrum-path-diagnostic", "");
+    var candidateModeSourcesPath = ParseFlag(args, "--candidate-mode-sources", "");
+    var spectraRoot = ParseFlag(args, "--spectra-root", "");
+    var outPath = ParseFlag(args, "--out", "");
+    if (string.IsNullOrWhiteSpace(operatorSpectrumPathDiagnosticPath) ||
+        string.IsNullOrWhiteSpace(candidateModeSourcesPath) ||
+        string.IsNullOrWhiteSpace(spectraRoot) ||
+        string.IsNullOrWhiteSpace(outPath))
+    {
+        Console.Error.WriteLine("Usage: gu audit-wz-selector-spectrum-independence --operator-spectrum-path-diagnostic <operator_spectrum_path_diagnostic.json> --candidate-mode-sources <candidate_mode_sources.json> --spectra-root <spectra_dir> --out <audit.json>");
+        return 1;
+    }
+
+    try
+    {
+        var provenance = new ProvenanceMeta
+        {
+            CreatedAt = DateTimeOffset.Parse("2026-04-28T00:00:00+00:00"),
+            CodeRevision = "working-tree",
+            Branch = new BranchRef { BranchId = "phase35-wz-selector-spectrum-independence-audit", SchemaVersion = "1.0" },
+            Backend = "cpu",
+        };
+        var result = WzSelectorSpectrumIndependenceAudit.Evaluate(
+            File.ReadAllText(operatorSpectrumPathDiagnosticPath),
+            File.ReadAllText(candidateModeSourcesPath),
+            spectraRoot,
+            provenance);
+
+        Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(outPath))!);
+        File.WriteAllText(outPath, GuJsonDefaults.Serialize(result));
+
+        Console.WriteLine($"audit-wz-selector-spectrum-independence done. Output: {outPath}");
+        Console.WriteLine($"  terminalStatus: {result.TerminalStatus}");
+        Console.WriteLine($"  inspectedAlignedCellCount: {result.InspectedAlignedCellCount}");
+        Console.WriteLine($"  proxyOnlyCellCount: {result.ProxyOnlyCellCount}");
+        Console.WriteLine($"  solverBackedCellCount: {result.SolverBackedCellCount}");
+        return result.TerminalStatus == "wz-selector-spectrum-independent-evidence-present" ? 0 : 1;
+    }
+    catch (Exception ex)
+    {
+        Console.Error.WriteLine($"audit-wz-selector-spectrum-independence failed: {ex.Message}");
+        return 1;
+    }
+}
+
 static string ResolvePath(string specDir, string path)
 {
     if (Path.IsPathRooted(path) || File.Exists(path) || Directory.Exists(path))
@@ -6348,6 +6397,7 @@ static void PrintUsage()
     Console.WriteLine("  gu audit-wz-operator-normalization-sources --p31-diagnostic <f> --artifact-roots <path[,path...]> --out <f>  Audit Phase XXXII W/Z operator normalization source candidates");
     Console.WriteLine("  gu derive-wz-canonical-operator-normalization --p31-diagnostic <f> --candidate-mode-sources <f> --out-dir <dir>  Derive Phase XXXIII canonical shared-operator W/Z normalization");
     Console.WriteLine("  gu diagnose-wz-operator-spectrum-path --normalization-closure <f> --candidate-mode-sources <f> --source-candidates <f> --mode-families <f> --spectra-root <dir> --out <f>  Diagnose Phase XXXIV W/Z operator/eigenvalue path");
+    Console.WriteLine("  gu audit-wz-selector-spectrum-independence --operator-spectrum-path-diagnostic <f> --candidate-mode-sources <f> --spectra-root <dir> --out <f>  Audit Phase XXXV selector spectra for independent solver evidence");
     Console.WriteLine("  gu build-validation-dossier --study-manifest <f> [--out <f>]  Build Phase V validation dossier");
     Console.WriteLine("  gu verify-study-freshness --dossier <f>      Verify study freshness / G-006 compliance");
     Console.WriteLine("  gu run-phase5-campaign --spec <f> --out-dir <dir> [--validate-first]  Run Phase V M53 end-to-end campaign");
