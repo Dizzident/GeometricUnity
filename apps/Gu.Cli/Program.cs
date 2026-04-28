@@ -143,6 +143,8 @@ switch (args[0])
         return AuditWzSelectorCellMaterialization(args);
     case "audit-wz-selector-materialization-map":
         return AuditWzSelectorMaterializationMap(args);
+    case "audit-wz-environment-source-closure":
+        return AuditWzEnvironmentSourceClosure(args);
     case "build-validation-dossier":
         return BuildValidationDossier(args);
     case "verify-study-freshness":
@@ -5305,6 +5307,73 @@ static int AuditWzSelectorMaterializationMap(string[] args)
     }
 }
 
+static int AuditWzEnvironmentSourceClosure(string[] args)
+{
+    var specPath = ParseFlag(args, "--spec", "");
+    var environmentRecordsFlag = ParseFlag(args, "--environment-records", "");
+    var observablesPath = ParseFlag(args, "--observables", "");
+    var backgroundRootsFlag = ParseFlag(args, "--background-roots", "");
+    var outPath = ParseFlag(args, "--out", "");
+    if (string.IsNullOrWhiteSpace(specPath) ||
+        string.IsNullOrWhiteSpace(environmentRecordsFlag) ||
+        string.IsNullOrWhiteSpace(observablesPath) ||
+        string.IsNullOrWhiteSpace(backgroundRootsFlag) ||
+        string.IsNullOrWhiteSpace(outPath))
+    {
+        Console.Error.WriteLine("Usage: gu audit-wz-environment-source-closure --spec <source_spectrum_campaign.json> --environment-records <record.json[,record.json...]> --observables <observables.json> --background-roots <path[,path...]> --out <audit.json>");
+        return 1;
+    }
+
+    try
+    {
+        var provenance = new ProvenanceMeta
+        {
+            CreatedAt = DateTimeOffset.Parse("2026-04-28T00:00:00+00:00"),
+            CodeRevision = "working-tree",
+            Branch = new BranchRef { BranchId = "phase38-wz-environment-source-closure-audit", SchemaVersion = "1.0" },
+            Backend = "cpu",
+        };
+        var environmentRecords = environmentRecordsFlag
+            .Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+            .ToList();
+        var backgroundRecordPaths = backgroundRootsFlag
+            .Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+            .SelectMany(ExpandJsonPath)
+            .Distinct(StringComparer.Ordinal)
+            .ToList();
+        var result = WzEnvironmentSourceClosureAudit.Evaluate(
+            File.ReadAllText(specPath),
+            environmentRecords,
+            File.ReadAllText(observablesPath),
+            backgroundRecordPaths,
+            provenance);
+
+        Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(outPath))!);
+        File.WriteAllText(outPath, GuJsonDefaults.Serialize(result));
+
+        Console.WriteLine($"audit-wz-environment-source-closure done. Output: {outPath}");
+        Console.WriteLine($"  terminalStatus: {result.TerminalStatus}");
+        Console.WriteLine($"  environmentRecordCount: {result.EnvironmentRecordCount}/{result.EnvironmentCount}");
+        Console.WriteLine($"  observableBackedCount: {result.ObservableBackedCount}/{result.EnvironmentCount}");
+        Console.WriteLine($"  backgroundBackedCount: {result.BackgroundBackedCount}/{result.EnvironmentCount}");
+        return result.TerminalStatus == "environment-source-closure-complete" ? 0 : 1;
+    }
+    catch (Exception ex)
+    {
+        Console.Error.WriteLine($"audit-wz-environment-source-closure failed: {ex.Message}");
+        return 1;
+    }
+}
+
+static IReadOnlyList<string> ExpandJsonPath(string path)
+{
+    if (File.Exists(path))
+        return [path];
+    if (Directory.Exists(path))
+        return Directory.EnumerateFiles(path, "*.json", SearchOption.AllDirectories).ToList();
+    return [];
+}
+
 static string ResolvePath(string specDir, string path)
 {
     if (Path.IsPathRooted(path) || File.Exists(path) || Directory.Exists(path))
@@ -6504,6 +6573,7 @@ static void PrintUsage()
     Console.WriteLine("  gu audit-wz-selector-spectrum-independence --operator-spectrum-path-diagnostic <f> --candidate-mode-sources <f> --spectra-root <dir> --out <f>  Audit Phase XXXV selector spectra for independent solver evidence");
     Console.WriteLine("  gu audit-wz-selector-cell-materialization --spec <f> --source-candidates <f> --artifact-roots <dirs> --out <f>  Audit Phase XXXVI selector cells for solver input materialization");
     Console.WriteLine("  gu audit-wz-selector-materialization-map --spec <f> --bridge-manifest <f> --refinement-evidence-manifest <f> --environment-campaign <f> --out <f>  Audit Phase XXXVII selector source maps");
+    Console.WriteLine("  gu audit-wz-environment-source-closure --spec <f> --environment-records <csv> --observables <f> --background-roots <csv> --out <f>  Audit Phase XXXVIII environment source closure");
     Console.WriteLine("  gu build-validation-dossier --study-manifest <f> [--out <f>]  Build Phase V validation dossier");
     Console.WriteLine("  gu verify-study-freshness --dossier <f>      Verify study freshness / G-006 compliance");
     Console.WriteLine("  gu run-phase5-campaign --spec <f> --out-dir <dir> [--validate-first]  Run Phase V M53 end-to-end campaign");
