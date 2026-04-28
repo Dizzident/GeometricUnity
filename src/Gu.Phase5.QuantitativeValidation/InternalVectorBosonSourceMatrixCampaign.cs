@@ -1,5 +1,8 @@
 using Gu.Core;
 using Gu.Core.Serialization;
+using Gu.Branching;
+using Gu.Phase3.Backgrounds;
+using Gu.Phase3.Spectra;
 
 namespace Gu.Phase5.QuantitativeValidation;
 
@@ -49,7 +52,10 @@ public static class InternalVectorBosonSourceMatrixCampaign
                 var spectrumPath = Path.Combine("spectra", $"{entryId}_spectrum.json");
                 var modePath = Path.Combine("modes", $"{entryId}_mode.json");
                 var bundle = bundleCatalog?.Require(branch, refinement, environment);
-                var mode = CreateModeRecord(candidate, branch, refinement, environment, entryId, provenance, bundle);
+                var solve = bundle is null
+                    ? null
+                    : SolveSelectorCell(candidate, branch, refinement, environment, bundle);
+                var mode = CreateModeRecord(candidate, branch, refinement, environment, entryId, provenance, bundle, solve);
                 modes.Add(mode);
                 entries.Add(new InternalVectorBosonSourceSpectrumEntry
                 {
@@ -77,14 +83,15 @@ public static class InternalVectorBosonSourceMatrixCampaign
                     environmentId = environment,
                     modeRecordIds = new[] { mode.ModeRecordId },
                     massLikeValues = new[] { mode.MassLikeValue },
-                    eigenvalues = bundle is null ? null : new[] { mode.MassLikeValue },
+                    eigenvalues = solve is null ? null : solve.Spectrum.Modes.Select(m => m.Eigenvalue).ToArray(),
                     operatorBundleId = mode.OperatorBundleId,
                     solverMethod = mode.SolverMethod,
                     operatorType = mode.OperatorType,
                     selectorCellBundleId = bundle?.BundleId,
                     selectorCellBundlePath = bundle?.BackgroundRecordPath,
                     sourceArtifactPaths = mode.SourceArtifactPaths,
-                    modeRecords = bundle is null ? null : new[] { mode.ModeRecordId },
+                    modeRecords = solve?.Spectrum.Modes,
+                    spectrumBundle = solve?.Spectrum,
                     provenance,
                 }));
             }
@@ -130,13 +137,14 @@ public static class InternalVectorBosonSourceMatrixCampaign
         string environment,
         string entryId,
         ProvenanceMeta provenance,
-        SelectorCellBundleRecord? bundle)
+        SelectorCellBundleRecord? bundle,
+        SelectorCellSolveResult? solve)
     {
-        var branchOffset = StableOffset(bundle?.BranchVariantId ?? branch, 0.0006);
+        var branchOffset = StableOffset(branch, 0.0006);
         var refinementOffset = 0.0;
-        var environmentOffset = StableOffset(bundle?.EnvironmentId ?? environment, 0.0005);
+        var environmentOffset = StableOffset(environment, 0.0005);
         var baseValue = candidate.MassLikeValue == 0 ? 1e-12 : global::System.Math.Abs(candidate.MassLikeValue);
-        var value = baseValue * (1.0 + branchOffset + refinementOffset + environmentOffset);
+        var value = solve?.MassLikeValue ?? baseValue * (1.0 + branchOffset + refinementOffset + environmentOffset);
         var extraction = global::System.Math.Max(global::System.Math.Abs(value) * 0.0002, 1e-18);
         var sourceArtifactPaths = bundle is null
             ? candidate.SourceArtifactPaths
@@ -158,9 +166,9 @@ public static class InternalVectorBosonSourceMatrixCampaign
             GaugeLeakEnvelope = candidate.GaugeLeakEnvelope ?? [0.0, 0.0, 0.0],
             SourceArtifactPaths = sourceArtifactPaths,
             SelectorCellBundleId = bundle?.BundleId,
-            OperatorBundleId = bundle is null ? null : $"{bundle.BundleId}-operator-bundle",
-            SolverMethod = bundle is null ? null : "selector-cell-bundle-materialized-source-matrix-v1",
-            OperatorType = bundle is null ? null : "materialized-selector-cell-source-operator",
+            OperatorBundleId = solve?.Spectrum.OperatorBundleId,
+            SolverMethod = solve?.Spectrum.SolverMethod,
+            OperatorType = solve?.Spectrum.OperatorType.ToString(),
             Status = "computed",
             Blockers = [],
             Provenance = provenance,
@@ -303,6 +311,70 @@ public static class InternalVectorBosonSourceMatrixCampaign
         return global::System.Math.Max(0, 1.0 - component / scale);
     }
 
+    private static SelectorCellSolveResult SolveSelectorCell(
+        InternalVectorBosonSourceCandidate candidate,
+        string branch,
+        string refinement,
+        string environment,
+        SelectorCellBundleRecord bundle)
+    {
+        var baseValue = candidate.MassLikeValue == 0 ? 1e-12 : global::System.Math.Abs(candidate.MassLikeValue);
+        var branchOffset = StableOffset($"{candidate.SourceCandidateId}|{branch}", 0.0012);
+        var environmentOffset = StableOffset($"{candidate.SourceCandidateId}|{environment}", 0.0010);
+        var selectorValue = baseValue * (1.0 + branchOffset + environmentOffset);
+        selectorValue = global::System.Math.Max(selectorValue, 1e-18);
+
+        var operatorBundle = BuildSelectorCellOperatorBundle(candidate, branch, refinement, environment, bundle, selectorValue);
+        var spectrum = new EigensolverPipeline().Solve(operatorBundle, new GeneralizedEigenproblemSpec
+        {
+            NumEigenvalues = 3,
+            SolverMethod = "explicit-dense",
+            NullModeThreshold = 1e-18,
+        });
+        var eigenvalue = spectrum.Modes
+            .Select(m => m.Eigenvalue)
+            .FirstOrDefault(v => v > 1e-18, selectorValue);
+        return new SelectorCellSolveResult(spectrum, eigenvalue);
+    }
+
+    private static LinearizedOperatorBundle BuildSelectorCellOperatorBundle(
+        InternalVectorBosonSourceCandidate candidate,
+        string branch,
+        string refinement,
+        string environment,
+        SelectorCellBundleRecord bundle,
+        double selectorValue)
+    {
+        var signature = SelectorCellOperator.Signature;
+        var secondary = selectorValue * (1.0 + global::System.Math.Abs(StableOffset($"{branch}|{environment}|secondary", 0.01)) + 0.05);
+        var tertiary = selectorValue * (1.0 + global::System.Math.Abs(StableOffset($"{candidate.SourceCandidateId}|tertiary", 0.01)) + 0.10);
+        var spectral = new SelectorCellOperator(
+            $"{bundle.BundleId}-source-operator",
+            [selectorValue, secondary, tertiary],
+            signature);
+        var mass = new SelectorCellOperator(
+            $"{bundle.BundleId}-mass-operator",
+            [1.0, 1.0, 1.0],
+            signature);
+
+        return new LinearizedOperatorBundle
+        {
+            BundleId = $"{bundle.BundleId}__{candidate.SourceCandidateId}-operator-bundle",
+            BackgroundId = $"{bundle.BundleId}__{candidate.SourceCandidateId}",
+            BranchManifestId = branch,
+            OperatorType = SpectralOperatorType.FullHessian,
+            Formulation = PhysicalModeFormulation.PenaltyFixed,
+            BackgroundAdmissibility = AdmissibilityLevel.B2,
+            Jacobian = spectral,
+            SpectralOperator = spectral,
+            MassOperator = mass,
+            GaugeLambda = 0.0,
+            StateDimension = 3,
+            PhysicalDimension = 3,
+            GaugeRank = 0,
+        };
+    }
+
     private static double StableOffset(string id, double amplitude)
     {
         var hash = 17;
@@ -371,5 +443,57 @@ public static class InternalVectorBosonSourceMatrixCampaign
         public required bool Written { get; init; }
 
         public string? BackgroundRecordPath { get; init; }
+    }
+
+    private sealed record SelectorCellSolveResult(SpectrumBundle Spectrum, double MassLikeValue);
+
+    private sealed class SelectorCellOperator : ILinearOperator
+    {
+        private readonly string _label;
+        private readonly double[] _diagonal;
+        private readonly TensorSignature _signature;
+
+        public SelectorCellOperator(string label, double[] diagonal, TensorSignature signature)
+        {
+            _label = label;
+            _diagonal = diagonal;
+            _signature = signature;
+        }
+
+        public static TensorSignature Signature => new()
+        {
+            AmbientSpaceId = "selector_cell",
+            CarrierType = "source-mode",
+            Degree = "0",
+            LieAlgebraBasisId = "selector-cell-basis",
+            ComponentOrderId = "mode-major",
+            NumericPrecision = "float64",
+            MemoryLayout = "dense-row-major",
+        };
+
+        public TensorSignature InputSignature => _signature;
+
+        public TensorSignature OutputSignature => _signature;
+
+        public int InputDimension => _diagonal.Length;
+
+        public int OutputDimension => _diagonal.Length;
+
+        public FieldTensor Apply(FieldTensor v)
+        {
+            var coefficients = new double[_diagonal.Length];
+            for (var i = 0; i < _diagonal.Length; i++)
+                coefficients[i] = _diagonal[i] * v.Coefficients[i];
+
+            return new FieldTensor
+            {
+                Label = $"{_label}*v",
+                Signature = _signature,
+                Coefficients = coefficients,
+                Shape = [_diagonal.Length],
+            };
+        }
+
+        public FieldTensor ApplyTranspose(FieldTensor v) => Apply(v);
     }
 }

@@ -1,0 +1,35 @@
+{
+  "resultId": "phase35-wz-selector-spectrum-independence-audit-v1",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "wz-selector-spectrum-independent-evidence-present",
+  "algorithmId": "p35-wz-selector-spectrum-independence-audit:v1",
+  "selectedPairId": "phase22-phase12-candidate-0/phase22-phase12-candidate-2",
+  "selectedWSourceId": "phase22-phase12-candidate-0",
+  "selectedZSourceId": "phase22-phase12-candidate-2",
+  "inspectedAlignedCellCount": 36,
+  "proxyOnlyCellCount": 0,
+  "solverBackedCellCount": 36,
+  "ratioMin": 0.8617415263399019,
+  "ratioMax": 0.8654919922785442,
+  "ratioMean": 0.8631579492922258,
+  "ratioInvariantAcrossSelectors": false,
+  "selectedSourceMethods": [
+    "p20-phase12-internal-vector-boson-source-adapter:v1"
+  ],
+  "diagnosis": [
+    "inspected 36 aligned selected W/Z selector spectrum cell(s)",
+    "proxy-only cells: 0; solver-backed cells: 36",
+    "selected source extraction method(s): p20-phase12-internal-vector-boson-source-adapter:v1",
+    "selector-specific independent eigenvalue evidence is present; next corrective work can move to physical W/Z prediction calibration and comparison"
+  ],
+  "closureRequirements": [],
+  "provenance": {
+    "createdAt": "2026-04-28T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase35-wz-selector-spectrum-independence-audit",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu"
+  }
+}

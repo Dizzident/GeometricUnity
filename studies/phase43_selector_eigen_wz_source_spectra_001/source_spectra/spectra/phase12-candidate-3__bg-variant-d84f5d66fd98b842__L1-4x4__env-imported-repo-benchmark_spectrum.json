@@ -1,0 +1,205 @@
+{
+  "spectrumId": "phase12-candidate-3__bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark-spectrum",
+  "schemaVersion": "1.0.0",
+  "sourceCandidateId": "phase12-candidate-3",
+  "branchVariantId": "bg-variant-d84f5d66fd98b842",
+  "refinementLevel": "L1-4x4",
+  "environmentId": "env-imported-repo-benchmark",
+  "modeRecordIds": [
+    "phase12-candidate-3__bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark-mode"
+  ],
+  "massLikeValues": [
+    1.0718876905530408E-15
+  ],
+  "eigenvalues": [
+    1.0718876905530408E-15,
+    1.1308522324103635E-15,
+    1.1831603517093521E-15
+  ],
+  "operatorBundleId": "p40-bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark__phase12-candidate-3-operator-bundle",
+  "solverMethod": "explicit-dense",
+  "operatorType": "FullHessian",
+  "selectorCellBundleId": "p40-bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark",
+  "selectorCellBundlePath": "studies/phase40_wz_selector_cell_bundle_materialization_001/cell_bundles/p40-bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark/p40-bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark-background.json",
+  "sourceArtifactPaths": [
+    "studies/phase12_joined_calculation_001/output/background_family/bosons/registry.json",
+    "studies/phase12_joined_calculation_001/output/background_family/modes/mode_families.json",
+    "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-a-20260315212202_spectrum.json",
+    "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-b-20260315212202_spectrum.json",
+    "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-a-20260315212202-mode-3.json",
+    "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-b-20260315212202-mode-1.json",
+    "studies/phase40_wz_selector_cell_bundle_materialization_001/cell_bundles/p40-bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark/p40-bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark-background.json"
+  ],
+  "modeRecords": [
+    {
+      "modeId": "p40-bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark__phase12-candidate-3-mode-0",
+      "backgroundId": "p40-bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark__phase12-candidate-3",
+      "operatorType": "FullHessian",
+      "eigenvalue": 1.0718876905530408E-15,
+      "residualNorm": 0,
+      "normalizationConvention": "unit-M-norm",
+      "multiplicityClusterId": "p40-bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark__phase12-candidate-3-cluster-0",
+      "gaugeLeakScore": 0,
+      "modeVector": [
+        1,
+        0,
+        0
+      ],
+      "modeIndex": 0,
+      "tensorEnergyFractions": {
+        "source-mode": 1
+      },
+      "blockEnergyFractions": {
+        "connection": 1
+      }
+    },
+    {
+      "modeId": "p40-bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark__phase12-candidate-3-mode-1",
+      "backgroundId": "p40-bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark__phase12-candidate-3",
+      "operatorType": "FullHessian",
+      "eigenvalue": 1.1308522324103635E-15,
+      "residualNorm": 0,
+      "normalizationConvention": "unit-M-norm",
+      "multiplicityClusterId": "p40-bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark__phase12-candidate-3-cluster-0",
+      "gaugeLeakScore": 0,
+      "modeVector": [
+        0,
+        1,
+        0
+      ],
+      "modeIndex": 1,
+      "tensorEnergyFractions": {
+        "source-mode": 1
+      },
+      "blockEnergyFractions": {
+        "connection": 1
+      }
+    },
+    {
+      "modeId": "p40-bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark__phase12-candidate-3-mode-2",
+      "backgroundId": "p40-bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark__phase12-candidate-3",
+      "operatorType": "FullHessian",
+      "eigenvalue": 1.1831603517093521E-15,
+      "residualNorm": 0,
+      "normalizationConvention": "unit-M-norm",
+      "multiplicityClusterId": "p40-bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark__phase12-candidate-3-cluster-0",
+      "gaugeLeakScore": 0,
+      "modeVector": [
+        0,
+        0,
+        1
+      ],
+      "modeIndex": 2,
+      "tensorEnergyFractions": {
+        "source-mode": 1
+      },
+      "blockEnergyFractions": {
+        "connection": 1
+      }
+    }
+  ],
+  "spectrumBundle": {
+    "spectrumId": "spectrum-p40-bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark__phase12-candidate-3-20260428194355",
+    "backgroundId": "p40-bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark__phase12-candidate-3",
+    "operatorBundleId": "p40-bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark__phase12-candidate-3-operator-bundle",
+    "operatorType": "FullHessian",
+    "formulation": "PenaltyFixed",
+    "solverMethod": "explicit-dense",
+    "stateDimension": 3,
+    "modes": [
+      {
+        "modeId": "p40-bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark__phase12-candidate-3-mode-0",
+        "backgroundId": "p40-bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark__phase12-candidate-3",
+        "operatorType": "FullHessian",
+        "eigenvalue": 1.0718876905530408E-15,
+        "residualNorm": 0,
+        "normalizationConvention": "unit-M-norm",
+        "multiplicityClusterId": "p40-bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark__phase12-candidate-3-cluster-0",
+        "gaugeLeakScore": 0,
+        "modeVector": [
+          1,
+          0,
+          0
+        ],
+        "modeIndex": 0,
+        "tensorEnergyFractions": {
+          "source-mode": 1
+        },
+        "blockEnergyFractions": {
+          "connection": 1
+        }
+      },
+      {
+        "modeId": "p40-bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark__phase12-candidate-3-mode-1",
+        "backgroundId": "p40-bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark__phase12-candidate-3",
+        "operatorType": "FullHessian",
+        "eigenvalue": 1.1308522324103635E-15,
+        "residualNorm": 0,
+        "normalizationConvention": "unit-M-norm",
+        "multiplicityClusterId": "p40-bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark__phase12-candidate-3-cluster-0",
+        "gaugeLeakScore": 0,
+        "modeVector": [
+          0,
+          1,
+          0
+        ],
+        "modeIndex": 1,
+        "tensorEnergyFractions": {
+          "source-mode": 1
+        },
+        "blockEnergyFractions": {
+          "connection": 1
+        }
+      },
+      {
+        "modeId": "p40-bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark__phase12-candidate-3-mode-2",
+        "backgroundId": "p40-bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark__phase12-candidate-3",
+        "operatorType": "FullHessian",
+        "eigenvalue": 1.1831603517093521E-15,
+        "residualNorm": 0,
+        "normalizationConvention": "unit-M-norm",
+        "multiplicityClusterId": "p40-bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark__phase12-candidate-3-cluster-0",
+        "gaugeLeakScore": 0,
+        "modeVector": [
+          0,
+          0,
+          1
+        ],
+        "modeIndex": 2,
+        "tensorEnergyFractions": {
+          "source-mode": 1
+        },
+        "blockEnergyFractions": {
+          "connection": 1
+        }
+      }
+    ],
+    "clusters": [
+      {
+        "clusterId": "p40-bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark__phase12-candidate-3-cluster-0",
+        "modeIndices": [
+          0,
+          1,
+          2
+        ],
+        "multiplicity": 3,
+        "meanEigenvalue": 1.1286334248909186E-15,
+        "eigenvalueSpread": 1.1127266115631137E-16
+      }
+    ],
+    "convergenceStatus": "converged",
+    "iterationsUsed": 0,
+    "maxOrthogonalityDefect": 0,
+    "computedWithBackend": "cpu",
+    "diagnosticNotes": []
+  },
+  "provenance": {
+    "createdAt": "2026-04-26T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase22-selector-source-spectra",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu"
+  }
+}

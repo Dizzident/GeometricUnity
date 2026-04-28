@@ -93,8 +93,8 @@ public sealed class InternalVectorBosonSourceSpectrumTests
         var spectrumPath = Path.Combine(temp.Path, entry.SpectrumPath);
         using var spectrum = JsonDocument.Parse(File.ReadAllText(spectrumPath));
         var root = spectrum.RootElement;
-        Assert.Equal("selector-cell-bundle-materialized-source-matrix-v1", root.GetProperty("solverMethod").GetString());
-        Assert.Equal("materialized-selector-cell-source-operator", root.GetProperty("operatorType").GetString());
+        Assert.Equal("explicit-dense", root.GetProperty("solverMethod").GetString());
+        Assert.Equal("FullHessian", root.GetProperty("operatorType").GetString());
         Assert.False(string.IsNullOrWhiteSpace(root.GetProperty("operatorBundleId").GetString()));
         Assert.True(root.GetProperty("modeRecords").GetArrayLength() > 0);
         Assert.Contains(result.ModeRecords, m => !string.IsNullOrWhiteSpace(m.SelectorCellBundleId));

@@ -266,7 +266,7 @@ public static class WzSelectorSpectrumIndependenceAudit
         else if (ratioInvariant && solverBackedCount > 0)
             diagnosis.Add("next corrective work must replace bundle-backed deterministic rescaling with selector-specific independent eigenvalue extraction before physical W/Z prediction comparison");
         else
-            diagnosis.Add("next corrective work must complete selector-specific independent eigenvalue extraction before physical W/Z prediction comparison");
+            diagnosis.Add("selector-specific independent eigenvalue evidence is present; next corrective work can move to physical W/Z prediction calibration and comparison");
         return diagnosis;
     }
 

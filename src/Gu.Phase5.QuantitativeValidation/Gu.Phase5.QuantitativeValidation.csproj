@@ -6,7 +6,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Gu.Core\Gu.Core.csproj" />
+    <ProjectReference Include="..\Gu.Branching\Gu.Branching.csproj" />
     <ProjectReference Include="..\Gu.Math\Gu.Math.csproj" />
+    <ProjectReference Include="..\Gu.Phase3.Backgrounds\Gu.Phase3.Backgrounds.csproj" />
+    <ProjectReference Include="..\Gu.Phase3.Spectra\Gu.Phase3.Spectra.csproj" />
     <ProjectReference Include="..\Gu.Phase5.BranchIndependence\Gu.Phase5.BranchIndependence.csproj" />
     <ProjectReference Include="..\Gu.Phase5.Convergence\Gu.Phase5.Convergence.csproj" />
     <ProjectReference Include="..\Gu.Phase5.Environments\Gu.Phase5.Environments.csproj" />
