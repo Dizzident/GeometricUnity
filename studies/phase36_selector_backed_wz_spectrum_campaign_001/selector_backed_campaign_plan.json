@@ -1,0 +1,41 @@
+{
+  "planId": "phase36-selector-backed-wz-spectrum-campaign-plan-v1",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "selector-backed-spectrum-campaign-planned",
+  "blockedBy": [
+    "selector labels are not yet materialized as persisted background records",
+    "selector labels are not yet materialized as branch manifests, omega states, A0 states, geometry contexts, and environment records",
+    "current Phase22 selector spectra are deterministic proxy massLikeValues records"
+  ],
+  "requiredInputs": [
+    "sourceCandidateId",
+    "branchVariantId",
+    "refinementLevel",
+    "environmentId",
+    "backgroundRecord",
+    "branchManifest",
+    "omegaState",
+    "a0State",
+    "geometryContext",
+    "environmentRecord"
+  ],
+  "requiredSolverEvidencePerCell": [
+    "operatorBundleId",
+    "solverMethod",
+    "operatorType",
+    "modeRecords",
+    "massLikeValues derived from solved eigenvalues"
+  ],
+  "acceptanceCriteria": [
+    "P35 solverBackedCellCount is greater than zero for selected W/Z cells",
+    "P35 proxyOnlyCellCount is zero for selected W/Z cells",
+    "P35 terminalStatus is wz-selector-spectrum-independent-evidence-present",
+    "physical W/Z promotion remains blocked if any selected cell falls back to deterministic offsets"
+  ],
+  "nextImplementationSteps": [
+    "add selector-cell materialization API",
+    "add solver-backed source spectrum campaign command or extend the existing Phase22 command",
+    "write solver-backed spectrum artifacts to a new study directory",
+    "rerun P34 and P35 diagnostics on the solver-backed artifacts"
+  ]
+}
