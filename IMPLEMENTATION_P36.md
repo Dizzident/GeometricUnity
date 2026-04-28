@@ -87,9 +87,52 @@ or locating selector-specific background states.
 ## Deliverables
 
 - New selector-cell materialization code or a documented blocker artifact if
-  required selector background inputs are absent.
+  required selector background inputs are absent. Complete: added
+  `WzSelectorCellMaterializationAudit` and
+  `audit-wz-selector-cell-materialization`.
 - New solver-backed source spectrum campaign command or an extension to
   `run-internal-vector-boson-source-spectrum-campaign`.
 - Updated tests proving proxy spectra fail and solver-backed spectra pass.
 - Regenerated Phase22-derived W/Z artifacts under a new study directory, not
   overwriting the existing proxy study.
+
+## Phase36 Progress
+
+The materialization audit was run against:
+
+- `studies/phase22_selector_source_spectra_001/config/source_spectrum_campaign.json`;
+- `studies/phase21_source_readiness_campaign_001/source_candidates.json`;
+- artifact roots:
+  - `studies/phase12_joined_calculation_001/output/background_family`;
+  - `studies/phase5_su2_branch_refinement_env_validation`.
+
+Result artifact:
+
+- `studies/phase36_selector_backed_wz_spectrum_campaign_001/selector_cell_materialization_audit.json`
+
+Current result:
+
+- terminal status: `selector-cell-materialization-blocked`;
+- total selector cells: `576`;
+- materialized selector cells: `0`;
+- missing selector cells: `576`;
+- resolved common inputs: `a0State`, `geometryContext`, and some environment
+  records;
+- missing blocker inputs: `backgroundRecord`, `branchManifest`, and
+  `omegaState` for the Phase22 selector-label cells.
+
+This confirms the remaining blocker precisely: the Phase22 selector labels are
+not mapped to persisted background records/manifests/omega states. The next
+step is to implement that selector-cell materialization map before adding a
+solver-backed spectrum campaign.
+
+## Validation
+
+Completed:
+
+- `dotnet test tests/Gu.Phase5.Reporting.Tests/Gu.Phase5.Reporting.Tests.csproj`
+  passed with 185/185 tests.
+- `jq -e . studies/phase36_selector_backed_wz_spectrum_campaign_001/selector_cell_materialization_audit.json`
+  passed.
+- `dotnet test GeometricUnity.slnx`
+  passed.

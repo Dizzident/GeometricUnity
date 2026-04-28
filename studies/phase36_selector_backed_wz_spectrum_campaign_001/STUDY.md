@@ -6,6 +6,7 @@ selector proxy spectra with solver-backed selector spectra.
 Artifact:
 
 - `selector_backed_campaign_plan.json`
+- `selector_cell_materialization_audit.json`
 
 Current blocker:
 
@@ -14,6 +15,9 @@ Current blocker:
   omega/A0 states, geometry, and environment inputs.
 - P35 confirmed the selected W/Z cells are proxy-only and have no solver-backed
   spectrum evidence.
+- The P36 materialization audit inspected `576` selector cells and found `0`
+  materialized cells. The missing inputs are the selector-specific background
+  records, branch manifests, and omega states.
 
 Next implementation work:
 
