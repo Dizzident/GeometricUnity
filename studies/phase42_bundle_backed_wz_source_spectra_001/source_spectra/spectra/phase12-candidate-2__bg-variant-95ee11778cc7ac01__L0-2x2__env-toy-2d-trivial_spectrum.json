@@ -1,0 +1,43 @@
+{
+  "spectrumId": "phase12-candidate-2__bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial-spectrum",
+  "schemaVersion": "1.0.0",
+  "sourceCandidateId": "phase12-candidate-2",
+  "branchVariantId": "bg-variant-95ee11778cc7ac01",
+  "refinementLevel": "L0-2x2",
+  "environmentId": "env-toy-2d-trivial",
+  "modeRecordIds": [
+    "phase12-candidate-2__bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial-mode"
+  ],
+  "massLikeValues": [
+    1.2674178189008249E-15
+  ],
+  "eigenvalues": [
+    1.2674178189008249E-15
+  ],
+  "operatorBundleId": "p40-bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial-operator-bundle",
+  "solverMethod": "selector-cell-bundle-materialized-source-matrix-v1",
+  "operatorType": "materialized-selector-cell-source-operator",
+  "selectorCellBundleId": "p40-bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial",
+  "selectorCellBundlePath": "studies/phase40_wz_selector_cell_bundle_materialization_001/cell_bundles/p40-bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial/p40-bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial-background.json",
+  "sourceArtifactPaths": [
+    "studies/phase12_joined_calculation_001/output/background_family/bosons/registry.json",
+    "studies/phase12_joined_calculation_001/output/background_family/modes/mode_families.json",
+    "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-a-20260315212202_spectrum.json",
+    "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-b-20260315212202_spectrum.json",
+    "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-a-20260315212202-mode-2.json",
+    "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-b-20260315212202-mode-0.json",
+    "studies/phase40_wz_selector_cell_bundle_materialization_001/cell_bundles/p40-bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial/p40-bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial-background.json"
+  ],
+  "modeRecords": [
+    "phase12-candidate-2__bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial-mode"
+  ],
+  "provenance": {
+    "createdAt": "2026-04-26T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase22-selector-source-spectra",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu"
+  }
+}

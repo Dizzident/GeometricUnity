@@ -17,6 +17,9 @@ public sealed class InternalVectorBosonSourceSpectrumCampaignSpec
     [JsonPropertyName("readinessSpecPath")]
     public required string ReadinessSpecPath { get; init; }
 
+    [JsonPropertyName("selectorCellBundleManifestPath")]
+    public string? SelectorCellBundleManifestPath { get; init; }
+
     [JsonPropertyName("branchVariantIds")]
     public required IReadOnlyList<string> BranchVariantIds { get; init; }
 
@@ -86,6 +89,12 @@ public sealed class InternalVectorBosonSourceSpectrumEntry
     [JsonPropertyName("modePath")]
     public required string ModePath { get; init; }
 
+    [JsonPropertyName("selectorCellBundleId")]
+    public string? SelectorCellBundleId { get; init; }
+
+    [JsonPropertyName("selectorCellBundlePath")]
+    public string? SelectorCellBundlePath { get; init; }
+
     [JsonPropertyName("status")]
     public required string Status { get; init; }
 
@@ -124,6 +133,18 @@ public sealed class InternalVectorBosonSourceModeRecord
 
     [JsonPropertyName("sourceArtifactPaths")]
     public required IReadOnlyList<string> SourceArtifactPaths { get; init; }
+
+    [JsonPropertyName("selectorCellBundleId")]
+    public string? SelectorCellBundleId { get; init; }
+
+    [JsonPropertyName("operatorBundleId")]
+    public string? OperatorBundleId { get; init; }
+
+    [JsonPropertyName("solverMethod")]
+    public string? SolverMethod { get; init; }
+
+    [JsonPropertyName("operatorType")]
+    public string? OperatorType { get; init; }
 
     [JsonPropertyName("status")]
     public required string Status { get; init; }

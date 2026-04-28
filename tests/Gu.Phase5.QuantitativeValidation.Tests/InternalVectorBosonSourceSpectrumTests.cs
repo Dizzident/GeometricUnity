@@ -1,6 +1,7 @@
 using Gu.Core;
 using Gu.Core.Serialization;
 using Gu.Phase5.QuantitativeValidation;
+using System.Text.Json;
 
 namespace Gu.Phase5.QuantitativeValidation.Tests;
 
@@ -70,6 +71,64 @@ public sealed class InternalVectorBosonSourceSpectrumTests
             Assert.DoesNotContain("w-boson", candidate.SourceCandidateId, StringComparison.OrdinalIgnoreCase);
             Assert.DoesNotContain("z-boson", candidate.SourceCandidateId, StringComparison.OrdinalIgnoreCase);
         });
+    }
+
+    [Fact]
+    public void MatrixCampaign_WithSelectorCellBundles_EmitsSolverBackedSpectrumProvenance()
+    {
+        using var temp = new TempDir();
+        var bundleManifestPath = Path.Combine(temp.Path, "selector_cell_bundle_manifest.json");
+        File.WriteAllText(bundleManifestPath, GuJsonDefaults.Serialize(MakeBundleManifest()));
+
+        var result = InternalVectorBosonSourceMatrixCampaign.Run(
+            MakeCampaignSpec(),
+            MakeSeedTable(),
+            MakeReadinessSpec(),
+            temp.Path,
+            MakeProvenance(),
+            bundleManifestPath);
+
+        var entry = result.Manifest.Entries[0];
+        Assert.NotNull(entry.SelectorCellBundleId);
+        var spectrumPath = Path.Combine(temp.Path, entry.SpectrumPath);
+        using var spectrum = JsonDocument.Parse(File.ReadAllText(spectrumPath));
+        var root = spectrum.RootElement;
+        Assert.Equal("selector-cell-bundle-materialized-source-matrix-v1", root.GetProperty("solverMethod").GetString());
+        Assert.Equal("materialized-selector-cell-source-operator", root.GetProperty("operatorType").GetString());
+        Assert.False(string.IsNullOrWhiteSpace(root.GetProperty("operatorBundleId").GetString()));
+        Assert.True(root.GetProperty("modeRecords").GetArrayLength() > 0);
+        Assert.Contains(result.ModeRecords, m => !string.IsNullOrWhiteSpace(m.SelectorCellBundleId));
+    }
+
+    [Fact]
+    public void MatrixCampaign_WithSelectorCellBundles_FailsClosedOnMissingBundle()
+    {
+        using var temp = new TempDir();
+        var bundleManifestPath = Path.Combine(temp.Path, "selector_cell_bundle_manifest.json");
+        File.WriteAllText(bundleManifestPath, GuJsonDefaults.Serialize(new
+        {
+            bundles = new[]
+            {
+                new
+                {
+                    bundleId = "bundle-branch-a-L0-env-a",
+                    branchVariantId = "branch-a",
+                    refinementLevel = "L0",
+                    environmentId = "env-a",
+                    written = true,
+                    backgroundRecordPath = "bundles/bundle-branch-a-L0-env-a/background.json",
+                },
+            },
+        }));
+
+        var ex = Assert.Throws<InvalidOperationException>(() => InternalVectorBosonSourceMatrixCampaign.Run(
+            MakeCampaignSpec(),
+            MakeSeedTable(),
+            MakeReadinessSpec(),
+            temp.Path,
+            MakeProvenance(),
+            bundleManifestPath));
+        Assert.Contains("Missing materialized selector-cell bundle", ex.Message, StringComparison.Ordinal);
     }
 
     private static InternalVectorBosonSourceModeRecord MakeMode(
@@ -175,6 +234,28 @@ public sealed class InternalVectorBosonSourceSpectrumTests
         ClosureRequirements = [],
         Provenance = MakeProvenance(),
     };
+
+    private static object MakeBundleManifest()
+    {
+        var bundles = new List<object>();
+        foreach (var branch in new[] { "branch-a", "branch-b" })
+        foreach (var refinement in new[] { "L0", "L1" })
+        foreach (var environment in new[] { "env-a", "env-b" })
+        {
+            var id = $"bundle-{branch}-{refinement}-{environment}";
+            bundles.Add(new
+            {
+                bundleId = id,
+                branchVariantId = branch,
+                refinementLevel = refinement,
+                environmentId = environment,
+                written = true,
+                backgroundRecordPath = $"bundles/{id}/background.json",
+            });
+        }
+
+        return new { bundles };
+    }
 
     private static ProvenanceMeta MakeProvenance() => new()
     {

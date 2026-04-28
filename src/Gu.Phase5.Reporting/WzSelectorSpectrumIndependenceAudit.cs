@@ -261,7 +261,12 @@ public static class WzSelectorSpectrumIndependenceAudit
             diagnosis.Add($"selected W/Z ratio is invariant across selector cells at mean {cells.Average(c => c.Ratio):R}");
         if (proxyOnlyCount == cells.Count && cells.Count > 0)
             diagnosis.Add("selector spectra contain massLikeValues projections but no operator bundle, solver method, or mode list");
-        diagnosis.Add("next corrective work must replace selector proxy spectra with independent selector-specific operator/eigenvalue solves before physical W/Z prediction comparison");
+        if (proxyOnlyCount == cells.Count && cells.Count > 0)
+            diagnosis.Add("next corrective work must replace selector proxy spectra with independent selector-specific operator/eigenvalue solves before physical W/Z prediction comparison");
+        else if (ratioInvariant && solverBackedCount > 0)
+            diagnosis.Add("next corrective work must replace bundle-backed deterministic rescaling with selector-specific independent eigenvalue extraction before physical W/Z prediction comparison");
+        else
+            diagnosis.Add("next corrective work must complete selector-specific independent eigenvalue extraction before physical W/Z prediction comparison");
         return diagnosis;
     }
 

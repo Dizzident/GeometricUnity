@@ -1,0 +1,1195 @@
+{
+  "tableId": "phase22-selector-aware-source-candidates-v1",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "candidate-source-ready",
+  "candidates": [
+    {
+      "sourceCandidateId": "phase22-phase12-candidate-0",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase42_bundle_backed_wz_source_spectra_001/source_spectra/spectra_manifest.json",
+        "studies/phase42_bundle_backed_wz_source_spectra_001/source_spectra/mode_families.json"
+      ],
+      "sourceModeIds": [
+        "phase12-candidate-0__bg-variant-53b598740d9569b4__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-0__bg-variant-53b598740d9569b4__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-0__bg-variant-53b598740d9569b4__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-0__bg-variant-53b598740d9569b4__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-0__bg-variant-53b598740d9569b4__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-0__bg-variant-53b598740d9569b4__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-0__bg-variant-53b598740d9569b4__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-0__bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-0__bg-variant-53b598740d9569b4__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-0__bg-variant-95ee11778cc7ac01__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-0__bg-variant-95ee11778cc7ac01__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-0__bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-0__bg-variant-95ee11778cc7ac01__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-0__bg-variant-95ee11778cc7ac01__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-0__bg-variant-95ee11778cc7ac01__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-0__bg-variant-95ee11778cc7ac01__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-0__bg-variant-95ee11778cc7ac01__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-0__bg-variant-95ee11778cc7ac01__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-0__bg-variant-d840fea6e6d36748__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-0__bg-variant-d840fea6e6d36748__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-0__bg-variant-d840fea6e6d36748__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-0__bg-variant-d840fea6e6d36748__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-0__bg-variant-d840fea6e6d36748__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-0__bg-variant-d840fea6e6d36748__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-0__bg-variant-d840fea6e6d36748__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-0__bg-variant-d840fea6e6d36748__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-0__bg-variant-d840fea6e6d36748__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-0__bg-variant-d84f5d66fd98b842__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-0__bg-variant-d84f5d66fd98b842__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-0__bg-variant-d84f5d66fd98b842__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-0__bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-0__bg-variant-d84f5d66fd98b842__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-0__bg-variant-d84f5d66fd98b842__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-0__bg-variant-d84f5d66fd98b842__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-0__bg-variant-d84f5d66fd98b842__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-0__bg-variant-d84f5d66fd98b842__L2-8x8__env-toy-2d-trivial-mode"
+      ],
+      "sourceFamilyId": "phase22-family-phase12-candidate-0",
+      "massLikeValue": 1.0945408528574527E-15,
+      "uncertainty": {
+        "branchVariation": 2.9712942346169607E-19,
+        "refinementError": 0,
+        "extractionError": 1.0000000000000003E-18,
+        "environmentSensitivity": 2.355036460991868E-19,
+        "totalUncertainty": 1.0694614820612715E-18
+      },
+      "branchSelectors": [
+        "bg-variant-53b598740d9569b4",
+        "bg-variant-95ee11778cc7ac01",
+        "bg-variant-d840fea6e6d36748",
+        "bg-variant-d84f5d66fd98b842"
+      ],
+      "environmentSelectors": [
+        "env-imported-repo-benchmark",
+        "env-structured-4x4",
+        "env-toy-2d-trivial"
+      ],
+      "refinementLevels": [
+        "L0-2x2",
+        "L1-4x4",
+        "L2-8x8"
+      ],
+      "branchStabilityScore": 0.9997285350997306,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 0,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C2_BranchStableCandidate",
+      "status": "candidate-source-ready",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "selector-aware mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [],
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase22-phase12-candidate-1",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase42_bundle_backed_wz_source_spectra_001/source_spectra/spectra_manifest.json",
+        "studies/phase42_bundle_backed_wz_source_spectra_001/source_spectra/mode_families.json"
+      ],
+      "sourceModeIds": [
+        "phase12-candidate-1__bg-variant-53b598740d9569b4__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-1__bg-variant-53b598740d9569b4__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-1__bg-variant-53b598740d9569b4__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-1__bg-variant-53b598740d9569b4__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-1__bg-variant-53b598740d9569b4__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-1__bg-variant-53b598740d9569b4__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-1__bg-variant-53b598740d9569b4__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-1__bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-1__bg-variant-53b598740d9569b4__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-1__bg-variant-95ee11778cc7ac01__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-1__bg-variant-95ee11778cc7ac01__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-1__bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-1__bg-variant-95ee11778cc7ac01__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-1__bg-variant-95ee11778cc7ac01__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-1__bg-variant-95ee11778cc7ac01__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-1__bg-variant-95ee11778cc7ac01__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-1__bg-variant-95ee11778cc7ac01__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-1__bg-variant-95ee11778cc7ac01__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-1__bg-variant-d840fea6e6d36748__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-1__bg-variant-d840fea6e6d36748__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-1__bg-variant-d840fea6e6d36748__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-1__bg-variant-d840fea6e6d36748__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-1__bg-variant-d840fea6e6d36748__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-1__bg-variant-d840fea6e6d36748__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-1__bg-variant-d840fea6e6d36748__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-1__bg-variant-d840fea6e6d36748__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-1__bg-variant-d840fea6e6d36748__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-1__bg-variant-d84f5d66fd98b842__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-1__bg-variant-d84f5d66fd98b842__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-1__bg-variant-d84f5d66fd98b842__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-1__bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-1__bg-variant-d84f5d66fd98b842__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-1__bg-variant-d84f5d66fd98b842__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-1__bg-variant-d84f5d66fd98b842__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-1__bg-variant-d84f5d66fd98b842__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-1__bg-variant-d84f5d66fd98b842__L2-8x8__env-toy-2d-trivial-mode"
+      ],
+      "sourceFamilyId": "phase22-family-phase12-candidate-1",
+      "massLikeValue": 1.1817734682501997E-15,
+      "uncertainty": {
+        "branchVariation": 3.208100166993944E-19,
+        "refinementError": 0,
+        "extractionError": 1.0000000000000003E-18,
+        "environmentSensitivity": 2.5427279384764433E-19,
+        "totalUncertainty": 1.0805432524918903E-18
+      },
+      "branchSelectors": [
+        "bg-variant-53b598740d9569b4",
+        "bg-variant-95ee11778cc7ac01",
+        "bg-variant-d840fea6e6d36748",
+        "bg-variant-d84f5d66fd98b842"
+      ],
+      "environmentSelectors": [
+        "env-imported-repo-benchmark",
+        "env-structured-4x4",
+        "env-toy-2d-trivial"
+      ],
+      "refinementLevels": [
+        "L0-2x2",
+        "L1-4x4",
+        "L2-8x8"
+      ],
+      "branchStabilityScore": 0.9997285350997307,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 0,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C2_BranchStableCandidate",
+      "status": "candidate-source-ready",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "selector-aware mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [],
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase22-phase12-candidate-10",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase42_bundle_backed_wz_source_spectra_001/source_spectra/spectra_manifest.json",
+        "studies/phase42_bundle_backed_wz_source_spectra_001/source_spectra/mode_families.json"
+      ],
+      "sourceModeIds": [
+        "phase12-candidate-10__bg-variant-53b598740d9569b4__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-10__bg-variant-53b598740d9569b4__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-10__bg-variant-53b598740d9569b4__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-10__bg-variant-53b598740d9569b4__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-10__bg-variant-53b598740d9569b4__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-10__bg-variant-53b598740d9569b4__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-10__bg-variant-53b598740d9569b4__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-10__bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-10__bg-variant-53b598740d9569b4__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-10__bg-variant-95ee11778cc7ac01__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-10__bg-variant-95ee11778cc7ac01__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-10__bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-10__bg-variant-95ee11778cc7ac01__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-10__bg-variant-95ee11778cc7ac01__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-10__bg-variant-95ee11778cc7ac01__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-10__bg-variant-95ee11778cc7ac01__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-10__bg-variant-95ee11778cc7ac01__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-10__bg-variant-95ee11778cc7ac01__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-10__bg-variant-d840fea6e6d36748__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-10__bg-variant-d840fea6e6d36748__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-10__bg-variant-d840fea6e6d36748__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-10__bg-variant-d840fea6e6d36748__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-10__bg-variant-d840fea6e6d36748__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-10__bg-variant-d840fea6e6d36748__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-10__bg-variant-d840fea6e6d36748__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-10__bg-variant-d840fea6e6d36748__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-10__bg-variant-d840fea6e6d36748__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-10__bg-variant-d84f5d66fd98b842__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-10__bg-variant-d84f5d66fd98b842__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-10__bg-variant-d84f5d66fd98b842__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-10__bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-10__bg-variant-d84f5d66fd98b842__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-10__bg-variant-d84f5d66fd98b842__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-10__bg-variant-d84f5d66fd98b842__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-10__bg-variant-d84f5d66fd98b842__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-10__bg-variant-d84f5d66fd98b842__L2-8x8__env-toy-2d-trivial-mode"
+      ],
+      "sourceFamilyId": "phase22-family-phase12-candidate-10",
+      "massLikeValue": 3.44455928867972E-16,
+      "uncertainty": {
+        "branchVariation": 9.350769437732009E-20,
+        "refinementError": 0,
+        "extractionError": 1.0000000000000003E-18,
+        "environmentSensitivity": 7.411384139490721E-20,
+        "totalUncertainty": 1.0070931190282616E-18
+      },
+      "branchSelectors": [
+        "bg-variant-53b598740d9569b4",
+        "bg-variant-95ee11778cc7ac01",
+        "bg-variant-d840fea6e6d36748",
+        "bg-variant-d84f5d66fd98b842"
+      ],
+      "environmentSelectors": [
+        "env-imported-repo-benchmark",
+        "env-structured-4x4",
+        "env-toy-2d-trivial"
+      ],
+      "refinementLevels": [
+        "L0-2x2",
+        "L1-4x4",
+        "L2-8x8"
+      ],
+      "branchStabilityScore": 0.9997285350997307,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 0,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C2_BranchStableCandidate",
+      "status": "candidate-source-ready",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "selector-aware mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [],
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase22-phase12-candidate-11",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase42_bundle_backed_wz_source_spectra_001/source_spectra/spectra_manifest.json",
+        "studies/phase42_bundle_backed_wz_source_spectra_001/source_spectra/mode_families.json"
+      ],
+      "sourceModeIds": [
+        "phase12-candidate-11__bg-variant-53b598740d9569b4__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-11__bg-variant-53b598740d9569b4__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-11__bg-variant-53b598740d9569b4__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-11__bg-variant-53b598740d9569b4__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-11__bg-variant-53b598740d9569b4__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-11__bg-variant-53b598740d9569b4__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-11__bg-variant-53b598740d9569b4__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-11__bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-11__bg-variant-53b598740d9569b4__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-11__bg-variant-95ee11778cc7ac01__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-11__bg-variant-95ee11778cc7ac01__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-11__bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-11__bg-variant-95ee11778cc7ac01__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-11__bg-variant-95ee11778cc7ac01__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-11__bg-variant-95ee11778cc7ac01__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-11__bg-variant-95ee11778cc7ac01__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-11__bg-variant-95ee11778cc7ac01__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-11__bg-variant-95ee11778cc7ac01__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-11__bg-variant-d840fea6e6d36748__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-11__bg-variant-d840fea6e6d36748__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-11__bg-variant-d840fea6e6d36748__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-11__bg-variant-d840fea6e6d36748__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-11__bg-variant-d840fea6e6d36748__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-11__bg-variant-d840fea6e6d36748__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-11__bg-variant-d840fea6e6d36748__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-11__bg-variant-d840fea6e6d36748__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-11__bg-variant-d840fea6e6d36748__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-11__bg-variant-d84f5d66fd98b842__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-11__bg-variant-d84f5d66fd98b842__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-11__bg-variant-d84f5d66fd98b842__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-11__bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-11__bg-variant-d84f5d66fd98b842__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-11__bg-variant-d84f5d66fd98b842__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-11__bg-variant-d84f5d66fd98b842__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-11__bg-variant-d84f5d66fd98b842__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-11__bg-variant-d84f5d66fd98b842__L2-8x8__env-toy-2d-trivial-mode"
+      ],
+      "sourceFamilyId": "phase22-family-phase12-candidate-11",
+      "massLikeValue": 7.800392068788456E-17,
+      "uncertainty": {
+        "branchVariation": 2.1175326550157284E-20,
+        "refinementError": 0,
+        "extractionError": 1.0000000000000003E-18,
+        "environmentSensitivity": 1.6783482940880036E-20,
+        "totalUncertainty": 1.0003649732743212E-18
+      },
+      "branchSelectors": [
+        "bg-variant-53b598740d9569b4",
+        "bg-variant-95ee11778cc7ac01",
+        "bg-variant-d840fea6e6d36748",
+        "bg-variant-d84f5d66fd98b842"
+      ],
+      "environmentSelectors": [
+        "env-imported-repo-benchmark",
+        "env-structured-4x4",
+        "env-toy-2d-trivial"
+      ],
+      "refinementLevels": [
+        "L0-2x2",
+        "L1-4x4",
+        "L2-8x8"
+      ],
+      "branchStabilityScore": 0.9997285350997306,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 0,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C2_BranchStableCandidate",
+      "status": "candidate-source-ready",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "selector-aware mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [],
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase22-phase12-candidate-2",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase42_bundle_backed_wz_source_spectra_001/source_spectra/spectra_manifest.json",
+        "studies/phase42_bundle_backed_wz_source_spectra_001/source_spectra/mode_families.json"
+      ],
+      "sourceModeIds": [
+        "phase12-candidate-2__bg-variant-53b598740d9569b4__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-2__bg-variant-53b598740d9569b4__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-2__bg-variant-53b598740d9569b4__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-2__bg-variant-53b598740d9569b4__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-2__bg-variant-53b598740d9569b4__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-2__bg-variant-53b598740d9569b4__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-2__bg-variant-53b598740d9569b4__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-2__bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-2__bg-variant-53b598740d9569b4__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-2__bg-variant-95ee11778cc7ac01__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-2__bg-variant-95ee11778cc7ac01__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-2__bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-2__bg-variant-95ee11778cc7ac01__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-2__bg-variant-95ee11778cc7ac01__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-2__bg-variant-95ee11778cc7ac01__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-2__bg-variant-95ee11778cc7ac01__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-2__bg-variant-95ee11778cc7ac01__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-2__bg-variant-95ee11778cc7ac01__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-2__bg-variant-d840fea6e6d36748__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-2__bg-variant-d840fea6e6d36748__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-2__bg-variant-d840fea6e6d36748__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-2__bg-variant-d840fea6e6d36748__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-2__bg-variant-d840fea6e6d36748__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-2__bg-variant-d840fea6e6d36748__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-2__bg-variant-d840fea6e6d36748__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-2__bg-variant-d840fea6e6d36748__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-2__bg-variant-d840fea6e6d36748__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-2__bg-variant-d84f5d66fd98b842__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-2__bg-variant-d84f5d66fd98b842__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-2__bg-variant-d84f5d66fd98b842__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-2__bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-2__bg-variant-d84f5d66fd98b842__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-2__bg-variant-d84f5d66fd98b842__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-2__bg-variant-d84f5d66fd98b842__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-2__bg-variant-d84f5d66fd98b842__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-2__bg-variant-d84f5d66fd98b842__L2-8x8__env-toy-2d-trivial-mode"
+      ],
+      "sourceFamilyId": "phase22-family-phase12-candidate-2",
+      "massLikeValue": 1.267160712294941E-15,
+      "uncertainty": {
+        "branchVariation": 3.4398965638836854E-19,
+        "refinementError": 0,
+        "extractionError": 1.0000000000000003E-18,
+        "environmentSensitivity": 2.7264488772634025E-19,
+        "totalUncertainty": 1.0920916255083625E-18
+      },
+      "branchSelectors": [
+        "bg-variant-53b598740d9569b4",
+        "bg-variant-95ee11778cc7ac01",
+        "bg-variant-d840fea6e6d36748",
+        "bg-variant-d84f5d66fd98b842"
+      ],
+      "environmentSelectors": [
+        "env-imported-repo-benchmark",
+        "env-structured-4x4",
+        "env-toy-2d-trivial"
+      ],
+      "refinementLevels": [
+        "L0-2x2",
+        "L1-4x4",
+        "L2-8x8"
+      ],
+      "branchStabilityScore": 0.9997285350997307,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 0,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C2_BranchStableCandidate",
+      "status": "candidate-source-ready",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "selector-aware mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [],
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase22-phase12-candidate-3",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase42_bundle_backed_wz_source_spectra_001/source_spectra/spectra_manifest.json",
+        "studies/phase42_bundle_backed_wz_source_spectra_001/source_spectra/mode_families.json"
+      ],
+      "sourceModeIds": [
+        "phase12-candidate-3__bg-variant-53b598740d9569b4__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-3__bg-variant-53b598740d9569b4__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-3__bg-variant-53b598740d9569b4__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-3__bg-variant-53b598740d9569b4__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-3__bg-variant-53b598740d9569b4__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-3__bg-variant-53b598740d9569b4__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-3__bg-variant-53b598740d9569b4__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-3__bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-3__bg-variant-53b598740d9569b4__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-3__bg-variant-95ee11778cc7ac01__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-3__bg-variant-95ee11778cc7ac01__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-3__bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-3__bg-variant-95ee11778cc7ac01__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-3__bg-variant-95ee11778cc7ac01__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-3__bg-variant-95ee11778cc7ac01__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-3__bg-variant-95ee11778cc7ac01__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-3__bg-variant-95ee11778cc7ac01__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-3__bg-variant-95ee11778cc7ac01__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-3__bg-variant-d840fea6e6d36748__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-3__bg-variant-d840fea6e6d36748__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-3__bg-variant-d840fea6e6d36748__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-3__bg-variant-d840fea6e6d36748__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-3__bg-variant-d840fea6e6d36748__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-3__bg-variant-d840fea6e6d36748__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-3__bg-variant-d840fea6e6d36748__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-3__bg-variant-d840fea6e6d36748__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-3__bg-variant-d840fea6e6d36748__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-3__bg-variant-d84f5d66fd98b842__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-3__bg-variant-d84f5d66fd98b842__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-3__bg-variant-d84f5d66fd98b842__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-3__bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-3__bg-variant-d84f5d66fd98b842__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-3__bg-variant-d84f5d66fd98b842__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-3__bg-variant-d84f5d66fd98b842__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-3__bg-variant-d84f5d66fd98b842__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-3__bg-variant-d84f5d66fd98b842__L2-8x8__env-toy-2d-trivial-mode"
+      ],
+      "sourceFamilyId": "phase22-family-phase12-candidate-3",
+      "massLikeValue": 1.0715680169920319E-15,
+      "uncertainty": {
+        "branchVariation": 2.9089310486456114E-19,
+        "refinementError": 0,
+        "extractionError": 1.0000000000000003E-18,
+        "environmentSensitivity": 2.305607638000124E-19,
+        "totalUncertainty": 1.066666332205995E-18
+      },
+      "branchSelectors": [
+        "bg-variant-53b598740d9569b4",
+        "bg-variant-95ee11778cc7ac01",
+        "bg-variant-d840fea6e6d36748",
+        "bg-variant-d84f5d66fd98b842"
+      ],
+      "environmentSelectors": [
+        "env-imported-repo-benchmark",
+        "env-structured-4x4",
+        "env-toy-2d-trivial"
+      ],
+      "refinementLevels": [
+        "L0-2x2",
+        "L1-4x4",
+        "L2-8x8"
+      ],
+      "branchStabilityScore": 0.9997285350997307,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 0,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C2_BranchStableCandidate",
+      "status": "candidate-source-ready",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "selector-aware mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [],
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase22-phase12-candidate-4",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase42_bundle_backed_wz_source_spectra_001/source_spectra/spectra_manifest.json",
+        "studies/phase42_bundle_backed_wz_source_spectra_001/source_spectra/mode_families.json"
+      ],
+      "sourceModeIds": [
+        "phase12-candidate-4__bg-variant-53b598740d9569b4__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-4__bg-variant-53b598740d9569b4__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-4__bg-variant-53b598740d9569b4__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-4__bg-variant-53b598740d9569b4__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-4__bg-variant-53b598740d9569b4__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-4__bg-variant-53b598740d9569b4__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-4__bg-variant-53b598740d9569b4__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-4__bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-4__bg-variant-53b598740d9569b4__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-4__bg-variant-95ee11778cc7ac01__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-4__bg-variant-95ee11778cc7ac01__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-4__bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-4__bg-variant-95ee11778cc7ac01__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-4__bg-variant-95ee11778cc7ac01__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-4__bg-variant-95ee11778cc7ac01__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-4__bg-variant-95ee11778cc7ac01__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-4__bg-variant-95ee11778cc7ac01__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-4__bg-variant-95ee11778cc7ac01__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-4__bg-variant-d840fea6e6d36748__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-4__bg-variant-d840fea6e6d36748__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-4__bg-variant-d840fea6e6d36748__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-4__bg-variant-d840fea6e6d36748__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-4__bg-variant-d840fea6e6d36748__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-4__bg-variant-d840fea6e6d36748__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-4__bg-variant-d840fea6e6d36748__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-4__bg-variant-d840fea6e6d36748__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-4__bg-variant-d840fea6e6d36748__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-4__bg-variant-d84f5d66fd98b842__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-4__bg-variant-d84f5d66fd98b842__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-4__bg-variant-d84f5d66fd98b842__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-4__bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-4__bg-variant-d84f5d66fd98b842__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-4__bg-variant-d84f5d66fd98b842__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-4__bg-variant-d84f5d66fd98b842__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-4__bg-variant-d84f5d66fd98b842__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-4__bg-variant-d84f5d66fd98b842__L2-8x8__env-toy-2d-trivial-mode"
+      ],
+      "sourceFamilyId": "phase22-family-phase12-candidate-4",
+      "massLikeValue": 6.467990089270349E-16,
+      "uncertainty": {
+        "branchVariation": 1.755832284526997E-19,
+        "refinementError": 0,
+        "extractionError": 1.0000000000000003E-18,
+        "environmentSensitivity": 1.3916659620141503E-19,
+        "totalUncertainty": 1.0247911063295589E-18
+      },
+      "branchSelectors": [
+        "bg-variant-53b598740d9569b4",
+        "bg-variant-95ee11778cc7ac01",
+        "bg-variant-d840fea6e6d36748",
+        "bg-variant-d84f5d66fd98b842"
+      ],
+      "environmentSelectors": [
+        "env-imported-repo-benchmark",
+        "env-structured-4x4",
+        "env-toy-2d-trivial"
+      ],
+      "refinementLevels": [
+        "L0-2x2",
+        "L1-4x4",
+        "L2-8x8"
+      ],
+      "branchStabilityScore": 0.9997285350997306,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 0,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C2_BranchStableCandidate",
+      "status": "candidate-source-ready",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "selector-aware mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [],
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase22-phase12-candidate-5",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase42_bundle_backed_wz_source_spectra_001/source_spectra/spectra_manifest.json",
+        "studies/phase42_bundle_backed_wz_source_spectra_001/source_spectra/mode_families.json"
+      ],
+      "sourceModeIds": [
+        "phase12-candidate-5__bg-variant-53b598740d9569b4__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-5__bg-variant-53b598740d9569b4__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-5__bg-variant-53b598740d9569b4__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-5__bg-variant-53b598740d9569b4__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-5__bg-variant-53b598740d9569b4__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-5__bg-variant-53b598740d9569b4__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-5__bg-variant-53b598740d9569b4__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-5__bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-5__bg-variant-53b598740d9569b4__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-5__bg-variant-95ee11778cc7ac01__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-5__bg-variant-95ee11778cc7ac01__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-5__bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-5__bg-variant-95ee11778cc7ac01__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-5__bg-variant-95ee11778cc7ac01__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-5__bg-variant-95ee11778cc7ac01__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-5__bg-variant-95ee11778cc7ac01__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-5__bg-variant-95ee11778cc7ac01__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-5__bg-variant-95ee11778cc7ac01__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-5__bg-variant-d840fea6e6d36748__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-5__bg-variant-d840fea6e6d36748__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-5__bg-variant-d840fea6e6d36748__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-5__bg-variant-d840fea6e6d36748__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-5__bg-variant-d840fea6e6d36748__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-5__bg-variant-d840fea6e6d36748__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-5__bg-variant-d840fea6e6d36748__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-5__bg-variant-d840fea6e6d36748__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-5__bg-variant-d840fea6e6d36748__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-5__bg-variant-d84f5d66fd98b842__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-5__bg-variant-d84f5d66fd98b842__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-5__bg-variant-d84f5d66fd98b842__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-5__bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-5__bg-variant-d84f5d66fd98b842__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-5__bg-variant-d84f5d66fd98b842__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-5__bg-variant-d84f5d66fd98b842__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-5__bg-variant-d84f5d66fd98b842__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-5__bg-variant-d84f5d66fd98b842__L2-8x8__env-toy-2d-trivial-mode"
+      ],
+      "sourceFamilyId": "phase22-family-phase12-candidate-5",
+      "massLikeValue": 1.8108853708436636E-16,
+      "uncertainty": {
+        "branchVariation": 4.915918165952312E-20,
+        "refinementError": 0,
+        "extractionError": 1.0000000000000003E-18,
+        "environmentSensitivity": 3.896337961147933E-20,
+        "totalUncertainty": 1.001965453542278E-18
+      },
+      "branchSelectors": [
+        "bg-variant-53b598740d9569b4",
+        "bg-variant-95ee11778cc7ac01",
+        "bg-variant-d840fea6e6d36748",
+        "bg-variant-d84f5d66fd98b842"
+      ],
+      "environmentSelectors": [
+        "env-imported-repo-benchmark",
+        "env-structured-4x4",
+        "env-toy-2d-trivial"
+      ],
+      "refinementLevels": [
+        "L0-2x2",
+        "L1-4x4",
+        "L2-8x8"
+      ],
+      "branchStabilityScore": 0.9997285350997307,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 0,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C2_BranchStableCandidate",
+      "status": "candidate-source-ready",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "selector-aware mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [],
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase22-phase12-candidate-6",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase42_bundle_backed_wz_source_spectra_001/source_spectra/spectra_manifest.json",
+        "studies/phase42_bundle_backed_wz_source_spectra_001/source_spectra/mode_families.json"
+      ],
+      "sourceModeIds": [
+        "phase12-candidate-6__bg-variant-53b598740d9569b4__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-6__bg-variant-53b598740d9569b4__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-6__bg-variant-53b598740d9569b4__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-6__bg-variant-53b598740d9569b4__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-6__bg-variant-53b598740d9569b4__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-6__bg-variant-53b598740d9569b4__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-6__bg-variant-53b598740d9569b4__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-6__bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-6__bg-variant-53b598740d9569b4__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-6__bg-variant-95ee11778cc7ac01__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-6__bg-variant-95ee11778cc7ac01__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-6__bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-6__bg-variant-95ee11778cc7ac01__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-6__bg-variant-95ee11778cc7ac01__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-6__bg-variant-95ee11778cc7ac01__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-6__bg-variant-95ee11778cc7ac01__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-6__bg-variant-95ee11778cc7ac01__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-6__bg-variant-95ee11778cc7ac01__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-6__bg-variant-d840fea6e6d36748__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-6__bg-variant-d840fea6e6d36748__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-6__bg-variant-d840fea6e6d36748__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-6__bg-variant-d840fea6e6d36748__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-6__bg-variant-d840fea6e6d36748__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-6__bg-variant-d840fea6e6d36748__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-6__bg-variant-d840fea6e6d36748__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-6__bg-variant-d840fea6e6d36748__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-6__bg-variant-d840fea6e6d36748__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-6__bg-variant-d84f5d66fd98b842__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-6__bg-variant-d84f5d66fd98b842__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-6__bg-variant-d84f5d66fd98b842__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-6__bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-6__bg-variant-d84f5d66fd98b842__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-6__bg-variant-d84f5d66fd98b842__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-6__bg-variant-d84f5d66fd98b842__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-6__bg-variant-d84f5d66fd98b842__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-6__bg-variant-d84f5d66fd98b842__L2-8x8__env-toy-2d-trivial-mode"
+      ],
+      "sourceFamilyId": "phase22-family-phase12-candidate-6",
+      "massLikeValue": 2.0709578524223751E-16,
+      "uncertainty": {
+        "branchVariation": 5.621923668697963E-20,
+        "refinementError": 0,
+        "extractionError": 1.0000000000000003E-18,
+        "environmentSensitivity": 4.455915225916364E-20,
+        "totalUncertainty": 1.002569758482532E-18
+      },
+      "branchSelectors": [
+        "bg-variant-53b598740d9569b4",
+        "bg-variant-95ee11778cc7ac01",
+        "bg-variant-d840fea6e6d36748",
+        "bg-variant-d84f5d66fd98b842"
+      ],
+      "environmentSelectors": [
+        "env-imported-repo-benchmark",
+        "env-structured-4x4",
+        "env-toy-2d-trivial"
+      ],
+      "refinementLevels": [
+        "L0-2x2",
+        "L1-4x4",
+        "L2-8x8"
+      ],
+      "branchStabilityScore": 0.9997285350997307,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 0,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C2_BranchStableCandidate",
+      "status": "candidate-source-ready",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "selector-aware mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [],
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase22-phase12-candidate-7",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase42_bundle_backed_wz_source_spectra_001/source_spectra/spectra_manifest.json",
+        "studies/phase42_bundle_backed_wz_source_spectra_001/source_spectra/mode_families.json"
+      ],
+      "sourceModeIds": [
+        "phase12-candidate-7__bg-variant-53b598740d9569b4__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-7__bg-variant-53b598740d9569b4__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-7__bg-variant-53b598740d9569b4__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-7__bg-variant-53b598740d9569b4__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-7__bg-variant-53b598740d9569b4__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-7__bg-variant-53b598740d9569b4__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-7__bg-variant-53b598740d9569b4__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-7__bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-7__bg-variant-53b598740d9569b4__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-7__bg-variant-95ee11778cc7ac01__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-7__bg-variant-95ee11778cc7ac01__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-7__bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-7__bg-variant-95ee11778cc7ac01__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-7__bg-variant-95ee11778cc7ac01__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-7__bg-variant-95ee11778cc7ac01__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-7__bg-variant-95ee11778cc7ac01__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-7__bg-variant-95ee11778cc7ac01__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-7__bg-variant-95ee11778cc7ac01__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-7__bg-variant-d840fea6e6d36748__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-7__bg-variant-d840fea6e6d36748__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-7__bg-variant-d840fea6e6d36748__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-7__bg-variant-d840fea6e6d36748__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-7__bg-variant-d840fea6e6d36748__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-7__bg-variant-d840fea6e6d36748__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-7__bg-variant-d840fea6e6d36748__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-7__bg-variant-d840fea6e6d36748__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-7__bg-variant-d840fea6e6d36748__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-7__bg-variant-d84f5d66fd98b842__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-7__bg-variant-d84f5d66fd98b842__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-7__bg-variant-d84f5d66fd98b842__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-7__bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-7__bg-variant-d84f5d66fd98b842__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-7__bg-variant-d84f5d66fd98b842__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-7__bg-variant-d84f5d66fd98b842__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-7__bg-variant-d84f5d66fd98b842__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-7__bg-variant-d84f5d66fd98b842__L2-8x8__env-toy-2d-trivial-mode"
+      ],
+      "sourceFamilyId": "phase22-family-phase12-candidate-7",
+      "massLikeValue": 5.328921025515827E-16,
+      "uncertainty": {
+        "branchVariation": 1.4466150147345298E-19,
+        "refinementError": 0,
+        "extractionError": 1.0000000000000003E-18,
+        "environmentSensitivity": 1.146581535087223E-19,
+        "totalUncertainty": 1.0168940171790688E-18
+      },
+      "branchSelectors": [
+        "bg-variant-53b598740d9569b4",
+        "bg-variant-95ee11778cc7ac01",
+        "bg-variant-d840fea6e6d36748",
+        "bg-variant-d84f5d66fd98b842"
+      ],
+      "environmentSelectors": [
+        "env-imported-repo-benchmark",
+        "env-structured-4x4",
+        "env-toy-2d-trivial"
+      ],
+      "refinementLevels": [
+        "L0-2x2",
+        "L1-4x4",
+        "L2-8x8"
+      ],
+      "branchStabilityScore": 0.9997285350997307,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 0,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C2_BranchStableCandidate",
+      "status": "candidate-source-ready",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "selector-aware mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [],
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase22-phase12-candidate-8",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase42_bundle_backed_wz_source_spectra_001/source_spectra/spectra_manifest.json",
+        "studies/phase42_bundle_backed_wz_source_spectra_001/source_spectra/mode_families.json"
+      ],
+      "sourceModeIds": [
+        "phase12-candidate-8__bg-variant-53b598740d9569b4__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-8__bg-variant-53b598740d9569b4__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-8__bg-variant-53b598740d9569b4__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-8__bg-variant-53b598740d9569b4__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-8__bg-variant-53b598740d9569b4__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-8__bg-variant-53b598740d9569b4__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-8__bg-variant-53b598740d9569b4__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-8__bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-8__bg-variant-53b598740d9569b4__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-8__bg-variant-95ee11778cc7ac01__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-8__bg-variant-95ee11778cc7ac01__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-8__bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-8__bg-variant-95ee11778cc7ac01__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-8__bg-variant-95ee11778cc7ac01__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-8__bg-variant-95ee11778cc7ac01__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-8__bg-variant-95ee11778cc7ac01__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-8__bg-variant-95ee11778cc7ac01__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-8__bg-variant-95ee11778cc7ac01__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-8__bg-variant-d840fea6e6d36748__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-8__bg-variant-d840fea6e6d36748__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-8__bg-variant-d840fea6e6d36748__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-8__bg-variant-d840fea6e6d36748__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-8__bg-variant-d840fea6e6d36748__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-8__bg-variant-d840fea6e6d36748__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-8__bg-variant-d840fea6e6d36748__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-8__bg-variant-d840fea6e6d36748__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-8__bg-variant-d840fea6e6d36748__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-8__bg-variant-d84f5d66fd98b842__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-8__bg-variant-d84f5d66fd98b842__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-8__bg-variant-d84f5d66fd98b842__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-8__bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-8__bg-variant-d84f5d66fd98b842__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-8__bg-variant-d84f5d66fd98b842__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-8__bg-variant-d84f5d66fd98b842__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-8__bg-variant-d84f5d66fd98b842__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-8__bg-variant-d84f5d66fd98b842__L2-8x8__env-toy-2d-trivial-mode"
+      ],
+      "sourceFamilyId": "phase22-family-phase12-candidate-8",
+      "massLikeValue": 1.950916902175956E-16,
+      "uncertainty": {
+        "branchVariation": 5.2960546228295424E-20,
+        "refinementError": 0,
+        "extractionError": 1.0000000000000003E-18,
+        "environmentSensitivity": 4.197632664872918E-20,
+        "totalUncertainty": 1.0022808146700807E-18
+      },
+      "branchSelectors": [
+        "bg-variant-53b598740d9569b4",
+        "bg-variant-95ee11778cc7ac01",
+        "bg-variant-d840fea6e6d36748",
+        "bg-variant-d84f5d66fd98b842"
+      ],
+      "environmentSelectors": [
+        "env-imported-repo-benchmark",
+        "env-structured-4x4",
+        "env-toy-2d-trivial"
+      ],
+      "refinementLevels": [
+        "L0-2x2",
+        "L1-4x4",
+        "L2-8x8"
+      ],
+      "branchStabilityScore": 0.9997285350997307,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 0,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C2_BranchStableCandidate",
+      "status": "candidate-source-ready",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "selector-aware mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [],
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "sourceCandidateId": "phase22-phase12-candidate-9",
+      "sourceOrigin": "internal-computed-artifact",
+      "modeRole": "vector-boson-source-candidate",
+      "sourceArtifactPaths": [
+        "studies/phase42_bundle_backed_wz_source_spectra_001/source_spectra/spectra_manifest.json",
+        "studies/phase42_bundle_backed_wz_source_spectra_001/source_spectra/mode_families.json"
+      ],
+      "sourceModeIds": [
+        "phase12-candidate-9__bg-variant-53b598740d9569b4__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-9__bg-variant-53b598740d9569b4__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-9__bg-variant-53b598740d9569b4__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-9__bg-variant-53b598740d9569b4__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-9__bg-variant-53b598740d9569b4__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-9__bg-variant-53b598740d9569b4__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-9__bg-variant-53b598740d9569b4__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-9__bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-9__bg-variant-53b598740d9569b4__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-9__bg-variant-95ee11778cc7ac01__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-9__bg-variant-95ee11778cc7ac01__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-9__bg-variant-95ee11778cc7ac01__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-9__bg-variant-95ee11778cc7ac01__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-9__bg-variant-95ee11778cc7ac01__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-9__bg-variant-95ee11778cc7ac01__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-9__bg-variant-95ee11778cc7ac01__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-9__bg-variant-95ee11778cc7ac01__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-9__bg-variant-95ee11778cc7ac01__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-9__bg-variant-d840fea6e6d36748__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-9__bg-variant-d840fea6e6d36748__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-9__bg-variant-d840fea6e6d36748__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-9__bg-variant-d840fea6e6d36748__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-9__bg-variant-d840fea6e6d36748__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-9__bg-variant-d840fea6e6d36748__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-9__bg-variant-d840fea6e6d36748__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-9__bg-variant-d840fea6e6d36748__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-9__bg-variant-d840fea6e6d36748__L2-8x8__env-toy-2d-trivial-mode",
+        "phase12-candidate-9__bg-variant-d84f5d66fd98b842__L0-2x2__env-imported-repo-benchmark-mode",
+        "phase12-candidate-9__bg-variant-d84f5d66fd98b842__L0-2x2__env-structured-4x4-mode",
+        "phase12-candidate-9__bg-variant-d84f5d66fd98b842__L0-2x2__env-toy-2d-trivial-mode",
+        "phase12-candidate-9__bg-variant-d84f5d66fd98b842__L1-4x4__env-imported-repo-benchmark-mode",
+        "phase12-candidate-9__bg-variant-d84f5d66fd98b842__L1-4x4__env-structured-4x4-mode",
+        "phase12-candidate-9__bg-variant-d84f5d66fd98b842__L1-4x4__env-toy-2d-trivial-mode",
+        "phase12-candidate-9__bg-variant-d84f5d66fd98b842__L2-8x8__env-imported-repo-benchmark-mode",
+        "phase12-candidate-9__bg-variant-d84f5d66fd98b842__L2-8x8__env-structured-4x4-mode",
+        "phase12-candidate-9__bg-variant-d84f5d66fd98b842__L2-8x8__env-toy-2d-trivial-mode"
+      ],
+      "sourceFamilyId": "phase22-family-phase12-candidate-9",
+      "massLikeValue": 1.8568761276714518E-16,
+      "uncertainty": {
+        "branchVariation": 5.040766928109971E-20,
+        "refinementError": 0,
+        "extractionError": 1.0000000000000003E-18,
+        "environmentSensitivity": 3.995292613149655E-20,
+        "totalUncertainty": 1.002066449607421E-18
+      },
+      "branchSelectors": [
+        "bg-variant-53b598740d9569b4",
+        "bg-variant-95ee11778cc7ac01",
+        "bg-variant-d840fea6e6d36748",
+        "bg-variant-d84f5d66fd98b842"
+      ],
+      "environmentSelectors": [
+        "env-imported-repo-benchmark",
+        "env-structured-4x4",
+        "env-toy-2d-trivial"
+      ],
+      "refinementLevels": [
+        "L0-2x2",
+        "L1-4x4",
+        "L2-8x8"
+      ],
+      "branchStabilityScore": 0.9997285350997306,
+      "refinementStabilityScore": 1,
+      "backendStabilityScore": 1,
+      "observationStabilityScore": 1,
+      "ambiguityCount": 0,
+      "gaugeLeakEnvelope": [
+        0,
+        0,
+        0
+      ],
+      "claimClass": "C2_BranchStableCandidate",
+      "status": "candidate-source-ready",
+      "assumptions": [
+        "source candidate is internal and particle-identity-neutral",
+        "selector-aware mass-like value is not a W or Z physical prediction"
+      ],
+      "closureRequirements": [],
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase22-selector-source-spectra",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    }
+  ],
+  "summaryBlockers": [
+    "12 source candidate(s) satisfy Phase XXI readiness policy."
+  ],
+  "provenance": {
+    "createdAt": "2026-04-26T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase22-selector-source-spectra",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu"
+  }
+}

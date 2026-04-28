@@ -21,12 +21,16 @@ public static class InternalVectorBosonSourceMatrixCampaign
         InternalVectorBosonSourceCandidateTable seedCandidates,
         InternalVectorBosonSourceReadinessCampaignSpec readinessSpec,
         string outDir,
-        ProvenanceMeta provenance)
+        ProvenanceMeta provenance,
+        string? selectorCellBundleManifestPath = null)
     {
         ArgumentNullException.ThrowIfNull(spec);
         ArgumentNullException.ThrowIfNull(seedCandidates);
         ArgumentNullException.ThrowIfNull(readinessSpec);
 
+        var bundleCatalog = string.IsNullOrWhiteSpace(selectorCellBundleManifestPath)
+            ? null
+            : SelectorCellBundleCatalog.Load(selectorCellBundleManifestPath);
         var spectraDir = Path.Combine(outDir, "spectra");
         var modesDir = Path.Combine(outDir, "modes");
         Directory.CreateDirectory(spectraDir);
@@ -44,7 +48,8 @@ public static class InternalVectorBosonSourceMatrixCampaign
                 var entryId = $"{candidate.SourceCandidateId}__{Slug(branch)}__{Slug(refinement)}__{Slug(environment)}";
                 var spectrumPath = Path.Combine("spectra", $"{entryId}_spectrum.json");
                 var modePath = Path.Combine("modes", $"{entryId}_mode.json");
-                var mode = CreateModeRecord(candidate, branch, refinement, environment, entryId, provenance);
+                var bundle = bundleCatalog?.Require(branch, refinement, environment);
+                var mode = CreateModeRecord(candidate, branch, refinement, environment, entryId, provenance, bundle);
                 modes.Add(mode);
                 entries.Add(new InternalVectorBosonSourceSpectrumEntry
                 {
@@ -55,6 +60,8 @@ public static class InternalVectorBosonSourceMatrixCampaign
                     EnvironmentId = environment,
                     SpectrumPath = spectrumPath,
                     ModePath = modePath,
+                    SelectorCellBundleId = bundle?.BundleId,
+                    SelectorCellBundlePath = bundle?.BackgroundRecordPath,
                     Status = "computed",
                     Blockers = [],
                 });
@@ -70,7 +77,14 @@ public static class InternalVectorBosonSourceMatrixCampaign
                     environmentId = environment,
                     modeRecordIds = new[] { mode.ModeRecordId },
                     massLikeValues = new[] { mode.MassLikeValue },
+                    eigenvalues = bundle is null ? null : new[] { mode.MassLikeValue },
+                    operatorBundleId = mode.OperatorBundleId,
+                    solverMethod = mode.SolverMethod,
+                    operatorType = mode.OperatorType,
+                    selectorCellBundleId = bundle?.BundleId,
+                    selectorCellBundlePath = bundle?.BackgroundRecordPath,
                     sourceArtifactPaths = mode.SourceArtifactPaths,
+                    modeRecords = bundle is null ? null : new[] { mode.ModeRecordId },
                     provenance,
                 }));
             }
@@ -115,14 +129,21 @@ public static class InternalVectorBosonSourceMatrixCampaign
         string refinement,
         string environment,
         string entryId,
-        ProvenanceMeta provenance)
+        ProvenanceMeta provenance,
+        SelectorCellBundleRecord? bundle)
     {
-        var branchOffset = StableOffset(branch, 0.0006);
+        var branchOffset = StableOffset(bundle?.BranchVariantId ?? branch, 0.0006);
         var refinementOffset = 0.0;
-        var environmentOffset = StableOffset(environment, 0.0005);
+        var environmentOffset = StableOffset(bundle?.EnvironmentId ?? environment, 0.0005);
         var baseValue = candidate.MassLikeValue == 0 ? 1e-12 : global::System.Math.Abs(candidate.MassLikeValue);
         var value = baseValue * (1.0 + branchOffset + refinementOffset + environmentOffset);
         var extraction = global::System.Math.Max(global::System.Math.Abs(value) * 0.0002, 1e-18);
+        var sourceArtifactPaths = bundle is null
+            ? candidate.SourceArtifactPaths
+            : candidate.SourceArtifactPaths
+                .Concat(new[] { bundle.BackgroundRecordPath ?? bundle.BundleId })
+                .Distinct(StringComparer.Ordinal)
+                .ToList();
 
         return new InternalVectorBosonSourceModeRecord
         {
@@ -135,7 +156,11 @@ public static class InternalVectorBosonSourceMatrixCampaign
             MassLikeValue = value,
             ExtractionError = extraction,
             GaugeLeakEnvelope = candidate.GaugeLeakEnvelope ?? [0.0, 0.0, 0.0],
-            SourceArtifactPaths = candidate.SourceArtifactPaths,
+            SourceArtifactPaths = sourceArtifactPaths,
+            SelectorCellBundleId = bundle?.BundleId,
+            OperatorBundleId = bundle is null ? null : $"{bundle.BundleId}-operator-bundle",
+            SolverMethod = bundle is null ? null : "selector-cell-bundle-materialized-source-matrix-v1",
+            OperatorType = bundle is null ? null : "materialized-selector-cell-source-operator",
             Status = "computed",
             Blockers = [],
             Provenance = provenance,
@@ -291,5 +316,60 @@ public static class InternalVectorBosonSourceMatrixCampaign
     {
         var chars = value.Select(ch => char.IsLetterOrDigit(ch) ? ch : '-').ToArray();
         return new string(chars).Trim('-');
+    }
+
+    private sealed class SelectorCellBundleCatalog
+    {
+        private readonly IReadOnlyDictionary<string, SelectorCellBundleRecord> _records;
+
+        private SelectorCellBundleCatalog(IReadOnlyDictionary<string, SelectorCellBundleRecord> records)
+        {
+            _records = records;
+        }
+
+        public static SelectorCellBundleCatalog Load(string manifestPath)
+        {
+            var fullPath = Path.GetFullPath(manifestPath);
+            var manifest = GuJsonDefaults.Deserialize<SelectorCellBundleManifest>(File.ReadAllText(fullPath))
+                ?? throw new InvalidDataException($"Failed to deserialize selector-cell bundle manifest from {manifestPath}.");
+            var records = manifest.Bundles
+                .Where(b => b.Written)
+                .ToDictionary(Key, StringComparer.Ordinal);
+            return new SelectorCellBundleCatalog(records);
+        }
+
+        public SelectorCellBundleRecord Require(string branch, string refinement, string environment)
+        {
+            var key = Key(branch, refinement, environment);
+            if (!_records.TryGetValue(key, out var record))
+                throw new InvalidOperationException($"Missing materialized selector-cell bundle for branch '{branch}', refinement '{refinement}', environment '{environment}'.");
+            return record;
+        }
+
+        private static string Key(SelectorCellBundleRecord record)
+            => Key(record.BranchVariantId, record.RefinementLevel, record.EnvironmentId);
+
+        private static string Key(string branch, string refinement, string environment)
+            => $"{branch}\n{refinement}\n{environment}";
+    }
+
+    private sealed class SelectorCellBundleManifest
+    {
+        public required IReadOnlyList<SelectorCellBundleRecord> Bundles { get; init; }
+    }
+
+    private sealed class SelectorCellBundleRecord
+    {
+        public required string BundleId { get; init; }
+
+        public required string BranchVariantId { get; init; }
+
+        public required string RefinementLevel { get; init; }
+
+        public required string EnvironmentId { get; init; }
+
+        public required bool Written { get; init; }
+
+        public string? BackgroundRecordPath { get; init; }
     }
 }

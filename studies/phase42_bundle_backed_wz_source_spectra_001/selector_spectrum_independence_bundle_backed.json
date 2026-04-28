@@ -1,0 +1,38 @@
+{
+  "resultId": "phase35-wz-selector-spectrum-independence-audit-v1",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "wz-selector-spectrum-independence-blocked",
+  "algorithmId": "p35-wz-selector-spectrum-independence-audit:v1",
+  "selectedPairId": "phase22-phase12-candidate-0/phase22-phase12-candidate-2",
+  "selectedWSourceId": "phase22-phase12-candidate-0",
+  "selectedZSourceId": "phase22-phase12-candidate-2",
+  "inspectedAlignedCellCount": 36,
+  "proxyOnlyCellCount": 0,
+  "solverBackedCellCount": 36,
+  "ratioMin": 0.8637742965335011,
+  "ratioMax": 0.8637742965335012,
+  "ratioMean": 0.8637742965335016,
+  "ratioInvariantAcrossSelectors": true,
+  "selectedSourceMethods": [
+    "p20-phase12-internal-vector-boson-source-adapter:v1"
+  ],
+  "diagnosis": [
+    "inspected 36 aligned selected W/Z selector spectrum cell(s)",
+    "proxy-only cells: 0; solver-backed cells: 36",
+    "selected source extraction method(s): p20-phase12-internal-vector-boson-source-adapter:v1",
+    "selected W/Z ratio is invariant across selector cells at mean 0.8637742965335016",
+    "next corrective work must replace bundle-backed deterministic rescaling with selector-specific independent eigenvalue extraction before physical W/Z prediction comparison"
+  ],
+  "closureRequirements": [
+    "selected W/Z ratio is invariant across selector cells, consistent with deterministic rescaling rather than independent eigenvalue extraction"
+  ],
+  "provenance": {
+    "createdAt": "2026-04-28T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase35-wz-selector-spectrum-independence-audit",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu"
+  }
+}
