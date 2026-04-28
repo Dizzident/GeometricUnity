@@ -1,0 +1,50 @@
+{
+  "campaignId": "phase41-solver-backed-wz-selector-source-spectra",
+  "schemaVersion": "1.0.0",
+  "sourceCandidateTablePath": "studies/phase21_source_readiness_campaign_001/source_candidates.json",
+  "readinessSpecPath": "studies/phase21_source_readiness_campaign_001/config/source_readiness_campaign.json",
+  "branchVariantIds": [
+    "bg-variant-53b598740d9569b4",
+    "bg-variant-95ee11778cc7ac01",
+    "bg-variant-d840fea6e6d36748",
+    "bg-variant-d84f5d66fd98b842"
+  ],
+  "refinementLevels": [
+    "L0-2x2",
+    "L1-4x4",
+    "L2-8x8"
+  ],
+  "environmentIds": [
+    "env-toy-2d-trivial",
+    "env-structured-4x4",
+    "env-imported-repo-benchmark"
+  ],
+  "sourceQuantityIds": [
+    "massLikeValue",
+    "branchVariantId",
+    "refinementLevel",
+    "environmentId",
+    "extractionError",
+    "gaugeLeakEnvelope",
+    "modeFamilyId",
+    "ambiguityCount",
+    "branchStabilityScore",
+    "refinementStabilityScore",
+    "uncertainty.branchVariation",
+    "uncertainty.refinementError",
+    "uncertainty.environmentSensitivity",
+    "uncertainty.totalUncertainty"
+  ],
+  "missingCellPolicy": "block-missing-cell",
+  "identityScope": "identity-neutral-vector-boson-source-candidates-solver-backed",
+  "provenance": {
+    "createdAt": "2026-04-28T00:00:00+00:00",
+    "codeRevision": "phase41-solver-backed-wz-prediction-campaign",
+    "branch": {
+      "branchId": "phase41-solver-backed-wz-prediction-campaign",
+      "schemaVersion": "1.0"
+    },
+    "backend": "documented-campaign",
+    "notes": "Reduced solver-backed W/Z prediction campaign. Zenodo remains external-comparison-only until a local GU mesh/field conversion is available."
+  }
+}
