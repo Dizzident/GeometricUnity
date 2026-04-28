@@ -1,0 +1,23 @@
+{
+  "tableId": "phase28-wz-physical-calibrations-v1",
+  "calibrations": [
+    {
+      "calibrationId": "phase28-dimensionless-wz-ratio-identity-normalization",
+      "mappingId": "phase28-w-z-vector-mode-ratio-to-physical-mass-ratio",
+      "sourceComputedObservableId": "physical-w-z-mass-ratio",
+      "sourceUnitFamily": "dimensionless",
+      "targetUnitFamily": "dimensionless",
+      "targetUnit": "dimensionless",
+      "scaleFactor": 1,
+      "scaleUncertainty": 0,
+      "status": "validated",
+      "method": "dimensionless-identity-normalization-from-validated-wz-ratio",
+      "source": "phase28-wz-identity-rule-physical-artifact-promoter",
+      "assumptions": [
+        "dimensionless ratio comparison requires no physical unit scale conversion",
+        "identity normalization applies only to the ratio, not to either absolute boson mass"
+      ],
+      "closureRequirements": []
+    }
+  ]
+}

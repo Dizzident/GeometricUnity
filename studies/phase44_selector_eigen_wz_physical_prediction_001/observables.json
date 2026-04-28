@@ -1,0 +1,27 @@
+[
+  {
+    "observableId": "physical-w-z-mass-ratio",
+    "value": 0.8631570381342449,
+    "uncertainty": {
+      "branchVariation": 0.0005815642852615494,
+      "refinementError": 0,
+      "extractionError": 0.0010414638244288848,
+      "environmentSensitivity": 0.0009289551041719734,
+      "totalUncertainty": 0.0015118933497614763
+    },
+    "branchId": "bg-variant-53b598740d9569b4",
+    "environmentId": "env-imported-repo-benchmark",
+    "refinementLevel": "L0-2x2",
+    "extractionMethod": "positive-mode-ratio:phase22-phase12-candidate-0/phase22-phase12-candidate-2:p28-wz-identity-rule-physical-artifact-promoter:v1",
+    "distributionModel": "gaussian",
+    "provenance": {
+      "createdAt": "2026-04-26T00:00:00+00:00",
+      "codeRevision": "working-tree",
+      "branch": {
+        "branchId": "phase28-wz-physical-prediction-artifact-promotion",
+        "schemaVersion": "1.0"
+      },
+      "backend": "cpu"
+    }
+  }
+]

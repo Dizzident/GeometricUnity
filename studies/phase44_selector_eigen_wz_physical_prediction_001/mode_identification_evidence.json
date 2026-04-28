@@ -1,0 +1,61 @@
+{
+  "tableId": "phase28-wz-mode-identification-evidence-v1",
+  "evidence": [
+    {
+      "evidenceId": "phase28-w-boson-mode-identification-evidence",
+      "modeId": "phase22-phase12-candidate-0",
+      "particleId": "w-boson",
+      "modeKind": "vector-boson-mass-mode",
+      "sourceObservableIds": [
+        "phase22-phase12-candidate-0"
+      ],
+      "environmentId": "env-imported-repo-benchmark",
+      "branchId": "bg-variant-53b598740d9569b4",
+      "refinementLevel": "L0-2x2",
+      "derivationId": "p28-wz-identity-rule-physical-artifact-promoter:v1:p24-wz-identity-feature-readiness:v1:su2-adjoint-triplet:canonical-basis:charged:finite-difference-current-profile:2448ea7904cfb0ae",
+      "status": "validated",
+      "assumptions": [
+        "evidence is derived from internal electroweak identity features and charge-sector convention",
+        "external physical target values were not used to validate this identity evidence"
+      ],
+      "closureRequirements": [],
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase28-wz-physical-prediction-artifact-promotion",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "evidenceId": "phase28-z-boson-mode-identification-evidence",
+      "modeId": "phase22-phase12-candidate-2",
+      "particleId": "z-boson",
+      "modeKind": "vector-boson-mass-mode",
+      "sourceObservableIds": [
+        "phase22-phase12-candidate-2"
+      ],
+      "environmentId": "env-imported-repo-benchmark",
+      "branchId": "bg-variant-53b598740d9569b4",
+      "refinementLevel": "L0-2x2",
+      "derivationId": "p28-wz-identity-rule-physical-artifact-promoter:v1:p24-wz-identity-feature-readiness:v1:su2-adjoint-triplet:canonical-basis:neutral:finite-difference-current-profile:581c5b2f82ff6b85",
+      "status": "validated",
+      "assumptions": [
+        "evidence is derived from internal electroweak identity features and charge-sector convention",
+        "external physical target values were not used to validate this identity evidence"
+      ],
+      "closureRequirements": [],
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase28-wz-physical-prediction-artifact-promotion",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    }
+  ]
+}
