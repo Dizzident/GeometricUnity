@@ -1,0 +1,118 @@
+{
+  "resultId": "phase37-wz-selector-materialization-map-audit-v1",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "selector-materialization-map-blocked",
+  "algorithmId": "p37-wz-selector-materialization-map-audit:v1",
+  "branchVariantCount": 4,
+  "mappedBranchVariantCount": 4,
+  "refinementLevelCount": 3,
+  "mappedRefinementLevelCount": 3,
+  "environmentCount": 4,
+  "mappedEnvironmentCount": 0,
+  "branchMappings": [
+    {
+      "selectorId": "bg-variant-53b598740d9569b4",
+      "mapped": true,
+      "sourceRecordId": "bg-phase9-bg-4-20260315144504",
+      "sourceArtifactRef": "studies/phase5_su2_branch_refinement_env_validation/upstream/phase9_real_atlas/background_states/bg-phase9-bg-4-20260315144504_omega.json",
+      "evidenceKind": "bridge-atlas-source-background",
+      "blockers": []
+    },
+    {
+      "selectorId": "bg-variant-95ee11778cc7ac01",
+      "mapped": true,
+      "sourceRecordId": "bg-phase9-bg-0-20260315144501",
+      "sourceArtifactRef": "studies/phase5_su2_branch_refinement_env_validation/upstream/phase9_real_atlas/background_states/bg-phase9-bg-0-20260315144501_omega.json",
+      "evidenceKind": "bridge-atlas-source-background",
+      "blockers": []
+    },
+    {
+      "selectorId": "bg-variant-d840fea6e6d36748",
+      "mapped": true,
+      "sourceRecordId": "bg-phase9-bg-2-20260315144502",
+      "sourceArtifactRef": "studies/phase5_su2_branch_refinement_env_validation/upstream/phase9_real_atlas/background_states/bg-phase9-bg-2-20260315144502_omega.json",
+      "evidenceKind": "bridge-atlas-source-background",
+      "blockers": []
+    },
+    {
+      "selectorId": "bg-variant-d84f5d66fd98b842",
+      "mapped": true,
+      "sourceRecordId": "bg-phase9-bg-6-20260315144506",
+      "sourceArtifactRef": "studies/phase5_su2_branch_refinement_env_validation/upstream/phase9_real_atlas/background_states/bg-phase9-bg-6-20260315144506_omega.json",
+      "evidenceKind": "bridge-atlas-source-background",
+      "blockers": []
+    }
+  ],
+  "refinementMappings": [
+    {
+      "selectorId": "L0-2x2",
+      "mapped": true,
+      "sourceRecordId": "bg-phase10-direct-standard-l0-20260315154018",
+      "sourceArtifactRef": "/home/josh/Documents/GitHub/GeometricUnity/studies/phase5_su2_branch_refinement_env_validation/upstream/phase10_direct_refinement_standard_l0/background_records/bg-phase10-direct-standard-l0-20260315154018.json",
+      "evidenceKind": "direct-solver-backed",
+      "blockers": []
+    },
+    {
+      "selectorId": "L1-4x4",
+      "mapped": true,
+      "sourceRecordId": "bg-phase10-direct-standard-l1-20260315153944",
+      "sourceArtifactRef": "/home/josh/Documents/GitHub/GeometricUnity/studies/phase5_su2_branch_refinement_env_validation/upstream/phase10_direct_refinement_standard_l1/background_records/bg-phase10-direct-standard-l1-20260315153944.json",
+      "evidenceKind": "direct-solver-backed",
+      "blockers": []
+    },
+    {
+      "selectorId": "L2-8x8",
+      "mapped": true,
+      "sourceRecordId": "bg-phase10-direct-standard-l2-20260315153945",
+      "sourceArtifactRef": "/home/josh/Documents/GitHub/GeometricUnity/studies/phase5_su2_branch_refinement_env_validation/upstream/phase10_direct_refinement_standard_l2/background_records/bg-phase10-direct-standard-l2-20260315153945.json",
+      "evidenceKind": "direct-solver-backed",
+      "blockers": []
+    }
+  ],
+  "environmentMappings": [
+    {
+      "selectorId": "env-toy-2d-trivial",
+      "mapped": false,
+      "evidenceKind": "declared-environment-only",
+      "blockers": [
+        "environment selector \u0027env-toy-2d-trivial\u0027 is declared but has no solver-backed background record map"
+      ]
+    },
+    {
+      "selectorId": "env-structured-4x4",
+      "mapped": false,
+      "evidenceKind": "declared-environment-only",
+      "blockers": [
+        "environment selector \u0027env-structured-4x4\u0027 is declared but has no solver-backed background record map"
+      ]
+    },
+    {
+      "selectorId": "env-imported-repo-benchmark",
+      "mapped": false,
+      "evidenceKind": "declared-environment-only",
+      "blockers": [
+        "environment selector \u0027env-imported-repo-benchmark\u0027 is declared but has no solver-backed background record map"
+      ]
+    },
+    {
+      "selectorId": "env-zenodo-su2-plaquette-chain-p4-j0.5-g1.5-v1",
+      "mapped": false,
+      "evidenceKind": "declared-environment-only",
+      "blockers": [
+        "environment selector \u0027env-zenodo-su2-plaquette-chain-p4-j0.5-g1.5-v1\u0027 is declared but has no solver-backed background record map"
+      ]
+    }
+  ],
+  "summaryBlockers": [
+    "4 environment selector(s) lack solver-backed source background mappings"
+  ],
+  "provenance": {
+    "createdAt": "2026-04-28T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase37-wz-selector-materialization-map-audit",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu"
+  }
+}
