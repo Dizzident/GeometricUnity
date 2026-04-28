@@ -1,0 +1,59 @@
+{
+  "resultId": "phase34-wz-operator-spectrum-path-diagnostic-v1",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "wz-operator-spectrum-path-diagnostic-complete",
+  "algorithmId": "p34-wz-operator-spectrum-path-diagnostic:v1",
+  "selectedPairId": "phase22-phase12-candidate-0/phase22-phase12-candidate-2",
+  "targetValue": 0.88136,
+  "requiredScaleToTarget": 1.0203591418928235,
+  "layerRatios": [
+    {
+      "layerId": "candidate-mode-sources",
+      "wValue": 1.0947045268560027E-15,
+      "zValue": 1.2673501992931155E-15,
+      "ratio": 0.8637742965335007,
+      "targetDelta": -0.017585703466499347,
+      "requiredScaleToTarget": 1.0203591418928235,
+      "matchesCandidateModeSourceRatio": true
+    },
+    {
+      "layerId": "source-candidates",
+      "wValue": 1.0947045268560027E-15,
+      "zValue": 1.2673501992931155E-15,
+      "ratio": 0.8637742965335007,
+      "targetDelta": -0.017585703466499347,
+      "requiredScaleToTarget": 1.0203591418928235,
+      "matchesCandidateModeSourceRatio": true
+    },
+    {
+      "layerId": "mode-families",
+      "wValue": 1.0947045268560027E-15,
+      "zValue": 1.2673501992931155E-15,
+      "ratio": 0.8637742965335007,
+      "targetDelta": -0.017585703466499347,
+      "requiredScaleToTarget": 1.0203591418928235,
+      "matchesCandidateModeSourceRatio": true
+    }
+  ],
+  "alignedSpectrumPointCount": 48,
+  "spectrumRatioMin": 0.8637742965335011,
+  "spectrumRatioMax": 0.8637742965335012,
+  "spectrumRatioMean": 0.8637742965335007,
+  "diagnosis": [
+    "candidate-mode source ratio is 0.8637742965335007, target delta -0.017585703466499347",
+    "candidate-mode sources, source candidates, and mode families carry the same selected W/Z ratio",
+    "aligned spectrum files carry ratio envelope [0.8637742965335011, 0.8637742965335012] across 48 points",
+    "the mismatch is already present in the per-point spectrum/mode eigenvalues, before Phase22 aggregation or physical promotion",
+    "next corrective work should inspect the upstream mass-like operator/eigenvalue extraction rather than normalization"
+  ],
+  "closureRequirements": [],
+  "provenance": {
+    "createdAt": "2026-04-28T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase34-wz-operator-spectrum-path-diagnostic",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu"
+  }
+}

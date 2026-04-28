@@ -135,6 +135,8 @@ switch (args[0])
         return AuditWzOperatorNormalizationSources(args);
     case "derive-wz-canonical-operator-normalization":
         return DeriveWzCanonicalOperatorNormalization(args);
+    case "diagnose-wz-operator-spectrum-path":
+        return DiagnoseWzOperatorSpectrumPath(args);
     case "build-validation-dossier":
         return BuildValidationDossier(args);
     case "verify-study-freshness":
@@ -5097,6 +5099,59 @@ static int DeriveWzCanonicalOperatorNormalization(string[] args)
     }
 }
 
+static int DiagnoseWzOperatorSpectrumPath(string[] args)
+{
+    var normalizationClosurePath = ParseFlag(args, "--normalization-closure", "");
+    var candidateModeSourcesPath = ParseFlag(args, "--candidate-mode-sources", "");
+    var sourceCandidatesPath = ParseFlag(args, "--source-candidates", "");
+    var modeFamiliesPath = ParseFlag(args, "--mode-families", "");
+    var spectraRoot = ParseFlag(args, "--spectra-root", "");
+    var outPath = ParseFlag(args, "--out", "");
+    if (string.IsNullOrWhiteSpace(normalizationClosurePath) ||
+        string.IsNullOrWhiteSpace(candidateModeSourcesPath) ||
+        string.IsNullOrWhiteSpace(sourceCandidatesPath) ||
+        string.IsNullOrWhiteSpace(modeFamiliesPath) ||
+        string.IsNullOrWhiteSpace(spectraRoot) ||
+        string.IsNullOrWhiteSpace(outPath))
+    {
+        Console.Error.WriteLine("Usage: gu diagnose-wz-operator-spectrum-path --normalization-closure <wz_normalization_closure.json> --candidate-mode-sources <candidate_mode_sources.json> --source-candidates <source_candidates.json> --mode-families <mode_families.json> --spectra-root <spectra_dir> --out <diagnostic.json>");
+        return 1;
+    }
+
+    try
+    {
+        var provenance = new ProvenanceMeta
+        {
+            CreatedAt = DateTimeOffset.Parse("2026-04-28T00:00:00+00:00"),
+            CodeRevision = "working-tree",
+            Branch = new BranchRef { BranchId = "phase34-wz-operator-spectrum-path-diagnostic", SchemaVersion = "1.0" },
+            Backend = "cpu",
+        };
+        var result = WzOperatorSpectrumPathDiagnostic.Evaluate(
+            File.ReadAllText(normalizationClosurePath),
+            File.ReadAllText(candidateModeSourcesPath),
+            File.ReadAllText(sourceCandidatesPath),
+            File.ReadAllText(modeFamiliesPath),
+            spectraRoot,
+            provenance);
+
+        Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(outPath))!);
+        File.WriteAllText(outPath, GuJsonDefaults.Serialize(result));
+
+        Console.WriteLine($"diagnose-wz-operator-spectrum-path done. Output: {outPath}");
+        Console.WriteLine($"  terminalStatus: {result.TerminalStatus}");
+        Console.WriteLine($"  layerCount: {result.LayerRatios.Count}");
+        Console.WriteLine($"  alignedSpectrumPointCount: {result.AlignedSpectrumPointCount}");
+        Console.WriteLine($"  firstMismatchLayer: {result.FirstMismatchLayer ?? "none"}");
+        return result.TerminalStatus == "wz-operator-spectrum-path-diagnostic-complete" ? 0 : 1;
+    }
+    catch (Exception ex)
+    {
+        Console.Error.WriteLine($"diagnose-wz-operator-spectrum-path failed: {ex.Message}");
+        return 1;
+    }
+}
+
 static string ResolvePath(string specDir, string path)
 {
     if (Path.IsPathRooted(path) || File.Exists(path) || Directory.Exists(path))
@@ -6292,6 +6347,7 @@ static void PrintUsage()
     Console.WriteLine("  gu diagnose-wz-normalization-closure --ratio-diagnostic <f> --selector-diagnostic <f> --physical-calibrations <f> --out <f>  Diagnose Phase XXXI W/Z normalization/operator closure");
     Console.WriteLine("  gu audit-wz-operator-normalization-sources --p31-diagnostic <f> --artifact-roots <path[,path...]> --out <f>  Audit Phase XXXII W/Z operator normalization source candidates");
     Console.WriteLine("  gu derive-wz-canonical-operator-normalization --p31-diagnostic <f> --candidate-mode-sources <f> --out-dir <dir>  Derive Phase XXXIII canonical shared-operator W/Z normalization");
+    Console.WriteLine("  gu diagnose-wz-operator-spectrum-path --normalization-closure <f> --candidate-mode-sources <f> --source-candidates <f> --mode-families <f> --spectra-root <dir> --out <f>  Diagnose Phase XXXIV W/Z operator/eigenvalue path");
     Console.WriteLine("  gu build-validation-dossier --study-manifest <f> [--out <f>]  Build Phase V validation dossier");
     Console.WriteLine("  gu verify-study-freshness --dossier <f>      Verify study freshness / G-006 compliance");
     Console.WriteLine("  gu run-phase5-campaign --spec <f> --out-dir <dir> [--validate-first]  Run Phase V M53 end-to-end campaign");
