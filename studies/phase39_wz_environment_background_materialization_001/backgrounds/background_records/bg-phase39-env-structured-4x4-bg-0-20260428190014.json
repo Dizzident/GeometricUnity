@@ -1,0 +1,40 @@
+{
+  "backgroundId": "bg-phase39-env-structured-4x4-bg-0-20260428190014",
+  "environmentId": "env-structured-4x4",
+  "branchManifestId": "phase8-real-atlas-control",
+  "geometryFingerprint": "simplicial-X_h-Y_h-centroid-P1",
+  "stateArtifactRef": "studies/phase39_wz_environment_background_materialization_001/backgrounds/background_states/bg-phase39-env-structured-4x4-bg-0-20260428190014_omega.json",
+  "residualNorm": 0,
+  "stationarityNorm": 0,
+  "admissibilityLevel": "B2",
+  "metrics": {
+    "residualNorm": 0,
+    "stationarityNorm": 0,
+    "objectiveValue": 0,
+    "gaugeViolation": 0,
+    "solverIterations": 0,
+    "solverConverged": true,
+    "terminationReason": "Objective below tolerance",
+    "gaussNewtonValid": true
+  },
+  "replayTierAchieved": "R2",
+  "provenance": {
+    "createdAt": "2026-04-28T19:00:14.1152639+00:00",
+    "codeRevision": "phase8-real-atlas-control",
+    "branch": {
+      "branchId": "phase8-real-atlas-control",
+      "schemaVersion": "1.0.0"
+    },
+    "backend": "cpu-reference"
+  },
+  "environmentTier": "mixed",
+  "runClassification": {
+    "runType": "objective-solve",
+    "seedSource": "zero-seed",
+    "isTrivialValidationPath": false,
+    "validationNote": "objective-solve on zero-seed.",
+    "solverMode": "B",
+    "classifiedAt": "2026-04-28T19:00:14.1387026+00:00"
+  },
+  "consumedManifestArtifactRef": "studies/phase39_wz_environment_background_materialization_001/backgrounds/background_states/bg-phase39-env-structured-4x4-bg-0-20260428190014_manifest.json"
+}

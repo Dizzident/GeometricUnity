@@ -1,0 +1,72 @@
+{
+  "studyId": "phase39-wz-environment-background-materialization",
+  "specs": [
+    {
+      "specId": "phase39-env-toy-2d-trivial-bg-0",
+      "environmentId": "env-toy-2d-trivial",
+      "branchManifestId": "phase8-real-atlas-control",
+      "seed": {
+        "kind": "Trivial",
+        "label": "phase39-env-toy-2d-trivial-seed-0"
+      },
+      "solveOptions": {
+        "solveMode": "ObjectiveMinimization",
+        "solverMethod": "GradientDescent",
+        "maxIterations": 1000,
+        "initialStepSize": 0.002,
+        "gaugePenaltyLambda": 0.0,
+        "gaugeStrategy": "L2Penalty",
+        "toleranceResidualDiagnostic": 0.0001,
+        "toleranceStationary": 1e-06,
+        "toleranceResidualStrict": 1e-08
+      }
+    },
+    {
+      "specId": "phase39-env-structured-4x4-bg-0",
+      "environmentId": "env-structured-4x4",
+      "branchManifestId": "phase8-real-atlas-control",
+      "seed": {
+        "kind": "Trivial",
+        "label": "phase39-env-structured-4x4-seed-0"
+      },
+      "solveOptions": {
+        "solveMode": "ObjectiveMinimization",
+        "solverMethod": "GradientDescent",
+        "maxIterations": 1000,
+        "initialStepSize": 0.002,
+        "gaugePenaltyLambda": 0.0,
+        "gaugeStrategy": "L2Penalty",
+        "toleranceResidualDiagnostic": 0.0001,
+        "toleranceStationary": 1e-06,
+        "toleranceResidualStrict": 1e-08
+      }
+    },
+    {
+      "specId": "phase39-env-imported-repo-benchmark-bg-0",
+      "environmentId": "env-imported-repo-benchmark",
+      "branchManifestId": "phase8-real-atlas-control",
+      "seed": {
+        "kind": "Trivial",
+        "label": "phase39-env-imported-repo-benchmark-seed-0"
+      },
+      "solveOptions": {
+        "solveMode": "ObjectiveMinimization",
+        "solverMethod": "GradientDescent",
+        "maxIterations": 1000,
+        "initialStepSize": 0.002,
+        "gaugePenaltyLambda": 0.0,
+        "gaugeStrategy": "L2Penalty",
+        "toleranceResidualDiagnostic": 0.0001,
+        "toleranceStationary": 1e-06,
+        "toleranceResidualStrict": 1e-08
+      }
+    }
+  ],
+  "deduplicationThreshold": 1e-06,
+  "rankingCriteria": "admissibility-then-residual",
+  "environmentTier": "mixed",
+  "manifestSearchPaths": [
+    "../../phase5_su2_branch_refinement_env_validation/config/manifests"
+  ],
+  "notes": "Phase XXXIX materializes persisted background records for the Phase XXII environment selectors with checked-in local geometry. The Zenodo selector is intentionally excluded until a local mesh/field conversion is available."
+}

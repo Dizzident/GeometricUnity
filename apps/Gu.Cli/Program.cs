@@ -6236,8 +6236,46 @@ static FiberBundleMesh ResolveBackgroundEnvironment(string environmentId)
         "env-refinement-2x2" => ToyGeometryFactory.CreateStructuredFiberBundle2D(2, 2),
         "env-refinement-4x4" => ToyGeometryFactory.CreateStructuredFiberBundle2D(4, 4),
         "env-refinement-8x8" => ToyGeometryFactory.CreateStructuredFiberBundle2D(8, 8),
+        "env-toy-2d-trivial" => ToyGeometryFactory.CreateStructured2D(1, 1),
+        "env-structured-4x4" => ToyGeometryFactory.CreateStructured2D(4, 4),
+        "env-imported-repo-benchmark" => LoadTrivialFiberBundleFromMesh(
+            "studies/phase5_su2_branch_refinement_env_validation/datasets/phase8_repo_import_mesh.json"),
         _ => throw new InvalidOperationException(
             $"Unsupported background solve environment '{environmentId}'. Add an explicit geometry mapping before using it in solve-backgrounds."),
+    };
+}
+
+static FiberBundleMesh LoadTrivialFiberBundleFromMesh(string meshPath)
+{
+    if (!File.Exists(meshPath))
+        throw new FileNotFoundException($"Background environment mesh not found: {meshPath}", meshPath);
+
+    var mesh = GuJsonDefaults.Deserialize<SimplicialMesh>(File.ReadAllText(meshPath))
+        ?? throw new InvalidOperationException($"Failed to deserialize SimplicialMesh from {meshPath}.");
+    return CreateTrivialFiberBundle(mesh);
+}
+
+static FiberBundleMesh CreateTrivialFiberBundle(SimplicialMesh mesh)
+{
+    var xToY = Enumerable.Range(0, mesh.VertexCount).ToArray();
+    var yToX = Enumerable.Range(0, mesh.VertexCount).ToArray();
+    var fiberVerts = Enumerable.Range(0, mesh.VertexCount).Select(v => new[] { v }).ToArray();
+    var cellMap = Enumerable.Range(0, mesh.CellCount).ToArray();
+    var sectionCoeffs = Enumerable.Range(0, mesh.CellCount)
+        .Select(_ => Enumerable.Range(0, mesh.SimplicialDimension + 1)
+            .Select(i => i == 0 ? 1.0 : 0.0)
+            .ToArray())
+        .ToArray();
+
+    return new FiberBundleMesh
+    {
+        BaseMesh = mesh,
+        AmbientMesh = mesh,
+        YVertexToXVertex = yToX,
+        FiberVerticesPerXVertex = fiberVerts,
+        XVertexToYVertex = xToY,
+        XCellToYCell = cellMap,
+        SectionCoefficients = sectionCoeffs,
     };
 }
 
