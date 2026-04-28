@@ -1,0 +1,15 @@
+{
+  "environmentId": "env-toy-2d-trivial",
+  "refinementLevel": "L1-4x4",
+  "materializationKind": "selector-cell-geometry-reference",
+  "environmentBackgroundRecordPath": "studies/phase39_wz_environment_background_materialization_001/backgrounds/background_records/bg-phase39-env-toy-2d-trivial-bg-0-20260428190014.json",
+  "provenance": {
+    "createdAt": "2026-04-28T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase40-wz-selector-cell-bundle-materialization",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu"
+  }
+}

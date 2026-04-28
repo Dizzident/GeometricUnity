@@ -1,0 +1,16 @@
+{
+  "branchId": "bg-variant-d840fea6e6d36748",
+  "schemaVersion": "1.0",
+  "materializationKind": "selector-cell-branch-manifest-ref",
+  "sourceRecordId": "bg-phase9-bg-2-20260315144502",
+  "sourceArtifactRef": "studies/phase5_su2_branch_refinement_env_validation/upstream/phase9_real_atlas/background_states/bg-phase9-bg-2-20260315144502_omega.json",
+  "provenance": {
+    "createdAt": "2026-04-28T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase40-wz-selector-cell-bundle-materialization",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "backgroundId": "p40-bg-variant-95ee11778cc7ac01__L1-4x4__env-structured-4x4-background",
+  "environmentId": "env-structured-4x4",
+  "branchVariantId": "bg-variant-95ee11778cc7ac01",
+  "refinementLevel": "L1-4x4",
+  "branchManifestId": "bg-variant-95ee11778cc7ac01",
+  "stateArtifactRef": "p40-bg-variant-95ee11778cc7ac01__L1-4x4__env-structured-4x4-background_omega.json",
+  "consumedManifestArtifactRef": "p40-bg-variant-95ee11778cc7ac01__L1-4x4__env-structured-4x4-background_manifest.json",
+  "materializationKind": "axis-composed-selector-cell-bundle",
+  "branchSourceRecordId": "bg-phase9-bg-0-20260315144501",
+  "branchSourceArtifactRef": "studies/phase5_su2_branch_refinement_env_validation/upstream/phase9_real_atlas/background_states/bg-phase9-bg-0-20260315144501_omega.json",
+  "refinementSourceRecordId": "bg-phase10-direct-standard-l1-20260315153944",
+  "refinementSourceArtifactRef": "/home/josh/Documents/GitHub/GeometricUnity/studies/phase5_su2_branch_refinement_env_validation/upstream/phase10_direct_refinement_standard_l1/background_records/bg-phase10-direct-standard-l1-20260315153944.json",
+  "environmentBackgroundRecordId": "bg-phase39-env-structured-4x4-bg-0-20260428190014",
+  "environmentBackgroundRecordPath": "studies/phase39_wz_environment_background_materialization_001/backgrounds/background_records/bg-phase39-env-structured-4x4-bg-0-20260428190014.json",
+  "provenance": {
+    "createdAt": "2026-04-28T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase40-wz-selector-cell-bundle-materialization",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu"
+  }
+}

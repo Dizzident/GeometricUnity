@@ -145,6 +145,8 @@ switch (args[0])
         return AuditWzSelectorMaterializationMap(args);
     case "audit-wz-environment-source-closure":
         return AuditWzEnvironmentSourceClosure(args);
+    case "materialize-wz-selector-cell-bundles":
+        return MaterializeWzSelectorCellBundles(args);
     case "build-validation-dossier":
         return BuildValidationDossier(args);
     case "verify-study-freshness":
@@ -5365,6 +5367,50 @@ static int AuditWzEnvironmentSourceClosure(string[] args)
     }
 }
 
+static int MaterializeWzSelectorCellBundles(string[] args)
+{
+    var specPath = ParseFlag(args, "--spec", "");
+    var selectorMapPath = ParseFlag(args, "--selector-map", "");
+    var environmentClosurePath = ParseFlag(args, "--environment-closure", "");
+    var outDir = ParseFlag(args, "--out-dir", "");
+    if (string.IsNullOrWhiteSpace(specPath) ||
+        string.IsNullOrWhiteSpace(selectorMapPath) ||
+        string.IsNullOrWhiteSpace(environmentClosurePath) ||
+        string.IsNullOrWhiteSpace(outDir))
+    {
+        Console.Error.WriteLine("Usage: gu materialize-wz-selector-cell-bundles --spec <source_spectrum_campaign.json> --selector-map <selector_materialization_map_audit.json> --environment-closure <environment_source_closure.json> --out-dir <dir>");
+        return 1;
+    }
+
+    try
+    {
+        var provenance = new ProvenanceMeta
+        {
+            CreatedAt = DateTimeOffset.Parse("2026-04-28T00:00:00+00:00"),
+            CodeRevision = "working-tree",
+            Branch = new BranchRef { BranchId = "phase40-wz-selector-cell-bundle-materialization", SchemaVersion = "1.0" },
+            Backend = "cpu",
+        };
+        var result = WzSelectorCellBundleMaterializer.Materialize(
+            File.ReadAllText(specPath),
+            File.ReadAllText(selectorMapPath),
+            File.ReadAllText(environmentClosurePath),
+            outDir,
+            provenance);
+
+        Console.WriteLine($"materialize-wz-selector-cell-bundles done. Output: {outDir}");
+        Console.WriteLine($"  terminalStatus: {result.TerminalStatus}");
+        Console.WriteLine($"  writtenBundleCount: {result.WrittenBundleCount}/{result.ExpectedSelectorCellCount}");
+        Console.WriteLine($"  skippedBundleCount: {result.SkippedBundleCount}");
+        return result.TerminalStatus == "selector-cell-bundles-materialized" ? 0 : 1;
+    }
+    catch (Exception ex)
+    {
+        Console.Error.WriteLine($"materialize-wz-selector-cell-bundles failed: {ex.Message}");
+        return 1;
+    }
+}
+
 static IReadOnlyList<string> ExpandJsonPath(string path)
 {
     if (File.Exists(path))
@@ -6612,6 +6658,7 @@ static void PrintUsage()
     Console.WriteLine("  gu audit-wz-selector-cell-materialization --spec <f> --source-candidates <f> --artifact-roots <dirs> --out <f>  Audit Phase XXXVI selector cells for solver input materialization");
     Console.WriteLine("  gu audit-wz-selector-materialization-map --spec <f> --bridge-manifest <f> --refinement-evidence-manifest <f> --environment-campaign <f> --out <f>  Audit Phase XXXVII selector source maps");
     Console.WriteLine("  gu audit-wz-environment-source-closure --spec <f> --environment-records <csv> --observables <f> --background-roots <csv> --out <f>  Audit Phase XXXVIII environment source closure");
+    Console.WriteLine("  gu materialize-wz-selector-cell-bundles --spec <f> --selector-map <f> --environment-closure <f> --out-dir <dir>  Materialize Phase XL selector cell bundles");
     Console.WriteLine("  gu build-validation-dossier --study-manifest <f> [--out <f>]  Build Phase V validation dossier");
     Console.WriteLine("  gu verify-study-freshness --dossier <f>      Verify study freshness / G-006 compliance");
     Console.WriteLine("  gu run-phase5-campaign --spec <f> --out-dir <dir> [--validate-first]  Run Phase V M53 end-to-end campaign");

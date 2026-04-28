@@ -1,0 +1,17 @@
+{
+  "label": "omega",
+  "backgroundId": "p40-bg-variant-95ee11778cc7ac01__L1-4x4__env-toy-2d-trivial-background",
+  "materializationKind": "selector-cell-omega-ref",
+  "branchSourceArtifactRef": "studies/phase5_su2_branch_refinement_env_validation/upstream/phase9_real_atlas/background_states/bg-phase9-bg-0-20260315144501_omega.json",
+  "refinementSourceArtifactRef": "/home/josh/Documents/GitHub/GeometricUnity/studies/phase5_su2_branch_refinement_env_validation/upstream/phase10_direct_refinement_standard_l1/background_records/bg-phase10-direct-standard-l1-20260315153944.json",
+  "environmentBackgroundRecordPath": "studies/phase39_wz_environment_background_materialization_001/backgrounds/background_records/bg-phase39-env-toy-2d-trivial-bg-0-20260428190014.json",
+  "provenance": {
+    "createdAt": "2026-04-28T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase40-wz-selector-cell-bundle-materialization",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu"
+  }
+}

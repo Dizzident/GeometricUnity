@@ -1,0 +1,14 @@
+{
+  "environmentId": "env-toy-2d-trivial",
+  "materializationKind": "selector-cell-environment-reference",
+  "environmentRecordPath": "studies/phase5_su2_branch_refinement_env_validation/config/env_toy_record.json",
+  "provenance": {
+    "createdAt": "2026-04-28T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase40-wz-selector-cell-bundle-materialization",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu"
+  }
+}
