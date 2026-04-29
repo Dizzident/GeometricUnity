@@ -1,0 +1,119 @@
+{
+  "studyId": "phase52-electroweak-absolute-scale-audit",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "absolute-wz-prediction-blocked",
+  "scope": "w-z-absolute-mass-scale",
+  "sourceArtifacts": [
+    "studies/phase18_experimental_targets_001/physical_targets.json",
+    "studies/phase46_electroweak_term_wz_physical_prediction_001/physical_mode_records.json",
+    "studies/phase51_broad_boson_prediction_readiness_001/broad_boson_prediction_readiness.json"
+  ],
+  "validatedInternalModes": [
+    {
+      "particleId": "w-boson",
+      "sourceObservableId": "phase22-phase12-candidate-0",
+      "internalValue": 1.1158059937692792E-15,
+      "internalUncertainty": 1.3476944083805217E-18,
+      "unit": "internal-mass-unit",
+      "status": "validated"
+    },
+    {
+      "particleId": "z-boson",
+      "sourceObservableId": "phase22-phase12-candidate-2",
+      "internalValue": 1.268406657962647E-15,
+      "internalUncertainty": 1.5805767578887164E-18,
+      "unit": "internal-mass-unit",
+      "status": "validated"
+    }
+  ],
+  "targetFitScaleDiagnostics": [
+    {
+      "diagnosticId": "phase52-fit-w-target-cross-check-z",
+      "fitTargetObservableId": "physical-w-boson-mass-gev",
+      "fitTargetValue": 80.3692,
+      "scaleFactorGeVPerInternalMassUnit": 72027933573386370,
+      "crossCheckObservableId": "physical-z-boson-mass-gev",
+      "crossCheckComputedValue": 91.36071050377454,
+      "crossCheckTargetValue": 91.188,
+      "crossCheckResidual": 0.17271050377453502,
+      "crossCheckTargetPull": 86.35525188726751,
+      "status": "rejected",
+      "rejectionReason": "scale is fitted to a target mass and therefore cannot support an independent absolute W/Z prediction"
+    },
+    {
+      "diagnosticId": "phase52-fit-z-target-cross-check-w",
+      "fitTargetObservableId": "physical-z-boson-mass-gev",
+      "fitTargetValue": 91.188,
+      "scaleFactorGeVPerInternalMassUnit": 71891770220182310,
+      "crossCheckObservableId": "physical-w-boson-mass-gev",
+      "crossCheckComputedValue": 80.2172681143632,
+      "crossCheckTargetValue": 80.3692,
+      "crossCheckResidual": -0.15193188563680542,
+      "crossCheckTargetPull": -11.423450047880106,
+      "status": "rejected",
+      "rejectionReason": "scale is fitted to a target mass and therefore cannot support an independent absolute W/Z prediction"
+    }
+  ],
+  "scaleSourceCandidates": [
+    {
+      "candidateId": "phase52-w-target-fit-scale",
+      "sourceKind": "target-fitted",
+      "status": "rejected",
+      "blockReasons": [
+        "uses physical-w-boson-mass-gev, which is one of the prediction targets",
+        "cross-check against physical-z-boson-mass-gev exposes the current W/Z ratio residual"
+      ]
+    },
+    {
+      "candidateId": "phase52-z-target-fit-scale",
+      "sourceKind": "target-fitted",
+      "status": "rejected",
+      "blockReasons": [
+        "uses physical-z-boson-mass-gev, which is one of the prediction targets",
+        "cross-check against physical-w-boson-mass-gev exposes the current W/Z ratio residual"
+      ]
+    },
+    {
+      "candidateId": "phase52-independent-electroweak-scale",
+      "sourceKind": "target-independent-physical-input-or-derived-gu-scale",
+      "status": "required",
+      "requiredProperties": [
+        "does not use physical-w-boson-mass-gev",
+        "does not use physical-z-boson-mass-gev",
+        "declares uncertainty in GeV per internal-mass-unit",
+        "declares provenance and whether the scale is external, derived, or fitted to a disjoint observable",
+        "can be replayed into physical-w-boson-mass-gev and physical-z-boson-mass-gev projections"
+      ]
+    }
+  ],
+  "absolutePredictionReadiness": {
+    "physical-w-boson-mass-gev": {
+      "internalModeStatus": "validated",
+      "mappingStatus": "ready-to-add-after-scale-source",
+      "calibrationStatus": "blocked-missing-target-independent-scale",
+      "predictionStatus": "blocked"
+    },
+    "physical-z-boson-mass-gev": {
+      "internalModeStatus": "validated",
+      "mappingStatus": "ready-to-add-after-scale-source",
+      "calibrationStatus": "blocked-missing-target-independent-scale",
+      "predictionStatus": "blocked"
+    }
+  },
+  "nextClosureSteps": [
+    "add a replayable target-independent electroweak scale source",
+    "emit absolute W and Z mass observables by multiplying validated internal modes by that scale",
+    "propagate internal-mode and scale uncertainties into GeV uncertainties",
+    "run a W/Z absolute-mass campaign without allowing W or Z target-fit calibrations",
+    "only then promote physical-w-boson-mass-gev and physical-z-boson-mass-gev to predicted status"
+  ],
+  "provenance": {
+    "createdAt": "2026-04-29T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase52-electroweak-absolute-scale-audit",
+      "schemaVersion": "1.0"
+    },
+    "backend": "artifact-audit"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "contractId": "phase52-absolute-mass-projection-contract",
+  "schemaVersion": "1.0.0",
+  "status": "defined",
+  "purpose": "Define the minimum contract for converting validated internal W/Z mass modes into absolute GeV predictions without fitting W or Z targets.",
+  "projectionRule": {
+    "valueFormula": "physical_mass_gev = internal_mass_unit_value * scale_factor_gev_per_internal_mass_unit",
+    "uncertaintyFormula": "sqrt((internal_uncertainty * scale_factor)^2 + (internal_value * scale_uncertainty)^2)",
+    "allowedSourceModeStatuses": [
+      "validated"
+    ],
+    "allowedScaleStatuses": [
+      "validated"
+    ]
+  },
+  "forbiddenCalibrationSources": [
+    "physical-w-boson-mass-gev",
+    "physical-z-boson-mass-gev",
+    "any weighted fit that includes physical-w-boson-mass-gev or physical-z-boson-mass-gev"
+  ],
+  "requiredScaleRecordFields": [
+    "scaleId",
+    "scaleFactorGeVPerInternalMassUnit",
+    "scaleUncertaintyGeVPerInternalMassUnit",
+    "sourceKind",
+    "sourceArtifactPath",
+    "excludedTargetObservableIds",
+    "status",
+    "assumptions",
+    "closureRequirements"
+  ],
+  "requiredOutputObservableIds": [
+    "physical-w-boson-mass-gev",
+    "physical-z-boson-mass-gev"
+  ],
+  "promotionGates": [
+    "both W and Z internal source modes are validated",
+    "scale source is validated and target-independent with respect to W and Z masses",
+    "computed W and Z absolute mass observables have finite propagated uncertainties",
+    "claim gate has zero active fatal/high falsifiers for W/Z absolute-mass scope",
+    "target comparison is performed after projection and is not used to tune the scale"
+  ]
+}
