@@ -139,6 +139,8 @@ switch (args[0])
         return DiagnoseWzOperatorSpectrumPath(args);
     case "audit-wz-selector-spectrum-independence":
         return AuditWzSelectorSpectrumIndependence(args);
+    case "audit-wz-selector-eigen-operator-terms":
+        return AuditWzSelectorEigenOperatorTerms(args);
     case "audit-wz-selector-cell-materialization":
         return AuditWzSelectorCellMaterialization(args);
     case "audit-wz-selector-materialization-map":
@@ -5225,6 +5227,52 @@ static int AuditWzSelectorSpectrumIndependence(string[] args)
     }
 }
 
+static int AuditWzSelectorEigenOperatorTerms(string[] args)
+{
+    var ratioDiagnosticPath = ParseFlag(args, "--ratio-diagnostic", "");
+    var selectorVariationPath = ParseFlag(args, "--selector-variation", "");
+    var spectraRoot = ParseFlag(args, "--spectra-root", "");
+    var outPath = ParseFlag(args, "--out", "");
+    if (string.IsNullOrWhiteSpace(ratioDiagnosticPath) ||
+        string.IsNullOrWhiteSpace(selectorVariationPath) ||
+        string.IsNullOrWhiteSpace(spectraRoot) ||
+        string.IsNullOrWhiteSpace(outPath))
+    {
+        Console.Error.WriteLine("Usage: gu audit-wz-selector-eigen-operator-terms --ratio-diagnostic <wz_ratio_failure_diagnostic.json> --selector-variation <wz_selector_variation_diagnostic.json> --spectra-root <spectra_dir> --out <audit.json>");
+        return 1;
+    }
+
+    try
+    {
+        var provenance = new ProvenanceMeta
+        {
+            CreatedAt = DateTimeOffset.Parse("2026-04-28T00:00:00+00:00"),
+            CodeRevision = "working-tree",
+            Branch = new BranchRef { BranchId = "phase45-wz-selector-eigen-operator-term-audit", SchemaVersion = "1.0" },
+            Backend = "cpu",
+        };
+        var result = WzSelectorEigenOperatorTermAudit.Evaluate(
+            File.ReadAllText(ratioDiagnosticPath),
+            File.ReadAllText(selectorVariationPath),
+            spectraRoot,
+            provenance);
+
+        Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(outPath))!);
+        File.WriteAllText(outPath, GuJsonDefaults.Serialize(result));
+
+        Console.WriteLine($"audit-wz-selector-eigen-operator-terms done. Output: {outPath}");
+        Console.WriteLine($"  terminalStatus: {result.TerminalStatus}");
+        Console.WriteLine($"  inspectedSpectrumCount: {result.InspectedSpectrumCount}");
+        Console.WriteLine($"  nonTrivialOperatorTermEvidenceCount: {result.NonTrivialOperatorTermEvidenceCount}");
+        return result.TerminalStatus == "wz-selector-eigen-operator-term-ready" ? 0 : 1;
+    }
+    catch (Exception ex)
+    {
+        Console.Error.WriteLine($"audit-wz-selector-eigen-operator-terms failed: {ex.Message}");
+        return 1;
+    }
+}
+
 static int AuditWzSelectorCellMaterialization(string[] args)
 {
     var specPath = ParseFlag(args, "--spec", "");
@@ -6671,6 +6719,7 @@ static void PrintUsage()
     Console.WriteLine("  gu derive-wz-canonical-operator-normalization --p31-diagnostic <f> --candidate-mode-sources <f> --out-dir <dir>  Derive Phase XXXIII canonical shared-operator W/Z normalization");
     Console.WriteLine("  gu diagnose-wz-operator-spectrum-path --normalization-closure <f> --candidate-mode-sources <f> --source-candidates <f> --mode-families <f> --spectra-root <dir> --out <f>  Diagnose Phase XXXIV W/Z operator/eigenvalue path");
     Console.WriteLine("  gu audit-wz-selector-spectrum-independence --operator-spectrum-path-diagnostic <f> --candidate-mode-sources <f> --spectra-root <dir> --out <f>  Audit Phase XXXV selector spectra for independent solver evidence");
+    Console.WriteLine("  gu audit-wz-selector-eigen-operator-terms --ratio-diagnostic <f> --selector-variation <f> --spectra-root <dir> --out <f>  Audit Phase XLV selector-eigen spectra for nontrivial operator-term evidence");
     Console.WriteLine("  gu audit-wz-selector-cell-materialization --spec <f> --source-candidates <f> --artifact-roots <dirs> --out <f>  Audit Phase XXXVI selector cells for solver input materialization");
     Console.WriteLine("  gu audit-wz-selector-materialization-map --spec <f> --bridge-manifest <f> --refinement-evidence-manifest <f> --environment-campaign <f> --out <f>  Audit Phase XXXVII selector source maps");
     Console.WriteLine("  gu audit-wz-environment-source-closure --spec <f> --environment-records <csv> --observables <f> --background-roots <csv> --out <f>  Audit Phase XXXVIII environment source closure");

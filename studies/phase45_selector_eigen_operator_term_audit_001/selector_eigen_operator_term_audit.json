@@ -1,0 +1,44 @@
+{
+  "resultId": "phase45-wz-selector-eigen-operator-term-audit-v1",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "wz-selector-eigen-operator-term-blocked",
+  "algorithmId": "p45-wz-selector-eigen-operator-term-audit:v1",
+  "selectedPairId": "phase22-phase12-candidate-0/phase22-phase12-candidate-2",
+  "requiredScaleToTarget": 1.021088818212155,
+  "requiredRatioShiftFraction": 0.021088818212154914,
+  "selectorRatioMin": 0.8617415263399019,
+  "selectorRatioMax": 0.8654919922785442,
+  "inspectedSpectrumCount": 72,
+  "solverBackedSpectrumCount": 72,
+  "nonTrivialOperatorTermEvidenceCount": 0,
+  "observedOperatorTypes": [
+    "FullHessian"
+  ],
+  "observedSolverMethods": [
+    "explicit-dense"
+  ],
+  "observedModeBlocks": [
+    "connection"
+  ],
+  "diagnosis": [
+    "selected pair requires target-independent ratio scale 1.021088818212155, a fractional shift of 0.021088818212154914",
+    "Phase44 selector ratio envelope is [0.8617415263399019, 0.8654919922785442]",
+    "inspected 72 selected W/Z selector-eigen spectrum artifact(s)",
+    "72 inspected spectrum artifact(s) are solver-backed",
+    "emitted selector-eigen spectra contain no electroweak, mixing, charge-sector, normalization-scale, or nontrivial mass-operator term evidence",
+    "observed emitted mode energy block(s): connection"
+  ],
+  "closureRequirements": [
+    "no target-independent electroweak, mixing, or nontrivial mass-operator term evidence was emitted for the selected W/Z spectra",
+    "selected W/Z mode energy is entirely in the connection block; no electroweak or mixing block participates in the emitted modes"
+  ],
+  "provenance": {
+    "createdAt": "2026-04-28T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase45-wz-selector-eigen-operator-term-audit",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu"
+  }
+}
