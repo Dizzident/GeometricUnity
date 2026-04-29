@@ -7,6 +7,7 @@
   <ItemGroup>
     <Compile Include="..\..\apps\Gu.Cli\BranchQuantityValuesLoader.cs" Link="Cli\BranchQuantityValuesLoader.cs" />
     <ProjectReference Include="..\Gu.Core\Gu.Core.csproj" />
+    <ProjectReference Include="..\Gu.Math\Gu.Math.csproj" />
     <ProjectReference Include="..\Gu.Phase3.Backgrounds\Gu.Phase3.Backgrounds.csproj" />
     <ProjectReference Include="..\Gu.Phase3.Reporting\Gu.Phase3.Reporting.csproj" />
     <ProjectReference Include="..\Gu.Phase4.Reporting\Gu.Phase4.Reporting.csproj" />

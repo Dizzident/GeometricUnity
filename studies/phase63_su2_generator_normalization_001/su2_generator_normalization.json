@@ -1,0 +1,19 @@
+{
+  "algorithmId": "phase63-su2-generator-normalization-deriver-v1",
+  "terminalStatus": "su2-generator-normalization-derived",
+  "normalizationConventionId": "physical-weak-coupling-normalization:su2-canonical-trace-half-v1",
+  "algebraId": "su2",
+  "basisOrderId": "canonical",
+  "pairingId": "trace",
+  "generatorLabels": [
+    "T_1",
+    "T_2",
+    "T_3"
+  ],
+  "structureConstantConvention": "[T_a, T_b] = epsilon_abc T_c",
+  "physicalTraceNormalization": "tr(t_a t_b) = 1/2 delta_ab",
+  "internalTraceMetricDiagonal": 1.0,
+  "physicalTraceMetricDiagonal": 0.5,
+  "internalToPhysicalGeneratorScale": 0.7071067811865476,
+  "closureRequirements": []
+}
