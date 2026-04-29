@@ -99,4 +99,44 @@ public static class DimensionlessWeakCouplingAmplitudeExtractor
             ClosureRequirements = closure,
         };
     }
+
+    public static DimensionlessWeakCouplingAmplitudeExtractionResult ExtractFromEvidence(
+        NonProxyFermionCurrentMatrixElementRecord matrixElement,
+        Su2GeneratorNormalizationDerivationResult generatorNormalization,
+        RawWeakCouplingMatrixElementEvidenceValidationResult rawMatrixElementEvidence,
+        IReadOnlyList<string> excludedTargetObservableIds,
+        string? provenanceId = null)
+    {
+        ArgumentNullException.ThrowIfNull(rawMatrixElementEvidence);
+
+        if (!string.Equals(
+                rawMatrixElementEvidence.TerminalStatus,
+                "raw-weak-coupling-matrix-element-evidence-validated",
+                StringComparison.Ordinal) ||
+            rawMatrixElementEvidence.AcceptedRawMatrixElementMagnitude is not { } raw ||
+            !double.IsFinite(raw) ||
+            raw <= 0.0)
+        {
+            return new DimensionlessWeakCouplingAmplitudeExtractionResult
+            {
+                AlgorithmId = AlgorithmId,
+                TerminalStatus = "dimensionless-weak-coupling-amplitude-blocked",
+                MatrixElementId = matrixElement.MatrixElementId,
+                NormalizationConventionId = generatorNormalization.NormalizationConventionId,
+                RawMatrixElementMagnitude = null,
+                GeneratorNormalizationScale = generatorNormalization.InternalToPhysicalGeneratorScale,
+                Candidate = null,
+                ClosureRequirements = rawMatrixElementEvidence.ClosureRequirements.Count == 0
+                    ? ["raw matrix-element evidence has not been validated"]
+                    : rawMatrixElementEvidence.ClosureRequirements,
+            };
+        }
+
+        return Extract(
+            matrixElement,
+            generatorNormalization,
+            raw,
+            excludedTargetObservableIds,
+            provenanceId ?? rawMatrixElementEvidence.Evidence.ProvenanceId);
+    }
 }

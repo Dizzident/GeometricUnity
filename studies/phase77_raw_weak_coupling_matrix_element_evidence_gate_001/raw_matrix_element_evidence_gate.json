@@ -1,0 +1,24 @@
+{
+  "algorithmId": "phase77-raw-weak-coupling-matrix-element-evidence-validator-v1",
+  "terminalStatus": "raw-weak-coupling-matrix-element-evidence-blocked",
+  "evidence": {
+    "evidenceId": "phase65-provisional-scalar-raw-matrix-element",
+    "sourceKind": "scalar-study-input",
+    "variationMethod": "manual-scalar:v1",
+    "normalizationConvention": "unknown",
+    "rawMatrixElementMagnitude": 0.8,
+    "usesFiniteDifferenceProxy": false,
+    "usesCouplingProxyMagnitude": false,
+    "replayedFromCouplingRecordId": null,
+    "variationEvidenceId": null,
+    "provenanceId": "phase65-study-artifact"
+  },
+  "acceptedRawMatrixElementMagnitude": null,
+  "closureRequirements": [
+    "matrix-element source kind must be replayed-analytic-dirac-variation-matrix-element",
+    "variation method must be analytic-dirac-variation-matrix-element:v1",
+    "normalization convention must be unit-modes",
+    "replayed coupling record id is missing",
+    "variation evidence id is missing"
+  ]
+}
