@@ -1,0 +1,62 @@
+{
+  "studyId": "phase57-absolute-wz-bridge-gate-integration",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "absolute-wz-projector-bridge-gated",
+  "scope": "absolute-w-z-mass-projection",
+  "sourceArtifacts": [
+    "studies/phase56_electroweak_bridge_validator_001/bridge_validator_contract.json",
+    "studies/phase55_internal_electroweak_bridge_candidate_audit_001/weak_coupling_normalization_contract.json"
+  ],
+  "implementedCodePaths": [
+    "PhysicalPredictionProjector.Project(..., ElectroweakBridgeTable? electroweakBridges)",
+    "PhysicalPredictionProjector.IsAbsoluteWzMassMapping",
+    "PhysicalPredictionProjector.ValidateAbsoluteWzBridge"
+  ],
+  "gateBehavior": [
+    {
+      "caseId": "absolute-wz-mass-without-bridge",
+      "targetObservableIds": [
+        "physical-w-boson-mass-gev",
+        "physical-z-boson-mass-gev"
+      ],
+      "result": "blocked",
+      "blockReason": "absolute W/Z mass mapping requires a validated electroweak bridge"
+    },
+    {
+      "caseId": "absolute-wz-mass-with-rejected-bridge",
+      "rejectedInputKinds": [
+        "coupling-profile-mean-magnitude",
+        "target-fitted-W-or-Z-scale"
+      ],
+      "result": "blocked",
+      "blockReason": "absolute W/Z electroweak bridge input kind is rejected or not accepted"
+    },
+    {
+      "caseId": "absolute-wz-mass-with-valid-bridge",
+      "acceptedInputKinds": [
+        "normalized-internal-weak-coupling",
+        "validated-internal-mass-generation-relation"
+      ],
+      "result": "eligible-for-standard-mapping-calibration-gates",
+      "notes": "A valid bridge is necessary but not sufficient; mapping, classification, calibration, source uncertainty, target evidence, and falsifier gates still apply."
+    }
+  ],
+  "predictionStatus": {
+    "physical-w-boson-mass-gev": "blocked-until-validated-bridge-record-exists",
+    "physical-z-boson-mass-gev": "blocked-until-validated-bridge-record-exists"
+  },
+  "nextClosureSteps": [
+    "derive a real ElectroweakBridgeRecord from normalized internal weak-coupling or mass-generation evidence",
+    "project W/Z absolute observables only after PhysicalPredictionProjector accepts the bridge",
+    "run the W/Z absolute-mass campaign with target comparison after projection"
+  ],
+  "provenance": {
+    "createdAt": "2026-04-29T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase57-absolute-wz-bridge-gate-integration",
+      "schemaVersion": "1.0"
+    },
+    "backend": "code-and-artifact"
+  }
+}

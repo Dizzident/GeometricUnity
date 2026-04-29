@@ -357,7 +357,12 @@ public sealed class PhysicalObservableContractTests
             ],
         };
 
-        var predictions = PhysicalPredictionProjector.Project(observables, mappings, classifications, calibrations);
+        var predictions = PhysicalPredictionProjector.Project(
+            observables,
+            mappings,
+            classifications,
+            calibrations,
+            electroweakBridges: MakeValidElectroweakBridgeTable());
 
         var prediction = Assert.Single(predictions);
         Assert.Equal("predicted", prediction.Status);
@@ -365,6 +370,73 @@ public sealed class PhysicalObservableContractTests
         Assert.Equal(91.188, prediction.Value);
         Assert.Equal("GeV", prediction.Unit);
         Assert.Empty(prediction.BlockReasons);
+    }
+
+    [Fact]
+    public void PhysicalPredictionProjector_AbsoluteWzMassWithoutBridge_BlocksPrediction()
+    {
+        var observables = new[]
+        {
+            new QuantitativeObservableRecord
+            {
+                ObservableId = "z-mass-internal",
+                Value = 1.0,
+                Uncertainty = new QuantitativeUncertainty { TotalUncertainty = 0.01 },
+                BranchId = "branch-a",
+                EnvironmentId = "env-physical",
+                RefinementLevel = "L1",
+                ExtractionMethod = "unit-test",
+                Provenance = MakeProvenance(),
+            },
+        };
+
+        var predictions = PhysicalPredictionProjector.Project(
+            observables,
+            MakeZMassMappings(),
+            MakeZMassClassifications(),
+            MakeZMassCalibrations());
+
+        var prediction = Assert.Single(predictions);
+        Assert.Equal("blocked", prediction.Status);
+        Assert.Contains(prediction.BlockReasons, reason => reason.Contains("requires a validated electroweak bridge", StringComparison.Ordinal));
+    }
+
+    [Fact]
+    public void PhysicalPredictionProjector_AbsoluteWzMassWithRejectedBridge_BlocksPrediction()
+    {
+        var observables = new[]
+        {
+            new QuantitativeObservableRecord
+            {
+                ObservableId = "z-mass-internal",
+                Value = 1.0,
+                Uncertainty = new QuantitativeUncertainty { TotalUncertainty = 0.01 },
+                BranchId = "branch-a",
+                EnvironmentId = "env-physical",
+                RefinementLevel = "L1",
+                ExtractionMethod = "unit-test",
+                Provenance = MakeProvenance(),
+            },
+        };
+        var bridgeTable = new ElectroweakBridgeTable
+        {
+            TableId = "bridges",
+            Bridges =
+            [
+                MakeElectroweakBridge(inputKind: "coupling-profile-mean-magnitude"),
+            ],
+        };
+
+        var predictions = PhysicalPredictionProjector.Project(
+            observables,
+            MakeZMassMappings(),
+            MakeZMassClassifications(),
+            MakeZMassCalibrations(),
+            electroweakBridges: bridgeTable);
+
+        var prediction = Assert.Single(predictions);
+        Assert.Equal("blocked", prediction.Status);
+        Assert.Contains(prediction.BlockReasons, reason => reason.Contains("rejected for absolute W/Z projection", StringComparison.Ordinal));
     }
 
     [Fact]
@@ -735,6 +807,22 @@ public sealed class PhysicalObservableContractTests
         },
     ];
 
+    private static IReadOnlyList<PhysicalObservableMapping> MakeZMassMappings() =>
+    [
+        new PhysicalObservableMapping
+        {
+            MappingId = "map-z-mass",
+            ParticleId = "z-boson",
+            PhysicalObservableType = "mass",
+            SourceComputedObservableId = "z-mass-internal",
+            TargetPhysicalObservableId = "physical-z-boson-mass-gev",
+            UnitFamily = "mass-energy",
+            Status = "validated",
+            Assumptions = ["test mapping"],
+            ClosureRequirements = [],
+        },
+    ];
+
     private static ObservableClassificationTable MakePhysicalWzClassifications() => new()
     {
         TableId = "classifications",
@@ -748,6 +836,70 @@ public sealed class PhysicalObservableContractTests
                 PhysicalClaimAllowed = true,
             },
         ],
+    };
+
+    private static ObservableClassificationTable MakeZMassClassifications() => new()
+    {
+        TableId = "classifications",
+        Classifications =
+        [
+            new ObservableClassification
+            {
+                ObservableId = "z-mass-internal",
+                Classification = "physical-observable",
+                Rationale = "validated test observable",
+                PhysicalClaimAllowed = true,
+            },
+        ],
+    };
+
+    private static PhysicalCalibrationTable MakeZMassCalibrations() => new()
+    {
+        TableId = "calibrations",
+        Calibrations =
+        [
+            new PhysicalCalibrationRecord
+            {
+                CalibrationId = "cal-z-mass",
+                MappingId = "map-z-mass",
+                SourceComputedObservableId = "z-mass-internal",
+                SourceUnitFamily = "dimensionless",
+                TargetUnitFamily = "mass-energy",
+                TargetUnit = "GeV",
+                ScaleFactor = 91.188,
+                ScaleUncertainty = 0.002,
+                Status = "validated",
+                Method = "unit-test",
+                Source = "unit-test",
+                Assumptions = ["test calibration"],
+                ClosureRequirements = [],
+            },
+        ],
+    };
+
+    private static ElectroweakBridgeTable MakeValidElectroweakBridgeTable() => new()
+    {
+        TableId = "bridges",
+        Bridges = [MakeValidElectroweakBridge()],
+    };
+
+    private static ElectroweakBridgeRecord MakeValidElectroweakBridge()
+        => MakeElectroweakBridge();
+
+    private static ElectroweakBridgeRecord MakeElectroweakBridge(
+        string inputKind = "normalized-internal-weak-coupling") => new()
+    {
+        BridgeObservableId = "test-electroweak-bridge",
+        SourceModeIds = ["phase22-phase12-candidate-0", "phase22-phase12-candidate-2"],
+        DimensionlessBridgeValue = 0.65,
+        DimensionlessBridgeUncertainty = 0.01,
+        InputKind = inputKind,
+        WeakCouplingNormalizationConvention = "test-normalized-internal-weak-coupling",
+        MassGenerationRelation = "test-mass-generation-relation",
+        ExcludedTargetObservableIds = ["physical-w-boson-mass-gev", "physical-z-boson-mass-gev"],
+        Status = "validated",
+        Assumptions = ["test bridge"],
+        ClosureRequirements = [],
     };
 
     private static FalsifierSummary MakeGlobalSidecarFalsifiers() => new()

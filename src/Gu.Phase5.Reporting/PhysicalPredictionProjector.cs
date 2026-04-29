@@ -57,7 +57,8 @@ public static class PhysicalPredictionProjector
         ObservableClassificationTable? classifications,
         PhysicalCalibrationTable? calibrations,
         IReadOnlyList<IdentifiedPhysicalModeRecord>? physicalModeRecords = null,
-        IReadOnlyList<ModeIdentificationEvidenceRecord>? modeIdentificationEvidence = null)
+        IReadOnlyList<ModeIdentificationEvidenceRecord>? modeIdentificationEvidence = null,
+        ElectroweakBridgeTable? electroweakBridges = null)
     {
         ArgumentNullException.ThrowIfNull(observables);
 
@@ -103,6 +104,9 @@ public static class PhysicalPredictionProjector
                 string.Equals(c.Status, "validated", StringComparison.OrdinalIgnoreCase));
             if (calibration is null)
                 blockReasons.Add("no validated calibration matches the mapping");
+
+            if (IsAbsoluteWzMassMapping(mapping))
+                blockReasons.AddRange(ValidateAbsoluteWzBridge(electroweakBridges));
 
             records.Add(blockReasons.Count == 0 && observable is not null && calibration is not null
                 ? CreatePrediction(mapping, observable, calibration)
@@ -170,6 +174,29 @@ public static class PhysicalPredictionProjector
         => string.Equals(mapping.TargetPhysicalObservableId, "physical-w-z-mass-ratio", StringComparison.Ordinal) ||
            (mapping.SourceComputedObservableId.Contains("w-z", StringComparison.OrdinalIgnoreCase) &&
             mapping.PhysicalObservableType.Contains("mass-ratio", StringComparison.OrdinalIgnoreCase));
+
+    internal static bool IsAbsoluteWzMassMapping(PhysicalObservableMapping mapping)
+        => string.Equals(mapping.PhysicalObservableType, "mass", StringComparison.OrdinalIgnoreCase) &&
+           (string.Equals(mapping.TargetPhysicalObservableId, "physical-w-boson-mass-gev", StringComparison.Ordinal) ||
+            string.Equals(mapping.TargetPhysicalObservableId, "physical-z-boson-mass-gev", StringComparison.Ordinal) ||
+            string.Equals(mapping.ParticleId, "w-boson", StringComparison.Ordinal) ||
+            string.Equals(mapping.ParticleId, "z-boson", StringComparison.Ordinal));
+
+    internal static IReadOnlyList<string> ValidateAbsoluteWzBridge(ElectroweakBridgeTable? bridges)
+    {
+        if (bridges is null || bridges.Bridges.Count == 0)
+            return ["absolute W/Z mass mapping requires a validated electroweak bridge"];
+
+        var validatedBridge = bridges.Bridges.FirstOrDefault(bridge =>
+            ElectroweakBridgeValidator.ValidateForAbsoluteWzProjection(bridge).Count == 0);
+        if (validatedBridge is not null)
+            return [];
+
+        var errors = ElectroweakBridgeValidator.ValidateForAbsoluteWzProjection(bridges.Bridges[0]);
+        return errors.Count == 0
+            ? []
+            : errors.Select(error => $"absolute W/Z electroweak bridge {error}").ToArray();
+    }
 
     private static string[]? ParsePositiveModeRatioSourceIds(string extractionMethod)
     {
