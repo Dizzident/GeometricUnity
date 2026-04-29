@@ -1,0 +1,42 @@
+{
+  "contractId": "phase55-weak-coupling-normalization-contract",
+  "schemaVersion": "1.0.0",
+  "status": "defined",
+  "purpose": "Define the minimum evidence needed before an internal W/Z coupling-like quantity may be used as an electroweak scale bridge.",
+  "acceptedInputKinds": [
+    "normalized-internal-weak-coupling",
+    "validated-internal-mass-generation-relation"
+  ],
+  "rejectedInputKinds": [
+    "finite-difference-current-profile-hash",
+    "coupling-profile-mean-magnitude",
+    "coupling-profile-diagonal-mean-magnitude",
+    "coupling-profile-off-diagonal-mean-magnitude",
+    "target-fitted-W-or-Z-scale"
+  ],
+  "requiredEvidence": [
+    {
+      "field": "normalizationConventionId",
+      "requirement": "declares how internal coupling amplitudes are normalized to a dimensionless weak coupling"
+    },
+    {
+      "field": "massGenerationRelation",
+      "requirement": "declares the replayable relation connecting the electroweak scale to W/Z internal modes"
+    },
+    {
+      "field": "sharedScaleCheck",
+      "requirement": "demonstrates that W and Z imply one shared GeV-per-internal-mass-unit scale within propagated uncertainty"
+    },
+    {
+      "field": "excludedTargetObservableIds",
+      "requirement": "includes physical-w-boson-mass-gev and physical-z-boson-mass-gev"
+    }
+  ],
+  "hardRejectConditions": [
+    "bridge uses a coupling proxy statistic without a normalization convention",
+    "bridge derives separate W and Z scales with no shared-scale agreement check",
+    "bridge uses physical-w-boson-mass-gev",
+    "bridge uses physical-z-boson-mass-gev",
+    "bridge uncertainty is missing or unestimated"
+  ]
+}

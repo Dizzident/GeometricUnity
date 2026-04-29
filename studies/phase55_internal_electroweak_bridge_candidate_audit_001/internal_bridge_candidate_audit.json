@@ -1,0 +1,103 @@
+{
+  "studyId": "phase55-internal-electroweak-bridge-candidate-audit",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "internal-bridge-candidate-rejected",
+  "scope": "internal-electroweak-bridge-observable",
+  "sourceArtifacts": [
+    "studies/phase54_external_electroweak_scale_input_001/external_electroweak_scale_input.json",
+    "studies/phase27_charge_sector_convention_001/identity_features_with_charge_sectors.json",
+    "studies/phase27_charge_sector_convention_001/identity_rule_readiness_after_charge_sectors.json",
+    "studies/phase46_electroweak_term_wz_physical_prediction_001/physical_mode_records.json"
+  ],
+  "validatedIdentityInputs": {
+    "wBoson": {
+      "sourceCandidateId": "phase12-candidate-0",
+      "sourceObservableId": "phase22-phase12-candidate-0",
+      "particleId": "w-boson",
+      "chargeSector": "charged",
+      "internalMassUnitValue": 1.1158059937692792E-15,
+      "couplingProxyMeanMagnitude": 0.057993823115516055,
+      "couplingProxyStatus": "identity-feature-only"
+    },
+    "zBoson": {
+      "sourceCandidateId": "phase12-candidate-2",
+      "sourceObservableId": "phase22-phase12-candidate-2",
+      "particleId": "z-boson",
+      "chargeSector": "neutral",
+      "internalMassUnitValue": 1.268406657962647E-15,
+      "couplingProxyMeanMagnitude": 0.06664817482236975,
+      "couplingProxyStatus": "identity-feature-only"
+    },
+    "externalElectroweakScale": {
+      "scaleId": "phase54-fermi-derived-electroweak-vacuum-scale",
+      "value": 246.21965079413738,
+      "standardUncertainty": 0.00006332925595969921,
+      "unit": "GeV",
+      "status": "ingested"
+    }
+  },
+  "candidateBridgeControls": [
+    {
+      "bridgeCandidateId": "phase55-coupling-proxy-as-weak-coupling-control",
+      "bridgeDerivationMethod": "rejected-control:use-current-coupling-mean-magnitude-as-weak-coupling",
+      "status": "rejected",
+      "computedFromTargetMasses": false,
+      "excludedTargetObservableIds": [
+        "physical-w-boson-mass-gev",
+        "physical-z-boson-mass-gev"
+      ],
+      "wProxyMassGeV": 7.139609437859668,
+      "zProxyMassGeV": 8.20504516541525,
+      "proxyMassRatio": 0.8701487065486907,
+      "internalMassRatio": 0.8796910570948282,
+      "wImpliedScaleGeVPerInternalMassUnit": 6398611835505125,
+      "zImpliedScaleGeVPerInternalMassUnit": 6468781217684903,
+      "relativeScaleSpread": -0.010906542123912491,
+      "rejectionReasons": [
+        "Phase25/Phase27 current-coupling signatures are finite-difference profile features for identity selection, not normalized Standard Model weak couplings",
+        "the W and Z proxy-derived scales do not agree as a shared GeV-per-internal-mass-unit bridge",
+        "no uncertainty model validates the coupling proxy mean magnitude as a physical coupling",
+        "the control does not implement a replayable mass-generation relation for the validated W/Z modes"
+      ]
+    }
+  ],
+  "requiredBridgeObservable": {
+    "bridgeObservableId": "phase55-required-internal-electroweak-bridge",
+    "status": "missing",
+    "requiredFields": [
+      "sourceModeIds",
+      "dimensionlessBridgeValue",
+      "dimensionlessBridgeUncertainty",
+      "weakCouplingNormalizationConvention",
+      "massGenerationRelation",
+      "excludedTargetObservableIds",
+      "status"
+    ],
+    "minimumPromotionStatus": "validated",
+    "closureRequirements": [
+      "derive a normalized internal weak-coupling observable rather than using coupling-profile magnitudes",
+      "derive a mass-generation relation that maps the Fermi-derived electroweak scale to the internal W/Z mass modes",
+      "show a shared GeV-per-internal-mass-unit scale for W and Z within propagated uncertainty",
+      "prove the derivation excludes physical-w-boson-mass-gev and physical-z-boson-mass-gev"
+    ]
+  },
+  "absoluteProjectionStatus": {
+    "physical-w-boson-mass-gev": "blocked-no-validated-internal-bridge",
+    "physical-z-boson-mass-gev": "blocked-no-validated-internal-bridge"
+  },
+  "nextClosureSteps": [
+    "implement a normalized weak-coupling extraction contract for W/Z source modes",
+    "add a bridge validator that rejects finite-difference profile magnitudes unless they declare a physical normalization",
+    "combine the validated bridge with the Phase54 Fermi-derived electroweak scale",
+    "emit W/Z absolute mass projections only after a shared scale passes"
+  ],
+  "provenance": {
+    "createdAt": "2026-04-29T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase55-internal-electroweak-bridge-candidate-audit",
+      "schemaVersion": "1.0"
+    },
+    "backend": "artifact-audit"
+  }
+}
