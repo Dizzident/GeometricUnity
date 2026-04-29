@@ -1,0 +1,26 @@
+{
+  "algorithmId": "phase75-wz-absolute-mass-miss-diagnostic-v1",
+  "terminalStatus": "wz-absolute-mass-miss-diagnosed",
+  "requiredScaleFactors": [
+    {
+      "observableId": "physical-w-boson-mass-gev",
+      "requiredScaleFactor": 1.1540428665064741
+    },
+    {
+      "observableId": "physical-z-boson-mass-gev",
+      "requiredScaleFactor": 1.1518612358716782
+    }
+  ],
+  "meanRequiredScaleFactor": 1.152952051189076,
+  "relativeRequiredScaleSpread": 0.0018922128049869403,
+  "currentWeakCoupling": 0.5656854249492381,
+  "requiredWeakCoupling": 0.6522081710229882,
+  "diagnosis": [
+    "absolute W/Z predictions require a common scale increase of 1.152952051189076",
+    "W/Z required-scale spread is 0.0018922128049869403",
+    "miss is coherent across W and Z; prioritize weak-coupling amplitude normalization before W/Z-specific mode changes"
+  ],
+  "closureRequirements": [
+    "revise weak-coupling amplitude normalization or scalar-sector relation and re-run absolute W/Z projection"
+  ]
+}
