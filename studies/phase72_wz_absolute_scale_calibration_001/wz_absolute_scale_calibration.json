@@ -1,0 +1,49 @@
+{
+  "status": "validated",
+  "scaleFactorGeVPerInternalMassUnit": 62413568563037690,
+  "scaleUncertaintyGeVPerInternalMassUnit": 321043849913151.3,
+  "calibrations": {
+    "tableId": "electroweak-absolute-wz-calibrations-v1",
+    "calibrations": [
+      {
+        "calibrationId": "calibration-physical-w-boson-mass-gev-phase58-electroweak-bridge",
+        "mappingId": "phase72-w-absolute-mass-mapping",
+        "sourceComputedObservableId": "phase22-phase12-candidate-0",
+        "sourceUnitFamily": "mass-energy",
+        "targetUnitFamily": "mass-energy",
+        "targetUnit": "GeV",
+        "scaleFactor": 62413568563037690,
+        "scaleUncertainty": 321043849913151.3,
+        "status": "validated",
+        "method": "phase58-external-electroweak-scale-times-validated-bridge:phase71-validated-electroweak-mass-generation-bridge",
+        "source": "phase54-fermi-derived-electroweak-vacuum-scale + validated ElectroweakBridgeRecord",
+        "assumptions": [
+          "external electroweak scale is disjoint from W/Z mass targets",
+          "electroweak bridge validator passed before calibration construction",
+          "same GeV-per-internal-mass-unit scale is applied to W and Z absolute mass mappings"
+        ],
+        "closureRequirements": []
+      },
+      {
+        "calibrationId": "calibration-physical-z-boson-mass-gev-phase58-electroweak-bridge",
+        "mappingId": "phase72-z-absolute-mass-mapping",
+        "sourceComputedObservableId": "phase22-phase12-candidate-2",
+        "sourceUnitFamily": "mass-energy",
+        "targetUnitFamily": "mass-energy",
+        "targetUnit": "GeV",
+        "scaleFactor": 62413568563037690,
+        "scaleUncertainty": 321043849913151.3,
+        "status": "validated",
+        "method": "phase58-external-electroweak-scale-times-validated-bridge:phase71-validated-electroweak-mass-generation-bridge",
+        "source": "phase54-fermi-derived-electroweak-vacuum-scale + validated ElectroweakBridgeRecord",
+        "assumptions": [
+          "external electroweak scale is disjoint from W/Z mass targets",
+          "electroweak bridge validator passed before calibration construction",
+          "same GeV-per-internal-mass-unit scale is applied to W and Z absolute mass mappings"
+        ],
+        "closureRequirements": []
+      }
+    ]
+  },
+  "blockReasons": []
+}

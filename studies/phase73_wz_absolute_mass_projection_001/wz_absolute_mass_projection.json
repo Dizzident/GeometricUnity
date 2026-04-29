@@ -1,0 +1,38 @@
+{
+  "status": "projected",
+  "observables": [
+    {
+      "observableId": "physical-w-boson-mass-gev",
+      "value": 69.64143389516731,
+      "uncertainty": {
+        "branchVariation": 0,
+        "refinementError": 0,
+        "extractionError": 0.3679656283006216,
+        "environmentSensitivity": 0,
+        "totalUncertainty": 0.3679656283006216
+      },
+      "branchId": "bg-variant-53b598740d9569b4",
+      "environmentId": "env-imported-repo-benchmark",
+      "refinementLevel": "L0-2x2",
+      "extractionMethod": "phase59-absolute-wz-mass-projection:phase22-phase12-candidate-0",
+      "distributionModel": "gaussian"
+    },
+    {
+      "observableId": "physical-z-boson-mass-gev",
+      "value": 79.16578591256517,
+      "uncertainty": {
+        "branchVariation": 0,
+        "refinementError": 0,
+        "extractionError": 0.4189929362561984,
+        "environmentSensitivity": 0,
+        "totalUncertainty": 0.4189929362561984
+      },
+      "branchId": "bg-variant-53b598740d9569b4",
+      "environmentId": "env-imported-repo-benchmark",
+      "refinementLevel": "L0-2x2",
+      "extractionMethod": "phase59-absolute-wz-mass-projection:phase22-phase12-candidate-2",
+      "distributionModel": "gaussian"
+    }
+  ],
+  "blockReasons": []
+}

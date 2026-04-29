@@ -1,0 +1,32 @@
+{
+  "algorithmId": "phase74-wz-absolute-mass-target-comparator-v1",
+  "terminalStatus": "wz-absolute-mass-target-comparison-failed",
+  "sigmaThreshold": 5,
+  "comparisons": [
+    {
+      "observableId": "physical-w-boson-mass-gev",
+      "predictedValue": 69.64143389516731,
+      "predictedUncertainty": 0.3679656283006216,
+      "targetValue": 80.3692,
+      "targetUncertainty": 0.0133,
+      "delta": -10.727766104832696,
+      "combinedUncertainty": 0.36820591197137403,
+      "sigmaResidual": 29.135235899380998,
+      "passed": false
+    },
+    {
+      "observableId": "physical-z-boson-mass-gev",
+      "predictedValue": 79.16578591256517,
+      "predictedUncertainty": 0.4189929362561984,
+      "targetValue": 91.188,
+      "targetUncertainty": 0.002,
+      "delta": -12.022214087434833,
+      "combinedUncertainty": 0.41899770957917026,
+      "sigmaResidual": 28.692791899768647,
+      "passed": false
+    }
+  ],
+  "closureRequirements": [
+    "one or more W/Z absolute mass predictions fail the sigma threshold"
+  ]
+}
