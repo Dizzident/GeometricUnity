@@ -75,6 +75,9 @@ public sealed class Phase5CampaignArtifacts
 
     /// <summary>Optional Phase XVIII mode-identification evidence records.</summary>
     public ModeIdentificationEvidenceTable? ModeIdentificationEvidence { get; init; }
+
+    /// <summary>Optional target-scoped physical-claim falsifier relevance audit.</summary>
+    public WzPhysicalClaimFalsifierRelevanceAuditResult? PhysicalClaimFalsifierRelevanceAudit { get; init; }
 }
 
 /// <summary>
@@ -262,6 +265,15 @@ public static class Phase5CampaignArtifactLoader
                     File.ReadAllText(absPath));
         }
 
+        WzPhysicalClaimFalsifierRelevanceAuditResult? physicalClaimFalsifierRelevanceAudit = null;
+        if (spec.PhysicalClaimFalsifierRelevanceAuditPath is not null)
+        {
+            var absPath = ResolvePath(spec.PhysicalClaimFalsifierRelevanceAuditPath, specDir);
+            if (File.Exists(absPath))
+                physicalClaimFalsifierRelevanceAudit = GuJsonDefaults.Deserialize<WzPhysicalClaimFalsifierRelevanceAuditResult>(
+                    File.ReadAllText(absPath));
+        }
+
         return new Phase5CampaignArtifacts
         {
             BranchQuantityValues = branchValues,
@@ -282,6 +294,7 @@ public static class Phase5CampaignArtifactLoader
             PhysicalCalibrations = physicalCalibrations,
             PhysicalModeRecords = physicalModeRecords,
             ModeIdentificationEvidence = modeIdentificationEvidence,
+            PhysicalClaimFalsifierRelevanceAudit = physicalClaimFalsifierRelevanceAudit,
         };
     }
 

@@ -119,6 +119,10 @@
     "modeIdentificationEvidencePath": {
       "type": ["string", "null"],
       "description": "Optional path to Phase XVIII physical mode-identification evidence records."
+    },
+    "physicalClaimFalsifierRelevanceAuditPath": {
+      "type": ["string", "null"],
+      "description": "Optional path to a target-scoped physical-claim falsifier relevance audit."
     }
   },
   "$defs": {

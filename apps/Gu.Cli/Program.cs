@@ -5699,7 +5699,8 @@ static int RunPhase5Campaign(string[] args)
             physicalObservableMappings: artifacts.PhysicalObservableMappings?.Mappings,
             physicalCalibrations: artifacts.PhysicalCalibrations?.Calibrations,
             physicalModeRecords: artifacts.PhysicalModeRecords,
-            modeIdentificationEvidence: artifacts.ModeIdentificationEvidence);
+            modeIdentificationEvidence: artifacts.ModeIdentificationEvidence,
+            physicalClaimFalsifierRelevanceAudit: artifacts.PhysicalClaimFalsifierRelevanceAudit);
     }
     catch (Exception ex)
     {
@@ -5757,6 +5758,8 @@ static int RunPhase5Campaign(string[] args)
         CopyIfExists(Path.Combine(specDir, spec.PhysicalModeRecordsPath), Path.Combine(inputsDir, "physical_mode_records.json"));
     if (spec.ModeIdentificationEvidencePath is not null)
         CopyIfExists(Path.Combine(specDir, spec.ModeIdentificationEvidencePath), Path.Combine(inputsDir, "mode_identification_evidence.json"));
+    if (spec.PhysicalClaimFalsifierRelevanceAuditPath is not null)
+        CopyIfExists(Path.Combine(specDir, spec.PhysicalClaimFalsifierRelevanceAuditPath), Path.Combine(inputsDir, "physical_claim_falsifier_relevance_audit.json"));
     CopyIfExists(Path.Combine(specDir, "sidecar_summary.json"), Path.Combine(inputsDir, "sidecar_summary.json"));
     CopyIfExists(Path.Combine(specDir, "candidate_provenance_links.json"), Path.Combine(inputsDir, "candidate_provenance_links.json"));
     for (int i = 0; i < spec.EnvironmentRecordPaths.Count; i++)
@@ -5856,6 +5859,8 @@ static int RunPhase5Campaign(string[] args)
     Console.WriteLine($"  falsification/falsifier_summary.json");
     if (artifacts.SidecarSummary is not null)
         Console.WriteLine($"  falsification/sidecar_summary.json");
+    if (artifacts.PhysicalClaimFalsifierRelevanceAudit is not null)
+        Console.WriteLine($"  inputs/physical_claim_falsifier_relevance_audit.json");
     Console.WriteLine($"  dossiers/phase5_validation_dossier.json");
     Console.WriteLine($"  dossiers/validation_dossier.json");
     Console.WriteLine($"  dossiers/study_manifest.json");
@@ -6079,6 +6084,19 @@ static string GeneratePhase5ReportMarkdown(
         sb.AppendLine("## Physical Claim Gate");
         foreach (var line in report.PhysicalClaimGate.SummaryLines)
             sb.AppendLine(line);
+        sb.AppendLine();
+    }
+    if (report.PhysicalClaimFalsifierRelevanceAudit is not null)
+    {
+        var audit = report.PhysicalClaimFalsifierRelevanceAudit;
+        sb.AppendLine("## Physical Claim Falsifier Relevance");
+        sb.AppendLine($"- Target observable: {audit.TargetObservableId}");
+        sb.AppendLine($"- Target comparison passed: {(audit.TargetComparisonPassed ? "yes" : "no")}");
+        sb.AppendLine($"- Selector variation passed: {(audit.SelectorVariationPassed ? "yes" : "no")}");
+        sb.AppendLine($"- Target-relevant severe falsifiers: {audit.TargetRelevantSevereFalsifierCount}");
+        sb.AppendLine($"- Global sidecar severe falsifiers: {audit.GlobalSidecarSevereFalsifierCount}");
+        foreach (var record in audit.FalsifierAudits)
+            sb.AppendLine($"- {record.FalsifierId}: {record.Relevance}; {record.Scope}; target {record.TargetId}.");
         sb.AppendLine();
     }
     if (report.PhysicalPredictions is { Count: > 0 })

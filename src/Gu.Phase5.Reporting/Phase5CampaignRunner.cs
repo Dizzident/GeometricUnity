@@ -61,7 +61,8 @@ public sealed class Phase5CampaignRunner
         IReadOnlyList<PhysicalObservableMapping>? physicalObservableMappings = null,
         IReadOnlyList<PhysicalCalibrationRecord>? physicalCalibrations = null,
         IReadOnlyList<IdentifiedPhysicalModeRecord>? physicalModeRecords = null,
-        ModeIdentificationEvidenceTable? modeIdentificationEvidence = null)
+        ModeIdentificationEvidenceTable? modeIdentificationEvidence = null,
+        WzPhysicalClaimFalsifierRelevanceAuditResult? physicalClaimFalsifierRelevanceAudit = null)
     {
         ArgumentNullException.ThrowIfNull(spec);
         ArgumentNullException.ThrowIfNull(branchPipelineExecutor);
@@ -213,7 +214,8 @@ public sealed class Phase5CampaignRunner
                 string.Equals(c.Status, "validated", StringComparison.OrdinalIgnoreCase)) == true,
             physicalTargetEvidenceAvailable: targetTable.Targets.Any(t =>
                 !string.IsNullOrWhiteSpace(t.ParticleId) ||
-                !string.IsNullOrWhiteSpace(t.PhysicalObservableType)));
+                !string.IsNullOrWhiteSpace(t.PhysicalObservableType)),
+            physicalClaimFalsifierRelevanceAudit: physicalClaimFalsifierRelevanceAudit);
 
         // Step 7: P11-M5 representation-content stabilization record.
         // Produced whenever a fatal representation-content falsifier is active.

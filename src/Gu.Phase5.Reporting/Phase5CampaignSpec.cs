@@ -112,4 +112,8 @@ public sealed class Phase5CampaignSpec
     /// <summary>Optional path to physical mode-identification evidence records (Phase XVIII).</summary>
     [JsonPropertyName("modeIdentificationEvidencePath")]
     public string? ModeIdentificationEvidencePath { get; init; }
+
+    /// <summary>Optional path to a target-scoped physical-claim falsifier relevance audit (Phase XLVII).</summary>
+    [JsonPropertyName("physicalClaimFalsifierRelevanceAuditPath")]
+    public string? PhysicalClaimFalsifierRelevanceAuditPath { get; init; }
 }

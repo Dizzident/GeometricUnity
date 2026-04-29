@@ -116,5 +116,6 @@
   "observableClassificationsPath": "../observable_classifications.json",
   "physicalCalibrationPath": "../physical_calibrations.json",
   "physicalModeRecordsPath": "../physical_mode_records.json",
-  "modeIdentificationEvidencePath": "../mode_identification_evidence.json"
+  "modeIdentificationEvidencePath": "../mode_identification_evidence.json",
+  "physicalClaimFalsifierRelevanceAuditPath": "../../phase47_wz_physical_claim_falsifier_relevance_001/physical_claim_falsifier_relevance_audit.json"
 }

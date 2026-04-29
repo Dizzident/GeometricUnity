@@ -127,6 +127,8 @@ public static class Phase5CampaignSpecValidator
             CheckFilePath(spec.PhysicalModeRecordsPath, "physicalModeRecordsPath", specDir, errors);
         if (spec.ModeIdentificationEvidencePath is not null)
             CheckFilePath(spec.ModeIdentificationEvidencePath, "modeIdentificationEvidencePath", specDir, errors);
+        if (spec.PhysicalClaimFalsifierRelevanceAuditPath is not null)
+            CheckFilePath(spec.PhysicalClaimFalsifierRelevanceAuditPath, "physicalClaimFalsifierRelevanceAuditPath", specDir, errors);
 
         ValidateEnvironmentEvidence(spec, specDir, requireReferenceSidecars, errors);
         ValidateTargetTable(spec, specDir, repoRoot, errors);

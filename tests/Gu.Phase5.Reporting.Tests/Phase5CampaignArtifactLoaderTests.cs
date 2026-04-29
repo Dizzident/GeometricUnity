@@ -267,6 +267,22 @@ public sealed class Phase5CampaignArtifactLoaderTests : IDisposable
     }
 
     [Fact]
+    public void ArtifactLoader_LoadsPhysicalClaimFalsifierRelevanceAudit_WhenPathDeclared()
+    {
+        var spec = WriteArtifactsAndMakeSpec();
+        var auditPath = Path.Combine(_tempDir, "physical_claim_falsifier_relevance_audit.json");
+        File.WriteAllText(auditPath, GuJsonDefaults.Serialize(MakePhysicalClaimFalsifierRelevanceAudit()));
+        spec = CopySpecWithPhysicalClaimFalsifierRelevanceAuditPath(spec, auditPath);
+
+        var artifacts = Phase5CampaignArtifactLoader.Load(spec, _tempDir);
+
+        Assert.NotNull(artifacts.PhysicalClaimFalsifierRelevanceAudit);
+        Assert.Equal("physical-w-z-mass-ratio", artifacts.PhysicalClaimFalsifierRelevanceAudit!.TargetObservableId);
+        Assert.Equal(0, artifacts.PhysicalClaimFalsifierRelevanceAudit.TargetRelevantSevereFalsifierCount);
+        Assert.Equal(3, artifacts.PhysicalClaimFalsifierRelevanceAudit.GlobalSidecarSevereFalsifierCount);
+    }
+
+    [Fact]
     public void ArtifactLoader_LoadsReferenceStudyCampaignArtifacts()
     {
         var repoRoot = FindRepoRoot();
@@ -338,6 +354,76 @@ public sealed class Phase5CampaignArtifactLoaderTests : IDisposable
             line => line.Contains("bridge-derived", StringComparison.Ordinal));
         Assert.Contains(result.Report.ConvergenceAtlas!.SummaryLines,
             line => line.Contains("multi-variant admitted atlas", StringComparison.Ordinal));
+    }
+
+    [Fact]
+    public void RunFull_PhysicalClaimFalsifierRelevanceAudit_ReachesReportGate()
+    {
+        var spec = WriteArtifactsAndMakeSpec();
+        var audit = MakePhysicalClaimFalsifierRelevanceAudit();
+
+        var runner = new Phase5CampaignRunner();
+        var result = runner.RunFull(
+            spec,
+            _ => new Dictionary<string, double[]>
+            {
+                ["q1"] = [1.0],
+                ["q2"] = [1.0],
+            },
+            _ => new Dictionary<string, double>
+            {
+                ["q1"] = 1.0,
+            },
+            [],
+            new ExternalTargetTable
+            {
+                TableId = "targets",
+                Targets =
+                [
+                    new ExternalTarget
+                    {
+                        Label = "pdg-w-z-mass-ratio",
+                        ObservableId = "physical-w-z-mass-ratio",
+                        Value = 0.88136,
+                        Uncertainty = 0.00015,
+                        Source = "test",
+                        EvidenceTier = "physical-prediction",
+                        BenchmarkClass = "physical-observable",
+                        ParticleId = "electroweak-sector",
+                        PhysicalObservableType = "mass-ratio",
+                        UnitFamily = "dimensionless",
+                        Unit = "dimensionless",
+                    },
+                ],
+            },
+            new UnifiedParticleRegistry(),
+            observableClassifications: MakePhysicalWzClassifications(),
+            physicalObservableMappings: MakeValidatedWzMappings(),
+            physicalCalibrations:
+            [
+                new PhysicalCalibrationRecord
+                {
+                    CalibrationId = "cal-wz",
+                    MappingId = "map-wz-ratio",
+                    SourceComputedObservableId = "candidate-w-z-vector-mode-ratio",
+                    SourceUnitFamily = "dimensionless",
+                    TargetUnitFamily = "dimensionless",
+                    TargetUnit = "dimensionless",
+                    ScaleFactor = 1.0,
+                    ScaleUncertainty = 0.0,
+                    Status = "validated",
+                    Method = "test",
+                    Source = "test",
+                    Assumptions = [],
+                    ClosureRequirements = [],
+                },
+            ],
+            physicalClaimFalsifierRelevanceAudit: audit);
+
+        Assert.NotNull(result.Report.PhysicalClaimFalsifierRelevanceAudit);
+        Assert.True(result.Report.PhysicalClaimGate!.TargetScopedPhysicalComparisonAllowed);
+        Assert.False(result.Report.PhysicalClaimGate.PhysicalBosonPredictionAllowed);
+        Assert.Equal("target-scoped", result.Report.PhysicalPredictionTerminalStatus!.Status);
     }
 
     /// <summary>
@@ -1054,6 +1140,89 @@ public sealed class Phase5CampaignArtifactLoaderTests : IDisposable
             Assert.NotEmpty(record.ConversionVersion!);
         }
     }
+
+    private static Phase5CampaignSpec CopySpecWithPhysicalClaimFalsifierRelevanceAuditPath(
+        Phase5CampaignSpec spec,
+        string auditPath)
+        => new()
+        {
+            CampaignId = spec.CampaignId,
+            SchemaVersion = spec.SchemaVersion,
+            BranchFamilySpec = spec.BranchFamilySpec,
+            RefinementSpec = spec.RefinementSpec,
+            EnvironmentCampaignSpec = spec.EnvironmentCampaignSpec,
+            ExternalTargetTablePath = spec.ExternalTargetTablePath,
+            CalibrationPolicy = spec.CalibrationPolicy,
+            FalsificationPolicy = spec.FalsificationPolicy,
+            Provenance = spec.Provenance,
+            BranchQuantityValuesPath = spec.BranchQuantityValuesPath,
+            RefinementValuesPath = spec.RefinementValuesPath,
+            ObservablesPath = spec.ObservablesPath,
+            EnvironmentRecordPaths = spec.EnvironmentRecordPaths,
+            RegistryPath = spec.RegistryPath,
+            ObservationChainPath = spec.ObservationChainPath,
+            EnvironmentVariancePath = spec.EnvironmentVariancePath,
+            RepresentationContentPath = spec.RepresentationContentPath,
+            CouplingConsistencyPath = spec.CouplingConsistencyPath,
+            TargetCoverageBlockersPath = spec.TargetCoverageBlockersPath,
+            PhysicalObservableMappingsPath = spec.PhysicalObservableMappingsPath,
+            ObservableClassificationsPath = spec.ObservableClassificationsPath,
+            PhysicalCalibrationPath = spec.PhysicalCalibrationPath,
+            PhysicalModeRecordsPath = spec.PhysicalModeRecordsPath,
+            ModeIdentificationEvidencePath = spec.ModeIdentificationEvidencePath,
+            PhysicalClaimFalsifierRelevanceAuditPath = auditPath,
+        };
+
+    private static IReadOnlyList<PhysicalObservableMapping> MakeValidatedWzMappings() =>
+    [
+        new PhysicalObservableMapping
+        {
+            MappingId = "map-wz-ratio",
+            ParticleId = "electroweak-sector",
+            PhysicalObservableType = "mass-ratio",
+            SourceComputedObservableId = "candidate-w-z-vector-mode-ratio",
+            TargetPhysicalObservableId = "physical-w-z-mass-ratio",
+            UnitFamily = "dimensionless",
+            Status = "validated",
+            Assumptions = ["test mapping"],
+            ClosureRequirements = [],
+        },
+    ];
+
+    private static ObservableClassificationTable MakePhysicalWzClassifications() => new()
+    {
+        TableId = "classifications",
+        Classifications =
+        [
+            new ObservableClassification
+            {
+                ObservableId = "candidate-w-z-vector-mode-ratio",
+                Classification = "physical-observable",
+                Rationale = "validated test ratio",
+                PhysicalClaimAllowed = true,
+            },
+        ],
+    };
+
+    private static WzPhysicalClaimFalsifierRelevanceAuditResult MakePhysicalClaimFalsifierRelevanceAudit() => new()
+    {
+        ResultId = "phase47-wz-physical-claim-falsifier-relevance-audit-v1",
+        SchemaVersion = "1.0.0",
+        TerminalStatus = "wz-physical-claim-target-clear-global-sidecars-blocked",
+        AlgorithmId = WzPhysicalClaimFalsifierRelevanceAudit.AlgorithmId,
+        TargetObservableId = "physical-w-z-mass-ratio",
+        TargetComparisonPassed = true,
+        SelectorVariationPassed = true,
+        SelectedModeIds = ["phase22-phase12-candidate-0", "phase22-phase12-candidate-2"],
+        SelectedSourceCandidateIds = ["phase12-candidate-0", "phase12-candidate-2"],
+        ActiveSevereFalsifierCount = 3,
+        TargetRelevantSevereFalsifierCount = 0,
+        GlobalSidecarSevereFalsifierCount = 3,
+        FalsifierAudits = [],
+        Diagnosis = ["test"],
+        ClosureRequirements = ["resolve global sidecar falsifiers or adopt target-scoped policy"],
+        Provenance = MakeProvenance(),
+    };
 
     private static string FindRepoRoot()
     {
