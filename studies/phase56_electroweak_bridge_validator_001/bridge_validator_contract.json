@@ -1,0 +1,55 @@
+{
+  "studyId": "phase56-electroweak-bridge-validator",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "bridge-validator-implemented",
+  "scope": "internal-electroweak-bridge-validation",
+  "sourceArtifacts": [
+    "studies/phase55_internal_electroweak_bridge_candidate_audit_001/weak_coupling_normalization_contract.json",
+    "studies/phase55_internal_electroweak_bridge_candidate_audit_001/internal_bridge_candidate_audit.json"
+  ],
+  "implementedTypes": [
+    "ElectroweakBridgeRecord",
+    "ElectroweakBridgeTable",
+    "ElectroweakBridgeValidator"
+  ],
+  "acceptedInputKinds": [
+    "normalized-internal-weak-coupling",
+    "validated-internal-mass-generation-relation"
+  ],
+  "rejectedInputKinds": [
+    "finite-difference-current-profile-hash",
+    "coupling-profile-mean-magnitude",
+    "coupling-profile-diagonal-mean-magnitude",
+    "coupling-profile-off-diagonal-mean-magnitude",
+    "target-fitted-W-or-Z-scale"
+  ],
+  "requiredValidationChecks": [
+    "bridge status is validated",
+    "bridge value is finite and positive",
+    "bridge uncertainty is finite and non-negative",
+    "weak-coupling normalization convention is declared",
+    "mass-generation relation is declared",
+    "physical-w-boson-mass-gev is excluded",
+    "physical-z-boson-mass-gev is excluded",
+    "validated bridge has no open closure requirements"
+  ],
+  "projectionStatus": {
+    "physical-w-boson-mass-gev": "blocked-until-record-passes-validator",
+    "physical-z-boson-mass-gev": "blocked-until-record-passes-validator"
+  },
+  "nextClosureSteps": [
+    "derive a candidate ElectroweakBridgeRecord from normalized internal weak-coupling or mass-generation evidence",
+    "run ElectroweakBridgeValidator.ValidateForAbsoluteWzProjection on that record",
+    "combine a passing bridge with the Phase54 Fermi-derived external scale",
+    "emit absolute W/Z mass observables only after validator success"
+  ],
+  "provenance": {
+    "createdAt": "2026-04-29T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase56-electroweak-bridge-validator",
+      "schemaVersion": "1.0"
+    },
+    "backend": "code-and-artifact"
+  }
+}
