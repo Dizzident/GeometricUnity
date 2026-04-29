@@ -1,0 +1,58 @@
+{
+  "terminalStatus": "bridge-derivation-inputs-blocked",
+  "records": [
+    {
+      "artifactId": "validated-wz-internal-modes",
+      "artifactKind": "physical-mode-records",
+      "status": "available",
+      "relevance": "required source modes for absolute W/Z projection",
+      "blockReasons": []
+    },
+    {
+      "artifactId": "external-electroweak-scale",
+      "artifactKind": "external-scale-input",
+      "status": "available",
+      "relevance": "required GeV electroweak scale input",
+      "blockReasons": []
+    },
+    {
+      "artifactId": "normalized-internal-weak-coupling",
+      "artifactKind": "bridge-input",
+      "status": "available",
+      "relevance": "accepted bridge input kind",
+      "blockReasons": []
+    },
+    {
+      "artifactId": "internal-mass-generation-relation",
+      "artifactKind": "bridge-input",
+      "status": "missing",
+      "relevance": "accepted bridge input kind",
+      "blockReasons": [
+        "validated internal mass-generation relation is missing"
+      ]
+    },
+    {
+      "artifactId": "scalar-sector-bridge",
+      "artifactKind": "bridge-supporting-sector",
+      "status": "missing",
+      "relevance": "possible mass-generation support evidence",
+      "blockReasons": [
+        "scalar/Higgs-sector bridge evidence is missing"
+      ]
+    },
+    {
+      "artifactId": "shared-wz-scale-check",
+      "artifactKind": "bridge-validation-check",
+      "status": "missing",
+      "relevance": "required consistency check before projection",
+      "blockReasons": [
+        "shared W/Z GeV-per-internal-mass-unit scale check is missing"
+      ]
+    }
+  ],
+  "closureRequirements": [
+    "validated internal mass-generation relation is missing",
+    "scalar/Higgs-sector bridge evidence is missing",
+    "shared W/Z GeV-per-internal-mass-unit scale check is missing"
+  ]
+}

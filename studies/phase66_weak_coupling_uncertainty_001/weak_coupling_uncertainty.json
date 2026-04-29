@@ -1,0 +1,21 @@
+{
+  "algorithmId": "phase66-weak-coupling-uncertainty-propagator-v1",
+  "terminalStatus": "weak-coupling-uncertainty-propagated",
+  "rawMatrixElementUncertainty": 0.004,
+  "generatorNormalizationScaleUncertainty": 0.0,
+  "candidate": {
+    "candidateId": "phase65-dimensionless-weak-coupling-amplitude-candidate",
+    "sourceKind": "normalized-internal-weak-coupling",
+    "normalizationConvention": "physical-weak-coupling-normalization:su2-canonical-trace-half-v1",
+    "couplingValue": 0.5656854249492381,
+    "couplingUncertainty": 0.0028284271247461905,
+    "variationMethod": "analytic-dirac-variation-matrix-element:v1",
+    "branchStabilityScore": null,
+    "excludedTargetObservableIds": [
+      "physical-w-boson-mass-gev",
+      "physical-z-boson-mass-gev"
+    ],
+    "provenanceId": "phase65-study-artifact"
+  },
+  "closureRequirements": []
+}

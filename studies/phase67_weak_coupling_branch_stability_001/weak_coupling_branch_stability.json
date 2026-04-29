@@ -1,0 +1,36 @@
+{
+  "algorithmId": "phase67-weak-coupling-branch-stability-builder-v1",
+  "terminalStatus": "weak-coupling-branch-stability-derived",
+  "relativeTolerance": 0.01,
+  "maxRelativeDeviation": 0.0002,
+  "branchStabilityScore": 0.98,
+  "variantValues": [
+    {
+      "variantId": "branch-a",
+      "couplingValue": 0.5656854249492381
+    },
+    {
+      "variantId": "branch-b",
+      "couplingValue": 0.5657985620342279
+    },
+    {
+      "variantId": "branch-c",
+      "couplingValue": 0.5655722878642483
+    }
+  ],
+  "candidate": {
+    "candidateId": "phase65-dimensionless-weak-coupling-amplitude-candidate",
+    "sourceKind": "normalized-internal-weak-coupling",
+    "normalizationConvention": "physical-weak-coupling-normalization:su2-canonical-trace-half-v1",
+    "couplingValue": 0.5656854249492381,
+    "couplingUncertainty": 0.0028284271247461905,
+    "variationMethod": "analytic-dirac-variation-matrix-element:v1",
+    "branchStabilityScore": 0.98,
+    "excludedTargetObservableIds": [
+      "physical-w-boson-mass-gev",
+      "physical-z-boson-mass-gev"
+    ],
+    "provenanceId": "phase65-study-artifact"
+  },
+  "closureRequirements": []
+}

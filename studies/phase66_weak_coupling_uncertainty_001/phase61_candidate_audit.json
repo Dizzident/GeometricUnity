@@ -1,0 +1,25 @@
+{
+  "algorithmId": "phase61-normalized-weak-coupling-input-auditor-v1",
+  "terminalStatus": "normalized-weak-coupling-inputs-blocked",
+  "acceptedCandidateCount": 0,
+  "rejectedCandidateCount": 1,
+  "requiredExcludedTargetObservableIds": [
+    "physical-w-boson-mass-gev",
+    "physical-z-boson-mass-gev"
+  ],
+  "minimumBranchStabilityScore": 0.95,
+  "records": [
+    {
+      "candidateId": "phase65-dimensionless-weak-coupling-amplitude-candidate",
+      "sourceKind": "normalized-internal-weak-coupling",
+      "status": "rejected",
+      "blockReasons": [
+        "branch stability score must be finite and at least 0.95"
+      ]
+    }
+  ],
+  "closureRequirements": [
+    "no accepted normalized weak-coupling candidate is available",
+    "branch stability score must be finite and at least 0.95"
+  ]
+}

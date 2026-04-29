@@ -1,0 +1,39 @@
+{
+  "algorithmId": "phase68-normalized-weak-coupling-candidate-promoter-v1",
+  "terminalStatus": "normalized-weak-coupling-candidate-promoted",
+  "candidate": {
+    "candidateId": "phase65-dimensionless-weak-coupling-amplitude-candidate",
+    "sourceKind": "normalized-internal-weak-coupling",
+    "normalizationConvention": "physical-weak-coupling-normalization:su2-canonical-trace-half-v1",
+    "couplingValue": 0.5656854249492381,
+    "couplingUncertainty": 0.0028284271247461905,
+    "variationMethod": "analytic-dirac-variation-matrix-element:v1",
+    "branchStabilityScore": 0.98,
+    "excludedTargetObservableIds": [
+      "physical-w-boson-mass-gev",
+      "physical-z-boson-mass-gev"
+    ],
+    "provenanceId": "phase65-study-artifact"
+  },
+  "phase61Audit": {
+    "algorithmId": "phase61-normalized-weak-coupling-input-auditor-v1",
+    "terminalStatus": "normalized-weak-coupling-inputs-ready",
+    "acceptedCandidateCount": 1,
+    "rejectedCandidateCount": 0,
+    "requiredExcludedTargetObservableIds": [
+      "physical-w-boson-mass-gev",
+      "physical-z-boson-mass-gev"
+    ],
+    "minimumBranchStabilityScore": 0.95,
+    "records": [
+      {
+        "candidateId": "phase65-dimensionless-weak-coupling-amplitude-candidate",
+        "sourceKind": "normalized-internal-weak-coupling",
+        "status": "accepted",
+        "blockReasons": []
+      }
+    ],
+    "closureRequirements": []
+  },
+  "closureRequirements": []
+}
