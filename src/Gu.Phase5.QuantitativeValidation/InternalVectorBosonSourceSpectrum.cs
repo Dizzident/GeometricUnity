@@ -20,6 +20,9 @@ public sealed class InternalVectorBosonSourceSpectrumCampaignSpec
     [JsonPropertyName("selectorCellBundleManifestPath")]
     public string? SelectorCellBundleManifestPath { get; init; }
 
+    [JsonPropertyName("identityFeaturePath")]
+    public string? IdentityFeaturePath { get; init; }
+
     [JsonPropertyName("branchVariantIds")]
     public required IReadOnlyList<string> BranchVariantIds { get; init; }
 

@@ -1,0 +1,41 @@
+{
+  "campaignId": "phase46-electroweak-term-wz-source-spectra",
+  "schemaVersion": "1.0.0",
+  "sourceCandidateTablePath": "../../phase21_source_readiness_campaign_001/source_candidates.json",
+  "readinessSpecPath": "../../phase21_source_readiness_campaign_001/config/source_readiness_campaign.json",
+  "selectorCellBundleManifestPath": "../../phase40_wz_selector_cell_bundle_materialization_001/cell_bundles/selector_cell_bundle_manifest.json",
+  "identityFeaturePath": "../../phase25_internal_electroweak_features_001/identity_features.json",
+  "branchVariantIds": [
+    "bg-variant-53b598740d9569b4",
+    "bg-variant-95ee11778cc7ac01",
+    "bg-variant-d840fea6e6d36748",
+    "bg-variant-d84f5d66fd98b842"
+  ],
+  "refinementLevels": [
+    "L0-2x2",
+    "L1-4x4",
+    "L2-8x8"
+  ],
+  "environmentIds": [
+    "env-toy-2d-trivial",
+    "env-structured-4x4",
+    "env-imported-repo-benchmark"
+  ],
+  "sourceQuantityIds": [
+    "mass-like-value",
+    "operator-eigenvalue",
+    "electroweak-feature-charge-anisotropy"
+  ],
+  "missingCellPolicy": "fail-closed",
+  "identityScope": "identity-feature-electroweak-term-vector-boson-source-candidates",
+  "provenance": {
+    "createdAt": "2026-04-28T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase46-electroweak-term-wz-source-spectra",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu",
+    "notes": "Phase46 selector-eigen W/Z source spectra include target-independent electroweak feature charge-anisotropy operator terms from Phase25 identity features."
+  }
+}

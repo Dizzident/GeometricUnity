@@ -1,0 +1,60 @@
+[
+  {
+    "modeId": "phase22-phase12-candidate-0",
+    "particleId": "w-boson",
+    "modeKind": "vector-boson-mass-mode",
+    "observableId": "phase22-phase12-candidate-0",
+    "value": 1.1158059937692792E-15,
+    "uncertainty": 1.3476944083805217E-18,
+    "unitFamily": "mass-energy",
+    "unit": "internal-mass-unit",
+    "status": "validated",
+    "environmentId": "env-imported-repo-benchmark",
+    "branchId": "bg-variant-53b598740d9569b4",
+    "refinementLevel": "L0-2x2",
+    "extractionMethod": "p28-wz-identity-rule-physical-artifact-promoter:v1:validated-w-boson-identity-rule-from-internal-features:p20-phase12-internal-vector-boson-source-adapter:v1",
+    "assumptions": [
+      "mode identity follows the P24/P27 internal W/Z identity-rule readiness result",
+      "external physical target values were not used to select this source mode"
+    ],
+    "closureRequirements": [],
+    "provenance": {
+      "createdAt": "2026-04-26T00:00:00+00:00",
+      "codeRevision": "working-tree",
+      "branch": {
+        "branchId": "phase28-wz-physical-prediction-artifact-promotion",
+        "schemaVersion": "1.0"
+      },
+      "backend": "cpu"
+    }
+  },
+  {
+    "modeId": "phase22-phase12-candidate-2",
+    "particleId": "z-boson",
+    "modeKind": "vector-boson-mass-mode",
+    "observableId": "phase22-phase12-candidate-2",
+    "value": 1.268406657962647E-15,
+    "uncertainty": 1.5805767578887164E-18,
+    "unitFamily": "mass-energy",
+    "unit": "internal-mass-unit",
+    "status": "validated",
+    "environmentId": "env-imported-repo-benchmark",
+    "branchId": "bg-variant-53b598740d9569b4",
+    "refinementLevel": "L0-2x2",
+    "extractionMethod": "p28-wz-identity-rule-physical-artifact-promoter:v1:validated-z-boson-identity-rule-from-internal-features:p20-phase12-internal-vector-boson-source-adapter:v1",
+    "assumptions": [
+      "mode identity follows the P24/P27 internal W/Z identity-rule readiness result",
+      "external physical target values were not used to select this source mode"
+    ],
+    "closureRequirements": [],
+    "provenance": {
+      "createdAt": "2026-04-26T00:00:00+00:00",
+      "codeRevision": "working-tree",
+      "branch": {
+        "branchId": "phase28-wz-physical-prediction-artifact-promotion",
+        "schemaVersion": "1.0"
+      },
+      "backend": "cpu"
+    }
+  }
+]

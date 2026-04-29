@@ -22,7 +22,7 @@
   ],
   "diagnosis": [
     "selected pair requires target-independent ratio scale 1.021088818212155, a fractional shift of 0.021088818212154914",
-    "Phase44 selector ratio envelope is [0.8617415263399019, 0.8654919922785442]",
+    "selector ratio envelope is [0.8617415263399019, 0.8654919922785442]",
     "inspected 72 selected W/Z selector-eigen spectrum artifact(s)",
     "72 inspected spectrum artifact(s) are solver-backed",
     "emitted selector-eigen spectra contain no electroweak, mixing, charge-sector, normalization-scale, or nontrivial mass-operator term evidence",

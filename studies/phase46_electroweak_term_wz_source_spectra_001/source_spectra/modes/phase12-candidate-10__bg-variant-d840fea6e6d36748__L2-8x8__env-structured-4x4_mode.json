@@ -1,0 +1,39 @@
+{
+  "modeRecordId": "phase12-candidate-10__bg-variant-d840fea6e6d36748__L2-8x8__env-structured-4x4-mode",
+  "sourceCandidateId": "phase12-candidate-10",
+  "sourceFamilyId": "family-10",
+  "branchVariantId": "bg-variant-d840fea6e6d36748",
+  "refinementLevel": "L2-8x8",
+  "environmentId": "env-structured-4x4",
+  "massLikeValue": 3.4643093722878456E-16,
+  "extractionError": 1E-18,
+  "gaugeLeakEnvelope": [
+    0,
+    0,
+    0
+  ],
+  "sourceArtifactPaths": [
+    "studies/phase12_joined_calculation_001/output/background_family/bosons/registry.json",
+    "studies/phase12_joined_calculation_001/output/background_family/modes/mode_families.json",
+    "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-a-20260315212202_spectrum.json",
+    "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-b-20260315212202_spectrum.json",
+    "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-a-20260315212202-mode-10.json",
+    "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-b-20260315212202-mode-6.json",
+    "studies/phase40_wz_selector_cell_bundle_materialization_001/cell_bundles/p40-bg-variant-d840fea6e6d36748__L2-8x8__env-structured-4x4/p40-bg-variant-d840fea6e6d36748__L2-8x8__env-structured-4x4-background.json"
+  ],
+  "selectorCellBundleId": "p40-bg-variant-d840fea6e6d36748__L2-8x8__env-structured-4x4",
+  "operatorBundleId": "p40-bg-variant-d840fea6e6d36748__L2-8x8__env-structured-4x4__phase12-candidate-10-operator-bundle",
+  "solverMethod": "explicit-dense",
+  "operatorType": "FullHessian",
+  "status": "computed",
+  "blockers": [],
+  "provenance": {
+    "createdAt": "2026-04-26T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase22-selector-source-spectra",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu"
+  }
+}

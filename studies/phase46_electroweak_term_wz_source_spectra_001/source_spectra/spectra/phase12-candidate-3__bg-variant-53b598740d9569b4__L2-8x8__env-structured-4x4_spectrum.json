@@ -1,0 +1,223 @@
+{
+  "spectrumId": "phase12-candidate-3__bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4-spectrum",
+  "schemaVersion": "1.0.0",
+  "sourceCandidateId": "phase12-candidate-3",
+  "branchVariantId": "bg-variant-53b598740d9569b4",
+  "refinementLevel": "L2-8x8",
+  "environmentId": "env-structured-4x4",
+  "modeRecordIds": [
+    "phase12-candidate-3__bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4-mode"
+  ],
+  "massLikeValues": [
+    1.0874296408132701E-15
+  ],
+  "eigenvalues": [
+    1.0874296408132701E-15,
+    1.1447698057733538E-15,
+    1.2003157118260958E-15
+  ],
+  "operatorBundleId": "p40-bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4__phase12-candidate-3-operator-bundle",
+  "solverMethod": "explicit-dense",
+  "operatorType": "FullHessian",
+  "selectorCellBundleId": "p40-bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4",
+  "selectorCellBundlePath": "studies/phase40_wz_selector_cell_bundle_materialization_001/cell_bundles/p40-bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4/p40-bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4-background.json",
+  "sourceArtifactPaths": [
+    "studies/phase12_joined_calculation_001/output/background_family/bosons/registry.json",
+    "studies/phase12_joined_calculation_001/output/background_family/modes/mode_families.json",
+    "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-a-20260315212202_spectrum.json",
+    "studies/phase12_joined_calculation_001/output/background_family/spectra/bg-phase12-bg-b-20260315212202_spectrum.json",
+    "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-a-20260315212202-mode-3.json",
+    "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-b-20260315212202-mode-1.json",
+    "studies/phase40_wz_selector_cell_bundle_materialization_001/cell_bundles/p40-bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4/p40-bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4-background.json"
+  ],
+  "operatorTermEvidence": {
+    "termId": "electroweak-feature-charge-anisotropy:v1",
+    "sourceCandidateId": "phase12-candidate-3",
+    "chargeSector": "charged",
+    "electroweakMultipletId": "su2-adjoint-triplet:canonical-basis",
+    "couplingSignature": "finite-difference-current-profile:8cae5bb3ecdbf4ac",
+    "couplingMeanMagnitude": 0.061687670314778315,
+    "dominantBasisEnergyFraction": 0.5433911197951045,
+    "basisAnisotropy": 0.21005778646177115,
+    "relativeMassShift": 0.012957975478305841,
+    "blockParticipationFraction": 0.2717454567765495
+  },
+  "modeRecords": [
+    {
+      "modeId": "p40-bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4__phase12-candidate-3-mode-0",
+      "backgroundId": "p40-bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4__phase12-candidate-3",
+      "operatorType": "FullHessian",
+      "eigenvalue": 1.0874296408132701E-15,
+      "residualNorm": 0,
+      "normalizationConvention": "unit-M-norm",
+      "multiplicityClusterId": "p40-bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4__phase12-candidate-3-cluster-0",
+      "gaugeLeakScore": 0,
+      "modeVector": [
+        1,
+        0,
+        0
+      ],
+      "modeIndex": 0,
+      "tensorEnergyFractions": {
+        "connection-1form": 0.7282545432234505,
+        "electroweak-feature-term": 0.2717454567765495
+      },
+      "blockEnergyFractions": {
+        "connection": 0.7282545432234505,
+        "electroweak-mixing": 0.2717454567765495
+      }
+    },
+    {
+      "modeId": "p40-bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4__phase12-candidate-3-mode-1",
+      "backgroundId": "p40-bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4__phase12-candidate-3",
+      "operatorType": "FullHessian",
+      "eigenvalue": 1.1447698057733538E-15,
+      "residualNorm": 0,
+      "normalizationConvention": "unit-M-norm",
+      "multiplicityClusterId": "p40-bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4__phase12-candidate-3-cluster-0",
+      "gaugeLeakScore": 0,
+      "modeVector": [
+        0,
+        1,
+        0
+      ],
+      "modeIndex": 1,
+      "tensorEnergyFractions": {
+        "connection-1form": 0.7282545432234505,
+        "electroweak-feature-term": 0.2717454567765495
+      },
+      "blockEnergyFractions": {
+        "connection": 0.7282545432234505,
+        "electroweak-mixing": 0.2717454567765495
+      }
+    },
+    {
+      "modeId": "p40-bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4__phase12-candidate-3-mode-2",
+      "backgroundId": "p40-bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4__phase12-candidate-3",
+      "operatorType": "FullHessian",
+      "eigenvalue": 1.2003157118260958E-15,
+      "residualNorm": 0,
+      "normalizationConvention": "unit-M-norm",
+      "multiplicityClusterId": "p40-bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4__phase12-candidate-3-cluster-0",
+      "gaugeLeakScore": 0,
+      "modeVector": [
+        0,
+        0,
+        1
+      ],
+      "modeIndex": 2,
+      "tensorEnergyFractions": {
+        "connection-1form": 0.7282545432234505,
+        "electroweak-feature-term": 0.2717454567765495
+      },
+      "blockEnergyFractions": {
+        "connection": 0.7282545432234505,
+        "electroweak-mixing": 0.2717454567765495
+      }
+    }
+  ],
+  "spectrumBundle": {
+    "spectrumId": "spectrum-p40-bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4__phase12-candidate-3-20260429000904",
+    "backgroundId": "p40-bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4__phase12-candidate-3",
+    "operatorBundleId": "p40-bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4__phase12-candidate-3-operator-bundle",
+    "operatorType": "FullHessian",
+    "formulation": "PenaltyFixed",
+    "solverMethod": "explicit-dense",
+    "stateDimension": 3,
+    "modes": [
+      {
+        "modeId": "p40-bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4__phase12-candidate-3-mode-0",
+        "backgroundId": "p40-bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4__phase12-candidate-3",
+        "operatorType": "FullHessian",
+        "eigenvalue": 1.0874296408132701E-15,
+        "residualNorm": 0,
+        "normalizationConvention": "unit-M-norm",
+        "multiplicityClusterId": "p40-bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4__phase12-candidate-3-cluster-0",
+        "gaugeLeakScore": 0,
+        "modeVector": [
+          1,
+          0,
+          0
+        ],
+        "modeIndex": 0,
+        "tensorEnergyFractions": {
+          "source-mode": 1
+        },
+        "blockEnergyFractions": {
+          "connection": 1
+        }
+      },
+      {
+        "modeId": "p40-bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4__phase12-candidate-3-mode-1",
+        "backgroundId": "p40-bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4__phase12-candidate-3",
+        "operatorType": "FullHessian",
+        "eigenvalue": 1.1447698057733538E-15,
+        "residualNorm": 0,
+        "normalizationConvention": "unit-M-norm",
+        "multiplicityClusterId": "p40-bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4__phase12-candidate-3-cluster-0",
+        "gaugeLeakScore": 0,
+        "modeVector": [
+          0,
+          1,
+          0
+        ],
+        "modeIndex": 1,
+        "tensorEnergyFractions": {
+          "source-mode": 1
+        },
+        "blockEnergyFractions": {
+          "connection": 1
+        }
+      },
+      {
+        "modeId": "p40-bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4__phase12-candidate-3-mode-2",
+        "backgroundId": "p40-bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4__phase12-candidate-3",
+        "operatorType": "FullHessian",
+        "eigenvalue": 1.2003157118260958E-15,
+        "residualNorm": 0,
+        "normalizationConvention": "unit-M-norm",
+        "multiplicityClusterId": "p40-bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4__phase12-candidate-3-cluster-0",
+        "gaugeLeakScore": 0,
+        "modeVector": [
+          0,
+          0,
+          1
+        ],
+        "modeIndex": 2,
+        "tensorEnergyFractions": {
+          "source-mode": 1
+        },
+        "blockEnergyFractions": {
+          "connection": 1
+        }
+      }
+    ],
+    "clusters": [
+      {
+        "clusterId": "p40-bg-variant-53b598740d9569b4__L2-8x8__env-structured-4x4__phase12-candidate-3-cluster-0",
+        "modeIndices": [
+          0,
+          1,
+          2
+        ],
+        "multiplicity": 3,
+        "meanEigenvalue": 1.1441717194709066E-15,
+        "eigenvalueSpread": 1.1288607101282568E-16
+      }
+    ],
+    "convergenceStatus": "converged",
+    "iterationsUsed": 0,
+    "maxOrthogonalityDefect": 0,
+    "computedWithBackend": "cpu",
+    "diagnosticNotes": []
+  },
+  "provenance": {
+    "createdAt": "2026-04-26T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase22-selector-source-spectra",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu"
+  }
+}

@@ -4517,6 +4517,9 @@ static int RunInternalVectorBosonSourceSpectrumCampaign(string[] args)
         var sourceCandidatePath = ResolvePath(specDir, spec.SourceCandidateTablePath);
         var readinessSpecPath = ResolvePath(specDir, spec.ReadinessSpecPath);
         var selectorCellBundleManifestPath = ResolveSelectorCellBundleManifestPath(specDir, cellBundlesPath, spec.SelectorCellBundleManifestPath);
+        var identityFeaturePath = string.IsNullOrWhiteSpace(spec.IdentityFeaturePath)
+            ? null
+            : ResolvePath(specDir, spec.IdentityFeaturePath);
         var sourceTable = GuJsonDefaults.Deserialize<InternalVectorBosonSourceCandidateTable>(File.ReadAllText(sourceCandidatePath))
             ?? throw new InvalidOperationException($"Failed to deserialize source candidate table from {sourceCandidatePath}.");
         var readinessSpec = GuJsonDefaults.Deserialize<InternalVectorBosonSourceReadinessCampaignSpec>(File.ReadAllText(readinessSpecPath))
@@ -4530,7 +4533,7 @@ static int RunInternalVectorBosonSourceSpectrumCampaign(string[] args)
         };
 
         Directory.CreateDirectory(outDir);
-        var result = InternalVectorBosonSourceMatrixCampaign.Run(spec, sourceTable, readinessSpec, outDir, provenance, selectorCellBundleManifestPath);
+        var result = InternalVectorBosonSourceMatrixCampaign.Run(spec, sourceTable, readinessSpec, outDir, provenance, selectorCellBundleManifestPath, identityFeaturePath);
         File.WriteAllText(Path.Combine(outDir, "spectra_manifest.json"), GuJsonDefaults.Serialize(result.Manifest));
         File.WriteAllText(Path.Combine(outDir, "mode_families.json"), GuJsonDefaults.Serialize(result.ModeFamilies));
         File.WriteAllText(Path.Combine(outDir, "source_candidates.json"), GuJsonDefaults.Serialize(result.SourceCandidates));
@@ -4543,6 +4546,8 @@ static int RunInternalVectorBosonSourceSpectrumCampaign(string[] args)
         Console.WriteLine($"  ready candidates: {result.SourceCandidates.Candidates.Count(c => string.Equals(c.Status, "candidate-source-ready", StringComparison.Ordinal))}");
         if (!string.IsNullOrWhiteSpace(selectorCellBundleManifestPath))
             Console.WriteLine($"  selectorCellBundles: {selectorCellBundleManifestPath}");
+        if (!string.IsNullOrWhiteSpace(identityFeaturePath))
+            Console.WriteLine($"  identityFeatures: {identityFeaturePath}");
         return 0;
     }
     catch (Exception ex)

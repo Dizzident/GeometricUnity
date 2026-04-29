@@ -1,0 +1,219 @@
+{
+  "resultId": "phase28-wz-physical-prediction-artifact-promotion-v1",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "physical-prediction-artifacts-ready",
+  "algorithmId": "p28-wz-identity-rule-physical-artifact-promoter:v1",
+  "physicalModeRecords": [
+    {
+      "modeId": "phase22-phase12-candidate-0",
+      "particleId": "w-boson",
+      "modeKind": "vector-boson-mass-mode",
+      "observableId": "phase22-phase12-candidate-0",
+      "value": 1.1158059937692792E-15,
+      "uncertainty": 1.3476944083805217E-18,
+      "unitFamily": "mass-energy",
+      "unit": "internal-mass-unit",
+      "status": "validated",
+      "environmentId": "env-imported-repo-benchmark",
+      "branchId": "bg-variant-53b598740d9569b4",
+      "refinementLevel": "L0-2x2",
+      "extractionMethod": "p28-wz-identity-rule-physical-artifact-promoter:v1:validated-w-boson-identity-rule-from-internal-features:p20-phase12-internal-vector-boson-source-adapter:v1",
+      "assumptions": [
+        "mode identity follows the P24/P27 internal W/Z identity-rule readiness result",
+        "external physical target values were not used to select this source mode"
+      ],
+      "closureRequirements": [],
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase28-wz-physical-prediction-artifact-promotion",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    },
+    {
+      "modeId": "phase22-phase12-candidate-2",
+      "particleId": "z-boson",
+      "modeKind": "vector-boson-mass-mode",
+      "observableId": "phase22-phase12-candidate-2",
+      "value": 1.268406657962647E-15,
+      "uncertainty": 1.5805767578887164E-18,
+      "unitFamily": "mass-energy",
+      "unit": "internal-mass-unit",
+      "status": "validated",
+      "environmentId": "env-imported-repo-benchmark",
+      "branchId": "bg-variant-53b598740d9569b4",
+      "refinementLevel": "L0-2x2",
+      "extractionMethod": "p28-wz-identity-rule-physical-artifact-promoter:v1:validated-z-boson-identity-rule-from-internal-features:p20-phase12-internal-vector-boson-source-adapter:v1",
+      "assumptions": [
+        "mode identity follows the P24/P27 internal W/Z identity-rule readiness result",
+        "external physical target values were not used to select this source mode"
+      ],
+      "closureRequirements": [],
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase28-wz-physical-prediction-artifact-promotion",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    }
+  ],
+  "modeIdentificationEvidence": {
+    "tableId": "phase28-wz-mode-identification-evidence-v1",
+    "evidence": [
+      {
+        "evidenceId": "phase28-w-boson-mode-identification-evidence",
+        "modeId": "phase22-phase12-candidate-0",
+        "particleId": "w-boson",
+        "modeKind": "vector-boson-mass-mode",
+        "sourceObservableIds": [
+          "phase22-phase12-candidate-0"
+        ],
+        "environmentId": "env-imported-repo-benchmark",
+        "branchId": "bg-variant-53b598740d9569b4",
+        "refinementLevel": "L0-2x2",
+        "derivationId": "p28-wz-identity-rule-physical-artifact-promoter:v1:p24-wz-identity-feature-readiness:v1:su2-adjoint-triplet:canonical-basis:charged:finite-difference-current-profile:2448ea7904cfb0ae",
+        "status": "validated",
+        "assumptions": [
+          "evidence is derived from internal electroweak identity features and charge-sector convention",
+          "external physical target values were not used to validate this identity evidence"
+        ],
+        "closureRequirements": [],
+        "provenance": {
+          "createdAt": "2026-04-26T00:00:00+00:00",
+          "codeRevision": "working-tree",
+          "branch": {
+            "branchId": "phase28-wz-physical-prediction-artifact-promotion",
+            "schemaVersion": "1.0"
+          },
+          "backend": "cpu"
+        }
+      },
+      {
+        "evidenceId": "phase28-z-boson-mode-identification-evidence",
+        "modeId": "phase22-phase12-candidate-2",
+        "particleId": "z-boson",
+        "modeKind": "vector-boson-mass-mode",
+        "sourceObservableIds": [
+          "phase22-phase12-candidate-2"
+        ],
+        "environmentId": "env-imported-repo-benchmark",
+        "branchId": "bg-variant-53b598740d9569b4",
+        "refinementLevel": "L0-2x2",
+        "derivationId": "p28-wz-identity-rule-physical-artifact-promoter:v1:p24-wz-identity-feature-readiness:v1:su2-adjoint-triplet:canonical-basis:neutral:finite-difference-current-profile:581c5b2f82ff6b85",
+        "status": "validated",
+        "assumptions": [
+          "evidence is derived from internal electroweak identity features and charge-sector convention",
+          "external physical target values were not used to validate this identity evidence"
+        ],
+        "closureRequirements": [],
+        "provenance": {
+          "createdAt": "2026-04-26T00:00:00+00:00",
+          "codeRevision": "working-tree",
+          "branch": {
+            "branchId": "phase28-wz-physical-prediction-artifact-promotion",
+            "schemaVersion": "1.0"
+          },
+          "backend": "cpu"
+        }
+      }
+    ]
+  },
+  "observables": [
+    {
+      "observableId": "physical-w-z-mass-ratio",
+      "value": 0.8796910570948282,
+      "uncertainty": {
+        "branchVariation": 0.0005849002612336879,
+        "refinementError": 0,
+        "extractionError": 0.001050027591671286,
+        "environmentSensitivity": 0.000941223154433382,
+        "totalUncertainty": 0.001526619561417894
+      },
+      "branchId": "bg-variant-53b598740d9569b4",
+      "environmentId": "env-imported-repo-benchmark",
+      "refinementLevel": "L0-2x2",
+      "extractionMethod": "positive-mode-ratio:phase22-phase12-candidate-0/phase22-phase12-candidate-2:p28-wz-identity-rule-physical-artifact-promoter:v1",
+      "distributionModel": "gaussian",
+      "provenance": {
+        "createdAt": "2026-04-26T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase28-wz-physical-prediction-artifact-promotion",
+          "schemaVersion": "1.0"
+        },
+        "backend": "cpu"
+      }
+    }
+  ],
+  "physicalObservableMappings": {
+    "tableId": "phase28-wz-physical-observable-mappings-v1",
+    "mappings": [
+      {
+        "mappingId": "phase28-w-z-vector-mode-ratio-to-physical-mass-ratio",
+        "particleId": "electroweak-sector",
+        "physicalObservableType": "mass-ratio",
+        "sourceComputedObservableId": "physical-w-z-mass-ratio",
+        "targetPhysicalObservableId": "physical-w-z-mass-ratio",
+        "requiredEnvironmentId": "env-imported-repo-benchmark",
+        "requiredBranchId": "bg-variant-53b598740d9569b4",
+        "unitFamily": "dimensionless",
+        "status": "validated",
+        "assumptions": [
+          "source observable is a dimensionless W/Z mode ratio from internal identity-rule-ready modes",
+          "external physical target values were not used to construct the mapping"
+        ],
+        "closureRequirements": []
+      }
+    ]
+  },
+  "observableClassifications": {
+    "tableId": "phase28-wz-observable-classifications-v1",
+    "classifications": [
+      {
+        "observableId": "physical-w-z-mass-ratio",
+        "classification": "physical-observable",
+        "rationale": "P27 identity rules validate the W/Z mode identities, and P28 computes the dimensionless W/Z ratio from those internal modes.",
+        "physicalClaimAllowed": true
+      }
+    ]
+  },
+  "physicalCalibrations": {
+    "tableId": "phase28-wz-physical-calibrations-v1",
+    "calibrations": [
+      {
+        "calibrationId": "phase28-dimensionless-wz-ratio-identity-normalization",
+        "mappingId": "phase28-w-z-vector-mode-ratio-to-physical-mass-ratio",
+        "sourceComputedObservableId": "physical-w-z-mass-ratio",
+        "sourceUnitFamily": "dimensionless",
+        "targetUnitFamily": "dimensionless",
+        "targetUnit": "dimensionless",
+        "scaleFactor": 1,
+        "scaleUncertainty": 0,
+        "status": "validated",
+        "method": "dimensionless-identity-normalization-from-validated-wz-ratio",
+        "source": "phase28-wz-identity-rule-physical-artifact-promoter",
+        "assumptions": [
+          "dimensionless ratio comparison requires no physical unit scale conversion",
+          "identity normalization applies only to the ratio, not to either absolute boson mass"
+        ],
+        "closureRequirements": []
+      }
+    ]
+  },
+  "closureRequirements": [],
+  "provenance": {
+    "createdAt": "2026-04-26T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase28-wz-physical-prediction-artifact-promotion",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu"
+  }
+}

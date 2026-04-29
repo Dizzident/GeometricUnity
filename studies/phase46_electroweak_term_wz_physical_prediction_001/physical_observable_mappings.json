@@ -1,0 +1,21 @@
+{
+  "tableId": "phase28-wz-physical-observable-mappings-v1",
+  "mappings": [
+    {
+      "mappingId": "phase28-w-z-vector-mode-ratio-to-physical-mass-ratio",
+      "particleId": "electroweak-sector",
+      "physicalObservableType": "mass-ratio",
+      "sourceComputedObservableId": "physical-w-z-mass-ratio",
+      "targetPhysicalObservableId": "physical-w-z-mass-ratio",
+      "requiredEnvironmentId": "env-imported-repo-benchmark",
+      "requiredBranchId": "bg-variant-53b598740d9569b4",
+      "unitFamily": "dimensionless",
+      "status": "validated",
+      "assumptions": [
+        "source observable is a dimensionless W/Z mode ratio from internal identity-rule-ready modes",
+        "external physical target values were not used to construct the mapping"
+      ],
+      "closureRequirements": []
+    }
+  ]
+}

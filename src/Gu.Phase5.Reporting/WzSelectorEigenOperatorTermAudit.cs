@@ -233,7 +233,7 @@ public static class WzSelectorEigenOperatorTermAudit
             $"selected pair requires target-independent ratio scale {requiredScale:R}, a fractional shift of {requiredShift:R}",
         };
         if (selectorMin is not null && selectorMax is not null)
-            diagnosis.Add($"Phase44 selector ratio envelope is [{selectorMin.Value:R}, {selectorMax.Value:R}]");
+            diagnosis.Add($"selector ratio envelope is [{selectorMin.Value:R}, {selectorMax.Value:R}]");
         diagnosis.Add($"inspected {records.Count} selected W/Z selector-eigen spectrum artifact(s)");
         diagnosis.Add($"{records.Count(r => r.SolverBacked)} inspected spectrum artifact(s) are solver-backed");
         if (termEvidenceCount == 0)

@@ -1,0 +1,42 @@
+{
+  "resultId": "phase45-wz-selector-eigen-operator-term-audit-v1",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "wz-selector-eigen-operator-term-ready",
+  "algorithmId": "p45-wz-selector-eigen-operator-term-audit:v1",
+  "selectedPairId": "phase22-phase12-candidate-0/phase22-phase12-candidate-2",
+  "requiredScaleToTarget": 1.0018971920786413,
+  "requiredRatioShiftFraction": 0.0018971920786412522,
+  "selectorRatioMin": 0.8782652373172205,
+  "selectorRatioMax": 0.882051476946298,
+  "inspectedSpectrumCount": 72,
+  "solverBackedSpectrumCount": 72,
+  "nonTrivialOperatorTermEvidenceCount": 72,
+  "observedOperatorTypes": [
+    "FullHessian"
+  ],
+  "observedSolverMethods": [
+    "explicit-dense"
+  ],
+  "observedModeBlocks": [
+    "connection",
+    "electroweak-mixing"
+  ],
+  "diagnosis": [
+    "selected pair requires target-independent ratio scale 1.0018971920786413, a fractional shift of 0.0018971920786412522",
+    "selector ratio envelope is [0.8782652373172205, 0.882051476946298]",
+    "inspected 72 selected W/Z selector-eigen spectrum artifact(s)",
+    "72 inspected spectrum artifact(s) are solver-backed",
+    "72 emitted spectrum artifact(s) contain nontrivial operator-term evidence",
+    "observed emitted mode energy block(s): connection, electroweak-mixing"
+  ],
+  "closureRequirements": [],
+  "provenance": {
+    "createdAt": "2026-04-28T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase45-wz-selector-eigen-operator-term-audit",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu"
+  }
+}

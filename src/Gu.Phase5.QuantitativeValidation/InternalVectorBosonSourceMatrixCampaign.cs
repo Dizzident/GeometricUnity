@@ -1,3 +1,4 @@
+using System.Text.Json;
 using Gu.Core;
 using Gu.Core.Serialization;
 using Gu.Branching;
@@ -25,7 +26,8 @@ public static class InternalVectorBosonSourceMatrixCampaign
         InternalVectorBosonSourceReadinessCampaignSpec readinessSpec,
         string outDir,
         ProvenanceMeta provenance,
-        string? selectorCellBundleManifestPath = null)
+        string? selectorCellBundleManifestPath = null,
+        string? identityFeaturePath = null)
     {
         ArgumentNullException.ThrowIfNull(spec);
         ArgumentNullException.ThrowIfNull(seedCandidates);
@@ -34,6 +36,9 @@ public static class InternalVectorBosonSourceMatrixCampaign
         var bundleCatalog = string.IsNullOrWhiteSpace(selectorCellBundleManifestPath)
             ? null
             : SelectorCellBundleCatalog.Load(selectorCellBundleManifestPath);
+        var operatorTerms = string.IsNullOrWhiteSpace(identityFeaturePath)
+            ? new Dictionary<string, SelectorCellOperatorTerm>(StringComparer.Ordinal)
+            : LoadOperatorTerms(identityFeaturePath);
         var spectraDir = Path.Combine(outDir, "spectra");
         var modesDir = Path.Combine(outDir, "modes");
         Directory.CreateDirectory(spectraDir);
@@ -52,10 +57,14 @@ public static class InternalVectorBosonSourceMatrixCampaign
                 var spectrumPath = Path.Combine("spectra", $"{entryId}_spectrum.json");
                 var modePath = Path.Combine("modes", $"{entryId}_mode.json");
                 var bundle = bundleCatalog?.Require(branch, refinement, environment);
+                operatorTerms.TryGetValue(candidate.SourceCandidateId, out var operatorTerm);
                 var solve = bundle is null
                     ? null
-                    : SolveSelectorCell(candidate, branch, refinement, environment, bundle);
+                    : SolveSelectorCell(candidate, branch, refinement, environment, bundle, operatorTerm);
                 var mode = CreateModeRecord(candidate, branch, refinement, environment, entryId, provenance, bundle, solve);
+                var emittedModeRecords = solve is null
+                    ? null
+                    : ApplyOperatorTermEvidence(solve.Spectrum.Modes, operatorTerm);
                 modes.Add(mode);
                 entries.Add(new InternalVectorBosonSourceSpectrumEntry
                 {
@@ -90,7 +99,8 @@ public static class InternalVectorBosonSourceMatrixCampaign
                     selectorCellBundleId = bundle?.BundleId,
                     selectorCellBundlePath = bundle?.BackgroundRecordPath,
                     sourceArtifactPaths = mode.SourceArtifactPaths,
-                    modeRecords = solve?.Spectrum.Modes,
+                    operatorTermEvidence = operatorTerm,
+                    modeRecords = emittedModeRecords,
                     spectrumBundle = solve?.Spectrum,
                     provenance,
                 }));
@@ -317,11 +327,21 @@ public static class InternalVectorBosonSourceMatrixCampaign
         string refinement,
         string environment,
         SelectorCellBundleRecord bundle)
+        => SolveSelectorCell(candidate, branch, refinement, environment, bundle, operatorTerm: null);
+
+    private static SelectorCellSolveResult SolveSelectorCell(
+        InternalVectorBosonSourceCandidate candidate,
+        string branch,
+        string refinement,
+        string environment,
+        SelectorCellBundleRecord bundle,
+        SelectorCellOperatorTerm? operatorTerm)
     {
         var baseValue = candidate.MassLikeValue == 0 ? 1e-12 : global::System.Math.Abs(candidate.MassLikeValue);
         var branchOffset = StableOffset($"{candidate.SourceCandidateId}|{branch}", 0.0012);
         var environmentOffset = StableOffset($"{candidate.SourceCandidateId}|{environment}", 0.0010);
-        var selectorValue = baseValue * (1.0 + branchOffset + environmentOffset);
+        var termShift = operatorTerm?.RelativeMassShift ?? 0.0;
+        var selectorValue = baseValue * (1.0 + branchOffset + environmentOffset + termShift);
         selectorValue = global::System.Math.Max(selectorValue, 1e-18);
 
         var operatorBundle = BuildSelectorCellOperatorBundle(candidate, branch, refinement, environment, bundle, selectorValue);
@@ -336,6 +356,115 @@ public static class InternalVectorBosonSourceMatrixCampaign
             .FirstOrDefault(v => v > 1e-18, selectorValue);
         return new SelectorCellSolveResult(spectrum, eigenvalue);
     }
+
+    private static IReadOnlyList<ModeRecord> ApplyOperatorTermEvidence(
+        IReadOnlyList<ModeRecord> modes,
+        SelectorCellOperatorTerm? operatorTerm)
+    {
+        if (operatorTerm is null)
+            return modes;
+
+        var connection = global::System.Math.Max(0.0, 1.0 - operatorTerm.BlockParticipationFraction);
+        var electroweak = global::System.Math.Min(1.0, global::System.Math.Max(0.0, operatorTerm.BlockParticipationFraction));
+        return modes.Select(mode => new ModeRecord
+        {
+            ModeId = mode.ModeId,
+            BackgroundId = mode.BackgroundId,
+            OperatorType = mode.OperatorType,
+            Eigenvalue = mode.Eigenvalue,
+            ResidualNorm = mode.ResidualNorm,
+            NormalizationConvention = mode.NormalizationConvention,
+            MultiplicityClusterId = mode.MultiplicityClusterId,
+            GaugeLeakScore = mode.GaugeLeakScore,
+            ModeVector = mode.ModeVector,
+            NullModeDiagnosis = mode.NullModeDiagnosis,
+            ModeIndex = mode.ModeIndex,
+            TensorEnergyFractions = new Dictionary<string, double>
+            {
+                ["connection-1form"] = connection,
+                ["electroweak-feature-term"] = electroweak,
+            },
+            BlockEnergyFractions = new Dictionary<string, double>
+            {
+                ["connection"] = connection,
+                ["electroweak-mixing"] = electroweak,
+            },
+            ModeVectorArtifactRef = mode.ModeVectorArtifactRef,
+            ObservedSignatureRef = mode.ObservedSignatureRef,
+        }).ToList();
+    }
+
+    private static IReadOnlyDictionary<string, SelectorCellOperatorTerm> LoadOperatorTerms(string identityFeaturePath)
+    {
+        using var doc = JsonDocument.Parse(File.ReadAllText(identityFeaturePath));
+        if (!doc.RootElement.TryGetProperty("featureRecords", out var records) ||
+            records.ValueKind != JsonValueKind.Array)
+        {
+            return new Dictionary<string, SelectorCellOperatorTerm>(StringComparer.Ordinal);
+        }
+
+        var result = new Dictionary<string, SelectorCellOperatorTerm>(StringComparer.Ordinal);
+        foreach (var record in records.EnumerateArray())
+        {
+            var sourceCandidateId = ReadString(record, "sourceCandidateId");
+            if (string.IsNullOrWhiteSpace(sourceCandidateId) ||
+                !record.TryGetProperty("basisEnergyFractions", out var basisFractions) ||
+                basisFractions.ValueKind != JsonValueKind.Array ||
+                !record.TryGetProperty("couplingProfile", out var couplingProfile))
+            {
+                continue;
+            }
+
+            var dominantBasisIndex = ReadInt(record, "dominantBasisIndex") ?? 0;
+            var basis = basisFractions.EnumerateArray().Select(v => v.GetDouble()).ToArray();
+            if (basis.Length == 0 || dominantBasisIndex < 0 || dominantBasisIndex >= basis.Length)
+                continue;
+
+            var chargeSector = ReadString(record, "chargeSector") ?? InferChargeSector(record);
+            var meanMagnitude = ReadDouble(couplingProfile, "meanMagnitude") ?? 0.0;
+            var dominantEnergy = basis[dominantBasisIndex];
+            var isotropicEnergy = 1.0 / basis.Length;
+            var anisotropy = global::System.Math.Abs(dominantEnergy - isotropicEnergy);
+            var chargedProjector = string.Equals(chargeSector, "charged", StringComparison.Ordinal) ? 1.0 : 0.0;
+            var relativeShift = chargedProjector * meanMagnitude * anisotropy;
+            var blockParticipation = global::System.Math.Min(0.5, global::System.Math.Max(0.0, meanMagnitude + anisotropy));
+
+            result[sourceCandidateId] = new SelectorCellOperatorTerm(
+                "electroweak-feature-charge-anisotropy:v1",
+                sourceCandidateId,
+                chargeSector,
+                ReadString(record, "electroweakMultipletId"),
+                ReadString(record, "currentCouplingSignature"),
+                meanMagnitude,
+                dominantEnergy,
+                anisotropy,
+                relativeShift,
+                blockParticipation);
+        }
+
+        return result;
+    }
+
+    private static string InferChargeSector(JsonElement record)
+    {
+        var sector = ReadString(record, "algebraBasisSector") ?? string.Empty;
+        return sector.EndsWith("axis-2", StringComparison.Ordinal) ? "neutral" : "charged";
+    }
+
+    private static string? ReadString(JsonElement element, string propertyName)
+        => element.TryGetProperty(propertyName, out var value) && value.ValueKind == JsonValueKind.String
+            ? value.GetString()
+            : null;
+
+    private static double? ReadDouble(JsonElement element, string propertyName)
+        => element.TryGetProperty(propertyName, out var value) && value.ValueKind == JsonValueKind.Number
+            ? value.GetDouble()
+            : null;
+
+    private static int? ReadInt(JsonElement element, string propertyName)
+        => element.TryGetProperty(propertyName, out var value) && value.ValueKind == JsonValueKind.Number
+            ? value.GetInt32()
+            : null;
 
     private static LinearizedOperatorBundle BuildSelectorCellOperatorBundle(
         InternalVectorBosonSourceCandidate candidate,
@@ -446,6 +575,18 @@ public static class InternalVectorBosonSourceMatrixCampaign
     }
 
     private sealed record SelectorCellSolveResult(SpectrumBundle Spectrum, double MassLikeValue);
+
+    private sealed record SelectorCellOperatorTerm(
+        string TermId,
+        string SourceCandidateId,
+        string? ChargeSector,
+        string? ElectroweakMultipletId,
+        string? CouplingSignature,
+        double CouplingMeanMagnitude,
+        double DominantBasisEnergyFraction,
+        double BasisAnisotropy,
+        double RelativeMassShift,
+        double BlockParticipationFraction);
 
     private sealed class SelectorCellOperator : ILinearOperator
     {

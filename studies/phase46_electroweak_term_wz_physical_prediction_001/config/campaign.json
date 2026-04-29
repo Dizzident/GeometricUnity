@@ -1,0 +1,120 @@
+{
+  "campaignId": "phase46-electroweak-term-wz-physical-prediction",
+  "schemaVersion": "1.1.0",
+  "branchFamilySpec": {
+    "studyId": "phase9-su2-real-bridge-backed-branch-family",
+    "branchVariantIds": [
+      "bg-variant-95ee11778cc7ac01",
+      "bg-variant-d840fea6e6d36748",
+      "bg-variant-d84f5d66fd98b842",
+      "bg-variant-53b598740d9569b4"
+    ],
+    "targetQuantityIds": [
+      "residual-norm",
+      "stationarity-norm",
+      "objective-value",
+      "gauge-violation",
+      "solver-iterations"
+    ],
+    "absoluteTolerance": 0.00001,
+    "relativeTolerance": 0.1
+  },
+  "refinementSpec": {
+    "studyId": "phase5-su2-refinement-ladder",
+    "schemaVersion": "1.0",
+    "branchManifestId": "phase8-real-atlas-control",
+    "targetQuantities": [
+      "residual-norm",
+      "stationarity-norm",
+      "objective-value",
+      "gauge-violation",
+      "solver-iterations"
+    ],
+    "refinementLevels": [
+      {
+        "levelId": "L0-2x2",
+        "meshParameterX": 1.0,
+        "meshParameterF": 1.0,
+        "description": "2x2 toy mesh"
+      },
+      {
+        "levelId": "L1-4x4",
+        "meshParameterX": 0.5,
+        "meshParameterF": 0.5,
+        "description": "4x4 structured mesh"
+      },
+      {
+        "levelId": "L2-8x8",
+        "meshParameterX": 0.25,
+        "meshParameterF": 0.25,
+        "description": "8x8 structured mesh"
+      }
+    ],
+    "provenance": {
+      "createdAt": "2026-04-28T00:00:00+00:00",
+      "codeRevision": "working-tree",
+      "branch": {
+        "branchId": "phase46-electroweak-term-wz-physical-prediction",
+        "schemaVersion": "1.0"
+      },
+      "backend": "cpu"
+    }
+  },
+  "environmentCampaignSpec": {
+    "campaignId": "phase46-electroweak-term-wz-physical-env-campaign",
+    "schemaVersion": "1.0",
+    "environmentIds": [
+      "env-toy-2d-trivial",
+      "env-structured-4x4",
+      "env-imported-repo-benchmark"
+    ],
+    "branchManifestId": "phase8-real-atlas-control",
+    "targetQuantities": [
+      "physical-w-z-mass-ratio"
+    ],
+    "provenance": {
+      "createdAt": "2026-04-28T00:00:00+00:00",
+      "codeRevision": "working-tree",
+      "branch": {
+        "branchId": "phase46-electroweak-term-wz-physical-prediction",
+        "schemaVersion": "1.0"
+      },
+      "backend": "cpu"
+    }
+  },
+  "externalTargetTablePath": "../../phase19_dimensionless_wz_candidate_001/physical_targets.json",
+  "calibrationPolicy": {
+    "policyId": "phase46-electroweak-term-wz-physical-sigma5-policy",
+    "mode": "sigma",
+    "sigmaThreshold": 5.0
+  },
+  "falsificationPolicy": {},
+  "provenance": {
+    "createdAt": "2026-04-28T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase46-electroweak-term-wz-physical-prediction",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu",
+    "notes": "Phase46 campaign consumes selector-eigen W/Z source spectra with target-independent electroweak feature charge-anisotropy operator terms."
+  },
+  "branchQuantityValuesPath": "../../phase5_su2_branch_refinement_env_validation/config/branch_quantity_values.json",
+  "refinementValuesPath": "../../phase5_su2_branch_refinement_env_validation/config/phase10_direct_refinement_standard/refinement_values.json",
+  "observablesPath": "../observables.json",
+  "environmentRecordPaths": [
+    "../../phase5_su2_branch_refinement_env_validation/config/env_toy_record.json",
+    "../../phase5_su2_branch_refinement_env_validation/config/env_structured_4x4_record.json",
+    "../../phase5_su2_branch_refinement_env_validation/config/env_imported_repo_benchmark.json"
+  ],
+  "registryPath": "../../phase4_fermion_family_atlas_001/output/unified_particle_registry.json",
+  "observationChainPath": "../../phase5_su2_branch_refinement_env_validation/config/observation_chain.json",
+  "environmentVariancePath": "../../phase5_su2_branch_refinement_env_validation/config/environment_variance.json",
+  "representationContentPath": "../../phase5_su2_branch_refinement_env_validation/config/representation_content.json",
+  "couplingConsistencyPath": "../../phase5_su2_branch_refinement_env_validation/config/coupling_consistency.json",
+  "physicalObservableMappingsPath": "../physical_observable_mappings.json",
+  "observableClassificationsPath": "../observable_classifications.json",
+  "physicalCalibrationPath": "../physical_calibrations.json",
+  "physicalModeRecordsPath": "../physical_mode_records.json",
+  "modeIdentificationEvidencePath": "../mode_identification_evidence.json"
+}
