@@ -1,0 +1,22 @@
+{
+  "algorithmId": "phase76-weak-coupling-amplitude-normalization-audit-v1",
+  "terminalStatus": "weak-coupling-amplitude-normalization-audit-blocked",
+  "currentRawMatrixElementMagnitude": 0.8,
+  "currentGeneratorNormalizationScale": 0.7071067811865476,
+  "currentWeakCoupling": 0.5656854249492381,
+  "targetImpliedWeakCoupling": 0.6522081710229882,
+  "targetImpliedRawMatrixElementMagnitude": 0.9223616409512609,
+  "rawMatrixElementRequiredScale": 1.152952051189076,
+  "targetImpliedGeneratorScaleIfRawHeldFixed": 0.8152602137787353,
+  "canonicalTraceHalfGeneratorScale": 0.7071067811865476,
+  "generatorNormalizationCanExplainMiss": false,
+  "diagnosis": [
+    "Phase65 coupling is raw-matrix-element magnitude 0.8 times generator scale 0.7071067811865476",
+    "Phase75 target-implied weak coupling would require raw matrix-element magnitude 0.9223616409512609 if the canonical generator scale is held fixed",
+    "equivalently, the raw matrix element would need scale 1.152952051189076",
+    "canonical SU(2) trace-half generator normalization cannot explain the coherent W/Z miss by itself"
+  ],
+  "closureRequirements": [
+    "replace the Phase65 scalar raw matrix-element input with a replayed analytic matrix-element evaluation or revise the scalar-sector relation before promoting new W/Z absolute masses"
+  ]
+}
