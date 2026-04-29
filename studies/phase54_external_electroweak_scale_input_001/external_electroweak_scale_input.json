@@ -1,0 +1,87 @@
+{
+  "studyId": "phase54-external-electroweak-scale-input",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "external-scale-input-ingested-bridge-blocked",
+  "scope": "external-disjoint-electroweak-scale-source",
+  "sourceArtifacts": [
+    "studies/phase53_electroweak_scale_source_intake_001/scale_source_intake.json",
+    "studies/phase53_electroweak_scale_source_intake_001/scale_bridge_validation_contract.json"
+  ],
+  "externalInputs": [
+    {
+      "inputId": "codata-2022-fermi-coupling-constant",
+      "quantity": "Fermi coupling constant divided by (hbar c)^3",
+      "symbol": "G_F/(hbar c)^3",
+      "value": 0.000011663787,
+      "standardUncertainty": 6E-12,
+      "unit": "GeV^-2",
+      "sourceKind": "external-disjoint-physical-input",
+      "sourceName": "NIST CODATA 2022 recommended values of the fundamental physical constants",
+      "sourceUrl": "https://physics.nist.gov/cuu/pdf/all.pdf",
+      "sourceVersion": "CODATA 2022, NIST constants database version 9.0",
+      "sourceAccessedAt": "2026-04-29",
+      "excludedTargetObservableIds": [
+        "physical-w-boson-mass-gev",
+        "physical-z-boson-mass-gev"
+      ],
+      "status": "ingested",
+      "assumptions": [
+        "Fermi coupling input is disjoint from W and Z mass target values for this repository's absolute-mass prediction gate",
+        "the input may set an electroweak scale but does not by itself define GeV per internal-mass-unit"
+      ]
+    }
+  ],
+  "derivedExternalScaleCandidates": [
+    {
+      "scaleId": "phase54-fermi-derived-electroweak-vacuum-scale",
+      "inputId": "codata-2022-fermi-coupling-constant",
+      "quantity": "electroweak vacuum scale",
+      "symbol": "v",
+      "formula": "v = 1 / sqrt(sqrt(2) * G_F)",
+      "value": 246.21965079413738,
+      "standardUncertainty": 0.00006332925595969921,
+      "unit": "GeV",
+      "status": "ingested",
+      "excludedTargetObservableIds": [
+        "physical-w-boson-mass-gev",
+        "physical-z-boson-mass-gev"
+      ],
+      "notes": "This is an external electroweak scale input, not yet a GeV-per-internal-mass-unit calibration."
+    }
+  ],
+  "internalBridgeStatus": {
+    "bridgeObservableId": null,
+    "bridgeDerivationMethod": null,
+    "status": "blocked",
+    "blockReasons": [
+      "no validated internal observable maps the Fermi-derived electroweak vacuum scale to internal-mass-unit",
+      "no target-independent internal weak coupling or mass-generation relation is validated for the W/Z modes",
+      "using v directly as GeV per internal-mass-unit would violate the Phase53 bridge contract"
+    ],
+    "closureRequirements": [
+      "derive a dimensionless internal bridge between the electroweak vacuum scale and the validated W/Z internal mass modes",
+      "prove the bridge excludes physical-w-boson-mass-gev and physical-z-boson-mass-gev",
+      "propagate both Fermi-input uncertainty and bridge uncertainty into GeV per internal-mass-unit"
+    ]
+  },
+  "selectedScaleSource": null,
+  "absoluteProjectionStatus": {
+    "physical-w-boson-mass-gev": "blocked-no-internal-bridge",
+    "physical-z-boson-mass-gev": "blocked-no-internal-bridge"
+  },
+  "nextClosureSteps": [
+    "search or derive an internal weak-coupling bridge for the validated W/Z modes",
+    "materialize the bridge as a replayable observable with finite uncertainty",
+    "combine the Fermi-derived external scale and bridge into GeV per internal-mass-unit",
+    "project W and Z absolute masses only after the bridge passes target-contamination checks"
+  ],
+  "provenance": {
+    "createdAt": "2026-04-29T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase54-external-electroweak-scale-input",
+      "schemaVersion": "1.0"
+    },
+    "backend": "artifact-audit"
+  }
+}

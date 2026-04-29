@@ -1,0 +1,45 @@
+{
+  "studyId": "phase54-internal-bridge-search-report",
+  "schemaVersion": "1.0.0",
+  "status": "bridge-not-found",
+  "searchedConcepts": [
+    "internal weak coupling",
+    "Fermi constant bridge",
+    "electroweak vacuum scale bridge",
+    "GeV per internal-mass-unit",
+    "target-independent absolute scale"
+  ],
+  "candidateInternalArtifacts": [
+    {
+      "artifactPath": "studies/phase46_electroweak_term_wz_physical_prediction_001/physical_mode_records.json",
+      "relevance": "contains validated W/Z internal mass modes",
+      "bridgeStatus": "insufficient",
+      "reason": "provides internal mass-unit values but no GeV scale or weak-coupling relation"
+    },
+    {
+      "artifactPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings",
+      "relevance": "contains finite-difference coupling proxy artifacts",
+      "bridgeStatus": "insufficient",
+      "reason": "coupling proxies are not validated physical weak couplings and are not tied to W/Z mass generation"
+    },
+    {
+      "artifactPath": "studies/phase33_wz_canonical_operator_normalization_001/physical_calibrations.json",
+      "relevance": "contains shared internal operator normalization",
+      "bridgeStatus": "insufficient",
+      "reason": "normalization is internal and dimensionless; it does not convert internal-mass-unit to GeV"
+    }
+  ],
+  "requiredNextArtifact": {
+    "artifactKind": "internal-electroweak-bridge-observable",
+    "requiredFields": [
+      "bridgeObservableId",
+      "sourceModeIds",
+      "dimensionlessBridgeValue",
+      "dimensionlessBridgeUncertainty",
+      "derivationMethod",
+      "excludedTargetObservableIds",
+      "status"
+    ],
+    "minimumStatusForProjection": "validated"
+  }
+}
