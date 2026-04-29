@@ -1,0 +1,106 @@
+{
+  "studyId": "phase53-electroweak-scale-source-intake",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "scale-source-intake-blocked",
+  "scope": "target-independent-electroweak-scale-source",
+  "sourceArtifacts": [
+    "studies/phase52_electroweak_absolute_scale_audit_001/absolute_mass_projection_contract.json",
+    "studies/phase52_electroweak_absolute_scale_audit_001/absolute_scale_audit.json",
+    "studies/phase46_electroweak_term_wz_physical_prediction_001/physical_mode_records.json"
+  ],
+  "requiredScaleRecordFields": [
+    "scaleId",
+    "scaleFactorGeVPerInternalMassUnit",
+    "scaleUncertaintyGeVPerInternalMassUnit",
+    "sourceKind",
+    "sourceArtifactPath",
+    "excludedTargetObservableIds",
+    "status",
+    "assumptions",
+    "closureRequirements"
+  ],
+  "candidateSources": [
+    {
+      "scaleId": "phase53-gu-derived-internal-absolute-scale",
+      "sourceKind": "derived-gu-scale",
+      "status": "blocked",
+      "scaleFactorGeVPerInternalMassUnit": null,
+      "scaleUncertaintyGeVPerInternalMassUnit": null,
+      "sourceArtifactPath": null,
+      "excludedTargetObservableIds": [
+        "physical-w-boson-mass-gev",
+        "physical-z-boson-mass-gev"
+      ],
+      "blockReasons": [
+        "no repository artifact currently derives a GeV-valued absolute scale from GU-only quantities",
+        "no validated internal-to-GeV dimensional bridge observable exists",
+        "no uncertainty model exists for a GU-derived GeV scale"
+      ],
+      "closureRequirements": [
+        "derive or materialize an internal absolute scale observable with units compatible with GeV",
+        "validate that the derivation does not use W or Z target masses",
+        "propagate bridge uncertainty into scaleUncertaintyGeVPerInternalMassUnit"
+      ]
+    },
+    {
+      "scaleId": "phase53-disjoint-external-electroweak-input-scale",
+      "sourceKind": "external-disjoint-physical-input",
+      "status": "blocked",
+      "scaleFactorGeVPerInternalMassUnit": null,
+      "scaleUncertaintyGeVPerInternalMassUnit": null,
+      "sourceArtifactPath": null,
+      "excludedTargetObservableIds": [
+        "physical-w-boson-mass-gev",
+        "physical-z-boson-mass-gev"
+      ],
+      "allowedExternalInputs": [
+        "a disjoint electroweak scale observable such as a Fermi-constant-derived electroweak vacuum scale",
+        "a documented physical unit bridge that is not fitted to W or Z masses"
+      ],
+      "blockReasons": [
+        "no external scale artifact has been checked in with provenance and uncertainty",
+        "the repository does not yet expose a validated dimensionless bridge from the external input to the internal W/Z mass unit",
+        "using the external value directly as GeV per internal-mass-unit would be dimensionally unsupported"
+      ],
+      "closureRequirements": [
+        "add a sourced external/disjoint scale input artifact with value, uncertainty, date, and citation/provenance",
+        "add a validated internal bridge observable that connects that external scale to internal-mass-unit",
+        "prove the bridge excludes physical-w-boson-mass-gev and physical-z-boson-mass-gev"
+      ]
+    },
+    {
+      "scaleId": "phase53-w-or-z-target-fit-scale",
+      "sourceKind": "target-fitted",
+      "status": "rejected",
+      "scaleFactorGeVPerInternalMassUnit": null,
+      "scaleUncertaintyGeVPerInternalMassUnit": null,
+      "sourceArtifactPath": "studies/phase52_electroweak_absolute_scale_audit_001/absolute_scale_audit.json",
+      "excludedTargetObservableIds": [],
+      "blockReasons": [
+        "Phase52 rejected W-target and Z-target fit controls",
+        "target-fit scales cannot be used to claim independent W or Z absolute mass predictions"
+      ],
+      "closureRequirements": []
+    }
+  ],
+  "selectedScaleSource": null,
+  "absoluteProjectionStatus": {
+    "physical-w-boson-mass-gev": "blocked-no-selected-scale-source",
+    "physical-z-boson-mass-gev": "blocked-no-selected-scale-source"
+  },
+  "nextClosureSteps": [
+    "choose either GU-derived scale construction or external disjoint scale intake",
+    "materialize the chosen source as a scale record satisfying the Phase52 projection contract",
+    "add bridge validation tests that reject W/Z target contamination",
+    "project W and Z masses only after a selected scale source exists"
+  ],
+  "provenance": {
+    "createdAt": "2026-04-29T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase53-electroweak-scale-source-intake",
+      "schemaVersion": "1.0"
+    },
+    "backend": "artifact-audit"
+  }
+}

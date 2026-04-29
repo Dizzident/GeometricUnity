@@ -1,0 +1,37 @@
+{
+  "contractId": "phase53-scale-bridge-validation-contract",
+  "schemaVersion": "1.0.0",
+  "status": "defined",
+  "purpose": "Prevent absolute W/Z mass projection from using an unsupported or target-contaminated GeV scale.",
+  "requiredBridgeEvidence": [
+    {
+      "field": "bridgeObservableId",
+      "requirement": "names the computed internal observable that connects a selected scale source to internal-mass-unit"
+    },
+    {
+      "field": "bridgeDerivationMethod",
+      "requirement": "declares a replayable derivation method rather than a hand-entered scale"
+    },
+    {
+      "field": "excludedTargetObservableIds",
+      "requirement": "includes physical-w-boson-mass-gev and physical-z-boson-mass-gev"
+    },
+    {
+      "field": "uncertaintyPropagation",
+      "requirement": "propagates both source uncertainty and internal bridge uncertainty"
+    }
+  ],
+  "hardRejectConditions": [
+    "scale source uses physical-w-boson-mass-gev",
+    "scale source uses physical-z-boson-mass-gev",
+    "scale source is a weighted fit that includes W or Z masses",
+    "bridge observable is missing or has unestimated uncertainty",
+    "scale record lacks provenance"
+  ],
+  "promotionOutputsAfterBridgePasses": [
+    "physical_observable_mappings.json entries for physical-w-boson-mass-gev and physical-z-boson-mass-gev",
+    "physical_calibrations.json entries with a shared selected scale source",
+    "observables.json entries for projected absolute W and Z masses",
+    "target comparison report generated after projection"
+  ]
+}
