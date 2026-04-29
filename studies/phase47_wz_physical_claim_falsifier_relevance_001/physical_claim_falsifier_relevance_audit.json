@@ -1,0 +1,72 @@
+{
+  "resultId": "phase47-wz-physical-claim-falsifier-relevance-audit-v1",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "wz-physical-claim-target-clear-global-sidecars-blocked",
+  "algorithmId": "p47-wz-physical-claim-falsifier-relevance-audit:v1",
+  "targetObservableId": "physical-w-z-mass-ratio",
+  "targetComparisonPassed": true,
+  "selectorVariationPassed": true,
+  "selectedModeIds": [
+    "phase22-phase12-candidate-0",
+    "phase22-phase12-candidate-2"
+  ],
+  "selectedSourceCandidateIds": [
+    "phase12-candidate-0",
+    "phase12-candidate-2"
+  ],
+  "activeSevereFalsifierCount": 3,
+  "targetRelevantSevereFalsifierCount": 0,
+  "globalSidecarSevereFalsifierCount": 3,
+  "falsifierAudits": [
+    {
+      "falsifierId": "falsifier-0001",
+      "falsifierType": "branch-fragility",
+      "severity": "high",
+      "targetId": "gauge-violation",
+      "branchId": "phase9-su2-real-bridge-backed-branch-family",
+      "relevance": "global-sidecar",
+      "scope": "branch-diagnostic",
+      "reason": "branch-fragility target \"gauge-violation\" is not the W/Z target observable or selected W/Z source; the W/Z target comparison and selector-variation diagnostics both pass"
+    },
+    {
+      "falsifierId": "falsifier-0002",
+      "falsifierType": "branch-fragility",
+      "severity": "high",
+      "targetId": "solver-iterations",
+      "branchId": "phase9-su2-real-bridge-backed-branch-family",
+      "relevance": "global-sidecar",
+      "scope": "branch-diagnostic",
+      "reason": "branch-fragility target \"solver-iterations\" is not the W/Z target observable or selected W/Z source; the W/Z target comparison and selector-variation diagnostics both pass"
+    },
+    {
+      "falsifierId": "falsifier-0003",
+      "falsifierType": "representation-content",
+      "severity": "fatal",
+      "targetId": "fermion-registry-phase4-toy-v1-0000",
+      "branchId": "unknown",
+      "relevance": "global-sidecar",
+      "scope": "fermion-registry",
+      "reason": "representation-content target \"fermion-registry-phase4-toy-v1-0000\" does not match the selected W/Z modes or physical W/Z ratio observable"
+    }
+  ],
+  "diagnosis": [
+    "audited active fatal/high falsifiers against W/Z target observable \"physical-w-z-mass-ratio\"",
+    "W/Z quantitative target comparison passes",
+    "W/Z selector variation passes at every aligned point and contains the target inside the observed envelope",
+    "0 active severe falsifier(s) are target-relevant",
+    "3 active severe falsifier(s) are global sidecars"
+  ],
+  "closureRequirements": [
+    "resolve global sidecar falsifiers or adopt a documented target-scoped physical-claim policy before allowing unrestricted physical boson prediction language"
+  ],
+  "provenance": {
+    "createdAt": "2026-04-28T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase47-wz-physical-claim-falsifier-relevance-audit",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu",
+    "notes": "Audits whether active Phase46 severe falsifiers directly target the W/Z physical ratio claim or remain global campaign sidecars."
+  }
+}
