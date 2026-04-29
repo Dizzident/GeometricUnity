@@ -1,0 +1,51 @@
+{
+  "studyId": "phase58-electroweak-absolute-scale-calibration-builder",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "calibration-builder-implemented",
+  "scope": "w-z-absolute-mass-calibration-construction",
+  "sourceArtifacts": [
+    "studies/phase54_external_electroweak_scale_input_001/external_electroweak_scale_input.json",
+    "studies/phase56_electroweak_bridge_validator_001/bridge_validator_contract.json",
+    "studies/phase57_absolute_wz_bridge_gate_integration_001/projector_bridge_gate.json"
+  ],
+  "implementedTypes": [
+    "ElectroweakAbsoluteScaleCalibrationBuilder",
+    "ElectroweakAbsoluteScaleCalibrationBuildResult"
+  ],
+  "calibrationFormula": {
+    "scaleFactorGeVPerInternalMassUnit": "externalElectroweakScaleGeV * dimensionlessBridgeValue",
+    "scaleUncertaintyGeVPerInternalMassUnit": "sqrt((externalScaleUncertainty * bridgeValue)^2 + (externalScale * bridgeUncertainty)^2)"
+  },
+  "builderInputs": [
+    "validated ElectroweakBridgeRecord",
+    "external electroweak scale in GeV",
+    "external electroweak scale uncertainty in GeV",
+    "W absolute mass PhysicalObservableMapping",
+    "Z absolute mass PhysicalObservableMapping"
+  ],
+  "builderOutputs": [
+    "shared W/Z GeV-per-internal-mass-unit scale",
+    "physical-w-boson-mass-gev PhysicalCalibrationRecord",
+    "physical-z-boson-mass-gev PhysicalCalibrationRecord"
+  ],
+  "blockedUntil": [
+    "a real ElectroweakBridgeRecord passes ElectroweakBridgeValidator",
+    "absolute W and Z source observables are emitted for validated internal modes",
+    "absolute W/Z campaign sidecars are in place"
+  ],
+  "nextClosureSteps": [
+    "derive a real bridge record",
+    "use the builder to create absolute W/Z calibrations",
+    "emit projected W/Z absolute mass observables",
+    "run physical target comparison after projection"
+  ],
+  "provenance": {
+    "createdAt": "2026-04-29T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase58-electroweak-absolute-scale-calibration-builder",
+      "schemaVersion": "1.0"
+    },
+    "backend": "code-and-artifact"
+  }
+}
