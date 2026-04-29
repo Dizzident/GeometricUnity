@@ -1,0 +1,72 @@
+{
+  "algorithmId": "phase62-weak-coupling-operator-derivation-auditor-v1",
+  "terminalStatus": "weak-coupling-operator-derivation-blocked",
+  "records": [
+    {
+      "inputId": "shared-wz-operator-unit",
+      "inputKind": "operator-normalization",
+      "status": "available",
+      "relevance": "precondition supplied by Phase33 canonical W/Z operator normalization",
+      "blockReasons": []
+    },
+    {
+      "inputId": "selected-wz-source-modes",
+      "inputKind": "mode-source-selection",
+      "status": "available",
+      "relevance": "identifies the internal W/Z modes the coupling must support",
+      "blockReasons": []
+    },
+    {
+      "inputId": "canonical-su2-generator-normalization",
+      "inputKind": "group-normalization",
+      "status": "missing",
+      "relevance": "fixes trace and generator normalization before amplitudes become dimensionless weak couplings",
+      "blockReasons": [
+        "canonical SU(2) generator normalization is missing"
+      ]
+    },
+    {
+      "inputId": "non-proxy-fermion-current-matrix-element",
+      "inputKind": "operator-response",
+      "status": "missing",
+      "relevance": "replaces finite-difference coupling proxies with a replayable operator matrix element",
+      "blockReasons": [
+        "non-proxy fermion-current matrix element is missing"
+      ]
+    },
+    {
+      "inputId": "dimensionless-coupling-amplitude-extractor",
+      "inputKind": "coupling-normalization",
+      "status": "missing",
+      "relevance": "maps the internal operator response to a normalized dimensionless weak-coupling value",
+      "blockReasons": [
+        "dimensionless coupling amplitude extractor is missing"
+      ]
+    },
+    {
+      "inputId": "coupling-uncertainty-propagation",
+      "inputKind": "uncertainty-model",
+      "status": "missing",
+      "relevance": "propagates source, operator, and numerical uncertainty into the weak-coupling candidate",
+      "blockReasons": [
+        "coupling uncertainty propagation is missing"
+      ]
+    },
+    {
+      "inputId": "branch-stability-evidence",
+      "inputKind": "stability-evidence",
+      "status": "missing",
+      "relevance": "proves the normalized weak-coupling candidate is stable across accepted branch variants",
+      "blockReasons": [
+        "branch-stability evidence is missing"
+      ]
+    }
+  ],
+  "closureRequirements": [
+    "canonical SU(2) generator normalization is missing",
+    "non-proxy fermion-current matrix element is missing",
+    "dimensionless coupling amplitude extractor is missing",
+    "coupling uncertainty propagation is missing",
+    "branch-stability evidence is missing"
+  ]
+}
