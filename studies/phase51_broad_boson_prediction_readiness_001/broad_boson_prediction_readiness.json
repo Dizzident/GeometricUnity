@@ -1,0 +1,207 @@
+{
+  "studyId": "phase51-broad-boson-prediction-readiness",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "broad-boson-prediction-blocked",
+  "scope": "standard-model-boson-prediction-readiness",
+  "validatedPredictionCount": 1,
+  "blockedPredictionCount": 5,
+  "sourceArtifacts": [
+    "studies/phase18_experimental_targets_001/physical_targets.json",
+    "studies/phase46_electroweak_term_wz_physical_prediction_001/physical_mode_records.json",
+    "studies/phase46_electroweak_term_wz_physical_prediction_001/physical_observable_mappings.json",
+    "studies/phase46_electroweak_term_wz_physical_prediction_001/physical_calibrations.json",
+    "studies/phase50_wz_only_campaign_integration_001/config/campaign.json",
+    "study-runs/phase50_wz_only_global_clear_check/reports/phase5_report.json"
+  ],
+  "records": [
+    {
+      "recordId": "phase51-wz-ratio",
+      "particleId": "electroweak-sector",
+      "targetObservableId": "physical-w-z-mass-ratio",
+      "physicalObservableType": "mass-ratio",
+      "targetStatus": "available",
+      "internalModeStatus": "validated-w-and-z-modes",
+      "identityRuleStatus": "validated",
+      "mappingStatus": "validated",
+      "calibrationStatus": "validated-dimensionless",
+      "sidecarStatus": "wz-scoped-clear",
+      "claimGateStatus": "predicted",
+      "readinessStatus": "predicted",
+      "computedValue": 0.8796910570948282,
+      "computedUncertainty": 0.001526619561417894,
+      "targetValue": 0.88136,
+      "targetUncertainty": 0.00015,
+      "pull": 1.0879885044906925,
+      "closureRequirements": []
+    },
+    {
+      "recordId": "phase51-w-absolute-mass",
+      "particleId": "w-boson",
+      "targetObservableId": "physical-w-boson-mass-gev",
+      "physicalObservableType": "mass",
+      "targetStatus": "available",
+      "internalModeStatus": "validated-mode-present",
+      "identityRuleStatus": "validated",
+      "mappingStatus": "missing",
+      "calibrationStatus": "missing-target-independent-absolute-scale",
+      "sidecarStatus": "wz-scoped-clear-for-ratio-only",
+      "claimGateStatus": "blocked",
+      "readinessStatus": "blocked",
+      "computedValue": null,
+      "computedUncertainty": null,
+      "targetValue": 80.3692,
+      "targetUncertainty": 0.0133,
+      "pull": null,
+      "closureRequirements": [
+        "add a validated physical observable mapping from the W internal mass mode to physical-w-boson-mass-gev",
+        "derive a target-independent mass-energy scale calibration instead of fitting the W target",
+        "extend W/Z-scoped branch, refinement, and sidecar inputs from the ratio to absolute W mass"
+      ]
+    },
+    {
+      "recordId": "phase51-z-absolute-mass",
+      "particleId": "z-boson",
+      "targetObservableId": "physical-z-boson-mass-gev",
+      "physicalObservableType": "mass",
+      "targetStatus": "available",
+      "internalModeStatus": "validated-mode-present",
+      "identityRuleStatus": "validated",
+      "mappingStatus": "missing",
+      "calibrationStatus": "missing-target-independent-absolute-scale",
+      "sidecarStatus": "wz-scoped-clear-for-ratio-only",
+      "claimGateStatus": "blocked",
+      "readinessStatus": "blocked",
+      "computedValue": null,
+      "computedUncertainty": null,
+      "targetValue": 91.188,
+      "targetUncertainty": 0.002,
+      "pull": null,
+      "closureRequirements": [
+        "add a validated physical observable mapping from the Z internal mass mode to physical-z-boson-mass-gev",
+        "derive a target-independent mass-energy scale calibration instead of fitting the Z target",
+        "extend W/Z-scoped branch, refinement, and sidecar inputs from the ratio to absolute Z mass"
+      ]
+    },
+    {
+      "recordId": "phase51-higgs-mass",
+      "particleId": "higgs",
+      "targetObservableId": "physical-higgs-mass-gev",
+      "physicalObservableType": "mass",
+      "targetStatus": "available",
+      "internalModeStatus": "missing-scalar-mode",
+      "identityRuleStatus": "missing-higgs-identity-rule",
+      "mappingStatus": "missing",
+      "calibrationStatus": "missing-target-independent-absolute-scale",
+      "sidecarStatus": "missing-scalar-sector-sidecars",
+      "claimGateStatus": "blocked",
+      "readinessStatus": "blocked",
+      "computedValue": null,
+      "computedUncertainty": null,
+      "targetValue": 125.2,
+      "targetUncertainty": 0.11,
+      "pull": null,
+      "closureRequirements": [
+        "define and solve a scalar-sector source/operator for a Higgs-like mode",
+        "add target-independent Higgs identity features and readiness rules",
+        "add scalar-sector branch, refinement, environment, representation, and coupling sidecars",
+        "add a validated mapping and absolute scale calibration for physical-higgs-mass-gev"
+      ]
+    },
+    {
+      "recordId": "phase51-photon-masslessness",
+      "particleId": "photon",
+      "targetObservableId": "physical-photon-masslessness",
+      "physicalObservableType": "masslessness",
+      "targetStatus": "missing-active-target",
+      "internalModeStatus": "missing-massless-gauge-mode",
+      "identityRuleStatus": "missing-photon-identity-rule",
+      "mappingStatus": "missing",
+      "calibrationStatus": "not-applicable-until-masslessness-observable-exists",
+      "sidecarStatus": "missing-massless-gauge-sidecars",
+      "claimGateStatus": "blocked",
+      "readinessStatus": "blocked",
+      "computedValue": null,
+      "computedUncertainty": null,
+      "targetValue": null,
+      "targetUncertainty": null,
+      "pull": null,
+      "closureRequirements": [
+        "add a physical target record or upper-limit contract for photon masslessness",
+        "derive a target-independent massless U(1) gauge identity rule",
+        "emit a computed masslessness observable and validated mapping",
+        "add sidecars proving the massless mode is stable across branch, refinement, and environment choices"
+      ]
+    },
+    {
+      "recordId": "phase51-gluon-masslessness",
+      "particleId": "gluon",
+      "targetObservableId": "physical-gluon-masslessness",
+      "physicalObservableType": "masslessness",
+      "targetStatus": "missing-active-target",
+      "internalModeStatus": "missing-color-octet-gauge-sector",
+      "identityRuleStatus": "missing-gluon-identity-rule",
+      "mappingStatus": "missing",
+      "calibrationStatus": "not-applicable-until-color-sector-observable-exists",
+      "sidecarStatus": "missing-color-gauge-sidecars",
+      "claimGateStatus": "blocked",
+      "readinessStatus": "blocked",
+      "computedValue": null,
+      "computedUncertainty": null,
+      "targetValue": null,
+      "targetUncertainty": null,
+      "pull": null,
+      "closureRequirements": [
+        "add a physical target or benchmark contract appropriate for confined gluon masslessness",
+        "derive a target-independent color-sector identity rule",
+        "emit color gauge-sector observables and validate their mapping",
+        "add sidecars for color representation content, gauge leakage, and environment stability"
+      ]
+    }
+  ],
+  "nextPhaseRecommendations": [
+    {
+      "priority": 1,
+      "phaseCandidate": "phase52-electroweak-absolute-scale-calibration",
+      "goal": "turn the validated W/Z internal modes into absolute W and Z mass predictions without fitting W or Z masses",
+      "requiredOutputs": [
+        "target-independent mass-energy calibration record",
+        "physical-w-boson-mass-gev observable and mapping",
+        "physical-z-boson-mass-gev observable and mapping",
+        "W/Z absolute-mass branch and refinement value tables",
+        "W/Z absolute-mass campaign with zero active fatal/high falsifiers"
+      ]
+    },
+    {
+      "priority": 2,
+      "phaseCandidate": "phase53-scalar-higgs-source-campaign",
+      "goal": "create a Higgs-like scalar-sector source and identity rule",
+      "requiredOutputs": [
+        "scalar source spectra",
+        "Higgs identity feature table",
+        "Higgs mode identification evidence",
+        "physical-higgs-mass-gev mapping readiness audit"
+      ]
+    },
+    {
+      "priority": 3,
+      "phaseCandidate": "phase54-massless-gauge-boson-contracts",
+      "goal": "define photon and gluon masslessness target/mapping contracts before claiming massless boson predictions",
+      "requiredOutputs": [
+        "photon masslessness target or upper-limit contract",
+        "gluon masslessness target or benchmark contract",
+        "massless gauge identity readiness requirements",
+        "sidecar requirements for U(1) and color-sector stability"
+      ]
+    }
+  ],
+  "provenance": {
+    "createdAt": "2026-04-29T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase51-broad-boson-prediction-readiness",
+      "schemaVersion": "1.0"
+    },
+    "backend": "artifact-audit",
+    "notes": "Readiness matrix built from existing repository artifacts after Phase50 W/Z-only predicted campaign validation."
+  }
+}
