@@ -1,0 +1,44 @@
+{
+  "studyId": "phase59-wz-absolute-mass-observable-projector",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "absolute-mass-observable-projector-implemented",
+  "scope": "w-z-absolute-mass-observable-emission",
+  "sourceArtifacts": [
+    "studies/phase58_electroweak_absolute_scale_calibration_builder_001/calibration_builder_contract.json",
+    "studies/phase46_electroweak_term_wz_physical_prediction_001/physical_mode_records.json"
+  ],
+  "implementedTypes": [
+    "WzAbsoluteMassObservableProjector",
+    "WzAbsoluteMassObservableProjectionResult"
+  ],
+  "requiredInputs": [
+    "validated W physical mode in internal-mass-unit",
+    "validated Z physical mode in internal-mass-unit",
+    "validated ElectroweakAbsoluteScaleCalibrationBuildResult"
+  ],
+  "outputObservableIds": [
+    "physical-w-boson-mass-gev",
+    "physical-z-boson-mass-gev"
+  ],
+  "uncertaintyFormula": "sqrt((internalModeUncertainty * scale)^2 + (internalModeValue * scaleUncertainty)^2)",
+  "blockedUntil": [
+    "a real electroweak bridge record exists",
+    "the bridge passes ElectroweakBridgeValidator",
+    "ElectroweakAbsoluteScaleCalibrationBuilder returns validated calibrations"
+  ],
+  "nextClosureSteps": [
+    "derive or validate the missing electroweak bridge",
+    "run calibration builder",
+    "run observable projector over Phase46 W/Z physical modes",
+    "feed projected observables into PhysicalPredictionProjector with bridge table"
+  ],
+  "provenance": {
+    "createdAt": "2026-04-29T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase59-wz-absolute-mass-observable-projector",
+      "schemaVersion": "1.0"
+    },
+    "backend": "code-and-artifact"
+  }
+}
