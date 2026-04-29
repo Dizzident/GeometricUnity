@@ -1,0 +1,6 @@
+{
+  "terminalStatus": "bridge-derivation-inputs-blocked",
+  "closureRequirements": [
+    "shared W/Z GeV-per-internal-mass-unit scale check is missing"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "algorithmId": "phase70-scalar-sector-bridge-evidence-builder-v1",
+  "terminalStatus": "scalar-sector-bridge-evidence-derived",
+  "evidenceId": "scalar-sector-bridge:electric-weak-vev-order-parameter:v1",
+  "scalarOrderParameterRole": "external electroweak scale acts as scalar-sector order parameter v",
+  "sourceRelationId": "mass-generation:electroweak-vev-times-normalized-weak-coupling:v1",
+  "externalScaleInputId": "phase54-fermi-derived-electroweak-vacuum-scale",
+  "closureRequirements": []
+}

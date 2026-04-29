@@ -1,0 +1,32 @@
+{
+  "algorithmId": "phase71-shared-wz-scale-bridge-builder-v1",
+  "terminalStatus": "shared-wz-scale-bridge-validated",
+  "wBridgeValue": 253487357169640.62,
+  "zBridgeValue": 253487357169640.6,
+  "relativeScaleSpread": 1.2328031010669558E-16,
+  "relativeTolerance": 1E-12,
+  "bridge": {
+    "bridgeObservableId": "phase71-validated-electroweak-mass-generation-bridge",
+    "sourceModeIds": [
+      "phase22-phase12-candidate-0",
+      "phase22-phase12-candidate-2"
+    ],
+    "dimensionlessBridgeValue": 253487357169640.62,
+    "dimensionlessBridgeUncertainty": 1303892067413.5,
+    "inputKind": "validated-internal-mass-generation-relation",
+    "weakCouplingNormalizationConvention": "physical-weak-coupling-normalization:su2-canonical-trace-half-v1",
+    "massGenerationRelation": "mass-generation:electroweak-vev-times-normalized-weak-coupling:v1",
+    "excludedTargetObservableIds": [
+      "physical-w-boson-mass-gev",
+      "physical-z-boson-mass-gev"
+    ],
+    "status": "validated",
+    "assumptions": [
+      "external electroweak scale is treated as scalar-sector order parameter v",
+      "W relation uses m_W = g v / 2",
+      "Z relation uses the internal W/Z ratio to define the neutral coefficient without W/Z mass targets"
+    ],
+    "closureRequirements": []
+  },
+  "closureRequirements": []
+}

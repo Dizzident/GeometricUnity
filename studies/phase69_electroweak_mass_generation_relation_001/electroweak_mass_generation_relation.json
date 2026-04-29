@@ -1,0 +1,22 @@
+{
+  "algorithmId": "phase69-electroweak-mass-generation-relation-deriver-v1",
+  "terminalStatus": "electroweak-mass-generation-relation-derived",
+  "massGenerationRelationId": "mass-generation:electroweak-vev-times-normalized-weak-coupling:v1",
+  "sourceModeIds": [
+    "phase22-phase12-candidate-0",
+    "phase22-phase12-candidate-2"
+  ],
+  "weakCouplingNormalizationConvention": "physical-weak-coupling-normalization:su2-canonical-trace-half-v1",
+  "wInternalMass": 1.1158059937692792E-15,
+  "zInternalMass": 1.268406657962647E-15,
+  "internalWzRatio": 0.8796910570948282,
+  "wElectroweakCoefficient": 0.28284271247461906,
+  "zElectroweakCoefficient": 0.32152505154332767,
+  "dimensionlessBridgeValue": 253487357169640.62,
+  "dimensionlessBridgeUncertainty": 1303892067413.5,
+  "excludedTargetObservableIds": [
+    "physical-w-boson-mass-gev",
+    "physical-z-boson-mass-gev"
+  ],
+  "closureRequirements": []
+}

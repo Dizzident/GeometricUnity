@@ -1,0 +1,7 @@
+{
+  "terminalStatus": "bridge-derivation-inputs-blocked",
+  "closureRequirements": [
+    "scalar/Higgs-sector bridge evidence is missing",
+    "shared W/Z GeV-per-internal-mass-unit scale check is missing"
+  ]
+}
