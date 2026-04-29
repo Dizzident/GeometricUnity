@@ -1,0 +1,127 @@
+{
+  "campaignId": "phase50-wz-only-campaign-integration",
+  "schemaVersion": "1.1.0",
+  "integrationStatus": "draft-ready-for-campaign-validation",
+  "branchFamilySpec": {
+    "studyId": "phase50-wz-only-branch-family",
+    "branchVariantIds": [
+      "bg-variant-95ee11778cc7ac01",
+      "bg-variant-d840fea6e6d36748",
+      "bg-variant-d84f5d66fd98b842",
+      "bg-variant-53b598740d9569b4"
+    ],
+    "targetQuantityIds": [
+      "physical-w-z-mass-ratio"
+    ],
+    "absoluteTolerance": 0.00001,
+    "relativeTolerance": 0.1
+  },
+  "refinementSpec": {
+    "studyId": "phase50-wz-only-refinement-ladder",
+    "schemaVersion": "1.0",
+    "branchManifestId": "phase8-real-atlas-control",
+    "targetQuantities": [
+      "physical-w-z-mass-ratio"
+    ],
+    "refinementLevels": [
+      {
+        "levelId": "L0-2x2",
+        "meshParameterX": 1.0,
+        "meshParameterF": 1.0,
+        "description": "2x2 toy mesh"
+      },
+      {
+        "levelId": "L1-4x4",
+        "meshParameterX": 0.5,
+        "meshParameterF": 0.5,
+        "description": "4x4 structured mesh"
+      },
+      {
+        "levelId": "L2-8x8",
+        "meshParameterX": 0.25,
+        "meshParameterF": 0.25,
+        "description": "8x8 structured mesh"
+      }
+    ],
+    "provenance": {
+      "createdAt": "2026-04-28T00:00:00+00:00",
+      "codeRevision": "working-tree",
+      "branch": {
+        "branchId": "phase50-wz-only-campaign-integration",
+        "schemaVersion": "1.0"
+      },
+      "backend": "cpu",
+      "notes": "Draft W/Z-only refinement spec; values are expected from the Phase50 W/Z-only refinement handoff artifact."
+    }
+  },
+  "environmentCampaignSpec": {
+    "campaignId": "phase50-wz-only-env-campaign",
+    "schemaVersion": "1.0",
+    "environmentIds": [
+      "env-toy-2d-trivial",
+      "env-structured-4x4",
+      "env-imported-repo-benchmark"
+    ],
+    "branchManifestId": "phase8-real-atlas-control",
+    "targetQuantities": [
+      "physical-w-z-mass-ratio"
+    ],
+    "provenance": {
+      "createdAt": "2026-04-28T00:00:00+00:00",
+      "codeRevision": "working-tree",
+      "branch": {
+        "branchId": "phase50-wz-only-campaign-integration",
+        "schemaVersion": "1.0"
+      },
+      "backend": "cpu",
+      "notes": "Draft W/Z-only environment campaign using W/Z-specific sidecar inputs."
+    }
+  },
+  "externalTargetTablePath": "../../phase19_dimensionless_wz_candidate_001/physical_targets.json",
+  "calibrationPolicy": {
+    "policyId": "phase50-wz-only-physical-sigma5-policy",
+    "mode": "sigma",
+    "sigmaThreshold": 5.0
+  },
+  "falsificationPolicy": {
+    "policyId": "phase50-wz-only-target-scoped-falsification-policy",
+    "mode": "target-scoped",
+    "targetObservableIds": [
+      "physical-w-z-mass-ratio"
+    ],
+    "relevanceAuditPath": "../report/phase47_relevance_audit_pointer.json",
+    "severeFalsifierHandling": "block-target-claim-only-when-target-relevant"
+  },
+  "provenance": {
+    "createdAt": "2026-04-28T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase50-wz-only-campaign-integration",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu",
+    "notes": "Phase50 W/Z-only campaign draft. It keeps Phase46 promoted W/Z physical artifacts but replaces global branch/refinement values and sidecars with W/Z-specific handoff paths."
+  },
+  "branchQuantityValuesPath": "../../phase50_wz_branch_refinement_inputs_001/config/branch_quantity_values.json",
+  "refinementValuesPath": "../../phase50_wz_branch_refinement_inputs_001/config/refinement_values.json",
+  "observablesPath": "../../phase46_electroweak_term_wz_physical_prediction_001/observables.json",
+  "environmentRecordPaths": [
+    "../../phase5_su2_branch_refinement_env_validation/config/env_toy_record.json",
+    "../../phase5_su2_branch_refinement_env_validation/config/env_structured_4x4_record.json",
+    "../../phase5_su2_branch_refinement_env_validation/config/env_imported_repo_benchmark.json"
+  ],
+  "registryPath": "../../phase50_wz_scoped_falsification_sidecars_001/wz_scoped_registry.json",
+  "observationChainPath": "../../phase50_wz_scoped_falsification_sidecars_001/observation_chain.json",
+  "environmentVariancePath": "../../phase50_wz_scoped_falsification_sidecars_001/environment_variance.json",
+  "representationContentPath": "../../phase50_wz_scoped_falsification_sidecars_001/representation_content.json",
+  "couplingConsistencyPath": "../../phase50_wz_scoped_falsification_sidecars_001/coupling_consistency.json",
+  "physicalObservableMappingsPath": "../../phase46_electroweak_term_wz_physical_prediction_001/physical_observable_mappings.json",
+  "observableClassificationsPath": "../../phase46_electroweak_term_wz_physical_prediction_001/observable_classifications.json",
+  "physicalCalibrationPath": "../../phase46_electroweak_term_wz_physical_prediction_001/physical_calibrations.json",
+  "physicalModeRecordsPath": "../../phase46_electroweak_term_wz_physical_prediction_001/physical_mode_records.json",
+  "modeIdentificationEvidencePath": "../../phase46_electroweak_term_wz_physical_prediction_001/mode_identification_evidence.json",
+  "physicalClaimFalsifierRelevanceAuditPath": "../report/physical_claim_falsifier_relevance_audit.json",
+  "wzScopedSidecarSummaryPath": "../../phase50_wz_scoped_falsification_sidecars_001/config/sidecar_summary.json",
+  "wzScopedSidecarScopePath": "../../phase50_wz_scoped_falsification_sidecars_001/sidecar_scope.json",
+  "phase50InputManifestPath": "../report/integration_report.json"
+}

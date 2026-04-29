@@ -1,0 +1,37 @@
+{
+  "scopeId": "phase50-wz-scoped-falsification-sidecar-track-v1",
+  "schemaVersion": "1.0.0",
+  "targetObservableId": "physical-w-z-mass-ratio",
+  "includedModeIds": [
+    "phase22-phase12-candidate-0",
+    "phase22-phase12-candidate-2"
+  ],
+  "includedSourceCandidateIds": [
+    "phase12-candidate-0",
+    "phase12-candidate-2"
+  ],
+  "excludedCandidateIds": [
+    "fermion-registry-phase4-toy-v1-0000",
+    "fermion-registry-phase4-toy-v1-0001",
+    "fermion-registry-phase4-toy-v1-0002"
+  ],
+  "exclusionRationale": [
+    "Phase IV toy fermion candidates are not source modes for the W/Z physical mass-ratio observable.",
+    "The fatal representation-content blocker on fermion-registry-phase4-toy-v1-0000 applies to the Phase IV toy fermion registry, not the selected W/Z boson modes.",
+    "W/Z-only physical campaigns should disclose but not import unrelated global registry sidecar blockers as target-scoped W/Z evidence."
+  ],
+  "sourceArtifactRefs": [
+    "studies/phase46_electroweak_term_wz_physical_prediction_001/physical_mode_records.json",
+    "studies/phase46_electroweak_term_wz_physical_prediction_001/mode_identification_evidence.json",
+    "studies/phase47_wz_physical_claim_falsifier_relevance_001/physical_claim_falsifier_relevance_audit.json"
+  ],
+  "provenance": {
+    "createdAt": "2026-04-28T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase50-wz-scoped-falsification-sidecars",
+      "schemaVersion": "1.0"
+    },
+    "backend": "documented-sidecar-scope"
+  }
+}

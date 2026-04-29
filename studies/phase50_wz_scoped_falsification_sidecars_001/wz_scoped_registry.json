@@ -1,0 +1,84 @@
+{
+  "registryVersion": "1.0.0",
+  "schemaVersion": "1.0.0",
+  "candidates": [
+    {
+      "particleId": "phase22-phase12-candidate-0",
+      "schemaVersion": "1.0.0",
+      "particleType": "Boson",
+      "primarySourceId": "phase12-candidate-0",
+      "contributingSourceIds": [
+        "phase22-phase12-candidate-0"
+      ],
+      "branchVariantSet": [
+        "bg-variant-53b598740d9569b4"
+      ],
+      "backgroundSet": [
+        "env-imported-repo-benchmark"
+      ],
+      "chirality": null,
+      "massLikeEnvelope": [
+        1.1158059937692792E-15,
+        1.1158059937692792E-15,
+        1.1158059937692792E-15
+      ],
+      "branchStabilityScore": 1.0,
+      "observationConfidence": 1.0,
+      "comparisonEvidenceScore": 1.0,
+      "claimClass": "C5_StrongIdentificationCandidate",
+      "computedWithUnverifiedGpu": false,
+      "demotions": [],
+      "ambiguityNotes": [],
+      "registryVersion": "1.0.0",
+      "provenance": {
+        "createdAt": "2026-04-28T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase50-wz-scoped-falsification-sidecars",
+          "schemaVersion": "1.0"
+        },
+        "backend": "documented-sidecar-scope",
+        "notes": "Scoped W boson candidate view derived from Phase XLVI physical_mode_records.json."
+      }
+    },
+    {
+      "particleId": "phase22-phase12-candidate-2",
+      "schemaVersion": "1.0.0",
+      "particleType": "Boson",
+      "primarySourceId": "phase12-candidate-2",
+      "contributingSourceIds": [
+        "phase22-phase12-candidate-2"
+      ],
+      "branchVariantSet": [
+        "bg-variant-53b598740d9569b4"
+      ],
+      "backgroundSet": [
+        "env-imported-repo-benchmark"
+      ],
+      "chirality": null,
+      "massLikeEnvelope": [
+        1.268406657962647E-15,
+        1.268406657962647E-15,
+        1.268406657962647E-15
+      ],
+      "branchStabilityScore": 1.0,
+      "observationConfidence": 1.0,
+      "comparisonEvidenceScore": 1.0,
+      "claimClass": "C5_StrongIdentificationCandidate",
+      "computedWithUnverifiedGpu": false,
+      "demotions": [],
+      "ambiguityNotes": [],
+      "registryVersion": "1.0.0",
+      "provenance": {
+        "createdAt": "2026-04-28T00:00:00+00:00",
+        "codeRevision": "working-tree",
+        "branch": {
+          "branchId": "phase50-wz-scoped-falsification-sidecars",
+          "schemaVersion": "1.0"
+        },
+        "backend": "documented-sidecar-scope",
+        "notes": "Scoped Z boson candidate view derived from Phase XLVI physical_mode_records.json."
+      }
+    }
+  ]
+}

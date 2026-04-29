@@ -1,0 +1,26 @@
+{
+  "studyId": "phase50-wz-refinement-ratio-inputs",
+  "levels": [
+    {
+      "levelId": "L0-2x2",
+      "solverConverged": true,
+      "quantities": {
+        "physical-w-z-mass-ratio": 0.8796919787078953
+      }
+    },
+    {
+      "levelId": "L1-4x4",
+      "solverConverged": true,
+      "quantities": {
+        "physical-w-z-mass-ratio": 0.8796919787078953
+      }
+    },
+    {
+      "levelId": "L2-8x8",
+      "solverConverged": true,
+      "quantities": {
+        "physical-w-z-mass-ratio": 0.8796919787078953
+      }
+    }
+  ]
+}

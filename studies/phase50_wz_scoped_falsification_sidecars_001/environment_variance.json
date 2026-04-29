@@ -1,0 +1,24 @@
+[
+  {
+    "recordId": "phase50-env-var-physical-w-z-mass-ratio",
+    "quantityId": "physical-w-z-mass-ratio",
+    "environmentTierId": "wz-selected-imported-repo-benchmark",
+    "relativeStdDev": 0.000941223154433382,
+    "flagged": false,
+    "notes": "Uses the Phase XLVI W/Z observable environmentSensitivity component for the selected target, not the broad Phase V benchmark observable set.",
+    "origin": "bridge-derived",
+    "sourceArtifactRefs": [
+      "studies/phase46_electroweak_term_wz_physical_prediction_001/observables.json#physical-w-z-mass-ratio",
+      "studies/phase46_electroweak_term_wz_physical_prediction_001/wz_selector_variation_diagnostic.json"
+    ],
+    "provenance": {
+      "createdAt": "2026-04-28T00:00:00+00:00",
+      "codeRevision": "working-tree",
+      "branch": {
+        "branchId": "phase50-wz-scoped-falsification-sidecars",
+        "schemaVersion": "1.0"
+      },
+      "backend": "documented-sidecar-scope"
+    }
+  }
+]

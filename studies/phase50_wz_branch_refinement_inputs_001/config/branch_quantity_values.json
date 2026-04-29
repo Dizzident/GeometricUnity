@@ -1,0 +1,33 @@
+{
+  "studyId": "phase50-wz-branch-ratio-inputs",
+  "levels": [
+    {
+      "levelId": "bg-variant-95ee11778cc7ac01",
+      "solverConverged": true,
+      "quantities": {
+        "physical-w-z-mass-ratio": 0.8800585830376143
+      }
+    },
+    {
+      "levelId": "bg-variant-d840fea6e6d36748",
+      "solverConverged": true,
+      "quantities": {
+        "physical-w-z-mass-ratio": 0.8790510375546156
+      }
+    },
+    {
+      "levelId": "bg-variant-d84f5d66fd98b842",
+      "solverConverged": true,
+      "quantities": {
+        "physical-w-z-mass-ratio": 0.8806084654173567
+      }
+    },
+    {
+      "levelId": "bg-variant-53b598740d9569b4",
+      "solverConverged": true,
+      "quantities": {
+        "physical-w-z-mass-ratio": 0.8790498288219942
+      }
+    }
+  ]
+}

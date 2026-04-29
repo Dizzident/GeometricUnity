@@ -1,0 +1,39 @@
+{
+  "resultId": "phase50-wz-only-physical-claim-falsifier-relevance-audit-v1",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "wz-physical-claim-falsifier-clear",
+  "algorithmId": "p47-wz-physical-claim-falsifier-relevance-audit:v1",
+  "targetObservableId": "physical-w-z-mass-ratio",
+  "targetComparisonPassed": true,
+  "selectorVariationPassed": true,
+  "selectedModeIds": [
+    "phase22-phase12-candidate-0",
+    "phase22-phase12-candidate-2"
+  ],
+  "selectedSourceCandidateIds": [
+    "phase12-candidate-0",
+    "phase12-candidate-2"
+  ],
+  "activeSevereFalsifierCount": 0,
+  "targetRelevantSevereFalsifierCount": 0,
+  "globalSidecarSevereFalsifierCount": 0,
+  "falsifierAudits": [],
+  "diagnosis": [
+    "audited active fatal/high falsifiers from the Phase50 W/Z-only campaign against W/Z target observable \"physical-w-z-mass-ratio\"",
+    "W/Z quantitative target comparison passes",
+    "W/Z selector variation passes at every aligned point and contains the target inside the observed envelope",
+    "0 active severe falsifier(s) are target-relevant",
+    "0 active severe falsifier(s) are global sidecars"
+  ],
+  "closureRequirements": [],
+  "provenance": {
+    "createdAt": "2026-04-29T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase50-wz-only-campaign-integration",
+      "schemaVersion": "1.0"
+    },
+    "backend": "cpu",
+    "notes": "Audits the Phase50 W/Z-only campaign falsifier summary after replacing global branch/refinement targets and global sidecars with W/Z-scoped inputs."
+  }
+}

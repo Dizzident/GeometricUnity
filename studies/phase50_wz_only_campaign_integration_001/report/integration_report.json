@@ -1,0 +1,170 @@
+{
+  "reportId": "phase50-wz-only-campaign-integration-report-v1",
+  "schemaVersion": "1.0.0",
+  "studyId": "phase50-wz-only-campaign-integration",
+  "terminalStatus": "validated-predicted",
+  "campaignConfigPath": "../config/campaign.json",
+  "targetObservableIds": [
+    "physical-w-z-mass-ratio"
+  ],
+  "selectedModeIds": [
+    "phase22-phase12-candidate-0",
+    "phase22-phase12-candidate-2"
+  ],
+  "existingInputs": [
+    {
+      "inputId": "phase50-wz-branch-quantity-values",
+      "path": "../../phase50_wz_branch_refinement_inputs_001/config/branch_quantity_values.json",
+      "status": "available",
+      "role": "W/Z-only branch quantity values for physical-w-z-mass-ratio"
+    },
+    {
+      "inputId": "phase50-wz-refinement-values",
+      "path": "../../phase50_wz_branch_refinement_inputs_001/config/refinement_values.json",
+      "status": "available",
+      "role": "W/Z-only refinement values for physical-w-z-mass-ratio"
+    },
+    {
+      "inputId": "phase50-wz-scoped-registry",
+      "path": "../../phase50_wz_scoped_falsification_sidecars_001/wz_scoped_registry.json",
+      "status": "available",
+      "role": "minimal W/Z-scoped registry for selected W and Z modes"
+    },
+    {
+      "inputId": "phase50-wz-observation-chain-sidecar",
+      "path": "../../phase50_wz_scoped_falsification_sidecars_001/observation_chain.json",
+      "status": "available",
+      "role": "W/Z-scoped observation-chain sidecar"
+    },
+    {
+      "inputId": "phase50-wz-environment-variance-sidecar",
+      "path": "../../phase50_wz_scoped_falsification_sidecars_001/environment_variance.json",
+      "status": "available",
+      "role": "W/Z-scoped environment-variance sidecar"
+    },
+    {
+      "inputId": "phase50-wz-representation-content-sidecar",
+      "path": "../../phase50_wz_scoped_falsification_sidecars_001/representation_content.json",
+      "status": "available",
+      "role": "W/Z-scoped representation-content sidecar"
+    },
+    {
+      "inputId": "phase50-wz-coupling-consistency-sidecar",
+      "path": "../../phase50_wz_scoped_falsification_sidecars_001/coupling_consistency.json",
+      "status": "available",
+      "role": "W/Z-scoped coupling-consistency sidecar"
+    },
+    {
+      "inputId": "phase50-wz-sidecar-summary",
+      "path": "../../phase50_wz_scoped_falsification_sidecars_001/config/sidecar_summary.json",
+      "status": "available",
+      "role": "W/Z-scoped sidecar coverage summary"
+    },
+    {
+      "inputId": "phase50-wz-sidecar-scope",
+      "path": "../../phase50_wz_scoped_falsification_sidecars_001/sidecar_scope.json",
+      "status": "available",
+      "role": "explicit W/Z sidecar inclusion and exclusion scope"
+    },
+    {
+      "inputId": "physical-targets",
+      "path": "../../phase19_dimensionless_wz_candidate_001/physical_targets.json",
+      "status": "available",
+      "role": "external W/Z comparison target"
+    },
+    {
+      "inputId": "phase46-observables",
+      "path": "../../phase46_electroweak_term_wz_physical_prediction_001/observables.json",
+      "status": "available",
+      "role": "promoted W/Z physical observable values"
+    },
+    {
+      "inputId": "phase46-physical-observable-mappings",
+      "path": "../../phase46_electroweak_term_wz_physical_prediction_001/physical_observable_mappings.json",
+      "status": "available",
+      "role": "W/Z physical mapping"
+    },
+    {
+      "inputId": "phase46-observable-classifications",
+      "path": "../../phase46_electroweak_term_wz_physical_prediction_001/observable_classifications.json",
+      "status": "available",
+      "role": "W/Z observable classification"
+    },
+    {
+      "inputId": "phase46-physical-calibrations",
+      "path": "../../phase46_electroweak_term_wz_physical_prediction_001/physical_calibrations.json",
+      "status": "available",
+      "role": "dimensionless W/Z calibration"
+    },
+    {
+      "inputId": "phase46-physical-mode-records",
+      "path": "../../phase46_electroweak_term_wz_physical_prediction_001/physical_mode_records.json",
+      "status": "available",
+      "role": "validated W and Z mode records"
+    },
+    {
+      "inputId": "phase46-mode-identification-evidence",
+      "path": "../../phase46_electroweak_term_wz_physical_prediction_001/mode_identification_evidence.json",
+      "status": "available",
+      "role": "validated W and Z mode-identification evidence"
+    },
+    {
+      "inputId": "phase50-wz-only-relevance-audit",
+      "path": "physical_claim_falsifier_relevance_audit.json",
+      "status": "available",
+      "role": "W/Z-only severe-falsifier relevance audit generated from the Phase50 W/Z-only campaign run"
+    }
+  ],
+  "todoPlaceholders": [],
+  "integrationChecks": [
+    {
+      "checkId": "branch-values-wz-only",
+      "status": "wired",
+      "requirement": "campaign branchQuantityValuesPath must resolve to W/Z-only values"
+    },
+    {
+      "checkId": "refinement-values-wz-only",
+      "status": "wired",
+      "requirement": "campaign refinementValuesPath must resolve to W/Z-only values"
+    },
+    {
+      "checkId": "sidecars-wz-only",
+      "status": "wired",
+      "requirement": "campaign sidecar paths must resolve to W/Z-specific sidecars"
+    },
+    {
+      "checkId": "phase50-audit-consumed",
+      "status": "validated",
+      "requirement": "campaign must consume the Phase50 W/Z-only physical claim relevance audit"
+    },
+    {
+      "checkId": "fatal-high-falsifiers-clear",
+      "status": "passed",
+      "requirement": "validated run must have zero active fatal/high falsifiers"
+    },
+    {
+      "checkId": "physical-prediction-terminal-status",
+      "status": "predicted",
+      "requirement": "validated run must report physicalPredictionTerminalStatus.status == predicted"
+    }
+  ],
+  "validatedRun": {
+    "runFolder": "study-runs/phase50_wz_only_global_clear_check",
+    "activeFatalCount": 0,
+    "activeHighCount": 0,
+    "physicalBosonPredictionAllowed": true,
+    "physicalPredictionTerminalStatus": "predicted",
+    "computedWzRatio": 0.8796910570948282,
+    "targetWzRatio": 0.88136,
+    "pull": 1.0879885044906925
+  },
+  "provenance": {
+    "createdAt": "2026-04-28T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase50-wz-only-campaign-integration",
+      "schemaVersion": "1.0"
+    },
+    "backend": "manual-config-draft"
+  }
+}

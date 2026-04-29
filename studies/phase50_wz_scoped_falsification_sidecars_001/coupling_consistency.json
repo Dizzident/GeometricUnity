@@ -1,0 +1,46 @@
+[
+  {
+    "recordId": "phase50-cpl-phase22-phase12-candidate-0",
+    "candidateId": "phase22-phase12-candidate-0",
+    "couplingType": "wz-electroweak-identity-feature-consistency",
+    "relativeSpread": 0.0011,
+    "consistent": true,
+    "notes": "Scoped to the selected W mode identity feature used by the W/Z ratio campaign; does not evaluate Phase IV toy fermion top-coupling proxies.",
+    "origin": "bridge-derived",
+    "sourceArtifactRefs": [
+      "studies/phase46_electroweak_term_wz_physical_prediction_001/mode_identification_evidence.json",
+      "studies/phase46_electroweak_term_wz_physical_prediction_001/wz_selector_variation_diagnostic.json"
+    ],
+    "provenance": {
+      "createdAt": "2026-04-28T00:00:00+00:00",
+      "codeRevision": "working-tree",
+      "branch": {
+        "branchId": "phase50-wz-scoped-falsification-sidecars",
+        "schemaVersion": "1.0"
+      },
+      "backend": "documented-sidecar-scope"
+    }
+  },
+  {
+    "recordId": "phase50-cpl-phase22-phase12-candidate-2",
+    "candidateId": "phase22-phase12-candidate-2",
+    "couplingType": "wz-electroweak-identity-feature-consistency",
+    "relativeSpread": 0.0012,
+    "consistent": true,
+    "notes": "Scoped to the selected Z mode identity feature used by the W/Z ratio campaign; does not evaluate Phase IV toy fermion top-coupling proxies.",
+    "origin": "bridge-derived",
+    "sourceArtifactRefs": [
+      "studies/phase46_electroweak_term_wz_physical_prediction_001/mode_identification_evidence.json",
+      "studies/phase46_electroweak_term_wz_physical_prediction_001/wz_selector_variation_diagnostic.json"
+    ],
+    "provenance": {
+      "createdAt": "2026-04-28T00:00:00+00:00",
+      "codeRevision": "working-tree",
+      "branch": {
+        "branchId": "phase50-wz-scoped-falsification-sidecars",
+        "schemaVersion": "1.0"
+      },
+      "backend": "documented-sidecar-scope"
+    }
+  }
+]

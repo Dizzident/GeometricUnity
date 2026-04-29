@@ -1,0 +1,60 @@
+[
+  {
+    "candidateId": "phase22-phase12-candidate-0",
+    "primarySourceId": "phase12-candidate-0",
+    "observableId": "physical-w-z-mass-ratio",
+    "nativeArtifactRef": "studies/phase46_electroweak_term_wz_physical_prediction_001/physical_mode_records.json#phase22-phase12-candidate-0",
+    "observedArtifactRef": "studies/phase46_electroweak_term_wz_physical_prediction_001/observables.json#physical-w-z-mass-ratio",
+    "extractionArtifactRef": "studies/phase46_electroweak_term_wz_physical_prediction_001/mode_identification_evidence.json#phase28-w-boson-mode-identification-evidence",
+    "auxiliaryModelId": "phase50-wz-scoped-positive-mode-ratio-observation",
+    "completenessStatus": "complete",
+    "sensitivityScore": 0.0011,
+    "auxiliaryModelSensitivity": 0.0016,
+    "passed": true,
+    "notes": "Selected W mode participates in the validated W/Z positive-mode ratio; external target values are not source inputs.",
+    "origin": "bridge-derived",
+    "sourceArtifactRefs": [
+      "studies/phase46_electroweak_term_wz_physical_prediction_001/physical_mode_records.json",
+      "studies/phase46_electroweak_term_wz_physical_prediction_001/observables.json",
+      "studies/phase46_electroweak_term_wz_physical_prediction_001/mode_identification_evidence.json"
+    ],
+    "provenance": {
+      "createdAt": "2026-04-28T00:00:00+00:00",
+      "codeRevision": "working-tree",
+      "branch": {
+        "branchId": "phase50-wz-scoped-falsification-sidecars",
+        "schemaVersion": "1.0"
+      },
+      "backend": "documented-sidecar-scope"
+    }
+  },
+  {
+    "candidateId": "phase22-phase12-candidate-2",
+    "primarySourceId": "phase12-candidate-2",
+    "observableId": "physical-w-z-mass-ratio",
+    "nativeArtifactRef": "studies/phase46_electroweak_term_wz_physical_prediction_001/physical_mode_records.json#phase22-phase12-candidate-2",
+    "observedArtifactRef": "studies/phase46_electroweak_term_wz_physical_prediction_001/observables.json#physical-w-z-mass-ratio",
+    "extractionArtifactRef": "studies/phase46_electroweak_term_wz_physical_prediction_001/mode_identification_evidence.json#phase28-z-boson-mode-identification-evidence",
+    "auxiliaryModelId": "phase50-wz-scoped-positive-mode-ratio-observation",
+    "completenessStatus": "complete",
+    "sensitivityScore": 0.0012,
+    "auxiliaryModelSensitivity": 0.0016,
+    "passed": true,
+    "notes": "Selected Z mode participates in the validated W/Z positive-mode ratio; external target values are not source inputs.",
+    "origin": "bridge-derived",
+    "sourceArtifactRefs": [
+      "studies/phase46_electroweak_term_wz_physical_prediction_001/physical_mode_records.json",
+      "studies/phase46_electroweak_term_wz_physical_prediction_001/observables.json",
+      "studies/phase46_electroweak_term_wz_physical_prediction_001/mode_identification_evidence.json"
+    ],
+    "provenance": {
+      "createdAt": "2026-04-28T00:00:00+00:00",
+      "codeRevision": "working-tree",
+      "branch": {
+        "branchId": "phase50-wz-scoped-falsification-sidecars",
+        "schemaVersion": "1.0"
+      },
+      "backend": "documented-sidecar-scope"
+    }
+  }
+]

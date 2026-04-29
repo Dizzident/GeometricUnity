@@ -1,0 +1,56 @@
+[
+  {
+    "recordId": "phase50-rep-content-phase22-phase12-candidate-0",
+    "candidateId": "phase22-phase12-candidate-0",
+    "expectedModeCount": 1,
+    "observedModeCount": 1,
+    "missingRequiredCount": 0,
+    "structuralMismatchScore": 0.0,
+    "consistent": true,
+    "inconsistencyDescription": "Selected W mass-mode record is present with validated internal W mode-identification evidence.",
+    "origin": "bridge-derived",
+    "sourceArtifactRefs": [
+      "studies/phase46_electroweak_term_wz_physical_prediction_001/physical_mode_records.json",
+      "studies/phase46_electroweak_term_wz_physical_prediction_001/mode_identification_evidence.json",
+      "studies/phase46_electroweak_term_wz_source_spectra_001/source_spectra/candidate_mode_sources.json"
+    ],
+    "provenance": {
+      "createdAt": "2026-04-28T00:00:00+00:00",
+      "codeRevision": "working-tree",
+      "branch": {
+        "branchId": "phase50-wz-scoped-falsification-sidecars",
+        "schemaVersion": "1.0"
+      },
+      "backend": "documented-sidecar-scope",
+      "notes": "Representation-content record is scoped to the selected W mass-mode candidate, not the Phase IV toy fermion registry."
+    },
+    "p11StabilizationNote": null
+  },
+  {
+    "recordId": "phase50-rep-content-phase22-phase12-candidate-2",
+    "candidateId": "phase22-phase12-candidate-2",
+    "expectedModeCount": 1,
+    "observedModeCount": 1,
+    "missingRequiredCount": 0,
+    "structuralMismatchScore": 0.0,
+    "consistent": true,
+    "inconsistencyDescription": "Selected Z mass-mode record is present with validated internal Z mode-identification evidence.",
+    "origin": "bridge-derived",
+    "sourceArtifactRefs": [
+      "studies/phase46_electroweak_term_wz_physical_prediction_001/physical_mode_records.json",
+      "studies/phase46_electroweak_term_wz_physical_prediction_001/mode_identification_evidence.json",
+      "studies/phase46_electroweak_term_wz_source_spectra_001/source_spectra/candidate_mode_sources.json"
+    ],
+    "provenance": {
+      "createdAt": "2026-04-28T00:00:00+00:00",
+      "codeRevision": "working-tree",
+      "branch": {
+        "branchId": "phase50-wz-scoped-falsification-sidecars",
+        "schemaVersion": "1.0"
+      },
+      "backend": "documented-sidecar-scope",
+      "notes": "Representation-content record is scoped to the selected Z mass-mode candidate, not the Phase IV toy fermion registry."
+    },
+    "p11StabilizationNote": null
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "pointerId": "phase50-phase47-wz-relevance-audit-pointer",
+  "schemaVersion": "1.0.0",
+  "status": "available",
+  "auditPath": "../../phase47_wz_physical_claim_falsifier_relevance_001/physical_claim_falsifier_relevance_audit.json",
+  "expectedAuditResultId": "phase47-wz-physical-claim-falsifier-relevance-audit-v1",
+  "expectedTargetObservableId": "physical-w-z-mass-ratio",
+  "expectedTerminalStatus": "wz-physical-claim-target-clear-global-sidecars-blocked",
+  "claimPolicyUse": "target-scoped-input",
+  "notes": [
+    "Phase47 found zero active severe falsifiers directly relevant to the W/Z target observable.",
+    "Phase47 still reports global sidecar severe falsifiers; Phase50 keeps those visible instead of deleting or rewriting them."
+  ]
+}

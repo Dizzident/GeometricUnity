@@ -1,0 +1,52 @@
+{
+  "studyId": "phase50-wz-scoped-falsification-sidecars",
+  "schemaVersion": "1.0.0",
+  "channels": [
+    {
+      "channelId": "observation-chain",
+      "status": "evaluated",
+      "inputCount": 2,
+      "outputCount": 2,
+      "originCounts": {
+        "bridge-derived": 2
+      }
+    },
+    {
+      "channelId": "environment-variance",
+      "status": "evaluated",
+      "inputCount": 1,
+      "outputCount": 1,
+      "originCounts": {
+        "bridge-derived": 1
+      }
+    },
+    {
+      "channelId": "representation-content",
+      "status": "evaluated",
+      "inputCount": 2,
+      "outputCount": 2,
+      "originCounts": {
+        "bridge-derived": 2
+      }
+    },
+    {
+      "channelId": "coupling-consistency",
+      "status": "evaluated",
+      "inputCount": 2,
+      "outputCount": 2,
+      "originCounts": {
+        "bridge-derived": 2
+      }
+    }
+  ],
+  "provenance": {
+    "createdAt": "2026-04-28T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase50-wz-only-campaign-integration",
+      "schemaVersion": "1.0"
+    },
+    "backend": "documented-sidecar-scope",
+    "notes": "Local sidecar summary copy for Phase50 W/Z-only campaign validation; source sidecars live under studies/phase50_wz_scoped_falsification_sidecars_001."
+  }
+}
