@@ -196,6 +196,56 @@ public sealed class PhysicalObservableContractTests
     }
 
     [Fact]
+    public void PhysicalClaimGate_TargetScopedAuditAllowsScopedComparisonButKeepsUnrestrictedBlocked()
+    {
+        var mappings = MakeValidatedWzMappings();
+        var classifications = MakePhysicalWzClassifications();
+        var falsifiers = MakeGlobalSidecarFalsifiers();
+        var audit = MakeTargetClearFalsifierRelevanceAudit();
+
+        var gate = PhysicalClaimGate.Evaluate(
+            mappings,
+            classifications,
+            falsifiers,
+            calibrationAvailable: true,
+            physicalTargetEvidenceAvailable: true,
+            targetScopedFalsifierAudit: audit);
+
+        Assert.False(gate.PhysicalBosonPredictionAllowed);
+        Assert.True(gate.TargetScopedPhysicalComparisonAllowed);
+        Assert.Equal("physical-w-z-mass-ratio", gate.TargetScopedObservableId);
+        Assert.Equal(0, gate.TargetRelevantSevereFalsifierCount);
+        Assert.Equal(3, gate.GlobalSidecarSevereFalsifierCount);
+        Assert.Contains(gate.SummaryLines, line => line.Contains("Target-scoped physical comparison: allowed", StringComparison.Ordinal));
+
+        var status = PhysicalPredictionTerminalStatus.Evaluate(gate, predictions: [], scoreCard: null);
+        Assert.Equal("target-scoped", status.Status);
+    }
+
+    [Fact]
+    public void Phase5ReportGenerator_RendersTargetScopedFalsifierRelevanceAudit()
+    {
+        var report = Phase5ReportGenerator.Generate(
+            "study-target-scoped",
+            [],
+            MakeProvenance(),
+            falsifiers: MakeGlobalSidecarFalsifiers(),
+            observableClassifications: MakePhysicalWzClassifications(),
+            physicalObservableMappings: MakeValidatedWzMappings(),
+            physicalCalibrationAvailable: true,
+            physicalTargetEvidenceAvailable: true,
+            physicalClaimFalsifierRelevanceAudit: MakeTargetClearFalsifierRelevanceAudit());
+
+        Assert.NotNull(report.PhysicalClaimFalsifierRelevanceAudit);
+        Assert.True(report.PhysicalClaimGate!.TargetScopedPhysicalComparisonAllowed);
+
+        var md = Phase5ReportGenerator.ToMarkdown(report);
+        Assert.Contains("Physical Claim Falsifier Relevance", md);
+        Assert.Contains("Target-relevant severe falsifiers: 0", md);
+        Assert.Contains("Global sidecar severe falsifiers: 3", md);
+    }
+
+    [Fact]
     public void PhysicalPredictionTerminalStatus_GateBlocked_ReturnsBlocked()
     {
         var gate = PhysicalClaimGate.Evaluate(
@@ -651,35 +701,6 @@ public sealed class PhysicalObservableContractTests
 
     private static PhysicalClaimGate MakePassingPhysicalGate()
     {
-        var mappings = new[]
-        {
-            new PhysicalObservableMapping
-            {
-                MappingId = "map-wz-ratio",
-                ParticleId = "electroweak-sector",
-                PhysicalObservableType = "mass-ratio",
-                SourceComputedObservableId = "candidate-w-z-vector-mode-ratio",
-                TargetPhysicalObservableId = "physical-w-z-mass-ratio",
-                UnitFamily = "dimensionless",
-                Status = "validated",
-                Assumptions = ["test mapping"],
-                ClosureRequirements = [],
-            },
-        };
-        var classifications = new ObservableClassificationTable
-        {
-            TableId = "classifications",
-            Classifications =
-            [
-                new ObservableClassification
-                {
-                    ObservableId = "candidate-w-z-vector-mode-ratio",
-                    Classification = "physical-observable",
-                    Rationale = "validated test ratio",
-                    PhysicalClaimAllowed = true,
-                },
-            ],
-        };
         var falsifiers = new FalsifierSummary
         {
             StudyId = "study-1",
@@ -691,12 +712,152 @@ public sealed class PhysicalObservableContractTests
         };
 
         return PhysicalClaimGate.Evaluate(
-            mappings,
-            classifications,
+            MakeValidatedWzMappings(),
+            MakePhysicalWzClassifications(),
             falsifiers,
             calibrationAvailable: true,
             physicalTargetEvidenceAvailable: true);
     }
+
+    private static IReadOnlyList<PhysicalObservableMapping> MakeValidatedWzMappings() =>
+    [
+        new PhysicalObservableMapping
+        {
+            MappingId = "map-wz-ratio",
+            ParticleId = "electroweak-sector",
+            PhysicalObservableType = "mass-ratio",
+            SourceComputedObservableId = "candidate-w-z-vector-mode-ratio",
+            TargetPhysicalObservableId = "physical-w-z-mass-ratio",
+            UnitFamily = "dimensionless",
+            Status = "validated",
+            Assumptions = ["test mapping"],
+            ClosureRequirements = [],
+        },
+    ];
+
+    private static ObservableClassificationTable MakePhysicalWzClassifications() => new()
+    {
+        TableId = "classifications",
+        Classifications =
+        [
+            new ObservableClassification
+            {
+                ObservableId = "candidate-w-z-vector-mode-ratio",
+                Classification = "physical-observable",
+                Rationale = "validated test ratio",
+                PhysicalClaimAllowed = true,
+            },
+        ],
+    };
+
+    private static FalsifierSummary MakeGlobalSidecarFalsifiers() => new()
+    {
+        StudyId = "study-1",
+        ActiveFatalCount = 1,
+        ActiveHighCount = 2,
+        TotalActiveCount = 3,
+        Falsifiers =
+        [
+            new()
+            {
+                FalsifierId = "falsifier-0001",
+                FalsifierType = "branch-fragility",
+                Severity = "high",
+                TargetId = "gauge-violation",
+                BranchId = "branch-family",
+                TriggerValue = 1.8,
+                Threshold = 0.5,
+                Description = "branch fragility",
+                Evidence = "branch",
+                Active = true,
+                Provenance = MakeProvenance(),
+            },
+            new()
+            {
+                FalsifierId = "falsifier-0002",
+                FalsifierType = "branch-fragility",
+                Severity = "high",
+                TargetId = "solver-iterations",
+                BranchId = "branch-family",
+                TriggerValue = 2.0,
+                Threshold = 0.5,
+                Description = "branch fragility",
+                Evidence = "branch",
+                Active = true,
+                Provenance = MakeProvenance(),
+            },
+            new()
+            {
+                FalsifierId = "falsifier-0003",
+                FalsifierType = "representation-content",
+                Severity = "fatal",
+                TargetId = "fermion-registry-phase4-toy-v1-0000",
+                BranchId = "unknown",
+                TriggerValue = 1.0,
+                Threshold = 0.0,
+                Description = "representation content",
+                Evidence = "representation",
+                Active = true,
+                Provenance = MakeProvenance(),
+            },
+        ],
+        Provenance = MakeProvenance(),
+    };
+
+    private static WzPhysicalClaimFalsifierRelevanceAuditResult MakeTargetClearFalsifierRelevanceAudit() => new()
+    {
+        ResultId = "phase47-wz-physical-claim-falsifier-relevance-audit-v1",
+        SchemaVersion = "1.0.0",
+        TerminalStatus = "wz-physical-claim-target-clear-global-sidecars-blocked",
+        AlgorithmId = WzPhysicalClaimFalsifierRelevanceAudit.AlgorithmId,
+        TargetObservableId = "physical-w-z-mass-ratio",
+        TargetComparisonPassed = true,
+        SelectorVariationPassed = true,
+        SelectedModeIds = ["phase22-phase12-candidate-0", "phase22-phase12-candidate-2"],
+        SelectedSourceCandidateIds = ["phase12-candidate-0", "phase12-candidate-2"],
+        ActiveSevereFalsifierCount = 3,
+        TargetRelevantSevereFalsifierCount = 0,
+        GlobalSidecarSevereFalsifierCount = 3,
+        FalsifierAudits =
+        [
+            new()
+            {
+                FalsifierId = "falsifier-0001",
+                FalsifierType = "branch-fragility",
+                Severity = "high",
+                TargetId = "gauge-violation",
+                BranchId = "branch-family",
+                Relevance = "global-sidecar",
+                Scope = "branch-diagnostic",
+                Reason = "test",
+            },
+            new()
+            {
+                FalsifierId = "falsifier-0002",
+                FalsifierType = "branch-fragility",
+                Severity = "high",
+                TargetId = "solver-iterations",
+                BranchId = "branch-family",
+                Relevance = "global-sidecar",
+                Scope = "branch-diagnostic",
+                Reason = "test",
+            },
+            new()
+            {
+                FalsifierId = "falsifier-0003",
+                FalsifierType = "representation-content",
+                Severity = "fatal",
+                TargetId = "fermion-registry-phase4-toy-v1-0000",
+                BranchId = "unknown",
+                Relevance = "global-sidecar",
+                Scope = "fermion-registry",
+                Reason = "test",
+            },
+        ],
+        Diagnosis = ["test"],
+        ClosureRequirements = ["resolve global sidecar falsifiers or adopt target-scoped policy"],
+        Provenance = MakeProvenance(),
+    };
 
     private static PhysicalPredictionRecord MakePredictedPhysicalRecord(string targetObservableId) => new()
     {

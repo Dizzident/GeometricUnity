@@ -25,6 +25,14 @@ public sealed class PhysicalPredictionTerminalStatus
 
         if (gate?.PhysicalBosonPredictionAllowed != true)
         {
+            if (gate?.TargetScopedPhysicalComparisonAllowed == true)
+            {
+                lines.Add("Physical prediction terminal status: target-scoped.");
+                lines.Add(
+                    $"Target-scoped physical comparison is allowed for {gate.TargetScopedObservableId}; unrestricted physical prediction remains blocked.");
+                return new PhysicalPredictionTerminalStatus { Status = "target-scoped", SummaryLines = lines };
+            }
+
             lines.Add("Physical prediction terminal status: blocked.");
             lines.Add("Physical claim gate is blocked.");
             return new PhysicalPredictionTerminalStatus { Status = "blocked", SummaryLines = lines };

@@ -79,6 +79,10 @@ public sealed class Phase5Report
     [JsonPropertyName("physicalClaimGate")]
     public PhysicalClaimGate? PhysicalClaimGate { get; init; }
 
+    /// <summary>Optional target-scoped falsifier relevance audit for W/Z physical comparison claims.</summary>
+    [JsonPropertyName("physicalClaimFalsifierRelevanceAudit")]
+    public WzPhysicalClaimFalsifierRelevanceAuditResult? PhysicalClaimFalsifierRelevanceAudit { get; init; }
+
     /// <summary>Candidate physical prediction records. Blocked records are diagnostics only.</summary>
     [JsonPropertyName("physicalPredictions")]
     public IReadOnlyList<PhysicalPredictionRecord>? PhysicalPredictions { get; init; }

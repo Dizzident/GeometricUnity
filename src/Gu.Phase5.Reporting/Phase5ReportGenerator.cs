@@ -43,7 +43,8 @@ public static class Phase5ReportGenerator
         IReadOnlyList<PhysicalPredictionRecord>? physicalPredictions = null,
         ConsistencyScoreCard? scoreCard = null,
         bool physicalCalibrationAvailable = false,
-        bool physicalTargetEvidenceAvailable = false)
+        bool physicalTargetEvidenceAvailable = false,
+        WzPhysicalClaimFalsifierRelevanceAuditResult? physicalClaimFalsifierRelevanceAudit = null)
     {
         ArgumentNullException.ThrowIfNull(studyId);
         ArgumentNullException.ThrowIfNull(dossiers);
@@ -71,7 +72,8 @@ public static class Phase5ReportGenerator
             observableClassifications,
             falsifiers,
             calibrationAvailable: physicalCalibrationAvailable,
-            physicalTargetEvidenceAvailable: physicalTargetEvidenceAvailable);
+            physicalTargetEvidenceAvailable: physicalTargetEvidenceAvailable,
+            targetScopedFalsifierAudit: physicalClaimFalsifierRelevanceAudit);
         var terminalStatus = PhysicalPredictionTerminalStatus.Evaluate(
             physicalClaimGate,
             physicalPredictions,
@@ -92,6 +94,7 @@ public static class Phase5ReportGenerator
             ObserverseRecoveryBlock = observerseBlock,
             ObservableClassifications = observableClassifications,
             PhysicalClaimGate = physicalClaimGate,
+            PhysicalClaimFalsifierRelevanceAudit = physicalClaimFalsifierRelevanceAudit,
             PhysicalPredictions = physicalPredictions,
             PhysicalPredictionTerminalStatus = terminalStatus,
             Provenance = provenance,
@@ -193,6 +196,19 @@ public static class Phase5ReportGenerator
             sb.AppendLine("## Physical Claim Gate");
             foreach (var line in gate.SummaryLines)
                 sb.AppendLine(line);
+            sb.AppendLine();
+        }
+
+        if (report.PhysicalClaimFalsifierRelevanceAudit is { } relevanceAudit)
+        {
+            sb.AppendLine("## Physical Claim Falsifier Relevance");
+            sb.AppendLine($"- Target observable: {relevanceAudit.TargetObservableId}");
+            sb.AppendLine($"- Target comparison passed: {(relevanceAudit.TargetComparisonPassed ? "yes" : "no")}");
+            sb.AppendLine($"- Selector variation passed: {(relevanceAudit.SelectorVariationPassed ? "yes" : "no")}");
+            sb.AppendLine($"- Target-relevant severe falsifiers: {relevanceAudit.TargetRelevantSevereFalsifierCount}");
+            sb.AppendLine($"- Global sidecar severe falsifiers: {relevanceAudit.GlobalSidecarSevereFalsifierCount}");
+            foreach (var record in relevanceAudit.FalsifierAudits)
+                sb.AppendLine($"- {record.FalsifierId}: {record.Relevance}; {record.Scope}; target {record.TargetId}.");
             sb.AppendLine();
         }
 

@@ -14,6 +14,18 @@ public sealed class PhysicalClaimGate
     [JsonPropertyName("physicalBosonPredictionAllowed")]
     public required bool PhysicalBosonPredictionAllowed { get; init; }
 
+    [JsonPropertyName("targetScopedPhysicalComparisonAllowed")]
+    public bool TargetScopedPhysicalComparisonAllowed { get; init; }
+
+    [JsonPropertyName("targetScopedObservableId")]
+    public string? TargetScopedObservableId { get; init; }
+
+    [JsonPropertyName("targetRelevantSevereFalsifierCount")]
+    public int? TargetRelevantSevereFalsifierCount { get; init; }
+
+    [JsonPropertyName("globalSidecarSevereFalsifierCount")]
+    public int? GlobalSidecarSevereFalsifierCount { get; init; }
+
     [JsonPropertyName("summaryLines")]
     public required IReadOnlyList<string> SummaryLines { get; init; }
 
@@ -22,7 +34,8 @@ public sealed class PhysicalClaimGate
         ObservableClassificationTable? classifications,
         FalsifierSummary? falsifiers,
         bool calibrationAvailable,
-        bool physicalTargetEvidenceAvailable)
+        bool physicalTargetEvidenceAvailable,
+        WzPhysicalClaimFalsifierRelevanceAuditResult? targetScopedFalsifierAudit = null)
     {
         var lines = new List<string>();
         var validatedMappings = mappings?.Where(m =>
@@ -63,6 +76,35 @@ public sealed class PhysicalClaimGate
                       physicalTargetEvidenceAvailable &&
                       activeSevereFalsifiers.Count == 0;
 
+        var targetScopedAllowed = validatedMappings.Count > 0 &&
+                                  physicalClassifications.Count > 0 &&
+                                  calibrationAvailable &&
+                                  physicalTargetEvidenceAvailable &&
+                                  targetScopedFalsifierAudit is
+                                  {
+                                      TargetComparisonPassed: true,
+                                      SelectorVariationPassed: true,
+                                      TargetRelevantSevereFalsifierCount: 0,
+                                  };
+
+        if (targetScopedFalsifierAudit is not null)
+        {
+            if (targetScopedAllowed)
+            {
+                lines.Add(
+                    $"- Target-scoped physical comparison: allowed for {targetScopedFalsifierAudit.TargetObservableId}; " +
+                    $"{targetScopedFalsifierAudit.GlobalSidecarSevereFalsifierCount} global sidecar severe falsifier(s) remain disclosed.");
+            }
+            else
+            {
+                lines.Add(
+                    $"- Target-scoped physical comparison: blocked for {targetScopedFalsifierAudit.TargetObservableId}; " +
+                    $"{targetScopedFalsifierAudit.TargetRelevantSevereFalsifierCount} target-relevant severe falsifier(s), " +
+                    $"target comparison passed: {targetScopedFalsifierAudit.TargetComparisonPassed}, " +
+                    $"selector variation passed: {targetScopedFalsifierAudit.SelectorVariationPassed}.");
+            }
+        }
+
         lines.Insert(0, allowed
             ? "- Physical boson prediction: passed."
             : "- Physical boson prediction: blocked.");
@@ -71,6 +113,10 @@ public sealed class PhysicalClaimGate
         {
             GateId = "phase16-physical-claim-gate",
             PhysicalBosonPredictionAllowed = allowed,
+            TargetScopedPhysicalComparisonAllowed = targetScopedAllowed,
+            TargetScopedObservableId = targetScopedFalsifierAudit?.TargetObservableId,
+            TargetRelevantSevereFalsifierCount = targetScopedFalsifierAudit?.TargetRelevantSevereFalsifierCount,
+            GlobalSidecarSevereFalsifierCount = targetScopedFalsifierAudit?.GlobalSidecarSevereFalsifierCount,
             SummaryLines = lines,
         };
     }
