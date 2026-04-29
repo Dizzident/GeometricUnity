@@ -1,0 +1,13 @@
+{
+  "matrixElementId": "phase64-non-proxy-fermion-current-matrix-element",
+  "terminalStatus": "non-proxy-fermion-current-matrix-element-derived",
+  "sourceKind": "non-proxy-fermion-current-matrix-element",
+  "derivationMethod": "analytic-dirac-variation-matrix-element:v1",
+  "normalizationConventionId": "physical-weak-coupling-normalization:su2-canonical-trace-half-v1",
+  "operatorSource": "Gu.Phase4.Couplings.DiracVariationComputer.ComputeAnalytical",
+  "matrixElementFormula": "<phi_i, delta_D[b_k] phi_j>",
+  "usesFiniteDifferenceProxy": false,
+  "usesCouplingProxyMagnitude": false,
+  "producesDimensionlessCouplingValue": false,
+  "closureRequirements": []
+}
