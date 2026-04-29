@@ -1,0 +1,23 @@
+{
+  "algorithmId": "phase65-dimensionless-weak-coupling-amplitude-extractor-v1",
+  "terminalStatus": "dimensionless-weak-coupling-amplitude-extracted",
+  "matrixElementId": "phase64-non-proxy-fermion-current-matrix-element",
+  "normalizationConventionId": "physical-weak-coupling-normalization:su2-canonical-trace-half-v1",
+  "rawMatrixElementMagnitude": 0.8,
+  "generatorNormalizationScale": 0.7071067811865476,
+  "candidate": {
+    "candidateId": "phase65-dimensionless-weak-coupling-amplitude-candidate",
+    "sourceKind": "normalized-internal-weak-coupling",
+    "normalizationConvention": "physical-weak-coupling-normalization:su2-canonical-trace-half-v1",
+    "couplingValue": 0.5656854249492381,
+    "couplingUncertainty": null,
+    "variationMethod": "analytic-dirac-variation-matrix-element:v1",
+    "branchStabilityScore": null,
+    "excludedTargetObservableIds": [
+      "physical-w-boson-mass-gev",
+      "physical-z-boson-mass-gev"
+    ],
+    "provenanceId": "phase65-study-artifact"
+  },
+  "closureRequirements": []
+}
