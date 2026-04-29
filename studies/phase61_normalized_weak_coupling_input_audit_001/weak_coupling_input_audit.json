@@ -1,0 +1,45 @@
+{
+  "algorithmId": "phase61-normalized-weak-coupling-input-auditor-v1",
+  "terminalStatus": "normalized-weak-coupling-inputs-blocked",
+  "acceptedCandidateCount": 0,
+  "rejectedCandidateCount": 2,
+  "requiredExcludedTargetObservableIds": [
+    "physical-w-boson-mass-gev",
+    "physical-z-boson-mass-gev"
+  ],
+  "minimumBranchStabilityScore": 0.95,
+  "records": [
+    {
+      "candidateId": "phase61-current-w-sector-coupling-proxy",
+      "sourceKind": "finite-difference-coupling-proxy",
+      "status": "rejected",
+      "blockReasons": [
+        "source kind must be normalized-internal-weak-coupling",
+        "normalization convention must start with physical-weak-coupling-normalization:",
+        "coupling uncertainty must be finite and non-negative",
+        "finite-difference coupling proxies are not normalized weak-coupling inputs",
+        "branch stability score must be finite and at least 0.95"
+      ]
+    },
+    {
+      "candidateId": "phase61-current-z-sector-coupling-proxy",
+      "sourceKind": "finite-difference-coupling-proxy",
+      "status": "rejected",
+      "blockReasons": [
+        "source kind must be normalized-internal-weak-coupling",
+        "normalization convention must start with physical-weak-coupling-normalization:",
+        "coupling uncertainty must be finite and non-negative",
+        "finite-difference coupling proxies are not normalized weak-coupling inputs",
+        "branch stability score must be finite and at least 0.95"
+      ]
+    }
+  ],
+  "closureRequirements": [
+    "no accepted normalized weak-coupling candidate is available",
+    "branch stability score must be finite and at least 0.95",
+    "coupling uncertainty must be finite and non-negative",
+    "finite-difference coupling proxies are not normalized weak-coupling inputs",
+    "normalization convention must start with physical-weak-coupling-normalization:",
+    "source kind must be normalized-internal-weak-coupling"
+  ]
+}
