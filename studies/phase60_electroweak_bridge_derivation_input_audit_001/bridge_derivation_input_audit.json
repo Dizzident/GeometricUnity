@@ -1,0 +1,84 @@
+{
+  "studyId": "phase60-electroweak-bridge-derivation-input-audit",
+  "schemaVersion": "1.0.0",
+  "terminalStatus": "bridge-derivation-inputs-blocked",
+  "scope": "electroweak-bridge-derivation-readiness",
+  "sourceArtifacts": [
+    "studies/phase46_electroweak_term_wz_physical_prediction_001/physical_mode_records.json",
+    "studies/phase54_external_electroweak_scale_input_001/external_electroweak_scale_input.json",
+    "studies/phase55_internal_electroweak_bridge_candidate_audit_001/internal_bridge_candidate_audit.json",
+    "studies/phase59_wz_absolute_mass_observable_projector_001/observable_projector_contract.json"
+  ],
+  "records": [
+    {
+      "artifactId": "validated-wz-internal-modes",
+      "artifactKind": "physical-mode-records",
+      "status": "available",
+      "relevance": "required source modes for absolute W/Z projection",
+      "blockReasons": []
+    },
+    {
+      "artifactId": "external-electroweak-scale",
+      "artifactKind": "external-scale-input",
+      "status": "available",
+      "relevance": "required GeV electroweak scale input",
+      "blockReasons": []
+    },
+    {
+      "artifactId": "normalized-internal-weak-coupling",
+      "artifactKind": "bridge-input",
+      "status": "missing",
+      "relevance": "accepted bridge input kind",
+      "blockReasons": [
+        "normalized internal weak coupling is missing"
+      ]
+    },
+    {
+      "artifactId": "internal-mass-generation-relation",
+      "artifactKind": "bridge-input",
+      "status": "missing",
+      "relevance": "accepted bridge input kind",
+      "blockReasons": [
+        "validated internal mass-generation relation is missing"
+      ]
+    },
+    {
+      "artifactId": "scalar-sector-bridge",
+      "artifactKind": "bridge-supporting-sector",
+      "status": "missing",
+      "relevance": "possible mass-generation support evidence",
+      "blockReasons": [
+        "scalar/Higgs-sector bridge evidence is missing"
+      ]
+    },
+    {
+      "artifactId": "shared-wz-scale-check",
+      "artifactKind": "bridge-validation-check",
+      "status": "missing",
+      "relevance": "required consistency check before projection",
+      "blockReasons": [
+        "shared W/Z GeV-per-internal-mass-unit scale check is missing"
+      ]
+    }
+  ],
+  "closureRequirements": [
+    "derive normalized internal weak coupling or validated internal mass-generation relation",
+    "add scalar/Higgs-sector bridge evidence if the relation depends on mass generation",
+    "add a shared W/Z scale consistency check before projection",
+    "run ElectroweakBridgeValidator after these inputs exist"
+  ],
+  "nextClosureSteps": [
+    "implement normalized weak-coupling extraction from internal operator artifacts, or",
+    "implement scalar-sector/mass-generation relation extraction, then",
+    "materialize a candidate ElectroweakBridgeRecord and validate it"
+  ],
+  "provenance": {
+    "createdAt": "2026-04-29T00:00:00+00:00",
+    "codeRevision": "working-tree",
+    "branch": {
+      "branchId": "phase60-electroweak-bridge-derivation-input-audit",
+      "schemaVersion": "1.0"
+    },
+    "backend": "code-and-artifact"
+  }
+}
