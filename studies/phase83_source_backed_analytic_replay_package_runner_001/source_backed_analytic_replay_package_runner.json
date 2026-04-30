@@ -1,0 +1,37 @@
+{
+  "phaseId": "phase83-source-backed-analytic-replay-package-runner",
+  "terminalStatus": "source-backed-replay-package-runner-implemented",
+  "algorithmId": "phase83-source-backed-analytic-replay-package-runner-v1",
+  "inputs": [
+    "source boson mode JSON with modeVector or eigenvectorCoefficients",
+    "geometry edge lengths",
+    "geometry cells-per-edge incidence",
+    "geometry edge directions",
+    "gamma operator bundle",
+    "source-backed fermion mode I eigenvector",
+    "source-backed fermion mode J eigenvector"
+  ],
+  "outputs": [
+    "boson perturbation vector materialization result",
+    "analytic Dirac variation matrix",
+    "analytic weak-coupling replay result",
+    "full analytic weak-coupling replay package",
+    "production replay input materialization audit"
+  ],
+  "blockingRules": [
+    "boson vector length must equal edgeCount * dimG",
+    "fermion eigenvector lengths must equal cellCount * spinorDim * dimG * 2",
+    "edge length and edge direction arrays must match cells-per-edge count",
+    "all vector and geometry values must be finite"
+  ],
+  "validation": {
+    "command": "dotnet test tests/Gu.Phase5.Reporting.Tests/Gu.Phase5.Reporting.Tests.csproj",
+    "passed": 289,
+    "failed": 0
+  },
+  "physicalPredictionStatus": {
+    "canClaimPhysicalBosonPredictions": false,
+    "reason": "the source-backed replay package runner exists and is tested, but has not yet been executed over the actual Phase12 W/Z candidate set with production geometry and selected fermion modes"
+  },
+  "nextPhaseRecommendation": "Create the production Phase12 replay job that selects persisted W/Z-like boson candidates and source-backed fermion modes, runs the Phase83 runner, and emits comparison-ready prediction artifacts."
+}
