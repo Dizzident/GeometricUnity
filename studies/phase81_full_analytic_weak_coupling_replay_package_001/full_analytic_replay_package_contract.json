@@ -1,0 +1,31 @@
+{
+  "algorithmId": "phase81-full-analytic-weak-coupling-replay-package-builder-v1",
+  "terminalStatus": "full-replay-package-builder-implemented-production-inputs-missing",
+  "requiredPackageFields": [
+    "packageId",
+    "bosonModeId",
+    "bosonModeSourceKind",
+    "bosonPerturbationVector",
+    "analyticVariationMatrixRe",
+    "analyticVariationMatrixIm",
+    "fermionModeI.eigenvectorCoefficients",
+    "fermionModeJ.eigenvectorCoefficients",
+    "couplingRecord.couplingProxyReal",
+    "couplingRecord.couplingProxyImaginary",
+    "couplingRecord.couplingProxyMagnitude",
+    "evidenceBuild",
+    "materializationAudit"
+  ],
+  "acceptedBosonModeSourceKind": "selected-physical-wz-boson-mode",
+  "acceptedVariationMethod": "analytic-dirac-variation-matrix-element:v1",
+  "acceptedNormalizationConvention": "unit-modes",
+  "syntheticSourceBlocked": true,
+  "productionInputsMaterialized": false,
+  "closureRequirements": [
+    "materialize selected physical W/Z perturbation vector",
+    "materialize selected target-independent fermion current mode eigenvectors",
+    "compute analytic variation matrix from production perturbation vector",
+    "emit FullAnalyticWeakCouplingReplayPackage",
+    "feed validated evidence into DimensionlessWeakCouplingAmplitudeExtractor.ExtractFromEvidence"
+  ]
+}
