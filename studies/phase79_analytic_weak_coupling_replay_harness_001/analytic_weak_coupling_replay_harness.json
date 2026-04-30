@@ -1,0 +1,27 @@
+{
+  "algorithmId": "phase79-analytic-weak-coupling-replay-harness-v1",
+  "terminalStatus": "analytic-replay-harness-implemented-production-inputs-missing",
+  "implementedCodePaths": [
+    "src/Gu.Phase5.Reporting/AnalyticWeakCouplingReplayHarness.cs",
+    "src/Gu.Phase5.Reporting/ReplayedRawWeakCouplingMatrixElementEvidenceBuilder.cs",
+    "src/Gu.Phase5.Reporting/RawWeakCouplingMatrixElementEvidenceValidator.cs",
+    "src/Gu.Phase5.Reporting/DimensionlessWeakCouplingAmplitudeExtractor.cs::ExtractFromEvidence"
+  ],
+  "validatedSyntheticPath": {
+    "normalizationConvention": "unit-modes",
+    "variationMethod": "analytic-dirac-variation-matrix-element:v1",
+    "evidenceGateStatus": "raw-weak-coupling-matrix-element-evidence-validated"
+  },
+  "productionReplayInputsRequired": [
+    "selected W/Z boson mode perturbation encoded as analytic delta_D[b_k]",
+    "selected target-independent fermion current mode I with eigenvector coefficients",
+    "selected target-independent fermion current mode J with eigenvector coefficients",
+    "persisted analytic variation evidence id"
+  ],
+  "closureRequirements": [
+    "materialize selected production analytic variation matrix from DiracVariationComputer.ComputeAnalytical",
+    "materialize selected production fermion current modes with eigenvectors",
+    "run AnalyticWeakCouplingReplayHarness.ReplayFromAnalyticVariation on production artifacts",
+    "feed validated evidence into DimensionlessWeakCouplingAmplitudeExtractor.ExtractFromEvidence"
+  ]
+}
