@@ -10,6 +10,7 @@
     <ProjectReference Include="..\Gu.Math\Gu.Math.csproj" />
     <ProjectReference Include="..\Gu.Phase3.Backgrounds\Gu.Phase3.Backgrounds.csproj" />
     <ProjectReference Include="..\Gu.Phase3.Reporting\Gu.Phase3.Reporting.csproj" />
+    <ProjectReference Include="..\Gu.Phase4.Couplings\Gu.Phase4.Couplings.csproj" />
     <ProjectReference Include="..\Gu.Phase4.Reporting\Gu.Phase4.Reporting.csproj" />
     <ProjectReference Include="..\Gu.Phase5.BranchIndependence\Gu.Phase5.BranchIndependence.csproj" />
     <ProjectReference Include="..\Gu.Phase5.Convergence\Gu.Phase5.Convergence.csproj" />

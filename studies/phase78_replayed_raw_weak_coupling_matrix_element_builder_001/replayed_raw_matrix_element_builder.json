@@ -1,0 +1,21 @@
+{
+  "algorithmId": "phase78-replayed-raw-weak-coupling-matrix-element-evidence-builder-v1",
+  "terminalStatus": "replay-builder-implemented-production-artifact-missing",
+  "implementedCodePaths": [
+    "src/Gu.Phase5.Reporting/ReplayedRawWeakCouplingMatrixElementEvidenceBuilder.cs",
+    "src/Gu.Phase5.Reporting/RawWeakCouplingMatrixElementEvidenceValidator.cs",
+    "src/Gu.Phase5.Reporting/DimensionlessWeakCouplingAmplitudeExtractor.cs::ExtractFromEvidence"
+  ],
+  "acceptedVariationMethod": "analytic-dirac-variation-matrix-element:v1",
+  "acceptedNormalizationConvention": "unit-modes",
+  "persistedStudySearchFinding": {
+    "unitModeCouplingAtlasesFound": true,
+    "productionAnalyticMatrixElementRecordsFound": false,
+    "finiteDifferenceAtlasesRemainBlocked": true
+  },
+  "closureRequirements": [
+    "produce a persisted analytic Dirac-variation coupling record for the selected weak-current matrix element",
+    "run the persisted record through ReplayedRawWeakCouplingMatrixElementEvidenceBuilder",
+    "feed validated evidence into DimensionlessWeakCouplingAmplitudeExtractor.ExtractFromEvidence before recalculating W/Z absolute masses"
+  ]
+}
