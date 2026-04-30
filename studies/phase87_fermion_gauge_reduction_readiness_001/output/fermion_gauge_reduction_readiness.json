@@ -1,0 +1,42 @@
+{
+  "phaseId": "phase87-fermion-gauge-reduction-readiness",
+  "terminalStatus": "fermion-gauge-reduction-blocked",
+  "algorithmId": "phase87-fermion-gauge-reduction-readiness-auditor-v1",
+  "auditedBackgrounds": [
+    {
+      "artifactId": "phase87-bg-a-gauge-reduction-readiness",
+      "backgroundId": "bg-phase12-bg-a-20260315212202",
+      "diracBundlePath": "studies/phase12_joined_calculation_001/output/background_family/fermions/dirac_bundle_bg-phase12-bg-a-20260315212202.json",
+      "fermionModesPath": "studies/phase85_exact_fermion_residual_repair_001/output/exact_nonnull_fermion_modes_bg-phase12-bg-a-20260315212202.json",
+      "diracBundleGaugeReductionApplied": false,
+      "fermionModesGaugeReductionApplied": false,
+      "solverConfigRequestedGaugeReduction": true,
+      "hasGaugeProjectorArtifact": false,
+      "hasGaugeReducedDiracOperatorArtifact": false,
+      "hasBranchRefinementStabilityEvidence": false,
+      "terminalStatus": "fermion-gauge-reduction-blocked"
+    },
+    {
+      "artifactId": "phase87-bg-b-gauge-reduction-readiness",
+      "backgroundId": "bg-phase12-bg-b-20260315212202",
+      "diracBundlePath": "studies/phase12_joined_calculation_001/output/background_family/fermions/dirac_bundle_bg-phase12-bg-b-20260315212202.json",
+      "fermionModesPath": "studies/phase85_exact_fermion_residual_repair_001/output/exact_nonnull_fermion_modes_bg-phase12-bg-b-20260315212202.json",
+      "diracBundleGaugeReductionApplied": false,
+      "fermionModesGaugeReductionApplied": false,
+      "solverConfigRequestedGaugeReduction": true,
+      "hasGaugeProjectorArtifact": false,
+      "hasGaugeReducedDiracOperatorArtifact": false,
+      "hasBranchRefinementStabilityEvidence": false,
+      "terminalStatus": "fermion-gauge-reduction-blocked"
+    }
+  ],
+  "closureRequirements": [
+    "solver requested gauge reduction but the Dirac bundle was assembled with gaugeReductionApplied=false",
+    "gauge-reduced Dirac bundle is missing",
+    "fermion modes are not marked gauge-reduced",
+    "fermion-compatible gauge projector artifact is missing",
+    "projected or gauge-reduced fermion Dirac operator artifact is missing",
+    "branch/refinement stability evidence for the fermion modes is missing"
+  ],
+  "canCompareToExternalBosonValues": false
+}
