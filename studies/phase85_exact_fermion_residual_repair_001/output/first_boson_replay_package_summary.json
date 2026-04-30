@@ -3,13 +3,13 @@
   "bosonModeId": "bg-phase12-bg-a-20260315212202-mode-0",
   "bosonModeSourceKind": "selected-physical-wz-boson-mode",
   "coupling": {
-    "couplingId": "coupling-bg-phase12-bg-a-20260315212202-mode-0-mode-bg-phase12-bg-a-20260315212202-000-mode-bg-phase12-bg-a-20260315212202-001",
+    "couplingId": "coupling-bg-phase12-bg-a-20260315212202-mode-0-exact-nonnull-mode-bg-phase12-bg-a-20260315212202-000-exact-nonnull-mode-bg-phase12-bg-a-20260315212202-001",
     "bosonModeId": "bg-phase12-bg-a-20260315212202-mode-0",
-    "fermionModeIdI": "mode-bg-phase12-bg-a-20260315212202-000",
-    "fermionModeIdJ": "mode-bg-phase12-bg-a-20260315212202-001",
-    "couplingProxyReal": -0.013294837073483326,
-    "couplingProxyImaginary": -0.029006358662966532,
-    "couplingProxyMagnitude": 0.0319080167935132,
+    "fermionModeIdI": "exact-nonnull-mode-bg-phase12-bg-a-20260315212202-000",
+    "fermionModeIdJ": "exact-nonnull-mode-bg-phase12-bg-a-20260315212202-001",
+    "couplingProxyReal": 0.00012227811844423052,
+    "couplingProxyImaginary": -6.209475502876885E-05,
+    "couplingProxyMagnitude": 0.0001371411566683907,
     "normalizationConvention": "unit-modes",
     "selectionRuleNotes": [
       "replayed from analytic Dirac-variation matrix"
@@ -18,7 +18,7 @@
     "variationMethod": "analytic-dirac-variation-matrix-element:v1",
     "variationEvidenceId": "analytic-variation:bg-phase12-bg-a-20260315212202-mode-0:studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-a-20260315212202-mode-0.json",
     "provenance": {
-      "createdAt": "2026-04-30T01:02:21.8239473+00:00",
+      "createdAt": "2026-04-30T01:03:22.8338521+00:00",
       "codeRevision": "phase84-first-boson-prediction-attempt",
       "branch": {
         "branchId": "phase84-first-boson-prediction-attempt",

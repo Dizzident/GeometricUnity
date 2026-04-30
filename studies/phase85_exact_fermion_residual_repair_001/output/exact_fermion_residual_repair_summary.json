@@ -1,0 +1,36 @@
+{
+  "phaseId": "phase85-exact-fermion-residual-repair",
+  "terminalStatus": "exact-fermion-residuals-repaired",
+  "matrixPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/dirac_bundle_bg-phase12-bg-a-20260315212202.matrix.json",
+  "nullModeFile": "studies/phase85_exact_fermion_residual_repair_001/output/exact_fermion_modes_bg-phase12-bg-a-20260315212202.json",
+  "nonnullModeFile": "studies/phase85_exact_fermion_residual_repair_001/output/exact_nonnull_fermion_modes_bg-phase12-bg-a-20260315212202.json",
+  "nullMaxResidual": 0.0,
+  "nonnullMaxResidual": 2.9195578230195064e-14,
+  "gaugeReductionApplied": false,
+  "remainingPhysicalGateBlockers": [
+    "underlying Dirac bundle gaugeReductionApplied is false",
+    "branch/refinement stability evidence remains absent"
+  ],
+  "nonnullLowestModes": [
+    {
+      "modeId": "exact-nonnull-mode-bg-phase12-bg-a-20260315212202-000",
+      "eigenvalueRe": 4.9557827964736614e-05,
+      "residualNorm": 2.767883550528185e-14
+    },
+    {
+      "modeId": "exact-nonnull-mode-bg-phase12-bg-a-20260315212202-001",
+      "eigenvalueRe": 4.9557827966812956e-05,
+      "residualNorm": 2.310389938477168e-14
+    },
+    {
+      "modeId": "exact-nonnull-mode-bg-phase12-bg-a-20260315212202-002",
+      "eigenvalueRe": -4.9557827967566734e-05,
+      "residualNorm": 2.5540379900304127e-14
+    },
+    {
+      "modeId": "exact-nonnull-mode-bg-phase12-bg-a-20260315212202-003",
+      "eigenvalueRe": -4.955782796921467e-05,
+      "residualNorm": 2.865521360389782e-14
+    }
+  ]
+}

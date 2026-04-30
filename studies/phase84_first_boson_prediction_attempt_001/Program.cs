@@ -9,9 +9,12 @@ using Gu.Phase5.Reporting;
 const string RunRoot = "studies/phase12_joined_calculation_001/output/background_family";
 const string BackgroundId = "bg-phase12-bg-a-20260315212202";
 const string BosonModeId = "bg-phase12-bg-a-20260315212202-mode-0";
-const string OutputDir = "studies/phase84_first_boson_prediction_attempt_001/output";
+const string DefaultOutputDir = "studies/phase84_first_boson_prediction_attempt_001/output";
 
-Directory.CreateDirectory(OutputDir);
+var outputDir = Environment.GetEnvironmentVariable("PHASE84_OUTPUT_DIR") ?? DefaultOutputDir;
+var fermionModesPath = Environment.GetEnvironmentVariable("PHASE84_FERMION_MODES_PATH")
+    ?? Path.Combine(RunRoot, "fermions", $"fermion_modes_{BackgroundId}.json");
+Directory.CreateDirectory(outputDir);
 var jsonOptions = new JsonSerializerOptions
 {
     PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
@@ -48,9 +51,11 @@ var gammas = new GammaMatrixBuilder().Build(spinorSpec.CliffordSignature, spinor
 int spinorDim = spinorSpec.SpinorComponents;
 int dimG = 3;
 
-var fermionModes = LoadJson<FermionModeBundle>(Path.Combine(RunRoot, "fermions", $"fermion_modes_{BackgroundId}.json"));
-var modeI = fermionModes.Modes[0];
-var modeJ = fermionModes.Modes.Count > 1 ? fermionModes.Modes[1] : fermionModes.Modes[0];
+var fermionModes = LoadJson<FermionModeBundle>(fermionModesPath);
+int modeIndexI = ParseModeIndex("PHASE84_MODE_I", 0);
+int modeIndexJ = ParseModeIndex("PHASE84_MODE_J", fermionModes.Modes.Count > 1 ? 1 : 0);
+var modeI = fermionModes.Modes[modeIndexI];
+var modeJ = fermionModes.Modes[modeIndexJ];
 
 var bosonModePath = Path.Combine(RunRoot, "spectra", "modes", $"{BosonModeId}.json");
 var bosonModeJson = File.ReadAllText(bosonModePath);
@@ -80,6 +85,8 @@ var predictionAttempt = new FirstBosonPredictionAttemptArtifact
         : "first-boson-prediction-blocked",
     SelectedBosonModeId = BosonModeId,
     SelectedFermionModeIds = [modeI.ModeId, modeJ.ModeId],
+    SelectedFermionModeIndices = [modeIndexI, modeIndexJ],
+    FermionModeSourcePath = fermionModesPath,
     Geometry = new GeometrySummary
     {
         MeshSource = "ToyGeometryFactory.CreateStructuredFiberBundle2D(rows: 2, cols: 2).AmbientMesh",
@@ -106,7 +113,7 @@ var predictionAttempt = new FirstBosonPredictionAttemptArtifact
 };
 
 File.WriteAllText(
-    Path.Combine(OutputDir, "first_boson_prediction_attempt.json"),
+    Path.Combine(outputDir, "first_boson_prediction_attempt.json"),
     JsonSerializer.Serialize(predictionAttempt, jsonOptions));
 
 if (replay.FullReplayPackage is not null)
@@ -122,7 +129,7 @@ if (replay.FullReplayPackage is not null)
         replay.FullReplayPackage.ClosureRequirements,
     };
     File.WriteAllText(
-        Path.Combine(OutputDir, "first_boson_replay_package_summary.json"),
+        Path.Combine(outputDir, "first_boson_replay_package_summary.json"),
         JsonSerializer.Serialize(summaryPackage, jsonOptions));
 }
 
@@ -175,6 +182,16 @@ static List<string> BuildPhysicalGateBlockers(FermionModeRecord modeI, FermionMo
     return blockers.Distinct(StringComparer.Ordinal).Order(StringComparer.Ordinal).ToList();
 }
 
+static int ParseModeIndex(string environmentVariableName, int fallback)
+{
+    var raw = Environment.GetEnvironmentVariable(environmentVariableName);
+    if (string.IsNullOrWhiteSpace(raw))
+        return fallback;
+    if (!int.TryParse(raw, out var index) || index < 0)
+        throw new InvalidOperationException($"{environmentVariableName} must be a non-negative integer.");
+    return index;
+}
+
 static void AddModeBlockers(string label, FermionModeRecord mode, List<string> blockers)
 {
     const double ResidualTolerance = 1e-6;
@@ -206,6 +223,8 @@ public sealed class FirstBosonPredictionAttemptArtifact
     public required string TerminalStatus { get; init; }
     public required string SelectedBosonModeId { get; init; }
     public required IReadOnlyList<string> SelectedFermionModeIds { get; init; }
+    public required IReadOnlyList<int> SelectedFermionModeIndices { get; init; }
+    public required string FermionModeSourcePath { get; init; }
     public required GeometrySummary Geometry { get; init; }
     public required string ReplayTerminalStatus { get; init; }
     public required IReadOnlyList<string> ReplayClosureRequirements { get; init; }

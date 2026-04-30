@@ -3,14 +3,14 @@
   "terminalStatus": "first-boson-prediction-blocked",
   "selectedBosonModeId": "bg-phase12-bg-a-20260315212202-mode-0",
   "selectedFermionModeIds": [
-    "mode-bg-phase12-bg-a-20260315212202-000",
-    "mode-bg-phase12-bg-a-20260315212202-001"
+    "exact-nonnull-mode-bg-phase12-bg-a-20260315212202-000",
+    "exact-nonnull-mode-bg-phase12-bg-a-20260315212202-001"
   ],
   "selectedFermionModeIndices": [
     0,
     1
   ],
-  "fermionModeSourcePath": "studies/phase12_joined_calculation_001/output/background_family/fermions/fermion_modes_bg-phase12-bg-a-20260315212202.json",
+  "fermionModeSourcePath": "studies/phase85_exact_fermion_residual_repair_001/output/exact_nonnull_fermion_modes_bg-phase12-bg-a-20260315212202.json",
   "geometry": {
     "meshSource": "ToyGeometryFactory.CreateStructuredFiberBundle2D(rows: 2, cols: 2).AmbientMesh",
     "vertexCount": 27,
@@ -21,19 +21,17 @@
   },
   "replayTerminalStatus": "source-backed-analytic-replay-package-built",
   "replayClosureRequirements": [],
-  "couplingMagnitude": 0.0319080167935132,
-  "couplingReal": -0.013294837073483326,
-  "couplingImaginary": -0.029006358662966532,
+  "couplingMagnitude": 0.0001371411566683907,
+  "couplingReal": 0.00012227811844423052,
+  "couplingImaginary": -6.209475502876885E-05,
   "rawMatrixElementEvidenceStatus": "raw-weak-coupling-matrix-element-evidence-validated",
   "productionMaterializationStatus": "production-analytic-replay-inputs-materialized",
   "physicalPredictionGateBlockers": [
     "fermion mode I branch stability 0 is below 0.5",
     "fermion mode I refinement stability 0 is below 0.5",
-    "fermion mode I residual norm 12.247910349778989 exceeds 1E-06",
     "fermion mode I was not gauge-reduced",
     "fermion mode J branch stability 0 is below 0.5",
     "fermion mode J refinement stability 0 is below 0.5",
-    "fermion mode J residual norm 16.977380722431267 exceeds 1E-06",
     "fermion mode J was not gauge-reduced"
   ],
   "canCompareToExternalBosonValues": false,
