@@ -521,9 +521,7 @@ public sealed class Phase4FermionFamilyAtlasStudy
                     continue;
                 foreach (var modeEl in modesEl.EnumerateArray().Take(3))
                 {
-                    if (!modeEl.TryGetProperty("eigenvectorCoefficients", out var evEl))
-                        continue;
-                    var arr = evEl.Deserialize<double[]>();
+                    var arr = TryReadBosonModeVector(modeEl);
                     if (arr is null || arr.Length != edgeCount * dimG)
                         continue;
                     var modeId = modeEl.TryGetProperty("modeId", out var midEl)
@@ -542,6 +540,15 @@ public sealed class Phase4FermionFamilyAtlasStudy
             }
         }
         return loaded;
+    }
+
+    private static double[]? TryReadBosonModeVector(JsonElement modeEl)
+    {
+        if (modeEl.TryGetProperty("modeVector", out var modeVectorEl))
+            return modeVectorEl.Deserialize<double[]>();
+        if (modeEl.TryGetProperty("eigenvectorCoefficients", out var eigenvectorEl))
+            return eigenvectorEl.Deserialize<double[]>();
+        return null;
     }
 
     /// <summary>

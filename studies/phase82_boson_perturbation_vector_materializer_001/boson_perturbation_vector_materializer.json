@@ -1,0 +1,35 @@
+{
+  "phaseId": "phase82-boson-perturbation-vector-materializer",
+  "terminalStatus": "boson-perturbation-vector-ingestion-unblocked",
+  "sourceArtifact": {
+    "artifactId": "bg-phase12-bg-a-20260315212202-mode-0",
+    "path": "studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-a-20260315212202-mode-0.json",
+    "modeId": "bg-phase12-bg-a-20260315212202-mode-0",
+    "sourceFieldName": "modeVector",
+    "vectorLength": 156,
+    "normalizationConvention": "unit-M-norm"
+  },
+  "materializer": {
+    "algorithmId": "phase82-boson-perturbation-vector-materializer-v1",
+    "acceptedFieldsInPriorityOrder": [
+      "modeVector",
+      "eigenvectorCoefficients"
+    ],
+    "validationRules": [
+      "mode id must be present",
+      "expected perturbation vector length must be positive",
+      "perturbation vector must be present",
+      "perturbation vector length must match edgeCount * dimG",
+      "perturbation vector entries must be finite"
+    ]
+  },
+  "phase4LoaderPatch": {
+    "file": "studies/phase4_fermion_family_atlas_001/Phase4FermionFamilyAtlasStudy.cs",
+    "status": "patched-to-read-modeVector-first"
+  },
+  "physicalPredictionStatus": {
+    "canClaimPhysicalBosonPredictions": false,
+    "reason": "the selected boson perturbation vector can now be read, but the full source-backed analytic replay package still needs to be assembled and run without summary-only coupling shortcuts"
+  },
+  "nextPhaseRecommendation": "Wire materialized Phase12 modeVector artifacts into the full analytic weak-coupling replay package builder with source-backed fermion eigenvectors and analytic variation matrices."
+}
