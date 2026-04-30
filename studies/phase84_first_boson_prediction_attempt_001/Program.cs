@@ -7,13 +7,15 @@ using Gu.Phase4.Spin;
 using Gu.Phase5.Reporting;
 
 const string RunRoot = "studies/phase12_joined_calculation_001/output/background_family";
-const string BackgroundId = "bg-phase12-bg-a-20260315212202";
-const string BosonModeId = "bg-phase12-bg-a-20260315212202-mode-0";
+const string DefaultBackgroundId = "bg-phase12-bg-a-20260315212202";
+const string DefaultBosonModeId = "bg-phase12-bg-a-20260315212202-mode-0";
 const string DefaultOutputDir = "studies/phase84_first_boson_prediction_attempt_001/output";
 
+var backgroundId = Environment.GetEnvironmentVariable("PHASE84_BACKGROUND_ID") ?? DefaultBackgroundId;
+var bosonModeId = Environment.GetEnvironmentVariable("PHASE84_BOSON_MODE_ID") ?? DefaultBosonModeId;
 var outputDir = Environment.GetEnvironmentVariable("PHASE84_OUTPUT_DIR") ?? DefaultOutputDir;
 var fermionModesPath = Environment.GetEnvironmentVariable("PHASE84_FERMION_MODES_PATH")
-    ?? Path.Combine(RunRoot, "fermions", $"fermion_modes_{BackgroundId}.json");
+    ?? Path.Combine(RunRoot, "fermions", $"fermion_modes_{backgroundId}.json");
 Directory.CreateDirectory(outputDir);
 var jsonOptions = new JsonSerializerOptions
 {
@@ -57,7 +59,7 @@ int modeIndexJ = ParseModeIndex("PHASE84_MODE_J", fermionModes.Modes.Count > 1 ?
 var modeI = fermionModes.Modes[modeIndexI];
 var modeJ = fermionModes.Modes[modeIndexJ];
 
-var bosonModePath = Path.Combine(RunRoot, "spectra", "modes", $"{BosonModeId}.json");
+var bosonModePath = Path.Combine(RunRoot, "spectra", "modes", $"{bosonModeId}.json");
 var bosonModeJson = File.ReadAllText(bosonModePath);
 
 var replay = SourceBackedAnalyticReplayPackageRunner.Run(
@@ -83,7 +85,8 @@ var predictionAttempt = new FirstBosonPredictionAttemptArtifact
     TerminalStatus = replay.TerminalStatus == "source-backed-analytic-replay-package-built" && physicalGateBlockers.Count == 0
         ? "first-boson-prediction-ready-for-comparison"
         : "first-boson-prediction-blocked",
-    SelectedBosonModeId = BosonModeId,
+    SelectedBosonModeId = bosonModeId,
+    SelectedBackgroundId = backgroundId,
     SelectedFermionModeIds = [modeI.ModeId, modeJ.ModeId],
     SelectedFermionModeIndices = [modeIndexI, modeIndexJ],
     FermionModeSourcePath = fermionModesPath,
@@ -221,6 +224,7 @@ public sealed class FirstBosonPredictionAttemptArtifact
 {
     public required string PhaseId { get; init; }
     public required string TerminalStatus { get; init; }
+    public required string SelectedBackgroundId { get; init; }
     public required string SelectedBosonModeId { get; init; }
     public required IReadOnlyList<string> SelectedFermionModeIds { get; init; }
     public required IReadOnlyList<int> SelectedFermionModeIndices { get; init; }

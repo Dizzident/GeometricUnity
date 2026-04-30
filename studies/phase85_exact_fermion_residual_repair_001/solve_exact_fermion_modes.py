@@ -17,15 +17,35 @@ import numpy as np
 
 
 RUN_ROOT = Path("studies/phase12_joined_calculation_001/output/background_family")
-BACKGROUND_ID = "bg-phase12-bg-a-20260315212202"
+BACKGROUND_IDS = [
+    "bg-phase12-bg-a-20260315212202",
+    "bg-phase12-bg-b-20260315212202",
+]
 OUT_DIR = Path("studies/phase85_exact_fermion_residual_repair_001/output")
 
 
 def main() -> None:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    metadata_path = RUN_ROOT / "fermions" / f"dirac_bundle_{BACKGROUND_ID}.json"
-    matrix_path = RUN_ROOT / "fermions" / f"dirac_bundle_{BACKGROUND_ID}.matrix.json"
-    modes_path = RUN_ROOT / "fermions" / f"fermion_modes_{BACKGROUND_ID}.json"
+    summaries = [repair_background(background_id) for background_id in BACKGROUND_IDS]
+    summary = {
+        "phaseId": "phase85-exact-fermion-residual-repair",
+        "terminalStatus": "exact-fermion-residuals-repaired",
+        "backgroundSummaries": summaries,
+        "remainingPhysicalGateBlockers": [
+            "underlying Phase12 Dirac bundles have gaugeReductionApplied false",
+            "branch/refinement stability evidence remains absent",
+        ],
+    }
+    (OUT_DIR / "exact_fermion_residual_repair_summary.json").write_text(
+        json.dumps(summary, indent=2)
+    )
+    print(json.dumps(summary, indent=2))
+
+
+def repair_background(background_id: str) -> dict:
+    metadata_path = RUN_ROOT / "fermions" / f"dirac_bundle_{background_id}.json"
+    matrix_path = RUN_ROOT / "fermions" / f"dirac_bundle_{background_id}.matrix.json"
+    modes_path = RUN_ROOT / "fermions" / f"fermion_modes_{background_id}.json"
 
     metadata = json.loads(metadata_path.read_text())
     original = json.loads(modes_path.read_text())
@@ -40,10 +60,10 @@ def main() -> None:
         eigenvectors,
         [int(i) for i in np.argsort(np.abs(eigenvalues))[:12]],
         mode_id_prefix="exact-mode",
-        result_id=f"phase85-exact-fermion-modes-{BACKGROUND_ID}",
+        result_id=f"phase85-exact-fermion-modes-{background_id}",
         note="exact dense Hermitian eigensolve repair from persisted Phase12 Dirac matrix",
     )
-    null_path = OUT_DIR / f"exact_fermion_modes_{BACKGROUND_ID}.json"
+    null_path = OUT_DIR / f"exact_fermion_modes_{background_id}.json"
     null_path.write_text(json.dumps(null_modes, indent=2))
 
     nonnull_indices = [
@@ -59,31 +79,22 @@ def main() -> None:
         eigenvectors,
         nonnull_indices,
         mode_id_prefix="exact-nonnull-mode",
-        result_id=f"phase85-exact-nonnull-fermion-modes-{BACKGROUND_ID}",
+        result_id=f"phase85-exact-nonnull-fermion-modes-{background_id}",
         note="exact dense Hermitian eigensolve non-null mode from persisted Phase12 Dirac matrix",
     )
-    nonnull_path = OUT_DIR / f"exact_nonnull_fermion_modes_{BACKGROUND_ID}.json"
+    nonnull_path = OUT_DIR / f"exact_nonnull_fermion_modes_{background_id}.json"
     nonnull_path.write_text(json.dumps(nonnull_modes, indent=2))
 
-    summary = {
-        "phaseId": "phase85-exact-fermion-residual-repair",
-        "terminalStatus": "exact-fermion-residuals-repaired",
+    return {
+        "backgroundId": background_id,
         "matrixPath": str(matrix_path),
         "nullModeFile": str(null_path),
         "nonnullModeFile": str(nonnull_path),
         "nullMaxResidual": null_modes["diagnostics"]["maxResidual"],
         "nonnullMaxResidual": nonnull_modes["diagnostics"]["maxResidual"],
         "gaugeReductionApplied": metadata.get("gaugeReductionApplied", False),
-        "remainingPhysicalGateBlockers": [
-            "underlying Dirac bundle gaugeReductionApplied is false",
-            "branch/refinement stability evidence remains absent",
-        ],
         "nonnullLowestModes": summarize_modes(nonnull_modes["modes"][:4]),
     }
-    (OUT_DIR / "exact_fermion_residual_repair_summary.json").write_text(
-        json.dumps(summary, indent=2)
-    )
-    print(json.dumps(summary, indent=2))
 
 
 def load_complex_matrix(path: Path, n: int) -> np.ndarray:

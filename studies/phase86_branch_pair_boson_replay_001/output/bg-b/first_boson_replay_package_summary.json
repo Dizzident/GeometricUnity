@@ -1,0 +1,34 @@
+{
+  "packageId": "phase84-first-source-backed-boson-replay-package",
+  "bosonModeId": "bg-phase12-bg-b-20260315212202-mode-3",
+  "bosonModeSourceKind": "selected-physical-wz-boson-mode",
+  "coupling": {
+    "couplingId": "coupling-bg-phase12-bg-b-20260315212202-mode-3-exact-nonnull-mode-bg-phase12-bg-b-20260315212202-000-exact-nonnull-mode-bg-phase12-bg-b-20260315212202-001",
+    "bosonModeId": "bg-phase12-bg-b-20260315212202-mode-3",
+    "fermionModeIdI": "exact-nonnull-mode-bg-phase12-bg-b-20260315212202-000",
+    "fermionModeIdJ": "exact-nonnull-mode-bg-phase12-bg-b-20260315212202-001",
+    "couplingProxyReal": 0.00024535207696329506,
+    "couplingProxyImaginary": 0.0001692428252941303,
+    "couplingProxyMagnitude": 0.0002980616976126623,
+    "normalizationConvention": "unit-modes",
+    "selectionRuleNotes": [
+      "replayed from analytic Dirac-variation matrix"
+    ],
+    "branchStabilityScore": 0,
+    "variationMethod": "analytic-dirac-variation-matrix-element:v1",
+    "variationEvidenceId": "analytic-variation:bg-phase12-bg-b-20260315212202-mode-3:studies/phase12_joined_calculation_001/output/background_family/spectra/modes/bg-phase12-bg-b-20260315212202-mode-3.json",
+    "provenance": {
+      "createdAt": "2026-04-30T01:06:43.1167661+00:00",
+      "codeRevision": "phase84-first-boson-prediction-attempt",
+      "branch": {
+        "branchId": "phase84-first-boson-prediction-attempt",
+        "schemaVersion": "1.0.0"
+      },
+      "backend": "cpu-reference",
+      "notes": "First source-backed boson replay prediction attempt over persisted Phase12 artifacts."
+    }
+  },
+  "evidenceStatus": "raw-weak-coupling-matrix-element-evidence-validated",
+  "materializationStatus": "production-analytic-replay-inputs-materialized",
+  "closureRequirements": []
+}

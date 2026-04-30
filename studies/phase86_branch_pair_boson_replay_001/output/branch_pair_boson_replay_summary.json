@@ -1,0 +1,53 @@
+{
+  "phaseId": "phase86-branch-pair-boson-replay",
+  "terminalStatus": "branch-pair-boson-replay-blocked",
+  "candidateId": "candidate-0",
+  "branchReplays": [
+    {
+      "backgroundId": "bg-phase12-bg-a-20260315212202",
+      "bosonModeId": "bg-phase12-bg-a-20260315212202-mode-0",
+      "couplingMagnitude": 0.0001371411566683907,
+      "replayTerminalStatus": "source-backed-analytic-replay-package-built",
+      "physicalGateBlockers": [
+        "fermion mode I branch stability 0 is below 0.5",
+        "fermion mode I refinement stability 0 is below 0.5",
+        "fermion mode I was not gauge-reduced",
+        "fermion mode J branch stability 0 is below 0.5",
+        "fermion mode J refinement stability 0 is below 0.5",
+        "fermion mode J was not gauge-reduced"
+      ]
+    },
+    {
+      "backgroundId": "bg-phase12-bg-b-20260315212202",
+      "bosonModeId": "bg-phase12-bg-b-20260315212202-mode-3",
+      "couplingMagnitude": 0.0002980616976126623,
+      "replayTerminalStatus": "source-backed-analytic-replay-package-built",
+      "physicalGateBlockers": [
+        "fermion mode I branch stability 0 is below 0.5",
+        "fermion mode I refinement stability 0 is below 0.5",
+        "fermion mode I was not gauge-reduced",
+        "fermion mode J branch stability 0 is below 0.5",
+        "fermion mode J refinement stability 0 is below 0.5",
+        "fermion mode J was not gauge-reduced"
+      ]
+    }
+  ],
+  "branchCouplingMean": 0.0002176014271405265,
+  "branchCouplingAbsoluteSpread": 0.0001609205409442716,
+  "branchCouplingRelativeSpread": 0.7395196946036089,
+  "canCompareToExternalBosonValues": false,
+  "remainingPhysicalGateBlockers": [
+    "candidate-0 registry claimClass is C0_NumericalMode with BranchFragility demotion",
+    "fermion mode I branch stability 0 is below 0.5",
+    "fermion mode I refinement stability 0 is below 0.5",
+    "fermion mode I was not gauge-reduced",
+    "fermion mode J branch stability 0 is below 0.5",
+    "fermion mode J refinement stability 0 is below 0.5",
+    "fermion mode J was not gauge-reduced",
+    "underlying Phase12 Dirac bundles have gaugeReductionApplied false"
+  ],
+  "notes": [
+    "This is a branch-pair replay consistency artifact, not a physical prediction claim.",
+    "The replayed matrix-element path works on both candidate-0 branch representatives, but branch spread and gate blockers remain too large for external comparison."
+  ]
+}
