@@ -1,0 +1,26 @@
+{
+  "algorithmId": "phase80-production-analytic-replay-input-materialization-auditor-v1",
+  "terminalStatus": "production-analytic-replay-inputs-blocked",
+  "artifact": {
+    "artifactId": "studies/phase4_fermion_family_atlas_001/output/coupling_atlas.json",
+    "bosonModeSourceKind": "synthetic-boson-perturbation",
+    "hasBosonPerturbationVector": false,
+    "hasAnalyticVariationMatrix": false,
+    "hasFermionModeEigenvectors": false,
+    "hasFullCouplingRecord": false,
+    "isTopCouplingSummaryOnly": true,
+    "variationMethod": "analytic-dirac-variation-matrix-element:v1",
+    "normalizationConvention": "unit-modes",
+    "variationEvidenceId": null,
+    "provenanceId": "phase4-study-output"
+  },
+  "closureRequirements": [
+    "boson mode source kind must be selected-physical-wz-boson-mode",
+    "selected boson perturbation vector is missing",
+    "analytic variation matrix is missing",
+    "selected fermion mode eigenvectors are missing",
+    "full replayed coupling record is missing",
+    "top-coupling summary is insufficient; full real/imaginary coupling record is required",
+    "variation evidence id is missing"
+  ]
+}
