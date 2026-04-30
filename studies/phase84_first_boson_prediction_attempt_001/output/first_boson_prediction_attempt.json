@@ -1,0 +1,39 @@
+{
+  "phaseId": "phase84-first-boson-prediction-attempt",
+  "terminalStatus": "first-boson-prediction-blocked",
+  "selectedBosonModeId": "bg-phase12-bg-a-20260315212202-mode-0",
+  "selectedFermionModeIds": [
+    "mode-bg-phase12-bg-a-20260315212202-000",
+    "mode-bg-phase12-bg-a-20260315212202-001"
+  ],
+  "geometry": {
+    "meshSource": "ToyGeometryFactory.CreateStructuredFiberBundle2D(rows: 2, cols: 2).AmbientMesh",
+    "vertexCount": 27,
+    "edgeCount": 52,
+    "embeddingDimension": 5,
+    "expectedBosonVectorLength": 156,
+    "expectedFermionEigenvectorLength": 648
+  },
+  "replayTerminalStatus": "source-backed-analytic-replay-package-built",
+  "replayClosureRequirements": [],
+  "couplingMagnitude": 0.0319080167935132,
+  "couplingReal": -0.013294837073483326,
+  "couplingImaginary": -0.029006358662966532,
+  "rawMatrixElementEvidenceStatus": "raw-weak-coupling-matrix-element-evidence-validated",
+  "productionMaterializationStatus": "production-analytic-replay-inputs-materialized",
+  "physicalPredictionGateBlockers": [
+    "fermion mode I branch stability 0 is below 0.5",
+    "fermion mode I refinement stability 0 is below 0.5",
+    "fermion mode I residual norm 12.247910349778989 exceeds 1E-06",
+    "fermion mode I was not gauge-reduced",
+    "fermion mode J branch stability 0 is below 0.5",
+    "fermion mode J refinement stability 0 is below 0.5",
+    "fermion mode J residual norm 16.977380722431267 exceeds 1E-06",
+    "fermion mode J was not gauge-reduced"
+  ],
+  "canCompareToExternalBosonValues": false,
+  "notes": [
+    "This is a source-backed replay attempt, not a validated physical Standard Model boson prediction unless the physical gate is clear.",
+    "No external W/Z target value is used to choose this candidate or compute the coupling."
+  ]
+}

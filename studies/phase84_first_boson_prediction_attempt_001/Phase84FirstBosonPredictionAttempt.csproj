@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/Gu.Core/Gu.Core.csproj" />
+    <ProjectReference Include="../../src/Gu.Geometry/Gu.Geometry.csproj" />
+    <ProjectReference Include="../../src/Gu.Phase4.Fermions/Gu.Phase4.Fermions.csproj" />
+    <ProjectReference Include="../../src/Gu.Phase4.Spin/Gu.Phase4.Spin.csproj" />
+    <ProjectReference Include="../../src/Gu.Phase5.Reporting/Gu.Phase5.Reporting.csproj" />
+  </ItemGroup>
+
+</Project>
