@@ -87,6 +87,52 @@ public sealed class FiniteDifferenceDiracVariationBuilderTests
     }
 
     [Fact]
+    public void ComputeAnalytical_MatchesFiniteDifferenceAssemblerConvention()
+    {
+        var mesh = SingleTriangle();
+        var background = MakeBackground();
+        var spec = Dim2Spec();
+        var layout = FermionFieldLayoutFactory.BuildChiralSplitLayout("layout-dim2", spec, 3, TestProvenance());
+        var gammas = new GammaMatrixBuilder().Build(spec.CliffordSignature, spec.GammaConvention, TestProvenance());
+        var builder = new FiniteDifferenceDiracVariationBuilder(new CpuSpinConnectionBuilder(), new CpuDiracOperatorAssembler());
+        var baseState = new double[mesh.EdgeCount * 3];
+        var perturbation = new double[mesh.EdgeCount * 3];
+        perturbation[0] = 0.7;
+        perturbation[4] = -0.2;
+        perturbation[8] = 0.5;
+
+        var finiteDifference = builder.BuildVariation(
+            variationId: "variation-b-analytic-check",
+            bosonModeId: "boson-analytic-check",
+            background: background,
+            baseBosonicState: baseState,
+            bosonPerturbation: perturbation,
+            epsilon: 1e-5,
+            spinorSpec: spec,
+            layout: layout,
+            gammas: gammas,
+            mesh: mesh,
+            provenance: TestProvenance());
+
+        var (edgeLengths, cellsPerEdge, edgeDirections) = GeometryArrays(mesh);
+        var analytic = DiracVariationComputer.ComputeAnalytical(
+            perturbation,
+            gammas,
+            mesh.VertexCount,
+            spec.SpinorComponents,
+            dimG: 3,
+            edgeLengths,
+            cellsPerEdge,
+            edgeDirections);
+
+        Assert.False(finiteDifference.Variation.Blocked);
+        Assert.NotNull(finiteDifference.RealMatrix);
+        Assert.NotNull(finiteDifference.ImagMatrix);
+        AssertMatrixClose(finiteDifference.RealMatrix!, analytic.Re, 1e-9);
+        AssertMatrixClose(finiteDifference.ImagMatrix!, analytic.Im, 1e-9);
+    }
+
+    [Fact]
     public void ExpandExplicitMatrix_RoundTripsFlatStorage()
     {
         var flat = new double[]
@@ -107,5 +153,64 @@ public sealed class FiniteDifferenceDiracVariationBuilderTests
         Assert.Equal(1.0, im[1, 0], 12);
         Assert.Equal(4.0, re[1, 1], 12);
         Assert.Equal(0.5, im[1, 1], 12);
+    }
+
+    private static (double[] EdgeLengths, int[][] CellsPerEdge, double[][] EdgeDirections) GeometryArrays(SimplicialMesh mesh)
+    {
+        var edgeLengths = new double[mesh.EdgeCount];
+        var cellsPerEdge = new int[mesh.EdgeCount][];
+        var edgeDirections = new double[mesh.EdgeCount][];
+        for (int edge = 0; edge < mesh.EdgeCount; edge++)
+        {
+            edgeLengths[edge] = EdgeLength(mesh, edge);
+            cellsPerEdge[edge] = [mesh.Edges[edge][0], mesh.Edges[edge][1]];
+            edgeDirections[edge] = EdgeDirection(mesh, edge);
+        }
+
+        return (edgeLengths, cellsPerEdge, edgeDirections);
+    }
+
+    private static double EdgeLength(SimplicialMesh mesh, int edge)
+    {
+        var a = mesh.GetVertexCoordinates(mesh.Edges[edge][0]);
+        var b = mesh.GetVertexCoordinates(mesh.Edges[edge][1]);
+        var sum = 0.0;
+        for (var i = 0; i < a.Length; i++)
+        {
+            var d = b[i] - a[i];
+            sum += d * d;
+        }
+
+        return System.Math.Sqrt(sum);
+    }
+
+    private static double[] EdgeDirection(SimplicialMesh mesh, int edge)
+    {
+        var a = mesh.GetVertexCoordinates(mesh.Edges[edge][0]);
+        var b = mesh.GetVertexCoordinates(mesh.Edges[edge][1]);
+        var direction = new double[a.Length];
+        var norm = 0.0;
+        for (var i = 0; i < a.Length; i++)
+        {
+            direction[i] = b[i] - a[i];
+            norm += direction[i] * direction[i];
+        }
+
+        norm = System.Math.Sqrt(norm);
+        if (norm > 1e-14)
+            for (var i = 0; i < direction.Length; i++)
+                direction[i] /= norm;
+        return direction;
+    }
+
+    private static void AssertMatrixClose(double[,] expected, double[,] actual, double tolerance)
+    {
+        Assert.Equal(expected.GetLength(0), actual.GetLength(0));
+        Assert.Equal(expected.GetLength(1), actual.GetLength(1));
+        for (var row = 0; row < expected.GetLength(0); row++)
+            for (var col = 0; col < expected.GetLength(1); col++)
+                Assert.True(
+                    System.Math.Abs(expected[row, col] - actual[row, col]) <= tolerance,
+                    $"matrix[{row},{col}] expected {expected[row, col]:R}, actual {actual[row, col]:R}");
     }
 }

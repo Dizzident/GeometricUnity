@@ -10,7 +10,7 @@ namespace Gu.Phase4.Couplings;
 ///
 /// For a bosonic mode b_k (edge perturbation delta_omega in connection space):
 ///
-///   dD_h/domega[b_k] = sum_edges e: (1/h_e) * sum_mu (n_mu * Gamma_mu) ⊗ G^{(a)}_e
+///   dD_h/domega[b_k] = sum_edges e: (1/h_e) * Gamma_mu(e) ⊗ G^{(a)}_e
 ///
 /// where G^{(a)}_e is the gauge representation of b_k_e^a * T_a for edge e.
 ///
@@ -30,8 +30,8 @@ public sealed class DiracVariationComputer
     /// Returns (Re, Im) of the variation matrix as (totalDof x totalDof) arrays.
     /// totalDof = cellCount * spinorDim * dimG.
     ///
-    /// This uses the same Kronecker structure as CpuDiracOperatorAssembler:
-    ///   D contribution per edge (cA,cB): (1/h_e) * sum_mu(n_mu * Gamma_mu) ⊗ G_e
+/// This uses the same Kronecker structure and gauge-major DOF layout as CpuDiracOperatorAssembler:
+///   D contribution per edge (cA,cB): (1/h_e) * Gamma_mu(e) ⊗ G_e
     /// The variation replaces G_e (from omega_e) with G_e^{(b_k)} (from b_k_e).
     /// </summary>
     public static (double[,] Re, double[,] Im) ComputeAnalytical(
@@ -50,7 +50,6 @@ public sealed class DiracVariationComputer
         ArgumentNullException.ThrowIfNull(cellsPerEdge);
         ArgumentNullException.ThrowIfNull(edgeDirections);
 
-        int dim = gammas.GammaMatrices.Length;
         int dofsPerCell = spinorDim * dimG;
         int totalDof = cellCount * dofsPerCell;
         var re = new double[totalDof, totalDof];
@@ -71,9 +70,6 @@ public sealed class DiracVariationComputer
             double h = edgeLengths[edgeIdx];
             if (h < 1e-30) continue;
             double invH = 1.0 / h;
-
-            var nVec = edgeDirections[edgeIdx];
-            int spaceDim = System.Math.Min(dim, nVec.Length);
 
             // Build gauge matrix G_e from b_k_e^a
             var gRe = new double[dimG, dimG];
@@ -102,22 +98,21 @@ public sealed class DiracVariationComputer
             }
             // else: no gauge coupling
 
-            // Build Gamma contraction: sum_mu n_mu * Gamma_mu (spinorDim x spinorDim complex)
+            var nVec = edgeDirections[edgeIdx];
+            int mu = DominantDirection(nVec);
+            if (mu >= gammas.GammaMatrices.Length)
+                continue;
+
+            // Use the same dominant-edge gamma convention as CpuDiracOperatorAssembler.
             var gammaContractRe = new double[spinorDim, spinorDim];
             var gammaContractIm = new double[spinorDim, spinorDim];
-
-            for (int mu = 0; mu < spaceDim; mu++)
-            {
-                double n_mu = nVec[mu];
-                if (System.Math.Abs(n_mu) < 1e-30) continue;
-                var gmat = gammas.GammaMatrices[mu];
-                for (int r = 0; r < spinorDim; r++)
-                    for (int c = 0; c < spinorDim; c++)
-                    {
-                        gammaContractRe[r, c] += n_mu * gmat[r, c].Real;
-                        gammaContractIm[r, c] += n_mu * gmat[r, c].Imaginary;
-                    }
-            }
+            var gmat = gammas.GammaMatrices[mu];
+            for (int r = 0; r < spinorDim; r++)
+                for (int c = 0; c < spinorDim; c++)
+                {
+                    gammaContractRe[r, c] = gmat[r, c].Real;
+                    gammaContractIm[r, c] = gmat[r, c].Imaginary;
+                }
 
             // Accumulate Kronecker block: invH * (gammaContract ⊗ G_e)
             // for (cA -> cB) and Hermitian conjugate (cB -> cA)
@@ -154,12 +149,29 @@ public sealed class DiracVariationComputer
                         double valRe = gR * gauR - gI * gauI;
                         double valIm = gR * gauI + gI * gauR;
 
-                        int row = cRow * dofsPerCell + sRow * dimG + gRow;
-                        int col = cCol * dofsPerCell + sCol * dimG + gCol;
+                        int row = cRow * dofsPerCell + gRow * spinorDim + sRow;
+                        int col = cCol * dofsPerCell + gCol * spinorDim + sCol;
                         re[row, col] += scale * valRe;
                         im[row, col] += scale * valIm;
                     }
             }
+    }
+
+    private static int DominantDirection(IReadOnlyList<double> direction)
+    {
+        var mu = 0;
+        var best = 0.0;
+        for (int i = 0; i < direction.Count; i++)
+        {
+            var abs = System.Math.Abs(direction[i]);
+            if (abs > best)
+            {
+                best = abs;
+                mu = i;
+            }
+        }
+
+        return mu;
     }
 
     private static double LeviCivita3(int a, int b, int c)
