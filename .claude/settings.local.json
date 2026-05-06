@@ -19,7 +19,8 @@
       "Bash(nm:*)",
       "Bash(echo:*)",
       "Bash(python3:*)",
-      "Bash(for proj:*)"
+      "Bash(for proj:*)",
+      "Bash(dotnet test:*)"
     ]
   }
 }

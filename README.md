@@ -33,7 +33,7 @@ What is not done yet:
 - no PDG-style experimental target campaign is active yet;
 - active fatal/high falsifiers still block physical prediction claims.
 
-See `IMPLEMENTATION_P15.md` for the next benchmark-repair milestone and `IMPLEMENTATION_P16.md` for the physical-observable mapping plan.
+See `docs/Phases/Implementation/IMPLEMENTATION_P15.md` for the next benchmark-repair milestone and `docs/Phases/Implementation/IMPLEMENTATION_P16.md` for the physical-observable mapping plan.
 
 ## Overview
 
@@ -440,7 +440,7 @@ Visualization is strictly **read-only** — it consumes artifact snapshots and n
 
 ## Theory Context
 
-The `TheoryCompletitionRevisions/` directory contains the evolving Geometric Unity Completion manuscript. The software implements executable portions of this completion program and a validation framework around them. See `IMPLEMENTATION_PLAN.md` through `IMPLEMENTATION_P16.md` for the phase history and next milestones.
+The `TheoryCompletitionRevisions/` directory contains the evolving Geometric Unity Completion manuscript. The software implements executable portions of this completion program and a validation framework around them. See `docs/Phases/Plans/IMPLEMENTATION_PLAN.md` through `docs/Phases/Implementation/IMPLEMENTATION_P16.md` for the phase history and next milestones.
 
 ## License
 

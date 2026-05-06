@@ -215,6 +215,29 @@ public class FermionSpectralSolverTests
     }
 
     [Fact]
+    public void Solve_WithGaugeReducedBundle_PropagatesGaugeReductionFlag()
+    {
+        var mesh = SingleTriangle();
+        var sourceBundle = BuildTrivialBundle(mesh);
+        var projector = DiracGaugeReductionProjector.IdentityProjector(sourceBundle.TotalDof);
+        var bundle = new DiracGaugeReductionProjector().Project(
+            sourceBundle,
+            projector,
+            "identity-test",
+            TestProvenance());
+        var layout = FermionFieldLayoutFactory.BuildStandardLayout(
+            "layout-trivial", Dim2Spec(), gaugeDimension: 1, TestProvenance(),
+            insertedAssumptionIds: new[] { "P4-IA-003" });
+        var config = DefaultConfig(2);
+        var solver = new FermionSpectralSolver(new CpuDiracOperatorAssembler());
+
+        var result = solver.Solve(bundle, layout, config, TestProvenance());
+
+        Assert.True(result.Diagnostics.GaugeReductionApplied);
+        Assert.All(result.Modes, mode => Assert.True(mode.GaugeReductionApplied));
+    }
+
+    [Fact]
     public void Solve_ProvenancePreserved()
     {
         var mesh = SingleTriangle();

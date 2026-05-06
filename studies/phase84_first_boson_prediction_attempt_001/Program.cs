@@ -16,6 +16,9 @@ var bosonModeId = Environment.GetEnvironmentVariable("PHASE84_BOSON_MODE_ID") ??
 var outputDir = Environment.GetEnvironmentVariable("PHASE84_OUTPUT_DIR") ?? DefaultOutputDir;
 var fermionModesPath = Environment.GetEnvironmentVariable("PHASE84_FERMION_MODES_PATH")
     ?? Path.Combine(RunRoot, "fermions", $"fermion_modes_{backgroundId}.json");
+var bosonModePathOverride = Environment.GetEnvironmentVariable("PHASE84_BOSON_MODE_PATH");
+int geometryRows = ParsePositiveInt("PHASE84_GEOMETRY_ROWS", 2);
+int geometryCols = ParsePositiveInt("PHASE84_GEOMETRY_COLS", 2);
 Directory.CreateDirectory(outputDir);
 var jsonOptions = new JsonSerializerOptions
 {
@@ -37,7 +40,7 @@ var provenance = new ProvenanceMeta
     Notes = "First source-backed boson replay prediction attempt over persisted Phase12 artifacts.",
 };
 
-var mesh = ToyGeometryFactory.CreateStructuredFiberBundle2D(rows: 2, cols: 2).AmbientMesh;
+var mesh = ToyGeometryFactory.CreateStructuredFiberBundle2D(rows: geometryRows, cols: geometryCols).AmbientMesh;
 var edgeLengths = new double[mesh.EdgeCount];
 var edgeDirections = new double[mesh.EdgeCount][];
 var cellsPerEdge = new int[mesh.EdgeCount][];
@@ -59,7 +62,9 @@ int modeIndexJ = ParseModeIndex("PHASE84_MODE_J", fermionModes.Modes.Count > 1 ?
 var modeI = fermionModes.Modes[modeIndexI];
 var modeJ = fermionModes.Modes[modeIndexJ];
 
-var bosonModePath = Path.Combine(RunRoot, "spectra", "modes", $"{bosonModeId}.json");
+var bosonModePath = string.IsNullOrWhiteSpace(bosonModePathOverride)
+    ? Path.Combine(RunRoot, "spectra", "modes", $"{bosonModeId}.json")
+    : bosonModePathOverride;
 var bosonModeJson = File.ReadAllText(bosonModePath);
 
 var replay = SourceBackedAnalyticReplayPackageRunner.Run(
@@ -79,20 +84,29 @@ var replay = SourceBackedAnalyticReplayPackageRunner.Run(
     provenance: provenance);
 
 var physicalGateBlockers = BuildPhysicalGateBlockers(modeI, modeJ);
+bool sourceBackedReplayReady = replay.TerminalStatus == "source-backed-analytic-replay-package-built" &&
+                               replay.ClosureRequirements.Count == 0 &&
+                               physicalGateBlockers.Count == 0;
+IReadOnlyList<string> externalPhysicalComparisonBlockers = sourceBackedReplayReady
+    ? ["external physical comparison requires Phase100 candidate-specific mapping, calibration, target, claim-class, and falsifier gates"]
+    : physicalGateBlockers.Concat(replay.ClosureRequirements).Distinct(StringComparer.Ordinal).Order(StringComparer.Ordinal).ToList();
 var predictionAttempt = new FirstBosonPredictionAttemptArtifact
 {
     PhaseId = "phase84-first-boson-prediction-attempt",
-    TerminalStatus = replay.TerminalStatus == "source-backed-analytic-replay-package-built" && physicalGateBlockers.Count == 0
-        ? "first-boson-prediction-ready-for-comparison"
+    TerminalStatus = sourceBackedReplayReady
+        ? "first-boson-replay-ready-physical-comparison-blocked"
         : "first-boson-prediction-blocked",
     SelectedBosonModeId = bosonModeId,
     SelectedBackgroundId = backgroundId,
     SelectedFermionModeIds = [modeI.ModeId, modeJ.ModeId],
     SelectedFermionModeIndices = [modeIndexI, modeIndexJ],
+    BosonModeSourcePath = bosonModePath,
     FermionModeSourcePath = fermionModesPath,
     Geometry = new GeometrySummary
     {
-        MeshSource = "ToyGeometryFactory.CreateStructuredFiberBundle2D(rows: 2, cols: 2).AmbientMesh",
+        MeshSource = $"ToyGeometryFactory.CreateStructuredFiberBundle2D(rows: {geometryRows}, cols: {geometryCols}).AmbientMesh",
+        Rows = geometryRows,
+        Cols = geometryCols,
         VertexCount = mesh.VertexCount,
         EdgeCount = mesh.EdgeCount,
         EmbeddingDimension = mesh.EmbeddingDimension,
@@ -107,10 +121,15 @@ var predictionAttempt = new FirstBosonPredictionAttemptArtifact
     RawMatrixElementEvidenceStatus = replay.FullReplayPackage?.EvidenceBuild.EvidenceValidation.TerminalStatus,
     ProductionMaterializationStatus = replay.FullReplayPackage?.MaterializationAudit.TerminalStatus,
     PhysicalPredictionGateBlockers = physicalGateBlockers,
-    CanCompareToExternalBosonValues = replay.TerminalStatus == "source-backed-analytic-replay-package-built" && physicalGateBlockers.Count == 0,
+    SourceBackedReplayReady = sourceBackedReplayReady,
+    InternalBosonReplayPredictionReady = sourceBackedReplayReady,
+    ExternalPhysicalComparisonReady = false,
+    ExternalPhysicalComparisonBlockers = externalPhysicalComparisonBlockers,
+    CanCompareToExternalBosonValues = false,
     Notes =
     [
-        "This is a source-backed replay attempt, not a validated physical Standard Model boson prediction unless the physical gate is clear.",
+        "This is a source-backed replay attempt, not a validated physical Standard Model boson prediction.",
+        "The legacy canCompareToExternalBosonValues field is false unless the Phase100 external physical comparison gates pass.",
         "No external W/Z target value is used to choose this candidate or compute the coupling.",
     ],
 };
@@ -195,6 +214,16 @@ static int ParseModeIndex(string environmentVariableName, int fallback)
     return index;
 }
 
+static int ParsePositiveInt(string environmentVariableName, int fallback)
+{
+    var raw = Environment.GetEnvironmentVariable(environmentVariableName);
+    if (string.IsNullOrWhiteSpace(raw))
+        return fallback;
+    if (!int.TryParse(raw, out var value) || value <= 0)
+        throw new InvalidOperationException($"{environmentVariableName} must be a positive integer.");
+    return value;
+}
+
 static void AddModeBlockers(string label, FermionModeRecord mode, List<string> blockers)
 {
     const double ResidualTolerance = 1e-6;
@@ -228,6 +257,7 @@ public sealed class FirstBosonPredictionAttemptArtifact
     public required string SelectedBosonModeId { get; init; }
     public required IReadOnlyList<string> SelectedFermionModeIds { get; init; }
     public required IReadOnlyList<int> SelectedFermionModeIndices { get; init; }
+    public required string BosonModeSourcePath { get; init; }
     public required string FermionModeSourcePath { get; init; }
     public required GeometrySummary Geometry { get; init; }
     public required string ReplayTerminalStatus { get; init; }
@@ -238,6 +268,10 @@ public sealed class FirstBosonPredictionAttemptArtifact
     public required string? RawMatrixElementEvidenceStatus { get; init; }
     public required string? ProductionMaterializationStatus { get; init; }
     public required IReadOnlyList<string> PhysicalPredictionGateBlockers { get; init; }
+    public required bool SourceBackedReplayReady { get; init; }
+    public required bool InternalBosonReplayPredictionReady { get; init; }
+    public required bool ExternalPhysicalComparisonReady { get; init; }
+    public required IReadOnlyList<string> ExternalPhysicalComparisonBlockers { get; init; }
     public required bool CanCompareToExternalBosonValues { get; init; }
     public required IReadOnlyList<string> Notes { get; init; }
 }
@@ -245,6 +279,8 @@ public sealed class FirstBosonPredictionAttemptArtifact
 public sealed class GeometrySummary
 {
     public required string MeshSource { get; init; }
+    public required int Rows { get; init; }
+    public required int Cols { get; init; }
     public required int VertexCount { get; init; }
     public required int EdgeCount { get; init; }
     public required int EmbeddingDimension { get; init; }
