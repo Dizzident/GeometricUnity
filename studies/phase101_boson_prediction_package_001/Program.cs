@@ -41,6 +41,20 @@ const string Phase134FermionChiralityConjugationTransitionTablePath = "studies/p
 const string Phase135CorrectedWzSweepReadinessGatePath = "studies/phase135_corrected_wz_sweep_readiness_gate_001/output/corrected_wz_sweep_readiness_gate.json";
 const string Phase136NumericAliasSectorLabelTransferAuditPath = "studies/phase136_numeric_alias_sector_label_transfer_audit_001/output/numeric_alias_sector_label_transfer_audit.json";
 const string Phase137BaseChiralityRouteAuditPath = "studies/phase137_base_chirality_route_audit_001/output/base_chirality_route_audit.json";
+const string Phase138RepairedRowCouplingTransitionGraphPath = "studies/phase138_repaired_row_coupling_transition_graph_001/output/repaired_row_coupling_transition_graph.json";
+const string Phase139FermionSectorLabelRouteClosurePath = "studies/phase139_fermion_sector_label_route_closure_001/output/fermion_sector_label_route_closure.json";
+const string Phase140FermionSectorArtifactIntakeContractPath = "studies/phase140_fermion_sector_artifact_intake_contract_001/output/fermion_sector_artifact_intake_contract.json";
+const string Phase141FermionSectorIntakeApplicationGatePath = "studies/phase141_fermion_sector_intake_application_gate_001/output/fermion_sector_intake_application_gate.json";
+const string Phase142PostIntakeRerunPlanGatePath = "studies/phase142_post_intake_rerun_plan_gate_001/output/post_intake_rerun_plan_gate.json";
+const string Phase143FermionSectorEvidenceRequestPackagePath = "studies/phase143_fermion_sector_evidence_request_package_001/output/fermion_sector_evidence_request_package.json";
+const string Phase144FermionSectorIntakePersistenceGatePath = "studies/phase144_fermion_sector_intake_persistence_gate_001/output/fermion_sector_intake_persistence_gate.json";
+const string Phase145FermionSectorIntakeUnlockFixturePath = "studies/phase145_fermion_sector_intake_unlock_fixture_001/output/fermion_sector_intake_unlock_fixture.json";
+const string Phase146FermionSectorEvidenceCensusPath = "studies/phase146_fermion_sector_evidence_census_001/output/fermion_sector_evidence_census.json";
+const string Phase147BosonPredictionCompletionAttemptPath = "studies/phase147_boson_prediction_completion_attempt_001/output/boson_prediction_completion_attempt.json";
+const string Phase148AllKnownBosonPredictionComparisonPath = "studies/phase148_all_known_boson_prediction_comparison_001/output/all_known_boson_prediction_comparison.json";
+const string Phase149KnownBosonPredictabilityContractsPath = "studies/phase149_known_boson_predictability_contracts_001/output/known_boson_predictability_contracts.json";
+const string Phase150AllBosonPredictionPrerequisiteExecutionPath = "studies/phase150_all_boson_prediction_prerequisite_execution_001/output/all_boson_prediction_prerequisite_execution.json";
+const string Phase151ValidatedBosonPredictionGeneratorPath = "studies/phase151_validated_boson_prediction_generator_001/output/validated_boson_predictions.json";
 
 var outputDir = Environment.GetEnvironmentVariable("PHASE101_OUTPUT_DIR") ?? DefaultOutputDir;
 Directory.CreateDirectory(outputDir);
@@ -72,6 +86,20 @@ using var phase134 = TryParseJson(Phase134FermionChiralityConjugationTransitionT
 using var phase135 = TryParseJson(Phase135CorrectedWzSweepReadinessGatePath);
 using var phase136 = TryParseJson(Phase136NumericAliasSectorLabelTransferAuditPath);
 using var phase137 = TryParseJson(Phase137BaseChiralityRouteAuditPath);
+using var phase138 = TryParseJson(Phase138RepairedRowCouplingTransitionGraphPath);
+using var phase139 = TryParseJson(Phase139FermionSectorLabelRouteClosurePath);
+using var phase140 = TryParseJson(Phase140FermionSectorArtifactIntakeContractPath);
+using var phase141 = TryParseJson(Phase141FermionSectorIntakeApplicationGatePath);
+using var phase142 = TryParseJson(Phase142PostIntakeRerunPlanGatePath);
+using var phase143 = TryParseJson(Phase143FermionSectorEvidenceRequestPackagePath);
+using var phase144 = TryParseJson(Phase144FermionSectorIntakePersistenceGatePath);
+using var phase145 = TryParseJson(Phase145FermionSectorIntakeUnlockFixturePath);
+using var phase146 = TryParseJson(Phase146FermionSectorEvidenceCensusPath);
+using var phase147 = TryParseJson(Phase147BosonPredictionCompletionAttemptPath);
+using var phase148 = TryParseJson(Phase148AllKnownBosonPredictionComparisonPath);
+using var phase149 = TryParseJson(Phase149KnownBosonPredictabilityContractsPath);
+using var phase150 = TryParseJson(Phase150AllBosonPredictionPrerequisiteExecutionPath);
+using var phase151 = TryParseJson(Phase151ValidatedBosonPredictionGeneratorPath);
 
 bool internalReady = JsonBool(readiness.RootElement, "internalBosonReplayPredictionReady") ?? false;
 bool externalReady = JsonBool(readiness.RootElement, "externalPhysicalComparisonReady") ?? false;
@@ -166,10 +194,220 @@ var package = new
         correctedWzSweepReadinessGatePath = File.Exists(Phase135CorrectedWzSweepReadinessGatePath) ? Phase135CorrectedWzSweepReadinessGatePath : null,
         numericAliasSectorLabelTransferAuditPath = File.Exists(Phase136NumericAliasSectorLabelTransferAuditPath) ? Phase136NumericAliasSectorLabelTransferAuditPath : null,
         baseChiralityRouteAuditPath = File.Exists(Phase137BaseChiralityRouteAuditPath) ? Phase137BaseChiralityRouteAuditPath : null,
+        repairedRowCouplingTransitionGraphPath = File.Exists(Phase138RepairedRowCouplingTransitionGraphPath) ? Phase138RepairedRowCouplingTransitionGraphPath : null,
+        fermionSectorLabelRouteClosurePath = File.Exists(Phase139FermionSectorLabelRouteClosurePath) ? Phase139FermionSectorLabelRouteClosurePath : null,
+        fermionSectorArtifactIntakeContractPath = File.Exists(Phase140FermionSectorArtifactIntakeContractPath) ? Phase140FermionSectorArtifactIntakeContractPath : null,
+        fermionSectorIntakeApplicationGatePath = File.Exists(Phase141FermionSectorIntakeApplicationGatePath) ? Phase141FermionSectorIntakeApplicationGatePath : null,
+        postIntakeRerunPlanGatePath = File.Exists(Phase142PostIntakeRerunPlanGatePath) ? Phase142PostIntakeRerunPlanGatePath : null,
+        fermionSectorEvidenceRequestPackagePath = File.Exists(Phase143FermionSectorEvidenceRequestPackagePath) ? Phase143FermionSectorEvidenceRequestPackagePath : null,
+        fermionSectorIntakePersistenceGatePath = File.Exists(Phase144FermionSectorIntakePersistenceGatePath) ? Phase144FermionSectorIntakePersistenceGatePath : null,
+        fermionSectorIntakeUnlockFixturePath = File.Exists(Phase145FermionSectorIntakeUnlockFixturePath) ? Phase145FermionSectorIntakeUnlockFixturePath : null,
+        fermionSectorEvidenceCensusPath = File.Exists(Phase146FermionSectorEvidenceCensusPath) ? Phase146FermionSectorEvidenceCensusPath : null,
+        bosonPredictionCompletionAttemptPath = File.Exists(Phase147BosonPredictionCompletionAttemptPath) ? Phase147BosonPredictionCompletionAttemptPath : null,
+        allKnownBosonPredictionComparisonPath = File.Exists(Phase148AllKnownBosonPredictionComparisonPath) ? Phase148AllKnownBosonPredictionComparisonPath : null,
+        knownBosonPredictabilityContractsPath = File.Exists(Phase149KnownBosonPredictabilityContractsPath) ? Phase149KnownBosonPredictabilityContractsPath : null,
+        allBosonPredictionPrerequisiteExecutionPath = File.Exists(Phase150AllBosonPredictionPrerequisiteExecutionPath) ? Phase150AllBosonPredictionPrerequisiteExecutionPath : null,
+        validatedBosonPredictionGeneratorPath = File.Exists(Phase151ValidatedBosonPredictionGeneratorPath) ? Phase151ValidatedBosonPredictionGeneratorPath : null,
         materializedModePath = JsonString(phase99.RootElement, "materializedModePath"),
         replayProbePath = JsonString(phase99.RootElement, "replayProbePath"),
     },
-    nextPhasePrerequisites = phase137 is not null
+    nextPhasePrerequisites = phase151 is not null
+        ? new
+        {
+            status = string.Equals(
+                JsonString(phase151.RootElement, "terminalStatus"),
+                "validated-boson-predictions-generated-all-rows",
+                StringComparison.Ordinal)
+                ? "validated-boson-predictions-generated-all-rows"
+                : "validated-boson-predictions-generated-partial",
+            prerequisitesPath = Phase151ValidatedBosonPredictionGeneratorPath,
+            nextWork = JsonBool(phase151.RootElement, "allRowsValidated") is true
+                ? "validated boson prediction generation completed for all rows; prepare promotion review"
+                : "validated prediction generation is plugged end-to-end, but only currently promotable rows are emitted as validated predictions; add new target-independent evidence before blocked rows can validate",
+        }
+        : phase150 is not null
+        ? new
+        {
+            status = string.Equals(
+                JsonString(phase150.RootElement, "terminalStatus"),
+                "all-boson-predictions-promotable",
+                StringComparison.Ordinal)
+                ? "all-boson-predictions-promotable"
+                : "all-boson-prediction-prerequisites-executed-partial",
+            prerequisitesPath = Phase150AllBosonPredictionPrerequisiteExecutionPath,
+            nextWork = JsonBool(phase150.RootElement, "requestedAllBosonPredictionsPromotable") is true
+                ? "all boson predictions are promotable; prepare promotion review"
+                : "all available prerequisites have been executed; new target-independent identity/source/benchmark evidence is required before non-promotable boson rows can be predicted",
+        }
+        : phase149 is not null
+        ? new
+        {
+            status = string.Equals(
+                JsonString(phase149.RootElement, "terminalStatus"),
+                "known-boson-predictability-contracts-ready",
+                StringComparison.Ordinal)
+                ? "known-boson-predictability-contracts-ready"
+                : "known-boson-predictability-contracts-open",
+            prerequisitesPath = Phase149KnownBosonPredictabilityContractsPath,
+            nextWork = JsonBool(phase149.RootElement, "allContractsReady") is true
+                ? "all known boson predictability contracts are ready; rerun all-known-boson comparison"
+                : "execute open predictability contracts in priority order before promoting the remaining known boson rows",
+        }
+        : phase148 is not null
+        ? new
+        {
+            status = string.Equals(
+                JsonString(phase148.RootElement, "terminalStatus"),
+                "all-known-boson-predictions-complete",
+                StringComparison.Ordinal)
+                ? "all-known-boson-predictions-complete"
+                : "all-known-boson-predictions-partial",
+            prerequisitesPath = Phase148AllKnownBosonPredictionComparisonPath,
+            nextWork = JsonBool(phase148.RootElement, "allKnownBosonPredictionsComplete") is true
+                ? "all known boson predictions are complete; prepare promotion review"
+                : "all-known-boson comparison is partial; complete missing target-independent mappings, calibrations, and sector identities before promoting the blocked boson rows",
+        }
+        : phase147 is not null
+        ? new
+        {
+            status = string.Equals(
+                JsonString(phase147.RootElement, "terminalStatus"),
+                "boson-prediction-complete",
+                StringComparison.Ordinal)
+                ? "boson-prediction-complete"
+                : "boson-prediction-partial-wz-ratio-complete-full-physical-blocked",
+            prerequisitesPath = Phase147BosonPredictionCompletionAttemptPath,
+            nextWork = JsonBool(phase147.RootElement, "fullBosonPredictionComplete") is true
+                ? "boson prediction completion attempt passed; prepare promotion review"
+                : "full physical boson prediction cannot be completed from current local artifacts; supply new target-blind fermion-sector evidence, W/Z bridge revision, or candidate-3 physical identity and normalization derivation",
+        }
+        : phase146 is not null
+        ? new
+        {
+            status = string.Equals(
+                JsonString(phase146.RootElement, "terminalStatus"),
+                "fermion-sector-evidence-census-existing-candidate-found",
+                StringComparison.Ordinal)
+                ? "fermion-sector-evidence-census-existing-candidate-found"
+                : "fermion-sector-evidence-census-no-existing-candidate",
+            prerequisitesPath = Phase146FermionSectorEvidenceCensusPath,
+            nextWork = JsonBool(phase146.RootElement, "currentEvidencePresent") is true
+                ? "review the P146 promotable candidates and apply the accepted artifact through P140"
+                : "derive or supply a new target-blind fermion-sector label table or nontrivial transition rule; P146 found no existing local study output that satisfies the preserved P140 intake contract",
+        }
+        : phase145 is not null
+        ? new
+        {
+            status = string.Equals(
+                JsonString(phase145.RootElement, "terminalStatus"),
+                "fermion-sector-intake-unlock-fixture-validated-real-evidence-required",
+                StringComparison.Ordinal)
+                ? "fermion-sector-intake-unlock-fixture-validated-real-evidence-required"
+                : "fermion-sector-intake-unlock-fixture-blocked",
+            prerequisitesPath = Phase145FermionSectorIntakeUnlockFixturePath,
+            nextWork = JsonBool(phase145.RootElement, "currentEvidencePresent") is true
+                ? "rerun P140-P145 and refresh the prediction package"
+                : "supply real target-blind fermion-sector evidence in the preserved P140 intake artifact; P145 has validated the intake unlock contract with synthetic fixtures only",
+        }
+        : phase144 is not null
+        ? new
+        {
+            status = string.Equals(
+                JsonString(phase144.RootElement, "terminalStatus"),
+                "fermion-sector-intake-persistence-ready",
+                StringComparison.Ordinal)
+                ? "fermion-sector-intake-persistence-ready"
+                : "fermion-sector-intake-persistence-awaiting-evidence",
+            prerequisitesPath = Phase144FermionSectorIntakePersistenceGatePath,
+            nextWork = JsonBool(phase144.RootElement, "evidencePresent") is true
+                ? "rerun P140-P144 and refresh the prediction package"
+                : "supply target-blind fermion-sector evidence in the preserved P140 intake artifact, then rerun P140-P144",
+        }
+        : phase143 is not null
+        ? new
+        {
+            status = string.Equals(
+                JsonString(phase143.RootElement, "terminalStatus"),
+                "fermion-sector-evidence-request-satisfied",
+                StringComparison.Ordinal)
+                ? "fermion-sector-evidence-request-satisfied"
+                : "fermion-sector-evidence-request-built",
+            prerequisitesPath = Phase143FermionSectorEvidenceRequestPackagePath,
+            nextWork = string.Equals(JsonString(phase143.RootElement, "requestStatus"), "satisfied", StringComparison.Ordinal)
+                ? "rerun P140-P142 and refresh the prediction package"
+                : "supply target-blind fermion-sector evidence through the P140 intake template, then rerun P140-P142",
+        }
+        : phase142 is not null
+        ? new
+        {
+            status = string.Equals(
+                JsonString(phase142.RootElement, "terminalStatus"),
+                "post-intake-rerun-plan-ready",
+                StringComparison.Ordinal)
+                ? "post-intake-rerun-plan-ready"
+                : "post-intake-rerun-plan-blocked",
+            prerequisitesPath = Phase142PostIntakeRerunPlanGatePath,
+            nextWork = JsonBool(phase142.RootElement, "rerunPlanExecutable") is true
+                ? "execute the post-intake sector-label and corrected W/Z rerun plan"
+                : "make P141 application-ready before executing the post-intake rerun plan",
+        }
+        : phase141 is not null
+        ? new
+        {
+            status = string.Equals(
+                JsonString(phase141.RootElement, "terminalStatus"),
+                "fermion-sector-intake-application-ready",
+                StringComparison.Ordinal)
+                ? "fermion-sector-intake-application-ready"
+                : "fermion-sector-intake-application-blocked",
+            prerequisitesPath = Phase141FermionSectorIntakeApplicationGatePath,
+            nextWork = JsonBool(phase141.RootElement, "intakeApplicationPromotable") is true
+                ? "rerun repaired sector-label gates and corrected W/Z sweep using the applied intake labels"
+                : "fill and validate the P140 intake artifact before applying repaired sector labels",
+        }
+        : phase140 is not null
+        ? new
+        {
+            status = string.Equals(
+                JsonString(phase140.RootElement, "terminalStatus"),
+                "fermion-sector-artifact-intake-valid",
+                StringComparison.Ordinal)
+                ? "fermion-sector-artifact-intake-valid"
+                : "fermion-sector-artifact-intake-awaiting-valid-artifact",
+            prerequisitesPath = Phase140FermionSectorArtifactIntakeContractPath,
+            nextWork = JsonBool(phase140.RootElement, "intakeArtifactPromotable") is true
+                ? "apply the validated intake artifact, rerun sector-label gates, then rerun the corrected W/Z sweep"
+                : "fill the P140 intake template with a target-blind fermion-specific sector-label table or nontrivial transition rule before rerunning sector-label gates",
+        }
+        : phase139 is not null
+        ? new
+        {
+            status = string.Equals(
+                JsonString(phase139.RootElement, "terminalStatus"),
+                "fermion-sector-label-route-closure-ready",
+                StringComparison.Ordinal)
+                ? "fermion-sector-label-route-closure-ready"
+                : "fermion-sector-label-route-new-input-required",
+            prerequisitesPath = Phase139FermionSectorLabelRouteClosurePath,
+            nextWork = JsonBool(phase139.RootElement, "closureReady") is true
+                ? "apply the promoted fermion sector-label or transition-rule artifact and rerun the corrected W/Z sweep"
+                : "materialize a new fermion-sector label table, nontrivial chirality/conjugation transition table, or directed coupling-transition rule satisfying the P139 contract",
+        }
+        : phase138 is not null
+        ? new
+        {
+            status = string.Equals(
+                JsonString(phase138.RootElement, "terminalStatus"),
+                "fermion-coupling-transition-graph-sector-rule-ready",
+                StringComparison.Ordinal)
+                ? "fermion-coupling-transition-graph-sector-rule-ready"
+                : "fermion-coupling-transition-graph-diagnostic-only",
+            prerequisitesPath = Phase138RepairedRowCouplingTransitionGraphPath,
+            nextWork = JsonBool(phase138.RootElement, "transitionGraphPromotable") is true
+                ? "apply the promoted transition graph as the W/Z sector rule and rerun the corrected transition sweep"
+                : "combine repaired-row coupling transitions with explicit fermion sector labels or a direction/conjugation rule before rerunning the corrected W/Z sweep",
+        }
+        : phase137 is not null
         ? new
         {
             status = string.Equals(

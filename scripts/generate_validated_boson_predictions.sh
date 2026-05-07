@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$ROOT"
+
+dotnet run --project studies/phase138_repaired_row_coupling_transition_graph_001/Phase138RepairedRowCouplingTransitionGraph.csproj
+dotnet run --project studies/phase139_fermion_sector_label_route_closure_001/Phase139FermionSectorLabelRouteClosure.csproj
+dotnet run --project studies/phase140_fermion_sector_artifact_intake_contract_001/Phase140FermionSectorArtifactIntakeContract.csproj
+dotnet run --project studies/phase141_fermion_sector_intake_application_gate_001/Phase141FermionSectorIntakeApplicationGate.csproj
+dotnet run --project studies/phase142_post_intake_rerun_plan_gate_001/Phase142PostIntakeRerunPlanGate.csproj
+dotnet run --project studies/phase143_fermion_sector_evidence_request_package_001/Phase143FermionSectorEvidenceRequestPackage.csproj
+dotnet run --project studies/phase144_fermion_sector_intake_persistence_gate_001/Phase144FermionSectorIntakePersistenceGate.csproj
+dotnet run --project studies/phase145_fermion_sector_intake_unlock_fixture_001/Phase145FermionSectorIntakeUnlockFixture.csproj
+dotnet run --project studies/phase146_fermion_sector_evidence_census_001/Phase146FermionSectorEvidenceCensus.csproj
+dotnet run --project studies/phase147_boson_prediction_completion_attempt_001/Phase147BosonPredictionCompletionAttempt.csproj
+dotnet run --project studies/phase148_all_known_boson_prediction_comparison_001/Phase148AllKnownBosonPredictionComparison.csproj
+dotnet run --project studies/phase149_known_boson_predictability_contracts_001/Phase149KnownBosonPredictabilityContracts.csproj
+dotnet run --project studies/phase150_all_boson_prediction_prerequisite_execution_001/Phase150AllBosonPredictionPrerequisiteExecution.csproj
+dotnet run --project studies/phase151_validated_boson_prediction_generator_001/Phase151ValidatedBosonPredictionGenerator.csproj
+dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
