@@ -55,6 +55,7 @@ const string Phase148AllKnownBosonPredictionComparisonPath = "studies/phase148_a
 const string Phase149KnownBosonPredictabilityContractsPath = "studies/phase149_known_boson_predictability_contracts_001/output/known_boson_predictability_contracts.json";
 const string Phase150AllBosonPredictionPrerequisiteExecutionPath = "studies/phase150_all_boson_prediction_prerequisite_execution_001/output/all_boson_prediction_prerequisite_execution.json";
 const string Phase151ValidatedBosonPredictionGeneratorPath = "studies/phase151_validated_boson_prediction_generator_001/output/validated_boson_predictions.json";
+const string Phase152BosonBlockerResolutionPlanPath = "studies/phase152_boson_blocker_resolution_plan_001/output/boson_blocker_resolution_plan.json";
 
 var outputDir = Environment.GetEnvironmentVariable("PHASE101_OUTPUT_DIR") ?? DefaultOutputDir;
 Directory.CreateDirectory(outputDir);
@@ -100,6 +101,7 @@ using var phase148 = TryParseJson(Phase148AllKnownBosonPredictionComparisonPath)
 using var phase149 = TryParseJson(Phase149KnownBosonPredictabilityContractsPath);
 using var phase150 = TryParseJson(Phase150AllBosonPredictionPrerequisiteExecutionPath);
 using var phase151 = TryParseJson(Phase151ValidatedBosonPredictionGeneratorPath);
+using var phase152 = TryParseJson(Phase152BosonBlockerResolutionPlanPath);
 
 bool internalReady = JsonBool(readiness.RootElement, "internalBosonReplayPredictionReady") ?? false;
 bool externalReady = JsonBool(readiness.RootElement, "externalPhysicalComparisonReady") ?? false;
@@ -208,10 +210,18 @@ var package = new
         knownBosonPredictabilityContractsPath = File.Exists(Phase149KnownBosonPredictabilityContractsPath) ? Phase149KnownBosonPredictabilityContractsPath : null,
         allBosonPredictionPrerequisiteExecutionPath = File.Exists(Phase150AllBosonPredictionPrerequisiteExecutionPath) ? Phase150AllBosonPredictionPrerequisiteExecutionPath : null,
         validatedBosonPredictionGeneratorPath = File.Exists(Phase151ValidatedBosonPredictionGeneratorPath) ? Phase151ValidatedBosonPredictionGeneratorPath : null,
+        bosonBlockerResolutionPlanPath = File.Exists(Phase152BosonBlockerResolutionPlanPath) ? Phase152BosonBlockerResolutionPlanPath : null,
         materializedModePath = JsonString(phase99.RootElement, "materializedModePath"),
         replayProbePath = JsonString(phase99.RootElement, "replayProbePath"),
     },
-    nextPhasePrerequisites = phase151 is not null
+    nextPhasePrerequisites = phase152 is not null
+        ? new
+        {
+            status = JsonString(phase152.RootElement, "terminalStatus") ?? "boson-blocker-resolution-plan-ready",
+            prerequisitesPath = Phase152BosonBlockerResolutionPlanPath,
+            nextWork = "execute the Phase152 blocker-resolution workstreams, starting with phase153-wz-absolute-scale-closure to unblock W and Z absolute mass predictions before adding new scalar, U(1), or color-sector source families",
+        }
+        : phase151 is not null
         ? new
         {
             status = string.Equals(
