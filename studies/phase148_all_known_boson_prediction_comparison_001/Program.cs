@@ -5,6 +5,8 @@ const string Phase18TargetsPath = "studies/phase18_experimental_targets_001/phys
 const string Phase51ReadinessPath = "studies/phase51_broad_boson_prediction_readiness_001/broad_boson_prediction_readiness.json";
 const string Phase74AbsoluteComparisonPath = "studies/phase74_wz_absolute_mass_target_comparison_001/wz_absolute_mass_target_comparison.json";
 const string Phase147CompletionAttemptPath = "studies/phase147_boson_prediction_completion_attempt_001/output/boson_prediction_completion_attempt.json";
+const string Phase177Path = "studies/phase177_massless_benchmark_contracts_001/output/massless_benchmark_contracts.json";
+const string Phase183Path = "studies/phase183_massless_sector_invariant_prediction_001/output/massless_sector_invariant_prediction.json";
 
 var outputDir = Environment.GetEnvironmentVariable("PHASE148_OUTPUT_DIR") ?? DefaultOutputDir;
 Directory.CreateDirectory(outputDir);
@@ -13,9 +15,21 @@ using var targetsDoc = JsonDocument.Parse(File.ReadAllText(Phase18TargetsPath));
 using var phase51 = JsonDocument.Parse(File.ReadAllText(Phase51ReadinessPath));
 using var phase74 = JsonDocument.Parse(File.ReadAllText(Phase74AbsoluteComparisonPath));
 using var phase147 = JsonDocument.Parse(File.ReadAllText(Phase147CompletionAttemptPath));
+using var phase177 = File.Exists(Phase177Path) ? JsonDocument.Parse(File.ReadAllText(Phase177Path)) : null;
+using var phase183 = File.Exists(Phase183Path) ? JsonDocument.Parse(File.ReadAllText(Phase183Path)) : null;
 
 var targets = targetsDoc.RootElement.GetProperty("targets").EnumerateArray()
     .ToDictionary(target => RequiredString(target, "observableId"), target => target.Clone(), StringComparer.Ordinal);
+var masslessBenchmarkContracts = phase177 is null
+    ? new Dictionary<string, JsonElement>(StringComparer.Ordinal)
+    : phase177.RootElement.GetProperty("contracts").EnumerateArray()
+        .Where(contract => JsonBool(contract, "benchmarkContractPresent") is true)
+        .ToDictionary(contract => RequiredString(contract, "observableId"), contract => contract.Clone(), StringComparer.Ordinal);
+var masslessSectorPredictions = phase183 is null || JsonBool(phase183.RootElement, "knownMasslessPredictionAllowed") is not true
+    ? new Dictionary<string, JsonElement>(StringComparer.Ordinal)
+    : phase183.RootElement.GetProperty("predictions").EnumerateArray()
+        .Where(prediction => JsonBool(prediction, "promotionAllowed") is true && JsonBool(prediction, "passed") is true)
+        .ToDictionary(prediction => RequiredString(prediction, "observableId"), prediction => prediction.Clone(), StringComparer.Ordinal);
 var phase51Records = phase51.RootElement.GetProperty("records").EnumerateArray()
     .ToArray();
 var absoluteAttempts = phase74.RootElement.GetProperty("comparisons").EnumerateArray()
@@ -25,43 +39,63 @@ var rows = phase51Records.Select(record =>
 {
     string observableId = RequiredString(record, "targetObservableId");
     targets.TryGetValue(observableId, out var target);
+    masslessBenchmarkContracts.TryGetValue(observableId, out var benchmarkContract);
+    masslessSectorPredictions.TryGetValue(observableId, out var masslessSectorPrediction);
     absoluteAttempts.TryGetValue(observableId, out var failedAttempt);
 
     bool phase51Predicted = string.Equals(JsonString(record, "readinessStatus"), "predicted", StringComparison.Ordinal);
+    bool masslessSectorPredicted = masslessSectorPrediction.ValueKind == JsonValueKind.Object;
     bool hasFailedAttempt = failedAttempt.ValueKind != JsonValueKind.Undefined;
     double? predictedValue = phase51Predicted
         ? JsonDouble(record, "computedValue")
+        : masslessSectorPredicted
+            ? JsonDouble(masslessSectorPrediction, "predictedValue")
         : hasFailedAttempt
             ? JsonDouble(failedAttempt, "predictedValue")
             : null;
     double? predictedUncertainty = phase51Predicted
         ? JsonDouble(record, "computedUncertainty")
+        : masslessSectorPredicted
+            ? JsonDouble(masslessSectorPrediction, "predictedUncertainty")
         : hasFailedAttempt
             ? JsonDouble(failedAttempt, "predictedUncertainty")
             : null;
     double? targetValue = target.ValueKind == JsonValueKind.Object
         ? JsonDouble(target, "value")
+        : benchmarkContract.ValueKind == JsonValueKind.Object
+            ? JsonDouble(benchmarkContract, "targetValue")
         : JsonDouble(record, "targetValue");
     double? targetUncertainty = target.ValueKind == JsonValueKind.Object
         ? JsonDouble(target, "uncertainty")
+        : benchmarkContract.ValueKind == JsonValueKind.Object
+            ? JsonDouble(benchmarkContract, "targetUncertainty")
         : JsonDouble(record, "targetUncertainty");
     double? pull = phase51Predicted
         ? JsonDouble(record, "pull")
+        : masslessSectorPredicted
+            ? JsonDouble(masslessSectorPrediction, "pullOrSigmaResidual")
         : hasFailedAttempt
             ? JsonDouble(failedAttempt, "sigmaResidual")
             : null;
     bool? passed = phase51Predicted
         ? true
+        : masslessSectorPredicted
+            ? JsonBool(masslessSectorPrediction, "passed")
         : hasFailedAttempt
             ? JsonBool(failedAttempt, "passed")
             : null;
     string status = phase51Predicted
         ? "predicted"
+        : masslessSectorPredicted
+            ? "predicted"
         : hasFailedAttempt
             ? "failed-comparison-attempt-not-promoted"
-            : target.ValueKind == JsonValueKind.Object
+            : target.ValueKind == JsonValueKind.Object || benchmarkContract.ValueKind == JsonValueKind.Object
                 ? "blocked-target-available"
                 : "blocked-target-contract-missing";
+
+    string? readinessStatus = masslessSectorPredicted ? "predicted" : JsonString(record, "readinessStatus");
+    string? claimGateStatus = masslessSectorPredicted ? "predicted" : JsonString(record, "claimGateStatus");
 
     return new ComparisonRow(
         ParticleId: RequiredString(record, "particleId"),
@@ -72,12 +106,16 @@ var rows = phase51Records.Select(record =>
         PredictedUncertainty: predictedUncertainty,
         TargetValue: targetValue,
         TargetUncertainty: targetUncertainty,
-        Unit: target.ValueKind == JsonValueKind.Object ? JsonString(target, "unit") : null,
+        Unit: target.ValueKind == JsonValueKind.Object
+            ? JsonString(target, "unit")
+            : benchmarkContract.ValueKind == JsonValueKind.Object
+                ? JsonString(benchmarkContract, "unit")
+                : null,
         PullOrSigmaResidual: pull,
         Passed: passed,
-        ReadinessStatus: JsonString(record, "readinessStatus"),
-        ClaimGateStatus: JsonString(record, "claimGateStatus"),
-        ClosureRequirements: StringArray(record, "closureRequirements"));
+        ReadinessStatus: readinessStatus,
+        ClaimGateStatus: claimGateStatus,
+        ClosureRequirements: masslessSectorPredicted ? Array.Empty<string>() : StringArray(record, "closureRequirements"));
 }).ToArray();
 
 var predictedRows = rows.Where(row => row.Status == "predicted").ToArray();
@@ -120,6 +158,8 @@ var result = new
         phase51ReadinessPath = Phase51ReadinessPath,
         phase74AbsoluteComparisonPath = Phase74AbsoluteComparisonPath,
         phase147CompletionAttemptPath = Phase147CompletionAttemptPath,
+        phase177Path = File.Exists(Phase177Path) ? Phase177Path : null,
+        phase183Path = File.Exists(Phase183Path) ? Phase183Path : null,
     },
 };
 

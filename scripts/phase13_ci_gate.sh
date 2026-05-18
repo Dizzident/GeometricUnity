@@ -7,6 +7,8 @@ cd "$repo_root"
 dotnet build
 dotnet test --no-build
 
+./scripts/generate_validated_boson_predictions.sh
+
 phase13_spec="studies/phase13_external_evidence_001/config/campaign.json"
 if [[ -f "$phase13_spec" ]]; then
   dotnet run --project apps/Gu.Cli -- validate-phase5-campaign-spec \

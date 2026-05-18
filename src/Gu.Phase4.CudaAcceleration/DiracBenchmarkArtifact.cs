@@ -23,9 +23,9 @@ public sealed class DiracOperationBenchmark
     [JsonPropertyName("gpuMeanMs")]
     public required double GpuMeanMs { get; init; }
 
-    /// <summary>Speedup ratio: cpuMeanMs / gpuMeanMs. For stubs this will be ~1.</summary>
+    /// <summary>Speedup ratio: cpuMeanMs / gpuMeanMs. For sub-resolution timings and stubs this is neutral.</summary>
     [JsonPropertyName("speedupRatio")]
-    public double SpeedupRatio => GpuMeanMs > 1e-12 ? CpuMeanMs / GpuMeanMs : 1.0;
+    public double SpeedupRatio => CpuMeanMs > 1e-12 && GpuMeanMs > 1e-12 ? CpuMeanMs / GpuMeanMs : 1.0;
 }
 
 /// <summary>

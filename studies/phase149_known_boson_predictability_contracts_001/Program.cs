@@ -7,6 +7,8 @@ const string Phase70Path = "studies/phase70_scalar_sector_bridge_evidence_001/sc
 const string Phase72Path = "studies/phase72_wz_absolute_scale_calibration_001/wz_absolute_scale_calibration.json";
 const string Phase122Path = "studies/phase122_corrected_operator_selection_rule_sweep_001/output/corrected_operator_selection_rule_sweep.json";
 const string Phase146Path = "studies/phase146_fermion_sector_evidence_census_001/output/fermion_sector_evidence_census.json";
+const string Phase177Path = "studies/phase177_massless_benchmark_contracts_001/output/massless_benchmark_contracts.json";
+const string Phase183Path = "studies/phase183_massless_sector_invariant_prediction_001/output/massless_sector_invariant_prediction.json";
 
 var outputDir = Environment.GetEnvironmentVariable("PHASE149_OUTPUT_DIR") ?? DefaultOutputDir;
 Directory.CreateDirectory(outputDir);
@@ -17,6 +19,8 @@ using var phase70 = JsonDocument.Parse(File.ReadAllText(Phase70Path));
 using var phase72 = JsonDocument.Parse(File.ReadAllText(Phase72Path));
 using var phase122 = JsonDocument.Parse(File.ReadAllText(Phase122Path));
 using var phase146 = JsonDocument.Parse(File.ReadAllText(Phase146Path));
+using var phase177 = File.Exists(Phase177Path) ? JsonDocument.Parse(File.ReadAllText(Phase177Path)) : null;
+using var phase183 = File.Exists(Phase183Path) ? JsonDocument.Parse(File.ReadAllText(Phase183Path)) : null;
 
 var rows = phase148.RootElement.GetProperty("comparisonRows").EnumerateArray()
     .Select(row => row.Clone())
@@ -28,6 +32,13 @@ bool correctedOperatorProjectionCandidate = string.Equals(
     "corrected-operator-selection-rule-sweep-found-projection-candidate",
     StringComparison.Ordinal);
 bool fermionSectorEvidencePresent = JsonBool(phase146.RootElement, "currentEvidencePresent") is true;
+bool masslessSectorInvariantPredictionReady = phase183 is not null
+    && JsonBool(phase183.RootElement, "knownMasslessPredictionAllowed") is true;
+var masslessBenchmarkContracts = phase177 is null
+    ? new Dictionary<string, JsonElement>(StringComparer.Ordinal)
+    : phase177.RootElement.GetProperty("contracts").EnumerateArray()
+        .Where(contract => JsonBool(contract, "benchmarkContractPresent") is true)
+        .ToDictionary(contract => RequiredString(contract, "observableId"), contract => contract.Clone(), StringComparer.Ordinal);
 
 var contracts = rows.Select(row =>
 {
@@ -57,6 +68,8 @@ var result = new
         scalarBridgeDerived,
         correctedOperatorProjectionCandidate,
         fermionSectorEvidencePresent,
+        masslessBenchmarkContractCount = masslessBenchmarkContracts.Count,
+        masslessSectorInvariantPredictionReady,
         phase52Status = JsonString(phase52.RootElement, "terminalStatus"),
         phase70Status = JsonString(phase70.RootElement, "terminalStatus"),
         phase72Status = JsonString(phase72.RootElement, "status"),
@@ -82,6 +95,8 @@ var result = new
         phase72Path = Phase72Path,
         phase122Path = Phase122Path,
         phase146Path = Phase146Path,
+        phase177Path = File.Exists(Phase177Path) ? Phase177Path : null,
+        phase183Path = File.Exists(Phase183Path) ? Phase183Path : null,
     },
 };
 
@@ -185,6 +200,21 @@ PredictabilityContract BuildContract(string particleId, string observableId, str
 
     if (particleId == "photon")
     {
+        bool benchmarkContractPresent = masslessBenchmarkContracts.ContainsKey(observableId);
+        if (masslessSectorInvariantPredictionReady)
+        {
+            return new PredictabilityContract(
+                ParticleId: particleId,
+                ObservableId: observableId,
+                CurrentStatus: status,
+                PredictabilityReady: true,
+                Priority: 0,
+                NextConcretePhase: "none",
+                RequiredArtifacts: new[] { "P183 protected-sector masslessness invariant prediction" },
+                AcceptanceGates: new[] { "zero masslessness-indicator contract passes inside the protected massless gauge sector" },
+                Blockers: Array.Empty<string>());
+        }
+
         return new PredictabilityContract(
             ParticleId: particleId,
             ObservableId: observableId,
@@ -194,7 +224,7 @@ PredictabilityContract BuildContract(string particleId, string observableId, str
             NextConcretePhase: "derive-massless-u1-gauge-mode-contract",
             RequiredArtifacts: new[]
             {
-                "photon masslessness target or upper-limit contract",
+                benchmarkContractPresent ? "photon masslessness benchmark contract present" : "photon masslessness target or upper-limit contract",
                 "target-independent massless U(1) gauge identity rule",
                 "computed masslessness observable",
                 "branch/refinement/environment sidecars proving protected zero-mode stability",
@@ -205,11 +235,28 @@ PredictabilityContract BuildContract(string particleId, string observableId, str
                 "computed masslessness observable satisfies target/upper-limit contract",
                 "masslessness stability sidecars pass",
             },
-            Blockers: new[] { "no active photon masslessness target contract or U(1) massless-mode identity exists" });
+            Blockers: benchmarkContractPresent
+                ? new[] { "photon masslessness benchmark contract exists, but no U(1) massless-mode identity exists" }
+                : new[] { "no active photon masslessness target contract or U(1) massless-mode identity exists" });
     }
 
     if (particleId == "gluon")
     {
+        bool benchmarkContractPresent = masslessBenchmarkContracts.ContainsKey(observableId);
+        if (masslessSectorInvariantPredictionReady)
+        {
+            return new PredictabilityContract(
+                ParticleId: particleId,
+                ObservableId: observableId,
+                CurrentStatus: status,
+                PredictabilityReady: true,
+                Priority: 0,
+                NextConcretePhase: "none",
+                RequiredArtifacts: new[] { "P183 protected-sector masslessness invariant prediction" },
+                AcceptanceGates: new[] { "zero masslessness-indicator contract passes inside the protected massless gauge sector" },
+                Blockers: Array.Empty<string>());
+        }
+
         return new PredictabilityContract(
             ParticleId: particleId,
             ObservableId: observableId,
@@ -219,7 +266,7 @@ PredictabilityContract BuildContract(string particleId, string observableId, str
             NextConcretePhase: "derive-color-octet-gauge-sector-contract",
             RequiredArtifacts: new[]
             {
-                "gluon masslessness or confinement-compatible benchmark contract",
+                benchmarkContractPresent ? "gluon masslessness benchmark contract present" : "gluon masslessness or confinement-compatible benchmark contract",
                 "target-independent color-octet gauge-sector identity rule",
                 "computed color gauge-sector observables",
                 "sidecars for color representation content, gauge leakage, and environment stability",
@@ -230,7 +277,9 @@ PredictabilityContract BuildContract(string particleId, string observableId, str
                 "computed color observable satisfies the benchmark contract",
                 "color representation and leakage sidecars pass",
             },
-            Blockers: new[] { "no active gluon benchmark contract or color-octet gauge-sector identity exists" });
+            Blockers: benchmarkContractPresent
+                ? new[] { "gluon masslessness benchmark contract exists, but no color-octet gauge-sector identity exists" }
+                : new[] { "no active gluon benchmark contract or color-octet gauge-sector identity exists" });
     }
 
     return new PredictabilityContract(

@@ -1,0 +1,7449 @@
+# Boson Prediction Diagnosis Journal
+
+Purpose: keep a running, source-auditable record of attempts to complete the W/Z direct target-independent geometric bridge-source law and the known boson prediction package.
+
+Current standard for success: do not promote W/Z absolute masses or Higgs mass unless the repo contains target-independent source lineage that passes the existing Phase201, Phase209, Phase210, Phase213, Phase101, and Phase202 gates. Numerical closeness alone is not enough.
+
+## 2026-05-16
+
+### Baseline Gate State
+
+- Ran the full validated boson prediction pipeline before this journal was created.
+- Phase101 status: `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- Phase101 outcome: `objectiveAchieved=false`, `allKnownBosonValuesDefensible=false`, `defensibleValueCount=3`, `predictionSetComplete=false`.
+- Current defensible values remain W/Z mass ratio, photon masslessness, and gluon masslessness.
+- W absolute mass, Z absolute mass, and Higgs mass are not defensible/promoted.
+- Phase202 status: `boson-objective-completion-audit-incomplete`.
+- Phase202 failed checklist area: all known boson values are not defensible, missing source contracts are not filled, and the top-level package is not complete.
+
+Outcome: prediction package is not complete.
+
+### Public GU Source Research
+
+- Checked the official Geometric Unity site, the 2013 Oxford lecture transcript, and the April 1, 2021 public draft.
+- Recorded the result in Phase218.
+- The sources support architectural and research-program context, including Yang-Mills/Higgs placement in the broader program.
+- No checked public source supplied a direct W/Z absolute-mass theorem, a particle-specific W/Z prediction row, or a solved Higgs scalar source/operator.
+- Standard electroweak relations and PDG masses were treated as comparison context only, not source evidence.
+
+Outcome: public GU draft material did not unlock promotion.
+
+### Phase220 Dimensional Scale Obstruction Audit
+
+- Added Phase220 to state the dimensional/source-scale obstruction explicitly.
+- It records that current artifacts support dimensionless/protected claims only.
+- W/Z absolute masses still require a target-independent dimensionful electroweak scale plus W/Z particle-specific source-shape/coupling lineage.
+- Higgs still requires a solved scalar excitation source/operator.
+
+Outcome: obstruction certified; no promotion.
+
+### Phase221 SU(2) Casimir W/Z Normalization Probe
+
+- Added Phase221 to test the concrete W/Z numerical lead that replaces the Phase63 single-generator trace-half scale `sqrt(1/2)` with an SU(2) spin-1 isotropic RMS/Casimir scale `sqrt(2/3)`.
+- Equivalent factor: multiply the Phase65 weak coupling by `2/sqrt(3)`.
+- Numerical result:
+  - W candidate: `80.41500121225275 GeV`.
+  - Z candidate: `91.41277561445557 GeV`.
+  - The target comparison passes numerically.
+- Promotion blocker:
+  - No upstream GU artifact derives replacing the Phase64 single bosonic perturbation matrix element with an isotropic SU(2) triplet RMS matrix element.
+  - Phase77 still blocks the Phase65 raw `0.8` amplitude as `scalar-study-input`.
+
+Outcome: strong W/Z research lead, but not promotable.
+
+### Phase222 W/Z Raw Amplitude Source Obstruction Audit
+
+- Added Phase222 to test whether production replay evidence can support the Phase221 numerical lead.
+- Target-implied raw matrix-element magnitude: `0.9223616409512609`.
+- Best quality-passing production replay raw-to-target ratio: `0.0002815678812805859`.
+- Best replay fails common W/Z bridge consistency and is far too small to supply the required raw amplitude.
+
+Outcome: raw-amplitude obstruction certified; promotion requires a new replayed analytic Dirac-variation matrix-element source.
+
+### Integrity Wiring
+
+- Wired Phase220, Phase221, and Phase222 into the generator, Phase101 package, Phase202 completion audit, and `verify_boson_claim_integrity.sh`.
+- Updated the source-evidence scans to exclude generated Phase220 to Phase222 artifacts from becoming self-evidence.
+- Re-ran the generator and integrity verifier successfully.
+
+Outcome: pipeline is internally consistent but still incomplete.
+
+### Agent Launch
+
+- Launched a sub-agent to independently search for source evidence that could promote W/Z absolute masses or Higgs.
+- Scope given to the agent:
+  - Find target-independent W/Z dimensional scale and particle-specific source lineage, especially a replayed raw matrix element near `0.9223616409512609` or a justified SU(2) Casimir/RMS normalization.
+  - Find Higgs scalar source/operator evidence, potential/quartic self-coupling lineage, or a source-derived factor near `lambda/g^2 = 0.303001323228066`.
+  - Patch only if the evidence satisfies the existing contracts; otherwise report blockers.
+
+Outcome: completed; see the later "Sub-Agent Bounded Fix Attempt" entry.
+
+### Local Higgs Coupling Probe
+
+- Computed a preliminary Higgs coupling ratio from the Phase215 target-implied quartic and Phase221 Casimir weak coupling.
+- Inputs:
+  - Phase221 Casimir weak coupling: `0.6531972647421809`.
+  - `g^2 = 0.42666666666666675`.
+  - Phase215 target-implied Higgs quartic: `0.12928056457730822`.
+  - Target ratio: `lambda/g^2 = 0.30300132322806606`.
+- Nearby simple factor observed: `3/10` gives `lambda = 0.128` and `m_H = 124.578 GeV`.
+- Promotion blocker:
+  - This is numerology unless a scalar source/operator derives the factor.
+  - Existing Higgs audits still report no solved scalar source/operator, no validated scalar-source identity, no massive scalar profile, and no promotable quartic source.
+
+Outcome: possible diagnostic lead only; not promotable.
+
+### Current Local Search Pass
+
+- Started a narrowed repo search for W/Z raw amplitude evidence, SU(2) Casimir/RMS normalization evidence, Higgs quartic/self-coupling evidence, and scalar-source/operator evidence.
+- Early hits are mostly existing blockers, generated diagnostics, or general implementation notes.
+- No independent source-lineage evidence has been found yet.
+
+Outcome: no intake-ready source-lineage evidence found.
+
+### Sub-Agent Bounded Fix Attempt
+
+- Launched sub-agent `019e32bf-5012-7872-a6cd-98c69c834a04`.
+- Scope: independently search for evidence that could promote W/Z absolute masses or Higgs, and patch only if it could pass the current gates without weakening them.
+- Agent result: no valid fix was possible without weakening the gates; no agent edits were made.
+- Agent-confirmed W/Z blockers:
+  - P221 is numerically successful but `sourceLineagePromotable=false`.
+  - P222 requires raw amplitude `0.9223616409512609`, while the best production replay is only `0.0002815678812805859` of that and fails common bridge.
+  - Old Phase4 coupling-proxy material near the needed scale is synthetic and explicitly not a physical coupling constant.
+  - Existing source/unit-scale attempts can come numerically close to raw scale but fail common-scale, target, or derivation gates.
+- Agent-confirmed Higgs blockers:
+  - P189 has no solved scalar source/operator or massive scalar profile.
+  - P207 scans many local files and candidate findings but still reports zero intake-ready Higgs quartic/self-coupling evidence.
+
+Outcome: independent confirmation that this is not currently fixable as an implementation bug.
+
+### Phase223 Higgs Casimir Quartic Numerical Probe
+
+- Added Phase223 as a fail-closed diagnostic for the Higgs-side `lambda/g^2` lead.
+- Inputs:
+  - P215 target-implied Higgs quartic diagnostic.
+  - P221 Casimir weak coupling.
+  - P187, P189, P196, P199, and P207 Higgs blockers.
+- Computed simple factors in `lambda_candidate = factor * g_casimir^2`.
+- Best checked factor: `3/10`.
+- Result:
+  - `terminalStatus=higgs-casimir-quartic-numerical-lead-found-not-promotable`.
+  - `numericalLeadPresent=true`.
+  - `canPromoteHiggsCasimirQuarticLead=false`.
+  - `sourceLineagePromotable=false`.
+  - Best replayed Higgs mass: `124.57838419212165 GeV`.
+  - Residual from target: `-0.6216158078783565 GeV`.
+- Promotion blocker:
+  - No scalar source/operator derives the `3/10` factor.
+  - P187 has no validated Higgs source identity.
+  - P189 has no promotable solved scalar source/operator census.
+  - P196 has no promotable Higgs potential/self-coupling source.
+  - P199 has no promotable Higgs scalar-source lineage.
+  - P207 found no intake-ready Higgs quartic/self-coupling source.
+  - P221 itself remains nonpromotional W/Z source-lineage evidence.
+
+Outcome: useful Higgs numerical lead recorded; not a prediction.
+
+### P223 Wiring and Regression Protection
+
+- Wired P223 into:
+  - `scripts/generate_validated_boson_predictions.sh`;
+  - `scripts/verify_boson_claim_integrity.sh`;
+  - P101 boson prediction package summary;
+  - P202 objective completion audit.
+- Updated P204 and P205 so generated P223 artifacts are excluded from source-lineage evidence scans.
+- Updated P207 so P223 artifacts are blocked as generated diagnostics, not scalar-source evidence.
+
+Outcome: the new Higgs lead is preserved as a nonclaim and cannot be accidentally promoted by the local scans.
+
+### Full Generator Rerun After P223
+
+- Ran `./scripts/generate_validated_boson_predictions.sh`.
+- Integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Final P101:
+  - `objectiveAchieved=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `defensibleValueCount=3`.
+  - `predictionSetComplete=false`.
+  - `su2CasimirWzNormalizationNumericalPass=true`.
+  - `su2CasimirWzNormalizationPromotable=false`.
+  - `wzRawAmplitudeSourceObstructionCertified=true`.
+  - `higgsCasimirQuarticNumericalLeadPresent=true`.
+  - `higgsCasimirQuarticPromotable=false`.
+- Final P202:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=16`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids: `all-known-boson-values-defensible`, `missing-source-contracts-filled`, `top-level-package-complete`.
+
+Outcome: pipeline is stricter and better documented, but the prediction objective remains incomplete.
+
+### External Electroweak Dependency Research
+
+- Checked the PDG 2025 electroweak review for the standard mass dependency structure.
+- Relevant tree-level dependencies:
+  - `MW = g v / 2`.
+  - `MZ = sqrt(g^2 + g'^2) v / 2`.
+  - `M_gamma = 0`.
+  - Higgs mass depends on the scalar potential parameter and `v`.
+- Interpretation for this repo:
+  - The current W/Z ratio can supply a dimensionless weak-angle-like relation, but not an absolute mass scale.
+  - W/Z absolute masses need promotable source lineage for `v` and the weak coupling magnitude.
+  - Higgs needs a promotable scalar potential/self-coupling or excitation source, plus `v`.
+  - The PDG formulas are dependency structure and comparison context, not GU source evidence.
+
+Outcome: external physics confirms that current diagnostics cannot be promoted without missing parameter source lineages.
+
+### Phase224 Electroweak Parameter Dependency Audit
+
+- Added Phase224 to map W/Z/H mass formulas to missing source parameters.
+- Inputs:
+  - P54 external/Fermi-derived VEV diagnostic.
+  - P192 current defensibility ledger.
+  - P198 weak-coupling source-lineage closure.
+  - P213 source-lineage blocker matrix.
+  - P214 external electroweak input loophole.
+  - P215 target-implied Higgs quartic loophole.
+  - P221 W/Z Casimir numerical lead.
+  - P223 Higgs `3/10` numerical lead.
+- Result:
+  - `terminalStatus=electroweak-parameter-dependency-audit-blocked-missing-source-parameters`.
+  - `electroweakParameterAuditPassed=true`.
+  - `wAbsoluteMassParameterClosure=false`.
+  - `zAbsoluteMassParameterClosure=false`.
+  - `higgsMassParameterClosure=false`.
+- Wired P224 into:
+  - `scripts/generate_validated_boson_predictions.sh`;
+  - `scripts/verify_boson_claim_integrity.sh`;
+  - P101 boson prediction package summary;
+  - P202 objective completion audit.
+- Updated P204, P205, and P207 so P224 generated artifacts do not become source evidence.
+
+Outcome: the blocker is now expressed directly as missing electroweak parameter source lineage, not just failed target comparison.
+
+### Full Generator Rerun After P224
+
+- Ran `./scripts/generate_validated_boson_predictions.sh`.
+- Integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Final P202:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=17`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain `all-known-boson-values-defensible`, `missing-source-contracts-filled`, `top-level-package-complete`.
+
+Outcome: no prediction promotion. The next required artifact is still new target-independent source-lineage evidence for W/Z coupling/scale and Higgs scalar self-coupling/source.
+
+### Phase225 SU(2) Normalization Representation Compatibility Audit
+
+- Added Phase225 to test whether the P221 `sqrt(2/3)` W/Z numerical lead can be treated as a compatible replacement for the current Phase64 source operator.
+- External electroweak convention checked against the PDG 2025 electroweak review:
+  - The charged-current weak interaction uses fermion weak-isospin generators `T+/-=(sigma1 +/- i sigma2)/2`.
+  - This is a fundamental doublet current convention, not an adjoint triplet RMS current by itself.
+- Repo evidence:
+  - P63 derives `physical-weak-coupling-normalization:su2-canonical-trace-half-v1` with `tr(t_a t_b)=1/2 delta_ab`.
+  - P64 is a non-proxy fermion-current matrix element `<phi_i, delta_D[b_k] phi_j>` using the P63 trace-half convention.
+  - P221's successful factor is an adjoint/spin-1 triplet RMS hypothesis.
+  - P222 still certifies missing raw-amplitude source closure.
+  - P224 still certifies missing electroweak parameter source closure.
+- Result:
+  - `terminalStatus=su2-normalization-representation-compatibility-blocked-adjoint-rms-not-fermion-current-source`.
+  - `representationNormalizationObstructionCertified=true`.
+  - `phase221AdjointToTraceHalfRatio=1.1547005383792515`.
+  - `phase221Promotable=false`.
+- Wired P225 into:
+  - `scripts/generate_validated_boson_predictions.sh`;
+  - `scripts/verify_boson_claim_integrity.sh`;
+  - P101 boson prediction package summary;
+  - P202 objective completion audit.
+- Updated P204, P205, and P207 so P225 generated artifacts do not become source evidence.
+
+Outcome: P221 is now blocked not only by missing lineage but also by explicit representation/source-operator incompatibility with the current Phase64 fermion-current source.
+
+### Full Generator Rerun After P225
+
+- Ran `./scripts/generate_validated_boson_predictions.sh`.
+- Integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Final P202:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=18`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain `all-known-boson-values-defensible`, `missing-source-contracts-filled`, `top-level-package-complete`.
+
+Outcome: no prediction promotion. The next W/Z path would need a new GU derivation that changes the source operator to an isotropic SU(2) triplet RMS object, or a replayed analytic matrix element using a correct source operator, followed by the existing source-lineage gates.
+
+### Agent Follow-Up After P225
+
+- Checked the existing launched agent result.
+- Agent outcome:
+  - No valid fix was possible without weakening the gates.
+  - No edits were made by the agent.
+  - It independently confirmed the same blockers:
+    - P221 W/Z is numerically strong but `sourceLineagePromotable=false`.
+    - P222 raw-amplitude source obstruction remains certified.
+    - Older source-normalization attempts reach numerical neighborhoods but fail common-scale, target, or derivation gates.
+    - P189/P207 still show no solved Higgs scalar source/operator or intake-ready quartic/self-coupling evidence.
+  - Current completion status remains incomplete:
+    - P101 `objectiveAchieved=false`.
+    - P101 `allKnownBosonValuesDefensible=false`.
+    - P101 `defensibleValueCount=3`.
+    - P202 `objectiveAchieved=false`.
+
+Outcome: agent corroborated the local blocker diagnosis. No promotion was possible without replacing source-lineage requirements with numerical fitting.
+
+### Phase226 Official GU Higgs-Potential Notation Audit
+
+- Added Phase226 to record the strongest official public Higgs lead found in the GU draft/transcript research pass.
+- Scope:
+  - Official GU material places Higgs/Yang-Mills structure inside the GU recovery map.
+  - It contains Higgs-potential notation involving Upsilon-omega style terms.
+  - The audit tests whether that notation can fill the current Higgs scalar-source and self-coupling contracts.
+- Repo evidence checked:
+  - P187 Higgs scalar source identity scaffold.
+  - P189 Higgs scalar source operator census.
+  - P196 Higgs potential/self-coupling closure audit.
+  - P199 Higgs scalar-source lineage closure audit.
+  - P207 Higgs quartic/self-coupling source scan.
+  - P213 source-lineage blocker matrix.
+  - P215 target-implied Higgs quartic loophole.
+  - P218 official GU public source audit.
+  - P223 Higgs `3/10` numerical lead.
+  - P224 electroweak parameter dependency audit.
+- Result:
+  - `terminalStatus=official-gu-higgs-potential-notation-audit-suggestive-not-source-lineage`.
+  - `officialGuHiggsPotentialNotationPromotable=false`.
+  - `officialGuHiggsPotentialNotationObstructionCertified=true`.
+- Wired P226 into:
+  - `scripts/generate_validated_boson_predictions.sh`;
+  - `scripts/verify_boson_claim_integrity.sh`;
+  - P101 boson prediction package summary;
+  - P202 objective completion audit.
+- Updated P204, P205, and P207 so P226 generated artifacts do not become source evidence.
+- Added an explicit P205/P207 exclusion for `docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md`, so this diagnostic journal cannot become self-evidence in later source scans.
+
+Outcome: the official GU Higgs-potential notation is preserved as a research pointer, not a Higgs mass prediction source. Promotion still requires a worked scalar-sector extraction theorem that supplies the scalar source operator, Higgs identity envelope, massive scalar profile, target-independent self-coupling, prediction row, and stability sidecars.
+
+### Full Generator Rerun After P226
+
+- Ran targeted phase checks:
+  - P226 completed with `officialGuHiggsPotentialNotationObstructionCertified=true`.
+  - P101 completed with `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P202 completed with `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `./scripts/verify_boson_claim_integrity.sh` passed.
+- Ran full `./scripts/generate_validated_boson_predictions.sh`.
+- After adding the journal self-evidence exclusion, reran the full generator again from the final code.
+- Final scan hardening checks:
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `candidateFindingCount=931`.
+  - P207 `intakeReadyFindingCount=0`.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Final P101 summary:
+  - `objectiveAchieved=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `predictionSetComplete=false`.
+  - `defensibleValueCount=3`.
+  - `officialGuHiggsPotentialNotationObstructionCertified=true`.
+- Final P202 summary:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=19`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain `all-known-boson-values-defensible`, `missing-source-contracts-filled`, `top-level-package-complete`.
+- Ran `git diff --check`; no whitespace errors were reported.
+
+Outcome: no successful W/Z/H physical mass prediction can be completed from current artifacts. The strongest new official-GU Higgs notation lead has been captured and blocked correctly until a target-independent scalar source extraction is supplied.
+
+### Narrow Official GU Research: Shiab/Upsilon Action-Level Lead
+
+- Rechecked the official GU draft and transcript around the concrete action-level material, not just the appendix location table.
+- Official source findings:
+  - The draft presents Shiab-style contraction operators and a first-order bosonic action using augmented torsion.
+  - The action includes a `kappa1` torsion term and Upsilon Euler-Lagrange expressions.
+  - The draft's appendix maps Higgs potential to an inner product of Upsilon terms.
+  - The Oxford transcript says the quartic Higgs piece comes from Dirac squaring of a quadratic in augmented torsion.
+- Crucial blocker in the same official material:
+  - The Shiab operator choice is not fixed as a source-lineage artifact in the repo.
+  - The `kappa1`/inner-product normalization is not fixed.
+  - No observer-pullback or sector-projection theorem maps Upsilon components to physical W, Z, and Higgs rows.
+  - No particle-specific mass rows pass the existing raw-amplitude, common-bridge, target-comparison, and stability gates.
+
+Outcome: official GU gives a better research lead than the appendix notation alone, but it still does not provide a complete prediction law.
+
+### Phase227 Official GU Shiab/Upsilon Extraction Obstruction Audit
+
+- Added Phase227 to encode the above action-level obstruction.
+- Scope:
+  - Audit whether the official GU Shiab/Upsilon/augmented-torsion action can be extracted into target-independent W/Z/H mass predictions.
+  - Treat the action as promotable only if it fixes the Shiab operator identity, `kappa1` or inner-product normalization, observer/sector projection, and particle-specific source rows.
+- Result:
+  - `terminalStatus=official-gu-shiab-upsilon-extraction-blocked-free-operator-coefficient-and-projection`.
+  - `officialGuShiabUpsilonExtractionPromotable=false`.
+  - `officialGuShiabUpsilonExtractionObstructionCertified=true`.
+- Wired P227 into:
+  - `scripts/generate_validated_boson_predictions.sh`;
+  - `scripts/verify_boson_claim_integrity.sh`;
+  - P101 boson prediction package summary;
+  - P202 objective completion audit.
+- Updated P204, P205, and P207 so P227 generated artifacts do not become source evidence.
+
+Outcome: the official GU action-level material is now preserved as a concrete extraction task. The next required artifact is a worked theorem fixing the Shiab operator, normalization, and observer/sector projection before any W/Z/H mass promotion is allowed.
+
+### Full Generator Rerun After P227
+
+- Ran targeted phase checks:
+  - P227 completed with `officialGuShiabUpsilonExtractionObstructionCertified=true`.
+  - P101 completed with `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P202 completed with `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `./scripts/verify_boson_claim_integrity.sh` passed.
+- Ran full `./scripts/generate_validated_boson_predictions.sh`.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Final P101 summary:
+  - `objectiveAchieved=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `predictionSetComplete=false`.
+  - `defensibleValueCount=3`.
+  - `officialGuShiabUpsilonExtractionObstructionCertified=true`.
+- Final P202 summary:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=20`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain `all-known-boson-values-defensible`, `missing-source-contracts-filled`, `top-level-package-complete`.
+- Final scan checks:
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `candidateFindingCount=940`.
+  - P207 `intakeReadyFindingCount=0`.
+- Ran `git diff --check`; no whitespace errors were reported.
+
+Outcome: no prediction promotion. The current best official-GU route is no longer merely "find Higgs potential notation"; it is specifically "derive and validate the Shiab/Upsilon extraction theorem with fixed normalization and particle-sector projection."
+
+### Phase228 Boson Mass-Matrix Extraction Obstruction Audit
+
+- Researched the standard electroweak mass-extraction dependency using current PDG reviews.
+- Physics context recorded:
+  - The PDG electroweak review derives W, Z, Higgs, and photon masses from the bosonic Lagrangian after the Higgs doublet develops a VEV.
+  - The PDG Higgs review emphasizes that W/Z masses are emergent after electroweak symmetry breaking and that the VEV sets the electroweak scale.
+  - Therefore a GU W/Z/H mass prediction needs an analogous source-derived vacuum, quadratic expansion, physical mass matrix, particle eigenstate projection, and unit normalization.
+- Repo search result:
+  - Existing FullHessian-like artifacts exist, especially Phase46 electroweak-term W/Z source spectra.
+  - Phase46 has `432` FullHessian mode files and target-independent W/Z ratio spectra.
+  - These are source/mode diagnostics, not a vacuum-expanded physical mass matrix with W/Z/photon/Higgs eigenstates and GeV normalization.
+- Added Phase228 to encode this distinction.
+- Result:
+  - `terminalStatus=boson-mass-matrix-extraction-blocked-no-vacuum-hessian-sector-projection`.
+  - `bosonMassMatrixExtractionPromotable=false`.
+  - `bosonMassMatrixExtractionObstructionCertified=true`.
+  - `fullHessianModeFileCount=432`.
+- Wired P228 into:
+  - `scripts/generate_validated_boson_predictions.sh`;
+  - `scripts/verify_boson_claim_integrity.sh`;
+  - P101 boson prediction package summary;
+  - P202 objective completion audit.
+- Updated P204, P205, and P207 so P228 generated artifacts do not become source evidence.
+
+Outcome: existing Hessian-like spectra cannot be mistaken for physical W/Z/H mass predictions. The missing artifact is specifically a source-derived GU vacuum plus a gauge-consistent quadratic mass matrix and eigenstate/unit projection.
+
+### Full Generator Rerun After P228
+
+- Ran targeted phase checks:
+  - P228 completed with `bosonMassMatrixExtractionObstructionCertified=true`.
+  - P101 completed with `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P202 completed with `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `./scripts/verify_boson_claim_integrity.sh` passed.
+- Ran full `./scripts/generate_validated_boson_predictions.sh`.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Final P101 summary:
+  - `objectiveAchieved=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `predictionSetComplete=false`.
+  - `defensibleValueCount=3`.
+  - `bosonMassMatrixExtractionObstructionCertified=true`.
+- Final P202 summary:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=21`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain `all-known-boson-values-defensible`, `missing-source-contracts-filled`, `top-level-package-complete`.
+- Final scan checks:
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `candidateFindingCount=948`.
+  - P207 `intakeReadyFindingCount=0`.
+- Ran `git diff --check`; no whitespace errors were reported.
+
+Outcome: no prediction promotion. The route has narrowed again: the next concrete deliverable is a target-independent GU vacuum/Hessian mass-matrix extraction theorem, not another numerical bridge or source-spectrum sweep.
+
+### Phase229 Electroweak VEV Source-Lineage Obstruction Audit
+
+- Audited the existing VEV/order-parameter artifacts directly:
+  - Phase54 ingests `v=246.21965079413738 GeV` from the CODATA/NIST Fermi coupling as an external-disjoint electroweak scale.
+  - Phase69 derives the electroweak mass-generation relation over internal W/Z modes and excludes W/Z target mass observables.
+  - Phase70 derives scalar-sector bridge evidence, but its `externalScaleInputId` is `phase54-fermi-derived-electroweak-vacuum-scale`.
+- Added Phase229 to distinguish this useful electroweak bridge from a target-independent GU vacuum/VEV source derivation.
+- Result:
+  - `terminalStatus=electroweak-vev-source-lineage-blocked-external-scale-not-gu-vacuum`.
+  - `targetIndependentGuVevSourcePromotable=false`.
+  - `electroweakVevSourceLineageObstructionCertified=true`.
+  - `externalVevGeV=246.21965079413738`.
+- Wired P229 into:
+  - `scripts/generate_validated_boson_predictions.sh`;
+  - `scripts/verify_boson_claim_integrity.sh`;
+  - P101 boson prediction package summary;
+  - P202 objective completion audit.
+- Updated P204, P205, and P207 so P229 generated artifacts do not become source evidence.
+
+Outcome: Phase54/69/70 remain valid context, but they cannot be promoted as a GU prediction of the electroweak VEV. The missing artifact is now explicitly a target-independent GU vacuum solution and VEV source-lineage derivation, followed by a physical mass-matrix extraction.
+
+### Full Generator Rerun After P229
+
+- Ran targeted phase checks:
+  - P229 completed with `electroweakVevSourceLineageObstructionCertified=true`.
+  - P101 completed with `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P202 completed with `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `./scripts/verify_boson_claim_integrity.sh` passed.
+- Ran full `./scripts/generate_validated_boson_predictions.sh`.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Final P101 summary:
+  - `objectiveAchieved=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `predictionSetComplete=false`.
+  - `defensibleValueCount=3`.
+  - `electroweakVevSourceLineageObstructionCertified=true`.
+  - `targetIndependentGuVevSourcePromotable=false`.
+- Final P202 summary:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=22`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain `all-known-boson-values-defensible`, `missing-source-contracts-filled`, `top-level-package-complete`.
+
+Outcome: no successful W/Z absolute or Higgs mass prediction was completed. The repo now records that the VEV bridge is external-input/order-parameter context, not a GU VEV source prediction.
+
+### Phase230 Native GU Vacuum/Hessian Candidate Audit
+
+- Researched the local native GU artifacts most likely to be mistaken for the missing vacuum or mass-matrix source:
+  - `README.md` explicitly says no current observable is validated as a physical W/Z/Higgs/photon property and no GeV calibration exists.
+  - The core pipeline exposes `Upsilon`, `J=dUpsilon/domega`, and solver/pullback machinery, but the README still enforces observation discipline and no silent hardcoding.
+  - Post-Phase11 Shiab companion records show active `identity-shiab`, `first-order-curvature`, and `metric-scaled-shiab` branches are not the canonically selected draft Shiab.
+  - SU(2)/SU(3) Shiab scope records say active branches carry `draftAlignmentStatus=surrogate` and full Shiab family exploration requires `dimX >= 4`.
+  - Phase9 first-order Shiab atlas has low-residual/converged backgrounds, but they are `toy` backgrounds with base dimension `2`, not a four-dimensional observed electroweak vacuum.
+  - Latest local theory-completion notes checked in `Geometric_Unity_Completion_Reorganized_Updated_v29.md` require the `DUpsilon`/`DUpsilon*DUpsilon` linearization package but demote observed Higgs/Yang-Mills mappings unless an extraction theorem exists.
+- Added Phase230 to encode this exact native-candidate audit.
+- Result:
+  - `terminalStatus=native-gu-vacuum-hessian-candidate-audit-no-promotable-physical-extraction`.
+  - `nativeGuVacuumHessianCandidatePromotable=false`.
+  - `nativeGuVacuumHessianCandidateAuditPassed=true`.
+  - `backgroundCount=4`.
+  - `baseDimension=2`.
+- Wired P230 into:
+  - `scripts/generate_validated_boson_predictions.sh`;
+  - `scripts/verify_boson_claim_integrity.sh`;
+  - P101 boson prediction package summary;
+  - P202 objective completion audit.
+- Updated P204, P205, and P207 so P230 generated artifacts do not become source evidence.
+
+Outcome: local native GU computational artifacts are useful diagnostics, but they still do not provide a physical W/Z/H mass prediction. The missing artifact remains a draft-aligned four-dimensional observed-sector vacuum and mass-matrix extraction theorem with physical units and GU-derived VEV/source lineage.
+
+### Full Generator Rerun After P230
+
+- Ran targeted phase checks:
+  - P230 completed with `nativeGuVacuumHessianCandidateAuditPassed=true`.
+  - P101 completed with `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P202 completed with `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `./scripts/verify_boson_claim_integrity.sh` passed.
+- Ran full `./scripts/generate_validated_boson_predictions.sh`.
+- Re-ran the full generator after updating P230 to use the latest local v29 completion notes instead of v26.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Final P101 summary:
+  - `objectiveAchieved=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `predictionSetComplete=false`.
+  - `defensibleValueCount=3`.
+  - `nativeGuVacuumHessianCandidateAuditPassed=true`.
+  - `nativeGuVacuumHessianCandidatePromotable=false`.
+- Final P202 summary:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=23`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain `all-known-boson-values-defensible`, `missing-source-contracts-filled`, `top-level-package-complete`.
+
+Outcome: no successful W/Z absolute or Higgs mass prediction was completed. The local native GU route is now explicitly blocked at the level of canonical Shiab branch, four-dimensional observed vacuum, observed-boson extraction theorem, physical mass matrix, GeV normalization, and GU-derived VEV source.
+
+### Phase231 External Cox GU Paper I Source-Intake Audit
+
+- Researched the external 2025 Joseph Thomas Cox source lead:
+  - `Geometric Unity I: From Heuristic Proposal to Testable Framework. Shiab Uniqueness, Invariant Curvature, Augmented Torsion, and Projection-Variation with Boundary Control`.
+  - DOI: `10.5281/zenodo.17252989`.
+  - Discovery/source page: `https://www.researchgate.net/publication/396132548_Geometric_Unity_I_From_Heuristic_Proposal_to_Testable_Framework_Shiab_Uniqueness_Invariant_Curvature_Augmented_Torsion_and_Projection-Variation_with_Boundary_Control`.
+- Added Phase231 to intake-audit this source against the existing Phase209 W/Z and Higgs evidence requests.
+- Initial decision encoded:
+  - Preserve the paper as an external Shiab/invariant-geometry research lead.
+  - Do not promote it as a W/Z/H boson mass source-lineage artifact.
+  - The current Paper I lead leaves relative couplings, quantization, and phenomenology downstream and does not fill W/Z particle rows, Higgs scalar-source rows, mass-matrix extraction, VEV source, stability sidecars, or target-comparison gates.
+
+Outcome pending rerun: Phase231 should increase audit coverage, not complete the boson prediction objective unless it unexpectedly fills all W/Z and Higgs gates.
+
+### Full Generator Rerun After P231
+
+- Ran targeted phase checks:
+  - P231 completed with `externalCoxPaperISourceIntakeAuditPassed=true`.
+  - `externalCoxPaperIResearchLeadPresent=true`.
+  - `externalCoxPaperIPromotableForBosonMasses=false`.
+  - P101 completed with `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P202 completed with `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `./scripts/verify_boson_claim_integrity.sh` passed.
+- Ran full `./scripts/generate_validated_boson_predictions.sh`.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Final P101 summary:
+  - `objectiveAchieved=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `predictionSetComplete=false`.
+  - `defensibleValueCount=3`.
+  - `externalCoxPaperISourceIntakeAuditPassed=true`.
+  - `externalCoxPaperIPromotableForBosonMasses=false`.
+- Final P202 summary:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=24`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain `all-known-boson-values-defensible`, `missing-source-contracts-filled`, `top-level-package-complete`.
+- Ran `git diff --check`; no whitespace errors were reported.
+
+Outcome: no successful W/Z absolute or Higgs mass prediction was completed. Cox 2025 GU I is now preserved as an external research lead, but it does not fill the Phase209/Phase201 W/Z or Higgs source-lineage intake contracts.
+
+### Phase232 External Cox GU Paper II Source-Intake Audit
+
+- Researched the external 2025 Joseph Thomas Cox source lead:
+  - `Geometric Unity II: Matter & Symmetry on the Observation Slice One-Family Factorization, Pati-Salam Embedding, Anomaly Closure, and Embryo Higgs/Yukawa Textures`.
+  - DOI: `10.5281/zenodo.17373503`.
+  - Discovery/source page: `https://www.researchgate.net/publication/396557260_Geometric_Unity_II_Matter_Symmetry_on_the_Observation_Slice_One-Family_Factorization_Pati-Salam_Embedding_Anomaly_Closure_and_Embryo_HiggsYukawa_Textures`.
+- Added Phase232 to intake-audit this source against the existing Phase209 W/Z and Higgs evidence requests.
+- Initial decision encoded:
+  - Preserve the paper as an external lead for slice matter, Pati-Salam embedding, gauge normalizations, gauge mass matrices, geometry-sourced scalar/Higgs-like moduli, and schematic Yukawa textures.
+  - Do not promote it as a W/Z/H boson mass source-lineage artifact.
+  - The current Paper II lead keeps the needed absolute-mass inputs symbolic or downstream: fixed electroweak couplings, GU-derived VEV, observed W/Z rows, solved Higgs scalar source/self-coupling, physical mass-matrix extraction, stability sidecars, and repository replay/target-comparison gates are still absent.
+
+Outcome pending rerun: Phase232 should increase audit coverage for the most relevant external source so far, not complete the boson prediction objective unless all W/Z and Higgs gates are unexpectedly filled.
+
+### Full Generator Rerun After P232
+
+- Ran targeted phase checks:
+  - P232 completed with `externalCoxPaperIISourceIntakeAuditPassed=true`.
+  - `externalCoxPaperIIResearchLeadPresent=true`.
+  - `externalCoxPaperIIPromotableForBosonMasses=false`.
+  - P101 completed with `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P202 completed with `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `./scripts/verify_boson_claim_integrity.sh` passed.
+- Ran full `./scripts/generate_validated_boson_predictions.sh`.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Final P101 summary:
+  - `objectiveAchieved=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `predictionSetComplete=false`.
+  - `defensibleValueCount=3`.
+  - `externalCoxPaperIISourceIntakeAuditPassed=true`.
+  - `externalCoxPaperIIPromotableForBosonMasses=false`.
+- Final P202 summary:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=25`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain `all-known-boson-values-defensible`, `missing-source-contracts-filled`, `top-level-package-complete`.
+- Ran `git diff --check`; no whitespace errors were reported.
+
+Outcome: no successful W/Z absolute or Higgs mass prediction was completed. Cox 2025 GU II is now preserved as the strongest external gauge/scalar-sector lead audited so far, but it still does not fill the Phase209/Phase201 W/Z or Higgs source-lineage intake contracts.
+
+### Phase233 External Cox GU Papers III-IV Source-Intake Audit
+
+- Researched the downstream external Cox GU preprints that Paper II points toward:
+  - `Geometric Unity III: Quantization, BRST, and Deformation Complex`.
+  - `Geometric Unity IV: Boundary Dynamics, Observables, and the Single-Parameter GU->BC Interface Admissible Boundary Families, Slice EFT -> Data Maps, and Global Consistency Tests`.
+- Added Phase233 to intake-audit Papers III-IV against the existing Phase209 W/Z and Higgs evidence requests.
+- Initial decision encoded:
+  - Preserve Paper III as a downstream lead for BRST/BV quantization, cohomology, anomaly closure, axial-contact running/sign stability, and quantum Projection-Variation.
+  - Preserve Paper IV as a downstream lead for admissible boundary families, slice EFT-to-observables maps, BC interface formulas, and falsifier workflow.
+  - Do not promote either as a W/Z/H boson mass source-lineage artifact.
+  - These papers focus on axial-contact/BC/observable layers and do not provide W/Z mass rows, a solved Higgs mass source, a GU-derived VEV, or repository replay/target-comparison gates.
+
+Outcome pending rerun: Phase233 should close the obvious "maybe the deferred Cox papers fill it" gap, not complete the boson prediction objective unless all W/Z and Higgs gates are unexpectedly filled.
+
+### Full Generator Rerun After P233
+
+- Ran targeted phase checks:
+  - P233 completed with `externalCoxPapersIIIIVSourceIntakeAuditPassed=true`.
+  - `externalCoxPapersIIIIVResearchLeadPresent=true`.
+  - `externalCoxPapersIIIIVPromotableForBosonMasses=false`.
+  - P101 completed with `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P202 completed with `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `./scripts/verify_boson_claim_integrity.sh` passed.
+- Ran full `./scripts/generate_validated_boson_predictions.sh`.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Final P101 summary:
+  - `objectiveAchieved=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `predictionSetComplete=false`.
+  - `defensibleValueCount=3`.
+  - `externalCoxPapersIIIIVSourceIntakeAuditPassed=true`.
+  - `externalCoxPapersIIIIVPromotableForBosonMasses=false`.
+- Final P202 summary:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=26`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain `all-known-boson-values-defensible`, `missing-source-contracts-filled`, `top-level-package-complete`.
+- Ran `git diff --check`; no whitespace errors were reported.
+
+Outcome: no successful W/Z absolute or Higgs mass prediction was completed. The audited Cox GU I-IV external chain now covers Shiab/invariant geometry, slice matter/gauge/scalar leads, quantization/RG, and boundary/observable maps, but still does not supply promotable W/Z/H source-lineage rows for this repository.
+
+### Phase234 Cox II Electroweak Formula Dependency Audit
+
+- Focused on the remaining ambiguity from Cox Paper II: it does contain a symbolic electroweak W/Z mass-formula lead.
+- Added Phase234 to separate "formula structure present" from "absolute prediction promotable".
+- Formula lead recorded:
+  - `m_W^2 = g_L^2 * kappa^2 / 4`.
+  - `m_Z^2 = (g_L^2 + g_Y^2) * kappa^2 / 4`.
+  - Left-right/Pati-Salam hypercharge normalization lead through `1/g_Y^2 = 1/g_R^2 + 1/g_{B-L}^2`.
+- Current blocker encoded:
+  - The formula still requires independent GU-derived `g_L`.
+  - The formula still requires independent GU-derived `g_Y` or equivalent mixing.
+  - The formula still requires independent GU-derived `kappa`/electroweak VEV.
+  - Existing P197/P214/P224/P229/P232 gates do not provide those promotable sources.
+- Initial result:
+  - `coxIiSymbolicElectroweakFormulaLeadPresent=true`.
+  - `symbolicFormulaLeadPromotableForAbsoluteMasses=false`.
+  - `coxIiElectroweakFormulaDependencyAuditPassed=true`.
+
+Outcome pending rerun: Phase234 should clarify that Cox II supplies symbolic W/Z mass structure but not absolute W/Z predictions.
+
+### Full Generator Rerun After P234
+
+- Ran targeted phase checks:
+  - P234 completed with `coxIiElectroweakFormulaDependencyAuditPassed=true`.
+  - `coxIiSymbolicElectroweakFormulaLeadPresent=true`.
+  - `symbolicFormulaLeadPromotableForAbsoluteMasses=false`.
+  - Required parameters remain non-promotable: `g_L`, `g_Y-or-equivalent-mixing`, and `kappa-or-electroweak-VEV`.
+  - P101 completed with `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P202 completed with `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `./scripts/verify_boson_claim_integrity.sh` passed.
+- Ran full `./scripts/generate_validated_boson_predictions.sh`.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Final P101 summary:
+  - `objectiveAchieved=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `predictionSetComplete=false`.
+  - `defensibleValueCount=3`.
+  - `coxIiElectroweakFormulaDependencyAuditPassed=true`.
+  - `coxIiSymbolicFormulaPromotableForAbsoluteMasses=false`.
+- Final P202 summary:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=27`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain `all-known-boson-values-defensible`, `missing-source-contracts-filled`, `top-level-package-complete`.
+- Ran `git diff --check`; no whitespace errors were reported.
+
+Outcome: no successful W/Z absolute or Higgs mass prediction was completed. The Cox II formula lead is now explicitly classified as symbolic electroweak mass structure, not a target-independent GU absolute-mass prediction.
+
+### Phase235 Pati-Salam Weak-Mixing Normalization Audit
+
+- Researched whether the Cox II/Pati-Salam hypercharge normalization can close the W/Z `g_Y` or weak-mixing source requirement.
+- Added Phase235 to distinguish a high-scale normalization boundary from a low-energy electroweak prediction.
+- Lead recorded:
+  - Hypercharge embedding `Y = T3_R + (B-L)/2`.
+  - Canonical high-scale boundary `sin^2(theta_W)=3/8`.
+  - Naive high-scale W/Z ratio boundary `cos(theta_W)=sqrt(5/8)`.
+- Current blocker encoded:
+  - The normalization is a high-scale boundary only.
+  - No GU-derived Pati-Salam/left-right breaking scale is materialized.
+  - No RG/threshold transport to the W/Z comparison scale is materialized.
+  - No target-independent low-energy `g_Y` or weak-mixing source row is supplied.
+  - P197/P224/P232/P234 gates still do not promote W/Z absolute masses.
+- Initial result:
+  - `patiSalamHyperchargeEmbeddingLeadPresent=true`.
+  - `patiSalamNormalizationPromotableForLowEnergyWz=false`.
+  - `patiSalamWeakMixingNormalizationAuditPassed=true`.
+
+Outcome pending rerun: Phase235 should clarify that Pati-Salam normalization helps source structure but does not close low-energy W/Z mass prediction.
+
+### Full Generator Rerun After P235
+
+- Ran targeted phase checks:
+  - P235 completed with `patiSalamWeakMixingNormalizationAuditPassed=true`.
+  - `patiSalamHyperchargeEmbeddingLeadPresent=true`.
+  - `canonicalHighScaleSin2ThetaW=0.375`.
+  - `patiSalamNormalizationPromotableForLowEnergyWz=false`.
+  - Missing transport remains `gu-breaking-scale`, `rg-evolution-to-electroweak-scale`, `threshold-corrections`, and `low-energy-hypercharge-coupling`.
+  - P101 completed with `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P202 completed with `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `./scripts/verify_boson_claim_integrity.sh` passed.
+- Ran full `./scripts/generate_validated_boson_predictions.sh`.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Final P101 summary:
+  - `objectiveAchieved=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `predictionSetComplete=false`.
+  - `defensibleValueCount=3`.
+  - `patiSalamWeakMixingNormalizationAuditPassed=true`.
+  - `patiSalamNormalizationPromotableForLowEnergyWz=false`.
+- Final P202 summary:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=28`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain `all-known-boson-values-defensible`, `missing-source-contracts-filled`, `top-level-package-complete`.
+- Ran `git diff --check`; no whitespace errors were reported.
+
+Outcome: no successful W/Z absolute or Higgs mass prediction was completed. Pati-Salam normalization is now explicitly classified as a useful high-scale weak-mixing boundary, not a low-energy W/Z source-lineage prediction.
+
+### Phase236 Low-Energy RG Transport Source Audit
+
+- Audited whether the repository already contains the missing RG/threshold transport source needed after P235.
+- Added Phase236 to distinguish local references to renormalization from a promotable source-lineage artifact.
+- Inputs checked:
+  - P204/P205 source-lineage scans: still no intake-ready candidate or text evidence.
+  - P213: W/Z source-lineage blockers remain.
+  - P224: W/Z absolute parameter closure remains false.
+  - P235: Pati-Salam normalization remains high-scale and non-promotable.
+  - Latest local completion notes: renormalization and low-energy reduction are treated as declared auxiliary ingredients; hidden auxiliary assumptions invalidate comparisons.
+- Current blocker encoded:
+  - No GU-derived breaking-scale source.
+  - No RG transport operator source.
+  - No threshold-correction source.
+  - No low-energy hypercharge or weak-mixing source row.
+- Initial result:
+  - `lowEnergyRgTransportSourcePromotable=false`.
+  - `lowEnergyRgTransportSourceAuditPassed=true`.
+
+Outcome pending rerun: Phase236 should clarify that local renormalization language is not a W/Z source-lineage artifact.
+
+### Full Generator Rerun After P236
+
+- Ran targeted phase checks:
+  - P236 completed with `lowEnergyRgTransportSourceAuditPassed=true`.
+  - `lowEnergyRgTransportSourcePromotable=false`.
+  - P204/P205 scan evidence remained `sourceLineageCandidateIntakeReadyCount=0` and `sourceLineageTextIntakeReadyCount=0`.
+  - Missing RG transport requirements remained `gu-breaking-scale-source`, `rg-transport-operator-source`, `threshold-correction-source`, and `low-energy-hypercharge-source`.
+  - P101 completed with `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P202 completed with `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `./scripts/verify_boson_claim_integrity.sh` passed.
+- Ran full `./scripts/generate_validated_boson_predictions.sh`.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Final P101 summary:
+  - `objectiveAchieved=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `predictionSetComplete=false`.
+  - `defensibleValueCount=3`.
+  - `lowEnergyRgTransportSourceAuditPassed=true`.
+  - `lowEnergyRgTransportSourcePromotable=false`.
+- Final P202 summary:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=29`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain `all-known-boson-values-defensible`, `missing-source-contracts-filled`, `top-level-package-complete`.
+- Ran `git diff --check`; no whitespace errors were reported.
+
+Outcome: no successful W/Z absolute or Higgs mass prediction was completed. Local RG/renormalization language is now explicitly classified as an unfilled auxiliary requirement, not a promotable low-energy W/Z parameter source.
+
+### Phase237 Cox II Higgs/Yukawa Texture Dependency Audit
+
+- The attempted worker agent for this phase hit a usage limit before making changes, so the implementation continued locally.
+- Researched the Cox GU II Higgs/Yukawa lead and standard Higgs-sector dependency context.
+- Added Phase237 to audit whether Cox GU II's geometry-sourced scalar/Higgs-like moduli and schematic Yukawa texture material can fill the Higgs mass source-lineage contract.
+- External lead preserved:
+  - Cox GU II identifies internal-geometry scalar modes that act as Higgs-like moduli.
+  - Cox GU II reports a minimal nonvanishing overlap integral generating schematic Yukawa textures.
+- Current blocker encoded:
+  - This does not supply a solved scalar-source operator.
+  - This does not supply a Higgs identity envelope or physical massive scalar profile.
+  - This does not supply a Higgs potential/self-coupling source, quartic lambda, or GU-derived VEV.
+  - This does not supply stability sidecars or a post-construction target-comparison gate.
+- Initial result expected:
+  - `coxIiGeometrySourcedScalarLeadPresent=true`.
+  - `coxIiYukawaTextureLeadPresent=true`.
+  - `coxIiHiggsLikeModuliLeadPresent=true`.
+  - `coxIiHiggsYukawaTexturePromotableForHiggsMass=false`.
+  - `coxIiHiggsYukawaTextureDependencyAuditPassed=true`.
+
+Initial outcome before full rerun: Phase237 clarified that Cox II Higgs/Yukawa texture material is a research lead, not a Higgs mass source-lineage prediction.
+
+### Full Generator Rerun After P237
+
+- Ran targeted checks:
+  - P237 completed with `coxIiHiggsYukawaTextureDependencyAuditPassed=true`.
+  - `coxIiGeometrySourcedScalarLeadPresent=true`.
+  - `coxIiYukawaTextureLeadPresent=true`.
+  - `coxIiHiggsYukawaTexturePromotableForHiggsMass=false`.
+  - P101 completed with `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P202 completed with `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `./scripts/verify_boson_claim_integrity.sh` passed.
+- Ran full `./scripts/generate_validated_boson_predictions.sh`.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Final P101 summary:
+  - `objectiveAchieved=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `predictionSetComplete=false`.
+  - `defensibleValueCount=3`.
+  - `coxIiHiggsYukawaTextureDependencyAuditPassed=true`.
+  - `coxIiHiggsYukawaTexturePromotableForHiggsMass=false`.
+- Final P202 summary:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=30`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain `all-known-boson-values-defensible`, `missing-source-contracts-filled`, `top-level-package-complete`.
+- Final scan summaries:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `intakeReadyFindingCount=0`.
+- Ran `git diff --check`; no whitespace errors were reported.
+
+Outcome: no successful W/Z absolute or Higgs mass prediction was completed. Cox II Higgs/Yukawa texture material is now explicitly classified as a non-promotional research lead until a solved scalar-source operator, Higgs identity envelope, massive scalar profile, potential/self-coupling or quartic source, GU-derived VEV, stability sidecars, and target-comparison gate are supplied.
+
+### Phase238 Cox II Ready-to-Fit Formula Dependency Audit
+
+- Researched Cox GU II Appendix S, "Ready-to-Fit Formulas for Mixings and Masses".
+- Added Phase238 to distinguish algebraically useful global-fit formulas from target-independent predictions.
+- Lead recorded:
+  - Charged-sector formulas for `(W_L, W_R)` mixing and masses.
+  - Neutral-sector formulas for `(Z, Z')` mixing and masses.
+  - Pati-Salam hypercharge relation.
+  - SU(4) leptoquark vector mass/width formulas.
+- Current blocker encoded:
+  - The formulas depend on parameters such as `g_L`, `g_R`, `g_B-L`, `kappa`, `beta`, `v_R`, `g_4`, `v_4`, and `c_X`.
+  - The formulas are advertised as ready for global fits, not as fixed pre-fit mass predictions.
+  - The repository still lacks independent GU source rows for those parameters, RG/threshold transport, observed W/Z prediction rows, and a Higgs scalar-source/potential package.
+- Initial result expected:
+  - `coxIiReadyToFitFormulaLeadPresent=true`.
+  - `readyToFitFormulasAlgebraicallyClosed=true`.
+  - `readyToFitFormulasProvideFixedParameterValues=false`.
+  - `coxIiReadyToFitFormulaPromotableForBosonMasses=false`.
+  - `coxIiReadyToFitFormulaDependencyAuditPassed=true`.
+
+Initial outcome before full rerun: Phase238 clarified that Cox II ready-to-fit formulas are parameterized phenomenology, not completed W/Z/H mass predictions.
+
+### Full Generator Rerun After P238
+
+- Ran targeted checks:
+  - P238 completed with `coxIiReadyToFitFormulaDependencyAuditPassed=true`.
+  - `coxIiReadyToFitFormulaLeadPresent=true`.
+  - `readyToFitFormulasProvideFixedParameterValues=false`.
+  - `coxIiReadyToFitFormulaPromotableForBosonMasses=false`.
+  - P101 completed with `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P202 completed with `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `./scripts/verify_boson_claim_integrity.sh` passed.
+- Ran full `./scripts/generate_validated_boson_predictions.sh`.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Final P101 summary:
+  - `objectiveAchieved=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `predictionSetComplete=false`.
+  - `defensibleValueCount=3`.
+  - `coxIiReadyToFitFormulaDependencyAuditPassed=true`.
+  - `coxIiReadyToFitFormulaPromotableForBosonMasses=false`.
+- Final P202 summary:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=31`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain `all-known-boson-values-defensible`, `missing-source-contracts-filled`, and `top-level-package-complete`.
+- Final scan summaries:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `intakeReadyFindingCount=0`.
+- Ran `git diff --check`; no whitespace errors were reported.
+
+Outcome: no successful W/Z absolute or Higgs mass prediction was completed. Cox II Appendix S ready-to-fit formulas are now explicitly classified as parameterized global-fit relations, not fixed target-independent predictions.
+
+### Phase239 Cox IV GUBC Single-Parameter Boson Relevance Audit
+
+- Researched Cox GU IV's single-parameter GU-to-BC interface and its observable-map claims.
+- Added Phase239 to test whether the Cox IV single parameter can source W/Z/H masses, rather than only boundary/cosmology observables.
+- Lead recorded:
+  - Cox IV constructs admissible boundary families and a slice EFT observable map.
+  - Cox IV packages a single stiffness parameter `sigma0` for BC-facing hooks.
+  - The scoped hooks are background expansion/BAO, homogeneous vorticity damping, and weak-field surrogate behavior.
+- Current blocker encoded:
+  - The single parameter does not supply low-energy electroweak coupling rows.
+  - The single parameter does not supply a GU-derived electroweak VEV or `kappa`.
+  - The single parameter does not supply a Higgs scalar-source operator, potential, quartic, or massive scalar profile.
+  - The single parameter does not supply observed W/Z/H mass rows with replay, stability, and target-comparison gates.
+- Initial result expected:
+  - `coxIvGubcSingleParameterLeadPresent=true`.
+  - `coxIvSingleParameterControlsBcHooks=true`.
+  - `coxIvSingleParameterControlsWzHMasses=false`.
+  - `coxIvGubcSingleParameterPromotableForBosonMasses=false`.
+  - `coxIvGubcSingleParameterBosonRelevanceAuditPassed=true`.
+
+Initial outcome before full rerun: Phase239 clarified that Cox IV's GUBC single-parameter interface is a boundary/cosmology observable route, not a W/Z/H mass-source route.
+
+### Full Generator Rerun After P239
+
+- Ran targeted checks:
+  - P239 completed with `coxIvGubcSingleParameterBosonRelevanceAuditPassed=true`.
+  - `coxIvGubcSingleParameterLeadPresent=true`.
+  - `coxIvSingleParameterControlsBcHooks=true`.
+  - `coxIvSingleParameterControlsWzHMasses=false`.
+  - `coxIvGubcSingleParameterPromotableForBosonMasses=false`.
+  - P101 completed with `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P202 completed with `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `./scripts/verify_boson_claim_integrity.sh` passed.
+- Ran full `./scripts/generate_validated_boson_predictions.sh`.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Final P101 summary:
+  - `objectiveAchieved=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `predictionSetComplete=false`.
+  - `defensibleValueCount=3`.
+  - `coxIvGubcSingleParameterBosonRelevanceAuditPassed=true`.
+  - `coxIvGubcSingleParameterPromotableForBosonMasses=false`.
+- Final P202 summary:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=32`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain `all-known-boson-values-defensible`, `missing-source-contracts-filled`, and `top-level-package-complete`.
+- Final scan summaries:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `intakeReadyFindingCount=0`.
+- Ran `git diff --check`; no whitespace errors were reported.
+
+Outcome: no successful W/Z absolute or Higgs mass prediction was completed. Cox IV's single GUBC/BC parameter is now explicitly classified as a boundary/cosmology observable hook, not an electroweak/Higgs mass-source parameter.
+
+### Phase240 Cox III Axial-Contact RG Boson Parameter Audit
+
+- Researched Cox GU III's quantum, BRST/BV, counterterm, axial-contact RG, and positivity claims.
+- Added Phase240 to test whether the Cox III axial-contact RG/sign corridor can source W/Z/H mass parameters.
+- Lead recorded:
+  - Cox III supplies semidirect BRST/BV consistency and anomaly/counterterm closure.
+  - Cox III identifies an axial contact term and one-loop running/sign stability.
+  - Cox III maps GU parameters to a BC stiffness parameter `sigma0`.
+- Current blocker encoded:
+  - Axial-contact running is not low-energy electroweak coupling running for `g_L` or `g_Y`.
+  - The sign corridor is not a Higgs quartic, scalar potential, or Higgs mass relation.
+  - Cox III does not supply a GU-derived electroweak VEV or `kappa`.
+  - Cox III does not supply observed W/Z/H mass rows with replay, stability, and target-comparison gates.
+- Initial result expected:
+  - `coxIiiAxialContactRgLeadPresent=true`.
+  - `coxIiiSignCorridorLeadPresent=true`.
+  - `coxIiiControlsElectroweakCouplingRunning=false`.
+  - `coxIiiControlsHiggsQuarticRunning=false`.
+  - `coxIiiAxialContactRgPromotableForBosonMasses=false`.
+  - `coxIiiAxialContactRgBosonParameterAuditPassed=true`.
+
+Initial outcome before full rerun: Phase240 clarified that Cox III's axial-contact RG/sign corridor is a quantization and BC-stiffness route, not a W/Z/H mass-parameter source.
+
+### Full Generator Rerun After P240
+
+- Ran targeted checks:
+  - P240 completed with `coxIiiAxialContactRgBosonParameterAuditPassed=true`.
+  - `coxIiiAxialContactRgLeadPresent=true`.
+  - `coxIiiSignCorridorLeadPresent=true`.
+  - `coxIiiControlsElectroweakCouplingRunning=false`.
+  - `coxIiiControlsHiggsQuarticRunning=false`.
+  - `coxIiiAxialContactRgPromotableForBosonMasses=false`.
+  - P101 completed with `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P202 completed with `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `./scripts/verify_boson_claim_integrity.sh` passed.
+- Ran full `./scripts/generate_validated_boson_predictions.sh`.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Final P101 summary:
+  - `objectiveAchieved=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `predictionSetComplete=false`.
+  - `defensibleValueCount=3`.
+  - `coxIiiAxialContactRgBosonParameterAuditPassed=true`.
+  - `coxIiiAxialContactRgPromotableForBosonMasses=false`.
+- Final P202 summary:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=33`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain `all-known-boson-values-defensible`, `missing-source-contracts-filled`, and `top-level-package-complete`.
+- Final scan summaries:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `intakeReadyFindingCount=0`.
+- Ran `git diff --check`; no whitespace errors were reported.
+
+Outcome: no successful W/Z absolute or Higgs mass prediction was completed. Cox III's axial-contact RG/sign-corridor material is now explicitly classified as quantization/BC-stiffness evidence, not low-energy electroweak coupling, Higgs quartic, VEV, or W/Z/H mass-row source evidence.
+
+### Phase241 Cox IV Quartic Gauge Sign Falsifier Boson Mass Audit
+
+- Researched Cox GU IV's quartic gauge-boson sign/falsifier language and its positivity-theory context.
+- Added Phase241 to distinguish anomalous quartic gauge-coupling sign constraints from Higgs quartic or mass-source evidence.
+- Lead recorded:
+  - Cox IV uses forward positivity and global falsifier checks.
+  - Negative anomalous quartic gauge-boson coupling signs are treated as a causality/UV-completion obstruction in the cited positivity literature.
+  - The lead is useful as a sign/falsifiability constraint.
+- Current blocker encoded:
+  - An anomalous quartic gauge-boson sign is not the Higgs scalar quartic `lambda`.
+  - The sign/falsifier does not supply electroweak coupling source rows.
+  - The sign/falsifier does not supply a GU-derived electroweak VEV.
+  - The sign/falsifier does not supply observed W/Z/H mass rows with replay, stability, and target-comparison gates.
+- Initial result expected:
+  - `coxIvQuarticGaugeSignFalsifierLeadPresent=true`.
+  - `anomalousQuarticGaugeCouplingSignConstraintPresent=true`.
+  - `quarticGaugeSignFalsifierProvidesHiggsQuarticLambda=false`.
+  - `coxIvQuarticGaugeSignFalsifierPromotableForBosonMasses=false`.
+  - `coxIvQuarticGaugeSignFalsifierBosonMassAuditPassed=true`.
+
+Initial outcome before full rerun: Phase241 clarified that Cox IV's quartic gauge-boson sign material is an EFT positivity/falsifier route, not a W/Z/H mass-source route.
+
+### Full Generator Rerun After P241
+
+- Ran targeted checks:
+  - P241 completed with `coxIvQuarticGaugeSignFalsifierBosonMassAuditPassed=true`.
+  - `coxIvQuarticGaugeSignFalsifierLeadPresent=true`.
+  - `anomalousQuarticGaugeCouplingSignConstraintPresent=true`.
+  - `quarticGaugeSignFalsifierProvidesHiggsQuarticLambda=false`.
+  - `coxIvQuarticGaugeSignFalsifierPromotableForBosonMasses=false`.
+  - P101 completed with `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P202 completed with `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `./scripts/verify_boson_claim_integrity.sh` passed.
+- Ran full `./scripts/generate_validated_boson_predictions.sh`.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Final P101 summary:
+  - `objectiveAchieved=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `predictionSetComplete=false`.
+  - `defensibleValueCount=3`.
+  - `coxIvQuarticGaugeSignFalsifierBosonMassAuditPassed=true`.
+  - `coxIvQuarticGaugeSignFalsifierPromotableForBosonMasses=false`.
+- Final P202 summary:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=34`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain `all-known-boson-values-defensible`, `missing-source-contracts-filled`, and `top-level-package-complete`.
+- Final scan summaries:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `intakeReadyFindingCount=0`.
+- Ran `git diff --check`; no whitespace errors were reported.
+
+Outcome: no successful W/Z absolute or Higgs mass prediction was completed. Cox IV's quartic gauge-boson sign/falsifier material is now explicitly classified as an EFT positivity constraint, not Higgs quartic, electroweak-coupling, VEV, or W/Z/H mass-row source evidence.
+
+### Phase242 Post-P241 External Lead Consolidation Audit
+
+- Added Phase242 to consolidate all official GU and Cox GU public/external lead audits through Phase241.
+- Scope consolidated:
+  - Official GU public draft and lecture route.
+  - Official GU Higgs-potential notation route.
+  - Official GU Shiab/Upsilon extraction route.
+  - Cox GU I Shiab/invariant-geometry route.
+  - Cox GU II gauge/scalar/Yukawa, electroweak formula, Pati-Salam, RG-transport, Higgs/Yukawa texture, and ready-to-fit formula routes.
+  - Cox GU III quantization/axial-contact RG route.
+  - Cox GU IV GUBC/observable/quartic gauge-sign route.
+- Current blocker encoded:
+  - No official GU action-level/public lead fills the W/Z/H source-lineage contracts.
+  - No Cox GU external lead fills the W/Z/H source-lineage contracts.
+  - Local route exhaustion remains certified.
+  - New source-lineage artifacts are still required.
+- Initial result:
+  - `postP241ExternalLeadConsolidationAuditPassed=true`.
+  - `anyExternalLeadPromotableForBosonMasses=false`.
+  - `officialGuActionLevelLeadPromotable=false`.
+  - `coxExternalLeadPromotable=false`.
+  - `localRouteExhaustionStillCertified=true`.
+  - `newSourceLineageArtifactRequired=true`.
+  - `officialGuLeadCount=3`.
+  - `coxLeadCount=4`.
+  - `nonPromotableLeadCount=7`.
+  - `promotableLeadCount=0`.
+
+Initial outcome before full rerun: Phase242 made the post-P241 evidence boundary explicit. The public/external research leads remain useful diagnostics, but none can be promoted as W/Z/H absolute-mass predictions without new W/Z and Higgs source-lineage artifacts.
+
+### Full Generator Rerun After P242
+
+- Ran targeted checks:
+  - P242 completed with `postP241ExternalLeadConsolidationAuditPassed=true`.
+  - P101 completed with `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P202 completed with `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `./scripts/verify_boson_claim_integrity.sh` passed.
+- Ran full `./scripts/generate_validated_boson_predictions.sh`.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Final P101 summary:
+  - `objectiveAchieved=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `predictionSetComplete=false`.
+  - `defensibleValueCount=3`.
+  - `postP241ExternalLeadConsolidationAuditPassed=true`.
+  - `anyExternalLeadPromotableForBosonMasses=false`.
+  - `newSourceLineageArtifactRequired=true`.
+- Final P202 summary:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=35`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain `all-known-boson-values-defensible`, `missing-source-contracts-filled`, and `top-level-package-complete`.
+- Final scan summaries:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `intakeReadyFindingCount=0`.
+
+Outcome: no successful W/Z absolute or Higgs mass prediction was completed. The repository now has a consolidated post-P241 audit showing that official GU and Cox GU public/external leads do not close the missing W/Z/H source-lineage contracts; the required next input is still new derivation-backed W/Z and Higgs source-lineage evidence.
+
+### Phase243 Public Web Source Delta Audit
+
+- Performed a fresh public web/source delta search after P242 to check whether a newer or missed public source could fill the W/Z/H source-lineage contracts.
+- Search/delta rows recorded:
+  - Official GU site and 2021 draft route.
+  - Cox GU I-IV search delta.
+  - Latest found 2026 Zenodo GU/RVG synthesis delta, April 7, 2026 v8.
+  - 2026 CMS W-mass measurement context.
+- Current blocker encoded:
+  - The official GU site/draft route remains already audited and non-promotional for W/Z/H mass rows.
+  - Fresh Cox searches did not surface a new Cox W/Z/H source-lineage artifact beyond the already-audited Cox I-IV sequence.
+  - The latest GU/RVG synthesis delta is GU-adjacent holographic/metric-engineering research context, not a repository source-lineage derivation.
+  - The 2026 CMS W-mass measurement is target context only; it cannot fill `sourceLineageId`, `theoremOrDerivationId`, `scalarSourceOperatorId`, or replay gates.
+  - P204/P205/P207 still report zero intake-ready findings.
+- Initial result:
+  - `publicWebSourceDeltaAuditPassed=true`.
+  - `webDeltaPromotableForBosonMasses=false`.
+  - `webDeltaFillsWzSourceLineage=false`.
+  - `webDeltaFillsHiggsSourceLineage=false`.
+  - `latestGuRvgSynthesisVersionReviewed=v8`.
+  - `cms2026WMeasurementIsTargetOnly=true`.
+  - `newSourceLineageArtifactRequired=true`.
+
+Initial outcome before full rerun: Phase243 found no new public web source that can be promoted as a W/Z/H boson mass prediction or source-lineage artifact.
+
+### Full Generator Rerun After P243
+
+- Ran targeted checks:
+  - P243 completed with `publicWebSourceDeltaAuditPassed=true`.
+  - P101 completed with `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P202 completed with `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `./scripts/verify_boson_claim_integrity.sh` passed.
+- Ran full `./scripts/generate_validated_boson_predictions.sh`.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Final P101 summary:
+  - `objectiveAchieved=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `predictionSetComplete=false`.
+  - `defensibleValueCount=3`.
+  - `publicWebSourceDeltaAuditPassed=true`.
+  - `webDeltaPromotableForBosonMasses=false`.
+- Final P202 summary:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=36`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain `all-known-boson-values-defensible`, `missing-source-contracts-filled`, and `top-level-package-complete`.
+- Final scan summaries:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `intakeReadyFindingCount=0`.
+
+Outcome: no successful W/Z absolute or Higgs mass prediction was completed. Fresh public web research did not unblock the source-lineage contracts; the work still requires new derivation-backed W/Z source rows and a solved Higgs scalar-source lineage before the package can claim correct boson predictions.
+
+### Phase244 Electroweak Identifiability Rank Audit
+
+- Added Phase244 to formalize the mathematical underdetermination left by the current promoted boson values.
+- Mass-coordinate model recorded from the standard electroweak relations:
+  - `log(MW)=log(v g)-log(2)`.
+  - `log(MZ)=log(v g)+log(sqrt(1+(g'/g)^2))-log(2)`.
+  - `log(MH)=log(v sqrt(lambda))+log(sqrt(2))`.
+- Current promoted constraints:
+  - W/Z mass ratio fixes one weak-mixing coordinate.
+  - Photon and gluon masslessness do not fix the electroweak scale, weak coupling, VEV, Higgs quartic, or Higgs scalar scale.
+- Null directions recorded:
+  - Common W/Z scale direction: changes W and Z absolute masses together while preserving the W/Z ratio.
+  - Higgs scale direction: changes Higgs mass while preserving the W/Z ratio.
+- Initial result:
+  - `electroweakIdentifiabilityRankAuditPassed=true`.
+  - `rankAuditPromotableForBosonMasses=false`.
+  - `currentPromotedConstraintRank=1`.
+  - `remainingNullity=2`.
+  - `minimumAdditionalIndependentSourceConstraints=2`.
+
+Initial outcome before full rerun: Phase244 proved that current promoted values cannot identify W/Z/H absolute masses. Two independent source constraints are still required: one for the W/Z absolute scale coordinate and one for the Higgs scalar scale coordinate.
+
+### Full Generator Rerun After P244
+
+- Ran targeted checks:
+  - P244 completed with `electroweakIdentifiabilityRankAuditPassed=true`.
+  - P101 completed with `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P202 completed with `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `./scripts/verify_boson_claim_integrity.sh` passed.
+- Ran full `./scripts/generate_validated_boson_predictions.sh`.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Final P101 summary:
+  - `objectiveAchieved=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `predictionSetComplete=false`.
+  - `defensibleValueCount=3`.
+  - `electroweakIdentifiabilityRankAuditPassed=true`.
+  - `remainingElectroweakIdentifiabilityNullity=2`.
+- Final P202 summary:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=37`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain `all-known-boson-values-defensible`, `missing-source-contracts-filled`, and `top-level-package-complete`.
+- Final scan summaries:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `intakeReadyFindingCount=0`.
+
+Outcome: no successful W/Z absolute or Higgs mass prediction was completed. The blocker is now formalized as an electroweak identifiability rank deficiency: current promoted data has rank one and leaves two continuous null directions, so correct W/Z/H absolute predictions require new source-lineage constraints rather than another replay of existing ratios or target measurements.
+
+### Phase245 Rank-Deficit Minimal Unlock Contract
+
+- Added Phase245 to convert the P244 rank deficit into the minimal source-lineage evidence that would actually unlock W/Z/H absolute predictions.
+- Minimal unlock rows:
+  - `wz-absolute-scale-unlock`: a target-independent GU source for `log(v g)`, or equivalent independent GU rows for `v` and `g`, satisfying the Phase209 W/Z gates.
+  - `higgs-scalar-scale-unlock`: a target-independent GU scalar source for `log(v sqrt(lambda))`, or equivalent independent GU rows for `v` and `lambda`, satisfying the Phase209 Higgs gates.
+- Rejected substitutes recorded:
+  - W/Z ratio only: rank-deficient.
+  - External Fermi-derived VEV: external input.
+  - W or Z target-mass inversion: target leakage.
+  - SU(2) Casimir numerical coupling: diagnostic only.
+  - Higgs target-implied quartic: target leakage.
+  - Higgs `3/10` numerical factor: diagnostic only.
+  - Quartic gauge-sign falsifier: category error, not Higgs quartic.
+  - Symbolic Cox II formulas with free parameters: parameterized, not prediction.
+- Initial result:
+  - `rankDeficitMinimalUnlockContractPassed=true`.
+  - `minimalUnlockContractMaterialized=true`.
+  - `unlockContractFilled=false`.
+  - `newSourceEvidenceStillRequired=true`.
+  - `currentPromotedConstraintRank=1`.
+  - `remainingNullity=2`.
+  - `minimumAdditionalIndependentSourceConstraints=2`.
+
+Initial outcome before full rerun: Phase245 made the next required source evidence precise. The repo still cannot predict W/Z/H absolute masses, but the minimal unlock now has two explicit rows and a list of substitutes that must remain non-promotional.
+
+### Full Generator Rerun After P245
+
+- Ran targeted checks:
+  - P245 completed with `rankDeficitMinimalUnlockContractPassed=true`.
+  - P101 completed with `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P202 completed with `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `./scripts/verify_boson_claim_integrity.sh` passed.
+- Ran full `./scripts/generate_validated_boson_predictions.sh`.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Final P101 summary:
+  - `objectiveAchieved=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `predictionSetComplete=false`.
+  - `defensibleValueCount=3`.
+  - `rankDeficitMinimalUnlockContractPassed=true`.
+  - `unlockContractFilled=false`.
+- Final P202 summary:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=38`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain `all-known-boson-values-defensible`, `missing-source-contracts-filled`, and `top-level-package-complete`.
+- Final scan summaries:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `intakeReadyFindingCount=0`.
+
+Outcome: no successful W/Z absolute or Higgs mass prediction was completed. The next possible success path is no longer ambiguous: fill both minimal unlock rows with target-independent GU source-lineage evidence and then rerun the Phase201/Phase209/Phase210/Phase213/P101/P202 gates.
+
+### Agent Launch for P246
+
+- Launched sub-agent `019e337d-3aa9-7401-9c4e-3d900c3edc81` to implement a bounded Phase246 candidate inventory.
+- Intended scope:
+  - Own `studies/phase246_minimal_unlock_candidate_inventory_001/`.
+  - Own the Phase246 implementation note.
+  - Inventory the strongest W/Z and Higgs unlock candidates against the Phase245 minimal unlock rows.
+  - Patch only this bounded artifact.
+- Agent result: failed before making changes due to a usage-limit error.
+
+Outcome: no agent edits were available; Phase246 was implemented locally in the main session.
+
+### Phase246 Minimal Unlock Candidate Inventory
+
+- Added Phase246 to classify the strongest existing candidates for the two P245 unlock rows.
+- W/Z candidates inventoried:
+  - `su2-casimir-rms-normalization`: P221 numerical lead; rejected as `nonpromotable-diagnostic`.
+  - `external-fermi-vev-bridge`: P229 external VEV bridge; rejected as `external-input`.
+  - `cox-ii-symbolic-electroweak-formula`: P234 symbolic W/Z formula lead; rejected as `parameterized-not-prediction`.
+  - `target-w-or-z-mass-inversion`: P224/P245 target-inversion route; rejected as `target-leakage`.
+  - `w-z-ratio-only`: current promoted ratio; rejected as `rank-deficient`.
+- Higgs candidates inventoried:
+  - `three-tenths-casimir-quartic`: P223 numerical lead; rejected as `nonpromotable-diagnostic`.
+  - `external-fermi-vev-as-scalar-order-parameter`: P229 external VEV bridge; rejected as `external-input`.
+  - `higgs-target-implied-quartic`: P215 target-implied quartic; rejected as `target-leakage`.
+  - `quartic-gauge-sign-falsifier`: P241 sign/falsifier lead; rejected as `category-error`.
+  - `cox-ii-higgs-yukawa-texture`: P237 scalar-sector lead; rejected as missing scalar operator and quartic source.
+  - `cox-ii-ready-to-fit-formula`: P238 formula lead; rejected as `parameterized-not-prediction`.
+- Initial result:
+  - `minimalUnlockCandidateInventoryPassed=true`.
+  - `anyCandidateFillsWzAbsoluteScaleUnlock=false`.
+  - `anyCandidateFillsHiggsScalarScaleUnlock=false`.
+  - `candidateInventoryPromotableForBosonMasses=false`.
+  - `newSourceEvidenceStillRequired=true`.
+  - `currentPromotedConstraintRank=1`.
+  - `remainingNullity=2`.
+  - `minimumAdditionalIndependentSourceConstraints=2`.
+  - `phase213WzMissingFieldCount=15`.
+  - `phase213HiggsMissingFieldCount=14`.
+- Wired Phase246 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 source-evidence scans as generated diagnostic material.
+
+Initial outcome before full rerun: Phase246 confirmed that there is no hidden current candidate that fills either minimal unlock row. The best numerical candidates remain research leads only, not predictions.
+
+### Full Generator Rerun After P246
+
+- Ran targeted checks:
+  - P246 completed with `minimalUnlockCandidateInventoryPassed=true`.
+  - P204 completed with `intakeReadyCandidateCount=0`.
+  - P205 completed with `intakeReadyFindingCount=0`.
+  - P207 completed with `intakeReadyFindingCount=0`.
+  - P101 completed with `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P202 completed with `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `./scripts/verify_boson_claim_integrity.sh` passed.
+- Ran full `./scripts/generate_validated_boson_predictions.sh`.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Final P101 summary:
+  - `objectiveAchieved=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `predictionSetComplete=false`.
+  - `defensibleValueCount=3`.
+  - `minimalUnlockCandidateInventoryPassed=true`.
+  - `candidateInventoryPromotableForBosonMasses=false`.
+- Final P202 summary:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=39`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain `all-known-boson-values-defensible`, `missing-source-contracts-filled`, and `top-level-package-complete`.
+- `git diff --check` passed.
+
+Outcome: no successful W/Z absolute or Higgs mass prediction was completed. Phase246 closes the question of whether current near-miss candidates can be promoted under the P245 unlock contract: they cannot. The remaining work is still new target-independent source-lineage evidence for the W/Z absolute-scale row and the Higgs scalar-scale row.
+
+### Phase247 Direct Bridge Repairability Audit
+
+- Added Phase247 to test whether the existing P190/P191 direct W/Z bridge candidate can be repaired into promotable source rows using current registry data.
+- Inputs:
+  - Phase12 geometry, sibling background manifests, boson registry, and unified particle registry.
+  - P190 direct target-independent bridge-source law candidate.
+  - P191 direct bridge prediction decision.
+  - P206 direct bridge normalization closure.
+  - P213 blocker matrix.
+  - P245 minimal unlock contract.
+  - P246 minimal unlock candidate inventory.
+- Findings:
+  - P190 still has a stable target-independent branch-local candidate.
+  - P190 still has `theoremClaimed=false`.
+  - P191 still has `rawGatePassed=false`.
+  - P191 still has `wZParticleSplitPresent=false`.
+  - P206 still has `canPromoteDirectBridgeNormalization=false`.
+  - Current Phase12 boson and unified-boson registry rows are `C0_NumericalMode` candidates, not observed W/Z source-lineage rows.
+  - The registry has no observed W/Z labels from which to derive separate W and Z rows.
+  - The inspected Phase12 backgrounds are 2D surrogate SU(2) branches with identity Shiab and trivial torsion, not a low-energy electroweak split with VEV/source extraction.
+- Result:
+  - `directBridgeRepairabilityAuditPassed=true`.
+  - `currentDirectBridgeCandidatePromotable=false`.
+  - `sourceRowRepairPossibleFromCurrentRegistry=false`.
+  - `wzParticleSplitDerivableFromCurrentRegistry=false`.
+  - `modeRegistryHasObservedWzLabels=false`.
+  - `newDirectBridgeTheoremStillRequired=true`.
+- Wired Phase247 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 source-evidence scans as generated diagnostic material.
+
+Initial outcome before full rerun: the direct W/Z bridge route is not a fixable registry-wiring bug. It requires a new derivation-backed direct bridge theorem and a registry/source-lineage artifact with separate W and Z rows.
+
+### Full Generator Rerun After P247
+
+- Ran targeted checks:
+  - P247 completed with `directBridgeRepairabilityAuditPassed=true`.
+  - P204 completed with `intakeReadyCandidateCount=0`.
+  - P205 completed with `intakeReadyFindingCount=0`.
+  - P207 completed with `intakeReadyFindingCount=0`.
+  - P101 completed with `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P202 completed with `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `./scripts/verify_boson_claim_integrity.sh` passed.
+- Ran full `./scripts/generate_validated_boson_predictions.sh`.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Final P101 summary:
+  - `objectiveAchieved=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `predictionSetComplete=false`.
+  - `defensibleValueCount=3`.
+  - `directBridgeRepairabilityAuditPassed=true`.
+  - `newDirectBridgeTheoremStillRequired=true`.
+- Final P202 summary:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=40`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain `all-known-boson-values-defensible`, `missing-source-contracts-filled`, and `top-level-package-complete`.
+- `git diff --check` passed.
+
+Outcome: no successful W/Z absolute or Higgs mass prediction was completed. The direct bridge branch closest to the original request is now specifically audited: current artifacts cannot be repaired into source rows without new theorem/source-lineage evidence.
+
+### Phase248 Higgs Scalar Repairability Audit
+
+- Added Phase248 to test whether the P223 `3/10` Higgs numerical lead can be repaired into a promotable Higgs mass prediction using current scalar registry, source/operator, potential, quartic, and VEV artifacts.
+- Inputs:
+  - Phase12 boson registry.
+  - P187 Higgs scalar source identity scaffold.
+  - P189 Higgs scalar source operator census.
+  - P196 Higgs potential/self-coupling closure audit.
+  - P199 Higgs scalar source-lineage closure audit.
+  - P207 Higgs quartic/self-coupling source scan.
+  - P215 target-implied Higgs self-coupling loophole audit.
+  - P223 Higgs Casimir quartic numerical probe.
+  - P229 electroweak VEV source-lineage obstruction audit.
+  - P213 blocker matrix.
+  - P245 minimal unlock contract.
+  - P246 minimal unlock candidate inventory.
+- Findings:
+  - P223 preserves the close numerical lead: `factor=3/10`, `quarticFromCasimirG2=0.12800000000000003`, `replayedHiggsMassGeV=124.57838419212165`.
+  - P223 still has `sourceLineagePromotable=false` and `sourceDerived=false`.
+  - P187 still has no validated Higgs source identity.
+  - P189 still has no promotable scalar source/operator census, no scalar identity envelopes, and no massive scalar profile.
+  - P196 still has no promotable Higgs potential or self-coupling source.
+  - P199 still has no promotable Higgs scalar-source lineage.
+  - P207 still has `intakeReadyFindingCount=0`.
+  - P215 still blocks target-implied quartic replay.
+  - P229 still blocks the external/Fermi VEV as a GU scalar source.
+- Result:
+  - `higgsScalarRepairabilityAuditPassed=true`.
+  - `currentHiggsNumericalLeadPromotable=false`.
+  - `higgsScalarSourceRepairPossibleFromCurrentRegistry=false`.
+  - `threeTenthsFactorDerivableFromCurrentScalarSource=false`.
+  - `newHiggsScalarSourceStillRequired=true`.
+- Wired Phase248 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 source-evidence scans as generated diagnostic material.
+
+Initial outcome before full rerun: the Higgs numerical lead is not a fixable scalar-registry or quartic-source wiring bug. It requires a new target-independent scalar source/operator and quartic or excitation relation.
+
+### Full Generator Rerun After P248
+
+- Ran targeted checks:
+  - P248 completed with `higgsScalarRepairabilityAuditPassed=true`.
+  - P204 completed with `intakeReadyCandidateCount=0`.
+  - P205 completed with `intakeReadyFindingCount=0`.
+  - P207 completed with `intakeReadyFindingCount=0`.
+  - P101 completed with `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P202 completed with `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `./scripts/verify_boson_claim_integrity.sh` passed.
+- Ran full `./scripts/generate_validated_boson_predictions.sh`.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Final P101 summary:
+  - `objectiveAchieved=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `predictionSetComplete=false`.
+  - `defensibleValueCount=3`.
+  - `higgsScalarRepairabilityAuditPassed=true`.
+  - `newHiggsScalarSourceStillRequired=true`.
+- Final P202 summary:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=41`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain `all-known-boson-values-defensible`, `missing-source-contracts-filled`, and `top-level-package-complete`.
+- `git diff --check` passed.
+
+Outcome: no successful W/Z absolute or Higgs mass prediction was completed. Both current near-success branches are now specifically audited: the W/Z direct bridge needs a new theorem/source-row artifact, and the Higgs `3/10` lead needs a solved scalar source/operator with a source-derived quartic or excitation relation.
+
+### Phase249 Invariant Origin Search for Near-Miss Constants
+
+- Added Phase249 to test whether the two active near-miss constants have target-independent invariant origins that could become promotable:
+  - W/Z `2/sqrt(3)` / `sqrt(2/3)` from the P221 SU(2) adjoint RMS normalization lead.
+  - Higgs `3/10` from the P223 Casimir/quartic numerical lead.
+- Inputs:
+  - Phase12 geometry and spinor representation metadata.
+  - P63/P64/P65 weak-coupling normalization and matrix-element artifacts.
+  - P221 W/Z SU(2) Casimir/RMS normalization probe.
+  - P223 Higgs Casimir/quartic numerical probe.
+  - P225 SU(2) representation compatibility audit.
+  - P245 rank-deficit unlock contract.
+  - P246 minimal unlock candidate inventory.
+  - P247 direct bridge repairability audit.
+  - P248 Higgs scalar repairability audit.
+- Findings:
+  - W/Z invariant arithmetic is exact:
+    - `sqrt(C2(adj)/dim(su2)) / sqrt(1/2) = 2/sqrt(3)`.
+    - The value is `1.1547005383792515`, matching P221's `casimirToTraceHalfScale`.
+  - Higgs invariant arithmetic has multiple exact `3/10` matches:
+    - `dim(su2)/(dim(Y_h)+dim(X_h)+dim(su2)) = 3/(5+2+3)`.
+    - `2*C2(fund)/(C2(adj)+dim(su2)) = 2*(3/4)/(2+3)`.
+  - The multiplicity of Higgs `3/10` formulas is treated as degeneracy, not as a scalar law.
+  - P225/P247 still block applying the W/Z adjoint-RMS factor to the Phase64 fermion-current matrix element.
+  - P248 still blocks applying the Higgs `3/10` factor because no scalar source/operator, Higgs identity envelope, massive scalar profile, or source-derived quartic/excitation relation exists.
+- Result:
+  - `invariantOriginSearchPassed=true`.
+  - `wzInvariantFormulaCandidateFound=true`.
+  - `wzInvariantFormulaSourceBacked=false`.
+  - `higgsInvariantFormulaCandidateFound=true`.
+  - `higgsInvariantFormulaSourceBacked=false`.
+  - `anyInvariantOriginPromotableForBosonMasses=false`.
+  - `wzUnlockFilledByInvariantSearch=false`.
+  - `higgsUnlockFilledByInvariantSearch=false`.
+  - `newSourceEvidenceStillRequired=true`.
+- Wired Phase249 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 source-evidence scans as generated diagnostic material.
+
+Initial outcome: P249 explains the current near-miss constants arithmetically, but does not fix the prediction. The missing object is not an invariant formula alone; it is a source-backed application theorem/source-lineage artifact for W/Z and a solved scalar source/operator for Higgs.
+
+### Full Generator Rerun After P249
+
+- Ran targeted checks:
+  - P249 completed with `invariantOriginSearchPassed=true`.
+  - P204 completed with `intakeReadyCandidateCount=0`.
+  - P205 completed with `intakeReadyFindingCount=0`.
+  - P207 completed with `intakeReadyFindingCount=0`.
+  - P101 completed with `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P202 completed with `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `./scripts/verify_boson_claim_integrity.sh` passed.
+- Ran full `./scripts/generate_validated_boson_predictions.sh`.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Final P101 summary:
+  - `objectiveAchieved=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `predictionSetComplete=false`.
+  - `defensibleValueCount=3`.
+  - `invariantOriginSearchPassed=true`.
+  - `anyInvariantOriginPromotableForBosonMasses=false`.
+  - `invariantSearchNewSourceEvidenceStillRequired=true`.
+- Final P202 summary:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=42`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain `all-known-boson-values-defensible`, `missing-source-contracts-filled`, and `top-level-package-complete`.
+- `git diff --check` passed.
+
+Outcome: no successful W/Z absolute or Higgs mass prediction was completed. The best current status is sharper: the near-miss constants are now mapped to exact invariant arithmetic, but promotion remains blocked because the invariant arithmetic is not source-backed for the physical W/Z/H boson mass applications.
+
+## 2026-05-17
+
+### Phase46 Electroweak Feature Source-Lineage Lead
+
+- Launched a read-only sub-agent to audit whether Phase46 could supply the missing W/Z absolute bridge-source law.
+- Agent outcome: the sub-agent failed before returning findings due to a usage-limit error, so the audit continued locally.
+- Local Phase46 inspection:
+  - `phase46_electroweak_term_wz_source_spectra_001` contains 432 selector spectra with `electroweak-feature-charge-anisotropy:v1` and `su2-adjoint-triplet:canonical-basis` labels.
+  - `phase46_electroweak_term_wz_physical_prediction_001` promotes separate W/Z internal mode records and a `physical-w-z-mass-ratio` observable.
+  - The Phase46 calibration is explicitly dimensionless ratio normalization and states it applies only to the ratio, not either absolute boson mass.
+  - Phase46 has no `sourceLineage`, `sourceRowId`, `theoremOrDerivationId`, or `rawAmplitudeGatePassed` contract fields.
+  - Phase46 has no Phase64 fermion-current, trace-half, or Casimir/RMS application theorem references.
+
+Outcome: Phase46 is a strong local ratio/internal-feature diagnostic lead, but it does not fill the P245/P247 W/Z absolute-scale unlock.
+
+### Phase250 Phase46 Electroweak Feature Source-Lineage Audit
+
+- Added Phase250 as an executable fail-closed audit of the Phase46 lead.
+- Result:
+  - `phase46ElectroweakFeatureAuditPassed=true`.
+  - `phase46HasElectroweakFeatureTripletLabels=true`.
+  - `phase46SupportsRatioOnlyDiagnostic=true`.
+  - `phase46HasSeparateWzModeRecords=true`.
+  - `phase46ProvidesSeparateWzSourceRows=false`.
+  - `phase46ProvidesAdjointRmsApplicationTheorem=false`.
+  - `phase46FillsWzAbsoluteScaleUnlock=false`.
+  - `phase46AbsoluteMassClaimPromotable=false`.
+  - `newSourceEvidenceStillRequired=true`.
+- Key counts:
+  - `tripletLabelOccurrenceCount=436`.
+  - `electroweakFeatureTermOccurrenceCount=432`.
+  - `sourceLineageFieldCount=0`.
+  - `sourceRowIdFieldCount=0`.
+  - `theoremOrDerivationIdFieldCount=0`.
+  - `rawAmplitudeGatePassedFieldCount=0`.
+  - `absoluteMassObservableIds=[]`.
+
+Outcome: Phase46 cannot repair the W/Z direct bridge. The missing W/Z artifact remains a target-independent source law with theorem/source-lineage IDs, separate W/Z source rows, raw-amplitude gates, and an application theorem tying the SU(2) adjoint RMS normalization to the actual Phase64 fermion-current source.
+
+### P250 Wiring and Validation
+
+- Wired Phase250 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 source-evidence scans as generated diagnostic material.
+- Ran targeted checks:
+  - P204 completed with `intakeReadyCandidateCount=0`.
+  - P205 completed with `intakeReadyFindingCount=0`.
+  - P207 completed with `intakeReadyFindingCount=0`.
+  - P101 completed with `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P202 completed with `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `./scripts/verify_boson_claim_integrity.sh` passed.
+- Ran full `./scripts/generate_validated_boson_predictions.sh`.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Final P101 summary:
+  - `objectiveAchieved=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `predictionSetComplete=false`.
+  - `phase46ElectroweakFeatureAuditPassed=true`.
+  - `phase46FillsWzAbsoluteScaleUnlock=false`.
+- Final P202 summary:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=43`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain `all-known-boson-values-defensible`, `missing-source-contracts-filled`, and `top-level-package-complete`.
+- `git diff --check` passed.
+
+Outcome: no successful W/Z absolute or Higgs mass prediction was completed. The Phase46 lead is now closed as ratio-only/internal-feature evidence rather than a W/Z absolute source law.
+
+### Phase251 Upstream W/Z Identity Rule Source-Chain Audit
+
+- Audited the upstream identity-rule chain behind Phase46:
+  - P24 initial W/Z identity readiness.
+  - P25 internal electroweak identity features.
+  - P27 charge-sector convention and identity-rule readiness.
+  - P28 W/Z physical prediction promotion.
+- Findings:
+  - P24 starts blocked: no derived W/Z identity rules.
+  - P25 adds electroweak multiplet/current signatures but still lacks charge-sector signatures.
+  - P27 declares an internal SU(2) Cartan/charge-sector convention and derives two internal identity rules:
+    - `w-boson -> phase22-phase12-candidate-0`.
+    - `z-boson -> phase22-phase12-candidate-2`.
+  - P28 maps those identity-ready internal modes to a dimensionless W/Z ratio only.
+  - P28 calibration explicitly says identity normalization applies only to the ratio, not either absolute boson mass.
+  - The upstream `derivationId` fields are internal identity-rule provenance, not Phase201 `theoremOrDerivationId` contract fields.
+  - Upstream chain has no `sourceLineage`, no `sourceRowId`, no `theoremOrDerivationId`, no `rawAmplitudeGatePassed`, no Phase64 bridge theorem, and no absolute W/Z mass observables.
+- Result:
+  - `upstreamWzIdentityRuleSourceChainAuditPassed=true`.
+  - `phase27InternalIdentityRuleReady=true`.
+  - `phase27ConventionIsInternalCartanConvention=true`.
+  - `phase28RatioOnlyMapping=true`.
+  - `upstreamDerivationIdsAreInternalIdentityOnly=true`.
+  - `upstreamProvidesSourceLineageContractFields=false`.
+  - `upstreamProvidesPhase64BridgeTheorem=false`.
+  - `upstreamFillsWzAbsoluteSourceContract=false`.
+  - `upstreamIdentityRulePhysicalMassClaimPromotable=false`.
+  - `newSourceEvidenceStillRequired=true`.
+- Wired Phase251 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 source-evidence scans as generated diagnostic material.
+
+Outcome: the P24/P27/P28 derivation-ID chain cannot repair the W/Z absolute bridge. It supports internal W/Z labels and a ratio, but not a W/Z absolute source theorem or source-lineage contract.
+
+### Full Generator Rerun After P251
+
+- Ran targeted checks:
+  - P251 completed with `upstreamWzIdentityRuleSourceChainAuditPassed=true`.
+  - P204 completed with `intakeReadyCandidateCount=0`.
+  - P205 completed with `intakeReadyFindingCount=0`.
+  - P207 completed with `intakeReadyFindingCount=0`.
+  - P101 completed with `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P202 completed with `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `./scripts/verify_boson_claim_integrity.sh` passed.
+- Ran full `./scripts/generate_validated_boson_predictions.sh`.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Final P101 summary:
+  - `objectiveAchieved=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `predictionSetComplete=false`.
+  - `upstreamWzIdentityRuleSourceChainAuditPassed=true`.
+  - `upstreamFillsWzAbsoluteSourceContract=false`.
+- Final P202 summary:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=44`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain `all-known-boson-values-defensible`, `missing-source-contracts-filled`, and `top-level-package-complete`.
+- `git diff --check` passed.
+
+Outcome: no successful W/Z absolute or Higgs mass prediction was completed. The upstream identity-rule derivation chain is now closed as nonpromotional for absolute W/Z masses.
+
+### Phase252 W/Z Normalization Closure Source-Contract Audit
+
+- Added Phase252 to close the remaining normalization-closure lead around Phase31/29/44/45.
+- Purpose:
+  - Test whether the Phase31 required W/Z normalization scale or the Phase29/44 ratio diagnostics can be promoted as the missing W/Z direct target-independent bridge-source law.
+  - Check whether the normalization artifacts contain Phase201/Phase209 source-contract fields or a Phase64 bridge theorem.
+- Standalone result:
+  - `terminalStatus=wz-normalization-closure-source-contract-audit-complete-target-ratio-scale-not-source-law`.
+  - `wzNormalizationClosureSourceContractAuditPassed=true`.
+  - `phase31NormalizationClosureAuditPassed=true`.
+  - `targetDerivedRatioScaleOnly=true`.
+  - `normalizationArtifactsProvideSourceLineageContractFields=false`.
+  - `normalizationArtifactsProvidePhase64BridgeTheorem=false`.
+  - `normalizationArtifactsFillWzAbsoluteScaleUnlock=false`.
+  - `newSourceEvidenceStillRequired=true`.
+- Exact blockers recorded:
+  - Phase31 required scale to the physical W/Z target is `1.0203591418928235`, but the declared calibration is identity scale `1`.
+  - Phase31 reports no derivation-backed scale, no allowed normalization change, and no operator derivation.
+  - Phase29 selected pair fails sigma-5, and no charged/neutral pair passes sigma-5.
+  - Phase44 selector-eigen pair also fails sigma-5 and remains a dimensionless ratio/internal-unit mapping.
+  - Phase45 reports zero nontrivial operator-term evidence and only the `connection` mode block.
+  - Contract-field scan found zero `sourceLineage`, `sourceRowId`, `theoremOrDerivationId`, `rawAmplitudeGatePassed`, `phase64`, `fermion-current`, or `trace-half` occurrences in the audited normalization evidence.
+- Wired Phase252 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 source-evidence scans as generated diagnostic material.
+
+Outcome: Phase31/29/44/45 are now closed as target-ratio normalization diagnostics. They identify the missing W/Z scale but do not supply a target-independent bridge theorem or source-lineage rows.
+
+### Agent Launch Attempt After Phase252
+
+- Tried to launch a scoped explorer agent to independently sanity-check whether any overlooked Draft/Phase31/44/45/46/64/221/225/250/251/252 path could supply the W/Z bridge-source law.
+- The agent failed immediately due to the environment usage limit:
+  - `You've hit your usage limit... try again at 10:24 PM.`
+- Continued the audit in the main thread instead of relying on the failed delegation.
+
+Outcome: no agent-produced fix or source evidence was obtained in this attempt.
+
+### Full Generator Rerun After Phase252
+
+- Ran targeted checks:
+  - `./scripts/verify_boson_claim_integrity.sh` passed in blocked mode:
+    - `sourceLineageMissing=true`.
+    - `wzMissingFieldCount=15`.
+    - `higgsMissingFieldCount=14`.
+    - `promotedPhysicalMassClaimCount=0`.
+  - Phase252 standalone run passed and preserved nonpromotional status.
+  - `git diff --check` passed.
+- Ran full `./scripts/generate_validated_boson_predictions.sh`.
+- Final verifier after full generation:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Final P101 summary:
+  - `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `objectiveAchieved=false`.
+  - `predictionSetComplete=false`.
+  - `wzNormalizationClosureSourceContractAuditPassed=true`.
+  - `normalizationArtifactsFillWzAbsoluteScaleUnlock=false`.
+  - `normalizationArtifactsProvidePhase64BridgeTheorem=false`.
+- Final P202 summary:
+  - `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=45`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids:
+    - `all-known-boson-values-defensible`.
+    - `missing-source-contracts-filled`.
+    - `top-level-package-complete`.
+- `git diff --check` passed after the full generation pass.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. The remaining failure is not an implementation wiring defect in the current generator path; it is the still-unfilled W/Z absolute-scale and Higgs scalar source-lineage contract.
+
+### Public Draft Sanity Check After Phase252
+
+- Rechecked the public Geometric Unity site and the public draft PDF for a missed W/Z direct bridge-source law.
+- The official site confirms the public draft release context but does not itself supply W/Z/H prediction equations.
+- The public draft section around "Explicit Values" and "Bosonic Decompositions" supplies representation/decomposition structure:
+  - Standard-model-like internal quantum number tables.
+  - Normal-bundle reduction to Pati-Salam-like `SU(4) x SU(2) x SU(2)`.
+  - Bosonic decomposition of pullback `ad(Y)` into gauge-potential-like sectors.
+  - General GU equation structure in which Yang-Mills-Maxwell and Higgs/Klein-Gordon-like equations follow from the second related Lagrangian.
+- What is still absent in that public material:
+  - A particle-specific W/Z absolute mass row.
+  - A target-independent electroweak VEV or dimensionful scale.
+  - A theorem connecting an SU(2) triplet/RMS normalization to the Phase64 fermion-current source.
+  - A raw-amplitude gate or theorem/derivation id satisfying the Phase201/Phase209 contracts.
+  - A solved Higgs scalar-source/self-coupling extraction.
+
+Outcome: the public draft continues to support representation and equation-structure research, not a complete W/Z or Higgs mass prediction law.
+
+### Phase253 Global Observed-Sector Vacuum Scan
+
+- Added Phase253 to scan the repository for a production four-dimensional observed-sector GU vacuum or physical W/Z/H mass-matrix source artifact outside the narrower Phase230 local audit.
+- Motivation:
+  - Phase230 audited known local native GU Upsilon/Shiab/background/Hessian artifacts and found only surrogate/toy/local diagnostic material.
+  - A broader repo scan was needed to ensure no other production artifact contains the missing `dimX >= 4` observed-sector vacuum, physical mass matrix, or GU-derived electroweak scale.
+- Result:
+  - `terminalStatus=global-observed-sector-vacuum-scan-no-production-candidate`.
+  - `globalObservedSectorVacuumScanPassed=true`.
+  - `globalObservedSectorVacuumCandidateFound=false`.
+  - `productionFourDimensionalReferenceCount=1`.
+  - `productionObservedSectorVacuumCandidateCount=0`.
+  - `documentationOrCodeFourDimensionalReferenceCount=8`.
+  - `hessianLikeModeArtifactCount=1733`.
+  - `globalScanFillsVacuumMassMatrixUnlock=false`.
+  - `newSourceEvidenceStillRequired=true`.
+- Interpretation:
+  - The one production four-dimensional reference is a negative requirement guard in the post-Phase11 Shiab companion summary: genuine Shiab family expansion requires `dimX >= 4`.
+  - It is not an observed-sector vacuum artifact and does not contain a physical W/Z/H mass matrix.
+  - The other four-dimensional references are documentation, guide/template, code-guard, or audit text.
+  - Existing Hessian-like artifacts remain diagnostic only; Phase228/229/230 blockers stay active.
+- Wired Phase253 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 scan exclusions as generated diagnostic material.
+
+### Targeted Checks After Phase253
+
+- Ran Phase253 standalone:
+  - `globalObservedSectorVacuumScanPassed=true`.
+  - `productionObservedSectorVacuumCandidateCount=0`.
+  - `hessianLikeModeArtifactCount=1733`.
+- Reran affected source scans:
+  - P204: `intakeReadyCandidateCount=0`.
+  - P205: `intakeReadyFindingCount=0`.
+  - P207: `intakeReadyFindingCount=0`.
+- Reran P101:
+  - `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `objectiveAchieved=false`.
+  - `globalObservedSectorVacuumScanPassed=true`.
+  - `globalObservedSectorVacuumCandidateFound=false`.
+  - `globalScanFillsVacuumMassMatrixUnlock=false`.
+- Reran P202:
+  - `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=46`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain `all-known-boson-values-defensible`, `missing-source-contracts-filled`, and `top-level-package-complete`.
+- Integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. The global scan closes the possible hidden-4D-vacuum loophole in the current repository: the missing artifact remains a new production four-dimensional observed-sector GU vacuum, draft-aligned Shiab/Upsilon extraction theorem, physical mass matrix, GU-derived electroweak scale, and solved Higgs scalar source.
+
+### Full Generator Rerun After Phase253
+
+- Ran full `./scripts/generate_validated_boson_predictions.sh` with Phase253 wired into both generation passes.
+- Final P253 results during full generation:
+  - `globalObservedSectorVacuumScanPassed=true`.
+  - `productionFourDimensionalReferenceCount=1`.
+  - `productionObservedSectorVacuumCandidateCount=0`.
+  - `hessianLikeModeArtifactCount=1733`.
+  - `newSourceEvidenceStillRequired=true`.
+- Final P202 summary:
+  - `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=46`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain:
+    - `all-known-boson-values-defensible`.
+    - `missing-source-contracts-filled`.
+    - `top-level-package-complete`.
+- Final P101 summary:
+  - `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `objectiveAchieved=false`.
+  - `predictionSetComplete=false`.
+  - `globalObservedSectorVacuumScanPassed=true`.
+  - `globalObservedSectorVacuumCandidateFound=false`.
+  - `globalScanFillsVacuumMassMatrixUnlock=false`.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `git diff --check` passed.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. Phase253 improves the diagnosis by proving the current repository has no hidden production four-dimensional observed-sector vacuum/mass-matrix artifact to promote; it does not repair the missing W/Z absolute-scale or Higgs scalar source-lineage contracts.
+
+### Phase254 Local Completion Revision Boson Source Scan
+
+- Added Phase254 to scan every local `TheoryCompletitionRevisions/*.md` completion revision for a missed W/Z direct bridge law or solved Higgs scalar source.
+- Motivation:
+  - Phase194 audited the selected latest completion revision lines, but older local completion revisions could still have hidden target-independent W/Z/H source material.
+  - This pass closes that local-corpus loophole before attempting another full prediction generation.
+- Result:
+  - `terminalStatus=local-completion-revision-boson-source-scan-no-contract-source`.
+  - `localCompletionRevisionBosonSourceScanPassed=true`.
+  - `completionRevisionFileCount=25`.
+  - `totalLineCount=288798`.
+  - `bosonSignalLineCount=3623`.
+  - `sourceContractTokenLineCount=0`.
+  - `physicalNumberLineCount=0`.
+  - `wzFormulaSignalLineCount=0`.
+  - `higgsFormulaSignalLineCount=0`.
+  - `blockerLineCount=1501`.
+  - `intakeReadyCompletionRevisionFindingCount=0`.
+  - `completionRevisionsProvideDirectWzLaw=false`.
+  - `completionRevisionsProvideSolvedHiggsSource=false`.
+  - `completionRevisionsFillSourceContracts=false`.
+  - `newSourceEvidenceStillRequired=true`.
+- Interpretation:
+  - The local completion revisions contain boson/Higgs/VEV/prediction language, but Phase254 classifies it as protocol, target, blocker, approximate, or open-work language.
+  - No scanned revision supplies the Phase201/Phase209 source-lineage contract fields, separate W/Z source rows, raw gates, solved Higgs scalar-source fields, or registry-grade quantitative mass predictions needed to promote physical W/Z/H claims.
+- Wired Phase254 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 scan exclusions as generated diagnostic material.
+
+### Targeted Checks After Phase254
+
+- Ran Phase254 standalone:
+  - `localCompletionRevisionBosonSourceScanPassed=true`.
+  - `completionRevisionFileCount=25`.
+  - `sourceContractTokenLineCount=0`.
+  - `intakeReadyCompletionRevisionFindingCount=0`.
+  - `newSourceEvidenceStillRequired=true`.
+- Reran affected source scans:
+  - P204: `intakeReadyCandidateCount=0`.
+  - P205: `intakeReadyFindingCount=0`.
+  - P207: `intakeReadyFindingCount=0`.
+- Reran P101:
+  - `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `localCompletionRevisionBosonSourceScanPassed=true`.
+  - `completionRevisionsProvideDirectWzLaw=false`.
+  - `completionRevisionsProvideSolvedHiggsSource=false`.
+  - `completionRevisionsFillSourceContracts=false`.
+  - `localCompletionRevisionNewSourceEvidenceStillRequired=true`.
+- Reran P202:
+  - `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=47`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain `all-known-boson-values-defensible`, `missing-source-contracts-filled`, and `top-level-package-complete`.
+- Integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. Phase254 closes the possible hidden local completion-revision loophole; the current repository still lacks a source artifact with the required W/Z absolute-scale bridge law and solved Higgs scalar-source contract.
+
+### Full Generator Rerun After Phase254
+
+- Ran full `./scripts/generate_validated_boson_predictions.sh` with Phase254 wired into both generation passes.
+- Final P254 results during full generation:
+  - `localCompletionRevisionBosonSourceScanPassed=true`.
+  - `completionRevisionFileCount=25`.
+  - `totalLineCount=288798`.
+  - `sourceContractTokenLineCount=0`.
+  - `intakeReadyCompletionRevisionFindingCount=0`.
+  - `newSourceEvidenceStillRequired=true`.
+- Final P202 summary:
+  - `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=47`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain:
+    - `all-known-boson-values-defensible`.
+    - `missing-source-contracts-filled`.
+    - `top-level-package-complete`.
+- Final P101 summary:
+  - `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `objectiveAchieved=false`.
+  - `predictionSetComplete=false`.
+  - `localCompletionRevisionBosonSourceScanPassed=true`.
+  - `completionRevisionsProvideDirectWzLaw=false`.
+  - `completionRevisionsProvideSolvedHiggsSource=false`.
+  - `completionRevisionsFillSourceContracts=false`.
+  - `localCompletionRevisionNewSourceEvidenceStillRequired=true`.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. The full rerun confirms the diagnosis is stable after Phase254: current local completion revisions do not repair the missing source-lineage contracts, and the repository still requires new derivation-backed W/Z absolute-scale and Higgs scalar-source evidence before a physical-mass prediction can be promoted.
+
+### Phase255 Observed-Field Extraction No-Go Audit
+
+- Added Phase255 to test a more specific loophole: whether generic GU Upsilon/Shiab/Higgs-location language can be promoted as the observed-field extraction bridge needed for physical W/Z/H mass rows.
+- Research basis:
+  - PDG 2025 electroweak review: W, Z, Higgs, and photon masses require electroweak symmetry breaking with a scalar vacuum, gauge couplings, weak mixing, and Higgs-potential parameters.
+  - PDG 2025 Higgs review: the VEV sets the electroweak symmetry-breaking scale, Goldstone modes are absorbed into W/Z, and the physical Higgs is the remaining CP-even scalar.
+  - Official GU Oxford transcript: Shiab/Upsilon machinery is presented as the route to generalized Yang-Mills/Higgs structure, but operator freedom and particle-specific physical rows are not fixed there.
+  - Public GU draft appendix: Higgs potential is placed at a Upsilon inner product and field locations are listed, but this is not a worked observed-field extraction theorem.
+- Phase255 checks the current artifacts for:
+  - fixed observed-field extraction theorem;
+  - canonical or branch-declared Shiab/Upsilon operator and normalization;
+  - source-derived four-dimensional observed-sector vacuum;
+  - physical quadratic electroweak mass operator;
+  - W/Z/photon/Higgs eigenstate projection rows;
+  - target-independent W/Z raw gates and Higgs scalar-source/self-coupling relation.
+- Result:
+  - `terminalStatus=observed-field-extraction-no-go-audit-new-artifact-required`.
+  - `observedFieldExtractionNoGoPassed=true`.
+  - `observedFieldExtractionBridgePromotable=false`.
+  - `newObservedFieldExtractionArtifactRequired=true`.
+  - `observedExtractionSignalCount=10853`.
+  - `shiabBranchSignalCount=12798`.
+  - `massOperatorSignalCount=650`.
+  - `unresolvedExtractionSignalCount=3094`.
+  - `promotionContractSignalCount=0`.
+  - `promotableExtractionContractCandidateCount=0`.
+- Interpretation:
+  - The current local source-like corpus has abundant observed-field, Shiab/Upsilon, and mass-operator language, but it is unresolved extraction/branch/operator context, not promotion-contract evidence.
+  - This tightens the blocker: the missing artifact is not just a number or scale; it is the observed-field extraction theorem that turns GU variables into physical electroweak mass rows.
+- Wired Phase255 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 scan exclusions as generated diagnostic material.
+
+### Targeted Checks After Phase255
+
+- Reran affected source scans:
+  - P204: `intakeReadyCandidateCount=0`.
+  - P205: `intakeReadyFindingCount=0`.
+  - P207: `intakeReadyFindingCount=0`.
+- Reran Phase255 standalone:
+  - `observedFieldExtractionNoGoPassed=true`.
+  - `observedFieldExtractionBridgePromotable=false`.
+  - `newObservedFieldExtractionArtifactRequired=true`.
+- Reran P101:
+  - `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `observedFieldExtractionNoGoPassed=true`.
+  - `observedFieldExtractionBridgePromotable=false`.
+  - `newObservedFieldExtractionArtifactRequired=true`.
+- Reran P202:
+  - `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=48`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain `all-known-boson-values-defensible`, `missing-source-contracts-filled`, and `top-level-package-complete`.
+- Integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. Phase255 closes the generic observed-field extraction loophole: current GU field-location and Upsilon/Shiab language is research context, not a source-lineage bridge to physical W/Z/H mass rows.
+
+### Full Generator Rerun After Phase255
+
+- Ran full `./scripts/generate_validated_boson_predictions.sh` with Phase255 wired into both generation passes.
+- Final P255 results during full generation:
+  - `observedFieldExtractionNoGoPassed=true`.
+  - `observedFieldExtractionBridgePromotable=false`.
+  - `newObservedFieldExtractionArtifactRequired=true`.
+  - `observedExtractionSignalCount=10853`.
+  - `shiabBranchSignalCount=12798`.
+  - `massOperatorSignalCount=650`.
+  - `unresolvedExtractionSignalCount=3094`.
+  - `promotionContractSignalCount=0`.
+  - `promotableExtractionContractCandidateCount=0`.
+- Final P202 summary:
+  - `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=48`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain:
+    - `all-known-boson-values-defensible`.
+    - `missing-source-contracts-filled`.
+    - `top-level-package-complete`.
+- Final P101 summary:
+  - `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `objectiveAchieved=false`.
+  - `predictionSetComplete=false`.
+  - `observedFieldExtractionNoGoPassed=true`.
+  - `observedFieldExtractionBridgePromotable=false`.
+  - `newObservedFieldExtractionArtifactRequired=true`.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `git diff --check` passed.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. The full rerun confirms Phase255 is a diagnostic no-go gate only: it records that the observed-field extraction theorem is missing, and no physical W/Z/H mass claim is promoted.
+
+### Independent Agent Observed-Field Extraction Review
+
+- Launched a sidecar explorer agent to independently search for a current artifact that could fill the observed-field extraction theorem required for physical W/Z/H predictions.
+- Agent verdict: new artifact still required.
+- Agent-confirmed evidence:
+  - Branch-declared Shiab/Upsilon machinery exists mechanically:
+    - `schemas/branch.schema.json` requires `activeShiabBranch`.
+    - `src/Gu.Branching/BranchOperatorRegistry.cs` resolves the branch id.
+    - `src/Gu.ReferenceCpu/CpuResidualAssembler.cs` assembles `Upsilon = S - T`.
+  - Current exercised Shiab branches remain surrogate/non-canonical:
+    - `src/Gu.ReferenceCpu/IdentityShiabCpu.cs`.
+    - `src/Gu.ReferenceCpu/FirstOrderShiabOperator.cs`.
+    - `reports/post_phase11_evidence_campaign/20260315T165000Z/shiab_companion/shiab_scope_record_su2.json`.
+  - Native-to-observed pullback exists generically in `src/Gu.Observation/ObservationPipeline.cs`, but its direct fields are generic curvature/torsion/shiab/residual fields, not W/Z/photon/Higgs extraction rows.
+  - P227 explicitly marks Upsilon component extraction and observer-sector projection as unfilled.
+  - P253 reports no production four-dimensional observed-sector vacuum.
+  - P228 reports no physical electroweak mass matrix/eigenstate projection.
+  - P248/P213 report no Higgs scalar-source/self-coupling source.
+- Interpretation:
+  - The independent review agrees with Phase255: the current repo has useful branch and observation infrastructure, but not the theorem-level observed-field extraction artifact needed for physical W/Z/H mass predictions.
+
+### Phase256 Observed-Field Extraction Intake Contract
+
+- Added Phase256 to turn the Phase255 no-go result into a fillable intake contract.
+- Purpose:
+  - Make the missing artifact concrete instead of leaving it as prose.
+  - Require a source artifact that can be applied through P201/P209/P210/P213 before any W/Z/H physical mass promotion.
+- Contract requires 20 fields:
+  - `observedFieldExtractionTheoremId`.
+  - `sourceReferenceIds`.
+  - `canonicalOrDeclaredShiabBranchId`.
+  - `branchNormalizationSourceId`.
+  - `fourDimensionalObservedVacuumArtifactId`.
+  - `quadraticElectroweakMassOperatorId`.
+  - `electroweakGaugeEmbeddingId`.
+  - `photonEigenstateProjectionId`.
+  - `wBosonSourceRowId`.
+  - `zBosonSourceRowId`.
+  - `wBosonRawAmplitudeGatePassed`.
+  - `zBosonRawAmplitudeGatePassed`.
+  - `wzCommonBridgeGatePassed`.
+  - `higgsScalarSourceOperatorId`.
+  - `higgsMassiveScalarProfileId`.
+  - `higgsPotentialSelfCouplingRelationId`.
+  - `targetBlindConstructionHash`.
+  - `stabilitySidecarIds`.
+  - `targetComparisonAfterConstructionGatePassed`.
+  - `phase201And209ApplicationReady`.
+- Result:
+  - `terminalStatus=observed-field-extraction-intake-contract-awaiting-artifact`.
+  - `observedFieldExtractionIntakeContractPassed=true`.
+  - `contractMaterialized=true`.
+  - `requiredFieldCount=20`.
+  - `filledRequiredFieldCount=0`.
+  - `nullPlaceholderCount=13`.
+  - `falseGatePlaceholderCount=5`.
+  - `arrayPlaceholderCount=2`.
+  - `allRequiredFieldsFilled=false`.
+  - `observedFieldExtractionContractPromotable=false`.
+  - `sourceLineageStillMissing=true`.
+- Wired Phase256 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 scan exclusions as generated diagnostic material.
+
+### Targeted Checks After Phase256
+
+- Reran affected source scans:
+  - P204: `intakeReadyCandidateCount=0`.
+  - P205: `intakeReadyFindingCount=0`.
+  - P207: `intakeReadyFindingCount=0`.
+- Reran Phase256 standalone:
+  - `observedFieldExtractionIntakeContractPassed=true`.
+  - `observedFieldExtractionContractPromotable=false`.
+  - `requiredFieldCount=20`.
+  - `filledRequiredFieldCount=0`.
+- Reran P101:
+  - `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `observedFieldExtractionIntakeContractPassed=true`.
+  - `observedFieldExtractionContractPromotable=false`.
+  - `observedFieldExtractionContractRequiredFieldCount=20`.
+  - `observedFieldExtractionContractFilledRequiredFieldCount=0`.
+- Reran P202:
+  - `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=49`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain `all-known-boson-values-defensible`, `missing-source-contracts-filled`, and `top-level-package-complete`.
+- Integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. Phase256 makes the exact missing observed-field extraction artifact executable as an intake template, but no fields are filled yet and no promotion is allowed.
+
+### Full Generator Rerun After Phase256
+
+- Ran full `./scripts/generate_validated_boson_predictions.sh` with Phase256 wired into both generation passes.
+- Final P256 results during full generation:
+  - `observedFieldExtractionIntakeContractPassed=true`.
+  - `observedFieldExtractionContractPromotable=false`.
+  - `requiredFieldCount=20`.
+  - `filledRequiredFieldCount=0`.
+  - `allRequiredFieldsFilled=false`.
+  - `sourceLineageStillMissing=true`.
+- Final P202 summary:
+  - `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=49`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain:
+    - `all-known-boson-values-defensible`.
+    - `missing-source-contracts-filled`.
+    - `top-level-package-complete`.
+- Final P101 summary:
+  - `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `objectiveAchieved=false`.
+  - `predictionSetComplete=false`.
+  - `observedFieldExtractionIntakeContractPassed=true`.
+  - `observedFieldExtractionContractPromotable=false`.
+  - `observedFieldExtractionContractRequiredFieldCount=20`.
+  - `observedFieldExtractionContractFilledRequiredFieldCount=0`.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `git diff --check` passed.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. The pipeline now has a concrete intake template for the missing observed-field extraction theorem, but the template is empty and the source-lineage blockers remain unchanged.
+
+### Phase257 Observation Pipeline Physical Boson Capability Audit
+
+- Added Phase257 to test whether existing observation, linearized-observation, spectra, or minimal 4D example code can mechanically fill the Phase256 observed-field extraction contract.
+- Purpose:
+  - Close the implementation loophole that a generic observation pullback, observed coefficients vector, Hessian-like spectrum, or minimal 4D toy example might already provide the missing W/Z/H observed-field extraction bridge.
+  - Convert the answer into a generated artifact consumed by P101, P202, and the integrity verifier.
+- Standalone Phase257 result:
+  - `terminalStatus=observation-pipeline-physical-boson-capability-audit-no-current-implementation-fill`.
+  - `observationPipelinePhysicalBosonCapabilityAuditPassed=true`.
+  - `currentImplementationCanFillObservedFieldExtractionContract=false`.
+  - `directObservationPipelineBosonCapable=false`.
+  - `phase3ObservationPipelineBosonCapable=false`.
+  - `spectrumPhysicalBosonMassMatrixCapable=false`.
+  - `minimal4dExamplePromotableForBosons=false`.
+- What was inspected:
+  - Direct observation pipeline observable ids: `curvature`, `residual`, `shiab`, `torsion`.
+  - Direct physical boson observable id count: `0`.
+  - Direct transform ids: `curvature-norm-squared`, `residual-passthrough`, `residual-norm-squared`, `topological-charge`.
+  - Direct physical boson transform id count: `0`.
+  - Phase3 observed signatures expose generic `ObservedCoefficients`, not W/Z/H particle rows.
+  - Spectrum operators include generic Hessian/state-mass concepts, but no physical electroweak mass matrix API.
+  - `examples/minimal_v1_4d` is a `toy-consistency` scenario using `identity-shiab-v1`; it has no physical boson observable requests.
+- Wired Phase257 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 scan exclusions as generated diagnostic material.
+
+### Targeted Checks After Phase257
+
+- Reran affected source scans after adding Phase257 exclusions:
+  - P204: `terminalStatus=boson-source-lineage-candidate-scan-no-intake-ready-candidate`; `intakeReadyCandidateCount=0`.
+  - P205: `terminalStatus=boson-source-lineage-text-evidence-scan-no-intake-ready-evidence`; `intakeReadyFindingCount=0`.
+  - P207: `terminalStatus=higgs-quartic-self-coupling-source-scan-no-source`; `intakeReadyFindingCount=0`.
+- Reran P101:
+  - `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `objectiveAchieved=false`.
+  - `predictionLevel=internal-boson-replay-prediction`.
+  - `predictionSetComplete=false`.
+  - `externalPhysicalComparisonReady=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `sourceLineageBlockerWzMissingFieldCount=15`.
+  - `sourceLineageBlockerHiggsMissingFieldCount=14`.
+  - `observedFieldExtractionContractPromotable=false`.
+  - `observationPipelinePhysicalBosonCapabilityAuditPassed=true`.
+  - `currentImplementationCanFillObservedFieldExtractionContract=false`.
+- Reran P202:
+  - `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=50`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain:
+    - `all-known-boson-values-defensible`.
+    - `missing-source-contracts-filled`.
+    - `top-level-package-complete`.
+- Integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. Phase257 rules out treating current observation/spectra implementation as the missing observed-field extraction bridge; the required artifact remains new source-lineage work, not an unwired existing code path.
+
+### Full Generator Rerun After Phase257
+
+- Ran full `./scripts/generate_validated_boson_predictions.sh` with Phase257 wired into both generation passes.
+- Final Phase257 results during full generation:
+  - `observationPipelinePhysicalBosonCapabilityAuditPassed=true`.
+  - `currentImplementationCanFillObservedFieldExtractionContract=false`.
+  - `directObservationPipelineBosonCapable=false`.
+  - `phase3ObservationPipelineBosonCapable=false`.
+  - `spectrumPhysicalBosonMassMatrixCapable=false`.
+  - `minimal4dExamplePromotableForBosons=false`.
+- Final P101 summary:
+  - `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `objectiveAchieved=false`.
+  - `predictionLevel=internal-boson-replay-prediction`.
+  - `predictionSetComplete=false`.
+  - `externalPhysicalComparisonReady=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `sourceLineageBlockerWzMissingFieldCount=15`.
+  - `sourceLineageBlockerHiggsMissingFieldCount=14`.
+  - `observedFieldExtractionContractPromotable=false`.
+  - `observationPipelinePhysicalBosonCapabilityAuditPassed=true`.
+  - `currentImplementationCanFillObservedFieldExtractionContract=false`.
+- Final P202 summary:
+  - `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=50`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain:
+    - `all-known-boson-values-defensible`.
+    - `missing-source-contracts-filled`.
+    - `top-level-package-complete`.
+  - Unresolved item ids include W/Z direct bridge law, W/Z scale/weak-coupling lineages, Higgs scalar-source/self-coupling lineages, draft source evidence, official public source evidence, and top-level package summary.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `git diff --check` passed.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. The newest implementation evidence shows that existing observation-pipeline and spectrum code cannot fill the observed-field extraction contract; the remaining blocker is still missing source-lineage content, not a code path that can simply be turned on.
+
+### Phase258 Recent Electroweak Relation Source Audit
+
+- Added Phase258 after refreshing public GU/Cox/electroweak-relation research.
+- Purpose:
+  - Test whether refreshed external material can supply the missing W/Z absolute-scale or Higgs scalar-source lineage.
+  - In particular, test whether the recent empirical relation `m_H m_Z^2 ~= 2 m_W^3` can unlock the rank-deficit package.
+- Research snapshot:
+  - Official GU public sources still do not provide source-lineage W/Z/H completion rows.
+  - Cox II symbolic electroweak formulas preserve the Standard Model structure `m_W^2=g_L^2 kappa^2/4` and `m_Z^2=(g_L^2+g_Y^2) kappa^2/4`, but leave `g_L`, `g_Y`, and `kappa` as source inputs.
+  - The recent empirical relation is a numerical regularity using the target W/Z/H masses, not a GU derivation or target-independent source artifact.
+- Standalone Phase258 result:
+  - `terminalStatus=recent-electroweak-relation-source-audit-no-promotion`.
+  - `recentElectroweakRelationSourceAuditPassed=true`.
+  - `recentElectroweakRelationPromotesBosonMasses=false`.
+  - `empiricalRelationLeftOverRight=1.002722541824849`.
+  - `empiricalRelationRelativeError=0.0027225418248491007`.
+  - `empiricalRelationPromotable=false`.
+  - `currentPromotedConstraintRank=1`.
+  - `currentRemainingNullity=2`.
+  - `hypotheticalRankIfEmpiricalRelationAccepted=2`.
+  - `hypotheticalRemainingNullityIfAccepted=1`.
+  - `hypotheticalAcceptedRelationWouldCompletePrediction=false`.
+- Interpretation:
+  - The empirical relation could at most add one relation between the common W/Z scale and the Higgs scale.
+  - It does not set an absolute mass scale.
+  - It does not fill W/Z source rows, a Higgs scalar-source row, or observed-field extraction.
+  - It cannot complete a target-independent prediction.
+- Wired Phase258 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 scan exclusions as generated diagnostic material.
+
+### Targeted Checks After Phase258
+
+- Reran affected source scans after adding Phase258 exclusions:
+  - P204: `terminalStatus=boson-source-lineage-candidate-scan-no-intake-ready-candidate`; `intakeReadyCandidateCount=0`.
+  - P205: `terminalStatus=boson-source-lineage-text-evidence-scan-no-intake-ready-evidence`; `intakeReadyFindingCount=0`.
+  - P207: `terminalStatus=higgs-quartic-self-coupling-source-scan-no-source`; `intakeReadyFindingCount=0`.
+- Reran P101:
+  - `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `recentElectroweakRelationSourceAuditPassed=true`.
+  - `recentElectroweakRelationPromotesBosonMasses=false`.
+  - `recentElectroweakRelationHypotheticalRemainingNullity=1`.
+- Reran P202:
+  - `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=51`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain:
+    - `all-known-boson-values-defensible`.
+    - `missing-source-contracts-filled`.
+    - `top-level-package-complete`.
+- Integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. Phase258 closes the new empirical-relation lead as non-promotable and still rank-incomplete; the package still requires new target-independent W/Z absolute-scale and Higgs scalar-source artifacts.
+
+### Full Generator Rerun After Phase258
+
+- Ran full `./scripts/generate_validated_boson_predictions.sh` with Phase258 wired into both generation passes.
+- Final Phase258 results during full generation:
+  - `recentElectroweakRelationSourceAuditPassed=true`.
+  - `recentElectroweakRelationPromotesBosonMasses=false`.
+  - `hypotheticalRemainingNullityIfAccepted=1`.
+- Final P101 summary:
+  - `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `objectiveAchieved=false`.
+  - `predictionLevel=internal-boson-replay-prediction`.
+  - `predictionSetComplete=false`.
+  - `externalPhysicalComparisonReady=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `sourceLineageBlockerWzMissingFieldCount=15`.
+  - `sourceLineageBlockerHiggsMissingFieldCount=14`.
+  - `recentElectroweakRelationSourceAuditPassed=true`.
+  - `recentElectroweakRelationPromotesBosonMasses=false`.
+  - `recentElectroweakRelationHypotheticalRemainingNullity=1`.
+- Final P202 summary:
+  - `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=51`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain:
+    - `all-known-boson-values-defensible`.
+    - `missing-source-contracts-filled`.
+    - `top-level-package-complete`.
+  - Unresolved item ids remain W/Z direct bridge law, W/Z scale/weak-coupling lineages, Higgs scalar-source/self-coupling lineages, draft source evidence, official public source evidence, and top-level package summary.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `git diff --check` passed.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. The empirical electroweak relation is now preserved as a diagnostic lead, but it is not a source-lineage theorem and it cannot close the remaining absolute-scale null direction.
+
+### Phase259 Recent Target-Value Sensitivity Audit
+
+- Added Phase259 after checking recent experimental target-value movement.
+- Purpose:
+  - Verify whether the current W/Z/H comparison failures could be an artifact of stale target values.
+  - Separate target-table drift from the actual source-lineage blocker.
+- Research snapshot:
+  - Current Phase148 W target is `80.3692 +/- 0.0133 GeV`.
+  - Recent CMS/Nature W result is `80.3602 +/- 0.0099 GeV`.
+  - Z and Higgs reference targets remain consistent with PDG-style values used by the package.
+- Standalone Phase259 result:
+  - `terminalStatus=recent-target-value-sensitivity-audit-no-promotion-change`.
+  - `targetValueSensitivityAuditPassed=true`.
+  - `recentTargetUpdatePromotesBosonMasses=false`.
+  - `currentTargetsConsistentWithRecentReferences=true`.
+  - `failedComparisonsPersistUnderRecentTargets=true`.
+  - `currentWResidualAgainstRecentTarget=29.119265308885097`.
+  - `currentZResidualAgainstBestTarget=28.691803737267804`.
+  - `higgsStillHasNoPrediction=true`.
+- Interpretation:
+  - The W target moved by less than the combined uncertainty relative to the current comparison row.
+  - Updating the W target to the recent CMS/Nature value does not rescue the failed W prediction.
+  - Z remains a many-sigma failure under the best reference value.
+  - Higgs remains blocked because no predicted value exists, not because of target drift.
+- Wired Phase259 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 scan exclusions as generated diagnostic material.
+
+### Targeted Checks After Phase259
+
+- Reran affected source scans after adding Phase259 exclusions:
+  - P204: `terminalStatus=boson-source-lineage-candidate-scan-no-intake-ready-candidate`; `intakeReadyCandidateCount=0`.
+  - P205: `terminalStatus=boson-source-lineage-text-evidence-scan-no-intake-ready-evidence`; `intakeReadyFindingCount=0`.
+  - P207: `terminalStatus=higgs-quartic-self-coupling-source-scan-no-source`; `intakeReadyFindingCount=0`.
+- Reran P101:
+  - `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `targetValueSensitivityAuditPassed=true`.
+  - `recentTargetUpdatePromotesBosonMasses=false`.
+  - `failedComparisonsPersistUnderRecentTargets=true`.
+- Reran P202:
+  - `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=52`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain:
+    - `all-known-boson-values-defensible`.
+    - `missing-source-contracts-filled`.
+    - `top-level-package-complete`.
+- Integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. Recent target updates do not change the conclusion; the failures are not target-table drift, and the source-lineage blockers remain active.
+
+### Full Generator Rerun After Phase259
+
+- Ran full `./scripts/generate_validated_boson_predictions.sh` with Phase259 wired into both generation passes.
+- Final Phase259 results during full generation:
+  - `targetValueSensitivityAuditPassed=true`.
+  - `recentTargetUpdatePromotesBosonMasses=false`.
+  - `currentWResidualAgainstRecentTarget=29.119265308885097`.
+- Final P101 summary:
+  - `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `objectiveAchieved=false`.
+  - `predictionSetComplete=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `sourceLineageBlockerWzMissingFieldCount=15`.
+  - `sourceLineageBlockerHiggsMissingFieldCount=14`.
+  - `targetValueSensitivityAuditPassed=true`.
+  - `recentTargetUpdatePromotesBosonMasses=false`.
+  - `failedComparisonsPersistUnderRecentTargets=true`.
+- Final P202 summary:
+  - `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=52`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain:
+    - `all-known-boson-values-defensible`.
+    - `missing-source-contracts-filled`.
+    - `top-level-package-complete`.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `git diff --check` passed.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. Phase259 shows the current W/Z/H failure is insensitive to recent target-value movement; source-lineage evidence remains the active blocker.
+
+### Phase260 Mass-Definition Convention Sensitivity Audit
+
+- Added Phase260 to test whether pole-mass versus Breit-Wigner/running-width conventions could explain the W/Z/H failures.
+- Purpose:
+  - Close the comparison-convention loophole after Phase259 closed target-value drift.
+  - Quantify whether mass-definition conversion is large enough to affect the current W/Z failed comparisons.
+- Standalone Phase260 result:
+  - `terminalStatus=mass-definition-convention-sensitivity-audit-no-promotion-change`.
+  - `massDefinitionConventionSensitivityAuditPassed=true`.
+  - `conventionShiftPromotesBosonMasses=false`.
+  - `failedComparisonsPersistUnderPoleConvention=true`.
+  - `wConventionShiftGeV=0.02703169795405813`.
+  - `zConventionShiftGeV=0.034127431574773937`.
+  - `higgsConventionShiftGeV=5.4672511851094896E-8`.
+  - `wResidualAgainstPoleConvention=29.061821277086285`.
+  - `zResidualAgainstPoleConvention=28.6113417371674`.
+  - `wConventionShiftFractionOfGap=0.0025197881543931834`.
+  - `zConventionShiftFractionOfGap=0.0028386977079739952`.
+- Interpretation:
+  - W/Z mass-definition shifts are tens of MeV.
+  - Current W/Z failed prediction gaps are about 10-12 GeV.
+  - Higgs has no predicted row, so a convention shift cannot promote it.
+  - The active blocker remains source-lineage content, not physical-mass convention.
+- Wired Phase260 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 scan exclusions as generated diagnostic material.
+
+### Targeted Checks After Phase260
+
+- Reran affected source scans after adding Phase260 exclusions:
+  - P204: `terminalStatus=boson-source-lineage-candidate-scan-no-intake-ready-candidate`; `intakeReadyCandidateCount=0`.
+  - P205: `terminalStatus=boson-source-lineage-text-evidence-scan-no-intake-ready-evidence`; `intakeReadyFindingCount=0`.
+  - P207: `terminalStatus=higgs-quartic-self-coupling-source-scan-no-source`; `intakeReadyFindingCount=0`.
+- Reran P101:
+  - `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `massDefinitionConventionSensitivityAuditPassed=true`.
+  - `conventionShiftPromotesBosonMasses=false`.
+  - `failedComparisonsPersistUnderPoleConvention=true`.
+- Reran P202:
+  - `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=53`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain:
+    - `all-known-boson-values-defensible`.
+    - `missing-source-contracts-filled`.
+    - `top-level-package-complete`.
+- Integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. Mass-definition conventions are too small to matter for the current W/Z gap and cannot create a Higgs prediction.
+
+### Full Generator Rerun After Phase260
+
+- Ran full `./scripts/generate_validated_boson_predictions.sh` with Phase260 wired into both generation passes.
+- Final Phase260 results during full generation:
+  - `massDefinitionConventionSensitivityAuditPassed=true`.
+  - `conventionShiftPromotesBosonMasses=false`.
+  - `wResidualAgainstPoleConvention=29.061821277086285`.
+- Final P101 summary:
+  - `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `objectiveAchieved=false`.
+  - `predictionSetComplete=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `sourceLineageBlockerWzMissingFieldCount=15`.
+  - `sourceLineageBlockerHiggsMissingFieldCount=14`.
+  - `massDefinitionConventionSensitivityAuditPassed=true`.
+  - `conventionShiftPromotesBosonMasses=false`.
+  - `failedComparisonsPersistUnderPoleConvention=true`.
+- Final P202 summary:
+  - `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=53`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain:
+    - `all-known-boson-values-defensible`.
+    - `missing-source-contracts-filled`.
+    - `top-level-package-complete`.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `git diff --check` passed.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. Phase260 shows mass-definition conventions do not affect the conclusion; the active failure remains missing source-lineage evidence.
+
+### Phase261 Electroweak Scheme/Radiative Source Audit
+
+- Added Phase261 to test whether standard electroweak renormalization-scheme or radiative-correction choices can repair W/Z/H predictions.
+- Purpose:
+  - Distinguish numerical agreement from source-lineage evidence.
+  - Verify whether schemes using measured `alpha`, weak mixing, `G_F`, `M_Z`, and loop corrections can be treated as GU prediction sources.
+- Standalone Phase261 result:
+  - `terminalStatus=electroweak-scheme-radiative-source-audit-external-input-not-promotion`.
+  - `electroweakSchemeRadiativeSourceAuditPassed=true`.
+  - `schemeChoicePromotesBosonMasses=false`.
+  - `anySchemeNearTargetWeakCoupling=true`.
+  - `schemeInputsAreExternalElectroweakInputs=true`.
+  - `schemeChoiceProvidesGuSourceLineage=false`.
+  - `schemeChoiceProvidesObservedFieldExtraction=false`.
+  - Best numerical scheme:
+    - `schemeId=alphaMz-effective-leptonic`.
+    - `alphaInverse=127.95`.
+    - `sin2Theta=0.23153`.
+    - `coupling=0.6513001092367242`.
+    - `targetImpliedWeakCoupling=0.6522081710229882`.
+    - `relativeErrorToTargetImpliedWeakCoupling=0.0013922882702308366`.
+- Interpretation:
+  - Standard electroweak input schemes can numerically approach the target weak coupling.
+  - That is not a GU source-lineage result; it imports measured SM inputs and scheme conventions.
+  - It does not supply W/Z source rows, observed-field extraction, low-energy RG transport, or a Higgs scalar source.
+- Wired Phase261 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 scan exclusions as generated diagnostic material.
+
+### Targeted Checks After Phase261
+
+- Reran affected source scans after adding Phase261 exclusions:
+  - P204: `terminalStatus=boson-source-lineage-candidate-scan-no-intake-ready-candidate`; `intakeReadyCandidateCount=0`.
+  - P205: `terminalStatus=boson-source-lineage-text-evidence-scan-no-intake-ready-evidence`; `intakeReadyFindingCount=0`.
+  - P207: `terminalStatus=higgs-quartic-self-coupling-source-scan-no-source`; `intakeReadyFindingCount=0`.
+- Reran P101:
+  - `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `electroweakSchemeRadiativeSourceAuditPassed=true`.
+  - `schemeChoicePromotesBosonMasses=false`.
+  - `anySchemeNearTargetWeakCoupling=true`.
+- Reran P202:
+  - `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=54`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain:
+    - `all-known-boson-values-defensible`.
+    - `missing-source-contracts-filled`.
+    - `top-level-package-complete`.
+- Integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. Electroweak scheme choices can reproduce target-like couplings only by importing external measured inputs; they do not fill the GU source-lineage contracts.
+
+### Full Generator Rerun After Phase261
+
+- Ran full `./scripts/generate_validated_boson_predictions.sh` with Phase261 wired into both generation passes.
+- Final Phase261 results during full generation:
+  - `electroweakSchemeRadiativeSourceAuditPassed=true`.
+  - `schemeChoicePromotesBosonMasses=false`.
+  - `bestScheme=alphaMz-effective-leptonic`.
+- Final P101 summary:
+  - `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `objectiveAchieved=false`.
+  - `predictionSetComplete=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `sourceLineageBlockerWzMissingFieldCount=15`.
+  - `sourceLineageBlockerHiggsMissingFieldCount=14`.
+  - `electroweakSchemeRadiativeSourceAuditPassed=true`.
+  - `schemeChoicePromotesBosonMasses=false`.
+  - `anySchemeNearTargetWeakCoupling=true`.
+- Final P202 summary:
+  - `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=54`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain:
+    - `all-known-boson-values-defensible`.
+    - `missing-source-contracts-filled`.
+    - `top-level-package-complete`.
+- Final integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `git diff --check` passed.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. Phase261 preserves the electroweak-scheme numerical lead as diagnostic-only; the remaining work is still a GU-derived source-lineage artifact.
+
+### Phase262 Higgs-Top Empirical Relation Source Audit
+
+- Added Phase262 to test whether empirical Higgs/top mass relations can repair or complete the Higgs prediction:
+  - `m_H^2 ~= m_Z m_t`.
+  - `2 m_H ~= m_W + m_t`.
+- External research context:
+  - PDG 2025 top review reports a direct top mass near `172.52 +/- 0.33 GeV`.
+  - The Higgs/top relation literature presents the relation as an empirical mass coincidence or phenomenological lead, not a GU scalar-source theorem.
+- Standalone Phase262 result:
+  - `terminalStatus=higgs-top-empirical-relation-source-audit-numerical-lead-not-promotion`.
+  - `higgsTopEmpiricalRelationSourceAuditPassed=true`.
+  - `relationNumericallyClose=true`.
+  - `relationPromotesHiggsMass=false`.
+  - `geometricMeanHiggsGeV=125.42628815364027`.
+  - `geometricMeanPull=1.390280057016777`.
+  - `geometricMeanRatio=0.9963949499296002`.
+  - `averageWTopHiggsGeV=126.44460000000001`.
+  - `averageWTopPull=6.272654652119182`.
+- Promotion blockers:
+  - The relation imports measured W/Z/H comparison targets and the measured top-quark mass.
+  - `topYukawaSourceLineagePresent=false`.
+  - `relationHasGuDerivation=false`.
+  - `relationProvidesHiggsScalarSource=false`.
+  - `relationProvidesPotentialOrSelfCouplingSource=false`.
+  - `relationProvidesObservedFieldExtraction=false`.
+  - `relationProvidesWzAbsoluteScale=false`.
+- Wired Phase262 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 scan exclusions as generated diagnostic material.
+
+### Targeted Checks After Phase262
+
+- Reran affected package/audit/scans:
+  - P101: `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P202: `terminalStatus=boson-objective-completion-audit-incomplete`; `objectiveAchieved=false`; `checklistPassedCount=55`; `checklistFailedCount=3`.
+  - P204: `terminalStatus=boson-source-lineage-candidate-scan-no-intake-ready-candidate`; `intakeReadyCandidateCount=0`.
+  - P205: `terminalStatus=boson-source-lineage-text-evidence-scan-no-intake-ready-evidence`; `intakeReadyFindingCount=0`.
+  - P207: `terminalStatus=higgs-quartic-self-coupling-source-scan-no-source`; `intakeReadyFindingCount=0`.
+- Integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Sub-agent sidecar review:
+  - Checked remaining repository-local GU source artifacts after P261.
+  - Found no promotable source artifact for W/Z/H direct target-independent source lineage.
+  - Confirmed Phase46, Phase54/69/70, Phase226, Phase230, Phase237, Phase253, Theory v29, and Phase262 are useful context or numerical leads but not promotable source lineage.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. Phase262 records a close Higgs/top numerical lead, but it remains a non-prediction because it imports measured external masses and supplies no GU top/Yukawa, Higgs scalar-source, observed-field extraction, or W/Z absolute-scale source artifact.
+
+### Full Generator Rerun After Phase262
+
+- Ran full `./scripts/generate_validated_boson_predictions.sh` with Phase262 wired into both generation passes.
+- Final Phase262 result during full generation:
+  - `higgsTopEmpiricalRelationSourceAuditPassed=true`.
+  - `relationNumericallyClose=true`.
+  - `relationPromotesHiggsMass=false`.
+  - `geometricMeanHiggsGeV=125.42628815364027`.
+- Final P101 summary:
+  - `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `objectiveAchieved=false`.
+  - `predictionSetComplete=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `sourceLineageBlockerWzMissingFieldCount=15`.
+  - `sourceLineageBlockerHiggsMissingFieldCount=14`.
+  - `higgsTopEmpiricalRelationSourceAuditPassed=true`.
+  - `higgsTopRelationPromotesHiggsMass=false`.
+  - `higgsTopRelationNumericallyClose=true`.
+- Final P202 summary:
+  - `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=55`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain:
+    - `all-known-boson-values-defensible`.
+    - `missing-source-contracts-filled`.
+    - `top-level-package-complete`.
+- Final standalone integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `git diff --check` passed.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. Phase262 improves the record of tried empirical Higgs/top relations, but the package remains incomplete for the same reason: the required target-independent GU source-lineage artifacts are still missing.
+
+### Phase263 Top-Yukawa Unity Higgs Closure Audit
+
+- Added Phase263 to test whether the exact shortcut `y_t = 1` can repair the Higgs/top numerical lead.
+- Tested replay:
+  - `m_t = y_t v / sqrt(2)` with `y_t = 1`.
+  - `m_H^2 ~= m_Z m_t`, using the unity-Yukawa top mass.
+- External research context:
+  - PDG 2025 top review frames top Yukawa as order unity and reports direct top-mass input, not a GU-derived source value.
+  - Higgs/top coincidence literature treats `m_H^2 ~= m_Z m_t` as an empirical relation suggesting an unknown mechanism, not as a solved scalar-source theorem.
+- Standalone Phase263 result:
+  - `terminalStatus=top-yukawa-unity-higgs-closure-audit-no-promotion`.
+  - `topYukawaUnityHiggsClosureAuditPassed=true`.
+  - `topYukawaUnityPromotesHiggsMass=false`.
+  - `topYukawaUnityNumericallyCloses=false`.
+  - `unityTopMassGeV=174.10358473791823`.
+  - `unityTopMassPull=4.798741585872905`.
+  - `targetImpliedTopYukawa=0.990904353059117`.
+  - `unityTopHiggsGeometricMeanGeV=126.00062573289581`.
+  - `unityTopHiggsGeometricMeanPull=7.277841505139153`.
+- Promotion blockers:
+  - Exact `y_t = 1` misses the current top and Higgs targets by several sigma.
+  - Target-implied `y_t` is an external/target-derived diagnostic, not a GU source.
+  - `topYukawaUnityProvidesGuYukawaSource=false`.
+  - `topYukawaUnityProvidesHiggsScalarSource=false`.
+  - `topYukawaUnityProvidesPotentialOrSelfCouplingSource=false`.
+  - `topYukawaUnityProvidesObservedFieldExtraction=false`.
+  - `topYukawaUnityProvidesGuVevSource=false`.
+- Wired Phase263 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 scan exclusions as generated diagnostic material.
+
+### Targeted Checks After Phase263
+
+- Reran affected package/audit/scans:
+  - P101: `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`; `objectiveAchieved=false`; `predictionSetComplete=false`; `topYukawaUnityHiggsClosureAuditPassed=true`; `topYukawaUnityPromotesHiggsMass=false`.
+  - P202: `terminalStatus=boson-objective-completion-audit-incomplete`; `objectiveAchieved=false`; `checklistPassedCount=56`; `checklistFailedCount=3`.
+  - P204: `terminalStatus=boson-source-lineage-candidate-scan-no-intake-ready-candidate`; `intakeReadyCandidateCount=0`.
+  - P205: `terminalStatus=boson-source-lineage-text-evidence-scan-no-intake-ready-evidence`; `intakeReadyFindingCount=0`.
+  - P207: `terminalStatus=higgs-quartic-self-coupling-source-scan-no-source`; `intakeReadyFindingCount=0`.
+- Integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. Phase263 closes the exact `y_t=1` shortcut as both numerically insufficient and source-lineage insufficient.
+
+### Full Generator Rerun After Phase263
+
+- Ran full `./scripts/generate_validated_boson_predictions.sh` with Phase263 wired into both generation passes.
+- Final Phase263 result during full generation:
+  - `topYukawaUnityHiggsClosureAuditPassed=true`.
+  - `topYukawaUnityPromotesHiggsMass=false`.
+  - `topYukawaUnityNumericallyCloses=false`.
+  - `unityTopMassGeV=174.10358473791823`.
+  - `unityTopMassPull=4.798741585872905`.
+  - `unityTopHiggsGeometricMeanGeV=126.00062573289581`.
+  - `unityTopHiggsGeometricMeanPull=7.277841505139153`.
+- Final P101 summary:
+  - `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `objectiveAchieved=false`.
+  - `predictionSetComplete=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `sourceLineageBlockerWzMissingFieldCount=15`.
+  - `sourceLineageBlockerHiggsMissingFieldCount=14`.
+  - `topYukawaUnityHiggsClosureAuditPassed=true`.
+  - `topYukawaUnityPromotesHiggsMass=false`.
+- Final P202 summary:
+  - `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=56`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain:
+    - `all-known-boson-values-defensible`.
+    - `missing-source-contracts-filled`.
+    - `top-level-package-complete`.
+- Final standalone integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `git diff --check` passed.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. Exact top-Yukawa unity is now a checked non-solution; the active blocker remains missing target-independent GU source-lineage artifacts for W/Z absolute scale and Higgs scalar/source extraction.
+
+### Phase264 Higgs Vacuum Criticality Source Audit
+
+- Added Phase264 to test whether Standard Model Higgs vacuum criticality or stability can supply a Higgs mass prediction.
+- Tested approximate absolute-stability boundary:
+  - `M_h^crit ~= 129.6 + 2.0*(M_t - 173.34) - 0.5*((alpha_s - 0.1184)/0.0007) GeV`.
+- External research context:
+  - PDG 2025 top review states the top-quark mass is crucial for vacuum stability and current measurements suggest a nearly vanishing Higgs quartic near the Planck scale, but no clear UV picture is supplied.
+  - Buttazzo et al. and Degrassi et al. analyze SM RG stability/criticality boundaries using measured Higgs/top/`alpha_s` inputs.
+- Standalone Phase264 result:
+  - `terminalStatus=higgs-vacuum-criticality-source-audit-near-critical-not-promotion`.
+  - `higgsVacuumCriticalitySourceAuditPassed=true`.
+  - `vacuumCriticalityPromotesHiggsMass=false`.
+  - `vacuumCriticalityCompletesBosonPredictions=false`.
+  - `vacuumCriticalityBoundaryNumericallyNearHiggsMass=true`.
+  - `vacuumCriticalityBoundaryEqualsTarget=false`.
+  - `absoluteStabilityBoundaryHiggsMassGeV=127.96000000000001`.
+  - `targetToStabilityBoundaryGapGeV=-2.760000000000005`.
+  - `targetToStabilityBoundaryPull=3.109772790687313`.
+- Promotion blockers:
+  - The boundary imports measured top mass, `alpha_s`, and Standard Model RG assumptions.
+  - The high-scale criticality/stability condition is assumed, not GU-derived.
+  - `vacuumCriticalityProvidesGuScalarPotentialSource=false`.
+  - `vacuumCriticalityProvidesGuQuarticBoundarySource=false`.
+  - `vacuumCriticalityProvidesGuTopYukawaSource=false`.
+  - `vacuumCriticalityProvidesGuVevSource=false`.
+  - `vacuumCriticalityProvidesObservedFieldExtraction=false`.
+- Wired Phase264 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 scan exclusions as generated diagnostic material.
+
+### Targeted Checks After Phase264
+
+- Reran affected package/audit/scans:
+  - P101: `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`; `objectiveAchieved=false`; `predictionSetComplete=false`; `higgsVacuumCriticalitySourceAuditPassed=true`; `vacuumCriticalityPromotesHiggsMass=false`.
+  - P202: `terminalStatus=boson-objective-completion-audit-incomplete`; `objectiveAchieved=false`; `checklistPassedCount=57`; `checklistFailedCount=3`.
+  - P204: `terminalStatus=boson-source-lineage-candidate-scan-no-intake-ready-candidate`; `intakeReadyCandidateCount=0`.
+  - P205: `terminalStatus=boson-source-lineage-text-evidence-scan-no-intake-ready-evidence`; `intakeReadyFindingCount=0`.
+  - P207: `terminalStatus=higgs-quartic-self-coupling-source-scan-no-source`; `intakeReadyFindingCount=0`.
+- Integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. Vacuum criticality is a meaningful external physics clue, but it does not fill the GU source-lineage contracts for Higgs scalar extraction, quartic/top-Yukawa source, observed-field extraction, or W/Z absolute scale.
+
+### Full Generator Rerun After Phase264
+
+- Ran full `./scripts/generate_validated_boson_predictions.sh` with Phase264 wired into both generation passes.
+- Final Phase264 result during full generation:
+  - `higgsVacuumCriticalitySourceAuditPassed=true`.
+  - `vacuumCriticalityPromotesHiggsMass=false`.
+  - `vacuumCriticalityCompletesBosonPredictions=false`.
+  - `vacuumCriticalityBoundaryNumericallyNearHiggsMass=true`.
+  - `vacuumCriticalityBoundaryEqualsTarget=false`.
+  - `absoluteStabilityBoundaryHiggsMassGeV=127.96000000000001`.
+  - `targetToStabilityBoundaryPull=3.109772790687313`.
+- Final P101 summary:
+  - `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `objectiveAchieved=false`.
+  - `predictionSetComplete=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `sourceLineageBlockerWzMissingFieldCount=15`.
+  - `sourceLineageBlockerHiggsMissingFieldCount=14`.
+  - `higgsVacuumCriticalitySourceAuditPassed=true`.
+  - `vacuumCriticalityPromotesHiggsMass=false`.
+- Final P202 summary:
+  - `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=57`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain:
+    - `all-known-boson-values-defensible`.
+    - `missing-source-contracts-filled`.
+    - `top-level-package-complete`.
+- Final standalone integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `git diff --check` passed.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. Phase264 documents the SM vacuum-criticality route as a non-solution; the remaining requirement is still new target-independent GU source lineage.
+
+### Phase265 Gauge-Higgs Boundary Source Audit
+
+- Added Phase265 to test whether external gauge-Higgs unification boundary conditions can supply a Higgs mass prediction.
+- Tested lead:
+  - `lambda(M_KK)=0` at a compactification scale.
+  - Published external gauge-Higgs estimates around `m_H = 125 +/- 4 GeV` or a `119-126 GeV` range.
+- Local search context:
+  - Searched for gauge-Higgs, `lambda(M_KK)=0`, compactification, Kaluza, Wilson-line, and Hosotani-style source artifacts.
+  - Found generic GU Higgs/gauge context and already-blocked diagnostic text, but no GU-local compactification scale, Wilson-line/Hosotani scalar extraction, or `lambda(M_KK)=0` source theorem.
+- Standalone Phase265 result:
+  - `terminalStatus=gauge-higgs-boundary-source-audit-external-rg-boundary-not-promotion`.
+  - `gaugeHiggsBoundarySourceAuditPassed=true`.
+  - `gaugeHiggsBoundaryPromotesHiggsMass=false`.
+  - `gaugeHiggsBoundaryCompletesBosonPredictions=false`.
+  - `targetInsideExternalGaugeHiggsRange=true`.
+  - `externalGaugeHiggsPredictionPull=0.04998110446663588`.
+- Promotion blockers:
+  - The lead is an external five-dimensional model boundary condition, not a GU source artifact.
+  - `localGuGaugeHiggsBoundaryArtifactFound=false`.
+  - `compactificationScaleSourcePresent=false`.
+  - `guQuarticBoundarySourcePresent=false`.
+  - `guRgTransportSourcePresent=false`.
+  - `guTopYukawaAndAlphaSSourcePresent=false`.
+  - `guObservedHiggsExtractionPresent=false`.
+  - `guVevSourcePresent=false`.
+- Wired Phase265 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 scan exclusions as generated diagnostic material.
+
+### Targeted Checks After Phase265
+
+- Reran affected package/audit/scans:
+  - P101: `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`; `objectiveAchieved=false`; `predictionSetComplete=false`; `gaugeHiggsBoundarySourceAuditPassed=true`; `gaugeHiggsBoundaryPromotesHiggsMass=false`.
+  - P202: `terminalStatus=boson-objective-completion-audit-incomplete`; `objectiveAchieved=false`; `checklistPassedCount=58`; `checklistFailedCount=3`.
+  - P204: `terminalStatus=boson-source-lineage-candidate-scan-no-intake-ready-candidate`; `intakeReadyCandidateCount=0`.
+  - P205: `terminalStatus=boson-source-lineage-text-evidence-scan-no-intake-ready-evidence`; `intakeReadyFindingCount=0`.
+  - P207: `terminalStatus=higgs-quartic-self-coupling-source-scan-no-source`; `intakeReadyFindingCount=0`.
+- Integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. Gauge-Higgs unification gives a very close external numerical lead, but without GU-local boundary, RG, scalar extraction, VEV, and W/Z source-lineage artifacts it remains a non-prediction.
+
+### Full Generator Rerun After Phase265
+
+- Ran full `./scripts/generate_validated_boson_predictions.sh` with Phase265 wired into both generation passes.
+- Final Phase265 result during full generation:
+  - `gaugeHiggsBoundarySourceAuditPassed=true`.
+  - `gaugeHiggsBoundaryPromotesHiggsMass=false`.
+  - `gaugeHiggsBoundaryCompletesBosonPredictions=false`.
+  - `targetInsideExternalGaugeHiggsRange=true`.
+  - `externalGaugeHiggsPredictionPull=0.04998110446663588`.
+- Final P101 summary:
+  - `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `objectiveAchieved=false`.
+  - `predictionSetComplete=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `sourceLineageBlockerWzMissingFieldCount=15`.
+  - `sourceLineageBlockerHiggsMissingFieldCount=14`.
+  - `gaugeHiggsBoundarySourceAuditPassed=true`.
+  - `gaugeHiggsBoundaryPromotesHiggsMass=false`.
+- Final P202 summary:
+  - `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=58`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain:
+    - `all-known-boson-values-defensible`.
+    - `missing-source-contracts-filled`.
+    - `top-level-package-complete`.
+- Final standalone integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `git diff --check` passed.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. Phase265 closes a very close external gauge-Higgs numerical lead as non-promotional because no GU-local source-lineage artifact fills the contracts.
+
+### Phase266 Veltman Naturalness Source Audit
+
+- Added Phase266 to test whether the Veltman naturalness condition can supply a Higgs mass prediction.
+- Tested relation:
+  - `m_H^2 + 2 m_W^2 + m_Z^2 - 4 m_t^2 = 0`.
+- Standalone Phase266 result:
+  - `terminalStatus=veltman-naturalness-source-audit-condition-fails-not-promotion`.
+  - `veltmanNaturalnessSourceAuditPassed=true`.
+  - `veltmanPromotesHiggsMass=false`.
+  - `veltmanCompletesBosonPredictions=false`.
+  - `veltmanNumericallyClosesHiggsMass=false`.
+  - `observedVeltmanConditionNearZero=false`.
+  - `veltmanPredictedHiggsMassGeV=312.76018550755464`.
+  - `veltmanPredictionPull=254.6944895845962`.
+  - `observedVeltmanCoefficientGeV2=-82143.89363872001`.
+  - `observedVeltmanCoefficientPullFromZero=180.01967249157033`.
+- Promotion blockers:
+  - The condition numerically fails for the observed Higgs mass.
+  - It imports measured W/Z/top masses instead of deriving a GU source.
+  - `veltmanConditionAssumedNotGuDerived=true`.
+  - `veltmanProvidesGuNaturalnessSource=false`.
+  - `veltmanProvidesGuScalarPotentialSource=false`.
+  - `veltmanProvidesGuTopYukawaSource=false`.
+  - `veltmanProvidesGuVevSource=false`.
+  - `veltmanProvidesObservedFieldExtraction=false`.
+- Wired Phase266 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 scan exclusions as generated diagnostic material.
+
+### Targeted Checks After Phase266
+
+- Reran affected package/audit/scans:
+  - P101: `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`; `objectiveAchieved=false`; `predictionSetComplete=false`; `veltmanNaturalnessSourceAuditPassed=true`; `veltmanPromotesHiggsMass=false`.
+  - P202: `terminalStatus=boson-objective-completion-audit-incomplete`; `objectiveAchieved=false`; `checklistPassedCount=59`; `checklistFailedCount=3`.
+  - P204: `terminalStatus=boson-source-lineage-candidate-scan-no-intake-ready-candidate`; `intakeReadyCandidateCount=0`.
+  - P205: `terminalStatus=boson-source-lineage-text-evidence-scan-no-intake-ready-evidence`; `intakeReadyFindingCount=0`.
+  - P207: `terminalStatus=higgs-quartic-self-coupling-source-scan-no-source`; `intakeReadyFindingCount=0`.
+- Integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. Phase266 closes the Veltman naturalness lead as a non-solution: it is both non-GU-local and numerically incompatible with the observed Higgs mass.
+
+### Full Generator Rerun After Phase266
+
+- Ran full `./scripts/generate_validated_boson_predictions.sh` with Phase266 wired into both generation passes.
+- Final Phase266 result during full generation:
+  - `veltmanNaturalnessSourceAuditPassed=true`.
+  - `veltmanPromotesHiggsMass=false`.
+  - `veltmanPredictedHiggsMassGeV=312.76018550755464`.
+  - `veltmanPredictionPull=254.6944895845962`.
+- Final P101 summary:
+  - `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `objectiveAchieved=false`.
+  - `predictionSetComplete=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `sourceLineageBlockerWzMissingFieldCount=15`.
+  - `sourceLineageBlockerHiggsMissingFieldCount=14`.
+  - `veltmanNaturalnessSourceAuditPassed=true`.
+  - `veltmanPromotesHiggsMass=false`.
+- Final P202 summary:
+  - `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=59`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain:
+    - `all-known-boson-values-defensible`.
+    - `missing-source-contracts-filled`.
+    - `top-level-package-complete`.
+- Final standalone integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `git diff --check` passed.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. The Veltman route is now documented as exhausted, and the remaining blocker is still missing target-independent GU source lineage for W/Z absolute scale and the Higgs scalar sector.
+
+### Phase267 Completion Revision Direct Bridge Source Audit
+
+- Added Phase267 to audit the latest local completion revision for the specific missing W/Z direct bridge-source law and physical boson source-lineage requirements.
+- Source audited:
+  - `TheoryCompletitionRevisions/Geometric_Unity_Completion_Reorganized_Updated_v29.md`.
+- Key evidence recorded:
+  - Observed field content is downstream of pullback/observation/decomposition machinery.
+  - Standard Model correspondences and predictions are inadmissible before the recovery pipeline is defined.
+  - Canonical Shiab operator classification remains open.
+  - Boson-fermion coupling and Higgs/Yukawa reinterpretation remain speculative at the physical layer.
+  - Observed-field extraction still needs recovery theorems.
+  - Masses, couplings, scales, and low-energy phenomenology remain unfinished.
+  - A prediction must be a typed tuple with formal source, observable map, assumptions, comparison rule, and falsifier.
+- Standalone Phase267 result:
+  - `terminalStatus=completion-revision-direct-bridge-source-audit-no-promotion`.
+  - `completionRevisionDirectBridgeSourceAuditPassed=true`.
+  - `latestCompletionProvidesDirectWzTheorem=false`.
+  - `latestCompletionProvidesObservedFieldExtractionTheorem=false`.
+  - `latestCompletionProvidesQuantitativeMassScaleSource=false`.
+  - `latestCompletionProvidesHiggsScalarSource=false`.
+  - `latestCompletionPromotesWzMasses=false`.
+  - `latestCompletionPromotesHiggsMass=false`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+- Wired Phase267 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 scan exclusions as generated diagnostic material.
+
+### Targeted Checks After Phase267
+
+- Reran affected package/audit/scans:
+  - P101: `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P202: `terminalStatus=boson-objective-completion-audit-incomplete`; `objectiveAchieved=false`; `checklistPassedCount=60`; `checklistFailedCount=3`.
+  - P204: `terminalStatus=boson-source-lineage-candidate-scan-no-intake-ready-candidate`; `intakeReadyCandidateCount=0`.
+  - P205: `terminalStatus=boson-source-lineage-text-evidence-scan-no-intake-ready-evidence`; `intakeReadyFindingCount=0`.
+  - P207: `terminalStatus=higgs-quartic-self-coupling-source-scan-no-source`; `intakeReadyFindingCount=0`.
+- Integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. Phase267 shows the latest local completion revision is a source of proof obligations and validation discipline, not a completed W/Z bridge theorem or Higgs scalar source.
+
+### Full Generator Rerun After Phase267
+
+- Ran full `./scripts/generate_validated_boson_predictions.sh` with Phase267 wired into both generation passes.
+- Final Phase267 result during full generation:
+  - `completionRevisionDirectBridgeSourceAuditPassed=true`.
+  - `latestCompletionProvidesDirectWzTheorem=false`.
+  - `latestCompletionProvidesObservedFieldExtractionTheorem=false`.
+  - `latestCompletionProvidesQuantitativeMassScaleSource=false`.
+  - `latestCompletionProvidesHiggsScalarSource=false`.
+  - `latestCompletionPromotesWzMasses=false`.
+  - `latestCompletionPromotesHiggsMass=false`.
+- Final P101 summary:
+  - `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `objectiveAchieved=false`.
+  - `predictionSetComplete=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `sourceLineageBlockerWzMissingFieldCount=15`.
+  - `sourceLineageBlockerHiggsMissingFieldCount=14`.
+  - `completionRevisionDirectBridgeSourceAuditPassed=true`.
+  - `latestCompletionPromotesWzMasses=false`.
+  - `latestCompletionPromotesHiggsMass=false`.
+- Final P202 summary:
+  - `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=60`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain:
+    - `all-known-boson-values-defensible`.
+    - `missing-source-contracts-filled`.
+    - `top-level-package-complete`.
+- Final standalone integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `git diff --check` passed.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. The current repository now has a machine-checkable audit trail showing that the latest completion text, the Draft/official public source audits, and all local numerical leads still fail the source-lineage gates required for physical W/Z/H mass promotion.
+
+### Phase268 Spectral Action Boson Source Audit
+
+- Added Phase268 to test whether noncommutative-geometry spectral-action boundary relations can supply the missing W/Z/H source-lineage rows.
+- Research checked:
+  - Chamseddine, Connes, and Marcolli spectral-action Standard Model with neutrino mixing: high-scale relations, original Higgs estimate around `170 GeV`.
+  - Chamseddine and Connes 2012 resilience update: a real scalar singlet modifies the RG analysis and invalidates the older `160-180 GeV` Higgs estimate.
+  - Devastato, Lizzi, and Martinetti 2014: the low Higgs mass can be made compatible with NCG by generating an extra scalar field from Majorana-neutrino structure.
+  - Stephan 2009: spectral-action coupling relations live at a cutoff scale and require RG flow plus model-specific extra fields.
+- Standalone Phase268 result:
+  - `terminalStatus=spectral-action-boson-source-audit-external-boundary-not-promotion`.
+  - `spectralActionBosonSourceAuditPassed=true`.
+  - `spectralActionGeometricLeadPresent=true`.
+  - `spectralActionPromotesWzMasses=false`.
+  - `spectralActionPromotesHiggsMass=false`.
+  - `spectralActionCompletesBosonPredictions=false`.
+  - `originalSpectralHiggsMassMidpointGeV=170`.
+  - `lowHiggsCompatibilityRequiresSingletOrExtendedScalar=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+- Promotion blockers:
+  - The lead is an external spectral-action/high-scale boundary framework, not a GU-local source artifact.
+  - `localGuSpectralTripleArtifactFound=false`.
+  - `localGuFiniteAlgebraMappingFound=false`.
+  - `localGuSpectralActionCutoffSourceFound=false`.
+  - `localGuSpectralBoundaryConditionSourceFound=false`.
+  - `localGuSpectralRgTransportSourceFound=false`.
+  - `localGuSpectralYukawaMajoranaSourceFound=false`.
+  - `localGuSpectralObservedFieldExtractionFound=false`.
+  - `localGuSpectralVevSourceFound=false`.
+  - `localGuSpectralHiggsSingletSourceFound=false`.
+- Wired Phase268 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 scan exclusions as generated diagnostic material.
+
+### Targeted Checks After Phase268
+
+- Reran affected package/audit/scans:
+  - P101: `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P202: `terminalStatus=boson-objective-completion-audit-incomplete`; `objectiveAchieved=false`; `checklistPassedCount=61`; `checklistFailedCount=3`.
+  - P204: `terminalStatus=boson-source-lineage-candidate-scan-no-intake-ready-candidate`; `intakeReadyCandidateCount=0`.
+  - P205: `terminalStatus=boson-source-lineage-text-evidence-scan-no-intake-ready-evidence`; `intakeReadyFindingCount=0`.
+  - P207: `terminalStatus=higgs-quartic-self-coupling-source-scan-no-source`; `intakeReadyFindingCount=0`.
+- Integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. Phase268 preserves spectral action / noncommutative geometry as a serious geometric research lead, but it does not supply GU-local W/Z/H source rows, cutoff/RG/Yukawa/VEV sources, or observed-field extraction.
+
+### Full Generator Rerun After Phase268
+
+- Ran full `./scripts/generate_validated_boson_predictions.sh` with Phase268 wired into both generation passes.
+- Final Phase268 result during full generation:
+  - `spectralActionBosonSourceAuditPassed=true`.
+  - `spectralActionGeometricLeadPresent=true`.
+  - `spectralActionPromotesWzMasses=false`.
+  - `spectralActionPromotesHiggsMass=false`.
+  - `spectralActionCompletesBosonPredictions=false`.
+  - `originalSpectralHiggsMassMidpointGeV=170`.
+  - `lowHiggsCompatibilityRequiresSingletOrExtendedScalar=true`.
+- Final P101 summary:
+  - `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `objectiveAchieved=false`.
+  - `predictionSetComplete=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `sourceLineageBlockerWzMissingFieldCount=15`.
+  - `sourceLineageBlockerHiggsMissingFieldCount=14`.
+  - `spectralActionBosonSourceAuditPassed=true`.
+  - `spectralActionPromotesWzMasses=false`.
+  - `spectralActionPromotesHiggsMass=false`.
+- Final P202 summary:
+  - `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=61`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain:
+    - `all-known-boson-values-defensible`.
+    - `missing-source-contracts-filled`.
+    - `top-level-package-complete`.
+- Final standalone integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `git diff --check` passed.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. Phase268 closes the spectral-action route as an external high-scale boundary lead that cannot satisfy the GU source-lineage contract without new GU-local spectral/action, observed-field extraction, RG, VEV, and source-row artifacts.
+
+### Phase269 Coleman-Weinberg Scale Source Audit
+
+- Added Phase269 to test whether Coleman-Weinberg/radiative symmetry breaking can supply the missing W/Z/H source-lineage rows through dimensional transmutation.
+- Research checked:
+  - Coleman and Weinberg original radiative symmetry breaking mechanism: radiative corrections can trigger spontaneous symmetry breaking in classically massless scalar electrodynamics and compute scalar/vector mass ratios in that model.
+  - Gildener and Weinberg flat-direction method: generalizes radiative symmetry breaking to theories with multiple massless weakly coupled scalar fields.
+  - Hempfling next-to-minimal Coleman-Weinberg model: records that the minimal Standard Model Coleman-Weinberg route is phenomenologically ruled out and needs extra singlet/U(1) structure.
+  - Iso, Okada, and Orikasa minimal B-L model: realizes Coleman-Weinberg-type electroweak breaking only with additional B-L/classically conformal model structure.
+- Standalone Phase269 result:
+  - `terminalStatus=coleman-weinberg-scale-source-audit-external-radiative-route-not-promotion`.
+  - `colemanWeinbergScaleSourceAuditPassed=true`.
+  - `colemanWeinbergScaleLeadPresent=true`.
+  - `radiativeSymmetryBreakingLeadPresent=true`.
+  - `dimensionalTransmutationLeadPresent=true`.
+  - `standardModelColemanWeinbergMinimalVersionPhenomenologicallyRuledOut=true`.
+  - `colemanWeinbergPromotesWzMasses=false`.
+  - `colemanWeinbergPromotesHiggsMass=false`.
+  - `colemanWeinbergCompletesBosonPredictions=false`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+- Promotion blockers:
+  - Coleman-Weinberg is a real external radiative scale-generation mechanism, but the repo lacks a GU-local effective-potential source.
+  - `localGuColemanWeinbergRenormalizationScaleSourceFound=false`.
+  - `localGuColemanWeinbergBetaFunctionSourceFound=false`.
+  - `localGuColemanWeinbergFlatDirectionSourceFound=false`.
+  - `localGuColemanWeinbergQuarticBoundarySourceFound=false`.
+  - `localGuColemanWeinbergVevSourceFound=false`.
+  - `localGuColemanWeinbergObservedFieldExtractionFound=false`.
+  - `localGuColemanWeinbergWzMassMatrixSourceFound=false`.
+  - `localGuColemanWeinbergHiggsScalarSourceFound=false`.
+- Wired Phase269 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 scan exclusions as generated diagnostic material.
+
+### Targeted Checks After Phase269
+
+- Reran affected package/audit/scans:
+  - P101: `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`; `objectiveAchieved=false`; `predictionSetComplete=false`; `allKnownBosonValuesDefensible=false`.
+  - P202: `terminalStatus=boson-objective-completion-audit-incomplete`; `objectiveAchieved=false`; `checklistPassedCount=62`; `checklistFailedCount=3`.
+  - P204: `terminalStatus=boson-source-lineage-candidate-scan-no-intake-ready-candidate`; `intakeReadyCandidateCount=0`.
+  - P205: `terminalStatus=boson-source-lineage-text-evidence-scan-no-intake-ready-evidence`; `intakeReadyFindingCount=0`.
+  - P207: `terminalStatus=higgs-quartic-self-coupling-source-scan-no-source`; `intakeReadyFindingCount=0`.
+- P202 failed checklist ids remain:
+  - `all-known-boson-values-defensible`.
+  - `missing-source-contracts-filled`.
+  - `top-level-package-complete`.
+- Integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. Phase269 preserves Coleman-Weinberg/radiative symmetry breaking as a serious scale-generation lead, but it does not provide the GU-local renormalization-scale, beta-function, scalar-sector, VEV, W/Z mass-matrix, Higgs scalar, or observed-field extraction artifacts needed for promotion.
+
+### Full Generator Rerun After Phase269
+
+- Ran full `./scripts/generate_validated_boson_predictions.sh` with Phase269 wired into both generation passes.
+- Final Phase269 result during full generation:
+  - `colemanWeinbergScaleSourceAuditPassed=true`.
+  - `colemanWeinbergScaleLeadPresent=true`.
+  - `radiativeSymmetryBreakingLeadPresent=true`.
+  - `dimensionalTransmutationLeadPresent=true`.
+  - `standardModelColemanWeinbergMinimalVersionPhenomenologicallyRuledOut=true`.
+  - `colemanWeinbergPromotesWzMasses=false`.
+  - `colemanWeinbergPromotesHiggsMass=false`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+- Final P101 summary:
+  - `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `objectiveAchieved=false`.
+  - `predictionSetComplete=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `sourceLineageBlockerWzMissingFieldCount=15`.
+  - `sourceLineageBlockerHiggsMissingFieldCount=14`.
+  - `colemanWeinbergScaleSourceAuditPassed=true`.
+  - `colemanWeinbergPromotesWzMasses=false`.
+  - `colemanWeinbergPromotesHiggsMass=false`.
+- Final P202 summary:
+  - `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=62`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain:
+    - `all-known-boson-values-defensible`.
+    - `missing-source-contracts-filled`.
+    - `top-level-package-complete`.
+- Final standalone integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `git diff --check` passed.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. The full pipeline now explicitly records Coleman-Weinberg dimensional transmutation as researched and non-promotional under the current source-lineage contract.
+
+### Phase270 Composite Higgs pNGB Source Audit
+
+- Checked gauge-Higgs/Hosotani before starting this phase and found it was already covered by Phase265, including compactification, Wilson-line/Hosotani, and `lambda(M_KK)=0` blockers.
+- Added Phase270 to test whether composite-Higgs / pseudo-Nambu-Goldstone-boson Higgs models can supply the missing W/Z/H source-lineage rows.
+- Research checked:
+  - Kaplan and Georgi vacuum-misalignment mechanism: electroweak breaking can arise from a misaligned condensate and a partially composite Higgs sector.
+  - Georgi and Kaplan custodial SU(2): custodial symmetry can protect the W/Z mass relation in composite Higgs models, but the potential remains model-generated.
+  - Agashe, Contino, and Pomarol minimal composite Higgs model: the Higgs is a pNGB in a five-dimensional AdS construction, with the potential generated by top-loop effects in a specified model.
+  - Panico and Wulzer review: composite pNGB Higgs phenomenology depends on strong-sector, flavor, collider, and electroweak precision structure.
+- Standalone Phase270 result:
+  - `terminalStatus=composite-higgs-pngb-source-audit-external-strong-sector-not-promotion`.
+  - `compositeHiggsPngbSourceAuditPassed=true`.
+  - `compositeHiggsPngbLeadPresent=true`.
+  - `vacuumMisalignmentLeadPresent=true`.
+  - `custodialSymmetryLeadPresent=true`.
+  - `minimalCompositeHiggsCosetLeadPresent=true`.
+  - `partialCompositenessLeadPresent=true`.
+  - `compositeHiggsPromotesWzMasses=false`.
+  - `compositeHiggsPromotesHiggsMass=false`.
+  - `compositeHiggsCompletesBosonPredictions=false`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+- Promotion blockers:
+  - The route is a serious external strong-sector/symmetry lead, but it is parameter-dependent without new GU source artifacts.
+  - `localGuCompositeStrongSectorSourceFound=false`.
+  - `localGuCompositeCosetEmbeddingFound=false`.
+  - `localGuCompositeDecayConstantSourceFound=false`.
+  - `localGuCompositeMisalignmentAngleSourceFound=false`.
+  - `localGuCompositeEffectivePotentialSourceFound=false`.
+  - `localGuCompositeTopPartnerSpectrumSourceFound=false`.
+  - `localGuCompositePartialCompositenessSourceFound=false`.
+  - `localGuCompositeRgThresholdSourceFound=false`.
+  - `localGuCompositeVevSourceFound=false`.
+  - `localGuCompositeObservedFieldExtractionFound=false`.
+  - `localGuCompositeWzMassMatrixSourceFound=false`.
+  - `localGuCompositeHiggsScalarSourceFound=false`.
+- Wired Phase270 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 scan exclusions as generated diagnostic material.
+
+### Targeted Checks After Phase270
+
+- Reran affected package/audit/scans:
+  - P101: `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`; `objectiveAchieved=false`; `predictionSetComplete=false`; `allKnownBosonValuesDefensible=false`.
+  - P202: `terminalStatus=boson-objective-completion-audit-incomplete`; `objectiveAchieved=false`; `checklistPassedCount=63`; `checklistFailedCount=3`.
+  - P204: `terminalStatus=boson-source-lineage-candidate-scan-no-intake-ready-candidate`; `intakeReadyCandidateCount=0`.
+  - P205: `terminalStatus=boson-source-lineage-text-evidence-scan-no-intake-ready-evidence`; `intakeReadyFindingCount=0`.
+  - P207: `terminalStatus=higgs-quartic-self-coupling-source-scan-no-source`; `intakeReadyFindingCount=0`.
+- P202 failed checklist ids remain:
+  - `all-known-boson-values-defensible`.
+  - `missing-source-contracts-filled`.
+  - `top-level-package-complete`.
+- Integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. Phase270 preserves composite/pNGB Higgs models as a serious external research lead, but it does not provide the GU-local strong-sector, coset, decay constant, misalignment angle, effective potential, top-partner, VEV, W/Z mass-matrix, Higgs scalar, or observed-field extraction artifacts needed for promotion.
+
+### Full Generator Rerun After Phase270
+
+- Ran full `./scripts/generate_validated_boson_predictions.sh` with Phase270 wired into both generation passes.
+- Final Phase270 result during full generation:
+  - `compositeHiggsPngbSourceAuditPassed=true`.
+  - `compositeHiggsPngbLeadPresent=true`.
+  - `vacuumMisalignmentLeadPresent=true`.
+  - `custodialSymmetryLeadPresent=true`.
+  - `compositeHiggsPromotesWzMasses=false`.
+  - `compositeHiggsPromotesHiggsMass=false`.
+  - `compositeHiggsCompletesBosonPredictions=false`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+- Final P101 summary:
+  - `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `objectiveAchieved=false`.
+  - `predictionSetComplete=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `sourceLineageBlockerWzMissingFieldCount=15`.
+  - `sourceLineageBlockerHiggsMissingFieldCount=14`.
+  - `compositeHiggsPngbSourceAuditPassed=true`.
+  - `compositeHiggsPromotesWzMasses=false`.
+  - `compositeHiggsPromotesHiggsMass=false`.
+- Final P202 summary:
+  - `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=63`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain:
+    - `all-known-boson-values-defensible`.
+    - `missing-source-contracts-filled`.
+    - `top-level-package-complete`.
+- Final standalone integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `git diff --check` passed.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. The full pipeline now explicitly records composite/pNGB Higgs models as researched and non-promotional under the current source-lineage contract.
+
+### Phase271 Asymptotic Safety Higgs Source Audit
+
+- Added Phase271 to test whether asymptotic-safety / quantum-gravity UV boundary conditions can supply the missing W/Z/H source-lineage rows.
+- Local duplication check:
+  - Existing Phase264 covers Standard Model vacuum criticality and near-zero quartic behavior near the Planck scale.
+  - No separate local audit existed for the stronger quantum-gravity fixed-point / asymptotic-safety claim.
+- Research checked:
+  - Shaposhnikov and Wetterich: asymptotic safety plus a positive gravity-induced anomalous dimension can drive the Higgs quartic to a zero fixed point and yield `m_H ~= 126 GeV` under a no-intermediate-scales assumption.
+  - Pawlowski, Reichert, Wetterich, and Yamada: Higgs quartic irrelevance at an asymptotically safe gravity fixed point can make top/Higgs mass ratios predictable if the below-Planck flow is approximated by the Standard Model.
+  - Wetterich effective scalar potential: strengthens the top/Higgs mass-ratio argument in an asymptotically safe scaling-potential framework.
+  - Eichhorn, Pauly, and Ray: dark-portal extensions alter the Higgs-mass determination, showing dependence on UV matter content and assumptions.
+- Standalone Phase271 result:
+  - `terminalStatus=asymptotic-safety-higgs-source-audit-external-quantum-gravity-boundary-not-promotion`.
+  - `asymptoticSafetyHiggsSourceAuditPassed=true`.
+  - `asymptoticSafetyGravityLeadPresent=true`.
+  - `asymptoticSafetyHiggsPredictionLeadPresent=true`.
+  - `asymptoticSafetyPredictionPull=0.2664875879582204`.
+  - `targetInsideAsymptoticSafetyPredictionBand=true`.
+  - `asymptoticSafetyPromotesWzMasses=false`.
+  - `asymptoticSafetyPromotesHiggsMass=false`.
+  - `asymptoticSafetyCompletesBosonPredictions=false`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+- Promotion blockers:
+  - The route is a serious numerically close external UV-boundary lead, but it is not a GU-local fixed-point/source-lineage artifact.
+  - `localGuAsymptoticSafetyFixedPointSourceFound=false`.
+  - `localGuGravityMatterBetaFunctionsFound=false`.
+  - `localGuQuarticAnomalousDimensionSourceFound=false`.
+  - `localGuQuarticFixedPointBoundaryFound=false`.
+  - `localGuNoIntermediateScaleTheoremFound=false`.
+  - `localGuPlanckMatchingRgTransportFound=false`.
+  - `localGuTopYukawaAlphaSSourceFound=false`.
+  - `localGuHiggsScalarSourceFound=false`.
+  - `localGuVevSourceFound=false`.
+  - `localGuObservedFieldExtractionFound=false`.
+  - `localGuWzMassMatrixSourceFound=false`.
+- Wired Phase271 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 scan exclusions as generated diagnostic material.
+
+### Targeted Checks After Phase271
+
+- Reran affected package/audit/scans:
+  - P101: `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`; `objectiveAchieved=false`; `predictionSetComplete=false`; `allKnownBosonValuesDefensible=false`.
+  - P202: `terminalStatus=boson-objective-completion-audit-incomplete`; `objectiveAchieved=false`; `checklistPassedCount=64`; `checklistFailedCount=3`.
+  - P204: `terminalStatus=boson-source-lineage-candidate-scan-no-intake-ready-candidate`; `intakeReadyCandidateCount=0`.
+  - P205: `terminalStatus=boson-source-lineage-text-evidence-scan-no-intake-ready-evidence`; `intakeReadyFindingCount=0`.
+  - P207: `terminalStatus=higgs-quartic-self-coupling-source-scan-no-source`; `intakeReadyFindingCount=0`.
+- P202 failed checklist ids remain:
+  - `all-known-boson-values-defensible`.
+  - `missing-source-contracts-filled`.
+  - `top-level-package-complete`.
+- Integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. Phase271 preserves asymptotic-safety Higgs-mass prediction as a serious external UV-boundary lead, but it does not provide the GU-local gravity fixed point, quartic anomalous dimension, Planck matching/RG, top/Yukawa/alpha_s, VEV, W/Z mass-matrix, Higgs scalar, or observed-field extraction artifacts needed for promotion.
+
+### Full Generator Rerun After Phase271
+
+- Ran full `./scripts/generate_validated_boson_predictions.sh` with Phase271 wired into both generation passes.
+- Final Phase271 result during full generation:
+  - `asymptoticSafetyHiggsSourceAuditPassed=true`.
+  - `asymptoticSafetyGravityLeadPresent=true`.
+  - `asymptoticSafetyHiggsPredictionLeadPresent=true`.
+  - `asymptoticSafetyPredictionPull=0.2664875879582204`.
+  - `asymptoticSafetyPromotesWzMasses=false`.
+  - `asymptoticSafetyPromotesHiggsMass=false`.
+  - `asymptoticSafetyCompletesBosonPredictions=false`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+- Final P101 summary:
+  - `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `objectiveAchieved=false`.
+  - `predictionSetComplete=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `sourceLineageBlockerWzMissingFieldCount=15`.
+  - `sourceLineageBlockerHiggsMissingFieldCount=14`.
+  - `asymptoticSafetyHiggsSourceAuditPassed=true`.
+  - `asymptoticSafetyPromotesWzMasses=false`.
+  - `asymptoticSafetyPromotesHiggsMass=false`.
+- Final P202 summary:
+  - `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=64`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain:
+    - `all-known-boson-values-defensible`.
+    - `missing-source-contracts-filled`.
+    - `top-level-package-complete`.
+- Final standalone integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `git diff --check` passed.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. The full pipeline now explicitly records asymptotic-safety / quantum-gravity Higgs-mass prediction as researched and non-promotional under the current source-lineage contract.
+
+### Phase272 Supersymmetric/MSSM Higgs Boundary Source Audit
+
+- Added Phase272 to test whether supersymmetric/MSSM Higgs-boundary conditions can supply the missing W/Z/H source-lineage rows.
+- Local duplication check:
+  - Repository search found speculative non-spacetime SUSY remarks in completion-revision text.
+  - No GU-local MSSM audit artifact existed for a supersymmetry algebra with observational superpartner content, SUSY-breaking scale, tan beta, stop-threshold corrections, RG transport, VEV source, W/Z mass matrix, Higgs scalar source, or observed-field extraction theorem.
+- Research checked:
+  - MSSM tree-level Higgs quartics are gauge-D-term constrained, so the light CP-even Higgs is bounded by the Z scale before loop corrections.
+  - A Higgs near 125 GeV requires radiative corrections, commonly heavy stops or near-maximal stop mixing.
+  - MSSM Higgs masses depend on tan beta, pseudoscalar mass, SUSY-breaking spectrum, stop masses/mixing, threshold corrections, RG transport, and scheme choices.
+- Agent attempt:
+  - Launched worker `019e3647-654f-7cc1-b3a2-a3559e968f9b` to wire Phase272 into P204/P205/P207 scan/blocker exclusions.
+  - Outcome: worker errored with a usage-limit message before making changes.
+  - Follow-up: completed the scanner/blocker exclusion wiring locally.
+- Standalone Phase272 result:
+  - `terminalStatus=supersymmetric-higgs-boundary-source-audit-external-threshold-model-not-promotion`.
+  - `supersymmetricHiggsBoundarySourceAuditPassed=true`.
+  - `supersymmetricHiggsBoundaryLeadPresent=true`.
+  - `mssmGaugeDTermQuarticLeadPresent=true`.
+  - `mssmTreeLevelDeficitToObservedHiggsGeV=34.0124`.
+  - `observedHiggsRequiresHeavyStopsOrMaximalStopMixing=true`.
+  - `supersymmetryPromotesWzMasses=false`.
+  - `supersymmetryPromotesHiggsMass=false`.
+  - `supersymmetryCompletesBosonPredictions=false`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+- Promotion blockers:
+  - The route is a serious external Higgs-quartic boundary lead, but it is not a GU-local source-lineage artifact.
+  - `localGuSupersymmetryAlgebraSourceFound=false`.
+  - `localGuSuperpartnerSpectrumSourceFound=false`.
+  - `localGuSusyBreakingScaleSourceFound=false`.
+  - `localGuStopMassAndMixingSourceFound=false`.
+  - `localGuMssmObservedFieldExtractionFound=false`.
+  - `localGuMssmWzMassMatrixSourceFound=false`.
+  - `localGuMssmHiggsScalarSourceFound=false`.
+- Wired Phase272 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 scan exclusions as generated diagnostic material.
+
+### Targeted Checks After Phase272
+
+- Reran affected package/audit/scans:
+  - P101: `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P202: `terminalStatus=boson-objective-completion-audit-incomplete`; `objectiveAchieved=false`; `checklistPassedCount=65`; `checklistFailedCount=3`.
+  - P204: `terminalStatus=boson-source-lineage-candidate-scan-no-intake-ready-candidate`; `intakeReadyCandidateCount=0`.
+  - P205: `terminalStatus=boson-source-lineage-text-evidence-scan-no-intake-ready-evidence`; `intakeReadyFindingCount=0`.
+  - P207: `terminalStatus=higgs-quartic-self-coupling-source-scan-no-source`; `intakeReadyFindingCount=0`.
+- P202 failed checklist ids remain:
+  - `all-known-boson-values-defensible`.
+  - `missing-source-contracts-filled`.
+  - `top-level-package-complete`.
+- Integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. Phase272 preserves supersymmetric/MSSM Higgs-boundary literature as a researched non-promotional external route, not a GU-local source of physical W/Z/H predictions.
+
+### Full Generator Rerun After Phase272
+
+- Ran full `./scripts/generate_validated_boson_predictions.sh` with Phase272 wired into both generation passes.
+- Final Phase272 result during full generation:
+  - `terminalStatus=supersymmetric-higgs-boundary-source-audit-external-threshold-model-not-promotion`.
+  - `supersymmetricHiggsBoundarySourceAuditPassed=true`.
+  - `supersymmetricHiggsBoundaryLeadPresent=true`.
+  - `mssmGaugeDTermQuarticLeadPresent=true`.
+  - `mssmTreeLevelDeficitToObservedHiggsGeV=34.0124`.
+  - `observedHiggsRequiresHeavyStopsOrMaximalStopMixing=true`.
+  - `supersymmetryPromotesWzMasses=false`.
+  - `supersymmetryPromotesHiggsMass=false`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+- Final P101 summary:
+  - `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `objectiveAchieved=false`.
+  - `predictionSetComplete=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `sourceLineageBlockerWzMissingFieldCount=15`.
+  - `sourceLineageBlockerHiggsMissingFieldCount=14`.
+  - `supersymmetricHiggsBoundarySourceAuditPassed=true`.
+  - `supersymmetryPromotesWzMasses=false`.
+  - `supersymmetryPromotesHiggsMass=false`.
+- Final P202 summary:
+  - `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=65`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain:
+    - `all-known-boson-values-defensible`.
+    - `missing-source-contracts-filled`.
+    - `top-level-package-complete`.
+- Final standalone integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `git diff --check` passed.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. The full pipeline now explicitly records supersymmetric/MSSM Higgs-boundary conditions as researched and non-promotional under the current source-lineage contract.
+
+### Phase273 Boson-Fermion Coupling Proxy Source Audit
+
+- Added Phase273 to close the remaining local shortcut of promoting existing boson-fermion coupling proxies as W/Z or Higgs source-lineage evidence.
+- Local artifact check:
+  - Phase4 contains coupling-proxy material with explicit synthetic/top-summary limitations.
+  - Phase4 source states that fallback perturbations are synthetic and not real bosonic modes.
+  - Phase4 report text states coupling-proxy values are not physical coupling constants, scattering amplitudes, or measured quantities.
+  - Phase12 has two persisted coupling atlases with `3456` coupling records and `24` variation bundles.
+  - Phase12 coupling records are finite-difference proxies, not analytic production replay evidence.
+- Existing gate evidence:
+  - Phase61 rejects finite-difference coupling proxies as normalized weak-coupling inputs.
+  - Phase77 blocks the available raw matrix-element evidence.
+  - Phase78 reports no production analytic matrix-element records.
+  - Phase80 blocks production analytic replay inputs.
+  - Phase81 reports full analytic replay package inputs are not materialized.
+- Standalone Phase273 result:
+  - `terminalStatus=boson-fermion-coupling-proxy-source-audit-finite-difference-not-promotion`.
+  - `couplingProxySourceAuditPassed=true`.
+  - `phase12CouplingRecordCount=3456`.
+  - `phase12FiniteDifferenceOnly=true`.
+  - `phase77RawMatrixElementEvidenceBlocked=true`.
+  - `phase81ProductionInputsMaterialized=false`.
+  - `couplingProxyPromotesWzMasses=false`.
+  - `couplingProxyPromotesHiggsMass=false`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+- Wired Phase273 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 scan exclusions as generated diagnostic material.
+
+### Targeted Checks After Phase273
+
+- Reran affected package/audit/scans:
+  - P101: `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P202: `terminalStatus=boson-objective-completion-audit-incomplete`; `objectiveAchieved=false`; `checklistPassedCount=66`; `checklistFailedCount=3`.
+  - P204: `terminalStatus=boson-source-lineage-candidate-scan-no-intake-ready-candidate`; `intakeReadyCandidateCount=0`.
+  - P205: `terminalStatus=boson-source-lineage-text-evidence-scan-no-intake-ready-evidence`; `intakeReadyFindingCount=0`.
+  - P207: `terminalStatus=higgs-quartic-self-coupling-source-scan-no-source`; `intakeReadyFindingCount=0`.
+- P202 failed checklist ids remain:
+  - `all-known-boson-values-defensible`.
+  - `missing-source-contracts-filled`.
+  - `top-level-package-complete`.
+- Integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. Phase273 closes the coupling-proxy shortcut as a non-solution: existing coupling atlases are useful diagnostics, but they do not supply the production analytic weak-current replay package or source-lineage rows required for physical W/Z/H mass promotion.
+
+### Full Generator Rerun After Phase273
+
+- Ran full `./scripts/generate_validated_boson_predictions.sh` with Phase273 wired into both generation passes.
+- Final Phase273 result during full generation:
+  - `terminalStatus=boson-fermion-coupling-proxy-source-audit-finite-difference-not-promotion`.
+  - `couplingProxySourceAuditPassed=true`.
+  - `phase12CouplingRecordCount=3456`.
+  - `phase12FiniteDifferenceOnly=true`.
+  - `phase77RawMatrixElementEvidenceBlocked=true`.
+  - `phase81ProductionInputsMaterialized=false`.
+  - `couplingProxyPromotesWzMasses=false`.
+  - `couplingProxyPromotesHiggsMass=false`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+- Final P101 summary:
+  - `terminalStatus=internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `objectiveAchieved=false`.
+  - `predictionSetComplete=false`.
+  - `allKnownBosonValuesDefensible=false`.
+  - `sourceLineageBlockerWzMissingFieldCount=15`.
+  - `sourceLineageBlockerHiggsMissingFieldCount=14`.
+  - `couplingProxySourceAuditPassed=true`.
+  - `couplingProxyPromotesWzMasses=false`.
+  - `couplingProxyPromotesHiggsMass=false`.
+- Final P202 summary:
+  - `terminalStatus=boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=66`.
+  - `checklistFailedCount=3`.
+  - Failed checklist ids remain:
+    - `all-known-boson-values-defensible`.
+    - `missing-source-contracts-filled`.
+    - `top-level-package-complete`.
+- Final standalone integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `git diff --check` passed.
+
+Outcome: no successful W/Z/H physical mass prediction was completed. The full pipeline now explicitly records the boson-fermion coupling proxy route as researched and non-promotional under the current source-lineage contract.
+
+## 2026-05-17T14:36:19Z - Journal Requirement and Direct-Bridge Recheck
+
+### Scope Update
+
+- User requested an explicit markdown journal of everything tried and each outcome while diagnosing and resolving the W/Z/H boson prediction blocker.
+- Journal location remains `docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md`.
+- Active completion standard remains unchanged: do not claim a successful physical W/Z/H prediction unless source-lineage gates pass through P201/P209/P210/P213 and the top-level P101/P202 package/audit gates.
+
+### Public Draft Recheck
+
+- Rechecked public Geometric Unity sources:
+  - Official GU site: `https://geometricunity.org/`.
+  - Public draft mirror found by search: `https://saismaran.org/geometricunity.pdf`.
+  - Official 2013 Oxford lecture transcript: `https://geometricunity.org/2013-oxford-lecture/`.
+- The official site still identifies the April 1, 2021 manuscript as the latest public draft.
+- The public draft contains the useful GU address table:
+  - Higgs Field as a pullback field location.
+  - Weak Isospin and Weak Hypercharge as pullback field locations.
+  - Higgs Potential as `<Upsilon_omega, Upsilon_omega>`.
+- The same public draft also states that GU currently offers algebraic/internal-quantum-number style predictions and would need QFT help to sharpen these into energy scales.
+- The lecture transcript is useful for context and broad predictions, but this pass did not find a direct W/Z absolute-mass theorem, a particle-specific W/Z prediction row, a solved Higgs scalar source/operator, or a target-independent mass-scale source.
+
+Outcome: public GU material still supports the existing fail-closed boundary. It gives structural locations and proof obligations, not a complete source-lineage artifact that can promote W/Z absolute masses or Higgs mass.
+
+### Phase190/191 Direct-Bridge Recheck
+
+- Reopened the current direct-bridge implementation:
+  - P190: `studies/phase190_wz_direct_target_independent_geometric_bridge_source_law_001`.
+  - P191: `studies/phase191_wz_direct_bridge_prediction_decision_001`.
+  - P247: `studies/phase247_direct_bridge_repairability_audit_001`.
+- P190 status remains `wz-direct-target-independent-bridge-source-law-candidate-stable-not-theorem`.
+- P190 does construct a target-independent branch-local law:
+  - `B_b,k(i,j) = <psi_b,i, delta D_omega[eta_b,k] psi_b,j>`.
+  - It uses Phase91 promoted fermion modes, Phase12 boson candidates, and Phase12 finite-difference variation matrices.
+  - It does not use W/Z target masses during construction.
+- P190 best stable candidate:
+  - `candidate-5`.
+  - `meanMagnitude=0.004966671499941042`.
+  - `relativeSpread=0.002892380406679679`.
+  - `complexAlignment=0.8132259984653049`.
+- P191 comparison gate remains blocked:
+  - `terminalStatus=wz-direct-bridge-prediction-blocked-stable-candidate-insufficient`.
+  - `canCompleteSuccessfulPrediction=false`.
+  - Target-implied raw magnitude from P110 is `0.9223616409512609`.
+  - `bestRawToTargetRatio=0.005384733362088601`.
+  - `rawGatePassed=false`.
+  - `theoremClaimed=false`.
+  - `wZParticleSplitPresent=false`.
+- P247 repairability audit remains:
+  - `terminalStatus=direct-bridge-repairability-audit-complete-new-theorem-required`.
+  - `sourceRowRepairPossibleFromCurrentRegistry=false`.
+  - `wzParticleSplitDerivableFromCurrentRegistry=false`.
+  - `rawGateRepairPossibleWithoutNewTheorem=false`.
+  - `modeRegistryHasObservedWzLabels=false`.
+  - `newDirectBridgeTheoremStillRequired=true`.
+
+Outcome: the direct W/Z bridge is implemented as a candidate law, but not fixable into a successful prediction by local wiring. It needs a new derivation-backed direct bridge theorem/source-lineage artifact with separate W and Z rows and a raw amplitude/source normalization that clears gates before target comparison.
+
+### Source-Lineage Request Recheck
+
+- Reopened the current P209 request artifacts.
+- W/Z absolute source-lineage request still requires:
+  - `externalTargetValuesUsed=false`.
+  - theorem/derivation and source-lineage IDs.
+  - exactly separate `w-boson` and `z-boson` rows.
+  - raw-amplitude, common-bridge, target-comparison, stability, and derivation gates for each row.
+  - `currentMissingFieldCount=15`.
+- Higgs scalar source-lineage request still requires:
+  - `externalTargetValuesUsed=false`.
+  - sourceLineageId, scalarSourceOperatorId, Higgs identity envelope, massive scalar profile, potential/self-coupling or excitation source, stability sidecars, prediction row, target-comparison gate, and derivation ID.
+  - `currentMissingFieldCount=14`.
+
+Outcome: no scope increase changes the remaining blocker. The work is no longer missing a script hook for the requested W/Z law; it is missing promotable physics/source evidence that the current repository gates can accept.
+
+## 2026-05-17T14:37:08Z - Minimal Unlock Candidate Inventory Recheck
+
+### What Was Checked
+
+- Reopened:
+  - P246 minimal unlock candidate inventory.
+  - P208 local route exhaustion certificate.
+  - P213 source-lineage blocker matrix.
+  - P242 external lead consolidation.
+  - P243 public web source delta audit.
+- Purpose: verify whether any remaining candidate route had not yet been chased after the direct-bridge/public-draft recheck.
+
+### W/Z Candidate Inventory
+
+- P246 W/Z candidates remain:
+  - `su2-casimir-rms-normalization`: close numerical diagnostic, not source-derived.
+  - `external-fermi-vev-bridge`: external input, not GU source lineage.
+  - `cox-ii-symbolic-electroweak-formula`: correct symbolic dependency shape but leaves `g_L`, `g_Y`, and `kappa` free.
+  - `target-w-or-z-mass-inversion`: target leakage.
+  - `w-z-ratio-only`: rank deficient; fixes ratio only, not common scale.
+- `anyCandidateFillsWzAbsoluteScaleUnlock=false`.
+
+### Higgs Candidate Inventory
+
+- P246 Higgs candidates remain:
+  - `three-tenths-casimir-quartic`: close numerical diagnostic, no scalar-source derivation.
+  - `external-fermi-vev-as-scalar-order-parameter`: external VEV and still no lambda/source.
+  - `higgs-target-implied-quartic`: target leakage.
+  - `quartic-gauge-sign-falsifier`: category mismatch; gauge quartic sign is not Higgs lambda.
+  - `cox-ii-higgs-yukawa-texture`: scalar-sector context but no solved scalar source/operator.
+  - `cox-ii-ready-to-fit-formula`: parameterized formula with free parameters.
+- `anyCandidateFillsHiggsScalarScaleUnlock=false`.
+
+### Route Exhaustion Status
+
+- P246:
+  - `terminalStatus=minimal-unlock-candidate-inventory-complete-no-current-candidate-fills-contract`.
+  - `candidateInventoryPromotableForBosonMasses=false`.
+  - `newSourceEvidenceStillRequired=true`.
+- P208:
+  - `terminalStatus=boson-local-route-exhaustion-certified-new-source-required`.
+  - `anyCurrentLocalRouteActionable=false`.
+- P213:
+  - `terminalStatus=boson-source-lineage-blocker-matrix-ready-new-evidence-required`.
+  - `jsonIntakeReadyCount=0`.
+  - `textIntakeReadyCount=0`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+- P242:
+  - `anyExternalLeadPromotableForBosonMasses=false`.
+  - `promotableLeadCount=0`.
+- P243:
+  - `webDeltaPromotableForBosonMasses=false`.
+  - `webDeltaFillsWzSourceLineage=false`.
+  - `webDeltaFillsHiggsSourceLineage=false`.
+
+Outcome: no untried local, official-public, Cox, or fresh-web candidate currently fills either minimal unlock. The next required work is not another generator rerun; it is new source-lineage evidence for the W/Z absolute-scale unlock and the Higgs scalar-scale unlock.
+
+## 2026-05-17T14:49:29Z - Neutrino Option Electroweak-Scale Source Audit
+
+### Scope Increase
+
+- Added an external-literature route check for the neutrino option as another possible electroweak-scale source.
+- Reason: the route is a legitimate physics lead because heavy right-handed neutrino thresholds can radiatively generate the Higgs potential/electroweak scale, so it was worth checking whether it could fill the W/Z and Higgs missing source-lineage contracts.
+- Sources used in the audit:
+  - Brivio and Trott, `The Neutrino Option`.
+  - Brivio and Trott, `Examining the neutrino option`.
+  - Brdar, Emonds, Helmboldt, and Lindner, conformal realization of the neutrino option.
+  - Brivio, Talbert, and Trott, no-go constraints on simple neutrino-option UV completions.
+
+### Implementation
+
+- Created `studies/phase274_neutrino_option_electroweak_scale_source_audit_001`.
+- Created `docs/Phases/Implementation/IMPLEMENTATION_P274.md`.
+- Wired Phase274 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 scans so generated diagnostic artifacts do not become false intake candidates.
+
+### What Was Checked
+
+- Whether the repo contains a GU-local right-handed-neutrino or equivalent singlet sector.
+- Whether it contains a target-independent Majorana scale source.
+- Whether it contains a seesaw Yukawa matrix, neutrino mixing source, zero-tree-Higgs-potential boundary, threshold matching, and low-energy RG transport.
+- Whether it contains the downstream VEV source, W/Z mass matrix, Higgs scalar source, and observed-field extraction theorem needed to promote physical W/Z/H masses.
+
+### Outcome
+
+- Phase274 terminal status:
+  - `neutrino-option-electroweak-scale-source-audit-external-seesaw-threshold-not-promotion`.
+- Key Phase274 fields:
+  - `neutrinoOptionElectroweakScaleSourceAuditPassed=true`.
+  - `neutrinoOptionLeadPresent=true`.
+  - `radiativeSeesawHiggsPotentialLeadPresent=true`.
+  - `simultaneousElectroweakAndNeutrinoMassScaleLeadPresent=true`.
+  - `neutrinoOptionPromotesWzMasses=false`.
+  - `neutrinoOptionPromotesHiggsMass=false`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+
+Conclusion: the neutrino option is a real external electroweak-scale lead, but it cannot be promoted here. The repository still lacks the GU-local Majorana scale, seesaw Yukawa/mixing source, threshold/RG machinery, VEV source, W/Z mass matrix, Higgs scalar source, and observed-field extraction theorem.
+
+### Validation
+
+- `git diff --check` passed.
+- Full `./scripts/generate_validated_boson_predictions.sh` completed successfully.
+- Full generator preserved the fail-closed result:
+  - P101 terminal status: `internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P101 `objectiveAchieved=false`.
+  - P101 `allKnownBosonValuesDefensible=false`.
+  - P101 `defensibleValueCount=3`.
+  - P202 terminal status: `boson-objective-completion-audit-incomplete`.
+  - P202 `objectiveAchieved=false`.
+  - P202 `checklistPassedCount=67`.
+  - P202 `checklistFailedCount=3`.
+  - Claim integrity verifier: `boson-claim-integrity-verified`.
+  - Claim integrity verifier: `promotedPhysicalMassClaimCount=0`.
+
+### Current State
+
+No successful physical W/Z/H prediction is available yet. The direct W/Z bridge remains a branch-local candidate rather than a theorem-promoted source law, and the Higgs route still lacks a solved scalar source/operator. The next required artifact is still new source-lineage evidence satisfying the Phase201/Phase209 W/Z absolute-scale and Higgs scalar-scale contracts.
+
+## 2026-05-17T15:01:36Z - Multiple Point Principle Source Audit
+
+### Scope Increase
+
+- Added a separate audit for the multiple point principle (MPP) / multiple criticality / degenerate-vacua route.
+- Reason: Phase264 already covers Standard Model vacuum criticality, but MPP adds a distinct assumption: Nature chooses couplings so the Higgs potential has degenerate phases, often encoded by high-scale `lambda=0` and `beta_lambda=0`. That is a separate source claim and needed its own gate.
+- Sources used in the audit:
+  - Froggatt and Nielsen, `Dynamical determination of the top quark and Higgs masses in the Standard Model`, arXiv:hep-ph/9607302.
+  - Hamada, Kawai, and Oda, `Multiple-point principle with a scalar singlet extension of the standard model`, PTEP 2017.
+  - Darme, Hambye, and Strumia, `The Multiple Point Principle and Extended Higgs Sectors`, Frontiers in Physics 2019.
+
+### Implementation
+
+- Created `studies/phase275_multiple_point_principle_source_audit_001`.
+- Created `docs/Phases/Implementation/IMPLEMENTATION_P275.md`.
+- Wired Phase275 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 scans so generated diagnostic artifacts do not become false intake candidates.
+
+### What Was Checked
+
+- Whether MPP supplies more than a high-scale assumed boundary condition.
+- Whether the repo contains a GU-local multiple-point principle or degenerate-vacua theorem.
+- Whether the repo contains a GU-local Planck/UV boundary source, quartic-plus-beta source, top/Yukawa/alpha_s source, and MPP RG transport.
+- Whether MPP supplies the downstream GU VEV source, W/Z mass matrix, Higgs scalar source, and observed-field extraction theorem needed to promote physical W/Z/H masses.
+
+### Outcome
+
+- Phase275 terminal status:
+  - `multiple-point-principle-source-audit-external-degenerate-vacua-boundary-not-promotion`.
+- Key Phase275 fields:
+  - `multiplePointPrincipleSourceAuditPassed=true`.
+  - `multiplePointPrincipleLeadPresent=true`.
+  - `degenerateVacuaLeadPresent=true`.
+  - `planckScaleQuarticAndBetaZeroLeadPresent=true`.
+  - `historicTargetPull=1.0888075674099436`.
+  - `laterSmTargetPull=2.526548833400878`.
+  - `multiplePointPrinciplePromotesWzMasses=false`.
+  - `multiplePointPrinciplePromotesHiggsMass=false`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+
+Conclusion: MPP is a serious external degenerate-vacua/criticality lead, but it cannot be promoted here. It is an assumed high-scale principle and still needs GU-local source lineages for the MPP theorem, UV boundary, quartic/beta condition, top/Yukawa/alpha_s inputs, RG/threshold transport, VEV, W/Z mass matrix, Higgs scalar source, and observed-field extraction.
+
+### Validation
+
+- Standalone Phase275 run passed with non-promotional status.
+- Targeted scans passed:
+  - P204: `intakeReadyCandidateCount=0`.
+  - P205: `intakeReadyFindingCount=0`.
+  - P207: `canPromoteHiggsQuarticSelfCouplingSource=false`, `intakeReadyFindingCount=0`.
+- `git diff --check` passed.
+- Full `./scripts/generate_validated_boson_predictions.sh` completed successfully.
+- Full generator preserved the fail-closed result:
+  - P101 terminal status: `internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P101 `objectiveAchieved=false`.
+  - P101 `allKnownBosonValuesDefensible=false`.
+  - P101 `defensibleValueCount=3`.
+  - P202 terminal status: `boson-objective-completion-audit-incomplete`.
+  - P202 `objectiveAchieved=false`.
+  - P202 `checklistPassedCount=68`.
+  - P202 `checklistFailedCount=3`.
+  - Claim integrity verifier: `boson-claim-integrity-verified`.
+  - Claim integrity verifier: `promotedPhysicalMassClaimCount=0`.
+
+### Current State
+
+No successful physical W/Z/H prediction is available yet. MPP joins the external-lead inventory as a nonpromotional high-scale boundary route. The remaining blocker is unchanged: the repo needs new target-independent source-lineage evidence for the W/Z absolute-scale unlock and the Higgs scalar-scale unlock before any correct boson prediction can be claimed.
+
+## 2026-05-17T15:10:58Z - Top Condensation Source Audit
+
+### Scope Increase
+
+- Added a separate audit for top condensation, topcolor, and top-seesaw dynamical electroweak-breaking routes.
+- Reason: Phase270 already covers pNGB composite-Higgs models, but top condensation is a distinct route. It attempts to generate the electroweak scale and a Higgs-like scalar from a top or top-bottom condensate through NJL/four-fermion/topcolor dynamics.
+- Sources used in the audit:
+  - Wells, `The electroweak symmetry breaking Higgs boson in models with top-quark condensation`, arXiv:hep-ph/9612292.
+  - Dobrescu and Hill, `Electroweak Symmetry Breaking via Top Condensation Seesaw`, arXiv:hep-ph/9712319.
+  - Chivukula, Dobrescu, Georgi, and Hill, `Top Quark Seesaw Theory of Electroweak Symmetry Breaking`, arXiv:hep-ph/9809470.
+  - Osipov, Hiller, Blin, Palanca, Moreira, and Sampaio, `Top condensation model: a step towards the correct prediction of the Higgs mass`, arXiv:1906.09579.
+
+### Implementation
+
+- Created `studies/phase276_top_condensation_source_audit_001`.
+- Created `docs/Phases/Implementation/IMPLEMENTATION_P276.md`.
+- Wired Phase276 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 scans so generated diagnostic artifacts do not become false intake candidates.
+
+### What Was Checked
+
+- Whether top condensation supplies a GU-local source rather than an external strong-sector model.
+- Whether the repo contains a GU-local NJL/four-fermion operator, topcolor or equivalent binding source, critical-coupling/gap-equation derivation, compositeness cutoff, top-condensate order parameter, top-seesaw mixing, and RG transport.
+- Whether top condensation supplies the downstream GU VEV source, W/Z mass matrix, composite Higgs scalar source, and observed-field extraction theorem needed to promote physical W/Z/H masses.
+- Whether the simple NJL relation `m_H ~= 2 m_t` closes the observed Higgs mass. It does not.
+
+### Outcome
+
+- Phase276 terminal status:
+  - `top-condensation-source-audit-external-dynamical-breaking-model-not-promotion`.
+- Key Phase276 fields:
+  - `topCondensationSourceAuditPassed=true`.
+  - `topCondensationLeadPresent=true`.
+  - `njlFourFermionLeadPresent=true`.
+  - `compositeTopHiggsLeadPresent=true`.
+  - `topSeesawLeadPresent=true`.
+  - `topcolorLeadPresent=true`.
+  - `simpleNjlCompositeHiggsMassGeV=345.04`.
+  - `simpleNjlCompositeHiggsPull=43.95736360485576`.
+  - `topCondensationPromotesWzMasses=false`.
+  - `topCondensationPromotesHiggsMass=false`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+
+Conclusion: top condensation is a serious dynamical electroweak-breaking lead, but it cannot be promoted here. The minimal NJL Higgs relation badly overpredicts the observed Higgs mass, and modern variants require additional model-specific strong dynamics, topcolor/top-seesaw structure, spectra, gap equations, and RG/threshold machinery not present as GU-local source lineage.
+
+### Validation
+
+- Standalone Phase276 run passed with non-promotional status.
+- Targeted scans passed:
+  - P204: `intakeReadyCandidateCount=0`.
+  - P205: `intakeReadyFindingCount=0`.
+  - P207: `canPromoteHiggsQuarticSelfCouplingSource=false`, `intakeReadyFindingCount=0`.
+- `git diff --check` passed.
+- Full `./scripts/generate_validated_boson_predictions.sh` completed successfully.
+- Full generator preserved the fail-closed result:
+  - P101 terminal status: `internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P101 `objectiveAchieved=false`.
+  - P101 `allKnownBosonValuesDefensible=false`.
+  - P101 `defensibleValueCount=3`.
+  - P202 terminal status: `boson-objective-completion-audit-incomplete`.
+  - P202 `objectiveAchieved=false`.
+  - P202 `checklistPassedCount=69`.
+  - P202 `checklistFailedCount=3`.
+  - Claim integrity verifier: `boson-claim-integrity-verified`.
+  - Claim integrity verifier: `promotedPhysicalMassClaimCount=0`.
+
+### Current State
+
+No successful physical W/Z/H prediction is available yet. Top condensation joins the external-lead inventory as a nonpromotional dynamical-breaking route. The remaining blocker is still the missing target-independent GU source-lineage evidence for W/Z absolute scale and Higgs scalar scale.
+
+## 2026-05-17T17:36:29Z - Finite Unified / Gauge-Yukawa Source Audit
+
+### Scope Increase
+
+- Added a separate audit for finite unified theories, gauge-Yukawa unification, coupling reduction, and all-loop finiteness.
+- Reason: this is distinct from ordinary MSSM/SUSY threshold models and from gauge-Higgs unification. It is a serious high-scale SUSY-GUT route with published Higgs-mass bands near the observed value, so it needed an explicit fail-closed source-lineage audit rather than being left as an untracked external lead.
+- Sources used in the audit:
+  - `https://arxiv.org/abs/1201.5171`.
+  - `https://doi.org/10.3390/sym10030062`.
+  - `https://doi.org/10.1140/epjc/s10052-021-08966-4`.
+
+### Implementation
+
+- Created `studies/phase277_finite_unified_gauge_yukawa_source_audit_001`.
+- Created `docs/Phases/Implementation/IMPLEMENTATION_P277.md`.
+- Wired Phase277 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 scans so generated diagnostic artifacts do not become false intake candidates.
+- Fixed a generator-order issue found by sidecar audit: Phase277 reads Phase220, so `scripts/generate_validated_boson_predictions.sh` now runs Phase220 immediately before Phase277 in both generator passes. Before this fix, a dirty output tree could let Phase277 consume stale Phase220 output.
+
+### What Was Checked
+
+- Whether finite unified / gauge-Yukawa unification supplies a GU-local finite gauge group and N=1 supersymmetry embedding.
+- Whether the repo contains GU-local gauge-Yukawa reduction equations, all-loop finiteness proof, soft-breaking sum rule, heavy SUSY spectrum, gaugino/scalar masses, top/bottom/tau Yukawa sources, thresholds, and RG transport.
+- Whether the route supplies the downstream GU VEV source, W/Z mass matrix, Higgs scalar source, Higgs mass scheme, and observed-field extraction theorem needed to promote physical W/Z/H masses.
+- Whether the published finite-unified Higgs band is numerically compatible with the target. It is, but compatibility alone is not source lineage.
+
+### Outcome
+
+- Phase277 terminal status:
+  - `finite-unified-gauge-yukawa-source-audit-external-susy-gut-boundary-not-promotion`.
+- Key Phase277 fields:
+  - `finiteUnifiedGaugeYukawaSourceAuditPassed=true`.
+  - `finiteUnifiedTheoryLeadPresent=true`.
+  - `gaugeYukawaUnificationLeadPresent=true`.
+  - `reductionOfCouplingsLeadPresent=true`.
+  - `allLoopFinitenessLeadPresent=true`.
+  - `finiteUnifiedHiggsBandContainsTarget=true`.
+  - `finiteUnifiedTheoryPromotesWzMasses=false`.
+  - `finiteUnifiedTheoryPromotesHiggsMass=false`.
+  - `finiteUnifiedTheoryCompletesBosonPredictions=false`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+
+Conclusion: finite unified / gauge-Yukawa unification is a numerically interesting external SUSY-GUT boundary lead, but it cannot be promoted here. The repo lacks the GU-local finite-GUT source lineages, SUSY-breaking and threshold machinery, low-energy transport, VEV source, W/Z mass matrix, Higgs scalar source, and observed-field extraction theorem required to turn the external Higgs-band compatibility into a GU boson-mass prediction.
+
+### Validation
+
+- Standalone Phase277 run passed with non-promotional status.
+- Targeted scans passed:
+  - P204: `intakeReadyCandidateCount=0`.
+  - P205: `intakeReadyFindingCount=0`.
+  - P207: `canPromoteHiggsQuarticSelfCouplingSource=false`, `intakeReadyFindingCount=0`.
+- P101 package rebuilt:
+  - `internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `finiteUnifiedGaugeYukawaSourceAuditPassed=true`.
+  - `finiteUnifiedTheoryPromotesWzMasses=false`.
+  - `finiteUnifiedTheoryPromotesHiggsMass=false`.
+- P202 objective audit rebuilt:
+  - `boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=70`.
+  - `checklistFailedCount=3`.
+- Claim integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `git diff --check` passed.
+- Full `./scripts/generate_validated_boson_predictions.sh` completed successfully after the generator-order fix and preserved the fail-closed result.
+
+### Current State
+
+No successful physical W/Z/H prediction is available yet. The direct W/Z target-independent geometric bridge law remains a stable candidate, but it still lacks theorem/source-lineage backing, raw absolute-scale gate passage, and W/Z particle split. The minimal rank audit still requires two independent source constraints: one for W/Z absolute scale and one for Higgs scalar scale.
+
+## 2026-05-17T17:56:35Z - Relaxion Electroweak-Scale Source Audit
+
+### Scope Increase
+
+- Added a separate audit for relaxion / cosmological relaxation mechanisms.
+- Reason: relaxion models directly target the electroweak-scale hierarchy by dynamically scanning the Higgs mass during early-universe evolution. This is distinct from Coleman-Weinberg dimensional transmutation, neutrino-option threshold generation, and finite-GUT/SUSY boundary routes.
+- Sources used in the audit:
+  - Graham, Kaplan, and Rajendran, `Cosmological Relaxation of the Electroweak Scale`, arXiv:1504.07551.
+  - Matsedonskyi, `Mirror Cosmological Relaxation of the Electroweak Scale`, arXiv:1509.03583.
+  - Ibanez, Montero, Uranga, and Valenzuela, `Relaxion Monodromy and the Weak Gravity Conjecture`, arXiv:1512.00025.
+
+### Implementation
+
+- Created `studies/phase278_relaxion_electroweak_scale_source_audit_001`.
+- Created `docs/Phases/Implementation/IMPLEMENTATION_P278.md`.
+- Wired Phase278 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 scans so generated diagnostic artifacts do not become false intake candidates.
+- Launched sidecar wiring audit `019e370b-0c04-7a03-8f2e-f596d512a496`.
+- Fixed sidecar findings:
+  - P101 now surfaces the full Phase278 boundary/source contract.
+  - P202 and `verify_boson_claim_integrity.sh` now assert the full Phase278 contract.
+  - Phase278 now performs a local relaxion-term scan, excluding generated Phase278 integration/journal artifacts, and requires `localSearchMatchingFileCount=0`.
+  - P207 now explicitly blocks `IMPLEMENTATION_P278.md` as generated diagnostic text.
+  - The final generator tail now rebuilds P101 before P202 so P202 does not audit a stale package.
+
+### What Was Checked
+
+- Whether relaxion literature supplies a GU-local relaxion or axion-like field source.
+- Whether the repo contains GU-local shift-symmetry and explicit-breaking source, scanning potential, slow-roll/inflation history, barrier/backreaction sector, stopping condition, cutoff and field-range source, initial-condition source, and RG transport.
+- Whether the route supplies the downstream GU VEV source, W/Z mass matrix, Higgs scalar source, and observed-field extraction theorem needed to promote physical W/Z/H masses.
+- Whether the repository already contains non-generated relaxion/cosmological-relaxation source artifacts. It does not.
+
+### Outcome
+
+- Phase278 terminal status:
+  - `relaxion-electroweak-scale-source-audit-external-cosmological-selection-not-promotion`.
+- Key Phase278 fields:
+  - `relaxionElectroweakScaleSourceAuditPassed=true`.
+  - `relaxionElectroweakScaleLeadPresent=true`.
+  - `cosmologicalRelaxationLeadPresent=true`.
+  - `higgsMassScanningLeadPresent=true`.
+  - `barrierStoppingLeadPresent=true`.
+  - `relaxionPromotesWzMasses=false`.
+  - `relaxionPromotesHiggsMass=false`.
+  - `relaxionCompletesBosonPredictions=false`.
+  - `localSearchMatchingFileCount=0`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+
+Conclusion: relaxion/cosmological relaxation is a serious electroweak-scale selection lead, but it cannot be promoted here. It requires new fields, cosmological history, scanning and stopping dynamics, barriers/backreaction, cutoff/field-range assumptions, and downstream W/Z/H extraction artifacts that are not present as GU-local source lineage.
+
+### Validation
+
+- Standalone Phase278 run passed with non-promotional status.
+- Targeted scans passed:
+  - P204: `intakeReadyCandidateCount=0`.
+  - P205: `intakeReadyFindingCount=0`.
+  - P207: `canPromoteHiggsQuarticSelfCouplingSource=false`, `intakeReadyFindingCount=0`.
+- P101 package rebuilt:
+  - `internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `relaxionElectroweakScaleSourceAuditPassed=true`.
+  - `relaxionPromotesWzMasses=false`.
+  - `relaxionPromotesHiggsMass=false`.
+- P202 objective audit rebuilt:
+  - `boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=71`.
+  - `checklistFailedCount=3`.
+- Claim integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `git diff --check` passed.
+- Full `./scripts/generate_validated_boson_predictions.sh` completed successfully after hardening and preserved the fail-closed result.
+
+### Current State
+
+No successful physical W/Z/H prediction is available yet. Relaxion joins the external electroweak-scale lead inventory as nonpromotional. The remaining blocker is unchanged: the repo needs a target-independent GU W/Z absolute-scale source and a target-independent GU Higgs scalar-scale source satisfying the Phase201/Phase209/Phase210/Phase213 gates.
+
+## 2026-05-17T18:11:21Z - Technicolor / Walking-Technicolor Electroweak-Scale Source Audit
+
+### Scope Increase
+
+- Added a separate audit for technicolor and walking-technicolor mechanisms.
+- Reason: technicolor is a direct dynamical electroweak-symmetry-breaking route. In external models, a new strong sector and technifermion condensate can provide the Goldstone modes eaten by W and Z, so this is a distinct candidate from composite pNGB Higgs, top condensation, Coleman-Weinberg, relaxion, and finite-GUT routes.
+- Sources used in the audit:
+  - Susskind, `Dynamics of spontaneous symmetry breaking in the Weinberg-Salam theory`, Phys. Rev. D 20, 2619 (1979), DOI `10.1103/PhysRevD.20.2619`.
+  - Hill and Simmons, `Strong Dynamics and Electroweak Symmetry Breaking`, arXiv:hep-ph/0203079.
+  - Lane, `Two Lectures on Technicolor`, arXiv:hep-ph/0202255.
+  - PDG 2025, `Dynamical Electroweak Symmetry Breaking: Implications of the H0`.
+
+### Research Notes
+
+- The latest local completion-revision audit remains non-promotional: Phase267 reports no direct W/Z theorem, no observed-field extraction theorem, no quantitative mass-scale source, and no solved Higgs scalar source.
+- A local repository search for `technicolor`, `technicolour`, `walking technicolor`, `technifermion`, `technidilaton`, `extended technicolor`, `dynamical electroweak symmetry breaking`, and `strong electroweak` found no pre-existing GU-local technicolor source artifacts.
+- The PDG review records the right external physics structure: dynamical EWSB breaks electroweak symmetry through a composite operator in a strongly coupled extension, identifies massive weak-boson longitudinal components with composite Nambu-Goldstone bosons, and notes the need to accommodate a 125 GeV scalar. This is useful mechanism context, not GU source lineage.
+
+### Implementation
+
+- Created `studies/phase279_technicolor_walking_electroweak_scale_source_audit_001`.
+- Created `docs/Phases/Implementation/IMPLEMENTATION_P279.md`.
+- Wired Phase279 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 scans so generated diagnostic artifacts do not become false intake candidates.
+- Launched sidecar wiring audit `019e3718-009e-7b81-987c-67fadc38582c`.
+
+### What Was Checked
+
+- Whether technicolor/walking-technicolor literature supplies a GU-local new strong gauge group, technifermion representation, electroweak embedding, condensate order parameter, decay constant or VEV source, vacuum alignment/custodial closure, walking anomalous dimension, ETC/flavor source, precision-electroweak constraint handling, and composite scalar profile.
+- Whether it supplies downstream GU low-energy transport, W/Z mass matrix, Higgs scalar source, and observed-field extraction artifacts needed to promote physical W/Z/H masses.
+- Whether the repository already contains non-generated technicolor source artifacts. It does not.
+
+### Outcome
+
+- Phase279 terminal status:
+  - `technicolor-walking-electroweak-scale-source-audit-external-strong-sector-not-promotion`.
+- Key Phase279 fields:
+  - `technicolorWalkingElectroweakScaleSourceAuditPassed=true`.
+  - `technicolorEwsbLeadPresent=true`.
+  - `walkingTechnicolorLeadPresent=true`.
+  - `technifermionCondensateLeadPresent=true`.
+  - `compositeHiggsOrTechnidilatonLeadPresent=true`.
+  - `technicolorPromotesWzMasses=false`.
+  - `technicolorPromotesHiggsMass=false`.
+  - `technicolorCompletesBosonPredictions=false`.
+  - `localSearchMatchingFileCount=0`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+
+Conclusion: technicolor/walking technicolor is a serious external strong-EWSB lead, but it cannot be promoted here. It requires new GU-local strong-sector and composite-scalar source lineage plus observed-field extraction artifacts that are absent.
+
+### Validation
+
+- Standalone Phase279 run passed with non-promotional status.
+- Targeted scans passed:
+  - P204: `intakeReadyCandidateCount=0`.
+  - P205: `intakeReadyFindingCount=0`.
+  - P207: `canPromoteHiggsQuarticSelfCouplingSource=false`, `intakeReadyFindingCount=0`.
+- P101 package rebuilt:
+  - `internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `technicolorWalkingElectroweakScaleSourceAuditPassed=true`.
+  - `technicolorPromotesWzMasses=false`.
+  - `technicolorPromotesHiggsMass=false`.
+- P202 objective audit rebuilt:
+  - `boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=72`.
+  - `checklistFailedCount=3`.
+- Claim integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Full `./scripts/generate_validated_boson_predictions.sh` completed successfully and preserved the fail-closed result.
+
+### Current State
+
+No successful physical W/Z/H prediction is available yet. Technicolor joins the external electroweak-scale lead inventory as nonpromotional. The remaining blocker is unchanged: the repo needs a target-independent GU W/Z absolute-scale source and a target-independent GU Higgs scalar-scale source satisfying the Phase201/Phase209/Phase210/Phase213 gates.
+
+## 2026-05-17T14:46:18-04:00 - Phase280 Direct Bridge Analytic Variation Upgrade Audit
+
+### Scope Increase
+
+- Investigated whether the W/Z direct target-independent geometric bridge-source law from P190/P191 could be repaired by replacing the finite-difference bridge matrix element with an analytic Dirac variation.
+- This was prompted by the need to determine whether the current direct W/Z bridge could support a successful physical prediction.
+- Added a focused Phase280 audit rather than promoting the bridge, because P190/P191 were already numerically stable but not source-lineage complete.
+- Attempted to launch sidecar agent `019e3729-55a8-7033-aba3-00d7d9133555` for independent fixing/audit work. It failed immediately due to usage limits, so the diagnosis and implementation were completed locally.
+
+### What Was Tried
+
+- Replayed P190 candidate `candidate-5` using the analytic variation formula available from P120-style Dirac-operator variation data.
+- Compared three matrix-element paths:
+  - The persisted P190 finite-difference variation matrix.
+  - A branch-local analytic replay using each background's own contributing mode.
+  - A registry-representative analytic replay using the candidate's first contributing mode for every background.
+- Audited whether analytic replay could create a new source row, pass the raw matrix-element target gate, satisfy sibling-background stability, claim the missing theorem, or supply the W/Z particle split.
+- Traced the implementation lineage for the stable P190 finite candidate.
+
+### Key Finding
+
+- P190's stable finite-difference candidate is stable because the extraction path uses a single registry representative perturbation for every background:
+  - `representativeModeId=bg-phase12-bg-a-20260315212202-mode-5`.
+- For the bg-b background, that representative mode is not branch-local. The branch-local contributing bg-b mode is different.
+- The persisted finite variation matches the registry-representative analytic replay almost exactly, not the branch-local analytic replay.
+- Therefore, relabeling the finite-difference bridge as an analytic source would be a promotion error. The only stable row is tied to a cross-background representative-mode reuse, not to a validated target-independent branch-local source law.
+
+### Implementation
+
+- Created `studies/phase280_direct_bridge_analytic_variation_upgrade_audit_001`.
+- Created `docs/Phases/Implementation/IMPLEMENTATION_P280.md`.
+- Wired Phase280 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 scans so generated diagnostic artifacts do not become false source-lineage candidates.
+- Added integrity checks that require the audit to remain fail-closed:
+  - P190 finite variation must match the registry-representative analytic replay.
+  - P190 finite variation must not match the branch-local analytic replay.
+  - Branch-local analytic replay must not pass stability/raw-gate promotion.
+  - No theorem or W/Z split may be claimed from this route.
+
+### Outcome
+
+- Phase280 terminal status:
+  - `direct-bridge-analytic-variation-upgrade-audit-no-repair`.
+- Key Phase280 fields:
+  - `directBridgeAnalyticVariationUpgradeAuditPassed=true`.
+  - `representativeModeIsBranchLocalForAllBackgrounds=false`.
+  - `representativeModeBackgroundMismatchCount=1`.
+  - `p190FiniteStabilityPassed=true`.
+  - `p120AnalyticVariationPromotable=true`.
+  - `analyticVariationMatchesP190FiniteDifference=false`.
+  - `finiteVariationMatchesRegistryRepresentativeMode=true`.
+  - `p190FiniteVariationUsesRegistryRepresentativeMode=true`.
+  - `branchLocalAnalyticRelativeSpread=0.46107786593154654`.
+  - `branchLocalAnalyticStabilityPassed=false`.
+  - `representativeAnalyticRelativeSpread=0.0028923804041985786`.
+  - `representativeAnalyticStabilityPassed=true`.
+  - `analyticRawToTargetRatio=0.004382243069487422`.
+  - `representativeAnalyticRawToTargetRatio=0.005384733362094529`.
+  - `finiteRawToTargetRatio=0.005384733362088601`.
+  - `analyticRawGatePassed=false`.
+  - `representativeAnalyticRawGatePassed=false`.
+  - `finiteRawGatePassed=false`.
+  - `theoremClaimed=false`.
+  - `wZParticleSplitPresent=false`.
+  - `canRepairDirectBridgeWithAnalyticVariation=false`.
+  - `currentBlockerEvidence.phase213.wzMissingFieldCount=15`.
+  - `currentBlockerEvidence.phase213.higgsMissingFieldCount=14`.
+
+Conclusion: this repair route failed. The correct branch-local analytic replay removes the apparent sibling stability and still fails the raw gate, theorem, and W/Z split requirements. The direct W/Z bridge cannot be promoted from current P190/P191 artifacts.
+
+### Validation
+
+- Standalone Phase280 run passed with no-repair status.
+- P101 package rebuilt:
+  - `internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `directBridgeAnalyticVariationUpgradeAuditPassed=true`.
+  - `p190FiniteVariationUsesRegistryRepresentativeMode=true`.
+  - `branchLocalAnalyticStabilityPassed=false`.
+  - `analyticRawGatePassed=false`.
+  - `canRepairDirectBridgeWithAnalyticVariation=false`.
+- P202 objective audit rebuilt:
+  - `boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=73`.
+  - `checklistFailedCount=3`.
+- Targeted scans passed:
+  - P204: `intakeReadyCandidateCount=0`.
+  - P205: `intakeReadyFindingCount=0`.
+  - P207: `canPromoteHiggsQuarticSelfCouplingSource=false`, `intakeReadyFindingCount=0`.
+- Claim integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Full `./scripts/generate_validated_boson_predictions.sh` completed successfully after escalation was required for sandboxed dotnet build access.
+- `git diff --check` passed.
+- Trailing-whitespace scan over touched files found no matches.
+
+### Current State
+
+No successful physical W/Z/H prediction is available. Phase280 improves the diagnostic boundary: the P190/P191 direct bridge cannot be repaired by analytic variation substitution, and any future W/Z direct bridge must supply a branch-local, target-independent source law with theorem support and W/Z particle split, not merely a stable representative-mode replay.
+
+## 2026-05-17T14:57:11-04:00 - Phase281 Geometric Refractive Unification Source Audit
+
+### Scope Increase
+
+- Investigated a public GU/RVG source lead found during renewed web research:
+  - Zenodo v5 `The Geometric-Refractive Unification: A Definitive Synthesis of Geometric Unity and Refractive Vacuum Gravity`.
+  - Zenodo v8 `The Holographic Geometric-Refractive Unification: A Definitive Synthesis of the 14D Observerse, the 95.4 GeV Dilaton Resonance, and Advanced Metric Engineering`.
+- Initial inspection showed this was not new evidence beyond the repository's existing Phase243 public web source delta: Phase243 had already reviewed the latest found GU/RVG v8 source and marked it non-promotional.
+- Created Phase281 as a source-specific guard around that Phase243 GU/RVG result, not as a duplicate fresh-source promotion attempt.
+
+### Research Notes
+
+- Official GU material still gives architectural pointers, not physical W/Z/H source rows:
+  - The 2013 Oxford lecture transcript discusses augmented torsion, a VEV induced by scalar curvature, Y-to-X pullback, and the Higgs/Yang-Mills sector as part of a Dirac-square picture.
+  - The 2021 GU working draft appendix maps the Higgs potential to an Upsilon inner product and lists weak isospin/hypercharge locations, but does not provide checked W/Z/H mass rows or normalization.
+- The GU/RVG v8 Zenodo record claims a holographic GU/RVG synthesis involving the 14D Observerse, 95.4 GeV dilaton resonance, anomaly cancellation, metric engineering, MADA, and running-vacuum ideas.
+- None of those public claims fill the repository's Phase201/209/210/213 fields for W/Z/H physical mass prediction.
+
+### Implementation
+
+- Created `studies/phase281_geometric_refractive_unification_source_audit_001`.
+- Created `docs/Phases/Implementation/IMPLEMENTATION_P281.md`.
+- Wired Phase281 into:
+  - `scripts/generate_validated_boson_predictions.sh`.
+  - `scripts/verify_boson_claim_integrity.sh`.
+  - P101 boson prediction package.
+  - P202 objective completion audit.
+  - P204/P205/P207 scans so generated Phase281 diagnostic artifacts do not become false source-lineage candidates.
+
+### What Was Checked
+
+- Whether Phase243 already covered the GU/RVG source and latest version.
+- Whether the GU/RVG source supplies:
+  - GU-local W/Z theorem.
+  - Separate W and Z source rows.
+  - Raw-amplitude and common-bridge gates.
+  - Target-independent VEV or W/Z mass-matrix source.
+  - Observed-field extraction.
+  - Higgs scalar source/operator, identity envelope, observed-Higgs massive scalar profile, or self-coupling source.
+- Whether the repository contains local GU/RVG, refractive-vacuum, trace-anomaly, 95 GeV dilaton, ADPG, MADA, Hiperco, or Minnealloy source artifacts outside generated diagnostics.
+
+### Outcome
+
+- Phase281 terminal status:
+  - `geometric-refractive-unification-source-audit-external-eft-not-promotion`.
+- Key Phase281 fields:
+  - `geometricRefractiveUnificationSourceAuditPassed=true`.
+  - `guRvgSourceLeadPresent=true`.
+  - `phase243PriorGuRvgCoverageConfirmed=true`.
+  - `guRvgSourceAlreadyCoveredByPhase243=true`.
+  - `guRvgLatestReviewedVersion=v8`.
+  - `guRvgClaimsGuLowEnergyEftSynthesis=true`.
+  - `traceAnomalyVacuumSourcingLeadPresent=true`.
+  - `ninetyFiveGevDilatonResonanceLeadPresent=true`.
+  - `guRvgPromotesWzMasses=false`.
+  - `guRvgPromotesHiggsMass=false`.
+  - `guRvgCompletesBosonPredictions=false`.
+  - `localSearchMatchingFileCount=0`.
+  - `currentBlockerEvidence.phase213.wzMissingFieldCount=15`.
+  - `currentBlockerEvidence.phase213.higgsMissingFieldCount=14`.
+
+Conclusion: the GU/RVG public source is a GU-adjacent external EFT/metric-engineering lead, not a W/Z/H source-lineage artifact. It does not repair the missing W/Z theorem/source rows or the missing observed-Higgs scalar source/operator.
+
+### Validation
+
+- Standalone Phase281 run passed with non-promotional status.
+- P101 package rebuilt:
+  - `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 objective audit rebuilt:
+  - `boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=74`.
+  - `checklistFailedCount=3`.
+- Targeted scans passed:
+  - P204: `intakeReadyCandidateCount=0`.
+  - P205: `intakeReadyFindingCount=0`.
+  - P207: `canPromoteHiggsQuarticSelfCouplingSource=false`, `intakeReadyFindingCount=0`.
+- Claim integrity verifier passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+
+### Current State
+
+No successful physical W/Z/H prediction is available. Phase281 confirms the GU/RVG public lead is already covered by Phase243 and remains non-promotional. The remaining blocker is unchanged: the repository needs target-independent GU W/Z absolute-scale/source-row evidence and target-independent GU Higgs scalar-source evidence satisfying the existing intake and promotion gates.
+
+## 2026-05-17T15:06:16-04:00 - Branch-Local Coupling Extraction Repair
+
+### Trigger
+
+Phase280 showed a real implementation issue in the finite-difference coupling extraction path: a boson candidate can aggregate contributing modes from multiple fermion backgrounds, but `apps/Gu.Cli/Program.cs` selected the first contributing mode as a representative mode. For background B, candidate 5 therefore reused the background A mode when building its variation bundle.
+
+This did not prove a physical W/Z/H prediction, but it did mean the generated finite-difference evidence was not a valid branch-local replay. That had to be fixed before any later analytic-variation or bridge-source test could be trusted.
+
+An explorer agent was launched to review the change, but the agent run failed because the session hit its usage limit. The repair and validation below were completed locally.
+
+### Implementation
+
+- Updated `ExtractCouplings` in `apps/Gu.Cli/Program.cs`.
+- Replaced first-mode representative selection with a branch-local lookup:
+  - Select contributing mode IDs that start with the active fermion background ID.
+  - Require exactly one branch-local mode for the current fermion background.
+  - Fail closed with a blocked variation when zero or multiple branch-local modes are found.
+- Kept candidate-level coupling grouping unchanged by still passing `candidate.CandidateId` to the coupling engine.
+- Wrote variation bundles using the actual branch-local perturbation mode ID in `DiracVariationBundle.BosonModeId`.
+- Added diagnostic notes documenting the branch-local mode requirement and the selected branch-local contributing mode.
+
+### Validation
+
+- `dotnet build apps/Gu.Cli/Gu.Cli.csproj` passed with zero warnings and zero errors.
+- On an isolated copy of `studies/phase12_joined_calculation_001/output/background_family`, reran coupling extraction for background B.
+- Regenerated `variation-bg-phase12-bg-b-20260315212202-candidate-5.json` selected:
+  - `bosonModeId=bg-phase12-bg-b-20260315212202-mode-11`.
+  - `fermionBackgroundId=bg-phase12-bg-b-20260315212202`.
+  - `blocked=false`.
+- Candidate 5 contributing modes were:
+  - `bg-phase12-bg-a-20260315212202-mode-5`.
+  - `bg-phase12-bg-b-20260315212202-mode-11`.
+- The regenerated background B candidate 5 matrix materially differed from the stale representative-mode artifact:
+  - `maxAbsDelta=2.3757400864840568`.
+  - `rmsDelta=0.04799740315886565`.
+  - `n=209952`.
+- `dotnet test GeometricUnity.slnx` passed.
+- `git diff --check` passed after this final journal update.
+
+### Outcome
+
+The extractor now enforces direct branch-local boson perturbations for finite-difference coupling variations. This repairs the stale representative-mode failure that Phase280 exposed.
+
+This is not yet a successful physical W/Z/H prediction. The current generated prediction artifacts still need to be regenerated and the promotion gates rerun with the repaired extractor before this fix can be evaluated as a prediction path. Until that happens, the repository remains fail-closed with no promoted W/Z/H physical mass claim.
+
+## 2026-05-17T15:22:09-04:00 - Phase12 Regeneration and Corrected Fail-Closed Gates
+
+### Trigger
+
+The first full boson generation rerun after the extractor repair still reported Phase280 representative-mode evidence. Inspection showed that `scripts/generate_validated_boson_predictions.sh` consumes Phase12 coupling artifacts but does not regenerate them. The checked-in Phase12 background B candidate 5 variation still had `bosonModeId=candidate-5`, so downstream studies were reading stale finite-difference matrices.
+
+### Implementation
+
+- Regenerated Phase12 coupling extraction in place for both fermion backgrounds:
+  - `bg-phase12-bg-a-20260315212202`.
+  - `bg-phase12-bg-b-20260315212202`.
+- Confirmed candidate 5 now uses branch-local perturbation mode IDs:
+  - background A: `bg-phase12-bg-a-20260315212202-mode-5`.
+  - background B: `bg-phase12-bg-b-20260315212202-mode-11`.
+- Updated downstream audits that had encoded the old representative-mode bug as an expected invariant:
+  - P217 independent source review.
+  - P247 direct bridge repairability audit.
+  - P267 completion-revision direct bridge source audit.
+  - P280 direct bridge analytic-variation upgrade audit.
+  - `scripts/verify_boson_claim_integrity.sh`.
+
+### Corrected Physics/Math Outcome
+
+After regenerating the Phase12 matrices, P190 changed materially:
+
+- P190 terminal status:
+  - `wz-direct-target-independent-bridge-source-law-candidate-not-sibling-stable`.
+- P190 key fields:
+  - `candidateLawConstructed=true`.
+  - `stableCandidateCount=0`.
+  - `bestCandidate=candidate-2`.
+  - `bestRelativeSpread=0.05107617923240876`.
+- P191 terminal status:
+  - `wz-direct-bridge-prediction-blocked-no-stable-candidate`.
+  - `canCompleteSuccessfulPrediction=false`.
+- P280 terminal status:
+  - `direct-bridge-analytic-variation-upgrade-audit-branch-local-no-repair`.
+  - `analyticVariationMatchesP190FiniteDifference=true`.
+  - `branchLocalFiniteVariationReplayed=true`.
+  - `p190StableCandidateCount=0`.
+  - `p190FiniteStabilityPassed=false`.
+
+Conclusion: the implementation bug had created an overstated stable direct-bridge candidate. Once the finite-difference variation is branch-local, the direct W/Z bridge route is weaker, not stronger: it no longer has a sibling-stable candidate, still fails the raw gate, and still lacks theorem promotion and separate W/Z source rows.
+
+### Validation
+
+- Reran `./scripts/generate_validated_boson_predictions.sh` after regenerating Phase12 couplings and updating the gates.
+- Final verifier result:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- P202 objective audit:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=73`.
+  - `checklistFailedCount=4`.
+- `dotnet test GeometricUnity.slnx` initially hit one timing-sensitive failure in `Gu.Phase4.CudaAcceleration.Tests.DiracParityCheckerTests.DiracBenchmarkRunner_SpeedupRatio_NearOneForStub`.
+- The exact failing test passed on immediate targeted rerun.
+- A second full `dotnet test GeometricUnity.slnx` passed.
+
+### Current State
+
+The extractor defect is fixed and the generated evidence now reflects branch-local finite-difference perturbations. This does not produce a successful W/Z/H physical prediction. It removes the prior near-miss stability signal and reinforces the current blocker: new target-independent source-lineage evidence is still required for W/Z absolute scale, W/Z particle split, and Higgs scalar source closure.
+
+## 2026-05-17T15:31:46-04:00 - Final Audit Alignment and Timing Test Repair
+
+### Trigger
+
+After the branch-local replay, a few audit and package surfaces still reflected the old representative-mode interpretation. The objective audit also temporarily reported four failures because its Phase280 checklist condition still expected the stale invariant. Separately, the full solution test suite exposed a timing-sensitive CUDA benchmark assertion where a sub-resolution CPU timing could round to zero and make the stub speedup ratio report as zero.
+
+### Implementation
+
+- Updated P191 and P206 decision text so the direct W/Z bridge route now reports the corrected state: no sibling-stable P190 candidate after branch-local finite-difference replay.
+- Updated P202 so the Phase280 completion checklist accepts the corrected branch-local fail-closed invariant.
+- Updated P101 so the prediction package exposes `branchLocalFiniteVariationReplayed` in the Phase280 summary/package fields.
+- Updated `DiracBenchmarkArtifact.SpeedupRatio` to return the neutral stub ratio unless both CPU and GPU timings are above the numeric noise floor.
+
+### Validation
+
+- Reran `./scripts/generate_validated_boson_predictions.sh`; it passed.
+- Final claim integrity verifier output:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- P202 objective audit now reports:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=74`.
+  - `checklistFailedCount=3`.
+- Remaining failed P202 items:
+  - `all-known-boson-values-defensible`.
+  - `missing-source-contracts-filled`.
+  - `top-level-package-complete`.
+- `dotnet test GeometricUnity.slnx` passed.
+
+### Current State
+
+The repo now cleanly reflects the corrected branch-local finite-difference evidence and the direct bridge route remains non-promotional. There is still no successful physical W/Z/H prediction. The remaining blockers are source-lineage evidence gaps, not a local stale-mode extraction bug.
+
+## 2026-05-17T15:45:30-04:00 - Phase282 Branch-Local Direct Invariant Census
+
+### Trigger
+
+After the branch-local replay, P190 only tested one direct matrix-element law on the P172-selected W/Z-like pair. The next non-duplicative local check was to ask whether the repaired Phase12 branch-local matrices contain some other target-independent invariant that could have been missed.
+
+### Implementation
+
+- Added Phase282: `studies/phase282_branch_local_direct_invariant_census_001`.
+- The census searches three invariant families without using W/Z target values for search ordering or sibling-stability decisions:
+  - single-candidate branch-local finite-difference matrix-element magnitude;
+  - single-candidate contribution share inside the full branch-local variation subspace;
+  - full branch-local variation-subspace root-sum-square norm.
+- Target-implied raw amplitude is reported only as a post-construction comparison gate.
+- Wired Phase282 into:
+  - `scripts/generate_validated_boson_predictions.sh`;
+  - `scripts/verify_boson_claim_integrity.sh`;
+  - P101 package output;
+  - P202 objective checklist;
+  - `docs/Phases/Implementation/IMPLEMENTATION_P282.md`.
+
+### Result
+
+- `terminalStatus=branch-local-direct-invariant-census-no-promotable-local-source`.
+- `branchLocalInvariantCensusPassed=true`.
+- `targetObservablesUsedForSearch=false`.
+- `singleCandidateAssessmentCount=1584`.
+- `stableSingleCandidateMagnitudeCount=66`.
+- `stableSubspacePairCount=8`.
+- `posthocRawGatePassingSingleCandidateCount=0`.
+- `posthocRawGatePassingSubspaceCount=0`.
+- `newLocalDirectInvariantSourceFound=false`.
+
+Interpretation: the repaired branch-local matrices do contain some sibling-stable small numerical invariants, but none clear the post-construction raw-scale gate and none supply a theorem, W/Z particle split, or source-lineage rows. This narrows the direct local route further: the blocker is not just P190's specific candidate law.
+
+### Validation
+
+- `dotnet run --project studies/phase282_branch_local_direct_invariant_census_001/Phase282BranchLocalDirectInvariantCensus.csproj` passed.
+- `dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj` passed.
+- `dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj` passed:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=75`.
+  - `checklistFailedCount=3`.
+- `./scripts/verify_boson_claim_integrity.sh` passed.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed and ended with:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+
+### Current State
+
+No successful physical W/Z/H prediction is available. The current local direct-invariant family is exhausted under the repository gates. The remaining required artifacts are still a derivation-backed W/Z absolute source lineage and a solved Higgs scalar-source lineage.
+
+## 2026-05-17T15:54:18-04:00 - Legacy Electroweak Bridge Source Survivability Audit
+
+### Trigger
+
+After Phase282, the remaining plausible local question was not another broad search. The low-numbered electroweak bridge artifacts still look superficially promising because Phase68 promotes a weak-coupling candidate and Phase69 derives an electroweak mass-generation relation. I rechecked those artifacts against the later source-lineage and branch-local gates to determine whether they can actually be used as the requested W/Z direct target-independent bridge-source law.
+
+An explorer agent was launched for this source-law check, but it failed immediately due to the session usage limit. The research and implementation were completed locally.
+
+### Research Findings
+
+- Phase53 blocks a GU-derived absolute GeV scale and rejects W/Z target-fit scales.
+- Phase54 ingests the Fermi-derived electroweak VEV, but its internal bridge remains blocked.
+- Phase58 has a calibration builder, but it still requires a real validated bridge record.
+- Phase68/69/70 provide useful relation context:
+  - Phase68 promotes `g=0.5656854249492381` from `phase65-study-artifact`.
+  - Phase69 derives the electroweak mass-generation relation.
+  - Phase70 uses the Phase54 external Fermi-derived VEV as the scalar order parameter.
+- Later audits prevent promotion:
+  - Phase197 shows this weak-coupling relation fails W/Z physical comparison.
+  - Phase198 marks the Phase65/68 lineage as superseded for physical W/Z and the admissible replay lineage as failed.
+  - Phase229 certifies the VEV is external input, not a GU vacuum/VEV source.
+  - Phase273 certifies Phase12 coupling atlases are finite-difference proxies and not production analytic weak-current source evidence.
+  - Phase282 certifies repaired branch-local direct invariants do not pass the post-construction raw gate.
+- The public GU draft and local completion revisions still provide structural aims for Yang-Mills/Higgs recovery, not a finished particle-specific W/Z/H source law.
+
+### Implementation
+
+- Added Phase283: `studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001`.
+- The audit consolidates Phase53/54/58/60/61/64/68/69/70 with Phase194, Phase197, Phase198, Phase213, Phase229, Phase245, Phase273, and Phase282.
+- Wired Phase283 into:
+  - `scripts/generate_validated_boson_predictions.sh`;
+  - `scripts/verify_boson_claim_integrity.sh`;
+  - P101 prediction package output;
+  - P202 objective checklist;
+  - `docs/Phases/Implementation/IMPLEMENTATION_P283.md`.
+
+### Result
+
+- `terminalStatus=legacy-electroweak-bridge-source-survivability-audit-no-promotable-source`.
+- `legacyBridgeSourceSurvivabilityAuditPassed=true`.
+- `legacyBridgeRoutePromotableForBosonMasses=false`.
+- `wZAbsoluteScaleSourceLawFound=false`.
+- `higgsScalarScaleSourceLawFound=false`.
+- `sourceContractsFilled=false`.
+- The audit records that Phase68/69/70 survive only as relation/context artifacts, not as promotable W/Z/H mass-prediction source law.
+
+### Validation
+
+- `dotnet run --project studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/Phase283LegacyElectroweakBridgeSourceSurvivabilityAudit.csproj` passed.
+- `dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj` passed.
+- `dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj` passed:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=76`.
+  - `checklistFailedCount=3`.
+- `./scripts/verify_boson_claim_integrity.sh` passed:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed and ended with the same integrity-verifier state:
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `git diff --check` passed.
+- `dotnet test GeometricUnity.slnx` passed.
+
+### Current State
+
+No successful physical W/Z/H prediction is available. The old weak-coupling/mass-generation bridge is not an implementation fix: it is a non-promotional relation route under the later evidence gates. The remaining required artifacts are unchanged: a target-independent W/Z absolute-scale source law for `log(v g)` or independent GU rows for `v` and `g`, and a target-independent Higgs scalar-scale source law for `log(v sqrt(lambda))` or independent GU rows for `v` and `lambda`.
+
+## 2026-05-17T16:11:38-04:00 - Predicted W/Z Ratio Plus External Alpha/GF Closure Diagnostic
+
+### Trigger
+
+After the legacy bridge route failed as a promotable source law, I checked one remaining narrow possibility: whether the repository's promoted, target-independent W/Z ratio numerically closes the absolute W and Z masses if it is combined with external electroweak inputs that are disjoint from W/Z mass targets.
+
+This is not a claim route by itself. The purpose was to distinguish a numerical blockage from an admissibility/source-lineage blockage.
+
+### Research Findings
+
+- Phase203 provides a promoted W/Z ratio:
+  - `mW/mZ = 0.8796910570948282 +/- 0.001526619561417894`.
+- Phase54 provides the external Fermi-derived electroweak VEV:
+  - `v = 246.21965079413738 GeV`.
+  - The same artifact marks the internal GU bridge as blocked.
+- Phase261 already records external electroweak alpha inputs:
+  - `alpha(0)^-1 = 137.035999084`.
+  - `alpha(MZ)^-1 = 127.95`.
+- Phase214, Phase224, Phase236, Phase245, and Phase283 still block promotion from external electroweak inputs, missing parameter/source closure, missing low-energy RG transport, unfilled unlock rows, and non-promotional legacy bridge lineage.
+
+### Implementation
+
+- Added Phase284: `studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001`.
+- The diagnostic computes:
+  - `sin^2(theta) = 1 - (mW/mZ)^2` from the promoted ratio.
+  - `e = sqrt(4 pi alpha)`.
+  - `g = e / sin(theta)`.
+  - `mW = g v / 2`.
+  - `mZ = mW / (mW/mZ)`.
+- It evaluates both `alpha(0)` and `alpha(MZ)`, compares only after construction, and marks all rows non-promotional.
+- Wired Phase284 into:
+  - `scripts/generate_validated_boson_predictions.sh`;
+  - `scripts/verify_boson_claim_integrity.sh`;
+  - P101 prediction package output;
+  - P202 objective checklist;
+  - `docs/Phases/Implementation/IMPLEMENTATION_P284.md`.
+- Updated generated-source scanners P204, P205, and P207 so the new Phase282-284 audit artifacts are not mistaken for source evidence in future scans.
+
+### Result
+
+- `terminalStatus=predicted-ratio-alpha-gf-external-closure-diagnostic-target-pass-not-promotable`.
+- `alpha(0)` row fails W/Z comparison:
+  - `W=78.39495571365532 GeV`, pull `4.238956915605881`.
+  - `Z=89.11646319624296 GeV`, pull `5.530436870297213`.
+- `alpha(MZ)` row passes the current broad W/Z sigma gate:
+  - `W=81.13071608600772 GeV`, pull `1.5799805682306582`.
+  - `Z=92.2263736020475 GeV`, pull `2.6786973302270867`.
+- This is a numerical external-input closure only:
+  - `externalInputsUsed=true`.
+  - `targetMassesUsedForConstruction=false`.
+  - `completeGuSourceLineagePresent=false`.
+  - `promotesBosonMasses=false`.
+  - `sourceContractsFilled=false`.
+  - `newSourceEvidenceStillRequired=true`.
+
+### Validation
+
+- `dotnet run --project studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/Phase284PredictedRatioAlphaGfExternalClosureDiagnostic.csproj` passed.
+- `dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj` passed.
+- `dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj` passed:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=77`.
+  - `checklistFailedCount=3`.
+- `./scripts/verify_boson_claim_integrity.sh` passed:
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+
+### Full Validation
+
+- Full `./scripts/generate_validated_boson_predictions.sh` passed after Phase296 was wired into the repeated boson audit chain and ended with:
+  - `source-lineage-contract-field-candidate-scan-no-intake-ready-artifact`.
+  - `sourceLineageContractFieldCandidateScanPassed=true`.
+  - `contractFieldCount=29`.
+  - `wzContractFieldCount=15`.
+  - `higgsContractFieldCount=14`.
+  - `fieldsWithCandidateLineCount=29`.
+  - `fieldsWithIntakeReadyCandidateCount=0`.
+  - `intakeReadySourceLineageFieldCandidateCount=0`.
+  - `anySourceLineageCandidateFillsContract=false`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=89`.
+  - `checklistFailedCount=3`.
+  - `boson-claim-integrity-verified`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `dotnet test GeometricUnity.slnx` passed.
+- `git diff --check` passed after this final journal update.
+
+## 2026-05-17T23:59:44-04:00 - Identity-Split Branch/Source Normalization Audit
+
+### Trigger
+
+Phase302 found a concrete target-independent raw/common near-pass: source-mode vector length `156` with W particle multiplier `8/3` and Z multiplier `1`. That lead passed mean raw/common gates but failed branch stability and row-level sidecars. I added Phase303 to test whether the remaining failure could be repaired by a simple branch/source descriptor normalizer derived from the source-mode rows.
+
+### Research/Diagnosis
+
+- Rechecked the Phase299 identity-split rows behind the Phase302 lead.
+- Under the Phase302 best scales, the W rows split badly:
+  - W bg-a scaled raw-to-target ratio about `1.6468`.
+  - W bg-b scaled raw-to-target ratio about `0.3841`.
+- Z stayed much closer:
+  - Z bg-a about `0.9645`.
+  - Z bg-b about `1.0150`.
+- Source-mode descriptor inspection showed inconsistent dominant axes:
+  - W bg-a dominant axis `1`.
+  - W bg-b dominant axis `0`.
+  - Z bg-a dominant axis `0`.
+  - Z bg-b dominant axis `2`.
+- This makes the remaining blocker look like a missing electroweak identity/mixing sidecar, not a missing scalar rescale.
+
+### Implementation
+
+- Added Phase303: `studies/phase303_identity_split_branch_source_normalization_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P303.md`.
+- The audit reads P24, P26, P213, P299, and P302.
+- It replays the Phase302 best candidate as the baseline and evaluates target-independent branch/source descriptor normalizers:
+  - `mode-l1`;
+  - `mode-linf`;
+  - `triple-l1`;
+  - `triple-linf`;
+  - `dominant-axis-l2`;
+  - `dominant-axis-energy`;
+  - `residual-norm`.
+- For each descriptor it tests both `value-over-particle-mean` and `particle-mean-over-value`.
+- It records row-level raw gates, particle branch spreads, common mean gates, and source-contract promotion gates.
+- Wired Phase303 into:
+  - `scripts/generate_validated_boson_predictions.sh`;
+  - `scripts/verify_boson_claim_integrity.sh`;
+  - P101 prediction package output;
+  - P202 objective checklist;
+  - P204/P205/P207 scanner guards.
+
+### Result
+
+- `terminalStatus=identity-split-branch-source-normalization-audit-no-stable-source-normalizer`.
+- `identitySplitBranchSourceNormalizationAuditPassed=true`.
+- `p302BestCandidateId=source-mode-vector-length::adjoint-casimir-over-fundamental-casimir`.
+- `p302BestRawAndCommonPassed=true`.
+- `p302BestStableRawCommonPassed=false`.
+- `rowCount=4`.
+- `descriptorDefinitionCount=7`.
+- `candidateAssessmentCount=15`.
+- `allRowsRawPassingCandidateCount=0`.
+- `stableCandidateCount=0`.
+- `stableRawCommonAllRowsCandidateCount=0`.
+- Baseline Phase302 best candidate:
+  - `minRowScaledRawToTargetRatio=0.38413709823156705`.
+  - `maxParticleRelativeSpread=1.2434303079587665`.
+- Best descriptor candidate:
+  - `candidateId=residual-norm::value-over-particle-mean`.
+  - `minRowScaledRawToTargetRatio=0.5324265564592853`.
+  - `maxParticleRelativeSpread=0.6202190530662258`.
+  - It still fails row raw, common mean, and stability gates.
+- `theoremClaimed=false`.
+- `sourceRowsPromotable=false`.
+- `canFillPhase201WzContract=false`.
+- `wzMissingFieldCount=15`.
+- `higgsMissingFieldCount=14`.
+
+### Targeted Validation
+
+- `dotnet run --project studies/phase303_identity_split_branch_source_normalization_audit_001/Phase303IdentitySplitBranchSourceNormalizationAudit.csproj` passed.
+- Scanner guards passed:
+  - P204: `scannedJsonFileCount=6369`, `candidateCount=140`, `intakeReadyCandidateCount=0`.
+  - P205: `scannedTextFileCount=1426`, `findingCount=200`, `intakeReadyFindingCount=0`.
+  - P207: `candidateFindingCount=2055`, `intakeReadyFindingCount=0`.
+  - P296: `scannedFileCount=7156`, `contractFieldCount=29`, `intakeReadySourceLineageFieldCandidateCount=0`.
+- Phase297 through Phase303 replay passed and preserved blockers:
+  - P297: `canFillWzSourceContractNow=false`.
+  - P298: `rawGatePassed=false`, `canFillPhase201WzContract=false`.
+  - P299: `identitySplitRawGatePassed=false`, `canFillPhase201WzContract=false`.
+  - P300: `sourceDeclaredCommonScaleCandidatePassCount=0`.
+  - P301: `stableRawCommonPassingPairCount=0`.
+  - P302: `sourceInvariantRawCommonPassingCandidateCount=1`, `stableRawCommonPassingCandidateCount=0`.
+  - P303: `stableRawCommonAllRowsCandidateCount=0`.
+- P101 package passed and now includes Phase303.
+- P202 objective audit passed:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=96`.
+  - `checklistFailedCount=3`.
+- `./scripts/verify_boson_claim_integrity.sh` passed:
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+
+### Current State
+
+Phase303 rules out the simple repair route suggested by Phase302. The best identity-split W/Z numerical lead is real enough to preserve as evidence, but it is not a successful prediction: row-level raw gates and branch stability fail, no theorem is claimed, and the W/Z source contract remains empty. The next viable fix would need a branch-stable W/Z source law plus a resolved charged/neutral identity and mixing sidecar, not another post-hoc source-mode descriptor normalizer.
+
+### Full Validation
+
+- Full `./scripts/generate_validated_boson_predictions.sh` passed after Phase303 was wired into the repeated boson audit chain and ended with:
+  - `identity-split-branch-source-normalization-audit-no-stable-source-normalizer`.
+  - `identitySplitBranchSourceNormalizationAuditPassed=true`.
+  - `allRowsRawPassingCandidateCount=0`.
+  - `stableCandidateCount=0`.
+  - `stableRawCommonAllRowsCandidateCount=0`.
+  - `phase302BestMinRowScaledRawToTargetRatio=0.38413709823156705`.
+  - `canFillPhase201WzContract=false`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=96`.
+  - `checklistFailedCount=3`.
+  - `boson-claim-integrity-verified`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `dotnet test GeometricUnity.slnx` passed.
+
+## 2026-05-17T23:20:12-04:00 - Identity-Split Production Transition Sweep
+
+### Trigger
+
+Phase299 showed that identity-selected W and Z candidates can be replayed as separate production analytic source rows, but both rows fail the raw gate. Phase300 then ruled out a single target-independent common normalization factor: the W and Z target-implied scales are not mutually compatible, and no source-declared common scale candidate repairs both. The remaining narrow implementation loophole was whether the fixed promoted fermion transition `4 -> 6` was the wrong transition for the identity split.
+
+### Implementation
+
+- Added Phase301: `studies/phase301_identity_split_production_transition_sweep_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P301.md`.
+- The audit materializes the same Phase299 identity-split W/Z source rows and sweeps every ordered pair of Phase91 promoted fermion modes on both sibling backgrounds.
+- It uses direct analytic Dirac-variation matrix-element computation with unit source modes instead of writing a full replay package for every transition.
+- It keeps target observables out of the search and uses target values only for post-sweep evaluation of raw-gate and common-scale viability.
+- Wired Phase301 into:
+  - `scripts/generate_validated_boson_predictions.sh`;
+  - `scripts/verify_boson_claim_integrity.sh`;
+  - P101 prediction package output;
+  - P202 objective checklist;
+  - P204/P205/P207 scanner guards.
+
+### Result
+
+- `terminalStatus=identity-split-production-transition-sweep-no-promotable-transition`.
+- `identitySplitProductionTransitionSweepPassed=true`.
+- `targetObservablesUsedForSearch=false`.
+- `targetValuesUsedOnlyForPostSweepEvaluation=true`.
+- `sourceCount=4`.
+- `materializedSourceCount=4`.
+- `pairCount=132`.
+- `assessmentCount=132`.
+- `bothRawGatePassingPairCount=0`.
+- `commonRequiredScalePassingPairCount=0`.
+- `rawAndCommonPassingPairCount=0`.
+- `stableRawCommonPassingPairCount=0`.
+- `bestPair=4->6`.
+- `bestMinParticleRawToTargetRatio=0.002441034833531895`.
+- `bestRequiredScaleRelativeSpread=0.8886238468155209`.
+- `theoremClaimed=false`.
+- `sourceRowsPromotable=false`.
+- `canFillPhase201WzContract=false`.
+
+### Validation
+
+- `dotnet run --project studies/phase297_wz_direct_bridge_source_contract_application_audit_001/Phase297WzDirectBridgeSourceContractApplicationAudit.csproj` passed:
+  - `canFillWzSourceContractNow=false`.
+  - `acceptedContractFieldCount=0`.
+  - `blockedContractFieldCount=15`.
+- `dotnet run --project studies/phase298_production_analytic_wz_source_row_replay_attempt_001/Phase298ProductionAnalyticWzSourceRowReplayAttempt.csproj` passed:
+  - `rawGatePassed=false`.
+  - `branchLocalAnalyticStabilityPassed=false`.
+  - `canFillPhase201WzContract=false`.
+- `dotnet run --project studies/phase299_identity_split_production_wz_replay_attempt_001/Phase299IdentitySplitProductionWzReplayAttempt.csproj` passed:
+  - `wRawToTargetRatio=0.002441034833531895`.
+  - `zRawToTargetRatio=0.006344594861823656`.
+  - `identitySplitRawGatePassed=false`.
+  - `canFillPhase201WzContract=false`.
+- `dotnet run --project studies/phase300_identity_split_common_normalization_audit_001/Phase300IdentitySplitCommonNormalizationAudit.csproj` passed:
+  - `wRequiredScaleToTargetRaw=409.66232282442104`.
+  - `zRequiredScaleToTargetRaw=157.61447685448672`.
+  - `requiredScaleRelativeSpread=0.8886238468155209`.
+  - `commonNormalizationCanFillPhase201WzContract=false`.
+- `dotnet run --project studies/phase301_identity_split_production_transition_sweep_001/Phase301IdentitySplitProductionTransitionSweep.csproj` passed with the result above.
+- `dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj` passed and now includes the Phase301 package section.
+- `dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj` passed:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=94`.
+  - `checklistFailedCount=3`.
+- `./scripts/verify_boson_claim_integrity.sh` passed:
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed after Phase301 was wired into the repeated boson audit chain and ended with:
+  - `identitySplitProductionTransitionSweepPassed=true`.
+  - `pairCount=132`.
+  - `assessmentCount=132`.
+  - `bothRawGatePassingPairCount=0`.
+  - `rawAndCommonPassingPairCount=0`.
+  - `stableRawCommonPassingPairCount=0`.
+  - `bestPair=4->6`.
+  - `bestMinParticleRawToTargetRatio=0.002441034833531895`.
+  - `bestRequiredScaleRelativeSpread=0.8886238468155209`.
+  - `canFillPhase201WzContract=false`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=94`.
+  - `checklistFailedCount=3`.
+  - `boson-claim-integrity-verified`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `dotnet test GeometricUnity.slnx` passed.
+- `git diff --check` passed after this final journal update.
+
+### Agent Check
+
+- Checked and closed the outstanding boson-diagnosis agents.
+- Agent Galileo returned no final diagnostic payload.
+- Agent Bohr independently matched the Phase298-301 result: W/Z replay packages can be materialized for the identity candidates, but they cannot be promoted as separate source-backed W and Z rows under the current raw gate, stability gate, theorem/source-lineage gate, and Phase201 W/Z source-contract requirements.
+
+### Current State
+
+Phase301 closes the transition-selection loophole. The originally used `4 -> 6` transition is still the best ordered promoted-mode pair for the identity split, and no swept transition clears both W/Z raw gates, raw-plus-common gates, or stable raw-plus-common gates. The prediction remains incomplete: W/Z still need a theorem-backed target-independent bridge-source law with source-derived amplitude/common normalization, and Higgs still needs a promotable scalar-source lineage. No physical W, Z, or Higgs mass claim was promoted.
+
+## 2026-05-17T23:39:56-04:00 - Identity-Split Particle Normalization Audit
+
+### Trigger
+
+Phase300 ruled out a single common source normalization for the identity-split W/Z replay rows. Phase301 ruled out changing the promoted fermion transition. One remaining loophole was a particle-specific normalization law: a common source scale combined with W/Z identity-specific SU(2) charged-axis, representation-dimension, or Casimir factors.
+
+### Implementation
+
+- Added Phase302: `studies/phase302_identity_split_particle_normalization_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P302.md`.
+- The audit reads Phase24, Phase26, Phase213, Phase225, Phase249, Phase299, Phase300, and Phase301.
+- The audit builds a full grid of Phase300 common scale candidates against particle-specific laws:
+  - no particle-specific factor;
+  - charged-axis multiplicity factors;
+  - SU(2) adjoint axis-count factors;
+  - adjoint/fundamental dimension factors;
+  - adjoint/fundamental Casimir factors;
+  - one post-hoc row equalizer retained only as a non-source diagnostic control.
+- Candidate construction uses no target observables. Target values are used only for post-candidate raw/common gate evaluation.
+- Wired Phase302 into:
+  - `scripts/generate_validated_boson_predictions.sh`;
+  - `scripts/verify_boson_claim_integrity.sh`;
+  - P101 prediction package output;
+  - P202 objective checklist;
+  - P204/P205/P207 scanner guards.
+
+### Result
+
+- `terminalStatus=identity-split-particle-normalization-audit-raw-common-lead-not-promotable`.
+- `identitySplitParticleNormalizationAuditPassed=true`.
+- `targetObservablesUsedForConstruction=false`.
+- `targetValuesUsedOnlyForPostCandidateEvaluation=true`.
+- `commonScaleCandidateCount=10`.
+- `particleLawCandidateCount=10`.
+- `candidateAssessmentCount=100`.
+- `rawPassingCandidateCount=3`.
+- `rawCommonPassingCandidateCount=2`.
+- `sourceInvariantRawCommonPassingCandidateCount=1`.
+- `stableRawCommonPassingCandidateCount=0`.
+- `sourceInvariantPromotableCandidateCount=0`.
+- Best source-invariant raw/common lead:
+  - `candidateId=source-mode-vector-length::adjoint-casimir-over-fundamental-casimir`.
+  - `wTotalScale=416`.
+  - `zTotalScale=156`.
+  - `wScaledRawToTargetRatio=1.0154704907492682`.
+  - `zScaledRawToTargetRatio=0.9897567984444904`.
+  - `scaledRawRelativeSpread=0.025646661047702506`.
+  - `rawAndCommonGatesPassed=true`.
+  - `stableRawCommonGatesPassed=false`.
+  - `promotionEligible=false`.
+- `wRelativeSpread=1.2434303079587665`.
+- `zRelativeSpread=0.051076179231842496`.
+- `wStabilityPassed=false`.
+- `zStabilityPassed=false`.
+- `theoremClaimed=false`.
+- `sourceRowsPromotable=false`.
+- `canFillPhase201WzContract=false`.
+- `wzMissingFieldCount=15`.
+- `higgsMissingFieldCount=14`.
+
+### Interpretation
+
+This is the first identity-split replay audit that finds a target-independent numerical raw/common near-pass: source-vector length `156` times a W-specific SU(2) adjoint/fundamental Casimir ratio `8/3` gives W and Z scaled raw ratios close to `1`. It still cannot be called a successful W/Z prediction. The W row is not branch-stable, the Z row is just above the stability tolerance, the factor has no application theorem, Phase225/Phase249 still block applying the invariant as W/Z source lineage, and Phase201/P209 contract fields remain empty.
+
+### Validation
+
+- `dotnet run --project studies/phase302_identity_split_particle_normalization_audit_001/Phase302IdentitySplitParticleNormalizationAudit.csproj` passed with the result above.
+- Scanner guards passed after P302:
+  - P204: `intakeReadyCandidateCount=0`.
+  - P205: `scannedTextFileCount=1424`, `findingCount=200`, `intakeReadyFindingCount=0`.
+  - P207: `candidateFindingCount=2055`, `intakeReadyFindingCount=0`.
+  - P296: `scannedFileCount=7154`, `totalCandidateLineCount=48517`, `intakeReadySourceLineageFieldCandidateCount=0`.
+- Targeted downstream audits passed:
+  - P297: `canFillWzSourceContractNow=false`, `blockedContractFieldCount=15`.
+  - P298: `rawGatePassed=false`, `branchLocalAnalyticStabilityPassed=false`, `canFillPhase201WzContract=false`.
+  - P299: `wRawToTargetRatio=0.002441034833531895`, `zRawToTargetRatio=0.006344594861823656`, `identitySplitRawGatePassed=false`.
+  - P300: `sourceDeclaredCommonScaleCandidatePassCount=0`, `commonNormalizationCanFillPhase201WzContract=false`.
+  - P301: `stableRawCommonPassingPairCount=0`, `canFillPhase201WzContract=false`.
+  - P101 package built and includes Phase302.
+  - P202 objective audit: `objectiveAchieved=false`, `checklistPassedCount=95`, `checklistFailedCount=3`.
+  - `./scripts/verify_boson_claim_integrity.sh`: `promotedPhysicalMassClaimCount=0`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed after Phase302 wiring and ended with:
+  - `identitySplitParticleNormalizationAuditPassed=true`.
+  - `rawCommonPassingCandidateCount=2`.
+  - `sourceInvariantRawCommonPassingCandidateCount=1`.
+  - `stableRawCommonPassingCandidateCount=0`.
+  - `sourceInvariantPromotableCandidateCount=0`.
+  - `canFillPhase201WzContract=false`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=95`.
+  - `checklistFailedCount=3`.
+  - `boson-claim-integrity-verified`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `dotnet test GeometricUnity.slnx` passed.
+- `git diff --check` passed after this final journal update.
+
+### Current State
+
+Phase302 changes the shape of the W/Z blocker. The identity-split replay is no longer blocked only by amplitude size: there is now a specific target-independent raw/common numerical lead. The remaining failure is stricter and more informative: no branch-stable, theorem-backed, source-lineage-valid W/Z particle normalization law exists in the repo. A real fix would need to derive the `source-mode-vector-length` and W `8/3` Casimir application as a W/Z source theorem, repair branch stability under that law, and fill the Phase201/P209 W/Z source contract. Higgs remains separately blocked by missing scalar-source lineage.
+- `git diff --check` passed after this final journal update.
+
+## 2026-05-17T20:06:54-04:00 - Identity-Split Common Normalization Audit
+
+### Trigger
+
+Phase299 showed that the Phase27 identity-selected W and Z candidates can be replayed as separate source-backed analytic rows, but both rows fail the raw gate. The next narrow loophole was whether this is just a missing common normalization factor rather than a real source-law failure.
+
+### Research
+
+- Phase299 gives separate production replay rows for W `candidate-0` and Z `candidate-2`.
+- Phase120 already gives a finite/analytic common-scale diagnostic near identity scale.
+- Phase221 gives the SU(2) Casimir/RMS numerical lead, but that lead is already non-promotional without a theorem tying it to the Phase64/Phase299 source rows.
+- The source mode vectors referenced by Phase299 variation evidence ids are unit-length perturbation vectors with length `156`; this made the vector-length normalization loophole worth checking explicitly.
+
+### Implementation
+
+- Added Phase300: `studies/phase300_identity_split_common_normalization_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P300.md`.
+- The phase reads P120, P221, P299, P213, and Phase12 spinor/source-mode metadata.
+- It computes the target-implied W and Z scale factors required to lift the Phase299 mean raw rows to the raw target, then checks whether those required scales are common within the existing 5 percent tolerance.
+- It also evaluates a small inventory of target-independent diagnostic scale candidates: identity scale, P120 common scale, P221 Casimir ratio, SU(2) dimension scales, spinor components, inferred edge count, source-vector square root, and source-vector length.
+- Wired Phase300 into:
+  - `scripts/generate_validated_boson_predictions.sh`;
+  - `scripts/verify_boson_claim_integrity.sh`;
+  - P101 prediction package output;
+  - P202 objective checklist;
+  - P204/P205/P207 scanner guards.
+
+### Result
+
+- `terminalStatus=identity-split-common-normalization-audit-common-scale-blocked`.
+- `identitySplitCommonNormalizationAuditPassed=true`.
+- `wRawToTargetRatio=0.002441034833531895`.
+- `zRawToTargetRatio=0.006344594861823656`.
+- `wRequiredScaleToTargetRaw=409.66232282442104`.
+- `zRequiredScaleToTargetRaw=157.61447685448672`.
+- `requiredScaleRelativeSpread=0.8886238468155209`.
+- `commonRequiredScaleGatePassed=false`.
+- `testedSourceScaleCandidateCount=10`.
+- `sourceDeclaredCommonScaleCandidatePassCount=0`.
+- `vectorLengthScaleAccidentallyRepairsZOnly=true`.
+- `minimumCommonScaleForMeanRawGate=389.1792066832`.
+- `minimumCommonScaleMeanRawGateSpread=0.8886238468155206`.
+- `minimumCommonScaleForAllRowsRawGate=1028.7993578838457`.
+- `rowRequiredScaleRelativeSpread=2.2513911861702245`.
+- `targetDerivedMinimumCommonScaleRawGatePassed=true`.
+- `targetDerivedMinimumCommonScaleCommonGatePassed=false`.
+- `sourceRowsPromotable=false`.
+- `commonNormalizationCanFillPhase201WzContract=false`.
+
+### Current State
+
+Phase300 closes the common-normalization loophole for the identity-split replay. A scalar factor such as the source-vector length `156` can accidentally lift the Z mean row near the raw gate, but it leaves the W mean row far below the gate and does not satisfy common W/Z bridge consistency. A target-derived minimum common scale can force the W mean row to the raw lower bound, but it overshoots the Z mean row by a large factor and remains target-derived. The W/Z prediction still requires a new theorem-backed particle-specific bridge source with a source-derived common normalization law.
+
+### Validation
+
+- Targeted scanner guards passed:
+  - Phase204: `scannedJsonFileCount=6369`, `candidateCount=140`, `intakeReadyCandidateCount=0`.
+  - Phase205: `scannedTextFileCount=1420`, `findingCount=200`, `intakeReadyFindingCount=0`.
+  - Phase207: `candidateFindingCount=2055`, `intakeReadyFindingCount=0`.
+- `dotnet run --project studies/phase296_source_lineage_contract_field_candidate_scan_001/Phase296SourceLineageContractFieldCandidateScan.csproj` passed:
+  - `scannedFileCount=7150`.
+  - `totalCandidateLineCount=48247`.
+  - `intakeReadySourceLineageFieldCandidateCount=0`.
+- `dotnet run --project studies/phase297_wz_direct_bridge_source_contract_application_audit_001/Phase297WzDirectBridgeSourceContractApplicationAudit.csproj` passed:
+  - `acceptedContractFieldCount=0`.
+  - `blockedContractFieldCount=15`.
+- `dotnet run --project studies/phase298_production_analytic_wz_source_row_replay_attempt_001/Phase298ProductionAnalyticWzSourceRowReplayAttempt.csproj` passed and preserved:
+  - `bestRawToTargetRatio=0.006344594861823656`.
+  - `rawGatePassed=false`.
+  - `branchLocalAnalyticStabilityPassed=false`.
+- `dotnet run --project studies/phase299_identity_split_production_wz_replay_attempt_001/Phase299IdentitySplitProductionWzReplayAttempt.csproj` passed and preserved:
+  - `wRawToTargetRatio=0.002441034833531895`.
+  - `zRawToTargetRatio=0.006344594861823656`.
+  - `identitySplitRawGatePassed=false`.
+- `dotnet run --project studies/phase300_identity_split_common_normalization_audit_001/Phase300IdentitySplitCommonNormalizationAudit.csproj` passed with the result above.
+- `dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj` passed.
+- `dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj` passed:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=93`.
+  - `checklistFailedCount=3`.
+- `./scripts/verify_boson_claim_integrity.sh` passed:
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed after Phase300 was wired into the repeated boson audit chain and ended with:
+  - `identitySplitCommonNormalizationAuditPassed=True`.
+  - `wRequiredScaleToTargetRaw=409.66232282442104`.
+  - `zRequiredScaleToTargetRaw=157.61447685448672`.
+  - `requiredScaleRelativeSpread=0.8886238468155209`.
+  - `sourceDeclaredCommonScaleCandidatePassCount=0`.
+  - `minimumCommonScaleForMeanRawGate=389.1792066832`.
+  - `minimumCommonScaleMeanRawGateSpread=0.8886238468155206`.
+  - `commonNormalizationCanFillPhase201WzContract=False`.
+  - `objectiveAchieved=False`.
+  - `checklistPassedCount=93`.
+  - `checklistFailedCount=3`.
+  - `boson-claim-integrity-verified`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `dotnet test GeometricUnity.slnx` passed.
+
+## 2026-05-17T19:22:48-04:00 - Production Analytic W/Z Replay Attempt
+
+### Trigger
+
+After the source-lineage and direct-bridge application audits, the remaining actionable repair path was to stop treating the analytic replay path as merely missing production inputs. I added a production replay attempt using the existing Phase83 runner over the Phase190 best W/Z-like candidate.
+
+### Backfilled Context
+
+- Phase295 scanned observed-field extraction contract candidates:
+  - `observedFieldExtractionContractCandidateScanPassed=true`.
+  - `scannedFileCount=7146`.
+  - `contractFieldCount=20`.
+  - `totalCandidateLineCount=17665`.
+  - `fieldsWithIntakeReadyCandidateCount=0`.
+  - `intakeReadyObservedFieldExtractionCandidateCount=0`.
+  - `anyObservedFieldExtractionCandidateFillsContract=false`.
+- Phase296 scanned all W/Z and Higgs source-lineage contract fields:
+  - `sourceLineageContractFieldCandidateScanPassed=true`.
+  - `scannedFileCount=7146`.
+  - `contractFieldCount=29`.
+  - `wzContractFieldCount=15`.
+  - `higgsContractFieldCount=14`.
+  - `totalCandidateLineCount=47886`.
+  - `fieldsWithIntakeReadyCandidateCount=0`.
+  - `intakeReadySourceLineageFieldCandidateCount=0`.
+  - `anySourceLineageCandidateFillsContract=false`.
+- Phase297 attempted to apply the current W/Z direct-bridge evidence to the W/Z source contract:
+  - `wzDirectBridgeSourceContractApplicationAuditPassed=true`.
+  - `sourceContractApplicationAllowed=false`.
+  - `canFillWzSourceContractNow=false`.
+  - `fieldsAppliedToPhase201TemplateCount=0`.
+  - `acceptedContractFieldCount=0`.
+  - `blockedContractFieldCount=15`.
+
+### Implementation
+
+- Added Phase298: `studies/phase298_production_analytic_wz_source_row_replay_attempt_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P298.md`.
+- The phase loads the P190 best candidate, selects its two branch-local Phase12 boson modes, loads Phase91 promoted fermion eigenvectors, and runs `SourceBackedAnalyticReplayPackageRunner.Run`.
+- It writes full replay packages under `output/full_replay_packages/` and emits a compact summary for the audit chain.
+- Wired Phase298 into:
+  - `scripts/generate_validated_boson_predictions.sh`;
+  - `scripts/verify_boson_claim_integrity.sh`;
+  - P101 prediction package output;
+  - P202 objective checklist;
+  - P204/P205/P207 scanner guards.
+
+### Result
+
+- `terminalStatus=production-analytic-wz-source-row-replay-built-raw-gate-and-contract-blocked`.
+- `productionAnalyticWzSourceRowReplayAttemptPassed=true`.
+- `productionInputGapClosedForP190BestCandidate=true`.
+- `productionReplayBuiltCount=2`.
+- `materializationAuditPassedCount=2`.
+- `evidenceValidatedCount=2`.
+- `meanRawMagnitude=0.005852010927922606`.
+- `bestRawToTargetRatio=0.006344594861823656`.
+- `rawGatePassed=false`.
+- `branchLocalAnalyticStabilityPassed=false`.
+- `theoremClaimed=false`.
+- `wZParticleSplitPresent=false`.
+- `canEmitWzSourceRows=false`.
+- `canFillPhase201WzContract=false`.
+
+### Current State
+
+Phase298 fixes a narrow diagnostic gap: the production analytic replay inputs for the P190 best candidate are now materialized and validated. It does not fix the boson prediction. The W/Z route still lacks a derivation-backed theorem, particle-specific W and Z source rows, raw-amplitude closure, stability, and all 15 W/Z source-contract fields.
+
+### Validation
+
+Validation completed at `2026-05-17T19:28:16-04:00`.
+
+- Targeted scanner guards passed:
+  - Phase204: `intakeReadyCandidateCount=0`.
+  - Phase205: `intakeReadyFindingCount=0`.
+  - Phase207: `intakeReadyFindingCount=0`.
+- `dotnet run --project studies/phase296_source_lineage_contract_field_candidate_scan_001/Phase296SourceLineageContractFieldCandidateScan.csproj` passed:
+  - `scannedFileCount=7146`.
+  - `totalCandidateLineCount=47886`.
+  - `intakeReadySourceLineageFieldCandidateCount=0`.
+- `dotnet run --project studies/phase297_wz_direct_bridge_source_contract_application_audit_001/Phase297WzDirectBridgeSourceContractApplicationAudit.csproj` passed:
+  - `acceptedContractFieldCount=0`.
+  - `blockedContractFieldCount=15`.
+- `dotnet run --project studies/phase298_production_analytic_wz_source_row_replay_attempt_001/Phase298ProductionAnalyticWzSourceRowReplayAttempt.csproj` passed with the result above.
+- `dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj` passed.
+- `dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj` passed:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=91`.
+  - `checklistFailedCount=3`.
+- `./scripts/verify_boson_claim_integrity.sh` passed:
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed and ended with the same incomplete objective state.
+- `dotnet test GeometricUnity.slnx` passed.
+- `git diff --check` passed.
+
+## 2026-05-17T19:36:13-04:00 - Identity-Split Production W/Z Replay Attempt
+
+### Trigger
+
+Phase298 replayed the P190 best W/Z-like candidate, which is `candidate-2`, but it did not test the separate Phase27 identity-selected W and Z candidates. The next concrete ambiguity was whether the internal identity split could become separate source-backed analytic rows if replayed with production inputs.
+
+### Research
+
+- Phase27 identity rules select:
+  - W: `phase22-phase12-candidate-0` / `candidate-0`.
+  - Z: `phase22-phase12-candidate-2` / `candidate-2`.
+- Phase28 promotes only a dimensionless W/Z ratio mapping; it explicitly does not supply an absolute W or Z mass scale.
+- Phase251 classifies the identity chain as internal identity evidence, not a Phase201/P209 absolute source-lineage contract.
+- Sub-agent `019e3846-a68c-7f71-907b-f0c2887e41c4` independently confirmed that the identity-selected candidates can likely be replayed mechanically, but cannot become promotable W/Z source rows without weakening gates.
+
+### Implementation
+
+- Added Phase299: `studies/phase299_identity_split_production_wz_replay_attempt_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P299.md`.
+- The phase replays:
+  - W `candidate-0`: `bg-phase12-bg-a-20260315212202-mode-0`, `bg-phase12-bg-b-20260315212202-mode-3`.
+  - Z `candidate-2`: `bg-phase12-bg-a-20260315212202-mode-2`, `bg-phase12-bg-b-20260315212202-mode-0`.
+- Both use the P190/P172 promoted fermion transition `4 -> 6` from Phase91 promoted mode files.
+- Wired Phase299 into:
+  - `scripts/generate_validated_boson_predictions.sh`;
+  - `scripts/verify_boson_claim_integrity.sh`;
+  - P101 prediction package output;
+  - P202 objective checklist;
+  - P204/P205/P207 scanner guards.
+
+### Result
+
+- `terminalStatus=identity-split-production-wz-replay-built-raw-gate-and-contract-blocked`.
+- `identitySplitProductionWzReplayAttemptPassed=true`.
+- `productionInputGapClosedForIdentitySplitCandidates=true`.
+- `productionReplayBuiltCount=4`.
+- `materializationAuditPassedCount=4`.
+- `evidenceValidatedCount=4`.
+- W row:
+  - `meanRawMagnitude=0.0022515168946756667`.
+  - `rawToTargetRatio=0.002441034833531895`.
+  - `relativeSpread=1.2434303079587665`.
+  - `rawGatePassed=false`.
+  - `stabilityPassed=false`.
+- Z row:
+  - `meanRawMagnitude=0.005852010927922606`.
+  - `rawToTargetRatio=0.006344594861823656`.
+  - `relativeSpread=0.051076179231842496`.
+  - `rawGatePassed=false`.
+  - `stabilityPassed=false`.
+- `theoremClaimed=false`.
+- `contractGradeParticleSpecificSourceRowsPresent=false`.
+- `canEmitWzSourceRows=false`.
+- `canFillPhase201WzContract=false`.
+
+### Current State
+
+The Phase27 identity split is no longer an untested escape route. It can produce separate replay packages, but the W row is much less stable than the P190 best candidate, both W and Z rows are far below the raw gate, and the identity split remains ratio/internal-mode evidence rather than a direct bridge source theorem.
+
+### Validation
+
+Validation completed at `2026-05-17T19:52:15-04:00`.
+
+- Targeted scanner guards passed:
+  - Phase204: `scannedJsonFileCount=6369`, `candidateCount=140`, `intakeReadyCandidateCount=0`.
+  - Phase205: `scannedTextFileCount=1418`, `findingCount=200`, `intakeReadyFindingCount=0`.
+  - Phase207: `candidateFindingCount=2055`, `intakeReadyFindingCount=0`.
+- `dotnet run --project studies/phase296_source_lineage_contract_field_candidate_scan_001/Phase296SourceLineageContractFieldCandidateScan.csproj` passed:
+  - `scannedFileCount=7148`.
+  - `totalCandidateLineCount=48200`.
+  - `intakeReadySourceLineageFieldCandidateCount=0`.
+- `dotnet run --project studies/phase299_identity_split_production_wz_replay_attempt_001/Phase299IdentitySplitProductionWzReplayAttempt.csproj` passed with the result above.
+- `dotnet run --project studies/phase297_wz_direct_bridge_source_contract_application_audit_001/Phase297WzDirectBridgeSourceContractApplicationAudit.csproj` passed:
+  - `acceptedContractFieldCount=0`.
+  - `blockedContractFieldCount=15`.
+- `dotnet run --project studies/phase298_production_analytic_wz_source_row_replay_attempt_001/Phase298ProductionAnalyticWzSourceRowReplayAttempt.csproj` passed and preserved the P190 best-candidate replay blocker:
+  - `rawGatePassed=false`.
+  - `branchLocalAnalyticStabilityPassed=false`.
+  - `canFillPhase201WzContract=false`.
+- `dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj` passed.
+- `dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj` passed:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=92`.
+  - `checklistFailedCount=3`.
+- `./scripts/verify_boson_claim_integrity.sh` passed:
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed after Phase299 was wired into the repeated boson audit chain and ended with:
+  - `identitySplitProductionWzReplayAttemptPassed=True`.
+  - `productionInputGapClosedForIdentitySplitCandidates=True`.
+  - `productionReplayBuiltCount=4`.
+  - `materializationAuditPassedCount=4`.
+  - `evidenceValidatedCount=4`.
+  - `wRawToTargetRatio=0.002441034833531895`.
+  - `zRawToTargetRatio=0.006344594861823656`.
+  - `identitySplitRawGatePassed=False`.
+  - `wStabilityPassed=False`.
+  - `zStabilityPassed=False`.
+  - `theoremClaimed=False`.
+  - `contractGradeParticleSpecificSourceRowsPresent=False`.
+  - `canFillPhase201WzContract=False`.
+  - `objectiveAchieved=False`.
+  - `checklistPassedCount=92`.
+  - `checklistFailedCount=3`.
+  - `boson-claim-integrity-verified`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `dotnet test GeometricUnity.slnx` passed.
+- `git diff --check` passed after this final journal update.
+
+## 2026-05-17T19:10:34-04:00 - W/Z Direct Bridge Source-Contract Application Audit
+
+### Trigger
+
+After Phase296 showed that every Phase201/P209 source-lineage field has local mentions but zero intake-ready candidates, the remaining question was whether the current P190/P191 W/Z direct target-independent bridge candidate could be applied to the W/Z source contract through code rather than through another corpus scan.
+
+### Agent Check
+
+- Launched sub-agent `019e382a-b0cd-7400-b9dd-43315b32c676`.
+- Scope: independently inspect P190, P191, P201, P206, P213, P221, P222, P247, P280, P282, P295, and P296 and decide whether a real W/Z source-contract fix is possible without weakening gates.
+- Agent result:
+  - no real fix is possible from current repository evidence;
+  - Phase201 W/Z template remains unfilled;
+  - Phase213 still lists all 15 W/Z fields missing;
+  - Phase190 is target-independent but lacks theorem promotion and stability;
+  - Phase191 fails raw amplitude by a large margin and has no W/Z split;
+  - Phase280 analytic replay and Phase282 invariant census do not repair it.
+
+Outcome: independent confirmation that a valid promotion would require new source evidence, not a code-only gate bypass.
+
+### Implementation
+
+- Added Phase297: `studies/phase297_wz_direct_bridge_source_contract_application_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P297.md`.
+- The audit attempts to apply current direct-bridge evidence to all 15 W/Z Phase201/P209 contract fields.
+- The audit deliberately does not mutate the Phase201 intake template.
+- Wired Phase297 into:
+  - `scripts/generate_validated_boson_predictions.sh`;
+  - `scripts/verify_boson_claim_integrity.sh`;
+  - P101 prediction package output;
+  - P202 objective checklist;
+  - P204/P205/P207 scanner guards.
+
+### Result
+
+- `terminalStatus=wz-direct-bridge-source-contract-application-audit-blocked-new-theorem-required`.
+- `wzDirectBridgeSourceContractApplicationAuditPassed=true`.
+- `applicationAttempted=true`.
+- `sourceContractApplicationAllowed=false`.
+- `canFillWzSourceContractNow=false`.
+- `phase201TemplateMutated=false`.
+- `fieldsAppliedToPhase201TemplateCount=0`.
+- `contractFieldCount=15`.
+- `acceptedContractFieldCount=0`.
+- `candidateSupportedButNotAppliedFieldCount=1`.
+- `blockedContractFieldCount=15`.
+- Current candidate facts:
+  - `candidateLawConstructed=true`.
+  - `targetIndependent=true`.
+  - `theoremClaimed=false`.
+  - `stableCandidateCount=0`.
+  - `bestRelativeSpread=0.05107617923240876`.
+  - `rawGatePassed=false`.
+  - `bestRawToTargetRatio=0.006344594861823794`.
+  - `wZParticleSplitPresent=false`.
+- Repair facts:
+  - P221 numerical comparison passes but `p221SourceLineagePromotable=false`.
+  - P222 raw obstruction remains certified.
+  - P280 analytic variation cannot repair the bridge.
+  - P282 has no local direct invariant source.
+
+Outcome: Phase297 closes the application/wiring loophole. The current W/Z direct bridge is a target-independent diagnostic candidate, not a fillable W/Z source-lineage artifact.
+
+### Targeted Validation
+
+- `dotnet run --project studies/phase297_wz_direct_bridge_source_contract_application_audit_001/Phase297WzDirectBridgeSourceContractApplicationAudit.csproj` passed.
+- `dotnet run --project studies/phase204_boson_source_lineage_candidate_scan_001/Phase204BosonSourceLineageCandidateScan.csproj` passed:
+  - `intakeReadyCandidateCount=0`.
+- `dotnet run --project studies/phase205_boson_source_lineage_text_evidence_scan_001/Phase205BosonSourceLineageTextEvidenceScan.csproj` passed:
+  - `intakeReadyFindingCount=0`.
+- `dotnet run --project studies/phase207_higgs_quartic_self_coupling_source_scan_001/Phase207HiggsQuarticSelfCouplingSourceScan.csproj` passed:
+  - `intakeReadyFindingCount=0`.
+- `dotnet run --project studies/phase296_source_lineage_contract_field_candidate_scan_001/Phase296SourceLineageContractFieldCandidateScan.csproj` passed:
+  - `intakeReadySourceLineageFieldCandidateCount=0`.
+  - `anySourceLineageCandidateFillsContract=false`.
+- `dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj` passed.
+- `dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj` passed:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=90`.
+  - `checklistFailedCount=3`.
+- `./scripts/verify_boson_claim_integrity.sh` passed:
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+
+### Full Validation
+
+- Full `./scripts/generate_validated_boson_predictions.sh` passed after Phase297 wiring.
+- Final generator state:
+  - `wzDirectBridgeSourceContractApplicationAuditPassed=true`.
+  - `canFillWzSourceContractNow=false`.
+  - `acceptedContractFieldCount=0`.
+  - `blockedContractFieldCount=15`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=90`.
+  - `checklistFailedCount=3`.
+  - `boson-claim-integrity-verified`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `dotnet test GeometricUnity.slnx` passed with no failed test assemblies reported.
+
+### Current State
+
+No successful W/Z or Higgs physical mass prediction has been completed. The next required artifact is not another application patch; it is a new derivation-backed W/Z direct bridge-source theorem with separate W and Z source rows and a source-derived normalization/raw-amplitude law that clears raw and common bridge gates before target comparison.
+
+### Full Validation
+
+- Full `./scripts/generate_validated_boson_predictions.sh` passed after Phase295 was wired into the repeated boson audit chain and ended with:
+  - `observed-field-extraction-contract-candidate-scan-no-intake-ready-artifact`.
+  - `observedFieldExtractionContractCandidateScanPassed=true`.
+  - `contractFieldCount=20`.
+  - `fieldsWithCandidateLineCount=20`.
+  - `fieldsWithIntakeReadyCandidateCount=0`.
+  - `intakeReadyObservedFieldExtractionCandidateCount=0`.
+  - `anyObservedFieldExtractionCandidateFillsContract=false`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=88`.
+  - `checklistFailedCount=3`.
+  - `boson-claim-integrity-verified`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `dotnet test GeometricUnity.slnx` passed.
+- `git diff --check` passed after this final journal update.
+
+## 2026-05-17T18:50:49-04:00 - Source-Lineage Contract Field Candidate Scan
+
+### Trigger
+
+Phase295 scanned the observed-field extraction contract. The remaining core blocker is the Phase201/Phase209 W/Z and Higgs source-lineage contracts themselves. Phase204 and Phase205 already report no broad intake-ready source-lineage candidates, but they do not provide a per-missing-field census against the exact P201/P209 W/Z and Higgs fields.
+
+### Implementation
+
+- Added Phase296: `studies/phase296_source_lineage_contract_field_candidate_scan_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P296.md`.
+- The scan loads Phase201 W/Z and Higgs templates, Phase204, Phase205, Phase207, Phase209, Phase213, Phase245, and Phase295.
+- The scan covers 29 source-lineage fields:
+  - 15 W/Z fields for target-blind construction, theorem/derivation, source lineage, W and Z source rows, W/Z raw-amplitude gates, common-bridge gates, target-comparison gates, stability sidecars, and derivation ids.
+  - 14 Higgs fields for target-blind construction, source lineage, scalar source operator, identity envelope, massive scalar profile, potential/self-coupling or excitation relation, five stability sidecars, and prediction-row fields.
+- Wired Phase296 into:
+  - `scripts/generate_validated_boson_predictions.sh`;
+  - `scripts/verify_boson_claim_integrity.sh`;
+  - P101 prediction package output;
+  - P202 objective checklist;
+  - P204/P205/P207 scanner guards.
+
+### Result
+
+- `terminalStatus=source-lineage-contract-field-candidate-scan-no-intake-ready-artifact`.
+- `sourceLineageContractFieldCandidateScanPassed=true`.
+- `scannedFileCount=7142`.
+- `contractFieldCount=29`.
+- `wzContractFieldCount=15`.
+- `higgsContractFieldCount=14`.
+- `totalCandidateLineCount=47344`.
+- `fieldsWithCandidateLineCount=29`.
+- `fieldsWithIntakeReadyCandidateCount=0`.
+- `intakeReadySourceLineageFieldCandidateCount=0`.
+- `anySourceLineageCandidateFillsContract=false`.
+
+### Current State
+
+The source-lineage blocker is now field-scanned at the exact P201/P209 contract level. The corpus contains mentions for every required field, but no intake-ready artifact fills the W/Z theorem/source rows/gates or Higgs scalar-source/profile/coupling/stability/prediction-row requirements.
+
+### Targeted Validation
+
+- `dotnet run --project studies/phase296_source_lineage_contract_field_candidate_scan_001/Phase296SourceLineageContractFieldCandidateScan.csproj` passed.
+- `dotnet run --project studies/phase204_boson_source_lineage_candidate_scan_001/Phase204BosonSourceLineageCandidateScan.csproj` passed:
+  - `intakeReadyCandidateCount=0`.
+- `dotnet run --project studies/phase205_boson_source_lineage_text_evidence_scan_001/Phase205BosonSourceLineageTextEvidenceScan.csproj` passed:
+  - `intakeReadyFindingCount=0`.
+- `dotnet run --project studies/phase207_higgs_quartic_self_coupling_source_scan_001/Phase207HiggsQuarticSelfCouplingSourceScan.csproj` passed:
+  - `intakeReadyFindingCount=0`.
+- `dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj` passed and now includes the Phase296 package section.
+- `dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj` passed:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=89`.
+  - `checklistFailedCount=3`.
+- `./scripts/verify_boson_claim_integrity.sh` passed:
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed and ended with the same integrity-verifier state.
+- `git diff --check` passed.
+- `dotnet test GeometricUnity.slnx` passed.
+
+### Current State
+
+There is a successful W/Z numerical diagnostic if external alpha(MZ) and the external Fermi VEV are allowed. There is still no successful promotable W/Z/H prediction under the repository's source-lineage gates. The remaining required source artifacts are unchanged: a GU-derived W/Z absolute-scale source law or independent GU rows for `v` and `g`, plus a solved Higgs scalar source/self-coupling lineage.
+
+## 2026-05-17T16:22:47-04:00 - Recent QTP Weak Geometry Research Lead Audit
+
+### Trigger
+
+The Phase284 diagnostic showed that W/Z masses numerically close when external `alpha(MZ)` and the external Fermi VEV are allowed. I searched for recent geometry-based weak-interaction work that might plausibly supply the missing weak-angle/Fermi/Higgs source. A January 2026 Sciety listing surfaced a Research Square preprint titled "Geometric Foundations of the Weak Interaction: Deriving the Fermi Constant and Mixing Angle from Mass-Charge Constraints."
+
+### Research Findings
+
+- The public abstract claims a mass-charge identity for the weak sector and discusses the weak mixing angle, Fermi constant, and Higgs mass.
+- The same abstract says the weak mixing angle is obtained using experimentally measured W and Z masses.
+- The ResearchGate/Research Square full-text snippets show the Fermi-constant estimate substitutes a W-boson mass into a standard electroweak expression.
+- The Higgs relation is `MH ~= (pi/2) MW`, which is a W-scale projection lead, not a scalar-source/operator derivation.
+- The framework is QTP weak geometry, not a Geometric Unity source-lineage artifact.
+
+### Implementation
+
+- Added Phase285: `studies/phase285_recent_qtp_weak_geometry_source_audit_001`.
+- The audit records the research lead and classifies its W/Z, Fermi, and Higgs relations against the current source-lineage gates.
+- Wired Phase285 into:
+  - `scripts/generate_validated_boson_predictions.sh`;
+  - `scripts/verify_boson_claim_integrity.sh`;
+  - P101 prediction package output;
+  - P202 objective checklist;
+  - `docs/Phases/Implementation/IMPLEMENTATION_P285.md`.
+- Updated generated-source scanners P204, P205, and P207 to treat Phase285 as generated diagnostic/audit material.
+
+### Result
+
+- `terminalStatus=recent-qtp-weak-geometry-source-audit-target-dependent-not-promotion`.
+- `recentQtpWeakGeometrySourceAuditPassed=true`.
+- `qtpFrameworkIsGeometricUnity=false`.
+- `qtpUsesMeasuredWzMassesForMixingAngle=true`.
+- `qtpUsesMeasuredWMassForFermiConstant=true`.
+- `qtpUsesMeasuredWMassForHiggsProjection=true`.
+- `qtpPromotesWzMasses=false`.
+- `qtpPromotesHiggsMass=false`.
+- `qtpCompletesBosonPredictions=false`.
+- The target-using numerical snapshot gives `MH=(pi/2) MW=126.24364414744441 GeV` from the repo W target, but this cannot be promoted because it uses the W target and supplies no Higgs scalar source/operator lineage.
+
+### Validation
+
+- `dotnet run --project studies/phase285_recent_qtp_weak_geometry_source_audit_001/Phase285RecentQtpWeakGeometrySourceAudit.csproj` passed.
+- `dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj` passed.
+- `dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj` passed:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=78`.
+  - `checklistFailedCount=3`.
+- `dotnet run --project studies/phase204_boson_source_lineage_candidate_scan_001/Phase204BosonSourceLineageCandidateScan.csproj` passed:
+  - `intakeReadyCandidateCount=0`.
+- `dotnet run --project studies/phase205_boson_source_lineage_text_evidence_scan_001/Phase205BosonSourceLineageTextEvidenceScan.csproj` passed:
+  - `intakeReadyFindingCount=0`.
+- `dotnet run --project studies/phase207_higgs_quartic_self_coupling_source_scan_001/Phase207HiggsQuarticSelfCouplingSourceScan.csproj` passed:
+  - `intakeReadyFindingCount=0`.
+- `./scripts/verify_boson_claim_integrity.sh` passed:
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed and ended with the same integrity-verifier state.
+- `git diff --check` passed.
+- `dotnet test GeometricUnity.slnx` passed.
+
+### Current State
+
+The recent QTP weak-geometry lead does not fix the repository's boson-prediction blockage. It is target-dependent for this gate and external to GU. The remaining required artifacts are still a GU-local W/Z absolute-scale source law or independent GU rows for `v` and `g`, plus a solved GU Higgs scalar source/self-coupling lineage.
+
+## 2026-05-17T16:33:50-04:00 - Alpha Running Threshold Source Viability Audit
+
+### Trigger
+
+Phase284 showed that the promoted W/Z ratio plus external `alpha(MZ)` and the external Fermi VEV closes W/Z numerically. The next question was whether the key `alpha(MZ)` input can be replaced by a more constructive running calculation from `alpha(0)` without using W/Z targets.
+
+### Research Findings
+
+- PDG electroweak review material treats the electromagnetic coupling as scale-dependent and records the Fermi constant, alpha, running/renormalization, and electroweak mass relations as separate inputs and corrections.
+- Running alpha to electroweak scale is not just a tree-level constant change. It involves vacuum-polarization contributions, including hadronic pieces that require nonperturbative or data-driven input.
+- A lepton-only one-loop QED running diagnostic can be constructed from external `alpha(0)` and external charged-lepton thresholds. To avoid direct W/Z target use, I solved the running scale self-consistently by setting the running scale to the predicted Z mass, not the observed Z target.
+
+### Implementation
+
+- Added Phase286: `studies/phase286_alpha_running_threshold_source_viability_audit_001`.
+- The diagnostic compares:
+  - no-running `alpha(0)`;
+  - self-consistent lepton-only running from `alpha(0)`;
+  - imported external `alpha(MZ)`.
+- The construction uses the promoted W/Z ratio and Phase54 external Fermi VEV, then compares to W/Z targets only after construction.
+- Wired Phase286 into:
+  - `scripts/generate_validated_boson_predictions.sh`;
+  - `scripts/verify_boson_claim_integrity.sh`;
+  - P101 prediction package output;
+  - P202 objective checklist;
+  - `docs/Phases/Implementation/IMPLEMENTATION_P286.md`.
+- Updated generated-source scanners P204, P205, and P207 to treat Phase286 as generated diagnostic/audit material.
+
+### Result
+
+- `terminalStatus=alpha-running-threshold-source-viability-audit-external-leptonic-closure-not-promotion`.
+- `alphaRunningThresholdSourceViabilityAuditPassed=true`.
+- `alpha(0)` without running fails W/Z:
+  - `W=78.39495571365532 GeV`, pull `4.238956915605881`.
+  - `Z=89.11646319624296 GeV`, pull `5.530436870297213`.
+- Lepton-only self-consistent running passes the current broad W/Z comparison gate:
+  - `alpha^-1=132.73467569167474`.
+  - `W=79.65503958809325 GeV`, pull `1.5091565903554947`.
+  - `Z=90.5488795704634 GeV`, pull `1.679285512801718`.
+- Imported `alpha(MZ)` also passes:
+  - `W=81.13071608600772 GeV`, pull `1.5799805682306582`.
+  - `Z=92.2263736020475 GeV`, pull `2.6786973302270867`.
+- This remains non-promotional:
+  - `externalAlphaZeroUsed=true`.
+  - `externalLeptonMassesUsed=true`.
+  - `externalVevUsed=true`.
+  - `guAlphaZeroSourceFound=false`.
+  - `guChargedLeptonThresholdSourceFound=false`.
+  - `guRunningOperatorSourceFound=false`.
+  - `guHadronicVacuumPolarizationSourceFound=false`.
+  - `guRenormalizationSchemeSourceFound=false`.
+  - `alphaRunningThresholdRoutePromotesWzMasses=false`.
+
+### Validation
+
+- `dotnet run --project studies/phase286_alpha_running_threshold_source_viability_audit_001/Phase286AlphaRunningThresholdSourceViabilityAudit.csproj` passed.
+- `dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj` passed.
+- `dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj` passed:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=79`.
+  - `checklistFailedCount=3`.
+- `dotnet run --project studies/phase204_boson_source_lineage_candidate_scan_001/Phase204BosonSourceLineageCandidateScan.csproj` passed:
+  - `intakeReadyCandidateCount=0`.
+- `dotnet run --project studies/phase205_boson_source_lineage_text_evidence_scan_001/Phase205BosonSourceLineageTextEvidenceScan.csproj` passed:
+  - `intakeReadyFindingCount=0`.
+- `dotnet run --project studies/phase207_higgs_quartic_self_coupling_source_scan_001/Phase207HiggsQuarticSelfCouplingSourceScan.csproj` passed:
+  - `intakeReadyFindingCount=0`.
+- `./scripts/verify_boson_claim_integrity.sh` passed:
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed and ended with:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- During final line-reference lookup, a malformed `rg` command used backticks in a search pattern and accidentally invoked the generator through shell command substitution; that malformed lookup ended with a multiline-regex error and a generic build-failed line, so it was discarded as validation evidence.
+- A clean rerun of `./scripts/generate_validated_boson_predictions.sh` immediately afterward passed and ended with the same claim-integrity state:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `git diff --check` passed.
+- `dotnet test GeometricUnity.slnx` passed.
+
+### Current State
+
+The W/Z numerical obstruction is narrower than before: the promoted W/Z ratio plus external Fermi VEV closes W/Z if either external `alpha(MZ)` or external lepton-only running from `alpha(0)` is allowed. The promotability obstruction remains: there is no GU source for alpha/charge, charged thresholds, RG transport, hadronic/scheme closure, or VEV, and there is still no Higgs scalar-source lineage.
+
+## 2026-05-17T16:53:16-04:00 - Official Draft Parameter Source Gap Audit
+
+### Trigger
+
+Phase286 narrowed the W/Z obstruction to a specific parameter-source problem: external `alpha(0)` with charged-lepton running and the external Fermi VEV can numerically close W/Z, but the route remains non-promotional. The next question was whether the official/public GU draft passages that locate weak isospin, hypercharge, Higgs, Upsilon, VEV-like terms, and Yukawa structures actually fill any of those specific gaps.
+
+### Research Findings
+
+- The official GU site identifies the April 1, 2021 manuscript draft as the public draft source.
+- The draft's opening target map lists Standard Model ingredients including Yang-Mills, Higgs, and Yukawa terms as intended recovered structures.
+- The draft's Upsilon-bosonic-action section gives a Upsilon-norm second-order bosonic action and Yang-Mills-Maxwell-like equation.
+- The draft appendix maps intended GU locations for the Higgs field, weak isospin, weak hypercharge, Higgs potential, cosmological constant as a VEV, and Yukawa couplings as a VEV.
+- None of the checked passages gives a target-independent numerical source row for electromagnetic charge/alpha, charged thresholds, RG transport, hadronic/scheme closure, VEV, W/Z absolute scale, or Higgs scalar extraction.
+
+### Implementation
+
+- Added Phase287: `studies/phase287_official_draft_parameter_source_gap_audit_001`.
+- The audit inherits the relevant Phase286, Phase218, Phase226, Phase227, Phase228, Phase229, Phase236, Phase245, and Phase213 blockers.
+- It records the official draft parameter-location passages as research leads, then requires them to remain non-promotional unless they fill the actual alpha/charge, threshold, RG/scheme, VEV, and Higgs extraction fields.
+- Wired Phase287 into:
+  - `scripts/generate_validated_boson_predictions.sh`;
+  - `scripts/verify_boson_claim_integrity.sh`;
+  - P101 prediction package output;
+  - P202 objective checklist;
+  - `docs/Phases/Implementation/IMPLEMENTATION_P287.md`.
+- Updated generated-source scanners P204, P205, and P207 to treat Phase287 as generated diagnostic/audit material.
+
+### Result
+
+- `terminalStatus=official-draft-parameter-source-gap-audit-symbolic-locations-not-promotion`.
+- `officialDraftParameterSourceGapAuditPassed=true`.
+- `officialGuParameterLocationLeadPresent=true`.
+- `officialDraftProvidesAlphaSource=false`.
+- `officialDraftProvidesChargeNormalizationSource=false`.
+- `officialDraftProvidesChargedLeptonThresholdSource=false`.
+- `officialDraftProvidesRgTransportSource=false`.
+- `officialDraftProvidesHadronicSchemeClosure=false`.
+- `officialDraftProvidesTargetIndependentVevSource=false`.
+- `officialDraftProvidesHiggsScalarExtraction=false`.
+- `officialDraftFillsPhase286Gaps=false`.
+- `officialDraftPromotesWzMasses=false`.
+- `officialDraftPromotesHiggsMass=false`.
+- `sourceContractsFilled=false`.
+
+### Validation
+
+- `dotnet run --project studies/phase287_official_draft_parameter_source_gap_audit_001/Phase287OfficialDraftParameterSourceGapAudit.csproj` passed.
+- `dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj` passed.
+- `dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj` passed:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=80`.
+  - `checklistFailedCount=3`.
+- `dotnet run --project studies/phase204_boson_source_lineage_candidate_scan_001/Phase204BosonSourceLineageCandidateScan.csproj` passed:
+  - `intakeReadyCandidateCount=0`.
+- `dotnet run --project studies/phase205_boson_source_lineage_text_evidence_scan_001/Phase205BosonSourceLineageTextEvidenceScan.csproj` passed:
+  - `intakeReadyFindingCount=0`.
+- `dotnet run --project studies/phase207_higgs_quartic_self_coupling_source_scan_001/Phase207HiggsQuarticSelfCouplingSourceScan.csproj` passed:
+  - `intakeReadyFindingCount=0`.
+- `./scripts/verify_boson_claim_integrity.sh` passed:
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed and ended with:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `git diff --check` passed.
+- `dotnet test GeometricUnity.slnx` passed.
+
+### Current State
+
+The official/public GU draft contains useful symbolic locations for the relevant sectors, but it does not close the Phase286 parameter-source gap. The route to a correct prediction still requires new GU-local source-lineage artifacts for alpha/charge or direct W/Z scale, RG/scheme transport if alpha running is used, a target-independent VEV or equivalent direct source, and a separate Higgs scalar-source extraction.
+
+## 2026-05-17T17:03:07-04:00 - Parameter Source Contract Candidate Scan
+
+### Trigger
+
+Phase287 showed that the public GU draft has symbolic parameter locations but does not fill the specific source rows needed after Phase286. The next diagnostic was to scan non-generated local source and revision material for actual candidate rows, separating mere mentions of `alpha`, VEV, RG, thresholds, and Higgs scalar extraction from intake-ready source-lineage evidence.
+
+### Implementation
+
+- Added Phase288: `studies/phase288_parameter_source_contract_candidate_scan_001`.
+- The scan covers non-generated local material under:
+  - `src`;
+  - `TheoryCompletitionRevisions`;
+  - `docs/Guides`;
+  - `docs/Architecture`;
+  - `docs/Phases/OpenIssues`.
+- It classifies five parameter-source requirements:
+  - GU alpha/charge source;
+  - GU charged-threshold sources;
+  - GU RG transport and hadronic/scheme closure;
+  - GU VEV source;
+  - GU Higgs scalar extraction.
+- It excludes generated outputs, implementation notes, the journal, `bin`, `obj`, and the Phase288 audit itself so diagnostic text cannot become source evidence.
+- Wired Phase288 into:
+  - `scripts/generate_validated_boson_predictions.sh`;
+  - `scripts/verify_boson_claim_integrity.sh`;
+  - P101 prediction package output;
+  - P202 objective checklist;
+  - `docs/Phases/Implementation/IMPLEMENTATION_P288.md`.
+- Updated generated-source scanners P204, P205, and P207 to treat Phase288 as generated diagnostic/audit material.
+
+### Result
+
+- `terminalStatus=parameter-source-contract-candidate-scan-no-local-source-rows`.
+- `parameterSourceContractCandidateScanPassed=true`.
+- `scannedFileCount=703`.
+- `totalCandidateLineCount=20203`.
+- `intakeReadyParameterSourceCandidateCount=0`.
+- `anyParameterSourceCandidateFillsContract=false`.
+- All five requirement scans have `filled=false`.
+- The scan found many parameter-related mentions, but no line/file combination that rises to an intake-ready target-independent source row.
+
+### Validation
+
+- `dotnet run --project studies/phase288_parameter_source_contract_candidate_scan_001/Phase288ParameterSourceContractCandidateScan.csproj` passed.
+- `dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj` passed.
+- `dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj` passed:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=81`.
+  - `checklistFailedCount=3`.
+- `dotnet run --project studies/phase204_boson_source_lineage_candidate_scan_001/Phase204BosonSourceLineageCandidateScan.csproj` passed:
+  - `intakeReadyCandidateCount=0`.
+- `dotnet run --project studies/phase205_boson_source_lineage_text_evidence_scan_001/Phase205BosonSourceLineageTextEvidenceScan.csproj` passed:
+  - `intakeReadyFindingCount=0`.
+- `dotnet run --project studies/phase207_higgs_quartic_self_coupling_source_scan_001/Phase207HiggsQuarticSelfCouplingSourceScan.csproj` passed:
+  - `intakeReadyFindingCount=0`.
+- `./scripts/verify_boson_claim_integrity.sh` passed:
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed and ended with:
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `dotnet test GeometricUnity.slnx` passed.
+- `git diff --check` passed.
+
+### Current State
+
+This makes the Phase286/287 obstruction local and explicit: the repository has lots of parameter language, but no intake-ready source row for alpha/charge, threshold transport, RG/scheme closure, VEV, or Higgs scalar extraction. The remaining work is still source evidence, not a code-path bug.
+
+## 2026-05-17T17:16:40-04:00 - Phase288 Coverage False-Negative Audit
+
+### Trigger
+
+After Phase288 found zero intake-ready parameter-source rows, I checked whether that could be an artifact of its deliberately narrow scan boundary. I attempted to launch a subagent for an independent false-negative review, but the subagent failed due to the session usage limit, so I completed the review locally.
+
+### Implementation
+
+- Added Phase289: `studies/phase289_phase288_coverage_false_negative_audit_001`.
+- The audit scans first-party material excluded from Phase288:
+  - root `README.md`;
+  - `OriginalPrompts`;
+  - `docs/Reference`;
+  - `docs/Phases/Plans`;
+  - `docs/Phases/Summaries`;
+  - `docs/Phases/Gaps`;
+  - `docs/Phases/Prompts`;
+  - `phase4`;
+  - `data`;
+  - `schemas`;
+  - `reports`;
+  - `examples`;
+  - `apps`;
+  - `native`;
+  - `scripts`.
+- It uses the same five parameter-source requirements as Phase288, but with a five-line context window to catch source-row language split across adjacent lines.
+- It explicitly excludes generated studies, outputs, implementation notes, the journal, and Phase288's baseline scan roots so the audit tests only the excluded corpus.
+- Wired Phase289 into:
+  - `scripts/generate_validated_boson_predictions.sh`;
+  - `scripts/verify_boson_claim_integrity.sh`;
+  - P101 prediction package output;
+  - P202 objective checklist;
+  - `docs/Phases/Implementation/IMPLEMENTATION_P289.md`.
+- Updated P204, P205, and P207 so Phase289 diagnostic text cannot be treated as source evidence by later scans.
+
+### Result
+
+- `terminalStatus=phase288-coverage-false-negative-audit-no-missed-source-rows`.
+- `coverageFalseNegativeAuditPassed=true`.
+- `scannedFileCount=426`.
+- `excludedCorpusCandidateLineCount=8132`.
+- `intakeReadyExcludedCorpusCandidateCount=0`.
+- `anyExcludedCorpusCandidateFillsContract=false`.
+- All five requirement scans have `filled=false`.
+
+### Validation
+
+- `dotnet run --project studies/phase289_phase288_coverage_false_negative_audit_001/Phase289Phase288CoverageFalseNegativeAudit.csproj` passed.
+- `dotnet run --project studies/phase204_boson_source_lineage_candidate_scan_001/Phase204BosonSourceLineageCandidateScan.csproj` passed:
+  - `intakeReadyCandidateCount=0`.
+- `dotnet run --project studies/phase205_boson_source_lineage_text_evidence_scan_001/Phase205BosonSourceLineageTextEvidenceScan.csproj` passed:
+  - `intakeReadyFindingCount=0`.
+- `dotnet run --project studies/phase207_higgs_quartic_self_coupling_source_scan_001/Phase207HiggsQuarticSelfCouplingSourceScan.csproj` passed:
+  - `intakeReadyFindingCount=0`.
+- `dotnet run --project studies/phase288_parameter_source_contract_candidate_scan_001/Phase288ParameterSourceContractCandidateScan.csproj` passed:
+  - `intakeReadyParameterSourceCandidateCount=0`.
+- `dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj` passed.
+- `dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj` passed:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=82`.
+  - `checklistFailedCount=3`.
+- `./scripts/verify_boson_claim_integrity.sh` passed:
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed and ended with:
+  - `phase288-coverage-false-negative-audit-no-missed-source-rows`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=82`.
+  - `checklistFailedCount=3`.
+  - `boson-claim-integrity-verified`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `dotnet test GeometricUnity.slnx` passed.
+- `git diff --check` passed before this journal update.
+
+- After the journal update, P205, P207, and P296 scanner guards were rerun and still reported zero intake-ready source-lineage findings.
+
+### Current State
+
+The Phase288 zero-source-row result is not explained by the most obvious coverage gap. The first-party corpus outside Phase288 contains many parameter mentions, prompts, reports, and diagnostics, but no missed intake-ready GU source row. The blocker remains source-lineage evidence rather than scan filtering or implementation wiring.
+
+## 2026-05-17T17:28:34-04:00 - Charged-Lepton Threshold Source Replacement Audit
+
+### Trigger
+
+Phase286 numerically closes W/Z only by importing external `alpha(0)`, external electron/muon/tau thresholds, and the external Fermi VEV. After Phase288 and Phase289 found no direct parameter-source rows, I checked whether existing GU fermion artifacts could at least replace the charged-lepton thresholds in the alpha-running route.
+
+### Implementation
+
+- Added Phase290: `studies/phase290_charged_lepton_threshold_source_replacement_audit_001`.
+- The audit reads:
+  - Phase286 external charged-lepton threshold usage;
+  - Phase4 fermion family atlas and unified particle registry;
+  - Phase12 fermion family envelopes;
+  - Phase237 Cox II Higgs/Yukawa texture boundary;
+  - Phase273 boson-fermion coupling proxy boundary;
+  - Phase213 and Phase245 blocker state.
+- It scans for electron/muon/tau threshold source-row language and evaluates whether any existing fermion envelope has:
+  - target-independent physical charged-lepton identity;
+  - GeV scale or threshold unit;
+  - source-lineage/theorem row;
+  - intake-ready threshold replacement status.
+- It also records a best target-based triplet fit for diagnostics only, explicitly marking the fit non-promotional because it assigns electron/muon/tau labels and scale from the external targets.
+- Wired Phase290 into:
+  - `scripts/generate_validated_boson_predictions.sh`;
+  - `scripts/verify_boson_claim_integrity.sh`;
+  - P101 prediction package output;
+  - P202 objective checklist;
+  - `docs/Phases/Implementation/IMPLEMENTATION_P290.md`.
+- Updated P204, P205, and P207 so Phase290 diagnostic text cannot become source evidence.
+
+### Result
+
+- `terminalStatus=charged-lepton-threshold-source-replacement-audit-no-gu-threshold-source`.
+- `chargedLeptonThresholdSourceReplacementAuditPassed=true`.
+- `candidateCount=21`.
+- `candidateWithPhysicalLeptonIdentityCount=0`.
+- `candidateWithGeVScaleCount=0`.
+- `candidateWithSourceLineageCount=0`.
+- `intakeReadyThresholdSourceCandidateCount=0`.
+- `anyThresholdSourceCandidateFillsContract=false`.
+- Phase4's no-physical-validation disclaimer remains active.
+
+### Validation
+
+- `dotnet run --project studies/phase290_charged_lepton_threshold_source_replacement_audit_001/Phase290ChargedLeptonThresholdSourceReplacementAudit.csproj` passed.
+- `dotnet run --project studies/phase204_boson_source_lineage_candidate_scan_001/Phase204BosonSourceLineageCandidateScan.csproj` passed:
+  - `intakeReadyCandidateCount=0`.
+- `dotnet run --project studies/phase205_boson_source_lineage_text_evidence_scan_001/Phase205BosonSourceLineageTextEvidenceScan.csproj` passed:
+  - `intakeReadyFindingCount=0`.
+- `dotnet run --project studies/phase207_higgs_quartic_self_coupling_source_scan_001/Phase207HiggsQuarticSelfCouplingSourceScan.csproj` passed:
+  - `intakeReadyFindingCount=0`.
+- `dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj` passed.
+- `dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj` passed:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=83`.
+  - `checklistFailedCount=3`.
+- `./scripts/verify_boson_claim_integrity.sh` passed:
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed after Phase290 was wired into the repeated boson audit chain and ended with:
+  - `charged-lepton-threshold-source-replacement-audit-no-gu-threshold-source`.
+  - `candidateCount=21`.
+  - `intakeReadyThresholdSourceCandidateCount=0`.
+  - `anyThresholdSourceCandidateFillsContract=false`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=83`.
+  - `checklistFailedCount=3`.
+  - `boson-claim-integrity-verified`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `dotnet test GeometricUnity.slnx` passed.
+- `git diff --check` passed before this journal update; a final whitespace check is the last planned command after this entry is written.
+
+### Current State
+
+The existing GU fermion artifacts cannot replace the external charged-lepton thresholds in Phase286. They provide internal toy/branch-family fermion envelopes and coupling proxies, not target-independent electron/muon/tau identities or threshold mass rows. The Phase286 W/Z numerical closure therefore still imports external charged-lepton masses.
+
+## 2026-05-17T17:34:19-04:00 - Agent Status Check and Closeout
+
+### Trigger
+
+After full local validation, I checked the existing subagent handles in the session context before closing the work out.
+
+### Result
+
+- One existing subagent returned only stale Phase279 wiring guidance, with no Phase290 charged-lepton threshold repair path and no file edits.
+- The remaining existing subagent handles returned no completed result.
+- I closed all five existing subagent handles because no current repair work was pending there.
+
+### Current State
+
+No agent result changed the Phase290 conclusion. The current blocker remains the missing GU-derived electron/muon/tau threshold source lineage and the missing W/Z/H promotion source rows. `git diff --check` passed after the journal closeout edit.
+
+## 2026-05-17T17:43:37-04:00 - Koide Charged-Lepton Threshold Source Audit
+
+### Trigger
+
+Phase290 showed that existing GU fermion artifacts do not supply electron/muon/tau threshold source rows. The next distinct physics lead was Koide's charged-lepton mass relation, because it can reconstruct a tau-like mass from electron and muon masses and is also mentioned in current public GU/RVG material as a Koide anomaly lead.
+
+### Research
+
+- Koide's reviewed charged-lepton mass formula predicts a tau mass near 1777 MeV from electron/muon inputs.
+- Running-mass literature treats exact Koide `Q=2/3` as a pole-mass relation; running charged-lepton masses depart from exact `2/3` at electroweak scale.
+- Sumino-style family-gauge models are external effective-field-theory mechanisms for stabilizing the relation, not GU-local source rows in this repository.
+- The 2026 GU/RVG v8 Zenodo record explicitly links Koide deviation to dilaton/trace-anomaly language, but Phase281 already classifies that route as external EFT/device-oriented and non-promotional for W/Z/H contracts.
+
+### Implementation
+
+- Added Phase291: `studies/phase291_koide_charged_lepton_threshold_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P291.md`.
+- The audit computes:
+  - `Q = (m_e + m_mu + m_tau)/(sqrt(m_e)+sqrt(m_mu)+sqrt(m_tau))^2` from Phase286's external thresholds.
+  - The tau-like Koide solution from external electron and muon masses.
+  - A Phase286-style alpha-running diagnostic with external electron/muon and Koide-derived tau thresholds.
+- Wired Phase291 into:
+  - `scripts/generate_validated_boson_predictions.sh`;
+  - `scripts/verify_boson_claim_integrity.sh`;
+  - P101 prediction package output;
+  - P202 objective checklist.
+- Updated P204, P205, and P207 so Phase291 diagnostic text cannot become source evidence.
+
+### Result
+
+- `terminalStatus=koide-charged-lepton-threshold-source-audit-empirical-not-gu-source`.
+- `koideChargedLeptonThresholdSourceAuditPassed=true`.
+- `koideQFromExternalThresholds=0.6666605114773856`.
+- `tauLikeSolutionFromExternalElectronMuonGeV=1.7769690270830136`.
+- `tauResidualGeV=0.00010902708301352426`.
+- `koideLeptonicRunningNumericallyClosesWz=true`.
+- `koideProvidesAllThreeThresholdsTargetIndependently=false`.
+- `koideProvidesGuLocalSourceLineage=false`.
+- `koideThresholdRoutePromotesWzMasses=false`.
+- `koidePromotesBosonPredictions=false`.
+
+### Targeted Validation
+
+- `dotnet run --project studies/phase291_koide_charged_lepton_threshold_source_audit_001/Phase291KoideChargedLeptonThresholdSourceAudit.csproj` passed.
+- `dotnet run --project studies/phase204_boson_source_lineage_candidate_scan_001/Phase204BosonSourceLineageCandidateScan.csproj` passed:
+  - `intakeReadyCandidateCount=0`.
+- `dotnet run --project studies/phase205_boson_source_lineage_text_evidence_scan_001/Phase205BosonSourceLineageTextEvidenceScan.csproj` passed:
+  - `intakeReadyFindingCount=0`.
+- `dotnet run --project studies/phase207_higgs_quartic_self_coupling_source_scan_001/Phase207HiggsQuarticSelfCouplingSourceScan.csproj` passed:
+  - `intakeReadyFindingCount=0`.
+- `dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj` passed.
+- `dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj` passed:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=84`.
+  - `checklistFailedCount=3`.
+- `./scripts/verify_boson_claim_integrity.sh` passed:
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+
+### Current State
+
+Koide is now tracked as a real but non-promotional charged-lepton threshold lead. It narrows the threshold problem by showing tau can be reconstructed accurately from external electron/muon masses, but it does not solve the prediction problem: it still imports two charged-lepton masses, assumes an empirical relation, and leaves alpha, running transport, VEV/W/Z scale, W/Z source-lineage, and Higgs scalar-source contracts unfilled.
+
+### Full Validation
+
+- Full `./scripts/generate_validated_boson_predictions.sh` passed after Phase291 was wired into the repeated boson audit chain and ended with:
+  - `koide-charged-lepton-threshold-source-audit-empirical-not-gu-source`.
+  - `koideChargedLeptonThresholdSourceAuditPassed=true`.
+  - `koideLeptonicRunningNumericallyClosesWz=true`.
+  - `koideProvidesGuLocalSourceLineage=false`.
+  - `koidePromotesBosonPredictions=false`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=84`.
+  - `checklistFailedCount=3`.
+  - `boson-claim-integrity-verified`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `dotnet test GeometricUnity.slnx` passed.
+- `git diff --check` passed after this final journal update.
+
+## 2026-05-17T18:36:42-04:00 - Observed-Field Extraction Contract Candidate Scan
+
+### Trigger
+
+Phase294 closed the alpha/GF W/Z route's RG/scheme layer as externally sourced. The remaining high-impact blocker is the observed-field/vacuum/mass-matrix extraction gap: Phase256 has a 20-field contract, but no artifact currently fills it.
+
+### Research
+
+- The official GU site identifies the April 1, 2021 draft as the public manuscript source.
+- The draft contains observed-field and bosonic-decomposition sections, a Shiab/Upsilon-style bosonic action, and an appendix that assigns intended GU locations for the Higgs field, weak isospin, weak hypercharge, Higgs potential, cosmological constant as VEV, and Yukawa couplings as VEV.
+- Standard electroweak mass extraction still requires a declared vacuum/order parameter, gauge embedding, quadratic mass operator, photon/Z/W eigenstate projection, normalization, and target-independent source parameters before physical mass comparison.
+- Conclusion: the GU draft gives symbolic research locations, but not the executable observed-field extraction theorem required by Phase256.
+
+### Implementation
+
+- Added Phase295: `studies/phase295_observed_field_extraction_contract_candidate_scan_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P295.md`.
+- The scan loads Phase213, Phase255, Phase256, Phase257, and Phase287.
+- The scan checks every Phase256 field:
+  - observed-field extraction theorem;
+  - source references;
+  - canonical or declared Shiab/Upsilon branch;
+  - branch normalization;
+  - four-dimensional observed-sector vacuum;
+  - quadratic electroweak mass operator;
+  - electroweak gauge embedding;
+  - photon, W, and Z projection/source rows;
+  - W/Z raw-amplitude and common-bridge gates;
+  - Higgs scalar source, profile, and self-coupling relation;
+  - target-blindness, stability sidecars, and P201/P209 application readiness.
+- Wired Phase295 into:
+  - `scripts/generate_validated_boson_predictions.sh`;
+  - `scripts/verify_boson_claim_integrity.sh`;
+  - P101 prediction package output;
+  - P202 objective checklist;
+  - P204/P205/P207 scanner guards.
+
+### Result
+
+- `terminalStatus=observed-field-extraction-contract-candidate-scan-no-intake-ready-artifact`.
+- `observedFieldExtractionContractCandidateScanPassed=true`.
+- `scannedFileCount=7140`.
+- `contractFieldCount=20`.
+- `totalCandidateLineCount=17139`.
+- `fieldsWithCandidateLineCount=20`.
+- `fieldsWithIntakeReadyCandidateCount=0`.
+- `intakeReadyObservedFieldExtractionCandidateCount=0`.
+- `anyObservedFieldExtractionCandidateFillsContract=false`.
+
+### Current State
+
+The observed-field extraction gap is now scanned at the Phase256 field level. The corpus has many symbolic and diagnostic mentions, but no intake-ready artifact that supplies the theorem, branch, normalization, observed vacuum, mass operator, photon/W/Z/H rows, target-blindness proof, stability sidecars, and application readiness. Correct boson predictions still require a new target-independent observed-field extraction artifact plus the W/Z absolute-scale and Higgs scalar-source lineages.
+
+### Targeted Validation
+
+- `dotnet run --project studies/phase295_observed_field_extraction_contract_candidate_scan_001/Phase295ObservedFieldExtractionContractCandidateScan.csproj` passed.
+- `dotnet run --project studies/phase204_boson_source_lineage_candidate_scan_001/Phase204BosonSourceLineageCandidateScan.csproj` passed:
+  - `intakeReadyCandidateCount=0`.
+- `dotnet run --project studies/phase205_boson_source_lineage_text_evidence_scan_001/Phase205BosonSourceLineageTextEvidenceScan.csproj` passed:
+  - `intakeReadyFindingCount=0`.
+- `dotnet run --project studies/phase207_higgs_quartic_self_coupling_source_scan_001/Phase207HiggsQuarticSelfCouplingSourceScan.csproj` passed:
+  - `intakeReadyFindingCount=0`.
+- `dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj` passed and now includes the Phase295 package section.
+- `dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj` passed:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=88`.
+  - `checklistFailedCount=3`.
+- `./scripts/verify_boson_claim_integrity.sh` passed:
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+
+## 2026-05-17T17:58:30-04:00 - Electromagnetic Alpha Source Audit
+
+### Trigger
+
+Phase286 showed that external electromagnetic alpha inputs can move the W/Z values into numerical closure, but Phase290 and Phase291 only addressed the charged-lepton threshold part of that route. The remaining distinct bottleneck was whether alpha/electric charge itself has a GU-local, target-independent source.
+
+### Agent Attempt
+
+- I launched a worker agent for the self-contained Phase292 artifact, with ownership limited to the new study and implementation note.
+- The worker failed before starting because the session hit the subagent usage limit.
+- I continued the implementation locally.
+
+### Research
+
+- PDG electroweak review material keeps W/Z mass formulae tied to electromagnetic coupling, weak mixing, and VEV inputs; these are precision-scheme inputs, not derived GU source rows.
+- NIST/CODATA supplies alpha as a recommended measured physical constant.
+- NIST's fine-structure discussion treats alpha as an effective electromagnetic coupling whose value runs with energy through vacuum-polarization effects.
+- Existing repository scans had already found no intake-ready `gu-alpha-or-charge-source` rows in the local corpus or excluded first-party corpus.
+
+### Implementation
+
+- Added Phase292: `studies/phase292_electromagnetic_alpha_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P292.md`.
+- The audit reads P286, P287, P288, P289, P291, P235, P236, P245, and P213.
+- The audit records that:
+  - external alpha inputs numerically close the W/Z diagnostic;
+  - alpha(0), alpha(MZ), and running/scheme context remain external;
+  - the official draft does not supply alpha/charge source rows;
+  - local and excluded-corpus scans have zero intake-ready alpha/charge candidates;
+  - Pati-Salam high-scale normalization is present but not promotable to low-energy W/Z without RG/threshold/source closure;
+  - Koide does not provide alpha;
+  - source contracts remain unfilled.
+- Wired Phase292 into:
+  - `scripts/generate_validated_boson_predictions.sh`;
+  - `scripts/verify_boson_claim_integrity.sh`;
+  - P101 prediction package output;
+  - P202 objective checklist;
+  - P204/P205/P207 scanner guards.
+
+### Result
+
+- `terminalStatus=electromagnetic-alpha-source-audit-external-input-not-gu-source`.
+- `electromagneticAlphaSourceAuditPassed=true`.
+- `externalAlphaInputsNumericallyCloseWz=true`.
+- `externalAlphaZeroUsed=true`.
+- `guAlphaZeroSourceFound=false`.
+- `localParameterScanAlphaCandidateCount=465`.
+- `localParameterScanAlphaIntakeReadyCount=0`.
+- `excludedCorpusAlphaCandidateCount=168`.
+- `excludedCorpusAlphaIntakeReadyCount=0`.
+- `patiSalamHighScaleNormalizationPresent=true`.
+- `patiSalamNormalizationPromotableForLowEnergyWz=false`.
+- `lowEnergyRgTransportSourcePromotable=false`.
+- `alphaSourcePromotesWzMasses=false`.
+- `alphaSourcePromotesBosonPredictions=false`.
+
+### Targeted Validation
+
+- `dotnet run --project studies/phase292_electromagnetic_alpha_source_audit_001/Phase292ElectromagneticAlphaSourceAudit.csproj` passed.
+- `dotnet run --project studies/phase204_boson_source_lineage_candidate_scan_001/Phase204BosonSourceLineageCandidateScan.csproj` passed:
+  - `intakeReadyCandidateCount=0`.
+- `dotnet run --project studies/phase205_boson_source_lineage_text_evidence_scan_001/Phase205BosonSourceLineageTextEvidenceScan.csproj` passed:
+  - `intakeReadyFindingCount=0`.
+- `dotnet run --project studies/phase207_higgs_quartic_self_coupling_source_scan_001/Phase207HiggsQuarticSelfCouplingSourceScan.csproj` passed:
+  - `intakeReadyFindingCount=0`.
+- `dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj` passed and now includes the Phase292 package section.
+- `dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj` passed:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=85`.
+  - `checklistFailedCount=3`.
+- `./scripts/verify_boson_claim_integrity.sh` passed:
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+
+### Current State
+
+The alpha/electric-charge part of the Phase286 route is now explicitly audited. External alpha inputs and simple running diagnostics are useful for diagnosis, but they are not a GU prediction source. The remaining promotion blockers are still a GU-local alpha/electric-charge source, low-energy RG/scheme transport, charged thresholds, target-independent VEV or direct W/Z scale source, and the separate Higgs scalar-source lineage.
+
+### Full Validation
+
+- Full `./scripts/generate_validated_boson_predictions.sh` passed after Phase292 was wired into the repeated boson audit chain and ended with:
+  - `electromagnetic-alpha-source-audit-external-input-not-gu-source`.
+  - `electromagneticAlphaSourceAuditPassed=true`.
+  - `externalAlphaInputsNumericallyCloseWz=true`.
+  - `guAlphaZeroSourceFound=false`.
+  - `localParameterScanAlphaIntakeReadyCount=0`.
+  - `excludedCorpusAlphaIntakeReadyCount=0`.
+  - `patiSalamNormalizationPromotableForLowEnergyWz=false`.
+  - `alphaSourcePromotesBosonPredictions=false`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=85`.
+  - `checklistFailedCount=3`.
+  - `boson-claim-integrity-verified`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `dotnet test GeometricUnity.slnx` passed.
+- `git diff --check` passed after this final journal update.
+
+## 2026-05-17T18:10:52-04:00 - Fermi/VEV Source Audit
+
+### Trigger
+
+Phase292 isolated the alpha/electric-charge part of the Phase286 W/Z numerical closure route. The next separate input in that same route was the external Fermi-derived electroweak VEV. Existing P195, P214, P229, and P253 already block broad VEV/vacuum promotion, so this phase narrowly records the Fermi/VEV source boundary in the current alpha/GF W/Z chain.
+
+### Research
+
+- PDG electroweak review material ties W/Z masses to `v`, `g`, and weak-mixing structure; those formulae identify required source inputs but do not derive a GU vacuum.
+- NIST/CODATA treats the Fermi coupling constant as an externally recommended physical constant.
+- Existing repository audits already show no production observed-sector GU vacuum candidate, no mass-matrix extraction, and no target-independent GU VEV source-lineage derivation.
+
+### Implementation
+
+- Added Phase293: `studies/phase293_fermi_vev_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P293.md`.
+- The audit reads P195, P214, P229, P253, P284, P286, P287, P288, P289, P292, P245, and P213.
+- The audit records that:
+  - the external Fermi-derived VEV is used and reconstructs `G_F = 1.1663787e-5 GeV^-2`;
+  - alpha/GF external-input diagnostics can numerically close W/Z but do not promote boson masses;
+  - the official draft does not supply a target-independent VEV source;
+  - local and excluded-corpus scans have zero intake-ready VEV candidates;
+  - no production observed-sector vacuum candidate or vacuum/mass-matrix unlock exists;
+  - the VEV source route does not complete W/Z or Higgs source contracts.
+- Wired Phase293 into:
+  - `scripts/generate_validated_boson_predictions.sh`;
+  - `scripts/verify_boson_claim_integrity.sh`;
+  - P101 prediction package output;
+  - P202 objective checklist;
+  - P204/P205/P207 scanner guards.
+
+### Result
+
+- `terminalStatus=fermi-vev-source-audit-external-input-not-gu-vacuum`.
+- `fermiVevSourceAuditPassed=true`.
+- `externalVevUsed=true`.
+- `externalVevGeV=246.21965079413738`.
+- `derivedFermiCouplingGeVMinus2=1.1663786999999998e-05`.
+- `externalVevParticipatesInNumericalWzClosure=true`.
+- `guVevSourceFound=false`.
+- `localParameterScanVevCandidateCount=6381`.
+- `localParameterScanVevIntakeReadyCount=0`.
+- `excludedCorpusVevCandidateCount=1514`.
+- `excludedCorpusVevIntakeReadyCount=0`.
+- `fermiVevSourcePromotesWzMasses=false`.
+- `fermiVevSourcePromotesBosonPredictions=false`.
+
+### Targeted Validation
+
+- `dotnet run --project studies/phase293_fermi_vev_source_audit_001/Phase293FermiVevSourceAudit.csproj` passed.
+- `dotnet run --project studies/phase204_boson_source_lineage_candidate_scan_001/Phase204BosonSourceLineageCandidateScan.csproj` passed:
+  - `intakeReadyCandidateCount=0`.
+- `dotnet run --project studies/phase205_boson_source_lineage_text_evidence_scan_001/Phase205BosonSourceLineageTextEvidenceScan.csproj` passed:
+  - `intakeReadyFindingCount=0`.
+- `dotnet run --project studies/phase207_higgs_quartic_self_coupling_source_scan_001/Phase207HiggsQuarticSelfCouplingSourceScan.csproj` passed:
+  - `intakeReadyFindingCount=0`.
+- `dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj` passed and now includes the Phase293 package section.
+- `dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj` passed:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=86`.
+  - `checklistFailedCount=3`.
+- `./scripts/verify_boson_claim_integrity.sh` passed:
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+
+### Current State
+
+The current alpha/GF W/Z route is now split into explicit non-promotional source audits: Phase292 for alpha/electric charge and Phase293 for the Fermi-derived VEV. Both inputs are useful external diagnostics, but neither is a GU-local source row. The remaining prediction blockers are still the W/Z absolute-scale source lineage, observed-sector vacuum/mass-matrix extraction, low-energy RG/scheme transport, charged thresholds, and the separate Higgs scalar-source lineage.
+
+### Full Validation
+
+- Full `./scripts/generate_validated_boson_predictions.sh` passed after Phase293 was wired into the repeated boson audit chain and ended with:
+  - `fermi-vev-source-audit-external-input-not-gu-vacuum`.
+  - `fermiVevSourceAuditPassed=true`.
+  - `externalVevUsed=true`.
+  - `externalVevParticipatesInNumericalWzClosure=true`.
+  - `guVevSourceFound=false`.
+  - `localParameterScanVevIntakeReadyCount=0`.
+  - `excludedCorpusVevIntakeReadyCount=0`.
+  - `fermiVevSourcePromotesBosonPredictions=false`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=86`.
+  - `checklistFailedCount=3`.
+  - `boson-claim-integrity-verified`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `dotnet test GeometricUnity.slnx` passed.
+- `git diff --check` passed after this final journal update.
+
+## 2026-05-17T18:21:32-04:00 - RG/Scheme Transport Source Audit
+
+### Trigger
+
+Phase292 isolated alpha/electric-charge and Phase293 isolated the Fermi-derived VEV. The remaining distinct component in the same alpha/GF W/Z diagnostic route is the low-energy running, radiative-scheme, and hadronic-vacuum-polarization transport layer.
+
+### Research
+
+- PDG electroweak material treats precision W/Z evaluation as depending on declared couplings, weak mixing, radiative corrections, and scheme inputs.
+- Hadronic-vacuum-polarization literature shows that running alpha and the weak mixing angle require nonperturbative/data-driven hadronic contributions, not just a lepton-only logarithm.
+- Existing P236/P261/P286 artifacts already showed no GU running operator, hadronic source, or renormalization-scheme closure; Phase294 consolidates that as the transport-source member of the alpha/GF route.
+
+### Implementation
+
+- Added Phase294: `studies/phase294_rg_scheme_transport_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P294.md`.
+- The audit reads P235, P236, P261, P284, P286, P287, P288, P289, P292, P293, P245, and P213.
+- The audit records that:
+  - leptonic running and imported alpha(MZ) can numerically close W/Z diagnostics;
+  - the running/scheme inputs are external;
+  - no GU running operator, hadronic vacuum-polarization source, or renormalization-scheme source exists;
+  - local and excluded-corpus scans have zero intake-ready RG/scheme candidates;
+  - neighboring alpha and VEV audits remain non-promotional;
+  - W/Z/H source contracts remain unfilled.
+- Wired Phase294 into:
+  - `scripts/generate_validated_boson_predictions.sh`;
+  - `scripts/verify_boson_claim_integrity.sh`;
+  - P101 prediction package output;
+  - P202 objective checklist;
+  - P204/P205/P207 scanner guards.
+
+### Result
+
+- `terminalStatus=rg-scheme-transport-source-audit-external-transport-not-gu-source`.
+- `rgSchemeTransportSourceAuditPassed=true`.
+- `leptonicRunningNumericallyClosesWz=true`.
+- `importedAlphaMzNumericallyClosesWz=true`.
+- `rgSchemeInputsAreExternal=true`.
+- `guRunningOperatorSourceFound=false`.
+- `guHadronicVacuumPolarizationSourceFound=false`.
+- `guRenormalizationSchemeSourceFound=false`.
+- `localParameterScanRgCandidateCount=11969`.
+- `localParameterScanRgIntakeReadyCount=0`.
+- `excludedCorpusRgCandidateCount=6392`.
+- `excludedCorpusRgIntakeReadyCount=0`.
+- `rgSchemeTransportPromotesWzMasses=false`.
+- `rgSchemeTransportPromotesBosonPredictions=false`.
+
+### Targeted Validation
+
+- `dotnet run --project studies/phase294_rg_scheme_transport_source_audit_001/Phase294RgSchemeTransportSourceAudit.csproj` passed.
+- `dotnet run --project studies/phase204_boson_source_lineage_candidate_scan_001/Phase204BosonSourceLineageCandidateScan.csproj` passed:
+  - `intakeReadyCandidateCount=0`.
+- `dotnet run --project studies/phase205_boson_source_lineage_text_evidence_scan_001/Phase205BosonSourceLineageTextEvidenceScan.csproj` passed:
+  - `intakeReadyFindingCount=0`.
+- `dotnet run --project studies/phase207_higgs_quartic_self_coupling_source_scan_001/Phase207HiggsQuarticSelfCouplingSourceScan.csproj` passed:
+  - `intakeReadyFindingCount=0`.
+- `dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj` passed and now includes the Phase294 package section.
+- `dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj` passed:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=87`.
+  - `checklistFailedCount=3`.
+- `./scripts/verify_boson_claim_integrity.sh` passed:
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+
+### Current State
+
+The alpha/GF W/Z route is now factorized into three explicit non-promotional source audits: alpha/electric charge (P292), Fermi-derived VEV (P293), and RG/scheme transport (P294). The route is numerically useful but remains external. Correct boson predictions still require new GU-local source artifacts for W/Z absolute scale, observed-field/vacuum mass-matrix extraction, charged and hadronic thresholds, low-energy transport, and Higgs scalar-source lineage.
+
+### Full Validation
+
+- Full `./scripts/generate_validated_boson_predictions.sh` passed after Phase294 was wired into the repeated boson audit chain and ended with:
+  - `rg-scheme-transport-source-audit-external-transport-not-gu-source`.
+  - `rgSchemeTransportSourceAuditPassed=true`.
+  - `leptonicRunningNumericallyClosesWz=true`.
+  - `importedAlphaMzNumericallyClosesWz=true`.
+  - `rgSchemeInputsAreExternal=true`.
+  - `guRunningOperatorSourceFound=false`.
+  - `guHadronicVacuumPolarizationSourceFound=false`.
+  - `guRenormalizationSchemeSourceFound=false`.
+  - `localParameterScanRgIntakeReadyCount=0`.
+  - `excludedCorpusRgIntakeReadyCount=0`.
+  - `rgSchemeTransportPromotesBosonPredictions=false`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=87`.
+  - `checklistFailedCount=3`.
+  - `boson-claim-integrity-verified`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `dotnet test GeometricUnity.slnx` passed.
+- `git diff --check` passed after this final journal update.
+
+## 2026-05-18T00:04:42-04:00 - Current Phase303 Status
+
+### Summary
+
+The newest diagnostic is Phase303, the identity-split branch/source normalization audit. A full detailed entry is recorded above under the same working session; this short entry keeps the end of the journal aligned with the current state after final validation.
+
+### Outcome
+
+- Phase303 preserved the Phase302 near-pass but did not promote it.
+- `identitySplitBranchSourceNormalizationAuditPassed=true`.
+- `allRowsRawPassingCandidateCount=0`.
+- `stableCandidateCount=0`.
+- `stableRawCommonAllRowsCandidateCount=0`.
+- `phase302BestMinRowScaledRawToTargetRatio=0.38413709823156705`.
+- `canFillPhase201WzContract=false`.
+- `promotedPhysicalMassClaimCount=0`.
+
+### Validation
+
+- `./scripts/generate_validated_boson_predictions.sh` passed.
+- `dotnet test GeometricUnity.slnx` passed.
+- `git diff --check` passed.
+- After journal edits, P205, P207, and P296 scanner guards still reported zero intake-ready findings; P101, P202, and the claim-integrity verifier still passed.
+
+### Remaining Blocker
+
+The W/Z path still needs a branch-stable, theorem-backed source law and a resolved charged/neutral identity/mixing sidecar before a physical W/Z prediction can be promoted. The current repository state still cannot make a successful W/Z/H physical boson mass prediction.
+
+## 2026-05-18T00:12:54-04:00 - Corrected Phase303 Identity-Sidecar Semantics
+
+### Trigger
+
+While continuing from Phase303, I noticed a fixable diagnostic wording/source issue: Phase303 inherited the original Phase24/Phase26 readiness artifacts, which remain `identity-feature-blocked` and `mixing-convention-blocked`. That is historical context, but it is not the current identity-sidecar state. Phase27 and Phase251 already record that internal W/Z identity labels and a mixing convention are available, while also recording that those labels do not fill the W/Z absolute source contract.
+
+### Fix
+
+- Updated Phase303 to read:
+  - `studies/phase27_charge_sector_convention_001/identity_rule_readiness_after_charge_sectors.json`;
+  - `studies/phase27_charge_sector_convention_001/mixing_convention_readiness.json`;
+  - `studies/phase251_upstream_wz_identity_rule_source_chain_audit_001/output/upstream_wz_identity_rule_source_chain_audit_summary.json`;
+  - the initial Phase24 artifact only as historical blocker context.
+- Replaced the Phase303 check `mixing-and-identity-sidecars-remain-blocked` with `phase27-identity-sidecar-current-but-not-source-law`.
+- Added explicit summary fields:
+  - `phase27IdentityRuleReady=true`;
+  - `phase27MixingConventionReady=true`;
+  - `phase251UpstreamIdentityReady=true`;
+  - `phase251UpstreamIdentityNotAbsoluteSource=true`;
+  - `identitySidecarFillsWzAbsoluteSourceContract=false`.
+- Updated P101, P202, and `scripts/verify_boson_claim_integrity.sh` to assert this distinction.
+- Updated `docs/Phases/Implementation/IMPLEMENTATION_P303.md`.
+
+### Result
+
+- Phase303 still passes as a non-promotional blocker audit:
+  - `identitySplitBranchSourceNormalizationAuditPassed=true`.
+  - `allRowsRawPassingCandidateCount=0`.
+  - `stableCandidateCount=0`.
+  - `stableRawCommonAllRowsCandidateCount=0`.
+  - `phase302BestMinRowScaledRawToTargetRatio=0.38413709823156705`.
+  - `canFillPhase201WzContract=false`.
+- The blocker is now stated more accurately:
+  - Phase27 identity/mixing sidecars can label the internal W/Z candidates.
+  - Phase251 shows those labels are identity/ratio evidence only.
+  - The missing artifact is a branch-stable source-law transfer theorem and contract-grade W/Z source rows, not another basic charged/neutral label sidecar.
+
+### Validation
+
+- `dotnet run --project studies/phase303_identity_split_branch_source_normalization_audit_001/Phase303IdentitySplitBranchSourceNormalizationAudit.csproj` passed.
+- P101 package passed.
+- P202 objective audit passed:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=96`.
+  - `checklistFailedCount=3`.
+- `./scripts/verify_boson_claim_integrity.sh` passed:
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed and ended with:
+  - `identity-split-branch-source-normalization-audit-no-stable-source-normalizer`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=96`.
+  - `checklistFailedCount=3`.
+  - `boson-claim-integrity-verified`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `dotnet test GeometricUnity.slnx` passed.
+- `git diff --check` passed before this journal update.
+
+## 2026-05-18T00:20:05-04:00 - Phase27 Projection Descriptors Tested in Phase303
+
+### Trigger
+
+After correcting Phase303's identity-sidecar semantics, I tested the most direct local repair candidate: use the Phase27 charged-plane and neutral-axis convention as the branch/source projection descriptor for the Phase302 identity-split near-pass.
+
+### Fix Attempt
+
+- Added Phase27 projection descriptors to Phase303:
+  - `phase27-charged-plane-l2`;
+  - `phase27-charged-plane-energy`;
+  - `phase27-neutral-axis-l2`;
+  - `phase27-neutral-axis-energy`;
+  - `phase27-sector-projection-l2`;
+  - `phase27-sector-projection-energy`.
+- Kept the earlier generic descriptors in the same audit, so Phase303 now assesses both residual-based and Phase27 sector-projection-based normalizers.
+- Updated `docs/Phases/Implementation/IMPLEMENTATION_P303.md` to record the expanded descriptor set.
+
+### Result
+
+- Phase303 descriptor count increased from 7 to 13.
+- Phase303 candidate assessment count increased from 15 to 27.
+- The Phase27 projection route did not repair the W/Z prediction path:
+  - `allRowsRawPassingCandidateCount=0`.
+  - `stableCandidateCount=0`.
+  - `stableRawCommonAllRowsCandidateCount=0`.
+  - `phase302BestMinRowScaledRawToTargetRatio=0.38413709823156705`.
+  - `canFillPhase201WzContract=false`.
+- The best candidate remains a residual-norm descriptor, not a Phase27 projection descriptor, and it still fails the raw and stability gates.
+
+### Validation
+
+- `dotnet run --project studies/phase303_identity_split_branch_source_normalization_audit_001/Phase303IdentitySplitBranchSourceNormalizationAudit.csproj` passed.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed and ended with:
+  - `identity-split-branch-source-normalization-audit-no-stable-source-normalizer`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=96`.
+  - `checklistFailedCount=3`.
+  - `boson-claim-integrity-verified`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `dotnet test GeometricUnity.slnx` passed.
+- After this journal entry was added and moved to the chronological end, P205, P207, and P296 scanner guards were rerun and still reported zero intake-ready findings; P101, P202, and the claim-integrity verifier still passed.
+
+### Remaining Blocker
+
+The corrected Phase303 result is now narrower: Phase27 supplies internal charged/neutral labeling and mixing convention evidence, but its charged-plane/neutral-axis projections do not supply a branch-stable, target-independent source normalizer. The missing artifact remains a theorem-backed W/Z direct bridge source law with contract-grade particle-specific source rows.
+
+## 2026-05-18T00:39:08-04:00 - Phase27 Charged-Sector Aggregate Tested in Phase304
+
+### Trigger
+
+Phase303 showed that Phase27 singleton identities and projection descriptors do not supply a promotable W/Z source normalizer. The next plausible local repair was that Phase27's W information might live in the whole charged SU(2) sector, not in one singleton candidate.
+
+### Fix Attempt
+
+- Added `studies/phase304_phase27_sector_aggregate_wz_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P304.md`.
+- Built Phase304 to use Phase282 variation matrices and Phase27 charged/neutral identity metadata.
+- Tested source-defined aggregate pairings across all promoted fermion transitions:
+  - Phase27 singleton identities;
+  - all charged versus all neutral;
+  - charged-plane axes 0 and 1 versus neutral axis 2;
+  - charged axis 0 versus neutral axis 2;
+  - charged axis 1 versus neutral axis 2.
+- Kept target masses out of candidate construction. Targets are only used after candidate materialization for diagnostic comparison.
+- Wired Phase304 into the generator, P101 package, P202 objective audit, claim-integrity verifier, and scanner guards.
+
+### Result
+
+- Phase304 passed as a negative audit with:
+  - `phase27SectorAggregateWzSourceAuditPassed=true`.
+  - `chargedCandidateCount=9`.
+  - `neutralCandidateCount=3`.
+  - `pairCount=132`.
+  - `assessmentCount=660`.
+  - `allRowsRawPassingAssessmentCount=0`.
+  - `stableAssessmentCount=0`.
+  - `stableRawCommonAssessmentCount=0`.
+  - `p302ScaledStableRawCommonAssessmentCount=0`.
+  - `canFillPhase201WzContract=false`.
+- The strongest near miss was `phase27-all-charged-vs-all-neutral:4->6`.
+- That near miss cleared the Phase302-scaled per-row raw floor:
+  - `bestP302ScaledMinRowRawToTargetRatio=1.2924117589977038`.
+- It still failed branch stability and common W/Z scale consistency:
+  - `bestMaxParticleRelativeSpread=0.07031467992061004` against a `0.05` tolerance.
+  - `P302ScaledCommonMeanRelativeSpread` for the best assessment is about `1.015`.
+- This is evidence that sector aggregation is a better near miss than singleton Phase303, but it is not a successful prediction and is not promotable.
+
+### Validation
+
+- `dotnet run --project studies/phase304_phase27_sector_aggregate_wz_source_audit_001/Phase304Phase27SectorAggregateWzSourceAudit.csproj` passed.
+- P204, P205, P207, and P296 scanner runs passed before this journal entry and still reported zero intake-ready source-lineage findings.
+- P101 package passed and includes the Phase304 evidence block.
+- P202 objective audit passed with:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=97`.
+  - `checklistFailedCount=3`.
+- `./scripts/verify_boson_claim_integrity.sh` passed:
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed and ended with:
+  - `phase27-sector-aggregate-wz-source-audit-no-stable-aggregate-source`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=97`.
+  - `checklistFailedCount=3`.
+  - `boson-claim-integrity-verified`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `dotnet test GeometricUnity.slnx` passed.
+
+### Remaining Blocker
+
+The charged-sector aggregate gives a concrete near miss, but it does not satisfy the required stability or common-scale gates. The unresolved issue is still a missing theorem-backed W/Z direct bridge-source law with target-independent, contract-grade source rows. I do not have evidence that this is fixable as an implementation bug.
+
+## 2026-05-18T00:54:49-04:00 - Canonical Charged-Ladder Operator Tested in Phase305
+
+### Trigger
+
+Phase304 tested Phase27 charged/neutral sector norms and found a stronger near miss, but it did not test the standard charged-current ladder combination directly. The existing P225 audit already records the relevant physics convention, `T+/-=(sigma1 +/- i sigma2)/2`, and blocks post-hoc representation-normalization promotion without a GU source theorem. The remaining non-duplicative local repair was to apply the analogous Phase27 axis combination to the Phase282 branch-local matrix elements themselves.
+
+### Fix Attempt
+
+- Added `studies/phase305_phase27_charged_ladder_operator_wz_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P305.md`.
+- Evaluated canonical charged-ladder source definitions:
+  - `T+ = (axis0 + i axis1) / sqrt(2)`;
+  - `T- = (axis0 - i axis1) / sqrt(2)`;
+  - all-axis coherent charged sums with coherent neutral-axis sums;
+  - all-axis coherent charged sums with neutral-axis root-sum-square;
+  - charged axis root-sum-square with neutral-axis root-sum-square;
+  - singleton axis0/axis1 charged-ladder pairs against singleton neutral-axis candidates.
+- Kept the search target-independent. Targets are only used after source definitions are materialized for raw, stability, and common-scale gate comparison.
+- Wired Phase305 into the generator, P101 package, P202 objective audit, claim-integrity verifier, and scanner guards.
+
+### Result
+
+- Phase305 passed as a negative audit with:
+  - `phase27ChargedLadderOperatorWzSourceAuditPassed=true`.
+  - `chargedAxis0CandidateCount=5`.
+  - `chargedAxis1CandidateCount=4`.
+  - `neutralAxisCandidateCount=3`.
+  - `definitionCount=125`.
+  - `pairCount=132`.
+  - `assessmentCount=16500`.
+  - `allRowsRawPassingAssessmentCount=0`.
+  - `p302ScaledAllRowsRawPassingAssessmentCount=72`.
+  - `stableAssessmentCount=6`.
+  - `stableRawCommonAssessmentCount=0`.
+  - `p302ScaledStableRawCommonAssessmentCount=0`.
+  - `canFillPhase201WzContract=false`.
+- The most branch-stable definition was `charged-ladder-all-axis-neutral-coherent-plus:1->9`:
+  - `bestMaxParticleRelativeSpread=0.02448213567533975`;
+  - it fails raw and common-scale gates.
+- The strongest Phase302-scaled raw near miss was `charged-ladder-pair-candidate-10-plus-candidate-7-z-candidate-2:4->6`:
+  - it clears the Phase302-scaled all-row raw gate;
+  - `bestP302ScaledRawAssessmentMaxSpread=0.051076179232408876`, just above the `0.05` stability tolerance;
+  - it still fails common W/Z scale consistency.
+
+### Validation
+
+- `dotnet run --project studies/phase305_phase27_charged_ladder_operator_wz_source_audit_001/Phase305Phase27ChargedLadderOperatorWzSourceAudit.csproj` passed.
+- P101 package passed after Phase305 integration.
+- P202 objective audit passed after Phase305 integration:
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=98`.
+  - `checklistFailedCount=3`.
+- `./scripts/verify_boson_claim_integrity.sh` passed:
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+
+### Remaining Blocker
+
+The canonical charged-ladder operator does not repair the W/Z prediction path. It creates stable-but-underpowered and scaled-raw near-miss populations, but no definition simultaneously clears raw, branch-stability, and common W/Z scale gates. The blocker remains a missing theorem-backed W/Z direct bridge-source law with target-independent source rows and normalization.
+
+## 2026-05-18T01:06:34-04:00 - Neutral-Mixing Follow-Up After Phase305
+
+### Trigger
+
+After Phase305 closed the charged-ladder route, I checked whether a separate Phase27 neutral-mixing artifact could still repair the W/Z path by adding a U(1), hypercharge, or weak-angle source that Phase305 did not use.
+
+### Research
+
+- Inspected `studies/phase27_charge_sector_convention_001/electroweak_mixing_convention.json`.
+- Inspected `studies/phase27_charge_sector_convention_001/mixing_convention_readiness.json`.
+- Inspected `studies/phase251_upstream_wz_identity_rule_source_chain_audit_001/output/upstream_wz_identity_rule_source_chain_audit_summary.json`.
+- Searched the repository for `Weinberg`, `weak mixing`, `U(1)`, `hypercharge`, and related Cartan/mixing terms.
+
+### Result
+
+- Phase27's `u1GeneratorId` is `canonical-u1-generator-from-su2-cartan-axis-2`.
+- The Phase27 convention assumptions state that axis 2 is an internal neutral Cartan axis and that the convention does not use W, Z, photon, or PDG target values.
+- P251 already classifies the Phase27 convention as internal W/Z identity-label evidence only:
+  - `phase27ConventionIsInternalCartanConvention=true`;
+  - `upstreamProvidesSourceLineageContractFields=false`;
+  - `upstreamProvidesPhase64BridgeTheorem=false`;
+  - `upstreamFillsWzAbsoluteSourceContract=false`.
+- Existing audits already cover the low-energy hypercharge/weak-mixing gap:
+  - P234 blocks the Cox II symbolic electroweak formula because no promotable `g_Y`/mixing source is present.
+  - P235 blocks the Pati-Salam/left-right hypercharge normalization as a high-scale boundary without GU breaking scale, RG evolution, thresholds, or low-energy coupling values.
+  - P236 blocks low-energy RG/hypercharge transport because no target-independent low-energy `g_Y` or weak-mixing source row exists.
+
+### Decision
+
+No Phase306 implementation is justified from this check. The neutral-mixing route is already covered by existing blockers, and Phase27 does not contain a separate physical U(1)/hypercharge source law that can be applied to the Phase305 charged-ladder near misses.
+
+## 2026-05-18T03:59:05-04:00 - Decoupled Charged-Ladder W/Z Row Audit Materialized as Phase306
+
+### Trigger
+
+After the Phase305 canonical charged-ladder audit failed the same-definition W/Z source gate, I ran an ad hoc diagnostic that allowed W and Z to select particle-specific charged-ladder rows after the target-independent row set had already been materialized. That diagnostic found a real Phase302-scaled numerical near-pass, so I materialized it as Phase306 instead of leaving it as an untracked notebook result.
+
+### Attempt
+
+- Added `studies/phase306_decoupled_charged_ladder_wz_row_source_audit_001/`.
+- Reused the Phase305 target-independent source definitions:
+  - `T+ = (axis0 + i axis1) / sqrt(2)`;
+  - `T- = (axis0 - i axis1) / sqrt(2)`;
+  - singleton, coherent, and RSS neutral/charged combinations.
+- Kept construction target-independent. Targets are only used after row materialization for raw, stability, and common-scale gate evaluation.
+- Added a second diagnostic layer that forms decoupled W/Z row assessments from independently stable W rows and Z rows.
+- Wired Phase306 into the generator, P101 package, P202 objective audit, claim-integrity verifier, and scanner guards.
+
+### Result
+
+- Phase306 passed as a negative audit with:
+  - `decoupledChargedLadderWzRowSourceAuditPassed=true`.
+  - `definitionCount=125`.
+  - `pairCount=132`.
+  - `assessmentCount=16500`.
+  - `allRowsRawPassingAssessmentCount=0`.
+  - `p302ScaledAllRowsRawPassingAssessmentCount=72`.
+  - `stableAssessmentCount=6`.
+  - `stableRawCommonAssessmentCount=0`.
+  - `p302ScaledStableRawCommonAssessmentCount=0`.
+  - `wStableP302ScaledRawRowCount=40`.
+  - `zStableP302ScaledRawRowCount=12`.
+  - `decoupledRawCommonPassingAssessmentCount=0`.
+  - `decoupledP302ScaledCommonPassingAssessmentCount=96`.
+  - `numericalP302ScaledDecoupledNearPassPresent=true`.
+  - `canFillPhase201WzContract=false`.
+- Best decoupled Phase302-scaled common assessment:
+  - `decoupled:w-boson:charged-ladder-all-axis-neutral-rss-plus:0->6|z-boson:charged-ladder-all-axis-neutral-rss-minus:4->6`;
+  - `bestDecoupledP302ScaledCommonSpread=0.028734581907060696`;
+  - `bestDecoupledMinP302ScaledRawToTargetRatio=1.2924117589977038`.
+
+### Decision
+
+Do not promote the Phase306 near-pass. It shows that independently selected W and Z charged-ladder rows can clear the Phase302-scaled numerical common gate, but the unscaled raw/common gate remains empty and no theorem derives the decoupled transition/source-row choice or the Phase302 particle scales as a contract-grade W/Z source law.
+
+### Remaining Blocker
+
+The blocker has narrowed: a successful W/Z route now specifically needs a theorem-backed, target-independent law for particle-specific W and Z source-row selection and normalization, or a replacement source law that clears raw and common W/Z gates without relying on Phase302 target-fitted scales.
+
+## 2026-05-18T04:36:28-04:00 - Target-Independent Decoupled W/Z Row Selector Tested as Phase307
+
+### Trigger
+
+Phase306 showed that decoupled W and Z charged-ladder rows can pass the Phase302-scaled numerical gate when paired after materialization. That left open whether the near-pass could be chosen by a predeclared source-side row-selection law, rather than by post-hoc target comparison.
+
+### Attempt
+
+- Added `studies/phase307_target_independent_decoupled_wz_row_selection_law_audit_001/`.
+- Reused the Phase305/Phase306 charged-ladder source definitions and row materialization.
+- Added eight target-independent selectors over stable decoupled W/Z row pairs:
+  - unscaled source common-spread selectors;
+  - stability-first selectors;
+  - unscaled max-min source magnitude selectors;
+  - same-transition selectors;
+  - Phase302-scaled source common-spread and max-min magnitude selectors.
+- Kept targets out of row selection. Targets are used only after selector output exists, for raw/common gate evaluation.
+- Wired Phase307 into the generator, P101 package, P202 objective audit, claim-integrity verifier, and scanner guards.
+
+### Result
+
+- Phase307 passed as a negative audit with:
+  - `targetIndependentDecoupledWzRowSelectionLawAuditPassed=true`.
+  - `selectionLawCount=8`.
+  - `rawStableCommonSelectionLawCount=0`.
+  - `p302ScaledStableCommonSelectionLawCount=1`.
+  - `p302ScaledNearPassWithoutRawSelectionLawCount=1`.
+  - `selectionLawCanFillPhase201WzContractCount=0`.
+  - `canFillPhase201WzContract=false`.
+- The closest Phase302-scaled common-spread selector chose rows whose scaled W/Z magnitudes match closely, but whose magnitudes are too small to pass the Phase302-scaled raw gate.
+- The selector that actually chooses a Phase302-scaled stable/common near-pass is `p302-scaled-max-min-magnitude`.
+- The selected near-pass still depends on Phase302 particle scales and does not clear the unscaled raw/common gate.
+
+### Decision
+
+Do not promote the Phase307 selector result. It improves the diagnosis by showing that a predeclared target-independent selector can find one scaled numerical near-pass, but the only route that works is Phase302-scaled and remains non-promotable without a theorem-backed scale and decoupled row-selection source law.
+
+### Remaining Blocker
+
+The W/Z blocker is no longer just row discovery. The missing artifact is a theorem that derives both particle-specific row selection and normalization from GU source geometry in a way that fills the Phase201/P209 source-lineage fields and clears raw/common gates without target-fitted scaling.
+
+## 2026-05-18T07:23:04-04:00 - Phase302 Scale Transfer to Decoupled Charged-Ladder Rows Audited as Phase308
+
+### Trigger
+
+Phase306 and Phase307 showed a real numerical lead: applying the Phase302 source-mode-vector-length scale with the W-specific adjoint/fundamental Casimir multiplier can make decoupled charged-ladder W/Z row pairs pass a scaled numerical gate. The open question was whether this is a lawful source-side transfer or only a useful numerical diagnostic.
+
+### Attempt
+
+- Added `studies/phase308_phase302_scale_transfer_to_decoupled_charged_ladder_audit_001/`.
+- Read the existing Phase302, Phase306, Phase307, Phase201, Phase213, Phase225, and Phase249 summaries.
+- Checked the exact Phase302 scale lead:
+  - `p302CommonScaleId=source-mode-vector-length`.
+  - `p302ParticleLawId=adjoint-casimir-over-fundamental-casimir`.
+  - `p302CommonScaleValue=156`.
+  - `p302WTotalScale=416`.
+  - `p302ZTotalScale=156`.
+- Checked whether that scale has a theorem-backed transfer to the decoupled charged-ladder row family.
+- Wired Phase308 into the generator, P101 package, P202 objective audit, claim-integrity verifier, source scanners, and implementation docs.
+
+### Result
+
+- Phase308 passed as a negative audit with:
+  - `phase302ScaleTransferToDecoupledChargedLadderAuditPassed=true`.
+  - `targetObservablesUsedForConstruction=false`.
+  - `targetValuesUsedOnlyForPostTransferEvaluation=true`.
+  - `p302CommonScaleApplicationTheoremPresent=false`.
+  - `p302ParticleLawApplicationTheoremPresent=false`.
+  - `p302PromotionEligible=false`.
+  - `scaleTransferTheoremClaimed=false`.
+  - `scaleTransferAllowed=false`.
+  - `canFillPhase201WzContract=false`.
+- The Phase306 transfer application keeps a Phase302-scaled near-pass population (`p302ScaledPassingCount=96`) but has `unscaledRawPassingCount=0`.
+- The Phase307 transfer application keeps one target-independent selector near-pass (`p302ScaledPassingCount=1`) but also has `unscaledRawPassingCount=0`.
+
+### Decision
+
+Do not promote Phase302 scale transfer to decoupled charged-ladder rows. The numerical pattern is real enough to preserve, but the source-mode-vector-length scale and W Casimir multiplier still lack an application theorem, a charged-ladder transfer theorem, and Phase201/P209 source-lineage sidecars.
+
+### Remaining Blocker
+
+The current blocker is not an implementation bug in row enumeration or selector choice. It is the absence of a theorem-backed W/Z source law that derives both the physical charged-ladder row selection and normalization before target comparison.
+
+### Validation
+
+- Targeted Phase308 run passed with `phase302ScaleTransferToDecoupledChargedLadderAuditPassed=true`, `scaleTransferAllowed=false`, and `canFillPhase201WzContract=false`.
+- P101 regenerated with Phase308 included and remained `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase308 included and remained `objectiveAchieved=false`, with `checklistPassedCount=101` and `checklistFailedCount=3`.
+- Claim-integrity verifier passed with `sourceLineageMissing=true`, `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and `promotedPhysicalMassClaimCount=0`.
+- Source scanners after the Phase308 docs/journal changes found no intake-ready artifacts:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `canPromoteHiggsQuarticSelfCouplingSource=false`.
+  - P296 `anySourceLineageCandidateFillsContract=false`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed and reran Phase308 in both generator passes.
+- `dotnet test GeometricUnity.slnx` passed.
+- `git diff --check` passed.
+
+This journal entry itself adds new searchable text, so the source scanners must be rerun once more after this entry.
+
+## 2026-05-18T07:55:50-04:00 - Hidden Measure Interpretation of the Phase302 Vector-Length Scale Audited as Phase309
+
+### Trigger
+
+Phase308 showed that the Phase302 `source-mode-vector-length=156` plus W Casimir multiplier remains non-promotable when transferred to charged-ladder rows. The remaining loophole was whether `156` could be justified as an overlooked amplitude-measure conversion from the mode-vector representation, rather than as an unsupported coordinate-count scale.
+
+### Attempt
+
+- Added `studies/phase309_source_mode_vector_length_measure_normalization_audit_001/`.
+- Loaded Phase120 analytic/finite-difference measure evidence, Phase300 source-mode stats, Phase302 vector-length/Casimir lead, Phase308 transfer audit, and the Phase12 mode vectors used by the identity-split replay.
+- Checked whether the relevant source modes were already normalized.
+- Compared the coordinate count `156` against the actual L2/RMS norm conversion `sqrt(156)`.
+- Wired Phase309 into the generator, P101 package, P202 objective audit, claim-integrity verifier, source scanners, and implementation docs.
+
+### Result
+
+- Phase309 passed as a negative audit with:
+  - `sourceModeVectorLengthMeasureNormalizationAuditPassed=true`.
+  - `phase120CommonScaleMean=1.0000000000001665`.
+  - `commonVectorLength=156`.
+  - `sqrtCommonVectorLength=12.489995996796797`.
+  - `maxModeL2NormDeviationFromUnity=2.220446049250313E-16`.
+  - `vectorLengthScaleIsNotL2MeasureConversion=true`.
+  - `hiddenMeasureConversionPresent=false`.
+  - `sourceModeVectorLengthScalePromotable=false`.
+  - `canFillPhase201WzContract=false`.
+- The relevant Phase12 modes are already `unit-M-norm`.
+- Phase120 already validates the amplitude measure at scale one.
+- The norm conversion associated with unit vectors over 156 coordinates is `sqrt(156)`, not `156`.
+
+### Decision
+
+Do not treat the Phase302 `156` factor as a hidden amplitude-measure normalization. It remains a coordinate-count diagnostic unless a new source-side theorem explicitly derives vector-length scaling before target comparison.
+
+### Remaining Blocker
+
+The W/Z path still requires a theorem-backed source law deriving physical row selection and normalization. The latest rejected loophole is "maybe vector length is a missing measure factor"; Phase309 says it is not, under the current Phase12/Phase120 evidence.
+
+### Validation
+
+- Targeted Phase309 run passed with `sourceModeVectorLengthMeasureNormalizationAuditPassed=true`, `hiddenMeasureConversionPresent=false`, `sourceModeVectorLengthScalePromotable=false`, and `canFillPhase201WzContract=false`.
+- P101 regenerated with Phase309 included and remained `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase309 included and remained `objectiveAchieved=false`, with `checklistPassedCount=102` and `checklistFailedCount=3`.
+- Claim-integrity verifier passed with `sourceLineageMissing=true`, `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and `promotedPhysicalMassClaimCount=0`.
+- Source scanners after the Phase309 docs/journal changes found no intake-ready artifacts:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `canPromoteHiggsQuarticSelfCouplingSource=false`.
+  - P296 `anySourceLineageCandidateFillsContract=false`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed and reran Phase309 in both generator passes.
+- `dotnet test GeometricUnity.slnx` passed.
+- `git diff --check` passed.
+
+This validation section adds no promotable source claim; it records the final negative outcome of Phase309 and the post-change validation commands.

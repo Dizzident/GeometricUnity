@@ -5,6 +5,7 @@ const string Phase122Path = "studies/phase122_corrected_operator_selection_rule_
 const string Phase131Path = "studies/phase131_sector_label_candidate_coverage_repair_001/output/sector_label_candidate_coverage_repair.json";
 const string Phase133Path = "studies/phase133_fermion_identity_feature_extractor_001/output/fermion_identity_feature_extractor.json";
 const string Phase134Path = "studies/phase134_fermion_chirality_conjugation_transition_table_001/output/fermion_chirality_conjugation_transition_table.json";
+const string Phase141Path = "studies/phase141_fermion_sector_intake_application_gate_001/output/fermion_sector_intake_application_gate.json";
 
 var outputDir = Environment.GetEnvironmentVariable("PHASE135_OUTPUT_DIR") ?? DefaultOutputDir;
 Directory.CreateDirectory(outputDir);
@@ -13,6 +14,7 @@ using var phase122 = JsonDocument.Parse(File.ReadAllText(Phase122Path));
 using var phase131 = JsonDocument.Parse(File.ReadAllText(Phase131Path));
 using var phase133 = JsonDocument.Parse(File.ReadAllText(Phase133Path));
 using var phase134 = JsonDocument.Parse(File.ReadAllText(Phase134Path));
+using var phase141 = File.Exists(Phase141Path) ? JsonDocument.Parse(File.ReadAllText(Phase141Path)) : null;
 
 bool correctedOperatorSweepAvailable = string.Equals(
     JsonString(phase122.RootElement, "terminalStatus"),
@@ -28,11 +30,13 @@ bool featuresMaterialized = JsonBool(phase133.RootElement, "fermionIdentityFeatu
 bool featureLabelsReady = JsonBool(phase133.RootElement, "featureExtractorPromotable") is true;
 bool transitionTableMaterialized = JsonBool(phase134.RootElement, "transitionTableMaterialized") is true;
 bool transitionTableReady = JsonBool(phase134.RootElement, "transitionTablePromotable") is true;
+bool intakeTransitionRuleReady = phase141?.RootElement.TryGetProperty("appliedTransitionRule", out var appliedTransitionRule) is true
+    && string.Equals(JsonString(appliedTransitionRule, "status"), "ready", StringComparison.Ordinal);
 bool rerunReady = correctedOperatorSweepAvailable
     && coverageRepaired
-    && sectorLabelsReady
     && featuresMaterialized
-    && (featureLabelsReady || transitionTableReady);
+    && (sectorLabelsReady || intakeTransitionRuleReady)
+    && (featureLabelsReady || transitionTableReady || intakeTransitionRuleReady);
 string terminalStatus = rerunReady
     ? "corrected-wz-sweep-rerun-ready"
     : "corrected-wz-sweep-rerun-sector-labels-blocked";
@@ -43,13 +47,17 @@ if (!correctedOperatorSweepAvailable)
 if (!coverageRepaired)
     blockers.Add("coverage-repaired fermion label rows are incomplete");
 if (!sectorLabelsReady)
-    blockers.Add("coverage-repaired fermion label table still lacks explicit chargeSector and weak-sector/quantum-number labels");
+    blockers.Add(intakeTransitionRuleReady
+        ? "coverage-repaired fermion label table still lacks explicit labels, but a P141 transition rule is ready"
+        : "coverage-repaired fermion label table still lacks explicit chargeSector and weak-sector/quantum-number labels");
 if (!featuresMaterialized)
     blockers.Add("fermion identity feature records are not materialized for every repaired row");
 if (!featureLabelsReady)
     blockers.Add("fermion identity feature extractor has no promotable physical labels");
 if (!transitionTableReady)
-    blockers.Add("chirality/conjugation transition table is materialized but not promotable");
+    blockers.Add(intakeTransitionRuleReady
+        ? "chirality/conjugation transition table is not promotable, but a P141 transition rule is ready"
+        : "chirality/conjugation transition table is materialized but not promotable");
 
 var readinessRows = phase133.RootElement.GetProperty("featureRecords")
     .EnumerateArray()
@@ -79,6 +87,7 @@ var result = new
     featureLabelsReady,
     transitionTableMaterialized,
     transitionTableReady,
+    intakeTransitionRuleReady,
     readinessRows,
     sourceGateStatuses = new
     {
@@ -86,6 +95,7 @@ var result = new
         phase131 = JsonString(phase131.RootElement, "terminalStatus"),
         phase133 = JsonString(phase133.RootElement, "terminalStatus"),
         phase134 = JsonString(phase134.RootElement, "terminalStatus"),
+        phase141 = phase141 is null ? null : JsonString(phase141.RootElement, "terminalStatus"),
     },
     blockers,
     closureRequirements = new[]
@@ -101,6 +111,7 @@ var result = new
         phase131Path = Phase131Path,
         phase133Path = Phase133Path,
         phase134Path = Phase134Path,
+        phase141Path = File.Exists(Phase141Path) ? Phase141Path : null,
     },
 };
 
@@ -122,6 +133,7 @@ File.WriteAllText(
         result.featureLabelsReady,
         result.transitionTableMaterialized,
         result.transitionTableReady,
+        result.intakeTransitionRuleReady,
         result.blockers,
         result.closureRequirements,
     }, options));
@@ -130,6 +142,7 @@ Console.WriteLine(terminalStatus);
 Console.WriteLine($"rerunReady={rerunReady}");
 Console.WriteLine($"sectorLabelsReady={sectorLabelsReady}");
 Console.WriteLine($"transitionTableReady={transitionTableReady}");
+Console.WriteLine($"intakeTransitionRuleReady={intakeTransitionRuleReady}");
 
 static string RequiredString(JsonElement element, string propertyName) =>
     JsonString(element, propertyName) ?? throw new InvalidDataException($"Missing string property '{propertyName}'.");

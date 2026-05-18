@@ -3524,10 +3524,13 @@ static int ExtractCouplings(string[] args)
 
     foreach (var candidate in bosonRegistry.Candidates)
     {
-        var representativeModeId = candidate.ContributingModeIds.FirstOrDefault();
+        var branchLocalModeIds = candidate.ContributingModeIds
+            .Where(modeId => modeId.StartsWith($"{spectralResult.FermionBackgroundId}-mode-", StringComparison.Ordinal))
+            .ToArray();
+        var branchLocalModeId = branchLocalModeIds.Length == 1 ? branchLocalModeIds[0] : null;
         var variationId = $"variation-{spectralResult.FermionBackgroundId}-{candidate.CandidateId}";
         FiniteDifferenceDiracVariationResult variationResult;
-        if (string.IsNullOrEmpty(representativeModeId))
+        if (candidate.ContributingModeIds.Count == 0)
         {
             variationResult = new FiniteDifferenceDiracVariationResult
             {
@@ -3545,9 +3548,34 @@ static int ExtractCouplings(string[] args)
                 },
             };
         }
+        else if (branchLocalModeId is null)
+        {
+            var reason = branchLocalModeIds.Length == 0
+                ? $"Boson candidate has no contributing mode for fermion background {spectralResult.FermionBackgroundId}."
+                : $"Boson candidate has {branchLocalModeIds.Length} contributing modes for fermion background {spectralResult.FermionBackgroundId}; expected exactly one.";
+            variationResult = new FiniteDifferenceDiracVariationResult
+            {
+                Variation = new DiracVariationBundle
+                {
+                    VariationId = variationId,
+                    BosonModeId = candidate.CandidateId,
+                    FermionBackgroundId = spectralResult.FermionBackgroundId,
+                    NormalizationConvention = "raw-boson-vector",
+                    VariationMethod = "blocked",
+                    Blocked = true,
+                    BlockingReason = reason,
+                    Provenance = provenance,
+                    DiagnosticNotes =
+                    {
+                        reason,
+                        $"Candidate contributing mode count: {candidate.ContributingModeIds.Count}",
+                    },
+                },
+            };
+        }
         else
         {
-            var modePath = Path.Combine(runFolder, "spectra", "modes", $"{representativeModeId}.json");
+            var modePath = Path.Combine(runFolder, "spectra", "modes", $"{branchLocalModeId}.json");
             var bosonMode = File.Exists(modePath)
                 ? GuJsonDefaults.Deserialize<ModeRecord>(File.ReadAllText(modePath))
                 : null;
@@ -3564,9 +3592,9 @@ static int ExtractCouplings(string[] args)
                         NormalizationConvention = "raw-boson-vector",
                         VariationMethod = "blocked",
                         Blocked = true,
-                        BlockingReason = $"Representative boson mode record not found: {representativeModeId}",
+                        BlockingReason = $"Branch-local boson mode record not found: {branchLocalModeId}",
                         Provenance = provenance,
-                        DiagnosticNotes = { $"Representative boson mode record not found: {representativeModeId}" },
+                        DiagnosticNotes = { $"Branch-local boson mode record not found: {branchLocalModeId}" },
                     },
                 };
             }
@@ -3596,7 +3624,7 @@ static int ExtractCouplings(string[] args)
             {
                 variationResult = variationBuilder.BuildVariation(
                     variationId: variationId,
-                    bosonModeId: candidate.CandidateId,
+                    bosonModeId: branchLocalModeId,
                     background: context.Background,
                     baseBosonicState: context.Omega.Coefficients,
                     bosonPerturbation: bosonMode.ModeVector,
@@ -3608,6 +3636,11 @@ static int ExtractCouplings(string[] args)
                     provenance: provenance,
                     baseDiracBundle: diracBundle);
             }
+        }
+
+        if (branchLocalModeId is not null && !variationResult.Variation.Blocked)
+        {
+            variationResult.Variation.DiagnosticNotes.Add($"Branch-local contributing boson mode: {branchLocalModeId}");
         }
 
         var persistedVariation = variationResult.Variation;
@@ -3677,6 +3710,7 @@ static int ExtractCouplings(string[] args)
 
     diagnosticNotes.Add($"Boson registry source: {bosonRegistryPath}");
     diagnosticNotes.Add($"Finite-difference epsilon: {finiteDifferenceEpsilon:E4}");
+    diagnosticNotes.Add("Finite-difference variations require exactly one branch-local contributing boson mode for the current fermion background.");
     diagnosticNotes.Add($"Variation bundles written: {bosonRegistry.Candidates.Count}");
     diagnosticNotes.Add($"Blocked variations: {blockedVariationCount}");
 

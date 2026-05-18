@@ -1,0 +1,707 @@
+using System.Text.Json;
+
+const string DefaultOutputDir = "studies/phase296_source_lineage_contract_field_candidate_scan_001/output";
+const string Phase201Path = "studies/phase201_boson_source_lineage_intake_contract_001/output/boson_source_lineage_intake_contract_summary.json";
+const string WzTemplatePath = "studies/phase201_boson_source_lineage_intake_contract_001/output/wz_absolute_source_lineage_intake_template.json";
+const string HiggsTemplatePath = "studies/phase201_boson_source_lineage_intake_contract_001/output/higgs_scalar_source_lineage_intake_template.json";
+const string Phase204Path = "studies/phase204_boson_source_lineage_candidate_scan_001/output/boson_source_lineage_candidate_scan_summary.json";
+const string Phase205Path = "studies/phase205_boson_source_lineage_text_evidence_scan_001/output/boson_source_lineage_text_evidence_scan_summary.json";
+const string Phase207Path = "studies/phase207_higgs_quartic_self_coupling_source_scan_001/output/higgs_quartic_self_coupling_source_scan_summary.json";
+const string Phase209SummaryPath = "studies/phase209_boson_source_lineage_evidence_request_package_001/output/boson_source_lineage_evidence_request_package_summary.json";
+const string Phase213Path = "studies/phase213_boson_source_lineage_blocker_matrix_001/output/boson_source_lineage_blocker_matrix_summary.json";
+const string Phase245Path = "studies/phase245_rank_deficit_minimal_unlock_contract_001/output/rank_deficit_minimal_unlock_contract_summary.json";
+const string Phase295Path = "studies/phase295_observed_field_extraction_contract_candidate_scan_001/output/observed_field_extraction_contract_candidate_scan_summary.json";
+
+var outputDir = Environment.GetEnvironmentVariable("PHASE296_OUTPUT_DIR") ?? DefaultOutputDir;
+Directory.CreateDirectory(outputDir);
+
+using var phase201 = JsonDocument.Parse(File.ReadAllText(Phase201Path));
+using var wzTemplate = JsonDocument.Parse(File.ReadAllText(WzTemplatePath));
+using var higgsTemplate = JsonDocument.Parse(File.ReadAllText(HiggsTemplatePath));
+using var phase204 = JsonDocument.Parse(File.ReadAllText(Phase204Path));
+using var phase205 = JsonDocument.Parse(File.ReadAllText(Phase205Path));
+using var phase207 = JsonDocument.Parse(File.ReadAllText(Phase207Path));
+using var phase209 = JsonDocument.Parse(File.ReadAllText(Phase209SummaryPath));
+using var phase213 = JsonDocument.Parse(File.ReadAllText(Phase213Path));
+using var phase245 = JsonDocument.Parse(File.ReadAllText(Phase245Path));
+using var phase295 = JsonDocument.Parse(File.ReadAllText(Phase295Path));
+
+var scanRoots = new[]
+{
+    "README.md",
+    "OriginalPrompts",
+    "TheoryCompletitionRevisions",
+    "apps",
+    "data",
+    "docs/Architecture",
+    "docs/Guides",
+    "docs/Phases/Gaps",
+    "docs/Phases/OpenIssues",
+    "docs/Phases/Plans",
+    "docs/Phases/Prompts",
+    "docs/Phases/Summaries",
+    "docs/Reference",
+    "examples",
+    "native",
+    "phase4",
+    "reports",
+    "schemas",
+    "scripts",
+    "src",
+    "studies",
+};
+
+var wzSpecs = new[]
+{
+    new FieldSpec("wz.externalTargetValuesUsed=false", "W/Z source construction must be target-independent.", new[] { "externalTargetValuesUsed=false", "external target values", "target-independent", "target blind", "target-blind" }, new[] { "w", "z", "source", "lineage", "construction" }),
+    new FieldSpec("wz.theoremOrDerivationId", "A W/Z direct bridge-source theorem or derivation id.", new[] { "theoremOrDerivationId", "theorem", "derivation", "direct bridge", "bridge-source law", "source theorem" }, new[] { "w", "z", "mass", "sourceLineageId", "target-independent" }),
+    new FieldSpec("wz.sourceLineageId", "A source lineage id for the W/Z absolute source.", new[] { "sourceLineageId", "source lineage", "source-lineage" }, new[] { "w", "z", "absolute", "mass", "target-independent" }),
+    new FieldSpec("w-boson.sourceRowId", "A W source row derived before target comparison.", new[] { "w-boson", "w boson", "physical-w-boson-mass-gev", "w source row", "wBosonSourceRowId" }, new[] { "sourceRowId", "source row", "derivation", "target-independent" }),
+    new FieldSpec("w-boson.rawAmplitudeGatePassed=true", "A W raw-amplitude gate passed from source replay.", new[] { "w raw-amplitude", "w raw amplitude", "wBosonRawAmplitudeGatePassed", "rawAmplitudeGatePassed" }, new[] { "w-boson", "passed", "source replay", "target-independent" }),
+    new FieldSpec("w-boson.commonBridgeGatePassed=true", "A W common W/Z bridge gate passed from source normalization.", new[] { "w common bridge", "commonBridgeGatePassed", "wzCommonBridgeGatePassed", "common bridge gate" }, new[] { "w-boson", "passed", "source-derived", "target-independent" }),
+    new FieldSpec("w-boson.targetComparisonGatePassed=true", "A W target comparison gate passed after source construction.", new[] { "w target comparison", "targetComparisonGatePassed", "post-construction target comparison" }, new[] { "w-boson", "passed", "after source construction", "target-independent" }),
+    new FieldSpec("w-boson.stabilitySidecarsPresent=true", "W branch/refinement/environment/representation/coupling stability sidecars.", new[] { "w stability", "stabilitySidecarsPresent", "stability sidecar" }, new[] { "w-boson", "branch", "refinement", "environment", "representation", "coupling" }),
+    new FieldSpec("w-boson.derivationId", "A W row derivation id.", new[] { "w derivation", "derivationId", "w-boson" }, new[] { "source row", "sourceRowId", "target-independent" }),
+    new FieldSpec("z-boson.sourceRowId", "A Z source row derived before target comparison.", new[] { "z-boson", "z boson", "physical-z-boson-mass-gev", "z source row", "zBosonSourceRowId" }, new[] { "sourceRowId", "source row", "derivation", "target-independent" }),
+    new FieldSpec("z-boson.rawAmplitudeGatePassed=true", "A Z raw-amplitude gate passed from source replay.", new[] { "z raw-amplitude", "z raw amplitude", "zBosonRawAmplitudeGatePassed", "rawAmplitudeGatePassed" }, new[] { "z-boson", "passed", "source replay", "target-independent" }),
+    new FieldSpec("z-boson.commonBridgeGatePassed=true", "A Z common W/Z bridge gate passed from source normalization.", new[] { "z common bridge", "commonBridgeGatePassed", "wzCommonBridgeGatePassed", "common bridge gate" }, new[] { "z-boson", "passed", "source-derived", "target-independent" }),
+    new FieldSpec("z-boson.targetComparisonGatePassed=true", "A Z target comparison gate passed after source construction.", new[] { "z target comparison", "targetComparisonGatePassed", "post-construction target comparison" }, new[] { "z-boson", "passed", "after source construction", "target-independent" }),
+    new FieldSpec("z-boson.stabilitySidecarsPresent=true", "Z branch/refinement/environment/representation/coupling stability sidecars.", new[] { "z stability", "stabilitySidecarsPresent", "stability sidecar" }, new[] { "z-boson", "branch", "refinement", "environment", "representation", "coupling" }),
+    new FieldSpec("z-boson.derivationId", "A Z row derivation id.", new[] { "z derivation", "derivationId", "z-boson" }, new[] { "source row", "sourceRowId", "target-independent" }),
+};
+
+var higgsSpecs = new[]
+{
+    new FieldSpec("higgs.externalTargetValuesUsed=false", "Higgs source construction must be target-independent.", new[] { "externalTargetValuesUsed=false", "external target values", "target-independent", "target blind", "target-blind" }, new[] { "higgs", "source", "lineage", "construction" }),
+    new FieldSpec("higgs.sourceLineageId", "A source lineage id for the Higgs scalar source.", new[] { "sourceLineageId", "source lineage", "source-lineage" }, new[] { "higgs", "scalar", "target-independent" }),
+    new FieldSpec("higgs.scalarSourceOperatorId", "A solved scalar source/operator id.", new[] { "scalarSourceOperatorId", "scalar source operator", "scalar-source operator", "scalar source" }, new[] { "higgs", "operator", "solved", "target-independent" }),
+    new FieldSpec("higgs.higgsIdentityEnvelopeId", "A Higgs identity envelope independent of the physical target mass.", new[] { "higgsIdentityEnvelopeId", "higgs identity envelope", "identity envelope" }, new[] { "higgs", "target-independent", "source" }),
+    new FieldSpec("higgs.massiveScalarProfileId", "A massive scalar profile or eigenmode for the Higgs.", new[] { "massiveScalarProfileId", "massive scalar profile", "higgs profile", "physical higgs eigenmode" }, new[] { "higgs", "profile", "eigenmode", "target-independent" }),
+    new FieldSpec("higgs.potentialOrSelfCouplingSourceId-or-excitationRelationId", "A Higgs potential/self-coupling source id or scalar excitation relation id.", new[] { "potentialOrSelfCouplingSourceId", "excitationRelationId", "higgs potential", "self-coupling", "self coupling", "quartic" }, new[] { "higgs", "source", "relation", "target-independent", "lambda" }),
+    new FieldSpec("higgs.stabilitySidecars.branch=true", "A Higgs branch stability sidecar.", new[] { "branch stability", "stabilitySidecars", "stability sidecar" }, new[] { "higgs", "branch", "true", "passed" }),
+    new FieldSpec("higgs.stabilitySidecars.refinement=true", "A Higgs refinement stability sidecar.", new[] { "refinement stability", "stabilitySidecars", "stability sidecar" }, new[] { "higgs", "refinement", "true", "passed" }),
+    new FieldSpec("higgs.stabilitySidecars.environment=true", "A Higgs environment stability sidecar.", new[] { "environment stability", "stabilitySidecars", "stability sidecar" }, new[] { "higgs", "environment", "true", "passed" }),
+    new FieldSpec("higgs.stabilitySidecars.representation=true", "A Higgs representation stability sidecar.", new[] { "representation stability", "stabilitySidecars", "stability sidecar" }, new[] { "higgs", "representation", "true", "passed" }),
+    new FieldSpec("higgs.stabilitySidecars.coupling=true", "A Higgs coupling stability sidecar.", new[] { "coupling stability", "stabilitySidecars", "stability sidecar" }, new[] { "higgs", "coupling", "true", "passed" }),
+    new FieldSpec("higgs.predictionRow.sourceRowId", "A Higgs prediction-row source row id.", new[] { "predictionRow", "sourceRowId", "higgs source row" }, new[] { "higgs", "physical-higgs-mass-gev", "target-independent" }),
+    new FieldSpec("higgs.predictionRow.targetComparisonGatePassed=true", "A Higgs target comparison gate passed after source construction.", new[] { "targetComparisonGatePassed", "post-construction target comparison", "higgs target comparison" }, new[] { "higgs", "passed", "after source construction", "target-independent" }),
+    new FieldSpec("higgs.predictionRow.derivationId", "A Higgs prediction-row derivation id.", new[] { "derivationId", "higgs derivation" }, new[] { "higgs", "predictionRow", "source row", "target-independent" }),
+};
+
+var fieldSpecs = wzSpecs.Concat(higgsSpecs).ToArray();
+var templateFieldCount = CountTemplateRequiredFields(wzTemplate.RootElement, higgsTemplate.RootElement);
+var scannedFiles = EnumerateScanFiles(scanRoots).Distinct(StringComparer.Ordinal).ToArray();
+var lineHits = ScanFiles(scannedFiles, fieldSpecs);
+var fieldResults = fieldSpecs.Select(spec =>
+{
+    var hits = lineHits.Where(hit => hit.FieldId == spec.FieldId).ToArray();
+    var intakeReadyHits = hits.Where(hit => hit.IntakeReadyCandidate).ToArray();
+    var strongestHits = hits
+        .OrderByDescending(hit => hit.ReadinessScore)
+        .ThenBy(hit => hit.Path, StringComparer.Ordinal)
+        .ThenBy(hit => hit.LineNumber)
+        .Take(8)
+        .ToArray();
+
+    return new FieldScanResult(
+        spec.FieldId,
+        spec.Acceptance,
+        CandidateLineCount: hits.Length,
+        IntakeReadyCandidateCount: intakeReadyHits.Length,
+        Filled: intakeReadyHits.Length > 0,
+        StrongestHits: strongestHits);
+}).ToArray();
+
+var wzFieldResults = fieldResults.Take(wzSpecs.Length).ToArray();
+var higgsFieldResults = fieldResults.Skip(wzSpecs.Length).ToArray();
+var scannedBuckets = scannedFiles
+    .GroupBy(TopLevelBucket, StringComparer.Ordinal)
+    .OrderBy(group => group.Key, StringComparer.Ordinal)
+    .Select(group => new ScannedBucket(group.Key, group.Count()))
+    .ToArray();
+
+var totalCandidateLineCount = fieldResults.Sum(result => result.CandidateLineCount);
+var fieldsWithCandidateLineCount = fieldResults.Count(result => result.CandidateLineCount > 0);
+var fieldsWithIntakeReadyCandidateCount = fieldResults.Count(result => result.IntakeReadyCandidateCount > 0);
+var intakeReadySourceLineageFieldCandidateCount = fieldResults.Sum(result => result.IntakeReadyCandidateCount);
+var wzFieldsWithIntakeReadyCandidateCount = wzFieldResults.Count(result => result.IntakeReadyCandidateCount > 0);
+var higgsFieldsWithIntakeReadyCandidateCount = higgsFieldResults.Count(result => result.IntakeReadyCandidateCount > 0);
+var allWzFieldsHaveIntakeReadyCandidate = wzFieldResults.All(result => result.Filled);
+var allHiggsFieldsHaveIntakeReadyCandidate = higgsFieldResults.All(result => result.Filled);
+var anySourceLineageCandidateFillsContract = allWzFieldsHaveIntakeReadyCandidate && allHiggsFieldsHaveIntakeReadyCandidate;
+
+var anySourceLineagePromotable = JsonBool(phase201.RootElement, "anySourceLineagePromotable") is true;
+var allRequiredLineagesPromotable = JsonBool(phase201.RootElement, "allRequiredLineagesPromotable") is true;
+var phase204IntakeReadyCandidateCount = JsonInt(phase204.RootElement, "intakeReadyCandidateCount") ?? -1;
+var phase205IntakeReadyFindingCount = JsonInt(phase205.RootElement, "intakeReadyFindingCount") ?? -1;
+var phase207IntakeReadyFindingCount = JsonInt(phase207.RootElement, "intakeReadyFindingCount") ?? -1;
+var evidenceRequestPackageMaterialized = JsonBool(phase209.RootElement, "evidenceRequestPackageMaterialized") is true;
+var wzMissingFieldCount = JsonInt(phase213.RootElement, "wzMissingFieldCount") ?? -1;
+var higgsMissingFieldCount = JsonInt(phase213.RootElement, "higgsMissingFieldCount") ?? -1;
+var unlockContractFilled = JsonBool(phase245.RootElement, "unlockContractFilled") is true;
+var phase295Passed = JsonBool(phase295.RootElement, "observedFieldExtractionContractCandidateScanPassed") is true;
+var phase295AnyCandidateFillsContract = JsonBool(phase295.RootElement, "anyObservedFieldExtractionCandidateFillsContract") is true;
+
+var checks = new[]
+{
+    new Check(
+        "phase201-contract-fields-loaded",
+        templateFieldCount == fieldSpecs.Length && wzSpecs.Length == 15 && higgsSpecs.Length == 14,
+        $"templateFieldCount={templateFieldCount}; fieldSpecCount={fieldSpecs.Length}; wzFieldCount={wzSpecs.Length}; higgsFieldCount={higgsSpecs.Length}"),
+    new Check(
+        "broad-source-lineage-corpus-scanned",
+        scannedFiles.Length > 0 && scannedBuckets.Length > 0,
+        $"scannedFileCount={scannedFiles.Length}; bucketCount={scannedBuckets.Length}; scanRoots={string.Join(",", scanRoots)}"),
+    new Check(
+        "source-lineage-field-candidate-lines-classified",
+        totalCandidateLineCount >= 0 && fieldsWithCandidateLineCount > 0 && fieldResults.Length == fieldSpecs.Length,
+        $"totalCandidateLineCount={totalCandidateLineCount}; fieldsWithCandidateLineCount={fieldsWithCandidateLineCount}; fieldResultCount={fieldResults.Length}"),
+    new Check(
+        "no-intake-ready-source-lineage-field-candidate-found",
+        intakeReadySourceLineageFieldCandidateCount == 0
+            && fieldsWithIntakeReadyCandidateCount == 0
+            && !anySourceLineageCandidateFillsContract,
+        $"intakeReadySourceLineageFieldCandidateCount={intakeReadySourceLineageFieldCandidateCount}; fieldsWithIntakeReadyCandidateCount={fieldsWithIntakeReadyCandidateCount}; anySourceLineageCandidateFillsContract={anySourceLineageCandidateFillsContract}"),
+    new Check(
+        "upstream-source-lineage-scans-remain-empty",
+        phase204IntakeReadyCandidateCount == 0 && phase205IntakeReadyFindingCount == 0 && phase207IntakeReadyFindingCount == 0,
+        $"phase204IntakeReadyCandidateCount={phase204IntakeReadyCandidateCount}; phase205IntakeReadyFindingCount={phase205IntakeReadyFindingCount}; phase207IntakeReadyFindingCount={phase207IntakeReadyFindingCount}"),
+    new Check(
+        "source-contracts-remain-unfilled",
+        !anySourceLineagePromotable
+            && !allRequiredLineagesPromotable
+            && evidenceRequestPackageMaterialized
+            && wzMissingFieldCount == 15
+            && higgsMissingFieldCount == 14
+            && !unlockContractFilled,
+        $"anySourceLineagePromotable={anySourceLineagePromotable}; allRequiredLineagesPromotable={allRequiredLineagesPromotable}; evidenceRequestPackageMaterialized={evidenceRequestPackageMaterialized}; wzMissingFieldCount={wzMissingFieldCount}; higgsMissingFieldCount={higgsMissingFieldCount}; unlockContractFilled={unlockContractFilled}"),
+    new Check(
+        "observed-field-extraction-scan-remains-unfilled",
+        phase295Passed && !phase295AnyCandidateFillsContract,
+        $"phase295Passed={phase295Passed}; phase295AnyCandidateFillsContract={phase295AnyCandidateFillsContract}"),
+};
+
+var sourceLineageContractFieldCandidateScanPassed = checks.All(check => check.Passed)
+    && !anySourceLineageCandidateFillsContract
+    && fieldsWithIntakeReadyCandidateCount == 0
+    && !allRequiredLineagesPromotable;
+var terminalStatus = sourceLineageContractFieldCandidateScanPassed
+    ? "source-lineage-contract-field-candidate-scan-no-intake-ready-artifact"
+    : "source-lineage-contract-field-candidate-scan-review-required";
+
+var result = new
+{
+    phaseId = "phase296-source-lineage-contract-field-candidate-scan",
+    terminalStatus,
+    generatedAt = DateTimeOffset.UtcNow,
+    sourceLineageContractFieldCandidateScanPassed,
+    scannedFileCount = scannedFiles.Length,
+    scannedBuckets,
+    contractFieldCount = fieldSpecs.Length,
+    wzContractFieldCount = wzSpecs.Length,
+    higgsContractFieldCount = higgsSpecs.Length,
+    totalCandidateLineCount,
+    fieldsWithCandidateLineCount,
+    fieldsWithIntakeReadyCandidateCount,
+    intakeReadySourceLineageFieldCandidateCount,
+    wzFieldsWithIntakeReadyCandidateCount,
+    higgsFieldsWithIntakeReadyCandidateCount,
+    allWzFieldsHaveIntakeReadyCandidate,
+    allHiggsFieldsHaveIntakeReadyCandidate,
+    anySourceLineageCandidateFillsContract,
+    fieldResults,
+    scanBoundary = new
+    {
+        scanRoots,
+        excludedOutputBinObj = true,
+        excludedImplementationDocsAndJournal = true,
+        generatedStudiesAreCountedButNotIntakeReady = true,
+        candidateMentionsAreNotContractFillers = true,
+    },
+    inheritedEvidence = new
+    {
+        phase201 = new
+        {
+            anySourceLineagePromotable,
+            allRequiredLineagesPromotable,
+        },
+        phase204 = new
+        {
+            phase204IntakeReadyCandidateCount,
+        },
+        phase205 = new
+        {
+            phase205IntakeReadyFindingCount,
+        },
+        phase207 = new
+        {
+            phase207IntakeReadyFindingCount,
+        },
+        phase209 = new
+        {
+            evidenceRequestPackageMaterialized,
+        },
+        phase213 = new
+        {
+            wzMissingFieldCount,
+            higgsMissingFieldCount,
+        },
+        phase245 = new
+        {
+            unlockContractFilled,
+        },
+        phase295 = new
+        {
+            phase295Passed,
+            phase295AnyCandidateFillsContract,
+        },
+    },
+    checks,
+    decision = sourceLineageContractFieldCandidateScanPassed
+        ? "Do not promote W/Z/H masses on source-lineage contract grounds. The corpus contains candidate mentions for P201/P209 fields, but no intake-ready artifact that fills the W/Z theorem/source rows/gates or Higgs scalar-source/profile/coupling/stability/prediction-row fields."
+        : "Review source-lineage field candidates before relying on the current blocker classification.",
+    nextRequiredArtifact = new[]
+    {
+        "A W/Z target-independent source-lineage artifact with theoremOrDerivationId, sourceLineageId, separate W and Z source rows, raw-amplitude/common-bridge/target-comparison gates, stability sidecars, and derivation ids.",
+        "A Higgs target-independent scalar-source artifact with scalar source operator, identity envelope, massive profile, potential/self-coupling or excitation source, stability sidecars, and a prediction row.",
+        "After both artifacts are filled, rerun P201/P209/P210/P213, P101, P192, P193, and P202.",
+    },
+    sourceEvidence = new
+    {
+        phase201Path = Phase201Path,
+        wzTemplatePath = WzTemplatePath,
+        higgsTemplatePath = HiggsTemplatePath,
+        phase204Path = Phase204Path,
+        phase205Path = Phase205Path,
+        phase207Path = Phase207Path,
+        phase209SummaryPath = Phase209SummaryPath,
+        phase213Path = Phase213Path,
+        phase245Path = Phase245Path,
+        phase295Path = Phase295Path,
+    },
+};
+
+var options = new JsonSerializerOptions { WriteIndented = true, PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
+File.WriteAllText(Path.Combine(outputDir, "source_lineage_contract_field_candidate_scan.json"), JsonSerializer.Serialize(result, options));
+File.WriteAllText(
+    Path.Combine(outputDir, "source_lineage_contract_field_candidate_scan_summary.json"),
+    JsonSerializer.Serialize(new
+    {
+        result.phaseId,
+        result.terminalStatus,
+        result.sourceLineageContractFieldCandidateScanPassed,
+        result.scannedFileCount,
+        result.scannedBuckets,
+        result.contractFieldCount,
+        result.wzContractFieldCount,
+        result.higgsContractFieldCount,
+        result.totalCandidateLineCount,
+        result.fieldsWithCandidateLineCount,
+        result.fieldsWithIntakeReadyCandidateCount,
+        result.intakeReadySourceLineageFieldCandidateCount,
+        result.wzFieldsWithIntakeReadyCandidateCount,
+        result.higgsFieldsWithIntakeReadyCandidateCount,
+        result.allWzFieldsHaveIntakeReadyCandidate,
+        result.allHiggsFieldsHaveIntakeReadyCandidate,
+        result.anySourceLineageCandidateFillsContract,
+        result.fieldResults,
+        result.scanBoundary,
+        result.inheritedEvidence,
+        result.checks,
+        result.decision,
+        result.nextRequiredArtifact,
+    }, options));
+
+Console.WriteLine(terminalStatus);
+Console.WriteLine($"sourceLineageContractFieldCandidateScanPassed={sourceLineageContractFieldCandidateScanPassed}");
+Console.WriteLine($"scannedFileCount={scannedFiles.Length}");
+Console.WriteLine($"contractFieldCount={fieldSpecs.Length}");
+Console.WriteLine($"totalCandidateLineCount={totalCandidateLineCount}");
+Console.WriteLine($"fieldsWithCandidateLineCount={fieldsWithCandidateLineCount}");
+Console.WriteLine($"fieldsWithIntakeReadyCandidateCount={fieldsWithIntakeReadyCandidateCount}");
+Console.WriteLine($"intakeReadySourceLineageFieldCandidateCount={intakeReadySourceLineageFieldCandidateCount}");
+Console.WriteLine($"anySourceLineageCandidateFillsContract={anySourceLineageCandidateFillsContract}");
+
+static int CountTemplateRequiredFields(JsonElement wzTemplate, JsonElement higgsTemplate)
+{
+    var count = 0;
+    if (wzTemplate.TryGetProperty("externalTargetValuesUsed", out _))
+    {
+        count++;
+    }
+
+    if (wzTemplate.TryGetProperty("theoremOrDerivationId", out _))
+    {
+        count++;
+    }
+
+    if (wzTemplate.TryGetProperty("sourceLineageId", out _))
+    {
+        count++;
+    }
+
+    if (wzTemplate.TryGetProperty("particleRows", out var wzRows) && wzRows.ValueKind == JsonValueKind.Array)
+    {
+        count += wzRows.GetArrayLength() * 6;
+    }
+
+    if (higgsTemplate.TryGetProperty("externalTargetValuesUsed", out _))
+    {
+        count++;
+    }
+
+    if (higgsTemplate.TryGetProperty("sourceLineageId", out _))
+    {
+        count++;
+    }
+
+    foreach (var property in new[] { "scalarSourceOperatorId", "higgsIdentityEnvelopeId", "massiveScalarProfileId" })
+    {
+        if (higgsTemplate.TryGetProperty(property, out _))
+        {
+            count++;
+        }
+    }
+
+    if (higgsTemplate.TryGetProperty("potentialOrSelfCouplingSourceId", out _)
+        || higgsTemplate.TryGetProperty("excitationRelationId", out _))
+    {
+        count++;
+    }
+
+    if (higgsTemplate.TryGetProperty("stabilitySidecars", out var stability) && stability.ValueKind == JsonValueKind.Object)
+    {
+        count += stability.EnumerateObject().Count();
+    }
+
+    if (higgsTemplate.TryGetProperty("predictionRow", out var predictionRow) && predictionRow.ValueKind == JsonValueKind.Object)
+    {
+        foreach (var property in new[] { "sourceRowId", "targetComparisonGatePassed", "derivationId" })
+        {
+            if (predictionRow.TryGetProperty(property, out _))
+            {
+                count++;
+            }
+        }
+    }
+
+    return count;
+}
+
+static IEnumerable<string> EnumerateScanFiles(IEnumerable<string> roots)
+{
+    var extensions = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+    {
+        ".c",
+        ".cpp",
+        ".cs",
+        ".csproj",
+        ".cu",
+        ".h",
+        ".hpp",
+        ".json",
+        ".md",
+        ".sh",
+        ".txt",
+        ".yaml",
+        ".yml",
+    };
+
+    foreach (var root in roots)
+    {
+        if (File.Exists(root))
+        {
+            var normalizedFile = NormalizePath(root);
+            if (extensions.Contains(Path.GetExtension(root)) && !IsExcluded(normalizedFile))
+            {
+                yield return normalizedFile;
+            }
+
+            continue;
+        }
+
+        if (!Directory.Exists(root))
+        {
+            continue;
+        }
+
+        foreach (var path in Directory.EnumerateFiles(root, "*", SearchOption.AllDirectories))
+        {
+            var normalized = NormalizePath(path);
+            if (extensions.Contains(Path.GetExtension(path)) && !IsExcluded(normalized))
+            {
+                yield return normalized;
+            }
+        }
+    }
+}
+
+static IReadOnlyList<LineHit> ScanFiles(IReadOnlyList<string> files, IReadOnlyList<FieldSpec> fieldSpecs)
+{
+    var hits = new List<LineHit>();
+    foreach (var file in files)
+    {
+        string[] lines;
+        try
+        {
+            lines = File.ReadAllLines(file);
+        }
+        catch
+        {
+            continue;
+        }
+
+        for (var i = 0; i < lines.Length; i++)
+        {
+            var line = lines[i].Trim();
+            if (line.Length == 0)
+            {
+                continue;
+            }
+
+            var context = BuildContext(lines, i, 2);
+            foreach (var spec in fieldSpecs)
+            {
+                if (!ContainsAny(context, spec.TriggerTerms))
+                {
+                    continue;
+                }
+
+                var fieldSpecificTermCount = CountTerms(context, spec.TriggerTerms);
+                var supportTermCount = CountTerms(context, spec.SupportTerms);
+                var sourceProvenanceLike = supportTermCount > 0 && ContainsAny(context, new[]
+                {
+                    "sourceLineageId",
+                    "source row",
+                    "source-row",
+                    "sourceRowId",
+                    "source artifact",
+                    "source-derived",
+                    "theorem",
+                    "theoremOrDerivationId",
+                    "derivation",
+                    "derivation-backed",
+                    "proof",
+                });
+                var targetBlindConstruction = ContainsAny(context, new[]
+                {
+                    "target-independent",
+                    "target blind",
+                    "target-blind",
+                    "externalTargetValuesUsed=false",
+                    "not from target",
+                    "before physical target comparison",
+                    "before target comparison",
+                    "post-construction",
+                });
+                var gateOrIdentifierSatisfied = ContainsAny(context, new[]
+                {
+                    "passed=true",
+                    "gatePassed=true",
+                    "rawAmplitudeGatePassed=true",
+                    "commonBridgeGatePassed=true",
+                    "targetComparisonGatePassed=true",
+                    "stabilitySidecarsPresent=true",
+                    "promotable=true",
+                    "filled=true",
+                    "TheoremId",
+                    "DerivationId",
+                    "SourceLineageId",
+                    "SourceRowId",
+                    "OperatorId",
+                    "EnvelopeId",
+                    "ProfileId",
+                    "RelationId",
+                    "sourceLineageId",
+                    "theoremOrDerivationId",
+                });
+                var negativeContext = HasNegativeOrRequirementContext(context);
+                var generatedOrPromptContext = HasGeneratedOrPromptContext(file, context);
+                var intakeReadyCandidate = fieldSpecificTermCount > 0
+                    && sourceProvenanceLike
+                    && targetBlindConstruction
+                    && gateOrIdentifierSatisfied
+                    && !negativeContext
+                    && !generatedOrPromptContext;
+                var readinessScore = fieldSpecificTermCount
+                    + supportTermCount
+                    + (sourceProvenanceLike ? 3 : 0)
+                    + (targetBlindConstruction ? 3 : 0)
+                    + (gateOrIdentifierSatisfied ? 2 : 0)
+                    - (negativeContext ? 4 : 0)
+                    - (generatedOrPromptContext ? 3 : 0);
+
+                hits.Add(new LineHit(
+                    spec.FieldId,
+                    file,
+                    i + 1,
+                    line.Length > 280 ? line[..280] : line,
+                    readinessScore,
+                    fieldSpecificTermCount,
+                    supportTermCount,
+                    sourceProvenanceLike,
+                    targetBlindConstruction,
+                    gateOrIdentifierSatisfied,
+                    negativeContext,
+                    generatedOrPromptContext,
+                    intakeReadyCandidate));
+            }
+        }
+    }
+
+    return hits;
+}
+
+static string BuildContext(IReadOnlyList<string> lines, int center, int radius)
+{
+    var start = Math.Max(0, center - radius);
+    var end = Math.Min(lines.Count - 1, center + radius);
+    return string.Join('\n', Enumerable.Range(start, end - start + 1).Select(index => lines[index].Trim()));
+}
+
+static bool IsExcluded(string normalizedPath) =>
+    normalizedPath.Contains("/bin/", StringComparison.Ordinal)
+    || normalizedPath.Contains("/obj/", StringComparison.Ordinal)
+    || normalizedPath.Contains("/output/", StringComparison.Ordinal)
+    || normalizedPath.Contains("/.git/", StringComparison.Ordinal)
+    || normalizedPath.Contains("/.claude/", StringComparison.Ordinal)
+    || normalizedPath.Contains("/.agents/", StringComparison.Ordinal)
+    || normalizedPath.Contains("/docs/Phases/Implementation/", StringComparison.Ordinal)
+    || normalizedPath.Contains("/docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase296_", StringComparison.Ordinal)
+    || normalizedPath.Contains("/studies/phase296_", StringComparison.Ordinal);
+
+static string NormalizePath(string path) => path.Replace('\\', '/').TrimStart('.', '/');
+
+static string TopLevelBucket(string normalizedPath)
+{
+    if (normalizedPath == "README.md")
+    {
+        return "root-readme";
+    }
+
+    var slash = normalizedPath.IndexOf('/', StringComparison.Ordinal);
+    if (slash < 0)
+    {
+        return "root";
+    }
+
+    if (normalizedPath.StartsWith("docs/Phases/", StringComparison.Ordinal))
+    {
+        var parts = normalizedPath.Split('/', StringSplitOptions.RemoveEmptyEntries);
+        return parts.Length >= 3 ? $"docs/Phases/{parts[2]}" : "docs/Phases";
+    }
+
+    if (normalizedPath.StartsWith("studies/", StringComparison.Ordinal))
+    {
+        return "studies";
+    }
+
+    return normalizedPath[..slash];
+}
+
+static bool ContainsAny(string text, IEnumerable<string> terms) =>
+    terms.Any(term => text.Contains(term, StringComparison.OrdinalIgnoreCase));
+
+static int CountTerms(string text, IEnumerable<string> terms) =>
+    terms.Count(term => text.Contains(term, StringComparison.OrdinalIgnoreCase));
+
+static bool HasNegativeOrRequirementContext(string text)
+{
+    var normalized = text
+        .Replace("externalTargetValuesUsed=false", "externalTargetValuesUsed target-blind", StringComparison.OrdinalIgnoreCase)
+        .Replace("not from target", "target-blind", StringComparison.OrdinalIgnoreCase)
+        .Replace("not target fit", "source-replay", StringComparison.OrdinalIgnoreCase);
+
+    return ContainsAny(normalized, new[]
+    {
+        "missing",
+        "unfilled",
+        "placeholder",
+        "blocked",
+        "required",
+        "requires",
+        "require ",
+        "request",
+        "gap",
+        "future",
+        "todo",
+        "cannot",
+        "can't",
+        "not promotable",
+        "non-promotable",
+        "nonpromotion",
+        "diagnostic",
+        "audit",
+        "obstruction",
+        "candidate",
+        "template",
+        "false",
+        "no ",
+        "not ",
+    });
+}
+
+static bool HasGeneratedOrPromptContext(string path, string text) =>
+    path.StartsWith("OriginalPrompts/", StringComparison.Ordinal)
+    || path.StartsWith("docs/Phases/Gaps/", StringComparison.Ordinal)
+    || path.StartsWith("docs/Phases/OpenIssues/", StringComparison.Ordinal)
+    || path.StartsWith("docs/Phases/Plans/", StringComparison.Ordinal)
+    || path.StartsWith("docs/Phases/Prompts/", StringComparison.Ordinal)
+    || path.StartsWith("docs/Phases/Summaries/", StringComparison.Ordinal)
+    || path.StartsWith("reports/", StringComparison.Ordinal)
+    || path.StartsWith("scripts/", StringComparison.Ordinal)
+    || path.StartsWith("studies/phase", StringComparison.Ordinal)
+    || ContainsAny(text, new[]
+    {
+        "prompt",
+        "open issue",
+        "request package",
+        "diagnosis",
+        "generated",
+        "audit",
+        "scan",
+        "contract",
+    });
+
+static bool? JsonBool(JsonElement element, string propertyName) =>
+    element.TryGetProperty(propertyName, out var property) ? property.ValueKind switch { JsonValueKind.True => true, JsonValueKind.False => false, _ => null } : null;
+
+static int? JsonInt(JsonElement element, string propertyName)
+{
+    if (!element.TryGetProperty(propertyName, out var property))
+    {
+        return null;
+    }
+
+    return property.ValueKind == JsonValueKind.Number && property.TryGetInt32(out var value) ? value : null;
+}
+
+sealed record FieldSpec(string FieldId, string Acceptance, IReadOnlyList<string> TriggerTerms, IReadOnlyList<string> SupportTerms);
+
+sealed record FieldScanResult(
+    string FieldId,
+    string Acceptance,
+    int CandidateLineCount,
+    int IntakeReadyCandidateCount,
+    bool Filled,
+    IReadOnlyList<LineHit> StrongestHits);
+
+sealed record LineHit(
+    string FieldId,
+    string Path,
+    int LineNumber,
+    string Excerpt,
+    int ReadinessScore,
+    int FieldSpecificTermCount,
+    int SupportTermCount,
+    bool SourceProvenanceLike,
+    bool TargetBlindConstruction,
+    bool GateOrIdentifierSatisfied,
+    bool NegativeContext,
+    bool GeneratedOrPromptContext,
+    bool IntakeReadyCandidate);
+
+sealed record ScannedBucket(string Bucket, int FileCount);
+
+sealed record Check(string CheckId, bool Passed, string Detail);
