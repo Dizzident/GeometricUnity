@@ -86,6 +86,7 @@ const paths = {
   phase314: "studies/phase314_dimension_casimir_wz_source_law_audit_001/output/dimension_casimir_wz_source_law_audit_summary.json",
   phase315: "studies/phase315_ucsd_dark_geometric_energy_source_audit_001/output/ucsd_dark_geometric_energy_source_audit_summary.json",
   phase316: "studies/phase316_ucsd_transcript_source_strength_audit_001/output/ucsd_transcript_source_strength_audit_summary.json",
+  phase317: "studies/phase317_electroweak_mass_matrix_bridge_source_audit_001/output/electroweak_mass_matrix_bridge_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -243,6 +244,7 @@ const phase313 = requireFile(paths.phase313);
 const phase314 = requireFile(paths.phase314);
 const phase315 = requireFile(paths.phase315);
 const phase316 = requireFile(paths.phase316);
+const phase317 = requireFile(paths.phase317);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -1278,6 +1280,30 @@ if (sourceLineageMissing) {
   assert(phase316.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase316 cannot fill the Phase256 observed-field extraction contract.");
   assert(phase316.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase316 W/Z missing-field count must match Phase213.");
   assert(phase316.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase316 Higgs missing-field count must match Phase213.");
+  assert(phase317.electroweakMassMatrixBridgeSourceAuditPassed === true, "Phase317 electroweak mass-matrix bridge-source audit must pass while preserving non-promotional status.");
+  assert(phase317.pdg2025ElectroweakMassMatrixSourceAvailable === true, "Phase317 must record the PDG electroweak mass-matrix source.");
+  assert(phase317.smMassMatrixProvidesExternalDependencyMap === true, "Phase317 must record that the SM mass matrix is an external dependency map.");
+  assert(phase317.smDefinesPhotonZWeinbergRotation === true, "Phase317 must preserve the photon/Z rotation evidence.");
+  assert(phase317.smTreeLevelMwDependsOnGAndV === true, "Phase317 must record the W dependency on g and v.");
+  assert(phase317.smTreeLevelMzDependsOnGAndGPrimeAndV === true, "Phase317 must record the Z dependency on g, g' and v.");
+  assert(phase317.smTreeLevelHiggsMassDependsOnPotentialParameter === true, "Phase317 must record the Higgs dependency on a scalar-potential parameter.");
+  assert(phase317.smMassMatrixBoundary?.smMassMatrixProvidesGuLocalWzTheorem === false, "Phase317 cannot claim the SM mass matrix is a GU-local W/Z theorem.");
+  assert(phase317.smMassMatrixBoundary?.smMassMatrixProvidesGuObservedFieldExtraction === false, "Phase317 cannot claim GU observed-field extraction from the SM mass matrix.");
+  assert(phase317.smMassMatrixBoundary?.smMassMatrixProvidesGuVevSource === false, "Phase317 cannot claim a GU VEV source from the SM mass matrix.");
+  assert(phase317.smMassMatrixBoundary?.smMassMatrixProvidesGuWeakCouplingSource === false, "Phase317 cannot claim a GU weak-coupling source from the SM mass matrix.");
+  assert(phase317.smMassMatrixBoundary?.smMassMatrixProvidesGuHyperchargeCouplingSource === false, "Phase317 cannot claim a GU hypercharge-coupling source from the SM mass matrix.");
+  assert(phase317.smMassMatrixBoundary?.smMassMatrixProvidesGuHiggsScalarSourceOperator === false, "Phase317 cannot claim a GU Higgs scalar-source operator from the SM mass matrix.");
+  assert(phase317.smMassMatrixBoundary?.smMassMatrixProvidesGuHiggsSelfCouplingSource === false, "Phase317 cannot claim a GU Higgs self-coupling source from the SM mass matrix.");
+  assert(phase317.smMassMatrixBoundary?.smMassMatrixJustifiesWOnlyCasimirMultiplier === false, "Phase317 cannot use the SM mass matrix to justify a W-only Casimir multiplier.");
+  assert(phase317.smMassMatrixBoundary?.smMassMatrixJustifiesZUnitMultiplier === false, "Phase317 cannot use the SM mass matrix to justify a Z unit multiplier.");
+  assert(phase317.smMassMatrixPromotesWzMasses === false, "Phase317 cannot promote W/Z masses.");
+  assert(phase317.smMassMatrixPromotesHiggsMass === false, "Phase317 cannot promote Higgs mass.");
+  assert(phase317.smMassMatrixCompletesBosonPredictions === false, "Phase317 cannot complete boson predictions.");
+  assert(phase317.contractImpact?.canFillPhase201WzContract === false, "Phase317 cannot fill the Phase201 W/Z source contract.");
+  assert(phase317.contractImpact?.canFillPhase201HiggsContract === false, "Phase317 cannot fill the Phase201 Higgs source contract.");
+  assert(phase317.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase317 cannot fill the Phase256 observed-field extraction contract.");
+  assert(phase317.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase317 W/Z missing-field count must match Phase213.");
+  assert(phase317.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase317 Higgs missing-field count must match Phase213.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

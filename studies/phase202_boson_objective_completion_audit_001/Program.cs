@@ -82,6 +82,7 @@ const string Phase313Path = "studies/phase313_official_draft_electroweak_project
 const string Phase314Path = "studies/phase314_dimension_casimir_wz_source_law_audit_001/output/dimension_casimir_wz_source_law_audit_summary.json";
 const string Phase315Path = "studies/phase315_ucsd_dark_geometric_energy_source_audit_001/output/ucsd_dark_geometric_energy_source_audit_summary.json";
 const string Phase316Path = "studies/phase316_ucsd_transcript_source_strength_audit_001/output/ucsd_transcript_source_strength_audit_summary.json";
+const string Phase317Path = "studies/phase317_electroweak_mass_matrix_bridge_source_audit_001/output/electroweak_mass_matrix_bridge_source_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -197,6 +198,7 @@ using var phase313 = File.Exists(Phase313Path) ? JsonDocument.Parse(File.ReadAll
 using var phase314 = File.Exists(Phase314Path) ? JsonDocument.Parse(File.ReadAllText(Phase314Path)) : null;
 using var phase315 = File.Exists(Phase315Path) ? JsonDocument.Parse(File.ReadAllText(Phase315Path)) : null;
 using var phase316 = File.Exists(Phase316Path) ? JsonDocument.Parse(File.ReadAllText(Phase316Path)) : null;
+using var phase317 = File.Exists(Phase317Path) ? JsonDocument.Parse(File.ReadAllText(Phase317Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -1114,6 +1116,37 @@ var ucsdTranscriptSourceStrengthAuditPassed = ucsdTranscriptSourceStrengthAuditM
     && phase316.RootElement.TryGetProperty("sourceStrengthRows", out var p316SourceStrengthRows)
     && p316SourceStrengthRows.ValueKind == JsonValueKind.Array
     && p316SourceStrengthRows.GetArrayLength() >= 4;
+var electroweakMassMatrixBridgeSourceAuditMaterialized = phase317 is not null;
+var electroweakMassMatrixBridgeSourceAuditPassed = electroweakMassMatrixBridgeSourceAuditMaterialized
+    && JsonBool(phase317!.RootElement, "electroweakMassMatrixBridgeSourceAuditPassed") is true
+    && JsonBool(phase317.RootElement, "pdg2025ElectroweakMassMatrixSourceAvailable") is true
+    && JsonBool(phase317.RootElement, "smMassMatrixProvidesExternalDependencyMap") is true
+    && JsonBool(phase317.RootElement, "smDefinesPhotonZWeinbergRotation") is true
+    && JsonBool(phase317.RootElement, "smTreeLevelMwDependsOnGAndV") is true
+    && JsonBool(phase317.RootElement, "smTreeLevelMzDependsOnGAndGPrimeAndV") is true
+    && JsonBool(phase317.RootElement, "smTreeLevelHiggsMassDependsOnPotentialParameter") is true
+    && JsonBool(phase317.RootElement, "smMassMatrixPromotesWzMasses") is false
+    && JsonBool(phase317.RootElement, "smMassMatrixPromotesHiggsMass") is false
+    && JsonBool(phase317.RootElement, "smMassMatrixCompletesBosonPredictions") is false
+    && phase317.RootElement.TryGetProperty("smMassMatrixBoundary", out var p317Boundary)
+    && JsonBool(p317Boundary, "smMassMatrixProvidesGuLocalWzTheorem") is false
+    && JsonBool(p317Boundary, "smMassMatrixProvidesGuObservedFieldExtraction") is false
+    && JsonBool(p317Boundary, "smMassMatrixProvidesGuVevSource") is false
+    && JsonBool(p317Boundary, "smMassMatrixProvidesGuWeakCouplingSource") is false
+    && JsonBool(p317Boundary, "smMassMatrixProvidesGuHyperchargeCouplingSource") is false
+    && JsonBool(p317Boundary, "smMassMatrixProvidesGuHiggsScalarSourceOperator") is false
+    && JsonBool(p317Boundary, "smMassMatrixProvidesGuHiggsSelfCouplingSource") is false
+    && JsonBool(p317Boundary, "smMassMatrixJustifiesWOnlyCasimirMultiplier") is false
+    && JsonBool(p317Boundary, "smMassMatrixJustifiesZUnitMultiplier") is false
+    && phase317.RootElement.TryGetProperty("contractImpact", out var p317ContractImpact)
+    && JsonBool(p317ContractImpact, "canFillPhase201WzContract") is false
+    && JsonBool(p317ContractImpact, "canFillPhase201HiggsContract") is false
+    && JsonBool(p317ContractImpact, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonInt(p317ContractImpact, "wzMissingFieldCount") == wzMissingFieldCount
+    && JsonInt(p317ContractImpact, "higgsMissingFieldCount") == higgsMissingFieldCount
+    && phase317.RootElement.TryGetProperty("requiredGuContractMapping", out var p317ContractMapping)
+    && p317ContractMapping.ValueKind == JsonValueKind.Array
+    && p317ContractMapping.GetArrayLength() >= 8;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -2619,6 +2652,14 @@ var checklist = new[]
             : "Phase316 artifact not materialized",
         Phase316Path),
     new ObjectiveChecklistItem(
+        "electroweak-mass-matrix-bridge-source-audit-materialized",
+        "Audit whether importing the Standard Model electroweak mass matrix can serve as the missing GU W/Z/H bridge-source law.",
+        electroweakMassMatrixBridgeSourceAuditPassed ? "passed" : "failed",
+        electroweakMassMatrixBridgeSourceAuditMaterialized
+            ? $"electroweakMassMatrixBridgeSourceAuditPassed={JsonBool(phase317!.RootElement, "electroweakMassMatrixBridgeSourceAuditPassed")}; externalDependencyMap={JsonBool(phase317.RootElement, "smMassMatrixProvidesExternalDependencyMap")}; photonZRotation={JsonBool(phase317.RootElement, "smDefinesPhotonZWeinbergRotation")}; mwDependsOnGAndV={JsonBool(phase317.RootElement, "smTreeLevelMwDependsOnGAndV")}; mzDependsOnGAndGPrimeAndV={JsonBool(phase317.RootElement, "smTreeLevelMzDependsOnGAndGPrimeAndV")}; higgsDependsOnPotential={JsonBool(phase317.RootElement, "smTreeLevelHiggsMassDependsOnPotentialParameter")}; promotesWzMasses={JsonBool(phase317.RootElement, "smMassMatrixPromotesWzMasses")}; promotesHiggsMass={JsonBool(phase317.RootElement, "smMassMatrixPromotesHiggsMass")}; completesBosonPredictions={JsonBool(phase317.RootElement, "smMassMatrixCompletesBosonPredictions")}; canFillPhase201WzContract={(phase317.RootElement.TryGetProperty("contractImpact", out var p317ChecklistContract) ? JsonBool(p317ChecklistContract, "canFillPhase201WzContract") : null)}; canFillPhase201HiggsContract={(phase317.RootElement.TryGetProperty("contractImpact", out p317ChecklistContract) ? JsonBool(p317ChecklistContract, "canFillPhase201HiggsContract") : null)}; decision={JsonString(phase317.RootElement, "decision")}"
+            : "Phase317 artifact not materialized",
+        Phase317Path),
+    new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
         branchLocalDirectInvariantCensusPassed ? "passed" : "failed",
@@ -2968,6 +3009,7 @@ var result = new
     dimensionCasimirWzSourceLawAuditPassed,
     ucsdDarkGeometricEnergySourceAuditPassed,
     ucsdTranscriptSourceStrengthAuditPassed,
+    electroweakMassMatrixBridgeSourceAuditPassed,
     parameterSourceContractCandidateScanPassed,
     phase288CoverageFalseNegativeAuditPassed,
     chargedLeptonThresholdSourceReplacementAuditPassed,
@@ -3069,6 +3111,7 @@ var result = new
         phase314Path = Phase314Path,
         phase315Path = Phase315Path,
         phase316Path = Phase316Path,
+        phase317Path = Phase317Path,
         phase282Path = Phase282Path,
         phase283Path = Phase283Path,
         phase284Path = Phase284Path,

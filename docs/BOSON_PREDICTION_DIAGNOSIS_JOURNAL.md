@@ -7688,9 +7688,105 @@ self-coupling or excitation relation independent of observed target masses.
   Phase312 in both generator passes, ending with claim integrity verified.
 - `dotnet test GeometricUnity.slnx` passed. The existing xUnit analyzer warning
   in `QuantitativeValidationTests.cs(315,9)` remains present.
+
+## 2026-05-20T17:20:54-04:00 - Standard Model Electroweak Mass Matrix Checked as Phase317
+
+### Prompt / Goal
+
+Continue diagnosing why the W/Z direct bridge-source law cannot yet be
+promoted. The next narrow question is whether the standard electroweak
+Higgs-mechanism mass matrix can be imported as the missing GU W/Z/H
+bridge-source law.
+
+### Research
+
+- Checked the current PDG 2025 electroweak model review:
+  `https://pdg.lbl.gov/2025/reviews/rpp2025-rev-standard-model.pdf`.
+- The review records the low-energy structure needed for the Standard Model
+  mass formulas: SU(2)xU(1), gauge couplings `g` and `g'`, a Higgs doublet VEV,
+  photon/Z Weinberg rotation, charged W combinations, and tree-level W/Z/H
+  mass formulas.
+
+### Actions
+
+- Added `studies/phase317_electroweak_mass_matrix_bridge_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P317.md`.
+- Wired Phase317 into the generator, P101 package, P202 objective completion
+  audit, claim-integrity verifier, and diagnostic scanner exclusions.
+- Initial targeted Phase317 run failed because I had incorrectly required
+  Phase313 to provide a GU photon/Z Weinberg-rotation artifact. That was the
+  wrong dependency: PDG supplies the external SM rotation, while Phase313 remains
+  the blocked GU artifact. I corrected the check to preserve that distinction.
+
+### Result
+
+Phase317 now passes as a negative audit:
+
+- `electroweakMassMatrixBridgeSourceAuditPassed=true`.
+- `smMassMatrixProvidesExternalDependencyMap=true`.
+- `smDefinesPhotonZWeinbergRotation=true`.
+- `smTreeLevelMwDependsOnGAndV=true`.
+- `smTreeLevelMzDependsOnGAndGPrimeAndV=true`.
+- `smTreeLevelHiggsMassDependsOnPotentialParameter=true`.
+- `smMassMatrixProvidesGuLocalWzTheorem=false`.
+- `smMassMatrixProvidesGuObservedFieldExtraction=false`.
+- `smMassMatrixProvidesGuVevSource=false`.
+- `smMassMatrixProvidesGuWeakCouplingSource=false`.
+- `smMassMatrixProvidesGuHyperchargeCouplingSource=false`.
+- `smMassMatrixProvidesGuHiggsScalarSourceOperator=false`.
+- `smMassMatrixJustifiesWOnlyCasimirMultiplier=false`.
+- `smMassMatrixJustifiesZUnitMultiplier=false`.
+- `smMassMatrixPromotesWzMasses=false`.
+- `smMassMatrixPromotesHiggsMass=false`.
+- `canFillPhase201WzContract=false`.
+- `canFillPhase201HiggsContract=false`.
+- `canFillPhase256ObservedFieldExtractionContract=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs mass predictions by importing the Standard Model
+electroweak mass matrix. It is the right external dependency map and it
+explains why the Phase302/307 Casimir shortcut is not a physical source law:
+W/Z splitting requires neutral-sector mixing and electroweak parameter sources,
+not a W-only Casimir multiplier with an unexplained Z unit multiplier.
+
+### Remaining Blocker
+
+The repo still needs a GU-local theorem deriving the observed SU(2)xU(1)
+embedding, photon/Z rotation, W rows, Z row, VEV, weak/hypercharge couplings,
+and Higgs scalar-source/self-coupling lineage before Phase201/256 can be
+filled.
+
+### Validation
+
+- Targeted Phase317 passed after correcting the Phase313 dependency assumption.
+- Scanner reruns after adding Phase317 found no intake-ready artifacts:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `canPromoteHiggsQuarticSelfCouplingSource=false` and
+    `intakeReadyFindingCount=0`.
+  - P281 `geometricRefractiveUnificationSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P295 `intakeReadyObservedFieldExtractionCandidateCount=0` and
+    `anyObservedFieldExtractionCandidateFillsContract=false`.
+  - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
+    `anySourceLineageCandidateFillsContract=false`.
+- P101 regenerated with Phase317 included and remained
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase317 included and remained
+  `objectiveAchieved=false`, with `checklistPassedCount=110` and
+  `checklistFailedCount=3`.
+- Claim-integrity verifier passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed and reran
+  Phase317 in both generator passes, ending with P101 blocked, P202 incomplete
+  at `110/3`, and claim integrity verified.
+- `dotnet test GeometricUnity.slnx` passed. The existing xUnit analyzer warning
+  in `QuantitativeValidationTests.cs(315,9)` remains present.
 - `git diff --check` passed.
 
-This validation section records the final negative outcome of Phase312 and the
+This validation section records the final negative outcome of Phase317 and the
 self-audit exclusion repair required to keep generated diagnostic text from
 being mistaken for a new local source artifact.
 
