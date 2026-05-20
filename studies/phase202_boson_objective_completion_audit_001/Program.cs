@@ -83,6 +83,7 @@ const string Phase314Path = "studies/phase314_dimension_casimir_wz_source_law_au
 const string Phase315Path = "studies/phase315_ucsd_dark_geometric_energy_source_audit_001/output/ucsd_dark_geometric_energy_source_audit_summary.json";
 const string Phase316Path = "studies/phase316_ucsd_transcript_source_strength_audit_001/output/ucsd_transcript_source_strength_audit_summary.json";
 const string Phase317Path = "studies/phase317_electroweak_mass_matrix_bridge_source_audit_001/output/electroweak_mass_matrix_bridge_source_audit_summary.json";
+const string Phase318Path = "studies/phase318_deferred_implementation_gap_repairability_audit_001/output/deferred_implementation_gap_repairability_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -199,6 +200,7 @@ using var phase314 = File.Exists(Phase314Path) ? JsonDocument.Parse(File.ReadAll
 using var phase315 = File.Exists(Phase315Path) ? JsonDocument.Parse(File.ReadAllText(Phase315Path)) : null;
 using var phase316 = File.Exists(Phase316Path) ? JsonDocument.Parse(File.ReadAllText(Phase316Path)) : null;
 using var phase317 = File.Exists(Phase317Path) ? JsonDocument.Parse(File.ReadAllText(Phase317Path)) : null;
+using var phase318 = File.Exists(Phase318Path) ? JsonDocument.Parse(File.ReadAllText(Phase318Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -1147,6 +1149,41 @@ var electroweakMassMatrixBridgeSourceAuditPassed = electroweakMassMatrixBridgeSo
     && phase317.RootElement.TryGetProperty("requiredGuContractMapping", out var p317ContractMapping)
     && p317ContractMapping.ValueKind == JsonValueKind.Array
     && p317ContractMapping.GetArrayLength() >= 8;
+var deferredImplementationGapRepairabilityAuditMaterialized = phase318 is not null;
+var deferredImplementationGapRepairabilityAuditPassed = deferredImplementationGapRepairabilityAuditMaterialized
+    && JsonBool(phase318!.RootElement, "deferredImplementationGapRepairabilityAuditPassed") is true
+    && JsonBool(phase318.RootElement, "launchableCodeOnlyPredictionFixFound") is false
+    && JsonBool(phase318.RootElement, "deferredImplementationFixCompletesBosonPredictions") is false
+    && JsonBool(phase318.RootElement, "fullParticleDictionaryRequiresFermionicSector") is true
+    && JsonBool(phase318.RootElement, "phase3ForbidsUniquePhysicalTruth") is true
+    && JsonBool(phase318.RootElement, "quotientAwareDeferred") is true
+    && JsonBool(phase318.RootElement, "dispersionMassDeferred") is true
+    && JsonBool(phase318.RootElement, "cudaBackendDeferred") is true
+    && JsonBool(phase318.RootElement, "quarticInteractionProxyDeferred") is true
+    && JsonBool(phase318.RootElement, "convergenceDeferred") is true
+    && JsonBool(phase318.RootElement, "quantizationOutOfScope") is true
+    && JsonBool(phase318.RootElement, "scatteringOutOfScope") is true
+    && JsonBool(phase318.RootElement, "symbolicDerivationOutOfScope") is true
+    && phase318.RootElement.TryGetProperty("interactionProxyImplementation", out var p318InteractionProxy)
+    && JsonBool(p318InteractionProxy, "interactionProxyRecordDefinesCubicResponse") is true
+    && JsonBool(p318InteractionProxy, "interactionProxyRecordDefinesQuarticResponse") is false
+    && JsonBool(p318InteractionProxy, "registryInteractionEnvelopeIsCubicOnly") is true
+    && phase318.RootElement.TryGetProperty("contractImpact", out var p318ContractImpact)
+    && JsonBool(p318ContractImpact, "codeOnlyFixCanDeriveGuLocalWzTheorem") is false
+    && JsonBool(p318ContractImpact, "codeOnlyFixCanDeriveObservedElectroweakEmbedding") is false
+    && JsonBool(p318ContractImpact, "codeOnlyFixCanDeriveVevOrCouplingSource") is false
+    && JsonBool(p318ContractImpact, "codeOnlyFixCanDeriveHiggsScalarSource") is false
+    && JsonBool(p318ContractImpact, "deferredIssueImplementationCanFillPhase201WzContract") is false
+    && JsonBool(p318ContractImpact, "deferredIssueImplementationCanFillPhase201HiggsContract") is false
+    && JsonBool(p318ContractImpact, "deferredIssueImplementationCanFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(p318ContractImpact, "quarticProxyImplementationPromotesHiggsMass") is false
+    && JsonInt(p318ContractImpact, "wzMissingFieldCount") == wzMissingFieldCount
+    && JsonInt(p318ContractImpact, "higgsMissingFieldCount") == higgsMissingFieldCount
+    && JsonInt(p318ContractImpact, "observedFieldExtractionFilledRequiredFieldCount") == 0
+    && JsonBool(p318ContractImpact, "observedFieldExtractionContractPromotable") is false
+    && phase318.RootElement.TryGetProperty("codeOnlyRepairRows", out var p318RepairRows)
+    && p318RepairRows.ValueKind == JsonValueKind.Array
+    && p318RepairRows.GetArrayLength() >= 8;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -2660,6 +2697,14 @@ var checklist = new[]
             : "Phase317 artifact not materialized",
         Phase317Path),
     new ObjectiveChecklistItem(
+        "deferred-implementation-gap-repairability-audit-materialized",
+        "Audit whether deferred Phase III implementation gaps, especially quartic interaction proxies, are a launchable code-only fix for W/Z/H prediction contracts.",
+        deferredImplementationGapRepairabilityAuditPassed ? "passed" : "failed",
+        deferredImplementationGapRepairabilityAuditMaterialized
+            ? $"deferredImplementationGapRepairabilityAuditPassed={JsonBool(phase318!.RootElement, "deferredImplementationGapRepairabilityAuditPassed")}; launchableCodeOnlyPredictionFixFound={JsonBool(phase318.RootElement, "launchableCodeOnlyPredictionFixFound")}; deferredImplementationFixCompletesBosonPredictions={JsonBool(phase318.RootElement, "deferredImplementationFixCompletesBosonPredictions")}; quarticInteractionProxyDeferred={JsonBool(phase318.RootElement, "quarticInteractionProxyDeferred")}; interactionProxyRecordDefinesQuarticResponse={(phase318.RootElement.TryGetProperty("interactionProxyImplementation", out var p318ChecklistProxy) ? JsonBool(p318ChecklistProxy, "interactionProxyRecordDefinesQuarticResponse") : null)}; registryInteractionEnvelopeIsCubicOnly={(phase318.RootElement.TryGetProperty("interactionProxyImplementation", out p318ChecklistProxy) ? JsonBool(p318ChecklistProxy, "registryInteractionEnvelopeIsCubicOnly") : null)}; canFillPhase201WzContract={(phase318.RootElement.TryGetProperty("contractImpact", out var p318ChecklistContract) ? JsonBool(p318ChecklistContract, "deferredIssueImplementationCanFillPhase201WzContract") : null)}; canFillPhase201HiggsContract={(phase318.RootElement.TryGetProperty("contractImpact", out p318ChecklistContract) ? JsonBool(p318ChecklistContract, "deferredIssueImplementationCanFillPhase201HiggsContract") : null)}; decision={JsonString(phase318.RootElement, "decision")}"
+            : "Phase318 artifact not materialized",
+        Phase318Path),
+    new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
         branchLocalDirectInvariantCensusPassed ? "passed" : "failed",
@@ -3112,6 +3157,7 @@ var result = new
         phase315Path = Phase315Path,
         phase316Path = Phase316Path,
         phase317Path = Phase317Path,
+        phase318Path = Phase318Path,
         phase282Path = Phase282Path,
         phase283Path = Phase283Path,
         phase284Path = Phase284Path,

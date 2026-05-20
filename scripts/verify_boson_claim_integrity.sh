@@ -87,6 +87,7 @@ const paths = {
   phase315: "studies/phase315_ucsd_dark_geometric_energy_source_audit_001/output/ucsd_dark_geometric_energy_source_audit_summary.json",
   phase316: "studies/phase316_ucsd_transcript_source_strength_audit_001/output/ucsd_transcript_source_strength_audit_summary.json",
   phase317: "studies/phase317_electroweak_mass_matrix_bridge_source_audit_001/output/electroweak_mass_matrix_bridge_source_audit_summary.json",
+  phase318: "studies/phase318_deferred_implementation_gap_repairability_audit_001/output/deferred_implementation_gap_repairability_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -245,6 +246,7 @@ const phase314 = requireFile(paths.phase314);
 const phase315 = requireFile(paths.phase315);
 const phase316 = requireFile(paths.phase316);
 const phase317 = requireFile(paths.phase317);
+const phase318 = requireFile(paths.phase318);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -1304,6 +1306,33 @@ if (sourceLineageMissing) {
   assert(phase317.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase317 cannot fill the Phase256 observed-field extraction contract.");
   assert(phase317.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase317 W/Z missing-field count must match Phase213.");
   assert(phase317.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase317 Higgs missing-field count must match Phase213.");
+  assert(phase318.deferredImplementationGapRepairabilityAuditPassed === true, "Phase318 deferred implementation-gap repairability audit must pass while preserving non-promotional status.");
+  assert(phase318.launchableCodeOnlyPredictionFixFound === false, "Phase318 cannot report a launchable code-only prediction fix.");
+  assert(phase318.deferredImplementationFixCompletesBosonPredictions === false, "Phase318 cannot complete boson predictions from deferred implementation work.");
+  assert(phase318.fullParticleDictionaryRequiresFermionicSector === true, "Phase318 must preserve the full particle dictionary fermionic-sector dependency.");
+  assert(phase318.phase3ForbidsUniquePhysicalTruth === true, "Phase318 must preserve Phase III physical-identification caution.");
+  assert(phase318.quotientAwareDeferred === true, "Phase318 must record the quotient-aware formulation gap.");
+  assert(phase318.dispersionMassDeferred === true, "Phase318 must record the dispersion-mass extraction gap.");
+  assert(phase318.cudaBackendDeferred === true, "Phase318 must record the CUDA backend gap.");
+  assert(phase318.quarticInteractionProxyDeferred === true, "Phase318 must record the quartic interaction-proxy gap.");
+  assert(phase318.convergenceDeferred === true, "Phase318 must record the convergence-extrapolation gap.");
+  assert(phase318.quantizationOutOfScope === true, "Phase318 must record the quantization gap.");
+  assert(phase318.scatteringOutOfScope === true, "Phase318 must record the scattering/S-matrix gap.");
+  assert(phase318.symbolicDerivationOutOfScope === true, "Phase318 must record the symbolic derivation gap.");
+  assert(phase318.interactionProxyImplementation?.interactionProxyRecordDefinesCubicResponse === true, "Phase318 must verify the current cubic interaction-proxy record.");
+  assert(phase318.interactionProxyImplementation?.interactionProxyRecordDefinesQuarticResponse === false, "Phase318 must verify no quartic interaction-proxy record exists yet.");
+  assert(phase318.interactionProxyImplementation?.registryInteractionEnvelopeIsCubicOnly === true, "Phase318 must verify the registry interaction envelope is cubic-only.");
+  assert(phase318.contractImpact?.codeOnlyFixCanDeriveGuLocalWzTheorem === false, "Phase318 cannot claim code-only work derives the GU-local W/Z theorem.");
+  assert(phase318.contractImpact?.codeOnlyFixCanDeriveObservedElectroweakEmbedding === false, "Phase318 cannot claim code-only work derives observed electroweak embedding.");
+  assert(phase318.contractImpact?.codeOnlyFixCanDeriveVevOrCouplingSource === false, "Phase318 cannot claim code-only work derives VEV/coupling sources.");
+  assert(phase318.contractImpact?.codeOnlyFixCanDeriveHiggsScalarSource === false, "Phase318 cannot claim code-only work derives the Higgs scalar source.");
+  assert(phase318.contractImpact?.deferredIssueImplementationCanFillPhase201WzContract === false, "Phase318 cannot fill the Phase201 W/Z contract from deferred implementation gaps.");
+  assert(phase318.contractImpact?.deferredIssueImplementationCanFillPhase201HiggsContract === false, "Phase318 cannot fill the Phase201 Higgs contract from deferred implementation gaps.");
+  assert(phase318.contractImpact?.deferredIssueImplementationCanFillPhase256ObservedFieldExtractionContract === false, "Phase318 cannot fill the Phase256 observed-field extraction contract from deferred implementation gaps.");
+  assert(phase318.contractImpact?.quarticProxyImplementationPromotesHiggsMass === false, "Phase318 cannot promote Higgs mass from a quartic proxy implementation.");
+  assert(phase318.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase318 W/Z missing-field count must match Phase213.");
+  assert(phase318.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase318 Higgs missing-field count must match Phase213.");
+  assert((phase318.codeOnlyRepairRows ?? []).length >= 8, "Phase318 must enumerate deferred code-only repair rows.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

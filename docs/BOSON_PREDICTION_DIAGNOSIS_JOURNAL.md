@@ -7790,6 +7790,105 @@ This validation section records the final negative outcome of Phase317 and the
 self-audit exclusion repair required to keep generated diagnostic text from
 being mistaken for a new local source artifact.
 
+## 2026-05-20T18:17:24-04:00 - Deferred Implementation Gap Repairability Checked as Phase318
+
+### Trigger
+
+After Phase317 showed that the Standard Model electroweak mass matrix is only an
+external dependency map, I checked whether the remaining blocker is instead a
+launchable code-only implementation gap. The most concrete local lead was the
+Phase III open issue that quartic and higher interaction proxies are deferred
+and relevant to Higgs-like self-interactions.
+
+The attempted sidecar agent for this check failed with a usage-limit error, so
+no subagent result was used as evidence.
+
+### Research
+
+- Read `docs/Phases/OpenIssues/PHASE_3_OPEN_ISSUES.md`.
+- Checked the current interaction-proxy implementation:
+  - `src/Gu.Phase3.Properties/InteractionProxyRecord.cs`.
+  - `src/Gu.Phase3.Properties/SimpleInteractionProxyComputer.cs`.
+  - `src/Gu.Phase3.Properties/InteractionProxyComputer.cs`.
+  - `src/Gu.Phase3.Registry/CandidateBosonRecord.cs`.
+- Cross-checked against Phase201, Phase213, Phase196, Phase248, Phase256, and
+  Phase257 outputs.
+
+### Actions
+
+- Added `studies/phase318_deferred_implementation_gap_repairability_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P318.md`.
+- Wired Phase318 into the generator, P101 package, P202 objective completion
+  audit, claim-integrity verifier, and scanner exclusions.
+
+### Result
+
+Phase318 passes as a negative implementation-repairability audit:
+
+- `deferredImplementationGapRepairabilityAuditPassed=true`.
+- `launchableCodeOnlyPredictionFixFound=false`.
+- `deferredImplementationFixCompletesBosonPredictions=false`.
+- `quarticInteractionProxyDeferred=true`.
+- `interactionProxyRecordDefinesQuarticResponse=false`.
+- `registryInteractionEnvelopeIsCubicOnly=true`.
+- `quarticProxyImplementationPromotesHiggsMass=false`.
+- `deferredIssueImplementationCanFillPhase201WzContract=false`.
+- `deferredIssueImplementationCanFillPhase201HiggsContract=false`.
+- `deferredIssueImplementationCanFillPhase256ObservedFieldExtractionContract=false`.
+
+### Decision
+
+Do not treat deferred Phase III implementation gaps as the fix for the W/Z/H
+physical mass predictions. Implementing quotient-aware spectra, true dispersion
+fits, CUDA parity, larger environments, quartic proxies, convergence
+extrapolation, quantization/scattering, or symbolic tooling would improve the
+platform, but none supplies the missing GU-local W/Z source theorem, observed
+electroweak projection, VEV/coupling sources, or Higgs scalar-source/self-
+coupling lineage required by Phase201/256.
+
+### Remaining Blocker
+
+The next required artifact is still source-level, not code-only:
+
+- W/Z: derive target-independent W/Z source rows, observed electroweak
+  embedding, photon/Z projection, and common source normalization.
+- Higgs: derive the scalar source/operator, identity envelope, massive profile,
+  and potential/self-coupling or excitation relation.
+
+### Validation
+
+- Targeted Phase318 run passed with:
+  - `deferredImplementationGapRepairabilityAuditPassed=true`.
+  - `launchableCodeOnlyPredictionFixFound=false`.
+  - `quarticInteractionProxyDeferred=true`.
+  - `quarticProxyImplementationPromotesHiggsMass=false`.
+  - `deferredImplementationFixCompletesBosonPredictions=false`.
+- Scanner reruns after adding Phase318 found no intake-ready artifacts:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `canPromoteHiggsQuarticSelfCouplingSource=false` and
+    `intakeReadyFindingCount=0`.
+  - P281 `geometricRefractiveUnificationSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P295 `intakeReadyObservedFieldExtractionCandidateCount=0` and
+    `anyObservedFieldExtractionCandidateFillsContract=false`.
+  - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
+    `anySourceLineageCandidateFillsContract=false`.
+- P101 regenerated with Phase318 included and remained
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase318 included and remained
+  `objectiveAchieved=false`, with `checklistPassedCount=111` and
+  `checklistFailedCount=3`.
+- Claim-integrity verifier passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed and reran
+  Phase318 in both generator passes, ending with P101 blocked, P202 incomplete
+  at `111/3`, and claim integrity verified.
+- `dotnet test GeometricUnity.slnx` passed. The existing xUnit analyzer warning
+  in `QuantitativeValidationTests.cs(315,9)` remains present.
+- `git diff --check` passed.
+
 ## 2026-05-20T16:39:00-04:00 - Official Draft Electroweak Projection Map Checked as Phase313
 
 ### Trigger
