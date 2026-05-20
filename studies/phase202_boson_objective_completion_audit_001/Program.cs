@@ -78,6 +78,7 @@ const string Phase279Path = "studies/phase279_technicolor_walking_electroweak_sc
 const string Phase280Path = "studies/phase280_direct_bridge_analytic_variation_upgrade_audit_001/output/direct_bridge_analytic_variation_upgrade_audit_summary.json";
 const string Phase281Path = "studies/phase281_geometric_refractive_unification_source_audit_001/output/geometric_refractive_unification_source_audit_summary.json";
 const string Phase312Path = "studies/phase312_current_public_gu_rvg_revision_delta_audit_001/output/current_public_gu_rvg_revision_delta_audit_summary.json";
+const string Phase313Path = "studies/phase313_official_draft_electroweak_projection_map_audit_001/output/official_draft_electroweak_projection_map_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -189,6 +190,7 @@ using var phase279 = File.Exists(Phase279Path) ? JsonDocument.Parse(File.ReadAll
 using var phase280 = File.Exists(Phase280Path) ? JsonDocument.Parse(File.ReadAllText(Phase280Path)) : null;
 using var phase281 = File.Exists(Phase281Path) ? JsonDocument.Parse(File.ReadAllText(Phase281Path)) : null;
 using var phase312 = File.Exists(Phase312Path) ? JsonDocument.Parse(File.ReadAllText(Phase312Path)) : null;
+using var phase313 = File.Exists(Phase313Path) ? JsonDocument.Parse(File.ReadAllText(Phase313Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -989,6 +991,32 @@ var currentPublicGuRvgRevisionDeltaAuditPassed = currentPublicGuRvgRevisionDelta
     && p312BlockerEvidence.TryGetProperty("phase213", out var p312Phase213Evidence)
     && JsonInt(p312Phase213Evidence, "wzMissingFieldCount") == wzMissingFieldCount
     && JsonInt(p312Phase213Evidence, "higgsMissingFieldCount") == higgsMissingFieldCount;
+var officialDraftElectroweakProjectionMapAuditMaterialized = phase313 is not null;
+var officialDraftElectroweakProjectionMapAuditPassed = officialDraftElectroweakProjectionMapAuditMaterialized
+    && JsonBool(phase313!.RootElement, "officialDraftElectroweakProjectionMapAuditPassed") is true
+    && JsonBool(phase313.RootElement, "officialGuParameterLocationLeadPresent") is true
+    && JsonBool(phase313.RootElement, "officialDraftProvidesWeakIsospinLocation") is true
+    && JsonBool(phase313.RootElement, "officialDraftProvidesWeakHyperchargeLocation") is true
+    && JsonBool(phase313.RootElement, "phase27InternalCartanMixingConventionReady") is true
+    && JsonBool(phase313.RootElement, "phase46WzRatioPhysicalClaimAllowed") is true
+    && JsonBool(phase313.RootElement, "phase46OnlyRatioObservableMapped") is true
+    && JsonBool(phase313.RootElement, "officialDraftProvidesPhotonZWeinbergRotation") is false
+    && JsonBool(phase313.RootElement, "officialDraftProvidesElectromagneticUnbrokenGenerator") is false
+    && JsonBool(phase313.RootElement, "officialDraftProvidesWeakMixingAngleSource") is false
+    && JsonBool(phase313.RootElement, "officialDraftProvidesNeutralMassMatrixDiagonalization") is false
+    && JsonBool(phase313.RootElement, "officialDraftProvidesPhotonMasslessProjectionRow") is false
+    && JsonBool(phase313.RootElement, "officialDraftProvidesWChargedProjectionRows") is false
+    && JsonBool(phase313.RootElement, "officialDraftProvidesZSourceRowProjection") is false
+    && JsonBool(phase313.RootElement, "officialDraftProvidesObservedElectroweakGaugeEmbedding") is false
+    && JsonBool(phase313.RootElement, "officialDraftProjectionMapCompletesObservedFieldExtraction") is false
+    && JsonBool(phase313.RootElement, "officialDraftProjectionMapPromotesWzMasses") is false
+    && JsonBool(phase313.RootElement, "officialDraftProjectionMapPromotesHiggsMass") is false
+    && JsonBool(phase313.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase313.RootElement, "canFillPhase201WzContract") is false
+    && phase313.RootElement.TryGetProperty("inheritedEvidence", out var p313InheritedEvidence)
+    && p313InheritedEvidence.TryGetProperty("phase213", out var p313Phase213Evidence)
+    && JsonInt(p313Phase213Evidence, "wzMissingFieldCount") == wzMissingFieldCount
+    && JsonInt(p313Phase213Evidence, "higgsMissingFieldCount") == higgsMissingFieldCount;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -2462,6 +2490,14 @@ var checklist = new[]
             : "Phase312 artifact not materialized",
         Phase312Path),
     new ObjectiveChecklistItem(
+        "official-draft-electroweak-projection-map-audit-materialized",
+        "Audit whether official draft electroweak placement plus the internal Cartan convention supplies a physical photon/Z/W projection map.",
+        officialDraftElectroweakProjectionMapAuditPassed ? "passed" : "failed",
+        officialDraftElectroweakProjectionMapAuditMaterialized
+            ? $"officialDraftElectroweakProjectionMapAuditPassed={JsonBool(phase313!.RootElement, "officialDraftElectroweakProjectionMapAuditPassed")}; officialGuParameterLocationLeadPresent={JsonBool(phase313.RootElement, "officialGuParameterLocationLeadPresent")}; phase27InternalCartanMixingConventionReady={JsonBool(phase313.RootElement, "phase27InternalCartanMixingConventionReady")}; phase46WzRatioPhysicalClaimAllowed={JsonBool(phase313.RootElement, "phase46WzRatioPhysicalClaimAllowed")}; phase46OnlyRatioObservableMapped={JsonBool(phase313.RootElement, "phase46OnlyRatioObservableMapped")}; photonZWeinbergRotation={JsonBool(phase313.RootElement, "officialDraftProvidesPhotonZWeinbergRotation")}; electromagneticUnbrokenGenerator={JsonBool(phase313.RootElement, "officialDraftProvidesElectromagneticUnbrokenGenerator")}; weakMixingAngleSource={JsonBool(phase313.RootElement, "officialDraftProvidesWeakMixingAngleSource")}; neutralMassMatrixDiagonalization={JsonBool(phase313.RootElement, "officialDraftProvidesNeutralMassMatrixDiagonalization")}; observedElectroweakGaugeEmbedding={JsonBool(phase313.RootElement, "officialDraftProvidesObservedElectroweakGaugeEmbedding")}; officialDraftProjectionMapPromotesWzMasses={JsonBool(phase313.RootElement, "officialDraftProjectionMapPromotesWzMasses")}; canFillPhase201WzContract={JsonBool(phase313.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase313.RootElement, "decision")}"
+            : "Phase313 artifact not materialized",
+        Phase313Path),
+    new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
         branchLocalDirectInvariantCensusPassed ? "passed" : "failed",
@@ -2793,6 +2829,7 @@ var result = new
         "Electromagnetic alpha/electric-charge inputs are audited as external numerical closure, not GU source-lineage fillers.",
         "Fermi-derived VEV input is audited as external numerical closure, not a GU vacuum/source replacement.",
         "RG/scheme transport inputs are audited as external numerical closure, not a GU transport source.",
+        "Official draft electroweak placement is audited as symbolic location plus ratio support, not a physical photon/Z/W projection map.",
         "Observed-field extraction contract fields are scanned for intake-ready local artifacts.",
         "W/Z and Higgs source-lineage contract fields are scanned for intake-ready local artifacts.",
         "Those contracts are filled with promotable target-independent evidence.",
@@ -2806,6 +2843,7 @@ var result = new
     recentQtpWeakGeometrySourceAuditPassed,
     alphaRunningThresholdSourceViabilityAuditPassed,
     officialDraftParameterSourceGapAuditPassed,
+    officialDraftElectroweakProjectionMapAuditPassed,
     parameterSourceContractCandidateScanPassed,
     phase288CoverageFalseNegativeAuditPassed,
     chargedLeptonThresholdSourceReplacementAuditPassed,
@@ -2903,6 +2941,7 @@ var result = new
         phase280Path = Phase280Path,
         phase281Path = Phase281Path,
         phase312Path = Phase312Path,
+        phase313Path = Phase313Path,
         phase282Path = Phase282Path,
         phase283Path = Phase283Path,
         phase284Path = Phase284Path,

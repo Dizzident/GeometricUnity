@@ -82,6 +82,7 @@ const paths = {
   phase280: "studies/phase280_direct_bridge_analytic_variation_upgrade_audit_001/output/direct_bridge_analytic_variation_upgrade_audit_summary.json",
   phase281: "studies/phase281_geometric_refractive_unification_source_audit_001/output/geometric_refractive_unification_source_audit_summary.json",
   phase312: "studies/phase312_current_public_gu_rvg_revision_delta_audit_001/output/current_public_gu_rvg_revision_delta_audit_summary.json",
+  phase313: "studies/phase313_official_draft_electroweak_projection_map_audit_001/output/official_draft_electroweak_projection_map_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -235,6 +236,7 @@ const phase279 = requireFile(paths.phase279);
 const phase280 = requireFile(paths.phase280);
 const phase281 = requireFile(paths.phase281);
 const phase312 = requireFile(paths.phase312);
+const phase313 = requireFile(paths.phase313);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -1170,6 +1172,28 @@ if (sourceLineageMissing) {
   assert((phase312.researchSources ?? []).length >= 4, "Phase312 must record the reviewed current public GU/RVG and material-strategy sources.");
   assert(phase312.currentBlockerEvidence?.phase213?.wzMissingFieldCount === missingWzFields, "Phase312 W/Z missing-field count must match Phase213.");
   assert(phase312.currentBlockerEvidence?.phase213?.higgsMissingFieldCount === missingHiggsFields, "Phase312 Higgs missing-field count must match Phase213.");
+  assert(phase313.officialDraftElectroweakProjectionMapAuditPassed === true, "Phase313 official draft electroweak projection-map audit must pass while preserving non-promotional status.");
+  assert(phase313.officialGuParameterLocationLeadPresent === true, "Phase313 must inherit the official draft electroweak location lead.");
+  assert(phase313.officialDraftProvidesWeakIsospinLocation === true, "Phase313 must record official-draft weak-isospin placement.");
+  assert(phase313.officialDraftProvidesWeakHyperchargeLocation === true, "Phase313 must record official-draft weak-hypercharge placement.");
+  assert(phase313.phase27InternalCartanMixingConventionReady === true, "Phase313 must inherit the internal Cartan mixing convention.");
+  assert(phase313.phase46WzRatioPhysicalClaimAllowed === true, "Phase313 must preserve the existing W/Z ratio physical claim.");
+  assert(phase313.phase46OnlyRatioObservableMapped === true, "Phase313 must classify Phase46 as a ratio-only observable mapping.");
+  assert(phase313.officialDraftProvidesPhotonZWeinbergRotation === false, "Phase313 cannot claim a photon/Z Weinberg rotation from official-draft placement language.");
+  assert(phase313.officialDraftProvidesElectromagneticUnbrokenGenerator === false, "Phase313 cannot claim an unbroken electromagnetic generator from official-draft placement language.");
+  assert(phase313.officialDraftProvidesWeakMixingAngleSource === false, "Phase313 cannot claim a weak-mixing angle/coupling source from official-draft placement language.");
+  assert(phase313.officialDraftProvidesNeutralMassMatrixDiagonalization === false, "Phase313 cannot claim neutral mass-matrix diagonalization from official-draft placement language.");
+  assert(phase313.officialDraftProvidesPhotonMasslessProjectionRow === false, "Phase313 cannot claim a photon projection row from official-draft placement language.");
+  assert(phase313.officialDraftProvidesWChargedProjectionRows === false, "Phase313 cannot claim physical W charged projection rows from official-draft placement language.");
+  assert(phase313.officialDraftProvidesZSourceRowProjection === false, "Phase313 cannot claim a physical Z projection row from official-draft placement language.");
+  assert(phase313.officialDraftProvidesObservedElectroweakGaugeEmbedding === false, "Phase313 cannot claim a branch-stable observed electroweak gauge embedding from official-draft placement language.");
+  assert(phase313.officialDraftProjectionMapCompletesObservedFieldExtraction === false, "Phase313 cannot complete observed-field extraction.");
+  assert(phase313.officialDraftProjectionMapPromotesWzMasses === false, "Phase313 cannot promote W/Z masses.");
+  assert(phase313.officialDraftProjectionMapPromotesHiggsMass === false, "Phase313 cannot promote Higgs mass.");
+  assert(phase313.canFillPhase256ObservedFieldExtractionContract === false, "Phase313 cannot fill the Phase256 observed-field extraction contract.");
+  assert(phase313.canFillPhase201WzContract === false, "Phase313 cannot fill the Phase201 W/Z source contract.");
+  assert(phase313.inheritedEvidence?.phase213?.wzMissingFieldCount === missingWzFields, "Phase313 W/Z missing-field count must match Phase213.");
+  assert(phase313.inheritedEvidence?.phase213?.higgsMissingFieldCount === missingHiggsFields, "Phase313 Higgs missing-field count must match Phase213.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

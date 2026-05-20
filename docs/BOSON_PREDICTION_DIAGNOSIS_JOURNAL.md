@@ -7693,3 +7693,105 @@ self-coupling or excitation relation independent of observed target masses.
 This validation section records the final negative outcome of Phase312 and the
 self-audit exclusion repair required to keep generated diagnostic text from
 being mistaken for a new local source artifact.
+
+## 2026-05-20T16:39:00-04:00 - Official Draft Electroweak Projection Map Checked as Phase313
+
+### Trigger
+
+After Phase312 ruled out the current public GU-RVG revision delta, I checked a
+more specific official-draft loophole that was not isolated as its own gate:
+whether the official draft's weak-isospin / weak-hypercharge placement language,
+combined with the repository's already validated internal Cartan convention,
+can be treated as the missing physical photon/Z/W projection map.
+
+### Attempt
+
+- Added `studies/phase313_official_draft_electroweak_projection_map_audit_001`.
+- Consumed the Phase27 internal Cartan charged/neutral convention.
+- Consumed Phase46's W/Z ratio promotion artifact and selector operator-term
+  audit.
+- Cross-checked Phase287 official-draft parameter-location evidence, Phase295
+  observed-field extraction scan, Phase311 completion observed-sector row
+  selector audit, Phase312 current public GU-RVG delta audit, Phase256 observed
+  extraction contract, and Phase213 source-lineage blocker matrix.
+- Used the standard electroweak dependency structure as a boundary condition:
+  physical photon and Z fields require a neutral W3/B rotation fixed by
+  couplings and a mass matrix, while an internal Cartan neutral-axis convention
+  by itself is not a physical photon/Z eigenstate projection.
+
+### Result
+
+- Phase313 passed as a negative audit with:
+  - `officialDraftElectroweakProjectionMapAuditPassed=true`.
+  - `officialGuParameterLocationLeadPresent=true`.
+  - `officialDraftProvidesWeakIsospinLocation=true`.
+  - `officialDraftProvidesWeakHyperchargeLocation=true`.
+  - `phase27InternalCartanMixingConventionReady=true`.
+  - `phase46WzRatioPhysicalClaimAllowed=true`.
+  - `phase46OnlyRatioObservableMapped=true`.
+  - `officialDraftProvidesPhotonZWeinbergRotation=false`.
+  - `officialDraftProvidesElectromagneticUnbrokenGenerator=false`.
+  - `officialDraftProvidesWeakMixingAngleSource=false`.
+  - `officialDraftProvidesNeutralMassMatrixDiagonalization=false`.
+  - `officialDraftProvidesPhotonMasslessProjectionRow=false`.
+  - `officialDraftProvidesWChargedProjectionRows=false`.
+  - `officialDraftProvidesZSourceRowProjection=false`.
+  - `officialDraftProvidesObservedElectroweakGaugeEmbedding=false`.
+  - `officialDraftProjectionMapCompletesObservedFieldExtraction=false`.
+  - `officialDraftProjectionMapPromotesWzMasses=false`.
+  - `officialDraftProjectionMapPromotesHiggsMass=false`.
+  - `canFillPhase256ObservedFieldExtractionContract=false`.
+  - `canFillPhase201WzContract=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from the official draft's electroweak
+placement language plus the repository's internal Cartan convention. The
+combination supports the existing dimensionless W/Z ratio lane, but it does not
+supply the missing physical photon/Z Weinberg rotation, unbroken electromagnetic
+generator, weak-mixing/coupling source, neutral mass-matrix diagonalization, or
+branch-stable observed W/Z/photon projection rows.
+
+### Remaining Blocker
+
+The W/Z path still requires a target-independent observed electroweak
+gauge-embedding theorem, source-derived neutral mass matrix, photon/Z
+eigenstate projection, and branch-stable W/Z source rows before target
+comparison. Higgs remains separately blocked by missing scalar-source/operator
+extraction and self-coupling or excitation lineage.
+
+### Validation
+
+- Targeted Phase313 run passed with
+  `officialDraftElectroweakProjectionMapAuditPassed=true` and
+  `canFillPhase201WzContract=false`.
+- P101 regenerated with Phase313 included and remained
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase313 included and remained
+  `objectiveAchieved=false`, with `checklistPassedCount=106` and
+  `checklistFailedCount=3`.
+- Claim-integrity verifier passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Source, Higgs, GU/RVG, observed-field, and source-lineage scanners after the
+  Phase313 code/docs/journal changes found no intake-ready artifacts:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `canPromoteHiggsQuarticSelfCouplingSource=false` and
+    `intakeReadyFindingCount=0`.
+  - P281 `geometricRefractiveUnificationSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P295 `intakeReadyObservedFieldExtractionCandidateCount=0` and
+    `anyObservedFieldExtractionCandidateFillsContract=false`.
+  - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
+    `anySourceLineageCandidateFillsContract=false`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed and reran
+  Phase313 in both generator passes, ending with P101 blocked, P202 incomplete
+  at `106/3`, and claim integrity verified.
+- `dotnet test GeometricUnity.slnx` passed. The existing xUnit analyzer warning
+  in `QuantitativeValidationTests.cs(315,9)` remains present.
+- `git diff --check` passed after the final journal expansion.
+
+This validation section records the final negative outcome of Phase313: the
+official draft electroweak placement evidence closes a narrow documentation
+loophole, but it does not create a promotable W/Z/H physical mass prediction.

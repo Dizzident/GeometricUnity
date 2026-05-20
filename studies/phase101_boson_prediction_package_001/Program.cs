@@ -170,6 +170,7 @@ const string Phase279TechnicolorWalkingElectroweakScaleSourceAuditPath = "studie
 const string Phase280DirectBridgeAnalyticVariationUpgradeAuditPath = "studies/phase280_direct_bridge_analytic_variation_upgrade_audit_001/output/direct_bridge_analytic_variation_upgrade_audit.json";
 const string Phase281GeometricRefractiveUnificationSourceAuditPath = "studies/phase281_geometric_refractive_unification_source_audit_001/output/geometric_refractive_unification_source_audit.json";
 const string Phase312CurrentPublicGuRvgRevisionDeltaAuditPath = "studies/phase312_current_public_gu_rvg_revision_delta_audit_001/output/current_public_gu_rvg_revision_delta_audit.json";
+const string Phase313OfficialDraftElectroweakProjectionMapAuditPath = "studies/phase313_official_draft_electroweak_projection_map_audit_001/output/official_draft_electroweak_projection_map_audit.json";
 const string Phase282BranchLocalDirectInvariantCensusPath = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census.json";
 const string Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit.json";
 const string Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic.json";
@@ -360,6 +361,7 @@ using var phase279 = TryParseJson(Phase279TechnicolorWalkingElectroweakScaleSour
 using var phase280 = TryParseJson(Phase280DirectBridgeAnalyticVariationUpgradeAuditPath);
 using var phase281 = TryParseJson(Phase281GeometricRefractiveUnificationSourceAuditPath);
 using var phase312 = TryParseJson(Phase312CurrentPublicGuRvgRevisionDeltaAuditPath);
+using var phase313 = TryParseJson(Phase313OfficialDraftElectroweakProjectionMapAuditPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -613,6 +615,7 @@ var package = new
         directBridgeAnalyticVariationUpgradeAuditPath = File.Exists(Phase280DirectBridgeAnalyticVariationUpgradeAuditPath) ? Phase280DirectBridgeAnalyticVariationUpgradeAuditPath : null,
         geometricRefractiveUnificationSourceAuditPath = File.Exists(Phase281GeometricRefractiveUnificationSourceAuditPath) ? Phase281GeometricRefractiveUnificationSourceAuditPath : null,
         currentPublicGuRvgRevisionDeltaAuditPath = File.Exists(Phase312CurrentPublicGuRvgRevisionDeltaAuditPath) ? Phase312CurrentPublicGuRvgRevisionDeltaAuditPath : null,
+        officialDraftElectroweakProjectionMapAuditPath = File.Exists(Phase313OfficialDraftElectroweakProjectionMapAuditPath) ? Phase313OfficialDraftElectroweakProjectionMapAuditPath : null,
         branchLocalDirectInvariantCensusPath = File.Exists(Phase282BranchLocalDirectInvariantCensusPath) ? Phase282BranchLocalDirectInvariantCensusPath : null,
         legacyElectroweakBridgeSourceSurvivabilityAuditPath = File.Exists(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath) ? Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath : null,
         predictedRatioAlphaGfExternalClosureDiagnosticPath = File.Exists(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath) ? Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath : null,
@@ -2207,6 +2210,33 @@ var package = new
                 ? JsonBool(p312Boundary, "currentPublicGuRvgProvidesHiggsScalarSourceOperator")
                 : null,
             decision = JsonString(phase312.RootElement, "decision"),
+        }
+        : null,
+    officialDraftElectroweakProjectionMapAudit = phase313 is not null
+        ? new
+        {
+            status = JsonString(phase313.RootElement, "terminalStatus"),
+            officialDraftElectroweakProjectionMapAuditPassed = JsonBool(phase313.RootElement, "officialDraftElectroweakProjectionMapAuditPassed"),
+            officialGuParameterLocationLeadPresent = JsonBool(phase313.RootElement, "officialGuParameterLocationLeadPresent"),
+            officialDraftProvidesWeakIsospinLocation = JsonBool(phase313.RootElement, "officialDraftProvidesWeakIsospinLocation"),
+            officialDraftProvidesWeakHyperchargeLocation = JsonBool(phase313.RootElement, "officialDraftProvidesWeakHyperchargeLocation"),
+            phase27InternalCartanMixingConventionReady = JsonBool(phase313.RootElement, "phase27InternalCartanMixingConventionReady"),
+            phase46WzRatioPhysicalClaimAllowed = JsonBool(phase313.RootElement, "phase46WzRatioPhysicalClaimAllowed"),
+            phase46OnlyRatioObservableMapped = JsonBool(phase313.RootElement, "phase46OnlyRatioObservableMapped"),
+            officialDraftProvidesPhotonZWeinbergRotation = JsonBool(phase313.RootElement, "officialDraftProvidesPhotonZWeinbergRotation"),
+            officialDraftProvidesElectromagneticUnbrokenGenerator = JsonBool(phase313.RootElement, "officialDraftProvidesElectromagneticUnbrokenGenerator"),
+            officialDraftProvidesWeakMixingAngleSource = JsonBool(phase313.RootElement, "officialDraftProvidesWeakMixingAngleSource"),
+            officialDraftProvidesNeutralMassMatrixDiagonalization = JsonBool(phase313.RootElement, "officialDraftProvidesNeutralMassMatrixDiagonalization"),
+            officialDraftProvidesPhotonMasslessProjectionRow = JsonBool(phase313.RootElement, "officialDraftProvidesPhotonMasslessProjectionRow"),
+            officialDraftProvidesWChargedProjectionRows = JsonBool(phase313.RootElement, "officialDraftProvidesWChargedProjectionRows"),
+            officialDraftProvidesZSourceRowProjection = JsonBool(phase313.RootElement, "officialDraftProvidesZSourceRowProjection"),
+            officialDraftProvidesObservedElectroweakGaugeEmbedding = JsonBool(phase313.RootElement, "officialDraftProvidesObservedElectroweakGaugeEmbedding"),
+            officialDraftProjectionMapCompletesObservedFieldExtraction = JsonBool(phase313.RootElement, "officialDraftProjectionMapCompletesObservedFieldExtraction"),
+            officialDraftProjectionMapPromotesWzMasses = JsonBool(phase313.RootElement, "officialDraftProjectionMapPromotesWzMasses"),
+            officialDraftProjectionMapPromotesHiggsMass = JsonBool(phase313.RootElement, "officialDraftProjectionMapPromotesHiggsMass"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase313.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            canFillPhase201WzContract = JsonBool(phase313.RootElement, "canFillPhase201WzContract"),
+            decision = JsonString(phase313.RootElement, "decision"),
         }
         : null,
     branchLocalDirectInvariantCensus = phase282 is not null
@@ -4483,6 +4513,21 @@ var summary = new
         : null,
     currentMaterialStrategyPromotesBosonMasses = phase312 is not null
         ? JsonBool(phase312.RootElement, "currentMaterialStrategyPromotesBosonMasses")
+        : null,
+    officialDraftElectroweakProjectionMapAuditPassed = phase313 is not null
+        ? JsonBool(phase313.RootElement, "officialDraftElectroweakProjectionMapAuditPassed")
+        : null,
+    officialDraftProjectionMapPromotesWzMasses = phase313 is not null
+        ? JsonBool(phase313.RootElement, "officialDraftProjectionMapPromotesWzMasses")
+        : null,
+    officialDraftProjectionMapPromotesHiggsMass = phase313 is not null
+        ? JsonBool(phase313.RootElement, "officialDraftProjectionMapPromotesHiggsMass")
+        : null,
+    officialDraftProjectionMapCompletesObservedFieldExtraction = phase313 is not null
+        ? JsonBool(phase313.RootElement, "officialDraftProjectionMapCompletesObservedFieldExtraction")
+        : null,
+    officialDraftProjectionMapCanFillPhase201WzContract = phase313 is not null
+        ? JsonBool(phase313.RootElement, "canFillPhase201WzContract")
         : null,
     branchLocalInvariantCensusPassed = phase282 is not null
         ? JsonBool(phase282.RootElement, "branchLocalInvariantCensusPassed")
