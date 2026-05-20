@@ -109,6 +109,7 @@ const paths = {
   phase307: "studies/phase307_target_independent_decoupled_wz_row_selection_law_audit_001/output/target_independent_decoupled_wz_row_selection_law_audit_summary.json",
   phase308: "studies/phase308_phase302_scale_transfer_to_decoupled_charged_ladder_audit_001/output/phase302_scale_transfer_to_decoupled_charged_ladder_audit_summary.json",
   phase309: "studies/phase309_source_mode_vector_length_measure_normalization_audit_001/output/source_mode_vector_length_measure_normalization_audit_summary.json",
+  phase310: "studies/phase310_completion_variational_branch_to_wz_normalization_audit_001/output/completion_variational_branch_to_wz_normalization_audit_summary.json",
 };
 
 const failures = [];
@@ -259,6 +260,7 @@ const phase306 = requireFile(paths.phase306);
 const phase307 = requireFile(paths.phase307);
 const phase308 = requireFile(paths.phase308);
 const phase309 = requireFile(paths.phase309);
+const phase310 = requireFile(paths.phase310);
 
 assert(phase201.intakeContractMaterialized === true, "Phase201 intake contract must be materialized before publication.");
 assert(phase213.blockerMatrixReady === true, "Phase213 blocker matrix must be ready before publication.");
@@ -1804,6 +1806,19 @@ if (sourceLineageMissing) {
   assert(phase309.canFillPhase201WzContract === false, "Phase309 cannot fill the Phase201 W/Z contract.");
   assert(phase309.wzMissingFieldCount === missingWzFields, "Phase309 W/Z missing-field count must match Phase213.");
   assert(phase309.higgsMissingFieldCount === missingHiggsFields, "Phase309 Higgs missing-field count must match Phase213.");
+  assert(phase310.completionVariationalBranchToWzNormalizationAuditPassed === true, "Phase310 completion variational branch audit must pass as a non-promotional audit.");
+  assert(phase310.targetObservablesUsedForConstruction === false, "Phase310 construction must not use target observables.");
+  assert(phase310.targetValuesUsedOnlyForPostCandidateEvaluation === true, "Phase310 may only inherit targets for post-candidate evaluation.");
+  assert(phase310.branchLocalVariationalWorkbenchPresent === true, "Phase310 must confirm the completion revision contains the branch-local variational workbench.");
+  assert(phase310.completionDraftProvidesVectorLengthNormalizationTheorem === false, "Phase310 cannot claim the completion draft provides a source-mode-vector-length theorem.");
+  assert(phase310.completionDraftProvidesCasimirApplicationTheorem === false, "Phase310 cannot claim the completion draft provides a W-only Casimir application theorem.");
+  assert(phase310.completionDraftProvidesChargedLadderTransferTheorem === false, "Phase310 cannot claim the completion draft provides a charged-ladder transfer theorem.");
+  assert(phase310.completionDraftProvidesPhysicalWzSourceRowDerivation === false, "Phase310 cannot claim the completion draft derives physical W/Z source rows.");
+  assert(phase310.completionDraftProvidesBranchStableSourceRows === false, "Phase310 cannot claim branch-stable physical source rows.");
+  assert(phase310.completionDraftCanPromotePhase302Lead === false, "Phase310 cannot promote the Phase302 vector-length/Casimir lead.");
+  assert(phase310.canFillPhase201WzContract === false, "Phase310 cannot fill the Phase201 W/Z contract.");
+  assert(phase310.wzMissingFieldCount === missingWzFields, "Phase310 W/Z missing-field count must match Phase213.");
+  assert(phase310.higgsMissingFieldCount === missingHiggsFields, "Phase310 Higgs missing-field count must match Phase213.");
 }
 
 for (const [label, validation, templatePath] of [

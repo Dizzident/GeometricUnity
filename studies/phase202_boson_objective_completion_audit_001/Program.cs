@@ -105,6 +105,7 @@ const string Phase306Path = "studies/phase306_decoupled_charged_ladder_wz_row_so
 const string Phase307Path = "studies/phase307_target_independent_decoupled_wz_row_selection_law_audit_001/output/target_independent_decoupled_wz_row_selection_law_audit_summary.json";
 const string Phase308Path = "studies/phase308_phase302_scale_transfer_to_decoupled_charged_ladder_audit_001/output/phase302_scale_transfer_to_decoupled_charged_ladder_audit_summary.json";
 const string Phase309Path = "studies/phase309_source_mode_vector_length_measure_normalization_audit_001/output/source_mode_vector_length_measure_normalization_audit_summary.json";
+const string Phase310Path = "studies/phase310_completion_variational_branch_to_wz_normalization_audit_001/output/completion_variational_branch_to_wz_normalization_audit_summary.json";
 
 var outputDir = Environment.GetEnvironmentVariable("PHASE202_OUTPUT_DIR") ?? DefaultOutputDir;
 Directory.CreateDirectory(outputDir);
@@ -213,6 +214,7 @@ using var phase306 = File.Exists(Phase306Path) ? JsonDocument.Parse(File.ReadAll
 using var phase307 = File.Exists(Phase307Path) ? JsonDocument.Parse(File.ReadAllText(Phase307Path)) : null;
 using var phase308 = File.Exists(Phase308Path) ? JsonDocument.Parse(File.ReadAllText(Phase308Path)) : null;
 using var phase309 = File.Exists(Phase309Path) ? JsonDocument.Parse(File.ReadAllText(Phase309Path)) : null;
+using var phase310 = File.Exists(Phase310Path) ? JsonDocument.Parse(File.ReadAllText(Phase310Path)) : null;
 
 var allKnownBosonValuesDefensible = JsonBool(phase192.RootElement, "allKnownBosonValuesDefensible") is true;
 var completionAuditPassed = JsonBool(phase193.RootElement, "allSuccessCriteriaMet") is true;
@@ -1770,6 +1772,21 @@ var sourceModeVectorLengthMeasureNormalizationAuditPassed = sourceModeVectorLeng
     && JsonBool(phase309.RootElement, "canFillPhase201WzContract") is false
     && JsonInt(phase309.RootElement, "wzMissingFieldCount") == wzMissingFieldCount
     && JsonInt(phase309.RootElement, "higgsMissingFieldCount") == higgsMissingFieldCount;
+var completionVariationalBranchToWzNormalizationAuditMaterialized = phase310 is not null;
+var completionVariationalBranchToWzNormalizationAuditPassed = completionVariationalBranchToWzNormalizationAuditMaterialized
+    && JsonBool(phase310!.RootElement, "completionVariationalBranchToWzNormalizationAuditPassed") is true
+    && JsonBool(phase310.RootElement, "targetObservablesUsedForConstruction") is false
+    && JsonBool(phase310.RootElement, "targetValuesUsedOnlyForPostCandidateEvaluation") is true
+    && JsonBool(phase310.RootElement, "branchLocalVariationalWorkbenchPresent") is true
+    && JsonBool(phase310.RootElement, "completionDraftProvidesVectorLengthNormalizationTheorem") is false
+    && JsonBool(phase310.RootElement, "completionDraftProvidesCasimirApplicationTheorem") is false
+    && JsonBool(phase310.RootElement, "completionDraftProvidesChargedLadderTransferTheorem") is false
+    && JsonBool(phase310.RootElement, "completionDraftProvidesPhysicalWzSourceRowDerivation") is false
+    && JsonBool(phase310.RootElement, "completionDraftProvidesBranchStableSourceRows") is false
+    && JsonBool(phase310.RootElement, "completionDraftCanPromotePhase302Lead") is false
+    && JsonBool(phase310.RootElement, "canFillPhase201WzContract") is false
+    && JsonInt(phase310.RootElement, "wzMissingFieldCount") == wzMissingFieldCount
+    && JsonInt(phase310.RootElement, "higgsMissingFieldCount") == higgsMissingFieldCount;
 var packageReportsComplete = JsonBool(phase101.RootElement, "allKnownBosonValuesDefensible") is true
     && JsonBool(phase101.RootElement, "completionAuditPassed") is true;
 
@@ -2600,6 +2617,14 @@ var checklist = new[]
             : "Phase309 artifact not materialized",
         Phase309Path),
     new ObjectiveChecklistItem(
+        "completion-variational-branch-to-wz-normalization-audit-materialized",
+        "Audit whether the latest completion revision's variational/linearization workbench supplies the specific Phase302 W/Z normalization source law.",
+        completionVariationalBranchToWzNormalizationAuditPassed ? "passed" : "failed",
+        completionVariationalBranchToWzNormalizationAuditMaterialized
+            ? $"completionVariationalBranchToWzNormalizationAuditPassed={JsonBool(phase310!.RootElement, "completionVariationalBranchToWzNormalizationAuditPassed")}; branchLocalVariationalWorkbenchPresent={JsonBool(phase310.RootElement, "branchLocalVariationalWorkbenchPresent")}; vectorLengthTheorem={JsonBool(phase310.RootElement, "completionDraftProvidesVectorLengthNormalizationTheorem")}; casimirTheorem={JsonBool(phase310.RootElement, "completionDraftProvidesCasimirApplicationTheorem")}; chargedLadderTransferTheorem={JsonBool(phase310.RootElement, "completionDraftProvidesChargedLadderTransferTheorem")}; completionDraftCanPromotePhase302Lead={JsonBool(phase310.RootElement, "completionDraftCanPromotePhase302Lead")}; canFillPhase201WzContract={JsonBool(phase310.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase310.RootElement, "decision")}"
+            : "Phase310 artifact not materialized",
+        Phase310Path),
+    new ObjectiveChecklistItem(
         "missing-source-contracts-filled",
         "The missing source-lineage contracts must be filled with promotable target-independent evidence.",
         allRequiredSourceLineagesPromotable ? "passed" : "failed",
@@ -2828,6 +2853,7 @@ var result = new
         phase307Path = Phase307Path,
         phase308Path = Phase308Path,
         phase309Path = Phase309Path,
+        phase310Path = Phase310Path,
     },
 };
 

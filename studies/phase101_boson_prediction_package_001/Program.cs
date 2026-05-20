@@ -197,6 +197,7 @@ const string Phase306DecoupledChargedLadderWzRowSourceAuditPath = "studies/phase
 const string Phase307TargetIndependentDecoupledWzRowSelectionLawAuditPath = "studies/phase307_target_independent_decoupled_wz_row_selection_law_audit_001/output/target_independent_decoupled_wz_row_selection_law_audit.json";
 const string Phase308Phase302ScaleTransferToDecoupledChargedLadderAuditPath = "studies/phase308_phase302_scale_transfer_to_decoupled_charged_ladder_audit_001/output/phase302_scale_transfer_to_decoupled_charged_ladder_audit.json";
 const string Phase309SourceModeVectorLengthMeasureNormalizationAuditPath = "studies/phase309_source_mode_vector_length_measure_normalization_audit_001/output/source_mode_vector_length_measure_normalization_audit.json";
+const string Phase310CompletionVariationalBranchToWzNormalizationAuditPath = "studies/phase310_completion_variational_branch_to_wz_normalization_audit_001/output/completion_variational_branch_to_wz_normalization_audit.json";
 
 var outputDir = Environment.GetEnvironmentVariable("PHASE101_OUTPUT_DIR") ?? DefaultOutputDir;
 Directory.CreateDirectory(outputDir);
@@ -384,6 +385,7 @@ using var phase306 = TryParseJson(Phase306DecoupledChargedLadderWzRowSourceAudit
 using var phase307 = TryParseJson(Phase307TargetIndependentDecoupledWzRowSelectionLawAuditPath);
 using var phase308 = TryParseJson(Phase308Phase302ScaleTransferToDecoupledChargedLadderAuditPath);
 using var phase309 = TryParseJson(Phase309SourceModeVectorLengthMeasureNormalizationAuditPath);
+using var phase310 = TryParseJson(Phase310CompletionVariationalBranchToWzNormalizationAuditPath);
 
 bool internalReady = JsonBool(readiness.RootElement, "internalBosonReplayPredictionReady") ?? false;
 bool externalReady = JsonBool(readiness.RootElement, "externalPhysicalComparisonReady") ?? false;
@@ -634,6 +636,7 @@ var package = new
         targetIndependentDecoupledWzRowSelectionLawAuditPath = File.Exists(Phase307TargetIndependentDecoupledWzRowSelectionLawAuditPath) ? Phase307TargetIndependentDecoupledWzRowSelectionLawAuditPath : null,
         phase302ScaleTransferToDecoupledChargedLadderAuditPath = File.Exists(Phase308Phase302ScaleTransferToDecoupledChargedLadderAuditPath) ? Phase308Phase302ScaleTransferToDecoupledChargedLadderAuditPath : null,
         sourceModeVectorLengthMeasureNormalizationAuditPath = File.Exists(Phase309SourceModeVectorLengthMeasureNormalizationAuditPath) ? Phase309SourceModeVectorLengthMeasureNormalizationAuditPath : null,
+        completionVariationalBranchToWzNormalizationAuditPath = File.Exists(Phase310CompletionVariationalBranchToWzNormalizationAuditPath) ? Phase310CompletionVariationalBranchToWzNormalizationAuditPath : null,
         materializedModePath = JsonString(phase99.RootElement, "materializedModePath"),
         replayProbePath = JsonString(phase99.RootElement, "replayProbePath"),
     },
@@ -2990,6 +2993,26 @@ var package = new
             decision = JsonString(phase309.RootElement, "decision"),
         }
         : null,
+    completionVariationalBranchToWzNormalizationAudit = phase310 is not null
+        ? new
+        {
+            status = JsonString(phase310.RootElement, "terminalStatus"),
+            completionVariationalBranchToWzNormalizationAuditPassed = JsonBool(phase310.RootElement, "completionVariationalBranchToWzNormalizationAuditPassed"),
+            targetObservablesUsedForConstruction = JsonBool(phase310.RootElement, "targetObservablesUsedForConstruction"),
+            targetValuesUsedOnlyForPostCandidateEvaluation = JsonBool(phase310.RootElement, "targetValuesUsedOnlyForPostCandidateEvaluation"),
+            branchLocalVariationalWorkbenchPresent = JsonBool(phase310.RootElement, "branchLocalVariationalWorkbenchPresent"),
+            completionDraftProvidesVectorLengthNormalizationTheorem = JsonBool(phase310.RootElement, "completionDraftProvidesVectorLengthNormalizationTheorem"),
+            completionDraftProvidesCasimirApplicationTheorem = JsonBool(phase310.RootElement, "completionDraftProvidesCasimirApplicationTheorem"),
+            completionDraftProvidesChargedLadderTransferTheorem = JsonBool(phase310.RootElement, "completionDraftProvidesChargedLadderTransferTheorem"),
+            completionDraftProvidesPhysicalWzSourceRowDerivation = JsonBool(phase310.RootElement, "completionDraftProvidesPhysicalWzSourceRowDerivation"),
+            completionDraftProvidesBranchStableSourceRows = JsonBool(phase310.RootElement, "completionDraftProvidesBranchStableSourceRows"),
+            completionDraftCanPromotePhase302Lead = JsonBool(phase310.RootElement, "completionDraftCanPromotePhase302Lead"),
+            canFillPhase201WzContract = JsonBool(phase310.RootElement, "canFillPhase201WzContract"),
+            wzMissingFieldCount = JsonInt(phase310.RootElement, "wzMissingFieldCount"),
+            higgsMissingFieldCount = JsonInt(phase310.RootElement, "higgsMissingFieldCount"),
+            decision = JsonString(phase310.RootElement, "decision"),
+        }
+        : null,
     nextPhasePrerequisites = phase192 is not null
         ? new
         {
@@ -4718,6 +4741,18 @@ var summary = new
         : null,
     sourceModeVectorLengthMeasureSqrtCommonVectorLength = phase309 is not null
         ? JsonDouble(phase309.RootElement, "sqrtCommonVectorLength")
+        : null,
+    completionVariationalBranchToWzNormalizationAuditPassed = phase310 is not null
+        ? JsonBool(phase310.RootElement, "completionVariationalBranchToWzNormalizationAuditPassed")
+        : null,
+    completionVariationalBranchWorkbenchPresent = phase310 is not null
+        ? JsonBool(phase310.RootElement, "branchLocalVariationalWorkbenchPresent")
+        : null,
+    completionVariationalBranchCanPromotePhase302Lead = phase310 is not null
+        ? JsonBool(phase310.RootElement, "completionDraftCanPromotePhase302Lead")
+        : null,
+    completionVariationalBranchCanFillPhase201Contract = phase310 is not null
+        ? JsonBool(phase310.RootElement, "canFillPhase201WzContract")
         : null,
     packagePath,
 };
