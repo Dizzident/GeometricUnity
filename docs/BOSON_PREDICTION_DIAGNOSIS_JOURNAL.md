@@ -8031,6 +8031,11 @@ video search, or a third-party summary can provide source-lineage fields.
 - Checked local tool availability:
   - `which yt-dlp` failed.
   - `which youtube-dl` failed.
+- Probed the YouTube TimedText caption-list endpoint directly:
+  `https://video.google.com/timedtext?type=list&v=fBozSSLxFvI`.
+  The first sandboxed `curl` attempt failed DNS resolution; an escalated
+  rerun returned an empty response, so no public caption track list was
+  materialized.
 - Searched the repository for `fBozSSLxFvI`, `From Dark to Geometric Energy`,
   and transcript/no-transcript terms. The only local hits before this phase
   were Phase315 artifacts.
@@ -8046,6 +8051,8 @@ Phase316 is expected to pass only as a negative source-strength audit:
 - `ucsdTranscriptSourceStrengthAuditPassed=true`.
 - `youtubeVideoId=fBozSSLxFvI`.
 - `portalWikiEditedTranscriptAvailable=false`.
+- `directTimedTextCaptionListReturnedEmpty=true`.
+- `directTimedTextCaptionListTrackCount=0`.
 - `publicSearchExactVideoTranscriptFound=false`.
 - `publicSearchExactVideoCaptionsFound=false`.
 - `thirdPartyShimpsSummaryFound=true`.

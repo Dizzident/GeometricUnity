@@ -14,6 +14,7 @@ Current result:
 - `ucsdTranscriptSourceStrengthAuditPassed=true`
 - `youtubeVideoId=fBozSSLxFvI`
 - `portalWikiEditedTranscriptAvailable=false`
+- `directTimedTextCaptionListReturnedEmpty=true`
 - `publicSearchExactVideoTranscriptFound=false`
 - `publicSearchExactVideoCaptionsFound=false`
 - `thirdPartyShimpsSummaryFound=true`
@@ -27,7 +28,8 @@ Current result:
 
 The audit is deliberately non-promotional. Public Portal materials identify a
 relevant GU lecture and abstract, while the Portal Wiki records no edited
-transcript and private access for machine-generated transcript material. Exact
+transcript and private access for machine-generated transcript material. A
+direct YouTube TimedText caption-list probe returned an empty response. Exact
 public searches surfaced metadata and third-party summaries, not a public
 primary transcript/caption theorem with W/Z source rows, low-energy weak
 coupling/VEV closure, observed field extraction, or Higgs scalar-source

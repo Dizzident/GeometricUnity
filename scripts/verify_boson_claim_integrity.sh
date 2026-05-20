@@ -1252,6 +1252,10 @@ if (sourceLineageMissing) {
   assert(phase316.ucsdTranscriptSourceStrengthAuditPassed === true, "Phase316 UCSD transcript source-strength audit must pass while preserving non-promotional status.");
   assert(phase316.youtubeVideoId === "fBozSSLxFvI", "Phase316 must record the UCSD YouTube video id.");
   assert(phase316.portalWikiEditedTranscriptAvailable === false, "Phase316 must not claim an edited transcript is public.");
+  assert(phase316.directTimedTextCaptionListEndpointChecked === true, "Phase316 must record the direct TimedText caption-list probe.");
+  assert(phase316.directTimedTextCaptionListReturnedEmpty === true, "Phase316 must record the empty TimedText caption-list response.");
+  assert(phase316.directTimedTextCaptionListTrackCount === 0, "Phase316 must not record public TimedText caption tracks.");
+  assert(phase316.directTimedTextCaptionListUsableAsSourceLineage === false, "Phase316 cannot treat an empty TimedText response as source lineage.");
   assert(phase316.publicSearchExactVideoTranscriptFound === false, "Phase316 must not claim a public exact-video transcript was found.");
   assert(phase316.publicSearchExactVideoCaptionsFound === false, "Phase316 must not claim public exact-video captions were found.");
   assert(phase316.thirdPartyShimpsSummaryFound === true, "Phase316 must record the third-party summary lead.");

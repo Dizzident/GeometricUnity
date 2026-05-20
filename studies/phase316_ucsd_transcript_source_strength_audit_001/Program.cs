@@ -30,6 +30,10 @@ const bool portalWikiEditedTranscriptAvailable = false;
 const bool portalWikiMachineGeneratedTranscriptRequiresPrivateDiscordAccess = true;
 const bool localYtDlpAvailable = false;
 const bool localYoutubeDlAvailable = false;
+const bool directTimedTextCaptionListEndpointChecked = true;
+const bool directTimedTextCaptionListReturnedEmpty = true;
+const int directTimedTextCaptionListTrackCount = 0;
+const bool directTimedTextCaptionListUsableAsSourceLineage = false;
 const bool publicSearchExactVideoTranscriptFound = false;
 const bool publicSearchExactVideoCaptionsFound = false;
 const bool thirdPartyShimpsSummaryFound = true;
@@ -75,6 +79,15 @@ var sourceStrengthRows = new[]
         IsPromotableSourceLineage: false,
         Finding: "The wiki records host, release date, YouTube link, length, and the absence of an edited transcript; it points to private machine-generated transcript access rather than a public artifact."),
     new SourceStrengthRow(
+        "youtube-timedtext-caption-list",
+        "YouTube TimedText caption-list endpoint",
+        "https://video.google.com/timedtext?type=list&v=fBozSSLxFvI",
+        IsPrimaryOrOfficialPortalSource: false,
+        IsTranscriptOrCaptionArtifact: false,
+        IsRepoMaterialized: false,
+        IsPromotableSourceLineage: false,
+        Finding: "A direct caption-list endpoint probe returned an empty response, so no public TimedText caption track was materialized for source-lineage use."),
+    new SourceStrengthRow(
         "public-search-exact-video-transcript",
         "Exact public transcript/caption search",
         "search: \"fBozSSLxFvI\" transcript; \"fBozSSLxFvI\" captions; \"From Dark to Geometric Energy\" transcript",
@@ -112,6 +125,13 @@ var checks = new[]
         !localYtDlpAvailable
             && !localYoutubeDlAvailable,
         $"localYtDlpAvailable={localYtDlpAvailable}; localYoutubeDlAvailable={localYoutubeDlAvailable}"),
+    new Check(
+        "direct-timedtext-caption-list-empty",
+        directTimedTextCaptionListEndpointChecked
+            && directTimedTextCaptionListReturnedEmpty
+            && directTimedTextCaptionListTrackCount == 0
+            && !directTimedTextCaptionListUsableAsSourceLineage,
+        $"endpointChecked={directTimedTextCaptionListEndpointChecked}; returnedEmpty={directTimedTextCaptionListReturnedEmpty}; trackCount={directTimedTextCaptionListTrackCount}; usableAsSourceLineage={directTimedTextCaptionListUsableAsSourceLineage}"),
     new Check(
         "public-transcript-search-not-promotable",
         !publicSearchExactVideoTranscriptFound
@@ -185,6 +205,10 @@ var result = new
     portalWikiMachineGeneratedTranscriptRequiresPrivateDiscordAccess,
     localYtDlpAvailable,
     localYoutubeDlAvailable,
+    directTimedTextCaptionListEndpointChecked,
+    directTimedTextCaptionListReturnedEmpty,
+    directTimedTextCaptionListTrackCount,
+    directTimedTextCaptionListUsableAsSourceLineage,
     publicSearchExactVideoTranscriptFound,
     publicSearchExactVideoCaptionsFound,
     thirdPartyShimpsSummaryFound,
