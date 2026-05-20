@@ -7795,3 +7795,112 @@ extraction and self-coupling or excitation lineage.
 This validation section records the final negative outcome of Phase313: the
 official draft electroweak placement evidence closes a narrow documentation
 loophole, but it does not create a promotable W/Z/H physical mass prediction.
+
+## 2026-05-20 - Dimension/Casimir W/Z Source-Law Lead Checked as Phase314
+
+### Trigger
+
+After Phase313 closed the official-draft projection-map loophole, the best
+remaining W/Z numerical lead was still Phase302/307: multiply the source-mode
+vector length `156` by a W-specific SU(2) adjoint/fundamental Casimir ratio
+`8/3`, leave the Z multiplier at `1`, and select decoupled charged-ladder rows.
+That produces real near-passes, but Phase308 through Phase310 still said no
+source theorem exists. I checked the most generous remaining interpretation:
+maybe `156` and `8/3` are actually a dimension/Casimir source law.
+
+### Attempt
+
+- Launched a bounded sub-agent to independently search for this source theorem,
+  but the agent hit the usage limit immediately and produced no findings.
+- Continued locally and added
+  `studies/phase314_dimension_casimir_wz_source_law_audit_001`.
+- Loaded Phase63/64 source normalization evidence, Phase82/84 vector-length
+  materialization evidence, Phase213 blocker counts, Phase225 representation
+  obstruction, Phase249 invariant-origin search, Phase302 particle
+  normalization lead, Phase307 row-selection law, Phase308 scale-transfer
+  audit, Phase309 measure-normalization audit, Phase310 completion-branch
+  audit, and Phase313 projection-map audit.
+- Tested three interpretations:
+  - `156` as the actual Phase12 connection-vector coordinate count.
+  - `2 * dim so(13) = 156` as a possible Spin(13)/SO(13) dimension clue.
+  - `8/3 = C2(adj SU(2)) / C2(fund SU(2))` as a possible W-only Casimir
+    multiplier.
+
+### Result
+
+- Phase314 passed as a negative audit with:
+  - `dimensionCasimirWzSourceLawAuditPassed=true`.
+  - `phase12DiscreteVectorLengthExplained=true`.
+  - `phase82VectorLength=156`.
+  - `phase84EdgeCount=52`.
+  - `phase84DimG=3`.
+  - `phase84ExpectedBosonVectorLength=156`.
+  - `twiceSo13AdjointDimensionMatchesPhase12VectorLength=true`.
+  - `spin13OrSo13DimensionSourceEvidencePresent=false`.
+  - `spin13OrSo13DimensionIsPhase12VectorSource=false`.
+  - `casimirEightThirdsArithmeticMatches=true`.
+  - `casimirRatioSourceBackedAsLocalInvariant=true`.
+  - `casimirRatioSourceBackedForBosonApplication=false`.
+  - `phase63TraceHalfConventionDerived=true`.
+  - `phase64FermionCurrentDerived=true`.
+  - `p225ObstructionCertified=true`.
+  - `p302RawAndCommonGatesPassed=true`.
+  - `p302StableRawCommonGatesPassed=false`.
+  - `p302CommonScaleApplicationTheoremPresent=false`.
+  - `p302ParticleLawApplicationTheoremPresent=false`.
+  - `wOnlyCasimirMultiplierJustified=false`.
+  - `zUnitMultiplierJustified=false`.
+  - `neutralMixingProjectionPresent=false`.
+  - `dimensionCasimirSourceLawPromotesWzMasses=false`.
+  - `canFillPhase201WzContract=false`.
+
+### Decision
+
+Do not promote the Phase302/307 W/Z near-pass by interpreting `156` as a
+Spin(13)/SO(13) source dimension law or by treating `8/3` as a W-only SU(2)
+Casimir source theorem. In the current repository state, `156` is already
+explained as `52` Phase12 mesh edges times `dimG=3` with unit-M-norm mode
+normalization. `8/3` is valid SU(2) arithmetic, but the source-backed operator
+remains the Phase63/64 trace-half fermion-current matrix element, and no
+artifact derives why the Casimir ratio should apply to W rows only while Z rows
+use multiplier `1`.
+
+### Remaining Blocker
+
+The W/Z path still requires a theorem deriving physical W/Z normalization from
+the GU source operator itself, a neutral projection explaining the W/Z split,
+and branch-stable W/Z source rows before target comparison. Higgs remains
+separately blocked by missing scalar-source/operator extraction and
+self-coupling or excitation lineage.
+
+### Validation
+
+- Targeted Phase314 run passed with
+  `dimensionCasimirWzSourceLawAuditPassed=true` and
+  `canFillPhase201WzContract=false`.
+- P101 regenerated with Phase314 included and remained
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase314 included and remained
+  `objectiveAchieved=false`, with `checklistPassedCount=107` and
+  `checklistFailedCount=3`.
+- Claim-integrity verifier passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Source, Higgs, GU/RVG, observed-field, and source-lineage scanners after the
+  Phase314 code/docs changes found no intake-ready artifacts:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `canPromoteHiggsQuarticSelfCouplingSource=false`.
+  - P281 `geometricRefractiveUnificationSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P295 `intakeReadyObservedFieldExtractionCandidateCount=0` and
+    `anyObservedFieldExtractionCandidateFillsContract=false`.
+  - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
+    `anySourceLineageCandidateFillsContract=false`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed and reran
+  Phase314 in both generator passes, ending with P101 blocked, P202 incomplete
+  at `107/3`, and claim integrity verified.
+
+This validation section records the final negative outcome of Phase314: the
+dimension/Casimir arithmetic lead is real enough to preserve, but it is not a
+source-backed W/Z physical mass prediction.

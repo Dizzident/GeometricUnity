@@ -171,6 +171,7 @@ const string Phase280DirectBridgeAnalyticVariationUpgradeAuditPath = "studies/ph
 const string Phase281GeometricRefractiveUnificationSourceAuditPath = "studies/phase281_geometric_refractive_unification_source_audit_001/output/geometric_refractive_unification_source_audit.json";
 const string Phase312CurrentPublicGuRvgRevisionDeltaAuditPath = "studies/phase312_current_public_gu_rvg_revision_delta_audit_001/output/current_public_gu_rvg_revision_delta_audit.json";
 const string Phase313OfficialDraftElectroweakProjectionMapAuditPath = "studies/phase313_official_draft_electroweak_projection_map_audit_001/output/official_draft_electroweak_projection_map_audit.json";
+const string Phase314DimensionCasimirWzSourceLawAuditPath = "studies/phase314_dimension_casimir_wz_source_law_audit_001/output/dimension_casimir_wz_source_law_audit.json";
 const string Phase282BranchLocalDirectInvariantCensusPath = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census.json";
 const string Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit.json";
 const string Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic.json";
@@ -362,6 +363,7 @@ using var phase280 = TryParseJson(Phase280DirectBridgeAnalyticVariationUpgradeAu
 using var phase281 = TryParseJson(Phase281GeometricRefractiveUnificationSourceAuditPath);
 using var phase312 = TryParseJson(Phase312CurrentPublicGuRvgRevisionDeltaAuditPath);
 using var phase313 = TryParseJson(Phase313OfficialDraftElectroweakProjectionMapAuditPath);
+using var phase314 = TryParseJson(Phase314DimensionCasimirWzSourceLawAuditPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -616,6 +618,7 @@ var package = new
         geometricRefractiveUnificationSourceAuditPath = File.Exists(Phase281GeometricRefractiveUnificationSourceAuditPath) ? Phase281GeometricRefractiveUnificationSourceAuditPath : null,
         currentPublicGuRvgRevisionDeltaAuditPath = File.Exists(Phase312CurrentPublicGuRvgRevisionDeltaAuditPath) ? Phase312CurrentPublicGuRvgRevisionDeltaAuditPath : null,
         officialDraftElectroweakProjectionMapAuditPath = File.Exists(Phase313OfficialDraftElectroweakProjectionMapAuditPath) ? Phase313OfficialDraftElectroweakProjectionMapAuditPath : null,
+        dimensionCasimirWzSourceLawAuditPath = File.Exists(Phase314DimensionCasimirWzSourceLawAuditPath) ? Phase314DimensionCasimirWzSourceLawAuditPath : null,
         branchLocalDirectInvariantCensusPath = File.Exists(Phase282BranchLocalDirectInvariantCensusPath) ? Phase282BranchLocalDirectInvariantCensusPath : null,
         legacyElectroweakBridgeSourceSurvivabilityAuditPath = File.Exists(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath) ? Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath : null,
         predictedRatioAlphaGfExternalClosureDiagnosticPath = File.Exists(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath) ? Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath : null,
@@ -2237,6 +2240,35 @@ var package = new
             canFillPhase256ObservedFieldExtractionContract = JsonBool(phase313.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
             canFillPhase201WzContract = JsonBool(phase313.RootElement, "canFillPhase201WzContract"),
             decision = JsonString(phase313.RootElement, "decision"),
+        }
+        : null,
+    dimensionCasimirWzSourceLawAudit = phase314 is not null
+        ? new
+        {
+            status = JsonString(phase314.RootElement, "terminalStatus"),
+            dimensionCasimirWzSourceLawAuditPassed = JsonBool(phase314.RootElement, "dimensionCasimirWzSourceLawAuditPassed"),
+            phase12DiscreteVectorLengthExplained = JsonBool(phase314.RootElement, "phase12DiscreteVectorLengthExplained"),
+            phase82VectorLength = JsonInt(phase314.RootElement, "phase82VectorLength"),
+            phase84EdgeCount = JsonInt(phase314.RootElement, "phase84EdgeCount"),
+            phase84DimG = JsonInt(phase314.RootElement, "phase84DimG"),
+            phase84ExpectedBosonVectorLength = JsonInt(phase314.RootElement, "phase84ExpectedBosonVectorLength"),
+            spin13OrSo13DimensionSourceEvidencePresent = JsonBool(phase314.RootElement, "spin13OrSo13DimensionSourceEvidencePresent"),
+            spin13OrSo13DimensionIsPhase12VectorSource = JsonBool(phase314.RootElement, "spin13OrSo13DimensionIsPhase12VectorSource"),
+            casimirEightThirdsArithmeticMatches = JsonBool(phase314.RootElement, "casimirEightThirdsArithmeticMatches"),
+            casimirRatioSourceBackedAsLocalInvariant = JsonBool(phase314.RootElement, "casimirRatioSourceBackedAsLocalInvariant"),
+            casimirRatioSourceBackedForBosonApplication = JsonBool(phase314.RootElement, "casimirRatioSourceBackedForBosonApplication"),
+            p302RawAndCommonGatesPassed = JsonBool(phase314.RootElement, "p302RawAndCommonGatesPassed"),
+            p302StableRawCommonGatesPassed = JsonBool(phase314.RootElement, "p302StableRawCommonGatesPassed"),
+            p302CommonScaleApplicationTheoremPresent = JsonBool(phase314.RootElement, "p302CommonScaleApplicationTheoremPresent"),
+            p302ParticleLawApplicationTheoremPresent = JsonBool(phase314.RootElement, "p302ParticleLawApplicationTheoremPresent"),
+            su2CasimirRatioWouldApplyToTripletSymmetrically = JsonBool(phase314.RootElement, "su2CasimirRatioWouldApplyToTripletSymmetrically"),
+            wOnlyCasimirMultiplierJustified = JsonBool(phase314.RootElement, "wOnlyCasimirMultiplierJustified"),
+            zUnitMultiplierJustified = JsonBool(phase314.RootElement, "zUnitMultiplierJustified"),
+            neutralMixingProjectionPresent = JsonBool(phase314.RootElement, "neutralMixingProjectionPresent"),
+            dimensionCasimirSourceLawPromotesWzMasses = JsonBool(phase314.RootElement, "dimensionCasimirSourceLawPromotesWzMasses"),
+            dimensionCasimirSourceLawPromotesHiggsMass = JsonBool(phase314.RootElement, "dimensionCasimirSourceLawPromotesHiggsMass"),
+            canFillPhase201WzContract = JsonBool(phase314.RootElement, "canFillPhase201WzContract"),
+            decision = JsonString(phase314.RootElement, "decision"),
         }
         : null,
     branchLocalDirectInvariantCensus = phase282 is not null
@@ -4528,6 +4560,18 @@ var summary = new
         : null,
     officialDraftProjectionMapCanFillPhase201WzContract = phase313 is not null
         ? JsonBool(phase313.RootElement, "canFillPhase201WzContract")
+        : null,
+    dimensionCasimirWzSourceLawAuditPassed = phase314 is not null
+        ? JsonBool(phase314.RootElement, "dimensionCasimirWzSourceLawAuditPassed")
+        : null,
+    dimensionCasimirSourceLawPromotesWzMasses = phase314 is not null
+        ? JsonBool(phase314.RootElement, "dimensionCasimirSourceLawPromotesWzMasses")
+        : null,
+    dimensionCasimirSourceLawPromotesHiggsMass = phase314 is not null
+        ? JsonBool(phase314.RootElement, "dimensionCasimirSourceLawPromotesHiggsMass")
+        : null,
+    dimensionCasimirSourceLawCanFillPhase201WzContract = phase314 is not null
+        ? JsonBool(phase314.RootElement, "canFillPhase201WzContract")
         : null,
     branchLocalInvariantCensusPassed = phase282 is not null
         ? JsonBool(phase282.RootElement, "branchLocalInvariantCensusPassed")

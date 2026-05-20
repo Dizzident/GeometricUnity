@@ -83,6 +83,7 @@ const paths = {
   phase281: "studies/phase281_geometric_refractive_unification_source_audit_001/output/geometric_refractive_unification_source_audit_summary.json",
   phase312: "studies/phase312_current_public_gu_rvg_revision_delta_audit_001/output/current_public_gu_rvg_revision_delta_audit_summary.json",
   phase313: "studies/phase313_official_draft_electroweak_projection_map_audit_001/output/official_draft_electroweak_projection_map_audit_summary.json",
+  phase314: "studies/phase314_dimension_casimir_wz_source_law_audit_001/output/dimension_casimir_wz_source_law_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -237,6 +238,7 @@ const phase280 = requireFile(paths.phase280);
 const phase281 = requireFile(paths.phase281);
 const phase312 = requireFile(paths.phase312);
 const phase313 = requireFile(paths.phase313);
+const phase314 = requireFile(paths.phase314);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -1194,6 +1196,34 @@ if (sourceLineageMissing) {
   assert(phase313.canFillPhase201WzContract === false, "Phase313 cannot fill the Phase201 W/Z source contract.");
   assert(phase313.inheritedEvidence?.phase213?.wzMissingFieldCount === missingWzFields, "Phase313 W/Z missing-field count must match Phase213.");
   assert(phase313.inheritedEvidence?.phase213?.higgsMissingFieldCount === missingHiggsFields, "Phase313 Higgs missing-field count must match Phase213.");
+  assert(phase314.dimensionCasimirWzSourceLawAuditPassed === true, "Phase314 dimension/Casimir W/Z source-law audit must pass while preserving non-promotional status.");
+  assert(phase314.phase12DiscreteVectorLengthExplained === true, "Phase314 must explain 156 as the Phase12 discrete connection-vector coordinate count.");
+  assert(phase314.phase82VectorLength === 156, "Phase314 must inherit Phase82 vector length 156.");
+  assert(phase314.phase84EdgeCount === 52, "Phase314 must inherit Phase84 edge count 52.");
+  assert(phase314.phase84DimG === 3, "Phase314 must inherit gauge dimension 3.");
+  assert(phase314.phase84ExpectedBosonVectorLength === 156, "Phase314 must inherit Phase84 expected boson vector length 156.");
+  assert(phase314.twiceSo13AdjointDimensionMatchesPhase12VectorLength === true, "Phase314 may record the 2*dim so(13) arithmetic coincidence.");
+  assert(phase314.spin13OrSo13DimensionSourceEvidencePresent === false, "Phase314 must not claim Spin(13)/SO(13) source evidence for the Phase12 vector length.");
+  assert(phase314.spin13OrSo13DimensionIsPhase12VectorSource === false, "Phase314 must not claim the Phase12 vector length is sourced by Spin(13)/SO(13) dimension.");
+  assert(phase314.casimirEightThirdsArithmeticMatches === true, "Phase314 must record the SU(2) 8/3 Casimir arithmetic lead.");
+  assert(phase314.casimirRatioSourceBackedAsLocalInvariant === true, "Phase314 must preserve the local-invariant Casimir arithmetic lead.");
+  assert(phase314.casimirRatioSourceBackedForBosonApplication === false, "Phase314 must not promote the Casimir ratio as a W/Z boson source application theorem.");
+  assert(phase314.phase63TraceHalfConventionDerived === true, "Phase314 must inherit the Phase63 trace-half convention.");
+  assert(phase314.phase64FermionCurrentDerived === true, "Phase314 must inherit the Phase64 fermion-current source.");
+  assert(phase314.p225ObstructionCertified === true, "Phase314 must inherit the Phase225 representation obstruction.");
+  assert(phase314.p302RawAndCommonGatesPassed === true, "Phase314 must preserve the Phase302 raw/common numerical lead.");
+  assert(phase314.p302StableRawCommonGatesPassed === false, "Phase314 must preserve the Phase302 stability blocker.");
+  assert(phase314.p302CommonScaleApplicationTheoremPresent === false, "Phase314 must not claim a vector-length application theorem.");
+  assert(phase314.p302ParticleLawApplicationTheoremPresent === false, "Phase314 must not claim a particle-law application theorem.");
+  assert(phase314.su2CasimirRatioWouldApplyToTripletSymmetrically === true, "Phase314 must record that a bare SU(2) triplet Casimir ratio is symmetric before projection.");
+  assert(phase314.wOnlyCasimirMultiplierJustified === false, "Phase314 must not justify a W-only Casimir multiplier.");
+  assert(phase314.zUnitMultiplierJustified === false, "Phase314 must not justify a Z unit multiplier.");
+  assert(phase314.neutralMixingProjectionPresent === false, "Phase314 must not claim the missing neutral projection.");
+  assert(phase314.dimensionCasimirSourceLawPromotesWzMasses === false, "Phase314 cannot promote W/Z masses.");
+  assert(phase314.dimensionCasimirSourceLawPromotesHiggsMass === false, "Phase314 cannot promote Higgs mass.");
+  assert(phase314.canFillPhase201WzContract === false, "Phase314 cannot fill the Phase201 W/Z source contract.");
+  assert(phase314.wzMissingFieldCount === missingWzFields, "Phase314 W/Z missing-field count must match Phase213.");
+  assert(phase314.higgsMissingFieldCount === missingHiggsFields, "Phase314 Higgs missing-field count must match Phase213.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

@@ -79,6 +79,7 @@ const string Phase280Path = "studies/phase280_direct_bridge_analytic_variation_u
 const string Phase281Path = "studies/phase281_geometric_refractive_unification_source_audit_001/output/geometric_refractive_unification_source_audit_summary.json";
 const string Phase312Path = "studies/phase312_current_public_gu_rvg_revision_delta_audit_001/output/current_public_gu_rvg_revision_delta_audit_summary.json";
 const string Phase313Path = "studies/phase313_official_draft_electroweak_projection_map_audit_001/output/official_draft_electroweak_projection_map_audit_summary.json";
+const string Phase314Path = "studies/phase314_dimension_casimir_wz_source_law_audit_001/output/dimension_casimir_wz_source_law_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -191,6 +192,7 @@ using var phase280 = File.Exists(Phase280Path) ? JsonDocument.Parse(File.ReadAll
 using var phase281 = File.Exists(Phase281Path) ? JsonDocument.Parse(File.ReadAllText(Phase281Path)) : null;
 using var phase312 = File.Exists(Phase312Path) ? JsonDocument.Parse(File.ReadAllText(Phase312Path)) : null;
 using var phase313 = File.Exists(Phase313Path) ? JsonDocument.Parse(File.ReadAllText(Phase313Path)) : null;
+using var phase314 = File.Exists(Phase314Path) ? JsonDocument.Parse(File.ReadAllText(Phase314Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -1017,6 +1019,32 @@ var officialDraftElectroweakProjectionMapAuditPassed = officialDraftElectroweakP
     && p313InheritedEvidence.TryGetProperty("phase213", out var p313Phase213Evidence)
     && JsonInt(p313Phase213Evidence, "wzMissingFieldCount") == wzMissingFieldCount
     && JsonInt(p313Phase213Evidence, "higgsMissingFieldCount") == higgsMissingFieldCount;
+var dimensionCasimirWzSourceLawAuditMaterialized = phase314 is not null;
+var dimensionCasimirWzSourceLawAuditPassed = dimensionCasimirWzSourceLawAuditMaterialized
+    && JsonBool(phase314!.RootElement, "dimensionCasimirWzSourceLawAuditPassed") is true
+    && JsonBool(phase314.RootElement, "phase12DiscreteVectorLengthExplained") is true
+    && JsonInt(phase314.RootElement, "phase82VectorLength") == 156
+    && JsonInt(phase314.RootElement, "phase84EdgeCount") == 52
+    && JsonInt(phase314.RootElement, "phase84DimG") == 3
+    && JsonInt(phase314.RootElement, "phase84ExpectedBosonVectorLength") == 156
+    && JsonBool(phase314.RootElement, "spin13OrSo13DimensionSourceEvidencePresent") is false
+    && JsonBool(phase314.RootElement, "spin13OrSo13DimensionIsPhase12VectorSource") is false
+    && JsonBool(phase314.RootElement, "casimirEightThirdsArithmeticMatches") is true
+    && JsonBool(phase314.RootElement, "casimirRatioSourceBackedAsLocalInvariant") is true
+    && JsonBool(phase314.RootElement, "casimirRatioSourceBackedForBosonApplication") is false
+    && JsonBool(phase314.RootElement, "p302RawAndCommonGatesPassed") is true
+    && JsonBool(phase314.RootElement, "p302StableRawCommonGatesPassed") is false
+    && JsonBool(phase314.RootElement, "p302CommonScaleApplicationTheoremPresent") is false
+    && JsonBool(phase314.RootElement, "p302ParticleLawApplicationTheoremPresent") is false
+    && JsonBool(phase314.RootElement, "su2CasimirRatioWouldApplyToTripletSymmetrically") is true
+    && JsonBool(phase314.RootElement, "wOnlyCasimirMultiplierJustified") is false
+    && JsonBool(phase314.RootElement, "zUnitMultiplierJustified") is false
+    && JsonBool(phase314.RootElement, "neutralMixingProjectionPresent") is false
+    && JsonBool(phase314.RootElement, "dimensionCasimirSourceLawPromotesWzMasses") is false
+    && JsonBool(phase314.RootElement, "dimensionCasimirSourceLawPromotesHiggsMass") is false
+    && JsonBool(phase314.RootElement, "canFillPhase201WzContract") is false
+    && JsonInt(phase314.RootElement, "wzMissingFieldCount") == wzMissingFieldCount
+    && JsonInt(phase314.RootElement, "higgsMissingFieldCount") == higgsMissingFieldCount;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -2498,6 +2526,14 @@ var checklist = new[]
             : "Phase313 artifact not materialized",
         Phase313Path),
     new ObjectiveChecklistItem(
+        "dimension-casimir-wz-source-law-audit-materialized",
+        "Audit whether the Phase302/307 156 vector-length and W 8/3 Casimir near-pass is a valid target-independent W/Z source law.",
+        dimensionCasimirWzSourceLawAuditPassed ? "passed" : "failed",
+        dimensionCasimirWzSourceLawAuditMaterialized
+            ? $"dimensionCasimirWzSourceLawAuditPassed={JsonBool(phase314!.RootElement, "dimensionCasimirWzSourceLawAuditPassed")}; phase12DiscreteVectorLengthExplained={JsonBool(phase314.RootElement, "phase12DiscreteVectorLengthExplained")}; phase82VectorLength={JsonInt(phase314.RootElement, "phase82VectorLength")}; phase84EdgeCount={JsonInt(phase314.RootElement, "phase84EdgeCount")}; phase84DimG={JsonInt(phase314.RootElement, "phase84DimG")}; spin13OrSo13DimensionSourceEvidencePresent={JsonBool(phase314.RootElement, "spin13OrSo13DimensionSourceEvidencePresent")}; casimirEightThirdsArithmeticMatches={JsonBool(phase314.RootElement, "casimirEightThirdsArithmeticMatches")}; casimirRatioSourceBackedForBosonApplication={JsonBool(phase314.RootElement, "casimirRatioSourceBackedForBosonApplication")}; wOnlyCasimirMultiplierJustified={JsonBool(phase314.RootElement, "wOnlyCasimirMultiplierJustified")}; zUnitMultiplierJustified={JsonBool(phase314.RootElement, "zUnitMultiplierJustified")}; neutralMixingProjectionPresent={JsonBool(phase314.RootElement, "neutralMixingProjectionPresent")}; dimensionCasimirSourceLawPromotesWzMasses={JsonBool(phase314.RootElement, "dimensionCasimirSourceLawPromotesWzMasses")}; canFillPhase201WzContract={JsonBool(phase314.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase314.RootElement, "decision")}"
+            : "Phase314 artifact not materialized",
+        Phase314Path),
+    new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
         branchLocalDirectInvariantCensusPassed ? "passed" : "failed",
@@ -2844,6 +2880,7 @@ var result = new
     alphaRunningThresholdSourceViabilityAuditPassed,
     officialDraftParameterSourceGapAuditPassed,
     officialDraftElectroweakProjectionMapAuditPassed,
+    dimensionCasimirWzSourceLawAuditPassed,
     parameterSourceContractCandidateScanPassed,
     phase288CoverageFalseNegativeAuditPassed,
     chargedLeptonThresholdSourceReplacementAuditPassed,
@@ -2942,6 +2979,7 @@ var result = new
         phase281Path = Phase281Path,
         phase312Path = Phase312Path,
         phase313Path = Phase313Path,
+        phase314Path = Phase314Path,
         phase282Path = Phase282Path,
         phase283Path = Phase283Path,
         phase284Path = Phase284Path,
