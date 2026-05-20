@@ -169,6 +169,7 @@ const string Phase278RelaxionElectroweakScaleSourceAuditPath = "studies/phase278
 const string Phase279TechnicolorWalkingElectroweakScaleSourceAuditPath = "studies/phase279_technicolor_walking_electroweak_scale_source_audit_001/output/technicolor_walking_electroweak_scale_source_audit.json";
 const string Phase280DirectBridgeAnalyticVariationUpgradeAuditPath = "studies/phase280_direct_bridge_analytic_variation_upgrade_audit_001/output/direct_bridge_analytic_variation_upgrade_audit.json";
 const string Phase281GeometricRefractiveUnificationSourceAuditPath = "studies/phase281_geometric_refractive_unification_source_audit_001/output/geometric_refractive_unification_source_audit.json";
+const string Phase312CurrentPublicGuRvgRevisionDeltaAuditPath = "studies/phase312_current_public_gu_rvg_revision_delta_audit_001/output/current_public_gu_rvg_revision_delta_audit.json";
 const string Phase282BranchLocalDirectInvariantCensusPath = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census.json";
 const string Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit.json";
 const string Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic.json";
@@ -358,6 +359,7 @@ using var phase278 = TryParseJson(Phase278RelaxionElectroweakScaleSourceAuditPat
 using var phase279 = TryParseJson(Phase279TechnicolorWalkingElectroweakScaleSourceAuditPath);
 using var phase280 = TryParseJson(Phase280DirectBridgeAnalyticVariationUpgradeAuditPath);
 using var phase281 = TryParseJson(Phase281GeometricRefractiveUnificationSourceAuditPath);
+using var phase312 = TryParseJson(Phase312CurrentPublicGuRvgRevisionDeltaAuditPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -610,6 +612,7 @@ var package = new
         technicolorWalkingElectroweakScaleSourceAuditPath = File.Exists(Phase279TechnicolorWalkingElectroweakScaleSourceAuditPath) ? Phase279TechnicolorWalkingElectroweakScaleSourceAuditPath : null,
         directBridgeAnalyticVariationUpgradeAuditPath = File.Exists(Phase280DirectBridgeAnalyticVariationUpgradeAuditPath) ? Phase280DirectBridgeAnalyticVariationUpgradeAuditPath : null,
         geometricRefractiveUnificationSourceAuditPath = File.Exists(Phase281GeometricRefractiveUnificationSourceAuditPath) ? Phase281GeometricRefractiveUnificationSourceAuditPath : null,
+        currentPublicGuRvgRevisionDeltaAuditPath = File.Exists(Phase312CurrentPublicGuRvgRevisionDeltaAuditPath) ? Phase312CurrentPublicGuRvgRevisionDeltaAuditPath : null,
         branchLocalDirectInvariantCensusPath = File.Exists(Phase282BranchLocalDirectInvariantCensusPath) ? Phase282BranchLocalDirectInvariantCensusPath : null,
         legacyElectroweakBridgeSourceSurvivabilityAuditPath = File.Exists(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath) ? Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath : null,
         predictedRatioAlphaGfExternalClosureDiagnosticPath = File.Exists(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath) ? Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath : null,
@@ -2174,6 +2177,36 @@ var package = new
                 ? JsonInt(p281LocalSearchEvidence, "matchingFileCount")
                 : null,
             decision = JsonString(phase281.RootElement, "decision"),
+        }
+        : null,
+    currentPublicGuRvgRevisionDeltaAudit = phase312 is not null
+        ? new
+        {
+            status = JsonString(phase312.RootElement, "terminalStatus"),
+            currentPublicGuRvgRevisionDeltaAuditPassed = JsonBool(phase312.RootElement, "currentPublicGuRvgRevisionDeltaAuditPassed"),
+            currentPublicGuRvgRevisionFound = JsonBool(phase312.RootElement, "currentPublicGuRvgRevisionFound"),
+            currentPublicGuRvgResearchPerformedOn = JsonString(phase312.RootElement, "currentPublicGuRvgResearchPerformedOn"),
+            currentPublicGuRvgMentionsShiabObserverseTraceAnomaly = JsonBool(phase312.RootElement, "currentPublicGuRvgMentionsShiabObserverseTraceAnomaly"),
+            currentPublicGuRvgMentions95GeVDilaton = JsonBool(phase312.RootElement, "currentPublicGuRvgMentions95GeVDilaton"),
+            currentPublicGuRvgMentionsKoideOr246GevScale = JsonBool(phase312.RootElement, "currentPublicGuRvgMentionsKoideOr246GevScale"),
+            currentPublicGuRvgUsesExternalElectroweakVev246Gev = JsonBool(phase312.RootElement, "currentPublicGuRvgUsesExternalElectroweakVev246Gev"),
+            currentPublicGuRvgPromotesWzMasses = JsonBool(phase312.RootElement, "currentPublicGuRvgPromotesWzMasses"),
+            currentPublicGuRvgPromotesHiggsMass = JsonBool(phase312.RootElement, "currentPublicGuRvgPromotesHiggsMass"),
+            currentMaterialStrategyPromotesBosonMasses = JsonBool(phase312.RootElement, "currentMaterialStrategyPromotesBosonMasses"),
+            currentMaterialStrategyFillsSourceLineage = JsonBool(phase312.RootElement, "currentMaterialStrategyFillsSourceLineage"),
+            currentPublicGuRvgProvidesGuLocalWzTheorem = phase312.RootElement.TryGetProperty("currentPublicGuRvgBoundary", out var p312Boundary)
+                ? JsonBool(p312Boundary, "currentPublicGuRvgProvidesGuLocalWzTheorem")
+                : null,
+            currentPublicGuRvgProvidesTargetIndependentVevSource = phase312.RootElement.TryGetProperty("currentPublicGuRvgBoundary", out p312Boundary)
+                ? JsonBool(p312Boundary, "currentPublicGuRvgProvidesTargetIndependentVevSource")
+                : null,
+            currentPublicGuRvgProvidesPhotonWzEigenstateProjectionRows = phase312.RootElement.TryGetProperty("currentPublicGuRvgBoundary", out p312Boundary)
+                ? JsonBool(p312Boundary, "currentPublicGuRvgProvidesPhotonWzEigenstateProjectionRows")
+                : null,
+            currentPublicGuRvgProvidesHiggsScalarSourceOperator = phase312.RootElement.TryGetProperty("currentPublicGuRvgBoundary", out p312Boundary)
+                ? JsonBool(p312Boundary, "currentPublicGuRvgProvidesHiggsScalarSourceOperator")
+                : null,
+            decision = JsonString(phase312.RootElement, "decision"),
         }
         : null,
     branchLocalDirectInvariantCensus = phase282 is not null
@@ -4438,6 +4471,18 @@ var summary = new
         : null,
     guRvgPromotesHiggsMass = phase281 is not null
         ? JsonBool(phase281.RootElement, "guRvgPromotesHiggsMass")
+        : null,
+    currentPublicGuRvgRevisionDeltaAuditPassed = phase312 is not null
+        ? JsonBool(phase312.RootElement, "currentPublicGuRvgRevisionDeltaAuditPassed")
+        : null,
+    currentPublicGuRvgPromotesWzMasses = phase312 is not null
+        ? JsonBool(phase312.RootElement, "currentPublicGuRvgPromotesWzMasses")
+        : null,
+    currentPublicGuRvgPromotesHiggsMass = phase312 is not null
+        ? JsonBool(phase312.RootElement, "currentPublicGuRvgPromotesHiggsMass")
+        : null,
+    currentMaterialStrategyPromotesBosonMasses = phase312 is not null
+        ? JsonBool(phase312.RootElement, "currentMaterialStrategyPromotesBosonMasses")
         : null,
     branchLocalInvariantCensusPassed = phase282 is not null
         ? JsonBool(phase282.RootElement, "branchLocalInvariantCensusPassed")

@@ -81,6 +81,7 @@ const paths = {
   phase279: "studies/phase279_technicolor_walking_electroweak_scale_source_audit_001/output/technicolor_walking_electroweak_scale_source_audit_summary.json",
   phase280: "studies/phase280_direct_bridge_analytic_variation_upgrade_audit_001/output/direct_bridge_analytic_variation_upgrade_audit_summary.json",
   phase281: "studies/phase281_geometric_refractive_unification_source_audit_001/output/geometric_refractive_unification_source_audit_summary.json",
+  phase312: "studies/phase312_current_public_gu_rvg_revision_delta_audit_001/output/current_public_gu_rvg_revision_delta_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -233,6 +234,7 @@ const phase278 = requireFile(paths.phase278);
 const phase279 = requireFile(paths.phase279);
 const phase280 = requireFile(paths.phase280);
 const phase281 = requireFile(paths.phase281);
+const phase312 = requireFile(paths.phase312);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -1146,6 +1148,28 @@ if (sourceLineageMissing) {
   assert(phase281.localSearchEvidence?.matchingFileCount === 0, "Phase281 local GU/RVG source search must find zero non-generated matching files.");
   assert(phase281.currentBlockerEvidence?.phase213?.wzMissingFieldCount === missingWzFields, "Phase281 W/Z missing-field count must match Phase213.");
   assert(phase281.currentBlockerEvidence?.phase213?.higgsMissingFieldCount === missingHiggsFields, "Phase281 Higgs missing-field count must match Phase213.");
+  assert(phase312.currentPublicGuRvgRevisionDeltaAuditPassed === true, "Phase312 current GU/RVG revision delta audit must pass while preserving non-promotional status.");
+  assert(phase312.currentPublicGuRvgRevisionFound === true, "Phase312 must record the current public GU/RVG revision delta.");
+  assert(phase312.currentPublicGuRvgResearchPerformedOn === "2026-05-20", "Phase312 must record the public-source research date.");
+  assert(phase312.currentPublicGuRvgMentionsShiabObserverseTraceAnomaly === true, "Phase312 must record Shiab/Observerse/trace-anomaly claims from the current public source.");
+  assert(phase312.currentPublicGuRvgMentions95GeVDilaton === true, "Phase312 must record the 95 GeV dilaton lead.");
+  assert(phase312.currentPublicGuRvgMentionsKoideOr246GevScale === true, "Phase312 must record Koide or 246 GeV scale mentions.");
+  assert(phase312.currentPublicGuRvgUsesExternalElectroweakVev246Gev === true, "Phase312 must classify the 246 GeV electroweak VEV use as external/input-like.");
+  assert(phase312.currentPublicGuRvgPromotesWzMasses === false, "Phase312 cannot promote W/Z masses from current public GU/RVG revisions.");
+  assert(phase312.currentPublicGuRvgPromotesHiggsMass === false, "Phase312 cannot promote Higgs mass from current public GU/RVG revisions.");
+  assert(phase312.currentPublicGuRvgCompletesBosonPredictions === false, "Phase312 cannot complete boson predictions from current public GU/RVG revisions.");
+  assert(phase312.currentMaterialStrategyPromotesBosonMasses === false, "Phase312 cannot promote boson masses from the current material-strategy paper.");
+  assert(phase312.currentMaterialStrategyFillsSourceLineage === false, "Phase312 cannot treat the material-strategy paper as a source-lineage artifact.");
+  assert(phase312.currentPublicGuRvgBoundary?.currentPublicGuRvgProvidesGuLocalWzTheorem === false, "Phase312 cannot claim a GU-local W/Z theorem from current GU/RVG revisions.");
+  assert(phase312.currentPublicGuRvgBoundary?.currentPublicGuRvgProvidesSeparateWzSourceRows === false, "Phase312 cannot claim separate W/Z source rows from current GU/RVG revisions.");
+  assert(phase312.currentPublicGuRvgBoundary?.currentPublicGuRvgProvidesTargetIndependentVevSource === false, "Phase312 cannot claim a target-independent VEV source from current GU/RVG revisions.");
+  assert(phase312.currentPublicGuRvgBoundary?.currentPublicGuRvgProvidesPhotonWzEigenstateProjectionRows === false, "Phase312 cannot claim photon/W/Z eigenstate projection rows from current GU/RVG revisions.");
+  assert(phase312.currentPublicGuRvgBoundary?.currentPublicGuRvgProvidesObservedFieldExtraction === false, "Phase312 cannot claim observed-field extraction from current GU/RVG revisions.");
+  assert(phase312.currentPublicGuRvgBoundary?.currentPublicGuRvgProvidesHiggsScalarSourceOperator === false, "Phase312 cannot claim a Higgs scalar source/operator from current GU/RVG revisions.");
+  assert(phase312.currentPublicGuRvgBoundary?.currentPublicGuRvgProvidesHiggsSelfCouplingSource === false, "Phase312 cannot claim a Higgs self-coupling source from current GU/RVG revisions.");
+  assert((phase312.researchSources ?? []).length >= 4, "Phase312 must record the reviewed current public GU/RVG and material-strategy sources.");
+  assert(phase312.currentBlockerEvidence?.phase213?.wzMissingFieldCount === missingWzFields, "Phase312 W/Z missing-field count must match Phase213.");
+  assert(phase312.currentBlockerEvidence?.phase213?.higgsMissingFieldCount === missingHiggsFields, "Phase312 Higgs missing-field count must match Phase213.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

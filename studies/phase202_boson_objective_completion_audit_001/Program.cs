@@ -77,6 +77,7 @@ const string Phase278Path = "studies/phase278_relaxion_electroweak_scale_source_
 const string Phase279Path = "studies/phase279_technicolor_walking_electroweak_scale_source_audit_001/output/technicolor_walking_electroweak_scale_source_audit_summary.json";
 const string Phase280Path = "studies/phase280_direct_bridge_analytic_variation_upgrade_audit_001/output/direct_bridge_analytic_variation_upgrade_audit_summary.json";
 const string Phase281Path = "studies/phase281_geometric_refractive_unification_source_audit_001/output/geometric_refractive_unification_source_audit_summary.json";
+const string Phase312Path = "studies/phase312_current_public_gu_rvg_revision_delta_audit_001/output/current_public_gu_rvg_revision_delta_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -187,6 +188,7 @@ using var phase278 = File.Exists(Phase278Path) ? JsonDocument.Parse(File.ReadAll
 using var phase279 = File.Exists(Phase279Path) ? JsonDocument.Parse(File.ReadAllText(Phase279Path)) : null;
 using var phase280 = File.Exists(Phase280Path) ? JsonDocument.Parse(File.ReadAllText(Phase280Path)) : null;
 using var phase281 = File.Exists(Phase281Path) ? JsonDocument.Parse(File.ReadAllText(Phase281Path)) : null;
+using var phase312 = File.Exists(Phase312Path) ? JsonDocument.Parse(File.ReadAllText(Phase312Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -958,6 +960,35 @@ var geometricRefractiveUnificationSourceAuditPassed = geometricRefractiveUnifica
     && p281BlockerEvidence.TryGetProperty("phase213", out var p281Phase213Blockers)
     && JsonInt(p281Phase213Blockers, "wzMissingFieldCount") == wzMissingFieldCount
     && JsonInt(p281Phase213Blockers, "higgsMissingFieldCount") == higgsMissingFieldCount;
+var currentPublicGuRvgRevisionDeltaAuditMaterialized = phase312 is not null;
+var currentPublicGuRvgRevisionDeltaAuditPassed = currentPublicGuRvgRevisionDeltaAuditMaterialized
+    && JsonBool(phase312!.RootElement, "currentPublicGuRvgRevisionDeltaAuditPassed") is true
+    && JsonBool(phase312.RootElement, "currentPublicGuRvgRevisionFound") is true
+    && JsonString(phase312.RootElement, "currentPublicGuRvgResearchPerformedOn") == "2026-05-20"
+    && JsonBool(phase312.RootElement, "currentPublicGuRvgMentionsShiabObserverseTraceAnomaly") is true
+    && JsonBool(phase312.RootElement, "currentPublicGuRvgMentions95GeVDilaton") is true
+    && JsonBool(phase312.RootElement, "currentPublicGuRvgMentionsKoideOr246GevScale") is true
+    && JsonBool(phase312.RootElement, "currentPublicGuRvgUsesExternalElectroweakVev246Gev") is true
+    && JsonBool(phase312.RootElement, "currentPublicGuRvgPromotesWzMasses") is false
+    && JsonBool(phase312.RootElement, "currentPublicGuRvgPromotesHiggsMass") is false
+    && JsonBool(phase312.RootElement, "currentPublicGuRvgCompletesBosonPredictions") is false
+    && JsonBool(phase312.RootElement, "currentMaterialStrategyPromotesBosonMasses") is false
+    && JsonBool(phase312.RootElement, "currentMaterialStrategyFillsSourceLineage") is false
+    && phase312.RootElement.TryGetProperty("currentPublicGuRvgBoundary", out var p312Boundary)
+    && JsonBool(p312Boundary, "currentPublicGuRvgProvidesGuLocalWzTheorem") is false
+    && JsonBool(p312Boundary, "currentPublicGuRvgProvidesSeparateWzSourceRows") is false
+    && JsonBool(p312Boundary, "currentPublicGuRvgProvidesTargetIndependentVevSource") is false
+    && JsonBool(p312Boundary, "currentPublicGuRvgProvidesPhotonWzEigenstateProjectionRows") is false
+    && JsonBool(p312Boundary, "currentPublicGuRvgProvidesObservedFieldExtraction") is false
+    && JsonBool(p312Boundary, "currentPublicGuRvgProvidesHiggsScalarSourceOperator") is false
+    && JsonBool(p312Boundary, "currentPublicGuRvgProvidesHiggsSelfCouplingSource") is false
+    && phase312.RootElement.TryGetProperty("researchSources", out var p312ResearchSources)
+    && p312ResearchSources.ValueKind == JsonValueKind.Array
+    && p312ResearchSources.GetArrayLength() >= 4
+    && phase312.RootElement.TryGetProperty("currentBlockerEvidence", out var p312BlockerEvidence)
+    && p312BlockerEvidence.TryGetProperty("phase213", out var p312Phase213Evidence)
+    && JsonInt(p312Phase213Evidence, "wzMissingFieldCount") == wzMissingFieldCount
+    && JsonInt(p312Phase213Evidence, "higgsMissingFieldCount") == higgsMissingFieldCount;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -2423,6 +2454,14 @@ var checklist = new[]
             : "Phase281 artifact not materialized",
         Phase281Path),
     new ObjectiveChecklistItem(
+        "current-public-gu-rvg-revision-delta-audit-materialized",
+        "Audit whether current May 2026 GU-RVG public revision/material deltas supply promotable W/Z/H source-lineage predictions.",
+        currentPublicGuRvgRevisionDeltaAuditPassed ? "passed" : "failed",
+        currentPublicGuRvgRevisionDeltaAuditMaterialized
+            ? $"currentPublicGuRvgRevisionDeltaAuditPassed={JsonBool(phase312!.RootElement, "currentPublicGuRvgRevisionDeltaAuditPassed")}; currentPublicGuRvgRevisionFound={JsonBool(phase312.RootElement, "currentPublicGuRvgRevisionFound")}; researchPerformedOn={JsonString(phase312.RootElement, "currentPublicGuRvgResearchPerformedOn")}; mentionsShiabObserverseTraceAnomaly={JsonBool(phase312.RootElement, "currentPublicGuRvgMentionsShiabObserverseTraceAnomaly")}; mentions95GeVDilaton={JsonBool(phase312.RootElement, "currentPublicGuRvgMentions95GeVDilaton")}; usesExternalElectroweakVev246Gev={JsonBool(phase312.RootElement, "currentPublicGuRvgUsesExternalElectroweakVev246Gev")}; currentPublicGuRvgPromotesWzMasses={JsonBool(phase312.RootElement, "currentPublicGuRvgPromotesWzMasses")}; currentPublicGuRvgPromotesHiggsMass={JsonBool(phase312.RootElement, "currentPublicGuRvgPromotesHiggsMass")}; materialStrategyPromotesBosonMasses={JsonBool(phase312.RootElement, "currentMaterialStrategyPromotesBosonMasses")}; currentPublicGuRvgProvidesGuLocalWzTheorem={(phase312.RootElement.TryGetProperty("currentPublicGuRvgBoundary", out var p312ChecklistBoundary) ? JsonBool(p312ChecklistBoundary, "currentPublicGuRvgProvidesGuLocalWzTheorem") : null)}; currentPublicGuRvgProvidesTargetIndependentVevSource={(phase312.RootElement.TryGetProperty("currentPublicGuRvgBoundary", out p312ChecklistBoundary) ? JsonBool(p312ChecklistBoundary, "currentPublicGuRvgProvidesTargetIndependentVevSource") : null)}; currentPublicGuRvgProvidesHiggsScalarSourceOperator={(phase312.RootElement.TryGetProperty("currentPublicGuRvgBoundary", out p312ChecklistBoundary) ? JsonBool(p312ChecklistBoundary, "currentPublicGuRvgProvidesHiggsScalarSourceOperator") : null)}; decision={JsonString(phase312.RootElement, "decision")}"
+            : "Phase312 artifact not materialized",
+        Phase312Path),
+    new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
         branchLocalDirectInvariantCensusPassed ? "passed" : "failed",
@@ -2863,6 +2902,7 @@ var result = new
         phase279Path = Phase279Path,
         phase280Path = Phase280Path,
         phase281Path = Phase281Path,
+        phase312Path = Phase312Path,
         phase282Path = Phase282Path,
         phase283Path = Phase283Path,
         phase284Path = Phase284Path,

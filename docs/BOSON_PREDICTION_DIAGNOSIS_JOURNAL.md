@@ -7587,3 +7587,109 @@ Higgs remains separately blocked by missing scalar-source lineage.
 This validation section adds no promotable physical mass claim; it records that
 Phase311 is a diagnostic boundary around the observed-sector row-selector
 loophole.
+
+## 2026-05-20T16:08:00-04:00 - Current Public GU-RVG Revision Delta Checked as Phase312
+
+### Trigger
+
+After Phase311 left the W/Z blocker at the observed-sector row selector and
+photon/W/Z projection step, I repeated public-source research for current
+Geometric Unity / GU-RVG material. Search results showed newer or newly visible
+public records beyond the earlier Phase243/281 snapshot: SSRN 6571958 last
+revised 2026-05-01, Zenodo 19465254 modified 2026-05-01, Zenodo 19465143
+modified 2026-05-01, and a May 15, 2026 material-strategy paper at SSRN 6713999.
+
+### Attempt
+
+- Downloaded and text-extracted the Zenodo 19465254 and 19465143 PDFs into
+  `/tmp` for local inspection.
+- Searched the extracted text for W/Z, photon, electroweak, Higgs,
+  self-coupling, VEV, mass-operator, source-row, Koide, 95.4 GeV, dilaton,
+  Shiab, Zorro, and trace-anomaly terms.
+- Compared the public-source claims against Phase201 W/Z/H source-lineage
+  fields, Phase245 rank-deficit unlock rows, and the Phase256 observed-field
+  extraction contract.
+- Added `studies/phase312_current_public_gu_rvg_revision_delta_audit_001`.
+- Wired Phase312 into the generator, P101 package, P202 objective audit,
+  claim-integrity verifier, source scanners, and implementation docs.
+
+### Result
+
+- Phase312 passed as a negative audit with:
+  - `currentPublicGuRvgRevisionDeltaAuditPassed=true`.
+  - `currentPublicGuRvgRevisionFound=true`.
+  - `currentPublicGuRvgMentionsShiabObserverseTraceAnomaly=true`.
+  - `currentPublicGuRvgMentions95GeVDilaton=true`.
+  - `currentPublicGuRvgMentionsKoideOr246GevScale=true`.
+  - `currentPublicGuRvgUsesExternalElectroweakVev246Gev=true`.
+  - `currentPublicGuRvgPromotesWzMasses=false`.
+  - `currentPublicGuRvgPromotesHiggsMass=false`.
+  - `currentPublicGuRvgCompletesBosonPredictions=false`.
+  - `currentMaterialStrategyPromotesBosonMasses=false`.
+  - `currentMaterialStrategyFillsSourceLineage=false`.
+- The extracted GU-RVG text uses `v = 246 GeV` inside a dilaton/Koide
+  correction and parameter definition; it is not a target-independent GU
+  derivation of the electroweak VEV, W/Z source rows, or weak-coupling source.
+- The May 15 material-strategy source is a hardware/materials lead for
+  MADA/ADPG/SHD magnetic substrates, not an electroweak source-lineage or
+  Higgs scalar-source artifact.
+
+### Decision
+
+Do not promote W/Z or Higgs mass predictions from the current public GU-RVG
+revision delta. The sources are relevant public research leads, but they do not
+fill the repository's W/Z source rows, photon/W/Z projection, electroweak
+VEV/coupling source, observed-field extraction, or Higgs scalar-source lineage.
+
+### Remaining Blocker
+
+The W/Z path still requires a GU-local target-independent W/Z source theorem
+with separate W and Z source rows and a filled observed-field extraction bridge.
+The Higgs path still requires a solved scalar source/operator/profile and
+self-coupling or excitation relation independent of observed target masses.
+
+### Validation
+
+- Targeted Phase312 run passed with
+  `currentPublicGuRvgRevisionDeltaAuditPassed=true`,
+  `currentPublicGuRvgPromotesWzMasses=false`, and
+  `currentPublicGuRvgPromotesHiggsMass=false`.
+- Initial full generator integration caught a self-audit issue:
+  Phase281's local GU/RVG search counted the newly added Phase312 diagnostic
+  program and `IMPLEMENTATION_P312.md` as local GU/RVG matches. Outcome:
+  Phase281 flipped to `geometric-refractive-unification-source-audit-review-required`
+  with `localSearchMatchingFileCount=2`, and Phase312 flipped to review-required
+  because it inherits Phase281's prior-audit consistency check.
+- Fixed the self-audit issue by excluding
+  `studies/phase312_current_public_gu_rvg_revision_delta_audit_001/` and
+  `docs/Phases/Implementation/IMPLEMENTATION_P312.md` from Phase281's local
+  GU/RVG source search.
+- Reran Phase281 and Phase312:
+  - Phase281 passed with `geometricRefractiveUnificationSourceAuditPassed=true`
+    and `localSearchMatchingFileCount=0`.
+  - Phase312 passed with
+    `currentPublicGuRvgRevisionDeltaAuditPassed=true`.
+- P101 regenerated with Phase312 included and remained
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase312 included and remained
+  `objectiveAchieved=false`, with `checklistPassedCount=105` and
+  `checklistFailedCount=3`.
+- Claim-integrity verifier passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Source and observed-field scanners after the Phase312 code/docs/journal
+  changes found no intake-ready artifacts:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `canPromoteHiggsQuarticSelfCouplingSource=false`.
+  - P295 `intakeReadyObservedFieldExtractionCandidateCount=0`.
+  - P296 `intakeReadySourceLineageFieldCandidateCount=0`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed and reran
+  Phase312 in both generator passes, ending with claim integrity verified.
+- `dotnet test GeometricUnity.slnx` passed. The existing xUnit analyzer warning
+  in `QuantitativeValidationTests.cs(315,9)` remains present.
+- `git diff --check` passed.
+
+This validation section records the final negative outcome of Phase312 and the
+self-audit exclusion repair required to keep generated diagnostic text from
+being mistaken for a new local source artifact.
