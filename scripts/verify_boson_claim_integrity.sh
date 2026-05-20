@@ -85,6 +85,7 @@ const paths = {
   phase313: "studies/phase313_official_draft_electroweak_projection_map_audit_001/output/official_draft_electroweak_projection_map_audit_summary.json",
   phase314: "studies/phase314_dimension_casimir_wz_source_law_audit_001/output/dimension_casimir_wz_source_law_audit_summary.json",
   phase315: "studies/phase315_ucsd_dark_geometric_energy_source_audit_001/output/ucsd_dark_geometric_energy_source_audit_summary.json",
+  phase316: "studies/phase316_ucsd_transcript_source_strength_audit_001/output/ucsd_transcript_source_strength_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -241,6 +242,7 @@ const phase312 = requireFile(paths.phase312);
 const phase313 = requireFile(paths.phase313);
 const phase314 = requireFile(paths.phase314);
 const phase315 = requireFile(paths.phase315);
+const phase316 = requireFile(paths.phase316);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -1247,6 +1249,31 @@ if (sourceLineageMissing) {
   assert(phase315.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase315 cannot fill the Phase256 observed-field extraction contract.");
   assert(phase315.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase315 W/Z missing-field count must match Phase213.");
   assert(phase315.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase315 Higgs missing-field count must match Phase213.");
+  assert(phase316.ucsdTranscriptSourceStrengthAuditPassed === true, "Phase316 UCSD transcript source-strength audit must pass while preserving non-promotional status.");
+  assert(phase316.youtubeVideoId === "fBozSSLxFvI", "Phase316 must record the UCSD YouTube video id.");
+  assert(phase316.portalWikiEditedTranscriptAvailable === false, "Phase316 must not claim an edited transcript is public.");
+  assert(phase316.publicSearchExactVideoTranscriptFound === false, "Phase316 must not claim a public exact-video transcript was found.");
+  assert(phase316.publicSearchExactVideoCaptionsFound === false, "Phase316 must not claim public exact-video captions were found.");
+  assert(phase316.thirdPartyShimpsSummaryFound === true, "Phase316 must record the third-party summary lead.");
+  assert(phase316.thirdPartyShimpsSummaryIsPrimarySource === false, "Phase316 cannot treat the third-party summary as a primary source.");
+  assert(phase316.thirdPartyShimpsSummaryIsTranscript === false, "Phase316 cannot treat the third-party summary as a transcript.");
+  assert(phase316.captionOrTranscriptUsableAsSourceLineage === false, "Phase316 cannot claim a usable caption/transcript source-lineage artifact.");
+  assert(phase316.transcriptSourceBoundary?.transcriptAuditProvidesGuLocalWzTheorem === false, "Phase316 cannot claim a GU-local W/Z theorem from the transcript path.");
+  assert(phase316.transcriptSourceBoundary?.transcriptAuditProvidesSeparateWzSourceRows === false, "Phase316 cannot claim separate W/Z source rows from the transcript path.");
+  assert(phase316.transcriptSourceBoundary?.transcriptAuditProvidesLowEnergyWeakCouplingSource === false, "Phase316 cannot claim low-energy weak-coupling source from the transcript path.");
+  assert(phase316.transcriptSourceBoundary?.transcriptAuditProvidesTargetIndependentVevSource === false, "Phase316 cannot claim target-independent VEV source from the transcript path.");
+  assert(phase316.transcriptSourceBoundary?.transcriptAuditProvidesPhotonWzEigenstateProjectionRows === false, "Phase316 cannot claim photon/W/Z projection rows from the transcript path.");
+  assert(phase316.transcriptSourceBoundary?.transcriptAuditProvidesObservedFieldExtraction === false, "Phase316 cannot fill observed-field extraction from the transcript path.");
+  assert(phase316.transcriptSourceBoundary?.transcriptAuditProvidesHiggsScalarSourceOperator === false, "Phase316 cannot claim a Higgs scalar source operator from the transcript path.");
+  assert(phase316.transcriptSourceBoundary?.transcriptAuditProvidesHiggsSelfCouplingSource === false, "Phase316 cannot claim a Higgs self-coupling source from the transcript path.");
+  assert(phase316.transcriptAuditPromotesWzMasses === false, "Phase316 cannot promote W/Z masses.");
+  assert(phase316.transcriptAuditPromotesHiggsMass === false, "Phase316 cannot promote Higgs mass.");
+  assert(phase316.transcriptAuditCompletesBosonPredictions === false, "Phase316 cannot complete boson predictions.");
+  assert(phase316.contractImpact?.canFillPhase201WzContract === false, "Phase316 cannot fill the Phase201 W/Z source contract.");
+  assert(phase316.contractImpact?.canFillPhase201HiggsContract === false, "Phase316 cannot fill the Phase201 Higgs source contract.");
+  assert(phase316.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase316 cannot fill the Phase256 observed-field extraction contract.");
+  assert(phase316.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase316 W/Z missing-field count must match Phase213.");
+  assert(phase316.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase316 Higgs missing-field count must match Phase213.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

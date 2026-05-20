@@ -81,6 +81,7 @@ const string Phase312Path = "studies/phase312_current_public_gu_rvg_revision_del
 const string Phase313Path = "studies/phase313_official_draft_electroweak_projection_map_audit_001/output/official_draft_electroweak_projection_map_audit_summary.json";
 const string Phase314Path = "studies/phase314_dimension_casimir_wz_source_law_audit_001/output/dimension_casimir_wz_source_law_audit_summary.json";
 const string Phase315Path = "studies/phase315_ucsd_dark_geometric_energy_source_audit_001/output/ucsd_dark_geometric_energy_source_audit_summary.json";
+const string Phase316Path = "studies/phase316_ucsd_transcript_source_strength_audit_001/output/ucsd_transcript_source_strength_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -195,6 +196,7 @@ using var phase312 = File.Exists(Phase312Path) ? JsonDocument.Parse(File.ReadAll
 using var phase313 = File.Exists(Phase313Path) ? JsonDocument.Parse(File.ReadAllText(Phase313Path)) : null;
 using var phase314 = File.Exists(Phase314Path) ? JsonDocument.Parse(File.ReadAllText(Phase314Path)) : null;
 using var phase315 = File.Exists(Phase315Path) ? JsonDocument.Parse(File.ReadAllText(Phase315Path)) : null;
+using var phase316 = File.Exists(Phase316Path) ? JsonDocument.Parse(File.ReadAllText(Phase316Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -1076,6 +1078,38 @@ var ucsdDarkGeometricEnergySourceAuditPassed = ucsdDarkGeometricEnergySourceAudi
     && phase315.RootElement.TryGetProperty("publicSources", out var p315PublicSources)
     && p315PublicSources.ValueKind == JsonValueKind.Array
     && p315PublicSources.GetArrayLength() >= 2;
+var ucsdTranscriptSourceStrengthAuditMaterialized = phase316 is not null;
+var ucsdTranscriptSourceStrengthAuditPassed = ucsdTranscriptSourceStrengthAuditMaterialized
+    && JsonBool(phase316!.RootElement, "ucsdTranscriptSourceStrengthAuditPassed") is true
+    && JsonString(phase316.RootElement, "youtubeVideoId") == "fBozSSLxFvI"
+    && JsonBool(phase316.RootElement, "portalWikiEditedTranscriptAvailable") is false
+    && JsonBool(phase316.RootElement, "publicSearchExactVideoTranscriptFound") is false
+    && JsonBool(phase316.RootElement, "publicSearchExactVideoCaptionsFound") is false
+    && JsonBool(phase316.RootElement, "thirdPartyShimpsSummaryFound") is true
+    && JsonBool(phase316.RootElement, "thirdPartyShimpsSummaryIsPrimarySource") is false
+    && JsonBool(phase316.RootElement, "thirdPartyShimpsSummaryIsTranscript") is false
+    && JsonBool(phase316.RootElement, "captionOrTranscriptUsableAsSourceLineage") is false
+    && JsonBool(phase316.RootElement, "transcriptAuditPromotesWzMasses") is false
+    && JsonBool(phase316.RootElement, "transcriptAuditPromotesHiggsMass") is false
+    && JsonBool(phase316.RootElement, "transcriptAuditCompletesBosonPredictions") is false
+    && phase316.RootElement.TryGetProperty("transcriptSourceBoundary", out var p316Boundary)
+    && JsonBool(p316Boundary, "transcriptAuditProvidesGuLocalWzTheorem") is false
+    && JsonBool(p316Boundary, "transcriptAuditProvidesSeparateWzSourceRows") is false
+    && JsonBool(p316Boundary, "transcriptAuditProvidesLowEnergyWeakCouplingSource") is false
+    && JsonBool(p316Boundary, "transcriptAuditProvidesTargetIndependentVevSource") is false
+    && JsonBool(p316Boundary, "transcriptAuditProvidesPhotonWzEigenstateProjectionRows") is false
+    && JsonBool(p316Boundary, "transcriptAuditProvidesObservedFieldExtraction") is false
+    && JsonBool(p316Boundary, "transcriptAuditProvidesHiggsScalarSourceOperator") is false
+    && JsonBool(p316Boundary, "transcriptAuditProvidesHiggsSelfCouplingSource") is false
+    && phase316.RootElement.TryGetProperty("contractImpact", out var p316ContractImpact)
+    && JsonBool(p316ContractImpact, "canFillPhase201WzContract") is false
+    && JsonBool(p316ContractImpact, "canFillPhase201HiggsContract") is false
+    && JsonBool(p316ContractImpact, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonInt(p316ContractImpact, "wzMissingFieldCount") == wzMissingFieldCount
+    && JsonInt(p316ContractImpact, "higgsMissingFieldCount") == higgsMissingFieldCount
+    && phase316.RootElement.TryGetProperty("sourceStrengthRows", out var p316SourceStrengthRows)
+    && p316SourceStrengthRows.ValueKind == JsonValueKind.Array
+    && p316SourceStrengthRows.GetArrayLength() >= 4;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -2573,6 +2607,14 @@ var checklist = new[]
             : "Phase315 artifact not materialized",
         Phase315Path),
     new ObjectiveChecklistItem(
+        "ucsd-transcript-source-strength-audit-materialized",
+        "Audit whether public transcript, caption, exact-video search, or third-party summary evidence supplies promotable W/Z/H source-lineage predictions.",
+        ucsdTranscriptSourceStrengthAuditPassed ? "passed" : "failed",
+        ucsdTranscriptSourceStrengthAuditMaterialized
+            ? $"ucsdTranscriptSourceStrengthAuditPassed={JsonBool(phase316!.RootElement, "ucsdTranscriptSourceStrengthAuditPassed")}; youtubeVideoId={JsonString(phase316.RootElement, "youtubeVideoId")}; portalWikiEditedTranscriptAvailable={JsonBool(phase316.RootElement, "portalWikiEditedTranscriptAvailable")}; publicTranscriptFound={JsonBool(phase316.RootElement, "publicSearchExactVideoTranscriptFound")}; publicCaptionsFound={JsonBool(phase316.RootElement, "publicSearchExactVideoCaptionsFound")}; thirdPartySummaryFound={JsonBool(phase316.RootElement, "thirdPartyShimpsSummaryFound")}; thirdPartySummaryIsPrimarySource={JsonBool(phase316.RootElement, "thirdPartyShimpsSummaryIsPrimarySource")}; captionOrTranscriptUsableAsSourceLineage={JsonBool(phase316.RootElement, "captionOrTranscriptUsableAsSourceLineage")}; promotesWzMasses={JsonBool(phase316.RootElement, "transcriptAuditPromotesWzMasses")}; promotesHiggsMass={JsonBool(phase316.RootElement, "transcriptAuditPromotesHiggsMass")}; completesBosonPredictions={JsonBool(phase316.RootElement, "transcriptAuditCompletesBosonPredictions")}; canFillPhase201WzContract={(phase316.RootElement.TryGetProperty("contractImpact", out var p316ChecklistContract) ? JsonBool(p316ChecklistContract, "canFillPhase201WzContract") : null)}; canFillPhase201HiggsContract={(phase316.RootElement.TryGetProperty("contractImpact", out p316ChecklistContract) ? JsonBool(p316ChecklistContract, "canFillPhase201HiggsContract") : null)}; decision={JsonString(phase316.RootElement, "decision")}"
+            : "Phase316 artifact not materialized",
+        Phase316Path),
+    new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
         branchLocalDirectInvariantCensusPassed ? "passed" : "failed",
@@ -2921,6 +2963,7 @@ var result = new
     officialDraftElectroweakProjectionMapAuditPassed,
     dimensionCasimirWzSourceLawAuditPassed,
     ucsdDarkGeometricEnergySourceAuditPassed,
+    ucsdTranscriptSourceStrengthAuditPassed,
     parameterSourceContractCandidateScanPassed,
     phase288CoverageFalseNegativeAuditPassed,
     chargedLeptonThresholdSourceReplacementAuditPassed,
@@ -3021,6 +3064,7 @@ var result = new
         phase313Path = Phase313Path,
         phase314Path = Phase314Path,
         phase315Path = Phase315Path,
+        phase316Path = Phase316Path,
         phase282Path = Phase282Path,
         phase283Path = Phase283Path,
         phase284Path = Phase284Path,

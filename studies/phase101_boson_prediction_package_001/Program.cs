@@ -173,6 +173,7 @@ const string Phase312CurrentPublicGuRvgRevisionDeltaAuditPath = "studies/phase31
 const string Phase313OfficialDraftElectroweakProjectionMapAuditPath = "studies/phase313_official_draft_electroweak_projection_map_audit_001/output/official_draft_electroweak_projection_map_audit.json";
 const string Phase314DimensionCasimirWzSourceLawAuditPath = "studies/phase314_dimension_casimir_wz_source_law_audit_001/output/dimension_casimir_wz_source_law_audit.json";
 const string Phase315UcsdDarkGeometricEnergySourceAuditPath = "studies/phase315_ucsd_dark_geometric_energy_source_audit_001/output/ucsd_dark_geometric_energy_source_audit.json";
+const string Phase316UcsdTranscriptSourceStrengthAuditPath = "studies/phase316_ucsd_transcript_source_strength_audit_001/output/ucsd_transcript_source_strength_audit.json";
 const string Phase282BranchLocalDirectInvariantCensusPath = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census.json";
 const string Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit.json";
 const string Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic.json";
@@ -366,6 +367,7 @@ using var phase312 = TryParseJson(Phase312CurrentPublicGuRvgRevisionDeltaAuditPa
 using var phase313 = TryParseJson(Phase313OfficialDraftElectroweakProjectionMapAuditPath);
 using var phase314 = TryParseJson(Phase314DimensionCasimirWzSourceLawAuditPath);
 using var phase315 = TryParseJson(Phase315UcsdDarkGeometricEnergySourceAuditPath);
+using var phase316 = TryParseJson(Phase316UcsdTranscriptSourceStrengthAuditPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -622,6 +624,7 @@ var package = new
         officialDraftElectroweakProjectionMapAuditPath = File.Exists(Phase313OfficialDraftElectroweakProjectionMapAuditPath) ? Phase313OfficialDraftElectroweakProjectionMapAuditPath : null,
         dimensionCasimirWzSourceLawAuditPath = File.Exists(Phase314DimensionCasimirWzSourceLawAuditPath) ? Phase314DimensionCasimirWzSourceLawAuditPath : null,
         ucsdDarkGeometricEnergySourceAuditPath = File.Exists(Phase315UcsdDarkGeometricEnergySourceAuditPath) ? Phase315UcsdDarkGeometricEnergySourceAuditPath : null,
+        ucsdTranscriptSourceStrengthAuditPath = File.Exists(Phase316UcsdTranscriptSourceStrengthAuditPath) ? Phase316UcsdTranscriptSourceStrengthAuditPath : null,
         branchLocalDirectInvariantCensusPath = File.Exists(Phase282BranchLocalDirectInvariantCensusPath) ? Phase282BranchLocalDirectInvariantCensusPath : null,
         legacyElectroweakBridgeSourceSurvivabilityAuditPath = File.Exists(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath) ? Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath : null,
         predictedRatioAlphaGfExternalClosureDiagnosticPath = File.Exists(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath) ? Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath : null,
@@ -2296,6 +2299,34 @@ var package = new
                 ? JsonBool(p315ContractImpact, "canFillPhase256ObservedFieldExtractionContract")
                 : null,
             decision = JsonString(phase315.RootElement, "decision"),
+        }
+        : null,
+    ucsdTranscriptSourceStrengthAudit = phase316 is not null
+        ? new
+        {
+            status = JsonString(phase316.RootElement, "terminalStatus"),
+            ucsdTranscriptSourceStrengthAuditPassed = JsonBool(phase316.RootElement, "ucsdTranscriptSourceStrengthAuditPassed"),
+            youtubeVideoId = JsonString(phase316.RootElement, "youtubeVideoId"),
+            portalWikiEditedTranscriptAvailable = JsonBool(phase316.RootElement, "portalWikiEditedTranscriptAvailable"),
+            publicSearchExactVideoTranscriptFound = JsonBool(phase316.RootElement, "publicSearchExactVideoTranscriptFound"),
+            publicSearchExactVideoCaptionsFound = JsonBool(phase316.RootElement, "publicSearchExactVideoCaptionsFound"),
+            thirdPartyShimpsSummaryFound = JsonBool(phase316.RootElement, "thirdPartyShimpsSummaryFound"),
+            thirdPartyShimpsSummaryIsPrimarySource = JsonBool(phase316.RootElement, "thirdPartyShimpsSummaryIsPrimarySource"),
+            thirdPartyShimpsSummaryIsTranscript = JsonBool(phase316.RootElement, "thirdPartyShimpsSummaryIsTranscript"),
+            captionOrTranscriptUsableAsSourceLineage = JsonBool(phase316.RootElement, "captionOrTranscriptUsableAsSourceLineage"),
+            transcriptAuditPromotesWzMasses = JsonBool(phase316.RootElement, "transcriptAuditPromotesWzMasses"),
+            transcriptAuditPromotesHiggsMass = JsonBool(phase316.RootElement, "transcriptAuditPromotesHiggsMass"),
+            transcriptAuditCompletesBosonPredictions = JsonBool(phase316.RootElement, "transcriptAuditCompletesBosonPredictions"),
+            canFillPhase201WzContract = phase316.RootElement.TryGetProperty("contractImpact", out var p316ContractImpact)
+                ? JsonBool(p316ContractImpact, "canFillPhase201WzContract")
+                : null,
+            canFillPhase201HiggsContract = phase316.RootElement.TryGetProperty("contractImpact", out p316ContractImpact)
+                ? JsonBool(p316ContractImpact, "canFillPhase201HiggsContract")
+                : null,
+            canFillPhase256ObservedFieldExtractionContract = phase316.RootElement.TryGetProperty("contractImpact", out p316ContractImpact)
+                ? JsonBool(p316ContractImpact, "canFillPhase256ObservedFieldExtractionContract")
+                : null,
+            decision = JsonString(phase316.RootElement, "decision"),
         }
         : null,
     branchLocalDirectInvariantCensus = phase282 is not null
@@ -4611,6 +4642,18 @@ var summary = new
         : null,
     ucsdDarkGeometricEnergyCompletesBosonPredictions = phase315 is not null
         ? JsonBool(phase315.RootElement, "ucsdDarkGeometricEnergyCompletesBosonPredictions")
+        : null,
+    ucsdTranscriptSourceStrengthAuditPassed = phase316 is not null
+        ? JsonBool(phase316.RootElement, "ucsdTranscriptSourceStrengthAuditPassed")
+        : null,
+    ucsdTranscriptSourcePromotesWzMasses = phase316 is not null
+        ? JsonBool(phase316.RootElement, "transcriptAuditPromotesWzMasses")
+        : null,
+    ucsdTranscriptSourcePromotesHiggsMass = phase316 is not null
+        ? JsonBool(phase316.RootElement, "transcriptAuditPromotesHiggsMass")
+        : null,
+    ucsdTranscriptSourceCompletesBosonPredictions = phase316 is not null
+        ? JsonBool(phase316.RootElement, "transcriptAuditCompletesBosonPredictions")
         : null,
     branchLocalInvariantCensusPassed = phase282 is not null
         ? JsonBool(phase282.RootElement, "branchLocalInvariantCensusPassed")

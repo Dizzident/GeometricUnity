@@ -8002,3 +8002,102 @@ missing scalar-source/operator/profile/self-coupling lineage.
 This validation section records the current negative outcome of Phase315: the
 UCSD public lead is preserved as research context, but it is not a promotable
 W/Z/H physical mass prediction.
+
+## 2026-05-20T16:14:51-04:00 - UCSD Transcript/Caption Source-Strength Path Started as Phase316
+
+### Prompt / Goal
+
+Continue diagnosing why the repository cannot yet make correct W/Z/H boson
+predictions. After Phase315 preserved the 2025 UCSD `From Dark to Geometric
+Energy` public abstract as relevant but non-promotional, check the remaining
+loophole: whether the associated public video, transcript/caption path, exact
+video search, or a third-party summary can provide source-lineage fields.
+
+### Actions
+
+- Tried to launch an explorer subagent for an independent local source-lineage
+  search; the subagent errored immediately due usage limits, so no result was
+  used.
+- Rechecked the Portal Group public page for the UCSD lecture. It records the
+  abstract and the YouTube-linked video id `fBozSSLxFvI`.
+- Rechecked the Portal Wiki page for the same content. It records the host,
+  release date, length, YouTube link, and says there is no edited transcript;
+  it refers contributors to private access for a machine-generated transcript.
+- Ran exact public searches for `"fBozSSLxFvI" transcript`,
+  `"fBozSSLxFvI" captions`, `"From Dark to Geometric Energy" transcript`, and
+  `"fBozSSLxFvI" "Geometric Unity"`. The results surfaced Portal metadata,
+  no-transcript category pages, and a third-party `shimpsblog` summary, but no
+  public primary transcript/caption artifact.
+- Checked local tool availability:
+  - `which yt-dlp` failed.
+  - `which youtube-dl` failed.
+- Searched the repository for `fBozSSLxFvI`, `From Dark to Geometric Energy`,
+  and transcript/no-transcript terms. The only local hits before this phase
+  were Phase315 artifacts.
+- Added `studies/phase316_ucsd_transcript_source_strength_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P316.md`.
+- Wired Phase316 into the generator, P101 package, P202 objective completion
+  audit, claim-integrity verifier, and scanner exclusions.
+
+### Current Expected Outcome
+
+Phase316 is expected to pass only as a negative source-strength audit:
+
+- `ucsdTranscriptSourceStrengthAuditPassed=true`.
+- `youtubeVideoId=fBozSSLxFvI`.
+- `portalWikiEditedTranscriptAvailable=false`.
+- `publicSearchExactVideoTranscriptFound=false`.
+- `publicSearchExactVideoCaptionsFound=false`.
+- `thirdPartyShimpsSummaryFound=true`.
+- `thirdPartyShimpsSummaryIsPrimarySource=false`.
+- `thirdPartyShimpsSummaryIsTranscript=false`.
+- `captionOrTranscriptUsableAsSourceLineage=false`.
+- `transcriptAuditPromotesWzMasses=false`.
+- `transcriptAuditPromotesHiggsMass=false`.
+- `canFillPhase201WzContract=false`.
+- `canFillPhase201HiggsContract=false`.
+- `canFillPhase256ObservedFieldExtractionContract=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs mass predictions from the UCSD transcript path
+unless a public or repo-materialized transcript/caption/theorem artifact is
+available with enough primary-source context to fill the Phase201 and Phase256
+fields. A third-party summary can preserve a lead, but cannot supply W/Z
+source rows, low-energy weak-coupling or VEV closure, observed-field
+extraction, or Higgs scalar-source/self-coupling lineage.
+
+### Validation
+
+- Targeted Phase316 run passed with:
+  - `ucsdTranscriptSourceStrengthAuditPassed=true`.
+  - `youtubeVideoId=fBozSSLxFvI`.
+  - `portalWikiEditedTranscriptAvailable=false`.
+  - `captionOrTranscriptUsableAsSourceLineage=false`.
+  - `transcriptAuditPromotesWzMasses=false`.
+  - `transcriptAuditPromotesHiggsMass=false`.
+  - `canFillPhase201WzContract=false`.
+- Scanner reruns after adding Phase316 found no intake-ready artifacts:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `canPromoteHiggsQuarticSelfCouplingSource=false` and
+    `intakeReadyFindingCount=0`.
+  - P281 `geometricRefractiveUnificationSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P295 `intakeReadyObservedFieldExtractionCandidateCount=0` and
+    `anyObservedFieldExtractionCandidateFillsContract=false`.
+  - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
+    `anySourceLineageCandidateFillsContract=false`.
+- P101 regenerated with Phase316 included and remained
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase316 included and remained
+  `objectiveAchieved=false`, with `checklistPassedCount=109` and
+  `checklistFailedCount=3`.
+- Claim-integrity verifier passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed and reran
+  Phase316 in both generator passes, ending with P101 blocked, P202 incomplete
+  at `109/3`, and claim integrity verified.
+- `dotnet test GeometricUnity.slnx` passed. The existing xUnit analyzer warning
+  in `QuantitativeValidationTests.cs(315,9)` remains present.
