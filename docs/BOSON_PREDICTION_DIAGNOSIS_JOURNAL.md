@@ -7904,3 +7904,101 @@ self-coupling or excitation lineage.
 This validation section records the final negative outcome of Phase314: the
 dimension/Casimir arithmetic lead is real enough to preserve, but it is not a
 source-backed W/Z physical mass prediction.
+
+## 2026-05-20T15:48:18-04:00 - UCSD Dark to Geometric Energy Public Lead Checked as Phase315
+
+### Trigger
+
+After Phase314 closed the dimension/Casimir route, I searched current public
+Geometric Unity material again for any source lead not already covered by the
+official draft, GU-RVG, Cox, Pati-Salam, or completion-draft audits. The
+remaining public lead was the 2025 UCSD lecture page, `From Dark to Geometric
+Energy - A Sector of Geometric Unity`.
+
+### Attempt
+
+- Launched a bounded explorer agent to search for unreviewed local source
+  leads, but the agent immediately hit the usage limit and returned no
+  findings.
+- Searched public sources and found:
+  - Portal Group page:
+    `https://theportal.group/from-dark-to-geometric-energy-a-sector-of-geometric-unity/`.
+  - Portal Wiki metadata page:
+    `https://theportal.wiki/wiki/From_Dark_to_Geometric_Energy_-_A_Sector_of_Geometric_Unity_%28YouTube_Content%29`.
+- Added `studies/phase315_ucsd_dark_geometric_energy_source_audit_001`.
+- Checked the public abstract against Phase201 W/Z and Higgs source-lineage
+  contracts, Phase256 observed-field extraction, Phase235 Pati-Salam
+  normalization, Phase236 low-energy RG/threshold transport, Phase312 public
+  GU-RVG delta, Phase313 official-draft electroweak projection map, and
+  Phase314 dimension/Casimir W/Z source-law audit.
+
+### Result
+
+- Phase315 passed as a negative audit with:
+  - `ucsdDarkGeometricEnergySourceAuditPassed=true`.
+  - `ucsdDarkGeometricEnergyLeadPresent=true`.
+  - `ucsdDarkGeometricEnergyPublicAbstractAvailable=true`.
+  - `ucsdDarkGeometricEnergyEditedTranscriptAvailable=false`.
+  - `ucsdDarkGeometricEnergyMentionsThreePatiSalamGenerations=true`.
+  - `ucsdDarkGeometricEnergyMentionsSeibergWittenMonopoleEquations=true`.
+  - `ucsdDarkGeometricEnergyPromotesWzMasses=false`.
+  - `ucsdDarkGeometricEnergyPromotesHiggsMass=false`.
+  - `ucsdDarkGeometricEnergyCompletesBosonPredictions=false`.
+  - `canFillPhase201WzContract=false`.
+  - `canFillPhase201HiggsContract=false`.
+  - `canFillPhase256ObservedFieldExtractionContract=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs mass predictions from the UCSD Dark to Geometric
+Energy public lead. The abstract is relevant GU research evidence for
+dark-energy geometry, Pati-Salam generations, and Seiberg-Witten alignment, but
+the available public material does not supply transcript-level derivation,
+W/Z source rows, low-energy weak-coupling or VEV source, photon/W/Z projection,
+observed-field extraction, or Higgs scalar-source/self-coupling lineage.
+
+### Remaining Blocker
+
+The W/Z path still requires a GU-local source theorem with separate W and Z
+rows, low-energy electroweak transport/source closure, observed photon/W/Z
+projection rows, and branch-stable gates. Higgs remains separately blocked by
+missing scalar-source/operator/profile/self-coupling lineage.
+
+### Validation
+
+- Initial targeted Phase315 run failed because the new project copied an old
+  `net9.0` target while the current shell exposes only the .NET 10 runtime.
+  I changed the new project to `net10.0`, matching Phase314, and reran it.
+- Targeted Phase315 run then passed with
+  `ucsdDarkGeometricEnergySourceAuditPassed=true` and
+  `canFillPhase201WzContract=false`.
+- P101 regenerated with Phase315 included and remained
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase315 included and remained
+  `objectiveAchieved=false`, with `checklistPassedCount=108` and
+  `checklistFailedCount=3`.
+- Claim-integrity verifier passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Source, Higgs, GU/RVG, observed-field, and source-lineage scanners after the
+  Phase315 code/docs changes found no intake-ready artifacts:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `canPromoteHiggsQuarticSelfCouplingSource=false` and
+    `intakeReadyFindingCount=0`.
+  - P281 `geometricRefractiveUnificationSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P295 `intakeReadyObservedFieldExtractionCandidateCount=0` and
+    `anyObservedFieldExtractionCandidateFillsContract=false`.
+  - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
+    `anySourceLineageCandidateFillsContract=false`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed and reran
+  Phase315 in both generator passes, ending with P101 blocked, P202 incomplete
+  at `108/3`, and claim integrity verified.
+- `dotnet test GeometricUnity.slnx` passed. The existing xUnit analyzer warning
+  in `QuantitativeValidationTests.cs(315,9)` remains present.
+- `git diff --check` passed.
+
+This validation section records the current negative outcome of Phase315: the
+UCSD public lead is preserved as research context, but it is not a promotable
+W/Z/H physical mass prediction.

@@ -80,6 +80,7 @@ const string Phase281Path = "studies/phase281_geometric_refractive_unification_s
 const string Phase312Path = "studies/phase312_current_public_gu_rvg_revision_delta_audit_001/output/current_public_gu_rvg_revision_delta_audit_summary.json";
 const string Phase313Path = "studies/phase313_official_draft_electroweak_projection_map_audit_001/output/official_draft_electroweak_projection_map_audit_summary.json";
 const string Phase314Path = "studies/phase314_dimension_casimir_wz_source_law_audit_001/output/dimension_casimir_wz_source_law_audit_summary.json";
+const string Phase315Path = "studies/phase315_ucsd_dark_geometric_energy_source_audit_001/output/ucsd_dark_geometric_energy_source_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -193,6 +194,7 @@ using var phase281 = File.Exists(Phase281Path) ? JsonDocument.Parse(File.ReadAll
 using var phase312 = File.Exists(Phase312Path) ? JsonDocument.Parse(File.ReadAllText(Phase312Path)) : null;
 using var phase313 = File.Exists(Phase313Path) ? JsonDocument.Parse(File.ReadAllText(Phase313Path)) : null;
 using var phase314 = File.Exists(Phase314Path) ? JsonDocument.Parse(File.ReadAllText(Phase314Path)) : null;
+using var phase315 = File.Exists(Phase315Path) ? JsonDocument.Parse(File.ReadAllText(Phase315Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -1045,6 +1047,35 @@ var dimensionCasimirWzSourceLawAuditPassed = dimensionCasimirWzSourceLawAuditMat
     && JsonBool(phase314.RootElement, "canFillPhase201WzContract") is false
     && JsonInt(phase314.RootElement, "wzMissingFieldCount") == wzMissingFieldCount
     && JsonInt(phase314.RootElement, "higgsMissingFieldCount") == higgsMissingFieldCount;
+var ucsdDarkGeometricEnergySourceAuditMaterialized = phase315 is not null;
+var ucsdDarkGeometricEnergySourceAuditPassed = ucsdDarkGeometricEnergySourceAuditMaterialized
+    && JsonBool(phase315!.RootElement, "ucsdDarkGeometricEnergySourceAuditPassed") is true
+    && JsonBool(phase315.RootElement, "ucsdDarkGeometricEnergyLeadPresent") is true
+    && JsonBool(phase315.RootElement, "ucsdDarkGeometricEnergyPublicAbstractAvailable") is true
+    && JsonBool(phase315.RootElement, "ucsdDarkGeometricEnergyEditedTranscriptAvailable") is false
+    && JsonBool(phase315.RootElement, "ucsdDarkGeometricEnergyMentionsThreePatiSalamGenerations") is true
+    && JsonBool(phase315.RootElement, "ucsdDarkGeometricEnergyMentionsSeibergWittenMonopoleEquations") is true
+    && JsonBool(phase315.RootElement, "ucsdDarkGeometricEnergyPromotesWzMasses") is false
+    && JsonBool(phase315.RootElement, "ucsdDarkGeometricEnergyPromotesHiggsMass") is false
+    && JsonBool(phase315.RootElement, "ucsdDarkGeometricEnergyCompletesBosonPredictions") is false
+    && phase315.RootElement.TryGetProperty("ucsdDarkGeometricEnergyBoundary", out var p315Boundary)
+    && JsonBool(p315Boundary, "ucsdDarkGeometricEnergyProvidesGuLocalWzTheorem") is false
+    && JsonBool(p315Boundary, "ucsdDarkGeometricEnergyProvidesSeparateWzSourceRows") is false
+    && JsonBool(p315Boundary, "ucsdDarkGeometricEnergyProvidesTargetIndependentVevSource") is false
+    && JsonBool(p315Boundary, "ucsdDarkGeometricEnergyProvidesLowEnergyWeakCouplingSource") is false
+    && JsonBool(p315Boundary, "ucsdDarkGeometricEnergyProvidesPhotonWzEigenstateProjectionRows") is false
+    && JsonBool(p315Boundary, "ucsdDarkGeometricEnergyProvidesObservedFieldExtraction") is false
+    && JsonBool(p315Boundary, "ucsdDarkGeometricEnergyProvidesHiggsScalarSourceOperator") is false
+    && JsonBool(p315Boundary, "ucsdDarkGeometricEnergyProvidesHiggsSelfCouplingSource") is false
+    && phase315.RootElement.TryGetProperty("contractImpact", out var p315ContractImpact)
+    && JsonBool(p315ContractImpact, "canFillPhase201WzContract") is false
+    && JsonBool(p315ContractImpact, "canFillPhase201HiggsContract") is false
+    && JsonBool(p315ContractImpact, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonInt(p315ContractImpact, "wzMissingFieldCount") == wzMissingFieldCount
+    && JsonInt(p315ContractImpact, "higgsMissingFieldCount") == higgsMissingFieldCount
+    && phase315.RootElement.TryGetProperty("publicSources", out var p315PublicSources)
+    && p315PublicSources.ValueKind == JsonValueKind.Array
+    && p315PublicSources.GetArrayLength() >= 2;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -2534,6 +2565,14 @@ var checklist = new[]
             : "Phase314 artifact not materialized",
         Phase314Path),
     new ObjectiveChecklistItem(
+        "ucsd-dark-geometric-energy-source-audit-materialized",
+        "Audit whether the 2025 UCSD Dark to Geometric Energy public-source lead supplies promotable W/Z/H source-lineage predictions.",
+        ucsdDarkGeometricEnergySourceAuditPassed ? "passed" : "failed",
+        ucsdDarkGeometricEnergySourceAuditMaterialized
+            ? $"ucsdDarkGeometricEnergySourceAuditPassed={JsonBool(phase315!.RootElement, "ucsdDarkGeometricEnergySourceAuditPassed")}; leadPresent={JsonBool(phase315.RootElement, "ucsdDarkGeometricEnergyLeadPresent")}; publicAbstractAvailable={JsonBool(phase315.RootElement, "ucsdDarkGeometricEnergyPublicAbstractAvailable")}; editedTranscriptAvailable={JsonBool(phase315.RootElement, "ucsdDarkGeometricEnergyEditedTranscriptAvailable")}; mentionsThreePatiSalamGenerations={JsonBool(phase315.RootElement, "ucsdDarkGeometricEnergyMentionsThreePatiSalamGenerations")}; mentionsSeibergWitten={JsonBool(phase315.RootElement, "ucsdDarkGeometricEnergyMentionsSeibergWittenMonopoleEquations")}; promotesWzMasses={JsonBool(phase315.RootElement, "ucsdDarkGeometricEnergyPromotesWzMasses")}; promotesHiggsMass={JsonBool(phase315.RootElement, "ucsdDarkGeometricEnergyPromotesHiggsMass")}; completesBosonPredictions={JsonBool(phase315.RootElement, "ucsdDarkGeometricEnergyCompletesBosonPredictions")}; canFillPhase201WzContract={(phase315.RootElement.TryGetProperty("contractImpact", out var p315ChecklistContract) ? JsonBool(p315ChecklistContract, "canFillPhase201WzContract") : null)}; canFillPhase201HiggsContract={(phase315.RootElement.TryGetProperty("contractImpact", out p315ChecklistContract) ? JsonBool(p315ChecklistContract, "canFillPhase201HiggsContract") : null)}; decision={JsonString(phase315.RootElement, "decision")}"
+            : "Phase315 artifact not materialized",
+        Phase315Path),
+    new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
         branchLocalDirectInvariantCensusPassed ? "passed" : "failed",
@@ -2881,6 +2920,7 @@ var result = new
     officialDraftParameterSourceGapAuditPassed,
     officialDraftElectroweakProjectionMapAuditPassed,
     dimensionCasimirWzSourceLawAuditPassed,
+    ucsdDarkGeometricEnergySourceAuditPassed,
     parameterSourceContractCandidateScanPassed,
     phase288CoverageFalseNegativeAuditPassed,
     chargedLeptonThresholdSourceReplacementAuditPassed,
@@ -2980,6 +3020,7 @@ var result = new
         phase312Path = Phase312Path,
         phase313Path = Phase313Path,
         phase314Path = Phase314Path,
+        phase315Path = Phase315Path,
         phase282Path = Phase282Path,
         phase283Path = Phase283Path,
         phase284Path = Phase284Path,

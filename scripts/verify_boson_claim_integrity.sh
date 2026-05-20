@@ -84,6 +84,7 @@ const paths = {
   phase312: "studies/phase312_current_public_gu_rvg_revision_delta_audit_001/output/current_public_gu_rvg_revision_delta_audit_summary.json",
   phase313: "studies/phase313_official_draft_electroweak_projection_map_audit_001/output/official_draft_electroweak_projection_map_audit_summary.json",
   phase314: "studies/phase314_dimension_casimir_wz_source_law_audit_001/output/dimension_casimir_wz_source_law_audit_summary.json",
+  phase315: "studies/phase315_ucsd_dark_geometric_energy_source_audit_001/output/ucsd_dark_geometric_energy_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -239,6 +240,7 @@ const phase281 = requireFile(paths.phase281);
 const phase312 = requireFile(paths.phase312);
 const phase313 = requireFile(paths.phase313);
 const phase314 = requireFile(paths.phase314);
+const phase315 = requireFile(paths.phase315);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -1224,6 +1226,27 @@ if (sourceLineageMissing) {
   assert(phase314.canFillPhase201WzContract === false, "Phase314 cannot fill the Phase201 W/Z source contract.");
   assert(phase314.wzMissingFieldCount === missingWzFields, "Phase314 W/Z missing-field count must match Phase213.");
   assert(phase314.higgsMissingFieldCount === missingHiggsFields, "Phase314 Higgs missing-field count must match Phase213.");
+  assert(phase315.ucsdDarkGeometricEnergySourceAuditPassed === true, "Phase315 UCSD Dark to Geometric Energy source audit must pass while preserving non-promotional status.");
+  assert(phase315.ucsdDarkGeometricEnergyLeadPresent === true, "Phase315 must record the UCSD Dark to Geometric Energy public-source lead.");
+  assert(phase315.ucsdDarkGeometricEnergyPublicAbstractAvailable === true, "Phase315 must record that a public abstract is available.");
+  assert(phase315.ucsdDarkGeometricEnergyEditedTranscriptAvailable === false, "Phase315 must not claim an edited transcript is available.");
+  assert(phase315.ucsdDarkGeometricEnergyMentionsThreePatiSalamGenerations === true, "Phase315 must preserve the three Pati-Salam generations lead.");
+  assert(phase315.ucsdDarkGeometricEnergyMentionsSeibergWittenMonopoleEquations === true, "Phase315 must preserve the Seiberg-Witten monopole alignment lead.");
+  assert(phase315.ucsdDarkGeometricEnergyBoundary?.ucsdDarkGeometricEnergyProvidesGuLocalWzTheorem === false, "Phase315 cannot claim a GU-local W/Z theorem from the public abstract.");
+  assert(phase315.ucsdDarkGeometricEnergyBoundary?.ucsdDarkGeometricEnergyProvidesSeparateWzSourceRows === false, "Phase315 cannot claim separate W/Z source rows from the public abstract.");
+  assert(phase315.ucsdDarkGeometricEnergyBoundary?.ucsdDarkGeometricEnergyProvidesLowEnergyWeakCouplingSource === false, "Phase315 cannot claim a low-energy weak-coupling source from the public abstract.");
+  assert(phase315.ucsdDarkGeometricEnergyBoundary?.ucsdDarkGeometricEnergyProvidesPhotonWzEigenstateProjectionRows === false, "Phase315 cannot claim photon/W/Z eigenstate projection rows from the public abstract.");
+  assert(phase315.ucsdDarkGeometricEnergyBoundary?.ucsdDarkGeometricEnergyProvidesObservedFieldExtraction === false, "Phase315 cannot fill observed-field extraction from the public abstract.");
+  assert(phase315.ucsdDarkGeometricEnergyBoundary?.ucsdDarkGeometricEnergyProvidesHiggsScalarSourceOperator === false, "Phase315 cannot claim a Higgs scalar source operator from the public abstract.");
+  assert(phase315.ucsdDarkGeometricEnergyBoundary?.ucsdDarkGeometricEnergyProvidesHiggsSelfCouplingSource === false, "Phase315 cannot claim a Higgs self-coupling source from the public abstract.");
+  assert(phase315.ucsdDarkGeometricEnergyPromotesWzMasses === false, "Phase315 cannot promote W/Z masses.");
+  assert(phase315.ucsdDarkGeometricEnergyPromotesHiggsMass === false, "Phase315 cannot promote Higgs mass.");
+  assert(phase315.ucsdDarkGeometricEnergyCompletesBosonPredictions === false, "Phase315 cannot complete boson predictions.");
+  assert(phase315.contractImpact?.canFillPhase201WzContract === false, "Phase315 cannot fill the Phase201 W/Z source contract.");
+  assert(phase315.contractImpact?.canFillPhase201HiggsContract === false, "Phase315 cannot fill the Phase201 Higgs source contract.");
+  assert(phase315.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase315 cannot fill the Phase256 observed-field extraction contract.");
+  assert(phase315.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase315 W/Z missing-field count must match Phase213.");
+  assert(phase315.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase315 Higgs missing-field count must match Phase213.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");
