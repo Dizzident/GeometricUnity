@@ -198,6 +198,7 @@ const string Phase307TargetIndependentDecoupledWzRowSelectionLawAuditPath = "stu
 const string Phase308Phase302ScaleTransferToDecoupledChargedLadderAuditPath = "studies/phase308_phase302_scale_transfer_to_decoupled_charged_ladder_audit_001/output/phase302_scale_transfer_to_decoupled_charged_ladder_audit.json";
 const string Phase309SourceModeVectorLengthMeasureNormalizationAuditPath = "studies/phase309_source_mode_vector_length_measure_normalization_audit_001/output/source_mode_vector_length_measure_normalization_audit.json";
 const string Phase310CompletionVariationalBranchToWzNormalizationAuditPath = "studies/phase310_completion_variational_branch_to_wz_normalization_audit_001/output/completion_variational_branch_to_wz_normalization_audit.json";
+const string Phase311CompletionObservedSectorWzRowSelectorAuditPath = "studies/phase311_completion_observed_sector_wz_row_selector_audit_001/output/completion_observed_sector_wz_row_selector_audit.json";
 
 var outputDir = Environment.GetEnvironmentVariable("PHASE101_OUTPUT_DIR") ?? DefaultOutputDir;
 Directory.CreateDirectory(outputDir);
@@ -386,6 +387,7 @@ using var phase307 = TryParseJson(Phase307TargetIndependentDecoupledWzRowSelecti
 using var phase308 = TryParseJson(Phase308Phase302ScaleTransferToDecoupledChargedLadderAuditPath);
 using var phase309 = TryParseJson(Phase309SourceModeVectorLengthMeasureNormalizationAuditPath);
 using var phase310 = TryParseJson(Phase310CompletionVariationalBranchToWzNormalizationAuditPath);
+using var phase311 = TryParseJson(Phase311CompletionObservedSectorWzRowSelectorAuditPath);
 
 bool internalReady = JsonBool(readiness.RootElement, "internalBosonReplayPredictionReady") ?? false;
 bool externalReady = JsonBool(readiness.RootElement, "externalPhysicalComparisonReady") ?? false;
@@ -637,6 +639,7 @@ var package = new
         phase302ScaleTransferToDecoupledChargedLadderAuditPath = File.Exists(Phase308Phase302ScaleTransferToDecoupledChargedLadderAuditPath) ? Phase308Phase302ScaleTransferToDecoupledChargedLadderAuditPath : null,
         sourceModeVectorLengthMeasureNormalizationAuditPath = File.Exists(Phase309SourceModeVectorLengthMeasureNormalizationAuditPath) ? Phase309SourceModeVectorLengthMeasureNormalizationAuditPath : null,
         completionVariationalBranchToWzNormalizationAuditPath = File.Exists(Phase310CompletionVariationalBranchToWzNormalizationAuditPath) ? Phase310CompletionVariationalBranchToWzNormalizationAuditPath : null,
+        completionObservedSectorWzRowSelectorAuditPath = File.Exists(Phase311CompletionObservedSectorWzRowSelectorAuditPath) ? Phase311CompletionObservedSectorWzRowSelectorAuditPath : null,
         materializedModePath = JsonString(phase99.RootElement, "materializedModePath"),
         replayProbePath = JsonString(phase99.RootElement, "replayProbePath"),
     },
@@ -3013,6 +3016,39 @@ var package = new
             decision = JsonString(phase310.RootElement, "decision"),
         }
         : null,
+    completionObservedSectorWzRowSelectorAudit = phase311 is not null
+        ? new
+        {
+            status = JsonString(phase311.RootElement, "terminalStatus"),
+            completionObservedSectorWzRowSelectorAuditPassed = JsonBool(phase311.RootElement, "completionObservedSectorWzRowSelectorAuditPassed"),
+            targetObservablesUsedForConstruction = JsonBool(phase311.RootElement, "targetObservablesUsedForConstruction"),
+            targetValuesUsedOnlyForPostCandidateEvaluation = JsonBool(phase311.RootElement, "targetValuesUsedOnlyForPostCandidateEvaluation"),
+            completionDraftObservedSectorProgramPresent = JsonBool(phase311.RootElement, "completionDraftObservedSectorProgramPresent"),
+            completionDraftTreatsObservedSectorAsPhenomenologicalMapping = JsonBool(phase311.RootElement, "completionDraftTreatsObservedSectorAsPhenomenologicalMapping"),
+            completionDraftRequiresTypedObservableMapBeforeComparison = JsonBool(phase311.RootElement, "completionDraftRequiresTypedObservableMapBeforeComparison"),
+            completionDraftProvidesCanonicalWzRowSelector = JsonBool(phase311.RootElement, "completionDraftProvidesCanonicalWzRowSelector"),
+            completionDraftProvidesPhotonWzEigenstateProjectionRows = JsonBool(phase311.RootElement, "completionDraftProvidesPhotonWzEigenstateProjectionRows"),
+            completionDraftProvidesPhysicalWzObservableMap = JsonBool(phase311.RootElement, "completionDraftProvidesPhysicalWzObservableMap"),
+            completionDraftProvidesBranchStableObservedWzRows = JsonBool(phase311.RootElement, "completionDraftProvidesBranchStableObservedWzRows"),
+            completionDraftCanPromotePhase307Selector = JsonBool(phase311.RootElement, "completionDraftCanPromotePhase307Selector"),
+            phase307RowsHaveObservedSectorMapId = JsonBool(phase311.RootElement, "phase307RowsHaveObservedSectorMapId"),
+            phase307RowsHaveElectroweakGaugeEmbeddingId = JsonBool(phase311.RootElement, "phase307RowsHaveElectroweakGaugeEmbeddingId"),
+            phase307RowsHaveQuadraticElectroweakMassOperatorId = JsonBool(phase311.RootElement, "phase307RowsHaveQuadraticElectroweakMassOperatorId"),
+            phase307RowsHavePhotonMasslessGate = JsonBool(phase311.RootElement, "phase307RowsHavePhotonMasslessGate"),
+            phase307WRowsHavePhysicalEigenstateProjectionId = JsonBool(phase311.RootElement, "phase307WRowsHavePhysicalEigenstateProjectionId"),
+            phase307ZRowsHavePhysicalEigenstateProjectionId = JsonBool(phase311.RootElement, "phase307ZRowsHavePhysicalEigenstateProjectionId"),
+            phase307ObservedProjectionBranchStable = JsonBool(phase311.RootElement, "phase307ObservedProjectionBranchStable"),
+            phase307ObservedProjectionTargetBlindHashPresent = JsonBool(phase311.RootElement, "phase307ObservedProjectionTargetBlindHashPresent"),
+            phase295PhotonEigenstateProjectionIntakeReady = JsonBool(phase311.RootElement, "phase295PhotonEigenstateProjectionIntakeReady"),
+            phase295WSourceRowIntakeReady = JsonBool(phase311.RootElement, "phase295WSourceRowIntakeReady"),
+            phase295ZSourceRowIntakeReady = JsonBool(phase311.RootElement, "phase295ZSourceRowIntakeReady"),
+            phase307SelectorStillNonPromotable = JsonBool(phase311.RootElement, "phase307SelectorStillNonPromotable"),
+            canFillPhase201WzContract = JsonBool(phase311.RootElement, "canFillPhase201WzContract"),
+            wzMissingFieldCount = JsonInt(phase311.RootElement, "wzMissingFieldCount"),
+            higgsMissingFieldCount = JsonInt(phase311.RootElement, "higgsMissingFieldCount"),
+            decision = JsonString(phase311.RootElement, "decision"),
+        }
+        : null,
     nextPhasePrerequisites = phase192 is not null
         ? new
         {
@@ -4753,6 +4789,18 @@ var summary = new
         : null,
     completionVariationalBranchCanFillPhase201Contract = phase310 is not null
         ? JsonBool(phase310.RootElement, "canFillPhase201WzContract")
+        : null,
+    completionObservedSectorWzRowSelectorAuditPassed = phase311 is not null
+        ? JsonBool(phase311.RootElement, "completionObservedSectorWzRowSelectorAuditPassed")
+        : null,
+    completionObservedSectorProgramPresent = phase311 is not null
+        ? JsonBool(phase311.RootElement, "completionDraftObservedSectorProgramPresent")
+        : null,
+    completionObservedSectorCanPromotePhase307Selector = phase311 is not null
+        ? JsonBool(phase311.RootElement, "completionDraftCanPromotePhase307Selector")
+        : null,
+    completionObservedSectorCanFillPhase201Contract = phase311 is not null
+        ? JsonBool(phase311.RootElement, "canFillPhase201WzContract")
         : null,
     packagePath,
 };

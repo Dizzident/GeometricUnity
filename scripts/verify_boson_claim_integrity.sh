@@ -110,6 +110,7 @@ const paths = {
   phase308: "studies/phase308_phase302_scale_transfer_to_decoupled_charged_ladder_audit_001/output/phase302_scale_transfer_to_decoupled_charged_ladder_audit_summary.json",
   phase309: "studies/phase309_source_mode_vector_length_measure_normalization_audit_001/output/source_mode_vector_length_measure_normalization_audit_summary.json",
   phase310: "studies/phase310_completion_variational_branch_to_wz_normalization_audit_001/output/completion_variational_branch_to_wz_normalization_audit_summary.json",
+  phase311: "studies/phase311_completion_observed_sector_wz_row_selector_audit_001/output/completion_observed_sector_wz_row_selector_audit_summary.json",
 };
 
 const failures = [];
@@ -261,6 +262,7 @@ const phase307 = requireFile(paths.phase307);
 const phase308 = requireFile(paths.phase308);
 const phase309 = requireFile(paths.phase309);
 const phase310 = requireFile(paths.phase310);
+const phase311 = requireFile(paths.phase311);
 
 assert(phase201.intakeContractMaterialized === true, "Phase201 intake contract must be materialized before publication.");
 assert(phase213.blockerMatrixReady === true, "Phase213 blocker matrix must be ready before publication.");
@@ -1819,6 +1821,32 @@ if (sourceLineageMissing) {
   assert(phase310.canFillPhase201WzContract === false, "Phase310 cannot fill the Phase201 W/Z contract.");
   assert(phase310.wzMissingFieldCount === missingWzFields, "Phase310 W/Z missing-field count must match Phase213.");
   assert(phase310.higgsMissingFieldCount === missingHiggsFields, "Phase310 Higgs missing-field count must match Phase213.");
+  assert(phase311.completionObservedSectorWzRowSelectorAuditPassed === true, "Phase311 completion observed-sector W/Z row-selector audit must pass as a non-promotional audit.");
+  assert(phase311.targetObservablesUsedForConstruction === false, "Phase311 construction must not use target observables.");
+  assert(phase311.targetValuesUsedOnlyForPostCandidateEvaluation === true, "Phase311 may only inherit targets for post-candidate evaluation.");
+  assert(phase311.completionDraftObservedSectorProgramPresent === true, "Phase311 must confirm the completion revision has observed-sector recovery governance.");
+  assert(phase311.completionDraftTreatsObservedSectorAsPhenomenologicalMapping === true, "Phase311 must keep observed-sector mappings below theorem status.");
+  assert(phase311.completionDraftRequiresTypedObservableMapBeforeComparison === true, "Phase311 must preserve the typed observable-map requirement.");
+  assert(phase311.completionDraftProvidesCanonicalWzRowSelector === false, "Phase311 cannot claim a canonical physical W/Z row selector.");
+  assert(phase311.completionDraftProvidesPhotonWzEigenstateProjectionRows === false, "Phase311 cannot claim photon/W/Z eigenstate projection rows.");
+  assert(phase311.completionDraftProvidesPhysicalWzObservableMap === false, "Phase311 cannot claim a physical W/Z observable map.");
+  assert(phase311.completionDraftProvidesBranchStableObservedWzRows === false, "Phase311 cannot claim branch-stable observed W/Z rows.");
+  assert(phase311.completionDraftCanPromotePhase307Selector === false, "Phase311 cannot promote the Phase307 selector.");
+  assert(phase311.phase307RowsHaveObservedSectorMapId === false, "Phase311 must show Phase307 rows lack an observed-sector map id.");
+  assert(phase311.phase307RowsHaveElectroweakGaugeEmbeddingId === false, "Phase311 must show Phase307 rows lack an electroweak gauge embedding id.");
+  assert(phase311.phase307RowsHaveQuadraticElectroweakMassOperatorId === false, "Phase311 must show Phase307 rows lack a quadratic electroweak mass-operator id.");
+  assert(phase311.phase307RowsHavePhotonMasslessGate === false, "Phase311 must show Phase307 rows lack a photon massless gate.");
+  assert(phase311.phase307WRowsHavePhysicalEigenstateProjectionId === false, "Phase311 must show Phase307 W rows lack a physical eigenstate projection id.");
+  assert(phase311.phase307ZRowsHavePhysicalEigenstateProjectionId === false, "Phase311 must show Phase307 Z rows lack a physical eigenstate projection id.");
+  assert(phase311.phase307ObservedProjectionBranchStable === false, "Phase311 must show Phase307 observed projection is not branch-stable.");
+  assert(phase311.phase307ObservedProjectionTargetBlindHashPresent === false, "Phase311 must show Phase307 observed projection has no target-blind hash.");
+  assert(phase311.phase295PhotonEigenstateProjectionIntakeReady === false, "Phase311 must preserve the missing photon eigenstate projection intake field.");
+  assert(phase311.phase295WSourceRowIntakeReady === false, "Phase311 must preserve the missing W source-row intake field.");
+  assert(phase311.phase295ZSourceRowIntakeReady === false, "Phase311 must preserve the missing Z source-row intake field.");
+  assert(phase311.phase307SelectorStillNonPromotable === true, "Phase311 must preserve Phase307 selector nonpromotability.");
+  assert(phase311.canFillPhase201WzContract === false, "Phase311 cannot fill the Phase201 W/Z contract.");
+  assert(phase311.wzMissingFieldCount === missingWzFields, "Phase311 W/Z missing-field count must match Phase213.");
+  assert(phase311.higgsMissingFieldCount === missingHiggsFields, "Phase311 Higgs missing-field count must match Phase213.");
 }
 
 for (const [label, validation, templatePath] of [

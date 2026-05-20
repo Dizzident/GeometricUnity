@@ -7498,3 +7498,92 @@ The remaining W/Z blocker is still theorem-level: derive vector-length normaliza
 - `dotnet test GeometricUnity.slnx` passed.
 
 This validation section adds no promotable source claim; it records the final negative outcome of Phase310 and the post-change validation commands.
+
+## 2026-05-20T11:59:44-04:00 - Completion Observed-Sector W/Z Row Selector Checked as Phase311
+
+### Attempt
+
+After Phase310 closed the variational-workbench normalization loophole, I
+checked the next narrow possibility: whether the latest completion draft's
+observed-sector recovery program supplies a canonical physical W/Z row selector
+that can promote Phase307's target-independent decoupled source-side rows.
+
+I launched a focused explorer agent to independently inspect the v29 completion
+draft and the Phase255/257/295/307/310 artifacts for a row-selector theorem,
+photon/W/Z eigenstate projection, or observed electroweak map. The agent found
+the same boundary: Phase307 has source-side selectors, but no physical
+electroweak observable map or eigenstate projection attaches those rows to W/Z
+mass observables.
+
+### Work Performed
+
+- Added `studies/phase311_completion_observed_sector_wz_row_selector_audit_001`.
+- Recorded v29 evidence that observed-sector recovery, representation
+  decomposition, and prediction validation governance are present.
+- Recorded v29 evidence that observed-sector mappings remain
+  phenomenological/branch-local, require typed observable maps, and leave
+  representation decomposition of observed bosons as an open proof obligation.
+- Cross-checked that evidence against Phase255, Phase257, Phase295, Phase307,
+  Phase310, and Phase213.
+- Wired Phase311 into the generator, P101 package, P202 objective audit,
+  claim-integrity verifier, source scanners, and implementation docs.
+
+### Result
+
+- Phase311 passed as a negative audit with:
+  - `completionObservedSectorWzRowSelectorAuditPassed=true`.
+  - `completionDraftObservedSectorProgramPresent=true`.
+  - `completionDraftProvidesCanonicalWzRowSelector=false`.
+  - `completionDraftProvidesPhotonWzEigenstateProjectionRows=false`.
+  - `completionDraftProvidesPhysicalWzObservableMap=false`.
+  - `completionDraftCanPromotePhase307Selector=false`.
+  - `phase307RowsHaveObservedSectorMapId=false`.
+  - `phase295PhotonEigenstateProjectionIntakeReady=false`.
+  - `phase295WSourceRowIntakeReady=false`.
+  - `phase295ZSourceRowIntakeReady=false`.
+  - `phase307SelectorStillNonPromotable=true`.
+  - `canFillPhase201WzContract=false`.
+
+### Decision
+
+Do not promote the Phase307 W/Z row selector from the completion draft's
+observed-sector recovery program. The draft supplies governance and proof
+obligations, not a theorem deriving physical photon/W/Z projection rows or a
+branch-stable W/Z observable map.
+
+### Remaining Blocker
+
+The remaining W/Z blocker is now isolated more sharply: a new artifact must
+derive a canonical physical W/Z row selector and photon/W/Z eigenstate
+projection rows from the observed-sector representation decomposition, then
+connect them to the source-side normalization law before target comparison.
+Higgs remains separately blocked by missing scalar-source lineage.
+
+### Validation
+
+- Targeted Phase311 run passed with
+  `completionObservedSectorWzRowSelectorAuditPassed=true` and
+  `canFillPhase201WzContract=false`.
+- P101 regenerated with Phase311 included and remained
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase311 included and remained
+  `objectiveAchieved=false`, with `checklistPassedCount=104` and
+  `checklistFailedCount=3`.
+- Claim-integrity verifier passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Source and observed-field scanners after the Phase311 code/docs/journal
+  changes found no intake-ready artifacts:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `canPromoteHiggsQuarticSelfCouplingSource=false`.
+  - P295 `intakeReadyObservedFieldExtractionCandidateCount=0`.
+  - P296 `intakeReadySourceLineageFieldCandidateCount=0`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed and reran
+  Phase311 in both generator passes.
+- `dotnet test GeometricUnity.slnx` passed.
+- `git diff --check` passed.
+
+This validation section adds no promotable physical mass claim; it records that
+Phase311 is a diagnostic boundary around the observed-sector row-selector
+loophole.

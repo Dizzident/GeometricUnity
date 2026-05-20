@@ -106,6 +106,7 @@ const string Phase307Path = "studies/phase307_target_independent_decoupled_wz_ro
 const string Phase308Path = "studies/phase308_phase302_scale_transfer_to_decoupled_charged_ladder_audit_001/output/phase302_scale_transfer_to_decoupled_charged_ladder_audit_summary.json";
 const string Phase309Path = "studies/phase309_source_mode_vector_length_measure_normalization_audit_001/output/source_mode_vector_length_measure_normalization_audit_summary.json";
 const string Phase310Path = "studies/phase310_completion_variational_branch_to_wz_normalization_audit_001/output/completion_variational_branch_to_wz_normalization_audit_summary.json";
+const string Phase311Path = "studies/phase311_completion_observed_sector_wz_row_selector_audit_001/output/completion_observed_sector_wz_row_selector_audit_summary.json";
 
 var outputDir = Environment.GetEnvironmentVariable("PHASE202_OUTPUT_DIR") ?? DefaultOutputDir;
 Directory.CreateDirectory(outputDir);
@@ -215,6 +216,7 @@ using var phase307 = File.Exists(Phase307Path) ? JsonDocument.Parse(File.ReadAll
 using var phase308 = File.Exists(Phase308Path) ? JsonDocument.Parse(File.ReadAllText(Phase308Path)) : null;
 using var phase309 = File.Exists(Phase309Path) ? JsonDocument.Parse(File.ReadAllText(Phase309Path)) : null;
 using var phase310 = File.Exists(Phase310Path) ? JsonDocument.Parse(File.ReadAllText(Phase310Path)) : null;
+using var phase311 = File.Exists(Phase311Path) ? JsonDocument.Parse(File.ReadAllText(Phase311Path)) : null;
 
 var allKnownBosonValuesDefensible = JsonBool(phase192.RootElement, "allKnownBosonValuesDefensible") is true;
 var completionAuditPassed = JsonBool(phase193.RootElement, "allSuccessCriteriaMet") is true;
@@ -1787,6 +1789,34 @@ var completionVariationalBranchToWzNormalizationAuditPassed = completionVariatio
     && JsonBool(phase310.RootElement, "canFillPhase201WzContract") is false
     && JsonInt(phase310.RootElement, "wzMissingFieldCount") == wzMissingFieldCount
     && JsonInt(phase310.RootElement, "higgsMissingFieldCount") == higgsMissingFieldCount;
+var completionObservedSectorWzRowSelectorAuditMaterialized = phase311 is not null;
+var completionObservedSectorWzRowSelectorAuditPassed = completionObservedSectorWzRowSelectorAuditMaterialized
+    && JsonBool(phase311!.RootElement, "completionObservedSectorWzRowSelectorAuditPassed") is true
+    && JsonBool(phase311.RootElement, "targetObservablesUsedForConstruction") is false
+    && JsonBool(phase311.RootElement, "targetValuesUsedOnlyForPostCandidateEvaluation") is true
+    && JsonBool(phase311.RootElement, "completionDraftObservedSectorProgramPresent") is true
+    && JsonBool(phase311.RootElement, "completionDraftTreatsObservedSectorAsPhenomenologicalMapping") is true
+    && JsonBool(phase311.RootElement, "completionDraftRequiresTypedObservableMapBeforeComparison") is true
+    && JsonBool(phase311.RootElement, "completionDraftProvidesCanonicalWzRowSelector") is false
+    && JsonBool(phase311.RootElement, "completionDraftProvidesPhotonWzEigenstateProjectionRows") is false
+    && JsonBool(phase311.RootElement, "completionDraftProvidesPhysicalWzObservableMap") is false
+    && JsonBool(phase311.RootElement, "completionDraftProvidesBranchStableObservedWzRows") is false
+    && JsonBool(phase311.RootElement, "completionDraftCanPromotePhase307Selector") is false
+    && JsonBool(phase311.RootElement, "phase307RowsHaveObservedSectorMapId") is false
+    && JsonBool(phase311.RootElement, "phase307RowsHaveElectroweakGaugeEmbeddingId") is false
+    && JsonBool(phase311.RootElement, "phase307RowsHaveQuadraticElectroweakMassOperatorId") is false
+    && JsonBool(phase311.RootElement, "phase307RowsHavePhotonMasslessGate") is false
+    && JsonBool(phase311.RootElement, "phase307WRowsHavePhysicalEigenstateProjectionId") is false
+    && JsonBool(phase311.RootElement, "phase307ZRowsHavePhysicalEigenstateProjectionId") is false
+    && JsonBool(phase311.RootElement, "phase307ObservedProjectionBranchStable") is false
+    && JsonBool(phase311.RootElement, "phase307ObservedProjectionTargetBlindHashPresent") is false
+    && JsonBool(phase311.RootElement, "phase295PhotonEigenstateProjectionIntakeReady") is false
+    && JsonBool(phase311.RootElement, "phase295WSourceRowIntakeReady") is false
+    && JsonBool(phase311.RootElement, "phase295ZSourceRowIntakeReady") is false
+    && JsonBool(phase311.RootElement, "phase307SelectorStillNonPromotable") is true
+    && JsonBool(phase311.RootElement, "canFillPhase201WzContract") is false
+    && JsonInt(phase311.RootElement, "wzMissingFieldCount") == wzMissingFieldCount
+    && JsonInt(phase311.RootElement, "higgsMissingFieldCount") == higgsMissingFieldCount;
 var packageReportsComplete = JsonBool(phase101.RootElement, "allKnownBosonValuesDefensible") is true
     && JsonBool(phase101.RootElement, "completionAuditPassed") is true;
 
@@ -2625,6 +2655,14 @@ var checklist = new[]
             : "Phase310 artifact not materialized",
         Phase310Path),
     new ObjectiveChecklistItem(
+        "completion-observed-sector-wz-row-selector-audit-materialized",
+        "Audit whether the latest completion revision's observed-sector recovery program supplies a canonical physical W/Z row selector or photon/W/Z eigenstate projection.",
+        completionObservedSectorWzRowSelectorAuditPassed ? "passed" : "failed",
+        completionObservedSectorWzRowSelectorAuditMaterialized
+            ? $"completionObservedSectorWzRowSelectorAuditPassed={JsonBool(phase311!.RootElement, "completionObservedSectorWzRowSelectorAuditPassed")}; observedSectorProgramPresent={JsonBool(phase311.RootElement, "completionDraftObservedSectorProgramPresent")}; canonicalWzRowSelector={JsonBool(phase311.RootElement, "completionDraftProvidesCanonicalWzRowSelector")}; photonWzEigenstateProjectionRows={JsonBool(phase311.RootElement, "completionDraftProvidesPhotonWzEigenstateProjectionRows")}; physicalWzObservableMap={JsonBool(phase311.RootElement, "completionDraftProvidesPhysicalWzObservableMap")}; phase307RowsHaveObservedSectorMapId={JsonBool(phase311.RootElement, "phase307RowsHaveObservedSectorMapId")}; phase295PhotonEigenstateProjectionIntakeReady={JsonBool(phase311.RootElement, "phase295PhotonEigenstateProjectionIntakeReady")}; phase295WSourceRowIntakeReady={JsonBool(phase311.RootElement, "phase295WSourceRowIntakeReady")}; phase295ZSourceRowIntakeReady={JsonBool(phase311.RootElement, "phase295ZSourceRowIntakeReady")}; completionDraftCanPromotePhase307Selector={JsonBool(phase311.RootElement, "completionDraftCanPromotePhase307Selector")}; canFillPhase201WzContract={JsonBool(phase311.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase311.RootElement, "decision")}"
+            : "Phase311 artifact not materialized",
+        Phase311Path),
+    new ObjectiveChecklistItem(
         "missing-source-contracts-filled",
         "The missing source-lineage contracts must be filled with promotable target-independent evidence.",
         allRequiredSourceLineagesPromotable ? "passed" : "failed",
@@ -2854,6 +2892,7 @@ var result = new
         phase308Path = Phase308Path,
         phase309Path = Phase309Path,
         phase310Path = Phase310Path,
+        phase311Path = Phase311Path,
     },
 };
 

@@ -328,7 +328,8 @@ static bool IsGeneratedAuditOrImplementationText(string path) =>
     || path.Contains("studies/phase307_", StringComparison.Ordinal)
     || path.Contains("studies/phase308_", StringComparison.Ordinal)
     || path.Contains("studies/phase309_", StringComparison.Ordinal)
-    || path.Contains("studies/phase310_", StringComparison.Ordinal);
+    || path.Contains("studies/phase310_", StringComparison.Ordinal)
+    || path.Contains("studies/phase311_", StringComparison.Ordinal);
 
 static string? JsonString(JsonElement element, string propertyName) =>
     element.TryGetProperty(propertyName, out var property) && property.ValueKind == JsonValueKind.String ? property.GetString() : null;
