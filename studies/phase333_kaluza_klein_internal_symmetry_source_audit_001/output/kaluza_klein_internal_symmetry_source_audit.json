@@ -1,0 +1,165 @@
+{
+  "phaseId": "phase333-kaluza-klein-internal-symmetry-source-audit",
+  "terminalStatus": "kaluza-klein-internal-symmetry-source-audit-geometric-mass-lead-not-gu-source",
+  "generatedAt": "2026-05-21T21:22:43.5043027+00:00",
+  "kaluzaKleinInternalSymmetrySourceAuditPassed": true,
+  "kkInternalSymmetryLeadPresent": true,
+  "kkPrimarySourcesReviewed": true,
+  "kkRouteExternalToGu": true,
+  "kkRouteGeometricGaugeBosonMassBased": true,
+  "kkRouteUsesInternalMetricOrNonKillingFields": true,
+  "kkRouteProvidesClassicalMassFormulaFromInternalGeometry": true,
+  "kkRouteGeneratesMassiveGaugeBosonsWithoutAdHocHiggs": true,
+  "kkRouteAllowsArbitrarilyLightMassiveBosons": true,
+  "kkRouteCanBreakInternalSymmetryToStandardModelGaugeGroupLead": true,
+  "kkRouteCanModelWeakChiralityLead": true,
+  "kkRouteIncludesCosetDimensionalReductionLead": true,
+  "kkRouteIncludesGaugeHiggsGrandUnificationLead": true,
+  "kkRouteRequiresSpecificInternalManifold": true,
+  "kkRouteRequiresInternalMetricVacuumChoice": true,
+  "kkRouteRequiresMetricStabilization": true,
+  "kkRouteRequiresElectroweakEmbedding": true,
+  "kkRouteRequiresWeakScaleSelection": true,
+  "kkRouteRequiresFermionSpectrumAndCouplingMatching": true,
+  "kkRouteRequiresLowEnergyTransport": true,
+  "kkRouteProvidesGuLocalWzTheorem": false,
+  "kkRouteProvidesSeparateWzSourceRows": false,
+  "kkRouteProvidesWzRawAmplitudeGates": false,
+  "kkRouteProvidesWzCommonBridgeGate": false,
+  "kkRouteProvidesTargetIndependentGuVevSource": false,
+  "kkRouteProvidesWeakMixingAngleSource": false,
+  "kkRouteProvidesGuGaugeCouplingNormalization": false,
+  "kkRouteProvidesObservedPhotonWzProjectionRows": false,
+  "kkRouteProvidesNeutralMassMatrixDiagonalization": false,
+  "kkRouteProvidesGuObservedFieldExtraction": false,
+  "kkRouteProvidesHiggsScalarSourceOperator": false,
+  "kkRouteProvidesHiggsQuarticOrExcitationSource": false,
+  "kkRouteProvidesObservedHiggsMass": false,
+  "kkRouteProvidesGeVUnitNormalization": false,
+  "kkRoutePromotesWzMasses": false,
+  "kkRoutePromotesHiggsMass": false,
+  "kkRouteCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "sourceRows": [
+    {
+      "SourceId": "arxiv-2306-01049-internal-symmetries-kk",
+      "Url": "https://arxiv.org/abs/2306.01049",
+      "Scope": "non-Killing internal symmetries and massive gauge bosons",
+      "Finding": "The route computes classical gauge-boson masses from internal metric geometry and Lie-derivative data, with possible symmetry breaking toward the Standard Model gauge group.",
+      "PredictionImpact": "This is the closest external geometry lead to a direct W/Z mass-source law, but it remains outside GU and does not emit Phase201 source rows."
+    },
+    {
+      "SourceId": "arxiv-2506-09126-chiral-massive-kk-gauge-fields",
+      "Url": "https://arxiv.org/abs/2506.09126",
+      "Scope": "chiral interactions of fermions and massive Kaluza-Klein gauge fields",
+      "Finding": "The 2026 update shows massive light non-Killing gauge fields can have asymmetric left/right fermion couplings and may model weak-force chirality.",
+      "PredictionImpact": "It strengthens the weak-interaction geometry lead, but still lacks observed W/Z eigenstate rows, weak-angle source, and physical scale normalization."
+    },
+    {
+      "SourceId": "doi-10-1088-1126-6708-2003-02-054-internal-space-dynamics",
+      "Url": "https://doi.org/10.1088/1126-6708/2003/02/054",
+      "Scope": "internal metric dynamics and broken Killing isometries",
+      "Finding": "The paper proposes that transitions of the internal manifold metric can make gauge bosons of broken Killing isometries massive.",
+      "PredictionImpact": "It is a geometric mass-generation precedent, not a GU-local boson prediction artifact."
+    },
+    {
+      "SourceId": "arxiv-0808-3236-csdr-e8-wilson-flux",
+      "Url": "https://arxiv.org/abs/0808.3236",
+      "Scope": "coset-space dimensional reduction and Wilson-flux breaking",
+      "Finding": "The source surveys E8 coset reductions and Wilson-flux symmetry breaking toward four-dimensional GUT structures.",
+      "PredictionImpact": "It supplies compactification model-building context, not W/Z/H source-lineage rows or GeV normalization."
+    },
+    {
+      "SourceId": "arxiv-1710-04811-six-dimensional-gauge-higgs-grand-unification",
+      "Url": "https://arxiv.org/abs/1710.04811",
+      "Scope": "six-dimensional gauge-Higgs grand unification mass-spectrum lead",
+      "Finding": "The source produces electroweak symmetry breaking and a near-observed Higgs mass in a specific warped extra-dimensional model.",
+      "PredictionImpact": "It overlaps the gauge-Higgs boundary route and remains parameter/model dependent rather than GU-local."
+    }
+  ],
+  "checks": [
+    {
+      "CheckId": "kaluza-klein-internal-symmetry-primary-sources-reviewed",
+      "Passed": true,
+      "Detail": "lead=True; primaryReviewed=True; externalToGu=True; geometricGaugeBosonMass=True; sourceRows=5"
+    },
+    {
+      "CheckId": "kaluza-klein-route-captures-direct-geometric-mass-lead",
+      "Passed": true,
+      "Detail": "internalMetricOrNonKilling=True; massFormula=True; noAdHocHiggs=True; lightBosons=True; smGaugeGroupLead=True; weakChiralityLead=True"
+    },
+    {
+      "CheckId": "kaluza-klein-route-remains-conditional-external-geometry",
+      "Passed": true,
+      "Detail": "internalManifold=True; metricVacuum=True; stabilization=True; electroweakEmbedding=True; weakScale=True; fermionCouplings=True; rgTransport=True"
+    },
+    {
+      "CheckId": "standard-electroweak-dependencies-remain-unsourced-by-kaluza-klein-route",
+      "Passed": true,
+      "Detail": "p317=True; requiresV=True; requiresG=True; requiresGPrime=True; mwGv=True; mzGGPrimeV=True; higgsPotentialParameter=True; p224=True; wClosure=False; zClosure=False; higgsClosure=False; weakCoupling=False; rg=False"
+    },
+    {
+      "CheckId": "kaluza-klein-route-does-not-supply-gu-wz-source-lineage",
+      "Passed": true,
+      "Detail": "guWzTheorem=False; separateRows=False; rawGates=False; commonGate=False; vev=False; weakAngle=False; couplingNorm=False; observedRows=False; neutralMatrix=False; promotesWz=False"
+    },
+    {
+      "CheckId": "kaluza-klein-route-does-not-supply-gu-higgs-source-lineage",
+      "Passed": true,
+      "Detail": "p265=True; gaugeHiggsPromotes=False; p323=True; p323Vev=False; p323Coupling=False; p323Projection=False; p323SelfCoupling=False; p332=True; observedExtraction=False; higgsOperator=False; higgsQuartic=False; observedHiggs=False; promotesHiggs=False"
+    },
+    {
+      "CheckId": "source-lineage-contracts-remain-unfilled-after-kaluza-klein-audit",
+      "Passed": true,
+      "Detail": "phase201Promotable=False; existingEvidence=False; wzMissing=15; higgsMissing=14; phase256Required=20; phase256Filled=0; observedPromotable=False; geV=False; completes=False; canFillWz=False; canFillHiggs=False; canFillObserved=False"
+    }
+  ],
+  "currentBlockerEvidence": {
+    "phase201AllRequiredLineagesPromotable": false,
+    "existingEvidenceFound": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionRequiredFieldCount": 20,
+    "observedFieldExtractionFilledRequiredFieldCount": 0,
+    "observedFieldExtractionContractPromotable": false,
+    "electroweakParameterAuditPassed": true,
+    "wAbsoluteMassParameterClosure": false,
+    "zAbsoluteMassParameterClosure": false,
+    "higgsMassParameterClosure": false,
+    "weakCouplingSourcePromotable": false,
+    "lowEnergyRgTransportSourcePromotable": false
+  },
+  "contractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionFilledRequiredFieldCount": 0
+  },
+  "decision": "Do not promote W/Z or Higgs physical masses from the Kaluza-Klein internal-symmetry route in this repository. The route is a serious geometric direct-mass lead because non-Killing internal fields and internal metric dynamics can generate massive gauge bosons and weak-like chirality, but it does not supply GU-local W/Z source rows, a GU electroweak embedding and weak-angle source, target-independent scale selection, observed photon/W/Z/H extraction, Higgs scalar-source lineage, or GeV normalization.",
+  "nextRequiredArtifact": [
+    "A GU-local internal-geometry theorem mapping the non-Killing/internal-metric mass formula into observed SU(2)_L x U(1)_Y source rows.",
+    "Separate W and Z rows with weak-angle, neutral-mixing, photon projection, and physical-unit normalization independent of target values.",
+    "A target-independent weak-scale selection or GU VEV replacement and low-energy transport theorem.",
+    "A solved GU Higgs scalar source/operator, self-coupling or excitation lineage, and observed Higgs extraction if the no-ad-hoc-Higgs path is extended to the physical Higgs."
+  ],
+  "sourceEvidence": {
+    "kkInternalSymmetriesUrl": "https://arxiv.org/abs/2306.01049",
+    "kkChiralMassiveGaugeUrl": "https://arxiv.org/abs/2506.09126",
+    "kkInternalDynamicsDoi": "https://doi.org/10.1088/1126-6708/2003/02/054",
+    "csdrE8WilsonFluxUrl": "https://arxiv.org/abs/0808.3236",
+    "sixDimensionalGaugeHiggsUrl": "https://arxiv.org/abs/1710.04811",
+    "phase201Path": "studies/phase201_boson_source_lineage_intake_contract_001/output/boson_source_lineage_intake_contract_summary.json",
+    "phase213Path": "studies/phase213_boson_source_lineage_blocker_matrix_001/output/boson_source_lineage_blocker_matrix_summary.json",
+    "phase224Path": "studies/phase224_electroweak_parameter_dependency_audit_001/output/electroweak_parameter_dependency_audit_summary.json",
+    "phase236Path": "studies/phase236_low_energy_rg_transport_source_audit_001/output/low_energy_rg_transport_source_audit_summary.json",
+    "phase256Path": "studies/phase256_observed_field_extraction_intake_contract_001/output/observed_field_extraction_intake_contract_summary.json",
+    "phase265Path": "studies/phase265_gauge_higgs_boundary_source_audit_001/output/gauge_higgs_boundary_source_audit_summary.json",
+    "phase317Path": "studies/phase317_electroweak_mass_matrix_bridge_source_audit_001/output/electroweak_mass_matrix_bridge_source_audit_summary.json",
+    "phase323Path": "studies/phase323_coupled_yang_mills_higgs_mass_extraction_audit_001/output/coupled_yang_mills_higgs_mass_extraction_audit_summary.json",
+    "phase332Path": "studies/phase332_string_m_theory_compactification_source_audit_001/output/string_m_theory_compactification_source_audit_summary.json"
+  }
+}
