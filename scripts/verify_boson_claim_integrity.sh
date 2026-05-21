@@ -100,6 +100,7 @@ const paths = {
   phase328: "studies/phase328_superphysics_draft_energy_scale_source_audit_001/output/superphysics_draft_energy_scale_source_audit_summary.json",
   phase329: "studies/phase329_seiberg_witten_monopole_electroweak_source_audit_001/output/seiberg_witten_monopole_electroweak_source_audit_summary.json",
   phase330: "studies/phase330_weyl_geometric_mass_generation_source_audit_001/output/weyl_geometric_mass_generation_source_audit_summary.json",
+  phase331: "studies/phase331_theta_omega_inhomogeneous_gauge_source_audit_001/output/theta_omega_inhomogeneous_gauge_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -271,6 +272,7 @@ const phase327 = requireFile(paths.phase327);
 const phase328 = requireFile(paths.phase328);
 const phase329 = requireFile(paths.phase329);
 const phase330 = requireFile(paths.phase330);
+const phase331 = requireFile(paths.phase331);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -1632,6 +1634,39 @@ if (sourceLineageMissing) {
   assert(phase330.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase330 W/Z missing-field count must match Phase213.");
   assert(phase330.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase330 Higgs missing-field count must match Phase213.");
   assert(phase330.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase330 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase331.thetaOmegaInhomogeneousGaugeSourceAuditPassed === true, "Phase331 theta_omega / inhomogeneous-gauge source audit must pass while preserving non-promotional status.");
+  assert(phase331.officialDraftPrimarySourceReviewed === true, "Phase331 must record official draft source review.");
+  assert(phase331.officialDraftDownloadPageReviewed === true, "Phase331 must record official draft download page review.");
+  assert(phase331.officialOxfordLectureReviewed === true, "Phase331 must record official Oxford lecture review.");
+  assert(phase331.officialUcsdDarkGeometricEnergyAbstractReviewed === true, "Phase331 must record official UCSD abstract review.");
+  assert(phase331.thetaOmegaInhomogeneousGaugeRouteGuNative === true, "Phase331 must classify theta_omega / inhomogeneous gauge as GU-native structural geometry.");
+  assert(phase331.thetaOmegaInhomogeneousGaugeRouteTargetIndependentAsGeometry === true, "Phase331 must preserve target-independent geometric status without treating it as a physical mass prediction.");
+  assert(phase331.thetaOmegaRouteMentionsDiracSpinorBundle === true, "Phase331 must preserve the Dirac spinor bundle lead.");
+  assert(phase331.thetaOmegaRouteMentionsFourteenDimensionalLorentzianMetricSpace === true, "Phase331 must preserve the 14-dimensional Lorentzian metric lead.");
+  assert(phase331.thetaOmegaRouteMentionsSupersymmetricEinsteinDirac === true, "Phase331 must preserve the supersymmetric Einstein-Dirac lead.");
+  assert(phase331.thetaOmegaRouteGivesResearchLeadForSourceLaw === true, "Phase331 must record theta_omega as a research lead for a possible source law.");
+  assert(phase331.thetaOmegaRouteProvidesDirectTargetIndependentWzBridgeSourceLaw === false, "Phase331 cannot claim the requested direct target-independent W/Z bridge-source law.");
+  assert(phase331.thetaOmegaRouteProvidesGuLocalWzTheorem === false, "Phase331 cannot claim a GU-local W/Z theorem.");
+  assert(phase331.thetaOmegaRouteProvidesSeparateWzSourceRows === false, "Phase331 cannot claim separate W/Z source rows.");
+  assert(phase331.thetaOmegaRouteProvidesWzRawAmplitudeGates === false, "Phase331 cannot claim W/Z raw-amplitude gates.");
+  assert(phase331.thetaOmegaRouteProvidesWzCommonBridgeGate === false, "Phase331 cannot claim a W/Z common bridge gate.");
+  assert(phase331.thetaOmegaRouteProvidesTargetIndependentVevSource === false, "Phase331 cannot claim a target-independent VEV source.");
+  assert(phase331.thetaOmegaRouteProvidesWeakMixingAngleSource === false, "Phase331 cannot claim a weak-mixing angle source.");
+  assert(phase331.thetaOmegaRouteProvidesGaugeCouplingNormalization === false, "Phase331 cannot claim gauge-coupling normalization.");
+  assert(phase331.thetaOmegaRouteProvidesObservedPhotonWzProjectionRows === false, "Phase331 cannot claim photon/W/Z projection rows.");
+  assert(phase331.thetaOmegaRouteProvidesObservedFieldExtraction === false, "Phase331 cannot claim observed-field extraction.");
+  assert(phase331.thetaOmegaRouteProvidesHiggsScalarSourceOperator === false, "Phase331 cannot claim a Higgs scalar-source operator.");
+  assert(phase331.thetaOmegaRouteProvidesHiggsQuarticOrExcitationSource === false, "Phase331 cannot claim Higgs quartic/excitation source lineage.");
+  assert(phase331.thetaOmegaRouteProvidesGeVUnitNormalization === false, "Phase331 cannot claim GeV normalization.");
+  assert(phase331.thetaOmegaRoutePromotesWzMasses === false, "Phase331 cannot promote W/Z masses.");
+  assert(phase331.thetaOmegaRoutePromotesHiggsMass === false, "Phase331 cannot promote Higgs mass.");
+  assert(phase331.thetaOmegaRouteCompletesBosonPredictions === false, "Phase331 cannot complete boson predictions.");
+  assert(phase331.contractImpact?.canFillPhase201WzContract === false, "Phase331 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase331.contractImpact?.canFillPhase201HiggsContract === false, "Phase331 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase331.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase331 contract impact must keep Phase256 unfilled.");
+  assert(phase331.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase331 W/Z missing-field count must match Phase213.");
+  assert(phase331.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase331 Higgs missing-field count must match Phase213.");
+  assert(phase331.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase331 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

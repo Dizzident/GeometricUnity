@@ -188,6 +188,7 @@ const string Phase327ObliquePrecisionElectroweakSourceAuditPath = "studies/phase
 const string Phase328SuperphysicsDraftEnergyScaleSourceAuditPath = "studies/phase328_superphysics_draft_energy_scale_source_audit_001/output/superphysics_draft_energy_scale_source_audit.json";
 const string Phase329SeibergWittenMonopoleElectroweakSourceAuditPath = "studies/phase329_seiberg_witten_monopole_electroweak_source_audit_001/output/seiberg_witten_monopole_electroweak_source_audit.json";
 const string Phase330WeylGeometricMassGenerationSourceAuditPath = "studies/phase330_weyl_geometric_mass_generation_source_audit_001/output/weyl_geometric_mass_generation_source_audit.json";
+const string Phase331ThetaOmegaInhomogeneousGaugeSourceAuditPath = "studies/phase331_theta_omega_inhomogeneous_gauge_source_audit_001/output/theta_omega_inhomogeneous_gauge_source_audit.json";
 const string Phase282BranchLocalDirectInvariantCensusPath = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census.json";
 const string Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit.json";
 const string Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic.json";
@@ -396,6 +397,7 @@ using var phase327 = TryParseJson(Phase327ObliquePrecisionElectroweakSourceAudit
 using var phase328 = TryParseJson(Phase328SuperphysicsDraftEnergyScaleSourceAuditPath);
 using var phase329 = TryParseJson(Phase329SeibergWittenMonopoleElectroweakSourceAuditPath);
 using var phase330 = TryParseJson(Phase330WeylGeometricMassGenerationSourceAuditPath);
+using var phase331 = TryParseJson(Phase331ThetaOmegaInhomogeneousGaugeSourceAuditPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -667,6 +669,7 @@ var package = new
         superphysicsDraftEnergyScaleSourceAuditPath = File.Exists(Phase328SuperphysicsDraftEnergyScaleSourceAuditPath) ? Phase328SuperphysicsDraftEnergyScaleSourceAuditPath : null,
         seibergWittenMonopoleElectroweakSourceAuditPath = File.Exists(Phase329SeibergWittenMonopoleElectroweakSourceAuditPath) ? Phase329SeibergWittenMonopoleElectroweakSourceAuditPath : null,
         weylGeometricMassGenerationSourceAuditPath = File.Exists(Phase330WeylGeometricMassGenerationSourceAuditPath) ? Phase330WeylGeometricMassGenerationSourceAuditPath : null,
+        thetaOmegaInhomogeneousGaugeSourceAuditPath = File.Exists(Phase331ThetaOmegaInhomogeneousGaugeSourceAuditPath) ? Phase331ThetaOmegaInhomogeneousGaugeSourceAuditPath : null,
         branchLocalDirectInvariantCensusPath = File.Exists(Phase282BranchLocalDirectInvariantCensusPath) ? Phase282BranchLocalDirectInvariantCensusPath : null,
         legacyElectroweakBridgeSourceSurvivabilityAuditPath = File.Exists(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath) ? Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath : null,
         predictedRatioAlphaGfExternalClosureDiagnosticPath = File.Exists(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath) ? Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath : null,
@@ -2871,6 +2874,57 @@ var package = new
                 ? JsonInt(p330ContractImpact, "observedFieldExtractionFilledRequiredFieldCount")
                 : null,
             decision = JsonString(phase330.RootElement, "decision"),
+        }
+        : null,
+    thetaOmegaInhomogeneousGaugeSourceAudit = phase331 is not null
+        ? new
+        {
+            status = JsonString(phase331.RootElement, "terminalStatus"),
+            thetaOmegaInhomogeneousGaugeSourceAuditPassed = JsonBool(phase331.RootElement, "thetaOmegaInhomogeneousGaugeSourceAuditPassed"),
+            officialDraftPrimarySourceReviewed = JsonBool(phase331.RootElement, "officialDraftPrimarySourceReviewed"),
+            officialDraftDownloadPageReviewed = JsonBool(phase331.RootElement, "officialDraftDownloadPageReviewed"),
+            officialOxfordLectureReviewed = JsonBool(phase331.RootElement, "officialOxfordLectureReviewed"),
+            officialUcsdDarkGeometricEnergyAbstractReviewed = JsonBool(phase331.RootElement, "officialUcsdDarkGeometricEnergyAbstractReviewed"),
+            thetaOmegaInhomogeneousGaugeRouteGuNative = JsonBool(phase331.RootElement, "thetaOmegaInhomogeneousGaugeRouteGuNative"),
+            thetaOmegaInhomogeneousGaugeRouteTargetIndependentAsGeometry = JsonBool(phase331.RootElement, "thetaOmegaInhomogeneousGaugeRouteTargetIndependentAsGeometry"),
+            thetaOmegaRouteMentionsDiracSpinorBundle = JsonBool(phase331.RootElement, "thetaOmegaRouteMentionsDiracSpinorBundle"),
+            thetaOmegaRouteMentionsFourteenDimensionalLorentzianMetricSpace = JsonBool(phase331.RootElement, "thetaOmegaRouteMentionsFourteenDimensionalLorentzianMetricSpace"),
+            thetaOmegaRouteMentionsSupersymmetricEinsteinDirac = JsonBool(phase331.RootElement, "thetaOmegaRouteMentionsSupersymmetricEinsteinDirac"),
+            thetaOmegaRouteLocatesWeakIsospinAndHypercharge = JsonBool(phase331.RootElement, "thetaOmegaRouteLocatesWeakIsospinAndHypercharge"),
+            thetaOmegaRouteLocatesHiggsAndPotential = JsonBool(phase331.RootElement, "thetaOmegaRouteLocatesHiggsAndPotential"),
+            thetaOmegaRouteDescribesBosonicVariablesNativeToY = JsonBool(phase331.RootElement, "thetaOmegaRouteDescribesBosonicVariablesNativeToY"),
+            thetaOmegaRouteGivesResearchLeadForSourceLaw = JsonBool(phase331.RootElement, "thetaOmegaRouteGivesResearchLeadForSourceLaw"),
+            thetaOmegaRouteProvidesDirectTargetIndependentWzBridgeSourceLaw = JsonBool(phase331.RootElement, "thetaOmegaRouteProvidesDirectTargetIndependentWzBridgeSourceLaw"),
+            thetaOmegaRouteProvidesGuLocalWzTheorem = JsonBool(phase331.RootElement, "thetaOmegaRouteProvidesGuLocalWzTheorem"),
+            thetaOmegaRouteProvidesSeparateWzSourceRows = JsonBool(phase331.RootElement, "thetaOmegaRouteProvidesSeparateWzSourceRows"),
+            thetaOmegaRouteProvidesWzRawAmplitudeGates = JsonBool(phase331.RootElement, "thetaOmegaRouteProvidesWzRawAmplitudeGates"),
+            thetaOmegaRouteProvidesWzCommonBridgeGate = JsonBool(phase331.RootElement, "thetaOmegaRouteProvidesWzCommonBridgeGate"),
+            thetaOmegaRouteProvidesTargetIndependentVevSource = JsonBool(phase331.RootElement, "thetaOmegaRouteProvidesTargetIndependentVevSource"),
+            thetaOmegaRouteProvidesWeakMixingAngleSource = JsonBool(phase331.RootElement, "thetaOmegaRouteProvidesWeakMixingAngleSource"),
+            thetaOmegaRouteProvidesGaugeCouplingNormalization = JsonBool(phase331.RootElement, "thetaOmegaRouteProvidesGaugeCouplingNormalization"),
+            thetaOmegaRouteProvidesObservedPhotonWzProjectionRows = JsonBool(phase331.RootElement, "thetaOmegaRouteProvidesObservedPhotonWzProjectionRows"),
+            thetaOmegaRouteProvidesNeutralMassMatrixDiagonalization = JsonBool(phase331.RootElement, "thetaOmegaRouteProvidesNeutralMassMatrixDiagonalization"),
+            thetaOmegaRouteProvidesObservedFieldExtraction = JsonBool(phase331.RootElement, "thetaOmegaRouteProvidesObservedFieldExtraction"),
+            thetaOmegaRouteProvidesHiggsScalarSourceOperator = JsonBool(phase331.RootElement, "thetaOmegaRouteProvidesHiggsScalarSourceOperator"),
+            thetaOmegaRouteProvidesHiggsQuarticOrExcitationSource = JsonBool(phase331.RootElement, "thetaOmegaRouteProvidesHiggsQuarticOrExcitationSource"),
+            thetaOmegaRouteProvidesHiggsMassiveScalarProfile = JsonBool(phase331.RootElement, "thetaOmegaRouteProvidesHiggsMassiveScalarProfile"),
+            thetaOmegaRouteProvidesGeVUnitNormalization = JsonBool(phase331.RootElement, "thetaOmegaRouteProvidesGeVUnitNormalization"),
+            thetaOmegaRoutePromotesWzMasses = JsonBool(phase331.RootElement, "thetaOmegaRoutePromotesWzMasses"),
+            thetaOmegaRoutePromotesHiggsMass = JsonBool(phase331.RootElement, "thetaOmegaRoutePromotesHiggsMass"),
+            thetaOmegaRouteCompletesBosonPredictions = JsonBool(phase331.RootElement, "thetaOmegaRouteCompletesBosonPredictions"),
+            canFillPhase201WzContract = JsonBool(phase331.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase331.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase331.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            wzMissingFieldCount = phase331.RootElement.TryGetProperty("contractImpact", out var p331ContractImpact)
+                ? JsonInt(p331ContractImpact, "wzMissingFieldCount")
+                : null,
+            higgsMissingFieldCount = phase331.RootElement.TryGetProperty("contractImpact", out p331ContractImpact)
+                ? JsonInt(p331ContractImpact, "higgsMissingFieldCount")
+                : null,
+            observedFieldExtractionFilledRequiredFieldCount = phase331.RootElement.TryGetProperty("contractImpact", out p331ContractImpact)
+                ? JsonInt(p331ContractImpact, "observedFieldExtractionFilledRequiredFieldCount")
+                : null,
+            decision = JsonString(phase331.RootElement, "decision"),
         }
         : null,
     branchLocalDirectInvariantCensus = phase282 is not null
@@ -5381,6 +5435,36 @@ var summary = new
         : null,
     weylRouteCompletesBosonPredictions = phase330 is not null
         ? JsonBool(phase330.RootElement, "weylRouteCompletesBosonPredictions")
+        : null,
+    thetaOmegaInhomogeneousGaugeSourceAuditPassed = phase331 is not null
+        ? JsonBool(phase331.RootElement, "thetaOmegaInhomogeneousGaugeSourceAuditPassed")
+        : null,
+    thetaOmegaInhomogeneousGaugeRouteGuNative = phase331 is not null
+        ? JsonBool(phase331.RootElement, "thetaOmegaInhomogeneousGaugeRouteGuNative")
+        : null,
+    thetaOmegaRouteProvidesDirectTargetIndependentWzBridgeSourceLaw = phase331 is not null
+        ? JsonBool(phase331.RootElement, "thetaOmegaRouteProvidesDirectTargetIndependentWzBridgeSourceLaw")
+        : null,
+    thetaOmegaRouteProvidesTargetIndependentVevSource = phase331 is not null
+        ? JsonBool(phase331.RootElement, "thetaOmegaRouteProvidesTargetIndependentVevSource")
+        : null,
+    thetaOmegaRouteProvidesWeakMixingAngleSource = phase331 is not null
+        ? JsonBool(phase331.RootElement, "thetaOmegaRouteProvidesWeakMixingAngleSource")
+        : null,
+    thetaOmegaRouteProvidesGaugeCouplingNormalization = phase331 is not null
+        ? JsonBool(phase331.RootElement, "thetaOmegaRouteProvidesGaugeCouplingNormalization")
+        : null,
+    thetaOmegaRouteProvidesObservedFieldExtraction = phase331 is not null
+        ? JsonBool(phase331.RootElement, "thetaOmegaRouteProvidesObservedFieldExtraction")
+        : null,
+    thetaOmegaRoutePromotesWzMasses = phase331 is not null
+        ? JsonBool(phase331.RootElement, "thetaOmegaRoutePromotesWzMasses")
+        : null,
+    thetaOmegaRoutePromotesHiggsMass = phase331 is not null
+        ? JsonBool(phase331.RootElement, "thetaOmegaRoutePromotesHiggsMass")
+        : null,
+    thetaOmegaRouteCompletesBosonPredictions = phase331 is not null
+        ? JsonBool(phase331.RootElement, "thetaOmegaRouteCompletesBosonPredictions")
         : null,
     branchLocalInvariantCensusPassed = phase282 is not null
         ? JsonBool(phase282.RootElement, "branchLocalInvariantCensusPassed")

@@ -7573,6 +7573,117 @@ Higgs remains separately blocked by missing scalar-source lineage.
   `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
   `promotedPhysicalMassClaimCount=0`.
 
+## 2026-05-21 - Phase331 Theta Omega Inhomogeneous Gauge Source Audit
+
+### Objective
+
+Audit whether the GU-native `theta_omega` / inhomogeneous-gauge route in the
+official draft/lecture corpus can supply the direct target-independent W/Z
+geometric bridge-source law requested by the active task.
+
+### Research
+
+- Reused the official GU draft as the primary manuscript source:
+  `https://geometricunity.nyc3.digitaloceanspaces.com/Geometric_Unity-Draft-April-1st-2021.pdf`.
+- Reused the official draft download page:
+  `https://geometricunity.org/pull-that-up-jamie/`.
+- Reused the official 2013 Oxford lecture transcript:
+  `https://geometricunity.org/2013-oxford-lecture/`.
+- Rechecked the official Portal Group UCSD abstract:
+  `https://theportal.group/from-dark-to-geometric-energy-a-sector-of-geometric-unity/`.
+- Relevant positive evidence:
+  - GU-native `theta_omega` and inhomogeneous-gauge geometry is present as a
+    research lead.
+  - The UCSD abstract records the Dirac spinor bundle, 14-dimensional
+    Lorentzian-metric setting, and supersymmetric Einstein-Dirac extension.
+  - Existing Phase313 and Phase323 audits record official draft locations for
+    weak isospin, weak hypercharge, the Higgs field, and the Higgs potential.
+- Blocking evidence:
+  - P313 still records symbolic electroweak placement, not a photon/Z
+    Weinberg rotation, weak-angle source, neutral mass-matrix diagonalization,
+    or W/Z projection rows.
+  - P323 still records field-location and Yang-Mills-Higgs/Upsilon equation
+    context, not an electroweak vacuum source, coupling normalization,
+    gauge-fixed quadratic expansion, mass-eigenstate extraction, or Higgs
+    scalar self-coupling source.
+  - P255/P256/P267 still require a new observed-field extraction theorem.
+
+### Actions
+
+- Added
+  `studies/phase331_theta_omega_inhomogeneous_gauge_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P331.md`.
+- Wired Phase331 into the generator, P101 package, P202 objective completion
+  audit, and claim-integrity verifier.
+- Added Phase331 scanner exclusions so generated audit text is not counted as
+  fresh source evidence.
+
+### Current Expected Outcome
+
+Phase331 is expected to pass only as a negative boundary audit:
+
+- `thetaOmegaInhomogeneousGaugeSourceAuditPassed=true`.
+- `thetaOmegaInhomogeneousGaugeRouteGuNative=true`.
+- `thetaOmegaInhomogeneousGaugeRouteTargetIndependentAsGeometry=true`.
+- `thetaOmegaRouteGivesResearchLeadForSourceLaw=true`.
+- `thetaOmegaRouteProvidesDirectTargetIndependentWzBridgeSourceLaw=false`.
+- `thetaOmegaRouteProvidesSeparateWzSourceRows=false`.
+- `thetaOmegaRouteProvidesTargetIndependentVevSource=false`.
+- `thetaOmegaRouteProvidesWeakMixingAngleSource=false`.
+- `thetaOmegaRouteProvidesGaugeCouplingNormalization=false`.
+- `thetaOmegaRouteProvidesObservedFieldExtraction=false`.
+- `thetaOmegaRouteProvidesHiggsScalarSourceOperator=false`.
+- `thetaOmegaRouteProvidesHiggsQuarticOrExcitationSource=false`.
+- `thetaOmegaRouteProvidesGeVUnitNormalization=false`.
+- `thetaOmegaRouteCompletesBosonPredictions=false`.
+- `canFillPhase201WzContract=false`.
+- `canFillPhase201HiggsContract=false`.
+- `canFillPhase256ObservedFieldExtractionContract=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs physical masses from the `theta_omega` /
+inhomogeneous-gauge route. It is the most relevant GU-native source-law
+direction found so far, but the current public evidence supplies structural
+geometry and field-location notation, not the direct target-independent W/Z
+bridge-source law or the observed-field/Higgs lineage required by the
+contracts.
+
+### Validation
+
+- Targeted Phase331 run passed with:
+  - `thetaOmegaInhomogeneousGaugeSourceAuditPassed=true`.
+  - `thetaOmegaRouteProvidesDirectTargetIndependentWzBridgeSourceLaw=false`.
+  - `thetaOmegaRoutePromotesWzMasses=false`.
+  - `thetaOmegaRoutePromotesHiggsMass=false`.
+  - `canFillPhase201WzContract=false`.
+- Full generator rerun passed with Phase331 included in both generator passes.
+- Scanner reruns after adding Phase331 found no intake-ready artifacts:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `canPromoteHiggsQuarticSelfCouplingSource=false` and
+    `intakeReadyFindingCount=0`.
+  - P279 `technicolorWalkingElectroweakScaleSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P281 `geometricRefractiveUnificationSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P295 `intakeReadyObservedFieldExtractionCandidateCount=0` and
+    `anyObservedFieldExtractionCandidateFillsContract=false`.
+  - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
+    `anySourceLineageCandidateFillsContract=false`.
+- P101 regenerated with Phase331 included and remained
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase331 included and remained
+  `objectiveAchieved=false`, with `checklistPassedCount=124` and
+  `checklistFailedCount=3`.
+- Claim-integrity verifier passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- `dotnet test GeometricUnity.slnx` passed. The pre-existing xUnit analyzer
+  warning in
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`
+  remains.
+
 ## 2026-05-21 - Phase330 Weyl Geometric Mass Generation Source Audit
 
 ### Question

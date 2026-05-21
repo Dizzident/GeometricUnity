@@ -1,0 +1,201 @@
+{
+  "phaseId": "phase331-theta-omega-inhomogeneous-gauge-source-audit",
+  "terminalStatus": "theta-omega-inhomogeneous-gauge-source-audit-structural-geometry-not-wzh-source",
+  "generatedAt": "2026-05-21T19:34:30.7937083+00:00",
+  "thetaOmegaInhomogeneousGaugeSourceAuditPassed": true,
+  "officialDraftPrimarySourceReviewed": true,
+  "officialDraftDownloadPageReviewed": true,
+  "officialOxfordLectureReviewed": true,
+  "officialUcsdDarkGeometricEnergyAbstractReviewed": true,
+  "thetaOmegaInhomogeneousGaugeRouteGuNative": true,
+  "thetaOmegaInhomogeneousGaugeRouteTargetIndependentAsGeometry": true,
+  "thetaOmegaRouteMentionsDiracSpinorBundle": true,
+  "thetaOmegaRouteMentionsFourteenDimensionalLorentzianMetricSpace": true,
+  "thetaOmegaRouteMentionsSupersymmetricEinsteinDirac": true,
+  "thetaOmegaRouteLocatesWeakIsospinAndHypercharge": true,
+  "thetaOmegaRouteLocatesHiggsAndPotential": true,
+  "thetaOmegaRouteDescribesBosonicVariablesNativeToY": true,
+  "thetaOmegaRouteGivesResearchLeadForSourceLaw": true,
+  "thetaOmegaRouteProvidesDirectTargetIndependentWzBridgeSourceLaw": false,
+  "thetaOmegaRouteProvidesGuLocalWzTheorem": false,
+  "thetaOmegaRouteProvidesSeparateWzSourceRows": false,
+  "thetaOmegaRouteProvidesWzRawAmplitudeGates": false,
+  "thetaOmegaRouteProvidesWzCommonBridgeGate": false,
+  "thetaOmegaRouteProvidesTargetIndependentVevSource": false,
+  "thetaOmegaRouteProvidesWeakMixingAngleSource": false,
+  "thetaOmegaRouteProvidesGaugeCouplingNormalization": false,
+  "thetaOmegaRouteProvidesObservedPhotonWzProjectionRows": false,
+  "thetaOmegaRouteProvidesNeutralMassMatrixDiagonalization": false,
+  "thetaOmegaRouteProvidesObservedFieldExtraction": false,
+  "thetaOmegaRouteProvidesHiggsScalarSourceOperator": false,
+  "thetaOmegaRouteProvidesHiggsQuarticOrExcitationSource": false,
+  "thetaOmegaRouteProvidesHiggsMassiveScalarProfile": false,
+  "thetaOmegaRouteProvidesGeVUnitNormalization": false,
+  "thetaOmegaRoutePromotesWzMasses": false,
+  "thetaOmegaRoutePromotesHiggsMass": false,
+  "thetaOmegaRouteCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "sourceRows": [
+    {
+      "sourceId": "official-gu-draft-download-page",
+      "url": "https://geometricunity.org/pull-that-up-jamie/",
+      "locator": "official Geometric Unity source list",
+      "finding": "The official site identifies the April 1, 2021 working draft as the latest public manuscript source.",
+      "predictionImpact": "This makes the draft relevant source material, but does not by itself fill any W/Z/H prediction row."
+    },
+    {
+      "sourceId": "official-gu-draft-field-location",
+      "url": "https://geometricunity.nyc3.digitaloceanspaces.com/Geometric_Unity-Draft-April-1st-2021.pdf",
+      "locator": "appendix electroweak/Higgs notation and field-equation locations",
+      "finding": "The draft locates weak isospin, weak hypercharge, Higgs-field, Higgs-potential, Yang-Mills, and Higgs-equation notation in the GU framework.",
+      "predictionImpact": "Field-location notation is useful source context, but Phase313 and Phase323 show it stops before observed photon/W/Z/H projection and mass-eigenstate extraction."
+    },
+    {
+      "sourceId": "official-gu-draft-energy-scale-limitation",
+      "url": "https://geometricunity.nyc3.digitaloceanspaces.com/Geometric_Unity-Draft-April-1st-2021.pdf",
+      "locator": "main text discussion of thresholds and QFT sharpening",
+      "finding": "The draft frames energy-threshold sharpening and detailed dynamical prediction as requiring further quantum-field-theoretic work.",
+      "predictionImpact": "That is incompatible with promoting absolute W/Z/H masses from the draft alone."
+    },
+    {
+      "sourceId": "official-oxford-lecture-higgs-context",
+      "url": "https://geometricunity.org/2013-oxford-lecture/",
+      "locator": "2013 Oxford lecture transcript",
+      "finding": "The official lecture records the Standard Model SU(3) x SU(2) x U(1) breaking context and describes the Higgs mechanism as an as-if mass/Yukawa patch.",
+      "predictionImpact": "It motivates the geometric problem but does not supply a direct target-independent W/Z bridge-source law."
+    },
+    {
+      "sourceId": "portal-ucsd-theta-omega-abstract",
+      "url": "https://theportal.group/from-dark-to-geometric-energy-a-sector-of-geometric-unity/",
+      "locator": "April 2025 UCSD seminar abstract",
+      "finding": "The official Portal page records theta_omega, an inhomogeneous gauge group over the Dirac spinor bundle, 14-dimensional Lorentzian-metric geometry, and a supersymmetric Einstein-Dirac extension.",
+      "predictionImpact": "This is the strongest public GU-native lead for the requested geometry, but Phase315 records it as abstract-level structural evidence with no transcript-level W/Z/H source rows."
+    }
+  ],
+  "checks": [
+    {
+      "checkId": "theta-omega-official-source-lead-captured",
+      "passed": true,
+      "detail": "draftReviewed=True; ucsdPassed=True; thetaOmega=True; inhomogeneousGauge=True; fourteenDimensionalMetrics=True; supersymmetricEinsteinDirac=True; sourceRows=5"
+    },
+    {
+      "checkId": "official-draft-geometry-is-location-not-observed-electroweak-map",
+      "passed": true,
+      "detail": "p313Passed=True; weakIsospinLocation=True; weakHyperchargeLocation=True; higgsLocation=True; photonZRotation=False; weakAngle=False; neutralMatrix=False; wRows=False; zRows=False"
+    },
+    {
+      "checkId": "theta-omega-route-does-not-supply-direct-wz-bridge-source-law",
+      "passed": true,
+      "detail": "guNative=True; geometricTargetIndependent=True; directBridgeLaw=False; guWzTheorem=False; separateRows=False; vev=False; weakAngle=False; couplingNorm=False; observedRows=False"
+    },
+    {
+      "checkId": "standard-electroweak-dependencies-remain-unsourced-by-gu",
+      "passed": true,
+      "detail": "p317Passed=True; requiresV=True; requiresG=True; requiresGPrime=True; mwGv=True; mzGGPrimeV=True; guVev=False; guCouplingNorm=False; guWeakAngle=False; guQuadraticExpansion=False"
+    },
+    {
+      "checkId": "theta-omega-route-does-not-supply-higgs-source-lineage",
+      "passed": true,
+      "detail": "locatesHiggs=True; draftHiggsField=True; draftHiggsPotential=True; higgsOperator=False; quarticOrExcitation=False; massiveProfile=False; publicSelfCoupling=False"
+    },
+    {
+      "checkId": "observed-field-extraction-and-completion-blockers-remain-binding",
+      "passed": true,
+      "detail": "p255Passed=True; p255Promotable=False; p256Required=20; p256Filled=0; p267Passed=True; p267DirectWz=False; p267Extraction=False; p267Scale=False; p267Higgs=False"
+    },
+    {
+      "checkId": "source-lineage-contracts-remain-unfilled-after-theta-omega-audit",
+      "passed": true,
+      "detail": "phase201Any=False; phase201All=False; existingEvidence=False; wzMissing=15; higgsMissing=14; publicProjectionRows=False; publicMassExtraction=False; weylCompletes=False; ucsdCompletes=False; thetaOmegaCompletes=False"
+    }
+  ],
+  "upstreamBoundaryEvidence": {
+    "phase313": {
+      "officialDraftElectroweakProjectionMapAuditPassed": true,
+      "officialGuParameterLocationLeadPresent": true,
+      "officialDraftProvidesWeakIsospinLocation": true,
+      "officialDraftProvidesWeakHyperchargeLocation": true,
+      "officialDraftProvidesPhotonZWeinbergRotation": false,
+      "officialDraftProvidesWeakMixingAngleSource": false,
+      "officialDraftProvidesNeutralMassMatrixDiagonalization": false,
+      "officialDraftProvidesWChargedProjectionRows": false,
+      "officialDraftProvidesZSourceRowProjection": false,
+      "officialDraftProjectionMapCompletesObservedFieldExtraction": false,
+      "officialDraftProjectionMapPromotesWzMasses": false
+    },
+    "phase315": {
+      "ucsdDarkGeometricEnergySourceAuditPassed": true,
+      "ucsdDarkGeometricEnergyMentionsThetaOmega": true,
+      "ucsdDarkGeometricEnergyMentionsInhomogeneousGaugeGroup": true,
+      "ucsdDarkGeometricEnergyMentionsFourteenDimensionalMetrics": true,
+      "ucsdDarkGeometricEnergyMentionsSupersymmetricEinsteinDirac": true,
+      "ucsdDarkGeometricEnergyPromotesWzMasses": false,
+      "ucsdDarkGeometricEnergyPromotesHiggsMass": false,
+      "ucsdDarkGeometricEnergyCompletesBosonPredictions": false
+    },
+    "phase317": {
+      "electroweakMassMatrixBridgeSourceAuditPassed": true,
+      "smMassGenerationRequiresVev": true,
+      "smMassGenerationRequiresWeakCouplingG": true,
+      "smMassGenerationRequiresHyperchargeCouplingGPrime": true,
+      "smDefinesPhotonZWeinbergRotation": true,
+      "smTreeLevelMwDependsOnGAndV": true,
+      "smTreeLevelMzDependsOnGAndGPrimeAndV": true,
+      "smTreeLevelHiggsMassDependsOnPotentialParameter": true,
+      "smMassMatrixPromotesWzMasses": false,
+      "smMassMatrixPromotesHiggsMass": false
+    },
+    "phase323": {
+      "coupledYangMillsHiggsMassExtractionAuditPassed": true,
+      "officialDraftAppendixLocatesWeakIsospin": true,
+      "officialDraftAppendixLocatesWeakHypercharge": true,
+      "officialDraftAppendixLocatesHiggsField": true,
+      "officialDraftAppendixMapsHiggsPotentialToUpsilonNorm": true,
+      "officialPublicSourcesProvideTargetIndependentVevSource": false,
+      "officialPublicSourcesProvideGaugeCouplingNormalization": false,
+      "officialPublicSourcesProvideHyperchargeCouplingOrWeakAngle": false,
+      "officialPublicSourcesProvideGaugeFixedQuadraticExpansion": false,
+      "officialPublicSourcesProvidePhotonWzHiggsProjectionRows": false,
+      "officialPublicSourcesProvideHiggsScalarSelfCouplingSource": false,
+      "officialPublicSourcesProvideCompleteMassEigenstateExtraction": false,
+      "coupledYangMillsHiggsRouteCompletesBosonPredictions": false
+    }
+  },
+  "contractImpact": {
+    "phase201AnySourceLineagePromotable": false,
+    "phase201AllRequiredLineagesPromotable": false,
+    "existingEvidenceFound": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionRequiredFieldCount": 20,
+    "observedFieldExtractionFilledRequiredFieldCount": 0,
+    "observedFieldExtractionContractPromotable": false,
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false
+  },
+  "decision": "Do not promote W/Z or Higgs physical masses from the theta_omega / inhomogeneous-gauge route. The route is GU-native and structurally relevant, but the public draft/lecture/abstract evidence currently supplies field locations and geometric research direction, not a direct target-independent W/Z bridge-source law, separate W/Z rows, electroweak VEV, weak-angle/coupling normalization, photon/W/Z/H observed-field extraction, Higgs scalar-source/self-coupling lineage, or GeV normalization.",
+  "nextRequiredArtifact": [
+    "A GU-local theta_omega or inhomogeneous-gauge theorem deriving the observed SU(2)_L x U(1)_Y embedding, weak angle, target-independent VEV, and separate W/Z source rows.",
+    "A source-derived observed-field extraction theorem mapping GU-native Y variables to photon, W, Z, and Higgs rows with branch, normalization, and stability sidecars.",
+    "A solved Higgs scalar-source/operator and self-coupling or excitation relation with GeV normalization before target comparison."
+  ],
+  "sourceEvidence": {
+    "officialDraftUrl": "https://geometricunity.nyc3.digitaloceanspaces.com/Geometric_Unity-Draft-April-1st-2021.pdf",
+    "officialDraftDownloadPageUrl": "https://geometricunity.org/pull-that-up-jamie/",
+    "officialOxfordLectureUrl": "https://geometricunity.org/2013-oxford-lecture/",
+    "officialUcsdDarkGeometricEnergyUrl": "https://theportal.group/from-dark-to-geometric-energy-a-sector-of-geometric-unity/",
+    "phase201Path": "studies/phase201_boson_source_lineage_intake_contract_001/output/boson_source_lineage_intake_contract_summary.json",
+    "phase213Path": "studies/phase213_boson_source_lineage_blocker_matrix_001/output/boson_source_lineage_blocker_matrix_summary.json",
+    "phase255Path": "studies/phase255_observed_field_extraction_no_go_audit_001/output/observed_field_extraction_no_go_audit_summary.json",
+    "phase256Path": "studies/phase256_observed_field_extraction_intake_contract_001/output/observed_field_extraction_intake_contract_summary.json",
+    "phase267Path": "studies/phase267_completion_revision_direct_bridge_source_audit_001/output/completion_revision_direct_bridge_source_audit_summary.json",
+    "phase313Path": "studies/phase313_official_draft_electroweak_projection_map_audit_001/output/official_draft_electroweak_projection_map_audit_summary.json",
+    "phase315Path": "studies/phase315_ucsd_dark_geometric_energy_source_audit_001/output/ucsd_dark_geometric_energy_source_audit_summary.json",
+    "phase317Path": "studies/phase317_electroweak_mass_matrix_bridge_source_audit_001/output/electroweak_mass_matrix_bridge_source_audit_summary.json",
+    "phase323Path": "studies/phase323_coupled_yang_mills_higgs_mass_extraction_audit_001/output/coupled_yang_mills_higgs_mass_extraction_audit_summary.json",
+    "phase330Path": "studies/phase330_weyl_geometric_mass_generation_source_audit_001/output/weyl_geometric_mass_generation_source_audit_summary.json"
+  }
+}
