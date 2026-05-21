@@ -177,6 +177,7 @@ const string Phase316UcsdTranscriptSourceStrengthAuditPath = "studies/phase316_u
 const string Phase317ElectroweakMassMatrixBridgeSourceAuditPath = "studies/phase317_electroweak_mass_matrix_bridge_source_audit_001/output/electroweak_mass_matrix_bridge_source_audit.json";
 const string Phase318DeferredImplementationGapRepairabilityAuditPath = "studies/phase318_deferred_implementation_gap_repairability_audit_001/output/deferred_implementation_gap_repairability_audit.json";
 const string Phase319LegacySelectorSpectrumSourceLawAuditPath = "studies/phase319_legacy_selector_spectrum_source_law_audit_001/output/legacy_selector_spectrum_source_law_audit.json";
+const string Phase320StandardElectroweakLadderNormalizationBoundaryAuditPath = "studies/phase320_standard_electroweak_ladder_normalization_boundary_audit_001/output/standard_electroweak_ladder_normalization_boundary_audit.json";
 const string Phase282BranchLocalDirectInvariantCensusPath = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census.json";
 const string Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit.json";
 const string Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic.json";
@@ -374,6 +375,7 @@ using var phase316 = TryParseJson(Phase316UcsdTranscriptSourceStrengthAuditPath)
 using var phase317 = TryParseJson(Phase317ElectroweakMassMatrixBridgeSourceAuditPath);
 using var phase318 = TryParseJson(Phase318DeferredImplementationGapRepairabilityAuditPath);
 using var phase319 = TryParseJson(Phase319LegacySelectorSpectrumSourceLawAuditPath);
+using var phase320 = TryParseJson(Phase320StandardElectroweakLadderNormalizationBoundaryAuditPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -634,6 +636,7 @@ var package = new
         electroweakMassMatrixBridgeSourceAuditPath = File.Exists(Phase317ElectroweakMassMatrixBridgeSourceAuditPath) ? Phase317ElectroweakMassMatrixBridgeSourceAuditPath : null,
         deferredImplementationGapRepairabilityAuditPath = File.Exists(Phase318DeferredImplementationGapRepairabilityAuditPath) ? Phase318DeferredImplementationGapRepairabilityAuditPath : null,
         legacySelectorSpectrumSourceLawAuditPath = File.Exists(Phase319LegacySelectorSpectrumSourceLawAuditPath) ? Phase319LegacySelectorSpectrumSourceLawAuditPath : null,
+        standardElectroweakLadderNormalizationBoundaryAuditPath = File.Exists(Phase320StandardElectroweakLadderNormalizationBoundaryAuditPath) ? Phase320StandardElectroweakLadderNormalizationBoundaryAuditPath : null,
         branchLocalDirectInvariantCensusPath = File.Exists(Phase282BranchLocalDirectInvariantCensusPath) ? Phase282BranchLocalDirectInvariantCensusPath : null,
         legacyElectroweakBridgeSourceSurvivabilityAuditPath = File.Exists(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath) ? Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath : null,
         predictedRatioAlphaGfExternalClosureDiagnosticPath = File.Exists(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath) ? Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath : null,
@@ -2438,6 +2441,43 @@ var package = new
                 ? JsonInt(p319ContractImpact, "higgsMissingFieldCount")
                 : null,
             decision = JsonString(phase319.RootElement, "decision"),
+        }
+        : null,
+    standardElectroweakLadderNormalizationBoundaryAudit = phase320 is not null
+        ? new
+        {
+            status = JsonString(phase320.RootElement, "terminalStatus"),
+            standardElectroweakNormalizationBoundaryAuditPassed = JsonBool(phase320.RootElement, "standardElectroweakNormalizationBoundaryAuditPassed"),
+            standardElectroweakReferenceMaterialized = JsonBool(phase320.RootElement, "standardElectroweakReferenceMaterialized"),
+            standardWChargedLadderDefinitionAvailable = JsonBool(phase320.RootElement, "standardWChargedLadderDefinitionAvailable"),
+            standardZRequiresNeutralSu2U1Mixing = JsonBool(phase320.RootElement, "standardZRequiresNeutralSu2U1Mixing"),
+            standardElectroweakAlgebraProvidesPhase302ScaleLaw = JsonBool(phase320.RootElement, "standardElectroweakAlgebraProvidesPhase302ScaleLaw"),
+            standardElectroweakAlgebraPromotesDecoupledSelector = JsonBool(phase320.RootElement, "standardElectroweakAlgebraPromotesDecoupledSelector"),
+            standardElectroweakBoundaryPromotesWzMasses = JsonBool(phase320.RootElement, "standardElectroweakBoundaryPromotesWzMasses"),
+            standardElectroweakBoundaryPromotesHiggsMass = JsonBool(phase320.RootElement, "standardElectroweakBoundaryPromotesHiggsMass"),
+            standardElectroweakBoundaryCompletesBosonPredictions = JsonBool(phase320.RootElement, "standardElectroweakBoundaryCompletesBosonPredictions"),
+            phase307ChargedOperatorMatchesStandardShape = phase320.RootElement.TryGetProperty("phase307Boundary", out var p320Phase307Boundary)
+                ? JsonBool(p320Phase307Boundary, "phase307ChargedOperatorMatchesStandardShape")
+                : null,
+            phase307P302ScaledStableCommonSelectionLawCount = phase320.RootElement.TryGetProperty("phase307Boundary", out p320Phase307Boundary)
+                ? JsonInt(p320Phase307Boundary, "phase307P302ScaledStableCommonSelectionLawCount")
+                : null,
+            phase308P302WTotalScale = phase320.RootElement.TryGetProperty("phase308ScaleBoundary", out var p320Phase308Boundary)
+                ? JsonDouble(p320Phase308Boundary, "phase308P302WTotalScale")
+                : null,
+            phase308P302ZTotalScale = phase320.RootElement.TryGetProperty("phase308ScaleBoundary", out p320Phase308Boundary)
+                ? JsonDouble(p320Phase308Boundary, "phase308P302ZTotalScale")
+                : null,
+            canFillPhase201WzContract = JsonBool(phase320.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase320.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase320.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            wzMissingFieldCount = phase320.RootElement.TryGetProperty("contractImpact", out var p320ContractImpact)
+                ? JsonInt(p320ContractImpact, "wzMissingFieldCount")
+                : null,
+            higgsMissingFieldCount = phase320.RootElement.TryGetProperty("contractImpact", out p320ContractImpact)
+                ? JsonInt(p320ContractImpact, "higgsMissingFieldCount")
+                : null,
+            decision = JsonString(phase320.RootElement, "decision"),
         }
         : null,
     branchLocalDirectInvariantCensus = phase282 is not null
@@ -4798,6 +4838,18 @@ var summary = new
         : null,
     legacySelectorRouteCompletesBosonPredictions = phase319 is not null
         ? JsonBool(phase319.RootElement, "legacySelectorRouteCompletesBosonPredictions")
+        : null,
+    standardElectroweakNormalizationBoundaryAuditPassed = phase320 is not null
+        ? JsonBool(phase320.RootElement, "standardElectroweakNormalizationBoundaryAuditPassed")
+        : null,
+    standardElectroweakAlgebraProvidesPhase302ScaleLaw = phase320 is not null
+        ? JsonBool(phase320.RootElement, "standardElectroweakAlgebraProvidesPhase302ScaleLaw")
+        : null,
+    standardElectroweakAlgebraPromotesDecoupledSelector = phase320 is not null
+        ? JsonBool(phase320.RootElement, "standardElectroweakAlgebraPromotesDecoupledSelector")
+        : null,
+    standardElectroweakBoundaryCompletesBosonPredictions = phase320 is not null
+        ? JsonBool(phase320.RootElement, "standardElectroweakBoundaryCompletesBosonPredictions")
         : null,
     branchLocalInvariantCensusPassed = phase282 is not null
         ? JsonBool(phase282.RootElement, "branchLocalInvariantCensusPassed")

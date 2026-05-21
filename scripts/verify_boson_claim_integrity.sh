@@ -89,6 +89,7 @@ const paths = {
   phase317: "studies/phase317_electroweak_mass_matrix_bridge_source_audit_001/output/electroweak_mass_matrix_bridge_source_audit_summary.json",
   phase318: "studies/phase318_deferred_implementation_gap_repairability_audit_001/output/deferred_implementation_gap_repairability_audit_summary.json",
   phase319: "studies/phase319_legacy_selector_spectrum_source_law_audit_001/output/legacy_selector_spectrum_source_law_audit_summary.json",
+  phase320: "studies/phase320_standard_electroweak_ladder_normalization_boundary_audit_001/output/standard_electroweak_ladder_normalization_boundary_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -249,6 +250,7 @@ const phase316 = requireFile(paths.phase316);
 const phase317 = requireFile(paths.phase317);
 const phase318 = requireFile(paths.phase318);
 const phase319 = requireFile(paths.phase319);
+const phase320 = requireFile(paths.phase320);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -1354,6 +1356,28 @@ if (sourceLineageMissing) {
   assert(phase319.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase319 Higgs missing-field count must match Phase213.");
   assert(phase319.contractImpact?.phase252NormalizationArtifactsProvideSourceLineageContractFields === false, "Phase319 must inherit Phase252 no source-lineage contract fields.");
   assert(phase319.contractImpact?.phase313ObservedElectroweakGaugeEmbedding === false, "Phase319 must inherit missing observed electroweak gauge embedding.");
+  assert(phase320.standardElectroweakNormalizationBoundaryAuditPassed === true, "Phase320 standard electroweak ladder normalization boundary audit must pass while preserving non-promotional status.");
+  assert(phase320.standardElectroweakReferenceMaterialized === true, "Phase320 must record standard electroweak reference evidence.");
+  assert(phase320.standardWChargedLadderDefinitionAvailable === true, "Phase320 must preserve that standard electroweak theory has a W charged-ladder definition.");
+  assert(phase320.standardZRequiresNeutralSu2U1Mixing === true, "Phase320 must preserve that Z requires neutral SU(2)-U(1) mixing.");
+  assert(phase320.standardElectroweakAlgebraProvidesPhase302ScaleLaw === false, "Phase320 cannot claim standard electroweak algebra derives the Phase302 scale law.");
+  assert(phase320.standardElectroweakAlgebraProvidesSourceModeVectorLengthScale === false, "Phase320 cannot claim standard electroweak algebra derives the source-mode vector-length scale.");
+  assert(phase320.standardElectroweakAlgebraJustifiesW416Z156Scale === false, "Phase320 cannot claim standard electroweak algebra justifies W=416/Z=156 scaling.");
+  assert(phase320.standardElectroweakAlgebraPromotesDecoupledSelector === false, "Phase320 cannot promote the decoupled selector from standard electroweak algebra.");
+  assert(phase320.standardElectroweakBoundaryPromotesWzMasses === false, "Phase320 cannot promote W/Z masses from the standard electroweak boundary alone.");
+  assert(phase320.standardElectroweakBoundaryPromotesHiggsMass === false, "Phase320 cannot promote Higgs mass from the standard electroweak boundary alone.");
+  assert(phase320.standardElectroweakBoundaryCompletesBosonPredictions === false, "Phase320 cannot complete boson predictions from the standard electroweak boundary.");
+  assert(phase320.phase307Boundary?.phase307ChargedOperatorMatchesStandardShape === true, "Phase320 must preserve the W-like charged-ladder shape in Phase307.");
+  assert(phase320.phase307Boundary?.phase307P302ScaledStableCommonSelectionLawCount > 0, "Phase320 must preserve the Phase307 P302-scaled near-pass count.");
+  assert(phase320.phase307Boundary?.phase307RawStableCommonSelectionLawCount === 0, "Phase320 must preserve that no Phase307 unscaled raw/common selector passes.");
+  assert(phase320.phase308ScaleBoundary?.phase308P302WTotalScale === 416, "Phase320 must preserve the Phase308 W total scale.");
+  assert(phase320.phase308ScaleBoundary?.phase308P302ZTotalScale === 156, "Phase320 must preserve the Phase308 Z total scale.");
+  assert(phase320.phase308ScaleBoundary?.phase308ScaleTransferAllowed === false, "Phase320 must keep Phase308 scale transfer blocked.");
+  assert(phase320.contractImpact?.canFillPhase201WzContract === false, "Phase320 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase320.contractImpact?.canFillPhase201HiggsContract === false, "Phase320 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase320.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase320 contract impact must keep Phase256 unfilled.");
+  assert(phase320.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase320 W/Z missing-field count must match Phase213.");
+  assert(phase320.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase320 Higgs missing-field count must match Phase213.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

@@ -7771,6 +7771,11 @@ filled.
     `anyObservedFieldExtractionCandidateFillsContract=false`.
   - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
     `anySourceLineageCandidateFillsContract=false`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed and reran
+  Phase320 in both generator passes, ending with P101 blocked, P202 incomplete
+  at `113/3`, and claim integrity verified.
+- `dotnet test GeometricUnity.slnx` passed.
+- `git diff --check` passed.
 - P101 regenerated with Phase317 included and remained
   `internal-boson-prediction-package-built-physical-comparison-blocked`.
 - P202 regenerated with Phase317 included and remained
@@ -8412,3 +8417,93 @@ to physical W/Z source rows and scale closure.
 - `dotnet test GeometricUnity.slnx` passed. The existing xUnit analyzer warning
   in `QuantitativeValidationTests.cs(315,9)` remains present.
 - `git diff --check` passed.
+
+## 2026-05-20 - Phase320 Standard Electroweak Ladder Normalization Boundary
+
+### Question
+
+After Phase306/307 found a target-independent but Phase302-scaled W/Z
+charged-ladder near pass, check whether standard electroweak charged-ladder
+normalization can promote it into the missing W/Z source law. This is narrower
+than importing the full Standard Model mass matrix from Phase317: the question
+is whether ordinary SU(2) ladder algebra can justify the Phase302 vector-length
+and W `416` / Z `156` scaling used by the near pass.
+
+### Research
+
+- Rechecked the current Phase307/308/309 outputs. Phase307 has a W-like
+  charged-ladder shape and a target-independent scaled near pass, but no
+  unscaled raw/common selector passes. Phase308 records the Phase302 transfer
+  as W `416` / Z `156` with no scale-transfer theorem. Phase309 records the
+  `156` factor as a coordinate-count diagnostic, not an L2 measure conversion.
+- Used the PDG electroweak model review as the standard physics boundary:
+  `https://pdg.lbl.gov/2025/reviews/rpp2024-rev-standard-model.pdf`.
+  The relevant standard-model facts are that W charged fields use the usual
+  charged SU(2) ladder combination, while Z requires neutral SU(2)-U(1)
+  mixing and the tree-level masses require electroweak source parameters.
+- Compared that boundary to Phase313 and Phase317. Phase313 still lacks a
+  GU-derived observed electroweak embedding, weak-mixing-angle source, neutral
+  mass-matrix diagonalization, and photon/Z projection map. Phase317 already
+  classifies the Standard Model mass matrix as an external dependency map, not
+  a GU source-lineage artifact.
+
+### Actions
+
+- Added `studies/phase320_standard_electroweak_ladder_normalization_boundary_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P320.md`.
+- Wired Phase320 into the generator, P101 package, P202 objective completion
+  audit, claim-integrity verifier, and scanner exclusions.
+
+### Current Expected Outcome
+
+Phase320 is expected to pass only as a negative boundary audit:
+
+- `standardElectroweakNormalizationBoundaryAuditPassed=true`.
+- `standardWChargedLadderDefinitionAvailable=true`.
+- `standardZRequiresNeutralSu2U1Mixing=true`.
+- `standardElectroweakAlgebraProvidesPhase302ScaleLaw=false`.
+- `standardElectroweakAlgebraProvidesSourceModeVectorLengthScale=false`.
+- `standardElectroweakAlgebraJustifiesW416Z156Scale=false`.
+- `standardElectroweakAlgebraPromotesDecoupledSelector=false`.
+- `standardElectroweakBoundaryPromotesWzMasses=false`.
+- `standardElectroweakBoundaryPromotesHiggsMass=false`.
+- `standardElectroweakBoundaryCompletesBosonPredictions=false`.
+- `canFillPhase201WzContract=false`.
+- `canFillPhase201HiggsContract=false`.
+- `canFillPhase256ObservedFieldExtractionContract=false`.
+
+### Decision
+
+Do not promote the Phase302/307 charged-ladder near pass from standard
+electroweak algebra. The standard theory supports the W charged-ladder shape,
+but it does not derive the repository-specific vector-length scale, the W/Z
+particle-specific scale transfer, the decoupled row selector, or the missing
+GU observed-field extraction. The near pass remains useful diagnostic evidence,
+not a successful W/Z prediction.
+
+### Validation
+
+- Targeted Phase320 run passed with:
+  - `standardElectroweakNormalizationBoundaryAuditPassed=true`.
+  - `standardElectroweakAlgebraProvidesPhase302ScaleLaw=false`.
+  - `standardElectroweakAlgebraPromotesDecoupledSelector=false`.
+  - `canFillPhase201WzContract=false`.
+- P101 regenerated with Phase320 included and remained
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase320 included and remained
+  `objectiveAchieved=false`, with `checklistPassedCount=113` and
+  `checklistFailedCount=3`.
+- Claim-integrity verifier passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns after adding Phase320 found no intake-ready artifacts:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `canPromoteHiggsQuarticSelfCouplingSource=false` and
+    `intakeReadyFindingCount=0`.
+  - P281 `geometricRefractiveUnificationSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P295 `intakeReadyObservedFieldExtractionCandidateCount=0` and
+    `anyObservedFieldExtractionCandidateFillsContract=false`.
+  - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
+    `anySourceLineageCandidateFillsContract=false`.

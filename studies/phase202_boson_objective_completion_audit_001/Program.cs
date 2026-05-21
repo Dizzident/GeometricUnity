@@ -85,6 +85,7 @@ const string Phase316Path = "studies/phase316_ucsd_transcript_source_strength_au
 const string Phase317Path = "studies/phase317_electroweak_mass_matrix_bridge_source_audit_001/output/electroweak_mass_matrix_bridge_source_audit_summary.json";
 const string Phase318Path = "studies/phase318_deferred_implementation_gap_repairability_audit_001/output/deferred_implementation_gap_repairability_audit_summary.json";
 const string Phase319Path = "studies/phase319_legacy_selector_spectrum_source_law_audit_001/output/legacy_selector_spectrum_source_law_audit_summary.json";
+const string Phase320Path = "studies/phase320_standard_electroweak_ladder_normalization_boundary_audit_001/output/standard_electroweak_ladder_normalization_boundary_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -203,6 +204,7 @@ using var phase316 = File.Exists(Phase316Path) ? JsonDocument.Parse(File.ReadAll
 using var phase317 = File.Exists(Phase317Path) ? JsonDocument.Parse(File.ReadAllText(Phase317Path)) : null;
 using var phase318 = File.Exists(Phase318Path) ? JsonDocument.Parse(File.ReadAllText(Phase318Path)) : null;
 using var phase319 = File.Exists(Phase319Path) ? JsonDocument.Parse(File.ReadAllText(Phase319Path)) : null;
+using var phase320 = File.Exists(Phase320Path) ? JsonDocument.Parse(File.ReadAllText(Phase320Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -1209,6 +1211,31 @@ var legacySelectorSpectrumSourceLawAuditPassed = legacySelectorSpectrumSourceLaw
     && JsonInt(p319ContractImpact, "higgsMissingFieldCount") == higgsMissingFieldCount
     && JsonBool(p319ContractImpact, "phase252NormalizationArtifactsProvideSourceLineageContractFields") is false
     && JsonBool(p319ContractImpact, "phase313ObservedElectroweakGaugeEmbedding") is false;
+var standardElectroweakLadderNormalizationBoundaryAuditMaterialized = phase320 is not null;
+var standardElectroweakLadderNormalizationBoundaryAuditPassed = standardElectroweakLadderNormalizationBoundaryAuditMaterialized
+    && JsonBool(phase320!.RootElement, "standardElectroweakNormalizationBoundaryAuditPassed") is true
+    && JsonBool(phase320.RootElement, "standardElectroweakReferenceMaterialized") is true
+    && JsonBool(phase320.RootElement, "standardWChargedLadderDefinitionAvailable") is true
+    && JsonBool(phase320.RootElement, "standardZRequiresNeutralSu2U1Mixing") is true
+    && JsonBool(phase320.RootElement, "standardElectroweakAlgebraProvidesPhase302ScaleLaw") is false
+    && JsonBool(phase320.RootElement, "standardElectroweakAlgebraPromotesDecoupledSelector") is false
+    && JsonBool(phase320.RootElement, "standardElectroweakBoundaryPromotesWzMasses") is false
+    && JsonBool(phase320.RootElement, "standardElectroweakBoundaryPromotesHiggsMass") is false
+    && JsonBool(phase320.RootElement, "standardElectroweakBoundaryCompletesBosonPredictions") is false
+    && JsonBool(phase320.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase320.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase320.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && phase320.RootElement.TryGetProperty("phase307Boundary", out var p320Phase307Boundary)
+    && JsonBool(p320Phase307Boundary, "phase307ChargedOperatorMatchesStandardShape") is true
+    && JsonInt(p320Phase307Boundary, "phase307P302ScaledStableCommonSelectionLawCount") > 0
+    && JsonInt(p320Phase307Boundary, "phase307RawStableCommonSelectionLawCount") == 0
+    && phase320.RootElement.TryGetProperty("phase308ScaleBoundary", out var p320Phase308Boundary)
+    && JsonDouble(p320Phase308Boundary, "phase308P302WTotalScale") == 416.0
+    && JsonDouble(p320Phase308Boundary, "phase308P302ZTotalScale") == 156.0
+    && JsonBool(p320Phase308Boundary, "phase308ScaleTransferAllowed") is false
+    && phase320.RootElement.TryGetProperty("contractImpact", out var p320ContractImpact)
+    && JsonInt(p320ContractImpact, "wzMissingFieldCount") == wzMissingFieldCount
+    && JsonInt(p320ContractImpact, "higgsMissingFieldCount") == higgsMissingFieldCount;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -2738,6 +2765,14 @@ var checklist = new[]
             : "Phase319 artifact not materialized",
         Phase319Path),
     new ObjectiveChecklistItem(
+        "standard-electroweak-ladder-normalization-boundary-audit-materialized",
+        "Audit whether standard electroweak charged-ladder normalization can promote the Phase302/307 near pass into a W/Z source law.",
+        standardElectroweakLadderNormalizationBoundaryAuditPassed ? "passed" : "failed",
+        standardElectroweakLadderNormalizationBoundaryAuditMaterialized
+            ? $"standardElectroweakNormalizationBoundaryAuditPassed={JsonBool(phase320!.RootElement, "standardElectroweakNormalizationBoundaryAuditPassed")}; standardWChargedLadderDefinitionAvailable={JsonBool(phase320.RootElement, "standardWChargedLadderDefinitionAvailable")}; standardZRequiresNeutralSu2U1Mixing={JsonBool(phase320.RootElement, "standardZRequiresNeutralSu2U1Mixing")}; standardElectroweakAlgebraProvidesPhase302ScaleLaw={JsonBool(phase320.RootElement, "standardElectroweakAlgebraProvidesPhase302ScaleLaw")}; standardElectroweakAlgebraPromotesDecoupledSelector={JsonBool(phase320.RootElement, "standardElectroweakAlgebraPromotesDecoupledSelector")}; standardElectroweakBoundaryCompletesBosonPredictions={JsonBool(phase320.RootElement, "standardElectroweakBoundaryCompletesBosonPredictions")}; phase307ChargedOperatorMatchesStandardShape={(phase320.RootElement.TryGetProperty("phase307Boundary", out var p320ChecklistPhase307) ? JsonBool(p320ChecklistPhase307, "phase307ChargedOperatorMatchesStandardShape") : null)}; phase307P302ScaledStableCommonSelectionLawCount={(phase320.RootElement.TryGetProperty("phase307Boundary", out p320ChecklistPhase307) ? JsonInt(p320ChecklistPhase307, "phase307P302ScaledStableCommonSelectionLawCount") : null)}; phase308P302WTotalScale={(phase320.RootElement.TryGetProperty("phase308ScaleBoundary", out var p320ChecklistPhase308) ? JsonDouble(p320ChecklistPhase308, "phase308P302WTotalScale") : null)}; phase308P302ZTotalScale={(phase320.RootElement.TryGetProperty("phase308ScaleBoundary", out p320ChecklistPhase308) ? JsonDouble(p320ChecklistPhase308, "phase308P302ZTotalScale") : null)}; canFillPhase201WzContract={JsonBool(phase320.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase320.RootElement, "decision")}"
+            : "Phase320 artifact not materialized",
+        Phase320Path),
+    new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
         branchLocalDirectInvariantCensusPassed ? "passed" : "failed",
@@ -3090,6 +3125,7 @@ var result = new
     ucsdTranscriptSourceStrengthAuditPassed,
     electroweakMassMatrixBridgeSourceAuditPassed,
     legacySelectorSpectrumSourceLawAuditPassed,
+    standardElectroweakLadderNormalizationBoundaryAuditPassed,
     parameterSourceContractCandidateScanPassed,
     phase288CoverageFalseNegativeAuditPassed,
     chargedLeptonThresholdSourceReplacementAuditPassed,
@@ -3194,6 +3230,7 @@ var result = new
         phase317Path = Phase317Path,
         phase318Path = Phase318Path,
         phase319Path = Phase319Path,
+        phase320Path = Phase320Path,
         phase282Path = Phase282Path,
         phase283Path = Phase283Path,
         phase284Path = Phase284Path,
