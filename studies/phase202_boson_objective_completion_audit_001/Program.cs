@@ -94,6 +94,7 @@ const string Phase325Path = "studies/phase325_electroweak_unitarity_scattering_s
 const string Phase326Path = "studies/phase326_anomaly_hypercharge_source_audit_001/output/anomaly_hypercharge_source_audit_summary.json";
 const string Phase327Path = "studies/phase327_oblique_precision_electroweak_source_audit_001/output/oblique_precision_electroweak_source_audit_summary.json";
 const string Phase328Path = "studies/phase328_superphysics_draft_energy_scale_source_audit_001/output/superphysics_draft_energy_scale_source_audit_summary.json";
+const string Phase329Path = "studies/phase329_seiberg_witten_monopole_electroweak_source_audit_001/output/seiberg_witten_monopole_electroweak_source_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -221,6 +222,7 @@ using var phase325 = File.Exists(Phase325Path) ? JsonDocument.Parse(File.ReadAll
 using var phase326 = File.Exists(Phase326Path) ? JsonDocument.Parse(File.ReadAllText(Phase326Path)) : null;
 using var phase327 = File.Exists(Phase327Path) ? JsonDocument.Parse(File.ReadAllText(Phase327Path)) : null;
 using var phase328 = File.Exists(Phase328Path) ? JsonDocument.Parse(File.ReadAllText(Phase328Path)) : null;
+using var phase329 = File.Exists(Phase329Path) ? JsonDocument.Parse(File.ReadAllText(Phase329Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -1462,6 +1464,34 @@ var superphysicsDraftEnergyScaleSourceAuditPassed = superphysicsDraftEnergyScale
     && JsonInt(p328ContractImpact, "wzMissingFieldCount") == wzMissingFieldCount
     && JsonInt(p328ContractImpact, "higgsMissingFieldCount") == higgsMissingFieldCount
     && JsonInt(p328ContractImpact, "observedFieldExtractionFilledRequiredFieldCount") == 0;
+var seibergWittenMonopoleElectroweakSourceAuditMaterialized = phase329 is not null;
+var seibergWittenMonopoleElectroweakSourceAuditPassed = seibergWittenMonopoleElectroweakSourceAuditMaterialized
+    && JsonBool(phase329!.RootElement, "seibergWittenMonopoleElectroweakSourceAuditPassed") is true
+    && JsonBool(phase329.RootElement, "ucsdSeibergWittenLeadPresent") is true
+    && JsonBool(phase329.RootElement, "wittenMonopolesFourManifoldsReviewed") is true
+    && JsonBool(phase329.RootElement, "seibergWittenN2DualitySourcesReviewed") is true
+    && JsonBool(phase329.RootElement, "seibergWittenEquationsAreAbelianSpinCMonopoleSystem") is true
+    && JsonBool(phase329.RootElement, "seibergWittenTheoryProvidesFourManifoldInvariantRoute") is true
+    && JsonBool(phase329.RootElement, "seibergWittenTheoryProvidesN2SupersymmetricGaugeTheoryModuliRoute") is true
+    && JsonBool(phase329.RootElement, "seibergWittenProvidesStandardModelElectroweakGaugeEmbedding") is false
+    && JsonBool(phase329.RootElement, "seibergWittenProvidesLowEnergyWeakMixingAngleSource") is false
+    && JsonBool(phase329.RootElement, "seibergWittenProvidesGaugeCouplingNormalization") is false
+    && JsonBool(phase329.RootElement, "seibergWittenProvidesTargetIndependentVevSource") is false
+    && JsonBool(phase329.RootElement, "seibergWittenProvidesSeparateWzSourceRows") is false
+    && JsonBool(phase329.RootElement, "seibergWittenProvidesPhotonWzProjectionRows") is false
+    && JsonBool(phase329.RootElement, "seibergWittenProvidesHiggsScalarSourceOperator") is false
+    && JsonBool(phase329.RootElement, "seibergWittenProvidesHiggsQuarticOrExcitationSource") is false
+    && JsonBool(phase329.RootElement, "seibergWittenProvidesGeVUnitNormalization") is false
+    && JsonBool(phase329.RootElement, "seibergWittenPromotesWzMasses") is false
+    && JsonBool(phase329.RootElement, "seibergWittenPromotesHiggsMass") is false
+    && JsonBool(phase329.RootElement, "seibergWittenCompletesBosonPredictions") is false
+    && JsonBool(phase329.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase329.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase329.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && phase329.RootElement.TryGetProperty("contractImpact", out var p329ContractImpact)
+    && JsonInt(p329ContractImpact, "wzMissingFieldCount") == wzMissingFieldCount
+    && JsonInt(p329ContractImpact, "higgsMissingFieldCount") == higgsMissingFieldCount
+    && JsonInt(p329ContractImpact, "observedFieldExtractionFilledRequiredFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -3063,6 +3093,14 @@ var checklist = new[]
             : "Phase328 artifact not materialized",
         Phase328Path),
     new ObjectiveChecklistItem(
+        "seiberg-witten-monopole-electroweak-source-audit-materialized",
+        "Audit whether the GU-adjacent Seiberg-Witten monopole route supplies electroweak W/Z/H source-lineage artifacts.",
+        seibergWittenMonopoleElectroweakSourceAuditPassed ? "passed" : "failed",
+        seibergWittenMonopoleElectroweakSourceAuditMaterialized
+            ? $"seibergWittenMonopoleElectroweakSourceAuditPassed={JsonBool(phase329!.RootElement, "seibergWittenMonopoleElectroweakSourceAuditPassed")}; ucsdSeibergWittenLeadPresent={JsonBool(phase329.RootElement, "ucsdSeibergWittenLeadPresent")}; wittenMonopolesFourManifoldsReviewed={JsonBool(phase329.RootElement, "wittenMonopolesFourManifoldsReviewed")}; seibergWittenN2DualitySourcesReviewed={JsonBool(phase329.RootElement, "seibergWittenN2DualitySourcesReviewed")}; seibergWittenProvidesLowEnergyWeakMixingAngleSource={JsonBool(phase329.RootElement, "seibergWittenProvidesLowEnergyWeakMixingAngleSource")}; seibergWittenProvidesTargetIndependentVevSource={JsonBool(phase329.RootElement, "seibergWittenProvidesTargetIndependentVevSource")}; seibergWittenProvidesSeparateWzSourceRows={JsonBool(phase329.RootElement, "seibergWittenProvidesSeparateWzSourceRows")}; seibergWittenProvidesHiggsScalarSourceOperator={JsonBool(phase329.RootElement, "seibergWittenProvidesHiggsScalarSourceOperator")}; seibergWittenProvidesGeVUnitNormalization={JsonBool(phase329.RootElement, "seibergWittenProvidesGeVUnitNormalization")}; seibergWittenCompletesBosonPredictions={JsonBool(phase329.RootElement, "seibergWittenCompletesBosonPredictions")}; canFillPhase201WzContract={JsonBool(phase329.RootElement, "canFillPhase201WzContract")}; canFillPhase201HiggsContract={JsonBool(phase329.RootElement, "canFillPhase201HiggsContract")}; decision={JsonString(phase329.RootElement, "decision")}"
+            : "Phase329 artifact not materialized",
+        Phase329Path),
+    new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
         branchLocalDirectInvariantCensusPassed ? "passed" : "failed",
@@ -3429,6 +3467,7 @@ var result = new
     anomalyHyperchargeSourceAuditPassed,
     obliquePrecisionElectroweakSourceAuditPassed,
     superphysicsDraftEnergyScaleSourceAuditPassed,
+    seibergWittenMonopoleElectroweakSourceAuditPassed,
     parameterSourceContractCandidateScanPassed,
     phase288CoverageFalseNegativeAuditPassed,
     chargedLeptonThresholdSourceReplacementAuditPassed,
@@ -3542,6 +3581,7 @@ var result = new
         phase326Path = Phase326Path,
         phase327Path = Phase327Path,
         phase328Path = Phase328Path,
+        phase329Path = Phase329Path,
         phase282Path = Phase282Path,
         phase283Path = Phase283Path,
         phase284Path = Phase284Path,

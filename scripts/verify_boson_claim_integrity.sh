@@ -98,6 +98,7 @@ const paths = {
   phase326: "studies/phase326_anomaly_hypercharge_source_audit_001/output/anomaly_hypercharge_source_audit_summary.json",
   phase327: "studies/phase327_oblique_precision_electroweak_source_audit_001/output/oblique_precision_electroweak_source_audit_summary.json",
   phase328: "studies/phase328_superphysics_draft_energy_scale_source_audit_001/output/superphysics_draft_energy_scale_source_audit_summary.json",
+  phase329: "studies/phase329_seiberg_witten_monopole_electroweak_source_audit_001/output/seiberg_witten_monopole_electroweak_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -267,6 +268,7 @@ const phase325 = requireFile(paths.phase325);
 const phase326 = requireFile(paths.phase326);
 const phase327 = requireFile(paths.phase327);
 const phase328 = requireFile(paths.phase328);
+const phase329 = requireFile(paths.phase329);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -1576,6 +1578,29 @@ if (sourceLineageMissing) {
   assert(phase328.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase328 W/Z missing-field count must match Phase213.");
   assert(phase328.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase328 Higgs missing-field count must match Phase213.");
   assert(phase328.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase328 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase329.seibergWittenMonopoleElectroweakSourceAuditPassed === true, "Phase329 Seiberg-Witten monopole electroweak source audit must pass while preserving non-promotional status.");
+  assert(phase329.ucsdSeibergWittenLeadPresent === true, "Phase329 must preserve the UCSD Seiberg-Witten GU-adjacent lead.");
+  assert(phase329.wittenMonopolesFourManifoldsReviewed === true, "Phase329 must record Witten's monopoles and four-manifolds source review.");
+  assert(phase329.seibergWittenN2DualitySourcesReviewed === true, "Phase329 must record Seiberg-Witten N=2 duality source review.");
+  assert(phase329.seibergWittenEquationsAreAbelianSpinCMonopoleSystem === true, "Phase329 must classify the monopole-equation route as abelian Spin^c/topological context.");
+  assert(phase329.seibergWittenProvidesStandardModelElectroweakGaugeEmbedding === false, "Phase329 cannot claim an electroweak gauge embedding from Seiberg-Witten sources.");
+  assert(phase329.seibergWittenProvidesLowEnergyWeakMixingAngleSource === false, "Phase329 cannot claim a weak-mixing source from Seiberg-Witten sources.");
+  assert(phase329.seibergWittenProvidesGaugeCouplingNormalization === false, "Phase329 cannot claim gauge-coupling normalization from Seiberg-Witten sources.");
+  assert(phase329.seibergWittenProvidesTargetIndependentVevSource === false, "Phase329 cannot claim a target-independent VEV source from Seiberg-Witten sources.");
+  assert(phase329.seibergWittenProvidesSeparateWzSourceRows === false, "Phase329 cannot claim separate W/Z source rows from Seiberg-Witten sources.");
+  assert(phase329.seibergWittenProvidesPhotonWzProjectionRows === false, "Phase329 cannot claim photon/W/Z projection rows from Seiberg-Witten sources.");
+  assert(phase329.seibergWittenProvidesHiggsScalarSourceOperator === false, "Phase329 cannot claim a Higgs scalar-source operator from Seiberg-Witten sources.");
+  assert(phase329.seibergWittenProvidesHiggsQuarticOrExcitationSource === false, "Phase329 cannot claim Higgs quartic/excitation source lineage from Seiberg-Witten sources.");
+  assert(phase329.seibergWittenProvidesGeVUnitNormalization === false, "Phase329 cannot claim GeV normalization from Seiberg-Witten sources.");
+  assert(phase329.seibergWittenPromotesWzMasses === false, "Phase329 cannot promote W/Z masses through the Seiberg-Witten route.");
+  assert(phase329.seibergWittenPromotesHiggsMass === false, "Phase329 cannot promote Higgs mass through the Seiberg-Witten route.");
+  assert(phase329.seibergWittenCompletesBosonPredictions === false, "Phase329 cannot complete boson predictions through the Seiberg-Witten route.");
+  assert(phase329.contractImpact?.canFillPhase201WzContract === false, "Phase329 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase329.contractImpact?.canFillPhase201HiggsContract === false, "Phase329 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase329.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase329 contract impact must keep Phase256 unfilled.");
+  assert(phase329.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase329 W/Z missing-field count must match Phase213.");
+  assert(phase329.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase329 Higgs missing-field count must match Phase213.");
+  assert(phase329.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase329 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");
