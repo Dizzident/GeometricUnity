@@ -88,6 +88,7 @@ const paths = {
   phase316: "studies/phase316_ucsd_transcript_source_strength_audit_001/output/ucsd_transcript_source_strength_audit_summary.json",
   phase317: "studies/phase317_electroweak_mass_matrix_bridge_source_audit_001/output/electroweak_mass_matrix_bridge_source_audit_summary.json",
   phase318: "studies/phase318_deferred_implementation_gap_repairability_audit_001/output/deferred_implementation_gap_repairability_audit_summary.json",
+  phase319: "studies/phase319_legacy_selector_spectrum_source_law_audit_001/output/legacy_selector_spectrum_source_law_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -247,6 +248,7 @@ const phase315 = requireFile(paths.phase315);
 const phase316 = requireFile(paths.phase316);
 const phase317 = requireFile(paths.phase317);
 const phase318 = requireFile(paths.phase318);
+const phase319 = requireFile(paths.phase319);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -1333,6 +1335,25 @@ if (sourceLineageMissing) {
   assert(phase318.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase318 W/Z missing-field count must match Phase213.");
   assert(phase318.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase318 Higgs missing-field count must match Phase213.");
   assert((phase318.codeOnlyRepairRows ?? []).length >= 8, "Phase318 must enumerate deferred code-only repair rows.");
+  assert(phase319.legacySelectorSpectrumSourceLawAuditPassed === true, "Phase319 legacy selector-spectrum source-law audit must pass while preserving non-promotional status.");
+  assert(phase319.legacySelectorSpectrumSourceLawFound === false, "Phase319 cannot report the legacy selector spectra as a W/Z source law.");
+  assert(phase319.legacySelectorRoutePromotableForBosonMasses === false, "Phase319 cannot promote legacy selector spectra as W/Z/H physical mass predictions.");
+  assert(phase319.legacySelectorRouteCanFillPhase201WzContract === false, "Phase319 cannot fill the Phase201 W/Z source-lineage contract.");
+  assert(phase319.legacySelectorRouteCanFillPhase201HiggsContract === false, "Phase319 cannot fill the Phase201 Higgs source-lineage contract.");
+  assert(phase319.legacySelectorRouteCanFillPhase256ObservedFieldExtractionContract === false, "Phase319 cannot fill observed-field extraction from legacy selector spectra.");
+  assert(phase319.legacySelectorRouteCompletesBosonPredictions === false, "Phase319 cannot complete boson predictions from legacy selector spectra.");
+  assert(phase319.absoluteProjectionFailure?.phase73ProjectionMaterialized === true, "Phase319 must preserve the Phase73 absolute W/Z projection as evidence.");
+  assert(phase319.absoluteProjectionFailure?.phase74TargetComparisonFailed === true, "Phase319 must inherit the Phase74 W/Z target-comparison failure.");
+  assert(phase319.absoluteProjectionFailure?.phase74FailedComparisonCount === 2, "Phase319 must preserve two failed W/Z target comparisons.");
+  assert(phase319.absoluteProjectionFailure?.phase76GeneratorNormalizationCannotExplainMiss === true, "Phase319 must preserve the Phase76 generator-normalization miss diagnosis.");
+  assert(phase319.replayInputBoundary?.phase80ProductionInputsBlocked === true, "Phase319 must preserve blocked production analytic replay inputs.");
+  assert(phase319.contractImpact?.canFillPhase201WzContract === false, "Phase319 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase319.contractImpact?.canFillPhase201HiggsContract === false, "Phase319 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase319.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase319 contract impact must keep Phase256 unfilled.");
+  assert(phase319.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase319 W/Z missing-field count must match Phase213.");
+  assert(phase319.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase319 Higgs missing-field count must match Phase213.");
+  assert(phase319.contractImpact?.phase252NormalizationArtifactsProvideSourceLineageContractFields === false, "Phase319 must inherit Phase252 no source-lineage contract fields.");
+  assert(phase319.contractImpact?.phase313ObservedElectroweakGaugeEmbedding === false, "Phase319 must inherit missing observed electroweak gauge embedding.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

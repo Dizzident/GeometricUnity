@@ -176,6 +176,7 @@ const string Phase315UcsdDarkGeometricEnergySourceAuditPath = "studies/phase315_
 const string Phase316UcsdTranscriptSourceStrengthAuditPath = "studies/phase316_ucsd_transcript_source_strength_audit_001/output/ucsd_transcript_source_strength_audit.json";
 const string Phase317ElectroweakMassMatrixBridgeSourceAuditPath = "studies/phase317_electroweak_mass_matrix_bridge_source_audit_001/output/electroweak_mass_matrix_bridge_source_audit.json";
 const string Phase318DeferredImplementationGapRepairabilityAuditPath = "studies/phase318_deferred_implementation_gap_repairability_audit_001/output/deferred_implementation_gap_repairability_audit.json";
+const string Phase319LegacySelectorSpectrumSourceLawAuditPath = "studies/phase319_legacy_selector_spectrum_source_law_audit_001/output/legacy_selector_spectrum_source_law_audit.json";
 const string Phase282BranchLocalDirectInvariantCensusPath = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census.json";
 const string Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit.json";
 const string Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic.json";
@@ -372,6 +373,7 @@ using var phase315 = TryParseJson(Phase315UcsdDarkGeometricEnergySourceAuditPath
 using var phase316 = TryParseJson(Phase316UcsdTranscriptSourceStrengthAuditPath);
 using var phase317 = TryParseJson(Phase317ElectroweakMassMatrixBridgeSourceAuditPath);
 using var phase318 = TryParseJson(Phase318DeferredImplementationGapRepairabilityAuditPath);
+using var phase319 = TryParseJson(Phase319LegacySelectorSpectrumSourceLawAuditPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -631,6 +633,7 @@ var package = new
         ucsdTranscriptSourceStrengthAuditPath = File.Exists(Phase316UcsdTranscriptSourceStrengthAuditPath) ? Phase316UcsdTranscriptSourceStrengthAuditPath : null,
         electroweakMassMatrixBridgeSourceAuditPath = File.Exists(Phase317ElectroweakMassMatrixBridgeSourceAuditPath) ? Phase317ElectroweakMassMatrixBridgeSourceAuditPath : null,
         deferredImplementationGapRepairabilityAuditPath = File.Exists(Phase318DeferredImplementationGapRepairabilityAuditPath) ? Phase318DeferredImplementationGapRepairabilityAuditPath : null,
+        legacySelectorSpectrumSourceLawAuditPath = File.Exists(Phase319LegacySelectorSpectrumSourceLawAuditPath) ? Phase319LegacySelectorSpectrumSourceLawAuditPath : null,
         branchLocalDirectInvariantCensusPath = File.Exists(Phase282BranchLocalDirectInvariantCensusPath) ? Phase282BranchLocalDirectInvariantCensusPath : null,
         legacyElectroweakBridgeSourceSurvivabilityAuditPath = File.Exists(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath) ? Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath : null,
         predictedRatioAlphaGfExternalClosureDiagnosticPath = File.Exists(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath) ? Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath : null,
@@ -2403,6 +2406,38 @@ var package = new
                 ? JsonBool(p318ContractImpact, "quarticProxyImplementationPromotesHiggsMass")
                 : null,
             decision = JsonString(phase318.RootElement, "decision"),
+        }
+        : null,
+    legacySelectorSpectrumSourceLawAudit = phase319 is not null
+        ? new
+        {
+            status = JsonString(phase319.RootElement, "terminalStatus"),
+            legacySelectorSpectrumSourceLawAuditPassed = JsonBool(phase319.RootElement, "legacySelectorSpectrumSourceLawAuditPassed"),
+            legacySelectorSpectrumSourceLawFound = JsonBool(phase319.RootElement, "legacySelectorSpectrumSourceLawFound"),
+            legacySelectorRoutePromotableForBosonMasses = JsonBool(phase319.RootElement, "legacySelectorRoutePromotableForBosonMasses"),
+            legacySelectorRouteCanFillPhase201WzContract = JsonBool(phase319.RootElement, "legacySelectorRouteCanFillPhase201WzContract"),
+            legacySelectorRouteCanFillPhase201HiggsContract = JsonBool(phase319.RootElement, "legacySelectorRouteCanFillPhase201HiggsContract"),
+            legacySelectorRouteCanFillPhase256ObservedFieldExtractionContract = JsonBool(phase319.RootElement, "legacySelectorRouteCanFillPhase256ObservedFieldExtractionContract"),
+            legacySelectorRouteCompletesBosonPredictions = JsonBool(phase319.RootElement, "legacySelectorRouteCompletesBosonPredictions"),
+            phase73ProjectionMaterialized = phase319.RootElement.TryGetProperty("absoluteProjectionFailure", out var p319Projection)
+                ? JsonBool(p319Projection, "phase73ProjectionMaterialized")
+                : null,
+            phase74TargetComparisonFailed = phase319.RootElement.TryGetProperty("absoluteProjectionFailure", out p319Projection)
+                ? JsonBool(p319Projection, "phase74TargetComparisonFailed")
+                : null,
+            phase76GeneratorNormalizationCannotExplainMiss = phase319.RootElement.TryGetProperty("absoluteProjectionFailure", out p319Projection)
+                ? JsonBool(p319Projection, "phase76GeneratorNormalizationCannotExplainMiss")
+                : null,
+            phase80ProductionInputsBlocked = phase319.RootElement.TryGetProperty("replayInputBoundary", out var p319ReplayInput)
+                ? JsonBool(p319ReplayInput, "phase80ProductionInputsBlocked")
+                : null,
+            wzMissingFieldCount = phase319.RootElement.TryGetProperty("contractImpact", out var p319ContractImpact)
+                ? JsonInt(p319ContractImpact, "wzMissingFieldCount")
+                : null,
+            higgsMissingFieldCount = phase319.RootElement.TryGetProperty("contractImpact", out p319ContractImpact)
+                ? JsonInt(p319ContractImpact, "higgsMissingFieldCount")
+                : null,
+            decision = JsonString(phase319.RootElement, "decision"),
         }
         : null,
     branchLocalDirectInvariantCensus = phase282 is not null
@@ -4751,6 +4786,18 @@ var summary = new
         : null,
     deferredImplementationFixCompletesBosonPredictions = phase318 is not null
         ? JsonBool(phase318.RootElement, "deferredImplementationFixCompletesBosonPredictions")
+        : null,
+    legacySelectorSpectrumSourceLawAuditPassed = phase319 is not null
+        ? JsonBool(phase319.RootElement, "legacySelectorSpectrumSourceLawAuditPassed")
+        : null,
+    legacySelectorSpectrumSourceLawFound = phase319 is not null
+        ? JsonBool(phase319.RootElement, "legacySelectorSpectrumSourceLawFound")
+        : null,
+    legacySelectorRoutePromotableForBosonMasses = phase319 is not null
+        ? JsonBool(phase319.RootElement, "legacySelectorRoutePromotableForBosonMasses")
+        : null,
+    legacySelectorRouteCompletesBosonPredictions = phase319 is not null
+        ? JsonBool(phase319.RootElement, "legacySelectorRouteCompletesBosonPredictions")
         : null,
     branchLocalInvariantCensusPassed = phase282 is not null
         ? JsonBool(phase282.RootElement, "branchLocalInvariantCensusPassed")

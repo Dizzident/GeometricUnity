@@ -8303,3 +8303,112 @@ extraction, or Higgs scalar-source/self-coupling lineage.
   at `109/3`, and claim integrity verified.
 - `dotnet test GeometricUnity.slnx` passed. The existing xUnit analyzer warning
   in `QuantitativeValidationTests.cs(315,9)` remains present.
+
+## 2026-05-20 - Phase319 Legacy Selector Spectrum Source-Law Audit
+
+### Question
+
+After Phase318 found no code-only repair route, check whether the older
+Phase42/Phase43/Phase73 selector-spectrum path can be promoted into the
+missing W/Z direct, target-independent, geometric bridge-source law. This is
+the remaining plausible local path from existing artifacts: it has selector
+spectra and absolute W/Z projections, but it must satisfy Phase201 source
+lineage, particle-specific row, raw-amplitude, common-bridge, target-comparison,
+stability, and derivation requirements without target fitting.
+
+### Actions
+
+- Tried to launch an explorer subagent for an independent audit of the legacy
+  selector route. The launch failed with `agent thread limit reached`, so no
+  subagent evidence was used.
+- Re-read the Phase201 boson source-lineage intake contract. W/Z promotion
+  requires exactly W and Z rows, target-independent source lineage, derivation
+  ids, raw-amplitude gates, common-bridge gates, target-comparison gates, and
+  stability sidecars.
+- Re-read Phase42. It has 432 spectra and 12 ready candidates, but it still
+  reports an invariant selected W/Z ratio and calls for selector-specific
+  eigenvalue extraction before physical prediction.
+- Re-read Phase43. It resolves the invariant-ratio issue and reaches a
+  selector-specific eigenvalue path, but only advances to calibration and target
+  comparison.
+- Re-read Phase73 and Phase74. Phase73 materializes absolute W/Z projections:
+  W `69.64143389516731 +/- 0.3679656283006216 GeV` and Z
+  `79.16578591256517 +/- 0.4189929362561984 GeV`; Phase74 target comparison
+  fails both rows at about 29 sigma.
+- Re-read Phase75 and Phase76. They diagnose a coherent common-scale miss:
+  target-implied weak coupling `0.6522081710229882` versus the current raw
+  matrix element `0.8`; canonical generator normalization cannot explain the
+  miss.
+- Re-read Phase80. The route is still blocked on synthetic boson mode inputs
+  and missing production analytic replay material.
+- Re-read Phase252 and Phase313. Existing selector and normalization artifacts
+  have no source-lineage fields, no Phase64 bridge theorem, and no observed
+  physical W/Z projection map.
+- Added `studies/phase319_legacy_selector_spectrum_source_law_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P319.md`.
+- Wired Phase319 into the generator, P101 package, P202 objective completion
+  audit, claim-integrity verifier, and scanner exclusions.
+- Fixed the first Phase319 targeted run by relaxing two over-specific text
+  checks and correcting the Phase80 terminal status check to
+  `production-analytic-replay-inputs-blocked`.
+
+### Current Expected Outcome
+
+Phase319 is expected to pass only as a negative promotion audit:
+
+- `legacySelectorSpectrumSourceLawAuditPassed=true`.
+- `legacySelectorSourceLawFound=false`.
+- `legacySelectorRoutePromotableForBosonMasses=false`.
+- `legacySelectorRouteCanFillPhase201WzContract=false`.
+- `legacySelectorRouteCanFillPhase201HiggsContract=false`.
+- `legacySelectorRouteCanFillPhase256ObservedFieldExtractionContract=false`.
+- `legacySelectorRouteCompletesBosonPredictions=false`.
+- `phase73AbsoluteProjectionMaterialized=true`.
+- `phase74TargetComparisonPassed=false`.
+- `phase76GeneratorNormalizationCanExplainMiss=false`.
+- `phase80ProductionAnalyticReplayInputsMaterialized=false`.
+- `phase252NormalizationArtifactsProvideSourceLineageContractFields=false`.
+- `phase313OfficialDraftProjectionMapPromotesWzMasses=false`.
+
+### Decision
+
+Do not promote the legacy selector-spectrum path as a successful W/Z
+prediction. It is valuable negative evidence because it preserves a full trail
+from selector spectra through absolute projection and failed target comparison,
+but it cannot supply the missing direct bridge-source law. The remaining
+blocker is not a simple implementation defect; it is the absence of a
+source-backed theorem or artifact that maps the geometric selector construction
+to physical W/Z source rows and scale closure.
+
+### Validation
+
+- Targeted Phase319 run passed with:
+  - `legacySelectorSpectrumSourceLawAuditPassed=true`.
+  - `legacySelectorRoutePromotableForBosonMasses=false`.
+  - `legacySelectorRouteCanFillPhase201WzContract=false`.
+  - `legacySelectorRouteCompletesBosonPredictions=false`.
+- P101 regenerated with Phase319 included and remained
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase319 included and remained
+  `objectiveAchieved=false`, with `checklistPassedCount=112` and
+  `checklistFailedCount=3`.
+- Claim-integrity verifier passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns after adding Phase319 found no intake-ready artifacts:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `canPromoteHiggsQuarticSelfCouplingSource=false` and
+    `intakeReadyFindingCount=0`.
+  - P281 `geometricRefractiveUnificationSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P295 `intakeReadyObservedFieldExtractionCandidateCount=0` and
+    `anyObservedFieldExtractionCandidateFillsContract=false`.
+  - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
+    `anySourceLineageCandidateFillsContract=false`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed and reran
+  Phase319 in both generator passes, ending with P101 blocked, P202 incomplete
+  at `112/3`, and claim integrity verified.
+- `dotnet test GeometricUnity.slnx` passed. The existing xUnit analyzer warning
+  in `QuantitativeValidationTests.cs(315,9)` remains present.
+- `git diff --check` passed.
