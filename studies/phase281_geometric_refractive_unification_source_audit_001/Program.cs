@@ -423,6 +423,7 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath.Contains("studies/phase321_neutral_electroweak_mixing_source_audit_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase322_higgs_upsilon_scalar_source_boundary_audit_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase323_coupled_yang_mills_higgs_mass_extraction_audit_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase324_custodial_rho_parameter_source_audit_001/", StringComparison.Ordinal)
     || normalizedPath == "studies/phase101_boson_prediction_package_001/Program.cs"
     || normalizedPath == "studies/phase202_boson_objective_completion_audit_001/Program.cs"
     || normalizedPath == "studies/phase204_boson_source_lineage_candidate_scan_001/Program.cs"

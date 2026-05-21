@@ -7970,6 +7970,106 @@ extraction contracts.
   in `QuantitativeValidationTests.cs(315,9)` remains present.
 - `git diff --check` passed.
 
+## 2026-05-21 - Phase324 Custodial Rho Parameter Source Audit
+
+### Question
+
+Audit the standalone custodial-symmetry rho-parameter route. The loophole is
+that `rho = MW^2 / (MZ^2 cos^2(theta_W)) = 1` can look like a W/Z prediction
+even when it is only a ratio constraint unless an independent absolute scale,
+weak-angle/coupling source, VEV, and observed-field map are present.
+
+### Research
+
+- Reviewed the PDG 2025 Higgs review custodial-symmetry section:
+  `https://pdgweb.lbl.gov/2025/reviews/rpp2025-rev-higgs-boson.pdf`.
+  It records custodial symmetry as protecting the tree-level W/Z rho relation
+  from large radiative corrections. It does not make the relation an
+  independent W/Z absolute mass-scale source.
+- Rechecked Phase244 and Phase245. The current promoted W/Z ratio has rank one
+  in the electroweak mass-coordinate model and still leaves two null
+  directions: common W/Z scale and Higgs scalar scale. The minimal unlock
+  contract remains unfilled and still requires two new independent source
+  artifacts.
+- Rechecked Phase270. Custodial symmetry is already recorded as a serious
+  composite-Higgs lead, but the repo still lacks GU-local VEV, observed-field
+  extraction, W/Z mass-matrix source, and Higgs scalar-source artifacts.
+- Rechecked Phase313, Phase317, Phase320, Phase321, and Phase323. Standard
+  electroweak theory supplies the dependency shape, but the GU/public-source
+  artifacts still lack the weak-mixing source, target-independent VEV,
+  gauge-coupling normalization, photon/W/Z projection rows, and coupled
+  gauge-fixed mass extraction needed for promotion.
+
+### Actions
+
+- Added
+  `studies/phase324_custodial_rho_parameter_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P324.md`.
+- Wired Phase324 into the generator, P101 package, P202 objective completion
+  audit, claim-integrity verifier, and scanner exclusions.
+
+### Current Expected Outcome
+
+Phase324 is expected to pass only as a negative boundary audit:
+
+- `custodialRhoParameterSourceAuditPassed=true`.
+- `standardCustodialRhoRelationLeadPresent=true`.
+- `rhoRelationConstrainsMwMzCosTheta=true`.
+- `rhoRelationProvidesAbsoluteWzScale=false`.
+- `rhoRelationProvidesWeakMixingAngleSource=false`.
+- `rhoRelationProvidesTargetIndependentVevSource=false`.
+- `rhoRelationProvidesObservedFieldExtraction=false`.
+- `rhoRelationProvidesHiggsScalarSource=false`.
+- `custodialRoutePromotesWzMasses=false`.
+- `custodialRoutePromotesHiggsMass=false`.
+- `custodialRouteCompletesBosonPredictions=false`.
+- `canFillPhase201WzContract=false`.
+- `canFillPhase201HiggsContract=false`.
+- `canFillPhase256ObservedFieldExtractionContract=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs absolute masses from the custodial rho-parameter
+relation. The relation is valid external physics and protects a W/Z ratio, but
+it does not fill the target-independent source-lineage, weak-mixing,
+absolute-scale, VEV, observed-field extraction, or Higgs scalar-source
+contracts.
+
+### Validation
+
+- Targeted Phase324 run passed with:
+  - `custodialRhoParameterSourceAuditPassed=true`.
+  - `rhoRelationConstrainsMwMzCosTheta=true`.
+  - `rhoRelationProvidesAbsoluteWzScale=false`.
+  - `rhoRelationProvidesWeakMixingAngleSource=false`.
+  - `canFillPhase201WzContract=false`.
+- P101 regenerated with Phase324 included and remained
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase324 included and remained
+  `objectiveAchieved=false`, with `checklistPassedCount=117` and
+  `checklistFailedCount=3`.
+- Claim-integrity verifier passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns after adding Phase324 found no intake-ready artifacts:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `canPromoteHiggsQuarticSelfCouplingSource=false` and
+    `intakeReadyFindingCount=0`.
+  - P281 `geometricRefractiveUnificationSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P295 `intakeReadyObservedFieldExtractionCandidateCount=0` and
+    `anyObservedFieldExtractionCandidateFillsContract=false`.
+  - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
+    `anySourceLineageCandidateFillsContract=false`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed with
+  Phase324 in both generator passes, ending with P101 blocked, P202 incomplete
+  at `checklistPassedCount=117` / `checklistFailedCount=3`, and claim
+  integrity verified.
+- `dotnet test GeometricUnity.slnx` passed. The existing xUnit analyzer warning
+  in `QuantitativeValidationTests.cs(315,9)` remains present.
+- `git diff --check` passed.
+
 ## 2026-05-20 - Phase321 Neutral Electroweak Mixing Source Audit
 
 ### Question

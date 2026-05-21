@@ -93,6 +93,7 @@ const paths = {
   phase321: "studies/phase321_neutral_electroweak_mixing_source_audit_001/output/neutral_electroweak_mixing_source_audit_summary.json",
   phase322: "studies/phase322_higgs_upsilon_scalar_source_boundary_audit_001/output/higgs_upsilon_scalar_source_boundary_audit_summary.json",
   phase323: "studies/phase323_coupled_yang_mills_higgs_mass_extraction_audit_001/output/coupled_yang_mills_higgs_mass_extraction_audit_summary.json",
+  phase324: "studies/phase324_custodial_rho_parameter_source_audit_001/output/custodial_rho_parameter_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -257,6 +258,7 @@ const phase320 = requireFile(paths.phase320);
 const phase321 = requireFile(paths.phase321);
 const phase322 = requireFile(paths.phase322);
 const phase323 = requireFile(paths.phase323);
+const phase324 = requireFile(paths.phase324);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -1455,6 +1457,25 @@ if (sourceLineageMissing) {
   assert(phase323.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase323 W/Z missing-field count must match Phase213.");
   assert(phase323.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase323 Higgs missing-field count must match Phase213.");
   assert(phase323.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase323 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase324.custodialRhoParameterSourceAuditPassed === true, "Phase324 custodial rho-parameter source audit must pass while preserving non-promotional status.");
+  assert(phase324.standardCustodialRhoRelationLeadPresent === true, "Phase324 must preserve standard custodial rho-relation evidence.");
+  assert(phase324.custodialSymmetryProtectsRhoRelationFromLargeCorrections === true, "Phase324 must record custodial protection of the rho relation.");
+  assert(phase324.rhoRelationConstrainsMwMzCosTheta === true, "Phase324 must record that the rho relation constrains MW, MZ, and cos thetaW.");
+  assert(phase324.rhoRelationProvidesAbsoluteWzScale === false, "Phase324 cannot claim that the rho relation supplies the W/Z absolute scale.");
+  assert(phase324.rhoRelationProvidesWeakMixingAngleSource === false, "Phase324 cannot claim that the rho relation derives the weak mixing angle.");
+  assert(phase324.rhoRelationProvidesTargetIndependentVevSource === false, "Phase324 cannot claim that the rho relation supplies a GU VEV source.");
+  assert(phase324.rhoRelationProvidesGaugeCouplingNormalization === false, "Phase324 cannot claim that the rho relation supplies gauge-coupling normalization.");
+  assert(phase324.rhoRelationProvidesObservedFieldExtraction === false, "Phase324 cannot claim that the rho relation supplies observed-field extraction.");
+  assert(phase324.rhoRelationProvidesHiggsScalarSource === false, "Phase324 cannot claim that the rho relation supplies a Higgs scalar source.");
+  assert(phase324.custodialRoutePromotesWzMasses === false, "Phase324 cannot promote W/Z masses through the custodial route.");
+  assert(phase324.custodialRoutePromotesHiggsMass === false, "Phase324 cannot promote Higgs mass through the custodial route.");
+  assert(phase324.custodialRouteCompletesBosonPredictions === false, "Phase324 cannot complete boson predictions through the custodial route.");
+  assert(phase324.contractImpact?.canFillPhase201WzContract === false, "Phase324 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase324.contractImpact?.canFillPhase201HiggsContract === false, "Phase324 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase324.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase324 contract impact must keep Phase256 unfilled.");
+  assert(phase324.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase324 W/Z missing-field count must match Phase213.");
+  assert(phase324.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase324 Higgs missing-field count must match Phase213.");
+  assert(phase324.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase324 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");
