@@ -7573,6 +7573,117 @@ Higgs remains separately blocked by missing scalar-source lineage.
   `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
   `promotedPhysicalMassClaimCount=0`.
 
+## 2026-05-21 - Phase330 Weyl Geometric Mass Generation Source Audit
+
+### Question
+
+A fresh May 2026 external physics lead appeared close to the current missing
+artifact: a Weyl x `SU(2)_L x U(1)_Y` geometric mass-generation model titled
+`Spontaneous Symmetry Breaking and the Emergent Einstein-Standard Model`.
+Because it explicitly discusses geometric mass generation, I checked whether it
+can fill the GU W/Z/H source-lineage contracts.
+
+### Research
+
+- Primary source reviewed:
+  `https://arxiv.org/abs/2605.02955` and
+  `https://arxiv.org/pdf/2605.02955`.
+- The paper constructs an external Weyl x `SU(2)_L x U(1)_Y` invariant model,
+  uses a Stueckelberg mechanism, reduces the Weyl sector to
+  Einstein-Hilbert/Proca form, generates a Higgs potential, and reproduces the
+  Standard Model mass-generation pattern.
+- The useful boundary is also explicit: the paper fixes model parameters by
+  comparison with observed Higgs mass and Higgs VEV values, while the W/Z terms
+  retain the standard `g`, `g'`, and `v` dependency shape already classified by
+  Phase317. That makes it a relevant external model, not a GU-local
+  target-independent prediction source.
+
+### Actions
+
+- Added
+  `studies/phase330_weyl_geometric_mass_generation_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P330.md`.
+- Wired Phase330 into the generator, P101 package, P202 objective completion
+  audit, and claim-integrity verifier.
+- Added Phase330 scanner exclusions so the generated audit text is not counted
+  as source evidence.
+- Launched an explorer agent for an independent repo-side blocker check. It
+  confirmed the live blockers remain Phase201/209/210/213/256, with
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and no dedicated
+  Weyl/conformal electroweak mass-generation audit before Phase330.
+
+### Current Expected Outcome
+
+Phase330 is expected to pass only as a negative boundary audit:
+
+- `weylGeometricMassGenerationSourceAuditPassed=true`.
+- `arxivWeylGeometricMassGenerationLeadPresent=true`.
+- `weylRouteExternalToGu=true`.
+- `weylRouteConstructsWeylSu2U1InvariantTheory=true`.
+- `weylRouteProducesHiggsPotential=true`.
+- `weylRouteReproducesStandardModelMassGeneration=true`.
+- `weylRouteComparesToObservedHiggsMass=true`.
+- `weylRouteComparesToObservedHiggsVev=true`.
+- `weylRouteLeavesElectroweakCouplingsAsModelInputs=true`.
+- `weylRouteProvidesGuLocalWzTheorem=false`.
+- `weylRouteProvidesSeparateWzSourceRows=false`.
+- `weylRouteProvidesTargetIndependentGuVevSource=false`.
+- `weylRouteProvidesGuObservedFieldExtraction=false`.
+- `weylRouteProvidesHiggsScalarSourceOperator=false`.
+- `weylRouteProvidesGeVUnitNormalization=false`.
+- `weylRoutePromotesWzMasses=false`.
+- `weylRoutePromotesHiggsMass=false`.
+- `weylRouteCompletesBosonPredictions=false`.
+- `canFillPhase201WzContract=false`.
+- `canFillPhase201HiggsContract=false`.
+- `canFillPhase256ObservedFieldExtractionContract=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from the Weyl geometric mass-generation
+route. It is a real and current external geometric mass-generation model, but
+it is not a GU source-lineage artifact. It still depends on Standard Model
+electroweak couplings, observed Higgs/VEV comparisons, external normalization,
+and external observed-field definitions.
+
+The blocker is unchanged: GU still needs a target-independent W/Z theorem with
+source rows and gates, a target-independent Higgs scalar-source/self-coupling
+lineage, and a filled observed-field extraction artifact.
+
+### Validation So Far
+
+- Targeted Phase330 run passed with:
+  - `weylGeometricMassGenerationSourceAuditPassed=true`.
+  - `weylRouteExternalToGu=true`.
+  - `weylRoutePromotesWzMasses=false`.
+  - `weylRoutePromotesHiggsMass=false`.
+  - `canFillPhase201WzContract=false`.
+- P101 regenerated with Phase330 included and remained
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase330 included and remained
+  `objectiveAchieved=false`, with `checklistPassedCount=123` and
+  `checklistFailedCount=3`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed and reran
+  Phase330 in both generator passes, ending with:
+  - `weylGeometricMassGenerationSourceAuditPassed=true`.
+  - `P202 objectiveAchieved=false`, `checklistPassedCount=123`,
+    `checklistFailedCount=3`.
+  - Claim integrity verified with `sourceLineageMissing=true`,
+    `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+    `promotedPhysicalMassClaimCount=0`.
+- `dotnet test GeometricUnity.slnx` passed. The known existing
+  `xUnit2013` collection-size warning in
+  `QuantitativeValidationTests.cs(315,9)` remains.
+- After adding this journal section, the source/field scanners were rerun and
+  still found no intake-ready artifacts:
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `canPromoteHiggsQuarticSelfCouplingSource=false` and
+    `intakeReadyFindingCount=0`.
+  - P279 and P281 `localSearchMatchingFileCount=0`.
+  - P295 `intakeReadyObservedFieldExtractionCandidateCount=0`.
+  - P296 `intakeReadySourceLineageFieldCandidateCount=0`.
+  - P213/P101/P202 remained blocked, and claim integrity remained verified.
+
 ## 2026-05-21 - Phase329 Seiberg-Witten Monopole Electroweak Source Audit
 
 ### Question

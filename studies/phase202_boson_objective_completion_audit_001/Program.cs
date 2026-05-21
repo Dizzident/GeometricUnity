@@ -95,6 +95,7 @@ const string Phase326Path = "studies/phase326_anomaly_hypercharge_source_audit_0
 const string Phase327Path = "studies/phase327_oblique_precision_electroweak_source_audit_001/output/oblique_precision_electroweak_source_audit_summary.json";
 const string Phase328Path = "studies/phase328_superphysics_draft_energy_scale_source_audit_001/output/superphysics_draft_energy_scale_source_audit_summary.json";
 const string Phase329Path = "studies/phase329_seiberg_witten_monopole_electroweak_source_audit_001/output/seiberg_witten_monopole_electroweak_source_audit_summary.json";
+const string Phase330Path = "studies/phase330_weyl_geometric_mass_generation_source_audit_001/output/weyl_geometric_mass_generation_source_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -223,6 +224,7 @@ using var phase326 = File.Exists(Phase326Path) ? JsonDocument.Parse(File.ReadAll
 using var phase327 = File.Exists(Phase327Path) ? JsonDocument.Parse(File.ReadAllText(Phase327Path)) : null;
 using var phase328 = File.Exists(Phase328Path) ? JsonDocument.Parse(File.ReadAllText(Phase328Path)) : null;
 using var phase329 = File.Exists(Phase329Path) ? JsonDocument.Parse(File.ReadAllText(Phase329Path)) : null;
+using var phase330 = File.Exists(Phase330Path) ? JsonDocument.Parse(File.ReadAllText(Phase330Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -1492,6 +1494,39 @@ var seibergWittenMonopoleElectroweakSourceAuditPassed = seibergWittenMonopoleEle
     && JsonInt(p329ContractImpact, "wzMissingFieldCount") == wzMissingFieldCount
     && JsonInt(p329ContractImpact, "higgsMissingFieldCount") == higgsMissingFieldCount
     && JsonInt(p329ContractImpact, "observedFieldExtractionFilledRequiredFieldCount") == 0;
+var weylGeometricMassGenerationSourceAuditMaterialized = phase330 is not null;
+var weylGeometricMassGenerationSourceAuditPassed = weylGeometricMassGenerationSourceAuditMaterialized
+    && JsonBool(phase330!.RootElement, "weylGeometricMassGenerationSourceAuditPassed") is true
+    && JsonBool(phase330.RootElement, "arxivWeylGeometricMassGenerationLeadPresent") is true
+    && JsonBool(phase330.RootElement, "arxivWeylGeometricMassGenerationSubmittedMay2026") is true
+    && JsonBool(phase330.RootElement, "arxivWeylGeometricMassGenerationPrimarySourceReviewed") is true
+    && JsonBool(phase330.RootElement, "weylRouteExternalToGu") is true
+    && JsonBool(phase330.RootElement, "weylRouteUsesStandardModelGaugeGroup") is true
+    && JsonBool(phase330.RootElement, "weylRouteConstructsWeylSu2U1InvariantTheory") is true
+    && JsonBool(phase330.RootElement, "weylRouteProducesHiggsPotential") is true
+    && JsonBool(phase330.RootElement, "weylRouteReproducesStandardModelMassGeneration") is true
+    && JsonBool(phase330.RootElement, "weylRouteComparesToObservedHiggsMass") is true
+    && JsonBool(phase330.RootElement, "weylRouteComparesToObservedHiggsVev") is true
+    && JsonBool(phase330.RootElement, "weylRouteLeavesElectroweakCouplingsAsModelInputs") is true
+    && JsonBool(phase330.RootElement, "weylRouteProvidesGuLocalWzTheorem") is false
+    && JsonBool(phase330.RootElement, "weylRouteProvidesSeparateWzSourceRows") is false
+    && JsonBool(phase330.RootElement, "weylRouteProvidesTargetIndependentGuVevSource") is false
+    && JsonBool(phase330.RootElement, "weylRouteProvidesWeakMixingAngleSource") is false
+    && JsonBool(phase330.RootElement, "weylRouteProvidesGuGaugeCouplingNormalization") is false
+    && JsonBool(phase330.RootElement, "weylRouteProvidesGuObservedFieldExtraction") is false
+    && JsonBool(phase330.RootElement, "weylRouteProvidesHiggsScalarSourceOperator") is false
+    && JsonBool(phase330.RootElement, "weylRouteProvidesHiggsQuarticOrExcitationSource") is false
+    && JsonBool(phase330.RootElement, "weylRouteProvidesGeVUnitNormalization") is false
+    && JsonBool(phase330.RootElement, "weylRoutePromotesWzMasses") is false
+    && JsonBool(phase330.RootElement, "weylRoutePromotesHiggsMass") is false
+    && JsonBool(phase330.RootElement, "weylRouteCompletesBosonPredictions") is false
+    && JsonBool(phase330.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase330.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase330.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && phase330.RootElement.TryGetProperty("contractImpact", out var p330ContractImpact)
+    && JsonInt(p330ContractImpact, "wzMissingFieldCount") == wzMissingFieldCount
+    && JsonInt(p330ContractImpact, "higgsMissingFieldCount") == higgsMissingFieldCount
+    && JsonInt(p330ContractImpact, "observedFieldExtractionFilledRequiredFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -3101,6 +3136,14 @@ var checklist = new[]
             : "Phase329 artifact not materialized",
         Phase329Path),
     new ObjectiveChecklistItem(
+        "weyl-geometric-mass-generation-source-audit-materialized",
+        "Audit whether the May 2026 Weyl x SU(2)L x U(1)Y geometric mass-generation route supplies GU W/Z/H source-lineage artifacts.",
+        weylGeometricMassGenerationSourceAuditPassed ? "passed" : "failed",
+        weylGeometricMassGenerationSourceAuditMaterialized
+            ? $"weylGeometricMassGenerationSourceAuditPassed={JsonBool(phase330!.RootElement, "weylGeometricMassGenerationSourceAuditPassed")}; arxivLeadPresent={JsonBool(phase330.RootElement, "arxivWeylGeometricMassGenerationLeadPresent")}; externalToGu={JsonBool(phase330.RootElement, "weylRouteExternalToGu")}; constructsWeylSu2U1={JsonBool(phase330.RootElement, "weylRouteConstructsWeylSu2U1InvariantTheory")}; reproducesSmMassGeneration={JsonBool(phase330.RootElement, "weylRouteReproducesStandardModelMassGeneration")}; comparesToObservedHiggsMass={JsonBool(phase330.RootElement, "weylRouteComparesToObservedHiggsMass")}; comparesToObservedHiggsVev={JsonBool(phase330.RootElement, "weylRouteComparesToObservedHiggsVev")}; providesGuLocalWzTheorem={JsonBool(phase330.RootElement, "weylRouteProvidesGuLocalWzTheorem")}; providesTargetIndependentVev={JsonBool(phase330.RootElement, "weylRouteProvidesTargetIndependentGuVevSource")}; providesGuObservedFieldExtraction={JsonBool(phase330.RootElement, "weylRouteProvidesGuObservedFieldExtraction")}; providesHiggsScalarSource={JsonBool(phase330.RootElement, "weylRouteProvidesHiggsScalarSourceOperator")}; promotesWz={JsonBool(phase330.RootElement, "weylRoutePromotesWzMasses")}; promotesHiggs={JsonBool(phase330.RootElement, "weylRoutePromotesHiggsMass")}; completesBosonPredictions={JsonBool(phase330.RootElement, "weylRouteCompletesBosonPredictions")}; canFillPhase201WzContract={JsonBool(phase330.RootElement, "canFillPhase201WzContract")}; canFillPhase201HiggsContract={JsonBool(phase330.RootElement, "canFillPhase201HiggsContract")}; decision={JsonString(phase330.RootElement, "decision")}"
+            : "Phase330 artifact not materialized",
+        Phase330Path),
+    new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
         branchLocalDirectInvariantCensusPassed ? "passed" : "failed",
@@ -3439,6 +3482,7 @@ var result = new
         "Anomaly cancellation and hypercharge quantization are audited as consistency constraints, not exact boson-mass sources.",
         "Precision electroweak oblique parameters are audited as fit constraints, not exact boson-mass sources.",
         "Readable GU draft energy-scale route is audited as quantum-number guidance, not an exact boson-mass source.",
+        "Weyl geometric electroweak mass-generation literature is audited as an external model, not a GU source-lineage filler.",
         "Observed-field extraction contract fields are scanned for intake-ready local artifacts.",
         "W/Z and Higgs source-lineage contract fields are scanned for intake-ready local artifacts.",
         "Those contracts are filled with promotable target-independent evidence.",
@@ -3468,6 +3512,7 @@ var result = new
     obliquePrecisionElectroweakSourceAuditPassed,
     superphysicsDraftEnergyScaleSourceAuditPassed,
     seibergWittenMonopoleElectroweakSourceAuditPassed,
+    weylGeometricMassGenerationSourceAuditPassed,
     parameterSourceContractCandidateScanPassed,
     phase288CoverageFalseNegativeAuditPassed,
     chargedLeptonThresholdSourceReplacementAuditPassed,
@@ -3582,6 +3627,7 @@ var result = new
         phase327Path = Phase327Path,
         phase328Path = Phase328Path,
         phase329Path = Phase329Path,
+        phase330Path = Phase330Path,
         phase282Path = Phase282Path,
         phase283Path = Phase283Path,
         phase284Path = Phase284Path,

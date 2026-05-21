@@ -99,6 +99,7 @@ const paths = {
   phase327: "studies/phase327_oblique_precision_electroweak_source_audit_001/output/oblique_precision_electroweak_source_audit_summary.json",
   phase328: "studies/phase328_superphysics_draft_energy_scale_source_audit_001/output/superphysics_draft_energy_scale_source_audit_summary.json",
   phase329: "studies/phase329_seiberg_witten_monopole_electroweak_source_audit_001/output/seiberg_witten_monopole_electroweak_source_audit_summary.json",
+  phase330: "studies/phase330_weyl_geometric_mass_generation_source_audit_001/output/weyl_geometric_mass_generation_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -269,6 +270,7 @@ const phase326 = requireFile(paths.phase326);
 const phase327 = requireFile(paths.phase327);
 const phase328 = requireFile(paths.phase328);
 const phase329 = requireFile(paths.phase329);
+const phase330 = requireFile(paths.phase330);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -1601,6 +1603,35 @@ if (sourceLineageMissing) {
   assert(phase329.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase329 W/Z missing-field count must match Phase213.");
   assert(phase329.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase329 Higgs missing-field count must match Phase213.");
   assert(phase329.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase329 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase330.weylGeometricMassGenerationSourceAuditPassed === true, "Phase330 Weyl geometric mass-generation source audit must pass while preserving non-promotional status.");
+  assert(phase330.arxivWeylGeometricMassGenerationLeadPresent === true, "Phase330 must preserve the arXiv Weyl geometric mass-generation lead.");
+  assert(phase330.arxivWeylGeometricMassGenerationSubmittedMay2026 === true, "Phase330 must record the May 2026 timing of the Weyl lead.");
+  assert(phase330.arxivWeylGeometricMassGenerationPrimarySourceReviewed === true, "Phase330 must record primary arXiv source review.");
+  assert(phase330.weylRouteExternalToGu === true, "Phase330 must classify the Weyl route as external to GU.");
+  assert(phase330.weylRouteConstructsWeylSu2U1InvariantTheory === true, "Phase330 must record the Weyl x SU(2)L x U(1)Y construction.");
+  assert(phase330.weylRouteProducesHiggsPotential === true, "Phase330 must record the external model's Higgs-potential mechanism.");
+  assert(phase330.weylRouteReproducesStandardModelMassGeneration === true, "Phase330 must record that the external model reproduces Standard Model mass generation.");
+  assert(phase330.weylRouteComparesToObservedHiggsMass === true, "Phase330 must record observed Higgs-mass comparison in the external model.");
+  assert(phase330.weylRouteComparesToObservedHiggsVev === true, "Phase330 must record observed VEV comparison in the external model.");
+  assert(phase330.weylRouteLeavesElectroweakCouplingsAsModelInputs === true, "Phase330 must record that electroweak couplings remain model inputs.");
+  assert(phase330.weylRouteProvidesGuLocalWzTheorem === false, "Phase330 cannot claim a GU-local W/Z theorem from the Weyl external model.");
+  assert(phase330.weylRouteProvidesSeparateWzSourceRows === false, "Phase330 cannot claim separate W/Z source rows from the Weyl external model.");
+  assert(phase330.weylRouteProvidesTargetIndependentGuVevSource === false, "Phase330 cannot claim a target-independent GU VEV source from the Weyl external model.");
+  assert(phase330.weylRouteProvidesWeakMixingAngleSource === false, "Phase330 cannot claim a weak-mixing source from the Weyl external model.");
+  assert(phase330.weylRouteProvidesGuGaugeCouplingNormalization === false, "Phase330 cannot claim gauge-coupling normalization from the Weyl external model.");
+  assert(phase330.weylRouteProvidesGuObservedFieldExtraction === false, "Phase330 cannot claim GU observed-field extraction from the Weyl external model.");
+  assert(phase330.weylRouteProvidesHiggsScalarSourceOperator === false, "Phase330 cannot claim a GU Higgs scalar-source operator from the Weyl external model.");
+  assert(phase330.weylRouteProvidesHiggsQuarticOrExcitationSource === false, "Phase330 cannot claim GU Higgs quartic/excitation source lineage from the Weyl external model.");
+  assert(phase330.weylRouteProvidesGeVUnitNormalization === false, "Phase330 cannot claim GeV normalization from the Weyl external model.");
+  assert(phase330.weylRoutePromotesWzMasses === false, "Phase330 cannot promote W/Z masses through the Weyl external model.");
+  assert(phase330.weylRoutePromotesHiggsMass === false, "Phase330 cannot promote Higgs mass through the Weyl external model.");
+  assert(phase330.weylRouteCompletesBosonPredictions === false, "Phase330 cannot complete boson predictions through the Weyl external model.");
+  assert(phase330.contractImpact?.canFillPhase201WzContract === false, "Phase330 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase330.contractImpact?.canFillPhase201HiggsContract === false, "Phase330 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase330.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase330 contract impact must keep Phase256 unfilled.");
+  assert(phase330.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase330 W/Z missing-field count must match Phase213.");
+  assert(phase330.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase330 Higgs missing-field count must match Phase213.");
+  assert(phase330.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase330 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");
