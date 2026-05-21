@@ -95,6 +95,7 @@ const paths = {
   phase323: "studies/phase323_coupled_yang_mills_higgs_mass_extraction_audit_001/output/coupled_yang_mills_higgs_mass_extraction_audit_summary.json",
   phase324: "studies/phase324_custodial_rho_parameter_source_audit_001/output/custodial_rho_parameter_source_audit_summary.json",
   phase325: "studies/phase325_electroweak_unitarity_scattering_source_audit_001/output/electroweak_unitarity_scattering_source_audit_summary.json",
+  phase326: "studies/phase326_anomaly_hypercharge_source_audit_001/output/anomaly_hypercharge_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -261,6 +262,7 @@ const phase322 = requireFile(paths.phase322);
 const phase323 = requireFile(paths.phase323);
 const phase324 = requireFile(paths.phase324);
 const phase325 = requireFile(paths.phase325);
+const phase326 = requireFile(paths.phase326);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -1499,6 +1501,30 @@ if (sourceLineageMissing) {
   assert(phase325.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase325 W/Z missing-field count must match Phase213.");
   assert(phase325.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase325 Higgs missing-field count must match Phase213.");
   assert(phase325.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase325 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase326.anomalyHyperchargeSourceAuditPassed === true, "Phase326 anomaly hypercharge source audit must pass while preserving non-promotional status.");
+  assert(phase326.anomalyCancellationConstrainsFermionQuantumNumbers === true, "Phase326 must preserve anomaly-cancellation quantum-number evidence.");
+  assert(phase326.globalSu2AnomalyConstrainsDoubletParity === true, "Phase326 must preserve Witten SU(2) anomaly doublet-parity evidence.");
+  assert(phase326.anomalyCancellationAlmostDeterminesHyperchargesUnderAssumptions === true, "Phase326 must record the hypercharge-quantization lead.");
+  assert(phase326.anomalyRouteProvidesQuantumConsistencyConditions === true, "Phase326 must classify anomaly cancellation as quantum consistency evidence.");
+  assert(phase326.anomalyRouteProvidesRepresentationConstraint === true, "Phase326 must classify anomaly cancellation as representation-constraint evidence.");
+  assert(phase326.anomalyRouteProvidesLowEnergyHyperchargeSource === false, "Phase326 cannot claim a low-energy hypercharge source from anomaly cancellation.");
+  assert(phase326.anomalyRouteProvidesWeakMixingAngleSource === false, "Phase326 cannot claim a weak-mixing source from anomaly cancellation.");
+  assert(phase326.anomalyRouteProvidesGaugeCouplingNormalization === false, "Phase326 cannot claim gauge-coupling normalization from anomaly cancellation.");
+  assert(phase326.anomalyRouteProvidesTargetIndependentVevSource === false, "Phase326 cannot claim a target-independent VEV source from anomaly cancellation.");
+  assert(phase326.anomalyRouteProvidesAbsoluteWzScale === false, "Phase326 cannot claim an absolute W/Z scale from anomaly cancellation.");
+  assert(phase326.anomalyRouteProvidesObservedFieldExtraction === false, "Phase326 cannot claim observed-field extraction from anomaly cancellation.");
+  assert(phase326.anomalyRouteProvidesPhotonWzProjectionRows === false, "Phase326 cannot claim photon/W/Z projection rows from anomaly cancellation.");
+  assert(phase326.anomalyRouteProvidesNeutralMassMatrixDiagonalization === false, "Phase326 cannot claim neutral mass-matrix diagonalization from anomaly cancellation.");
+  assert(phase326.anomalyRouteProvidesHiggsScalarSelfCouplingSource === false, "Phase326 cannot claim a Higgs scalar self-coupling source from anomaly cancellation.");
+  assert(phase326.anomalyRoutePromotesWzMasses === false, "Phase326 cannot promote W/Z masses through the anomaly route.");
+  assert(phase326.anomalyRoutePromotesHiggsMass === false, "Phase326 cannot promote Higgs mass through the anomaly route.");
+  assert(phase326.anomalyRouteCompletesBosonPredictions === false, "Phase326 cannot complete boson predictions through the anomaly route.");
+  assert(phase326.contractImpact?.canFillPhase201WzContract === false, "Phase326 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase326.contractImpact?.canFillPhase201HiggsContract === false, "Phase326 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase326.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase326 contract impact must keep Phase256 unfilled.");
+  assert(phase326.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase326 W/Z missing-field count must match Phase213.");
+  assert(phase326.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase326 Higgs missing-field count must match Phase213.");
+  assert(phase326.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase326 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

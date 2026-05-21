@@ -91,6 +91,7 @@ const string Phase322Path = "studies/phase322_higgs_upsilon_scalar_source_bounda
 const string Phase323Path = "studies/phase323_coupled_yang_mills_higgs_mass_extraction_audit_001/output/coupled_yang_mills_higgs_mass_extraction_audit_summary.json";
 const string Phase324Path = "studies/phase324_custodial_rho_parameter_source_audit_001/output/custodial_rho_parameter_source_audit_summary.json";
 const string Phase325Path = "studies/phase325_electroweak_unitarity_scattering_source_audit_001/output/electroweak_unitarity_scattering_source_audit_summary.json";
+const string Phase326Path = "studies/phase326_anomaly_hypercharge_source_audit_001/output/anomaly_hypercharge_source_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -215,6 +216,7 @@ using var phase322 = File.Exists(Phase322Path) ? JsonDocument.Parse(File.ReadAll
 using var phase323 = File.Exists(Phase323Path) ? JsonDocument.Parse(File.ReadAllText(Phase323Path)) : null;
 using var phase324 = File.Exists(Phase324Path) ? JsonDocument.Parse(File.ReadAllText(Phase324Path)) : null;
 using var phase325 = File.Exists(Phase325Path) ? JsonDocument.Parse(File.ReadAllText(Phase325Path)) : null;
+using var phase326 = File.Exists(Phase326Path) ? JsonDocument.Parse(File.ReadAllText(Phase326Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -1372,6 +1374,33 @@ var electroweakUnitarityScatteringSourceAuditPassed = electroweakUnitarityScatte
     && JsonInt(p325ContractImpact, "wzMissingFieldCount") == wzMissingFieldCount
     && JsonInt(p325ContractImpact, "higgsMissingFieldCount") == higgsMissingFieldCount
     && JsonInt(p325ContractImpact, "observedFieldExtractionFilledRequiredFieldCount") == 0;
+var anomalyHyperchargeSourceAuditMaterialized = phase326 is not null;
+var anomalyHyperchargeSourceAuditPassed = anomalyHyperchargeSourceAuditMaterialized
+    && JsonBool(phase326!.RootElement, "anomalyHyperchargeSourceAuditPassed") is true
+    && JsonBool(phase326.RootElement, "anomalyCancellationConstrainsFermionQuantumNumbers") is true
+    && JsonBool(phase326.RootElement, "globalSu2AnomalyConstrainsDoubletParity") is true
+    && JsonBool(phase326.RootElement, "anomalyCancellationAlmostDeterminesHyperchargesUnderAssumptions") is true
+    && JsonBool(phase326.RootElement, "anomalyRouteProvidesQuantumConsistencyConditions") is true
+    && JsonBool(phase326.RootElement, "anomalyRouteProvidesRepresentationConstraint") is true
+    && JsonBool(phase326.RootElement, "anomalyRouteProvidesLowEnergyHyperchargeSource") is false
+    && JsonBool(phase326.RootElement, "anomalyRouteProvidesWeakMixingAngleSource") is false
+    && JsonBool(phase326.RootElement, "anomalyRouteProvidesGaugeCouplingNormalization") is false
+    && JsonBool(phase326.RootElement, "anomalyRouteProvidesTargetIndependentVevSource") is false
+    && JsonBool(phase326.RootElement, "anomalyRouteProvidesAbsoluteWzScale") is false
+    && JsonBool(phase326.RootElement, "anomalyRouteProvidesObservedFieldExtraction") is false
+    && JsonBool(phase326.RootElement, "anomalyRouteProvidesPhotonWzProjectionRows") is false
+    && JsonBool(phase326.RootElement, "anomalyRouteProvidesNeutralMassMatrixDiagonalization") is false
+    && JsonBool(phase326.RootElement, "anomalyRouteProvidesHiggsScalarSelfCouplingSource") is false
+    && JsonBool(phase326.RootElement, "anomalyRoutePromotesWzMasses") is false
+    && JsonBool(phase326.RootElement, "anomalyRoutePromotesHiggsMass") is false
+    && JsonBool(phase326.RootElement, "anomalyRouteCompletesBosonPredictions") is false
+    && JsonBool(phase326.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase326.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase326.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && phase326.RootElement.TryGetProperty("contractImpact", out var p326ContractImpact)
+    && JsonInt(p326ContractImpact, "wzMissingFieldCount") == wzMissingFieldCount
+    && JsonInt(p326ContractImpact, "higgsMissingFieldCount") == higgsMissingFieldCount
+    && JsonInt(p326ContractImpact, "observedFieldExtractionFilledRequiredFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -2949,6 +2978,14 @@ var checklist = new[]
             : "Phase325 artifact not materialized",
         Phase325Path),
     new ObjectiveChecklistItem(
+        "anomaly-hypercharge-source-audit-materialized",
+        "Audit whether anomaly cancellation or hypercharge quantization can supply a target-independent W/Z or Higgs mass source.",
+        anomalyHyperchargeSourceAuditPassed ? "passed" : "failed",
+        anomalyHyperchargeSourceAuditMaterialized
+            ? $"anomalyHyperchargeSourceAuditPassed={JsonBool(phase326!.RootElement, "anomalyHyperchargeSourceAuditPassed")}; anomalyCancellationConstrainsFermionQuantumNumbers={JsonBool(phase326.RootElement, "anomalyCancellationConstrainsFermionQuantumNumbers")}; globalSu2AnomalyConstrainsDoubletParity={JsonBool(phase326.RootElement, "globalSu2AnomalyConstrainsDoubletParity")}; anomalyCancellationAlmostDeterminesHyperchargesUnderAssumptions={JsonBool(phase326.RootElement, "anomalyCancellationAlmostDeterminesHyperchargesUnderAssumptions")}; anomalyRouteProvidesWeakMixingAngleSource={JsonBool(phase326.RootElement, "anomalyRouteProvidesWeakMixingAngleSource")}; anomalyRouteProvidesGaugeCouplingNormalization={JsonBool(phase326.RootElement, "anomalyRouteProvidesGaugeCouplingNormalization")}; anomalyRouteProvidesTargetIndependentVevSource={JsonBool(phase326.RootElement, "anomalyRouteProvidesTargetIndependentVevSource")}; anomalyRouteProvidesAbsoluteWzScale={JsonBool(phase326.RootElement, "anomalyRouteProvidesAbsoluteWzScale")}; anomalyRouteProvidesObservedFieldExtraction={JsonBool(phase326.RootElement, "anomalyRouteProvidesObservedFieldExtraction")}; anomalyRouteCompletesBosonPredictions={JsonBool(phase326.RootElement, "anomalyRouteCompletesBosonPredictions")}; canFillPhase201WzContract={JsonBool(phase326.RootElement, "canFillPhase201WzContract")}; canFillPhase201HiggsContract={JsonBool(phase326.RootElement, "canFillPhase201HiggsContract")}; decision={JsonString(phase326.RootElement, "decision")}"
+            : "Phase326 artifact not materialized",
+        Phase326Path),
+    new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
         branchLocalDirectInvariantCensusPassed ? "passed" : "failed",
@@ -3284,6 +3321,7 @@ var result = new
         "Legacy selector-spectrum W/Z absolute projections are audited as non-promotional source-law evidence.",
         "Standalone custodial rho-parameter relation is audited as a ratio constraint, not an absolute source.",
         "Electroweak perturbative-unitarity scattering route is audited as a consistency bound, not an exact source.",
+        "Anomaly cancellation and hypercharge quantization are audited as consistency constraints, not exact boson-mass sources.",
         "Observed-field extraction contract fields are scanned for intake-ready local artifacts.",
         "W/Z and Higgs source-lineage contract fields are scanned for intake-ready local artifacts.",
         "Those contracts are filled with promotable target-independent evidence.",
@@ -3309,6 +3347,7 @@ var result = new
     coupledYangMillsHiggsMassExtractionAuditPassed,
     custodialRhoParameterSourceAuditPassed,
     electroweakUnitarityScatteringSourceAuditPassed,
+    anomalyHyperchargeSourceAuditPassed,
     parameterSourceContractCandidateScanPassed,
     phase288CoverageFalseNegativeAuditPassed,
     chargedLeptonThresholdSourceReplacementAuditPassed,
@@ -3419,6 +3458,7 @@ var result = new
         phase323Path = Phase323Path,
         phase324Path = Phase324Path,
         phase325Path = Phase325Path,
+        phase326Path = Phase326Path,
         phase282Path = Phase282Path,
         phase283Path = Phase283Path,
         phase284Path = Phase284Path,

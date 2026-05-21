@@ -8173,6 +8173,119 @@ photon/W/Z/H rows, or GU Higgs scalar-source/self-coupling lineage.
   in `QuantitativeValidationTests.cs(315,9)` remains present.
 - `git diff --check` passed.
 
+## 2026-05-21 - Phase326 Anomaly Hypercharge Source Audit
+
+### Question
+
+Audit the anomaly-cancellation / hypercharge-quantization route. The loophole
+is that anomaly cancellation is a real quantum-consistency requirement and can
+constrain Standard Model fermion quantum numbers, so it can look like a route
+to weak hypercharge, weak mixing, or W/Z/H masses.
+
+### Research
+
+- Reviewed Bouchiat, Iliopoulos, and Meyer:
+  `https://www.osti.gov/biblio/4663309`. This is the classic anomaly-free
+  electroweak-model route. It supplies quantum-consistency constraints, not an
+  electroweak VEV, low-energy coupling ratio, or W/Z/H mass source.
+- Reviewed Witten's global SU(2) anomaly record:
+  `https://collaborate.princeton.edu/en/publications/an-su2-anomaly/`.
+  The result restricts allowed SU(2) fermion doublet content. It does not fix
+  the W/Z absolute scale, weak mixing angle, or Higgs scalar parameters.
+- Reviewed Alvarez, Gracia-Bondia, and Martin:
+  `https://arxiv.org/abs/hep-th/9506115`. It records that anomaly
+  cancellation almost determines Standard Model hypercharges in NCG-related
+  settings, but still does not provide observed photon/W/Z/H projection rows
+  or mass-source lineages.
+- Rechecked local anomaly leads in Phase233 and Phase240. Cox/GU-related
+  anomaly-closure and BRST/BV leads remain non-promotional for boson masses:
+  they do not control low-energy electroweak running, Higgs quartic running,
+  or W/Z/H source rows.
+- Rechecked Phase244 and Phase245. The current promoted W/Z ratio still has
+  rank one and leaves the common W/Z scale and Higgs scalar scale unfilled.
+- Rechecked Phase313, Phase321, Phase323, Phase324, and Phase325. Existing
+  electroweak-location, neutral-mixing, mass-extraction, custodial, and
+  unitarity audits still lack the weak-mixing source, target-independent VEV,
+  gauge-coupling normalization, photon/W/Z/H projection rows, and Higgs
+  scalar-source/self-coupling lineage needed for promotion.
+
+### Actions
+
+- Added `studies/phase326_anomaly_hypercharge_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P326.md`.
+- Wired Phase326 into the generator, P101 package, P202 objective completion
+  audit, claim-integrity verifier, and scanner exclusions.
+
+### Current Expected Outcome
+
+Phase326 is expected to pass only as a negative boundary audit:
+
+- `anomalyHyperchargeSourceAuditPassed=true`.
+- `anomalyCancellationConstrainsFermionQuantumNumbers=true`.
+- `globalSu2AnomalyConstrainsDoubletParity=true`.
+- `anomalyCancellationAlmostDeterminesHyperchargesUnderAssumptions=true`.
+- `anomalyRouteProvidesQuantumConsistencyConditions=true`.
+- `anomalyRouteProvidesRepresentationConstraint=true`.
+- `anomalyRouteProvidesLowEnergyHyperchargeSource=false`.
+- `anomalyRouteProvidesWeakMixingAngleSource=false`.
+- `anomalyRouteProvidesGaugeCouplingNormalization=false`.
+- `anomalyRouteProvidesTargetIndependentVevSource=false`.
+- `anomalyRouteProvidesAbsoluteWzScale=false`.
+- `anomalyRouteProvidesObservedFieldExtraction=false`.
+- `anomalyRouteProvidesPhotonWzProjectionRows=false`.
+- `anomalyRouteProvidesNeutralMassMatrixDiagonalization=false`.
+- `anomalyRouteProvidesHiggsScalarSelfCouplingSource=false`.
+- `anomalyRoutePromotesWzMasses=false`.
+- `anomalyRoutePromotesHiggsMass=false`.
+- `anomalyRouteCompletesBosonPredictions=false`.
+- `canFillPhase201WzContract=false`.
+- `canFillPhase201HiggsContract=false`.
+- `canFillPhase256ObservedFieldExtractionContract=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs absolute masses from anomaly cancellation,
+hypercharge quantization, or local anomaly-closure leads. These are necessary
+quantum-consistency and representation constraints, but they do not derive the
+low-energy weak-mixing angle, gauge-coupling normalization, electroweak VEV,
+W/Z absolute scale, observed photon/W/Z/H rows, or GU Higgs
+scalar-source/self-coupling lineage.
+
+### Validation
+
+- Targeted Phase326 run passed with:
+  - `anomalyHyperchargeSourceAuditPassed=true`.
+  - `anomalyCancellationConstrainsFermionQuantumNumbers=true`.
+  - `anomalyRouteProvidesWeakMixingAngleSource=false`.
+  - `anomalyRouteProvidesAbsoluteWzScale=false`.
+  - `canFillPhase201WzContract=false`.
+- P101 regenerated with Phase326 included and remained
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase326 included and remained
+  `objectiveAchieved=false`, with `checklistPassedCount=119` and
+  `checklistFailedCount=3`.
+- Claim-integrity verifier passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns after adding Phase326 found no intake-ready artifacts:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `canPromoteHiggsQuarticSelfCouplingSource=false` and
+    `intakeReadyFindingCount=0`.
+  - P281 `geometricRefractiveUnificationSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P295 `intakeReadyObservedFieldExtractionCandidateCount=0` and
+    `anyObservedFieldExtractionCandidateFillsContract=false`.
+  - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
+    `anySourceLineageCandidateFillsContract=false`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed with
+  Phase326 in both generator passes, ending with P101 blocked, P202 incomplete
+  at `checklistPassedCount=119` / `checklistFailedCount=3`, and claim
+  integrity verified.
+- `dotnet test GeometricUnity.slnx` passed. The existing xUnit analyzer warning
+  in `QuantitativeValidationTests.cs(315,9)` remains present.
+- `git diff --check` passed.
+
 ## 2026-05-20 - Phase321 Neutral Electroweak Mixing Source Audit
 
 ### Question
