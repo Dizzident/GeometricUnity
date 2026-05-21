@@ -7573,6 +7573,112 @@ Higgs remains separately blocked by missing scalar-source lineage.
   `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
   `promotedPhysicalMassClaimCount=0`.
 
+## 2026-05-21 - Phase335 Graviweak Plebanski Source Audit
+
+### Context
+
+After Phase334 preserved SU(2/1) superconnection geometry as a direct W/Z/H
+ratio lead but not a GU-local source-law fix, I looked for a distinct
+four-dimensional gauge-geometric route. The strongest non-duplicative lead was
+graviweak/Plebanski unification: enlarged-connection and Spin(4,4) models that
+recover gravity, weak SU(2), Yang-Mills, and Higgs-sector actions from a common
+gauge-gravity construction.
+
+### Sources Reviewed
+
+- `https://arxiv.org/abs/0706.3307`.
+- `https://arxiv.org/abs/1304.3069`.
+- `https://arxiv.org/abs/1311.4413`.
+- `https://arxiv.org/abs/1409.1115`.
+- `https://arxiv.org/abs/1712.03061`.
+
+### Action
+
+- Added `studies/phase335_graviweak_plebanski_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P335.md`.
+- Wired Phase335 into the generator, P101 package, P202 objective completion
+  audit, and claim-integrity verifier.
+- Added Phase335 scanner exclusions so generated audit text is not counted as
+  independent source evidence.
+- Added `GRAVIWEAK-PLEBANSKI-UNIFICATION` to `ExperimentReferences.md` with a
+  detailed reference note under `docs/Reference/ExperimentReferences/`.
+
+### Current Expected Outcome
+
+Phase335 is expected to pass only as a negative boundary audit:
+
+- `graviweakPlebanskiSourceAuditPassed=true`.
+- `graviweakPlebanskiLeadPresent=true`.
+- `graviweakPrimarySourcesReviewed=true`.
+- `graviweakRouteExternalToGu=true`.
+- `graviweakRouteUnifiesGravityAndWeakSu2=true`.
+- `graviweakRouteUsesExtendedPlebanskiAction=true`.
+- `graviweakRouteUsesSpin44GaugeSymmetry=true`.
+- `graviweakRouteRecoversGravityYangMillsHiggsAction=true`.
+- `graviweakRouteTreatsHiggsAsFrameHiggsConnection=true`.
+- `graviweakRouteLeavesWFieldsMasslessBeforeElectroweakBreaking=true`.
+- `graviweakRouteIncludesMppHiggsMassIntervalLead=true`.
+- `graviweakRouteProvidesGuLocalWzTheorem=false`.
+- `graviweakRouteProvidesSeparateWzSourceRows=false`.
+- `graviweakRouteProvidesTargetIndependentGuVevSource=false`.
+- `graviweakRouteProvidesGuWeakMixingAngleSource=false`.
+- `graviweakRouteProvidesGuGaugeCouplingNormalization=false`.
+- `graviweakRouteProvidesGuObservedFieldExtraction=false`.
+- `graviweakRouteProvidesGuHiggsScalarSourceOperator=false`.
+- `graviweakRouteProvidesGuHiggsQuarticOrExcitationSource=false`.
+- `graviweakRouteProvidesObservedHiggsMassFromGu=false`.
+- `graviweakRouteProvidesGeVUnitNormalization=false`.
+- `graviweakRoutePromotesWzMasses=false`.
+- `graviweakRoutePromotesHiggsMass=false`.
+- `graviweakRouteCompletesBosonPredictions=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from the graviweak/Plebanski route. It is a
+serious external geometric gauge-gravity-Higgs unification lead, but it leaves
+the W fields massless until a lower-energy electroweak-breaking mechanism is
+added and depends on specific gauge group choices, VEV/curvature vacua,
+Planck-scale matching, RG transport, observed inputs, and MPP assumptions.
+
+### Validation So Far
+
+- Targeted Phase335 run passed with:
+  - `terminalStatus=graviweak-plebanski-source-audit-geometric-unification-lead-not-gu-source`.
+  - `graviweakPlebanskiSourceAuditPassed=true`.
+  - `graviweakRouteUnifiesGravityAndWeakSu2=true`.
+  - `graviweakRouteRecoversGravityYangMillsHiggsAction=true`.
+  - `graviweakRoutePromotesWzMasses=false`.
+  - `graviweakRoutePromotesHiggsMass=false`.
+  - `canFillPhase201WzContract=false`.
+  - `canFillPhase201HiggsContract=false`.
+  - `canFillPhase256ObservedFieldExtractionContract=false`.
+- P101 regenerated with Phase335 included and remained
+  `internal-boson-prediction-package-built-physical-comparison-blocked`, with
+  `objectiveAchieved=false`, `allKnownBosonValuesDefensible=false`,
+  `wzMissingFieldCount=15`, and `higgsMissingFieldCount=14`.
+- P202 regenerated with Phase335 included and remained
+  `boson-objective-completion-audit-incomplete`, with
+  `objectiveAchieved=false`, `checklistPassedCount=128`, and
+  `checklistFailedCount=3`.
+- Scanner guards passed with no intake-ready source-lineage promotion:
+  - P204: `intakeReadyCandidateCount=0`.
+  - P205: `intakeReadyFindingCount=0`.
+  - P207: `canPromoteHiggsQuarticSelfCouplingSource=false` and
+    `intakeReadyFindingCount=0`.
+  - P279 and P281 preserved `wzMissingFieldCount=15` and
+    `higgsMissingFieldCount=14`.
+  - P295: `intakeReadyObservedFieldExtractionCandidateCount=0` and
+    `anyObservedFieldExtractionCandidateFillsContract=false`.
+  - P296: `intakeReadySourceLineageFieldCandidateCount=0` and
+    `anySourceLineageCandidateFillsContract=false`.
+- Claim-integrity verifier passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- `git diff --check` passed.
+- `dotnet test GeometricUnity.slnx` passed. The existing xUnit analyzer warning
+  remains at
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs(315,9)`.
+
 ## 2026-05-21 - Phase334 SU(2/1) Superconnection Source Audit
 
 ### Context

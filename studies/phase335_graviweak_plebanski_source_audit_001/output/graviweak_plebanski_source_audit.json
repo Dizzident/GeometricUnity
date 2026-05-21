@@ -1,0 +1,176 @@
+{
+  "phaseId": "phase335-graviweak-plebanski-source-audit",
+  "terminalStatus": "graviweak-plebanski-source-audit-geometric-unification-lead-not-gu-source",
+  "generatedAt": "2026-05-21T21:52:55.476636+00:00",
+  "graviweakPlebanskiSourceAuditPassed": true,
+  "graviweakPlebanskiLeadPresent": true,
+  "graviweakPrimarySourcesReviewed": true,
+  "graviweakRouteExternalToGu": true,
+  "graviweakRouteUnifiesGravityAndWeakSu2": true,
+  "graviweakRouteUsesExtendedPlebanskiAction": true,
+  "graviweakRouteUsesSpin44GaugeSymmetry": true,
+  "graviweakRouteRecoversGravityYangMillsHiggsAction": true,
+  "graviweakRouteTreatsHiggsAsFrameHiggsConnection": true,
+  "graviweakRouteRelatesBareCouplingsToUnifiedParameterAndVev": true,
+  "graviweakRouteProvidesPlanckScaleWeakGravityCouplingRelation": true,
+  "graviweakRouteLeavesWFieldsMasslessBeforeElectroweakBreaking": true,
+  "graviweakRouteIncludesMppHiggsMassIntervalLead": true,
+  "graviweakRouteIncludesMirrorSectorScaleLead": true,
+  "graviweakRouteDistinctFromSu21Superconnection": true,
+  "graviweakRouteDistinctFromKaluzaKleinInternalSymmetry": true,
+  "graviweakRouteRequiresSpecificGaugeGroupChoice": true,
+  "graviweakRouteRequiresSymmetryBreakingAnsatz": true,
+  "graviweakRouteRequiresHiggsVevOrCurvatureVacuum": true,
+  "graviweakRouteRequiresElectroweakBreakingMechanism": true,
+  "graviweakRouteRequiresPlanckScaleBareParameterMatching": true,
+  "graviweakRouteRequiresRunningFromPlanckToElectroweakScale": true,
+  "graviweakRouteRequiresObservedGnAndVevInputs": true,
+  "graviweakRouteRequiresMppCriticalityAssumptions": true,
+  "graviweakRouteRequiresFermionHyperchargeAndSmCompletion": true,
+  "graviweakRouteProvidesGuLocalWzTheorem": false,
+  "graviweakRouteProvidesSeparateWzSourceRows": false,
+  "graviweakRouteProvidesWzRawAmplitudeGates": false,
+  "graviweakRouteProvidesWzCommonBridgeGate": false,
+  "graviweakRouteProvidesTargetIndependentGuVevSource": false,
+  "graviweakRouteProvidesGuWeakMixingAngleSource": false,
+  "graviweakRouteProvidesGuGaugeCouplingNormalization": false,
+  "graviweakRouteProvidesObservedPhotonWzProjectionRows": false,
+  "graviweakRouteProvidesNeutralMassMatrixDiagonalization": false,
+  "graviweakRouteProvidesGuObservedFieldExtraction": false,
+  "graviweakRouteProvidesGuHiggsScalarSourceOperator": false,
+  "graviweakRouteProvidesGuHiggsQuarticOrExcitationSource": false,
+  "graviweakRouteProvidesObservedHiggsMassFromGu": false,
+  "graviweakRouteProvidesGeVUnitNormalization": false,
+  "graviweakRoutePromotesWzMasses": false,
+  "graviweakRoutePromotesHiggsMass": false,
+  "graviweakRouteCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "numericalLead": {
+    "reducedPlanckScaleGeV": 2.43E+18,
+    "standardHiggsVevInputGeV": 246,
+    "mirrorHiggsVevScaleFactorLead": 100,
+    "mppHiggsMassLowerGeV": 125,
+    "mppHiggsMassUpperGeV": 143,
+    "darkEnergySusyScaleLeadGeV": 10000000000
+  },
+  "sourceRows": [
+    {
+      "SourceId": "arxiv-0706-3307-nesti-percacci-graviweak",
+      "Url": "https://arxiv.org/abs/0706.3307",
+      "Scope": "graviweak unification from selfdual/antiselfdual connection split",
+      "Finding": "The route identifies the antiselfdual part of the Lorentz connection with weak SU(2) and leaves the W gauge fields massless until lower-scale electroweak breaking.",
+      "PredictionImpact": "This is a geometric gravity-weak unification lead, but it explicitly does not produce observed W/Z masses without an additional electroweak-breaking source."
+    },
+    {
+      "SourceId": "arxiv-1304-3069-das-laperashvili-tureanu-spin44",
+      "Url": "https://arxiv.org/abs/1304.3069",
+      "Scope": "Spin(4,4) extended Plebanski graviweak action",
+      "Finding": "The model recovers gravity, SU(2) Yang-Mills, and Higgs-field actions, with physical constants determined by a parameter and Higgs VEVs.",
+      "PredictionImpact": "It treats the VEV and Planck-scale matching as required inputs/solutions and does not supply GU observed-field rows."
+    },
+    {
+      "SourceId": "arxiv-1311-4413-graviweak-mpp",
+      "Url": "https://arxiv.org/abs/1311.4413",
+      "Scope": "graviweak unification with Multiple Point Principle",
+      "Finding": "The source relates Newton, cosmological, and weak couplings at the bare Planck scale and quotes an MPP Higgs-mass interval of 125-143 GeV.",
+      "PredictionImpact": "The Higgs interval is an MPP/SM effective-potential lead, not a GU-local Higgs scalar-source lineage."
+    },
+    {
+      "SourceId": "arxiv-1409-1115-graviweak-inflation-visible-invisible",
+      "Url": "https://arxiv.org/abs/1409.1115",
+      "Scope": "visible/invisible Spin(4,4) graviweak and Higgs false-vacuum route",
+      "Finding": "The source uses visible and mirror Higgs doublet VEVs, including a visible electroweak VEV near 246 GeV and a mirror scale factor lead.",
+      "PredictionImpact": "The VEVs are model inputs/assumptions for this repository\u0027s contract and cannot fill target-independent GU VEV lineage."
+    },
+    {
+      "SourceId": "arxiv-1712-03061-krasnov-percacci-gravity-unification-review",
+      "Url": "https://arxiv.org/abs/1712.03061",
+      "Scope": "review of gravity-Yang-Mills unification by enlarged internal/gauge bundles",
+      "Finding": "The review frames Plebanski and related formulations as four-dimensional gauge-gravity unification routes with enlarged internal spaces.",
+      "PredictionImpact": "It supplies context for the graviweak route but no W/Z/H physical prediction source rows."
+    }
+  ],
+  "checks": [
+    {
+      "CheckId": "graviweak-plebanski-primary-sources-reviewed",
+      "Passed": true,
+      "Detail": "lead=True; primaryReviewed=True; externalToGu=True; sourceRows=5"
+    },
+    {
+      "CheckId": "graviweak-route-captures-geometric-gravity-weak-higgs-lead",
+      "Passed": true,
+      "Detail": "unifiesGravityWeak=True; plebanski=True; spin44=True; recoversActions=True; frameHiggs=True; bareRelation=True; planckRelation=True"
+    },
+    {
+      "CheckId": "graviweak-route-numerical-leads-are-not-current-gu-source-lineage",
+      "Passed": true,
+      "Detail": "wMasslessUntilEwBreaking=True; mppHiggsRangeGeV=125-143; mirrorScale=100; p323=True; p333=True; p334=True"
+    },
+    {
+      "CheckId": "graviweak-route-remains-external-and-conditional",
+      "Passed": true,
+      "Detail": "distinctSu21=True; distinctKk=True; gaugeGroup=True; breaking=True; vevVacuum=True; ewBreaking=True; planckMatch=True; running=True; observedInputs=True; mpp=True; smCompletion=True"
+    },
+    {
+      "CheckId": "graviweak-route-does-not-supply-gu-wz-source-lineage",
+      "Passed": true,
+      "Detail": "p224=True; wClosure=False; zClosure=False; rg=False; guWzTheorem=False; separateRows=False; targetVev=False; weakAngle=False; promotesWz=False"
+    },
+    {
+      "CheckId": "graviweak-route-does-not-supply-gu-higgs-source-lineage",
+      "Passed": true,
+      "Detail": "higgsClosure=False; observedExtraction=False; higgsOperator=False; higgsQuartic=False; observedHiggsGu=False; promotesHiggs=False"
+    },
+    {
+      "CheckId": "source-lineage-contracts-remain-unfilled-after-graviweak-audit",
+      "Passed": true,
+      "Detail": "phase201Promotable=False; existingEvidence=False; wzMissing=15; higgsMissing=14; phase256Required=20; phase256Filled=0; observedPromotable=False; geV=False; completes=False; canFillWz=False; canFillHiggs=False; canFillObserved=False"
+    }
+  ],
+  "currentBlockerEvidence": {
+    "phase201AllRequiredLineagesPromotable": false,
+    "existingEvidenceFound": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionRequiredFieldCount": 20,
+    "observedFieldExtractionFilledRequiredFieldCount": 0,
+    "observedFieldExtractionContractPromotable": false,
+    "electroweakParameterAuditPassed": true,
+    "wAbsoluteMassParameterClosure": false,
+    "zAbsoluteMassParameterClosure": false,
+    "higgsMassParameterClosure": false,
+    "lowEnergyRgTransportSourcePromotable": false
+  },
+  "contractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionFilledRequiredFieldCount": 0
+  },
+  "decision": "Do not promote W/Z or Higgs physical masses from the graviweak/Plebanski route in this repository. The route is a serious external geometric gravity-weak-Higgs unification lead, but it leaves low-energy W masses to a later electroweak-breaking mechanism and does not supply GU-local W/Z source rows, observed photon/W/Z/H projection, a target-independent GU VEV or scale source, GU weak-angle and coupling normalization, Higgs scalar-source/self-coupling lineage, or GeV normalization.",
+  "nextRequiredArtifact": [
+    "A GU-local gauge-gravity/Higgs theorem mapping GU fields to observed photon/W/Z/H rows.",
+    "Separate W and Z source rows with electroweak breaking, weak-angle, neutral mixing, photon projection, and physical-unit normalization independent of target values.",
+    "A target-independent GU vacuum/VEV and low-energy transport theorem that does not import GN, v, or electroweak measured inputs as source rows.",
+    "A solved GU Higgs scalar source/operator and quartic or excitation lineage if a frame-Higgs connection route is to supply the physical Higgs."
+  ],
+  "sourceEvidence": {
+    "nestiPercacciGraviweakUrl": "https://arxiv.org/abs/0706.3307",
+    "dasLaperashviliTureanuGraviweakUrl": "https://arxiv.org/abs/1304.3069",
+    "froggattDasLaperashviliNielsenTureanuMppUrl": "https://arxiv.org/abs/1311.4413",
+    "dasLaperashviliInflationUrl": "https://arxiv.org/abs/1409.1115",
+    "krasnovPercacciReviewUrl": "https://arxiv.org/abs/1712.03061",
+    "phase201Path": "studies/phase201_boson_source_lineage_intake_contract_001/output/boson_source_lineage_intake_contract_summary.json",
+    "phase213Path": "studies/phase213_boson_source_lineage_blocker_matrix_001/output/boson_source_lineage_blocker_matrix_summary.json",
+    "phase224Path": "studies/phase224_electroweak_parameter_dependency_audit_001/output/electroweak_parameter_dependency_audit_summary.json",
+    "phase236Path": "studies/phase236_low_energy_rg_transport_source_audit_001/output/low_energy_rg_transport_source_audit_summary.json",
+    "phase256Path": "studies/phase256_observed_field_extraction_intake_contract_001/output/observed_field_extraction_intake_contract_summary.json",
+    "phase323Path": "studies/phase323_coupled_yang_mills_higgs_mass_extraction_audit_001/output/coupled_yang_mills_higgs_mass_extraction_audit_summary.json",
+    "phase333Path": "studies/phase333_kaluza_klein_internal_symmetry_source_audit_001/output/kaluza_klein_internal_symmetry_source_audit_summary.json",
+    "phase334Path": "studies/phase334_su21_superconnection_source_audit_001/output/su21_superconnection_source_audit_summary.json"
+  }
+}

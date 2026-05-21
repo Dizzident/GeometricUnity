@@ -100,6 +100,7 @@ const string Phase331Path = "studies/phase331_theta_omega_inhomogeneous_gauge_so
 const string Phase332Path = "studies/phase332_string_m_theory_compactification_source_audit_001/output/string_m_theory_compactification_source_audit_summary.json";
 const string Phase333Path = "studies/phase333_kaluza_klein_internal_symmetry_source_audit_001/output/kaluza_klein_internal_symmetry_source_audit_summary.json";
 const string Phase334Path = "studies/phase334_su21_superconnection_source_audit_001/output/su21_superconnection_source_audit_summary.json";
+const string Phase335Path = "studies/phase335_graviweak_plebanski_source_audit_001/output/graviweak_plebanski_source_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -233,6 +234,7 @@ using var phase331 = File.Exists(Phase331Path) ? JsonDocument.Parse(File.ReadAll
 using var phase332 = File.Exists(Phase332Path) ? JsonDocument.Parse(File.ReadAllText(Phase332Path)) : null;
 using var phase333 = File.Exists(Phase333Path) ? JsonDocument.Parse(File.ReadAllText(Phase333Path)) : null;
 using var phase334 = File.Exists(Phase334Path) ? JsonDocument.Parse(File.ReadAllText(Phase334Path)) : null;
+using var phase335 = File.Exists(Phase335Path) ? JsonDocument.Parse(File.ReadAllText(Phase335Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -1690,6 +1692,48 @@ var su21SuperconnectionSourceAuditPassed = su21SuperconnectionSourceAuditMateria
     && JsonInt(p334ContractImpact, "wzMissingFieldCount") == wzMissingFieldCount
     && JsonInt(p334ContractImpact, "higgsMissingFieldCount") == higgsMissingFieldCount
     && JsonInt(p334ContractImpact, "observedFieldExtractionFilledRequiredFieldCount") == 0;
+var graviweakPlebanskiSourceAuditMaterialized = phase335 is not null;
+var graviweakPlebanskiSourceAuditPassed = graviweakPlebanskiSourceAuditMaterialized
+    && JsonBool(phase335!.RootElement, "graviweakPlebanskiSourceAuditPassed") is true
+    && JsonBool(phase335.RootElement, "graviweakPlebanskiLeadPresent") is true
+    && JsonBool(phase335.RootElement, "graviweakPrimarySourcesReviewed") is true
+    && JsonBool(phase335.RootElement, "graviweakRouteExternalToGu") is true
+    && JsonBool(phase335.RootElement, "graviweakRouteUnifiesGravityAndWeakSu2") is true
+    && JsonBool(phase335.RootElement, "graviweakRouteUsesExtendedPlebanskiAction") is true
+    && JsonBool(phase335.RootElement, "graviweakRouteUsesSpin44GaugeSymmetry") is true
+    && JsonBool(phase335.RootElement, "graviweakRouteRecoversGravityYangMillsHiggsAction") is true
+    && JsonBool(phase335.RootElement, "graviweakRouteTreatsHiggsAsFrameHiggsConnection") is true
+    && JsonBool(phase335.RootElement, "graviweakRouteRelatesBareCouplingsToUnifiedParameterAndVev") is true
+    && JsonBool(phase335.RootElement, "graviweakRouteProvidesPlanckScaleWeakGravityCouplingRelation") is true
+    && JsonBool(phase335.RootElement, "graviweakRouteLeavesWFieldsMasslessBeforeElectroweakBreaking") is true
+    && JsonBool(phase335.RootElement, "graviweakRouteIncludesMppHiggsMassIntervalLead") is true
+    && JsonBool(phase335.RootElement, "graviweakRouteRequiresSpecificGaugeGroupChoice") is true
+    && JsonBool(phase335.RootElement, "graviweakRouteRequiresSymmetryBreakingAnsatz") is true
+    && JsonBool(phase335.RootElement, "graviweakRouteRequiresHiggsVevOrCurvatureVacuum") is true
+    && JsonBool(phase335.RootElement, "graviweakRouteRequiresElectroweakBreakingMechanism") is true
+    && JsonBool(phase335.RootElement, "graviweakRouteRequiresPlanckScaleBareParameterMatching") is true
+    && JsonBool(phase335.RootElement, "graviweakRouteRequiresRunningFromPlanckToElectroweakScale") is true
+    && JsonBool(phase335.RootElement, "graviweakRouteRequiresObservedGnAndVevInputs") is true
+    && JsonBool(phase335.RootElement, "graviweakRouteProvidesGuLocalWzTheorem") is false
+    && JsonBool(phase335.RootElement, "graviweakRouteProvidesSeparateWzSourceRows") is false
+    && JsonBool(phase335.RootElement, "graviweakRouteProvidesTargetIndependentGuVevSource") is false
+    && JsonBool(phase335.RootElement, "graviweakRouteProvidesGuWeakMixingAngleSource") is false
+    && JsonBool(phase335.RootElement, "graviweakRouteProvidesGuGaugeCouplingNormalization") is false
+    && JsonBool(phase335.RootElement, "graviweakRouteProvidesGuObservedFieldExtraction") is false
+    && JsonBool(phase335.RootElement, "graviweakRouteProvidesGuHiggsScalarSourceOperator") is false
+    && JsonBool(phase335.RootElement, "graviweakRouteProvidesGuHiggsQuarticOrExcitationSource") is false
+    && JsonBool(phase335.RootElement, "graviweakRouteProvidesObservedHiggsMassFromGu") is false
+    && JsonBool(phase335.RootElement, "graviweakRouteProvidesGeVUnitNormalization") is false
+    && JsonBool(phase335.RootElement, "graviweakRoutePromotesWzMasses") is false
+    && JsonBool(phase335.RootElement, "graviweakRoutePromotesHiggsMass") is false
+    && JsonBool(phase335.RootElement, "graviweakRouteCompletesBosonPredictions") is false
+    && JsonBool(phase335.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase335.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase335.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && phase335.RootElement.TryGetProperty("contractImpact", out var p335ContractImpact)
+    && JsonInt(p335ContractImpact, "wzMissingFieldCount") == wzMissingFieldCount
+    && JsonInt(p335ContractImpact, "higgsMissingFieldCount") == higgsMissingFieldCount
+    && JsonInt(p335ContractImpact, "observedFieldExtractionFilledRequiredFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -3338,6 +3382,14 @@ var checklist = new[]
             ? $"su21SuperconnectionSourceAuditPassed={JsonBool(phase334!.RootElement, "su21SuperconnectionSourceAuditPassed")}; leadPresent={JsonBool(phase334.RootElement, "su21SuperconnectionLeadPresent")}; externalToGu={JsonBool(phase334.RootElement, "su21RouteExternalToGu")}; higgsAsConnection={JsonBool(phase334.RootElement, "su21RouteGeometricHiggsAsConnectionBased")}; gradedElectroweak={JsonBool(phase334.RootElement, "su21RouteEmbedsElectroweakGroupInGradedAlgebra")}; treeLevelWzHRatio={JsonBool(phase334.RootElement, "su21RouteProvidesTreeLevelWzHMassRatio")}; externalWeinbergAngle={JsonBool(phase334.RootElement, "su21RouteProvidesExternalWeinbergAngleRelation")}; quarticConstraint={JsonBool(phase334.RootElement, "su21RouteClaimsQuarticHiggsCouplingConstraint")}; classicHiggsMismatch={JsonBool(phase334.RootElement, "su21ClassicTreeLevelHiggsPredictionConflictsWithObservedMass")}; modifiedNearHiggs={JsonBool(phase334.RootElement, "su21ModifiedGaugeHiggsClaimNearObservedHiggsPresent")}; providesGuLocalWzTheorem={JsonBool(phase334.RootElement, "su21RouteProvidesGuLocalWzTheorem")}; providesTargetIndependentVev={JsonBool(phase334.RootElement, "su21RouteProvidesTargetIndependentGuVevSource")}; providesGuWeakMixingAngle={JsonBool(phase334.RootElement, "su21RouteProvidesGuWeakMixingAngleSource")}; providesGuObservedFieldExtraction={JsonBool(phase334.RootElement, "su21RouteProvidesGuObservedFieldExtraction")}; providesGuHiggsScalarSource={JsonBool(phase334.RootElement, "su21RouteProvidesGuHiggsScalarSourceOperator")}; promotesWz={JsonBool(phase334.RootElement, "su21RoutePromotesWzMasses")}; promotesHiggs={JsonBool(phase334.RootElement, "su21RoutePromotesHiggsMass")}; completesBosonPredictions={JsonBool(phase334.RootElement, "su21RouteCompletesBosonPredictions")}; canFillPhase201WzContract={JsonBool(phase334.RootElement, "canFillPhase201WzContract")}; canFillPhase201HiggsContract={JsonBool(phase334.RootElement, "canFillPhase201HiggsContract")}; decision={JsonString(phase334.RootElement, "decision")}"
             : "Phase334 artifact not materialized",
         Phase334Path),
+    new ObjectiveChecklistItem(
+        "graviweak-plebanski-source-audit-materialized",
+        "Audit whether graviweak/Plebanski gauge-gravity-Higgs routes supply GU-local W/Z/H source-lineage artifacts.",
+        graviweakPlebanskiSourceAuditPassed ? "passed" : "failed",
+        graviweakPlebanskiSourceAuditMaterialized
+            ? $"graviweakPlebanskiSourceAuditPassed={JsonBool(phase335!.RootElement, "graviweakPlebanskiSourceAuditPassed")}; leadPresent={JsonBool(phase335.RootElement, "graviweakPlebanskiLeadPresent")}; externalToGu={JsonBool(phase335.RootElement, "graviweakRouteExternalToGu")}; gravityWeakSu2={JsonBool(phase335.RootElement, "graviweakRouteUnifiesGravityAndWeakSu2")}; plebanski={JsonBool(phase335.RootElement, "graviweakRouteUsesExtendedPlebanskiAction")}; spin44={JsonBool(phase335.RootElement, "graviweakRouteUsesSpin44GaugeSymmetry")}; recoversYmh={JsonBool(phase335.RootElement, "graviweakRouteRecoversGravityYangMillsHiggsAction")}; frameHiggs={JsonBool(phase335.RootElement, "graviweakRouteTreatsHiggsAsFrameHiggsConnection")}; wMasslessUntilEw={JsonBool(phase335.RootElement, "graviweakRouteLeavesWFieldsMasslessBeforeElectroweakBreaking")}; providesGuLocalWzTheorem={JsonBool(phase335.RootElement, "graviweakRouteProvidesGuLocalWzTheorem")}; providesTargetIndependentVev={JsonBool(phase335.RootElement, "graviweakRouteProvidesTargetIndependentGuVevSource")}; providesGuWeakMixingAngle={JsonBool(phase335.RootElement, "graviweakRouteProvidesGuWeakMixingAngleSource")}; providesGuObservedFieldExtraction={JsonBool(phase335.RootElement, "graviweakRouteProvidesGuObservedFieldExtraction")}; providesGuHiggsScalarSource={JsonBool(phase335.RootElement, "graviweakRouteProvidesGuHiggsScalarSourceOperator")}; promotesWz={JsonBool(phase335.RootElement, "graviweakRoutePromotesWzMasses")}; promotesHiggs={JsonBool(phase335.RootElement, "graviweakRoutePromotesHiggsMass")}; completesBosonPredictions={JsonBool(phase335.RootElement, "graviweakRouteCompletesBosonPredictions")}; canFillPhase201WzContract={JsonBool(phase335.RootElement, "canFillPhase201WzContract")}; canFillPhase201HiggsContract={JsonBool(phase335.RootElement, "canFillPhase201HiggsContract")}; decision={JsonString(phase335.RootElement, "decision")}"
+            : "Phase335 artifact not materialized",
+        Phase335Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

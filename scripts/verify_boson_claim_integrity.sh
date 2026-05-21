@@ -104,6 +104,7 @@ const paths = {
   phase332: "studies/phase332_string_m_theory_compactification_source_audit_001/output/string_m_theory_compactification_source_audit_summary.json",
   phase333: "studies/phase333_kaluza_klein_internal_symmetry_source_audit_001/output/kaluza_klein_internal_symmetry_source_audit_summary.json",
   phase334: "studies/phase334_su21_superconnection_source_audit_001/output/su21_superconnection_source_audit_summary.json",
+  phase335: "studies/phase335_graviweak_plebanski_source_audit_001/output/graviweak_plebanski_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -279,6 +280,7 @@ const phase331 = requireFile(paths.phase331);
 const phase332 = requireFile(paths.phase332);
 const phase333 = requireFile(paths.phase333);
 const phase334 = requireFile(paths.phase334);
+const phase335 = requireFile(paths.phase335);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -1783,6 +1785,48 @@ if (sourceLineageMissing) {
   assert(phase334.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase334 W/Z missing-field count must match Phase213.");
   assert(phase334.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase334 Higgs missing-field count must match Phase213.");
   assert(phase334.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase334 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase335.graviweakPlebanskiSourceAuditPassed === true, "Phase335 graviweak/Plebanski source audit must pass while preserving non-promotional status.");
+  assert(phase335.graviweakPlebanskiLeadPresent === true, "Phase335 must record the graviweak/Plebanski lead.");
+  assert(phase335.graviweakPrimarySourcesReviewed === true, "Phase335 must record primary source review.");
+  assert(phase335.graviweakRouteExternalToGu === true, "Phase335 must classify graviweak/Plebanski as external to GU.");
+  assert(phase335.graviweakRouteUnifiesGravityAndWeakSu2 === true, "Phase335 must record the gravity/weak SU(2) unification lead.");
+  assert(phase335.graviweakRouteUsesExtendedPlebanskiAction === true, "Phase335 must record the extended Plebanski action lead.");
+  assert(phase335.graviweakRouteUsesSpin44GaugeSymmetry === true, "Phase335 must record the Spin(4,4) gauge-symmetry lead.");
+  assert(phase335.graviweakRouteRecoversGravityYangMillsHiggsAction === true, "Phase335 must record recovery of gravity/Yang-Mills/Higgs actions.");
+  assert(phase335.graviweakRouteTreatsHiggsAsFrameHiggsConnection === true, "Phase335 must record the frame-Higgs connection lead.");
+  assert(phase335.graviweakRouteRelatesBareCouplingsToUnifiedParameterAndVev === true, "Phase335 must record the bare coupling/VEV relation lead.");
+  assert(phase335.graviweakRouteProvidesPlanckScaleWeakGravityCouplingRelation === true, "Phase335 must record the Planck-scale weak/gravity coupling relation.");
+  assert(phase335.graviweakRouteLeavesWFieldsMasslessBeforeElectroweakBreaking === true, "Phase335 must preserve that W fields remain massless before electroweak breaking.");
+  assert(phase335.graviweakRouteIncludesMppHiggsMassIntervalLead === true, "Phase335 must record the MPP Higgs-mass interval lead.");
+  assert(phase335.graviweakRouteRequiresSpecificGaugeGroupChoice === true, "Phase335 must require a specific gauge-group choice.");
+  assert(phase335.graviweakRouteRequiresSymmetryBreakingAnsatz === true, "Phase335 must require a symmetry-breaking ansatz.");
+  assert(phase335.graviweakRouteRequiresHiggsVevOrCurvatureVacuum === true, "Phase335 must require a Higgs VEV or curvature vacuum.");
+  assert(phase335.graviweakRouteRequiresElectroweakBreakingMechanism === true, "Phase335 must require an electroweak-breaking mechanism.");
+  assert(phase335.graviweakRouteRequiresPlanckScaleBareParameterMatching === true, "Phase335 must require Planck-scale bare-parameter matching.");
+  assert(phase335.graviweakRouteRequiresRunningFromPlanckToElectroweakScale === true, "Phase335 must require running from Planck to electroweak scales.");
+  assert(phase335.graviweakRouteRequiresObservedGnAndVevInputs === true, "Phase335 must require observed G_N and VEV inputs.");
+  assert(phase335.graviweakRouteRequiresMppCriticalityAssumptions === true, "Phase335 must require MPP criticality assumptions.");
+  assert(phase335.graviweakRouteProvidesGuLocalWzTheorem === false, "Phase335 cannot claim a GU-local W/Z theorem.");
+  assert(phase335.graviweakRouteProvidesSeparateWzSourceRows === false, "Phase335 cannot claim separate W/Z source rows.");
+  assert(phase335.graviweakRouteProvidesTargetIndependentGuVevSource === false, "Phase335 cannot claim a target-independent GU VEV source.");
+  assert(phase335.graviweakRouteProvidesGuWeakMixingAngleSource === false, "Phase335 cannot claim a GU weak-mixing angle source.");
+  assert(phase335.graviweakRouteProvidesGuGaugeCouplingNormalization === false, "Phase335 cannot claim GU gauge-coupling normalization.");
+  assert(phase335.graviweakRouteProvidesGuObservedFieldExtraction === false, "Phase335 cannot claim GU observed-field extraction.");
+  assert(phase335.graviweakRouteProvidesGuHiggsScalarSourceOperator === false, "Phase335 cannot claim a GU Higgs scalar-source operator.");
+  assert(phase335.graviweakRouteProvidesGuHiggsQuarticOrExcitationSource === false, "Phase335 cannot claim GU Higgs quartic/excitation source lineage.");
+  assert(phase335.graviweakRouteProvidesObservedHiggsMassFromGu === false, "Phase335 cannot claim observed Higgs mass from GU.");
+  assert(phase335.graviweakRouteProvidesGeVUnitNormalization === false, "Phase335 cannot claim GeV normalization.");
+  assert(phase335.graviweakRoutePromotesWzMasses === false, "Phase335 cannot promote W/Z masses.");
+  assert(phase335.graviweakRoutePromotesHiggsMass === false, "Phase335 cannot promote Higgs mass.");
+  assert(phase335.graviweakRouteCompletesBosonPredictions === false, "Phase335 cannot complete boson predictions.");
+  assert(phase335.numericalLead?.mppHiggsMassLowerGeV === 125, "Phase335 must preserve the MPP Higgs lower-bound lead.");
+  assert(phase335.numericalLead?.mppHiggsMassUpperGeV === 143, "Phase335 must preserve the MPP Higgs upper-bound lead.");
+  assert(phase335.contractImpact?.canFillPhase201WzContract === false, "Phase335 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase335.contractImpact?.canFillPhase201HiggsContract === false, "Phase335 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase335.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase335 contract impact must keep Phase256 unfilled.");
+  assert(phase335.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase335 W/Z missing-field count must match Phase213.");
+  assert(phase335.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase335 Higgs missing-field count must match Phase213.");
+  assert(phase335.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase335 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");
