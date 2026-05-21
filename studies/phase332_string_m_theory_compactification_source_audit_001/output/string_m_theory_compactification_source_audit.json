@@ -1,0 +1,164 @@
+{
+  "phaseId": "phase332-string-m-theory-compactification-source-audit",
+  "terminalStatus": "string-m-theory-compactification-source-audit-external-boundary-not-gu-source",
+  "generatedAt": "2026-05-21T20:43:00.0555975+00:00",
+  "stringMTheoryCompactificationSourceAuditPassed": true,
+  "stringCompactificationLeadPresent": true,
+  "stringMTheoryPrimarySourcesReviewed": true,
+  "stringCompactificationRouteExternalToGu": true,
+  "stringRouteGeometricCompactificationBased": true,
+  "stringRouteIncludesG2HolonomyMTheoryLead": true,
+  "stringRouteIncludesCalabiYauHeteroticLead": true,
+  "stringRouteIncludesFTheoryOrBraneHiggsShiftSymmetryLead": true,
+  "stringRouteIncludesFirstPrinciplesClosedStringHiggsMassFramework": true,
+  "stringRouteClaimsHiggsMassRangeNearObserved": true,
+  "stringRouteClaimsNoFreeParametersInSpecificMTheoryReview": true,
+  "stringRouteCanEngineerMssmSpectrumAndHiggsPairs": true,
+  "stringRouteRequiresSpecificCompactificationChoice": true,
+  "stringRouteRequiresModuliStabilization": true,
+  "stringRouteRequiresSupersymmetryBreakingScenario": true,
+  "stringRouteRequiresTanBetaOrHiggsSectorBoundary": true,
+  "stringRouteRequiresRgTransport": true,
+  "stringRouteRequiresYukawaTopAndGaugeInputs": true,
+  "stringRouteOftenPredictsHiggsNotWzAbsoluteRows": true,
+  "stringRouteProvidesGuLocalWzTheorem": false,
+  "stringRouteProvidesSeparateWzSourceRows": false,
+  "stringRouteProvidesWzRawAmplitudeGates": false,
+  "stringRouteProvidesWzCommonBridgeGate": false,
+  "stringRouteProvidesTargetIndependentGuVevSource": false,
+  "stringRouteProvidesWeakMixingAngleSource": false,
+  "stringRouteProvidesGuGaugeCouplingNormalization": false,
+  "stringRouteProvidesObservedPhotonWzProjectionRows": false,
+  "stringRouteProvidesNeutralMassMatrixDiagonalization": false,
+  "stringRouteProvidesGuObservedFieldExtraction": false,
+  "stringRouteProvidesHiggsScalarSourceOperator": false,
+  "stringRouteProvidesHiggsQuarticOrExcitationSource": false,
+  "stringRouteProvidesTargetIndependentGuHiggsMass": false,
+  "stringRouteProvidesGeVUnitNormalization": false,
+  "stringRoutePromotesWzMasses": false,
+  "stringRoutePromotesHiggsMass": false,
+  "stringRouteCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "sourceRows": [
+    {
+      "SourceId": "arxiv-1112-1059-string-m-higgs-range",
+      "Url": "https://arxiv.org/abs/1112.1059",
+      "Scope": "compactified string/M-theory Higgs mass prediction",
+      "Finding": "The paper reports a Standard-Model-like Higgs mass range from compactified string/M-theory under MSSM low-energy content and tan beta assumptions.",
+      "PredictionImpact": "This is a serious external Higgs-mass lead, but it is not a GU-local source lineage and does not supply W/Z source rows."
+    },
+    {
+      "SourceId": "arxiv-1211-2231-g2-m-theory-review",
+      "Url": "https://arxiv.org/abs/1211.2231",
+      "Scope": "G2-holonomy M-theory compactification review",
+      "Finding": "The review summarizes moduli stabilization, gauge coupling unification, radiative electroweak symmetry breaking, and a 126 \u002B/- 2 GeV Higgs claim in a specific compactified M-theory program.",
+      "PredictionImpact": "The claim is conditional on the compactified M-theory scenario, not a derivation from GU artifacts."
+    },
+    {
+      "SourceId": "arxiv-1304-2767-string-higgs-perspective",
+      "Url": "https://arxiv.org/abs/1304.2767",
+      "Scope": "string-theoretic Higgs quartic boundary and shift-symmetry analysis",
+      "Finding": "The paper identifies stringy geometries where lambda near zero can arise and states that geometric problems remain to determine precise generic values.",
+      "PredictionImpact": "This is a high-scale boundary-condition lead, not a complete W/Z/H prediction source for this repository."
+    },
+    {
+      "SourceId": "arxiv-2106-04622-closed-string-higgs-mass-framework",
+      "Url": "https://arxiv.org/abs/2106.04622",
+      "Scope": "first-principles closed-string one-loop Higgs mass framework",
+      "Finding": "The paper builds a framework for one-loop scalar Higgs masses in perturbative closed string theory and relates Higgs mass to one-loop cosmological constant structure.",
+      "PredictionImpact": "It is a general string framework and does not provide the GU-local observed-field and source-row contracts."
+    },
+    {
+      "SourceId": "doi-10-1016-j-physletb-2005-12-014-heterotic-standard-model",
+      "Url": "https://doi.org/10.1016/j.physletb.2005.12.014",
+      "Scope": "heterotic Calabi-Yau Standard Model construction",
+      "Finding": "The paper constructs heterotic vacua with MSSM-like spectrum and Higgs-pair content using Calabi-Yau geometry, stable bundles, and Wilson lines.",
+      "PredictionImpact": "Spectrum engineering is not a W/Z/H absolute mass source law."
+    }
+  ],
+  "checks": [
+    {
+      "CheckId": "string-compactification-primary-sources-reviewed",
+      "Passed": true,
+      "Detail": "lead=True; primaryReviewed=True; externalToGu=True; geometricCompactification=True; sourceRows=5"
+    },
+    {
+      "CheckId": "string-route-higgs-and-spectrum-leads-recorded",
+      "Passed": true,
+      "Detail": "g2MTheory=True; calabiYauHeterotic=True; fTheoryOrBraneShiftSymmetry=True; closedStringFramework=True; higgsRangeNearObserved=True; mssmSpectrum=True"
+    },
+    {
+      "CheckId": "string-route-remains-conditional-external-boundary",
+      "Passed": true,
+      "Detail": "specificCompactification=True; moduliStabilization=True; susyBreaking=True; tanBetaOrBoundary=True; rgTransport=True; yukawaTopGaugeInputs=True; oftenHiggsNotWz=True"
+    },
+    {
+      "CheckId": "standard-electroweak-dependencies-remain-unsourced",
+      "Passed": true,
+      "Detail": "p317=True; requiresV=True; requiresG=True; requiresGPrime=True; mwGv=True; mzGGPrimeV=True; higgsPotentialParameter=True; p224=True; wClosure=False; zClosure=False; higgsClosure=False; weakCoupling=False; rg=False"
+    },
+    {
+      "CheckId": "string-route-does-not-supply-gu-wz-source-lineage",
+      "Passed": true,
+      "Detail": "guWzTheorem=False; separateRows=False; rawGates=False; commonGate=False; vev=False; weakAngle=False; couplingNorm=False; observedRows=False; neutralMatrix=False; promotesWz=False"
+    },
+    {
+      "CheckId": "string-route-does-not-supply-gu-higgs-source-lineage",
+      "Passed": true,
+      "Detail": "p265=True; gaugeHiggsPromotes=False; p268=True; spectralPromotes=False; p323=True; p323Vev=False; p323Coupling=False; p323Projection=False; p323SelfCoupling=False; observedExtraction=False; higgsOperator=False; higgsQuartic=False; higgsMass=False; promotesHiggs=False"
+    },
+    {
+      "CheckId": "source-lineage-contracts-remain-unfilled-after-string-audit",
+      "Passed": true,
+      "Detail": "phase201Promotable=False; existingEvidence=False; wzMissing=15; higgsMissing=14; phase256Required=20; phase256Filled=0; observedPromotable=False; geV=False; completes=False; canFillWz=False; canFillHiggs=False; canFillObserved=False"
+    }
+  ],
+  "currentBlockerEvidence": {
+    "phase201AllRequiredLineagesPromotable": false,
+    "existingEvidenceFound": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionRequiredFieldCount": 20,
+    "observedFieldExtractionFilledRequiredFieldCount": 0,
+    "observedFieldExtractionContractPromotable": false,
+    "electroweakParameterAuditPassed": true,
+    "wAbsoluteMassParameterClosure": false,
+    "zAbsoluteMassParameterClosure": false,
+    "higgsMassParameterClosure": false,
+    "weakCouplingSourcePromotable": false,
+    "lowEnergyRgTransportSourcePromotable": false
+  },
+  "contractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionFilledRequiredFieldCount": 0
+  },
+  "decision": "Do not promote W/Z or Higgs physical masses from string/M-theory compactification literature in this repository. The route is a serious external geometric high-scale boundary and spectrum-engineering lead, including conditional Higgs-mass claims, but it does not supply GU-local W/Z source rows, target-independent GU VEV or weak-angle lineage, GU gauge-coupling normalization, observed photon/W/Z/H extraction, a GU Higgs scalar-source/self-coupling lineage, or GeV unit normalization.",
+  "nextRequiredArtifact": [
+    "A GU-local compactification or equivalent source theorem deriving observed SU(2)_L x U(1)_Y embedding and separate W/Z source rows.",
+    "A target-independent GU VEV, weak-mixing angle, gauge-coupling normalization, and observed-field extraction map.",
+    "A solved GU Higgs scalar source/operator with self-coupling or excitation lineage and stability sidecars.",
+    "A physical-unit normalization and low-energy transport theorem that does not import target values."
+  ],
+  "sourceEvidence": {
+    "stringMTheoryHiggsPredictionUrl": "https://arxiv.org/abs/1112.1059",
+    "stringMTheoryHiggsReviewUrl": "https://arxiv.org/abs/1211.2231",
+    "stringTheoreticPerspectiveUrl": "https://arxiv.org/abs/1304.2767",
+    "stringHiggsCalculationUrl": "https://arxiv.org/abs/2106.04622",
+    "heteroticStandardModelUrl": "https://doi.org/10.1016/j.physletb.2005.12.014",
+    "phase201Path": "studies/phase201_boson_source_lineage_intake_contract_001/output/boson_source_lineage_intake_contract_summary.json",
+    "phase213Path": "studies/phase213_boson_source_lineage_blocker_matrix_001/output/boson_source_lineage_blocker_matrix_summary.json",
+    "phase224Path": "studies/phase224_electroweak_parameter_dependency_audit_001/output/electroweak_parameter_dependency_audit_summary.json",
+    "phase236Path": "studies/phase236_low_energy_rg_transport_source_audit_001/output/low_energy_rg_transport_source_audit_summary.json",
+    "phase256Path": "studies/phase256_observed_field_extraction_intake_contract_001/output/observed_field_extraction_intake_contract_summary.json",
+    "phase265Path": "studies/phase265_gauge_higgs_boundary_source_audit_001/output/gauge_higgs_boundary_source_audit_summary.json",
+    "phase268Path": "studies/phase268_spectral_action_boson_source_audit_001/output/spectral_action_boson_source_audit_summary.json",
+    "phase317Path": "studies/phase317_electroweak_mass_matrix_bridge_source_audit_001/output/electroweak_mass_matrix_bridge_source_audit_summary.json",
+    "phase323Path": "studies/phase323_coupled_yang_mills_higgs_mass_extraction_audit_001/output/coupled_yang_mills_higgs_mass_extraction_audit_summary.json"
+  }
+}

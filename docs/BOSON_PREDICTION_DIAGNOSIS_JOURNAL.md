@@ -7573,6 +7573,71 @@ Higgs remains separately blocked by missing scalar-source lineage.
   `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
   `promotedPhysicalMassClaimCount=0`.
 
+## 2026-05-21 - Reference Tracker Source-Scanner Boundary Repair
+
+### Context
+
+After adding `ExperimentReferences.md` and detailed reference notes under
+`docs/Reference/ExperimentReferences/`, the full boson generator exposed a
+classification bug: several source-discovery scans treated the new secondary
+reference summaries as local source evidence. The most visible failure was
+Phase281 finding two GU/RVG matches in the reference summaries, which cascaded
+into Phase312, Phase315, Phase316, Phase329, and Phase331 review-required
+statuses.
+
+The reference tracker is useful as a human audit index, but it is not itself a
+primary source, theorem, source-lineage artifact, observed-field extraction
+contract, or prediction input.
+
+### Actions
+
+- Excluded the top-level `ExperimentReferences.md` file and
+  `docs/Reference/ExperimentReferences/` detail notes from source-evidence
+  scans where they can pollute candidate discovery.
+- Kept the reference tracker files in the repository as research navigation and
+  summary artifacts.
+- Reran the affected targeted phases and then reran the full generator.
+
+### Validation
+
+- P205 remained
+  `boson-source-lineage-text-evidence-scan-no-intake-ready-evidence`, with
+  `intakeReadyFindingCount=0`.
+- P207 remained `higgs-quartic-self-coupling-source-scan-no-source`, with
+  `intakeReadyFindingCount=0`.
+- P281 returned to
+  `geometric-refractive-unification-source-audit-external-eft-not-promotion`,
+  with `localSearchMatchingFileCount=0`.
+- P289 returned to
+  `phase288-coverage-false-negative-audit-no-missed-source-rows`, with
+  `intakeReadyExcludedCorpusCandidateCount=0`.
+- P295 remained
+  `observed-field-extraction-contract-candidate-scan-no-intake-ready-artifact`,
+  with `intakeReadyObservedFieldExtractionCandidateCount=0`.
+- P296 remained
+  `source-lineage-contract-field-candidate-scan-no-intake-ready-artifact`, with
+  `intakeReadySourceLineageFieldCandidateCount=0`.
+- P312, P315, P316, P329, and P331 all reran as passing non-promotional source
+  boundary audits.
+- Full generator rerun completed successfully and ended with
+  `boson-claim-integrity-verified`, `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- A direct `rg` check of the affected output directories found no remaining
+  `ExperimentReferences.md` or `docs/Reference/ExperimentReferences/` paths in
+  P281, P289, P295, or P296 outputs.
+- `dotnet test GeometricUnity.slnx` passed. It retained the pre-existing
+  `xUnit2013` analyzer warning in
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
+
+### Decision
+
+The reference tracker is retained as research bookkeeping, but it is excluded
+from source-evidence discovery. The current boson-prediction status is
+unchanged: no successful physical W/Z/H mass prediction can be promoted until a
+primary, target-independent source-lineage artifact supplies the missing W/Z
+bridge rows and Higgs scalar-source lineage.
+
 ## 2026-05-21 - Reference Tracking Index Added
 
 ### Context
@@ -7604,6 +7669,79 @@ source's role, prediction relevance, limitations, and follow-up criteria. This
 does not change the current boson-prediction result: the direct
 target-independent W/Z/H bridge-source law is still missing, so no physical
 boson mass should be promoted from these references yet.
+
+## 2026-05-21 - Phase332 String/M-Theory Compactification Source Audit
+
+### Context
+
+After Phase331 closed the public GU `theta_omega` / inhomogeneous-gauge route as
+structural geometry but not a W/Z/H source law, I looked for a serious
+non-duplicative general-physics geometric route. Spectral action was already
+covered by Phase268, gauge-Higgs by Phase265, finite unification by Phase277,
+and Weyl geometric mass generation by Phase330. The remaining distinct route was
+string/M-theory compactification: G2-holonomy M-theory Higgs claims, heterotic
+Calabi-Yau Standard Model spectrum construction, F-theory/brane Higgs
+shift-symmetry boundary conditions, and closed-string Higgs-mass frameworks.
+
+### Sources Reviewed
+
+- `https://arxiv.org/abs/1112.1059`.
+- `https://arxiv.org/abs/1211.2231`.
+- `https://arxiv.org/abs/1304.2767`.
+- `https://arxiv.org/abs/2106.04622`.
+- `https://doi.org/10.1016/j.physletb.2005.12.014`.
+
+### Action
+
+- Added
+  `studies/phase332_string_m_theory_compactification_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P332.md`.
+- Wired Phase332 into the generator, P101 package, P202 objective completion
+  audit, and claim-integrity verifier.
+- Added Phase332 scanner exclusions so generated audit text is not counted as
+  source evidence.
+- Added `STRING-M-COMPACTIFICATION-HIGGS` to `ExperimentReferences.md` with a
+  detailed reference note.
+
+### Current Expected Outcome
+
+Phase332 is expected to pass only as a negative boundary audit:
+
+- `stringMTheoryCompactificationSourceAuditPassed=true`.
+- `stringCompactificationLeadPresent=true`.
+- `stringMTheoryPrimarySourcesReviewed=true`.
+- `stringCompactificationRouteExternalToGu=true`.
+- `stringRouteGeometricCompactificationBased=true`.
+- `stringRouteIncludesG2HolonomyMTheoryLead=true`.
+- `stringRouteIncludesCalabiYauHeteroticLead=true`.
+- `stringRouteIncludesFTheoryOrBraneHiggsShiftSymmetryLead=true`.
+- `stringRouteIncludesFirstPrinciplesClosedStringHiggsMassFramework=true`.
+- `stringRouteClaimsHiggsMassRangeNearObserved=true`.
+- `stringRouteProvidesGuLocalWzTheorem=false`.
+- `stringRouteProvidesSeparateWzSourceRows=false`.
+- `stringRouteProvidesTargetIndependentGuVevSource=false`.
+- `stringRouteProvidesWeakMixingAngleSource=false`.
+- `stringRouteProvidesGuGaugeCouplingNormalization=false`.
+- `stringRouteProvidesGuObservedFieldExtraction=false`.
+- `stringRouteProvidesHiggsScalarSourceOperator=false`.
+- `stringRouteProvidesHiggsQuarticOrExcitationSource=false`.
+- `stringRouteProvidesGeVUnitNormalization=false`.
+- `stringRoutePromotesWzMasses=false`.
+- `stringRoutePromotesHiggsMass=false`.
+- `stringRouteCompletesBosonPredictions=false`.
+- `canFillPhase201WzContract=false`.
+- `canFillPhase201HiggsContract=false`.
+- `canFillPhase256ObservedFieldExtractionContract=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs physical masses from string/M-theory
+compactification literature in this repository. The route is a serious external
+geometric high-scale boundary and spectrum-engineering lead, including
+conditional Higgs-mass claims, but it does not supply GU-local W/Z source rows,
+target-independent GU VEV or weak-angle lineage, GU gauge-coupling
+normalization, observed photon/W/Z/H extraction, a GU Higgs scalar-source or
+self-coupling lineage, or GeV unit normalization.
 
 ## 2026-05-21 - Phase331 Theta Omega Inhomogeneous Gauge Source Audit
 

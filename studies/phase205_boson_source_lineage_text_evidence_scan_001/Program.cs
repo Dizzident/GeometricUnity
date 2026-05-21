@@ -15,6 +15,7 @@ var roots = new[] { "docs", "studies", "src", "TheoryCompletitionRevisions" }
 var textFiles = roots
     .SelectMany(root => Directory.EnumerateFiles(root, "*", SearchOption.AllDirectories))
     .Where(path => !path.Contains("/bin/", StringComparison.Ordinal) && !path.Contains("/obj/", StringComparison.Ordinal))
+    .Where(path => !IsReferenceTrackerText(path.Replace('\\', '/').TrimStart('.', '/')))
     .Where(path => path.EndsWith(".md", StringComparison.OrdinalIgnoreCase)
         || path.EndsWith(".cs", StringComparison.OrdinalIgnoreCase)
         || path.EndsWith(".txt", StringComparison.OrdinalIgnoreCase))
@@ -349,7 +350,12 @@ static bool IsGeneratedAuditOrImplementationText(string path) =>
     || path.Contains("studies/phase328_", StringComparison.Ordinal)
     || path.Contains("studies/phase329_", StringComparison.Ordinal)
     || path.Contains("studies/phase330_", StringComparison.Ordinal)
-    || path.Contains("studies/phase331_", StringComparison.Ordinal);
+    || path.Contains("studies/phase331_", StringComparison.Ordinal)
+    || path.Contains("studies/phase332_", StringComparison.Ordinal);
+
+static bool IsReferenceTrackerText(string normalizedPath) =>
+    normalizedPath == "ExperimentReferences.md"
+    || normalizedPath.StartsWith("docs/Reference/ExperimentReferences/", StringComparison.Ordinal);
 
 static string? JsonString(JsonElement element, string propertyName) =>
     element.TryGetProperty(propertyName, out var property) && property.ValueKind == JsonValueKind.String ? property.GetString() : null;

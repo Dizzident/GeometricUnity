@@ -409,6 +409,8 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     normalizedPath.Contains("/bin/", StringComparison.Ordinal)
     || normalizedPath.Contains("/obj/", StringComparison.Ordinal)
     || normalizedPath.Contains("/output/", StringComparison.Ordinal)
+    || normalizedPath == "ExperimentReferences.md"
+    || normalizedPath.StartsWith("docs/Reference/ExperimentReferences/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase243_public_web_source_delta_audit_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase281_geometric_refractive_unification_source_audit_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase312_current_public_gu_rvg_revision_delta_audit_001/", StringComparison.Ordinal)
@@ -431,6 +433,7 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath.Contains("studies/phase329_seiberg_witten_monopole_electroweak_source_audit_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase330_weyl_geometric_mass_generation_source_audit_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase331_theta_omega_inhomogeneous_gauge_source_audit_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase332_string_m_theory_compactification_source_audit_001/", StringComparison.Ordinal)
     || normalizedPath == "studies/phase101_boson_prediction_package_001/Program.cs"
     || normalizedPath == "studies/phase202_boson_objective_completion_audit_001/Program.cs"
     || normalizedPath == "studies/phase204_boson_source_lineage_candidate_scan_001/Program.cs"

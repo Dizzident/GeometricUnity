@@ -322,6 +322,8 @@ static bool IsExcluded(string normalizedPath, IReadOnlyList<string> phase288Root
     || normalizedPath.Contains("/.agents/", StringComparison.Ordinal)
     || normalizedPath.Contains("/docs/Phases/Implementation/", StringComparison.Ordinal)
     || normalizedPath.Contains("/docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md", StringComparison.Ordinal)
+    || normalizedPath == "ExperimentReferences.md"
+    || normalizedPath.StartsWith("docs/Reference/ExperimentReferences/", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/", StringComparison.Ordinal)
     || normalizedPath.Contains("/studies/", StringComparison.Ordinal)
     || phase288Roots.Any(root => normalizedPath.Equals(root, StringComparison.Ordinal) || normalizedPath.StartsWith(root + "/", StringComparison.Ordinal));
