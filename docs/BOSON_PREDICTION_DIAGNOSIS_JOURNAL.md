@@ -7690,6 +7690,112 @@ replay imports the observed W mass and is not a prediction.
   `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs(315,9)`.
 - `git diff --check` passed after the final journal update.
 
+## 2026-05-21 - Metric-Affine Torsion Reference Tracking
+
+### Context
+
+After the octonion/Clifford route preserved a serious Higgs/W ratio lead but
+did not provide GU-local W/Z/H source-lineage rows, the next non-duplicative
+lead is a metric-affine / Einstein-Cartan torsion route. The useful external
+sources are torsion-induced technifermion condensation, Holst-action dynamical
+electroweak symmetry breaking, constrained 3BF Standard Model plus
+Einstein-Cartan gravity, and metric-affine Higgs-sector stability papers.
+
+### Sources Tracked
+
+- `https://arxiv.org/abs/1003.5473`.
+- `https://arxiv.org/abs/1004.1375`.
+- `https://arxiv.org/abs/2402.17675`.
+- `https://arxiv.org/abs/2204.03003`.
+- `https://arxiv.org/abs/2305.07693`.
+
+### Action
+
+- Added `METRIC-AFFINE-EINSTEIN-CARTAN-TORSION` to
+  `ExperimentReferences.md`.
+- Added the detailed source note
+  `docs/Reference/ExperimentReferences/METRIC-AFFINE-EINSTEIN-CARTAN-TORSION.md`.
+- Expanded the reference-index update rule to document the required detail-note
+  sections for future sources.
+
+### Current Expected Outcome
+
+This is not yet a promotion route. It is now tracked as a serious external
+geometric EWSB lead that still requires a GU-local torsion or Holst bridge, a
+target-independent scale, condensate and representation lineage, observed
+photon/W/Z/H extraction, weak-angle and VEV lineage, Higgs scalar-source
+lineage, and GeV normalization.
+
+## 2026-05-21 - Phase338 Metric-Affine Torsion Source Audit
+
+### Context
+
+After recording the torsion route in the reference tracker, I implemented the
+bounded audit. The source review confirmed that the torsion/Holst papers are
+not just generic gravity context: they explicitly use torsion-induced
+four-fermion interactions to drive technifermion condensation and W/Z mass
+generation. The constrained 3BF source is also relevant because it recasts the
+electroweak Higgs and Proca mass structure in higher-gauge variables coupled to
+Einstein-Cartan gravity.
+
+### Sources Reviewed
+
+- `https://arxiv.org/abs/1003.5473`.
+- `https://arxiv.org/abs/1004.1375`.
+- `https://arxiv.org/abs/2402.17675`.
+- `https://arxiv.org/abs/2204.03003`.
+- `https://arxiv.org/abs/2305.07693`.
+
+### Action
+
+- Added `studies/phase338_metric_affine_torsion_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P338.md`.
+- Wired Phase338 into the generator, P101 package, P202 objective completion
+  audit, and claim-integrity verifier.
+- Added Phase338 scanner exclusions so generated audit text is not counted as
+  independent source evidence.
+
+### Current Expected Outcome
+
+Phase338 is expected to pass only as a negative external-EWSB-lead audit:
+
+- `metricAffineTorsionSourceAuditPassed=true`.
+- `metricAffineTorsionLeadPresent=true`.
+- `torsionRouteUsesEinsteinCartanOrPoincareGravity=true`.
+- `torsionRouteUsesHolstPalatiniAction=true`.
+- `torsionRouteGeneratesEffectiveFourFermionInteractions=true`.
+- `torsionRouteCanInduceTechnifermionCondensation=true`.
+- `torsionRouteCanGenerateGaugeBosonMassesViaCondensate=true`.
+- `threeBfRouteRecoversTextbookElectroweakMassStructure=true`.
+- `threeBfRouteUsesVevGaugeCouplingsAndHiggsQuarticAsParameters=true`.
+- `torsionRouteRequiresGuLocalMetricAffineEinsteinCartanMap=true`.
+- `torsionRouteRequiresTorsionHolstScaleOrImmirziSource=true`.
+- `torsionRouteRequiresTechnifermionRepresentationSource=true`.
+- `torsionRouteRequiresCondensateDynamicsAndNormalization=true`.
+- `torsionRouteRequiresObservedPhotonWzProjection=true`.
+- `torsionRouteRequiresVevOrScaleLineage=true`.
+- `torsionRouteRequiresWeakAngleLineage=true`.
+- `torsionRouteRequiresHiggsScalarSourceOrCompositeProfile=true`.
+- `torsionRouteRequiresGeVUnitNormalization=true`.
+- `torsionRouteProvidesGuLocalWzTheorem=false`.
+- `torsionRouteProvidesSeparateWzSourceRows=false`.
+- `torsionRouteProvidesTargetIndependentGuVevSource=false`.
+- `torsionRouteProvidesGuObservedFieldExtraction=false`.
+- `torsionRouteProvidesGuHiggsScalarSourceOperator=false`.
+- `torsionRouteProvidesGuHiggsQuarticOrExcitationSource=false`.
+- `torsionRoutePromotesWzMasses=false`.
+- `torsionRoutePromotesHiggsMass=false`.
+- `torsionRouteCompletesBosonPredictions=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from the metric-affine torsion route. It is
+a serious geometric EWSB lead, but it still lacks a GU-local torsion bridge
+theorem, source-derived torsion/Holst/Immirzi scale, technifermion
+representation and condensate lineage, observed photon/W/Z/H projection,
+weak-angle and VEV lineage, Higgs scalar-source or composite-profile lineage,
+precision matching, and GeV normalization.
+
 ## 2026-05-21 - Phase336 HEFT Scalar Geometry Source-Law Audit
 
 ### Context

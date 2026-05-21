@@ -14,6 +14,15 @@ Update rule:
 - Do not treat a source as promotion-ready evidence unless the detail file
   identifies the exact source lineage it supplies.
 
+Detail note format:
+
+- `Source` or `Sources`: title, URL, source type, and backlink to this index.
+- `Summary`: what the source says in practical terms.
+- `How It Was Used`: which audit, implementation, or blocker diagnosis used it.
+- `Prediction Relevance`: what it can and cannot supply for W/Z/H prediction.
+- `Limitation`: why it is not enough to promote a claim, if applicable.
+- `Follow-Up`: concrete conditions for revisiting the source.
+
 ## Index
 
 | Ref ID | Source | Type | Brief overview | Current prediction impact | Detail |
@@ -29,6 +38,7 @@ Update rule:
 | GRAVIWEAK-PLEBANSKI-UNIFICATION | Graviweak/Plebanski gauge-gravity-Higgs sources | External physics source cluster | Spin(4,4), enlarged-connection, and extended-Plebanski routes recovering gravity, weak SU(2), Yang-Mills, and Higgs-sector actions. | Serious geometric gauge-gravity-Higgs unification lead; W/Z/H predictions still require external VEV, electroweak breaking, RG, and observed-field lineage. | [details](docs/Reference/ExperimentReferences/GRAVIWEAK-PLEBANSKI-UNIFICATION.md) |
 | HEFT-SCALAR-MANIFOLD-GEOMETRY | HEFT scalar-manifold geometry sources | External physics source cluster | Coordinate-invariant Higgs/Goldstone scalar-manifold geometry, curvature observables, and geometric unitarity formulation. | Useful bridge-template for what a geometric W/Z/H source law must supply; not GU-local prediction evidence. | [details](docs/Reference/ExperimentReferences/HEFT-SCALAR-MANIFOLD-GEOMETRY.md) |
 | OCTONION-CLIFFORD-INTERNAL-SPACE | Octonion/Clifford internal-space SM algebra sources | External physics source cluster | Cl10, octonion, particle-projector, Pati-Salam/Spin(10), and ladder-operator routes to SM algebra plus a Higgs/W ratio lead. | Serious algebraic ratio lead; still no GU-local projector, field map, projection, transport, VEV, or unit lineage. | [details](docs/Reference/ExperimentReferences/OCTONION-CLIFFORD-INTERNAL-SPACE.md) |
+| METRIC-AFFINE-EINSTEIN-CARTAN-TORSION | Metric-affine, Einstein-Cartan, Holst, and 3BF torsion sources | External physics source cluster | Torsion/Holst four-fermion condensation and constrained 3BF formulations of electroweak symmetry breaking in gravity-coupled geometry. | Serious geometric EWSB lead; still missing GU-local torsion scale, condensate dynamics, observed W/Z/H rows, VEV, and unit lineage. | [details](docs/Reference/ExperimentReferences/METRIC-AFFINE-EINSTEIN-CARTAN-TORSION.md) |
 | PDG-EW-2025 | PDG Review of the Standard Model | External reference | Standard reference for electroweak formulas, parameter definitions, and dependency structure. | Defines comparison formulas and known inputs; not a GU derivation. | [details](docs/Reference/ExperimentReferences/PDG-EW-2025.md) |
 | PDG-TARGETS-2025 | PDG W, Z, and Higgs listings | External target reference | Current PDG target pages for measured W, Z, and Higgs masses. | Target data only; cannot fill geometric source-lineage contracts. | [details](docs/Reference/ExperimentReferences/PDG-TARGETS-2025.md) |
 | SSRN-6571958-GURVG | Geometric Refractive Unified Vacuum Gravity synthesis | GU-RVG external source | Current public GU-RVG synthesis paper used to test whether refractive/Koide/dilaton paths provide boson sources. | Supplies current GU-adjacent ideas but no W/Z/H source rows independent of physical inputs. | [details](docs/Reference/ExperimentReferences/SSRN-6571958-GURVG.md) |

@@ -195,6 +195,7 @@ const string Phase334Su21SuperconnectionSourceAuditPath = "studies/phase334_su21
 const string Phase335GraviweakPlebanskiSourceAuditPath = "studies/phase335_graviweak_plebanski_source_audit_001/output/graviweak_plebanski_source_audit.json";
 const string Phase336HeftScalarGeometrySourceLawAuditPath = "studies/phase336_heft_scalar_geometry_source_law_audit_001/output/heft_scalar_geometry_source_law_audit.json";
 const string Phase337OctonionCliffordInternalSpaceSourceAuditPath = "studies/phase337_octonion_clifford_internal_space_source_audit_001/output/octonion_clifford_internal_space_source_audit.json";
+const string Phase338MetricAffineTorsionSourceAuditPath = "studies/phase338_metric_affine_torsion_source_audit_001/output/metric_affine_torsion_source_audit.json";
 const string Phase282BranchLocalDirectInvariantCensusPath = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census.json";
 const string Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit.json";
 const string Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic.json";
@@ -410,6 +411,7 @@ using var phase334 = TryParseJson(Phase334Su21SuperconnectionSourceAuditPath);
 using var phase335 = TryParseJson(Phase335GraviweakPlebanskiSourceAuditPath);
 using var phase336 = TryParseJson(Phase336HeftScalarGeometrySourceLawAuditPath);
 using var phase337 = TryParseJson(Phase337OctonionCliffordInternalSpaceSourceAuditPath);
+using var phase338 = TryParseJson(Phase338MetricAffineTorsionSourceAuditPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -688,6 +690,7 @@ var package = new
         graviweakPlebanskiSourceAuditPath = File.Exists(Phase335GraviweakPlebanskiSourceAuditPath) ? Phase335GraviweakPlebanskiSourceAuditPath : null,
         heftScalarGeometrySourceLawAuditPath = File.Exists(Phase336HeftScalarGeometrySourceLawAuditPath) ? Phase336HeftScalarGeometrySourceLawAuditPath : null,
         octonionCliffordInternalSpaceSourceAuditPath = File.Exists(Phase337OctonionCliffordInternalSpaceSourceAuditPath) ? Phase337OctonionCliffordInternalSpaceSourceAuditPath : null,
+        metricAffineTorsionSourceAuditPath = File.Exists(Phase338MetricAffineTorsionSourceAuditPath) ? Phase338MetricAffineTorsionSourceAuditPath : null,
         branchLocalDirectInvariantCensusPath = File.Exists(Phase282BranchLocalDirectInvariantCensusPath) ? Phase282BranchLocalDirectInvariantCensusPath : null,
         legacyElectroweakBridgeSourceSurvivabilityAuditPath = File.Exists(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath) ? Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath : null,
         predictedRatioAlphaGfExternalClosureDiagnosticPath = File.Exists(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath) ? Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath : null,
@@ -3287,6 +3290,77 @@ var package = new
                 ? JsonInt(p337ContractImpact, "observedFieldExtractionFilledRequiredFieldCount")
                 : null,
             decision = JsonString(phase337.RootElement, "decision"),
+        }
+        : null,
+    metricAffineTorsionSourceAudit = phase338 is not null
+        ? new
+        {
+            status = JsonString(phase338.RootElement, "terminalStatus"),
+            metricAffineTorsionSourceAuditPassed = JsonBool(phase338.RootElement, "metricAffineTorsionSourceAuditPassed"),
+            metricAffineTorsionLeadPresent = JsonBool(phase338.RootElement, "metricAffineTorsionLeadPresent"),
+            metricAffineTorsionPrimarySourcesReviewed = JsonBool(phase338.RootElement, "metricAffineTorsionPrimarySourcesReviewed"),
+            metricAffineTorsionRouteExternalToGu = JsonBool(phase338.RootElement, "metricAffineTorsionRouteExternalToGu"),
+            torsionRouteUsesEinsteinCartanOrPoincareGravity = JsonBool(phase338.RootElement, "torsionRouteUsesEinsteinCartanOrPoincareGravity"),
+            torsionRouteUsesHolstPalatiniAction = JsonBool(phase338.RootElement, "torsionRouteUsesHolstPalatiniAction"),
+            torsionRouteUsesNonminimalSpinorTorsionCoupling = JsonBool(phase338.RootElement, "torsionRouteUsesNonminimalSpinorTorsionCoupling"),
+            torsionRouteGeneratesEffectiveFourFermionInteractions = JsonBool(phase338.RootElement, "torsionRouteGeneratesEffectiveFourFermionInteractions"),
+            torsionRouteUsesParityBreakingTorsionCouplings = JsonBool(phase338.RootElement, "torsionRouteUsesParityBreakingTorsionCouplings"),
+            torsionRouteCanInduceTechnifermionCondensation = JsonBool(phase338.RootElement, "torsionRouteCanInduceTechnifermionCondensation"),
+            torsionRouteCanGenerateGaugeBosonMassesViaCondensate = JsonBool(phase338.RootElement, "torsionRouteCanGenerateGaugeBosonMassesViaCondensate"),
+            torsionRouteRequiresTevScaleTorsionMassParameter = JsonBool(phase338.RootElement, "torsionRouteRequiresTevScaleTorsionMassParameter"),
+            torsionRouteUsesNjlOrEnjlCondensateDynamics = JsonBool(phase338.RootElement, "torsionRouteUsesNjlOrEnjlCondensateDynamics"),
+            torsionRouteIntroducesAdditionalTechnifermions = JsonBool(phase338.RootElement, "torsionRouteIntroducesAdditionalTechnifermions"),
+            torsionRouteNeedsPrecisionElectroweakMatching = JsonBool(phase338.RootElement, "torsionRouteNeedsPrecisionElectroweakMatching"),
+            threeBfRouteUsesStandardModelEinsteinCartanThreeGroup = JsonBool(phase338.RootElement, "threeBfRouteUsesStandardModelEinsteinCartanThreeGroup"),
+            threeBfRouteStudiesExplicitAndSpontaneousSymmetryBreaking = JsonBool(phase338.RootElement, "threeBfRouteStudiesExplicitAndSpontaneousSymmetryBreaking"),
+            threeBfRouteFormulatesElectroweakHiggsMechanism = JsonBool(phase338.RootElement, "threeBfRouteFormulatesElectroweakHiggsMechanism"),
+            threeBfRouteFormulatesProcaMassTerms = JsonBool(phase338.RootElement, "threeBfRouteFormulatesProcaMassTerms"),
+            threeBfRouteRecoversTextbookElectroweakMassStructure = JsonBool(phase338.RootElement, "threeBfRouteRecoversTextbookElectroweakMassStructure"),
+            threeBfRouteUsesVevGaugeCouplingsAndHiggsQuarticAsParameters = JsonBool(phase338.RootElement, "threeBfRouteUsesVevGaugeCouplingsAndHiggsQuarticAsParameters"),
+            metricAffineScalarHiggsContextPresent = JsonBool(phase338.RootElement, "metricAffineScalarHiggsContextPresent"),
+            metricAffineElectroweakVacuumStabilityContextPresent = JsonBool(phase338.RootElement, "metricAffineElectroweakVacuumStabilityContextPresent"),
+            torsionRouteOverlapsTechnicolorButAddsGeometricContactSource = JsonBool(phase338.RootElement, "torsionRouteOverlapsTechnicolorButAddsGeometricContactSource"),
+            torsionRouteRelatedToGuAugmentedTorsionHooks = JsonBool(phase338.RootElement, "torsionRouteRelatedToGuAugmentedTorsionHooks"),
+            torsionRouteRequiresGuLocalMetricAffineEinsteinCartanMap = JsonBool(phase338.RootElement, "torsionRouteRequiresGuLocalMetricAffineEinsteinCartanMap"),
+            torsionRouteRequiresTorsionHolstScaleOrImmirziSource = JsonBool(phase338.RootElement, "torsionRouteRequiresTorsionHolstScaleOrImmirziSource"),
+            torsionRouteRequiresTechnifermionRepresentationSource = JsonBool(phase338.RootElement, "torsionRouteRequiresTechnifermionRepresentationSource"),
+            torsionRouteRequiresCondensateDynamicsAndNormalization = JsonBool(phase338.RootElement, "torsionRouteRequiresCondensateDynamicsAndNormalization"),
+            torsionRouteRequiresElectroweakEmbeddingAndPrecisionMatching = JsonBool(phase338.RootElement, "torsionRouteRequiresElectroweakEmbeddingAndPrecisionMatching"),
+            torsionRouteRequiresObservedPhotonWzProjection = JsonBool(phase338.RootElement, "torsionRouteRequiresObservedPhotonWzProjection"),
+            torsionRouteRequiresVevOrScaleLineage = JsonBool(phase338.RootElement, "torsionRouteRequiresVevOrScaleLineage"),
+            torsionRouteRequiresWeakAngleLineage = JsonBool(phase338.RootElement, "torsionRouteRequiresWeakAngleLineage"),
+            torsionRouteRequiresHiggsScalarSourceOrCompositeProfile = JsonBool(phase338.RootElement, "torsionRouteRequiresHiggsScalarSourceOrCompositeProfile"),
+            torsionRouteRequiresGeVUnitNormalization = JsonBool(phase338.RootElement, "torsionRouteRequiresGeVUnitNormalization"),
+            torsionRouteProvidesGuLocalWzTheorem = JsonBool(phase338.RootElement, "torsionRouteProvidesGuLocalWzTheorem"),
+            torsionRouteProvidesSeparateWzSourceRows = JsonBool(phase338.RootElement, "torsionRouteProvidesSeparateWzSourceRows"),
+            torsionRouteProvidesTargetIndependentGuVevSource = JsonBool(phase338.RootElement, "torsionRouteProvidesTargetIndependentGuVevSource"),
+            torsionRouteProvidesGuWeakMixingAngleSource = JsonBool(phase338.RootElement, "torsionRouteProvidesGuWeakMixingAngleSource"),
+            torsionRouteProvidesGuGaugeCouplingNormalization = JsonBool(phase338.RootElement, "torsionRouteProvidesGuGaugeCouplingNormalization"),
+            torsionRouteProvidesObservedPhotonWzProjectionRows = JsonBool(phase338.RootElement, "torsionRouteProvidesObservedPhotonWzProjectionRows"),
+            torsionRouteProvidesGuObservedFieldExtraction = JsonBool(phase338.RootElement, "torsionRouteProvidesGuObservedFieldExtraction"),
+            torsionRouteProvidesGuHiggsScalarSourceOperator = JsonBool(phase338.RootElement, "torsionRouteProvidesGuHiggsScalarSourceOperator"),
+            torsionRouteProvidesGuHiggsQuarticOrExcitationSource = JsonBool(phase338.RootElement, "torsionRouteProvidesGuHiggsQuarticOrExcitationSource"),
+            torsionRouteProvidesObservedHiggsMassFromGu = JsonBool(phase338.RootElement, "torsionRouteProvidesObservedHiggsMassFromGu"),
+            torsionRouteProvidesGeVUnitNormalization = JsonBool(phase338.RootElement, "torsionRouteProvidesGeVUnitNormalization"),
+            torsionRoutePromotesWzMasses = JsonBool(phase338.RootElement, "torsionRoutePromotesWzMasses"),
+            torsionRoutePromotesHiggsMass = JsonBool(phase338.RootElement, "torsionRoutePromotesHiggsMass"),
+            torsionRouteCompletesBosonPredictions = JsonBool(phase338.RootElement, "torsionRouteCompletesBosonPredictions"),
+            canFillPhase201WzContract = JsonBool(phase338.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase338.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase338.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            sourceRowCount = phase338.RootElement.TryGetProperty("sourceRows", out var p338SourceRows)
+                ? p338SourceRows.GetArrayLength()
+                : (int?)null,
+            wzMissingFieldCount = phase338.RootElement.TryGetProperty("contractImpact", out var p338ContractImpact)
+                ? JsonInt(p338ContractImpact, "wzMissingFieldCount")
+                : null,
+            higgsMissingFieldCount = phase338.RootElement.TryGetProperty("contractImpact", out p338ContractImpact)
+                ? JsonInt(p338ContractImpact, "higgsMissingFieldCount")
+                : null,
+            observedFieldExtractionFilledRequiredFieldCount = phase338.RootElement.TryGetProperty("contractImpact", out p338ContractImpact)
+                ? JsonInt(p338ContractImpact, "observedFieldExtractionFilledRequiredFieldCount")
+                : null,
+            decision = JsonString(phase338.RootElement, "decision"),
         }
         : null,
     branchLocalDirectInvariantCensus = phase282 is not null
@@ -5998,6 +6072,30 @@ var summary = new
         : null,
     octonionRouteCompletesBosonPredictions = phase337 is not null
         ? JsonBool(phase337.RootElement, "octonionRouteCompletesBosonPredictions")
+        : null,
+    metricAffineTorsionSourceAuditPassed = phase338 is not null
+        ? JsonBool(phase338.RootElement, "metricAffineTorsionSourceAuditPassed")
+        : null,
+    torsionRouteCanGenerateGaugeBosonMassesViaCondensate = phase338 is not null
+        ? JsonBool(phase338.RootElement, "torsionRouteCanGenerateGaugeBosonMassesViaCondensate")
+        : null,
+    threeBfRouteRecoversTextbookElectroweakMassStructure = phase338 is not null
+        ? JsonBool(phase338.RootElement, "threeBfRouteRecoversTextbookElectroweakMassStructure")
+        : null,
+    torsionRouteRequiresGuLocalMetricAffineEinsteinCartanMap = phase338 is not null
+        ? JsonBool(phase338.RootElement, "torsionRouteRequiresGuLocalMetricAffineEinsteinCartanMap")
+        : null,
+    torsionRouteProvidesGuObservedFieldExtraction = phase338 is not null
+        ? JsonBool(phase338.RootElement, "torsionRouteProvidesGuObservedFieldExtraction")
+        : null,
+    torsionRoutePromotesWzMasses = phase338 is not null
+        ? JsonBool(phase338.RootElement, "torsionRoutePromotesWzMasses")
+        : null,
+    torsionRoutePromotesHiggsMass = phase338 is not null
+        ? JsonBool(phase338.RootElement, "torsionRoutePromotesHiggsMass")
+        : null,
+    torsionRouteCompletesBosonPredictions = phase338 is not null
+        ? JsonBool(phase338.RootElement, "torsionRouteCompletesBosonPredictions")
         : null,
     branchLocalInvariantCensusPassed = phase282 is not null
         ? JsonBool(phase282.RootElement, "branchLocalInvariantCensusPassed")

@@ -107,6 +107,7 @@ const paths = {
   phase335: "studies/phase335_graviweak_plebanski_source_audit_001/output/graviweak_plebanski_source_audit_summary.json",
   phase336: "studies/phase336_heft_scalar_geometry_source_law_audit_001/output/heft_scalar_geometry_source_law_audit_summary.json",
   phase337: "studies/phase337_octonion_clifford_internal_space_source_audit_001/output/octonion_clifford_internal_space_source_audit_summary.json",
+  phase338: "studies/phase338_metric_affine_torsion_source_audit_001/output/metric_affine_torsion_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -285,6 +286,7 @@ const phase334 = requireFile(paths.phase334);
 const phase335 = requireFile(paths.phase335);
 const phase336 = requireFile(paths.phase336);
 const phase337 = requireFile(paths.phase337);
+const phase338 = requireFile(paths.phase338);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -1915,6 +1917,63 @@ if (sourceLineageMissing) {
   assert(phase337.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase337 W/Z missing-field count must match Phase213.");
   assert(phase337.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase337 Higgs missing-field count must match Phase213.");
   assert(phase337.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase337 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase338.metricAffineTorsionSourceAuditPassed === true, "Phase338 metric-affine torsion source audit must pass while preserving non-promotional status.");
+  assert(phase338.metricAffineTorsionLeadPresent === true, "Phase338 must record the metric-affine torsion lead.");
+  assert(phase338.metricAffineTorsionPrimarySourcesReviewed === true, "Phase338 must record primary source review.");
+  assert(phase338.metricAffineTorsionRouteExternalToGu === true, "Phase338 must classify the route as external to GU.");
+  assert(phase338.torsionRouteUsesEinsteinCartanOrPoincareGravity === true, "Phase338 must record the Einstein-Cartan/Poincare torsion route.");
+  assert(phase338.torsionRouteUsesHolstPalatiniAction === true, "Phase338 must record the Holst/Palatini route.");
+  assert(phase338.torsionRouteUsesNonminimalSpinorTorsionCoupling === true, "Phase338 must record nonminimal spinor-torsion coupling.");
+  assert(phase338.torsionRouteGeneratesEffectiveFourFermionInteractions === true, "Phase338 must record torsion-induced four-fermion interactions.");
+  assert(phase338.torsionRouteUsesParityBreakingTorsionCouplings === true, "Phase338 must record parity-breaking torsion couplings.");
+  assert(phase338.torsionRouteCanInduceTechnifermionCondensation === true, "Phase338 must record technifermion condensation.");
+  assert(phase338.torsionRouteCanGenerateGaugeBosonMassesViaCondensate === true, "Phase338 must record the gauge-boson-mass condensate lead.");
+  assert(phase338.torsionRouteRequiresTevScaleTorsionMassParameter === true, "Phase338 must require a TeV-scale torsion mass parameter.");
+  assert(phase338.torsionRouteUsesNjlOrEnjlCondensateDynamics === true, "Phase338 must record NJL/ENJL condensate dynamics.");
+  assert(phase338.torsionRouteIntroducesAdditionalTechnifermions === true, "Phase338 must record additional technifermions.");
+  assert(phase338.torsionRouteNeedsPrecisionElectroweakMatching === true, "Phase338 must require precision electroweak matching.");
+  assert(phase338.threeBfRouteUsesStandardModelEinsteinCartanThreeGroup === true, "Phase338 must record the SM/Einstein-Cartan 3-group route.");
+  assert(phase338.threeBfRouteStudiesExplicitAndSpontaneousSymmetryBreaking === true, "Phase338 must record 3BF symmetry breaking.");
+  assert(phase338.threeBfRouteFormulatesElectroweakHiggsMechanism === true, "Phase338 must record 3BF electroweak Higgs mechanism formulation.");
+  assert(phase338.threeBfRouteFormulatesProcaMassTerms === true, "Phase338 must record 3BF Proca mass terms.");
+  assert(phase338.threeBfRouteRecoversTextbookElectroweakMassStructure === true, "Phase338 must record that 3BF recovers textbook mass structure.");
+  assert(phase338.threeBfRouteUsesVevGaugeCouplingsAndHiggsQuarticAsParameters === true, "Phase338 must record that 3BF still uses VEV, couplings, and quartic parameters.");
+  assert(phase338.metricAffineScalarHiggsContextPresent === true, "Phase338 must record metric-affine Higgs-like scalar context.");
+  assert(phase338.metricAffineElectroweakVacuumStabilityContextPresent === true, "Phase338 must record metric-affine electroweak vacuum stability context.");
+  assert(phase338.torsionRouteOverlapsTechnicolorButAddsGeometricContactSource === true, "Phase338 must record technicolor overlap and torsion-contact distinction.");
+  assert(phase338.torsionRouteRelatedToGuAugmentedTorsionHooks === true, "Phase338 must record relation to GU torsion-adjacent hooks.");
+  assert(phase338.torsionRouteDistinctFromPhase337OctonionClifford === true, "Phase338 must record distinction from Phase337.");
+  assert(phase338.torsionRouteRequiresGuLocalMetricAffineEinsteinCartanMap === true, "Phase338 must require a GU-local metric-affine/Einstein-Cartan map.");
+  assert(phase338.torsionRouteRequiresTorsionHolstScaleOrImmirziSource === true, "Phase338 must require a torsion/Holst/Immirzi scale source.");
+  assert(phase338.torsionRouteRequiresTechnifermionRepresentationSource === true, "Phase338 must require technifermion representation source.");
+  assert(phase338.torsionRouteRequiresCondensateDynamicsAndNormalization === true, "Phase338 must require condensate dynamics and normalization.");
+  assert(phase338.torsionRouteRequiresElectroweakEmbeddingAndPrecisionMatching === true, "Phase338 must require electroweak embedding and precision matching.");
+  assert(phase338.torsionRouteRequiresObservedPhotonWzProjection === true, "Phase338 must require observed photon/W/Z projection.");
+  assert(phase338.torsionRouteRequiresVevOrScaleLineage === true, "Phase338 must require VEV or scale lineage.");
+  assert(phase338.torsionRouteRequiresWeakAngleLineage === true, "Phase338 must require weak-angle lineage.");
+  assert(phase338.torsionRouteRequiresHiggsScalarSourceOrCompositeProfile === true, "Phase338 must require a Higgs scalar source or composite profile.");
+  assert(phase338.torsionRouteRequiresGeVUnitNormalization === true, "Phase338 must require GeV normalization.");
+  assert(phase338.torsionRouteProvidesGuLocalWzTheorem === false, "Phase338 cannot claim a GU-local W/Z theorem.");
+  assert(phase338.torsionRouteProvidesSeparateWzSourceRows === false, "Phase338 cannot claim separate W/Z source rows.");
+  assert(phase338.torsionRouteProvidesTargetIndependentGuVevSource === false, "Phase338 cannot claim a target-independent GU VEV source.");
+  assert(phase338.torsionRouteProvidesGuWeakMixingAngleSource === false, "Phase338 cannot claim a GU weak-mixing angle source.");
+  assert(phase338.torsionRouteProvidesGuGaugeCouplingNormalization === false, "Phase338 cannot claim GU gauge-coupling normalization.");
+  assert(phase338.torsionRouteProvidesObservedPhotonWzProjectionRows === false, "Phase338 cannot claim observed photon/W/Z projection rows.");
+  assert(phase338.torsionRouteProvidesGuObservedFieldExtraction === false, "Phase338 cannot claim GU observed-field extraction.");
+  assert(phase338.torsionRouteProvidesGuHiggsScalarSourceOperator === false, "Phase338 cannot claim a GU Higgs scalar-source operator.");
+  assert(phase338.torsionRouteProvidesGuHiggsQuarticOrExcitationSource === false, "Phase338 cannot claim GU Higgs quartic/excitation source lineage.");
+  assert(phase338.torsionRouteProvidesObservedHiggsMassFromGu === false, "Phase338 cannot claim observed Higgs mass from GU.");
+  assert(phase338.torsionRouteProvidesGeVUnitNormalization === false, "Phase338 cannot claim GeV normalization.");
+  assert(phase338.torsionRoutePromotesWzMasses === false, "Phase338 cannot promote W/Z masses.");
+  assert(phase338.torsionRoutePromotesHiggsMass === false, "Phase338 cannot promote Higgs mass.");
+  assert(phase338.torsionRouteCompletesBosonPredictions === false, "Phase338 cannot complete boson predictions.");
+  assert(phase338.sourceRowCount === 5, "Phase338 must preserve five source rows.");
+  assert(phase338.contractImpact?.canFillPhase201WzContract === false, "Phase338 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase338.contractImpact?.canFillPhase201HiggsContract === false, "Phase338 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase338.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase338 contract impact must keep Phase256 unfilled.");
+  assert(phase338.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase338 W/Z missing-field count must match Phase213.");
+  assert(phase338.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase338 Higgs missing-field count must match Phase213.");
+  assert(phase338.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase338 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");
