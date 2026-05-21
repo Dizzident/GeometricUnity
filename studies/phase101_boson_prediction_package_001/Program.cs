@@ -193,6 +193,7 @@ const string Phase332StringMTheoryCompactificationSourceAuditPath = "studies/pha
 const string Phase333KaluzaKleinInternalSymmetrySourceAuditPath = "studies/phase333_kaluza_klein_internal_symmetry_source_audit_001/output/kaluza_klein_internal_symmetry_source_audit.json";
 const string Phase334Su21SuperconnectionSourceAuditPath = "studies/phase334_su21_superconnection_source_audit_001/output/su21_superconnection_source_audit.json";
 const string Phase335GraviweakPlebanskiSourceAuditPath = "studies/phase335_graviweak_plebanski_source_audit_001/output/graviweak_plebanski_source_audit.json";
+const string Phase336HeftScalarGeometrySourceLawAuditPath = "studies/phase336_heft_scalar_geometry_source_law_audit_001/output/heft_scalar_geometry_source_law_audit.json";
 const string Phase282BranchLocalDirectInvariantCensusPath = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census.json";
 const string Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit.json";
 const string Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic.json";
@@ -406,6 +407,7 @@ using var phase332 = TryParseJson(Phase332StringMTheoryCompactificationSourceAud
 using var phase333 = TryParseJson(Phase333KaluzaKleinInternalSymmetrySourceAuditPath);
 using var phase334 = TryParseJson(Phase334Su21SuperconnectionSourceAuditPath);
 using var phase335 = TryParseJson(Phase335GraviweakPlebanskiSourceAuditPath);
+using var phase336 = TryParseJson(Phase336HeftScalarGeometrySourceLawAuditPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -682,6 +684,7 @@ var package = new
         kaluzaKleinInternalSymmetrySourceAuditPath = File.Exists(Phase333KaluzaKleinInternalSymmetrySourceAuditPath) ? Phase333KaluzaKleinInternalSymmetrySourceAuditPath : null,
         su21SuperconnectionSourceAuditPath = File.Exists(Phase334Su21SuperconnectionSourceAuditPath) ? Phase334Su21SuperconnectionSourceAuditPath : null,
         graviweakPlebanskiSourceAuditPath = File.Exists(Phase335GraviweakPlebanskiSourceAuditPath) ? Phase335GraviweakPlebanskiSourceAuditPath : null,
+        heftScalarGeometrySourceLawAuditPath = File.Exists(Phase336HeftScalarGeometrySourceLawAuditPath) ? Phase336HeftScalarGeometrySourceLawAuditPath : null,
         branchLocalDirectInvariantCensusPath = File.Exists(Phase282BranchLocalDirectInvariantCensusPath) ? Phase282BranchLocalDirectInvariantCensusPath : null,
         legacyElectroweakBridgeSourceSurvivabilityAuditPath = File.Exists(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath) ? Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath : null,
         predictedRatioAlphaGfExternalClosureDiagnosticPath = File.Exists(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath) ? Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath : null,
@@ -3150,6 +3153,62 @@ var package = new
                 ? JsonInt(p335ContractImpact, "observedFieldExtractionFilledRequiredFieldCount")
                 : null,
             decision = JsonString(phase335.RootElement, "decision"),
+        }
+        : null,
+    heftScalarGeometrySourceLawAudit = phase336 is not null
+        ? new
+        {
+            status = JsonString(phase336.RootElement, "terminalStatus"),
+            heftScalarGeometrySourceLawAuditPassed = JsonBool(phase336.RootElement, "heftScalarGeometrySourceLawAuditPassed"),
+            heftScalarGeometryLeadPresent = JsonBool(phase336.RootElement, "heftScalarGeometryLeadPresent"),
+            heftPrimarySourcesReviewed = JsonBool(phase336.RootElement, "heftPrimarySourcesReviewed"),
+            heftRouteExternalToGu = JsonBool(phase336.RootElement, "heftRouteExternalToGu"),
+            heftDescribesHiggsAndGoldstonesAsScalarManifoldCoordinates = JsonBool(phase336.RootElement, "heftDescribesHiggsAndGoldstonesAsScalarManifoldCoordinates"),
+            heftSMatrixInvariantUnderScalarFieldRedefinitions = JsonBool(phase336.RootElement, "heftSMatrixInvariantUnderScalarFieldRedefinitions"),
+            heftCurvatureControlsHiggsAndLongitudinalGaugeObservables = JsonBool(phase336.RootElement, "heftCurvatureControlsHiggsAndLongitudinalGaugeObservables"),
+            heftGoldstonesBecomeLongitudinalWzModes = JsonBool(phase336.RootElement, "heftGoldstonesBecomeLongitudinalWzModes"),
+            heftWzMassesDependOnVevGaugeCouplingsAndScalarMetric = JsonBool(phase336.RootElement, "heftWzMassesDependOnVevGaugeCouplingsAndScalarMetric"),
+            heftHiggsMassDependsOnPotentialHessianAtVacuum = JsonBool(phase336.RootElement, "heftHiggsMassDependsOnPotentialHessianAtVacuum"),
+            heftGeometricBridgeTemplateMaterialized = JsonBool(phase336.RootElement, "heftGeometricBridgeTemplateMaterialized"),
+            heftRequiresVacuumPoint = JsonBool(phase336.RootElement, "heftRequiresVacuumPoint"),
+            heftRequiresScalarManifoldMetric = JsonBool(phase336.RootElement, "heftRequiresScalarManifoldMetric"),
+            heftRequiresGaugedIsometryKillingVectors = JsonBool(phase336.RootElement, "heftRequiresGaugedIsometryKillingVectors"),
+            heftRequiresGaugeCouplings = JsonBool(phase336.RootElement, "heftRequiresGaugeCouplings"),
+            heftRequiresPotentialAndHessian = JsonBool(phase336.RootElement, "heftRequiresPotentialAndHessian"),
+            heftRequiresObservedPhotonWzHiggsProjection = JsonBool(phase336.RootElement, "heftRequiresObservedPhotonWzHiggsProjection"),
+            heftRequiresVevOrUnitNormalization = JsonBool(phase336.RootElement, "heftRequiresVevOrUnitNormalization"),
+            heftProvidesGuLocalWzTheorem = JsonBool(phase336.RootElement, "heftProvidesGuLocalWzTheorem"),
+            heftProvidesSeparateWzSourceRows = JsonBool(phase336.RootElement, "heftProvidesSeparateWzSourceRows"),
+            heftProvidesTargetIndependentGuVevSource = JsonBool(phase336.RootElement, "heftProvidesTargetIndependentGuVevSource"),
+            heftProvidesGuWeakMixingAngleSource = JsonBool(phase336.RootElement, "heftProvidesGuWeakMixingAngleSource"),
+            heftProvidesGuGaugeCouplingNormalization = JsonBool(phase336.RootElement, "heftProvidesGuGaugeCouplingNormalization"),
+            heftProvidesGuObservedFieldExtraction = JsonBool(phase336.RootElement, "heftProvidesGuObservedFieldExtraction"),
+            heftProvidesGuHiggsScalarSourceOperator = JsonBool(phase336.RootElement, "heftProvidesGuHiggsScalarSourceOperator"),
+            heftProvidesGuHiggsQuarticOrExcitationSource = JsonBool(phase336.RootElement, "heftProvidesGuHiggsQuarticOrExcitationSource"),
+            heftProvidesObservedHiggsMassFromGu = JsonBool(phase336.RootElement, "heftProvidesObservedHiggsMassFromGu"),
+            heftProvidesGeVUnitNormalization = JsonBool(phase336.RootElement, "heftProvidesGeVUnitNormalization"),
+            heftPromotesWzMasses = JsonBool(phase336.RootElement, "heftPromotesWzMasses"),
+            heftPromotesHiggsMass = JsonBool(phase336.RootElement, "heftPromotesHiggsMass"),
+            heftCompletesBosonPredictions = JsonBool(phase336.RootElement, "heftCompletesBosonPredictions"),
+            canFillPhase201WzContract = JsonBool(phase336.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase336.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase336.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            sourceRowCount = phase336.RootElement.TryGetProperty("sourceRows", out var p336SourceRows)
+                ? p336SourceRows.GetArrayLength()
+                : (int?)null,
+            templateRowCount = phase336.RootElement.TryGetProperty("geometricBridgeTemplate", out var p336TemplateRows)
+                ? p336TemplateRows.GetArrayLength()
+                : (int?)null,
+            wzMissingFieldCount = phase336.RootElement.TryGetProperty("contractImpact", out var p336ContractImpact)
+                ? JsonInt(p336ContractImpact, "wzMissingFieldCount")
+                : null,
+            higgsMissingFieldCount = phase336.RootElement.TryGetProperty("contractImpact", out p336ContractImpact)
+                ? JsonInt(p336ContractImpact, "higgsMissingFieldCount")
+                : null,
+            observedFieldExtractionFilledRequiredFieldCount = phase336.RootElement.TryGetProperty("contractImpact", out p336ContractImpact)
+                ? JsonInt(p336ContractImpact, "observedFieldExtractionFilledRequiredFieldCount")
+                : null,
+            decision = JsonString(phase336.RootElement, "decision"),
         }
         : null,
     branchLocalDirectInvariantCensus = phase282 is not null
@@ -5813,6 +5872,33 @@ var summary = new
         : null,
     graviweakRouteCompletesBosonPredictions = phase335 is not null
         ? JsonBool(phase335.RootElement, "graviweakRouteCompletesBosonPredictions")
+        : null,
+    heftScalarGeometrySourceLawAuditPassed = phase336 is not null
+        ? JsonBool(phase336.RootElement, "heftScalarGeometrySourceLawAuditPassed")
+        : null,
+    heftGeometricBridgeTemplateMaterialized = phase336 is not null
+        ? JsonBool(phase336.RootElement, "heftGeometricBridgeTemplateMaterialized")
+        : null,
+    heftProvidesGuLocalWzTheorem = phase336 is not null
+        ? JsonBool(phase336.RootElement, "heftProvidesGuLocalWzTheorem")
+        : null,
+    heftProvidesTargetIndependentGuVevSource = phase336 is not null
+        ? JsonBool(phase336.RootElement, "heftProvidesTargetIndependentGuVevSource")
+        : null,
+    heftProvidesGuObservedFieldExtraction = phase336 is not null
+        ? JsonBool(phase336.RootElement, "heftProvidesGuObservedFieldExtraction")
+        : null,
+    heftProvidesGuHiggsScalarSourceOperator = phase336 is not null
+        ? JsonBool(phase336.RootElement, "heftProvidesGuHiggsScalarSourceOperator")
+        : null,
+    heftPromotesWzMasses = phase336 is not null
+        ? JsonBool(phase336.RootElement, "heftPromotesWzMasses")
+        : null,
+    heftPromotesHiggsMass = phase336 is not null
+        ? JsonBool(phase336.RootElement, "heftPromotesHiggsMass")
+        : null,
+    heftCompletesBosonPredictions = phase336 is not null
+        ? JsonBool(phase336.RootElement, "heftCompletesBosonPredictions")
         : null,
     branchLocalInvariantCensusPassed = phase282 is not null
         ? JsonBool(phase282.RootElement, "branchLocalInvariantCensusPassed")

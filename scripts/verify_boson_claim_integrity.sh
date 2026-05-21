@@ -105,6 +105,7 @@ const paths = {
   phase333: "studies/phase333_kaluza_klein_internal_symmetry_source_audit_001/output/kaluza_klein_internal_symmetry_source_audit_summary.json",
   phase334: "studies/phase334_su21_superconnection_source_audit_001/output/su21_superconnection_source_audit_summary.json",
   phase335: "studies/phase335_graviweak_plebanski_source_audit_001/output/graviweak_plebanski_source_audit_summary.json",
+  phase336: "studies/phase336_heft_scalar_geometry_source_law_audit_001/output/heft_scalar_geometry_source_law_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -281,6 +282,7 @@ const phase332 = requireFile(paths.phase332);
 const phase333 = requireFile(paths.phase333);
 const phase334 = requireFile(paths.phase334);
 const phase335 = requireFile(paths.phase335);
+const phase336 = requireFile(paths.phase336);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -1827,6 +1829,43 @@ if (sourceLineageMissing) {
   assert(phase335.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase335 W/Z missing-field count must match Phase213.");
   assert(phase335.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase335 Higgs missing-field count must match Phase213.");
   assert(phase335.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase335 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase336.heftScalarGeometrySourceLawAuditPassed === true, "Phase336 HEFT scalar geometry source-law audit must pass while preserving non-promotional status.");
+  assert(phase336.heftScalarGeometryLeadPresent === true, "Phase336 must record the HEFT scalar-manifold geometry lead.");
+  assert(phase336.heftPrimarySourcesReviewed === true, "Phase336 must record primary source review.");
+  assert(phase336.heftRouteExternalToGu === true, "Phase336 must classify HEFT geometry as external to GU.");
+  assert(phase336.heftDescribesHiggsAndGoldstonesAsScalarManifoldCoordinates === true, "Phase336 must record Higgs/Goldstone scalar-manifold coordinates.");
+  assert(phase336.heftSMatrixInvariantUnderScalarFieldRedefinitions === true, "Phase336 must record field-redefinition invariance.");
+  assert(phase336.heftCurvatureControlsHiggsAndLongitudinalGaugeObservables === true, "Phase336 must record scalar-curvature observable control.");
+  assert(phase336.heftGoldstonesBecomeLongitudinalWzModes === true, "Phase336 must record Goldstone to longitudinal W/Z mapping.");
+  assert(phase336.heftWzMassesDependOnVevGaugeCouplingsAndScalarMetric === true, "Phase336 must record W/Z geometric dependency shape.");
+  assert(phase336.heftHiggsMassDependsOnPotentialHessianAtVacuum === true, "Phase336 must record Higgs Hessian dependency shape.");
+  assert(phase336.heftGeometricBridgeTemplateMaterialized === true, "Phase336 must materialize the geometric bridge template.");
+  assert(phase336.heftRequiresVacuumPoint === true, "Phase336 must require a vacuum point.");
+  assert(phase336.heftRequiresScalarManifoldMetric === true, "Phase336 must require a scalar-manifold metric.");
+  assert(phase336.heftRequiresGaugedIsometryKillingVectors === true, "Phase336 must require gauged isometry/Killing data.");
+  assert(phase336.heftRequiresGaugeCouplings === true, "Phase336 must require gauge couplings.");
+  assert(phase336.heftRequiresPotentialAndHessian === true, "Phase336 must require a potential/Hessian.");
+  assert(phase336.heftRequiresObservedPhotonWzHiggsProjection === true, "Phase336 must require observed photon/W/Z/H projection.");
+  assert(phase336.heftRequiresVevOrUnitNormalization === true, "Phase336 must require VEV or unit normalization.");
+  assert(phase336.heftProvidesGuLocalWzTheorem === false, "Phase336 cannot claim a GU-local W/Z theorem.");
+  assert(phase336.heftProvidesSeparateWzSourceRows === false, "Phase336 cannot claim separate W/Z source rows.");
+  assert(phase336.heftProvidesTargetIndependentGuVevSource === false, "Phase336 cannot claim a target-independent GU VEV source.");
+  assert(phase336.heftProvidesGuWeakMixingAngleSource === false, "Phase336 cannot claim a GU weak-mixing angle source.");
+  assert(phase336.heftProvidesGuGaugeCouplingNormalization === false, "Phase336 cannot claim GU gauge-coupling normalization.");
+  assert(phase336.heftProvidesGuObservedFieldExtraction === false, "Phase336 cannot claim GU observed-field extraction.");
+  assert(phase336.heftProvidesGuHiggsScalarSourceOperator === false, "Phase336 cannot claim a GU Higgs scalar-source operator.");
+  assert(phase336.heftProvidesGuHiggsQuarticOrExcitationSource === false, "Phase336 cannot claim GU Higgs quartic/excitation source lineage.");
+  assert(phase336.heftProvidesObservedHiggsMassFromGu === false, "Phase336 cannot claim observed Higgs mass from GU.");
+  assert(phase336.heftProvidesGeVUnitNormalization === false, "Phase336 cannot claim GeV normalization.");
+  assert(phase336.heftPromotesWzMasses === false, "Phase336 cannot promote W/Z masses.");
+  assert(phase336.heftPromotesHiggsMass === false, "Phase336 cannot promote Higgs mass.");
+  assert(phase336.heftCompletesBosonPredictions === false, "Phase336 cannot complete boson predictions.");
+  assert(phase336.contractImpact?.canFillPhase201WzContract === false, "Phase336 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase336.contractImpact?.canFillPhase201HiggsContract === false, "Phase336 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase336.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase336 contract impact must keep Phase256 unfilled.");
+  assert(phase336.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase336 W/Z missing-field count must match Phase213.");
+  assert(phase336.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase336 Higgs missing-field count must match Phase213.");
+  assert(phase336.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase336 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

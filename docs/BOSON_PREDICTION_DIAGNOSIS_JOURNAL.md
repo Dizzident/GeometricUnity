@@ -7573,6 +7573,110 @@ Higgs remains separately blocked by missing scalar-source lineage.
   `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
   `promotedPhysicalMassClaimCount=0`.
 
+## 2026-05-21 - Phase336 HEFT Scalar Geometry Source-Law Audit
+
+### Context
+
+After Phase335 preserved graviweak/Plebanski geometry as a serious but
+non-promotional lead, I looked for a different kind of source: not another
+mass model, but a mathematical statement of what a genuinely geometric W/Z/H
+source law would have to supply. The strongest non-duplicative lead was HEFT
+scalar-manifold geometry, where the Higgs and Goldstone modes are treated as
+coordinates on a scalar manifold and observables are expressed through
+coordinate-invariant geometric quantities.
+
+### Sources Reviewed
+
+- `https://arxiv.org/abs/1511.00724`.
+- `https://arxiv.org/abs/2108.03240`.
+- `https://arxiv.org/abs/1907.07605`.
+
+### Action
+
+- Added `studies/phase336_heft_scalar_geometry_source_law_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P336.md`.
+- Wired Phase336 into the generator, P101 package, P202 objective completion
+  audit, and claim-integrity verifier.
+- Added Phase336 scanner exclusions so generated audit text is not counted as
+  independent source evidence.
+- Added `HEFT-SCALAR-MANIFOLD-GEOMETRY` to `ExperimentReferences.md` with a
+  detailed reference note under `docs/Reference/ExperimentReferences/`.
+
+### Current Expected Outcome
+
+Phase336 is expected to pass only as a negative bridge-template audit:
+
+- `heftScalarGeometrySourceLawAuditPassed=true`.
+- `heftScalarGeometryLeadPresent=true`.
+- `heftDescribesHiggsAndGoldstonesAsScalarManifoldCoordinates=true`.
+- `heftSMatrixInvariantUnderScalarFieldRedefinitions=true`.
+- `heftCurvatureControlsHiggsAndLongitudinalGaugeObservables=true`.
+- `heftGoldstonesBecomeLongitudinalWzModes=true`.
+- `heftWzMassesDependOnVevGaugeCouplingsAndScalarMetric=true`.
+- `heftHiggsMassDependsOnPotentialHessianAtVacuum=true`.
+- `heftGeometricBridgeTemplateMaterialized=true`.
+- `heftRequiresVacuumPoint=true`.
+- `heftRequiresScalarManifoldMetric=true`.
+- `heftRequiresGaugedIsometryKillingVectors=true`.
+- `heftRequiresGaugeCouplings=true`.
+- `heftRequiresPotentialAndHessian=true`.
+- `heftRequiresObservedPhotonWzHiggsProjection=true`.
+- `heftProvidesGuLocalWzTheorem=false`.
+- `heftProvidesSeparateWzSourceRows=false`.
+- `heftProvidesTargetIndependentGuVevSource=false`.
+- `heftProvidesGuWeakMixingAngleSource=false`.
+- `heftProvidesGuGaugeCouplingNormalization=false`.
+- `heftProvidesGuObservedFieldExtraction=false`.
+- `heftProvidesGuHiggsScalarSourceOperator=false`.
+- `heftProvidesGuHiggsQuarticOrExcitationSource=false`.
+- `heftProvidesGeVUnitNormalization=false`.
+- `heftPromotesWzMasses=false`.
+- `heftPromotesHiggsMass=false`.
+- `heftCompletesBosonPredictions=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from HEFT scalar-manifold geometry. It gives
+the coordinate-invariant template a successful geometric source law should
+match, but it does not provide the GU-local scalar metric, vacuum point,
+gauged electroweak Killing directions, gauge-coupling normalization, potential
+Hessian/scalar-source lineage, observed photon/W/Z/H projection, or GeV unit
+normalization.
+
+### Validation So Far
+
+- Targeted Phase336 run passed with:
+  - `terminalStatus=heft-scalar-geometry-source-law-audit-template-not-gu-source`.
+  - `heftScalarGeometrySourceLawAuditPassed=true`.
+  - `heftGeometricBridgeTemplateMaterialized=true`.
+  - `heftPromotesWzMasses=false`.
+  - `heftPromotesHiggsMass=false`.
+  - `canFillPhase201WzContract=false`.
+- P101 regenerated with Phase336 included and remained
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase336 included and remained
+  `boson-objective-completion-audit-incomplete`, with
+  `objectiveAchieved=false`, `checklistPassedCount=129`, and
+  `checklistFailedCount=3`.
+- Scanner guards passed with no intake-ready source-lineage promotion:
+  - P204: `intakeReadyCandidateCount=0`.
+  - P205: `intakeReadyFindingCount=0`.
+  - P207: `canPromoteHiggsQuarticSelfCouplingSource=false` and
+    `intakeReadyFindingCount=0`.
+  - P279 and P281 preserved `wzMissingFieldCount=15` and
+    `higgsMissingFieldCount=14`.
+  - P295: `intakeReadyObservedFieldExtractionCandidateCount=0` and
+    `anyObservedFieldExtractionCandidateFillsContract=false`.
+  - P296: `intakeReadySourceLineageFieldCandidateCount=0` and
+    `anySourceLineageCandidateFillsContract=false`.
+- Claim-integrity verifier passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- `git diff --check` passed.
+- `dotnet test GeometricUnity.slnx` passed. The existing xUnit analyzer warning
+  remains at
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs(315,9)`.
+
 ## 2026-05-21 - Phase335 Graviweak Plebanski Source Audit
 
 ### Context
