@@ -8286,6 +8286,135 @@ scalar-source/self-coupling lineage.
   in `QuantitativeValidationTests.cs(315,9)` remains present.
 - `git diff --check` passed.
 
+## 2026-05-21 - Phase327 Oblique Precision Electroweak Source Audit
+
+### Question
+
+Audit the precision-electroweak oblique-parameter route. The loophole is that
+Peskin-Takeuchi S/T/U parameters are real W/Z precision-fit observables and
+strongly constrain new physics, so they can look like a way to extract the
+missing weak angle, W/Z scale, or Higgs-sector source.
+
+### Research
+
+- Reviewed the Peskin-Takeuchi oblique-correction record:
+  `https://www.osti.gov/biblio/7235268`. The route parameterizes new-physics
+  vacuum-polarization corrections for precision electroweak comparison. It
+  does not supply a GU-local tree-level electroweak VEV, gauge-coupling
+  normalization, observed photon/W/Z/H rows, or scalar-source lineage.
+- Used the PDG electroweak precision review as the current standard-model
+  boundary: `https://pdg.lbl.gov/2025/reviews/rpp2025-rev-standard-model.pdf`.
+  The PDG fit context uses precision W/Z/H measurements and radiative
+  corrections as constraints; it is not a target-independent mass-source
+  derivation.
+- Rechecked Phase261 and Phase279. Phase261 already classifies electroweak
+  scheme and radiative inputs as external inputs, while Phase279 treats
+  precision electroweak constraints as BSM/technicolor consistency filters,
+  not source rows.
+- Rechecked Phase224, Phase245, Phase256, Phase295, and Phase296. The
+  electroweak parameter closure, rank-deficit unlock, observed-field
+  extraction, and source-lineage contract scans remain unfilled.
+- Rechecked Phase313, Phase321, Phase324, and Phase326. Official-draft
+  electroweak placement, neutral mixing, custodial rho, and anomaly routes
+  still lack a weak-mixing source, target-independent VEV, gauge-coupling
+  normalization, photon/W/Z/H projection rows, and Higgs scalar-source
+  lineage.
+
+### Actions
+
+- Added `studies/phase327_oblique_precision_electroweak_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P327.md`.
+- Wired Phase327 into the generator, P101 package, P202 objective completion
+  audit, claim-integrity verifier, and scanner exclusions.
+
+### Current Expected Outcome
+
+Phase327 is expected to pass only as a negative boundary audit:
+
+- `obliquePrecisionElectroweakSourceAuditPassed=true`.
+- `obliqueParametersSummarizeVacuumPolarizationCorrections=true`.
+- `obliqueParametersConstrainNewPhysics=true`.
+- `obliqueFitUsesPrecisionWzData=true`.
+- `obliqueRouteProvidesFitConstraint=true`.
+- `obliqueRouteProvidesLoopCorrectionParameterization=true`.
+- `obliqueRouteProvidesExactTreeLevelMassSource=false`.
+- `obliqueRouteProvidesTargetIndependentVevSource=false`.
+- `obliqueRouteProvidesWeakMixingAngleSource=false`.
+- `obliqueRouteProvidesGaugeCouplingNormalization=false`.
+- `obliqueRouteProvidesAbsoluteWzScale=false`.
+- `obliqueRouteProvidesObservedFieldExtraction=false`.
+- `obliqueRouteProvidesPhotonWzProjectionRows=false`.
+- `obliqueRouteProvidesNeutralMassMatrixDiagonalization=false`.
+- `obliqueRouteProvidesHiggsScalarSelfCouplingSource=false`.
+- `obliqueRoutePromotesWzMasses=false`.
+- `obliqueRoutePromotesHiggsMass=false`.
+- `obliqueRouteCompletesBosonPredictions=false`.
+- `canFillPhase201WzContract=false`.
+- `canFillPhase201HiggsContract=false`.
+- `canFillPhase256ObservedFieldExtractionContract=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs absolute masses from S/T/U oblique parameters.
+They are valid vacuum-polarization fit constraints and BSM consistency
+diagnostics, but they do not derive the missing GU-local electroweak VEV,
+weak-mixing angle, gauge-coupling normalization, W/Z absolute scale, observed
+photon/W/Z/H projection rows, or Higgs scalar-source/self-coupling lineage.
+
+### Validation
+
+- Targeted Phase327 run passed with:
+  - `obliquePrecisionElectroweakSourceAuditPassed=true`.
+  - `obliqueParametersSummarizeVacuumPolarizationCorrections=true`.
+  - `obliqueRouteProvidesWeakMixingAngleSource=false`.
+  - `obliqueRouteProvidesAbsoluteWzScale=false`.
+  - `canFillPhase201WzContract=false`.
+- P101 regenerated with Phase327 included and remained
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase327 included and remained
+  `objectiveAchieved=false`, with `checklistPassedCount=120` and
+  `checklistFailedCount=3`.
+- Claim-integrity verifier passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns after adding Phase327 found no intake-ready artifacts:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `canPromoteHiggsQuarticSelfCouplingSource=false` and
+    `intakeReadyFindingCount=0`.
+  - P281 `geometricRefractiveUnificationSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P295 `intakeReadyObservedFieldExtractionCandidateCount=0` and
+    `anyObservedFieldExtractionCandidateFillsContract=false`.
+  - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
+    `anySourceLineageCandidateFillsContract=false`.
+- First full generator attempt failed in claim-integrity validation because
+  Phase279's technicolor local search treated generated Phase327 material as a
+  non-generated local technicolor hit:
+  - P279 reported `technicolorWalkingElectroweakScaleSourceAuditPassed=false`
+    and `localSearchMatchingFileCount=1`.
+  - Phase327 consequently reported
+    `obliquePrecisionElectroweakSourceAuditPassed=false`.
+  - P202 dropped to `checklistPassedCount=118` and `checklistFailedCount=5`.
+- Patched Phase279's generated/current-phase exclusion list to exclude
+  `studies/phase327_oblique_precision_electroweak_source_audit_001/` and
+  `docs/Phases/Implementation/IMPLEMENTATION_P327.md`.
+- Targeted rerun after that patch restored:
+  - P279 `technicolorWalkingElectroweakScaleSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - Phase327 `obliquePrecisionElectroweakSourceAuditPassed=true`.
+  - P101 `internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - P202 `objectiveAchieved=false`, `checklistPassedCount=120`,
+    `checklistFailedCount=3`.
+  - Claim-integrity verifier passed with `promotedPhysicalMassClaimCount=0`.
+- Full `./scripts/generate_validated_boson_predictions.sh` then passed with
+  Phase327 in both generator passes, ending with P101 blocked, P202 incomplete
+  at `checklistPassedCount=120` / `checklistFailedCount=3`, and claim
+  integrity verified.
+- `dotnet test GeometricUnity.slnx` passed. The existing xUnit analyzer warning
+  in `QuantitativeValidationTests.cs(315,9)` remains present.
+- `git diff --check` passed.
+
 ## 2026-05-20 - Phase321 Neutral Electroweak Mixing Source Audit
 
 ### Question

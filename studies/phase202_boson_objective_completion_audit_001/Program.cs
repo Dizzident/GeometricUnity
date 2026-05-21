@@ -92,6 +92,7 @@ const string Phase323Path = "studies/phase323_coupled_yang_mills_higgs_mass_extr
 const string Phase324Path = "studies/phase324_custodial_rho_parameter_source_audit_001/output/custodial_rho_parameter_source_audit_summary.json";
 const string Phase325Path = "studies/phase325_electroweak_unitarity_scattering_source_audit_001/output/electroweak_unitarity_scattering_source_audit_summary.json";
 const string Phase326Path = "studies/phase326_anomaly_hypercharge_source_audit_001/output/anomaly_hypercharge_source_audit_summary.json";
+const string Phase327Path = "studies/phase327_oblique_precision_electroweak_source_audit_001/output/oblique_precision_electroweak_source_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -217,6 +218,7 @@ using var phase323 = File.Exists(Phase323Path) ? JsonDocument.Parse(File.ReadAll
 using var phase324 = File.Exists(Phase324Path) ? JsonDocument.Parse(File.ReadAllText(Phase324Path)) : null;
 using var phase325 = File.Exists(Phase325Path) ? JsonDocument.Parse(File.ReadAllText(Phase325Path)) : null;
 using var phase326 = File.Exists(Phase326Path) ? JsonDocument.Parse(File.ReadAllText(Phase326Path)) : null;
+using var phase327 = File.Exists(Phase327Path) ? JsonDocument.Parse(File.ReadAllText(Phase327Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -1401,6 +1403,33 @@ var anomalyHyperchargeSourceAuditPassed = anomalyHyperchargeSourceAuditMateriali
     && JsonInt(p326ContractImpact, "wzMissingFieldCount") == wzMissingFieldCount
     && JsonInt(p326ContractImpact, "higgsMissingFieldCount") == higgsMissingFieldCount
     && JsonInt(p326ContractImpact, "observedFieldExtractionFilledRequiredFieldCount") == 0;
+var obliquePrecisionElectroweakSourceAuditMaterialized = phase327 is not null;
+var obliquePrecisionElectroweakSourceAuditPassed = obliquePrecisionElectroweakSourceAuditMaterialized
+    && JsonBool(phase327!.RootElement, "obliquePrecisionElectroweakSourceAuditPassed") is true
+    && JsonBool(phase327.RootElement, "obliqueParametersSummarizeVacuumPolarizationCorrections") is true
+    && JsonBool(phase327.RootElement, "obliqueParametersConstrainNewPhysics") is true
+    && JsonBool(phase327.RootElement, "obliqueFitUsesPrecisionWzData") is true
+    && JsonBool(phase327.RootElement, "obliqueRouteProvidesFitConstraint") is true
+    && JsonBool(phase327.RootElement, "obliqueRouteProvidesLoopCorrectionParameterization") is true
+    && JsonBool(phase327.RootElement, "obliqueRouteProvidesExactTreeLevelMassSource") is false
+    && JsonBool(phase327.RootElement, "obliqueRouteProvidesTargetIndependentVevSource") is false
+    && JsonBool(phase327.RootElement, "obliqueRouteProvidesWeakMixingAngleSource") is false
+    && JsonBool(phase327.RootElement, "obliqueRouteProvidesGaugeCouplingNormalization") is false
+    && JsonBool(phase327.RootElement, "obliqueRouteProvidesAbsoluteWzScale") is false
+    && JsonBool(phase327.RootElement, "obliqueRouteProvidesObservedFieldExtraction") is false
+    && JsonBool(phase327.RootElement, "obliqueRouteProvidesPhotonWzProjectionRows") is false
+    && JsonBool(phase327.RootElement, "obliqueRouteProvidesNeutralMassMatrixDiagonalization") is false
+    && JsonBool(phase327.RootElement, "obliqueRouteProvidesHiggsScalarSelfCouplingSource") is false
+    && JsonBool(phase327.RootElement, "obliqueRoutePromotesWzMasses") is false
+    && JsonBool(phase327.RootElement, "obliqueRoutePromotesHiggsMass") is false
+    && JsonBool(phase327.RootElement, "obliqueRouteCompletesBosonPredictions") is false
+    && JsonBool(phase327.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase327.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase327.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && phase327.RootElement.TryGetProperty("contractImpact", out var p327ContractImpact)
+    && JsonInt(p327ContractImpact, "wzMissingFieldCount") == wzMissingFieldCount
+    && JsonInt(p327ContractImpact, "higgsMissingFieldCount") == higgsMissingFieldCount
+    && JsonInt(p327ContractImpact, "observedFieldExtractionFilledRequiredFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -2986,6 +3015,14 @@ var checklist = new[]
             : "Phase326 artifact not materialized",
         Phase326Path),
     new ObjectiveChecklistItem(
+        "oblique-precision-electroweak-source-audit-materialized",
+        "Audit whether precision electroweak oblique parameters can supply a target-independent W/Z or Higgs mass source.",
+        obliquePrecisionElectroweakSourceAuditPassed ? "passed" : "failed",
+        obliquePrecisionElectroweakSourceAuditMaterialized
+            ? $"obliquePrecisionElectroweakSourceAuditPassed={JsonBool(phase327!.RootElement, "obliquePrecisionElectroweakSourceAuditPassed")}; obliqueParametersSummarizeVacuumPolarizationCorrections={JsonBool(phase327.RootElement, "obliqueParametersSummarizeVacuumPolarizationCorrections")}; obliqueParametersConstrainNewPhysics={JsonBool(phase327.RootElement, "obliqueParametersConstrainNewPhysics")}; obliqueFitUsesPrecisionWzData={JsonBool(phase327.RootElement, "obliqueFitUsesPrecisionWzData")}; obliqueRouteProvidesFitConstraint={JsonBool(phase327.RootElement, "obliqueRouteProvidesFitConstraint")}; obliqueRouteProvidesLoopCorrectionParameterization={JsonBool(phase327.RootElement, "obliqueRouteProvidesLoopCorrectionParameterization")}; obliqueRouteProvidesWeakMixingAngleSource={JsonBool(phase327.RootElement, "obliqueRouteProvidesWeakMixingAngleSource")}; obliqueRouteProvidesTargetIndependentVevSource={JsonBool(phase327.RootElement, "obliqueRouteProvidesTargetIndependentVevSource")}; obliqueRouteProvidesAbsoluteWzScale={JsonBool(phase327.RootElement, "obliqueRouteProvidesAbsoluteWzScale")}; obliqueRouteProvidesObservedFieldExtraction={JsonBool(phase327.RootElement, "obliqueRouteProvidesObservedFieldExtraction")}; obliqueRouteCompletesBosonPredictions={JsonBool(phase327.RootElement, "obliqueRouteCompletesBosonPredictions")}; canFillPhase201WzContract={JsonBool(phase327.RootElement, "canFillPhase201WzContract")}; canFillPhase201HiggsContract={JsonBool(phase327.RootElement, "canFillPhase201HiggsContract")}; decision={JsonString(phase327.RootElement, "decision")}"
+            : "Phase327 artifact not materialized",
+        Phase327Path),
+    new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
         branchLocalDirectInvariantCensusPassed ? "passed" : "failed",
@@ -3322,6 +3359,7 @@ var result = new
         "Standalone custodial rho-parameter relation is audited as a ratio constraint, not an absolute source.",
         "Electroweak perturbative-unitarity scattering route is audited as a consistency bound, not an exact source.",
         "Anomaly cancellation and hypercharge quantization are audited as consistency constraints, not exact boson-mass sources.",
+        "Precision electroweak oblique parameters are audited as fit constraints, not exact boson-mass sources.",
         "Observed-field extraction contract fields are scanned for intake-ready local artifacts.",
         "W/Z and Higgs source-lineage contract fields are scanned for intake-ready local artifacts.",
         "Those contracts are filled with promotable target-independent evidence.",
@@ -3348,6 +3386,7 @@ var result = new
     custodialRhoParameterSourceAuditPassed,
     electroweakUnitarityScatteringSourceAuditPassed,
     anomalyHyperchargeSourceAuditPassed,
+    obliquePrecisionElectroweakSourceAuditPassed,
     parameterSourceContractCandidateScanPassed,
     phase288CoverageFalseNegativeAuditPassed,
     chargedLeptonThresholdSourceReplacementAuditPassed,
@@ -3459,6 +3498,7 @@ var result = new
         phase324Path = Phase324Path,
         phase325Path = Phase325Path,
         phase326Path = Phase326Path,
+        phase327Path = Phase327Path,
         phase282Path = Phase282Path,
         phase283Path = Phase283Path,
         phase284Path = Phase284Path,

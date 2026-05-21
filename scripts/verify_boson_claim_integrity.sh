@@ -96,6 +96,7 @@ const paths = {
   phase324: "studies/phase324_custodial_rho_parameter_source_audit_001/output/custodial_rho_parameter_source_audit_summary.json",
   phase325: "studies/phase325_electroweak_unitarity_scattering_source_audit_001/output/electroweak_unitarity_scattering_source_audit_summary.json",
   phase326: "studies/phase326_anomaly_hypercharge_source_audit_001/output/anomaly_hypercharge_source_audit_summary.json",
+  phase327: "studies/phase327_oblique_precision_electroweak_source_audit_001/output/oblique_precision_electroweak_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -263,6 +264,7 @@ const phase323 = requireFile(paths.phase323);
 const phase324 = requireFile(paths.phase324);
 const phase325 = requireFile(paths.phase325);
 const phase326 = requireFile(paths.phase326);
+const phase327 = requireFile(paths.phase327);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -1525,6 +1527,30 @@ if (sourceLineageMissing) {
   assert(phase326.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase326 W/Z missing-field count must match Phase213.");
   assert(phase326.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase326 Higgs missing-field count must match Phase213.");
   assert(phase326.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase326 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase327.obliquePrecisionElectroweakSourceAuditPassed === true, "Phase327 oblique precision electroweak source audit must pass while preserving non-promotional status.");
+  assert(phase327.obliqueParametersSummarizeVacuumPolarizationCorrections === true, "Phase327 must record oblique parameters as vacuum-polarization corrections.");
+  assert(phase327.obliqueParametersConstrainNewPhysics === true, "Phase327 must record oblique parameters as new-physics constraints.");
+  assert(phase327.obliqueFitUsesPrecisionWzData === true, "Phase327 must record the precision W/Z-data fit context.");
+  assert(phase327.obliqueRouteProvidesFitConstraint === true, "Phase327 must classify S/T/U as fit constraints.");
+  assert(phase327.obliqueRouteProvidesLoopCorrectionParameterization === true, "Phase327 must classify S/T/U as loop-correction parameterization.");
+  assert(phase327.obliqueRouteProvidesExactTreeLevelMassSource === false, "Phase327 cannot claim an exact tree-level mass source from oblique parameters.");
+  assert(phase327.obliqueRouteProvidesTargetIndependentVevSource === false, "Phase327 cannot claim a target-independent VEV source from oblique parameters.");
+  assert(phase327.obliqueRouteProvidesWeakMixingAngleSource === false, "Phase327 cannot claim a weak-mixing source from oblique parameters.");
+  assert(phase327.obliqueRouteProvidesGaugeCouplingNormalization === false, "Phase327 cannot claim gauge-coupling normalization from oblique parameters.");
+  assert(phase327.obliqueRouteProvidesAbsoluteWzScale === false, "Phase327 cannot claim an absolute W/Z scale from oblique parameters.");
+  assert(phase327.obliqueRouteProvidesObservedFieldExtraction === false, "Phase327 cannot claim observed-field extraction from oblique parameters.");
+  assert(phase327.obliqueRouteProvidesPhotonWzProjectionRows === false, "Phase327 cannot claim photon/W/Z projection rows from oblique parameters.");
+  assert(phase327.obliqueRouteProvidesNeutralMassMatrixDiagonalization === false, "Phase327 cannot claim neutral mass-matrix diagonalization from oblique parameters.");
+  assert(phase327.obliqueRouteProvidesHiggsScalarSelfCouplingSource === false, "Phase327 cannot claim a Higgs scalar self-coupling source from oblique parameters.");
+  assert(phase327.obliqueRoutePromotesWzMasses === false, "Phase327 cannot promote W/Z masses through the oblique route.");
+  assert(phase327.obliqueRoutePromotesHiggsMass === false, "Phase327 cannot promote Higgs mass through the oblique route.");
+  assert(phase327.obliqueRouteCompletesBosonPredictions === false, "Phase327 cannot complete boson predictions through the oblique route.");
+  assert(phase327.contractImpact?.canFillPhase201WzContract === false, "Phase327 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase327.contractImpact?.canFillPhase201HiggsContract === false, "Phase327 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase327.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase327 contract impact must keep Phase256 unfilled.");
+  assert(phase327.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase327 W/Z missing-field count must match Phase213.");
+  assert(phase327.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase327 Higgs missing-field count must match Phase213.");
+  assert(phase327.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase327 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");
