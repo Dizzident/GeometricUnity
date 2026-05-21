@@ -182,6 +182,7 @@ const string Phase321NeutralElectroweakMixingSourceAuditPath = "studies/phase321
 const string Phase322HiggsUpsilonScalarSourceBoundaryAuditPath = "studies/phase322_higgs_upsilon_scalar_source_boundary_audit_001/output/higgs_upsilon_scalar_source_boundary_audit.json";
 const string Phase323CoupledYangMillsHiggsMassExtractionAuditPath = "studies/phase323_coupled_yang_mills_higgs_mass_extraction_audit_001/output/coupled_yang_mills_higgs_mass_extraction_audit.json";
 const string Phase324CustodialRhoParameterSourceAuditPath = "studies/phase324_custodial_rho_parameter_source_audit_001/output/custodial_rho_parameter_source_audit.json";
+const string Phase325ElectroweakUnitarityScatteringSourceAuditPath = "studies/phase325_electroweak_unitarity_scattering_source_audit_001/output/electroweak_unitarity_scattering_source_audit.json";
 const string Phase282BranchLocalDirectInvariantCensusPath = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census.json";
 const string Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit.json";
 const string Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic.json";
@@ -384,6 +385,7 @@ using var phase321 = TryParseJson(Phase321NeutralElectroweakMixingSourceAuditPat
 using var phase322 = TryParseJson(Phase322HiggsUpsilonScalarSourceBoundaryAuditPath);
 using var phase323 = TryParseJson(Phase323CoupledYangMillsHiggsMassExtractionAuditPath);
 using var phase324 = TryParseJson(Phase324CustodialRhoParameterSourceAuditPath);
+using var phase325 = TryParseJson(Phase325ElectroweakUnitarityScatteringSourceAuditPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -649,6 +651,7 @@ var package = new
         higgsUpsilonScalarSourceBoundaryAuditPath = File.Exists(Phase322HiggsUpsilonScalarSourceBoundaryAuditPath) ? Phase322HiggsUpsilonScalarSourceBoundaryAuditPath : null,
         coupledYangMillsHiggsMassExtractionAuditPath = File.Exists(Phase323CoupledYangMillsHiggsMassExtractionAuditPath) ? Phase323CoupledYangMillsHiggsMassExtractionAuditPath : null,
         custodialRhoParameterSourceAuditPath = File.Exists(Phase324CustodialRhoParameterSourceAuditPath) ? Phase324CustodialRhoParameterSourceAuditPath : null,
+        electroweakUnitarityScatteringSourceAuditPath = File.Exists(Phase325ElectroweakUnitarityScatteringSourceAuditPath) ? Phase325ElectroweakUnitarityScatteringSourceAuditPath : null,
         branchLocalDirectInvariantCensusPath = File.Exists(Phase282BranchLocalDirectInvariantCensusPath) ? Phase282BranchLocalDirectInvariantCensusPath : null,
         legacyElectroweakBridgeSourceSurvivabilityAuditPath = File.Exists(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath) ? Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath : null,
         predictedRatioAlphaGfExternalClosureDiagnosticPath = File.Exists(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath) ? Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath : null,
@@ -2629,6 +2632,40 @@ var package = new
                 ? JsonInt(p324ContractImpact, "observedFieldExtractionFilledRequiredFieldCount")
                 : null,
             decision = JsonString(phase324.RootElement, "decision"),
+        }
+        : null,
+    electroweakUnitarityScatteringSourceAudit = phase325 is not null
+        ? new
+        {
+            status = JsonString(phase325.RootElement, "terminalStatus"),
+            electroweakUnitarityScatteringSourceAuditPassed = JsonBool(phase325.RootElement, "electroweakUnitarityScatteringSourceAuditPassed"),
+            longitudinalWzScatteringUnitarityLeadPresent = JsonBool(phase325.RootElement, "longitudinalWzScatteringUnitarityLeadPresent"),
+            higgsRestoresPerturbativeUnitarityLeadPresent = JsonBool(phase325.RootElement, "higgsRestoresPerturbativeUnitarityLeadPresent"),
+            unitarityRouteProvidesConsistencyBound = JsonBool(phase325.RootElement, "unitarityRouteProvidesConsistencyBound"),
+            unitarityRouteProvidesUpperBoundOnly = JsonBool(phase325.RootElement, "unitarityRouteProvidesUpperBoundOnly"),
+            unitarityRouteProvidesExactHiggsMass = JsonBool(phase325.RootElement, "unitarityRouteProvidesExactHiggsMass"),
+            unitarityRouteProvidesAbsoluteWzScale = JsonBool(phase325.RootElement, "unitarityRouteProvidesAbsoluteWzScale"),
+            unitarityRouteProvidesWeakMixingAngleSource = JsonBool(phase325.RootElement, "unitarityRouteProvidesWeakMixingAngleSource"),
+            unitarityRouteProvidesTargetIndependentVevSource = JsonBool(phase325.RootElement, "unitarityRouteProvidesTargetIndependentVevSource"),
+            unitarityRouteProvidesGaugeCouplingNormalization = JsonBool(phase325.RootElement, "unitarityRouteProvidesGaugeCouplingNormalization"),
+            unitarityRouteProvidesObservedFieldExtraction = JsonBool(phase325.RootElement, "unitarityRouteProvidesObservedFieldExtraction"),
+            unitarityRouteProvidesHiggsScalarSelfCouplingSource = JsonBool(phase325.RootElement, "unitarityRouteProvidesHiggsScalarSelfCouplingSource"),
+            unitarityRoutePromotesWzMasses = JsonBool(phase325.RootElement, "unitarityRoutePromotesWzMasses"),
+            unitarityRoutePromotesHiggsMass = JsonBool(phase325.RootElement, "unitarityRoutePromotesHiggsMass"),
+            unitarityRouteCompletesBosonPredictions = JsonBool(phase325.RootElement, "unitarityRouteCompletesBosonPredictions"),
+            canFillPhase201WzContract = JsonBool(phase325.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase325.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase325.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            wzMissingFieldCount = phase325.RootElement.TryGetProperty("contractImpact", out var p325ContractImpact)
+                ? JsonInt(p325ContractImpact, "wzMissingFieldCount")
+                : null,
+            higgsMissingFieldCount = phase325.RootElement.TryGetProperty("contractImpact", out p325ContractImpact)
+                ? JsonInt(p325ContractImpact, "higgsMissingFieldCount")
+                : null,
+            observedFieldExtractionFilledRequiredFieldCount = phase325.RootElement.TryGetProperty("contractImpact", out p325ContractImpact)
+                ? JsonInt(p325ContractImpact, "observedFieldExtractionFilledRequiredFieldCount")
+                : null,
+            decision = JsonString(phase325.RootElement, "decision"),
         }
         : null,
     branchLocalDirectInvariantCensus = phase282 is not null
@@ -5049,6 +5086,18 @@ var summary = new
         : null,
     custodialRhoRouteCompletesBosonPredictions = phase324 is not null
         ? JsonBool(phase324.RootElement, "custodialRouteCompletesBosonPredictions")
+        : null,
+    electroweakUnitarityScatteringSourceAuditPassed = phase325 is not null
+        ? JsonBool(phase325.RootElement, "electroweakUnitarityScatteringSourceAuditPassed")
+        : null,
+    unitarityRouteProvidesUpperBoundOnly = phase325 is not null
+        ? JsonBool(phase325.RootElement, "unitarityRouteProvidesUpperBoundOnly")
+        : null,
+    unitarityRouteProvidesExactHiggsMass = phase325 is not null
+        ? JsonBool(phase325.RootElement, "unitarityRouteProvidesExactHiggsMass")
+        : null,
+    unitarityRouteCompletesBosonPredictions = phase325 is not null
+        ? JsonBool(phase325.RootElement, "unitarityRouteCompletesBosonPredictions")
         : null,
     branchLocalInvariantCensusPassed = phase282 is not null
         ? JsonBool(phase282.RootElement, "branchLocalInvariantCensusPassed")

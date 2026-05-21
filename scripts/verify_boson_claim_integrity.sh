@@ -94,6 +94,7 @@ const paths = {
   phase322: "studies/phase322_higgs_upsilon_scalar_source_boundary_audit_001/output/higgs_upsilon_scalar_source_boundary_audit_summary.json",
   phase323: "studies/phase323_coupled_yang_mills_higgs_mass_extraction_audit_001/output/coupled_yang_mills_higgs_mass_extraction_audit_summary.json",
   phase324: "studies/phase324_custodial_rho_parameter_source_audit_001/output/custodial_rho_parameter_source_audit_summary.json",
+  phase325: "studies/phase325_electroweak_unitarity_scattering_source_audit_001/output/electroweak_unitarity_scattering_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -259,6 +260,7 @@ const phase321 = requireFile(paths.phase321);
 const phase322 = requireFile(paths.phase322);
 const phase323 = requireFile(paths.phase323);
 const phase324 = requireFile(paths.phase324);
+const phase325 = requireFile(paths.phase325);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -1476,6 +1478,27 @@ if (sourceLineageMissing) {
   assert(phase324.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase324 W/Z missing-field count must match Phase213.");
   assert(phase324.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase324 Higgs missing-field count must match Phase213.");
   assert(phase324.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase324 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase325.electroweakUnitarityScatteringSourceAuditPassed === true, "Phase325 electroweak unitarity scattering source audit must pass while preserving non-promotional status.");
+  assert(phase325.longitudinalWzScatteringUnitarityLeadPresent === true, "Phase325 must preserve longitudinal W/Z scattering unitarity evidence.");
+  assert(phase325.higgsRestoresPerturbativeUnitarityLeadPresent === true, "Phase325 must preserve the Higgs perturbative-unitarity lead.");
+  assert(phase325.unitarityRouteProvidesConsistencyBound === true, "Phase325 must record the unitarity route as a consistency bound.");
+  assert(phase325.unitarityRouteProvidesUpperBoundOnly === true, "Phase325 must record the unitarity route as upper-bound-only.");
+  assert(phase325.unitarityRouteProvidesExactHiggsMass === false, "Phase325 cannot claim an exact Higgs mass from unitarity.");
+  assert(phase325.unitarityRouteProvidesAbsoluteWzScale === false, "Phase325 cannot claim an absolute W/Z scale from unitarity.");
+  assert(phase325.unitarityRouteProvidesWeakMixingAngleSource === false, "Phase325 cannot claim a weak-mixing source from unitarity.");
+  assert(phase325.unitarityRouteProvidesTargetIndependentVevSource === false, "Phase325 cannot claim a target-independent VEV source from unitarity.");
+  assert(phase325.unitarityRouteProvidesGaugeCouplingNormalization === false, "Phase325 cannot claim gauge-coupling normalization from unitarity.");
+  assert(phase325.unitarityRouteProvidesObservedFieldExtraction === false, "Phase325 cannot claim observed-field extraction from unitarity.");
+  assert(phase325.unitarityRouteProvidesHiggsScalarSelfCouplingSource === false, "Phase325 cannot claim a Higgs scalar self-coupling source from unitarity.");
+  assert(phase325.unitarityRoutePromotesWzMasses === false, "Phase325 cannot promote W/Z masses through the unitarity route.");
+  assert(phase325.unitarityRoutePromotesHiggsMass === false, "Phase325 cannot promote Higgs mass through the unitarity route.");
+  assert(phase325.unitarityRouteCompletesBosonPredictions === false, "Phase325 cannot complete boson predictions through the unitarity route.");
+  assert(phase325.contractImpact?.canFillPhase201WzContract === false, "Phase325 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase325.contractImpact?.canFillPhase201HiggsContract === false, "Phase325 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase325.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase325 contract impact must keep Phase256 unfilled.");
+  assert(phase325.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase325 W/Z missing-field count must match Phase213.");
+  assert(phase325.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase325 Higgs missing-field count must match Phase213.");
+  assert(phase325.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase325 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

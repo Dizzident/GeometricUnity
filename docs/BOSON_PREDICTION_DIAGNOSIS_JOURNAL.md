@@ -8070,6 +8070,109 @@ contracts.
   in `QuantitativeValidationTests.cs(315,9)` remains present.
 - `git diff --check` passed.
 
+## 2026-05-21 - Phase325 Electroweak Unitarity Scattering Source Audit
+
+### Question
+
+Audit the perturbative-unitarity / longitudinal W/Z scattering route. The
+loophole is that high-energy W/Z scattering is a real Higgs-sector constraint,
+so it can look like a route to W/Z/H masses even if it only supplies a
+consistency bound rather than target-independent source rows.
+
+### Research
+
+- Reviewed the PDG 2025 Higgs review:
+  `https://pdgweb.lbl.gov/2025/reviews/rpp2025-rev-higgs-boson.pdf`.
+  It records the Higgs role in preserving perturbative unitarity in
+  longitudinal W/Z scattering, while still treating the electroweak VEV and
+  couplings as external Standard Model inputs rather than GU-local source rows.
+- Reviewed the Lee, Quigg, and Thacker CERN record:
+  `https://cds.cern.ch/record/423909`.
+  The classic route is a longitudinal weak-boson scattering unitarity bound on
+  Higgs-sector behavior, not an exact Higgs mass or W/Z absolute-scale source.
+- Rechecked Phase244 and Phase245. The current promoted W/Z ratio still has
+  rank one and leaves the common W/Z scale and Higgs scalar scale unfilled.
+- Rechecked Phase313, Phase317, Phase320, Phase321, Phase322, Phase323, and
+  Phase324. Existing standard-model and GU-boundary audits still lack the
+  weak-mixing source, target-independent VEV, gauge-coupling normalization,
+  photon/W/Z/H projection rows, and Higgs scalar-source/self-coupling lineage
+  needed for promotion.
+
+### Actions
+
+- Added
+  `studies/phase325_electroweak_unitarity_scattering_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P325.md`.
+- Wired Phase325 into the generator, P101 package, P202 objective completion
+  audit, claim-integrity verifier, and scanner exclusions.
+
+### Current Expected Outcome
+
+Phase325 is expected to pass only as a negative boundary audit:
+
+- `electroweakUnitarityScatteringSourceAuditPassed=true`.
+- `longitudinalWzScatteringUnitarityLeadPresent=true`.
+- `higgsRestoresPerturbativeUnitarityLeadPresent=true`.
+- `unitarityRouteProvidesConsistencyBound=true`.
+- `unitarityRouteProvidesUpperBoundOnly=true`.
+- `unitarityRouteProvidesExactHiggsMass=false`.
+- `unitarityRouteProvidesAbsoluteWzScale=false`.
+- `unitarityRouteProvidesWeakMixingAngleSource=false`.
+- `unitarityRouteProvidesTargetIndependentVevSource=false`.
+- `unitarityRouteProvidesGaugeCouplingNormalization=false`.
+- `unitarityRouteProvidesObservedFieldExtraction=false`.
+- `unitarityRouteProvidesHiggsScalarSelfCouplingSource=false`.
+- `unitarityRoutePromotesWzMasses=false`.
+- `unitarityRoutePromotesHiggsMass=false`.
+- `unitarityRouteCompletesBosonPredictions=false`.
+- `canFillPhase201WzContract=false`.
+- `canFillPhase201HiggsContract=false`.
+- `canFillPhase256ObservedFieldExtractionContract=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs absolute masses from perturbative unitarity or
+longitudinal W/Z scattering. The argument is valid external electroweak
+physics and supports the need for a Higgs/EWSB mechanism, but it does not
+derive an exact Higgs mass, W/Z absolute scale, weak-mixing angle,
+gauge-coupling normalization, target-independent VEV, observed
+photon/W/Z/H rows, or GU Higgs scalar-source/self-coupling lineage.
+
+### Validation
+
+- Targeted Phase325 run passed with:
+  - `electroweakUnitarityScatteringSourceAuditPassed=true`.
+  - `longitudinalWzScatteringUnitarityLeadPresent=true`.
+  - `unitarityRouteProvidesUpperBoundOnly=true`.
+  - `unitarityRouteProvidesExactHiggsMass=false`.
+  - `canFillPhase201WzContract=false`.
+- P101 regenerated with Phase325 included and remained
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase325 included and remained
+  `objectiveAchieved=false`, with `checklistPassedCount=118` and
+  `checklistFailedCount=3`.
+- Claim-integrity verifier passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns after adding Phase325 found no intake-ready artifacts:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `canPromoteHiggsQuarticSelfCouplingSource=false` and
+    `intakeReadyFindingCount=0`.
+  - P281 `geometricRefractiveUnificationSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P295 `intakeReadyObservedFieldExtractionCandidateCount=0` and
+    `anyObservedFieldExtractionCandidateFillsContract=false`.
+  - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
+    `anySourceLineageCandidateFillsContract=false`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed with
+  Phase325 in both generator passes, ending with P101 blocked, P202 incomplete
+  at `checklistPassedCount=118` / `checklistFailedCount=3`, and claim
+  integrity verified.
+- `dotnet test GeometricUnity.slnx` passed. The existing xUnit analyzer warning
+  in `QuantitativeValidationTests.cs(315,9)` remains present.
+- `git diff --check` passed.
+
 ## 2026-05-20 - Phase321 Neutral Electroweak Mixing Source Audit
 
 ### Question

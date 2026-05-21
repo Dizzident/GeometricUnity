@@ -90,6 +90,7 @@ const string Phase321Path = "studies/phase321_neutral_electroweak_mixing_source_
 const string Phase322Path = "studies/phase322_higgs_upsilon_scalar_source_boundary_audit_001/output/higgs_upsilon_scalar_source_boundary_audit_summary.json";
 const string Phase323Path = "studies/phase323_coupled_yang_mills_higgs_mass_extraction_audit_001/output/coupled_yang_mills_higgs_mass_extraction_audit_summary.json";
 const string Phase324Path = "studies/phase324_custodial_rho_parameter_source_audit_001/output/custodial_rho_parameter_source_audit_summary.json";
+const string Phase325Path = "studies/phase325_electroweak_unitarity_scattering_source_audit_001/output/electroweak_unitarity_scattering_source_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -213,6 +214,7 @@ using var phase321 = File.Exists(Phase321Path) ? JsonDocument.Parse(File.ReadAll
 using var phase322 = File.Exists(Phase322Path) ? JsonDocument.Parse(File.ReadAllText(Phase322Path)) : null;
 using var phase323 = File.Exists(Phase323Path) ? JsonDocument.Parse(File.ReadAllText(Phase323Path)) : null;
 using var phase324 = File.Exists(Phase324Path) ? JsonDocument.Parse(File.ReadAllText(Phase324Path)) : null;
+using var phase325 = File.Exists(Phase325Path) ? JsonDocument.Parse(File.ReadAllText(Phase325Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -1346,6 +1348,30 @@ var custodialRhoParameterSourceAuditPassed = custodialRhoParameterSourceAuditMat
     && JsonInt(p324ContractImpact, "wzMissingFieldCount") == wzMissingFieldCount
     && JsonInt(p324ContractImpact, "higgsMissingFieldCount") == higgsMissingFieldCount
     && JsonInt(p324ContractImpact, "observedFieldExtractionFilledRequiredFieldCount") == 0;
+var electroweakUnitarityScatteringSourceAuditMaterialized = phase325 is not null;
+var electroweakUnitarityScatteringSourceAuditPassed = electroweakUnitarityScatteringSourceAuditMaterialized
+    && JsonBool(phase325!.RootElement, "electroweakUnitarityScatteringSourceAuditPassed") is true
+    && JsonBool(phase325.RootElement, "longitudinalWzScatteringUnitarityLeadPresent") is true
+    && JsonBool(phase325.RootElement, "higgsRestoresPerturbativeUnitarityLeadPresent") is true
+    && JsonBool(phase325.RootElement, "unitarityRouteProvidesConsistencyBound") is true
+    && JsonBool(phase325.RootElement, "unitarityRouteProvidesUpperBoundOnly") is true
+    && JsonBool(phase325.RootElement, "unitarityRouteProvidesExactHiggsMass") is false
+    && JsonBool(phase325.RootElement, "unitarityRouteProvidesAbsoluteWzScale") is false
+    && JsonBool(phase325.RootElement, "unitarityRouteProvidesWeakMixingAngleSource") is false
+    && JsonBool(phase325.RootElement, "unitarityRouteProvidesTargetIndependentVevSource") is false
+    && JsonBool(phase325.RootElement, "unitarityRouteProvidesGaugeCouplingNormalization") is false
+    && JsonBool(phase325.RootElement, "unitarityRouteProvidesObservedFieldExtraction") is false
+    && JsonBool(phase325.RootElement, "unitarityRouteProvidesHiggsScalarSelfCouplingSource") is false
+    && JsonBool(phase325.RootElement, "unitarityRoutePromotesWzMasses") is false
+    && JsonBool(phase325.RootElement, "unitarityRoutePromotesHiggsMass") is false
+    && JsonBool(phase325.RootElement, "unitarityRouteCompletesBosonPredictions") is false
+    && JsonBool(phase325.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase325.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase325.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && phase325.RootElement.TryGetProperty("contractImpact", out var p325ContractImpact)
+    && JsonInt(p325ContractImpact, "wzMissingFieldCount") == wzMissingFieldCount
+    && JsonInt(p325ContractImpact, "higgsMissingFieldCount") == higgsMissingFieldCount
+    && JsonInt(p325ContractImpact, "observedFieldExtractionFilledRequiredFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -2915,6 +2941,14 @@ var checklist = new[]
             : "Phase324 artifact not materialized",
         Phase324Path),
     new ObjectiveChecklistItem(
+        "electroweak-unitarity-scattering-source-audit-materialized",
+        "Audit whether longitudinal W/Z scattering perturbative unitarity can supply a target-independent W/Z or Higgs mass source.",
+        electroweakUnitarityScatteringSourceAuditPassed ? "passed" : "failed",
+        electroweakUnitarityScatteringSourceAuditMaterialized
+            ? $"electroweakUnitarityScatteringSourceAuditPassed={JsonBool(phase325!.RootElement, "electroweakUnitarityScatteringSourceAuditPassed")}; longitudinalWzScatteringUnitarityLeadPresent={JsonBool(phase325.RootElement, "longitudinalWzScatteringUnitarityLeadPresent")}; higgsRestoresPerturbativeUnitarityLeadPresent={JsonBool(phase325.RootElement, "higgsRestoresPerturbativeUnitarityLeadPresent")}; unitarityRouteProvidesUpperBoundOnly={JsonBool(phase325.RootElement, "unitarityRouteProvidesUpperBoundOnly")}; unitarityRouteProvidesExactHiggsMass={JsonBool(phase325.RootElement, "unitarityRouteProvidesExactHiggsMass")}; unitarityRouteProvidesAbsoluteWzScale={JsonBool(phase325.RootElement, "unitarityRouteProvidesAbsoluteWzScale")}; unitarityRouteProvidesTargetIndependentVevSource={JsonBool(phase325.RootElement, "unitarityRouteProvidesTargetIndependentVevSource")}; unitarityRouteProvidesObservedFieldExtraction={JsonBool(phase325.RootElement, "unitarityRouteProvidesObservedFieldExtraction")}; unitarityRouteCompletesBosonPredictions={JsonBool(phase325.RootElement, "unitarityRouteCompletesBosonPredictions")}; canFillPhase201WzContract={JsonBool(phase325.RootElement, "canFillPhase201WzContract")}; canFillPhase201HiggsContract={JsonBool(phase325.RootElement, "canFillPhase201HiggsContract")}; decision={JsonString(phase325.RootElement, "decision")}"
+            : "Phase325 artifact not materialized",
+        Phase325Path),
+    new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
         branchLocalDirectInvariantCensusPassed ? "passed" : "failed",
@@ -3249,6 +3283,7 @@ var result = new
         "Official draft electroweak placement is audited as symbolic location plus ratio support, not a physical photon/Z/W projection map.",
         "Legacy selector-spectrum W/Z absolute projections are audited as non-promotional source-law evidence.",
         "Standalone custodial rho-parameter relation is audited as a ratio constraint, not an absolute source.",
+        "Electroweak perturbative-unitarity scattering route is audited as a consistency bound, not an exact source.",
         "Observed-field extraction contract fields are scanned for intake-ready local artifacts.",
         "W/Z and Higgs source-lineage contract fields are scanned for intake-ready local artifacts.",
         "Those contracts are filled with promotable target-independent evidence.",
@@ -3273,6 +3308,7 @@ var result = new
     higgsUpsilonScalarSourceBoundaryAuditPassed,
     coupledYangMillsHiggsMassExtractionAuditPassed,
     custodialRhoParameterSourceAuditPassed,
+    electroweakUnitarityScatteringSourceAuditPassed,
     parameterSourceContractCandidateScanPassed,
     phase288CoverageFalseNegativeAuditPassed,
     chargedLeptonThresholdSourceReplacementAuditPassed,
@@ -3382,6 +3418,7 @@ var result = new
         phase322Path = Phase322Path,
         phase323Path = Phase323Path,
         phase324Path = Phase324Path,
+        phase325Path = Phase325Path,
         phase282Path = Phase282Path,
         phase283Path = Phase283Path,
         phase284Path = Phase284Path,
