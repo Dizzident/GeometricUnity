@@ -7771,6 +7771,105 @@ filled.
     `anyObservedFieldExtractionCandidateFillsContract=false`.
   - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
     `anySourceLineageCandidateFillsContract=false`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed with
+  Phase321 in both generator passes, ending with P101 blocked, P202 incomplete
+  at `checklistPassedCount=114` / `checklistFailedCount=3`, and claim
+  integrity verified.
+- `dotnet test GeometricUnity.slnx` passed.
+- `git diff --check` passed.
+
+## 2026-05-20 - Phase321 Neutral Electroweak Mixing Source Audit
+
+### Question
+
+After Phase320 showed that a W-like charged-ladder boundary is not enough,
+audit the neutral electroweak route directly. The question is whether existing
+GU artifacts can supply the missing target-independent hypercharge,
+weak-mixing-angle, photon/Z projection, and physical Z source-row evidence
+needed to promote W/Z predictions.
+
+### Research
+
+- Rechecked Phase25/26/27. Phase25 records SU(2)-adjoint identity features but
+  no charged/neutral sector signatures. Phase26 records the earlier blocked
+  convention state. Phase27 later supplies an internal Cartan charged/neutral
+  convention without external W/Z/photon targets, but its study explicitly
+  limits this to identity-rule readiness rather than physical boson prediction.
+- Rechecked Phase235 and Phase236. Phase235 supplies a Pati-Salam high-scale
+  hypercharge/weak-mixing boundary (`sin^2(theta_W)=3/8`) but says it is not a
+  low-energy W/Z prediction without a GU breaking scale, RG transport,
+  thresholds, and a low-energy hypercharge value. Phase236 confirms those
+  transport and low-energy hypercharge sources remain missing.
+- Rechecked Phase287, Phase313, Phase317, and Phase320. The official draft has
+  weak-isospin and weak-hypercharge location leads, but not a photon/Z
+  Weinberg rotation, unbroken electromagnetic generator, weak-mixing source,
+  neutral mass-matrix diagonalization, observed electroweak embedding, or
+  physical Z projection row. Standard electroweak theory supplies the external
+  dependency shape, not GU source lineage.
+
+### Actions
+
+- Added `studies/phase321_neutral_electroweak_mixing_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P321.md`.
+- Wired Phase321 into the generator, P101 package, P202 objective completion
+  audit, claim-integrity verifier, and scanner exclusions.
+
+### Current Expected Outcome
+
+Phase321 is expected to pass only as a negative boundary audit:
+
+- `neutralElectroweakMixingSourceAuditPassed=true`.
+- `phase27InternalCartanConventionReady=true`.
+- `patiSalamHyperchargeEmbeddingLeadPresent=true`.
+- `highScaleWeakMixingBoundaryPresent=true`.
+- `patiSalamNormalizationPromotableForLowEnergyWz=false`.
+- `lowEnergyRgTransportSourcePromotable=false`.
+- `lowEnergyHyperchargeSourcePresent=false`.
+- `officialDraftProvidesWeakHyperchargeLocation=true`.
+- `officialDraftProvidesPhotonZWeinbergRotation=false`.
+- `officialDraftProvidesWeakMixingAngleSource=false`.
+- `officialDraftProvidesNeutralMassMatrixDiagonalization=false`.
+- `officialDraftProvidesZSourceRowProjection=false`.
+- `officialDraftProvidesObservedElectroweakGaugeEmbedding=false`.
+- `neutralMixingRoutePromotesWzMasses=false`.
+- `neutralMixingRouteCompletesBosonPredictions=false`.
+- `canFillPhase201WzContract=false`.
+
+### Decision
+
+Do not promote the neutral electroweak mixing route as a W/Z source law. The
+repo has internal charged/neutral convention evidence and high-scale
+hypercharge-normalization leads, but it still lacks the target-independent
+low-energy hypercharge coupling, weak-mixing angle, photon/Z rotation,
+unbroken electromagnetic generator, neutral mass-matrix diagonalization,
+observed electroweak embedding, and physical Z source row.
+
+### Validation
+
+- Targeted Phase321 run passed with:
+  - `neutralElectroweakMixingSourceAuditPassed=true`.
+  - `lowEnergyHyperchargeSourcePresent=false`.
+  - `officialDraftProvidesWeakMixingAngleSource=false`.
+  - `canFillPhase201WzContract=false`.
+- P101 regenerated with Phase321 included and remained
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase321 included and remained
+  `objectiveAchieved=false`, with `checklistPassedCount=114` and
+  `checklistFailedCount=3`.
+- Claim-integrity verifier passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns after adding Phase321 found no intake-ready artifacts:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `canPromoteHiggsQuarticSelfCouplingSource=false` and
+    `intakeReadyFindingCount=0`.
+  - P281 `geometricRefractiveUnificationSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P295 `intakeReadyObservedFieldExtractionCandidateCount=0` and
+    `anyObservedFieldExtractionCandidateFillsContract=false`.
+  - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
+    `anySourceLineageCandidateFillsContract=false`.
 - Full `./scripts/generate_validated_boson_predictions.sh` passed and reran
   Phase320 in both generator passes, ending with P101 blocked, P202 incomplete
   at `113/3`, and claim integrity verified.

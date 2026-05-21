@@ -178,6 +178,7 @@ const string Phase317ElectroweakMassMatrixBridgeSourceAuditPath = "studies/phase
 const string Phase318DeferredImplementationGapRepairabilityAuditPath = "studies/phase318_deferred_implementation_gap_repairability_audit_001/output/deferred_implementation_gap_repairability_audit.json";
 const string Phase319LegacySelectorSpectrumSourceLawAuditPath = "studies/phase319_legacy_selector_spectrum_source_law_audit_001/output/legacy_selector_spectrum_source_law_audit.json";
 const string Phase320StandardElectroweakLadderNormalizationBoundaryAuditPath = "studies/phase320_standard_electroweak_ladder_normalization_boundary_audit_001/output/standard_electroweak_ladder_normalization_boundary_audit.json";
+const string Phase321NeutralElectroweakMixingSourceAuditPath = "studies/phase321_neutral_electroweak_mixing_source_audit_001/output/neutral_electroweak_mixing_source_audit.json";
 const string Phase282BranchLocalDirectInvariantCensusPath = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census.json";
 const string Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit.json";
 const string Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic.json";
@@ -376,6 +377,7 @@ using var phase317 = TryParseJson(Phase317ElectroweakMassMatrixBridgeSourceAudit
 using var phase318 = TryParseJson(Phase318DeferredImplementationGapRepairabilityAuditPath);
 using var phase319 = TryParseJson(Phase319LegacySelectorSpectrumSourceLawAuditPath);
 using var phase320 = TryParseJson(Phase320StandardElectroweakLadderNormalizationBoundaryAuditPath);
+using var phase321 = TryParseJson(Phase321NeutralElectroweakMixingSourceAuditPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -637,6 +639,7 @@ var package = new
         deferredImplementationGapRepairabilityAuditPath = File.Exists(Phase318DeferredImplementationGapRepairabilityAuditPath) ? Phase318DeferredImplementationGapRepairabilityAuditPath : null,
         legacySelectorSpectrumSourceLawAuditPath = File.Exists(Phase319LegacySelectorSpectrumSourceLawAuditPath) ? Phase319LegacySelectorSpectrumSourceLawAuditPath : null,
         standardElectroweakLadderNormalizationBoundaryAuditPath = File.Exists(Phase320StandardElectroweakLadderNormalizationBoundaryAuditPath) ? Phase320StandardElectroweakLadderNormalizationBoundaryAuditPath : null,
+        neutralElectroweakMixingSourceAuditPath = File.Exists(Phase321NeutralElectroweakMixingSourceAuditPath) ? Phase321NeutralElectroweakMixingSourceAuditPath : null,
         branchLocalDirectInvariantCensusPath = File.Exists(Phase282BranchLocalDirectInvariantCensusPath) ? Phase282BranchLocalDirectInvariantCensusPath : null,
         legacyElectroweakBridgeSourceSurvivabilityAuditPath = File.Exists(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath) ? Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath : null,
         predictedRatioAlphaGfExternalClosureDiagnosticPath = File.Exists(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath) ? Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath : null,
@@ -2478,6 +2481,45 @@ var package = new
                 ? JsonInt(p320ContractImpact, "higgsMissingFieldCount")
                 : null,
             decision = JsonString(phase320.RootElement, "decision"),
+        }
+        : null,
+    neutralElectroweakMixingSourceAudit = phase321 is not null
+        ? new
+        {
+            status = JsonString(phase321.RootElement, "terminalStatus"),
+            neutralElectroweakMixingSourceAuditPassed = JsonBool(phase321.RootElement, "neutralElectroweakMixingSourceAuditPassed"),
+            phase27InternalCartanConventionReady = JsonBool(phase321.RootElement, "phase27InternalCartanConventionReady"),
+            patiSalamHyperchargeEmbeddingLeadPresent = JsonBool(phase321.RootElement, "patiSalamHyperchargeEmbeddingLeadPresent"),
+            highScaleWeakMixingBoundaryPresent = JsonBool(phase321.RootElement, "highScaleWeakMixingBoundaryPresent"),
+            patiSalamNormalizationPromotableForLowEnergyWz = JsonBool(phase321.RootElement, "patiSalamNormalizationPromotableForLowEnergyWz"),
+            lowEnergyHyperchargeSourcePresent = JsonBool(phase321.RootElement, "lowEnergyHyperchargeSourcePresent"),
+            officialDraftProvidesWeakHyperchargeLocation = JsonBool(phase321.RootElement, "officialDraftProvidesWeakHyperchargeLocation"),
+            officialDraftProvidesPhotonZWeinbergRotation = JsonBool(phase321.RootElement, "officialDraftProvidesPhotonZWeinbergRotation"),
+            officialDraftProvidesElectromagneticUnbrokenGenerator = JsonBool(phase321.RootElement, "officialDraftProvidesElectromagneticUnbrokenGenerator"),
+            officialDraftProvidesWeakMixingAngleSource = JsonBool(phase321.RootElement, "officialDraftProvidesWeakMixingAngleSource"),
+            officialDraftProvidesNeutralMassMatrixDiagonalization = JsonBool(phase321.RootElement, "officialDraftProvidesNeutralMassMatrixDiagonalization"),
+            officialDraftProvidesPhotonMasslessProjectionRow = JsonBool(phase321.RootElement, "officialDraftProvidesPhotonMasslessProjectionRow"),
+            officialDraftProvidesZSourceRowProjection = JsonBool(phase321.RootElement, "officialDraftProvidesZSourceRowProjection"),
+            officialDraftProvidesObservedElectroweakGaugeEmbedding = JsonBool(phase321.RootElement, "officialDraftProvidesObservedElectroweakGaugeEmbedding"),
+            smDefinesPhotonZWeinbergRotation = JsonBool(phase321.RootElement, "smDefinesPhotonZWeinbergRotation"),
+            smMassMatrixProvidesExternalDependencyMap = JsonBool(phase321.RootElement, "smMassMatrixProvidesExternalDependencyMap"),
+            standardZRequiresNeutralSu2U1Mixing = JsonBool(phase321.RootElement, "standardZRequiresNeutralSu2U1Mixing"),
+            standardPhotonZRotationRequiresWeakMixingAngle = JsonBool(phase321.RootElement, "standardPhotonZRotationRequiresWeakMixingAngle"),
+            neutralMixingRoutePromotesWzMasses = JsonBool(phase321.RootElement, "neutralMixingRoutePromotesWzMasses"),
+            neutralMixingRouteCompletesBosonPredictions = JsonBool(phase321.RootElement, "neutralMixingRouteCompletesBosonPredictions"),
+            canFillPhase201WzContract = JsonBool(phase321.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase321.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase321.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            wzMissingFieldCount = phase321.RootElement.TryGetProperty("contractImpact", out var p321ContractImpact)
+                ? JsonInt(p321ContractImpact, "wzMissingFieldCount")
+                : null,
+            higgsMissingFieldCount = phase321.RootElement.TryGetProperty("contractImpact", out p321ContractImpact)
+                ? JsonInt(p321ContractImpact, "higgsMissingFieldCount")
+                : null,
+            observedFieldExtractionFilledRequiredFieldCount = phase321.RootElement.TryGetProperty("contractImpact", out p321ContractImpact)
+                ? JsonInt(p321ContractImpact, "observedFieldExtractionFilledRequiredFieldCount")
+                : null,
+            decision = JsonString(phase321.RootElement, "decision"),
         }
         : null,
     branchLocalDirectInvariantCensus = phase282 is not null
@@ -4850,6 +4892,18 @@ var summary = new
         : null,
     standardElectroweakBoundaryCompletesBosonPredictions = phase320 is not null
         ? JsonBool(phase320.RootElement, "standardElectroweakBoundaryCompletesBosonPredictions")
+        : null,
+    neutralElectroweakMixingSourceAuditPassed = phase321 is not null
+        ? JsonBool(phase321.RootElement, "neutralElectroweakMixingSourceAuditPassed")
+        : null,
+    neutralMixingLowEnergyHyperchargeSourcePresent = phase321 is not null
+        ? JsonBool(phase321.RootElement, "lowEnergyHyperchargeSourcePresent")
+        : null,
+    neutralMixingWeakMixingAngleSourcePresent = phase321 is not null
+        ? JsonBool(phase321.RootElement, "officialDraftProvidesWeakMixingAngleSource")
+        : null,
+    neutralMixingRouteCompletesBosonPredictions = phase321 is not null
+        ? JsonBool(phase321.RootElement, "neutralMixingRouteCompletesBosonPredictions")
         : null,
     branchLocalInvariantCensusPassed = phase282 is not null
         ? JsonBool(phase282.RootElement, "branchLocalInvariantCensusPassed")

@@ -90,6 +90,7 @@ const paths = {
   phase318: "studies/phase318_deferred_implementation_gap_repairability_audit_001/output/deferred_implementation_gap_repairability_audit_summary.json",
   phase319: "studies/phase319_legacy_selector_spectrum_source_law_audit_001/output/legacy_selector_spectrum_source_law_audit_summary.json",
   phase320: "studies/phase320_standard_electroweak_ladder_normalization_boundary_audit_001/output/standard_electroweak_ladder_normalization_boundary_audit_summary.json",
+  phase321: "studies/phase321_neutral_electroweak_mixing_source_audit_001/output/neutral_electroweak_mixing_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -251,6 +252,7 @@ const phase317 = requireFile(paths.phase317);
 const phase318 = requireFile(paths.phase318);
 const phase319 = requireFile(paths.phase319);
 const phase320 = requireFile(paths.phase320);
+const phase321 = requireFile(paths.phase321);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -1378,6 +1380,33 @@ if (sourceLineageMissing) {
   assert(phase320.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase320 contract impact must keep Phase256 unfilled.");
   assert(phase320.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase320 W/Z missing-field count must match Phase213.");
   assert(phase320.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase320 Higgs missing-field count must match Phase213.");
+  assert(phase321.neutralElectroweakMixingSourceAuditPassed === true, "Phase321 neutral electroweak mixing source audit must pass while preserving non-promotional status.");
+  assert(phase321.phase27InternalCartanConventionReady === true, "Phase321 must preserve the internal Cartan charged/neutral convention readiness.");
+  assert(phase321.patiSalamHyperchargeEmbeddingLeadPresent === true, "Phase321 must preserve the Pati-Salam hypercharge embedding lead.");
+  assert(phase321.highScaleWeakMixingBoundaryPresent === true, "Phase321 must record that the weak-mixing boundary is high scale.");
+  assert(phase321.patiSalamNormalizationPromotableForLowEnergyWz === false, "Phase321 cannot promote the high-scale Pati-Salam boundary as a low-energy W/Z source.");
+  assert(phase321.lowEnergyRgTransportSourcePromotable === false, "Phase321 must preserve missing low-energy RG transport.");
+  assert(phase321.lowEnergyHyperchargeSourcePresent === false, "Phase321 must preserve the missing low-energy hypercharge source.");
+  assert(phase321.officialDraftProvidesWeakHyperchargeLocation === true, "Phase321 must preserve the official draft weak-hypercharge location lead.");
+  assert(phase321.officialDraftProvidesPhotonZWeinbergRotation === false, "Phase321 cannot claim a source-derived photon/Z rotation.");
+  assert(phase321.officialDraftProvidesElectromagneticUnbrokenGenerator === false, "Phase321 cannot claim a source-derived unbroken electromagnetic generator.");
+  assert(phase321.officialDraftProvidesWeakMixingAngleSource === false, "Phase321 cannot claim a GU-local weak-mixing source.");
+  assert(phase321.officialDraftProvidesNeutralMassMatrixDiagonalization === false, "Phase321 cannot claim a neutral mass-matrix diagonalization source.");
+  assert(phase321.officialDraftProvidesPhotonMasslessProjectionRow === false, "Phase321 cannot claim a photon massless projection row.");
+  assert(phase321.officialDraftProvidesZSourceRowProjection === false, "Phase321 cannot claim a physical Z source row.");
+  assert(phase321.officialDraftProvidesObservedElectroweakGaugeEmbedding === false, "Phase321 cannot claim an observed electroweak gauge embedding.");
+  assert(phase321.smDefinesPhotonZWeinbergRotation === true, "Phase321 must preserve that the SM defines photon/Z rotation as a dependency shape.");
+  assert(phase321.smMassMatrixProvidesExternalDependencyMap === true, "Phase321 must preserve the external dependency-map boundary.");
+  assert(phase321.standardZRequiresNeutralSu2U1Mixing === true, "Phase321 must preserve that Z requires neutral SU(2)-U(1) mixing.");
+  assert(phase321.standardPhotonZRotationRequiresWeakMixingAngle === true, "Phase321 must preserve that the photon/Z rotation requires a weak-mixing angle.");
+  assert(phase321.neutralMixingRoutePromotesWzMasses === false, "Phase321 cannot promote W/Z masses through the neutral-mixing route.");
+  assert(phase321.neutralMixingRouteCompletesBosonPredictions === false, "Phase321 cannot complete boson predictions through the neutral-mixing route.");
+  assert(phase321.contractImpact?.canFillPhase201WzContract === false, "Phase321 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase321.contractImpact?.canFillPhase201HiggsContract === false, "Phase321 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase321.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase321 contract impact must keep Phase256 unfilled.");
+  assert(phase321.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase321 W/Z missing-field count must match Phase213.");
+  assert(phase321.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase321 Higgs missing-field count must match Phase213.");
+  assert(phase321.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase321 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");
