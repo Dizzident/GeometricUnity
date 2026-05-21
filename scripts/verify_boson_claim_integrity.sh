@@ -103,6 +103,7 @@ const paths = {
   phase331: "studies/phase331_theta_omega_inhomogeneous_gauge_source_audit_001/output/theta_omega_inhomogeneous_gauge_source_audit_summary.json",
   phase332: "studies/phase332_string_m_theory_compactification_source_audit_001/output/string_m_theory_compactification_source_audit_summary.json",
   phase333: "studies/phase333_kaluza_klein_internal_symmetry_source_audit_001/output/kaluza_klein_internal_symmetry_source_audit_summary.json",
+  phase334: "studies/phase334_su21_superconnection_source_audit_001/output/su21_superconnection_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -277,6 +278,7 @@ const phase330 = requireFile(paths.phase330);
 const phase331 = requireFile(paths.phase331);
 const phase332 = requireFile(paths.phase332);
 const phase333 = requireFile(paths.phase333);
+const phase334 = requireFile(paths.phase334);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -1741,6 +1743,46 @@ if (sourceLineageMissing) {
   assert(phase333.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase333 W/Z missing-field count must match Phase213.");
   assert(phase333.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase333 Higgs missing-field count must match Phase213.");
   assert(phase333.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase333 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase334.su21SuperconnectionSourceAuditPassed === true, "Phase334 SU(2/1) superconnection source audit must pass while preserving non-promotional status.");
+  assert(phase334.su21SuperconnectionLeadPresent === true, "Phase334 must record the SU(2/1) superconnection lead.");
+  assert(phase334.su21PrimarySourcesReviewed === true, "Phase334 must record primary source review.");
+  assert(phase334.su21RouteExternalToGu === true, "Phase334 must classify the SU(2/1) route as external to GU.");
+  assert(phase334.su21RouteGeometricHiggsAsConnectionBased === true, "Phase334 must preserve the geometric Higgs-as-connection basis.");
+  assert(phase334.su21RouteEmbedsElectroweakGroupInGradedAlgebra === true, "Phase334 must record the graded electroweak embedding lead.");
+  assert(phase334.su21RouteProvidesTreeLevelWzHMassRatio === true, "Phase334 must record the tree-level W/Z/H ratio lead.");
+  assert(phase334.su21RouteProvidesExternalWeinbergAngleRelation === true, "Phase334 must record the external Weinberg-angle relation lead.");
+  assert(phase334.su21RouteClaimsQuarticHiggsCouplingConstraint === true, "Phase334 must record the quartic Higgs coupling constraint lead.");
+  assert(phase334.su21ClassicTreeLevelHiggsPredictionConflictsWithObservedMass === true, "Phase334 must record the classic SU(2/1) Higgs mismatch.");
+  assert(phase334.su21ModifiedGaugeHiggsClaimNearObservedHiggsPresent === true, "Phase334 must record the modified near-observed Higgs lead.");
+  assert(phase334.su21LeftRightExtensionClaimNearObservedHiggsPresent === true, "Phase334 must record the left-right extension near-observed Higgs lead.");
+  assert(phase334.su21RouteRequiresSpecificSuperalgebraChoice === true, "Phase334 must require a specific superalgebra choice.");
+  assert(phase334.su21RouteRequiresSupertraceOrNormalizationConvention === true, "Phase334 must require supertrace or normalization conventions.");
+  assert(phase334.su21RouteRequiresElectroweakScaleMatching === true, "Phase334 must require electroweak-scale matching.");
+  assert(phase334.su21RouteRequiresLoopEffectivePotentialAndTopInputs === true, "Phase334 must require loop effective-potential and top-input handling.");
+  assert(phase334.su21RouteRequiresModelExtensionForObservedHiggs === true, "Phase334 must require model extension for observed-Higgs compatibility.");
+  assert(phase334.su21RouteRequiresObservedElectroweakInputs === true, "Phase334 must require observed electroweak inputs.");
+  assert(phase334.su21RouteRequiresRgTransport === true, "Phase334 must require RG transport.");
+  assert(phase334.su21RouteProvidesGuLocalWzTheorem === false, "Phase334 cannot claim a GU-local W/Z theorem.");
+  assert(phase334.su21RouteProvidesSeparateWzSourceRows === false, "Phase334 cannot claim separate W/Z source rows.");
+  assert(phase334.su21RouteProvidesTargetIndependentGuVevSource === false, "Phase334 cannot claim a target-independent GU VEV source.");
+  assert(phase334.su21RouteProvidesGuWeakMixingAngleSource === false, "Phase334 cannot claim a GU weak-mixing angle source.");
+  assert(phase334.su21RouteProvidesGuGaugeCouplingNormalization === false, "Phase334 cannot claim GU gauge-coupling normalization.");
+  assert(phase334.su21RouteProvidesGuObservedFieldExtraction === false, "Phase334 cannot claim GU observed-field extraction.");
+  assert(phase334.su21RouteProvidesGuHiggsScalarSourceOperator === false, "Phase334 cannot claim a GU Higgs scalar-source operator.");
+  assert(phase334.su21RouteProvidesGuHiggsQuarticOrExcitationSource === false, "Phase334 cannot claim GU Higgs quartic/excitation source lineage.");
+  assert(phase334.su21RouteProvidesObservedHiggsMassFromGu === false, "Phase334 cannot claim observed Higgs mass from GU.");
+  assert(phase334.su21RouteProvidesGeVUnitNormalization === false, "Phase334 cannot claim GeV normalization.");
+  assert(phase334.su21RoutePromotesWzMasses === false, "Phase334 cannot promote W/Z masses.");
+  assert(phase334.su21RoutePromotesHiggsMass === false, "Phase334 cannot promote Higgs mass.");
+  assert(phase334.su21RouteCompletesBosonPredictions === false, "Phase334 cannot complete boson predictions.");
+  assert(Math.abs(Number(phase334.numericalLead?.classicTreeLevelSinSquaredTheta ?? 0) - 0.25) < 1e-12, "Phase334 must preserve the classic tree-level sin^2(theta)=1/4 lead.");
+  assert(phase334.numericalLead?.classicTreeLevelMassSquaredRatio === "3:4:12", "Phase334 must preserve the classic tree-level W/Z/H mass-squared ratio.");
+  assert(phase334.contractImpact?.canFillPhase201WzContract === false, "Phase334 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase334.contractImpact?.canFillPhase201HiggsContract === false, "Phase334 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase334.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase334 contract impact must keep Phase256 unfilled.");
+  assert(phase334.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase334 W/Z missing-field count must match Phase213.");
+  assert(phase334.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase334 Higgs missing-field count must match Phase213.");
+  assert(phase334.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase334 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

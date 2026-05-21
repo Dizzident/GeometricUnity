@@ -191,6 +191,7 @@ const string Phase330WeylGeometricMassGenerationSourceAuditPath = "studies/phase
 const string Phase331ThetaOmegaInhomogeneousGaugeSourceAuditPath = "studies/phase331_theta_omega_inhomogeneous_gauge_source_audit_001/output/theta_omega_inhomogeneous_gauge_source_audit.json";
 const string Phase332StringMTheoryCompactificationSourceAuditPath = "studies/phase332_string_m_theory_compactification_source_audit_001/output/string_m_theory_compactification_source_audit.json";
 const string Phase333KaluzaKleinInternalSymmetrySourceAuditPath = "studies/phase333_kaluza_klein_internal_symmetry_source_audit_001/output/kaluza_klein_internal_symmetry_source_audit.json";
+const string Phase334Su21SuperconnectionSourceAuditPath = "studies/phase334_su21_superconnection_source_audit_001/output/su21_superconnection_source_audit.json";
 const string Phase282BranchLocalDirectInvariantCensusPath = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census.json";
 const string Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit.json";
 const string Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic.json";
@@ -402,6 +403,7 @@ using var phase330 = TryParseJson(Phase330WeylGeometricMassGenerationSourceAudit
 using var phase331 = TryParseJson(Phase331ThetaOmegaInhomogeneousGaugeSourceAuditPath);
 using var phase332 = TryParseJson(Phase332StringMTheoryCompactificationSourceAuditPath);
 using var phase333 = TryParseJson(Phase333KaluzaKleinInternalSymmetrySourceAuditPath);
+using var phase334 = TryParseJson(Phase334Su21SuperconnectionSourceAuditPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -676,6 +678,7 @@ var package = new
         thetaOmegaInhomogeneousGaugeSourceAuditPath = File.Exists(Phase331ThetaOmegaInhomogeneousGaugeSourceAuditPath) ? Phase331ThetaOmegaInhomogeneousGaugeSourceAuditPath : null,
         stringMTheoryCompactificationSourceAuditPath = File.Exists(Phase332StringMTheoryCompactificationSourceAuditPath) ? Phase332StringMTheoryCompactificationSourceAuditPath : null,
         kaluzaKleinInternalSymmetrySourceAuditPath = File.Exists(Phase333KaluzaKleinInternalSymmetrySourceAuditPath) ? Phase333KaluzaKleinInternalSymmetrySourceAuditPath : null,
+        su21SuperconnectionSourceAuditPath = File.Exists(Phase334Su21SuperconnectionSourceAuditPath) ? Phase334Su21SuperconnectionSourceAuditPath : null,
         branchLocalDirectInvariantCensusPath = File.Exists(Phase282BranchLocalDirectInvariantCensusPath) ? Phase282BranchLocalDirectInvariantCensusPath : null,
         legacyElectroweakBridgeSourceSurvivabilityAuditPath = File.Exists(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath) ? Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath : null,
         predictedRatioAlphaGfExternalClosureDiagnosticPath = File.Exists(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath) ? Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath : null,
@@ -3028,6 +3031,64 @@ var package = new
                 ? JsonInt(p333ContractImpact, "observedFieldExtractionFilledRequiredFieldCount")
                 : null,
             decision = JsonString(phase333.RootElement, "decision"),
+        }
+        : null,
+    su21SuperconnectionSourceAudit = phase334 is not null
+        ? new
+        {
+            status = JsonString(phase334.RootElement, "terminalStatus"),
+            su21SuperconnectionSourceAuditPassed = JsonBool(phase334.RootElement, "su21SuperconnectionSourceAuditPassed"),
+            su21SuperconnectionLeadPresent = JsonBool(phase334.RootElement, "su21SuperconnectionLeadPresent"),
+            su21PrimarySourcesReviewed = JsonBool(phase334.RootElement, "su21PrimarySourcesReviewed"),
+            su21RouteExternalToGu = JsonBool(phase334.RootElement, "su21RouteExternalToGu"),
+            su21RouteGeometricHiggsAsConnectionBased = JsonBool(phase334.RootElement, "su21RouteGeometricHiggsAsConnectionBased"),
+            su21RouteEmbedsElectroweakGroupInGradedAlgebra = JsonBool(phase334.RootElement, "su21RouteEmbedsElectroweakGroupInGradedAlgebra"),
+            su21RouteProvidesTreeLevelWzHMassRatio = JsonBool(phase334.RootElement, "su21RouteProvidesTreeLevelWzHMassRatio"),
+            su21RouteProvidesExternalWeinbergAngleRelation = JsonBool(phase334.RootElement, "su21RouteProvidesExternalWeinbergAngleRelation"),
+            su21RouteClaimsQuarticHiggsCouplingConstraint = JsonBool(phase334.RootElement, "su21RouteClaimsQuarticHiggsCouplingConstraint"),
+            su21ClassicTreeLevelHiggsPredictionConflictsWithObservedMass = JsonBool(phase334.RootElement, "su21ClassicTreeLevelHiggsPredictionConflictsWithObservedMass"),
+            su21ModifiedGaugeHiggsClaimNearObservedHiggsPresent = JsonBool(phase334.RootElement, "su21ModifiedGaugeHiggsClaimNearObservedHiggsPresent"),
+            su21LeftRightExtensionClaimNearObservedHiggsPresent = JsonBool(phase334.RootElement, "su21LeftRightExtensionClaimNearObservedHiggsPresent"),
+            su21RouteRequiresElectroweakScaleMatching = JsonBool(phase334.RootElement, "su21RouteRequiresElectroweakScaleMatching"),
+            su21RouteRequiresLoopEffectivePotentialAndTopInputs = JsonBool(phase334.RootElement, "su21RouteRequiresLoopEffectivePotentialAndTopInputs"),
+            su21RouteProvidesGuLocalWzTheorem = JsonBool(phase334.RootElement, "su21RouteProvidesGuLocalWzTheorem"),
+            su21RouteProvidesSeparateWzSourceRows = JsonBool(phase334.RootElement, "su21RouteProvidesSeparateWzSourceRows"),
+            su21RouteProvidesTargetIndependentGuVevSource = JsonBool(phase334.RootElement, "su21RouteProvidesTargetIndependentGuVevSource"),
+            su21RouteProvidesGuWeakMixingAngleSource = JsonBool(phase334.RootElement, "su21RouteProvidesGuWeakMixingAngleSource"),
+            su21RouteProvidesGuObservedFieldExtraction = JsonBool(phase334.RootElement, "su21RouteProvidesGuObservedFieldExtraction"),
+            su21RouteProvidesGuHiggsScalarSourceOperator = JsonBool(phase334.RootElement, "su21RouteProvidesGuHiggsScalarSourceOperator"),
+            su21RouteProvidesGuHiggsQuarticOrExcitationSource = JsonBool(phase334.RootElement, "su21RouteProvidesGuHiggsQuarticOrExcitationSource"),
+            su21RouteProvidesObservedHiggsMassFromGu = JsonBool(phase334.RootElement, "su21RouteProvidesObservedHiggsMassFromGu"),
+            su21RoutePromotesWzMasses = JsonBool(phase334.RootElement, "su21RoutePromotesWzMasses"),
+            su21RoutePromotesHiggsMass = JsonBool(phase334.RootElement, "su21RoutePromotesHiggsMass"),
+            su21RouteCompletesBosonPredictions = JsonBool(phase334.RootElement, "su21RouteCompletesBosonPredictions"),
+            canFillPhase201WzContract = JsonBool(phase334.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase334.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase334.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            numericalLead = phase334.RootElement.TryGetProperty("numericalLead", out var p334NumericalLead)
+                ? new
+                {
+                    classicTreeLevelSinSquaredTheta = JsonDouble(p334NumericalLead, "classicTreeLevelSinSquaredTheta"),
+                    classicTreeLevelMzOverMw = JsonDouble(p334NumericalLead, "classicTreeLevelMzOverMw"),
+                    classicTreeLevelMhOverMw = JsonDouble(p334NumericalLead, "classicTreeLevelMhOverMw"),
+                    classicTreeLevelMassSquaredRatio = JsonString(p334NumericalLead, "classicTreeLevelMassSquaredRatio"),
+                    loginovTreeLevelMhFromMwGeV = JsonDouble(p334NumericalLead, "loginovTreeLevelMhFromMwGeV"),
+                    loginovOneLoopMhGeV = JsonDouble(p334NumericalLead, "loginovOneLoopMhGeV"),
+                    loginovTwoLoopMhGeV = JsonDouble(p334NumericalLead, "loginovTwoLoopMhGeV"),
+                    aydemirClassicSu21HiggsEstimateGeV = JsonDouble(p334NumericalLead, "aydemirClassicSu21HiggsEstimateGeV"),
+                    aydemirSu22LrsmHiggsEstimateGeV = JsonDouble(p334NumericalLead, "aydemirSu22LrsmHiggsEstimateGeV"),
+                }
+                : null,
+            wzMissingFieldCount = phase334.RootElement.TryGetProperty("contractImpact", out var p334ContractImpact)
+                ? JsonInt(p334ContractImpact, "wzMissingFieldCount")
+                : null,
+            higgsMissingFieldCount = phase334.RootElement.TryGetProperty("contractImpact", out p334ContractImpact)
+                ? JsonInt(p334ContractImpact, "higgsMissingFieldCount")
+                : null,
+            observedFieldExtractionFilledRequiredFieldCount = phase334.RootElement.TryGetProperty("contractImpact", out p334ContractImpact)
+                ? JsonInt(p334ContractImpact, "observedFieldExtractionFilledRequiredFieldCount")
+                : null,
+            decision = JsonString(phase334.RootElement, "decision"),
         }
         : null,
     branchLocalDirectInvariantCensus = phase282 is not null
@@ -5631,6 +5692,36 @@ var summary = new
         : null,
     kkRouteCompletesBosonPredictions = phase333 is not null
         ? JsonBool(phase333.RootElement, "kkRouteCompletesBosonPredictions")
+        : null,
+    su21SuperconnectionSourceAuditPassed = phase334 is not null
+        ? JsonBool(phase334.RootElement, "su21SuperconnectionSourceAuditPassed")
+        : null,
+    su21RouteGeometricHiggsAsConnectionBased = phase334 is not null
+        ? JsonBool(phase334.RootElement, "su21RouteGeometricHiggsAsConnectionBased")
+        : null,
+    su21RouteProvidesTreeLevelWzHMassRatio = phase334 is not null
+        ? JsonBool(phase334.RootElement, "su21RouteProvidesTreeLevelWzHMassRatio")
+        : null,
+    su21RouteProvidesGuLocalWzTheorem = phase334 is not null
+        ? JsonBool(phase334.RootElement, "su21RouteProvidesGuLocalWzTheorem")
+        : null,
+    su21RouteProvidesTargetIndependentGuVevSource = phase334 is not null
+        ? JsonBool(phase334.RootElement, "su21RouteProvidesTargetIndependentGuVevSource")
+        : null,
+    su21RouteProvidesGuObservedFieldExtraction = phase334 is not null
+        ? JsonBool(phase334.RootElement, "su21RouteProvidesGuObservedFieldExtraction")
+        : null,
+    su21RouteProvidesGuHiggsScalarSourceOperator = phase334 is not null
+        ? JsonBool(phase334.RootElement, "su21RouteProvidesGuHiggsScalarSourceOperator")
+        : null,
+    su21RoutePromotesWzMasses = phase334 is not null
+        ? JsonBool(phase334.RootElement, "su21RoutePromotesWzMasses")
+        : null,
+    su21RoutePromotesHiggsMass = phase334 is not null
+        ? JsonBool(phase334.RootElement, "su21RoutePromotesHiggsMass")
+        : null,
+    su21RouteCompletesBosonPredictions = phase334 is not null
+        ? JsonBool(phase334.RootElement, "su21RouteCompletesBosonPredictions")
         : null,
     branchLocalInvariantCensusPassed = phase282 is not null
         ? JsonBool(phase282.RootElement, "branchLocalInvariantCensusPassed")

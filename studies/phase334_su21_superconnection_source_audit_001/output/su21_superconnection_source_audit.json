@@ -1,0 +1,179 @@
+{
+  "phaseId": "phase334-su21-superconnection-source-audit",
+  "terminalStatus": "su21-superconnection-source-audit-geometric-ratio-lead-not-gu-source",
+  "generatedAt": "2026-05-21T21:40:57.6518403+00:00",
+  "su21SuperconnectionSourceAuditPassed": true,
+  "su21SuperconnectionLeadPresent": true,
+  "su21PrimarySourcesReviewed": true,
+  "su21RouteExternalToGu": true,
+  "su21RouteGeometricHiggsAsConnectionBased": true,
+  "su21RouteEmbedsElectroweakGroupInGradedAlgebra": true,
+  "su21RouteProvidesTreeLevelWzHMassRatio": true,
+  "su21RouteProvidesExternalWeinbergAngleRelation": true,
+  "su21RouteClaimsQuarticHiggsCouplingConstraint": true,
+  "su21RouteUnifiesGaugeAndHiggsFields": true,
+  "su21RouteIncludesDiscreteExtraDimensionLead": true,
+  "su21ClassicTreeLevelHiggsPredictionConflictsWithObservedMass": true,
+  "su21ModifiedGaugeHiggsClaimNearObservedHiggsPresent": true,
+  "su21LeftRightExtensionClaimNearObservedHiggsPresent": true,
+  "su21RouteDistinctFromSpectralAction": true,
+  "su21RouteDistinctFromKaluzaKleinInternalSymmetry": true,
+  "su21RouteRequiresSpecificSuperalgebraChoice": true,
+  "su21RouteRequiresSupertraceOrNormalizationConvention": true,
+  "su21RouteRequiresElectroweakScaleMatching": true,
+  "su21RouteRequiresLoopEffectivePotentialAndTopInputs": true,
+  "su21RouteRequiresModelExtensionForObservedHiggs": true,
+  "su21RouteRequiresObservedElectroweakInputs": true,
+  "su21RouteRequiresRgTransport": true,
+  "su21RouteProvidesGuLocalWzTheorem": false,
+  "su21RouteProvidesSeparateWzSourceRows": false,
+  "su21RouteProvidesWzRawAmplitudeGates": false,
+  "su21RouteProvidesWzCommonBridgeGate": false,
+  "su21RouteProvidesTargetIndependentGuVevSource": false,
+  "su21RouteProvidesGuWeakMixingAngleSource": false,
+  "su21RouteProvidesGuGaugeCouplingNormalization": false,
+  "su21RouteProvidesObservedPhotonWzProjectionRows": false,
+  "su21RouteProvidesNeutralMassMatrixDiagonalization": false,
+  "su21RouteProvidesGuObservedFieldExtraction": false,
+  "su21RouteProvidesGuHiggsScalarSourceOperator": false,
+  "su21RouteProvidesGuHiggsQuarticOrExcitationSource": false,
+  "su21RouteProvidesObservedHiggsMassFromGu": false,
+  "su21RouteProvidesGeVUnitNormalization": false,
+  "su21RoutePromotesWzMasses": false,
+  "su21RoutePromotesHiggsMass": false,
+  "su21RouteCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "numericalLead": {
+    "classicTreeLevelSinSquaredTheta": 0.25,
+    "classicTreeLevelMzOverMw": 1.1547005383792517,
+    "classicTreeLevelMhOverMw": 2,
+    "classicTreeLevelMassSquaredRatio": "3:4:12",
+    "loginovTreeLevelMhFromMwGeV": 131.267,
+    "loginovOneLoopMhGeV": 126.58,
+    "loginovTwoLoopMhGeV": 125.77,
+    "aydemirClassicSu21HiggsEstimateGeV": 170,
+    "aydemirSu22LrsmHiggsEstimateGeV": 126
+  },
+  "sourceRows": [
+    {
+      "SourceId": "arxiv-hep-th-9801040-roepstorff-superconnections",
+      "Url": "https://arxiv.org/abs/hep-th/9801040",
+      "Scope": "Quillen superconnection Higgs-as-connection route",
+      "Finding": "The U(2) model gives sin^2(theta)=1/4 and the tree-level mass-squared ratio m_W^2:m_Z^2:m_H^2=3:4:12.",
+      "PredictionImpact": "This is a direct geometric W/Z/H ratio lead, but it is external to GU, tree-level, and does not supply GU source rows or observed-field extraction."
+    },
+    {
+      "SourceId": "arxiv-1012-3692-loginov-su21-gauge-higgs",
+      "Url": "https://arxiv.org/abs/1012.3692",
+      "Scope": "SU(2/1) gauge-Higgs unification",
+      "Finding": "The route embeds SU(2)xU(1)_Y in SU(2/1), fixes the Higgs quartic coupling, and claims a two-loop Higgs value near 125.77 GeV.",
+      "PredictionImpact": "The near value depends on the model\u0027s electroweak-scale matching, effective-potential/RG treatment, and top/electroweak inputs, not on a GU-local source law."
+    },
+    {
+      "SourceId": "arxiv-1409-7574-superconnection-lrsm",
+      "Url": "https://arxiv.org/abs/1409.7574",
+      "Scope": "superconnection Higgs mass and left-right extension",
+      "Finding": "The paper records that the minimal SU(2/1) superconnection Higgs estimate is around 170 GeV and uses an SU(2/2) left-right extension to accommodate a near-126 GeV Higgs.",
+      "PredictionImpact": "The extension is a model-building repair, not a GU-local prediction artifact."
+    },
+    {
+      "SourceId": "doi-10-1016-j-physrep-2004-10-003-su21-review",
+      "Url": "https://doi.org/10.1016/j.physrep.2004.10.003",
+      "Scope": "review of electroweak SU(2/1) superconnections",
+      "Finding": "The review summarizes electroweak isospin/hypercharge spectrum, Weinberg-angle, and Higgs-mass predictions from SU(2/1) embedding.",
+      "PredictionImpact": "It is useful source context but does not provide repository source-lineage rows."
+    },
+    {
+      "SourceId": "doi-10-1016-0370-2693-91-90979-z-su21-generalized-electroweak",
+      "Url": "https://doi.org/10.1016/0370-2693(91)90979-Z",
+      "Scope": "algebraic superconnection generalized electroweak model",
+      "Finding": "The source unifies the usual gauge fields and Higgs fields in one generalized Yang-Mills field or superconnection.",
+      "PredictionImpact": "It supports the geometric-Higgs route but remains external and model dependent."
+    }
+  ],
+  "checks": [
+    {
+      "CheckId": "su21-superconnection-primary-sources-reviewed",
+      "Passed": true,
+      "Detail": "lead=True; primaryReviewed=True; externalToGu=True; geometricHiggsConnection=True; sourceRows=5"
+    },
+    {
+      "CheckId": "su21-route-captures-direct-wzh-geometry-lead",
+      "Passed": true,
+      "Detail": "gradedElectroweak=True; ratio=3:4:12; sin2Theta=0.25; quartic=True; gaugeHiggsUnified=True; discreteExtraDimension=True"
+    },
+    {
+      "CheckId": "su21-route-higgs-claims-are-not-current-gu-source-lineage",
+      "Passed": true,
+      "Detail": "classicSu21HiggsGeV~170; loginovTwoLoopHiggsGeV=125.77; su22LrsmHiggsGeV~126; p265=True; p268=True"
+    },
+    {
+      "CheckId": "su21-route-remains-external-and-conditional",
+      "Passed": true,
+      "Detail": "distinctSpectral=True; distinctKk=True; superalgebra=True; normalization=True; ewScale=True; loopsTop=True; extension=True; observedInputs=True; rg=True"
+    },
+    {
+      "CheckId": "su21-route-does-not-supply-gu-wz-source-lineage",
+      "Passed": true,
+      "Detail": "p224=True; wClosure=False; zClosure=False; rg=False; p317=True; smPromotesWz=False; guWzTheorem=False; separateRows=False; guWeakAngle=False; promotesWz=False"
+    },
+    {
+      "CheckId": "su21-route-does-not-supply-gu-higgs-source-lineage",
+      "Passed": true,
+      "Detail": "higgsClosure=False; p323=True; p323Completes=False; smPromotesHiggs=False; p333=True; observedExtraction=False; higgsOperator=False; higgsQuartic=False; observedHiggsGu=False; promotesHiggs=False"
+    },
+    {
+      "CheckId": "source-lineage-contracts-remain-unfilled-after-su21-audit",
+      "Passed": true,
+      "Detail": "phase201Promotable=False; existingEvidence=False; wzMissing=15; higgsMissing=14; phase256Required=20; phase256Filled=0; observedPromotable=False; geV=False; completes=False; canFillWz=False; canFillHiggs=False; canFillObserved=False"
+    }
+  ],
+  "currentBlockerEvidence": {
+    "phase201AllRequiredLineagesPromotable": false,
+    "existingEvidenceFound": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionRequiredFieldCount": 20,
+    "observedFieldExtractionFilledRequiredFieldCount": 0,
+    "observedFieldExtractionContractPromotable": false,
+    "electroweakParameterAuditPassed": true,
+    "wAbsoluteMassParameterClosure": false,
+    "zAbsoluteMassParameterClosure": false,
+    "higgsMassParameterClosure": false,
+    "lowEnergyRgTransportSourcePromotable": false
+  },
+  "contractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionFilledRequiredFieldCount": 0
+  },
+  "decision": "Do not promote W/Z or Higgs physical masses from the SU(2/1) superconnection route in this repository. The route is a serious geometric W/Z/H ratio and Higgs-as-connection lead, but it is external to GU and does not supply GU-local W/Z source rows, observed photon/W/Z/H projection, a target-independent GU VEV or scale source, GU weak-angle and coupling normalization, Higgs scalar-source/self-coupling lineage, or GeV normalization.",
+  "nextRequiredArtifact": [
+    "A GU-local superconnection or equivalent theorem mapping GU fields to observed photon/W/Z/H rows.",
+    "Separate W and Z source rows with weak-angle, neutral mixing, photon projection, and physical-unit normalization independent of target values.",
+    "A target-independent GU weak-scale source and low-energy transport theorem that does not import electroweak measured inputs.",
+    "A solved GU Higgs scalar source/operator and self-coupling/excitation lineage if the Higgs-as-connection route is to supply the physical Higgs."
+  ],
+  "sourceEvidence": {
+    "roepstorffSuperconnectionUrl": "https://arxiv.org/abs/hep-th/9801040",
+    "loginovSu21GaugeHiggsUrl": "https://arxiv.org/abs/1012.3692",
+    "aydemirSuperconnectionLrsmUrl": "https://arxiv.org/abs/1409.7574",
+    "su21ReviewUrl": "https://doi.org/10.1016/j.physrep.2004.10.003",
+    "coquereauxSu21SuperconnectionUrl": "https://doi.org/10.1016/0370-2693(91)90979-Z",
+    "phase201Path": "studies/phase201_boson_source_lineage_intake_contract_001/output/boson_source_lineage_intake_contract_summary.json",
+    "phase213Path": "studies/phase213_boson_source_lineage_blocker_matrix_001/output/boson_source_lineage_blocker_matrix_summary.json",
+    "phase224Path": "studies/phase224_electroweak_parameter_dependency_audit_001/output/electroweak_parameter_dependency_audit_summary.json",
+    "phase236Path": "studies/phase236_low_energy_rg_transport_source_audit_001/output/low_energy_rg_transport_source_audit_summary.json",
+    "phase256Path": "studies/phase256_observed_field_extraction_intake_contract_001/output/observed_field_extraction_intake_contract_summary.json",
+    "phase265Path": "studies/phase265_gauge_higgs_boundary_source_audit_001/output/gauge_higgs_boundary_source_audit_summary.json",
+    "phase268Path": "studies/phase268_spectral_action_boson_source_audit_001/output/spectral_action_boson_source_audit_summary.json",
+    "phase317Path": "studies/phase317_electroweak_mass_matrix_bridge_source_audit_001/output/electroweak_mass_matrix_bridge_source_audit_summary.json",
+    "phase323Path": "studies/phase323_coupled_yang_mills_higgs_mass_extraction_audit_001/output/coupled_yang_mills_higgs_mass_extraction_audit_summary.json",
+    "phase333Path": "studies/phase333_kaluza_klein_internal_symmetry_source_audit_001/output/kaluza_klein_internal_symmetry_source_audit_summary.json"
+  }
+}
