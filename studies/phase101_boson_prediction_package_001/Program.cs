@@ -185,6 +185,7 @@ const string Phase324CustodialRhoParameterSourceAuditPath = "studies/phase324_cu
 const string Phase325ElectroweakUnitarityScatteringSourceAuditPath = "studies/phase325_electroweak_unitarity_scattering_source_audit_001/output/electroweak_unitarity_scattering_source_audit.json";
 const string Phase326AnomalyHyperchargeSourceAuditPath = "studies/phase326_anomaly_hypercharge_source_audit_001/output/anomaly_hypercharge_source_audit.json";
 const string Phase327ObliquePrecisionElectroweakSourceAuditPath = "studies/phase327_oblique_precision_electroweak_source_audit_001/output/oblique_precision_electroweak_source_audit.json";
+const string Phase328SuperphysicsDraftEnergyScaleSourceAuditPath = "studies/phase328_superphysics_draft_energy_scale_source_audit_001/output/superphysics_draft_energy_scale_source_audit.json";
 const string Phase282BranchLocalDirectInvariantCensusPath = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census.json";
 const string Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit.json";
 const string Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic.json";
@@ -390,6 +391,7 @@ using var phase324 = TryParseJson(Phase324CustodialRhoParameterSourceAuditPath);
 using var phase325 = TryParseJson(Phase325ElectroweakUnitarityScatteringSourceAuditPath);
 using var phase326 = TryParseJson(Phase326AnomalyHyperchargeSourceAuditPath);
 using var phase327 = TryParseJson(Phase327ObliquePrecisionElectroweakSourceAuditPath);
+using var phase328 = TryParseJson(Phase328SuperphysicsDraftEnergyScaleSourceAuditPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -658,6 +660,7 @@ var package = new
         electroweakUnitarityScatteringSourceAuditPath = File.Exists(Phase325ElectroweakUnitarityScatteringSourceAuditPath) ? Phase325ElectroweakUnitarityScatteringSourceAuditPath : null,
         anomalyHyperchargeSourceAuditPath = File.Exists(Phase326AnomalyHyperchargeSourceAuditPath) ? Phase326AnomalyHyperchargeSourceAuditPath : null,
         obliquePrecisionElectroweakSourceAuditPath = File.Exists(Phase327ObliquePrecisionElectroweakSourceAuditPath) ? Phase327ObliquePrecisionElectroweakSourceAuditPath : null,
+        superphysicsDraftEnergyScaleSourceAuditPath = File.Exists(Phase328SuperphysicsDraftEnergyScaleSourceAuditPath) ? Phase328SuperphysicsDraftEnergyScaleSourceAuditPath : null,
         branchLocalDirectInvariantCensusPath = File.Exists(Phase282BranchLocalDirectInvariantCensusPath) ? Phase282BranchLocalDirectInvariantCensusPath : null,
         legacyElectroweakBridgeSourceSurvivabilityAuditPath = File.Exists(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath) ? Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath : null,
         predictedRatioAlphaGfExternalClosureDiagnosticPath = File.Exists(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath) ? Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath : null,
@@ -2746,6 +2749,42 @@ var package = new
                 ? JsonInt(p327ContractImpact, "observedFieldExtractionFilledRequiredFieldCount")
                 : null,
             decision = JsonString(phase327.RootElement, "decision"),
+        }
+        : null,
+    superphysicsDraftEnergyScaleSourceAudit = phase328 is not null
+        ? new
+        {
+            status = JsonString(phase328.RootElement, "terminalStatus"),
+            superphysicsDraftEnergyScaleSourceAuditPassed = JsonBool(phase328.RootElement, "superphysicsDraftEnergyScaleSourceAuditPassed"),
+            officialSiteIdentifiesApril2021Draft = JsonBool(phase328.RootElement, "officialSiteIdentifiesApril2021Draft"),
+            superphysicsReadableDraftMirrorPresent = JsonBool(phase328.RootElement, "superphysicsReadableDraftMirrorPresent"),
+            superphysicsMirrorTreatedAsSearchAidNotPrimaryPromotionSource = JsonBool(phase328.RootElement, "superphysicsMirrorTreatedAsSearchAidNotPrimaryPromotionSource"),
+            superphysicsPart12dInternalQuantumNumbersExplicit = JsonBool(phase328.RootElement, "superphysicsPart12dInternalQuantumNumbersExplicit"),
+            superphysicsPart12dEnergyScaleHelpStillNeeded = JsonBool(phase328.RootElement, "superphysicsPart12dEnergyScaleHelpStillNeeded"),
+            mirrorProvidesTargetIndependentWzEnergyScale = JsonBool(phase328.RootElement, "mirrorProvidesTargetIndependentWzEnergyScale"),
+            mirrorProvidesSeparateWzSourceRows = JsonBool(phase328.RootElement, "mirrorProvidesSeparateWzSourceRows"),
+            mirrorProvidesWeakMixingAngleSource = JsonBool(phase328.RootElement, "mirrorProvidesWeakMixingAngleSource"),
+            mirrorProvidesTargetIndependentVevSource = JsonBool(phase328.RootElement, "mirrorProvidesTargetIndependentVevSource"),
+            mirrorProvidesObservedPhotonWzProjectionRows = JsonBool(phase328.RootElement, "mirrorProvidesObservedPhotonWzProjectionRows"),
+            mirrorProvidesHiggsScalarSourceOperator = JsonBool(phase328.RootElement, "mirrorProvidesHiggsScalarSourceOperator"),
+            mirrorProvidesHiggsQuarticOrExcitationSource = JsonBool(phase328.RootElement, "mirrorProvidesHiggsQuarticOrExcitationSource"),
+            mirrorProvidesGeVUnitNormalization = JsonBool(phase328.RootElement, "mirrorProvidesGeVUnitNormalization"),
+            mirrorPromotesWzMasses = JsonBool(phase328.RootElement, "mirrorPromotesWzMasses"),
+            mirrorPromotesHiggsMass = JsonBool(phase328.RootElement, "mirrorPromotesHiggsMass"),
+            mirrorCompletesBosonPredictions = JsonBool(phase328.RootElement, "mirrorCompletesBosonPredictions"),
+            canFillPhase201WzContract = JsonBool(phase328.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase328.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase328.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            wzMissingFieldCount = phase328.RootElement.TryGetProperty("contractImpact", out var p328ContractImpact)
+                ? JsonInt(p328ContractImpact, "wzMissingFieldCount")
+                : null,
+            higgsMissingFieldCount = phase328.RootElement.TryGetProperty("contractImpact", out p328ContractImpact)
+                ? JsonInt(p328ContractImpact, "higgsMissingFieldCount")
+                : null,
+            observedFieldExtractionFilledRequiredFieldCount = phase328.RootElement.TryGetProperty("contractImpact", out p328ContractImpact)
+                ? JsonInt(p328ContractImpact, "observedFieldExtractionFilledRequiredFieldCount")
+                : null,
+            decision = JsonString(phase328.RootElement, "decision"),
         }
         : null,
     branchLocalDirectInvariantCensus = phase282 is not null
@@ -5202,6 +5241,21 @@ var summary = new
         : null,
     obliqueRouteCompletesBosonPredictions = phase327 is not null
         ? JsonBool(phase327.RootElement, "obliqueRouteCompletesBosonPredictions")
+        : null,
+    superphysicsDraftEnergyScaleSourceAuditPassed = phase328 is not null
+        ? JsonBool(phase328.RootElement, "superphysicsDraftEnergyScaleSourceAuditPassed")
+        : null,
+    superphysicsDraftEnergyScaleHelpStillNeeded = phase328 is not null
+        ? JsonBool(phase328.RootElement, "superphysicsPart12dEnergyScaleHelpStillNeeded")
+        : null,
+    superphysicsMirrorPromotesWzMasses = phase328 is not null
+        ? JsonBool(phase328.RootElement, "mirrorPromotesWzMasses")
+        : null,
+    superphysicsMirrorPromotesHiggsMass = phase328 is not null
+        ? JsonBool(phase328.RootElement, "mirrorPromotesHiggsMass")
+        : null,
+    superphysicsMirrorCompletesBosonPredictions = phase328 is not null
+        ? JsonBool(phase328.RootElement, "mirrorCompletesBosonPredictions")
         : null,
     branchLocalInvariantCensusPassed = phase282 is not null
         ? JsonBool(phase282.RootElement, "branchLocalInvariantCensusPassed")

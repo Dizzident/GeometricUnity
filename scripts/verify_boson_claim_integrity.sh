@@ -97,6 +97,7 @@ const paths = {
   phase325: "studies/phase325_electroweak_unitarity_scattering_source_audit_001/output/electroweak_unitarity_scattering_source_audit_summary.json",
   phase326: "studies/phase326_anomaly_hypercharge_source_audit_001/output/anomaly_hypercharge_source_audit_summary.json",
   phase327: "studies/phase327_oblique_precision_electroweak_source_audit_001/output/oblique_precision_electroweak_source_audit_summary.json",
+  phase328: "studies/phase328_superphysics_draft_energy_scale_source_audit_001/output/superphysics_draft_energy_scale_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -265,6 +266,7 @@ const phase324 = requireFile(paths.phase324);
 const phase325 = requireFile(paths.phase325);
 const phase326 = requireFile(paths.phase326);
 const phase327 = requireFile(paths.phase327);
+const phase328 = requireFile(paths.phase328);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -1551,6 +1553,29 @@ if (sourceLineageMissing) {
   assert(phase327.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase327 W/Z missing-field count must match Phase213.");
   assert(phase327.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase327 Higgs missing-field count must match Phase213.");
   assert(phase327.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase327 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase328.superphysicsDraftEnergyScaleSourceAuditPassed === true, "Phase328 Superphysics draft energy-scale source audit must pass while preserving non-promotional status.");
+  assert(phase328.officialSiteIdentifiesApril2021Draft === true, "Phase328 must record the official April 2021 draft release context.");
+  assert(phase328.superphysicsReadableDraftMirrorPresent === true, "Phase328 must record the readable Superphysics draft mirror.");
+  assert(phase328.superphysicsMirrorTreatedAsSearchAidNotPrimaryPromotionSource === true, "Phase328 must treat the mirror as a search aid, not a primary promotion source.");
+  assert(phase328.superphysicsPart12dInternalQuantumNumbersExplicit === true, "Phase328 must record the internal quantum-number prediction boundary.");
+  assert(phase328.superphysicsPart12dEnergyScaleHelpStillNeeded === true, "Phase328 must record that energy-scale sharpening remains needed.");
+  assert(phase328.mirrorProvidesTargetIndependentWzEnergyScale === false, "Phase328 cannot claim a target-independent W/Z energy scale from the readable draft.");
+  assert(phase328.mirrorProvidesSeparateWzSourceRows === false, "Phase328 cannot claim separate W/Z source rows from the readable draft.");
+  assert(phase328.mirrorProvidesWeakMixingAngleSource === false, "Phase328 cannot claim a weak-mixing source from the readable draft.");
+  assert(phase328.mirrorProvidesTargetIndependentVevSource === false, "Phase328 cannot claim a target-independent VEV source from the readable draft.");
+  assert(phase328.mirrorProvidesObservedPhotonWzProjectionRows === false, "Phase328 cannot claim observed photon/W/Z projection rows from the readable draft.");
+  assert(phase328.mirrorProvidesHiggsScalarSourceOperator === false, "Phase328 cannot claim a Higgs scalar-source operator from the readable draft.");
+  assert(phase328.mirrorProvidesHiggsQuarticOrExcitationSource === false, "Phase328 cannot claim Higgs quartic/excitation source lineage from the readable draft.");
+  assert(phase328.mirrorProvidesGeVUnitNormalization === false, "Phase328 cannot claim GeV normalization from the readable draft.");
+  assert(phase328.mirrorPromotesWzMasses === false, "Phase328 cannot promote W/Z masses through the readable draft route.");
+  assert(phase328.mirrorPromotesHiggsMass === false, "Phase328 cannot promote Higgs mass through the readable draft route.");
+  assert(phase328.mirrorCompletesBosonPredictions === false, "Phase328 cannot complete boson predictions through the readable draft route.");
+  assert(phase328.contractImpact?.canFillPhase201WzContract === false, "Phase328 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase328.contractImpact?.canFillPhase201HiggsContract === false, "Phase328 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase328.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase328 contract impact must keep Phase256 unfilled.");
+  assert(phase328.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase328 W/Z missing-field count must match Phase213.");
+  assert(phase328.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase328 Higgs missing-field count must match Phase213.");
+  assert(phase328.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase328 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

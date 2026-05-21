@@ -93,6 +93,7 @@ const string Phase324Path = "studies/phase324_custodial_rho_parameter_source_aud
 const string Phase325Path = "studies/phase325_electroweak_unitarity_scattering_source_audit_001/output/electroweak_unitarity_scattering_source_audit_summary.json";
 const string Phase326Path = "studies/phase326_anomaly_hypercharge_source_audit_001/output/anomaly_hypercharge_source_audit_summary.json";
 const string Phase327Path = "studies/phase327_oblique_precision_electroweak_source_audit_001/output/oblique_precision_electroweak_source_audit_summary.json";
+const string Phase328Path = "studies/phase328_superphysics_draft_energy_scale_source_audit_001/output/superphysics_draft_energy_scale_source_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -219,6 +220,7 @@ using var phase324 = File.Exists(Phase324Path) ? JsonDocument.Parse(File.ReadAll
 using var phase325 = File.Exists(Phase325Path) ? JsonDocument.Parse(File.ReadAllText(Phase325Path)) : null;
 using var phase326 = File.Exists(Phase326Path) ? JsonDocument.Parse(File.ReadAllText(Phase326Path)) : null;
 using var phase327 = File.Exists(Phase327Path) ? JsonDocument.Parse(File.ReadAllText(Phase327Path)) : null;
+using var phase328 = File.Exists(Phase328Path) ? JsonDocument.Parse(File.ReadAllText(Phase328Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -1430,6 +1432,36 @@ var obliquePrecisionElectroweakSourceAuditPassed = obliquePrecisionElectroweakSo
     && JsonInt(p327ContractImpact, "wzMissingFieldCount") == wzMissingFieldCount
     && JsonInt(p327ContractImpact, "higgsMissingFieldCount") == higgsMissingFieldCount
     && JsonInt(p327ContractImpact, "observedFieldExtractionFilledRequiredFieldCount") == 0;
+var superphysicsDraftEnergyScaleSourceAuditMaterialized = phase328 is not null;
+var superphysicsDraftEnergyScaleSourceAuditPassed = superphysicsDraftEnergyScaleSourceAuditMaterialized
+    && JsonBool(phase328!.RootElement, "superphysicsDraftEnergyScaleSourceAuditPassed") is true
+    && JsonBool(phase328.RootElement, "officialSiteIdentifiesApril2021Draft") is true
+    && JsonBool(phase328.RootElement, "superphysicsReadableDraftMirrorPresent") is true
+    && JsonBool(phase328.RootElement, "superphysicsMirrorTreatedAsSearchAidNotPrimaryPromotionSource") is true
+    && JsonBool(phase328.RootElement, "superphysicsPart2bFramesHiggsAsGeometricallyUnmotivated") is true
+    && JsonBool(phase328.RootElement, "superphysicsPart4PlacesStandardModelGroupInReductionIntersection") is true
+    && JsonBool(phase328.RootElement, "superphysicsPart11DiracSquareRootProgramPresent") is true
+    && JsonBool(phase328.RootElement, "superphysicsPart12YangMillsHiggsSecondOrderProgramPresent") is true
+    && JsonBool(phase328.RootElement, "superphysicsPart12dInternalQuantumNumbersExplicit") is true
+    && JsonBool(phase328.RootElement, "superphysicsPart12dEnergyScaleHelpStillNeeded") is true
+    && JsonBool(phase328.RootElement, "mirrorProvidesTargetIndependentWzEnergyScale") is false
+    && JsonBool(phase328.RootElement, "mirrorProvidesSeparateWzSourceRows") is false
+    && JsonBool(phase328.RootElement, "mirrorProvidesWeakMixingAngleSource") is false
+    && JsonBool(phase328.RootElement, "mirrorProvidesTargetIndependentVevSource") is false
+    && JsonBool(phase328.RootElement, "mirrorProvidesObservedPhotonWzProjectionRows") is false
+    && JsonBool(phase328.RootElement, "mirrorProvidesHiggsScalarSourceOperator") is false
+    && JsonBool(phase328.RootElement, "mirrorProvidesHiggsQuarticOrExcitationSource") is false
+    && JsonBool(phase328.RootElement, "mirrorProvidesGeVUnitNormalization") is false
+    && JsonBool(phase328.RootElement, "mirrorPromotesWzMasses") is false
+    && JsonBool(phase328.RootElement, "mirrorPromotesHiggsMass") is false
+    && JsonBool(phase328.RootElement, "mirrorCompletesBosonPredictions") is false
+    && JsonBool(phase328.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase328.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase328.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && phase328.RootElement.TryGetProperty("contractImpact", out var p328ContractImpact)
+    && JsonInt(p328ContractImpact, "wzMissingFieldCount") == wzMissingFieldCount
+    && JsonInt(p328ContractImpact, "higgsMissingFieldCount") == higgsMissingFieldCount
+    && JsonInt(p328ContractImpact, "observedFieldExtractionFilledRequiredFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -3023,6 +3055,14 @@ var checklist = new[]
             : "Phase327 artifact not materialized",
         Phase327Path),
     new ObjectiveChecklistItem(
+        "superphysics-draft-energy-scale-source-audit-materialized",
+        "Audit whether the readable Superphysics GU draft path supplies W/Z/H energy-scale source lineage rather than quantum-number guidance only.",
+        superphysicsDraftEnergyScaleSourceAuditPassed ? "passed" : "failed",
+        superphysicsDraftEnergyScaleSourceAuditMaterialized
+            ? $"superphysicsDraftEnergyScaleSourceAuditPassed={JsonBool(phase328!.RootElement, "superphysicsDraftEnergyScaleSourceAuditPassed")}; superphysicsReadableDraftMirrorPresent={JsonBool(phase328.RootElement, "superphysicsReadableDraftMirrorPresent")}; superphysicsMirrorTreatedAsSearchAidNotPrimaryPromotionSource={JsonBool(phase328.RootElement, "superphysicsMirrorTreatedAsSearchAidNotPrimaryPromotionSource")}; superphysicsPart12dInternalQuantumNumbersExplicit={JsonBool(phase328.RootElement, "superphysicsPart12dInternalQuantumNumbersExplicit")}; superphysicsPart12dEnergyScaleHelpStillNeeded={JsonBool(phase328.RootElement, "superphysicsPart12dEnergyScaleHelpStillNeeded")}; mirrorProvidesTargetIndependentWzEnergyScale={JsonBool(phase328.RootElement, "mirrorProvidesTargetIndependentWzEnergyScale")}; mirrorProvidesSeparateWzSourceRows={JsonBool(phase328.RootElement, "mirrorProvidesSeparateWzSourceRows")}; mirrorProvidesWeakMixingAngleSource={JsonBool(phase328.RootElement, "mirrorProvidesWeakMixingAngleSource")}; mirrorProvidesTargetIndependentVevSource={JsonBool(phase328.RootElement, "mirrorProvidesTargetIndependentVevSource")}; mirrorProvidesHiggsScalarSourceOperator={JsonBool(phase328.RootElement, "mirrorProvidesHiggsScalarSourceOperator")}; mirrorProvidesGeVUnitNormalization={JsonBool(phase328.RootElement, "mirrorProvidesGeVUnitNormalization")}; mirrorCompletesBosonPredictions={JsonBool(phase328.RootElement, "mirrorCompletesBosonPredictions")}; canFillPhase201WzContract={JsonBool(phase328.RootElement, "canFillPhase201WzContract")}; canFillPhase201HiggsContract={JsonBool(phase328.RootElement, "canFillPhase201HiggsContract")}; decision={JsonString(phase328.RootElement, "decision")}"
+            : "Phase328 artifact not materialized",
+        Phase328Path),
+    new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
         branchLocalDirectInvariantCensusPassed ? "passed" : "failed",
@@ -3360,6 +3400,7 @@ var result = new
         "Electroweak perturbative-unitarity scattering route is audited as a consistency bound, not an exact source.",
         "Anomaly cancellation and hypercharge quantization are audited as consistency constraints, not exact boson-mass sources.",
         "Precision electroweak oblique parameters are audited as fit constraints, not exact boson-mass sources.",
+        "Readable GU draft energy-scale route is audited as quantum-number guidance, not an exact boson-mass source.",
         "Observed-field extraction contract fields are scanned for intake-ready local artifacts.",
         "W/Z and Higgs source-lineage contract fields are scanned for intake-ready local artifacts.",
         "Those contracts are filled with promotable target-independent evidence.",
@@ -3387,6 +3428,7 @@ var result = new
     electroweakUnitarityScatteringSourceAuditPassed,
     anomalyHyperchargeSourceAuditPassed,
     obliquePrecisionElectroweakSourceAuditPassed,
+    superphysicsDraftEnergyScaleSourceAuditPassed,
     parameterSourceContractCandidateScanPassed,
     phase288CoverageFalseNegativeAuditPassed,
     chargedLeptonThresholdSourceReplacementAuditPassed,
@@ -3499,6 +3541,7 @@ var result = new
         phase325Path = Phase325Path,
         phase326Path = Phase326Path,
         phase327Path = Phase327Path,
+        phase328Path = Phase328Path,
         phase282Path = Phase282Path,
         phase283Path = Phase283Path,
         phase284Path = Phase284Path,

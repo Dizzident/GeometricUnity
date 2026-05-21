@@ -9243,3 +9243,129 @@ not a successful W/Z prediction.
     `anyObservedFieldExtractionCandidateFillsContract=false`.
   - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
     `anySourceLineageCandidateFillsContract=false`.
+
+## 2026-05-21 - Phase328 Superphysics Draft Energy-Scale Source Audit
+
+### Question
+
+After Phase327 left the objective incomplete at `120/3`, check whether a more
+readable public rendering of the Geometric Unity draft gives a missed
+indication for W/Z/H physical mass prediction. The concrete route is the
+Superphysics transcription/index of the GU draft, especially its Higgs,
+observed-field, equation-summary, and final-method passages.
+
+### Research
+
+- Rechecked the completion state before starting:
+  - P202 `objectiveAchieved=false`, `checklistPassedCount=120`,
+    `checklistFailedCount=3`.
+  - P213 still reports `wzMissingFieldCount=15` and
+    `higgsMissingFieldCount=14`.
+  - The Phase201 W/Z and Higgs intake templates remain unfilled.
+- Tried to launch a bounded explorer sub-agent to independently decide whether
+  a Superphysics-readable draft audit was duplicative. The agent failed before
+  returning results because the session reported a usage-limit error, so no
+  sub-agent evidence was used.
+- Used the official GU site as the primary release context:
+  `https://geometricunity.org/`. It still identifies the public GU manuscript
+  draft as the April 1, 2021 release.
+- Reviewed the Superphysics readable draft index:
+  `https://www.superphysics.org/research/weinstein/unity/`.
+- Reviewed Superphysics Part 2b:
+  `https://www.superphysics.org/research/weinstein/unity/part-02b/`.
+  It preserves the draft's motivation that the Higgs/quartic-potential sector
+  is geometrically unnatural, but it does not solve the scalar-source operator
+  or Higgs self-coupling source.
+- Reviewed Superphysics Part 4:
+  `https://www.superphysics.org/research/weinstein/unity/part-04/`.
+  It preserves the Standard Model group/representation reduction lead, but not
+  W/Z energy scales.
+- Reviewed Superphysics Part 11 and Part 12:
+  `https://www.superphysics.org/research/weinstein/unity/part-12b/` and
+  `https://www.superphysics.org/research/weinstein/unity/part-12/`.
+  They preserve the Dirac-square-root and Yang-Mills-Higgs/Upsilon program, but
+  not mass-eigenstate extraction, weak-angle/VEV source lineage, or GeV
+  normalization.
+- Reviewed Superphysics Part 12d:
+  `https://www.superphysics.org/research/weinstein/unity/part-12d/`.
+  The useful new boundary is explicit: the draft frames GU as able to offer
+  internal quantum-number predictions while needing help to sharpen those
+  predictions into energy thresholds. That directly supports the current
+  blocker rather than fixing it.
+
+### Actions
+
+- Added
+  `studies/phase328_superphysics_draft_energy_scale_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P328.md`.
+- Wired Phase328 into the generator, P101 package, P202 objective completion
+  audit, and claim-integrity verifier.
+- Added Phase328 scanner exclusions so the new generated audit text is not
+  misclassified as source evidence.
+
+### Current Expected Outcome
+
+Phase328 is expected to pass only as a negative boundary audit:
+
+- `superphysicsDraftEnergyScaleSourceAuditPassed=true`.
+- `superphysicsReadableDraftMirrorPresent=true`.
+- `superphysicsMirrorTreatedAsSearchAidNotPrimaryPromotionSource=true`.
+- `superphysicsPart12dInternalQuantumNumbersExplicit=true`.
+- `superphysicsPart12dEnergyScaleHelpStillNeeded=true`.
+- `mirrorProvidesTargetIndependentWzEnergyScale=false`.
+- `mirrorProvidesSeparateWzSourceRows=false`.
+- `mirrorProvidesWeakMixingAngleSource=false`.
+- `mirrorProvidesTargetIndependentVevSource=false`.
+- `mirrorProvidesObservedPhotonWzProjectionRows=false`.
+- `mirrorProvidesHiggsScalarSourceOperator=false`.
+- `mirrorProvidesHiggsQuarticOrExcitationSource=false`.
+- `mirrorProvidesGeVUnitNormalization=false`.
+- `mirrorCompletesBosonPredictions=false`.
+- `canFillPhase201WzContract=false`.
+- `canFillPhase201HiggsContract=false`.
+- `canFillPhase256ObservedFieldExtractionContract=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from the Superphysics-readable GU draft
+path. It is useful searchable context for the official draft and confirms that
+GU has quantum-number/representation and equation-structure leads, but it does
+not provide the missing W/Z energy scale, separate source rows, replay gates,
+weak-angle or VEV source lineage, observed-field extraction, Higgs
+scalar-source/self-coupling lineage, or GeV normalization.
+
+The readable draft therefore sharpens the diagnosis: the current blocker is
+not a missed page in the draft. It is the missing derivation that turns
+internal GU structure into physical energy-scale source rows.
+
+### Validation
+
+- Targeted Phase328 run passed with:
+  - `superphysicsDraftEnergyScaleSourceAuditPassed=true`.
+  - `mirrorPromotesWzMasses=false`.
+  - `mirrorPromotesHiggsMass=false`.
+  - `canFillPhase201WzContract=false`.
+- Scanner reruns after adding Phase328 found no intake-ready artifacts:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `canPromoteHiggsQuarticSelfCouplingSource=false` and
+    `intakeReadyFindingCount=0`.
+  - P279 `technicolorWalkingElectroweakScaleSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P281 `geometricRefractiveUnificationSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P295 `intakeReadyObservedFieldExtractionCandidateCount=0` and
+    `anyObservedFieldExtractionCandidateFillsContract=false`.
+  - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
+    `anySourceLineageCandidateFillsContract=false`.
+- P213 rerun remained
+  `boson-source-lineage-blocker-matrix-ready-new-evidence-required`, with
+  `wzMissingFieldCount=15` and `higgsMissingFieldCount=14`.
+- P101 regenerated with Phase328 included and remained
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase328 included and remained
+  `objectiveAchieved=false`, with `checklistPassedCount=121` and
+  `checklistFailedCount=3`.
+- Claim-integrity verifier passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
