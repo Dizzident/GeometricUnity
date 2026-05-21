@@ -92,6 +92,7 @@ const paths = {
   phase320: "studies/phase320_standard_electroweak_ladder_normalization_boundary_audit_001/output/standard_electroweak_ladder_normalization_boundary_audit_summary.json",
   phase321: "studies/phase321_neutral_electroweak_mixing_source_audit_001/output/neutral_electroweak_mixing_source_audit_summary.json",
   phase322: "studies/phase322_higgs_upsilon_scalar_source_boundary_audit_001/output/higgs_upsilon_scalar_source_boundary_audit_summary.json",
+  phase323: "studies/phase323_coupled_yang_mills_higgs_mass_extraction_audit_001/output/coupled_yang_mills_higgs_mass_extraction_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -255,6 +256,7 @@ const phase319 = requireFile(paths.phase319);
 const phase320 = requireFile(paths.phase320);
 const phase321 = requireFile(paths.phase321);
 const phase322 = requireFile(paths.phase322);
+const phase323 = requireFile(paths.phase323);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -1429,6 +1431,30 @@ if (sourceLineageMissing) {
   assert(phase322.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase322 W/Z missing-field count must match Phase213.");
   assert(phase322.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase322 Higgs missing-field count must match Phase213.");
   assert(phase322.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase322 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase323.coupledYangMillsHiggsMassExtractionAuditPassed === true, "Phase323 coupled Yang-Mills-Higgs mass extraction audit must pass while preserving non-promotional status.");
+  assert(phase323.officialDraftAppendixLocatesWeakIsospin === true, "Phase323 must preserve official GU weak-isospin location evidence.");
+  assert(phase323.officialDraftAppendixLocatesWeakHypercharge === true, "Phase323 must preserve official GU weak-hypercharge location evidence.");
+  assert(phase323.officialDraftAppendixLocatesHiggsField === true, "Phase323 must preserve official GU Higgs-field location evidence.");
+  assert(phase323.officialDraftAppendixMapsHiggsPotentialToUpsilonNorm === true, "Phase323 must preserve official GU Higgs-potential/Upsilon evidence.");
+  assert(phase323.officialDraftAppendixMapsYangMillsAndHiggsEquationsToDStarUpsilon === true, "Phase323 must preserve official GU Yang-Mills/Higgs equation-location evidence.");
+  assert(phase323.officialPublicSourcesProvideElectroweakVacuumSelectionRule === false, "Phase323 cannot claim a public GU electroweak vacuum selection rule.");
+  assert(phase323.officialPublicSourcesProvideTargetIndependentVevSource === false, "Phase323 cannot claim a target-independent GU VEV source.");
+  assert(phase323.officialPublicSourcesProvideGaugeCouplingNormalization === false, "Phase323 cannot claim a public GU gauge-coupling normalization.");
+  assert(phase323.officialPublicSourcesProvideHyperchargeCouplingOrWeakAngle === false, "Phase323 cannot claim a hypercharge coupling or weak-angle source.");
+  assert(phase323.officialPublicSourcesProvideGaugeFixedQuadraticExpansion === false, "Phase323 cannot claim a gauge-fixed quadratic W/Z/H mass expansion.");
+  assert(phase323.officialPublicSourcesProvidePhotonWzHiggsProjectionRows === false, "Phase323 cannot claim photon/W/Z/H projection rows.");
+  assert(phase323.officialPublicSourcesProvideGeVUnitNormalization === false, "Phase323 cannot claim a target-independent GeV unit normalization.");
+  assert(phase323.officialPublicSourcesProvideHiggsScalarSelfCouplingSource === false, "Phase323 cannot claim a Higgs self-coupling source.");
+  assert(phase323.officialPublicSourcesProvideCompleteMassEigenstateExtraction === false, "Phase323 cannot claim a complete mass-eigenstate extraction theorem.");
+  assert(phase323.coupledYangMillsHiggsRoutePromotesWzMasses === false, "Phase323 cannot promote W/Z masses through the coupled route.");
+  assert(phase323.coupledYangMillsHiggsRoutePromotesHiggsMass === false, "Phase323 cannot promote Higgs mass through the coupled route.");
+  assert(phase323.coupledYangMillsHiggsRouteCompletesBosonPredictions === false, "Phase323 cannot complete boson predictions through the coupled route.");
+  assert(phase323.contractImpact?.canFillPhase201WzContract === false, "Phase323 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase323.contractImpact?.canFillPhase201HiggsContract === false, "Phase323 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase323.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase323 contract impact must keep Phase256 unfilled.");
+  assert(phase323.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase323 W/Z missing-field count must match Phase213.");
+  assert(phase323.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase323 Higgs missing-field count must match Phase213.");
+  assert(phase323.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase323 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

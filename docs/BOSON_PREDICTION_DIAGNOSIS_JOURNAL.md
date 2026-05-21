@@ -7867,6 +7867,109 @@ contract.
 - `dotnet test GeometricUnity.slnx` passed.
 - `git diff --check` passed.
 
+## 2026-05-20 - Phase323 Coupled Yang-Mills-Higgs Mass Extraction Audit
+
+### Question
+
+After Phase321 and Phase322 closed the neutral W/Z and Higgs/Upsilon routes
+separately, check the combined loophole: perhaps official GU field/equation
+locations, read together with the standard Higgs mechanism dependency shape,
+are enough to infer a complete W/Z/H mass-extraction source.
+
+### Research
+
+- Rechecked the official GU site and current public draft reference. The
+  official site still identifies the April 1, 2021 manuscript as the latest
+  draft source.
+- Rechecked the official draft appendix. It locates weak isospin, weak
+  hypercharge, Higgs field, Higgs potential, Yang-Mills-Maxwell equations, and
+  the Higgs Klein-Gordon equation in GU/Upsilon notation.
+- Rechecked the 2013 Oxford lecture transcript. It gives the standard
+  `SU(3) x SU(2) x U(1)` breaking narrative and frames Higgs mass generation as
+  an as-if mass/Yukawa patch, but does not provide a worked GU physical
+  mass-eigenstate extraction.
+- Rechecked Phase224, Phase228, Phase229, Phase313, Phase317, Phase321, and
+  Phase322. The Standard Model dependency shape is clear, but the repository
+  still lacks a GU-derived electroweak vacuum/VEV, gauge-coupling and
+  weak-angle normalization, gauge-fixed quadratic expansion, photon/W/Z/H
+  projection rows, GeV unit normalization, and solved Higgs scalar
+  self-coupling/source lineage.
+- A fresh web search found the current GU/RVG Koide/dilaton/95.4 GeV material
+  again, but Phase281 and Phase312 already cover that source family and keep it
+  non-promotional for W/Z/H source-lineage contracts.
+
+### Actions
+
+- Added
+  `studies/phase323_coupled_yang_mills_higgs_mass_extraction_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P323.md`.
+- Wired Phase323 into the generator, P101 package, P202 objective completion
+  audit, claim-integrity verifier, and scanner exclusions.
+
+### Current Expected Outcome
+
+Phase323 is expected to pass only as a negative boundary audit:
+
+- `coupledYangMillsHiggsMassExtractionAuditPassed=true`.
+- `officialDraftAppendixLocatesWeakIsospin=true`.
+- `officialDraftAppendixLocatesWeakHypercharge=true`.
+- `officialDraftAppendixLocatesHiggsField=true`.
+- `officialDraftAppendixMapsHiggsPotentialToUpsilonNorm=true`.
+- `officialDraftAppendixMapsYangMillsAndHiggsEquationsToDStarUpsilon=true`.
+- `officialPublicSourcesProvideTargetIndependentVevSource=false`.
+- `officialPublicSourcesProvideGaugeCouplingNormalization=false`.
+- `officialPublicSourcesProvideGaugeFixedQuadraticExpansion=false`.
+- `officialPublicSourcesProvidePhotonWzHiggsProjectionRows=false`.
+- `officialPublicSourcesProvideHiggsScalarSelfCouplingSource=false`.
+- `coupledYangMillsHiggsRoutePromotesWzMasses=false`.
+- `coupledYangMillsHiggsRoutePromotesHiggsMass=false`.
+- `coupledYangMillsHiggsRouteCompletesBosonPredictions=false`.
+- `canFillPhase201WzContract=false`.
+- `canFillPhase201HiggsContract=false`.
+
+### Decision
+
+Do not promote W/Z/H masses from the coupled official GU
+Yang-Mills-Higgs/Upsilon placement. It is useful source-location evidence, and
+the Standard Model supplies the external dependency map, but this still does
+not fill the repository's target-independent source-lineage or observed-field
+extraction contracts.
+
+### Validation
+
+- Targeted Phase323 run passed with:
+  - `coupledYangMillsHiggsMassExtractionAuditPassed=true`.
+  - `officialPublicSourcesProvideGaugeFixedQuadraticExpansion=false`.
+  - `officialPublicSourcesProvidePhotonWzHiggsProjectionRows=false`.
+  - `canFillPhase201WzContract=false`.
+  - `canFillPhase201HiggsContract=false`.
+- P101 regenerated with Phase323 included and remained
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase323 included and remained
+  `objectiveAchieved=false`, with `checklistPassedCount=116` and
+  `checklistFailedCount=3`.
+- Claim-integrity verifier passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns after adding Phase323 found no intake-ready artifacts:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `canPromoteHiggsQuarticSelfCouplingSource=false` and
+    `intakeReadyFindingCount=0`.
+  - P281 `geometricRefractiveUnificationSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P295 `intakeReadyObservedFieldExtractionCandidateCount=0` and
+    `anyObservedFieldExtractionCandidateFillsContract=false`.
+  - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
+    `anySourceLineageCandidateFillsContract=false`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed with
+  Phase323 in both generator passes, ending with P101 blocked, P202 incomplete
+  at `checklistPassedCount=116` / `checklistFailedCount=3`, and claim
+  integrity verified.
+- `dotnet test GeometricUnity.slnx` passed. The existing xUnit analyzer warning
+  in `QuantitativeValidationTests.cs(315,9)` remains present.
+- `git diff --check` passed.
+
 ## 2026-05-20 - Phase321 Neutral Electroweak Mixing Source Audit
 
 ### Question
