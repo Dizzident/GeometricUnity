@@ -87,6 +87,7 @@ const string Phase318Path = "studies/phase318_deferred_implementation_gap_repair
 const string Phase319Path = "studies/phase319_legacy_selector_spectrum_source_law_audit_001/output/legacy_selector_spectrum_source_law_audit_summary.json";
 const string Phase320Path = "studies/phase320_standard_electroweak_ladder_normalization_boundary_audit_001/output/standard_electroweak_ladder_normalization_boundary_audit_summary.json";
 const string Phase321Path = "studies/phase321_neutral_electroweak_mixing_source_audit_001/output/neutral_electroweak_mixing_source_audit_summary.json";
+const string Phase322Path = "studies/phase322_higgs_upsilon_scalar_source_boundary_audit_001/output/higgs_upsilon_scalar_source_boundary_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -207,6 +208,7 @@ using var phase318 = File.Exists(Phase318Path) ? JsonDocument.Parse(File.ReadAll
 using var phase319 = File.Exists(Phase319Path) ? JsonDocument.Parse(File.ReadAllText(Phase319Path)) : null;
 using var phase320 = File.Exists(Phase320Path) ? JsonDocument.Parse(File.ReadAllText(Phase320Path)) : null;
 using var phase321 = File.Exists(Phase321Path) ? JsonDocument.Parse(File.ReadAllText(Phase321Path)) : null;
+using var phase322 = File.Exists(Phase322Path) ? JsonDocument.Parse(File.ReadAllText(Phase322Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -1268,6 +1270,29 @@ var neutralElectroweakMixingSourceAuditPassed = neutralElectroweakMixingSourceAu
     && JsonInt(p321ContractImpact, "wzMissingFieldCount") == wzMissingFieldCount
     && JsonInt(p321ContractImpact, "higgsMissingFieldCount") == higgsMissingFieldCount
     && JsonInt(p321ContractImpact, "observedFieldExtractionFilledRequiredFieldCount") == 0;
+var higgsUpsilonScalarSourceBoundaryAuditMaterialized = phase322 is not null;
+var higgsUpsilonScalarSourceBoundaryAuditPassed = higgsUpsilonScalarSourceBoundaryAuditMaterialized
+    && JsonBool(phase322!.RootElement, "higgsUpsilonScalarSourceBoundaryAuditPassed") is true
+    && JsonBool(phase322.RootElement, "officialGuDraftAppendixMapsHiggsPotentialToUpsilonNorm") is true
+    && JsonBool(phase322.RootElement, "officialGuLectureFramesHiggsSectorAsGeometricProblem") is true
+    && JsonBool(phase322.RootElement, "officialGuLectureDiracSquareRootProgramForSecondOrderEquationsPresent") is true
+    && JsonBool(phase322.RootElement, "officialGuLectureShiabUpsilonActionStructurePresent") is true
+    && JsonBool(phase322.RootElement, "officialGuSourcesProvideFixedScalarSourceOperator") is false
+    && JsonBool(phase322.RootElement, "officialGuSourcesProvideFixedKappaOrInnerProductNormalization") is false
+    && JsonBool(phase322.RootElement, "officialGuSourcesProvideUpsilonComponentExtractionTheorem") is false
+    && JsonBool(phase322.RootElement, "officialGuSourcesProvideObserverSectorProjection") is false
+    && JsonBool(phase322.RootElement, "officialGuSourcesProvideMassiveScalarProfile") is false
+    && JsonBool(phase322.RootElement, "officialGuSourcesProvideQuarticSelfCouplingValue") is false
+    && JsonBool(phase322.RootElement, "officialGuSourcesPromoteHiggsMass") is false
+    && JsonBool(phase322.RootElement, "higgsUpsilonRoutePromotesHiggsMass") is false
+    && JsonBool(phase322.RootElement, "higgsUpsilonRouteCompletesBosonPredictions") is false
+    && JsonBool(phase322.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase322.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase322.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && phase322.RootElement.TryGetProperty("contractImpact", out var p322ContractImpact)
+    && JsonInt(p322ContractImpact, "wzMissingFieldCount") == wzMissingFieldCount
+    && JsonInt(p322ContractImpact, "higgsMissingFieldCount") == higgsMissingFieldCount
+    && JsonInt(p322ContractImpact, "observedFieldExtractionFilledRequiredFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -2813,6 +2838,14 @@ var checklist = new[]
             : "Phase321 artifact not materialized",
         Phase321Path),
     new ObjectiveChecklistItem(
+        "higgs-upsilon-scalar-source-boundary-audit-materialized",
+        "Audit whether official GU Higgs/Upsilon notation, Dirac-square-root language, or quartic proxy work can supply the missing Higgs scalar source.",
+        higgsUpsilonScalarSourceBoundaryAuditPassed ? "passed" : "failed",
+        higgsUpsilonScalarSourceBoundaryAuditMaterialized
+            ? $"higgsUpsilonScalarSourceBoundaryAuditPassed={JsonBool(phase322!.RootElement, "higgsUpsilonScalarSourceBoundaryAuditPassed")}; officialGuDraftAppendixMapsHiggsPotentialToUpsilonNorm={JsonBool(phase322.RootElement, "officialGuDraftAppendixMapsHiggsPotentialToUpsilonNorm")}; officialGuLectureDiracSquareRootProgramForSecondOrderEquationsPresent={JsonBool(phase322.RootElement, "officialGuLectureDiracSquareRootProgramForSecondOrderEquationsPresent")}; officialGuSourcesProvideFixedScalarSourceOperator={JsonBool(phase322.RootElement, "officialGuSourcesProvideFixedScalarSourceOperator")}; officialGuSourcesProvideUpsilonComponentExtractionTheorem={JsonBool(phase322.RootElement, "officialGuSourcesProvideUpsilonComponentExtractionTheorem")}; officialGuSourcesProvideMassiveScalarProfile={JsonBool(phase322.RootElement, "officialGuSourcesProvideMassiveScalarProfile")}; officialGuSourcesProvideQuarticSelfCouplingValue={JsonBool(phase322.RootElement, "officialGuSourcesProvideQuarticSelfCouplingValue")}; higgsUpsilonRouteCompletesBosonPredictions={JsonBool(phase322.RootElement, "higgsUpsilonRouteCompletesBosonPredictions")}; canFillPhase201HiggsContract={JsonBool(phase322.RootElement, "canFillPhase201HiggsContract")}; decision={JsonString(phase322.RootElement, "decision")}"
+            : "Phase322 artifact not materialized",
+        Phase322Path),
+    new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
         branchLocalDirectInvariantCensusPassed ? "passed" : "failed",
@@ -3167,6 +3200,7 @@ var result = new
     legacySelectorSpectrumSourceLawAuditPassed,
     standardElectroweakLadderNormalizationBoundaryAuditPassed,
     neutralElectroweakMixingSourceAuditPassed,
+    higgsUpsilonScalarSourceBoundaryAuditPassed,
     parameterSourceContractCandidateScanPassed,
     phase288CoverageFalseNegativeAuditPassed,
     chargedLeptonThresholdSourceReplacementAuditPassed,
@@ -3273,6 +3307,7 @@ var result = new
         phase319Path = Phase319Path,
         phase320Path = Phase320Path,
         phase321Path = Phase321Path,
+        phase322Path = Phase322Path,
         phase282Path = Phase282Path,
         phase283Path = Phase283Path,
         phase284Path = Phase284Path,
