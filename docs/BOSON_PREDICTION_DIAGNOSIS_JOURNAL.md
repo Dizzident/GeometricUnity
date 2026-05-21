@@ -7573,6 +7573,38 @@ Higgs remains separately blocked by missing scalar-source lineage.
   `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
   `promotedPhysicalMassClaimCount=0`.
 
+## 2026-05-21 - Reference Tracking Index Added
+
+### Context
+
+The investigation has accumulated many primary GU, GU-adjacent, PDG, arXiv,
+SSRN, and Zenodo references. The user asked for a dedicated reference index that
+keeps a short overview in one file and links to detailed source notes so future
+diagnostic passes can return to the exact source context.
+
+### Action
+
+- Added top-level `ExperimentReferences.md`.
+- Added detailed reference summaries under
+  `docs/Reference/ExperimentReferences/`.
+- Seeded the index with the main sources already used in the W/Z/H
+  source-lineage investigation:
+  - official GU draft and official source index;
+  - official Oxford lecture;
+  - UCSD theta_omega/geometric-energy abstract;
+  - external Weyl electroweak geometric mass-generation comparison;
+  - PDG electroweak review and W/Z/H targets;
+  - GU-RVG SSRN/Zenodo routes;
+  - Cox GU framework route.
+
+### Outcome
+
+The reference tracker is now available for future phases. It records each
+source's role, prediction relevance, limitations, and follow-up criteria. This
+does not change the current boson-prediction result: the direct
+target-independent W/Z/H bridge-source law is still missing, so no physical
+boson mass should be promoted from these references yet.
+
 ## 2026-05-21 - Phase331 Theta Omega Inhomogeneous Gauge Source Audit
 
 ### Objective
