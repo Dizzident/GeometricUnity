@@ -1,0 +1,146 @@
+{
+  "phaseId": "phase337-octonion-clifford-internal-space-source-audit",
+  "terminalStatus": "octonion-clifford-internal-space-source-audit-ratio-lead-not-gu-source",
+  "generatedAt": "2026-05-21T22:46:09.0536148+00:00",
+  "octonionCliffordSourceAuditPassed": true,
+  "octonionCliffordLeadPresent": true,
+  "octonionPrimarySourcesReviewed": true,
+  "octonionRouteExternalToGu": true,
+  "octonionRouteUsesCl10InternalSpace": true,
+  "octonionRouteUsesPreferredComplexStructure": true,
+  "octonionRouteUsesParticleSubspaceProjector": true,
+  "octonionRouteUsesPatiSalamSpin10Embedding": true,
+  "octonionRouteIdentifiesSmGaugeGroupAsSterileNeutrinoStabilizer": true,
+  "octonionRoutePlacesHiggsAsSuperconnectionScalar": true,
+  "octonionRoutePreservesColourByEvenCl6Projection": true,
+  "octonionRouteProvidesExternalHiggsWRelation": true,
+  "octonionRouteProvidesTheoreticalWeinbergAngleRelation": true,
+  "octonionRouteDivisionAlgebraLadderSupportPresent": true,
+  "octonionRouteDistinctFromPhase334Su21": true,
+  "octonionRouteRelatedToPhase334Su21Superconnection": true,
+  "octonionRouteRequiresCl10ToGuFieldMap": true,
+  "octonionRouteRequiresParticleProjectorSource": true,
+  "octonionRouteRequiresReducedParticleSubspaceChoice": true,
+  "octonionRouteRequiresSuperconnectionNormalization": true,
+  "octonionRouteRequiresLowEnergyWeinbergAngleTransport": true,
+  "octonionRouteRequiresElectroweakScaleOrVevSource": true,
+  "octonionRouteRequiresObservedPhotonWzProjection": true,
+  "octonionRouteRequiresHiggsScalarSourceValidation": true,
+  "octonionRouteRequiresGeVUnitNormalization": true,
+  "octonionRouteProvidesGuLocalWzTheorem": false,
+  "octonionRouteProvidesSeparateWzSourceRows": false,
+  "octonionRouteProvidesWzRawAmplitudeGates": false,
+  "octonionRouteProvidesWzCommonBridgeGate": false,
+  "octonionRouteProvidesTargetIndependentGuVevSource": false,
+  "octonionRouteProvidesGuWeakMixingAngleSource": false,
+  "octonionRouteProvidesGuGaugeCouplingNormalization": false,
+  "octonionRouteProvidesObservedPhotonWzProjectionRows": false,
+  "octonionRouteProvidesGuObservedFieldExtraction": false,
+  "octonionRouteProvidesGuHiggsScalarSourceOperator": false,
+  "octonionRouteProvidesGuHiggsQuarticOrExcitationSource": false,
+  "octonionRouteProvidesObservedHiggsMassFromGu": false,
+  "octonionRouteProvidesGeVUnitNormalization": false,
+  "octonionRoutePromotesWzMasses": false,
+  "octonionRoutePromotesHiggsMass": false,
+  "octonionRouteCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "numericalLead": {
+    "theoreticalTanSquaredTheta": 0.6,
+    "theoreticalCosSquaredTheta": 0.625,
+    "externalMhSquaredOverMwSquared": 2.5,
+    "externalMhOverMw": 1.5811388300841898,
+    "observedMhOverMw": 1.5578107036028725,
+    "observedMhSquaredOverMwSquared": 2.4267741882596767,
+    "externalMhOverMwRelativeResidual": 0.014974942993628431,
+    "observedWTargetGeV": 80.3692,
+    "observedHiggsTargetGeV": 125.2,
+    "higgsFromObservedWDiagnosticGeV": 127.07486286280228,
+    "higgsFromObservedWResidualGeV": 1.8748628628022743,
+    "higgsFromObservedWPull": 16.741031475201147,
+    "externalRelationWithinTwoPercentOfObservedRatio": true,
+    "diagnosticWarning": "The Higgs value here imports the observed W mass and is therefore a comparison diagnostic, not a prediction."
+  },
+  "sourceRows": [
+    {
+      "SourceId": "arxiv-2206-06912-octonion-internal-space",
+      "Url": "https://arxiv.org/abs/2206.06912",
+      "FindingKind": "Octonion/Clifford internal-space algebra for the Standard Model",
+      "Summary": "Uses a preferred complex structure in Cl10, a particle-subspace projector, Pati-Salam Spin(10) structure, and the sterile neutrino stabilizer to recover the SM gauge group; treats the Higgs as a superconnection scalar and records m_H^2/m_W^2 = 5/2 = 4 cos^2(theta_th).",
+      "PredictionImpact": "Serious algebraic W/H ratio lead, but external to GU and not a GU-local W/Z/H source-lineage artifact."
+    },
+    {
+      "SourceId": "arxiv-1806-00612-division-algebra-ladder-symmetries",
+      "Url": "https://arxiv.org/abs/1806.00612",
+      "FindingKind": "Division-algebraic ladder-operator SM gauge symmetries",
+      "Summary": "Shows SU(3)c x SU(2)L x U(1)Y structure emerging as ladder symmetries of division-algebraic Clifford systems.",
+      "PredictionImpact": "Supports octonion/Clifford internal-algebra relevance but does not provide boson mass source rows."
+    },
+    {
+      "SourceId": "arxiv-1611-09182-standard-model-physics-from-an-algebra",
+      "Url": "https://arxiv.org/abs/1611.09182",
+      "FindingKind": "Standard Model representation structure from normed-division algebra",
+      "Summary": "Builds SM-like fermion and charge representation structure using complex octonions, quaternions, and Clifford-algebra ideals.",
+      "PredictionImpact": "Useful representation-context source; no W/Z/H mass prediction contract is filled."
+    }
+  ],
+  "checks": [
+    {
+      "CheckId": "octonion-clifford-primary-sources-reviewed",
+      "Passed": true,
+      "Detail": "lead=True; reviewed=True; externalToGu=True; sourceRows=3"
+    },
+    {
+      "CheckId": "octonion-clifford-standard-model-algebra-lead-captured",
+      "Passed": true,
+      "Detail": "cl10=True; complexStructure=True; projector=True; patiSalam=True; sterileNeutrinoStabilizer=True; colourPreserved=True; ladderSupport=True"
+    },
+    {
+      "CheckId": "octonion-clifford-higgs-w-ratio-lead-captured",
+      "Passed": true,
+      "Detail": "higgsSuperconnection=True; tan2Theta=0.6; cos2Theta=0.625; mh2OverMw2=2.5; diagnosticHiggsFromObservedWGeV=127.07486286280228; relativeRatioResidual=0.014974942993628431; pull=16.741031475201147"
+    },
+    {
+      "CheckId": "octonion-clifford-route-related-to-but-distinct-from-su21",
+      "Passed": true,
+      "Detail": "distinctFromP334=True; relatedSuperconnection=True; p334=True; p334PromotesWz=False; p334PromotesHiggs=False"
+    },
+    {
+      "CheckId": "octonion-clifford-requires-missing-gu-source-data",
+      "Passed": true,
+      "Detail": "guCl10Map=True; particleProjector=True; reducedSubspace=True; normalization=True; weakAngleTransport=True; vev=True; projection=True; higgsValidation=True; gev=True"
+    },
+    {
+      "CheckId": "existing-pati-salam-and-electroweak-dependency-blockers-still-bind",
+      "Passed": true,
+      "Detail": "p235=True; p235LowEnergyPromotable=False; p224=True; wClosure=False; zClosure=False; higgsClosure=False; p317=True; smPromotesWz=False; smPromotesHiggs=False; p323Completes=False"
+    },
+    {
+      "CheckId": "octonion-clifford-route-does-not-fill-gu-wz-higgs-contracts",
+      "Passed": true,
+      "Detail": "guWzTheorem=False; separateRows=False; targetVev=False; weakAngle=False; gaugeNorm=False; projection=False; observedExtraction=False; higgsOperator=False; higgsQuartic=False; gev=False; promotesWz=False; promotesHiggs=False"
+    },
+    {
+      "CheckId": "phase201-phase256-contract-state-unchanged",
+      "Passed": true,
+      "Detail": "phase201Promotable=False; existingEvidence=False; wzMissing=15; higgsMissing=14; phase256Required=20; phase256Filled=0; observedPromotable=False; canFillWz=False; canFillHiggs=False; canFillObserved=False"
+    }
+  ],
+  "contractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionFilledRequiredFieldCount": 0
+  },
+  "decision": "Do not promote W/Z or Higgs physical masses from the octonion/Clifford internal-space route in this repository. The route gives a serious algebraic Standard Model and Higgs/W mass-ratio lead, but it is external to GU and still lacks a GU-local Cl10/internal-algebra map, particle projector source, reduced particle-subspace selection law, low-energy weak-angle transport, target-independent VEV or scale source, observed photon/W/Z/H projection rows, Higgs scalar-source validation, and GeV normalization.",
+  "nextRequiredArtifact": [
+    "A GU-local theorem mapping the draft\u0027s spinor/internal normal factor into the octonion/Clifford Cl10 particle-subspace algebra without choosing the observed target by hand.",
+    "A source-derived reduced particle projector or equivalent selection law that fixes the physical electroweak representation content.",
+    "Low-energy weak-angle, gauge-coupling, and VEV/scale transport from the algebraic relation to W/Z source rows.",
+    "Observed photon/W/Z/H projection rows and a GU Higgs scalar-source operator or potential lineage at the same vacuum.",
+    "Physical-unit normalization and validation through Phase201/Phase256 without importing W, Z, or Higgs targets."
+  ]
+}

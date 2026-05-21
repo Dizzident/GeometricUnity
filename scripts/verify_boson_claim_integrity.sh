@@ -106,6 +106,7 @@ const paths = {
   phase334: "studies/phase334_su21_superconnection_source_audit_001/output/su21_superconnection_source_audit_summary.json",
   phase335: "studies/phase335_graviweak_plebanski_source_audit_001/output/graviweak_plebanski_source_audit_summary.json",
   phase336: "studies/phase336_heft_scalar_geometry_source_law_audit_001/output/heft_scalar_geometry_source_law_audit_summary.json",
+  phase337: "studies/phase337_octonion_clifford_internal_space_source_audit_001/output/octonion_clifford_internal_space_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -283,6 +284,7 @@ const phase333 = requireFile(paths.phase333);
 const phase334 = requireFile(paths.phase334);
 const phase335 = requireFile(paths.phase335);
 const phase336 = requireFile(paths.phase336);
+const phase337 = requireFile(paths.phase337);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -1866,6 +1868,53 @@ if (sourceLineageMissing) {
   assert(phase336.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase336 W/Z missing-field count must match Phase213.");
   assert(phase336.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase336 Higgs missing-field count must match Phase213.");
   assert(phase336.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase336 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase337.octonionCliffordSourceAuditPassed === true, "Phase337 octonion/Clifford internal-space source audit must pass while preserving non-promotional status.");
+  assert(phase337.octonionCliffordLeadPresent === true, "Phase337 must record the octonion/Clifford internal-space lead.");
+  assert(phase337.octonionPrimarySourcesReviewed === true, "Phase337 must record primary source review.");
+  assert(phase337.octonionRouteExternalToGu === true, "Phase337 must classify octonion/Clifford algebra as external to GU.");
+  assert(phase337.octonionRouteUsesCl10InternalSpace === true, "Phase337 must record the Cl10 internal-space route.");
+  assert(phase337.octonionRouteUsesPreferredComplexStructure === true, "Phase337 must record the preferred complex structure.");
+  assert(phase337.octonionRouteUsesParticleSubspaceProjector === true, "Phase337 must record the particle-subspace projector.");
+  assert(phase337.octonionRouteUsesPatiSalamSpin10Embedding === true, "Phase337 must record the Pati-Salam/Spin(10) embedding.");
+  assert(phase337.octonionRouteIdentifiesSmGaugeGroupAsSterileNeutrinoStabilizer === true, "Phase337 must record the SM group as sterile-neutrino stabilizer lead.");
+  assert(phase337.octonionRoutePlacesHiggsAsSuperconnectionScalar === true, "Phase337 must record Higgs-as-superconnection-scalar placement.");
+  assert(phase337.octonionRoutePreservesColourByEvenCl6Projection === true, "Phase337 must record colour preservation by the even Cl6 projection.");
+  assert(phase337.octonionRouteProvidesExternalHiggsWRelation === true, "Phase337 must preserve the external Higgs/W relation lead.");
+  assert(phase337.octonionRouteProvidesTheoreticalWeinbergAngleRelation === true, "Phase337 must preserve the theoretical Weinberg-angle relation.");
+  assert(phase337.octonionRouteDivisionAlgebraLadderSupportPresent === true, "Phase337 must record division-algebra ladder support.");
+  assert(phase337.octonionRouteDistinctFromPhase334Su21 === true, "Phase337 must record the route as distinct from Phase334 SU(2/1).");
+  assert(phase337.octonionRouteRelatedToPhase334Su21Superconnection === true, "Phase337 must record relation to SU(2/1) superconnection material.");
+  assert(phase337.octonionRouteRequiresCl10ToGuFieldMap === true, "Phase337 must require a GU Cl10/internal-algebra map.");
+  assert(phase337.octonionRouteRequiresParticleProjectorSource === true, "Phase337 must require a particle-projector source.");
+  assert(phase337.octonionRouteRequiresReducedParticleSubspaceChoice === true, "Phase337 must require reduced-particle-subspace choice source.");
+  assert(phase337.octonionRouteRequiresSuperconnectionNormalization === true, "Phase337 must require superconnection normalization.");
+  assert(phase337.octonionRouteRequiresLowEnergyWeinbergAngleTransport === true, "Phase337 must require low-energy weak-angle transport.");
+  assert(phase337.octonionRouteRequiresElectroweakScaleOrVevSource === true, "Phase337 must require electroweak scale or VEV source.");
+  assert(phase337.octonionRouteRequiresObservedPhotonWzProjection === true, "Phase337 must require observed photon/W/Z projection.");
+  assert(phase337.octonionRouteRequiresHiggsScalarSourceValidation === true, "Phase337 must require Higgs scalar-source validation.");
+  assert(phase337.octonionRouteRequiresGeVUnitNormalization === true, "Phase337 must require GeV normalization.");
+  assert(phase337.octonionRouteProvidesGuLocalWzTheorem === false, "Phase337 cannot claim a GU-local W/Z theorem.");
+  assert(phase337.octonionRouteProvidesSeparateWzSourceRows === false, "Phase337 cannot claim separate W/Z source rows.");
+  assert(phase337.octonionRouteProvidesTargetIndependentGuVevSource === false, "Phase337 cannot claim a target-independent GU VEV source.");
+  assert(phase337.octonionRouteProvidesGuWeakMixingAngleSource === false, "Phase337 cannot claim a GU weak-mixing angle source.");
+  assert(phase337.octonionRouteProvidesGuGaugeCouplingNormalization === false, "Phase337 cannot claim GU gauge-coupling normalization.");
+  assert(phase337.octonionRouteProvidesObservedPhotonWzProjectionRows === false, "Phase337 cannot claim observed photon/W/Z projection rows.");
+  assert(phase337.octonionRouteProvidesGuObservedFieldExtraction === false, "Phase337 cannot claim GU observed-field extraction.");
+  assert(phase337.octonionRouteProvidesGuHiggsScalarSourceOperator === false, "Phase337 cannot claim a GU Higgs scalar-source operator.");
+  assert(phase337.octonionRouteProvidesGuHiggsQuarticOrExcitationSource === false, "Phase337 cannot claim GU Higgs quartic/excitation source lineage.");
+  assert(phase337.octonionRouteProvidesObservedHiggsMassFromGu === false, "Phase337 cannot claim observed Higgs mass from GU.");
+  assert(phase337.octonionRouteProvidesGeVUnitNormalization === false, "Phase337 cannot claim GeV normalization.");
+  assert(phase337.octonionRoutePromotesWzMasses === false, "Phase337 cannot promote W/Z masses.");
+  assert(phase337.octonionRoutePromotesHiggsMass === false, "Phase337 cannot promote Higgs mass.");
+  assert(phase337.octonionRouteCompletesBosonPredictions === false, "Phase337 cannot complete boson predictions.");
+  assert(phase337.numericalLead?.externalMhSquaredOverMwSquared === 2.5, "Phase337 must preserve the external mH^2/mW^2=5/2 lead.");
+  assert(phase337.numericalLead?.externalRelationWithinTwoPercentOfObservedRatio === true, "Phase337 must preserve that the external ratio is a close diagnostic lead.");
+  assert(phase337.contractImpact?.canFillPhase201WzContract === false, "Phase337 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase337.contractImpact?.canFillPhase201HiggsContract === false, "Phase337 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase337.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase337 contract impact must keep Phase256 unfilled.");
+  assert(phase337.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase337 W/Z missing-field count must match Phase213.");
+  assert(phase337.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase337 Higgs missing-field count must match Phase213.");
+  assert(phase337.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase337 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

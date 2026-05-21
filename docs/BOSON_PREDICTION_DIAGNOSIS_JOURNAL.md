@@ -7573,6 +7573,123 @@ Higgs remains separately blocked by missing scalar-source lineage.
   `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
   `promotedPhysicalMassClaimCount=0`.
 
+## 2026-05-21 - Phase337 Octonion/Clifford Internal-Space Source Audit
+
+### Context
+
+After Phase336 clarified the coordinate-invariant geometric data a successful
+W/Z/H bridge would need, I looked for a non-duplicative algebraic route close to
+GU's internal spinor and Pati-Salam language. The strongest uncovered lead was
+octonion/Clifford internal-space Standard Model algebra: a `Cl10` construction
+with a preferred complex structure, particle-subspace projectors, a
+Pati-Salam/Spin(10) embedding, the Standard Model group as sterile-neutrino
+stabilizer, and the Higgs as a superconnection scalar.
+
+A parallel scout also identified metric-affine/Einstein-Cartan torsion-induced
+mass generation as the best next route after this one. That has not yet been
+implemented; it remains a concrete follow-up because the repository has
+contorsion and torsion-adjacent hooks.
+
+### Sources Reviewed
+
+- `https://arxiv.org/abs/2206.06912`.
+- `https://arxiv.org/abs/1806.00612`.
+- `https://arxiv.org/abs/1611.09182`.
+
+### Action
+
+- Added `studies/phase337_octonion_clifford_internal_space_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P337.md`.
+- Wired Phase337 into the generator, P101 package, P202 objective completion
+  audit, and claim-integrity verifier.
+- Added Phase337 scanner exclusions so generated audit text cannot become
+  source evidence.
+- Added `OCTONION-CLIFFORD-INTERNAL-SPACE` to `ExperimentReferences.md` with a
+  detailed reference note under `docs/Reference/ExperimentReferences/`.
+
+### Current Expected Outcome
+
+Phase337 is expected to pass only as a negative ratio-lead audit:
+
+- `octonionCliffordSourceAuditPassed=true`.
+- `octonionCliffordLeadPresent=true`.
+- `octonionPrimarySourcesReviewed=true`.
+- `octonionRouteExternalToGu=true`.
+- `octonionRouteUsesCl10InternalSpace=true`.
+- `octonionRouteUsesParticleSubspaceProjector=true`.
+- `octonionRouteUsesPatiSalamSpin10Embedding=true`.
+- `octonionRouteIdentifiesSmGaugeGroupAsSterileNeutrinoStabilizer=true`.
+- `octonionRoutePlacesHiggsAsSuperconnectionScalar=true`.
+- `octonionRouteProvidesExternalHiggsWRelation=true`.
+- `octonionRouteProvidesTheoreticalWeinbergAngleRelation=true`.
+- `numericalLead.externalMhSquaredOverMwSquared=2.5`.
+- `octonionRouteRequiresCl10ToGuFieldMap=true`.
+- `octonionRouteRequiresLowEnergyWeinbergAngleTransport=true`.
+- `octonionRouteRequiresElectroweakScaleOrVevSource=true`.
+- `octonionRouteRequiresObservedPhotonWzProjection=true`.
+- `octonionRouteRequiresHiggsScalarSourceValidation=true`.
+- `octonionRouteRequiresGeVUnitNormalization=true`.
+- `octonionRouteProvidesGuLocalWzTheorem=false`.
+- `octonionRouteProvidesSeparateWzSourceRows=false`.
+- `octonionRouteProvidesTargetIndependentGuVevSource=false`.
+- `octonionRouteProvidesGuWeakMixingAngleSource=false`.
+- `octonionRouteProvidesGuGaugeCouplingNormalization=false`.
+- `octonionRouteProvidesGuObservedFieldExtraction=false`.
+- `octonionRouteProvidesGuHiggsScalarSourceOperator=false`.
+- `octonionRouteProvidesGuHiggsQuarticOrExcitationSource=false`.
+- `octonionRoutePromotesWzMasses=false`.
+- `octonionRoutePromotesHiggsMass=false`.
+- `octonionRouteCompletesBosonPredictions=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from the octonion/Clifford internal-space
+route. It is a serious algebraic Standard Model and Higgs/W ratio lead, but it
+does not provide the GU-local `Cl10` field map, particle-projector source,
+reduced particle-subspace selection law, low-energy weak-angle transport,
+target-independent VEV/scale source, observed photon/W/Z/H projection rows,
+Higgs scalar-source validation, or GeV normalization. The diagnostic Higgs
+replay imports the observed W mass and is not a prediction.
+
+### Validation So Far
+
+- Targeted Phase337 run passed with:
+  - `terminalStatus=octonion-clifford-internal-space-source-audit-ratio-lead-not-gu-source`.
+  - `octonionCliffordSourceAuditPassed=true`.
+  - `octonionRouteProvidesExternalHiggsWRelation=true`.
+  - `externalMhSquaredOverMwSquared=2.5`.
+  - `higgsFromObservedWDiagnosticGeV=127.07486286280228`.
+  - `octonionRoutePromotesWzMasses=false`.
+  - `octonionRoutePromotesHiggsMass=false`.
+  - `canFillPhase201WzContract=false`.
+- P101 regenerated with Phase337 included and remained
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase337 included and remained
+  `boson-objective-completion-audit-incomplete`, with
+  `objectiveAchieved=false`, `checklistPassedCount=130`, and
+  `checklistFailedCount=3`.
+- Scanner guards passed with no intake-ready source-lineage promotion:
+  - P204: `intakeReadyCandidateCount=0`.
+  - P205: `intakeReadyFindingCount=0`.
+  - P207: `canPromoteHiggsQuarticSelfCouplingSource=false` and
+    `intakeReadyFindingCount=0`.
+  - P279 and P281 preserved `wzMissingFieldCount=15` and
+    `higgsMissingFieldCount=14`.
+  - P295: `intakeReadyObservedFieldExtractionCandidateCount=0` and
+    `anyObservedFieldExtractionCandidateFillsContract=false`.
+  - P296: `intakeReadySourceLineageFieldCandidateCount=0` and
+    `anySourceLineageCandidateFillsContract=false`.
+- Claim-integrity verifier passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Full `./scripts/generate_validated_boson_predictions.sh` completed and ended
+  with `boson-claim-integrity-verified`, preserving
+  `promotedPhysicalMassClaimCount=0`.
+- `dotnet test GeometricUnity.slnx` passed. The existing xUnit analyzer warning
+  remains at
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs(315,9)`.
+- `git diff --check` passed after the final journal update.
+
 ## 2026-05-21 - Phase336 HEFT Scalar Geometry Source-Law Audit
 
 ### Context
