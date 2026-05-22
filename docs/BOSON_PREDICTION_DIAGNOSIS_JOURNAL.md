@@ -11473,3 +11473,30 @@ lineage, or GeV-unit normalization.
     `anyObservedFieldExtractionCandidateFillsContract=false`.
   - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
     `anySourceLineageCandidateFillsContract=false`.
+
+## 2026-05-22 - Reference Tracker Structure Update
+
+### Context
+
+The user requested a markdown reference tracker with a short top-level summary
+for each source and a linked detailed markdown note for deeper context.
+
+### Action
+
+- Verified that `ExperimentReferences.md` already serves as the top-level
+  reference index.
+- Verified that detailed source notes already live under
+  `docs/Reference/ExperimentReferences/`.
+- Added
+  `docs/Reference/ExperimentReferences/REFERENCE-NOTE-TEMPLATE.md` so future
+  sources can be captured with the same headings.
+- Added working-file pointers in `ExperimentReferences.md` to make the index,
+  detail-note directory, and template easy to find.
+
+### Outcome
+
+The reference-tracking structure now explicitly matches the requested workflow:
+brief source rows in `ExperimentReferences.md`, detailed summaries in linked
+markdown files, and a reusable template for future references. This was a
+bookkeeping improvement only; it did not change any W/Z/H prediction status or
+promote any source-lineage claim.

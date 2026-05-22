@@ -4,6 +4,13 @@ This file is the top-level reference index for the boson-prediction and
 geometric-source-law investigation. Each entry gives a short overview and links
 to a deeper note under `docs/Reference/ExperimentReferences/`.
 
+Working files:
+
+- This index: `ExperimentReferences.md`.
+- Detailed notes: `docs/Reference/ExperimentReferences/`.
+- New-detail template:
+  [REFERENCE-NOTE-TEMPLATE.md](docs/Reference/ExperimentReferences/REFERENCE-NOTE-TEMPLATE.md).
+
 Update rule:
 
 - Add a row here when a source is used for an audit, implementation decision,
