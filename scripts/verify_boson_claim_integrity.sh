@@ -120,6 +120,7 @@ const paths = {
   phase348: "studies/phase348_right_handed_weak_coupling_source_audit_001/output/right_handed_weak_coupling_source_audit_summary.json",
   phase349: "studies/phase349_spin_exchange_preon_boson_mass_source_audit_001/output/spin_exchange_preon_boson_mass_source_audit_summary.json",
   phase350: "studies/phase350_spin_charge_family_boson_source_audit_001/output/spin_charge_family_boson_source_audit_summary.json",
+  phase351: "studies/phase351_weak_hypercharge_superselection_source_audit_001/output/weak_hypercharge_superselection_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -311,6 +312,7 @@ const phase347 = requireFile(paths.phase347);
 const phase348 = requireFile(paths.phase348);
 const phase349 = requireFile(paths.phase349);
 const phase350 = requireFile(paths.phase350);
+const phase351 = requireFile(paths.phase351);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -2632,6 +2634,66 @@ if (sourceLineageMissing) {
   assert(phase350.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase350 W/Z missing-field count must match Phase213.");
   assert(phase350.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase350 Higgs missing-field count must match Phase213.");
   assert(phase350.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase350 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase351.weakHyperchargeSuperselectionSourceAuditPassed === true, "Phase351 weak-hypercharge superselection source audit must pass while preserving non-promotional status.");
+  assert(phase351.weakHyperchargeSuperselectionLeadPresent === true, "Phase351 must record the weak-hypercharge superselection lead.");
+  assert(phase351.weakHyperchargeSuperselectionPrimarySourceReviewed === true, "Phase351 must record primary source review.");
+  assert(phase351.weakHyperchargeSuperselectionRouteExternalToGu === true, "Phase351 must classify the route as external to GU.");
+  assert(phase351.routeUsesZ2GradedCliffordTensorProduct === true, "Phase351 must record the Z2-graded Clifford tensor product.");
+  assert(phase351.routeUsesCl4HatTensorCl6 === true, "Phase351 must record the Cl4 hat-tensor Cl6 route.");
+  assert(phase351.routeRestrictsToParticleSubspace === true, "Phase351 must record particle-subspace restriction.");
+  assert(phase351.routePromotesWeakHyperchargeToSuperselectionRule === true, "Phase351 must record weak-hypercharge superselection.");
+  assert(phase351.routeDefinesHiggsAsQuillenSuperconnectionScalar === true, "Phase351 must record the Higgs-as-superconnection-scalar claim.");
+  assert(phase351.routePlacesHiggsInCl4OddPart === true, "Phase351 must record the Cl4 odd-part Higgs placement.");
+  assert(phase351.routeExcludesSterileNeutrinoZeroHyperchargeSubspace === true, "Phase351 must record sterile-neutrino zero-hypercharge exclusion.");
+  assert(phase351.routeYieldsSl21Superalgebra === true, "Phase351 must record sl(2|1) emergence.");
+  assert(phase351.routeProjectsOutColourHiggsComponents === true, "Phase351 must record colour-Higgs projection.");
+  assert(phase351.routePreservesGluonMasslessness === true, "Phase351 must record gluon masslessness preservation.");
+  assert(phase351.routeDerivesMasslessPhotonInUnitaryGauge === true, "Phase351 must record massless photon derivation context.");
+  assert(phase351.routeProvidesTheoreticalWeinbergAngleRelation === true, "Phase351 must record the theoretical Weinberg-angle relation.");
+  assert(phase351.routeProvidesExternalHiggsWRelation === true, "Phase351 must record the external Higgs/W relation.");
+  assert(phase351.sourceClaimsWithinOnePercentAccuracy === true, "Phase351 must record the source's historical within-one-percent claim.");
+  assert(phase351.routeProvidesObservedLowEnergyWeakMixingAngle === false, "Phase351 cannot claim an observed low-energy weak-mixing angle source.");
+  assert(phase351.routeProvidesObservedZMass === false, "Phase351 cannot claim an observed Z mass.");
+  assert(phase351.routeProvidesObservedWMass === false, "Phase351 cannot claim an observed W mass.");
+  assert(phase351.routeProvidesObservedHiggsMass === false, "Phase351 cannot claim an observed Higgs mass.");
+  assert(phase351.currentTargetRelationWithinTwoPercent === true, "Phase351 diagnostic Higgs/W relation should remain a close external ratio lead.");
+  assert(phase351.routeRequiresExternalCliffordModel === true, "Phase351 must require the external Clifford model.");
+  assert(phase351.routeRequiresParticleSubspaceSelectionRule === true, "Phase351 must require particle-subspace selection.");
+  assert(phase351.routeRequiresSuperconnectionNormalizationTransfer === true, "Phase351 must require superconnection normalization transfer.");
+  assert(phase351.routeRequiresTheoreticalToLowEnergyWeakAngleTransport === true, "Phase351 must require theoretical-to-low-energy weak-angle transport.");
+  assert(phase351.routeRequiresGuLocalCliffordTensorMap === true, "Phase351 must require a GU-local Clifford tensor map.");
+  assert(phase351.routeRequiresGuWeakHyperchargeSuperselectionDerivation === true, "Phase351 must require a GU weak-hypercharge derivation.");
+  assert(phase351.routeRequiresGuHiggsSuperconnectionScalarOperator === true, "Phase351 must require a GU Higgs superconnection scalar operator.");
+  assert(phase351.routeRequiresGuObservedPhotonWzHiggsProjection === true, "Phase351 must require observed photon/W/Z/H projection.");
+  assert(phase351.routeRequiresGuIndependentWzSourceRows === true, "Phase351 must require independent W/Z source rows.");
+  assert(phase351.routeRequiresTargetIndependentVevOrScale === true, "Phase351 must require a target-independent VEV or scale.");
+  assert(phase351.routeRequiresGeVUnitNormalization === true, "Phase351 must require GeV normalization.");
+  assert(phase351.routeProvidesGuLocalCliffordTensorMap === false, "Phase351 cannot claim a GU Clifford tensor map.");
+  assert(phase351.routeProvidesGuWeakHyperchargeSuperselectionDerivation === false, "Phase351 cannot claim a GU weak-hypercharge derivation.");
+  assert(phase351.routeProvidesGuLocalWzTheorem === false, "Phase351 cannot claim a GU-local W/Z theorem.");
+  assert(phase351.routeProvidesSeparateObservedWzRows === false, "Phase351 cannot claim separate observed W/Z rows.");
+  assert(phase351.routeProvidesTargetIndependentVevOrMassScale === false, "Phase351 cannot claim a target-independent absolute scale.");
+  assert(phase351.routeProvidesGuLowEnergyWeakMixingAngleSource === false, "Phase351 cannot claim a GU low-energy weak-mixing source.");
+  assert(phase351.routeProvidesGuGaugeCouplingNormalization === false, "Phase351 cannot claim GU gauge-coupling normalization.");
+  assert(phase351.routeProvidesObservedPhotonWzHiggsProjectionRows === false, "Phase351 cannot claim observed photon/W/Z/H projection rows.");
+  assert(phase351.routeProvidesGuObservedFieldExtractionContract === false, "Phase351 cannot claim the GU observed-field extraction contract.");
+  assert(phase351.routeProvidesGuHiggsScalarSourceOperator === false, "Phase351 cannot claim a GU Higgs scalar-source operator.");
+  assert(phase351.routeProvidesObservedHiggsMassFromGu === false, "Phase351 cannot claim observed Higgs mass from GU.");
+  assert(phase351.routeProvidesGeVUnitNormalization === false, "Phase351 cannot claim GeV normalization.");
+  assert(phase351.routePromotesObservedFieldExtraction === false, "Phase351 cannot promote observed-field extraction.");
+  assert(phase351.routePromotesWzMasses === false, "Phase351 cannot promote W/Z masses.");
+  assert(phase351.routePromotesHiggsMass === false, "Phase351 cannot promote Higgs mass.");
+  assert(phase351.routeCompletesBosonPredictions === false, "Phase351 cannot complete boson predictions.");
+  assert(phase351.canFillPhase201WzContract === false, "Phase351 cannot fill the Phase201 W/Z contract.");
+  assert(phase351.canFillPhase201HiggsContract === false, "Phase351 cannot fill the Phase201 Higgs contract.");
+  assert(phase351.canFillPhase256ObservedFieldExtractionContract === false, "Phase351 cannot fill the Phase256 observed-field extraction contract.");
+  assert(phase351.sourceRowCount === 3, "Phase351 must preserve three source rows.");
+  assert(phase351.contractImpact?.canFillPhase201WzContract === false, "Phase351 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase351.contractImpact?.canFillPhase201HiggsContract === false, "Phase351 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase351.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase351 contract impact must keep Phase256 unfilled.");
+  assert(phase351.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase351 W/Z missing-field count must match Phase213.");
+  assert(phase351.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase351 Higgs missing-field count must match Phase213.");
+  assert(phase351.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase351 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

@@ -11607,6 +11607,105 @@ an absolute GeV scale, or unit normalization.
   `xUnit2013` collection-size warning in
   `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
 
+## 2026-05-22 - Phase351 Weak-Hypercharge Superselection Source Audit
+
+### Context
+
+After Phase350, a non-duplicative Clifford/superconnection lead was found:
+Todorov's weak-hypercharge superselection paper. Phase337 already captured the
+broader octonion/Clifford internal-space cluster, but this source is sharper
+because it explicitly promotes weak hypercharge to a superselection rule,
+defines the Higgs as a Quillen superconnection scalar, discusses massless
+photon extraction, and reports `m_H = 2 cos(theta_W) m_W = sqrt(5/2) m_W`.
+
+### Sources Reviewed
+
+- `https://arxiv.org/abs/2010.15621`.
+- `https://doi.org/10.1007/JHEP04(2021)164`.
+- `https://preprints.ihes.fr/storage/_010_1_1_1_.pdf`.
+
+### Action
+
+- Added `studies/phase351_weak_hypercharge_superselection_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P351.md`.
+- Wired Phase351 into the generator, P101 package, P202 objective completion
+  audit, and claim-integrity verifier.
+- Added Phase351 scanner exclusions so generated diagnostic text is not counted
+  as independent source evidence.
+- Added `WEAK-HYPERCHARGE-SUPERSELECTION` to `ExperimentReferences.md` with a
+  detailed reference note under `docs/Reference/ExperimentReferences/`.
+
+### Current Expected Outcome
+
+Phase351 is expected to pass only as a negative boundary audit:
+
+- `weakHyperchargeSuperselectionSourceAuditPassed=true`.
+- `weakHyperchargeSuperselectionLeadPresent=true`.
+- `weakHyperchargeSuperselectionPrimarySourceReviewed=true`.
+- `weakHyperchargeSuperselectionRouteExternalToGu=true`.
+- `routeUsesZ2GradedCliffordTensorProduct=true`.
+- `routeUsesCl4HatTensorCl6=true`.
+- `routeRestrictsToParticleSubspace=true`.
+- `routePromotesWeakHyperchargeToSuperselectionRule=true`.
+- `routeDefinesHiggsAsQuillenSuperconnectionScalar=true`.
+- `routeDerivesMasslessPhotonInUnitaryGauge=true`.
+- `routeProvidesTheoreticalWeinbergAngleRelation=true`.
+- `routeProvidesExternalHiggsWRelation=true`.
+- `theoreticalMhSquaredOverMwSquared=2.5`.
+- `routeProvidesObservedLowEnergyWeakMixingAngle=false`.
+- `routeProvidesObservedZMass=false`.
+- `routeProvidesObservedWMass=false`.
+- `routeProvidesObservedHiggsMass=false`.
+- `routeRequiresGuLocalCliffordTensorMap=true`.
+- `routeRequiresGuWeakHyperchargeSuperselectionDerivation=true`.
+- `routeRequiresGuObservedPhotonWzHiggsProjection=true`.
+- `routeRequiresTargetIndependentVevOrScale=true`.
+- `routeRequiresGeVUnitNormalization=true`.
+- `routeProvidesGuLocalCliffordTensorMap=false`.
+- `routeProvidesGuLocalWzTheorem=false`.
+- `routeProvidesGuObservedFieldExtractionContract=false`.
+- `routeProvidesGuHiggsScalarSourceOperator=false`.
+- `routePromotesWzMasses=false`.
+- `routePromotesHiggsMass=false`.
+- `routeCompletesBosonPredictions=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs physical masses from the weak-hypercharge
+superselection route. It is a serious external Clifford/superconnection
+Higgs/W ratio lead, but it imports a separate particle-subspace construction
+and theoretical weak-angle normalization. It does not supply a GU-local
+Clifford tensor map, weak-hypercharge superselection derivation, observed
+photon/W/Z/H projection rows, independent W/Z source rows, target-independent
+VEV or scale, low-energy weak-angle transport, Higgs scalar-source operator, or
+GeV unit normalization.
+
+### Validation
+
+- Targeted Phase351 run passed with
+  `weakHyperchargeSuperselectionSourceAuditPassed=true`,
+  `routeProvidesExternalHiggsWRelation=true`,
+  `routePromotesWzMasses=false`, `routePromotesHiggsMass=false`, and
+  `canFillPhase256ObservedFieldExtractionContract=false`.
+- P101 package build passed and includes the Phase351 audit block.
+- P202 objective audit passed as an incomplete objective:
+  `objectiveAchieved=false`, `checklistPassedCount=144`, and
+  `checklistFailedCount=3`.
+- Claim-integrity verification passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns preserved the negative intake boundary:
+  P204 `intakeReadyCandidateCount=0`,
+  P205 `intakeReadyFindingCount=0`,
+  P207 `intakeReadyFindingCount=0`,
+  P279 `localSearchMatchingFileCount=0`,
+  P281 `localSearchMatchingFileCount=0`,
+  P295 `intakeReadyObservedFieldExtractionCandidateCount=0`, and
+  P296 `intakeReadySourceLineageFieldCandidateCount=0`.
+- Full generator gate passed with Phase351 included and the final
+  claim-integrity verifier still reporting zero promoted physical mass claims.
+- `dotnet test GeometricUnity.slnx` passed.
+
 ## 2026-05-22 - Phase350 Spin-Charge-Family Boson Source Audit
 
 ### Context

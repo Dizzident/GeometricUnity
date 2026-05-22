@@ -1,0 +1,152 @@
+{
+  "phaseId": "phase351-weak-hypercharge-superselection-source-audit",
+  "terminalStatus": "weak-hypercharge-superselection-source-audit-external-higgs-w-relation-not-gu-source",
+  "generatedAt": "2026-05-22T19:35:13.1621955+00:00",
+  "weakHyperchargeSuperselectionSourceAuditPassed": true,
+  "weakHyperchargeSuperselectionLeadPresent": true,
+  "weakHyperchargeSuperselectionPrimarySourceReviewed": true,
+  "weakHyperchargeSuperselectionRouteExternalToGu": true,
+  "routeUsesZ2GradedCliffordTensorProduct": true,
+  "routeUsesCl4HatTensorCl6": true,
+  "routeRestrictsToParticleSubspace": true,
+  "routePromotesWeakHyperchargeToSuperselectionRule": true,
+  "routeDefinesHiggsAsQuillenSuperconnectionScalar": true,
+  "routePlacesHiggsInCl4OddPart": true,
+  "routeExcludesSterileNeutrinoZeroHyperchargeSubspace": true,
+  "routeYieldsSl21Superalgebra": true,
+  "routeProjectsOutColourHiggsComponents": true,
+  "routePreservesGluonMasslessness": true,
+  "routeDerivesMasslessPhotonInUnitaryGauge": true,
+  "routeProvidesTheoreticalWeinbergAngleRelation": true,
+  "routeProvidesExternalHiggsWRelation": true,
+  "sourceClaimsWithinOnePercentAccuracy": true,
+  "routeProvidesObservedLowEnergyWeakMixingAngle": false,
+  "routeProvidesObservedZMass": false,
+  "routeProvidesObservedWMass": false,
+  "routeProvidesObservedHiggsMass": false,
+  "theoreticalCosSquaredTheta": 0.625,
+  "theoreticalTanSquaredTheta": 0.6,
+  "theoreticalMhSquaredOverMwSquared": 2.5,
+  "theoreticalMhOverMw": 1.5811388300841898,
+  "diagnosticHiggsFromObservedWGeV": 127.07486286280228,
+  "diagnosticHiggsResidualGeV": 1.8748628628022743,
+  "diagnosticHiggsPull": 16.741031475201147,
+  "currentTargetRelationRelativeResidual": 0.014974942993628431,
+  "currentTargetRelationWithinOnePercent": false,
+  "currentTargetRelationWithinTwoPercent": true,
+  "routeRequiresExternalCliffordModel": true,
+  "routeRequiresParticleSubspaceSelectionRule": true,
+  "routeRequiresSuperconnectionNormalizationTransfer": true,
+  "routeRequiresTheoreticalToLowEnergyWeakAngleTransport": true,
+  "routeRequiresGuLocalCliffordTensorMap": true,
+  "routeRequiresGuWeakHyperchargeSuperselectionDerivation": true,
+  "routeRequiresGuHiggsSuperconnectionScalarOperator": true,
+  "routeRequiresGuObservedPhotonWzHiggsProjection": true,
+  "routeRequiresGuIndependentWzSourceRows": true,
+  "routeRequiresTargetIndependentVevOrScale": true,
+  "routeRequiresGeVUnitNormalization": true,
+  "routeProvidesGuLocalCliffordTensorMap": false,
+  "routeProvidesGuWeakHyperchargeSuperselectionDerivation": false,
+  "routeProvidesGuLocalWzTheorem": false,
+  "routeProvidesSeparateObservedWzRows": false,
+  "routeProvidesTargetIndependentVevOrMassScale": false,
+  "routeProvidesGuLowEnergyWeakMixingAngleSource": false,
+  "routeProvidesGuGaugeCouplingNormalization": false,
+  "routeProvidesObservedPhotonWzHiggsProjectionRows": false,
+  "routeProvidesGuObservedFieldExtractionContract": false,
+  "routeProvidesGuHiggsScalarSourceOperator": false,
+  "routeProvidesObservedHiggsMassFromGu": false,
+  "routeProvidesGeVUnitNormalization": false,
+  "routePromotesObservedFieldExtraction": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "sourceRows": [
+    {
+      "SourceId": "arxiv-2010.15621-weak-hypercharge-superselection",
+      "Url": "https://arxiv.org/abs/2010.15621",
+      "FindingKind": "Weak-hypercharge superselection and Clifford algebra Standard Model source",
+      "Summary": "Restricts Cl4 hat-tensor Cl6 to a particle subspace, treats weak hypercharge as a superselection rule, defines the Higgs as the scalar part of Quillen\u0027s superconnection, and reports a W-Higgs mass relation from equal superconnection normalizations.",
+      "PredictionImpact": "Direct algebraic Higgs/W ratio lead; still external to GU and not an observed W/Z/H source-lineage artifact."
+    },
+    {
+      "SourceId": "jhep04-2021-164-weak-hypercharge-superselection",
+      "Url": "https://doi.org/10.1007/JHEP04(2021)164",
+      "FindingKind": "JHEP version of the weak-hypercharge superselection paper",
+      "Summary": "Records the peer-reviewed version connected to the arXiv source and its Clifford/superconnection Higgs relation.",
+      "PredictionImpact": "Useful provenance; no GU-local field map, observed projection, absolute scale, or GeV normalization is supplied."
+    },
+    {
+      "SourceId": "ihes-p-21-02-weak-hypercharge-superselection-pdf",
+      "Url": "https://preprints.ihes.fr/storage/_010_1_1_1_.pdf",
+      "FindingKind": "IHES PDF with section-level W/Z/H relation details",
+      "Summary": "Displays the massless photon discussion, theoretical Weinberg-angle relation, and mH = 2 cos(thetaW) mW = sqrt(5/2) mW relation.",
+      "PredictionImpact": "Specific equation-level diagnostic source; still uses an external Clifford model and cannot by itself fill GU contracts."
+    }
+  ],
+  "checks": [
+    {
+      "CheckId": "weak-hypercharge-superselection-primary-source-reviewed",
+      "Passed": true,
+      "Detail": "lead=True; reviewed=True; externalToGu=True; sourceRows=3"
+    },
+    {
+      "CheckId": "weak-hypercharge-clifford-superconnection-claims-captured",
+      "Passed": true,
+      "Detail": "z2Clifford=True; cl4cl6=True; particleSubspace=True; hyperchargeSuperselection=True; higgsSuperconnection=True; sl21=True; colourHiggsProjectedOut=True; photonMassless=True"
+    },
+    {
+      "CheckId": "external-higgs-w-relation-captured-but-diagnostic-only",
+      "Passed": true,
+      "Detail": "cos2Theta=0.625; tan2Theta=0.6; mh2OverMw2=2.5; diagnosticHiggsFromObservedWGeV=127.07486286280228; residualGeV=1.8748628628022743; pull=16.741031475201147; relativeResidual=0.014974942993628431; currentWithinOnePercent=False; currentWithinTwoPercent=True; lowEnergyWeakAngle=False; observedZ=False; observedW=False; observedH=False"
+    },
+    {
+      "CheckId": "adjacent-superconnection-and-hypercharge-blockers-still-bind",
+      "Passed": true,
+      "Detail": "p235LowEnergyPromotable=False; smWz=False; smHiggs=False; su21Wz=False; su21Higgs=False; octonionWz=False; octonionHiggs=False"
+    },
+    {
+      "CheckId": "weak-hypercharge-route-requires-missing-gu-source-data",
+      "Passed": true,
+      "Detail": "externalClifford=True; particleSubspace=True; superconnectionNorm=True; weakAngleTransport=True; guCliffordMap=True; guHypercharge=True; guHiggsOperator=True; observedProjection=True; wzRows=True; scale=True; gev=True"
+    },
+    {
+      "CheckId": "weak-hypercharge-route-does-not-fill-gu-contracts",
+      "Passed": true,
+      "Detail": "guCliffordMap=False; guHypercharge=False; guWzTheorem=False; observedWzRows=False; scale=False; weakAngle=False; coupling=False; observedRows=False; observedContract=False; higgsOperator=False; higgsMass=False; gev=False; promotesWz=False; promotesHiggs=False; completes=False"
+    },
+    {
+      "CheckId": "phase201-phase256-contract-state-preserved",
+      "Passed": true,
+      "Detail": "phase201Promotable=False; existingEvidence=False; wzMissing=15; higgsMissing=14; observedFilled=0; observedPromotable=False"
+    }
+  ],
+  "contractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionFilledRequiredFieldCount": 0
+  },
+  "relatedBlockingEvidence": {
+    "patiSalamNormalizationPromotableForLowEnergyWz": false,
+    "smMassMatrixPromotesWzMasses": false,
+    "smMassMatrixPromotesHiggsMass": false,
+    "su21RoutePromotesWzMasses": false,
+    "su21RoutePromotesHiggsMass": false,
+    "octonionRoutePromotesWzMasses": false,
+    "octonionRoutePromotesHiggsMass": false
+  },
+  "decision": "Do not promote W/Z or Higgs physical masses from the weak-hypercharge superselection route. It gives a serious external Clifford/superconnection Higgs-to-W ratio lead, but it imports a separate particle-subspace construction and theoretical weak-angle normalization; it does not supply a GU-local Clifford tensor map, weak-hypercharge superselection derivation, observed photon/W/Z/H projection rows, independent W/Z source rows, target-independent VEV or scale, low-energy weak-angle transport, Higgs scalar-source operator, or GeV unit normalization.",
+  "nextRequiredArtifact": [
+    "A GU-native derivation mapping the draft\u0027s internal normal-spinor or gauge data into the Cl4 hat-tensor Cl6 particle-subspace construction.",
+    "A proof that the weak-hypercharge superselection and superconnection normalization are GU-local source data rather than imported external algebraic assumptions.",
+    "Observed photon/W/Z/H projection rows, including a low-energy weak-angle and Z-mass source if the theoretical angle is to be connected to physical W/Z.",
+    "A target-independent W scale or VEV source and GeV unit normalization before using the Higgs/W relation as a mass prediction.",
+    "A Higgs scalar-source/operator artifact satisfying the Phase201 and Phase256 contracts."
+  ]
+}
