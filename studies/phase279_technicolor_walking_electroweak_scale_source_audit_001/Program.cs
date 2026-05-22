@@ -481,6 +481,7 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath.Contains("studies/phase340_bf_topological_mass_source_audit_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase341_scherk_schwarz_twisted_compactification_source_audit_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase342_higgsless_boundary_condition_source_audit_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase343_stueckelberg_vector_mass_source_audit_001/", StringComparison.Ordinal)
     || normalizedPath == "studies/phase101_boson_prediction_package_001/Program.cs"
     || normalizedPath == "studies/phase202_boson_objective_completion_audit_001/Program.cs"
     || normalizedPath == "studies/phase204_boson_source_lineage_candidate_scan_001/Program.cs"
@@ -493,6 +494,7 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P327.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P328.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P338.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P343.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P342.md"
     || normalizedPath.Contains("docs/Reference/ExperimentReferences/", StringComparison.Ordinal);
 

@@ -7829,6 +7829,84 @@ gauge-coupling lineage, observed photon/W/Z projection, observed-Higgs
 compatibility, KK/precision completion, and GeV normalization without importing
 W/Z/H targets.
 
+## 2026-05-22 - Phase343 Stueckelberg Vector-Mass Source Audit
+
+### Context
+
+After Phase342 ruled out Higgsless boundary-condition electroweak breaking as a
+promotable GU-local source, I checked Stueckelberg vector-mass mechanisms. This
+is a distinct gauge-geometric route: a compensator scalar or gauge-bundle frame
+can preserve gauge invariance while making a vector field massive, at least in
+the abelian case.
+
+### Sources Reviewed
+
+- `https://arxiv.org/abs/hep-th/0304245`.
+- `https://arxiv.org/abs/hep-ph/0402047`.
+- `https://arxiv.org/abs/1109.5383`.
+- `https://arxiv.org/abs/2204.13368`.
+- `https://arxiv.org/abs/2107.08840`.
+
+### Action
+
+- Added `studies/phase343_stueckelberg_vector_mass_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P343.md`.
+- Added `STUECKELBERG-VECTOR-MASS` to `ExperimentReferences.md` with detailed
+  notes under `docs/Reference/ExperimentReferences/`.
+- Wired Phase343 into the generator, Phase101 package, Phase202 objective
+  completion audit, claim-integrity verifier, and scanner exclusions.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from Stueckelberg vector-mass mechanisms.
+The route is a direct external vector-mass lead, but the current sources either
+apply cleanly to abelian sectors, introduce an extra Stueckelberg-massive
+Z-prime, treat W/Z masses as explicit theory parameters, modify photon/weak
+mixing, or remain effective rather than UV complete. The repository still lacks
+a GU-local compensator or bundle-frame source, target-independent vector mass
+parameter, non-abelian electroweak completion, photon/W/Z projection,
+observed-Higgs compatibility, RG/precision completion, and GeV normalization.
+
+### Validation
+
+- Targeted Phase343 run passed with:
+  - `stueckelbergVectorMassSourceAuditPassed=true`.
+  - `abelianRoutePreservesGaugeInvariance=true`.
+  - `nonAbelianRenormalizableUnitaryBarrierPresent=true`.
+  - `electroweakRouteUsesExplicitWzMassParameters=true`.
+  - `stueckelbergRoutePromotesWzMasses=false`.
+  - `stueckelbergRoutePromotesHiggsMass=false`.
+  - `canFillPhase201WzContract=false`.
+- Scanner reruns after adding Phase343 found no intake-ready artifacts:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `canPromoteHiggsQuarticSelfCouplingSource=false` and
+    `intakeReadyFindingCount=0`.
+  - P279 `technicolorWalkingElectroweakScaleSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P281 `geometricRefractiveUnificationSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P295 `intakeReadyObservedFieldExtractionCandidateCount=0` and
+    `anyObservedFieldExtractionCandidateFillsContract=false`.
+  - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
+    `anySourceLineageCandidateFillsContract=false`.
+- P101 regenerated with Phase343 included and remained
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase343 included and remained
+  `objectiveAchieved=false`, with `checklistPassedCount=136` and
+  `checklistFailedCount=3`.
+- Claim-integrity verifier passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+
+### Next Blocker
+
+For this route specifically, GU would need to derive a Stueckelberg
+compensator/frame from native geometry, derive the vector mass parameter
+without W/Z/H targets, complete a non-abelian electroweak W/Z sector, preserve
+the observed photon and Higgs facts, and supply precision, RG, threshold, and
+unit-normalization lineage.
+
 ## 2026-05-21 - Phase339 MacDowell-Mansouri Cartan-Breaking Source Audit
 
 ### Context

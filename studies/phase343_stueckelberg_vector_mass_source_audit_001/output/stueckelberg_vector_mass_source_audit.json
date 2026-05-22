@@ -1,0 +1,156 @@
+{
+  "phaseId": "phase343-stueckelberg-vector-mass-source-audit",
+  "terminalStatus": "stueckelberg-vector-mass-source-audit-external-mass-parameter-not-gu-source",
+  "generatedAt": "2026-05-22T13:55:11.3382053+00:00",
+  "stueckelbergVectorMassSourceAuditPassed": true,
+  "stueckelbergLeadPresent": true,
+  "stueckelbergPrimarySourcesReviewed": true,
+  "stueckelbergRouteExternalToGu": true,
+  "abelianGaugeInvariantMassLeadPresent": true,
+  "abelianRoutePreservesGaugeInvariance": true,
+  "abelianRouteUsesCompensatorScalarOrFrame": true,
+  "standardModelHyperchargeStueckelbergLeadPresent": true,
+  "standardModelHyperchargeRouteModifiesPhotonAndWeakMixing": true,
+  "nonAbelianRenormalizableUnitaryBarrierPresent": true,
+  "electroweakStueckelbergWzMassLeadPresent": true,
+  "electroweakRouteUsesExplicitWzMassParameters": true,
+  "electroweakRouteEffectiveNotUvComplete": true,
+  "u1ExtensionGivesExtraZPrimeMass": true,
+  "u1ExtensionDoesNotSourceObservedWzMasses": true,
+  "geometricFrameInterpretationLeadPresent": true,
+  "routeOverlapsBfTopologicalMass": true,
+  "routeOverlapsHiggslessBoundary": true,
+  "routeOverlapsNeutralMixing": true,
+  "routeDistinctFromStandardHiggsVev": true,
+  "stueckelbergRouteRequiresGuLocalCompensatorOrFrame": true,
+  "stueckelbergRouteRequiresTargetIndependentVectorMassParameter": true,
+  "stueckelbergRouteRequiresNonAbelianElectroweakCompletion": true,
+  "stueckelbergRouteRequiresWeakAngleAndGaugeCouplingLineage": true,
+  "stueckelbergRouteRequiresObservedPhotonWzProjection": true,
+  "stueckelbergRouteRequiresObservedHiggsCompatibilityOrReplacement": true,
+  "stueckelbergRouteRequiresUnitarityRenormalizabilityAndPrecisionLineage": true,
+  "stueckelbergRouteRequiresRgThresholdTransport": true,
+  "stueckelbergRouteRequiresGeVUnitNormalization": true,
+  "stueckelbergRouteProvidesGuLocalWzTheorem": false,
+  "stueckelbergRouteProvidesSeparateWzSourceRows": false,
+  "stueckelbergRouteProvidesTargetIndependentMassParameter": false,
+  "stueckelbergRouteProvidesGuWeakMixingAngleSource": false,
+  "stueckelbergRouteProvidesGuGaugeCouplingNormalization": false,
+  "stueckelbergRouteProvidesObservedPhotonWzProjectionRows": false,
+  "stueckelbergRouteProvidesGuObservedFieldExtraction": false,
+  "stueckelbergRouteProvidesGuHiggsScalarSourceOperator": false,
+  "stueckelbergRouteProvidesObservedHiggsMassFromGu": false,
+  "stueckelbergRouteProvidesGeVUnitNormalization": false,
+  "stueckelbergRoutePromotesWzMasses": false,
+  "stueckelbergRoutePromotesHiggsMass": false,
+  "stueckelbergRouteCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "sourceRows": [
+    {
+      "SourceId": "arxiv-hep-th-0304245-stueckelberg-field-review",
+      "Url": "https://arxiv.org/abs/hep-th/0304245",
+      "FindingKind": "Stueckelberg mechanism review and electroweak boundary",
+      "Summary": "Reviews the abelian compensator-field mechanism and states the non-abelian vector-mass barrier for renormalizable and unitary alternatives to the Higgs mechanism.",
+      "PredictionImpact": "Serious gauge-invariant mass mechanism, but the review blocks direct non-abelian W/Z promotion without additional source data."
+    },
+    {
+      "SourceId": "arxiv-hep-ph-0402047-stueckelberg-extension-standard-model",
+      "Url": "https://arxiv.org/abs/hep-ph/0402047",
+      "FindingKind": "Stueckelberg extension of the Standard Model",
+      "Summary": "Adds an extra abelian gauge boson and axionic Stueckelberg scalar, producing a massive Z-prime with small mixing-angle couplings.",
+      "PredictionImpact": "Sources an extra neutral vector mass, not target-independent observed W/Z/H mass rows."
+    },
+    {
+      "SourceId": "arxiv-1109.5383-electroweak-without-higgs-stueckelberg",
+      "Url": "https://arxiv.org/abs/1109.5383",
+      "FindingKind": "Stueckelberg formalism for massive W and Z bosons",
+      "Summary": "Attempts a gauge-invariant massive electroweak theory without Higgs spontaneous symmetry breaking and classifies it as effective rather than UV complete.",
+      "PredictionImpact": "Direct W/Z mass lead, but it takes W/Z mass parameters as theory data and does not provide GU source lineage."
+    },
+    {
+      "SourceId": "arxiv-2204.13368-stueckelberg-higgs-frames-scales",
+      "Url": "https://arxiv.org/abs/2204.13368",
+      "FindingKind": "Geometric frame interpretation of Stueckelberg and Higgs mechanisms",
+      "Summary": "Identifies the Stueckelberg field with a gauge-bundle frame and relates Higgs/running couplings to conformal geometry on fibres.",
+      "PredictionImpact": "Strong geometric analogy for GU, but no observed W/Z/H prediction rows or GeV scale source."
+    },
+    {
+      "SourceId": "arxiv-2107.08840-viable-u1-stueckelberg-zprime",
+      "Url": "https://arxiv.org/abs/2107.08840",
+      "FindingKind": "Viable U(1) extension with a Stueckelberg massive Z-prime",
+      "Summary": "Re-examines theoretical consistency for an extra Z-prime mass from a Stueckelberg-type scalar.",
+      "PredictionImpact": "Useful neutral-sector extension boundary; does not derive the observed electroweak W/Z/H masses."
+    }
+  ],
+  "checks": [
+    {
+      "CheckId": "stueckelberg-primary-sources-reviewed",
+      "Passed": true,
+      "Detail": "lead=True; reviewed=True; externalToGu=True; sourceRows=5"
+    },
+    {
+      "CheckId": "abelian-gauge-invariant-mass-lead-captured",
+      "Passed": true,
+      "Detail": "abelianLead=True; gaugeInvariant=True; compensatorOrFrame=True; geometricFrame=True"
+    },
+    {
+      "CheckId": "electroweak-and-nonabelian-boundaries-captured",
+      "Passed": true,
+      "Detail": "hyperchargeLead=True; weakMixingModified=True; nonAbelianBarrier=True; ewWzLead=True; explicitMasses=True; effectiveOnly=True; zPrime=True; observedWzSource=True"
+    },
+    {
+      "CheckId": "related-electroweak-boundaries-preserved",
+      "Passed": true,
+      "Detail": "bf=True; higgsless=True; neutralMixing=True; standardBoundary=True; ymHiggs=True; unitarity=True; oblique=True"
+    },
+    {
+      "CheckId": "stueckelberg-route-requires-missing-gu-source-data",
+      "Passed": true,
+      "Detail": "compensator=True; massParameter=True; nonAbelianCompletion=True; weakAngle=True; projection=True; higgs=True; consistency=True; rg=True; gev=True"
+    },
+    {
+      "CheckId": "stueckelberg-route-does-not-fill-gu-contracts",
+      "Passed": true,
+      "Detail": "guWzTheorem=False; separateRows=False; massParameter=False; weakAngle=False; gaugeNorm=False; projection=False; observedExtraction=False; higgsOperator=False; observedHiggs=False; gev=False; promotesWz=False; promotesHiggs=False"
+    },
+    {
+      "CheckId": "phase201-phase256-contract-state-unchanged",
+      "Passed": true,
+      "Detail": "phase201Promotable=False; existingEvidence=False; wzMissing=15; higgsMissing=14; phase256Required=20; phase256Filled=0; observedPromotable=False; p224=True; wClosure=False; zClosure=False; higgsClosure=False; canFillWz=False; canFillHiggs=False; canFillObserved=False"
+    }
+  ],
+  "contractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionFilledRequiredFieldCount": 0
+  },
+  "relatedElectroweakEvidence": {
+    "standardElectroweakBoundaryAuditPassed": true,
+    "standardElectroweakBoundaryCompletesBosonPredictions": false,
+    "neutralElectroweakMixingSourceAuditPassed": true,
+    "neutralMixingRouteCompletesBosonPredictions": false,
+    "coupledYangMillsHiggsMassExtractionAuditPassed": true,
+    "coupledYangMillsHiggsRouteCompletesBosonPredictions": false,
+    "electroweakUnitarityScatteringSourceAuditPassed": true,
+    "unitarityRouteCompletesBosonPredictions": false,
+    "obliquePrecisionElectroweakSourceAuditPassed": true,
+    "obliqueRouteCompletesBosonPredictions": false,
+    "bfTopologicalMassSourceAuditPassed": true,
+    "bfRouteCompletesBosonPredictions": false,
+    "higgslessBoundaryConditionSourceAuditPassed": true,
+    "higgslessRouteCompletesBosonPredictions": false
+  },
+  "decision": "Do not promote W/Z or Higgs physical masses from Stueckelberg vector-mass mechanisms. The route is a serious gauge-geometric mass-generation lead, especially for abelian vector fields and extra Z-prime sectors, but the current sources either introduce external mass parameters, modify photon or weak-mixing structure, remain effective rather than UV complete for W/Z, or require standard Higgs-sector compatibility. They do not fill GU-local W/Z/H source-lineage rows.",
+  "nextRequiredArtifact": [
+    "A GU-local compensator, bundle-frame, or equivalent Stueckelberg field derived from native geometry.",
+    "A target-independent source for the vector mass parameter and its GeV normalization.",
+    "A non-abelian electroweak completion with W and Z source rows, weak-angle lineage, and photon projection.",
+    "A compatible observed Higgs scalar source or replacement mechanism with a prediction row.",
+    "Unitarity, renormalizability, precision-electroweak, RG, threshold, and observed-field extraction lineage validated through Phase201/Phase256."
+  ]
+}
