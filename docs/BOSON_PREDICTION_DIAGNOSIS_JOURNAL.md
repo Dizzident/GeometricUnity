@@ -7747,6 +7747,88 @@ compactification/twist sector from native GU fields, produce the twist or
 holonomy and radius without using W/Z/H targets, map the observed electroweak
 fields, and supply Higgs, coupling, RG, and unit-normalization lineage.
 
+## 2026-05-22 - Phase342 Higgsless Boundary-Condition Source Audit
+
+### Context
+
+After Phase341 ruled out Scherk-Schwarz/twisted compactification as a promotable
+GU-local source, I checked the adjacent but distinct Higgsless
+boundary-condition route. Unlike gauge-Higgs/Hosotani or Wilson-line models,
+this branch tries to generate W/Z masses from interval, brane, theory-space, or
+higher-dimensional boundary spectra without a physical scalar Higgs.
+
+### Sources Reviewed
+
+- `https://arxiv.org/abs/hep-ph/0308038`.
+- `https://arxiv.org/abs/hep-ph/0309189`.
+- `https://arxiv.org/abs/hep-ph/0312324`.
+- `https://arxiv.org/abs/hep-ph/0312193`.
+- `https://arxiv.org/abs/hep-ph/0406020`.
+- `https://arxiv.org/abs/0808.1682`.
+
+### Action
+
+- Added `studies/phase342_higgsless_boundary_condition_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P342.md`.
+- Added `HIGGSLESS-BOUNDARY-CONDITION-EWSB` to `ExperimentReferences.md` with
+  detailed notes under `docs/Reference/ExperimentReferences/`.
+- Wired Phase342 into the generator, Phase101 package, Phase202 objective
+  completion audit, and claim-integrity verifier.
+- Added Phase342 generated-diagnostic exclusions to source-lineage,
+  Higgs-quartic, local-search, and observed-field scanner phases.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from Higgsless boundary-condition
+electroweak breaking. The route is a direct external W/Z mass-generation lead:
+boundary conditions, warped intervals, deconstructed links, or 6D compactified
+domains can produce W/Z-like light vector modes. The current sources still leave
+the boundary conditions, compactification or warp scale, bulk couplings, brane
+terms, KK completion, and precision constraints as model data. Several versions
+also predict no fundamental or composite Higgs, which conflicts with the
+observed physical Higgs unless a separate scalar-sector source is derived.
+
+### Validation
+
+- Targeted Phase342 run passed with:
+  - `higgslessBoundaryConditionSourceAuditPassed=true`.
+  - `warpedRouteBreaksElectroweakSymmetryByBoundaryConditions=true`.
+  - `theorySpaceRouteCanFitWzMassesByVaryingCouplings=true`.
+  - `sixDRouteArrangesWzSplittingByCompactificationScales=true`.
+  - `higgslessRoutePromotesWzMasses=false`.
+  - `higgslessRoutePromotesHiggsMass=false`.
+  - `canFillPhase201WzContract=false`.
+- Scanner reruns after adding Phase342 found no intake-ready artifacts:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `canPromoteHiggsQuarticSelfCouplingSource=false` and
+    `intakeReadyFindingCount=0`.
+  - P279 `technicolorWalkingElectroweakScaleSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P281 `geometricRefractiveUnificationSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P295 `intakeReadyObservedFieldExtractionCandidateCount=0` and
+    `anyObservedFieldExtractionCandidateFillsContract=false`.
+  - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
+    `anySourceLineageCandidateFillsContract=false`.
+- P101 regenerated with Phase342 included and remained
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase342 included and remained
+  `objectiveAchieved=false`, with `checklistPassedCount=135` and
+  `checklistFailedCount=3`.
+- Claim-integrity verifier passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+
+### Next Blocker
+
+The next missing artifact remains a GU-local, target-independent bridge-source
+law. For this route specifically, GU would need to derive a physical boundary
+geometry, boundary conditions, compactification or warp scale, bulk
+gauge-coupling lineage, observed photon/W/Z projection, observed-Higgs
+compatibility, KK/precision completion, and GeV normalization without importing
+W/Z/H targets.
+
 ## 2026-05-21 - Phase339 MacDowell-Mansouri Cartan-Breaking Source Audit
 
 ### Context

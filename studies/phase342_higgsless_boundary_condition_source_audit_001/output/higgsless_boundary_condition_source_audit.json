@@ -1,0 +1,177 @@
+{
+  "phaseId": "phase342-higgsless-boundary-condition-source-audit",
+  "terminalStatus": "higgsless-boundary-condition-source-audit-external-boundary-mass-lead-not-gu-source",
+  "generatedAt": "2026-05-22T13:20:23.9370229+00:00",
+  "higgslessBoundaryConditionSourceAuditPassed": true,
+  "higgslessBoundaryLeadPresent": true,
+  "higgslessPrimarySourcesReviewed": true,
+  "higgslessRouteExternalToGu": true,
+  "warpedHiggslessBoundaryConditionLeadPresent": true,
+  "warpedRouteBreaksElectroweakSymmetryByBoundaryConditions": true,
+  "warpedRouteUsesBulkSu2lSu2rU1BLGaugeGroup": true,
+  "warpedRoutePredictsNoFundamentalOrCompositeHiggs": true,
+  "warpedRouteHasObservedHiggsConflict": true,
+  "warpedRouteHasTevVectorResonancePrediction": true,
+  "nomuraWarpedDualStrongDynamicsLeadPresent": true,
+  "nomuraRouteIntroducesBulkGaugeCouplingRatioParameter": true,
+  "theorySpaceHiggslessLeadPresent": true,
+  "theorySpaceRouteCanFitWzMassesByVaryingCouplings": true,
+  "theorySpaceLightestKkStatesIdentifiedAsWz": true,
+  "warpedPhenomenologyPrecisionConstraintLeadPresent": true,
+  "warpedPhenomenologyFindsPerturbativeUnitarityViolation": true,
+  "sixDHiggslessLeadPresent": true,
+  "sixDRouteArrangesWzSplittingByCompactificationScales": true,
+  "sixDRouteUsesElectroweakScaleBulkKineticCouplings": true,
+  "unitaritySumRulesLeadPresent": true,
+  "unitarityRouteRequiresKkTowerForConsistency": true,
+  "precisionConstraintBoundaryPresent": true,
+  "routeOverlapsScherkSchwarzBoundaryCondition": true,
+  "routeOverlapsKaluzaKleinInternalSymmetry": true,
+  "routeOverlapsTechnicolorCompositeDual": true,
+  "routeDistinctFromGaugeHiggsWilsonLine": true,
+  "higgslessRouteRequiresGuLocalIntervalOrBoundaryGeometry": true,
+  "higgslessRouteRequiresTargetIndependentBoundaryConditions": true,
+  "higgslessRouteRequiresCompactificationOrWarpScaleSource": true,
+  "higgslessRouteRequiresBulkGaugeCouplingLineage": true,
+  "higgslessRouteRequiresElectroweakEmbeddingAndNeutralProjection": true,
+  "higgslessRouteRequiresObservedPhotonWzProjection": true,
+  "higgslessRouteRequiresObservedHiggsCompatibilityOrReplacement": true,
+  "higgslessRouteRequiresKkTowerAndUnitarityCompletion": true,
+  "higgslessRouteRequiresPrecisionElectroweakAndRgLineage": true,
+  "higgslessRouteRequiresGeVUnitNormalization": true,
+  "higgslessRouteProvidesGuLocalWzTheorem": false,
+  "higgslessRouteProvidesSeparateWzSourceRows": false,
+  "higgslessRouteProvidesTargetIndependentBoundaryConditionSource": false,
+  "higgslessRouteProvidesTargetIndependentCompactificationOrWarpScaleSource": false,
+  "higgslessRouteProvidesGuWeakMixingAngleSource": false,
+  "higgslessRouteProvidesGuGaugeCouplingNormalization": false,
+  "higgslessRouteProvidesObservedPhotonWzProjectionRows": false,
+  "higgslessRouteProvidesGuObservedFieldExtraction": false,
+  "higgslessRouteProvidesGuHiggsScalarSourceOperator": false,
+  "higgslessRouteProvidesObservedHiggsMassFromGu": false,
+  "higgslessRouteProvidesGeVUnitNormalization": false,
+  "higgslessRoutePromotesWzMasses": false,
+  "higgslessRoutePromotesHiggsMass": false,
+  "higgslessRouteCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "sourceRows": [
+    {
+      "SourceId": "arxiv-hep-ph-0308038-realistic-warped-higgsless-ewsb",
+      "Url": "https://arxiv.org/abs/hep-ph/0308038",
+      "FindingKind": "Warped 5D Higgsless boundary-condition electroweak breaking",
+      "Summary": "Uses a bulk SU(2)L x SU(2)R x U(1)B-L gauge group in warped space, with electroweak symmetry broken by boundary conditions and no fundamental or composite Higgs particles.",
+      "PredictionImpact": "Direct W/Z mass-generation lead; still parameterized by extra-dimensional geometry, boundary choices, bulk couplings, and no observed Higgs."
+    },
+    {
+      "SourceId": "arxiv-hep-ph-0309189-nomura-warped-higgsless",
+      "Url": "https://arxiv.org/abs/hep-ph/0309189",
+      "FindingKind": "Warped Higgsless dual strong-dynamics model",
+      "Summary": "Frames the 4D dual as the Standard Model without a Higgs plus a strong TeV-scale gauge sector, and introduces a bulk gauge-coupling ratio parameter.",
+      "PredictionImpact": "Relevant to W/Z mass generation, but the scale and couplings are external model data."
+    },
+    {
+      "SourceId": "arxiv-hep-ph-0312324-higgsless-theory-space",
+      "Url": "https://arxiv.org/abs/hep-ph/0312324",
+      "FindingKind": "Theory-space/deconstructed Higgsless electroweak breaking",
+      "Summary": "Breaks U(1) x [SU(2)]^N x SU(2) to electromagnetism through nonlinear link fields; W/Z masses can be fitted by varying endpoint couplings.",
+      "PredictionImpact": "Shows boundary/deconstruction mass spectra can identify lightest KK states as W/Z; not a target-independent GU source law."
+    },
+    {
+      "SourceId": "arxiv-hep-ph-0312193-warped-higgsless-constraints",
+      "Url": "https://arxiv.org/abs/hep-ph/0312193",
+      "FindingKind": "Warped Higgsless precision and unitarity constraints",
+      "Summary": "Studies boundary-condition EWSB in warped backgrounds and finds the parameter range can face perturbative unitarity problems without additional completion.",
+      "PredictionImpact": "Supplies a consistency boundary rather than source-lineage rows."
+    },
+    {
+      "SourceId": "arxiv-hep-ph-0406020-six-dimensional-higgsless-standard-model",
+      "Url": "https://arxiv.org/abs/hep-ph/0406020",
+      "FindingKind": "6D Higgsless Standard Model",
+      "Summary": "Uses flat extra dimensions on a rectangle; W/Z splitting can be arranged by compactification scales and electroweak-scale bulk kinetic couplings.",
+      "PredictionImpact": "Direct boundary-condition W/Z lead, but the mass splitting remains arranged by model scales/couplings."
+    },
+    {
+      "SourceId": "arxiv-0808.1682-higgsless-ww-scattering-sum-rules",
+      "Url": "https://arxiv.org/abs/0808.1682",
+      "FindingKind": "Higgsless WW scattering sum rules",
+      "Summary": "Derives sum rules for deconstructed and continuum Higgsless models, showing KK towers are part of the unitarity/completion story.",
+      "PredictionImpact": "Useful consistency check; not an observed W/Z/H source law."
+    }
+  ],
+  "checks": [
+    {
+      "CheckId": "higgsless-boundary-primary-sources-reviewed",
+      "Passed": true,
+      "Detail": "lead=True; reviewed=True; externalToGu=True; sourceRows=6"
+    },
+    {
+      "CheckId": "boundary-condition-wz-mass-lead-captured",
+      "Passed": true,
+      "Detail": "warpedLead=True; boundaryBreaking=True; bulkGroup=True; tevResonances=True; theorySpaceWz=True; sixDWzSplitting=True"
+    },
+    {
+      "CheckId": "route-is-parameterized-and-higgsless",
+      "Passed": true,
+      "Detail": "noHiggs=True; observedHiggsConflict=True; strongDual=True; couplingRatio=True; fitWzCouplings=True; sixDBulkKineticScale=True"
+    },
+    {
+      "CheckId": "unitarity-and-precision-boundaries-preserved",
+      "Passed": true,
+      "Detail": "precisionLead=True; unitarityViolation=True; sumRules=True; kkTower=True; phase325=True; upperBoundOnly=True; phase327=True; obliqueFitUsesWz=True"
+    },
+    {
+      "CheckId": "related-routes-preserved",
+      "Passed": true,
+      "Detail": "overlapsScherk=True; phase341=True; overlapsKk=True; phase333=True; overlapsTechnicolor=True; phase279=True; distinctGaugeHiggs=True; phase265=True"
+    },
+    {
+      "CheckId": "higgsless-route-requires-missing-gu-source-data",
+      "Passed": true,
+      "Detail": "boundaryGeometry=True; boundarySource=True; scale=True; couplings=True; embedding=True; projection=True; higgs=True; kkUnitarity=True; precisionRg=True; gev=True"
+    },
+    {
+      "CheckId": "higgsless-route-does-not-fill-gu-contracts",
+      "Passed": true,
+      "Detail": "guWzTheorem=False; separateRows=False; boundarySource=False; scaleSource=False; weakAngle=False; gaugeNorm=False; projection=False; observedExtraction=False; higgsOperator=False; observedHiggs=False; gev=False; promotesWz=False; promotesHiggs=False"
+    },
+    {
+      "CheckId": "phase201-phase256-contract-state-unchanged",
+      "Passed": true,
+      "Detail": "phase201Promotable=False; existingEvidence=False; wzMissing=15; higgsMissing=14; phase256Required=20; phase256Filled=0; observedPromotable=False; p224=True; wClosure=False; zClosure=False; higgsClosure=False; canFillWz=False; canFillHiggs=False; canFillObserved=False"
+    }
+  ],
+  "contractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionFilledRequiredFieldCount": 0
+  },
+  "relatedBoundaryEvidence": {
+    "gaugeHiggsBoundarySourceAuditPassed": true,
+    "gaugeHiggsBoundaryCompletesBosonPredictions": false,
+    "technicolorWalkingElectroweakScaleSourceAuditPassed": true,
+    "technicolorCompletesBosonPredictions": false,
+    "electroweakUnitarityScatteringSourceAuditPassed": true,
+    "unitarityRouteProvidesUpperBoundOnly": true,
+    "unitarityRouteCompletesBosonPredictions": false,
+    "obliquePrecisionElectroweakSourceAuditPassed": true,
+    "obliqueFitUsesPrecisionWzData": true,
+    "obliqueRouteCompletesBosonPredictions": false,
+    "kaluzaKleinInternalSymmetrySourceAuditPassed": true,
+    "kkRouteCompletesBosonPredictions": false,
+    "scherkSchwarzTwistedCompactificationSourceAuditPassed": true,
+    "scherkRouteCompletesBosonPredictions": false
+  },
+  "decision": "Do not promote W/Z or Higgs physical masses from Higgsless boundary-condition electroweak breaking. The route is a direct external W/Z mass-generation lead, but the current sources select boundary conditions, compactification or warp scales, bulk couplings, brane terms, and KK completions as model data; several versions also predict no Higgs or use precision-fit constraints, so they cannot fill GU-local W/Z/H source-lineage rows.",
+  "nextRequiredArtifact": [
+    "A GU-local theorem mapping native geometry to a physical interval, brane, or boundary-condition sector.",
+    "Target-independent boundary conditions plus compactification/warp scale and bulk gauge-coupling lineage.",
+    "Observed photon/W/Z projection rows with neutral mixing, weak-angle, and gauge-coupling normalization.",
+    "A compatible account of the observed Higgs or a GU scalar-source replacement with prediction row.",
+    "KK-tower unitarity, precision-electroweak, RG, threshold, and GeV-unit normalization lineage validated through Phase201/Phase256."
+  ]
+}

@@ -111,6 +111,7 @@ const paths = {
   phase339: "studies/phase339_macdowell_mansouri_cartan_breaking_source_audit_001/output/macdowell_mansouri_cartan_breaking_source_audit_summary.json",
   phase340: "studies/phase340_bf_topological_mass_source_audit_001/output/bf_topological_mass_source_audit_summary.json",
   phase341: "studies/phase341_scherk_schwarz_twisted_compactification_source_audit_001/output/scherk_schwarz_twisted_compactification_source_audit_summary.json",
+  phase342: "studies/phase342_higgsless_boundary_condition_source_audit_001/output/higgsless_boundary_condition_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -293,6 +294,7 @@ const phase338 = requireFile(paths.phase338);
 const phase339 = requireFile(paths.phase339);
 const phase340 = requireFile(paths.phase340);
 const phase341 = requireFile(paths.phase341);
+const phase342 = requireFile(paths.phase342);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -2146,6 +2148,55 @@ if (sourceLineageMissing) {
   assert(phase341.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase341 W/Z missing-field count must match Phase213.");
   assert(phase341.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase341 Higgs missing-field count must match Phase213.");
   assert(phase341.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase341 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase342.higgslessBoundaryConditionSourceAuditPassed === true, "Phase342 Higgsless boundary-condition source audit must pass while preserving non-promotional status.");
+  assert(phase342.higgslessBoundaryLeadPresent === true, "Phase342 must record the Higgsless boundary-condition lead.");
+  assert(phase342.higgslessPrimarySourcesReviewed === true, "Phase342 must record primary source review.");
+  assert(phase342.higgslessRouteExternalToGu === true, "Phase342 must classify the route as external to GU.");
+  assert(phase342.warpedHiggslessBoundaryConditionLeadPresent === true, "Phase342 must record the warped Higgsless boundary-condition lead.");
+  assert(phase342.warpedRouteBreaksElectroweakSymmetryByBoundaryConditions === true, "Phase342 must record boundary-condition electroweak breaking.");
+  assert(phase342.warpedRoutePredictsNoFundamentalOrCompositeHiggs === true, "Phase342 must record the no-Higgs prediction boundary.");
+  assert(phase342.warpedRouteHasObservedHiggsConflict === true, "Phase342 must record the observed-Higgs conflict.");
+  assert(phase342.theorySpaceRouteCanFitWzMassesByVaryingCouplings === true, "Phase342 must record theory-space coupling fitting.");
+  assert(phase342.theorySpaceLightestKkStatesIdentifiedAsWz === true, "Phase342 must record lightest KK states identified as W/Z.");
+  assert(phase342.sixDRouteArrangesWzSplittingByCompactificationScales === true, "Phase342 must record compactification-scale W/Z splitting.");
+  assert(phase342.unitarityRouteRequiresKkTowerForConsistency === true, "Phase342 must record KK-tower unitarity completion.");
+  assert(phase342.routeOverlapsScherkSchwarzBoundaryCondition === true, "Phase342 must preserve Scherk-Schwarz boundary-condition overlap.");
+  assert(phase342.routeOverlapsKaluzaKleinInternalSymmetry === true, "Phase342 must preserve Kaluza-Klein overlap.");
+  assert(phase342.routeOverlapsTechnicolorCompositeDual === true, "Phase342 must preserve technicolor/composite-dual overlap.");
+  assert(phase342.higgslessRouteRequiresGuLocalIntervalOrBoundaryGeometry === true, "Phase342 must require GU-local interval/boundary geometry.");
+  assert(phase342.higgslessRouteRequiresTargetIndependentBoundaryConditions === true, "Phase342 must require target-independent boundary conditions.");
+  assert(phase342.higgslessRouteRequiresCompactificationOrWarpScaleSource === true, "Phase342 must require compactification/warp scale source.");
+  assert(phase342.higgslessRouteRequiresBulkGaugeCouplingLineage === true, "Phase342 must require bulk gauge-coupling lineage.");
+  assert(phase342.higgslessRouteRequiresElectroweakEmbeddingAndNeutralProjection === true, "Phase342 must require electroweak embedding and neutral projection.");
+  assert(phase342.higgslessRouteRequiresObservedPhotonWzProjection === true, "Phase342 must require observed photon/W/Z projection.");
+  assert(phase342.higgslessRouteRequiresObservedHiggsCompatibilityOrReplacement === true, "Phase342 must require observed-Higgs compatibility or replacement.");
+  assert(phase342.higgslessRouteRequiresKkTowerAndUnitarityCompletion === true, "Phase342 must require KK-tower and unitarity completion.");
+  assert(phase342.higgslessRouteRequiresPrecisionElectroweakAndRgLineage === true, "Phase342 must require precision-electroweak and RG lineage.");
+  assert(phase342.higgslessRouteRequiresGeVUnitNormalization === true, "Phase342 must require GeV normalization.");
+  assert(phase342.higgslessRouteProvidesGuLocalWzTheorem === false, "Phase342 cannot claim a GU-local W/Z theorem.");
+  assert(phase342.higgslessRouteProvidesSeparateWzSourceRows === false, "Phase342 cannot claim separate W/Z source rows.");
+  assert(phase342.higgslessRouteProvidesTargetIndependentBoundaryConditionSource === false, "Phase342 cannot claim target-independent boundary conditions.");
+  assert(phase342.higgslessRouteProvidesTargetIndependentCompactificationOrWarpScaleSource === false, "Phase342 cannot claim a target-independent compactification/warp scale.");
+  assert(phase342.higgslessRouteProvidesGuWeakMixingAngleSource === false, "Phase342 cannot claim a GU weak-mixing angle source.");
+  assert(phase342.higgslessRouteProvidesGuGaugeCouplingNormalization === false, "Phase342 cannot claim GU gauge-coupling normalization.");
+  assert(phase342.higgslessRouteProvidesObservedPhotonWzProjectionRows === false, "Phase342 cannot claim observed photon/W/Z projection rows.");
+  assert(phase342.higgslessRouteProvidesGuObservedFieldExtraction === false, "Phase342 cannot claim GU observed-field extraction.");
+  assert(phase342.higgslessRouteProvidesGuHiggsScalarSourceOperator === false, "Phase342 cannot claim a GU Higgs scalar-source operator.");
+  assert(phase342.higgslessRouteProvidesObservedHiggsMassFromGu === false, "Phase342 cannot claim observed Higgs mass from GU.");
+  assert(phase342.higgslessRouteProvidesGeVUnitNormalization === false, "Phase342 cannot claim GeV normalization.");
+  assert(phase342.higgslessRoutePromotesWzMasses === false, "Phase342 cannot promote W/Z masses.");
+  assert(phase342.higgslessRoutePromotesHiggsMass === false, "Phase342 cannot promote Higgs mass.");
+  assert(phase342.higgslessRouteCompletesBosonPredictions === false, "Phase342 cannot complete boson predictions.");
+  assert(phase342.canFillPhase201WzContract === false, "Phase342 cannot fill the Phase201 W/Z contract.");
+  assert(phase342.canFillPhase201HiggsContract === false, "Phase342 cannot fill the Phase201 Higgs contract.");
+  assert(phase342.canFillPhase256ObservedFieldExtractionContract === false, "Phase342 cannot fill the Phase256 observed-field extraction contract.");
+  assert(phase342.sourceRowCount === 6, "Phase342 must preserve six source rows.");
+  assert(phase342.contractImpact?.canFillPhase201WzContract === false, "Phase342 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase342.contractImpact?.canFillPhase201HiggsContract === false, "Phase342 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase342.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase342 contract impact must keep Phase256 unfilled.");
+  assert(phase342.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase342 W/Z missing-field count must match Phase213.");
+  assert(phase342.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase342 Higgs missing-field count must match Phase213.");
+  assert(phase342.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase342 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");
