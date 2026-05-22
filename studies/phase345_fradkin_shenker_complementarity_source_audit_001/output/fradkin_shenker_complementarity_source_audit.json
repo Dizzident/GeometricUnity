@@ -1,0 +1,152 @@
+{
+  "phaseId": "phase345-fradkin-shenker-complementarity-source-audit",
+  "terminalStatus": "fradkin-shenker-complementarity-source-audit-boundary-not-gu-source",
+  "generatedAt": "2026-05-22T15:52:21.3439416+00:00",
+  "fradkinShenkerComplementaritySourceAuditPassed": true,
+  "fradkinShenkerLeadPresent": true,
+  "complementarityPrimarySourcesReviewed": true,
+  "complementarityRouteExternalToGu": true,
+  "elitzurBlocksLocalGaugeSymmetryBreakingOrderParameter": true,
+  "fradkinShenkerAnalyticContinuityForFundamentalHiggs": true,
+  "osterwalderSeilerLatticeHiggsMechanismTreatmentPresent": true,
+  "gaugeHiggsConfinementComplementarityPresent": true,
+  "higgsAndConfinementRegionsNeedGaugeInvariantDiagnostics": true,
+  "gaugeInvariantDistinctionsCanUseGlobalCustodialOrScConfinement": true,
+  "routeConstrainsObservedFieldExtractionLanguage": true,
+  "routeSupportsFmsObservedSpectrumBoundary": true,
+  "complementarityRouteRequiresGuLocalGaugeHiggsModel": true,
+  "complementarityRouteRequiresGuGaugeInvariantOrderOrOperatorMap": true,
+  "complementarityRouteRequiresGuObservedVacuumAndHilbertSector": true,
+  "complementarityRouteRequiresCorrelationFunctionPoleExtraction": true,
+  "complementarityRouteRequiresPhotonWzHiggsProjectionRows": true,
+  "complementarityRouteRequiresTargetIndependentMassScaleAndCouplings": true,
+  "complementarityRouteRequiresGuHiggsScalarSourceOperator": true,
+  "complementarityRouteRequiresGeVUnitNormalization": true,
+  "complementarityRouteProvidesGuLocalWzTheorem": false,
+  "complementarityRouteProvidesSeparateWzSourceRows": false,
+  "complementarityRouteProvidesTargetIndependentVevOrMassScale": false,
+  "complementarityRouteProvidesGuWeakMixingAngleSource": false,
+  "complementarityRouteProvidesGuGaugeCouplingNormalization": false,
+  "complementarityRouteProvidesObservedPhotonWzHiggsProjectionRows": false,
+  "complementarityRouteProvidesGuObservedFieldExtractionContract": false,
+  "complementarityRouteProvidesGuHiggsScalarSourceOperator": false,
+  "complementarityRouteProvidesObservedHiggsMassFromGu": false,
+  "complementarityRouteProvidesGeVUnitNormalization": false,
+  "complementarityRoutePromotesObservedFieldExtraction": false,
+  "complementarityRoutePromotesWzMasses": false,
+  "complementarityRoutePromotesHiggsMass": false,
+  "complementarityRouteCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "sourceRows": [
+    {
+      "SourceId": "doi-10.1103-physrevd-19-3682-fradkin-shenker",
+      "Url": "https://doi.org/10.1103/PhysRevD.19.3682",
+      "FindingKind": "Fradkin-Shenker lattice gauge-Higgs complementarity",
+      "Summary": "Shows that confinement and Higgs regions can be analytically connected for fundamental Higgs fields, so phase-label language cannot by itself define the observed boson source.",
+      "PredictionImpact": "Constrains source-law claims; does not derive W/Z/H masses."
+    },
+    {
+      "SourceId": "doi-10.1103-physrevd-12-3978-elitzur",
+      "Url": "https://doi.org/10.1103/PhysRevD.12.3978",
+      "FindingKind": "Elitzur theorem",
+      "Summary": "Argues that spontaneous breaking of a local gauge symmetry is impossible without gauge fixing.",
+      "PredictionImpact": "Blocks treating local gauge-symmetry breaking as the physical W/Z/H source law."
+    },
+    {
+      "SourceId": "doi-10.1016-0003-4916-78-90039-8-osterwalder-seiler",
+      "Url": "https://doi.org/10.1016/0003-4916(78)90039-8",
+      "FindingKind": "Rigorous lattice gauge-Higgs treatment",
+      "Summary": "Provides a nonperturbative lattice framework and rigorous Higgs-mechanism treatment in gauge theories.",
+      "PredictionImpact": "Useful complementarity boundary; still not GU-local prediction evidence."
+    },
+    {
+      "SourceId": "arxiv-0911.1721-su2-higgs-phase-diagram",
+      "Url": "https://arxiv.org/abs/0911.1721",
+      "FindingKind": "SU(2) lattice Higgs phase diagram",
+      "Summary": "Finds phase-diagram behavior consistent with Fradkin-Shenker expectations for fixed-length fundamental scalar fields.",
+      "PredictionImpact": "Empirical lattice support for the boundary; not a source law."
+    },
+    {
+      "SourceId": "arxiv-1708.08979-separation-of-charge-confinement",
+      "Url": "https://arxiv.org/abs/1708.08979",
+      "FindingKind": "Gauge-invariant confinement criterion with matter",
+      "Summary": "Adds a gauge-invariant diagnostic stronger than massive color-singlet asymptotic states in theories with fundamental matter.",
+      "PredictionImpact": "Suggests diagnostic structure, not W/Z/H source lineage."
+    },
+    {
+      "SourceId": "arxiv-2001.03068-higgs-spin-glass",
+      "Url": "https://arxiv.org/abs/2001.03068",
+      "FindingKind": "Higgs phase as spin glass",
+      "Summary": "Proposes a gauge-invariant distinction using custodial symmetry and varieties of confinement.",
+      "PredictionImpact": "May guide observed-sector diagnostics, but imports model-specific global symmetry data."
+    },
+    {
+      "SourceId": "arxiv-2308.13430-gauge-independent-transition",
+      "Url": "https://arxiv.org/abs/2308.13430",
+      "FindingKind": "Gauge-independent transition in SU(2) gauge-scalar lattice theory",
+      "Summary": "Constructs gauge-invariant operators to separate confinement and Higgs regimes in a lattice SU(2) scalar model.",
+      "PredictionImpact": "Modern operator lead; still lacks GU-native W/Z/H source, scale, and unit rows."
+    }
+  ],
+  "checks": [
+    {
+      "CheckId": "complementarity-primary-sources-reviewed",
+      "Passed": true,
+      "Detail": "lead=True; reviewed=True; externalToGu=True; sourceRows=7"
+    },
+    {
+      "CheckId": "gauge-higgs-complementarity-boundary-captured",
+      "Passed": true,
+      "Detail": "elitzur=True; analyticContinuity=True; osterwalderSeiler=True; complementarity=True; diagnostics=True; custodialOrSc=True; observedLanguage=True"
+    },
+    {
+      "CheckId": "fms-observed-spectrum-boundary-preserved",
+      "Passed": true,
+      "Detail": "supportsFms=True; p344=True; fmsTemplate=True; fmsPromotesObserved=False; fmsCompletes=False"
+    },
+    {
+      "CheckId": "current-contract-blockers-preserved",
+      "Passed": true,
+      "Detail": "phase201Promotable=False; existingEvidence=False; wzMissing=15; higgsMissing=14; observedRequired=20; observedFilled=0; observedPromotable=False; p295=True; observedCandidates=0"
+    },
+    {
+      "CheckId": "complementarity-route-requires-missing-gu-source-data",
+      "Passed": true,
+      "Detail": "guGaugeHiggsModel=True; guOperatorMap=True; guHilbertSector=True; poles=True; projection=True; massScale=True; scalarSource=True; gev=True"
+    },
+    {
+      "CheckId": "complementarity-route-does-not-fill-gu-contracts",
+      "Passed": true,
+      "Detail": "guWzTheorem=False; sourceRows=False; massScale=False; weakAngle=False; gaugeNorm=False; projection=False; observedContract=False; scalarSource=False; observedHiggs=False; gev=False; promotesObserved=False; promotesWz=False; promotesHiggs=False; completes=False"
+    }
+  ],
+  "contractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionFilledRequiredFieldCount": 0
+  },
+  "relatedObservedFieldEvidence": {
+    "observedFieldExtractionRequiredFieldCount": 20,
+    "observedFieldExtractionFilledRequiredFieldCount": 0,
+    "observedFieldExtractionContractPromotable": false,
+    "observedFieldExtractionContractCandidateScanPassed": true,
+    "anyObservedFieldExtractionCandidateFillsContract": false,
+    "intakeReadyObservedFieldExtractionCandidateCount": 0,
+    "fmsGaugeInvariantSpectrumSourceAuditPassed": true,
+    "fmsProvidesObservedFieldExtractionTemplate": true,
+    "fmsRoutePromotesObservedFieldExtraction": false,
+    "fmsRouteCompletesBosonPredictions": false
+  },
+  "decision": "Do not promote W/Z or Higgs physical masses from gauge-Higgs complementarity or Higgs-phase language. Elitzur and Fradkin-Shenker/Osterwalder-Seiler results make local gauge-symmetry breaking and phase labels insufficient as physical source laws; any viable route must instead supply GU-local gauge-invariant operators, observed-sector pole extraction, target-independent scale/coupling lineage, Higgs scalar-source lineage, and GeV normalization.",
+  "nextRequiredArtifact": [
+    "A GU-local gauge-Higgs or equivalent operator system with gauge-invariant photon/W/Z/H observables.",
+    "A source-derived observed Hilbert sector, vacuum, and correlation-function pole extraction rule.",
+    "Target-independent W/Z mass scale, weak-mixing, gauge-coupling, scalar-source, and GeV-unit lineage.",
+    "A proof that any gauge-invariant Higgs/confinement diagnostic actually selects the observed electroweak W/Z/H sector rather than a phase-label convention."
+  ]
+}

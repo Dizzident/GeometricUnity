@@ -114,6 +114,7 @@ const paths = {
   phase342: "studies/phase342_higgsless_boundary_condition_source_audit_001/output/higgsless_boundary_condition_source_audit_summary.json",
   phase343: "studies/phase343_stueckelberg_vector_mass_source_audit_001/output/stueckelberg_vector_mass_source_audit_summary.json",
   phase344: "studies/phase344_fms_gauge_invariant_spectrum_source_audit_001/output/fms_gauge_invariant_spectrum_source_audit_summary.json",
+  phase345: "studies/phase345_fradkin_shenker_complementarity_source_audit_001/output/fradkin_shenker_complementarity_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -299,6 +300,7 @@ const phase341 = requireFile(paths.phase341);
 const phase342 = requireFile(paths.phase342);
 const phase343 = requireFile(paths.phase343);
 const phase344 = requireFile(paths.phase344);
+const phase345 = requireFile(paths.phase345);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -2294,6 +2296,50 @@ if (sourceLineageMissing) {
   assert(phase344.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase344 W/Z missing-field count must match Phase213.");
   assert(phase344.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase344 Higgs missing-field count must match Phase213.");
   assert(phase344.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase344 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase345.fradkinShenkerComplementaritySourceAuditPassed === true, "Phase345 Fradkin-Shenker complementarity source audit must pass while preserving non-promotional status.");
+  assert(phase345.fradkinShenkerLeadPresent === true, "Phase345 must record the Fradkin-Shenker lead.");
+  assert(phase345.complementarityPrimarySourcesReviewed === true, "Phase345 must record primary source review.");
+  assert(phase345.complementarityRouteExternalToGu === true, "Phase345 must classify the route as external to GU.");
+  assert(phase345.elitzurBlocksLocalGaugeSymmetryBreakingOrderParameter === true, "Phase345 must record the Elitzur local-gauge-breaking boundary.");
+  assert(phase345.fradkinShenkerAnalyticContinuityForFundamentalHiggs === true, "Phase345 must record Fradkin-Shenker analytic continuity for fundamental Higgs fields.");
+  assert(phase345.osterwalderSeilerLatticeHiggsMechanismTreatmentPresent === true, "Phase345 must record Osterwalder-Seiler lattice Higgs treatment.");
+  assert(phase345.gaugeHiggsConfinementComplementarityPresent === true, "Phase345 must record gauge-Higgs complementarity.");
+  assert(phase345.higgsAndConfinementRegionsNeedGaugeInvariantDiagnostics === true, "Phase345 must require gauge-invariant Higgs/confinement diagnostics.");
+  assert(phase345.gaugeInvariantDistinctionsCanUseGlobalCustodialOrScConfinement === true, "Phase345 must record gauge-invariant distinction routes.");
+  assert(phase345.routeConstrainsObservedFieldExtractionLanguage === true, "Phase345 must constrain observed-field extraction language.");
+  assert(phase345.routeSupportsFmsObservedSpectrumBoundary === true, "Phase345 must support the FMS observed-spectrum boundary.");
+  assert(phase345.complementarityRouteRequiresGuLocalGaugeHiggsModel === true, "Phase345 must require a GU-local gauge-Higgs model.");
+  assert(phase345.complementarityRouteRequiresGuGaugeInvariantOrderOrOperatorMap === true, "Phase345 must require a GU gauge-invariant operator map.");
+  assert(phase345.complementarityRouteRequiresGuObservedVacuumAndHilbertSector === true, "Phase345 must require GU observed vacuum and Hilbert-sector lineage.");
+  assert(phase345.complementarityRouteRequiresCorrelationFunctionPoleExtraction === true, "Phase345 must require pole extraction.");
+  assert(phase345.complementarityRouteRequiresPhotonWzHiggsProjectionRows === true, "Phase345 must require photon/W/Z/H projection rows.");
+  assert(phase345.complementarityRouteRequiresTargetIndependentMassScaleAndCouplings === true, "Phase345 must require target-independent scale and coupling lineage.");
+  assert(phase345.complementarityRouteRequiresGuHiggsScalarSourceOperator === true, "Phase345 must require a GU Higgs scalar-source operator.");
+  assert(phase345.complementarityRouteRequiresGeVUnitNormalization === true, "Phase345 must require GeV normalization.");
+  assert(phase345.complementarityRouteProvidesGuLocalWzTheorem === false, "Phase345 cannot claim a GU-local W/Z theorem.");
+  assert(phase345.complementarityRouteProvidesSeparateWzSourceRows === false, "Phase345 cannot claim separate W/Z source rows.");
+  assert(phase345.complementarityRouteProvidesTargetIndependentVevOrMassScale === false, "Phase345 cannot claim a target-independent VEV or mass scale.");
+  assert(phase345.complementarityRouteProvidesGuWeakMixingAngleSource === false, "Phase345 cannot claim a GU weak-mixing angle source.");
+  assert(phase345.complementarityRouteProvidesGuGaugeCouplingNormalization === false, "Phase345 cannot claim GU gauge-coupling normalization.");
+  assert(phase345.complementarityRouteProvidesObservedPhotonWzHiggsProjectionRows === false, "Phase345 cannot claim observed photon/W/Z/H projection rows.");
+  assert(phase345.complementarityRouteProvidesGuObservedFieldExtractionContract === false, "Phase345 cannot claim the GU observed-field extraction contract.");
+  assert(phase345.complementarityRouteProvidesGuHiggsScalarSourceOperator === false, "Phase345 cannot claim a GU Higgs scalar-source operator.");
+  assert(phase345.complementarityRouteProvidesObservedHiggsMassFromGu === false, "Phase345 cannot claim observed Higgs mass from GU.");
+  assert(phase345.complementarityRouteProvidesGeVUnitNormalization === false, "Phase345 cannot claim GeV normalization.");
+  assert(phase345.complementarityRoutePromotesObservedFieldExtraction === false, "Phase345 cannot promote observed-field extraction.");
+  assert(phase345.complementarityRoutePromotesWzMasses === false, "Phase345 cannot promote W/Z masses.");
+  assert(phase345.complementarityRoutePromotesHiggsMass === false, "Phase345 cannot promote Higgs mass.");
+  assert(phase345.complementarityRouteCompletesBosonPredictions === false, "Phase345 cannot complete boson predictions.");
+  assert(phase345.canFillPhase201WzContract === false, "Phase345 cannot fill the Phase201 W/Z contract.");
+  assert(phase345.canFillPhase201HiggsContract === false, "Phase345 cannot fill the Phase201 Higgs contract.");
+  assert(phase345.canFillPhase256ObservedFieldExtractionContract === false, "Phase345 cannot fill the Phase256 observed-field extraction contract.");
+  assert(phase345.sourceRowCount === 7, "Phase345 must preserve seven source rows.");
+  assert(phase345.contractImpact?.canFillPhase201WzContract === false, "Phase345 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase345.contractImpact?.canFillPhase201HiggsContract === false, "Phase345 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase345.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase345 contract impact must keep Phase256 unfilled.");
+  assert(phase345.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase345 W/Z missing-field count must match Phase213.");
+  assert(phase345.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase345 Higgs missing-field count must match Phase213.");
+  assert(phase345.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase345 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");
