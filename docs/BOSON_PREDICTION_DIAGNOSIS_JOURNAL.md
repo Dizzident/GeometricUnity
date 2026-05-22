@@ -7671,6 +7671,108 @@ gauge-coupling normalization, Higgs scalar-source lineage, or GeV units.
   - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
     `anySourceLineageCandidateFillsContract=false`.
 
+## 2026-05-22 - Phase346 Nielsen Pole-Mass Gauge-Independence Source Audit
+
+### Context
+
+After Phase344 and Phase345 narrowed the observed-field problem to
+gauge-invariant operators and physical pole extraction, I checked whether
+Nielsen identities, complex-pole mass definitions, the complex-mass scheme, or
+pinch-technique resonance amplitudes can supply the missing W/Z/H prediction
+law. This route targets the physical mass-extraction side rather than another
+mass-generation model.
+
+### Sources Reviewed
+
+- `https://doi.org/10.1103/PhysRevD.62.076002`.
+- `https://doi.org/10.1103/PhysRevD.65.085001`.
+- `https://arxiv.org/abs/hep-ph/0109228`.
+- `https://doi.org/10.1140/epjc/s10052-015-3579-2`.
+- `https://doi.org/10.1103/PhysRevLett.75.3060`.
+- `https://doi.org/10.1006/aphy.2001.6117`.
+
+### Action
+
+- Added
+  `studies/phase346_nielsen_pole_mass_gauge_independence_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P346.md`.
+- Added `NIELSEN-POLE-MASS-GAUGE-INDEPENDENCE` to
+  `ExperimentReferences.md` with a detailed reference note under
+  `docs/Reference/ExperimentReferences/`.
+- Wired Phase346 into the generator, P101 package, P202 objective completion
+  audit, and claim-integrity verifier.
+- Added Phase346 scanner exclusions so generated audit text is not counted as
+  independent source evidence.
+
+### Current Outcome
+
+Phase346 passes only as a negative boundary audit:
+
+- `nielsenPoleMassGaugeIndependenceSourceAuditPassed=true`.
+- `nielsenPoleMassLeadPresent=true`.
+- `nielsenPrimarySourcesReviewed=true`.
+- `nielsenRouteExternalToGu=true`.
+- `nielsenIdentitiesControlGaugeParameterDependence=true`.
+- `complexPoleGaugeIndependentForSmPhysicalFields=true`.
+- `mixingAndCpViolationCoveredBySmNielsenIdentity=true`.
+- `poleResiduesAndPartialWidthsGaugeIndependentLead=true`.
+- `complexMassSchemeUsesGaugeIndependentPoleRenormalization=true`.
+- `pinchTechniqueResonantAmplitudeGaugeIndependentLead=true`.
+- `routeSupportsGaugeInvariantObservedPoleExtractionBoundary=true`.
+- `nielsenRouteProvidesGuLocalWzTheorem=false`.
+- `nielsenRouteProvidesGuObservedFieldExtractionContract=false`.
+- `nielsenRouteProvidesTargetIndependentVevOrMassScale=false`.
+- `nielsenRouteProvidesGuHiggsScalarSourceOperator=false`.
+- `nielsenRoutePromotesObservedFieldExtraction=false`.
+- `nielsenRoutePromotesWzMasses=false`.
+- `nielsenRoutePromotesHiggsMass=false`.
+- `nielsenRouteCompletesBosonPredictions=false`.
+- `canFillPhase201WzContract=false`.
+- `canFillPhase201HiggsContract=false`.
+- `canFillPhase256ObservedFieldExtractionContract=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from Nielsen identities, complex-pole gauge
+independence, the complex-mass scheme, or pinch-technique resonance
+extraction. These sources provide a rigorous boundary for physical mass
+definitions and gauge-independent pole extraction, but they do not derive
+GU-local BRST/Slavnov-Taylor control, observed W/Z/H two-point functions,
+source-lineage mass scales, weak mixing, couplings, Higgs scalar-source
+lineage, or GeV units.
+
+### Validation So Far
+
+- Targeted Phase346 run passed with:
+  - `nielsenPoleMassGaugeIndependenceSourceAuditPassed=true`.
+  - `complexPoleGaugeIndependentForSmPhysicalFields=true`.
+  - `routeSupportsGaugeInvariantObservedPoleExtractionBoundary=true`.
+  - `nielsenRoutePromotesObservedFieldExtraction=false`.
+  - `nielsenRoutePromotesWzMasses=false`.
+  - `nielsenRoutePromotesHiggsMass=false`.
+  - `canFillPhase256ObservedFieldExtractionContract=false`.
+- P101 regenerated with Phase346 included and remained
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase346 included and remained
+  `objectiveAchieved=false`, with `checklistPassedCount=139` and
+  `checklistFailedCount=3`.
+- Claim-integrity verifier passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns after adding Phase346 found no intake-ready artifacts:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `canPromoteHiggsQuarticSelfCouplingSource=false` and
+    `intakeReadyFindingCount=0`.
+  - P279 `technicolorWalkingElectroweakScaleSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P281 `geometricRefractiveUnificationSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P295 `intakeReadyObservedFieldExtractionCandidateCount=0` and
+    `anyObservedFieldExtractionCandidateFillsContract=false`.
+  - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
+    `anySourceLineageCandidateFillsContract=false`.
+
 ## 2026-05-22 - Phase340 BF/BFCG Topological Mass Source Audit
 
 ### Context

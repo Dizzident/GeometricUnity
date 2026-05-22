@@ -1,0 +1,154 @@
+{
+  "phaseId": "phase346-nielsen-pole-mass-gauge-independence-source-audit",
+  "terminalStatus": "nielsen-pole-mass-gauge-independence-source-audit-pole-boundary-not-gu-source",
+  "generatedAt": "2026-05-22T16:24:36.0084839+00:00",
+  "nielsenPoleMassGaugeIndependenceSourceAuditPassed": true,
+  "nielsenPoleMassLeadPresent": true,
+  "nielsenPrimarySourcesReviewed": true,
+  "nielsenRouteExternalToGu": true,
+  "nielsenIdentitiesControlGaugeParameterDependence": true,
+  "complexPoleGaugeIndependentForSmPhysicalFields": true,
+  "mixingAndCpViolationCoveredBySmNielsenIdentity": true,
+  "poleResiduesAndPartialWidthsGaugeIndependentLead": true,
+  "complexMassSchemeUsesGaugeIndependentPoleRenormalization": true,
+  "pinchTechniqueResonantAmplitudeGaugeIndependentLead": true,
+  "routeConstrainsPhysicalMassConvention": true,
+  "routeSupportsGaugeInvariantObservedPoleExtractionBoundary": true,
+  "nielsenRouteRequiresGuBrstOrSlavnovTaylorControl": true,
+  "nielsenRouteRequiresGuTwoPointFunctionsOrCorrelationMatrix": true,
+  "nielsenRouteRequiresGuObservedFieldOperators": true,
+  "nielsenRouteRequiresGuPoleEquationAndResidueExtraction": true,
+  "nielsenRouteRequiresPhotonWzHiggsProjectionRows": true,
+  "nielsenRouteRequiresTargetIndependentMassScaleAndCouplings": true,
+  "nielsenRouteRequiresGuHiggsScalarSourceOperator": true,
+  "nielsenRouteRequiresGeVUnitNormalization": true,
+  "nielsenRouteProvidesGuLocalWzTheorem": false,
+  "nielsenRouteProvidesSeparateWzSourceRows": false,
+  "nielsenRouteProvidesTargetIndependentVevOrMassScale": false,
+  "nielsenRouteProvidesGuWeakMixingAngleSource": false,
+  "nielsenRouteProvidesGuGaugeCouplingNormalization": false,
+  "nielsenRouteProvidesObservedPhotonWzHiggsProjectionRows": false,
+  "nielsenRouteProvidesGuObservedFieldExtractionContract": false,
+  "nielsenRouteProvidesGuHiggsScalarSourceOperator": false,
+  "nielsenRouteProvidesObservedHiggsMassFromGu": false,
+  "nielsenRouteProvidesGeVUnitNormalization": false,
+  "nielsenRoutePromotesObservedFieldExtraction": false,
+  "nielsenRoutePromotesWzMasses": false,
+  "nielsenRoutePromotesHiggsMass": false,
+  "nielsenRouteCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "sourceRows": [
+    {
+      "SourceId": "doi-10.1103-physrevd-62-076002-sm-nielsen-mass",
+      "Url": "https://doi.org/10.1103/PhysRevD.62.076002",
+      "FindingKind": "Nielsen identities of the Standard Model and mass definition",
+      "Summary": "Shows that Nielsen identities control gauge-parameter dependence and that complex-pole masses of physical Standard Model fields are gauge independent to all orders, including mixing.",
+      "PredictionImpact": "Defines a physical pole-mass boundary; does not derive GU W/Z/H source rows."
+    },
+    {
+      "SourceId": "doi-10.1103-physrevd-65-085001-widths-nielsen-identities",
+      "Url": "https://doi.org/10.1103/PhysRevD.65.085001",
+      "FindingKind": "Widths and partial widths from Nielsen identities",
+      "Summary": "Uses Nielsen identities to prove gauge independence of pole residues and associated partial-width definitions to all orders.",
+      "PredictionImpact": "Useful for resonance extraction consistency; not a mass-source law."
+    },
+    {
+      "SourceId": "arxiv-hep-ph-0109228-widths-nielsen-identities",
+      "Url": "https://arxiv.org/abs/hep-ph/0109228",
+      "FindingKind": "ArXiv record for Nielsen-identity width analysis",
+      "Summary": "Open source record for the unstable-particle Nielsen identity analysis and Z-gamma sector discussion.",
+      "PredictionImpact": "Reference access for the same gauge-independence boundary."
+    },
+    {
+      "SourceId": "doi-10.1140-epjc-s10052-015-3579-2-complex-mass-scheme",
+      "Url": "https://doi.org/10.1140/epjc/s10052-015-3579-2",
+      "FindingKind": "Complex-mass scheme and unitarity",
+      "Summary": "Reviews how complex-pole renormalization supports gauge-invariant treatment of unstable particles in perturbative QFT.",
+      "PredictionImpact": "Mass-convention and finite-width boundary; still imports Lagrangian inputs."
+    },
+    {
+      "SourceId": "doi-10.1103-physrevlett-75-3060-pinch-technique",
+      "Url": "https://doi.org/10.1103/PhysRevLett.75.3060",
+      "FindingKind": "Gauge-invariant resonant amplitudes via pinch technique",
+      "Summary": "Builds gauge-independent resonant transition amplitudes for Standard Model processes involving W/Z interactions.",
+      "PredictionImpact": "Amplitude extraction lead; no GU-local W/Z/H source scale."
+    },
+    {
+      "SourceId": "doi-10.1006-aphy-2001-6117-algebraic-renormalization",
+      "Url": "https://doi.org/10.1006/aphy.2001.6117",
+      "FindingKind": "Practical algebraic renormalization",
+      "Summary": "Reviews Slavnov-Taylor and Ward-Takahashi identity control for Standard Model perturbative calculations.",
+      "PredictionImpact": "BRST/identity control template; no GU pole equation or mass values."
+    }
+  ],
+  "checks": [
+    {
+      "CheckId": "nielsen-primary-sources-reviewed",
+      "Passed": true,
+      "Detail": "lead=True; reviewed=True; externalToGu=True; sourceRows=6"
+    },
+    {
+      "CheckId": "gauge-independent-pole-mass-boundary-captured",
+      "Passed": true,
+      "Detail": "nielsenIdentity=True; complexPole=True; mixing=True; residues=True; complexMassScheme=True; pinchTechnique=True; convention=True; poleExtraction=True"
+    },
+    {
+      "CheckId": "mass-definition-and-observed-field-blockers-preserved",
+      "Passed": true,
+      "Detail": "p260=True; conventionPromotes=False; poleFailurePersists=True; observedRequired=20; observedFilled=0; observedPromotable=False; p295=True; observedCandidates=0"
+    },
+    {
+      "CheckId": "fms-and-complementarity-boundaries-preserved",
+      "Passed": true,
+      "Detail": "p344=True; fmsTemplate=True; fmsPromotesObserved=False; p345=True; complementarityPromotesObserved=False"
+    },
+    {
+      "CheckId": "current-source-lineage-blockers-preserved",
+      "Passed": true,
+      "Detail": "phase201Promotable=False; existingEvidence=False; wzMissing=15; higgsMissing=14"
+    },
+    {
+      "CheckId": "nielsen-route-requires-missing-gu-source-data",
+      "Passed": true,
+      "Detail": "brst=True; twoPoint=True; operators=True; poleEquation=True; projection=True; massScale=True; scalarSource=True; gev=True"
+    },
+    {
+      "CheckId": "nielsen-route-does-not-fill-gu-contracts",
+      "Passed": true,
+      "Detail": "guWzTheorem=False; sourceRows=False; massScale=False; weakAngle=False; gaugeNorm=False; projection=False; observedContract=False; scalarSource=False; observedHiggs=False; gev=False; promotesObserved=False; promotesWz=False; promotesHiggs=False; completes=False"
+    }
+  ],
+  "contractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionFilledRequiredFieldCount": 0
+  },
+  "relatedPhysicalMassEvidence": {
+    "massDefinitionConventionSensitivityAuditPassed": true,
+    "conventionShiftPromotesBosonMasses": false,
+    "failedComparisonsPersistUnderPoleConvention": true,
+    "observedFieldExtractionRequiredFieldCount": 20,
+    "observedFieldExtractionFilledRequiredFieldCount": 0,
+    "observedFieldExtractionContractPromotable": false,
+    "observedFieldExtractionContractCandidateScanPassed": true,
+    "anyObservedFieldExtractionCandidateFillsContract": false,
+    "intakeReadyObservedFieldExtractionCandidateCount": 0,
+    "fmsGaugeInvariantSpectrumSourceAuditPassed": true,
+    "fmsProvidesObservedFieldExtractionTemplate": true,
+    "fmsRoutePromotesObservedFieldExtraction": false,
+    "fradkinShenkerComplementaritySourceAuditPassed": true,
+    "complementarityRoutePromotesObservedFieldExtraction": false
+  },
+  "decision": "Do not promote W/Z or Higgs physical masses from Nielsen identities, complex-pole gauge independence, the complex-mass scheme, or pinch-technique resonance extraction. These sources define a rigorous gauge-independence boundary for physical pole masses and amplitudes, but the current repository still lacks GU-local BRST/Slavnov-Taylor control, observed W/Z/H operators, pole equations, target-independent scale/coupling lineage, Higgs scalar-source lineage, and GeV normalization.",
+  "nextRequiredArtifact": [
+    "A GU-local BRST/Slavnov-Taylor or equivalent identity proving gauge-parameter control for the observed sector.",
+    "Gauge-invariant photon/W/Z/H two-point functions or correlation matrices with pole and residue extraction.",
+    "Target-independent W/Z scale, weak-mixing, gauge-coupling, scalar-source, and GeV-unit lineage feeding those pole equations.",
+    "A proof that the extracted GU poles correspond to observed physical W, Z, and Higgs states before target comparison."
+  ]
+}

@@ -115,6 +115,7 @@ const paths = {
   phase343: "studies/phase343_stueckelberg_vector_mass_source_audit_001/output/stueckelberg_vector_mass_source_audit_summary.json",
   phase344: "studies/phase344_fms_gauge_invariant_spectrum_source_audit_001/output/fms_gauge_invariant_spectrum_source_audit_summary.json",
   phase345: "studies/phase345_fradkin_shenker_complementarity_source_audit_001/output/fradkin_shenker_complementarity_source_audit_summary.json",
+  phase346: "studies/phase346_nielsen_pole_mass_gauge_independence_source_audit_001/output/nielsen_pole_mass_gauge_independence_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -301,6 +302,7 @@ const phase342 = requireFile(paths.phase342);
 const phase343 = requireFile(paths.phase343);
 const phase344 = requireFile(paths.phase344);
 const phase345 = requireFile(paths.phase345);
+const phase346 = requireFile(paths.phase346);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -2340,6 +2342,50 @@ if (sourceLineageMissing) {
   assert(phase345.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase345 W/Z missing-field count must match Phase213.");
   assert(phase345.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase345 Higgs missing-field count must match Phase213.");
   assert(phase345.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase345 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase346.nielsenPoleMassGaugeIndependenceSourceAuditPassed === true, "Phase346 Nielsen pole-mass gauge-independence source audit must pass while preserving non-promotional status.");
+  assert(phase346.nielsenPoleMassLeadPresent === true, "Phase346 must record the Nielsen pole-mass lead.");
+  assert(phase346.nielsenPrimarySourcesReviewed === true, "Phase346 must record primary source review.");
+  assert(phase346.nielsenRouteExternalToGu === true, "Phase346 must classify the route as external to GU.");
+  assert(phase346.nielsenIdentitiesControlGaugeParameterDependence === true, "Phase346 must record Nielsen identity gauge-parameter control.");
+  assert(phase346.complexPoleGaugeIndependentForSmPhysicalFields === true, "Phase346 must record complex-pole gauge independence for SM physical fields.");
+  assert(phase346.mixingAndCpViolationCoveredBySmNielsenIdentity === true, "Phase346 must record mixing coverage.");
+  assert(phase346.poleResiduesAndPartialWidthsGaugeIndependentLead === true, "Phase346 must record pole residue and partial-width gauge-independence lead.");
+  assert(phase346.complexMassSchemeUsesGaugeIndependentPoleRenormalization === true, "Phase346 must record complex-mass-scheme pole renormalization.");
+  assert(phase346.pinchTechniqueResonantAmplitudeGaugeIndependentLead === true, "Phase346 must record pinch-technique resonant amplitude lead.");
+  assert(phase346.routeConstrainsPhysicalMassConvention === true, "Phase346 must constrain physical mass convention.");
+  assert(phase346.routeSupportsGaugeInvariantObservedPoleExtractionBoundary === true, "Phase346 must support the observed pole-extraction boundary.");
+  assert(phase346.nielsenRouteRequiresGuBrstOrSlavnovTaylorControl === true, "Phase346 must require GU BRST/Slavnov-Taylor control.");
+  assert(phase346.nielsenRouteRequiresGuTwoPointFunctionsOrCorrelationMatrix === true, "Phase346 must require GU two-point functions or correlation matrix.");
+  assert(phase346.nielsenRouteRequiresGuObservedFieldOperators === true, "Phase346 must require GU observed-field operators.");
+  assert(phase346.nielsenRouteRequiresGuPoleEquationAndResidueExtraction === true, "Phase346 must require GU pole equation and residue extraction.");
+  assert(phase346.nielsenRouteRequiresPhotonWzHiggsProjectionRows === true, "Phase346 must require photon/W/Z/H projection rows.");
+  assert(phase346.nielsenRouteRequiresTargetIndependentMassScaleAndCouplings === true, "Phase346 must require target-independent scale and coupling lineage.");
+  assert(phase346.nielsenRouteRequiresGuHiggsScalarSourceOperator === true, "Phase346 must require a GU Higgs scalar-source operator.");
+  assert(phase346.nielsenRouteRequiresGeVUnitNormalization === true, "Phase346 must require GeV normalization.");
+  assert(phase346.nielsenRouteProvidesGuLocalWzTheorem === false, "Phase346 cannot claim a GU-local W/Z theorem.");
+  assert(phase346.nielsenRouteProvidesSeparateWzSourceRows === false, "Phase346 cannot claim separate W/Z source rows.");
+  assert(phase346.nielsenRouteProvidesTargetIndependentVevOrMassScale === false, "Phase346 cannot claim a target-independent VEV or mass scale.");
+  assert(phase346.nielsenRouteProvidesGuWeakMixingAngleSource === false, "Phase346 cannot claim a GU weak-mixing angle source.");
+  assert(phase346.nielsenRouteProvidesGuGaugeCouplingNormalization === false, "Phase346 cannot claim GU gauge-coupling normalization.");
+  assert(phase346.nielsenRouteProvidesObservedPhotonWzHiggsProjectionRows === false, "Phase346 cannot claim observed photon/W/Z/H projection rows.");
+  assert(phase346.nielsenRouteProvidesGuObservedFieldExtractionContract === false, "Phase346 cannot claim the GU observed-field extraction contract.");
+  assert(phase346.nielsenRouteProvidesGuHiggsScalarSourceOperator === false, "Phase346 cannot claim a GU Higgs scalar-source operator.");
+  assert(phase346.nielsenRouteProvidesObservedHiggsMassFromGu === false, "Phase346 cannot claim observed Higgs mass from GU.");
+  assert(phase346.nielsenRouteProvidesGeVUnitNormalization === false, "Phase346 cannot claim GeV normalization.");
+  assert(phase346.nielsenRoutePromotesObservedFieldExtraction === false, "Phase346 cannot promote observed-field extraction.");
+  assert(phase346.nielsenRoutePromotesWzMasses === false, "Phase346 cannot promote W/Z masses.");
+  assert(phase346.nielsenRoutePromotesHiggsMass === false, "Phase346 cannot promote Higgs mass.");
+  assert(phase346.nielsenRouteCompletesBosonPredictions === false, "Phase346 cannot complete boson predictions.");
+  assert(phase346.canFillPhase201WzContract === false, "Phase346 cannot fill the Phase201 W/Z contract.");
+  assert(phase346.canFillPhase201HiggsContract === false, "Phase346 cannot fill the Phase201 Higgs contract.");
+  assert(phase346.canFillPhase256ObservedFieldExtractionContract === false, "Phase346 cannot fill the Phase256 observed-field extraction contract.");
+  assert(phase346.sourceRowCount === 6, "Phase346 must preserve six source rows.");
+  assert(phase346.contractImpact?.canFillPhase201WzContract === false, "Phase346 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase346.contractImpact?.canFillPhase201HiggsContract === false, "Phase346 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase346.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase346 contract impact must keep Phase256 unfilled.");
+  assert(phase346.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase346 W/Z missing-field count must match Phase213.");
+  assert(phase346.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase346 Higgs missing-field count must match Phase213.");
+  assert(phase346.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase346 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");
