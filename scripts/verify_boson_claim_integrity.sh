@@ -117,6 +117,7 @@ const paths = {
   phase345: "studies/phase345_fradkin_shenker_complementarity_source_audit_001/output/fradkin_shenker_complementarity_source_audit_summary.json",
   phase346: "studies/phase346_nielsen_pole_mass_gauge_independence_source_audit_001/output/nielsen_pole_mass_gauge_independence_source_audit_summary.json",
   phase347: "studies/phase347_dispersive_electroweak_scale_mass_source_audit_001/output/dispersive_electroweak_scale_mass_source_audit_summary.json",
+  phase348: "studies/phase348_right_handed_weak_coupling_source_audit_001/output/right_handed_weak_coupling_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -305,6 +306,7 @@ const phase344 = requireFile(paths.phase344);
 const phase345 = requireFile(paths.phase345);
 const phase346 = requireFile(paths.phase346);
 const phase347 = requireFile(paths.phase347);
+const phase348 = requireFile(paths.phase348);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -2438,6 +2440,71 @@ if (sourceLineageMissing) {
   assert(phase347.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase347 W/Z missing-field count must match Phase213.");
   assert(phase347.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase347 Higgs missing-field count must match Phase213.");
   assert(phase347.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase347 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase348.xueRightHandedWeakCouplingSourceAuditPassed === true, "Phase348 right-handed weak-coupling source audit must pass while preserving non-promotional status.");
+  assert(phase348.xueWMassTensionLeadPresent === true, "Phase348 must record the W-mass tension lead.");
+  assert(phase348.xueVectorlikeWLeadPresent === true, "Phase348 must record the vectorlike W source lead.");
+  assert(phase348.xuePrimarySourcesReviewed === true, "Phase348 must record primary source review.");
+  assert(phase348.xueRouteExternalToGu === true, "Phase348 must classify the route as external to GU.");
+  assert(phase348.smGaugeSymmetricFourFermionInteractionsUsed === true, "Phase348 must record SM-gauge-symmetric four-fermion interactions.");
+  assert(phase348.compositeParticleUvFixedPointUsed === true, "Phase348 must record composite-particle UV fixed-point use.");
+  assert(phase348.topCondensateIrfixedPointUsed === true, "Phase348 must record top-condensate IR fixed-point use.");
+  assert(phase348.rightHandedWVertexInduced === true, "Phase348 must record the induced right-handed W vertex.");
+  assert(phase348.rightHandedZVertexInduced === true, "Phase348 must record the induced right-handed Z vertex.");
+  assert(phase348.parityRestorationScaleTevClaimed === true, "Phase348 must record the TeV parity-restoration scale claim.");
+  assert(phase348.cdfWMassTensionMotivatedRoute === true, "Phase348 must record the CDF W-mass-tension motivation.");
+  assert(phase348.wMassCorrectionFormulaCaptured === true, "Phase348 must capture the W mass correction formula.");
+  assert(phase348.zMassCorrectionFormulaCaptured === true, "Phase348 must capture the Z mass correction formula.");
+  assert(phase348.widthCorrectionFormulaCaptured === true, "Phase348 must capture the width correction cross-check.");
+  assert(phase348.higgsMassUsedAsBoundaryInput === true, "Phase348 must record Higgs mass as boundary input.");
+  assert(phase348.topMassUsedAsBoundaryInput === true, "Phase348 must record top mass as boundary input.");
+  assert(phase348.fermiConstantVevUsedAsBoundaryInput === true, "Phase348 must record Fermi-constant VEV as boundary input.");
+  assert(phase348.transitionScaleTev === 5.1, "Phase348 must preserve the reported transition scale.");
+  assert(phase348.electroweakVevInputGeV === 246, "Phase348 must preserve the electroweak VEV input.");
+  assert(phase348.topMassBoundaryInputGeV === 173, "Phase348 must preserve the top-mass boundary input.");
+  assert(phase348.higgsMassBoundaryInputGeV === 126, "Phase348 must preserve the Higgs-mass boundary input.");
+  assert(phase348.cWLowerFit === 1.68, "Phase348 must preserve the lower c_w fit value.");
+  assert(phase348.cWUpperFit === 2.09, "Phase348 must preserve the upper c_w fit value.");
+  assert(phase348.cZUpperConstraint === 0.379, "Phase348 must preserve the c_z upper constraint.");
+  assert(phase348.routeRequiresExternalFourFermionOperator === true, "Phase348 must require an external four-fermion operator.");
+  assert(phase348.routeRequiresCriticalCouplingAndGapEquation === true, "Phase348 must require critical-coupling and gap-equation dynamics.");
+  assert(phase348.routeRequiresRgTransport === true, "Phase348 must require RG transport.");
+  assert(phase348.routeRequiresMeasuredTopHiggsMasses === true, "Phase348 must require measured top/Higgs masses.");
+  assert(phase348.routeRequiresMeasuredFermiConstantVev === true, "Phase348 must require measured Fermi-constant VEV.");
+  assert(phase348.routeRequiresSmHighOrderMassBaseline === true, "Phase348 must require SM high-order mass baselines.");
+  assert(phase348.routeRequiresFittedOrConstrainedCwCz === true, "Phase348 must require fitted or constrained c_w/c_z.");
+  assert(phase348.routeRequiresObservedZConstraint === true, "Phase348 must require observed Z constraint.");
+  assert(phase348.routeRequiresGuLocalFourFermionSource === true, "Phase348 must require a GU-local four-fermion source.");
+  assert(phase348.routeRequiresGuCompositeFixedPointSource === true, "Phase348 must require a GU composite fixed-point source.");
+  assert(phase348.routeRequiresGuTransitionScaleDerivation === true, "Phase348 must require a GU transition-scale derivation.");
+  assert(phase348.routeRequiresGuRightHandedVertexTheorem === true, "Phase348 must require a GU right-handed-vertex theorem.");
+  assert(phase348.routeRequiresGuObservedFieldExtraction === true, "Phase348 must require GU observed-field extraction.");
+  assert(phase348.routeRequiresGuIndependentWzSourceRows === true, "Phase348 must require independent W/Z source rows.");
+  assert(phase348.routeRequiresGuHiggsScalarSourceOperator === true, "Phase348 must require a GU Higgs scalar-source operator.");
+  assert(phase348.routeRequiresGeVUnitNormalization === true, "Phase348 must require GeV normalization.");
+  assert(phase348.routeProvidesGuLocalFourFermionSource === false, "Phase348 cannot claim a GU-local four-fermion source.");
+  assert(phase348.routeProvidesGuLocalCompositeFixedPoint === false, "Phase348 cannot claim a GU-local composite fixed point.");
+  assert(phase348.routeProvidesGuLocalWzTheorem === false, "Phase348 cannot claim a GU-local W/Z theorem.");
+  assert(phase348.routeProvidesTargetIndependentTransitionScale === false, "Phase348 cannot claim a target-independent transition scale.");
+  assert(phase348.routeProvidesTargetIndependentCwCz === false, "Phase348 cannot claim target-independent c_w/c_z.");
+  assert(phase348.routeProvidesSeparateObservedWzRows === false, "Phase348 cannot claim separate observed W/Z rows.");
+  assert(phase348.routeProvidesIndependentHiggsMassPrediction === false, "Phase348 cannot claim independent Higgs mass prediction.");
+  assert(phase348.routeProvidesGuObservedFieldExtractionContract === false, "Phase348 cannot claim the GU observed-field extraction contract.");
+  assert(phase348.routeProvidesGuHiggsScalarSourceOperator === false, "Phase348 cannot claim a GU Higgs scalar-source operator.");
+  assert(phase348.routeProvidesGeVUnitNormalization === false, "Phase348 cannot claim GeV normalization.");
+  assert(phase348.routePromotesObservedFieldExtraction === false, "Phase348 cannot promote observed-field extraction.");
+  assert(phase348.routePromotesWzMasses === false, "Phase348 cannot promote W/Z masses.");
+  assert(phase348.routePromotesHiggsMass === false, "Phase348 cannot promote Higgs mass.");
+  assert(phase348.routeCompletesBosonPredictions === false, "Phase348 cannot complete boson predictions.");
+  assert(phase348.canFillPhase201WzContract === false, "Phase348 cannot fill the Phase201 W/Z contract.");
+  assert(phase348.canFillPhase201HiggsContract === false, "Phase348 cannot fill the Phase201 Higgs contract.");
+  assert(phase348.canFillPhase256ObservedFieldExtractionContract === false, "Phase348 cannot fill the Phase256 observed-field extraction contract.");
+  assert(phase348.sourceRowCount === 3, "Phase348 must preserve three source rows.");
+  assert(phase348.contractImpact?.canFillPhase201WzContract === false, "Phase348 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase348.contractImpact?.canFillPhase201HiggsContract === false, "Phase348 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase348.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase348 contract impact must keep Phase256 unfilled.");
+  assert(phase348.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase348 W/Z missing-field count must match Phase213.");
+  assert(phase348.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase348 Higgs missing-field count must match Phase213.");
+  assert(phase348.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase348 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

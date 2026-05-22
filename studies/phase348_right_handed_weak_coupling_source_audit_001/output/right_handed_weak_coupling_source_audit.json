@@ -1,0 +1,153 @@
+{
+  "phaseId": "phase348-right-handed-weak-coupling-source-audit",
+  "terminalStatus": "right-handed-weak-coupling-source-audit-external-four-fermion-fit-not-gu-source",
+  "generatedAt": "2026-05-22T17:43:27.3867281+00:00",
+  "xueRightHandedWeakCouplingSourceAuditPassed": true,
+  "xueWMassTensionLeadPresent": true,
+  "xueVectorlikeWLeadPresent": true,
+  "xuePrimarySourcesReviewed": true,
+  "xueRouteExternalToGu": true,
+  "smGaugeSymmetricFourFermionInteractionsUsed": true,
+  "compositeParticleUvFixedPointUsed": true,
+  "topCondensateIrfixedPointUsed": true,
+  "rightHandedWVertexInduced": true,
+  "rightHandedZVertexInduced": true,
+  "parityRestorationScaleTevClaimed": true,
+  "cdfWMassTensionMotivatedRoute": true,
+  "wMassCorrectionFormulaCaptured": true,
+  "zMassCorrectionFormulaCaptured": true,
+  "widthCorrectionFormulaCaptured": true,
+  "higgsMassUsedAsBoundaryInput": true,
+  "topMassUsedAsBoundaryInput": true,
+  "fermiConstantVevUsedAsBoundaryInput": true,
+  "transitionScaleTev": 5.1,
+  "electroweakVevInputGeV": 246,
+  "topMassBoundaryInputGeV": 173,
+  "higgsMassBoundaryInputGeV": 126,
+  "cWLowerFit": 1.68,
+  "cWUpperFit": 2.09,
+  "cZUpperConstraint": 0.379,
+  "zMassMeasurementInputGeV": 91.1876,
+  "zMassMeasurementUncertaintyGeV": 0.0021,
+  "wMassCorrectionFormula": "M_W^exp ~= M_W^SM * sqrt(1 \u002B c_w^2 * (M_W^SM / Lambda)^2)",
+  "zMassCorrectionFormula": "M_Z^exp ~= M_Z^SM * sqrt(1 \u002B 0.5 * c_z^2 * (M_Z^SM / Lambda)^2)",
+  "routeRequiresExternalFourFermionOperator": true,
+  "routeRequiresCriticalCouplingAndGapEquation": true,
+  "routeRequiresRgTransport": true,
+  "routeRequiresMeasuredTopHiggsMasses": true,
+  "routeRequiresMeasuredFermiConstantVev": true,
+  "routeRequiresSmHighOrderMassBaseline": true,
+  "routeRequiresFittedOrConstrainedCwCz": true,
+  "routeRequiresObservedZConstraint": true,
+  "routeRequiresGuLocalFourFermionSource": true,
+  "routeRequiresGuCompositeFixedPointSource": true,
+  "routeRequiresGuTransitionScaleDerivation": true,
+  "routeRequiresGuRightHandedVertexTheorem": true,
+  "routeRequiresGuObservedFieldExtraction": true,
+  "routeRequiresGuIndependentWzSourceRows": true,
+  "routeRequiresGuHiggsScalarSourceOperator": true,
+  "routeRequiresGeVUnitNormalization": true,
+  "routeProvidesGuLocalFourFermionSource": false,
+  "routeProvidesGuLocalCompositeFixedPoint": false,
+  "routeProvidesGuLocalWzTheorem": false,
+  "routeProvidesTargetIndependentTransitionScale": false,
+  "routeProvidesTargetIndependentCwCz": false,
+  "routeProvidesSeparateObservedWzRows": false,
+  "routeProvidesIndependentHiggsMassPrediction": false,
+  "routeProvidesGuObservedFieldExtractionContract": false,
+  "routeProvidesGuHiggsScalarSourceOperator": false,
+  "routeProvidesGeVUnitNormalization": false,
+  "routePromotesObservedFieldExtraction": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "sourceRows": [
+    {
+      "SourceId": "doi-10.1016-j.nuclphysb.2022.115992-right-handed-weak-coupling",
+      "Url": "https://doi.org/10.1016/j.nuclphysb.2022.115992",
+      "FindingKind": "Nuclear Physics B article on W-mass tension from right-handed W coupling",
+      "Summary": "Introduces SM-gauge-symmetric four-fermion interactions, a TeV-scale composite-particle/parity-restoration transition, and W/Z mass corrections from induced right-handed gauge couplings.",
+      "PredictionImpact": "Direct W/Z mass-correction lead, but it fits or constrains c_w and c_z against external measurements and uses SM boundary inputs rather than GU-local source rows."
+    },
+    {
+      "SourceId": "arxiv-2205.14957-right-handed-weak-coupling",
+      "Url": "https://arxiv.org/abs/2205.14957",
+      "FindingKind": "Open arXiv record for the 2022 W-mass tension paper",
+      "Summary": "Records the claim that non-trivial right-handed W coupling at TeV energies can relieve the CDF W-mass tension and that W/Z propagators and decays are computed.",
+      "PredictionImpact": "Useful for source provenance and route boundaries; not a target-independent geometric prediction law."
+    },
+    {
+      "SourceId": "arxiv-1506.05994-vectorlike-w-coupling",
+      "Url": "https://arxiv.org/abs/1506.05994",
+      "FindingKind": "Earlier vectorlike W-coupling and third-family mass source",
+      "Summary": "Studies SM-gauge-symmetric four-fermion operators where top condensation generates the top mass and W coupling becomes approximately vectorlike at TeV scale.",
+      "PredictionImpact": "Background for the 2022 route; overlaps top-condensation dynamics but adds no GU-local W/Z/H source lineage."
+    }
+  ],
+  "checks": [
+    {
+      "CheckId": "xue-primary-sources-reviewed",
+      "Passed": true,
+      "Detail": "wMassLead=True; vectorlikeLead=True; reviewed=True; externalToGu=True; sourceRows=3"
+    },
+    {
+      "CheckId": "right-handed-wz-mass-correction-claims-captured",
+      "Passed": true,
+      "Detail": "fourFermion=True; uvComposite=True; rightW=True; rightZ=True; lambdaTev=5.1; cW=[1.68,2.09]; cZUpper=0.379"
+    },
+    {
+      "CheckId": "route-uses-external-boundary-inputs",
+      "Passed": true,
+      "Detail": "higgsBoundary=True; topBoundary=True; vevBoundary=True; smBaseline=True; fittedCwCz=True; zConstraint=True"
+    },
+    {
+      "CheckId": "current-source-lineage-blockers-preserved",
+      "Passed": true,
+      "Detail": "phase201Promotable=False; existingEvidence=False; wzMissing=15; higgsMissing=14"
+    },
+    {
+      "CheckId": "observed-field-contract-and-adjacent-routes-remain-nonpromotional",
+      "Passed": true,
+      "Detail": "observedFilled=0; observedPromotable=False; p276=True; topCondWz=False; smWz=False; higgsUpsilonCompletes=False; nielsenCompletes=False; dispersiveCompletes=False"
+    },
+    {
+      "CheckId": "xue-route-requires-missing-gu-source-data",
+      "Passed": true,
+      "Detail": "externalFourFermion=True; gap=True; rg=True; guFourFermion=True; guFixedPoint=True; guTransitionScale=True; guVertex=True; observed=True; wzRows=True; scalar=True; gev=True"
+    },
+    {
+      "CheckId": "xue-route-does-not-fill-gu-contracts",
+      "Passed": true,
+      "Detail": "guFourFermion=False; guFixedPoint=False; guWzTheorem=False; targetIndependentScale=False; targetIndependentCwCz=False; observedWzRows=False; higgsPrediction=False; observedContract=False; scalarSource=False; gev=False; promotesWz=False; promotesHiggs=False; completes=False"
+    }
+  ],
+  "contractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionFilledRequiredFieldCount": 0
+  },
+  "relatedBlockingEvidence": {
+    "topCondensationSourceAuditPassed": true,
+    "topCondensationPromotesWzMasses": false,
+    "topCondensationPromotesHiggsMass": false,
+    "smMassMatrixPromotesWzMasses": false,
+    "smMassMatrixPromotesHiggsMass": false,
+    "higgsUpsilonRouteCompletesBosonPredictions": false,
+    "nielsenRouteCompletesBosonPredictions": false,
+    "dispersiveRouteCompletesBosonPredictions": false
+  },
+  "decision": "Do not promote W/Z or Higgs physical masses from the Xue right-handed weak-coupling route. It is a direct W/Z mass-correction lead, but it imports SM-gauge-symmetric four-fermion dynamics, measured top and Higgs masses, the Fermi-constant VEV, SM high-order mass baselines, and fitted or externally constrained c_w/c_z coefficients; it supplies no GU-local four-fermion source, transition-scale derivation, right-handed-vertex theorem, observed-field extraction, Higgs scalar-source lineage, or GeV-unit derivation.",
+  "nextRequiredArtifact": [
+    "A GU-local source for the relevant four-fermion operator or a replacement geometric interaction that preserves the required gauge structure.",
+    "A target-independent derivation of the parity-restoration or composite transition scale, not a scale inferred from measured top/Higgs inputs.",
+    "A GU theorem deriving the W and Z right-handed vertex functions and their coefficients c_w and c_z without fitting W or Z target data.",
+    "Observed photon/W/Z/H projection rows and complex-pole extraction before physical mass comparison.",
+    "A GU Higgs scalar-source/operator and GeV normalization that do not import the measured Higgs mass as a boundary condition."
+  ]
+}

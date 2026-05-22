@@ -7670,6 +7670,22 @@ gauge-coupling normalization, Higgs scalar-source lineage, or GeV units.
     `anyObservedFieldExtractionCandidateFillsContract=false`.
   - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
     `anySourceLineageCandidateFillsContract=false`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed, ending with:
+  - `internal-boson-prediction-package-built-physical-comparison-blocked`.
+  - `boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=False`.
+  - `checklistPassedCount=141`.
+  - `checklistFailedCount=3`.
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `dotnet test GeometricUnity.slnx` passed. Existing warning remains:
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs(315,9)`
+  `xUnit2013`.
+- Reference detail-link check passed with `detailLinkCount=29` and
+  `missing=[]`.
 
 ## 2026-05-22 - Phase346 Nielsen Pole-Mass Gauge-Independence Source Audit
 
@@ -11356,3 +11372,104 @@ Higgs scalar-source lineage, or GeV normalization.
 - Claim-integrity verifier passed with `sourceLineageMissing=true`,
   `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
   `promotedPhysicalMassClaimCount=0`.
+
+## 2026-05-22 - Phase348 Right-Handed Weak-Coupling Source Audit
+
+### Context
+
+After the dispersive electroweak-scale mass route preserved the source-lineage
+blocker, I checked whether Xue's right-handed W/Z coupling route could provide
+a direct W/Z bridge-source law. This was worth testing because it gives explicit
+W and Z mass-shell correction formulas from induced right-handed weak
+couplings.
+
+### Sources Reviewed
+
+- `https://doi.org/10.1016/j.nuclphysb.2022.115992`.
+- `https://arxiv.org/abs/2205.14957`.
+- `https://arxiv.org/abs/1506.05994`.
+
+### Action
+
+- Added
+  `studies/phase348_right_handed_weak_coupling_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P348.md`.
+- Wired Phase348 into the generator, P101 package, P202 objective completion
+  audit, and claim-integrity verifier.
+- Added Phase348 scanner exclusions so generated audit text is not counted as
+  independent source evidence.
+- Added `RIGHT-HANDED-WEAK-COUPLING-COMPOSITE` to
+  `ExperimentReferences.md` with a detailed reference note under
+  `docs/Reference/ExperimentReferences/`.
+
+### Current Expected Outcome
+
+Phase348 is expected to pass only as a negative boundary audit:
+
+- `xueRightHandedWeakCouplingSourceAuditPassed=true`.
+- `xueWMassTensionLeadPresent=true`.
+- `xueVectorlikeWLeadPresent=true`.
+- `xuePrimarySourcesReviewed=true`.
+- `xueRouteExternalToGu=true`.
+- `rightHandedWVertexInduced=true`.
+- `rightHandedZVertexInduced=true`.
+- `parityRestorationScaleTevClaimed=true`.
+- `transitionScaleTev=5.1`.
+- `cWLowerFit=1.68`.
+- `cWUpperFit=2.09`.
+- `cZUpperConstraint=0.379`.
+- `routeRequiresMeasuredTopHiggsMasses=true`.
+- `routeRequiresMeasuredFermiConstantVev=true`.
+- `routeRequiresSmHighOrderMassBaseline=true`.
+- `routeRequiresFittedOrConstrainedCwCz=true`.
+- `routeProvidesGuLocalWzTheorem=false`.
+- `routeProvidesTargetIndependentTransitionScale=false`.
+- `routeProvidesTargetIndependentCwCz=false`.
+- `routeProvidesSeparateObservedWzRows=false`.
+- `routeProvidesIndependentHiggsMassPrediction=false`.
+- `routeProvidesGuObservedFieldExtractionContract=false`.
+- `routePromotesWzMasses=false`.
+- `routePromotesHiggsMass=false`.
+- `routeCompletesBosonPredictions=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from the Xue right-handed weak-coupling
+route. It is a direct W/Z correction lead, but it imports external
+four-fermion/composite dynamics, measured top/Higgs/VEV inputs, SM high-order
+mass baselines, and fitted or constrained `c_w`/`c_z` coefficients. It does not
+provide a GU-local four-fermion source, transition-scale derivation,
+right-handed-vertex theorem, observed-field extraction, Higgs scalar-source
+lineage, or GeV-unit normalization.
+
+### Validation So Far
+
+- Targeted Phase348 run passed with:
+  - `xueRightHandedWeakCouplingSourceAuditPassed=true`.
+  - `rightHandedWVertexInduced=true`.
+  - `transitionScaleTev=5.1`.
+  - `cWFitRange=[1.68,2.09]`.
+  - `routePromotesWzMasses=false`.
+  - `routePromotesHiggsMass=false`.
+  - `canFillPhase256ObservedFieldExtractionContract=false`.
+- P101 regenerated with Phase348 included and remained
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase348 included and remained
+  `objectiveAchieved=false`, with `checklistPassedCount=141` and
+  `checklistFailedCount=3`.
+- Claim-integrity verifier passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns after adding Phase348 found no intake-ready artifacts:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `canPromoteHiggsQuarticSelfCouplingSource=false` and
+    `intakeReadyFindingCount=0`.
+  - P279 `technicolorWalkingElectroweakScaleSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P281 `geometricRefractiveUnificationSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P295 `intakeReadyObservedFieldExtractionCandidateCount=0` and
+    `anyObservedFieldExtractionCandidateFillsContract=false`.
+  - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
+    `anySourceLineageCandidateFillsContract=false`.
