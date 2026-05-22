@@ -118,6 +118,7 @@ const paths = {
   phase346: "studies/phase346_nielsen_pole_mass_gauge_independence_source_audit_001/output/nielsen_pole_mass_gauge_independence_source_audit_summary.json",
   phase347: "studies/phase347_dispersive_electroweak_scale_mass_source_audit_001/output/dispersive_electroweak_scale_mass_source_audit_summary.json",
   phase348: "studies/phase348_right_handed_weak_coupling_source_audit_001/output/right_handed_weak_coupling_source_audit_summary.json",
+  phase349: "studies/phase349_spin_exchange_preon_boson_mass_source_audit_001/output/spin_exchange_preon_boson_mass_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -307,6 +308,7 @@ const phase345 = requireFile(paths.phase345);
 const phase346 = requireFile(paths.phase346);
 const phase347 = requireFile(paths.phase347);
 const phase348 = requireFile(paths.phase348);
+const phase349 = requireFile(paths.phase349);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -2505,6 +2507,68 @@ if (sourceLineageMissing) {
   assert(phase348.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase348 W/Z missing-field count must match Phase213.");
   assert(phase348.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase348 Higgs missing-field count must match Phase213.");
   assert(phase348.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase348 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase349.spinExchangePreonBosonMassSourceAuditPassed === true, "Phase349 spin-exchange preon boson-mass source audit must pass while preserving non-promotional status.");
+  assert(phase349.spinExchangePreonMassLeadPresent === true, "Phase349 must record the spin-exchange preon W/Z/H mass lead.");
+  assert(phase349.spinExchangePreonPrimarySourceReviewed === true, "Phase349 must record primary source review.");
+  assert(phase349.spinExchangePreonRouteExternalToGu === true, "Phase349 must classify the route as external to GU.");
+  assert(phase349.preonRouteUsesMasslessPreonPairs === true, "Phase349 must record massless preon-pair use.");
+  assert(phase349.preonRouteUsesChiralPreonPairInternalDynamics === true, "Phase349 must record chiral preon-pair internal dynamics.");
+  assert(phase349.preonRouteUsesGellMannGeneratorStructure === true, "Phase349 must record Gell-Mann generator structure.");
+  assert(phase349.preonRouteModelsPhotonAsIsospinSinglet === true, "Phase349 must record the photon isospin-singlet model.");
+  assert(phase349.preonRouteModelsWeakBosonsAsTriplet === true, "Phase349 must record the weak-boson triplet model.");
+  assert(phase349.preonRouteClaimsNoAdjustableParameters === true, "Phase349 must record the no-adjustable-parameter claim.");
+  assert(phase349.preonRouteClaimsWeakBosonMassRatio === true, "Phase349 must record the weak-boson mass-ratio claim.");
+  assert(phase349.preonRouteClaimsWeakMixingAngle === true, "Phase349 must record the weak-mixing-angle claim.");
+  assert(phase349.preonRouteClaimsDecayWidthRatio === true, "Phase349 must record the decay-width-ratio claim.");
+  assert(phase349.preonRouteClaimsHiggsBosonMassRatio === true, "Phase349 must record the Higgs-boson mass-ratio claim.");
+  assert(phase349.preonRouteIntroducesCurlOperatorChirality === true, "Phase349 must record the curl-operator chirality lead.");
+  assert(phase349.preonRouteUsesMobiusToriTopology === true, "Phase349 must record the Mobius-tori topology lead.");
+  assert(phase349.reportedWeakBosonMassRatio === 0.87, "Phase349 must preserve the reported weak-boson mass ratio.");
+  assert(phase349.reportedWeakBosonMassRatioExperimentalComparison === 0.88, "Phase349 must preserve the weak-boson mass-ratio comparison.");
+  assert(phase349.reportedWeinbergAngleDegrees === 30.0, "Phase349 must preserve the reported Weinberg-angle value.");
+  assert(phase349.reportedWeinbergAngleExperimentalComparisonDegrees === 29.0, "Phase349 must preserve the Weinberg-angle comparison.");
+  assert(phase349.reportedDecayWidthRatio === 0.87, "Phase349 must preserve the reported decay-width ratio.");
+  assert(phase349.reportedDecayWidthRatioExperimentalComparison === 0.84, "Phase349 must preserve the decay-width-ratio comparison.");
+  assert(phase349.higgsBosonMassRatioNumericValueRecoverableFromArxivHtml === false, "Phase349 must not claim a recovered numeric Higgs ratio from arXiv HTML.");
+  assert(phase349.routeRequiresExternalPreonModel === true, "Phase349 must require an external preon model.");
+  assert(phase349.routeRequiresCompositeBindingDynamics === true, "Phase349 must require composite/binding dynamics.");
+  assert(phase349.routeRequiresMappingPreonStatesToObservedBosons === true, "Phase349 must require a preon-to-observed-boson state map.");
+  assert(phase349.routeRequiresTargetIndependentAbsoluteMassScaleOrInput === true, "Phase349 must require an absolute mass-scale source.");
+  assert(phase349.routeRequiresGuLocalPreonOrSpinExchangeSource === true, "Phase349 must require a GU-local preon or spin-exchange source.");
+  assert(phase349.routeRequiresGuChiralPreonPairOperator === true, "Phase349 must require a GU chiral-preon-pair operator.");
+  assert(phase349.routeRequiresGuGellMannGeneratorEmbedding === true, "Phase349 must require a GU generator embedding.");
+  assert(phase349.routeRequiresGuWeakMixingAngleSource === true, "Phase349 must require a GU weak-mixing-angle source.");
+  assert(phase349.routeRequiresGuGaugeCouplingNormalization === true, "Phase349 must require GU gauge-coupling normalization.");
+  assert(phase349.routeRequiresGuObservedFieldExtraction === true, "Phase349 must require GU observed-field extraction.");
+  assert(phase349.routeRequiresGuIndependentWzSourceRows === true, "Phase349 must require independent W/Z source rows.");
+  assert(phase349.routeRequiresGuHiggsScalarSourceOperator === true, "Phase349 must require a GU Higgs scalar-source operator.");
+  assert(phase349.routeRequiresGeVUnitNormalization === true, "Phase349 must require GeV normalization.");
+  assert(phase349.routeProvidesGuLocalPreonOrSpinExchangeSource === false, "Phase349 cannot claim a GU-local preon or spin-exchange source.");
+  assert(phase349.routeProvidesGuChiralPreonPairOperator === false, "Phase349 cannot claim a GU chiral-preon-pair operator.");
+  assert(phase349.routeProvidesGuLocalWzTheorem === false, "Phase349 cannot claim a GU-local W/Z theorem.");
+  assert(phase349.routeProvidesSeparateObservedWzRows === false, "Phase349 cannot claim separate observed W/Z rows.");
+  assert(phase349.routeProvidesTargetIndependentVevOrMassScale === false, "Phase349 cannot claim a target-independent absolute scale.");
+  assert(phase349.routeProvidesGuWeakMixingAngleSource === false, "Phase349 cannot claim a GU weak-mixing-angle source.");
+  assert(phase349.routeProvidesGuGaugeCouplingNormalization === false, "Phase349 cannot claim GU gauge-coupling normalization.");
+  assert(phase349.routeProvidesObservedPhotonWzHiggsProjectionRows === false, "Phase349 cannot claim observed photon/W/Z/H projection rows.");
+  assert(phase349.routeProvidesGuObservedFieldExtractionContract === false, "Phase349 cannot claim the GU observed-field extraction contract.");
+  assert(phase349.routeProvidesGuHiggsScalarSourceOperator === false, "Phase349 cannot claim a GU Higgs scalar-source operator.");
+  assert(phase349.routeProvidesObservedHiggsMassFromGu === false, "Phase349 cannot claim observed Higgs mass from GU.");
+  assert(phase349.routeProvidesGeVUnitNormalization === false, "Phase349 cannot claim GeV normalization.");
+  assert(phase349.routePromotesObservedFieldExtraction === false, "Phase349 cannot promote observed-field extraction.");
+  assert(phase349.routePromotesWzMasses === false, "Phase349 cannot promote W/Z masses.");
+  assert(phase349.routePromotesHiggsMass === false, "Phase349 cannot promote Higgs mass.");
+  assert(phase349.routeCompletesBosonPredictions === false, "Phase349 cannot complete boson predictions.");
+  assert(phase349.canFillPhase201WzContract === false, "Phase349 cannot fill the Phase201 W/Z contract.");
+  assert(phase349.canFillPhase201HiggsContract === false, "Phase349 cannot fill the Phase201 Higgs contract.");
+  assert(phase349.canFillPhase256ObservedFieldExtractionContract === false, "Phase349 cannot fill the Phase256 observed-field extraction contract.");
+  assert(phase349.sourceRowCount === 1, "Phase349 must preserve one source row.");
+  assert(phase349.contractImpact?.canFillPhase201WzContract === false, "Phase349 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase349.contractImpact?.canFillPhase201HiggsContract === false, "Phase349 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase349.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase349 contract impact must keep Phase256 unfilled.");
+  assert(phase349.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase349 W/Z missing-field count must match Phase213.");
+  assert(phase349.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase349 Higgs missing-field count must match Phase213.");
+  assert(phase349.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase349 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

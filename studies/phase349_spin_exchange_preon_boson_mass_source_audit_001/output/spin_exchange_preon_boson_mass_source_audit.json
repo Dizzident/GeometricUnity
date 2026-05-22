@@ -1,0 +1,127 @@
+{
+  "phaseId": "phase349-spin-exchange-preon-boson-mass-source-audit",
+  "terminalStatus": "spin-exchange-preon-source-audit-external-ratio-model-not-gu-source",
+  "generatedAt": "2026-05-22T18:26:20.310383+00:00",
+  "spinExchangePreonDoi": "https://doi.org/10.48550/arXiv.2410.13902",
+  "spinExchangePreonBosonMassSourceAuditPassed": true,
+  "spinExchangePreonMassLeadPresent": true,
+  "spinExchangePreonPrimarySourceReviewed": true,
+  "spinExchangePreonRouteExternalToGu": true,
+  "preonRouteUsesMasslessPreonPairs": true,
+  "preonRouteUsesChiralPreonPairInternalDynamics": true,
+  "preonRouteUsesGellMannGeneratorStructure": true,
+  "preonRouteModelsPhotonAsIsospinSinglet": true,
+  "preonRouteModelsWeakBosonsAsTriplet": true,
+  "preonRouteClaimsNoAdjustableParameters": true,
+  "preonRouteClaimsWeakBosonMassRatio": true,
+  "preonRouteClaimsWeakMixingAngle": true,
+  "preonRouteClaimsDecayWidthRatio": true,
+  "preonRouteClaimsHiggsBosonMassRatio": true,
+  "preonRouteIntroducesCurlOperatorChirality": true,
+  "preonRouteUsesMobiusToriTopology": true,
+  "reportedWeakBosonMassRatio": 0.87,
+  "reportedWeakBosonMassRatioExperimentalComparison": 0.88,
+  "reportedWeinbergAngleDegrees": 30,
+  "reportedWeinbergAngleExperimentalComparisonDegrees": 29,
+  "reportedDecayWidthRatio": 0.87,
+  "reportedDecayWidthRatioExperimentalComparison": 0.84,
+  "higgsBosonMassRatioNumericValueRecoverableFromArxivHtml": false,
+  "higgsBosonMassRatioArxivHtmlNote": "The arXiv abstract records a Higgs-boson ratio comparison, but the HTML text elides the predicted MathJax expression; this audit records the claim only and does not use a recovered numeric value.",
+  "routeRequiresExternalPreonModel": true,
+  "routeRequiresCompositeBindingDynamics": true,
+  "routeRequiresMappingPreonStatesToObservedBosons": true,
+  "routeRequiresTargetIndependentAbsoluteMassScaleOrInput": true,
+  "routeRequiresGuLocalPreonOrSpinExchangeSource": true,
+  "routeRequiresGuChiralPreonPairOperator": true,
+  "routeRequiresGuGellMannGeneratorEmbedding": true,
+  "routeRequiresGuWeakMixingAngleSource": true,
+  "routeRequiresGuGaugeCouplingNormalization": true,
+  "routeRequiresGuObservedFieldExtraction": true,
+  "routeRequiresGuIndependentWzSourceRows": true,
+  "routeRequiresGuHiggsScalarSourceOperator": true,
+  "routeRequiresGeVUnitNormalization": true,
+  "routeProvidesGuLocalPreonOrSpinExchangeSource": false,
+  "routeProvidesGuChiralPreonPairOperator": false,
+  "routeProvidesGuLocalWzTheorem": false,
+  "routeProvidesSeparateObservedWzRows": false,
+  "routeProvidesTargetIndependentVevOrMassScale": false,
+  "routeProvidesGuWeakMixingAngleSource": false,
+  "routeProvidesGuGaugeCouplingNormalization": false,
+  "routeProvidesObservedPhotonWzHiggsProjectionRows": false,
+  "routeProvidesGuObservedFieldExtractionContract": false,
+  "routeProvidesGuHiggsScalarSourceOperator": false,
+  "routeProvidesObservedHiggsMassFromGu": false,
+  "routeProvidesGeVUnitNormalization": false,
+  "routePromotesObservedFieldExtraction": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "sourceRows": [
+    {
+      "SourceId": "arxiv-2410.13902-spin-exchange-preon-boson-mass",
+      "Url": "https://arxiv.org/abs/2410.13902",
+      "FindingKind": "Mass Prediction of the Weak and Higgs Bosons Using the Massless Spin-Exchange Preons Model: An Alternative to the Higgs Mechanism in Yang-Mills Theory",
+      "Summary": "Uses massless chiral preon pairs, Gell-Mann generator structure, a curl-operator chirality mechanism, and Mobius-tori topology to describe photon, Z, W, and Higgs-sector mass ratios outside the Standard Model Higgs mechanism.",
+      "PredictionImpact": "Direct W/Z/H numerical-ratio lead, but it is an external preon/composite model and supplies no GU-local source rows, observed-field extraction, absolute scale, Higgs scalar-source lineage, or GeV unit normalization."
+    }
+  ],
+  "checks": [
+    {
+      "CheckId": "spin-exchange-preon-primary-source-reviewed",
+      "Passed": true,
+      "Detail": "lead=True; reviewed=True; externalToGu=True; sourceRows=1"
+    },
+    {
+      "CheckId": "preon-model-ratio-claims-captured",
+      "Passed": true,
+      "Detail": "massRatio=0.87; massRatioExp=0.88; thetaW=30; thetaWExp=29; widthRatio=0.87; widthRatioExp=0.84; higgsRatioClaim=True; higgsRatioNumericFromHtml=False"
+    },
+    {
+      "CheckId": "current-source-lineage-blockers-preserved",
+      "Passed": true,
+      "Detail": "phase201Promotable=False; existingEvidence=False; wzMissing=15; higgsMissing=14"
+    },
+    {
+      "CheckId": "observed-field-contract-and-adjacent-routes-remain-nonpromotional",
+      "Passed": true,
+      "Detail": "observedFilled=0; observedPromotable=False; smWz=False; smHiggs=False; higgsUpsilonCompletes=False; nielsenCompletes=False; dispersiveCompletes=False; rightHandedCompletes=False"
+    },
+    {
+      "CheckId": "preon-route-requires-missing-gu-source-data",
+      "Passed": true,
+      "Detail": "externalPreon=True; binding=True; stateMap=True; scale=True; guPreon=True; guOperator=True; guGenerators=True; weakMixing=True; coupling=True; observed=True; wzRows=True; scalar=True; gev=True"
+    },
+    {
+      "CheckId": "preon-route-does-not-fill-gu-contracts",
+      "Passed": true,
+      "Detail": "guPreon=False; guOperator=False; guWzTheorem=False; observedWzRows=False; scale=False; weakMixing=False; coupling=False; observedRows=False; observedContract=False; scalarSource=False; higgsMass=False; gev=False; promotesWz=False; promotesHiggs=False; completes=False"
+    }
+  ],
+  "contractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionFilledRequiredFieldCount": 0
+  },
+  "relatedBlockingEvidence": {
+    "smMassMatrixPromotesWzMasses": false,
+    "smMassMatrixPromotesHiggsMass": false,
+    "higgsUpsilonRouteCompletesBosonPredictions": false,
+    "nielsenRouteCompletesBosonPredictions": false,
+    "dispersiveRouteCompletesBosonPredictions": false,
+    "rightHandedWeakCouplingRouteCompletesBosonPredictions": false
+  },
+  "decision": "Do not promote W/Z or Higgs physical masses from the spin-exchange preon route. It is a direct external numerical-ratio lead for weak and Higgs bosons, but it imports an external preon/composite model and does not supply GU-local preon operators, Gell-Mann embedding, observed photon/W/Z/H projection rows, independent W/Z source rows, a Higgs scalar-source operator, an absolute GeV scale, or unit normalization.",
+  "nextRequiredArtifact": [
+    "A GU-native source for the chiral preon-pair or spin-exchange operator, or a proof that the preon degrees of freedom are GU fields.",
+    "A GU embedding of the generator structure and curl/chirality operator that derives the observed photon, W, Z, and Higgs state map.",
+    "Target-independent W and Z source rows with absolute mass-scale lineage, not only dimensionless ratios against external comparisons.",
+    "A GU Higgs scalar-source/operator and a pole-mass extraction route for the observed Higgs state.",
+    "GeV unit normalization and observed-field extraction before any physical W/Z/H mass comparison."
+  ]
+}

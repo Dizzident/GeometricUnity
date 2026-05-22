@@ -11500,3 +11500,109 @@ brief source rows in `ExperimentReferences.md`, detailed summaries in linked
 markdown files, and a reusable template for future references. This was a
 bookkeeping improvement only; it did not change any W/Z/H prediction status or
 promote any source-lineage claim.
+
+## 2026-05-22 - Phase349 Spin-Exchange Preon Boson-Mass Source Audit
+
+### Context
+
+During the search for an un-audited W/Z/H direct mass route, an arXiv lead was
+found: `2410.13902`, "Mass Prediction of the Weak and Higgs Bosons Using the
+Massless Spin-Exchange Preons Model." The primary arXiv abstract claims a
+massless preon-pair route using Gell-Mann generator structure, weak-boson mass
+ratio and Weinberg-angle comparisons, a decay-width ratio, and a Higgs-boson
+ratio claim.
+
+An explorer agent, Bernoulli, was launched to inspect local artifacts in
+parallel, but it returned a usage-limit error and produced no actionable
+diagnostic output. Local diagnosis continued without relying on that agent.
+
+### Sources Reviewed
+
+- `https://arxiv.org/abs/2410.13902`.
+- `https://doi.org/10.48550/arXiv.2410.13902`.
+
+### Action
+
+- Added
+  `studies/phase349_spin_exchange_preon_boson_mass_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P349.md`.
+- Wired Phase349 into the generator, P101 package, P202 objective completion
+  audit, and claim-integrity verifier.
+- Added Phase349 scanner exclusions so generated audit text is not counted as
+  independent source evidence.
+- Added `SPIN-EXCHANGE-PREON-BOSON-MASS` to `ExperimentReferences.md` with a
+  detailed reference note under `docs/Reference/ExperimentReferences/`.
+
+### Current Expected Outcome
+
+Phase349 is expected to pass only as a negative boundary audit:
+
+- `spinExchangePreonBosonMassSourceAuditPassed=true`.
+- `spinExchangePreonMassLeadPresent=true`.
+- `spinExchangePreonPrimarySourceReviewed=true`.
+- `spinExchangePreonRouteExternalToGu=true`.
+- `preonRouteUsesMasslessPreonPairs=true`.
+- `preonRouteUsesGellMannGeneratorStructure=true`.
+- `preonRouteClaimsWeakBosonMassRatio=true`.
+- `preonRouteClaimsWeakMixingAngle=true`.
+- `preonRouteClaimsDecayWidthRatio=true`.
+- `preonRouteClaimsHiggsBosonMassRatio=true`.
+- `reportedWeakBosonMassRatio=0.87`.
+- `reportedWeinbergAngleDegrees=30`.
+- `reportedDecayWidthRatio=0.87`.
+- `routeRequiresExternalPreonModel=true`.
+- `routeRequiresGuLocalPreonOrSpinExchangeSource=true`.
+- `routeRequiresGuObservedFieldExtraction=true`.
+- `routeRequiresGuIndependentWzSourceRows=true`.
+- `routeRequiresGuHiggsScalarSourceOperator=true`.
+- `routeRequiresGeVUnitNormalization=true`.
+- `routeProvidesGuLocalWzTheorem=false`.
+- `routeProvidesSeparateObservedWzRows=false`.
+- `routeProvidesGuObservedFieldExtractionContract=false`.
+- `routePromotesWzMasses=false`.
+- `routePromotesHiggsMass=false`.
+- `routeCompletesBosonPredictions=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from the spin-exchange preon route. It is a
+direct external numerical-ratio lead, but it imports an external preon/composite
+model and does not supply GU-local preon operators, observed photon/W/Z/H
+projection rows, independent W/Z source rows, a Higgs scalar-source operator,
+an absolute GeV scale, or unit normalization.
+
+### Validation
+
+- Targeted Phase349 run passed with:
+  - `spinExchangePreonBosonMassSourceAuditPassed=true`.
+  - `reportedWeakBosonMassRatio=0.87`.
+  - `reportedWeinbergAngleDegrees=30`.
+  - `routePromotesWzMasses=false`.
+  - `routePromotesHiggsMass=false`.
+  - `canFillPhase256ObservedFieldExtractionContract=false`.
+- P101 regenerated with Phase349 included and remained
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase349 included and remained
+  `objectiveAchieved=false`, with `checklistPassedCount=142` and
+  `checklistFailedCount=3`.
+- Claim-integrity verifier passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns after adding Phase349 found no intake-ready artifacts:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `canPromoteHiggsQuarticSelfCouplingSource=false` and
+    `intakeReadyFindingCount=0`.
+  - P279 `technicolorWalkingElectroweakScaleSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P281 `geometricRefractiveUnificationSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P295 `intakeReadyObservedFieldExtractionCandidateCount=0` and
+    `anyObservedFieldExtractionCandidateFillsContract=false`.
+  - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
+    `anySourceLineageCandidateFillsContract=false`.
+- Full generator gate passed, ending with the Phase349 audit included and the
+  claim-integrity verifier still reporting zero promoted physical mass claims.
+- `dotnet test GeometricUnity.slnx` passed; the only warning was the existing
+  `xUnit2013` collection-size warning in
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
