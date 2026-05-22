@@ -7907,6 +7907,90 @@ without W/Z/H targets, complete a non-abelian electroweak W/Z sector, preserve
 the observed photon and Higgs facts, and supply precision, RG, threshold, and
 unit-normalization lineage.
 
+## 2026-05-22 - Phase344 FMS Gauge-Invariant Spectrum Source Audit
+
+### Context
+
+After Phase343 preserved the vector-mass/Stueckelberg route as non-promotable,
+I checked the Froehlich-Morchio-Strocchi (FMS) mechanism because it attacks a
+different blocker: observed-field extraction. The route asks whether physical
+W/Z/H states should be represented by gauge-invariant composite operators whose
+correlation functions reduce to the familiar elementary W, Z, and Higgs fields
+in a suitable Standard Model expansion.
+
+### Sources Reviewed
+
+- `https://doi.org/10.1016/0550-3213(81)90448-X`.
+- `https://arxiv.org/abs/2305.01960`.
+- `https://arxiv.org/abs/1709.07477`.
+- `https://arxiv.org/abs/1710.01941`.
+- `https://arxiv.org/abs/1601.02006`.
+- `https://arxiv.org/abs/1908.02140`.
+
+### Action
+
+- Added `studies/phase344_fms_gauge_invariant_spectrum_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P344.md`.
+- Added `FMS-GAUGE-INVARIANT-SPECTRUM` to `ExperimentReferences.md` with
+  detailed notes under `docs/Reference/ExperimentReferences/`.
+- Wired Phase344 into the generator, Phase101 package, Phase202
+  objective completion audit, claim-integrity verifier, and scanner exclusions.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from FMS alone. FMS is a strong external
+template for what the GU observed-field extraction theorem would need to look
+like, but it is not itself a GU-local source law. The repository still lacks
+GU-local gauge-invariant photon/W/Z/H composite operators, a source-derived
+observed vacuum and expansion rule, correlation-function or spectral-pole
+extraction, target-independent mass-scale and coupling lineage, Higgs
+scalar-source lineage, and GeV normalization.
+
+### Validation
+
+- Targeted Phase344 run passed with:
+  - `fmsGaugeInvariantSpectrumSourceAuditPassed=true`.
+  - `standardModelFmsMapsCompositeStatesToElementaryWzh=true`.
+  - `fmsProvidesObservedFieldExtractionTemplate=true`.
+  - `fmsRoutePromotesObservedFieldExtraction=false`.
+  - `fmsRoutePromotesWzMasses=false`.
+  - `fmsRoutePromotesHiggsMass=false`.
+  - `canFillPhase256ObservedFieldExtractionContract=false`.
+- P101 regenerated with Phase344 included and remained
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase344 included and remained
+  `objectiveAchieved=false`, with `checklistPassedCount=137` and
+  `checklistFailedCount=3`.
+- Claim-integrity verifier passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns after adding Phase344 found no intake-ready artifacts:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `canPromoteHiggsQuarticSelfCouplingSource=false` and
+    `intakeReadyFindingCount=0`.
+  - P279 `technicolorWalkingElectroweakScaleSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P281 `geometricRefractiveUnificationSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P295 `intakeReadyObservedFieldExtractionCandidateCount=0` and
+    `anyObservedFieldExtractionCandidateFillsContract=false`.
+  - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
+    `anySourceLineageCandidateFillsContract=false`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed and ended
+  with `objectiveAchieved=false`, `checklistPassedCount=137`,
+  `checklistFailedCount=3`, and claim integrity verified.
+- `dotnet test GeometricUnity.slnx` passed; the existing xUnit2013 analyzer
+  warning remains in
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
+
+### Next Blocker
+
+For this route specifically, GU would need a native FMS-like theorem defining
+physical electroweak composite operators and showing how their poles project to
+photon, W, Z, and Higgs observables without importing Standard Model target
+masses or gauge-fixed comparison values.
+
 ## 2026-05-21 - Phase339 MacDowell-Mansouri Cartan-Breaking Source Audit
 
 ### Context

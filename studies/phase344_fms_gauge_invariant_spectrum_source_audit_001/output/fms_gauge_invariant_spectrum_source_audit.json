@@ -1,0 +1,155 @@
+{
+  "phaseId": "phase344-fms-gauge-invariant-spectrum-source-audit",
+  "terminalStatus": "fms-gauge-invariant-spectrum-source-audit-observed-map-template-not-gu-source",
+  "generatedAt": "2026-05-22T15:16:00.4184874+00:00",
+  "fmsGaugeInvariantSpectrumSourceAuditPassed": true,
+  "fmsLeadPresent": true,
+  "fmsPrimarySourcesReviewed": true,
+  "fmsRouteExternalToGu": true,
+  "originalFmsGaugeInvariantOperatorLeadPresent": true,
+  "physicalSpectrumMadeOfGaugeInvariantStates": true,
+  "standardModelFmsMapsCompositeStatesToElementaryWzh": true,
+  "fmsUsesBehExpansionAroundHiggsField": true,
+  "fmsProvidesObservedFieldExtractionTemplate": true,
+  "fmsExtensionCanChangeBsmSpectrum": true,
+  "fmsQuantumGravityDiffeomorphismInvariantExtensionLeadPresent": true,
+  "routeOverlapsObservedFieldExtraction": true,
+  "routeOverlapsCoupledYangMillsHiggsMassExtraction": true,
+  "routeOverlapsHiggslessBoundaryAsContrast": true,
+  "fmsRouteRequiresSmHiggsDoubletAndVev": true,
+  "fmsRouteRequiresGuLocalGaugeInvariantCompositeOperators": true,
+  "fmsRouteRequiresGuObservedVacuumAndExpansion": true,
+  "fmsRouteRequiresCorrelationFunctionPoleExtraction": true,
+  "fmsRouteRequiresPhotonWzHiggsProjectionRows": true,
+  "fmsRouteRequiresTargetIndependentMassScaleAndCouplings": true,
+  "fmsRouteRequiresGuScalarSourceOperator": true,
+  "fmsRouteRequiresGeVUnitNormalization": true,
+  "fmsRouteProvidesGuObservedFieldExtractionTheorem": false,
+  "fmsRouteProvidesGuLocalWzTheorem": false,
+  "fmsRouteProvidesSeparateWzSourceRows": false,
+  "fmsRouteProvidesTargetIndependentVevOrMassScale": false,
+  "fmsRouteProvidesGuWeakMixingAngleSource": false,
+  "fmsRouteProvidesGuGaugeCouplingNormalization": false,
+  "fmsRouteProvidesGuHiggsScalarSourceOperator": false,
+  "fmsRouteProvidesObservedHiggsMassFromGu": false,
+  "fmsRouteProvidesGeVUnitNormalization": false,
+  "fmsRoutePromotesObservedFieldExtraction": false,
+  "fmsRoutePromotesWzMasses": false,
+  "fmsRoutePromotesHiggsMass": false,
+  "fmsRouteCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "sourceRows": [
+    {
+      "SourceId": "doi-10.1016-0550-3213-81-90448-x-fms-original",
+      "Url": "https://doi.org/10.1016/0550-3213(81)90448-X",
+      "FindingKind": "Original FMS gauge-invariant Higgs phenomenon",
+      "Summary": "Formulates the Higgs phenomenon without treating local gauge symmetry breaking as an observable order parameter.",
+      "PredictionImpact": "Foundational observed-spectrum lead; not a GU-local mass-source theorem."
+    },
+    {
+      "SourceId": "arxiv-2305.01960-fms-underestimated-legacy",
+      "Url": "https://arxiv.org/abs/2305.01960",
+      "FindingKind": "FMS mechanism review",
+      "Summary": "Reviews how gauge-invariant composite operators can map to gauge-fixed elementary Higgs, W, Z, and fermion descriptions in the Standard Model.",
+      "PredictionImpact": "Strong observed-field extraction template; still requires GU-local operators, vacuum, and source scale."
+    },
+    {
+      "SourceId": "arxiv-1709.07477-observable-spectrum-beh-effect",
+      "Url": "https://arxiv.org/abs/1709.07477",
+      "FindingKind": "Observable spectrum of theories with a Brout-Englert-Higgs effect",
+      "Summary": "Explains that physical spectra are gauge-invariant and that FMS can map Standard Model observable states to W, Z, and Higgs elementary fields.",
+      "PredictionImpact": "Directly relevant to observed W/Z/H identity, but not a GU source-lineage row."
+    },
+    {
+      "SourceId": "arxiv-1710.01941-su-n-gauge-higgs-spectrum",
+      "Url": "https://arxiv.org/abs/1710.01941",
+      "FindingKind": "SU(N) gauge-Higgs spectrum emergence",
+      "Summary": "Studies how particle spectra emerge in SU(N) gauge theories with a fundamental Higgs and where FMS mappings can change beyond the Standard Model.",
+      "PredictionImpact": "Useful boundary for BSM caution; not a target-independent GU prediction."
+    },
+    {
+      "SourceId": "arxiv-1601.02006-two-higgs-doublet-fms",
+      "Url": "https://arxiv.org/abs/1601.02006",
+      "FindingKind": "Gauge-invariant spectrum in the two-Higgs-doublet model",
+      "Summary": "Applies FMS reasoning to 2HDM spectra and checks how physical gauge-invariant states relate to elementary fields.",
+      "PredictionImpact": "Shows the method is model-dependent; GU still needs its own scalar/operator source."
+    },
+    {
+      "SourceId": "arxiv-1908.02140-fms-and-quantum-gravity",
+      "Url": "https://arxiv.org/abs/1908.02140",
+      "FindingKind": "FMS mechanism and quantum gravity",
+      "Summary": "Extends the gauge-invariant operator idea to Yang-Mills-Higgs theory coupled to gravity and diffeomorphism-invariant physical objects.",
+      "PredictionImpact": "Closest conceptual bridge to GU geometry, but still no GU W/Z/H mass-source rows."
+    }
+  ],
+  "checks": [
+    {
+      "CheckId": "fms-primary-sources-reviewed",
+      "Passed": true,
+      "Detail": "lead=True; reviewed=True; externalToGu=True; sourceRows=6"
+    },
+    {
+      "CheckId": "gauge-invariant-observed-spectrum-lead-captured",
+      "Passed": true,
+      "Detail": "original=True; physicalSpectrumGaugeInvariant=True; smMap=True; behExpansion=True; template=True; bsmCaution=True; quantumGravity=True"
+    },
+    {
+      "CheckId": "current-observed-field-blockers-preserved",
+      "Passed": true,
+      "Detail": "phase256Required=20; phase256Filled=0; phase256Promotable=False; phase257CanFill=False; direct=False; phase3=False; massMatrix=False; phase295=True; intakeReady=0"
+    },
+    {
+      "CheckId": "related-electroweak-routes-preserved",
+      "Passed": true,
+      "Detail": "p323=True; p323Completes=False; p342=True; p342Completes=False"
+    },
+    {
+      "CheckId": "fms-route-requires-missing-gu-source-data",
+      "Passed": true,
+      "Detail": "smHiggsVev=True; guOperators=True; guVacuum=True; poles=True; projection=True; massScale=True; scalarSource=True; gev=True"
+    },
+    {
+      "CheckId": "fms-route-does-not-fill-gu-contracts",
+      "Passed": true,
+      "Detail": "observedTheorem=False; guWzTheorem=False; sourceRows=False; massScale=False; weakAngle=False; gaugeNorm=False; scalarSource=False; observedHiggs=False; gev=False; promotesObserved=False; promotesWz=False; promotesHiggs=False"
+    },
+    {
+      "CheckId": "phase201-phase256-contract-state-unchanged",
+      "Passed": true,
+      "Detail": "phase201Promotable=False; existingEvidence=False; wzMissing=15; higgsMissing=14; canFillWz=False; canFillHiggs=False; canFillObserved=False"
+    }
+  ],
+  "contractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionFilledRequiredFieldCount": 0
+  },
+  "relatedObservedFieldEvidence": {
+    "observedFieldExtractionRequiredFieldCount": 20,
+    "observedFieldExtractionFilledRequiredFieldCount": 0,
+    "observedFieldExtractionContractPromotable": false,
+    "currentImplementationCanFillObservedFieldExtractionContract": false,
+    "directObservationPipelineBosonCapable": false,
+    "phase3ObservationPipelineBosonCapable": false,
+    "spectrumPhysicalBosonMassMatrixCapable": false,
+    "observedFieldExtractionContractCandidateScanPassed": true,
+    "anyObservedFieldExtractionCandidateFillsContract": false,
+    "intakeReadyObservedFieldExtractionCandidateCount": 0,
+    "coupledYangMillsHiggsMassExtractionAuditPassed": true,
+    "coupledYangMillsHiggsRouteCompletesBosonPredictions": false,
+    "higgslessBoundaryConditionSourceAuditPassed": true,
+    "higgslessRouteCompletesBosonPredictions": false
+  },
+  "decision": "Do not promote W/Z or Higgs physical masses from the FMS gauge-invariant spectrum mechanism. FMS is a strong external template for observed-field extraction because it maps gauge-invariant composite electroweak states to the familiar elementary W/Z/H fields in the Standard Model regime, but the current repository still lacks GU-local composite operators, observed vacuum/expansion data, correlation-function pole extraction, source-lineage mass scales, Higgs scalar-source lineage, and GeV normalization.",
+  "nextRequiredArtifact": [
+    "A GU-local FMS-like theorem defining gauge-invariant photon/W/Z/H composite operators from native fields.",
+    "A source-derived observed-sector vacuum and expansion rule, not a gauge-fixed Standard Model import.",
+    "Correlation-function or spectral-pole extraction rows for W, Z, and Higgs with stability sidecars.",
+    "Target-independent scale, coupling, weak-angle, scalar-source, and GeV-normalization lineage validated through Phase201/Phase256."
+  ]
+}
