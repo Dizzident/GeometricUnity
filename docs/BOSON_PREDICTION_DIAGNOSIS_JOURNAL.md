@@ -11606,3 +11606,99 @@ an absolute GeV scale, or unit normalization.
 - `dotnet test GeometricUnity.slnx` passed; the only warning was the existing
   `xUnit2013` collection-size warning in
   `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
+
+## 2026-05-22 - Phase350 Spin-Charge-Family Boson Source Audit
+
+### Context
+
+After Phase349, a search for un-audited high-dimensional or Clifford-like
+boson-source routes found the spin-charge-family theory. The route is relevant
+because it is Kaluza-Klein-like, uses d=(13+1) and two Clifford-algebra
+spin-connection structures, and directly discusses scalar fields related to
+fermion and weak-boson masses/mixing.
+
+### Sources Reviewed
+
+- `https://arxiv.org/abs/1207.6233`.
+- `https://arxiv.org/abs/1212.3184`.
+- `https://arxiv.org/abs/1307.2365`.
+- `https://arxiv.org/abs/1312.1542`.
+- `https://arxiv.org/abs/1804.03513`.
+
+### Action
+
+- Added `studies/phase350_spin_charge_family_boson_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P350.md`.
+- Wired Phase350 into the generator, P101 package, P202 objective completion
+  audit, and claim-integrity verifier.
+- Added Phase350 scanner exclusions so generated audit text is not counted as
+  independent source evidence.
+- Added `SPIN-CHARGE-FAMILY-BOSON-SOURCES` to `ExperimentReferences.md` with a
+  detailed reference note under `docs/Reference/ExperimentReferences/`.
+
+### Current Expected Outcome
+
+Phase350 is expected to pass only as a negative boundary audit:
+
+- `spinChargeFamilyBosonSourceAuditPassed=true`.
+- `spinChargeFamilyBosonLeadPresent=true`.
+- `spinChargeFamilyPrimarySourcesReviewed=true`.
+- `spinChargeFamilyRouteExternalToGu=true`.
+- `spinChargeFamilyRouteKaluzaKleinLike=true`.
+- `spinChargeFamilyRouteUsesThirteenPlusOneDimensions=true`.
+- `spinChargeFamilyRouteUsesTwoCliffordSpinConnections=true`.
+- `spinChargeFamilyRouteExplainsSmGaugeVectorFields=true`.
+- `spinChargeFamilyRouteExplainsScalarFieldsObservedAsHiggsAndYukawas=true`.
+- `spinChargeFamilyRoutePredictsSeveralScalarFields=true`.
+- `scalarFieldsDetermineFermionAndWeakBosonMassMixing=true`.
+- `scalarMassEigenstatesDifferFromWzCouplingFields=true`.
+- `scalarMeasurementsDoNotCoincideWithSingleSmHiggs=true`.
+- `routeProvidesFixedObservedWMass=false`.
+- `routeProvidesFixedObservedZMass=false`.
+- `routeProvidesFixedObservedHiggsMass=false`.
+- `routeRequiresExternalSpinChargeFamilyModel=true`.
+- `routeRequiresScalarPotentialAndMassMatrixParameters=true`.
+- `routeRequiresGuObservedFieldExtraction=true`.
+- `routeRequiresGuIndependentWzSourceRows=true`.
+- `routeRequiresGuSingleObservedHiggsOrScalarEnvelope=true`.
+- `routeRequiresGeVUnitNormalization=true`.
+- `routeProvidesGuLocalWzTheorem=false`.
+- `routeProvidesGuObservedFieldExtractionContract=false`.
+- `routeProvidesGuHiggsScalarSourceOperator=false`.
+- `routePromotesWzMasses=false`.
+- `routePromotesHiggsMass=false`.
+- `routeCompletesBosonPredictions=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from the spin-charge-family route. It is a
+serious external high-dimensional Clifford/Kaluza-Klein scalar-sector lead, but
+it imports a separate multi-scalar model and does not supply GU-local d=(13+1)
+embedding, two-Clifford connection map, observed photon/W/Z/H projection rows,
+independent W/Z source rows, a single observed-Higgs scalar-source envelope,
+scalar-potential parameters, absolute GeV scale, or unit normalization.
+
+### Validation
+
+- Targeted Phase350 run passed with
+  `spinChargeFamilyBosonSourceAuditPassed=true`,
+  `routePromotesWzMasses=false`, `routePromotesHiggsMass=false`, and
+  `canFillPhase256ObservedFieldExtractionContract=false`.
+- P101 package build passed and includes the Phase350 audit block.
+- P202 objective audit passed as an incomplete objective:
+  `objectiveAchieved=false`, `checklistPassedCount=143`, and
+  `checklistFailedCount=3`.
+- Claim-integrity verification passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns preserved the negative intake boundary:
+  P204 `intakeReadyCandidateCount=0`,
+  P205 `intakeReadyFindingCount=0`,
+  P207 `intakeReadyFindingCount=0`,
+  P295 `intakeReadyObservedFieldExtractionCandidateCount=0`, and
+  P296 `intakeReadySourceLineageFieldCandidateCount=0`.
+- Full generator gate passed with Phase350 included and the final
+  claim-integrity verifier still reporting zero promoted physical mass claims.
+- `dotnet test GeometricUnity.slnx` passed; the only warning was the existing
+  `xUnit2013` collection-size warning in
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.

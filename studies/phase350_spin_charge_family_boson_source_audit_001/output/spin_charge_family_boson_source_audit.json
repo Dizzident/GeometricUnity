@@ -1,0 +1,152 @@
+{
+  "phaseId": "phase350-spin-charge-family-boson-source-audit",
+  "terminalStatus": "spin-charge-family-source-audit-external-multiscalar-model-not-gu-source",
+  "generatedAt": "2026-05-22T18:59:24.3351256+00:00",
+  "spinChargeFamilyBosonSourceAuditPassed": true,
+  "spinChargeFamilyBosonLeadPresent": true,
+  "spinChargeFamilyPrimarySourcesReviewed": true,
+  "spinChargeFamilyRouteExternalToGu": true,
+  "spinChargeFamilyRouteKaluzaKleinLike": true,
+  "spinChargeFamilyRouteUsesThirteenPlusOneDimensions": true,
+  "spinChargeFamilyRouteUsesTwoCliffordSpinConnections": true,
+  "spinChargeFamilyRouteExplainsSmGaugeVectorFields": true,
+  "spinChargeFamilyRouteExplainsScalarFieldsObservedAsHiggsAndYukawas": true,
+  "spinChargeFamilyRoutePredictsSeveralScalarFields": true,
+  "scalarFieldsDetermineFermionAndWeakBosonMassMixing": true,
+  "scalarFieldsAreWeakDoublets": true,
+  "scalarFieldsAreFamilyTriplets": true,
+  "scalarMassEigenstatesDifferFromWzCouplingFields": true,
+  "scalarMeasurementsDoNotCoincideWithSingleSmHiggs": true,
+  "twiceFourFermionFamilyPredictionPresent": true,
+  "fourthFamilyPredictionPresent": true,
+  "fifthFamilyDarkMatterCandidatePresent": true,
+  "routeProvidesFixedObservedWMass": false,
+  "routeProvidesFixedObservedZMass": false,
+  "routeProvidesFixedObservedHiggsMass": false,
+  "routeProvidesSingleObservedHiggsIdentification": false,
+  "routeRequiresExternalSpinChargeFamilyModel": true,
+  "routeRequiresFamilySymmetryBreakingSequence": true,
+  "routeRequiresScalarPotentialAndMassMatrixParameters": true,
+  "routeRequiresScalarMixingDiagonalization": true,
+  "routeRequiresLoopCorrectionAndFermionFitInputs": true,
+  "routeRequiresGuLocalThirteenPlusOneEmbedding": true,
+  "routeRequiresGuTwoCliffordConnectionMap": true,
+  "routeRequiresGuScalarFieldSourceOperator": true,
+  "routeRequiresGuWeakBosonScalarCouplingMap": true,
+  "routeRequiresGuObservedFieldExtraction": true,
+  "routeRequiresGuIndependentWzSourceRows": true,
+  "routeRequiresGuSingleObservedHiggsOrScalarEnvelope": true,
+  "routeRequiresGeVUnitNormalization": true,
+  "routeProvidesGuLocalThirteenPlusOneEmbedding": false,
+  "routeProvidesGuTwoCliffordConnectionMap": false,
+  "routeProvidesGuLocalWzTheorem": false,
+  "routeProvidesSeparateObservedWzRows": false,
+  "routeProvidesTargetIndependentVevOrMassScale": false,
+  "routeProvidesGuWeakMixingAngleSource": false,
+  "routeProvidesGuGaugeCouplingNormalization": false,
+  "routeProvidesObservedPhotonWzHiggsProjectionRows": false,
+  "routeProvidesGuObservedFieldExtractionContract": false,
+  "routeProvidesGuHiggsScalarSourceOperator": false,
+  "routeProvidesObservedHiggsMassFromGu": false,
+  "routeProvidesGeVUnitNormalization": false,
+  "routePromotesObservedFieldExtraction": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "sourceRows": [
+    {
+      "SourceId": "arxiv-1207.6233-spin-charge-family-scalars-weak-bosons",
+      "Url": "https://arxiv.org/abs/1207.6233",
+      "FindingKind": "Spin-charge-family scalar fields and weak-boson couplings",
+      "Summary": "Discusses several scalar fields replacing the Standard Model Higgs/Yukawa description, including scalar mass eigenstates that differ from fields coupling to Z_m and W_m.",
+      "PredictionImpact": "Relevant scalar/weak-boson source lead, but external to GU and not a fixed observed W/Z/H mass prediction."
+    },
+    {
+      "SourceId": "arxiv-1212.3184-spin-charge-family-higgs-yukawa",
+      "Url": "https://arxiv.org/abs/1212.3184",
+      "FindingKind": "Spin-charge-family explanation for Higgs and Yukawa couplings",
+      "Summary": "States that several scalar fields determine fermion and weak-boson masses and mixing matrices, with weak-doublet and family-triplet transformation behavior.",
+      "PredictionImpact": "Useful for scalar-source diagnosis; still lacks GU-local observed-field extraction, scalar-potential parameters, and GeV normalization."
+    },
+    {
+      "SourceId": "arxiv-1307.2365-spin-charge-family-scalars-gauge-fields",
+      "Url": "https://arxiv.org/abs/1307.2365",
+      "FindingKind": "Spin-charge-family twice-four families, scalars, and gauge fields",
+      "Summary": "Presents gauge vector and scalar fields emerging from two kinds of fields and relates the scalar fields and mass matrices to Standard Model Yukawa couplings and Higgs.",
+      "PredictionImpact": "Broad model-source lead, but it predicts a multi-scalar external theory rather than GU-local W/Z/H source rows."
+    },
+    {
+      "SourceId": "arxiv-1312.1542-spin-charge-family-predictions",
+      "Url": "https://arxiv.org/abs/1312.1542",
+      "FindingKind": "Spin-charge-family predictions beyond the Standard Model",
+      "Summary": "Describes the theory as Kaluza-Klein-like with two spins and predicts several scalar fields with the weak and hypercharge of the Standard Model Higgs.",
+      "PredictionImpact": "Relevant to Higgs-sector alternatives; no direct target-independent observed W/Z/H mass rows are supplied."
+    },
+    {
+      "SourceId": "arxiv-1804.03513-spin-charge-family-expanding-universe",
+      "Url": "https://arxiv.org/abs/1804.03513",
+      "FindingKind": "Spin-charge-family d=(13\u002B1) Clifford spin-connection framework",
+      "Summary": "Summarizes the theory as a d=(13\u002B1) Kaluza-Klein-like route with two Clifford-algebra spin-connection fields that explains charges, vector gauge fields, families, and scalar fields observed as Higgs/Yukawa couplings.",
+      "PredictionImpact": "Geometric high-dimensional context, but still not a GU source-lineage artifact for physical W/Z/H mass extraction."
+    }
+  ],
+  "checks": [
+    {
+      "CheckId": "spin-charge-family-primary-sources-reviewed",
+      "Passed": true,
+      "Detail": "lead=True; reviewed=True; externalToGu=True; sourceRows=5"
+    },
+    {
+      "CheckId": "spin-charge-family-boson-and-scalar-claims-captured",
+      "Passed": true,
+      "Detail": "kkLike=True; d13p1=True; twoClifford=True; scalarFields=True; weakBosonMassMixing=True; fixedW=False; fixedZ=False; fixedH=False; singleHiggs=False"
+    },
+    {
+      "CheckId": "current-source-lineage-blockers-preserved",
+      "Passed": true,
+      "Detail": "phase201Promotable=False; existingEvidence=False; wzMissing=15; higgsMissing=14"
+    },
+    {
+      "CheckId": "observed-field-contract-and-adjacent-routes-remain-nonpromotional",
+      "Passed": true,
+      "Detail": "observedFilled=0; observedPromotable=False; smWz=False; smHiggs=False; higgsUpsilonCompletes=False; kkCompletes=False; octonionCompletes=False; preonCompletes=False"
+    },
+    {
+      "CheckId": "spin-charge-family-route-requires-missing-gu-source-data",
+      "Passed": true,
+      "Detail": "externalModel=True; breaking=True; scalarPotential=True; mixing=True; loops=True; guD13p1=True; guClifford=True; scalarSource=True; weakBosonMap=True; observed=True; wzRows=True; higgsEnvelope=True; gev=True"
+    },
+    {
+      "CheckId": "spin-charge-family-route-does-not-fill-gu-contracts",
+      "Passed": true,
+      "Detail": "guD13p1=False; guClifford=False; guWzTheorem=False; observedWzRows=False; scale=False; weakMixing=False; coupling=False; observedRows=False; observedContract=False; scalarSource=False; higgsMass=False; gev=False; promotesWz=False; promotesHiggs=False; completes=False"
+    }
+  ],
+  "contractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionFilledRequiredFieldCount": 0
+  },
+  "relatedBlockingEvidence": {
+    "smMassMatrixPromotesWzMasses": false,
+    "smMassMatrixPromotesHiggsMass": false,
+    "higgsUpsilonRouteCompletesBosonPredictions": false,
+    "kkRouteCompletesBosonPredictions": false,
+    "octonionRouteCompletesBosonPredictions": false,
+    "spinExchangePreonRouteCompletesBosonPredictions": false
+  },
+  "decision": "Do not promote W/Z or Higgs physical masses from the spin-charge-family route. It is a serious external high-dimensional Clifford/Kaluza-Klein scalar-sector lead, but it introduces a separate multi-scalar model and does not supply GU-local d=(13\u002B1) embedding, two-Clifford connection map, observed photon/W/Z/H projection rows, independent W/Z source rows, a single observed-Higgs scalar-source envelope, scalar-potential parameters, absolute GeV scale, or unit normalization.",
+  "nextRequiredArtifact": [
+    "A GU-native derivation of the spin-charge-family d=(13\u002B1) or two-Clifford connection structure, or a proof that it is the same local GU source data.",
+    "A target-independent scalar potential and mass-matrix diagonalization that identifies observed W, Z, and Higgs states rather than a general multi-scalar sector.",
+    "Observed photon/W/Z/H projection rows and physical pole extraction before comparison with measured boson masses.",
+    "Independent W and Z source rows with weak-angle, gauge-coupling, and absolute-scale lineage.",
+    "A GU Higgs scalar-source envelope and GeV unit normalization before any W/Z/H mass promotion."
+  ]
+}
