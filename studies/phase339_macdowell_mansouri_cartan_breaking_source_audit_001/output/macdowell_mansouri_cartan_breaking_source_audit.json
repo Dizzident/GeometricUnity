@@ -1,0 +1,139 @@
+{
+  "phaseId": "phase339-macdowell-mansouri-cartan-breaking-source-audit",
+  "terminalStatus": "macdowell-mansouri-cartan-breaking-source-audit-external-gauge-breaking-lead-not-gu-source",
+  "generatedAt": "2026-05-22T00:06:44.0942718+00:00",
+  "macdowellMansouriCartanSourceAuditPassed": true,
+  "macdowellMansouriCartanLeadPresent": true,
+  "macdowellMansouriPrimarySourcesReviewed": true,
+  "macdowellMansouriRouteExternalToGu": true,
+  "cartanGeometryMacdowellMansouriGravityLeadPresent": true,
+  "cartanGeometryCombinesConnectionAndCoframe": true,
+  "cartanGeometryUsesDeSitterOrAntiDeSitterCartanConnection": true,
+  "cartanGeometryRewritesPalatiniGravity": true,
+  "cartanGeometryBfReformulationPresent": true,
+  "deSitterGaugeElectroweakLeadPresent": true,
+  "deSitterGaugeClaimsCorrectBosonMassAssignments": true,
+  "deSitterGaugeNoConventionalHiggsClaimPresent": true,
+  "deSitterGaugeMassMatrixDependsOnGeometricBreakingParameters": true,
+  "deSitterGaugeTradesScaleForObservedMwOrMz": true,
+  "deSitterGaugeNeedsWeakAngleRhoAndOrientationParameters": true,
+  "deSitterGaugeObservedHiggsConflict": true,
+  "so33BfMacdowellMansouriLeadPresent": true,
+  "so33BfRecoversConventionalElectroweakSpectrum": true,
+  "so33BfUsesStandardHiggsMechanism": true,
+  "so33BfRequiresVevAndWeakCoupling": true,
+  "so33BfHierarchyAnsatzNotDerived": true,
+  "so33BfMatterCouplingAndOrderParameterFutureWork": true,
+  "routeDistinctFromMetricAffineTorsion": true,
+  "routeOverlapsGraviweakPlebanskiButAddsCartanBreaking": true,
+  "macdowellRouteRequiresGuLocalCartanDeSitterMap": true,
+  "macdowellRouteRequiresBreakingOrderParameterSource": true,
+  "macdowellRouteRequiresTargetIndependentBreakingScale": true,
+  "macdowellRouteRequiresWeakAngleRhoAndOrientationLineage": true,
+  "macdowellRouteRequiresElectroweakEmbeddingAndNeutralProjection": true,
+  "macdowellRouteRequiresObservedPhotonWzHProjection": true,
+  "macdowellRouteRequiresTargetIndependentVevAndGaugeCouplingSource": true,
+  "macdowellRouteRequiresHiggsScalarSourceCompatibleWithObservedHiggs": true,
+  "macdowellRouteRequiresRgTransportAndPrecisionMatching": true,
+  "macdowellRouteRequiresGeVUnitNormalization": true,
+  "macdowellRouteProvidesGuLocalWzTheorem": false,
+  "macdowellRouteProvidesSeparateWzSourceRows": false,
+  "macdowellRouteProvidesWzRawAmplitudeGates": false,
+  "macdowellRouteProvidesWzCommonBridgeGate": false,
+  "macdowellRouteProvidesTargetIndependentGuVevSource": false,
+  "macdowellRouteProvidesGuWeakMixingAngleSource": false,
+  "macdowellRouteProvidesGuGaugeCouplingNormalization": false,
+  "macdowellRouteProvidesObservedPhotonWzProjectionRows": false,
+  "macdowellRouteProvidesGuObservedFieldExtraction": false,
+  "macdowellRouteProvidesGuHiggsScalarSourceOperator": false,
+  "macdowellRouteProvidesGuHiggsQuarticOrExcitationSource": false,
+  "macdowellRouteProvidesObservedHiggsMassFromGu": false,
+  "macdowellRouteProvidesGeVUnitNormalization": false,
+  "macdowellRoutePromotesWzMasses": false,
+  "macdowellRoutePromotesHiggsMass": false,
+  "macdowellRouteCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "sourceRows": [
+    {
+      "SourceId": "arxiv-hep-th-9605217-de-sitter-gauge-electroweak",
+      "Url": "https://arxiv.org/abs/hep-th/9605217",
+      "FindingKind": "Complexified de Sitter gauge route to electroweak mass assignments",
+      "Summary": "Claims that geometry-imposed symmetry breaking can replace the conventional Higgs sector and produce the standard electroweak gauge-boson spectrum through a mass matrix depending on breaking scale, orientation, weak angle, and rho.",
+      "PredictionImpact": "Direct W/Z lead, but it can trade its scale for observed W or Z mass, requires weak-angle and rho/orientation inputs, and conflicts with the observed Higgs sector."
+    },
+    {
+      "SourceId": "arxiv-gr-qc-0611154-macdowell-mansouri-cartan-geometry",
+      "Url": "https://arxiv.org/abs/gr-qc/0611154",
+      "FindingKind": "Cartan-geometric interpretation of MacDowell-Mansouri gravity",
+      "Summary": "Explains the larger Cartan connection combining Lorentz connection and coframe, the de Sitter/anti-de Sitter model-spacetime interpretation, and the BF reformulation of MacDowell-Mansouri gravity.",
+      "PredictionImpact": "Important gauge-geometric infrastructure, but it is a gravity construction and does not supply electroweak W/Z/H source rows by itself."
+    },
+    {
+      "SourceId": "arxiv-2602-19151-so33-bf-electroweak",
+      "Url": "https://arxiv.org/abs/2602.19151",
+      "FindingKind": "SO(3,3) BF symmetry breaking with electroweak branch",
+      "Summary": "Uses MacDowell-Mansouri-type BF breaking to obtain chiral sectors and an electroweak branch, then introduces the conventional Higgs mechanism and W mass relation through the VEV and weak coupling.",
+      "PredictionImpact": "Serious BF/graviweak lead, but the electroweak masses still depend on standard Higgs-sector inputs and a hierarchy ansatz explicitly marked as not derived."
+    }
+  ],
+  "checks": [
+    {
+      "CheckId": "macdowell-mansouri-primary-sources-reviewed",
+      "Passed": true,
+      "Detail": "lead=True; reviewed=True; externalToGu=True; sourceRows=3"
+    },
+    {
+      "CheckId": "cartan-geometry-gravity-baseline-captured",
+      "Passed": true,
+      "Detail": "gravityLead=True; combinesConnectionAndCoframe=True; deSitterConnection=True; palatiniRewrite=True; bfReformulation=True"
+    },
+    {
+      "CheckId": "de-sitter-electroweak-lead-captured-as-non-predictive",
+      "Passed": true,
+      "Detail": "ewLead=True; massAssignments=True; noHiggsClaim=True; geometricMassMatrix=True; tradesScale=True; weakAngleRhoOrientation=True; observedHiggsConflict=True"
+    },
+    {
+      "CheckId": "so33-bf-electroweak-branch-captured-as-standard-higgs-dependent",
+      "Passed": true,
+      "Detail": "so33Lead=True; conventionalSpectrum=True; standardHiggs=True; vevWeakCoupling=True; hierarchyNotDerived=True; futureMatterOrderParameter=True"
+    },
+    {
+      "CheckId": "related-route-boundaries-preserved",
+      "Passed": true,
+      "Detail": "distinctFromTorsion=True; overlapsGraviweak=True; graviweakAudit=True; graviweakPromotesWz=False; graviweakPromotesHiggs=False; torsionAudit=True; torsionCompletes=False"
+    },
+    {
+      "CheckId": "macdowell-route-requires-missing-gu-source-data",
+      "Passed": true,
+      "Detail": "guCartanMap=True; orderParameter=True; scale=True; weakAngleRho=True; neutralProjection=True; observedProjection=True; vevGauge=True; higgsCompatible=True; precision=True; gev=True"
+    },
+    {
+      "CheckId": "macdowell-route-does-not-fill-gu-contracts",
+      "Passed": true,
+      "Detail": "guWzTheorem=False; separateRows=False; targetVev=False; weakAngle=False; gaugeNorm=False; projection=False; observedExtraction=False; higgsOperator=False; higgsQuartic=False; gev=False; promotesWz=False; promotesHiggs=False"
+    },
+    {
+      "CheckId": "phase201-phase256-contract-state-unchanged",
+      "Passed": true,
+      "Detail": "phase201Promotable=False; existingEvidence=False; wzMissing=15; higgsMissing=14; phase256Required=20; phase256Filled=0; observedPromotable=False; p224=True; wClosure=False; zClosure=False; higgsClosure=False; canFillWz=False; canFillHiggs=False; canFillObserved=False"
+    }
+  ],
+  "contractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionFilledRequiredFieldCount": 0
+  },
+  "decision": "Do not promote W/Z or Higgs physical masses from the MacDowell-Mansouri / Cartan-breaking route in this repository. The route is a serious external geometric gauge-breaking lead, especially through de Sitter electroweak mass matrices and SO(3,3) BF symmetry breaking, but the current sources either trade the electroweak scale for observed W/Z masses, require weak-angle/rho/orientation inputs, conflict with the observed Higgs sector, or recover the conventional Higgs mechanism with VEV and coupling inputs. It still lacks a GU-local Cartan/de Sitter bridge theorem, target-independent breaking scale, observed photon/W/Z/H projection, Higgs scalar-source lineage, precision matching, and GeV normalization.",
+  "nextRequiredArtifact": [
+    "A GU-local theorem mapping draft field content, observer projection, Shiab/operator data, and any Cartan/de Sitter connection into observed electroweak W/Z/H source rows.",
+    "A target-independent source for the Cartan or MacDowell-Mansouri breaking order parameter, scale, weak angle, rho/orientation data, VEV, and gauge-coupling normalization.",
+    "A neutral-sector diagonalization and observed photon/W/Z/H projection that does not import measured W, Z, or Higgs masses.",
+    "A Higgs scalar-source operator or compatible composite profile that explains the observed Higgs rather than removing it.",
+    "RG transport, precision-electroweak checks, physical-unit normalization, and validation through Phase201/Phase256 without weakening existing gates."
+  ]
+}

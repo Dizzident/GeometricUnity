@@ -7573,6 +7573,103 @@ Higgs remains separately blocked by missing scalar-source lineage.
   `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
   `promotedPhysicalMassClaimCount=0`.
 
+## 2026-05-21 - Phase339 MacDowell-Mansouri Cartan-Breaking Source Audit
+
+### Context
+
+After Phase338 preserved the metric-affine torsion route as a serious external
+EWSB lead but not a GU-local source law, I moved to the next distinct
+geometric route: MacDowell-Mansouri / Stelle-West / Cartan-breaking geometry.
+The useful sources were the de Sitter electroweak gauge proposal, Derek Wise's
+Cartan-geometry account of MacDowell-Mansouri gravity, and a newer SO(3,3) BF
+electroweak branch.
+
+### Sources Reviewed
+
+- `https://arxiv.org/abs/hep-th/9605217`.
+- `https://arxiv.org/abs/gr-qc/0611154`.
+- `https://arxiv.org/abs/2602.19151`.
+
+### Action
+
+- Added
+  `studies/phase339_macdowell_mansouri_cartan_breaking_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P339.md`.
+- Added `MACDOWELL-MANSOURI-CARTAN-BREAKING` to `ExperimentReferences.md`
+  with a detailed reference note under
+  `docs/Reference/ExperimentReferences/`.
+- Wired Phase339 into the generator, P101 package, P202 objective completion
+  audit, and claim-integrity verifier.
+- Added Phase339 scanner exclusions so generated audit text is not counted as
+  independent source evidence.
+
+### Current Expected Outcome
+
+Phase339 passes only as a negative external-gauge-breaking-lead audit:
+
+- `macdowellMansouriCartanSourceAuditPassed=true`.
+- `deSitterGaugeClaimsCorrectBosonMassAssignments=true`.
+- `deSitterGaugeTradesScaleForObservedMwOrMz=true`.
+- `deSitterGaugeObservedHiggsConflict=true`.
+- `so33BfUsesStandardHiggsMechanism=true`.
+- `so33BfRequiresVevAndWeakCoupling=true`.
+- `so33BfHierarchyAnsatzNotDerived=true`.
+- `macdowellRouteRequiresGuLocalCartanDeSitterMap=true`.
+- `macdowellRouteRequiresTargetIndependentBreakingScale=true`.
+- `macdowellRouteProvidesGuLocalWzTheorem=false`.
+- `macdowellRouteProvidesGuObservedFieldExtraction=false`.
+- `macdowellRoutePromotesWzMasses=false`.
+- `macdowellRoutePromotesHiggsMass=false`.
+- `macdowellRouteCompletesBosonPredictions=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from the MacDowell-Mansouri / Cartan route.
+The de Sitter electroweak paper is a direct geometric W/Z lead, but it can
+trade its scale for an observed W or Z mass, requires weak-angle/rho/orientation
+inputs, and removes the conventional Higgs sector. The SO(3,3) BF route is also
+geometrically serious, but recovers electroweak masses through the conventional
+Higgs VEV and weak coupling, and labels its hierarchy ansatz as not derived.
+The route still lacks GU-local Cartan/de Sitter source lineage, observed
+photon/W/Z/H projection, target-independent VEV and gauge-coupling lineage,
+Higgs scalar-source lineage, precision matching, and GeV normalization.
+
+### Validation
+
+- Targeted Phase339 run passed with:
+  - `macdowellMansouriCartanSourceAuditPassed=True`.
+  - `deSitterGaugeClaimsCorrectBosonMassAssignments=True`.
+  - `deSitterGaugeTradesScaleForObservedMwOrMz=True`.
+  - `so33BfUsesStandardHiggsMechanism=True`.
+  - `macdowellRoutePromotesWzMasses=False`.
+  - `macdowellRoutePromotesHiggsMass=False`.
+  - `canFillPhase201WzContract=False`.
+- Scanner reruns after adding Phase339 found no intake-ready artifacts:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `canPromoteHiggsQuarticSelfCouplingSource=false` and
+    `intakeReadyFindingCount=0`.
+  - P279 `technicolorWalkingElectroweakScaleSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P281 `geometricRefractiveUnificationSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P295 `intakeReadyObservedFieldExtractionCandidateCount=0` and
+    `anyObservedFieldExtractionCandidateFillsContract=false`.
+  - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
+    `anySourceLineageCandidateFillsContract=false`.
+- P101 regenerated with Phase339 included and remained
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase339 included and remained
+  `objectiveAchieved=false`, with `checklistPassedCount=132` and
+  `checklistFailedCount=3`.
+- Full `./scripts/generate_validated_boson_predictions.sh` completed and ended
+  with `boson-claim-integrity-verified`, `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- `dotnet test GeometricUnity.slnx` passed. The existing xUnit analyzer warning
+  remains at
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs(315,9)`.
+
 ## 2026-05-21 - Phase337 Octonion/Clifford Internal-Space Source Audit
 
 ### Context
@@ -7689,6 +7786,36 @@ replay imports the observed W mass and is not a prediction.
   remains at
   `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs(315,9)`.
 - `git diff --check` passed after the final journal update.
+
+## 2026-05-21 - Reference Tracker Updated for MacDowell-Mansouri Route
+
+### Context
+
+The next non-duplicative geometric route under review is the
+MacDowell-Mansouri / Stelle-West / Cartan-breaking family. Because the user
+asked for references to be tracked in a scan-friendly index with deeper linked
+notes, I updated the reference tracker before turning the route into an audit.
+
+### Sources Reviewed
+
+- `https://arxiv.org/abs/hep-th/9605217`.
+- `https://arxiv.org/abs/gr-qc/0611154`.
+- `https://arxiv.org/abs/2602.19151`.
+
+### Action
+
+- Added `MACDOWELL-MANSOURI-CARTAN-BREAKING` to
+  `ExperimentReferences.md`.
+- Added detailed notes under
+  `docs/Reference/ExperimentReferences/MACDOWELL-MANSOURI-CARTAN-BREAKING.md`.
+
+### Outcome
+
+The route is now recorded in the reference tracker with source provenance,
+summary, prediction relevance, limitations, and follow-up criteria. Current
+status remains non-promotional: the sources are serious geometric
+gauge-breaking leads, but they still do not provide GU-local
+target-independent W/Z/H source-lineage rows.
 
 ## 2026-05-21 - Metric-Affine Torsion Reference Tracking
 

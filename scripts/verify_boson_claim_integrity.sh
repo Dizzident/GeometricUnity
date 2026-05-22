@@ -108,6 +108,7 @@ const paths = {
   phase336: "studies/phase336_heft_scalar_geometry_source_law_audit_001/output/heft_scalar_geometry_source_law_audit_summary.json",
   phase337: "studies/phase337_octonion_clifford_internal_space_source_audit_001/output/octonion_clifford_internal_space_source_audit_summary.json",
   phase338: "studies/phase338_metric_affine_torsion_source_audit_001/output/metric_affine_torsion_source_audit_summary.json",
+  phase339: "studies/phase339_macdowell_mansouri_cartan_breaking_source_audit_001/output/macdowell_mansouri_cartan_breaking_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -287,6 +288,7 @@ const phase335 = requireFile(paths.phase335);
 const phase336 = requireFile(paths.phase336);
 const phase337 = requireFile(paths.phase337);
 const phase338 = requireFile(paths.phase338);
+const phase339 = requireFile(paths.phase339);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -1974,6 +1976,61 @@ if (sourceLineageMissing) {
   assert(phase338.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase338 W/Z missing-field count must match Phase213.");
   assert(phase338.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase338 Higgs missing-field count must match Phase213.");
   assert(phase338.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase338 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase339.macdowellMansouriCartanSourceAuditPassed === true, "Phase339 MacDowell-Mansouri Cartan-breaking source audit must pass while preserving non-promotional status.");
+  assert(phase339.macdowellMansouriCartanLeadPresent === true, "Phase339 must record the MacDowell-Mansouri / Cartan-breaking lead.");
+  assert(phase339.macdowellMansouriPrimarySourcesReviewed === true, "Phase339 must record primary source review.");
+  assert(phase339.macdowellMansouriRouteExternalToGu === true, "Phase339 must classify the route as external to GU.");
+  assert(phase339.cartanGeometryMacdowellMansouriGravityLeadPresent === true, "Phase339 must record the Cartan-geometry gravity baseline.");
+  assert(phase339.cartanGeometryCombinesConnectionAndCoframe === true, "Phase339 must record the connection/coframe Cartan combination.");
+  assert(phase339.cartanGeometryUsesDeSitterOrAntiDeSitterCartanConnection === true, "Phase339 must record de Sitter or anti-de Sitter Cartan connection usage.");
+  assert(phase339.cartanGeometryRewritesPalatiniGravity === true, "Phase339 must record the Palatini gravity rewrite.");
+  assert(phase339.cartanGeometryBfReformulationPresent === true, "Phase339 must record BF reformulation context.");
+  assert(phase339.deSitterGaugeElectroweakLeadPresent === true, "Phase339 must record the de Sitter electroweak lead.");
+  assert(phase339.deSitterGaugeClaimsCorrectBosonMassAssignments === true, "Phase339 must record the claimed electroweak boson mass assignments.");
+  assert(phase339.deSitterGaugeNoConventionalHiggsClaimPresent === true, "Phase339 must record the no-conventional-Higgs claim.");
+  assert(phase339.deSitterGaugeMassMatrixDependsOnGeometricBreakingParameters === true, "Phase339 must record geometric breaking-parameter dependence.");
+  assert(phase339.deSitterGaugeTradesScaleForObservedMwOrMz === true, "Phase339 must record the W/Z target scale trade.");
+  assert(phase339.deSitterGaugeNeedsWeakAngleRhoAndOrientationParameters === true, "Phase339 must record weak-angle, rho, and orientation parameter dependence.");
+  assert(phase339.deSitterGaugeObservedHiggsConflict === true, "Phase339 must record the observed-Higgs conflict.");
+  assert(phase339.so33BfMacdowellMansouriLeadPresent === true, "Phase339 must record the SO(3,3) BF lead.");
+  assert(phase339.so33BfRecoversConventionalElectroweakSpectrum === true, "Phase339 must record conventional electroweak spectrum recovery.");
+  assert(phase339.so33BfUsesStandardHiggsMechanism === true, "Phase339 must record standard Higgs mechanism usage.");
+  assert(phase339.so33BfRequiresVevAndWeakCoupling === true, "Phase339 must record VEV and weak-coupling dependence.");
+  assert(phase339.so33BfHierarchyAnsatzNotDerived === true, "Phase339 must record that the hierarchy ansatz is not derived.");
+  assert(phase339.so33BfMatterCouplingAndOrderParameterFutureWork === true, "Phase339 must record matter-coupling/order-parameter future work.");
+  assert(phase339.routeDistinctFromMetricAffineTorsion === true, "Phase339 must record distinction from Phase338.");
+  assert(phase339.routeOverlapsGraviweakPlebanskiButAddsCartanBreaking === true, "Phase339 must record overlap with graviweak/Plebanski plus Cartan-breaking distinction.");
+  assert(phase339.macdowellRouteRequiresGuLocalCartanDeSitterMap === true, "Phase339 must require a GU-local Cartan/de Sitter map.");
+  assert(phase339.macdowellRouteRequiresBreakingOrderParameterSource === true, "Phase339 must require a breaking-order-parameter source.");
+  assert(phase339.macdowellRouteRequiresTargetIndependentBreakingScale === true, "Phase339 must require a target-independent breaking scale.");
+  assert(phase339.macdowellRouteRequiresWeakAngleRhoAndOrientationLineage === true, "Phase339 must require weak-angle/rho/orientation lineage.");
+  assert(phase339.macdowellRouteRequiresElectroweakEmbeddingAndNeutralProjection === true, "Phase339 must require electroweak embedding and neutral projection.");
+  assert(phase339.macdowellRouteRequiresObservedPhotonWzHProjection === true, "Phase339 must require observed photon/W/Z/H projection.");
+  assert(phase339.macdowellRouteRequiresTargetIndependentVevAndGaugeCouplingSource === true, "Phase339 must require target-independent VEV and gauge-coupling source.");
+  assert(phase339.macdowellRouteRequiresHiggsScalarSourceCompatibleWithObservedHiggs === true, "Phase339 must require a Higgs scalar source compatible with the observed Higgs.");
+  assert(phase339.macdowellRouteRequiresRgTransportAndPrecisionMatching === true, "Phase339 must require RG transport and precision matching.");
+  assert(phase339.macdowellRouteRequiresGeVUnitNormalization === true, "Phase339 must require GeV normalization.");
+  assert(phase339.macdowellRouteProvidesGuLocalWzTheorem === false, "Phase339 cannot claim a GU-local W/Z theorem.");
+  assert(phase339.macdowellRouteProvidesSeparateWzSourceRows === false, "Phase339 cannot claim separate W/Z source rows.");
+  assert(phase339.macdowellRouteProvidesTargetIndependentGuVevSource === false, "Phase339 cannot claim a target-independent GU VEV source.");
+  assert(phase339.macdowellRouteProvidesGuWeakMixingAngleSource === false, "Phase339 cannot claim a GU weak-mixing angle source.");
+  assert(phase339.macdowellRouteProvidesGuGaugeCouplingNormalization === false, "Phase339 cannot claim GU gauge-coupling normalization.");
+  assert(phase339.macdowellRouteProvidesObservedPhotonWzProjectionRows === false, "Phase339 cannot claim observed photon/W/Z projection rows.");
+  assert(phase339.macdowellRouteProvidesGuObservedFieldExtraction === false, "Phase339 cannot claim GU observed-field extraction.");
+  assert(phase339.macdowellRouteProvidesGuHiggsScalarSourceOperator === false, "Phase339 cannot claim a GU Higgs scalar-source operator.");
+  assert(phase339.macdowellRouteProvidesGuHiggsQuarticOrExcitationSource === false, "Phase339 cannot claim GU Higgs quartic/excitation source lineage.");
+  assert(phase339.macdowellRouteProvidesObservedHiggsMassFromGu === false, "Phase339 cannot claim observed Higgs mass from GU.");
+  assert(phase339.macdowellRouteProvidesGeVUnitNormalization === false, "Phase339 cannot claim GeV normalization.");
+  assert(phase339.macdowellRoutePromotesWzMasses === false, "Phase339 cannot promote W/Z masses.");
+  assert(phase339.macdowellRoutePromotesHiggsMass === false, "Phase339 cannot promote Higgs mass.");
+  assert(phase339.macdowellRouteCompletesBosonPredictions === false, "Phase339 cannot complete boson predictions.");
+  assert(phase339.sourceRowCount === 3, "Phase339 must preserve three source rows.");
+  assert(phase339.contractImpact?.canFillPhase201WzContract === false, "Phase339 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase339.contractImpact?.canFillPhase201HiggsContract === false, "Phase339 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase339.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase339 contract impact must keep Phase256 unfilled.");
+  assert(phase339.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase339 W/Z missing-field count must match Phase213.");
+  assert(phase339.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase339 Higgs missing-field count must match Phase213.");
+  assert(phase339.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase339 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");
