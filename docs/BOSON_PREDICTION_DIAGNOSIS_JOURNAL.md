@@ -7658,6 +7658,95 @@ BF/BFCG field map plus a derived topological mass parameter, weak-angle/gauge
 lineage, observed photon/W/Z/H projection, Higgs-sector compatibility, and
 GeV-unit normalization.
 
+## 2026-05-22 - Phase341 Scherk-Schwarz Twisted Compactification Source Audit
+
+### Context
+
+After Phase340 ruled out BF/BFCG topological mass generation as a promotable
+GU-local W/Z/H source, I looked for the next distinct direct geometric route.
+Gauge-Higgs/Hosotani material was already covered by Phase265, so this audit
+isolated the adjacent Scherk-Schwarz, Wilson-line, and twisted compactification
+route: masses generated from boundary twists, holonomies, compactification
+radii, and flux/Wilson-line condensates.
+
+### Sources Reviewed
+
+- `https://doi.org/10.1016/0550-3213(79)90592-3`.
+- `https://arxiv.org/abs/hep-ph/0611309`.
+- `https://arxiv.org/abs/hep-ph/0012263`.
+- `https://arxiv.org/abs/hep-ph/0304220`.
+- `https://arxiv.org/abs/hep-ph/0605024`.
+- `https://arxiv.org/abs/2205.09320`.
+
+### Action
+
+- Added
+  `studies/phase341_scherk_schwarz_twisted_compactification_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P341.md`.
+- Added `SCHERK-SCHWARZ-TWISTED-COMPACTIFICATION` to
+  `ExperimentReferences.md` with detailed notes under
+  `docs/Reference/ExperimentReferences/`.
+- Wired Phase341 into the generator, Phase101 package, Phase202 objective
+  completion audit, and claim-integrity verifier.
+- Added Phase341 generated-diagnostic exclusions to source-lineage,
+  Higgs-quartic, local-search, and observed-field scanner phases.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from the Scherk-Schwarz/twisted
+compactification route. It is a serious external geometric mass lead because
+twists and Wilson-line phases can shift vector-boson spectra, and some
+electroweak extra-dimensional models express W masses as a phase-over-radius
+quantity. The route still lacks a GU-local compactification or twist map, a
+target-independent twist angle or holonomy source, a target-independent
+compactification scale, observed photon/W/Z/H projection rows, weak-angle and
+gauge-coupling lineage, Higgs-sector compatibility, RG thresholds, and GeV-unit
+normalization.
+
+### Validation
+
+- Targeted Phase341 run passed with:
+  - `scherkSchwarzTwistedCompactificationSourceAuditPassed=true`.
+  - `scherkSchwarzMassesDependOnCompactificationRadiusAndTwist=true`.
+  - `electroweakWMassDependsOnWilsonLinePhaseOverRadius=true`.
+  - `scherkRoutePromotesWzMasses=false`.
+  - `scherkRoutePromotesHiggsMass=false`.
+  - `canFillPhase201WzContract=false`.
+- Scanner reruns after adding Phase341 found no intake-ready artifacts:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `canPromoteHiggsQuarticSelfCouplingSource=false` and
+    `intakeReadyFindingCount=0`.
+  - P279 `technicolorWalkingElectroweakScaleSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P281 `geometricRefractiveUnificationSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P295 `intakeReadyObservedFieldExtractionCandidateCount=0` and
+    `anyObservedFieldExtractionCandidateFillsContract=false`.
+  - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
+    `anySourceLineageCandidateFillsContract=false`.
+- P101 regenerated with Phase341 included and remained
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase341 included and remained
+  `objectiveAchieved=false`, with `checklistPassedCount=134` and
+  `checklistFailedCount=3`.
+- Full `./scripts/generate_validated_boson_predictions.sh` completed and ended
+  with claim integrity verified.
+- `dotnet test GeometricUnity.slnx` passed; the existing xUnit2013 warning in
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`
+  remains.
+- Claim-integrity verifier passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+
+### Next Blocker
+
+The next missing artifact remains a GU-local, target-independent bridge-source
+law. For this route specifically, the required source would need to derive a
+compactification/twist sector from native GU fields, produce the twist or
+holonomy and radius without using W/Z/H targets, map the observed electroweak
+fields, and supply Higgs, coupling, RG, and unit-normalization lineage.
+
 ## 2026-05-21 - Phase339 MacDowell-Mansouri Cartan-Breaking Source Audit
 
 ### Context

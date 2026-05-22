@@ -1,0 +1,160 @@
+{
+  "phaseId": "phase341-scherk-schwarz-twisted-compactification-source-audit",
+  "terminalStatus": "scherk-schwarz-twisted-compactification-source-audit-external-twist-mass-lead-not-gu-source",
+  "generatedAt": "2026-05-22T12:51:07.0950048+00:00",
+  "scherkSchwarzTwistedCompactificationSourceAuditPassed": true,
+  "scherkSchwarzLeadPresent": true,
+  "scherkSchwarzPrimarySourcesReviewed": true,
+  "scherkSchwarzRouteExternalToGu": true,
+  "originalExtraDimensionMassGenerationLeadPresent": true,
+  "scherkSchwarzUsesNontrivialBoundaryTwist": true,
+  "scherkSchwarzMassesDependOnCompactificationRadiusAndTwist": true,
+  "torusGaugeTheoryStableConfigurationLeadPresent": true,
+  "torusRouteClassifiesTwistAndBoundaryStableConfigurations": true,
+  "electroweakExtraDimensionLeadPresent": true,
+  "electroweakWilsonLineScherkSchwarzEquivalent": true,
+  "electroweakWMassDependsOnWilsonLinePhaseOverRadius": true,
+  "electroweakRequiresSmallWilsonLinePhaseToMatchWMass": true,
+  "electroweakModelHasTopHiggsMassDifficulties": true,
+  "mssmScherkSchwarzEwsbLeadPresent": true,
+  "mssmRouteUsesSoftTermsAndRadiativeCorrections": true,
+  "fluxWilsonLineScalarCondensateLeadPresent": true,
+  "fluxRouteUsesWilsonLineScalarCondensate": true,
+  "routeOverlapsGaugeHiggsBoundary": true,
+  "routeOverlapsKaluzaKleinInternalSymmetry": true,
+  "routeDistinctFromBfTopologicalMass": true,
+  "scherkRouteRequiresGuLocalTwistedCompactificationMap": true,
+  "scherkRouteRequiresTwistAngleOrHolonomySource": true,
+  "scherkRouteRequiresCompactificationRadiusSource": true,
+  "scherkRouteRequiresElectroweakEmbeddingAndNeutralProjection": true,
+  "scherkRouteRequiresObservedPhotonWzHProjection": true,
+  "scherkRouteRequiresWeakAngleAndGaugeCouplingLineage": true,
+  "scherkRouteRequiresHiggsSectorCompatibilityAndScalarSource": true,
+  "scherkRouteRequiresRgTransportAndThresholdLineage": true,
+  "scherkRouteRequiresGeVUnitNormalization": true,
+  "scherkRouteRequiresChiralityAndFermionSectorLineage": true,
+  "scherkRouteProvidesGuLocalWzTheorem": false,
+  "scherkRouteProvidesSeparateWzSourceRows": false,
+  "scherkRouteProvidesTargetIndependentTwistAngleSource": false,
+  "scherkRouteProvidesTargetIndependentCompactificationRadiusSource": false,
+  "scherkRouteProvidesGuWeakMixingAngleSource": false,
+  "scherkRouteProvidesGuGaugeCouplingNormalization": false,
+  "scherkRouteProvidesObservedPhotonWzProjectionRows": false,
+  "scherkRouteProvidesGuObservedFieldExtraction": false,
+  "scherkRouteProvidesGuHiggsScalarSourceOperator": false,
+  "scherkRouteProvidesGuHiggsQuarticOrExcitationSource": false,
+  "scherkRouteProvidesObservedHiggsMassFromGu": false,
+  "scherkRouteProvidesGeVUnitNormalization": false,
+  "scherkRoutePromotesWzMasses": false,
+  "scherkRoutePromotesHiggsMass": false,
+  "scherkRouteCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "sourceRows": [
+    {
+      "SourceId": "doi-10.1016-0550-3213-79-90592-3-how-to-get-masses-from-extra-dimensions",
+      "Url": "https://doi.org/10.1016/0550-3213(79)90592-3",
+      "FindingKind": "Original Scherk-Schwarz mass-from-extra-dimensions mechanism",
+      "Summary": "Mass splittings arise from nontrivial compactification/twist data rather than from inserting local mass terms by hand.",
+      "PredictionImpact": "Direct geometric/topological mass-generation lead; still needs GU-local compactification map, twist source, and physical projection."
+    },
+    {
+      "SourceId": "arxiv-hep-ph-0611309-symmetry-breaking-from-scherk-schwarz-compactification",
+      "Url": "https://arxiv.org/abs/hep-ph/0611309",
+      "FindingKind": "Torus compactification stable gauge configurations",
+      "Summary": "Classifies stable configurations of extra-dimensional gauge theories compactified on a torus with Scherk-Schwarz boundary data.",
+      "PredictionImpact": "Boundary/twist geometry lead; does not derive W/Z/H source rows from GU."
+    },
+    {
+      "SourceId": "arxiv-hep-ph-0012263-electroweak-symmetry-breaking-and-extra-dimensions",
+      "Url": "https://arxiv.org/abs/hep-ph/0012263",
+      "FindingKind": "Extra-dimensional electroweak symmetry breaking lead",
+      "Summary": "Uses extra-dimensional electroweak symmetry breaking with a predicted Higgs mass around 200 GeV in the model considered.",
+      "PredictionImpact": "Phenomenological electroweak lead, but observed-Higgs compatibility and target-independent GU scale lineage are missing."
+    },
+    {
+      "SourceId": "arxiv-hep-ph-0304220-electroweak-symmetry-breaking-and-fermion-masses-from-extra-dimensions",
+      "Url": "https://arxiv.org/abs/hep-ph/0304220",
+      "FindingKind": "Wilson-line/Scherk-Schwarz-equivalent gauge-Higgs electroweak model",
+      "Summary": "Identifies Higgs fields with internal gauge-field components and relates electroweak breaking to Wilson-line or Scherk-Schwarz twist data.",
+      "PredictionImpact": "A W mass can depend on a Wilson-line phase over compactification radius, but the phase/radius and top/Higgs sectors remain model data."
+    },
+    {
+      "SourceId": "arxiv-hep-ph-0605024-mssm-from-scherk-schwarz-supersymmetry-breaking",
+      "Url": "https://arxiv.org/abs/hep-ph/0605024",
+      "FindingKind": "MSSM electroweak breaking from Scherk-Schwarz SUSY breaking",
+      "Summary": "Scherk-Schwarz supersymmetry breaking can induce Higgs-sector soft terms and radiative electroweak breaking.",
+      "PredictionImpact": "External SUSY model-building route; still needs GU-local soft-term, RG, and observed-Higgs lineage."
+    },
+    {
+      "SourceId": "arxiv-2205-09320-flux-compactification-wilson-line-scalar-condensate",
+      "Url": "https://arxiv.org/abs/2205.09320",
+      "FindingKind": "Flux compactification with Wilson-line scalar condensate",
+      "Summary": "Studies gauge symmetry breaking in flux compactification with Wilson-line scalar condensates.",
+      "PredictionImpact": "Modern compactification/twist context, not a GU-local W/Z/H prediction source."
+    }
+  ],
+  "checks": [
+    {
+      "CheckId": "scherk-schwarz-primary-sources-reviewed",
+      "Passed": true,
+      "Detail": "lead=True; reviewed=True; externalToGu=True; sourceRows=6"
+    },
+    {
+      "CheckId": "twisted-compactification-mass-mechanism-captured",
+      "Passed": true,
+      "Detail": "originalLead=True; twist=True; radiusTwist=True; torusLead=True; stableConfigs=True"
+    },
+    {
+      "CheckId": "electroweak-extra-dimensional-route-captured-as-parameterized",
+      "Passed": true,
+      "Detail": "ewLead=True; wilsonLineEquivalent=True; wMassAlphaOverR=True; smallAlphaRequired=True; topHiggsDifficulties=True"
+    },
+    {
+      "CheckId": "related-boundaries-preserved",
+      "Passed": true,
+      "Detail": "overlapsGaugeHiggs=True; phase265Passed=True; guWilsonLineSource=False; phase265Completes=False; overlapsKk=True; phase333Passed=True; phase333Completes=False; distinctFromBf=True; phase340Passed=True; phase340Completes=False"
+    },
+    {
+      "CheckId": "scherk-route-requires-missing-gu-source-data",
+      "Passed": true,
+      "Detail": "guMap=True; twistSource=True; radiusSource=True; ewEmbedding=True; observedProjection=True; weakAngleGauge=True; higgs=True; rg=True; gev=True; chirality=True"
+    },
+    {
+      "CheckId": "scherk-route-does-not-fill-gu-contracts",
+      "Passed": true,
+      "Detail": "guWzTheorem=False; separateRows=False; twistSource=False; radiusSource=False; weakAngle=False; gaugeNorm=False; projection=False; observedExtraction=False; higgsOperator=False; higgsQuartic=False; gev=False; promotesWz=False; promotesHiggs=False"
+    },
+    {
+      "CheckId": "phase201-phase256-contract-state-unchanged",
+      "Passed": true,
+      "Detail": "phase201Promotable=False; existingEvidence=False; wzMissing=15; higgsMissing=14; phase256Required=20; phase256Filled=0; observedPromotable=False; p224=True; wClosure=False; zClosure=False; higgsClosure=False; canFillWz=False; canFillHiggs=False; canFillObserved=False"
+    }
+  ],
+  "contractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionFilledRequiredFieldCount": 0
+  },
+  "relatedBoundaryEvidence": {
+    "gaugeHiggsBoundarySourceAuditPassed": true,
+    "wilsonLineHosotaniSourcePresentInGu": false,
+    "gaugeHiggsBoundaryCompletesBosonPredictions": false,
+    "kaluzaKleinInternalSymmetrySourceAuditPassed": true,
+    "kkRouteCompletesBosonPredictions": false,
+    "bfTopologicalMassSourceAuditPassed": true,
+    "bfRouteCompletesBosonPredictions": false
+  },
+  "decision": "Do not promote W/Z or Higgs physical masses from the Scherk-Schwarz/twisted-compactification route in this repository. The route is a genuine geometric mass-generation lead through compactification twists, Wilson-line phases, or boundary data, but the current evidence leaves the twist angle, compactification radius, electroweak embedding, weak angle, Higgs sector, and GeV normalization as external or model-dependent data rather than GU-local source-lineage rows.",
+  "nextRequiredArtifact": [
+    "A GU-local theorem mapping Shiab/Upsilon/connection data to a compactification/twist/holonomy sector.",
+    "A target-independent source for the Scherk-Schwarz twist angle or Wilson-line phase and compactification radius.",
+    "Observed photon/W/Z/H projection rows with neutral mixing and weak-angle/gauge-coupling lineage.",
+    "A Higgs scalar-source or compatible gauge-Higgs replacement that accounts for the observed Higgs mass.",
+    "RG, threshold, chirality/fermion-sector, and GeV-unit normalization lineage validated through Phase201/Phase256."
+  ]
+}

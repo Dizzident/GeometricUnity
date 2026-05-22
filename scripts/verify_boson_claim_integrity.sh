@@ -110,6 +110,7 @@ const paths = {
   phase338: "studies/phase338_metric_affine_torsion_source_audit_001/output/metric_affine_torsion_source_audit_summary.json",
   phase339: "studies/phase339_macdowell_mansouri_cartan_breaking_source_audit_001/output/macdowell_mansouri_cartan_breaking_source_audit_summary.json",
   phase340: "studies/phase340_bf_topological_mass_source_audit_001/output/bf_topological_mass_source_audit_summary.json",
+  phase341: "studies/phase341_scherk_schwarz_twisted_compactification_source_audit_001/output/scherk_schwarz_twisted_compactification_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -291,6 +292,7 @@ const phase337 = requireFile(paths.phase337);
 const phase338 = requireFile(paths.phase338);
 const phase339 = requireFile(paths.phase339);
 const phase340 = requireFile(paths.phase340);
+const phase341 = requireFile(paths.phase341);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -2088,6 +2090,62 @@ if (sourceLineageMissing) {
   assert(phase340.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase340 W/Z missing-field count must match Phase213.");
   assert(phase340.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase340 Higgs missing-field count must match Phase213.");
   assert(phase340.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase340 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase341.scherkSchwarzTwistedCompactificationSourceAuditPassed === true, "Phase341 Scherk-Schwarz/twisted compactification source audit must pass while preserving non-promotional status.");
+  assert(phase341.scherkSchwarzLeadPresent === true, "Phase341 must record the Scherk-Schwarz/twisted compactification lead.");
+  assert(phase341.scherkSchwarzPrimarySourcesReviewed === true, "Phase341 must record primary source review.");
+  assert(phase341.scherkSchwarzRouteExternalToGu === true, "Phase341 must classify the route as external to GU.");
+  assert(phase341.originalExtraDimensionMassGenerationLeadPresent === true, "Phase341 must record the original mass-from-extra-dimensions lead.");
+  assert(phase341.scherkSchwarzUsesNontrivialBoundaryTwist === true, "Phase341 must record nontrivial boundary twist usage.");
+  assert(phase341.scherkSchwarzMassesDependOnCompactificationRadiusAndTwist === true, "Phase341 must record compactification-radius/twist dependence.");
+  assert(phase341.torusGaugeTheoryStableConfigurationLeadPresent === true, "Phase341 must record torus stable-configuration context.");
+  assert(phase341.torusRouteClassifiesTwistAndBoundaryStableConfigurations === true, "Phase341 must record twist/boundary stable configurations.");
+  assert(phase341.electroweakExtraDimensionLeadPresent === true, "Phase341 must record the electroweak extra-dimensional lead.");
+  assert(phase341.electroweakWilsonLineScherkSchwarzEquivalent === true, "Phase341 must record Wilson-line/Scherk-Schwarz equivalence.");
+  assert(phase341.electroweakWMassDependsOnWilsonLinePhaseOverRadius === true, "Phase341 must record W-mass phase-over-radius dependence.");
+  assert(phase341.electroweakRequiresSmallWilsonLinePhaseToMatchWMass === true, "Phase341 must record that matching W mass requires a small Wilson-line phase.");
+  assert(phase341.electroweakModelHasTopHiggsMassDifficulties === true, "Phase341 must record top/Higgs model-building difficulties.");
+  assert(phase341.mssmScherkSchwarzEwsbLeadPresent === true, "Phase341 must record MSSM Scherk-Schwarz EWSB context.");
+  assert(phase341.mssmRouteUsesSoftTermsAndRadiativeCorrections === true, "Phase341 must record soft-term/radiative-correction dependence.");
+  assert(phase341.fluxWilsonLineScalarCondensateLeadPresent === true, "Phase341 must record flux/Wilson-line condensate context.");
+  assert(phase341.fluxRouteUsesWilsonLineScalarCondensate === true, "Phase341 must record Wilson-line scalar condensate use.");
+  assert(phase341.routeOverlapsGaugeHiggsBoundary === true, "Phase341 must preserve overlap with Phase265.");
+  assert(phase341.routeOverlapsKaluzaKleinInternalSymmetry === true, "Phase341 must preserve overlap with Phase333.");
+  assert(phase341.routeDistinctFromBfTopologicalMass === true, "Phase341 must record distinction from Phase340.");
+  assert(phase341.scherkRouteRequiresGuLocalTwistedCompactificationMap === true, "Phase341 must require a GU-local twisted-compactification map.");
+  assert(phase341.scherkRouteRequiresTwistAngleOrHolonomySource === true, "Phase341 must require a twist-angle/holonomy source.");
+  assert(phase341.scherkRouteRequiresCompactificationRadiusSource === true, "Phase341 must require a compactification-radius source.");
+  assert(phase341.scherkRouteRequiresElectroweakEmbeddingAndNeutralProjection === true, "Phase341 must require electroweak embedding and neutral projection.");
+  assert(phase341.scherkRouteRequiresObservedPhotonWzHProjection === true, "Phase341 must require observed photon/W/Z/H projection.");
+  assert(phase341.scherkRouteRequiresWeakAngleAndGaugeCouplingLineage === true, "Phase341 must require weak-angle and gauge-coupling lineage.");
+  assert(phase341.scherkRouteRequiresHiggsSectorCompatibilityAndScalarSource === true, "Phase341 must require Higgs-sector compatibility and scalar source.");
+  assert(phase341.scherkRouteRequiresRgTransportAndThresholdLineage === true, "Phase341 must require RG transport and threshold lineage.");
+  assert(phase341.scherkRouteRequiresGeVUnitNormalization === true, "Phase341 must require GeV normalization.");
+  assert(phase341.scherkRouteRequiresChiralityAndFermionSectorLineage === true, "Phase341 must require chirality and fermion-sector lineage.");
+  assert(phase341.scherkRouteProvidesGuLocalWzTheorem === false, "Phase341 cannot claim a GU-local W/Z theorem.");
+  assert(phase341.scherkRouteProvidesSeparateWzSourceRows === false, "Phase341 cannot claim separate W/Z source rows.");
+  assert(phase341.scherkRouteProvidesTargetIndependentTwistAngleSource === false, "Phase341 cannot claim a target-independent twist source.");
+  assert(phase341.scherkRouteProvidesTargetIndependentCompactificationRadiusSource === false, "Phase341 cannot claim a target-independent compactification-radius source.");
+  assert(phase341.scherkRouteProvidesGuWeakMixingAngleSource === false, "Phase341 cannot claim a GU weak-mixing angle source.");
+  assert(phase341.scherkRouteProvidesGuGaugeCouplingNormalization === false, "Phase341 cannot claim GU gauge-coupling normalization.");
+  assert(phase341.scherkRouteProvidesObservedPhotonWzProjectionRows === false, "Phase341 cannot claim observed photon/W/Z projection rows.");
+  assert(phase341.scherkRouteProvidesGuObservedFieldExtraction === false, "Phase341 cannot claim GU observed-field extraction.");
+  assert(phase341.scherkRouteProvidesGuHiggsScalarSourceOperator === false, "Phase341 cannot claim a GU Higgs scalar-source operator.");
+  assert(phase341.scherkRouteProvidesGuHiggsQuarticOrExcitationSource === false, "Phase341 cannot claim GU Higgs quartic/excitation source lineage.");
+  assert(phase341.scherkRouteProvidesObservedHiggsMassFromGu === false, "Phase341 cannot claim observed Higgs mass from GU.");
+  assert(phase341.scherkRouteProvidesGeVUnitNormalization === false, "Phase341 cannot claim GeV normalization.");
+  assert(phase341.scherkRoutePromotesWzMasses === false, "Phase341 cannot promote W/Z masses.");
+  assert(phase341.scherkRoutePromotesHiggsMass === false, "Phase341 cannot promote Higgs mass.");
+  assert(phase341.scherkRouteCompletesBosonPredictions === false, "Phase341 cannot complete boson predictions.");
+  assert(phase341.canFillPhase201WzContract === false, "Phase341 cannot fill the Phase201 W/Z contract.");
+  assert(phase341.canFillPhase201HiggsContract === false, "Phase341 cannot fill the Phase201 Higgs contract.");
+  assert(phase341.canFillPhase256ObservedFieldExtractionContract === false, "Phase341 cannot fill the Phase256 observed-field extraction contract.");
+  assert(phase341.sourceRowCount === 6, "Phase341 must preserve six source rows.");
+  assert(phase341.contractImpact?.canFillPhase201WzContract === false, "Phase341 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase341.contractImpact?.canFillPhase201HiggsContract === false, "Phase341 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase341.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase341 contract impact must keep Phase256 unfilled.");
+  assert(phase341.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase341 W/Z missing-field count must match Phase213.");
+  assert(phase341.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase341 Higgs missing-field count must match Phase213.");
+  assert(phase341.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase341 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

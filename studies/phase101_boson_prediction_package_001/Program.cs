@@ -198,6 +198,7 @@ const string Phase337OctonionCliffordInternalSpaceSourceAuditPath = "studies/pha
 const string Phase338MetricAffineTorsionSourceAuditPath = "studies/phase338_metric_affine_torsion_source_audit_001/output/metric_affine_torsion_source_audit.json";
 const string Phase339MacDowellMansouriCartanBreakingSourceAuditPath = "studies/phase339_macdowell_mansouri_cartan_breaking_source_audit_001/output/macdowell_mansouri_cartan_breaking_source_audit.json";
 const string Phase340BfTopologicalMassSourceAuditPath = "studies/phase340_bf_topological_mass_source_audit_001/output/bf_topological_mass_source_audit.json";
+const string Phase341ScherkSchwarzTwistedCompactificationSourceAuditPath = "studies/phase341_scherk_schwarz_twisted_compactification_source_audit_001/output/scherk_schwarz_twisted_compactification_source_audit.json";
 const string Phase282BranchLocalDirectInvariantCensusPath = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census.json";
 const string Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit.json";
 const string Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic.json";
@@ -416,6 +417,7 @@ using var phase337 = TryParseJson(Phase337OctonionCliffordInternalSpaceSourceAud
 using var phase338 = TryParseJson(Phase338MetricAffineTorsionSourceAuditPath);
 using var phase339 = TryParseJson(Phase339MacDowellMansouriCartanBreakingSourceAuditPath);
 using var phase340 = TryParseJson(Phase340BfTopologicalMassSourceAuditPath);
+using var phase341 = TryParseJson(Phase341ScherkSchwarzTwistedCompactificationSourceAuditPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -697,6 +699,7 @@ var package = new
         metricAffineTorsionSourceAuditPath = File.Exists(Phase338MetricAffineTorsionSourceAuditPath) ? Phase338MetricAffineTorsionSourceAuditPath : null,
         macDowellMansouriCartanBreakingSourceAuditPath = File.Exists(Phase339MacDowellMansouriCartanBreakingSourceAuditPath) ? Phase339MacDowellMansouriCartanBreakingSourceAuditPath : null,
         bfTopologicalMassSourceAuditPath = File.Exists(Phase340BfTopologicalMassSourceAuditPath) ? Phase340BfTopologicalMassSourceAuditPath : null,
+        scherkSchwarzTwistedCompactificationSourceAuditPath = File.Exists(Phase341ScherkSchwarzTwistedCompactificationSourceAuditPath) ? Phase341ScherkSchwarzTwistedCompactificationSourceAuditPath : null,
         branchLocalDirectInvariantCensusPath = File.Exists(Phase282BranchLocalDirectInvariantCensusPath) ? Phase282BranchLocalDirectInvariantCensusPath : null,
         legacyElectroweakBridgeSourceSurvivabilityAuditPath = File.Exists(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath) ? Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath : null,
         predictedRatioAlphaGfExternalClosureDiagnosticPath = File.Exists(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath) ? Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath : null,
@@ -3506,6 +3509,63 @@ var package = new
             decision = JsonString(phase340.RootElement, "decision"),
         }
         : null,
+    scherkSchwarzTwistedCompactificationSourceAudit = phase341 is not null
+        ? new
+        {
+            status = JsonString(phase341.RootElement, "terminalStatus"),
+            scherkSchwarzTwistedCompactificationSourceAuditPassed = JsonBool(phase341.RootElement, "scherkSchwarzTwistedCompactificationSourceAuditPassed"),
+            scherkSchwarzLeadPresent = JsonBool(phase341.RootElement, "scherkSchwarzLeadPresent"),
+            scherkSchwarzPrimarySourcesReviewed = JsonBool(phase341.RootElement, "scherkSchwarzPrimarySourcesReviewed"),
+            scherkSchwarzRouteExternalToGu = JsonBool(phase341.RootElement, "scherkSchwarzRouteExternalToGu"),
+            originalExtraDimensionMassGenerationLeadPresent = JsonBool(phase341.RootElement, "originalExtraDimensionMassGenerationLeadPresent"),
+            scherkSchwarzUsesNontrivialBoundaryTwist = JsonBool(phase341.RootElement, "scherkSchwarzUsesNontrivialBoundaryTwist"),
+            scherkSchwarzMassesDependOnCompactificationRadiusAndTwist = JsonBool(phase341.RootElement, "scherkSchwarzMassesDependOnCompactificationRadiusAndTwist"),
+            electroweakWilsonLineScherkSchwarzEquivalent = JsonBool(phase341.RootElement, "electroweakWilsonLineScherkSchwarzEquivalent"),
+            electroweakWMassDependsOnWilsonLinePhaseOverRadius = JsonBool(phase341.RootElement, "electroweakWMassDependsOnWilsonLinePhaseOverRadius"),
+            electroweakRequiresSmallWilsonLinePhaseToMatchWMass = JsonBool(phase341.RootElement, "electroweakRequiresSmallWilsonLinePhaseToMatchWMass"),
+            electroweakModelHasTopHiggsMassDifficulties = JsonBool(phase341.RootElement, "electroweakModelHasTopHiggsMassDifficulties"),
+            mssmScherkSchwarzEwsbLeadPresent = JsonBool(phase341.RootElement, "mssmScherkSchwarzEwsbLeadPresent"),
+            fluxWilsonLineScalarCondensateLeadPresent = JsonBool(phase341.RootElement, "fluxWilsonLineScalarCondensateLeadPresent"),
+            routeOverlapsGaugeHiggsBoundary = JsonBool(phase341.RootElement, "routeOverlapsGaugeHiggsBoundary"),
+            routeOverlapsKaluzaKleinInternalSymmetry = JsonBool(phase341.RootElement, "routeOverlapsKaluzaKleinInternalSymmetry"),
+            routeDistinctFromBfTopologicalMass = JsonBool(phase341.RootElement, "routeDistinctFromBfTopologicalMass"),
+            scherkRouteRequiresGuLocalTwistedCompactificationMap = JsonBool(phase341.RootElement, "scherkRouteRequiresGuLocalTwistedCompactificationMap"),
+            scherkRouteRequiresTwistAngleOrHolonomySource = JsonBool(phase341.RootElement, "scherkRouteRequiresTwistAngleOrHolonomySource"),
+            scherkRouteRequiresCompactificationRadiusSource = JsonBool(phase341.RootElement, "scherkRouteRequiresCompactificationRadiusSource"),
+            scherkRouteRequiresElectroweakEmbeddingAndNeutralProjection = JsonBool(phase341.RootElement, "scherkRouteRequiresElectroweakEmbeddingAndNeutralProjection"),
+            scherkRouteRequiresObservedPhotonWzHProjection = JsonBool(phase341.RootElement, "scherkRouteRequiresObservedPhotonWzHProjection"),
+            scherkRouteRequiresWeakAngleAndGaugeCouplingLineage = JsonBool(phase341.RootElement, "scherkRouteRequiresWeakAngleAndGaugeCouplingLineage"),
+            scherkRouteRequiresHiggsSectorCompatibilityAndScalarSource = JsonBool(phase341.RootElement, "scherkRouteRequiresHiggsSectorCompatibilityAndScalarSource"),
+            scherkRouteRequiresGeVUnitNormalization = JsonBool(phase341.RootElement, "scherkRouteRequiresGeVUnitNormalization"),
+            scherkRouteProvidesGuLocalWzTheorem = JsonBool(phase341.RootElement, "scherkRouteProvidesGuLocalWzTheorem"),
+            scherkRouteProvidesSeparateWzSourceRows = JsonBool(phase341.RootElement, "scherkRouteProvidesSeparateWzSourceRows"),
+            scherkRouteProvidesTargetIndependentTwistAngleSource = JsonBool(phase341.RootElement, "scherkRouteProvidesTargetIndependentTwistAngleSource"),
+            scherkRouteProvidesTargetIndependentCompactificationRadiusSource = JsonBool(phase341.RootElement, "scherkRouteProvidesTargetIndependentCompactificationRadiusSource"),
+            scherkRouteProvidesGuObservedFieldExtraction = JsonBool(phase341.RootElement, "scherkRouteProvidesGuObservedFieldExtraction"),
+            scherkRouteProvidesGuHiggsScalarSourceOperator = JsonBool(phase341.RootElement, "scherkRouteProvidesGuHiggsScalarSourceOperator"),
+            scherkRouteProvidesObservedHiggsMassFromGu = JsonBool(phase341.RootElement, "scherkRouteProvidesObservedHiggsMassFromGu"),
+            scherkRouteProvidesGeVUnitNormalization = JsonBool(phase341.RootElement, "scherkRouteProvidesGeVUnitNormalization"),
+            scherkRoutePromotesWzMasses = JsonBool(phase341.RootElement, "scherkRoutePromotesWzMasses"),
+            scherkRoutePromotesHiggsMass = JsonBool(phase341.RootElement, "scherkRoutePromotesHiggsMass"),
+            scherkRouteCompletesBosonPredictions = JsonBool(phase341.RootElement, "scherkRouteCompletesBosonPredictions"),
+            canFillPhase201WzContract = JsonBool(phase341.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase341.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase341.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            sourceRowCount = phase341.RootElement.TryGetProperty("sourceRows", out var p341SourceRows)
+                ? p341SourceRows.GetArrayLength()
+                : (int?)null,
+            wzMissingFieldCount = phase341.RootElement.TryGetProperty("contractImpact", out var p341ContractImpact)
+                ? JsonInt(p341ContractImpact, "wzMissingFieldCount")
+                : null,
+            higgsMissingFieldCount = phase341.RootElement.TryGetProperty("contractImpact", out p341ContractImpact)
+                ? JsonInt(p341ContractImpact, "higgsMissingFieldCount")
+                : null,
+            observedFieldExtractionFilledRequiredFieldCount = phase341.RootElement.TryGetProperty("contractImpact", out p341ContractImpact)
+                ? JsonInt(p341ContractImpact, "observedFieldExtractionFilledRequiredFieldCount")
+                : null,
+            decision = JsonString(phase341.RootElement, "decision"),
+        }
+        : null,
     branchLocalDirectInvariantCensus = phase282 is not null
         ? new
         {
@@ -6293,6 +6353,33 @@ var summary = new
         : null,
     bfRouteCompletesBosonPredictions = phase340 is not null
         ? JsonBool(phase340.RootElement, "bfRouteCompletesBosonPredictions")
+        : null,
+    scherkSchwarzTwistedCompactificationSourceAuditPassed = phase341 is not null
+        ? JsonBool(phase341.RootElement, "scherkSchwarzTwistedCompactificationSourceAuditPassed")
+        : null,
+    scherkSchwarzMassesDependOnCompactificationRadiusAndTwist = phase341 is not null
+        ? JsonBool(phase341.RootElement, "scherkSchwarzMassesDependOnCompactificationRadiusAndTwist")
+        : null,
+    electroweakWMassDependsOnWilsonLinePhaseOverRadius = phase341 is not null
+        ? JsonBool(phase341.RootElement, "electroweakWMassDependsOnWilsonLinePhaseOverRadius")
+        : null,
+    scherkRouteRequiresGuLocalTwistedCompactificationMap = phase341 is not null
+        ? JsonBool(phase341.RootElement, "scherkRouteRequiresGuLocalTwistedCompactificationMap")
+        : null,
+    scherkRouteRequiresTwistAngleOrHolonomySource = phase341 is not null
+        ? JsonBool(phase341.RootElement, "scherkRouteRequiresTwistAngleOrHolonomySource")
+        : null,
+    scherkRouteProvidesGuObservedFieldExtraction = phase341 is not null
+        ? JsonBool(phase341.RootElement, "scherkRouteProvidesGuObservedFieldExtraction")
+        : null,
+    scherkRoutePromotesWzMasses = phase341 is not null
+        ? JsonBool(phase341.RootElement, "scherkRoutePromotesWzMasses")
+        : null,
+    scherkRoutePromotesHiggsMass = phase341 is not null
+        ? JsonBool(phase341.RootElement, "scherkRoutePromotesHiggsMass")
+        : null,
+    scherkRouteCompletesBosonPredictions = phase341 is not null
+        ? JsonBool(phase341.RootElement, "scherkRouteCompletesBosonPredictions")
         : null,
     branchLocalInvariantCensusPassed = phase282 is not null
         ? JsonBool(phase282.RootElement, "branchLocalInvariantCensusPassed")
