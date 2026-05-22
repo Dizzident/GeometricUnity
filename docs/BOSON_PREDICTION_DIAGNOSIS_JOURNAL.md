@@ -7573,6 +7573,91 @@ Higgs remains separately blocked by missing scalar-source lineage.
   `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
   `promotedPhysicalMassClaimCount=0`.
 
+## 2026-05-22 - Phase340 BF/BFCG Topological Mass Source Audit
+
+### Context
+
+After the MacDowell-Mansouri / Cartan-breaking route preserved a serious
+geometric gauge-breaking lead but still no GU-local source-lineage rows, I
+checked the closest distinct topological route: BF/BFCG and topological mass
+generation for vector bosons.
+
+### Sources Reviewed
+
+- `https://arxiv.org/abs/1009.1456`.
+- `https://arxiv.org/abs/1001.2808`.
+- `https://arxiv.org/abs/hep-th/9512216`.
+- `https://arxiv.org/abs/hep-th/0010050`.
+- `https://arxiv.org/abs/hep-th/9707129`.
+- `https://arxiv.org/abs/hep-th/0511175`.
+- `https://arxiv.org/abs/0708.3051`.
+
+### Action
+
+- Added
+  `studies/phase340_bf_topological_mass_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P340.md`.
+- Added `BF-BFCG-TOPOLOGICAL-MASS` to `ExperimentReferences.md` with detailed
+  notes under `docs/Reference/ExperimentReferences/`.
+- Wired Phase340 into the generator, Phase101 package, Phase202 objective
+  completion audit, and claim-integrity verifier.
+- Launched a worker agent to add Phase340 generated-diagnostic exclusions to
+  source-lineage and observed-field scanner phases.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from the BF/BFCG/topological mass route. The
+route is a serious external topological mass lead, but the electroweak
+topological-origin proposal keeps a free curvature-radius parameter and omits
+the observed Higgs, while the general BF/non-Abelian topological mass sources
+require auxiliary/completion data and do not supply GU-local observed
+photon/W/Z/H source rows, Higgs compatibility, or GeV normalization.
+
+### Validation
+
+- Targeted Phase340 run passed with:
+  - `bfTopologicalMassSourceAuditPassed=true`.
+  - `electroweakTopologicalWzMassesDependOnCurvatureRadiusR=true`.
+  - `electroweakTopologicalObservedHiggsConflict=true`.
+  - `nonabelianTopologicalNoGoBoundaryPresent=true`.
+  - `bfRoutePromotesWzMasses=false`.
+  - `bfRoutePromotesHiggsMass=false`.
+  - `canFillPhase201WzContract=false`.
+- Scanner reruns after adding Phase340 found no intake-ready artifacts:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `canPromoteHiggsQuarticSelfCouplingSource=false` and
+    `intakeReadyFindingCount=0`.
+  - P279 `technicolorWalkingElectroweakScaleSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P281 `geometricRefractiveUnificationSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P295 `intakeReadyObservedFieldExtractionCandidateCount=0` and
+    `anyObservedFieldExtractionCandidateFillsContract=false`.
+  - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
+    `anySourceLineageCandidateFillsContract=false`.
+- P101 regenerated with Phase340 included and remained
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase340 included and remained
+  `objectiveAchieved=false`, with `checklistPassedCount=133` and
+  `checklistFailedCount=3`.
+- Full `./scripts/generate_validated_boson_predictions.sh` completed and ended
+  with claim integrity verified.
+- `dotnet test GeometricUnity.slnx` passed; the existing xUnit2013 warning in
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`
+  remains.
+- Claim-integrity verifier passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+
+### Next Blocker
+
+The next missing artifact is still a GU-local, target-independent theorem that
+maps native GU data into an electroweak mass source: for this route, a
+BF/BFCG field map plus a derived topological mass parameter, weak-angle/gauge
+lineage, observed photon/W/Z/H projection, Higgs-sector compatibility, and
+GeV-unit normalization.
+
 ## 2026-05-21 - Phase339 MacDowell-Mansouri Cartan-Breaking Source Audit
 
 ### Context

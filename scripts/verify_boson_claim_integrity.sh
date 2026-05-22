@@ -109,6 +109,7 @@ const paths = {
   phase337: "studies/phase337_octonion_clifford_internal_space_source_audit_001/output/octonion_clifford_internal_space_source_audit_summary.json",
   phase338: "studies/phase338_metric_affine_torsion_source_audit_001/output/metric_affine_torsion_source_audit_summary.json",
   phase339: "studies/phase339_macdowell_mansouri_cartan_breaking_source_audit_001/output/macdowell_mansouri_cartan_breaking_source_audit_summary.json",
+  phase340: "studies/phase340_bf_topological_mass_source_audit_001/output/bf_topological_mass_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -289,6 +290,7 @@ const phase336 = requireFile(paths.phase336);
 const phase337 = requireFile(paths.phase337);
 const phase338 = requireFile(paths.phase338);
 const phase339 = requireFile(paths.phase339);
+const phase340 = requireFile(paths.phase340);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -2031,6 +2033,61 @@ if (sourceLineageMissing) {
   assert(phase339.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase339 W/Z missing-field count must match Phase213.");
   assert(phase339.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase339 Higgs missing-field count must match Phase213.");
   assert(phase339.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase339 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase340.bfTopologicalMassSourceAuditPassed === true, "Phase340 BF/topological mass source audit must pass while preserving non-promotional status.");
+  assert(phase340.bfTopologicalMassLeadPresent === true, "Phase340 must record the BF/topological mass lead.");
+  assert(phase340.bfTopologicalPrimarySourcesReviewed === true, "Phase340 must record primary source review.");
+  assert(phase340.bfTopologicalRouteExternalToGu === true, "Phase340 must classify the route as external to GU.");
+  assert(phase340.electroweakTopologicalOriginLeadPresent === true, "Phase340 must record the direct electroweak topological-origin lead.");
+  assert(phase340.electroweakTopologicalModelUsesS3MatterFieldSpace === true, "Phase340 must record compact S3 matter-field-space usage.");
+  assert(phase340.electroweakTopologicalWzMassesDependOnCurvatureRadiusR === true, "Phase340 must record curvature-radius R dependence.");
+  assert(phase340.electroweakTopologicalOmitsConventionalHiggs === true, "Phase340 must record the omitted conventional Higgs.");
+  assert(phase340.electroweakTopologicalObservedHiggsConflict === true, "Phase340 must record the observed-Higgs conflict.");
+  assert(phase340.electroweakTopologicalRequiresRadiusWeakAngleAndGaugeLineage === true, "Phase340 must require radius, weak-angle, and gauge lineage.");
+  assert(phase340.nonabelianBfMassGenerationLeadPresent === true, "Phase340 must record the non-Abelian BF mass-generation lead.");
+  assert(phase340.nonabelianBfUsesBWedgeFCoupling === true, "Phase340 must record B wedge F coupling.");
+  assert(phase340.nonabelianBfRequiresAuxiliaryFields === true, "Phase340 must record auxiliary-field dependence.");
+  assert(phase340.nonabelianBfCanGenerateGaugeFieldMass === true, "Phase340 must record gauge-field mass-generation capability.");
+  assert(phase340.nonabelianTopologicalNoGoBoundaryPresent === true, "Phase340 must record the non-Abelian topological no-go boundary.");
+  assert(phase340.nonabelianNoGoBlocksSimplePowerCountingRenormalizableRoute === true, "Phase340 must record the simple power-counting-renormalizable route boundary.");
+  assert(phase340.savvidyTensorGaugeMassGapLeadPresent === true, "Phase340 must record the Savvidy tensor-gauge mass-gap lead.");
+  assert(phase340.savvidyRouteUsesChernSimonsLikeInvariant === true, "Phase340 must record the Chern-Simons-like invariant.");
+  assert(phase340.dvaliJackiwPiTopologicalMassLeadPresent === true, "Phase340 must record Dvali-Jackiw-Pi topological mass context.");
+  assert(phase340.bfcgHigherGaugeTopologicalMatterLeadPresent === true, "Phase340 must record BFCG higher-gauge context.");
+  assert(phase340.bfcgRouteIsHigherGaugeTopologicalFramework === true, "Phase340 must record that BFCG is framework context.");
+  assert(phase340.routeDistinctFromMacdowellCartan === true, "Phase340 must record distinction from Phase339.");
+  assert(phase340.bfRouteRequiresGuLocalBfBfcgMap === true, "Phase340 must require a GU-local BF/BFCG map.");
+  assert(phase340.bfRouteRequiresTopologicalMassParameterSource === true, "Phase340 must require a topological mass-parameter source.");
+  assert(phase340.bfRouteRequiresElectroweakEmbeddingAndNeutralProjection === true, "Phase340 must require electroweak embedding and neutral projection.");
+  assert(phase340.bfRouteRequiresObservedPhotonWzHProjection === true, "Phase340 must require observed photon/W/Z/H projection.");
+  assert(phase340.bfRouteRequiresTargetIndependentRadiusVevOrScaleLineage === true, "Phase340 must require target-independent radius/VEV/scale lineage.");
+  assert(phase340.bfRouteRequiresWeakAngleAndGaugeCouplingLineage === true, "Phase340 must require weak-angle and gauge-coupling lineage.");
+  assert(phase340.bfRouteRequiresHiggsSectorCompatibilityAndScalarSource === true, "Phase340 must require Higgs-sector compatibility and scalar source.");
+  assert(phase340.bfRouteRequiresRenormalizableUnitaryCompletion === true, "Phase340 must require a renormalizable/unitary completion.");
+  assert(phase340.bfRouteRequiresGeVUnitNormalization === true, "Phase340 must require GeV normalization.");
+  assert(phase340.bfRouteProvidesGuLocalWzTheorem === false, "Phase340 cannot claim a GU-local W/Z theorem.");
+  assert(phase340.bfRouteProvidesSeparateWzSourceRows === false, "Phase340 cannot claim separate W/Z source rows.");
+  assert(phase340.bfRouteProvidesTargetIndependentGuVevSource === false, "Phase340 cannot claim a target-independent GU VEV source.");
+  assert(phase340.bfRouteProvidesGuWeakMixingAngleSource === false, "Phase340 cannot claim a GU weak-mixing angle source.");
+  assert(phase340.bfRouteProvidesGuGaugeCouplingNormalization === false, "Phase340 cannot claim GU gauge-coupling normalization.");
+  assert(phase340.bfRouteProvidesObservedPhotonWzProjectionRows === false, "Phase340 cannot claim observed photon/W/Z projection rows.");
+  assert(phase340.bfRouteProvidesGuObservedFieldExtraction === false, "Phase340 cannot claim GU observed-field extraction.");
+  assert(phase340.bfRouteProvidesGuHiggsScalarSourceOperator === false, "Phase340 cannot claim a GU Higgs scalar-source operator.");
+  assert(phase340.bfRouteProvidesGuHiggsQuarticOrExcitationSource === false, "Phase340 cannot claim GU Higgs quartic/excitation source lineage.");
+  assert(phase340.bfRouteProvidesObservedHiggsMassFromGu === false, "Phase340 cannot claim observed Higgs mass from GU.");
+  assert(phase340.bfRouteProvidesGeVUnitNormalization === false, "Phase340 cannot claim GeV normalization.");
+  assert(phase340.bfRoutePromotesWzMasses === false, "Phase340 cannot promote W/Z masses.");
+  assert(phase340.bfRoutePromotesHiggsMass === false, "Phase340 cannot promote Higgs mass.");
+  assert(phase340.bfRouteCompletesBosonPredictions === false, "Phase340 cannot complete boson predictions.");
+  assert(phase340.canFillPhase201WzContract === false, "Phase340 cannot fill the Phase201 W/Z contract.");
+  assert(phase340.canFillPhase201HiggsContract === false, "Phase340 cannot fill the Phase201 Higgs contract.");
+  assert(phase340.canFillPhase256ObservedFieldExtractionContract === false, "Phase340 cannot fill the Phase256 observed-field extraction contract.");
+  assert(phase340.sourceRowCount === 7, "Phase340 must preserve seven source rows.");
+  assert(phase340.contractImpact?.canFillPhase201WzContract === false, "Phase340 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase340.contractImpact?.canFillPhase201HiggsContract === false, "Phase340 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase340.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase340 contract impact must keep Phase256 unfilled.");
+  assert(phase340.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase340 W/Z missing-field count must match Phase213.");
+  assert(phase340.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase340 Higgs missing-field count must match Phase213.");
+  assert(phase340.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase340 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

@@ -1,0 +1,159 @@
+{
+  "phaseId": "phase340-bf-topological-mass-source-audit",
+  "terminalStatus": "bf-topological-mass-source-audit-external-topological-mass-lead-not-gu-source",
+  "generatedAt": "2026-05-22T12:16:28.6748849+00:00",
+  "bfTopologicalMassSourceAuditPassed": true,
+  "bfTopologicalMassLeadPresent": true,
+  "bfTopologicalPrimarySourcesReviewed": true,
+  "bfTopologicalRouteExternalToGu": true,
+  "electroweakTopologicalOriginLeadPresent": true,
+  "electroweakTopologicalModelUsesS3MatterFieldSpace": true,
+  "electroweakTopologicalWzMassesDependOnCurvatureRadiusR": true,
+  "electroweakTopologicalOmitsConventionalHiggs": true,
+  "electroweakTopologicalObservedHiggsConflict": true,
+  "electroweakTopologicalRequiresRadiusWeakAngleAndGaugeLineage": true,
+  "nonabelianBfMassGenerationLeadPresent": true,
+  "nonabelianBfUsesBWedgeFCoupling": true,
+  "nonabelianBfRequiresAuxiliaryFields": true,
+  "nonabelianBfCanGenerateGaugeFieldMass": true,
+  "nonabelianTopologicalNoGoBoundaryPresent": true,
+  "nonabelianNoGoBlocksSimplePowerCountingRenormalizableRoute": true,
+  "savvidyTensorGaugeMassGapLeadPresent": true,
+  "savvidyRouteUsesChernSimonsLikeInvariant": true,
+  "dvaliJackiwPiTopologicalMassLeadPresent": true,
+  "bfcgHigherGaugeTopologicalMatterLeadPresent": true,
+  "bfcgRouteIsHigherGaugeTopologicalFramework": true,
+  "routeDistinctFromMacdowellCartan": true,
+  "bfRouteRequiresGuLocalBfBfcgMap": true,
+  "bfRouteRequiresTopologicalMassParameterSource": true,
+  "bfRouteRequiresElectroweakEmbeddingAndNeutralProjection": true,
+  "bfRouteRequiresObservedPhotonWzHProjection": true,
+  "bfRouteRequiresTargetIndependentRadiusVevOrScaleLineage": true,
+  "bfRouteRequiresWeakAngleAndGaugeCouplingLineage": true,
+  "bfRouteRequiresHiggsSectorCompatibilityAndScalarSource": true,
+  "bfRouteRequiresRenormalizableUnitaryCompletion": true,
+  "bfRouteRequiresGeVUnitNormalization": true,
+  "bfRouteProvidesGuLocalWzTheorem": false,
+  "bfRouteProvidesSeparateWzSourceRows": false,
+  "bfRouteProvidesWzRawAmplitudeGates": false,
+  "bfRouteProvidesWzCommonBridgeGate": false,
+  "bfRouteProvidesTargetIndependentGuVevSource": false,
+  "bfRouteProvidesGuWeakMixingAngleSource": false,
+  "bfRouteProvidesGuGaugeCouplingNormalization": false,
+  "bfRouteProvidesObservedPhotonWzProjectionRows": false,
+  "bfRouteProvidesGuObservedFieldExtraction": false,
+  "bfRouteProvidesGuHiggsScalarSourceOperator": false,
+  "bfRouteProvidesGuHiggsQuarticOrExcitationSource": false,
+  "bfRouteProvidesObservedHiggsMassFromGu": false,
+  "bfRouteProvidesGeVUnitNormalization": false,
+  "bfRoutePromotesWzMasses": false,
+  "bfRoutePromotesHiggsMass": false,
+  "bfRouteCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "sourceRows": [
+    {
+      "SourceId": "arxiv-1009-1456-topological-origin-electroweak-vector-boson-masses",
+      "Url": "https://arxiv.org/abs/1009.1456",
+      "FindingKind": "Topological electroweak W/Z mass origin proposal",
+      "Summary": "Transforms the free electroweak Lagrangian from noncompact matter-field space to compact S3; W and Z masses depend on a curvature-radius parameter R and are written in standard-form formulas.",
+      "PredictionImpact": "Direct W/Z topological lead, but R remains a free source parameter and the model omits the now-observed Higgs field."
+    },
+    {
+      "SourceId": "arxiv-1001-2808-topological-mass-four-dimensional-gauge-theory",
+      "Url": "https://arxiv.org/abs/1001.2808",
+      "FindingKind": "Four-dimensional Chern-Simons-like tensor-gauge mass gap",
+      "Summary": "Constructs a metric-independent gauge-invariant density that can generate a mass gap for Yang-Mills/tensor gauge fields.",
+      "PredictionImpact": "Mass-gap mechanism lead, but not an electroweak W/Z/H source-lineage derivation."
+    },
+    {
+      "SourceId": "arxiv-hep-th-9512216-nonabelian-bf-topological-mass",
+      "Url": "https://arxiv.org/abs/hep-th/9512216",
+      "FindingKind": "Non-Abelian BF topological mass generation",
+      "Summary": "Uses a B wedge F coupling and auxiliary one-form field so vector gauge fields can become massive in a non-Abelian BF setting.",
+      "PredictionImpact": "Mechanism lead; still needs electroweak embedding, source-derived mass parameter, and observed-field projection."
+    },
+    {
+      "SourceId": "arxiv-hep-th-0010050-topologically-massive-nonabelian-bf",
+      "Url": "https://arxiv.org/abs/hep-th/0010050",
+      "FindingKind": "Topologically massive non-Abelian BF models in arbitrary dimensions",
+      "Summary": "Extends non-Abelian BF topological mass generation to arbitrary spacetime dimension with auxiliary forms and BRST/anti-BRST structure.",
+      "PredictionImpact": "Useful consistency context; not a GU-local W/Z/H prediction source."
+    },
+    {
+      "SourceId": "arxiv-hep-th-9707129-nonabelian-topological-mass-no-go",
+      "Url": "https://arxiv.org/abs/hep-th/9707129",
+      "FindingKind": "No-go boundary for simple non-Abelian topological mass mechanism",
+      "Summary": "Proves no power-counting-renormalizable non-Abelian generalization of the Abelian topological mass mechanism in four dimensions in the studied framework.",
+      "PredictionImpact": "Boundary evidence requiring any GU route to specify its completion and not assume the simple BF mechanism is enough."
+    },
+    {
+      "SourceId": "arxiv-hep-th-0511175-topological-mass-four-dimensions",
+      "Url": "https://arxiv.org/abs/hep-th/0511175",
+      "FindingKind": "Four-dimensional topological entities for mass generation",
+      "Summary": "Relates four-dimensional topological structures to Schwinger-like mass generation.",
+      "PredictionImpact": "General topological mass context; does not provide observed W/Z/H source rows."
+    },
+    {
+      "SourceId": "arxiv-0708-3051-bf-to-bfcg-higher-gauge-theory",
+      "Url": "https://arxiv.org/abs/0708.3051",
+      "FindingKind": "Higher-gauge BF to BFCG framework",
+      "Summary": "Constructs topological higher-gauge theories and continuum BF/BFCG counterparts.",
+      "PredictionImpact": "Useful higher-gauge infrastructure; not a direct electroweak mass prediction."
+    }
+  ],
+  "checks": [
+    {
+      "CheckId": "bf-topological-primary-sources-reviewed",
+      "Passed": true,
+      "Detail": "lead=True; reviewed=True; externalToGu=True; sourceRows=7"
+    },
+    {
+      "CheckId": "electroweak-topological-origin-captured-as-parameterized-and-higgs-conflicted",
+      "Passed": true,
+      "Detail": "lead=True; s3MatterSpace=True; radiusR=True; omitsHiggs=True; observedHiggsConflict=True; radiusWeakAngleGaugeLineage=True"
+    },
+    {
+      "CheckId": "bf-topological-mass-mechanism-and-boundary-captured",
+      "Passed": true,
+      "Detail": "bfLead=True; bWedgeF=True; auxiliary=True; gaugeMass=True; noGo=True; simpleRenormalizableBlocked=True; savvidy=True; csLike=True; dvaliJackiwPi=True; bfcg=True; higherGauge=True"
+    },
+    {
+      "CheckId": "related-macdowell-boundary-preserved",
+      "Passed": true,
+      "Detail": "distinctFromMacdowell=True; phase339Passed=True; phase339Completes=False"
+    },
+    {
+      "CheckId": "bf-route-requires-missing-gu-source-data",
+      "Passed": true,
+      "Detail": "guMap=True; massParameter=True; ewEmbedding=True; observedProjection=True; scale=True; weakAngleGauge=True; higgs=True; completion=True; gev=True"
+    },
+    {
+      "CheckId": "bf-route-does-not-fill-gu-contracts",
+      "Passed": true,
+      "Detail": "guWzTheorem=False; separateRows=False; targetVev=False; weakAngle=False; gaugeNorm=False; projection=False; observedExtraction=False; higgsOperator=False; higgsQuartic=False; gev=False; promotesWz=False; promotesHiggs=False"
+    },
+    {
+      "CheckId": "phase201-phase256-contract-state-unchanged",
+      "Passed": true,
+      "Detail": "phase201Promotable=False; existingEvidence=False; wzMissing=15; higgsMissing=14; phase256Required=20; phase256Filled=0; observedPromotable=False; p224=True; wClosure=False; zClosure=False; higgsClosure=False; canFillWz=False; canFillHiggs=False; canFillObserved=False"
+    }
+  ],
+  "contractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionFilledRequiredFieldCount": 0
+  },
+  "decision": "Do not promote W/Z or Higgs physical masses from the BF/BFCG/topological mass route in this repository. The route is a serious external topological mass lead, but the current electroweak source keeps a free curvature-radius parameter and omits the observed Higgs, while the general BF/non-Abelian topological mass literature requires auxiliary fields, faces no-go boundaries for simple renormalizable non-Abelian completions, and does not supply GU-local observed photon/W/Z/H source rows, Higgs compatibility, or GeV normalization.",
+  "nextRequiredArtifact": [
+    "A GU-local theorem mapping Shiab/Upsilon/connection data into BF two-form or BFCG higher-gauge fields.",
+    "A target-independent topological mass parameter or curvature-radius source that does not import W, Z, or Higgs targets.",
+    "A renormalizable/unitary electroweak completion with neutral mixing, photon projection, and observed W/Z/H rows.",
+    "A Higgs scalar-source or compatible replacement that accounts for the observed physical Higgs.",
+    "Weak-angle, gauge-coupling, scale, RG, and GeV normalization lineage validated through Phase201/Phase256."
+  ]
+}
