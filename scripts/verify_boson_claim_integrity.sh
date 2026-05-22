@@ -116,6 +116,7 @@ const paths = {
   phase344: "studies/phase344_fms_gauge_invariant_spectrum_source_audit_001/output/fms_gauge_invariant_spectrum_source_audit_summary.json",
   phase345: "studies/phase345_fradkin_shenker_complementarity_source_audit_001/output/fradkin_shenker_complementarity_source_audit_summary.json",
   phase346: "studies/phase346_nielsen_pole_mass_gauge_independence_source_audit_001/output/nielsen_pole_mass_gauge_independence_source_audit_summary.json",
+  phase347: "studies/phase347_dispersive_electroweak_scale_mass_source_audit_001/output/dispersive_electroweak_scale_mass_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -303,6 +304,7 @@ const phase343 = requireFile(paths.phase343);
 const phase344 = requireFile(paths.phase344);
 const phase345 = requireFile(paths.phase345);
 const phase346 = requireFile(paths.phase346);
+const phase347 = requireFile(paths.phase347);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -2386,6 +2388,56 @@ if (sourceLineageMissing) {
   assert(phase346.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase346 W/Z missing-field count must match Phase213.");
   assert(phase346.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase346 Higgs missing-field count must match Phase213.");
   assert(phase346.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase346 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase347.dispersiveElectroweakScaleMassSourceAuditPassed === true, "Phase347 dispersive electroweak-scale mass source audit must pass while preserving non-promotional status.");
+  assert(phase347.dispersiveElectroweakMassLeadPresent === true, "Phase347 must record the dispersive electroweak mass lead.");
+  assert(phase347.dispersivePrimarySourcesReviewed === true, "Phase347 must record primary source review.");
+  assert(phase347.dispersiveRouteExternalToGu === true, "Phase347 must classify the route as external to GU.");
+  assert(phase347.scalarCurrentDispersionExtractsHiggsMass === true, "Phase347 must record scalar-current Higgs extraction.");
+  assert(phase347.vectorCurrentDispersionExtractsZMass === true, "Phase347 must record vector-current Z extraction.");
+  assert(phase347.wMassOnlyConstrainedByProportionality === true, "Phase347 must record that W is constrained only by proportionality.");
+  assert(phase347.topMassExtractedFromFictitiousHeavyQuarkMixing === true, "Phase347 must record the top-mass extraction claim.");
+  assert(phase347.singleBottomMassInputUsed === true, "Phase347 must record the single bottom-mass input.");
+  assert(phase347.inverseProblemFoundationWarnsIllPosedUnstable === true, "Phase347 must record inverse-problem instability.");
+  assert(phase347.reportedBottomMassInputGeV === 4.43, "Phase347 must preserve the reported bottom-mass input.");
+  assert(phase347.reportedHiggsMassGeV === 114, "Phase347 must preserve the reported Higgs mass.");
+  assert(phase347.reportedZMassGeV === 90.8, "Phase347 must preserve the reported Z mass.");
+  assert(phase347.reportedTopMassGeV === 176, "Phase347 must preserve the reported top mass.");
+  assert(phase347.reportedMaxDeviationPercent === 9, "Phase347 must preserve the reported maximum deviation.");
+  assert(phase347.dispersiveRouteRequiresExternalBottomMass === true, "Phase347 must require an external bottom mass.");
+  assert(phase347.dispersiveRouteRequiresSmQcdPerturbativeInput === true, "Phase347 must require SM/QCD perturbative input.");
+  assert(phase347.dispersiveRouteRequiresChosenBottomScalarAndVectorCurrents === true, "Phase347 must require chosen bottom scalar/vector currents.");
+  assert(phase347.dispersiveRouteRequiresRegularizedInverseProblemSolution === true, "Phase347 must require regularized inverse-problem solution.");
+  assert(phase347.dispersiveRouteRequiresGuLocalDispersiveCorrelatorTheorem === true, "Phase347 must require a GU-local dispersive correlator theorem.");
+  assert(phase347.dispersiveRouteRequiresGuBottomMassAndCurrentSource === true, "Phase347 must require GU bottom-mass/current source.");
+  assert(phase347.dispersiveRouteRequiresGuIndependentWSourceRow === true, "Phase347 must require an independent W source row.");
+  assert(phase347.dispersiveRouteRequiresGuObservedFieldExtraction === true, "Phase347 must require GU observed-field extraction.");
+  assert(phase347.dispersiveRouteRequiresGuHiggsScalarSourceOperator === true, "Phase347 must require a GU Higgs scalar-source operator.");
+  assert(phase347.dispersiveRouteRequiresGeVUnitNormalization === true, "Phase347 must require GeV normalization.");
+  assert(phase347.dispersiveRouteProvidesGuLocalWzTheorem === false, "Phase347 cannot claim a GU-local W/Z theorem.");
+  assert(phase347.dispersiveRouteProvidesSeparateWzSourceRows === false, "Phase347 cannot claim separate W/Z source rows.");
+  assert(phase347.dispersiveRouteProvidesIndependentWMassExtraction === false, "Phase347 cannot claim independent W mass extraction.");
+  assert(phase347.dispersiveRouteProvidesTargetIndependentVevOrMassScale === false, "Phase347 cannot claim a target-independent VEV or mass scale.");
+  assert(phase347.dispersiveRouteProvidesGuWeakMixingAngleSource === false, "Phase347 cannot claim a GU weak-mixing angle source.");
+  assert(phase347.dispersiveRouteProvidesGuGaugeCouplingNormalization === false, "Phase347 cannot claim GU gauge-coupling normalization.");
+  assert(phase347.dispersiveRouteProvidesObservedPhotonWzHiggsProjectionRows === false, "Phase347 cannot claim observed photon/W/Z/H projection rows.");
+  assert(phase347.dispersiveRouteProvidesGuObservedFieldExtractionContract === false, "Phase347 cannot claim the GU observed-field extraction contract.");
+  assert(phase347.dispersiveRouteProvidesGuHiggsScalarSourceOperator === false, "Phase347 cannot claim a GU Higgs scalar-source operator.");
+  assert(phase347.dispersiveRouteProvidesObservedHiggsMassFromGu === false, "Phase347 cannot claim observed Higgs mass from GU.");
+  assert(phase347.dispersiveRouteProvidesGeVUnitNormalization === false, "Phase347 cannot claim GeV normalization.");
+  assert(phase347.dispersiveRoutePromotesObservedFieldExtraction === false, "Phase347 cannot promote observed-field extraction.");
+  assert(phase347.dispersiveRoutePromotesWzMasses === false, "Phase347 cannot promote W/Z masses.");
+  assert(phase347.dispersiveRoutePromotesHiggsMass === false, "Phase347 cannot promote Higgs mass.");
+  assert(phase347.dispersiveRouteCompletesBosonPredictions === false, "Phase347 cannot complete boson predictions.");
+  assert(phase347.canFillPhase201WzContract === false, "Phase347 cannot fill the Phase201 W/Z contract.");
+  assert(phase347.canFillPhase201HiggsContract === false, "Phase347 cannot fill the Phase201 Higgs contract.");
+  assert(phase347.canFillPhase256ObservedFieldExtractionContract === false, "Phase347 cannot fill the Phase256 observed-field extraction contract.");
+  assert(phase347.sourceRowCount === 3, "Phase347 must preserve three source rows.");
+  assert(phase347.contractImpact?.canFillPhase201WzContract === false, "Phase347 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase347.contractImpact?.canFillPhase201HiggsContract === false, "Phase347 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase347.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase347 contract impact must keep Phase256 unfilled.");
+  assert(phase347.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase347 W/Z missing-field count must match Phase213.");
+  assert(phase347.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase347 Higgs missing-field count must match Phase213.");
+  assert(phase347.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase347 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

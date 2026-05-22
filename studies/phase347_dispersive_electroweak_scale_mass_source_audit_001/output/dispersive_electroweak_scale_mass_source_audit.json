@@ -1,0 +1,137 @@
+{
+  "phaseId": "phase347-dispersive-electroweak-scale-mass-source-audit",
+  "terminalStatus": "dispersive-electroweak-scale-mass-source-audit-external-sm-qcd-not-gu-source",
+  "generatedAt": "2026-05-22T17:02:06.4206593+00:00",
+  "dispersiveElectroweakScaleMassSourceAuditPassed": true,
+  "dispersiveElectroweakMassLeadPresent": true,
+  "dispersivePrimarySourcesReviewed": true,
+  "dispersiveRouteExternalToGu": true,
+  "scalarCurrentDispersionExtractsHiggsMass": true,
+  "vectorCurrentDispersionExtractsZMass": true,
+  "wMassOnlyConstrainedByProportionality": true,
+  "topMassExtractedFromFictitiousHeavyQuarkMixing": true,
+  "singleBottomMassInputUsed": true,
+  "inverseProblemFoundationWarnsIllPosedUnstable": true,
+  "reportedBottomMassInputGeV": 4.43,
+  "reportedHiggsMassGeV": 114,
+  "reportedZMassGeV": 90.8,
+  "reportedTopMassGeV": 176,
+  "reportedMaxDeviationPercent": 9,
+  "dispersiveRouteRequiresExternalBottomMass": true,
+  "dispersiveRouteRequiresSmQcdPerturbativeInput": true,
+  "dispersiveRouteRequiresChosenBottomScalarAndVectorCurrents": true,
+  "dispersiveRouteRequiresRegularizedInverseProblemSolution": true,
+  "dispersiveRouteRequiresGuLocalDispersiveCorrelatorTheorem": true,
+  "dispersiveRouteRequiresGuBottomMassAndCurrentSource": true,
+  "dispersiveRouteRequiresGuIndependentWSourceRow": true,
+  "dispersiveRouteRequiresGuObservedFieldExtraction": true,
+  "dispersiveRouteRequiresGuHiggsScalarSourceOperator": true,
+  "dispersiveRouteRequiresGeVUnitNormalization": true,
+  "dispersiveRouteProvidesGuLocalWzTheorem": false,
+  "dispersiveRouteProvidesSeparateWzSourceRows": false,
+  "dispersiveRouteProvidesIndependentWMassExtraction": false,
+  "dispersiveRouteProvidesTargetIndependentVevOrMassScale": false,
+  "dispersiveRouteProvidesGuWeakMixingAngleSource": false,
+  "dispersiveRouteProvidesGuGaugeCouplingNormalization": false,
+  "dispersiveRouteProvidesObservedPhotonWzHiggsProjectionRows": false,
+  "dispersiveRouteProvidesGuObservedFieldExtractionContract": false,
+  "dispersiveRouteProvidesGuHiggsScalarSourceOperator": false,
+  "dispersiveRouteProvidesObservedHiggsMassFromGu": false,
+  "dispersiveRouteProvidesGeVUnitNormalization": false,
+  "dispersiveRoutePromotesObservedFieldExtraction": false,
+  "dispersiveRoutePromotesWzMasses": false,
+  "dispersiveRoutePromotesHiggsMass": false,
+  "dispersiveRouteCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "sourceRows": [
+    {
+      "SourceId": "doi-10.1103-physrevd-108-054020-dispersive-electroweak-masses",
+      "Url": "https://doi.org/10.1103/PhysRevD.108.054020",
+      "FindingKind": "Dispersive determination of electroweak-scale masses",
+      "Summary": "Uses bottom scalar-current and vector-current dispersion relations with perturbative QCD input and m_b=4.43 GeV to report m_H=114 GeV, m_Z=90.8 GeV, and m_t=176 GeV.",
+      "PredictionImpact": "Direct electroweak-scale numerical lead, but it is external SM/QCD machinery, does not independently extract W, and the Higgs value is not the observed mass."
+    },
+    {
+      "SourceId": "arxiv-2304-05921-dispersive-electroweak-masses",
+      "Url": "https://arxiv.org/abs/2304.05921",
+      "FindingKind": "Open arXiv record for the dispersive electroweak-scale mass analysis",
+      "Summary": "Records that the Z solution exists only when Z and W masses are proportionate and that the method uses a single bottom-mass input with at most 9 percent deviation.",
+      "PredictionImpact": "Useful source for the route\u0027s own boundary claims; still no GU source-lineage rows."
+    },
+    {
+      "SourceId": "arxiv-2211-13753-inverse-problem-foundation",
+      "Url": "https://arxiv.org/abs/2211.13753",
+      "FindingKind": "Inverse problem approach for dispersion relations",
+      "Summary": "States the mathematical inverse problem behind dispersion-relation reconstruction is ill-posed with unique but unstable solutions requiring regularization.",
+      "PredictionImpact": "Method boundary: this increases the need for a GU-local stability and source-lineage theorem before promotion."
+    }
+  ],
+  "checks": [
+    {
+      "CheckId": "dispersive-primary-sources-reviewed",
+      "Passed": true,
+      "Detail": "lead=True; reviewed=True; externalToGu=True; sourceRows=3"
+    },
+    {
+      "CheckId": "reported-electroweak-scale-mass-claims-captured",
+      "Passed": true,
+      "Detail": "higgs=114; z=90.8; top=176; mb=4.43; wProportionalOnly=True"
+    },
+    {
+      "CheckId": "route-is-external-sm-qcd-and-inverse-problem-boundary",
+      "Passed": true,
+      "Detail": "externalBottomMass=True; smQcd=True; currents=True; inverseProblem=True; illPosed=True"
+    },
+    {
+      "CheckId": "current-source-lineage-blockers-preserved",
+      "Passed": true,
+      "Detail": "phase201Promotable=False; existingEvidence=False; wzMissing=15; higgsMissing=14"
+    },
+    {
+      "CheckId": "observed-field-and-physical-mass-boundaries-preserved",
+      "Passed": true,
+      "Detail": "p260=True; poleFailurePersists=True; observedRequired=20; observedFilled=0; observedPromotable=False; p346=True; p346Completes=False"
+    },
+    {
+      "CheckId": "dispersive-route-requires-missing-gu-source-data",
+      "Passed": true,
+      "Detail": "guCorrelator=True; bottomSource=True; wSource=True; observed=True; scalarSource=True; gev=True"
+    },
+    {
+      "CheckId": "dispersive-route-does-not-fill-gu-contracts",
+      "Passed": true,
+      "Detail": "guWzTheorem=False; sourceRows=False; independentW=False; massScale=False; weakAngle=False; observed=False; scalar=False; promotesWz=False; promotesHiggs=False; completes=False"
+    },
+    {
+      "CheckId": "adjacent-sm-and-higgs-routes-remain-nonpromotional",
+      "Passed": true,
+      "Detail": "alphaPromotable=False; smPromotesWz=False; smPromotesHiggs=False; higgsUpsilonCompletes=False"
+    }
+  ],
+  "contractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionFilledRequiredFieldCount": 0
+  },
+  "relatedBlockingEvidence": {
+    "alphaRunningSourcePromotable": false,
+    "smMassMatrixPromotesWzMasses": false,
+    "smMassMatrixPromotesHiggsMass": false,
+    "higgsUpsilonRouteCompletesBosonPredictions": false,
+    "nielsenPoleMassGaugeIndependenceSourceAuditPassed": true,
+    "nielsenRouteCompletesBosonPredictions": false
+  },
+  "decision": "Do not promote W/Z or Higgs physical masses from the dispersive electroweak-scale mass route. It is a direct numerical external lead, but it imports the bottom-quark mass, Standard Model/QCD current correlators, perturbative inputs, and a regularized inverse-problem solution; reports m_H=114 GeV rather than the observed Higgs mass; gives Z but not an independent W source row; and supplies no GU-local observed-field extraction, source-lineage scale/coupling, Higgs scalar-source, or GeV-unit derivation.",
+  "nextRequiredArtifact": [
+    "A GU-local theorem deriving the relevant scalar/vector current correlators and dispersion relation from GU fields.",
+    "A target-independent GU source for the bottom-mass/current input or a replacement dimensionful source scale.",
+    "Independent observed W and Z source rows with photon/Z/W projection and target-comparison gates.",
+    "A GU Higgs scalar-source/operator and excitation relation that yields the observed Higgs pole before target comparison.",
+    "A stability theorem for any inverse-problem or regularized dispersive extraction used as prediction evidence."
+  ]
+}

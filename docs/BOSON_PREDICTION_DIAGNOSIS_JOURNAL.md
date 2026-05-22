@@ -7773,6 +7773,111 @@ lineage, or GeV units.
   - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
     `anySourceLineageCandidateFillsContract=false`.
 
+## 2026-05-22 - Phase347 Dispersive Electroweak-Scale Mass Source Audit
+
+### Context
+
+After the Nielsen/complex-pole audit captured the physical mass-extraction
+boundary, I checked a more directly numerical external lead: Hsiang-nan Li's
+dispersive determination of electroweak-scale masses. The paper claims Higgs,
+Z, and top mass estimates from dispersion relations using bottom-quark current
+correlators and a single bottom-mass input.
+
+### Sources Reviewed
+
+- `https://doi.org/10.1103/PhysRevD.108.054020`.
+- `https://arxiv.org/abs/2304.05921`.
+- `https://arxiv.org/abs/2211.13753`.
+
+### Action
+
+- Added
+  `studies/phase347_dispersive_electroweak_scale_mass_source_audit_001`.
+- Added `DISPERSIVE-ELECTROWEAK-SCALE-MASSES` to
+  `ExperimentReferences.md` with a detailed reference note under
+  `docs/Reference/ExperimentReferences/`.
+
+### Current Outcome
+
+Phase347 is designed to pass only as a negative source-lineage audit:
+
+- `dispersiveElectroweakScaleMassSourceAuditPassed=true` is expected only if
+  the route remains non-promotional.
+- The route records the paper's claims:
+  - `reportedBottomMassInputGeV=4.43`.
+  - `reportedHiggsMassGeV=114.0`.
+  - `reportedZMassGeV=90.8`.
+  - `reportedTopMassGeV=176.0`.
+  - `wMassOnlyConstrainedByProportionality=true`.
+- It also records the non-promotional blockers:
+  - `dispersiveRouteRequiresExternalBottomMass=true`.
+  - `dispersiveRouteRequiresSmQcdPerturbativeInput=true`.
+  - `dispersiveRouteRequiresChosenBottomScalarAndVectorCurrents=true`.
+  - `dispersiveRouteRequiresRegularizedInverseProblemSolution=true`.
+  - `dispersiveRouteProvidesSeparateWzSourceRows=false`.
+  - `dispersiveRouteProvidesIndependentWMassExtraction=false`.
+  - `dispersiveRouteProvidesGuObservedFieldExtractionContract=false`.
+  - `dispersiveRouteProvidesGuHiggsScalarSourceOperator=false`.
+  - `dispersiveRoutePromotesWzMasses=false`.
+  - `dispersiveRoutePromotesHiggsMass=false`.
+  - `dispersiveRouteCompletesBosonPredictions=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from the dispersive electroweak-scale mass
+route. It is a direct numerical lead, but it imports a bottom-quark mass,
+Standard Model/QCD current correlators, perturbative inputs, and regularized
+inverse-problem machinery; it reports a Higgs mass near 114 GeV rather than the
+observed Higgs mass; it provides a Z estimate but no independent W source row;
+and it does not derive GU-local observed-field extraction, source-lineage
+scale/coupling data, Higgs scalar-source lineage, or GeV-unit normalization.
+
+### Validation So Far
+
+- Targeted Phase347 run passed with:
+  - `dispersiveElectroweakScaleMassSourceAuditPassed=true`.
+  - `reportedHiggsMassGeV=114`.
+  - `reportedZMassGeV=90.8`.
+  - `wMassOnlyConstrainedByProportionality=true`.
+  - `dispersiveRoutePromotesWzMasses=false`.
+  - `dispersiveRoutePromotesHiggsMass=false`.
+  - `canFillPhase256ObservedFieldExtractionContract=false`.
+- P101 regenerated with Phase347 included and remained
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with Phase347 included and remained
+  `objectiveAchieved=false`, with `checklistPassedCount=140` and
+  `checklistFailedCount=3`.
+- Claim-integrity verifier passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns after adding Phase347 found no intake-ready artifacts:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `canPromoteHiggsQuarticSelfCouplingSource=false` and
+    `intakeReadyFindingCount=0`.
+  - P279 `technicolorWalkingElectroweakScaleSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P281 `geometricRefractiveUnificationSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P295 `intakeReadyObservedFieldExtractionCandidateCount=0` and
+    `anyObservedFieldExtractionCandidateFillsContract=false`.
+  - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
+    `anySourceLineageCandidateFillsContract=false`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed and still
+  ended with:
+  - `boson-objective-completion-audit-incomplete`.
+  - `objectiveAchieved=false`.
+  - `checklistPassedCount=140`.
+  - `checklistFailedCount=3`.
+  - `boson-claim-integrity-verified`.
+  - `sourceLineageMissing=true`.
+  - `wzMissingFieldCount=15`.
+  - `higgsMissingFieldCount=14`.
+  - `promotedPhysicalMassClaimCount=0`.
+- `dotnet test GeometricUnity.slnx` passed; the existing xUnit2013 warning in
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`
+  remains.
+
 ## 2026-05-22 - Phase340 BF/BFCG Topological Mass Source Audit
 
 ### Context

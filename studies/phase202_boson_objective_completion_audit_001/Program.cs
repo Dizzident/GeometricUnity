@@ -112,6 +112,7 @@ const string Phase343Path = "studies/phase343_stueckelberg_vector_mass_source_au
 const string Phase344Path = "studies/phase344_fms_gauge_invariant_spectrum_source_audit_001/output/fms_gauge_invariant_spectrum_source_audit_summary.json";
 const string Phase345Path = "studies/phase345_fradkin_shenker_complementarity_source_audit_001/output/fradkin_shenker_complementarity_source_audit_summary.json";
 const string Phase346Path = "studies/phase346_nielsen_pole_mass_gauge_independence_source_audit_001/output/nielsen_pole_mass_gauge_independence_source_audit_summary.json";
+const string Phase347Path = "studies/phase347_dispersive_electroweak_scale_mass_source_audit_001/output/dispersive_electroweak_scale_mass_source_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -257,6 +258,7 @@ using var phase343 = File.Exists(Phase343Path) ? JsonDocument.Parse(File.ReadAll
 using var phase344 = File.Exists(Phase344Path) ? JsonDocument.Parse(File.ReadAllText(Phase344Path)) : null;
 using var phase345 = File.Exists(Phase345Path) ? JsonDocument.Parse(File.ReadAllText(Phase345Path)) : null;
 using var phase346 = File.Exists(Phase346Path) ? JsonDocument.Parse(File.ReadAllText(Phase346Path)) : null;
+using var phase347 = File.Exists(Phase347Path) ? JsonDocument.Parse(File.ReadAllText(Phase347Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -2296,6 +2298,56 @@ var nielsenPoleMassGaugeIndependenceSourceAuditPassed = nielsenPoleMassGaugeInde
     && JsonInt(p346ContractImpact, "wzMissingFieldCount") == wzMissingFieldCount
     && JsonInt(p346ContractImpact, "higgsMissingFieldCount") == higgsMissingFieldCount
     && JsonInt(p346ContractImpact, "observedFieldExtractionFilledRequiredFieldCount") == 0;
+var dispersiveElectroweakScaleMassSourceAuditMaterialized = phase347 is not null;
+var dispersiveElectroweakScaleMassSourceAuditPassed = dispersiveElectroweakScaleMassSourceAuditMaterialized
+    && JsonBool(phase347!.RootElement, "dispersiveElectroweakScaleMassSourceAuditPassed") is true
+    && JsonBool(phase347.RootElement, "dispersiveElectroweakMassLeadPresent") is true
+    && JsonBool(phase347.RootElement, "dispersivePrimarySourcesReviewed") is true
+    && JsonBool(phase347.RootElement, "dispersiveRouteExternalToGu") is true
+    && JsonBool(phase347.RootElement, "scalarCurrentDispersionExtractsHiggsMass") is true
+    && JsonBool(phase347.RootElement, "vectorCurrentDispersionExtractsZMass") is true
+    && JsonBool(phase347.RootElement, "wMassOnlyConstrainedByProportionality") is true
+    && JsonBool(phase347.RootElement, "topMassExtractedFromFictitiousHeavyQuarkMixing") is true
+    && JsonBool(phase347.RootElement, "singleBottomMassInputUsed") is true
+    && JsonBool(phase347.RootElement, "inverseProblemFoundationWarnsIllPosedUnstable") is true
+    && JsonDouble(phase347.RootElement, "reportedBottomMassInputGeV") == 4.43
+    && JsonDouble(phase347.RootElement, "reportedHiggsMassGeV") == 114.0
+    && JsonDouble(phase347.RootElement, "reportedZMassGeV") == 90.8
+    && JsonDouble(phase347.RootElement, "reportedTopMassGeV") == 176.0
+    && JsonDouble(phase347.RootElement, "reportedMaxDeviationPercent") == 9.0
+    && JsonBool(phase347.RootElement, "dispersiveRouteRequiresExternalBottomMass") is true
+    && JsonBool(phase347.RootElement, "dispersiveRouteRequiresSmQcdPerturbativeInput") is true
+    && JsonBool(phase347.RootElement, "dispersiveRouteRequiresChosenBottomScalarAndVectorCurrents") is true
+    && JsonBool(phase347.RootElement, "dispersiveRouteRequiresRegularizedInverseProblemSolution") is true
+    && JsonBool(phase347.RootElement, "dispersiveRouteRequiresGuLocalDispersiveCorrelatorTheorem") is true
+    && JsonBool(phase347.RootElement, "dispersiveRouteRequiresGuBottomMassAndCurrentSource") is true
+    && JsonBool(phase347.RootElement, "dispersiveRouteRequiresGuIndependentWSourceRow") is true
+    && JsonBool(phase347.RootElement, "dispersiveRouteRequiresGuObservedFieldExtraction") is true
+    && JsonBool(phase347.RootElement, "dispersiveRouteRequiresGuHiggsScalarSourceOperator") is true
+    && JsonBool(phase347.RootElement, "dispersiveRouteRequiresGeVUnitNormalization") is true
+    && JsonBool(phase347.RootElement, "dispersiveRouteProvidesGuLocalWzTheorem") is false
+    && JsonBool(phase347.RootElement, "dispersiveRouteProvidesSeparateWzSourceRows") is false
+    && JsonBool(phase347.RootElement, "dispersiveRouteProvidesIndependentWMassExtraction") is false
+    && JsonBool(phase347.RootElement, "dispersiveRouteProvidesTargetIndependentVevOrMassScale") is false
+    && JsonBool(phase347.RootElement, "dispersiveRouteProvidesGuWeakMixingAngleSource") is false
+    && JsonBool(phase347.RootElement, "dispersiveRouteProvidesGuGaugeCouplingNormalization") is false
+    && JsonBool(phase347.RootElement, "dispersiveRouteProvidesObservedPhotonWzHiggsProjectionRows") is false
+    && JsonBool(phase347.RootElement, "dispersiveRouteProvidesGuObservedFieldExtractionContract") is false
+    && JsonBool(phase347.RootElement, "dispersiveRouteProvidesGuHiggsScalarSourceOperator") is false
+    && JsonBool(phase347.RootElement, "dispersiveRouteProvidesObservedHiggsMassFromGu") is false
+    && JsonBool(phase347.RootElement, "dispersiveRouteProvidesGeVUnitNormalization") is false
+    && JsonBool(phase347.RootElement, "dispersiveRoutePromotesObservedFieldExtraction") is false
+    && JsonBool(phase347.RootElement, "dispersiveRoutePromotesWzMasses") is false
+    && JsonBool(phase347.RootElement, "dispersiveRoutePromotesHiggsMass") is false
+    && JsonBool(phase347.RootElement, "dispersiveRouteCompletesBosonPredictions") is false
+    && JsonBool(phase347.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase347.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase347.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonInt(phase347.RootElement, "sourceRowCount") == 3
+    && phase347.RootElement.TryGetProperty("contractImpact", out var p347ContractImpact)
+    && JsonInt(p347ContractImpact, "wzMissingFieldCount") == wzMissingFieldCount
+    && JsonInt(p347ContractImpact, "higgsMissingFieldCount") == higgsMissingFieldCount
+    && JsonInt(p347ContractImpact, "observedFieldExtractionFilledRequiredFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -4040,6 +4092,14 @@ var checklist = new[]
             ? $"nielsenPoleMassGaugeIndependenceSourceAuditPassed={JsonBool(phase346!.RootElement, "nielsenPoleMassGaugeIndependenceSourceAuditPassed")}; leadPresent={JsonBool(phase346.RootElement, "nielsenPoleMassLeadPresent")}; externalToGu={JsonBool(phase346.RootElement, "nielsenRouteExternalToGu")}; nielsenIdentity={JsonBool(phase346.RootElement, "nielsenIdentitiesControlGaugeParameterDependence")}; complexPole={JsonBool(phase346.RootElement, "complexPoleGaugeIndependentForSmPhysicalFields")}; mixing={JsonBool(phase346.RootElement, "mixingAndCpViolationCoveredBySmNielsenIdentity")}; residues={JsonBool(phase346.RootElement, "poleResiduesAndPartialWidthsGaugeIndependentLead")}; complexMassScheme={JsonBool(phase346.RootElement, "complexMassSchemeUsesGaugeIndependentPoleRenormalization")}; pinchTechnique={JsonBool(phase346.RootElement, "pinchTechniqueResonantAmplitudeGaugeIndependentLead")}; requiresGuBrst={JsonBool(phase346.RootElement, "nielsenRouteRequiresGuBrstOrSlavnovTaylorControl")}; requiresPoleEquation={JsonBool(phase346.RootElement, "nielsenRouteRequiresGuPoleEquationAndResidueExtraction")}; providesGuLocalWzTheorem={JsonBool(phase346.RootElement, "nielsenRouteProvidesGuLocalWzTheorem")}; providesObservedContract={JsonBool(phase346.RootElement, "nielsenRouteProvidesGuObservedFieldExtractionContract")}; promotesObserved={JsonBool(phase346.RootElement, "nielsenRoutePromotesObservedFieldExtraction")}; promotesWz={JsonBool(phase346.RootElement, "nielsenRoutePromotesWzMasses")}; promotesHiggs={JsonBool(phase346.RootElement, "nielsenRoutePromotesHiggsMass")}; completesBosonPredictions={JsonBool(phase346.RootElement, "nielsenRouteCompletesBosonPredictions")}; canFillPhase256ObservedFieldExtractionContract={JsonBool(phase346.RootElement, "canFillPhase256ObservedFieldExtractionContract")}; decision={JsonString(phase346.RootElement, "decision")}"
             : "Phase346 artifact not materialized",
         Phase346Path),
+    new ObjectiveChecklistItem(
+        "dispersive-electroweak-scale-mass-source-audit-materialized",
+        "Audit whether Li-style dispersive electroweak-scale mass determination supplies a GU W/Z/H source law or only an external SM/QCD numerical lead.",
+        dispersiveElectroweakScaleMassSourceAuditPassed ? "passed" : "failed",
+        dispersiveElectroweakScaleMassSourceAuditMaterialized
+            ? $"dispersiveElectroweakScaleMassSourceAuditPassed={JsonBool(phase347!.RootElement, "dispersiveElectroweakScaleMassSourceAuditPassed")}; leadPresent={JsonBool(phase347.RootElement, "dispersiveElectroweakMassLeadPresent")}; externalToGu={JsonBool(phase347.RootElement, "dispersiveRouteExternalToGu")}; scalarCurrentHiggs={JsonBool(phase347.RootElement, "scalarCurrentDispersionExtractsHiggsMass")}; vectorCurrentZ={JsonBool(phase347.RootElement, "vectorCurrentDispersionExtractsZMass")}; wProportionalOnly={JsonBool(phase347.RootElement, "wMassOnlyConstrainedByProportionality")}; reportedHiggs={JsonDouble(phase347.RootElement, "reportedHiggsMassGeV")}; reportedZ={JsonDouble(phase347.RootElement, "reportedZMassGeV")}; externalBottomMass={JsonBool(phase347.RootElement, "dispersiveRouteRequiresExternalBottomMass")}; regularizedInverseProblem={JsonBool(phase347.RootElement, "dispersiveRouteRequiresRegularizedInverseProblemSolution")}; providesSeparateWzRows={JsonBool(phase347.RootElement, "dispersiveRouteProvidesSeparateWzSourceRows")}; independentW={JsonBool(phase347.RootElement, "dispersiveRouteProvidesIndependentWMassExtraction")}; providesObservedContract={JsonBool(phase347.RootElement, "dispersiveRouteProvidesGuObservedFieldExtractionContract")}; providesHiggsScalarSource={JsonBool(phase347.RootElement, "dispersiveRouteProvidesGuHiggsScalarSourceOperator")}; promotesWz={JsonBool(phase347.RootElement, "dispersiveRoutePromotesWzMasses")}; promotesHiggs={JsonBool(phase347.RootElement, "dispersiveRoutePromotesHiggsMass")}; completesBosonPredictions={JsonBool(phase347.RootElement, "dispersiveRouteCompletesBosonPredictions")}; canFillPhase256ObservedFieldExtractionContract={JsonBool(phase347.RootElement, "canFillPhase256ObservedFieldExtractionContract")}; decision={JsonString(phase347.RootElement, "decision")}"
+            : "Phase347 artifact not materialized",
+        Phase347Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
