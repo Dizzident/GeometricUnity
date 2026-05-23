@@ -1,0 +1,167 @@
+{
+  "phaseId": "phase353-gauge-higgs-unification-source-audit",
+  "terminalStatus": "gauge-higgs-unification-source-audit-geometric-hosotani-lead-not-gu-source",
+  "generatedAt": "2026-05-23T21:12:02.9848507+00:00",
+  "gaugeHiggsUnificationSourceAuditPassed": true,
+  "gaugeHiggsUnificationLeadPresent": true,
+  "gaugeHiggsUnificationPrimarySourcesReviewed": true,
+  "gaugeHiggsUnificationRouteExternalToGu": true,
+  "wMassGaugeHiggsUnificationPrd": "https://doi.org/10.1103/PhysRevD.108.115036",
+  "warpedGaugeHiggsHiggsMassDoi": "https://doi.org/10.1016/j.physletb.2005.04.039",
+  "gaugeHiggsGrandUnificationDoi": "https://doi.org/10.1093/ptep/ptv153",
+  "routeUsesHosotaniMechanism": true,
+  "routeHiggsAsExtraDimensionalGaugeComponent": true,
+  "routeUsesWilsonLineAharonovBohmPhase": true,
+  "routeUsesRandallSundrumWarpedSpace": true,
+  "routeUsesKaluzaKleinModes": true,
+  "routeCanGenerateEwsbDynamically": true,
+  "routeProvidesExternalWMassEvaluation": true,
+  "routeProvidesExternalHiggsMassRelation": true,
+  "routeProvidesGaugeHiggsGrandUnificationModel": true,
+  "latestWMassEvaluationUsesMuonDecayMatching": true,
+  "latestWMassEvaluationIncludesKkWExchange": true,
+  "latestWMassEvaluationIncludesAdSCurvatureEffects": true,
+  "latestMkkReferenceTeV": 13,
+  "latestThetaHMin": 0.085,
+  "latestThetaHMax": 0.11,
+  "latestWPredictedMinGeV": 80.381,
+  "latestWPredictedMaxGeV": 80.407,
+  "latestMkkScanMinTeV": 13,
+  "latestMkkScanMaxTeV": 20,
+  "latestSmWReferenceGeV": 80.354,
+  "latestSmWReferenceUncertaintyGeV": 0.007,
+  "latestCdfWReferenceGeV": 80.4335,
+  "latestCdfWReferenceUncertaintyGeV": 0.0094,
+  "warpedRelationTypicalKR": 12,
+  "warpedRelationThetaFractionMin": 0.2,
+  "warpedRelationThetaFractionMax": 0.4,
+  "warpedRelationMkkMinTeV": 1.7,
+  "warpedRelationMkkMaxTeV": 3.5,
+  "warpedRelationHiggsMinGeV": 140,
+  "warpedRelationHiggsMaxGeV": 280,
+  "warpedRelationHiggsBandContainsObserved125": false,
+  "routeRequiresExternalGaugeHiggsModel": true,
+  "routeRequiresSO5U1SU3OrSO11GaugeGroup": true,
+  "routeRequiresOrbifoldBoundaryConditions": true,
+  "routeRequiresBraneScalarOrBoundaryBreaking": true,
+  "routeRequiresKkMassScale": true,
+  "routeRequiresAdSCurvatureAndRadius": true,
+  "routeRequiresWilsonLinePhase": true,
+  "routeRequiresFermionBulkMatterAndKkSpectrum": true,
+  "routeRequiresMuonDecayMatching": true,
+  "routeRequiresPrecisionFitAndColliderBounds": true,
+  "routeRequiresGuLocalExtraDimensionalGaugeMap": true,
+  "routeRequiresGuBoundaryOrbifoldLaw": true,
+  "routeRequiresGuWilsonLinePhaseSource": true,
+  "routeRequiresGuTargetIndependentKkScale": true,
+  "routeRequiresGuObservedFieldExtraction": true,
+  "routeRequiresGuHiggsAsGaugeComponentIdentification": true,
+  "routeRequiresGeVUnitNormalization": true,
+  "routeProvidesGuLocalExtraDimensionalGaugeMap": false,
+  "routeProvidesGuBoundaryOrbifoldLaw": false,
+  "routeProvidesGuWilsonLinePhaseSource": false,
+  "routeProvidesGuTargetIndependentKkScale": false,
+  "routeProvidesGuMuonDecayMatching": false,
+  "routeProvidesGuWzSourceRows": false,
+  "routeProvidesGuObservedFieldExtraction": false,
+  "routeProvidesGuHiggsScalarSourceOperator": false,
+  "routeProvidesGuHiggsPotentialOrMassiveProfile": false,
+  "routeProvidesGeVUnitNormalization": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "sourceRows": [
+    {
+      "SourceId": "arxiv-2310.03276-w-mass-gauge-higgs-unification",
+      "Url": "https://arxiv.org/abs/2310.03276",
+      "FindingKind": "W mass in SO(5) x U(1) x SU(3) gauge-Higgs unification",
+      "Summary": "Evaluates the W mass in RS gauge-Higgs unification using muon-decay matching with zero-mode and KK W exchange, AdS curvature effects, and a constrained Wilson-line phase range.",
+      "PredictionImpact": "Direct geometric W-mass lead, but it depends on an external gauge-Higgs model, KK scale, Wilson-line phase, bulk spectrum, and precision matching."
+    },
+    {
+      "SourceId": "arxiv-hep-ph-0503020-warped-dynamical-gauge-higgs",
+      "Url": "https://arxiv.org/abs/hep-ph/0503020",
+      "FindingKind": "Dynamical gauge-Higgs unification Higgs/W/KK relations",
+      "Summary": "Derives relations among W mass, KK scale, and Higgs mass in warped spacetime using the Hosotani mechanism; typical parameters give a 140-280 GeV Higgs band.",
+      "PredictionImpact": "Serious Higgs-as-gauge-geometry lead, but the numerical Higgs band misses 125 GeV and depends on external kR and Wilson-line phase inputs."
+    },
+    {
+      "SourceId": "arxiv-1504.03817-gauge-higgs-grand-unification",
+      "Url": "https://arxiv.org/abs/1504.03817",
+      "FindingKind": "SO(11) gauge-Higgs grand unification model",
+      "Summary": "Uses orbifold boundary conditions and a brane scalar to reduce SO(11) to Standard Model symmetry, then breaks to SU(3)C x U(1)EM by the Hosotani mechanism.",
+      "PredictionImpact": "Model-building context for gauge-Higgs unification; no GU-local W/Z/H source-lineage artifact is supplied."
+    }
+  ],
+  "checks": [
+    {
+      "CheckId": "gauge-higgs-unification-primary-sources-reviewed",
+      "Passed": true,
+      "Detail": "lead=True; reviewed=True; externalToGu=True; sourceRows=3"
+    },
+    {
+      "CheckId": "gauge-higgs-route-is-direct-geometric-mass-generation-lead",
+      "Passed": true,
+      "Detail": "hosotani=True; higgsGaugeComponent=True; wilsonLine=True; rs=True; kkModes=True; dynamicEwsb=True; wMassEvaluation=True; higgsRelation=True"
+    },
+    {
+      "CheckId": "latest-w-mass-evaluation-parameter-dependence-captured",
+      "Passed": true,
+      "Detail": "muonDecay=True; kkW=True; ads=True; mkkRefTeV=13; thetaRange=0.085-0.11; wRange=80.381-80.407"
+    },
+    {
+      "CheckId": "warped-higgs-relation-not-current-observed-higgs-prediction",
+      "Passed": true,
+      "Detail": "kR=12; thetaFractionRange=0.2-0.4; mkkRangeTeV=1.7-3.5; higgsRangeGeV=140-280; contains125=False"
+    },
+    {
+      "CheckId": "external-model-inputs-required-before-promotion",
+      "Passed": true,
+      "Detail": "externalModel=True; gaugeGroup=True; orbifold=True; braneOrBoundary=True; kkScale=True; adsGeometry=True; wilsonPhase=True; spectrum=True; muonDecay=True; precision=True"
+    },
+    {
+      "CheckId": "adjacent-kk-twist-boundary-routes-remain-nonpromotional",
+      "Passed": true,
+      "Detail": "kkPassed=True; kkPromotesWz=False; kkPromotesHiggs=False; scherkPassed=True; scherkPromotesWz=False; scherkPromotesHiggs=False; higgslessPassed=True; higgslessPromotesWz=False; higgslessPromotesHiggs=False"
+    },
+    {
+      "CheckId": "gauge-higgs-route-does-not-fill-gu-contracts",
+      "Passed": true,
+      "Detail": "guExtraDimMap=False; guBoundary=False; guWilsonPhase=False; guKkScale=False; guMuonDecay=False; guWzRows=False; observed=False; higgsOperator=False; higgsProfile=False; gev=False; promotesWz=False; promotesHiggs=False; completes=False"
+    },
+    {
+      "CheckId": "phase201-phase256-contract-state-preserved",
+      "Passed": true,
+      "Detail": "phase201Promotable=False; existingEvidence=False; wzMissing=15; higgsMissing=14; observedFilled=0; observedPromotable=False"
+    }
+  ],
+  "adjacentRouteBoundary": {
+    "kkInternalSymmetryAuditPassed": true,
+    "kkRoutePromotesWzMasses": false,
+    "kkRoutePromotesHiggsMass": false,
+    "scherkSchwarzAuditPassed": true,
+    "scherkRoutePromotesWzMasses": false,
+    "scherkRoutePromotesHiggsMass": false,
+    "higgslessBoundaryAuditPassed": true,
+    "higgslessRoutePromotesWzMasses": false,
+    "higgslessRoutePromotesHiggsMass": false
+  },
+  "contractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionFilledRequiredFieldCount": 0
+  },
+  "decision": "Do not promote W/Z or Higgs masses from gauge-Higgs unification. It is a direct geometric Hosotani/Wilson-line mass-generation lead, but the audited sources depend on an external RS extra-dimensional model, boundary/orbifold choices, KK scale, Wilson-line phase, bulk spectrum, and precision matching; no GU-local map, phase source, KK-scale source, observed-field extraction, Higgs source, or GeV normalization is supplied.",
+  "nextRequiredArtifact": [
+    "A GU-local extra-dimensional or equivalent gauge-component map identifying the Higgs-as-gauge degree of freedom.",
+    "A target-independent GU source for the Wilson-line/Aharonov-Bohm phase and KK or warped scale.",
+    "A GU boundary/orbifold/brane-breaking law or replacement that selects the observed electroweak symmetry breaking pattern.",
+    "Observed photon/W/Z/H projection rows, pole extraction, and GeV normalization before any W/Z/H promotion."
+  ]
+}

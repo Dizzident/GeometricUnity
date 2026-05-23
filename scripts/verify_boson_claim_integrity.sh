@@ -122,6 +122,7 @@ const paths = {
   phase350: "studies/phase350_spin_charge_family_boson_source_audit_001/output/spin_charge_family_boson_source_audit_summary.json",
   phase351: "studies/phase351_weak_hypercharge_superselection_source_audit_001/output/weak_hypercharge_superselection_source_audit_summary.json",
   phase352: "studies/phase352_higgs_top_z_nnlo_matching_source_audit_001/output/higgs_top_z_nnlo_matching_source_audit_summary.json",
+  phase353: "studies/phase353_gauge_higgs_unification_source_audit_001/output/gauge_higgs_unification_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -315,6 +316,7 @@ const phase349 = requireFile(paths.phase349);
 const phase350 = requireFile(paths.phase350);
 const phase351 = requireFile(paths.phase351);
 const phase352 = requireFile(paths.phase352);
+const phase353 = requireFile(paths.phase353);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -2737,6 +2739,77 @@ if (sourceLineageMissing) {
   assert(phase352.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase352 W/Z missing-field count must match Phase213.");
   assert(phase352.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase352 Higgs missing-field count must match Phase213.");
   assert(phase352.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase352 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase353.gaugeHiggsUnificationSourceAuditPassed === true, "Phase353 gauge-Higgs unification source audit must pass while preserving non-promotional status.");
+  assert(phase353.gaugeHiggsUnificationLeadPresent === true, "Phase353 must record the gauge-Higgs unification lead.");
+  assert(phase353.gaugeHiggsUnificationPrimarySourcesReviewed === true, "Phase353 must record primary source review.");
+  assert(phase353.gaugeHiggsUnificationRouteExternalToGu === true, "Phase353 must classify the route as external to GU.");
+  assert(phase353.routeUsesHosotaniMechanism === true, "Phase353 must record Hosotani mechanism usage.");
+  assert(phase353.routeHiggsAsExtraDimensionalGaugeComponent === true, "Phase353 must record Higgs-as-gauge-component structure.");
+  assert(phase353.routeUsesWilsonLineAharonovBohmPhase === true, "Phase353 must record Wilson-line/Aharonov-Bohm phase usage.");
+  assert(phase353.routeUsesRandallSundrumWarpedSpace === true, "Phase353 must record warped-space model dependence.");
+  assert(phase353.routeUsesKaluzaKleinModes === true, "Phase353 must record KK mode dependence.");
+  assert(phase353.routeCanGenerateEwsbDynamically === true, "Phase353 must record dynamical EWSB capability.");
+  assert(phase353.routeProvidesExternalWMassEvaluation === true, "Phase353 must record the external W-mass evaluation.");
+  assert(phase353.routeProvidesExternalHiggsMassRelation === true, "Phase353 must record the external Higgs-mass relation.");
+  assert(phase353.routeProvidesGaugeHiggsGrandUnificationModel === true, "Phase353 must record gauge-Higgs grand-unification context.");
+  assert(phase353.latestWMassEvaluationUsesMuonDecayMatching === true, "Phase353 W-mass evaluation must record muon-decay matching.");
+  assert(phase353.latestWMassEvaluationIncludesKkWExchange === true, "Phase353 W-mass evaluation must record KK W exchange.");
+  assert(phase353.latestWMassEvaluationIncludesAdSCurvatureEffects === true, "Phase353 W-mass evaluation must record AdS curvature effects.");
+  assert(phase353.latestMkkReferenceTeV === 13, "Phase353 must preserve the 13 TeV reference KK scale.");
+  assert(phase353.latestThetaHMin === 0.085, "Phase353 must preserve the minimum Wilson-line phase.");
+  assert(phase353.latestThetaHMax === 0.11, "Phase353 must preserve the maximum Wilson-line phase.");
+  assert(phase353.latestWPredictedMinGeV === 80.381, "Phase353 must preserve the lower W prediction range.");
+  assert(phase353.latestWPredictedMaxGeV === 80.407, "Phase353 must preserve the upper W prediction range.");
+  assert(phase353.latestMkkScanMinTeV === 13, "Phase353 must preserve the lower KK scan scale.");
+  assert(phase353.latestMkkScanMaxTeV === 20, "Phase353 must preserve the upper KK scan scale.");
+  assert(phase353.warpedRelationTypicalKR === 12, "Phase353 must preserve the typical kR value.");
+  assert(phase353.warpedRelationThetaFractionMin === 0.2, "Phase353 must preserve the minimum warped theta fraction.");
+  assert(phase353.warpedRelationThetaFractionMax === 0.4, "Phase353 must preserve the maximum warped theta fraction.");
+  assert(phase353.warpedRelationMkkMinTeV === 1.7, "Phase353 must preserve the lower warped KK range.");
+  assert(phase353.warpedRelationMkkMaxTeV === 3.5, "Phase353 must preserve the upper warped KK range.");
+  assert(phase353.warpedRelationHiggsMinGeV === 140, "Phase353 must preserve the lower warped Higgs range.");
+  assert(phase353.warpedRelationHiggsMaxGeV === 280, "Phase353 must preserve the upper warped Higgs range.");
+  assert(phase353.warpedRelationHiggsBandContainsObserved125 === false, "Phase353 cannot treat the warped Higgs band as containing the observed 125 GeV value.");
+  assert(phase353.routeRequiresExternalGaugeHiggsModel === true, "Phase353 must require an external gauge-Higgs model.");
+  assert(phase353.routeRequiresSO5U1SU3OrSO11GaugeGroup === true, "Phase353 must require the external gauge group choice.");
+  assert(phase353.routeRequiresOrbifoldBoundaryConditions === true, "Phase353 must require orbifold boundary conditions.");
+  assert(phase353.routeRequiresBraneScalarOrBoundaryBreaking === true, "Phase353 must require brane scalar or boundary breaking.");
+  assert(phase353.routeRequiresKkMassScale === true, "Phase353 must require a KK mass scale.");
+  assert(phase353.routeRequiresAdSCurvatureAndRadius === true, "Phase353 must require AdS curvature/radius.");
+  assert(phase353.routeRequiresWilsonLinePhase === true, "Phase353 must require a Wilson-line phase.");
+  assert(phase353.routeRequiresFermionBulkMatterAndKkSpectrum === true, "Phase353 must require the fermion bulk matter and KK spectrum.");
+  assert(phase353.routeRequiresMuonDecayMatching === true, "Phase353 must require muon-decay matching.");
+  assert(phase353.routeRequiresPrecisionFitAndColliderBounds === true, "Phase353 must require precision/collider constraints.");
+  assert(phase353.routeRequiresGuLocalExtraDimensionalGaugeMap === true, "Phase353 must require a GU-local extra-dimensional gauge map.");
+  assert(phase353.routeRequiresGuBoundaryOrbifoldLaw === true, "Phase353 must require a GU boundary/orbifold law.");
+  assert(phase353.routeRequiresGuWilsonLinePhaseSource === true, "Phase353 must require a GU Wilson-line phase source.");
+  assert(phase353.routeRequiresGuTargetIndependentKkScale === true, "Phase353 must require a GU target-independent KK scale.");
+  assert(phase353.routeRequiresGuObservedFieldExtraction === true, "Phase353 must require GU observed-field extraction.");
+  assert(phase353.routeRequiresGuHiggsAsGaugeComponentIdentification === true, "Phase353 must require GU Higgs-as-gauge-component identification.");
+  assert(phase353.routeRequiresGeVUnitNormalization === true, "Phase353 must require GeV normalization.");
+  assert(phase353.routeProvidesGuLocalExtraDimensionalGaugeMap === false, "Phase353 cannot claim a GU-local extra-dimensional gauge map.");
+  assert(phase353.routeProvidesGuBoundaryOrbifoldLaw === false, "Phase353 cannot claim a GU boundary/orbifold law.");
+  assert(phase353.routeProvidesGuWilsonLinePhaseSource === false, "Phase353 cannot claim a GU Wilson-line phase source.");
+  assert(phase353.routeProvidesGuTargetIndependentKkScale === false, "Phase353 cannot claim a GU target-independent KK scale.");
+  assert(phase353.routeProvidesGuMuonDecayMatching === false, "Phase353 cannot claim GU muon-decay matching.");
+  assert(phase353.routeProvidesGuWzSourceRows === false, "Phase353 cannot claim GU W/Z source rows.");
+  assert(phase353.routeProvidesGuObservedFieldExtraction === false, "Phase353 cannot claim GU observed-field extraction.");
+  assert(phase353.routeProvidesGuHiggsScalarSourceOperator === false, "Phase353 cannot claim a GU Higgs scalar-source operator.");
+  assert(phase353.routeProvidesGuHiggsPotentialOrMassiveProfile === false, "Phase353 cannot claim GU Higgs potential or massive profile source.");
+  assert(phase353.routeProvidesGeVUnitNormalization === false, "Phase353 cannot claim GeV normalization.");
+  assert(phase353.routePromotesWzMasses === false, "Phase353 cannot promote W/Z masses.");
+  assert(phase353.routePromotesHiggsMass === false, "Phase353 cannot promote Higgs mass.");
+  assert(phase353.routeCompletesBosonPredictions === false, "Phase353 cannot complete boson predictions.");
+  assert(phase353.canFillPhase201WzContract === false, "Phase353 cannot fill the Phase201 W/Z contract.");
+  assert(phase353.canFillPhase201HiggsContract === false, "Phase353 cannot fill the Phase201 Higgs contract.");
+  assert(phase353.canFillPhase256ObservedFieldExtractionContract === false, "Phase353 cannot fill the Phase256 observed-field extraction contract.");
+  assert(phase353.sourceRowCount === 3, "Phase353 must preserve three source rows.");
+  assert(phase353.contractImpact?.canFillPhase201WzContract === false, "Phase353 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase353.contractImpact?.canFillPhase201HiggsContract === false, "Phase353 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase353.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase353 contract impact must keep Phase256 unfilled.");
+  assert(phase353.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase353 W/Z missing-field count must match Phase213.");
+  assert(phase353.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase353 Higgs missing-field count must match Phase213.");
+  assert(phase353.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase353 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");
