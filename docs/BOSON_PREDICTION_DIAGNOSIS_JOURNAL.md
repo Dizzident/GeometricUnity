@@ -11607,6 +11607,113 @@ an absolute GeV scale, or unit normalization.
   `xUnit2013` collection-size warning in
   `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
 
+## 2026-05-23 - Phase356 Eguchi-Hanson Substandard Higgs Source Audit
+
+### Context
+
+The next distinct geometric Higgs lead was the Eguchi-Hanson "Substandard
+Theory" paper. It is relevant because it ties an electroweak-like `U(2)` sector
+to the Eguchi-Hanson metric and reports an explicit Higgs relation.
+
+This entry also confirms the reference-tracking workflow requested during this
+diagnosis: `ExperimentReferences.md` is the top-level index, and each indexed
+source links to a detailed note under
+`docs/Reference/ExperimentReferences/`.
+
+### Sources Reviewed
+
+- `https://arxiv.org/abs/hep-th/0702177`.
+- `https://doi.org/10.48550/arXiv.hep-th/0702177`.
+
+### Action
+
+- Added
+  `studies/phase356_eguchi_hanson_substandard_higgs_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P356.md`.
+- Wired Phase356 into the generator, P101 package, P202 objective completion
+  audit, and claim-integrity verifier.
+- Added Phase356 scanner exclusions so generated diagnostic text is not counted
+  as independent source evidence.
+- Added `EGUCHI-HANSON-SUBSTANDARD-HIGGS` to `ExperimentReferences.md` with a
+  detailed reference note under `docs/Reference/ExperimentReferences/`.
+
+### Current Expected Outcome
+
+Phase356 is expected to pass only as a negative boundary audit:
+
+- `eguchiHansonSubstandardHiggsSourceAuditPassed=true`.
+- `eguchiHansonSubstandardLeadPresent=true`.
+- `eguchiHansonSubstandardPrimarySourceReviewed=true`.
+- `eguchiHansonSubstandardRouteExternalToGu=true`.
+- `routeUsesEguchiHansonMetric=true`.
+- `routeProvidesGeometricAlgebraicU2Interpretation=true`.
+- `routeProvidesHiggsFromWAndWeakAngleFormula=true`.
+- `routeUsesObservedWMassInput=true`.
+- `routeUsesObservedWeinbergAngleInput=true`.
+- `routeDoesNotPredictWzAbsoluteMasses=true`.
+- `routeDoesNotPredictWeakMixingAngle=true`.
+- `routeDoesNotProvideObservedHiggsExtraction=true`.
+- `routeHiggsPredictionConflictsWithObserved125=true`.
+- `substandardPredictedHiggsMassGeV=115.3`.
+- `observedHiggsReferenceGeV=125.2`.
+- `absoluteHiggsShortfallGeV=9.9`.
+- `routeProvidesGuLocalEguchiHansonMap=false`.
+- `routeProvidesGuU2ToObservedElectroweakEmbedding=false`.
+- `routeProvidesGuWzSourceRows=false`.
+- `routeProvidesGuWeakMixingAngleSource=false`.
+- `routeProvidesGuObservedFieldExtraction=false`.
+- `routeProvidesGuHiggsScalarSourceOperator=false`.
+- `routeProvidesGuHiggsSelfCouplingSource=false`.
+- `routeProvidesTargetIndependentVevOrMassScale=false`.
+- `routeProvidesGeVUnitNormalization=false`.
+- `routePromotesWzMasses=false`.
+- `routePromotesHiggsMass=false`.
+- `routeCompletesBosonPredictions=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from the Eguchi-Hanson Substandard-Higgs
+route. It is a direct geometric relation lead, but it imports the observed W
+mass and weak angle, predicts about 115.3 GeV for the Higgs rather than the
+observed 125 GeV scale, excludes chromodynamics/quark-sector completion, and
+does not supply GU-local W/Z/H source rows, observed-field extraction,
+target-independent scale, Higgs scalar-source/self-coupling lineage, or GeV
+normalization.
+
+### Validation
+
+- Targeted Phase356 run passed with
+  `eguchiHansonSubstandardHiggsSourceAuditPassed=true`,
+  `routeUsesEguchiHansonMetric=true`,
+  `routeProvidesHiggsFromWAndWeakAngleFormula=true`,
+  `substandardPredictedHiggsMassGeV=115.3`,
+  `routeHiggsPredictionConflictsWithObserved125=true`,
+  `routePromotesWzMasses=false`, `routePromotesHiggsMass=false`, and
+  `canFillPhase201WzContract=false`.
+- P101 package build passed and includes the Phase356 audit block.
+- P202 objective audit passed as an incomplete objective:
+  `objectiveAchieved=false`, `checklistPassedCount=149`, and
+  `checklistFailedCount=3`.
+- Claim-integrity verification passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns preserved the negative intake boundary:
+  P204 `intakeReadyCandidateCount=0`,
+  P205 `intakeReadyFindingCount=0`,
+  P207 `intakeReadyFindingCount=0`,
+  P279 `localSearchMatchingFileCount=0`,
+  P281 `localSearchMatchingFileCount=0`,
+  P295 `intakeReadyObservedFieldExtractionCandidateCount=0`, and
+  P296 `intakeReadySourceLineageFieldCandidateCount=0`.
+- Full generator gate passed with Phase356 included and the final P202/claim
+  integrity gates still reporting `objectiveAchieved=false`,
+  `checklistPassedCount=149`, `checklistFailedCount=3`, and zero promoted
+  physical mass claims.
+- Reference link check passed with `detailLinkCount=37` and no missing details.
+- `dotnet test GeometricUnity.slnx` passed; the only warning was the existing
+  `xUnit2013` collection-size warning in
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
+
 ## 2026-05-23 - Phase355 Dirac-Lichnerowicz Yang-Mills-Higgs Source Audit
 
 ### Research Input

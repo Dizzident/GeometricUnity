@@ -125,6 +125,7 @@ const paths = {
   phase353: "studies/phase353_gauge_higgs_unification_source_audit_001/output/gauge_higgs_unification_source_audit_summary.json",
   phase354: "studies/phase354_multiplicative_higgs_lagrangian_source_audit_001/output/multiplicative_higgs_lagrangian_source_audit_summary.json",
   phase355: "studies/phase355_dirac_lichnerowicz_yang_mills_higgs_source_audit_001/output/dirac_lichnerowicz_yang_mills_higgs_source_audit_summary.json",
+  phase356: "studies/phase356_eguchi_hanson_substandard_higgs_source_audit_001/output/eguchi_hanson_substandard_higgs_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -321,6 +322,7 @@ const phase352 = requireFile(paths.phase352);
 const phase353 = requireFile(paths.phase353);
 const phase354 = requireFile(paths.phase354);
 const phase355 = requireFile(paths.phase355);
+const phase356 = requireFile(paths.phase356);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -2951,6 +2953,63 @@ if (sourceLineageMissing) {
   assert(phase355.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase355 W/Z missing-field count must match Phase213.");
   assert(phase355.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase355 Higgs missing-field count must match Phase213.");
   assert(phase355.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase355 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase356.eguchiHansonSubstandardHiggsSourceAuditPassed === true, "Phase356 Eguchi-Hanson Substandard Higgs source audit must pass while preserving non-promotional status.");
+  assert(phase356.eguchiHansonSubstandardLeadPresent === true, "Phase356 must record the Eguchi-Hanson Substandard Higgs lead.");
+  assert(phase356.eguchiHansonSubstandardPrimarySourceReviewed === true, "Phase356 must record primary source review.");
+  assert(phase356.eguchiHansonSubstandardRouteExternalToGu === true, "Phase356 must classify the route as external to GU.");
+  assert(phase356.routeUsesEguchiHansonMetric === true, "Phase356 must record Eguchi-Hanson metric usage.");
+  assert(phase356.routeProvidesGeometricAlgebraicU2Interpretation === true, "Phase356 must record the U(2) geometric/algebraic interpretation.");
+  assert(phase356.routeScopeLeptonsElectroweakBosonsAndHiggs === true, "Phase356 must record the leptonic electroweak/Higgs scope.");
+  assert(phase356.routeExcludesChromodynamicsOfQuarks === true, "Phase356 must record the excluded QCD/quark sector.");
+  assert(phase356.routeProvidesHiggsFromWAndWeakAngleFormula === true, "Phase356 must record the Higgs-from-W-and-weak-angle formula.");
+  assert(phase356.routeUsesObservedWMassInput === true, "Phase356 must record W-mass input usage.");
+  assert(phase356.routeUsesObservedWeinbergAngleInput === true, "Phase356 must record weak-angle input usage.");
+  assert(phase356.routeDoesNotPredictWzAbsoluteMasses === true, "Phase356 must record that W/Z absolute masses are not predicted.");
+  assert(phase356.routeDoesNotPredictWeakMixingAngle === true, "Phase356 must record that the weak angle is not predicted.");
+  assert(phase356.routeDoesNotProvideObservedHiggsExtraction === true, "Phase356 must record missing observed Higgs extraction.");
+  assert(phase356.routeHiggsPredictionConflictsWithObserved125 === true, "Phase356 must record conflict with the observed 125 GeV Higgs scale.");
+  assert(phase356.substandardHiggsLatestArxivVersion === 1, "Phase356 must preserve arXiv v1 source version.");
+  assert(phase356.substandardHiggsLatestRevisionYear === 2007, "Phase356 must preserve the 2007 source year.");
+  assert(phase356.substandardPredictedHiggsMassGeV === 115.3, "Phase356 must preserve the 115.3 GeV Higgs estimate.");
+  assert(phase356.absoluteHiggsShortfallGeV > 9, "Phase356 must preserve the observed-Higgs shortfall.");
+  assert(phase356.routeRequiresExternalSubstandardModel === true, "Phase356 must require the external Substandard model.");
+  assert(phase356.routeRequiresExternalU2GeometricInterpretation === true, "Phase356 must require the external U(2) geometric interpretation.");
+  assert(phase356.routeRequiresObservedWMass === true, "Phase356 must require observed W mass input.");
+  assert(phase356.routeRequiresObservedWeakMixingAngle === true, "Phase356 must require observed weak-angle input.");
+  assert(phase356.routeRequiresElectroweakInputNormalization === true, "Phase356 must require electroweak input normalization.");
+  assert(phase356.routeRequiresObservedMassComparison === true, "Phase356 must require observed mass comparison.");
+  assert(phase356.routeRequiresExtensionBeyondLeptonicElectroweakSector === true, "Phase356 must require extension beyond the leptonic electroweak sector.");
+  assert(phase356.routeRequiresGuLocalEguchiHansonMap === true, "Phase356 must require a GU-local Eguchi-Hanson map.");
+  assert(phase356.routeRequiresGuU2ToObservedElectroweakEmbedding === true, "Phase356 must require a GU U(2)-to-observed-electroweak embedding.");
+  assert(phase356.routeRequiresGuWzSourceRows === true, "Phase356 must require GU W/Z source rows.");
+  assert(phase356.routeRequiresGuWeakMixingAngleSource === true, "Phase356 must require a GU weak-angle source.");
+  assert(phase356.routeRequiresGuObservedFieldExtraction === true, "Phase356 must require GU observed-field extraction.");
+  assert(phase356.routeRequiresGuHiggsScalarSourceOperator === true, "Phase356 must require a GU Higgs scalar-source operator.");
+  assert(phase356.routeRequiresGuHiggsSelfCouplingSource === true, "Phase356 must require a GU Higgs self-coupling source.");
+  assert(phase356.routeRequiresTargetIndependentVevOrMassScale === true, "Phase356 must require a target-independent scale.");
+  assert(phase356.routeRequiresGeVUnitNormalization === true, "Phase356 must require GeV normalization.");
+  assert(phase356.routeProvidesGuLocalEguchiHansonMap === false, "Phase356 cannot claim a GU-local Eguchi-Hanson map.");
+  assert(phase356.routeProvidesGuU2ToObservedElectroweakEmbedding === false, "Phase356 cannot claim a GU electroweak embedding.");
+  assert(phase356.routeProvidesGuWzSourceRows === false, "Phase356 cannot claim GU W/Z source rows.");
+  assert(phase356.routeProvidesGuWeakMixingAngleSource === false, "Phase356 cannot claim a GU weak-angle source.");
+  assert(phase356.routeProvidesGuObservedFieldExtraction === false, "Phase356 cannot claim GU observed-field extraction.");
+  assert(phase356.routeProvidesGuHiggsScalarSourceOperator === false, "Phase356 cannot claim a GU Higgs scalar-source operator.");
+  assert(phase356.routeProvidesGuHiggsSelfCouplingSource === false, "Phase356 cannot claim a GU Higgs self-coupling source.");
+  assert(phase356.routeProvidesTargetIndependentVevOrMassScale === false, "Phase356 cannot claim a target-independent scale.");
+  assert(phase356.routeProvidesGeVUnitNormalization === false, "Phase356 cannot claim GeV normalization.");
+  assert(phase356.routePromotesWzMasses === false, "Phase356 cannot promote W/Z masses.");
+  assert(phase356.routePromotesHiggsMass === false, "Phase356 cannot promote Higgs mass.");
+  assert(phase356.routeCompletesBosonPredictions === false, "Phase356 cannot complete boson predictions.");
+  assert(phase356.canFillPhase201WzContract === false, "Phase356 cannot fill the Phase201 W/Z contract.");
+  assert(phase356.canFillPhase201HiggsContract === false, "Phase356 cannot fill the Phase201 Higgs contract.");
+  assert(phase356.canFillPhase256ObservedFieldExtractionContract === false, "Phase356 cannot fill the Phase256 observed-field extraction contract.");
+  assert(phase356.sourceRowCount === 1, "Phase356 must preserve one source row.");
+  assert(phase356.contractImpact?.canFillPhase201WzContract === false, "Phase356 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase356.contractImpact?.canFillPhase201HiggsContract === false, "Phase356 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase356.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase356 contract impact must keep Phase256 unfilled.");
+  assert(phase356.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase356 W/Z missing-field count must match Phase213.");
+  assert(phase356.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase356 Higgs missing-field count must match Phase213.");
+  assert(phase356.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase356 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");
