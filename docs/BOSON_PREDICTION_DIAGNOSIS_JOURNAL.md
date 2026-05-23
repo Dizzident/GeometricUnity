@@ -11607,6 +11607,103 @@ an absolute GeV scale, or unit normalization.
   `xUnit2013` collection-size warning in
   `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
 
+## Phase354 Multiplicative Higgs Lagrangian Source Audit
+
+### Research Input
+
+- Reviewed `https://arxiv.org/abs/2504.17296` and the HTML v4 source at
+  `https://arxiv.org/html/2504.17296v4`.
+- Reviewed the related nonstandard Higgs/neutrino source
+  `https://arxiv.org/abs/2312.16587`.
+- The new lead is an inverse-variational non-additive Higgs Lagrangian route.
+  It modifies Higgs mass/VEV terms, produces higher-dimensional Higgs
+  interactions, keeps the Standard Model Higgs sector in the large auxiliary
+  mass limit, and organizes charged fermion masses through finite scaling
+  factors.
+
+### Action
+
+- Added
+  `studies/phase354_multiplicative_higgs_lagrangian_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P354.md`.
+- Wired Phase354 into the generator, P101 package, P202 objective completion
+  audit, and claim-integrity verifier.
+- Added Phase354 scanner exclusions so generated diagnostic text is not counted
+  as independent source evidence.
+- Added `MULTIPLICATIVE-HIGGS-LAGRANGIAN` to `ExperimentReferences.md` with a
+  detailed reference note under `docs/Reference/ExperimentReferences/`.
+
+### Current Expected Outcome
+
+Phase354 is expected to pass only as a negative boundary audit:
+
+- `multiplicativeHiggsLagrangianSourceAuditPassed=true`.
+- `multiplicativeHiggsLagrangianLeadPresent=true`.
+- `multiplicativeHiggsLagrangianPrimarySourcesReviewed=true`.
+- `multiplicativeHiggsLagrangianRouteExternalToGu=true`.
+- `routeDerivedFromInverseProblemCalculusOfVariations=true`.
+- `routeUsesNonAdditiveMultiplicativeHiggsLagrangian=true`.
+- `routeIntroducesNoExtraDegreesOfFreedom=true`.
+- `routeEquivalentToStandardModelInLargeAuxiliaryMassLimit=true`.
+- `routeDynamicallyModifiesHiggsMassTermAndVev=true`.
+- `routeContainsTreeLevelWzMassRelations=true`.
+- `routeOrganizesFermionMassesByFiniteScalingFactors=true`.
+- `routeUsesObservedPoleMassInputsForFermionHierarchy=true`.
+- `routeProvidesGuLocalVariationalLagrangianMap=false`.
+- `routeProvidesGuAuxiliaryMassScaleSource=false`.
+- `routeProvidesGuScalingFactorSelectionLaw=false`.
+- `routeProvidesGuWzSourceRows=false`.
+- `routeProvidesGuObservedFieldExtraction=false`.
+- `routeProvidesGuHiggsScalarSourceOperator=false`.
+- `routeProvidesGuHiggsSelfCouplingSource=false`.
+- `routeProvidesTargetIndependentVevOrMassScale=false`.
+- `routeProvidesGeVUnitNormalization=false`.
+- `routePromotesWzMasses=false`.
+- `routePromotesHiggsMass=false`.
+- `routeCompletesBosonPredictions=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from the multiplicative Higgs Lagrangian
+route. It is a useful inverse-variational Higgs-sector and fermion-hierarchy
+lead, but it depends on an external nonstandard Higgs model, auxiliary mass
+scale, scaling-factor assignments, observed fermion pole masses, Standard Model
+gauge/Yukawa structure, and SMEFT matching. A promotion would need a GU-local
+variational map, auxiliary-scale source, scaling-factor selection law,
+observed-field extraction, Higgs source/self-coupling lineage, independent W/Z
+source rows, and GeV normalization.
+
+### Validation
+
+- Targeted Phase354 run passed with
+  `multiplicativeHiggsLagrangianSourceAuditPassed=true`,
+  `routeDerivedFromInverseProblemCalculusOfVariations=true`,
+  `routeContainsTreeLevelWzMassRelations=true`,
+  `routeUsesObservedPoleMassInputsForFermionHierarchy=true`,
+  `routePromotesWzMasses=false`, `routePromotesHiggsMass=false`, and
+  `canFillPhase201WzContract=false`.
+- P101 package build passed and includes the Phase354 audit block.
+- P202 objective audit passed as an incomplete objective:
+  `objectiveAchieved=false`, `checklistPassedCount=147`, and
+  `checklistFailedCount=3`.
+- Claim-integrity verification passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns preserved the negative intake boundary:
+  P204 `intakeReadyCandidateCount=0`,
+  P205 `intakeReadyFindingCount=0`,
+  P207 `intakeReadyFindingCount=0`,
+  P279 `localSearchMatchingFileCount=0`,
+  P281 `localSearchMatchingFileCount=0`,
+  P295 `intakeReadyObservedFieldExtractionCandidateCount=0`, and
+  P296 `intakeReadySourceLineageFieldCandidateCount=0`.
+- Full generator gate passed with Phase354 included and the final
+  claim-integrity verifier still reporting zero promoted physical mass claims.
+- Reference link check passed with `detailLinkCount=36` and no missing details.
+- `dotnet test GeometricUnity.slnx` passed; the only warning was the existing
+  `xUnit2013` collection-size warning in
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
+
 ## 2026-05-22 - Phase351 Weak-Hypercharge Superselection Source Audit
 
 ### Context

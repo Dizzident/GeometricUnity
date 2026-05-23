@@ -1,0 +1,144 @@
+{
+  "phaseId": "phase354-multiplicative-higgs-lagrangian-source-audit",
+  "terminalStatus": "multiplicative-higgs-lagrangian-source-audit-external-variational-higgs-lead-not-gu-source",
+  "generatedAt": "2026-05-23T21:51:31.2740567+00:00",
+  "multiplicativeHiggsLagrangianSourceAuditPassed": true,
+  "multiplicativeHiggsLagrangianLeadPresent": true,
+  "multiplicativeHiggsLagrangianPrimarySourcesReviewed": true,
+  "multiplicativeHiggsLagrangianRouteExternalToGu": true,
+  "multiplicativeHiggsLagrangianHtml": "https://arxiv.org/html/2504.17296v4",
+  "multiplicativeHiggsLagrangianDoi": "https://doi.org/10.48550/arXiv.2504.17296",
+  "nonstandardHiggsNeutrinoDoi": "https://doi.org/10.48550/arXiv.2312.16587",
+  "routeDerivedFromInverseProblemCalculusOfVariations": true,
+  "routeUsesNonAdditiveMultiplicativeHiggsLagrangian": true,
+  "routePreservesElectroweakGaugeStructure": true,
+  "routeIntroducesNoExtraDegreesOfFreedom": true,
+  "routeEquivalentToStandardModelInLargeAuxiliaryMassLimit": true,
+  "routeDynamicallyModifiesHiggsMassTermAndVev": true,
+  "routeInducesSmallHiggsVevAndMassRescalings": true,
+  "routeGeneratesDimension5And6Operators": true,
+  "routeUsesSmeftConstraintBoundary": true,
+  "routeConsistentOnlyInRestrictedParameterSpace": true,
+  "routeContainsTreeLevelWzMassRelations": true,
+  "routeOrganizesFermionMassesByFiniteScalingFactors": true,
+  "routeUsesObservedPoleMassInputsForFermionHierarchy": true,
+  "routePreservesTreeLevelStandardModelYukawaRelation": true,
+  "routeFindsYukawaConvergenceNearHiggsSelfCoupling": true,
+  "routeBackgroundDependentHiggsSelfInteractionsDecreaseAsymptotically": true,
+  "routeProvidesExternalHiggsSectorModificationLead": true,
+  "routeProvidesExternalFermionMassHierarchyLead": true,
+  "routeProvidesNeutrinoMassLeadFromNonstandardHiggsLagrangian": true,
+  "multiplicativeHiggsLatestArxivVersion": 4,
+  "multiplicativeHiggsLatestRevisionYear": 2025,
+  "nonstandardNeutrinoLatestArxivVersion": 3,
+  "nonstandardNeutrinoLatestRevisionYear": 2024,
+  "routeRequiresExternalMultiplicativeHiggsModel": true,
+  "routeRequiresAuxiliaryMassScaleM": true,
+  "routeRequiresEpsilonOrScalingFactorAssignment": true,
+  "routeRequiresObservedFermionPoleMassInputs": true,
+  "routeRequiresStandardModelGaugeAndYukawaStructure": true,
+  "routeRequiresSmeftWilsonCoefficientMatching": true,
+  "routeRequiresGuLocalVariationalLagrangianMap": true,
+  "routeRequiresGuAuxiliaryMassScaleSource": true,
+  "routeRequiresGuScalingFactorSelectionLaw": true,
+  "routeRequiresGuObservedFieldExtraction": true,
+  "routeRequiresGuHiggsScalarSourceOperator": true,
+  "routeRequiresGuHiggsSelfCouplingSource": true,
+  "routeRequiresGuWzSourceRows": true,
+  "routeRequiresTargetIndependentVevOrMassScale": true,
+  "routeRequiresGeVUnitNormalization": true,
+  "routeProvidesGuLocalVariationalLagrangianMap": false,
+  "routeProvidesGuAuxiliaryMassScaleSource": false,
+  "routeProvidesGuScalingFactorSelectionLaw": false,
+  "routeProvidesGuWzSourceRows": false,
+  "routeProvidesGuObservedFieldExtraction": false,
+  "routeProvidesGuHiggsScalarSourceOperator": false,
+  "routeProvidesGuHiggsSelfCouplingSource": false,
+  "routeProvidesTargetIndependentVevOrMassScale": false,
+  "routeProvidesGeVUnitNormalization": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "sourceRows": [
+    {
+      "SourceId": "arxiv-2504.17296-multiplicative-higgs-lagrangian",
+      "Url": "https://arxiv.org/abs/2504.17296",
+      "FindingKind": "Multiplicative Higgs Lagrangian from inverse variational problem",
+      "Summary": "Constructs an electroweak Higgs-sector modification using a non-additive multiplicative Lagrangian, finite scaling factors, SMEFT constraints, and observed charged-lepton/heavy-quark pole masses.",
+      "PredictionImpact": "Useful Higgs-sector and fermion-hierarchy lead, but it depends on an external model, auxiliary mass scale, scaling-factor choices, and observed pole-mass inputs."
+    },
+    {
+      "SourceId": "arxiv-2312.16587-nonstandard-higgs-neutrino-masses",
+      "Url": "https://arxiv.org/abs/2312.16587",
+      "FindingKind": "Nonstandard Higgs Lagrangian neutrino-mass mechanism",
+      "Summary": "Earlier nonstandard Higgs Lagrangian application to neutrino mass mechanisms with a TeV-scale dimensionful parameter in a minimal Standard Model extension.",
+      "PredictionImpact": "Related neutrino/Higgs hierarchy lead; it does not supply GU-local W/Z/H observed-field extraction or source-lineage rows."
+    }
+  ],
+  "checks": [
+    {
+      "CheckId": "multiplicative-higgs-primary-sources-reviewed",
+      "Passed": true,
+      "Detail": "lead=True; reviewed=True; externalToGu=True; sourceRows=2"
+    },
+    {
+      "CheckId": "inverse-variational-higgs-route-captured",
+      "Passed": true,
+      "Detail": "inverseProblem=True; multiplicative=True; ewGauge=True; noExtraDof=True; smLimit=True; modifiesMassVev=True; rescalings=True"
+    },
+    {
+      "CheckId": "higgs-phenomenology-and-fermion-hierarchy-facts-captured",
+      "Passed": true,
+      "Detail": "dim5dim6=True; smeft=True; restricted=True; wzRelations=True; finiteScales=True; poleInputs=True; treeYukawa=True; yukawaConvergence=True; asymptoticSelfInteractions=True"
+    },
+    {
+      "CheckId": "external-inputs-required-before-promotion",
+      "Passed": true,
+      "Detail": "externalModel=True; auxiliaryM=True; scalingFactors=True; poleInputs=True; smGaugeYukawa=True; smeftMatching=True"
+    },
+    {
+      "CheckId": "route-does-not-fill-gu-contracts",
+      "Passed": true,
+      "Detail": "guVariationalMap=False; guAuxiliaryM=False; guScalingLaw=False; guWzRows=False; observed=False; higgsOperator=False; higgsSelf=False; scale=False; gev=False; promotesWz=False; promotesHiggs=False; completes=False"
+    },
+    {
+      "CheckId": "adjacent-higgs-shortcuts-remain-nonpromotional",
+      "Passed": true,
+      "Detail": "topYukawaPromotes=False; topYukawaSource=False; criticalityPromotes=False; criticalityScalarSource=False; externalVevUsed=True; fermiPromotes=False; guVev=False; nnloPromotesWz=False; nnloPromotesHiggs=False"
+    },
+    {
+      "CheckId": "phase201-phase256-contract-state-preserved",
+      "Passed": true,
+      "Detail": "phase201Promotable=False; existingEvidence=False; wzMissing=15; higgsMissing=14; observedFilled=0; observedPromotable=False"
+    }
+  ],
+  "adjacentHiggsBoundary": {
+    "topYukawaUnityPromotesHiggsMass": false,
+    "topYukawaUnityProvidesGuYukawaSource": false,
+    "vacuumCriticalityPromotesHiggsMass": false,
+    "vacuumCriticalityProvidesGuScalarPotentialSource": false,
+    "externalVevUsed": true,
+    "fermiVevPromotesBosonPredictions": false,
+    "targetIndependentGuVevSourcePromotable": false,
+    "higgsTopZNnloPromotesWzMasses": false,
+    "higgsTopZNnloPromotesHiggsMass": false
+  },
+  "contractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionFilledRequiredFieldCount": 0
+  },
+  "decision": "Do not promote W/Z or Higgs physical masses from the multiplicative Higgs Lagrangian route. It is a useful inverse-variational Higgs-sector and fermion-hierarchy lead, but it depends on an external nonstandard Higgs model, an auxiliary mass scale, scaling-factor assignments, observed fermion pole masses, and SMEFT matching; no GU-local variational Lagrangian map, auxiliary-scale source, W/Z rows, Higgs scalar-source/self-coupling row, observed-field extraction, target-independent scale, or GeV normalization is supplied.",
+  "nextRequiredArtifact": [
+    "A GU-local map from the Shiab/observer-sector variational structure to the multiplicative Higgs Lagrangian, if this route is to be more than an external analogy.",
+    "A target-independent GU source for the auxiliary mass scale M and for the epsilon/scaling-factor selection law.",
+    "Observed photon/W/Z/H projection rows, Higgs scalar-source/self-coupling lineage, and physical pole extraction.",
+    "A GU-derived VEV or mass scale plus GeV unit normalization before any W/Z/H mass promotion."
+  ]
+}
