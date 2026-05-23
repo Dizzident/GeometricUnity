@@ -121,6 +121,7 @@ const paths = {
   phase349: "studies/phase349_spin_exchange_preon_boson_mass_source_audit_001/output/spin_exchange_preon_boson_mass_source_audit_summary.json",
   phase350: "studies/phase350_spin_charge_family_boson_source_audit_001/output/spin_charge_family_boson_source_audit_summary.json",
   phase351: "studies/phase351_weak_hypercharge_superselection_source_audit_001/output/weak_hypercharge_superselection_source_audit_summary.json",
+  phase352: "studies/phase352_higgs_top_z_nnlo_matching_source_audit_001/output/higgs_top_z_nnlo_matching_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -313,6 +314,7 @@ const phase348 = requireFile(paths.phase348);
 const phase349 = requireFile(paths.phase349);
 const phase350 = requireFile(paths.phase350);
 const phase351 = requireFile(paths.phase351);
+const phase352 = requireFile(paths.phase352);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -2694,6 +2696,47 @@ if (sourceLineageMissing) {
   assert(phase351.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase351 W/Z missing-field count must match Phase213.");
   assert(phase351.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase351 Higgs missing-field count must match Phase213.");
   assert(phase351.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase351 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase352.higgsTopZNnloMatchingSourceAuditPassed === true, "Phase352 Higgs-top-Z NNLO matching source audit must pass while preserving non-promotional status.");
+  assert(phase352.higgsTopZNnloLeadPresent === true, "Phase352 must record the Higgs-top-Z NNLO matching lead.");
+  assert(phase352.higgsTopZNnloPrimarySourceReviewed === true, "Phase352 must record primary source review.");
+  assert(phase352.higgsTopZNnloRouteExternalToGu === true, "Phase352 must classify the route as external to GU.");
+  assert(phase352.routeUpdatesPhase262EmpiricalRelation === true, "Phase352 must update the Phase262 empirical Higgs-top relation boundary.");
+  assert(phase352.routeUsesMeasuredTopMassCombination === true, "Phase352 must disclose measured top-mass input use.");
+  assert(phase352.routeUsesMeasuredZMass === true, "Phase352 must disclose measured Z-mass input use.");
+  assert(phase352.routeUsesMeasuredHiggsMassForRatioTest === true, "Phase352 must disclose measured Higgs-mass input use.");
+  assert(phase352.routeUsesMeasuredWMassForCompanionArithmeticRelation === true, "Phase352 must disclose measured W-mass input use.");
+  assert(phase352.routeIsPoleLevelCoincidence === true, "Phase352 must classify the pole-level relation as a coincidence lead.");
+  assert(phase352.routeProvidesPoleLevelGeometricRelation === true, "Phase352 must record the pole-level geometric relation claim.");
+  assert(phase352.routeProvidesRunningCouplingBoundaryTest === true, "Phase352 must record the NNLO running-coupling boundary test.");
+  assert(phase352.runningBoundaryRejectedByNnloMatching === true, "Phase352 must preserve that NNLO matching rejects the running boundary.");
+  assert(phase352.routeRequiresPoleThresholdSymmetryOrFiniteMatchingFactor === true, "Phase352 must require a pole-threshold or finite-matching source before promotion.");
+  assert(phase352.arithmeticRelationViableExactMassSumRule === false, "Phase352 cannot treat the arithmetic W/top companion relation as a viable exact sum rule.");
+  assert(phase352.runningBoundaryCompatibleWithMeasuredPoint === false, "Phase352 cannot treat the running boundary as compatible with the measured point.");
+  assert(phase352.poleLevelRhoZt === 1.00362, "Phase352 must preserve the pole-level rho_Zt ratio.");
+  assert(phase352.runningRhoZtAtTopScale === 0.96714, "Phase352 must preserve the NNLO running rho_Zt ratio.");
+  assert(phase352.requiredFiniteMatchingFactorKappa === 1.034, "Phase352 must preserve the required finite matching factor.");
+  assert(phase352.routeProvidesGuTopYukawaSource === false, "Phase352 cannot claim a GU top-Yukawa source.");
+  assert(phase352.routeProvidesGuZMassSource === false, "Phase352 cannot claim a GU Z-mass source.");
+  assert(phase352.routeProvidesGuHiggsScalarSourceOperator === false, "Phase352 cannot claim a GU Higgs scalar-source operator.");
+  assert(phase352.routeProvidesPotentialOrSelfCouplingSource === false, "Phase352 cannot claim a GU potential/self-coupling source.");
+  assert(phase352.routeProvidesObservedFieldExtraction === false, "Phase352 cannot claim observed-field extraction.");
+  assert(phase352.routeProvidesWzAbsoluteScale === false, "Phase352 cannot claim a W/Z absolute scale.");
+  assert(phase352.routeProvidesGuFiniteMatchingFactor === false, "Phase352 cannot claim a GU finite matching factor.");
+  assert(phase352.routeProvidesCustodialTopHiggsOrTrialityMechanism === false, "Phase352 cannot claim a GU custodial/top-Higgs/triality mechanism.");
+  assert(phase352.routeProvidesGeVUnitNormalization === false, "Phase352 cannot claim GeV normalization.");
+  assert(phase352.routePromotesWzMasses === false, "Phase352 cannot promote W/Z masses.");
+  assert(phase352.routePromotesHiggsMass === false, "Phase352 cannot promote Higgs mass.");
+  assert(phase352.routeCompletesBosonPredictions === false, "Phase352 cannot complete boson predictions.");
+  assert(phase352.canFillPhase201WzContract === false, "Phase352 cannot fill the Phase201 W/Z contract.");
+  assert(phase352.canFillPhase201HiggsContract === false, "Phase352 cannot fill the Phase201 Higgs contract.");
+  assert(phase352.canFillPhase256ObservedFieldExtractionContract === false, "Phase352 cannot fill the Phase256 observed-field extraction contract.");
+  assert(phase352.sourceRowCount === 3, "Phase352 must preserve three source rows.");
+  assert(phase352.contractImpact?.canFillPhase201WzContract === false, "Phase352 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase352.contractImpact?.canFillPhase201HiggsContract === false, "Phase352 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase352.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase352 contract impact must keep Phase256 unfilled.");
+  assert(phase352.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase352 W/Z missing-field count must match Phase213.");
+  assert(phase352.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase352 Higgs missing-field count must match Phase213.");
+  assert(phase352.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase352 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

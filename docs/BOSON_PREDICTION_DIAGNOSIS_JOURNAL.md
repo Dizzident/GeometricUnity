@@ -11801,3 +11801,98 @@ scalar-potential parameters, absolute GeV scale, or unit normalization.
 - `dotnet test GeometricUnity.slnx` passed; the only warning was the existing
   `xUnit2013` collection-size warning in
   `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
+
+## 2026-05-22 - Phase352 Higgs-Top-Z NNLO Matching Source Audit
+
+### Context
+
+After Phase351, the next non-duplicative lead found was the 2026 Higgs-top-Z
+NNLO matching update. It is relevant because it revisits the Phase262 empirical
+relation `M_H^2 ~= M_Z M_t` using updated electroweak inputs and the ATLAS-CMS
+top-mass combination, then tests whether the relation survives as a running
+coupling boundary.
+
+### Sources Reviewed
+
+- `https://arxiv.org/abs/2605.21721`.
+- `https://arxiv.org/pdf/2605.21721v1`.
+- `https://arxiv.org/abs/1209.0474`.
+- `https://doi.org/10.1140/epjc/s10052-014-2744-3`.
+
+### Action
+
+- Added `studies/phase352_higgs_top_z_nnlo_matching_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P352.md`.
+- Wired Phase352 into the generator, P101 package, P202 objective completion
+  audit, and claim-integrity verifier.
+- Added Phase352 scanner exclusions so generated diagnostic text is not counted
+  as independent source evidence.
+- Added `HIGGS-TOP-Z-NNLO-MATCHING` to `ExperimentReferences.md` with a
+  detailed reference note under `docs/Reference/ExperimentReferences/`.
+
+### Current Expected Outcome
+
+Phase352 is expected to pass only as a negative boundary audit:
+
+- `higgsTopZNnloMatchingSourceAuditPassed=true`.
+- `higgsTopZNnloLeadPresent=true`.
+- `higgsTopZNnloPrimarySourceReviewed=true`.
+- `higgsTopZNnloRouteExternalToGu=true`.
+- `routeUpdatesPhase262EmpiricalRelation=true`.
+- `routeUsesMeasuredTopMassCombination=true`.
+- `routeUsesMeasuredZMass=true`.
+- `routeUsesMeasuredHiggsMassForRatioTest=true`.
+- `routeUsesMeasuredWMassForCompanionArithmeticRelation=true`.
+- `routeIsPoleLevelCoincidence=true`.
+- `poleLevelRhoZt=1.00362`.
+- `poleLevelPredictedHiggsGeV=125.426`.
+- `poleLevelPredictedTopGeV=171.898`.
+- `runningRhoZtAtTopScale=0.96714`.
+- `runningBoundaryCompatibleWithMeasuredPoint=false`.
+- `requiredFiniteMatchingFactorKappa=1.034`.
+- `routeProvidesGuTopYukawaSource=false`.
+- `routeProvidesGuZMassSource=false`.
+- `routeProvidesGuHiggsScalarSourceOperator=false`.
+- `routeProvidesObservedFieldExtraction=false`.
+- `routeProvidesGuFiniteMatchingFactor=false`.
+- `routePromotesWzMasses=false`.
+- `routePromotesHiggsMass=false`.
+- `routeCompletesBosonPredictions=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs physical masses from the Higgs-top-Z NNLO matching
+route. It sharpens a current empirical relation, but it uses measured masses for
+the pole-level test and the running-coupling boundary fails. A promotion would
+need a GU-local top/Yukawa source, Z/W absolute mass source, Higgs scalar-source
+operator, observed-field extraction, GeV normalization, and finite
+matching-factor or pole-threshold mechanism independent of the target masses.
+
+### Validation
+
+- Targeted Phase352 run passed with
+  `higgsTopZNnloMatchingSourceAuditPassed=true`,
+  `runningBoundaryCompatibleWithMeasuredPoint=false`,
+  `routePromotesWzMasses=false`, `routePromotesHiggsMass=false`, and
+  `canFillPhase256ObservedFieldExtractionContract=false`.
+- P101 package build passed and includes the Phase352 audit block.
+- P202 objective audit passed as an incomplete objective:
+  `objectiveAchieved=false`, `checklistPassedCount=145`, and
+  `checklistFailedCount=3`.
+- Claim-integrity verification passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns preserved the negative intake boundary:
+  P204 `intakeReadyCandidateCount=0`,
+  P205 `intakeReadyFindingCount=0`,
+  P207 `intakeReadyFindingCount=0`,
+  P279 `localSearchMatchingFileCount=0`,
+  P281 `localSearchMatchingFileCount=0`,
+  P295 `intakeReadyObservedFieldExtractionCandidateCount=0`, and
+  P296 `intakeReadySourceLineageFieldCandidateCount=0`.
+- Full generator gate passed with Phase352 included and the final
+  claim-integrity verifier still reporting zero promoted physical mass claims.
+- Reference link check passed with `detailLinkCount=33` and no missing details.
+- `dotnet test GeometricUnity.slnx` passed; the only warning was the existing
+  `xUnit2013` collection-size warning in
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.

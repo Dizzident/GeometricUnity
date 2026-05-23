@@ -1,0 +1,136 @@
+{
+  "phaseId": "phase352-higgs-top-z-nnlo-matching-source-audit",
+  "terminalStatus": "higgs-top-z-nnlo-matching-source-audit-pole-coincidence-running-boundary-fails",
+  "generatedAt": "2026-05-23T20:31:45.126258+00:00",
+  "higgsTopZNnloMatchingSourceAuditPassed": true,
+  "higgsTopZNnloLeadPresent": true,
+  "higgsTopZNnloPrimarySourceReviewed": true,
+  "higgsTopZNnloRouteExternalToGu": true,
+  "higgsTopZNNLOPdf": "https://arxiv.org/pdf/2605.21721v1",
+  "routeUpdatesPhase262EmpiricalRelation": true,
+  "routeUsesMeasuredTopMassCombination": true,
+  "routeUsesMeasuredZMass": true,
+  "routeUsesMeasuredHiggsMassForRatioTest": true,
+  "routeUsesMeasuredWMassForCompanionArithmeticRelation": true,
+  "routeIsPoleLevelCoincidence": true,
+  "routeProvidesPoleLevelGeometricRelation": true,
+  "routeProvidesRunningCouplingBoundaryTest": true,
+  "runningBoundaryRejectedByNnloMatching": true,
+  "routeRequiresPoleThresholdSymmetryOrFiniteMatchingFactor": true,
+  "routeSuggestsCustodialTopHiggsOrTrialityLikeExtensions": true,
+  "poleLevelRhoZt": 1.00362,
+  "poleLevelRhoZtUncertainty": 0.00261,
+  "poleLevelPredictedHiggsGeV": 125.426,
+  "poleLevelPredictedHiggsUncertaintyGeV": 0.12,
+  "poleLevelPredictedTopGeV": 171.898,
+  "poleLevelPredictedTopUncertaintyGeV": 0.302,
+  "poleLevelRelationTestSigma": 1.4,
+  "arithmeticRhoWt": 1.00994,
+  "arithmeticRhoWtUncertainty": 0.00159,
+  "arithmeticRelationViableExactMassSumRule": false,
+  "runningRhoZtAtTopScale": 0.96714,
+  "runningRhoZtAtTopScaleUncertainty": 0.00361,
+  "runningBoundaryPredictedHiggsGeV": 123.19,
+  "runningBoundaryPredictedHiggsUncertaintyGeV": 0.2,
+  "runningBoundaryPredictedTopGeV": 177.81,
+  "runningBoundaryPredictedTopUncertaintyGeV": 0.5,
+  "runningBoundaryCompatibleWithMeasuredPoint": false,
+  "requiredFiniteMatchingFactorKappa": 1.034,
+  "requiredFiniteMatchingFactorKappaUncertainty": 0.0039,
+  "routeProvidesGuTopYukawaSource": false,
+  "routeProvidesGuZMassSource": false,
+  "routeProvidesGuHiggsScalarSourceOperator": false,
+  "routeProvidesPotentialOrSelfCouplingSource": false,
+  "routeProvidesObservedFieldExtraction": false,
+  "routeProvidesWzAbsoluteScale": false,
+  "routeProvidesGuFiniteMatchingFactor": false,
+  "routeProvidesCustodialTopHiggsOrTrialityMechanism": false,
+  "routeProvidesGeVUnitNormalization": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "sourceRows": [
+    {
+      "SourceId": "arxiv-2605.21721-higgs-top-z-nnlo-matching",
+      "Url": "https://arxiv.org/abs/2605.21721",
+      "FindingKind": "2026 NNLO matching update for Higgs-top-Z mass coincidence",
+      "Summary": "Rechecks M_H^2 ~= M_Z M_t with 2025 electroweak inputs and the ATLAS-CMS top-mass combination, finding a close pole-level ratio but an incompatible NNLO running-coupling boundary.",
+      "PredictionImpact": "Sharpens the Phase262 empirical relation boundary; no GU scalar source, W/Z source row, observed-field extraction, or matching-factor source is supplied."
+    },
+    {
+      "SourceId": "arxiv-1209.0474-original-higgs-top-coincidence",
+      "Url": "https://arxiv.org/abs/1209.0474",
+      "FindingKind": "Original Higgs-top mass coincidence framing",
+      "Summary": "Frames M_H^2 ~= M_Z M_t and 2 M_H ~= M_W \u002B M_t as coincidences requiring an underlying mechanism.",
+      "PredictionImpact": "Historical empirical lead only; no GU-local source-lineage contract is filled."
+    },
+    {
+      "SourceId": "epjc-2014-higgs-top-coincidence",
+      "Url": "https://doi.org/10.1140/epjc/s10052-014-2744-3",
+      "FindingKind": "Journal version of the Higgs-top coincidence relation",
+      "Summary": "Provides the earlier published context for the mass-coincidence relations audited in Phase262.",
+      "PredictionImpact": "Useful provenance; still an empirical relation without GU source-lineage artifacts."
+    }
+  ],
+  "checks": [
+    {
+      "CheckId": "higgs-top-z-nnlo-primary-source-reviewed",
+      "Passed": true,
+      "Detail": "lead=True; reviewed=True; externalToGu=True; sourceRows=3"
+    },
+    {
+      "CheckId": "phase262-empirical-relation-updated-not-overridden",
+      "Passed": true,
+      "Detail": "phase262Passed=True; phase262Promotes=False; phase262NumericallyClose=True; phase262GeometricMeanHiggsGeV=125.42628815364027; updatesPhase262=True"
+    },
+    {
+      "CheckId": "pole-level-relation-remains-coincidence-lead",
+      "Passed": true,
+      "Detail": "topInput=True; zInput=True; higgsInput=True; rhoZt=1.00362; predictedHiggs=125.426; predictedTop=171.898; sigma=1.4"
+    },
+    {
+      "CheckId": "arithmetic-and-running-boundaries-are-not-promotable",
+      "Passed": true,
+      "Detail": "wInput=True; rhoWt=1.00994; arithmeticViable=False; runningRho=0.96714; runningPredictedHiggs=123.19; runningCompatible=False"
+    },
+    {
+      "CheckId": "finite-matching-factor-requirement-captured",
+      "Passed": true,
+      "Detail": "requiresThresholdOrMatching=True; kappa=1.034; suggestsExtensions=True; guKappa=False; guMechanism=False"
+    },
+    {
+      "CheckId": "higgs-top-z-route-does-not-fill-gu-contracts",
+      "Passed": true,
+      "Detail": "topYukawa=False; zMass=False; higgsOperator=False; selfCoupling=False; observed=False; wzScale=False; gev=False; promotesWz=False; promotesHiggs=False; completes=False"
+    },
+    {
+      "CheckId": "phase201-phase256-contract-state-preserved",
+      "Passed": true,
+      "Detail": "phase201Promotable=False; existingEvidence=False; wzMissing=15; higgsMissing=14; observedFilled=0; observedPromotable=False"
+    }
+  ],
+  "phase262Boundary": {
+    "phase262AuditPassed": true,
+    "phase262PromotesHiggsMass": false,
+    "phase262RelationNumericallyClose": true,
+    "phase262GeometricMeanHiggsGeV": 125.42628815364027
+  },
+  "contractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionFilledRequiredFieldCount": 0
+  },
+  "decision": "Do not promote W/Z or Higgs physical masses from the Higgs-top-Z NNLO matching route. The latest source preserves a close pole-level mass coincidence, but it imports measured top, Z, W, and Higgs inputs for the test; the running-coupling boundary fails under NNLO matching and would require a finite threshold/matching factor or new custodial/top-Higgs/triality-like mechanism not supplied by current GU artifacts.",
+  "nextRequiredArtifact": [
+    "A GU-derived top/Yukawa source and Z/W absolute mass source if top-Z-Higgs relations are to become predictive rather than empirical.",
+    "A GU-local pole-threshold or finite-matching-factor derivation corresponding to kappa_th around 1.034, independent of target masses.",
+    "A solved Higgs scalar-source/operator and observed-field extraction contract before any Higgs mass promotion.",
+    "Independent W/Z source rows and GeV normalization if this route is to complete all boson predictions."
+  ]
+}
