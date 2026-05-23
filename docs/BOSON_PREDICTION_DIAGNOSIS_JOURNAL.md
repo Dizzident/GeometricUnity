@@ -11607,6 +11607,106 @@ an absolute GeV scale, or unit normalization.
   `xUnit2013` collection-size warning in
   `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
 
+## 2026-05-23 - Phase355 Dirac-Lichnerowicz Yang-Mills-Higgs Source Audit
+
+### Research Input
+
+- Reviewed `https://arxiv.org/abs/hep-th/9503153`.
+- Reviewed `https://arxiv.org/abs/hep-th/9503180`.
+- Reviewed `https://arxiv.org/abs/hep-th/9612149`.
+- Reviewed `https://arxiv.org/abs/math-ph/0503059`.
+- Reviewed `https://arxiv.org/abs/math-ph/0602028`.
+- The lead is a generalized Dirac/Lichnerowicz route: Clifford modules and
+  Dirac-type operators organize gravity/Yang-Mills/Higgs action structures,
+  a Dirac-Yukawa operator gives an action-level Standard Model bridge,
+  Dirac-type gauge theory offers a fermionic mass-operator symmetry-breaking
+  route, and one paper reports a historical Higgs estimate near 186 GeV.
+
+### Action
+
+- Added
+  `studies/phase355_dirac_lichnerowicz_yang_mills_higgs_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P355.md`.
+- Wired Phase355 into the generator, P101 package, P202 objective completion
+  audit, and claim-integrity verifier.
+- Added Phase355 scanner exclusions so generated diagnostic text is not counted
+  as independent source evidence.
+- Added `DIRAC-LICHNEROWICZ-YANG-MILLS-HIGGS` to `ExperimentReferences.md`
+  with a detailed reference note under
+  `docs/Reference/ExperimentReferences/`.
+
+### Current Expected Outcome
+
+Phase355 is expected to pass only as a negative boundary audit:
+
+- `diracLichnerowiczYangMillsHiggsSourceAuditPassed=true`.
+- `diracLichnerowiczLeadPresent=true`.
+- `diracLichnerowiczPrimarySourcesReviewed=true`.
+- `diracLichnerowiczRouteExternalToGu=true`.
+- `routeUsesGeneralizedLichnerowiczFormula=true`.
+- `routeUsesCliffordModulesAndDiracTypeOperators=true`.
+- `routeDerivesStandardModelActionFromSpecificDiracOperator=true`.
+- `routeUsesDiracYukawaOperator=true`.
+- `routeInterpretsHiggsGeometricallyAfterSpontaneousBreaking=true`.
+- `routeIncludesSpontaneousSymmetryBreakingWithoutHiggsPotential=true`.
+- `routeUsesFermionicMassOperator=true`.
+- `routeIntroducesPhysicalSubspaceProjection=true`.
+- `routeMakesExternalHiggsMassPrediction=true`.
+- `routeHiggsPredictionConflictsWithObserved125=true`.
+- `routeProvidesGuLocalDiracOperatorMap=false`.
+- `routeProvidesGuWzSourceRows=false`.
+- `routeProvidesGuObservedFieldExtraction=false`.
+- `routeProvidesGuHiggsScalarSourceOperator=false`.
+- `routeProvidesGuHiggsSelfCouplingSource=false`.
+- `routeProvidesTargetIndependentVevOrMassScale=false`.
+- `routeProvidesGeVUnitNormalization=false`.
+- `routePromotesWzMasses=false`.
+- `routePromotesHiggsMass=false`.
+- `routeCompletesBosonPredictions=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from the Dirac-Lichnerowicz/Yang-Mills-Higgs
+route. It is a serious generalized-Dirac geometric action lead, but it depends
+on external Clifford-module and Dirac-operator choices, Standard Model gauge
+representations, Yukawa and fermionic mass-operator inputs, normalization
+conventions, top-mass/loop approximations, electroweak matching, and observed
+comparison. A promotion would need a GU-local Dirac/Lichnerowicz map,
+observed-field extraction, W/Z source rows, Higgs scalar-source/self-coupling
+lineage, target-independent scale, and GeV normalization.
+
+### Validation
+
+- Targeted Phase355 run passed with
+  `diracLichnerowiczYangMillsHiggsSourceAuditPassed=true`,
+  `routeUsesGeneralizedLichnerowiczFormula=true`,
+  `routeDerivesStandardModelActionFromSpecificDiracOperator=true`,
+  `routeMakesExternalHiggsMassPrediction=true`,
+  `routeHiggsPredictionConflictsWithObserved125=true`,
+  `routePromotesWzMasses=false`, `routePromotesHiggsMass=false`, and
+  `canFillPhase201WzContract=false`.
+- P101 package build passed and includes the Phase355 audit block.
+- P202 objective audit passed as an incomplete objective:
+  `objectiveAchieved=false`, `checklistPassedCount=148`, and
+  `checklistFailedCount=3`.
+- Claim-integrity verification passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns preserved the negative intake boundary:
+  P204 `intakeReadyCandidateCount=0`,
+  P205 `intakeReadyFindingCount=0`,
+  P207 `intakeReadyFindingCount=0`,
+  P279 `localSearchMatchingFileCount=0`,
+  P281 `localSearchMatchingFileCount=0`,
+  P295 `intakeReadyObservedFieldExtractionCandidateCount=0`, and
+  P296 `intakeReadySourceLineageFieldCandidateCount=0`.
+- Full generator gate passed with Phase355 included and the final
+  claim-integrity verifier still reporting zero promoted physical mass claims.
+- Reference link check passed with `detailLinkCount=36` and no missing details.
+- `dotnet test GeometricUnity.slnx` passed; the only warning was the existing
+  `xUnit2013` collection-size warning in
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
+
 ## Phase354 Multiplicative Higgs Lagrangian Source Audit
 
 ### Research Input

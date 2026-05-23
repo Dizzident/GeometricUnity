@@ -124,6 +124,7 @@ const paths = {
   phase352: "studies/phase352_higgs_top_z_nnlo_matching_source_audit_001/output/higgs_top_z_nnlo_matching_source_audit_summary.json",
   phase353: "studies/phase353_gauge_higgs_unification_source_audit_001/output/gauge_higgs_unification_source_audit_summary.json",
   phase354: "studies/phase354_multiplicative_higgs_lagrangian_source_audit_001/output/multiplicative_higgs_lagrangian_source_audit_summary.json",
+  phase355: "studies/phase355_dirac_lichnerowicz_yang_mills_higgs_source_audit_001/output/dirac_lichnerowicz_yang_mills_higgs_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -319,6 +320,7 @@ const phase351 = requireFile(paths.phase351);
 const phase352 = requireFile(paths.phase352);
 const phase353 = requireFile(paths.phase353);
 const phase354 = requireFile(paths.phase354);
+const phase355 = requireFile(paths.phase355);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -2876,6 +2878,79 @@ if (sourceLineageMissing) {
   assert(phase354.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase354 W/Z missing-field count must match Phase213.");
   assert(phase354.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase354 Higgs missing-field count must match Phase213.");
   assert(phase354.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase354 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase355.diracLichnerowiczYangMillsHiggsSourceAuditPassed === true, "Phase355 Dirac-Lichnerowicz Yang-Mills-Higgs source audit must pass while preserving non-promotional status.");
+  assert(phase355.diracLichnerowiczLeadPresent === true, "Phase355 must record the Dirac-Lichnerowicz lead.");
+  assert(phase355.diracLichnerowiczPrimarySourcesReviewed === true, "Phase355 must record primary source review.");
+  assert(phase355.diracLichnerowiczRouteExternalToGu === true, "Phase355 must classify the route as external to GU.");
+  assert(phase355.routeDistinctFromSpectralAction === true, "Phase355 must distinguish the route from the spectral-action audit.");
+  assert(phase355.routeDistinctFromSu21Superconnection === true, "Phase355 must distinguish the route from the SU(2/1) superconnection audit.");
+  assert(phase355.routeUsesGeneralizedLichnerowiczFormula === true, "Phase355 must record generalized Lichnerowicz formula usage.");
+  assert(phase355.routeUsesCliffordModulesAndDiracTypeOperators === true, "Phase355 must record Clifford-module and Dirac-type-operator usage.");
+  assert(phase355.routeDerivesGravityAndYangMillsFromDiracOperators === true, "Phase355 must record gravity/Yang-Mills derivation from Dirac operators.");
+  assert(phase355.routeDerivesStandardModelActionFromSpecificDiracOperator === true, "Phase355 must record Standard Model action derivation from a specific Dirac operator.");
+  assert(phase355.routeUsesDiracYukawaOperator === true, "Phase355 must record Dirac-Yukawa operator usage.");
+  assert(phase355.routeUnifiesGravityYangMillsAndHiggsActionClassically === true, "Phase355 must record classical action unification.");
+  assert(phase355.routeInterpretsHiggsGeometricallyAfterSpontaneousBreaking === true, "Phase355 must record geometric Higgs interpretation.");
+  assert(phase355.routeIncludesSpontaneousSymmetryBreakingWithoutHiggsPotential === true, "Phase355 must record symmetry-breaking-without-Higgs-potential claim.");
+  assert(phase355.routeUsesFermionicMassOperator === true, "Phase355 must record fermionic mass operator usage.");
+  assert(phase355.routeIntroducesPhysicalSubspaceProjection === true, "Phase355 must record physical-subspace projection usage.");
+  assert(phase355.routeMakesExternalHiggsMassPrediction === true, "Phase355 must record the external Higgs mass prediction.");
+  assert(phase355.routeUsesOneLoopTopQuarkApproximation === true, "Phase355 must record one-loop/top approximation.");
+  assert(phase355.routeHiggsPredictionConflictsWithObserved125 === true, "Phase355 must record that the historical Higgs estimate conflicts with the observed 125 GeV scale.");
+  assert(phase355.generalizedLichnerowiczRevisionYear === 1995, "Phase355 must preserve generalized Lichnerowicz source year.");
+  assert(phase355.gravityYangMillsHiggsRevisionYear === 1995, "Phase355 must preserve gravity/Yang-Mills-Higgs source year.");
+  assert(phase355.diracYukawaLatestArxivVersion === 3, "Phase355 must preserve Dirac-Yukawa arXiv v3.");
+  assert(phase355.diracYukawaLatestRevisionYear === 1997, "Phase355 must preserve Dirac-Yukawa revision year.");
+  assert(phase355.gaugeTheoriesDiracTypeLatestArxivVersion === 3, "Phase355 must preserve Gauge Theories of Dirac Type arXiv v3.");
+  assert(phase355.gaugeTheoriesDiracTypeLatestRevisionYear === 2005, "Phase355 must preserve Gauge Theories of Dirac Type revision year.");
+  assert(phase355.diracTypeHiggsMassLatestArxivVersion === 3, "Phase355 must preserve Dirac Type Higgs Mass arXiv v3.");
+  assert(phase355.diracTypeHiggsMassLatestRevisionYear === 2006, "Phase355 must preserve Dirac Type Higgs Mass revision year.");
+  assert(phase355.diracTypeHiggsPredictionCentralGeV === 186, "Phase355 must preserve the 186 GeV historical Higgs estimate.");
+  assert(phase355.diracTypeHiggsPredictionUncertaintyGeV === 8, "Phase355 must preserve the 8 GeV historical Higgs uncertainty.");
+  assert(phase355.diracTypeHiggsPredictionTopMassInputGeV === 174, "Phase355 must preserve the 174 GeV top input.");
+  assert(phase355.routeRequiresExternalCliffordModule === true, "Phase355 must require the external Clifford module.");
+  assert(phase355.routeRequiresExternalDiracOperatorChoice === true, "Phase355 must require the external Dirac operator choice.");
+  assert(phase355.routeRequiresStandardModelGaugeGroupAndRepresentations === true, "Phase355 must require Standard Model gauge group and representation inputs.");
+  assert(phase355.routeRequiresYukawaAndFermionMassOperatorInput === true, "Phase355 must require Yukawa and fermion mass-operator inputs.");
+  assert(phase355.routeRequiresTraceWodzickiOrInnerProductNormalization === true, "Phase355 must require trace/Wodzicki/inner-product normalization.");
+  assert(phase355.routeRequiresPhysicalSubspaceProjectionChoice === true, "Phase355 must require a physical-subspace projection choice.");
+  assert(phase355.routeRequiresOneLoopTopMassInput === true, "Phase355 must require top-mass input.");
+  assert(phase355.routeRequiresRgOrEffectivePotentialApproximation === true, "Phase355 must require RG or effective-potential approximation.");
+  assert(phase355.routeRequiresElectroweakVevAndGaugeCouplingMatching === true, "Phase355 must require electroweak VEV and gauge-coupling matching.");
+  assert(phase355.routeRequiresObservedPoleMassComparison === true, "Phase355 must require observed pole-mass comparison.");
+  assert(phase355.routeRequiresGuLocalDiracOperatorMap === true, "Phase355 must require a GU-local Dirac operator map.");
+  assert(phase355.routeRequiresGuCliffordModuleBridge === true, "Phase355 must require a GU Clifford-module bridge.");
+  assert(phase355.routeRequiresGuFermionicMassOperatorSource === true, "Phase355 must require a GU fermionic mass-operator source.");
+  assert(phase355.routeRequiresGuPhysicalSubspaceProjection === true, "Phase355 must require a GU physical-subspace projection.");
+  assert(phase355.routeRequiresGuWzSourceRows === true, "Phase355 must require GU W/Z source rows.");
+  assert(phase355.routeRequiresGuObservedFieldExtraction === true, "Phase355 must require GU observed-field extraction.");
+  assert(phase355.routeRequiresGuHiggsScalarSourceOperator === true, "Phase355 must require a GU Higgs scalar-source operator.");
+  assert(phase355.routeRequiresGuHiggsSelfCouplingSource === true, "Phase355 must require a GU Higgs self-coupling source.");
+  assert(phase355.routeRequiresTargetIndependentVevOrMassScale === true, "Phase355 must require a target-independent scale.");
+  assert(phase355.routeRequiresGeVUnitNormalization === true, "Phase355 must require GeV normalization.");
+  assert(phase355.routeProvidesGuLocalDiracOperatorMap === false, "Phase355 cannot claim a GU-local Dirac operator map.");
+  assert(phase355.routeProvidesGuCliffordModuleBridge === false, "Phase355 cannot claim a GU Clifford-module bridge.");
+  assert(phase355.routeProvidesGuFermionicMassOperatorSource === false, "Phase355 cannot claim a GU fermionic mass-operator source.");
+  assert(phase355.routeProvidesGuPhysicalSubspaceProjection === false, "Phase355 cannot claim a GU physical-subspace projection.");
+  assert(phase355.routeProvidesGuWzSourceRows === false, "Phase355 cannot claim GU W/Z source rows.");
+  assert(phase355.routeProvidesGuObservedFieldExtraction === false, "Phase355 cannot claim GU observed-field extraction.");
+  assert(phase355.routeProvidesGuHiggsScalarSourceOperator === false, "Phase355 cannot claim a GU Higgs scalar-source operator.");
+  assert(phase355.routeProvidesGuHiggsSelfCouplingSource === false, "Phase355 cannot claim a GU Higgs self-coupling source.");
+  assert(phase355.routeProvidesTargetIndependentVevOrMassScale === false, "Phase355 cannot claim a target-independent scale.");
+  assert(phase355.routeProvidesGeVUnitNormalization === false, "Phase355 cannot claim GeV normalization.");
+  assert(phase355.routePromotesWzMasses === false, "Phase355 cannot promote W/Z masses.");
+  assert(phase355.routePromotesHiggsMass === false, "Phase355 cannot promote Higgs mass.");
+  assert(phase355.routeCompletesBosonPredictions === false, "Phase355 cannot complete boson predictions.");
+  assert(phase355.canFillPhase201WzContract === false, "Phase355 cannot fill the Phase201 W/Z contract.");
+  assert(phase355.canFillPhase201HiggsContract === false, "Phase355 cannot fill the Phase201 Higgs contract.");
+  assert(phase355.canFillPhase256ObservedFieldExtractionContract === false, "Phase355 cannot fill the Phase256 observed-field extraction contract.");
+  assert(phase355.sourceRowCount === 5, "Phase355 must preserve five source rows.");
+  assert(phase355.contractImpact?.canFillPhase201WzContract === false, "Phase355 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase355.contractImpact?.canFillPhase201HiggsContract === false, "Phase355 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase355.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase355 contract impact must keep Phase256 unfilled.");
+  assert(phase355.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase355 W/Z missing-field count must match Phase213.");
+  assert(phase355.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase355 Higgs missing-field count must match Phase213.");
+  assert(phase355.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase355 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

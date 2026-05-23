@@ -1,0 +1,176 @@
+{
+  "phaseId": "phase355-dirac-lichnerowicz-yang-mills-higgs-source-audit",
+  "terminalStatus": "dirac-lichnerowicz-yang-mills-higgs-source-audit-geometric-action-lead-not-gu-source",
+  "generatedAt": "2026-05-23T22:27:23.851879+00:00",
+  "diracLichnerowiczYangMillsHiggsSourceAuditPassed": true,
+  "diracLichnerowiczLeadPresent": true,
+  "diracLichnerowiczPrimarySourcesReviewed": true,
+  "diracLichnerowiczRouteExternalToGu": true,
+  "routeDistinctFromSpectralAction": true,
+  "routeDistinctFromSu21Superconnection": true,
+  "generalizedLichnerowiczDoi": "https://doi.org/10.48550/arXiv.hep-th/9503153",
+  "gravityYangMillsHiggsDoi": "https://doi.org/10.48550/arXiv.hep-th/9503180",
+  "diracYukawaOperatorDoi": "https://doi.org/10.48550/arXiv.hep-th/9612149",
+  "gaugeTheoriesDiracTypeDoi": "https://doi.org/10.48550/arXiv.math-ph/0503059",
+  "diracTypeHiggsMassDoi": "https://doi.org/10.48550/arXiv.math-ph/0602028",
+  "routeUsesGeneralizedLichnerowiczFormula": true,
+  "routeUsesCliffordModulesAndDiracTypeOperators": true,
+  "routeDerivesGravityAndYangMillsFromDiracOperators": true,
+  "routeDerivesStandardModelActionFromSpecificDiracOperator": true,
+  "routeUsesDiracYukawaOperator": true,
+  "routeUnifiesGravityYangMillsAndHiggsActionClassically": true,
+  "routeInterpretsHiggsGeometricallyAfterSpontaneousBreaking": true,
+  "routeIncludesSpontaneousSymmetryBreakingWithoutHiggsPotential": true,
+  "routeUsesFermionicMassOperator": true,
+  "routeIntroducesPhysicalSubspaceProjection": true,
+  "routeMakesExternalHiggsMassPrediction": true,
+  "routeUsesOneLoopTopQuarkApproximation": true,
+  "routeHiggsPredictionConflictsWithObserved125": true,
+  "generalizedLichnerowiczRevisionYear": 1995,
+  "gravityYangMillsHiggsRevisionYear": 1995,
+  "diracYukawaLatestArxivVersion": 3,
+  "diracYukawaLatestRevisionYear": 1997,
+  "gaugeTheoriesDiracTypeLatestArxivVersion": 3,
+  "gaugeTheoriesDiracTypeLatestRevisionYear": 2005,
+  "diracTypeHiggsMassLatestArxivVersion": 3,
+  "diracTypeHiggsMassLatestRevisionYear": 2006,
+  "diracTypeHiggsPredictionCentralGeV": 186,
+  "diracTypeHiggsPredictionUncertaintyGeV": 8,
+  "diracTypeHiggsPredictionTopMassInputGeV": 174,
+  "routeRequiresExternalCliffordModule": true,
+  "routeRequiresExternalDiracOperatorChoice": true,
+  "routeRequiresStandardModelGaugeGroupAndRepresentations": true,
+  "routeRequiresYukawaAndFermionMassOperatorInput": true,
+  "routeRequiresTraceWodzickiOrInnerProductNormalization": true,
+  "routeRequiresPhysicalSubspaceProjectionChoice": true,
+  "routeRequiresOneLoopTopMassInput": true,
+  "routeRequiresRgOrEffectivePotentialApproximation": true,
+  "routeRequiresElectroweakVevAndGaugeCouplingMatching": true,
+  "routeRequiresObservedPoleMassComparison": true,
+  "routeRequiresGuLocalDiracOperatorMap": true,
+  "routeRequiresGuCliffordModuleBridge": true,
+  "routeRequiresGuFermionicMassOperatorSource": true,
+  "routeRequiresGuPhysicalSubspaceProjection": true,
+  "routeRequiresGuWzSourceRows": true,
+  "routeRequiresGuObservedFieldExtraction": true,
+  "routeRequiresGuHiggsScalarSourceOperator": true,
+  "routeRequiresGuHiggsSelfCouplingSource": true,
+  "routeRequiresTargetIndependentVevOrMassScale": true,
+  "routeRequiresGeVUnitNormalization": true,
+  "routeProvidesGuLocalDiracOperatorMap": false,
+  "routeProvidesGuCliffordModuleBridge": false,
+  "routeProvidesGuFermionicMassOperatorSource": false,
+  "routeProvidesGuPhysicalSubspaceProjection": false,
+  "routeProvidesGuWzSourceRows": false,
+  "routeProvidesGuObservedFieldExtraction": false,
+  "routeProvidesGuHiggsScalarSourceOperator": false,
+  "routeProvidesGuHiggsSelfCouplingSource": false,
+  "routeProvidesTargetIndependentVevOrMassScale": false,
+  "routeProvidesGeVUnitNormalization": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "sourceRows": [
+    {
+      "SourceId": "arxiv-hep-th-9503153-generalized-lichnerowicz",
+      "Url": "https://arxiv.org/abs/hep-th/9503153",
+      "FindingKind": "Generalized Lichnerowicz formula",
+      "Summary": "Develops an intrinsic square-decomposition for Dirac operators on Clifford modules and connects simple Dirac operators with gravity/Yang-Mills action functionals.",
+      "PredictionImpact": "Strong geometric action-generation lead; no GU-local electroweak mass-eigenstate rows, VEV source, observed projection, or GeV normalization."
+    },
+    {
+      "SourceId": "arxiv-hep-th-9503180-dirac-operator-gravity-yang-mills-higgs",
+      "Url": "https://arxiv.org/abs/hep-th/9503180",
+      "FindingKind": "Gravity and Yang-Mills-Higgs action from a Dirac operator",
+      "Summary": "Shows how the Standard Model and gravity action functional can be derived from a specific Dirac operator structurally tied to Yukawa coupling.",
+      "PredictionImpact": "Relevant Dirac-operator unification lead, but it imports a chosen external operator and Standard Model/Yukawa data rather than GU source rows."
+    },
+    {
+      "SourceId": "arxiv-hep-th-9612149-dirac-yukawa-operator",
+      "Url": "https://arxiv.org/abs/hep-th/9612149",
+      "FindingKind": "Einstein-Hilbert-Yang-Mills-Higgs action and Dirac-Yukawa operator",
+      "Summary": "Describes the full Standard Model action in generalized Dirac-operator geometry and gives the Higgs sector a geometric interpretation after spontaneous breaking.",
+      "PredictionImpact": "Useful action-level bridge; it still requires external parameters and supplies no target-independent W/Z/H pole-mass extraction."
+    },
+    {
+      "SourceId": "arxiv-math-ph-0503059-gauge-theories-dirac-type",
+      "Url": "https://arxiv.org/abs/math-ph/0503059",
+      "FindingKind": "Gauge theories of Dirac type",
+      "Summary": "Frames gauge theories geometrically in terms of fermions, including spontaneous symmetry breaking without a Higgs potential, fermionic mass curvature interpretation, and a physical-subspace projection.",
+      "PredictionImpact": "Serious symmetry-breaking lead; no GU-native fermionic-mass operator, physical-subspace theorem, or observed boson projection rows are supplied."
+    },
+    {
+      "SourceId": "arxiv-math-ph-0602028-dirac-type-higgs-mass",
+      "Url": "https://arxiv.org/abs/math-ph/0602028",
+      "FindingKind": "Dirac type gauge theories and the Higgs mass",
+      "Summary": "Treats the minimal Standard Model as a parameterized Dirac-type gauge theory and reports a one-loop top-approximation Higgs estimate near 186 GeV for a 174 GeV top input.",
+      "PredictionImpact": "Numerical Higgs lead is now incompatible with the observed 125 GeV scale and depends on top-mass and external Standard Model inputs; it cannot promote a GU Higgs prediction."
+    }
+  ],
+  "checks": [
+    {
+      "CheckId": "dirac-lichnerowicz-primary-sources-reviewed",
+      "Passed": true,
+      "Detail": "lead=True; reviewed=True; externalToGu=True; sourceRows=5"
+    },
+    {
+      "CheckId": "generalized-dirac-yang-mills-higgs-route-captured",
+      "Passed": true,
+      "Detail": "lichnerowicz=True; cliffordModules=True; gravityYm=True; standardModelAction=True; diracYukawa=True; classicalUnification=True; higgsGeometry=True"
+    },
+    {
+      "CheckId": "symmetry-breaking-and-higgs-mass-boundary-captured",
+      "Passed": true,
+      "Detail": "ssbNoPotential=True; fermionicMassOperator=True; physicalSubspace=True; prediction=True; oneLoopTop=True; conflicts125=True; centralGeV=186; uncertaintyGeV=8"
+    },
+    {
+      "CheckId": "adjacent-route-boundaries-preserved",
+      "Passed": true,
+      "Detail": "distinctSpectral=True; distinctSu21=True; spectralPromotesWz=False; spectralPromotesHiggs=False; coupledPromotesWz=False; coupledPromotesHiggs=False; su21External=True; su21PromotesWz=False; su21PromotesHiggs=False; multiplicativePromotesWz=False; multiplicativePromotesHiggs=False"
+    },
+    {
+      "CheckId": "external-inputs-required-before-promotion",
+      "Passed": true,
+      "Detail": "cliffordModule=True; diracOperator=True; smGroupReps=True; yukawaMassOperator=True; normalization=True; physicalSubspace=True; topInput=True; rg=True; vevCouplings=True; observedComparison=True"
+    },
+    {
+      "CheckId": "route-does-not-fill-gu-contracts",
+      "Passed": true,
+      "Detail": "guDiracMap=False; guCliffordBridge=False; guMassOperator=False; guPhysicalSubspace=False; guWzRows=False; observed=False; higgsOperator=False; selfCoupling=False; scale=False; gev=False; promotesWz=False; promotesHiggs=False; completes=False"
+    },
+    {
+      "CheckId": "phase201-phase256-contract-state-preserved",
+      "Passed": true,
+      "Detail": "phase201Promotable=False; existingEvidence=False; wzMissing=15; higgsMissing=14; observedFilled=0; observedPromotable=False"
+    }
+  ],
+  "adjacentRouteBoundary": {
+    "spectralActionPromotesWzMasses": false,
+    "spectralActionPromotesHiggsMass": false,
+    "coupledYangMillsHiggsPromotesWzMasses": false,
+    "coupledYangMillsHiggsPromotesHiggsMass": false,
+    "su21RouteExternalToGu": true,
+    "su21RoutePromotesWzMasses": false,
+    "su21RoutePromotesHiggsMass": false,
+    "multiplicativeHiggsPromotesWzMasses": false,
+    "multiplicativeHiggsPromotesHiggsMass": false
+  },
+  "contractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionFilledRequiredFieldCount": 0
+  },
+  "decision": "Do not promote W/Z or Higgs physical masses from the Dirac-Lichnerowicz/Yang-Mills-Higgs route. It is a serious generalized-Dirac geometric action lead, including an external Higgs-mass estimate, but it depends on external Clifford-module and Dirac-operator choices, Standard Model gauge representations, Yukawa and fermionic mass-operator inputs, normalization conventions, top-mass/loop approximations, electroweak matching, and observed comparison; it supplies no GU-local Dirac map, W/Z rows, Higgs scalar-source/self-coupling row, observed-field extraction, target-independent scale, or GeV normalization.",
+  "nextRequiredArtifact": [
+    "A GU-local generalized Dirac operator or Lichnerowicz decomposition mapped from the Shiab/observer-sector fields.",
+    "A GU-native Clifford-module and physical-subspace projection theorem that identifies observed photon/W/Z/H fields.",
+    "Independent W/Z source rows, Higgs scalar-source/self-coupling lineage, and pole extraction without importing target masses.",
+    "A target-independent GU electroweak scale or VEV plus GeV unit normalization before any mass promotion."
+  ]
+}
