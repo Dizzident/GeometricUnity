@@ -1,0 +1,180 @@
+{
+  "phaseId": "phase360-exceptional-jordan-magic-square-source-audit",
+  "terminalStatus": "exceptional-jordan-magic-square-source-audit-representation-lead-not-gu-mass-law",
+  "generatedAt": "2026-05-24T02:14:40.4273117+00:00",
+  "exceptionalJordanMagicSquareSourceAuditPassed": true,
+  "exceptionalJordanLeadPresent": true,
+  "exceptionalJordanPrimarySourcesReviewed": true,
+  "exceptionalJordanRouteExternalToGu": true,
+  "routeUsesExceptionalJordanAlgebra": true,
+  "routeUsesAlbertAlgebra": true,
+  "routeUsesPeirceSlotsOrTriality": true,
+  "routeUsesFreudenthalTitsMagicSquare": true,
+  "routeEncodesStandardModelSymmetry": true,
+  "routeIncludesElectroweakSubgroup": true,
+  "routeIncludesHiggsYukawaOrScalarLead": true,
+  "routeIncludesFermionGenerationStructure": true,
+  "routeIncludesJordanGeometryPatiSalamOrBMinusLScalar": true,
+  "routeIncludesCurrentFermionMassRatioLead": true,
+  "currentFermionMassRatioLeadRevisedIn2026": true,
+  "currentFermionMassRatioLatestArxivVersion": 5,
+  "currentFermionMassRatioRevisionYear": 2026,
+  "dixonRosenfeldLatestArxivVersion": 2,
+  "routeMassLeadScopeFermionOnly": true,
+  "routeProvidesRepresentationOrSymmetryLeadNotMassLaw": true,
+  "routeDoesNotPredictObservedWzMasses": true,
+  "routeDoesNotProvideTargetIndependentObservedHiggsMass": true,
+  "routeDoesNotProvideGaugeBosonMassMatrix": true,
+  "routeDoesNotProvidePhysicalPoleExtraction": true,
+  "routeDoesNotProvideObservedPhotonWzHiggsProjection": true,
+  "routeRequiresExternalJordanModelChoice": true,
+  "routeRequiresGuLocalJordanAlgebraMap": true,
+  "routeRequiresGuPeirceTrialityBranchingMap": true,
+  "routeRequiresGuMagicSquareOrExceptionalEmbeddingMap": true,
+  "routeRequiresGuWzSourceRows": true,
+  "routeRequiresGuWeakMixingAngleSource": true,
+  "routeRequiresGuGaugeCouplingNormalization": true,
+  "routeRequiresGuObservedFieldExtraction": true,
+  "routeRequiresGuHiggsScalarSourceOperator": true,
+  "routeRequiresGuHiggsSelfCouplingSource": true,
+  "routeRequiresTargetIndependentVevOrMassScale": true,
+  "routeRequiresLowEnergyRgAndThresholdTransport": true,
+  "routeRequiresGeVUnitNormalization": true,
+  "routeProvidesGuLocalJordanAlgebraMap": false,
+  "routeProvidesGuPeirceTrialityBranchingMap": false,
+  "routeProvidesGuMagicSquareOrExceptionalEmbeddingMap": false,
+  "routeProvidesGuWzSourceRows": false,
+  "routeProvidesGuWeakMixingAngleSource": false,
+  "routeProvidesGuGaugeCouplingNormalization": false,
+  "routeProvidesGuObservedFieldExtraction": false,
+  "routeProvidesGuHiggsScalarSourceOperator": false,
+  "routeProvidesGuHiggsSelfCouplingSource": false,
+  "routeProvidesTargetIndependentVevOrMassScale": false,
+  "routeProvidesLowEnergyRgAndThresholdTransport": false,
+  "routeProvidesGeVUnitNormalization": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "sourceRowCount": 8,
+  "sourceRows": [
+    {
+      "Id": "dubois-violette-1604-01247-exceptional-quantum-geometry",
+      "Url": "https://arxiv.org/abs/1604.01247",
+      "Title": "Exceptional quantum geometry and particle physics",
+      "Summary": "Argues that the Euclidean Albert algebra is relevant for particle internal space, with triality associated to three Standard Model generations and Jordan-module connections.",
+      "PromotionBoundary": "Internal-space and connection lead only; no observed W/Z/H mass rows, VEV, pole extraction, or GeV normalization."
+    },
+    {
+      "Id": "dubois-violette-todorov-1806-09450-sm-symmetry-from-jordan",
+      "Url": "https://arxiv.org/abs/1806.09450",
+      "Title": "Deducing the symmetry of the standard model from the automorphism and structure groups of the exceptional Jordan algebra",
+      "Summary": "Uses automorphism/structure groups of J3^8 and Borel-de Siebenthal subgroup theory to derive Standard Model symmetry structure.",
+      "PromotionBoundary": "Symmetry derivation lead; it does not provide a GU-local electroweak mass matrix or target-independent W/Z/H masses."
+    },
+    {
+      "Id": "dubois-violette-todorov-1808-08110-exceptional-quantum-geometry-ii",
+      "Url": "https://arxiv.org/abs/1808.08110",
+      "Title": "Exceptional quantum geometry and particle physics II",
+      "Summary": "Develops J3^8/J2^8 internal-space descriptions for three generations and one generation without introducing new fundamental fermions or electroweak-symmetry trouble.",
+      "PromotionBoundary": "Generation/electroweak representation lead; no physical W/Z source rows, scalar potential, or mass-scale lineage."
+    },
+    {
+      "Id": "boyle-farnsworth-1910-11888-jordan-geometry",
+      "Url": "https://arxiv.org/abs/1910.11888",
+      "Title": "The standard model, the Pati-Salam model, and Jordan geometry",
+      "Summary": "Presents a Jordan-algebra framework that most nearly describes the Standard Model but actually yields a viable B-L/scalar extension and a Pati-Salam extension.",
+      "PromotionBoundary": "Geometric model-building lead; extra scalar/B-L structure is external and no observed W/Z/H mass law is supplied."
+    },
+    {
+      "Id": "todorov-1911-13124-exceptional-quantum-algebra-sm",
+      "Url": "https://arxiv.org/abs/1911.13124",
+      "Title": "Exceptional quantum algebra for the standard model of particle physics",
+      "Summary": "Uses the exceptional Euclidean Jordan algebra, F4 subgroups, S(U(3)xU(2)), primitive idempotents, and triality to describe Standard Model internal structure and Higgs Yukawa coupling.",
+      "PromotionBoundary": "Higgs/Yukawa structural lead; does not derive Higgs self-coupling, W/Z mass matrix, observed projection, or GeV scale."
+    },
+    {
+      "Id": "boyle-2006-16265-exceptional-jordan-triality",
+      "Url": "https://arxiv.org/abs/2006.16265",
+      "Title": "The Standard Model, The Exceptional Jordan Algebra, and Triality",
+      "Summary": "Relates the complexified exceptional Jordan algebra to the Standard Model, left-right symmetry, Spin(10), octonionic projective geometry, and three-generation triality.",
+      "PromotionBoundary": "Representation and generation lead; no target-independent boson-mass source lineage."
+    },
+    {
+      "Id": "chester-marrani-corradetti-aschheim-irwin-2303-11334-dixon-rosenfeld",
+      "Url": "https://arxiv.org/abs/2303.11334",
+      "Title": "Dixon-Rosenfeld Lines and the Standard Model",
+      "Summary": "Uses Freudenthal-Tits construction and Jordan-algebra tensor products to uplift Standard Model interactions over Dixon-Rosenfeld projective-line analogues.",
+      "PromotionBoundary": "Magic-square/Jordan uplift lead; the paper says further representation work remains and Higgs interactions are future work."
+    },
+    {
+      "Id": "singh-2508-10131-fermion-mass-ratios-exceptional-jordan",
+      "Url": "https://arxiv.org/abs/2508.10131",
+      "Title": "Fermion mass ratios from the exceptional Jordan algebra",
+      "Summary": "Current 2026-revised exceptional-Jordan mass-ratio program using Peirce slots, triality, Sym^3 flavor structure, a cubic determinant, and an E6-invariant Yukawa.",
+      "PromotionBoundary": "Current mass-ratio lead is fermion-scoped; it does not provide W/Z absolute rows or a target-independent observed Higgs mass."
+    }
+  ],
+  "adjacentRouteBoundary": {
+    "octonionCliffordSourceAuditPassed": true,
+    "octonionRoutePromotesWzMasses": false,
+    "octonionRoutePromotesHiggsMass": false,
+    "exceptionalE8BosonSourceAuditPassed": true,
+    "exceptionalE8RoutePromotesWzMasses": false,
+    "exceptionalE8RoutePromotesHiggsMass": false
+  },
+  "contractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionFilledRequiredFieldCount": 0
+  },
+  "checks": [
+    {
+      "Id": "exceptional-jordan-primary-sources-reviewed",
+      "Passed": true,
+      "Evidence": "lead=True; reviewed=True; externalToGu=True; sourceRows=8"
+    },
+    {
+      "Id": "exceptional-jordan-standard-model-structure-captured",
+      "Passed": true,
+      "Evidence": "jordan=True; albert=True; triality=True; magicSquare=True; sm=True; electroweak=True; higgsLead=True; generations=True; jordanGeometryExtension=True; currentFermionMassLead=True"
+    },
+    {
+      "Id": "current-jordan-fermion-mass-lead-version-captured",
+      "Passed": true,
+      "Evidence": "fermionMassLeadRevised2026=True; latestVersion=5; revisionYear=2026; dixonRosenfeldVersion=2"
+    },
+    {
+      "Id": "exceptional-jordan-mass-law-blockers-captured",
+      "Passed": true,
+      "Evidence": "fermionOnly=True; representationNotMassLaw=True; wzMasses=True; higgsMass=True; massMatrix=True; pole=True; observedProjection=True"
+    },
+    {
+      "Id": "adjacent-exceptional-and-octonion-routes-remain-nonpromotional",
+      "Passed": true,
+      "Evidence": "octonionPassed=True; octonionWz=False; octonionHiggs=False; e8Passed=True; e8Wz=False; e8Higgs=False"
+    },
+    {
+      "Id": "route-does-not-fill-gu-contracts",
+      "Passed": true,
+      "Evidence": "externalModel=True; requiresJordanMap=True; requiresTriality=True; requiresMagicSquare=True; requiresWzRows=True; requiresWeakAngle=True; requiresGaugeCoupling=True; requiresObserved=True; requiresHiggsOperator=True; requiresSelfCoupling=True; requiresScale=True; requiresRg=True; requiresGev=True; providesJordanMap=False; providesWzRows=False; providesHiggsOperator=False; promotesWz=False; promotesHiggs=False; completes=False"
+    },
+    {
+      "Id": "phase201-phase256-contract-state-preserved",
+      "Passed": true,
+      "Evidence": "phase201Promotable=False; existingEvidence=False; wzMissing=15; higgsMissing=14; observedFilled=0; observedPromotable=False"
+    }
+  ],
+  "decision": "Do not promote W/Z or Higgs physical masses from exceptional-Jordan, Albert-algebra, triality, or Freudenthal-Tits magic-square routes in this repository. The sources provide serious geometric and algebraic Standard Model structure leads, including internal-space models, electroweak subgroup embeddings, Higgs/Yukawa or scalar-extension clues, three-generation triality, and current fermion mass-ratio work. They do not provide a GU-local Jordan algebra map from Shiab/observer geometry, a target-independent electroweak mass matrix, separate W/Z source rows, observed photon/W/Z/H projection, Higgs scalar-source/self-coupling lineage, VEV or mass-scale source, RG/threshold and pole extraction, or GeV normalization.",
+  "nextRequiredArtifact": [
+    "A GU-local derivation mapping Shiab/observer-sector fields into an exceptional-Jordan, Albert, or magic-square internal geometry without importing an external representation choice.",
+    "A target-independent Peirce/triality/branching theorem that produces observed electroweak SU(2) x U(1), photon/W/Z projection, and separate W/Z source rows.",
+    "A Higgs scalar-source operator plus self-coupling or excitation law from the same Jordan geometry, not only a Higgs/Yukawa representation or external B-L scalar extension.",
+    "A shared VEV or mass-scale source, low-energy RG/threshold transport, physical-pole extractor, and GeV normalization before the route can promote W/Z/H masses."
+  ]
+}

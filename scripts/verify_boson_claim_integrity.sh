@@ -129,6 +129,7 @@ const paths = {
   phase357: "studies/phase357_causal_fermion_systems_boson_source_audit_001/output/causal_fermion_systems_boson_source_audit_summary.json",
   phase358: "studies/phase358_exceptional_e8_boson_source_audit_001/output/exceptional_e8_boson_source_audit_summary.json",
   phase359: "studies/phase359_finite_ncg_discrete_higgs_source_audit_001/output/finite_ncg_discrete_higgs_source_audit_summary.json",
+  phase360: "studies/phase360_exceptional_jordan_magic_square_source_audit_001/output/exceptional_jordan_magic_square_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -329,6 +330,7 @@ const phase356 = requireFile(paths.phase356);
 const phase357 = requireFile(paths.phase357);
 const phase358 = requireFile(paths.phase358);
 const phase359 = requireFile(paths.phase359);
+const phase360 = requireFile(paths.phase360);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -3218,6 +3220,73 @@ if (sourceLineageMissing) {
   assert(phase359.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase359 W/Z missing-field count must match Phase213.");
   assert(phase359.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase359 Higgs missing-field count must match Phase213.");
   assert(phase359.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase359 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase360.exceptionalJordanMagicSquareSourceAuditPassed === true, "Phase360 exceptional Jordan/magic-square source audit must pass while preserving non-promotional status.");
+  assert(phase360.exceptionalJordanLeadPresent === true, "Phase360 must record the exceptional Jordan lead.");
+  assert(phase360.exceptionalJordanPrimarySourcesReviewed === true, "Phase360 must record primary source review.");
+  assert(phase360.exceptionalJordanRouteExternalToGu === true, "Phase360 must classify the route as external to GU.");
+  assert(phase360.routeUsesExceptionalJordanAlgebra === true, "Phase360 must record exceptional Jordan algebra.");
+  assert(phase360.routeUsesAlbertAlgebra === true, "Phase360 must record Albert algebra.");
+  assert(phase360.routeUsesPeirceSlotsOrTriality === true, "Phase360 must record Peirce/triality structure.");
+  assert(phase360.routeUsesFreudenthalTitsMagicSquare === true, "Phase360 must record Freudenthal-Tits magic-square structure.");
+  assert(phase360.routeEncodesStandardModelSymmetry === true, "Phase360 must record Standard Model symmetry encoding.");
+  assert(phase360.routeIncludesElectroweakSubgroup === true, "Phase360 must record electroweak subgroup structure.");
+  assert(phase360.routeIncludesHiggsYukawaOrScalarLead === true, "Phase360 must record Higgs/Yukawa or scalar lead.");
+  assert(phase360.routeIncludesFermionGenerationStructure === true, "Phase360 must record fermion-generation structure.");
+  assert(phase360.routeIncludesJordanGeometryPatiSalamOrBMinusLScalar === true, "Phase360 must record Jordan geometry Pati-Salam/B-L scalar extensions.");
+  assert(phase360.routeIncludesCurrentFermionMassRatioLead === true, "Phase360 must record the current fermion mass-ratio lead.");
+  assert(phase360.currentFermionMassRatioLeadRevisedIn2026 === true, "Phase360 must record the 2026 revision of the current fermion mass-ratio lead.");
+  assert(phase360.currentFermionMassRatioLatestArxivVersion === 5, "Phase360 must preserve the current fermion mass-ratio arXiv version.");
+  assert(phase360.currentFermionMassRatioRevisionYear === 2026, "Phase360 must preserve the current fermion mass-ratio revision year.");
+  assert(phase360.routeMassLeadScopeFermionOnly === true, "Phase360 must classify the mass lead as fermion-scoped.");
+  assert(phase360.routeProvidesRepresentationOrSymmetryLeadNotMassLaw === true, "Phase360 must record representation/symmetry lead rather than mass law.");
+  assert(phase360.routeDoesNotPredictObservedWzMasses === true, "Phase360 must record that observed W/Z masses are not predicted.");
+  assert(phase360.routeDoesNotProvideTargetIndependentObservedHiggsMass === true, "Phase360 must record missing target-independent observed Higgs mass.");
+  assert(phase360.routeDoesNotProvideGaugeBosonMassMatrix === true, "Phase360 must record missing gauge-boson mass matrix.");
+  assert(phase360.routeDoesNotProvidePhysicalPoleExtraction === true, "Phase360 must record missing physical pole extraction.");
+  assert(phase360.routeDoesNotProvideObservedPhotonWzHiggsProjection === true, "Phase360 must record missing observed photon/W/Z/H projection.");
+  assert(phase360.routeRequiresGuLocalJordanAlgebraMap === true, "Phase360 must require a GU-local Jordan algebra map.");
+  assert(phase360.routeRequiresGuPeirceTrialityBranchingMap === true, "Phase360 must require GU Peirce/triality branching.");
+  assert(phase360.routeRequiresGuMagicSquareOrExceptionalEmbeddingMap === true, "Phase360 must require GU magic-square/exceptional embedding.");
+  assert(phase360.routeRequiresGuWzSourceRows === true, "Phase360 must require GU W/Z source rows.");
+  assert(phase360.routeRequiresGuWeakMixingAngleSource === true, "Phase360 must require a GU weak-angle source.");
+  assert(phase360.routeRequiresGuGaugeCouplingNormalization === true, "Phase360 must require GU gauge-coupling normalization.");
+  assert(phase360.routeRequiresGuObservedFieldExtraction === true, "Phase360 must require GU observed-field extraction.");
+  assert(phase360.routeRequiresGuHiggsScalarSourceOperator === true, "Phase360 must require a GU Higgs scalar-source operator.");
+  assert(phase360.routeRequiresGuHiggsSelfCouplingSource === true, "Phase360 must require a GU Higgs self-coupling source.");
+  assert(phase360.routeRequiresTargetIndependentVevOrMassScale === true, "Phase360 must require target-independent scale.");
+  assert(phase360.routeRequiresLowEnergyRgAndThresholdTransport === true, "Phase360 must require low-energy RG/threshold transport.");
+  assert(phase360.routeRequiresGeVUnitNormalization === true, "Phase360 must require GeV normalization.");
+  assert(phase360.routeProvidesGuLocalJordanAlgebraMap === false, "Phase360 cannot claim a GU-local Jordan algebra map.");
+  assert(phase360.routeProvidesGuPeirceTrialityBranchingMap === false, "Phase360 cannot claim GU Peirce/triality branching.");
+  assert(phase360.routeProvidesGuMagicSquareOrExceptionalEmbeddingMap === false, "Phase360 cannot claim GU magic-square/exceptional embedding.");
+  assert(phase360.routeProvidesGuWzSourceRows === false, "Phase360 cannot claim GU W/Z source rows.");
+  assert(phase360.routeProvidesGuWeakMixingAngleSource === false, "Phase360 cannot claim a GU weak-angle source.");
+  assert(phase360.routeProvidesGuGaugeCouplingNormalization === false, "Phase360 cannot claim GU gauge-coupling normalization.");
+  assert(phase360.routeProvidesGuObservedFieldExtraction === false, "Phase360 cannot claim GU observed-field extraction.");
+  assert(phase360.routeProvidesGuHiggsScalarSourceOperator === false, "Phase360 cannot claim a GU Higgs scalar-source operator.");
+  assert(phase360.routeProvidesGuHiggsSelfCouplingSource === false, "Phase360 cannot claim a GU Higgs self-coupling source.");
+  assert(phase360.routeProvidesTargetIndependentVevOrMassScale === false, "Phase360 cannot claim target-independent scale.");
+  assert(phase360.routeProvidesLowEnergyRgAndThresholdTransport === false, "Phase360 cannot claim low-energy RG/threshold transport.");
+  assert(phase360.routeProvidesGeVUnitNormalization === false, "Phase360 cannot claim GeV normalization.");
+  assert(phase360.routePromotesWzMasses === false, "Phase360 cannot promote W/Z masses.");
+  assert(phase360.routePromotesHiggsMass === false, "Phase360 cannot promote Higgs mass.");
+  assert(phase360.routeCompletesBosonPredictions === false, "Phase360 cannot complete boson predictions.");
+  assert(phase360.canFillPhase201WzContract === false, "Phase360 cannot fill the Phase201 W/Z contract.");
+  assert(phase360.canFillPhase201HiggsContract === false, "Phase360 cannot fill the Phase201 Higgs contract.");
+  assert(phase360.canFillPhase256ObservedFieldExtractionContract === false, "Phase360 cannot fill the Phase256 observed-field extraction contract.");
+  assert(phase360.sourceRowCount === 8, "Phase360 must preserve eight source rows.");
+  assert(phase360.adjacentRouteBoundary?.octonionCliffordSourceAuditPassed === true, "Phase360 must inherit the Phase337 octonion/Clifford boundary.");
+  assert(phase360.adjacentRouteBoundary?.octonionRoutePromotesWzMasses === false, "Phase360 must preserve that octonion/Clifford does not promote W/Z masses.");
+  assert(phase360.adjacentRouteBoundary?.octonionRoutePromotesHiggsMass === false, "Phase360 must preserve that octonion/Clifford does not promote Higgs mass.");
+  assert(phase360.adjacentRouteBoundary?.exceptionalE8BosonSourceAuditPassed === true, "Phase360 must inherit the Phase358 E8 boundary.");
+  assert(phase360.adjacentRouteBoundary?.exceptionalE8RoutePromotesWzMasses === false, "Phase360 must preserve that E8 does not promote W/Z masses.");
+  assert(phase360.adjacentRouteBoundary?.exceptionalE8RoutePromotesHiggsMass === false, "Phase360 must preserve that E8 does not promote Higgs mass.");
+  assert(phase360.contractImpact?.canFillPhase201WzContract === false, "Phase360 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase360.contractImpact?.canFillPhase201HiggsContract === false, "Phase360 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase360.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase360 contract impact must keep Phase256 unfilled.");
+  assert(phase360.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase360 W/Z missing-field count must match Phase213.");
+  assert(phase360.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase360 Higgs missing-field count must match Phase213.");
+  assert(phase360.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase360 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

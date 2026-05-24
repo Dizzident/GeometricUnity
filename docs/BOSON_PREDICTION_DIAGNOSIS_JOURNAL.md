@@ -12638,3 +12638,109 @@ Reference tracking now has a documented index-plus-detail workflow:
 brief source rows in `ExperimentReferences.md`, detailed summaries in linked
 files under `docs/Reference/ExperimentReferences/`, and diagnostic outcomes in
 this journal.
+
+## 2026-05-23 - Phase360 Exceptional Jordan Magic-Square Source Audit
+
+### Context
+
+After Phase358 and Phase359, the next uncovered exceptional-geometry route was
+exceptional Jordan/Albert algebra, Peirce/triality, Jordan geometry, and
+Freudenthal-Tits magic-square Standard Model source work. A spawned explorer
+confirmed this route was undercovered locally: nearby E8 and
+octonion/Clifford audits existed, but no dedicated Jordan/Albert/magic-square
+reference or phase was present.
+
+### Sources Reviewed
+
+- `https://arxiv.org/abs/1604.01247`.
+- `https://arxiv.org/abs/1806.09450`.
+- `https://arxiv.org/abs/1808.08110`.
+- `https://arxiv.org/abs/1910.11888`.
+- `https://arxiv.org/abs/1911.13124`.
+- `https://arxiv.org/abs/2006.16265`.
+- `https://arxiv.org/abs/2303.11334`.
+- `https://arxiv.org/abs/2508.10131`.
+
+### Action
+
+- Added `studies/phase360_exceptional_jordan_magic_square_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P360.md`.
+- Wired Phase360 into the generator, P101 package, P202 objective completion
+  audit, and claim-integrity verifier.
+- Added Phase360 scanner exclusions so generated diagnostic text is not counted
+  as independent source evidence.
+- Added `EXCEPTIONAL-JORDAN-MAGIC-SQUARE` to `ExperimentReferences.md` with a
+  detailed reference note under `docs/Reference/ExperimentReferences/`.
+
+### Current Expected Outcome
+
+Phase360 is expected to pass only as a negative boundary audit:
+
+- `exceptionalJordanMagicSquareSourceAuditPassed=true`.
+- `exceptionalJordanLeadPresent=true`.
+- `exceptionalJordanPrimarySourcesReviewed=true`.
+- `exceptionalJordanRouteExternalToGu=true`.
+- `routeUsesExceptionalJordanAlgebra=true`.
+- `routeUsesAlbertAlgebra=true`.
+- `routeUsesPeirceSlotsOrTriality=true`.
+- `routeUsesFreudenthalTitsMagicSquare=true`.
+- `routeEncodesStandardModelSymmetry=true`.
+- `routeIncludesElectroweakSubgroup=true`.
+- `routeIncludesHiggsYukawaOrScalarLead=true`.
+- `routeIncludesFermionGenerationStructure=true`.
+- `routeIncludesCurrentFermionMassRatioLead=true`.
+- `currentFermionMassRatioLeadRevisedIn2026=true`.
+- `routeMassLeadScopeFermionOnly=true`.
+- `routeProvidesRepresentationOrSymmetryLeadNotMassLaw=true`.
+- `routeProvidesGuLocalJordanAlgebraMap=false`.
+- `routeProvidesGuWzSourceRows=false`.
+- `routeProvidesGuObservedFieldExtraction=false`.
+- `routeProvidesGuHiggsScalarSourceOperator=false`.
+- `routeProvidesGuHiggsSelfCouplingSource=false`.
+- `routeProvidesTargetIndependentVevOrMassScale=false`.
+- `routeProvidesGeVUnitNormalization=false`.
+- `routePromotesWzMasses=false`.
+- `routePromotesHiggsMass=false`.
+- `routeCompletesBosonPredictions=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from exceptional-Jordan or magic-square
+routes. The audited sources provide serious internal-space, symmetry,
+generation, Higgs/Yukawa, and current fermion-mass-ratio leads, but the current
+mass content is fermion-scoped and external to GU. A promotion would require a
+GU-local Jordan/magic-square map, target-independent electroweak mass matrix,
+separate W/Z source rows, observed-field extraction, Higgs scalar-source and
+self-coupling lineage, a VEV or equivalent mass-scale source, pole extraction,
+and GeV normalization.
+
+### Validation
+
+- Targeted Phase360 run passed with
+  `exceptionalJordanMagicSquareSourceAuditPassed=true`,
+  `routeUsesExceptionalJordanAlgebra=true`,
+  `routeUsesFreudenthalTitsMagicSquare=true`,
+  `routeIncludesCurrentFermionMassRatioLead=true`,
+  `routePromotesWzMasses=false`, and `routePromotesHiggsMass=false`.
+- P101 package build passed and includes the Phase360 audit block.
+- P202 objective audit passed as an incomplete objective:
+  `objectiveAchieved=false`, `checklistPassedCount=153`, and
+  `checklistFailedCount=3`.
+- Claim-integrity verification passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns preserved the negative intake boundary:
+  P204 `intakeReadyCandidateCount=0`,
+  P205 `intakeReadyFindingCount=0`,
+  P207 `intakeReadyFindingCount=0`,
+  P279 `localSearchMatchingFileCount=0`,
+  P281 `localSearchMatchingFileCount=0`,
+  P295 `intakeReadyObservedFieldExtractionCandidateCount=0`, and
+  P296 `intakeReadySourceLineageFieldCandidateCount=0`.
+- Reference link check passed with `detailLinkCount=43` and no missing
+  details.
+- Full generator gate passed with Phase360 included and final claim-integrity
+  verification still reporting zero promoted physical mass claims.
+- `dotnet test GeometricUnity.slnx` passed; the only warning was the existing
+  `xUnit2013` collection-size warning in
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
