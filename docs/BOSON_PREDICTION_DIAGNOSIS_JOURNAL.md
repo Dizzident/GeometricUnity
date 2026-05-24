@@ -11607,6 +11607,114 @@ an absolute GeV scale, or unit normalization.
   `xUnit2013` collection-size warning in
   `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
 
+## 2026-05-24 - Phase364 Moment-Map Symplectic-Reduction Source Audit
+
+### Context
+
+After Phase363, the next undercovered route was moment-map and
+symplectic-reduction vacuum geometry. Local search found no dedicated audit or
+reference note for moment maps, symplectic reduction, Hamiltonian reduction,
+coadjoint orbits, Kahler quotients, or GIT quotient routes. A sidecar explorer
+confirmed that these terms only appeared as follow-up leads or unrelated
+quantization infrastructure.
+
+### Sources Reviewed
+
+- `https://doi.org/10.1016/0034-4877(74)90021-4`.
+- `https://authors.library.caltech.edu/records/8k5v6-4pa21/latest`.
+- `https://doi.org/10.1098/rsta.1983.0017`.
+- `https://arxiv.org/abs/1812.04707`.
+- `https://arxiv.org/abs/1610.02245`.
+- `https://arxiv.org/abs/2010.15894`.
+- `https://arxiv.org/abs/1908.04245`.
+
+### Action
+
+- Added `studies/phase364_moment_map_symplectic_reduction_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P364.md`.
+- Added `MOMENT-MAP-SYMPLECTIC-REDUCTION` to `ExperimentReferences.md` with a
+  detailed reference note under `docs/Reference/ExperimentReferences/`.
+- Wired Phase364 into the validated boson generator, P101 package, P202
+  objective audit, claim-integrity verifier, and generated-artifact scanner
+  exclusions.
+
+### Current Expected Outcome
+
+Phase364 is expected to pass only as a negative boundary audit:
+
+- `momentMapSymplecticReductionSourceAuditPassed=true`.
+- `momentMapSymplecticReductionLeadPresent=true`.
+- `momentMapSymplecticReductionPrimarySourcesReviewed=true`.
+- `momentMapSymplecticReductionRouteExternalToGu=true`.
+- `routeUsesMomentMaps=true`.
+- `routeUsesMarsdenWeinsteinReduction=true`.
+- `routeUsesCoadjointOrbitGeometry=true`.
+- `routeUsesYangMillsAsMomentMap=true`.
+- `routeUsesYangMillsHiggsReducedPhaseSpace=true`.
+- `routeIncludesGlashowWeinbergSalamHiggsSector=true`.
+- `routeUsesSymplecticVortexEquations=true`.
+- `routeUsesBoundaryYangMillsReduction=true`.
+- `routeUsesSymplecticHiggsBranchSingularities=true`.
+- `routeProvidesGuLocalMomentMap=false`.
+- `routeProvidesGuReducedVacuumSelection=false`.
+- `routeProvidesGuWzSourceRows=false`.
+- `routeProvidesGuObservedFieldExtraction=false`.
+- `routeProvidesGuHiggsScalarSourceOperator=false`.
+- `routeProvidesGuHiggsSelfCouplingSource=false`.
+- `routeProvidesTargetIndependentVevOrMassScale=false`.
+- `routeProvidesGeVUnitNormalization=false`.
+- `routePromotesWzMasses=false`.
+- `routePromotesHiggsMass=false`.
+- `routeCompletesBosonPredictions=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from moment-map or symplectic-reduction
+routes. The audited sources provide a serious reduced-phase-space and
+Higgs-sector geometry lead, including singular symplectic reduction applied to
+the Glashow-Weinberg-Salam Higgs sector, but they still require an external
+field theory, Hamiltonian, potential, gauge group, coupling data, and vacuum
+choice. Promotion would require a GU-local moment map, target-independent
+Hamiltonian reduction and reduced electroweak vacuum, observed photon/W/Z/H
+projection, separate W/Z source rows, Higgs scalar-source and self-coupling
+lineage, a mass-scale source, pole extraction, and GeV normalization.
+
+### Validation
+
+- Phase364 targeted run passed:
+  - `momentMapSymplecticReductionSourceAuditPassed=True`.
+  - `routeUsesMomentMaps=True`.
+  - `routeUsesYangMillsHiggsReducedPhaseSpace=True`.
+  - `routeIncludesGlashowWeinbergSalamHiggsSector=True`.
+  - `routePromotesWzMasses=False`.
+  - `routePromotesHiggsMass=False`.
+  - `canFillPhase201WzContract=False`.
+- P101 regenerated
+  `studies/phase101_boson_prediction_package_001/output/boson_prediction_package.json`
+  and remained `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 regenerated with `objectiveAchieved=False`,
+  `checklistPassedCount=157`, and `checklistFailedCount=3`.
+- `./scripts/verify_boson_claim_integrity.sh` passed with
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns after adding Phase364 found no intake-ready artifacts:
+  - P204 `intakeReadyCandidateCount=0`.
+  - P205 `intakeReadyFindingCount=0`.
+  - P207 `canPromoteHiggsQuarticSelfCouplingSource=false` and
+    `intakeReadyFindingCount=0`.
+  - P279 `technicolorWalkingElectroweakScaleSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P281 `geometricRefractiveUnificationSourceAuditPassed=true` and
+    `localSearchMatchingFileCount=0`.
+  - P295 `intakeReadyObservedFieldExtractionCandidateCount=0` and
+    `anyObservedFieldExtractionCandidateFillsContract=false`.
+  - P296 `intakeReadySourceLineageFieldCandidateCount=0` and
+    `anySourceLineageCandidateFillsContract=false`.
+- `ExperimentReferences.md` link check passed with `detailLinkCount=45` and
+  `missingDetailCount=0`.
+- `dotnet test GeometricUnity.slnx` passed; the only warning was the existing
+  `xUnit2013` collection-size warning in
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
+
 ## 2026-05-24 - Phase363 Hitchin Higgs-Bundle Spectral-Cover Source Audit
 
 ### Context

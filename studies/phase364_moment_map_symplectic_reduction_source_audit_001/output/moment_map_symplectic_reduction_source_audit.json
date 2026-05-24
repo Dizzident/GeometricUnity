@@ -1,0 +1,194 @@
+{
+  "phaseId": "phase364-moment-map-symplectic-reduction-source-audit",
+  "terminalStatus": "moment-map-symplectic-reduction-source-audit-phase-space-lead-not-gu-mass-law",
+  "generatedAt": "2026-05-24T18:50:21.8643818+00:00",
+  "momentMapSymplecticReductionSourceAuditPassed": true,
+  "momentMapSymplecticReductionLeadPresent": true,
+  "momentMapSymplecticReductionPrimarySourcesReviewed": true,
+  "momentMapSymplecticReductionRouteExternalToGu": true,
+  "marsdenWeinsteinCaltechUrl": "https://authors.library.caltech.edu/records/8k5v6-4pa21/latest",
+  "routeUsesMomentMaps": true,
+  "routeUsesMarsdenWeinsteinReduction": true,
+  "routeUsesCoadjointOrbitGeometry": true,
+  "routeUsesYangMillsAsMomentMap": true,
+  "routeUsesSymplecticQuotientOfGaugeConnections": true,
+  "routeUsesYangMillsHiggsReducedPhaseSpace": true,
+  "routeIncludesGlashowWeinbergSalamHiggsSector": true,
+  "routeUsesSymplecticVortexEquations": true,
+  "routeUsesKahlerHamiltonianGManifold": true,
+  "routeUsesGITOrKobayashiHitchinCorrespondence": true,
+  "routeUsesBoundaryYangMillsReduction": true,
+  "routeUsesGaugeCovariantSuperselectionSectors": true,
+  "routeUsesSymplecticHiggsBranchSingularities": true,
+  "routeEncodesPartialHiggsMechanismAsSymplecticLeaves": true,
+  "marsdenWeinsteinPublicationYear": 1974,
+  "marsdenWeinsteinStartPage": 121,
+  "marsdenWeinsteinEndPage": 130,
+  "atiyahBottPublicationYear": 1983,
+  "diezRudolphLatestArxivVersion": 2,
+  "diezRudolphJournalYear": 2020,
+  "trautweinLatestArxivVersion": 2,
+  "rielloLatestArxivVersion": 3,
+  "higgsMechanismHasseLatestArxivVersion": 2,
+  "higgsMechanismHassePageCount": 70,
+  "routeIsPhaseSpaceConstraintGeometryNotMassLaw": true,
+  "routeDescribesReducedPhaseSpaceNotHamiltonianMassSpectrum": true,
+  "routeDependsOnChosenHamiltonianPotentialOrModel": true,
+  "routeKeepsStandardModelInputsExternal": true,
+  "routeDoesNotDeriveObservedElectroweakVacuum": true,
+  "routeDoesNotDeriveStandardModelGaugeCouplings": true,
+  "routeDoesNotPredictObservedWzMasses": true,
+  "routeDoesNotProvideTargetIndependentObservedHiggsMass": true,
+  "routeDoesNotProvidePhysicalPoleExtraction": true,
+  "routeDoesNotProvideObservedPhotonWzHiggsProjection": true,
+  "routeRequiresGuLocalMomentMap": true,
+  "routeRequiresGuSymplecticPhaseSpace": true,
+  "routeRequiresGuHamiltonianReductionLaw": true,
+  "routeRequiresGuReducedVacuumSelection": true,
+  "routeRequiresGuElectroweakHiggsDoubletProjection": true,
+  "routeRequiresGuWzSourceRows": true,
+  "routeRequiresGuWeakMixingAngleSource": true,
+  "routeRequiresGuGaugeCouplingNormalization": true,
+  "routeRequiresGuObservedFieldExtraction": true,
+  "routeRequiresGuHiggsScalarSourceOperator": true,
+  "routeRequiresGuHiggsSelfCouplingSource": true,
+  "routeRequiresTargetIndependentVevOrMassScale": true,
+  "routeRequiresLowEnergyRgAndThresholdTransport": true,
+  "routeRequiresGeVUnitNormalization": true,
+  "routeProvidesGuLocalMomentMap": false,
+  "routeProvidesGuSymplecticPhaseSpace": false,
+  "routeProvidesGuHamiltonianReductionLaw": false,
+  "routeProvidesGuReducedVacuumSelection": false,
+  "routeProvidesGuElectroweakHiggsDoubletProjection": false,
+  "routeProvidesGuWzSourceRows": false,
+  "routeProvidesGuWeakMixingAngleSource": false,
+  "routeProvidesGuGaugeCouplingNormalization": false,
+  "routeProvidesGuObservedFieldExtraction": false,
+  "routeProvidesGuHiggsScalarSourceOperator": false,
+  "routeProvidesGuHiggsSelfCouplingSource": false,
+  "routeProvidesTargetIndependentVevOrMassScale": false,
+  "routeProvidesLowEnergyRgAndThresholdTransport": false,
+  "routeProvidesGeVUnitNormalization": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "sourceRowCount": 6,
+  "sourceRows": [
+    {
+      "Id": "marsden-weinstein-1974-symplectic-reduction",
+      "Url": "https://doi.org/10.1016/0034-4877(74)90021-4",
+      "Title": "Reduction of Symplectic Manifolds with Symmetry",
+      "Summary": "Foundational Marsden-Weinstein reduction source: constructs reduced symplectic phase spaces from momentum-map level sets and includes coadjoint-orbit geometry as a core example.",
+      "PromotionBoundary": "Foundational reduction geometry, but not an electroweak W/Z/H mass source law or GU-local vacuum selection."
+    },
+    {
+      "Id": "atiyah-bott-1983-yang-mills-riemann-surfaces",
+      "Url": "https://doi.org/10.1098/rsta.1983.0017",
+      "Title": "The Yang-Mills Equations over Riemann Surfaces",
+      "Summary": "Uses symplectic and Morse-theoretic geometry for Yang-Mills connections over Riemann surfaces and is a standard source for Yang-Mills moment-map structure.",
+      "PromotionBoundary": "Gauge-connection reduction lead; no observed electroweak vacuum, W/Z rows, Higgs pole, or GeV normalization."
+    },
+    {
+      "Id": "diez-rudolph-1812-04707-singular-cotangent-reduction",
+      "Url": "https://arxiv.org/abs/1812.04707",
+      "Title": "Singular Symplectic Cotangent Bundle Reduction of Gauge Field Theory",
+      "Summary": "Proves singular symplectic cotangent-bundle reduction in a Frechet setting and applies it to Yang-Mills-Higgs theory with emphasis on the Glashow-Weinberg-Salam Higgs sector.",
+      "PromotionBoundary": "Closest Standard Model Higgs-sector phase-space lead; describes reduced phase space, not target-independent W/Z/H masses."
+    },
+    {
+      "Id": "trautwein-1610-02245-yang-mills-higgs-flow",
+      "Url": "https://arxiv.org/abs/1610.02245",
+      "Title": "Convergence of the Yang-Mills-Higgs Flow on Gauged Holomorphic Maps and Applications",
+      "Summary": "Treats symplectic vortex equations as minima of the Yang-Mills-Higgs functional for holomorphic pairs with a moment map on a Kahler Hamiltonian G-manifold.",
+      "PromotionBoundary": "Strong moment-map/vortex lead; external and not an observed electroweak pole-mass extraction."
+    },
+    {
+      "Id": "riello-2010-15894-yang-mills-boundary-reduction",
+      "Url": "https://arxiv.org/abs/2010.15894",
+      "Title": "Symplectic Reduction of Yang-Mills Theory with Boundaries",
+      "Summary": "Develops symplectic reduction for bounded Yang-Mills regions using gauge-covariant electric-flux superselection sectors and discusses edge-mode ambiguities.",
+      "PromotionBoundary": "Useful reduced-phase-space and boundary warning; no Higgs scalar-source or W/Z/H mass law."
+    },
+    {
+      "Id": "bourget-et-al-1908-04245-higgs-mechanism-symplectic-singularities",
+      "Url": "https://arxiv.org/abs/1908.04245",
+      "Title": "The Higgs Mechanism -- Hasse Diagrams for Symplectic Singularities",
+      "Summary": "Identifies symplectic-leaf decompositions of Higgs branches with partial Higgs-mechanism patterns in theories with eight supercharges.",
+      "PromotionBoundary": "Geometric Higgs-branch stratification lead; supersymmetric branch geometry, not observed Standard Model W/Z/H masses."
+    }
+  ],
+  "adjacentRouteBoundary": {
+    "nativeGuVacuumHessianCandidateAuditPassed": true,
+    "nativeGuVacuumHessianCandidatePromotable": false,
+    "globalObservedSectorVacuumScanPassed": true,
+    "globalObservedSectorVacuumCandidateFound": false,
+    "globalScanFillsVacuumMassMatrixUnlock": false,
+    "productionObservedSectorVacuumCandidateCount": 0,
+    "thetaOmegaInhomogeneousGaugeSourceAuditPassed": true,
+    "thetaOmegaRoutePromotesWzMasses": false,
+    "thetaOmegaRoutePromotesHiggsMass": false,
+    "hitchinHiggsBundleSourceAuditPassed": true,
+    "hitchinRoutePromotesWzMasses": false,
+    "hitchinRoutePromotesHiggsMass": false
+  },
+  "contractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionFilledRequiredFieldCount": 0
+  },
+  "checks": [
+    {
+      "Id": "moment-map-symplectic-reduction-primary-sources-reviewed",
+      "Passed": true,
+      "Evidence": "lead=True; reviewed=True; externalToGu=True; sourceRows=6"
+    },
+    {
+      "Id": "moment-map-reduction-geometric-structure-captured",
+      "Passed": true,
+      "Evidence": "momentMaps=True; marsdenWeinstein=True; coadjoint=True; yangMillsMomentMap=True; quotientConnections=True; ymhReducedPhaseSpace=True; gwsHiggs=True"
+    },
+    {
+      "Id": "yang-mills-higgs-and-higgs-branch-leads-captured",
+      "Passed": true,
+      "Evidence": "vortex=True; kahlerHamiltonian=True; gitKh=True; boundaryReduction=True; superselection=True; higgsBranchSingularities=True; symplecticLeaves=True"
+    },
+    {
+      "Id": "moment-map-version-and-publication-metadata-captured",
+      "Passed": true,
+      "Evidence": "marsdenWeinsteinYear=1974; marsdenWeinsteinPages=121-130; atiyahBottYear=1983; diezRudolphV=2; diezRudolphYear=2020; trautweinV=2; rielloV=3; hasseV=2; hassePages=70"
+    },
+    {
+      "Id": "moment-map-promotion-obstructions-captured",
+      "Passed": true,
+      "Evidence": "constraintGeometry=True; reducedPhaseSpaceNotSpectrum=True; chosenHamiltonian=True; smInputsExternal=True; observedVacuum=True; smCouplings=True; observedWz=True; observedHiggs=True; pole=True; projection=True"
+    },
+    {
+      "Id": "adjacent-vacuum-and-geometry-routes-remain-nonpromotional",
+      "Passed": true,
+      "Evidence": "nativeVacuumPassed=True; nativePromotable=False; globalVacuumPassed=True; globalCandidate=False; globalFills=False; productionVacuumCandidates=0; thetaOmegaPassed=True; thetaOmegaWz=False; thetaOmegaHiggs=False; hitchinPassed=True; hitchinWz=False; hitchinHiggs=False"
+    },
+    {
+      "Id": "route-does-not-fill-gu-contracts",
+      "Passed": true,
+      "Evidence": "requiresMomentMap=True; requiresSymplecticPhaseSpace=True; requiresReduction=True; requiresVacuum=True; requiresWzRows=True; requiresObserved=True; requiresHiggsOperator=True; providesMomentMap=False; providesWzRows=False; providesObserved=False; promotesWz=False; promotesHiggs=False; completes=False"
+    },
+    {
+      "Id": "phase201-phase256-contract-state-preserved",
+      "Passed": true,
+      "Evidence": "phase201Promotable=False; existingEvidence=False; wzMissing=15; higgsMissing=14; observedFilled=0; observedPromotable=False"
+    }
+  ],
+  "decision": "Do not promote W/Z or Higgs physical masses from moment-map or symplectic-reduction routes in this repository. These sources provide a serious phase-space and reduced-vacuum lead: Marsden-Weinstein reduction, Yang-Mills moment-map geometry, singular Yang-Mills-Higgs reduction for the Glashow-Weinberg-Salam Higgs sector, symplectic vortex equations, boundary Yang-Mills reduction, and Higgs-branch symplectic singularities. They do not supply a GU-local moment map, a target-independent reduced electroweak vacuum, observed photon/W/Z/H projection, separate W/Z source rows, Higgs scalar-source/self-coupling lineage, low-energy transport, pole extraction, or GeV normalization.",
+  "nextRequiredArtifact": [
+    "A GU-local theorem deriving the relevant symplectic phase space and moment map from Shiab/observer-sector geometry.",
+    "A target-independent Hamiltonian reduction and reduced-vacuum selection law that yields observed electroweak SU(2) x U(1), a massless photon, and separate W/Z source rows.",
+    "A Higgs scalar-source, doublet-projection, and self-coupling lineage from the same reduced phase space, not from an assumed Standard Model potential.",
+    "A low-energy RG/threshold transport, physical-pole extraction, and GeV unit-normalization chain before any moment-map/symplectic-reduction route can promote W/Z/H masses."
+  ]
+}
