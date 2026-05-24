@@ -1,0 +1,199 @@
+{
+  "phaseId": "phase362-framed-standard-model-source-audit",
+  "terminalStatus": "framed-standard-model-source-audit-framon-higgs-and-vector-mixing-lead-not-gu-mass-law",
+  "generatedAt": "2026-05-24T13:10:42.0897558+00:00",
+  "framedStandardModelSourceAuditPassed": true,
+  "framedStandardModelLeadPresent": true,
+  "framedStandardModelPrimarySourcesReviewed": true,
+  "framedStandardModelRouteExternalToGu": true,
+  "closerStudyFramedStandardModelDoi": "https://doi.org/10.1142/S0217751X18501956",
+  "routeUsesFramedGaugeTheory": true,
+  "routeUsesInternalFrameVectorsOrVielbeins": true,
+  "routeIntroducesFramonsAsFieldVariables": true,
+  "routeHiggsAsElectroweakFramon": true,
+  "routeRelatesParticleTheoryToGravityVierbeinStructure": true,
+  "routeProducesGenerationSymmetryLead": true,
+  "routeUsesRotatingRankOneFermionMassMatrix": true,
+  "routeUsesScaleDependentGenerationMetric": true,
+  "routeTransformsQcdThetaToCkmPhase": true,
+  "routeUsesFermionRgeDataFit": true,
+  "routePredictsNewVectorGBoson": true,
+  "vectorGMixesWithPhotonAndZ": true,
+  "vectorGMassOrderTev": true,
+  "vectorGDeviationsCalculableInTermsOfMG": true,
+  "routeIncludesHiddenSector": true,
+  "scalarComplexIncludesStandardModelHiggs": true,
+  "framedStandardModelIPageCount": 15,
+  "framedStandardModelIIPageCount": 15,
+  "firstTestAdjustableParameterCount": 7,
+  "firstTestMeasuredQuantityCount": 18,
+  "firstTestStandardModelParameterReplacementCount": 17,
+  "zBosonLatestArxivVersion": 3,
+  "zBosonPageCount": 21,
+  "closerStudyLatestArxivVersion": 4,
+  "closerStudyPageCount": 90,
+  "vectorGLowerBoundTev": 1,
+  "routeDependsOnFermionFitParameters": true,
+  "routeUsesHeaviestGenerationMassInputs": true,
+  "routeUsesUnknownNeutrinoMassInput": true,
+  "routeContainsFudgeFactor": true,
+  "routeTreatsObservedWzSectorAsBaseline": true,
+  "routeNewVectorMassRemainsFreeParameter": true,
+  "routeGammaZGCorrectionsAreNotObservedWzMassSource": true,
+  "routeDoesNotPredictObservedWzMasses": true,
+  "routeDoesNotProvideTargetIndependentObservedHiggsMass": true,
+  "routeDoesNotProvidePhysicalPoleExtraction": true,
+  "routeDoesNotProvideObservedPhotonWzHiggsProjection": true,
+  "routeRequiresGuLocalFramedGaugeMap": true,
+  "routeRequiresGuInternalFrameVectorDerivation": true,
+  "routeRequiresGuFramonVacuumSelection": true,
+  "routeRequiresGuFramonPotentialDerivation": true,
+  "routeRequiresGuWzSourceRows": true,
+  "routeRequiresGuWeakMixingAngleSource": true,
+  "routeRequiresGuGaugeCouplingNormalization": true,
+  "routeRequiresGuObservedFieldExtraction": true,
+  "routeRequiresGuHiggsScalarSourceOperator": true,
+  "routeRequiresGuHiggsSelfCouplingSource": true,
+  "routeRequiresTargetIndependentVevOrMassScale": true,
+  "routeRequiresLowEnergyRgAndThresholdTransport": true,
+  "routeRequiresGeVUnitNormalization": true,
+  "routeProvidesGuLocalFramedGaugeMap": false,
+  "routeProvidesGuInternalFrameVectorDerivation": false,
+  "routeProvidesGuFramonVacuumSelection": false,
+  "routeProvidesGuFramonPotentialDerivation": false,
+  "routeProvidesGuWzSourceRows": false,
+  "routeProvidesGuWeakMixingAngleSource": false,
+  "routeProvidesGuGaugeCouplingNormalization": false,
+  "routeProvidesGuObservedFieldExtraction": false,
+  "routeProvidesGuHiggsScalarSourceOperator": false,
+  "routeProvidesGuHiggsSelfCouplingSource": false,
+  "routeProvidesTargetIndependentVevOrMassScale": false,
+  "routeProvidesLowEnergyRgAndThresholdTransport": false,
+  "routeProvidesGeVUnitNormalization": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "sourceRowCount": 7,
+  "sourceRows": [
+    {
+      "Id": "chan-tsou-1111-3832-framed-gauge-theory",
+      "Url": "https://arxiv.org/abs/1111.3832",
+      "Title": "Exploring Framed Gauge Theory as Basis for Physical Models",
+      "Summary": "Introduces internal symmetry-space frame vectors as dynamical variables and shows that SU(2) x U(1) framing gives the electroweak theory with the Higgs field as part of the framed gauge structure.",
+      "PromotionBoundary": "Geometric Higgs-as-frame lead; no target-independent observed W/Z/H mass rows or GU-local map."
+    },
+    {
+      "Id": "baker-bordes-chan-tsou-1111-5591-developing-fsm",
+      "Url": "https://arxiv.org/abs/1111.5591",
+      "Title": "Developing the Framed Standard Model",
+      "Summary": "Develops the FSM with a degenerate vacuum under generation SU(3), rotating rank-one fermion mass matrix, scale-dependent generation metric, and strong-CP/CKM phase lead.",
+      "PromotionBoundary": "Fermion mass and mixing structure; not a W/Z/H source-lineage artifact."
+    },
+    {
+      "Id": "bordes-chan-tsou-1410-8022-first-test",
+      "Url": "https://arxiv.org/abs/1410.8022",
+      "Title": "A First Test of the Framed Standard Model against Experiment",
+      "Summary": "Fits fermion masses and mixings using frame-vector rotation/RGE structure with seven adjustable parameters and reports broad agreement with measured fermion-sector data.",
+      "PromotionBoundary": "Quantitative but fit-parameter based and fermion-scoped; no physical W/Z/H pole-mass derivation."
+    },
+    {
+      "Id": "chan-tsou-1505-05472-fsm-i",
+      "Url": "https://arxiv.org/abs/1505.05472",
+      "Title": "The Framed Standard Model (I) - A Physics Case for Framing the Yang-Mills Theory?",
+      "Summary": "States that internal frame vectors as field variables yield the standard Higgs scalar as the electroweak framon and a dual global SU(3) generation symmetry.",
+      "PromotionBoundary": "Direct Higgs-as-framon lead; no solved scalar source/self-coupling or absolute mass scale."
+    },
+    {
+      "Id": "chan-tsou-1508-04273-fsm-ii",
+      "Url": "https://arxiv.org/abs/1508.04273",
+      "Title": "The Framed Standard Model (II) - A first Test against Experiment",
+      "Summary": "Summarizes the quantitative FSM fermion-sector test, replacing 17 Standard Model parameters by seven FSM unknowns after fitting selected data.",
+      "PromotionBoundary": "Quantitative fermion fit with inputs and unknowns; no W/Z/H source rows."
+    },
+    {
+      "Id": "bordes-chan-tsou-1806-08271-z-boson-fsm",
+      "Url": "https://arxiv.org/abs/1806.08271",
+      "Title": "The Z boson in the Framed Standard Model",
+      "Summary": "Studies gamma-Z-G mixing from a new TeV-scale vector boson G and checks deviations in m_Z - m_W and Z widths as functions of the free G mass.",
+      "PromotionBoundary": "Relevant observed-vector mixing lead, but it treats the new vector mass as a parameter and does not derive observed W/Z masses."
+    },
+    {
+      "Id": "bordes-chan-tsou-1806-08268-closer-study",
+      "Url": "https://arxiv.org/abs/1806.08268",
+      "Title": "A Closer Study of the Framed Standard Model Yielding Testable New Physics plus a Hidden Sector with Dark Matter Candidates",
+      "Summary": "Reviews FSM phenomenology, including the G vector boson, gamma-Z-G mixing, hidden sector, and a scalar complex containing the Standard Model Higgs.",
+      "PromotionBoundary": "Phenomenological extension lead; no GU-local W/Z/H source-lineage completion."
+    }
+  ],
+  "adjacentRouteBoundary": {
+    "stueckelbergVectorMassSourceAuditPassed": true,
+    "stueckelbergRoutePromotesWzMasses": false,
+    "stueckelbergRoutePromotesHiggsMass": false,
+    "finiteNcgDiscreteHiggsSourceAuditPassed": true,
+    "finiteNcgRoutePromotesWzMasses": false,
+    "finiteNcgRoutePromotesHiggsMass": false,
+    "matrixModelHiggsGeometrySourceAuditPassed": true,
+    "matrixModelRoutePromotesWzMasses": false,
+    "matrixModelRoutePromotesHiggsMass": false
+  },
+  "contractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionFilledRequiredFieldCount": 0
+  },
+  "checks": [
+    {
+      "Id": "framed-standard-model-primary-sources-reviewed",
+      "Passed": true,
+      "Evidence": "lead=True; reviewed=True; externalToGu=True; sourceRows=7"
+    },
+    {
+      "Id": "framed-gauge-theory-geometric-higgs-structure-captured",
+      "Passed": true,
+      "Evidence": "framedGaugeTheory=True; internalFrames=True; framons=True; higgsFramon=True; gravityVierbeinAnalogy=True; generationSymmetry=True"
+    },
+    {
+      "Id": "framed-standard-model-fermion-and-vector-leads-captured",
+      "Passed": true,
+      "Evidence": "rotatingRankOne=True; generationMetric=True; thetaToCkm=True; fermionRgeFit=True; fitParameters=7; measuredQuantities=18; replacedSmParameters=17; vectorG=True; gammaZG=True; mGOrderTeV=True; hiddenSector=True; scalarComplex=True"
+    },
+    {
+      "Id": "framed-standard-model-version-and-page-metadata-captured",
+      "Passed": true,
+      "Evidence": "fsmIpages=15; fsmIIpages=15; zVersion=3; zPages=21; closerVersion=4; closerPages=90"
+    },
+    {
+      "Id": "framed-standard-model-promotion-obstructions-captured",
+      "Passed": true,
+      "Evidence": "fitParameters=True; heavyInputs=True; unknownNeutrino=True; fudgeFactor=True; baselineWz=True; freeMG=True; gammaZGNotSource=True; observedWz=True; observedHiggs=True; pole=True; projection=True"
+    },
+    {
+      "Id": "adjacent-frame-higgs-routes-remain-nonpromotional",
+      "Passed": true,
+      "Evidence": "stueckelbergPassed=True; stueckelbergWz=False; stueckelbergHiggs=False; finiteNcgPassed=True; finiteNcgWz=False; finiteNcgHiggs=False; matrixModelPassed=True; matrixModelWz=False; matrixModelHiggs=False"
+    },
+    {
+      "Id": "route-does-not-fill-gu-contracts",
+      "Passed": true,
+      "Evidence": "requiresFramedMap=True; requiresFrameVector=True; requiresVacuum=True; requiresPotential=True; requiresWzRows=True; requiresObserved=True; requiresHiggsOperator=True; providesFramedMap=False; providesWzRows=False; providesObserved=False; providesHiggsOperator=False; promotesWz=False; promotesHiggs=False; completes=False"
+    },
+    {
+      "Id": "phase201-phase256-contract-state-preserved",
+      "Passed": true,
+      "Evidence": "phase201Promotable=False; existingEvidence=False; wzMissing=15; higgsMissing=14; observedFilled=0; observedPromotable=False"
+    }
+  ],
+  "decision": "Do not promote W/Z or Higgs physical masses from framed gauge theory or the Framed Standard Model in this repository. The route provides a serious geometric Higgs lead: internal-space frame vectors become fields, the electroweak Higgs is interpreted as a framon, and the gamma-Z-G complex gives a concrete vector-mixing phenomenology. It does not provide a GU-local derivation of the internal frame variables from Shiab/observer geometry, a target-independent framon vacuum or potential, separate observed W/Z source rows, observed photon/W/Z/H projection, Higgs scalar-source/self-coupling lineage, a VEV or mass-scale source, pole extraction, or GeV normalization.",
+  "nextRequiredArtifact": [
+    "A GU-local theorem deriving internal frame vectors or framons from Shiab/observer-sector geometry rather than importing the external FSM.",
+    "A target-independent framon vacuum and potential yielding observed electroweak SU(2) x U(1), photon/W/Z projection, and separate W/Z source rows.",
+    "A Higgs scalar-source/self-coupling lineage from the same framed geometry, not from fitted fermion parameters or an assumed scalar complex.",
+    "A source for the gamma-Z-G or ordinary gamma-Z mixing parameters, low-energy RG/threshold transport, physical-pole extraction, and GeV normalization before any framed route can promote W/Z/H masses."
+  ]
+}

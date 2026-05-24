@@ -11607,6 +11607,105 @@ an absolute GeV scale, or unit normalization.
   `xUnit2013` collection-size warning in
   `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
 
+## 2026-05-24 - Phase362 Framed Standard Model Source Audit
+
+### Context
+
+After Phase361, the next frame-adjacent route was framed gauge theory and the
+Framed Standard Model. Local search showed Stueckelberg frame/compensator,
+finite-NCG, and matrix-model Higgs coverage, but no dedicated framed
+Standard Model or framon-Higgs source audit.
+
+A read-only side agent also identified two future undercovered geometry routes:
+Hitchin/Higgs-bundle spectral-cover electroweak geometry and
+moment-map/symplectic-reduction vacuum geometry. Those are follow-up leads,
+not this phase's implemented route.
+
+### Sources Reviewed
+
+- `https://arxiv.org/abs/1111.3832`.
+- `https://arxiv.org/abs/1111.5591`.
+- `https://arxiv.org/abs/1410.8022`.
+- `https://arxiv.org/abs/1505.05472`.
+- `https://arxiv.org/abs/1508.04273`.
+- `https://arxiv.org/abs/1806.08271`.
+- `https://arxiv.org/abs/1806.08268`.
+- `https://doi.org/10.1142/S0217751X18501956`.
+
+### Action
+
+- Added `studies/phase362_framed_standard_model_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P362.md`.
+- Added `FRAMED-STANDARD-MODEL` to `ExperimentReferences.md` with a detailed
+  reference note under `docs/Reference/ExperimentReferences/`.
+- The next edits will wire Phase362 into the generator, P101 package, P202
+  objective audit, claim-integrity verifier, and scanner exclusions.
+
+### Current Expected Outcome
+
+Phase362 is expected to pass only as a negative boundary audit:
+
+- `framedStandardModelSourceAuditPassed=true`.
+- `framedStandardModelLeadPresent=true`.
+- `framedStandardModelPrimarySourcesReviewed=true`.
+- `framedStandardModelRouteExternalToGu=true`.
+- `routeUsesFramedGaugeTheory=true`.
+- `routeUsesInternalFrameVectorsOrVielbeins=true`.
+- `routeIntroducesFramonsAsFieldVariables=true`.
+- `routeHiggsAsElectroweakFramon=true`.
+- `routePredictsNewVectorGBoson=true`.
+- `vectorGMixesWithPhotonAndZ=true`.
+- `routeProvidesGuLocalFramedGaugeMap=false`.
+- `routeProvidesGuWzSourceRows=false`.
+- `routeProvidesGuObservedFieldExtraction=false`.
+- `routeProvidesGuHiggsScalarSourceOperator=false`.
+- `routeProvidesGuHiggsSelfCouplingSource=false`.
+- `routeProvidesTargetIndependentVevOrMassScale=false`.
+- `routeProvidesGeVUnitNormalization=false`.
+- `routePromotesWzMasses=false`.
+- `routePromotesHiggsMass=false`.
+- `routeCompletesBosonPredictions=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from framed gauge theory or the Framed
+Standard Model. The audited sources provide a serious Higgs-as-frame lead and
+concrete gamma-Z-G vector-mixing phenomenology, but they still require external
+FSM choices, fermion-sector fits, and a free G mass. Promotion would require a
+GU-local framed-gauge map, target-independent framon vacuum and potential,
+separate observed W/Z source rows, observed-field extraction, Higgs
+scalar-source and self-coupling lineage, a mass-scale source, pole extraction,
+and GeV normalization.
+
+### Validation
+
+- Targeted Phase362 run passed with
+  `framedStandardModelSourceAuditPassed=true`,
+  `routeHiggsAsElectroweakFramon=true`,
+  `routePredictsNewVectorGBoson=true`,
+  `vectorGMixesWithPhotonAndZ=true`, `routePromotesWzMasses=false`, and
+  `routePromotesHiggsMass=false`.
+- P101 package build passed and includes the Phase362 audit block.
+- P202 objective audit passed as an incomplete objective:
+  `objectiveAchieved=false`, `checklistPassedCount=155`, and
+  `checklistFailedCount=3`.
+- Claim-integrity verification passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns preserved the negative intake boundary:
+  P204 `intakeReadyCandidateCount=0`,
+  P205 `intakeReadyFindingCount=0`,
+  P207 `intakeReadyFindingCount=0`,
+  P279 `localSearchMatchingFileCount=0`,
+  P281 `localSearchMatchingFileCount=0`,
+  P295 `intakeReadyObservedFieldExtractionCandidateCount=0`, and
+  P296 `intakeReadySourceLineageFieldCandidateCount=0`.
+- Reference link check passed with `detailLinkCount=43` and no missing
+  details.
+- `dotnet test GeometricUnity.slnx` passed; the only warning was the existing
+  `xUnit2013` collection-size warning in
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
+
 ## 2026-05-24 - Phase361 Matrix Model Higgs Geometry Source Audit
 
 ### Context
