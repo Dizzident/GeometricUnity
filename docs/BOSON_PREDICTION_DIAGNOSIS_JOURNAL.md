@@ -12609,3 +12609,32 @@ masses.
 - `dotnet test GeometricUnity.slnx` passed; the only warning was the existing
   `xUnit2013` collection-size warning in
   `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
+
+## 2026-05-23 - Reference Tracking Index Maintenance
+
+### Context
+
+The user requested an explicit Markdown reference tracker with short indexed
+entries and linked detailed summaries, so future source work can be revisited
+without losing provenance.
+
+### Action
+
+- Verified that `ExperimentReferences.md` already serves as the top-level
+  reference index.
+- Verified that detailed source notes already live under
+  `docs/Reference/ExperimentReferences/`.
+- Added an explicit reference tracking workflow to `ExperimentReferences.md`,
+  including the rule to create/update a detail note, add one short index row,
+  record how the source was used, and update this journal when the source
+  changes the active diagnosis.
+- Marked `GU-DRAFT-2021` as the canonical example of the pattern: brief row in
+  `ExperimentReferences.md`, detailed summary in
+  `docs/Reference/ExperimentReferences/GU-DRAFT-2021.md`.
+
+### Outcome
+
+Reference tracking now has a documented index-plus-detail workflow:
+brief source rows in `ExperimentReferences.md`, detailed summaries in linked
+files under `docs/Reference/ExperimentReferences/`, and diagnostic outcomes in
+this journal.

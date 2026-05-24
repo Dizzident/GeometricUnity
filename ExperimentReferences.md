@@ -21,6 +21,24 @@ Update rule:
 - Do not treat a source as promotion-ready evidence unless the detail file
   identifies the exact source lineage it supplies.
 
+Reference tracking workflow:
+
+1. Create or update one detailed note under
+   `docs/Reference/ExperimentReferences/`.
+2. Add one row to this index with the source ID, source name, type, short
+   overview, current prediction impact, and detail-note link.
+3. Record the experiment, phase, or blocker diagnosis that used the source in
+   the detail note's `How It Was Used` section.
+4. When the source changes the active diagnosis, add a short outcome entry to
+   `docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md`.
+5. Before using a source as promotion evidence, verify that its detail note
+   names the exact source-lineage fields, observed-field extraction, target
+   independence, and unit normalization it supplies.
+
+Canonical example: `GU-DRAFT-2021` has a brief row in this index and a linked
+detailed summary at
+[GU-DRAFT-2021.md](docs/Reference/ExperimentReferences/GU-DRAFT-2021.md).
+
 Detail note format:
 
 - `Source` or `Sources`: title, URL, source type, and backlink to this index.
