@@ -11715,6 +11715,111 @@ lineage, a mass-scale source, pole extraction, and GeV normalization.
   `xUnit2013` collection-size warning in
   `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
 
+## 2026-05-24 - Phase365 Dressing-Field Electroweak Observed-Variables Audit
+
+### Context
+
+After Phase364, the active blocker remained the missing observed-field
+extraction and source-lineage contract rather than another broad geometric
+mass-model gap. Local search found FMS, Fradkin-Shenker, Nielsen, and
+Stueckelberg adjacent coverage, but no dedicated dressing-field or
+SU(2)-invariant electroweak-variable audit. A sidecar explorer independently
+confirmed that no dedicated dressing-field reference note or phase existed.
+
+### Sources Reviewed
+
+- `https://arxiv.org/abs/1702.02753`.
+- `https://arxiv.org/abs/2404.18582`.
+- `https://arxiv.org/abs/2406.19937`.
+- `https://arxiv.org/abs/1102.0468`.
+- `https://arxiv.org/abs/1308.1278`.
+
+### Action
+
+- Added
+  `studies/phase365_dressing_field_electroweak_observed_variables_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P365.md`.
+- Wired Phase365 into the generator, P101 package, P202 objective completion
+  audit, and claim-integrity verifier.
+- Added Phase365 scanner exclusions so generated diagnostic text is not counted
+  as independent source evidence.
+- Added `DRESSING-FIELD-ELECTROWEAK-OBSERVED-VARIABLES` to
+  `ExperimentReferences.md` with a detailed reference note under
+  `docs/Reference/ExperimentReferences/`.
+
+### Current Expected Outcome
+
+Phase365 is expected to pass only as a negative boundary audit:
+
+- `dressingFieldElectroweakObservedVariablesAuditPassed=true`.
+- `dressingFieldLeadPresent=true`.
+- `dressingFieldPrimarySourcesReviewed=true`.
+- `dressingFieldRouteExternalToGu=true`.
+- `routeUsesDressingFieldMethod=true`.
+- `routeSeparatesDressingFromGaugeFixing=true`.
+- `routeConstructsGaugeInvariantCompositeVariables=true`.
+- `routeCoversElectroweakHiggsMechanism=true`.
+- `routeUsesHiggsFieldAsSu2Dressing=true`.
+- `routeBuildsSu2InvariantWeakSectorVariables=true`.
+- `routeIdentifiesPhotonAndNeutralMixingAfterDressing=true`.
+- `routeProvidesExternalObservedFieldExtractionTemplate=true`.
+- `routeProvidesGuNativeDressingField=false`.
+- `routeProvidesGuObservedElectroweakEmbedding=false`.
+- `routeProvidesGuObservedVacuumAndExpansion=false`.
+- `routeProvidesObservedPhotonWzHiggsProjectionRows=false`.
+- `routeProvidesSeparateWzSourceRows=false`.
+- `routeProvidesGuWeakMixingAngleSource=false`.
+- `routeProvidesGuGaugeCouplingNormalization=false`.
+- `routeProvidesGuHiggsScalarSourceOperator=false`.
+- `routeProvidesGeVUnitNormalization=false`.
+- `routePromotesObservedFieldExtraction=false`.
+- `routePromotesWzMasses=false`.
+- `routePromotesHiggsMass=false`.
+- `routeCompletesBosonPredictions=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from dressing-field or SU(2)-invariant
+electroweak-variable routes. The audited sources are strong templates for
+observed-field extraction because they build gauge-invariant dressed variables
+and clarify the difference between dressing and gauge fixing. They still start
+from external Standard Model electroweak structure and do not provide a
+GU-native dressing field, observed-sector vacuum, electroweak embedding,
+photon/W/Z/H projection rows, W/Z source rows, weak-angle or coupling lineage,
+Higgs scalar-source/self-coupling lineage, pole extraction, mass scale, or GeV
+normalization.
+
+### Validation
+
+- Targeted Phase365 run passed with
+  `dressingFieldElectroweakObservedVariablesAuditPassed=true`,
+  `routeUsesDressingFieldMethod=true`,
+  `routeProvidesExternalObservedFieldExtractionTemplate=true`,
+  `routePromotesObservedFieldExtraction=false`,
+  `routePromotesWzMasses=false`,
+  `routePromotesHiggsMass=false`, and
+  `canFillPhase256ObservedFieldExtractionContract=false`.
+- P101 package build passed and includes the Phase365 audit block.
+- P202 objective audit passed as an incomplete objective:
+  `objectiveAchieved=false`, `checklistPassedCount=158`, and
+  `checklistFailedCount=3`.
+- Claim-integrity verification passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns preserved the negative intake boundary:
+  P204 `intakeReadyCandidateCount=0`,
+  P205 `intakeReadyFindingCount=0`,
+  P207 `intakeReadyFindingCount=0`,
+  P279 `localSearchMatchingFileCount=0`,
+  P281 `localSearchMatchingFileCount=0`,
+  P295 `intakeReadyObservedFieldExtractionCandidateCount=0`, and
+  P296 `intakeReadySourceLineageFieldCandidateCount=0`.
+- `ExperimentReferences.md` link check passed with `detailLinkCount=46` and
+  `missingDetailCount=0`.
+- `dotnet test GeometricUnity.slnx` passed; the only warning was the existing
+  `xUnit2013` collection-size warning in
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
+
 ## 2026-05-24 - Phase363 Hitchin Higgs-Bundle Spectral-Cover Source Audit
 
 ### Context

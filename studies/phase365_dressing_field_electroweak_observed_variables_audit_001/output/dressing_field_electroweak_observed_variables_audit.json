@@ -1,0 +1,175 @@
+{
+  "phaseId": "phase365-dressing-field-electroweak-observed-variables-audit",
+  "terminalStatus": "dressing-field-electroweak-observed-variables-audit-template-not-gu-source",
+  "generatedAt": "2026-05-24T19:06:04.6627887+00:00",
+  "dressingFieldElectroweakObservedVariablesAuditPassed": true,
+  "dressingFieldLeadPresent": true,
+  "dressingFieldPrimarySourcesReviewed": true,
+  "dressingFieldRouteExternalToGu": true,
+  "routeUsesDressingFieldMethod": true,
+  "routeSeparatesDressingFromGaugeFixing": true,
+  "routeConstructsGaugeInvariantCompositeVariables": true,
+  "routeCoversElectroweakHiggsMechanism": true,
+  "routeUsesHiggsFieldAsSu2Dressing": true,
+  "routeBuildsSu2InvariantWeakSectorVariables": true,
+  "routeIdentifiesPhotonAndNeutralMixingAfterDressing": true,
+  "routeConnectsToUnitaryGaugeWithoutTreatingItAsGaugeFixingOnly": true,
+  "routeIncludesGaugeInvariantHiggsMechanismAccounts": true,
+  "routeIncludesSecondOrderStandardModelVariables": true,
+  "routeProvidesExternalObservedFieldExtractionTemplate": true,
+  "dressingFieldReviewLatestArxivVersion": 1,
+  "dressingVsFixingLatestArxivVersion": 3,
+  "qftGaugeFixingDressingLatestArxivVersion": 1,
+  "gaugeInvariantHiggsAccountsLatestArxivVersion": 2,
+  "secondOrderStandardModelLatestArxivVersion": 1,
+  "routeIsVariableDressingNotGuMassLaw": true,
+  "routeDependsOnStandardModelHiggsDoubletAndNonzeroVev": true,
+  "routeDoesNotDeriveGuObservedSectorVacuum": true,
+  "routeDoesNotDeriveGuElectroweakEmbedding": true,
+  "routeDoesNotDeriveGuWeakMixingAngle": true,
+  "routeDoesNotDeriveGuGaugeCouplings": true,
+  "routeDoesNotProvideTargetIndependentMassScale": true,
+  "routeDoesNotProvidePhysicalPoleExtraction": true,
+  "routeDoesNotPredictObservedWzMasses": true,
+  "routeDoesNotPredictObservedHiggsMass": true,
+  "routeRequiresGuNativeDressingField": true,
+  "routeRequiresGuObservedElectroweakEmbedding": true,
+  "routeRequiresGuObservedVacuumAndExpansion": true,
+  "routeRequiresPhotonWzHiggsProjectionRows": true,
+  "routeRequiresSeparateWzSourceRows": true,
+  "routeRequiresGuWeakMixingAngleSource": true,
+  "routeRequiresGuGaugeCouplingNormalization": true,
+  "routeRequiresGuHiggsScalarSourceOperator": true,
+  "routeRequiresGuHiggsSelfCouplingSource": true,
+  "routeRequiresCorrelationFunctionPoleExtraction": true,
+  "routeRequiresTargetIndependentVevOrMassScale": true,
+  "routeRequiresGeVUnitNormalization": true,
+  "routeProvidesGuNativeDressingField": false,
+  "routeProvidesGuObservedElectroweakEmbedding": false,
+  "routeProvidesGuObservedVacuumAndExpansion": false,
+  "routeProvidesObservedPhotonWzHiggsProjectionRows": false,
+  "routeProvidesSeparateWzSourceRows": false,
+  "routeProvidesGuWeakMixingAngleSource": false,
+  "routeProvidesGuGaugeCouplingNormalization": false,
+  "routeProvidesGuHiggsScalarSourceOperator": false,
+  "routeProvidesGuHiggsSelfCouplingSource": false,
+  "routeProvidesCorrelationFunctionPoleExtraction": false,
+  "routeProvidesTargetIndependentVevOrMassScale": false,
+  "routeProvidesGeVUnitNormalization": false,
+  "routePromotesObservedFieldExtraction": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "sourceRowCount": 5,
+  "sourceRows": [
+    {
+      "Id": "attard-francois-lazzarini-masson-1702-02753-dressing-field-method",
+      "Url": "https://arxiv.org/abs/1702.02753",
+      "Title": "The dressing field method of gauge symmetry reduction, a review with examples",
+      "Summary": "Reviews the dressing-field method as a way to construct composite variables invariant under a gauge subgroup and reduce gauge symmetry without mere gauge fixing.",
+      "PromotionBoundary": "Strong observed-variable template; it does not derive GU-native fields, a GU vacuum, W/Z/H source rows, or masses."
+    },
+    {
+      "Id": "berghofer-francois-2404-18582-dressing-vs-fixing",
+      "Url": "https://arxiv.org/abs/2404.18582",
+      "Title": "Dressing vs. Fixing: On How to Extract and Interpret Gauge-Invariant Content",
+      "Summary": "Clarifies the difference between gauge fixing and dressing transformations, with electroweak examples where gauge-invariant variables carry physical interpretation.",
+      "PromotionBoundary": "Useful conceptual guardrail for observed-field extraction; still external to GU and not a numerical source law."
+    },
+    {
+      "Id": "francois-2406-19937-gauge-fixing-qft-dressing-field-method",
+      "Url": "https://arxiv.org/abs/2406.19937",
+      "Title": "Gauge-fixing in quantum field theory and the dressing field method",
+      "Summary": "Frames dressing as a distinct operation from gauge fixing in quantum field theory and emphasizes that dressed variables can encode gauge-invariant content.",
+      "PromotionBoundary": "Supports an extraction discipline, not GU-local pole equations or source-lineage parameters."
+    },
+    {
+      "Id": "struyve-1102-0468-gauge-invariant-higgs-accounts",
+      "Url": "https://arxiv.org/abs/1102.0468",
+      "Title": "Gauge invariant accounts of the Higgs mechanism",
+      "Summary": "Compares gauge-invariant descriptions of the Higgs mechanism and explains how physical descriptions can avoid treating gauge symmetry breaking as literal observable breaking.",
+      "PromotionBoundary": "Good boundary source for interpretation; it does not supply GU electroweak source rows or a mass scale."
+    },
+    {
+      "Id": "espin-krasnov-1308-3914-second-order-standard-model",
+      "Url": "https://arxiv.org/abs/1308.1278",
+      "Title": "Second order Standard Model",
+      "Summary": "Rewrites the electroweak theory using SU(2)-invariant fields after combining spinors and bosons with the Higgs field, leaving residual U(1) structure and Standard Model inputs.",
+      "PromotionBoundary": "Closest direct electroweak variable construction; it is an SM reformulation, not a GU-derived W/Z/H mass prediction."
+    }
+  ],
+  "adjacentRouteBoundary": {
+    "observedFieldExtractionNoGoPassed": true,
+    "observedFieldExtractionBridgePromotable": false,
+    "newObservedFieldExtractionArtifactRequired": true,
+    "fmsGaugeInvariantSpectrumSourceAuditPassed": true,
+    "fmsProvidesObservedFieldExtractionTemplate": true,
+    "fmsRoutePromotesObservedFieldExtraction": false,
+    "nielsenPoleMassGaugeIndependenceSourceAuditPassed": true,
+    "nielsenRoutePromotesObservedFieldExtraction": false,
+    "momentMapSymplecticReductionSourceAuditPassed": true,
+    "momentMapRoutePromotesWzMasses": false,
+    "momentMapRoutePromotesHiggsMass": false
+  },
+  "contractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionRequiredFieldCount": 20,
+    "observedFieldExtractionFilledRequiredFieldCount": 0
+  },
+  "checks": [
+    {
+      "Id": "dressing-field-primary-sources-reviewed",
+      "Passed": true,
+      "Evidence": "lead=True; reviewed=True; externalToGu=True; sourceRows=5"
+    },
+    {
+      "Id": "dressing-field-observed-variable-route-captured",
+      "Passed": true,
+      "Evidence": "dfm=True; distinctFromFixing=True; composites=True; ew=True; higgsDressing=True; su2Invariant=True; photonNeutral=True; unitaryGaugeBoundary=True; gaugeInvariantHiggs=True; secondOrderSm=True; template=True"
+    },
+    {
+      "Id": "dressing-field-version-metadata-captured",
+      "Passed": true,
+      "Evidence": "reviewV=1; dressingVsFixingV=3; qftGaugeFixingV=1; struyveV=2; secondOrderSmV=1"
+    },
+    {
+      "Id": "observed-field-extraction-blockers-preserved",
+      "Passed": true,
+      "Evidence": "p255NoGo=True; p255Promotable=False; newArtifact=True; p256Required=20; p256Filled=0; p256Promotable=False"
+    },
+    {
+      "Id": "adjacent-observed-field-boundaries-preserved",
+      "Passed": true,
+      "Evidence": "fmsPassed=True; fmsTemplate=True; fmsPromotesObserved=False; nielsenPassed=True; nielsenPromotesObserved=False; momentMapPassed=True; momentMapWz=False; momentMapHiggs=False"
+    },
+    {
+      "Id": "dressing-field-promotion-obstructions-captured",
+      "Passed": true,
+      "Evidence": "variableDressing=True; smHiggsVev=True; guVacuum=True; guEmbedding=True; weakAngle=True; gaugeCouplings=True; scale=True; pole=True; observedWz=True; observedHiggs=True"
+    },
+    {
+      "Id": "dressing-field-route-does-not-fill-gu-contracts",
+      "Passed": true,
+      "Evidence": "requiresDressing=True; requiresEmbedding=True; requiresVacuum=True; requiresProjection=True; requiresWzRows=True; providesDressing=False; providesProjection=False; providesWzRows=False; promotesObserved=False; promotesWz=False; promotesHiggs=False"
+    },
+    {
+      "Id": "phase213-missing-source-state-preserved",
+      "Passed": true,
+      "Evidence": "existingEvidence=False; wzMissing=15; higgsMissing=14"
+    }
+  ],
+  "decision": "Do not promote W/Z or Higgs physical masses from dressing-field or SU(2)-invariant electroweak-variable routes in this repository. These sources provide a strong external template for observed-field extraction: construct gauge-invariant dressed variables, distinguish dressing from gauge fixing, and rewrite electroweak fields using the Higgs field. They still assume Standard Model electroweak structure and do not supply a GU-native dressing field, observed-sector vacuum, electroweak embedding, separate W/Z source rows, weak angle/coupling lineage, Higgs scalar-source/self-coupling lineage, pole extraction, mass scale, or GeV normalization.",
+  "nextRequiredArtifact": [
+    "A GU-native dressing field or gauge-invariant composite-variable theorem derived from Shiab/observer-sector geometry.",
+    "A source-derived GU observed vacuum and electroweak embedding producing photon/W/Z/H projection rows before target comparison.",
+    "Separate W and Z source rows with target-independent weak-angle, coupling, scale, and stability sidecars.",
+    "A Higgs scalar-source/self-coupling lineage plus physical-pole extraction and GeV normalization before any dressing-field route can promote W/Z/H masses."
+  ]
+}

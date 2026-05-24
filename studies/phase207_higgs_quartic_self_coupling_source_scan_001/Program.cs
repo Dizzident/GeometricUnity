@@ -395,6 +395,7 @@ static List<string> ClassifyBlockers(string lower, string file)
     AddIf(blockers, file.Contains("phase362_framed_standard_model_source_audit", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("phase363_hitchin_higgs_bundle_source_audit", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("phase364_moment_map_symplectic_reduction_source_audit", StringComparison.Ordinal), "generated-diagnostic-artifact");
+    AddIf(blockers, file.Contains("phase365_dressing_field_electroweak_observed_variables_audit", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P278.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P279.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P280.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
@@ -450,6 +451,7 @@ static List<string> ClassifyBlockers(string lower, string file)
     AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P362.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P363.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P364.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
+    AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P365.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("/output/", StringComparison.Ordinal) && lower.Contains("nextrequiredartifact", StringComparison.Ordinal), "requirement-output-not-source");
     return blockers;
