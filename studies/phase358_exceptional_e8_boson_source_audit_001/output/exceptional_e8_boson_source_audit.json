@@ -1,0 +1,173 @@
+{
+  "phaseId": "phase358-exceptional-e8-boson-source-audit",
+  "terminalStatus": "exceptional-e8-boson-source-audit-representation-lead-not-gu-mass-law",
+  "generatedAt": "2026-05-24T00:41:18.5459828+00:00",
+  "exceptionalE8BosonSourceAuditPassed": true,
+  "exceptionalE8LeadPresent": true,
+  "exceptionalE8PrimarySourcesReviewed": true,
+  "exceptionalE8RouteExternalToGu": true,
+  "octionsJournalDoi": "https://doi.org/10.1063/5.0095484",
+  "routeUsesExceptionalLieAlgebraE8": true,
+  "routeUsesE8PrincipalBundleConnection": true,
+  "routeEmbedsGravityAndStandardModel": true,
+  "routeEmbedsStandardModelGaugeAlgebra": true,
+  "routeIncludesElectroweakSu2U1": true,
+  "routeIncludesFrameHiggsOrHiggsDoublet": true,
+  "routeIncludesFermionsAndThreeGenerations": true,
+  "routeIncludesGravityOrPreGravitation": true,
+  "routeOctionsE8Minus24Present": true,
+  "routeE8xE8PregravitationPresent": true,
+  "routeWilson2025EmbeddingUpdatePresent": true,
+  "representationNoToeObstructionPresent": true,
+  "routeClaimsWeakBosonsMassiveAfterSsb": true,
+  "routeProvidesBosonIdentificationButNotMassLaw": true,
+  "routeDoesNotPredictObservedWzMasses": true,
+  "routeDoesNotPredictObservedHiggsMass": true,
+  "routeDoesNotProvidePhysicalPoleExtraction": true,
+  "routeDoesNotProvideObservedPhotonWzHiggsProjection": true,
+  "lisiOriginalPageCount": 31,
+  "lisiExplicitEmbeddingPageCount": 14,
+  "distlerGaribaldiLatestArxivVersion": 3,
+  "distlerGaribaldiLatestRevisionYear": 2009,
+  "octionsLatestArxivVersion": 2,
+  "octionsPageCount": 15,
+  "e8E8LatestArxivVersion": 3,
+  "e8E8PageCount": 31,
+  "wilsonEmbeddingsLatestArxivVersion": 2,
+  "wilsonEmbeddingsRevisionYear": 2025,
+  "routeRequiresExternalExceptionalModelChoice": true,
+  "routeRequiresRepresentationEmbeddingChoice": true,
+  "routeRequiresSymmetryBreakingMechanism": true,
+  "routeRequiresHiggsPotentialOrMassMatrix": true,
+  "routeRequiresCouplingsAndLagrangianCompletion": true,
+  "routeRequiresFermionMassOrBackgroundInputs": true,
+  "routeRequiresCompatibilityWithNoToeObstruction": true,
+  "routeRequiresObservedMassComparison": true,
+  "routeRequiresGuLocalE8Embedding": true,
+  "routeRequiresGuExceptionalBranchingMap": true,
+  "routeRequiresGuWzSourceRows": true,
+  "routeRequiresGuWeakMixingAngleSource": true,
+  "routeRequiresGuObservedFieldExtraction": true,
+  "routeRequiresGuHiggsScalarSourceOperator": true,
+  "routeRequiresGuHiggsSelfCouplingSource": true,
+  "routeRequiresTargetIndependentVevOrMassScale": true,
+  "routeRequiresGeVUnitNormalization": true,
+  "routeProvidesGuLocalE8Embedding": false,
+  "routeProvidesGuExceptionalBranchingMap": false,
+  "routeProvidesGuWzSourceRows": false,
+  "routeProvidesGuWeakMixingAngleSource": false,
+  "routeProvidesGuObservedFieldExtraction": false,
+  "routeProvidesGuHiggsScalarSourceOperator": false,
+  "routeProvidesGuHiggsSelfCouplingSource": false,
+  "routeProvidesTargetIndependentVevOrMassScale": false,
+  "routeProvidesGeVUnitNormalization": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "sourceRowCount": 6,
+  "sourceRows": [
+    {
+      "Id": "lisi-0711-0770-exceptionally-simple-e8",
+      "Url": "https://arxiv.org/abs/0711.0770",
+      "Title": "An Exceptionally Simple Theory of Everything",
+      "Summary": "E8 principal-bundle connection proposal containing Standard Model, gravity, electroweak su(2) x u(1), frame-Higgs, and three-generation structure.",
+      "PromotionBoundary": "Algebraic/geometric identification lead only; no observed W/Z/H mass source rows, scale, or pole extraction."
+    },
+    {
+      "Id": "distler-garibaldi-0905-2658-no-toe-inside-e8",
+      "Url": "https://arxiv.org/abs/0905.2658",
+      "Title": "There is no Theory of Everything inside E8",
+      "Summary": "Representation-theory obstruction showing E8 TOE embeddings lack properties required by physical reality.",
+      "PromotionBoundary": "Blocks naive E8 promotion and requires any E8-like route to supply an explicit physical representation and mass law."
+    },
+    {
+      "Id": "lisi-1006-4908-explicit-e8-embedding",
+      "Url": "https://arxiv.org/abs/1006.4908",
+      "Title": "An Explicit Embedding of Gravity and the Standard Model in E8",
+      "Summary": "Explicitly embeds gravitational and Standard Model gauge-field algebra acting on one fermion generation into E8 through spin(11,3)/GraviGUT structure.",
+      "PromotionBoundary": "Embedding result only; no W/Z/H pole masses, Higgs potential, VEV source, or GU-local source rows."
+    },
+    {
+      "Id": "octions-2204-05310-e8-description-standard-model",
+      "Url": "https://arxiv.org/abs/2204.05310",
+      "Title": "Octions: An E8 description of the Standard Model",
+      "Summary": "Interprets e8(-24) elements as Standard Model objects, including SM gauge algebra, Lorentz algebra, quark/lepton spinors, and GUT substructures.",
+      "PromotionBoundary": "Strong representation lead; does not derive target-independent electroweak mass parameters or observed W/Z/H states."
+    },
+    {
+      "Id": "e8-e8-2206-06911-standard-model-pregravitation",
+      "Url": "https://arxiv.org/abs/2206.06911",
+      "Title": "E8 x E8 unification with pre-gravitation on octonion-valued twistor space",
+      "Summary": "Branches one E8 to the Standard Model gauge bosons, Higgs, and left chiral fermions, and a second E8 to a right-sector pre-gravitation analogue.",
+      "PromotionBoundary": "Uses spontaneous symmetry breaking language and future coupling/Lagrangian work; no completed physical W/Z/H mass law."
+    },
+    {
+      "Id": "wilson-2507-16517-standard-model-e8-embeddings",
+      "Url": "https://arxiv.org/abs/2507.16517",
+      "Title": "Embeddings of the Standard Model in E8",
+      "Summary": "Recent modified octions route relating weak SU(2) breaking to generation breaking and discussing mass/background dependence.",
+      "PromotionBoundary": "Current E8 mass lead remains external and background/mass dependent, with no GU-local source-lineage rows or GeV normalization."
+    }
+  ],
+  "adjacentRouteBoundary": {
+    "octonionRoutePromotesWzMasses": false,
+    "octonionRoutePromotesHiggsMass": false,
+    "diracLichnerowiczRoutePromotesWzMasses": false,
+    "diracLichnerowiczRoutePromotesHiggsMass": false
+  },
+  "contractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionFilledRequiredFieldCount": 0
+  },
+  "checks": [
+    {
+      "Id": "exceptional-e8-primary-sources-reviewed",
+      "Passed": true,
+      "Evidence": "lead=True; reviewed=True; externalToGu=True; sourceRows=6"
+    },
+    {
+      "Id": "exceptional-e8-standard-model-structure-captured",
+      "Passed": true,
+      "Evidence": "e8=True; principalBundle=True; smGauge=True; electroweak=True; higgs=True; generations=True; pregrav=True; octions=True; e8e8=True; wilson2025=True"
+    },
+    {
+      "Id": "exceptional-e8-mass-law-blockers-captured",
+      "Passed": true,
+      "Evidence": "noToeObstruction=True; weakBosonsAfterSsb=True; idNotMassLaw=True; observedWz=True; observedHiggs=True; pole=True; observedProjection=True"
+    },
+    {
+      "Id": "external-choices-and-completion-work-required",
+      "Passed": true,
+      "Evidence": "modelChoice=True; embedding=True; ssb=True; higgsMassMatrix=True; couplingsLagrangian=True; fermionBackground=True; obstructionCompatibility=True; observedComparison=True"
+    },
+    {
+      "Id": "adjacent-octonion-and-dirac-routes-remain-nonpromotional",
+      "Passed": true,
+      "Evidence": "octonionWz=False; octonionHiggs=False; diracWz=False; diracHiggs=False"
+    },
+    {
+      "Id": "route-does-not-fill-gu-contracts",
+      "Passed": true,
+      "Evidence": "guE8=False; guBranching=False; guWzRows=False; weakAngle=False; observed=False; higgsOperator=False; selfCoupling=False; scale=False; gev=False; promotesWz=False; promotesHiggs=False; completes=False"
+    },
+    {
+      "Id": "phase201-phase256-contract-state-preserved",
+      "Passed": true,
+      "Evidence": "phase201Promotable=False; existingEvidence=False; wzMissing=15; higgsMissing=14; observedFilled=0; observedPromotable=False"
+    }
+  ],
+  "decision": "Do not promote W/Z or Higgs physical masses from exceptional E8 routes in this repository. The sources supply serious representation and unification leads, including Standard Model gauge algebra, electroweak SU(2) x U(1), Higgs/frame-Higgs objects, generations, and gravity/pre-gravitation embeddings, but they do not supply GU-local E8 branching from Shiab/observer geometry, separate W/Z source rows, physical photon/W/Z/H projection, weak-angle and coupling normalization, target-independent VEV or mass-scale source, Higgs scalar-source/self-coupling lineage, pole extraction, or GeV normalization.",
+  "nextRequiredArtifact": [
+    "A GU-local exceptional-algebra embedding theorem mapping Shiab/observer-sector fields into the E8 or E8 x E8 representation without importing an external model.",
+    "A target-independent branching and symmetry-breaking law that produces observed photon/W/Z/H fields and separate W/Z source rows.",
+    "A Higgs scalar-source, self-coupling or excitation law, VEV or equivalent mass-scale source, and weak-angle/coupling normalization from the same geometry.",
+    "A physical pole extractor and GeV normalization before any E8 route can promote W/Z/H masses."
+  ]
+}

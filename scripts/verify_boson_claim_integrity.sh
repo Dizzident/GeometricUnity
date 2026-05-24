@@ -127,6 +127,7 @@ const paths = {
   phase355: "studies/phase355_dirac_lichnerowicz_yang_mills_higgs_source_audit_001/output/dirac_lichnerowicz_yang_mills_higgs_source_audit_summary.json",
   phase356: "studies/phase356_eguchi_hanson_substandard_higgs_source_audit_001/output/eguchi_hanson_substandard_higgs_source_audit_summary.json",
   phase357: "studies/phase357_causal_fermion_systems_boson_source_audit_001/output/causal_fermion_systems_boson_source_audit_summary.json",
+  phase358: "studies/phase358_exceptional_e8_boson_source_audit_001/output/exceptional_e8_boson_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -325,6 +326,7 @@ const phase354 = requireFile(paths.phase354);
 const phase355 = requireFile(paths.phase355);
 const phase356 = requireFile(paths.phase356);
 const phase357 = requireFile(paths.phase357);
+const phase358 = requireFile(paths.phase358);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -3075,6 +3077,77 @@ if (sourceLineageMissing) {
   assert(phase357.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase357 W/Z missing-field count must match Phase213.");
   assert(phase357.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase357 Higgs missing-field count must match Phase213.");
   assert(phase357.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase357 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase358.exceptionalE8BosonSourceAuditPassed === true, "Phase358 exceptional E8 boson source audit must pass while preserving non-promotional status.");
+  assert(phase358.exceptionalE8LeadPresent === true, "Phase358 must record the exceptional E8 lead.");
+  assert(phase358.exceptionalE8PrimarySourcesReviewed === true, "Phase358 must record primary source review.");
+  assert(phase358.exceptionalE8RouteExternalToGu === true, "Phase358 must classify the route as external to GU.");
+  assert(phase358.routeUsesExceptionalLieAlgebraE8 === true, "Phase358 must record exceptional E8 usage.");
+  assert(phase358.routeUsesE8PrincipalBundleConnection === true, "Phase358 must record the E8 principal-bundle connection lead.");
+  assert(phase358.routeEmbedsGravityAndStandardModel === true, "Phase358 must record gravity/Standard Model embedding.");
+  assert(phase358.routeEmbedsStandardModelGaugeAlgebra === true, "Phase358 must record Standard Model gauge algebra embedding.");
+  assert(phase358.routeIncludesElectroweakSu2U1 === true, "Phase358 must record electroweak SU(2)xU(1).");
+  assert(phase358.routeIncludesFrameHiggsOrHiggsDoublet === true, "Phase358 must record Higgs/frame-Higgs objects.");
+  assert(phase358.routeIncludesFermionsAndThreeGenerations === true, "Phase358 must record fermions and generations.");
+  assert(phase358.routeIncludesGravityOrPreGravitation === true, "Phase358 must record gravity/pre-gravitation.");
+  assert(phase358.routeOctionsE8Minus24Present === true, "Phase358 must record the Octions E8(-24) source.");
+  assert(phase358.routeE8xE8PregravitationPresent === true, "Phase358 must record the E8 x E8 pre-gravitation source.");
+  assert(phase358.routeWilson2025EmbeddingUpdatePresent === true, "Phase358 must record the 2025 E8 embedding update.");
+  assert(phase358.representationNoToeObstructionPresent === true, "Phase358 must record the Distler-Garibaldi E8 obstruction.");
+  assert(phase358.routeClaimsWeakBosonsMassiveAfterSsb === true, "Phase358 must record weak-boson mass language after SSB.");
+  assert(phase358.routeProvidesBosonIdentificationButNotMassLaw === true, "Phase358 must record that identification is not a mass law.");
+  assert(phase358.routeDoesNotPredictObservedWzMasses === true, "Phase358 must record that observed W/Z masses are not predicted.");
+  assert(phase358.routeDoesNotPredictObservedHiggsMass === true, "Phase358 must record that observed Higgs mass is not predicted.");
+  assert(phase358.routeDoesNotProvidePhysicalPoleExtraction === true, "Phase358 must record missing physical pole extraction.");
+  assert(phase358.routeDoesNotProvideObservedPhotonWzHiggsProjection === true, "Phase358 must record missing observed photon/W/Z/H projection.");
+  assert(phase358.lisiOriginalPageCount === 31, "Phase358 must preserve Lisi original source scope.");
+  assert(phase358.lisiExplicitEmbeddingPageCount === 14, "Phase358 must preserve Lisi explicit embedding source scope.");
+  assert(phase358.distlerGaribaldiLatestArxivVersion === 3, "Phase358 must preserve Distler-Garibaldi arXiv v3.");
+  assert(phase358.distlerGaribaldiLatestRevisionYear === 2009, "Phase358 must preserve Distler-Garibaldi revision year.");
+  assert(phase358.octionsLatestArxivVersion === 2, "Phase358 must preserve Octions arXiv v2.");
+  assert(phase358.octionsPageCount === 15, "Phase358 must preserve Octions source scope.");
+  assert(phase358.e8E8LatestArxivVersion === 3, "Phase358 must preserve E8 x E8 arXiv v3.");
+  assert(phase358.e8E8PageCount === 31, "Phase358 must preserve E8 x E8 source scope.");
+  assert(phase358.wilsonEmbeddingsLatestArxivVersion === 2, "Phase358 must preserve Wilson E8 embeddings arXiv v2.");
+  assert(phase358.wilsonEmbeddingsRevisionYear === 2025, "Phase358 must preserve Wilson E8 embeddings revision year.");
+  assert(phase358.routeRequiresExternalExceptionalModelChoice === true, "Phase358 must require an external exceptional-model choice.");
+  assert(phase358.routeRequiresRepresentationEmbeddingChoice === true, "Phase358 must require a representation embedding choice.");
+  assert(phase358.routeRequiresSymmetryBreakingMechanism === true, "Phase358 must require a symmetry-breaking mechanism.");
+  assert(phase358.routeRequiresHiggsPotentialOrMassMatrix === true, "Phase358 must require Higgs potential or mass-matrix data.");
+  assert(phase358.routeRequiresCouplingsAndLagrangianCompletion === true, "Phase358 must require couplings and Lagrangian completion.");
+  assert(phase358.routeRequiresFermionMassOrBackgroundInputs === true, "Phase358 must require fermion-mass or background inputs.");
+  assert(phase358.routeRequiresCompatibilityWithNoToeObstruction === true, "Phase358 must require compatibility with the E8 obstruction.");
+  assert(phase358.routeRequiresObservedMassComparison === true, "Phase358 must require observed mass comparison.");
+  assert(phase358.routeRequiresGuLocalE8Embedding === true, "Phase358 must require a GU-local E8 embedding.");
+  assert(phase358.routeRequiresGuExceptionalBranchingMap === true, "Phase358 must require a GU exceptional branching map.");
+  assert(phase358.routeRequiresGuWzSourceRows === true, "Phase358 must require GU W/Z source rows.");
+  assert(phase358.routeRequiresGuWeakMixingAngleSource === true, "Phase358 must require a GU weak-angle source.");
+  assert(phase358.routeRequiresGuObservedFieldExtraction === true, "Phase358 must require GU observed-field extraction.");
+  assert(phase358.routeRequiresGuHiggsScalarSourceOperator === true, "Phase358 must require a GU Higgs scalar-source operator.");
+  assert(phase358.routeRequiresGuHiggsSelfCouplingSource === true, "Phase358 must require a GU Higgs self-coupling source.");
+  assert(phase358.routeRequiresTargetIndependentVevOrMassScale === true, "Phase358 must require a target-independent scale.");
+  assert(phase358.routeRequiresGeVUnitNormalization === true, "Phase358 must require GeV normalization.");
+  assert(phase358.routeProvidesGuLocalE8Embedding === false, "Phase358 cannot claim a GU-local E8 embedding.");
+  assert(phase358.routeProvidesGuExceptionalBranchingMap === false, "Phase358 cannot claim a GU exceptional branching map.");
+  assert(phase358.routeProvidesGuWzSourceRows === false, "Phase358 cannot claim GU W/Z source rows.");
+  assert(phase358.routeProvidesGuWeakMixingAngleSource === false, "Phase358 cannot claim a GU weak-angle source.");
+  assert(phase358.routeProvidesGuObservedFieldExtraction === false, "Phase358 cannot claim GU observed-field extraction.");
+  assert(phase358.routeProvidesGuHiggsScalarSourceOperator === false, "Phase358 cannot claim a GU Higgs scalar-source operator.");
+  assert(phase358.routeProvidesGuHiggsSelfCouplingSource === false, "Phase358 cannot claim a GU Higgs self-coupling source.");
+  assert(phase358.routeProvidesTargetIndependentVevOrMassScale === false, "Phase358 cannot claim a target-independent scale.");
+  assert(phase358.routeProvidesGeVUnitNormalization === false, "Phase358 cannot claim GeV normalization.");
+  assert(phase358.routePromotesWzMasses === false, "Phase358 cannot promote W/Z masses.");
+  assert(phase358.routePromotesHiggsMass === false, "Phase358 cannot promote Higgs mass.");
+  assert(phase358.routeCompletesBosonPredictions === false, "Phase358 cannot complete boson predictions.");
+  assert(phase358.canFillPhase201WzContract === false, "Phase358 cannot fill the Phase201 W/Z contract.");
+  assert(phase358.canFillPhase201HiggsContract === false, "Phase358 cannot fill the Phase201 Higgs contract.");
+  assert(phase358.canFillPhase256ObservedFieldExtractionContract === false, "Phase358 cannot fill the Phase256 observed-field extraction contract.");
+  assert(phase358.sourceRowCount === 6, "Phase358 must preserve six source rows.");
+  assert(phase358.contractImpact?.canFillPhase201WzContract === false, "Phase358 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase358.contractImpact?.canFillPhase201HiggsContract === false, "Phase358 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase358.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase358 contract impact must keep Phase256 unfilled.");
+  assert(phase358.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase358 W/Z missing-field count must match Phase213.");
+  assert(phase358.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase358 Higgs missing-field count must match Phase213.");
+  assert(phase358.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase358 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

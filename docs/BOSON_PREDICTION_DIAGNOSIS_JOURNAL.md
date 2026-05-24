@@ -11825,6 +11825,105 @@ lineage, and GeV normalization.
   xUnit2013 analyzer warning in
   `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
 
+## 2026-05-23 - Phase358 Exceptional E8 Boson Source Audit
+
+### Context
+
+After Phase357, the next distinct geometric/algebraic lead was the exceptional
+E8 family. It is relevant because E8-style routes try to place Standard Model
+gauge algebra, electroweak SU(2) x U(1), Higgs objects, fermions, generations,
+and gravity into a single exceptional representation, close to GU's
+unification goal.
+
+### Sources Reviewed
+
+- `https://arxiv.org/abs/0711.0770`.
+- `https://arxiv.org/abs/0905.2658`.
+- `https://arxiv.org/abs/1006.4908`.
+- `https://arxiv.org/abs/2204.05310`.
+- `https://doi.org/10.1063/5.0095484`.
+- `https://arxiv.org/abs/2206.06911`.
+- `https://arxiv.org/abs/2507.16517`.
+
+### Action
+
+- Added `studies/phase358_exceptional_e8_boson_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P358.md`.
+- Added `EXCEPTIONAL-E8-BOSON-SOURCES` to `ExperimentReferences.md` with a
+  detailed reference note under `docs/Reference/ExperimentReferences/`.
+- Wired Phase358 into the generator, P101 package, P202 objective completion
+  audit, and claim-integrity verifier.
+- Added Phase358 scanner exclusions so generated diagnostic text is not counted
+  as independent source evidence.
+
+### Current Expected Outcome
+
+Phase358 is expected to pass only as a negative boundary audit:
+
+- `exceptionalE8BosonSourceAuditPassed=true`.
+- `exceptionalE8LeadPresent=true`.
+- `exceptionalE8PrimarySourcesReviewed=true`.
+- `exceptionalE8RouteExternalToGu=true`.
+- `routeUsesExceptionalLieAlgebraE8=true`.
+- `routeEmbedsStandardModelGaugeAlgebra=true`.
+- `routeIncludesElectroweakSu2U1=true`.
+- `routeIncludesFrameHiggsOrHiggsDoublet=true`.
+- `routeIncludesFermionsAndThreeGenerations=true`.
+- `routeIncludesGravityOrPreGravitation=true`.
+- `representationNoToeObstructionPresent=true`.
+- `routeClaimsWeakBosonsMassiveAfterSsb=true`.
+- `routeProvidesBosonIdentificationButNotMassLaw=true`.
+- `routeDoesNotPredictObservedWzMasses=true`.
+- `routeDoesNotPredictObservedHiggsMass=true`.
+- `routePromotesWzMasses=false`.
+- `routePromotesHiggsMass=false`.
+- `routeCompletesBosonPredictions=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from exceptional E8 routes in this
+repository. The route is a serious representation/unification lead, but current
+sources identify Standard Model objects rather than deriving the physical W/Z/H
+mass law. Promotion would need a GU-local exceptional branching theorem,
+separate W/Z source rows, weak-angle and coupling normalization, observed
+photon/W/Z/H projection, Higgs scalar-source/self-coupling lineage, a
+target-independent VEV or scale, pole extraction, and GeV normalization.
+
+### Validation
+
+- Targeted Phase358 run passed with
+  `exceptionalE8BosonSourceAuditPassed=true`,
+  `routeEmbedsStandardModelGaugeAlgebra=true`,
+  `routeIncludesFrameHiggsOrHiggsDoublet=true`,
+  `representationNoToeObstructionPresent=true`,
+  `routeProvidesBosonIdentificationButNotMassLaw=true`,
+  `routePromotesWzMasses=false`, `routePromotesHiggsMass=false`, and
+  `canFillPhase201WzContract=false`.
+- P101 package build passed and includes the Phase358 audit block.
+- P202 objective audit passed as an incomplete objective:
+  `objectiveAchieved=false`, `checklistPassedCount=151`, and
+  `checklistFailedCount=3`.
+- Claim-integrity verification passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns preserved the negative intake boundary:
+  P204 `intakeReadyCandidateCount=0`,
+  P205 `intakeReadyFindingCount=0`,
+  P207 `intakeReadyFindingCount=0`,
+  P279 `localSearchMatchingFileCount=0`,
+  P281 `localSearchMatchingFileCount=0`,
+  P295 `intakeReadyObservedFieldExtractionCandidateCount=0`, and
+  P296 `intakeReadySourceLineageFieldCandidateCount=0`.
+- Full generator gate passed with Phase358 included. The final P202 audit
+  still reports `objectiveAchieved=false`, `checklistPassedCount=151`, and
+  `checklistFailedCount=3`; claim integrity still reports
+  `promotedPhysicalMassClaimCount=0`.
+- Reference link check passed with `detailLinkCount=39` and no missing
+  details.
+- `dotnet test GeometricUnity.slnx` passed; the only warning was the existing
+  xUnit2013 analyzer warning in
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
+
 ## 2026-05-23 - Phase355 Dirac-Lichnerowicz Yang-Mills-Higgs Source Audit
 
 ### Research Input
