@@ -11714,6 +11714,117 @@ normalization.
   `xUnit2013` collection-size warning in
   `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
 
+## 2026-05-23 - Phase357 Causal Fermion Systems Boson Source Audit
+
+### Context
+
+After Phase356, the next unaudited serious geometric/variational lead was
+causal fermion systems. It is relevant because the causal action principle
+describes spacetime through operators on a Hilbert space and is reported to
+recover Standard Model gauge fields, gravity, and massive left-handed bosonic
+potentials in a continuum limit.
+
+### Sources Reviewed
+
+- `https://arxiv.org/abs/1605.04742`.
+- `https://doi.org/10.48550/arXiv.1605.04742`.
+- `https://doi.org/10.1007/978-3-319-42067-7`.
+- `https://causal-fermion-system.com/theory/physics/sm-and-gr/`.
+- `https://causal-fermion-system.com/research/`.
+- `https://causal-fermion-system.com/research/research_projects2/`.
+
+### Action
+
+- Added `studies/phase357_causal_fermion_systems_boson_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P357.md`.
+- Wired Phase357 into the generator, P101 package, P202 objective completion
+  audit, and claim-integrity verifier.
+- Added Phase357 scanner exclusions so generated diagnostic text is not counted
+  as independent source evidence.
+- Added `CAUSAL-FERMION-SYSTEMS-BOSON-SOURCES` to `ExperimentReferences.md`
+  with a detailed reference note under `docs/Reference/ExperimentReferences/`.
+
+### Current Expected Outcome
+
+Phase357 is expected to pass only as a negative boundary audit:
+
+- `causalFermionSystemsBosonSourceAuditPassed=true`.
+- `causalFermionSystemsLeadPresent=true`.
+- `causalFermionSystemsPrimarySourcesReviewed=true`.
+- `causalFermionSystemsRouteExternalToGu=true`.
+- `routeUsesCausalActionPrinciple=true`.
+- `routeEncodesSpaceTimeAsOperators=true`.
+- `routeDerivesStandardModelGaugeFieldsInContinuumLimit=true`.
+- `routeDerivesGravityInContinuumLimit=true`.
+- `routeDerivesMassiveLeftHandedBosonicPotentials=true`.
+- `routeProvidesElectroweakAndStrongEquationsAfterSymmetryBreaking=true`.
+- `routeIdentifiesHiggsScalarDegrees=true`.
+- `routeHiggsDynamicsNotWorkedOut=true`.
+- `routeHiggsContinuumLimitTaskNotStarted=true`.
+- `routeBosonicMassesRegularizationDependent=true`.
+- `routeCouplingsRegularizationDependent=true`.
+- `routeRegularizationParametersCurrentlyEmpirical=true`.
+- `routeDoesNotPredictObservedWzMasses=true`.
+- `routeDoesNotPredictObservedHiggsMass=true`.
+- `routeDoesNotProvidePhysicalPoleExtraction=true`.
+- `routeDoesNotProvideObservedPhotonWzHiggsProjection=true`.
+- `routeProvidesGuLocalCausalActionMap=false`.
+- `routeProvidesGuWzSourceRows=false`.
+- `routeProvidesGuObservedFieldExtraction=false`.
+- `routeProvidesGuHiggsScalarSourceOperator=false`.
+- `routeProvidesGuHiggsSelfCouplingSource=false`.
+- `routeProvidesTargetIndependentVevOrMassScale=false`.
+- `routeProvidesGeVUnitNormalization=false`.
+- `routePromotesWzMasses=false`.
+- `routePromotesHiggsMass=false`.
+- `routeCompletesBosonPredictions=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from causal fermion systems in this
+repository. The route is a serious geometric Standard Model lead, but current
+primary sources leave Higgs dynamics unworked out, make bosonic masses and
+couplings regularization-dependent, and treat the regularization parameters as
+empirical because the microscopic spacetime structure is unknown. A promotion
+would need a GU-local map, target-independent regularization law, physical
+photon/W/Z/H projection, pole extraction, Higgs scalar-source/self-coupling
+lineage, and GeV normalization.
+
+### Validation
+
+- Targeted Phase357 run passed with
+  `causalFermionSystemsBosonSourceAuditPassed=true`,
+  `routeDerivesStandardModelGaugeFieldsInContinuumLimit=true`,
+  `routeDerivesMassiveLeftHandedBosonicPotentials=true`,
+  `routeHiggsDynamicsNotWorkedOut=true`,
+  `routeRegularizationParametersCurrentlyEmpirical=true`,
+  `routePromotesWzMasses=false`, `routePromotesHiggsMass=false`, and
+  `canFillPhase201WzContract=false`.
+- P101 package build passed and includes the Phase357 audit block.
+- P202 objective audit passed as an incomplete objective:
+  `objectiveAchieved=false`, `checklistPassedCount=150`, and
+  `checklistFailedCount=3`.
+- Claim-integrity verification passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns preserved the negative intake boundary:
+  P204 `intakeReadyCandidateCount=0`,
+  P205 `intakeReadyFindingCount=0`,
+  P207 `intakeReadyFindingCount=0`,
+  P279 `localSearchMatchingFileCount=0`,
+  P281 `localSearchMatchingFileCount=0`,
+  P295 `intakeReadyObservedFieldExtractionCandidateCount=0`, and
+  P296 `intakeReadySourceLineageFieldCandidateCount=0`.
+- Full generator gate passed with Phase357 included. The final P202 audit
+  still reports `objectiveAchieved=false`, `checklistPassedCount=150`, and
+  `checklistFailedCount=3`; claim integrity still reports
+  `promotedPhysicalMassClaimCount=0`.
+- Reference link check passed with `detailLinkCount=38` and no missing
+  details.
+- `dotnet test GeometricUnity.slnx` passed; the only warning was the existing
+  xUnit2013 analyzer warning in
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
+
 ## 2026-05-23 - Phase355 Dirac-Lichnerowicz Yang-Mills-Higgs Source Audit
 
 ### Research Input

@@ -1,0 +1,154 @@
+{
+  "phaseId": "phase357-causal-fermion-systems-boson-source-audit",
+  "terminalStatus": "causal-fermion-systems-boson-source-audit-open-higgs-and-regularization-not-gu-source",
+  "generatedAt": "2026-05-24T00:06:12.8244863+00:00",
+  "causalFermionSystemsBosonSourceAuditPassed": true,
+  "causalFermionSystemsLeadPresent": true,
+  "causalFermionSystemsPrimarySourcesReviewed": true,
+  "causalFermionSystemsRouteExternalToGu": true,
+  "causalFermionMonographDoi": "https://doi.org/10.48550/arXiv.1605.04742",
+  "causalFermionSpringerDoi": "https://doi.org/10.1007/978-3-319-42067-7",
+  "routeUsesCausalActionPrinciple": true,
+  "routeEncodesSpaceTimeAsOperators": true,
+  "routeDerivesStandardModelGaugeFieldsInContinuumLimit": true,
+  "routeDerivesGravityInContinuumLimit": true,
+  "routeDerivesMassiveLeftHandedBosonicPotentials": true,
+  "routeProvidesElectroweakAndStrongEquationsAfterSymmetryBreaking": true,
+  "routeIdentifiesHiggsScalarDegrees": true,
+  "routeHiggsDynamicsNotWorkedOut": true,
+  "routeHiggsContinuumLimitTaskNotStarted": true,
+  "routeBosonicMassesRegularizationDependent": true,
+  "routeCouplingsRegularizationDependent": true,
+  "routeRegularizationParametersCurrentlyEmpirical": true,
+  "routeRequiresFermionMassInputs": true,
+  "routeDoesNotPredictObservedWzMasses": true,
+  "routeDoesNotPredictObservedHiggsMass": true,
+  "routeDoesNotProvidePhysicalPoleExtraction": true,
+  "routeDoesNotProvideObservedPhotonWzHiggsProjection": true,
+  "latestMonographArxivVersion": 3,
+  "latestMonographRevisionYear": 2018,
+  "monographPageCount": 457,
+  "standardModelGenerationCondition": 3,
+  "routeRequiresExternalCausalFermionSystemVacuumChoice": true,
+  "routeRequiresExternalSectorAndGenerationInputs": true,
+  "routeRequiresExternalDiracSeaMassInputs": true,
+  "routeRequiresUnknownRegularizationParameters": true,
+  "routeRequiresHiggsDynamicsCompletion": true,
+  "routeRequiresContinuumLimitOneLightConeOrderLower": true,
+  "routeRequiresObservedMassComparison": true,
+  "routeRequiresGuLocalCausalActionMap": true,
+  "routeRequiresGuOperatorSpaceTimeEmbedding": true,
+  "routeRequiresGuWzSourceRows": true,
+  "routeRequiresGuWeakMixingAngleSource": true,
+  "routeRequiresGuObservedFieldExtraction": true,
+  "routeRequiresGuHiggsScalarSourceOperator": true,
+  "routeRequiresGuHiggsSelfCouplingSource": true,
+  "routeRequiresTargetIndependentVevOrMassScale": true,
+  "routeRequiresGeVUnitNormalization": true,
+  "routeProvidesGuLocalCausalActionMap": false,
+  "routeProvidesGuOperatorSpaceTimeEmbedding": false,
+  "routeProvidesGuWzSourceRows": false,
+  "routeProvidesGuWeakMixingAngleSource": false,
+  "routeProvidesGuObservedFieldExtraction": false,
+  "routeProvidesGuHiggsScalarSourceOperator": false,
+  "routeProvidesGuHiggsSelfCouplingSource": false,
+  "routeProvidesTargetIndependentVevOrMassScale": false,
+  "routeProvidesGeVUnitNormalization": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "sourceRowCount": 4,
+  "sourceRows": [
+    {
+      "Id": "arxiv-1605-04742-causal-fermion-continuum-limit",
+      "Url": "https://arxiv.org/abs/1605.04742",
+      "Title": "The Continuum Limit of Causal Fermion Systems",
+      "Summary": "Monograph source for causal action, continuum limit, standard-model interactions, bosonic masses and couplings as regularization-dependent quantities.",
+      "PromotionBoundary": "Strong geometric/variational source lead, but it leaves regularization parameters empirical and Higgs dynamics incomplete."
+    },
+    {
+      "Id": "cfs-standard-model-and-general-relativity",
+      "Url": "https://causal-fermion-system.com/theory/physics/sm-and-gr/",
+      "Title": "CFS Standard Model and General Relativity overview",
+      "Summary": "Official CFS page summarizing Standard Model plus gravity results, massive left-handed bosonic potentials, and scalar degrees identifiable with the Higgs field.",
+      "PromotionBoundary": "States that the corresponding Higgs field equations have not yet been worked out."
+    },
+    {
+      "Id": "cfs-research-standard-model-beyond",
+      "Url": "https://causal-fermion-system.com/research/",
+      "Title": "CFS research page on Standard Model and beyond",
+      "Summary": "Official research page recording that gauge fields of the Standard Model have been derived but the Higgs particle remains the missing piece.",
+      "PromotionBoundary": "Classifies the Higgs description as future work, not current prediction evidence."
+    },
+    {
+      "Id": "cfs-future-perspectives-higgs-particle",
+      "Url": "https://causal-fermion-system.com/research/research_projects2/",
+      "Title": "CFS future perspectives: description of the Higgs particle",
+      "Summary": "Official future-project note saying Higgs scalar degrees are known in multi-sector models but their dynamics has not been worked out and the lower light-cone continuum-limit analysis has not started.",
+      "PromotionBoundary": "Directly blocks Higgs source-lineage promotion and confirms the work is not complete."
+    }
+  ],
+  "adjacentRouteBoundary": {
+    "electroweakMassMatrixBridgePromotesWz": false,
+    "electroweakMassMatrixBridgePromotesHiggs": false,
+    "neutralMixingCanFillWz": false,
+    "higgsUpsilonCanFillHiggs": false,
+    "coupledYangMillsHiggsCanFillWz": false,
+    "coupledYangMillsHiggsCanFillHiggs": false
+  },
+  "contractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionFilledRequiredFieldCount": 0
+  },
+  "checks": [
+    {
+      "Id": "causal-fermion-primary-sources-reviewed",
+      "Passed": true,
+      "Evidence": "lead=True; reviewed=True; externalToGu=True; sourceRows=4"
+    },
+    {
+      "Id": "cfs-geometric-standard-model-lead-captured",
+      "Passed": true,
+      "Evidence": "causalAction=True; operators=True; smGauge=True; gravity=True; massiveLeft=True; ewStrongAfterSsb=True; arxivV=3; revisionYear=2018; pageCount=457; generations=3"
+    },
+    {
+      "Id": "cfs-higgs-and-regularization-blockers-captured",
+      "Passed": true,
+      "Evidence": "higgsDegrees=True; higgsDynamicsOpen=True; lowerLightConeNotStarted=True; bosonMassesRegularization=True; couplingsRegularization=True; empiricalRegularization=True; fermionMassInputs=True; observedWz=True; observedHiggs=True; poleExtraction=True; observedProjection=True"
+    },
+    {
+      "Id": "adjacent-electroweak-and-higgs-boundaries-remain-nonpromotional",
+      "Passed": true,
+      "Evidence": "massMatrixPromotesWz=False; massMatrixPromotesHiggs=False; neutralMixingCanFillWz=False; higgsUpsilonCanFillHiggs=False; coupledYmhCanFillWz=False; coupledYmhCanFillHiggs=False"
+    },
+    {
+      "Id": "external-inputs-and-open-work-required-before-promotion",
+      "Passed": true,
+      "Evidence": "vacuumChoice=True; sectors=True; diracSeaMasses=True; regularization=True; higgsDynamics=True; lowerLightCone=True; observedComparison=True"
+    },
+    {
+      "Id": "route-does-not-fill-gu-contracts",
+      "Passed": true,
+      "Evidence": "guCausalMap=False; guOperatorEmbedding=False; guWzRows=False; weakAngle=False; observed=False; higgsOperator=False; selfCoupling=False; scale=False; gev=False; promotesWz=False; promotesHiggs=False; completes=False"
+    },
+    {
+      "Id": "phase201-phase256-contract-state-preserved",
+      "Passed": true,
+      "Evidence": "phase201Promotable=False; existingEvidence=False; wzMissing=15; higgsMissing=14; observedFilled=0; observedPromotable=False"
+    }
+  ],
+  "decision": "Do not promote W/Z or Higgs physical masses from causal fermion systems in this repository. The route is a serious geometric variational Standard Model lead, but current primary sources leave Higgs dynamics unworked out, treat bosonic masses and couplings as functions of unknown regularization parameters, require fermion mass/vacuum/sector inputs, and supply no GU-local W/Z source rows, observed photon/W/Z/H projection, physical pole extraction, target-independent scale, Higgs scalar-source/self-coupling lineage, or GeV normalization.",
+  "nextRequiredArtifact": [
+    "A GU-local map from Shiab/observer-sector geometry to a causal-action or operator-spacetime structure before using this route as more than an analogy.",
+    "A target-independent regularization law deriving W/Z masses, weak mixing, coupling normalization, and GeV scale without fitting empirical regularization parameters.",
+    "A completed Higgs dynamics calculation one order lower on the light cone, including scalar source/operator, self-coupling or excitation relation, and stability sidecars.",
+    "Observed photon/W/Z/H extraction and complex-pole or equivalent physical mass projection before any promotion."
+  ]
+}
