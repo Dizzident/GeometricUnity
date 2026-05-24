@@ -11607,6 +11607,103 @@ an absolute GeV scale, or unit normalization.
   `xUnit2013` collection-size warning in
   `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
 
+## 2026-05-24 - Phase363 Hitchin Higgs-Bundle Spectral-Cover Source Audit
+
+### Context
+
+After Phase362, the most undercovered geometric route was Hitchin/Higgs-bundle
+and spectral-cover electroweak geometry. Local search found no dedicated audit
+or reference note for Hitchin equations, Higgs bundles, spectral covers, or
+T-branes beyond a follow-up mention in the framed Standard Model note.
+
+### Sources Reviewed
+
+- `https://doi.org/10.1112/plms/s3-55.1.59`.
+- `https://arxiv.org/abs/0802.2969`.
+- `https://arxiv.org/abs/0802.3391`.
+- `https://arxiv.org/abs/0806.0102`.
+- `https://arxiv.org/abs/0904.1218`.
+- `https://arxiv.org/abs/0904.3932`.
+- `https://arxiv.org/abs/1010.5780`.
+
+### Action
+
+- Added `studies/phase363_hitchin_higgs_bundle_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P363.md`.
+- Added `HITCHIN-HIGGS-BUNDLE-SPECTRAL-COVER` to `ExperimentReferences.md`
+  with a detailed reference note under
+  `docs/Reference/ExperimentReferences/`.
+- Wired Phase363 into the generator, P101 package, P202 objective audit,
+  claim-integrity verifier, and scanner exclusions.
+
+### Current Expected Outcome
+
+Phase363 is expected to pass only as a negative boundary audit:
+
+- `hitchinHiggsBundleSourceAuditPassed=true`.
+- `hitchinHiggsBundleLeadPresent=true`.
+- `hitchinHiggsBundlePrimarySourcesReviewed=true`.
+- `hitchinHiggsBundleRouteExternalToGu=true`.
+- `routeUsesHitchinEquations=true`.
+- `routeUsesConnectionPlusHiggsField=true`.
+- `routeUsesHiggsBundleModuli=true`.
+- `routeUsesSpectralCovers=true`.
+- `routeUsesFTheorySevenBranes=true`.
+- `routeEncodesGaugeGroupMatterYukawaGeometrically=true`.
+- `routeUsesHyperchargeFluxBreaking=true`.
+- `routeCanKeepU1YGaugeBosonMasslessInGlobalModels=true`.
+- `routeIncludesTBranesNonAbelianHiggsField=true`.
+- `routeProvidesGuLocalHitchinBundleMap=false`.
+- `routeProvidesGuWzSourceRows=false`.
+- `routeProvidesGuObservedFieldExtraction=false`.
+- `routeProvidesGuHiggsScalarSourceOperator=false`.
+- `routeProvidesGuHiggsSelfCouplingSource=false`.
+- `routeProvidesTargetIndependentVevOrMassScale=false`.
+- `routeProvidesGeVUnitNormalization=false`.
+- `routePromotesWzMasses=false`.
+- `routePromotesHiggsMass=false`.
+- `routeCompletesBosonPredictions=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from Hitchin/Higgs-bundle/spectral-cover
+routes. The audited sources provide a serious connection-plus-Higgs-field and
+F-theory compactification lead, but they are still external to GU and depend on
+compactification geometry, flux choices, seven-brane configuration, moduli, and
+supersymmetric GUT/MSSM assumptions. Promotion would require a GU-local
+Hitchin-bundle or spectral-curve map, target-independent compactification and
+flux-vacuum selection, observed photon/W/Z/H projection, separate W/Z source
+rows, Higgs scalar-source and self-coupling lineage, a mass-scale source, pole
+extraction, and GeV normalization.
+
+### Validation
+
+- Targeted Phase363 run passed with
+  `hitchinHiggsBundleSourceAuditPassed=true`,
+  `routeUsesHitchinEquations=true`, `routeUsesSpectralCovers=true`,
+  `routeIncludesTBranesNonAbelianHiggsField=true`,
+  `routePromotesWzMasses=false`, and `routePromotesHiggsMass=false`.
+- P101 package build passed and includes the Phase363 audit block.
+- P202 objective audit passed as an incomplete objective:
+  `objectiveAchieved=false`, `checklistPassedCount=156`, and
+  `checklistFailedCount=3`.
+- Claim-integrity verification passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns preserved the negative intake boundary:
+  P204 `intakeReadyCandidateCount=0`,
+  P205 `intakeReadyFindingCount=0`,
+  P207 `intakeReadyFindingCount=0`,
+  P279 `localSearchMatchingFileCount=0`,
+  P281 `localSearchMatchingFileCount=0`,
+  P295 `intakeReadyObservedFieldExtractionCandidateCount=0`, and
+  P296 `intakeReadySourceLineageFieldCandidateCount=0`.
+- Reference link check passed with `detailLinkCount=44` and no missing
+  details.
+- `dotnet test GeometricUnity.slnx` passed; the only warning was the existing
+  `xUnit2013` collection-size warning in
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
+
 ## 2026-05-24 - Phase362 Framed Standard Model Source Audit
 
 ### Context

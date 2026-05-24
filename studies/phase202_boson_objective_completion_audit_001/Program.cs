@@ -128,6 +128,7 @@ const string Phase359Path = "studies/phase359_finite_ncg_discrete_higgs_source_a
 const string Phase360Path = "studies/phase360_exceptional_jordan_magic_square_source_audit_001/output/exceptional_jordan_magic_square_source_audit_summary.json";
 const string Phase361Path = "studies/phase361_matrix_model_higgs_geometry_source_audit_001/output/matrix_model_higgs_geometry_source_audit_summary.json";
 const string Phase362Path = "studies/phase362_framed_standard_model_source_audit_001/output/framed_standard_model_source_audit_summary.json";
+const string Phase363Path = "studies/phase363_hitchin_higgs_bundle_source_audit_001/output/hitchin_higgs_bundle_source_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -289,6 +290,7 @@ using var phase359 = File.Exists(Phase359Path) ? JsonDocument.Parse(File.ReadAll
 using var phase360 = File.Exists(Phase360Path) ? JsonDocument.Parse(File.ReadAllText(Phase360Path)) : null;
 using var phase361 = File.Exists(Phase361Path) ? JsonDocument.Parse(File.ReadAllText(Phase361Path)) : null;
 using var phase362 = File.Exists(Phase362Path) ? JsonDocument.Parse(File.ReadAllText(Phase362Path)) : null;
+using var phase363 = File.Exists(Phase363Path) ? JsonDocument.Parse(File.ReadAllText(Phase363Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -3376,6 +3378,102 @@ var framedStandardModelSourceAuditPassed = framedStandardModelSourceAuditMateria
     && JsonInt(p362ContractImpact, "wzMissingFieldCount") == wzMissingFieldCount
     && JsonInt(p362ContractImpact, "higgsMissingFieldCount") == higgsMissingFieldCount
     && JsonInt(p362ContractImpact, "observedFieldExtractionFilledRequiredFieldCount") == 0;
+var hitchinHiggsBundleSourceAuditMaterialized = phase363 is not null;
+var hitchinHiggsBundleSourceAuditPassed = hitchinHiggsBundleSourceAuditMaterialized
+    && JsonBool(phase363!.RootElement, "hitchinHiggsBundleSourceAuditPassed") is true
+    && JsonBool(phase363.RootElement, "hitchinHiggsBundleLeadPresent") is true
+    && JsonBool(phase363.RootElement, "hitchinHiggsBundlePrimarySourcesReviewed") is true
+    && JsonBool(phase363.RootElement, "hitchinHiggsBundleRouteExternalToGu") is true
+    && JsonBool(phase363.RootElement, "routeUsesHitchinEquations") is true
+    && JsonBool(phase363.RootElement, "routeUsesConnectionPlusHiggsField") is true
+    && JsonBool(phase363.RootElement, "routeUsesHiggsBundleModuli") is true
+    && JsonBool(phase363.RootElement, "routeUsesSpectralCovers") is true
+    && JsonBool(phase363.RootElement, "routeUsesFTheorySevenBranes") is true
+    && JsonBool(phase363.RootElement, "routeEncodesGaugeGroupMatterYukawaGeometrically") is true
+    && JsonBool(phase363.RootElement, "routeUsesHyperchargeFluxBreaking") is true
+    && JsonBool(phase363.RootElement, "routeCanKeepU1YGaugeBosonMasslessInGlobalModels") is true
+    && JsonBool(phase363.RootElement, "routeUsesMeromorphicHiggsBundles") is true
+    && JsonBool(phase363.RootElement, "routeIncludesNoGoForGenericLocalSu5ThreeGenerationModel") is true
+    && JsonBool(phase363.RootElement, "routeIncludesTBranesNonAbelianHiggsField") is true
+    && JsonBool(phase363.RootElement, "tBranesShowSpectralEigenvaluesInsufficient") is true
+    && JsonBool(phase363.RootElement, "routeIncludesMssmOrGutNotObservedSmMassLaw") is true
+    && JsonBool(phase363.RootElement, "routeIncludesFlavorHierarchyOrYukawaLead") is true
+    && JsonInt(phase363.RootElement, "fTheoryModelBuildingLatestArxivVersion") == 3
+    && JsonInt(phase363.RootElement, "fTheoryModelBuildingPageCount") == 75
+    && JsonInt(phase363.RootElement, "fTheoryGutsILatestArxivVersion") == 2
+    && JsonInt(phase363.RootElement, "fTheoryGutsIPageCount") == 121
+    && JsonInt(phase363.RootElement, "fTheoryGutsIIFinalArxivVersion") == 3
+    && JsonInt(phase363.RootElement, "fTheoryGutsIIPageCount") == 203
+    && JsonInt(phase363.RootElement, "higgsBundlesUvCompletionArxivVersion") == 1
+    && JsonInt(phase363.RootElement, "higgsBundlesUvCompletionPageCount") == 48
+    && JsonInt(phase363.RootElement, "fTheoryCompactificationsGutsLatestArxivVersion") == 3
+    && JsonInt(phase363.RootElement, "fTheoryCompactificationsGutsPageCount") == 55
+    && JsonInt(phase363.RootElement, "tBranesArxivVersion") == 4
+    && JsonInt(phase363.RootElement, "tBranesPageCount") == 110
+    && JsonInt(phase363.RootElement, "hitchinSelfDualityStartPage") == 59
+    && JsonInt(phase363.RootElement, "hitchinSelfDualityEndPage") == 126
+    && JsonBool(phase363.RootElement, "routeTargetsGutOrMssmNotObservedWzHMassLaw") is true
+    && JsonBool(phase363.RootElement, "routeDependsOnCompactificationGeometryChoice") is true
+    && JsonBool(phase363.RootElement, "routeDependsOnFluxChoice") is true
+    && JsonBool(phase363.RootElement, "routeDependsOnSevenBraneConfiguration") is true
+    && JsonBool(phase363.RootElement, "routeDependsOnSupersymmetricGutAssumptions") is true
+    && JsonBool(phase363.RootElement, "routeHyperchargeFluxNotLowEnergyWzMassSource") is true
+    && JsonBool(phase363.RootElement, "routeKeepsU1YMasslessButDoesNotDerivePhotonWzMasses") is true
+    && JsonBool(phase363.RootElement, "routeYukawaFlavorLeadNotGaugeBosonMassLaw") is true
+    && JsonBool(phase363.RootElement, "routeTBraneSpectralDataCanMissLocalizedModes") is true
+    && JsonBool(phase363.RootElement, "routeDoesNotPredictObservedWzMasses") is true
+    && JsonBool(phase363.RootElement, "routeDoesNotProvideTargetIndependentObservedHiggsMass") is true
+    && JsonBool(phase363.RootElement, "routeDoesNotProvidePhysicalPoleExtraction") is true
+    && JsonBool(phase363.RootElement, "routeDoesNotProvideObservedPhotonWzHiggsProjection") is true
+    && JsonBool(phase363.RootElement, "routeRequiresGuLocalHitchinBundleMap") is true
+    && JsonBool(phase363.RootElement, "routeRequiresGuRiemannSurfaceOrSpectralCurveSource") is true
+    && JsonBool(phase363.RootElement, "routeRequiresGuFTheoryCompactificationMap") is true
+    && JsonBool(phase363.RootElement, "routeRequiresGuFluxVacuumSelection") is true
+    && JsonBool(phase363.RootElement, "routeRequiresGuElectroweakHiggsDoubletProjection") is true
+    && JsonBool(phase363.RootElement, "routeRequiresGuWzSourceRows") is true
+    && JsonBool(phase363.RootElement, "routeRequiresGuWeakMixingAngleSource") is true
+    && JsonBool(phase363.RootElement, "routeRequiresGuGaugeCouplingNormalization") is true
+    && JsonBool(phase363.RootElement, "routeRequiresGuObservedFieldExtraction") is true
+    && JsonBool(phase363.RootElement, "routeRequiresGuHiggsScalarSourceOperator") is true
+    && JsonBool(phase363.RootElement, "routeRequiresGuHiggsSelfCouplingSource") is true
+    && JsonBool(phase363.RootElement, "routeRequiresTargetIndependentVevOrMassScale") is true
+    && JsonBool(phase363.RootElement, "routeRequiresLowEnergyRgAndThresholdTransport") is true
+    && JsonBool(phase363.RootElement, "routeRequiresGeVUnitNormalization") is true
+    && JsonBool(phase363.RootElement, "routeProvidesGuLocalHitchinBundleMap") is false
+    && JsonBool(phase363.RootElement, "routeProvidesGuRiemannSurfaceOrSpectralCurveSource") is false
+    && JsonBool(phase363.RootElement, "routeProvidesGuFTheoryCompactificationMap") is false
+    && JsonBool(phase363.RootElement, "routeProvidesGuFluxVacuumSelection") is false
+    && JsonBool(phase363.RootElement, "routeProvidesGuElectroweakHiggsDoubletProjection") is false
+    && JsonBool(phase363.RootElement, "routeProvidesGuWzSourceRows") is false
+    && JsonBool(phase363.RootElement, "routeProvidesGuWeakMixingAngleSource") is false
+    && JsonBool(phase363.RootElement, "routeProvidesGuGaugeCouplingNormalization") is false
+    && JsonBool(phase363.RootElement, "routeProvidesGuObservedFieldExtraction") is false
+    && JsonBool(phase363.RootElement, "routeProvidesGuHiggsScalarSourceOperator") is false
+    && JsonBool(phase363.RootElement, "routeProvidesGuHiggsSelfCouplingSource") is false
+    && JsonBool(phase363.RootElement, "routeProvidesTargetIndependentVevOrMassScale") is false
+    && JsonBool(phase363.RootElement, "routeProvidesLowEnergyRgAndThresholdTransport") is false
+    && JsonBool(phase363.RootElement, "routeProvidesGeVUnitNormalization") is false
+    && JsonBool(phase363.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase363.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase363.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase363.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase363.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase363.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonInt(phase363.RootElement, "sourceRowCount") == 7
+    && phase363.RootElement.TryGetProperty("adjacentRouteBoundary", out var p363AdjacentRouteBoundary)
+    && JsonBool(p363AdjacentRouteBoundary, "stringMTheoryCompactificationSourceAuditPassed") is true
+    && JsonBool(p363AdjacentRouteBoundary, "stringRoutePromotesWzMasses") is false
+    && JsonBool(p363AdjacentRouteBoundary, "stringRoutePromotesHiggsMass") is false
+    && JsonBool(p363AdjacentRouteBoundary, "gaugeHiggsUnificationSourceAuditPassed") is true
+    && JsonBool(p363AdjacentRouteBoundary, "gaugeHiggsRoutePromotesWzMasses") is false
+    && JsonBool(p363AdjacentRouteBoundary, "gaugeHiggsRoutePromotesHiggsMass") is false
+    && JsonBool(p363AdjacentRouteBoundary, "framedStandardModelSourceAuditPassed") is true
+    && JsonBool(p363AdjacentRouteBoundary, "framedStandardModelRoutePromotesWzMasses") is false
+    && JsonBool(p363AdjacentRouteBoundary, "framedStandardModelRoutePromotesHiggsMass") is false
+    && phase363.RootElement.TryGetProperty("contractImpact", out var p363ContractImpact)
+    && JsonInt(p363ContractImpact, "wzMissingFieldCount") == wzMissingFieldCount
+    && JsonInt(p363ContractImpact, "higgsMissingFieldCount") == higgsMissingFieldCount
+    && JsonInt(p363ContractImpact, "observedFieldExtractionFilledRequiredFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -5248,6 +5346,14 @@ var checklist = new[]
             ? $"framedStandardModelSourceAuditPassed={JsonBool(phase362!.RootElement, "framedStandardModelSourceAuditPassed")}; leadPresent={JsonBool(phase362.RootElement, "framedStandardModelLeadPresent")}; externalToGu={JsonBool(phase362.RootElement, "framedStandardModelRouteExternalToGu")}; framedGaugeTheory={JsonBool(phase362.RootElement, "routeUsesFramedGaugeTheory")}; internalFrames={JsonBool(phase362.RootElement, "routeUsesInternalFrameVectorsOrVielbeins")}; framons={JsonBool(phase362.RootElement, "routeIntroducesFramonsAsFieldVariables")}; higgsFramon={JsonBool(phase362.RootElement, "routeHiggsAsElectroweakFramon")}; vectorG={JsonBool(phase362.RootElement, "routePredictsNewVectorGBoson")}; gammaZG={JsonBool(phase362.RootElement, "vectorGMixesWithPhotonAndZ")}; freeMG={JsonBool(phase362.RootElement, "routeNewVectorMassRemainsFreeParameter")}; requiresGuFramedMap={JsonBool(phase362.RootElement, "routeRequiresGuLocalFramedGaugeMap")}; providesGuFramedMap={JsonBool(phase362.RootElement, "routeProvidesGuLocalFramedGaugeMap")}; providesGuWzRows={JsonBool(phase362.RootElement, "routeProvidesGuWzSourceRows")}; providesObserved={JsonBool(phase362.RootElement, "routeProvidesGuObservedFieldExtraction")}; providesHiggsScalarSource={JsonBool(phase362.RootElement, "routeProvidesGuHiggsScalarSourceOperator")}; providesSelfCoupling={JsonBool(phase362.RootElement, "routeProvidesGuHiggsSelfCouplingSource")}; promotesWz={JsonBool(phase362.RootElement, "routePromotesWzMasses")}; promotesHiggs={JsonBool(phase362.RootElement, "routePromotesHiggsMass")}; completesBosonPredictions={JsonBool(phase362.RootElement, "routeCompletesBosonPredictions")}; canFillPhase256ObservedFieldExtractionContract={JsonBool(phase362.RootElement, "canFillPhase256ObservedFieldExtractionContract")}; decision={JsonString(phase362.RootElement, "decision")}"
             : "Phase362 artifact not materialized",
         Phase362Path),
+    new ObjectiveChecklistItem(
+        "hitchin-higgs-bundle-source-audit-materialized",
+        "Audit whether Hitchin/Higgs-bundle/spectral-cover routes supply GU W/Z/H source-lineage artifacts or only external F-theory/GUT geometry leads.",
+        hitchinHiggsBundleSourceAuditPassed ? "passed" : "failed",
+        hitchinHiggsBundleSourceAuditMaterialized
+            ? $"hitchinHiggsBundleSourceAuditPassed={JsonBool(phase363!.RootElement, "hitchinHiggsBundleSourceAuditPassed")}; leadPresent={JsonBool(phase363.RootElement, "hitchinHiggsBundleLeadPresent")}; externalToGu={JsonBool(phase363.RootElement, "hitchinHiggsBundleRouteExternalToGu")}; hitchin={JsonBool(phase363.RootElement, "routeUsesHitchinEquations")}; connectionPlusHiggs={JsonBool(phase363.RootElement, "routeUsesConnectionPlusHiggsField")}; higgsBundleModuli={JsonBool(phase363.RootElement, "routeUsesHiggsBundleModuli")}; spectralCovers={JsonBool(phase363.RootElement, "routeUsesSpectralCovers")}; fTheorySevenBranes={JsonBool(phase363.RootElement, "routeUsesFTheorySevenBranes")}; hyperchargeFlux={JsonBool(phase363.RootElement, "routeUsesHyperchargeFluxBreaking")}; masslessU1Y={JsonBool(phase363.RootElement, "routeCanKeepU1YGaugeBosonMasslessInGlobalModels")}; tBranes={JsonBool(phase363.RootElement, "routeIncludesTBranesNonAbelianHiggsField")}; spectralWarning={JsonBool(phase363.RootElement, "tBranesShowSpectralEigenvaluesInsufficient")}; compactificationDependence={JsonBool(phase363.RootElement, "routeDependsOnCompactificationGeometryChoice")}; fluxDependence={JsonBool(phase363.RootElement, "routeDependsOnFluxChoice")}; requiresGuHitchinMap={JsonBool(phase363.RootElement, "routeRequiresGuLocalHitchinBundleMap")}; providesGuHitchinMap={JsonBool(phase363.RootElement, "routeProvidesGuLocalHitchinBundleMap")}; providesGuWzRows={JsonBool(phase363.RootElement, "routeProvidesGuWzSourceRows")}; providesObserved={JsonBool(phase363.RootElement, "routeProvidesGuObservedFieldExtraction")}; providesHiggsScalarSource={JsonBool(phase363.RootElement, "routeProvidesGuHiggsScalarSourceOperator")}; providesSelfCoupling={JsonBool(phase363.RootElement, "routeProvidesGuHiggsSelfCouplingSource")}; promotesWz={JsonBool(phase363.RootElement, "routePromotesWzMasses")}; promotesHiggs={JsonBool(phase363.RootElement, "routePromotesHiggsMass")}; completesBosonPredictions={JsonBool(phase363.RootElement, "routeCompletesBosonPredictions")}; canFillPhase256ObservedFieldExtractionContract={JsonBool(phase363.RootElement, "canFillPhase256ObservedFieldExtractionContract")}; decision={JsonString(phase363.RootElement, "decision")}"
+            : "Phase363 artifact not materialized",
+        Phase363Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

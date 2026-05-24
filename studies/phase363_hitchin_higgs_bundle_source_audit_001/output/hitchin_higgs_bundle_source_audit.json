@@ -1,0 +1,199 @@
+{
+  "phaseId": "phase363-hitchin-higgs-bundle-source-audit",
+  "terminalStatus": "hitchin-higgs-bundle-source-audit-spectral-cover-lead-not-gu-mass-law",
+  "generatedAt": "2026-05-24T18:34:18.2502479+00:00",
+  "hitchinHiggsBundleSourceAuditPassed": true,
+  "hitchinHiggsBundleLeadPresent": true,
+  "hitchinHiggsBundlePrimarySourcesReviewed": true,
+  "hitchinHiggsBundleRouteExternalToGu": true,
+  "routeUsesHitchinEquations": true,
+  "routeUsesConnectionPlusHiggsField": true,
+  "routeUsesHiggsBundleModuli": true,
+  "routeUsesSpectralCovers": true,
+  "routeUsesFTheorySevenBranes": true,
+  "routeEncodesGaugeGroupMatterYukawaGeometrically": true,
+  "routeUsesHyperchargeFluxBreaking": true,
+  "routeCanKeepU1YGaugeBosonMasslessInGlobalModels": true,
+  "routeUsesMeromorphicHiggsBundles": true,
+  "routeIncludesNoGoForGenericLocalSu5ThreeGenerationModel": true,
+  "routeIncludesTBranesNonAbelianHiggsField": true,
+  "tBranesShowSpectralEigenvaluesInsufficient": true,
+  "routeIncludesMssmOrGutNotObservedSmMassLaw": true,
+  "routeIncludesFlavorHierarchyOrYukawaLead": true,
+  "fTheoryModelBuildingLatestArxivVersion": 3,
+  "fTheoryModelBuildingPageCount": 75,
+  "fTheoryGutsILatestArxivVersion": 2,
+  "fTheoryGutsIPageCount": 121,
+  "fTheoryGutsIIFinalArxivVersion": 3,
+  "fTheoryGutsIIPageCount": 203,
+  "higgsBundlesUvCompletionArxivVersion": 1,
+  "higgsBundlesUvCompletionPageCount": 48,
+  "fTheoryCompactificationsGutsLatestArxivVersion": 3,
+  "fTheoryCompactificationsGutsPageCount": 55,
+  "tBranesArxivVersion": 4,
+  "tBranesPageCount": 110,
+  "hitchinSelfDualityStartPage": 59,
+  "hitchinSelfDualityEndPage": 126,
+  "routeTargetsGutOrMssmNotObservedWzHMassLaw": true,
+  "routeDependsOnCompactificationGeometryChoice": true,
+  "routeDependsOnFluxChoice": true,
+  "routeDependsOnSevenBraneConfiguration": true,
+  "routeDependsOnSupersymmetricGutAssumptions": true,
+  "routeHyperchargeFluxNotLowEnergyWzMassSource": true,
+  "routeKeepsU1YMasslessButDoesNotDerivePhotonWzMasses": true,
+  "routeYukawaFlavorLeadNotGaugeBosonMassLaw": true,
+  "routeTBraneSpectralDataCanMissLocalizedModes": true,
+  "routeDoesNotPredictObservedWzMasses": true,
+  "routeDoesNotProvideTargetIndependentObservedHiggsMass": true,
+  "routeDoesNotProvidePhysicalPoleExtraction": true,
+  "routeDoesNotProvideObservedPhotonWzHiggsProjection": true,
+  "routeRequiresGuLocalHitchinBundleMap": true,
+  "routeRequiresGuRiemannSurfaceOrSpectralCurveSource": true,
+  "routeRequiresGuFTheoryCompactificationMap": true,
+  "routeRequiresGuFluxVacuumSelection": true,
+  "routeRequiresGuElectroweakHiggsDoubletProjection": true,
+  "routeRequiresGuWzSourceRows": true,
+  "routeRequiresGuWeakMixingAngleSource": true,
+  "routeRequiresGuGaugeCouplingNormalization": true,
+  "routeRequiresGuObservedFieldExtraction": true,
+  "routeRequiresGuHiggsScalarSourceOperator": true,
+  "routeRequiresGuHiggsSelfCouplingSource": true,
+  "routeRequiresTargetIndependentVevOrMassScale": true,
+  "routeRequiresLowEnergyRgAndThresholdTransport": true,
+  "routeRequiresGeVUnitNormalization": true,
+  "routeProvidesGuLocalHitchinBundleMap": false,
+  "routeProvidesGuRiemannSurfaceOrSpectralCurveSource": false,
+  "routeProvidesGuFTheoryCompactificationMap": false,
+  "routeProvidesGuFluxVacuumSelection": false,
+  "routeProvidesGuElectroweakHiggsDoubletProjection": false,
+  "routeProvidesGuWzSourceRows": false,
+  "routeProvidesGuWeakMixingAngleSource": false,
+  "routeProvidesGuGaugeCouplingNormalization": false,
+  "routeProvidesGuObservedFieldExtraction": false,
+  "routeProvidesGuHiggsScalarSourceOperator": false,
+  "routeProvidesGuHiggsSelfCouplingSource": false,
+  "routeProvidesTargetIndependentVevOrMassScale": false,
+  "routeProvidesLowEnergyRgAndThresholdTransport": false,
+  "routeProvidesGeVUnitNormalization": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "sourceRowCount": 7,
+  "sourceRows": [
+    {
+      "Id": "hitchin-1987-self-duality",
+      "Url": "https://doi.org/10.1112/plms/s3-55.1.59",
+      "Title": "The Self-Duality Equations on a Riemann Surface",
+      "Summary": "Foundational Hitchin-equation source: a connection-plus-Higgs-field system on a Riemann surface whose moduli space became the mathematical base for Higgs-bundle geometry.",
+      "PromotionBoundary": "Mathematical foundation for Higgs bundles, but not an electroweak W/Z/H source law or GU-local observed-field map."
+    },
+    {
+      "Id": "donagi-wijnholt-0802-2969-f-theory-model-building",
+      "Url": "https://arxiv.org/abs/0802.2969",
+      "Title": "Model Building with F-Theory",
+      "Summary": "Uses F-theory compactifications and G-flux to derive charged chiral spectra and Yukawa couplings in N=1 compactifications.",
+      "PromotionBoundary": "Geometric spectrum/Yukawa lead; compactification- and flux-dependent and not a physical W/Z/H mass extraction."
+    },
+    {
+      "Id": "beasley-heckman-vafa-0802-3391-f-theory-guts-i",
+      "Url": "https://arxiv.org/abs/0802.3391",
+      "Title": "GUTs and Exceptional Branes in F-theory - I",
+      "Summary": "Shows how local F-theory singularity geometry encodes gauge group, matter content, and Yukawa couplings through a twisted gauge theory with defects.",
+      "PromotionBoundary": "Strong gauge/matter/Yukawa geometry lead; no target-independent observed W/Z/H masses."
+    },
+    {
+      "Id": "beasley-heckman-vafa-0806-0102-f-theory-guts-ii",
+      "Url": "https://arxiv.org/abs/0806.0102",
+      "Title": "GUTs and Exceptional Branes in F-theory - II: Experimental Predictions",
+      "Summary": "Uses internal hypercharge flux to break a GUT group to the MSSM or flipped GUT models, with flavor and neutrino phenomenology.",
+      "PromotionBoundary": "Phenomenological GUT lead; hypercharge flux is not a low-energy W/Z mass source law."
+    },
+    {
+      "Id": "donagi-wijnholt-0904-1218-higgs-bundles-uv-completion",
+      "Url": "https://arxiv.org/abs/0904.1218",
+      "Title": "Higgs Bundles and UV Completion in F-Theory",
+      "Summary": "Describes supersymmetric eight-dimensional Yang-Mills compactifications with meromorphic Higgs bundles and spectral covers, including a no-go theorem for generic local SU(5) three-generation models.",
+      "PromotionBoundary": "Closest Higgs-bundle/spectral-cover lead; still external to GU and dependent on compactification and moduli choices."
+    },
+    {
+      "Id": "marsano-saulina-schafer-nameki-0904-3932-f-theory-guts",
+      "Url": "https://arxiv.org/abs/0904.3932",
+      "Title": "F-theory Compactifications for Supersymmetric GUTs",
+      "Summary": "Constructs global SU(5) F-theory GUT compactifications and states topological conditions allowing the U(1)_Y gauge boson to remain massless.",
+      "PromotionBoundary": "Useful photon/U(1)_Y boundary; keeping U(1)_Y massless is not an observed photon/W/Z/H projection or mass law."
+    },
+    {
+      "Id": "cecotti-cordova-heckman-vafa-1010-5780-t-branes",
+      "Url": "https://arxiv.org/abs/1010.5780",
+      "Title": "T-Branes and Monodromy",
+      "Summary": "Introduces T-branes with non-abelian upper-triangular Higgs fields and shows spectral eigenvalues can miss localized modes.",
+      "PromotionBoundary": "Important warning against spectral-data-only promotion; no GU-local mass prediction."
+    }
+  ],
+  "adjacentRouteBoundary": {
+    "stringMTheoryCompactificationSourceAuditPassed": true,
+    "stringRoutePromotesWzMasses": false,
+    "stringRoutePromotesHiggsMass": false,
+    "gaugeHiggsUnificationSourceAuditPassed": true,
+    "gaugeHiggsRoutePromotesWzMasses": false,
+    "gaugeHiggsRoutePromotesHiggsMass": false,
+    "framedStandardModelSourceAuditPassed": true,
+    "framedStandardModelRoutePromotesWzMasses": false,
+    "framedStandardModelRoutePromotesHiggsMass": false
+  },
+  "contractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionFilledRequiredFieldCount": 0
+  },
+  "checks": [
+    {
+      "Id": "hitchin-higgs-bundle-primary-sources-reviewed",
+      "Passed": true,
+      "Evidence": "lead=True; reviewed=True; externalToGu=True; sourceRows=7"
+    },
+    {
+      "Id": "hitchin-higgs-bundle-geometric-structure-captured",
+      "Passed": true,
+      "Evidence": "hitchin=True; connectionPlusHiggs=True; moduli=True; spectralCovers=True; sevenBranes=True; gaugeMatterYukawa=True; hyperchargeFlux=True; masslessU1Y=True; meromorphic=True; tBranes=True"
+    },
+    {
+      "Id": "hitchin-higgs-bundle-version-and-page-metadata-captured",
+      "Passed": true,
+      "Evidence": "hitchinPages=59-126; fTheoryModelBuildingV=3; fTheoryModelBuildingPages=75; gutsIV=2; gutsIPages=121; gutsIIV=3; gutsIIPages=203; higgsBundleV=1; higgsBundlePages=48; compactificationV=3; compactificationPages=55; tBranesV=4; tBranesPages=110"
+    },
+    {
+      "Id": "hitchin-higgs-bundle-promotion-obstructions-captured",
+      "Passed": true,
+      "Evidence": "gutMssmScope=True; compactification=True; flux=True; sevenBranes=True; susyGut=True; hyperchargeFluxNotMass=True; u1YNotWz=True; yukawaNotMass=True; tBraneWarning=True; observedWz=True; observedHiggs=True; pole=True; projection=True"
+    },
+    {
+      "Id": "adjacent-compactification-higgs-routes-remain-nonpromotional",
+      "Passed": true,
+      "Evidence": "stringPassed=True; stringWz=False; stringHiggs=False; gaugeHiggsPassed=True; gaugeHiggsWz=False; gaugeHiggsHiggs=False; framedPassed=True; framedWz=False; framedHiggs=False"
+    },
+    {
+      "Id": "route-does-not-fill-gu-contracts",
+      "Passed": true,
+      "Evidence": "requiresHitchinMap=True; requiresSpectralCurve=True; requiresFTheory=True; requiresFlux=True; requiresDoublet=True; requiresWzRows=True; requiresObserved=True; requiresHiggsOperator=True; providesHitchinMap=False; providesWzRows=False; providesObserved=False; providesHiggsOperator=False; promotesWz=False; promotesHiggs=False; completes=False"
+    },
+    {
+      "Id": "phase201-phase256-contract-state-preserved",
+      "Passed": true,
+      "Evidence": "phase201Promotable=False; existingEvidence=False; wzMissing=15; higgsMissing=14; observedFilled=0; observedPromotable=False"
+    }
+  ],
+  "decision": "Do not promote W/Z or Higgs physical masses from Hitchin/Higgs-bundle/spectral-cover routes in this repository. These sources provide a serious connection-plus-Higgs-field and F-theory spectral-cover lead: Hitchin equations, Higgs-bundle moduli, seven-brane spectral covers, hypercharge-flux GUT breaking, and T-brane warnings about spectral data. They do not supply a GU-local Hitchin-bundle map from Shiab/observer geometry, a target-independent compactification or flux-vacuum law, observed photon/W/Z/H projection, separate W/Z source rows, Higgs scalar-source/self-coupling lineage, low-energy transport, pole extraction, or GeV normalization.",
+  "nextRequiredArtifact": [
+    "A GU-local theorem deriving a Hitchin bundle or spectral-cover object from Shiab/observer-sector geometry rather than importing F-theory compactification data.",
+    "A target-independent compactification, spectral-curve, and flux-vacuum selection law yielding observed electroweak SU(2) x U(1), a massless photon, and separate W/Z source rows.",
+    "A Higgs scalar-source, doublet-projection, and self-coupling lineage from the same geometry, not from an assumed supersymmetric GUT/MSSM model.",
+    "A low-energy RG/threshold transport, physical-pole extraction, and GeV unit-normalization chain before any Hitchin/spectral-cover route can promote W/Z/H masses."
+  ]
+}
