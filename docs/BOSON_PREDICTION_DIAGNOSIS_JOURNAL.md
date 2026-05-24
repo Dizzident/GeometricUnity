@@ -11607,6 +11607,114 @@ an absolute GeV scale, or unit normalization.
   `xUnit2013` collection-size warning in
   `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
 
+## 2026-05-24 - Phase361 Matrix Model Higgs Geometry Source Audit
+
+### Context
+
+After Phase360, I checked for uncovered geometric routes that could plausibly
+act as W/Z/H source laws. Conformal-geometric-algebra and framed-SM searches did
+not expose a clear local gap. Matrix-model/IKKT Higgs geometry was undercovered
+locally and directly relevant because it treats electroweak and Higgs structure
+as brane geometry.
+
+### Sources Reviewed
+
+- `https://arxiv.org/abs/0806.2032`.
+- `https://arxiv.org/abs/0903.1015`.
+- `https://arxiv.org/abs/1003.4134`.
+- `https://arxiv.org/abs/1401.2020`.
+- `https://doi.org/10.1093/ptep/ptu111`.
+- `https://arxiv.org/abs/2303.08012`.
+- `https://arxiv.org/abs/2605.13294`.
+
+### Action
+
+- Added `studies/phase361_matrix_model_higgs_geometry_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P361.md`.
+- Wired Phase361 into the generator, P101 package, P202 objective completion
+  audit, and claim-integrity verifier.
+- Added Phase361 scanner exclusions so generated diagnostic text is not counted
+  as independent source evidence.
+- Added `MATRIX-MODEL-HIGGS-GEOMETRY` to `ExperimentReferences.md` with a
+  detailed reference note under `docs/Reference/ExperimentReferences/`.
+
+### Current Expected Outcome
+
+Phase361 is expected to pass only as a negative boundary audit:
+
+- `matrixModelHiggsGeometrySourceAuditPassed=true`.
+- `matrixModelLeadPresent=true`.
+- `matrixModelPrimarySourcesReviewed=true`.
+- `matrixModelRouteExternalToGu=true`.
+- `routeUsesYangMillsMatrixModel=true`.
+- `routeUsesIkktMatrixModel=true`.
+- `routeUsesNoncommutativeBranes=true`.
+- `routeUsesCompactFuzzyExtraDimensions=true`.
+- `routeRealizesElectroweakSectorGeometrically=true`.
+- `routeHiggsConnectsBranes=true`.
+- `routeIncludesSecondHiggsDoublet=true`.
+- `routeIncludesCurrentIkktWeakCouplingUpdate=true`.
+- `routeDependsOnSuitableEffectivePotential=true`.
+- `routeDependsOnNonlinearSingletHiggsStabilization=true`.
+- `routeProvidesGuLocalMatrixModelMap=false`.
+- `routeProvidesGuWzSourceRows=false`.
+- `routeProvidesGuObservedFieldExtraction=false`.
+- `routeProvidesGuHiggsScalarSourceOperator=false`.
+- `routeProvidesGuHiggsSelfCouplingSource=false`.
+- `routeProvidesTargetIndependentVevOrMassScale=false`.
+- `routeProvidesGeVUnitNormalization=false`.
+- `routePromotesWzMasses=false`.
+- `routePromotesHiggsMass=false`.
+- `routeCompletesBosonPredictions=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from IKKT/Yang-Mills matrix-model
+Higgs-geometry routes. The audited sources provide a serious geometric Higgs
+lead: noncommutative brane geometry, fuzzy extra dimensions, an electroweak
+brane configuration, and Higgs fields connecting branes. They do not provide a
+GU-local matrix-model map from Shiab/observer geometry, a target-independent
+brane vacuum/effective potential, separate observed W/Z source rows,
+photon/W/Z/H projection, Higgs scalar-source/self-coupling lineage, a VEV or
+mass-scale source, low-energy RG/threshold and pole extraction, or GeV
+normalization.
+
+### Validation
+
+- Targeted Phase361 run passed with
+  `matrixModelHiggsGeometrySourceAuditPassed=true`,
+  `routeUsesIkktMatrixModel=true`, `routeHiggsConnectsBranes=true`,
+  `routeDependsOnSuitableEffectivePotential=true`,
+  `routePromotesWzMasses=false`, `routePromotesHiggsMass=false`, and
+  `canFillPhase201WzContract=false`.
+- P101 package build passed and includes the Phase361 audit block, including
+  version/page metadata and required/provided contract-boundary fields.
+- P202 objective audit passed as an incomplete objective:
+  `objectiveAchieved=false`, `checklistPassedCount=154`, and
+  `checklistFailedCount=3`.
+- Claim-integrity verification passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns preserved the negative intake boundary:
+  P204 `intakeReadyCandidateCount=0`,
+  P205 `intakeReadyFindingCount=0`,
+  P207 `intakeReadyFindingCount=0`,
+  P279 `localSearchMatchingFileCount=0`,
+  P281 `localSearchMatchingFileCount=0`,
+  P295 `intakeReadyObservedFieldExtractionCandidateCount=0`, and
+  P296 `intakeReadySourceLineageFieldCandidateCount=0`.
+- Reference link check passed with `detailLinkCount=42` and no missing
+  details.
+- Full generator gate passed with Phase361 included and final claim-integrity
+  verification still reporting zero promoted physical mass claims.
+- Sidecar review found four integration risks: ignored Phase361 output
+  artifacts, missing P101 boundary fields, source-row/DOI wording mismatch, and
+  a Phase207 implementation-note exclusion gap. All four were corrected before
+  final validation.
+- `dotnet test GeometricUnity.slnx` passed; the only warning was the existing
+  `xUnit2013` collection-size warning in
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
+
 ## 2026-05-23 - Phase356 Eguchi-Hanson Substandard Higgs Source Audit
 
 ### Context

@@ -1,0 +1,180 @@
+{
+  "phaseId": "phase361-matrix-model-higgs-geometry-source-audit",
+  "terminalStatus": "matrix-model-higgs-geometry-source-audit-geometric-higgs-lead-not-gu-mass-law",
+  "generatedAt": "2026-05-24T12:44:37.0075903+00:00",
+  "matrixModelHiggsGeometrySourceAuditPassed": true,
+  "matrixModelLeadPresent": true,
+  "matrixModelPrimarySourcesReviewed": true,
+  "matrixModelRouteExternalToGu": true,
+  "extendedStandardModelHiggsGeometryDoi": "https://doi.org/10.1093/ptep/ptu111",
+  "routeUsesYangMillsMatrixModel": true,
+  "routeUsesIkktMatrixModel": true,
+  "routeUsesNoncommutativeBranes": true,
+  "routeUsesEmergentFourDimensionalGeometry": true,
+  "routeUsesCompactFuzzyExtraDimensions": true,
+  "routeRealizesElectroweakSectorGeometrically": true,
+  "routeUsesMinimalFuzzyEllipsoids": true,
+  "routeHiggsConnectsBranes": true,
+  "routeHiggsIndispensablePartOfGeometry": true,
+  "routeProducesStandardModelLikeChiralMatter": true,
+  "routeIncludesSecondHiggsDoublet": true,
+  "routeIncludesRightHandedNeutrinos": true,
+  "routeIncludesHiggsSingletMajoranaLead": true,
+  "routeIncludesEmergentGravityAndGaugeTheoryLead": true,
+  "routeIncludesCurrentIkktWeakCouplingUpdate": true,
+  "extendedStandardModelLatestArxivVersion": 3,
+  "extendedStandardModelPageCount": 41,
+  "quantumSpacetimeSubmissionYear": 2026,
+  "quantumSpacetimePageCount": 26,
+  "routeDependsOnSuitableEffectivePotential": true,
+  "routeDependsOnNonlinearSingletHiggsStabilization": true,
+  "routeContainsExtendedNotMinimalStandardModel": true,
+  "routeContainsMirrorFermionsAtHigherEnergy": true,
+  "routeContainsAnomalousExtraU1Factors": true,
+  "routeDoesNotPredictObservedWzMasses": true,
+  "routeDoesNotProvideTargetIndependentObservedHiggsMass": true,
+  "routeDoesNotProvidePhysicalPoleExtraction": true,
+  "routeDoesNotProvideObservedPhotonWzHiggsProjection": true,
+  "routeRequiresGuLocalMatrixModelMap": true,
+  "routeRequiresGuBraneVacuumSelection": true,
+  "routeRequiresGuFuzzyExtraDimensionSource": true,
+  "routeRequiresGuEffectivePotentialDerivation": true,
+  "routeRequiresGuSingletStabilizationLaw": true,
+  "routeRequiresGuWzSourceRows": true,
+  "routeRequiresGuWeakMixingAngleSource": true,
+  "routeRequiresGuGaugeCouplingNormalization": true,
+  "routeRequiresGuObservedFieldExtraction": true,
+  "routeRequiresGuHiggsScalarSourceOperator": true,
+  "routeRequiresGuHiggsSelfCouplingSource": true,
+  "routeRequiresTargetIndependentVevOrMassScale": true,
+  "routeRequiresLowEnergyRgAndThresholdTransport": true,
+  "routeRequiresGeVUnitNormalization": true,
+  "routeProvidesGuLocalMatrixModelMap": false,
+  "routeProvidesGuBraneVacuumSelection": false,
+  "routeProvidesGuFuzzyExtraDimensionSource": false,
+  "routeProvidesGuEffectivePotentialDerivation": false,
+  "routeProvidesGuSingletStabilizationLaw": false,
+  "routeProvidesGuWzSourceRows": false,
+  "routeProvidesGuWeakMixingAngleSource": false,
+  "routeProvidesGuGaugeCouplingNormalization": false,
+  "routeProvidesGuObservedFieldExtraction": false,
+  "routeProvidesGuHiggsScalarSourceOperator": false,
+  "routeProvidesGuHiggsSelfCouplingSource": false,
+  "routeProvidesTargetIndependentVevOrMassScale": false,
+  "routeProvidesLowEnergyRgAndThresholdTransport": false,
+  "routeProvidesGeVUnitNormalization": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "sourceRowCount": 6,
+  "sourceRows": [
+    {
+      "Id": "steinacker-0806-2032-emergent-branes",
+      "Url": "https://arxiv.org/abs/0806.2032",
+      "Title": "Emergent Gravity and Noncommutative Branes from Yang-Mills Matrix Models",
+      "Summary": "Develops emergent gravity on noncommutative branes embedded in higher-dimensional target space, with effective brane metric and IKKT motivation.",
+      "PromotionBoundary": "Geometry and gravity foundation only; no observed W/Z/H source rows or low-energy mass extraction."
+    },
+    {
+      "Id": "steinacker-0903-1015-matrix-models-emergent-gravity-gauge",
+      "Url": "https://arxiv.org/abs/0903.1015",
+      "Title": "Matrix Models, Emergent Gravity, and Gauge Theory",
+      "Summary": "Reviews Yang-Mills matrix models where dynamical spacetime branes carry emergent gravity and nonabelian gauge fields.",
+      "PromotionBoundary": "Gauge/gravity framework lead; not a W/Z/H mass-source lineage."
+    },
+    {
+      "Id": "steinacker-1003-4134-emergent-geometry-intro",
+      "Url": "https://arxiv.org/abs/1003.4134",
+      "Title": "Emergent Geometry and Gravity from Matrix Models: an Introduction",
+      "Summary": "Describes spacetime as a noncommutative brane solution with fields and matter arising as matrix fluctuations around the background.",
+      "PromotionBoundary": "Background-selection lead; no GU-local observed electroweak projection or GeV normalization."
+    },
+    {
+      "Id": "steinacker-zahn-1401-2020-extended-sm-higgs-geometry",
+      "Url": "https://arxiv.org/abs/1401.2020",
+      "Title": "An extended standard model and its Higgs geometry from the matrix model",
+      "Summary": "IKKT brane configuration resembling the Standard Model at low energies, with electroweak sector from fuzzy ellipsoids, Higgs connecting branes, second Higgs doublet, right-handed neutrinos, and Higgs singlet.",
+      "PromotionBoundary": "Direct geometric-Higgs lead, but it assumes a suitable effective potential and singlet stabilization and does not derive observed W/Z/H masses."
+    },
+    {
+      "Id": "steinacker-2303-08012-ikkt-one-loop-emergent-gravity",
+      "Url": "https://arxiv.org/abs/2303.08012",
+      "Title": "One-loop effective action and emergent gravity on quantum spaces in the IKKT matrix model",
+      "Summary": "Derives 3\u002B1-dimensional induced gravity in IKKT for branes with compact fuzzy extra dimensions and physical modes confined to the brane at weak coupling.",
+      "PromotionBoundary": "Current gravity/scale-background lead; no electroweak boson source rows or Higgs pole mass."
+    },
+    {
+      "Id": "steinacker-2605-13294-ikkt-weak-coupling-quantum-spacetime",
+      "Url": "https://arxiv.org/abs/2605.13294",
+      "Title": "Quantum spacetime and quantum fluctuations in the IKKT model at weak coupling",
+      "Summary": "Current 2026 IKKT update clarifying coupling, noncommutativity scale, fluctuation scale, and semiclassical weak-coupling regime.",
+      "PromotionBoundary": "Current matrix-model scale lead; it justifies semiclassical geometry but does not provide GU-local W/Z/H mass extraction."
+    }
+  ],
+  "adjacentRouteBoundary": {
+    "stringCompactificationSourceAuditPassed": true,
+    "stringRoutePromotesWzMasses": false,
+    "stringRoutePromotesHiggsMass": false,
+    "gaugeHiggsUnificationSourceAuditPassed": true,
+    "gaugeHiggsRoutePromotesWzMasses": false,
+    "gaugeHiggsRoutePromotesHiggsMass": false,
+    "finiteNcgDiscreteHiggsSourceAuditPassed": true,
+    "finiteNcgRoutePromotesWzMasses": false,
+    "finiteNcgRoutePromotesHiggsMass": false
+  },
+  "contractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionFilledRequiredFieldCount": 0
+  },
+  "checks": [
+    {
+      "Id": "matrix-model-primary-sources-reviewed",
+      "Passed": true,
+      "Evidence": "lead=True; reviewed=True; externalToGu=True; sourceRows=6"
+    },
+    {
+      "Id": "matrix-model-geometric-higgs-structure-captured",
+      "Passed": true,
+      "Evidence": "ymMatrix=True; ikkt=True; branes=True; emergent4d=True; fuzzyExtra=True; electroweakGeometry=True; ellipsoids=True; higgsConnects=True; higgsGeometry=True; chiralMatter=True"
+    },
+    {
+      "Id": "matrix-model-extension-and-current-update-captured",
+      "Passed": true,
+      "Evidence": "secondDoublet=True; rightNeutrinos=True; singlet=True; gravityGauge=True; currentIkkt=True; v=3; pages=41; currentYear=2026; currentPages=26"
+    },
+    {
+      "Id": "matrix-model-promotion-obstructions-captured",
+      "Passed": true,
+      "Evidence": "effectivePotential=True; singletStabilization=True; extendedSm=True; mirrorFermions=True; extraU1=True; observedWz=True; observedHiggs=True; pole=True; observedProjection=True"
+    },
+    {
+      "Id": "adjacent-brane-ncg-gauge-higgs-routes-remain-nonpromotional",
+      "Passed": true,
+      "Evidence": "stringPassed=True; stringWz=False; stringHiggs=False; gaugeHiggsPassed=True; gaugeHiggsWz=False; gaugeHiggsHiggs=False; finiteNcgPassed=True; finiteNcgWz=False; finiteNcgHiggs=False"
+    },
+    {
+      "Id": "route-does-not-fill-gu-contracts",
+      "Passed": true,
+      "Evidence": "requiresMatrixMap=True; requiresVacuum=True; requiresFuzzy=True; requiresPotential=True; requiresSinglet=True; requiresWzRows=True; requiresObserved=True; requiresHiggsOperator=True; providesMatrixMap=False; providesWzRows=False; providesObserved=False; providesHiggsOperator=False; promotesWz=False; promotesHiggs=False; completes=False"
+    },
+    {
+      "Id": "phase201-phase256-contract-state-preserved",
+      "Passed": true,
+      "Evidence": "phase201Promotable=False; existingEvidence=False; wzMissing=15; higgsMissing=14; observedFilled=0; observedPromotable=False"
+    }
+  ],
+  "decision": "Do not promote W/Z or Higgs physical masses from IKKT/Yang-Mills matrix-model Higgs-geometry routes in this repository. The sources provide a serious geometric Higgs lead: noncommutative brane geometry, fuzzy extra dimensions, an electroweak brane configuration, and a Higgs connecting branes. They do not provide a GU-local matrix-model map from Shiab/observer geometry, a target-independent brane vacuum/effective potential, separate observed W/Z source rows, photon/W/Z/H projection, Higgs scalar-source/self-coupling lineage, a VEV or mass-scale source, low-energy RG/threshold and pole extraction, or GeV normalization.",
+  "nextRequiredArtifact": [
+    "A GU-local theorem mapping Shiab/observer-sector fields into an IKKT or Yang-Mills matrix-model brane configuration without importing the external model.",
+    "A target-independent brane-vacuum and fuzzy-extra-dimension selection law that yields observed electroweak SU(2) x U(1), photon/W/Z projection, and separate W/Z source rows.",
+    "A derived effective potential and singlet-stabilization law from the same geometry, yielding a Higgs scalar-source/self-coupling lineage rather than assuming it.",
+    "A shared VEV or mass-scale source, low-energy RG/threshold transport, physical-pole extractor, and GeV normalization before any matrix-model route can promote W/Z/H masses."
+  ]
+}
