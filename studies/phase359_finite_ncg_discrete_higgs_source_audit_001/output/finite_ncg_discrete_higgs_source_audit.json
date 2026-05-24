@@ -1,0 +1,184 @@
+{
+  "phaseId": "phase359-finite-ncg-discrete-higgs-source-audit",
+  "terminalStatus": "finite-ncg-discrete-higgs-source-audit-geometric-mechanism-not-gu-mass-law",
+  "generatedAt": "2026-05-24T01:35:28.9710514+00:00",
+  "finiteNcgDiscreteHiggsSourceAuditPassed": true,
+  "finiteNcgLeadPresent": true,
+  "finiteNcgPrimarySourcesReviewed": true,
+  "finiteNcgRouteExternalToGu": true,
+  "routeUsesAlmostCommutativeGeometry": true,
+  "routeUsesFiniteDiscreteInternalSpace": true,
+  "routeDerivesHiggsAsDiscreteConnectionOrInnerFluctuation": true,
+  "routeProducesYangMillsHiggsAction": true,
+  "routeEncodesStandardModelGaugeStructure": true,
+  "routeHasHistoricalTreeLevelMassRelations": true,
+  "historicalRelationMhSqrt2MwPresent": true,
+  "historicalRelationSin2ThetaWThreeEighthsPresent": true,
+  "historicalRgPredictionHighHiggsRangePresent": true,
+  "historicalPredictedHiggsMassForMtop175GeV": 164.01,
+  "historicalPredictedHiggsMassForMtop180GeV": 171.92,
+  "historicalPredictedHiggsRangeLowGeV": 153.42,
+  "historicalPredictedHiggsRangeHighGeV": 191.94,
+  "spectralActionPredictsHiggsAround170GeV": true,
+  "postLhcScalarRepairRequiresExtraScalar": true,
+  "sitarzNoSpecialMassRelationObstructionPresent": true,
+  "routeMassRelationsNotInvariantWhenFullDiscreteGeometryTermsAllowed": true,
+  "routeNeedsFiniteTripleOrAlgebraChoice": true,
+  "routeNeedsCutoffScaleAndRgTransport": true,
+  "routeNeedsYukawaTopNeutrinoInputs": true,
+  "routeNeedsBMinusLExtensionOrExtraScalarForCompatibility": true,
+  "routePredictsCompatibleOnlyInSmallParameterSpace": true,
+  "routeDoesNotPredictObservedWzMasses": true,
+  "routeDoesNotProvideTargetIndependentObservedHiggsMass": true,
+  "routeDoesNotProvidePhysicalPoleExtraction": true,
+  "routeDoesNotProvideObservedPhotonWzHiggsProjection": true,
+  "routeRequiresGuLocalFiniteNcgMap": true,
+  "routeRequiresGuDiscreteInternalSpaceDerivation": true,
+  "routeRequiresGuDiracOperatorAndAlgebraSource": true,
+  "routeRequiresGuWzSourceRows": true,
+  "routeRequiresGuWeakMixingAngleSource": true,
+  "routeRequiresGuObservedFieldExtraction": true,
+  "routeRequiresGuHiggsScalarSourceOperator": true,
+  "routeRequiresGuHiggsSelfCouplingSource": true,
+  "routeRequiresTargetIndependentVevOrMassScale": true,
+  "routeRequiresLowEnergyRgAndThresholdTransport": true,
+  "routeRequiresGeVUnitNormalization": true,
+  "routeProvidesGuLocalFiniteNcgMap": false,
+  "routeProvidesGuDiscreteInternalSpaceDerivation": false,
+  "routeProvidesGuDiracOperatorAndAlgebraSource": false,
+  "routeProvidesGuWzSourceRows": false,
+  "routeProvidesGuWeakMixingAngleSource": false,
+  "routeProvidesGuObservedFieldExtraction": false,
+  "routeProvidesGuHiggsScalarSourceOperator": false,
+  "routeProvidesGuHiggsSelfCouplingSource": false,
+  "routeProvidesTargetIndependentVevOrMassScale": false,
+  "routeProvidesLowEnergyRgAndThresholdTransport": false,
+  "routeProvidesGeVUnitNormalization": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "sourceRowCount": 8,
+  "sourceRows": [
+    {
+      "Id": "connes-lott-particle-models-ncg",
+      "Url": "https://repo-archives.ihes.fr/FONDS_IHES/I_Prepublications/CONNES/1985-1993/M_90_23/M_90_23.pdf",
+      "Title": "Particle Models and Noncommutative Geometry",
+      "Summary": "Original Connes-Lott finite-geometry framing of particle models as noncommutative gauge theory over an ordinary space plus a finite internal algebra.",
+      "PromotionBoundary": "Geometric mechanism lead; it does not supply GU-local source-lineage rows or observed W/Z/H pole masses."
+    },
+    {
+      "Id": "chamseddine-felder-frohlich-ncg-higgs-mechanism",
+      "Url": "https://www.sciencedirect.com/science/article/pii/0370269391911804",
+      "Title": "Noncommutative geometry and Higgs mechanism in the Standard Model",
+      "Summary": "Uses a generalized field strength on a noncommutative/discrete extension of spacetime to obtain a Higgs potential and symmetry breaking.",
+      "PromotionBoundary": "Historical geometric-Higgs lead; any numerical relations depend on model choices and later obstructions/renormalization analysis."
+    },
+    {
+      "Id": "sitarz-9304005-no-special-higgs-relation",
+      "Url": "https://arxiv.org/abs/hep-th/9304005",
+      "Title": "Higgs Mass and Noncommutative Geometry",
+      "Summary": "Shows that electroweak NCG over continuous plus discrete space gives no forced special Higgs-mass relation once a gauge-invariant discrete curvature term is allowed.",
+      "PromotionBoundary": "Directly blocks promotion of simple finite-NCG Higgs/W mass ratios as target-independent predictions."
+    },
+    {
+      "Id": "okumura-ptp-1997-ncg-rg-higgs",
+      "Url": "https://academic.oup.com/ptp/article/98/6/1333/1868457",
+      "Title": "Renormalization Group Analysis of the Higgs Boson Mass in a Noncommutative Geometry",
+      "Summary": "Audits NCG initial conditions such as 4 lambda = g^2 = (5/3) g\u0027^2, giving m_H = sqrt(2) m_W at the boundary and high low-energy Higgs masses after RG flow.",
+      "PromotionBoundary": "Numerical relation lead; it depends on a boundary scale, top mass, RG scheme, and does not match the observed 125 GeV Higgs without extra structure."
+    },
+    {
+      "Id": "chamseddine-connes-marcolli-0610241",
+      "Url": "https://arxiv.org/abs/hep-th/0610241",
+      "Title": "Gravity and the Standard Model with neutrino mixing",
+      "Summary": "Spectral-action finite-geometry model predicting high-scale couplings, Higgs scattering parameter, Yukawa sum, and a low-energy Higgs mass around 170 GeV.",
+      "PromotionBoundary": "Geometric unification lead already bounded by Phase268; original Higgs value is not observed and needs RG/Yukawa/cutoff inputs."
+    },
+    {
+      "Id": "resilience-spectral-standard-model-1208-1030",
+      "Url": "https://arxiv.org/abs/1208.1030",
+      "Title": "Resilience of the Spectral Standard Model",
+      "Summary": "Post-LHC repair route where an additional real scalar coupled to the Higgs changes RG behavior and restores compatibility with low Higgs mass.",
+      "PromotionBoundary": "Compatibility repair, not a GU-local prediction; it introduces extra scalar dynamics and high-scale boundary inputs."
+    },
+    {
+      "Id": "devastato-lizzi-martinetti-1403-7567",
+      "Url": "https://arxiv.org/abs/1403.7567",
+      "Title": "Higgs mass in Noncommutative Geometry",
+      "Summary": "Reviews how an extra scalar generated from the Majorana neutrino mass can make the NCG Higgs computation compatible with the 126 GeV value.",
+      "PromotionBoundary": "Requires neutrino/Majorana and extra-scalar assumptions; does not provide W/Z rows or a target-independent GU Higgs scalar-source law."
+    },
+    {
+      "Id": "besnard-brouder-2010-04960-lorentzian-ncg-bl",
+      "Url": "https://arxiv.org/abs/2010.04960",
+      "Title": "Noncommutative geometry, the Lorentzian Standard Model and its B-L extension",
+      "Summary": "Studies 1-loop RG flow of Lorentzian Connes-Lott models and finds only the B-L extension compatible with top and Higgs masses in a small parameter region.",
+      "PromotionBoundary": "Predictive external model but still depends on B-L extension, thresholds, neutrino matrix orientation, and high-scale parameter choices."
+    }
+  ],
+  "adjacentRouteBoundary": {
+    "spectralActionBosonSourceAuditPassed": true,
+    "spectralActionPromotesWzMasses": false,
+    "spectralActionPromotesHiggsMass": false,
+    "spectralActionCompletesBosonPredictions": false,
+    "su21RoutePromotesWzMasses": false,
+    "su21RoutePromotesHiggsMass": false,
+    "diracLichnerowiczRoutePromotesWzMasses": false,
+    "diracLichnerowiczRoutePromotesHiggsMass": false
+  },
+  "contractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionFilledRequiredFieldCount": 0
+  },
+  "checks": [
+    {
+      "Id": "finite-ncg-primary-sources-reviewed",
+      "Passed": true,
+      "Evidence": "lead=True; reviewed=True; externalToGu=True; sourceRows=8"
+    },
+    {
+      "Id": "finite-ncg-discrete-higgs-mechanism-captured",
+      "Passed": true,
+      "Evidence": "almostCommutative=True; finiteSpace=True; higgsDiscreteConnection=True; ymh=True; smGauge=True"
+    },
+    {
+      "Id": "historical-ncg-mass-relation-leads-captured",
+      "Passed": true,
+      "Evidence": "treeRelations=True; mhSqrt2Mw=True; sin2ThreeEighths=True; rgHighRange=True; mh175=164.01; mh180=171.92; spectral170=True"
+    },
+    {
+      "Id": "finite-ncg-promotion-obstructions-captured",
+      "Passed": true,
+      "Evidence": "sitarz=True; fullTerms=True; extraScalar=True; finiteTriple=True; cutoffRg=True; yukawaNeutrino=True; blOrScalar=True; smallParameterSpace=True"
+    },
+    {
+      "Id": "adjacent-ncg-superconnection-and-dirac-routes-remain-nonpromotional",
+      "Passed": true,
+      "Evidence": "spectralPassed=True; spectralWz=False; spectralHiggs=False; spectralCompletes=False; su21Wz=False; su21Higgs=False; diracWz=False; diracHiggs=False"
+    },
+    {
+      "Id": "route-does-not-fill-gu-contracts",
+      "Passed": true,
+      "Evidence": "guFiniteMap=False; guFiniteSpace=False; guDiracAlgebra=False; guWzRows=False; weakAngle=False; observed=False; higgsOperator=False; selfCoupling=False; scale=False; rg=False; gev=False; promotesWz=False; promotesHiggs=False; completes=False"
+    },
+    {
+      "Id": "phase201-phase256-contract-state-preserved",
+      "Passed": true,
+      "Evidence": "phase201Promotable=False; existingEvidence=False; wzMissing=15; higgsMissing=14; observedFilled=0; observedPromotable=False"
+    }
+  ],
+  "decision": "Do not promote W/Z or Higgs physical masses from finite noncommutative-geometry or Connes-Lott discrete-Higgs routes in this repository. The sources supply a genuine geometric Higgs-as-discrete-connection mechanism and historical mass-relation leads, but simple Higgs/W relations are not invariant once all allowed discrete-geometry terms are included, spectral-action relations are high-scale/RG/Yukawa/cutoff dependent, and post-LHC compatibility requires extra scalar or B-L extension structure. Current GU artifacts still do not supply a finite-NCG map from Shiab/observer geometry, W/Z source rows, weak-angle/coupling source, observed photon/W/Z/H projection, target-independent VEV or mass scale, Higgs scalar-source/self-coupling lineage, RG/threshold transport, pole extraction, or GeV normalization.",
+  "nextRequiredArtifact": [
+    "A GU-local derivation of an almost-commutative or finite internal algebra from Shiab/observer-sector geometry rather than importing an external spectral triple.",
+    "A GU Dirac-operator/algebra source that produces observed electroweak SU(2) x U(1), photon/W/Z projection, and separate W/Z source rows.",
+    "A target-independent Higgs scalar-source and self-coupling law that survives the Sitarz discrete-curvature obstruction and does not rely on fitted extra-scalar or B-L parameters.",
+    "A low-energy RG/threshold and physical-pole extractor with GeV normalization before any finite-NCG route can promote W/Z/H masses."
+  ]
+}

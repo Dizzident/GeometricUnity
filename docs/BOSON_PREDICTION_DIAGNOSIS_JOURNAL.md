@@ -11825,6 +11825,106 @@ lineage, and GeV normalization.
   xUnit2013 analyzer warning in
   `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
 
+## 2026-05-23 - Phase359 Finite NCG Discrete-Higgs Source Audit
+
+### Context
+
+After Phase358, the next geometrically close route was finite
+noncommutative geometry: Connes-Lott and almost-commutative/spectral models
+where the Higgs appears as a discrete/internal connection or inner fluctuation.
+This family is relevant because it is one of the clearest external examples of
+a mathematical geometry generating a Yang-Mills-Higgs sector rather than merely
+postulating a scalar field.
+
+### Sources Reviewed
+
+- `https://repo-archives.ihes.fr/FONDS_IHES/I_Prepublications/CONNES/1985-1993/M_90_23/M_90_23.pdf`.
+- `https://www.sciencedirect.com/science/article/pii/0370269391911804`.
+- `https://arxiv.org/abs/hep-th/9304005`.
+- `https://academic.oup.com/ptp/article/98/6/1333/1868457`.
+- `https://arxiv.org/abs/hep-th/0610241`.
+- `https://arxiv.org/abs/1208.1030`.
+- `https://arxiv.org/abs/1403.7567`.
+- `https://arxiv.org/abs/2010.04960`.
+
+### Action
+
+- Added `studies/phase359_finite_ncg_discrete_higgs_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P359.md`.
+- Added `FINITE-NCG-DISCRETE-HIGGS` to `ExperimentReferences.md` with a
+  detailed reference note under `docs/Reference/ExperimentReferences/`.
+- Wired Phase359 into the generator, P101 package, P202 objective completion
+  audit, and claim-integrity verifier.
+- Added Phase359 scanner exclusions so generated diagnostic text is not counted
+  as independent source evidence.
+
+### Current Expected Outcome
+
+Phase359 is expected to pass only as a negative boundary audit:
+
+- `finiteNcgDiscreteHiggsSourceAuditPassed=true`.
+- `finiteNcgLeadPresent=true`.
+- `finiteNcgPrimarySourcesReviewed=true`.
+- `finiteNcgRouteExternalToGu=true`.
+- `routeUsesAlmostCommutativeGeometry=true`.
+- `routeUsesFiniteDiscreteInternalSpace=true`.
+- `routeDerivesHiggsAsDiscreteConnectionOrInnerFluctuation=true`.
+- `routeProducesYangMillsHiggsAction=true`.
+- `historicalRelationMhSqrt2MwPresent=true`.
+- `historicalRgPredictionHighHiggsRangePresent=true`.
+- `sitarzNoSpecialMassRelationObstructionPresent=true`.
+- `postLhcScalarRepairRequiresExtraScalar=true`.
+- `routePromotesWzMasses=false`.
+- `routePromotesHiggsMass=false`.
+- `routeCompletesBosonPredictions=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from finite NCG/discrete-Higgs routes in
+this repository. The route supplies a real geometric Higgs-mechanism template,
+but simple Higgs/W relations are not invariant once all allowed
+discrete-geometry terms are included, spectral-action relations are
+high-scale/RG/Yukawa/cutoff dependent, and post-LHC compatibility needs extra
+scalar or B-L extension structure. Promotion would require a GU-local
+finite-algebra/Dirac-operator source, separate W/Z rows, weak-angle/coupling
+source, observed photon/W/Z/H projection, target-independent scale, Higgs
+source/self-coupling lineage, RG/threshold transport, pole extraction, and GeV
+normalization.
+
+### Validation
+
+- Targeted Phase359 run passed with
+  `finiteNcgDiscreteHiggsSourceAuditPassed=true`,
+  `routeDerivesHiggsAsDiscreteConnectionOrInnerFluctuation=true`,
+  `historicalRelationMhSqrt2MwPresent=true`,
+  `sitarzNoSpecialMassRelationObstructionPresent=true`,
+  `routePromotesWzMasses=false`, `routePromotesHiggsMass=false`, and
+  `canFillPhase201WzContract=false`.
+- P101 package build passed and includes the Phase359 audit block.
+- P202 objective audit passed as an incomplete objective:
+  `objectiveAchieved=false`, `checklistPassedCount=152`, and
+  `checklistFailedCount=3`.
+- Claim-integrity verification passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns preserved the negative intake boundary:
+  P204 `intakeReadyCandidateCount=0`,
+  P205 `intakeReadyFindingCount=0`,
+  P207 `intakeReadyFindingCount=0`,
+  P279 `localSearchMatchingFileCount=0`,
+  P281 `localSearchMatchingFileCount=0`,
+  P295 `intakeReadyObservedFieldExtractionCandidateCount=0`, and
+  P296 `intakeReadySourceLineageFieldCandidateCount=0`.
+- Full generator gate passed with Phase359 included. The final P202 audit
+  still reports `objectiveAchieved=false`, `checklistPassedCount=152`, and
+  `checklistFailedCount=3`; claim integrity still reports
+  `promotedPhysicalMassClaimCount=0`.
+- Reference link check passed with `detailLinkCount=40` and no missing
+  details.
+- `dotnet test GeometricUnity.slnx` passed; the only warning was the existing
+  xUnit2013 analyzer warning in
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
+
 ## 2026-05-23 - Phase358 Exceptional E8 Boson Source Audit
 
 ### Context
