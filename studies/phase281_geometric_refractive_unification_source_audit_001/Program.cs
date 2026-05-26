@@ -467,6 +467,7 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath.Contains("studies/phase363_hitchin_higgs_bundle_source_audit_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase364_moment_map_symplectic_reduction_source_audit_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase365_dressing_field_electroweak_observed_variables_audit_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase366_bost_connes_arithmetic_gauge_coupling_source_audit_001/", StringComparison.Ordinal)
     || normalizedPath == "studies/phase101_boson_prediction_package_001/Program.cs"
     || normalizedPath == "studies/phase202_boson_objective_completion_audit_001/Program.cs"
     || normalizedPath == "studies/phase204_boson_source_lineage_candidate_scan_001/Program.cs"
@@ -489,7 +490,8 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P342.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P343.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P364.md"
-    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P365.md";
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P365.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P366.md";
 
 static bool? JsonBool(JsonElement element, string propertyName) =>
     element.TryGetProperty(propertyName, out var value) && (value.ValueKind == JsonValueKind.True || value.ValueKind == JsonValueKind.False)

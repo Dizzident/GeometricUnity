@@ -135,6 +135,7 @@ const paths = {
   phase363: "studies/phase363_hitchin_higgs_bundle_source_audit_001/output/hitchin_higgs_bundle_source_audit_summary.json",
   phase364: "studies/phase364_moment_map_symplectic_reduction_source_audit_001/output/moment_map_symplectic_reduction_source_audit_summary.json",
   phase365: "studies/phase365_dressing_field_electroweak_observed_variables_audit_001/output/dressing_field_electroweak_observed_variables_audit_summary.json",
+  phase366: "studies/phase366_bost_connes_arithmetic_gauge_coupling_source_audit_001/output/bost_connes_arithmetic_gauge_coupling_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -341,6 +342,7 @@ const phase362 = requireFile(paths.phase362);
 const phase363 = requireFile(paths.phase363);
 const phase364 = requireFile(paths.phase364);
 const phase365 = requireFile(paths.phase365);
+const phase366 = requireFile(paths.phase366);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -3733,6 +3735,60 @@ if (sourceLineageMissing) {
   assert(phase365.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase365 W/Z missing-field count must match Phase213.");
   assert(phase365.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase365 Higgs missing-field count must match Phase213.");
   assert(phase365.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase365 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase366.bostConnesArithmeticGaugeCouplingSourceAuditPassed === true, "Phase366 Bost-Connes arithmetic gauge-coupling audit must pass while preserving non-promotional status.");
+  assert(phase366.bostConnesArithmeticGaugeCouplingLeadPresent === true, "Phase366 must record the Bost-Connes arithmetic coupling lead.");
+  assert(phase366.bostConnesArithmeticGaugeCouplingSourceReviewed === true, "Phase366 must record source review.");
+  assert(phase366.bostConnesArithmeticGaugeCouplingRouteExternalToGu === true, "Phase366 must classify the route as external to GU.");
+  assert(phase366.routeUsesBostConnesCStarAlgebra === true, "Phase366 must record Bost-Connes C*-algebra structure.");
+  assert(phase366.routeUsesPrimeSevenLocalFactor === true, "Phase366 must record the p=7 local factor claim.");
+  assert(phase366.routeUsesCrtGaugeGroupDecomposition === true, "Phase366 must record CRT gauge-group decomposition.");
+  assert(phase366.routeClaimsSpectralTraceRatios === true, "Phase366 must record spectral trace ratio claims.");
+  assert(phase366.routeClaimsAlphaStrongAlphaEmAlphaWeak === true, "Phase366 must record gauge-coupling claims.");
+  assert(phase366.routeClaimsWeakMixingAngle === true, "Phase366 must record weak-angle claims.");
+  assert(phase366.routeProvidesExternalGaugeCouplingTemplate === true, "Phase366 must record an external gauge-coupling template.");
+  assert(phase366.routeProvidesExternalWeakAngleTemplate === true, "Phase366 must record an external weak-angle template.");
+  assert(phase366.routePotentiallyAddressesWeakCouplingPartOfWzContract === true, "Phase366 must classify the lead as relevant to the weak-coupling portion of W/Z.");
+  assert(phase366.correctedAlphaWeakInverse === 29.6, "Phase366 must preserve the corrected alpha_W inverse diagnostic.");
+  assert(phase366.claimedWeakMixingSinSquared === 0.2315, "Phase366 must preserve the claimed weak-mixing value.");
+  assert(phase366.arithmeticExternalVevWzDiagnosticPassesBroadGate === true, "Phase366 must record the external-VEV W/Z numerical diagnostic.");
+  assert(phase366.routeUsesExternalFermiVevForWzDiagnostic === true, "Phase366 must record external Fermi VEV use.");
+  assert(phase366.routeDoesNotUseWzTargetsForConstruction === true, "Phase366 cannot use W/Z targets for construction.");
+  assert(phase366.routeUsesTargetsOnlyForPostConstructionEvaluation === true, "Phase366 target values can only be post-construction diagnostics.");
+  assert(phase366.routeProvidesGuLocalBostConnesMap === false, "Phase366 cannot claim a GU-local Bost-Connes map.");
+  assert(phase366.routeProvidesGuGaugeCouplingNormalization === false, "Phase366 cannot claim GU gauge-coupling normalization.");
+  assert(phase366.routeProvidesGuWeakMixingAngleSource === false, "Phase366 cannot claim a GU weak-angle source.");
+  assert(phase366.routeProvidesTargetIndependentGuVevSource === false, "Phase366 cannot claim a GU VEV source.");
+  assert(phase366.routeProvidesSeparateWzSourceRows === false, "Phase366 cannot claim separate W/Z source rows.");
+  assert(phase366.routeProvidesWzRawAmplitudeGates === false, "Phase366 cannot claim W/Z raw-amplitude gates.");
+  assert(phase366.routeProvidesWzCommonBridgeGate === false, "Phase366 cannot claim a W/Z common bridge gate.");
+  assert(phase366.routeProvidesWzStabilitySidecars === false, "Phase366 cannot claim W/Z stability sidecars.");
+  assert(phase366.routeProvidesObservedPhotonWzHiggsProjectionRows === false, "Phase366 cannot claim observed photon/W/Z/H projection rows.");
+  assert(phase366.routeProvidesHiggsScalarSourceOperator === false, "Phase366 cannot claim a Higgs scalar-source operator.");
+  assert(phase366.routeProvidesHiggsQuarticOrExcitationSource === false, "Phase366 cannot claim a Higgs quartic or excitation source.");
+  assert(phase366.routeProvidesGeVUnitNormalization === false, "Phase366 cannot claim GeV normalization.");
+  assert(phase366.routePromotesWzMasses === false, "Phase366 cannot promote W/Z masses.");
+  assert(phase366.routePromotesHiggsMass === false, "Phase366 cannot promote Higgs mass.");
+  assert(phase366.routeCompletesBosonPredictions === false, "Phase366 cannot complete boson predictions.");
+  assert(phase366.canFillPhase201WzContract === false, "Phase366 cannot fill the Phase201 W/Z contract.");
+  assert(phase366.canFillPhase201HiggsContract === false, "Phase366 cannot fill the Phase201 Higgs contract.");
+  assert(phase366.canFillPhase256ObservedFieldExtractionContract === false, "Phase366 cannot fill the Phase256 observed-field contract.");
+  assert(phase366.sourceRowCount === 3, "Phase366 must preserve three source rows.");
+  assert(phase366.adjacentRouteBoundary?.predictedRatioAlphaGfExternalClosurePassed === true, "Phase366 must inherit the external alpha/GF diagnostic boundary.");
+  assert(phase366.adjacentRouteBoundary?.electromagneticAlphaSourceAuditPassed === true, "Phase366 must inherit the alpha-source audit boundary.");
+  assert(phase366.adjacentRouteBoundary?.alphaSourcePromotesWzMasses === false, "Phase366 must preserve that alpha sources do not promote W/Z masses.");
+  assert(phase366.adjacentRouteBoundary?.fermiVevSourceAuditPassed === true, "Phase366 must inherit the Fermi/VEV source audit boundary.");
+  assert(phase366.adjacentRouteBoundary?.fermiVevPromotesWzMasses === false, "Phase366 must preserve that Fermi/VEV does not promote W/Z masses.");
+  assert(phase366.adjacentRouteBoundary?.rgSchemeTransportSourceAuditPassed === true, "Phase366 must inherit the RG/scheme transport boundary.");
+  assert(phase366.adjacentRouteBoundary?.rgSchemeRoutePromotesWzMasses === false, "Phase366 must preserve that RG/scheme transport does not promote W/Z masses.");
+  assert(phase366.adjacentRouteBoundary?.finiteNcgDiscreteHiggsSourceAuditPassed === true, "Phase366 must inherit the finite-NCG boundary.");
+  assert(phase366.adjacentRouteBoundary?.finiteNcgRoutePromotesWzMasses === false, "Phase366 must preserve that finite NCG does not promote W/Z masses.");
+  assert(phase366.adjacentRouteBoundary?.finiteNcgRoutePromotesHiggsMass === false, "Phase366 must preserve that finite NCG does not promote Higgs mass.");
+  assert(phase366.contractImpact?.canFillPhase201WzContract === false, "Phase366 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase366.contractImpact?.canFillPhase201HiggsContract === false, "Phase366 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase366.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase366 contract impact must keep Phase256 unfilled.");
+  assert(phase366.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase366 W/Z missing-field count must match Phase213.");
+  assert(phase366.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase366 Higgs missing-field count must match Phase213.");
+  assert(phase366.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase366 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

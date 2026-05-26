@@ -11715,6 +11715,116 @@ lineage, a mass-scale source, pole extraction, and GeV normalization.
   `xUnit2013` collection-size warning in
   `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
 
+## 2026-05-26 - Phase366 Bost-Connes Arithmetic Gauge-Coupling Source Audit
+
+### Context
+
+The active W/Z blocker is now specific: the repository has W/Z numerical
+closures if external electroweak couplings and the external Fermi VEV are
+allowed, but no GU-local weak-coupling, weak-angle, VEV, source-row, or
+stability lineage. A sidecar explorer confirmed that the strongest already
+tracked GU-local equation route remains theta-omega/inhomogeneous gauge material
+if more equations become available, and that finite-NCG/SU(2/1) remains the
+closest Higgs-as-connection route but is already audited as external. A fresh
+web search found a distinct current arithmetic gauge-coupling lead, so I tested
+that narrower weak-coupling gap directly.
+
+### Sources Reviewed
+
+- `https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6723462`.
+- `https://dx.doi.org/10.2139/ssrn.6723462`.
+- `https://doi.org/10.1007/BF01589495`.
+- `https://arxiv.org/abs/hep-th/0610241`.
+
+### Action
+
+- Added
+  `studies/phase366_bost_connes_arithmetic_gauge_coupling_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P366.md`.
+- Added `BOST-CONNES-ARITHMETIC-GAUGE-COUPLING` to
+  `ExperimentReferences.md` with a detailed reference note under
+  `docs/Reference/ExperimentReferences/`.
+- Wired Phase366 into the generator, P101 package, P202 objective completion
+  audit, and claim-integrity verifier.
+- Added Phase366 scanner exclusions so generated diagnostic text is not counted
+  as independent source evidence.
+
+### Current Expected Outcome
+
+Phase366 is expected to pass only as a negative boundary audit:
+
+- `bostConnesArithmeticGaugeCouplingSourceAuditPassed=true`.
+- `bostConnesArithmeticGaugeCouplingLeadPresent=true`.
+- `bostConnesArithmeticGaugeCouplingRouteExternalToGu=true`.
+- `routeUsesBostConnesCStarAlgebra=true`.
+- `routeUsesPrimeSevenLocalFactor=true`.
+- `routeClaimsSpectralTraceRatios=true`.
+- `routeClaimsAlphaStrongAlphaEmAlphaWeak=true`.
+- `routeClaimsWeakMixingAngle=true`.
+- `routePotentiallyAddressesWeakCouplingPartOfWzContract=true`.
+- `correctedAlphaWeakInverse=29.60`.
+- `claimedWeakMixingSinSquared=0.2315`.
+- With the external Fermi VEV, the diagnostic gives
+  `W=80.21429887643346 GeV` and `Z=91.50184602478673 GeV`.
+- `arithmeticExternalVevWzDiagnosticPassesBroadGate=true`.
+- `routeUsesExternalFermiVevForWzDiagnostic=true`.
+- `routeProvidesGuLocalBostConnesMap=false`.
+- `routeProvidesGuGaugeCouplingNormalization=false`.
+- `routeProvidesGuWeakMixingAngleSource=false`.
+- `routeProvidesTargetIndependentGuVevSource=false`.
+- `routeProvidesSeparateWzSourceRows=false`.
+- `routeProvidesWzRawAmplitudeGates=false`.
+- `routeProvidesWzCommonBridgeGate=false`.
+- `routeProvidesWzStabilitySidecars=false`.
+- `routeProvidesObservedPhotonWzHiggsProjectionRows=false`.
+- `routeProvidesHiggsScalarSourceOperator=false`.
+- `routeProvidesGeVUnitNormalization=false`.
+- `routePromotesWzMasses=false`.
+- `routePromotesHiggsMass=false`.
+- `routeCompletesBosonPredictions=false`.
+- `canFillPhase201WzContract=false`.
+- `canFillPhase201HiggsContract=false`.
+- `canFillPhase256ObservedFieldExtractionContract=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from the Bost-Connes arithmetic
+gauge-coupling route. The source is a specific weak-coupling and weak-angle
+lead, and with the already external Fermi VEV it produces a close W/Z
+diagnostic without using W/Z targets for construction. It still does not supply
+a GU-local arithmetic/spectral map, gauge kinetic normalization,
+target-independent VEV, separate W/Z source rows, raw/common gates, stability
+sidecars, observed-field extraction, Higgs scalar-source/self-coupling lineage,
+pole extraction, or GeV normalization.
+
+### Validation
+
+- Targeted Phase366 run passed with
+  `bostConnesArithmeticGaugeCouplingSourceAuditPassed=true`,
+  `arithmeticExternalVevWzDiagnosticPassesBroadGate=true`,
+  `routePromotesWzMasses=false`, `routePromotesHiggsMass=false`, and
+  `canFillPhase201WzContract=false`.
+- P101 package build passed and includes the Phase366 audit block.
+- P202 objective audit passed as an incomplete objective:
+  `objectiveAchieved=false`, `checklistPassedCount=159`, and
+  `checklistFailedCount=3`.
+- Claim-integrity verification passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns preserved the negative intake boundary:
+  P204 `intakeReadyCandidateCount=0`,
+  P205 `intakeReadyFindingCount=0`,
+  P207 `intakeReadyFindingCount=0`,
+  P279 `localSearchMatchingFileCount=0`,
+  P281 `localSearchMatchingFileCount=0`,
+  P295 `intakeReadyObservedFieldExtractionCandidateCount=0`, and
+  P296 `intakeReadySourceLineageFieldCandidateCount=0`.
+- `ExperimentReferences.md` link check passed with `detailLinkCount=47` and
+  `missingDetailCount=0`.
+- `dotnet test GeometricUnity.slnx` passed; the only warning was the existing
+  `xUnit2013` collection-size warning in
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
+
 ## 2026-05-24 - Phase365 Dressing-Field Electroweak Observed-Variables Audit
 
 ### Context
