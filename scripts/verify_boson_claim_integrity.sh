@@ -136,6 +136,7 @@ const paths = {
   phase364: "studies/phase364_moment_map_symplectic_reduction_source_audit_001/output/moment_map_symplectic_reduction_source_audit_summary.json",
   phase365: "studies/phase365_dressing_field_electroweak_observed_variables_audit_001/output/dressing_field_electroweak_observed_variables_audit_summary.json",
   phase366: "studies/phase366_bost_connes_arithmetic_gauge_coupling_source_audit_001/output/bost_connes_arithmetic_gauge_coupling_source_audit_summary.json",
+  phase367: "studies/phase367_theta_omega_source_equation_availability_audit_001/output/theta_omega_source_equation_availability_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -343,6 +344,7 @@ const phase363 = requireFile(paths.phase363);
 const phase364 = requireFile(paths.phase364);
 const phase365 = requireFile(paths.phase365);
 const phase366 = requireFile(paths.phase366);
+const phase367 = requireFile(paths.phase367);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -3789,6 +3791,54 @@ if (sourceLineageMissing) {
   assert(phase366.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase366 W/Z missing-field count must match Phase213.");
   assert(phase366.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase366 Higgs missing-field count must match Phase213.");
   assert(phase366.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase366 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase367.thetaOmegaSourceEquationAvailabilityAuditPassed === true, "Phase367 theta_omega source-equation availability audit must pass while preserving non-promotional status.");
+  assert(phase367.currentPublicSearchPerformed === true, "Phase367 must record a current public source search.");
+  assert(phase367.currentPublicSearchFoundNewPrimaryEquationSource === false, "Phase367 cannot claim a new primary equation source was found.");
+  assert(phase367.currentPublicSearchFoundNewPrimaryTranscript === false, "Phase367 cannot claim a new primary transcript was found.");
+  assert(phase367.currentPublicSearchFoundNewPrimarySlideDeck === false, "Phase367 cannot claim a new primary slide deck was found.");
+  assert(phase367.currentPublicSearchFoundOnlyExistingPortalAbstractAndWikiState === true, "Phase367 must record that the public refresh found the existing Portal abstract/wiki state.");
+  assert(phase367.officialPortalAbstractAvailable === true, "Phase367 must record the official Portal abstract availability.");
+  assert(phase367.officialPortalAbstractMentionsThetaOmega === true, "Phase367 must record theta_omega in the official Portal abstract.");
+  assert(phase367.officialPortalAbstractMentionsInhomogeneousGauge === true, "Phase367 must record inhomogeneous gauge language in the official Portal abstract.");
+  assert(phase367.officialPortalAbstractProvidesEquationRows === false, "Phase367 cannot claim the Portal abstract provides equation rows.");
+  assert(phase367.portalWikiPageAvailable === true, "Phase367 must record the Portal Wiki page availability.");
+  assert(phase367.portalWikiEditedTranscriptAvailable === false, "Phase367 must preserve that no edited transcript is public.");
+  assert(phase367.publicCaptionOrTranscriptUsableAsSourceLineage === false, "Phase367 cannot claim a public transcript/caption artifact usable as source lineage.");
+  assert(phase367.publicUcsdSlidesFound === false, "Phase367 cannot claim public UCSD slides were found.");
+  assert(phase367.publicFullTranscriptFound === false, "Phase367 cannot claim a public full transcript was found.");
+  assert(phase367.publicEquationSourceFound === false, "Phase367 cannot claim a public theta_omega equation source was found.");
+  assert(phase367.officialOxfordTranscriptInhomogeneousGaugeEquationsAvailable === true, "Phase367 must preserve the public Oxford inhomogeneous-gauge equation context.");
+  assert(phase367.officialOxfordTranscriptProvidesThetaOmegaEquation === false, "Phase367 cannot claim the Oxford transcript provides a theta_omega equation.");
+  assert(phase367.officialOxfordTranscriptProvidesDirectWzMassLaw === false, "Phase367 cannot claim the Oxford transcript provides a W/Z mass law.");
+  assert(phase367.officialOxfordTranscriptProvidesHiggsMassLaw === false, "Phase367 cannot claim the Oxford transcript provides a Higgs mass law.");
+  assert(phase367.routeProvidesDirectWzBridgeSourceLaw === false, "Phase367 cannot claim a direct W/Z bridge-source law.");
+  assert(phase367.routeProvidesSeparateWzSourceRows === false, "Phase367 cannot claim separate W/Z source rows.");
+  assert(phase367.routeProvidesTargetIndependentVevSource === false, "Phase367 cannot claim a target-independent VEV source.");
+  assert(phase367.routeProvidesWeakAngleOrCouplingNormalization === false, "Phase367 cannot claim weak-angle/coupling normalization.");
+  assert(phase367.routeProvidesObservedPhotonWzHiggsProjectionRows === false, "Phase367 cannot claim observed photon/W/Z/H projection rows.");
+  assert(phase367.routeProvidesHiggsScalarSourceOperator === false, "Phase367 cannot claim a Higgs scalar-source operator.");
+  assert(phase367.routeProvidesHiggsQuarticOrExcitationSource === false, "Phase367 cannot claim a Higgs quartic or excitation source.");
+  assert(phase367.routeProvidesGeVUnitNormalization === false, "Phase367 cannot claim GeV normalization.");
+  assert(phase367.routePromotesWzMasses === false, "Phase367 cannot promote W/Z masses.");
+  assert(phase367.routePromotesHiggsMass === false, "Phase367 cannot promote Higgs mass.");
+  assert(phase367.routeCompletesBosonPredictions === false, "Phase367 cannot complete boson predictions.");
+  assert(phase367.canFillPhase201WzContract === false, "Phase367 cannot fill the Phase201 W/Z contract.");
+  assert(phase367.canFillPhase201HiggsContract === false, "Phase367 cannot fill the Phase201 Higgs contract.");
+  assert(phase367.canFillPhase256ObservedFieldExtractionContract === false, "Phase367 cannot fill the Phase256 observed-field contract.");
+  assert(phase367.sourceRowCount === 5, "Phase367 must preserve five source/search rows.");
+  assert(phase367.adjacentRouteBoundary?.thetaOmegaInhomogeneousGaugeSourceAuditPassed === true, "Phase367 must inherit the Phase331 theta_omega boundary.");
+  assert(phase367.adjacentRouteBoundary?.phase331ThetaOmegaRouteGivesResearchLeadForSourceLaw === true, "Phase367 must preserve theta_omega as a research lead.");
+  assert(phase367.adjacentRouteBoundary?.phase331ThetaOmegaRouteProvidesDirectTargetIndependentWzBridgeSourceLaw === false, "Phase367 must preserve that Phase331 has no direct W/Z bridge law.");
+  assert(phase367.adjacentRouteBoundary?.phase331ThetaOmegaRoutePromotesWzMasses === false, "Phase367 must preserve that Phase331 does not promote W/Z masses.");
+  assert(phase367.adjacentRouteBoundary?.phase331ThetaOmegaRoutePromotesHiggsMass === false, "Phase367 must preserve that Phase331 does not promote Higgs mass.");
+  assert(phase367.adjacentRouteBoundary?.ucsdTranscriptSourceStrengthAuditPassed === true, "Phase367 must inherit the UCSD transcript source-strength boundary.");
+  assert(phase367.adjacentRouteBoundary?.phase316CaptionOrTranscriptUsableAsSourceLineage === false, "Phase367 must preserve that no UCSD caption/transcript is usable as source lineage.");
+  assert(phase367.contractImpact?.canFillPhase201WzContract === false, "Phase367 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase367.contractImpact?.canFillPhase201HiggsContract === false, "Phase367 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase367.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase367 contract impact must keep Phase256 unfilled.");
+  assert(phase367.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase367 W/Z missing-field count must match Phase213.");
+  assert(phase367.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase367 Higgs missing-field count must match Phase213.");
+  assert(phase367.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase367 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

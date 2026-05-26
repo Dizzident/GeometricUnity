@@ -224,6 +224,7 @@ const string Phase363HitchinHiggsBundleSourceAuditPath = "studies/phase363_hitch
 const string Phase364MomentMapSymplecticReductionSourceAuditPath = "studies/phase364_moment_map_symplectic_reduction_source_audit_001/output/moment_map_symplectic_reduction_source_audit.json";
 const string Phase365DressingFieldElectroweakObservedVariablesAuditPath = "studies/phase365_dressing_field_electroweak_observed_variables_audit_001/output/dressing_field_electroweak_observed_variables_audit.json";
 const string Phase366BostConnesArithmeticGaugeCouplingSourceAuditPath = "studies/phase366_bost_connes_arithmetic_gauge_coupling_source_audit_001/output/bost_connes_arithmetic_gauge_coupling_source_audit.json";
+const string Phase367ThetaOmegaSourceEquationAvailabilityAuditPath = "studies/phase367_theta_omega_source_equation_availability_audit_001/output/theta_omega_source_equation_availability_audit.json";
 const string Phase282BranchLocalDirectInvariantCensusPath = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census.json";
 const string Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit.json";
 const string Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic.json";
@@ -468,6 +469,7 @@ using var phase363 = TryParseJson(Phase363HitchinHiggsBundleSourceAuditPath);
 using var phase364 = TryParseJson(Phase364MomentMapSymplecticReductionSourceAuditPath);
 using var phase365 = TryParseJson(Phase365DressingFieldElectroweakObservedVariablesAuditPath);
 using var phase366 = TryParseJson(Phase366BostConnesArithmeticGaugeCouplingSourceAuditPath);
+using var phase367 = TryParseJson(Phase367ThetaOmegaSourceEquationAvailabilityAuditPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -5340,6 +5342,53 @@ var package = new
                 ? JsonInt(p366ContractImpact, "observedFieldExtractionFilledRequiredFieldCount")
                 : null,
             decision = JsonString(phase366.RootElement, "decision"),
+        }
+        : null,
+    thetaOmegaSourceEquationAvailabilityAudit = phase367 is not null
+        ? new
+        {
+            status = JsonString(phase367.RootElement, "terminalStatus"),
+            thetaOmegaSourceEquationAvailabilityAuditPassed = JsonBool(phase367.RootElement, "thetaOmegaSourceEquationAvailabilityAuditPassed"),
+            currentPublicSearchPerformed = JsonBool(phase367.RootElement, "currentPublicSearchPerformed"),
+            currentPublicSearchDate = JsonString(phase367.RootElement, "currentPublicSearchDate"),
+            currentPublicSearchFoundNewPrimaryEquationSource = JsonBool(phase367.RootElement, "currentPublicSearchFoundNewPrimaryEquationSource"),
+            currentPublicSearchFoundNewPrimaryTranscript = JsonBool(phase367.RootElement, "currentPublicSearchFoundNewPrimaryTranscript"),
+            currentPublicSearchFoundNewPrimarySlideDeck = JsonBool(phase367.RootElement, "currentPublicSearchFoundNewPrimarySlideDeck"),
+            officialPortalAbstractAvailable = JsonBool(phase367.RootElement, "officialPortalAbstractAvailable"),
+            officialPortalAbstractMentionsThetaOmega = JsonBool(phase367.RootElement, "officialPortalAbstractMentionsThetaOmega"),
+            officialPortalAbstractMentionsInhomogeneousGauge = JsonBool(phase367.RootElement, "officialPortalAbstractMentionsInhomogeneousGauge"),
+            portalWikiEditedTranscriptAvailable = JsonBool(phase367.RootElement, "portalWikiEditedTranscriptAvailable"),
+            publicCaptionOrTranscriptUsableAsSourceLineage = JsonBool(phase367.RootElement, "publicCaptionOrTranscriptUsableAsSourceLineage"),
+            publicEquationSourceFound = JsonBool(phase367.RootElement, "publicEquationSourceFound"),
+            officialOxfordTranscriptInhomogeneousGaugeEquationsAvailable = JsonBool(phase367.RootElement, "officialOxfordTranscriptInhomogeneousGaugeEquationsAvailable"),
+            officialOxfordTranscriptProvidesThetaOmegaEquation = JsonBool(phase367.RootElement, "officialOxfordTranscriptProvidesThetaOmegaEquation"),
+            routeProvidesDirectWzBridgeSourceLaw = JsonBool(phase367.RootElement, "routeProvidesDirectWzBridgeSourceLaw"),
+            routeProvidesSeparateWzSourceRows = JsonBool(phase367.RootElement, "routeProvidesSeparateWzSourceRows"),
+            routeProvidesTargetIndependentVevSource = JsonBool(phase367.RootElement, "routeProvidesTargetIndependentVevSource"),
+            routeProvidesWeakAngleOrCouplingNormalization = JsonBool(phase367.RootElement, "routeProvidesWeakAngleOrCouplingNormalization"),
+            routeProvidesObservedPhotonWzHiggsProjectionRows = JsonBool(phase367.RootElement, "routeProvidesObservedPhotonWzHiggsProjectionRows"),
+            routeProvidesHiggsScalarSourceOperator = JsonBool(phase367.RootElement, "routeProvidesHiggsScalarSourceOperator"),
+            routeProvidesHiggsQuarticOrExcitationSource = JsonBool(phase367.RootElement, "routeProvidesHiggsQuarticOrExcitationSource"),
+            routeProvidesGeVUnitNormalization = JsonBool(phase367.RootElement, "routeProvidesGeVUnitNormalization"),
+            routePromotesWzMasses = JsonBool(phase367.RootElement, "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonBool(phase367.RootElement, "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonBool(phase367.RootElement, "routeCompletesBosonPredictions"),
+            canFillPhase201WzContract = JsonBool(phase367.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase367.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase367.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            sourceRowCount = phase367.RootElement.TryGetProperty("sourceRows", out var p367SourceRows)
+                ? p367SourceRows.GetArrayLength()
+                : (int?)null,
+            wzMissingFieldCount = phase367.RootElement.TryGetProperty("contractImpact", out var p367ContractImpact)
+                ? JsonInt(p367ContractImpact, "wzMissingFieldCount")
+                : null,
+            higgsMissingFieldCount = phase367.RootElement.TryGetProperty("contractImpact", out p367ContractImpact)
+                ? JsonInt(p367ContractImpact, "higgsMissingFieldCount")
+                : null,
+            observedFieldExtractionFilledRequiredFieldCount = phase367.RootElement.TryGetProperty("contractImpact", out p367ContractImpact)
+                ? JsonInt(p367ContractImpact, "observedFieldExtractionFilledRequiredFieldCount")
+                : null,
+            decision = JsonString(phase367.RootElement, "decision"),
         }
         : null,
     branchLocalDirectInvariantCensus = phase282 is not null

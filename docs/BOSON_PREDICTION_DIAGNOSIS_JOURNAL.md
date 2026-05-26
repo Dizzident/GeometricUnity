@@ -11715,6 +11715,113 @@ lineage, a mass-scale source, pole extraction, and GeV normalization.
   `xUnit2013` collection-size warning in
   `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
 
+## 2026-05-26 - Phase367 Theta-Omega Source-Equation Availability Audit
+
+### Context
+
+The current active lead for a GU-native geometric bridge-source law remains the
+theta_omega / inhomogeneous-gauge route, because it is closer to the user's
+requested target-independent W/Z geometric law than the external coupling,
+finite-NCG, dressing-field, and reduction-template leads. A fresh public web
+check was needed to verify whether the 2025 UCSD material had gained a public
+paper, slide deck, edited transcript, or equation source that could move the W/Z
+contract forward.
+
+### Sources Reviewed
+
+- `https://theportal.group/from-dark-to-geometric-energy-a-sector-of-geometric-unity/`.
+- `https://theportal.wiki/wiki/From_Dark_to_Geometric_Energy_-_A_Sector_of_Geometric_Unity_%28YouTube_Content%29`.
+- `https://geometricunity.org/2013-oxford-lecture/`.
+- `https://geometricunity.nyc3.digitaloceanspaces.com/Geometric_Unity-Draft-April-1st-2021.pdf`.
+- Search refreshes for `theta_omega Geometric Unity equations`,
+  `From Dark to Geometric Energy transcript`, and
+  `site:geometricunity.org theta_omega`.
+
+### Action
+
+- Added
+  `studies/phase367_theta_omega_source_equation_availability_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P367.md`.
+- Wired Phase367 into the generator, P101 package, P202 objective completion
+  audit, and claim-integrity verifier.
+- Added Phase367 scanner exclusions so generated diagnostic text does not count
+  as independent source evidence.
+- Updated `PORTAL-UCSD-2025` reference details to record Phase367 usage.
+
+### Current Expected Outcome
+
+Phase367 is expected to pass only as a negative current-source availability
+audit:
+
+- `thetaOmegaSourceEquationAvailabilityAuditPassed=true`.
+- `currentPublicSearchPerformed=true`.
+- `currentPublicSearchFoundNewPrimaryEquationSource=false`.
+- `currentPublicSearchFoundNewPrimaryTranscript=false`.
+- `currentPublicSearchFoundNewPrimarySlideDeck=false`.
+- `officialPortalAbstractAvailable=true`.
+- `officialPortalAbstractMentionsThetaOmega=true`.
+- `officialPortalAbstractMentionsInhomogeneousGauge=true`.
+- `portalWikiEditedTranscriptAvailable=false`.
+- `publicCaptionOrTranscriptUsableAsSourceLineage=false`.
+- `publicEquationSourceFound=false`.
+- `officialOxfordTranscriptInhomogeneousGaugeEquationsAvailable=true`.
+- `officialOxfordTranscriptProvidesThetaOmegaEquation=false`.
+- `officialOxfordTranscriptProvidesDirectWzMassLaw=false`.
+- `officialOxfordTranscriptProvidesHiggsMassLaw=false`.
+- `routeProvidesDirectWzBridgeSourceLaw=false`.
+- `routeProvidesSeparateWzSourceRows=false`.
+- `routeProvidesTargetIndependentVevSource=false`.
+- `routeProvidesWeakAngleOrCouplingNormalization=false`.
+- `routeProvidesObservedPhotonWzHiggsProjectionRows=false`.
+- `routeProvidesHiggsScalarSourceOperator=false`.
+- `routeProvidesGeVUnitNormalization=false`.
+- `routePromotesWzMasses=false`.
+- `routePromotesHiggsMass=false`.
+- `routeCompletesBosonPredictions=false`.
+- `canFillPhase201WzContract=false`.
+- `canFillPhase201HiggsContract=false`.
+- `canFillPhase256ObservedFieldExtractionContract=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from the currently public theta_omega
+material. The official UCSD abstract is still the strongest public GU-native
+research lead for the requested geometry, and the Oxford transcript supplies
+public inhomogeneous-gauge equation context. The available sources still do not
+provide a public theta_omega equation, a direct W/Z bridge theorem, separate W/Z
+source rows, target-independent VEV, weak-angle/coupling normalization,
+observed photon/W/Z/H projection rows, Higgs scalar-source/self-coupling
+lineage, pole extraction, or GeV normalization.
+
+### Validation
+
+- Targeted Phase367 run passed with
+  `thetaOmegaSourceEquationAvailabilityAuditPassed=true`,
+  `currentPublicSearchFoundNewPrimaryEquationSource=false`,
+  `publicEquationSourceFound=false`, `portalWikiEditedTranscriptAvailable=false`,
+  `routePromotesWzMasses=false`, `routePromotesHiggsMass=false`, and
+  `canFillPhase201WzContract=false`.
+- P101 package build passed and includes the Phase367 audit block.
+- P202 objective audit passed as an incomplete objective:
+  `objectiveAchieved=false`, `checklistPassedCount=160`, and
+  `checklistFailedCount=3`.
+- Claim-integrity verification passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns preserved the negative intake boundary:
+  P204 `intakeReadyCandidateCount=0`,
+  P205 `intakeReadyFindingCount=0`,
+  P207 `intakeReadyFindingCount=0`,
+  P279 `localSearchMatchingFileCount=0`,
+  P281 `localSearchMatchingFileCount=0`,
+  P295 `intakeReadyObservedFieldExtractionCandidateCount=0`, and
+  P296 `intakeReadySourceLineageFieldCandidateCount=0`.
+- `ExperimentReferences.md` link check passed with `detailLinkCount=47` and
+  `missingDetailCount=0`.
+- `dotnet test GeometricUnity.slnx` passed; the only warning was the existing
+  `xUnit2013` collection-size warning in
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
+
 ## 2026-05-26 - Phase366 Bost-Connes Arithmetic Gauge-Coupling Source Audit
 
 ### Context

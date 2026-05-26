@@ -1,0 +1,184 @@
+{
+  "phaseId": "phase367-theta-omega-source-equation-availability-audit",
+  "terminalStatus": "theta-omega-source-equation-availability-audit-no-public-equation-source-law",
+  "thetaOmegaSourceEquationAvailabilityAuditPassed": true,
+  "currentPublicSearchPerformed": true,
+  "currentPublicSearchDate": "2026-05-26",
+  "currentPublicSearchFoundNewPrimaryEquationSource": false,
+  "currentPublicSearchFoundNewPrimaryTranscript": false,
+  "currentPublicSearchFoundNewPrimarySlideDeck": false,
+  "currentPublicSearchFoundOnlyExistingPortalAbstractAndWikiState": true,
+  "thirdPartyPointersFoundButNotUsedAsSourceEvidence": true,
+  "officialPortalAbstractAvailable": true,
+  "officialPortalAbstractMentionsThetaOmega": true,
+  "officialPortalAbstractMentionsInhomogeneousGauge": true,
+  "officialPortalAbstractMentionsDiracSpinorBundle": true,
+  "officialPortalAbstractMentionsFourteenDimensionalLorentzianMetrics": true,
+  "officialPortalAbstractMentionsSupersymmetricEinsteinDirac": true,
+  "officialPortalAbstractMentionsPatiSalamGenerations": true,
+  "officialPortalAbstractMentionsSeibergWittenMonopoleEquations": true,
+  "officialPortalAbstractProvidesEquationRows": false,
+  "officialPortalAbstractProvidesWzMassLaw": false,
+  "officialPortalAbstractProvidesHiggsMassLaw": false,
+  "portalWikiPageAvailable": true,
+  "portalWikiEditedTranscriptAvailable": false,
+  "portalWikiMachineGeneratedTranscriptRequiresPrivateDiscordAccess": true,
+  "publicCaptionOrTranscriptUsableAsSourceLineage": false,
+  "publicUcsdSlidesFound": false,
+  "publicFullTranscriptFound": false,
+  "publicEquationSourceFound": false,
+  "officialOxfordTranscriptInhomogeneousGaugeEquationsAvailable": true,
+  "officialOxfordTranscriptGivesInhomogeneousGaugeGroupDefinition": true,
+  "officialOxfordTranscriptGivesBiConnectionAndTiltedMapContext": true,
+  "officialOxfordTranscriptGivesRepresentationTheoryLead": true,
+  "officialOxfordTranscriptProvidesThetaOmegaEquation": false,
+  "officialOxfordTranscriptProvidesDirectWzMassLaw": false,
+  "officialOxfordTranscriptProvidesHiggsMassLaw": false,
+  "officialOxfordTranscriptProvidesObservedPhotonWzHiggsProjectionRows": false,
+  "currentAvailableThetaOmegaMaterialProvidesEquationAvailabilityOnly": false,
+  "currentAvailableThetaOmegaMaterialIsAbstractLevelForUcsdUpdate": true,
+  "routeProvidesDirectWzBridgeSourceLaw": false,
+  "routeProvidesGuLocalWzTheorem": false,
+  "routeProvidesSeparateWzSourceRows": false,
+  "routeProvidesTargetIndependentVevSource": false,
+  "routeProvidesWeakAngleOrCouplingNormalization": false,
+  "routeProvidesWzRawAmplitudeGates": false,
+  "routeProvidesWzCommonBridgeGate": false,
+  "routeProvidesWzStabilitySidecars": false,
+  "routeProvidesObservedPhotonWzHiggsProjectionRows": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesHiggsQuarticOrExcitationSource": false,
+  "routeProvidesHiggsMassiveScalarProfile": false,
+  "routeProvidesGeVUnitNormalization": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "sourceRows": [
+    {
+      "SourceId": "portal-group-ucsd-theta-omega-abstract-current-check",
+      "UrlOrQuery": "https://theportal.group/from-dark-to-geometric-energy-a-sector-of-geometric-unity/",
+      "Locator": "Official Portal Group page, checked 2026-05-26",
+      "Finding": "The public abstract remains the current official UCSD theta_omega lead and mentions an inhomogeneous gauge group over the Dirac spinor bundle of a 14-dimensional Lorentzian-metric space.",
+      "PredictionImpact": "Strong research lead, but the page exposes no equations, source rows, W/Z bridge law, Higgs mass law, or observed-field extraction."
+    },
+    {
+      "SourceId": "portal-wiki-ucsd-transcript-state-current-check",
+      "UrlOrQuery": "https://theportal.wiki/wiki/From_Dark_to_Geometric_Energy_-_A_Sector_of_Geometric_Unity_%28YouTube_Content%29",
+      "Locator": "Portal Wiki page, checked 2026-05-26",
+      "Finding": "The wiki page records metadata and still states that the content does not have an edited transcript; machine-generated transcript access is private.",
+      "PredictionImpact": "Confirms that no public transcript/caption artifact is currently available for source-lineage use."
+    },
+    {
+      "SourceId": "official-oxford-lecture-inhomogeneous-gauge-equation-context",
+      "UrlOrQuery": "https://geometricunity.org/2013-oxford-lecture/",
+      "Locator": "2013 Oxford transcript, inhomogeneous gauge group and tilted-gauge sections",
+      "Finding": "The transcript supplies public inhomogeneous-gauge-group, bi-connection, tilted-map, and representation-theory context.",
+      "PredictionImpact": "Useful GU-native equation context, but it does not supply a theta_omega equation or W/Z/H source-lineage rows."
+    },
+    {
+      "SourceId": "official-gu-draft-context",
+      "UrlOrQuery": "https://geometricunity.nyc3.digitaloceanspaces.com/Geometric_Unity-Draft-April-1st-2021.pdf",
+      "Locator": "2021 GU working draft, already audited by Phase331",
+      "Finding": "The draft remains the primary GU context source for electroweak/Higgs notation and field-location checks.",
+      "PredictionImpact": "The draft has not supplied separate W/Z source rows, a weak-angle/VEV source, observed projection rows, Higgs scalar-source lineage, or GeV normalization."
+    },
+    {
+      "SourceId": "public-search-theta-omega-equation-refresh",
+      "UrlOrQuery": "search: theta_omega Geometric Unity equations; From Dark to Geometric Energy transcript; site:geometricunity.org theta_omega",
+      "Locator": "Current public search, 2026-05-26",
+      "Finding": "Search refreshed the availability state and found the existing Portal abstract/wiki state rather than a new primary equation, transcript, or slide artifact.",
+      "PredictionImpact": "Search result is a provenance record only; it is not source-lineage evidence."
+    }
+  ],
+  "checks": [
+    {
+      "CheckId": "current-public-source-availability-refresh-recorded",
+      "Passed": true,
+      "Detail": "searchDate=2026-05-26; existingPortalState=True; newPrimaryEquation=False; newTranscript=False; newSlides=False; thirdPartyPointersNotEvidence=True; sourceRows=5"
+    },
+    {
+      "CheckId": "portal-theta-omega-abstract-is-available-but-non-equational",
+      "Passed": true,
+      "Detail": "portalAbstract=True; thetaOmega=True; inhomogeneousGauge=True; diracSpinorBundle=True; metrics14D=True; equationRows=False; wzLaw=False; higgsLaw=False"
+    },
+    {
+      "CheckId": "public-transcript-and-slide-artifacts-remain-unavailable",
+      "Passed": true,
+      "Detail": "wikiPage=True; editedTranscript=False; privateMachineTranscript=True; publicTranscript=False; publicSlides=False; publicEquations=False; p316Passed=True; p316UsableTranscript=False"
+    },
+    {
+      "CheckId": "oxford-inhomogeneous-gauge-equations-do-not-fill-theta-omega-source-law",
+      "Passed": true,
+      "Detail": "oxfordEquations=True; inhomogeneousGaugeDefinition=True; biConnection=True; thetaOmegaEquation=False; wzLaw=False; higgsLaw=False; observedRows=False"
+    },
+    {
+      "CheckId": "prior-theta-omega-and-transcript-boundaries-remain-binding",
+      "Passed": true,
+      "Detail": "p315Passed=True; p315ThetaOmega=True; p315Transcript=False; p331Passed=True; p331ResearchLead=True; p331DirectBridge=False; p331Rows=False; p331Vev=False; p331WeakAngle=False; p331HiggsSource=False"
+    },
+    {
+      "CheckId": "adjacent-seiberg-witten-and-observed-variable-boundaries-remain-binding",
+      "Passed": true,
+      "Detail": "p329Passed=True; swPromotesWz=False; swPromotesHiggs=False; p365Passed=True; dressingPromotesWz=False; dressingPromotesHiggs=False"
+    },
+    {
+      "CheckId": "theta-omega-current-availability-does-not-fill-gu-contracts",
+      "Passed": true,
+      "Detail": "abstractLevel=True; directBridge=False; wzRows=False; vev=False; coupling=False; observedRows=False; higgsSource=False; geV=False; promotesWz=False; promotesHiggs=False"
+    },
+    {
+      "CheckId": "phase213-and-phase256-blocker-state-preserved",
+      "Passed": true,
+      "Detail": "existingEvidence=False; wzMissing=15; higgsMissing=14; phase256Required=20; phase256Filled=0; phase256Promotable=False"
+    }
+  ],
+  "adjacentRouteBoundary": {
+    "ucsdDarkGeometricEnergySourceAuditPassed": true,
+    "ucsdDarkGeometricEnergyMentionsThetaOmega": true,
+    "ucsdDarkGeometricEnergyMentionsInhomogeneousGaugeGroup": true,
+    "ucsdDarkGeometricEnergyEditedTranscriptAvailable": false,
+    "ucsdDarkGeometricEnergyPromotesWzMasses": false,
+    "ucsdDarkGeometricEnergyPromotesHiggsMass": false,
+    "ucsdTranscriptSourceStrengthAuditPassed": true,
+    "phase316CaptionOrTranscriptUsableAsSourceLineage": false,
+    "phase316TranscriptAuditPromotesWzMasses": false,
+    "phase316TranscriptAuditPromotesHiggsMass": false,
+    "thetaOmegaInhomogeneousGaugeSourceAuditPassed": true,
+    "phase331ThetaOmegaRouteGivesResearchLeadForSourceLaw": true,
+    "phase331ThetaOmegaRouteProvidesDirectTargetIndependentWzBridgeSourceLaw": false,
+    "phase331ThetaOmegaRouteProvidesSeparateWzSourceRows": false,
+    "phase331ThetaOmegaRouteProvidesTargetIndependentVevSource": false,
+    "phase331ThetaOmegaRouteProvidesWeakMixingAngleSource": false,
+    "phase331ThetaOmegaRouteProvidesHiggsScalarSourceOperator": false,
+    "phase331ThetaOmegaRoutePromotesWzMasses": false,
+    "phase331ThetaOmegaRoutePromotesHiggsMass": false,
+    "seibergWittenMonopoleElectroweakSourceAuditPassed": true,
+    "seibergWittenPromotesWzMasses": false,
+    "seibergWittenPromotesHiggsMass": false,
+    "dressingFieldElectroweakObservedVariablesAuditPassed": true,
+    "dressingFieldRoutePromotesWzMasses": false,
+    "dressingFieldRoutePromotesHiggsMass": false
+  },
+  "contractImpact": {
+    "existingEvidenceFound": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionRequiredFieldCount": 20,
+    "observedFieldExtractionFilledRequiredFieldCount": 0,
+    "observedFieldExtractionContractPromotable": false,
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false
+  },
+  "decision": "Do not promote W/Z or Higgs masses from the currently public theta_omega material. The current public source refresh still finds only an official abstract and wiki metadata for the UCSD update; the public Oxford transcript supplies inhomogeneous-gauge equation context, but not a theta_omega equation, W/Z bridge law, target-independent VEV, weak-angle/coupling normalization, observed photon/W/Z/H projection rows, Higgs scalar-source/self-coupling lineage, pole extraction, or GeV normalization.",
+  "nextRequiredArtifact": [
+    "A public primary theta_omega equation source, full transcript, slide deck, or paper that exposes calculable equations rather than only an abstract.",
+    "A GU-local W/Z theorem with separate W and Z source rows, raw-amplitude gates, common-bridge gates, target-comparison gates, derivation IDs, and stability sidecars.",
+    "A GU-local target-independent electroweak scale or VEV source and weak-angle/coupling normalization independent of observed W/Z/H targets.",
+    "A GU-local observed-field extraction artifact mapping geometry to photon, W, Z, and Higgs operators before pole-mass extraction.",
+    "A GU-local Higgs scalar-source and self-coupling or excitation lineage with GeV unit normalization."
+  ]
+}

@@ -20,6 +20,9 @@ and Einstein-Dirac/Seiberg-Witten style directions.
   search.
 - Supported Phase331's conclusion that theta_omega remains a plausible route to
   investigate.
+- Supported Phase367's current public source-equation availability refresh,
+  which found no public primary equation, edited transcript, slide deck, or
+  source-row artifact beyond the existing abstract/wiki state.
 - Helped classify the route as target-independent geometric context, not as a
   completed W/Z/H prediction.
 
