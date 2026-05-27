@@ -1,0 +1,185 @@
+{
+  "phaseId": "phase368-oxford-inhomogeneous-gauge-equation-bridge-audit",
+  "terminalStatus": "oxford-inhomogeneous-gauge-equation-bridge-audit-scaffold-not-source-law",
+  "oxfordInhomogeneousGaugeEquationBridgeAuditPassed": true,
+  "officialOxfordTranscriptReviewed": true,
+  "officialOxfordTranscriptIsPrimaryGuLectureSource": true,
+  "officialOxfordPowerpointSectionsAvailable": true,
+  "inhomogeneousGaugeGroupSectionReviewed": true,
+  "swervatureDisplasionSectionReviewed": true,
+  "diracSquareClosingSectionReviewed": true,
+  "inhomogeneousGaugeGroupDefinitionAvailable": true,
+  "quotientUnifiedFieldContentFormulaAvailable": true,
+  "tiltedGaugeGroupDefinitionAvailable": true,
+  "tangentBundlePullbackToFourteenDimensionalUAvailable": true,
+  "homogeneousVectorBundleFermionConstructionAvailable": true,
+  "firstOrderActionShapeAvailable": true,
+  "actionTargetIsCotangentSpaceOfFieldContent": true,
+  "tiltedGaugeInvariantEquationSketchAvailable": true,
+  "swervatureEquationAvailable": true,
+  "displasionEquationAvailable": true,
+  "generalizedYangMillsOperatorSketchAvailable": true,
+  "diracSquareProgramForYangMillsHiggsAvailable": true,
+  "routeProvidesGuNativeEquationScaffold": true,
+  "routeProvidesBridgeEquationScaffold": true,
+  "equationScaffoldIsTranscribedButNotFullyTypedDerivation": true,
+  "equationScaffoldContainsEllipsesOrVagueCompletion": true,
+  "transcriptStatesManuscriptCompletionPending": true,
+  "sourceExplicitlyKeepsFreedomInWritingUpTensors": true,
+  "sourceProvidesExactAcceptedTheorem": false,
+  "sourceProvidesMachineReplayableDerivation": false,
+  "sourceProvidesNumericalPredictionRows": false,
+  "routeProvidesThetaOmegaEquation": false,
+  "routeProvidesDirectTargetIndependentWzBridgeSourceLaw": false,
+  "routeProvidesGuLocalWzTheorem": false,
+  "routeProvidesSeparateWzSourceRows": false,
+  "routeProvidesWzRawAmplitudeGates": false,
+  "routeProvidesWzCommonBridgeGate": false,
+  "routeProvidesWzTargetComparisonGate": false,
+  "routeProvidesWzStabilitySidecars": false,
+  "routeProvidesTargetIndependentVevSource": false,
+  "routeProvidesWeakMixingAngleSource": false,
+  "routeProvidesGaugeCouplingNormalization": false,
+  "routeProvidesObservedPhotonWzHiggsProjectionRows": false,
+  "routeProvidesNeutralMassMatrixDiagonalization": false,
+  "routeProvidesObservedFieldExtraction": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesHiggsIdentityEnvelope": false,
+  "routeProvidesHiggsQuarticOrExcitationSource": false,
+  "routeProvidesHiggsMassiveScalarProfile": false,
+  "routeProvidesGeVUnitNormalization": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "sourceRows": [
+    {
+      "SourceId": "official-oxford-inhomogeneous-gauge-group",
+      "Url": "https://geometricunity.org/2013-oxford-lecture/",
+      "Locator": "2013 Oxford transcript, unified field content / inhomogeneous gauge group section",
+      "Finding": "The transcript introduces the inhomogeneous gauge-group and tilted-gauge-group construction as GU-native unified field content.",
+      "PredictionImpact": "Provides public equation scaffold for field content and gauge symmetry, but not observed W/Z/H particle rows or mass laws."
+    },
+    {
+      "SourceId": "official-oxford-action-and-tilted-invariance",
+      "Url": "https://geometricunity.org/2013-oxford-lecture/",
+      "Locator": "2013 Oxford transcript, toolkit and equation-of-motion sections",
+      "Finding": "The transcript sketches an action on the cotangent space of field content and tilted-gauge-invariant equation structure.",
+      "PredictionImpact": "Provides an action/equation scaffold; it does not provide a fully typed theorem replaying W/Z/H source-lineage fields."
+    },
+    {
+      "SourceId": "official-oxford-swervature-displasion-yang-mills",
+      "Url": "https://geometricunity.org/2013-oxford-lecture/",
+      "Locator": "2013 Oxford transcript, swervature/displasion and generalized Yang-Mills sections",
+      "Finding": "The transcript presents swervature/displasion language and a generalized Yang-Mills operator sketch with shiab operators.",
+      "PredictionImpact": "Relevant to a possible bridge-source law, but still lacks W/Z split, weak-angle/VEV/coupling normalization, and observed-field extraction."
+    },
+    {
+      "SourceId": "official-oxford-dirac-square-yang-mills-higgs",
+      "Url": "https://geometricunity.org/2013-oxford-lecture/",
+      "Locator": "2013 Oxford transcript, closing Dirac-square statement",
+      "Finding": "The transcript places Yang-Mills and Higgs/Klein-Gordon content in the square part of a proposed Dirac-square organization.",
+      "PredictionImpact": "Motivates a Higgs source route, but supplies no Higgs scalar-source operator, identity envelope, self-coupling, or massive profile."
+    },
+    {
+      "SourceId": "official-gu-draft-cross-check",
+      "Url": "https://geometricunity.nyc3.digitaloceanspaces.com/Geometric_Unity-Draft-April-1st-2021.pdf",
+      "Locator": "2021 GU working draft, cross-check through Phase313/323/331",
+      "Finding": "The draft cross-checks electroweak/Higgs placement and confirms the route remains location/scaffold evidence rather than observed source rows.",
+      "PredictionImpact": "Keeps the Oxford transcript in context and prevents promotion from lecture-only equations."
+    }
+  ],
+  "checks": [
+    {
+      "CheckId": "official-oxford-equation-sections-reviewed",
+      "Passed": true,
+      "Detail": "reviewed=True; primary=True; powerpoint=True; inhomogeneous=True; swervature=True; diracSquare=True; sourceRows=5"
+    },
+    {
+      "CheckId": "gu-native-equation-scaffold-present",
+      "Passed": true,
+      "Detail": "inhomogeneousGauge=True; quotientFieldContent=True; tiltedGauge=True; U14=True; homogeneousBundle=True; action=True; tiltedInvariant=True; swervature=True; displasion=True; generalizedYm=True; diracSquare=True"
+    },
+    {
+      "CheckId": "equation-scaffold-is-not-promotable-theorem",
+      "Passed": true,
+      "Detail": "transcribedButNotTyped=True; ellipses=True; manuscriptPending=True; tensorFreedom=True; exactTheorem=False; replayable=False; numericalRows=False"
+    },
+    {
+      "CheckId": "oxford-equation-scaffold-does-not-fill-wz-contract",
+      "Passed": true,
+      "Detail": "thetaOmegaEquation=False; directBridge=False; wzRows=False; raw=False; common=False; target=False; stability=False; vev=False; weakAngle=False; coupling=False; observedRows=False; neutralMatrix=False"
+    },
+    {
+      "CheckId": "oxford-equation-scaffold-does-not-fill-higgs-contract",
+      "Passed": true,
+      "Detail": "observedExtraction=False; higgsSource=False; higgsEnvelope=False; quarticOrExcitation=False; massiveProfile=False; geV=False; promotesHiggs=False; canFillHiggs=False; canFillObserved=False"
+    },
+    {
+      "CheckId": "official-draft-and-theta-omega-boundaries-remain-binding",
+      "Passed": true,
+      "Detail": "p313Passed=True; p313PhotonZ=False; p313WeakAngle=False; p323Passed=True; p323Vev=False; p323Coupling=False; p323Observed=False; p331Passed=True; p331DirectBridge=False; p331Rows=False; p331Vev=False"
+    },
+    {
+      "CheckId": "phase367-current-availability-boundary-remains-binding",
+      "Passed": true,
+      "Detail": "p367Passed=True; oxfordEquations=True; thetaOmegaEquation=False; wzLaw=False; higgsLaw=False; publicEquation=False"
+    },
+    {
+      "CheckId": "phase213-and-phase256-blocker-state-preserved",
+      "Passed": true,
+      "Detail": "existingEvidence=False; wzMissing=15; higgsMissing=14; phase256Required=20; phase256Filled=0; phase256Promotable=False"
+    }
+  ],
+  "adjacentRouteBoundary": {
+    "officialDraftElectroweakProjectionMapAuditPassed": true,
+    "officialDraftProvidesPhotonZWeinbergRotation": false,
+    "officialDraftProvidesWeakMixingAngleSource": false,
+    "officialDraftProvidesWChargedProjectionRows": false,
+    "officialDraftProvidesZSourceRowProjection": false,
+    "officialDraftProjectionMapCompletesObservedFieldExtraction": false,
+    "coupledYangMillsHiggsMassExtractionAuditPassed": true,
+    "officialDraftAppendixLocatesWeakIsospin": true,
+    "officialDraftAppendixLocatesWeakHypercharge": true,
+    "officialDraftAppendixLocatesHiggsField": true,
+    "officialPublicSourcesProvideTargetIndependentVevSource": false,
+    "officialPublicSourcesProvideGaugeCouplingNormalization": false,
+    "officialPublicSourcesProvidePhotonWzHiggsProjectionRows": false,
+    "officialPublicSourcesProvideHiggsScalarSelfCouplingSource": false,
+    "coupledYangMillsHiggsRoutePromotesWzMasses": false,
+    "coupledYangMillsHiggsRoutePromotesHiggsMass": false,
+    "thetaOmegaInhomogeneousGaugeSourceAuditPassed": true,
+    "thetaOmegaInhomogeneousGaugeRouteGuNative": true,
+    "thetaOmegaRouteProvidesDirectTargetIndependentWzBridgeSourceLaw": false,
+    "thetaOmegaRouteProvidesSeparateWzSourceRows": false,
+    "thetaOmegaRouteProvidesTargetIndependentVevSource": false,
+    "thetaOmegaRoutePromotesWzMasses": false,
+    "thetaOmegaRoutePromotesHiggsMass": false,
+    "thetaOmegaSourceEquationAvailabilityAuditPassed": true,
+    "officialOxfordTranscriptInhomogeneousGaugeEquationsAvailable": true,
+    "phase367OfficialOxfordTranscriptProvidesThetaOmegaEquation": false,
+    "phase367OfficialOxfordTranscriptProvidesDirectWzMassLaw": false,
+    "phase367OfficialOxfordTranscriptProvidesHiggsMassLaw": false,
+    "phase367PublicEquationSourceFound": false
+  },
+  "contractImpact": {
+    "existingEvidenceFound": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionRequiredFieldCount": 20,
+    "observedFieldExtractionFilledRequiredFieldCount": 0,
+    "observedFieldExtractionContractPromotable": false,
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false
+  },
+  "decision": "Do not promote W/Z or Higgs masses from the public Oxford inhomogeneous-gauge equation scaffold. The transcript gives genuine GU-native scaffold equations and bridge direction, including inhomogeneous/tilted gauge structure, action/equation sketches, swervature/displasion, generalized Yang-Mills terms, and a Dirac-square organization for Yang-Mills/Higgs. It is still not a replayable source law: it contains incomplete/vague tensor choices and no separate W/Z source rows, target-independent VEV, weak-angle/coupling normalization, observed photon/W/Z/H projection rows, Higgs scalar-source/self-coupling lineage, pole extraction, or GeV normalization.",
+  "nextRequiredArtifact": [
+    "A fully typed public GU derivation turning the Oxford inhomogeneous/tilted gauge scaffold into observed electroweak photon, W, Z, and Higgs operators.",
+    "A target-independent W/Z bridge theorem with separate source rows, raw/common/target/stability gates, and derivation IDs.",
+    "A GU-local electroweak scale/VEV and weak-angle/coupling normalization derived before target comparison.",
+    "A GU-local Higgs scalar-source, identity envelope, massive profile, self-coupling or excitation lineage, and GeV normalization."
+  ]
+}

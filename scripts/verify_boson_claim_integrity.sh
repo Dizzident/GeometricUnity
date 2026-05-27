@@ -137,6 +137,7 @@ const paths = {
   phase365: "studies/phase365_dressing_field_electroweak_observed_variables_audit_001/output/dressing_field_electroweak_observed_variables_audit_summary.json",
   phase366: "studies/phase366_bost_connes_arithmetic_gauge_coupling_source_audit_001/output/bost_connes_arithmetic_gauge_coupling_source_audit_summary.json",
   phase367: "studies/phase367_theta_omega_source_equation_availability_audit_001/output/theta_omega_source_equation_availability_audit_summary.json",
+  phase368: "studies/phase368_oxford_inhomogeneous_gauge_equation_bridge_audit_001/output/oxford_inhomogeneous_gauge_equation_bridge_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -345,6 +346,7 @@ const phase364 = requireFile(paths.phase364);
 const phase365 = requireFile(paths.phase365);
 const phase366 = requireFile(paths.phase366);
 const phase367 = requireFile(paths.phase367);
+const phase368 = requireFile(paths.phase368);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -3839,6 +3841,50 @@ if (sourceLineageMissing) {
   assert(phase367.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase367 W/Z missing-field count must match Phase213.");
   assert(phase367.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase367 Higgs missing-field count must match Phase213.");
   assert(phase367.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase367 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase368.oxfordInhomogeneousGaugeEquationBridgeAuditPassed === true, "Phase368 Oxford inhomogeneous-gauge equation bridge audit must pass while preserving non-promotional status.");
+  assert(phase368.officialOxfordTranscriptReviewed === true, "Phase368 must record official Oxford transcript review.");
+  assert(phase368.inhomogeneousGaugeGroupDefinitionAvailable === true, "Phase368 must record inhomogeneous gauge-group equation scaffold.");
+  assert(phase368.tiltedGaugeGroupDefinitionAvailable === true, "Phase368 must record tilted-gauge scaffold.");
+  assert(phase368.firstOrderActionShapeAvailable === true, "Phase368 must record the first-order action shape.");
+  assert(phase368.swervatureEquationAvailable === true, "Phase368 must record swervature equation availability.");
+  assert(phase368.displasionEquationAvailable === true, "Phase368 must record displasion equation availability.");
+  assert(phase368.generalizedYangMillsOperatorSketchAvailable === true, "Phase368 must record generalized Yang-Mills operator sketch availability.");
+  assert(phase368.diracSquareProgramForYangMillsHiggsAvailable === true, "Phase368 must record Dirac-square Yang-Mills/Higgs program availability.");
+  assert(phase368.routeProvidesGuNativeEquationScaffold === true, "Phase368 must classify the Oxford material as GU-native equation scaffold.");
+  assert(phase368.routeProvidesBridgeEquationScaffold === true, "Phase368 must classify the Oxford material as bridge-equation scaffold.");
+  assert(phase368.sourceProvidesExactAcceptedTheorem === false, "Phase368 cannot claim an exact accepted theorem.");
+  assert(phase368.sourceProvidesMachineReplayableDerivation === false, "Phase368 cannot claim a machine-replayable derivation.");
+  assert(phase368.sourceProvidesNumericalPredictionRows === false, "Phase368 cannot claim numerical prediction rows.");
+  assert(phase368.routeProvidesDirectTargetIndependentWzBridgeSourceLaw === false, "Phase368 cannot claim a direct W/Z bridge-source law.");
+  assert(phase368.routeProvidesSeparateWzSourceRows === false, "Phase368 cannot claim separate W/Z source rows.");
+  assert(phase368.routeProvidesWzRawAmplitudeGates === false, "Phase368 cannot claim W/Z raw-amplitude gates.");
+  assert(phase368.routeProvidesWzCommonBridgeGate === false, "Phase368 cannot claim a W/Z common bridge gate.");
+  assert(phase368.routeProvidesWzStabilitySidecars === false, "Phase368 cannot claim W/Z stability sidecars.");
+  assert(phase368.routeProvidesTargetIndependentVevSource === false, "Phase368 cannot claim a target-independent VEV source.");
+  assert(phase368.routeProvidesWeakMixingAngleSource === false, "Phase368 cannot claim a weak-angle source.");
+  assert(phase368.routeProvidesGaugeCouplingNormalization === false, "Phase368 cannot claim gauge-coupling normalization.");
+  assert(phase368.routeProvidesObservedPhotonWzHiggsProjectionRows === false, "Phase368 cannot claim observed photon/W/Z/H projection rows.");
+  assert(phase368.routeProvidesHiggsScalarSourceOperator === false, "Phase368 cannot claim a Higgs scalar-source operator.");
+  assert(phase368.routeProvidesHiggsQuarticOrExcitationSource === false, "Phase368 cannot claim Higgs quartic or excitation source.");
+  assert(phase368.routeProvidesGeVUnitNormalization === false, "Phase368 cannot claim GeV normalization.");
+  assert(phase368.routePromotesWzMasses === false, "Phase368 cannot promote W/Z masses.");
+  assert(phase368.routePromotesHiggsMass === false, "Phase368 cannot promote Higgs mass.");
+  assert(phase368.routeCompletesBosonPredictions === false, "Phase368 cannot complete boson predictions.");
+  assert(phase368.canFillPhase201WzContract === false, "Phase368 cannot fill the Phase201 W/Z contract.");
+  assert(phase368.canFillPhase201HiggsContract === false, "Phase368 cannot fill the Phase201 Higgs contract.");
+  assert(phase368.canFillPhase256ObservedFieldExtractionContract === false, "Phase368 cannot fill the Phase256 observed-field contract.");
+  assert(phase368.sourceRowCount === 5, "Phase368 must preserve five source rows.");
+  assert(phase368.adjacentRouteBoundary?.thetaOmegaInhomogeneousGaugeSourceAuditPassed === true, "Phase368 must inherit the Phase331 theta_omega boundary.");
+  assert(phase368.adjacentRouteBoundary?.thetaOmegaRouteProvidesDirectTargetIndependentWzBridgeSourceLaw === false, "Phase368 must preserve that Phase331 has no direct W/Z bridge law.");
+  assert(phase368.adjacentRouteBoundary?.thetaOmegaRoutePromotesWzMasses === false, "Phase368 must preserve that Phase331 does not promote W/Z masses.");
+  assert(phase368.adjacentRouteBoundary?.thetaOmegaSourceEquationAvailabilityAuditPassed === true, "Phase368 must inherit Phase367 source-equation availability boundary.");
+  assert(phase368.adjacentRouteBoundary?.phase367OfficialOxfordTranscriptProvidesThetaOmegaEquation === false, "Phase368 must preserve that Phase367 found no Oxford theta_omega equation.");
+  assert(phase368.contractImpact?.canFillPhase201WzContract === false, "Phase368 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase368.contractImpact?.canFillPhase201HiggsContract === false, "Phase368 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase368.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase368 contract impact must keep Phase256 unfilled.");
+  assert(phase368.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase368 W/Z missing-field count must match Phase213.");
+  assert(phase368.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase368 Higgs missing-field count must match Phase213.");
+  assert(phase368.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase368 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

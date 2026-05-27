@@ -11715,6 +11715,109 @@ lineage, a mass-scale source, pole extraction, and GeV normalization.
   `xUnit2013` collection-size warning in
   `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
 
+## 2026-05-27 - Phase368 Oxford Inhomogeneous-Gauge Equation Bridge Audit
+
+### Context
+
+After Phase367 found no public theta_omega source equation, the strongest
+remaining GU-native bridge lead was the official Oxford transcript itself. The
+question for this pass was narrower than Phase367: whether the transcript's
+inhomogeneous/tilted gauge, swervature/displasion, generalized Yang-Mills, and
+Dirac-square equation scaffold can be turned into the requested direct
+target-independent W/Z bridge-source law.
+
+### Sources Reviewed
+
+- Official 2013 Oxford lecture transcript:
+  `https://geometricunity.org/2013-oxford-lecture/`.
+- Official 2021 GU working draft:
+  `https://geometricunity.nyc3.digitaloceanspaces.com/Geometric_Unity-Draft-April-1st-2021.pdf`.
+- Existing local boundary audits:
+  Phase313 official draft electroweak projection map audit;
+  Phase323 coupled Yang-Mills/Higgs mass extraction audit;
+  Phase331 theta_omega inhomogeneous-gauge source audit; and
+  Phase367 theta_omega source-equation availability audit.
+
+### Action
+
+- Added
+  `studies/phase368_oxford_inhomogeneous_gauge_equation_bridge_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P368.md`.
+- Wired Phase368 into the generator, P101 package, P202 objective completion
+  audit, and claim-integrity verifier.
+- Added Phase368 scanner exclusions so generated diagnostic text does not count
+  as independent source evidence.
+- Updated the `GU-OXFORD-2013` reference detail and `ExperimentReferences.md`
+  index row to record the Phase368 usage.
+
+### Current Expected Outcome
+
+Phase368 is expected to pass only as a negative bridge-source audit:
+
+- `oxfordInhomogeneousGaugeEquationBridgeAuditPassed=true`.
+- `routeProvidesGuNativeEquationScaffold=true`.
+- `routeProvidesBridgeEquationScaffold=true`.
+- `sourceProvidesExactAcceptedTheorem=false`.
+- `sourceProvidesMachineReplayableDerivation=false`.
+- `sourceProvidesNumericalPredictionRows=false`.
+- `routeProvidesThetaOmegaEquation=false`.
+- `routeProvidesDirectTargetIndependentWzBridgeSourceLaw=false`.
+- `routeProvidesSeparateWzSourceRows=false`.
+- `routeProvidesTargetIndependentVevSource=false`.
+- `routeProvidesWeakMixingAngleSource=false`.
+- `routeProvidesGaugeCouplingNormalization=false`.
+- `routeProvidesObservedPhotonWzHiggsProjectionRows=false`.
+- `routeProvidesHiggsScalarSourceOperator=false`.
+- `routeProvidesHiggsQuarticOrExcitationSource=false`.
+- `routeProvidesGeVUnitNormalization=false`.
+- `routePromotesWzMasses=false`.
+- `routePromotesHiggsMass=false`.
+- `canFillPhase201WzContract=false`.
+- `canFillPhase201HiggsContract=false`.
+- `canFillPhase256ObservedFieldExtractionContract=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from the public Oxford equation scaffold.
+The transcript gives genuine GU-native equation direction, including
+inhomogeneous/tilted gauge structure, action/equation sketches,
+swervature/displasion, generalized Yang-Mills terms, and a Dirac-square
+organization for Yang-Mills/Higgs. It remains a scaffold rather than a
+replayable source law: it does not supply separate W/Z source rows,
+target-independent VEV, weak-angle/coupling normalization, observed
+photon/W/Z/H projection rows, Higgs scalar-source/self-coupling lineage, pole
+extraction, or GeV normalization.
+
+### Validation
+
+- Targeted Phase368 run passed with
+  `oxfordInhomogeneousGaugeEquationBridgeAuditPassed=true`,
+  `routeProvidesGuNativeEquationScaffold=true`,
+  `sourceProvidesExactAcceptedTheorem=false`,
+  `routeProvidesDirectTargetIndependentWzBridgeSourceLaw=false`,
+  `routeProvidesSeparateWzSourceRows=false`, `routePromotesWzMasses=false`,
+  `routePromotesHiggsMass=false`, and `canFillPhase201WzContract=false`.
+- P101 package build passed and includes the Phase368 audit block.
+- P202 objective audit passed as an incomplete objective:
+  `objectiveAchieved=false`, `checklistPassedCount=161`, and
+  `checklistFailedCount=3`.
+- Claim-integrity verification passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns preserved the negative intake boundary:
+  P204 `intakeReadyCandidateCount=0`,
+  P205 `intakeReadyFindingCount=0`,
+  P207 `intakeReadyFindingCount=0`,
+  P279 `localSearchMatchingFileCount=0`,
+  P281 `localSearchMatchingFileCount=0`,
+  P295 `intakeReadyObservedFieldExtractionCandidateCount=0`, and
+  P296 `intakeReadySourceLineageFieldCandidateCount=0`.
+- `ExperimentReferences.md` link check passed with `detailLinkCount=49` and
+  `missingDetailCount=0`.
+- `dotnet test GeometricUnity.slnx` passed; the only warning was the existing
+  `xUnit2013` collection-size warning in
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
+
 ## 2026-05-26 - Phase367 Theta-Omega Source-Equation Availability Audit
 
 ### Context
