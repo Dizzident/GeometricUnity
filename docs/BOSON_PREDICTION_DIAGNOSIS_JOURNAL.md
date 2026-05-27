@@ -11715,6 +11715,124 @@ lineage, a mass-scale source, pole extraction, and GeV normalization.
   `xUnit2013` collection-size warning in
   `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
 
+## 2026-05-27 - Phase369 Weyl Conformal SM/Stueckelberg Source Audit
+
+### Context
+
+After Phase368 preserved the Oxford inhomogeneous-gauge material as a scaffold
+rather than a source law, I searched for another source-law-shaped geometric
+route. The strongest distinct public lead found in this pass was the Weyl
+conformal Standard Model route: it uses gauged Weyl geometry and a geometric
+Stueckelberg mechanism, and it includes neutral photon/Z/Weyl-boson mixing with
+a Z-mass correction. This is close enough to the W/Z bridge-source-law shape to
+deserve a bounded audit.
+
+A read-only explorer agent also inspected the local repository in parallel. It
+did not edit files. Its strongest local follow-up is a v29 fermionic
+variational / Yukawa-Higgs mixed-linearization route, which may be under-audited
+for Higgs source-lineage fields but does not yet look sufficient for W/Z
+absolute masses.
+
+### Sources Reviewed
+
+- `https://arxiv.org/abs/2104.15118`.
+- `https://arxiv.org/pdf/2104.15118`.
+- `https://link.springer.com/article/10.1140/epjc/s10052-021-09887-y`.
+- `https://arxiv.org/abs/2303.02515`.
+- Existing local boundaries: Phase317 electroweak mass-matrix bridge,
+  Phase330 Weyl geometric mass-generation, Phase343 Stueckelberg vector-mass,
+  Phase346 Nielsen/pole-mass gauge-independence, and Phase368 Oxford
+  inhomogeneous-gauge equation bridge.
+
+### Action
+
+- Added
+  `studies/phase369_weyl_conformal_sm_stueckelberg_source_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P369.md`.
+- Wired Phase369 into the generator, P101 package, P202 objective completion
+  audit, and claim-integrity verifier.
+- Added Phase369 scanner exclusions so generated diagnostic text does not count
+  as independent source evidence.
+- Added `WEYL-CONFORMAL-SM-STUECKELBERG` to `ExperimentReferences.md` with a
+  detailed reference note under `docs/Reference/ExperimentReferences/`.
+
+### Current Expected Outcome
+
+Phase369 is expected to pass only as a negative external-template audit:
+
+- `weylConformalSmStueckelbergSourceAuditPassed=true`.
+- `routeUsesWeylConformalGeometry=true`.
+- `routeUsesGeometricStueckelbergMechanism=true`.
+- `routeProvidesPhotonZAndWeylBosonNeutralMixingMatrix=true`.
+- `routeKeepsPhotonMasslessByNeutralMassMatrixDeterminant=true`.
+- `routeProvidesZMassCorrectionFromWeylMixing=true`.
+- `routeConstrainsWeylParametersUsingObservedZMass=true`.
+- `routeProvidesGuLocalWeylEmbedding=false`.
+- `routeProvidesGuLocalWzTheorem=false`.
+- `routeProvidesDirectTargetIndependentWzBridgeSourceLaw=false`.
+- `routeProvidesSeparateWzSourceRows=false`.
+- `routeProvidesTargetIndependentGuVevSource=false`.
+- `routeProvidesWeakMixingAngleSource=false`.
+- `routeProvidesGaugeCouplingNormalization=false`.
+- `routeProvidesObservedPhotonWzHiggsProjectionRows=false`.
+- `routeProvidesHiggsScalarSourceOperator=false`.
+- `routeProvidesHiggsQuarticOrExcitationSource=false`.
+- `routeProvidesGeVUnitNormalization=false`.
+- `routePromotesWzMasses=false`.
+- `routePromotesHiggsMass=false`.
+- `canFillPhase201WzContract=false`.
+- `canFillPhase201HiggsContract=false`.
+- `canFillPhase256ObservedFieldExtractionContract=false`.
+
+### Decision
+
+Do not promote W/Z or Higgs masses from the Weyl conformal Standard Model /
+geometric Stueckelberg route. It is a serious external geometric
+mass-generation template, but it constrains parameters using observed Z data and
+does not supply a GU-local Weyl embedding, direct target-independent W/Z source
+theorem, separate W/Z source rows, target-independent VEV, weak-angle/coupling
+normalization, observed photon/W/Z/H extraction, Higgs scalar-source or
+self-coupling lineage, pole extraction, or GeV normalization.
+
+Next local route to audit: the v29 fermionic variational / Yukawa-Higgs
+mixed-linearization route identified by the explorer agent. Treat it as a
+potential Higgs source-lineage audit first, not as a W/Z absolute-mass
+promotion route.
+
+### Validation
+
+- Targeted Phase369 run passed with
+  `weylConformalSmStueckelbergSourceAuditPassed=true`,
+  `routeUsesGeometricStueckelbergMechanism=true`,
+  `routeProvidesZMassCorrectionFromWeylMixing=true`,
+  `routePromotesWzMasses=false`, `routePromotesHiggsMass=false`, and
+  `canFillPhase201WzContract=false`.
+- P101 package build passed and includes the Phase369 audit block.
+- P202 objective audit passed as an incomplete objective:
+  `objectiveAchieved=false`, `checklistPassedCount=162`, and
+  `checklistFailedCount=3`.
+- Claim-integrity verification passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns preserved the negative intake boundary:
+  P204 `intakeReadyCandidateCount=0`,
+  P205 `intakeReadyFindingCount=0`,
+  P207 `intakeReadyFindingCount=0`,
+  P279 `localSearchMatchingFileCount=0`,
+  P281 `localSearchMatchingFileCount=0`,
+  P295 `intakeReadyObservedFieldExtractionCandidateCount=0`, and
+  P296 `intakeReadySourceLineageFieldCandidateCount=0`.
+- `ExperimentReferences.md` link check passed with `detailLinkCount=50` and
+  `missingDetailCount=0`.
+- Full generator gate passed with Phase369 included and ended with
+  `objectiveAchieved=false`, `checklistPassedCount=162`,
+  `checklistFailedCount=3`, `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- `dotnet test GeometricUnity.slnx` passed; the only warning was the existing
+  `xUnit2013` collection-size warning in
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs(315,9)`.
+
 ## 2026-05-27 - Phase368 Oxford Inhomogeneous-Gauge Equation Bridge Audit
 
 ### Context

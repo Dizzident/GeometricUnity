@@ -138,6 +138,7 @@ const paths = {
   phase366: "studies/phase366_bost_connes_arithmetic_gauge_coupling_source_audit_001/output/bost_connes_arithmetic_gauge_coupling_source_audit_summary.json",
   phase367: "studies/phase367_theta_omega_source_equation_availability_audit_001/output/theta_omega_source_equation_availability_audit_summary.json",
   phase368: "studies/phase368_oxford_inhomogeneous_gauge_equation_bridge_audit_001/output/oxford_inhomogeneous_gauge_equation_bridge_audit_summary.json",
+  phase369: "studies/phase369_weyl_conformal_sm_stueckelberg_source_audit_001/output/weyl_conformal_sm_stueckelberg_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -347,6 +348,7 @@ const phase365 = requireFile(paths.phase365);
 const phase366 = requireFile(paths.phase366);
 const phase367 = requireFile(paths.phase367);
 const phase368 = requireFile(paths.phase368);
+const phase369 = requireFile(paths.phase369);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -3885,6 +3887,46 @@ if (sourceLineageMissing) {
   assert(phase368.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase368 W/Z missing-field count must match Phase213.");
   assert(phase368.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase368 Higgs missing-field count must match Phase213.");
   assert(phase368.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase368 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase369.weylConformalSmStueckelbergSourceAuditPassed === true, "Phase369 Weyl conformal SM/Stueckelberg audit must pass while preserving non-promotional status.");
+  assert(phase369.weylConformalSmLeadPresent === true, "Phase369 must record the Weyl conformal Standard Model lead.");
+  assert(phase369.weylConformalSmPrimarySourceReviewed === true, "Phase369 must record primary source review.");
+  assert(phase369.weylConformalSmRouteExternalToGu === true, "Phase369 must classify the route as external to GU.");
+  assert(phase369.routeUsesWeylConformalGeometry === true, "Phase369 must record Weyl conformal geometry.");
+  assert(phase369.routeUsesGeometricStueckelbergMechanism === true, "Phase369 must record the geometric Stueckelberg mechanism.");
+  assert(phase369.routeProvidesPhotonZAndWeylBosonNeutralMixingMatrix === true, "Phase369 must record the neutral photon/Z/Weyl-boson mixing matrix lead.");
+  assert(phase369.routeKeepsPhotonMasslessByNeutralMassMatrixDeterminant === true, "Phase369 must record photon masslessness in the external neutral matrix.");
+  assert(phase369.routeProvidesZMassCorrectionFromWeylMixing === true, "Phase369 must record the Weyl-mixing Z-mass correction lead.");
+  assert(phase369.routeConstrainsWeylParametersUsingObservedZMass === true, "Phase369 must record observed-Z parameter constraints.");
+  assert(phase369.routeProvidesGuLocalWeylEmbedding === false, "Phase369 cannot claim a GU-local Weyl embedding.");
+  assert(phase369.routeProvidesGuLocalWzTheorem === false, "Phase369 cannot claim a GU-local W/Z theorem.");
+  assert(phase369.routeProvidesDirectTargetIndependentWzBridgeSourceLaw === false, "Phase369 cannot claim a direct target-independent W/Z bridge law.");
+  assert(phase369.routeProvidesSeparateWzSourceRows === false, "Phase369 cannot claim separate W/Z source rows.");
+  assert(phase369.routeProvidesWzRawAmplitudeGates === false, "Phase369 cannot claim W/Z raw-amplitude gates.");
+  assert(phase369.routeProvidesWzCommonBridgeGate === false, "Phase369 cannot claim a W/Z common bridge gate.");
+  assert(phase369.routeProvidesTargetIndependentGuVevSource === false, "Phase369 cannot claim target-independent GU VEV source.");
+  assert(phase369.routeProvidesWeakMixingAngleSource === false, "Phase369 cannot claim weak-mixing source.");
+  assert(phase369.routeProvidesGaugeCouplingNormalization === false, "Phase369 cannot claim gauge-coupling normalization.");
+  assert(phase369.routeProvidesObservedPhotonWzHiggsProjectionRows === false, "Phase369 cannot claim observed photon/W/Z/H rows.");
+  assert(phase369.routeProvidesGuObservedFieldExtraction === false, "Phase369 cannot claim GU observed-field extraction.");
+  assert(phase369.routeProvidesHiggsScalarSourceOperator === false, "Phase369 cannot claim a Higgs scalar-source operator.");
+  assert(phase369.routeProvidesHiggsQuarticOrExcitationSource === false, "Phase369 cannot claim a Higgs quartic or excitation source.");
+  assert(phase369.routeProvidesGeVUnitNormalization === false, "Phase369 cannot claim GeV normalization.");
+  assert(phase369.routePromotesWzMasses === false, "Phase369 cannot promote W/Z masses.");
+  assert(phase369.routePromotesHiggsMass === false, "Phase369 cannot promote Higgs mass.");
+  assert(phase369.routeCompletesBosonPredictions === false, "Phase369 cannot complete boson predictions.");
+  assert(phase369.canFillPhase201WzContract === false, "Phase369 cannot fill the Phase201 W/Z contract.");
+  assert(phase369.canFillPhase201HiggsContract === false, "Phase369 cannot fill the Phase201 Higgs contract.");
+  assert(phase369.canFillPhase256ObservedFieldExtractionContract === false, "Phase369 cannot fill the Phase256 observed-field contract.");
+  assert(phase369.sourceRowCount === 4, "Phase369 must preserve four source rows.");
+  assert(phase369.adjacentRouteBoundary?.phase330?.weylGeometricMassGenerationSourceAuditPassed === true, "Phase369 must inherit the Phase330 Weyl boundary.");
+  assert(phase369.adjacentRouteBoundary?.phase343?.stueckelbergVectorMassSourceAuditPassed === true, "Phase369 must inherit the Phase343 Stueckelberg boundary.");
+  assert(phase369.adjacentRouteBoundary?.phase346?.nielsenPoleMassGaugeIndependenceSourceAuditPassed === true, "Phase369 must inherit the Phase346 pole-mass boundary.");
+  assert(phase369.contractImpact?.canFillPhase201WzContract === false, "Phase369 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase369.contractImpact?.canFillPhase201HiggsContract === false, "Phase369 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase369.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase369 contract impact must keep Phase256 unfilled.");
+  assert(phase369.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase369 W/Z missing-field count must match Phase213.");
+  assert(phase369.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase369 Higgs missing-field count must match Phase213.");
+  assert(phase369.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase369 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

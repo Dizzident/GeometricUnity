@@ -1,7 +1,7 @@
 {
   "phaseId": "phase339-macdowell-mansouri-cartan-breaking-source-audit",
   "terminalStatus": "macdowell-mansouri-cartan-breaking-source-audit-external-gauge-breaking-lead-not-gu-source",
-  "generatedAt": "2026-05-22T00:06:44.0942718+00:00",
+  "generatedAt": "2026-05-27T20:41:02.3235041+00:00",
   "macdowellMansouriCartanSourceAuditPassed": true,
   "macdowellMansouriCartanLeadPresent": true,
   "macdowellMansouriPrimarySourcesReviewed": true,

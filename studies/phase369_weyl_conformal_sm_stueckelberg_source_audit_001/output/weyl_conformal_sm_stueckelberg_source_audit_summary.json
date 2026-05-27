@@ -1,0 +1,165 @@
+{
+  "phaseId": "phase369-weyl-conformal-sm-stueckelberg-source-audit",
+  "terminalStatus": "weyl-conformal-sm-stueckelberg-source-audit-external-template-not-source-law",
+  "weylConformalSmStueckelbergSourceAuditPassed": true,
+  "weylConformalSmLeadPresent": true,
+  "weylConformalSmPrimarySourceReviewed": true,
+  "weylConformalSmRouteExternalToGu": true,
+  "routeUsesWeylConformalGeometry": true,
+  "routeUsesGaugedScaleSymmetryD1": true,
+  "routeUsesGeometricStueckelbergMechanism": true,
+  "routeGeneratesPlanckScaleFromStueckelbergField": true,
+  "routeInducesElectroweakSymmetryBreakingFromWeylGeometry": true,
+  "routeGeneratesHiggsPotentialFromGeometry": true,
+  "routeGivesHiggsWeylGaugeBosonCouplings": true,
+  "routeAllowsHyperchargeWeylKineticMixing": true,
+  "routeProvidesPhotonZAndWeylBosonNeutralMixingMatrix": true,
+  "routeKeepsPhotonMasslessByNeutralMassMatrixDeterminant": true,
+  "routeProvidesZMassCorrectionFromWeylMixing": true,
+  "routeConstrainsWeylParametersUsingObservedZMass": true,
+  "routeProvidesExternalGeometricMassGenerationTemplate": true,
+  "routeProvidesGuLocalWeylEmbedding": false,
+  "routeProvidesGuLocalWzTheorem": false,
+  "routeProvidesDirectTargetIndependentWzBridgeSourceLaw": false,
+  "routeProvidesSeparateWzSourceRows": false,
+  "routeProvidesWzRawAmplitudeGates": false,
+  "routeProvidesWzCommonBridgeGate": false,
+  "routeProvidesWzTargetComparisonGate": false,
+  "routeProvidesWzStabilitySidecars": false,
+  "routeProvidesTargetIndependentGuVevSource": false,
+  "routeProvidesWeakMixingAngleSource": false,
+  "routeProvidesGaugeCouplingNormalization": false,
+  "routeProvidesObservedPhotonWzHiggsProjectionRows": false,
+  "routeProvidesGuObservedFieldExtraction": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesHiggsIdentityEnvelope": false,
+  "routeProvidesHiggsQuarticOrExcitationSource": false,
+  "routeProvidesTargetIndependentHiggsMass": false,
+  "routeProvidesPoleMassExtraction": false,
+  "routeProvidesGeVUnitNormalization": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "sourceRowCount": 4,
+  "sourceRows": [
+    {
+      "sourceId": "ghilencea-2104-15118-abstract",
+      "url": "https://arxiv.org/abs/2104.15118",
+      "locator": "abstract",
+      "finding": "The paper embeds the Standard Model in Weyl conformal geometry, with Weyl quadratic gravity breaking gauged scale symmetry through a geometric Stueckelberg mechanism.",
+      "predictionImpact": "Strong external geometric mass-generation lead; not GU-local source lineage."
+    },
+    {
+      "sourceId": "ghilencea-2104-15118-z-mass-constraints",
+      "url": "https://link.springer.com/article/10.1140/epjc/s10052-021-09887-y",
+      "locator": "EPJ C section 2.7 / arXiv section on Z-mass constraints",
+      "finding": "The source diagonalizes the neutral photon/Z/Weyl-boson mass matrix, keeps the photon massless, and records a Weyl-mixing correction to the Z mass.",
+      "predictionImpact": "Relevant to W/Z bridge-source shape, but it constrains model parameters from observed Z data rather than deriving GU W/Z source rows."
+    },
+    {
+      "sourceId": "ghilencea-hill-2303-02515-local-vs-gauged",
+      "url": "https://arxiv.org/abs/2303.02515",
+      "locator": "abstract",
+      "finding": "The follow-up compares local versus gauged Weyl scale symmetry and presents the gauged Weyl model as a UV completion with a massive Weyl gauge boson.",
+      "predictionImpact": "Useful context for the Weyl route boundary; still external to GU and not a W/Z/H prediction contract filler."
+    },
+    {
+      "sourceId": "phase330-weyl-geometric-mass-generation-boundary",
+      "url": "studies/phase330_weyl_geometric_mass_generation_source_audit_001/output/weyl_geometric_mass_generation_source_audit_summary.json",
+      "locator": "local Phase330 output",
+      "finding": "The newer Weyl x SU(2)L x U(1)Y route reproduces Standard Model mass-generation structure but leaves couplings, VEV, observed fields, and units external.",
+      "predictionImpact": "Keeps this Phase369 route from being promoted merely because it is geometric."
+    }
+  ],
+  "adjacentRouteBoundary": {
+    "phase330": {
+      "weylGeometricMassGenerationSourceAuditPassed": true,
+      "phase330WeylRouteExternalToGu": true,
+      "phase330WeylRoutePromotesWzMasses": false,
+      "phase330WeylRoutePromotesHiggsMass": false
+    },
+    "phase343": {
+      "stueckelbergVectorMassSourceAuditPassed": true,
+      "stueckelbergRouteProvidesGaugeInvariantVectorMassMechanism": true,
+      "stueckelbergRoutePromotesWzMasses": false,
+      "stueckelbergRoutePromotesHiggsMass": false
+    },
+    "phase346": {
+      "nielsenPoleMassGaugeIndependenceSourceAuditPassed": true,
+      "poleMassRouteProvidesPhysicalMassExtractionBoundary": true,
+      "nielsenRoutePromotesWzMasses": false,
+      "nielsenRoutePromotesHiggsMass": false
+    },
+    "phase368": {
+      "oxfordInhomogeneousGaugeEquationBridgeAuditPassed": true,
+      "phase368RouteProvidesBridgeEquationScaffold": true,
+      "phase368RouteProvidesDirectTargetIndependentWzBridgeSourceLaw": false,
+      "phase368RoutePromotesWzMasses": false,
+      "phase368RoutePromotesHiggsMass": false
+    }
+  },
+  "contractImpact": {
+    "phase201AllRequiredLineagesPromotable": false,
+    "existingEvidenceFound": false,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "observedFieldExtractionRequiredFieldCount": 20,
+    "observedFieldExtractionFilledRequiredFieldCount": 0,
+    "observedFieldExtractionContractPromotable": false,
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false
+  },
+  "checks": [
+    {
+      "checkId": "weyl-conformal-sm-stueckelberg-source-reviewed",
+      "passed": true,
+      "detail": "lead=True; reviewed=True; externalToGu=True; sourceRows=4"
+    },
+    {
+      "checkId": "external-weyl-stueckelberg-mass-structure-recorded",
+      "passed": true,
+      "detail": "weylGeometry=True; D1=True; stueckelberg=True; ewBreaking=True; higgsPotential=True; kineticMixing=True; neutralMatrix=True; photonMassless=True; zCorrection=True; zConstraint=True"
+    },
+    {
+      "checkId": "standard-electroweak-dependency-boundary-remains-binding",
+      "passed": true,
+      "detail": "p224=True; wClosure=False; zClosure=False; higgsClosure=False; weakCoupling=False; p317=True; requiresV=True; requiresG=True; requiresGPrime=True; p317PromotesWz=False; p317PromotesHiggs=False"
+    },
+    {
+      "checkId": "adjacent-weyl-and-stueckelberg-boundaries-remain-nonpromotional",
+      "passed": true,
+      "detail": "p330=True; p330External=True; p330PromotesWz=False; p330PromotesHiggs=False; p343=True; p343Mechanism=True; p343PromotesWz=False; p343PromotesHiggs=False"
+    },
+    {
+      "checkId": "observed-mass-extraction-boundary-remains-required",
+      "passed": true,
+      "detail": "p346=True; physicalBoundary=True; p346PromotesWz=False; p346PromotesHiggs=False; routePoleExtraction=False"
+    },
+    {
+      "checkId": "gu-native-bridge-boundary-remains-unfilled",
+      "passed": true,
+      "detail": "p368=True; p368Scaffold=True; p368DirectBridge=False; p368PromotesWz=False; guWeylEmbedding=False; guWzTheorem=False; directBridge=False"
+    },
+    {
+      "checkId": "weyl-conformal-route-does-not-fill-source-contracts",
+      "passed": true,
+      "detail": "wzRows=False; raw=False; common=False; target=False; stability=False; vev=False; weakAngle=False; coupling=False; observedRows=False; higgsSource=False; higgsEnvelope=False; higgsRelation=False; geV=False; promotesWz=False; promotesHiggs=False"
+    },
+    {
+      "checkId": "phase213-and-phase256-blocker-state-preserved",
+      "passed": true,
+      "detail": "p201Promotable=False; existing=False; wzMissing=15; higgsMissing=14; observedRequired=20; observedFilled=0; observedPromotable=False"
+    }
+  ],
+  "decision": "Do not promote W/Z or Higgs masses from the Weyl conformal Standard Model / geometric Stueckelberg route. It is a serious external geometric mass-generation template: it uses gauged Weyl geometry, a geometric Stueckelberg field, Higgs-Weyl couplings, neutral photon/Z/Weyl mixing, and a Weyl correction to the Z mass. It still constrains parameters using observed Z data and does not supply a GU-local Weyl embedding, direct target-independent W/Z source theorem, separate W/Z source rows, target-independent VEV, weak-angle or coupling normalization, observed photon/W/Z/H extraction, Higgs scalar-source/self-coupling lineage, pole extraction, or GeV normalization.",
+  "nextRequiredArtifact": [
+    "A GU-local map from the Oxford inhomogeneous/tilted gauge scaffold to a Weyl/Stueckelberg or equivalent electroweak mass matrix, if this route is to be imported at all.",
+    "Separate derivation-backed W and Z source rows with raw/common/target/stability gates true before target comparison.",
+    "A target-independent GU VEV or mass-scale source, weak-angle/coupling normalization, observed photon/W/Z/H projection, pole extraction, and GeV unit lineage.",
+    "A GU-local Higgs scalar-source/operator and self-coupling or excitation relation independent of observed W/Z/H masses."
+  ]
+}
