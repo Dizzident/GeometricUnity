@@ -135,6 +135,7 @@ const string Phase366Path = "studies/phase366_bost_connes_arithmetic_gauge_coupl
 const string Phase367Path = "studies/phase367_theta_omega_source_equation_availability_audit_001/output/theta_omega_source_equation_availability_audit_summary.json";
 const string Phase368Path = "studies/phase368_oxford_inhomogeneous_gauge_equation_bridge_audit_001/output/oxford_inhomogeneous_gauge_equation_bridge_audit_summary.json";
 const string Phase369Path = "studies/phase369_weyl_conformal_sm_stueckelberg_source_audit_001/output/weyl_conformal_sm_stueckelberg_source_audit_summary.json";
+const string Phase370Path = "studies/phase370_completion_fermionic_yukawa_higgs_mixed_linearization_source_audit_001/output/completion_fermionic_yukawa_higgs_mixed_linearization_source_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -303,6 +304,7 @@ using var phase366 = File.Exists(Phase366Path) ? JsonDocument.Parse(File.ReadAll
 using var phase367 = File.Exists(Phase367Path) ? JsonDocument.Parse(File.ReadAllText(Phase367Path)) : null;
 using var phase368 = File.Exists(Phase368Path) ? JsonDocument.Parse(File.ReadAllText(Phase368Path)) : null;
 using var phase369 = File.Exists(Phase369Path) ? JsonDocument.Parse(File.ReadAllText(Phase369Path)) : null;
+using var phase370 = File.Exists(Phase370Path) ? JsonDocument.Parse(File.ReadAllText(Phase370Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -3814,6 +3816,51 @@ var weylConformalSmStueckelbergSourceAuditPassed = weylConformalSmStueckelbergSo
     && JsonInt(p369ContractImpact, "wzMissingFieldCount") == wzMissingFieldCount
     && JsonInt(p369ContractImpact, "higgsMissingFieldCount") == higgsMissingFieldCount
     && JsonInt(p369ContractImpact, "observedFieldExtractionFilledRequiredFieldCount") == 0;
+var completionFermionicYukawaHiggsMixedLinearizationSourceAuditMaterialized = phase370 is not null;
+var completionFermionicYukawaHiggsMixedLinearizationSourceAuditPassed = completionFermionicYukawaHiggsMixedLinearizationSourceAuditMaterialized
+    && JsonBool(phase370!.RootElement, "completionFermionicYukawaHiggsMixedLinearizationSourceAuditPassed") is true
+    && JsonBool(phase370.RootElement, "officialDraftFermionicSectorArchitecturePresent") is true
+    && JsonBool(phase370.RootElement, "officialDraftLocatesHiggsPotentialInUpsilonNorm") is true
+    && JsonBool(phase370.RootElement, "officialDraftLocatesYukawaCouplingsAsObservedVev") is true
+    && JsonBool(phase370.RootElement, "completionTypedPlaceholderEvidencePresent") is true
+    && JsonBool(phase370.RootElement, "completionProvidesTypedFermionicActionTemplate") is true
+    && JsonBool(phase370.RootElement, "completionRecordsYukawaLikeLowerOrderTermPlaceholder") is true
+    && JsonBool(phase370.RootElement, "completionRecordsVo7CoupledMixedLinearizationObligation") is true
+    && JsonBool(phase370.RootElement, "completionExecutableBranchIncludesFermionicCoupling") is false
+    && JsonBool(phase370.RootElement, "routeProvidesCompletedFermionicAction") is false
+    && JsonBool(phase370.RootElement, "routeProvidesFixedFermionicOperatorBranch") is false
+    && JsonBool(phase370.RootElement, "routeProvidesExplicitYukawaFunctional") is false
+    && JsonBool(phase370.RootElement, "routeProvidesSolvedYukawaCouplingMap") is false
+    && JsonBool(phase370.RootElement, "routeProvidesCoupledResidual") is false
+    && JsonBool(phase370.RootElement, "routeProvidesCompletedMixedLinearizationBlocks") is false
+    && JsonBool(phase370.RootElement, "routeProvidesMixedLinearizationGaugeCompatibilityIdentities") is false
+    && JsonBool(phase370.RootElement, "routeProvidesDirectTargetIndependentWzBridgeSourceLaw") is false
+    && JsonBool(phase370.RootElement, "routeProvidesSeparateWzSourceRows") is false
+    && JsonBool(phase370.RootElement, "routeProvidesTargetIndependentGuVevSource") is false
+    && JsonBool(phase370.RootElement, "routeProvidesObservedPhotonWzHiggsProjectionRows") is false
+    && JsonBool(phase370.RootElement, "routeProvidesGuObservedFieldExtraction") is false
+    && JsonBool(phase370.RootElement, "routeProvidesHiggsScalarSourceOperator") is false
+    && JsonBool(phase370.RootElement, "routeProvidesScalarProjectionTheorem") is false
+    && JsonBool(phase370.RootElement, "routeProvidesScalarNormalizationSource") is false
+    && JsonBool(phase370.RootElement, "routeProvidesHiggsIdentityEnvelope") is false
+    && JsonBool(phase370.RootElement, "routeProvidesMassiveScalarProfile") is false
+    && JsonBool(phase370.RootElement, "routeProvidesHiggsQuarticOrExcitationSource") is false
+    && JsonBool(phase370.RootElement, "routeProvidesPoleMassExtraction") is false
+    && JsonBool(phase370.RootElement, "routeProvidesGeVUnitNormalization") is false
+    && JsonBool(phase370.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase370.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase370.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase370.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase370.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase370.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && phase370.RootElement.TryGetProperty("phase201HiggsFieldsDefensiblyFilled", out var p370HiggsFieldsDefensiblyFilled)
+    && p370HiggsFieldsDefensiblyFilled.ValueKind == JsonValueKind.Array
+    && p370HiggsFieldsDefensiblyFilled.GetArrayLength() == 0
+    && JsonInt(phase370.RootElement, "sourceRowCount") == 4
+    && phase370.RootElement.TryGetProperty("contractImpact", out var p370ContractImpact)
+    && JsonInt(p370ContractImpact, "wzMissingFieldCount") == wzMissingFieldCount
+    && JsonInt(p370ContractImpact, "higgsMissingFieldCount") == higgsMissingFieldCount
+    && JsonInt(p370ContractImpact, "observedFieldExtractionFilledRequiredFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -5742,6 +5789,14 @@ var checklist = new[]
             ? $"weylConformalSmStueckelbergSourceAuditPassed={JsonBool(phase369!.RootElement, "weylConformalSmStueckelbergSourceAuditPassed")}; leadPresent={JsonBool(phase369.RootElement, "weylConformalSmLeadPresent")}; externalToGu={JsonBool(phase369.RootElement, "weylConformalSmRouteExternalToGu")}; weylGeometry={JsonBool(phase369.RootElement, "routeUsesWeylConformalGeometry")}; geometricStueckelberg={JsonBool(phase369.RootElement, "routeUsesGeometricStueckelbergMechanism")}; neutralMixing={JsonBool(phase369.RootElement, "routeProvidesPhotonZAndWeylBosonNeutralMixingMatrix")}; photonMassless={JsonBool(phase369.RootElement, "routeKeepsPhotonMasslessByNeutralMassMatrixDeterminant")}; zMassCorrection={JsonBool(phase369.RootElement, "routeProvidesZMassCorrectionFromWeylMixing")}; constrainsUsingObservedZ={JsonBool(phase369.RootElement, "routeConstrainsWeylParametersUsingObservedZMass")}; providesGuWeylEmbedding={JsonBool(phase369.RootElement, "routeProvidesGuLocalWeylEmbedding")}; providesGuWzTheorem={JsonBool(phase369.RootElement, "routeProvidesGuLocalWzTheorem")}; directWzBridge={JsonBool(phase369.RootElement, "routeProvidesDirectTargetIndependentWzBridgeSourceLaw")}; providesWzRows={JsonBool(phase369.RootElement, "routeProvidesSeparateWzSourceRows")}; providesVev={JsonBool(phase369.RootElement, "routeProvidesTargetIndependentGuVevSource")}; providesWeakAngle={JsonBool(phase369.RootElement, "routeProvidesWeakMixingAngleSource")}; providesCouplingNorm={JsonBool(phase369.RootElement, "routeProvidesGaugeCouplingNormalization")}; providesObservedRows={JsonBool(phase369.RootElement, "routeProvidesObservedPhotonWzHiggsProjectionRows")}; providesHiggsScalarSource={JsonBool(phase369.RootElement, "routeProvidesHiggsScalarSourceOperator")}; promotesWz={JsonBool(phase369.RootElement, "routePromotesWzMasses")}; promotesHiggs={JsonBool(phase369.RootElement, "routePromotesHiggsMass")}; completesBosonPredictions={JsonBool(phase369.RootElement, "routeCompletesBosonPredictions")}; canFillPhase201WzContract={JsonBool(phase369.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase369.RootElement, "decision")}"
             : "Phase369 artifact not materialized",
         Phase369Path),
+    new ObjectiveChecklistItem(
+        "completion-fermionic-yukawa-higgs-mixed-linearization-source-audit-materialized",
+        "Audit whether the local completion v29 fermionic/Yukawa scaffold supplies a solved GU Higgs or W/Z source lineage or only typed obligations for future derivation.",
+        completionFermionicYukawaHiggsMixedLinearizationSourceAuditPassed ? "passed" : "failed",
+        completionFermionicYukawaHiggsMixedLinearizationSourceAuditMaterialized
+            ? $"completionFermionicYukawaHiggsMixedLinearizationSourceAuditPassed={JsonBool(phase370!.RootElement, "completionFermionicYukawaHiggsMixedLinearizationSourceAuditPassed")}; template={JsonBool(phase370.RootElement, "completionProvidesTypedFermionicActionTemplate")}; yukawaPlaceholder={JsonBool(phase370.RootElement, "completionRecordsYukawaLikeLowerOrderTermPlaceholder")}; mixedLinearizationObligation={JsonBool(phase370.RootElement, "completionRecordsVo7CoupledMixedLinearizationObligation")}; explicitYukawa={JsonBool(phase370.RootElement, "routeProvidesExplicitYukawaFunctional")}; coupledResidual={JsonBool(phase370.RootElement, "routeProvidesCoupledResidual")}; mixedBlocks={JsonBool(phase370.RootElement, "routeProvidesCompletedMixedLinearizationBlocks")}; scalarProjection={JsonBool(phase370.RootElement, "routeProvidesScalarProjectionTheorem")}; scalarNormalization={JsonBool(phase370.RootElement, "routeProvidesScalarNormalizationSource")}; providesHiggsScalarSource={JsonBool(phase370.RootElement, "routeProvidesHiggsScalarSourceOperator")}; promotesWz={JsonBool(phase370.RootElement, "routePromotesWzMasses")}; promotesHiggs={JsonBool(phase370.RootElement, "routePromotesHiggsMass")}; defensiblyFilledHiggsFields={(phase370.RootElement.TryGetProperty("phase201HiggsFieldsDefensiblyFilled", out var p370ChecklistHiggsFields) ? p370ChecklistHiggsFields.GetArrayLength() : -1)}; decision={JsonString(phase370.RootElement, "decision")}"
+            : "Phase370 artifact not materialized",
+        Phase370Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

@@ -1,7 +1,7 @@
 {
   "phaseId": "phase349-spin-exchange-preon-boson-mass-source-audit",
   "terminalStatus": "spin-exchange-preon-source-audit-external-ratio-model-not-gu-source",
-  "generatedAt": "2026-05-27T20:31:12.3929537+00:00",
+  "generatedAt": "2026-05-30T21:55:34.6876486+00:00",
   "spinExchangePreonDoi": "https://doi.org/10.48550/arXiv.2410.13902",
   "spinExchangePreonBosonMassSourceAuditPassed": true,
   "spinExchangePreonMassLeadPresent": true,

@@ -1,0 +1,271 @@
+{
+  "phaseId": "phase370-completion-fermionic-yukawa-higgs-mixed-linearization-source-audit",
+  "terminalStatus": "completion-fermionic-yukawa-higgs-mixed-linearization-source-audit-placeholder-not-source-lineage",
+  "generatedAt": "2026-05-30T21:55:48.5495345+00:00",
+  "completionFermionicYukawaHiggsMixedLinearizationSourceAuditPassed": true,
+  "officialDraftFermionicSectorArchitecturePresent": true,
+  "officialDraftLocatesHiggsPotentialInUpsilonNorm": true,
+  "officialDraftLocatesYukawaCouplingsAsObservedVev": true,
+  "officialOxfordTranscriptDiracSquareProgramPresent": true,
+  "completionTypedPlaceholderEvidencePresent": true,
+  "completionProvidesTypedFermionicActionTemplate": true,
+  "completionRecordsYukawaLikeLowerOrderTermPlaceholder": true,
+  "completionRecordsVo6FermionicBranchObligation": true,
+  "completionRecordsVo7CoupledMixedLinearizationObligation": true,
+  "completionExecutableBranchIncludesFermionicCoupling": false,
+  "routeProvidesCompletedFermionicAction": false,
+  "routeProvidesFixedFermionicOperatorBranch": false,
+  "routeProvidesExplicitYukawaFunctional": false,
+  "routeProvidesSolvedYukawaCouplingMap": false,
+  "routeProvidesCoupledResidual": false,
+  "routeProvidesCompletedMixedLinearizationBlocks": false,
+  "routeProvidesMixedLinearizationGaugeCompatibilityIdentities": false,
+  "routeProvidesDirectTargetIndependentWzBridgeSourceLaw": false,
+  "routeProvidesSeparateWzSourceRows": false,
+  "routeProvidesTargetIndependentGuVevSource": false,
+  "routeProvidesObservedPhotonWzHiggsProjectionRows": false,
+  "routeProvidesGuObservedFieldExtraction": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesScalarProjectionTheorem": false,
+  "routeProvidesScalarNormalizationSource": false,
+  "routeProvidesHiggsIdentityEnvelope": false,
+  "routeProvidesMassiveScalarProfile": false,
+  "routeProvidesHiggsQuarticOrExcitationSource": false,
+  "routeProvidesTargetIndependentHiggsPredictionRow": false,
+  "routeProvidesPoleMassExtraction": false,
+  "routeProvidesGeVUnitNormalization": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "phase201HiggsFieldsDefensiblyFilled": [],
+  "sourceRowCount": 4,
+  "sourceRows": [
+    {
+      "sourceId": "official-gu-draft-2021-fermionic-sector-and-appendix",
+      "url": "https://geometricunity.nyc3.digitaloceanspaces.com/Geometric_Unity-Draft-April-1st-2021.pdf",
+      "locator": "section 9.3 and Appendix locations",
+      "finding": "The official draft contains a fermionic sector and locates Higgs potential and Yukawa-coupling targets inside the GU architecture.",
+      "predictionImpact": "GU-native source direction, but not a solved scalar-source or mixed-linearization derivation."
+    },
+    {
+      "sourceId": "official-oxford-transcript-dirac-square-program",
+      "url": "https://geometricunity.org/2013-oxford-lecture/",
+      "locator": "Higgs and Dirac-square discussion",
+      "finding": "The Oxford transcript motivates obtaining Yang-Mills/Higgs-like second-order structure by squaring a first-order geometric object.",
+      "predictionImpact": "GU-native equation-program context, but not a replayable Higgs mass row."
+    },
+    {
+      "sourceId": "local-completion-v29-fermionic-placeholder",
+      "url": "TheoryCompletitionRevisions/Geometric_Unity_Completion_Reorganized_Updated_v29.md",
+      "locator": "lines 4772, 12362-12380, 12396-12398, and 12465",
+      "finding": "The local completion revision types a fermionic action template and makes the missing Yukawa map and mixed linearization blocks auditable.",
+      "predictionImpact": "Local completion scaffold, not primary GU evidence and not a solved source lineage."
+    },
+    {
+      "sourceId": "external-dirac-yukawa-action-template",
+      "url": "https://arxiv.org/abs/hep-th/9612149",
+      "locator": "abstract",
+      "finding": "Generalized Dirac-operator literature shows that gravity/Yang-Mills/Higgs action structures can be organized using a Dirac-Yukawa operator.",
+      "predictionImpact": "External template only; Phase355 records that it does not supply a GU-local operator map or scalar source."
+    }
+  ],
+  "completionRevision": {
+    "path": "TheoryCompletitionRevisions/Geometric_Unity_Completion_Reorganized_Updated_v29.md",
+    "totalLineCount": 13758,
+    "completionEvidence": [
+      {
+        "path": "TheoryCompletitionRevisions/Geometric_Unity_Completion_Reorganized_Updated_v29.md",
+        "lineNumber": 4772,
+        "found": true,
+        "requiredCue": "Yukawa-like part is still only a target, not a completed geometric derivation",
+        "auditFinding": "The completion revision classifies the Yukawa-like layer as a target rather than a completed geometric derivation.",
+        "excerpt": "The opening target list of the draft includes both a Dirac term and a Yukawa term. But in the present materials, the Yukawa-like part is still only a target, not a completed geometric derivation. The completion outline therefore correctly gives \u201CBoson\u2013fermion coupling map,\u201D \u201CYukawa-like structures,\u201D and \u201CHiggs-sector replacement or reinterpretation\u201D their own follow-on chapter."
+      },
+      {
+        "path": "TheoryCompletitionRevisions/Geometric_Unity_Completion_Reorganized_Updated_v29.md",
+        "lineNumber": 4782,
+        "found": true,
+        "requiredCue": "Without a mass-generation mechanism",
+        "auditFinding": "The completion revision says the fermionic sector remains kinematic without a mass-generation mechanism.",
+        "excerpt": "Without a mass-generation mechanism, the fermionic sector is not physically interpretable; it is only kinematic."
+      },
+      {
+        "path": "TheoryCompletitionRevisions/Geometric_Unity_Completion_Reorganized_Updated_v29.md",
+        "lineNumber": 12362,
+        "found": true,
+        "requiredCue": "Fermionic variational placeholder with typed obligations",
+        "auditFinding": "The completion revision labels the fermionic variational layer as a placeholder.",
+        "excerpt": "### 7. Fermionic variational placeholder with typed obligations"
+      },
+      {
+        "path": "TheoryCompletitionRevisions/Geometric_Unity_Completion_Reorganized_Updated_v29.md",
+        "lineNumber": 12371,
+        "found": true,
+        "requiredCue": "collects Yukawa-like or lower-order coupling terms",
+        "auditFinding": "The completion revision introduces a Yukawa-like term container without deriving its contents.",
+        "excerpt": "where \\(\\mathcal D_{\\omega,\\alpha}\\) is a chosen branch of the fermionic differential operator and \\(\\mathcal Y\\) collects Yukawa-like or lower-order coupling terms."
+      },
+      {
+        "path": "TheoryCompletitionRevisions/Geometric_Unity_Completion_Reorganized_Updated_v29.md",
+        "lineNumber": 12380,
+        "found": true,
+        "requiredCue": "typed placeholder rather than a completed derivation",
+        "auditFinding": "The completion revision explicitly withholds completed-derivation status.",
+        "excerpt": "Until then, the fermionic action remains a typed placeholder rather than a completed derivation."
+      },
+      {
+        "path": "TheoryCompletitionRevisions/Geometric_Unity_Completion_Reorganized_Updated_v29.md",
+        "lineNumber": 12396,
+        "found": true,
+        "requiredCue": "Complete the fermionic variational branch",
+        "auditFinding": "VO-6 leaves the fermionic operator domain, adjoint convention, and coupling terms open.",
+        "excerpt": "**VO-6.** Complete the fermionic variational branch, including the operator domain, adjoint convention, and coupling terms."
+      },
+      {
+        "path": "TheoryCompletitionRevisions/Geometric_Unity_Completion_Reorganized_Updated_v29.md",
+        "lineNumber": 12398,
+        "found": true,
+        "requiredCue": "precise mixed linearization blocks",
+        "auditFinding": "VO-7 leaves coupled boson-fermion mixed linearization and gauge identities open.",
+        "excerpt": "**VO-7.** Extend the now-fixed bosonic deformation complex to the coupled boson--fermion branch, including the precise mixed linearization blocks and their gauge-compatibility identities."
+      },
+      {
+        "path": "TheoryCompletitionRevisions/Geometric_Unity_Completion_Reorganized_Updated_v29.md",
+        "lineNumber": 12465,
+        "found": true,
+        "requiredCue": "Fermionic coupling",
+        "auditFinding": "The first executable branch explicitly excludes fermionic coupling.",
+        "excerpt": "It is intentionally restricted to the bosonic sector with branch-local observed extraction. Fermionic coupling, full Lorentzian evolution, and phenomenological fitting remain outside this first executable branch."
+      }
+    ]
+  },
+  "adjacentRouteBoundary": {
+    "phase226": {
+      "p226OfficialGuHiggsPotentialNotationObstructionCertified": true,
+      "p226OfficialGuHiggsPotentialNotationPromotable": false
+    },
+    "phase227": {
+      "p227OfficialGuShiabUpsilonExtractionObstructionCertified": true,
+      "p227OfficialGuShiabUpsilonExtractionPromotable": false
+    },
+    "phase237": {
+      "p237CoxIiHiggsYukawaTextureDependencyAuditPassed": true,
+      "p237CoxIiYukawaTextureLeadPresent": true,
+      "p237CoxIiHiggsYukawaTexturePromotableForHiggsMass": false
+    },
+    "phase256": {
+      "p256ObservedFieldExtractionIntakeContractPassed": true,
+      "p256FilledRequiredFieldCount": 0,
+      "p256ObservedFieldExtractionContractPromotable": false
+    },
+    "phase267": {
+      "p267CompletionRevisionDirectBridgeSourceAuditPassed": true,
+      "p267LatestCompletionProvidesHiggsScalarSource": false
+    },
+    "phase273": {
+      "p273CouplingProxySourceAuditPassed": true,
+      "p273Phase12FiniteDifferenceOnly": true,
+      "p273CouplingProxyPromotesHiggsMass": false
+    },
+    "phase310": {
+      "p310CompletionVariationalBranchToWzNormalizationAuditPassed": true,
+      "p310CompletionDraftCanPromotePhase302Lead": false
+    },
+    "phase322": {
+      "p322HiggsUpsilonScalarSourceBoundaryAuditPassed": true,
+      "p322OfficialGuSourcesProvideFixedScalarSourceOperator": false,
+      "p322OfficialGuSourcesProvideMassiveScalarProfile": false,
+      "p322OfficialGuSourcesProvideQuarticSelfCouplingValue": false
+    },
+    "phase323": {
+      "p323CoupledYangMillsHiggsMassExtractionAuditPassed": true,
+      "p323OfficialPublicSourcesProvideGaugeFixedQuadraticExpansion": false,
+      "p323OfficialPublicSourcesProvidePhotonWzHiggsProjectionRows": false
+    },
+    "phase355": {
+      "p355DiracLichnerowiczYangMillsHiggsSourceAuditPassed": true,
+      "p355RouteUsesDiracYukawaOperator": true,
+      "p355RouteProvidesGuLocalDiracOperatorMap": false,
+      "p355RouteProvidesGuHiggsScalarSourceOperator": false
+    }
+  },
+  "contractImpact": {
+    "phase201AllRequiredLineagesPromotable": false,
+    "p207CanPromoteHiggsQuarticSelfCouplingSource": false,
+    "p207IntakeReadyFindingCount": 0,
+    "wzMissingFieldCount": 15,
+    "higgsMissingFieldCount": 14,
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201HiggsFieldsDefensiblyFilled": [],
+    "observedFieldExtractionFilledRequiredFieldCount": 0
+  },
+  "checks": [
+    {
+      "checkId": "official-gu-fermionic-yukawa-direction-recorded",
+      "passed": true,
+      "detail": "fermionicSector=True; higgsPotential=True; yukawaVev=True; diracSquare=True"
+    },
+    {
+      "checkId": "completion-v29-placeholder-and-proof-obligations-recorded",
+      "passed": true,
+      "detail": "lineEvidence=8/8; template=True; yukawaPlaceholder=True; vo6=True; vo7=True; executableIncludesFermions=False"
+    },
+    {
+      "checkId": "prior-gu-higgs-and-coupled-extraction-boundaries-remain-binding",
+      "passed": true,
+      "detail": "p226=True; p227=True; p237=True; p237YukawaLead=True; p237Promotable=False; p322=True; scalarOperator=False; massiveProfile=False; quartic=False; p323=True; quadraticExpansion=False; projectionRows=False"
+    },
+    {
+      "checkId": "completion-and-proxy-routes-still-nonpromotional",
+      "passed": true,
+      "detail": "p267=True; p267HiggsSource=False; p273=True; finiteDifferenceOnly=True; p273PromotesHiggs=False; p310=True; p310Promotes=False"
+    },
+    {
+      "checkId": "external-dirac-yukawa-template-does-not-fill-gu-lineage",
+      "passed": true,
+      "detail": "p355=True; diracYukawa=True; guDiracMap=False; guScalarSource=False"
+    },
+    {
+      "checkId": "fermionic-placeholder-does-not-fill-source-contracts",
+      "passed": true,
+      "detail": "fermionicAction=False; fixedOperator=False; explicitYukawa=False; yukawaMap=False; coupledResidual=False; mixedBlocks=False; scalarSource=False; scalarProjection=False; scalarNormalization=False; identityEnvelope=False; massiveProfile=False; quartic=False; higgsFilled=0; promotesHiggs=False"
+    },
+    {
+      "checkId": "phase201-phase207-phase213-blocker-state-preserved",
+      "passed": true,
+      "detail": "phase201AllLineages=False; p207Promotable=False; p207IntakeReady=0; wzMissing=15; higgsMissing=14; p256=True; p256Filled=0; p256Promotable=False"
+    }
+  ],
+  "decision": "Do not promote W/Z or Higgs masses from the v29 fermionic variational / Yukawa-Higgs mixed-linearization route. The official GU material and the completion revision identify a meaningful GU-native research direction, but v29 explicitly leaves the Yukawa map as a target, the fermionic action as a typed placeholder, the coupled mixed-linearization blocks as VO-7, and fermionic coupling outside the first executable branch. No solved Higgs scalar-source operator, identity envelope, massive profile, quartic or excitation relation, observed projection, W/Z theorem, target-independent scale, pole extraction, or GeV normalization is supplied.",
+  "nextRequiredArtifact": [
+    "A GU-native completed fermionic action with a fixed operator branch and solved Yukawa or lower-order coupling map.",
+    "A coupled boson-fermion Hessian or deformation package with explicit mixed-linearization blocks and corrected-gauge compatibility identities.",
+    "A scalar-sector extraction theorem mapping the solved mixed branch to a Higgs source operator, identity envelope, massive scalar profile, and quartic or excitation relation.",
+    "Observed photon/W/Z/H projection rows, target-independent VEV or mass scale, pole extraction, and GeV unit lineage before any physical mass promotion."
+  ],
+  "sourceEvidence": {
+    "officialGuDraftUrl": "https://geometricunity.nyc3.digitaloceanspaces.com/Geometric_Unity-Draft-April-1st-2021.pdf",
+    "officialOxfordTranscriptUrl": "https://geometricunity.org/2013-oxford-lecture/",
+    "generalizedLichnerowiczUrl": "https://arxiv.org/abs/hep-th/9503153",
+    "diracYukawaOperatorUrl": "https://arxiv.org/abs/hep-th/9612149",
+    "completionRevisionPath": "TheoryCompletitionRevisions/Geometric_Unity_Completion_Reorganized_Updated_v29.md",
+    "phase201Path": "studies/phase201_boson_source_lineage_intake_contract_001/output/boson_source_lineage_intake_contract_summary.json",
+    "phase207Path": "studies/phase207_higgs_quartic_self_coupling_source_scan_001/output/higgs_quartic_self_coupling_source_scan_summary.json",
+    "phase213Path": "studies/phase213_boson_source_lineage_blocker_matrix_001/output/boson_source_lineage_blocker_matrix_summary.json",
+    "phase226Path": "studies/phase226_official_gu_higgs_potential_notation_audit_001/output/official_gu_higgs_potential_notation_audit_summary.json",
+    "phase227Path": "studies/phase227_official_gu_shiab_upsilon_extraction_obstruction_audit_001/output/official_gu_shiab_upsilon_extraction_obstruction_audit_summary.json",
+    "phase237Path": "studies/phase237_cox_ii_higgs_yukawa_texture_dependency_audit_001/output/cox_ii_higgs_yukawa_texture_dependency_audit_summary.json",
+    "phase256Path": "studies/phase256_observed_field_extraction_intake_contract_001/output/observed_field_extraction_intake_contract_summary.json",
+    "phase267Path": "studies/phase267_completion_revision_direct_bridge_source_audit_001/output/completion_revision_direct_bridge_source_audit_summary.json",
+    "phase273Path": "studies/phase273_boson_fermion_coupling_proxy_source_audit_001/output/boson_fermion_coupling_proxy_source_audit_summary.json",
+    "phase310Path": "studies/phase310_completion_variational_branch_to_wz_normalization_audit_001/output/completion_variational_branch_to_wz_normalization_audit_summary.json",
+    "phase322Path": "studies/phase322_higgs_upsilon_scalar_source_boundary_audit_001/output/higgs_upsilon_scalar_source_boundary_audit_summary.json",
+    "phase323Path": "studies/phase323_coupled_yang_mills_higgs_mass_extraction_audit_001/output/coupled_yang_mills_higgs_mass_extraction_audit_summary.json",
+    "phase355Path": "studies/phase355_dirac_lichnerowicz_yang_mills_higgs_source_audit_001/output/dirac_lichnerowicz_yang_mills_higgs_source_audit_summary.json"
+  }
+}

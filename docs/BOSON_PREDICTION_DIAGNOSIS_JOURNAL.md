@@ -11715,6 +11715,114 @@ lineage, a mass-scale source, pole extraction, and GeV normalization.
   `xUnit2013` collection-size warning in
   `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
 
+## 2026-05-30 - Phase370 Completion Fermionic/Yukawa-Higgs Mixed-Linearization Source Audit
+
+### Context
+
+After Phase369 preserved the Weyl-conformal Stueckelberg route as an external
+template rather than a GU source law, I returned to the local completion v29
+document and the official GU draft. The strongest remaining GU-local lead is
+the fermionic variational / Yukawa-Higgs mixed-linearization route. It is
+relevant to the Higgs source-lineage problem because the official draft places
+Higgs-potential and Yukawa-coupling structures in the fermionic architecture.
+
+### Sources Reviewed
+
+- Official Geometric Unity draft:
+  `https://geometricunity.nyc3.digitaloceanspaces.com/Geometric_Unity-Draft-April-1st-2021.pdf`
+  - Section 9.3 gives the fermionic-sector architecture.
+  - The appendix locates Higgs-potential and Yukawa-coupling structures in the
+    GU program.
+- Official Oxford transcript:
+  `https://geometricunity.org/2013-oxford-lecture/`
+  - The Dirac-square discussion supplies GU-native equation-program context,
+    not a replayable physical Higgs mass row.
+- External generalized Dirac / Dirac-Yukawa templates:
+  `https://arxiv.org/abs/hep-th/9503153` and
+  `https://arxiv.org/abs/hep-th/9612149`.
+  - These support the operator-template direction but do not supply a GU-local
+    scalar source lineage.
+- Local completion working document:
+  `TheoryCompletitionRevisions/Geometric_Unity_Completion_Reorganized_Updated_v29.md`.
+  - Lines 4772 and 4782 preserve the mass-generation/Yukawa gap.
+  - Lines 12362-12380 type the fermionic variational placeholder.
+  - Lines 12396-12398 preserve `VO-6` and `VO-7`.
+  - Line 12465 excludes fermionic coupling from the first executable branch.
+
+### Agent Review
+
+- Launched a read-only explorer agent to independently inspect whether the v29
+  fermionic/Yukawa route can fill Phase201 Higgs fields.
+- The agent edited no files.
+- It concluded that the defensible Phase201 Higgs fill set is empty: `[]`.
+- Its blocking reasons are the missing explicit Yukawa functional, coupled
+  residual, mixed-linearization blocks, mixed-block gauge identities, scalar
+  projection theorem, scalar normalization source, Higgs identity envelope,
+  massive scalar profile, and potential or excitation relation.
+- It also concluded that this route does not supply a direct target-independent
+  W/Z absolute-mass theorem.
+
+### Action
+
+- Added
+  `studies/phase370_completion_fermionic_yukawa_higgs_mixed_linearization_source_audit_001`.
+- Added the detailed reference note
+  `docs/Reference/ExperimentReferences/LOCAL-COMPLETION-V29-FERMIONIC-YUKAWA.md`
+  and linked it from `ExperimentReferences.md`.
+- Wired Phase370 into the generator, P101 package, P202 objective-completion
+  checklist, integrity verifier, and affected scanner exclusions.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P370.md`.
+
+### Targeted Validation
+
+- Targeted Phase370 run passed with
+  `completionFermionicYukawaHiggsMixedLinearizationSourceAuditPassed=true`,
+  `completionTypedPlaceholderEvidencePresent=true`,
+  `completionRecordsVo7CoupledMixedLinearizationObligation=true`,
+  `routeProvidesHiggsScalarSourceOperator=false`,
+  `routePromotesHiggsMass=false`,
+  `canFillPhase201HiggsContract=false`, and
+  `phase201HiggsFieldsDefensiblyFilledCount=0`.
+- P101 package build passed and remains
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- P202 objective audit remains incomplete with
+  `objectiveAchieved=false`, `checklistPassedCount=163`, and
+  `checklistFailedCount=3`.
+- P204, P205, P207, P279, P281, P295, and P296 targeted reruns passed.
+  - P204 and P205 preserve zero intake-ready source-lineage evidence.
+  - P207 preserves zero intake-ready Higgs quartic/self-coupling findings.
+  - P279 and P281 preserve zero local-search matches.
+  - P295 and P296 preserve zero intake-ready contract artifacts.
+- `./scripts/verify_boson_claim_integrity.sh` passed with
+  `sourceLineageMissing=true`, `wzMissingFieldCount=15`,
+  `higgsMissingFieldCount=14`, and `promotedPhysicalMassClaimCount=0`.
+
+### Full Validation
+
+- `ExperimentReferences.md` link check passed with `detailLinkCount=49` and
+  `missingDetailCount=0`.
+- `./scripts/generate_validated_boson_predictions.sh` passed with Phase370
+  included and ended with:
+  - `objectiveAchieved=false`
+  - `checklistPassedCount=163`
+  - `checklistFailedCount=3`
+  - `sourceLineageMissing=true`
+  - `wzMissingFieldCount=15`
+  - `higgsMissingFieldCount=14`
+  - `promotedPhysicalMassClaimCount=0`
+- `dotnet test GeometricUnity.slnx` passed; the only warning was the existing
+  `xUnit2013` collection-size warning in
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
+
+### Decision
+
+Do not claim a successful prediction from the v29 fermionic/Yukawa route. It is
+a concrete next derivation program, but currently remains a typed scaffold. A
+promotion attempt requires a fixed GU fermionic operator branch, explicit
+Yukawa functional, coupled residual and mixed Hessian blocks, corrected-gauge
+identities, scalar extraction theorem, normalization source, observed-field
+rows, pole extraction, and GeV lineage.
+
 ## 2026-05-27 - Phase369 Weyl Conformal SM/Stueckelberg Source Audit
 
 ### Context

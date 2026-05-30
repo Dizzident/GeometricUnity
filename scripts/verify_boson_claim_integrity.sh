@@ -139,6 +139,7 @@ const paths = {
   phase367: "studies/phase367_theta_omega_source_equation_availability_audit_001/output/theta_omega_source_equation_availability_audit_summary.json",
   phase368: "studies/phase368_oxford_inhomogeneous_gauge_equation_bridge_audit_001/output/oxford_inhomogeneous_gauge_equation_bridge_audit_summary.json",
   phase369: "studies/phase369_weyl_conformal_sm_stueckelberg_source_audit_001/output/weyl_conformal_sm_stueckelberg_source_audit_summary.json",
+  phase370: "studies/phase370_completion_fermionic_yukawa_higgs_mixed_linearization_source_audit_001/output/completion_fermionic_yukawa_higgs_mixed_linearization_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -349,6 +350,7 @@ const phase366 = requireFile(paths.phase366);
 const phase367 = requireFile(paths.phase367);
 const phase368 = requireFile(paths.phase368);
 const phase369 = requireFile(paths.phase369);
+const phase370 = requireFile(paths.phase370);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -3927,6 +3929,52 @@ if (sourceLineageMissing) {
   assert(phase369.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase369 W/Z missing-field count must match Phase213.");
   assert(phase369.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase369 Higgs missing-field count must match Phase213.");
   assert(phase369.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase369 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase370.completionFermionicYukawaHiggsMixedLinearizationSourceAuditPassed === true, "Phase370 completion fermionic/Yukawa/Higgs mixed-linearization audit must pass while preserving non-promotional status.");
+  assert(phase370.officialDraftFermionicSectorArchitecturePresent === true, "Phase370 must record the official GU fermionic architecture.");
+  assert(phase370.officialDraftLocatesHiggsPotentialInUpsilonNorm === true, "Phase370 must record the official GU Higgs-potential location.");
+  assert(phase370.officialDraftLocatesYukawaCouplingsAsObservedVev === true, "Phase370 must record the official GU Yukawa-coupling location.");
+  assert(phase370.completionTypedPlaceholderEvidencePresent === true, "Phase370 must record the local completion placeholder evidence.");
+  assert(phase370.completionProvidesTypedFermionicActionTemplate === true, "Phase370 must record the typed fermionic-action template.");
+  assert(phase370.completionRecordsYukawaLikeLowerOrderTermPlaceholder === true, "Phase370 must record the Yukawa-like placeholder.");
+  assert(phase370.completionRecordsVo7CoupledMixedLinearizationObligation === true, "Phase370 must record the VO-7 mixed-linearization obligation.");
+  assert(phase370.completionExecutableBranchIncludesFermionicCoupling === false, "Phase370 cannot claim the executable branch includes fermionic coupling.");
+  assert(phase370.routeProvidesCompletedFermionicAction === false, "Phase370 cannot claim a completed fermionic action.");
+  assert(phase370.routeProvidesFixedFermionicOperatorBranch === false, "Phase370 cannot claim a fixed fermionic operator branch.");
+  assert(phase370.routeProvidesExplicitYukawaFunctional === false, "Phase370 cannot claim an explicit Yukawa functional.");
+  assert(phase370.routeProvidesSolvedYukawaCouplingMap === false, "Phase370 cannot claim a solved Yukawa coupling map.");
+  assert(phase370.routeProvidesCoupledResidual === false, "Phase370 cannot claim a coupled residual.");
+  assert(phase370.routeProvidesCompletedMixedLinearizationBlocks === false, "Phase370 cannot claim completed mixed-linearization blocks.");
+  assert(phase370.routeProvidesMixedLinearizationGaugeCompatibilityIdentities === false, "Phase370 cannot claim mixed-block corrected-gauge identities.");
+  assert(phase370.routeProvidesDirectTargetIndependentWzBridgeSourceLaw === false, "Phase370 cannot claim a direct target-independent W/Z bridge law.");
+  assert(phase370.routeProvidesSeparateWzSourceRows === false, "Phase370 cannot claim separate W/Z source rows.");
+  assert(phase370.routeProvidesTargetIndependentGuVevSource === false, "Phase370 cannot claim a target-independent GU VEV source.");
+  assert(phase370.routeProvidesObservedPhotonWzHiggsProjectionRows === false, "Phase370 cannot claim observed photon/W/Z/H rows.");
+  assert(phase370.routeProvidesGuObservedFieldExtraction === false, "Phase370 cannot claim GU observed-field extraction.");
+  assert(phase370.routeProvidesHiggsScalarSourceOperator === false, "Phase370 cannot claim a Higgs scalar-source operator.");
+  assert(phase370.routeProvidesScalarProjectionTheorem === false, "Phase370 cannot claim a scalar projection theorem.");
+  assert(phase370.routeProvidesScalarNormalizationSource === false, "Phase370 cannot claim a scalar normalization source.");
+  assert(phase370.routeProvidesHiggsIdentityEnvelope === false, "Phase370 cannot claim a Higgs identity envelope.");
+  assert(phase370.routeProvidesMassiveScalarProfile === false, "Phase370 cannot claim a massive scalar profile.");
+  assert(phase370.routeProvidesHiggsQuarticOrExcitationSource === false, "Phase370 cannot claim a Higgs quartic or excitation source.");
+  assert(phase370.routeProvidesPoleMassExtraction === false, "Phase370 cannot claim pole-mass extraction.");
+  assert(phase370.routeProvidesGeVUnitNormalization === false, "Phase370 cannot claim GeV normalization.");
+  assert(phase370.routePromotesWzMasses === false, "Phase370 cannot promote W/Z masses.");
+  assert(phase370.routePromotesHiggsMass === false, "Phase370 cannot promote Higgs mass.");
+  assert(phase370.routeCompletesBosonPredictions === false, "Phase370 cannot complete boson predictions.");
+  assert(phase370.canFillPhase201WzContract === false, "Phase370 cannot fill the Phase201 W/Z contract.");
+  assert(phase370.canFillPhase201HiggsContract === false, "Phase370 cannot fill the Phase201 Higgs contract.");
+  assert(phase370.canFillPhase256ObservedFieldExtractionContract === false, "Phase370 cannot fill the Phase256 observed-field contract.");
+  assert(Array.isArray(phase370.phase201HiggsFieldsDefensiblyFilled) && phase370.phase201HiggsFieldsDefensiblyFilled.length === 0, "Phase370 must record an empty defensible Phase201 Higgs fill set.");
+  assert(phase370.sourceRowCount === 4, "Phase370 must preserve four source rows.");
+  assert(phase370.adjacentRouteBoundary?.phase237?.p237CoxIiHiggsYukawaTextureDependencyAuditPassed === true, "Phase370 must inherit the Phase237 Cox II Yukawa-texture boundary.");
+  assert(phase370.adjacentRouteBoundary?.phase256?.p256ObservedFieldExtractionIntakeContractPassed === true, "Phase370 must inherit the Phase256 observed-field intake boundary.");
+  assert(phase370.contractImpact?.canFillPhase201WzContract === false, "Phase370 contract impact must keep Phase201 W/Z unfilled.");
+  assert(phase370.contractImpact?.canFillPhase201HiggsContract === false, "Phase370 contract impact must keep Phase201 Higgs unfilled.");
+  assert(phase370.contractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase370 contract impact must keep Phase256 unfilled.");
+  assert(Array.isArray(phase370.contractImpact?.phase201HiggsFieldsDefensiblyFilled) && phase370.contractImpact.phase201HiggsFieldsDefensiblyFilled.length === 0, "Phase370 contract impact must preserve the empty Higgs fill set.");
+  assert(phase370.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase370 W/Z missing-field count must match Phase213.");
+  assert(phase370.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase370 Higgs missing-field count must match Phase213.");
+  assert(phase370.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase370 must preserve that observed-field extraction has no filled required fields.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");
