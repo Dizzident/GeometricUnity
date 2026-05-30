@@ -140,6 +140,7 @@ const paths = {
   phase368: "studies/phase368_oxford_inhomogeneous_gauge_equation_bridge_audit_001/output/oxford_inhomogeneous_gauge_equation_bridge_audit_summary.json",
   phase369: "studies/phase369_weyl_conformal_sm_stueckelberg_source_audit_001/output/weyl_conformal_sm_stueckelberg_source_audit_summary.json",
   phase370: "studies/phase370_completion_fermionic_yukawa_higgs_mixed_linearization_source_audit_001/output/completion_fermionic_yukawa_higgs_mixed_linearization_source_audit_summary.json",
+  phase371: "studies/phase371_discrete_connection_dirac_first_variation_coverage_audit_001/output/discrete_connection_dirac_first_variation_coverage_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -351,6 +352,7 @@ const phase367 = requireFile(paths.phase367);
 const phase368 = requireFile(paths.phase368);
 const phase369 = requireFile(paths.phase369);
 const phase370 = requireFile(paths.phase370);
+const phase371 = requireFile(paths.phase371);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -3975,6 +3977,37 @@ if (sourceLineageMissing) {
   assert(phase370.contractImpact?.wzMissingFieldCount === missingWzFields, "Phase370 W/Z missing-field count must match Phase213.");
   assert(phase370.contractImpact?.higgsMissingFieldCount === missingHiggsFields, "Phase370 Higgs missing-field count must match Phase213.");
   assert(phase370.contractImpact?.observedFieldExtractionFilledRequiredFieldCount === 0, "Phase370 must preserve that observed-field extraction has no filled required fields.");
+  assert(phase371.discreteConnectionDiracFirstVariationCoverageAuditPassed === true, "Phase371 discrete connection-to-Dirac first-variation coverage audit must pass while preserving non-promotional status.");
+  assert(phase371.phase120SelectedModeParityPresent === true, "Phase371 must inherit the selected-mode Phase120 analytic parity evidence.");
+  assert(phase371.phase273FiniteDifferenceProxyBoundaryPresent === true, "Phase371 must inherit the Phase273 finite-difference proxy boundary.");
+  assert(phase371.phase370Vo7BoundaryPresent === true, "Phase371 must inherit the Phase370 VO-7 boundary.");
+  assert(phase371.discreteConnectionToDiracFirstVariationCoverageMaterialized === true, "Phase371 must materialize discrete connection-to-Dirac first-variation coverage.");
+  assert(phase371.discreteConnectionToDiracFirstVariationIsVo7BuildingBlock === true, "Phase371 must classify the implemented first variation as a VO-7 building block.");
+  assert(phase371.discreteConnectionToDiracFirstVariationCompletesVo7 === false, "Phase371 cannot claim to complete VO-7.");
+  assert(phase371.expectedCoveragePresent === true, "Phase371 must cover the expected persisted Phase12 variation corpus.");
+  assert(phase371.matrixShapesConsistent === true, "Phase371 variation matrices must have consistent square shapes.");
+  assert(phase371.variationCount === 24, "Phase371 must cover 24 persisted Phase12 variations.");
+  assert(phase371.backgroundCount === 2, "Phase371 must cover two persisted Phase12 backgrounds.");
+  assert(phase371.analyticParityPassedCount === 24, "Phase371 must pass analytical replay parity for all 24 variations.");
+  assert(phase371.hermiticityPassedCount === 24, "Phase371 must pass Hermiticity checks for all 24 variations.");
+  assert(phase371.responseArtifactCount === 24, "Phase371 must materialize 24 target-blind response artifacts.");
+  assert(phase371.responseParityPassedCount === 24, "Phase371 must pass target-blind response parity for all 24 variations.");
+  assert(phase371.routeProvidesCompletedFermionicAction === false, "Phase371 cannot claim a completed fermionic action.");
+  assert(phase371.routeProvidesExplicitYukawaFunctional === false, "Phase371 cannot claim an explicit Yukawa functional.");
+  assert(phase371.routeProvidesCoupledResidual === false, "Phase371 cannot claim a coupled residual.");
+  assert(phase371.routeProvidesCompletedMixedLinearizationBlocks === false, "Phase371 cannot claim completed mixed-linearization blocks.");
+  assert(phase371.routeProvidesMixedLinearizationGaugeCompatibilityIdentities === false, "Phase371 cannot claim mixed-block corrected-gauge identities.");
+  assert(phase371.routeProvidesDirectTargetIndependentWzBridgeSourceLaw === false, "Phase371 cannot claim a direct target-independent W/Z bridge law.");
+  assert(phase371.routeProvidesHiggsScalarSourceOperator === false, "Phase371 cannot claim a Higgs scalar-source operator.");
+  assert(phase371.routeProvidesScalarProjectionTheorem === false, "Phase371 cannot claim a scalar projection theorem.");
+  assert(phase371.routeProvidesGeVUnitNormalization === false, "Phase371 cannot claim GeV normalization.");
+  assert(phase371.routePromotesWzMasses === false, "Phase371 cannot promote W/Z masses.");
+  assert(phase371.routePromotesHiggsMass === false, "Phase371 cannot promote Higgs mass.");
+  assert(phase371.routeCompletesBosonPredictions === false, "Phase371 cannot complete boson predictions.");
+  assert(phase371.canFillPhase201WzContract === false, "Phase371 cannot fill the Phase201 W/Z contract.");
+  assert(phase371.canFillPhase201HiggsContract === false, "Phase371 cannot fill the Phase201 Higgs contract.");
+  assert(phase371.canFillPhase256ObservedFieldExtractionContract === false, "Phase371 cannot fill the Phase256 observed-field contract.");
+  assert(Array.isArray(phase371.predictionContractImpact?.phase201FieldsDefensiblyFilled) && phase371.predictionContractImpact.phase201FieldsDefensiblyFilled.length === 0, "Phase371 must preserve an empty defensible Phase201 fill set.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

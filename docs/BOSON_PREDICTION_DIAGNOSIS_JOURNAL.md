@@ -11715,6 +11715,126 @@ lineage, a mass-scale source, pole extraction, and GeV normalization.
   `xUnit2013` collection-size warning in
   `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
 
+## 2026-05-30 - Phase371 Discrete Connection-to-Dirac First-Variation Coverage Audit
+
+### Context
+
+Phase370 established that the local completion v29 document contains a typed
+fermionic/Yukawa placeholder and assigns the coupled boson-fermion
+mixed-linearization blocks plus gauge-compatibility identities to unfinished
+`VO-7`. The next question was whether the repository already contains a
+bounded implementable precursor rather than only a source-level obligation.
+
+An explorer agent independently inventoried the code and recommended the same
+narrow precursor: validate the implemented discrete connection-to-Dirac
+variation and persist target-blind response diagnostics without calling the
+result a completed coupled Hessian.
+
+### Sources Reviewed
+
+- Official GU draft:
+  `https://geometricunity.nyc3.digitaloceanspaces.com/Geometric_Unity-Draft-April-1st-2021.pdf`.
+- Ackermann and Tolksdorf generalized Lichnerowicz paper:
+  `https://arxiv.org/abs/hep-th/9503153`.
+- Ackermann and Tolksdorf gravity/Yang-Mills-Higgs unification letter:
+  `https://arxiv.org/abs/hep-th/9503180`.
+- Tolksdorf Dirac-Yukawa paper:
+  `https://arxiv.org/abs/hep-th/9612149`.
+- Local completion v29 fermionic/Yukawa passages:
+  `TheoryCompletitionRevisions/Geometric_Unity_Completion_Reorganized_Updated_v29.md`.
+
+### Diagnosis Before Edit
+
+- The official GU draft section 9.3 equations `9.18-9.20` compile bosonic and
+  fermionic variations into a mixed Upsilon expression.
+- The draft then frames the deformation-complex program in equations
+  `9.21-9.22` and section 10.
+- The local v29 completion document keeps the precise coupled mixed blocks and
+  gauge-compatibility identities under unfinished `VO-7`.
+- The repository already implements an SU(2) discrete
+  `delta D / delta omega[b_k]` operator variation and persists 24 Phase12
+  finite-difference variation bundles: 12 modes on each of two backgrounds.
+- Phase120 checked only two selected W/Z-like directions. A full all-mode
+  coverage audit and response workbench were still missing.
+
+### Action
+
+- Added
+  `studies/phase371_discrete_connection_dirac_first_variation_coverage_audit_001`.
+- Recomputed the analytical discrete connection-to-Dirac first variation for
+  all 24 persisted Phase12 branch-local bosonic mode directions.
+- Compared every analytical matrix against its persisted finite-difference
+  matrix and checked Hermiticity.
+- Persisted 24 target-blind response sidecars using the minimum-index
+  branch-local fermion mode:
+  `delta_D[b_k] phi_j`.
+- Persisted analytical and finite-difference response vectors, SHA-256 hashes,
+  norms, and the 12 branch-local bilinear projections
+  `<phi_i, delta_D[b_k] phi_j>` for each response sidecar.
+- Wired Phase371 into the generator, P101 package, P202 objective audit,
+  claim-integrity verifier, and generated-diagnostic scanner exclusions.
+- Updated the GU draft, local completion v29, and external
+  Dirac/Lichnerowicz/Yang-Mills/Higgs linked reference notes.
+
+### Targeted Outcome
+
+Phase371 passed:
+
+- `discreteConnectionDiracFirstVariationCoverageAuditPassed=true`.
+- `discreteConnectionToDiracFirstVariationCoverageMaterialized=true`.
+- `variationCount=24`.
+- `analyticParityPassedCount=24`.
+- `hermiticityPassedCount=24`.
+- `responseArtifactCount=24`.
+- `responseParityPassedCount=24`.
+- `maxUnitScaleRelativeResidual=1.858480441423612E-12`.
+- `maxBestFitRelativeResidual=1.849134455140006E-12`.
+- `maxResponseRelativeResidual=2.157933267014728E-12`.
+- `maxSelectedProjectionRelativeResidual=4.1117298383234736E-11`.
+
+### Decision
+
+Treat Phase371 as one implemented `VO-7` building block only. It does not
+provide a fixed GU fermionic operator branch, explicit Yukawa functional,
+solved coupling map, coupled residual, reciprocal fermion-to-boson
+backreaction block, remaining mixed blocks, gauge-compatibility identities,
+scalar projection theorem, observed photon/W/Z/H extraction, pole extraction,
+or GeV normalization. It fills zero Phase201 and Phase256 prediction fields and
+does not promote W/Z or Higgs masses.
+
+The persisted Phase12 sidecars use `epsilon=1e-5`. An epsilon-ladder rerun is a
+remaining diagnostic extension, not evidence currently claimed by Phase371.
+
+### Validation
+
+- Targeted Phase371 run passed with `variationCount=24`,
+  `analyticParityPassedCount=24`, `hermiticityPassedCount=24`,
+  `responseArtifactCount=24`, and `responseParityPassedCount=24`.
+- P101 package regeneration passed and includes the Phase371 block.
+- P202 objective audit remained incomplete as required:
+  `objectiveAchieved=false`, `checklistPassedCount=164`, and
+  `checklistFailedCount=3`.
+- Scanner reruns preserved the negative intake boundary:
+  P204 `intakeReadyCandidateCount=0`,
+  P205 `intakeReadyFindingCount=0`,
+  P207 `intakeReadyFindingCount=0`,
+  P279 `localSearchMatchingFileCount=0`,
+  P281 `localSearchMatchingFileCount=0`,
+  P295 `intakeReadyObservedFieldExtractionCandidateCount=0`, and
+  P296 `intakeReadySourceLineageFieldCandidateCount=0`.
+- Claim-integrity verification passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed with
+  Phase371 included.
+- `dotnet test tests/Gu.Phase4.Couplings.Tests/Gu.Phase4.Couplings.Tests.csproj`
+  passed with `15/15` tests.
+- `dotnet test GeometricUnity.slnx` passed; the only warning was the existing
+  `xUnit2013` collection-size warning in
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
+- Reference link check passed with `detailLinkCount=51` and no missing details.
+- `git diff --check` passed.
+
 ## 2026-05-30 - Phase370 Completion Fermionic/Yukawa-Higgs Mixed-Linearization Source Audit
 
 ### Context

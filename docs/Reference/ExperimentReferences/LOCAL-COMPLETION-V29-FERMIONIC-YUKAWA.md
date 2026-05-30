@@ -29,6 +29,10 @@ outside the first executable numerical branch.
 - Compared the v29 passages against the official GU Higgs/Upsilon audits,
   coupling-proxy boundary, coupled Yang-Mills/Higgs boundary, external
   Dirac-Yukawa template, Phase201 intake contract, and Phase213 blocker matrix.
+- Added Phase371 to materialize the existing discrete connection-to-Dirac first
+  variation across all persisted Phase12 branch-local mode directions. Phase371
+  treats that operator variation as one `VO-7` precursor and preserves the
+  distinction between implemented software and the missing coupled Hessian.
 
 ## Prediction Relevance
 
@@ -49,7 +53,9 @@ not merely the typed placeholders.
 
 ## Follow-Up
 
-- Implement a coupled boson-fermion mixed-linearization experiment only after a
-  fixed GU fermionic operator branch and Yukawa-like coupling map are supplied.
+- Extend the Phase371 precursor with an epsilon ladder, reciprocal
+  fermion-to-boson backreaction block, and gauge-compatibility identities only
+  after a fixed GU fermionic operator branch and Yukawa-like coupling map are
+  supplied.
 - Require an explicit scalar extraction theorem and stability evidence before
   applying the result to the Phase201 Higgs intake contract.

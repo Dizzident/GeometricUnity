@@ -28,6 +28,11 @@ mirrors are merely search aids or can support promotion-ready claims.
   assumptions.
 - Supported negative audits that found context but not a complete W/Z/H mass
   derivation.
+- Supported Phase371's claim boundary: section 9.3 equations `9.18-9.20`
+  compile bosonic and fermionic variations into a mixed Upsilon expression,
+  while equations `9.21-9.22` and section 10 frame the deformation-complex
+  program. Phase371 implements only a discrete connection-to-Dirac
+  first-variation precursor, not that full coupled program.
 
 ## Prediction Relevance
 
