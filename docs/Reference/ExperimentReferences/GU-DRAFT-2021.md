@@ -33,6 +33,18 @@ mirrors are merely search aids or can support promotion-ready claims.
   while equations `9.21-9.22` and section 10 frame the deformation-complex
   program. Phase371 implements only a discrete connection-to-Dirac
   first-variation precursor, not that full coupled program.
+- Supported Phase372's bounded reciprocal-source experiment. Section 9.3
+  equations `9.16-9.20` describe a Dirac-like spinorial operator and compile
+  its bosonic and fermionic variations into mixed `Upsilon` terms. Equation
+  `10.5` places those terms in the proposed deformation-complex equation.
+  Phase372 tests only a local discrete Hermitian-bilinear control candidate.
+- Preserved the primary-source caveat: the diagram following equation `10.10`
+  is carried over from an older version and may remain inconsistent until
+  stabilized. It cannot be treated as a completed mixed-block theorem.
+- Preserved Phase373's claim boundary: the local `K`, `A=M_psi^-1 K`, and
+  `B=M_psi^-1/2 K M_psi^-1/2` distinction repairs a discrete representation
+  mismatch only. It is not supplied by the draft as a stabilized physical
+  fermionic branch.
 
 ## Prediction Relevance
 

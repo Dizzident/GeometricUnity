@@ -1,0 +1,1652 @@
+{
+  "variationId": "variation-bg-phase12-bg-a-20260315212202-candidate-5",
+  "fermionBackgroundId": "bg-phase12-bg-a-20260315212202",
+  "bosonModeId": "bg-phase12-bg-a-20260315212202-mode-5",
+  "persistedVariationMetadataPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-a-20260315212202-candidate-5.json",
+  "persistedVariationMatrixPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-a-20260315212202-candidate-5.matrix.json",
+  "analyticVariationSource": "Gu.Phase4.Couplings.DiracVariationComputer.ComputeAnalytical",
+  "persistedConvention": {
+    "kIsEuclideanHermitian": true,
+    "kEuclideanHermiticityRelativeResidual": 0,
+    "rawKMisreadAsOperatorIsMSelfAdjoint": false,
+    "rawKMisreadAsOperatorMAdjointRelativeResidual": 0.6950552112754992,
+    "aIsMSelfAdjoint": true,
+    "amAdjointRelativeResidual": 1.9420972760516458E-17,
+    "bIsEuclideanHermitian": true,
+    "bEuclideanHermiticityRelativeResidual": 0,
+    "bSimilarityIdentityPassed": true,
+    "bSimilarityIdentityRelativeResidual": 6.75473453447288E-17,
+    "allTransformedIdentitiesPassed": true
+  },
+  "analyticConvention": {
+    "kIsEuclideanHermitian": true,
+    "kEuclideanHermiticityRelativeResidual": 0,
+    "rawKMisreadAsOperatorIsMSelfAdjoint": false,
+    "rawKMisreadAsOperatorMAdjointRelativeResidual": 0.6950552112754957,
+    "aIsMSelfAdjoint": true,
+    "amAdjointRelativeResidual": 2.712146000202506E-17,
+    "bIsEuclideanHermitian": true,
+    "bEuclideanHermiticityRelativeResidual": 0,
+    "bSimilarityIdentityPassed": true,
+    "bSimilarityIdentityRelativeResidual": 9.120419784643479E-17,
+    "allTransformedIdentitiesPassed": true
+  },
+  "analyticPersistedRelativeResidual": 1.0691649475724092E-12,
+  "analyticPersistedParityPassed": true,
+  "directionalCheckCount": 12,
+  "directionalIdentityPassedCount": 12,
+  "maxDirectionalPairingIdentityScaleAwareResidual": 5.647850449853784E-17,
+  "maxDirectionalCentralDerivativeScaleAwareResidual": 2.4293705935818366E-11,
+  "transformedVariationIdentityPassed": true,
+  "directions": [
+    {
+      "chiModeId": "mode-bg-phase12-bg-a-20260315212202-000",
+      "chiModeIndex": 0,
+      "psiSourceModeId": "mode-bg-phase12-bg-a-20260315212202-000",
+      "psiSourceModeIndex": 0,
+      "persisted": {
+        "weightedOperatorPairing": {},
+        "stiffnessPairing": {},
+        "weightedOperatorToStiffnessPairingScaleAwareResidual": 2.1624330111175838E-17,
+        "weightedOperatorToStiffnessPairingIdentityPassed": true,
+        "reciprocalPartnerPairing": {},
+        "reciprocalRealFormDirectionalDerivative": 0.06814131553202385,
+        "hermitianRealFormShortcutDirectionalDerivative": 0.06814131553202385,
+        "reciprocalRealFormScaleAwareResidual": 0,
+        "reciprocalRealFormIdentityPassed": true,
+        "centralDerivativeLadder": [
+          {
+            "epsilon": 0.01,
+            "actionAtPsiPlusEpsilonChi": 0.0347554779871088,
+            "actionAtPsiMinusEpsilonChi": 0.03339265167646832,
+            "centralDerivative": 0.06814131553202381,
+            "expectedReciprocalDirectionalDerivative": 0.06814131553202385,
+            "scaleAwareResidual": 4.163336342344337E-17,
+            "passed": true
+          },
+          {
+            "epsilon": 0.001,
+            "actionAtPsiPlusEpsilonChi": 0.03413883315220173,
+            "actionAtPsiMinusEpsilonChi": 0.03400255052113769,
+            "centralDerivative": 0.06814131553202138,
+            "expectedReciprocalDirectionalDerivative": 0.06814131553202385,
+            "scaleAwareResidual": 2.4702462297909733E-15,
+            "passed": true
+          },
+          {
+            "epsilon": 0.0001,
+            "actionAtPsiPlusEpsilonChi": 0.03407747223827176,
+            "actionAtPsiMinusEpsilonChi": 0.03406384397516534,
+            "centralDerivative": 0.06814131553210118,
+            "expectedReciprocalDirectionalDerivative": 0.06814131553202385,
+            "scaleAwareResidual": 7.732703366514215E-14,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-05,
+            "actionAtPsiPlusEpsilonChi": 0.03407133918257436,
+            "actionAtPsiMinusEpsilonChi": 0.03406997635626371,
+            "centralDerivative": 0.06814131553248282,
+            "expectedReciprocalDirectionalDerivative": 0.06814131553202385,
+            "scaleAwareResidual": 4.589661983800397E-13,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-06,
+            "actionAtPsiPlusEpsilonChi": 0.03407072590736155,
+            "actionAtPsiMinusEpsilonChi": 0.03407058962473048,
+            "centralDerivative": 0.06814131553456448,
+            "expectedReciprocalDirectionalDerivative": 0.06814131553202385,
+            "scaleAwareResidual": 2.5406343695522082E-12,
+            "passed": true
+          }
+        ],
+        "maxCentralDerivativeScaleAwareResidual": 2.5406343695522082E-12,
+        "centralDerivativeIdentityPassed": true,
+        "allDirectionalIdentitiesPassed": true
+      },
+      "analytic": {
+        "weightedOperatorPairing": {},
+        "stiffnessPairing": {},
+        "weightedOperatorToStiffnessPairingScaleAwareResidual": 1.4014335379738203E-17,
+        "weightedOperatorToStiffnessPairingIdentityPassed": true,
+        "reciprocalPartnerPairing": {},
+        "reciprocalRealFormDirectionalDerivative": 0.06814131553211566,
+        "hermitianRealFormShortcutDirectionalDerivative": 0.06814131553211566,
+        "reciprocalRealFormScaleAwareResidual": 0,
+        "reciprocalRealFormIdentityPassed": true,
+        "centralDerivativeLadder": [
+          {
+            "epsilon": 0.01,
+            "actionAtPsiPlusEpsilonChi": 0.03475547798715559,
+            "actionAtPsiMinusEpsilonChi": 0.03339265167651328,
+            "centralDerivative": 0.06814131553211575,
+            "expectedReciprocalDirectionalDerivative": 0.06814131553211566,
+            "scaleAwareResidual": 8.326672684688674E-17,
+            "passed": true
+          },
+          {
+            "epsilon": 0.001,
+            "actionAtPsiPlusEpsilonChi": 0.03413883315224773,
+            "actionAtPsiMinusEpsilonChi": 0.034002550521183464,
+            "centralDerivative": 0.0681413155321324,
+            "expectedReciprocalDirectionalDerivative": 0.06814131553211566,
+            "scaleAwareResidual": 1.6736612096224235E-14,
+            "passed": true
+          },
+          {
+            "epsilon": 0.0001,
+            "actionAtPsiPlusEpsilonChi": 0.034077472238317606,
+            "actionAtPsiMinusEpsilonChi": 0.034063843975211214,
+            "centralDerivative": 0.0681413155319624,
+            "expectedReciprocalDirectionalDerivative": 0.06814131553211566,
+            "scaleAwareResidual": 1.5326628854950286E-13,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-05,
+            "actionAtPsiPlusEpsilonChi": 0.034071339182620224,
+            "actionAtPsiMinusEpsilonChi": 0.03406997635630955,
+            "centralDerivative": 0.06814131553352365,
+            "expectedReciprocalDirectionalDerivative": 0.06814131553211566,
+            "scaleAwareResidual": 1.4079848398296235E-12,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-06,
+            "actionAtPsiPlusEpsilonChi": 0.034070725907407416,
+            "actionAtPsiMinusEpsilonChi": 0.034070589624776375,
+            "centralDerivative": 0.0681413155206867,
+            "expectedReciprocalDirectionalDerivative": 0.06814131553211566,
+            "scaleAwareResidual": 1.1428968882398749E-11,
+            "passed": true
+          }
+        ],
+        "maxCentralDerivativeScaleAwareResidual": 1.1428968882398749E-11,
+        "centralDerivativeIdentityPassed": true,
+        "allDirectionalIdentitiesPassed": true
+      },
+      "analyticPersistedPairingScaleAwareResidual": 4.590772480821729E-14,
+      "analyticPersistedDerivativeScaleAwareResidual": 9.181544413650045E-14,
+      "analyticPersistedDirectionalParityPassed": true,
+      "maxPairingIdentityScaleAwareResidual": 2.1624330111175838E-17,
+      "maxCentralDerivativeScaleAwareResidual": 1.1428968882398749E-11,
+      "transformedDirectionalIdentityPassed": true
+    },
+    {
+      "chiModeId": "mode-bg-phase12-bg-a-20260315212202-001",
+      "chiModeIndex": 1,
+      "psiSourceModeId": "mode-bg-phase12-bg-a-20260315212202-000",
+      "psiSourceModeIndex": 0,
+      "persisted": {
+        "weightedOperatorPairing": {},
+        "stiffnessPairing": {},
+        "weightedOperatorToStiffnessPairingScaleAwareResidual": 3.469446951953614E-18,
+        "weightedOperatorToStiffnessPairingIdentityPassed": true,
+        "reciprocalPartnerPairing": {},
+        "reciprocalRealFormDirectionalDerivative": 0.008817327726267261,
+        "hermitianRealFormShortcutDirectionalDerivative": 0.00881732772626725,
+        "reciprocalRealFormScaleAwareResidual": 1.214306433183765E-17,
+        "reciprocalRealFormIdentityPassed": true,
+        "centralDerivativeLadder": [
+          {
+            "epsilon": 0.01,
+            "actionAtPsiPlusEpsilonChi": 0.03415941242975835,
+            "actionAtPsiMinusEpsilonChi": 0.033983065875233,
+            "centralDerivative": 0.008817327726267504,
+            "expectedReciprocalDirectionalDerivative": 0.008817327726267261,
+            "scaleAwareResidual": 2.42861286636753E-16,
+            "passed": true
+          },
+          {
+            "epsilon": 0.001,
+            "actionAtPsiPlusEpsilonChi": 0.03407948090760304,
+            "actionAtPsiMinusEpsilonChi": 0.03406184625215053,
+            "centralDerivative": 0.008817327726253626,
+            "expectedReciprocalDirectionalDerivative": 0.008817327726267261,
+            "scaleAwareResidual": 1.3634926521177704E-14,
+            "passed": true
+          },
+          {
+            "epsilon": 0.0001,
+            "actionAtPsiPlusEpsilonChi": 0.03407153955692324,
+            "actionAtPsiMinusEpsilonChi": 0.03406977609137799,
+            "centralDerivative": 0.008817327726250157,
+            "expectedReciprocalDirectionalDerivative": 0.008817327726267261,
+            "scaleAwareResidual": 1.7104373473131318E-14,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-05,
+            "actionAtPsiPlusEpsilonChi": 0.034070745939870584,
+            "actionAtPsiMinusEpsilonChi": 0.034070569593316065,
+            "centralDerivative": 0.008817327725937907,
+            "expectedReciprocalDirectionalDerivative": 0.008817327726267261,
+            "scaleAwareResidual": 3.293545991489566E-13,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-06,
+            "actionAtPsiPlusEpsilonChi": 0.034070666583345496,
+            "actionAtPsiMinusEpsilonChi": 0.034070648948690045,
+            "centralDerivative": 0.008817327725590962,
+            "expectedReciprocalDirectionalDerivative": 0.008817327726267261,
+            "scaleAwareResidual": 6.76299294344318E-13,
+            "passed": true
+          }
+        ],
+        "maxCentralDerivativeScaleAwareResidual": 6.76299294344318E-13,
+        "centralDerivativeIdentityPassed": true,
+        "allDirectionalIdentitiesPassed": true
+      },
+      "analytic": {
+        "weightedOperatorPairing": {},
+        "stiffnessPairing": {},
+        "weightedOperatorToStiffnessPairingScaleAwareResidual": 3.469446951953614E-18,
+        "weightedOperatorToStiffnessPairingIdentityPassed": true,
+        "reciprocalPartnerPairing": {},
+        "reciprocalRealFormDirectionalDerivative": 0.008817327726304145,
+        "hermitianRealFormShortcutDirectionalDerivative": 0.008817327726304152,
+        "reciprocalRealFormScaleAwareResidual": 6.938893903907228E-18,
+        "reciprocalRealFormIdentityPassed": true,
+        "centralDerivativeLadder": [
+          {
+            "epsilon": 0.01,
+            "actionAtPsiPlusEpsilonChi": 0.03415941242980458,
+            "actionAtPsiMinusEpsilonChi": 0.033983065875278516,
+            "centralDerivative": 0.00881732772630324,
+            "expectedReciprocalDirectionalDerivative": 0.008817327726304145,
+            "scaleAwareResidual": 9.055256544598933E-16,
+            "passed": true
+          },
+          {
+            "epsilon": 0.001,
+            "actionAtPsiPlusEpsilonChi": 0.03407948090764898,
+            "actionAtPsiMinusEpsilonChi": 0.03406184625219636,
+            "centralDerivative": 0.008817327726309138,
+            "expectedReciprocalDirectionalDerivative": 0.008817327726304145,
+            "scaleAwareResidual": 4.992534163861251E-15,
+            "passed": true
+          },
+          {
+            "epsilon": 0.0001,
+            "actionAtPsiPlusEpsilonChi": 0.03407153955696913,
+            "actionAtPsiMinusEpsilonChi": 0.034069776091423816,
+            "centralDerivative": 0.008817327726562407,
+            "expectedReciprocalDirectionalDerivative": 0.008817327726304145,
+            "scaleAwareResidual": 2.582621616564751E-13,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-05,
+            "actionAtPsiPlusEpsilonChi": 0.034070745939916484,
+            "actionAtPsiMinusEpsilonChi": 0.034070569593361945,
+            "centralDerivative": 0.008817327726978741,
+            "expectedReciprocalDirectionalDerivative": 0.008817327726304145,
+            "scaleAwareResidual": 6.745957958909088E-13,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-06,
+            "actionAtPsiPlusEpsilonChi": 0.03407066658339139,
+            "actionAtPsiMinusEpsilonChi": 0.0340706489487359,
+            "centralDerivative": 0.008817327746407644,
+            "expectedReciprocalDirectionalDerivative": 0.008817327726304145,
+            "scaleAwareResidual": 2.0103498726831148E-11,
+            "passed": true
+          }
+        ],
+        "maxCentralDerivativeScaleAwareResidual": 2.0103498726831148E-11,
+        "centralDerivativeIdentityPassed": true,
+        "allDirectionalIdentitiesPassed": true
+      },
+      "analyticPersistedPairingScaleAwareResidual": 3.5474831618968584E-14,
+      "analyticPersistedDerivativeScaleAwareResidual": 3.688369054621887E-14,
+      "analyticPersistedDirectionalParityPassed": true,
+      "maxPairingIdentityScaleAwareResidual": 3.469446951953614E-18,
+      "maxCentralDerivativeScaleAwareResidual": 2.0103498726831148E-11,
+      "transformedDirectionalIdentityPassed": true
+    },
+    {
+      "chiModeId": "mode-bg-phase12-bg-a-20260315212202-002",
+      "chiModeIndex": 2,
+      "psiSourceModeId": "mode-bg-phase12-bg-a-20260315212202-000",
+      "psiSourceModeIndex": 0,
+      "persisted": {
+        "weightedOperatorPairing": {},
+        "stiffnessPairing": {},
+        "weightedOperatorToStiffnessPairingScaleAwareResidual": 2.8609792490763984E-17,
+        "weightedOperatorToStiffnessPairingIdentityPassed": true,
+        "reciprocalPartnerPairing": {},
+        "reciprocalRealFormDirectionalDerivative": -0.04053933422623373,
+        "hermitianRealFormShortcutDirectionalDerivative": -0.040539334226233736,
+        "reciprocalRealFormScaleAwareResidual": 6.938893903907228E-18,
+        "reciprocalRealFormIdentityPassed": true,
+        "centralDerivativeLadder": [
+          {
+            "epsilon": 0.01,
+            "actionAtPsiPlusEpsilonChi": 0.03365587979065778,
+            "actionAtPsiMinusEpsilonChi": 0.0344666664751825,
+            "centralDerivative": -0.040539334226235776,
+            "expectedReciprocalDirectionalDerivative": -0.04053933422623373,
+            "scaleAwareResidual": 2.0469737016526324E-15,
+            "passed": true
+          },
+          {
+            "epsilon": 0.001,
+            "actionAtPsiPlusEpsilonChi": 0.03403002458545479,
+            "actionAtPsiMinusEpsilonChi": 0.03411110325390727,
+            "centralDerivative": -0.04053933422623959,
+            "expectedReciprocalDirectionalDerivative": -0.04053933422623373,
+            "scaleAwareResidual": 5.863365348801608E-15,
+            "passed": true
+          },
+          {
+            "epsilon": 0.0001,
+            "actionAtPsiPlusEpsilonChi": 0.03406660289412603,
+            "actionAtPsiMinusEpsilonChi": 0.03407471076097123,
+            "centralDerivative": -0.0405393342260002,
+            "expectedReciprocalDirectionalDerivative": -0.04053933422623373,
+            "scaleAwareResidual": 2.3352847433599777E-13,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-05,
+            "actionAtPsiPlusEpsilonChi": 0.03407025236328505,
+            "actionAtPsiMinusEpsilonChi": 0.03407106314996957,
+            "centralDerivative": -0.0405393342260002,
+            "expectedReciprocalDirectionalDerivative": -0.04053933422623373,
+            "scaleAwareResidual": 2.3352847433599777E-13,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-06,
+            "actionAtPsiPlusEpsilonChi": 0.034070617226583874,
+            "actionAtPsiMinusEpsilonChi": 0.03407069830525232,
+            "centralDerivative": -0.0405393342228777,
+            "expectedReciprocalDirectionalDerivative": -0.04053933422623373,
+            "scaleAwareResidual": 3.3560307310942505E-12,
+            "passed": true
+          }
+        ],
+        "maxCentralDerivativeScaleAwareResidual": 3.3560307310942505E-12,
+        "centralDerivativeIdentityPassed": true,
+        "allDirectionalIdentitiesPassed": true
+      },
+      "analytic": {
+        "weightedOperatorPairing": {},
+        "stiffnessPairing": {},
+        "weightedOperatorToStiffnessPairingScaleAwareResidual": 6.938893903907228E-18,
+        "weightedOperatorToStiffnessPairingIdentityPassed": true,
+        "reciprocalPartnerPairing": {},
+        "reciprocalRealFormDirectionalDerivative": -0.04053933422628634,
+        "hermitianRealFormShortcutDirectionalDerivative": -0.04053933422628633,
+        "reciprocalRealFormScaleAwareResidual": 6.938893903907228E-18,
+        "reciprocalRealFormIdentityPassed": true,
+        "centralDerivativeLadder": [
+          {
+            "epsilon": 0.01,
+            "actionAtPsiPlusEpsilonChi": 0.03365587979070315,
+            "actionAtPsiMinusEpsilonChi": 0.03446666647522886,
+            "centralDerivative": -0.040539334226285736,
+            "expectedReciprocalDirectionalDerivative": -0.04053933422628634,
+            "scaleAwareResidual": 6.036837696399289E-16,
+            "passed": true
+          },
+          {
+            "epsilon": 0.001,
+            "actionAtPsiPlusEpsilonChi": 0.034030024585500605,
+            "actionAtPsiMinusEpsilonChi": 0.03411110325395316,
+            "centralDerivative": -0.04053933422627776,
+            "expectedReciprocalDirectionalDerivative": -0.04053933422628634,
+            "scaleAwareResidual": 8.583411759133242E-15,
+            "passed": true
+          },
+          {
+            "epsilon": 0.0001,
+            "actionAtPsiPlusEpsilonChi": 0.03406660289417189,
+            "actionAtPsiMinusEpsilonChi": 0.03407471076101713,
+            "centralDerivative": -0.04053933422620837,
+            "expectedReciprocalDirectionalDerivative": -0.04053933422628634,
+            "scaleAwareResidual": 7.797235079820553E-14,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-05,
+            "actionAtPsiPlusEpsilonChi": 0.03407025236333094,
+            "actionAtPsiMinusEpsilonChi": 0.03407106315001546,
+            "centralDerivative": -0.0405393342260002,
+            "expectedReciprocalDirectionalDerivative": -0.04053933422628634,
+            "scaleAwareResidual": 2.861391679154224E-13,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-06,
+            "actionAtPsiPlusEpsilonChi": 0.03407061722662973,
+            "actionAtPsiMinusEpsilonChi": 0.03407069830529823,
+            "centralDerivative": -0.04053933424716383,
+            "expectedReciprocalDirectionalDerivative": -0.04053933422628634,
+            "scaleAwareResidual": 2.0877487239001624E-11,
+            "passed": true
+          }
+        ],
+        "maxCentralDerivativeScaleAwareResidual": 2.0877487239001624E-11,
+        "centralDerivativeIdentityPassed": true,
+        "allDirectionalIdentitiesPassed": true
+      },
+      "analyticPersistedPairingScaleAwareResidual": 2.854855332304774E-14,
+      "analyticPersistedDerivativeScaleAwareResidual": 5.2610693579424606E-14,
+      "analyticPersistedDirectionalParityPassed": true,
+      "maxPairingIdentityScaleAwareResidual": 2.8609792490763984E-17,
+      "maxCentralDerivativeScaleAwareResidual": 2.0877487239001624E-11,
+      "transformedDirectionalIdentityPassed": true
+    },
+    {
+      "chiModeId": "mode-bg-phase12-bg-a-20260315212202-003",
+      "chiModeIndex": 3,
+      "psiSourceModeId": "mode-bg-phase12-bg-a-20260315212202-000",
+      "psiSourceModeIndex": 0,
+      "persisted": {
+        "weightedOperatorPairing": {},
+        "stiffnessPairing": {},
+        "weightedOperatorToStiffnessPairingScaleAwareResidual": 3.273069708340169E-17,
+        "weightedOperatorToStiffnessPairingIdentityPassed": true,
+        "reciprocalPartnerPairing": {},
+        "reciprocalRealFormDirectionalDerivative": 0.036123317138700616,
+        "hermitianRealFormShortcutDirectionalDerivative": 0.036123317138700616,
+        "reciprocalRealFormScaleAwareResidual": 0,
+        "reciprocalRealFormIdentityPassed": true,
+        "centralDerivativeLadder": [
+          {
+            "epsilon": 0.01,
+            "actionAtPsiPlusEpsilonChi": 0.03443213340282437,
+            "actionAtPsiMinusEpsilonChi": 0.03370966706005039,
+            "centralDerivative": 0.03612331713869904,
+            "expectedReciprocalDirectionalDerivative": 0.036123317138700616,
+            "scaleAwareResidual": 1.5751289161869408E-15,
+            "passed": true
+          },
+          {
+            "epsilon": 0.001,
+            "actionAtPsiPlusEpsilonChi": 0.03410678350780489,
+            "actionAtPsiMinusEpsilonChi": 0.0340345368735275,
+            "centralDerivative": 0.036123317138696265,
+            "expectedReciprocalDirectionalDerivative": 0.036123317138700616,
+            "scaleAwareResidual": 4.350686477749832E-15,
+            "passed": true
+          },
+          {
+            "epsilon": 0.0001,
+            "actionAtPsiPlusEpsilonChi": 0.03407427012197237,
+            "actionAtPsiMinusEpsilonChi": 0.03406704545854462,
+            "centralDerivative": 0.036123317138751776,
+            "expectedReciprocalDirectionalDerivative": 0.036123317138700616,
+            "scaleAwareResidual": 5.1160464753507995E-14,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-05,
+            "actionAtPsiPlusEpsilonChi": 0.03407101899942578,
+            "actionAtPsiMinusEpsilonChi": 0.03407029653308304,
+            "centralDerivative": 0.03612331713684358,
+            "expectedReciprocalDirectionalDerivative": 0.036123317138700616,
+            "scaleAwareResidual": 1.85703535882098E-12,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-06,
+            "actionAtPsiPlusEpsilonChi": 0.034070693889331496,
+            "actionAtPsiMinusEpsilonChi": 0.03407062164269725,
+            "centralDerivative": 0.0361233171222719,
+            "expectedReciprocalDirectionalDerivative": 0.036123317138700616,
+            "scaleAwareResidual": 1.642871255702616E-11,
+            "passed": true
+          }
+        ],
+        "maxCentralDerivativeScaleAwareResidual": 1.642871255702616E-11,
+        "centralDerivativeIdentityPassed": true,
+        "allDirectionalIdentitiesPassed": true
+      },
+      "analytic": {
+        "weightedOperatorPairing": {},
+        "stiffnessPairing": {},
+        "weightedOperatorToStiffnessPairingScaleAwareResidual": 4.347204570675246E-17,
+        "weightedOperatorToStiffnessPairingIdentityPassed": true,
+        "reciprocalPartnerPairing": {},
+        "reciprocalRealFormDirectionalDerivative": 0.036123317138658725,
+        "hermitianRealFormShortcutDirectionalDerivative": 0.03612331713865876,
+        "reciprocalRealFormScaleAwareResidual": 3.469446951953614E-17,
+        "reciprocalRealFormIdentityPassed": true,
+        "centralDerivativeLadder": [
+          {
+            "epsilon": 0.01,
+            "actionAtPsiPlusEpsilonChi": 0.034432133402869845,
+            "actionAtPsiMinusEpsilonChi": 0.033709667060096676,
+            "centralDerivative": 0.03612331713865845,
+            "expectedReciprocalDirectionalDerivative": 0.036123317138658725,
+            "scaleAwareResidual": 2.7755575615628914E-16,
+            "passed": true
+          },
+          {
+            "epsilon": 0.001,
+            "actionAtPsiPlusEpsilonChi": 0.03410678350785076,
+            "actionAtPsiMinusEpsilonChi": 0.03403453687357342,
+            "centralDerivative": 0.03612331713867198,
+            "expectedReciprocalDirectionalDerivative": 0.036123317138658725,
+            "scaleAwareResidual": 1.3253287356462806E-14,
+            "passed": true
+          },
+          {
+            "epsilon": 0.0001,
+            "actionAtPsiPlusEpsilonChi": 0.03407427012201824,
+            "actionAtPsiMinusEpsilonChi": 0.034067045458590496,
+            "centralDerivative": 0.03612331713871708,
+            "expectedReciprocalDirectionalDerivative": 0.036123317138658725,
+            "scaleAwareResidual": 5.835609773185979E-14,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-05,
+            "actionAtPsiPlusEpsilonChi": 0.0340710189994717,
+            "actionAtPsiMinusEpsilonChi": 0.03407029653312889,
+            "centralDerivative": 0.03612331714065997,
+            "expectedReciprocalDirectionalDerivative": 0.036123317138658725,
+            "scaleAwareResidual": 2.0012463908258837E-12,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-06,
+            "actionAtPsiPlusEpsilonChi": 0.03407069388937741,
+            "actionAtPsiMinusEpsilonChi": 0.03407062164274311,
+            "centralDerivative": 0.03612331715002748,
+            "expectedReciprocalDirectionalDerivative": 0.036123317138658725,
+            "scaleAwareResidual": 1.1368753161100642E-11,
+            "passed": true
+          }
+        ],
+        "maxCentralDerivativeScaleAwareResidual": 1.1368753161100642E-11,
+        "centralDerivativeIdentityPassed": true,
+        "allDirectionalIdentitiesPassed": true
+      },
+      "analyticPersistedPairingScaleAwareResidual": 2.470472318234767E-14,
+      "analyticPersistedDerivativeScaleAwareResidual": 4.189010249788794E-14,
+      "analyticPersistedDirectionalParityPassed": true,
+      "maxPairingIdentityScaleAwareResidual": 4.347204570675246E-17,
+      "maxCentralDerivativeScaleAwareResidual": 1.642871255702616E-11,
+      "transformedDirectionalIdentityPassed": true
+    },
+    {
+      "chiModeId": "mode-bg-phase12-bg-a-20260315212202-004",
+      "chiModeIndex": 4,
+      "psiSourceModeId": "mode-bg-phase12-bg-a-20260315212202-000",
+      "psiSourceModeIndex": 0,
+      "persisted": {
+        "weightedOperatorPairing": {},
+        "stiffnessPairing": {},
+        "weightedOperatorToStiffnessPairingScaleAwareResidual": 1.3985787785349405E-17,
+        "weightedOperatorToStiffnessPairingIdentityPassed": true,
+        "reciprocalPartnerPairing": {},
+        "reciprocalRealFormDirectionalDerivative": -0.12330910522869518,
+        "hermitianRealFormShortcutDirectionalDerivative": -0.12330910522869523,
+        "reciprocalRealFormScaleAwareResidual": 5.551115123125783E-17,
+        "reciprocalRealFormIdentityPassed": true,
+        "centralDerivativeLadder": [
+          {
+            "epsilon": 0.01,
+            "actionAtPsiPlusEpsilonChi": 0.032846019022081896,
+            "actionAtPsiMinusEpsilonChi": 0.03531220112665582,
+            "centralDerivative": -0.12330910522869616,
+            "expectedReciprocalDirectionalDerivative": -0.12330910522869518,
+            "scaleAwareResidual": 9.853229343548264E-16,
+            "passed": true
+          },
+          {
+            "epsilon": 0.001,
+            "actionAtPsiPlusEpsilonChi": 0.033947433183866844,
+            "actionAtPsiMinusEpsilonChi": 0.034194051394324215,
+            "centralDerivative": -0.1233091052286854,
+            "expectedReciprocalDirectionalDerivative": -0.12330910522869518,
+            "scaleAwareResidual": 9.769962616701378E-15,
+            "passed": true
+          },
+          {
+            "epsilon": 0.0001,
+            "actionAtPsiPlusEpsilonChi": 0.03405832770071989,
+            "actionAtPsiMinusEpsilonChi": 0.034082989521765625,
+            "centralDerivative": -0.12330910522866806,
+            "expectedReciprocalDirectionalDerivative": -0.12330910522869518,
+            "scaleAwareResidual": 2.711719737646945E-14,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-05,
+            "actionAtPsiPlusEpsilonChi": 0.034069424683411995,
+            "actionAtPsiMinusEpsilonChi": 0.03407189086551655,
+            "centralDerivative": -0.1233091052276619,
+            "expectedReciprocalDirectionalDerivative": -0.12330910522869518,
+            "scaleAwareResidual": 1.0332706912308254E-12,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-06,
+            "actionAtPsiPlusEpsilonChi": 0.03407053445699122,
+            "actionAtPsiMinusEpsilonChi": 0.03407078107520173,
+            "centralDerivative": -0.12330910525298888,
+            "expectedReciprocalDirectionalDerivative": -0.12330910522869518,
+            "scaleAwareResidual": 2.4293705935818366E-11,
+            "passed": true
+          }
+        ],
+        "maxCentralDerivativeScaleAwareResidual": 2.4293705935818366E-11,
+        "centralDerivativeIdentityPassed": true,
+        "allDirectionalIdentitiesPassed": true
+      },
+      "analytic": {
+        "weightedOperatorPairing": {},
+        "stiffnessPairing": {},
+        "weightedOperatorToStiffnessPairingScaleAwareResidual": 3.469446951953614E-17,
+        "weightedOperatorToStiffnessPairingIdentityPassed": true,
+        "reciprocalPartnerPairing": {},
+        "reciprocalRealFormDirectionalDerivative": -0.12330910522872948,
+        "hermitianRealFormShortcutDirectionalDerivative": -0.12330910522872943,
+        "reciprocalRealFormScaleAwareResidual": 5.551115123125783E-17,
+        "reciprocalRealFormIdentityPassed": true,
+        "centralDerivativeLadder": [
+          {
+            "epsilon": 0.01,
+            "actionAtPsiPlusEpsilonChi": 0.032846019022127464,
+            "actionAtPsiMinusEpsilonChi": 0.035312201126702074,
+            "centralDerivative": -0.12330910522873051,
+            "expectedReciprocalDirectionalDerivative": -0.12330910522872948,
+            "scaleAwareResidual": 1.0269562977782698E-15,
+            "passed": true
+          },
+          {
+            "epsilon": 0.001,
+            "actionAtPsiPlusEpsilonChi": 0.03394743318391263,
+            "actionAtPsiMinusEpsilonChi": 0.03419405139437015,
+            "centralDerivative": -0.12330910522876173,
+            "expectedReciprocalDirectionalDerivative": -0.12330910522872948,
+            "scaleAwareResidual": 3.22519788653608E-14,
+            "passed": true
+          },
+          {
+            "epsilon": 0.0001,
+            "actionAtPsiPlusEpsilonChi": 0.034058327700765785,
+            "actionAtPsiMinusEpsilonChi": 0.03408298952181155,
+            "centralDerivative": -0.12330910522884153,
+            "expectedReciprocalDirectionalDerivative": -0.12330910522872948,
+            "scaleAwareResidual": 1.1204925876029392E-13,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-05,
+            "actionAtPsiPlusEpsilonChi": 0.034069424683457826,
+            "actionAtPsiMinusEpsilonChi": 0.03407189086556244,
+            "centralDerivative": -0.12330910523078441,
+            "expectedReciprocalDirectionalDerivative": -0.12330910522872948,
+            "scaleAwareResidual": 2.05492567406651E-12,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-06,
+            "actionAtPsiPlusEpsilonChi": 0.03407053445703714,
+            "actionAtPsiMinusEpsilonChi": 0.03407078107524758,
+            "centralDerivative": -0.12330910522176386,
+            "expectedReciprocalDirectionalDerivative": -0.12330910522872948,
+            "scaleAwareResidual": 6.965622523225079E-12,
+            "passed": true
+          }
+        ],
+        "maxCentralDerivativeScaleAwareResidual": 6.965622523225079E-12,
+        "centralDerivativeIdentityPassed": true,
+        "allDirectionalIdentitiesPassed": true
+      },
+      "analyticPersistedPairingScaleAwareResidual": 1.3627765684203078E-13,
+      "analyticPersistedDerivativeScaleAwareResidual": 3.430589146091734E-14,
+      "analyticPersistedDirectionalParityPassed": true,
+      "maxPairingIdentityScaleAwareResidual": 3.469446951953614E-17,
+      "maxCentralDerivativeScaleAwareResidual": 2.4293705935818366E-11,
+      "transformedDirectionalIdentityPassed": true
+    },
+    {
+      "chiModeId": "mode-bg-phase12-bg-a-20260315212202-005",
+      "chiModeIndex": 5,
+      "psiSourceModeId": "mode-bg-phase12-bg-a-20260315212202-000",
+      "psiSourceModeIndex": 0,
+      "persisted": {
+        "weightedOperatorPairing": {},
+        "stiffnessPairing": {},
+        "weightedOperatorToStiffnessPairingScaleAwareResidual": 9.813077866773595E-18,
+        "weightedOperatorToStiffnessPairingIdentityPassed": true,
+        "reciprocalPartnerPairing": {},
+        "reciprocalRealFormDirectionalDerivative": 0.06981420012796993,
+        "hermitianRealFormShortcutDirectionalDerivative": 0.06981420012796992,
+        "reciprocalRealFormScaleAwareResidual": 1.3877787807814457E-17,
+        "reciprocalRealFormIdentityPassed": true,
+        "centralDerivativeLadder": [
+          {
+            "epsilon": 0.01,
+            "actionAtPsiPlusEpsilonChi": 0.0347723375780284,
+            "actionAtPsiMinusEpsilonChi": 0.03337605357546903,
+            "centralDerivative": 0.0698142001279687,
+            "expectedReciprocalDirectionalDerivative": 0.06981420012796993,
+            "scaleAwareResidual": 1.2351231148954867E-15,
+            "passed": true
+          },
+          {
+            "epsilon": 0.001,
+            "actionAtPsiPlusEpsilonChi": 0.03414050734424728,
+            "actionAtPsiMinusEpsilonChi": 0.03400087894399138,
+            "centralDerivative": 0.06981420012794684,
+            "expectedReciprocalDirectionalDerivative": 0.06981420012796993,
+            "scaleAwareResidual": 2.3092638912203256E-14,
+            "passed": true
+          },
+          {
+            "epsilon": 0.0001,
+            "actionAtPsiPlusEpsilonChi": 0.03407763953980582,
+            "actionAtPsiMinusEpsilonChi": 0.03406367669978022,
+            "centralDerivative": 0.069814200127985,
+            "expectedReciprocalDirectionalDerivative": 0.06981420012796993,
+            "scaleAwareResidual": 1.50712775592865E-14,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-05,
+            "actionAtPsiPlusEpsilonChi": 0.03407135591155105,
+            "actionAtPsiMinusEpsilonChi": 0.0340699596275485,
+            "centralDerivative": 0.06981420012722173,
+            "expectedReciprocalDirectionalDerivative": 0.06981420012796993,
+            "scaleAwareResidual": 7.482070518705086E-13,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-06,
+            "actionAtPsiPlusEpsilonChi": 0.03407072758024745,
+            "actionAtPsiMinusEpsilonChi": 0.03407058795184722,
+            "centralDerivative": 0.0698142001154256,
+            "expectedReciprocalDirectionalDerivative": 0.06981420012796993,
+            "scaleAwareResidual": 1.2544326688512797E-11,
+            "passed": true
+          }
+        ],
+        "maxCentralDerivativeScaleAwareResidual": 1.2544326688512797E-11,
+        "centralDerivativeIdentityPassed": true,
+        "allDirectionalIdentitiesPassed": true
+      },
+      "analytic": {
+        "weightedOperatorPairing": {},
+        "stiffnessPairing": {},
+        "weightedOperatorToStiffnessPairingScaleAwareResidual": 3.1031676915590914E-17,
+        "weightedOperatorToStiffnessPairingIdentityPassed": true,
+        "reciprocalPartnerPairing": {},
+        "reciprocalRealFormDirectionalDerivative": 0.06981420012789474,
+        "hermitianRealFormShortcutDirectionalDerivative": 0.06981420012789476,
+        "reciprocalRealFormScaleAwareResidual": 1.3877787807814457E-17,
+        "reciprocalRealFormIdentityPassed": true,
+        "centralDerivativeLadder": [
+          {
+            "epsilon": 0.01,
+            "actionAtPsiPlusEpsilonChi": 0.03477233757807352,
+            "actionAtPsiMinusEpsilonChi": 0.03337605357551564,
+            "centralDerivative": 0.0698142001278941,
+            "expectedReciprocalDirectionalDerivative": 0.06981420012789474,
+            "scaleAwareResidual": 6.38378239159465E-16,
+            "passed": true
+          },
+          {
+            "epsilon": 0.001,
+            "actionAtPsiPlusEpsilonChi": 0.03414050734429308,
+            "actionAtPsiMinusEpsilonChi": 0.034000878944037284,
+            "centralDerivative": 0.06981420012789827,
+            "expectedReciprocalDirectionalDerivative": 0.06981420012789474,
+            "scaleAwareResidual": 3.524958103184872E-15,
+            "passed": true
+          },
+          {
+            "epsilon": 0.0001,
+            "actionAtPsiPlusEpsilonChi": 0.03407763953985169,
+            "actionAtPsiMinusEpsilonChi": 0.034063676699826115,
+            "centralDerivative": 0.06981420012788092,
+            "expectedReciprocalDirectionalDerivative": 0.06981420012789474,
+            "scaleAwareResidual": 1.3822276656583199E-14,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-05,
+            "actionAtPsiPlusEpsilonChi": 0.03407135591159691,
+            "actionAtPsiMinusEpsilonChi": 0.034069959627594334,
+            "centralDerivative": 0.0698142001286095,
+            "expectedReciprocalDirectionalDerivative": 0.06981420012789474,
+            "scaleAwareResidual": 7.147615832536758E-13,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-06,
+            "actionAtPsiPlusEpsilonChi": 0.03407072758029335,
+            "actionAtPsiMinusEpsilonChi": 0.03407058795189306,
+            "centralDerivative": 0.06981420014665063,
+            "expectedReciprocalDirectionalDerivative": 0.06981420012789474,
+            "scaleAwareResidual": 1.875588573341247E-11,
+            "passed": true
+          }
+        ],
+        "maxCentralDerivativeScaleAwareResidual": 1.875588573341247E-11,
+        "centralDerivativeIdentityPassed": true,
+        "allDirectionalIdentitiesPassed": true
+      },
+      "analyticPersistedPairingScaleAwareResidual": 7.515736848601939E-14,
+      "analyticPersistedDerivativeScaleAwareResidual": 7.518985434273873E-14,
+      "analyticPersistedDirectionalParityPassed": true,
+      "maxPairingIdentityScaleAwareResidual": 3.1031676915590914E-17,
+      "maxCentralDerivativeScaleAwareResidual": 1.875588573341247E-11,
+      "transformedDirectionalIdentityPassed": true
+    },
+    {
+      "chiModeId": "mode-bg-phase12-bg-a-20260315212202-006",
+      "chiModeIndex": 6,
+      "psiSourceModeId": "mode-bg-phase12-bg-a-20260315212202-000",
+      "psiSourceModeIndex": 0,
+      "persisted": {
+        "weightedOperatorPairing": {},
+        "stiffnessPairing": {},
+        "weightedOperatorToStiffnessPairingScaleAwareResidual": 4.5102810375396984E-17,
+        "weightedOperatorToStiffnessPairingIdentityPassed": true,
+        "reciprocalPartnerPairing": {},
+        "reciprocalRealFormDirectionalDerivative": -0.12240903413343143,
+        "hermitianRealFormShortcutDirectionalDerivative": -0.12240903413343147,
+        "reciprocalRealFormScaleAwareResidual": 4.163336342344337E-17,
+        "reciprocalRealFormIdentityPassed": true,
+        "centralDerivativeLadder": [
+          {
+            "epsilon": 0.01,
+            "actionAtPsiPlusEpsilonChi": 0.032847889699784506,
+            "actionAtPsiMinusEpsilonChi": 0.03529607038245313,
+            "centralDerivative": -0.12240903413343121,
+            "expectedReciprocalDirectionalDerivative": -0.12240903413343143,
+            "scaleAwareResidual": 2.220446049250313E-16,
+            "passed": true
+          },
+          {
+            "epsilon": 0.001,
+            "actionAtPsiPlusEpsilonChi": 0.03394826195462958,
+            "actionAtPsiMinusEpsilonChi": 0.03419308002289644,
+            "centralDerivative": -0.1224090341334326,
+            "expectedReciprocalDirectionalDerivative": -0.12240903413343143,
+            "scaleAwareResidual": 1.1657341758564144E-15,
+            "passed": true
+          },
+          {
+            "epsilon": 0.0001,
+            "actionAtPsiPlusEpsilonChi": 0.034058416994826125,
+            "actionAtPsiMinusEpsilonChi": 0.03408289880165283,
+            "centralDerivative": -0.1224090341335124,
+            "expectedReciprocalDirectionalDerivative": -0.12240903413343143,
+            "scaleAwareResidual": 8.096301407078954E-14,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-05,
+            "actionAtPsiPlusEpsilonChi": 0.03406943367699288,
+            "actionAtPsiMinusEpsilonChi": 0.03407188185767554,
+            "centralDerivative": -0.12240903413292258,
+            "expectedReciprocalDirectionalDerivative": -0.12240903413343143,
+            "scaleAwareResidual": 5.088568455491327E-13,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-06,
+            "actionAtPsiPlusEpsilonChi": 0.03407053535699104,
+            "actionAtPsiMinusEpsilonChi": 0.03407078017505933,
+            "centralDerivative": -0.12240903414506565,
+            "expectedReciprocalDirectionalDerivative": -0.12240903413343143,
+            "scaleAwareResidual": 1.1634221364076325E-11,
+            "passed": true
+          }
+        ],
+        "maxCentralDerivativeScaleAwareResidual": 1.1634221364076325E-11,
+        "centralDerivativeIdentityPassed": true,
+        "allDirectionalIdentitiesPassed": true
+      },
+      "analytic": {
+        "weightedOperatorPairing": {},
+        "stiffnessPairing": {},
+        "weightedOperatorToStiffnessPairingScaleAwareResidual": 1.7482234731686756E-17,
+        "weightedOperatorToStiffnessPairingIdentityPassed": true,
+        "reciprocalPartnerPairing": {},
+        "reciprocalRealFormDirectionalDerivative": -0.1224090341334447,
+        "hermitianRealFormShortcutDirectionalDerivative": -0.12240903413344469,
+        "reciprocalRealFormScaleAwareResidual": 1.3877787807814457E-17,
+        "reciprocalRealFormIdentityPassed": true,
+        "centralDerivativeLadder": [
+          {
+            "epsilon": 0.01,
+            "actionAtPsiPlusEpsilonChi": 0.03284788969983022,
+            "actionAtPsiMinusEpsilonChi": 0.03529607038249912,
+            "centralDerivative": -0.12240903413344509,
+            "expectedReciprocalDirectionalDerivative": -0.1224090341334447,
+            "scaleAwareResidual": 3.885780586188048E-16,
+            "passed": true
+          },
+          {
+            "epsilon": 0.001,
+            "actionAtPsiPlusEpsilonChi": 0.03394826195467545,
+            "actionAtPsiMinusEpsilonChi": 0.03419308002294234,
+            "centralDerivative": -0.12240903413344648,
+            "expectedReciprocalDirectionalDerivative": -0.1224090341334447,
+            "scaleAwareResidual": 1.7763568394002505E-15,
+            "passed": true
+          },
+          {
+            "epsilon": 0.0001,
+            "actionAtPsiPlusEpsilonChi": 0.034058416994872,
+            "actionAtPsiMinusEpsilonChi": 0.03408289880169864,
+            "centralDerivative": -0.12240903413320015,
+            "expectedReciprocalDirectionalDerivative": -0.1224090341334447,
+            "scaleAwareResidual": 2.4455437674930636E-13,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-05,
+            "actionAtPsiPlusEpsilonChi": 0.03406943367703877,
+            "actionAtPsiMinusEpsilonChi": 0.03407188185772143,
+            "centralDerivative": -0.12240903413292258,
+            "expectedReciprocalDirectionalDerivative": -0.1224090341334447,
+            "scaleAwareResidual": 5.221240106934033E-13,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-06,
+            "actionAtPsiPlusEpsilonChi": 0.03407053535703693,
+            "actionAtPsiMinusEpsilonChi": 0.0340707801751052,
+            "centralDerivative": -0.12240903413812676,
+            "expectedReciprocalDirectionalDerivative": -0.1224090341334447,
+            "scaleAwareResidual": 4.682060295024826E-12,
+            "passed": true
+          }
+        ],
+        "maxCentralDerivativeScaleAwareResidual": 4.682060295024826E-12,
+        "centralDerivativeIdentityPassed": true,
+        "allDirectionalIdentitiesPassed": true
+      },
+      "analyticPersistedPairingScaleAwareResidual": 3.744367584093706E-14,
+      "analyticPersistedDerivativeScaleAwareResidual": 1.326716514427062E-14,
+      "analyticPersistedDirectionalParityPassed": true,
+      "maxPairingIdentityScaleAwareResidual": 4.5102810375396984E-17,
+      "maxCentralDerivativeScaleAwareResidual": 1.1634221364076325E-11,
+      "transformedDirectionalIdentityPassed": true
+    },
+    {
+      "chiModeId": "mode-bg-phase12-bg-a-20260315212202-007",
+      "chiModeIndex": 7,
+      "psiSourceModeId": "mode-bg-phase12-bg-a-20260315212202-000",
+      "psiSourceModeIndex": 0,
+      "persisted": {
+        "weightedOperatorPairing": {},
+        "stiffnessPairing": {},
+        "weightedOperatorToStiffnessPairingScaleAwareResidual": 2.0888836804026048E-17,
+        "weightedOperatorToStiffnessPairingIdentityPassed": true,
+        "reciprocalPartnerPairing": {},
+        "reciprocalRealFormDirectionalDerivative": -0.018370867081568994,
+        "hermitianRealFormShortcutDirectionalDerivative": -0.01837086708156899,
+        "reciprocalRealFormScaleAwareResidual": 3.469446951953614E-18,
+        "reciprocalRealFormIdentityPassed": true,
+        "centralDerivativeLadder": [
+          {
+            "epsilon": 0.01,
+            "actionAtPsiPlusEpsilonChi": 0.03388580175344113,
+            "actionAtPsiMinusEpsilonChi": 0.034253219095072514,
+            "centralDerivative": -0.018370867081569237,
+            "expectedReciprocalDirectionalDerivative": -0.018370867081568994,
+            "scaleAwareResidual": 2.42861286636753E-16,
+            "passed": true
+          },
+          {
+            "epsilon": 0.001,
+            "actionAtPsiPlusEpsilonChi": 0.03405227542551286,
+            "actionAtPsiMinusEpsilonChi": 0.03408901715967598,
+            "centralDerivative": -0.018370867081559522,
+            "expectedReciprocalDirectionalDerivative": -0.018370867081568994,
+            "scaleAwareResidual": 9.471590178833367E-15,
+            "passed": true
+          },
+          {
+            "epsilon": 0.0001,
+            "actionAtPsiPlusEpsilonChi": 0.03406882056456961,
+            "actionAtPsiMinusEpsilonChi": 0.03407249473798595,
+            "centralDerivative": -0.01837086708169483,
+            "expectedReciprocalDirectionalDerivative": -0.018370867081568994,
+            "scaleAwareResidual": 1.2583684094735759E-13,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-05,
+            "actionAtPsiPlusEpsilonChi": 0.03407047405619381,
+            "actionAtPsiMinusEpsilonChi": 0.034070841473535424,
+            "centralDerivative": -0.01837086708068869,
+            "expectedReciprocalDirectionalDerivative": -0.018370867081568994,
+            "scaleAwareResidual": 8.803027751191905E-13,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-06,
+            "actionAtPsiPlusEpsilonChi": 0.03407063939513343,
+            "actionAtPsiMinusEpsilonChi": 0.03407067613686758,
+            "centralDerivative": -0.01837086707409674,
+            "expectedReciprocalDirectionalDerivative": -0.018370867081568994,
+            "scaleAwareResidual": 7.472251983831057E-12,
+            "passed": true
+          }
+        ],
+        "maxCentralDerivativeScaleAwareResidual": 7.472251983831057E-12,
+        "centralDerivativeIdentityPassed": true,
+        "allDirectionalIdentitiesPassed": true
+      },
+      "analytic": {
+        "weightedOperatorPairing": {},
+        "stiffnessPairing": {},
+        "weightedOperatorToStiffnessPairingScaleAwareResidual": 1.7690777709386487E-17,
+        "weightedOperatorToStiffnessPairingIdentityPassed": true,
+        "reciprocalPartnerPairing": {},
+        "reciprocalRealFormDirectionalDerivative": -0.01837086708158238,
+        "hermitianRealFormShortcutDirectionalDerivative": -0.01837086708158234,
+        "reciprocalRealFormScaleAwareResidual": 3.8163916471489756E-17,
+        "reciprocalRealFormIdentityPassed": true,
+        "centralDerivativeLadder": [
+          {
+            "epsilon": 0.01,
+            "actionAtPsiPlusEpsilonChi": 0.03388580175348687,
+            "actionAtPsiMinusEpsilonChi": 0.03425321909511852,
+            "centralDerivative": -0.01837086708158242,
+            "expectedReciprocalDirectionalDerivative": -0.01837086708158238,
+            "scaleAwareResidual": 4.163336342344337E-17,
+            "passed": true
+          },
+          {
+            "epsilon": 0.001,
+            "actionAtPsiPlusEpsilonChi": 0.03405227542555869,
+            "actionAtPsiMinusEpsilonChi": 0.03408901715972186,
+            "centralDerivative": -0.018370867081583808,
+            "expectedReciprocalDirectionalDerivative": -0.01837086708158238,
+            "scaleAwareResidual": 1.429412144204889E-15,
+            "passed": true
+          },
+          {
+            "epsilon": 0.0001,
+            "actionAtPsiPlusEpsilonChi": 0.034068820564615486,
+            "actionAtPsiMinusEpsilonChi": 0.0340724947380318,
+            "centralDerivative": -0.018370867081556053,
+            "expectedReciprocalDirectionalDerivative": -0.01837086708158238,
+            "scaleAwareResidual": 2.6326163471424024E-14,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-05,
+            "actionAtPsiPlusEpsilonChi": 0.03407047405623966,
+            "actionAtPsiMinusEpsilonChi": 0.034070841473581345,
+            "centralDerivative": -0.018370867084158138,
+            "expectedReciprocalDirectionalDerivative": -0.01837086708158238,
+            "scaleAwareResidual": 2.5757590504937866E-12,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-06,
+            "actionAtPsiPlusEpsilonChi": 0.0340706393951793,
+            "actionAtPsiMinusEpsilonChi": 0.034070676136913426,
+            "centralDerivative": -0.0183708670636884,
+            "expectedReciprocalDirectionalDerivative": -0.01837086708158238,
+            "scaleAwareResidual": 1.7893977966032537E-11,
+            "passed": true
+          }
+        ],
+        "maxCentralDerivativeScaleAwareResidual": 1.7893977966032537E-11,
+        "centralDerivativeIdentityPassed": true,
+        "allDirectionalIdentitiesPassed": true
+      },
+      "analyticPersistedPairingScaleAwareResidual": 5.547361484520308E-14,
+      "analyticPersistedDerivativeScaleAwareResidual": 1.3385126340637044E-14,
+      "analyticPersistedDirectionalParityPassed": true,
+      "maxPairingIdentityScaleAwareResidual": 2.0888836804026048E-17,
+      "maxCentralDerivativeScaleAwareResidual": 1.7893977966032537E-11,
+      "transformedDirectionalIdentityPassed": true
+    },
+    {
+      "chiModeId": "mode-bg-phase12-bg-a-20260315212202-008",
+      "chiModeIndex": 8,
+      "psiSourceModeId": "mode-bg-phase12-bg-a-20260315212202-000",
+      "psiSourceModeIndex": 0,
+      "persisted": {
+        "weightedOperatorPairing": {},
+        "stiffnessPairing": {},
+        "weightedOperatorToStiffnessPairingScaleAwareResidual": 2.8609792490763984E-17,
+        "weightedOperatorToStiffnessPairingIdentityPassed": true,
+        "reciprocalPartnerPairing": {},
+        "reciprocalRealFormDirectionalDerivative": 0.06696176673147705,
+        "hermitianRealFormShortcutDirectionalDerivative": 0.06696176673147702,
+        "reciprocalRealFormScaleAwareResidual": 2.7755575615628914E-17,
+        "reciprocalRealFormIdentityPassed": true,
+        "centralDerivativeLadder": [
+          {
+            "epsilon": 0.01,
+            "actionAtPsiPlusEpsilonChi": 0.03474571457517454,
+            "actionAtPsiMinusEpsilonChi": 0.033406479240544996,
+            "centralDerivative": 0.06696176673147702,
+            "expectedReciprocalDirectionalDerivative": 0.06696176673147705,
+            "scaleAwareResidual": 2.7755575615628914E-17,
+            "passed": true
+          },
+          {
+            "epsilon": 0.001,
+            "actionAtPsiPlusEpsilonChi": 0.03413767392416193,
+            "actionAtPsiMinusEpsilonChi": 0.03400375039069895,
+            "centralDerivative": 0.06696176673148813,
+            "expectedReciprocalDirectionalDerivative": 0.06696176673147705,
+            "scaleAwareResidual": 1.1074474670635936E-14,
+            "passed": true
+          },
+          {
+            "epsilon": 0.0001,
+            "actionAtPsiPlusEpsilonChi": 0.03407735448659927,
+            "actionAtPsiMinusEpsilonChi": 0.034063962133252954,
+            "centralDerivative": 0.06696176673159221,
+            "expectedReciprocalDirectionalDerivative": 0.06696176673147705,
+            "scaleAwareResidual": 1.1515788322924436E-13,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-05,
+            "actionAtPsiPlusEpsilonChi": 0.03407132738911843,
+            "actionAtPsiMinusEpsilonChi": 0.034069988153783794,
+            "centralDerivative": 0.06696176673183507,
+            "expectedReciprocalDirectionalDerivative": 0.06696176673147705,
+            "scaleAwareResidual": 3.5801916986599736E-13,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-06,
+            "actionAtPsiPlusEpsilonChi": 0.03407072472783308,
+            "actionAtPsiMinusEpsilonChi": 0.0340705908042996,
+            "centralDerivative": 0.06696176674259036,
+            "expectedReciprocalDirectionalDerivative": 0.06696176673147705,
+            "scaleAwareResidual": 1.1113304720922201E-11,
+            "passed": true
+          }
+        ],
+        "maxCentralDerivativeScaleAwareResidual": 1.1113304720922201E-11,
+        "centralDerivativeIdentityPassed": true,
+        "allDirectionalIdentitiesPassed": true
+      },
+      "analytic": {
+        "weightedOperatorPairing": {},
+        "stiffnessPairing": {},
+        "weightedOperatorToStiffnessPairingScaleAwareResidual": 2.5257955065251657E-17,
+        "weightedOperatorToStiffnessPairingIdentityPassed": true,
+        "reciprocalPartnerPairing": {},
+        "reciprocalRealFormDirectionalDerivative": 0.06696176673148233,
+        "hermitianRealFormShortcutDirectionalDerivative": 0.06696176673148228,
+        "reciprocalRealFormScaleAwareResidual": 4.163336342344337E-17,
+        "reciprocalRealFormIdentityPassed": true,
+        "centralDerivativeLadder": [
+          {
+            "epsilon": 0.01,
+            "actionAtPsiPlusEpsilonChi": 0.03474571457522044,
+            "actionAtPsiMinusEpsilonChi": 0.03340647924059081,
+            "centralDerivative": 0.06696176673148153,
+            "expectedReciprocalDirectionalDerivative": 0.06696176673148233,
+            "scaleAwareResidual": 7.91033905045424E-16,
+            "passed": true
+          },
+          {
+            "epsilon": 0.001,
+            "actionAtPsiPlusEpsilonChi": 0.03413767392420779,
+            "actionAtPsiMinusEpsilonChi": 0.034003750390744825,
+            "centralDerivative": 0.06696176673148119,
+            "expectedReciprocalDirectionalDerivative": 0.06696176673148233,
+            "scaleAwareResidual": 1.1379786002407855E-15,
+            "passed": true
+          },
+          {
+            "epsilon": 0.0001,
+            "actionAtPsiPlusEpsilonChi": 0.03407735448664516,
+            "actionAtPsiMinusEpsilonChi": 0.034063962133298854,
+            "centralDerivative": 0.06696176673152282,
+            "expectedReciprocalDirectionalDerivative": 0.06696176673148233,
+            "scaleAwareResidual": 4.0495384823202585E-14,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-05,
+            "actionAtPsiPlusEpsilonChi": 0.0340713273891643,
+            "actionAtPsiMinusEpsilonChi": 0.034069988153829625,
+            "centralDerivative": 0.06696176673391674,
+            "expectedReciprocalDirectionalDerivative": 0.06696176673148233,
+            "scaleAwareResidual": 2.4344137816711964E-12,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-06,
+            "actionAtPsiPlusEpsilonChi": 0.034070724727878934,
+            "actionAtPsiMinusEpsilonChi": 0.034070590804345505,
+            "centralDerivative": 0.06696176671483478,
+            "expectedReciprocalDirectionalDerivative": 0.06696176673148233,
+            "scaleAwareResidual": 1.6647544454073682E-11,
+            "passed": true
+          }
+        ],
+        "maxCentralDerivativeScaleAwareResidual": 1.6647544454073682E-11,
+        "centralDerivativeIdentityPassed": true,
+        "allDirectionalIdentitiesPassed": true
+      },
+      "analyticPersistedPairingScaleAwareResidual": 4.205736807235858E-15,
+      "analyticPersistedDerivativeScaleAwareResidual": 5.2735593669694936E-15,
+      "analyticPersistedDirectionalParityPassed": true,
+      "maxPairingIdentityScaleAwareResidual": 2.8609792490763984E-17,
+      "maxCentralDerivativeScaleAwareResidual": 1.6647544454073682E-11,
+      "transformedDirectionalIdentityPassed": true
+    },
+    {
+      "chiModeId": "mode-bg-phase12-bg-a-20260315212202-009",
+      "chiModeIndex": 9,
+      "psiSourceModeId": "mode-bg-phase12-bg-a-20260315212202-000",
+      "psiSourceModeIndex": 0,
+      "persisted": {
+        "weightedOperatorPairing": {},
+        "stiffnessPairing": {},
+        "weightedOperatorToStiffnessPairingScaleAwareResidual": 3.1031676915590914E-17,
+        "weightedOperatorToStiffnessPairingIdentityPassed": true,
+        "reciprocalPartnerPairing": {},
+        "reciprocalRealFormDirectionalDerivative": 0.050497016990822347,
+        "hermitianRealFormShortcutDirectionalDerivative": 0.050497016990822326,
+        "reciprocalRealFormScaleAwareResidual": 2.0816681711721685E-17,
+        "reciprocalRealFormIdentityPassed": true,
+        "centralDerivativeLadder": [
+          {
+            "epsilon": 0.01,
+            "actionAtPsiPlusEpsilonChi": 0.034578099897925936,
+            "actionAtPsiMinusEpsilonChi": 0.03356815955810952,
+            "centralDerivative": 0.050497016990820945,
+            "expectedReciprocalDirectionalDerivative": 0.050497016990822347,
+            "scaleAwareResidual": 1.4016565685892601E-15,
+            "passed": true
+          },
+          {
+            "epsilon": 0.001,
+            "actionAtPsiPlusEpsilonChi": 0.034121179502622806,
+            "actionAtPsiMinusEpsilonChi": 0.03402018546864118,
+            "centralDerivative": 0.05049701699081158,
+            "expectedReciprocalDirectionalDerivative": 0.050497016990822347,
+            "scaleAwareResidual": 1.0769163338864018E-14,
+            "passed": true
+          },
+          {
+            "epsilon": 0.0001,
+            "actionAtPsiPlusEpsilonChi": 0.03407570771490723,
+            "actionAtPsiMinusEpsilonChi": 0.034065608311509066,
+            "centralDerivative": 0.05049701699080811,
+            "expectedReciprocalDirectionalDerivative": 0.050497016990822347,
+            "scaleAwareResidual": 1.4238610290817633E-14,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-05,
+            "actionAtPsiPlusEpsilonChi": 0.03407116273865382,
+            "actionAtPsiMinusEpsilonChi": 0.034070152798313984,
+            "centralDerivative": 0.050497016991848935,
+            "expectedReciprocalDirectionalDerivative": 0.050497016990822347,
+            "scaleAwareResidual": 1.0265885364013627E-12,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-06,
+            "actionAtPsiPlusEpsilonChi": 0.034070708263053674,
+            "actionAtPsiMinusEpsilonChi": 0.03407060726901969,
+            "centralDerivative": 0.050497016991502,
+            "expectedReciprocalDirectionalDerivative": 0.050497016990822347,
+            "scaleAwareResidual": 6.796507800999052E-13,
+            "passed": true
+          }
+        ],
+        "maxCentralDerivativeScaleAwareResidual": 1.0265885364013627E-12,
+        "centralDerivativeIdentityPassed": true,
+        "allDirectionalIdentitiesPassed": true
+      },
+      "analytic": {
+        "weightedOperatorPairing": {},
+        "stiffnessPairing": {},
+        "weightedOperatorToStiffnessPairingScaleAwareResidual": 3.273069708340169E-17,
+        "weightedOperatorToStiffnessPairingIdentityPassed": true,
+        "reciprocalPartnerPairing": {},
+        "reciprocalRealFormDirectionalDerivative": 0.050497016990956184,
+        "hermitianRealFormShortcutDirectionalDerivative": 0.050497016990956184,
+        "reciprocalRealFormScaleAwareResidual": 0,
+        "reciprocalRealFormIdentityPassed": true,
+        "centralDerivativeLadder": [
+          {
+            "epsilon": 0.01,
+            "actionAtPsiPlusEpsilonChi": 0.03457809989797317,
+            "actionAtPsiMinusEpsilonChi": 0.033568159558154044,
+            "centralDerivative": 0.05049701699095625,
+            "expectedReciprocalDirectionalDerivative": 0.050497016990956184,
+            "scaleAwareResidual": 6.938893903907228E-17,
+            "passed": true
+          },
+          {
+            "epsilon": 0.001,
+            "actionAtPsiPlusEpsilonChi": 0.03412117950266886,
+            "actionAtPsiMinusEpsilonChi": 0.03402018546868692,
+            "centralDerivative": 0.05049701699097117,
+            "expectedReciprocalDirectionalDerivative": 0.050497016990956184,
+            "scaleAwareResidual": 1.4988010832439613E-14,
+            "passed": true
+          },
+          {
+            "epsilon": 0.0001,
+            "actionAtPsiPlusEpsilonChi": 0.03407570771495311,
+            "actionAtPsiMinusEpsilonChi": 0.03406560831155494,
+            "centralDerivative": 0.0504970169908428,
+            "expectedReciprocalDirectionalDerivative": 0.050497016990956184,
+            "scaleAwareResidual": 1.1338152638984411E-13,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-05,
+            "actionAtPsiPlusEpsilonChi": 0.03407116273869969,
+            "actionAtPsiMinusEpsilonChi": 0.0340701527983599,
+            "centralDerivative": 0.05049701698942032,
+            "expectedReciprocalDirectionalDerivative": 0.050497016990956184,
+            "scaleAwareResidual": 1.5358617155847298E-12,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-06,
+            "actionAtPsiPlusEpsilonChi": 0.03407070826309953,
+            "actionAtPsiMinusEpsilonChi": 0.03407060726906556,
+            "centralDerivative": 0.05049701698803255,
+            "expectedReciprocalDirectionalDerivative": 0.050497016990956184,
+            "scaleAwareResidual": 2.9236335574722716E-12,
+            "passed": true
+          }
+        ],
+        "maxCentralDerivativeScaleAwareResidual": 2.9236335574722716E-12,
+        "centralDerivativeIdentityPassed": true,
+        "allDirectionalIdentitiesPassed": true
+      },
+      "analyticPersistedPairingScaleAwareResidual": 6.693163911639609E-14,
+      "analyticPersistedDerivativeScaleAwareResidual": 1.3383738561856262E-13,
+      "analyticPersistedDirectionalParityPassed": true,
+      "maxPairingIdentityScaleAwareResidual": 3.273069708340169E-17,
+      "maxCentralDerivativeScaleAwareResidual": 2.9236335574722716E-12,
+      "transformedDirectionalIdentityPassed": true
+    },
+    {
+      "chiModeId": "mode-bg-phase12-bg-a-20260315212202-010",
+      "chiModeIndex": 10,
+      "psiSourceModeId": "mode-bg-phase12-bg-a-20260315212202-000",
+      "psiSourceModeIndex": 0,
+      "persisted": {
+        "weightedOperatorPairing": {},
+        "stiffnessPairing": {},
+        "weightedOperatorToStiffnessPairingScaleAwareResidual": 1.0083080204115191E-17,
+        "weightedOperatorToStiffnessPairingIdentityPassed": true,
+        "reciprocalPartnerPairing": {},
+        "reciprocalRealFormDirectionalDerivative": -0.0008574393416928353,
+        "hermitianRealFormShortcutDirectionalDerivative": -0.0008574393416928535,
+        "reciprocalRealFormScaleAwareResidual": 1.8214596497756474E-17,
+        "reciprocalRealFormIdentityPassed": true,
+        "centralDerivativeLadder": [
+          {
+            "epsilon": 0.01,
+            "actionAtPsiPlusEpsilonChi": 0.03406186678412347,
+            "actionAtPsiMinusEpsilonChi": 0.03407901557095727,
+            "centralDerivative": -0.0008574393416900528,
+            "expectedReciprocalDirectionalDerivative": -0.0008574393416928353,
+            "scaleAwareResidual": 2.7824964554667986E-15,
+            "passed": true
+          },
+          {
+            "epsilon": 0.001,
+            "actionAtPsiPlusEpsilonChi": 0.034069798160785515,
+            "actionAtPsiMinusEpsilonChi": 0.03407151303946894,
+            "centralDerivative": -0.0008574393417122572,
+            "expectedReciprocalDirectionalDerivative": -0.0008574393416928353,
+            "scaleAwareResidual": 1.9421964037036332E-14,
+            "passed": true
+          },
+          {
+            "epsilon": 0.0001,
+            "actionAtPsiPlusEpsilonChi": 0.03407057200041892,
+            "actionAtPsiMinusEpsilonChi": 0.03407074348828728,
+            "centralDerivative": -0.0008574393417851156,
+            "expectedReciprocalDirectionalDerivative": -0.0008574393416928353,
+            "scaleAwareResidual": 9.228035002806223E-14,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-05,
+            "actionAtPsiPlusEpsilonChi": 0.034070649191401965,
+            "actionAtPsiMinusEpsilonChi": 0.034070666340188765,
+            "centralDerivative": -0.0008574393400156976,
+            "expectedReciprocalDirectionalDerivative": -0.0008574393416928353,
+            "scaleAwareResidual": 1.6771377038884983E-12,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-06,
+            "actionAtPsiPlusEpsilonChi": 0.034070656908570494,
+            "actionAtPsiMinusEpsilonChi": 0.03407065862344913,
+            "centralDerivative": -0.0008574393174642925,
+            "expectedReciprocalDirectionalDerivative": -0.0008574393416928353,
+            "scaleAwareResidual": 2.4228542783166773E-11,
+            "passed": true
+          }
+        ],
+        "maxCentralDerivativeScaleAwareResidual": 2.4228542783166773E-11,
+        "centralDerivativeIdentityPassed": true,
+        "allDirectionalIdentitiesPassed": true
+      },
+      "analytic": {
+        "weightedOperatorPairing": {},
+        "stiffnessPairing": {},
+        "weightedOperatorToStiffnessPairingScaleAwareResidual": 1.5467655453327765E-17,
+        "weightedOperatorToStiffnessPairingIdentityPassed": true,
+        "reciprocalPartnerPairing": {},
+        "reciprocalRealFormDirectionalDerivative": -0.0008574393417367737,
+        "hermitianRealFormShortcutDirectionalDerivative": -0.0008574393417367637,
+        "reciprocalRealFormScaleAwareResidual": 1.0083080204115191E-17,
+        "reciprocalRealFormIdentityPassed": true,
+        "centralDerivativeLadder": [
+          {
+            "epsilon": 0.01,
+            "actionAtPsiPlusEpsilonChi": 0.0340618667841689,
+            "actionAtPsiMinusEpsilonChi": 0.03407901557100363,
+            "centralDerivative": -0.0008574393417365433,
+            "expectedReciprocalDirectionalDerivative": -0.0008574393417367737,
+            "scaleAwareResidual": 2.303929616531697E-16,
+            "passed": true
+          },
+          {
+            "epsilon": 0.001,
+            "actionAtPsiPlusEpsilonChi": 0.03406979816083138,
+            "actionAtPsiMinusEpsilonChi": 0.03407151303951487,
+            "centralDerivative": -0.0008574393417434822,
+            "expectedReciprocalDirectionalDerivative": -0.0008574393417367737,
+            "scaleAwareResidual": 6.708500942254059E-15,
+            "passed": true
+          },
+          {
+            "epsilon": 0.0001,
+            "actionAtPsiPlusEpsilonChi": 0.03407057200046478,
+            "actionAtPsiMinusEpsilonChi": 0.03407074348833317,
+            "centralDerivative": -0.000857439341958588,
+            "expectedReciprocalDirectionalDerivative": -0.0008574393417367737,
+            "scaleAwareResidual": 2.2181421196337814E-13,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-05,
+            "actionAtPsiPlusEpsilonChi": 0.03407064919144784,
+            "actionAtPsiMinusEpsilonChi": 0.03407066634023463,
+            "centralDerivative": -0.0008574393396687529,
+            "expectedReciprocalDirectionalDerivative": -0.0008574393417367737,
+            "scaleAwareResidual": 2.0680208847462245E-12,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-06,
+            "actionAtPsiPlusEpsilonChi": 0.03407065690861632,
+            "actionAtPsiMinusEpsilonChi": 0.034070658623495016,
+            "centralDerivative": -0.000857439348689315,
+            "expectedReciprocalDirectionalDerivative": -0.0008574393417367737,
+            "scaleAwareResidual": 6.95254129875339E-12,
+            "passed": true
+          }
+        ],
+        "maxCentralDerivativeScaleAwareResidual": 6.95254129875339E-12,
+        "centralDerivativeIdentityPassed": true,
+        "allDirectionalIdentitiesPassed": true
+      },
+      "analyticPersistedPairingScaleAwareResidual": 4.45981025717891E-14,
+      "analyticPersistedDerivativeScaleAwareResidual": 4.39384856623648E-14,
+      "analyticPersistedDirectionalParityPassed": true,
+      "maxPairingIdentityScaleAwareResidual": 1.5467655453327765E-17,
+      "maxCentralDerivativeScaleAwareResidual": 2.4228542783166773E-11,
+      "transformedDirectionalIdentityPassed": true
+    },
+    {
+      "chiModeId": "mode-bg-phase12-bg-a-20260315212202-011",
+      "chiModeIndex": 11,
+      "psiSourceModeId": "mode-bg-phase12-bg-a-20260315212202-000",
+      "psiSourceModeIndex": 0,
+      "persisted": {
+        "weightedOperatorPairing": {},
+        "stiffnessPairing": {},
+        "weightedOperatorToStiffnessPairingScaleAwareResidual": 1.5515838457795457E-17,
+        "weightedOperatorToStiffnessPairingIdentityPassed": true,
+        "reciprocalPartnerPairing": {},
+        "reciprocalRealFormDirectionalDerivative": 0.2016560025266906,
+        "hermitianRealFormShortcutDirectionalDerivative": 0.20165600252669064,
+        "reciprocalRealFormScaleAwareResidual": 2.7755575615628914E-17,
+        "reciprocalRealFormIdentityPassed": true,
+        "centralDerivativeLadder": [
+          {
+            "epsilon": 0.01,
+            "actionAtPsiPlusEpsilonChi": 0.036088449732824275,
+            "actionAtPsiMinusEpsilonChi": 0.03205532968229043,
+            "centralDerivative": 0.2016560025266921,
+            "expectedReciprocalDirectionalDerivative": 0.2016560025266906,
+            "scaleAwareResidual": 1.4988010832439613E-15,
+            "passed": true
+          },
+          {
+            "epsilon": 0.001,
+            "actionAtPsiPlusEpsilonChi": 0.03427232608795409,
+            "actionAtPsiMinusEpsilonChi": 0.03386901408290071,
+            "centralDerivative": 0.20165600252668864,
+            "expectedReciprocalDirectionalDerivative": 0.2016560025266906,
+            "scaleAwareResidual": 1.970645868709653E-15,
+            "passed": true
+          },
+          {
+            "epsilon": 0.0001,
+            "actionAtPsiPlusEpsilonChi": 0.03409082348945879,
+            "actionAtPsiMinusEpsilonChi": 0.03405049228895343,
+            "centralDerivative": 0.20165600252679966,
+            "expectedReciprocalDirectionalDerivative": 0.2016560025266906,
+            "scaleAwareResidual": 1.09051656593806E-13,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-05,
+            "actionAtPsiPlusEpsilonChi": 0.03407267432726913,
+            "actionAtPsiMinusEpsilonChi": 0.03406864120721863,
+            "centralDerivative": 0.20165600252523838,
+            "expectedReciprocalDirectionalDerivative": 0.2016560025266906,
+            "scaleAwareResidual": 1.452227227360936E-12,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-06,
+            "actionAtPsiPlusEpsilonChi": 0.03407085942202681,
+            "actionAtPsiMinusEpsilonChi": 0.03407045611002175,
+            "centralDerivative": 0.20165600253183036,
+            "expectedReciprocalDirectionalDerivative": 0.2016560025266906,
+            "scaleAwareResidual": 5.1397497369265466E-12,
+            "passed": true
+          }
+        ],
+        "maxCentralDerivativeScaleAwareResidual": 5.1397497369265466E-12,
+        "centralDerivativeIdentityPassed": true,
+        "allDirectionalIdentitiesPassed": true
+      },
+      "analytic": {
+        "weightedOperatorPairing": {},
+        "stiffnessPairing": {},
+        "weightedOperatorToStiffnessPairingScaleAwareResidual": 5.647850449853784E-17,
+        "weightedOperatorToStiffnessPairingIdentityPassed": true,
+        "reciprocalPartnerPairing": {},
+        "reciprocalRealFormDirectionalDerivative": 0.20165600252671095,
+        "hermitianRealFormShortcutDirectionalDerivative": 0.20165600252671095,
+        "reciprocalRealFormScaleAwareResidual": 0,
+        "reciprocalRealFormIdentityPassed": true,
+        "centralDerivativeLadder": [
+          {
+            "epsilon": 0.01,
+            "actionAtPsiPlusEpsilonChi": 0.03608844973287028,
+            "actionAtPsiMinusEpsilonChi": 0.03205532968233606,
+            "centralDerivative": 0.20165600252671084,
+            "expectedReciprocalDirectionalDerivative": 0.20165600252671095,
+            "scaleAwareResidual": 1.1102230246251565E-16,
+            "passed": true
+          },
+          {
+            "epsilon": 0.001,
+            "actionAtPsiPlusEpsilonChi": 0.03427232608799998,
+            "actionAtPsiMinusEpsilonChi": 0.03386901408294657,
+            "centralDerivative": 0.20165600252670599,
+            "expectedReciprocalDirectionalDerivative": 0.20165600252671095,
+            "scaleAwareResidual": 4.9682480351975755E-15,
+            "passed": true
+          },
+          {
+            "epsilon": 0.0001,
+            "actionAtPsiPlusEpsilonChi": 0.03409082348950463,
+            "actionAtPsiMinusEpsilonChi": 0.03405049228899931,
+            "centralDerivative": 0.2016560025265915,
+            "expectedReciprocalDirectionalDerivative": 0.20165600252671095,
+            "scaleAwareResidual": 1.1945999744966684E-13,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-05,
+            "actionAtPsiPlusEpsilonChi": 0.034072674327315054,
+            "actionAtPsiMinusEpsilonChi": 0.034068641207264536,
+            "centralDerivative": 0.20165600252593227,
+            "expectedReciprocalDirectionalDerivative": 0.20165600252671095,
+            "scaleAwareResidual": 7.786826738964692E-13,
+            "passed": true
+          },
+          {
+            "epsilon": 1E-06,
+            "actionAtPsiPlusEpsilonChi": 0.03407085942207265,
+            "actionAtPsiMinusEpsilonChi": 0.03407045611006761,
+            "centralDerivative": 0.20165600252142202,
+            "expectedReciprocalDirectionalDerivative": 0.20165600252671095,
+            "scaleAwareResidual": 5.288935955860552E-12,
+            "passed": true
+          }
+        ],
+        "maxCentralDerivativeScaleAwareResidual": 5.288935955860552E-12,
+        "centralDerivativeIdentityPassed": true,
+        "allDirectionalIdentitiesPassed": true
+      },
+      "analyticPersistedPairingScaleAwareResidual": 2.3241102124228835E-14,
+      "analyticPersistedDerivativeScaleAwareResidual": 2.0344836926255994E-14,
+      "analyticPersistedDirectionalParityPassed": true,
+      "maxPairingIdentityScaleAwareResidual": 5.647850449853784E-17,
+      "maxCentralDerivativeScaleAwareResidual": 5.288935955860552E-12,
+      "transformedDirectionalIdentityPassed": true
+    }
+  ],
+  "sidecarPath": "studies/phase373_mass_psi_stiffness_operator_convention_repair_audit_001/output/variations/variation-bg-phase12-bg-a-20260315212202-candidate-5-stiffness-operator-convention.json"
+}

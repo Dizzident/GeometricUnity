@@ -33,6 +33,20 @@ outside the first executable numerical branch.
   variation across all persisted Phase12 branch-local mode directions. Phase371
   treats that operator variation as one `VO-7` precursor and preserves the
   distinction between implemented software and the missing coupled Hessian.
+- Added Phase372 to materialize the strongest reciprocal control candidate
+  currently available from persisted Phase12 artifacts:
+  `S_F^candidate=Re<psi,D_h(omega)psi>` and
+  `J_k=Re<psi,delta_D[b_k]psi>`. The identity-weight control branch passes 288
+  directional checks. The architecture-preferred mesh-volume pairing exposes
+  an `M_psi` convention obstruction, so Phase372 does not claim a physical
+  fermionic branch.
+- Added Phase373 to test the obstruction as a representation contract:
+  persisted Hermitian stiffness matrix `K`, weighted operator
+  `A=M_psi^-1 K`, and Hermitian representative
+  `B=M_psi^-1/2 K M_psi^-1/2`. The local algebra passes across both
+  backgrounds, all 24 variations, and all 288 directional checks. The
+  synthetic-`B` replay then exposes a separate shared-solver quality
+  obstruction.
 
 ## Prediction Relevance
 
@@ -53,9 +67,9 @@ not merely the typed placeholders.
 
 ## Follow-Up
 
-- Extend the Phase371 precursor with an epsilon ladder, reciprocal
-  fermion-to-boson backreaction block, and gauge-compatibility identities only
-  after a fixed GU fermionic operator branch and Yukawa-like coupling map are
-  supplied.
+- Repair the shared weighted spectral solver against the Phase373
+  synthetic-`B` benchmark before enabling production mesh weighting.
+- Add gauge-compatibility identities only after a fixed GU fermionic operator
+  branch and Yukawa-like coupling map are supplied.
 - Require an explicit scalar extraction theorem and stability evidence before
   applying the result to the Phase201 Higgs intake contract.

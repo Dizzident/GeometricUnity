@@ -44,6 +44,11 @@ then reports a one-loop top-approximation Higgs estimate near 186 GeV.
   local experiment validates a discrete connection-to-Dirac first variation,
   but does not claim the GU-native Dirac-Yukawa or Lichnerowicz construction
   still required for a coupled physical source law.
+- Used the source cluster as external context for Phase372's reciprocal
+  discrete-bilinear control candidate. The experiment separates the passing
+  identity-weight control calculation from the architecture-preferred
+  mesh-volume `M_psi` diagnostic and records the latter's incompatibility as an
+  actionable local branch obstruction.
 
 ## Prediction Relevance
 

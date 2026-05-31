@@ -11715,6 +11715,241 @@ lineage, a mass-scale source, pole extraction, and GeV normalization.
   `xUnit2013` collection-size warning in
   `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
 
+## 2026-05-31 - Phase373 Mass-Psi Stiffness/Operator Convention Repair Audit
+
+### Context
+
+Phase372 passed as an identity-weight reciprocal mixed-block control but found
+that the current mesh-volume diagnostic was not `M_psi`-self-adjoint when the
+persisted discrete Dirac matrix was used directly. The measured residuals were
+approximately `0.35` for the base matrices and `0.71` for variations.
+
+An explorer agent reviewed the assembler, variation computer, architecture,
+and spectral solver. It identified a representation distinction that was
+implicit in the current branch:
+
+```text
+K = persisted Euclidean-Hermitian stiffness/action matrix
+A = M_psi^-1 K
+B = M_psi^-1/2 K M_psi^-1/2
+```
+
+Under this reading, the Phase372 mesh-volume test applied the weighted adjoint
+identity to the wrong representation. The correct identities are
+`A^dagger M_psi=M_psi A=K` and
+`B=M_psi^1/2 A M_psi^-1/2`.
+
+### Sources Reviewed
+
+- Official GU draft:
+  `https://geometricunity.nyc3.digitaloceanspaces.com/Geometric_Unity-Draft-April-1st-2021.pdf`.
+- Tolksdorf Dirac-Yukawa paper:
+  `https://arxiv.org/abs/hep-th/9612149`.
+- Local completion v29 fermionic/Yukawa passages:
+  `TheoryCompletitionRevisions/Geometric_Unity_Completion_Reorganized_Updated_v29.md`.
+- Local Phase 4 architecture:
+  `docs/Architecture/ARCH_P4.md`.
+- Shared implementation:
+  `src/Gu.Phase4.Dirac/CpuDiracOperatorAssembler.cs`,
+  `src/Gu.Phase4.Dirac/FermionSpectralSolver.cs`, and
+  `src/Gu.Phase4.Dirac/MassPsiWeightsBuilder.cs`.
+
+### Action
+
+- Launched a worker agent to implement
+  `studies/phase373_mass_psi_stiffness_operator_convention_repair_audit_001`.
+- Reused both Phase12 base matrices, all 24 persisted and analytical variation
+  matrices, and mesh-volume weights from `MassPsiWeightsBuilder.BuildFromMesh`.
+- Checked Euclidean Hermiticity for `K`, weighted self-adjointness for `A`,
+  Euclidean Hermiticity and similarity parity for `B`, analytical-versus-
+  persisted variation parity, and all 288 weighted directional identities.
+- Ran the existing shared `FermionSpectralSolver` against synthetic explicit
+  `B` bundles, transformed modes back with `psi=M_psi^-1/2 u`, and measured
+  generalized residuals and `M_psi` orthonormality.
+- Wired Phase373 into the generator, P101 package, P202 objective audit,
+  claim-integrity verifier, and generated-diagnostic scanner exclusions.
+
+### Targeted Outcome
+
+The branch-local algebraic repair candidate passed:
+
+- `massPsiStiffnessOperatorConventionRepairAuditPassed=true`.
+- `phase372MeshVolumeWeightObstructionPresent=true`.
+- `transformedBaseBackgroundCount=2`.
+- `transformedVariationIdentityPassedCount=24`.
+- `transformedDirectionalIdentityPassedCount=288`.
+- `transformedAnalyticPersistedParityPassedCount=24`.
+- `maxBaseAWeightedAdjointRelativeResidual=3.521639958898684E-17`.
+- `maxBaseBHermiticityRelativeResidual=0`.
+- `maxDirectionalPairingIdentityScaleAwareResidual=8.441528768080324E-17`.
+- `maxDirectionalCentralDerivativeScaleAwareResidual=8.210085389315225E-11`.
+
+The matching shared-solver diagnostic is materialized but remains weak:
+
+- `matchingWeightedModeReplayMaterialized=true`.
+- `matchingWeightedModeReplayQualityPassed=false`.
+- `maxModeReplayBRelativeResidual=1.1279684115339121`.
+- `maxModeReplayGeneralizedRelativeResidual=1.3606147345417028`.
+- `maxModeReplayMOrthonormalityResidual=2.643431958340854E-11`.
+
+### Decision
+
+Treat Phase373 as a branch-local discrete representation contract candidate.
+It resolves the interpretation of the Phase372 mesh-volume obstruction, but it
+does not prove a physical GU fermionic branch or a canonical mesh-volume mass
+matrix. It also does not repair the shared solver.
+
+The next actionable implementation is a shared weighted-solver correctness
+repair benchmarked against the synthetic Hermitian `B` representation. Require
+generalized `K psi=lambda M_psi psi` residuals and `M_psi` orthonormality before
+enabling mesh-volume weighting in production.
+
+Phase373 does not provide a fixed GU fermionic action, explicit Yukawa map,
+coupled residual, completed mixed blocks, gauge identities, scalar projection
+theorem, W/Z bridge law, Higgs scalar operator, pole extraction, or GeV
+normalization. It fills zero Phase201 and Phase256 prediction fields.
+
+### Validation
+
+- Targeted Phase373 build and run passed.
+- The synthetic-`B` replay obstruction remains explicit and nonpromotional.
+- P101 package regeneration passed and includes the Phase373 block.
+- P202 objective audit remained incomplete as required:
+  `objectiveAchieved=false`, `checklistPassedCount=166`, and
+  `checklistFailedCount=3`.
+- Scanner reruns preserved the negative intake boundary:
+  P204 `intakeReadyCandidateCount=0`,
+  P205 `intakeReadyFindingCount=0`,
+  P207 `intakeReadyFindingCount=0`,
+  P279 `localSearchMatchingFileCount=0`,
+  P281 `localSearchMatchingFileCount=0`,
+  P295 `intakeReadyObservedFieldExtractionCandidateCount=0`, and
+  P296 `intakeReadySourceLineageFieldCandidateCount=0`.
+- Claim-integrity verification passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Reference link check passed with `detailLinkCount=51` and no missing
+  details.
+- `git diff --check` passed.
+- Focused Phase4 tests passed:
+  `Gu.Phase4.Couplings.Tests` with `15/15` tests and
+  `Gu.Phase4.Chirality.Tests` with `43/43` tests.
+- Full `./scripts/generate_validated_boson_predictions.sh` passed with
+  Phase373 included and final claim-integrity verification still reporting
+  zero promoted physical mass claims.
+- `dotnet test GeometricUnity.slnx` passed; the only warning was the existing
+  `xUnit2013` collection-size warning in
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
+
+## 2026-05-31 - Phase372 Discrete Fermionic-Bilinear Reciprocal Mixed-Block Audit
+
+### Context
+
+Phase371 validated all 24 implemented discrete connection-to-Dirac first
+variations and persisted target-blind response artifacts. It did not provide
+the reciprocal fermion-to-boson source block required by the unfinished
+coupled-action program. The next bounded question was whether the persisted
+Phase12 artifacts support a discrete fermionic-bilinear control candidate
+without importing a physical GU branch.
+
+### Sources Reviewed
+
+- Official GU draft:
+  `https://geometricunity.nyc3.digitaloceanspaces.com/Geometric_Unity-Draft-April-1st-2021.pdf`.
+  - Section 9.3 equations `9.16-9.20` describe a Dirac-like spinorial
+    operator and compile bosonic and fermionic variations into mixed
+    `Upsilon` terms.
+  - Equation `10.5` places the spinorial and bosonic-source terms in the
+    proposed deformation-complex equation.
+  - The caveat following equation `10.10` says the older diagram may remain
+    inconsistent until stabilized.
+- Tolksdorf Dirac-Yukawa paper:
+  `https://arxiv.org/abs/hep-th/9612149`.
+- Local completion v29 fermionic/Yukawa passages:
+  `TheoryCompletitionRevisions/Geometric_Unity_Completion_Reorganized_Updated_v29.md`.
+- Local Phase 4 architecture:
+  `docs/Architecture/ARCH_P4.md`.
+
+### Agent Diagnosis
+
+An explorer agent recommended a kinetic-only reciprocal mixed-block experiment
+as the strongest defensible next artifact:
+
+`S_F^candidate(omega,psi)=Re<psi,D_h(omega)psi>`
+
+and
+
+`J_k(psi)=Re<psi,delta_D[b_k]psi>`.
+
+The agent also identified an important boundary: the identity-weight branch is
+only a control, while a physical interpretation requires a consistent
+mesh-volume `M_psi` representation.
+
+### Action
+
+- Added
+  `studies/phase372_discrete_fermionic_bilinear_reciprocal_mixed_block_audit_001`.
+- Evaluated all 24 persisted Phase12 bosonic variation directions against all
+  12 branch-local fermion directions.
+- Checked response pairing parity, current directional derivatives, central
+  finite-difference convergence, and the Hermitian adjoint identity.
+- Kept the independent `psi` and `psi_bar` derivatives separate from the
+  Hermitian shortcut.
+- Persisted an identity-weight control branch and a separate mesh-volume
+  diagnostic branch.
+- Wired Phase372 into the generator, P101 package, P202 objective audit,
+  claim-integrity verifier, and generated-diagnostic scanner exclusions.
+- Added a linked local architecture note:
+  `LOCAL-ARCH-P4-FERMION-MASS-REPRESENTATION`.
+
+### Targeted Outcome
+
+Phase372 passed as a bounded, nonphysical control:
+
+- `discreteFermionicBilinearReciprocalMixedBlockAuditPassed=true`.
+- `variationCount=24`.
+- `backgroundCount=2`.
+- `fermionDirectionCount=12`.
+- `directionalCheckCount=288`.
+- `responsePairingParityPassedCount=288`.
+- `currentDirectionalDerivativeParityPassedCount=288`.
+- `centralFiniteDifferenceConvergencePassedCount=288`.
+- `hermitianAdjointIdentityPassedCount=288`.
+- `maxReciprocalIdentityScaleAwareResidual=2.7755575615628914E-16`.
+- `maxCentralDerivativeScaleAwareResidual=7.176240504613851E-11`.
+
+The mesh-volume diagnostic preserved all 288 central finite-difference checks
+but exposed a representation obstruction:
+
+- `meshVolumeWeightBranchCompatible=false`.
+- `maxMeshVolumeWeightBaseDiracMAdjointRelativeResidual=0.34982671637306856`.
+- `maxMeshVolumeWeightVariationMAdjointRelativeResidual=0.7139201615144989`.
+
+### Decision
+
+Treat Phase372 as one additional `VO-7` building block only. It does not
+establish a physical GU fermionic action, fixed branch, explicit Yukawa
+functional, completed coupled Hessian, gauge identities, scalar projection
+theorem, W/Z bridge law, Higgs scalar operator, pole extraction, or GeV
+normalization.
+
+The follow-up diagnosis is that the persisted Hermitian discrete matrix should
+be tested as a stiffness representation `K`, distinct from the weighted-space
+operator `A=M_psi^-1 K` and Hermitian representative
+`B=M_psi^-1/2 K M_psi^-1/2`. Phase373 is testing that convention locally
+before any shared solver change.
+
+### Validation
+
+- Targeted Phase372 build and run passed.
+- P101 package regeneration passed and includes the Phase372 block.
+- P202 objective audit remained incomplete as required:
+  `objectiveAchieved=false`, `checklistPassedCount=165`, and
+  `checklistFailedCount=3`.
+- Claim-integrity verification passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+
 ## 2026-05-30 - Phase371 Discrete Connection-to-Dirac First-Variation Coverage Audit
 
 ### Context

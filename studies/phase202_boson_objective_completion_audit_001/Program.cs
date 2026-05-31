@@ -137,6 +137,8 @@ const string Phase368Path = "studies/phase368_oxford_inhomogeneous_gauge_equatio
 const string Phase369Path = "studies/phase369_weyl_conformal_sm_stueckelberg_source_audit_001/output/weyl_conformal_sm_stueckelberg_source_audit_summary.json";
 const string Phase370Path = "studies/phase370_completion_fermionic_yukawa_higgs_mixed_linearization_source_audit_001/output/completion_fermionic_yukawa_higgs_mixed_linearization_source_audit_summary.json";
 const string Phase371Path = "studies/phase371_discrete_connection_dirac_first_variation_coverage_audit_001/output/discrete_connection_dirac_first_variation_coverage_audit_summary.json";
+const string Phase372Path = "studies/phase372_discrete_fermionic_bilinear_reciprocal_mixed_block_audit_001/output/discrete_fermionic_bilinear_reciprocal_mixed_block_audit_summary.json";
+const string Phase373Path = "studies/phase373_mass_psi_stiffness_operator_convention_repair_audit_001/output/mass_psi_stiffness_operator_convention_repair_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -307,6 +309,8 @@ using var phase368 = File.Exists(Phase368Path) ? JsonDocument.Parse(File.ReadAll
 using var phase369 = File.Exists(Phase369Path) ? JsonDocument.Parse(File.ReadAllText(Phase369Path)) : null;
 using var phase370 = File.Exists(Phase370Path) ? JsonDocument.Parse(File.ReadAllText(Phase370Path)) : null;
 using var phase371 = File.Exists(Phase371Path) ? JsonDocument.Parse(File.ReadAllText(Phase371Path)) : null;
+using var phase372 = File.Exists(Phase372Path) ? JsonDocument.Parse(File.ReadAllText(Phase372Path)) : null;
+using var phase373 = File.Exists(Phase373Path) ? JsonDocument.Parse(File.ReadAllText(Phase373Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -3895,6 +3899,75 @@ var discreteConnectionDiracFirstVariationCoverageAuditPassed = discreteConnectio
     && JsonBool(phase371.RootElement, "canFillPhase201WzContract") is false
     && JsonBool(phase371.RootElement, "canFillPhase201HiggsContract") is false
     && JsonBool(phase371.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false;
+var discreteFermionicBilinearReciprocalMixedBlockAuditMaterialized = phase372 is not null;
+var discreteFermionicBilinearReciprocalMixedBlockAuditPassed = discreteFermionicBilinearReciprocalMixedBlockAuditMaterialized
+    && JsonBool(phase372!.RootElement, "discreteFermionicBilinearReciprocalMixedBlockAuditPassed") is true
+    && JsonBool(phase372.RootElement, "phase371ConnectionToDiracPrecursorPresent") is true
+    && JsonBool(phase372.RootElement, "localDiscreteHermitianFermionicBilinearCandidateMaterialized") is true
+    && JsonBool(phase372.RootElement, "reciprocalDiscreteBilinearSourceBlockCandidateMaterialized") is true
+    && JsonBool(phase372.RootElement, "reciprocalDiscreteBilinearSourceBlockCandidateIsVo7BuildingBlock") is true
+    && JsonBool(phase372.RootElement, "reciprocalDiscreteBilinearSourceBlockCandidateCompletesVo7") is false
+    && JsonBool(phase372.RootElement, "expectedCoveragePresent") is true
+    && JsonInt(phase372.RootElement, "variationCount") == 24
+    && JsonInt(phase372.RootElement, "backgroundCount") == 2
+    && JsonInt(phase372.RootElement, "fermionDirectionCount") == 12
+    && JsonInt(phase372.RootElement, "directionalCheckCount") == 288
+    && JsonInt(phase372.RootElement, "responsePairingParityPassedCount") == 288
+    && JsonInt(phase372.RootElement, "currentDirectionalDerivativeParityPassedCount") == 288
+    && JsonInt(phase372.RootElement, "centralFiniteDifferenceConvergencePassedCount") == 288
+    && JsonInt(phase372.RootElement, "hermitianAdjointIdentityPassedCount") == 288
+    && JsonBool(phase372.RootElement, "routeProvidesCompletedFermionicAction") is false
+    && JsonBool(phase372.RootElement, "routeProvidesFixedFermionicOperatorBranch") is false
+    && JsonBool(phase372.RootElement, "routeProvidesExplicitYukawaFunctional") is false
+    && JsonBool(phase372.RootElement, "routeProvidesSolvedYukawaCouplingMap") is false
+    && JsonBool(phase372.RootElement, "routeProvidesCoupledResidual") is false
+    && JsonBool(phase372.RootElement, "routeProvidesCompletedMixedLinearizationBlocks") is false
+    && JsonBool(phase372.RootElement, "routeProvidesMixedLinearizationGaugeCompatibilityIdentities") is false
+    && JsonBool(phase372.RootElement, "routeProvidesDirectTargetIndependentWzBridgeSourceLaw") is false
+    && JsonBool(phase372.RootElement, "routeProvidesHiggsScalarSourceOperator") is false
+    && JsonBool(phase372.RootElement, "routeProvidesScalarProjectionTheorem") is false
+    && JsonBool(phase372.RootElement, "routeProvidesGeVUnitNormalization") is false
+    && JsonBool(phase372.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase372.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase372.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase372.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase372.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase372.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false;
+var massPsiStiffnessOperatorConventionRepairAuditMaterialized = phase373 is not null;
+var massPsiStiffnessOperatorConventionRepairAuditPassed = massPsiStiffnessOperatorConventionRepairAuditMaterialized
+    && JsonBool(phase373!.RootElement, "massPsiStiffnessOperatorConventionRepairAuditPassed") is true
+    && JsonBool(phase373.RootElement, "phase372MeshVolumeWeightObstructionPresent") is true
+    && JsonBool(phase373.RootElement, "meshVolumeMassPsiMaterialized") is true
+    && JsonBool(phase373.RootElement, "stiffnessMatrixConventionCandidateMaterialized") is true
+    && JsonBool(phase373.RootElement, "weightedOperatorConventionCandidateMaterialized") is true
+    && JsonBool(phase373.RootElement, "symmetricRepresentativeConventionCandidateMaterialized") is true
+    && JsonInt(phase373.RootElement, "transformedBaseBackgroundCount") == 2
+    && JsonInt(phase373.RootElement, "transformedVariationCount") == 24
+    && JsonInt(phase373.RootElement, "transformedVariationIdentityPassedCount") == 24
+    && JsonInt(phase373.RootElement, "transformedDirectionalCheckCount") == 288
+    && JsonInt(phase373.RootElement, "transformedDirectionalIdentityPassedCount") == 288
+    && JsonInt(phase373.RootElement, "transformedAnalyticPersistedParityPassedCount") == 24
+    && JsonBool(phase373.RootElement, "matchingWeightedModeReplayMaterialized") is true
+    && JsonBool(phase373.RootElement, "matchingWeightedModeReplayQualityPassed") is false
+    && JsonBool(phase373.RootElement, "routeProvidesPhysicalMassPsiCompatibleBranch") is false
+    && JsonBool(phase373.RootElement, "routeProvidesSharedSolverRepair") is false
+    && JsonBool(phase373.RootElement, "routeProvidesCompletedFermionicAction") is false
+    && JsonBool(phase373.RootElement, "routeProvidesFixedFermionicOperatorBranch") is false
+    && JsonBool(phase373.RootElement, "routeProvidesExplicitYukawaFunctional") is false
+    && JsonBool(phase373.RootElement, "routeProvidesSolvedYukawaCouplingMap") is false
+    && JsonBool(phase373.RootElement, "routeProvidesCoupledResidual") is false
+    && JsonBool(phase373.RootElement, "routeProvidesCompletedMixedLinearizationBlocks") is false
+    && JsonBool(phase373.RootElement, "routeProvidesMixedLinearizationGaugeCompatibilityIdentities") is false
+    && JsonBool(phase373.RootElement, "routeProvidesDirectTargetIndependentWzBridgeSourceLaw") is false
+    && JsonBool(phase373.RootElement, "routeProvidesHiggsScalarSourceOperator") is false
+    && JsonBool(phase373.RootElement, "routeProvidesScalarProjectionTheorem") is false
+    && JsonBool(phase373.RootElement, "routeProvidesGeVUnitNormalization") is false
+    && JsonBool(phase373.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase373.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase373.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase373.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase373.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase373.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -5839,6 +5912,22 @@ var checklist = new[]
             ? $"discreteConnectionDiracFirstVariationCoverageAuditPassed={JsonBool(phase371!.RootElement, "discreteConnectionDiracFirstVariationCoverageAuditPassed")}; firstVariation={JsonBool(phase371.RootElement, "discreteConnectionToDiracFirstVariationCoverageMaterialized")}; vo7BuildingBlock={JsonBool(phase371.RootElement, "discreteConnectionToDiracFirstVariationIsVo7BuildingBlock")}; completesVo7={JsonBool(phase371.RootElement, "discreteConnectionToDiracFirstVariationCompletesVo7")}; variations={JsonInt(phase371.RootElement, "variationCount")}; analyticParity={JsonInt(phase371.RootElement, "analyticParityPassedCount")}; hermiticity={JsonInt(phase371.RootElement, "hermiticityPassedCount")}; responseArtifacts={JsonInt(phase371.RootElement, "responseArtifactCount")}; responseParity={JsonInt(phase371.RootElement, "responseParityPassedCount")}; coupledResidual={JsonBool(phase371.RootElement, "routeProvidesCoupledResidual")}; mixedBlocks={JsonBool(phase371.RootElement, "routeProvidesCompletedMixedLinearizationBlocks")}; gaugeCompatibility={JsonBool(phase371.RootElement, "routeProvidesMixedLinearizationGaugeCompatibilityIdentities")}; scalarProjection={JsonBool(phase371.RootElement, "routeProvidesScalarProjectionTheorem")}; promotesWz={JsonBool(phase371.RootElement, "routePromotesWzMasses")}; promotesHiggs={JsonBool(phase371.RootElement, "routePromotesHiggsMass")}; decision={JsonString(phase371.RootElement, "decision")}"
             : "Phase371 artifact not materialized",
         Phase371Path),
+    new ObjectiveChecklistItem(
+        "discrete-fermionic-bilinear-reciprocal-mixed-block-audit-materialized",
+        "Materialize and validate a local reciprocal discrete fermionic-bilinear source-block candidate without promoting it to a fixed GU fermionic action or completed coupled Hessian.",
+        discreteFermionicBilinearReciprocalMixedBlockAuditPassed ? "passed" : "failed",
+        discreteFermionicBilinearReciprocalMixedBlockAuditMaterialized
+            ? $"discreteFermionicBilinearReciprocalMixedBlockAuditPassed={JsonBool(phase372!.RootElement, "discreteFermionicBilinearReciprocalMixedBlockAuditPassed")}; phase371Precursor={JsonBool(phase372.RootElement, "phase371ConnectionToDiracPrecursorPresent")}; localBilinearCandidate={JsonBool(phase372.RootElement, "localDiscreteHermitianFermionicBilinearCandidateMaterialized")}; reciprocalCandidate={JsonBool(phase372.RootElement, "reciprocalDiscreteBilinearSourceBlockCandidateMaterialized")}; vo7BuildingBlock={JsonBool(phase372.RootElement, "reciprocalDiscreteBilinearSourceBlockCandidateIsVo7BuildingBlock")}; completesVo7={JsonBool(phase372.RootElement, "reciprocalDiscreteBilinearSourceBlockCandidateCompletesVo7")}; variations={JsonInt(phase372.RootElement, "variationCount")}; directions={JsonInt(phase372.RootElement, "directionalCheckCount")}; responsePairingParity={JsonInt(phase372.RootElement, "responsePairingParityPassedCount")}; currentDerivativeParity={JsonInt(phase372.RootElement, "currentDirectionalDerivativeParityPassedCount")}; centralDifferenceConvergence={JsonInt(phase372.RootElement, "centralFiniteDifferenceConvergencePassedCount")}; adjointIdentity={JsonInt(phase372.RootElement, "hermitianAdjointIdentityPassedCount")}; completedAction={JsonBool(phase372.RootElement, "routeProvidesCompletedFermionicAction")}; fixedBranch={JsonBool(phase372.RootElement, "routeProvidesFixedFermionicOperatorBranch")}; explicitYukawa={JsonBool(phase372.RootElement, "routeProvidesExplicitYukawaFunctional")}; coupledResidual={JsonBool(phase372.RootElement, "routeProvidesCoupledResidual")}; mixedBlocks={JsonBool(phase372.RootElement, "routeProvidesCompletedMixedLinearizationBlocks")}; gaugeCompatibility={JsonBool(phase372.RootElement, "routeProvidesMixedLinearizationGaugeCompatibilityIdentities")}; promotesWz={JsonBool(phase372.RootElement, "routePromotesWzMasses")}; promotesHiggs={JsonBool(phase372.RootElement, "routePromotesHiggsMass")}; decision={JsonString(phase372.RootElement, "decision")}"
+            : "Phase372 artifact not materialized",
+        Phase372Path),
+    new ObjectiveChecklistItem(
+        "mass-psi-stiffness-operator-convention-repair-audit-materialized",
+        "Materialize and validate the branch-local K/A/B mass-psi representation candidate while preserving the shared-solver replay obstruction and all physical nonclaims.",
+        massPsiStiffnessOperatorConventionRepairAuditPassed ? "passed" : "failed",
+        massPsiStiffnessOperatorConventionRepairAuditMaterialized
+            ? $"massPsiStiffnessOperatorConventionRepairAuditPassed={JsonBool(phase373!.RootElement, "massPsiStiffnessOperatorConventionRepairAuditPassed")}; phase372Obstruction={JsonBool(phase373.RootElement, "phase372MeshVolumeWeightObstructionPresent")}; stiffnessK={JsonBool(phase373.RootElement, "stiffnessMatrixConventionCandidateMaterialized")}; weightedA={JsonBool(phase373.RootElement, "weightedOperatorConventionCandidateMaterialized")}; symmetricB={JsonBool(phase373.RootElement, "symmetricRepresentativeConventionCandidateMaterialized")}; variations={JsonInt(phase373.RootElement, "transformedVariationIdentityPassedCount")}/{JsonInt(phase373.RootElement, "transformedVariationCount")}; directions={JsonInt(phase373.RootElement, "transformedDirectionalIdentityPassedCount")}/{JsonInt(phase373.RootElement, "transformedDirectionalCheckCount")}; matchingReplay={JsonBool(phase373.RootElement, "matchingWeightedModeReplayMaterialized")}; replayQuality={JsonBool(phase373.RootElement, "matchingWeightedModeReplayQualityPassed")}; physicalBranch={JsonBool(phase373.RootElement, "routeProvidesPhysicalMassPsiCompatibleBranch")}; sharedSolverRepair={JsonBool(phase373.RootElement, "routeProvidesSharedSolverRepair")}; promotesWz={JsonBool(phase373.RootElement, "routePromotesWzMasses")}; promotesHiggs={JsonBool(phase373.RootElement, "routePromotesHiggsMass")}; decision={JsonString(phase373.RootElement, "decision")}"
+            : "Phase373 artifact not materialized",
+        Phase373Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

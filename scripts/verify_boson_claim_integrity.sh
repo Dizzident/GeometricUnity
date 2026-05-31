@@ -141,6 +141,8 @@ const paths = {
   phase369: "studies/phase369_weyl_conformal_sm_stueckelberg_source_audit_001/output/weyl_conformal_sm_stueckelberg_source_audit_summary.json",
   phase370: "studies/phase370_completion_fermionic_yukawa_higgs_mixed_linearization_source_audit_001/output/completion_fermionic_yukawa_higgs_mixed_linearization_source_audit_summary.json",
   phase371: "studies/phase371_discrete_connection_dirac_first_variation_coverage_audit_001/output/discrete_connection_dirac_first_variation_coverage_audit_summary.json",
+  phase372: "studies/phase372_discrete_fermionic_bilinear_reciprocal_mixed_block_audit_001/output/discrete_fermionic_bilinear_reciprocal_mixed_block_audit_summary.json",
+  phase373: "studies/phase373_mass_psi_stiffness_operator_convention_repair_audit_001/output/mass_psi_stiffness_operator_convention_repair_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -353,6 +355,8 @@ const phase368 = requireFile(paths.phase368);
 const phase369 = requireFile(paths.phase369);
 const phase370 = requireFile(paths.phase370);
 const phase371 = requireFile(paths.phase371);
+const phase372 = requireFile(paths.phase372);
+const phase373 = requireFile(paths.phase373);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -4008,6 +4012,74 @@ if (sourceLineageMissing) {
   assert(phase371.canFillPhase201HiggsContract === false, "Phase371 cannot fill the Phase201 Higgs contract.");
   assert(phase371.canFillPhase256ObservedFieldExtractionContract === false, "Phase371 cannot fill the Phase256 observed-field contract.");
   assert(Array.isArray(phase371.predictionContractImpact?.phase201FieldsDefensiblyFilled) && phase371.predictionContractImpact.phase201FieldsDefensiblyFilled.length === 0, "Phase371 must preserve an empty defensible Phase201 fill set.");
+  assert(phase372.discreteFermionicBilinearReciprocalMixedBlockAuditPassed === true, "Phase372 reciprocal discrete fermionic-bilinear mixed-block audit must pass while preserving candidate-only status.");
+  assert(phase372.phase371ConnectionToDiracPrecursorPresent === true, "Phase372 must inherit the Phase371 connection-to-Dirac precursor.");
+  assert(phase372.localDiscreteHermitianFermionicBilinearCandidateMaterialized === true, "Phase372 must materialize the local discrete Hermitian fermionic-bilinear candidate.");
+  assert(phase372.reciprocalDiscreteBilinearSourceBlockCandidateMaterialized === true, "Phase372 must materialize the reciprocal discrete bilinear source-block candidate.");
+  assert(phase372.reciprocalDiscreteBilinearSourceBlockCandidateIsVo7BuildingBlock === true, "Phase372 must classify the reciprocal candidate as a VO-7 building block.");
+  assert(phase372.reciprocalDiscreteBilinearSourceBlockCandidateCompletesVo7 === false, "Phase372 cannot claim to complete VO-7.");
+  assert(phase372.expectedCoveragePresent === true, "Phase372 must cover the expected persisted Phase12 variation and fermion-direction corpus.");
+  assert(phase372.variationCount === 24, "Phase372 must cover 24 persisted Phase12 variations.");
+  assert(phase372.backgroundCount === 2, "Phase372 must cover two persisted Phase12 backgrounds.");
+  assert(phase372.fermionDirectionCount === 12, "Phase372 must cover 12 branch-local fermion directions per variation.");
+  assert(phase372.directionalCheckCount === 288, "Phase372 must execute 288 reciprocal directional checks.");
+  assert(phase372.responsePairingParityPassedCount === 288, "Phase372 must pass response-pairing parity for all reciprocal directional checks.");
+  assert(phase372.currentDirectionalDerivativeParityPassedCount === 288, "Phase372 must pass current directional-derivative parity for all reciprocal directional checks.");
+  assert(phase372.centralFiniteDifferenceConvergencePassedCount === 288, "Phase372 must pass the fermion-direction epsilon ladder for all reciprocal directional checks.");
+  assert(phase372.hermitianAdjointIdentityPassedCount === 288, "Phase372 must pass Hermitian adjoint identity checks for all reciprocal directional checks.");
+  assert(phase372.routeProvidesCompletedFermionicAction === false, "Phase372 cannot claim a completed GU fermionic action.");
+  assert(phase372.routeProvidesFixedFermionicOperatorBranch === false, "Phase372 cannot claim a fixed GU fermionic operator branch.");
+  assert(phase372.routeProvidesExplicitYukawaFunctional === false, "Phase372 cannot claim an explicit Yukawa functional.");
+  assert(phase372.routeProvidesSolvedYukawaCouplingMap === false, "Phase372 cannot claim a solved Yukawa map.");
+  assert(phase372.routeProvidesCoupledResidual === false, "Phase372 cannot claim a coupled residual.");
+  assert(phase372.routeProvidesCompletedMixedLinearizationBlocks === false, "Phase372 cannot claim completed mixed-linearization blocks.");
+  assert(phase372.routeProvidesMixedLinearizationGaugeCompatibilityIdentities === false, "Phase372 cannot claim mixed-block corrected-gauge identities.");
+  assert(phase372.routeProvidesDirectTargetIndependentWzBridgeSourceLaw === false, "Phase372 cannot claim a direct target-independent W/Z bridge law.");
+  assert(phase372.routeProvidesHiggsScalarSourceOperator === false, "Phase372 cannot claim a Higgs scalar-source operator.");
+  assert(phase372.routeProvidesScalarProjectionTheorem === false, "Phase372 cannot claim a scalar projection theorem.");
+  assert(phase372.routeProvidesGeVUnitNormalization === false, "Phase372 cannot claim GeV normalization.");
+  assert(phase372.routePromotesWzMasses === false, "Phase372 cannot promote W/Z masses.");
+  assert(phase372.routePromotesHiggsMass === false, "Phase372 cannot promote Higgs mass.");
+  assert(phase372.routeCompletesBosonPredictions === false, "Phase372 cannot complete boson predictions.");
+  assert(phase372.canFillPhase201WzContract === false, "Phase372 cannot fill the Phase201 W/Z contract.");
+  assert(phase372.canFillPhase201HiggsContract === false, "Phase372 cannot fill the Phase201 Higgs contract.");
+  assert(phase372.canFillPhase256ObservedFieldExtractionContract === false, "Phase372 cannot fill the Phase256 observed-field contract.");
+  assert(Array.isArray(phase372.predictionContractImpact?.phase201FieldsDefensiblyFilled) && phase372.predictionContractImpact.phase201FieldsDefensiblyFilled.length === 0, "Phase372 must preserve an empty defensible Phase201 fill set.");
+  assert(phase373.massPsiStiffnessOperatorConventionRepairAuditPassed === true, "Phase373 mass-psi stiffness/operator convention repair audit must pass while preserving candidate-only status.");
+  assert(phase373.phase372MeshVolumeWeightObstructionPresent === true, "Phase373 must preserve the Phase372 raw-K mesh-volume representation obstruction.");
+  assert(phase373.meshVolumeMassPsiMaterialized === true, "Phase373 must materialize mesh-volume M_psi weights.");
+  assert(phase373.stiffnessMatrixConventionCandidateMaterialized === true, "Phase373 must materialize the Euclidean-Hermitian stiffness matrix K convention candidate.");
+  assert(phase373.weightedOperatorConventionCandidateMaterialized === true, "Phase373 must materialize the weighted operator A=M_psi^-1 K convention candidate.");
+  assert(phase373.symmetricRepresentativeConventionCandidateMaterialized === true, "Phase373 must materialize the symmetric representative B=M_psi^-1/2 K M_psi^-1/2 convention candidate.");
+  assert(phase373.transformedBaseBackgroundCount === 2, "Phase373 must cover two transformed base backgrounds.");
+  assert(phase373.transformedVariationCount === 24, "Phase373 must cover 24 transformed variations.");
+  assert(phase373.transformedVariationIdentityPassedCount === 24, "Phase373 must pass all transformed variation identities.");
+  assert(phase373.transformedDirectionalCheckCount === 288, "Phase373 must execute 288 transformed directional checks.");
+  assert(phase373.transformedDirectionalIdentityPassedCount === 288, "Phase373 must pass all transformed directional identities.");
+  assert(phase373.transformedAnalyticPersistedParityPassedCount === 24, "Phase373 must preserve analytic-versus-persisted parity across all transformed variations.");
+  assert(phase373.matchingWeightedModeReplayMaterialized === true, "Phase373 must materialize the matching weighted-mode replay diagnostic.");
+  assert(phase373.matchingWeightedModeReplayQualityPassed === false, "Phase373 must preserve the current shared-solver replay quality obstruction.");
+  assert(typeof phase373.matchingWeightedModeReplaySolverQualityObstruction === "string" && phase373.matchingWeightedModeReplaySolverQualityObstruction.length > 0, "Phase373 must explain the current shared-solver replay quality obstruction.");
+  assert(phase373.routeProvidesPhysicalMassPsiCompatibleBranch === false, "Phase373 cannot claim a physical M_psi-compatible GU branch.");
+  assert(phase373.routeProvidesSharedSolverRepair === false, "Phase373 cannot claim a shared solver repair.");
+  assert(phase373.routeProvidesCompletedFermionicAction === false, "Phase373 cannot claim a completed GU fermionic action.");
+  assert(phase373.routeProvidesFixedFermionicOperatorBranch === false, "Phase373 cannot claim a fixed GU fermionic operator branch.");
+  assert(phase373.routeProvidesExplicitYukawaFunctional === false, "Phase373 cannot claim an explicit Yukawa functional.");
+  assert(phase373.routeProvidesSolvedYukawaCouplingMap === false, "Phase373 cannot claim a solved Yukawa map.");
+  assert(phase373.routeProvidesCoupledResidual === false, "Phase373 cannot claim a coupled residual.");
+  assert(phase373.routeProvidesCompletedMixedLinearizationBlocks === false, "Phase373 cannot claim completed mixed-linearization blocks.");
+  assert(phase373.routeProvidesMixedLinearizationGaugeCompatibilityIdentities === false, "Phase373 cannot claim mixed-block corrected-gauge identities.");
+  assert(phase373.routeProvidesDirectTargetIndependentWzBridgeSourceLaw === false, "Phase373 cannot claim a direct target-independent W/Z bridge law.");
+  assert(phase373.routeProvidesHiggsScalarSourceOperator === false, "Phase373 cannot claim a Higgs scalar-source operator.");
+  assert(phase373.routeProvidesScalarProjectionTheorem === false, "Phase373 cannot claim a scalar projection theorem.");
+  assert(phase373.routeProvidesGeVUnitNormalization === false, "Phase373 cannot claim GeV normalization.");
+  assert(phase373.routePromotesWzMasses === false, "Phase373 cannot promote W/Z masses.");
+  assert(phase373.routePromotesHiggsMass === false, "Phase373 cannot promote Higgs mass.");
+  assert(phase373.routeCompletesBosonPredictions === false, "Phase373 cannot complete boson predictions.");
+  assert(phase373.canFillPhase201WzContract === false, "Phase373 cannot fill the Phase201 W/Z contract.");
+  assert(phase373.canFillPhase201HiggsContract === false, "Phase373 cannot fill the Phase201 Higgs contract.");
+  assert(phase373.canFillPhase256ObservedFieldExtractionContract === false, "Phase373 cannot fill the Phase256 observed-field contract.");
+  assert(Array.isArray(phase373.predictionContractImpact?.phase201FieldsDefensiblyFilled) && phase373.predictionContractImpact.phase201FieldsDefensiblyFilled.length === 0, "Phase373 must preserve an empty defensible Phase201 fill set.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");
