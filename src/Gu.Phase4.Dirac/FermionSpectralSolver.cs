@@ -1,14 +1,19 @@
+using System.Numerics;
 using Gu.Core;
 using Gu.Phase4.Fermions;
 
 namespace Gu.Phase4.Dirac;
 
 /// <summary>
-/// Fermionic spectral solver for D_h phi_i = lambda_i phi_i (M_psi = I).
+/// Fermionic spectral solver for K psi_i = lambda_i M_psi psi_i.
 ///
 /// Requires the DiracOperatorBundle to have an explicit matrix assembled
-/// (HasExplicitMatrix = true). Uses a self-contained Lanczos iteration
-/// on D^T*D to find the modes with smallest |eigenvalue|.
+/// (HasExplicitMatrix = true). The persisted Euclidean-Hermitian matrix is
+/// treated as the stiffness/action matrix K. Weighted solves form the
+/// Euclidean-Hermitian representative B = M_psi^-1/2 K M_psi^-1/2.
+///
+/// Uses a bounded dense Hermitian eigensolve appropriate to the current
+/// explicit reference matrices. This is not a production-scale spectral path.
 ///
 /// Returns modes sorted by ascending |lambda_i|.
 ///
@@ -19,6 +24,9 @@ namespace Gu.Phase4.Dirac;
 /// </summary>
 public sealed class FermionSpectralSolver
 {
+    private const int MaxDenseComplexDimension = 512;
+    private const double DefaultHermiticityTolerance = 1e-10;
+
     private readonly IDiracOperatorAssembler _assembler;
 
     public FermionSpectralSolver(IDiracOperatorAssembler assembler)
@@ -52,46 +60,59 @@ public sealed class FermionSpectralSolver
                 "FermionSpectralSolver requires DiracOperatorBundle with HasExplicitMatrix=true.");
 
         int totalDof = diracBundle.TotalDof;
+        ValidateSolveInputs(diracBundle.ExplicitMatrix, totalDof, config);
 
-        int realDim = 2 * totalDof;
-
-        // Validate MassPsiWeights length if provided
         double[]? massPsiWeights = config.MassPsiWeights;
-        if (massPsiWeights is not null && massPsiWeights.Length != realDim)
-            throw new ArgumentException(
-                $"MassPsiWeights length {massPsiWeights.Length} does not match " +
-                $"expected realDim {realDim} (totalDof={totalDof}).");
+        bool isWeighted = massPsiWeights is not null;
+        double[] complexMassWeights = ValidateMassPsiWeights(massPsiWeights, totalDof);
 
-        // Build D^T * D (symmetric positive semi-definite)
-        var DtD = BuildDtD(diracBundle.ExplicitMatrix, totalDof);
+        var stiffnessMatrix = BuildComplexMatrix(diracBundle.ExplicitMatrix, totalDof);
+        double hermiticityTolerance =
+            double.IsFinite(diracBundle.HermiticityTolerance) && diracBundle.HermiticityTolerance > 0.0
+                ? System.Math.Max(diracBundle.HermiticityTolerance, DefaultHermiticityTolerance)
+                : DefaultHermiticityTolerance;
+        ValidateAndSymmetrizeHermitian(stiffnessMatrix, totalDof, hermiticityTolerance, "K");
 
-        // Cap nModes at realDim since that is the actual number of real DOFs.
-        int nModes = System.Math.Min(config.ModeCount, realDim);
-        var (lambdaSq, vecs, iters) = LanczosSmallest(DtD, totalDof, nModes,
-            config.ConvergenceTolerance, config.MaxIterations, config.Seed,
-            massPsiWeights);
+        var hermitianRepresentative = BuildHermitianRepresentative(
+            stiffnessMatrix, complexMassWeights, totalDof);
+        ValidateAndSymmetrizeHermitian(
+            hermitianRepresentative, totalDof, hermiticityTolerance, isWeighted ? "B" : "K");
 
-        bool converged = iters < config.MaxIterations;
+        var (eigenvalues, representativeVectors, iters, converged) = SolveDenseHermitian(
+            hermitianRepresentative,
+            totalDof,
+            config.ConvergenceTolerance,
+            config.MaxIterations);
+
+        int nModes = System.Math.Min(config.ModeCount, totalDof);
+        var selectedIndices = Enumerable.Range(0, eigenvalues.Length)
+            .OrderBy(index => System.Math.Abs(eigenvalues[index]))
+            .Take(nModes)
+            .ToArray();
+
         var notes = new List<string>();
         if (!converged)
-            notes.Add($"Reached max iterations ({config.MaxIterations}).");
+            notes.Add($"Reached max dense Jacobi sweeps ({config.MaxIterations}).");
+        notes.Add(isWeighted
+            ? "Solved B=M_psi^-1/2 K M_psi^-1/2, then returned psi=M_psi^-1/2 u with M_psi normalization."
+            : "Solved the persisted Euclidean-Hermitian stiffness/action matrix K directly with M_psi=I.");
+        notes.Add("Residuals are ||K psi - lambda M_psi psi||_2 / ||psi||_Mpsi in the original stiffness variables.");
+        notes.Add(
+            $"Dense Hermitian Jacobi reference path is bounded to totalDof <= {MaxDenseComplexDimension}; " +
+            "it is intended for current explicit matrices, not production-scale spectra.");
 
-        int actualModes = lambdaSq.Length;
+        int actualModes = selectedIndices.Length;
 
         // Build preliminary mode records
         var modeRecords = new FermionModeRecord[actualModes];
         for (int i = 0; i < actualModes; i++)
         {
-            double lambda = System.Math.Sqrt(System.Math.Max(lambdaSq[i], 0.0));
-
-            // Determine sign from <v, D*v>
-            double[] v = vecs[i];
-            double[] Dv = ApplyD(diracBundle.ExplicitMatrix, totalDof, v);
-            double vDv = 0;
-            for (int k = 0; k < totalDof * 2; k++) vDv += v[k] * Dv[k];
-            double evRe = vDv < 0 ? -lambda : lambda;
-
-            double residualNorm = ComputeResidual(diracBundle.ExplicitMatrix, totalDof, v, evRe);
+            int selectedIndex = selectedIndices[i];
+            double eigenvalue = eigenvalues[selectedIndex];
+            Complex[] psi = BackTransformAndNormalize(
+                representativeVectors[selectedIndex], complexMassWeights);
+            double residualNorm = ComputeGeneralizedResidual(
+                stiffnessMatrix, psi, eigenvalue, complexMassWeights, totalDof);
 
             modeRecords[i] = new FermionModeRecord
             {
@@ -100,10 +121,10 @@ public sealed class FermionSpectralSolver
                 BranchVariantId = "default",
                 LayoutId = diracBundle.LayoutId,
                 ModeIndex = i,
-                EigenvalueRe = evRe,
+                EigenvalueRe = eigenvalue,
                 EigenvalueIm = 0.0,
                 ResidualNorm = residualNorm,
-                EigenvectorCoefficients = v,
+                EigenvectorCoefficients = ToInterleavedReal(psi),
                 ChiralityDecomposition = new ChiralityDecompositionRecord
                 {
                     LeftFraction = 0.5,
@@ -153,9 +174,9 @@ public sealed class FermionSpectralSolver
             Modes = new List<FermionModeRecord>(finalModes),
             Diagnostics = new FermionSpectralDiagnostics
             {
-                SolverName = massPsiWeights is not null
-                    ? "cpu-lanczos-dtd-mpsi-v1"
-                    : "cpu-lanczos-dtd-v1",
+                SolverName = isWeighted
+                    ? "cpu-dense-hermitian-b-mpsi-v2"
+                    : "cpu-dense-hermitian-k-v2",
                 Iterations = iters,
                 Converged = converged,
                 MaxResidual = maxRes,
@@ -205,245 +226,332 @@ public sealed class FermionSpectralSolver
 
     // --- Linear algebra helpers ---
 
-    private static double[] BuildDtD(double[] D, int totalDof)
+    private static void ValidateSolveInputs(
+        double[] explicitMatrix,
+        int totalDof,
+        FermionSpectralConfig config)
     {
-        // D is complex totalDof x totalDof stored as [i*totalDof+j][re/im]
-        // Returned as flat array of length (2*totalDof)^2 (real representation).
-        int realDim = 2 * totalDof;
-        var DtD = new double[realDim * realDim];
+        if (totalDof <= 0)
+            throw new ArgumentException("DiracOperatorBundle TotalDof must be positive.");
+        if (totalDof > MaxDenseComplexDimension)
+            throw new InvalidOperationException(
+                $"FermionSpectralSolver dense Hermitian reference path is bounded to " +
+                $"totalDof <= {MaxDenseComplexDimension}; received {totalDof}. " +
+                "A separate scalable Hermitian eigensolver is required for larger explicit matrices.");
 
-        for (int i = 0; i < totalDof; i++)
-            for (int j = 0; j < totalDof; j++)
-            {
-                double re = 0, im = 0;
-                for (int k = 0; k < totalDof; k++)
-                {
-                    // D†[i,k] = conj(D[k,i])
-                    double dkiRe = D[(k * totalDof + i) * 2];
-                    double dkiIm = -D[(k * totalDof + i) * 2 + 1];
-                    double dkjRe = D[(k * totalDof + j) * 2];
-                    double dkjIm = D[(k * totalDof + j) * 2 + 1];
-                    re += dkiRe * dkjRe - dkiIm * dkjIm;
-                    im += dkiRe * dkjIm + dkiIm * dkjRe;
-                }
-                // Store in real (2*totalDof) x (2*totalDof) representation
-                DtD[(2 * i) * realDim + 2 * j]         = re;
-                DtD[(2 * i) * realDim + 2 * j + 1]     = -im;
-                DtD[(2 * i + 1) * realDim + 2 * j]     = im;
-                DtD[(2 * i + 1) * realDim + 2 * j + 1] = re;
-            }
+        int expectedLength = checked(totalDof * totalDof * 2);
+        if (explicitMatrix.Length != expectedLength)
+            throw new ArgumentException(
+                $"ExplicitMatrix length {explicitMatrix.Length} does not match expected " +
+                $"{expectedLength} for totalDof={totalDof}.");
 
-        return DtD;
+        if (config.ModeCount < 0)
+            throw new ArgumentOutOfRangeException(nameof(config), "ModeCount must be non-negative.");
+        if (!double.IsFinite(config.ConvergenceTolerance) || config.ConvergenceTolerance <= 0.0)
+            throw new ArgumentOutOfRangeException(
+                nameof(config), "ConvergenceTolerance must be finite and positive.");
+        if (config.MaxIterations <= 0)
+            throw new ArgumentOutOfRangeException(nameof(config), "MaxIterations must be positive.");
     }
 
-    private static double[] ApplyD(double[] D, int totalDof, double[] v)
+    private static double[] ValidateMassPsiWeights(double[]? weights, int totalDof)
     {
-        // D is complex stored as flat array; v is flat real array of length 2*totalDof
         int realDim = 2 * totalDof;
-        var result = new double[realDim];
+        var complexWeights = new double[totalDof];
+        if (weights is null)
+        {
+            Array.Fill(complexWeights, 1.0);
+            return complexWeights;
+        }
+
+        if (weights.Length != realDim)
+            throw new ArgumentException(
+                $"MassPsiWeights length {weights.Length} does not match " +
+                $"expected realDim {realDim} (totalDof={totalDof}).");
+
         for (int i = 0; i < totalDof; i++)
         {
-            double re = 0, im = 0;
-            for (int j = 0; j < totalDof; j++)
-            {
-                double dRe = D[(i * totalDof + j) * 2];
-                double dIm = D[(i * totalDof + j) * 2 + 1];
-                double vRe = v[j * 2];
-                double vIm = v[j * 2 + 1];
-                re += dRe * vRe - dIm * vIm;
-                im += dRe * vIm + dIm * vRe;
-            }
-            result[i * 2] = re;
-            result[i * 2 + 1] = im;
+            double realWeight = weights[2 * i];
+            double imaginaryWeight = weights[2 * i + 1];
+            if (!double.IsFinite(realWeight) || realWeight <= 0.0)
+                throw new ArgumentException(
+                    $"MassPsiWeights[{2 * i}]={realWeight} must be finite and positive.",
+                    nameof(weights));
+            if (!double.IsFinite(imaginaryWeight) || imaginaryWeight <= 0.0)
+                throw new ArgumentException(
+                    $"MassPsiWeights[{2 * i + 1}]={imaginaryWeight} must be finite and positive.",
+                    nameof(weights));
+            if (realWeight != imaginaryWeight)
+                throw new ArgumentException(
+                    $"MassPsiWeights real/imaginary pair at complex DOF {i} must match; " +
+                    $"received {realWeight} and {imaginaryWeight}.",
+                    nameof(weights));
+
+            complexWeights[i] = realWeight;
         }
+
+        return complexWeights;
+    }
+
+    private static Complex[] BuildComplexMatrix(double[] interleavedMatrix, int n)
+    {
+        var matrix = new Complex[n * n];
+        for (int i = 0; i < matrix.Length; i++)
+        {
+            double real = interleavedMatrix[2 * i];
+            double imaginary = interleavedMatrix[2 * i + 1];
+            if (!double.IsFinite(real) || !double.IsFinite(imaginary))
+                throw new ArgumentException(
+                    $"ExplicitMatrix complex entry {i} must contain finite coefficients.");
+            matrix[i] = new Complex(real, imaginary);
+        }
+        return matrix;
+    }
+
+    private static void ValidateAndSymmetrizeHermitian(
+        Complex[] matrix,
+        int n,
+        double tolerance,
+        string representationName)
+    {
+        double normSquared = 0.0;
+        double residualSquared = 0.0;
+        for (int row = 0; row < n; row++)
+        {
+            for (int col = 0; col < n; col++)
+            {
+                Complex entry = matrix[row * n + col];
+                Complex difference = entry - Complex.Conjugate(matrix[col * n + row]);
+                normSquared += entry.Magnitude * entry.Magnitude;
+                residualSquared += difference.Magnitude * difference.Magnitude;
+            }
+        }
+
+        double relativeResidual =
+            System.Math.Sqrt(residualSquared / System.Math.Max(normSquared, 1e-300));
+        if (relativeResidual > tolerance)
+            throw new InvalidOperationException(
+                $"FermionSpectralSolver requires Euclidean-Hermitian {representationName}; " +
+                $"relative residual {relativeResidual:E6} exceeds tolerance {tolerance:E6}.");
+
+        for (int row = 0; row < n; row++)
+        {
+            matrix[row * n + row] = new Complex(matrix[row * n + row].Real, 0.0);
+            for (int col = row + 1; col < n; col++)
+            {
+                Complex average = 0.5 * (
+                    matrix[row * n + col] +
+                    Complex.Conjugate(matrix[col * n + row]));
+                matrix[row * n + col] = average;
+                matrix[col * n + row] = Complex.Conjugate(average);
+            }
+        }
+    }
+
+    private static Complex[] BuildHermitianRepresentative(
+        Complex[] stiffnessMatrix,
+        double[] massWeights,
+        int n)
+    {
+        var representative = new Complex[stiffnessMatrix.Length];
+        for (int row = 0; row < n; row++)
+            for (int col = 0; col < n; col++)
+                representative[row * n + col] =
+                    stiffnessMatrix[row * n + col] /
+                    System.Math.Sqrt(massWeights[row] * massWeights[col]);
+        return representative;
+    }
+
+    private static (double[] Eigenvalues, Complex[][] Eigenvectors, int Sweeps, bool Converged)
+        SolveDenseHermitian(
+            Complex[] hermitianMatrix,
+            int n,
+            double tolerance,
+            int maxSweeps)
+    {
+        var matrix = (Complex[])hermitianMatrix.Clone();
+        var vectors = new Complex[n * n];
+        for (int i = 0; i < n; i++)
+            vectors[i * n + i] = Complex.One;
+
+        double matrixNorm = FrobeniusNorm(matrix);
+        double relativeTolerance = System.Math.Min(
+            System.Math.Max(tolerance, 1e-14),
+            1e-12);
+        double convergenceThreshold = relativeTolerance * System.Math.Max(matrixNorm, 1e-300);
+        double rotationThreshold = convergenceThreshold / System.Math.Max(1, n);
+
+        bool converged = false;
+        int sweeps;
+        for (sweeps = 1; sweeps <= maxSweeps; sweeps++)
+        {
+            if (UpperOffDiagonalNorm(matrix, n) <= convergenceThreshold)
+            {
+                converged = true;
+                break;
+            }
+
+            for (int row = 0; row < n; row++)
+                for (int col = row + 1; col < n; col++)
+                    if (matrix[row * n + col].Magnitude > rotationThreshold)
+                        ApplyHermitianJacobiRotation(matrix, vectors, n, row, col);
+        }
+
+        if (!converged)
+            converged = UpperOffDiagonalNorm(matrix, n) <= convergenceThreshold;
+
+        var eigenvalues = new double[n];
+        var eigenvectors = new Complex[n][];
+        for (int i = 0; i < n; i++)
+        {
+            eigenvalues[i] = matrix[i * n + i].Real;
+            eigenvectors[i] = new Complex[n];
+            for (int row = 0; row < n; row++)
+                eigenvectors[i][row] = vectors[row * n + i];
+        }
+
+        return (eigenvalues, eigenvectors, System.Math.Min(sweeps, maxSweeps), converged);
+    }
+
+    private static void ApplyHermitianJacobiRotation(
+        Complex[] matrix,
+        Complex[] vectors,
+        int n,
+        int p,
+        int q)
+    {
+        Complex apq = matrix[p * n + q];
+        double magnitude = apq.Magnitude;
+        if (magnitude == 0.0)
+            return;
+
+        Complex phase = Complex.Conjugate(apq) / magnitude;
+        for (int row = 0; row < n; row++)
+        {
+            if (row != q)
+            {
+                matrix[row * n + q] *= phase;
+                matrix[q * n + row] = Complex.Conjugate(matrix[row * n + q]);
+            }
+            vectors[row * n + q] *= phase;
+        }
+
+        double app = matrix[p * n + p].Real;
+        double aqq = matrix[q * n + q].Real;
+        double tau = (aqq - app) / (2.0 * magnitude);
+        double t = tau >= 0.0
+            ? 1.0 / (tau + System.Math.Sqrt(1.0 + tau * tau))
+            : -1.0 / (-tau + System.Math.Sqrt(1.0 + tau * tau));
+        double cosine = 1.0 / System.Math.Sqrt(1.0 + t * t);
+        double sine = t * cosine;
+
+        matrix[p * n + p] = new Complex(app - t * magnitude, 0.0);
+        matrix[q * n + q] = new Complex(aqq + t * magnitude, 0.0);
+        matrix[p * n + q] = Complex.Zero;
+        matrix[q * n + p] = Complex.Zero;
+
+        for (int row = 0; row < n; row++)
+        {
+            if (row == p || row == q)
+                continue;
+
+            Complex arp = matrix[row * n + p];
+            Complex arq = matrix[row * n + q];
+            matrix[row * n + p] = cosine * arp - sine * arq;
+            matrix[p * n + row] = Complex.Conjugate(matrix[row * n + p]);
+            matrix[row * n + q] = sine * arp + cosine * arq;
+            matrix[q * n + row] = Complex.Conjugate(matrix[row * n + q]);
+        }
+
+        for (int row = 0; row < n; row++)
+        {
+            Complex vrp = vectors[row * n + p];
+            Complex vrq = vectors[row * n + q];
+            vectors[row * n + p] = cosine * vrp - sine * vrq;
+            vectors[row * n + q] = sine * vrp + cosine * vrq;
+        }
+    }
+
+    private static double FrobeniusNorm(Complex[] matrix)
+    {
+        double sumSquared = 0.0;
+        foreach (Complex entry in matrix)
+            sumSquared += entry.Magnitude * entry.Magnitude;
+        return System.Math.Sqrt(sumSquared);
+    }
+
+    private static double UpperOffDiagonalNorm(Complex[] matrix, int n)
+    {
+        double sumSquared = 0.0;
+        for (int row = 0; row < n; row++)
+            for (int col = row + 1; col < n; col++)
+            {
+                double magnitude = matrix[row * n + col].Magnitude;
+                sumSquared += magnitude * magnitude;
+            }
+        return System.Math.Sqrt(sumSquared);
+    }
+
+    private static Complex[] BackTransformAndNormalize(
+        Complex[] representativeVector,
+        double[] massWeights)
+    {
+        var psi = new Complex[representativeVector.Length];
+        for (int i = 0; i < psi.Length; i++)
+            psi[i] = representativeVector[i] / System.Math.Sqrt(massWeights[i]);
+
+        double normSquared = 0.0;
+        for (int i = 0; i < psi.Length; i++)
+            normSquared += massWeights[i] * psi[i].Magnitude * psi[i].Magnitude;
+
+        double norm = System.Math.Sqrt(normSquared);
+        if (norm > 1e-14)
+            for (int i = 0; i < psi.Length; i++)
+                psi[i] /= norm;
+        return psi;
+    }
+
+    private static double ComputeGeneralizedResidual(
+        Complex[] stiffnessMatrix,
+        Complex[] psi,
+        double eigenvalue,
+        double[] massWeights,
+        int n)
+    {
+        Complex[] kPsi = MatVec(stiffnessMatrix, psi, n);
+        double residualSquared = 0.0;
+        double mNormSquared = 0.0;
+        for (int i = 0; i < n; i++)
+        {
+            Complex residual = kPsi[i] - eigenvalue * massWeights[i] * psi[i];
+            residualSquared += residual.Magnitude * residual.Magnitude;
+            mNormSquared += massWeights[i] * psi[i].Magnitude * psi[i].Magnitude;
+        }
+
+        double mNorm = System.Math.Sqrt(mNormSquared);
+        return mNorm > 1e-14
+            ? System.Math.Sqrt(residualSquared) / mNorm
+            : System.Math.Sqrt(residualSquared);
+    }
+
+    private static Complex[] MatVec(Complex[] matrix, Complex[] vector, int n)
+    {
+        var result = new Complex[n];
+        for (int row = 0; row < n; row++)
+            for (int col = 0; col < n; col++)
+                result[row] += matrix[row * n + col] * vector[col];
         return result;
     }
 
-    private static double ComputeResidual(double[] D, int totalDof, double[] v, double evRe)
+    private static double[] ToInterleavedReal(Complex[] vector)
     {
-        var Dv = ApplyD(D, totalDof, v);
-        int n = 2 * totalDof;
-        double sumSq = 0, normSq = 0;
-        for (int i = 0; i < n; i++)
+        var interleaved = new double[2 * vector.Length];
+        for (int i = 0; i < vector.Length; i++)
         {
-            double r = Dv[i] - evRe * v[i];
-            sumSq += r * r;
-            normSq += v[i] * v[i];
+            interleaved[2 * i] = vector[i].Real;
+            interleaved[2 * i + 1] = vector[i].Imaginary;
         }
-        double vNorm = System.Math.Sqrt(normSq);
-        return vNorm > 1e-14 ? System.Math.Sqrt(sumSq) / vNorm : System.Math.Sqrt(sumSq);
-    }
-
-    private static (double[], double[][], int) LanczosSmallest(
-        double[] A, int origDim, int nModes, double tol, int maxIter, int seed,
-        double[]? massPsiWeights = null)
-    {
-        // massPsiWeights[k] are diagonal entries of M_psi (real representation).
-        // When provided: apply M_psi^{-1} to the Lanczos residual at each step,
-        // equivalent to solving M_psi^{-1} * A * v = lambda * v (standard eigenvalue problem
-        // with eigenvalues equal to those of the generalized problem A v = lambda M_psi v).
-        int realDim = 2 * origDim; // A is (2*totalDof)^2
-        int krylov = System.Math.Min(System.Math.Max(2 * nModes + 4, 20), realDim);
-        var rng = new Random(seed);
-
-        var Q = new double[krylov][];
-        var alpha = new double[krylov];
-        var beta = new double[krylov + 1];
-
-        // Random start
-        var q0 = new double[realDim];
-        for (int i = 0; i < realDim; i++) q0[i] = rng.NextDouble() - 0.5;
-        Normalize(q0, realDim);
-        Q[0] = q0;
-
-        int actual = krylov;
-        int totalIter = 0;
-
-        for (int j = 0; j < krylov; j++)
-        {
-            totalIter++;
-            var z = MatVec(A, realDim, Q[j]);
-            // Apply M_psi^{-1}: z[i] /= massPsiWeights[i]
-            if (massPsiWeights is not null)
-                for (int i = 0; i < realDim; i++) z[i] /= massPsiWeights[i];
-
-            if (j > 0)
-                for (int i = 0; i < realDim; i++) z[i] -= beta[j] * Q[j - 1][i];
-
-            alpha[j] = Dot(Q[j], z, realDim);
-            for (int i = 0; i < realDim; i++) z[i] -= alpha[j] * Q[j][i];
-
-            if (j < krylov - 1)
-            {
-                beta[j + 1] = Norm(z, realDim);
-                if (beta[j + 1] < tol) { actual = j + 1; break; }
-                Q[j + 1] = new double[realDim];
-                for (int i = 0; i < realDim; i++) Q[j + 1][i] = z[i] / beta[j + 1];
-            }
-        }
-
-        // Solve tridiagonal eigenvalue problem (size actual)
-        var (triEvals, triEvecs) = SolveTridiagonal(alpha, beta, actual);
-
-        // Find nModes smallest
-        int take = System.Math.Min(nModes, actual);
-        var order = Enumerable.Range(0, actual)
-            .OrderBy(i => System.Math.Abs(triEvals[i]))
-            .Take(take)
-            .ToArray();
-
-        var eigenvalues = new double[take];
-        var eigenvectors = new double[take][];
-
-        for (int m = 0; m < take; m++)
-        {
-            int idx = order[m];
-            eigenvalues[m] = System.Math.Max(triEvals[idx], 0.0);
-
-            var v = new double[realDim];
-            for (int j = 0; j < actual && Q[j] != null; j++)
-            {
-                double c = triEvecs[j][idx];
-                for (int i = 0; i < realDim; i++) v[i] += c * Q[j][i];
-            }
-            Normalize(v, realDim);
-            eigenvectors[m] = v;
-        }
-
-        return (eigenvalues, eigenvectors, totalIter);
-    }
-
-    private static (double[], double[][]) SolveTridiagonal(double[] diag, double[] offDiag, int n)
-    {
-        var d = new double[n];
-        var e = new double[n + 1]; // extra slot so e[i+2] is safe when m = n-1
-        for (int i = 0; i < n; i++) d[i] = diag[i];
-        for (int i = 1; i < n; i++) e[i] = offDiag[i];
-
-        var z = new double[n, n];
-        for (int i = 0; i < n; i++) z[i, i] = 1.0;
-
-        const int maxIter = 200;
-        for (int l = 0; l < n; l++)
-        {
-            int iter = 0;
-            int m;
-            do
-            {
-                for (m = l; m < n - 1; m++)
-                    if (System.Math.Abs(e[m + 1]) <= 1e-14 * (System.Math.Abs(d[m]) + System.Math.Abs(d[m + 1])))
-                        break;
-                if (m == l) break;
-                if (++iter > maxIter) break;
-
-                double g = (d[l + 1] - d[l]) / (2.0 * e[l + 1]);
-                double r = System.Math.Sqrt(g * g + 1.0);
-                g = d[m] - d[l] + e[l + 1] / (g + (g >= 0 ? r : -r));
-
-                double s = 1.0, c2 = 1.0, p = 0.0;
-                for (int i = m - 1; i >= l; i--)
-                {
-                    double f = s * e[i + 1];
-                    double b2 = c2 * e[i + 1];
-                    r = System.Math.Sqrt(f * f + g * g);
-                    if (i + 2 < n) e[i + 2] = r;
-                    if (r < 1e-14) { d[i + 1] -= p; if (m + 1 < n) e[m + 1] = 0.0; break; }
-                    s = f / r; c2 = g / r;
-                    double dl = d[i + 1]; g = dl - p; r = (d[i] - g) * s + 2.0 * c2 * b2;
-                    p = s * r; d[i + 1] = g + p; g = c2 * r - b2;
-                    for (int k = 0; k < n; k++)
-                    {
-                        double tz = z[k, i + 1];
-                        z[k, i + 1] = s * z[k, i] + c2 * tz;
-                        z[k, i] = c2 * z[k, i] - s * tz;
-                    }
-                }
-                if (l + 1 < n) e[l + 1] = g;
-                if (m + 1 < n) e[m + 1] = 0.0;
-                d[l] -= p;
-            } while (m != l);
-        }
-
-        var evecs = new double[n][];
-        for (int i = 0; i < n; i++)
-        {
-            evecs[i] = new double[n];
-            for (int j = 0; j < n; j++) evecs[i][j] = z[j, i];
-        }
-        return (d, evecs);
-    }
-
-    private static double[] MatVec(double[] A, int n, double[] v)
-    {
-        var result = new double[n];
-        for (int i = 0; i < n; i++)
-        {
-            double s = 0;
-            for (int j = 0; j < n; j++) s += A[i * n + j] * v[j];
-            result[i] = s;
-        }
-        return result;
-    }
-
-    private static double Dot(double[] a, double[] b, int n)
-    {
-        double s = 0;
-        for (int i = 0; i < n; i++) s += a[i] * b[i];
-        return s;
-    }
-
-    private static double Norm(double[] v, int n)
-    {
-        double s = 0;
-        for (int i = 0; i < n; i++) s += v[i] * v[i];
-        return System.Math.Sqrt(s);
-    }
-
-    private static void Normalize(double[] v, int n)
-    {
-        double nm = Norm(v, n);
-        if (nm > 1e-14)
-            for (int i = 0; i < n; i++) v[i] /= nm;
+        return interleaved;
     }
 
     private static FermionModeRecord WithModeIndex(FermionModeRecord m, int idx) =>

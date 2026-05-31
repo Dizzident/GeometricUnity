@@ -47,6 +47,11 @@ outside the first executable numerical branch.
   backgrounds, all 24 variations, and all 288 directional checks. The
   synthetic-`B` replay then exposes a separate shared-solver quality
   obstruction.
+- Added Phase374 to repair the shared weighted solver using the Hermitian
+  representative `B`, back-transform eigenmodes, and report generalized
+  `K psi=lambda M_psi psi` residuals. The persisted Phase12 selected modes are
+  kernel modes, so Phase374 also requires an independent nonuniform-`M_psi`
+  nonzero-spectrum benchmark.
 
 ## Prediction Relevance
 
@@ -67,8 +72,8 @@ not merely the typed placeholders.
 
 ## Follow-Up
 
-- Repair the shared weighted spectral solver against the Phase373
-  synthetic-`B` benchmark before enabling production mesh weighting.
+- Preserve the Phase374 weighted-solver regression coverage when adding a
+  scalable solver path or enabling production mesh weighting.
 - Add gauge-compatibility identities only after a fixed GU fermionic operator
   branch and Yukawa-like coupling map are supplied.
 - Require an explicit scalar extraction theorem and stability evidence before

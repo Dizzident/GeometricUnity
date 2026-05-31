@@ -1,7 +1,7 @@
 {
   "phaseId": "phase362-framed-standard-model-source-audit",
   "terminalStatus": "framed-standard-model-source-audit-framon-higgs-and-vector-mixing-lead-not-gu-mass-law",
-  "generatedAt": "2026-05-31T13:18:34.8787163+00:00",
+  "generatedAt": "2026-05-31T19:16:44.9988276+00:00",
   "framedStandardModelSourceAuditPassed": true,
   "framedStandardModelLeadPresent": true,
   "framedStandardModelPrimarySourcesReviewed": true,

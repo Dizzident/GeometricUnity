@@ -37,6 +37,11 @@ of the physical fermionic branch of Geometric Unity.
   edge assembly must be rebuilt.
 - Used to scope Phase373 as a phase-local representation-transform audit before
   any shared solver repair or physical weighted-pairing claim.
+- Used in Phase374 to repair the shared weighted spectral path so it solves
+  `B=M_psi^-1/2 K M_psi^-1/2`, transforms modes back with
+  `psi=M_psi^-1/2 u`, and reports generalized `K psi=lambda M_psi psi`
+  residuals. The persisted Phase12 replay selects kernel modes, so Phase374
+  also requires an independent nonuniform-`M_psi` nonzero-spectrum benchmark.
 
 ## Prediction Relevance
 
@@ -53,15 +58,16 @@ normalization.
 ## Limitation
 
 Treat this as a local implementation reference. The mesh-volume weights remain
-a provisional discretization choice, and the current shared weighted spectral
-solver still requires a separate correctness audit. No physical boson mass can
-be promoted from this convention alone.
+a provisional discretization choice. Phase374 validates a bounded dense shared
+solver repair at the discrete level, but does not establish that the weights
+or operator branch are physically canonical. No physical boson mass can be
+promoted from this convention alone.
 
 ## Follow-Up
 
-- Complete Phase373 using `K`, `A`, and `B` as separate persisted diagnostic
-  representations.
-- Require weighted-mode generalized residuals and `M_psi` orthonormality before
-  repairing shared solver code.
+- Preserve Phase374's nonzero-spectrum benchmark when replacing the bounded
+  dense reference solver with a scalable implementation.
 - Add explicit representation metadata before enabling mesh-volume weighting
   in production branches.
+- Derive a fixed GU fermionic action and physical `M_psi` branch before using
+  weighted reciprocal blocks as source-law evidence.

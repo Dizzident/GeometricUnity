@@ -231,6 +231,7 @@ const string Phase370CompletionFermionicYukawaHiggsMixedLinearizationSourceAudit
 const string Phase371DiscreteConnectionDiracFirstVariationCoverageAuditPath = "studies/phase371_discrete_connection_dirac_first_variation_coverage_audit_001/output/discrete_connection_dirac_first_variation_coverage_audit.json";
 const string Phase372DiscreteFermionicBilinearReciprocalMixedBlockAuditPath = "studies/phase372_discrete_fermionic_bilinear_reciprocal_mixed_block_audit_001/output/discrete_fermionic_bilinear_reciprocal_mixed_block_audit.json";
 const string Phase373MassPsiStiffnessOperatorConventionRepairAuditPath = "studies/phase373_mass_psi_stiffness_operator_convention_repair_audit_001/output/mass_psi_stiffness_operator_convention_repair_audit.json";
+const string Phase374SharedWeightedFermionSpectralSolverRepairAuditPath = "studies/phase374_shared_weighted_fermion_spectral_solver_repair_audit_001/output/shared_weighted_fermion_spectral_solver_repair_audit.json";
 const string Phase282BranchLocalDirectInvariantCensusPath = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census.json";
 const string Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit.json";
 const string Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic.json";
@@ -482,6 +483,7 @@ using var phase370 = TryParseJson(Phase370CompletionFermionicYukawaHiggsMixedLin
 using var phase371 = TryParseJson(Phase371DiscreteConnectionDiracFirstVariationCoverageAuditPath);
 using var phase372 = TryParseJson(Phase372DiscreteFermionicBilinearReciprocalMixedBlockAuditPath);
 using var phase373 = TryParseJson(Phase373MassPsiStiffnessOperatorConventionRepairAuditPath);
+using var phase374 = TryParseJson(Phase374SharedWeightedFermionSpectralSolverRepairAuditPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -5663,6 +5665,57 @@ var package = new
             canFillPhase201HiggsContract = JsonBool(phase373.RootElement, "canFillPhase201HiggsContract"),
             canFillPhase256ObservedFieldExtractionContract = JsonBool(phase373.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
             decision = JsonString(phase373.RootElement, "decision"),
+        }
+        : null,
+    sharedWeightedFermionSpectralSolverRepairAudit = phase374 is not null
+        ? new
+        {
+            status = JsonString(phase374.RootElement, "terminalStatus"),
+            sharedWeightedFermionSpectralSolverRepairAuditPassed = JsonBool(phase374.RootElement, "sharedWeightedFermionSpectralSolverRepairAuditPassed"),
+            phase373ConventionCandidatePresent = JsonBool(phase374.RootElement, "phase373ConventionCandidatePresent"),
+            phase373SyntheticBReplayQualityPassed = JsonBool(phase374.RootElement, "phase373SyntheticBReplayQualityPassed"),
+            meshVolumeMassPsiMaterialized = JsonBool(phase374.RootElement, "meshVolumeMassPsiMaterialized"),
+            meshVolumeMassPsiNonuniform = JsonBool(phase374.RootElement, "meshVolumeMassPsiNonuniform"),
+            backgroundCount = JsonInt(phase374.RootElement, "backgroundCount"),
+            weightedModeCount = JsonInt(phase374.RootElement, "weightedModeCount"),
+            phase12SelectedWeightedNonzeroModeCount = JsonInt(phase374.RootElement, "phase12SelectedWeightedNonzeroModeCount"),
+            phase12SelectedWeightedModesAreKernelOnly = JsonBool(phase374.RootElement, "phase12SelectedWeightedModesAreKernelOnly"),
+            weightedGeneralizedResidualPassedCount = JsonInt(phase374.RootElement, "weightedGeneralizedResidualPassedCount"),
+            weightedMNormalizationPassedCount = JsonInt(phase374.RootElement, "weightedMNormalizationPassedCount"),
+            weightedMOrthonormalityPassedBackgroundCount = JsonInt(phase374.RootElement, "weightedMOrthonormalityPassedBackgroundCount"),
+            identityRegressionPassedCount = JsonInt(phase374.RootElement, "identityRegressionPassedCount"),
+            maxWeightedGeneralizedRelativeResidual = JsonDouble(phase374.RootElement, "maxWeightedGeneralizedRelativeResidual"),
+            maxWeightedMNormResidual = JsonDouble(phase374.RootElement, "maxWeightedMNormResidual"),
+            maxWeightedMOrthonormalityResidual = JsonDouble(phase374.RootElement, "maxWeightedMOrthonormalityResidual"),
+            maxIdentityRegressionEigenvalueResidual = JsonDouble(phase374.RootElement, "maxIdentityRegressionEigenvalueResidual"),
+            syntheticNonzeroWeightedBenchmarkPassed = JsonBool(phase374.RootElement, "syntheticNonzeroWeightedBenchmarkPassed"),
+            syntheticWeightedModeCount = JsonInt(phase374.RootElement, "syntheticWeightedModeCount"),
+            syntheticWeightedNonzeroModeCount = JsonInt(phase374.RootElement, "syntheticWeightedNonzeroModeCount"),
+            syntheticWeightedGeneralizedResidualPassedCount = JsonInt(phase374.RootElement, "syntheticWeightedGeneralizedResidualPassedCount"),
+            syntheticWeightedMNormalizationPassedCount = JsonInt(phase374.RootElement, "syntheticWeightedMNormalizationPassedCount"),
+            syntheticWeightedMOrthonormalityPassed = JsonBool(phase374.RootElement, "syntheticWeightedMOrthonormalityPassed"),
+            syntheticIdentityRegressionPassed = JsonBool(phase374.RootElement, "syntheticIdentityRegressionPassed"),
+            maxSyntheticWeightedGeneralizedRelativeResidual = JsonDouble(phase374.RootElement, "maxSyntheticWeightedGeneralizedRelativeResidual"),
+            maxSyntheticWeightedMOrthonormalityResidual = JsonDouble(phase374.RootElement, "maxSyntheticWeightedMOrthonormalityResidual"),
+            routeProvidesPhysicalMassPsiCompatibleBranch = JsonBool(phase374.RootElement, "routeProvidesPhysicalMassPsiCompatibleBranch"),
+            routeProvidesCanonicalPhysicalMassPsi = JsonBool(phase374.RootElement, "routeProvidesCanonicalPhysicalMassPsi"),
+            routeProvidesCompletedFermionicAction = JsonBool(phase374.RootElement, "routeProvidesCompletedFermionicAction"),
+            routeProvidesFixedFermionicOperatorBranch = JsonBool(phase374.RootElement, "routeProvidesFixedFermionicOperatorBranch"),
+            routeProvidesExplicitYukawaFunctional = JsonBool(phase374.RootElement, "routeProvidesExplicitYukawaFunctional"),
+            routeProvidesCoupledResidual = JsonBool(phase374.RootElement, "routeProvidesCoupledResidual"),
+            routeProvidesCompletedMixedLinearizationBlocks = JsonBool(phase374.RootElement, "routeProvidesCompletedMixedLinearizationBlocks"),
+            routeProvidesMixedLinearizationGaugeCompatibilityIdentities = JsonBool(phase374.RootElement, "routeProvidesMixedLinearizationGaugeCompatibilityIdentities"),
+            routeProvidesDirectTargetIndependentWzBridgeSourceLaw = JsonBool(phase374.RootElement, "routeProvidesDirectTargetIndependentWzBridgeSourceLaw"),
+            routeProvidesHiggsScalarSourceOperator = JsonBool(phase374.RootElement, "routeProvidesHiggsScalarSourceOperator"),
+            routeProvidesScalarProjectionTheorem = JsonBool(phase374.RootElement, "routeProvidesScalarProjectionTheorem"),
+            routeProvidesGeVUnitNormalization = JsonBool(phase374.RootElement, "routeProvidesGeVUnitNormalization"),
+            routePromotesWzMasses = JsonBool(phase374.RootElement, "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonBool(phase374.RootElement, "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonBool(phase374.RootElement, "routeCompletesBosonPredictions"),
+            canFillPhase201WzContract = JsonBool(phase374.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase374.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase374.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            decision = JsonString(phase374.RootElement, "decision"),
         }
         : null,
     branchLocalDirectInvariantCensus = phase282 is not null

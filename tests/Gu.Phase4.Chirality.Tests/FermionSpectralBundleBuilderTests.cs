@@ -525,9 +525,222 @@ public class FermionSpectralBundleBuilderTests
             solver.Solve(diracBundle, layout, config, TestProvenance()));
     }
 
+    [Fact]
+    public void Solve_WithNonuniformMassPsiWeights_SatisfiesGeneralizedEigenproblemAndMOrthonormality()
+    {
+        var diracBundle = BuildSyntheticHermitianDiracBundle();
+        double[] massPsiWeights = SyntheticNonuniformMassPsiWeights();
+
+        var result = SolveSyntheticSpectral(diracBundle, massPsiWeights);
+
+        Assert.True(result.Diagnostics.Converged);
+        Assert.Equal("cpu-dense-hermitian-b-mpsi-v2", result.Diagnostics.SolverName);
+        Assert.Contains(result.Diagnostics.Notes, note =>
+            note.Contains("B=M_psi^-1/2 K M_psi^-1/2", StringComparison.Ordinal));
+        Assert.Equal(diracBundle.TotalDof, result.Modes.Count);
+
+        foreach (var mode in result.Modes)
+        {
+            double[] psi = Assert.IsType<double[]>(mode.EigenvectorCoefficients);
+            double[] kPsi = ApplyExplicitMatrix(diracBundle.ExplicitMatrix!, diracBundle.TotalDof, psi);
+            double[] lambdaMPsi = ApplyScaledWeights(psi, massPsiWeights, mode.EigenvalueRe);
+            double relativeResidual = RelativeResidual(kPsi, lambdaMPsi);
+            var selfInnerProduct = WeightedInnerProduct(psi, psi, massPsiWeights);
+
+            Assert.True(relativeResidual < 1e-11,
+                $"Mode {mode.ModeIndex} generalized relative residual {relativeResidual:E6} is too large.");
+            Assert.True(mode.ResidualNorm < 1e-10,
+                $"Mode {mode.ModeIndex} reported residual {mode.ResidualNorm:E6} is too large.");
+            Assert.True(System.Math.Abs(selfInnerProduct.Real - 1.0) < 1e-12,
+                $"Mode {mode.ModeIndex} M-norm squared is {selfInnerProduct.Real:G17}.");
+            Assert.True(System.Math.Abs(selfInnerProduct.Imaginary) < 1e-12);
+        }
+
+        for (int left = 0; left < result.Modes.Count; left++)
+            for (int right = left + 1; right < result.Modes.Count; right++)
+            {
+                var overlap = WeightedInnerProduct(
+                    result.Modes[left].EigenvectorCoefficients!,
+                    result.Modes[right].EigenvectorCoefficients!,
+                    massPsiWeights);
+                Assert.True(
+                    System.Math.Sqrt(overlap.Real * overlap.Real + overlap.Imaginary * overlap.Imaginary) < 1e-11,
+                    $"Modes {left} and {right} are not M-orthogonal: ({overlap.Real:G17}, {overlap.Imaginary:G17}).");
+            }
+    }
+
+    [Fact]
+    public void Solve_WithIdentityMassPsiWeights_MatchesUnweightedSolve()
+    {
+        var diracBundle = BuildSyntheticHermitianDiracBundle();
+        double[] identityWeights = Enumerable.Repeat(1.0, 2 * diracBundle.TotalDof).ToArray();
+
+        var unweighted = SolveSyntheticSpectral(diracBundle, massPsiWeights: null);
+        var weightedIdentity = SolveSyntheticSpectral(diracBundle, identityWeights);
+
+        Assert.Equal("cpu-dense-hermitian-k-v2", unweighted.Diagnostics.SolverName);
+        Assert.Equal("cpu-dense-hermitian-b-mpsi-v2", weightedIdentity.Diagnostics.SolverName);
+        Assert.Equal(unweighted.Modes.Count, weightedIdentity.Modes.Count);
+        for (int i = 0; i < unweighted.Modes.Count; i++)
+        {
+            Assert.Equal(unweighted.Modes[i].EigenvalueRe, weightedIdentity.Modes[i].EigenvalueRe, 12);
+            var overlap = WeightedInnerProduct(
+                unweighted.Modes[i].EigenvectorCoefficients!,
+                weightedIdentity.Modes[i].EigenvectorCoefficients!,
+                identityWeights);
+            double overlapMagnitude =
+                System.Math.Sqrt(overlap.Real * overlap.Real + overlap.Imaginary * overlap.Imaginary);
+            Assert.True(System.Math.Abs(overlapMagnitude - 1.0) < 1e-12,
+                $"Mode {i} identity-weight overlap magnitude is {overlapMagnitude:G17}.");
+        }
+    }
+
+    [Theory]
+    [InlineData(0.0)]
+    [InlineData(-1.0)]
+    [InlineData(double.NaN)]
+    [InlineData(double.PositiveInfinity)]
+    public void Solve_WithMassPsiWeights_NonPositiveOrNonFiniteWeightThrows(double invalidWeight)
+    {
+        var diracBundle = BuildSyntheticHermitianDiracBundle();
+        double[] massPsiWeights = SyntheticNonuniformMassPsiWeights();
+        massPsiWeights[0] = invalidWeight;
+        massPsiWeights[1] = invalidWeight;
+
+        Assert.Throws<ArgumentException>(() =>
+            SolveSyntheticSpectral(diracBundle, massPsiWeights));
+    }
+
+    [Fact]
+    public void Solve_WithMassPsiWeights_UnpairedRealImaginaryWeightsThrows()
+    {
+        var diracBundle = BuildSyntheticHermitianDiracBundle();
+        double[] massPsiWeights = SyntheticNonuniformMassPsiWeights();
+        massPsiWeights[1] = 1.5;
+
+        Assert.Throws<ArgumentException>(() =>
+            SolveSyntheticSpectral(diracBundle, massPsiWeights));
+    }
+
     // -------------------------------------------------------
     // Helpers
     // -------------------------------------------------------
+
+    private static DiracOperatorBundle BuildSyntheticHermitianDiracBundle()
+    {
+        (double Real, double Imaginary)[,] stiffness =
+        {
+            { (6.0, 0.0),  (1.0, 0.4),   (0.5, -0.2), (0.0, 0.1) },
+            { (1.0, -0.4), (4.0, 0.0),   (-0.25, 0.3), (0.75, 0.0) },
+            { (0.5, 0.2),  (-0.25, -0.3), (3.0, 0.0),  (1.25, -0.5) },
+            { (0.0, -0.1), (0.75, 0.0),  (1.25, 0.5),  (2.0, 0.0) },
+        };
+        int totalDof = stiffness.GetLength(0);
+        var explicitMatrix = new double[2 * totalDof * totalDof];
+        for (int row = 0; row < totalDof; row++)
+            for (int col = 0; col < totalDof; col++)
+            {
+                var entry = stiffness[row, col];
+                explicitMatrix[2 * (row * totalDof + col)] = entry.Real;
+                explicitMatrix[2 * (row * totalDof + col) + 1] = entry.Imaginary;
+            }
+
+        return new DiracOperatorBundle
+        {
+            OperatorId = "dirac-synthetic-hermitian-k",
+            FermionBackgroundId = "bg-synthetic-hermitian-k",
+            LayoutId = "layout-trivial",
+            SpinConnectionId = "conn-synthetic-hermitian-k",
+            MatrixShape = new[] { totalDof, totalDof },
+            HasExplicitMatrix = true,
+            ExplicitMatrix = explicitMatrix,
+            ExplicitMatrixRef = null,
+            IsHermitian = true,
+            HermiticityResidual = 0.0,
+            HermiticityTolerance = 1e-12,
+            MassBranchTermIncluded = false,
+            CorrectionTermIncluded = false,
+            GaugeReductionApplied = false,
+            CellCount = 2,
+            DofsPerCell = 2,
+            DiagnosticNotes = new List<string>(),
+            Provenance = TestProvenance(),
+        };
+    }
+
+    private static double[] SyntheticNonuniformMassPsiWeights() =>
+        new[] { 1.0, 1.0, 2.0, 2.0, 4.0, 4.0, 0.5, 0.5 };
+
+    private static FermionSpectralResult SolveSyntheticSpectral(
+        DiracOperatorBundle diracBundle,
+        double[]? massPsiWeights)
+    {
+        var layout = FermionFieldLayoutFactory.BuildStandardLayout(
+            "layout-trivial", Dim2Spec(), gaugeDimension: 1, TestProvenance(),
+            insertedAssumptionIds: new[] { "P4-IA-003" });
+        var config = new FermionSpectralConfig
+        {
+            TargetRegion = "lowest-magnitude",
+            ModeCount = diracBundle.TotalDof,
+            ConvergenceTolerance = 1e-12,
+            MaxIterations = 100,
+            Seed = 42,
+            MassPsiWeights = massPsiWeights,
+        };
+        var solver = new FermionSpectralSolver(new CpuDiracOperatorAssembler());
+        return solver.Solve(diracBundle, layout, config, TestProvenance());
+    }
+
+    private static double[] ApplyExplicitMatrix(double[] matrix, int totalDof, double[] vector)
+    {
+        var result = new double[2 * totalDof];
+        for (int row = 0; row < totalDof; row++)
+            for (int col = 0; col < totalDof; col++)
+            {
+                double matrixReal = matrix[2 * (row * totalDof + col)];
+                double matrixImaginary = matrix[2 * (row * totalDof + col) + 1];
+                double vectorReal = vector[2 * col];
+                double vectorImaginary = vector[2 * col + 1];
+                result[2 * row] += matrixReal * vectorReal - matrixImaginary * vectorImaginary;
+                result[2 * row + 1] += matrixReal * vectorImaginary + matrixImaginary * vectorReal;
+            }
+        return result;
+    }
+
+    private static double[] ApplyScaledWeights(double[] vector, double[] weights, double scale) =>
+        vector.Zip(weights, (coefficient, weight) => scale * weight * coefficient).ToArray();
+
+    private static double RelativeResidual(double[] left, double[] right)
+    {
+        double residualSquared = 0.0;
+        double leftSquared = 0.0;
+        double rightSquared = 0.0;
+        for (int i = 0; i < left.Length; i++)
+        {
+            double residual = left[i] - right[i];
+            residualSquared += residual * residual;
+            leftSquared += left[i] * left[i];
+            rightSquared += right[i] * right[i];
+        }
+        return System.Math.Sqrt(residualSquared) /
+            System.Math.Max(1e-300, System.Math.Max(System.Math.Sqrt(leftSquared), System.Math.Sqrt(rightSquared)));
+    }
+
+    private static (double Real, double Imaginary) WeightedInnerProduct(
+        double[] left,
+        double[] right,
+        double[] weights)
+    {
+        double real = 0.0;
+        double imaginary = 0.0;
+        for (int i = 0; i < left.Length; i += 2)
+        {
+            double weight = weights[i];
+            real += weight * (left[i] * right[i] + left[i + 1] * right[i + 1]);
+            imaginary += weight * (left[i] * right[i + 1] - left[i + 1] * right[i]);
+        }
+        return (real, imaginary);
+    }
 
     private static BackgroundRecord MakeBackground(string id, string tier) => new()
     {

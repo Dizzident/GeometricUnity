@@ -11715,6 +11715,134 @@ lineage, a mass-scale source, pole extraction, and GeV normalization.
   `xUnit2013` collection-size warning in
   `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
 
+## 2026-05-31 - Phase374 Shared Weighted Fermion Spectral Solver Repair Completed
+
+### Context
+
+Checkpoint commit `8ad87b1 Add fermionic reciprocal block convention audits`
+preserves Phase372 and Phase373 before the shared solver changes.
+
+Phase373 resolves the local `K`, `A=M_psi^-1 K`, and
+`B=M_psi^-1/2 K M_psi^-1/2` representation distinction, but its synthetic-`B`
+replay exposes a separate shared solver quality obstruction:
+
+- `matchingWeightedModeReplayQualityPassed=false`.
+- `maxModeReplayBRelativeResidual=1.1279684115339121`.
+- `maxModeReplayGeneralizedRelativeResidual=1.3606147345417028`.
+- `maxModeReplayMOrthonormalityResidual=2.643431958340854E-11`.
+
+Source inspection found that `FermionSpectralSolver` divides by `M_psi` inside
+an otherwise Euclidean Lanczos recurrence. For nonuniform `M_psi`, that does
+not solve a Euclidean-Hermitian problem. Existing weighted tests assert only
+that modes are emitted.
+
+### Action
+
+- Launched worker agent `Volta` to repair
+  `src/Gu.Phase4.Dirac/FermionSpectralSolver.cs` and add focused weighted-solver
+  regression tests.
+- Required the repaired weighted path to interpret the explicit matrix as
+  stiffness matrix `K`, solve the Hermitian representative `B`, transform
+  modes back with `psi=M_psi^-1/2 u`, require positive paired weights, and
+  report generalized `K psi=lambda M_psi psi` residuals.
+- Reserved Phase374 as a separate repair-verification audit so the shared-code
+  result is not conflated with Phase373's branch-local convention candidate.
+
+### Outcome
+
+The Phase374 pre-repair baseline is materialized and correctly fails the
+current shared solver:
+
+- `sharedWeightedFermionSpectralSolverRepairAuditPassed=false`.
+- `phase373SyntheticBReplayQualityPassed=false`.
+- `backgroundCount=2`.
+- `weightedGeneralizedResidualPassedCount=0/24`.
+- `weightedMNormalizationPassedCount=0/24`.
+- `weightedMOrthonormalityPassedBackgroundCount=0/2`.
+- `identityRegressionPassedCount=0/2`.
+- `maxWeightedGeneralizedRelativeResidual=1.3099243199220447`.
+- `maxWeightedMOrthonormalityResidual=0.9524362060833403`.
+
+The baseline also caught and repaired one Phase374 harness intake issue:
+`dirac_bundle_*.json` matched both metadata objects and `.matrix.json` arrays,
+so the harness now excludes matrix sidecars before deserialization.
+
+Agent `Volta` completed the shared-code repair:
+
+- `FermionSpectralSolver` now treats the persisted explicit matrix as
+  Euclidean-Hermitian stiffness matrix `K`.
+- The weighted path builds and solves
+  `B=M_psi^-1/2 K M_psi^-1/2`, back-transforms
+  `psi=M_psi^-1/2 u`, and reports residuals for
+  `K psi=lambda M_psi psi`.
+- The bounded correctness-first implementation uses a dense complex Hermitian
+  Jacobi solve for `totalDof<=512`.
+- Weight validation now rejects nonfinite, nonpositive, or unpaired real/imag
+  weights.
+- Focused regression tests cover a deterministic nonuniform weighted
+  generalized eigenproblem, `M_psi` orthonormality, identity regression, and
+  invalid weights.
+
+The regenerated Phase373 synthetic-`B` replay now clears:
+
+- `matchingWeightedModeReplayQualityPassed=true`.
+
+The strengthened Phase374 audit passes:
+
+- `sharedWeightedFermionSpectralSolverRepairAuditPassed=true`.
+- `phase373SyntheticBReplayQualityPassed=true`.
+- `backgroundCount=2`.
+- `weightedGeneralizedResidualPassedCount=24/24`.
+- `weightedMNormalizationPassedCount=24/24`.
+- `weightedMOrthonormalityPassedBackgroundCount=2/2`.
+- `identityRegressionPassedCount=2/2`.
+
+The persisted Phase12 result needs an explicit qualification: all selected
+lowest-magnitude modes are exact kernel modes:
+
+- `phase12SelectedWeightedNonzeroModeCount=0/24`.
+- `phase12SelectedWeightedModesAreKernelOnly=true`.
+
+To prevent a kernel-only replay from overstating the repair, Phase374 also
+requires an independent nonuniform-`M_psi` four-mode nonzero-spectrum
+benchmark through the same shared API:
+
+- `syntheticNonzeroWeightedBenchmarkPassed=true`.
+- `syntheticWeightedNonzeroModeCount=4/4`.
+- `maxSyntheticWeightedGeneralizedRelativeResidual=8.173154784325226E-15`.
+
+### Decision
+
+Treat Phase374 as a bounded discrete shared-solver correctness repair. It
+clears the implementation bug exposed by Phase373 but does not establish a
+physical GU fermionic branch, canonical `M_psi`, coupled Hessian, W/Z bridge
+law, Higgs scalar row, or boson prediction.
+
+### Validation
+
+- Focused Phase4 solver tests passed:
+  `Gu.Phase4.Dirac.Tests` `94/94` and
+  `Gu.Phase4.Chirality.Tests` `50/50`.
+- Scanner reruns preserved the negative intake boundary:
+  P204 `intakeReadyCandidateCount=0`,
+  P205 `intakeReadyFindingCount=0`,
+  P207 `intakeReadyFindingCount=0`,
+  P279 `localSearchMatchingFileCount=0`,
+  P281 `localSearchMatchingFileCount=0`,
+  P295 `intakeReadyObservedFieldExtractionCandidateCount=0`, and
+  P296 `intakeReadySourceLineageFieldCandidateCount=0`.
+- `ExperimentReferences.md` link check passed with `detailLinkCount=52` and
+  `missingDetailCount=0`.
+- Full generator gate passed with Phase374 included. Final claim-integrity
+  verification reports `sourceLineageMissing=true`, `wzMissingFieldCount=15`,
+  `higgsMissingFieldCount=14`, and `promotedPhysicalMassClaimCount=0`.
+- P202 remains incomplete as required:
+  `objectiveAchieved=false`, `checklistPassedCount=167`, and
+  `checklistFailedCount=3`.
+- `dotnet test GeometricUnity.slnx --nologo` passed. The only warning was the
+  existing `xUnit2013` collection-size warning in
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
+
 ## 2026-05-31 - Phase373 Mass-Psi Stiffness/Operator Convention Repair Audit
 
 ### Context
@@ -11784,7 +11912,8 @@ The branch-local algebraic repair candidate passed:
 - `maxDirectionalPairingIdentityScaleAwareResidual=8.441528768080324E-17`.
 - `maxDirectionalCentralDerivativeScaleAwareResidual=8.210085389315225E-11`.
 
-The matching shared-solver diagnostic is materialized but remains weak:
+Before the Phase374 shared-solver repair, the matching shared-solver
+diagnostic materialized a quality failure:
 
 - `matchingWeightedModeReplayMaterialized=true`.
 - `matchingWeightedModeReplayQualityPassed=false`.
@@ -11799,10 +11928,10 @@ It resolves the interpretation of the Phase372 mesh-volume obstruction, but it
 does not prove a physical GU fermionic branch or a canonical mesh-volume mass
 matrix. It also does not repair the shared solver.
 
-The next actionable implementation is a shared weighted-solver correctness
-repair benchmarked against the synthetic Hermitian `B` representation. Require
-generalized `K psi=lambda M_psi psi` residuals and `M_psi` orthonormality before
-enabling mesh-volume weighting in production.
+Phase374 subsequently repairs and audits that shared weighted-solver path,
+including an independent nonzero-spectrum benchmark. Production mesh
+weighting still requires explicit representation metadata and a physically
+fixed GU fermionic branch.
 
 Phase373 does not provide a fixed GU fermionic action, explicit Yukawa map,
 coupled residual, completed mixed blocks, gauge identities, scalar projection
@@ -11812,7 +11941,8 @@ normalization. It fills zero Phase201 and Phase256 prediction fields.
 ### Validation
 
 - Targeted Phase373 build and run passed.
-- The synthetic-`B` replay obstruction remains explicit and nonpromotional.
+- The pre-repair synthetic-`B` replay obstruction remains recorded as the
+  diagnostic that motivated Phase374.
 - P101 package regeneration passed and includes the Phase373 block.
 - P202 objective audit remained incomplete as required:
   `objectiveAchieved=false`, `checklistPassedCount=166`, and

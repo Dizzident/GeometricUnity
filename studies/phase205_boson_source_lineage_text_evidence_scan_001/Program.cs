@@ -392,7 +392,8 @@ static bool IsGeneratedAuditOrImplementationText(string path) =>
     || path.Contains("studies/phase370_", StringComparison.Ordinal)
     || path.Contains("studies/phase371_", StringComparison.Ordinal)
     || path.Contains("studies/phase372_", StringComparison.Ordinal)
-    || path.Contains("studies/phase373_", StringComparison.Ordinal);
+    || path.Contains("studies/phase373_", StringComparison.Ordinal)
+    || path.Contains("studies/phase374_", StringComparison.Ordinal);
 
 static bool IsReferenceTrackerText(string normalizedPath) =>
     normalizedPath == "ExperimentReferences.md"

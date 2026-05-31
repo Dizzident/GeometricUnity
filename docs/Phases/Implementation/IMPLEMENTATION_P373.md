@@ -48,14 +48,18 @@ The branch-local algebraic convention candidate passes:
 - `maxDirectionalPairingIdentityScaleAwareResidual=8.441528768080324E-17`
 - `maxDirectionalCentralDerivativeScaleAwareResidual=8.210085389315225E-11`
 
-The matching synthetic-`B` replay is separately materialized and fails the
-strict shared-solver quality gate:
+Before the shared solver repair, the matching synthetic-`B` replay separately
+materialized a strict quality failure:
 
 - `matchingWeightedModeReplayMaterialized=true`
 - `matchingWeightedModeReplayQualityPassed=false`
 - `maxModeReplayBRelativeResidual=1.1279684115339121`
 - `maxModeReplayGeneralizedRelativeResidual=1.3606147345417028`
 - `maxModeReplayMOrthonormalityResidual=2.643431958340854E-11`
+
+Phase374 repairs the shared solver path. A regenerated Phase373 artifact now
+reports `matchingWeightedModeReplayQualityPassed=true`. Keep the pre-repair
+numbers above as the diagnostic that motivated the separate shared-code fix.
 
 ## Boundary
 
@@ -66,6 +70,5 @@ Yukawa map, complete mixed-linearization blocks, provide gauge identities,
 derive a W/Z bridge law or Higgs scalar row, normalize GeV units, or promote a
 boson prediction.
 
-The next implementation step is a shared-solver correctness repair benchmarked
-against `B`, with generalized `K psi = lambda M_psi psi` residuals and
-`M_psi` orthonormality required before production mesh weighting is enabled.
+The follow-up shared-solver correctness repair and nonzero-spectrum benchmark
+are recorded in `IMPLEMENTATION_P374.md`.
