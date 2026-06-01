@@ -52,6 +52,11 @@ outside the first executable numerical branch.
   `K psi=lambda M_psi psi` residuals. The persisted Phase12 selected modes are
   kernel modes, so Phase374 also requires an independent nonuniform-`M_psi`
   nonzero-spectrum benchmark.
+- Added Phase375 to replay the weighted reciprocal source-block candidate under
+  fixed-mesh connection perturbations, with `delta M_psi=0` and
+  `deltaA=M_psi^-1 deltaK`. All 288 directional identities pass, but the
+  target-blind selected Phase12 modes are kernel modes, so the replay has zero
+  nonzero source currents and zero nonzero reciprocal derivatives.
 
 ## Prediction Relevance
 
@@ -74,6 +79,8 @@ not merely the typed placeholders.
 
 - Preserve the Phase374 weighted-solver regression coverage when adding a
   scalable solver path or enabling production mesh weighting.
+- Extend the reciprocal replay to persisted target-blind nonzero weighted
+  modes before using it as evidence beyond a zero-mode control.
 - Add gauge-compatibility identities only after a fixed GU fermionic operator
   branch and Yukawa-like coupling map are supplied.
 - Require an explicit scalar extraction theorem and stability evidence before

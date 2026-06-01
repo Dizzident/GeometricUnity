@@ -42,6 +42,11 @@ of the physical fermionic branch of Geometric Unity.
   `psi=M_psi^-1/2 u`, and reports generalized `K psi=lambda M_psi psi`
   residuals. The persisted Phase12 replay selects kernel modes, so Phase374
   also requires an independent nonuniform-`M_psi` nonzero-spectrum benchmark.
+- Used in Phase375 to replay the reciprocal source-block candidate with the
+  repaired shared weighted modes under fixed-mesh connection perturbations,
+  where `delta M_psi=0` and `deltaA=M_psi^-1 deltaK`. All weighted identities
+  pass, but the selected Phase12 source modes remain kernel modes with zero
+  nonzero currents and zero nonzero reciprocal derivatives.
 
 ## Prediction Relevance
 
@@ -59,14 +64,17 @@ normalization.
 
 Treat this as a local implementation reference. The mesh-volume weights remain
 a provisional discretization choice. Phase374 validates a bounded dense shared
-solver repair at the discrete level, but does not establish that the weights
-or operator branch are physically canonical. No physical boson mass can be
-promoted from this convention alone.
+solver repair and Phase375 validates a fixed-mesh zero-mode reciprocal replay
+at the discrete level, but neither establishes that the weights or operator
+branch are physically canonical. No physical boson mass can be promoted from
+this convention alone.
 
 ## Follow-Up
 
 - Preserve Phase374's nonzero-spectrum benchmark when replacing the bounded
   dense reference solver with a scalable implementation.
+- Extend the target-blind reciprocal replay to persisted nonzero weighted modes
+  before treating Phase375 as more than a zero-mode control.
 - Add explicit representation metadata before enabling mesh-volume weighting
   in production branches.
 - Derive a fixed GU fermionic action and physical `M_psi` branch before using

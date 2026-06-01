@@ -11715,6 +11715,161 @@ lineage, a mass-scale source, pole extraction, and GeV normalization.
   `xUnit2013` collection-size warning in
   `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
 
+## 2026-06-01 - Phase376 Persisted Nonzero-Shell Reciprocal Replay Scoped
+
+### Context
+
+Phase375 validates the repaired weighted reciprocal replay only on the lowest
+12 persisted modes per background. Those modes are exact kernel modes, so the
+replay cannot establish a nonzero-spectrum source block.
+
+### Action
+
+- Launched explorer agent `Raman` to audit the persisted Phase12 weighted
+  spectrum and propose the smallest target-blind nonzero-spectrum extension.
+- Replayed the repository-equivalent
+  `B=M_psi^-1/2 K M_psi^-1/2` construction read-only against both persisted
+  stiffness matrices.
+
+### Outcome
+
+Both backgrounds have a 48-mode weighted kernel followed by a well-separated
+four-mode first nonzero shell:
+
+| Background | Complex DOF | Weighted nullity | First nonzero indexes | Lowest nonzero `abs(lambda)` |
+| --- | ---: | ---: | --- | ---: |
+| `bg-phase12-bg-a-20260315212202` | 324 | 48 | `48..51` | `8.42761345769072E-4` |
+| `bg-phase12-bg-b-20260315212202` | 324 | 48 | `48..51` | `9.13980020695638E-4` |
+
+The largest kernel-scale eigenvalue magnitudes are `1.27E-13` and `3.16E-13`.
+The four first-shell vectors are near-degenerate, so selecting one arbitrary
+eigenvector would be numerically fragile.
+
+An independent review by explorer agent `Euler` identified the kernel topology:
+the factory mesh has four isolated ambient vertices `[19,20,23,26]`. Their
+`4*12=48` complex fermion DOFs are all-zero rows and columns in both persisted
+`K` matrices, and `MassPsiWeightsBuilder` assigns those isolated vertices the
+fallback weight `1.0`. Phase376 must assert and disclose this topology artifact
+rather than treating the kernel as physical evidence.
+
+### Decision
+
+Implement Phase376 as a discrete-only projected-shell replay:
+
+1. Request the smallest shared-solver prefix containing the shell and a
+   sentinel proving its end: `53` modes per background (`0..52`).
+2. Exclude the kernel with the existing `1E-12` tolerance.
+3. Select the complete lowest nonzero shell using a fixed spectral-only
+   grouping tolerance.
+4. Replay the basis-invariant projected block
+   `G_k=Psi_shell^dagger deltaK_k Psi_shell`.
+5. Gate nontriviality on invariant block norms rather than an arbitrary
+   shell-basis diagonal.
+6. Assert fixed-mesh connection-carrier metadata, unchanged geometry and
+   `M_psi` hashes, four isolated vertices, 48 zero rows, and isolated-vertex
+   fallback-weight use.
+
+This uses no W/Z/H target, observed mass, or current-magnitude calibration. It
+remains a bounded numerical audit, not a physical GU fermionic-action
+derivation or boson prediction.
+
+## 2026-05-31 - Phase375 Weighted Reciprocal Mixed-Block Replay Completed
+
+### Context
+
+Checkpoint commit `ff7728c Repair weighted fermion spectral solver` preserves
+the Phase374 bounded dense shared-solver repair and its full validation.
+
+Phase374 clears the discrete weighted eigensolver bug but does not establish a
+physical GU fermionic action or canonical `M_psi`. The nearest testable
+follow-up is narrower: replay the Phase372 reciprocal source-block candidate
+using the repaired shared weighted modes and the Phase373 representation
+contract:
+
+```text
+K = persisted Euclidean-Hermitian stiffness matrix
+A = M_psi^-1 K
+delta A = M_psi^-1 delta K
+S_F^candidate(omega, psi) = Re<psi, A(omega) psi>_M
+J_k(psi) = Re<psi, delta A[b_k] psi>_M
+```
+
+### Action
+
+- Launched explorer agents `Sagan` and `Wegener` to audit whether the repaired
+  weighted path unlocks a defensible discrete-only experiment and to verify
+  the source-boundary language against the official draft notes, local
+  completion v29, and Phase 4 architecture.
+- Launched worker agent `Parfit` to implement
+  `studies/phase375_weighted_reciprocal_mixed_block_replay_audit_001`.
+- Restricted Phase375 to rebuilt weighted modes, generalized residuals,
+  `M_psi` normalization and orthonormality, reciprocal directional identities,
+  analytical-versus-persisted variation parity, and explicit nonclaims.
+- Made the variation scope explicit and machine checked:
+  `fixedMeshConnectionOnlyVariationReplay=true`, so `delta M_psi=0` while
+  connection perturbations vary `K` and `deltaA=M_psi^-1 deltaK`.
+
+### Outcome
+
+The discrete weighted reciprocal replay passes:
+
+- `weightedReciprocalMixedBlockReplayAuditPassed=true`.
+- `weightedGeneralizedResidualPassedCount=24/24`.
+- `weightedMNormPassedCount=24/24`.
+- `weightedMOrthonormalityPassedBackgroundCount=2/2`.
+- `variationPassedCount=24/24`.
+- `analyticPersistedDeltaKParityPassedCount=24/24`.
+- `directionalIdentityPassedCount=288/288`.
+- `pairingIdentityPassedCount=288/288`.
+- `reciprocalDerivativeEqualityPassedCount=288/288`.
+- `centralDerivativeLadderPassedCount=288/288`.
+- `maxAnalyticPersistedDeltaKRelativeResidual=1.858480441423612E-12`.
+
+### Current Boundary
+
+The persisted Phase12 lowest-magnitude weighted modes are exact kernel modes,
+and Phase375 discloses that qualification:
+
+- `phase12SelectedWeightedNonzeroModeCount=0/24`.
+- `weightedSourceModesAreKernelOnly=true`.
+- `nonzeroPersistedWeightedCurrentCount=0/24`.
+- `nonzeroPersistedWeightedReciprocalDerivativeCount=0/288`.
+- `weightedReplayEstablishesNonzeroSpectrumEigenmodeProof=false`.
+
+Treat Phase375 as a fixed-mesh zero-mode control. It cannot claim canonical
+`M_psi`, a fixed GU fermionic action, completed mixed blocks, corrected-gauge
+identities, a W/Z bridge law, a Higgs scalar row, or a boson prediction. The
+next bounded experiment is a target-blind persisted nonzero-spectrum extension
+if the Phase12 matrices contain suitable modes.
+
+### Validation
+
+- Targeted Phase375 run passed with the metrics above.
+- P101 package build and targeted run passed.
+- P202 objective audit passed as an incomplete objective:
+  `objectiveAchieved=false`, `checklistPassedCount=168`, and
+  `checklistFailedCount=3`.
+- Claim-integrity verification passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns preserved the negative intake boundary:
+  P204 `intakeReadyCandidateCount=0`,
+  P205 `intakeReadyFindingCount=0`,
+  P207 `intakeReadyFindingCount=0`,
+  P279 `localSearchMatchingFileCount=0`,
+  P281 `localSearchMatchingFileCount=0`,
+  P295 `intakeReadyObservedFieldExtractionCandidateCount=0`, and
+  P296 `intakeReadySourceLineageFieldCandidateCount=0`.
+- `ExperimentReferences.md` link check passed with `detailLinkCount=50` and
+  `missingDetailCount=0`.
+- Full generator gate passed with Phase375 included. Final claim-integrity
+  verification still reports `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- `dotnet test GeometricUnity.slnx --nologo` passed; the only warning was the
+  existing `xUnit2013` collection-size warning in
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
+
 ## 2026-05-31 - Phase374 Shared Weighted Fermion Spectral Solver Repair Completed
 
 ### Context
