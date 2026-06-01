@@ -11715,7 +11715,7 @@ lineage, a mass-scale source, pole extraction, and GeV normalization.
   `xUnit2013` collection-size warning in
   `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
 
-## 2026-06-01 - Phase376 Persisted Nonzero-Shell Reciprocal Replay Scoped
+## 2026-06-01 - Phase376 Persisted Nonzero-Shell Reciprocal Replay Implemented
 
 ### Context
 
@@ -11730,6 +11730,10 @@ replay cannot establish a nonzero-spectrum source block.
 - Replayed the repository-equivalent
   `B=M_psi^-1/2 K M_psi^-1/2` construction read-only against both persisted
   stiffness matrices.
+- Launched worker agent `Goodall` to implement
+  `studies/phase376_persisted_nonzero_shell_reciprocal_replay_audit_001`.
+- Launched worker agent `Pauli` to add Phase376 diagnostic and documentation
+  exclusions to the seven source-discovery scanners.
 
 ### Outcome
 
@@ -11752,9 +11756,9 @@ the factory mesh has four isolated ambient vertices `[19,20,23,26]`. Their
 fallback weight `1.0`. Phase376 must assert and disclose this topology artifact
 rather than treating the kernel as physical evidence.
 
-### Decision
+### Implemented Result
 
-Implement Phase376 as a discrete-only projected-shell replay:
+Phase376 implements the discrete-only projected-shell replay:
 
 1. Request the smallest shared-solver prefix containing the shell and a
    sentinel proving its end: `53` modes per background (`0..52`).
@@ -11772,6 +11776,65 @@ Implement Phase376 as a discrete-only projected-shell replay:
 This uses no W/Z/H target, observed mass, or current-magnitude calibration. It
 remains a bounded numerical audit, not a physical GU fermionic-action
 derivation or boson prediction.
+
+The targeted replay passes:
+
+- `persistedNonzeroShellReciprocalReplayAuditPassed=true`.
+- `weightedModeCount=106/106`.
+- `filteredKernelModeCount=96/96`.
+- `shellModeCount=8/8`.
+- `sentinelOutsideShellPassedCount=2/2`.
+- `variationPassedCount=24/24`.
+- `analyticPersistedDeltaKParityPassedCount=24/24`.
+- `persistedAnalyticBlockParityPassedCount=24/24`.
+- `projectedPairingIdentityPassedCount=24/24`.
+- `projectedBlockHermiticityPassedCount=24/24`.
+- `nonzeroProjectedBlockFrobeniusPassedCount=24/24`.
+- `invariantParityPassedCount=24/24`.
+- `unchangedGeometryHashReplayPassedCount=24/24`.
+- `unchangedMassWeightHashReplayPassedCount=24/24`.
+- `minPersistedProjectedBlockFrobeniusNorm=7.020152634073169E-4`.
+- `maxPersistedAnalyticBlockRelativeResidual=3.624209179826802E-11`.
+- `maxProjectedPairingIdentityRelativeResidual=1.0275973452051123E-12`.
+
+### Current Boundary
+
+Phase12 does not persist geometry or `M_psi` hash metadata. Phase376 records
+that limitation and uses deterministic study-derived hashes for fixed-mesh
+immutability checks. The four isolated toy-mesh vertices and their fallback
+weights prevent physical interpretation of the filtered kernel. The nonzero
+projected-shell result is a stronger discrete `VO-7` building block, but it
+still does not supply canonical physical `M_psi`, a fixed GU fermionic action,
+completed mixed blocks, corrected-gauge identities, a direct W/Z bridge law,
+a Higgs scalar row, GeV normalization, or boson predictions.
+
+### Validation
+
+- Targeted Phase376 run passed with the metrics above.
+- P101 package build and targeted run passed.
+- P202 objective audit passed as an incomplete objective:
+  `objectiveAchieved=false`, `checklistPassedCount=169`, and
+  `checklistFailedCount=3`.
+- Claim-integrity verification passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns preserved the negative intake boundary:
+  P204 `intakeReadyCandidateCount=0`,
+  P205 `intakeReadyFindingCount=0`,
+  P207 `intakeReadyFindingCount=0`,
+  P279 `localSearchMatchingFileCount=0`,
+  P281 `localSearchMatchingFileCount=0`,
+  P295 `intakeReadyObservedFieldExtractionCandidateCount=0`, and
+  P296 `intakeReadySourceLineageFieldCandidateCount=0`.
+- `ExperimentReferences.md` link check passed with `detailLinkCount=50` and
+  `missingDetailCount=0`.
+- Full generator gate passed with Phase376 included. Final claim-integrity
+  verification still reports `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- `dotnet test GeometricUnity.slnx --nologo` passed; the only warning was the
+  existing `xUnit2013` collection-size warning in
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
 
 ## 2026-05-31 - Phase375 Weighted Reciprocal Mixed-Block Replay Completed
 

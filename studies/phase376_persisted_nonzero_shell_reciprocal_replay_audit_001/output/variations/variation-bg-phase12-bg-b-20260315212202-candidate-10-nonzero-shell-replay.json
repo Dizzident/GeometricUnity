@@ -1,0 +1,418 @@
+{
+  "variationId": "variation-bg-phase12-bg-b-20260315212202-candidate-10",
+  "fermionBackgroundId": "bg-phase12-bg-b-20260315212202",
+  "bosonModeId": "bg-phase12-bg-b-20260315212202-mode-6",
+  "persistedVariationMetadataPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-b-20260315212202-candidate-10.json",
+  "persistedVariationMatrixPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/couplings/variations/variation-bg-phase12-bg-b-20260315212202-candidate-10.matrix.json",
+  "analyticVariationSource": "Gu.Phase4.Couplings.DiracVariationComputer.ComputeAnalytical",
+  "connectionCarrierType": "connection-1form",
+  "connectionCarrierTypeSupported": true,
+  "connectionVectorLength": 156,
+  "expectedConnectionVectorLength": 156,
+  "connectionVectorLengthPassed": true,
+  "persistedOperator": {
+    "deltaKIsEuclideanHermitian": true,
+    "deltaKEuclideanHermiticityRelativeResidual": 0,
+    "deltaAIsMSelfAdjoint": true,
+    "deltaAMAdjointRelativeResidual": 3.310095796368658E-17,
+    "allOperatorIdentitiesPassed": true
+  },
+  "analyticOperator": {
+    "deltaKIsEuclideanHermitian": true,
+    "deltaKEuclideanHermiticityRelativeResidual": 0,
+    "deltaAIsMSelfAdjoint": true,
+    "deltaAMAdjointRelativeResidual": 7.041343193767064E-17,
+    "allOperatorIdentitiesPassed": true
+  },
+  "analyticPersistedDeltaKRelativeResidual": 1.236939469710876E-12,
+  "analyticPersistedDeltaKParityPassed": true,
+  "persistedBlock": {
+    "construction": "G_k[i,j] = psi_i^dagger deltaK psi_j = \u003Cpsi_i, deltaA psi_j\u003E_M",
+    "shellModeIndices": [
+      48,
+      49,
+      50,
+      51
+    ],
+    "stiffnessProjectedBlock": [
+      [
+        {
+          "real": -0.002253729733591913,
+          "imaginary": -3.7264883300419736E-17
+        },
+        {
+          "real": 0.007746044454228743,
+          "imaginary": 0.0011725821849966414
+        },
+        {
+          "real": 1.9895481217206205E-12,
+          "imaginary": 1.2067314994545173E-12
+        },
+        {
+          "real": 0.005700031570517213,
+          "imaginary": 0.00035038917120933897
+        }
+      ],
+      [
+        {
+          "real": 0.007746044454228575,
+          "imaginary": -0.0011725821849968053
+        },
+        {
+          "real": 0.0022537297379166712,
+          "imaginary": -2.1429437312532943E-16
+        },
+        {
+          "real": 0.0026275384037388275,
+          "imaginary": 0.005070421525494301
+        },
+        {
+          "real": 1.0261013726760601E-12,
+          "imaginary": 1.4078883293331296E-13
+        }
+      ],
+      [
+        {
+          "real": 1.989692860134364E-12,
+          "imaginary": -1.2068864171833004E-12
+        },
+        {
+          "real": 0.0026275384037389377,
+          "imaginary": -0.0050704215254945536
+        },
+        {
+          "real": -0.002253729733567546,
+          "imaginary": -1.257991046008111E-16
+        },
+        {
+          "real": -0.0029731822345277544,
+          "imaginary": 0.007248195712869615
+        }
+      ],
+      [
+        {
+          "real": 0.005700031570517153,
+          "imaginary": -0.00035038917120921575
+        },
+        {
+          "real": 1.025627206020694E-12,
+          "imaginary": -1.410048526658303E-13
+        },
+        {
+          "real": -0.0029731822345276443,
+          "imaginary": -0.007248195712869466
+        },
+        {
+          "real": 0.002253729735715229,
+          "imaginary": -8.971597835118618E-17
+        }
+      ]
+    ],
+    "weightedProjectedBlock": [
+      [
+        {
+          "real": -0.0022537297335917263,
+          "imaginary": -1.0231701364939065E-16
+        },
+        {
+          "real": 0.007746044454228703,
+          "imaginary": 0.0011725821849968444
+        },
+        {
+          "real": 1.9895652521149458E-12,
+          "imaginary": 1.2070645663619047E-12
+        },
+        {
+          "real": 0.005700031570517102,
+          "imaginary": 0.0003503891712091152
+        }
+      ],
+      [
+        {
+          "real": 0.007746044454228561,
+          "imaginary": -0.0011725821849965573
+        },
+        {
+          "real": 0.002253729737916633,
+          "imaginary": -1.3066449912139711E-17
+        },
+        {
+          "real": 0.00262753840373887,
+          "imaginary": 0.0050704215254940834
+        },
+        {
+          "real": 1.0257925918973365E-12,
+          "imaginary": 1.4090397520403092E-13
+        }
+      ],
+      [
+        {
+          "real": 1.9896872222830677E-12,
+          "imaginary": -1.2067441698582701E-12
+        },
+        {
+          "real": 0.0026275384037390765,
+          "imaginary": -0.005070421525494311
+        },
+        {
+          "real": -0.002253729733567683,
+          "imaginary": -1.604935741204987E-16
+        },
+        {
+          "real": -0.0029731822345276816,
+          "imaginary": 0.007248195712869443
+        }
+      ],
+      [
+        {
+          "real": 0.005700031570517313,
+          "imaginary": -0.0003503891712091429
+        },
+        {
+          "real": 1.0261198674878716E-12,
+          "imaginary": -1.4086954423470416E-13
+        },
+        {
+          "real": -0.0029731822345275757,
+          "imaginary": -0.007248195712869355
+        },
+        {
+          "real": 0.0022537297357154216,
+          "imaginary": -9.318542530306407E-17
+        }
+      ]
+    ],
+    "pairingIdentityRelativeResidual": 5.063824692567707E-14,
+    "pairingIdentityPassed": true,
+    "metrics": {
+      "dimension": 4,
+      "frobeniusNorm": 0.01990664048921228,
+      "frobeniusNormSquared": 0.00039627433556674573,
+      "trace": {
+        "real": 6.472441506366611E-12,
+        "imaginary": -4.670743393777464E-16
+      },
+      "traceSquare": {
+        "real": 0.0003962743355667457,
+        "imaginary": -1.6915601091732706E-18
+      },
+      "determinant": {
+        "real": 9.814584314304109E-09,
+        "imaginary": -8.437242248040882E-23
+      },
+      "hermiticityRelativeResidual": 5.694263072380153E-14,
+      "isHermitian": true,
+      "nonzeroFrobeniusNorm": true,
+      "basisInvariantDisclosure": "Frobenius norm, trace, trace(G^2), and determinant are invariant under unitary changes of shell basis."
+    }
+  },
+  "analyticBlock": {
+    "construction": "G_k[i,j] = psi_i^dagger deltaK psi_j = \u003Cpsi_i, deltaA psi_j\u003E_M",
+    "shellModeIndices": [
+      48,
+      49,
+      50,
+      51
+    ],
+    "stiffnessProjectedBlock": [
+      [
+        {
+          "real": -0.0022537297335900454,
+          "imaginary": -4.3891568346342264E-17
+        },
+        {
+          "real": 0.007746044454235252,
+          "imaginary": 0.0011725821849982885
+        },
+        {
+          "real": 1.9898499661905516E-12,
+          "imaginary": 1.2068366700839417E-12
+        },
+        {
+          "real": 0.005700031570521526,
+          "imaginary": 0.0003503891712145549
+        }
+      ],
+      [
+        {
+          "real": 0.007746044454235097,
+          "imaginary": -0.0011725821849983553
+        },
+        {
+          "real": 0.002253729737914997,
+          "imaginary": -2.3813130669123924E-16
+        },
+        {
+          "real": 0.0026275384037367003,
+          "imaginary": 0.005070421525500518
+        },
+        {
+          "real": 1.0260900111038774E-12,
+          "imaginary": 1.4093412891977014E-13
+        }
+      ],
+      [
+        {
+          "real": 1.989731021466903E-12,
+          "imaginary": -1.2068792584307942E-12
+        },
+        {
+          "real": 0.0026275384037363135,
+          "imaginary": -0.005070421525500593
+        },
+        {
+          "real": -0.0022537297335659683,
+          "imaginary": 2.3074861242665675E-17
+        },
+        {
+          "real": -0.0029731822345298,
+          "imaginary": 0.007248195712875993
+        }
+      ],
+      [
+        {
+          "real": 0.0057000315705214855,
+          "imaginary": -0.00035038917121443
+        },
+        {
+          "real": 1.025933470583968E-12,
+          "imaginary": -1.4089295010786094E-13
+        },
+        {
+          "real": -0.0029731822345297337,
+          "imaginary": -0.007248195712875746
+        },
+        {
+          "real": 0.0022537297357134957,
+          "imaginary": 1.487930072726034E-16
+        }
+      ]
+    ],
+    "weightedProjectedBlock": [
+      [
+        {
+          "real": -0.0022537297335900462,
+          "imaginary": -6.817769701011671E-17
+        },
+        {
+          "real": 0.007746044454235184,
+          "imaginary": 0.0011725821849984455
+        },
+        {
+          "real": 1.9897202956107223E-12,
+          "imaginary": 1.20697111115333E-12
+        },
+        {
+          "real": 0.005700031570521415,
+          "imaginary": 0.00035038917121445255
+        }
+      ],
+      [
+        {
+          "real": 0.007746044454234987,
+          "imaginary": -0.0011725821849983172
+        },
+        {
+          "real": 0.00225372973791499,
+          "imaginary": -5.12148521548002E-17
+        },
+        {
+          "real": 0.002627538403736298,
+          "imaginary": 0.005070421525500571
+        },
+        {
+          "real": 1.026034499952646E-12,
+          "imaginary": 1.4100221681620228E-13
+        }
+      ],
+      [
+        {
+          "real": 1.9894328658694693E-12,
+          "imaginary": -1.2068619111960346E-12
+        },
+        {
+          "real": 0.0026275384037362753,
+          "imaginary": -0.0050704215255006554
+        },
+        {
+          "real": -0.00225372973356606,
+          "imaginary": 9.197073434675894E-18
+        },
+        {
+          "real": -0.002973182234529467,
+          "imaginary": 0.0072481957128758285
+        }
+      ],
+      [
+        {
+          "real": 0.005700031570521475,
+          "imaginary": -0.00035038917121451674
+        },
+        {
+          "real": 1.0258224482815054E-12,
+          "imaginary": -1.407541722297827E-13
+        },
+        {
+          "real": -0.0029731822345296847,
+          "imaginary": -0.007248195712875906
+        },
+        {
+          "real": 0.0022537297357136674,
+          "imaginary": -4.2026575084823294E-17
+        }
+      ]
+    ],
+    "pairingIdentityRelativeResidual": 4.15148859754639E-14,
+    "pairingIdentityPassed": true,
+    "metrics": {
+      "dimension": 4,
+      "frobeniusNorm": 0.01990664048922714,
+      "frobeniusNormSquared": 0.00039627433556733743,
+      "trace": {
+        "real": 6.472478802921344E-12,
+        "imaginary": -1.1015500652231243E-16
+      },
+      "traceSquare": {
+        "real": 0.0003962743355673375,
+        "imaginary": -5.136946101178822E-18
+      },
+      "determinant": {
+        "real": 9.814584314333422E-09,
+        "imaginary": -2.53530857747503E-22
+      },
+      "hermiticityRelativeResidual": 4.8772531241508165E-14,
+      "isHermitian": true,
+      "nonzeroFrobeniusNorm": true,
+      "basisInvariantDisclosure": "Frobenius norm, trace, trace(G^2), and determinant are invariant under unitary changes of shell basis."
+    }
+  },
+  "persistedAnalyticBlockRelativeResidual": 9.651040544893395E-13,
+  "persistedAnalyticBlockParityPassed": true,
+  "projectedPairingIdentityPassed": true,
+  "maxProjectedPairingIdentityRelativeResidual": 5.063824692567707E-14,
+  "projectedBlockHermiticityPassed": true,
+  "maxProjectedBlockHermiticityRelativeResidual": 5.694263072380153E-14,
+  "nonzeroProjectedBlockFrobeniusPassed": true,
+  "invariantParity": {
+    "frobeniusNormScaleAwareResidual": 1.485964129521733E-14,
+    "traceScaleAwareResidual": 3.588627079552251E-16,
+    "traceSquareScaleAwareResidual": 5.918217848713658E-16,
+    "determinantScaleAwareResidual": 2.9314114619949874E-20,
+    "maxScaleAwareResidual": 1.485964129521733E-14,
+    "passed": true
+  },
+  "fingerprintBeforeReplay": {
+    "persistedGeometryArtifactHash": "a3dd151eda2081be39d0bcc54e9eaa78dddc48588b7f785b9d268bb3b8a5bb93",
+    "derivedMeshGeometryHash": "98db2fe83b8139be196765275d36403f50b1c9376533e5d87863b74bf72c22ed",
+    "massPsiWeightHash": "ff20bd6fa96e3c142c258d3d8808cbe343bf6b48c269a4b3904d215720ecbbe4"
+  },
+  "fingerprintAfterReplay": {
+    "persistedGeometryArtifactHash": "a3dd151eda2081be39d0bcc54e9eaa78dddc48588b7f785b9d268bb3b8a5bb93",
+    "derivedMeshGeometryHash": "98db2fe83b8139be196765275d36403f50b1c9376533e5d87863b74bf72c22ed",
+    "massPsiWeightHash": "ff20bd6fa96e3c142c258d3d8808cbe343bf6b48c269a4b3904d215720ecbbe4"
+  },
+  "geometryHashUnchangedThroughReplay": true,
+  "massWeightHashUnchangedThroughReplay": true,
+  "variationPassed": true,
+  "sidecarPath": "studies/phase376_persisted_nonzero_shell_reciprocal_replay_audit_001/output/variations/variation-bg-phase12-bg-b-20260315212202-candidate-10-nonzero-shell-replay.json"
+}

@@ -47,6 +47,11 @@ of the physical fermionic branch of Geometric Unity.
   where `delta M_psi=0` and `deltaA=M_psi^-1 deltaK`. All weighted identities
   pass, but the selected Phase12 source modes remain kernel modes with zero
   nonzero currents and zero nonzero reciprocal derivatives.
+- Used in Phase376 to select the complete target-blind lowest nonzero shell and
+  replay projected blocks `G_k=Psi_shell^dagger deltaK_k Psi_shell`. All 24
+  persisted/analytic projected blocks are nonzero and pass parity checks. The
+  audit also discloses that the filtered 48-mode kernel comes from four
+  isolated ambient toy-mesh vertices with fallback weight `1.0`.
 
 ## Prediction Relevance
 
@@ -64,17 +69,17 @@ normalization.
 
 Treat this as a local implementation reference. The mesh-volume weights remain
 a provisional discretization choice. Phase374 validates a bounded dense shared
-solver repair and Phase375 validates a fixed-mesh zero-mode reciprocal replay
-at the discrete level, but neither establishes that the weights or operator
-branch are physically canonical. No physical boson mass can be promoted from
-this convention alone.
+solver repair, Phase375 validates a fixed-mesh zero-mode control, and Phase376
+validates nonzero projected-shell blocks at the discrete level. None
+establishes that the weights or operator branch are physically canonical. No
+physical boson mass can be promoted from this convention alone.
 
 ## Follow-Up
 
 - Preserve Phase374's nonzero-spectrum benchmark when replacing the bounded
   dense reference solver with a scalable implementation.
-- Extend the target-blind reciprocal replay to persisted nonzero weighted modes
-  before treating Phase375 as more than a zero-mode control.
+- Replace the isolated-vertex toy mesh before interpreting its topology kernel
+  physically.
 - Add explicit representation metadata before enabling mesh-volume weighting
   in production branches.
 - Derive a fixed GU fermionic action and physical `M_psi` branch before using

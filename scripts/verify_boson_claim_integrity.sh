@@ -145,6 +145,7 @@ const paths = {
   phase373: "studies/phase373_mass_psi_stiffness_operator_convention_repair_audit_001/output/mass_psi_stiffness_operator_convention_repair_audit_summary.json",
   phase374: "studies/phase374_shared_weighted_fermion_spectral_solver_repair_audit_001/output/shared_weighted_fermion_spectral_solver_repair_audit_summary.json",
   phase375: "studies/phase375_weighted_reciprocal_mixed_block_replay_audit_001/output/weighted_reciprocal_mixed_block_replay_audit_summary.json",
+  phase376: "studies/phase376_persisted_nonzero_shell_reciprocal_replay_audit_001/output/persisted_nonzero_shell_reciprocal_replay_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -361,6 +362,7 @@ const phase372 = requireFile(paths.phase372);
 const phase373 = requireFile(paths.phase373);
 const phase374 = requireFile(paths.phase374);
 const phase375 = requireFile(paths.phase375);
+const phase376 = requireFile(paths.phase376);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -4178,6 +4180,52 @@ if (sourceLineageMissing) {
   assert(phase375.canFillPhase201HiggsContract === false, "Phase375 cannot fill the Phase201 Higgs contract.");
   assert(phase375.canFillPhase256ObservedFieldExtractionContract === false, "Phase375 cannot fill the Phase256 observed-field contract.");
   assert(Array.isArray(phase375.predictionContractImpact?.phase201FieldsDefensiblyFilled) && phase375.predictionContractImpact.phase201FieldsDefensiblyFilled.length === 0, "Phase375 must preserve an empty defensible Phase201 fill set.");
+  assert(phase376.persistedNonzeroShellReciprocalReplayAuditPassed === true, "Phase376 persisted nonzero-shell reciprocal replay audit must pass while preserving discrete-only status.");
+  assert(phase376.phase375DiscreteReplayPresent === true, "Phase376 must inherit the Phase375 discrete reciprocal replay.");
+  assert(phase376.phase375NonpromotionalBoundaryVerified === true, "Phase376 must preserve the Phase375 non-promotional boundary.");
+  assert(phase376.fixedMeshConnectionOnlyVariationReplay === true && phase376.deltaMpsiIsZeroQualification === true, "Phase376 must restrict delta M_psi=0 to fixed-mesh connection-only perturbations.");
+  assert(phase376.kernelTopologyArtifact === true, "Phase376 must disclose that the filtered kernel is a mesh-topology artifact.");
+  assert(Array.isArray(phase376.ambientIsolatedVertices) && phase376.ambientIsolatedVertices.join(",") === "19,20,23,26", "Phase376 must disclose the four isolated ambient vertices.");
+  assert(phase376.isolatedVertexCount === 4, "Phase376 must disclose four isolated ambient vertices.");
+  assert(phase376.expectedZeroRowZeroColumnComplexDofCount === 48, "Phase376 must disclose 48 isolated-vertex zero-row/zero-column complex DOFs.");
+  assert(phase376.isolatedFallbackMpsiWeightUsageVerified === true, "Phase376 must verify isolated-vertex fallback M_psi weights.");
+  assert(phase376.carrierMetadata?.passed === true, "Phase376 must validate its persisted connection-carrier metadata.");
+  assert(phase376.carrierMetadata?.carrierType === "connection-1form", "Phase376 must use connection-1form perturbations.");
+  assert(phase376.carrierMetadata?.connectionVectorLength === 156, "Phase376 must validate the 156-component connection vector.");
+  assert(phase376.persistedGeometryHashMetadataAvailable === false && phase376.persistedMassWeightHashMetadataAvailable === false, "Phase376 must disclose unavailable persisted geometry and M_psi hash metadata.");
+  assert(typeof phase376.targetBlindConstructionHash === "string" && phase376.targetBlindConstructionHash.length === 64, "Phase376 must persist a target-blind construction hash.");
+  assert(phase376.backgroundCount === 2, "Phase376 must cover both persisted Phase12 backgrounds.");
+  assert(phase376.weightedModeCount === 106, "Phase376 must audit 53 weighted modes per background, including the shell-end sentinel.");
+  assert(phase376.filteredKernelModeCount === 96, "Phase376 must filter 48 topology-kernel modes per background.");
+  assert(phase376.shellModeCount === 8, "Phase376 must select a four-mode lowest nonzero shell per background.");
+  assert(phase376.sentinelOutsideShellPassedCount === 2, "Phase376 must verify the shell-end sentinel on both backgrounds.");
+  assert(phase376.zeroRowColumnComplexDofPassedBackgroundCount === 2, "Phase376 must verify zero-row/zero-column topology structure on both backgrounds.");
+  assert(phase376.shellSelectionPassedBackgroundCount === 2, "Phase376 must pass target-blind shell selection on both backgrounds.");
+  assert(phase376.weightedSolveQualityPassedBackgroundCount === 2, "Phase376 must pass weighted solve quality on both backgrounds.");
+  assert(phase376.variationCount === 24 && phase376.variationPassedCount === 24, "Phase376 must pass all 24 projected-shell variation replays.");
+  assert(phase376.analyticPersistedDeltaKParityPassedCount === 24, "Phase376 must match all analytic and persisted deltaK matrices.");
+  assert(phase376.persistedAnalyticBlockParityPassedCount === 24, "Phase376 must match all analytic and persisted projected blocks.");
+  assert(phase376.projectedPairingIdentityPassedCount === 24, "Phase376 must pass the weighted projected pairing identity for every variation.");
+  assert(phase376.projectedBlockHermiticityPassedCount === 24, "Phase376 must pass projected-block Hermiticity for every variation.");
+  assert(phase376.nonzeroProjectedBlockFrobeniusPassedCount === 24, "Phase376 must produce nonzero projected shell blocks for every variation.");
+  assert(phase376.invariantParityPassedCount === 24, "Phase376 must preserve basis-invariant projected-block parity for every variation.");
+  assert(phase376.unchangedGeometryHashReplayPassedCount === 24 && phase376.unchangedMassWeightHashReplayPassedCount === 24, "Phase376 must preserve study-derived geometry and M_psi hashes throughout replay.");
+  assert(phase376.minPersistedProjectedBlockFrobeniusNorm > 0, "Phase376 projected shell blocks must be nonzero.");
+  assert(phase376.routeProvidesPhysicalGuBranch === false, "Phase376 cannot claim a physical GU branch.");
+  assert(phase376.routeProvidesPhysicalMassPsiCompatibleBranch === false, "Phase376 cannot claim a physical M_psi-compatible branch.");
+  assert(phase376.routeProvidesCanonicalPhysicalMassPsi === false, "Phase376 cannot claim canonical physical M_psi weights.");
+  assert(phase376.routeProvidesFixedFermionicOperatorBranch === false, "Phase376 cannot claim a fixed GU fermionic operator branch.");
+  assert(phase376.routeProvidesCompletedFermionicAction === false, "Phase376 cannot claim a completed GU fermionic action.");
+  assert(phase376.routeProvidesExplicitYukawaFunctional === false && phase376.routeProvidesSolvedYukawaCouplingMap === false, "Phase376 cannot claim a solved Yukawa sector.");
+  assert(phase376.routeProvidesCoupledResidual === false, "Phase376 cannot claim a coupled residual.");
+  assert(phase376.routeProvidesCompletedMixedLinearizationBlocks === false, "Phase376 cannot claim completed mixed-linearization blocks.");
+  assert(phase376.routeProvidesMixedLinearizationGaugeCompatibilityIdentities === false, "Phase376 cannot claim mixed-block corrected-gauge identities.");
+  assert(phase376.routeProvidesDirectTargetIndependentWzBridgeSourceLaw === false, "Phase376 cannot claim a direct target-independent W/Z bridge law.");
+  assert(phase376.routeProvidesHiggsScalarSourceOperator === false && phase376.routeProvidesScalarProjectionTheorem === false, "Phase376 cannot claim a Higgs scalar-source theorem.");
+  assert(phase376.routeProvidesGeVUnitNormalization === false, "Phase376 cannot claim GeV normalization.");
+  assert(phase376.routePromotesWzMasses === false && phase376.routePromotesHiggsMass === false && phase376.routeCompletesBosonPredictions === false, "Phase376 cannot promote boson predictions.");
+  assert(phase376.canFillPhase201WzContract === false && phase376.canFillPhase201HiggsContract === false && phase376.canFillPhase256ObservedFieldExtractionContract === false, "Phase376 cannot fill Phase201 or Phase256 contracts.");
+  assert(Array.isArray(phase376.predictionContractImpact?.phase201FieldsDefensiblyFilled) && phase376.predictionContractImpact.phase201FieldsDefensiblyFilled.length === 0, "Phase376 must preserve an empty defensible Phase201 fill set.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

@@ -141,6 +141,7 @@ const string Phase372Path = "studies/phase372_discrete_fermionic_bilinear_recipr
 const string Phase373Path = "studies/phase373_mass_psi_stiffness_operator_convention_repair_audit_001/output/mass_psi_stiffness_operator_convention_repair_audit_summary.json";
 const string Phase374Path = "studies/phase374_shared_weighted_fermion_spectral_solver_repair_audit_001/output/shared_weighted_fermion_spectral_solver_repair_audit_summary.json";
 const string Phase375Path = "studies/phase375_weighted_reciprocal_mixed_block_replay_audit_001/output/weighted_reciprocal_mixed_block_replay_audit_summary.json";
+const string Phase376Path = "studies/phase376_persisted_nonzero_shell_reciprocal_replay_audit_001/output/persisted_nonzero_shell_reciprocal_replay_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -315,6 +316,7 @@ using var phase372 = File.Exists(Phase372Path) ? JsonDocument.Parse(File.ReadAll
 using var phase373 = File.Exists(Phase373Path) ? JsonDocument.Parse(File.ReadAllText(Phase373Path)) : null;
 using var phase374 = File.Exists(Phase374Path) ? JsonDocument.Parse(File.ReadAllText(Phase374Path)) : null;
 using var phase375 = File.Exists(Phase375Path) ? JsonDocument.Parse(File.ReadAllText(Phase375Path)) : null;
+using var phase376 = File.Exists(Phase376Path) ? JsonDocument.Parse(File.ReadAllText(Phase376Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -4071,6 +4073,59 @@ var weightedReciprocalMixedBlockReplayAuditPassed = weightedReciprocalMixedBlock
     && JsonBool(phase375.RootElement, "canFillPhase201WzContract") is false
     && JsonBool(phase375.RootElement, "canFillPhase201HiggsContract") is false
     && JsonBool(phase375.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false;
+var persistedNonzeroShellReciprocalReplayAuditMaterialized = phase376 is not null;
+var persistedNonzeroShellReciprocalReplayAuditPassed = persistedNonzeroShellReciprocalReplayAuditMaterialized
+    && JsonBool(phase376!.RootElement, "persistedNonzeroShellReciprocalReplayAuditPassed") is true
+    && JsonBool(phase376.RootElement, "phase375DiscreteReplayPresent") is true
+    && JsonBool(phase376.RootElement, "phase375NonpromotionalBoundaryVerified") is true
+    && JsonBool(phase376.RootElement, "fixedMeshConnectionOnlyVariationReplay") is true
+    && JsonBool(phase376.RootElement, "deltaMpsiIsZeroQualification") is true
+    && JsonBool(phase376.RootElement, "kernelTopologyArtifact") is true
+    && JsonInt(phase376.RootElement, "isolatedVertexCount") == 4
+    && JsonInt(phase376.RootElement, "expectedZeroRowZeroColumnComplexDofCount") == 48
+    && JsonBool(phase376.RootElement, "isolatedFallbackMpsiWeightUsageVerified") is true
+    && JsonBool(phase376.RootElement.GetProperty("carrierMetadata"), "passed") is true
+    && JsonInt(phase376.RootElement.GetProperty("carrierMetadata"), "connectionVectorLength") == 156
+    && JsonBool(phase376.RootElement, "persistedGeometryHashMetadataAvailable") is false
+    && JsonBool(phase376.RootElement, "persistedMassWeightHashMetadataAvailable") is false
+    && JsonInt(phase376.RootElement, "backgroundCount") == 2
+    && JsonInt(phase376.RootElement, "weightedModeCount") == 106
+    && JsonInt(phase376.RootElement, "filteredKernelModeCount") == 96
+    && JsonInt(phase376.RootElement, "shellModeCount") == 8
+    && JsonInt(phase376.RootElement, "sentinelOutsideShellPassedCount") == 2
+    && JsonInt(phase376.RootElement, "zeroRowColumnComplexDofPassedBackgroundCount") == 2
+    && JsonInt(phase376.RootElement, "shellSelectionPassedBackgroundCount") == 2
+    && JsonInt(phase376.RootElement, "weightedSolveQualityPassedBackgroundCount") == 2
+    && JsonInt(phase376.RootElement, "variationCount") == 24
+    && JsonInt(phase376.RootElement, "variationPassedCount") == 24
+    && JsonInt(phase376.RootElement, "analyticPersistedDeltaKParityPassedCount") == 24
+    && JsonInt(phase376.RootElement, "persistedAnalyticBlockParityPassedCount") == 24
+    && JsonInt(phase376.RootElement, "projectedPairingIdentityPassedCount") == 24
+    && JsonInt(phase376.RootElement, "projectedBlockHermiticityPassedCount") == 24
+    && JsonInt(phase376.RootElement, "nonzeroProjectedBlockFrobeniusPassedCount") == 24
+    && JsonInt(phase376.RootElement, "invariantParityPassedCount") == 24
+    && JsonInt(phase376.RootElement, "unchangedGeometryHashReplayPassedCount") == 24
+    && JsonInt(phase376.RootElement, "unchangedMassWeightHashReplayPassedCount") == 24
+    && JsonBool(phase376.RootElement, "routeProvidesPhysicalGuBranch") is false
+    && JsonBool(phase376.RootElement, "routeProvidesPhysicalMassPsiCompatibleBranch") is false
+    && JsonBool(phase376.RootElement, "routeProvidesCanonicalPhysicalMassPsi") is false
+    && JsonBool(phase376.RootElement, "routeProvidesFixedFermionicOperatorBranch") is false
+    && JsonBool(phase376.RootElement, "routeProvidesCompletedFermionicAction") is false
+    && JsonBool(phase376.RootElement, "routeProvidesExplicitYukawaFunctional") is false
+    && JsonBool(phase376.RootElement, "routeProvidesSolvedYukawaCouplingMap") is false
+    && JsonBool(phase376.RootElement, "routeProvidesCoupledResidual") is false
+    && JsonBool(phase376.RootElement, "routeProvidesCompletedMixedLinearizationBlocks") is false
+    && JsonBool(phase376.RootElement, "routeProvidesMixedLinearizationGaugeCompatibilityIdentities") is false
+    && JsonBool(phase376.RootElement, "routeProvidesDirectTargetIndependentWzBridgeSourceLaw") is false
+    && JsonBool(phase376.RootElement, "routeProvidesHiggsScalarSourceOperator") is false
+    && JsonBool(phase376.RootElement, "routeProvidesScalarProjectionTheorem") is false
+    && JsonBool(phase376.RootElement, "routeProvidesGeVUnitNormalization") is false
+    && JsonBool(phase376.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase376.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase376.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase376.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase376.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase376.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -6047,6 +6102,14 @@ var checklist = new[]
             ? $"weightedReciprocalMixedBlockReplayAuditPassed={JsonBool(phase375!.RootElement, "weightedReciprocalMixedBlockReplayAuditPassed")}; phase373Convention={JsonBool(phase375.RootElement, "phase373ConventionCandidatePresent")}; phase374SolverRepair={JsonBool(phase375.RootElement, "phase374SharedSolverRepairPresent")}; fixedMeshReplay={JsonBool(phase375.RootElement, "fixedMeshConnectionOnlyVariationReplay")}; backgrounds={JsonInt(phase375.RootElement, "backgroundCount")}; weightedModes={JsonInt(phase375.RootElement, "weightedModeCount")}; nonzeroModes={JsonInt(phase375.RootElement, "phase12SelectedWeightedNonzeroModeCount")}; kernelOnly={JsonBool(phase375.RootElement, "weightedSourceModesAreKernelOnly")}; variations={JsonInt(phase375.RootElement, "variationPassedCount")}/{JsonInt(phase375.RootElement, "variationCount")}; directionalIdentities={JsonInt(phase375.RootElement, "directionalIdentityPassedCount")}/{JsonInt(phase375.RootElement, "directionalCheckCount")}; nonzeroCurrents={JsonInt(phase375.RootElement, "nonzeroPersistedWeightedCurrentCount")}; nonzeroDerivatives={JsonInt(phase375.RootElement, "nonzeroPersistedWeightedReciprocalDerivativeCount")}; nonzeroSpectrumProof={JsonBool(phase375.RootElement, "weightedReplayEstablishesNonzeroSpectrumEigenmodeProof")}; physicalBranch={JsonBool(phase375.RootElement, "routeProvidesPhysicalGuBranch")}; promotesWz={JsonBool(phase375.RootElement, "routePromotesWzMasses")}; promotesHiggs={JsonBool(phase375.RootElement, "routePromotesHiggsMass")}; decision={JsonString(phase375.RootElement, "decision")}"
             : "Phase375 artifact not materialized",
         Phase375Path),
+    new ObjectiveChecklistItem(
+        "persisted-nonzero-shell-reciprocal-replay-audit-materialized",
+        "Replay the reciprocal source block on the complete target-blind persisted lowest nonzero shell while disclosing the isolated-vertex topology kernel and nonphysical boundary.",
+        persistedNonzeroShellReciprocalReplayAuditPassed ? "passed" : "failed",
+        persistedNonzeroShellReciprocalReplayAuditMaterialized
+            ? $"persistedNonzeroShellReciprocalReplayAuditPassed={JsonBool(phase376!.RootElement, "persistedNonzeroShellReciprocalReplayAuditPassed")}; phase375Replay={JsonBool(phase376.RootElement, "phase375DiscreteReplayPresent")}; fixedMeshReplay={JsonBool(phase376.RootElement, "fixedMeshConnectionOnlyVariationReplay")}; topologyKernel={JsonBool(phase376.RootElement, "kernelTopologyArtifact")}; isolatedVertices={JsonInt(phase376.RootElement, "isolatedVertexCount")}; zeroDofs={JsonInt(phase376.RootElement, "expectedZeroRowZeroColumnComplexDofCount")}; weightedModes={JsonInt(phase376.RootElement, "weightedModeCount")}; kernelModes={JsonInt(phase376.RootElement, "filteredKernelModeCount")}; shellModes={JsonInt(phase376.RootElement, "shellModeCount")}; sentinelBackgrounds={JsonInt(phase376.RootElement, "sentinelOutsideShellPassedCount")}; variations={JsonInt(phase376.RootElement, "variationPassedCount")}/{JsonInt(phase376.RootElement, "variationCount")}; nonzeroBlocks={JsonInt(phase376.RootElement, "nonzeroProjectedBlockFrobeniusPassedCount")}; physicalBranch={JsonBool(phase376.RootElement, "routeProvidesPhysicalGuBranch")}; promotesWz={JsonBool(phase376.RootElement, "routePromotesWzMasses")}; promotesHiggs={JsonBool(phase376.RootElement, "routePromotesHiggsMass")}; decision={JsonString(phase376.RootElement, "decision")}"
+            : "Phase376 artifact not materialized",
+        Phase376Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
