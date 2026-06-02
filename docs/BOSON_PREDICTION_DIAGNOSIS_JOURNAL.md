@@ -14510,3 +14510,108 @@ and GeV normalization.
 - `dotnet test GeometricUnity.slnx` passed; the only warning was the existing
   `xUnit2013` collection-size warning in
   `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
+## 2026-06-02 - Phase377 Selected Source-Mode Shell-Response Gram Audit Scoped
+
+### Context
+
+Phase376 validated nonzero shell-restricted perturbation blocks
+`G_a=Psi_shell^dagger deltaK[b_a] Psi_shell` for all `24` persisted selected
+source-mode variations. It did not compose those blocks into a response
+operator on the selected connection-source subspace.
+
+Two delegated reviews were attempted, but the sub-agent service returned its
+external usage-limit error before either review started. The diagnosis
+continued locally.
+
+### Primary Sources Reviewed
+
+- Official GU draft:
+  `https://geometricunity.nyc3.digitaloceanspaces.com/Geometric_Unity-Draft-April-1st-2021.pdf`.
+- Alon and Cederbaum, *Hellmann-Feynman theorem at degeneracies*:
+  `https://doi.org/10.1103/PhysRevB.68.033105`.
+- Langmann, *Generalized Yang-Mills actions from Dirac operator determinants*:
+  `https://arxiv.org/abs/math-ph/0104011`.
+
+### Diagnosis
+
+- The GU draft motivates the mixed deformation program but does not stabilize
+  the required physical coupled blocks.
+- Exact-degeneracy slope extraction requires a derivative operator restricted
+  to the degenerate subspace. Phase376 instead selects an absolute-value
+  spectral shell, so it cannot claim an energy-slope theorem.
+- A physical fermion-induced gauge action requires an action-level
+  construction such as a regularized Dirac determinant. Phase376 does not
+  supply one.
+- The strongest defensible next discrete object is therefore the
+  Hilbert-Schmidt pullback metric on the persisted selected source-mode
+  subspace:
+
+```text
+Q_ab = Re Tr(G_a^dagger G_b)
+c^T Q c = ||sum_a c_a G_a||_F^2 >= 0
+```
+
+### Exploratory Outcome
+
+- Both persisted backgrounds expose `12` orthonormal selected source modes.
+- The persisted shell-response Gram matrix has positive response rank `3` and
+  nullity `9` on both backgrounds.
+- The exploratory persisted/analytic Gram relative residuals are
+  `8.451496460622921E-13` and `1.1686659083270075E-12`.
+- The rank is a bounded discrete clue only. It is not an electroweak
+  identification or a physical mass law.
+
+### Action
+
+- Added the initial `studies/phase377_selected_source_mode_shell_response_gram_audit_001`
+  implementation.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P377.md`.
+- Added `DIRAC-SHELL-RESPONSE-BOUNDARY` to `ExperimentReferences.md` with a
+  linked detailed source note.
+
+### Boundary
+
+Phase377 must remain selected-subspace scoped and discrete-only. It cannot claim
+a full connection-carrier response operator, physical GU action Hessian,
+regularized fermion-determinant Hessian, corrected-gauge identities, observed
+W/Z projection, Higgs row, GeV normalization, prediction, or contract fill.
+
+### Targeted Validation
+
+- Targeted Phase377 run passed with
+  `selectedSourceModeShellResponseGramAuditPassed=true`.
+- Both persisted backgrounds passed positive-semidefinite response checks,
+  persisted/analytic parity, deterministic DFT shell-basis invariance, and
+  diagonal block-norm reconstruction.
+- The bounded response image is stable at rank `3`, nullity `9`.
+- P101 package build and run passed with the Phase377 block included.
+- P202 objective audit passed as an incomplete objective:
+  `objectiveAchieved=false`, `checklistPassedCount=170`, and
+  `checklistFailedCount=3`.
+- Scanner reruns preserved the negative intake boundary:
+  P204 `intakeReadyCandidateCount=0`,
+  P205 `intakeReadyFindingCount=0`,
+  P207 `intakeReadyFindingCount=0`,
+  P279 `localSearchMatchingFileCount=0`,
+  P281 `localSearchMatchingFileCount=0`,
+  P295 `intakeReadyObservedFieldExtractionCandidateCount=0`, and
+  P296 `intakeReadySourceLineageFieldCandidateCount=0`.
+- Claim-integrity verification passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+
+### Full Validation
+
+- Full generator gate passed with Phase377 included. The final integrity tail
+  again reported `sourceLineageMissing=true`, `wzMissingFieldCount=15`,
+  `higgsMissingFieldCount=14`, and `promotedPhysicalMassClaimCount=0`.
+- Phase377 full-gate summary matched the targeted result:
+  `observedStableResponseRank=3`, `observedStableResponseNullity=9`, and
+  `maxPersistedAnalyticResponseGramRelativeResidual=1.1686659083270075E-12`.
+- `dotnet test GeometricUnity.slnx --nologo` passed. The only warning was the
+  pre-existing `xUnit2013` collection-size warning in
+  `tests/Gu.Phase5.QuantitativeValidation.Tests/QuantitativeValidationTests.cs`.
+- Reference-link check passed with `detailLinkCount=51` and no missing details.
+- The full generator modified historical JSON outputs only by `generatedAt`;
+  `47` timestamp-only files were restored exactly to `HEAD` after a semantic
+  no-content-change check.

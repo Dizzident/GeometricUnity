@@ -45,6 +45,10 @@ mirrors are merely search aids or can support promotion-ready claims.
   `B=M_psi^-1/2 K M_psi^-1/2` distinction repairs a discrete representation
   mismatch only. It is not supplied by the draft as a stabilized physical
   fermionic branch.
+- Supported Phase377's nonpromotion boundary: the draft motivates a coupled
+  deformation program, but it does not turn the study-defined
+  `Q_ab=Re Tr(G_a^dagger G_b)` shell-response Gram precursor into a physical
+  action Hessian or electroweak mass operator.
 
 ## Prediction Relevance
 

@@ -52,6 +52,10 @@ of the physical fermionic branch of Geometric Unity.
   persisted/analytic projected blocks are nonzero and pass parity checks. The
   audit also discloses that the filtered 48-mode kernel comes from four
   isolated ambient toy-mesh vertices with fallback weight `1.0`.
+- Used in Phase377 to compose the Phase376 blocks into the selected-source-mode
+  response metric `Q_ab=Re Tr(G_a^dagger G_b)`. Both persisted backgrounds have
+  a positive-semidefinite rank-`3` response image and nullity `9` on their
+  `12`-mode selected subspaces.
 
 ## Prediction Relevance
 
@@ -70,7 +74,8 @@ normalization.
 Treat this as a local implementation reference. The mesh-volume weights remain
 a provisional discretization choice. Phase374 validates a bounded dense shared
 solver repair, Phase375 validates a fixed-mesh zero-mode control, and Phase376
-validates nonzero projected-shell blocks at the discrete level. None
+validates nonzero projected-shell blocks at the discrete level. Phase377
+validates only a study-defined selected-source response metric. None
 establishes that the weights or operator branch are physically canonical. No
 physical boson mass can be promoted from this convention alone.
 

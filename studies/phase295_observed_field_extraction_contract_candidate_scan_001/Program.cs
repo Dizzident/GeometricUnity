@@ -695,7 +695,9 @@ static bool IsExcluded(string normalizedPath) =>
     || normalizedPath.StartsWith("studies/phase375_", StringComparison.Ordinal)
     || normalizedPath.Contains("/studies/phase375_", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase376_", StringComparison.Ordinal)
-    || normalizedPath.Contains("/studies/phase376_", StringComparison.Ordinal);
+    || normalizedPath.Contains("/studies/phase376_", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase377_", StringComparison.Ordinal)
+    || normalizedPath.Contains("/studies/phase377_", StringComparison.Ordinal);
 
 static string NormalizePath(string path) => path.Replace('\\', '/').TrimStart('.', '/');
 

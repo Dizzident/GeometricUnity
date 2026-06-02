@@ -62,6 +62,11 @@ outside the first executable numerical branch.
   projected blocks are nonzero and pass persisted/analytic parity. The audit
   also discloses that the filtered kernel is induced by four isolated toy-mesh
   vertices with fallback `M_psi` weight `1.0`.
+- Added Phase377 to compose those projected blocks into the selected-source
+  response metric `Q_ab=Re Tr(G_a^dagger G_b)`. The bounded metric is
+  positive-semidefinite and has stable rank `3`, nullity `9` across both
+  persisted backgrounds. It remains a study-defined precursor rather than an
+  action Hessian.
 
 ## Prediction Relevance
 
