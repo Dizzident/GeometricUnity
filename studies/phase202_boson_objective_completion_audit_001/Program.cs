@@ -144,6 +144,7 @@ const string Phase375Path = "studies/phase375_weighted_reciprocal_mixed_block_re
 const string Phase376Path = "studies/phase376_persisted_nonzero_shell_reciprocal_replay_audit_001/output/persisted_nonzero_shell_reciprocal_replay_audit_summary.json";
 const string Phase377Path = "studies/phase377_selected_source_mode_shell_response_gram_audit_001/output/selected_source_mode_shell_response_gram_audit_summary.json";
 const string Phase378Path = "studies/phase378_full_connection_carrier_shell_response_gram_audit_001/output/full_connection_carrier_shell_response_gram_audit_summary.json";
+const string Phase379Path = "studies/phase379_response_image_carrier_axis_characterization_001/output/response_image_carrier_axis_characterization_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -321,6 +322,7 @@ using var phase375 = File.Exists(Phase375Path) ? JsonDocument.Parse(File.ReadAll
 using var phase376 = File.Exists(Phase376Path) ? JsonDocument.Parse(File.ReadAllText(Phase376Path)) : null;
 using var phase377 = File.Exists(Phase377Path) ? JsonDocument.Parse(File.ReadAllText(Phase377Path)) : null;
 using var phase378 = File.Exists(Phase378Path) ? JsonDocument.Parse(File.ReadAllText(Phase378Path)) : null;
+using var phase379 = File.Exists(Phase379Path) ? JsonDocument.Parse(File.ReadAllText(Phase379Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -4216,6 +4218,39 @@ var fullConnectionCarrierShellResponseGramAuditPassed = fullConnectionCarrierShe
     && JsonBool(phase378.RootElement, "canFillPhase201WzContract") is false
     && JsonBool(phase378.RootElement, "canFillPhase201HiggsContract") is false
     && JsonBool(phase378.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false;
+var responseImageCarrierAxisCharacterizationMaterialized = phase379 is not null;
+var responseImageCarrierAxisCharacterizationPassed = responseImageCarrierAxisCharacterizationMaterialized
+    && JsonBool(phase379!.RootElement, "responseImageCarrierAxisCharacterizationAuditPassed") is true
+    && JsonBool(phase379.RootElement, "phase378FullCarrierAuditPresent") is true
+    && JsonBool(phase379.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase379.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && JsonInt(phase379.RootElement, "backgroundCount") == 2
+    && JsonInt(phase379.RootElement, "backgroundPassedCount") == 2
+    && JsonBool(phase379.RootElement, "stableTwoGaugeAxisDominance") is true
+    && JsonInt(phase379.RootElement, "stableSuppressedGaugeAxis") == 1
+    && JsonDouble(phase379.RootElement, "maxSuppressedGaugeAxisProjectorFraction") is <= 0.005
+    && JsonDouble(phase379.RootElement, "minDominantGaugePairProjectorFraction") is >= 0.995
+    && JsonBool(phase379.RootElement, "strictBackgroundImageTransportPassed") is false
+    && JsonBool(phase379.RootElement, "looseBackgroundImageTransportPassed") is true
+    && JsonDouble(phase379.RootElement, "interBackgroundMinimumSingularValue") is >= 0.75
+    && JsonDouble(phase379.RootElement, "interBackgroundMinimumSingularValue") is < 0.99
+    && JsonBool(phase379.RootElement, "phase307SourceRowsPromotable") is false
+    && JsonBool(phase379.RootElement, "phase307CanFillPhase201WzContract") is false
+    && JsonBool(phase379.RootElement, "routeProvidesDiscreteResponseImageCharacterization") is true
+    && JsonBool(phase379.RootElement, "routeProvidesCanonicalGaugeAxisSelector") is false
+    && JsonBool(phase379.RootElement, "routeProvidesObservedElectroweakFieldMap") is false
+    && JsonBool(phase379.RootElement, "routeProvidesPhysicalEffectiveActionHessian") is false
+    && JsonBool(phase379.RootElement, "routeProvidesDirectTargetIndependentWzBridgeSourceLaw") is false
+    && JsonBool(phase379.RootElement, "routeProvidesSeparateWzSourceRows") is false
+    && JsonBool(phase379.RootElement, "routeProvidesHiggsScalarSourceOperator") is false
+    && JsonBool(phase379.RootElement, "routeProvidesGeVUnitNormalization") is false
+    && JsonBool(phase379.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase379.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase379.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase379.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase379.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase379.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase379.RootElement, "sourceLawPromotionBlocked") is true;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -6216,6 +6251,14 @@ var checklist = new[]
             ? $"fullConnectionCarrierShellResponseGramAuditPassed={JsonBool(phase378!.RootElement, "fullConnectionCarrierShellResponseGramAuditPassed")}; phase376Replay={JsonBool(phase378.RootElement, "phase376DiscreteShellReplayPresent")}; phase377Selected={JsonBool(phase378.RootElement, "phase377SelectedShellResponsePresent")}; targetBlind={JsonBool(phase378.RootElement, "targetBlindConstruction")}; fullCarrierCovered={JsonBool(phase378.RootElement, "fullConnectionCarrierCoordinateBasisCovered")}; backgrounds={JsonInt(phase378.RootElement, "backgroundPassedCount")}/{JsonInt(phase378.RootElement, "backgroundCount")}; psd={JsonInt(phase378.RootElement, "fullCarrierResponsePsdPassedCount")}; selectedReconstruction={JsonInt(phase378.RootElement, "selectedReconstructionPassedCount")}; selectedGramParity={JsonInt(phase378.RootElement, "selectedGramParityPassedCount")}; rank={JsonInt(phase378.RootElement, "observedStableFullCarrierResponseRank")}; nullityRange={JsonInt(phase378.RootElement, "minFullCarrierResponseNullity")}..{JsonInt(phase378.RootElement, "maxFullCarrierResponseNullity")}; physicalHessian={JsonBool(phase378.RootElement, "routeProvidesPhysicalEffectiveActionHessian")}; promotesWz={JsonBool(phase378.RootElement, "routePromotesWzMasses")}; promotesHiggs={JsonBool(phase378.RootElement, "routePromotesHiggsMass")}; decision={JsonString(phase378.RootElement, "decision")}"
             : "Phase378 artifact not materialized",
         Phase378Path),
+    new ObjectiveChecklistItem(
+        "response-image-carrier-axis-characterization-materialized",
+        "Characterize the Phase378 rank-3 response image in the full connection carrier and verify that any two-axis signal remains non-promotional without observed W/Z source rows.",
+        responseImageCarrierAxisCharacterizationPassed ? "passed" : "failed",
+        responseImageCarrierAxisCharacterizationMaterialized
+            ? $"responseImageCarrierAxisCharacterizationAuditPassed={JsonBool(phase379!.RootElement, "responseImageCarrierAxisCharacterizationAuditPassed")}; phase378Present={JsonBool(phase379.RootElement, "phase378FullCarrierAuditPresent")}; targetBlind={JsonBool(phase379.RootElement, "targetBlindConstruction")}; backgrounds={JsonInt(phase379.RootElement, "backgroundPassedCount")}/{JsonInt(phase379.RootElement, "backgroundCount")}; stableTwoAxis={JsonBool(phase379.RootElement, "stableTwoGaugeAxisDominance")}; suppressedAxis={JsonInt(phase379.RootElement, "stableSuppressedGaugeAxis")}; maxSuppressedFraction={JsonDouble(phase379.RootElement, "maxSuppressedGaugeAxisProjectorFraction")}; minDominantPairFraction={JsonDouble(phase379.RootElement, "minDominantGaugePairProjectorFraction")}; strictTransport={JsonBool(phase379.RootElement, "strictBackgroundImageTransportPassed")}; looseTransport={JsonBool(phase379.RootElement, "looseBackgroundImageTransportPassed")}; minSingular={JsonDouble(phase379.RootElement, "interBackgroundMinimumSingularValue")}; directWzLaw={JsonBool(phase379.RootElement, "routeProvidesDirectTargetIndependentWzBridgeSourceLaw")}; sourceRows={JsonBool(phase379.RootElement, "routeProvidesSeparateWzSourceRows")}; promotesWz={JsonBool(phase379.RootElement, "routePromotesWzMasses")}; sourceLawPromotionBlocked={JsonBool(phase379.RootElement, "sourceLawPromotionBlocked")}; decision={JsonString(phase379.RootElement, "decision")}"
+            : "Phase379 artifact not materialized",
+        Phase379Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

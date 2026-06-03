@@ -236,6 +236,7 @@ const string Phase375WeightedReciprocalMixedBlockReplayAuditPath = "studies/phas
 const string Phase376PersistedNonzeroShellReciprocalReplayAuditPath = "studies/phase376_persisted_nonzero_shell_reciprocal_replay_audit_001/output/persisted_nonzero_shell_reciprocal_replay_audit.json";
 const string Phase377SelectedSourceModeShellResponseGramAuditPath = "studies/phase377_selected_source_mode_shell_response_gram_audit_001/output/selected_source_mode_shell_response_gram_audit.json";
 const string Phase378FullConnectionCarrierShellResponseGramAuditPath = "studies/phase378_full_connection_carrier_shell_response_gram_audit_001/output/full_connection_carrier_shell_response_gram_audit.json";
+const string Phase379ResponseImageCarrierAxisCharacterizationPath = "studies/phase379_response_image_carrier_axis_characterization_001/output/response_image_carrier_axis_characterization.json";
 const string Phase282BranchLocalDirectInvariantCensusPath = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census.json";
 const string Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit.json";
 const string Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic.json";
@@ -492,6 +493,7 @@ using var phase375 = TryParseJson(Phase375WeightedReciprocalMixedBlockReplayAudi
 using var phase376 = TryParseJson(Phase376PersistedNonzeroShellReciprocalReplayAuditPath);
 using var phase377 = TryParseJson(Phase377SelectedSourceModeShellResponseGramAuditPath);
 using var phase378 = TryParseJson(Phase378FullConnectionCarrierShellResponseGramAuditPath);
+using var phase379 = TryParseJson(Phase379ResponseImageCarrierAxisCharacterizationPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -5945,6 +5947,44 @@ var package = new
             decision = JsonString(phase378.RootElement, "decision"),
         }
         : null,
+    responseImageCarrierAxisCharacterization = phase379 is not null
+        ? new
+        {
+            status = JsonString(phase379.RootElement, "terminalStatus"),
+            responseImageCarrierAxisCharacterizationAuditPassed = JsonBool(phase379.RootElement, "responseImageCarrierAxisCharacterizationAuditPassed"),
+            phase378FullCarrierAuditPresent = JsonBool(phase379.RootElement, "phase378FullCarrierAuditPresent"),
+            targetBlindConstruction = JsonBool(phase379.RootElement, "targetBlindConstruction"),
+            physicalTargetsConsultedForConstruction = JsonBool(phase379.RootElement, "physicalTargetsConsultedForConstruction"),
+            backgroundCount = JsonInt(phase379.RootElement, "backgroundCount"),
+            backgroundPassedCount = JsonInt(phase379.RootElement, "backgroundPassedCount"),
+            stableTwoGaugeAxisDominance = JsonBool(phase379.RootElement, "stableTwoGaugeAxisDominance"),
+            stableSuppressedGaugeAxis = JsonInt(phase379.RootElement, "stableSuppressedGaugeAxis"),
+            maxSuppressedGaugeAxisProjectorFraction = JsonDouble(phase379.RootElement, "maxSuppressedGaugeAxisProjectorFraction"),
+            minDominantGaugePairProjectorFraction = JsonDouble(phase379.RootElement, "minDominantGaugePairProjectorFraction"),
+            strictBackgroundImageTransportPassed = JsonBool(phase379.RootElement, "strictBackgroundImageTransportPassed"),
+            looseBackgroundImageTransportPassed = JsonBool(phase379.RootElement, "looseBackgroundImageTransportPassed"),
+            interBackgroundMinimumSingularValue = JsonNestedDouble(phase379.RootElement, "interBackgroundTransport", "minimumSingularValue"),
+            interBackgroundMaximumPrincipalAngleDegrees = JsonNestedDouble(phase379.RootElement, "interBackgroundTransport", "maximumPrincipalAngleDegrees"),
+            phase307SourceRowsPromotable = JsonNestedBool(phase379.RootElement, "phase307Context", "sourceRowsPromotable"),
+            phase307CanFillPhase201WzContract = JsonNestedBool(phase379.RootElement, "phase307Context", "canFillPhase201WzContract"),
+            routeProvidesDiscreteResponseImageCharacterization = JsonBool(phase379.RootElement, "routeProvidesDiscreteResponseImageCharacterization"),
+            routeProvidesCanonicalGaugeAxisSelector = JsonBool(phase379.RootElement, "routeProvidesCanonicalGaugeAxisSelector"),
+            routeProvidesObservedElectroweakFieldMap = JsonBool(phase379.RootElement, "routeProvidesObservedElectroweakFieldMap"),
+            routeProvidesPhysicalEffectiveActionHessian = JsonBool(phase379.RootElement, "routeProvidesPhysicalEffectiveActionHessian"),
+            routeProvidesDirectTargetIndependentWzBridgeSourceLaw = JsonBool(phase379.RootElement, "routeProvidesDirectTargetIndependentWzBridgeSourceLaw"),
+            routeProvidesSeparateWzSourceRows = JsonBool(phase379.RootElement, "routeProvidesSeparateWzSourceRows"),
+            routeProvidesHiggsScalarSourceOperator = JsonBool(phase379.RootElement, "routeProvidesHiggsScalarSourceOperator"),
+            routeProvidesGeVUnitNormalization = JsonBool(phase379.RootElement, "routeProvidesGeVUnitNormalization"),
+            routePromotesWzMasses = JsonBool(phase379.RootElement, "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonBool(phase379.RootElement, "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonBool(phase379.RootElement, "routeCompletesBosonPredictions"),
+            canFillPhase201WzContract = JsonBool(phase379.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase379.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase379.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            sourceLawPromotionBlocked = JsonBool(phase379.RootElement, "sourceLawPromotionBlocked"),
+            decision = JsonString(phase379.RootElement, "decision"),
+        }
+        : null,
     branchLocalDirectInvariantCensus = phase282 is not null
         ? new
         {
@@ -9142,6 +9182,11 @@ static double? JsonDouble(JsonElement element, string propertyName) =>
         ? d
         : null;
 
+static double? JsonNestedDouble(JsonElement element, string objectName, string propertyName) =>
+    element.TryGetProperty(objectName, out var value) && value.ValueKind == JsonValueKind.Object
+        ? JsonDouble(value, propertyName)
+        : null;
+
 static int? JsonInt(JsonElement element, string propertyName) =>
     element.TryGetProperty(propertyName, out var value) && value.ValueKind == JsonValueKind.Number && value.TryGetInt32(out var i)
         ? i
@@ -9150,6 +9195,11 @@ static int? JsonInt(JsonElement element, string propertyName) =>
 static bool? JsonBool(JsonElement element, string propertyName) =>
     element.TryGetProperty(propertyName, out var value) && value.ValueKind is JsonValueKind.True or JsonValueKind.False
         ? value.GetBoolean()
+        : null;
+
+static bool? JsonNestedBool(JsonElement element, string objectName, string propertyName) =>
+    element.TryGetProperty(objectName, out var value) && value.ValueKind == JsonValueKind.Object
+        ? JsonBool(value, propertyName)
         : null;
 
 static JsonDocument? TryParseJson(string path) =>

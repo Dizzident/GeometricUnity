@@ -148,6 +148,7 @@ const paths = {
   phase376: "studies/phase376_persisted_nonzero_shell_reciprocal_replay_audit_001/output/persisted_nonzero_shell_reciprocal_replay_audit_summary.json",
   phase377: "studies/phase377_selected_source_mode_shell_response_gram_audit_001/output/selected_source_mode_shell_response_gram_audit_summary.json",
   phase378: "studies/phase378_full_connection_carrier_shell_response_gram_audit_001/output/full_connection_carrier_shell_response_gram_audit_summary.json",
+  phase379: "studies/phase379_response_image_carrier_axis_characterization_001/output/response_image_carrier_axis_characterization_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -367,6 +368,7 @@ const phase375 = requireFile(paths.phase375);
 const phase376 = requireFile(paths.phase376);
 const phase377 = requireFile(paths.phase377);
 const phase378 = requireFile(paths.phase378);
+const phase379 = requireFile(paths.phase379);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -4285,6 +4287,29 @@ if (sourceLineageMissing) {
   assert(phase378.routePromotesWzMasses === false && phase378.routePromotesHiggsMass === false && phase378.routeCompletesBosonPredictions === false, "Phase378 cannot promote boson predictions.");
   assert(phase378.canFillPhase201WzContract === false && phase378.canFillPhase201HiggsContract === false && phase378.canFillPhase256ObservedFieldExtractionContract === false, "Phase378 cannot fill Phase201 or Phase256 contracts.");
   assert(Array.isArray(phase378.predictionContractImpact?.phase201FieldsDefensiblyFilled) && phase378.predictionContractImpact.phase201FieldsDefensiblyFilled.length === 0, "Phase378 must preserve an empty defensible Phase201 fill set.");
+  assert(phase379.responseImageCarrierAxisCharacterizationAuditPassed === true, "Phase379 response-image carrier-axis characterization must pass as a discrete diagnostic.");
+  assert(phase379.phase378FullCarrierAuditPresent === true, "Phase379 must inherit the Phase378 full-carrier audit.");
+  assert(phase379.targetBlindConstruction === true && phase379.physicalTargetsConsultedForConstruction === false, "Phase379 construction must remain target-blind.");
+  assert(typeof phase379.targetBlindConstructionHash === "string" && phase379.targetBlindConstructionHash.length === 64, "Phase379 must persist a target-blind construction hash.");
+  assert(phase379.carrier?.carrierDimension === 156 && phase379.carrier?.edgeCount === 52 && phase379.carrier?.gaugeDimension === 3, "Phase379 must characterize the 156 = 52 x 3 carrier.");
+  assert(phase379.backgroundCount === 2 && phase379.backgroundPassedCount === 2, "Phase379 must pass both persisted backgrounds.");
+  assert(phase379.stableTwoGaugeAxisDominance === true, "Phase379 must disclose stable two-gauge-axis dominance.");
+  assert(phase379.stableSuppressedGaugeAxis === 1, "Phase379 must disclose carrier gauge axis 1 as the suppressed axis.");
+  assert(phase379.maxSuppressedGaugeAxisProjectorFraction <= 0.005, "Phase379 suppressed-axis projector fraction must remain below the declared tolerance.");
+  assert(phase379.minDominantGaugePairProjectorFraction >= 0.995, "Phase379 dominant gauge-pair projector fraction must remain above the declared tolerance.");
+  assert(phase379.strictBackgroundImageTransportPassed === false, "Phase379 must not claim strict background image transport.");
+  assert(phase379.looseBackgroundImageTransportPassed === true, "Phase379 loose transport diagnostic must pass.");
+  assert(phase379.interBackgroundMinimumSingularValue >= 0.75 && phase379.interBackgroundMinimumSingularValue < 0.99, "Phase379 must preserve the non-strict transport interval.");
+  assert(phase379.phase307SourceRowsPromotable === false && phase379.phase307CanFillPhase201WzContract === false, "Phase379 cannot repair Phase307 W/Z source rows.");
+  assert(phase379.routeProvidesDiscreteResponseImageCharacterization === true, "Phase379 must classify itself as a discrete response-image characterization.");
+  assert(phase379.routeProvidesCanonicalGaugeAxisSelector === false && phase379.routeProvidesObservedElectroweakFieldMap === false, "Phase379 cannot claim a canonical gauge-axis selector or observed electroweak map.");
+  assert(phase379.routeProvidesPhysicalEffectiveActionHessian === false, "Phase379 cannot claim a physical effective-action Hessian.");
+  assert(phase379.routeProvidesDirectTargetIndependentWzBridgeSourceLaw === false && phase379.routeProvidesSeparateWzSourceRows === false, "Phase379 cannot claim a W/Z bridge law or source rows.");
+  assert(phase379.routeProvidesHiggsScalarSourceOperator === false && phase379.routeProvidesGeVUnitNormalization === false, "Phase379 cannot claim a Higgs source or GeV normalization.");
+  assert(phase379.routePromotesWzMasses === false && phase379.routePromotesHiggsMass === false && phase379.routeCompletesBosonPredictions === false, "Phase379 cannot promote boson predictions.");
+  assert(phase379.canFillPhase201WzContract === false && phase379.canFillPhase201HiggsContract === false && phase379.canFillPhase256ObservedFieldExtractionContract === false, "Phase379 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase379.sourceLawPromotionBlocked === true, "Phase379 must explicitly block source-law promotion.");
+  assert(Array.isArray(phase379.predictionContractImpact?.phase201FieldsDefensiblyFilled) && phase379.predictionContractImpact.phase201FieldsDefensiblyFilled.length === 0, "Phase379 must preserve an empty defensible Phase201 fill set.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

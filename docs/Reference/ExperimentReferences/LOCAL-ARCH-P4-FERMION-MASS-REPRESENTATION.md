@@ -60,6 +60,10 @@ of the physical fermionic branch of Geometric Unity.
   response Gram map. The full map also has stable rank `3`, nullity `153`,
   and reconstructs the Phase377 selected response with relative residual below
   `1e-12`.
+- Used in Phase379 to characterize the full-carrier positive image. The image
+  is dominated by gauge axes `0` and `2`, suppresses axis `1` below `0.2%` of
+  projector trace on both persisted backgrounds, and fails strict background
+  transport with minimum singular value near `0.8`.
 
 ## Prediction Relevance
 
@@ -80,9 +84,10 @@ a provisional discretization choice. Phase374 validates a bounded dense shared
 solver repair, Phase375 validates a fixed-mesh zero-mode control, Phase376
 validates nonzero projected-shell blocks, Phase377 validates a study-defined
 selected-source response metric, and Phase378 validates its full-carrier
-restriction at the discrete level. None establishes that the weights or
-operator branch are physically canonical. No physical boson mass can be
-promoted from this convention alone.
+restriction at the discrete level. Phase379 characterizes the resulting
+carrier image. None establishes that the weights, operator branch, carrier
+axes, or image projector are physically canonical. No physical boson mass can
+be promoted from this convention alone.
 
 ## Follow-Up
 

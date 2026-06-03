@@ -32,6 +32,9 @@ identities.
 - Used in Phase378 to lift the same response construction to the full
   `156`-coordinate connection-`1`-form carrier and verify that Phase377 is its
   selected-source restriction.
+- Used in Phase379 to characterize the positive rank-`3` response-image
+  projector in the full carrier while preserving the distinction from a
+  physical W/Z source law.
 - Used to keep the Phase377 response metric distinct from a physical
   fermion-determinant effective-action Hessian.
 - Used to record that the Phase376 absolute-value spectral shell is not an
@@ -39,17 +42,18 @@ identities.
 
 ## Prediction Relevance
 
-Phase377 and Phase378 can test whether connection directions induce a stable,
-nonzero discrete shell response. Phase378 closes the selected-subspace loophole
-for the current toy carrier by showing the full carrier has the same observed
-rank `3` response image. These sources do not provide W/Z source rows, Higgs
-scalar-source lineage, observed-field extraction, or GeV normalization.
+Phase377, Phase378, and Phase379 can test whether connection directions induce
+a stable, nonzero discrete shell response and can characterize its carrier
+image. Phase379 finds a strong two-axis carrier diagnostic, but these sources
+do not provide W/Z source rows, Higgs scalar-source lineage, observed-field
+extraction, or GeV normalization.
 
 ## Limitation
 
 The response metric is study-defined and shell-scoped. Phase378 removes the
 selected-subspace limitation for the current `156`-coordinate carrier, but it
-is still not a GU-native physical mass operator.
+is still not a GU-native physical mass operator. Phase379 characterizes the
+carrier image, not a physical observed-field projection.
 
 ## Follow-Up
 

@@ -14693,3 +14693,74 @@ target-independent W/Z bridge-source theorem.
 - The full generator modified `51` historical JSON files only by
   `generatedAt`; those timestamp-only changes were restored after a parsed-JSON
   semantic equivalence check.
+
+## 2026-06-03 - Phase379 Response-Image Carrier-Axis Characterization
+
+### Context
+
+Phase378 showed that the full `156`-coordinate connection carrier has a stable
+rank-`3` shell-response Gram image, but it did not characterize what that image
+is inside the carrier. The next target-blind experiment was to compute the
+positive carrier eigenspace of the Phase378 response Gram and compare it with
+the edge-major `52 x 3` gauge-axis coordinate structure.
+
+### Action
+
+- Added `studies/phase379_response_image_carrier_axis_characterization_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P379.md`.
+- The audit reads the Phase378 `156 x 156` response Gram matrices, computes the
+  positive eigenspace/projector, reports gauge-axis and edge support, computes
+  inter-background principal angles, and imports Phase307 W/Z selector status
+  only as non-promotional context.
+- Wired Phase379 into the generator, Phase101 package, Phase202 completion
+  audit, claim-integrity verifier, and source-scanner exclusions.
+- Updated `ExperimentReferences.md` and the local response-boundary reference
+  notes.
+
+### Result
+
+- Targeted Phase379 run passed:
+  `responseImageCarrierAxisCharacterizationAuditPassed=true`.
+- Both persisted backgrounds have positive response rank `3` and nullity `153`.
+- The carrier image is dominated by gauge axes `0` and `2`.
+- Gauge axis `1` is the stable suppressed axis.
+- Maximum suppressed-axis projector fraction:
+  `0.0016621111895614045`.
+- Minimum dominant gauge-pair projector fraction:
+  `0.9983378888104386`.
+- Inter-background transport is loose but not strict:
+  `interBackgroundMinimumSingularValue=0.7997040836417338` and
+  `interBackgroundMaximumPrincipalAngleDegrees=36.89814629269526`.
+- Phase307 W/Z source rows remain non-promotional:
+  `phase307SourceRowsPromotable=false` and
+  `phase307CanFillPhase201WzContract=false`.
+
+### Boundary
+
+Phase379 gives a useful target-blind carrier-image diagnostic. It still cannot
+be used as a W/Z prediction or source contract fill. It does not provide a
+canonical electroweak gauge-axis selector, observed photon/W/Z/H projection
+map, physical effective-action Hessian, theorem-backed W/Z source rows, Higgs
+scalar source, or GeV normalization. The strict background-image transport
+failure is an additional blocker against promoting the carrier image as a
+physical source law.
+
+### Full Validation
+
+- Full generator gate passed with Phase379 included.
+- Phase379's full-gate line matched the targeted run:
+  `responseImageCarrierAxisCharacterizationAuditPassed=True`,
+  `backgroundPassedCount=2/2`,
+  `stableTwoGaugeAxisDominance=True`,
+  `stableSuppressedGaugeAxis=1`,
+  `maxSuppressedGaugeAxisProjectorFraction=0.0016621111895614045`,
+  `minDominantGaugePairProjectorFraction=0.9983378888104386`,
+  `strictBackgroundImageTransportPassed=False`, and
+  `looseBackgroundImageTransportPassed=True`.
+- The full gate remains physically incomplete by design:
+  `objectiveAchieved=False`, `checklistPassedCount=172`,
+  `checklistFailedCount=3`, and `promotedPhysicalMassClaimCount=0`.
+- `ExperimentReferences.md` table-row link check passed with
+  `detailLinkCount=51` and `missingDetailCount=0`.
+- After the gate, `53` historical JSON files that changed only by
+  `generatedAt` were restored after parsed-JSON semantic equivalence checks.

@@ -1,0 +1,225 @@
+{
+  "phaseId": "phase379-response-image-carrier-axis-characterization",
+  "generatedAt": "2026-06-03T13:00:42.5221862+00:00",
+  "terminalStatus": "response-image-carrier-axis-characterized-two-axis-dominance-nonpromotional",
+  "responseImageCarrierAxisCharacterizationAuditPassed": true,
+  "phase378FullCarrierAuditPresent": true,
+  "implementedObjectClassification": "target-blind discrete full-carrier response-image eigenspace characterization",
+  "physicalInterpretationBoundary": "carrier image diagnostic only",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "bf2a47030deb10ae418a5541096a796a4bbfeca49582f4314e1fb2cb6ceee577",
+  "carrier": {
+    "layout": "edge-major",
+    "edgeCount": 52,
+    "gaugeDimension": 3,
+    "carrierDimension": 156
+  },
+  "backgroundCount": 2,
+  "backgroundPassedCount": 2,
+  "stableTwoGaugeAxisDominance": true,
+  "stableSuppressedGaugeAxis": 1,
+  "maxSuppressedGaugeAxisProjectorFraction": 0.0016621111895614045,
+  "minDominantGaugePairProjectorFraction": 0.9983378888104386,
+  "strictBackgroundImageTransportPassed": false,
+  "looseBackgroundImageTransportPassed": true,
+  "interBackgroundMinimumSingularValue": 0.7997040836417338,
+  "interBackgroundMaximumPrincipalAngleDegrees": 36.89814629269526,
+  "phase307SourceRowsPromotable": false,
+  "phase307CanFillPhase201WzContract": false,
+  "routeProvidesDiscreteResponseImageCharacterization": true,
+  "routeProvidesCanonicalGaugeAxisSelector": false,
+  "routeProvidesObservedElectroweakFieldMap": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesDirectTargetIndependentWzBridgeSourceLaw": false,
+  "routeProvidesSeparateWzSourceRows": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesGeVUnitNormalization": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "sourceLawPromotionBlocked": true,
+  "explicitDiscreteOnlyNonclaims": [
+    "response-image eigenspace diagnostic only",
+    "not a canonical electroweak gauge-axis selector",
+    "not an observed photon/W/Z/H projection map",
+    "not a physical effective-action Hessian",
+    "not a W/Z source row",
+    "not a Higgs scalar source",
+    "not GeV-normalized",
+    "no predictions",
+    "no contract fills"
+  ],
+  "backgroundSummaries": [
+    {
+      "fermionBackgroundId": "bg-phase12-bg-a-20260315212202",
+      "positiveResponseRank": 3,
+      "responseNullity": 153,
+      "suppressedGaugeAxisIndex": 1,
+      "suppressedGaugeAxisProjectorFraction": 0.0016621111895614045,
+      "dominantGaugePairProjectorFraction": 0.9983378888104386,
+      "gaugeAxisProjectorFractions": [
+        0.5428841172458022,
+        0.0016621111895614045,
+        0.4554537715646367
+      ],
+      "gaugeAxisTraceFractions": [
+        0.5430419367719661,
+        0.0013028744165378696,
+        0.45565518881149564
+      ],
+      "topEdgesByProjectorCapture": [
+        {
+          "edgeIndex": 49,
+          "projectorCapture": 0.2366512673754062,
+          "projectorFraction": 0.07888375579180207
+        },
+        {
+          "edgeIndex": 24,
+          "projectorCapture": 0.23071209829291286,
+          "projectorFraction": 0.07690403276430428
+        },
+        {
+          "edgeIndex": 27,
+          "projectorCapture": 0.18325877605848467,
+          "projectorFraction": 0.061086258686161556
+        },
+        {
+          "edgeIndex": 39,
+          "projectorCapture": 0.18230266821909896,
+          "projectorFraction": 0.06076755607303299
+        },
+        {
+          "edgeIndex": 29,
+          "projectorCapture": 0.17713637387986075,
+          "projectorFraction": 0.059045457959953584
+        },
+        {
+          "edgeIndex": 38,
+          "projectorCapture": 0.1524575570028034,
+          "projectorFraction": 0.05081918566760113
+        },
+        {
+          "edgeIndex": 44,
+          "projectorCapture": 0.1304638380405911,
+          "projectorFraction": 0.04348794601353037
+        },
+        {
+          "edgeIndex": 25,
+          "projectorCapture": 0.12203694365588003,
+          "projectorFraction": 0.040678981218626675
+        },
+        {
+          "edgeIndex": 36,
+          "projectorCapture": 0.1134452484041569,
+          "projectorFraction": 0.03781508280138563
+        },
+        {
+          "edgeIndex": 5,
+          "projectorCapture": 0.10534576895867079,
+          "projectorFraction": 0.03511525631955693
+        },
+        {
+          "edgeIndex": 35,
+          "projectorCapture": 0.08589846162795112,
+          "projectorFraction": 0.028632820542650372
+        },
+        {
+          "edgeIndex": 7,
+          "projectorCapture": 0.08435468850422838,
+          "projectorFraction": 0.02811822950140946
+        }
+      ]
+    },
+    {
+      "fermionBackgroundId": "bg-phase12-bg-b-20260315212202",
+      "positiveResponseRank": 3,
+      "responseNullity": 153,
+      "suppressedGaugeAxisIndex": 1,
+      "suppressedGaugeAxisProjectorFraction": 0.0007681637643256457,
+      "dominantGaugePairProjectorFraction": 0.9992318362356744,
+      "gaugeAxisProjectorFractions": [
+        0.5199703289639036,
+        0.0007681637643256457,
+        0.4792615072717709
+      ],
+      "gaugeAxisTraceFractions": [
+        0.5194447225666317,
+        0.0006057032096442888,
+        0.479949574223724
+      ],
+      "topEdgesByProjectorCapture": [
+        {
+          "edgeIndex": 29,
+          "projectorCapture": 0.2934728713439668,
+          "projectorFraction": 0.09782429044798895
+        },
+        {
+          "edgeIndex": 27,
+          "projectorCapture": 0.18898118714630496,
+          "projectorFraction": 0.06299372904876832
+        },
+        {
+          "edgeIndex": 49,
+          "projectorCapture": 0.18680978808253723,
+          "projectorFraction": 0.062269929360845744
+        },
+        {
+          "edgeIndex": 24,
+          "projectorCapture": 0.1790360595256524,
+          "projectorFraction": 0.0596786865085508
+        },
+        {
+          "edgeIndex": 38,
+          "projectorCapture": 0.1639611611685935,
+          "projectorFraction": 0.05465372038953117
+        },
+        {
+          "edgeIndex": 12,
+          "projectorCapture": 0.12664564491336455,
+          "projectorFraction": 0.04221521497112152
+        },
+        {
+          "edgeIndex": 36,
+          "projectorCapture": 0.11556122961380216,
+          "projectorFraction": 0.03852040987126739
+        },
+        {
+          "edgeIndex": 20,
+          "projectorCapture": 0.10527265898302021,
+          "projectorFraction": 0.035090886327673404
+        },
+        {
+          "edgeIndex": 1,
+          "projectorCapture": 0.08707418370112242,
+          "projectorFraction": 0.02902472790037414
+        },
+        {
+          "edgeIndex": 47,
+          "projectorCapture": 0.08612833577154842,
+          "projectorFraction": 0.028709445257182806
+        },
+        {
+          "edgeIndex": 31,
+          "projectorCapture": 0.08467973512816696,
+          "projectorFraction": 0.02822657837605565
+        },
+        {
+          "edgeIndex": 39,
+          "projectorCapture": 0.08167424778146097,
+          "projectorFraction": 0.02722474926048699
+        }
+      ]
+    }
+  ],
+  "decision": "The Phase378 rank-3 response image is target-blind and dominated by carrier gauge axes other than axis 1; the suppressed-axis projector fraction is at most 0.0016621111895614045. This is a useful geometric diagnostic, but it is not a W/Z bridge-source law because the image lacks strict background identity, observed electroweak projection rows, source-derived normalization, and theorem-backed W/Z source rows."
+}

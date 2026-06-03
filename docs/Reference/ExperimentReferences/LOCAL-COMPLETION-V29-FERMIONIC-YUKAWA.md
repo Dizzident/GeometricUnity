@@ -72,6 +72,9 @@ outside the first executable numerical branch.
   rank `3`, nullity `153`, and reconstructs the selected Phase377 response.
   It remains a study-defined shell-response precursor rather than an action
   Hessian.
+- Added Phase379 to characterize the Phase378 positive carrier image. It finds
+  stable two-axis dominance in the edge-major carrier, but strict
+  background-image transport fails and no observed W/Z source rows are emitted.
 
 ## Prediction Relevance
 
