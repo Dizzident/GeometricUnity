@@ -147,6 +147,7 @@ const paths = {
   phase375: "studies/phase375_weighted_reciprocal_mixed_block_replay_audit_001/output/weighted_reciprocal_mixed_block_replay_audit_summary.json",
   phase376: "studies/phase376_persisted_nonzero_shell_reciprocal_replay_audit_001/output/persisted_nonzero_shell_reciprocal_replay_audit_summary.json",
   phase377: "studies/phase377_selected_source_mode_shell_response_gram_audit_001/output/selected_source_mode_shell_response_gram_audit_summary.json",
+  phase378: "studies/phase378_full_connection_carrier_shell_response_gram_audit_001/output/full_connection_carrier_shell_response_gram_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -365,6 +366,7 @@ const phase374 = requireFile(paths.phase374);
 const phase375 = requireFile(paths.phase375);
 const phase376 = requireFile(paths.phase376);
 const phase377 = requireFile(paths.phase377);
+const phase378 = requireFile(paths.phase378);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -4256,6 +4258,33 @@ if (sourceLineageMissing) {
   assert(phase377.routePromotesWzMasses === false && phase377.routePromotesHiggsMass === false && phase377.routeCompletesBosonPredictions === false, "Phase377 cannot promote boson predictions.");
   assert(phase377.canFillPhase201WzContract === false && phase377.canFillPhase201HiggsContract === false && phase377.canFillPhase256ObservedFieldExtractionContract === false, "Phase377 cannot fill Phase201 or Phase256 contracts.");
   assert(Array.isArray(phase377.predictionContractImpact?.phase201FieldsDefensiblyFilled) && phase377.predictionContractImpact.phase201FieldsDefensiblyFilled.length === 0, "Phase377 must preserve an empty defensible Phase201 fill set.");
+  assert(phase378.fullConnectionCarrierShellResponseGramAuditPassed === true, "Phase378 full connection-carrier shell-response Gram audit must pass while preserving discrete-only status.");
+  assert(phase378.phase376DiscreteShellReplayPresent === true && phase378.phase377SelectedShellResponsePresent === true, "Phase378 must inherit Phase376 and Phase377 response precursors.");
+  assert(phase378.phase376NonpromotionalBoundaryVerified === true && phase378.phase377NonpromotionalBoundaryVerified === true, "Phase378 must inherit non-promotional boundaries.");
+  assert(phase378.targetBlindConstruction === true && phase378.physicalTargetsConsultedForConstruction === false, "Phase378 construction must remain target-blind.");
+  assert(typeof phase378.targetBlindConstructionHash === "string" && phase378.targetBlindConstructionHash.length === 64, "Phase378 must persist a target-blind construction hash.");
+  assert(phase378.fullConnectionCarrierCoordinateBasisCovered === true, "Phase378 must cover the full connection-carrier coordinate basis.");
+  assert(phase378.carrierMetadata?.passed === true && phase378.carrierMetadata?.connectionVectorLength === 156, "Phase378 must validate the 156-component connection carrier.");
+  assert(phase378.studyDefinedHilbertSchmidtPullbackMetric === true, "Phase378 must classify Q as a study-defined Hilbert-Schmidt pullback metric.");
+  assert(phase378.routeProvidesDiscreteFullConnectionCarrierShellResponseGramPrecursor === true, "Phase378 must materialize the full-carrier discrete shell-response Gram precursor.");
+  assert(phase378.routeProvidesPhysicalEffectiveActionHessian === false, "Phase378 cannot claim a physical effective-action Hessian.");
+  assert(phase378.backgroundCount === 2 && phase378.backgroundPassedCount === 2, "Phase378 must pass both persisted backgrounds.");
+  assert(phase378.fullCarrierResponsePsdPassedCount === 2 && phase378.fullCarrierResponseNonzeroPassedCount === 2, "Phase378 full-carrier response Gram matrices must be PSD and nonzero on both backgrounds.");
+  assert(phase378.fullCarrierCoordinatePairingPassedCount === 2, "Phase378 must pass full-coordinate weighted pairing identities on both backgrounds.");
+  assert(phase378.selectedReconstructionPassedCount === 2 && phase378.selectedGramParityPassedCount === 2, "Phase378 must reconstruct the Phase377 selected response from the full carrier on both backgrounds.");
+  assert(phase378.stableFullCarrierResponseRankAcrossBackgrounds === true, "Phase378 must disclose stable full-carrier response rank across backgrounds.");
+  assert(phase378.observedStableFullCarrierResponseRank === 3, "Phase378 must preserve observed full-carrier response rank 3.");
+  assert(phase378.minFullCarrierResponseRank === 3 && phase378.maxFullCarrierResponseRank === 3, "Phase378 full-carrier rank range must be 3..3.");
+  assert(phase378.minFullCarrierResponseNullity === 153 && phase378.maxFullCarrierResponseNullity === 153, "Phase378 full-carrier nullity range must be 153..153.");
+  assert(phase378.routeProvidesPhysicalGuBranch === false && phase378.routeProvidesCanonicalPhysicalMassPsi === false, "Phase378 cannot claim a physical GU branch or canonical physical M_psi.");
+  assert(phase378.routeProvidesCompletedFermionicAction === false && phase378.routeProvidesCompletedMixedLinearizationBlocks === false, "Phase378 cannot claim a completed fermionic action or mixed blocks.");
+  assert(phase378.routeProvidesMixedLinearizationGaugeCompatibilityIdentities === false, "Phase378 cannot claim mixed-block gauge-compatibility identities.");
+  assert(phase378.routeProvidesDirectTargetIndependentWzBridgeSourceLaw === false, "Phase378 cannot claim a direct target-independent W/Z bridge law.");
+  assert(phase378.routeProvidesHiggsScalarSourceOperator === false && phase378.routeProvidesScalarProjectionTheorem === false, "Phase378 cannot claim a Higgs scalar-source theorem.");
+  assert(phase378.routeProvidesGeVUnitNormalization === false, "Phase378 cannot claim GeV normalization.");
+  assert(phase378.routePromotesWzMasses === false && phase378.routePromotesHiggsMass === false && phase378.routeCompletesBosonPredictions === false, "Phase378 cannot promote boson predictions.");
+  assert(phase378.canFillPhase201WzContract === false && phase378.canFillPhase201HiggsContract === false && phase378.canFillPhase256ObservedFieldExtractionContract === false, "Phase378 cannot fill Phase201 or Phase256 contracts.");
+  assert(Array.isArray(phase378.predictionContractImpact?.phase201FieldsDefensiblyFilled) && phase378.predictionContractImpact.phase201FieldsDefensiblyFilled.length === 0, "Phase378 must preserve an empty defensible Phase201 fill set.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

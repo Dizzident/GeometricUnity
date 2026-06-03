@@ -67,6 +67,11 @@ outside the first executable numerical branch.
   positive-semidefinite and has stable rank `3`, nullity `9` across both
   persisted backgrounds. It remains a study-defined precursor rather than an
   action Hessian.
+- Added Phase378 to compute `Q_ij=Re Tr(G_i^dagger G_j)` over the full
+  `156`-coordinate connection carrier. The full-carrier response has stable
+  rank `3`, nullity `153`, and reconstructs the selected Phase377 response.
+  It remains a study-defined shell-response precursor rather than an action
+  Hessian.
 
 ## Prediction Relevance
 

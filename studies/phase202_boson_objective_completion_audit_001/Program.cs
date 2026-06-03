@@ -143,6 +143,7 @@ const string Phase374Path = "studies/phase374_shared_weighted_fermion_spectral_s
 const string Phase375Path = "studies/phase375_weighted_reciprocal_mixed_block_replay_audit_001/output/weighted_reciprocal_mixed_block_replay_audit_summary.json";
 const string Phase376Path = "studies/phase376_persisted_nonzero_shell_reciprocal_replay_audit_001/output/persisted_nonzero_shell_reciprocal_replay_audit_summary.json";
 const string Phase377Path = "studies/phase377_selected_source_mode_shell_response_gram_audit_001/output/selected_source_mode_shell_response_gram_audit_summary.json";
+const string Phase378Path = "studies/phase378_full_connection_carrier_shell_response_gram_audit_001/output/full_connection_carrier_shell_response_gram_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -319,6 +320,7 @@ using var phase374 = File.Exists(Phase374Path) ? JsonDocument.Parse(File.ReadAll
 using var phase375 = File.Exists(Phase375Path) ? JsonDocument.Parse(File.ReadAllText(Phase375Path)) : null;
 using var phase376 = File.Exists(Phase376Path) ? JsonDocument.Parse(File.ReadAllText(Phase376Path)) : null;
 using var phase377 = File.Exists(Phase377Path) ? JsonDocument.Parse(File.ReadAllText(Phase377Path)) : null;
+using var phase378 = File.Exists(Phase378Path) ? JsonDocument.Parse(File.ReadAllText(Phase378Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -4170,6 +4172,50 @@ var selectedSourceModeShellResponseGramAuditPassed = selectedSourceModeShellResp
     && JsonBool(phase377.RootElement, "canFillPhase201WzContract") is false
     && JsonBool(phase377.RootElement, "canFillPhase201HiggsContract") is false
     && JsonBool(phase377.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false;
+var fullConnectionCarrierShellResponseGramAuditMaterialized = phase378 is not null;
+var fullConnectionCarrierShellResponseGramAuditPassed = fullConnectionCarrierShellResponseGramAuditMaterialized
+    && JsonBool(phase378!.RootElement, "fullConnectionCarrierShellResponseGramAuditPassed") is true
+    && JsonBool(phase378.RootElement, "phase376DiscreteShellReplayPresent") is true
+    && JsonBool(phase378.RootElement, "phase377SelectedShellResponsePresent") is true
+    && JsonBool(phase378.RootElement, "phase376NonpromotionalBoundaryVerified") is true
+    && JsonBool(phase378.RootElement, "phase377NonpromotionalBoundaryVerified") is true
+    && JsonBool(phase378.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase378.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && JsonBool(phase378.RootElement, "fullConnectionCarrierCoordinateBasisCovered") is true
+    && JsonBool(phase378.RootElement, "studyDefinedHilbertSchmidtPullbackMetric") is true
+    && JsonBool(phase378.RootElement, "routeProvidesDiscreteFullConnectionCarrierShellResponseGramPrecursor") is true
+    && JsonBool(phase378.RootElement, "routeProvidesPhysicalEffectiveActionHessian") is false
+    && phase378.RootElement.TryGetProperty("carrierMetadata", out var p378CarrierMetadata)
+    && JsonBool(p378CarrierMetadata, "passed") is true
+    && JsonInt(p378CarrierMetadata, "connectionVectorLength") == 156
+    && JsonInt(phase378.RootElement, "backgroundCount") == 2
+    && JsonInt(phase378.RootElement, "backgroundPassedCount") == 2
+    && JsonInt(phase378.RootElement, "fullCarrierResponsePsdPassedCount") == 2
+    && JsonInt(phase378.RootElement, "fullCarrierResponseNonzeroPassedCount") == 2
+    && JsonInt(phase378.RootElement, "fullCarrierCoordinatePairingPassedCount") == 2
+    && JsonInt(phase378.RootElement, "selectedReconstructionPassedCount") == 2
+    && JsonInt(phase378.RootElement, "selectedGramParityPassedCount") == 2
+    && JsonBool(phase378.RootElement, "stableFullCarrierResponseRankAcrossBackgrounds") is true
+    && JsonInt(phase378.RootElement, "observedStableFullCarrierResponseRank") == 3
+    && JsonInt(phase378.RootElement, "minFullCarrierResponseRank") == 3
+    && JsonInt(phase378.RootElement, "maxFullCarrierResponseRank") == 3
+    && JsonInt(phase378.RootElement, "minFullCarrierResponseNullity") == 153
+    && JsonInt(phase378.RootElement, "maxFullCarrierResponseNullity") == 153
+    && JsonBool(phase378.RootElement, "routeProvidesPhysicalGuBranch") is false
+    && JsonBool(phase378.RootElement, "routeProvidesCanonicalPhysicalMassPsi") is false
+    && JsonBool(phase378.RootElement, "routeProvidesCompletedFermionicAction") is false
+    && JsonBool(phase378.RootElement, "routeProvidesCompletedMixedLinearizationBlocks") is false
+    && JsonBool(phase378.RootElement, "routeProvidesMixedLinearizationGaugeCompatibilityIdentities") is false
+    && JsonBool(phase378.RootElement, "routeProvidesDirectTargetIndependentWzBridgeSourceLaw") is false
+    && JsonBool(phase378.RootElement, "routeProvidesHiggsScalarSourceOperator") is false
+    && JsonBool(phase378.RootElement, "routeProvidesScalarProjectionTheorem") is false
+    && JsonBool(phase378.RootElement, "routeProvidesGeVUnitNormalization") is false
+    && JsonBool(phase378.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase378.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase378.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase378.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase378.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase378.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -6162,6 +6208,14 @@ var checklist = new[]
             ? $"selectedSourceModeShellResponseGramAuditPassed={JsonBool(phase377!.RootElement, "selectedSourceModeShellResponseGramAuditPassed")}; phase376Replay={JsonBool(phase377.RootElement, "phase376DiscreteShellReplayPresent")}; targetBlind={JsonBool(phase377.RootElement, "targetBlindConstruction")}; selectedSubspaceOnly={JsonBool(phase377.RootElement, "selectedSourceModeSubspaceOnly")}; sourceModes={JsonInt(phase377.RootElement, "selectedSourceModeCount")}; backgrounds={JsonInt(phase377.RootElement, "backgroundPassedCount")}/{JsonInt(phase377.RootElement, "backgroundCount")}; psdPersisted={JsonInt(phase377.RootElement, "persistedResponseGramPsdPassedCount")}; psdAnalytic={JsonInt(phase377.RootElement, "analyticResponseGramPsdPassedCount")}; rank={JsonInt(phase377.RootElement, "observedStableResponseRank")}; nullity={JsonInt(phase377.RootElement, "observedStableResponseNullity")}; physicalHessian={JsonBool(phase377.RootElement, "routeProvidesPhysicalEffectiveActionHessian")}; promotesWz={JsonBool(phase377.RootElement, "routePromotesWzMasses")}; promotesHiggs={JsonBool(phase377.RootElement, "routePromotesHiggsMass")}; decision={JsonString(phase377.RootElement, "decision")}"
             : "Phase377 artifact not materialized",
         Phase377Path),
+    new ObjectiveChecklistItem(
+        "full-connection-carrier-shell-response-gram-audit-materialized",
+        "Lift the Phase377 shell-response metric to the full 156-coordinate connection carrier and verify the selected-source response is its restriction, while preserving all physical-prediction boundaries.",
+        fullConnectionCarrierShellResponseGramAuditPassed ? "passed" : "failed",
+        fullConnectionCarrierShellResponseGramAuditMaterialized
+            ? $"fullConnectionCarrierShellResponseGramAuditPassed={JsonBool(phase378!.RootElement, "fullConnectionCarrierShellResponseGramAuditPassed")}; phase376Replay={JsonBool(phase378.RootElement, "phase376DiscreteShellReplayPresent")}; phase377Selected={JsonBool(phase378.RootElement, "phase377SelectedShellResponsePresent")}; targetBlind={JsonBool(phase378.RootElement, "targetBlindConstruction")}; fullCarrierCovered={JsonBool(phase378.RootElement, "fullConnectionCarrierCoordinateBasisCovered")}; backgrounds={JsonInt(phase378.RootElement, "backgroundPassedCount")}/{JsonInt(phase378.RootElement, "backgroundCount")}; psd={JsonInt(phase378.RootElement, "fullCarrierResponsePsdPassedCount")}; selectedReconstruction={JsonInt(phase378.RootElement, "selectedReconstructionPassedCount")}; selectedGramParity={JsonInt(phase378.RootElement, "selectedGramParityPassedCount")}; rank={JsonInt(phase378.RootElement, "observedStableFullCarrierResponseRank")}; nullityRange={JsonInt(phase378.RootElement, "minFullCarrierResponseNullity")}..{JsonInt(phase378.RootElement, "maxFullCarrierResponseNullity")}; physicalHessian={JsonBool(phase378.RootElement, "routeProvidesPhysicalEffectiveActionHessian")}; promotesWz={JsonBool(phase378.RootElement, "routePromotesWzMasses")}; promotesHiggs={JsonBool(phase378.RootElement, "routePromotesHiggsMass")}; decision={JsonString(phase378.RootElement, "decision")}"
+            : "Phase378 artifact not materialized",
+        Phase378Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

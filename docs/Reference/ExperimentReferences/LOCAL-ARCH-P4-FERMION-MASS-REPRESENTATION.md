@@ -56,6 +56,10 @@ of the physical fermionic branch of Geometric Unity.
   response metric `Q_ab=Re Tr(G_a^dagger G_b)`. Both persisted backgrounds have
   a positive-semidefinite rank-`3` response image and nullity `9` on their
   `12`-mode selected subspaces.
+- Used in Phase378 to compute the full `156`-coordinate connection-carrier
+  response Gram map. The full map also has stable rank `3`, nullity `153`,
+  and reconstructs the Phase377 selected response with relative residual below
+  `1e-12`.
 
 ## Prediction Relevance
 
@@ -73,11 +77,12 @@ normalization.
 
 Treat this as a local implementation reference. The mesh-volume weights remain
 a provisional discretization choice. Phase374 validates a bounded dense shared
-solver repair, Phase375 validates a fixed-mesh zero-mode control, and Phase376
-validates nonzero projected-shell blocks at the discrete level. Phase377
-validates only a study-defined selected-source response metric. None
-establishes that the weights or operator branch are physically canonical. No
-physical boson mass can be promoted from this convention alone.
+solver repair, Phase375 validates a fixed-mesh zero-mode control, Phase376
+validates nonzero projected-shell blocks, Phase377 validates a study-defined
+selected-source response metric, and Phase378 validates its full-carrier
+restriction at the discrete level. None establishes that the weights or
+operator branch are physically canonical. No physical boson mass can be
+promoted from this convention alone.
 
 ## Follow-Up
 

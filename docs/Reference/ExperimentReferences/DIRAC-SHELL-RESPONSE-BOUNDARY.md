@@ -29,6 +29,9 @@ identities.
 
 - Used in Phase377 to define the bounded response metric
   `Q_ab = Re Tr(G_a^dagger G_b)` from Phase376 projected shell blocks.
+- Used in Phase378 to lift the same response construction to the full
+  `156`-coordinate connection-`1`-form carrier and verify that Phase377 is its
+  selected-source restriction.
 - Used to keep the Phase377 response metric distinct from a physical
   fermion-determinant effective-action Hessian.
 - Used to record that the Phase376 absolute-value spectral shell is not an
@@ -36,18 +39,21 @@ identities.
 
 ## Prediction Relevance
 
-Phase377 can test whether selected connection directions induce a stable,
-nonzero discrete shell response. These sources do not provide W/Z source rows,
-Higgs scalar-source lineage, observed-field extraction, or GeV normalization.
+Phase377 and Phase378 can test whether connection directions induce a stable,
+nonzero discrete shell response. Phase378 closes the selected-subspace loophole
+for the current toy carrier by showing the full carrier has the same observed
+rank `3` response image. These sources do not provide W/Z source rows, Higgs
+scalar-source lineage, observed-field extraction, or GeV normalization.
 
 ## Limitation
 
-The response metric is study-defined and selected-subspace scoped. It is not a
-GU-native physical mass operator.
+The response metric is study-defined and shell-scoped. Phase378 removes the
+selected-subspace limitation for the current `156`-coordinate carrier, but it
+is still not a GU-native physical mass operator.
 
 ## Follow-Up
 
-- Materialize the full connection-carrier response map before interpreting
-  selected-subspace null directions.
 - Supply a fixed GU fermionic action and gauge-compatible mixed blocks before
   attempting a physical effective-action Hessian.
+- Supply observed-field extraction, pole extraction, and unit normalization
+  before any W/Z/H prediction attempt.

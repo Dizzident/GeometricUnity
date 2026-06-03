@@ -14615,3 +14615,81 @@ W/Z projection, Higgs row, GeV normalization, prediction, or contract fill.
 - The full generator modified historical JSON outputs only by `generatedAt`;
   `47` timestamp-only files were restored exactly to `HEAD` after a semantic
   no-content-change check.
+
+## 2026-06-02 - Phase378 Full Connection-Carrier Shell-Response Gram Audit Scoped
+
+### Context
+
+Phase377 closed the selected-source-mode Gram composition for the `12` selected
+Phase12 connection modes per background, but it did not rule out that the
+rank-`3` response was only an artifact of that selected subspace. The next
+bounded experiment was therefore to compute the same shell-response map over
+the full `156`-coordinate connection-`1`-form carrier.
+
+### Action
+
+- Added `studies/phase378_full_connection_carrier_shell_response_gram_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P378.md`.
+- Updated the reference tracker and local architecture/completion/source
+  boundary notes to record Phase378.
+- Wired Phase378 into the generator, Phase101 package, Phase202 completion
+  audit, claim-integrity verifier, and generated-source scanner exclusions.
+
+### Result
+
+- Phase378 computes
+  `G_i=Psi_shell^dagger deltaK[e_i] Psi_shell` for all `156` coordinate basis
+  perturbations on both persisted Phase12 backgrounds.
+- The full-carrier response Gram
+  `Q_ij=Re Tr(G_i^dagger G_j)` is positive semidefinite and nonzero.
+- The full-carrier response rank is stable at `3` across both backgrounds.
+- The full-carrier response nullity is `153` across both backgrounds.
+- The selected Phase377 response is recovered as the restriction
+  `G[b_a]=sum_i b_a[i]G_i`.
+- Max selected-block reconstruction residual:
+  `9.168013570925023E-13`.
+- Max selected response-Gram residual versus Phase377:
+  `1.084828202293451E-14`.
+
+### Boundary
+
+This is stronger than Phase377 because it removes the selected-subspace
+loophole for the current fixed Phase12 connection carrier. It still cannot be
+used as a boson prediction. It remains shell-scoped, study-defined, and
+discrete-only. It does not supply a physical GU fermionic action, regularized
+fermion-determinant Hessian, corrected-gauge identities, observed W/Z/H field
+projection, Higgs scalar row, pole extraction, GeV normalization, or direct
+target-independent W/Z bridge-source theorem.
+
+### Targeted Validation
+
+- Targeted Phase378 run passed:
+  `fullConnectionCarrierShellResponseGramAuditPassed=true`.
+- P101/P202/verifier integration edits were made with all physical promotion
+  flags preserved as false.
+- Build checks passed for Phase378, Phase101, Phase202, and the touched source
+  scanners P204/P205/P207/P279/P281/P295/P296.
+- Targeted P101 run rebuilt the package with
+  `fullConnectionCarrierShellResponseGramAudit` included.
+- Targeted P202 run remained objective-incomplete with
+  `objectiveAchieved=false`, `checklistPassedCount=171`, and
+  `checklistFailedCount=3`; the only failed requirements are the pre-existing
+  physical source-contract completion items.
+- Claim-integrity verification passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+- Reference-link check passed with `detailLinkCount=51` and no missing detail
+  files.
+- Full generator gate passed with Phase378 included. Its Phase378 line matched
+  the targeted run: `minFullCarrierResponseRank=3`,
+  `maxFullCarrierResponseRank=3`,
+  `observedStableFullCarrierResponseRank=3`,
+  `maxSelectedBlockReconstructionRelativeResidual=9.168013570925023E-13`, and
+  `maxSelectedResponseGramVsPhase377RelativeResidual=1.084828202293451E-14`.
+- The full gate again ended with incomplete physical boson prediction status:
+  `objectiveAchieved=false`, `checklistPassedCount=171`,
+  `checklistFailedCount=3`, and
+  `promotedPhysicalMassClaimCount=0`.
+- The full generator modified `51` historical JSON files only by
+  `generatedAt`; those timestamp-only changes were restored after a parsed-JSON
+  semantic equivalence check.
