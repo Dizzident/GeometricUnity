@@ -145,6 +145,7 @@ const string Phase376Path = "studies/phase376_persisted_nonzero_shell_reciprocal
 const string Phase377Path = "studies/phase377_selected_source_mode_shell_response_gram_audit_001/output/selected_source_mode_shell_response_gram_audit_summary.json";
 const string Phase378Path = "studies/phase378_full_connection_carrier_shell_response_gram_audit_001/output/full_connection_carrier_shell_response_gram_audit_summary.json";
 const string Phase379Path = "studies/phase379_response_image_carrier_axis_characterization_001/output/response_image_carrier_axis_characterization_summary.json";
+const string Phase380Path = "studies/phase380_response_image_wz_contract_application_audit_001/output/response_image_wz_contract_application_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -323,6 +324,7 @@ using var phase376 = File.Exists(Phase376Path) ? JsonDocument.Parse(File.ReadAll
 using var phase377 = File.Exists(Phase377Path) ? JsonDocument.Parse(File.ReadAllText(Phase377Path)) : null;
 using var phase378 = File.Exists(Phase378Path) ? JsonDocument.Parse(File.ReadAllText(Phase378Path)) : null;
 using var phase379 = File.Exists(Phase379Path) ? JsonDocument.Parse(File.ReadAllText(Phase379Path)) : null;
+using var phase380 = File.Exists(Phase380Path) ? JsonDocument.Parse(File.ReadAllText(Phase380Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -4251,6 +4253,30 @@ var responseImageCarrierAxisCharacterizationPassed = responseImageCarrierAxisCha
     && JsonBool(phase379.RootElement, "canFillPhase201HiggsContract") is false
     && JsonBool(phase379.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
     && JsonBool(phase379.RootElement, "sourceLawPromotionBlocked") is true;
+var responseImageWzContractApplicationAuditMaterialized = phase380 is not null;
+var responseImageWzContractApplicationAuditPassed = responseImageWzContractApplicationAuditMaterialized
+    && JsonBool(phase380!.RootElement, "responseImageWzContractApplicationAuditPassed") is true
+    && JsonBool(phase380.RootElement, "applicationAttempted") is true
+    && JsonString(phase380.RootElement, "applicationSubjectKind") == "phase379-response-image-diagnostic"
+    && JsonBool(phase380.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase380.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && JsonBool(phase380.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase380.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase380.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase380.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase380.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase380.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase380.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase380.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase380.RootElement, "contractFieldCount") == 15
+    && JsonInt(phase380.RootElement, "acceptedContractFieldCount") == 0
+    && JsonInt(phase380.RootElement, "blockedContractFieldCount") == 15
+    && JsonInt(phase380.RootElement, "phase209WzCurrentMissingFieldCount") == 15
+    && JsonInt(phase380.RootElement, "phase213WzMissingFieldCount") == 15
+    && JsonNestedBool(phase380.RootElement, "applicationSubject", "phase379Passed") is true
+    && JsonNestedBool(phase380.RootElement, "applicationSubject", "strictBackgroundImageTransportPassed") is false
+    && JsonNestedBool(phase380.RootElement, "applicationSubject", "separateWzSourceRowsPresent") is false
+    && JsonNestedBool(phase380.RootElement, "applicationSubject", "gevNormalizationPresent") is false;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -6260,6 +6286,14 @@ var checklist = new[]
             : "Phase379 artifact not materialized",
         Phase379Path),
     new ObjectiveChecklistItem(
+        "response-image-wz-contract-application-audit-materialized",
+        "Stress-test the Phase379 response-image diagnostic against the Phase201 W/Z source-lineage contract without mutating the intake template.",
+        responseImageWzContractApplicationAuditPassed ? "passed" : "failed",
+        responseImageWzContractApplicationAuditMaterialized
+            ? $"responseImageWzContractApplicationAuditPassed={JsonBool(phase380!.RootElement, "responseImageWzContractApplicationAuditPassed")}; applicationSubjectKind={JsonString(phase380.RootElement, "applicationSubjectKind")}; targetBlind={JsonBool(phase380.RootElement, "targetBlindConstruction")}; sourceContractApplicationAllowed={JsonBool(phase380.RootElement, "sourceContractApplicationAllowed")}; acceptedContractFieldCount={JsonInt(phase380.RootElement, "acceptedContractFieldCount")}; blockedContractFieldCount={JsonInt(phase380.RootElement, "blockedContractFieldCount")}; phase213WzMissingFieldCount={JsonInt(phase380.RootElement, "phase213WzMissingFieldCount")}; phase201TemplateMutated={JsonBool(phase380.RootElement, "phase201TemplateMutated")}; fieldsApplied={JsonInt(phase380.RootElement, "fieldsAppliedToPhase201TemplateCount")}; strictTransport={JsonNestedBool(phase380.RootElement, "applicationSubject", "strictBackgroundImageTransportPassed")}; separateRows={JsonNestedBool(phase380.RootElement, "applicationSubject", "separateWzSourceRowsPresent")}; gevNormalization={JsonNestedBool(phase380.RootElement, "applicationSubject", "gevNormalizationPresent")}; canFillPhase201WzContract={JsonBool(phase380.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase380.RootElement, "decision")}"
+            : "Phase380 artifact not materialized",
+        Phase380Path),
+    new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
         branchLocalDirectInvariantCensusPassed ? "passed" : "failed",
@@ -6746,6 +6780,16 @@ var result = new
         phase329Path = Phase329Path,
         phase330Path = Phase330Path,
         phase331Path = Phase331Path,
+        phase371Path = Phase371Path,
+        phase372Path = Phase372Path,
+        phase373Path = Phase373Path,
+        phase374Path = Phase374Path,
+        phase375Path = Phase375Path,
+        phase376Path = Phase376Path,
+        phase377Path = Phase377Path,
+        phase378Path = Phase378Path,
+        phase379Path = Phase379Path,
+        phase380Path = Phase380Path,
         phase282Path = Phase282Path,
         phase283Path = Phase283Path,
         phase284Path = Phase284Path,
@@ -6807,6 +6851,11 @@ static string? JsonString(JsonElement element, string propertyName) =>
 
 static bool? JsonBool(JsonElement element, string propertyName) =>
     element.TryGetProperty(propertyName, out var property) ? property.ValueKind switch { JsonValueKind.True => true, JsonValueKind.False => false, _ => null } : null;
+
+static bool? JsonNestedBool(JsonElement element, string objectName, string propertyName) =>
+    element.TryGetProperty(objectName, out var property) && property.ValueKind == JsonValueKind.Object
+        ? JsonBool(property, propertyName)
+        : null;
 
 static int? JsonInt(JsonElement element, string propertyName) =>
     element.TryGetProperty(propertyName, out var property) && property.ValueKind == JsonValueKind.Number && property.TryGetInt32(out var value) ? value : null;

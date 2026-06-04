@@ -149,6 +149,7 @@ const paths = {
   phase377: "studies/phase377_selected_source_mode_shell_response_gram_audit_001/output/selected_source_mode_shell_response_gram_audit_summary.json",
   phase378: "studies/phase378_full_connection_carrier_shell_response_gram_audit_001/output/full_connection_carrier_shell_response_gram_audit_summary.json",
   phase379: "studies/phase379_response_image_carrier_axis_characterization_001/output/response_image_carrier_axis_characterization_summary.json",
+  phase380: "studies/phase380_response_image_wz_contract_application_audit_001/output/response_image_wz_contract_application_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -369,6 +370,7 @@ const phase376 = requireFile(paths.phase376);
 const phase377 = requireFile(paths.phase377);
 const phase378 = requireFile(paths.phase378);
 const phase379 = requireFile(paths.phase379);
+const phase380 = requireFile(paths.phase380);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -4310,6 +4312,21 @@ if (sourceLineageMissing) {
   assert(phase379.canFillPhase201WzContract === false && phase379.canFillPhase201HiggsContract === false && phase379.canFillPhase256ObservedFieldExtractionContract === false, "Phase379 cannot fill Phase201 or Phase256 contracts.");
   assert(phase379.sourceLawPromotionBlocked === true, "Phase379 must explicitly block source-law promotion.");
   assert(Array.isArray(phase379.predictionContractImpact?.phase201FieldsDefensiblyFilled) && phase379.predictionContractImpact.phase201FieldsDefensiblyFilled.length === 0, "Phase379 must preserve an empty defensible Phase201 fill set.");
+  assert(phase380.responseImageWzContractApplicationAuditPassed === true, "Phase380 response-image W/Z contract application audit must pass as a non-mutating stress test.");
+  assert(phase380.applicationAttempted === true && phase380.applicationSubjectKind === "phase379-response-image-diagnostic", "Phase380 must classify the application subject as the Phase379 diagnostic.");
+  assert(phase380.targetBlindConstruction === true && phase380.physicalTargetsConsultedForConstruction === false, "Phase380 construction must remain target-blind.");
+  assert(typeof phase380.targetBlindConstructionHash === "string" && phase380.targetBlindConstructionHash.length === 64, "Phase380 must persist a target-blind construction hash.");
+  assert(phase380.sourceContractApplicationAllowed === false, "Phase380 must not allow W/Z source-contract application.");
+  assert(phase380.canFillPhase201WzContract === false && phase380.canFillPhase201HiggsContract === false, "Phase380 cannot fill Phase201 contracts.");
+  assert(phase380.routePromotesWzMasses === false && phase380.routePromotesHiggsMass === false && phase380.routeCompletesBosonPredictions === false, "Phase380 cannot promote boson predictions.");
+  assert(phase380.phase201TemplateMutated === false && phase380.fieldsAppliedToPhase201TemplateCount === 0, "Phase380 must not mutate the Phase201 template.");
+  assert(Array.isArray(phase380.phase201FieldsDefensiblyFilled) && phase380.phase201FieldsDefensiblyFilled.length === 0, "Phase380 must preserve an empty defensible Phase201 fill set.");
+  assert(phase380.contractFieldCount === 15 && phase380.acceptedContractFieldCount === 0 && phase380.blockedContractFieldCount === missingWzFields, "Phase380 must reject all 15 W/Z contract fields.");
+  assert(phase380.phase209WzCurrentMissingFieldCount === missingWzFields && phase380.phase213WzMissingFieldCount === missingWzFields, "Phase380 W/Z missing-field counts must match Phase209 and Phase213.");
+  assert(phase380.applicationSubject?.phase379Passed === true, "Phase380 must inherit the passed Phase379 diagnostic.");
+  assert(phase380.applicationSubject?.strictBackgroundImageTransportPassed === false, "Phase380 must preserve Phase379 non-strict background transport.");
+  assert(phase380.applicationSubject?.separateWzSourceRowsPresent === false, "Phase380 must preserve missing separate W/Z source rows.");
+  assert(phase380.applicationSubject?.gevNormalizationPresent === false, "Phase380 must preserve missing GeV normalization.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

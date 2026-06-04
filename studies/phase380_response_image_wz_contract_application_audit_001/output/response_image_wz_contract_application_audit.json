@@ -1,0 +1,234 @@
+{
+  "phaseId": "phase380-response-image-wz-contract-application-audit",
+  "generatedAt": "2026-06-03T13:39:40.7668611+00:00",
+  "terminalStatus": "response-image-wz-contract-application-audit-blocked-no-source-rows",
+  "responseImageWzContractApplicationAuditPassed": true,
+  "applicationAttempted": true,
+  "applicationSubjectKind": "phase379-response-image-diagnostic",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "e8425cb9ccb748addd706d9590bce94b875a4a6daa411860188d671ff175690b",
+  "sourceContractApplicationAllowed": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "phase201FieldsDefensiblyFilled": [],
+  "contractFieldCount": 15,
+  "acceptedContractFieldCount": 0,
+  "diagnosticSignalButNotAppliedFieldCount": 3,
+  "blockedContractFieldCount": 15,
+  "phase209WzAcceptanceGateCount": 8,
+  "phase209WzCurrentMissingFieldCount": 15,
+  "phase213WzMissingFieldCount": 15,
+  "phase213WzMissingFields": [
+    "externalTargetValuesUsed=false",
+    "theoremOrDerivationId",
+    "sourceLineageId",
+    "w-boson.sourceRowId",
+    "w-boson.rawAmplitudeGatePassed=true",
+    "w-boson.commonBridgeGatePassed=true",
+    "w-boson.targetComparisonGatePassed=true",
+    "w-boson.stabilitySidecarsPresent=true",
+    "w-boson.derivationId",
+    "z-boson.sourceRowId",
+    "z-boson.rawAmplitudeGatePassed=true",
+    "z-boson.commonBridgeGatePassed=true",
+    "z-boson.targetComparisonGatePassed=true",
+    "z-boson.stabilitySidecarsPresent=true",
+    "z-boson.derivationId"
+  ],
+  "applicationSubject": {
+    "phase379Path": "studies/phase379_response_image_carrier_axis_characterization_001/output/response_image_carrier_axis_characterization_summary.json",
+    "phase379Passed": true,
+    "phase379TargetBlind": true,
+    "phase379RankThreeCarrier": true,
+    "suppressedGaugeAxis": 1,
+    "dominantGaugeAxes": [
+      0,
+      2
+    ],
+    "maxSuppressedGaugeAxisProjectorFraction": 0.0016621111895614045,
+    "minDominantGaugePairProjectorFraction": 0.9983378888104386,
+    "strictBackgroundImageTransportPassed": false,
+    "looseBackgroundImageTransportPassed": true,
+    "interBackgroundMinimumSingularValue": 0.7997040836417338,
+    "canonicalGaugeAxisSelectorPresent": false,
+    "observedElectroweakFieldMapPresent": false,
+    "physicalEffectiveActionHessianPresent": false,
+    "directTargetIndependentWzBridgeSourceLawPresent": false,
+    "separateWzSourceRowsPresent": false,
+    "rawAmplitudeGateAvailable": false,
+    "commonBridgeGateAvailable": false,
+    "targetComparisonRowsAvailable": false,
+    "derivationIdsAvailable": false,
+    "gevNormalizationPresent": false
+  },
+  "inheritedBlockers": {
+    "phase201WzPromotable": false,
+    "phase210WzReady": false,
+    "phase213WzMissingFieldCount": 15,
+    "phase295AnyObservedCandidateFillsContract": false,
+    "phase307SourceRowsPromotable": false,
+    "phase307CanFillPhase201WzContract": false,
+    "phase311CanFillPhase201WzContract": false
+  },
+  "contractFieldAssessments": [
+    {
+      "field": "externalTargetValuesUsed=false",
+      "candidateSignalPresent": true,
+      "acceptedForContract": false,
+      "evidence": "Phase379 construction is target-blind and declares physicalTargetsConsultedForConstruction=false.",
+      "blocker": "The Phase201 field is not applied because target blindness alone is not a complete source-lineage artifact with theorem, source rows, and gates."
+    },
+    {
+      "field": "theoremOrDerivationId",
+      "candidateSignalPresent": false,
+      "acceptedForContract": false,
+      "evidence": "phase379ProvidesDirectWzLaw=False; phase379SourceLawPromotionBlocked=True.",
+      "blocker": "Phase379 characterizes an eigenspace but supplies no theorem or derivation turning it into a physical W/Z bridge-source law."
+    },
+    {
+      "field": "sourceLineageId",
+      "candidateSignalPresent": false,
+      "acceptedForContract": false,
+      "evidence": "The Phase379 artifact is a diagnostic source-evidence path, not a promoted W/Z source lineage.",
+      "blocker": "A sourceLineageId cannot be minted from a non-promotional response-image diagnostic."
+    },
+    {
+      "field": "w-boson.sourceRowId",
+      "candidateSignalPresent": false,
+      "acceptedForContract": false,
+      "evidence": "Phase379 has no separate W row.",
+      "blocker": "No W sourceRowId is derived from the response image."
+    },
+    {
+      "field": "w-boson.rawAmplitudeGatePassed=true",
+      "candidateSignalPresent": false,
+      "acceptedForContract": false,
+      "evidence": "Phase379 computes projector capture and transport, not raw W amplitudes.",
+      "blocker": "No W raw-amplitude gate is available."
+    },
+    {
+      "field": "w-boson.commonBridgeGatePassed=true",
+      "candidateSignalPresent": false,
+      "acceptedForContract": false,
+      "evidence": "Phase379 lacks source-derived common W/Z bridge normalization.",
+      "blocker": "No W common-bridge gate is available."
+    },
+    {
+      "field": "w-boson.targetComparisonGatePassed=true",
+      "candidateSignalPresent": false,
+      "acceptedForContract": false,
+      "evidence": "Phase379 never constructs a W mass row for post-construction target comparison.",
+      "blocker": "No W target-comparison gate is runnable."
+    },
+    {
+      "field": "w-boson.stabilitySidecarsPresent=true",
+      "candidateSignalPresent": true,
+      "acceptedForContract": false,
+      "evidence": "Phase379 loose transport passed but strict transport=False.",
+      "blocker": "Loose carrier-image transport is not the Phase201 branch/refinement/environment/representation/coupling sidecar set."
+    },
+    {
+      "field": "w-boson.derivationId",
+      "candidateSignalPresent": false,
+      "acceptedForContract": false,
+      "evidence": "No W derivation id is present.",
+      "blocker": "A derivation id requires a derived W source row."
+    },
+    {
+      "field": "z-boson.sourceRowId",
+      "candidateSignalPresent": false,
+      "acceptedForContract": false,
+      "evidence": "Phase379 has no separate Z row.",
+      "blocker": "No Z sourceRowId is derived from the response image."
+    },
+    {
+      "field": "z-boson.rawAmplitudeGatePassed=true",
+      "candidateSignalPresent": false,
+      "acceptedForContract": false,
+      "evidence": "Phase379 computes projector capture and transport, not raw Z amplitudes.",
+      "blocker": "No Z raw-amplitude gate is available."
+    },
+    {
+      "field": "z-boson.commonBridgeGatePassed=true",
+      "candidateSignalPresent": false,
+      "acceptedForContract": false,
+      "evidence": "Phase379 lacks source-derived common W/Z bridge normalization.",
+      "blocker": "No Z common-bridge gate is available."
+    },
+    {
+      "field": "z-boson.targetComparisonGatePassed=true",
+      "candidateSignalPresent": false,
+      "acceptedForContract": false,
+      "evidence": "Phase379 never constructs a Z mass row for post-construction target comparison.",
+      "blocker": "No Z target-comparison gate is runnable."
+    },
+    {
+      "field": "z-boson.stabilitySidecarsPresent=true",
+      "candidateSignalPresent": true,
+      "acceptedForContract": false,
+      "evidence": "Phase379 loose transport passed but strict transport=False.",
+      "blocker": "Loose carrier-image transport is not the Phase201 branch/refinement/environment/representation/coupling sidecar set."
+    },
+    {
+      "field": "z-boson.derivationId",
+      "candidateSignalPresent": false,
+      "acceptedForContract": false,
+      "evidence": "No Z derivation id is present.",
+      "blocker": "A derivation id requires a derived Z source row."
+    }
+  ],
+  "checks": [
+    {
+      "id": "phase379-response-image-present-target-blind-rank-three",
+      "passed": true,
+      "evidence": "phase379Passed=True; targetBlind=True; rankThreeCarrier=True; suppressedAxis=1; dominantAxes=0,2"
+    },
+    {
+      "id": "phase379-is-diagnostic-not-source-law",
+      "passed": true,
+      "evidence": "canonicalGaugeAxisSelector=False; observedElectroweakFieldMap=False; physicalHessian=False; directWzLaw=False; separateRows=False; gevNormalization=False; sourceLawPromotionBlocked=True"
+    },
+    {
+      "id": "phase379-background-identity-not-strict",
+      "passed": true,
+      "evidence": "strictTransport=False; looseTransport=True; minSingular=0.7997040836417338"
+    },
+    {
+      "id": "observed-row-and-selector-blockers-preserved",
+      "passed": true,
+      "evidence": "phase295AnyObservedCandidateFillsContract=False; phase307SourceRowsPromotable=False; phase307CanFillPhase201WzContract=False; phase311CanFillPhase201WzContract=False"
+    },
+    {
+      "id": "phase201-wz-contract-remains-unfilled",
+      "passed": true,
+      "evidence": "phase201WzPromotable=False; phase210WzReady=False; phase213WzMissingFieldCount=15; phase209WzCurrentMissingFieldCount=15"
+    },
+    {
+      "id": "phase201-template-not-mutated",
+      "passed": true,
+      "evidence": "phase201TemplateMutated=False; fieldsAppliedToPhase201TemplateCount=0"
+    },
+    {
+      "id": "no-contract-fields-accepted-from-response-image",
+      "passed": true,
+      "evidence": "acceptedContractFieldCount=0; blockedContractFieldCount=15; sourceContractApplicationAllowed=False; canFillPhase201WzContract=False; phase379CanFillPhase201WzContract=False; phase379PromotesWzMasses=False"
+    }
+  ],
+  "sourceEvidence": {
+    "phase201Path": "studies/phase201_boson_source_lineage_intake_contract_001/output/boson_source_lineage_intake_contract_summary.json",
+    "phase209WzRequestPath": "studies/phase209_boson_source_lineage_evidence_request_package_001/output/wz_absolute_source_lineage_evidence_request.json",
+    "phase210Path": "studies/phase210_boson_source_lineage_evidence_application_gate_001/output/boson_source_lineage_evidence_application_gate_summary.json",
+    "phase213Path": "studies/phase213_boson_source_lineage_blocker_matrix_001/output/boson_source_lineage_blocker_matrix_summary.json",
+    "phase295Path": "studies/phase295_observed_field_extraction_contract_candidate_scan_001/output/observed_field_extraction_contract_candidate_scan_summary.json",
+    "phase307Path": "studies/phase307_target_independent_decoupled_wz_row_selection_law_audit_001/output/target_independent_decoupled_wz_row_selection_law_audit_summary.json",
+    "phase311Path": "studies/phase311_completion_observed_sector_wz_row_selector_audit_001/output/completion_observed_sector_wz_row_selector_audit_summary.json",
+    "phase379Path": "studies/phase379_response_image_carrier_axis_characterization_001/output/response_image_carrier_axis_characterization_summary.json"
+  },
+  "decision": "The Phase379 rank-three response image was stress-tested against the Phase201 W/Z source-lineage contract and cannot be applied. It remains a diagnostic eigenspace, not a source-row candidate: it lacks a theorem, strict background identity, observed electroweak field map, separate W/Z rows, raw-amplitude gates, common bridge, target-comparison rows, derivation ids, and GeV normalization. The Phase201 template remains unmutated."
+}

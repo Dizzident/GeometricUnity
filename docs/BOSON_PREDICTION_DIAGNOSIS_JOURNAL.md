@@ -14764,3 +14764,73 @@ physical source law.
   `detailLinkCount=51` and `missingDetailCount=0`.
 - After the gate, `53` historical JSON files that changed only by
   `generatedAt` were restored after parsed-JSON semantic equivalence checks.
+
+## 2026-06-03 - Phase380 Response-Image W/Z Contract Application Audit
+
+### Context
+
+Phase379 found a target-blind rank-`3` carrier response image with stable
+two-axis dominance, but it explicitly did not provide W/Z source rows. The next
+bounded test was to stress-test that diagnostic against the Phase201 W/Z
+source-lineage contract without mutating the intake template.
+
+### Action
+
+- Added `studies/phase380_response_image_wz_contract_application_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P380.md`.
+- Wired Phase380 into the generator, Phase101 package, Phase202 completion
+  audit, claim-integrity verifier, and source-scanner exclusions.
+- Updated `ExperimentReferences.md` and the local response-boundary reference
+  notes.
+- A read-only sidecar agent reviewed the plan and warned that Phase379 should
+  be used only as a diagnostic/observed-sector constraint sidecar, not as a
+  serious source-row promotion route. The implementation wording was tightened
+  accordingly.
+
+### Result
+
+- Targeted Phase380 run passed:
+  `responseImageWzContractApplicationAuditPassed=true`.
+- Phase380 treated Phase379 as an application subject only:
+  `applicationSubjectKind=phase379-response-image-diagnostic`.
+- It accepted zero W/Z contract fields:
+  `acceptedContractFieldCount=0`.
+- It preserved all 15 W/Z missing fields:
+  `blockedContractFieldCount=15` and `phase213WzMissingFieldCount=15`.
+- It did not mutate the Phase201 template:
+  `phase201TemplateMutated=false` and
+  `fieldsAppliedToPhase201TemplateCount=0`.
+- It preserved non-promotion:
+  `sourceContractApplicationAllowed=false`,
+  `canFillPhase201WzContract=false`, and
+  `routePromotesWzMasses=false`.
+
+### Boundary
+
+Phase380 is a negative contract audit, not a prediction. It confirms that the
+Phase379 response image lacks the exact W/Z contract artifacts: theorem or
+derivation id, source-lineage id, separate W and Z source rows,
+raw-amplitude gates, common bridge gates, target-comparison rows, stability
+sidecars, derivation ids, observed electroweak field map, strict background
+identity, and GeV normalization.
+
+The stronger next GU-native route remains the Phase302/307 near-pass theorem
+route plus the Phase295/311 observed-field extraction gap. Phase379 can serve
+as a sidecar constraint there, but not as source-lineage evidence by itself.
+
+### Full Validation
+
+- Full generator gate passed with Phase380 included.
+- Phase380's full-gate line matched the targeted run:
+  `responseImageWzContractApplicationAuditPassed=True`,
+  `acceptedContractFieldCount=0`, `blockedContractFieldCount=15`,
+  `phase201TemplateMutated=False`, and
+  `canFillPhase201WzContract=False`.
+- The full gate remains physically incomplete by design:
+  `objectiveAchieved=False`, `checklistPassedCount=173`, and
+  `checklistFailedCount=3`.
+- Claim-integrity verification preserved the active blocker:
+  `sourceLineageMissing=true`, `wzMissingFieldCount=15`,
+  `higgsMissingFieldCount=14`, and `promotedPhysicalMassClaimCount=0`.
+- After the gate, `55` historical JSON files that changed only by
+  `generatedAt` were restored after parsed-JSON semantic equivalence checks.

@@ -64,6 +64,9 @@ of the physical fermionic branch of Geometric Unity.
   is dominated by gauge axes `0` and `2`, suppresses axis `1` below `0.2%` of
   projector trace on both persisted backgrounds, and fails strict background
   transport with minimum singular value near `0.8`.
+- Used in Phase380 to verify that the Phase379 response-image diagnostic cannot
+  be applied directly to the Phase201 W/Z source-lineage contract. It accepts
+  zero contract fields and preserves all 15 W/Z missing fields.
 
 ## Prediction Relevance
 
@@ -85,9 +88,10 @@ solver repair, Phase375 validates a fixed-mesh zero-mode control, Phase376
 validates nonzero projected-shell blocks, Phase377 validates a study-defined
 selected-source response metric, and Phase378 validates its full-carrier
 restriction at the discrete level. Phase379 characterizes the resulting
-carrier image. None establishes that the weights, operator branch, carrier
-axes, or image projector are physically canonical. No physical boson mass can
-be promoted from this convention alone.
+carrier image, and Phase380 rejects a direct W/Z contract application. None
+establishes that the weights, operator branch, carrier axes, or image projector
+are physically canonical. No physical boson mass can be promoted from this
+convention alone.
 
 ## Follow-Up
 

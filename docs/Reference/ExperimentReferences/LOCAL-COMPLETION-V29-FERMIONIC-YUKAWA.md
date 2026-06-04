@@ -75,6 +75,10 @@ outside the first executable numerical branch.
 - Added Phase379 to characterize the Phase378 positive carrier image. It finds
   stable two-axis dominance in the edge-major carrier, but strict
   background-image transport fails and no observed W/Z source rows are emitted.
+- Added Phase380 to stress-test the Phase379 response image against the
+  Phase201 W/Z source-lineage contract. The audit accepts zero W/Z contract
+  fields, leaves the intake template unmutated, and preserves all 15 W/Z
+  missing fields.
 
 ## Prediction Relevance
 
@@ -86,6 +90,8 @@ It does not itself provide a solved Higgs scalar-source operator, identity
 envelope, massive scalar profile, quartic or excitation relation, target-blind
 prediction row, observed-field extraction, pole extraction, or GeV
 normalization. It also does not supply a direct W/Z absolute-mass theorem.
+Phase380 records that the rank-`3` response-image diagnostic cannot substitute
+for that missing theorem or for separate W/Z source rows.
 
 ## Limitation
 
