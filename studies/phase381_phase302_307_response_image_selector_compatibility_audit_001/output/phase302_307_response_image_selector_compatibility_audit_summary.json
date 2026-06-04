@@ -1,0 +1,103 @@
+{
+  "phaseId": "phase381-phase302-307-response-image-selector-compatibility-audit",
+  "terminalStatus": "phase302-307-response-image-selector-compatibility-audit-sidecar-conflict-nonpromotional",
+  "phase302307ResponseImageSelectorCompatibilityAuditPassed": true,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "a906b545a2ccd71bce3526d139449be98c51b401f7754695276c4d0781f31559",
+  "applicationSubjectKind": "phase307-selected-p302-scaled-wz-row-selector-with-phase379-response-image-sidecar",
+  "phase307SelectedNearPassLawId": "p302-scaled-max-min-magnitude",
+  "phase307SelectedNearPassUsesP302Scale": true,
+  "phase307SelectedNearPassUsesTargets": false,
+  "phase307SelectedRawStableCommonPassed": false,
+  "phase307SelectedP302ScaledStableCommonPassed": true,
+  "phase307SelectedAssessmentId": "decoupled:w-boson:charged-ladder-all-axis-neutral-coherent-plus:0-\u003E6|z-boson:charged-axis-rss-neutral-rss:4-\u003E6",
+  "phase302CommonScaleId": "source-mode-vector-length",
+  "phase302ParticleLawId": "adjoint-casimir-over-fundamental-casimir",
+  "phase302CommonScaleValue": 156,
+  "phase302WTotalScale": 416,
+  "phase302ZTotalScale": 156,
+  "phase302RawAndCommonGatesPassed": true,
+  "phase302StableRawCommonGatesPassed": false,
+  "phase302CommonScaleApplicationTheoremPresent": false,
+  "phase302ParticleLawApplicationTheoremPresent": false,
+  "phase302PromotionEligible": false,
+  "p302ScaleLeadRawCommonOnly": true,
+  "selectedWDefinitionId": "charged-ladder-all-axis-neutral-coherent-plus",
+  "selectedZDefinitionId": "charged-axis-rss-neutral-rss",
+  "selectedWGaugeAxes": [
+    0,
+    1
+  ],
+  "selectedZGaugeAxes": [
+    2
+  ],
+  "selectedWUsesSuppressedGaugeAxis": true,
+  "selectedZUsesSuppressedGaugeAxis": false,
+  "selectedAnyRowUsesSuppressedGaugeAxis": true,
+  "selectedWUsesCanonicalChargedAxes": true,
+  "selectedZUsesDominantNeutralAxis": true,
+  "phase379SuppressedGaugeAxis": 1,
+  "phase379DominantGaugeAxes": [
+    0,
+    2
+  ],
+  "phase379DominantAxesMatchPhase307ChargedPair": false,
+  "responseImageSelectorSidecarCompatible": false,
+  "responseImageSidecarConflictPresent": true,
+  "phase302ScalePromotable": false,
+  "phase308ScaleTransferAllowed": false,
+  "phase309ScalePromotable": false,
+  "phase310CanPromotePhase302Lead": false,
+  "phase380PreservesContractBlock": true,
+  "sourceContractApplicationAllowed": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "blockedContractFieldCount": 15,
+  "phase213WzMissingFieldCount": 15,
+  "phase201FieldsDefensiblyFilled": [],
+  "checks": [
+    {
+      "checkId": "phase307-selected-p302-scaled-near-pass-materialized",
+      "passed": true,
+      "details": "phase307Passed=True; phase307TargetBlind=True; lawId=p302-scaled-max-min-magnitude; usesP302Scale=True; usesTargets=False; p302ScaledPassed=True; rawPassed=False; phase307CanFill=False"
+    },
+    {
+      "checkId": "selected-row-gauge-axis-usage-materialized",
+      "passed": true,
+      "details": "wAxes=0,1; zAxes=2; selectedGaugeAxes=0,1,2; wDefinition=charged-ladder-all-axis-neutral-coherent-plus; zDefinition=charged-axis-rss-neutral-rss"
+    },
+    {
+      "checkId": "phase379-response-image-sidecar-present-nonpromotional",
+      "passed": true,
+      "details": "phase379Passed=True; targetBlind=True; stableTwoAxis=True; suppressedAxis=1; dominantAxes=0,2; maxSuppressedFraction=0.0016621111895614045; minDominantPairFraction=0.9983378888104386; canonicalSelector=False; directWzLaw=False; strictTransport=False; promotesWz=False"
+    },
+    {
+      "checkId": "response-image-sidecar-conflict-with-selected-charged-ladder",
+      "passed": true,
+      "details": "selectedWUsesSuppressedGaugeAxis=True; selectedZUsesSuppressedGaugeAxis=False; selectedWUsesCanonicalChargedAxes=True; selectedZUsesDominantNeutralAxis=True; phase379DominantAxesMatchPhase307ChargedPair=False; responseImageSelectorSidecarCompatible=False"
+    },
+    {
+      "checkId": "phase302-scale-theorem-blockers-preserved",
+      "passed": true,
+      "details": "p302ScaleLeadRawCommonOnly=True; commonScaleId=source-mode-vector-length; particleLawId=adjoint-casimir-over-fundamental-casimir; phase302ScalePromotable=False; phase308ScaleTransferAllowed=False; phase309ScalePromotable=False; phase310CanPromotePhase302Lead=False"
+    },
+    {
+      "checkId": "phase380-contract-blocker-preserved",
+      "passed": true,
+      "details": "phase380Passed=True; sourceContractApplicationAllowed=False; acceptedFields=0; blockedFields=15; phase213WzMissingFieldCount=15; canFillPhase201WzContract=False"
+    },
+    {
+      "checkId": "no-prediction-or-contract-promotion",
+      "passed": true,
+      "details": "sourceContractApplicationAllowed=False; canFillPhase201WzContract=False; canFillPhase201HiggsContract=False; routePromotesWzMasses=False; routePromotesHiggsMass=False; routeCompletesBosonPredictions=False; phase201TemplateMutated=False; fieldsApplied=0; acceptedContractFieldCount=0; blockedContractFieldCount=15"
+    }
+  ],
+  "decision": "The strongest Phase307 predeclared near-pass selector remains non-promotional and is not supported by the Phase379 response-image sidecar. The selected W row uses the Phase307 canonical charged-ladder axes 0 and 1, but Phase379 suppresses axis 1 and has dominant axes 0 and 2. The selected Z row aligns with dominant neutral axis 2, so the sidecar sharpens the blocker: a theorem must either derive the charged-ladder axis use despite suppression or supply an observed electroweak projection map explaining why the response-image carrier axes are not the physical W/Z axes."
+}

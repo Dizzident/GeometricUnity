@@ -79,6 +79,10 @@ outside the first executable numerical branch.
   Phase201 W/Z source-lineage contract. The audit accepts zero W/Z contract
   fields, leaves the intake template unmutated, and preserves all 15 W/Z
   missing fields.
+- Added Phase381 to compare the Phase302/307 selected W/Z near-pass against the
+  Phase379 response-image sidecar. The audit records that the selected W row
+  uses charged axes `0,1`, while Phase379 suppresses axis `1`; the selected Z
+  row uses the dominant neutral axis `2`.
 
 ## Prediction Relevance
 
@@ -92,6 +96,10 @@ prediction row, observed-field extraction, pole extraction, or GeV
 normalization. It also does not supply a direct W/Z absolute-mass theorem.
 Phase380 records that the rank-`3` response-image diagnostic cannot substitute
 for that missing theorem or for separate W/Z source rows.
+Phase381 records that the strongest Phase302/307 selected near-pass is also not
+rescued by the response-image sidecar: it remains dependent on a Phase302 scale
+without an application theorem and on a W charged-ladder axis that the Phase379
+diagnostic suppresses.
 
 ## Limitation
 

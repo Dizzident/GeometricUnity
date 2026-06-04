@@ -14834,3 +14834,101 @@ as a sidecar constraint there, but not as source-lineage evidence by itself.
   `higgsMissingFieldCount=14`, and `promotedPhysicalMassClaimCount=0`.
 - After the gate, `55` historical JSON files that changed only by
   `generatedAt` were restored after parsed-JSON semantic equivalence checks.
+
+## 2026-06-04 - Phase381 Phase302/307 Response-Image Selector Compatibility Audit
+
+### Context
+
+Phase380 showed that the Phase379 response-image diagnostic cannot fill the
+Phase201 W/Z contract directly. The strongest remaining W/Z route was the
+Phase302/307 near-pass selector: Phase307 selects one target-independent
+Phase302-scaled W/Z row pair, but Phase302/308/309/310 still block promotion of
+the scale. Phase381 tested whether the Phase379 response-image sidecar supports
+or contradicts that selected row pair.
+
+### Action
+
+- Added
+  `studies/phase381_phase302_307_response_image_selector_compatibility_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P381.md`.
+- Wired Phase381 into the generator, Phase101 package, Phase202 completion
+  audit, claim-integrity verifier, and source-scanner exclusions.
+- Updated `ExperimentReferences.md` and the local response-boundary reference
+  notes.
+- A read-only sidecar agent independently recommended the same pass/fail
+  boundary: treat Phase379 only as a diagnostic sidecar, record that Phase307's
+  selected Z row is axis-`2` compatible, and record that the selected W
+  charged-ladder row depends on the Phase379-suppressed axis `1`.
+
+### Result
+
+- Targeted Phase381 run passed:
+  `phase302307ResponseImageSelectorCompatibilityAuditPassed=true`.
+- The selected Phase307 near-pass law is
+  `p302-scaled-max-min-magnitude`.
+- The selected law remains scaled-only:
+  `phase307SelectedRawStableCommonPassed=false` and
+  `phase307SelectedP302ScaledStableCommonPassed=true`.
+- The Phase302 scale remains a raw/common numerical lead only:
+  `phase302CommonScaleId=source-mode-vector-length`,
+  `phase302ParticleLawId=adjoint-casimir-over-fundamental-casimir`,
+  `phase302CommonScaleValue=156`, `phase302WTotalScale=416`,
+  `phase302ZTotalScale=156`, and
+  `p302ScaleLeadRawCommonOnly=true`.
+- The selected W row uses gauge axes `0,1`, while the selected Z row uses gauge
+  axis `2`.
+- Phase379 suppresses gauge axis `1` and dominates on axes `0,2`, so Phase381
+  records `responseImageSidecarConflictPresent=true` and
+  `responseImageSelectorSidecarCompatible=false`.
+- Phase381 accepted zero W/Z contract fields:
+  `acceptedContractFieldCount=0`, `blockedContractFieldCount=15`, and
+  `phase213WzMissingFieldCount=15`.
+
+### Boundary
+
+Phase381 is a selector-sidecar compatibility audit, not a prediction. It does
+not show that the Phase307 selected near-pass is impossible; it shows that the
+current Phase379 response-image diagnostic does not support it. The next theorem
+must either derive the charged-ladder axis use despite the suppressed response
+axis or provide an observed electroweak projection map explaining why the
+diagnostic carrier axes are not the physical W/Z axes.
+
+### Targeted Validation
+
+- Phase381 build passed with `0` warnings and `0` errors.
+- Phase101 package run passed and includes the Phase381 block.
+- Phase202 objective audit remains incomplete by design:
+  `objectiveAchieved=False`, `checklistPassedCount=174`, and
+  `checklistFailedCount=3`.
+- Source and observed-field scans still report zero intake-ready artifacts:
+  Phase204 `intakeReadyCandidateCount=0`, Phase205
+  `intakeReadyFindingCount=0`, Phase207 `intakeReadyFindingCount=0`,
+  Phase279 `localSearchMatchingFileCount=0`, Phase281
+  `localSearchMatchingFileCount=0`, Phase295
+  `intakeReadyObservedFieldExtractionCandidateCount=0`, and Phase296
+  `intakeReadySourceLineageFieldCandidateCount=0`.
+- Claim-integrity verification passed with
+  `sourceLineageMissing=true`, `wzMissingFieldCount=15`,
+  `higgsMissingFieldCount=14`, and `promotedPhysicalMassClaimCount=0`.
+
+### Full Validation
+
+- Full generator gate passed with Phase381 included.
+- Phase381's full-gate line matched the targeted run:
+  `phase302307ResponseImageSelectorCompatibilityAuditPassed=True`,
+  `phase307SelectedNearPassLawId=p302-scaled-max-min-magnitude`,
+  `selectedWGaugeAxes=0,1`, `selectedZGaugeAxes=2`,
+  `phase379DominantGaugeAxes=0,2`, `phase379SuppressedGaugeAxis=1`,
+  `selectedWUsesSuppressedGaugeAxis=True`,
+  `responseImageSidecarConflictPresent=True`,
+  `responseImageSelectorSidecarCompatible=False`, and
+  `canFillPhase201WzContract=False`.
+- The full gate remains physically incomplete by design:
+  `objectiveAchieved=False`, `checklistPassedCount=174`, and
+  `checklistFailedCount=3`.
+- Claim-integrity verification preserved the active blocker:
+  `sourceLineageMissing=true`, `wzMissingFieldCount=15`,
+  `higgsMissingFieldCount=14`, and `promotedPhysicalMassClaimCount=0`.
+- After the gate, `57` historical JSON files that changed only by
+  `generatedAt` were restored after parsed-JSON or direct-diff semantic
+  equivalence checks.

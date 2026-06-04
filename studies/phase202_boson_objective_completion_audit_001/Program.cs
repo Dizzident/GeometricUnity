@@ -146,6 +146,7 @@ const string Phase377Path = "studies/phase377_selected_source_mode_shell_respons
 const string Phase378Path = "studies/phase378_full_connection_carrier_shell_response_gram_audit_001/output/full_connection_carrier_shell_response_gram_audit_summary.json";
 const string Phase379Path = "studies/phase379_response_image_carrier_axis_characterization_001/output/response_image_carrier_axis_characterization_summary.json";
 const string Phase380Path = "studies/phase380_response_image_wz_contract_application_audit_001/output/response_image_wz_contract_application_audit_summary.json";
+const string Phase381Path = "studies/phase381_phase302_307_response_image_selector_compatibility_audit_001/output/phase302_307_response_image_selector_compatibility_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -325,6 +326,7 @@ using var phase377 = File.Exists(Phase377Path) ? JsonDocument.Parse(File.ReadAll
 using var phase378 = File.Exists(Phase378Path) ? JsonDocument.Parse(File.ReadAllText(Phase378Path)) : null;
 using var phase379 = File.Exists(Phase379Path) ? JsonDocument.Parse(File.ReadAllText(Phase379Path)) : null;
 using var phase380 = File.Exists(Phase380Path) ? JsonDocument.Parse(File.ReadAllText(Phase380Path)) : null;
+using var phase381 = File.Exists(Phase381Path) ? JsonDocument.Parse(File.ReadAllText(Phase381Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -4277,6 +4279,39 @@ var responseImageWzContractApplicationAuditPassed = responseImageWzContractAppli
     && JsonNestedBool(phase380.RootElement, "applicationSubject", "strictBackgroundImageTransportPassed") is false
     && JsonNestedBool(phase380.RootElement, "applicationSubject", "separateWzSourceRowsPresent") is false
     && JsonNestedBool(phase380.RootElement, "applicationSubject", "gevNormalizationPresent") is false;
+var phase302307ResponseImageSelectorCompatibilityAuditMaterialized = phase381 is not null;
+var phase302307ResponseImageSelectorCompatibilityAuditPassed = phase302307ResponseImageSelectorCompatibilityAuditMaterialized
+    && JsonBool(phase381!.RootElement, "phase302307ResponseImageSelectorCompatibilityAuditPassed") is true
+    && JsonBool(phase381.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase381.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && JsonString(phase381.RootElement, "applicationSubjectKind") == "phase307-selected-p302-scaled-wz-row-selector-with-phase379-response-image-sidecar"
+    && JsonString(phase381.RootElement, "phase307SelectedNearPassLawId") == "p302-scaled-max-min-magnitude"
+    && JsonBool(phase381.RootElement, "phase307SelectedNearPassUsesP302Scale") is true
+    && JsonBool(phase381.RootElement, "phase307SelectedNearPassUsesTargets") is false
+    && JsonBool(phase381.RootElement, "phase307SelectedRawStableCommonPassed") is false
+    && JsonBool(phase381.RootElement, "phase307SelectedP302ScaledStableCommonPassed") is true
+    && JsonBool(phase381.RootElement, "selectedWUsesSuppressedGaugeAxis") is true
+    && JsonBool(phase381.RootElement, "selectedZUsesSuppressedGaugeAxis") is false
+    && JsonBool(phase381.RootElement, "selectedAnyRowUsesSuppressedGaugeAxis") is true
+    && JsonBool(phase381.RootElement, "selectedWUsesCanonicalChargedAxes") is true
+    && JsonBool(phase381.RootElement, "selectedZUsesDominantNeutralAxis") is true
+    && JsonInt(phase381.RootElement, "phase379SuppressedGaugeAxis") == 1
+    && JsonBool(phase381.RootElement, "phase379DominantAxesMatchPhase307ChargedPair") is false
+    && JsonBool(phase381.RootElement, "responseImageSelectorSidecarCompatible") is false
+    && JsonBool(phase381.RootElement, "responseImageSidecarConflictPresent") is true
+    && JsonBool(phase381.RootElement, "phase302ScalePromotable") is false
+    && JsonBool(phase381.RootElement, "phase308ScaleTransferAllowed") is false
+    && JsonBool(phase381.RootElement, "phase309ScalePromotable") is false
+    && JsonBool(phase381.RootElement, "phase310CanPromotePhase302Lead") is false
+    && JsonBool(phase381.RootElement, "phase380PreservesContractBlock") is true
+    && JsonBool(phase381.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase381.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase381.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase381.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase381.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase381.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase381.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase381.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -6294,6 +6329,14 @@ var checklist = new[]
             : "Phase380 artifact not materialized",
         Phase380Path),
     new ObjectiveChecklistItem(
+        "phase302-307-response-image-selector-compatibility-audit-materialized",
+        "Compare the strongest Phase302/307 W/Z near-pass selector with the Phase379 response-image sidecar and preserve non-promotion when the selected charged ladder uses the suppressed carrier axis.",
+        phase302307ResponseImageSelectorCompatibilityAuditPassed ? "passed" : "failed",
+        phase302307ResponseImageSelectorCompatibilityAuditMaterialized
+            ? $"phase302307ResponseImageSelectorCompatibilityAuditPassed={JsonBool(phase381!.RootElement, "phase302307ResponseImageSelectorCompatibilityAuditPassed")}; targetBlind={JsonBool(phase381.RootElement, "targetBlindConstruction")}; selectedLaw={JsonString(phase381.RootElement, "phase307SelectedNearPassLawId")}; usesP302Scale={JsonBool(phase381.RootElement, "phase307SelectedNearPassUsesP302Scale")}; usesTargets={JsonBool(phase381.RootElement, "phase307SelectedNearPassUsesTargets")}; rawPassed={JsonBool(phase381.RootElement, "phase307SelectedRawStableCommonPassed")}; p302ScaledPassed={JsonBool(phase381.RootElement, "phase307SelectedP302ScaledStableCommonPassed")}; selectedWUsesSuppressedAxis={JsonBool(phase381.RootElement, "selectedWUsesSuppressedGaugeAxis")}; selectedZUsesDominantNeutralAxis={JsonBool(phase381.RootElement, "selectedZUsesDominantNeutralAxis")}; suppressedAxis={JsonInt(phase381.RootElement, "phase379SuppressedGaugeAxis")}; dominantAxesMatchChargedPair={JsonBool(phase381.RootElement, "phase379DominantAxesMatchPhase307ChargedPair")}; sidecarCompatible={JsonBool(phase381.RootElement, "responseImageSelectorSidecarCompatible")}; sidecarConflict={JsonBool(phase381.RootElement, "responseImageSidecarConflictPresent")}; phase302ScalePromotable={JsonBool(phase381.RootElement, "phase302ScalePromotable")}; phase308ScaleTransferAllowed={JsonBool(phase381.RootElement, "phase308ScaleTransferAllowed")}; phase309ScalePromotable={JsonBool(phase381.RootElement, "phase309ScalePromotable")}; phase310CanPromotePhase302Lead={JsonBool(phase381.RootElement, "phase310CanPromotePhase302Lead")}; phase380PreservesContractBlock={JsonBool(phase381.RootElement, "phase380PreservesContractBlock")}; canFillPhase201WzContract={JsonBool(phase381.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase381.RootElement, "decision")}"
+            : "Phase381 artifact not materialized",
+        Phase381Path),
+    new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
         branchLocalDirectInvariantCensusPassed ? "passed" : "failed",
@@ -6790,6 +6833,7 @@ var result = new
         phase378Path = Phase378Path,
         phase379Path = Phase379Path,
         phase380Path = Phase380Path,
+        phase381Path = Phase381Path,
         phase282Path = Phase282Path,
         phase283Path = Phase283Path,
         phase284Path = Phase284Path,

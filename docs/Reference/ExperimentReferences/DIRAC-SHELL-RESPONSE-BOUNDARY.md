@@ -38,6 +38,9 @@ identities.
 - Used in Phase380 to stress-test that response image against the Phase201 W/Z
   source-lineage contract. The response image accepted zero W/Z contract fields
   and left the Phase201 template unmutated.
+- Used in Phase381 as the boundary source for comparing the Phase379
+  response-image sidecar with the Phase302/307 selected W/Z near-pass selector.
+  The result is a sidecar conflict, not a W/Z source-row promotion.
 - Used to keep the Phase377 response metric distinct from a physical
   fermion-determinant effective-action Hessian.
 - Used to record that the Phase376 absolute-value spectral shell is not an
@@ -45,12 +48,14 @@ identities.
 
 ## Prediction Relevance
 
-Phase377, Phase378, Phase379, and Phase380 can test whether connection
+Phase377, Phase378, Phase379, Phase380, and Phase381 can test whether connection
 directions induce a stable, nonzero discrete shell response and can
 characterize its carrier image. Phase379 finds a strong two-axis carrier
 diagnostic, and Phase380 confirms that this diagnostic still does not provide
 Phase201 W/Z source-lineage fields, Higgs scalar-source lineage, observed-field
-extraction, or GeV normalization.
+extraction, or GeV normalization. Phase381 further shows that the Phase307
+selected near-pass W row uses the Phase379-suppressed axis, so the diagnostic
+does not support the selected charged-ladder route.
 
 ## Limitation
 
@@ -58,7 +63,8 @@ The response metric is study-defined and shell-scoped. Phase378 removes the
 selected-subspace limitation for the current `156`-coordinate carrier, but it
 is still not a GU-native physical mass operator. Phase379 characterizes the
 carrier image, not a physical observed-field projection. Phase380 is a
-non-mutating contract audit, not a prediction.
+non-mutating contract audit, not a prediction. Phase381 is a selector
+compatibility audit, not a prediction.
 
 ## Follow-Up
 
