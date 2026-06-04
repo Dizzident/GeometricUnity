@@ -239,6 +239,7 @@ const string Phase378FullConnectionCarrierShellResponseGramAuditPath = "studies/
 const string Phase379ResponseImageCarrierAxisCharacterizationPath = "studies/phase379_response_image_carrier_axis_characterization_001/output/response_image_carrier_axis_characterization.json";
 const string Phase380ResponseImageWzContractApplicationAuditPath = "studies/phase380_response_image_wz_contract_application_audit_001/output/response_image_wz_contract_application_audit.json";
 const string Phase381Phase302307ResponseImageSelectorCompatibilityAuditPath = "studies/phase381_phase302_307_response_image_selector_compatibility_audit_001/output/phase302_307_response_image_selector_compatibility_audit.json";
+const string Phase382ResponseImageObservedProjectionRequirementAuditPath = "studies/phase382_response_image_observed_projection_requirement_audit_001/output/response_image_observed_projection_requirement_audit.json";
 const string Phase282BranchLocalDirectInvariantCensusPath = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census.json";
 const string Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit.json";
 const string Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic.json";
@@ -498,6 +499,7 @@ using var phase378 = TryParseJson(Phase378FullConnectionCarrierShellResponseGram
 using var phase379 = TryParseJson(Phase379ResponseImageCarrierAxisCharacterizationPath);
 using var phase380 = TryParseJson(Phase380ResponseImageWzContractApplicationAuditPath);
 using var phase381 = TryParseJson(Phase381Phase302307ResponseImageSelectorCompatibilityAuditPath);
+using var phase382 = TryParseJson(Phase382ResponseImageObservedProjectionRequirementAuditPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -6057,6 +6059,48 @@ var package = new
             fieldsAppliedToPhase201TemplateCount = JsonInt(phase381.RootElement, "fieldsAppliedToPhase201TemplateCount"),
             phase201FieldsDefensiblyFilled = JsonStringArray(phase381.RootElement, "phase201FieldsDefensiblyFilled"),
             decision = JsonString(phase381.RootElement, "decision"),
+        }
+        : null,
+    responseImageObservedProjectionRequirementAudit = phase382 is not null
+        ? new
+        {
+            status = JsonString(phase382.RootElement, "terminalStatus"),
+            responseImageObservedProjectionRequirementAuditPassed = JsonBool(phase382.RootElement, "responseImageObservedProjectionRequirementAuditPassed"),
+            targetBlindConstruction = JsonBool(phase382.RootElement, "targetBlindConstruction"),
+            physicalTargetsConsultedForConstruction = JsonBool(phase382.RootElement, "physicalTargetsConsultedForConstruction"),
+            applicationSubjectKind = JsonString(phase382.RootElement, "applicationSubjectKind"),
+            phase381ConflictMaterialized = JsonNestedBool(phase382.RootElement, "phase381Conflict", "phase381ConflictMaterialized"),
+            phase381SelectedLaw = JsonNestedString(phase382.RootElement, "phase381Conflict", "selectedLaw"),
+            phase381SelectedWUsesSuppressedGaugeAxis = JsonNestedBool(phase382.RootElement, "phase381Conflict", "selectedWUsesSuppressedGaugeAxis"),
+            phase381SelectedZUsesSuppressedGaugeAxis = JsonNestedBool(phase382.RootElement, "phase381Conflict", "selectedZUsesSuppressedGaugeAxis"),
+            phase379SuppressedGaugeAxis = JsonNestedInt(phase382.RootElement, "phase381Conflict", "phase379SuppressedGaugeAxis"),
+            phase381ResponseImageSelectorSidecarCompatible = JsonNestedBool(phase382.RootElement, "phase381Conflict", "responseImageSelectorSidecarCompatible"),
+            phase381ResponseImageSidecarConflictPresent = JsonNestedBool(phase382.RootElement, "phase381Conflict", "responseImageSidecarConflictPresent"),
+            phase256ContractUnfilled = JsonNestedBool(phase382.RootElement, "observedProjectionEvidence", "phase256ContractUnfilled"),
+            phase295NoIntakeReadyObservedProjection = JsonNestedBool(phase382.RootElement, "observedProjectionEvidence", "phase295NoIntakeReadyObservedProjection"),
+            phase311ObservedMapAbsent = JsonNestedBool(phase382.RootElement, "priorMapAudits", "phase311ObservedMapAbsent"),
+            phase313OfficialProjectionMapAbsent = JsonNestedBool(phase382.RootElement, "priorMapAudits", "phase313OfficialProjectionMapAbsent"),
+            phase320StandardBoundaryOnly = JsonNestedBool(phase382.RootElement, "priorMapAudits", "phase320StandardBoundaryOnly"),
+            phase321NeutralMixingRouteUnpromotable = JsonNestedBool(phase382.RootElement, "priorMapAudits", "phase321NeutralMixingRouteUnpromotable"),
+            phase379ProvidesNoNamespaceMap = JsonNestedBool(phase382.RootElement, "responseImageMapBoundary", "phase379ProvidesNoNamespaceMap"),
+            observedCarrierAxisNamespaceSeparationMapPresent = JsonNestedBool(phase382.RootElement, "namespaceSeparationAssessment", "observedCarrierAxisNamespaceSeparationMapPresent"),
+            observedCarrierAxisNamespaceSeparationMapTargetIndependent = JsonNestedBool(phase382.RootElement, "namespaceSeparationAssessment", "observedCarrierAxisNamespaceSeparationMapTargetIndependent"),
+            observedCarrierAxisNamespaceSeparationMapSourceLineageEligible = JsonNestedBool(phase382.RootElement, "namespaceSeparationAssessment", "observedCarrierAxisNamespaceSeparationMapSourceLineageEligible"),
+            observedCarrierAxisNamespaceSeparationMapCanFillPhase201Wz = JsonNestedBool(phase382.RootElement, "namespaceSeparationAssessment", "observedCarrierAxisNamespaceSeparationMapCanFillPhase201Wz"),
+            phase379CarrierAxesCanBeSeparatedFromPhysicalWzAxes = JsonNestedBool(phase382.RootElement, "namespaceSeparationAssessment", "phase379CarrierAxesCanBeSeparatedFromPhysicalWzAxes"),
+            phase307SelectedNearPassRehabilitatedByObservedProjectionMap = JsonNestedBool(phase382.RootElement, "namespaceSeparationAssessment", "phase307SelectedNearPassRehabilitatedByObservedProjectionMap"),
+            responseImageConflictRemainsActive = JsonNestedBool(phase382.RootElement, "namespaceSeparationAssessment", "responseImageConflictRemainsActive"),
+            sourceContractApplicationAllowed = JsonBool(phase382.RootElement, "sourceContractApplicationAllowed"),
+            canFillPhase201WzContract = JsonBool(phase382.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase382.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase382.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            routePromotesWzMasses = JsonBool(phase382.RootElement, "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonBool(phase382.RootElement, "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonBool(phase382.RootElement, "routeCompletesBosonPredictions"),
+            phase201TemplateMutated = JsonBool(phase382.RootElement, "phase201TemplateMutated"),
+            fieldsAppliedToPhase201TemplateCount = JsonInt(phase382.RootElement, "fieldsAppliedToPhase201TemplateCount"),
+            phase201FieldsDefensiblyFilled = JsonStringArray(phase382.RootElement, "phase201FieldsDefensiblyFilled"),
+            decision = JsonString(phase382.RootElement, "decision"),
         }
         : null,
     branchLocalDirectInvariantCensus = phase282 is not null

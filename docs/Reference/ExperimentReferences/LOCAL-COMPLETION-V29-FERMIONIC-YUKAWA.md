@@ -83,6 +83,10 @@ outside the first executable numerical branch.
   Phase379 response-image sidecar. The audit records that the selected W row
   uses charged axes `0,1`, while Phase379 suppresses axis `1`; the selected Z
   row uses the dominant neutral axis `2`.
+- Added Phase382 to test whether any current observed-field artifact supplies
+  the namespace-separation map needed to rehabilitate the Phase302/307 selected
+  near-pass. It finds no target-independent observed electroweak projection map
+  and leaves the Phase381 conflict active.
 
 ## Prediction Relevance
 
@@ -99,7 +103,8 @@ for that missing theorem or for separate W/Z source rows.
 Phase381 records that the strongest Phase302/307 selected near-pass is also not
 rescued by the response-image sidecar: it remains dependent on a Phase302 scale
 without an application theorem and on a W charged-ladder axis that the Phase379
-diagnostic suppresses.
+diagnostic suppresses. Phase382 records that no current observed-projection
+artifact separates the diagnostic carrier axes from physical photon/W/Z axes.
 
 ## Limitation
 

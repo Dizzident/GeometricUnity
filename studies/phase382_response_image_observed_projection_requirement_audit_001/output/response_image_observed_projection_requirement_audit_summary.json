@@ -1,0 +1,88 @@
+{
+  "phaseId": "phase382-response-image-observed-projection-requirement-audit",
+  "terminalStatus": "response-image-observed-projection-requirement-audit-no-namespace-separation-map",
+  "responseImageObservedProjectionRequirementAuditPassed": true,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "d40f8d09f625683f64e8387778e663ad5061ef995a05907a1952a50730b56624",
+  "applicationSubjectKind": "phase381-sidecar-conflict-rehabilitation-requirement",
+  "phase381ConflictMaterialized": true,
+  "phase381SelectedLaw": "p302-scaled-max-min-magnitude",
+  "phase381SelectedWGaugeAxes": [
+    0,
+    1
+  ],
+  "phase381SelectedZGaugeAxes": [
+    2
+  ],
+  "phase381SelectedWUsesSuppressedGaugeAxis": true,
+  "phase381SelectedZUsesSuppressedGaugeAxis": false,
+  "phase379SuppressedGaugeAxis": 1,
+  "phase379DominantGaugeAxes": [
+    0,
+    2
+  ],
+  "phase381ResponseImageSelectorSidecarCompatible": false,
+  "phase381ResponseImageSidecarConflictPresent": true,
+  "phase256ContractUnfilled": true,
+  "phase295NoIntakeReadyObservedProjection": true,
+  "phase311ObservedMapAbsent": true,
+  "phase313OfficialProjectionMapAbsent": true,
+  "phase320StandardBoundaryOnly": true,
+  "phase321NeutralMixingRouteUnpromotable": true,
+  "phase379ProvidesNoNamespaceMap": true,
+  "observedCarrierAxisNamespaceSeparationMapPresent": false,
+  "observedCarrierAxisNamespaceSeparationMapTargetIndependent": false,
+  "observedCarrierAxisNamespaceSeparationMapSourceLineageEligible": false,
+  "observedCarrierAxisNamespaceSeparationMapCanFillPhase256": false,
+  "observedCarrierAxisNamespaceSeparationMapCanFillPhase201Wz": false,
+  "phase379CarrierAxesCanBeSeparatedFromPhysicalWzAxes": false,
+  "phase307SelectedNearPassRehabilitatedByObservedProjectionMap": false,
+  "responseImageConflictRemainsActive": true,
+  "sourceContractApplicationAllowed": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "blockedContractFieldCount": 15,
+  "phase213WzMissingFieldCount": 15,
+  "phase201FieldsDefensiblyFilled": [],
+  "checks": [
+    {
+      "checkId": "phase381-sidecar-conflict-materialized",
+      "passed": true,
+      "details": "phase381Passed=True; selectedLaw=p302-scaled-max-min-magnitude; wUsesSuppressedAxis=True; zUsesSuppressedAxis=False; suppressedAxis=1; dominantAxes=0,2; sidecarCompatible=False; sidecarConflict=True"
+    },
+    {
+      "checkId": "observed-field-contract-and-scanner-remain-unfilled",
+      "passed": true,
+      "details": "phase256RequiredFields=20; phase256FilledRequiredFields=0; phase256Promotable=False; phase295IntakeReadyCount=0; fields=observedFieldExtractionTheoremId:0/False;electroweakGaugeEmbeddingId:0/False;quadraticElectroweakMassOperatorId:0/False;photonEigenstateProjectionId:0/False;wBosonSourceRowId:0/False;zBosonSourceRowId:0/False;targetBlindConstructionHash:0/False"
+    },
+    {
+      "checkId": "completion-and-official-draft-do-not-supply-observed-projection-map",
+      "passed": true,
+      "details": "phase311PhysicalMap=False; phase311WProjection=False; phase311ZProjection=False; phase313WRows=False; phase313ZRow=False; phase313ObservedEmbedding=False"
+    },
+    {
+      "checkId": "standard-and-neutral-mixing-boundaries-do-not-promote-gu-map",
+      "passed": true,
+      "details": "phase320StandardWChargedLadderDefinitionAvailable=True; phase320ZRequiresMixing=True; phase320PromotesSelector=False; phase321ObservedEmbedding=False; phase321ZProjection=False"
+    },
+    {
+      "checkId": "phase379-response-image-does-not-provide-namespace-separation-map",
+      "passed": true,
+      "details": "routeProvidesCanonicalGaugeAxisSelector=False; routeProvidesObservedElectroweakFieldMap=False; routeProvidesDirectWzLaw=False; routeProvidesSeparateWzRows=False; canFillPhase256=False; canFillPhase201Wz=False"
+    },
+    {
+      "checkId": "no-rehabilitation-or-contract-promotion",
+      "passed": true,
+      "details": "namespaceMapPresent=False; targetIndependent=False; sourceLineageEligible=False; separatesAxes=False; rehabilitatesPhase307=False; responseImageConflictRemainsActive=True; phase201Blocked=True; acceptedFields=0; blockedFields=15"
+    }
+  ],
+  "decision": "No current artifact provides the observed electroweak projection map needed to treat Phase379 carrier axes as a separate namespace from physical W/Z axes. The Phase381 conflict therefore remains active: the selected W row uses the Phase379-suppressed axis, while the existing standard and neutral-mixing audits only state external dependency boundaries and cannot rehabilitate the selector or fill Phase201."
+}

@@ -14913,6 +14913,30 @@ diagnostic carrier axes are not the physical W/Z axes.
 
 ### Full Validation
 
+- Full generator gate passed with Phase382 included.
+- Phase382's full-gate line matched the targeted run:
+  `responseImageObservedProjectionRequirementAuditPassed=True`,
+  `phase381ConflictMaterialized=True`,
+  `phase295NoIntakeReadyObservedProjection=True`,
+  `phase311ObservedMapAbsent=True`,
+  `phase313OfficialProjectionMapAbsent=True`,
+  `phase379ProvidesNoNamespaceMap=True`,
+  `observedCarrierAxisNamespaceSeparationMapPresent=False`,
+  `phase307SelectedNearPassRehabilitatedByObservedProjectionMap=False`,
+  `responseImageConflictRemainsActive=True`, and
+  `canFillPhase201WzContract=False`.
+- The full gate remains physically incomplete by design:
+  `objectiveAchieved=False`, `checklistPassedCount=175`, and
+  `checklistFailedCount=3`.
+- Claim-integrity verification preserved the active blocker:
+  `sourceLineageMissing=true`, `wzMissingFieldCount=15`,
+  `higgsMissingFieldCount=14`, and `promotedPhysicalMassClaimCount=0`.
+- After the gate, `58` historical JSON files that changed only by
+  `generatedAt` were restored after parsed-JSON or direct-diff semantic
+  equivalence checks.
+
+### Full Validation
+
 - Full generator gate passed with Phase381 included.
 - Phase381's full-gate line matched the targeted run:
   `phase302307ResponseImageSelectorCompatibilityAuditPassed=True`,
@@ -14932,3 +14956,79 @@ diagnostic carrier axes are not the physical W/Z axes.
 - After the gate, `57` historical JSON files that changed only by
   `generatedAt` were restored after parsed-JSON or direct-diff semantic
   equivalence checks.
+
+## 2026-06-04 - Phase382 Response-Image Observed Projection Requirement Audit
+
+### Context
+
+Phase381 showed that the strongest Phase302/307 selected W/Z near-pass is not
+supported by the Phase379 response-image sidecar: the selected W row uses gauge
+axes `0,1`, while Phase379 suppresses axis `1` and dominates on axes `0,2`.
+The remaining rescue route was an observed electroweak projection map proving
+that Phase379 carrier axes are a diagnostic namespace distinct from physical
+photon/W/Z axes.
+
+### Action
+
+- Added
+  `studies/phase382_response_image_observed_projection_requirement_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P382.md`.
+- Wired Phase382 into the generator, Phase101 package, Phase202 completion
+  audit, claim-integrity verifier, and source-scanner exclusions.
+- Updated `ExperimentReferences.md` and the local response-boundary reference
+  notes.
+- A read-only sidecar agent independently checked Phase295/311/313/379/380/381
+  and Phase201/213. It found no existing artifact that supplies the observed
+  carrier-axis namespace-separation map or fills any Phase201 W/Z fields.
+
+### Result
+
+- Targeted Phase382 run passed:
+  `responseImageObservedProjectionRequirementAuditPassed=true`.
+- Phase382 preserved the Phase381 conflict:
+  `phase381ConflictMaterialized=true`,
+  `phase381SelectedLaw=p302-scaled-max-min-magnitude`,
+  `phase381SelectedWUsesSuppressedGaugeAxis=true`,
+  `phase379SuppressedGaugeAxis=1`, and
+  `phase381ResponseImageSidecarConflictPresent=true`.
+- Existing observed-field artifacts remain non-promotional:
+  `phase256ContractUnfilled=true`,
+  `phase295NoIntakeReadyObservedProjection=true`,
+  `phase311ObservedMapAbsent=true`,
+  `phase313OfficialProjectionMapAbsent=true`,
+  `phase320StandardBoundaryOnly=true`, and
+  `phase321NeutralMixingRouteUnpromotable=true`.
+- Phase379 still provides no namespace-separation map:
+  `phase379ProvidesNoNamespaceMap=true`,
+  `observedCarrierAxisNamespaceSeparationMapPresent=false`, and
+  `phase307SelectedNearPassRehabilitatedByObservedProjectionMap=false`.
+- Phase382 accepted zero W/Z contract fields:
+  `acceptedContractFieldCount=0`, `blockedContractFieldCount=15`, and
+  `phase213WzMissingFieldCount=15`.
+
+### Boundary
+
+Phase382 is a requirement audit, not a prediction. It does not prove the
+Phase307 near-pass is impossible; it proves that the current artifact set lacks
+the observed electroweak projection theorem needed to reinterpret the Phase379
+carrier axes away from physical W/Z axes. The next theorem must supply that map
+or derive why the Phase307 charged-ladder W row physically requires the
+Phase379-suppressed axis.
+
+### Targeted Validation
+
+- Phase382 build passed with `0` warnings and `0` errors.
+- Phase101 package run passed and includes the Phase382 block.
+- Phase202 objective audit remains incomplete by design:
+  `objectiveAchieved=False`, `checklistPassedCount=175`, and
+  `checklistFailedCount=3`.
+- Source and observed-field scans still report zero intake-ready artifacts:
+  Phase204 `intakeReadyCandidateCount=0`, Phase205
+  `intakeReadyFindingCount=0`, Phase207 `intakeReadyFindingCount=0`,
+  Phase279 `localSearchMatchingFileCount=0`, Phase281
+  `localSearchMatchingFileCount=0`, Phase295
+  `intakeReadyObservedFieldExtractionCandidateCount=0`, and Phase296
+  `intakeReadySourceLineageFieldCandidateCount=0`.
+- Claim-integrity verification passed with
+  `sourceLineageMissing=true`, `wzMissingFieldCount=15`,
+  `higgsMissingFieldCount=14`, and `promotedPhysicalMassClaimCount=0`.

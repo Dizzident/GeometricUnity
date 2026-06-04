@@ -41,6 +41,9 @@ identities.
 - Used in Phase381 as the boundary source for comparing the Phase379
   response-image sidecar with the Phase302/307 selected W/Z near-pass selector.
   The result is a sidecar conflict, not a W/Z source-row promotion.
+- Used in Phase382 to require an observed electroweak projection map before
+  reinterpreting Phase379 carrier axes as separate from physical photon/W/Z
+  axes. No such map is present in the current artifact set.
 - Used to keep the Phase377 response metric distinct from a physical
   fermion-determinant effective-action Hessian.
 - Used to record that the Phase376 absolute-value spectral shell is not an
@@ -48,14 +51,16 @@ identities.
 
 ## Prediction Relevance
 
-Phase377, Phase378, Phase379, Phase380, and Phase381 can test whether connection
-directions induce a stable, nonzero discrete shell response and can
+Phase377, Phase378, Phase379, Phase380, Phase381, and Phase382 can test whether
+connection directions induce a stable, nonzero discrete shell response and can
 characterize its carrier image. Phase379 finds a strong two-axis carrier
 diagnostic, and Phase380 confirms that this diagnostic still does not provide
 Phase201 W/Z source-lineage fields, Higgs scalar-source lineage, observed-field
 extraction, or GeV normalization. Phase381 further shows that the Phase307
 selected near-pass W row uses the Phase379-suppressed axis, so the diagnostic
-does not support the selected charged-ladder route.
+does not support the selected charged-ladder route. Phase382 shows that current
+observed-field artifacts cannot separate that carrier-axis diagnostic from
+physical W/Z axes.
 
 ## Limitation
 
@@ -64,7 +69,8 @@ selected-subspace limitation for the current `156`-coordinate carrier, but it
 is still not a GU-native physical mass operator. Phase379 characterizes the
 carrier image, not a physical observed-field projection. Phase380 is a
 non-mutating contract audit, not a prediction. Phase381 is a selector
-compatibility audit, not a prediction.
+compatibility audit, not a prediction. Phase382 is an observed-projection
+requirement audit, not a prediction.
 
 ## Follow-Up
 
