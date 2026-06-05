@@ -14911,123 +14911,6 @@ diagnostic carrier axes are not the physical W/Z axes.
   `sourceLineageMissing=true`, `wzMissingFieldCount=15`,
   `higgsMissingFieldCount=14`, and `promotedPhysicalMassClaimCount=0`.
 
-## 2026-06-05 - Phase383 Phase307 Suppressed-Axis Counterfactual Selector Audit
-
-### Context
-
-Phase381 showed that the strongest Phase302/307 selected W/Z near-pass uses a
-W row on axes `0,1`, while Phase379 suppresses carrier axis `1`. Phase382 then
-found no observed electroweak projection map that separates Phase379 carrier
-axes from physical photon/W/Z axes. The next bounded question was whether the
-already-persisted Phase307 selector space contains an alternate predeclared
-target-independent selector or W source definition that avoids axis `1`.
-
-### Action
-
-- Added
-  `studies/phase383_phase307_suppressed_axis_counterfactual_selector_audit_001`.
-- Added `docs/Phases/Implementation/IMPLEMENTATION_P383.md`.
-- Reused the persisted Phase307 `125` source definitions and `8` predeclared
-  selection-law assessments without inventing a new W source family.
-- Wired Phase383 into the generator, Phase101 package, Phase202 completion
-  audit, claim-integrity verifier, and source-scanner exclusions.
-- Updated `ExperimentReferences.md` and the detailed local reference summaries.
-
-### Result
-
-- Targeted Phase383 run passed:
-  `phase307SuppressedAxisCounterfactualSelectorAuditPassed=true`.
-- Phase383 found:
-  `sourceDefinitionCount=125`, `selectionLawCount=8`,
-  `phase379SuppressedGaugeAxis=1`, and
-  `phase379DominantGaugeAxes=0,2`.
-- Every current Phase307 W source definition uses the suppressed axis:
-  `everyPhase307WDefinitionUsesSuppressedGaugeAxis=true`,
-  `everyPhase307WDefinitionUsesCanonicalChargedAxes=true`,
-  and `wDefinitionsAvoidingSuppressedAxisCount=0`.
-- No current predeclared selector avoids the suppressed axis:
-  `selectorsAvoidingSuppressedAxisCount=0`,
-  `selectorsP302ScaledStableCommonAvoidingSuppressedAxisCount=0`, and
-  `sidecarCompatibleSelectionLawCount=0`.
-- The sole P302-scaled stable common selector remains
-  `p302-scaled-max-min-magnitude`, and its W row uses the suppressed axis.
-- Phase383 accepted zero W/Z contract fields and kept
-  `canFillPhase201WzContract=false`.
-
-### Boundary
-
-Phase383 is a counterfactual selector-space audit, not a prediction. It does
-not prove that no mathematically possible W/Z source law can avoid the
-suppressed axis. It proves only that the current Phase307 predeclared selector
-space cannot repair the Phase381/382 conflict internally. Moving forward still
-requires a new theorem-backed W source-definition family, a GU-native observed
-electroweak projection/namespace map, or a derivation explaining why the
-Phase307 charged-ladder W row must use the Phase379-suppressed carrier axis.
-
-### Targeted Validation
-
-- Phase383 build passed with `0` warnings and `0` errors.
-- Phase101 package run passed and includes the Phase383 block:
-  `internal-boson-prediction-package-built-physical-comparison-blocked`.
-- Phase202 objective audit remains incomplete by design:
-  `objectiveAchieved=False`, `checklistPassedCount=176`, and
-  `checklistFailedCount=3`.
-- Source and observed-field scans still report zero intake-ready artifacts:
-  Phase204 `intakeReadyCandidateCount=0`, Phase205
-  `intakeReadyFindingCount=0`, Phase207 `intakeReadyFindingCount=0`,
-  Phase279 `localSearchMatchingFileCount=0`, Phase281
-  `localSearchMatchingFileCount=0`, Phase295
-  `intakeReadyObservedFieldExtractionCandidateCount=0`, and Phase296
-  `intakeReadySourceLineageFieldCandidateCount=0`.
-- Claim-integrity verification passed with
-  `sourceLineageMissing=true`, `wzMissingFieldCount=15`,
-  `higgsMissingFieldCount=14`, and `promotedPhysicalMassClaimCount=0`.
-
-### Full Validation
-
-- Full generator gate passed with Phase383 included.
-- Phase383's full-gate line matched the targeted run:
-  `phase307SuppressedAxisCounterfactualSelectorAuditPassed=true`,
-  `sourceDefinitionCount=125`, `selectionLawCount=8`,
-  `wDefinitionsAvoidingSuppressedAxisCount=0`,
-  `selectorsAvoidingSuppressedAxisCount=0`,
-  `sidecarCompatibleSelectionLawCount=0`, and
-  `canFillPhase201WzContract=false`.
-- The full gate remains physically incomplete by design:
-  `objectiveAchieved=False`, `checklistPassedCount=176`, and
-  `checklistFailedCount=3`.
-- Full-gate claim integrity preserved the active blocker:
-  `sourceLineageMissing=true`, `wzMissingFieldCount=15`,
-  `higgsMissingFieldCount=14`, and `promotedPhysicalMassClaimCount=0`.
-- After the full gate, `58` historical JSON files that changed only by
-  `generatedAt` were restored after parsed-JSON or direct-diff semantic
-  equivalence checks. The Phase382 full artifact retained one refreshed
-  candidate-line count from `491` to `497`; its intake-ready count remains `0`.
-
-### Full Validation
-
-- Full generator gate passed with Phase382 included.
-- Phase382's full-gate line matched the targeted run:
-  `responseImageObservedProjectionRequirementAuditPassed=True`,
-  `phase381ConflictMaterialized=True`,
-  `phase295NoIntakeReadyObservedProjection=True`,
-  `phase311ObservedMapAbsent=True`,
-  `phase313OfficialProjectionMapAbsent=True`,
-  `phase379ProvidesNoNamespaceMap=True`,
-  `observedCarrierAxisNamespaceSeparationMapPresent=False`,
-  `phase307SelectedNearPassRehabilitatedByObservedProjectionMap=False`,
-  `responseImageConflictRemainsActive=True`, and
-  `canFillPhase201WzContract=False`.
-- The full gate remains physically incomplete by design:
-  `objectiveAchieved=False`, `checklistPassedCount=175`, and
-  `checklistFailedCount=3`.
-- Claim-integrity verification preserved the active blocker:
-  `sourceLineageMissing=true`, `wzMissingFieldCount=15`,
-  `higgsMissingFieldCount=14`, and `promotedPhysicalMassClaimCount=0`.
-- After the gate, `58` historical JSON files that changed only by
-  `generatedAt` were restored after parsed-JSON or direct-diff semantic
-  equivalence checks.
-
 ### Full Validation
 
 - Full generator gate passed with Phase381 included.
@@ -15125,3 +15008,220 @@ Phase379-suppressed axis.
 - Claim-integrity verification passed with
   `sourceLineageMissing=true`, `wzMissingFieldCount=15`,
   `higgsMissingFieldCount=14`, and `promotedPhysicalMassClaimCount=0`.
+
+### Full Validation
+
+- Full generator gate passed with Phase382 included.
+- Phase382's full-gate line matched the targeted run:
+  `responseImageObservedProjectionRequirementAuditPassed=True`,
+  `phase381ConflictMaterialized=True`,
+  `phase295NoIntakeReadyObservedProjection=True`,
+  `phase311ObservedMapAbsent=True`,
+  `phase313OfficialProjectionMapAbsent=True`,
+  `phase379ProvidesNoNamespaceMap=True`,
+  `observedCarrierAxisNamespaceSeparationMapPresent=False`,
+  `phase307SelectedNearPassRehabilitatedByObservedProjectionMap=False`,
+  `responseImageConflictRemainsActive=True`, and
+  `canFillPhase201WzContract=False`.
+- The full gate remains physically incomplete by design:
+  `objectiveAchieved=False`, `checklistPassedCount=175`, and
+  `checklistFailedCount=3`.
+- Claim-integrity verification preserved the active blocker:
+  `sourceLineageMissing=true`, `wzMissingFieldCount=15`,
+  `higgsMissingFieldCount=14`, and `promotedPhysicalMassClaimCount=0`.
+- After the gate, `58` historical JSON files that changed only by
+  `generatedAt` were restored after parsed-JSON or direct-diff semantic
+  equivalence checks.
+
+## 2026-06-05 - Phase383 Phase307 Suppressed-Axis Counterfactual Selector Audit
+
+### Context
+
+Phase381 showed that the strongest Phase302/307 selected W/Z near-pass uses a
+W row on axes `0,1`, while Phase379 suppresses carrier axis `1`. Phase382 then
+found no observed electroweak projection map that separates Phase379 carrier
+axes from physical photon/W/Z axes. The next bounded question was whether the
+already-persisted Phase307 selector space contains an alternate predeclared
+target-independent selector or W source definition that avoids axis `1`.
+
+### Action
+
+- Added
+  `studies/phase383_phase307_suppressed_axis_counterfactual_selector_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P383.md`.
+- Reused the persisted Phase307 `125` source definitions and `8` predeclared
+  selection-law assessments without inventing a new W source family.
+- Wired Phase383 into the generator, Phase101 package, Phase202 completion
+  audit, claim-integrity verifier, and source-scanner exclusions.
+- Updated `ExperimentReferences.md` and the detailed local reference summaries.
+
+### Result
+
+- Targeted Phase383 run passed:
+  `phase307SuppressedAxisCounterfactualSelectorAuditPassed=true`.
+- Phase383 found:
+  `sourceDefinitionCount=125`, `selectionLawCount=8`,
+  `phase379SuppressedGaugeAxis=1`, and
+  `phase379DominantGaugeAxes=0,2`.
+- Every current Phase307 W source definition uses the suppressed axis:
+  `everyPhase307WDefinitionUsesSuppressedGaugeAxis=true`,
+  `everyPhase307WDefinitionUsesCanonicalChargedAxes=true`,
+  and `wDefinitionsAvoidingSuppressedAxisCount=0`.
+- No current predeclared selector avoids the suppressed axis:
+  `selectorsAvoidingSuppressedAxisCount=0`,
+  `selectorsP302ScaledStableCommonAvoidingSuppressedAxisCount=0`, and
+  `sidecarCompatibleSelectionLawCount=0`.
+- The sole P302-scaled stable common selector remains
+  `p302-scaled-max-min-magnitude`, and its W row uses the suppressed axis.
+- Phase383 accepted zero W/Z contract fields and kept
+  `canFillPhase201WzContract=false`.
+
+### Boundary
+
+Phase383 is a counterfactual selector-space audit, not a prediction. It does
+not prove that no mathematically possible W/Z source law can avoid the
+suppressed axis. It proves only that the current Phase307 predeclared selector
+space cannot repair the Phase381/382 conflict internally. Moving forward still
+requires a new theorem-backed W source-definition family, a GU-native observed
+electroweak projection/namespace map, or a derivation explaining why the
+Phase307 charged-ladder W row must use the Phase379-suppressed carrier axis.
+
+### Targeted Validation
+
+- Phase383 build passed with `0` warnings and `0` errors.
+- Phase101 package run passed and includes the Phase383 block:
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- Phase202 objective audit remains incomplete by design:
+  `objectiveAchieved=False`, `checklistPassedCount=176`, and
+  `checklistFailedCount=3`.
+- Source and observed-field scans still report zero intake-ready artifacts:
+  Phase204 `intakeReadyCandidateCount=0`, Phase205
+  `intakeReadyFindingCount=0`, Phase207 `intakeReadyFindingCount=0`,
+  Phase279 `localSearchMatchingFileCount=0`, Phase281
+  `localSearchMatchingFileCount=0`, Phase295
+  `intakeReadyObservedFieldExtractionCandidateCount=0`, and Phase296
+  `intakeReadySourceLineageFieldCandidateCount=0`.
+- Claim-integrity verification passed with
+  `sourceLineageMissing=true`, `wzMissingFieldCount=15`,
+  `higgsMissingFieldCount=14`, and `promotedPhysicalMassClaimCount=0`.
+
+### Full Validation
+
+- Full generator gate passed with Phase383 included.
+- Phase383's full-gate line matched the targeted run:
+  `phase307SuppressedAxisCounterfactualSelectorAuditPassed=true`,
+  `sourceDefinitionCount=125`, `selectionLawCount=8`,
+  `wDefinitionsAvoidingSuppressedAxisCount=0`,
+  `selectorsAvoidingSuppressedAxisCount=0`,
+  `sidecarCompatibleSelectionLawCount=0`, and
+  `canFillPhase201WzContract=false`.
+- The full gate remains physically incomplete by design:
+  `objectiveAchieved=False`, `checklistPassedCount=176`, and
+  `checklistFailedCount=3`.
+- Full-gate claim integrity preserved the active blocker:
+  `sourceLineageMissing=true`, `wzMissingFieldCount=15`,
+  `higgsMissingFieldCount=14`, and `promotedPhysicalMassClaimCount=0`.
+- After the full gate, `58` historical JSON files that changed only by
+  `generatedAt` were restored after parsed-JSON or direct-diff semantic
+  equivalence checks. The Phase382 full artifact retained one refreshed
+  candidate-line count from `491` to `497`; its intake-ready count remains `0`.
+
+## 2026-06-05 - Phase384 Phase307 Basis-Energy Response-Image Proxy Audit
+
+### Context
+
+After Phase383 proved that every current Phase307 W source definition uses the
+Phase379-suppressed charged axis `1`, the remaining local repair question was
+whether Phase27 per-candidate basis-energy fractions provide a finer
+target-independent proxy than the source-definition axis labels. A sidecar
+repository-search agent also looked for a GU-native observed electroweak
+namespace map or theorem that could rehabilitate the Phase381/382/383 blocker.
+It found no promotable artifact. Its strongest non-promotable candidates were
+Phase27, Phase313, Phase321, the v29 observed-field governance text, and the
+external FMS/dressing-field templates.
+
+### Action
+
+- Added
+  `studies/phase384_phase307_basis_energy_response_image_proxy_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P384.md`.
+- Used Phase27 basis-energy metadata as a proxy only, not as an observed
+  electroweak projection map.
+- Averaged basis-energy fractions over each Phase307 W and Z source
+  definition's candidate set.
+- Counted Phase307 W definitions and predeclared selectors that fall below a
+  conservative `0.10` suppressed-axis proxy threshold.
+- Wired Phase384 into the generator, Phase101 package, Phase202 completion
+  audit, claim-integrity verifier, and source-scanner exclusions.
+- Updated `ExperimentReferences.md` and the detailed local reference summaries.
+
+### Result
+
+- Targeted Phase384 run passed:
+  `phase307BasisEnergyResponseImageProxyAuditPassed=True`.
+- The audit used `sourceDefinitionCount=125`,
+  `selectionLawCount=8`, `suppressedGaugeAxis=1`, and
+  `phase379MaxSuppressedProjectorFraction=0.0016621111895614045`.
+- No Phase307 W definition has a low suppressed-axis basis-energy proxy:
+  `minWSuppressedBasisEnergyFraction=0.33627838840903185` and
+  `wDefinitionsLowSuppressedBasisEnergyProxyCount=0`.
+- No predeclared selector has a low suppressed-axis basis-energy proxy:
+  `selectorsLowSuppressedBasisEnergyProxyCount=0`.
+- The selected P302-scaled stable common law remains
+  `p302-scaled-max-min-magnitude`, with W suppressed-axis basis-energy fraction
+  `0.44501616745604355`.
+- Phase384 accepted zero W/Z contract fields and kept
+  `canFillPhase201WzContract=False`.
+
+### Boundary
+
+Phase384 is not a physical prediction. It proves only that the current Phase27
+basis-energy metadata cannot repair the Phase381/382/383 conflict for the
+current Phase307 selector space. Moving forward still requires a GU-native
+observed electroweak projection map, a new theorem-backed W source-definition
+family, or a derivation explaining why the physical W row must carry substantial
+support on the Phase379-suppressed carrier axis.
+
+### Targeted Validation
+
+- Phase384 build passed with `0` warnings and `0` errors.
+- Phase101 package run passed and includes the Phase384 block:
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- Phase202 objective audit remains incomplete by design:
+  `objectiveAchieved=False`, `checklistPassedCount=177`, and
+  `checklistFailedCount=3`.
+- Source and observed-field scans still report zero intake-ready artifacts:
+  Phase204 `intakeReadyCandidateCount=0`, Phase205
+  `intakeReadyFindingCount=0`, Phase207 `intakeReadyFindingCount=0`,
+  Phase279 `localSearchMatchingFileCount=0`, Phase281
+  `localSearchMatchingFileCount=0`, Phase295
+  `intakeReadyObservedFieldExtractionCandidateCount=0`, and Phase296
+  `intakeReadySourceLineageFieldCandidateCount=0`.
+- Claim-integrity verification passed with
+  `sourceLineageMissing=true`, `wzMissingFieldCount=15`,
+  `higgsMissingFieldCount=14`, and `promotedPhysicalMassClaimCount=0`.
+
+### Full Validation
+
+- Full generator gate passed with Phase384 included.
+- Phase384's full-gate line matched the targeted run:
+  `phase307BasisEnergyResponseImageProxyAuditPassed=True`,
+  `sourceDefinitionCount=125`, `selectionLawCount=8`,
+  `suppressedGaugeAxis=1`,
+  `phase379MaxSuppressedProjectorFraction=0.0016621111895614045`,
+  `minWSuppressedBasisEnergyFraction=0.33627838840903185`,
+  `wDefinitionsLowSuppressedBasisEnergyProxyCount=0`,
+  `selectorsLowSuppressedBasisEnergyProxyCount=0`,
+  `selectedP302ScaledStableCommonSelectionLawId=p302-scaled-max-min-magnitude`,
+  `selectedP302ScaledStableCommonWSuppressedBasisEnergyFraction=0.44501616745604355`,
+  and `canFillPhase201WzContract=False`.
+- The full gate remains physically incomplete by design:
+  `objectiveAchieved=False`, `checklistPassedCount=177`, and
+  `checklistFailedCount=3`.
+- Full-gate claim integrity preserved the active blocker:
+  `sourceLineageMissing=true`, `wzMissingFieldCount=15`,
+  `higgsMissingFieldCount=14`, and `promotedPhysicalMassClaimCount=0`.
+- After the full gate, `59` historical JSON files that changed only by
+  `generatedAt` were restored after parsed-JSON semantic equivalence checks.
+  The Phase382 full artifact retained one refreshed candidate-line count from
+  `497` to `508`; its intake-ready count remains `0`.

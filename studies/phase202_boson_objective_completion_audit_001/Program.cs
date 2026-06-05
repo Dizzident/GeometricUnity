@@ -149,6 +149,7 @@ const string Phase380Path = "studies/phase380_response_image_wz_contract_applica
 const string Phase381Path = "studies/phase381_phase302_307_response_image_selector_compatibility_audit_001/output/phase302_307_response_image_selector_compatibility_audit_summary.json";
 const string Phase382Path = "studies/phase382_response_image_observed_projection_requirement_audit_001/output/response_image_observed_projection_requirement_audit_summary.json";
 const string Phase383Path = "studies/phase383_phase307_suppressed_axis_counterfactual_selector_audit_001/output/phase307_suppressed_axis_counterfactual_selector_audit_summary.json";
+const string Phase384Path = "studies/phase384_phase307_basis_energy_response_image_proxy_audit_001/output/phase307_basis_energy_response_image_proxy_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -331,6 +332,7 @@ using var phase380 = File.Exists(Phase380Path) ? JsonDocument.Parse(File.ReadAll
 using var phase381 = File.Exists(Phase381Path) ? JsonDocument.Parse(File.ReadAllText(Phase381Path)) : null;
 using var phase382 = File.Exists(Phase382Path) ? JsonDocument.Parse(File.ReadAllText(Phase382Path)) : null;
 using var phase383 = File.Exists(Phase383Path) ? JsonDocument.Parse(File.ReadAllText(Phase383Path)) : null;
+using var phase384 = File.Exists(Phase384Path) ? JsonDocument.Parse(File.ReadAllText(Phase384Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -4398,6 +4400,49 @@ var phase307SuppressedAxisCounterfactualSelectorAuditPassed = phase307Suppressed
     && JsonInt(phase383.RootElement, "acceptedContractFieldCount") == 0
     && JsonInt(phase383.RootElement, "blockedContractFieldCount") == wzMissingFieldCount
     && JsonInt(phase383.RootElement, "phase213WzMissingFieldCount") == wzMissingFieldCount;
+var phase307BasisEnergyResponseImageProxyAuditMaterialized = phase384 is not null;
+IReadOnlyList<int> phase384DominantGaugeAxes = phase307BasisEnergyResponseImageProxyAuditMaterialized
+    ? JsonIntArray(phase384!.RootElement, "phase379DominantGaugeAxes")
+    : Array.Empty<int>();
+var phase307BasisEnergyResponseImageProxyAuditPassed = phase307BasisEnergyResponseImageProxyAuditMaterialized
+    && JsonBool(phase384!.RootElement, "phase307BasisEnergyResponseImageProxyAuditPassed") is true
+    && JsonBool(phase384.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase384.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase384.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase384.RootElement, "applicationSubjectKind") == "phase27-basis-energy-proxy-for-phase307-selector-space-under-phase379-response-image-sidecar"
+    && JsonBool(phase384.RootElement, "phase27BasisEnergyMaterialized") is true
+    && JsonBool(phase384.RootElement, "phase307Materialized") is true
+    && JsonBool(phase384.RootElement, "phase379ContextMaterialized") is true
+    && JsonBool(phase384.RootElement, "phase381382383BlockerMaterialized") is true
+    && JsonInt(phase384.RootElement, "suppressedGaugeAxis") == 1
+    && phase384DominantGaugeAxes.SequenceEqual(new[] { 0, 2 })
+    && JsonInt(phase384.RootElement, "sourceDefinitionCount") == 125
+    && JsonInt(phase384.RootElement, "selectionLawCount") == 8
+    && JsonDouble(phase384.RootElement, "phase379MaxSuppressedProjectorFraction") is > 0.001 and < 0.002
+    && JsonDouble(phase384.RootElement, "conventionalLowSuppressedBasisEnergyThreshold") == 0.10
+    && JsonDouble(phase384.RootElement, "minWSuppressedBasisEnergyFraction") is > 0.33 and < 0.34
+    && JsonInt(phase384.RootElement, "wDefinitionsAtOrBelowPhase379SuppressedProjectorFractionCount") == 0
+    && JsonInt(phase384.RootElement, "wDefinitionsLowSuppressedBasisEnergyProxyCount") == 0
+    && JsonBool(phase384.RootElement, "noWDefinitionHasLowSuppressedBasisEnergyProxy") is true
+    && JsonInt(phase384.RootElement, "selectorsAtOrBelowPhase379SuppressedProjectorFractionCount") == 0
+    && JsonInt(phase384.RootElement, "selectorsLowSuppressedBasisEnergyProxyCount") == 0
+    && JsonBool(phase384.RootElement, "noPredeclaredSelectorHasLowSuppressedBasisEnergyProxy") is true
+    && JsonString(phase384.RootElement, "selectedP302ScaledStableCommonSelectionLawId") == "p302-scaled-max-min-magnitude"
+    && JsonString(phase384.RootElement, "selectedP302ScaledStableCommonWDefinitionId") == "charged-ladder-all-axis-neutral-coherent-plus"
+    && JsonDouble(phase384.RootElement, "selectedP302ScaledStableCommonWSuppressedBasisEnergyFraction") is > 0.44 and < 0.45
+    && JsonBool(phase384.RootElement, "selectedP302ScaledStableCommonStillBasisEnergyConflicted") is true
+    && JsonBool(phase384.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase384.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase384.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase384.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase384.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase384.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase384.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase384.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase384.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase384.RootElement, "acceptedContractFieldCount") == 0
+    && JsonInt(phase384.RootElement, "blockedContractFieldCount") == wzMissingFieldCount
+    && JsonInt(phase384.RootElement, "phase213WzMissingFieldCount") == wzMissingFieldCount;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -6439,6 +6484,14 @@ var checklist = new[]
             : "Phase383 artifact not materialized",
         Phase383Path),
     new ObjectiveChecklistItem(
+        "phase307-basis-energy-response-image-proxy-audit-materialized",
+        "Check whether Phase27 basis-energy fractions supply a finer target-independent suppressed-axis escape for Phase307 under the Phase379 response-image sidecar.",
+        phase307BasisEnergyResponseImageProxyAuditPassed ? "passed" : "failed",
+        phase307BasisEnergyResponseImageProxyAuditMaterialized
+            ? $"phase307BasisEnergyResponseImageProxyAuditPassed={JsonBool(phase384!.RootElement, "phase307BasisEnergyResponseImageProxyAuditPassed")}; targetBlind={JsonBool(phase384.RootElement, "targetBlindConstruction")}; phase27BasisEnergyMaterialized={JsonBool(phase384.RootElement, "phase27BasisEnergyMaterialized")}; phase307Materialized={JsonBool(phase384.RootElement, "phase307Materialized")}; phase379ContextMaterialized={JsonBool(phase384.RootElement, "phase379ContextMaterialized")}; phase381382383BlockerMaterialized={JsonBool(phase384.RootElement, "phase381382383BlockerMaterialized")}; suppressedAxis={JsonInt(phase384.RootElement, "suppressedGaugeAxis")}; dominantAxes={string.Join(",", phase384DominantGaugeAxes)}; minWSuppressedBasisEnergyFraction={JsonDouble(phase384.RootElement, "minWSuppressedBasisEnergyFraction")}; wDefinitionsLowSuppressedBasisEnergyProxyCount={JsonInt(phase384.RootElement, "wDefinitionsLowSuppressedBasisEnergyProxyCount")}; selectorsLowSuppressedBasisEnergyProxyCount={JsonInt(phase384.RootElement, "selectorsLowSuppressedBasisEnergyProxyCount")}; selectedP302ScaledStableCommonWDefinition={JsonString(phase384.RootElement, "selectedP302ScaledStableCommonWDefinitionId")}; selectedP302ScaledStableCommonWSuppressedBasisEnergyFraction={JsonDouble(phase384.RootElement, "selectedP302ScaledStableCommonWSuppressedBasisEnergyFraction")}; canFillPhase201WzContract={JsonBool(phase384.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase384.RootElement, "decision")}"
+            : "Phase384 artifact not materialized",
+        Phase384Path),
+    new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
         branchLocalDirectInvariantCensusPassed ? "passed" : "failed",
@@ -6938,6 +6991,7 @@ var result = new
         phase381Path = Phase381Path,
         phase382Path = Phase382Path,
         phase383Path = Phase383Path,
+        phase384Path = Phase384Path,
         phase282Path = Phase282Path,
         phase283Path = Phase283Path,
         phase284Path = Phase284Path,

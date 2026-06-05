@@ -1,0 +1,4077 @@
+{
+  "phaseId": "phase384-phase307-basis-energy-response-image-proxy-audit",
+  "generatedAt": "2026-06-05T17:26:21.4603804+00:00",
+  "terminalStatus": "phase307-basis-energy-response-image-proxy-audit-no-suppressed-axis-escape",
+  "phase307BasisEnergyResponseImageProxyAuditPassed": true,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "77da141091c1f673c094c44e88f468f0d0c10f95025c3b32d46ba9195816b199",
+  "applicationSubjectKind": "phase27-basis-energy-proxy-for-phase307-selector-space-under-phase379-response-image-sidecar",
+  "proxyBoundary": "Phase27 basis-energy fractions are target-blind internal SU(2) metadata, not observed electroweak projection rows and not a physical response-image projector on W/Z fields.",
+  "thresholds": {
+    "phase379MaxSuppressedProjectorFraction": 0.0016621111895614045,
+    "conventionalLowSuppressedBasisEnergyThreshold": 0.1
+  },
+  "phase27BasisEnergy": {
+    "phase27Path": "studies/phase27_charge_sector_convention_001/identity_features_with_charge_sectors.json",
+    "phase27BasisEnergyMaterialized": true,
+    "candidateFeatures": [
+      {
+        "candidateId": "candidate-0",
+        "sourceCandidateId": "phase12-candidate-0",
+        "chargeSector": "charged",
+        "algebraBasisSector": "canonical-su2-adjoint-axis-1",
+        "dominantBasisIndex": 1,
+        "basisEnergyFractions": [
+          0.1865097684015375,
+          0.6636395176414301,
+          0.14985071395703237
+        ]
+      },
+      {
+        "candidateId": "candidate-1",
+        "sourceCandidateId": "phase12-candidate-1",
+        "chargeSector": "charged",
+        "algebraBasisSector": "canonical-su2-adjoint-axis-0",
+        "dominantBasisIndex": 0,
+        "basisEnergyFractions": [
+          0.4919536539971505,
+          0.0355071206629419,
+          0.47253922533990755
+        ]
+      },
+      {
+        "candidateId": "candidate-2",
+        "sourceCandidateId": "phase12-candidate-2",
+        "chargeSector": "neutral",
+        "algebraBasisSector": "canonical-su2-adjoint-axis-2",
+        "dominantBasisIndex": 2,
+        "basisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ]
+      },
+      {
+        "candidateId": "candidate-3",
+        "sourceCandidateId": "phase12-candidate-3",
+        "chargeSector": "charged",
+        "algebraBasisSector": "canonical-su2-adjoint-axis-0",
+        "dominantBasisIndex": 0,
+        "basisEnergyFractions": [
+          0.5433911197951045,
+          0.3341259608819394,
+          0.12248291932295612
+        ]
+      },
+      {
+        "candidateId": "candidate-4",
+        "sourceCandidateId": "phase12-candidate-4",
+        "chargeSector": "charged",
+        "algebraBasisSector": "canonical-su2-adjoint-axis-1",
+        "dominantBasisIndex": 1,
+        "basisEnergyFractions": [
+          0.166832288389809,
+          0.6370496561551218,
+          0.1961180554550692
+        ]
+      },
+      {
+        "candidateId": "candidate-5",
+        "sourceCandidateId": "phase12-candidate-5",
+        "chargeSector": "neutral",
+        "algebraBasisSector": "canonical-su2-adjoint-axis-2",
+        "dominantBasisIndex": 2,
+        "basisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ]
+      },
+      {
+        "candidateId": "candidate-6",
+        "sourceCandidateId": "phase12-candidate-6",
+        "chargeSector": "charged",
+        "algebraBasisSector": "canonical-su2-adjoint-axis-0",
+        "dominantBasisIndex": 0,
+        "basisEnergyFractions": [
+          0.5482584345805496,
+          0.33065219020197156,
+          0.12108937521747884
+        ]
+      },
+      {
+        "candidateId": "candidate-7",
+        "sourceCandidateId": "phase12-candidate-7",
+        "chargeSector": "charged",
+        "algebraBasisSector": "canonical-su2-adjoint-axis-1",
+        "dominantBasisIndex": 1,
+        "basisEnergyFractions": [
+          0.21448915723674689,
+          0.6429816955816535,
+          0.14252914718159954
+        ]
+      },
+      {
+        "candidateId": "candidate-8",
+        "sourceCandidateId": "phase12-candidate-8",
+        "chargeSector": "charged",
+        "algebraBasisSector": "canonical-su2-adjoint-axis-1",
+        "dominantBasisIndex": 1,
+        "basisEnergyFractions": [
+          0.1725881119145683,
+          0.6473320253658642,
+          0.18007986271956739
+        ]
+      },
+      {
+        "candidateId": "candidate-9",
+        "sourceCandidateId": "phase12-candidate-9",
+        "chargeSector": "neutral",
+        "algebraBasisSector": "canonical-su2-adjoint-axis-2",
+        "dominantBasisIndex": 2,
+        "basisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ]
+      },
+      {
+        "candidateId": "candidate-10",
+        "sourceCandidateId": "phase12-candidate-10",
+        "chargeSector": "charged",
+        "algebraBasisSector": "canonical-su2-adjoint-axis-0",
+        "dominantBasisIndex": 0,
+        "basisEnergyFractions": [
+          0.45689882889583383,
+          0.31293005840402455,
+          0.23017111270014168
+        ]
+      },
+      {
+        "candidateId": "candidate-11",
+        "sourceCandidateId": "phase12-candidate-11",
+        "chargeSector": "charged",
+        "algebraBasisSector": "canonical-su2-adjoint-axis-0",
+        "dominantBasisIndex": 0,
+        "basisEnergyFractions": [
+          0.5006399430088542,
+          0.40092728220944496,
+          0.09843277478170086
+        ]
+      }
+    ]
+  },
+  "phase307SelectorSpace": {
+    "phase307Path": "studies/phase307_target_independent_decoupled_wz_row_selection_law_audit_001/output/target_independent_decoupled_wz_row_selection_law_audit.json",
+    "phase307SummaryPath": "studies/phase307_target_independent_decoupled_wz_row_selection_law_audit_001/output/target_independent_decoupled_wz_row_selection_law_audit_summary.json",
+    "phase307Materialized": true,
+    "sourceDefinitionCount": 125,
+    "selectionLawCount": 8
+  },
+  "responseImageContext": {
+    "phase379Path": "studies/phase379_response_image_carrier_axis_characterization_001/output/response_image_carrier_axis_characterization_summary.json",
+    "phase381Path": "studies/phase381_phase302_307_response_image_selector_compatibility_audit_001/output/phase302_307_response_image_selector_compatibility_audit_summary.json",
+    "phase382Path": "studies/phase382_response_image_observed_projection_requirement_audit_001/output/response_image_observed_projection_requirement_audit_summary.json",
+    "phase383Path": "studies/phase383_phase307_suppressed_axis_counterfactual_selector_audit_001/output/phase307_suppressed_axis_counterfactual_selector_audit_summary.json",
+    "suppressedGaugeAxis": 1,
+    "dominantGaugeAxes": [
+      0,
+      2
+    ],
+    "phase379ContextMaterialized": true,
+    "phase381382383BlockerMaterialized": true
+  },
+  "sourceDefinitionBasisEnergyAudit": {
+    "sourceDefinitionAudits": [
+      {
+        "definitionId": "charged-axis-rss-neutral-rss",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-3",
+          "candidate-6",
+          "candidate-10",
+          "candidate-11",
+          "candidate-0",
+          "candidate-4",
+          "candidate-7",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-2",
+          "candidate-5",
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.36461792291335043,
+          0.44501616745604355,
+          0.19036590963060596
+        ],
+        "zBasisEnergyFractions": [
+          0.2970972183816138,
+          0.11451769448105803,
+          0.5883850871373283
+        ],
+        "wSuppressedBasisEnergyFraction": 0.44501616745604355,
+        "wDominantPairBasisEnergyFraction": 0.5549838325439564,
+        "zSuppressedBasisEnergyFraction": 0.11451769448105803,
+        "zDominantPairBasisEnergyFraction": 0.885482305518942,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Root-sum-square over coherent axis-0 and axis-1 charged sums divided by sqrt(2), with neutral-axis root-sum-square."
+      },
+      {
+        "definitionId": "charged-ladder-all-axis-neutral-coherent-minus",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-3",
+          "candidate-6",
+          "candidate-10",
+          "candidate-11",
+          "candidate-0",
+          "candidate-4",
+          "candidate-7",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-2",
+          "candidate-5",
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.36461792291335043,
+          0.44501616745604355,
+          0.19036590963060596
+        ],
+        "zBasisEnergyFractions": [
+          0.2970972183816138,
+          0.11451769448105803,
+          0.5883850871373283
+        ],
+        "wSuppressedBasisEnergyFraction": 0.44501616745604355,
+        "wDominantPairBasisEnergyFraction": 0.5549838325439564,
+        "zSuppressedBasisEnergyFraction": 0.11451769448105803,
+        "zDominantPairBasisEnergyFraction": 0.885482305518942,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Coherent charged-current ladder T-=(axis0-i axis1)/sqrt(2) from all Phase27 charged axes, with coherent neutral-axis sum."
+      },
+      {
+        "definitionId": "charged-ladder-all-axis-neutral-coherent-plus",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-3",
+          "candidate-6",
+          "candidate-10",
+          "candidate-11",
+          "candidate-0",
+          "candidate-4",
+          "candidate-7",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-2",
+          "candidate-5",
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.36461792291335043,
+          0.44501616745604355,
+          0.19036590963060596
+        ],
+        "zBasisEnergyFractions": [
+          0.2970972183816138,
+          0.11451769448105803,
+          0.5883850871373283
+        ],
+        "wSuppressedBasisEnergyFraction": 0.44501616745604355,
+        "wDominantPairBasisEnergyFraction": 0.5549838325439564,
+        "zSuppressedBasisEnergyFraction": 0.11451769448105803,
+        "zDominantPairBasisEnergyFraction": 0.885482305518942,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Coherent charged-current ladder T\u002B=(axis0\u002Bi axis1)/sqrt(2) from all Phase27 charged axes, with coherent neutral-axis sum."
+      },
+      {
+        "definitionId": "charged-ladder-all-axis-neutral-rss-minus",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-3",
+          "candidate-6",
+          "candidate-10",
+          "candidate-11",
+          "candidate-0",
+          "candidate-4",
+          "candidate-7",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-2",
+          "candidate-5",
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.36461792291335043,
+          0.44501616745604355,
+          0.19036590963060596
+        ],
+        "zBasisEnergyFractions": [
+          0.2970972183816138,
+          0.11451769448105803,
+          0.5883850871373283
+        ],
+        "wSuppressedBasisEnergyFraction": 0.44501616745604355,
+        "wDominantPairBasisEnergyFraction": 0.5549838325439564,
+        "zSuppressedBasisEnergyFraction": 0.11451769448105803,
+        "zDominantPairBasisEnergyFraction": 0.885482305518942,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Coherent charged-current ladder T-=(axis0-i axis1)/sqrt(2) from all Phase27 charged axes, with neutral-axis root-sum-square."
+      },
+      {
+        "definitionId": "charged-ladder-all-axis-neutral-rss-plus",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-3",
+          "candidate-6",
+          "candidate-10",
+          "candidate-11",
+          "candidate-0",
+          "candidate-4",
+          "candidate-7",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-2",
+          "candidate-5",
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.36461792291335043,
+          0.44501616745604355,
+          0.19036590963060596
+        ],
+        "zBasisEnergyFractions": [
+          0.2970972183816138,
+          0.11451769448105803,
+          0.5883850871373283
+        ],
+        "wSuppressedBasisEnergyFraction": 0.44501616745604355,
+        "wDominantPairBasisEnergyFraction": 0.5549838325439564,
+        "zSuppressedBasisEnergyFraction": 0.11451769448105803,
+        "zDominantPairBasisEnergyFraction": 0.885482305518942,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Coherent charged-current ladder T\u002B=(axis0\u002Bi axis1)/sqrt(2) from all Phase27 charged axes, with neutral-axis root-sum-square."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-minus-candidate-0-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-0"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.33923171119934403,
+          0.34957331915218604,
+          0.31119496964846993
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.34957331915218604,
+        "wDominantPairBasisEnergyFraction": 0.650426680847814,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-minus-candidate-0-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-0"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.33923171119934403,
+          0.34957331915218604,
+          0.31119496964846993
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.34957331915218604,
+        "wDominantPairBasisEnergyFraction": 0.650426680847814,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-minus-candidate-0-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-0"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.33923171119934403,
+          0.34957331915218604,
+          0.31119496964846993
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.34957331915218604,
+        "wDominantPairBasisEnergyFraction": 0.650426680847814,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-minus-candidate-4-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.32939297119347977,
+          0.33627838840903185,
+          0.3343286403974884
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.33627838840903185,
+        "wDominantPairBasisEnergyFraction": 0.6637216115909681,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-minus-candidate-4-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.32939297119347977,
+          0.33627838840903185,
+          0.3343286403974884
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.33627838840903185,
+        "wDominantPairBasisEnergyFraction": 0.6637216115909681,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-minus-candidate-4-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.32939297119347977,
+          0.33627838840903185,
+          0.3343286403974884
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.33627838840903185,
+        "wDominantPairBasisEnergyFraction": 0.6637216115909681,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-minus-candidate-7-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.3532214056169487,
+          0.3392444081222977,
+          0.3075341862607536
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.3392444081222977,
+        "wDominantPairBasisEnergyFraction": 0.6607555918777023,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-minus-candidate-7-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.3532214056169487,
+          0.3392444081222977,
+          0.3075341862607536
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.3392444081222977,
+        "wDominantPairBasisEnergyFraction": 0.6607555918777023,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-minus-candidate-7-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.3532214056169487,
+          0.3392444081222977,
+          0.3075341862607536
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.3392444081222977,
+        "wDominantPairBasisEnergyFraction": 0.6607555918777023,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-minus-candidate-8-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.3322708829558594,
+          0.34141957301440307,
+          0.32630954402973744
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.34141957301440307,
+        "wDominantPairBasisEnergyFraction": 0.6585804269855968,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-minus-candidate-8-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.3322708829558594,
+          0.34141957301440307,
+          0.32630954402973744
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.34141957301440307,
+        "wDominantPairBasisEnergyFraction": 0.6585804269855968,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-minus-candidate-8-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.3322708829558594,
+          0.34141957301440307,
+          0.32630954402973744
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.34141957301440307,
+        "wDominantPairBasisEnergyFraction": 0.6585804269855968,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-plus-candidate-0-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-0"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.33923171119934403,
+          0.34957331915218604,
+          0.31119496964846993
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.34957331915218604,
+        "wDominantPairBasisEnergyFraction": 0.650426680847814,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-plus-candidate-0-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-0"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.33923171119934403,
+          0.34957331915218604,
+          0.31119496964846993
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.34957331915218604,
+        "wDominantPairBasisEnergyFraction": 0.650426680847814,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-plus-candidate-0-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-0"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.33923171119934403,
+          0.34957331915218604,
+          0.31119496964846993
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.34957331915218604,
+        "wDominantPairBasisEnergyFraction": 0.650426680847814,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-plus-candidate-4-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.32939297119347977,
+          0.33627838840903185,
+          0.3343286403974884
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.33627838840903185,
+        "wDominantPairBasisEnergyFraction": 0.6637216115909681,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-plus-candidate-4-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.32939297119347977,
+          0.33627838840903185,
+          0.3343286403974884
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.33627838840903185,
+        "wDominantPairBasisEnergyFraction": 0.6637216115909681,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-plus-candidate-4-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.32939297119347977,
+          0.33627838840903185,
+          0.3343286403974884
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.33627838840903185,
+        "wDominantPairBasisEnergyFraction": 0.6637216115909681,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-plus-candidate-7-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.3532214056169487,
+          0.3392444081222977,
+          0.3075341862607536
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.3392444081222977,
+        "wDominantPairBasisEnergyFraction": 0.6607555918777023,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-plus-candidate-7-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.3532214056169487,
+          0.3392444081222977,
+          0.3075341862607536
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.3392444081222977,
+        "wDominantPairBasisEnergyFraction": 0.6607555918777023,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-plus-candidate-7-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.3532214056169487,
+          0.3392444081222977,
+          0.3075341862607536
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.3392444081222977,
+        "wDominantPairBasisEnergyFraction": 0.6607555918777023,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-plus-candidate-8-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.3322708829558594,
+          0.34141957301440307,
+          0.32630954402973744
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.34141957301440307,
+        "wDominantPairBasisEnergyFraction": 0.6585804269855968,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-plus-candidate-8-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.3322708829558594,
+          0.34141957301440307,
+          0.32630954402973744
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.34141957301440307,
+        "wDominantPairBasisEnergyFraction": 0.6585804269855968,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-plus-candidate-8-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.3322708829558594,
+          0.34141957301440307,
+          0.32630954402973744
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.34141957301440307,
+        "wDominantPairBasisEnergyFraction": 0.6585804269855968,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-10-minus-candidate-0-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-10",
+          "candidate-0"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.32170429864868566,
+          0.48828478802272735,
+          0.19001091332858702
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.48828478802272735,
+        "wDominantPairBasisEnergyFraction": 0.5117152119772727,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-10-minus-candidate-0-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-10",
+          "candidate-0"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.32170429864868566,
+          0.48828478802272735,
+          0.19001091332858702
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.48828478802272735,
+        "wDominantPairBasisEnergyFraction": 0.5117152119772727,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-10-minus-candidate-0-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-10",
+          "candidate-0"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.32170429864868566,
+          0.48828478802272735,
+          0.19001091332858702
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.48828478802272735,
+        "wDominantPairBasisEnergyFraction": 0.5117152119772727,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-10-minus-candidate-4-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-10",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.3118655586428214,
+          0.47498985727957316,
+          0.21314458407760545
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.47498985727957316,
+        "wDominantPairBasisEnergyFraction": 0.5250101427204268,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-10-minus-candidate-4-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-10",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.3118655586428214,
+          0.47498985727957316,
+          0.21314458407760545
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.47498985727957316,
+        "wDominantPairBasisEnergyFraction": 0.5250101427204268,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-10-minus-candidate-4-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-10",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.3118655586428214,
+          0.47498985727957316,
+          0.21314458407760545
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.47498985727957316,
+        "wDominantPairBasisEnergyFraction": 0.5250101427204268,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-10-minus-candidate-7-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-10",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.33569399306629033,
+          0.47795587699283903,
+          0.1863501299408706
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.47795587699283903,
+        "wDominantPairBasisEnergyFraction": 0.522044123007161,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-10-minus-candidate-7-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-10",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.33569399306629033,
+          0.47795587699283903,
+          0.1863501299408706
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.47795587699283903,
+        "wDominantPairBasisEnergyFraction": 0.522044123007161,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-10-minus-candidate-7-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-10",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.33569399306629033,
+          0.47795587699283903,
+          0.1863501299408706
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.47795587699283903,
+        "wDominantPairBasisEnergyFraction": 0.522044123007161,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-10-minus-candidate-8-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-10",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.31474347040520106,
+          0.4801310418849444,
+          0.20512548770985453
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.4801310418849444,
+        "wDominantPairBasisEnergyFraction": 0.5198689581150556,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-10-minus-candidate-8-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-10",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.31474347040520106,
+          0.4801310418849444,
+          0.20512548770985453
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.4801310418849444,
+        "wDominantPairBasisEnergyFraction": 0.5198689581150556,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-10-minus-candidate-8-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-10",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.31474347040520106,
+          0.4801310418849444,
+          0.20512548770985453
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.4801310418849444,
+        "wDominantPairBasisEnergyFraction": 0.5198689581150556,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-10-plus-candidate-0-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-10",
+          "candidate-0"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.32170429864868566,
+          0.48828478802272735,
+          0.19001091332858702
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.48828478802272735,
+        "wDominantPairBasisEnergyFraction": 0.5117152119772727,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-10-plus-candidate-0-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-10",
+          "candidate-0"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.32170429864868566,
+          0.48828478802272735,
+          0.19001091332858702
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.48828478802272735,
+        "wDominantPairBasisEnergyFraction": 0.5117152119772727,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-10-plus-candidate-0-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-10",
+          "candidate-0"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.32170429864868566,
+          0.48828478802272735,
+          0.19001091332858702
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.48828478802272735,
+        "wDominantPairBasisEnergyFraction": 0.5117152119772727,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-10-plus-candidate-4-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-10",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.3118655586428214,
+          0.47498985727957316,
+          0.21314458407760545
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.47498985727957316,
+        "wDominantPairBasisEnergyFraction": 0.5250101427204268,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-10-plus-candidate-4-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-10",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.3118655586428214,
+          0.47498985727957316,
+          0.21314458407760545
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.47498985727957316,
+        "wDominantPairBasisEnergyFraction": 0.5250101427204268,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-10-plus-candidate-4-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-10",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.3118655586428214,
+          0.47498985727957316,
+          0.21314458407760545
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.47498985727957316,
+        "wDominantPairBasisEnergyFraction": 0.5250101427204268,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-10-plus-candidate-7-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-10",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.33569399306629033,
+          0.47795587699283903,
+          0.1863501299408706
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.47795587699283903,
+        "wDominantPairBasisEnergyFraction": 0.522044123007161,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-10-plus-candidate-7-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-10",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.33569399306629033,
+          0.47795587699283903,
+          0.1863501299408706
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.47795587699283903,
+        "wDominantPairBasisEnergyFraction": 0.522044123007161,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-10-plus-candidate-7-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-10",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.33569399306629033,
+          0.47795587699283903,
+          0.1863501299408706
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.47795587699283903,
+        "wDominantPairBasisEnergyFraction": 0.522044123007161,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-10-plus-candidate-8-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-10",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.31474347040520106,
+          0.4801310418849444,
+          0.20512548770985453
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.4801310418849444,
+        "wDominantPairBasisEnergyFraction": 0.5198689581150556,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-10-plus-candidate-8-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-10",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.31474347040520106,
+          0.4801310418849444,
+          0.20512548770985453
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.4801310418849444,
+        "wDominantPairBasisEnergyFraction": 0.5198689581150556,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-10-plus-candidate-8-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-10",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.31474347040520106,
+          0.4801310418849444,
+          0.20512548770985453
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.4801310418849444,
+        "wDominantPairBasisEnergyFraction": 0.5198689581150556,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-11-minus-candidate-0-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-11",
+          "candidate-0"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.34357485570519586,
+          0.5322833999254375,
+          0.12414174436936662
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.5322833999254375,
+        "wDominantPairBasisEnergyFraction": 0.4677166000745625,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-11-minus-candidate-0-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-11",
+          "candidate-0"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.34357485570519586,
+          0.5322833999254375,
+          0.12414174436936662
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.5322833999254375,
+        "wDominantPairBasisEnergyFraction": 0.4677166000745625,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-11-minus-candidate-0-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-11",
+          "candidate-0"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.34357485570519586,
+          0.5322833999254375,
+          0.12414174436936662
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.5322833999254375,
+        "wDominantPairBasisEnergyFraction": 0.4677166000745625,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-11-minus-candidate-4-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-11",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.3337361156993316,
+          0.5189884691822834,
+          0.14727541511838502
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.5189884691822834,
+        "wDominantPairBasisEnergyFraction": 0.48101153081771664,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-11-minus-candidate-4-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-11",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.3337361156993316,
+          0.5189884691822834,
+          0.14727541511838502
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.5189884691822834,
+        "wDominantPairBasisEnergyFraction": 0.48101153081771664,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-11-minus-candidate-4-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-11",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.3337361156993316,
+          0.5189884691822834,
+          0.14727541511838502
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.5189884691822834,
+        "wDominantPairBasisEnergyFraction": 0.48101153081771664,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-11-minus-candidate-7-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-11",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.35756455012280053,
+          0.5219544888955492,
+          0.1204809609816502
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.5219544888955492,
+        "wDominantPairBasisEnergyFraction": 0.4780455111044507,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-11-minus-candidate-7-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-11",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.35756455012280053,
+          0.5219544888955492,
+          0.1204809609816502
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.5219544888955492,
+        "wDominantPairBasisEnergyFraction": 0.4780455111044507,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-11-minus-candidate-7-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-11",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.35756455012280053,
+          0.5219544888955492,
+          0.1204809609816502
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.5219544888955492,
+        "wDominantPairBasisEnergyFraction": 0.4780455111044507,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-11-minus-candidate-8-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-11",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.3366140274617112,
+          0.5241296537876545,
+          0.13925631875063413
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.5241296537876545,
+        "wDominantPairBasisEnergyFraction": 0.47587034621234536,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-11-minus-candidate-8-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-11",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.3366140274617112,
+          0.5241296537876545,
+          0.13925631875063413
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.5241296537876545,
+        "wDominantPairBasisEnergyFraction": 0.47587034621234536,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-11-minus-candidate-8-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-11",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.3366140274617112,
+          0.5241296537876545,
+          0.13925631875063413
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.5241296537876545,
+        "wDominantPairBasisEnergyFraction": 0.47587034621234536,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-11-plus-candidate-0-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-11",
+          "candidate-0"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.34357485570519586,
+          0.5322833999254375,
+          0.12414174436936662
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.5322833999254375,
+        "wDominantPairBasisEnergyFraction": 0.4677166000745625,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-11-plus-candidate-0-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-11",
+          "candidate-0"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.34357485570519586,
+          0.5322833999254375,
+          0.12414174436936662
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.5322833999254375,
+        "wDominantPairBasisEnergyFraction": 0.4677166000745625,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-11-plus-candidate-0-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-11",
+          "candidate-0"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.34357485570519586,
+          0.5322833999254375,
+          0.12414174436936662
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.5322833999254375,
+        "wDominantPairBasisEnergyFraction": 0.4677166000745625,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-11-plus-candidate-4-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-11",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.3337361156993316,
+          0.5189884691822834,
+          0.14727541511838502
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.5189884691822834,
+        "wDominantPairBasisEnergyFraction": 0.48101153081771664,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-11-plus-candidate-4-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-11",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.3337361156993316,
+          0.5189884691822834,
+          0.14727541511838502
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.5189884691822834,
+        "wDominantPairBasisEnergyFraction": 0.48101153081771664,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-11-plus-candidate-4-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-11",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.3337361156993316,
+          0.5189884691822834,
+          0.14727541511838502
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.5189884691822834,
+        "wDominantPairBasisEnergyFraction": 0.48101153081771664,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-11-plus-candidate-7-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-11",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.35756455012280053,
+          0.5219544888955492,
+          0.1204809609816502
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.5219544888955492,
+        "wDominantPairBasisEnergyFraction": 0.4780455111044507,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-11-plus-candidate-7-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-11",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.35756455012280053,
+          0.5219544888955492,
+          0.1204809609816502
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.5219544888955492,
+        "wDominantPairBasisEnergyFraction": 0.4780455111044507,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-11-plus-candidate-7-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-11",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.35756455012280053,
+          0.5219544888955492,
+          0.1204809609816502
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.5219544888955492,
+        "wDominantPairBasisEnergyFraction": 0.4780455111044507,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-11-plus-candidate-8-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-11",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.3366140274617112,
+          0.5241296537876545,
+          0.13925631875063413
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.5241296537876545,
+        "wDominantPairBasisEnergyFraction": 0.47587034621234536,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-11-plus-candidate-8-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-11",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.3366140274617112,
+          0.5241296537876545,
+          0.13925631875063413
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.5241296537876545,
+        "wDominantPairBasisEnergyFraction": 0.47587034621234536,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-11-plus-candidate-8-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-11",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.3366140274617112,
+          0.5241296537876545,
+          0.13925631875063413
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.5241296537876545,
+        "wDominantPairBasisEnergyFraction": 0.47587034621234536,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-3-minus-candidate-0-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-3",
+          "candidate-0"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.364950444098321,
+          0.4988827392616848,
+          0.13616681663999425
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.4988827392616848,
+        "wDominantPairBasisEnergyFraction": 0.5011172607383152,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-3-minus-candidate-0-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-3",
+          "candidate-0"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.364950444098321,
+          0.4988827392616848,
+          0.13616681663999425
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.4988827392616848,
+        "wDominantPairBasisEnergyFraction": 0.5011172607383152,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-3-minus-candidate-0-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-3",
+          "candidate-0"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.364950444098321,
+          0.4988827392616848,
+          0.13616681663999425
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.4988827392616848,
+        "wDominantPairBasisEnergyFraction": 0.5011172607383152,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-3-minus-candidate-4-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-3",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.35511170409245674,
+          0.48558780851853056,
+          0.15930048738901265
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.48558780851853056,
+        "wDominantPairBasisEnergyFraction": 0.5144121914814694,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-3-minus-candidate-4-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-3",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.35511170409245674,
+          0.48558780851853056,
+          0.15930048738901265
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.48558780851853056,
+        "wDominantPairBasisEnergyFraction": 0.5144121914814694,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-3-minus-candidate-4-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-3",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.35511170409245674,
+          0.48558780851853056,
+          0.15930048738901265
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.48558780851853056,
+        "wDominantPairBasisEnergyFraction": 0.5144121914814694,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-3-minus-candidate-7-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-3",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.3789401385159257,
+          0.4885538282317965,
+          0.13250603325227783
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.4885538282317965,
+        "wDominantPairBasisEnergyFraction": 0.5114461717682035,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-3-minus-candidate-7-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-3",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.3789401385159257,
+          0.4885538282317965,
+          0.13250603325227783
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.4885538282317965,
+        "wDominantPairBasisEnergyFraction": 0.5114461717682035,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-3-minus-candidate-7-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-3",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.3789401385159257,
+          0.4885538282317965,
+          0.13250603325227783
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.4885538282317965,
+        "wDominantPairBasisEnergyFraction": 0.5114461717682035,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-3-minus-candidate-8-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-3",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.35798961585483635,
+          0.49072899312390184,
+          0.15128139102126176
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.49072899312390184,
+        "wDominantPairBasisEnergyFraction": 0.5092710068760982,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-3-minus-candidate-8-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-3",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.35798961585483635,
+          0.49072899312390184,
+          0.15128139102126176
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.49072899312390184,
+        "wDominantPairBasisEnergyFraction": 0.5092710068760982,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-3-minus-candidate-8-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-3",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.35798961585483635,
+          0.49072899312390184,
+          0.15128139102126176
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.49072899312390184,
+        "wDominantPairBasisEnergyFraction": 0.5092710068760982,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-3-plus-candidate-0-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-3",
+          "candidate-0"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.364950444098321,
+          0.4988827392616848,
+          0.13616681663999425
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.4988827392616848,
+        "wDominantPairBasisEnergyFraction": 0.5011172607383152,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-3-plus-candidate-0-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-3",
+          "candidate-0"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.364950444098321,
+          0.4988827392616848,
+          0.13616681663999425
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.4988827392616848,
+        "wDominantPairBasisEnergyFraction": 0.5011172607383152,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-3-plus-candidate-0-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-3",
+          "candidate-0"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.364950444098321,
+          0.4988827392616848,
+          0.13616681663999425
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.4988827392616848,
+        "wDominantPairBasisEnergyFraction": 0.5011172607383152,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-3-plus-candidate-4-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-3",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.35511170409245674,
+          0.48558780851853056,
+          0.15930048738901265
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.48558780851853056,
+        "wDominantPairBasisEnergyFraction": 0.5144121914814694,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-3-plus-candidate-4-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-3",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.35511170409245674,
+          0.48558780851853056,
+          0.15930048738901265
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.48558780851853056,
+        "wDominantPairBasisEnergyFraction": 0.5144121914814694,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-3-plus-candidate-4-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-3",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.35511170409245674,
+          0.48558780851853056,
+          0.15930048738901265
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.48558780851853056,
+        "wDominantPairBasisEnergyFraction": 0.5144121914814694,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-3-plus-candidate-7-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-3",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.3789401385159257,
+          0.4885538282317965,
+          0.13250603325227783
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.4885538282317965,
+        "wDominantPairBasisEnergyFraction": 0.5114461717682035,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-3-plus-candidate-7-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-3",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.3789401385159257,
+          0.4885538282317965,
+          0.13250603325227783
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.4885538282317965,
+        "wDominantPairBasisEnergyFraction": 0.5114461717682035,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-3-plus-candidate-7-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-3",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.3789401385159257,
+          0.4885538282317965,
+          0.13250603325227783
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.4885538282317965,
+        "wDominantPairBasisEnergyFraction": 0.5114461717682035,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-3-plus-candidate-8-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-3",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.35798961585483635,
+          0.49072899312390184,
+          0.15128139102126176
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.49072899312390184,
+        "wDominantPairBasisEnergyFraction": 0.5092710068760982,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-3-plus-candidate-8-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-3",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.35798961585483635,
+          0.49072899312390184,
+          0.15128139102126176
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.49072899312390184,
+        "wDominantPairBasisEnergyFraction": 0.5092710068760982,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-3-plus-candidate-8-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-3",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.35798961585483635,
+          0.49072899312390184,
+          0.15128139102126176
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.49072899312390184,
+        "wDominantPairBasisEnergyFraction": 0.5092710068760982,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-6-minus-candidate-0-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-6",
+          "candidate-0"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.3673841014910435,
+          0.49714585392170085,
+          0.1354700445872556
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.49714585392170085,
+        "wDominantPairBasisEnergyFraction": 0.5028541460782991,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-6-minus-candidate-0-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-6",
+          "candidate-0"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.3673841014910435,
+          0.49714585392170085,
+          0.1354700445872556
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.49714585392170085,
+        "wDominantPairBasisEnergyFraction": 0.5028541460782991,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-6-minus-candidate-0-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-6",
+          "candidate-0"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.3673841014910435,
+          0.49714585392170085,
+          0.1354700445872556
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.49714585392170085,
+        "wDominantPairBasisEnergyFraction": 0.5028541460782991,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-6-minus-candidate-4-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-6",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.3575453614851793,
+          0.48385092317854667,
+          0.15860371533627401
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.48385092317854667,
+        "wDominantPairBasisEnergyFraction": 0.5161490768214533,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-6-minus-candidate-4-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-6",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.3575453614851793,
+          0.48385092317854667,
+          0.15860371533627401
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.48385092317854667,
+        "wDominantPairBasisEnergyFraction": 0.5161490768214533,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-6-minus-candidate-4-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-6",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.3575453614851793,
+          0.48385092317854667,
+          0.15860371533627401
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.48385092317854667,
+        "wDominantPairBasisEnergyFraction": 0.5161490768214533,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-6-minus-candidate-7-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-6",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.3813737959086482,
+          0.48681694289181254,
+          0.13180926119953917
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.48681694289181254,
+        "wDominantPairBasisEnergyFraction": 0.5131830571081875,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-6-minus-candidate-7-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-6",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.3813737959086482,
+          0.48681694289181254,
+          0.13180926119953917
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.48681694289181254,
+        "wDominantPairBasisEnergyFraction": 0.5131830571081875,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-6-minus-candidate-7-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-6",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.3813737959086482,
+          0.48681694289181254,
+          0.13180926119953917
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.48681694289181254,
+        "wDominantPairBasisEnergyFraction": 0.5131830571081875,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-6-minus-candidate-8-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-6",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.36042327324755896,
+          0.4889921077839179,
+          0.1505846189685231
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.4889921077839179,
+        "wDominantPairBasisEnergyFraction": 0.5110078922160821,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-6-minus-candidate-8-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-6",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.36042327324755896,
+          0.4889921077839179,
+          0.1505846189685231
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.4889921077839179,
+        "wDominantPairBasisEnergyFraction": 0.5110078922160821,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-6-minus-candidate-8-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-6",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.36042327324755896,
+          0.4889921077839179,
+          0.1505846189685231
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.4889921077839179,
+        "wDominantPairBasisEnergyFraction": 0.5110078922160821,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-6-plus-candidate-0-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-6",
+          "candidate-0"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.3673841014910435,
+          0.49714585392170085,
+          0.1354700445872556
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.49714585392170085,
+        "wDominantPairBasisEnergyFraction": 0.5028541460782991,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-6-plus-candidate-0-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-6",
+          "candidate-0"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.3673841014910435,
+          0.49714585392170085,
+          0.1354700445872556
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.49714585392170085,
+        "wDominantPairBasisEnergyFraction": 0.5028541460782991,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-6-plus-candidate-0-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-6",
+          "candidate-0"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.3673841014910435,
+          0.49714585392170085,
+          0.1354700445872556
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.49714585392170085,
+        "wDominantPairBasisEnergyFraction": 0.5028541460782991,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-6-plus-candidate-4-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-6",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.3575453614851793,
+          0.48385092317854667,
+          0.15860371533627401
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.48385092317854667,
+        "wDominantPairBasisEnergyFraction": 0.5161490768214533,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-6-plus-candidate-4-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-6",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.3575453614851793,
+          0.48385092317854667,
+          0.15860371533627401
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.48385092317854667,
+        "wDominantPairBasisEnergyFraction": 0.5161490768214533,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-6-plus-candidate-4-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-6",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.3575453614851793,
+          0.48385092317854667,
+          0.15860371533627401
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.48385092317854667,
+        "wDominantPairBasisEnergyFraction": 0.5161490768214533,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-6-plus-candidate-7-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-6",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.3813737959086482,
+          0.48681694289181254,
+          0.13180926119953917
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.48681694289181254,
+        "wDominantPairBasisEnergyFraction": 0.5131830571081875,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-6-plus-candidate-7-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-6",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.3813737959086482,
+          0.48681694289181254,
+          0.13180926119953917
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.48681694289181254,
+        "wDominantPairBasisEnergyFraction": 0.5131830571081875,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-6-plus-candidate-7-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-6",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.3813737959086482,
+          0.48681694289181254,
+          0.13180926119953917
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.48681694289181254,
+        "wDominantPairBasisEnergyFraction": 0.5131830571081875,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-6-plus-candidate-8-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-6",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.36042327324755896,
+          0.4889921077839179,
+          0.1505846189685231
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.4889921077839179,
+        "wDominantPairBasisEnergyFraction": 0.5110078922160821,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-6-plus-candidate-8-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-6",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.36042327324755896,
+          0.4889921077839179,
+          0.1505846189685231
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.4889921077839179,
+        "wDominantPairBasisEnergyFraction": 0.5110078922160821,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-6-plus-candidate-8-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-6",
+          "candidate-8"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.36042327324755896,
+          0.4889921077839179,
+          0.1505846189685231
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.4889921077839179,
+        "wDominantPairBasisEnergyFraction": 0.5110078922160821,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      }
+    ],
+    "lowestSuppressedWDefinitions": [
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-minus-candidate-4-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.32939297119347977,
+          0.33627838840903185,
+          0.3343286403974884
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.33627838840903185,
+        "wDominantPairBasisEnergyFraction": 0.6637216115909681,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-minus-candidate-4-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.32939297119347977,
+          0.33627838840903185,
+          0.3343286403974884
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.33627838840903185,
+        "wDominantPairBasisEnergyFraction": 0.6637216115909681,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-minus-candidate-4-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.32939297119347977,
+          0.33627838840903185,
+          0.3343286403974884
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.33627838840903185,
+        "wDominantPairBasisEnergyFraction": 0.6637216115909681,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-plus-candidate-4-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.32939297119347977,
+          0.33627838840903185,
+          0.3343286403974884
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.33627838840903185,
+        "wDominantPairBasisEnergyFraction": 0.6637216115909681,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-plus-candidate-4-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.32939297119347977,
+          0.33627838840903185,
+          0.3343286403974884
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.33627838840903185,
+        "wDominantPairBasisEnergyFraction": 0.6637216115909681,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-plus-candidate-4-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-4"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.32939297119347977,
+          0.33627838840903185,
+          0.3343286403974884
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.33627838840903185,
+        "wDominantPairBasisEnergyFraction": 0.6637216115909681,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-minus-candidate-7-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.3532214056169487,
+          0.3392444081222977,
+          0.3075341862607536
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.3392444081222977,
+        "wDominantPairBasisEnergyFraction": 0.6607555918777023,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-minus-candidate-7-z-candidate-5",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-5"
+        ],
+        "wBasisEnergyFractions": [
+          0.3532214056169487,
+          0.3392444081222977,
+          0.3075341862607536
+        ],
+        "zBasisEnergyFractions": [
+          0.10712925321213888,
+          0.23084825885006593,
+          0.6620224879377952
+        ],
+        "wSuppressedBasisEnergyFraction": 0.3392444081222977,
+        "wDominantPairBasisEnergyFraction": 0.6607555918777023,
+        "zSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "zDominantPairBasisEnergyFraction": 0.769151741149934,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-minus-candidate-7-z-candidate-9",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-9"
+        ],
+        "wBasisEnergyFractions": [
+          0.3532214056169487,
+          0.3392444081222977,
+          0.3075341862607536
+        ],
+        "zBasisEnergyFractions": [
+          0.42527393937590885,
+          0.016036107773489076,
+          0.558689952850602
+        ],
+        "wSuppressedBasisEnergyFraction": 0.3392444081222977,
+        "wDominantPairBasisEnergyFraction": 0.6607555918777023,
+        "zSuppressedBasisEnergyFraction": 0.016036107773489076,
+        "zDominantPairBasisEnergyFraction": 0.9839638922265108,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T- candidate pair with one neutral-axis Z candidate."
+      },
+      {
+        "definitionId": "charged-ladder-pair-candidate-1-plus-candidate-7-z-candidate-2",
+        "wCandidateIds": [
+          "candidate-1",
+          "candidate-7"
+        ],
+        "zCandidateIds": [
+          "candidate-2"
+        ],
+        "wBasisEnergyFractions": [
+          0.3532214056169487,
+          0.3392444081222977,
+          0.3075341862607536
+        ],
+        "zBasisEnergyFractions": [
+          0.3588884625567935,
+          0.09666871681961907,
+          0.5444428206235875
+        ],
+        "wSuppressedBasisEnergyFraction": 0.3392444081222977,
+        "wDominantPairBasisEnergyFraction": 0.6607555918777023,
+        "zSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "zDominantPairBasisEnergyFraction": 0.903331283180381,
+        "wSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "wLowSuppressedBasisEnergyProxyPassed": false,
+        "description": "Single axis-0/axis-1 charged-current ladder T\u002B candidate pair with one neutral-axis Z candidate."
+      }
+    ],
+    "minWSuppressedBasisEnergyFraction": 0.33627838840903185,
+    "maxWDominantPairBasisEnergyFraction": 0.6637216115909681,
+    "wDefinitionsAtOrBelowPhase379SuppressedProjectorFractionCount": 0,
+    "wDefinitionsLowSuppressedBasisEnergyProxyCount": 0,
+    "noWDefinitionHasLowSuppressedBasisEnergyProxy": true
+  },
+  "selectionLawBasisEnergyAudit": {
+    "selectionLawAudits": [
+      {
+        "lawId": "p302-scaled-common-spread-min",
+        "selectedRawStableCommonPassed": false,
+        "selectedP302ScaledStableCommonPassed": false,
+        "selectedAssessmentId": "decoupled:w-boson:charged-ladder-pair-candidate-11-plus-candidate-8-z-candidate-2:9-\u003E0|z-boson:charged-ladder-pair-candidate-1-minus-candidate-0-z-candidate-5:10-\u003E3",
+        "selectedWDefinitionId": "charged-ladder-pair-candidate-11-plus-candidate-8-z-candidate-2",
+        "selectedZDefinitionId": "charged-ladder-pair-candidate-1-minus-candidate-0-z-candidate-5",
+        "selectedWSuppressedBasisEnergyFraction": 0.5241296537876545,
+        "selectedWDominantPairBasisEnergyFraction": 0.47587034621234536,
+        "selectedZSuppressedBasisEnergyFraction": 0.23084825885006593,
+        "selectedZDominantPairBasisEnergyFraction": 0.769151741149934,
+        "selectedWSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "selectedWLowSuppressedBasisEnergyProxyPassed": false
+      },
+      {
+        "lawId": "p302-scaled-max-min-magnitude",
+        "selectedRawStableCommonPassed": false,
+        "selectedP302ScaledStableCommonPassed": true,
+        "selectedAssessmentId": "decoupled:w-boson:charged-ladder-all-axis-neutral-coherent-plus:0-\u003E6|z-boson:charged-axis-rss-neutral-rss:4-\u003E6",
+        "selectedWDefinitionId": "charged-ladder-all-axis-neutral-coherent-plus",
+        "selectedZDefinitionId": "charged-axis-rss-neutral-rss",
+        "selectedWSuppressedBasisEnergyFraction": 0.44501616745604355,
+        "selectedWDominantPairBasisEnergyFraction": 0.5549838325439564,
+        "selectedZSuppressedBasisEnergyFraction": 0.11451769448105803,
+        "selectedZDominantPairBasisEnergyFraction": 0.885482305518942,
+        "selectedWSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "selectedWLowSuppressedBasisEnergyProxyPassed": false
+      },
+      {
+        "lawId": "p302-scaled-stability-then-common-spread",
+        "selectedRawStableCommonPassed": false,
+        "selectedP302ScaledStableCommonPassed": false,
+        "selectedAssessmentId": "decoupled:w-boson:charged-ladder-pair-candidate-11-minus-candidate-0-z-candidate-2:7-\u003E0|z-boson:charged-ladder-all-axis-neutral-coherent-minus:0-\u003E7",
+        "selectedWDefinitionId": "charged-ladder-pair-candidate-11-minus-candidate-0-z-candidate-2",
+        "selectedZDefinitionId": "charged-ladder-all-axis-neutral-coherent-minus",
+        "selectedWSuppressedBasisEnergyFraction": 0.5322833999254375,
+        "selectedWDominantPairBasisEnergyFraction": 0.4677166000745625,
+        "selectedZSuppressedBasisEnergyFraction": 0.11451769448105803,
+        "selectedZDominantPairBasisEnergyFraction": 0.885482305518942,
+        "selectedWSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "selectedWLowSuppressedBasisEnergyProxyPassed": false
+      },
+      {
+        "lawId": "same-transition-p302-scaled-common-spread-min",
+        "selectedRawStableCommonPassed": false,
+        "selectedP302ScaledStableCommonPassed": false,
+        "selectedAssessmentId": "decoupled:w-boson:charged-ladder-pair-candidate-11-minus-candidate-0-z-candidate-2:10-\u003E5|z-boson:charged-ladder-pair-candidate-1-minus-candidate-0-z-candidate-2:10-\u003E5",
+        "selectedWDefinitionId": "charged-ladder-pair-candidate-11-minus-candidate-0-z-candidate-2",
+        "selectedZDefinitionId": "charged-ladder-pair-candidate-1-minus-candidate-0-z-candidate-2",
+        "selectedWSuppressedBasisEnergyFraction": 0.5322833999254375,
+        "selectedWDominantPairBasisEnergyFraction": 0.4677166000745625,
+        "selectedZSuppressedBasisEnergyFraction": 0.09666871681961907,
+        "selectedZDominantPairBasisEnergyFraction": 0.903331283180381,
+        "selectedWSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "selectedWLowSuppressedBasisEnergyProxyPassed": false
+      },
+      {
+        "lawId": "same-transition-source-raw-common-spread-min",
+        "selectedRawStableCommonPassed": false,
+        "selectedP302ScaledStableCommonPassed": false,
+        "selectedAssessmentId": "decoupled:w-boson:charged-ladder-pair-candidate-11-minus-candidate-7-z-candidate-2:2-\u003E5|z-boson:charged-ladder-all-axis-neutral-coherent-minus:2-\u003E5",
+        "selectedWDefinitionId": "charged-ladder-pair-candidate-11-minus-candidate-7-z-candidate-2",
+        "selectedZDefinitionId": "charged-ladder-all-axis-neutral-coherent-minus",
+        "selectedWSuppressedBasisEnergyFraction": 0.5219544888955492,
+        "selectedWDominantPairBasisEnergyFraction": 0.4780455111044507,
+        "selectedZSuppressedBasisEnergyFraction": 0.11451769448105803,
+        "selectedZDominantPairBasisEnergyFraction": 0.885482305518942,
+        "selectedWSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "selectedWLowSuppressedBasisEnergyProxyPassed": false
+      },
+      {
+        "lawId": "source-max-min-raw-magnitude",
+        "selectedRawStableCommonPassed": false,
+        "selectedP302ScaledStableCommonPassed": false,
+        "selectedAssessmentId": "decoupled:w-boson:charged-ladder-all-axis-neutral-coherent-plus:1-\u003E9|z-boson:charged-axis-rss-neutral-rss:7-\u003E5",
+        "selectedWDefinitionId": "charged-ladder-all-axis-neutral-coherent-plus",
+        "selectedZDefinitionId": "charged-axis-rss-neutral-rss",
+        "selectedWSuppressedBasisEnergyFraction": 0.44501616745604355,
+        "selectedWDominantPairBasisEnergyFraction": 0.5549838325439564,
+        "selectedZSuppressedBasisEnergyFraction": 0.11451769448105803,
+        "selectedZDominantPairBasisEnergyFraction": 0.885482305518942,
+        "selectedWSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "selectedWLowSuppressedBasisEnergyProxyPassed": false
+      },
+      {
+        "lawId": "source-raw-common-spread-min",
+        "selectedRawStableCommonPassed": false,
+        "selectedP302ScaledStableCommonPassed": false,
+        "selectedAssessmentId": "decoupled:w-boson:charged-ladder-pair-candidate-11-plus-candidate-8-z-candidate-2:11-\u003E0|z-boson:charged-ladder-all-axis-neutral-coherent-minus:0-\u003E7",
+        "selectedWDefinitionId": "charged-ladder-pair-candidate-11-plus-candidate-8-z-candidate-2",
+        "selectedZDefinitionId": "charged-ladder-all-axis-neutral-coherent-minus",
+        "selectedWSuppressedBasisEnergyFraction": 0.5241296537876545,
+        "selectedWDominantPairBasisEnergyFraction": 0.47587034621234536,
+        "selectedZSuppressedBasisEnergyFraction": 0.11451769448105803,
+        "selectedZDominantPairBasisEnergyFraction": 0.885482305518942,
+        "selectedWSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "selectedWLowSuppressedBasisEnergyProxyPassed": false
+      },
+      {
+        "lawId": "source-stability-then-raw-common-spread",
+        "selectedRawStableCommonPassed": false,
+        "selectedP302ScaledStableCommonPassed": false,
+        "selectedAssessmentId": "decoupled:w-boson:charged-ladder-pair-candidate-11-minus-candidate-0-z-candidate-2:7-\u003E0|z-boson:charged-ladder-all-axis-neutral-coherent-minus:2-\u003E5",
+        "selectedWDefinitionId": "charged-ladder-pair-candidate-11-minus-candidate-0-z-candidate-2",
+        "selectedZDefinitionId": "charged-ladder-all-axis-neutral-coherent-minus",
+        "selectedWSuppressedBasisEnergyFraction": 0.5322833999254375,
+        "selectedWDominantPairBasisEnergyFraction": 0.4677166000745625,
+        "selectedZSuppressedBasisEnergyFraction": 0.11451769448105803,
+        "selectedZDominantPairBasisEnergyFraction": 0.885482305518942,
+        "selectedWSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+        "selectedWLowSuppressedBasisEnergyProxyPassed": false
+      }
+    ],
+    "selectedP302ScaledStableCommonSelection": {
+      "lawId": "p302-scaled-max-min-magnitude",
+      "selectedRawStableCommonPassed": false,
+      "selectedP302ScaledStableCommonPassed": true,
+      "selectedAssessmentId": "decoupled:w-boson:charged-ladder-all-axis-neutral-coherent-plus:0-\u003E6|z-boson:charged-axis-rss-neutral-rss:4-\u003E6",
+      "selectedWDefinitionId": "charged-ladder-all-axis-neutral-coherent-plus",
+      "selectedZDefinitionId": "charged-axis-rss-neutral-rss",
+      "selectedWSuppressedBasisEnergyFraction": 0.44501616745604355,
+      "selectedWDominantPairBasisEnergyFraction": 0.5549838325439564,
+      "selectedZSuppressedBasisEnergyFraction": 0.11451769448105803,
+      "selectedZDominantPairBasisEnergyFraction": 0.885482305518942,
+      "selectedWSuppressedBasisEnergyAtOrBelowPhase379ProjectorFraction": false,
+      "selectedWLowSuppressedBasisEnergyProxyPassed": false
+    },
+    "selectorsAtOrBelowPhase379SuppressedProjectorFractionCount": 0,
+    "selectorsLowSuppressedBasisEnergyProxyCount": 0,
+    "noPredeclaredSelectorHasLowSuppressedBasisEnergyProxy": true,
+    "selectedP302ScaledStableCommonStillBasisEnergyConflicted": true
+  },
+  "sourceContractApplicationAllowed": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "blockedContractFieldCount": 15,
+  "phase213WzMissingFieldCount": 15,
+  "phase201FieldsDefensiblyFilled": [],
+  "checks": [
+    {
+      "checkId": "phase27-basis-energy-and-phase307-selector-space-materialized",
+      "passed": true,
+      "details": "candidateFeatureCount=12; sourceDefinitionCount=125; selectionLawCount=8; phase307Materialized=True"
+    },
+    {
+      "checkId": "phase379-381-382-383-response-image-blocker-preserved",
+      "passed": true,
+      "details": "phase379Context=True; suppressedAxis=1; dominantAxes=0,2; phase381382383Blocker=True"
+    },
+    {
+      "checkId": "no-phase307-w-definition-has-low-suppressed-basis-energy-proxy",
+      "passed": true,
+      "details": "minWSuppressedBasisEnergyFraction=0.33627838840903185; lowThreshold=0.1; phase379MaxSuppressedProjectorFraction=0.0016621111895614045; wDefinitionsLowSuppressedBasisEnergyProxyCount=0; wDefinitionsAtOrBelowPhase379SuppressedProjectorFractionCount=0"
+    },
+    {
+      "checkId": "no-phase307-predeclared-selector-has-low-suppressed-basis-energy-proxy",
+      "passed": true,
+      "details": "selectorsLowSuppressedBasisEnergyProxyCount=0; selectorsAtOrBelowPhase379SuppressedProjectorFractionCount=0; selectedP302ScaledStableCommonWDefinition=charged-ladder-all-axis-neutral-coherent-plus; selectedP302ScaledStableCommonWSuppressedBasisEnergyFraction=0.44501616745604355"
+    },
+    {
+      "checkId": "basis-energy-proxy-does-not-supply-observed-projection-or-contract-fill",
+      "passed": true,
+      "details": "sourceContractApplicationAllowed=False; canFillPhase201WzContract=False; canFillPhase256ObservedFieldExtractionContract=False; acceptedContractFieldCount=0; blockedContractFieldCount=15; phase213WzMissingFieldCount=15"
+    }
+  ],
+  "sourceEvidence": {
+    "phase27Path": "studies/phase27_charge_sector_convention_001/identity_features_with_charge_sectors.json",
+    "phase213Path": "studies/phase213_boson_source_lineage_blocker_matrix_001/output/boson_source_lineage_blocker_matrix_summary.json",
+    "phase307Path": "studies/phase307_target_independent_decoupled_wz_row_selection_law_audit_001/output/target_independent_decoupled_wz_row_selection_law_audit.json",
+    "phase307SummaryPath": "studies/phase307_target_independent_decoupled_wz_row_selection_law_audit_001/output/target_independent_decoupled_wz_row_selection_law_audit_summary.json",
+    "phase379Path": "studies/phase379_response_image_carrier_axis_characterization_001/output/response_image_carrier_axis_characterization_summary.json",
+    "phase381Path": "studies/phase381_phase302_307_response_image_selector_compatibility_audit_001/output/phase302_307_response_image_selector_compatibility_audit_summary.json",
+    "phase382Path": "studies/phase382_response_image_observed_projection_requirement_audit_001/output/response_image_observed_projection_requirement_audit_summary.json",
+    "phase383Path": "studies/phase383_phase307_suppressed_axis_counterfactual_selector_audit_001/output/phase307_suppressed_axis_counterfactual_selector_audit_summary.json"
+  },
+  "nextRequiredArtifact": [
+    "A GU-native observed electroweak projection map with source-lineage eligibility.",
+    "A theorem deriving a W source-definition family compatible with the Phase379 response image.",
+    "A theorem explaining why the Phase307 charged-ladder W row physically requires substantial suppressed-axis content.",
+    "Separate W and Z Phase201 source rows with source-lineage ids, raw/common/target gates, stability sidecars, derivation ids, and GeV normalization."
+  ],
+  "decision": "Phase27 basis-energy metadata does not provide a finer suppressed-axis escape for Phase307. Every current W source definition has suppressed-axis basis energy above 0.1; the minimum is 0.33627838840903185, and the P302-scaled stable common selector has 0.44501616745604355. This proxy is not an observed projection map or a source-row theorem, so it cannot fill Phase201."
+}

@@ -153,6 +153,7 @@ const paths = {
   phase381: "studies/phase381_phase302_307_response_image_selector_compatibility_audit_001/output/phase302_307_response_image_selector_compatibility_audit_summary.json",
   phase382: "studies/phase382_response_image_observed_projection_requirement_audit_001/output/response_image_observed_projection_requirement_audit_summary.json",
   phase383: "studies/phase383_phase307_suppressed_axis_counterfactual_selector_audit_001/output/phase307_suppressed_axis_counterfactual_selector_audit_summary.json",
+  phase384: "studies/phase384_phase307_basis_energy_response_image_proxy_audit_001/output/phase307_basis_energy_response_image_proxy_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -377,6 +378,7 @@ const phase380 = requireFile(paths.phase380);
 const phase381 = requireFile(paths.phase381);
 const phase382 = requireFile(paths.phase382);
 const phase383 = requireFile(paths.phase383);
+const phase384 = requireFile(paths.phase384);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -4402,6 +4404,30 @@ if (sourceLineageMissing) {
   assert(phase383.phase201TemplateMutated === false && phase383.fieldsAppliedToPhase201TemplateCount === 0, "Phase383 must not mutate the Phase201 template.");
   assert(phase383.acceptedContractFieldCount === 0 && phase383.blockedContractFieldCount === missingWzFields && phase383.phase213WzMissingFieldCount === missingWzFields, "Phase383 must preserve zero accepted W/Z contract fields and Phase213 missing counts.");
   assert(Array.isArray(phase383.phase201FieldsDefensiblyFilled) && phase383.phase201FieldsDefensiblyFilled.length === 0, "Phase383 must preserve an empty defensible Phase201 fill set.");
+  assert(phase384.phase307BasisEnergyResponseImageProxyAuditPassed === true, "Phase384 Phase307 basis-energy response-image proxy audit must pass as a non-promotional boundary audit.");
+  assert(phase384.targetBlindConstruction === true && phase384.physicalTargetsConsultedForConstruction === false, "Phase384 construction must remain target-blind.");
+  assert(typeof phase384.targetBlindConstructionHash === "string" && phase384.targetBlindConstructionHash.length === 64, "Phase384 must persist a target-blind construction hash.");
+  assert(phase384.applicationSubjectKind === "phase27-basis-energy-proxy-for-phase307-selector-space-under-phase379-response-image-sidecar", "Phase384 must classify its subject as a Phase27 basis-energy proxy, not observed projection.");
+  assert(typeof phase384.proxyBoundary === "string" && phase384.proxyBoundary.includes("not observed electroweak projection"), "Phase384 must persist its proxy boundary.");
+  assert(phase384.phase27BasisEnergyMaterialized === true && phase384.phase307Materialized === true, "Phase384 must materialize Phase27 basis-energy metadata and the Phase307 selector space.");
+  assert(phase384.phase379ContextMaterialized === true && phase384.phase381382383BlockerMaterialized === true, "Phase384 must inherit the Phase379/381/382/383 blocker context.");
+  assert(phase384.suppressedGaugeAxis === 1 && Array.isArray(phase384.phase379DominantGaugeAxes) && phase384.phase379DominantGaugeAxes.join(",") === "0,2", "Phase384 must preserve Phase379 dominant/suppressed axes.");
+  assert(phase384.sourceDefinitionCount === 125 && phase384.selectionLawCount === 8, "Phase384 must audit all current Phase307 source definitions and selection laws.");
+  assert(Number.isFinite(phase384.phase379MaxSuppressedProjectorFraction) && phase384.phase379MaxSuppressedProjectorFraction > 0.001 && phase384.phase379MaxSuppressedProjectorFraction < 0.002, "Phase384 must preserve the small Phase379 suppressed-projector fraction.");
+  assert(phase384.conventionalLowSuppressedBasisEnergyThreshold === 0.1, "Phase384 must persist its low-suppressed-axis basis-energy threshold.");
+  assert(Number.isFinite(phase384.minWSuppressedBasisEnergyFraction) && phase384.minWSuppressedBasisEnergyFraction > 0.33 && phase384.minWSuppressedBasisEnergyFraction < 0.34, "Phase384 must show every current Phase307 W definition has substantial suppressed-axis basis energy.");
+  assert(phase384.wDefinitionsAtOrBelowPhase379SuppressedProjectorFractionCount === 0 && phase384.wDefinitionsLowSuppressedBasisEnergyProxyCount === 0, "Phase384 W-definition counts must show no low-suppressed-axis proxy escape.");
+  assert(phase384.noWDefinitionHasLowSuppressedBasisEnergyProxy === true, "Phase384 must report no W definition with low suppressed-axis basis-energy proxy.");
+  assert(phase384.selectorsAtOrBelowPhase379SuppressedProjectorFractionCount === 0 && phase384.selectorsLowSuppressedBasisEnergyProxyCount === 0, "Phase384 selector counts must show no low-suppressed-axis proxy escape.");
+  assert(phase384.noPredeclaredSelectorHasLowSuppressedBasisEnergyProxy === true, "Phase384 must report no predeclared selector with low suppressed-axis basis-energy proxy.");
+  assert(phase384.selectedP302ScaledStableCommonSelectionLawId === "p302-scaled-max-min-magnitude" && phase384.selectedP302ScaledStableCommonWDefinitionId === "charged-ladder-all-axis-neutral-coherent-plus", "Phase384 must bind to the current Phase307 P302-scaled stable common selector.");
+  assert(Number.isFinite(phase384.selectedP302ScaledStableCommonWSuppressedBasisEnergyFraction) && phase384.selectedP302ScaledStableCommonWSuppressedBasisEnergyFraction > 0.44 && phase384.selectedP302ScaledStableCommonWSuppressedBasisEnergyFraction < 0.45, "Phase384 must preserve the selected P302-scaled W suppressed-axis basis-energy conflict.");
+  assert(phase384.selectedP302ScaledStableCommonStillBasisEnergyConflicted === true, "Phase384 must keep the selected P302-scaled common selector basis-energy conflicted.");
+  assert(phase384.sourceContractApplicationAllowed === false && phase384.canFillPhase201WzContract === false && phase384.canFillPhase201HiggsContract === false && phase384.canFillPhase256ObservedFieldExtractionContract === false, "Phase384 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase384.routePromotesWzMasses === false && phase384.routePromotesHiggsMass === false && phase384.routeCompletesBosonPredictions === false, "Phase384 cannot promote boson predictions.");
+  assert(phase384.phase201TemplateMutated === false && phase384.fieldsAppliedToPhase201TemplateCount === 0, "Phase384 must not mutate the Phase201 template.");
+  assert(phase384.acceptedContractFieldCount === 0 && phase384.blockedContractFieldCount === missingWzFields && phase384.phase213WzMissingFieldCount === missingWzFields, "Phase384 must preserve zero accepted W/Z contract fields and Phase213 missing counts.");
+  assert(Array.isArray(phase384.phase201FieldsDefensiblyFilled) && phase384.phase201FieldsDefensiblyFilled.length === 0, "Phase384 must preserve an empty defensible Phase201 fill set.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

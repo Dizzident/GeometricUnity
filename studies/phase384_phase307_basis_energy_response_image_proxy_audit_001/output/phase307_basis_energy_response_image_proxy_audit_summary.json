@@ -1,0 +1,77 @@
+{
+  "phaseId": "phase384-phase307-basis-energy-response-image-proxy-audit",
+  "terminalStatus": "phase307-basis-energy-response-image-proxy-audit-no-suppressed-axis-escape",
+  "phase307BasisEnergyResponseImageProxyAuditPassed": true,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "77da141091c1f673c094c44e88f468f0d0c10f95025c3b32d46ba9195816b199",
+  "applicationSubjectKind": "phase27-basis-energy-proxy-for-phase307-selector-space-under-phase379-response-image-sidecar",
+  "proxyBoundary": "Phase27 basis-energy fractions are target-blind internal SU(2) metadata, not observed electroweak projection rows and not a physical response-image projector on W/Z fields.",
+  "phase27BasisEnergyMaterialized": true,
+  "phase307Materialized": true,
+  "phase379ContextMaterialized": true,
+  "phase381382383BlockerMaterialized": true,
+  "suppressedGaugeAxis": 1,
+  "phase379DominantGaugeAxes": [
+    0,
+    2
+  ],
+  "phase379MaxSuppressedProjectorFraction": 0.0016621111895614045,
+  "conventionalLowSuppressedBasisEnergyThreshold": 0.1,
+  "sourceDefinitionCount": 125,
+  "selectionLawCount": 8,
+  "minWSuppressedBasisEnergyFraction": 0.33627838840903185,
+  "maxWDominantPairBasisEnergyFraction": 0.6637216115909681,
+  "wDefinitionsAtOrBelowPhase379SuppressedProjectorFractionCount": 0,
+  "wDefinitionsLowSuppressedBasisEnergyProxyCount": 0,
+  "noWDefinitionHasLowSuppressedBasisEnergyProxy": true,
+  "selectorsAtOrBelowPhase379SuppressedProjectorFractionCount": 0,
+  "selectorsLowSuppressedBasisEnergyProxyCount": 0,
+  "noPredeclaredSelectorHasLowSuppressedBasisEnergyProxy": true,
+  "selectedP302ScaledStableCommonSelectionLawId": "p302-scaled-max-min-magnitude",
+  "selectedP302ScaledStableCommonWDefinitionId": "charged-ladder-all-axis-neutral-coherent-plus",
+  "selectedP302ScaledStableCommonWSuppressedBasisEnergyFraction": 0.44501616745604355,
+  "selectedP302ScaledStableCommonWDominantPairBasisEnergyFraction": 0.5549838325439564,
+  "selectedP302ScaledStableCommonStillBasisEnergyConflicted": true,
+  "sourceContractApplicationAllowed": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "blockedContractFieldCount": 15,
+  "phase213WzMissingFieldCount": 15,
+  "phase201FieldsDefensiblyFilled": [],
+  "checks": [
+    {
+      "checkId": "phase27-basis-energy-and-phase307-selector-space-materialized",
+      "passed": true,
+      "details": "candidateFeatureCount=12; sourceDefinitionCount=125; selectionLawCount=8; phase307Materialized=True"
+    },
+    {
+      "checkId": "phase379-381-382-383-response-image-blocker-preserved",
+      "passed": true,
+      "details": "phase379Context=True; suppressedAxis=1; dominantAxes=0,2; phase381382383Blocker=True"
+    },
+    {
+      "checkId": "no-phase307-w-definition-has-low-suppressed-basis-energy-proxy",
+      "passed": true,
+      "details": "minWSuppressedBasisEnergyFraction=0.33627838840903185; lowThreshold=0.1; phase379MaxSuppressedProjectorFraction=0.0016621111895614045; wDefinitionsLowSuppressedBasisEnergyProxyCount=0; wDefinitionsAtOrBelowPhase379SuppressedProjectorFractionCount=0"
+    },
+    {
+      "checkId": "no-phase307-predeclared-selector-has-low-suppressed-basis-energy-proxy",
+      "passed": true,
+      "details": "selectorsLowSuppressedBasisEnergyProxyCount=0; selectorsAtOrBelowPhase379SuppressedProjectorFractionCount=0; selectedP302ScaledStableCommonWDefinition=charged-ladder-all-axis-neutral-coherent-plus; selectedP302ScaledStableCommonWSuppressedBasisEnergyFraction=0.44501616745604355"
+    },
+    {
+      "checkId": "basis-energy-proxy-does-not-supply-observed-projection-or-contract-fill",
+      "passed": true,
+      "details": "sourceContractApplicationAllowed=False; canFillPhase201WzContract=False; canFillPhase256ObservedFieldExtractionContract=False; acceptedContractFieldCount=0; blockedContractFieldCount=15; phase213WzMissingFieldCount=15"
+    }
+  ],
+  "decision": "Phase27 basis-energy metadata does not provide a finer suppressed-axis escape for Phase307. Every current W source definition has suppressed-axis basis energy above 0.1; the minimum is 0.33627838840903185, and the P302-scaled stable common selector has 0.44501616745604355. This proxy is not an observed projection map or a source-row theorem, so it cannot fill Phase201."
+}

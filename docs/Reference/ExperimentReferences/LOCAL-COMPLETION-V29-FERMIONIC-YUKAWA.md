@@ -92,6 +92,11 @@ outside the first executable numerical branch.
   the Phase379-suppressed axis. It finds that all `125` current Phase307 W
   source definitions use charged axes `0,1`, so no current predeclared selector
   avoids the suppressed axis `1`.
+- Added Phase384 to test whether Phase27 per-candidate basis-energy fractions
+  give a finer target-independent proxy that escapes the Phase379-suppressed
+  axis conflict. The proxy finds no escape: every current Phase307 W definition
+  has suppressed-axis basis energy above `0.10`, with minimum
+  `0.33627838840903185`.
 
 ## Prediction Relevance
 
@@ -112,7 +117,9 @@ diagnostic suppresses. Phase382 records that no current observed-projection
 artifact separates the diagnostic carrier axes from physical photon/W/Z axes.
 Phase383 records that the current Phase307 selector space itself has no
 alternate predeclared selector or W source definition that avoids the suppressed
-axis.
+axis. Phase384 records that the Phase27 basis-energy metadata does not supply a
+finer proxy escape; the selected P302-scaled common W definition still has
+suppressed-axis basis energy `0.44501616745604355`.
 
 ## Limitation
 

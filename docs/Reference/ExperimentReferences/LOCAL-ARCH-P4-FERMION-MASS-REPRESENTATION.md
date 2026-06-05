@@ -76,6 +76,9 @@ of the physical fermionic branch of Geometric Unity.
 - Used in Phase383 to exhaust the current Phase307 predeclared selector space
   under the Phase379 suppressed-axis counterfactual. The audit finds no current
   W source definition or predeclared selector that avoids suppressed axis `1`.
+- Used in Phase384 to test whether Phase27 basis-energy fractions provide a
+  finer proxy than the Phase307 charged-axis labels. They do not: all current
+  W definitions remain substantially supported on suppressed axis `1`.
 
 ## Prediction Relevance
 
@@ -104,9 +107,12 @@ shows that the current observed-field artifacts do not provide a
 namespace-separation theorem between carrier axes and physical W/Z axes.
 Phase383 shows that the existing Phase307 selector space cannot repair that
 conflict internally because every current W definition uses the suppressed
-charged axis. None establishes that the weights, operator branch, carrier axes,
-or image projector are physically canonical. No physical boson mass can be
-promoted from this convention alone.
+charged axis. Phase384 shows that Phase27 basis-energy metadata does not repair
+the conflict either: the minimum W suppressed-axis basis-energy fraction is
+`0.33627838840903185`, and the selected P302-scaled common W definition has
+`0.44501616745604355`. None establishes that the weights, operator branch,
+carrier axes, basis-energy proxy, or image projector are physically canonical.
+No physical boson mass can be promoted from this convention alone.
 
 ## Follow-Up
 
