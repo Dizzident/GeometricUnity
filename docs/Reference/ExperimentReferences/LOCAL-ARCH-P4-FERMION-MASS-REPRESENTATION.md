@@ -73,6 +73,9 @@ of the physical fermionic branch of Geometric Unity.
 - Used in Phase382 to test whether existing observed-field artifacts can
   separate Phase379 carrier axes from physical photon/W/Z axes. The audit finds
   no namespace-separation map and does not rehabilitate the selected W row.
+- Used in Phase383 to exhaust the current Phase307 predeclared selector space
+  under the Phase379 suppressed-axis counterfactual. The audit finds no current
+  W source definition or predeclared selector that avoids suppressed axis `1`.
 
 ## Prediction Relevance
 
@@ -98,10 +101,12 @@ carrier image, Phase380 rejects a direct W/Z contract application, and Phase381
 shows the strongest Phase302/307 selected near-pass is not sidecar-compatible
 with that image because its W row uses the suppressed axis. Phase382 further
 shows that the current observed-field artifacts do not provide a
-namespace-separation theorem between carrier axes and physical W/Z axes. None
-establishes that the weights, operator branch, carrier axes, or image projector
-are physically canonical. No physical boson mass can be promoted from this
-convention alone.
+namespace-separation theorem between carrier axes and physical W/Z axes.
+Phase383 shows that the existing Phase307 selector space cannot repair that
+conflict internally because every current W definition uses the suppressed
+charged axis. None establishes that the weights, operator branch, carrier axes,
+or image projector are physically canonical. No physical boson mass can be
+promoted from this convention alone.
 
 ## Follow-Up
 

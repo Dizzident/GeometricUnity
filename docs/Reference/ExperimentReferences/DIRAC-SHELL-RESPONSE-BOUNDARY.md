@@ -44,6 +44,9 @@ identities.
 - Used in Phase382 to require an observed electroweak projection map before
   reinterpreting Phase379 carrier axes as separate from physical photon/W/Z
   axes. No such map is present in the current artifact set.
+- Used in Phase383 to keep the Phase307 suppressed-axis counterfactual within
+  the existing predeclared selector space. The audit does not invent a new W
+  source law and does not promote a physical W/Z row.
 - Used to keep the Phase377 response metric distinct from a physical
   fermion-determinant effective-action Hessian.
 - Used to record that the Phase376 absolute-value spectral shell is not an
@@ -51,7 +54,7 @@ identities.
 
 ## Prediction Relevance
 
-Phase377, Phase378, Phase379, Phase380, Phase381, and Phase382 can test whether
+Phase377, Phase378, Phase379, Phase380, Phase381, Phase382, and Phase383 can test whether
 connection directions induce a stable, nonzero discrete shell response and can
 characterize its carrier image. Phase379 finds a strong two-axis carrier
 diagnostic, and Phase380 confirms that this diagnostic still does not provide
@@ -60,7 +63,8 @@ extraction, or GeV normalization. Phase381 further shows that the Phase307
 selected near-pass W row uses the Phase379-suppressed axis, so the diagnostic
 does not support the selected charged-ladder route. Phase382 shows that current
 observed-field artifacts cannot separate that carrier-axis diagnostic from
-physical W/Z axes.
+physical W/Z axes. Phase383 shows that the current Phase307 predeclared selector
+space has no alternate W source definition that avoids the suppressed axis.
 
 ## Limitation
 
@@ -70,7 +74,8 @@ is still not a GU-native physical mass operator. Phase379 characterizes the
 carrier image, not a physical observed-field projection. Phase380 is a
 non-mutating contract audit, not a prediction. Phase381 is a selector
 compatibility audit, not a prediction. Phase382 is an observed-projection
-requirement audit, not a prediction.
+requirement audit, not a prediction. Phase383 is a counterfactual selector
+space audit, not a prediction.
 
 ## Follow-Up
 

@@ -148,6 +148,7 @@ const string Phase379Path = "studies/phase379_response_image_carrier_axis_charac
 const string Phase380Path = "studies/phase380_response_image_wz_contract_application_audit_001/output/response_image_wz_contract_application_audit_summary.json";
 const string Phase381Path = "studies/phase381_phase302_307_response_image_selector_compatibility_audit_001/output/phase302_307_response_image_selector_compatibility_audit_summary.json";
 const string Phase382Path = "studies/phase382_response_image_observed_projection_requirement_audit_001/output/response_image_observed_projection_requirement_audit_summary.json";
+const string Phase383Path = "studies/phase383_phase307_suppressed_axis_counterfactual_selector_audit_001/output/phase307_suppressed_axis_counterfactual_selector_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -329,6 +330,7 @@ using var phase379 = File.Exists(Phase379Path) ? JsonDocument.Parse(File.ReadAll
 using var phase380 = File.Exists(Phase380Path) ? JsonDocument.Parse(File.ReadAllText(Phase380Path)) : null;
 using var phase381 = File.Exists(Phase381Path) ? JsonDocument.Parse(File.ReadAllText(Phase381Path)) : null;
 using var phase382 = File.Exists(Phase382Path) ? JsonDocument.Parse(File.ReadAllText(Phase382Path)) : null;
+using var phase383 = File.Exists(Phase383Path) ? JsonDocument.Parse(File.ReadAllText(Phase383Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -4351,6 +4353,51 @@ var responseImageObservedProjectionRequirementAuditPassed = responseImageObserve
     && JsonBool(phase382.RootElement, "routeCompletesBosonPredictions") is false
     && JsonBool(phase382.RootElement, "phase201TemplateMutated") is false
     && JsonInt(phase382.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0;
+var phase307SuppressedAxisCounterfactualSelectorAuditMaterialized = phase383 is not null;
+IReadOnlyList<int> phase383DominantGaugeAxes = phase307SuppressedAxisCounterfactualSelectorAuditMaterialized
+    ? JsonIntArray(phase383!.RootElement, "phase379DominantGaugeAxes")
+    : Array.Empty<int>();
+var phase307SuppressedAxisCounterfactualSelectorAuditPassed = phase307SuppressedAxisCounterfactualSelectorAuditMaterialized
+    && JsonBool(phase383!.RootElement, "phase307SuppressedAxisCounterfactualSelectorAuditPassed") is true
+    && JsonBool(phase383.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase383.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && JsonString(phase383.RootElement, "applicationSubjectKind") == "phase307-predeclared-selector-space-under-phase379-suppressed-axis-counterfactual"
+    && JsonBool(phase383.RootElement, "phase307PredeclaredSelectorSpaceMaterialized") is true
+    && JsonInt(phase383.RootElement, "sourceDefinitionCount") == 125
+    && JsonInt(phase383.RootElement, "selectionLawCount") == 8
+    && JsonInt(phase383.RootElement, "phase379SuppressedGaugeAxis") == 1
+    && phase383DominantGaugeAxes.SequenceEqual(new[] { 0, 2 })
+    && JsonBool(phase383.RootElement, "phase379SidecarConflictContextMaterialized") is true
+    && JsonBool(phase383.RootElement, "phase381ConflictMaterialized") is true
+    && JsonBool(phase383.RootElement, "phase382ProjectionBlockerMaterialized") is true
+    && JsonBool(phase383.RootElement, "everyPhase307WDefinitionUsesSuppressedGaugeAxis") is true
+    && JsonBool(phase383.RootElement, "everyPhase307WDefinitionUsesCanonicalChargedAxes") is true
+    && JsonInt(phase383.RootElement, "wDefinitionsUsingSuppressedAxisCount") == 125
+    && JsonInt(phase383.RootElement, "wDefinitionsAvoidingSuppressedAxisCount") == 0
+    && JsonBool(phase383.RootElement, "everyPredeclaredSelectorUsesSuppressedAxis") is true
+    && JsonBool(phase383.RootElement, "noPredeclaredSelectorAvoidsSuppressedAxis") is true
+    && JsonBool(phase383.RootElement, "noP302ScaledStableCommonSelectorAvoidsSuppressedAxis") is true
+    && JsonBool(phase383.RootElement, "noRawStableCommonSelectorAvoidsSuppressedAxis") is true
+    && JsonBool(phase383.RootElement, "noSidecarCompatiblePredeclaredSelector") is true
+    && JsonInt(phase383.RootElement, "selectorsAvoidingSuppressedAxisCount") == 0
+    && JsonInt(phase383.RootElement, "selectorsWithWNotUsingSuppressedAxisCount") == 0
+    && JsonInt(phase383.RootElement, "selectorsP302ScaledStableCommonAvoidingSuppressedAxisCount") == 0
+    && JsonInt(phase383.RootElement, "selectorsRawStableCommonAvoidingSuppressedAxisCount") == 0
+    && JsonInt(phase383.RootElement, "sidecarCompatibleSelectionLawCount") == 0
+    && JsonString(phase383.RootElement, "p302ScaledStableCommonSelectionLawId") == "p302-scaled-max-min-magnitude"
+    && JsonBool(phase383.RootElement, "p302ScaledStableCommonSelectionLawWUsesSuppressedAxis") is true
+    && JsonBool(phase383.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase383.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase383.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase383.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase383.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase383.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase383.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase383.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase383.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase383.RootElement, "acceptedContractFieldCount") == 0
+    && JsonInt(phase383.RootElement, "blockedContractFieldCount") == wzMissingFieldCount
+    && JsonInt(phase383.RootElement, "phase213WzMissingFieldCount") == wzMissingFieldCount;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -6384,6 +6431,14 @@ var checklist = new[]
             : "Phase382 artifact not materialized",
         Phase382Path),
     new ObjectiveChecklistItem(
+        "phase307-suppressed-axis-counterfactual-selector-audit-materialized",
+        "Check whether any current Phase307 predeclared W/Z selector or W source definition avoids the Phase379-suppressed carrier axis without inventing a new source law.",
+        phase307SuppressedAxisCounterfactualSelectorAuditPassed ? "passed" : "failed",
+        phase307SuppressedAxisCounterfactualSelectorAuditMaterialized
+            ? $"phase307SuppressedAxisCounterfactualSelectorAuditPassed={JsonBool(phase383!.RootElement, "phase307SuppressedAxisCounterfactualSelectorAuditPassed")}; targetBlind={JsonBool(phase383.RootElement, "targetBlindConstruction")}; sourceDefinitionCount={JsonInt(phase383.RootElement, "sourceDefinitionCount")}; selectionLawCount={JsonInt(phase383.RootElement, "selectionLawCount")}; suppressedAxis={JsonInt(phase383.RootElement, "phase379SuppressedGaugeAxis")}; dominantAxes={string.Join(",", phase383DominantGaugeAxes)}; everyWDefinitionUsesSuppressedAxis={JsonBool(phase383.RootElement, "everyPhase307WDefinitionUsesSuppressedGaugeAxis")}; wDefinitionsAvoidingSuppressedAxis={JsonInt(phase383.RootElement, "wDefinitionsAvoidingSuppressedAxisCount")}; selectorsAvoidingSuppressedAxis={JsonInt(phase383.RootElement, "selectorsAvoidingSuppressedAxisCount")}; sidecarCompatibleSelectionLawCount={JsonInt(phase383.RootElement, "sidecarCompatibleSelectionLawCount")}; p302ScaledStableCommonSelectionLaw={JsonString(phase383.RootElement, "p302ScaledStableCommonSelectionLawId")}; p302ScaledStableCommonSelectionWUsesSuppressedAxis={JsonBool(phase383.RootElement, "p302ScaledStableCommonSelectionLawWUsesSuppressedAxis")}; canFillPhase201WzContract={JsonBool(phase383.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase383.RootElement, "decision")}"
+            : "Phase383 artifact not materialized",
+        Phase383Path),
+    new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
         branchLocalDirectInvariantCensusPassed ? "passed" : "failed",
@@ -6882,6 +6937,7 @@ var result = new
         phase380Path = Phase380Path,
         phase381Path = Phase381Path,
         phase382Path = Phase382Path,
+        phase383Path = Phase383Path,
         phase282Path = Phase282Path,
         phase283Path = Phase283Path,
         phase284Path = Phase284Path,
@@ -6951,6 +7007,17 @@ static bool? JsonNestedBool(JsonElement element, string objectName, string prope
 
 static int? JsonInt(JsonElement element, string propertyName) =>
     element.TryGetProperty(propertyName, out var property) && property.ValueKind == JsonValueKind.Number && property.TryGetInt32(out var value) ? value : null;
+
+static IReadOnlyList<int> JsonIntArray(JsonElement element, string propertyName)
+{
+    if (!element.TryGetProperty(propertyName, out var property) || property.ValueKind != JsonValueKind.Array)
+        return [];
+
+    return property.EnumerateArray()
+        .Where(item => item.ValueKind == JsonValueKind.Number && item.TryGetInt32(out _))
+        .Select(item => item.GetInt32())
+        .ToList();
+}
 
 static double? JsonDouble(JsonElement element, string propertyName) =>
     element.TryGetProperty(propertyName, out var property) && property.ValueKind == JsonValueKind.Number && property.TryGetDouble(out var value) ? value : null;

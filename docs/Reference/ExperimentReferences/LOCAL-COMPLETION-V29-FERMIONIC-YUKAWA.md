@@ -87,6 +87,11 @@ outside the first executable numerical branch.
   the namespace-separation map needed to rehabilitate the Phase302/307 selected
   near-pass. It finds no target-independent observed electroweak projection map
   and leaves the Phase381 conflict active.
+- Added Phase383 to test whether the existing Phase307 predeclared selector
+  space already contains an alternate target-independent W/Z route that avoids
+  the Phase379-suppressed axis. It finds that all `125` current Phase307 W
+  source definitions use charged axes `0,1`, so no current predeclared selector
+  avoids the suppressed axis `1`.
 
 ## Prediction Relevance
 
@@ -105,6 +110,9 @@ rescued by the response-image sidecar: it remains dependent on a Phase302 scale
 without an application theorem and on a W charged-ladder axis that the Phase379
 diagnostic suppresses. Phase382 records that no current observed-projection
 artifact separates the diagnostic carrier axes from physical photon/W/Z axes.
+Phase383 records that the current Phase307 selector space itself has no
+alternate predeclared selector or W source definition that avoids the suppressed
+axis.
 
 ## Limitation
 

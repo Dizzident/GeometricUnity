@@ -240,6 +240,7 @@ const string Phase379ResponseImageCarrierAxisCharacterizationPath = "studies/pha
 const string Phase380ResponseImageWzContractApplicationAuditPath = "studies/phase380_response_image_wz_contract_application_audit_001/output/response_image_wz_contract_application_audit.json";
 const string Phase381Phase302307ResponseImageSelectorCompatibilityAuditPath = "studies/phase381_phase302_307_response_image_selector_compatibility_audit_001/output/phase302_307_response_image_selector_compatibility_audit.json";
 const string Phase382ResponseImageObservedProjectionRequirementAuditPath = "studies/phase382_response_image_observed_projection_requirement_audit_001/output/response_image_observed_projection_requirement_audit.json";
+const string Phase383Phase307SuppressedAxisCounterfactualSelectorAuditPath = "studies/phase383_phase307_suppressed_axis_counterfactual_selector_audit_001/output/phase307_suppressed_axis_counterfactual_selector_audit.json";
 const string Phase282BranchLocalDirectInvariantCensusPath = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census.json";
 const string Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit.json";
 const string Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic.json";
@@ -500,6 +501,7 @@ using var phase379 = TryParseJson(Phase379ResponseImageCarrierAxisCharacterizati
 using var phase380 = TryParseJson(Phase380ResponseImageWzContractApplicationAuditPath);
 using var phase381 = TryParseJson(Phase381Phase302307ResponseImageSelectorCompatibilityAuditPath);
 using var phase382 = TryParseJson(Phase382ResponseImageObservedProjectionRequirementAuditPath);
+using var phase383 = TryParseJson(Phase383Phase307SuppressedAxisCounterfactualSelectorAuditPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -6103,6 +6105,49 @@ var package = new
             decision = JsonString(phase382.RootElement, "decision"),
         }
         : null,
+    phase307SuppressedAxisCounterfactualSelectorAudit = phase383 is not null
+        ? new
+        {
+            status = JsonString(phase383.RootElement, "terminalStatus"),
+            phase307SuppressedAxisCounterfactualSelectorAuditPassed = JsonBool(phase383.RootElement, "phase307SuppressedAxisCounterfactualSelectorAuditPassed"),
+            targetBlindConstruction = JsonBool(phase383.RootElement, "targetBlindConstruction"),
+            physicalTargetsConsultedForConstruction = JsonBool(phase383.RootElement, "physicalTargetsConsultedForConstruction"),
+            applicationSubjectKind = JsonString(phase383.RootElement, "applicationSubjectKind"),
+            phase307PredeclaredSelectorSpaceMaterialized = JsonNestedBool(phase383.RootElement, "phase307SelectorSpace", "phase307PredeclaredSelectorSpaceMaterialized"),
+            sourceDefinitionCount = JsonNestedInt(phase383.RootElement, "phase307SelectorSpace", "definitionCount"),
+            selectionLawCount = JsonNestedInt(phase383.RootElement, "phase307SelectorSpace", "selectionLawCount"),
+            phase379SuppressedGaugeAxis = JsonNestedInt(phase383.RootElement, "sidecarContext", "suppressedGaugeAxis"),
+            phase379DominantGaugeAxes = JsonNestedIntArray(phase383.RootElement, "sidecarContext", "dominantGaugeAxes"),
+            phase379SidecarConflictContextMaterialized = JsonNestedBool(phase383.RootElement, "sidecarContext", "phase379SidecarConflictContextMaterialized"),
+            phase381ConflictMaterialized = JsonNestedBool(phase383.RootElement, "sidecarContext", "phase381ConflictMaterialized"),
+            phase382ProjectionBlockerMaterialized = JsonNestedBool(phase383.RootElement, "sidecarContext", "phase382ProjectionBlockerMaterialized"),
+            everyPhase307WDefinitionUsesSuppressedGaugeAxis = JsonNestedBool(phase383.RootElement, "sourceDefinitionAxisAudit", "everyPhase307WDefinitionUsesSuppressedGaugeAxis"),
+            everyPhase307WDefinitionUsesCanonicalChargedAxes = JsonNestedBool(phase383.RootElement, "sourceDefinitionAxisAudit", "everyPhase307WDefinitionUsesCanonicalChargedAxes"),
+            wDefinitionsUsingSuppressedAxisCount = JsonNestedInt(phase383.RootElement, "sourceDefinitionAxisAudit", "wDefinitionsUsingSuppressedAxisCount"),
+            wDefinitionsAvoidingSuppressedAxisCount = JsonNestedInt(phase383.RootElement, "sourceDefinitionAxisAudit", "wDefinitionsAvoidingSuppressedAxisCount"),
+            everyPredeclaredSelectorUsesSuppressedAxis = JsonNestedBool(phase383.RootElement, "selectionLawAxisAudit", "everyPredeclaredSelectorUsesSuppressedAxis"),
+            noPredeclaredSelectorAvoidsSuppressedAxis = JsonNestedBool(phase383.RootElement, "selectionLawAxisAudit", "noPredeclaredSelectorAvoidsSuppressedAxis"),
+            noP302ScaledStableCommonSelectorAvoidsSuppressedAxis = JsonNestedBool(phase383.RootElement, "selectionLawAxisAudit", "noP302ScaledStableCommonSelectorAvoidsSuppressedAxis"),
+            noRawStableCommonSelectorAvoidsSuppressedAxis = JsonNestedBool(phase383.RootElement, "selectionLawAxisAudit", "noRawStableCommonSelectorAvoidsSuppressedAxis"),
+            noSidecarCompatiblePredeclaredSelector = JsonNestedBool(phase383.RootElement, "selectionLawAxisAudit", "noSidecarCompatiblePredeclaredSelector"),
+            selectorsAvoidingSuppressedAxisCount = JsonNestedInt(phase383.RootElement, "selectionLawAxisAudit", "selectorsAvoidingSuppressedAxisCount"),
+            selectorsWithWNotUsingSuppressedAxisCount = JsonNestedInt(phase383.RootElement, "selectionLawAxisAudit", "selectorsWithWNotUsingSuppressedAxisCount"),
+            sidecarCompatibleSelectionLawCount = JsonNestedInt(phase383.RootElement, "selectionLawAxisAudit", "sidecarCompatibleSelectionLawCount"),
+            p302ScaledStableCommonSelectionLawId = JsonNestedNestedString(phase383.RootElement, "selectionLawAxisAudit", "p302ScaledStableCommonSelectionLaw", "lawId"),
+            p302ScaledStableCommonSelectionLawWUsesSuppressedAxis = JsonNestedNestedBool(phase383.RootElement, "selectionLawAxisAudit", "p302ScaledStableCommonSelectionLaw", "selectedWUsesSuppressedGaugeAxis"),
+            sourceContractApplicationAllowed = JsonBool(phase383.RootElement, "sourceContractApplicationAllowed"),
+            canFillPhase201WzContract = JsonBool(phase383.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase383.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase383.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            routePromotesWzMasses = JsonBool(phase383.RootElement, "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonBool(phase383.RootElement, "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonBool(phase383.RootElement, "routeCompletesBosonPredictions"),
+            phase201TemplateMutated = JsonBool(phase383.RootElement, "phase201TemplateMutated"),
+            fieldsAppliedToPhase201TemplateCount = JsonInt(phase383.RootElement, "fieldsAppliedToPhase201TemplateCount"),
+            phase201FieldsDefensiblyFilled = JsonStringArray(phase383.RootElement, "phase201FieldsDefensiblyFilled"),
+            decision = JsonString(phase383.RootElement, "decision"),
+        }
+        : null,
     branchLocalDirectInvariantCensus = phase282 is not null
         ? new
         {
@@ -9315,6 +9360,22 @@ static int? JsonNestedInt(JsonElement element, string objectName, string propert
         ? JsonInt(value, propertyName)
         : null;
 
+static IReadOnlyList<int> JsonIntArray(JsonElement element, string propertyName)
+{
+    if (!element.TryGetProperty(propertyName, out var value) || value.ValueKind != JsonValueKind.Array)
+        return [];
+
+    return value.EnumerateArray()
+        .Where(item => item.ValueKind == JsonValueKind.Number && item.TryGetInt32(out _))
+        .Select(item => item.GetInt32())
+        .ToList();
+}
+
+static IReadOnlyList<int> JsonNestedIntArray(JsonElement element, string objectName, string propertyName) =>
+    element.TryGetProperty(objectName, out var value) && value.ValueKind == JsonValueKind.Object
+        ? JsonIntArray(value, propertyName)
+        : [];
+
 static bool? JsonBool(JsonElement element, string propertyName) =>
     element.TryGetProperty(propertyName, out var value) && value.ValueKind is JsonValueKind.True or JsonValueKind.False
         ? value.GetBoolean()
@@ -9328,6 +9389,22 @@ static bool? JsonNestedBool(JsonElement element, string objectName, string prope
 static string? JsonNestedString(JsonElement element, string objectName, string propertyName) =>
     element.TryGetProperty(objectName, out var value) && value.ValueKind == JsonValueKind.Object
         ? JsonString(value, propertyName)
+        : null;
+
+static bool? JsonNestedNestedBool(JsonElement element, string objectName, string nestedObjectName, string propertyName) =>
+    element.TryGetProperty(objectName, out var value)
+        && value.ValueKind == JsonValueKind.Object
+        && value.TryGetProperty(nestedObjectName, out var nested)
+        && nested.ValueKind == JsonValueKind.Object
+        ? JsonBool(nested, propertyName)
+        : null;
+
+static string? JsonNestedNestedString(JsonElement element, string objectName, string nestedObjectName, string propertyName) =>
+    element.TryGetProperty(objectName, out var value)
+        && value.ValueKind == JsonValueKind.Object
+        && value.TryGetProperty(nestedObjectName, out var nested)
+        && nested.ValueKind == JsonValueKind.Object
+        ? JsonString(nested, propertyName)
         : null;
 
 static JsonDocument? TryParseJson(string path) =>
