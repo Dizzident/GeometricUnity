@@ -15452,3 +15452,78 @@ summary, retrieval trail, how the source was used, prediction relevance,
 limitation, and follow-up conditions. This should reduce repeated source
 rechecks and make it easier to revisit a source only when new data or a new
 phase needs it.
+
+## 2026-06-09 - Phase387 Cox First-Principles I Full-Text Contract Audit
+
+### Context
+
+Phase386 used the current Cox First Principles I source as a source-delta audit,
+but the remaining uncertainty was whether the PDF full text contained
+electroweak, W/Z, Higgs, weak-angle, pole-extraction, or GeV contract evidence
+that the abstract-level review missed.
+
+### Action
+
+- Downloaded the Zenodo PDF artifact for DOI `10.5281/zenodo.19800512` and
+  confirmed the MD5 checksum `dbf8f7b1b141f18a8259314be1b36f83`.
+- Extracted the PDF text with `pdftotext`, producing `6518` lines.
+- Added
+  `studies/phase387_current_cox_first_principles_i_full_text_contract_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P387.md`.
+- Wired Phase387 into the generator, Phase101 package, Phase202 completion
+  audit, claim-integrity verifier, and source-scanner exclusions.
+- Updated the Cox First Principles I detailed reference note and
+  `ExperimentReferences.md`.
+- Launched a sidecar explorer for the next repo-local bridge-source lead. It
+  identified the v29/VO-7 Dirac shell-response chain as the strongest local
+  diagnostic branch, but still with zero Phase201/Phase256/Phase385 fields
+  filled.
+
+### Result
+
+- Phase387 passed:
+  `currentCoxFirstPrinciplesIFullTextContractAuditPassed=True`.
+- Full-text contract evidence stayed absent:
+  `fullTextBosonContractEvidenceFound=False`,
+  `fullTextObservedNamespaceMapFound=False`,
+  `fullTextWzSourceRowsFound=False`,
+  `fullTextHiggsScalarSourceFound=False`,
+  `fullTextWeakMixingOrCouplingLineageFound=False`,
+  `fullTextPoleExtractionFound=False`, and
+  `fullTextGeVNormalizationFound=False`.
+- The term audit found zero hits for `electroweak`, `weak mixing`,
+  `hypercharge`, `higgs`, `w boson`, `z boson`, and `gev`.
+- Positive full-text evidence is scaffold-only: Shiab, torsion, curvature,
+  completed connection, Yang-Mills/Dirac kinetic sectors, and
+  Projection-Variation.
+- Open-layer evidence remains explicit around matter embedding, anomaly,
+  BRST/BV, renormalization, and observable maps.
+- Phase387 accepted zero W/Z contract fields and kept
+  `canFillPhase201WzContract=False`.
+
+### Validation
+
+- Targeted Phase387 run passed.
+- Phase101 package run passed and includes the Phase387 block:
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- Phase202 objective audit remains incomplete by design:
+  `objectiveAchieved=False`, `checklistPassedCount=180`, and
+  `checklistFailedCount=3`.
+- Claim-integrity verification passed with
+  `sourceLineageMissing=true`, `wzMissingFieldCount=15`,
+  `higgsMissingFieldCount=14`, and `promotedPhysicalMassClaimCount=0`.
+- Full generator gate passed with Phase387 included and ended with the same
+  claim-integrity status.
+
+### Next Lead
+
+The best remaining repo-local lead is not Cox First Principles I. It is the
+v29/VO-7 shell-response branch around Phases371-379 plus the Phase302/307 W/Z
+near-pass. The next useful experiment should be a fail-closed observed
+electroweak namespace/source theorem probe that requires either a target-blind
+carrier-axis-to-observed photon/W/Z/H map or a theorem explaining why the
+charged-ladder W row must use the Phase379-suppressed carrier axis. It should
+not apply any Phase201 or Phase256 field without a physical `M_psi` branch,
+completed mixed Hessian/effective-action source, weak-angle/coupling lineage,
+VEV/source scale, separate W/Z rows, Higgs scalar-source row, pole extraction,
+and GeV normalization.

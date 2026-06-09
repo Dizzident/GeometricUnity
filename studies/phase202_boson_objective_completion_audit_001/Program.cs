@@ -152,6 +152,7 @@ const string Phase383Path = "studies/phase383_phase307_suppressed_axis_counterfa
 const string Phase384Path = "studies/phase384_phase307_basis_energy_response_image_proxy_audit_001/output/phase307_basis_energy_response_image_proxy_audit_summary.json";
 const string Phase385Path = "studies/phase385_observed_electroweak_namespace_map_intake_audit_001/output/observed_electroweak_namespace_map_intake_audit_summary.json";
 const string Phase386Path = "studies/phase386_current_cox_first_principles_i_source_delta_audit_001/output/current_cox_first_principles_i_source_delta_audit_summary.json";
+const string Phase387Path = "studies/phase387_current_cox_first_principles_i_full_text_contract_audit_001/output/current_cox_first_principles_i_full_text_contract_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -337,6 +338,7 @@ using var phase383 = File.Exists(Phase383Path) ? JsonDocument.Parse(File.ReadAll
 using var phase384 = File.Exists(Phase384Path) ? JsonDocument.Parse(File.ReadAllText(Phase384Path)) : null;
 using var phase385 = File.Exists(Phase385Path) ? JsonDocument.Parse(File.ReadAllText(Phase385Path)) : null;
 using var phase386 = File.Exists(Phase386Path) ? JsonDocument.Parse(File.ReadAllText(Phase386Path)) : null;
+using var phase387 = File.Exists(Phase387Path) ? JsonDocument.Parse(File.ReadAllText(Phase387Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -4529,6 +4531,47 @@ var currentCoxFirstPrinciplesISourceDeltaAuditPassed = currentCoxFirstPrinciples
     && phase386.RootElement.TryGetProperty("phase201FieldsDefensiblyFilled", out var phase386FieldsDefensiblyFilled)
     && phase386FieldsDefensiblyFilled.ValueKind == JsonValueKind.Array
     && phase386FieldsDefensiblyFilled.GetArrayLength() == 0;
+var currentCoxFirstPrinciplesIFullTextContractAuditMaterialized = phase387 is not null;
+var currentCoxFirstPrinciplesIFullTextContractAuditPassed = currentCoxFirstPrinciplesIFullTextContractAuditMaterialized
+    && JsonBool(phase387!.RootElement, "currentCoxFirstPrinciplesIFullTextContractAuditPassed") is true
+    && JsonBool(phase387.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase387.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase387.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase387.RootElement, "applicationSubjectKind") == "current-cox-first-principles-i-full-text-contract-audit-for-phase201-phase256-phase385"
+    && JsonBool(phase387.RootElement, "fullTextReviewed") is true
+    && JsonBool(phase387.RootElement, "fullTextBosonContractEvidenceFound") is false
+    && JsonBool(phase387.RootElement, "fullTextObservedNamespaceMapFound") is false
+    && JsonBool(phase387.RootElement, "fullTextWzSourceRowsFound") is false
+    && JsonBool(phase387.RootElement, "fullTextHiggsScalarSourceFound") is false
+    && JsonBool(phase387.RootElement, "fullTextElectroweakParameterLineageFound") is false
+    && JsonBool(phase387.RootElement, "fullTextWeakMixingOrCouplingLineageFound") is false
+    && JsonBool(phase387.RootElement, "fullTextGeVNormalizationFound") is false
+    && JsonBool(phase387.RootElement, "fullTextPoleExtractionFound") is false
+    && JsonBool(phase387.RootElement, "fullTextOnlyScaffoldEvidenceFound") is true
+    && JsonNestedString(phase387.RootElement, "source", "refId") == "COX-FIRST-PRINCIPLES-I-19800512"
+    && JsonNestedString(phase387.RootElement, "source", "doi") == "10.5281/zenodo.19800512"
+    && JsonNestedInt(phase387.RootElement, "source", "zenodoRecordId") == 19800512
+    && JsonNestedString(phase387.RootElement, "source", "artifactChecksum") == "md5:dbf8f7b1b141f18a8259314be1b36f83"
+    && JsonNestedInt(phase387.RootElement, "source", "extractedLineCount") == 6518
+    && JsonNestedBool(phase387.RootElement, "fullTextContractApplication", "phase385NoNamespaceMapCandidate") is true
+    && JsonNestedBool(phase387.RootElement, "fullTextContractApplication", "phase386ScaffoldDeltaPresent") is true
+    && JsonNestedInt(phase387.RootElement, "fullTextContractApplication", "phase256FilledRequiredFieldCount") == 0
+    && JsonNestedInt(phase387.RootElement, "fullTextContractApplication", "phase213WzMissingFieldCount") == wzMissingFieldCount
+    && JsonNestedInt(phase387.RootElement, "fullTextContractApplication", "phase213HiggsMissingFieldCount") == higgsMissingFieldCount
+    && JsonBool(phase387.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase387.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase387.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase387.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase387.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase387.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase387.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase387.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase387.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase387.RootElement, "acceptedContractFieldCount") == 0
+    && JsonInt(phase387.RootElement, "blockedContractFieldCount") == wzMissingFieldCount
+    && phase387.RootElement.TryGetProperty("phase201FieldsDefensiblyFilled", out var phase387FieldsDefensiblyFilled)
+    && phase387FieldsDefensiblyFilled.ValueKind == JsonValueKind.Array
+    && phase387FieldsDefensiblyFilled.GetArrayLength() == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -6594,6 +6637,14 @@ var checklist = new[]
             : "Phase386 artifact not materialized",
         Phase386Path),
     new ObjectiveChecklistItem(
+        "current-cox-first-principles-i-full-text-contract-audit-materialized",
+        "Audit the Cox First Principles I extracted PDF text for electroweak namespace, W/Z/H source-row, weak-angle, pole-extraction, and GeV-normalization contract evidence.",
+        currentCoxFirstPrinciplesIFullTextContractAuditPassed ? "passed" : "failed",
+        currentCoxFirstPrinciplesIFullTextContractAuditMaterialized
+            ? $"currentCoxFirstPrinciplesIFullTextContractAuditPassed={JsonBool(phase387!.RootElement, "currentCoxFirstPrinciplesIFullTextContractAuditPassed")}; targetBlind={JsonBool(phase387.RootElement, "targetBlindConstruction")}; sourceDoi={JsonNestedString(phase387.RootElement, "source", "doi")}; checksum={JsonNestedString(phase387.RootElement, "source", "artifactChecksum")}; extractedLineCount={JsonNestedInt(phase387.RootElement, "source", "extractedLineCount")}; fullTextBosonContractEvidenceFound={JsonBool(phase387.RootElement, "fullTextBosonContractEvidenceFound")}; fullTextObservedNamespaceMapFound={JsonBool(phase387.RootElement, "fullTextObservedNamespaceMapFound")}; fullTextWzSourceRowsFound={JsonBool(phase387.RootElement, "fullTextWzSourceRowsFound")}; fullTextHiggsScalarSourceFound={JsonBool(phase387.RootElement, "fullTextHiggsScalarSourceFound")}; fullTextGeVNormalizationFound={JsonBool(phase387.RootElement, "fullTextGeVNormalizationFound")}; canFillPhase201WzContract={JsonBool(phase387.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase387.RootElement, "decision")}"
+            : "Phase387 artifact not materialized",
+        Phase387Path),
+    new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
         branchLocalDirectInvariantCensusPassed ? "passed" : "failed",
@@ -7096,6 +7147,7 @@ var result = new
         phase384Path = Phase384Path,
         phase385Path = Phase385Path,
         phase386Path = Phase386Path,
+        phase387Path = Phase387Path,
         phase282Path = Phase282Path,
         phase283Path = Phase283Path,
         phase284Path = Phase284Path,

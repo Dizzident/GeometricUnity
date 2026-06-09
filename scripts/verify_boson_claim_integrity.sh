@@ -156,6 +156,7 @@ const paths = {
   phase384: "studies/phase384_phase307_basis_energy_response_image_proxy_audit_001/output/phase307_basis_energy_response_image_proxy_audit_summary.json",
   phase385: "studies/phase385_observed_electroweak_namespace_map_intake_audit_001/output/observed_electroweak_namespace_map_intake_audit_summary.json",
   phase386: "studies/phase386_current_cox_first_principles_i_source_delta_audit_001/output/current_cox_first_principles_i_source_delta_audit_summary.json",
+  phase387: "studies/phase387_current_cox_first_principles_i_full_text_contract_audit_001/output/current_cox_first_principles_i_full_text_contract_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -383,6 +384,7 @@ const phase383 = requireFile(paths.phase383);
 const phase384 = requireFile(paths.phase384);
 const phase385 = requireFile(paths.phase385);
 const phase386 = requireFile(paths.phase386);
+const phase387 = requireFile(paths.phase387);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -4466,6 +4468,23 @@ if (sourceLineageMissing) {
   assert(phase386.phase201TemplateMutated === false && phase386.fieldsAppliedToPhase201TemplateCount === 0, "Phase386 must not mutate the Phase201 template.");
   assert(phase386.acceptedContractFieldCount === 0 && phase386.blockedContractFieldCount === missingWzFields, "Phase386 must preserve zero accepted W/Z contract fields and Phase213 missing counts.");
   assert(Array.isArray(phase386.phase201FieldsDefensiblyFilled) && phase386.phase201FieldsDefensiblyFilled.length === 0, "Phase386 must preserve an empty defensible Phase201 fill set.");
+  assert(phase387.currentCoxFirstPrinciplesIFullTextContractAuditPassed === true, "Phase387 current Cox first-principles full-text contract audit must pass as a non-promotional boundary audit.");
+  assert(phase387.targetBlindConstruction === true && phase387.physicalTargetsConsultedForConstruction === false, "Phase387 construction must remain target-blind.");
+  assert(typeof phase387.targetBlindConstructionHash === "string" && phase387.targetBlindConstructionHash.length === 64, "Phase387 must persist a target-blind construction hash.");
+  assert(phase387.applicationSubjectKind === "current-cox-first-principles-i-full-text-contract-audit-for-phase201-phase256-phase385", "Phase387 must classify its full-text subject for Phase201/Phase256/Phase385.");
+  assert(phase387.fullTextReviewed === true && phase387.fullTextOnlyScaffoldEvidenceFound === true && phase387.fullTextBosonContractEvidenceFound === false, "Phase387 must preserve full-text scaffold-only evidence.");
+  assert(phase387.source?.refId === "COX-FIRST-PRINCIPLES-I-19800512" && phase387.source?.doi === "10.5281/zenodo.19800512", "Phase387 must record the current Cox first-principles source identity.");
+  assert(phase387.source?.zenodoRecordId === 19800512 && phase387.source?.artifactChecksum === "md5:dbf8f7b1b141f18a8259314be1b36f83" && phase387.source?.extractedLineCount === 6518, "Phase387 must preserve the Zenodo artifact identity, checksum, and extracted line count.");
+  assert(phase387.fullTextObservedNamespaceMapFound === false && phase387.fullTextWzSourceRowsFound === false && phase387.fullTextHiggsScalarSourceFound === false, "Phase387 cannot find observed namespace, W/Z source rows, or Higgs scalar-source rows.");
+  assert(phase387.fullTextElectroweakParameterLineageFound === false && phase387.fullTextWeakMixingOrCouplingLineageFound === false && phase387.fullTextGeVNormalizationFound === false && phase387.fullTextPoleExtractionFound === false, "Phase387 cannot find electroweak parameter, weak-angle, GeV, or pole-extraction lineages.");
+  assert(Array.isArray(phase387.contractKeywordEvidence) && phase387.contractKeywordEvidence.some((term) => term.termId === "electroweak" && term.count === 0) && phase387.contractKeywordEvidence.some((term) => term.termId === "higgs" && term.count === 0) && phase387.contractKeywordEvidence.some((term) => term.termId === "gev" && term.count === 0), "Phase387 must preserve absent electroweak/Higgs/GeV full-text term evidence.");
+  assert(phase387.fullTextContractApplication?.phase385NoNamespaceMapCandidate === true && phase387.fullTextContractApplication?.phase386ScaffoldDeltaPresent === true, "Phase387 must inherit Phase385 namespace absence and Phase386 scaffold evidence.");
+  assert(phase387.fullTextContractApplication?.phase256FilledRequiredFieldCount === 0 && phase387.fullTextContractApplication?.phase213WzMissingFieldCount === missingWzFields && phase387.fullTextContractApplication?.phase213HiggsMissingFieldCount === missingHiggsFields, "Phase387 must inherit unfilled Phase256 and Phase213 counts.");
+  assert(phase387.sourceContractApplicationAllowed === false && phase387.canFillPhase201WzContract === false && phase387.canFillPhase201HiggsContract === false && phase387.canFillPhase256ObservedFieldExtractionContract === false, "Phase387 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase387.routePromotesWzMasses === false && phase387.routePromotesHiggsMass === false && phase387.routeCompletesBosonPredictions === false, "Phase387 cannot promote boson predictions.");
+  assert(phase387.phase201TemplateMutated === false && phase387.fieldsAppliedToPhase201TemplateCount === 0, "Phase387 must not mutate the Phase201 template.");
+  assert(phase387.acceptedContractFieldCount === 0 && phase387.blockedContractFieldCount === missingWzFields, "Phase387 must preserve zero accepted W/Z contract fields and Phase213 missing counts.");
+  assert(Array.isArray(phase387.phase201FieldsDefensiblyFilled) && phase387.phase201FieldsDefensiblyFilled.length === 0, "Phase387 must preserve an empty defensible Phase201 fill set.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

@@ -71,13 +71,13 @@
       },
       {
         "fieldId": "zBosonSourceRowId",
-        "candidateLineCount": 888,
+        "candidateLineCount": 893,
         "intakeReadyCandidateCount": 0,
         "filled": false
       },
       {
         "fieldId": "targetBlindConstructionHash",
-        "candidateLineCount": 530,
+        "candidateLineCount": 541,
         "intakeReadyCandidateCount": 0,
         "filled": false
       }

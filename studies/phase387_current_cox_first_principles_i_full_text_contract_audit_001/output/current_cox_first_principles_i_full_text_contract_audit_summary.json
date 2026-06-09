@@ -1,0 +1,361 @@
+{
+  "phaseId": "phase387-current-cox-first-principles-i-full-text-contract-audit",
+  "terminalStatus": "current-cox-first-principles-i-full-text-scaffold-only-no-boson-contract",
+  "currentCoxFirstPrinciplesIFullTextContractAuditPassed": true,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "1ddea9bebb3da39e1153486c5b0a2ec2bfda47ab8e248371db02740b69b1ad1d",
+  "applicationSubjectKind": "current-cox-first-principles-i-full-text-contract-audit-for-phase201-phase256-phase385",
+  "fullTextReviewed": true,
+  "fullTextBosonContractEvidenceFound": false,
+  "fullTextObservedNamespaceMapFound": false,
+  "fullTextWzSourceRowsFound": false,
+  "fullTextHiggsScalarSourceFound": false,
+  "fullTextElectroweakParameterLineageFound": false,
+  "fullTextWeakMixingOrCouplingLineageFound": false,
+  "fullTextGeVNormalizationFound": false,
+  "fullTextPoleExtractionFound": false,
+  "fullTextOnlyScaffoldEvidenceFound": true,
+  "source": {
+    "refId": "COX-FIRST-PRINCIPLES-I-19800512",
+    "title": "Geometric Unity from First Principles I",
+    "author": "Joseph Thomas Cox",
+    "doi": "10.5281/zenodo.19800512",
+    "conceptDoi": "10.5281/zenodo.19800511",
+    "zenodoRecordId": 19800512,
+    "zenodoApiRecord": "https://zenodo.org/api/records/19800512",
+    "pdfContentUrl": "https://zenodo.org/api/records/19800512/files/GU%20FIRST%20PRINCIPLES_1.pdf/content",
+    "publicationDate": "2026-04-26",
+    "artifactName": "GU FIRST PRINCIPLES_1.pdf",
+    "artifactSizeBytes": 790807,
+    "artifactChecksum": "md5:dbf8f7b1b141f18a8259314be1b36f83",
+    "reviewedOn": "2026-06-09",
+    "extractionTool": "pdftotext",
+    "extractedLineCount": 6518
+  },
+  "contractKeywordEvidence": [
+    {
+      "termId": "electroweak",
+      "count": 0,
+      "lineRefs": [],
+      "evidenceClass": "absent-contract-keyword"
+    },
+    {
+      "termId": "weak mixing",
+      "count": 0,
+      "lineRefs": [],
+      "evidenceClass": "absent-contract-keyword"
+    },
+    {
+      "termId": "hypercharge",
+      "count": 0,
+      "lineRefs": [],
+      "evidenceClass": "absent-contract-keyword"
+    },
+    {
+      "termId": "higgs",
+      "count": 0,
+      "lineRefs": [],
+      "evidenceClass": "absent-contract-keyword"
+    },
+    {
+      "termId": "w boson",
+      "count": 0,
+      "lineRefs": [],
+      "evidenceClass": "absent-contract-keyword"
+    },
+    {
+      "termId": "z boson",
+      "count": 0,
+      "lineRefs": [],
+      "evidenceClass": "absent-contract-keyword"
+    },
+    {
+      "termId": "gev",
+      "count": 0,
+      "lineRefs": [],
+      "evidenceClass": "absent-unit-keyword"
+    },
+    {
+      "termId": "standard model",
+      "count": 2,
+      "lineRefs": [
+        6506,
+        6508
+      ],
+      "evidenceClass": "bibliography-only"
+    },
+    {
+      "termId": "weinberg",
+      "count": 2,
+      "lineRefs": [
+        6473,
+        6505
+      ],
+      "evidenceClass": "bibliography-only"
+    },
+    {
+      "termId": "boson",
+      "count": 1,
+      "lineRefs": [
+        6084
+      ],
+      "evidenceClass": "generic-gauge-kinetics-only"
+    },
+    {
+      "termId": "mass",
+      "count": 1,
+      "lineRefs": [
+        6514
+      ],
+      "evidenceClass": "bibliography-only"
+    }
+  ],
+  "scaffoldTermEvidence": [
+    {
+      "termId": "shiab",
+      "count": 105,
+      "lineRefs": [
+        356,
+        1124,
+        1184,
+        1452,
+        5712
+      ],
+      "evidenceClass": "positive-classical-scaffold"
+    },
+    {
+      "termId": "torsion",
+      "count": 197,
+      "lineRefs": [
+        17,
+        323,
+        1874,
+        3311,
+        5667
+      ],
+      "evidenceClass": "positive-classical-scaffold"
+    },
+    {
+      "termId": "curvature",
+      "count": 80,
+      "lineRefs": [
+        430,
+        1339,
+        2178,
+        2195,
+        6030
+      ],
+      "evidenceClass": "positive-classical-scaffold"
+    },
+    {
+      "termId": "completed connection",
+      "count": 27,
+      "lineRefs": [
+        11,
+        2195,
+        3132
+      ],
+      "evidenceClass": "positive-classical-scaffold"
+    },
+    {
+      "termId": "yang-mills",
+      "count": 24,
+      "lineRefs": [
+        17,
+        430,
+        1339,
+        3236,
+        6084
+      ],
+      "evidenceClass": "positive-kinetic-sector"
+    },
+    {
+      "termId": "dirac",
+      "count": 42,
+      "lineRefs": [
+        17,
+        431,
+        2063,
+        3132,
+        5980
+      ],
+      "evidenceClass": "positive-kinetic-sector"
+    },
+    {
+      "termId": "projection-variation",
+      "count": 46,
+      "lineRefs": [
+        323,
+        3079,
+        3838,
+        5667
+      ],
+      "evidenceClass": "positive-classical-scaffold"
+    }
+  ],
+  "openLayerEvidence": [
+    {
+      "termId": "matter embedding",
+      "count": 6,
+      "lineRefs": [
+        190,
+        323,
+        533,
+        2063,
+        3642,
+        3928
+      ],
+      "evidenceClass": "open-layer-not-complete"
+    },
+    {
+      "termId": "observable",
+      "count": 9,
+      "lineRefs": [
+        206,
+        3016,
+        3835,
+        3837,
+        3929
+      ],
+      "evidenceClass": "open-layer-not-complete"
+    },
+    {
+      "termId": "observable maps",
+      "count": 2,
+      "lineRefs": [
+        3876,
+        3929
+      ],
+      "evidenceClass": "open-layer-not-complete"
+    },
+    {
+      "termId": "renormalization",
+      "count": 9,
+      "lineRefs": [
+        324,
+        533,
+        3657,
+        3830,
+        6475
+      ],
+      "evidenceClass": "open-layer-not-complete"
+    },
+    {
+      "termId": "brst",
+      "count": 39,
+      "lineRefs": [
+        191,
+        324,
+        3652,
+        6233,
+        6311
+      ],
+      "evidenceClass": "open-layer-not-complete"
+    },
+    {
+      "termId": "bv",
+      "count": 17,
+      "lineRefs": [
+        191,
+        324,
+        3652,
+        6314
+      ],
+      "evidenceClass": "open-layer-not-complete"
+    },
+    {
+      "termId": "anomaly",
+      "count": 18,
+      "lineRefs": [
+        190,
+        463,
+        3642,
+        3773,
+        6500
+      ],
+      "evidenceClass": "open-layer-not-complete"
+    }
+  ],
+  "fullTextContractApplication": {
+    "phase201Path": "studies/phase201_boson_source_lineage_intake_contract_001/output/boson_source_lineage_intake_contract_summary.json",
+    "phase201ContractMaterialized": true,
+    "phase201AllRequiredLineagesPromotable": false,
+    "phase213Path": "studies/phase213_boson_source_lineage_blocker_matrix_001/output/boson_source_lineage_blocker_matrix_summary.json",
+    "phase213WzMissingFieldCount": 15,
+    "phase213HiggsMissingFieldCount": 14,
+    "phase256Path": "studies/phase256_observed_field_extraction_intake_contract_001/output/observed_field_extraction_intake_contract_summary.json",
+    "phase256ContractMaterialized": true,
+    "phase256RequiredFieldCount": 20,
+    "phase256FilledRequiredFieldCount": 0,
+    "phase256ObservedFieldExtractionContractPromotable": false,
+    "phase385Path": "studies/phase385_observed_electroweak_namespace_map_intake_audit_001/output/observed_electroweak_namespace_map_intake_audit_summary.json",
+    "phase385NamespaceMapAuditPassed": true,
+    "phase385NoNamespaceMapCandidate": true,
+    "phase385NoPhase256Candidate": true,
+    "phase385NoPhase201Candidate": true,
+    "phase386Path": "studies/phase386_current_cox_first_principles_i_source_delta_audit_001/output/current_cox_first_principles_i_source_delta_audit_summary.json",
+    "phase386SourceDeltaAuditPassed": true,
+    "phase386ScaffoldDeltaPresent": true,
+    "phase386PromotableForBosonMasses": false,
+    "phase386CompletesNamespaceMap": false,
+    "phase386FillsWzContract": false,
+    "phase386FillsHiggsContract": false
+  },
+  "sourceContractApplicationAllowed": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "blockedContractFieldCount": 15,
+  "phase201FieldsDefensiblyFilled": [],
+  "checks": [
+    {
+      "checkId": "zenodo-artifact-and-full-text-extraction-recorded",
+      "passed": true,
+      "detail": "recordId=19800512; checksum=md5:dbf8f7b1b141f18a8259314be1b36f83; extractedLineCount=6518; extractionTool=pdftotext"
+    },
+    {
+      "checkId": "electroweak-contract-keywords-absent-from-full-text",
+      "passed": true,
+      "detail": "absentContractKeywordCount=7; bibliographyOnlyTerms=standard model,weinberg,mass"
+    },
+    {
+      "checkId": "positive-full-text-evidence-is-scaffold-not-boson-contract",
+      "passed": true,
+      "detail": "scaffoldTermHitCount=7; openLayerHitCount=7; fullTextBosonContractEvidenceFound=False"
+    },
+    {
+      "checkId": "phase386-boundary-confirmed-by-full-text",
+      "passed": true,
+      "detail": "phase386Passed=True; phase386ScaffoldDeltaPresent=True; phase386Promotable=False"
+    },
+    {
+      "checkId": "observed-electroweak-namespace-map-still-missing",
+      "passed": true,
+      "detail": "phase385NamespaceMapAuditPassed=True; phase385NoNamespaceMapCandidate=True; fullTextObservedNamespaceMapFound=False"
+    },
+    {
+      "checkId": "phase201-and-phase256-contracts-remain-unfilled",
+      "passed": true,
+      "detail": "phase201Promotable=False; wzMissing=15; higgsMissing=14; phase256Filled=0"
+    },
+    {
+      "checkId": "source-contracts-not-mutated-or-promoted",
+      "passed": true,
+      "detail": "sourceContractApplicationAllowed=False; acceptedContractFieldCount=0; phase201TemplateMutated=False"
+    }
+  ],
+  "decision": "Treat the full text as scaffold-only evidence for boson work. The extracted PDF contains strong classical GU scaffold terms and open-layer markers, but no electroweak observed namespace map, W/Z source rows, Higgs scalar-source row, weak mixing or coupling lineage, pole extraction, or GeV normalization.",
+  "nextRequiredArtifact": [
+    "A GU-native observed electroweak namespace map with photon/W/Z/H rows.",
+    "A target-independent W/Z bridge-source theorem with separate W and Z source rows and stability sidecars.",
+    "A solved Higgs scalar-source/operator with potential or excitation lineage.",
+    "A target-independent weak-angle or coupling source, pole extraction, and GeV normalization lineage."
+  ]
+}

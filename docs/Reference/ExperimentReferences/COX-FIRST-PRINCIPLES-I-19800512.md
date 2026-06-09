@@ -21,6 +21,7 @@
 - PDF artifact: `GU FIRST PRINCIPLES_1.pdf`.
 - PDF checksum recorded by Zenodo: `md5:dbf8f7b1b141f18a8259314be1b36f83`.
 - PDF size recorded by Zenodo: `790807` bytes.
+- Full-text extraction: `pdftotext`, `6518` extracted lines.
 - Return points: DOI page, Zenodo API record, and the PDF artifact listed
   above. Recheck the API record first because it exposes the stable metadata and
   file handle.
@@ -44,6 +45,14 @@ electroweak map. It can inform the next source-law experiment, but it does not
 by itself create W/Z/H rows, a weak-angle lineage, a VEV/source scale, or a GeV
 normalization path.
 
+Phase387 checked the extracted full text as reduced term evidence. The audit
+recorded positive scaffold coverage for Shiab, torsion, curvature, completed
+connection, Yang-Mills/Dirac kinetic sectors, and Projection-Variation. It also
+recorded open-layer markers for matter embedding, anomaly/BRST/BV,
+renormalization, and observable maps. Contract-critical electroweak terms were
+absent from the extracted text: no electroweak, weak-mixing, hypercharge, Higgs,
+W-boson, Z-boson, or GeV hits were found.
+
 ## How It Was Used
 
 - Phase386 records it as a current source delta relative to the older
@@ -52,6 +61,9 @@ normalization path.
   Phase385 observed electroweak namespace-map requirement.
 - The source metadata was later tightened so future audits can return directly
   to the Zenodo record and PDF artifact instead of relying on the discovery URL.
+- Phase387 audits the extracted PDF text and records that the full text confirms
+  the Phase386 scaffold-only boundary rather than filling Phase201, Phase256, or
+  Phase385.
 
 ## Prediction Relevance
 
