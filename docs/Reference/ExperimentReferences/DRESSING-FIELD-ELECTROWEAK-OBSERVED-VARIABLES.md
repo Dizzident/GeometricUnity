@@ -45,6 +45,13 @@ The audit compares this source family against the existing FMS observed-spectrum
 template, Nielsen pole-mass boundary, moment-map/symplectic-reduction boundary,
 and the unfilled observed-field extraction contract.
 
+Phase385 reuses the Phase365 result as one candidate in the observed
+electroweak namespace-map intake audit. The candidate remains template-only:
+it supplies an external method for building dressed electroweak variables, but
+does not supply a GU-native dressing field, observed vacuum/expansion, photon,
+W, Z, and Higgs projection rows, or Phase201/Phase256 application-ready source
+lineage.
+
 ## Prediction Relevance
 
 The route is relevant to:

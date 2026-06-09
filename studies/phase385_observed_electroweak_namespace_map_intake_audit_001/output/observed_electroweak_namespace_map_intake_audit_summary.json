@@ -1,0 +1,84 @@
+{
+  "phaseId": "phase385-observed-electroweak-namespace-map-intake-audit",
+  "terminalStatus": "observed-electroweak-namespace-map-intake-audit-no-current-candidate-ready",
+  "observedElectroweakNamespaceMapIntakeAuditPassed": true,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "6c28c84cd422a215108d70c26b63c6a08c97e450ca1af2a2c1b55d9c8c0aa22a",
+  "applicationSubjectKind": "observed-electroweak-namespace-map-intake-candidates-for-phase256-phase201",
+  "phase256ContractMaterialized": true,
+  "phase256RequiredFieldCount": 20,
+  "phase256FilledRequiredFieldCount": 0,
+  "phase256ObservedFieldExtractionContractPromotable": false,
+  "phase201IntakeContractMaterialized": true,
+  "phase201AllRequiredLineagesPromotable": false,
+  "phase213WzMissingFieldCount": 15,
+  "phase213HiggsMissingFieldCount": 14,
+  "candidateCount": 9,
+  "intakeReadyCandidateCount": 0,
+  "phase256ApplicationReadyCandidateCount": 0,
+  "phase201WzApplicationReadyCandidateCount": 0,
+  "phase201HiggsApplicationReadyCandidateCount": 0,
+  "observedTemplateCandidateCount": 2,
+  "noCandidateProvidesGuNativeObservedElectroweakNamespaceMap": true,
+  "noCandidateCanFillPhase256ObservedFieldExtractionContract": true,
+  "noCandidateCanFillPhase201WzContract": true,
+  "noCandidateCanFillPhase201HiggsContract": true,
+  "fmsAndDressingRemainExternalTemplatesOnly": true,
+  "phase27RemainsInternalConventionOnly": true,
+  "phase311ObservedMapAbsent": true,
+  "phase313OfficialDraftMapAbsent": true,
+  "phase321NeutralRouteUnpromotable": true,
+  "phase379382384RemainDiagnosticsOrRequirementsOnly": true,
+  "sourceContractApplicationAllowed": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "blockedContractFieldCount": 15,
+  "phase201FieldsDefensiblyFilled": [],
+  "checks": [
+    {
+      "checkId": "phase256-and-phase201-contracts-materialized-unfilled",
+      "passed": true,
+      "detail": "phase256RequiredFieldCount=20; phase256FilledRequiredFieldCount=0; phase201AllRequiredLineagesPromotable=False; wzMissingFieldCount=15; higgsMissingFieldCount=14"
+    },
+    {
+      "checkId": "namespace-map-candidate-set-materialized",
+      "passed": true,
+      "detail": "candidateCount=9; sourcePathsMissing="
+    },
+    {
+      "checkId": "no-candidate-provides-gu-native-observed-electroweak-namespace-map",
+      "passed": true,
+      "detail": "intakeReadyCandidateCount=0; minimumMissingFields=15"
+    },
+    {
+      "checkId": "no-candidate-can-fill-phase256-or-phase201-contracts",
+      "passed": true,
+      "detail": "phase256ApplicationReadyCandidateCount=0; phase201WzApplicationReadyCandidateCount=0; phase201HiggsApplicationReadyCandidateCount=0"
+    },
+    {
+      "checkId": "template-and-proxy-boundaries-preserved",
+      "passed": true,
+      "detail": "fmsAndDressingRemainExternalTemplatesOnly=True; phase27RemainsInternalConventionOnly=True; phase311ObservedMapAbsent=True; phase313OfficialDraftMapAbsent=True; phase321NeutralRouteUnpromotable=True; phase379382384RemainDiagnosticsOrRequirementsOnly=True"
+    },
+    {
+      "checkId": "source-contracts-not-mutated-or-promoted",
+      "passed": true,
+      "detail": "sourceContractApplicationAllowed=False; acceptedContractFieldCount=0; blockedContractFieldCount=15; phase201TemplateMutated=False"
+    }
+  ],
+  "decision": "No current local or external-template candidate supplies a GU-native observed electroweak namespace map with enough source lineage to fill Phase256 or Phase201. The next required artifact is a new theorem/source artifact, not another application of existing Phase27, Phase313, Phase321, FMS, dressing-field, or response-image proxy outputs.",
+  "nextRequiredArtifact": [
+    "A GU-native observed electroweak projection theorem/source artifact.",
+    "An explicit carrier-axis-to-observed photon/W/Z/H namespace map with domain and codomain bases.",
+    "A target-independent branch normalization, observed vacuum/expansion, weak-mixing/coupling lineage, and quadratic mass operator.",
+    "Separate W and Z Phase201 source rows plus Higgs scalar-source lineage, stability sidecars, pole extraction, and GeV normalization."
+  ]
+}

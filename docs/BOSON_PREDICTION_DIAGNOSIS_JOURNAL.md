@@ -15225,3 +15225,104 @@ support on the Phase379-suppressed carrier axis.
   `generatedAt` were restored after parsed-JSON semantic equivalence checks.
   The Phase382 full artifact retained one refreshed candidate-line count from
   `497` to `508`; its intake-ready count remains `0`.
+
+## 2026-06-09 - Phase385 Observed Electroweak Namespace-Map Intake Audit
+
+### Context
+
+Phase384 closed the current Phase27 basis-energy proxy escape, but the
+remaining physically meaningful repair still requires a GU-native observed
+electroweak namespace map. A sidecar repository-inspection agent independently
+confirmed that Phase201 and Phase256 are materialized but unfilled, and that
+Phase27, Phase313, Phase321, Phase344, Phase365, Phase379, Phase382, and
+Phase384 do not currently fill Phase201 or Phase256.
+
+### Action
+
+- Added
+  `studies/phase385_observed_electroweak_namespace_map_intake_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P385.md`.
+- Audited `9` current candidates: Phase27 internal convention, Phase311
+  completion observed-sector program, Phase313 official-draft symbolic
+  placement, Phase321 neutral-mixing route, Phase344 FMS template, Phase365
+  dressing-field template, Phase379 response-image diagnostic, Phase382
+  observed-projection requirement, and Phase384 basis-energy proxy.
+- Scored each candidate against strict namespace-map fields: GU-native theorem
+  and source lineage, target-blind provenance, carrier-to-observed map,
+  domain/codomain bases, observed vacuum/expansion, photon/W/Z/H rows,
+  weak-mixing/coupling source, mass operator, stability sidecars, and GeV
+  normalization.
+- Wired Phase385 into the generator, Phase101 package, Phase202 completion
+  audit, claim-integrity verifier, and source-scanner exclusions.
+- Updated `ExperimentReferences.md` and the detailed FMS, dressing-field, local
+  completion, and local architecture reference notes.
+
+### Result
+
+- Targeted Phase385 run passed:
+  `observedElectroweakNamespaceMapIntakeAuditPassed=True`.
+- Phase385 preserved the unfilled contracts:
+  `phase256RequiredFieldCount=20`,
+  `phase256FilledRequiredFieldCount=0`,
+  `phase213WzMissingFieldCount=15`, and
+  `phase213HiggsMissingFieldCount=14`.
+- The candidate intake result is strict:
+  `candidateCount=9`, `intakeReadyCandidateCount=0`,
+  `phase256ApplicationReadyCandidateCount=0`,
+  `phase201WzApplicationReadyCandidateCount=0`, and
+  `phase201HiggsApplicationReadyCandidateCount=0`.
+- Phase385 accepted zero W/Z contract fields and kept
+  `canFillPhase201WzContract=False`.
+
+### Boundary
+
+Phase385 is not a physical prediction. It makes the remaining blocker more
+precise: the current repository has useful conventions, diagnostics, and
+external observed-field templates, but none is a GU-native observed
+electroweak namespace-map theorem/source artifact. The next required artifact
+is still a target-independent map from GU carrier variables to observed
+photon/W/Z/H rows with source lineage, stability, pole extraction, and GeV
+normalization.
+
+### Targeted Validation
+
+- Phase385 build and run passed.
+- Phase101 package run passed and includes the Phase385 block:
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- Phase202 objective audit remains incomplete by design:
+  `objectiveAchieved=False`, `checklistPassedCount=178`, and
+  `checklistFailedCount=3`.
+- Claim-integrity verification passed with
+  `sourceLineageMissing=true`, `wzMissingFieldCount=15`,
+  `higgsMissingFieldCount=14`, and `promotedPhysicalMassClaimCount=0`.
+
+### Full Validation
+
+- Full generator gate passed with Phase385 included.
+- Phase385's full-gate line matched the targeted run:
+  `observedElectroweakNamespaceMapIntakeAuditPassed=True`,
+  `candidateCount=9`, `intakeReadyCandidateCount=0`,
+  `phase256ApplicationReadyCandidateCount=0`,
+  `phase201WzApplicationReadyCandidateCount=0`,
+  `phase201HiggsApplicationReadyCandidateCount=0`, and
+  `canFillPhase201WzContract=False`.
+- Full-gate source and observed-field scans still report zero intake-ready
+  artifacts: Phase204 `candidateCount=140` and
+  `intakeReadyCandidateCount=0`; Phase205 `findingCount=200` and
+  `intakeReadyFindingCount=0`; Phase207 `candidateFindingCount=3050` and
+  `intakeReadyFindingCount=0`; Phase279 and Phase281
+  `localSearchMatchingFileCount=0`; Phase295 `totalCandidateLineCount=23907`
+  and `intakeReadyObservedFieldExtractionCandidateCount=0`; Phase296
+  `totalCandidateLineCount=53967` and
+  `intakeReadySourceLineageFieldCandidateCount=0`.
+- The full gate remains physically incomplete by design:
+  `objectiveAchieved=False`, `checklistPassedCount=178`, and
+  `checklistFailedCount=3`.
+- Full-gate claim integrity preserved the active blocker:
+  `sourceLineageMissing=true`, `wzMissingFieldCount=15`,
+  `higgsMissingFieldCount=14`, and `promotedPhysicalMassClaimCount=0`.
+- After the full gate, `60` historical JSON files that changed only by
+  `generatedAt` were restored after parsed-JSON semantic equivalence checks.
+  The Phase382 full artifact retained refreshed candidate-line counts from
+  `4530` to `4535` and from `508` to `519`; its intake-ready counts remain
+  `0`.

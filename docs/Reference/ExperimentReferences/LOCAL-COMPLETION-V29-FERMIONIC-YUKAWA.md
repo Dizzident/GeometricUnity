@@ -97,6 +97,10 @@ outside the first executable numerical branch.
   axis conflict. The proxy finds no escape: every current Phase307 W definition
   has suppressed-axis basis energy above `0.10`, with minimum
   `0.33627838840903185`.
+- Added Phase385 to audit current observed electroweak namespace-map candidates
+  against the Phase256 observed-field extraction contract and Phase201
+  source-lineage contract. It finds no intake-ready GU-native observed map and
+  accepts zero contract fields.
 
 ## Prediction Relevance
 
@@ -119,7 +123,9 @@ Phase383 records that the current Phase307 selector space itself has no
 alternate predeclared selector or W source definition that avoids the suppressed
 axis. Phase384 records that the Phase27 basis-energy metadata does not supply a
 finer proxy escape; the selected P302-scaled common W definition still has
-suppressed-axis basis energy `0.44501616745604355`.
+suppressed-axis basis energy `0.44501616745604355`. Phase385 records that the
+current observed-map candidates, including local conventions and external
+FMS/dressing templates, cannot fill Phase256 or Phase201.
 
 ## Limitation
 

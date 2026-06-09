@@ -38,6 +38,10 @@ of observed states.
 - Compared against the existing observed-field extraction contract, observation
   pipeline capability audit, observed-field candidate scan, coupled
   Yang-Mills-Higgs extraction audit, and Higgsless boundary-condition audit.
+- Reused in Phase385 as an observed electroweak namespace-map intake candidate.
+  The result remains negative for promotion: FMS is an external observed-field
+  extraction template and does not supply GU-native projection rows or
+  Phase201/Phase256-ready source lineage.
 
 ## Prediction Relevance
 

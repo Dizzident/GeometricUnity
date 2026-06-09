@@ -154,6 +154,7 @@ const paths = {
   phase382: "studies/phase382_response_image_observed_projection_requirement_audit_001/output/response_image_observed_projection_requirement_audit_summary.json",
   phase383: "studies/phase383_phase307_suppressed_axis_counterfactual_selector_audit_001/output/phase307_suppressed_axis_counterfactual_selector_audit_summary.json",
   phase384: "studies/phase384_phase307_basis_energy_response_image_proxy_audit_001/output/phase307_basis_energy_response_image_proxy_audit_summary.json",
+  phase385: "studies/phase385_observed_electroweak_namespace_map_intake_audit_001/output/observed_electroweak_namespace_map_intake_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -379,6 +380,7 @@ const phase381 = requireFile(paths.phase381);
 const phase382 = requireFile(paths.phase382);
 const phase383 = requireFile(paths.phase383);
 const phase384 = requireFile(paths.phase384);
+const phase385 = requireFile(paths.phase385);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -4428,6 +4430,24 @@ if (sourceLineageMissing) {
   assert(phase384.phase201TemplateMutated === false && phase384.fieldsAppliedToPhase201TemplateCount === 0, "Phase384 must not mutate the Phase201 template.");
   assert(phase384.acceptedContractFieldCount === 0 && phase384.blockedContractFieldCount === missingWzFields && phase384.phase213WzMissingFieldCount === missingWzFields, "Phase384 must preserve zero accepted W/Z contract fields and Phase213 missing counts.");
   assert(Array.isArray(phase384.phase201FieldsDefensiblyFilled) && phase384.phase201FieldsDefensiblyFilled.length === 0, "Phase384 must preserve an empty defensible Phase201 fill set.");
+  assert(phase385.observedElectroweakNamespaceMapIntakeAuditPassed === true, "Phase385 observed electroweak namespace-map intake audit must pass as a non-promotional boundary audit.");
+  assert(phase385.targetBlindConstruction === true && phase385.physicalTargetsConsultedForConstruction === false, "Phase385 construction must remain target-blind.");
+  assert(typeof phase385.targetBlindConstructionHash === "string" && phase385.targetBlindConstructionHash.length === 64, "Phase385 must persist a target-blind construction hash.");
+  assert(phase385.applicationSubjectKind === "observed-electroweak-namespace-map-intake-candidates-for-phase256-phase201", "Phase385 must classify its subject as observed electroweak namespace-map intake for Phase256/Phase201.");
+  assert(phase385.phase256ContractMaterialized === true && phase385.phase256RequiredFieldCount === 20 && phase385.phase256FilledRequiredFieldCount === 0 && phase385.phase256ObservedFieldExtractionContractPromotable === false, "Phase385 must preserve the unfilled Phase256 observed-field extraction contract.");
+  assert(phase385.phase201IntakeContractMaterialized === true && phase385.phase201AllRequiredLineagesPromotable === false, "Phase385 must preserve the unfilled Phase201 source-lineage contract.");
+  assert(phase385.phase213WzMissingFieldCount === missingWzFields && phase385.phase213HiggsMissingFieldCount === missingHiggsFields, "Phase385 missing-field counts must match Phase213.");
+  assert(phase385.candidateCount === 9 && phase385.intakeReadyCandidateCount === 0, "Phase385 must audit nine current candidates and find no intake-ready namespace map.");
+  assert(phase385.phase256ApplicationReadyCandidateCount === 0 && phase385.phase201WzApplicationReadyCandidateCount === 0 && phase385.phase201HiggsApplicationReadyCandidateCount === 0, "Phase385 must find no candidate ready for Phase256 or Phase201 application.");
+  assert(phase385.observedTemplateCandidateCount === 2 && phase385.fmsAndDressingRemainExternalTemplatesOnly === true, "Phase385 must preserve FMS and dressing-field as external templates only.");
+  assert(phase385.noCandidateProvidesGuNativeObservedElectroweakNamespaceMap === true, "Phase385 must report no GU-native observed electroweak namespace map among current candidates.");
+  assert(phase385.noCandidateCanFillPhase256ObservedFieldExtractionContract === true && phase385.noCandidateCanFillPhase201WzContract === true && phase385.noCandidateCanFillPhase201HiggsContract === true, "Phase385 must report no candidate can fill Phase256 or Phase201 contracts.");
+  assert(phase385.phase27RemainsInternalConventionOnly === true && phase385.phase311ObservedMapAbsent === true && phase385.phase313OfficialDraftMapAbsent === true && phase385.phase321NeutralRouteUnpromotable === true && phase385.phase379382384RemainDiagnosticsOrRequirementsOnly === true, "Phase385 must preserve internal-convention, official-draft, neutral-route, and response-image/proxy boundaries.");
+  assert(phase385.sourceContractApplicationAllowed === false && phase385.canFillPhase201WzContract === false && phase385.canFillPhase201HiggsContract === false && phase385.canFillPhase256ObservedFieldExtractionContract === false, "Phase385 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase385.routePromotesWzMasses === false && phase385.routePromotesHiggsMass === false && phase385.routeCompletesBosonPredictions === false, "Phase385 cannot promote boson predictions.");
+  assert(phase385.phase201TemplateMutated === false && phase385.fieldsAppliedToPhase201TemplateCount === 0, "Phase385 must not mutate the Phase201 template.");
+  assert(phase385.acceptedContractFieldCount === 0 && phase385.blockedContractFieldCount === missingWzFields, "Phase385 must preserve zero accepted W/Z contract fields and Phase213 missing counts.");
+  assert(Array.isArray(phase385.phase201FieldsDefensiblyFilled) && phase385.phase201FieldsDefensiblyFilled.length === 0, "Phase385 must preserve an empty defensible Phase201 fill set.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

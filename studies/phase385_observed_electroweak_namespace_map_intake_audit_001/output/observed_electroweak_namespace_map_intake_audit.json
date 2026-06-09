@@ -1,0 +1,1176 @@
+{
+  "phaseId": "phase385-observed-electroweak-namespace-map-intake-audit",
+  "generatedAt": "2026-06-09T14:52:42.0075349+00:00",
+  "terminalStatus": "observed-electroweak-namespace-map-intake-audit-no-current-candidate-ready",
+  "observedElectroweakNamespaceMapIntakeAuditPassed": true,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "6c28c84cd422a215108d70c26b63c6a08c97e450ca1af2a2c1b55d9c8c0aa22a",
+  "applicationSubjectKind": "observed-electroweak-namespace-map-intake-candidates-for-phase256-phase201",
+  "phase256Contract": {
+    "phase256Path": "studies/phase256_observed_field_extraction_intake_contract_001/output/observed_field_extraction_intake_contract_summary.json",
+    "phase256TemplatePath": "studies/phase256_observed_field_extraction_intake_contract_001/output/observed_field_extraction_intake_template.json",
+    "phase256ContractMaterialized": true,
+    "phase256RequiredFieldCount": 20,
+    "phase256FilledRequiredFieldCount": 0,
+    "phase256ObservedFieldExtractionContractPromotable": false,
+    "phase256RequiredFieldIds": [
+      "observedFieldExtractionTheoremId",
+      "sourceReferenceIds",
+      "canonicalOrDeclaredShiabBranchId",
+      "branchNormalizationSourceId",
+      "fourDimensionalObservedVacuumArtifactId",
+      "quadraticElectroweakMassOperatorId",
+      "electroweakGaugeEmbeddingId",
+      "photonEigenstateProjectionId",
+      "wBosonSourceRowId",
+      "zBosonSourceRowId",
+      "wBosonRawAmplitudeGatePassed",
+      "zBosonRawAmplitudeGatePassed",
+      "wzCommonBridgeGatePassed",
+      "higgsScalarSourceOperatorId",
+      "higgsMassiveScalarProfileId",
+      "higgsPotentialSelfCouplingRelationId",
+      "targetBlindConstructionHash",
+      "stabilitySidecarIds",
+      "targetComparisonAfterConstructionGatePassed",
+      "phase201And209ApplicationReady"
+    ]
+  },
+  "phase201Contract": {
+    "phase201Path": "studies/phase201_boson_source_lineage_intake_contract_001/output/boson_source_lineage_intake_contract_summary.json",
+    "phase213Path": "studies/phase213_boson_source_lineage_blocker_matrix_001/output/boson_source_lineage_blocker_matrix_summary.json",
+    "phase201IntakeContractMaterialized": true,
+    "phase201AllRequiredLineagesPromotable": false,
+    "phase213WzMissingFieldCount": 15,
+    "phase213HiggsMissingFieldCount": 14
+  },
+  "candidateAudits": [
+    {
+      "candidateId": "phase27-internal-cartan-mixing-convention",
+      "candidateKind": "internal-convention",
+      "sourcePaths": [
+        "studies/phase27_charge_sector_convention_001/electroweak_mixing_convention.json",
+        "studies/phase27_charge_sector_convention_001/mixing_convention_readiness.json"
+      ],
+      "sourcePathsExist": true,
+      "observedFieldExtractionTemplatePresent": false,
+      "namespaceFieldAudit": [
+        {
+          "fieldId": "guNativeTheoremOrDerivationId",
+          "filled": false
+        },
+        {
+          "fieldId": "sourceLineageId",
+          "filled": false
+        },
+        {
+          "fieldId": "targetBlindProvenancePresent",
+          "filled": true
+        },
+        {
+          "fieldId": "noPhysicalTargetsConsultedForConstruction",
+          "filled": true
+        },
+        {
+          "fieldId": "carrierAxisToObservedElectroweakMap",
+          "filled": false
+        },
+        {
+          "fieldId": "domainBasisSpecified",
+          "filled": true
+        },
+        {
+          "fieldId": "codomainBasisSpecified",
+          "filled": false
+        },
+        {
+          "fieldId": "branchNormalizationSource",
+          "filled": false
+        },
+        {
+          "fieldId": "observedVacuumOrExpansion",
+          "filled": false
+        },
+        {
+          "fieldId": "electroweakGaugeEmbedding",
+          "filled": false
+        },
+        {
+          "fieldId": "photonProjectionRow",
+          "filled": false
+        },
+        {
+          "fieldId": "wProjectionOrSourceRows",
+          "filled": false
+        },
+        {
+          "fieldId": "zProjectionOrSourceRow",
+          "filled": false
+        },
+        {
+          "fieldId": "higgsProjectionOrSourceRow",
+          "filled": false
+        },
+        {
+          "fieldId": "weakMixingAngleOrCouplingSource",
+          "filled": false
+        },
+        {
+          "fieldId": "quadraticMassOperator",
+          "filled": false
+        },
+        {
+          "fieldId": "stabilitySidecars",
+          "filled": false
+        },
+        {
+          "fieldId": "gevUnitNormalization",
+          "filled": false
+        }
+      ],
+      "namespaceFilledFieldCount": 3,
+      "missingNamespaceFieldIds": [
+        "guNativeTheoremOrDerivationId",
+        "sourceLineageId",
+        "carrierAxisToObservedElectroweakMap",
+        "codomainBasisSpecified",
+        "branchNormalizationSource",
+        "observedVacuumOrExpansion",
+        "electroweakGaugeEmbedding",
+        "photonProjectionRow",
+        "wProjectionOrSourceRows",
+        "zProjectionOrSourceRow",
+        "higgsProjectionOrSourceRow",
+        "weakMixingAngleOrCouplingSource",
+        "quadraticMassOperator",
+        "stabilitySidecars",
+        "gevUnitNormalization"
+      ],
+      "strictNamespaceMapPresent": false,
+      "phase256ApplicationReady": false,
+      "phase201WzApplicationReady": false,
+      "phase201HiggsApplicationReady": false,
+      "acceptedPhase256FieldIds": [],
+      "acceptedPhase201WzFieldIds": [],
+      "acceptedPhase201HiggsFieldIds": [],
+      "routePromotesWzMasses": false,
+      "routePromotesHiggsMass": false,
+      "routeCompletesBosonPredictions": false,
+      "evidence": [
+        "Phase27 validates charged and neutral internal axes without external target values."
+      ],
+      "decision": "Internal axis convention only; it does not define observed photon/W/Z/H projection rows."
+    },
+    {
+      "candidateId": "phase311-completion-observed-sector-program",
+      "candidateKind": "local-completion-boundary",
+      "sourcePaths": [
+        "studies/phase311_completion_observed_sector_wz_row_selector_audit_001/output/completion_observed_sector_wz_row_selector_audit_summary.json"
+      ],
+      "sourcePathsExist": true,
+      "observedFieldExtractionTemplatePresent": false,
+      "namespaceFieldAudit": [
+        {
+          "fieldId": "guNativeTheoremOrDerivationId",
+          "filled": false
+        },
+        {
+          "fieldId": "sourceLineageId",
+          "filled": false
+        },
+        {
+          "fieldId": "targetBlindProvenancePresent",
+          "filled": true
+        },
+        {
+          "fieldId": "noPhysicalTargetsConsultedForConstruction",
+          "filled": true
+        },
+        {
+          "fieldId": "carrierAxisToObservedElectroweakMap",
+          "filled": false
+        },
+        {
+          "fieldId": "domainBasisSpecified",
+          "filled": false
+        },
+        {
+          "fieldId": "codomainBasisSpecified",
+          "filled": false
+        },
+        {
+          "fieldId": "branchNormalizationSource",
+          "filled": false
+        },
+        {
+          "fieldId": "observedVacuumOrExpansion",
+          "filled": false
+        },
+        {
+          "fieldId": "electroweakGaugeEmbedding",
+          "filled": false
+        },
+        {
+          "fieldId": "photonProjectionRow",
+          "filled": false
+        },
+        {
+          "fieldId": "wProjectionOrSourceRows",
+          "filled": false
+        },
+        {
+          "fieldId": "zProjectionOrSourceRow",
+          "filled": false
+        },
+        {
+          "fieldId": "higgsProjectionOrSourceRow",
+          "filled": false
+        },
+        {
+          "fieldId": "weakMixingAngleOrCouplingSource",
+          "filled": false
+        },
+        {
+          "fieldId": "quadraticMassOperator",
+          "filled": false
+        },
+        {
+          "fieldId": "stabilitySidecars",
+          "filled": false
+        },
+        {
+          "fieldId": "gevUnitNormalization",
+          "filled": false
+        }
+      ],
+      "namespaceFilledFieldCount": 2,
+      "missingNamespaceFieldIds": [
+        "guNativeTheoremOrDerivationId",
+        "sourceLineageId",
+        "carrierAxisToObservedElectroweakMap",
+        "domainBasisSpecified",
+        "codomainBasisSpecified",
+        "branchNormalizationSource",
+        "observedVacuumOrExpansion",
+        "electroweakGaugeEmbedding",
+        "photonProjectionRow",
+        "wProjectionOrSourceRows",
+        "zProjectionOrSourceRow",
+        "higgsProjectionOrSourceRow",
+        "weakMixingAngleOrCouplingSource",
+        "quadraticMassOperator",
+        "stabilitySidecars",
+        "gevUnitNormalization"
+      ],
+      "strictNamespaceMapPresent": false,
+      "phase256ApplicationReady": false,
+      "phase201WzApplicationReady": false,
+      "phase201HiggsApplicationReady": false,
+      "acceptedPhase256FieldIds": [],
+      "acceptedPhase201WzFieldIds": [],
+      "acceptedPhase201HiggsFieldIds": [],
+      "routePromotesWzMasses": false,
+      "routePromotesHiggsMass": false,
+      "routeCompletesBosonPredictions": false,
+      "evidence": [
+        "Phase311 says the completion draft requires a typed observable map before comparison."
+      ],
+      "decision": "Programmatic requirement only; no canonical W/Z row selector or physical observable map is supplied."
+    },
+    {
+      "candidateId": "phase313-official-draft-symbolic-electroweak-placement",
+      "candidateKind": "primary-gu-symbolic-placement",
+      "sourcePaths": [
+        "studies/phase313_official_draft_electroweak_projection_map_audit_001/output/official_draft_electroweak_projection_map_audit_summary.json"
+      ],
+      "sourcePathsExist": true,
+      "observedFieldExtractionTemplatePresent": false,
+      "namespaceFieldAudit": [
+        {
+          "fieldId": "guNativeTheoremOrDerivationId",
+          "filled": false
+        },
+        {
+          "fieldId": "sourceLineageId",
+          "filled": false
+        },
+        {
+          "fieldId": "targetBlindProvenancePresent",
+          "filled": true
+        },
+        {
+          "fieldId": "noPhysicalTargetsConsultedForConstruction",
+          "filled": true
+        },
+        {
+          "fieldId": "carrierAxisToObservedElectroweakMap",
+          "filled": false
+        },
+        {
+          "fieldId": "domainBasisSpecified",
+          "filled": true
+        },
+        {
+          "fieldId": "codomainBasisSpecified",
+          "filled": false
+        },
+        {
+          "fieldId": "branchNormalizationSource",
+          "filled": false
+        },
+        {
+          "fieldId": "observedVacuumOrExpansion",
+          "filled": false
+        },
+        {
+          "fieldId": "electroweakGaugeEmbedding",
+          "filled": false
+        },
+        {
+          "fieldId": "photonProjectionRow",
+          "filled": false
+        },
+        {
+          "fieldId": "wProjectionOrSourceRows",
+          "filled": false
+        },
+        {
+          "fieldId": "zProjectionOrSourceRow",
+          "filled": false
+        },
+        {
+          "fieldId": "higgsProjectionOrSourceRow",
+          "filled": false
+        },
+        {
+          "fieldId": "weakMixingAngleOrCouplingSource",
+          "filled": false
+        },
+        {
+          "fieldId": "quadraticMassOperator",
+          "filled": false
+        },
+        {
+          "fieldId": "stabilitySidecars",
+          "filled": false
+        },
+        {
+          "fieldId": "gevUnitNormalization",
+          "filled": false
+        }
+      ],
+      "namespaceFilledFieldCount": 3,
+      "missingNamespaceFieldIds": [
+        "guNativeTheoremOrDerivationId",
+        "sourceLineageId",
+        "carrierAxisToObservedElectroweakMap",
+        "codomainBasisSpecified",
+        "branchNormalizationSource",
+        "observedVacuumOrExpansion",
+        "electroweakGaugeEmbedding",
+        "photonProjectionRow",
+        "wProjectionOrSourceRows",
+        "zProjectionOrSourceRow",
+        "higgsProjectionOrSourceRow",
+        "weakMixingAngleOrCouplingSource",
+        "quadraticMassOperator",
+        "stabilitySidecars",
+        "gevUnitNormalization"
+      ],
+      "strictNamespaceMapPresent": false,
+      "phase256ApplicationReady": false,
+      "phase201WzApplicationReady": false,
+      "phase201HiggsApplicationReady": false,
+      "acceptedPhase256FieldIds": [],
+      "acceptedPhase201WzFieldIds": [],
+      "acceptedPhase201HiggsFieldIds": [],
+      "routePromotesWzMasses": false,
+      "routePromotesHiggsMass": false,
+      "routeCompletesBosonPredictions": false,
+      "evidence": [
+        "Phase313 records weak-isospin and weak-hypercharge location leads plus the Phase27 internal convention."
+      ],
+      "decision": "Symbolic placement is not an observed electroweak projection map or source-row theorem."
+    },
+    {
+      "candidateId": "phase321-neutral-electroweak-mixing-route",
+      "candidateKind": "neutral-mixing-boundary",
+      "sourcePaths": [
+        "studies/phase321_neutral_electroweak_mixing_source_audit_001/output/neutral_electroweak_mixing_source_audit_summary.json"
+      ],
+      "sourcePathsExist": true,
+      "observedFieldExtractionTemplatePresent": false,
+      "namespaceFieldAudit": [
+        {
+          "fieldId": "guNativeTheoremOrDerivationId",
+          "filled": false
+        },
+        {
+          "fieldId": "sourceLineageId",
+          "filled": false
+        },
+        {
+          "fieldId": "targetBlindProvenancePresent",
+          "filled": true
+        },
+        {
+          "fieldId": "noPhysicalTargetsConsultedForConstruction",
+          "filled": true
+        },
+        {
+          "fieldId": "carrierAxisToObservedElectroweakMap",
+          "filled": false
+        },
+        {
+          "fieldId": "domainBasisSpecified",
+          "filled": true
+        },
+        {
+          "fieldId": "codomainBasisSpecified",
+          "filled": false
+        },
+        {
+          "fieldId": "branchNormalizationSource",
+          "filled": false
+        },
+        {
+          "fieldId": "observedVacuumOrExpansion",
+          "filled": false
+        },
+        {
+          "fieldId": "electroweakGaugeEmbedding",
+          "filled": false
+        },
+        {
+          "fieldId": "photonProjectionRow",
+          "filled": false
+        },
+        {
+          "fieldId": "wProjectionOrSourceRows",
+          "filled": false
+        },
+        {
+          "fieldId": "zProjectionOrSourceRow",
+          "filled": false
+        },
+        {
+          "fieldId": "higgsProjectionOrSourceRow",
+          "filled": false
+        },
+        {
+          "fieldId": "weakMixingAngleOrCouplingSource",
+          "filled": false
+        },
+        {
+          "fieldId": "quadraticMassOperator",
+          "filled": false
+        },
+        {
+          "fieldId": "stabilitySidecars",
+          "filled": false
+        },
+        {
+          "fieldId": "gevUnitNormalization",
+          "filled": false
+        }
+      ],
+      "namespaceFilledFieldCount": 3,
+      "missingNamespaceFieldIds": [
+        "guNativeTheoremOrDerivationId",
+        "sourceLineageId",
+        "carrierAxisToObservedElectroweakMap",
+        "codomainBasisSpecified",
+        "branchNormalizationSource",
+        "observedVacuumOrExpansion",
+        "electroweakGaugeEmbedding",
+        "photonProjectionRow",
+        "wProjectionOrSourceRows",
+        "zProjectionOrSourceRow",
+        "higgsProjectionOrSourceRow",
+        "weakMixingAngleOrCouplingSource",
+        "quadraticMassOperator",
+        "stabilitySidecars",
+        "gevUnitNormalization"
+      ],
+      "strictNamespaceMapPresent": false,
+      "phase256ApplicationReady": false,
+      "phase201WzApplicationReady": false,
+      "phase201HiggsApplicationReady": false,
+      "acceptedPhase256FieldIds": [],
+      "acceptedPhase201WzFieldIds": [],
+      "acceptedPhase201HiggsFieldIds": [],
+      "routePromotesWzMasses": false,
+      "routePromotesHiggsMass": false,
+      "routeCompletesBosonPredictions": false,
+      "evidence": [
+        "Phase321 inherits the Phase27 internal convention and audits neutral mixing requirements."
+      ],
+      "decision": "Neutral mixing lacks a target-independent weak angle, photon projection, Z projection row, and observed embedding."
+    },
+    {
+      "candidateId": "phase344-fms-observed-field-template",
+      "candidateKind": "external-observed-field-template",
+      "sourcePaths": [
+        "studies/phase344_fms_gauge_invariant_spectrum_source_audit_001/output/fms_gauge_invariant_spectrum_source_audit_summary.json"
+      ],
+      "sourcePathsExist": true,
+      "observedFieldExtractionTemplatePresent": true,
+      "namespaceFieldAudit": [
+        {
+          "fieldId": "guNativeTheoremOrDerivationId",
+          "filled": false
+        },
+        {
+          "fieldId": "sourceLineageId",
+          "filled": false
+        },
+        {
+          "fieldId": "targetBlindProvenancePresent",
+          "filled": false
+        },
+        {
+          "fieldId": "noPhysicalTargetsConsultedForConstruction",
+          "filled": true
+        },
+        {
+          "fieldId": "carrierAxisToObservedElectroweakMap",
+          "filled": false
+        },
+        {
+          "fieldId": "domainBasisSpecified",
+          "filled": false
+        },
+        {
+          "fieldId": "codomainBasisSpecified",
+          "filled": false
+        },
+        {
+          "fieldId": "branchNormalizationSource",
+          "filled": false
+        },
+        {
+          "fieldId": "observedVacuumOrExpansion",
+          "filled": false
+        },
+        {
+          "fieldId": "electroweakGaugeEmbedding",
+          "filled": false
+        },
+        {
+          "fieldId": "photonProjectionRow",
+          "filled": false
+        },
+        {
+          "fieldId": "wProjectionOrSourceRows",
+          "filled": false
+        },
+        {
+          "fieldId": "zProjectionOrSourceRow",
+          "filled": false
+        },
+        {
+          "fieldId": "higgsProjectionOrSourceRow",
+          "filled": false
+        },
+        {
+          "fieldId": "weakMixingAngleOrCouplingSource",
+          "filled": false
+        },
+        {
+          "fieldId": "quadraticMassOperator",
+          "filled": false
+        },
+        {
+          "fieldId": "stabilitySidecars",
+          "filled": false
+        },
+        {
+          "fieldId": "gevUnitNormalization",
+          "filled": false
+        }
+      ],
+      "namespaceFilledFieldCount": 1,
+      "missingNamespaceFieldIds": [
+        "guNativeTheoremOrDerivationId",
+        "sourceLineageId",
+        "targetBlindProvenancePresent",
+        "carrierAxisToObservedElectroweakMap",
+        "domainBasisSpecified",
+        "codomainBasisSpecified",
+        "branchNormalizationSource",
+        "observedVacuumOrExpansion",
+        "electroweakGaugeEmbedding",
+        "photonProjectionRow",
+        "wProjectionOrSourceRows",
+        "zProjectionOrSourceRow",
+        "higgsProjectionOrSourceRow",
+        "weakMixingAngleOrCouplingSource",
+        "quadraticMassOperator",
+        "stabilitySidecars",
+        "gevUnitNormalization"
+      ],
+      "strictNamespaceMapPresent": false,
+      "phase256ApplicationReady": false,
+      "phase201WzApplicationReady": false,
+      "phase201HiggsApplicationReady": false,
+      "acceptedPhase256FieldIds": [],
+      "acceptedPhase201WzFieldIds": [],
+      "acceptedPhase201HiggsFieldIds": [],
+      "routePromotesWzMasses": false,
+      "routePromotesHiggsMass": false,
+      "routeCompletesBosonPredictions": false,
+      "evidence": [
+        "Phase344 finds that FMS is an observed-field extraction template external to GU."
+      ],
+      "decision": "Template only; no GU-local theorem, vacuum, composite operators, source scale, or projection rows are supplied."
+    },
+    {
+      "candidateId": "phase365-dressing-field-template",
+      "candidateKind": "external-observed-variable-template",
+      "sourcePaths": [
+        "studies/phase365_dressing_field_electroweak_observed_variables_audit_001/output/dressing_field_electroweak_observed_variables_audit_summary.json"
+      ],
+      "sourcePathsExist": true,
+      "observedFieldExtractionTemplatePresent": true,
+      "namespaceFieldAudit": [
+        {
+          "fieldId": "guNativeTheoremOrDerivationId",
+          "filled": false
+        },
+        {
+          "fieldId": "sourceLineageId",
+          "filled": false
+        },
+        {
+          "fieldId": "targetBlindProvenancePresent",
+          "filled": false
+        },
+        {
+          "fieldId": "noPhysicalTargetsConsultedForConstruction",
+          "filled": true
+        },
+        {
+          "fieldId": "carrierAxisToObservedElectroweakMap",
+          "filled": false
+        },
+        {
+          "fieldId": "domainBasisSpecified",
+          "filled": false
+        },
+        {
+          "fieldId": "codomainBasisSpecified",
+          "filled": false
+        },
+        {
+          "fieldId": "branchNormalizationSource",
+          "filled": false
+        },
+        {
+          "fieldId": "observedVacuumOrExpansion",
+          "filled": false
+        },
+        {
+          "fieldId": "electroweakGaugeEmbedding",
+          "filled": false
+        },
+        {
+          "fieldId": "photonProjectionRow",
+          "filled": false
+        },
+        {
+          "fieldId": "wProjectionOrSourceRows",
+          "filled": false
+        },
+        {
+          "fieldId": "zProjectionOrSourceRow",
+          "filled": false
+        },
+        {
+          "fieldId": "higgsProjectionOrSourceRow",
+          "filled": false
+        },
+        {
+          "fieldId": "weakMixingAngleOrCouplingSource",
+          "filled": false
+        },
+        {
+          "fieldId": "quadraticMassOperator",
+          "filled": false
+        },
+        {
+          "fieldId": "stabilitySidecars",
+          "filled": false
+        },
+        {
+          "fieldId": "gevUnitNormalization",
+          "filled": false
+        }
+      ],
+      "namespaceFilledFieldCount": 1,
+      "missingNamespaceFieldIds": [
+        "guNativeTheoremOrDerivationId",
+        "sourceLineageId",
+        "targetBlindProvenancePresent",
+        "carrierAxisToObservedElectroweakMap",
+        "domainBasisSpecified",
+        "codomainBasisSpecified",
+        "branchNormalizationSource",
+        "observedVacuumOrExpansion",
+        "electroweakGaugeEmbedding",
+        "photonProjectionRow",
+        "wProjectionOrSourceRows",
+        "zProjectionOrSourceRow",
+        "higgsProjectionOrSourceRow",
+        "weakMixingAngleOrCouplingSource",
+        "quadraticMassOperator",
+        "stabilitySidecars",
+        "gevUnitNormalization"
+      ],
+      "strictNamespaceMapPresent": false,
+      "phase256ApplicationReady": false,
+      "phase201WzApplicationReady": false,
+      "phase201HiggsApplicationReady": false,
+      "acceptedPhase256FieldIds": [],
+      "acceptedPhase201WzFieldIds": [],
+      "acceptedPhase201HiggsFieldIds": [],
+      "routePromotesWzMasses": false,
+      "routePromotesHiggsMass": false,
+      "routeCompletesBosonPredictions": false,
+      "evidence": [
+        "Phase365 finds the dressing-field route constructs gauge-invariant electroweak variables externally."
+      ],
+      "decision": "Template only; no GU-native dressing field, observed vacuum, projection rows, or mass-source lineage is supplied."
+    },
+    {
+      "candidateId": "phase379-response-image-carrier-axis-diagnostic",
+      "candidateKind": "carrier-response-diagnostic",
+      "sourcePaths": [
+        "studies/phase379_response_image_carrier_axis_characterization_001/output/response_image_carrier_axis_characterization_summary.json"
+      ],
+      "sourcePathsExist": true,
+      "observedFieldExtractionTemplatePresent": false,
+      "namespaceFieldAudit": [
+        {
+          "fieldId": "guNativeTheoremOrDerivationId",
+          "filled": false
+        },
+        {
+          "fieldId": "sourceLineageId",
+          "filled": false
+        },
+        {
+          "fieldId": "targetBlindProvenancePresent",
+          "filled": true
+        },
+        {
+          "fieldId": "noPhysicalTargetsConsultedForConstruction",
+          "filled": true
+        },
+        {
+          "fieldId": "carrierAxisToObservedElectroweakMap",
+          "filled": false
+        },
+        {
+          "fieldId": "domainBasisSpecified",
+          "filled": true
+        },
+        {
+          "fieldId": "codomainBasisSpecified",
+          "filled": false
+        },
+        {
+          "fieldId": "branchNormalizationSource",
+          "filled": false
+        },
+        {
+          "fieldId": "observedVacuumOrExpansion",
+          "filled": false
+        },
+        {
+          "fieldId": "electroweakGaugeEmbedding",
+          "filled": false
+        },
+        {
+          "fieldId": "photonProjectionRow",
+          "filled": false
+        },
+        {
+          "fieldId": "wProjectionOrSourceRows",
+          "filled": false
+        },
+        {
+          "fieldId": "zProjectionOrSourceRow",
+          "filled": false
+        },
+        {
+          "fieldId": "higgsProjectionOrSourceRow",
+          "filled": false
+        },
+        {
+          "fieldId": "weakMixingAngleOrCouplingSource",
+          "filled": false
+        },
+        {
+          "fieldId": "quadraticMassOperator",
+          "filled": false
+        },
+        {
+          "fieldId": "stabilitySidecars",
+          "filled": false
+        },
+        {
+          "fieldId": "gevUnitNormalization",
+          "filled": false
+        }
+      ],
+      "namespaceFilledFieldCount": 3,
+      "missingNamespaceFieldIds": [
+        "guNativeTheoremOrDerivationId",
+        "sourceLineageId",
+        "carrierAxisToObservedElectroweakMap",
+        "codomainBasisSpecified",
+        "branchNormalizationSource",
+        "observedVacuumOrExpansion",
+        "electroweakGaugeEmbedding",
+        "photonProjectionRow",
+        "wProjectionOrSourceRows",
+        "zProjectionOrSourceRow",
+        "higgsProjectionOrSourceRow",
+        "weakMixingAngleOrCouplingSource",
+        "quadraticMassOperator",
+        "stabilitySidecars",
+        "gevUnitNormalization"
+      ],
+      "strictNamespaceMapPresent": false,
+      "phase256ApplicationReady": false,
+      "phase201WzApplicationReady": false,
+      "phase201HiggsApplicationReady": false,
+      "acceptedPhase256FieldIds": [],
+      "acceptedPhase201WzFieldIds": [],
+      "acceptedPhase201HiggsFieldIds": [],
+      "routePromotesWzMasses": false,
+      "routePromotesHiggsMass": false,
+      "routeCompletesBosonPredictions": false,
+      "evidence": [
+        "Phase379 characterizes a response image and its carrier-axis suppression pattern."
+      ],
+      "decision": "Carrier diagnostic only; it explicitly does not provide an observed electroweak field map or source-row law."
+    },
+    {
+      "candidateId": "phase382-observed-projection-requirement",
+      "candidateKind": "requirement-audit",
+      "sourcePaths": [
+        "studies/phase382_response_image_observed_projection_requirement_audit_001/output/response_image_observed_projection_requirement_audit_summary.json"
+      ],
+      "sourcePathsExist": true,
+      "observedFieldExtractionTemplatePresent": false,
+      "namespaceFieldAudit": [
+        {
+          "fieldId": "guNativeTheoremOrDerivationId",
+          "filled": false
+        },
+        {
+          "fieldId": "sourceLineageId",
+          "filled": false
+        },
+        {
+          "fieldId": "targetBlindProvenancePresent",
+          "filled": true
+        },
+        {
+          "fieldId": "noPhysicalTargetsConsultedForConstruction",
+          "filled": true
+        },
+        {
+          "fieldId": "carrierAxisToObservedElectroweakMap",
+          "filled": false
+        },
+        {
+          "fieldId": "domainBasisSpecified",
+          "filled": false
+        },
+        {
+          "fieldId": "codomainBasisSpecified",
+          "filled": false
+        },
+        {
+          "fieldId": "branchNormalizationSource",
+          "filled": false
+        },
+        {
+          "fieldId": "observedVacuumOrExpansion",
+          "filled": false
+        },
+        {
+          "fieldId": "electroweakGaugeEmbedding",
+          "filled": false
+        },
+        {
+          "fieldId": "photonProjectionRow",
+          "filled": false
+        },
+        {
+          "fieldId": "wProjectionOrSourceRows",
+          "filled": false
+        },
+        {
+          "fieldId": "zProjectionOrSourceRow",
+          "filled": false
+        },
+        {
+          "fieldId": "higgsProjectionOrSourceRow",
+          "filled": false
+        },
+        {
+          "fieldId": "weakMixingAngleOrCouplingSource",
+          "filled": false
+        },
+        {
+          "fieldId": "quadraticMassOperator",
+          "filled": false
+        },
+        {
+          "fieldId": "stabilitySidecars",
+          "filled": false
+        },
+        {
+          "fieldId": "gevUnitNormalization",
+          "filled": false
+        }
+      ],
+      "namespaceFilledFieldCount": 2,
+      "missingNamespaceFieldIds": [
+        "guNativeTheoremOrDerivationId",
+        "sourceLineageId",
+        "carrierAxisToObservedElectroweakMap",
+        "domainBasisSpecified",
+        "codomainBasisSpecified",
+        "branchNormalizationSource",
+        "observedVacuumOrExpansion",
+        "electroweakGaugeEmbedding",
+        "photonProjectionRow",
+        "wProjectionOrSourceRows",
+        "zProjectionOrSourceRow",
+        "higgsProjectionOrSourceRow",
+        "weakMixingAngleOrCouplingSource",
+        "quadraticMassOperator",
+        "stabilitySidecars",
+        "gevUnitNormalization"
+      ],
+      "strictNamespaceMapPresent": false,
+      "phase256ApplicationReady": false,
+      "phase201WzApplicationReady": false,
+      "phase201HiggsApplicationReady": false,
+      "acceptedPhase256FieldIds": [],
+      "acceptedPhase201WzFieldIds": [],
+      "acceptedPhase201HiggsFieldIds": [],
+      "routePromotesWzMasses": false,
+      "routePromotesHiggsMass": false,
+      "routeCompletesBosonPredictions": false,
+      "evidence": [
+        "Phase382 materializes the need for a carrier-axis to observed-electroweak namespace separation map."
+      ],
+      "decision": "Requirement only; it records that no namespace-separation map is present."
+    },
+    {
+      "candidateId": "phase384-phase27-basis-energy-proxy",
+      "candidateKind": "basis-energy-proxy",
+      "sourcePaths": [
+        "studies/phase384_phase307_basis_energy_response_image_proxy_audit_001/output/phase307_basis_energy_response_image_proxy_audit_summary.json"
+      ],
+      "sourcePathsExist": true,
+      "observedFieldExtractionTemplatePresent": false,
+      "namespaceFieldAudit": [
+        {
+          "fieldId": "guNativeTheoremOrDerivationId",
+          "filled": false
+        },
+        {
+          "fieldId": "sourceLineageId",
+          "filled": false
+        },
+        {
+          "fieldId": "targetBlindProvenancePresent",
+          "filled": true
+        },
+        {
+          "fieldId": "noPhysicalTargetsConsultedForConstruction",
+          "filled": true
+        },
+        {
+          "fieldId": "carrierAxisToObservedElectroweakMap",
+          "filled": false
+        },
+        {
+          "fieldId": "domainBasisSpecified",
+          "filled": true
+        },
+        {
+          "fieldId": "codomainBasisSpecified",
+          "filled": false
+        },
+        {
+          "fieldId": "branchNormalizationSource",
+          "filled": false
+        },
+        {
+          "fieldId": "observedVacuumOrExpansion",
+          "filled": false
+        },
+        {
+          "fieldId": "electroweakGaugeEmbedding",
+          "filled": false
+        },
+        {
+          "fieldId": "photonProjectionRow",
+          "filled": false
+        },
+        {
+          "fieldId": "wProjectionOrSourceRows",
+          "filled": false
+        },
+        {
+          "fieldId": "zProjectionOrSourceRow",
+          "filled": false
+        },
+        {
+          "fieldId": "higgsProjectionOrSourceRow",
+          "filled": false
+        },
+        {
+          "fieldId": "weakMixingAngleOrCouplingSource",
+          "filled": false
+        },
+        {
+          "fieldId": "quadraticMassOperator",
+          "filled": false
+        },
+        {
+          "fieldId": "stabilitySidecars",
+          "filled": false
+        },
+        {
+          "fieldId": "gevUnitNormalization",
+          "filled": false
+        }
+      ],
+      "namespaceFilledFieldCount": 3,
+      "missingNamespaceFieldIds": [
+        "guNativeTheoremOrDerivationId",
+        "sourceLineageId",
+        "carrierAxisToObservedElectroweakMap",
+        "codomainBasisSpecified",
+        "branchNormalizationSource",
+        "observedVacuumOrExpansion",
+        "electroweakGaugeEmbedding",
+        "photonProjectionRow",
+        "wProjectionOrSourceRows",
+        "zProjectionOrSourceRow",
+        "higgsProjectionOrSourceRow",
+        "weakMixingAngleOrCouplingSource",
+        "quadraticMassOperator",
+        "stabilitySidecars",
+        "gevUnitNormalization"
+      ],
+      "strictNamespaceMapPresent": false,
+      "phase256ApplicationReady": false,
+      "phase201WzApplicationReady": false,
+      "phase201HiggsApplicationReady": false,
+      "acceptedPhase256FieldIds": [],
+      "acceptedPhase201WzFieldIds": [],
+      "acceptedPhase201HiggsFieldIds": [],
+      "routePromotesWzMasses": false,
+      "routePromotesHiggsMass": false,
+      "routeCompletesBosonPredictions": false,
+      "evidence": [
+        "Phase384 checks Phase27 basis-energy metadata as a suppressed-axis proxy under the response-image sidecar."
+      ],
+      "decision": "Proxy only; basis energy is not an observed electroweak projection or source-lineage theorem."
+    }
+  ],
+  "candidateCount": 9,
+  "intakeReadyCandidateCount": 0,
+  "phase256ApplicationReadyCandidateCount": 0,
+  "phase201WzApplicationReadyCandidateCount": 0,
+  "phase201HiggsApplicationReadyCandidateCount": 0,
+  "observedTemplateCandidateCount": 2,
+  "noCandidateProvidesGuNativeObservedElectroweakNamespaceMap": true,
+  "noCandidateCanFillPhase256ObservedFieldExtractionContract": true,
+  "noCandidateCanFillPhase201WzContract": true,
+  "noCandidateCanFillPhase201HiggsContract": true,
+  "fmsAndDressingRemainExternalTemplatesOnly": true,
+  "phase27RemainsInternalConventionOnly": true,
+  "phase311ObservedMapAbsent": true,
+  "phase313OfficialDraftMapAbsent": true,
+  "phase321NeutralRouteUnpromotable": true,
+  "phase379382384RemainDiagnosticsOrRequirementsOnly": true,
+  "sourceContractApplicationAllowed": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "blockedContractFieldCount": 15,
+  "phase213WzMissingFieldCount": 15,
+  "phase213HiggsMissingFieldCount": 14,
+  "phase201FieldsDefensiblyFilled": [],
+  "checks": [
+    {
+      "checkId": "phase256-and-phase201-contracts-materialized-unfilled",
+      "passed": true,
+      "detail": "phase256RequiredFieldCount=20; phase256FilledRequiredFieldCount=0; phase201AllRequiredLineagesPromotable=False; wzMissingFieldCount=15; higgsMissingFieldCount=14"
+    },
+    {
+      "checkId": "namespace-map-candidate-set-materialized",
+      "passed": true,
+      "detail": "candidateCount=9; sourcePathsMissing="
+    },
+    {
+      "checkId": "no-candidate-provides-gu-native-observed-electroweak-namespace-map",
+      "passed": true,
+      "detail": "intakeReadyCandidateCount=0; minimumMissingFields=15"
+    },
+    {
+      "checkId": "no-candidate-can-fill-phase256-or-phase201-contracts",
+      "passed": true,
+      "detail": "phase256ApplicationReadyCandidateCount=0; phase201WzApplicationReadyCandidateCount=0; phase201HiggsApplicationReadyCandidateCount=0"
+    },
+    {
+      "checkId": "template-and-proxy-boundaries-preserved",
+      "passed": true,
+      "detail": "fmsAndDressingRemainExternalTemplatesOnly=True; phase27RemainsInternalConventionOnly=True; phase311ObservedMapAbsent=True; phase313OfficialDraftMapAbsent=True; phase321NeutralRouteUnpromotable=True; phase379382384RemainDiagnosticsOrRequirementsOnly=True"
+    },
+    {
+      "checkId": "source-contracts-not-mutated-or-promoted",
+      "passed": true,
+      "detail": "sourceContractApplicationAllowed=False; acceptedContractFieldCount=0; blockedContractFieldCount=15; phase201TemplateMutated=False"
+    }
+  ],
+  "decision": "No current local or external-template candidate supplies a GU-native observed electroweak namespace map with enough source lineage to fill Phase256 or Phase201. The next required artifact is a new theorem/source artifact, not another application of existing Phase27, Phase313, Phase321, FMS, dressing-field, or response-image proxy outputs.",
+  "sourceEvidence": {
+    "phase27Path": "studies/phase27_charge_sector_convention_001/electroweak_mixing_convention.json",
+    "phase27ReadinessPath": "studies/phase27_charge_sector_convention_001/mixing_convention_readiness.json",
+    "phase201Path": "studies/phase201_boson_source_lineage_intake_contract_001/output/boson_source_lineage_intake_contract_summary.json",
+    "phase213Path": "studies/phase213_boson_source_lineage_blocker_matrix_001/output/boson_source_lineage_blocker_matrix_summary.json",
+    "phase256Path": "studies/phase256_observed_field_extraction_intake_contract_001/output/observed_field_extraction_intake_contract_summary.json",
+    "phase311Path": "studies/phase311_completion_observed_sector_wz_row_selector_audit_001/output/completion_observed_sector_wz_row_selector_audit_summary.json",
+    "phase313Path": "studies/phase313_official_draft_electroweak_projection_map_audit_001/output/official_draft_electroweak_projection_map_audit_summary.json",
+    "phase321Path": "studies/phase321_neutral_electroweak_mixing_source_audit_001/output/neutral_electroweak_mixing_source_audit_summary.json",
+    "phase344Path": "studies/phase344_fms_gauge_invariant_spectrum_source_audit_001/output/fms_gauge_invariant_spectrum_source_audit_summary.json",
+    "phase365Path": "studies/phase365_dressing_field_electroweak_observed_variables_audit_001/output/dressing_field_electroweak_observed_variables_audit_summary.json",
+    "phase379Path": "studies/phase379_response_image_carrier_axis_characterization_001/output/response_image_carrier_axis_characterization_summary.json",
+    "phase382Path": "studies/phase382_response_image_observed_projection_requirement_audit_001/output/response_image_observed_projection_requirement_audit_summary.json",
+    "phase384Path": "studies/phase384_phase307_basis_energy_response_image_proxy_audit_001/output/phase307_basis_energy_response_image_proxy_audit_summary.json"
+  },
+  "nextRequiredArtifact": [
+    "A GU-native observed electroweak projection theorem/source artifact.",
+    "An explicit carrier-axis-to-observed photon/W/Z/H namespace map with domain and codomain bases.",
+    "A target-independent branch normalization, observed vacuum/expansion, weak-mixing/coupling lineage, and quadratic mass operator.",
+    "Separate W and Z Phase201 source rows plus Higgs scalar-source lineage, stability sidecars, pole extraction, and GeV normalization."
+  ]
+}

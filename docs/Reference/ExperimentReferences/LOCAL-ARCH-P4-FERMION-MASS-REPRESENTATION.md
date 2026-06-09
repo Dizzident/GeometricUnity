@@ -79,6 +79,10 @@ of the physical fermionic branch of Geometric Unity.
 - Used in Phase384 to test whether Phase27 basis-energy fractions provide a
   finer proxy than the Phase307 charged-axis labels. They do not: all current
   W definitions remain substantially supported on suppressed axis `1`.
+- Used in Phase385 as part of the observed electroweak namespace-map intake
+  candidate set. The response-image and basis-energy artifacts remain carrier
+  or proxy diagnostics, not observed photon/W/Z/H projection rows or
+  source-lineage theorems.
 
 ## Prediction Relevance
 
@@ -112,7 +116,9 @@ the conflict either: the minimum W suppressed-axis basis-energy fraction is
 `0.33627838840903185`, and the selected P302-scaled common W definition has
 `0.44501616745604355`. None establishes that the weights, operator branch,
 carrier axes, basis-energy proxy, or image projector are physically canonical.
-No physical boson mass can be promoted from this convention alone.
+Phase385 confirms that these diagnostics also cannot fill the observed
+electroweak namespace-map intake contract. No physical boson mass can be
+promoted from this convention alone.
 
 ## Follow-Up
 
