@@ -155,6 +155,7 @@ const paths = {
   phase383: "studies/phase383_phase307_suppressed_axis_counterfactual_selector_audit_001/output/phase307_suppressed_axis_counterfactual_selector_audit_summary.json",
   phase384: "studies/phase384_phase307_basis_energy_response_image_proxy_audit_001/output/phase307_basis_energy_response_image_proxy_audit_summary.json",
   phase385: "studies/phase385_observed_electroweak_namespace_map_intake_audit_001/output/observed_electroweak_namespace_map_intake_audit_summary.json",
+  phase386: "studies/phase386_current_cox_first_principles_i_source_delta_audit_001/output/current_cox_first_principles_i_source_delta_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -381,6 +382,7 @@ const phase382 = requireFile(paths.phase382);
 const phase383 = requireFile(paths.phase383);
 const phase384 = requireFile(paths.phase384);
 const phase385 = requireFile(paths.phase385);
+const phase386 = requireFile(paths.phase386);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -4448,6 +4450,22 @@ if (sourceLineageMissing) {
   assert(phase385.phase201TemplateMutated === false && phase385.fieldsAppliedToPhase201TemplateCount === 0, "Phase385 must not mutate the Phase201 template.");
   assert(phase385.acceptedContractFieldCount === 0 && phase385.blockedContractFieldCount === missingWzFields, "Phase385 must preserve zero accepted W/Z contract fields and Phase213 missing counts.");
   assert(Array.isArray(phase385.phase201FieldsDefensiblyFilled) && phase385.phase201FieldsDefensiblyFilled.length === 0, "Phase385 must preserve an empty defensible Phase201 fill set.");
+  assert(phase386.currentCoxFirstPrinciplesISourceDeltaAuditPassed === true, "Phase386 current Cox first-principles source delta audit must pass as a non-promotional boundary audit.");
+  assert(phase386.targetBlindConstruction === true && phase386.physicalTargetsConsultedForConstruction === false, "Phase386 construction must remain target-blind.");
+  assert(typeof phase386.targetBlindConstructionHash === "string" && phase386.targetBlindConstructionHash.length === 64, "Phase386 must persist a target-blind construction hash.");
+  assert(phase386.applicationSubjectKind === "current-cox-first-principles-i-source-delta-for-phase201-phase256-phase385", "Phase386 must classify its source-delta subject for Phase201/Phase256/Phase385.");
+  assert(phase386.currentCoxFirstPrinciplesIResearchLeadPresent === true && phase386.currentCoxFirstPrinciplesIScaffoldDeltaPresent === true, "Phase386 must preserve the current Cox first-principles scaffold delta.");
+  assert(phase386.source?.refId === "COX-FIRST-PRINCIPLES-I-19800512" && phase386.source?.doi === "10.5281/zenodo.19800512", "Phase386 must record the current Cox first-principles source identity.");
+  assert(phase386.sourceDeltaRelativeToPhase231?.scaffoldDeltaMaterialized === true && phase386.sourceDeltaRelativeToPhase231?.bosonPromotionDeltaFound === false, "Phase386 must record scaffold delta without boson-promotion delta.");
+  assert(phase386.currentCoxFirstPrinciplesIPromotableForBosonMasses === false && phase386.currentCoxFirstPrinciplesICompletesBosonPredictions === false, "Phase386 cannot promote or complete boson predictions.");
+  assert(phase386.currentCoxFirstPrinciplesIFillsPhase256ObservedFieldExtractionContract === false && phase386.currentCoxFirstPrinciplesIFillsWzContract === false && phase386.currentCoxFirstPrinciplesIFillsHiggsContract === false, "Phase386 cannot fill Phase256 or Phase201 contracts.");
+  assert(phase386.currentCoxFirstPrinciplesICompletesObservedElectroweakNamespaceMap === false && phase386.currentContractEvidence?.phase385NoNamespaceMapCandidate === true, "Phase386 must preserve the missing observed electroweak namespace map.");
+  assert(phase386.currentContractEvidence?.phase256FilledRequiredFieldCount === 0 && phase386.currentContractEvidence?.phase213WzMissingFieldCount === missingWzFields && phase386.currentContractEvidence?.phase213HiggsMissingFieldCount === missingHiggsFields, "Phase386 must inherit unfilled Phase256 and Phase213 counts.");
+  assert(phase386.sourceContractApplicationAllowed === false && phase386.canFillPhase201WzContract === false && phase386.canFillPhase201HiggsContract === false && phase386.canFillPhase256ObservedFieldExtractionContract === false, "Phase386 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase386.routePromotesWzMasses === false && phase386.routePromotesHiggsMass === false && phase386.routeCompletesBosonPredictions === false, "Phase386 cannot promote boson predictions.");
+  assert(phase386.phase201TemplateMutated === false && phase386.fieldsAppliedToPhase201TemplateCount === 0, "Phase386 must not mutate the Phase201 template.");
+  assert(phase386.acceptedContractFieldCount === 0 && phase386.blockedContractFieldCount === missingWzFields, "Phase386 must preserve zero accepted W/Z contract fields and Phase213 missing counts.");
+  assert(Array.isArray(phase386.phase201FieldsDefensiblyFilled) && phase386.phase201FieldsDefensiblyFilled.length === 0, "Phase386 must preserve an empty defensible Phase201 fill set.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

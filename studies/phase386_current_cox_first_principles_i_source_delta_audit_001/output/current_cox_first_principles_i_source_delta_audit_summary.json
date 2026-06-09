@@ -1,0 +1,227 @@
+{
+  "phaseId": "phase386-current-cox-first-principles-i-source-delta-audit",
+  "terminalStatus": "current-cox-first-principles-i-source-delta-scaffold-only-no-boson-prediction",
+  "currentCoxFirstPrinciplesISourceDeltaAuditPassed": true,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "ab8ebc4aa868082d83e53301e877bea672fa010a3ea04c346d721eace48a0a60",
+  "applicationSubjectKind": "current-cox-first-principles-i-source-delta-for-phase201-phase256-phase385",
+  "currentCoxFirstPrinciplesIResearchLeadPresent": true,
+  "currentCoxFirstPrinciplesIScaffoldDeltaPresent": true,
+  "currentCoxFirstPrinciplesIPromotableForBosonMasses": false,
+  "currentCoxFirstPrinciplesIFillsPhase256ObservedFieldExtractionContract": false,
+  "currentCoxFirstPrinciplesIFillsWzContract": false,
+  "currentCoxFirstPrinciplesIFillsHiggsContract": false,
+  "currentCoxFirstPrinciplesICompletesObservedElectroweakNamespaceMap": false,
+  "currentCoxFirstPrinciplesICompletesBosonPredictions": false,
+  "source": {
+    "refId": "COX-FIRST-PRINCIPLES-I-19800512",
+    "title": "Geometric Unity from First Principles I: Semidirect-Covariant Geometry on Y and Induced Dynamics on X",
+    "author": "Joseph Thomas Cox",
+    "date": "April 2026",
+    "doi": "10.5281/zenodo.19800512",
+    "discoveryUrl": "https://www.researchgate.net/publication/404210034_Geometric_Unity_from_First_Principles_I_Semidirect-Covariant_Geometry_on_Y_and_Induced_Dynamics_on_X_Shiab_Pairings_Completed_Curvature_and_Torsion_and_Projection-Variation_with_Boundary_Control",
+    "sourceKind": "third-party-preprint-non-official-gu",
+    "peerReviewStatus": "preprint-not-peer-reviewed-in-current-search-results",
+    "currentSearchEvidence": [
+      "ResearchGate lists DOI 10.5281/zenodo.19800512 and uploaded author content in April 2026.",
+      "The abstract describes a classical semidirect-covariant scaffold on ambient Y with observation slice X.",
+      "The abstract says the purpose is a rigorous classical scaffold for later matter embedding, anomaly closure, BRST/BV quantization, renormalization, boundary dynamics, and observable tests."
+    ]
+  },
+  "sourceDeltaRelativeToPhase231": {
+    "phase231Path": "studies/phase231_external_cox_gu_paper_i_source_intake_audit_001/output/external_cox_gu_paper_i_source_intake_audit_summary.json",
+    "phase231Doi": "10.5281/zenodo.17252989",
+    "currentDoi": "10.5281/zenodo.19800512",
+    "phase231ResearchLeadPresent": true,
+    "phase231PromotableForBosonMasses": false,
+    "scaffoldDeltaMaterialized": true,
+    "bosonPromotionDeltaFound": false
+  },
+  "scaffoldClaims": [
+    {
+      "claimId": "shiab-pairing-canonical-wedge-star-density",
+      "present": true,
+      "detail": "Defines Shiab as a canonical wedge-star pairing on admissible same-degree bundle-valued forms."
+    },
+    {
+      "claimId": "completed-gauge-connection-a-minus-b",
+      "present": true,
+      "detail": "Uses an affine-invariant completed gauge connection A - B."
+    },
+    {
+      "claimId": "completed-curvature-f-minus-dab-plus-b-wedge-b",
+      "present": true,
+      "detail": "Uses completed curvature F(A - B) = F - D_A B \u002B B wedge B."
+    },
+    {
+      "claimId": "augmented-torsion-completed-spin-connection",
+      "present": true,
+      "detail": "Uses augmented torsion from the completed spin connection."
+    },
+    {
+      "claimId": "fixed-embedding-projection-variation",
+      "present": true,
+      "detail": "Proves a fixed-embedding Projection-Variation theorem under boundary and corner hypotheses."
+    },
+    {
+      "claimId": "completed-slice-levi-civita-reduction",
+      "present": true,
+      "detail": "Distinguishes completed-slice Levi-Civita reduction from raw ambient connection restrictions."
+    },
+    {
+      "claimId": "quadratic-slice-kinetic-sectors",
+      "present": true,
+      "detail": "Reports Einstein-Hilbert, Yang-Mills, and Dirac kinetic sectors in the quadratic slice theory."
+    },
+    {
+      "claimId": "no-irreducible-bilinear-graviton-gauge-mixing",
+      "present": true,
+      "detail": "Reports no irreducible bilinear graviton-gauge mixing in that quadratic slice scaffold."
+    },
+    {
+      "claimId": "fixed-sign-axial-contact",
+      "present": true,
+      "detail": "Records a fixed-sign local axial contact after eliminating nondynamical axial torsion."
+    }
+  ],
+  "missingBosonArtifacts": [
+    {
+      "claimId": "matter-embedding-complete",
+      "present": false,
+      "detail": "The current paper explicitly leaves matter embedding to later work."
+    },
+    {
+      "claimId": "anomaly-closure-complete",
+      "present": false,
+      "detail": "The current paper explicitly leaves anomaly closure to later work."
+    },
+    {
+      "claimId": "brst-bv-quantization-complete",
+      "present": false,
+      "detail": "The current paper explicitly leaves BRST/BV quantization to later work."
+    },
+    {
+      "claimId": "renormalization-complete",
+      "present": false,
+      "detail": "The current paper explicitly leaves renormalization to later work."
+    },
+    {
+      "claimId": "observable-tests-complete",
+      "present": false,
+      "detail": "The current paper frames observable tests as later work."
+    },
+    {
+      "claimId": "observed-electroweak-namespace-map",
+      "present": false,
+      "detail": "No GU-native photon/W/Z/H namespace map is supplied."
+    },
+    {
+      "claimId": "weak-mixing-or-coupling-source",
+      "present": false,
+      "detail": "No target-independent low-energy weak angle or coupling lineage is supplied."
+    },
+    {
+      "claimId": "electroweak-vev-source",
+      "present": false,
+      "detail": "No target-independent electroweak VEV or branch normalization source is supplied."
+    },
+    {
+      "claimId": "w-boson-source-row",
+      "present": false,
+      "detail": "No W particle-specific source row is supplied."
+    },
+    {
+      "claimId": "z-boson-source-row",
+      "present": false,
+      "detail": "No Z particle-specific source row is supplied."
+    },
+    {
+      "claimId": "higgs-scalar-source-row",
+      "present": false,
+      "detail": "No solved Higgs scalar-source row is supplied."
+    },
+    {
+      "claimId": "gev-unit-normalization",
+      "present": false,
+      "detail": "No physical GeV normalization lineage is supplied."
+    }
+  ],
+  "currentContractEvidence": {
+    "phase201Path": "studies/phase201_boson_source_lineage_intake_contract_001/output/boson_source_lineage_intake_contract_summary.json",
+    "phase201ContractMaterialized": true,
+    "phase201AllRequiredLineagesPromotable": false,
+    "phase213Path": "studies/phase213_boson_source_lineage_blocker_matrix_001/output/boson_source_lineage_blocker_matrix_summary.json",
+    "phase213WzMissingFieldCount": 15,
+    "phase213HiggsMissingFieldCount": 14,
+    "phase256Path": "studies/phase256_observed_field_extraction_intake_contract_001/output/observed_field_extraction_intake_contract_summary.json",
+    "phase256ContractMaterialized": true,
+    "phase256RequiredFieldCount": 20,
+    "phase256FilledRequiredFieldCount": 0,
+    "phase256ObservedFieldExtractionContractPromotable": false,
+    "phase385Path": "studies/phase385_observed_electroweak_namespace_map_intake_audit_001/output/observed_electroweak_namespace_map_intake_audit_summary.json",
+    "phase385NamespaceMapAuditPassed": true,
+    "phase385NoNamespaceMapCandidate": true,
+    "phase385NoPhase256Candidate": true,
+    "phase385NoPhase201Candidate": true,
+    "phase242Path": "studies/phase242_post_p241_external_lead_consolidation_audit_001/output/post_p241_external_lead_consolidation_audit_summary.json",
+    "phase242AnyExternalLeadPromotable": false,
+    "phase242NewSourceLineageArtifactRequired": true
+  },
+  "sourceContractApplicationAllowed": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "blockedContractFieldCount": 15,
+  "phase201FieldsDefensiblyFilled": [],
+  "checks": [
+    {
+      "checkId": "current-cox-first-principles-i-source-materialized",
+      "passed": true,
+      "detail": "doi=10.5281/zenodo.19800512; date=April 2026; sourceKind=third-party-preprint-non-official-gu"
+    },
+    {
+      "checkId": "scaffold-delta-over-phase231-captured",
+      "passed": true,
+      "detail": "phase231ResearchLeadPresent=True; phase231Doi=10.5281/zenodo.17252989; scaffoldClaimCount=9; phase231Promotable=False"
+    },
+    {
+      "checkId": "explicit-scope-limitations-preserve-noncompletion",
+      "passed": true,
+      "detail": "missingBosonArtifactCount=12; completesBosonPredictions=False"
+    },
+    {
+      "checkId": "observed-electroweak-namespace-map-still-missing",
+      "passed": true,
+      "detail": "phase385NamespaceMapAuditPassed=True; phase385NoNamespaceMapCandidate=True; completesObservedNamespaceMap=False"
+    },
+    {
+      "checkId": "phase201-and-phase256-contracts-remain-unfilled",
+      "passed": true,
+      "detail": "phase201AllRequiredLineagesPromotable=False; wzMissing=15; higgsMissing=14; phase256Filled=0"
+    },
+    {
+      "checkId": "post-p242-external-lead-status-unchanged",
+      "passed": true,
+      "detail": "phase242AnyExternalLeadPromotable=False; phase242NewSourceLineageArtifactRequired=True; currentPromotable=False"
+    },
+    {
+      "checkId": "source-contracts-not-mutated-or-promoted",
+      "passed": true,
+      "detail": "sourceContractApplicationAllowed=False; acceptedContractFieldCount=0; phase201TemplateMutated=False"
+    }
+  ],
+  "decision": "Preserve the 2026 Cox first-principles paper as a stronger classical scaffold lead, but do not promote W/Z/H masses from it. It supplies no observed electroweak namespace map, W/Z source rows, Higgs scalar-source row, target-independent electroweak scale/coupling lineage, or GeV normalization.",
+  "nextRequiredArtifact": [
+    "A GU-native observed electroweak namespace map with photon/W/Z/H rows.",
+    "A target-independent W/Z bridge-source theorem with separate W and Z source rows and stability sidecars.",
+    "A solved Higgs scalar-source/operator with potential or excitation lineage.",
+    "Target-independent electroweak scale/coupling and GeV normalization lineages."
+  ]
+}

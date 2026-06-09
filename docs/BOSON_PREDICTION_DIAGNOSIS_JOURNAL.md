@@ -14913,6 +14913,41 @@ diagnostic carrier axes are not the physical W/Z axes.
 
 ### Full Validation
 
+- Full generator gate passed with Phase386 included.
+- Phase386's full-gate line matched the targeted run:
+  `currentCoxFirstPrinciplesISourceDeltaAuditPassed=True`,
+  `currentCoxFirstPrinciplesIScaffoldDeltaPresent=True`,
+  `currentCoxFirstPrinciplesIPromotableForBosonMasses=False`, and
+  `canFillPhase201WzContract=False`.
+- Phase385 still reports no namespace-map intake candidate:
+  `candidateCount=9`, `intakeReadyCandidateCount=0`,
+  `phase256ApplicationReadyCandidateCount=0`,
+  `phase201WzApplicationReadyCandidateCount=0`, and
+  `phase201HiggsApplicationReadyCandidateCount=0`.
+- Full-gate source and observed-field scans still report zero intake-ready
+  artifacts: Phase204 `candidateCount=140` and
+  `intakeReadyCandidateCount=0`; Phase205 `scannedTextFileCount=1607`,
+  `findingCount=200`, and `intakeReadyFindingCount=0`; Phase207
+  `candidateFindingCount=3050` and `intakeReadyFindingCount=0`; Phase279 and
+  Phase281 `localSearchMatchingFileCount=0`; Phase295
+  `scannedFileCount=7170`, `totalCandidateLineCount=23972`, and
+  `intakeReadyObservedFieldExtractionCandidateCount=0`; Phase296
+  `scannedFileCount=7170`, `totalCandidateLineCount=53979`, and
+  `intakeReadySourceLineageFieldCandidateCount=0`.
+- The full gate remains physically incomplete by design:
+  `objectiveAchieved=False`, `checklistPassedCount=179`, and
+  `checklistFailedCount=3`.
+- Full-gate claim integrity preserved the active blocker:
+  `sourceLineageMissing=true`, `wzMissingFieldCount=15`,
+  `higgsMissingFieldCount=14`, and `promotedPhysicalMassClaimCount=0`.
+- After the full gate, `61` historical JSON files that changed only by
+  `generatedAt` were restored after parsed-JSON semantic equivalence checks.
+  The Phase382 full artifact retained the refreshed
+  `targetBlindConstructionHash` candidate-line count from `519` to `530`; its
+  intake-ready count remains `0`.
+
+### Full Validation
+
 - Full generator gate passed with Phase381 included.
 - Phase381's full-gate line matched the targeted run:
   `phase302307ResponseImageSelectorCompatibilityAuditPassed=True`,
@@ -15326,3 +15361,67 @@ normalization.
   The Phase382 full artifact retained refreshed candidate-line counts from
   `4530` to `4535` and from `508` to `519`; its intake-ready counts remain
   `0`.
+
+## 2026-06-09 - Phase386 Current Cox First-Principles I Source Delta Audit
+
+### Context
+
+After Phase385 confirmed that no current local candidate supplies a GU-native
+observed electroweak namespace map, I performed a current web search for new
+GU-related source material. The notable new lead was Joseph Cox's 2026
+`Geometric Unity from First Principles I`, DOI `10.5281/zenodo.19800512`.
+Compared with the older Cox Paper I lane, this source more explicitly records a
+classical semidirect-covariant scaffold: Shiab pairing, completed gauge
+connection, completed curvature and torsion, Projection-Variation,
+completed-slice reduction, quadratic slice kinetic sectors, and an axial
+contact sign test. It also explicitly leaves matter embedding, anomaly closure,
+BRST/BV quantization, renormalization, boundary dynamics, and observable tests
+as later work.
+
+### Action
+
+- Added
+  `studies/phase386_current_cox_first_principles_i_source_delta_audit_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P386.md`.
+- Added the detailed reference note
+  `docs/Reference/ExperimentReferences/COX-FIRST-PRINCIPLES-I-19800512.md`.
+- Added the source to `ExperimentReferences.md`.
+- Wired Phase386 into the generator, Phase101 package, Phase202 completion
+  audit, claim-integrity verifier, and source-scanner exclusions.
+
+### Result
+
+- Targeted Phase386 run passed:
+  `currentCoxFirstPrinciplesISourceDeltaAuditPassed=True`.
+- The audit recorded the scaffold delta:
+  `currentCoxFirstPrinciplesIScaffoldDeltaPresent=True`.
+- It preserved the non-promotion boundary:
+  `currentCoxFirstPrinciplesIPromotableForBosonMasses=False`,
+  `currentCoxFirstPrinciplesIFillsPhase256ObservedFieldExtractionContract=False`,
+  `currentCoxFirstPrinciplesIFillsWzContract=False`,
+  `currentCoxFirstPrinciplesIFillsHiggsContract=False`, and
+  `currentCoxFirstPrinciplesICompletesObservedElectroweakNamespaceMap=False`.
+- Phase386 accepted zero W/Z contract fields and kept
+  `canFillPhase201WzContract=False`.
+
+### Boundary
+
+Phase386 is not a physical prediction. It keeps the 2026 Cox source as a
+stronger scaffold lead only. Moving toward a scientifically defensible boson
+prediction still requires an observed electroweak namespace map, separate W/Z
+source rows, a solved Higgs scalar-source row, target-independent
+scale/coupling lineage, and GeV normalization.
+
+### Targeted Validation
+
+- Phase386 build and run passed.
+- Phase101 package run passed and includes the Phase386 block:
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- Phase202 objective audit remains incomplete by design:
+  `objectiveAchieved=False`, `checklistPassedCount=179`, and
+  `checklistFailedCount=3`.
+- Scanner exclusion edits compiled for Phase204, Phase205, Phase207, Phase279,
+  Phase281, Phase295, and Phase296.
+- Claim-integrity verification passed with
+  `sourceLineageMissing=true`, `wzMissingFieldCount=15`,
+  `higgsMissingFieldCount=14`, and `promotedPhysicalMassClaimCount=0`.
