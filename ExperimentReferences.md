@@ -1,8 +1,9 @@
 # Experiment References
 
-This file is the top-level reference index for the boson-prediction and
-geometric-source-law investigation. Each entry gives a short overview and links
-to a deeper note under `docs/Reference/ExperimentReferences/`.
+This file is the top-level reference ledger for the boson-prediction and
+geometric-source-law investigation. Each source used during research,
+implementation, validation, or blocker diagnosis gets one scan-friendly row here
+and one deeper note under `docs/Reference/ExperimentReferences/`.
 
 Working files:
 
@@ -16,10 +17,13 @@ Update rule:
 - Add a row here when a source is used for an audit, implementation decision,
   prediction target, or blocker diagnosis.
 - Keep the row short enough to scan.
-- Put the longer source summary, prediction relevance, limitations, and follow-up
-  questions in the linked detail file.
+- Put the longer source summary, prediction relevance, limitations, retrieval
+  metadata, and follow-up questions in the linked detail file.
 - Do not treat a source as promotion-ready evidence unless the detail file
   identifies the exact source lineage it supplies.
+- If a source is only a search lead or a negative boundary, record that outcome
+  explicitly. Negative evidence is useful because it prevents rechecking the
+  same branch without new data.
 
 Reference tracking workflow:
 
@@ -42,7 +46,9 @@ detailed summary at
 Detail note format:
 
 - `Source` or `Sources`: title, URL, source type, and backlink to this index.
-- `Summary`: what the source says in practical terms.
+- `Retrieval Notes`: stable identifiers, access date, artifact IDs, checksums,
+  local extracts, or source pages to revisit.
+- `Detailed Summary` or `Summary`: what the source says in practical terms.
 - `How It Was Used`: which audit, implementation, or blocker diagnosis used it.
 - `Prediction Relevance`: what it can and cannot supply for W/Z/H prediction.
 - `Limitation`: why it is not enough to promote a claim, if applicable.

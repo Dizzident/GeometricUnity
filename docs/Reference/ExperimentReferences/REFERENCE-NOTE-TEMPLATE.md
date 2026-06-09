@@ -9,10 +9,23 @@ a brief index row in [ExperimentReferences.md](../../../ExperimentReferences.md)
 - Ref ID:
 - Title:
 - URL:
+- DOI or stable ID:
 - Source type:
 - Reference index: [ExperimentReferences.md](../../../ExperimentReferences.md)
 
-## Summary
+## Retrieval Notes
+
+- Reviewed on:
+- Source artifact:
+- Local artifact or extract:
+- Checksum or version:
+- Return point:
+
+Record where to go back for more data. Prefer stable IDs, DOI pages, API
+records, exact sections, artifact names, and checksums over only search-result
+URLs.
+
+## Detailed Summary
 
 State what the source says in practical terms. Keep this focused on what matters
 for the investigation rather than a full literature review.

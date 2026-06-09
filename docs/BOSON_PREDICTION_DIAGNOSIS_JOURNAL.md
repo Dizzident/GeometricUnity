@@ -15425,3 +15425,30 @@ scale/coupling lineage, and GeV normalization.
 - Claim-integrity verification passed with
   `sourceLineageMissing=true`, `wzMissingFieldCount=15`,
   `higgsMissingFieldCount=14`, and `promotedPhysicalMassClaimCount=0`.
+
+## 2026-06-09 - Reference Ledger Maintenance
+
+### Context
+
+The reference set had grown large enough that the source notes needed to be
+treated as a reusable ledger, not just incidental phase documentation.
+
+### Action
+
+- Confirmed `ExperimentReferences.md` as the root reference index.
+- Strengthened the update rule so every used source should have a short row in
+  the index and a linked detailed note under
+  `docs/Reference/ExperimentReferences/`.
+- Updated the detailed-note template to include retrieval metadata, stable IDs,
+  artifact/checksum fields, and return points.
+- Tightened the Cox First Principles I note with Zenodo record metadata, DOI
+  lineage, PDF artifact name, checksum, publication date, and the current
+  non-promotion boundary.
+
+### Result
+
+Future source use has a clear record shape: short index entry, detailed linked
+summary, retrieval trail, how the source was used, prediction relevance,
+limitation, and follow-up conditions. This should reduce repeated source
+rechecks and make it easier to revisit a source only when new data or a new
+phase needs it.
