@@ -132,3 +132,15 @@ the suppressed-axis obstruction is metric-dependent. Neither operator is a
 physical effective-action Hessian: the Gram is study-defined, and the
 second-order response is evaluated at a background that is not a coupled
 critical point.
+
+## Phase393 Usage
+
+Phase393 evaluates the first-order side of the boundary cluster: the
+fermionic source currents J_k = Re<psi_s, delta_D[e_k] psi_s> on the
+converged shell. The shell-aggregated source cancels exactly between
+plus/minus eigenvalue partners (so symmetric occupation is first-order
+coupled-stationary and the Phase392 second-order response is the leading
+backreaction object), and each per-mode source lies identically in the
+rank-3 carrier image. The persisted bosonic Gauss-Newton spectrum is
+numerical-kernel-only, so the asymmetric first-order backreaction is not
+constructible from persisted artifacts.

@@ -1,0 +1,213 @@
+{
+  "phaseId": "phase393-coupled-stationarity-fermionic-source-residual-probe",
+  "generatedAt": "2026-06-10T18:36:45.187829+00:00",
+  "terminalStatus": "coupled-stationarity-residual-characterized-backreaction-blocked-positive-bosonic-spectrum-missing",
+  "coupledStationarityFermionicSourceResidualProbePassed": true,
+  "phase379PrecursorPassed": true,
+  "phase390PrecursorPassed": true,
+  "phase392PrecursorPassed": true,
+  "probeInternallyConsistent": true,
+  "persistedBosonicSpectrumIsNumericalKernelOnly": true,
+  "firstOrderBackreactionConstructibleFromPersistedArtifacts": false,
+  "positiveBosonicSpectrumPersisted": false,
+  "coupledResidualNonzero": true,
+  "shellAggregatedSourceCancels": true,
+  "perModeSourceLiesInGramImage": true,
+  "backgroundIsCoupledCriticalPoint": false,
+  "coupledCriticalPointConstructed": false,
+  "denseSolveConverged": true,
+  "maxAggregationCancellationRatio": 3.887446950649922E-11,
+  "maxPersistedBosonicKernelFraction": 0.1119232589697996,
+  "maxPureGaugeFraction": 0.6790991820999589,
+  "maxGramImageFraction": 1.0000000000000007,
+  "minGramImageFraction": 0.9999999999999993,
+  "maxShellEigenResidual": 2.85613078170129E-13,
+  "maxAbsPersistedBosonicEigenvalue": 1.5292430126716867E-15,
+  "persistedBosonicKernelThreshold": 1E-12,
+  "subspaceFractionConvention": "per-mode source fractions (the shell-aggregated source cancels exactly between plus/minus partners, so aggregate fractions are noise)",
+  "probeDefinitions": {
+    "coupledAction": "S(omega, psi) = S_B(omega) \u002B kappa S_F(omega, psi), S_F = Re\u003Cpsi, D(omega) psi\u003E",
+    "coupledResidual": "J_k(psi_s) = Re\u003Cpsi_s, delta_D[e_k] psi_s\u003E on the converged lowest nonzero shell (the omega-gradient of kappa S_F; the S_B gradient vanishes at the persisted bosonic critical point)",
+    "kernelProjection": "projection onto the orthonormalized span of the 12 persisted bosonic Gauss-Newton modes (all numerical kernel; eigenvalues ~1e-15)",
+    "gaugeProjection": "projection onto the orthonormalized span of the 84 Phase389 discrete covariant differentials v(X)",
+    "gramImageProjection": "projection onto the top-3 eigenvectors of the Phase378-rule response Gram recomputed on the converged shell",
+    "shellSplitting": "eigenvalues of the 4x4 degenerate-perturbation matrices \u003Cpsi_a, delta_D[J-hat] psi_b\u003E for the unit aggregate source direction"
+  },
+  "applicationSubjectKind": "coupled-stationarity-fermionic-source-residual-probe",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "bb505012ee91915bc6a986ce24792a57fc1a1244f2fa903dd3ceda0f83d7436b",
+  "expectedCoveragePresent": true,
+  "backgroundCount": 2,
+  "carrierDimension": 156,
+  "expectedShellSize": 4,
+  "expectedPersistedBosonModeCount": 12,
+  "routeProvidesPhysicalMassPsiCompatibleBranch": false,
+  "routeProvidesCompletedFermionicAction": false,
+  "routeProvidesCoupledResidual": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesObservedElectroweakNamespaceMap": false,
+  "routeProvidesCanonicalGaugeAxisSelector": false,
+  "routeProvidesDirectTargetIndependentWzBridgeSourceLaw": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesWeakAngleOrCouplingLineage": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "no coupled critical point constructed; first-order residual characterization only",
+    "no physical coupling constant; per-unit-coupling quantities only",
+    "candidate bilinear action only, not a completed GU fermionic action",
+    "persisted bosonic spectrum is kernel-only; backreaction not constructible from persisted artifacts",
+    "toy control branch only",
+    "not a physical effective-action Hessian",
+    "not an observed electroweak namespace map",
+    "no W/Z bridge law",
+    "no Higgs scalar operator",
+    "no weak-angle or coupling lineage",
+    "no VEV or source-scale lineage",
+    "no pole extraction or GeV normalization",
+    "no physical predictions",
+    "no Phase201 or Phase256 fill"
+  ],
+  "backgrounds": [
+    {
+      "fermionBackgroundId": "bg-phase12-bg-a-20260315212202",
+      "baseDiracMatrixPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/dirac_bundle_bg-phase12-bg-a-20260315212202.matrix.json",
+      "persistedOmegaPath": "studies/phase12_joined_calculation_001/output/background_family/background_states/bg-phase12-bg-a-20260315212202_omega.json",
+      "shellSize": 4,
+      "shellEigenvalues": [
+        -0.0008427613458545568,
+        0.0008427613458688838,
+        0.0008427613458887643,
+        -0.0008427613459189185
+      ],
+      "maxShellEigenResidual": 2.85613078170129E-13,
+      "persistedBosonModeCount": 12,
+      "maxAbsPersistedBosonicEigenvalue": 1.5292430126716867E-15,
+      "kernelBasisRank": 12,
+      "gaugeBasisRank": 69,
+      "perModeSourceNorms": [
+        0.11294442150901389,
+        0.11294442150698707,
+        0.11294442150629562,
+        0.11294442150431308
+      ],
+      "aggregateSourceNorm": 1.7562617879158213E-11,
+      "aggregationCancellationRatio": 3.887446950649922E-11,
+      "aggregateAxisFractions": [
+        0.30993800966738383,
+        0.5674862831531149,
+        0.12257570717950125
+      ],
+      "aggregateKernelSubspaceFraction": 0.10108867065728327,
+      "aggregateGaugeSubspaceFraction": 0.6388061033172665,
+      "aggregateGramImageFraction": 0.012696164174582249,
+      "perModeKernelSubspaceFractions": [
+        0.08262174323250741,
+        0.08262174323759995,
+        0.08262174322623798,
+        0.08262174322510095
+      ],
+      "perModeGaugeSubspaceFractions": [
+        0.6790991820930818,
+        0.6790991820999589,
+        0.6790991820890674,
+        0.6790991820960597
+      ],
+      "perModeGramImageFractions": [
+        0.9999999999999994,
+        1,
+        1.0000000000000007,
+        0.9999999999999993
+      ],
+      "unitSourceShellSplittingEigenvalues": [
+        -0.006487010516168953,
+        -0.006487010503191111,
+        0.0064870105143255774,
+        0.0064870105225971
+      ]
+    },
+    {
+      "fermionBackgroundId": "bg-phase12-bg-b-20260315212202",
+      "baseDiracMatrixPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/dirac_bundle_bg-phase12-bg-b-20260315212202.matrix.json",
+      "persistedOmegaPath": "studies/phase12_joined_calculation_001/output/background_family/background_states/bg-phase12-bg-b-20260315212202_omega.json",
+      "shellSize": 4,
+      "shellEigenvalues": [
+        -0.0009139800207631899,
+        -0.0009139800207672536,
+        0.0009139800207907077,
+        0.0009139800208134728
+      ],
+      "maxShellEigenResidual": 2.492981588530915E-13,
+      "persistedBosonModeCount": 12,
+      "maxAbsPersistedBosonicEigenvalue": 1.2402960260519018E-15,
+      "kernelBasisRank": 12,
+      "gaugeBasisRank": 69,
+      "perModeSourceNorms": [
+        0.12115535153479905,
+        0.12115535153424313,
+        0.12115535153528258,
+        0.12115535153367106
+      ],
+      "aggregateSourceNorm": 2.6344806568401716E-12,
+      "aggregationCancellationRatio": 5.436162380516068E-12,
+      "aggregateAxisFractions": [
+        0.20340728905303612,
+        0.5680643197201958,
+        0.22852839122676813
+      ],
+      "aggregateKernelSubspaceFraction": 0.1275708925959745,
+      "aggregateGaugeSubspaceFraction": 0.5454663792016157,
+      "aggregateGramImageFraction": 0.007398222976778603,
+      "perModeKernelSubspaceFractions": [
+        0.1119232589697996,
+        0.1119232589662563,
+        0.1119232589685412,
+        0.11192325896651559
+      ],
+      "perModeGaugeSubspaceFractions": [
+        0.6076529910374603,
+        0.6076529910378133,
+        0.6076529910358404,
+        0.6076529910396591
+      ],
+      "perModeGramImageFractions": [
+        1.0000000000000007,
+        1,
+        0.9999999999999997,
+        0.9999999999999998
+      ],
+      "unitSourceShellSplittingEigenvalues": [
+        -0.007222709131644176,
+        -0.007222709128268688,
+        0.007222709129971433,
+        0.007222709132575929
+      ]
+    }
+  ],
+  "sourceEvidence": {
+    "phase379SummaryPath": "studies/phase379_response_image_carrier_axis_characterization_001/output/response_image_carrier_axis_characterization_summary.json",
+    "phase390SummaryPath": "studies/phase390_converged_control_branch_fermion_mode_rebuild_001/output/converged_control_branch_fermion_mode_rebuild_summary.json",
+    "phase392SummaryPath": "studies/phase392_coupled_mixed_hessian_fermion_induced_response_audit_001/output/coupled_mixed_hessian_fermion_induced_response_audit_summary.json",
+    "phase12Root": "studies/phase12_joined_calculation_001/output/background_family",
+    "bosonModeDir": "studies/phase12_joined_calculation_001/output/background_family/spectra/modes",
+    "backgroundStateDir": "studies/phase12_joined_calculation_001/output/background_family/background_states"
+  },
+  "decision": "The coupled stationarity residual at the persisted backgrounds is fully characterized, with three structural findings. First, the shell-aggregated fermionic source cancels EXACTLY between plus/minus eigenvalue partners (cancellation ratio ~1e-11): under symmetric shell occupation the persisted background is already first-order stationary in the coupled sense, and backreaction starts at second order, where the Phase392 response operator is the leading object. Second, every per-mode source current lies ENTIRELY in the rank-3 Gram carrier image (fraction 1.0), tying the diagonal coupled sources to the Phase378 image exactly; about two-thirds of each current is pure-gauge and about a tenth lies in the persisted bosonic numerical kernel. Third, the persisted Phase12 bosonic Gauss-Newton spectrum consists entirely of numerical kernel directions (all eigenvalues ~1e-15), so the asymmetric-occupation backreaction delta_omega = -kappa H_B^\u002B J is NOT constructible from persisted artifacts; completing the coupled-critical-point step beyond symmetric occupation requires recomputing the positive bosonic spectrum. The unit-source shell splitting is a clean plus/minus pair pattern (doubly degenerate \u002B-6.5e-3 and \u002B-7.2e-3 per unit coupling). No coupled critical point is constructed, no coupling is physical, and no Phase201/Phase256 contract field is filled."
+}

@@ -35,12 +35,12 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase392 work:
+Current gate status after the Phase393 work:
 
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=185`,
+  `objectiveAchieved=False`, `checklistPassedCount=186`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -57,59 +57,67 @@ Current gate status after the Phase392 work:
 - Phase391:
   `denseReplayVerdict=confirmed` (Gram invariants solver-independent)
 - Phase392:
-  `coupledMixedHessianFermionInducedResponseAuditPassed=True`,
-  `actionDerivedResponseStructureVerdict=diverges-from-gram-structure`,
-  `actionDerivedResponseSharesRankThree=False`,
-  `actionDerivedResponseSharesSuppressedAxis=False`,
+  `actionDerivedResponseStructureVerdict=diverges-from-gram-structure`
+  (suppressed axis is metric-dependent)
+- Phase393:
+  `coupledStationarityFermionicSourceResidualProbePassed=True`,
+  `shellAggregatedSourceCancels=True`,
+  `perModeSourceLiesInGramImage=True`,
+  `persistedBosonicSpectrumIsNumericalKernelOnly=True`,
+  `firstOrderBackreactionConstructibleFromPersistedArtifacts=False`,
   `canFillPhase201WzContract=False`
 
-Interpretation: the carrier-image question is now resolved into a sharp
-metric statement. Phase391 proved the study-defined Hilbert-Schmidt Gram
-invariants (rank 3, suppressed gauge axis 1) are solver-independent.
-Phase392 then built the ACTION-DERIVED fermion-induced response (Schur
-complement of the coupled candidate mixed Hessian on the converged shell)
-and found it diverges: near-full rank (146/141 of 156), mixed signature,
-nearly isotropic gauge axes (~[0.33,0.33,0.33], argmin unstable). The
-suppressed-axis obstruction is therefore METRIC-DEPENDENT: decisive against
-the Gram-route promotion of the Phase307 near-pass, but not a physical
-statement about the coupled dynamics. Scope limits: the background is not a
-coupled critical point (omega solved bosonic-only) and the action is the
-candidate bilinear.
+Interpretation: the coupled-critical-point program now has its first-order
+picture. Phase393 showed the shell-aggregated fermionic source cancels
+EXACTLY between plus/minus eigenvalue partners, so under symmetric shell
+occupation the persisted background is already first-order
+coupled-stationary and the Phase392 second-order response operator is the
+leading backreaction object (softening Phase392's non-critical-point caveat
+at first order). Each per-mode source lies identically in the rank-3 Gram
+image, with 0.61-0.68 pure-gauge content and 0.08-0.11 in the persisted
+bosonic numerical kernel. The persisted Phase12 bosonic Gauss-Newton
+spectrum consists entirely of ~1e-15 kernel directions, so asymmetric
+first-order backreaction is NOT constructible from persisted artifacts -
+the positive bosonic spectrum at these backgrounds is the concrete missing
+artifact. Earlier: Phase391 proved the Gram invariants solver-independent;
+Phase392 proved the suppressed axis is metric-dependent (the action-derived
+response is near-full-rank and isotropic).
 
 ### Most Recent Implemented Work
 
-The latest work added Phase392:
+The latest work added Phase393:
 
 - Study:
-  `studies/phase392_coupled_mixed_hessian_fermion_induced_response_audit_001`
-- Project: `Phase392CoupledMixedHessianFermionInducedResponseAudit.csproj`
+  `studies/phase393_coupled_stationarity_fermionic_source_residual_probe_001`
+- Project: `Phase393CoupledStationarityFermionicSourceResidualProbe.csproj`
 - Study note: `STUDY.md`
-- Implementation note: `docs/Phases/Implementation/IMPLEMENTATION_P392.md`
+- Implementation note: `docs/Phases/Implementation/IMPLEMENTATION_P393.md`
 - Outputs:
-  `studies/phase392_coupled_mixed_hessian_fermion_induced_response_audit_001/output/coupled_mixed_hessian_fermion_induced_response_audit.json`
+  `studies/phase393_coupled_stationarity_fermionic_source_residual_probe_001/output/coupled_stationarity_fermionic_source_residual_probe.json`
   and `..._summary.json`
 
-Phase392 materialized the VO-7 candidate mixed-Hessian blocks
-`2 delta_D[e_k] psi_s` on the Phase390 converged shell and Schur-complemented
-the fermion fluctuation exactly in the dense generalized eigenbasis:
+Phase393 characterized the coupled stationarity residual
+`J_k = Re<psi_s, delta_D[e_k] psi_s>` on the converged shell:
 
-- `R_kl = sum_s Re<delta_D[e_k] psi_s, (D - lambda_s M)^+ delta_D[e_l] psi_s>`
-- Significant rank 146 (bg-a, 70+/76-) and 141 (bg-b, 69+/72-) of 156.
-- Gauge-axis fractions ~[0.334, 0.328, 0.337] and [0.332, 0.336, 0.332]:
-  no suppressed axis, argmin unstable across backgrounds.
-- Exact response symmetry; retained denominators >= 8.4e-4; shell residuals
-  <= 2.9e-13; pure-gauge response up to ~30x the generic scale (candidate
-  action not gauge-invariant off the coupled critical point).
+- Exact plus/minus cancellation of the shell-aggregated source
+  (ratio ~4e-11; per-mode norms identical: 0.1129 / 0.1212).
+- Per-mode sources lie exactly in the rank-3 Gram image (fraction 1.0);
+  pure-gauge content 0.61-0.68; persisted-bosonic-kernel content 0.08-0.11.
+- All 12 persisted bosonic Gauss-Newton eigenvalues per background ~1e-15
+  (kernel-only): backreaction `-kappa H_B^+ J` not constructible from
+  persisted artifacts.
+- Unit-source shell splitting: doubly degenerate +-6.49e-3 / +-7.22e-3 per
+  unit coupling.
 
 ### Integration Points Already Updated
 
-Phase392 (like Phase388-391) is wired into:
+Phase393 (like Phase388-392) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (both invocation blocks)
 - `studies/phase101_boson_prediction_package_001/Program.cs`
 - `studies/phase202_boson_objective_completion_audit_001/Program.cs`
   (checklist item
-  `coupled-mixed-hessian-fermion-induced-response-audit-materialized`)
+  `coupled-stationarity-fermionic-source-residual-probe-materialized`)
 - `scripts/verify_boson_claim_integrity.sh`
 - Broad scanner exclusions: phase204, phase205, phase207, phase279,
   phase281, phase295, phase296
@@ -122,15 +130,15 @@ The diagnosis journal entry is near the end of
 ### Validation Already Run
 
 ```bash
-dotnet run --project studies/phase392_coupled_mixed_hessian_fermion_induced_response_audit_001/Phase392CoupledMixedHessianFermionInducedResponseAudit.csproj
+dotnet run --project studies/phase393_coupled_stationarity_fermionic_source_residual_probe_001/Phase393CoupledStationarityFermionicSourceResidualProbe.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
 ./scripts/generate_validated_boson_predictions.sh
 ```
 
-The full generator ended with the Phase392 line, the Phase202 incomplete
-status (`checklistPassedCount=185`, `checklistFailedCount=3`), and the same
+The full generator ended with the Phase393 line, the Phase202 incomplete
+status (`checklistPassedCount=186`, `checklistFailedCount=3`), and the same
 claim-integrity status (`promotedPhysicalMassClaimCount=0`). All seven broad
 scanners still report zero intake-ready evidence.
 
@@ -163,18 +171,19 @@ contract fields, or remove a physical blocker on the VO-7 branch.
 
 The most useful next branches are:
 
-1. A coupled-critical-point construction: re-solve the background with the
-   fermionic backreaction included (coupled residual), so the Phase392
-   second variation becomes a genuine coupled Hessian and the gauge sector
-   can be handled consistently (Phase389 identity as the gauge-compatibility
-   template; a Coulomb-type slice exists in Gu.Phase2). This upgrades the
-   action-derived response from fixed-background to self-consistent and is
-   the remaining constructive VO-7 step on the control branch.
-2. A target-blind carrier-axis-to-observed photon/W/Z/H namespace theorem
+1. Recompute the positive bosonic Gauss-Newton spectrum at the Phase12
+   backgrounds (the persisted spectrum is kernel-only). This is the concrete
+   missing artifact for asymmetric backreaction and for any second-order
+   coupled self-consistency check. The Phase3 OperatorBundleBuilder /
+   spectra machinery is the natural route.
+2. Formalize the second-order coupled expansion around symmetric shell
+   occupation, where Phase393 proved first-order stationarity and the
+   Phase392 response operator is the leading fermion-induced boson operator.
+   Fail-closed: no physical coupling, no contract fields.
+3. A target-blind carrier-axis-to-observed photon/W/Z/H namespace theorem
    filling Phase256 observed-field extraction fields. Note after Phase392:
-   any axis-structure theorem must first fix the response metric (the
-   Gram shows suppression; the action-derived response does not).
-3. A complete W/Z/H source package: separate W/Z source rows, Higgs scalar
+   any axis-structure theorem must first fix the response metric.
+4. A complete W/Z/H source package: separate W/Z source rows, Higgs scalar
    source row, weak-angle/coupling lineage, VEV/source scale, pole extraction,
    and GeV normalization.
 
@@ -191,10 +200,10 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -120 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase392|actionDerivedResponseStructureVerdict|metric-dependent" \
+rg -n "Phase393|shellAggregatedSourceCancels|persistedBosonicSpectrumIsNumericalKernelOnly" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
   ExperimentReferences.md \
-  studies/phase392_coupled_mixed_hessian_fermion_induced_response_audit_001 \
+  studies/phase393_coupled_stationarity_fermionic_source_residual_probe_001 \
   studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
 ```
 
@@ -207,13 +216,13 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add ignored Phase392 output JSON files, and commit a checkpoint after
+force-add ignored Phase393 output JSON files, and commit a checkpoint after
 validation. The output directory under `studies/**/output/` is generally
-ignored, so use `git add -f` for Phase392 output files if they are meant to be
+ignored, so use `git add -f` for Phase393 output files if they are meant to be
 committed.
 
 Suggested checkpoint message:
 
 ```text
-Add phase392 action-derived fermion-induced response audit
+Add phase393 coupled stationarity residual probe
 ```

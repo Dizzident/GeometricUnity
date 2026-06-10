@@ -158,6 +158,7 @@ const string Phase389Path = "studies/phase389_vo7_mixed_linearization_gauge_comp
 const string Phase390Path = "studies/phase390_converged_control_branch_fermion_mode_rebuild_001/output/converged_control_branch_fermion_mode_rebuild_summary.json";
 const string Phase391Path = "studies/phase391_dense_converged_shell_response_replay_audit_001/output/dense_converged_shell_response_replay_audit_summary.json";
 const string Phase392Path = "studies/phase392_coupled_mixed_hessian_fermion_induced_response_audit_001/output/coupled_mixed_hessian_fermion_induced_response_audit_summary.json";
+const string Phase393Path = "studies/phase393_coupled_stationarity_fermionic_source_residual_probe_001/output/coupled_stationarity_fermionic_source_residual_probe_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -349,6 +350,7 @@ using var phase389 = File.Exists(Phase389Path) ? JsonDocument.Parse(File.ReadAll
 using var phase390 = File.Exists(Phase390Path) ? JsonDocument.Parse(File.ReadAllText(Phase390Path)) : null;
 using var phase391 = File.Exists(Phase391Path) ? JsonDocument.Parse(File.ReadAllText(Phase391Path)) : null;
 using var phase392 = File.Exists(Phase392Path) ? JsonDocument.Parse(File.ReadAllText(Phase392Path)) : null;
+using var phase393 = File.Exists(Phase393Path) ? JsonDocument.Parse(File.ReadAllText(Phase393Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -4730,6 +4732,31 @@ var coupledMixedHessianFermionInducedResponseAuditPassed = coupledMixedHessianFe
     && JsonBool(phase392.RootElement, "phase201TemplateMutated") is false
     && JsonInt(phase392.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
     && JsonInt(phase392.RootElement, "acceptedContractFieldCount") == 0;
+var coupledStationarityFermionicSourceResidualProbeMaterialized = phase393 is not null;
+var coupledStationarityFermionicSourceResidualProbePassed = coupledStationarityFermionicSourceResidualProbeMaterialized
+    && JsonBool(phase393!.RootElement, "coupledStationarityFermionicSourceResidualProbePassed") is true
+    && JsonBool(phase393.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase393.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase393.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase393.RootElement, "applicationSubjectKind") == "coupled-stationarity-fermionic-source-residual-probe"
+    && JsonBool(phase393.RootElement, "persistedBosonicSpectrumIsNumericalKernelOnly") is true
+    && JsonBool(phase393.RootElement, "firstOrderBackreactionConstructibleFromPersistedArtifacts") is false
+    && JsonBool(phase393.RootElement, "positiveBosonicSpectrumPersisted") is false
+    && JsonBool(phase393.RootElement, "coupledResidualNonzero") is true
+    && JsonBool(phase393.RootElement, "shellAggregatedSourceCancels") is true
+    && JsonBool(phase393.RootElement, "perModeSourceLiesInGramImage") is true
+    && JsonBool(phase393.RootElement, "backgroundIsCoupledCriticalPoint") is false
+    && JsonBool(phase393.RootElement, "coupledCriticalPointConstructed") is false
+    && JsonBool(phase393.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase393.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase393.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase393.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase393.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase393.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase393.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase393.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase393.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase393.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -6842,6 +6869,14 @@ var checklist = new[]
             ? $"coupledMixedHessianFermionInducedResponseAuditPassed={JsonBool(phase392!.RootElement, "coupledMixedHessianFermionInducedResponseAuditPassed")}; targetBlind={JsonBool(phase392.RootElement, "targetBlindConstruction")}; verdict={JsonString(phase392.RootElement, "actionDerivedResponseStructureVerdict")}; sharesRankThree={JsonBool(phase392.RootElement, "actionDerivedResponseSharesRankThree")}; sharesSuppressedAxis={JsonBool(phase392.RootElement, "actionDerivedResponseSharesSuppressedAxis")}; stableSuppressedAxis={JsonBool(phase392.RootElement, "stableActionDerivedSuppressedAxis")}; coupledCriticalPoint={JsonBool(phase392.RootElement, "backgroundIsCoupledCriticalPoint")}; canFillPhase201WzContract={JsonBool(phase392.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase392.RootElement, "decision")}"
             : "Phase392 artifact not materialized",
         Phase392Path),
+    new ObjectiveChecklistItem(
+        "coupled-stationarity-fermionic-source-residual-probe-materialized",
+        "Characterize the coupled stationarity residual (fermionic source currents) on the converged shell and the feasibility of first-order backreaction from persisted artifacts.",
+        coupledStationarityFermionicSourceResidualProbePassed ? "passed" : "failed",
+        coupledStationarityFermionicSourceResidualProbeMaterialized
+            ? $"coupledStationarityFermionicSourceResidualProbePassed={JsonBool(phase393!.RootElement, "coupledStationarityFermionicSourceResidualProbePassed")}; targetBlind={JsonBool(phase393.RootElement, "targetBlindConstruction")}; kernelOnlyBosonicSpectrum={JsonBool(phase393.RootElement, "persistedBosonicSpectrumIsNumericalKernelOnly")}; backreactionConstructible={JsonBool(phase393.RootElement, "firstOrderBackreactionConstructibleFromPersistedArtifacts")}; aggregateCancels={JsonBool(phase393.RootElement, "shellAggregatedSourceCancels")}; perModeSourceInGramImage={JsonBool(phase393.RootElement, "perModeSourceLiesInGramImage")}; coupledCriticalPointConstructed={JsonBool(phase393.RootElement, "coupledCriticalPointConstructed")}; canFillPhase201WzContract={JsonBool(phase393.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase393.RootElement, "decision")}"
+            : "Phase393 artifact not materialized",
+        Phase393Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

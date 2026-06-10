@@ -15910,3 +15910,76 @@ slice exists in Gu.Phase2). That would upgrade Phase392's response operator
 from fixed-background to self-consistent. Independently, the observed
 namespace map and W/Z/H source package remain the binding theorem-level
 requirements for any physical promotion.
+
+## 2026-06-10 - Phase393 Coupled Residual: Exact +- Cancellation, Sources In The Gram Image, Backreaction Blocked
+
+### Context
+
+After Phase392 established the metric-dependence of the suppressed axis, the
+remaining constructive VO-7 step was the coupled-critical-point program. Its
+first installment is to characterize the coupled stationarity residual at
+the persisted backgrounds: since omega is a bosonic critical point, the
+coupled gradient is exactly the fermionic source current
+J_k = Re<psi_s, delta_D[e_k] psi_s> on the converged shell.
+
+### Action
+
+- Added
+  `studies/phase393_coupled_stationarity_fermionic_source_residual_probe_001`
+  computing per-mode and shell-aggregated source currents, their projections
+  onto the persisted bosonic Gauss-Newton span, the pure-gauge span (84
+  Phase389 covariant differentials), and the converged-shell Gram top-3
+  image, plus the unit-source degenerate shell splitting.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P393.md` and wired
+  Phase393 into the generator, Phase101, Phase202, claim-integrity verifier,
+  and the seven broad scanner exclusions.
+
+### Result
+
+Three structural findings:
+
+1. **Exact plus/minus source cancellation**: all four per-mode source norms
+   are identical per background (0.1129 / 0.1212) and the shell-aggregated
+   source vanishes to ratio ~4e-11. Under symmetric shell occupation the
+   persisted background is ALREADY first-order coupled-stationary;
+   backreaction starts at second order, where the Phase392 response operator
+   is the leading object. This retroactively softens Phase392's
+   non-critical-point caveat for symmetric occupation at first order.
+2. **Per-mode sources lie exactly in the rank-3 Gram image** (fraction 1.0):
+   the diagonal coupled sources inhabit the Phase378 carrier image
+   identically. Their pure-gauge content is large (0.61 - 0.68) and their
+   persisted-bosonic-kernel content is 0.08 - 0.11.
+3. **First-order backreaction is not constructible from persisted
+   artifacts**: all 12 persisted bosonic Gauss-Newton eigenvalues per
+   background are ~1e-15 (numerical kernel only), so H_B^+ J is undefined in
+   the persisted subspace. The kernel component of any asymmetric source is
+   an unabsorbable first-order obstruction; the complement requires the
+   positive Gauss-Newton spectrum, never persisted. Actionable artifact gap:
+   recompute the positive bosonic spectrum at these backgrounds.
+
+The unit-source shell splitting is a clean doubly degenerate plus/minus pair
+pattern (+-6.49e-3 / +-7.22e-3 per unit coupling), preserving the spectral
+symmetry.
+
+### Validation
+
+- Targeted Phase393 run passed.
+- Phase101 package run passed and includes the Phase393 block.
+- Phase202 objective audit remains incomplete by design:
+  `objectiveAchieved=False`, `checklistPassedCount=186`,
+  `checklistFailedCount=3`.
+- Claim-integrity verification passed with `promotedPhysicalMassClaimCount=0`.
+
+### Next Required Artifact
+
+Two concrete continuations: (a) recompute the positive bosonic Gauss-Newton
+spectrum at the Phase12 backgrounds (the missing artifact for asymmetric
+backreaction and for any second-order self-consistency check); (b) since the
+shell-symmetric first-order stationarity holds, formalize the second-order
+coupled expansion around symmetric occupation, where the Phase392 response
+operator becomes the leading fermion-induced boson operator - this is the
+closest repo-local analog of a mass-generation mechanism, and it must be
+treated with the same fail-closed caution (no physical coupling, no observed
+namespace map, no contract fields). The binding theorem-level requirements
+(observed photon/W/Z/H namespace map, W/Z/H source package with coupling,
+VEV, pole, and GeV lineage) remain untouched by any of this.
