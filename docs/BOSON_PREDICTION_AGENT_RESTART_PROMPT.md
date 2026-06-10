@@ -35,12 +35,12 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase391 work:
+Current gate status after the Phase392 work:
 
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=184`,
+  `objectiveAchieved=False`, `checklistPassedCount=185`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -55,55 +55,61 @@ Current gate status after the Phase391 work:
   `persistedPhase12ModeBranchUnconverged=True`,
   `wardZeroCurrentSharplyTested=True`
 - Phase391:
-  `denseConvergedShellResponseReplayAuditPassed=True`,
-  `denseReplayVerdict=confirmed`,
-  `denseReplayConfirmsRankThree=True`,
-  `denseReplayConfirmsSuppressedAxis=True`,
+  `denseReplayVerdict=confirmed` (Gram invariants solver-independent)
+- Phase392:
+  `coupledMixedHessianFermionInducedResponseAuditPassed=True`,
+  `actionDerivedResponseStructureVerdict=diverges-from-gram-structure`,
+  `actionDerivedResponseSharesRankThree=False`,
+  `actionDerivedResponseSharesSuppressedAxis=False`,
   `canFillPhase201WzContract=False`
 
-Interpretation: the artifact question is settled. Phase391 replayed the
-Phase378/379 shell-response pipeline on the exact dense generalized
-eigensolve and CONFIRMED the invariants to ~1e-10: the rank-3 carrier image
-and the suppressed gauge axis 1 are solver-independent properties of the
-discretized control branch, not artifacts of the iterative weighted solver
-(and the Phase12 persisted-mode defect found by Phase390 never touched the
-Phase378 shell, which was solved fresh in-study). The Phase381/383/384
-suppressed-axis blockers against the Phase307 W near-pass stand on
-solver-independent ground.
+Interpretation: the carrier-image question is now resolved into a sharp
+metric statement. Phase391 proved the study-defined Hilbert-Schmidt Gram
+invariants (rank 3, suppressed gauge axis 1) are solver-independent.
+Phase392 then built the ACTION-DERIVED fermion-induced response (Schur
+complement of the coupled candidate mixed Hessian on the converged shell)
+and found it diverges: near-full rank (146/141 of 156), mixed signature,
+nearly isotropic gauge axes (~[0.33,0.33,0.33], argmin unstable). The
+suppressed-axis obstruction is therefore METRIC-DEPENDENT: decisive against
+the Gram-route promotion of the Phase307 near-pass, but not a physical
+statement about the coupled dynamics. Scope limits: the background is not a
+coupled critical point (omega solved bosonic-only) and the action is the
+candidate bilinear.
 
 ### Most Recent Implemented Work
 
-The latest work added Phase391:
+The latest work added Phase392:
 
 - Study:
-  `studies/phase391_dense_converged_shell_response_replay_audit_001`
-- Project: `Phase391DenseConvergedShellResponseReplayAudit.csproj`
+  `studies/phase392_coupled_mixed_hessian_fermion_induced_response_audit_001`
+- Project: `Phase392CoupledMixedHessianFermionInducedResponseAudit.csproj`
 - Study note: `STUDY.md`
-- Implementation note: `docs/Phases/Implementation/IMPLEMENTATION_P391.md`
+- Implementation note: `docs/Phases/Implementation/IMPLEMENTATION_P392.md`
 - Outputs:
-  `studies/phase391_dense_converged_shell_response_replay_audit_001/output/dense_converged_shell_response_replay_audit.json`
+  `studies/phase392_coupled_mixed_hessian_fermion_induced_response_audit_001/output/coupled_mixed_hessian_fermion_induced_response_audit.json`
   and `..._summary.json`
 
-Phase391 replayed the exact Phase378/379 pipeline (shell rule, coordinate
-blocks, dual-Gram rank rule, axis fractions, transport) on the Phase390
-dense eigensolve and found:
+Phase392 materialized the VO-7 candidate mixed-Hessian blocks
+`2 delta_D[e_k] psi_s` on the Phase390 converged shell and Schur-complemented
+the fermion fluctuation exactly in the dense generalized eigenbasis:
 
-- Shell eigenvalues match the Phase378 weighted-solver shell to 1.5e-10.
-- Positive rank 3 and suppressed gauge axis 1 on both backgrounds (axis
-  fractions match Phase379 to 1.7e-10).
-- Inter-background minimum transport singular value 0.79970408362 (matches
-  Phase379 to 2.2e-11); strict transport still fails.
-- Side result: the Phase374-repaired weighted solver is validated to ~1e-10.
+- `R_kl = sum_s Re<delta_D[e_k] psi_s, (D - lambda_s M)^+ delta_D[e_l] psi_s>`
+- Significant rank 146 (bg-a, 70+/76-) and 141 (bg-b, 69+/72-) of 156.
+- Gauge-axis fractions ~[0.334, 0.328, 0.337] and [0.332, 0.336, 0.332]:
+  no suppressed axis, argmin unstable across backgrounds.
+- Exact response symmetry; retained denominators >= 8.4e-4; shell residuals
+  <= 2.9e-13; pure-gauge response up to ~30x the generic scale (candidate
+  action not gauge-invariant off the coupled critical point).
 
 ### Integration Points Already Updated
 
-Phase391 (like Phase388/389/390) is wired into:
+Phase392 (like Phase388-391) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (both invocation blocks)
 - `studies/phase101_boson_prediction_package_001/Program.cs`
 - `studies/phase202_boson_objective_completion_audit_001/Program.cs`
   (checklist item
-  `dense-converged-shell-response-replay-audit-materialized`)
+  `coupled-mixed-hessian-fermion-induced-response-audit-materialized`)
 - `scripts/verify_boson_claim_integrity.sh`
 - Broad scanner exclusions: phase204, phase205, phase207, phase279,
   phase281, phase295, phase296
@@ -116,15 +122,15 @@ The diagnosis journal entry is near the end of
 ### Validation Already Run
 
 ```bash
-dotnet run --project studies/phase391_dense_converged_shell_response_replay_audit_001/Phase391DenseConvergedShellResponseReplayAudit.csproj
+dotnet run --project studies/phase392_coupled_mixed_hessian_fermion_induced_response_audit_001/Phase392CoupledMixedHessianFermionInducedResponseAudit.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
 ./scripts/generate_validated_boson_predictions.sh
 ```
 
-The full generator ended with the Phase391 line, the Phase202 incomplete
-status (`checklistPassedCount=184`, `checklistFailedCount=3`), and the same
+The full generator ended with the Phase392 line, the Phase202 incomplete
+status (`checklistPassedCount=185`, `checklistFailedCount=3`), and the same
 claim-integrity status (`promotedPhysicalMassClaimCount=0`). All seven broad
 scanners still report zero intake-ready evidence.
 
@@ -157,17 +163,18 @@ contract fields, or remove a physical blocker on the VO-7 branch.
 
 The most useful next branches are:
 
-1. A coupled boson-fermion second-variation (mixed Hessian) construction on
-   the Phase390 rebuilt converged branch, using the Phase389 identity as the
-   gauge-compatibility template, replacing the study-defined shell-response
-   Gram with an action-derived source operator. After Phase391, this is the
-   only repo-local route that could change the carrier-image structure.
+1. A coupled-critical-point construction: re-solve the background with the
+   fermionic backreaction included (coupled residual), so the Phase392
+   second variation becomes a genuine coupled Hessian and the gauge sector
+   can be handled consistently (Phase389 identity as the gauge-compatibility
+   template; a Coulomb-type slice exists in Gu.Phase2). This upgrades the
+   action-derived response from fixed-background to self-consistent and is
+   the remaining constructive VO-7 step on the control branch.
 2. A target-blind carrier-axis-to-observed photon/W/Z/H namespace theorem
-   filling Phase256 observed-field extraction fields.
-3. A theorem explaining why the physical W row must use the
-   Phase379-suppressed carrier axis (now confirmed solver-independent by
-   Phase391).
-4. A complete W/Z/H source package: separate W/Z source rows, Higgs scalar
+   filling Phase256 observed-field extraction fields. Note after Phase392:
+   any axis-structure theorem must first fix the response metric (the
+   Gram shows suppression; the action-derived response does not).
+3. A complete W/Z/H source package: separate W/Z source rows, Higgs scalar
    source row, weak-angle/coupling lineage, VEV/source scale, pole extraction,
    and GeV normalization.
 
@@ -184,10 +191,10 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -120 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase391|denseReplayVerdict|denseReplayConfirmsSuppressedAxis" \
+rg -n "Phase392|actionDerivedResponseStructureVerdict|metric-dependent" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
   ExperimentReferences.md \
-  studies/phase391_dense_converged_shell_response_replay_audit_001 \
+  studies/phase392_coupled_mixed_hessian_fermion_induced_response_audit_001 \
   studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
 ```
 
@@ -200,13 +207,13 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add ignored Phase391 output JSON files, and commit a checkpoint after
+force-add ignored Phase392 output JSON files, and commit a checkpoint after
 validation. The output directory under `studies/**/output/` is generally
-ignored, so use `git add -f` for Phase391 output files if they are meant to be
+ignored, so use `git add -f` for Phase392 output files if they are meant to be
 committed.
 
 Suggested checkpoint message:
 
 ```text
-Add phase391 dense converged-shell response replay
+Add phase392 action-derived fermion-induced response audit
 ```

@@ -15821,3 +15821,92 @@ action-derived source operator - this is now the only repo-local route that
 could change the carrier-image structure; (2) the observed photon/W/Z/H
 namespace map and W/Z/H source package, which no internal diagnostic can
 substitute for.
+
+## 2026-06-10 - Phase392 Action-Derived Response DIVERGES: Suppressed Axis Is Metric-Dependent
+
+### Context
+
+Phase391 confirmed the Phase378/379 shell-response Gram invariants are
+solver-independent, leaving one question: are the rank-3 carrier image and
+the suppressed gauge axis properties of the coupled dynamics, or properties
+of the chosen diagnostic metric (the Hilbert-Schmidt pullback of projected
+blocks)? The only repo-local discriminator is an action-derived response
+operator from the coupled boson-fermion second variation - "Best Next Work"
+branch 1.
+
+### Action
+
+- Added
+  `studies/phase392_coupled_mixed_hessian_fermion_induced_response_audit_001`.
+- Construction: around the candidate action S_F = Re<psi, D(omega) psi> on
+  the Phase390 converged shell (D psi_s = lambda_s M psi_s), the coupled
+  mixed-Hessian blocks 2 delta_D[e_k] psi_s were materialized on converged
+  modes and Schur-complemented exactly in the dense generalized eigenbasis:
+  R_kl = sum_s Re<delta_D[e_k] psi_s, (D - lambda_s M)^+ delta_D[e_l] psi_s>.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P392.md` and wired
+  Phase392 into the generator, Phase101, Phase202, claim-integrity verifier,
+  and the seven broad scanner exclusions.
+
+### Result
+
+- Phase392 passed with verdict `diverges-from-gram-structure`:
+  `actionDerivedResponseSharesRankThree=False`,
+  `actionDerivedResponseSharesSuppressedAxis=False`,
+  `stableActionDerivedSuppressedAxis=False`.
+- The action-derived response is near-full-rank (significant rank 146 and
+  141 of 156, mixed signature) and nearly isotropic across gauge axes
+  (fractions ~[0.33, 0.33, 0.33] on both backgrounds, argmin unstable),
+  versus the Gram's stable rank 3 with axis 1 at <= 0.002.
+- Computation quality: exact response symmetry, retained energy denominators
+  >= 8.4e-4, shell eigen-residuals <= 2.9e-13.
+- Pure-gauge directions carry response up to ~30x the generic scale,
+  consistent with the candidate action not being gauge-invariant at the
+  non-coupled background.
+
+### Diagnosis Update
+
+The suppressed-axis obstruction is METRIC-DEPENDENT. It is a robust,
+solver-independent property of the study-defined Hilbert-Schmidt Gram
+(Phase391), but it does not persist in the action-derived second-order
+response of the candidate action (Phase392). Consequences:
+
+- The Phase381/383/384 suppressed-axis blockers remain decisive against
+  promoting the Phase307 near-pass THROUGH THE GRAM ROUTE, but they cannot
+  be read as physical statements about the coupled dynamics.
+- The Phase388 theorem requirement "explain why the W row uses the
+  suppressed axis" now has a sharper form: any such theorem must first fix
+  the response metric, and the action-derived metric shows no suppression
+  to explain.
+- The honest blocker hierarchy is unchanged at the top: no observed
+  photon/W/Z/H namespace map, no separate W/Z source rows, no Higgs scalar
+  row, no coupling/VEV/pole/GeV lineage. The carrier-image diagnostics
+  (either metric) cannot substitute for these.
+
+### Scope Limits
+
+- (omega, psi) is not a coupled critical point (omega solved bosonic-only);
+  the response is a fixed-background second-order object.
+- Candidate bilinear action only; omega-omega bosonic Hessian not assembled;
+  toy control branch; small absolute response scale (~1e-11), well-resolved
+  relative to its rank tolerance.
+
+### Validation
+
+- Targeted Phase392 run passed.
+- Phase101 package run passed and includes the Phase392 block.
+- Phase202 objective audit remains incomplete by design:
+  `objectiveAchieved=False`, `checklistPassedCount=185`,
+  `checklistFailedCount=3`.
+- Claim-integrity verification passed with `promotedPhysicalMassClaimCount=0`.
+
+### Next Required Artifact
+
+The natural continuation of this branch is a coupled-critical-point
+construction: re-solve the background with the fermionic backreaction
+included (coupled residual), so the second variation becomes a genuine
+coupled Hessian and the gauge sector can be handled consistently (the
+Phase389 identity gives the gauge-compatibility template; a Coulomb-type
+slice exists in Gu.Phase2). That would upgrade Phase392's response operator
+from fixed-background to self-consistent. Independently, the observed
+namespace map and W/Z/H source package remain the binding theorem-level
+requirements for any physical promotion.

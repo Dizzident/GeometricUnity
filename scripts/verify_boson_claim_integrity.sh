@@ -161,6 +161,7 @@ const paths = {
   phase389: "studies/phase389_vo7_mixed_linearization_gauge_compatibility_identity_probe_001/output/vo7_mixed_linearization_gauge_compatibility_identity_probe_summary.json",
   phase390: "studies/phase390_converged_control_branch_fermion_mode_rebuild_001/output/converged_control_branch_fermion_mode_rebuild_summary.json",
   phase391: "studies/phase391_dense_converged_shell_response_replay_audit_001/output/dense_converged_shell_response_replay_audit_summary.json",
+  phase392: "studies/phase392_coupled_mixed_hessian_fermion_induced_response_audit_001/output/coupled_mixed_hessian_fermion_induced_response_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -393,6 +394,7 @@ const phase388 = requireFile(paths.phase388);
 const phase389 = requireFile(paths.phase389);
 const phase390 = requireFile(paths.phase390);
 const phase391 = requireFile(paths.phase391);
+const phase392 = requireFile(paths.phase392);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -4547,6 +4549,16 @@ if (sourceLineageMissing) {
   assert(phase391.sourceContractApplicationAllowed === false && phase391.canFillPhase201WzContract === false && phase391.canFillPhase201HiggsContract === false && phase391.canFillPhase256ObservedFieldExtractionContract === false, "Phase391 cannot fill Phase201 or Phase256 contracts.");
   assert(phase391.routePromotesWzMasses === false && phase391.routePromotesHiggsMass === false && phase391.routeCompletesBosonPredictions === false, "Phase391 cannot promote boson predictions.");
   assert(phase391.phase201TemplateMutated === false && phase391.fieldsAppliedToPhase201TemplateCount === 0 && phase391.acceptedContractFieldCount === 0, "Phase391 must not mutate or fill the Phase201 template.");
+  assert(phase392.coupledMixedHessianFermionInducedResponseAuditPassed === true, "Phase392 coupled mixed-Hessian fermion-induced response audit must pass as a fail-closed diagnostic audit.");
+  assert(phase392.targetBlindConstruction === true && phase392.physicalTargetsConsultedForConstruction === false, "Phase392 construction must remain target-blind.");
+  assert(typeof phase392.targetBlindConstructionHash === "string" && phase392.targetBlindConstructionHash.length === 64, "Phase392 must persist a target-blind construction hash.");
+  assert(phase392.applicationSubjectKind === "coupled-mixed-hessian-fermion-induced-response-audit", "Phase392 must classify its subject as the coupled mixed-Hessian response audit.");
+  assert(phase392.actionDerivedResponseStructureVerdict === "diverges-from-gram-structure" && phase392.actionDerivedResponseSharesRankThree === false && phase392.actionDerivedResponseSharesSuppressedAxis === false && phase392.stableActionDerivedSuppressedAxis === false, "Phase392 must record that the action-derived response diverges from the study-defined Gram structure (metric-dependent suppressed axis).");
+  assert(phase392.mixedBlocksMaterializedOnConvergedModes === true && phase392.backgroundIsCoupledCriticalPoint === false, "Phase392 must materialize the mixed blocks on converged modes while disclosing the non-coupled background.");
+  assert(phase392.routeProvidesPhysicalEffectiveActionHessian === false && phase392.routeProvidesObservedElectroweakNamespaceMap === false && phase392.routeProvidesCanonicalGaugeAxisSelector === false, "Phase392 must preserve the missing Hessian, namespace-map, and selector boundaries.");
+  assert(phase392.sourceContractApplicationAllowed === false && phase392.canFillPhase201WzContract === false && phase392.canFillPhase201HiggsContract === false && phase392.canFillPhase256ObservedFieldExtractionContract === false, "Phase392 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase392.routePromotesWzMasses === false && phase392.routePromotesHiggsMass === false && phase392.routeCompletesBosonPredictions === false, "Phase392 cannot promote boson predictions.");
+  assert(phase392.phase201TemplateMutated === false && phase392.fieldsAppliedToPhase201TemplateCount === 0 && phase392.acceptedContractFieldCount === 0, "Phase392 must not mutate or fill the Phase201 template.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

@@ -157,6 +157,7 @@ const string Phase388Path = "studies/phase388_vo7_observed_electroweak_namespace
 const string Phase389Path = "studies/phase389_vo7_mixed_linearization_gauge_compatibility_identity_probe_001/output/vo7_mixed_linearization_gauge_compatibility_identity_probe_summary.json";
 const string Phase390Path = "studies/phase390_converged_control_branch_fermion_mode_rebuild_001/output/converged_control_branch_fermion_mode_rebuild_summary.json";
 const string Phase391Path = "studies/phase391_dense_converged_shell_response_replay_audit_001/output/dense_converged_shell_response_replay_audit_summary.json";
+const string Phase392Path = "studies/phase392_coupled_mixed_hessian_fermion_induced_response_audit_001/output/coupled_mixed_hessian_fermion_induced_response_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -347,6 +348,7 @@ using var phase388 = File.Exists(Phase388Path) ? JsonDocument.Parse(File.ReadAll
 using var phase389 = File.Exists(Phase389Path) ? JsonDocument.Parse(File.ReadAllText(Phase389Path)) : null;
 using var phase390 = File.Exists(Phase390Path) ? JsonDocument.Parse(File.ReadAllText(Phase390Path)) : null;
 using var phase391 = File.Exists(Phase391Path) ? JsonDocument.Parse(File.ReadAllText(Phase391Path)) : null;
+using var phase392 = File.Exists(Phase392Path) ? JsonDocument.Parse(File.ReadAllText(Phase392Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -4702,6 +4704,32 @@ var denseConvergedShellResponseReplayAuditPassed = denseConvergedShellResponseRe
     && JsonBool(phase391.RootElement, "phase201TemplateMutated") is false
     && JsonInt(phase391.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
     && JsonInt(phase391.RootElement, "acceptedContractFieldCount") == 0;
+var coupledMixedHessianFermionInducedResponseAuditMaterialized = phase392 is not null;
+var coupledMixedHessianFermionInducedResponseAuditPassed = coupledMixedHessianFermionInducedResponseAuditMaterialized
+    && JsonBool(phase392!.RootElement, "coupledMixedHessianFermionInducedResponseAuditPassed") is true
+    && JsonBool(phase392.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase392.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase392.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase392.RootElement, "applicationSubjectKind") == "coupled-mixed-hessian-fermion-induced-response-audit"
+    && JsonString(phase392.RootElement, "actionDerivedResponseStructureVerdict") == "diverges-from-gram-structure"
+    && JsonBool(phase392.RootElement, "actionDerivedResponseSharesRankThree") is false
+    && JsonBool(phase392.RootElement, "actionDerivedResponseSharesSuppressedAxis") is false
+    && JsonBool(phase392.RootElement, "stableActionDerivedSuppressedAxis") is false
+    && JsonBool(phase392.RootElement, "mixedBlocksMaterializedOnConvergedModes") is true
+    && JsonBool(phase392.RootElement, "backgroundIsCoupledCriticalPoint") is false
+    && JsonBool(phase392.RootElement, "routeProvidesPhysicalEffectiveActionHessian") is false
+    && JsonBool(phase392.RootElement, "routeProvidesObservedElectroweakNamespaceMap") is false
+    && JsonBool(phase392.RootElement, "routeProvidesCanonicalGaugeAxisSelector") is false
+    && JsonBool(phase392.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase392.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase392.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase392.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase392.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase392.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase392.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase392.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase392.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase392.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -6806,6 +6834,14 @@ var checklist = new[]
             ? $"denseConvergedShellResponseReplayAuditPassed={JsonBool(phase391!.RootElement, "denseConvergedShellResponseReplayAuditPassed")}; targetBlind={JsonBool(phase391.RootElement, "targetBlindConstruction")}; verdict={JsonString(phase391.RootElement, "denseReplayVerdict")}; confirmsRankThree={JsonBool(phase391.RootElement, "denseReplayConfirmsRankThree")}; confirmsSuppressedAxis={JsonBool(phase391.RootElement, "denseReplayConfirmsSuppressedAxis")}; shellEigenvaluesMatchPhase378={JsonBool(phase391.RootElement, "shellEigenvaluesMatchPhase378")}; denseStrictTransportPassed={JsonBool(phase391.RootElement, "denseStrictTransportPassed")}; canFillPhase201WzContract={JsonBool(phase391.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase391.RootElement, "decision")}"
             : "Phase391 artifact not materialized",
         Phase391Path),
+    new ObjectiveChecklistItem(
+        "coupled-mixed-hessian-fermion-induced-response-audit-materialized",
+        "Construct the action-derived fermion-induced carrier response operator (Schur complement of the coupled candidate mixed Hessian on the converged shell) and compare its rank/axis structure to the study-defined Gram.",
+        coupledMixedHessianFermionInducedResponseAuditPassed ? "passed" : "failed",
+        coupledMixedHessianFermionInducedResponseAuditMaterialized
+            ? $"coupledMixedHessianFermionInducedResponseAuditPassed={JsonBool(phase392!.RootElement, "coupledMixedHessianFermionInducedResponseAuditPassed")}; targetBlind={JsonBool(phase392.RootElement, "targetBlindConstruction")}; verdict={JsonString(phase392.RootElement, "actionDerivedResponseStructureVerdict")}; sharesRankThree={JsonBool(phase392.RootElement, "actionDerivedResponseSharesRankThree")}; sharesSuppressedAxis={JsonBool(phase392.RootElement, "actionDerivedResponseSharesSuppressedAxis")}; stableSuppressedAxis={JsonBool(phase392.RootElement, "stableActionDerivedSuppressedAxis")}; coupledCriticalPoint={JsonBool(phase392.RootElement, "backgroundIsCoupledCriticalPoint")}; canFillPhase201WzContract={JsonBool(phase392.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase392.RootElement, "decision")}"
+            : "Phase392 artifact not materialized",
+        Phase392Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

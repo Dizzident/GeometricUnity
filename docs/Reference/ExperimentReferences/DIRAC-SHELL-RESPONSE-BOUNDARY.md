@@ -119,3 +119,16 @@ carrier image and the suppressed gauge axis are therefore solver-independent
 properties of the discretized control branch. This strengthens the boundary:
 the shell-response diagnostics are robust, but they remain study-defined
 objects, not a physical effective-action Hessian or observed namespace map.
+
+## Phase392 Usage
+
+Phase392 realizes the degenerate second-order perturbation (Hellmann-Feynman)
+side of this boundary cluster: the fermion-induced carrier response
+R_kl = sum_s Re<delta_D[e_k] psi_s, (D - lambda_s M)^+ delta_D[e_l] psi_s>
+computed exactly on the converged shell. Its structure (near-full rank,
+mixed signature, nearly isotropic gauge axes) diverges from the
+Hilbert-Schmidt pullback Gram (rank 3, suppressed axis 1), establishing that
+the suppressed-axis obstruction is metric-dependent. Neither operator is a
+physical effective-action Hessian: the Gram is study-defined, and the
+second-order response is evaluated at a background that is not a coupled
+critical point.
