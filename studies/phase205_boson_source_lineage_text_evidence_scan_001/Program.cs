@@ -219,6 +219,7 @@ static bool IsRequirementOrNegativeText(string lower)
 static bool IsGeneratedAuditOrImplementationText(string path) =>
     path.Contains("docs/Phases/Implementation/", StringComparison.Ordinal)
     || path.Contains("docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md", StringComparison.Ordinal)
+    || path.Contains("docs/BOSON_PREDICTION_AGENT_RESTART_PROMPT.md", StringComparison.Ordinal)
     || path.Contains("studies/phase200_", StringComparison.Ordinal)
     || path.Contains("studies/phase201_", StringComparison.Ordinal)
     || path.Contains("studies/phase202_", StringComparison.Ordinal)
@@ -406,10 +407,12 @@ static bool IsGeneratedAuditOrImplementationText(string path) =>
     || path.Contains("studies/phase384_", StringComparison.Ordinal)
     || path.Contains("studies/phase385_", StringComparison.Ordinal)
     || path.Contains("studies/phase386_", StringComparison.Ordinal)
-    || path.Contains("studies/phase387_", StringComparison.Ordinal);
+    || path.Contains("studies/phase387_", StringComparison.Ordinal)
+    || path.Contains("studies/phase388_", StringComparison.Ordinal);
 
 static bool IsReferenceTrackerText(string normalizedPath) =>
     normalizedPath == "ExperimentReferences.md"
+    || normalizedPath == "docs/BOSON_PREDICTION_AGENT_RESTART_PROMPT.md"
     || normalizedPath.StartsWith("docs/Reference/ExperimentReferences/", StringComparison.Ordinal);
 
 static string? JsonString(JsonElement element, string propertyName) =>

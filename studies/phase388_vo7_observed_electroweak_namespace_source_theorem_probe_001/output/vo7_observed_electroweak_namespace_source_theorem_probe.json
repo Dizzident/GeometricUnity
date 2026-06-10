@@ -1,0 +1,231 @@
+{
+  "phaseId": "phase388-vo7-observed-electroweak-namespace-source-theorem-probe",
+  "terminalStatus": "vo7-observed-electroweak-namespace-source-theorem-probe-failed-closed-new-theorem-required",
+  "generatedAt": "2026-06-09T19:15:48.2154596+00:00",
+  "vo7ObservedNamespaceSourceTheoremProbePassed": true,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "586281dccaddc6b0f53f93d9e5bd0f30188f3aab3effc660e1981efdeeaab603",
+  "applicationSubjectKind": "vo7-shell-response-observed-electroweak-namespace-source-theorem-probe",
+  "candidateTheoremPresent": false,
+  "missingTheoremRequirementCount": 13,
+  "theoremRequirements": [
+    {
+      "requirementId": "physical-m-psi-compatible-branch",
+      "present": false,
+      "detail": "A physical M_psi-compatible Dirac branch and matching modes are required before shell-response pairings can be physical."
+    },
+    {
+      "requirementId": "completed-vo7-mixed-linearization",
+      "present": false,
+      "detail": "The reciprocal block is a VO-7 building block; completed mixed-linearization blocks and gauge identities are still absent."
+    },
+    {
+      "requirementId": "physical-effective-action-hessian",
+      "present": false,
+      "detail": "The full carrier Gram is a study-defined Hilbert-Schmidt pullback, not a physical effective-action Hessian."
+    },
+    {
+      "requirementId": "carrier-axis-to-observed-photon-w-z-h-map",
+      "present": false,
+      "detail": "No current artifact maps carrier axes to observed photon/W/Z/H fields."
+    },
+    {
+      "requirementId": "canonical-gauge-axis-or-observed-namespace-selector",
+      "present": false,
+      "detail": "The response-image axis diagnostic is not a canonical electroweak selector."
+    },
+    {
+      "requirementId": "w-row-source-theorem-explains-suppressed-axis",
+      "present": false,
+      "detail": "The selected W row uses the Phase379-suppressed carrier axis and no current theorem explains why that is physically required."
+    },
+    {
+      "requirementId": "phase307-selector-escape-from-suppressed-axis",
+      "present": false,
+      "detail": "Every current Phase307 W definition uses the suppressed axis; no predeclared selector avoids it."
+    },
+    {
+      "requirementId": "basis-energy-proxy-escape",
+      "present": false,
+      "detail": "Phase27 basis-energy metadata does not supply a low-suppressed-axis escape."
+    },
+    {
+      "requirementId": "separate-w-z-source-rows",
+      "present": false,
+      "detail": "No current W/Z source-row candidate can fill Phase201."
+    },
+    {
+      "requirementId": "higgs-scalar-source-row",
+      "present": false,
+      "detail": "The v29/VO-7 lane still lacks a solved Higgs scalar-source operator or row."
+    },
+    {
+      "requirementId": "weak-angle-or-coupling-lineage",
+      "present": false,
+      "detail": "No target-independent weak-angle or coupling lineage is supplied by the VO-7 shell-response chain."
+    },
+    {
+      "requirementId": "vev-or-source-scale-lineage",
+      "present": false,
+      "detail": "No target-independent electroweak VEV or source-scale lineage is supplied by the VO-7 shell-response chain."
+    },
+    {
+      "requirementId": "pole-extraction-and-gev-normalization",
+      "present": false,
+      "detail": "No observed-pole extraction or GeV unit lineage is supplied by the VO-7 shell-response chain."
+    }
+  ],
+  "localChainEvidence": {
+    "phase370": {
+      "path": "studies/phase370_completion_fermionic_yukawa_higgs_mixed_linearization_source_audit_001/output/completion_fermionic_yukawa_higgs_mixed_linearization_source_audit_summary.json",
+      "phase370Passed": true,
+      "phase370RecordsVo7": true,
+      "phase370MixedBlocksPresent": false,
+      "phase370ObservedRowsPresent": false,
+      "phase370HiggsSourcePresent": false
+    },
+    "phase372": {
+      "path": "studies/phase372_discrete_fermionic_bilinear_reciprocal_mixed_block_audit_001/output/discrete_fermionic_bilinear_reciprocal_mixed_block_audit_summary.json",
+      "phase372Passed": true,
+      "phase372Vo7BuildingBlock": true,
+      "phase372CompletesVo7": false,
+      "phase372PhysicalMassPsiBranch": false,
+      "phase372MeshVolumeBranchCompatible": false
+    },
+    "phase378": {
+      "path": "studies/phase378_full_connection_carrier_shell_response_gram_audit_001/output/full_connection_carrier_shell_response_gram_audit_summary.json",
+      "phase378Passed": true,
+      "phase378Rank": 3,
+      "phase378PhysicalHessian": false,
+      "phase378DirectWzLaw": false
+    },
+    "phase379": {
+      "path": "studies/phase379_response_image_carrier_axis_characterization_001/output/response_image_carrier_axis_characterization_summary.json",
+      "phase379Passed": true,
+      "phase379StableTwoAxis": true,
+      "phase379SuppressedAxis": 1,
+      "phase379ObservedMap": false,
+      "phase379CanonicalSelector": false,
+      "phase379DirectWzLaw": false
+    },
+    "phase307": {
+      "path": "studies/phase307_target_independent_decoupled_wz_row_selection_law_audit_001/output/target_independent_decoupled_wz_row_selection_law_audit_summary.json",
+      "phase307Passed": true,
+      "phase307TargetBlind": true,
+      "phase307NearPassPresent": true,
+      "phase307SelectionLawCount": 8,
+      "phase307P302ScaledStableCommonSelectionLawCount": 1,
+      "phase307CanFillWz": false
+    },
+    "phase381": {
+      "path": "studies/phase381_phase302_307_response_image_selector_compatibility_audit_001/output/phase302_307_response_image_selector_compatibility_audit_summary.json",
+      "phase381Passed": true,
+      "phase381SelectedWUsesSuppressed": true,
+      "phase381SidecarConflict": true,
+      "phase381SidecarCompatible": false,
+      "phase381CanFillWz": false
+    },
+    "phase382": {
+      "path": "studies/phase382_response_image_observed_projection_requirement_audit_001/output/response_image_observed_projection_requirement_audit_summary.json",
+      "phase382Passed": true,
+      "phase382NamespaceMapPresent": false,
+      "phase382Rehabilitated": false,
+      "phase382CanFillWz": false
+    },
+    "phase383": {
+      "path": "studies/phase383_phase307_suppressed_axis_counterfactual_selector_audit_001/output/phase307_suppressed_axis_counterfactual_selector_audit_summary.json",
+      "phase383Passed": true,
+      "phase383EveryWUsesSuppressed": true,
+      "phase383NoSelectorAvoidsSuppressed": true,
+      "phase383SidecarCompatibleCount": 0,
+      "phase383CanFillWz": false
+    },
+    "phase384": {
+      "path": "studies/phase384_phase307_basis_energy_response_image_proxy_audit_001/output/phase307_basis_energy_response_image_proxy_audit_summary.json",
+      "phase384Passed": true,
+      "phase384NoLowSuppressedProxy": true,
+      "phase384MinWSuppressedBasisEnergyFraction": 0.33627838840903185,
+      "phase384SelectedSuppressedBasisEnergyFraction": 0.44501616745604355,
+      "phase384CanFillWz": false
+    },
+    "phase387": {
+      "path": "studies/phase387_current_cox_first_principles_i_full_text_contract_audit_001/output/current_cox_first_principles_i_full_text_contract_audit_summary.json",
+      "phase387Passed": true,
+      "phase387FullTextBosonContractEvidenceFound": false
+    }
+  },
+  "currentContractEvidence": {
+    "phase201Path": "studies/phase201_boson_source_lineage_intake_contract_001/output/boson_source_lineage_intake_contract_summary.json",
+    "phase201ContractMaterialized": true,
+    "phase201AllRequiredLineagesPromotable": false,
+    "phase213Path": "studies/phase213_boson_source_lineage_blocker_matrix_001/output/boson_source_lineage_blocker_matrix_summary.json",
+    "phase213WzMissingFieldCount": 15,
+    "phase213HiggsMissingFieldCount": 14,
+    "phase256Path": "studies/phase256_observed_field_extraction_intake_contract_001/output/observed_field_extraction_intake_contract_summary.json",
+    "phase256ContractMaterialized": true,
+    "phase256RequiredFieldCount": 20,
+    "phase256FilledRequiredFieldCount": 0,
+    "phase256ObservedFieldExtractionContractPromotable": false,
+    "phase385Path": "studies/phase385_observed_electroweak_namespace_map_intake_audit_001/output/observed_electroweak_namespace_map_intake_audit_summary.json",
+    "phase385Passed": true,
+    "phase385CandidateCount": 9,
+    "phase385IntakeReadyCandidateCount": 0,
+    "phase385NoNamespaceCandidate": true,
+    "phase385NoPhase256Candidate": true,
+    "phase385NoWzCandidate": true,
+    "phase385NoHiggsCandidate": true
+  },
+  "sourceContractApplicationAllowed": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "blockedContractFieldCount": 15,
+  "phase201FieldsDefensiblyFilled": [],
+  "checks": [
+    {
+      "checkId": "vo7-local-chain-materialized-but-incomplete",
+      "passed": true,
+      "detail": "phase370Passed=True; recordsVo7=True; phase372Passed=True; vo7BuildingBlock=True; completesVo7=False; physicalMassPsiBranch=False"
+    },
+    {
+      "checkId": "response-image-diagnostic-materialized-not-observed-map",
+      "passed": true,
+      "detail": "phase378Rank=3; phase379SuppressedAxis=1; physicalHessian=False; observedMap=False; directWzLaw=False"
+    },
+    {
+      "checkId": "phase307-near-pass-sidecar-conflict-preserved",
+      "passed": true,
+      "detail": "nearPass=True; scaledStableCommonSelectionLawCount=1; canFillP307=False; selectedWUsesSuppressed=True; sidecarCompatible=False"
+    },
+    {
+      "checkId": "no-current-selector-or-proxy-escapes-suppressed-axis",
+      "passed": true,
+      "detail": "everyWUsesSuppressed=True; noSelectorAvoids=True; sidecarCompatibleCount=0; minWSuppressedBasisEnergyFraction=0.33627838840903185; selectedSuppressedBasisEnergyFraction=0.44501616745604355"
+    },
+    {
+      "checkId": "observed-namespace-and-source-contracts-remain-unfilled",
+      "passed": true,
+      "detail": "wzMissing=15; higgsMissing=14; phase256Filled=0; phase385CandidateCount=9; intakeReady=0"
+    },
+    {
+      "checkId": "candidate-theorem-not-present-and-no-contract-promotion",
+      "passed": true,
+      "detail": "candidateTheoremPresent=False; missingTheoremRequirementCount=13; acceptedContractFieldCount=0; phase201TemplateMutated=False"
+    }
+  ],
+  "decision": "Do not promote the VO-7 shell-response branch. It remains the strongest repo-local diagnostic lead, but the current artifacts do not contain a theorem-level observed electroweak namespace map or source law. A future promotion attempt must either derive why the W row physically uses the Phase379-suppressed carrier axis or supply an observed photon/W/Z/H namespace map proving the carrier axes are not physical W/Z axes, plus the missing source, scale, pole, and unit lineages.",
+  "nextRequiredArtifact": [
+    "A physical M_psi-compatible fermionic branch with completed VO-7 mixed-linearization blocks and gauge identities.",
+    "A physical effective-action Hessian or equivalent source operator, not only a study-defined shell-response Gram.",
+    "A target-blind carrier-axis-to-observed photon/W/Z/H namespace theorem.",
+    "A theorem explaining the W row\u0027s use of the Phase379-suppressed axis, or a namespace map proving carrier axes are not physical W/Z axes.",
+    "Separate W/Z source rows, a Higgs scalar-source row, weak-angle/coupling lineage, VEV/source scale, pole extraction, and GeV normalization."
+  ]
+}

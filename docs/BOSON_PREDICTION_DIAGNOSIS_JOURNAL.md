@@ -15527,3 +15527,69 @@ not apply any Phase201 or Phase256 field without a physical `M_psi` branch,
 completed mixed Hessian/effective-action source, weak-angle/coupling lineage,
 VEV/source scale, separate W/Z rows, Higgs scalar-source row, pole extraction,
 and GeV normalization.
+
+## 2026-06-09 - Phase388 VO-7 Observed Namespace/Source Theorem Probe
+
+### Context
+
+The sidecar explorer identified the v29/VO-7 shell-response branch plus the
+Phase302/307 W/Z near-pass as the strongest remaining repo-local boson lead.
+The open question was whether current artifacts contain a direct
+target-independent theorem that bridges those diagnostics to observed
+photon/W/Z/H namespace rows or W/Z/H source rows.
+
+### Action
+
+- Added
+  `studies/phase388_vo7_observed_electroweak_namespace_source_theorem_probe_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P388.md`.
+- Wired Phase388 into the generator, Phase101 package, Phase202 completion
+  audit, claim-integrity verifier, and broad scanner exclusions.
+- Updated `ExperimentReferences.md` and the linked local detailed notes for
+  the v29 completion source, Phase4 fermion representation architecture, and
+  Dirac shell-response boundary.
+
+### Result
+
+- Phase388 passed as a fail-closed boundary audit:
+  `vo7ObservedNamespaceSourceTheoremProbePassed=True`.
+- It found no promotable theorem:
+  `candidateTheoremPresent=False` and
+  `missingTheoremRequirementCount=13`.
+- Positive local evidence remains diagnostic only:
+  Phase372 is a VO-7 building block, Phase378 has rank `3`, Phase379
+  suppresses carrier gauge axis `1`, and Phase307 has a target-independent
+  Phase302-scaled near-pass.
+- The blockers remain decisive: no physical `M_psi` branch, no completed VO-7
+  mixed linearization, no physical effective-action Hessian, no observed
+  photon/W/Z/H namespace map, no theorem explaining the W row's suppressed-axis
+  usage, no separate W/Z source rows, no Higgs scalar-source row, no
+  weak-angle/coupling lineage, no VEV/source scale, no pole extraction, and no
+  GeV normalization.
+- Phase388 accepted zero Phase201 or Phase256 fields and kept
+  `canFillPhase201WzContract=False`.
+
+### Validation
+
+- Targeted Phase388 run passed.
+- Scanner exclusion edits compiled for Phase204, Phase205, Phase207, Phase279,
+  Phase281, Phase295, and Phase296; all still report zero intake-ready
+  evidence.
+- Phase101 package run passed and includes the Phase388 block:
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- Phase202 objective audit remains incomplete by design:
+  `objectiveAchieved=False`, `checklistPassedCount=181`, and
+  `checklistFailedCount=3`.
+- Claim-integrity verification passed with
+  `sourceLineageMissing=true`, `wzMissingFieldCount=15`,
+  `higgsMissingFieldCount=14`, and `promotedPhysicalMassClaimCount=0`.
+- Full generator gate passed with Phase388 included and ended with the same
+  claim-integrity status.
+
+### Next Required Artifact
+
+The next successful step cannot be a code-only near-pass. It must be a
+theorem-level artifact that either maps carrier axes to observed photon/W/Z/H
+fields or explains why the physical W row must use the Phase379-suppressed
+carrier axis, and it must also supply source, scale, pole-extraction, and unit
+lineages before any physical mass prediction can be promoted.

@@ -101,6 +101,11 @@ outside the first executable numerical branch.
   against the Phase256 observed-field extraction contract and Phase201
   source-lineage contract. It finds no intake-ready GU-native observed map and
   accepts zero contract fields.
+- Added Phase388 to probe whether the v29/VO-7 shell-response branch plus the
+  Phase302/307 W/Z near-pass can be promoted into an observed electroweak
+  namespace/source theorem. It preserves the branch as the strongest local
+  diagnostic lead, but records `candidateTheoremPresent=false` and accepts zero
+  Phase201 or Phase256 fields.
 
 ## Prediction Relevance
 
@@ -125,7 +130,12 @@ axis. Phase384 records that the Phase27 basis-energy metadata does not supply a
 finer proxy escape; the selected P302-scaled common W definition still has
 suppressed-axis basis energy `0.44501616745604355`. Phase385 records that the
 current observed-map candidates, including local conventions and external
-FMS/dressing templates, cannot fill Phase256 or Phase201.
+FMS/dressing templates, cannot fill Phase256 or Phase201. Phase388 records that
+the combined VO-7 shell-response route still lacks `13` theorem requirements:
+a physical `M_psi` branch, completed VO-7 mixed linearization, physical action
+Hessian, observed photon/W/Z/H namespace map, canonical selector, suppressed
+axis theorem, separate W/Z source rows, Higgs scalar source, weak-angle or
+coupling lineage, VEV/source scale, pole extraction, and GeV normalization.
 
 ## Limitation
 
@@ -143,3 +153,7 @@ not merely the typed placeholders.
   branch and Yukawa-like coupling map are supplied.
 - Require an explicit scalar extraction theorem and stability evidence before
   applying the result to the Phase201 Higgs intake contract.
+- Revisit the VO-7 branch only when a new artifact supplies either a
+  target-blind carrier-axis-to-observed photon/W/Z/H namespace theorem or a
+  source theorem explaining why the physical W row must use the Phase379
+  suppressed carrier axis.

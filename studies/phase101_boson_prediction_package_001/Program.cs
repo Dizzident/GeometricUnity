@@ -245,6 +245,7 @@ const string Phase384Phase307BasisEnergyResponseImageProxyAuditPath = "studies/p
 const string Phase385ObservedElectroweakNamespaceMapIntakeAuditPath = "studies/phase385_observed_electroweak_namespace_map_intake_audit_001/output/observed_electroweak_namespace_map_intake_audit.json";
 const string Phase386CurrentCoxFirstPrinciplesISourceDeltaAuditPath = "studies/phase386_current_cox_first_principles_i_source_delta_audit_001/output/current_cox_first_principles_i_source_delta_audit.json";
 const string Phase387CurrentCoxFirstPrinciplesIFullTextContractAuditPath = "studies/phase387_current_cox_first_principles_i_full_text_contract_audit_001/output/current_cox_first_principles_i_full_text_contract_audit.json";
+const string Phase388Vo7ObservedElectroweakNamespaceSourceTheoremProbePath = "studies/phase388_vo7_observed_electroweak_namespace_source_theorem_probe_001/output/vo7_observed_electroweak_namespace_source_theorem_probe.json";
 const string Phase282BranchLocalDirectInvariantCensusPath = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census.json";
 const string Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit.json";
 const string Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic.json";
@@ -510,6 +511,7 @@ using var phase384 = TryParseJson(Phase384Phase307BasisEnergyResponseImageProxyA
 using var phase385 = TryParseJson(Phase385ObservedElectroweakNamespaceMapIntakeAuditPath);
 using var phase386 = TryParseJson(Phase386CurrentCoxFirstPrinciplesISourceDeltaAuditPath);
 using var phase387 = TryParseJson(Phase387CurrentCoxFirstPrinciplesIFullTextContractAuditPath);
+using var phase388 = TryParseJson(Phase388Vo7ObservedElectroweakNamespaceSourceTheoremProbePath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -6316,6 +6318,43 @@ var package = new
             decision = JsonString(phase387.RootElement, "decision"),
         }
         : null,
+    vo7ObservedElectroweakNamespaceSourceTheoremProbe = phase388 is not null
+        ? new
+        {
+            status = JsonString(phase388.RootElement, "terminalStatus"),
+            vo7ObservedNamespaceSourceTheoremProbePassed = JsonBool(phase388.RootElement, "vo7ObservedNamespaceSourceTheoremProbePassed"),
+            targetBlindConstruction = JsonBool(phase388.RootElement, "targetBlindConstruction"),
+            physicalTargetsConsultedForConstruction = JsonBool(phase388.RootElement, "physicalTargetsConsultedForConstruction"),
+            applicationSubjectKind = JsonString(phase388.RootElement, "applicationSubjectKind"),
+            candidateTheoremPresent = JsonBool(phase388.RootElement, "candidateTheoremPresent"),
+            missingTheoremRequirementCount = JsonInt(phase388.RootElement, "missingTheoremRequirementCount"),
+            phase372Vo7BuildingBlock = JsonNestedNestedBool(phase388.RootElement, "localChainEvidence", "phase372", "phase372Vo7BuildingBlock"),
+            phase372CompletesVo7 = JsonNestedNestedBool(phase388.RootElement, "localChainEvidence", "phase372", "phase372CompletesVo7"),
+            phase372PhysicalMassPsiBranch = JsonNestedNestedBool(phase388.RootElement, "localChainEvidence", "phase372", "phase372PhysicalMassPsiBranch"),
+            phase378Rank = JsonNestedNestedInt(phase388.RootElement, "localChainEvidence", "phase378", "phase378Rank"),
+            phase378PhysicalHessian = JsonNestedNestedBool(phase388.RootElement, "localChainEvidence", "phase378", "phase378PhysicalHessian"),
+            phase379SuppressedAxis = JsonNestedNestedInt(phase388.RootElement, "localChainEvidence", "phase379", "phase379SuppressedAxis"),
+            phase379ObservedMap = JsonNestedNestedBool(phase388.RootElement, "localChainEvidence", "phase379", "phase379ObservedMap"),
+            phase381SelectedWUsesSuppressed = JsonNestedNestedBool(phase388.RootElement, "localChainEvidence", "phase381", "phase381SelectedWUsesSuppressed"),
+            phase383EveryWUsesSuppressed = JsonNestedNestedBool(phase388.RootElement, "localChainEvidence", "phase383", "phase383EveryWUsesSuppressed"),
+            phase384NoLowSuppressedProxy = JsonNestedNestedBool(phase388.RootElement, "localChainEvidence", "phase384", "phase384NoLowSuppressedProxy"),
+            phase385NoNamespaceCandidate = JsonNestedBool(phase388.RootElement, "currentContractEvidence", "phase385NoNamespaceCandidate"),
+            phase256FilledRequiredFieldCount = JsonNestedInt(phase388.RootElement, "currentContractEvidence", "phase256FilledRequiredFieldCount"),
+            phase213WzMissingFieldCount = JsonNestedInt(phase388.RootElement, "currentContractEvidence", "phase213WzMissingFieldCount"),
+            phase213HiggsMissingFieldCount = JsonNestedInt(phase388.RootElement, "currentContractEvidence", "phase213HiggsMissingFieldCount"),
+            sourceContractApplicationAllowed = JsonBool(phase388.RootElement, "sourceContractApplicationAllowed"),
+            canFillPhase201WzContract = JsonBool(phase388.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase388.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase388.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            routePromotesWzMasses = JsonBool(phase388.RootElement, "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonBool(phase388.RootElement, "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonBool(phase388.RootElement, "routeCompletesBosonPredictions"),
+            phase201TemplateMutated = JsonBool(phase388.RootElement, "phase201TemplateMutated"),
+            fieldsAppliedToPhase201TemplateCount = JsonInt(phase388.RootElement, "fieldsAppliedToPhase201TemplateCount"),
+            phase201FieldsDefensiblyFilled = JsonStringArray(phase388.RootElement, "phase201FieldsDefensiblyFilled"),
+            decision = JsonString(phase388.RootElement, "decision"),
+        }
+        : null,
     branchLocalDirectInvariantCensus = phase282 is not null
         ? new
         {
@@ -9565,6 +9604,14 @@ static bool? JsonNestedNestedBool(JsonElement element, string objectName, string
         && value.TryGetProperty(nestedObjectName, out var nested)
         && nested.ValueKind == JsonValueKind.Object
         ? JsonBool(nested, propertyName)
+        : null;
+
+static int? JsonNestedNestedInt(JsonElement element, string objectName, string nestedObjectName, string propertyName) =>
+    element.TryGetProperty(objectName, out var value)
+        && value.ValueKind == JsonValueKind.Object
+        && value.TryGetProperty(nestedObjectName, out var nested)
+        && nested.ValueKind == JsonValueKind.Object
+        ? JsonInt(nested, propertyName)
         : null;
 
 static string? JsonNestedNestedString(JsonElement element, string objectName, string nestedObjectName, string propertyName) =>

@@ -568,6 +568,8 @@ static bool IsExcluded(string normalizedPath) =>
     || normalizedPath.Contains("/.agents/", StringComparison.Ordinal)
     || normalizedPath.Contains("/docs/Phases/Implementation/", StringComparison.Ordinal)
     || normalizedPath.Contains("/docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md", StringComparison.Ordinal)
+    || normalizedPath.Contains("/docs/BOSON_PREDICTION_AGENT_RESTART_PROMPT.md", StringComparison.Ordinal)
+    || normalizedPath == "docs/BOSON_PREDICTION_AGENT_RESTART_PROMPT.md"
     || normalizedPath == "ExperimentReferences.md"
     || normalizedPath.StartsWith("docs/Reference/ExperimentReferences/", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase296_", StringComparison.Ordinal)
@@ -725,7 +727,9 @@ static bool IsExcluded(string normalizedPath) =>
     || normalizedPath.StartsWith("studies/phase386_", StringComparison.Ordinal)
     || normalizedPath.Contains("/studies/phase386_", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase387_", StringComparison.Ordinal)
-    || normalizedPath.Contains("/studies/phase387_", StringComparison.Ordinal);
+    || normalizedPath.Contains("/studies/phase387_", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase388_", StringComparison.Ordinal)
+    || normalizedPath.Contains("/studies/phase388_", StringComparison.Ordinal);
 
 static string NormalizePath(string path) => path.Replace('\\', '/').TrimStart('.', '/');
 

@@ -153,6 +153,7 @@ const string Phase384Path = "studies/phase384_phase307_basis_energy_response_ima
 const string Phase385Path = "studies/phase385_observed_electroweak_namespace_map_intake_audit_001/output/observed_electroweak_namespace_map_intake_audit_summary.json";
 const string Phase386Path = "studies/phase386_current_cox_first_principles_i_source_delta_audit_001/output/current_cox_first_principles_i_source_delta_audit_summary.json";
 const string Phase387Path = "studies/phase387_current_cox_first_principles_i_full_text_contract_audit_001/output/current_cox_first_principles_i_full_text_contract_audit_summary.json";
+const string Phase388Path = "studies/phase388_vo7_observed_electroweak_namespace_source_theorem_probe_001/output/vo7_observed_electroweak_namespace_source_theorem_probe_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -339,6 +340,7 @@ using var phase384 = File.Exists(Phase384Path) ? JsonDocument.Parse(File.ReadAll
 using var phase385 = File.Exists(Phase385Path) ? JsonDocument.Parse(File.ReadAllText(Phase385Path)) : null;
 using var phase386 = File.Exists(Phase386Path) ? JsonDocument.Parse(File.ReadAllText(Phase386Path)) : null;
 using var phase387 = File.Exists(Phase387Path) ? JsonDocument.Parse(File.ReadAllText(Phase387Path)) : null;
+using var phase388 = File.Exists(Phase388Path) ? JsonDocument.Parse(File.ReadAllText(Phase388Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -4572,6 +4574,43 @@ var currentCoxFirstPrinciplesIFullTextContractAuditPassed = currentCoxFirstPrinc
     && phase387.RootElement.TryGetProperty("phase201FieldsDefensiblyFilled", out var phase387FieldsDefensiblyFilled)
     && phase387FieldsDefensiblyFilled.ValueKind == JsonValueKind.Array
     && phase387FieldsDefensiblyFilled.GetArrayLength() == 0;
+var vo7ObservedElectroweakNamespaceSourceTheoremProbeMaterialized = phase388 is not null;
+var vo7ObservedElectroweakNamespaceSourceTheoremProbePassed = vo7ObservedElectroweakNamespaceSourceTheoremProbeMaterialized
+    && JsonBool(phase388!.RootElement, "vo7ObservedNamespaceSourceTheoremProbePassed") is true
+    && JsonBool(phase388.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase388.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase388.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase388.RootElement, "applicationSubjectKind") == "vo7-shell-response-observed-electroweak-namespace-source-theorem-probe"
+    && JsonBool(phase388.RootElement, "candidateTheoremPresent") is false
+    && JsonInt(phase388.RootElement, "missingTheoremRequirementCount") > 0
+    && JsonNestedNestedBool(phase388.RootElement, "localChainEvidence", "phase372", "phase372Vo7BuildingBlock") is true
+    && JsonNestedNestedBool(phase388.RootElement, "localChainEvidence", "phase372", "phase372CompletesVo7") is false
+    && JsonNestedNestedBool(phase388.RootElement, "localChainEvidence", "phase372", "phase372PhysicalMassPsiBranch") is false
+    && JsonNestedNestedInt(phase388.RootElement, "localChainEvidence", "phase378", "phase378Rank") == 3
+    && JsonNestedNestedBool(phase388.RootElement, "localChainEvidence", "phase378", "phase378PhysicalHessian") is false
+    && JsonNestedNestedInt(phase388.RootElement, "localChainEvidence", "phase379", "phase379SuppressedAxis") == 1
+    && JsonNestedNestedBool(phase388.RootElement, "localChainEvidence", "phase379", "phase379ObservedMap") is false
+    && JsonNestedNestedBool(phase388.RootElement, "localChainEvidence", "phase381", "phase381SelectedWUsesSuppressed") is true
+    && JsonNestedNestedBool(phase388.RootElement, "localChainEvidence", "phase383", "phase383EveryWUsesSuppressed") is true
+    && JsonNestedNestedBool(phase388.RootElement, "localChainEvidence", "phase384", "phase384NoLowSuppressedProxy") is true
+    && JsonNestedBool(phase388.RootElement, "currentContractEvidence", "phase385NoNamespaceCandidate") is true
+    && JsonNestedInt(phase388.RootElement, "currentContractEvidence", "phase256FilledRequiredFieldCount") == 0
+    && JsonNestedInt(phase388.RootElement, "currentContractEvidence", "phase213WzMissingFieldCount") == wzMissingFieldCount
+    && JsonNestedInt(phase388.RootElement, "currentContractEvidence", "phase213HiggsMissingFieldCount") == higgsMissingFieldCount
+    && JsonBool(phase388.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase388.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase388.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase388.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase388.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase388.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase388.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase388.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase388.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase388.RootElement, "acceptedContractFieldCount") == 0
+    && JsonInt(phase388.RootElement, "blockedContractFieldCount") == wzMissingFieldCount
+    && phase388.RootElement.TryGetProperty("phase201FieldsDefensiblyFilled", out var phase388FieldsDefensiblyFilled)
+    && phase388FieldsDefensiblyFilled.ValueKind == JsonValueKind.Array
+    && phase388FieldsDefensiblyFilled.GetArrayLength() == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -6645,6 +6684,14 @@ var checklist = new[]
             : "Phase387 artifact not materialized",
         Phase387Path),
     new ObjectiveChecklistItem(
+        "vo7-observed-electroweak-namespace-source-theorem-probe-materialized",
+        "Probe whether the current VO-7 shell-response and Phase302/307 near-pass chain contains a theorem-level observed electroweak namespace/source law.",
+        vo7ObservedElectroweakNamespaceSourceTheoremProbePassed ? "passed" : "failed",
+        vo7ObservedElectroweakNamespaceSourceTheoremProbeMaterialized
+            ? $"vo7ObservedNamespaceSourceTheoremProbePassed={JsonBool(phase388!.RootElement, "vo7ObservedNamespaceSourceTheoremProbePassed")}; targetBlind={JsonBool(phase388.RootElement, "targetBlindConstruction")}; candidateTheoremPresent={JsonBool(phase388.RootElement, "candidateTheoremPresent")}; missingTheoremRequirementCount={JsonInt(phase388.RootElement, "missingTheoremRequirementCount")}; phase372Vo7BuildingBlock={JsonNestedNestedBool(phase388.RootElement, "localChainEvidence", "phase372", "phase372Vo7BuildingBlock")}; phase372CompletesVo7={JsonNestedNestedBool(phase388.RootElement, "localChainEvidence", "phase372", "phase372CompletesVo7")}; phase378Rank={JsonNestedNestedInt(phase388.RootElement, "localChainEvidence", "phase378", "phase378Rank")}; phase379SuppressedAxis={JsonNestedNestedInt(phase388.RootElement, "localChainEvidence", "phase379", "phase379SuppressedAxis")}; phase381SelectedWUsesSuppressed={JsonNestedNestedBool(phase388.RootElement, "localChainEvidence", "phase381", "phase381SelectedWUsesSuppressed")}; phase383EveryWUsesSuppressed={JsonNestedNestedBool(phase388.RootElement, "localChainEvidence", "phase383", "phase383EveryWUsesSuppressed")}; phase384NoLowSuppressedProxy={JsonNestedNestedBool(phase388.RootElement, "localChainEvidence", "phase384", "phase384NoLowSuppressedProxy")}; canFillPhase201WzContract={JsonBool(phase388.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase388.RootElement, "decision")}"
+            : "Phase388 artifact not materialized",
+        Phase388Path),
+    new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
         branchLocalDirectInvariantCensusPassed ? "passed" : "failed",
@@ -7148,6 +7195,7 @@ var result = new
         phase385Path = Phase385Path,
         phase386Path = Phase386Path,
         phase387Path = Phase387Path,
+        phase388Path = Phase388Path,
         phase282Path = Phase282Path,
         phase283Path = Phase283Path,
         phase284Path = Phase284Path,
@@ -7220,12 +7268,28 @@ static string? JsonNestedString(JsonElement element, string objectName, string p
         ? JsonString(property, propertyName)
         : null;
 
+static bool? JsonNestedNestedBool(JsonElement element, string objectName, string nestedObjectName, string propertyName) =>
+    element.TryGetProperty(objectName, out var property)
+        && property.ValueKind == JsonValueKind.Object
+        && property.TryGetProperty(nestedObjectName, out var nestedProperty)
+        && nestedProperty.ValueKind == JsonValueKind.Object
+        ? JsonBool(nestedProperty, propertyName)
+        : null;
+
 static int? JsonInt(JsonElement element, string propertyName) =>
     element.TryGetProperty(propertyName, out var property) && property.ValueKind == JsonValueKind.Number && property.TryGetInt32(out var value) ? value : null;
 
 static int? JsonNestedInt(JsonElement element, string objectName, string propertyName) =>
     element.TryGetProperty(objectName, out var property) && property.ValueKind == JsonValueKind.Object
         ? JsonInt(property, propertyName)
+        : null;
+
+static int? JsonNestedNestedInt(JsonElement element, string objectName, string nestedObjectName, string propertyName) =>
+    element.TryGetProperty(objectName, out var property)
+        && property.ValueKind == JsonValueKind.Object
+        && property.TryGetProperty(nestedObjectName, out var nestedProperty)
+        && nestedProperty.ValueKind == JsonValueKind.Object
+        ? JsonInt(nestedProperty, propertyName)
         : null;
 
 static IReadOnlyList<int> JsonIntArray(JsonElement element, string propertyName)

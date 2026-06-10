@@ -51,6 +51,9 @@ identities.
   non-promotional boundary. Basis-energy fractions are treated as internal
   metadata, not observed W/Z projection rows or a physical response-image
   projector.
+- Used in Phase388 to require a theorem-level observed electroweak
+  namespace/source law before promoting the VO-7 shell-response diagnostics to
+  Phase201 or Phase256 contract evidence.
 - Used to keep the Phase377 response metric distinct from a physical
   fermion-determinant effective-action Hessian.
 - Used to record that the Phase376 absolute-value spectral shell is not an
@@ -70,7 +73,9 @@ Phase382 shows that current observed-field artifacts cannot separate that
 carrier-axis diagnostic from physical W/Z axes. Phase383 shows that the current
 Phase307 predeclared selector space has no alternate W source definition that
 avoids the suppressed axis. Phase384 shows that Phase27 basis-energy metadata
-does not provide a lower-axis proxy escape.
+does not provide a lower-axis proxy escape. Phase388 shows that the combined
+VO-7 shell-response branch still has no candidate theorem that can bridge these
+diagnostics to observed photon/W/Z/H namespace rows or W/Z/H source rows.
 
 ## Limitation
 
@@ -82,7 +87,7 @@ non-mutating contract audit, not a prediction. Phase381 is a selector
 compatibility audit, not a prediction. Phase382 is an observed-projection
 requirement audit, not a prediction. Phase383 is a counterfactual selector
 space audit, not a prediction. Phase384 is a basis-energy proxy audit, not a
-prediction.
+prediction. Phase388 is a theorem-probe boundary audit, not a prediction.
 
 ## Follow-Up
 
@@ -90,3 +95,5 @@ prediction.
   attempting a physical effective-action Hessian.
 - Supply observed-field extraction, pole extraction, and unit normalization
   before any W/Z/H prediction attempt.
+- Supply a direct observed electroweak namespace/source theorem before applying
+  any shell-response branch to Phase201 or Phase256.

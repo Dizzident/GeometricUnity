@@ -526,6 +526,7 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath.Contains("studies/phase385_observed_electroweak_namespace_map_intake_audit_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase386_current_cox_first_principles_i_source_delta_audit_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase387_current_cox_first_principles_i_full_text_contract_audit_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase388_vo7_observed_electroweak_namespace_source_theorem_probe_001/", StringComparison.Ordinal)
     || normalizedPath == "studies/phase101_boson_prediction_package_001/Program.cs"
     || normalizedPath == "studies/phase202_boson_objective_completion_audit_001/Program.cs"
     || normalizedPath == "studies/phase204_boson_source_lineage_candidate_scan_001/Program.cs"
@@ -534,6 +535,7 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath == "scripts/generate_validated_boson_predictions.sh"
     || normalizedPath == "scripts/verify_boson_claim_integrity.sh"
     || normalizedPath == "docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md"
+    || normalizedPath == "docs/BOSON_PREDICTION_AGENT_RESTART_PROMPT.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P279.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P327.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P328.md"

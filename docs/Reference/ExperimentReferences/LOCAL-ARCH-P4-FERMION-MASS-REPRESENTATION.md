@@ -83,6 +83,11 @@ of the physical fermionic branch of Geometric Unity.
   candidate set. The response-image and basis-energy artifacts remain carrier
   or proxy diagnostics, not observed photon/W/Z/H projection rows or
   source-lineage theorems.
+- Used in Phase388 to test whether the full VO-7 shell-response chain contains
+  a theorem-level bridge from local carrier diagnostics to observed
+  electroweak namespace/source rows. It does not: the current architecture
+  still lacks a physical `M_psi` branch, physical Hessian, observed namespace
+  map, and source/scale/unit lineages.
 
 ## Prediction Relevance
 
@@ -117,8 +122,10 @@ the conflict either: the minimum W suppressed-axis basis-energy fraction is
 `0.44501616745604355`. None establishes that the weights, operator branch,
 carrier axes, basis-energy proxy, or image projector are physically canonical.
 Phase385 confirms that these diagnostics also cannot fill the observed
-electroweak namespace-map intake contract. No physical boson mass can be
-promoted from this convention alone.
+electroweak namespace-map intake contract. Phase388 confirms that the combined
+chain still lacks the theorem-level observed namespace/source law needed to
+move from architecture diagnostics to Phase201/Phase256 source evidence. No
+physical boson mass can be promoted from this convention alone.
 
 ## Follow-Up
 
@@ -130,3 +137,5 @@ promoted from this convention alone.
   in production branches.
 - Derive a fixed GU fermionic action and physical `M_psi` branch before using
   weighted reciprocal blocks as source-law evidence.
+- Add a target-blind observed photon/W/Z/H namespace theorem before treating
+  carrier-axis response data as physical W/Z/H rows.
