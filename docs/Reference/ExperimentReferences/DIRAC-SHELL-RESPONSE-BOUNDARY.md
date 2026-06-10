@@ -108,3 +108,14 @@ obstruction vanishes for constant gauge parameters (exact equivariance) and is
 a midpoint-discretization artifact for vertex-local parameters. This remains a
 study-defined diagnostic on the toy control branch and does not upgrade the
 shell-response Gram to a physical effective-action Hessian.
+
+## Phase391 Usage
+
+Phase391 replays the Phase378/379 shell-response Gram and carrier-axis
+characterization on the exact dense generalized eigensolve from Phase390 and
+confirms the invariants quantitatively (shell eigenvalues to 1.5e-10, axis
+fractions to 1.7e-10, transport singular value to 2.2e-11). The rank-3
+carrier image and the suppressed gauge axis are therefore solver-independent
+properties of the discretized control branch. This strengthens the boundary:
+the shell-response diagnostics are robust, but they remain study-defined
+objects, not a physical effective-action Hessian or observed namespace map.

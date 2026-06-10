@@ -1,0 +1,159 @@
+{
+  "phaseId": "phase391-dense-converged-shell-response-replay-audit",
+  "generatedAt": "2026-06-10T17:15:53.425076+00:00",
+  "terminalStatus": "dense-converged-shell-response-replay-confirmed-discrete-diagnostic-only",
+  "denseConvergedShellResponseReplayAuditPassed": true,
+  "phase378PrecursorPassed": true,
+  "phase379PrecursorPassed": true,
+  "phase390PrecursorPassed": true,
+  "denseReplayInternallyConsistent": true,
+  "denseReplayVerdict": "confirmed",
+  "denseReplayConfirmsRankThree": true,
+  "denseReplayConfirmsSuppressedAxis": true,
+  "shellEigenvaluesMatchPhase378": true,
+  "denseSolveConverged": true,
+  "blockHermiticityPassed": true,
+  "denseStrictTransportPassed": false,
+  "denseInterBackgroundMinimumSingularValue": 0.7997040836195771,
+  "denseInterBackgroundMaximumPrincipalAngleDegrees": 36.89814629480968,
+  "phase379InterBackgroundMinimumSingularValue": 0.7997040836417338,
+  "transportDeltaVsPhase379": 2.215672090244425E-11,
+  "maxAxisFractionAbsDelta": 1.6879542208414477E-10,
+  "maxShellEigenvalueRelativeDelta": 1.479729881231449E-10,
+  "maxShellEigenResidual": 2.85613078170129E-13,
+  "maxBlockHermiticityResidual": 6.437857749532317E-16,
+  "replayDefinitions": {
+    "denseSolve": "B = M^{-1/2} D M^{-1/2} via complex Hermitian Jacobi; v = M^{-1/2} w; D v = lambda M_psi v",
+    "shellSelection": "lowest nonzero |lambda| group with tolerance max(1e-12, 1e-8 * |lambda_min|) (Phase378 rule)",
+    "coordinateBlock": "G_i = V_shell^dagger deltaK[e_i] V_shell, deltaK from DiracVariationComputer.ComputeAnalytical on unit carrier basis vectors",
+    "responseGram": "Q_ij = Re Tr(G_i^dagger G_j) via 32-dimensional real feature vectors",
+    "positiveRank": "eigenvalues of the 32x32 dual feature Gram above max(1e-14, 1e-10 * max|eigenvalue|) (Phase378 rule)",
+    "axisFractions": "sum of squared top-rank Q-eigenvector components grouped by coordinate % 3, normalized by rank (Phase379 rule)",
+    "transport": "singular values of the 3x3 overlap between background positive eigenspaces (Phase379 rule)"
+  },
+  "applicationSubjectKind": "dense-converged-shell-response-replay-audit",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "90e0e1fbeef734a9e8168e4d6e47ab0ca18db588f6f3c2f90f1492c842c8bc4b",
+  "expectedCoveragePresent": true,
+  "backgroundCount": 2,
+  "routeProvidesPhysicalMassPsiCompatibleBranch": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesObservedElectroweakNamespaceMap": false,
+  "routeProvidesCanonicalGaugeAxisSelector": false,
+  "routeProvidesDirectTargetIndependentWzBridgeSourceLaw": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesWeakAngleOrCouplingLineage": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "study-defined discrete shell-response diagnostic only",
+    "not a physical effective-action Hessian",
+    "not an observed electroweak namespace map",
+    "not a canonical gauge-axis selector",
+    "no W/Z bridge law",
+    "no Higgs scalar operator",
+    "no weak-angle or coupling lineage",
+    "no VEV or source-scale lineage",
+    "no pole extraction or GeV normalization",
+    "no physical predictions",
+    "no Phase201 or Phase256 fill"
+  ],
+  "backgrounds": [
+    {
+      "fermionBackgroundId": "bg-phase12-bg-a-20260315212202",
+      "baseDiracMatrixPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/dirac_bundle_bg-phase12-bg-a-20260315212202.matrix.json",
+      "jacobiSweeps": 11,
+      "finalOffDiagonalNorm": 7.927900586980682E-11,
+      "shellSize": 4,
+      "shellEigenvalues": [
+        -0.0008427613458545568,
+        0.0008427613458688838,
+        0.0008427613458887643,
+        -0.0008427613459189185
+      ],
+      "maxShellEigenResidual": 2.85613078170129E-13,
+      "shellEigenvalueMaxRelativeDelta": 6.725269245471116E-11,
+      "coordinateCount": 156,
+      "maxBlockHermiticityResidual": 6.437857749532317E-16,
+      "positiveRank": 3,
+      "rankTolerance": 6.6391474521260026E-12,
+      "positiveDualEigenvalues": [
+        0.06639147452126003,
+        0.01158738643078521,
+        0.010409301162751867
+      ],
+      "gaugeAxisProjectorFractions": [
+        0.5428841174145976,
+        0.0016621111650110796,
+        0.45545377142039173
+      ],
+      "suppressedAxisIndex": 1,
+      "phase379GaugeAxisProjectorFractions": [
+        0.5428841172458022,
+        0.0016621111895614045,
+        0.4554537715646367
+      ],
+      "phase379SuppressedAxisIndex": 1,
+      "axisFractionMaxAbsDeltaVsPhase379": 1.6879542208414477E-10,
+      "rankMatchesPhase379": true,
+      "suppressedAxisMatchesPhase379": true
+    },
+    {
+      "fermionBackgroundId": "bg-phase12-bg-b-20260315212202",
+      "baseDiracMatrixPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/dirac_bundle_bg-phase12-bg-b-20260315212202.matrix.json",
+      "jacobiSweeps": 11,
+      "finalOffDiagonalNorm": 7.677937029174951E-11,
+      "shellSize": 4,
+      "shellEigenvalues": [
+        -0.0009139800207631899,
+        -0.0009139800207672536,
+        0.0009139800207907077,
+        0.0009139800208134728
+      ],
+      "maxShellEigenResidual": 2.492981588530915E-13,
+      "shellEigenvalueMaxRelativeDelta": 1.479729881231449E-10,
+      "coordinateCount": 156,
+      "maxBlockHermiticityResidual": 4.847302891456678E-16,
+      "positiveRank": 3,
+      "rankTolerance": 7.570430092421569E-12,
+      "positiveDualEigenvalues": [
+        0.07570430092421568,
+        0.013891452800391368,
+        0.011502259416286286
+      ],
+      "gaugeAxisProjectorFractions": [
+        0.5199703289400842,
+        0.0007681637649950666,
+        0.4792615072949206
+      ],
+      "suppressedAxisIndex": 1,
+      "phase379GaugeAxisProjectorFractions": [
+        0.5199703289639036,
+        0.0007681637643256457,
+        0.4792615072717709
+      ],
+      "phase379SuppressedAxisIndex": 1,
+      "axisFractionMaxAbsDeltaVsPhase379": 2.3819390904122884E-11,
+      "rankMatchesPhase379": true,
+      "suppressedAxisMatchesPhase379": true
+    }
+  ],
+  "decision": "The exact dense generalized eigensolve reproduces the Phase378/379 shell-response invariants: the lowest nonzero shell matches the Phase378 weighted-solver shell eigenvalues, the full-carrier response Gram has stable positive rank 3, the gauge-axis projector fractions show the same two-axis dominance with suppressed gauge axis 1, and the inter-background transport remains loose (strict transport still fails). The rank-3 image and the suppressed axis are therefore properties of the discretized control branch, NOT artifacts of the Phase378 iterative weighted solver, and the Phase381/383/384 suppressed-axis blockers against the Phase307 W near-pass stand on solver-independent ground. This remains a study-defined discrete diagnostic: no physical Hessian, observed namespace map, canonical axis selector, W/Z/H source rows, or Phase201/Phase256 contract fields are provided."
+}

@@ -15751,3 +15751,73 @@ modes — a cheap and decisive follow-up. None of this substitutes for the
 still-missing observed photon/W/Z/H namespace map, separate W/Z source rows,
 Higgs scalar-source row, weak-angle/coupling lineage, VEV/source scale, pole
 extraction, and GeV normalization.
+
+## 2026-06-10 - Phase391 Dense Converged-Shell Response Replay: Invariants CONFIRMED
+
+### Context
+
+Phase390 proved the persisted Phase12 fermion modes are non-eigen mixtures,
+which raised the question of whether the Phase378/379 shell-response
+invariants - the rank-3 carrier image, the suppressed gauge axis 1, and the
+failed strict background transport - were solver-sensitive. Those invariants
+are the active blockers behind the Phase307 W near-pass rejection
+(Phases 381/383/384) and two of the thirteen Phase388 theorem requirements.
+Phase378 had run its own iterative weighted solve with in-study residual
+checks (it did not use the defective persisted modes), so the open question
+was solver fidelity on the degenerate lowest shell.
+
+### Action
+
+- Added `studies/phase391_dense_converged_shell_response_replay_audit_001`,
+  replaying the exact Phase378/379 pipeline (shell selection rule,
+  per-coordinate blocks, dual-Gram rank rule, axis-fraction rule, transport
+  rule) on the Phase390 dense generalized eigensolve.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P391.md`.
+- Wired Phase391 into the generator, Phase101 package, Phase202 completion
+  audit, claim-integrity verifier, and the seven broad scanner exclusions.
+
+### Result
+
+- Phase391 passed with verdict `confirmed`:
+  `denseConvergedShellResponseReplayAuditPassed=True`,
+  `denseReplayConfirmsRankThree=True`,
+  `denseReplayConfirmsSuppressedAxis=True`,
+  `shellEigenvaluesMatchPhase378=True`,
+  `denseStrictTransportPassed=False`.
+- Quantitative agreement with the persisted Phase378/379 results:
+  shell eigenvalues to relative `1.5e-10`, gauge-axis projector fractions to
+  `1.7e-10`, inter-background minimum transport singular value
+  `0.79970408362` to `2.2e-11`.
+- Diagnosis update: the rank-3 carrier image and the suppressed gauge axis
+  are solver-independent properties of the discretized control branch, NOT
+  artifacts of the Phase378 weighted solver and NOT contaminated by the
+  Phase12 persisted-mode defect. The Phase381/383/384 suppressed-axis
+  blockers and the Phase388 requirements
+  `w-row-source-theorem-explains-suppressed-axis` and
+  `phase307-selector-escape-from-suppressed-axis` stand on
+  solver-independent ground.
+- Side result: the Phase374-repaired iterative weighted solver is validated
+  against the exact dense solve to ~1e-10 on this problem.
+- Phase391 accepted zero Phase201 or Phase256 fields and keeps
+  `canFillPhase201WzContract=False`.
+
+### Validation
+
+- Targeted Phase391 run passed.
+- Phase101 package run passed and includes the Phase391 block.
+- Phase202 objective audit remains incomplete by design:
+  `objectiveAchieved=False`, `checklistPassedCount=184`,
+  `checklistFailedCount=3`.
+- Claim-integrity verification passed with `promotedPhysicalMassClaimCount=0`.
+
+### Next Required Artifact
+
+The converged-mode replay closes the "is it an artifact?" question: the
+suppressed-axis obstruction is real on this branch. The remaining productive
+directions are unchanged in kind but sharpened in priority: (1) the coupled
+boson-fermion second-variation (mixed Hessian) on the Phase390 converged
+branch, replacing the study-defined shell-response Gram with an
+action-derived source operator - this is now the only repo-local route that
+could change the carrier-image structure; (2) the observed photon/W/Z/H
+namespace map and W/Z/H source package, which no internal diagnostic can
+substitute for.

@@ -248,6 +248,7 @@ const string Phase387CurrentCoxFirstPrinciplesIFullTextContractAuditPath = "stud
 const string Phase388Vo7ObservedElectroweakNamespaceSourceTheoremProbePath = "studies/phase388_vo7_observed_electroweak_namespace_source_theorem_probe_001/output/vo7_observed_electroweak_namespace_source_theorem_probe.json";
 const string Phase389Vo7MixedLinearizationGaugeCompatibilityIdentityProbePath = "studies/phase389_vo7_mixed_linearization_gauge_compatibility_identity_probe_001/output/vo7_mixed_linearization_gauge_compatibility_identity_probe_summary.json";
 const string Phase390ConvergedControlBranchFermionModeRebuildPath = "studies/phase390_converged_control_branch_fermion_mode_rebuild_001/output/converged_control_branch_fermion_mode_rebuild_summary.json";
+const string Phase391DenseConvergedShellResponseReplayAuditPath = "studies/phase391_dense_converged_shell_response_replay_audit_001/output/dense_converged_shell_response_replay_audit_summary.json";
 const string Phase282BranchLocalDirectInvariantCensusPath = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census.json";
 const string Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit.json";
 const string Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic.json";
@@ -516,6 +517,7 @@ using var phase387 = TryParseJson(Phase387CurrentCoxFirstPrinciplesIFullTextCont
 using var phase388 = TryParseJson(Phase388Vo7ObservedElectroweakNamespaceSourceTheoremProbePath);
 using var phase389 = TryParseJson(Phase389Vo7MixedLinearizationGaugeCompatibilityIdentityProbePath);
 using var phase390 = TryParseJson(Phase390ConvergedControlBranchFermionModeRebuildPath);
+using var phase391 = TryParseJson(Phase391DenseConvergedShellResponseReplayAuditPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -6422,6 +6424,34 @@ var package = new
             phase201TemplateMutated = JsonBool(phase390.RootElement, "phase201TemplateMutated"),
             fieldsAppliedToPhase201TemplateCount = JsonInt(phase390.RootElement, "fieldsAppliedToPhase201TemplateCount"),
             decision = JsonString(phase390.RootElement, "decision"),
+        }
+        : null,
+    denseConvergedShellResponseReplayAudit = phase391 is not null
+        ? new
+        {
+            status = JsonString(phase391.RootElement, "terminalStatus"),
+            denseConvergedShellResponseReplayAuditPassed = JsonBool(phase391.RootElement, "denseConvergedShellResponseReplayAuditPassed"),
+            targetBlindConstruction = JsonBool(phase391.RootElement, "targetBlindConstruction"),
+            physicalTargetsConsultedForConstruction = JsonBool(phase391.RootElement, "physicalTargetsConsultedForConstruction"),
+            applicationSubjectKind = JsonString(phase391.RootElement, "applicationSubjectKind"),
+            denseReplayVerdict = JsonString(phase391.RootElement, "denseReplayVerdict"),
+            denseReplayConfirmsRankThree = JsonBool(phase391.RootElement, "denseReplayConfirmsRankThree"),
+            denseReplayConfirmsSuppressedAxis = JsonBool(phase391.RootElement, "denseReplayConfirmsSuppressedAxis"),
+            shellEigenvaluesMatchPhase378 = JsonBool(phase391.RootElement, "shellEigenvaluesMatchPhase378"),
+            denseStrictTransportPassed = JsonBool(phase391.RootElement, "denseStrictTransportPassed"),
+            routeProvidesCanonicalGaugeAxisSelector = JsonBool(phase391.RootElement, "routeProvidesCanonicalGaugeAxisSelector"),
+            routeProvidesPhysicalEffectiveActionHessian = JsonBool(phase391.RootElement, "routeProvidesPhysicalEffectiveActionHessian"),
+            routeProvidesObservedElectroweakNamespaceMap = JsonBool(phase391.RootElement, "routeProvidesObservedElectroweakNamespaceMap"),
+            sourceContractApplicationAllowed = JsonBool(phase391.RootElement, "sourceContractApplicationAllowed"),
+            canFillPhase201WzContract = JsonBool(phase391.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase391.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase391.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            routePromotesWzMasses = JsonBool(phase391.RootElement, "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonBool(phase391.RootElement, "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonBool(phase391.RootElement, "routeCompletesBosonPredictions"),
+            phase201TemplateMutated = JsonBool(phase391.RootElement, "phase201TemplateMutated"),
+            fieldsAppliedToPhase201TemplateCount = JsonInt(phase391.RootElement, "fieldsAppliedToPhase201TemplateCount"),
+            decision = JsonString(phase391.RootElement, "decision"),
         }
         : null,
     branchLocalDirectInvariantCensus = phase282 is not null

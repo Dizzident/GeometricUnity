@@ -35,12 +35,12 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase390 work:
+Current gate status after the Phase391 work:
 
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=183`,
+  `objectiveAchieved=False`, `checklistPassedCount=184`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -52,77 +52,79 @@ Current gate status after the Phase390 work:
   `canFillPhase201WzContract=False`
 - Phase390:
   `convergedControlBranchFermionModeRebuildPassed=True`,
-  `mPsiCompatibleGeneralizedControlBranchMaterialized=True`,
   `persistedPhase12ModeBranchUnconverged=True`,
-  `wardZeroCurrentSharplyTested=True`,
+  `wardZeroCurrentSharplyTested=True`
+- Phase391:
+  `denseConvergedShellResponseReplayAuditPassed=True`,
+  `denseReplayVerdict=confirmed`,
+  `denseReplayConfirmsRankThree=True`,
+  `denseReplayConfirmsSuppressedAxis=True`,
   `canFillPhase201WzContract=False`
 
-Interpretation: the VO-7 branch now has converged control-branch fermion
-modes on both the identity-weight and mesh-volume `M_psi` branches, the
-gauge-compatibility identity (Phase389) carries over exactly to the `M_psi`
-branch because `[M_psi, X_hat] = 0`, and the pure-gauge Ward zero-current
-statement is sharply verified. Critically, Phase390 proved the persisted
-Phase12 fermion modes are non-eigen mixtures (relative residuals 12-18, best
-overlap with any true eigenvector 0.376). The Phases 376-388 shell-response
-chain used those modes as fixed test vectors, so the Phase378 rank-3 carrier
-image and Phase379 suppressed axis may be artifacts of unconverged modes.
+Interpretation: the artifact question is settled. Phase391 replayed the
+Phase378/379 shell-response pipeline on the exact dense generalized
+eigensolve and CONFIRMED the invariants to ~1e-10: the rank-3 carrier image
+and the suppressed gauge axis 1 are solver-independent properties of the
+discretized control branch, not artifacts of the iterative weighted solver
+(and the Phase12 persisted-mode defect found by Phase390 never touched the
+Phase378 shell, which was solved fresh in-study). The Phase381/383/384
+suppressed-axis blockers against the Phase307 W near-pass stand on
+solver-independent ground.
 
 ### Most Recent Implemented Work
 
-The latest work added Phase390:
+The latest work added Phase391:
 
 - Study:
-  `studies/phase390_converged_control_branch_fermion_mode_rebuild_001`
-- Project:
-  `Phase390ConvergedControlBranchFermionModeRebuild.csproj`
+  `studies/phase391_dense_converged_shell_response_replay_audit_001`
+- Project: `Phase391DenseConvergedShellResponseReplayAudit.csproj`
 - Study note: `STUDY.md`
-- Implementation note: `docs/Phases/Implementation/IMPLEMENTATION_P390.md`
+- Implementation note: `docs/Phases/Implementation/IMPLEMENTATION_P391.md`
 - Outputs:
-  `studies/phase390_converged_control_branch_fermion_mode_rebuild_001/output/converged_control_branch_fermion_mode_rebuild.json`
+  `studies/phase391_dense_converged_shell_response_replay_audit_001/output/dense_converged_shell_response_replay_audit.json`
   and `..._summary.json`
 
-Phase390 verified, on both persisted Phase12 backgrounds:
+Phase391 replayed the exact Phase378/379 pipeline (shell rule, coordinate
+blocks, dual-Gram rank rule, axis fractions, transport) on the Phase390
+dense eigensolve and found:
 
-- Converged eigenpairs on both branches (in-study complex Hermitian Jacobi;
-  eigen-residuals <= 3.1e-13; M-orthonormality at solver precision).
-- Exact 48-dimensional structural kernel per branch from the toy mesh's 4
-  isolated vertices; target-blind selection takes the 12 smallest-|lambda|
-  NONZERO eigenpairs.
-- `[M_psi, X_hat] = 0` exactly, conjugating the Phase389 identity onto the
-  M_psi-compatible generalized branch.
-- Sharp pure-gauge Ward zero-current across 4032 rows (max current 9.3e-13).
-- Persisted Phase12 modes confirmed unconverged (non-eigen mixtures).
+- Shell eigenvalues match the Phase378 weighted-solver shell to 1.5e-10.
+- Positive rank 3 and suppressed gauge axis 1 on both backgrounds (axis
+  fractions match Phase379 to 1.7e-10).
+- Inter-background minimum transport singular value 0.79970408362 (matches
+  Phase379 to 2.2e-11); strict transport still fails.
+- Side result: the Phase374-repaired weighted solver is validated to ~1e-10.
 
 ### Integration Points Already Updated
 
-Phase390 (like Phase388/389) is wired into:
+Phase391 (like Phase388/389/390) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (both invocation blocks)
 - `studies/phase101_boson_prediction_package_001/Program.cs`
 - `studies/phase202_boson_objective_completion_audit_001/Program.cs`
   (checklist item
-  `converged-control-branch-fermion-mode-rebuild-materialized`)
+  `dense-converged-shell-response-replay-audit-materialized`)
 - `scripts/verify_boson_claim_integrity.sh`
 - Broad scanner exclusions: phase204, phase205, phase207, phase279,
   phase281, phase295, phase296
 
 Reference tracking was updated in `ExperimentReferences.md` and
-`docs/Reference/ExperimentReferences/LOCAL-ARCH-P4-FERMION-MASS-REPRESENTATION.md`.
+`docs/Reference/ExperimentReferences/DIRAC-SHELL-RESPONSE-BOUNDARY.md`.
 The diagnosis journal entry is near the end of
 `docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md`.
 
 ### Validation Already Run
 
 ```bash
-dotnet run --project studies/phase390_converged_control_branch_fermion_mode_rebuild_001/Phase390ConvergedControlBranchFermionModeRebuild.csproj
+dotnet run --project studies/phase391_dense_converged_shell_response_replay_audit_001/Phase391DenseConvergedShellResponseReplayAudit.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
 ./scripts/generate_validated_boson_predictions.sh
 ```
 
-The full generator ended with the Phase390 line, the Phase202 incomplete
-status (`checklistPassedCount=183`, `checklistFailedCount=3`), and the same
+The full generator ended with the Phase391 line, the Phase202 incomplete
+status (`checklistPassedCount=184`, `checklistFailedCount=3`), and the same
 claim-integrity status (`promotedPhysicalMassClaimCount=0`). All seven broad
 scanners still report zero intake-ready evidence.
 
@@ -155,23 +157,17 @@ contract fields, or remove a physical blocker on the VO-7 branch.
 
 The most useful next branches are:
 
-1. **Converged-mode shell-response replay (cheap and decisive)**: re-run the
-   Phase376-379 shell-response Gram and carrier-axis characterization using
-   the Phase390 converged modes instead of the unconverged persisted modes.
-   This decides whether the Phase378 rank-3 carrier image and the Phase379
-   suppressed axis (which block the Phase307 W near-pass) are properties of
-   the discretized physics or artifacts of mode unconvergence. Either outcome
-   is a major diagnostic update.
-2. A coupled boson-fermion second-variation (mixed Hessian) construction on
-   the rebuilt converged branch, using the Phase389 identity as the
+1. A coupled boson-fermion second-variation (mixed Hessian) construction on
+   the Phase390 rebuilt converged branch, using the Phase389 identity as the
    gauge-compatibility template, replacing the study-defined shell-response
-   Gram with an action-derived source operator.
-3. A target-blind carrier-axis-to-observed photon/W/Z/H namespace theorem
+   Gram with an action-derived source operator. After Phase391, this is the
+   only repo-local route that could change the carrier-image structure.
+2. A target-blind carrier-axis-to-observed photon/W/Z/H namespace theorem
    filling Phase256 observed-field extraction fields.
-4. A theorem explaining why the physical W row must use the
-   Phase379-suppressed carrier axis (if the suppressed axis survives the
-   converged-mode replay of branch 1).
-5. A complete W/Z/H source package: separate W/Z source rows, Higgs scalar
+3. A theorem explaining why the physical W row must use the
+   Phase379-suppressed carrier axis (now confirmed solver-independent by
+   Phase391).
+4. A complete W/Z/H source package: separate W/Z source rows, Higgs scalar
    source row, weak-angle/coupling lineage, VEV/source scale, pole extraction,
    and GeV normalization.
 
@@ -188,10 +184,10 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -120 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase390|convergedControlBranchFermionModeRebuild|persistedPhase12ModeBranchUnconverged" \
+rg -n "Phase391|denseReplayVerdict|denseReplayConfirmsSuppressedAxis" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
   ExperimentReferences.md \
-  studies/phase390_converged_control_branch_fermion_mode_rebuild_001 \
+  studies/phase391_dense_converged_shell_response_replay_audit_001 \
   studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
 ```
 
@@ -204,13 +200,13 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add ignored Phase390 output JSON files, and commit a checkpoint after
+force-add ignored Phase391 output JSON files, and commit a checkpoint after
 validation. The output directory under `studies/**/output/` is generally
-ignored, so use `git add -f` for Phase390 output files if they are meant to be
+ignored, so use `git add -f` for Phase391 output files if they are meant to be
 committed.
 
 Suggested checkpoint message:
 
 ```text
-Add phase390 converged control-branch mode rebuild
+Add phase391 dense converged-shell response replay
 ```
