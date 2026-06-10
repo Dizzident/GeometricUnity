@@ -16050,3 +16050,84 @@ source currents by edge/axis/representation content could settle it. The
 binding theorem-level requirements remain unchanged: observed photon/W/Z/H
 namespace map, separate W/Z source rows, Higgs scalar row, coupling/VEV/
 pole/GeV lineage.
+
+## 2026-06-10 - Phase395: The Suppressed Axis Explained - Rank-One, Orthogonal To The Omega Axis, Gauge-Covariant
+
+### Context
+
+Phase394 left the sharpest open internal question: why do the fermionic
+source currents (and hence the Gram image and backreaction direction) avoid
+gauge axis 1?
+
+### Action
+
+- Added
+  `studies/phase395_source_current_axis_structure_gauge_covariance_probe_001`
+  computing (a) the basis-invariant per-edge block Gram T = sum_e T_e on the
+  converged shell, (b) the omega second-moment invariants, and (c) exact
+  global gauge covariance checks using rotated backgrounds constructed from
+  persisted artifacts alone via D' = D - delta_D[omega] + delta_D[R omega]
+  (Phase389 exact linearity).
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P395.md` and wired
+  Phase395 into the generator, Phase101, Phase202, claim-integrity verifier,
+  and the seven broad scanner exclusions.
+
+### Result: the axis question is answered
+
+1. The background omega is the SYMMETRIC ANSATZ: its second-moment matrix is
+   nearly rank-1 along n_omega ~ (1,1,1)/sqrt(3) (fractions 0.969/0.971,
+   angles to (1,1,1) of 0.61/0.75 degrees).
+2. The block Gram is effectively RANK-ONE (dominant fraction >= 0.9992).
+   There is no "suppressed axis" - there is a single dominant direction d,
+   and the near-null plane's internal eigenvectors are unstable (nearly
+   degenerate tiny eigenvalues).
+3. The Phase379 axis fractions are exactly the coordinate shadow of d:
+   d^2 components [0.5433, 0.0009, 0.4558] / [0.5197, 0.0002, 0.4802]
+   reproduce the persisted [0.5429, 0.0017, 0.4555] / [0.520, 0.0008,
+   0.4793]. "Suppressed coordinate axis 1" = "d has a tiny e_1 component".
+4. d lies in the charged plane ORTHOGONAL to the omega invariant axis
+   (87.05/89.09 degrees): the shell responses select a single direction
+   perpendicular to the background's symmetric-ansatz direction.
+5. Exact global gauge covariance verified (shell spectrum invariance and
+   T' = R T R^T residuals <= 9.5e-11 for a quarter turn and a generic
+   rotation): rotating the background presentation rotates d. The direction
+   is GAUGE-COVARIANT, NOT CANONICAL.
+
+### Diagnosis Update
+
+- The Phase307 selector conflicts and the Phase381/383/384 suppressed-axis
+  blockers are GAUGE-FRAME statements about coordinate shadows of a single
+  covariant direction. They retain their fail-closed force against raw-axis
+  promotion routes, but no raw-coordinate axis statement can become a
+  theorem.
+- The only gauge-invariant axis data on this branch are: the component
+  along n_omega (invariant axis) vs the charged plane, and rotation-invariant
+  magnitudes. Any future observed photon/W/Z/H namespace map must be built
+  from such invariants - a constructive sharpening of the Phase385 boundary
+  and of the Phase388 requirement
+  `canonical-gauge-axis-or-observed-namespace-selector`.
+- Physical analogy (NOT a claim): the structure "invariant axis + charged
+  plane selected by the background" is the discrete skeleton of
+  neutral-vs-charged sector separation. Promoting that analogy to observed
+  W/Z/photon names would require exactly the gauge-invariant dressing /
+  namespace theorem the contracts demand; nothing here fills it.
+
+### Validation
+
+- Targeted Phase395 run passed.
+- Phase101 package run passed and includes the Phase395 block.
+- Phase202 objective audit remains incomplete by design:
+  `objectiveAchieved=False`, `checklistPassedCount=188`,
+  `checklistFailedCount=3`.
+- Claim-integrity verification passed with `promotedPhysicalMassClaimCount=0`.
+
+### Next Required Artifact
+
+With the axis structure explained, the internal diagnostic program on this
+control branch is essentially complete. The remaining work is genuinely
+theorem-level and external-facing: a gauge-invariant observed-field
+extraction (dressing-style namespace map relative to the background
+invariant axis) that could fill Phase256, and the W/Z/H source package
+(separate rows, coupling/VEV/pole/GeV lineage) for Phase201. Internal
+near-passes cannot substitute; the gates stay closed until those artifacts
+exist.

@@ -157,3 +157,15 @@ metric-dependence conclusion: the suppression is absent from the fermion-loop
 response operator but present in the source-driven boson displacement. Still
 study-defined and toy-branch: no physical coupling, scale, or contract
 fields.
+
+## Phase395 Usage
+
+Phase395 closes the axis-structure question for this boundary cluster: the
+shell-response block Gram is effectively rank-one along a single direction d
+lying in the charged plane orthogonal to the background symmetric-ansatz
+axis n_omega ~ (1,1,1)/sqrt(3); the Phase379 coordinate-axis fractions are
+the shadow of d; and exact global gauge covariance (rotated backgrounds via
+the Phase389 linearity, residuals ~1e-10) shows d is gauge-covariant, not
+canonical. The fail-closed consequence: observed-namespace maps built from
+raw carrier axes cannot be target-blind canonical; only invariants relative
+to n_omega qualify.

@@ -1,0 +1,206 @@
+{
+  "phaseId": "phase395-source-current-axis-structure-gauge-covariance-probe",
+  "generatedAt": "2026-06-10T20:08:47.7104528+00:00",
+  "terminalStatus": "suppressed-axis-shown-gauge-covariant-not-canonical-namespace-map-must-be-gauge-invariant",
+  "sourceCurrentAxisStructureGaugeCovarianceProbePassed": true,
+  "phase393PrecursorPassed": true,
+  "phase394PrecursorPassed": true,
+  "probeInternallyConsistent": true,
+  "globalGaugeCovarianceVerified": true,
+  "suppressedAxisIsGaugeCovariantNotCanonical": true,
+  "backgroundOmegaNearSymmetricAnsatz": true,
+  "blockGramEffectivelyRankOne": true,
+  "denseSolveConverged": true,
+  "minDominantFraction": 0.9992005850079462,
+  "maxAngleDominantToOmegaAxisDegrees": 89.08612842877899,
+  "maxSuppressionRatio": 0.00027075809920014453,
+  "maxAngleSuppressedToE1Degrees": 51.472110931499756,
+  "minAngleSuppressedToOmegaAxisDegrees": 2.8157996825398484,
+  "nearNullPlaneCaveat": "the two smallest block-Gram eigenvalues are nearly degenerate, so the individual minimum direction is unstable within the near-null plane; the robust invariants are the dominant direction and the near-null plane",
+  "maxSpectrumInvarianceResidual": 9.517976916957386E-11,
+  "maxBlockGramCovarianceResidual": 2.9319546100854667E-11,
+  "maxShellEigenResidual": 2.85613078170129E-13,
+  "probeDefinitions": {
+    "blockGram": "T_e[a,b] = Re sum_{alpha beta} conj(B_(e,a)[alpha,beta]) B_(e,b)[alpha,beta], shell-basis invariant; T = sum_e T_e",
+    "suppressedDirection": "unit eigenvector of T with the smallest eigenvalue; suppressionRatio = lambda_min / lambda_max",
+    "omegaInvariants": "C = sum_e omega_e omega_e^T; dominant axis and fraction; deviation from the symmetric ansatz (1,1,1)/sqrt(3)",
+    "rotatedBackground": "omega\u0027_e = R omega_e; D\u0027 = D - delta_D[omega] \u002B delta_D[omega\u0027] (exact linearity, Phase389); dense generalized solve of D\u0027",
+    "covarianceChecks": "shell spectrum invariance |lambda\u0027 - lambda| and block Gram covariance ||T\u0027 - R T R^T||_F / ||T||_F",
+    "rotations": "exp(theta rho(n)) via Rodrigues in the su(2) adjoint; quarter turn about e2 and a generic axis/angle"
+  },
+  "applicationSubjectKind": "source-current-axis-structure-gauge-covariance-probe",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "21f848537526393c449617c633db0fa382d438345047a04200ef10c1744117ae",
+  "expectedCoveragePresent": true,
+  "backgroundCount": 2,
+  "routeProvidesObservedElectroweakNamespaceMap": false,
+  "routeProvidesCanonicalGaugeAxisSelector": false,
+  "routeProvidesPhysicalMassPsiCompatibleBranch": false,
+  "routeProvidesCompletedFermionicAction": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesDirectTargetIndependentWzBridgeSourceLaw": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesWeakAngleOrCouplingLineage": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "discrete control-branch structural result only",
+    "explains the suppressed axis as gauge-frame covariance; provides no canonical axis selector",
+    "no observed electroweak namespace map (and shows raw-axis maps cannot be canonical)",
+    "no W/Z bridge law",
+    "no Higgs scalar operator",
+    "no weak-angle or coupling lineage",
+    "no VEV or source-scale lineage",
+    "no pole extraction or GeV normalization",
+    "no physical predictions",
+    "no Phase201 or Phase256 fill"
+  ],
+  "backgrounds": [
+    {
+      "fermionBackgroundId": "bg-phase12-bg-a-20260315212202",
+      "persistedOmegaPath": "studies/phase12_joined_calculation_001/output/background_family/background_states/bg-phase12-bg-a-20260315212202_omega.json",
+      "shellSize": 4,
+      "shellEigenvalues": [
+        -0.0008427613458545568,
+        0.0008427613458688838,
+        0.0008427613458887643,
+        -0.0008427613459189185
+      ],
+      "maxShellEigenResidual": 2.85613078170129E-13,
+      "omegaCovarianceEigenvalues": [
+        2.677762609101215E-07,
+        0.0008475452801772159,
+        0.02617495429524731
+      ],
+      "omegaDominantAxis": [
+        0.5716150081281035,
+        0.585842883405708,
+        0.5744949072407817
+      ],
+      "omegaDominantAxisFraction": 0.96862597211439,
+      "angleOmegaAxisToSymmetricDegrees": 0.6095255116745376,
+      "blockGramEigenvalues": [
+        2.3912679317683357E-05,
+        4.674614259695623E-05,
+        0.08831750329288245
+      ],
+      "suppressedDirection": [
+        -0.417330064584854,
+        0.8064236239843979,
+        -0.41894696069248677
+      ],
+      "suppressionRatio": 0.00027075809920014453,
+      "dominantDirection": [
+        0.7370750896566176,
+        0.030712407836903217,
+        -0.6751126277981689
+      ],
+      "dominantFraction": 0.9992005850079462,
+      "dominantCoordinateFractions": [
+        0.5432796877923108,
+        0.0009432519951402742,
+        0.455777060212549
+      ],
+      "angleDominantToOmegaAxisDegrees": 87.04985113801843,
+      "angleSuppressedToE1Degrees": 36.252032864835435,
+      "angleSuppressedToOmegaAxisDegrees": 89.61052994438836,
+      "rotationChecks": [
+        {
+          "rotationId": "quarter-turn-about-e2",
+          "shellSpectrumInvarianceResidual": 9.517976916957386E-11,
+          "blockGramCovarianceResidual": 2.9319546100854667E-11
+        },
+        {
+          "rotationId": "generic-rotation",
+          "shellSpectrumInvarianceResidual": 3.539282259695963E-11,
+          "blockGramCovarianceResidual": 2.7414883639904234E-11
+        }
+      ]
+    },
+    {
+      "fermionBackgroundId": "bg-phase12-bg-b-20260315212202",
+      "persistedOmegaPath": "studies/phase12_joined_calculation_001/output/background_family/background_states/bg-phase12-bg-b-20260315212202_omega.json",
+      "shellSize": 4,
+      "shellEigenvalues": [
+        -0.0009139800207631899,
+        -0.0009139800207672536,
+        0.0009139800207907077,
+        0.0009139800208134728
+      ],
+      "maxShellEigenResidual": 2.492981588530915E-13,
+      "omegaCovarianceEigenvalues": [
+        5.547934833273864E-07,
+        0.0011758275004066844,
+        0.03911898625254598
+      ],
+      "omegaDominantAxis": [
+        0.5676098774526086,
+        0.586002823359292,
+        0.5782903406016507
+      ],
+      "omegaDominantAxisFraction": 0.9708060172589225,
+      "angleOmegaAxisToSymmetricDegrees": 0.7484243193347694,
+      "blockGramEigenvalues": [
+        1.3603332470055477E-05,
+        6.456342531083077E-05,
+        0.10101984638311244
+      ],
+      "suppressedDirection": [
+        -0.5363670496848281,
+        -0.6228955021472066,
+        -0.569483609436806
+      ],
+      "suppressionRatio": 0.00013465999956548694,
+      "dominantDirection": [
+        0.7208916743270996,
+        0.01276276484724587,
+        -0.6929302314947192
+      ],
+      "dominantFraction": 0.9992268220180356,
+      "dominantCoordinateFractions": [
+        0.5196848061141289,
+        0.0001628881665460949,
+        0.48015230571932516
+      ],
+      "angleDominantToOmegaAxisDegrees": 89.08612842877899,
+      "angleSuppressedToE1Degrees": 51.472110931499756,
+      "angleSuppressedToOmegaAxisDegrees": 2.8157996825398484,
+      "rotationChecks": [
+        {
+          "rotationId": "quarter-turn-about-e2",
+          "shellSpectrumInvarianceResidual": 5.586823750582629E-11,
+          "blockGramCovarianceResidual": 3.008907184632316E-12
+        },
+        {
+          "rotationId": "generic-rotation",
+          "shellSpectrumInvarianceResidual": 2.422948264809472E-11,
+          "blockGramCovarianceResidual": 9.820996531844705E-13
+        }
+      ]
+    }
+  ],
+  "sourceEvidence": {
+    "phase393SummaryPath": "studies/phase393_coupled_stationarity_fermionic_source_residual_probe_001/output/coupled_stationarity_fermionic_source_residual_probe_summary.json",
+    "phase394SummaryPath": "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/positive_bosonic_spectrum_backreaction_construction_summary.json",
+    "phase12Root": "studies/phase12_joined_calculation_001/output/background_family",
+    "backgroundStateDir": "studies/phase12_joined_calculation_001/output/background_family/background_states"
+  },
+  "decision": "The axis structure of the fermionic source currents and the carrier response image is now explained structurally. The background omega is the symmetric ansatz (second-moment matrix nearly rank-1 along (1,1,1)/sqrt(3)), and the basis-invariant per-edge block Gram T = sum_e T_e has a suppressed direction whose geometry is recorded relative to the coordinate axis e_1 and the omega invariant axis. Decisively, the discrete model is EXACTLY equivariant under global gauge rotations: rotating the background (D\u0027 = D - delta_D[omega] \u002B delta_D[R omega], constructible from persisted artifacts by exact linearity) leaves the fermion shell spectrum invariant at machine precision and transforms the block Gram covariantly, T\u0027 = R T R^T. The suppressed axis is therefore GAUGE-COVARIANT, NOT CANONICAL: it is a property of the background presentation\u0027s gauge frame, and rotating the frame rotates the suppressed axis. Consequence for the namespace program: no target-blind canonical photon/W/Z/H namespace map can be built from raw carrier axes; any defensible map must use gauge-invariant data (e.g., components relative to the omega invariant axis), which strengthens the Phase385 missing-namespace-map boundary with a constructive reason. No namespace map, axis selector, or Phase201/Phase256 contract field is provided."
+}

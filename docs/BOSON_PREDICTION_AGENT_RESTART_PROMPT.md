@@ -35,12 +35,12 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase394 work:
+Current gate status after the Phase395 work:
 
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=187`,
+  `objectiveAchieved=False`, `checklistPassedCount=188`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -62,64 +62,68 @@ Current gate status after the Phase394 work:
 - Phase393:
   `shellAggregatedSourceCancels=True`, `perModeSourceLiesInGramImage=True`
 - Phase394:
-  `positiveBosonicSpectrumBackreactionConstructionPassed=True`,
-  `positiveBosonicSpectrumRecomputed=True`,
-  `bosonicGaussNewtonPsdVerified=True`,
   `firstOrderAsymmetricBackreactionConstructed=True`,
-  `tripletClusteringObserved=True`,
+  `tripletClusteringObserved=True`
+- Phase395:
+  `sourceCurrentAxisStructureGaugeCovarianceProbePassed=True`,
+  `globalGaugeCovarianceVerified=True`,
+  `suppressedAxisIsGaugeCovariantNotCanonical=True`,
+  `backgroundOmegaNearSymmetricAnsatz=True`,
+  `blockGramEffectivelyRankOne=True`,
   `canFillPhase201WzContract=False`
 
-Interpretation: the coupled-critical-point toolkit is complete at first and
-second order on the control branch. Phase394 recomputed the full positive
-bosonic Gauss-Newton spectrum through the production compute-spectrum
-pipeline on a study-local family copy: PSD, kernel dimension exactly 18
-(persisted 12 contained at 1.000000), spectral gap 0.062942, max eigenvalue
-6.017, and EXACT su(2) triplet clustering of every positive eigenvalue. The
-first-order asymmetric backreaction is now constructed (norms ~0.44 per unit
-coupling; relaxation energies ~0.029 per coupling squared; unabsorbable
-kernel fractions 0.12-0.13). Diagnosis refinement: the backreaction
-DIRECTION re-exhibits the suppressed gauge axis (fractions
-[0.5426, 0.0008, 0.4566] / [0.5296, 0.0007, 0.4697], nearly identical to the
-Phase379 Gram) because the source currents lie in the rank-3 Gram image
-(Phase393). So the suppression is absent from the fermion-loop response
-operator (Phase392) but present in the source-driven boson displacement -
-an action-derived dynamical anchor. The sharpest open internal question:
-WHY do the fermionic source currents avoid gauge axis 1?
+Interpretation: the axis question is ANSWERED. The background omega is the
+symmetric ansatz (invariant axis n_omega ~ (1,1,1)/sqrt(3), fraction ~0.97).
+The shell-response block Gram is effectively rank-ONE (dominant fraction
+>= 0.9992) along a single direction d lying in the charged plane orthogonal
+to n_omega (87-89 degrees). The Phase379 "two-axis dominance with suppressed
+coordinate axis 1" is exactly the coordinate shadow of d (d^2 components
+[0.5433, 0.0009, 0.4558] / [0.5197, 0.0002, 0.4802] reproduce the persisted
+fractions). Exact global gauge covariance was verified at ~1e-10 using
+rotated backgrounds built from persisted artifacts alone
+(D' = D - delta_D[omega] + delta_D[R omega]): rotating the background
+rotates d. Consequences: raw-coordinate axis statements (Phase307 selectors,
+Phase381/383/384 blockers) are gauge-frame statements and cannot become
+theorems; any observed photon/W/Z/H namespace map must be built from
+gauge-invariant data (component along n_omega vs the charged plane,
+rotation-invariant magnitudes). The internal diagnostic program on this
+control branch is essentially complete; what remains is genuinely
+theorem-level (Phase256 namespace map, Phase201 source package).
 
 ### Most Recent Implemented Work
 
-The latest work added Phase394:
+The latest work added Phase395:
 
 - Study:
-  `studies/phase394_positive_bosonic_spectrum_backreaction_construction_001`
-- Project: `Phase394PositiveBosonicSpectrumBackreactionConstruction.csproj`
+  `studies/phase395_source_current_axis_structure_gauge_covariance_probe_001`
+- Project: `Phase395SourceCurrentAxisStructureGaugeCovarianceProbe.csproj`
 - Study note: `STUDY.md`
-- Implementation note: `docs/Phases/Implementation/IMPLEMENTATION_P394.md`
+- Implementation note: `docs/Phases/Implementation/IMPLEMENTATION_P395.md`
 - Outputs:
-  `studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/positive_bosonic_spectrum_backreaction_construction.json`
-  and `..._summary.json` (the recomputed spectrum bundles live under
-  `output/family_workdir/` and are reproducible rather than committed)
+  `studies/phase395_source_current_axis_structure_gauge_covariance_probe_001/output/source_current_axis_structure_gauge_covariance_probe.json`
+  and `..._summary.json`
 
-Phase394 stages a study-local copy of the Phase12 family and re-runs the
-production `Gu.Cli compute-spectrum <workdir> <bg> --num-modes 156`, then:
+Phase395 computed the basis-invariant per-edge block Gram on the converged
+shell, the omega second-moment invariants, and exact global gauge
+covariance checks (rotated backgrounds via Phase389 linearity):
 
-- Verifies PSD, kernel dimension 18, spectral gap 0.062942, exact su(2)
-  triplet clustering, and persisted-kernel containment 1.000000.
-- Constructs `delta_omega^(s) = -sum m_i (m_i . J^(s)) / mu_i` per unit
-  coupling (norms 0.4425 / 0.4349) with relaxation energies
-  0.0280 / 0.0295 per coupling squared.
-- Finds the backreaction direction re-exhibits the suppressed gauge axis
-  (fractions [0.5426, 0.0008, 0.4566] / [0.5296, 0.0007, 0.4697]).
+- Omega is the symmetric ansatz: invariant axis ~(1,1,1)/sqrt(3),
+  dominant fraction 0.969/0.971.
+- Block Gram effectively rank-one (>= 0.9992) along d = (0.737, 0.031,
+  -0.675) / (0.721, 0.013, -0.693), orthogonal to the omega axis (87-89
+  degrees); the d^2 coordinate shadow reproduces the Phase379 fractions.
+- Covariance residuals <= 9.5e-11 (spectrum invariance and T' = R T R^T)
+  for a quarter turn and a generic rotation.
 
 ### Integration Points Already Updated
 
-Phase394 (like Phase388-393) is wired into:
+Phase395 (like Phase388-394) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (both invocation blocks)
 - `studies/phase101_boson_prediction_package_001/Program.cs`
 - `studies/phase202_boson_objective_completion_audit_001/Program.cs`
   (checklist item
-  `positive-bosonic-spectrum-backreaction-construction-materialized`)
+  `source-current-axis-structure-gauge-covariance-probe-materialized`)
 - `scripts/verify_boson_claim_integrity.sh`
 - Broad scanner exclusions: phase204, phase205, phase207, phase279,
   phase281, phase295, phase296
@@ -132,15 +136,15 @@ The diagnosis journal entry is near the end of
 ### Validation Already Run
 
 ```bash
-dotnet run --project studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/Phase394PositiveBosonicSpectrumBackreactionConstruction.csproj
+dotnet run --project studies/phase395_source_current_axis_structure_gauge_covariance_probe_001/Phase395SourceCurrentAxisStructureGaugeCovarianceProbe.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
 ./scripts/generate_validated_boson_predictions.sh
 ```
 
-The full generator ended with the Phase394 line, the Phase202 incomplete
-status (`checklistPassedCount=187`, `checklistFailedCount=3`), and the same
+The full generator ended with the Phase395 line, the Phase202 incomplete
+status (`checklistPassedCount=188`, `checklistFailedCount=3`), and the same
 claim-integrity status (`promotedPhysicalMassClaimCount=0`). All seven broad
 scanners still report zero intake-ready evidence.
 
@@ -173,19 +177,21 @@ contract fields, or remove a physical blocker on the VO-7 branch.
 
 The most useful next branches are:
 
-1. A target-blind structural decomposition of the fermionic source currents
-   by edge/axis/representation content, to answer the sharpest open internal
-   question: WHY the source currents avoid gauge axis 1. This is the
-   dynamical anchor of the suppressed-axis structure (Phase394) and the
-   closest internal route to the still-missing suppressed-axis W-row
-   theorem.
-2. A target-blind carrier-axis-to-observed photon/W/Z/H namespace theorem
-   filling Phase256 observed-field extraction fields. Any axis-structure
-   theorem must fix the response metric: the suppression lives in the Gram
-   image and the backreaction direction, not the loop response operator.
-3. A complete W/Z/H source package: separate W/Z source rows, Higgs scalar
-   source row, weak-angle/coupling lineage, VEV/source scale, pole extraction,
-   and GeV normalization.
+1. A GAUGE-INVARIANT observed-field extraction route for Phase256: after
+   Phase395, any defensible namespace map must be built from invariants
+   relative to the background invariant axis n_omega (invariant-axis
+   component vs charged plane, rotation-invariant magnitudes) - a
+   dressing-style construction. Survey primary literature (FMS/dressing
+   field already catalogued in Phase385) for a theorem matching exactly this
+   discrete structure, or derive a fail-closed candidate and let the gates
+   decide.
+2. A complete W/Z/H source package: separate W/Z source rows, Higgs scalar
+   source row, weak-angle/coupling lineage, VEV/source scale, pole
+   extraction, and GeV normalization. Internal diagnostics cannot
+   substitute.
+3. Optional internal hygiene: re-express the Phase307/381/383 suppressed-axis
+   blockers in gauge-invariant language (component along n_omega vs charged
+   plane) so future selector audits are frame-independent.
 
 If a source or new derivation appears to satisfy any of these, create a new
 fail-closed phase rather than editing Phase201/Phase256 directly. The phase
@@ -200,10 +206,10 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -120 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase394|positiveBosonicSpectrumRecomputed|tripletClusteringObserved" \
+rg -n "Phase395|suppressedAxisIsGaugeCovariantNotCanonical|blockGramEffectivelyRankOne" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
   ExperimentReferences.md \
-  studies/phase394_positive_bosonic_spectrum_backreaction_construction_001 \
+  studies/phase395_source_current_axis_structure_gauge_covariance_probe_001 \
   studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
 ```
 
@@ -216,12 +222,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase394 summary and full output JSON files (NOT the
-`family_workdir` tree, which is reproducible and timestamp-volatile), and
-commit a checkpoint after validation.
+force-add the ignored Phase395 output JSON files, and commit a checkpoint
+after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase394 positive bosonic spectrum and backreaction
+Add phase395 axis structure gauge covariance probe
 ```
