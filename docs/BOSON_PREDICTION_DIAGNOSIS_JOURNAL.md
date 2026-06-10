@@ -15983,3 +15983,70 @@ treated with the same fail-closed caution (no physical coupling, no observed
 namespace map, no contract fields). The binding theorem-level requirements
 (observed photon/W/Z/H namespace map, W/Z/H source package with coupling,
 VEV, pole, and GeV lineage) remain untouched by any of this.
+
+## 2026-06-10 - Phase394 Positive Bosonic Spectrum Recomputed; Backreaction Constructed; Suppressed Axis Re-emerges
+
+### Context
+
+Phase393 named the concrete missing artifact: the persisted Phase12 bosonic
+Gauss-Newton spectrum is kernel-only (12 modes, ~1e-15), blocking the
+asymmetric first-order backreaction.
+
+### Action
+
+- Added
+  `studies/phase394_positive_bosonic_spectrum_backreaction_construction_001`,
+  which stages a study-local copy of the Phase12 family (persisted artifacts
+  never mutated) and re-runs the production
+  `Gu.Cli compute-spectrum <workdir> <bg> --num-modes 156` per background,
+  then constructs the per-mode first-order backreaction
+  `delta_omega^(s) = -sum_{mu_i>tol} m_i (m_i . J^(s)) / mu_i`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P394.md` and wired
+  Phase394 into the generator, Phase101, Phase202, claim-integrity verifier,
+  and the seven broad scanner exclusions.
+
+### Result
+
+- Full spectrum per background: PSD, kernel dimension exactly 18 (persisted
+  12 contained at 1.000000), spectral gap 0.062942, max eigenvalue 6.017 -
+  the two backgrounds have nearly identical bosonic spectra.
+- su(2) triplet clustering fraction 1.0: every positive eigenvalue belongs
+  to an exact triplet (adjoint degeneracy).
+- Backreaction constructed: norms 0.4425 / 0.4349 per unit coupling
+  (identical across shell modes), relaxation energies 0.0280 / 0.0295 per
+  coupling squared, source kernel fractions 0.121 / 0.134 (the unabsorbable
+  component).
+- **Diagnosis refinement: the suppressed gauge axis RE-EMERGES in the
+  backreaction direction** - axis fractions [0.5426, 0.0008, 0.4566] and
+  [0.5296, 0.0007, 0.4697], nearly identical to the Phase379 Gram fractions.
+  Phase392 showed the fermion-loop response operator is isotropic
+  (metric-dependence of the suppression); Phase394 shows the first-order
+  backreaction for asymmetric occupation inherits the Gram-image structure
+  of the source currents (Phase393), so the suppressed axis is a property of
+  an action-derived dynamical object after all - not of the loop operator,
+  but of the source-driven boson displacement. Any future suppressed-axis
+  W-row theorem now has a concrete dynamical anchor to address: why the
+  fermionic source currents avoid gauge axis 1.
+
+### Validation
+
+- Targeted Phase394 run passed (CLI recomputation + analysis).
+- Phase101 package run passed and includes the Phase394 block.
+- Phase202 objective audit remains incomplete by design:
+  `objectiveAchieved=False`, `checklistPassedCount=187`,
+  `checklistFailedCount=3`.
+- Claim-integrity verification passed with `promotedPhysicalMassClaimCount=0`.
+
+### Next Required Artifact
+
+The coupled-critical-point toolkit is now complete at first and second
+order on the control branch: converged shells (P390), gauge-compatibility
+identities (P389), loop response (P392), source currents and their exact
+cancellation (P393), and the positive bosonic spectrum with constructed
+backreaction (P394). The sharpest open internal question is now WHY the
+fermionic source currents avoid gauge axis 1 (the dynamical anchor of the
+suppressed-axis structure); a target-blind structural decomposition of the
+source currents by edge/axis/representation content could settle it. The
+binding theorem-level requirements remain unchanged: observed photon/W/Z/H
+namespace map, separate W/Z source rows, Higgs scalar row, coupling/VEV/
+pole/GeV lineage.

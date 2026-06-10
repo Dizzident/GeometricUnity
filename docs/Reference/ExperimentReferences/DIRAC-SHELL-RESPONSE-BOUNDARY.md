@@ -144,3 +144,16 @@ backreaction object), and each per-mode source lies identically in the
 rank-3 carrier image. The persisted bosonic Gauss-Newton spectrum is
 numerical-kernel-only, so the asymmetric first-order backreaction is not
 constructible from persisted artifacts.
+
+## Phase394 Usage
+
+Phase394 completes the first-order coupled toolkit: the full positive bosonic
+Gauss-Newton spectrum (recomputed with production provenance; PSD, 18-dim
+kernel, spectral gap 0.0629, exact su(2) triplet degeneracy) and the
+constructed backreaction delta_omega = -kappa H_B^+ J. The backreaction
+direction reproduces the Phase379 suppressed-axis fractions because the
+source currents lie in the rank-3 Gram image, refining the Phase392
+metric-dependence conclusion: the suppression is absent from the fermion-loop
+response operator but present in the source-driven boson displacement. Still
+study-defined and toy-branch: no physical coupling, scale, or contract
+fields.

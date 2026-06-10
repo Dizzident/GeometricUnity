@@ -159,6 +159,7 @@ const string Phase390Path = "studies/phase390_converged_control_branch_fermion_m
 const string Phase391Path = "studies/phase391_dense_converged_shell_response_replay_audit_001/output/dense_converged_shell_response_replay_audit_summary.json";
 const string Phase392Path = "studies/phase392_coupled_mixed_hessian_fermion_induced_response_audit_001/output/coupled_mixed_hessian_fermion_induced_response_audit_summary.json";
 const string Phase393Path = "studies/phase393_coupled_stationarity_fermionic_source_residual_probe_001/output/coupled_stationarity_fermionic_source_residual_probe_summary.json";
+const string Phase394Path = "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/positive_bosonic_spectrum_backreaction_construction_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -351,6 +352,7 @@ using var phase390 = File.Exists(Phase390Path) ? JsonDocument.Parse(File.ReadAll
 using var phase391 = File.Exists(Phase391Path) ? JsonDocument.Parse(File.ReadAllText(Phase391Path)) : null;
 using var phase392 = File.Exists(Phase392Path) ? JsonDocument.Parse(File.ReadAllText(Phase392Path)) : null;
 using var phase393 = File.Exists(Phase393Path) ? JsonDocument.Parse(File.ReadAllText(Phase393Path)) : null;
+using var phase394 = File.Exists(Phase394Path) ? JsonDocument.Parse(File.ReadAllText(Phase394Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -4757,6 +4759,30 @@ var coupledStationarityFermionicSourceResidualProbePassed = coupledStationarityF
     && JsonBool(phase393.RootElement, "phase201TemplateMutated") is false
     && JsonInt(phase393.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
     && JsonInt(phase393.RootElement, "acceptedContractFieldCount") == 0;
+var positiveBosonicSpectrumBackreactionConstructionMaterialized = phase394 is not null;
+var positiveBosonicSpectrumBackreactionConstructionPassed = positiveBosonicSpectrumBackreactionConstructionMaterialized
+    && JsonBool(phase394!.RootElement, "positiveBosonicSpectrumBackreactionConstructionPassed") is true
+    && JsonBool(phase394.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase394.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase394.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase394.RootElement, "applicationSubjectKind") == "positive-bosonic-spectrum-backreaction-construction"
+    && JsonBool(phase394.RootElement, "positiveBosonicSpectrumRecomputed") is true
+    && JsonBool(phase394.RootElement, "bosonicGaussNewtonPsdVerified") is true
+    && JsonBool(phase394.RootElement, "persistedKernelModesContainedInRecomputedKernel") is true
+    && JsonBool(phase394.RootElement, "firstOrderAsymmetricBackreactionConstructed") is true
+    && JsonBool(phase394.RootElement, "tripletClusteringObserved") is true
+    && JsonBool(phase394.RootElement, "coupledCriticalPointConstructed") is false
+    && JsonBool(phase394.RootElement, "physicalCouplingProvided") is false
+    && JsonBool(phase394.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase394.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase394.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase394.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase394.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase394.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase394.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase394.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase394.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase394.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -6877,6 +6903,14 @@ var checklist = new[]
             ? $"coupledStationarityFermionicSourceResidualProbePassed={JsonBool(phase393!.RootElement, "coupledStationarityFermionicSourceResidualProbePassed")}; targetBlind={JsonBool(phase393.RootElement, "targetBlindConstruction")}; kernelOnlyBosonicSpectrum={JsonBool(phase393.RootElement, "persistedBosonicSpectrumIsNumericalKernelOnly")}; backreactionConstructible={JsonBool(phase393.RootElement, "firstOrderBackreactionConstructibleFromPersistedArtifacts")}; aggregateCancels={JsonBool(phase393.RootElement, "shellAggregatedSourceCancels")}; perModeSourceInGramImage={JsonBool(phase393.RootElement, "perModeSourceLiesInGramImage")}; coupledCriticalPointConstructed={JsonBool(phase393.RootElement, "coupledCriticalPointConstructed")}; canFillPhase201WzContract={JsonBool(phase393.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase393.RootElement, "decision")}"
             : "Phase393 artifact not materialized",
         Phase393Path),
+    new ObjectiveChecklistItem(
+        "positive-bosonic-spectrum-backreaction-construction-materialized",
+        "Recompute the full positive bosonic Gauss-Newton spectrum through the production pipeline on a study-local family copy and construct the first-order asymmetric backreaction.",
+        positiveBosonicSpectrumBackreactionConstructionPassed ? "passed" : "failed",
+        positiveBosonicSpectrumBackreactionConstructionMaterialized
+            ? $"positiveBosonicSpectrumBackreactionConstructionPassed={JsonBool(phase394!.RootElement, "positiveBosonicSpectrumBackreactionConstructionPassed")}; targetBlind={JsonBool(phase394.RootElement, "targetBlindConstruction")}; spectrumRecomputed={JsonBool(phase394.RootElement, "positiveBosonicSpectrumRecomputed")}; psd={JsonBool(phase394.RootElement, "bosonicGaussNewtonPsdVerified")}; kernelContainment={JsonBool(phase394.RootElement, "persistedKernelModesContainedInRecomputedKernel")}; backreactionConstructed={JsonBool(phase394.RootElement, "firstOrderAsymmetricBackreactionConstructed")}; tripletClustering={JsonBool(phase394.RootElement, "tripletClusteringObserved")}; kernelDimension={JsonInt(phase394.RootElement, "maxKernelDimension")}; coupledCriticalPointConstructed={JsonBool(phase394.RootElement, "coupledCriticalPointConstructed")}; canFillPhase201WzContract={JsonBool(phase394.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase394.RootElement, "decision")}"
+            : "Phase394 artifact not materialized",
+        Phase394Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

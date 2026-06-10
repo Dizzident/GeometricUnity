@@ -1,0 +1,221 @@
+{
+  "phaseId": "phase394-positive-bosonic-spectrum-backreaction-construction",
+  "generatedAt": "2026-06-10T19:21:24.5412621+00:00",
+  "terminalStatus": "positive-bosonic-spectrum-recomputed-first-order-backreaction-constructed-discrete-diagnostic-only",
+  "positiveBosonicSpectrumBackreactionConstructionPassed": true,
+  "phase393PrecursorPassed": true,
+  "cliRunsSucceeded": true,
+  "constructionInternallyConsistent": true,
+  "positiveBosonicSpectrumRecomputed": true,
+  "bosonicGaussNewtonPsdVerified": true,
+  "persistedKernelModesContainedInRecomputedKernel": true,
+  "firstOrderAsymmetricBackreactionConstructed": true,
+  "tripletClusteringObserved": true,
+  "coupledCriticalPointConstructed": false,
+  "physicalCouplingProvided": false,
+  "minKernelDimension": 18,
+  "maxKernelDimension": 18,
+  "minSpectralGap": 0.06294221963743724,
+  "maxSourceKernelFraction": 0.1335739797777267,
+  "maxBackreactionNorm": 0.44254359919524744,
+  "maxRelaxationEnergy": 0.02948721819346854,
+  "maxSpectrumResidual": 2.5588159648465523E-08,
+  "constructionDefinitions": {
+    "recomputation": "Gu.Cli compute-spectrum \u003Cstudy-local family copy\u003E \u003CbackgroundId\u003E --num-modes 156 (production OperatorBundleBuilder / EigensolverPipeline path; Phase12 artifacts never mutated)",
+    "backreaction": "delta_omega^(s) = -sum_{mu_i \u003E tol} m_i (m_i . J^(s)) / mu_i per unit coupling, with J^(s)_k = Re\u003Cpsi_s, delta_D[e_k] psi_s\u003E on the converged shell and m_i the M-orthonormal recomputed bosonic modes",
+    "kernelComponent": "the projection of J^(s) onto the recomputed kernel span is the unabsorbable first-order obstruction for asymmetric occupation",
+    "relaxationEnergy": "E^(s) = sum_{mu_i \u003E tol} (m_i . J^(s))^2 / mu_i per unit coupling squared",
+    "tripletClustering": "fraction of positive eigenvalues belonging to clusters of size 3 at relative tolerance 1e-2 (su(2) adjoint degeneracy)"
+  },
+  "applicationSubjectKind": "positive-bosonic-spectrum-backreaction-construction",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "3d6fd7956f8c9dbce9c4bc2784db5e056683ede46f7429654f965a1dcce0a200",
+  "expectedCoveragePresent": true,
+  "backgroundCount": 2,
+  "routeProvidesPhysicalMassPsiCompatibleBranch": false,
+  "routeProvidesCompletedFermionicAction": false,
+  "routeProvidesCoupledResidual": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesObservedElectroweakNamespaceMap": false,
+  "routeProvidesCanonicalGaugeAxisSelector": false,
+  "routeProvidesDirectTargetIndependentWzBridgeSourceLaw": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesWeakAngleOrCouplingLineage": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "first-order backreaction per unit coupling only; no physical coupling constant",
+    "no coupled critical point solved",
+    "candidate bilinear action only, not a completed GU fermionic action",
+    "toy control branch only",
+    "not a physical effective-action Hessian",
+    "not an observed electroweak namespace map",
+    "no W/Z bridge law",
+    "no Higgs scalar operator",
+    "no weak-angle or coupling lineage",
+    "no VEV or source-scale lineage",
+    "no pole extraction or GeV normalization",
+    "no physical predictions",
+    "no Phase201 or Phase256 fill"
+  ],
+  "backgrounds": [
+    {
+      "fermionBackgroundId": "bg-phase12-bg-a-20260315212202",
+      "fullModeCount": 156,
+      "maxSpectrumResidual": 5.370277286994069E-09,
+      "kernelDimension": 18,
+      "positiveCount": 138,
+      "negativeCount": 0,
+      "spectralGap": 0.06294288799425495,
+      "maxBosonicEigenvalue": 6.016566630680029,
+      "tripletClusterFraction": 1,
+      "lowestPositiveEigenvalues": [
+        0.06294288799425495,
+        0.0629429350206681,
+        0.06294565551897514,
+        0.10226067742548953,
+        0.10226073038273614,
+        0.10226364664447145,
+        0.13513506497917135,
+        0.1351351692290545,
+        0.1351415424481923
+      ],
+      "minPersistedKernelContainment": 0.9999999999999993,
+      "shellSize": 4,
+      "shellEigenvalues": [
+        -0.0008427613458545568,
+        0.0008427613458688838,
+        0.0008427613458887643,
+        -0.0008427613459189185
+      ],
+      "perModeSourceKernelFractions": [
+        0.12075350185486741,
+        0.12075350185304194,
+        0.12075350184006067,
+        0.12075350184061204
+      ],
+      "perModeBackreactionNorms": [
+        0.44254359919524744,
+        0.4425435991840571,
+        0.4425435991801355,
+        0.44254359917386094
+      ],
+      "perModeRelaxationEnergies": [
+        0.027999294807117645,
+        0.027999294806031336,
+        0.027999294805938033,
+        0.027999294805021394
+      ],
+      "perModeBackreactionAxisFractions": [
+        [
+          0.5425819361694247,
+          0.0008009613109608075,
+          0.4566171025196148
+        ],
+        [
+          0.5425819361331817,
+          0.0008009613132622324,
+          0.4566171025535556
+        ],
+        [
+          0.5425819361495806,
+          0.0008009613131840675,
+          0.45661710253723536
+        ],
+        [
+          0.5425819361618519,
+          0.000800961312932449,
+          0.45661710252521515
+        ]
+      ]
+    },
+    {
+      "fermionBackgroundId": "bg-phase12-bg-b-20260315212202",
+      "fullModeCount": 156,
+      "maxSpectrumResidual": 2.5588159648465523E-08,
+      "kernelDimension": 18,
+      "positiveCount": 138,
+      "negativeCount": 0,
+      "spectralGap": 0.06294221963743724,
+      "maxBosonicEigenvalue": 6.016550818515631,
+      "tripletClusterFraction": 1,
+      "lowestPositiveEigenvalues": [
+        0.06294221963743724,
+        0.06294229891092494,
+        0.06294562323265084,
+        0.10225951750059079,
+        0.10225959697351239,
+        0.1022636200383506,
+        0.13513167425503295,
+        0.13513181663521456,
+        0.1351415041778677
+      ],
+      "minPersistedKernelContainment": 0.9999999999999996,
+      "shellSize": 4,
+      "shellEigenvalues": [
+        -0.0009139800207631899,
+        -0.0009139800207672536,
+        0.0009139800207907077,
+        0.0009139800208134728
+      ],
+      "perModeSourceKernelFractions": [
+        0.1335739797777267,
+        0.13357397977612204,
+        0.13357397977756844,
+        0.13357397977647686
+      ],
+      "perModeBackreactionNorms": [
+        0.43494964213386433,
+        0.43494964212838433,
+        0.43494964213672593,
+        0.4349496421270074
+      ],
+      "perModeRelaxationEnergies": [
+        0.0294872181931777,
+        0.02948721819274653,
+        0.02948721819346854,
+        0.029487218192519184
+      ],
+      "perModeBackreactionAxisFractions": [
+        [
+          0.5296054024307987,
+          0.0007162872182494992,
+          0.46967831035095203
+        ],
+        [
+          0.5296054024396707,
+          0.000716287218507981,
+          0.46967831034182156
+        ],
+        [
+          0.5296054024354954,
+          0.0007162872184417063,
+          0.46967831034606317
+        ],
+        [
+          0.5296054024291053,
+          0.0007162872178725812,
+          0.4696783103530216
+        ]
+      ]
+    }
+  ],
+  "decision": "The full 156-mode bosonic Gauss-Newton spectrum was recomputed per background through the repo\u0027s production compute-spectrum pipeline on a study-local copy of the Phase12 family (persisted artifacts untouched). The operator is PSD with a finite kernel and a clear spectral gap, the eigenvalues cluster in su(2) triplets, and every persisted kernel mode is contained in the recomputed kernel subspace. With the positive spectrum in hand, the per-mode first-order backreaction for asymmetric shell occupation is now CONSTRUCTED per unit coupling, together with each source\u0027s unabsorbable kernel component and the second-order bosonic relaxation energy. This closes the Phase393 artifact gap. It remains a toy control-branch diagnostic: the coupling is not physical, no coupled critical point is solved, and no Phase201/Phase256 contract field is filled."
+}

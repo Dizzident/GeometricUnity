@@ -35,12 +35,12 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase393 work:
+Current gate status after the Phase394 work:
 
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=186`,
+  `objectiveAchieved=False`, `checklistPassedCount=187`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -60,64 +60,66 @@ Current gate status after the Phase393 work:
   `actionDerivedResponseStructureVerdict=diverges-from-gram-structure`
   (suppressed axis is metric-dependent)
 - Phase393:
-  `coupledStationarityFermionicSourceResidualProbePassed=True`,
-  `shellAggregatedSourceCancels=True`,
-  `perModeSourceLiesInGramImage=True`,
-  `persistedBosonicSpectrumIsNumericalKernelOnly=True`,
-  `firstOrderBackreactionConstructibleFromPersistedArtifacts=False`,
+  `shellAggregatedSourceCancels=True`, `perModeSourceLiesInGramImage=True`
+- Phase394:
+  `positiveBosonicSpectrumBackreactionConstructionPassed=True`,
+  `positiveBosonicSpectrumRecomputed=True`,
+  `bosonicGaussNewtonPsdVerified=True`,
+  `firstOrderAsymmetricBackreactionConstructed=True`,
+  `tripletClusteringObserved=True`,
   `canFillPhase201WzContract=False`
 
-Interpretation: the coupled-critical-point program now has its first-order
-picture. Phase393 showed the shell-aggregated fermionic source cancels
-EXACTLY between plus/minus eigenvalue partners, so under symmetric shell
-occupation the persisted background is already first-order
-coupled-stationary and the Phase392 second-order response operator is the
-leading backreaction object (softening Phase392's non-critical-point caveat
-at first order). Each per-mode source lies identically in the rank-3 Gram
-image, with 0.61-0.68 pure-gauge content and 0.08-0.11 in the persisted
-bosonic numerical kernel. The persisted Phase12 bosonic Gauss-Newton
-spectrum consists entirely of ~1e-15 kernel directions, so asymmetric
-first-order backreaction is NOT constructible from persisted artifacts -
-the positive bosonic spectrum at these backgrounds is the concrete missing
-artifact. Earlier: Phase391 proved the Gram invariants solver-independent;
-Phase392 proved the suppressed axis is metric-dependent (the action-derived
-response is near-full-rank and isotropic).
+Interpretation: the coupled-critical-point toolkit is complete at first and
+second order on the control branch. Phase394 recomputed the full positive
+bosonic Gauss-Newton spectrum through the production compute-spectrum
+pipeline on a study-local family copy: PSD, kernel dimension exactly 18
+(persisted 12 contained at 1.000000), spectral gap 0.062942, max eigenvalue
+6.017, and EXACT su(2) triplet clustering of every positive eigenvalue. The
+first-order asymmetric backreaction is now constructed (norms ~0.44 per unit
+coupling; relaxation energies ~0.029 per coupling squared; unabsorbable
+kernel fractions 0.12-0.13). Diagnosis refinement: the backreaction
+DIRECTION re-exhibits the suppressed gauge axis (fractions
+[0.5426, 0.0008, 0.4566] / [0.5296, 0.0007, 0.4697], nearly identical to the
+Phase379 Gram) because the source currents lie in the rank-3 Gram image
+(Phase393). So the suppression is absent from the fermion-loop response
+operator (Phase392) but present in the source-driven boson displacement -
+an action-derived dynamical anchor. The sharpest open internal question:
+WHY do the fermionic source currents avoid gauge axis 1?
 
 ### Most Recent Implemented Work
 
-The latest work added Phase393:
+The latest work added Phase394:
 
 - Study:
-  `studies/phase393_coupled_stationarity_fermionic_source_residual_probe_001`
-- Project: `Phase393CoupledStationarityFermionicSourceResidualProbe.csproj`
+  `studies/phase394_positive_bosonic_spectrum_backreaction_construction_001`
+- Project: `Phase394PositiveBosonicSpectrumBackreactionConstruction.csproj`
 - Study note: `STUDY.md`
-- Implementation note: `docs/Phases/Implementation/IMPLEMENTATION_P393.md`
+- Implementation note: `docs/Phases/Implementation/IMPLEMENTATION_P394.md`
 - Outputs:
-  `studies/phase393_coupled_stationarity_fermionic_source_residual_probe_001/output/coupled_stationarity_fermionic_source_residual_probe.json`
-  and `..._summary.json`
+  `studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/positive_bosonic_spectrum_backreaction_construction.json`
+  and `..._summary.json` (the recomputed spectrum bundles live under
+  `output/family_workdir/` and are reproducible rather than committed)
 
-Phase393 characterized the coupled stationarity residual
-`J_k = Re<psi_s, delta_D[e_k] psi_s>` on the converged shell:
+Phase394 stages a study-local copy of the Phase12 family and re-runs the
+production `Gu.Cli compute-spectrum <workdir> <bg> --num-modes 156`, then:
 
-- Exact plus/minus cancellation of the shell-aggregated source
-  (ratio ~4e-11; per-mode norms identical: 0.1129 / 0.1212).
-- Per-mode sources lie exactly in the rank-3 Gram image (fraction 1.0);
-  pure-gauge content 0.61-0.68; persisted-bosonic-kernel content 0.08-0.11.
-- All 12 persisted bosonic Gauss-Newton eigenvalues per background ~1e-15
-  (kernel-only): backreaction `-kappa H_B^+ J` not constructible from
-  persisted artifacts.
-- Unit-source shell splitting: doubly degenerate +-6.49e-3 / +-7.22e-3 per
-  unit coupling.
+- Verifies PSD, kernel dimension 18, spectral gap 0.062942, exact su(2)
+  triplet clustering, and persisted-kernel containment 1.000000.
+- Constructs `delta_omega^(s) = -sum m_i (m_i . J^(s)) / mu_i` per unit
+  coupling (norms 0.4425 / 0.4349) with relaxation energies
+  0.0280 / 0.0295 per coupling squared.
+- Finds the backreaction direction re-exhibits the suppressed gauge axis
+  (fractions [0.5426, 0.0008, 0.4566] / [0.5296, 0.0007, 0.4697]).
 
 ### Integration Points Already Updated
 
-Phase393 (like Phase388-392) is wired into:
+Phase394 (like Phase388-393) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (both invocation blocks)
 - `studies/phase101_boson_prediction_package_001/Program.cs`
 - `studies/phase202_boson_objective_completion_audit_001/Program.cs`
   (checklist item
-  `coupled-stationarity-fermionic-source-residual-probe-materialized`)
+  `positive-bosonic-spectrum-backreaction-construction-materialized`)
 - `scripts/verify_boson_claim_integrity.sh`
 - Broad scanner exclusions: phase204, phase205, phase207, phase279,
   phase281, phase295, phase296
@@ -130,15 +132,15 @@ The diagnosis journal entry is near the end of
 ### Validation Already Run
 
 ```bash
-dotnet run --project studies/phase393_coupled_stationarity_fermionic_source_residual_probe_001/Phase393CoupledStationarityFermionicSourceResidualProbe.csproj
+dotnet run --project studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/Phase394PositiveBosonicSpectrumBackreactionConstruction.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
 ./scripts/generate_validated_boson_predictions.sh
 ```
 
-The full generator ended with the Phase393 line, the Phase202 incomplete
-status (`checklistPassedCount=186`, `checklistFailedCount=3`), and the same
+The full generator ended with the Phase394 line, the Phase202 incomplete
+status (`checklistPassedCount=187`, `checklistFailedCount=3`), and the same
 claim-integrity status (`promotedPhysicalMassClaimCount=0`). All seven broad
 scanners still report zero intake-ready evidence.
 
@@ -171,19 +173,17 @@ contract fields, or remove a physical blocker on the VO-7 branch.
 
 The most useful next branches are:
 
-1. Recompute the positive bosonic Gauss-Newton spectrum at the Phase12
-   backgrounds (the persisted spectrum is kernel-only). This is the concrete
-   missing artifact for asymmetric backreaction and for any second-order
-   coupled self-consistency check. The Phase3 OperatorBundleBuilder /
-   spectra machinery is the natural route.
-2. Formalize the second-order coupled expansion around symmetric shell
-   occupation, where Phase393 proved first-order stationarity and the
-   Phase392 response operator is the leading fermion-induced boson operator.
-   Fail-closed: no physical coupling, no contract fields.
-3. A target-blind carrier-axis-to-observed photon/W/Z/H namespace theorem
-   filling Phase256 observed-field extraction fields. Note after Phase392:
-   any axis-structure theorem must first fix the response metric.
-4. A complete W/Z/H source package: separate W/Z source rows, Higgs scalar
+1. A target-blind structural decomposition of the fermionic source currents
+   by edge/axis/representation content, to answer the sharpest open internal
+   question: WHY the source currents avoid gauge axis 1. This is the
+   dynamical anchor of the suppressed-axis structure (Phase394) and the
+   closest internal route to the still-missing suppressed-axis W-row
+   theorem.
+2. A target-blind carrier-axis-to-observed photon/W/Z/H namespace theorem
+   filling Phase256 observed-field extraction fields. Any axis-structure
+   theorem must fix the response metric: the suppression lives in the Gram
+   image and the backreaction direction, not the loop response operator.
+3. A complete W/Z/H source package: separate W/Z source rows, Higgs scalar
    source row, weak-angle/coupling lineage, VEV/source scale, pole extraction,
    and GeV normalization.
 
@@ -200,10 +200,10 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -120 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase393|shellAggregatedSourceCancels|persistedBosonicSpectrumIsNumericalKernelOnly" \
+rg -n "Phase394|positiveBosonicSpectrumRecomputed|tripletClusteringObserved" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
   ExperimentReferences.md \
-  studies/phase393_coupled_stationarity_fermionic_source_residual_probe_001 \
+  studies/phase394_positive_bosonic_spectrum_backreaction_construction_001 \
   studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
 ```
 
@@ -216,13 +216,12 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add ignored Phase393 output JSON files, and commit a checkpoint after
-validation. The output directory under `studies/**/output/` is generally
-ignored, so use `git add -f` for Phase393 output files if they are meant to be
-committed.
+force-add the ignored Phase394 summary and full output JSON files (NOT the
+`family_workdir` tree, which is reproducible and timestamp-volatile), and
+commit a checkpoint after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase393 coupled stationarity residual probe
+Add phase394 positive bosonic spectrum and backreaction
 ```
