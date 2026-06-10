@@ -161,6 +161,7 @@ const string Phase392Path = "studies/phase392_coupled_mixed_hessian_fermion_indu
 const string Phase393Path = "studies/phase393_coupled_stationarity_fermionic_source_residual_probe_001/output/coupled_stationarity_fermionic_source_residual_probe_summary.json";
 const string Phase394Path = "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/positive_bosonic_spectrum_backreaction_construction_summary.json";
 const string Phase395Path = "studies/phase395_source_current_axis_structure_gauge_covariance_probe_001/output/source_current_axis_structure_gauge_covariance_probe_summary.json";
+const string Phase396Path = "studies/phase396_gauge_invariant_neutral_charged_sector_separation_probe_001/output/gauge_invariant_neutral_charged_sector_separation_probe_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -355,6 +356,7 @@ using var phase392 = File.Exists(Phase392Path) ? JsonDocument.Parse(File.ReadAll
 using var phase393 = File.Exists(Phase393Path) ? JsonDocument.Parse(File.ReadAllText(Phase393Path)) : null;
 using var phase394 = File.Exists(Phase394Path) ? JsonDocument.Parse(File.ReadAllText(Phase394Path)) : null;
 using var phase395 = File.Exists(Phase395Path) ? JsonDocument.Parse(File.ReadAllText(Phase395Path)) : null;
+using var phase396 = File.Exists(Phase396Path) ? JsonDocument.Parse(File.ReadAllText(Phase396Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -4808,6 +4810,28 @@ var sourceCurrentAxisStructureGaugeCovarianceProbePassed = sourceCurrentAxisStru
     && JsonBool(phase395.RootElement, "phase201TemplateMutated") is false
     && JsonInt(phase395.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
     && JsonInt(phase395.RootElement, "acceptedContractFieldCount") == 0;
+var gaugeInvariantNeutralChargedSectorSeparationProbeMaterialized = phase396 is not null;
+var gaugeInvariantNeutralChargedSectorSeparationProbePassed = gaugeInvariantNeutralChargedSectorSeparationProbeMaterialized
+    && JsonBool(phase396!.RootElement, "gaugeInvariantNeutralChargedSectorSeparationProbePassed") is true
+    && JsonBool(phase396.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase396.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase396.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase396.RootElement, "applicationSubjectKind") == "gauge-invariant-neutral-charged-sector-separation-probe"
+    && JsonBool(phase396.RootElement, "extractionGaugeInvarianceVerified") is true
+    && JsonBool(phase396.RootElement, "tripletNeutralChargedSplitObserved") is true
+    && JsonInt(phase396.RootElement, "totalTripletClusterCount") > 0
+    && JsonBool(phase396.RootElement, "routeProvidesObservedElectroweakNamespaceMap") is false
+    && JsonBool(phase396.RootElement, "routeProvidesCanonicalGaugeAxisSelector") is false
+    && JsonBool(phase396.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase396.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase396.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase396.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase396.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase396.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase396.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase396.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase396.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase396.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -6944,6 +6968,14 @@ var checklist = new[]
             ? $"sourceCurrentAxisStructureGaugeCovarianceProbePassed={JsonBool(phase395!.RootElement, "sourceCurrentAxisStructureGaugeCovarianceProbePassed")}; targetBlind={JsonBool(phase395.RootElement, "targetBlindConstruction")}; covarianceVerified={JsonBool(phase395.RootElement, "globalGaugeCovarianceVerified")}; gaugeCovariantNotCanonical={JsonBool(phase395.RootElement, "suppressedAxisIsGaugeCovariantNotCanonical")}; omegaSymmetricAnsatz={JsonBool(phase395.RootElement, "backgroundOmegaNearSymmetricAnsatz")}; blockGramRankOne={JsonBool(phase395.RootElement, "blockGramEffectivelyRankOne")}; canFillPhase201WzContract={JsonBool(phase395.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase395.RootElement, "decision")}"
             : "Phase395 artifact not materialized",
         Phase395Path),
+    new ObjectiveChecklistItem(
+        "gauge-invariant-neutral-charged-sector-separation-probe-materialized",
+        "Materialize the gauge-invariant neutral/charged sector separation relative to the background invariant axis and test the residual-U(1) triplet splitting of the recomputed bosonic spectrum.",
+        gaugeInvariantNeutralChargedSectorSeparationProbePassed ? "passed" : "failed",
+        gaugeInvariantNeutralChargedSectorSeparationProbeMaterialized
+            ? $"gaugeInvariantNeutralChargedSectorSeparationProbePassed={JsonBool(phase396!.RootElement, "gaugeInvariantNeutralChargedSectorSeparationProbePassed")}; targetBlind={JsonBool(phase396.RootElement, "targetBlindConstruction")}; invarianceVerified={JsonBool(phase396.RootElement, "extractionGaugeInvarianceVerified")}; tripletSplitObserved={JsonBool(phase396.RootElement, "tripletNeutralChargedSplitObserved")}; tripletClusterCount={JsonInt(phase396.RootElement, "totalTripletClusterCount")}; canFillPhase256ObservedFieldExtractionContract={JsonBool(phase396.RootElement, "canFillPhase256ObservedFieldExtractionContract")}; canFillPhase201WzContract={JsonBool(phase396.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase396.RootElement, "decision")}"
+            : "Phase396 artifact not materialized",
+        Phase396Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

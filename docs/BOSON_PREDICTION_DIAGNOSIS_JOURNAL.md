@@ -16131,3 +16131,68 @@ invariant axis) that could fill Phase256, and the W/Z/H source package
 (separate rows, coupling/VEV/pole/GeV lineage) for Phase201. Internal
 near-passes cannot substitute; the gates stay closed until those artifacts
 exist.
+
+## 2026-06-10 - Phase396: Exact Residual-U(1) Sector Separation Across The Whole Bosonic Spectrum
+
+### Context
+
+Phase395 established that any defensible observed-field extraction must be
+built from gauge invariants relative to the background invariant axis
+n_omega. The first constructive step is the simplest such extraction - the
+neutral/charged sector separation - and the sharp test is whether the
+recomputed bosonic spectrum (Phase394: exact su(2) triplet clustering)
+carries the residual-U(1) multiplet structure it predicts.
+
+### Action
+
+- Added
+  `studies/phase396_gauge_invariant_neutral_charged_sector_separation_probe_001`
+  with the extraction f(b) = sum_e (b_e . n_omega)^2 / |b|^2, the
+  basis-invariant cluster neutral content (trace of the invariant-axis
+  projector over each triplet span), exact invariance checks, and an honest
+  per-field Phase256 audit.
+- Wired into the generator, Phase101, Phase202, claim-integrity verifier,
+  and the seven broad scanner exclusions; updated the ledger notes.
+
+### Result
+
+- ALL 68 triplet clusters across both backgrounds have neutral content 1.0
+  (max deviation 1.9e-7): every exact su(2) triplet splits as ONE NEUTRAL
+  direction plus ONE CHARGED PAIR relative to n_omega.
+- The 18-dimensional bosonic kernel splits exactly as 6 neutral + 12 charged.
+- The extraction is exactly gauge-invariant (residual 7.8e-16).
+- The discrete residual-U(1) skeleton of {Z-like, W-pair-like} sector
+  classification therefore holds EXACTLY across the entire bosonic spectrum,
+  built from gauge invariants only - the structural prerequisite for any
+  future namespace map.
+
+### Fail-Closed Audit
+
+Zero of the 20 Phase256 fields can be filled, with per-field reasons
+recorded: the su(2)-only control branch has no hypercharge U(1)_Y (no
+electroweak embedding, no photon eigenstate projection, no weak angle), no
+scalar sector, a toy 2D vacuum, and no scale/pole/GeV lineage; the
+construction is study-defined, not a theorem with source lineage. Sector
+labels are residual-U(1) labels, NOT observed particle names.
+`canFillPhase256ObservedFieldExtractionContract=False`,
+`promotedPhysicalMassClaimCount=0` preserved.
+
+### Validation
+
+- Targeted Phase396 run passed.
+- Phase101 package run passed and includes the Phase396 block.
+- Phase202: `objectiveAchieved=False`, `checklistPassedCount=189`,
+  `checklistFailedCount=3`.
+- Claim integrity verified.
+
+### Next Required Artifact
+
+The gauge-invariant sector skeleton now exists end-to-end on the control
+branch. The remaining gap to Phase256/Phase201 is irreducibly physical:
+(a) an electroweak embedding (su(2) x U(1)_Y with hypercharge assignments)
+on a four-dimensional observed-vacuum branch, which would turn the neutral
+sector into a photon/Z mixing problem and give the weak angle a home;
+(b) source-scale, coupling, pole, and GeV lineage. These cannot be
+synthesized from the toy branch; they require either the completed GU
+derivation chain (v29 obligations VO-6/VO-7 solved physically) or new
+theorem-level source material.

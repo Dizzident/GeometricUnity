@@ -165,6 +165,7 @@ const paths = {
   phase393: "studies/phase393_coupled_stationarity_fermionic_source_residual_probe_001/output/coupled_stationarity_fermionic_source_residual_probe_summary.json",
   phase394: "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/positive_bosonic_spectrum_backreaction_construction_summary.json",
   phase395: "studies/phase395_source_current_axis_structure_gauge_covariance_probe_001/output/source_current_axis_structure_gauge_covariance_probe_summary.json",
+  phase396: "studies/phase396_gauge_invariant_neutral_charged_sector_separation_probe_001/output/gauge_invariant_neutral_charged_sector_separation_probe_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -401,6 +402,7 @@ const phase392 = requireFile(paths.phase392);
 const phase393 = requireFile(paths.phase393);
 const phase394 = requireFile(paths.phase394);
 const phase395 = requireFile(paths.phase395);
+const phase396 = requireFile(paths.phase396);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -4595,6 +4597,15 @@ if (sourceLineageMissing) {
   assert(phase395.sourceContractApplicationAllowed === false && phase395.canFillPhase201WzContract === false && phase395.canFillPhase201HiggsContract === false && phase395.canFillPhase256ObservedFieldExtractionContract === false, "Phase395 cannot fill Phase201 or Phase256 contracts.");
   assert(phase395.routePromotesWzMasses === false && phase395.routePromotesHiggsMass === false && phase395.routeCompletesBosonPredictions === false, "Phase395 cannot promote boson predictions.");
   assert(phase395.phase201TemplateMutated === false && phase395.fieldsAppliedToPhase201TemplateCount === 0 && phase395.acceptedContractFieldCount === 0, "Phase395 must not mutate or fill the Phase201 template.");
+  assert(phase396.gaugeInvariantNeutralChargedSectorSeparationProbePassed === true, "Phase396 gauge-invariant sector separation probe must pass as a fail-closed structural audit.");
+  assert(phase396.targetBlindConstruction === true && phase396.physicalTargetsConsultedForConstruction === false, "Phase396 construction must remain target-blind.");
+  assert(typeof phase396.targetBlindConstructionHash === "string" && phase396.targetBlindConstructionHash.length === 64, "Phase396 must persist a target-blind construction hash.");
+  assert(phase396.applicationSubjectKind === "gauge-invariant-neutral-charged-sector-separation-probe", "Phase396 must classify its subject as the sector separation probe.");
+  assert(phase396.extractionGaugeInvarianceVerified === true && phase396.tripletNeutralChargedSplitObserved === true && phase396.totalTripletClusterCount > 0, "Phase396 must verify the gauge-invariant extraction and the exact triplet neutral/charged splitting.");
+  assert(phase396.routeProvidesObservedElectroweakNamespaceMap === false && phase396.routeProvidesCanonicalGaugeAxisSelector === false, "Phase396 must preserve the missing namespace-map and selector boundaries (sector labels are not observed names).");
+  assert(phase396.sourceContractApplicationAllowed === false && phase396.canFillPhase201WzContract === false && phase396.canFillPhase201HiggsContract === false && phase396.canFillPhase256ObservedFieldExtractionContract === false, "Phase396 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase396.routePromotesWzMasses === false && phase396.routePromotesHiggsMass === false && phase396.routeCompletesBosonPredictions === false, "Phase396 cannot promote boson predictions.");
+  assert(phase396.phase201TemplateMutated === false && phase396.fieldsAppliedToPhase201TemplateCount === 0 && phase396.acceptedContractFieldCount === 0, "Phase396 must not mutate or fill the Phase201 template.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

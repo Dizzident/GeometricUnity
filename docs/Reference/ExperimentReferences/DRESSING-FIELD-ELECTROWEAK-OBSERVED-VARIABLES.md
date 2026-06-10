@@ -91,3 +91,15 @@ itself a GU source law for observed W/Z/H pole masses.
 - Revisit only after the same source family supplies Higgs scalar-source
   lineage, weak-angle/coupling normalization, mass scale, pole extraction, and
   GeV unit normalization.
+
+## Phase395/396 Connection
+
+The discrete control branch now realizes the exact target shape for a
+dressing-style theorem: a background invariant axis n_omega (symmetric
+ansatz), an exactly gauge-invariant neutral/charged extraction relative to
+it (Phase396, invariance ~1e-15), and exact residual-U(1) multiplet
+splitting of the full bosonic spectrum (all 68 triplets -> {1 neutral,
+2 charged}; kernel 6+12). What the dressing-field literature must supply to
+promote this skeleton to Phase256 evidence: the U(1)_Y extension (photon/Z
+mixing and the weak angle), the observed-field identification theorem, and
+scale/pole/GeV lineage. Until then the skeleton fills zero contract fields.

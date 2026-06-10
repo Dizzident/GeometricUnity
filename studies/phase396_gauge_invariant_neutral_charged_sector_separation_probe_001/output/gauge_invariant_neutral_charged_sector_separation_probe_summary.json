@@ -1,0 +1,491 @@
+{
+  "phaseId": "phase396-gauge-invariant-neutral-charged-sector-separation-probe",
+  "generatedAt": "2026-06-10T20:50:52.7271593+00:00",
+  "terminalStatus": "gauge-invariant-neutral-charged-sector-separation-materialized-contract-fields-still-unfillable",
+  "gaugeInvariantNeutralChargedSectorSeparationProbePassed": true,
+  "phase394PrecursorPassed": true,
+  "phase395PrecursorPassed": true,
+  "phase256ContractPresent": true,
+  "phase394WorkdirPresent": true,
+  "probeInternallyConsistent": true,
+  "extractionGaugeInvarianceVerified": true,
+  "tripletNeutralChargedSplitObserved": true,
+  "totalTripletClusterCount": 68,
+  "maxNeutralContentDeviation": 1.8662644896139113E-07,
+  "maxInvarianceResidual": 7.771561172376096E-16,
+  "minKernelNeutralContent": 6.0000000003540555,
+  "maxKernelNeutralContent": 6.00000000044788,
+  "probeDefinitions": {
+    "invariantAxis": "n_omega = dominant eigenvector of C = sum_e omega_e omega_e^T (the symmetric-ansatz direction)",
+    "extraction": "f(b) = sum_e (b_e . n_omega)^2 / sum_e |b_e|^2 (neutral fraction); 1 - f (charged fraction); plain per-edge Euclidean sums (study-defined weight)",
+    "clusterInvariant": "neutralContent(cluster) = sum over cluster modes of f(mode) = trace of the invariant-axis projector over the cluster span (basis-invariant)",
+    "hypothesis": "residual-U(1) skeleton: each exact su(2) triplet splits as one neutral direction plus one charged pair, i.e. neutralContent ~ 1.0",
+    "invarianceCheck": "f(R b; n_omega(R omega)) = f(b; n_omega(omega)) for a quarter turn about e2 and a generic rotation"
+  },
+  "applicationSubjectKind": "gauge-invariant-neutral-charged-sector-separation-probe",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "ee888146b3843c56a12283135f77bddabe832c427df11e1061c3afa8712930be",
+  "expectedCoveragePresent": true,
+  "backgroundCount": 2,
+  "expectedPhase256RequiredFieldCount": 20,
+  "phase256FieldAudit": [
+    {
+      "fieldId": "observedFieldExtractionTheoremId",
+      "suppliable": false,
+      "reason": "the neutral/charged separation is a study-defined construction with numerical verification, not a proven theorem with source lineage"
+    },
+    {
+      "fieldId": "electroweakGaugeEmbeddingId",
+      "suppliable": false,
+      "reason": "the control branch is su(2)-only; there is no hypercharge U(1)_Y and hence no electroweak embedding"
+    },
+    {
+      "fieldId": "photonEigenstateProjectionId",
+      "suppliable": false,
+      "reason": "without U(1)_Y there is no photon/Z mixing; the invariant-axis component is a neutral su(2) direction, not a photon eigenstate"
+    },
+    {
+      "fieldId": "wBosonSourceRowId",
+      "suppliable": false,
+      "reason": "the charged-plane pair is a gauge-invariant charged sector, but no observed-W identification, coupling, or scale lineage exists"
+    },
+    {
+      "fieldId": "zBosonSourceRowId",
+      "suppliable": false,
+      "reason": "the invariant-axis mode is a neutral su(2) direction; identifying it with the observed Z requires the missing weak-angle and scale lineage"
+    },
+    {
+      "fieldId": "higgsScalarSourceOperatorId",
+      "suppliable": false,
+      "reason": "no scalar sector exists on this branch"
+    },
+    {
+      "fieldId": "quadraticElectroweakMassOperatorId",
+      "suppliable": false,
+      "reason": "the bosonic Gauss-Newton operator is study-defined at a toy background, not a physical electroweak mass operator"
+    },
+    {
+      "fieldId": "fourDimensionalObservedVacuumArtifactId",
+      "suppliable": false,
+      "reason": "the control branch is a toy 2D fiber-bundle mesh, not a four-dimensional observed vacuum"
+    }
+  ],
+  "routeProvidesObservedElectroweakNamespaceMap": false,
+  "routeProvidesCanonicalGaugeAxisSelector": false,
+  "routeProvidesWeakAngleOrCouplingLineage": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesDirectTargetIndependentWzBridgeSourceLaw": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "study-defined gauge-invariant separation, not a theorem with source lineage",
+    "su(2)-only control branch: no hypercharge, no photon/Z mixing, no weak angle",
+    "neutral/charged labels are residual-U(1) sector labels, NOT observed particle names",
+    "no scalar sector, no physical vacuum, no scale, no pole, no GeV lineage",
+    "no Phase201 or Phase256 fill",
+    "no physical predictions"
+  ],
+  "backgrounds": [
+    {
+      "fermionBackgroundId": "bg-phase12-bg-a-20260315212202",
+      "persistedOmegaPath": "studies/phase12_joined_calculation_001/output/background_family/background_states/bg-phase12-bg-a-20260315212202_omega.json",
+      "fullModeCount": 156,
+      "kernelDimension": 18,
+      "kernelNeutralContent": 6.0000000003540555,
+      "omegaInvariantAxis": [
+        0.5716150081281035,
+        0.585842883405708,
+        0.5744949072407817
+      ],
+      "tripletClusterCount": 34,
+      "tripletClustersWithUnitNeutralContent": 34,
+      "maxNeutralContentDeviation": 1.8662644896139113E-07,
+      "maxInvarianceResidual": 4.440892098500626E-16,
+      "clusters": [
+        {
+          "clusterEigenvalue": 0.06294288799425495,
+          "neutralContent": 1.0000000004134422,
+          "neutralContentDeviation": 4.1344216938909994E-10
+        },
+        {
+          "clusterEigenvalue": 0.10226067742548953,
+          "neutralContent": 1.0000000006660286,
+          "neutralContentDeviation": 6.660285656323595E-10
+        },
+        {
+          "clusterEigenvalue": 0.13513506497917135,
+          "neutralContent": 1.0000000012845005,
+          "neutralContentDeviation": 1.2845005059602954E-09
+        },
+        {
+          "clusterEigenvalue": 0.14256127235917987,
+          "neutralContent": 1.0000000004475036,
+          "neutralContentDeviation": 4.475035897399948E-10
+        },
+        {
+          "clusterEigenvalue": 0.16749619588515693,
+          "neutralContent": 1.0000000013981745,
+          "neutralContentDeviation": 1.3981744650948258E-09
+        },
+        {
+          "clusterEigenvalue": 0.20345773013812962,
+          "neutralContent": 1.0000000014896964,
+          "neutralContentDeviation": 1.4896963662636153E-09
+        },
+        {
+          "clusterEigenvalue": 0.23996099583153999,
+          "neutralContent": 1.0000000013458632,
+          "neutralContentDeviation": 1.3458631986651426E-09
+        },
+        {
+          "clusterEigenvalue": 0.262718289961158,
+          "neutralContent": 1.000000000785777,
+          "neutralContentDeviation": 7.857769990238239E-10
+        },
+        {
+          "clusterEigenvalue": 0.2999925655526022,
+          "neutralContent": 1.000000001453967,
+          "neutralContentDeviation": 1.4539669468405236E-09
+        },
+        {
+          "clusterEigenvalue": 0.35020423362657493,
+          "neutralContent": 1.000000001271851,
+          "neutralContentDeviation": 1.2718510689069262E-09
+        },
+        {
+          "clusterEigenvalue": 0.3555492739726334,
+          "neutralContent": 0.9999999994479835,
+          "neutralContentDeviation": 5.520165435868307E-10
+        },
+        {
+          "clusterEigenvalue": 0.39442165039923155,
+          "neutralContent": 1.000000001352963,
+          "neutralContentDeviation": 1.3529630749076205E-09
+        },
+        {
+          "clusterEigenvalue": 0.47306770056648034,
+          "neutralContent": 1.0000000007866707,
+          "neutralContentDeviation": 7.866707285586472E-10
+        },
+        {
+          "clusterEigenvalue": 0.5195665838134155,
+          "neutralContent": 1.0000000130838766,
+          "neutralContentDeviation": 1.3083876648778414E-08
+        },
+        {
+          "clusterEigenvalue": 0.6414027362232565,
+          "neutralContent": 0.999999995411608,
+          "neutralContentDeviation": 4.5883919996825284E-09
+        },
+        {
+          "clusterEigenvalue": 0.7321949784154204,
+          "neutralContent": 0.9999999888083024,
+          "neutralContentDeviation": 1.1191697568690984E-08
+        },
+        {
+          "clusterEigenvalue": 0.7661135273969224,
+          "neutralContent": 0.9999998253091604,
+          "neutralContentDeviation": 1.746908395716673E-07
+        },
+        {
+          "clusterEigenvalue": 0.795361434242076,
+          "neutralContent": 1.000000186626449,
+          "neutralContentDeviation": 1.8662644896139113E-07
+        },
+        {
+          "clusterEigenvalue": 0.8546032393123172,
+          "neutralContent": 1.0000000065981425,
+          "neutralContentDeviation": 6.598142476832436E-09
+        },
+        {
+          "clusterEigenvalue": 0.9150874448366346,
+          "neutralContent": 0.9999999971359154,
+          "neutralContentDeviation": 2.8640846361227545E-09
+        },
+        {
+          "clusterEigenvalue": 0.9480842893651951,
+          "neutralContent": 0.9999999980228899,
+          "neutralContentDeviation": 1.977110142270533E-09
+        },
+        {
+          "clusterEigenvalue": 1.0444602166894088,
+          "neutralContent": 1.0000000012791752,
+          "neutralContentDeviation": 1.2791752102003784E-09
+        },
+        {
+          "clusterEigenvalue": 1.152329209764705,
+          "neutralContent": 1.0000000037502037,
+          "neutralContentDeviation": 3.7502037031345026E-09
+        },
+        {
+          "clusterEigenvalue": 1.3388764917384761,
+          "neutralContent": 0.9999999962387182,
+          "neutralContentDeviation": 3.76128184154112E-09
+        },
+        {
+          "clusterEigenvalue": 1.6750995377219193,
+          "neutralContent": 1.0000000006378211,
+          "neutralContentDeviation": 6.378211292457081E-10
+        },
+        {
+          "clusterEigenvalue": 2.0765937557722185,
+          "neutralContent": 0.9999999997281155,
+          "neutralContentDeviation": 2.718845149018989E-10
+        },
+        {
+          "clusterEigenvalue": 2.2731343743128662,
+          "neutralContent": 1.0000000002200236,
+          "neutralContentDeviation": 2.2002355493100367E-10
+        },
+        {
+          "clusterEigenvalue": 2.5853556929528057,
+          "neutralContent": 0.9999999980449905,
+          "neutralContentDeviation": 1.955009487630832E-09
+        },
+        {
+          "clusterEigenvalue": 3.288518688879487,
+          "neutralContent": 1.0000000022622102,
+          "neutralContentDeviation": 2.2622101969460573E-09
+        },
+        {
+          "clusterEigenvalue": 3.8979562088818938,
+          "neutralContent": 1.0000000050366082,
+          "neutralContentDeviation": 5.03660824158203E-09
+        },
+        {
+          "clusterEigenvalue": 4.116064585743014,
+          "neutralContent": 0.9999999970887778,
+          "neutralContentDeviation": 2.911222152235382E-09
+        },
+        {
+          "clusterEigenvalue": 4.977695429932369,
+          "neutralContent": 1.0000000001558382,
+          "neutralContentDeviation": 1.558382312083495E-10
+        },
+        {
+          "clusterEigenvalue": 5.426228874885528,
+          "neutralContent": 1.00000000035742,
+          "neutralContentDeviation": 3.574200935219096E-10
+        },
+        {
+          "clusterEigenvalue": 6.016068222812007,
+          "neutralContent": 0.9999999970295891,
+          "neutralContentDeviation": 2.9704109172357107E-09
+        }
+      ]
+    },
+    {
+      "fermionBackgroundId": "bg-phase12-bg-b-20260315212202",
+      "persistedOmegaPath": "studies/phase12_joined_calculation_001/output/background_family/background_states/bg-phase12-bg-b-20260315212202_omega.json",
+      "fullModeCount": 156,
+      "kernelDimension": 18,
+      "kernelNeutralContent": 6.00000000044788,
+      "omegaInvariantAxis": [
+        0.5676098774526086,
+        0.586002823359292,
+        0.5782903406016507
+      ],
+      "tripletClusterCount": 34,
+      "tripletClustersWithUnitNeutralContent": 34,
+      "maxNeutralContentDeviation": 7.467193485766188E-08,
+      "maxInvarianceResidual": 7.771561172376096E-16,
+      "clusters": [
+        {
+          "clusterEigenvalue": 0.06294221963743724,
+          "neutralContent": 1.0000000009047116,
+          "neutralContentDeviation": 9.047116389382381E-10
+        },
+        {
+          "clusterEigenvalue": 0.10225951750059079,
+          "neutralContent": 1.0000000011597252,
+          "neutralContentDeviation": 1.1597252047579332E-09
+        },
+        {
+          "clusterEigenvalue": 0.13513167425503295,
+          "neutralContent": 1.000000002198894,
+          "neutralContentDeviation": 2.1988939558070797E-09
+        },
+        {
+          "clusterEigenvalue": 0.1425566562786828,
+          "neutralContent": 1.0000000018109048,
+          "neutralContentDeviation": 1.810904759480536E-09
+        },
+        {
+          "clusterEigenvalue": 0.16749525276825708,
+          "neutralContent": 1.0000000016805002,
+          "neutralContentDeviation": 1.6805001834541144E-09
+        },
+        {
+          "clusterEigenvalue": 0.20345208950337917,
+          "neutralContent": 1.000000001197354,
+          "neutralContentDeviation": 1.1973539937315536E-09
+        },
+        {
+          "clusterEigenvalue": 0.23995200227405097,
+          "neutralContent": 1.0000000037248793,
+          "neutralContentDeviation": 3.724879293898198E-09
+        },
+        {
+          "clusterEigenvalue": 0.2627179147101208,
+          "neutralContent": 0.9999999996686498,
+          "neutralContentDeviation": 3.313501695245691E-10
+        },
+        {
+          "clusterEigenvalue": 0.29996525631938253,
+          "neutralContent": 1.0000000059693737,
+          "neutralContentDeviation": 5.9693736620403115E-09
+        },
+        {
+          "clusterEigenvalue": 0.35018056625501637,
+          "neutralContent": 1.000000006143466,
+          "neutralContentDeviation": 6.143465958174943E-09
+        },
+        {
+          "clusterEigenvalue": 0.35554209413743953,
+          "neutralContent": 0.9999999973021342,
+          "neutralContentDeviation": 2.69786581963416E-09
+        },
+        {
+          "clusterEigenvalue": 0.3944205912173968,
+          "neutralContent": 1.0000000016817279,
+          "neutralContentDeviation": 1.681727868074745E-09
+        },
+        {
+          "clusterEigenvalue": 0.473070757692297,
+          "neutralContent": 1.0000000019627977,
+          "neutralContentDeviation": 1.9627977021485776E-09
+        },
+        {
+          "clusterEigenvalue": 0.5195500523965603,
+          "neutralContent": 0.9999999804915489,
+          "neutralContentDeviation": 1.9508451076788447E-08
+        },
+        {
+          "clusterEigenvalue": 0.6413987785524389,
+          "neutralContent": 0.9999999983465035,
+          "neutralContentDeviation": 1.6534964508707617E-09
+        },
+        {
+          "clusterEigenvalue": 0.7321671829511209,
+          "neutralContent": 1.0000000017806234,
+          "neutralContentDeviation": 1.780623426483885E-09
+        },
+        {
+          "clusterEigenvalue": 0.7660618845343651,
+          "neutralContent": 0.9999999303130331,
+          "neutralContentDeviation": 6.968696686371345E-08
+        },
+        {
+          "clusterEigenvalue": 0.7953618680244058,
+          "neutralContent": 1.0000000746719349,
+          "neutralContentDeviation": 7.467193485766188E-08
+        },
+        {
+          "clusterEigenvalue": 0.8545898288292118,
+          "neutralContent": 0.9999999965623323,
+          "neutralContentDeviation": 3.4376677060521388E-09
+        },
+        {
+          "clusterEigenvalue": 0.9150792013461679,
+          "neutralContent": 1.0000000028595253,
+          "neutralContentDeviation": 2.8595252832275264E-09
+        },
+        {
+          "clusterEigenvalue": 0.9480856631017947,
+          "neutralContent": 1.0000000080789702,
+          "neutralContentDeviation": 8.07897015953074E-09
+        },
+        {
+          "clusterEigenvalue": 1.0444497917762783,
+          "neutralContent": 0.9999999923641155,
+          "neutralContentDeviation": 7.635884480272637E-09
+        },
+        {
+          "clusterEigenvalue": 1.1522721949147274,
+          "neutralContent": 1.0000000053110067,
+          "neutralContentDeviation": 5.31100674550089E-09
+        },
+        {
+          "clusterEigenvalue": 1.3388772943397869,
+          "neutralContent": 1.0000000000928921,
+          "neutralContentDeviation": 9.289213842578192E-11
+        },
+        {
+          "clusterEigenvalue": 1.675100130200521,
+          "neutralContent": 1.0000000015578565,
+          "neutralContentDeviation": 1.5578565104590325E-09
+        },
+        {
+          "clusterEigenvalue": 2.0765943654689716,
+          "neutralContent": 1.0000000048539404,
+          "neutralContentDeviation": 4.853940360760589E-09
+        },
+        {
+          "clusterEigenvalue": 2.27313609190155,
+          "neutralContent": 1.0000000019108997,
+          "neutralContentDeviation": 1.91089966072866E-09
+        },
+        {
+          "clusterEigenvalue": 2.585358488752965,
+          "neutralContent": 0.9999999940678538,
+          "neutralContentDeviation": 5.932146218690093E-09
+        },
+        {
+          "clusterEigenvalue": 3.288519082009738,
+          "neutralContent": 1.0000000025099223,
+          "neutralContentDeviation": 2.5099222700220025E-09
+        },
+        {
+          "clusterEigenvalue": 3.897957645819368,
+          "neutralContent": 0.9999999745495234,
+          "neutralContentDeviation": 2.5450476615063167E-08
+        },
+        {
+          "clusterEigenvalue": 4.116065864992498,
+          "neutralContent": 0.9999999920824659,
+          "neutralContentDeviation": 7.917534072809929E-09
+        },
+        {
+          "clusterEigenvalue": 4.9776981722909985,
+          "neutralContent": 0.9999999979261112,
+          "neutralContentDeviation": 2.07388883843862E-09
+        },
+        {
+          "clusterEigenvalue": 5.426245388252365,
+          "neutralContent": 1.0000000097385318,
+          "neutralContentDeviation": 9.73853175878503E-09
+        },
+        {
+          "clusterEigenvalue": 6.016088485431798,
+          "neutralContent": 0.9999999883792342,
+          "neutralContentDeviation": 1.1620765794084775E-08
+        }
+      ]
+    }
+  ],
+  "sourceEvidence": {
+    "phase394SummaryPath": "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/positive_bosonic_spectrum_backreaction_construction_summary.json",
+    "phase395SummaryPath": "studies/phase395_source_current_axis_structure_gauge_covariance_probe_001/output/source_current_axis_structure_gauge_covariance_probe_summary.json",
+    "phase256SummaryPath": "studies/phase256_observed_field_extraction_intake_contract_001/output/observed_field_extraction_intake_contract_summary.json",
+    "phase394WorkdirModes": "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir/spectra/modes",
+    "backgroundStateDir": "studies/phase12_joined_calculation_001/output/background_family/background_states"
+  },
+  "decision": "The first gauge-invariant observed-field-extraction skeleton is materialized on the control branch: the invariant-axis/charged-plane separation relative to the background symmetric-ansatz direction n_omega is exactly gauge-invariant (verified under simultaneous rotations at machine precision), and EVERY exact su(2) triplet of the recomputed positive bosonic spectrum splits as one neutral plus one charged pair (cluster neutral content 1.0 within tolerance on both backgrounds). This is the discrete residual-U(1) skeleton of {Z-like, W-pair-like} sector classification, built from invariants as Phase395 requires. It cannot fill any Phase256 contract field: the su(2)-only branch has no hypercharge, photon mixing, weak angle, scalar sector, physical vacuum, or scale/pole/GeV lineage, and the construction is study-defined rather than theorem-backed. The structural prerequisite now exists; the contract remains fail-closed awaiting the genuine electroweak embedding and source-lineage artifacts."
+}
