@@ -35,12 +35,12 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase397 work:
+Current gate status after the Phase398 work:
 
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=190`,
+  `objectiveAchieved=False`, `checklistPassedCount=191`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -70,12 +70,14 @@ Current gate status after the Phase397 work:
 - Phase396:
   `tripletNeutralChargedSplitObserved=True` (all 68 triplets, exact)
 - Phase397:
-  `parametrizedU1ExtensionNeutralMixingUnderdeterminationProbePassed=True`,
-  `su2NeutralSourceChannelEmpty=True`,
   `neutralMixingElementVanishesInFermionBilinearChannel=True`,
-  `photonZSeparationUnderdetermined=True`,
-  `hyperchargeAssignmentsDerived=False`,
-  `canFillPhase256ObservedFieldExtractionContract=False`
+  `photonZSeparationUnderdetermined=True`
+- Phase398:
+  `vo6Vo7ControlBranchCompletionLedgerAuditPassed=True`,
+  `vo6ControlBranchComponentsComplete=True` (5/5),
+  `vo7ControlBranchComponentsComplete=True` (4/4, coupled stationarity partial),
+  `electroweakChainComponentsComplete=True` (3/3),
+  `physicalCompletionStillMissing=True` (8-item gap ledger)
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -96,66 +98,61 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work (2026-06-10, after Phase397) was the external scalar-sector
-source survey recorded in the journal: no GU-native scalar-sector or
-hypercharge publication exists (the Cox Geometric Unity I paper remains the
-only GU-native primary source, already fully audited by Phase386/387); the
-new external preprint arXiv:2602.19151 (SO(3,3) BF gravity+electroweak,
-2026) was catalogued in the ledger (SO33-BF-GRAVITY-ELECTROWEAK.md) and
-found to IMPORT the Higgs mechanism and hypercharge rather than derive
-them - externally corroborating the Phase397 closing diagnosis. Before
-that, the latest phase was Phase397:
+The latest work added Phase398, the v29 VO-6/VO-7 control-branch completion
+ledger audit:
 
 - Study:
-  `studies/phase397_parametrized_u1_extension_neutral_mixing_underdetermination_probe_001`
-- Project:
-  `Phase397ParametrizedU1ExtensionNeutralMixingUnderdeterminationProbe.csproj`
+  `studies/phase398_vo6_vo7_control_branch_completion_ledger_audit_001`
+- Project: `Phase398Vo6Vo7ControlBranchCompletionLedgerAudit.csproj`
 - Study note: `STUDY.md`
-- Implementation note: `docs/Phases/Implementation/IMPLEMENTATION_P397.md`
+- Implementation note: `docs/Phases/Implementation/IMPLEMENTATION_P398.md`
 - Outputs:
-  `studies/phase397_parametrized_u1_extension_neutral_mixing_underdetermination_probe_001/output/parametrized_u1_extension_neutral_mixing_underdetermination_probe.json`
+  `studies/phase398_vo6_vo7_control_branch_completion_ledger_audit_001/output/vo6_vo7_control_branch_completion_ledger_audit.json`
   and `..._summary.json`
 
-Phase397 materialized per-edge u(1) variation blocks (charge q explicitly
-underived; Hermiticity exact), the extended 4-dim carrier with
-residual-U(1) charges {0, +-1, 0}, the extended 4x4 block Gram, and the
-sector source channels:
-
-- Z-like channel sourceless (fraction <= 0.0023); u(1) channel nonzero.
-- Fermion-bilinear neutral mixing vanishes (ratio <= 4.5e-9).
-- Photon/Z separation underdetermined; named gap {hypercharge,
-  coupling ratio, scalar sector}.
+Phase398 reads the summaries of Phases 371/372/389/390/392-397 and
+machine-checks the component ledger: VO-6 5/5 verified (first-variation
+coverage, adjoint conventions, operator domain, solved converged modes,
+coupling terms); VO-7 4/4 verified (mixed blocks, gauge-compatibility
+identities, coupled stationarity PARTIAL [first-order only], effective
+source operator); EW chain 3/3 verified. The physical completion is an
+8-item machine-recorded gap ledger headed by the symmetry-breaking
+scalar/VEV sector and the hypercharge/coupling lineage. Earlier the same
+day, the external scalar-sector survey catalogued arXiv:2602.19151
+(SO33-BF-GRAVITY-ELECTROWEAK.md): it imports rather than derives the Higgs
+sector, corroborating the closing diagnosis.
 
 ### Integration Points Already Updated
 
-Phase397 (like Phase388-396) is wired into:
+Phase398 (like Phase388-397) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (both invocation blocks)
 - `studies/phase101_boson_prediction_package_001/Program.cs`
 - `studies/phase202_boson_objective_completion_audit_001/Program.cs`
   (checklist item
-  `parametrized-u1-extension-neutral-mixing-underdetermination-probe-materialized`)
+  `vo6-vo7-control-branch-completion-ledger-audit-materialized`)
 - `scripts/verify_boson_claim_integrity.sh`
 - Broad scanner exclusions: phase204, phase205, phase207, phase279,
   phase281, phase295, phase296
 
 Reference tracking was updated in `ExperimentReferences.md` and
-`docs/Reference/ExperimentReferences/DRESSING-FIELD-ELECTROWEAK-OBSERVED-VARIABLES.md`.
+`docs/Reference/ExperimentReferences/LOCAL-COMPLETION-V29-FERMIONIC-YUKAWA.md`
+(Phase398 completion-ledger section).
 The diagnosis journal entry is near the end of
 `docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md`.
 
 ### Validation Already Run
 
 ```bash
-dotnet run --project studies/phase397_parametrized_u1_extension_neutral_mixing_underdetermination_probe_001/Phase397ParametrizedU1ExtensionNeutralMixingUnderdeterminationProbe.csproj
+dotnet run --project studies/phase398_vo6_vo7_control_branch_completion_ledger_audit_001/Phase398Vo6Vo7ControlBranchCompletionLedgerAudit.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
 ./scripts/generate_validated_boson_predictions.sh
 ```
 
-The full generator ended with the Phase397 line, the Phase202 incomplete
-status (`checklistPassedCount=190`, `checklistFailedCount=3`), and the same
+The full generator ended with the Phase398 line, the Phase202 incomplete
+status (`checklistPassedCount=191`, `checklistFailedCount=3`), and the same
 claim-integrity status (`promotedPhysicalMassClaimCount=0`). All seven broad
 scanners still report zero intake-ready evidence.
 
@@ -188,21 +185,18 @@ contract fields, or remove a physical blocker on the VO-7 branch.
 
 The most useful next branches are:
 
-1. The scalar/symmetry-breaking sector: after Phase397, BOTH the photon/Z
-   mixing (Phase256) and any W/Z mass-asymmetry mechanism on this skeleton
-   must act through a scalar/VEV sector, which is exactly the missing
-   Phase201 Higgs scalar source row. The honest route is the physically
-   completed GU fermionic/scalar derivation (v29 obligations VO-6/VO-7) or
-   new theorem-level sources for the GU scalar sector - not further toy
-   construction.
-2. A complete W/Z/H source package: separate W/Z source rows, Higgs scalar
-   source row, weak-angle/coupling lineage, VEV/source scale, pole
-   extraction, and GeV normalization.
+1. The physical VO-6/VO-7 derivation against the Phase398 8-item gap
+   ledger, headed by the symmetry-breaking scalar/VEV sector (welded to
+   photon/Z mixing by Phase397) and the hypercharge/coupling lineage. Each
+   component solved should arrive through a new fail-closed phase that
+   names the Phase398 ledger row it discharges, proves target independence,
+   and lets the existing gates decide promotion.
+2. The remaining partial control-branch component: a self-consistent
+   coupled critical-point solve (the only VO-7 component not fully
+   verified; the Phase389/390/393/394 toolkit makes it constructible).
 3. Periodic external literature monitoring at checkpoint cadence (the
-   2026-06-10 survey found no GU-native scalar-sector source and catalogued
-   arXiv:2602.19151 as a non-promotable boundary source). The internal
-   toy-branch construction has reached its honest limit (Phase397 journal
-   entry records the closing diagnosis).
+   2026-06-10 survey found no GU-native scalar-sector source; the internal
+   toy-branch construction otherwise reached its honest limit).
 
 If a source or new derivation appears to satisfy any of these, create a new
 fail-closed phase rather than editing Phase201/Phase256 directly. The phase
@@ -217,10 +211,10 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -120 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase397|neutralMixingElementVanishes|photonZSeparationUnderdetermined" \
+rg -n "Phase398|vo6ControlBranchComponentsComplete|physicalGapLedger" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
   ExperimentReferences.md \
-  studies/phase397_parametrized_u1_extension_neutral_mixing_underdetermination_probe_001 \
+  studies/phase398_vo6_vo7_control_branch_completion_ledger_audit_001 \
   studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
 ```
 
@@ -233,11 +227,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase397 output JSON files, and commit a checkpoint
+force-add the ignored Phase398 output JSON files, and commit a checkpoint
 after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase397 u(1) extension underdetermination probe
+Add phase398 VO-6/VO-7 completion ledger audit
 ```

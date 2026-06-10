@@ -16302,3 +16302,42 @@ Unchanged from Phase397: the physically completed GU fermionic/scalar
 derivation (v29 obligations VO-6/VO-7) or a new theorem-level GU-native
 source for the scalar sector and hypercharge embedding. External
 literature monitoring should continue at checkpoint cadence.
+
+## 2026-06-10 - Phase398: VO-6/VO-7 Control-Branch Completion Ledger
+
+### Context
+
+Phases 389-397 materialized the v29 VO-6/VO-7 obligation components
+piecemeal. Phase398 consolidates them into a machine-checked completion
+ledger - the start-checklist for the physical derivation effort.
+
+### Result
+
+- VO-6 control-branch components: 5/5 verified (first-variation coverage,
+  adjoint conventions, operator domain, solved converged modes with sharp
+  Ward, coupling terms).
+- VO-7 control-branch components: 4/4 verified (mixed linearization blocks,
+  exact gauge-compatibility identities with M_psi conjugation, coupled
+  stationarity - explicitly PARTIAL: first-order picture proven,
+  self-consistent coupled solve absent - and the effective source
+  operator).
+- Electroweak chain: 3/3 verified (gauge-covariant axis structure, exact
+  sector skeleton, mixing machinery with the named gap).
+- Physical gap ledger (8 items, machine-recorded): physical M_psi branch;
+  completed GU fermionic action with explicit Yukawa; physical coupled
+  Hessian; self-consistent coupled critical point; symmetry-breaking
+  scalar/VEV sector; hypercharge/coupling-ratio lineage; 4D observed
+  vacuum; scale/pole/GeV lineage.
+
+### Validation
+
+- Targeted Phase398 run passed; Phase101 includes the block; Phase202:
+  `checklistPassedCount=191`, `checklistFailedCount=3`; claim integrity
+  verified with `promotedPhysicalMassClaimCount=0`.
+
+### Standing Next Work
+
+The physical VO-6/VO-7 derivation against the 8-item gap ledger, plus
+literature monitoring at checkpoint cadence. Each physical component solved
+should be brought in through a new fail-closed phase referencing the
+Phase398 ledger row it discharges.

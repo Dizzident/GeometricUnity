@@ -169,3 +169,16 @@ not merely the typed placeholders.
   target-blind carrier-axis-to-observed photon/W/Z/H namespace theorem or a
   source theorem explaining why the physical W row must use the Phase379
   suppressed carrier axis.
+
+## Phase398 Completion Ledger
+
+As of 2026-06-10, every VO-6 component (first-variation coverage, adjoint
+conventions, operator domain, solved converged modes, coupling terms) and
+every VO-7 component (mixed linearization blocks, gauge-compatibility
+identities, coupled stationarity [partial: first-order only], effective
+source operator) is verified at the discrete control-branch level
+(Phase398 machine-checked ledger). The physical completion remains an
+8-item gap ledger headed by the symmetry-breaking scalar/VEV sector and the
+hypercharge/coupling lineage. VO-6/VO-7 remain OPEN as physical
+obligations; the control-branch artifacts are the templates, not the
+solutions.

@@ -536,6 +536,7 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath.Contains("studies/phase395_source_current_axis_structure_gauge_covariance_probe_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase396_gauge_invariant_neutral_charged_sector_separation_probe_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase397_parametrized_u1_extension_neutral_mixing_underdetermination_probe_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase398_vo6_vo7_control_branch_completion_ledger_audit_001/", StringComparison.Ordinal)
     || normalizedPath == "studies/phase101_boson_prediction_package_001/Program.cs"
     || normalizedPath == "studies/phase202_boson_objective_completion_audit_001/Program.cs"
     || normalizedPath == "studies/phase204_boson_source_lineage_candidate_scan_001/Program.cs"

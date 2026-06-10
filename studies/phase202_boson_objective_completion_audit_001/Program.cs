@@ -163,6 +163,7 @@ const string Phase394Path = "studies/phase394_positive_bosonic_spectrum_backreac
 const string Phase395Path = "studies/phase395_source_current_axis_structure_gauge_covariance_probe_001/output/source_current_axis_structure_gauge_covariance_probe_summary.json";
 const string Phase396Path = "studies/phase396_gauge_invariant_neutral_charged_sector_separation_probe_001/output/gauge_invariant_neutral_charged_sector_separation_probe_summary.json";
 const string Phase397Path = "studies/phase397_parametrized_u1_extension_neutral_mixing_underdetermination_probe_001/output/parametrized_u1_extension_neutral_mixing_underdetermination_probe_summary.json";
+const string Phase398Path = "studies/phase398_vo6_vo7_control_branch_completion_ledger_audit_001/output/vo6_vo7_control_branch_completion_ledger_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -359,6 +360,7 @@ using var phase394 = File.Exists(Phase394Path) ? JsonDocument.Parse(File.ReadAll
 using var phase395 = File.Exists(Phase395Path) ? JsonDocument.Parse(File.ReadAllText(Phase395Path)) : null;
 using var phase396 = File.Exists(Phase396Path) ? JsonDocument.Parse(File.ReadAllText(Phase396Path)) : null;
 using var phase397 = File.Exists(Phase397Path) ? JsonDocument.Parse(File.ReadAllText(Phase397Path)) : null;
+using var phase398 = File.Exists(Phase398Path) ? JsonDocument.Parse(File.ReadAllText(Phase398Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -4860,6 +4862,28 @@ var parametrizedU1ExtensionNeutralMixingUnderdeterminationProbePassed = parametr
     && JsonBool(phase397.RootElement, "phase201TemplateMutated") is false
     && JsonInt(phase397.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
     && JsonInt(phase397.RootElement, "acceptedContractFieldCount") == 0;
+var vo6Vo7ControlBranchCompletionLedgerAuditMaterialized = phase398 is not null;
+var vo6Vo7ControlBranchCompletionLedgerAuditPassed = vo6Vo7ControlBranchCompletionLedgerAuditMaterialized
+    && JsonBool(phase398!.RootElement, "vo6Vo7ControlBranchCompletionLedgerAuditPassed") is true
+    && JsonBool(phase398.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase398.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase398.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase398.RootElement, "applicationSubjectKind") == "vo6-vo7-control-branch-completion-ledger-audit"
+    && JsonBool(phase398.RootElement, "vo6ControlBranchComponentsComplete") is true
+    && JsonBool(phase398.RootElement, "vo7ControlBranchComponentsComplete") is true
+    && JsonBool(phase398.RootElement, "coupledStationarityRemainsPartial") is true
+    && JsonBool(phase398.RootElement, "electroweakChainComponentsComplete") is true
+    && JsonBool(phase398.RootElement, "physicalCompletionStillMissing") is true
+    && JsonBool(phase398.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase398.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase398.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase398.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase398.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase398.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase398.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase398.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase398.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase398.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -7012,6 +7036,14 @@ var checklist = new[]
             ? $"parametrizedU1ExtensionNeutralMixingUnderdeterminationProbePassed={JsonBool(phase397!.RootElement, "parametrizedU1ExtensionNeutralMixingUnderdeterminationProbePassed")}; targetBlind={JsonBool(phase397.RootElement, "targetBlindConstruction")}; machineryMaterialized={JsonBool(phase397.RootElement, "neutralMixingMachineryMaterialized")}; photonZUnderdetermined={JsonBool(phase397.RootElement, "photonZSeparationUnderdetermined")}; su2NeutralSourceEmpty={JsonBool(phase397.RootElement, "su2NeutralSourceChannelEmpty")}; bilinearMixingVanishes={JsonBool(phase397.RootElement, "neutralMixingElementVanishesInFermionBilinearChannel")}; hyperchargeDerived={JsonBool(phase397.RootElement, "hyperchargeAssignmentsDerived")}; canFillPhase256ObservedFieldExtractionContract={JsonBool(phase397.RootElement, "canFillPhase256ObservedFieldExtractionContract")}; decision={JsonString(phase397.RootElement, "decision")}"
             : "Phase397 artifact not materialized",
         Phase397Path),
+    new ObjectiveChecklistItem(
+        "vo6-vo7-control-branch-completion-ledger-audit-materialized",
+        "Consolidate the v29 VO-6/VO-7 obligation components into a machine-checked control-branch completion ledger with the physical gap enumeration.",
+        vo6Vo7ControlBranchCompletionLedgerAuditPassed ? "passed" : "failed",
+        vo6Vo7ControlBranchCompletionLedgerAuditMaterialized
+            ? $"vo6Vo7ControlBranchCompletionLedgerAuditPassed={JsonBool(phase398!.RootElement, "vo6Vo7ControlBranchCompletionLedgerAuditPassed")}; targetBlind={JsonBool(phase398.RootElement, "targetBlindConstruction")}; vo6Complete={JsonBool(phase398.RootElement, "vo6ControlBranchComponentsComplete")}; vo7Complete={JsonBool(phase398.RootElement, "vo7ControlBranchComponentsComplete")}; coupledStationarityPartial={JsonBool(phase398.RootElement, "coupledStationarityRemainsPartial")}; ewChainComplete={JsonBool(phase398.RootElement, "electroweakChainComponentsComplete")}; physicalCompletionStillMissing={JsonBool(phase398.RootElement, "physicalCompletionStillMissing")}; canFillPhase201WzContract={JsonBool(phase398.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase398.RootElement, "decision")}"
+            : "Phase398 artifact not materialized",
+        Phase398Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

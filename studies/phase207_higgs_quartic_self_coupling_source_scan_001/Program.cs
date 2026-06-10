@@ -429,6 +429,7 @@ static List<string> ClassifyBlockers(string lower, string file)
     AddIf(blockers, file.Contains("phase395_source_current_axis_structure_gauge_covariance_probe", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("phase396_gauge_invariant_neutral_charged_sector_separation_probe", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("phase397_parametrized_u1_extension_neutral_mixing_underdetermination_probe", StringComparison.Ordinal), "generated-diagnostic-artifact");
+    AddIf(blockers, file.Contains("phase398_vo6_vo7_control_branch_completion_ledger_audit", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P278.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P279.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P280.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
