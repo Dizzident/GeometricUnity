@@ -35,12 +35,12 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase396 work:
+Current gate status after the Phase397 work:
 
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=189`,
+  `objectiveAchieved=False`, `checklistPassedCount=190`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -68,61 +68,65 @@ Current gate status after the Phase396 work:
   `suppressedAxisIsGaugeCovariantNotCanonical=True`,
   `blockGramEffectivelyRankOne=True`
 - Phase396:
-  `gaugeInvariantNeutralChargedSectorSeparationProbePassed=True`,
-  `extractionGaugeInvarianceVerified=True`,
-  `tripletNeutralChargedSplitObserved=True`,
-  `totalTripletClusterCount=68`,
+  `tripletNeutralChargedSplitObserved=True` (all 68 triplets, exact)
+- Phase397:
+  `parametrizedU1ExtensionNeutralMixingUnderdeterminationProbePassed=True`,
+  `su2NeutralSourceChannelEmpty=True`,
+  `neutralMixingElementVanishesInFermionBilinearChannel=True`,
+  `photonZSeparationUnderdetermined=True`,
+  `hyperchargeAssignmentsDerived=False`,
   `canFillPhase256ObservedFieldExtractionContract=False`
 
-Interpretation: the gauge-invariant sector skeleton is COMPLETE on the
-control branch. Phase395 explained the axis structure (rank-one response in
-the charged plane orthogonal to the symmetric-ansatz axis n_omega;
-gauge-covariant, not canonical). Phase396 then materialized the simplest
-gauge-invariant extraction (neutral fraction relative to n_omega; exactly
-invariant at 7.8e-16) and found the residual-U(1) multiplet structure is
-EXACT: all 68 bosonic su(2) triplets split as one neutral plus one charged
-pair (deviation <= 1.9e-7), and the 18-dim kernel splits 6+12. This is the
-discrete skeleton of {Z-like, W-pair-like} classification, built from
-invariants only. The remaining gap to Phase256/Phase201 is irreducibly
-physical: an electroweak embedding (su(2) x U(1)_Y with hypercharge) on a
-four-dimensional observed-vacuum branch, plus coupling/VEV/pole/GeV lineage.
-These cannot be synthesized from the toy branch; they require the completed
-GU derivation chain (VO-6/VO-7 solved physically) or new theorem-level
-source material.
+Interpretation: the control-branch program has traced every
+electroweak-shaped gap to its physical root. The sector skeleton is exact
+(Phase396: all 68 triplets split 1 neutral + 1 charged pair). Phase397's
+u(1) extension then found: (1) the Z-like channel is SOURCELESS (su(2)-
+neutral source fraction <= 0.0023; the coupled residual is purely
+charged-sector); (2) the fermion-bilinear neutral mixing element VANISHES
+identically (trace selection rule) - photon/Z mixing requires a
+symmetry-breaking scalar/VEV sector, welding the Phase256 photon-projection
+gap to the Phase201 Higgs scalar-source gap, exactly as in the SM where
+W3-B mixing enters through the Higgs; (3) the photon/Z separation is a
+one-parameter family blocked by the named gap {hypercharge lineage,
+coupling-ratio lineage, scalar sector}. Internal toy-branch construction
+has reached its honest limit: the remaining requirements (scalar sector,
+hypercharge/coupling lineage, 4D observed vacuum, scale/pole/GeV) all live
+in the unsolved GU derivation chain (VO-6/VO-7 physically completed) or new
+theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work added Phase396:
+The latest work added Phase397:
 
 - Study:
-  `studies/phase396_gauge_invariant_neutral_charged_sector_separation_probe_001`
-- Project: `Phase396GaugeInvariantNeutralChargedSectorSeparationProbe.csproj`
+  `studies/phase397_parametrized_u1_extension_neutral_mixing_underdetermination_probe_001`
+- Project:
+  `Phase397ParametrizedU1ExtensionNeutralMixingUnderdeterminationProbe.csproj`
 - Study note: `STUDY.md`
-- Implementation note: `docs/Phases/Implementation/IMPLEMENTATION_P396.md`
+- Implementation note: `docs/Phases/Implementation/IMPLEMENTATION_P397.md`
 - Outputs:
-  `studies/phase396_gauge_invariant_neutral_charged_sector_separation_probe_001/output/gauge_invariant_neutral_charged_sector_separation_probe.json`
+  `studies/phase397_parametrized_u1_extension_neutral_mixing_underdetermination_probe_001/output/parametrized_u1_extension_neutral_mixing_underdetermination_probe.json`
   and `..._summary.json`
-- Precursor: reads the Phase394 working directory (run Phase394 first).
 
-Phase396 materialized the extraction f(b) = sum_e (b_e . n_omega)^2 / |b|^2
-and the basis-invariant cluster neutral content:
+Phase397 materialized per-edge u(1) variation blocks (charge q explicitly
+underived; Hermiticity exact), the extended 4-dim carrier with
+residual-U(1) charges {0, +-1, 0}, the extended 4x4 block Gram, and the
+sector source channels:
 
-- All 68 bosonic triplets: neutral content 1.0 (deviation <= 1.9e-7);
-  kernel splits exactly 6 neutral + 12 charged.
-- Extraction exactly gauge-invariant (7.8e-16).
-- Honest per-field Phase256 audit: zero of the 20 fields fillable on the
-  su(2)-only toy branch (recorded reasons: no U(1)_Y, no photon/Z mixing,
-  no weak angle, no scalar sector, no 4D vacuum, no scale/pole/GeV).
+- Z-like channel sourceless (fraction <= 0.0023); u(1) channel nonzero.
+- Fermion-bilinear neutral mixing vanishes (ratio <= 4.5e-9).
+- Photon/Z separation underdetermined; named gap {hypercharge,
+  coupling ratio, scalar sector}.
 
 ### Integration Points Already Updated
 
-Phase396 (like Phase388-395) is wired into:
+Phase397 (like Phase388-396) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (both invocation blocks)
 - `studies/phase101_boson_prediction_package_001/Program.cs`
 - `studies/phase202_boson_objective_completion_audit_001/Program.cs`
   (checklist item
-  `gauge-invariant-neutral-charged-sector-separation-probe-materialized`)
+  `parametrized-u1-extension-neutral-mixing-underdetermination-probe-materialized`)
 - `scripts/verify_boson_claim_integrity.sh`
 - Broad scanner exclusions: phase204, phase205, phase207, phase279,
   phase281, phase295, phase296
@@ -135,15 +139,15 @@ The diagnosis journal entry is near the end of
 ### Validation Already Run
 
 ```bash
-dotnet run --project studies/phase396_gauge_invariant_neutral_charged_sector_separation_probe_001/Phase396GaugeInvariantNeutralChargedSectorSeparationProbe.csproj
+dotnet run --project studies/phase397_parametrized_u1_extension_neutral_mixing_underdetermination_probe_001/Phase397ParametrizedU1ExtensionNeutralMixingUnderdeterminationProbe.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
 ./scripts/generate_validated_boson_predictions.sh
 ```
 
-The full generator ended with the Phase396 line, the Phase202 incomplete
-status (`checklistPassedCount=189`, `checklistFailedCount=3`), and the same
+The full generator ended with the Phase397 line, the Phase202 incomplete
+status (`checklistPassedCount=190`, `checklistFailedCount=3`), and the same
 claim-integrity status (`promotedPhysicalMassClaimCount=0`). All seven broad
 scanners still report zero intake-ready evidence.
 
@@ -176,21 +180,20 @@ contract fields, or remove a physical blocker on the VO-7 branch.
 
 The most useful next branches are:
 
-1. An electroweak embedding branch: extend the control construction from
-   su(2)-only to su(2) x U(1)_Y with hypercharge assignments (the repo has
-   su(2)/su(3) algebra factories; a u(1) extension plus a mixed embedding
-   would let the Phase396 neutral sector become a genuine photon/Z mixing
-   problem with a weak angle). This is the only route by which the now-exact
-   sector skeleton can address Phase256's electroweakGaugeEmbeddingId and
-   photonEigenstateProjectionId fields. Fail-closed: an embedding without
-   derived hypercharges and scales fills nothing.
+1. The scalar/symmetry-breaking sector: after Phase397, BOTH the photon/Z
+   mixing (Phase256) and any W/Z mass-asymmetry mechanism on this skeleton
+   must act through a scalar/VEV sector, which is exactly the missing
+   Phase201 Higgs scalar source row. The honest route is the physically
+   completed GU fermionic/scalar derivation (v29 obligations VO-6/VO-7) or
+   new theorem-level sources for the GU scalar sector - not further toy
+   construction.
 2. A complete W/Z/H source package: separate W/Z source rows, Higgs scalar
    source row, weak-angle/coupling lineage, VEV/source scale, pole
-   extraction, and GeV normalization - requires the completed GU derivation
-   chain (VO-6/VO-7 solved physically) or new theorem-level sources.
-3. Optional internal hygiene: re-express the Phase307/381/383 suppressed-axis
-   blockers in gauge-invariant language so future selector audits are
-   frame-independent.
+   extraction, and GeV normalization.
+3. External source survey for the GU scalar sector and hypercharge
+   embedding (primary sources only; update the reference ledger before
+   use). The internal toy-branch construction has reached its honest limit
+   (Phase397 journal entry records the closing diagnosis).
 
 If a source or new derivation appears to satisfy any of these, create a new
 fail-closed phase rather than editing Phase201/Phase256 directly. The phase
@@ -205,10 +208,10 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -120 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase396|tripletNeutralChargedSplitObserved|sector separation" \
+rg -n "Phase397|neutralMixingElementVanishes|photonZSeparationUnderdetermined" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
   ExperimentReferences.md \
-  studies/phase396_gauge_invariant_neutral_charged_sector_separation_probe_001 \
+  studies/phase397_parametrized_u1_extension_neutral_mixing_underdetermination_probe_001 \
   studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
 ```
 
@@ -221,11 +224,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase396 output JSON files, and commit a checkpoint
+force-add the ignored Phase397 output JSON files, and commit a checkpoint
 after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase396 gauge-invariant sector separation probe
+Add phase397 u(1) extension underdetermination probe
 ```

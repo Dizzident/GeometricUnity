@@ -395,7 +395,8 @@ static bool IsGeneratedAuditOrImplementationJson(string path) =>
     || path.Contains("studies/phase393_", StringComparison.Ordinal)
     || path.Contains("studies/phase394_", StringComparison.Ordinal)
     || path.Contains("studies/phase395_", StringComparison.Ordinal)
-    || path.Contains("studies/phase396_", StringComparison.Ordinal);
+    || path.Contains("studies/phase396_", StringComparison.Ordinal)
+    || path.Contains("studies/phase397_", StringComparison.Ordinal);
 
 sealed record ScanCandidate(
     string Path,

@@ -162,6 +162,7 @@ const string Phase393Path = "studies/phase393_coupled_stationarity_fermionic_sou
 const string Phase394Path = "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/positive_bosonic_spectrum_backreaction_construction_summary.json";
 const string Phase395Path = "studies/phase395_source_current_axis_structure_gauge_covariance_probe_001/output/source_current_axis_structure_gauge_covariance_probe_summary.json";
 const string Phase396Path = "studies/phase396_gauge_invariant_neutral_charged_sector_separation_probe_001/output/gauge_invariant_neutral_charged_sector_separation_probe_summary.json";
+const string Phase397Path = "studies/phase397_parametrized_u1_extension_neutral_mixing_underdetermination_probe_001/output/parametrized_u1_extension_neutral_mixing_underdetermination_probe_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -357,6 +358,7 @@ using var phase393 = File.Exists(Phase393Path) ? JsonDocument.Parse(File.ReadAll
 using var phase394 = File.Exists(Phase394Path) ? JsonDocument.Parse(File.ReadAllText(Phase394Path)) : null;
 using var phase395 = File.Exists(Phase395Path) ? JsonDocument.Parse(File.ReadAllText(Phase395Path)) : null;
 using var phase396 = File.Exists(Phase396Path) ? JsonDocument.Parse(File.ReadAllText(Phase396Path)) : null;
+using var phase397 = File.Exists(Phase397Path) ? JsonDocument.Parse(File.ReadAllText(Phase397Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -4832,6 +4834,32 @@ var gaugeInvariantNeutralChargedSectorSeparationProbePassed = gaugeInvariantNeut
     && JsonBool(phase396.RootElement, "phase201TemplateMutated") is false
     && JsonInt(phase396.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
     && JsonInt(phase396.RootElement, "acceptedContractFieldCount") == 0;
+var parametrizedU1ExtensionNeutralMixingUnderdeterminationProbeMaterialized = phase397 is not null;
+var parametrizedU1ExtensionNeutralMixingUnderdeterminationProbePassed = parametrizedU1ExtensionNeutralMixingUnderdeterminationProbeMaterialized
+    && JsonBool(phase397!.RootElement, "parametrizedU1ExtensionNeutralMixingUnderdeterminationProbePassed") is true
+    && JsonBool(phase397.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase397.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase397.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase397.RootElement, "applicationSubjectKind") == "parametrized-u1-extension-neutral-mixing-underdetermination-probe"
+    && JsonBool(phase397.RootElement, "neutralMixingMachineryMaterialized") is true
+    && JsonBool(phase397.RootElement, "photonZSeparationUnderdetermined") is true
+    && JsonBool(phase397.RootElement, "u1ExtensionHermitianVerified") is true
+    && JsonBool(phase397.RootElement, "su2NeutralSourceChannelEmpty") is true
+    && JsonBool(phase397.RootElement, "u1SourceChannelNonzero") is true
+    && JsonBool(phase397.RootElement, "neutralMixingElementVanishesInFermionBilinearChannel") is true
+    && JsonBool(phase397.RootElement, "hyperchargeAssignmentsDerived") is false
+    && JsonBool(phase397.RootElement, "couplingRatioDerived") is false
+    && JsonBool(phase397.RootElement, "weakMixingAngleSelected") is false
+    && JsonBool(phase397.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase397.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase397.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase397.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase397.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase397.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase397.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase397.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase397.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase397.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -6976,6 +7004,14 @@ var checklist = new[]
             ? $"gaugeInvariantNeutralChargedSectorSeparationProbePassed={JsonBool(phase396!.RootElement, "gaugeInvariantNeutralChargedSectorSeparationProbePassed")}; targetBlind={JsonBool(phase396.RootElement, "targetBlindConstruction")}; invarianceVerified={JsonBool(phase396.RootElement, "extractionGaugeInvarianceVerified")}; tripletSplitObserved={JsonBool(phase396.RootElement, "tripletNeutralChargedSplitObserved")}; tripletClusterCount={JsonInt(phase396.RootElement, "totalTripletClusterCount")}; canFillPhase256ObservedFieldExtractionContract={JsonBool(phase396.RootElement, "canFillPhase256ObservedFieldExtractionContract")}; canFillPhase201WzContract={JsonBool(phase396.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase396.RootElement, "decision")}"
             : "Phase396 artifact not materialized",
         Phase396Path),
+    new ObjectiveChecklistItem(
+        "parametrized-u1-extension-neutral-mixing-underdetermination-probe-materialized",
+        "Materialize the parametrized u(1) extension, measure the sector source channels, and record the photon/Z underdetermination and the vanishing fermion-bilinear neutral mixing.",
+        parametrizedU1ExtensionNeutralMixingUnderdeterminationProbePassed ? "passed" : "failed",
+        parametrizedU1ExtensionNeutralMixingUnderdeterminationProbeMaterialized
+            ? $"parametrizedU1ExtensionNeutralMixingUnderdeterminationProbePassed={JsonBool(phase397!.RootElement, "parametrizedU1ExtensionNeutralMixingUnderdeterminationProbePassed")}; targetBlind={JsonBool(phase397.RootElement, "targetBlindConstruction")}; machineryMaterialized={JsonBool(phase397.RootElement, "neutralMixingMachineryMaterialized")}; photonZUnderdetermined={JsonBool(phase397.RootElement, "photonZSeparationUnderdetermined")}; su2NeutralSourceEmpty={JsonBool(phase397.RootElement, "su2NeutralSourceChannelEmpty")}; bilinearMixingVanishes={JsonBool(phase397.RootElement, "neutralMixingElementVanishesInFermionBilinearChannel")}; hyperchargeDerived={JsonBool(phase397.RootElement, "hyperchargeAssignmentsDerived")}; canFillPhase256ObservedFieldExtractionContract={JsonBool(phase397.RootElement, "canFillPhase256ObservedFieldExtractionContract")}; decision={JsonString(phase397.RootElement, "decision")}"
+            : "Phase397 artifact not materialized",
+        Phase397Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

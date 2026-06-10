@@ -16196,3 +16196,57 @@ sector into a photon/Z mixing problem and give the weak angle a home;
 synthesized from the toy branch; they require either the completed GU
 derivation chain (v29 obligations VO-6/VO-7 solved physically) or new
 theorem-level source material.
+
+## 2026-06-10 - Phase397: u(1) Extension - Sourceless Z-Channel, Vanishing Bilinear Mixing, Named Photon/Z Gap
+
+### Context
+
+After Phase396's exact sector skeleton, the electroweak embedding was the
+named next branch. Hypercharge cannot be derived from the toy branch, so
+Phase397 materialized the parametrized u(1) machinery and measured what the
+extended structure actually carries.
+
+### Action
+
+- Added
+  `studies/phase397_parametrized_u1_extension_neutral_mixing_underdetermination_probe_001`:
+  per-edge u(1) variation blocks (charge q explicitly underived), the
+  extended 4-dim carrier {n_omega, charged pair, u(1)} with residual-U(1)
+  charges {0, +-1, 0}, the extended 4x4 block Gram, and the sector source
+  channels on the converged shell.
+- Wired into the generator, Phase101, Phase202, claim-integrity verifier,
+  and the seven broad scanner exclusions.
+
+### Result (three findings)
+
+1. **The Z-like channel is sourceless**: su(2)-neutral source fraction
+   <= 0.0023 per shell mode; the coupled-residual sources live in the
+   charged (W-like) pair. The u(1) channel source is nonzero per unit
+   charge.
+2. **The fermion-bilinear neutral mixing element vanishes identically**
+   (ratio <= 4.5e-9; trace selection rule tr(rho(n_omega)) = 0). Photon/Z
+   mixing cannot arise from fermion bilinears even with couplings supplied:
+   it requires a symmetry-breaking scalar/VEV sector - exactly the missing
+   Phase201 Higgs scalar source row. This mirrors the SM, where W3-B mixing
+   enters through the Higgs sector, and welds the Phase256 photon-projection
+   gap to the Phase201 scalar-sector gap.
+3. **Photon/Z underdetermination recorded**: the neutral eigenbasis is a
+   one-parameter family; the named blocking gap is {hypercharge lineage,
+   coupling-ratio lineage, symmetry-breaking scalar sector}.
+
+### Validation
+
+- Targeted Phase397 run passed; u(1) Hermiticity exact.
+- Phase101 includes the Phase397 block; Phase202:
+  `checklistPassedCount=190`, `checklistFailedCount=3`;
+  claim integrity verified with `promotedPhysicalMassClaimCount=0`.
+
+### Next Required Artifact
+
+The control-branch program has now traced every electroweak-shaped gap to
+its physical root: the scalar/VEV sector (for mixing AND scales), the
+hypercharge/coupling lineage (for the weak angle), and the four-dimensional
+observed vacuum. All three live in the unsolved GU derivation chain
+(VO-6/VO-7 physically completed) or in new theorem-level sources. Internal
+toy-branch construction has reached its honest limit; further phases should
+target source material or the physical GU branch itself.

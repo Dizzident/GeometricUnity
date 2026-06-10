@@ -103,3 +103,14 @@ splitting of the full bosonic spectrum (all 68 triplets -> {1 neutral,
 promote this skeleton to Phase256 evidence: the U(1)_Y extension (photon/Z
 mixing and the weak angle), the observed-field identification theorem, and
 scale/pole/GeV lineage. Until then the skeleton fills zero contract fields.
+
+## Phase397 Connection
+
+The parametrized u(1) extension sharpens what any dressing/FMS-style source
+must supply: the fermion-bilinear channel cannot mix the two neutral
+carriers (exact trace selection rule), so the observed photon/Z separation
+must come from a symmetry-breaking scalar sector plus derived hypercharge
+and coupling-ratio lineage. The toy branch's Z-like channel is also
+sourceless (the coupled residual is purely charged-sector), so any W/Z mass
+asymmetry mechanism on this skeleton would have to act through the scalar
+sector as well.

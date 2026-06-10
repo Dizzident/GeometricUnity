@@ -1,0 +1,180 @@
+{
+  "phaseId": "phase397-parametrized-u1-extension-neutral-mixing-underdetermination-probe",
+  "generatedAt": "2026-06-10T21:32:37.4228618+00:00",
+  "terminalStatus": "neutral-mixing-machinery-materialized-photon-z-separation-underdetermined-two-parameter-gap-named",
+  "parametrizedU1ExtensionNeutralMixingUnderdeterminationProbePassed": true,
+  "phase395PrecursorPassed": true,
+  "phase396PrecursorPassed": true,
+  "probeInternallyConsistent": true,
+  "neutralMixingMachineryMaterialized": true,
+  "photonZSeparationUnderdetermined": true,
+  "u1ExtensionHermitianVerified": true,
+  "su2NeutralSourceChannelEmpty": true,
+  "u1SourceChannelNonzero": true,
+  "neutralMixingElementVanishesInFermionBilinearChannel": true,
+  "hyperchargeAssignmentsDerived": false,
+  "couplingRatioDerived": false,
+  "weakMixingAngleSelected": false,
+  "denseSolveConverged": true,
+  "maxSu2NeutralSourceFraction": 0.0022544336704031567,
+  "maxU1HermiticityResidual": 0,
+  "minNeutralMixingRatio": 9.698008843930085E-10,
+  "maxNeutralMixingRatio": 4.487482731267769E-09,
+  "maxShellEigenResidual": 2.85613078170129E-13,
+  "neutralSourceEmptinessThreshold": 0.02,
+  "probeDefinitions": {
+    "u1Variation": "delta_D_u1[e]: forward block (i/h_e) Gamma_mu(e) (x) I_3 from tail to head, Hermitian-conjugate backward; fermion u(1) charge q is an explicit underived parameter (su(2)-adjoint matter carries no canonical hypercharge)",
+    "extendedCarrier": "per edge: n_omega (su(2) neutral) \u002B charged plane \u002B u(1); residual U(1)_{n_omega} charges {0, \u002B-1, 0}",
+    "extendedBlockGram": "4x4 aggregate of Re Tr(B_a^dagger B_b) over edges with a,b in {n_omega, charged_1, charged_2, u1} on the converged shell",
+    "neutralMixingRatio": "T[n_omega, u1] / sqrt(T[n_omega, n_omega] * T[u1, u1]) - the scale-free structural mixing element",
+    "sectorSources": "su(2)-neutral source fraction = |J . n_omega-channel|^2 / |J|^2 per shell mode; u(1) source J_u1,e = Re\u003Cpsi, delta_D_u1[e] psi\u003E per unit charge",
+    "underdetermination": "the photon/Z split is the choice of orthonormal eigenbasis in the 2-dim neutral space: a one-parameter family; selecting a member requires derived q and g\u0027/g"
+  },
+  "applicationSubjectKind": "parametrized-u1-extension-neutral-mixing-underdetermination-probe",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "ff2842606dfa2bcb2681f0c360adc0e3e0970aa5350d2b5ac3b82c3b0ba6ac46",
+  "expectedCoveragePresent": true,
+  "backgroundCount": 2,
+  "routeProvidesObservedElectroweakNamespaceMap": false,
+  "routeProvidesCanonicalGaugeAxisSelector": false,
+  "routeProvidesWeakAngleOrCouplingLineage": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesDirectTargetIndependentWzBridgeSourceLaw": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "the u(1) charge q is an explicit underived study parameter, not a hypercharge",
+    "no weak mixing angle is selected; the neutral eigenbasis family is left underdetermined",
+    "sector labels are residual-U(1) labels, not observed particle names",
+    "no coupling, VEV, scale, pole, or GeV lineage",
+    "toy control branch; not a four-dimensional observed vacuum",
+    "no Phase201 or Phase256 fill",
+    "no physical predictions"
+  ],
+  "backgrounds": [
+    {
+      "fermionBackgroundId": "bg-phase12-bg-a-20260315212202",
+      "persistedOmegaPath": "studies/phase12_joined_calculation_001/output/background_family/background_states/bg-phase12-bg-a-20260315212202_omega.json",
+      "shellSize": 4,
+      "shellEigenvalues": [
+        -0.0008427613458545568,
+        0.0008427613458688838,
+        0.0008427613458887643,
+        -0.0008427613459189185
+      ],
+      "maxShellEigenResidual": 2.85613078170129E-13,
+      "omegaInvariantAxis": [
+        0.5716150081281035,
+        0.585842883405708,
+        0.5744949072407817
+      ],
+      "maxU1HermiticityResidual": 0,
+      "extendedGramRowMajor4x4": [
+        0.0002805618344103045,
+        0.003918044759414185,
+        0.00228767060315447,
+        3.614122446152722E-14,
+        0.003918044759414185,
+        0.06569786943643717,
+        0.038342732831186055,
+        5.992429712666801E-13,
+        0.00228767060315447,
+        0.038342732831186055,
+        0.022409730843949656,
+        3.523566954157337E-13,
+        3.614122446152722E-14,
+        5.992429712666801E-13,
+        3.523566954157337E-13,
+        2.311913343339462E-07
+      ],
+      "neutralMixingRatio": 4.487482731267769E-09,
+      "perModeSu2NeutralSourceFractions": [
+        0.0022544336704031567,
+        0.0022544336699954616,
+        0.002254433669930027,
+        0.002254433670254222
+      ],
+      "maxSu2NeutralSourceFraction": 0.0022544336704031567,
+      "perModeU1SourceNorms": [
+        5.521658520200307E-05,
+        4.050775348318485E-05,
+        4.050775333980463E-05,
+        5.521658593202535E-05
+      ]
+    },
+    {
+      "fermionBackgroundId": "bg-phase12-bg-b-20260315212202",
+      "persistedOmegaPath": "studies/phase12_joined_calculation_001/output/background_family/background_states/bg-phase12-bg-b-20260315212202_omega.json",
+      "shellSize": 4,
+      "shellEigenvalues": [
+        -0.0009139800207631899,
+        -0.0009139800207672536,
+        0.0009139800207907077,
+        0.0009139800208134728
+      ],
+      "maxShellEigenResidual": 2.492981588530915E-13,
+      "omegaInvariantAxis": [
+        0.5676098774526086,
+        0.586002823359292,
+        0.5782903406016507
+      ],
+      "maxU1HermiticityResidual": 0,
+      "extendedGramRowMajor4x4": [
+        3.940763066987933E-05,
+        0.001394077044881217,
+        0.0008069520837848941,
+        -3.599623814612509E-15,
+        0.001394077044881217,
+        0.07553519955289577,
+        0.043833847057321525,
+        5.331387961304099E-14,
+        0.0008069520837848941,
+        0.043833847057321525,
+        0.025523405957327695,
+        2.7336850441667153E-14,
+        -3.599623814612509E-15,
+        5.331387961304099E-14,
+        2.7336850441667153E-14,
+        3.4959785300892423E-07
+      ],
+      "neutralMixingRatio": -9.698008843930085E-10,
+      "perModeSu2NeutralSourceFractions": [
+        0.0003387236313504041,
+        0.0003387236314499445,
+        0.00033872363134654577,
+        0.0003387236314153938
+      ],
+      "maxSu2NeutralSourceFraction": 0.0003387236314499445,
+      "perModeU1SourceNorms": [
+        8.169700289411733E-05,
+        8.169700297970065E-05,
+        0.00014092064487265845,
+        0.0001409206447040902
+      ]
+    }
+  ],
+  "sourceEvidence": {
+    "phase395SummaryPath": "studies/phase395_source_current_axis_structure_gauge_covariance_probe_001/output/source_current_axis_structure_gauge_covariance_probe_summary.json",
+    "phase396SummaryPath": "studies/phase396_gauge_invariant_neutral_charged_sector_separation_probe_001/output/gauge_invariant_neutral_charged_sector_separation_probe_summary.json",
+    "phase12Root": "studies/phase12_joined_calculation_001/output/background_family",
+    "backgroundStateDir": "studies/phase12_joined_calculation_001/output/background_family/background_states"
+  },
+  "decision": "The u(1) extension machinery is materialized on the control branch: the per-edge u(1) variation blocks are Hermitian and the extended carrier decomposes under the residual U(1)_{n_omega} into charges {0, \u002B-1, 0} with TWO neutral channels. Three sector findings sharpen the electroweak gap. First, the su(2)-neutral source channel is nearly EMPTY (max fraction 0.0023): the Z-like channel is sourceless on this branch, consistent with the Phase395 response direction being orthogonal to n_omega. Second, the u(1) source channel is nonzero per unit charge. Third and decisively, the structural neutral-mixing element of the extended block Gram VANISHES identically (ratio ~1e-9, a trace selection rule tr(rho(n_omega)) = 0): the two neutral channels are exactly decoupled in the fermion-bilinear channel, so photon/Z-style mixing CANNOT be generated there even with couplings supplied - it requires a symmetry-breaking scalar/VEV sector, which this branch lacks and which is precisely the missing Phase201 Higgs scalar source row. The photon/Z separation therefore remains a one-parameter family with no target-blind member, blocked by the named gap {hypercharge lineage, coupling-ratio lineage, symmetry-breaking scalar sector}. No weak angle is selected, no charge is physical, and no contract field is filled."
+}
