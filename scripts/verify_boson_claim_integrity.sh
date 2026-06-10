@@ -159,6 +159,7 @@ const paths = {
   phase387: "studies/phase387_current_cox_first_principles_i_full_text_contract_audit_001/output/current_cox_first_principles_i_full_text_contract_audit_summary.json",
   phase388: "studies/phase388_vo7_observed_electroweak_namespace_source_theorem_probe_001/output/vo7_observed_electroweak_namespace_source_theorem_probe_summary.json",
   phase389: "studies/phase389_vo7_mixed_linearization_gauge_compatibility_identity_probe_001/output/vo7_mixed_linearization_gauge_compatibility_identity_probe_summary.json",
+  phase390: "studies/phase390_converged_control_branch_fermion_mode_rebuild_001/output/converged_control_branch_fermion_mode_rebuild_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -389,6 +390,7 @@ const phase386 = requireFile(paths.phase386);
 const phase387 = requireFile(paths.phase387);
 const phase388 = requireFile(paths.phase388);
 const phase389 = requireFile(paths.phase389);
+const phase390 = requireFile(paths.phase390);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -4521,6 +4523,18 @@ if (sourceLineageMissing) {
   assert(phase389.sourceContractApplicationAllowed === false && phase389.canFillPhase201WzContract === false && phase389.canFillPhase201HiggsContract === false && phase389.canFillPhase256ObservedFieldExtractionContract === false, "Phase389 cannot fill Phase201 or Phase256 contracts.");
   assert(phase389.routePromotesWzMasses === false && phase389.routePromotesHiggsMass === false && phase389.routeCompletesBosonPredictions === false, "Phase389 cannot promote boson predictions.");
   assert(phase389.phase201TemplateMutated === false && phase389.fieldsAppliedToPhase201TemplateCount === 0 && phase389.acceptedContractFieldCount === 0, "Phase389 must not mutate or fill the Phase201 template.");
+  assert(phase390.convergedControlBranchFermionModeRebuildPassed === true, "Phase390 converged control-branch fermion mode rebuild must pass as a fail-closed control-branch audit.");
+  assert(phase390.targetBlindConstruction === true && phase390.physicalTargetsConsultedForConstruction === false, "Phase390 construction must remain target-blind.");
+  assert(typeof phase390.targetBlindConstructionHash === "string" && phase390.targetBlindConstructionHash.length === 64, "Phase390 must persist a target-blind construction hash.");
+  assert(phase390.applicationSubjectKind === "converged-control-branch-fermion-mode-rebuild-sharp-ward-probe", "Phase390 must classify its subject as the converged control-branch rebuild probe.");
+  assert(phase390.convergedControlBranchModesRebuilt === true && phase390.convergedControlBranchModesRebuiltCompletesVo7 === false, "Phase390 must rebuild converged modes without claiming VO-7 completion.");
+  assert(phase390.mPsiCompatibleGeneralizedControlBranchMaterialized === true && phase390.mPsiWeightCommutesWithGaugeAction === true, "Phase390 must materialize the M_psi-compatible generalized control branch with [M_psi, X_hat] = 0.");
+  assert(phase390.persistedPhase12ModeBranchUnconverged === true, "Phase390 must record that the persisted Phase12 mode branch is unconverged.");
+  assert(phase390.wardZeroCurrentSharplyTested === true && phase390.identityBranchConverged === true && phase390.meshVolumeBranchConverged === true, "Phase390 must verify the sharp pure-gauge Ward zero-current statement on both converged branches.");
+  assert(phase390.routeProvidesPhysicalMassPsiCompatibleBranch === false && phase390.routeProvidesCompletedMixedLinearizationBlocks === false && phase390.routeProvidesMixedLinearizationGaugeCompatibilityIdentities === false, "Phase390 must preserve the missing physical VO-7 requirements.");
+  assert(phase390.sourceContractApplicationAllowed === false && phase390.canFillPhase201WzContract === false && phase390.canFillPhase201HiggsContract === false && phase390.canFillPhase256ObservedFieldExtractionContract === false, "Phase390 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase390.routePromotesWzMasses === false && phase390.routePromotesHiggsMass === false && phase390.routeCompletesBosonPredictions === false, "Phase390 cannot promote boson predictions.");
+  assert(phase390.phase201TemplateMutated === false && phase390.fieldsAppliedToPhase201TemplateCount === 0 && phase390.acceptedContractFieldCount === 0, "Phase390 must not mutate or fill the Phase201 template.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

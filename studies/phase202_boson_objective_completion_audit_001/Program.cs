@@ -155,6 +155,7 @@ const string Phase386Path = "studies/phase386_current_cox_first_principles_i_sou
 const string Phase387Path = "studies/phase387_current_cox_first_principles_i_full_text_contract_audit_001/output/current_cox_first_principles_i_full_text_contract_audit_summary.json";
 const string Phase388Path = "studies/phase388_vo7_observed_electroweak_namespace_source_theorem_probe_001/output/vo7_observed_electroweak_namespace_source_theorem_probe_summary.json";
 const string Phase389Path = "studies/phase389_vo7_mixed_linearization_gauge_compatibility_identity_probe_001/output/vo7_mixed_linearization_gauge_compatibility_identity_probe_summary.json";
+const string Phase390Path = "studies/phase390_converged_control_branch_fermion_mode_rebuild_001/output/converged_control_branch_fermion_mode_rebuild_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -343,6 +344,7 @@ using var phase386 = File.Exists(Phase386Path) ? JsonDocument.Parse(File.ReadAll
 using var phase387 = File.Exists(Phase387Path) ? JsonDocument.Parse(File.ReadAllText(Phase387Path)) : null;
 using var phase388 = File.Exists(Phase388Path) ? JsonDocument.Parse(File.ReadAllText(Phase388Path)) : null;
 using var phase389 = File.Exists(Phase389Path) ? JsonDocument.Parse(File.ReadAllText(Phase389Path)) : null;
+using var phase390 = File.Exists(Phase390Path) ? JsonDocument.Parse(File.ReadAllText(Phase390Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -4643,6 +4645,36 @@ var vo7MixedLinearizationGaugeCompatibilityIdentityProbePassed = vo7MixedLineari
     && JsonBool(phase389.RootElement, "phase201TemplateMutated") is false
     && JsonInt(phase389.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
     && JsonInt(phase389.RootElement, "acceptedContractFieldCount") == 0;
+var convergedControlBranchFermionModeRebuildMaterialized = phase390 is not null;
+var convergedControlBranchFermionModeRebuildPassed = convergedControlBranchFermionModeRebuildMaterialized
+    && JsonBool(phase390!.RootElement, "convergedControlBranchFermionModeRebuildPassed") is true
+    && JsonBool(phase390.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase390.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase390.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase390.RootElement, "applicationSubjectKind") == "converged-control-branch-fermion-mode-rebuild-sharp-ward-probe"
+    && JsonBool(phase390.RootElement, "convergedControlBranchModesRebuilt") is true
+    && JsonBool(phase390.RootElement, "convergedControlBranchModesRebuiltCompletesVo7") is false
+    && JsonBool(phase390.RootElement, "mPsiCompatibleGeneralizedControlBranchMaterialized") is true
+    && JsonBool(phase390.RootElement, "mPsiWeightCommutesWithGaugeAction") is true
+    && JsonBool(phase390.RootElement, "persistedPhase12ModeBranchUnconverged") is true
+    && JsonBool(phase390.RootElement, "wardZeroCurrentSharplyTested") is true
+    && JsonBool(phase390.RootElement, "identityBranchConverged") is true
+    && JsonBool(phase390.RootElement, "meshVolumeBranchConverged") is true
+    && JsonBool(phase390.RootElement, "routeProvidesPhysicalMassPsiCompatibleBranch") is false
+    && JsonBool(phase390.RootElement, "routeProvidesCompletedMixedLinearizationBlocks") is false
+    && JsonBool(phase390.RootElement, "routeProvidesMixedLinearizationGaugeCompatibilityIdentities") is false
+    && JsonBool(phase390.RootElement, "routeProvidesPhysicalEffectiveActionHessian") is false
+    && JsonBool(phase390.RootElement, "routeProvidesObservedElectroweakNamespaceMap") is false
+    && JsonBool(phase390.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase390.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase390.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase390.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase390.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase390.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase390.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase390.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase390.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase390.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -6731,6 +6763,14 @@ var checklist = new[]
             ? $"vo7MixedLinearizationGaugeCompatibilityIdentityProbePassed={JsonBool(phase389!.RootElement, "vo7MixedLinearizationGaugeCompatibilityIdentityProbePassed")}; targetBlind={JsonBool(phase389.RootElement, "targetBlindConstruction")}; identityMaterialized={JsonBool(phase389.RootElement, "discreteControlBranchGaugeCompatibilityIdentityMaterialized")}; completesVo7={JsonBool(phase389.RootElement, "discreteControlBranchGaugeCompatibilityIdentityCompletesVo7")}; identityExact={JsonBool(phase389.RootElement, "discreteGaugeCompatibilityIdentityExact")}; globalEquivarianceExact={JsonBool(phase389.RootElement, "globalGaugeEquivarianceExactWithoutObstruction")}; wardContractionConsistent={JsonBool(phase389.RootElement, "pureGaugeWardContractionConsistent")}; wardEigenBoundSharp={JsonBool(phase389.RootElement, "wardEigenBoundSharp")}; totalDirectionCount={JsonInt(phase389.RootElement, "totalDirectionCount")}; exactIdentityPassedCount={JsonInt(phase389.RootElement, "exactIdentityPassedCount")}; canFillPhase201WzContract={JsonBool(phase389.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase389.RootElement, "decision")}"
             : "Phase389 artifact not materialized",
         Phase389Path),
+    new ObjectiveChecklistItem(
+        "converged-control-branch-fermion-mode-rebuild-materialized",
+        "Rebuild converged fermion modes on the identity-weight and mesh-volume M_psi control branches and verify the pure-gauge Ward zero-current statement sharply.",
+        convergedControlBranchFermionModeRebuildPassed ? "passed" : "failed",
+        convergedControlBranchFermionModeRebuildMaterialized
+            ? $"convergedControlBranchFermionModeRebuildPassed={JsonBool(phase390!.RootElement, "convergedControlBranchFermionModeRebuildPassed")}; targetBlind={JsonBool(phase390.RootElement, "targetBlindConstruction")}; modesRebuilt={JsonBool(phase390.RootElement, "convergedControlBranchModesRebuilt")}; completesVo7={JsonBool(phase390.RootElement, "convergedControlBranchModesRebuiltCompletesVo7")}; mPsiBranchMaterialized={JsonBool(phase390.RootElement, "mPsiCompatibleGeneralizedControlBranchMaterialized")}; mPsiCommutesWithGauge={JsonBool(phase390.RootElement, "mPsiWeightCommutesWithGaugeAction")}; persistedBranchUnconverged={JsonBool(phase390.RootElement, "persistedPhase12ModeBranchUnconverged")}; wardSharp={JsonBool(phase390.RootElement, "wardZeroCurrentSharplyTested")}; isolatedVertexCount={JsonInt(phase390.RootElement, "isolatedVertexCount")}; canFillPhase201WzContract={JsonBool(phase390.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase390.RootElement, "decision")}"
+            : "Phase390 artifact not materialized",
+        Phase390Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

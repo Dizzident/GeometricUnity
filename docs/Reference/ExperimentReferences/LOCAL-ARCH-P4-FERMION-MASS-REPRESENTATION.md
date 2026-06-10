@@ -153,3 +153,20 @@ persisted fermion modes are not tight eigenmodes of the persisted explicit
 base Dirac matrix (mode artifacts record `residualNorm ~ 12`), so Ward
 zero-current statements cannot be sharply tested on this branch until an
 `M_psi`-compatible branch with converged modes is rebuilt.
+
+## Phase390 Usage
+
+Phase390 rebuilds converged fermion modes on both control branches with an
+in-study complex Hermitian Jacobi solver: the identity-weight branch
+(eigensolve of the persisted base Dirac matrix) and the mesh-volume `M_psi`
+branch (`B = M^{-1/2} D M^{-1/2}`, `v = M^{-1/2} w`, `D v = lambda M v`).
+Eigen-residuals reach `3e-13`; the persisted Phase12 modes are confirmed to be
+non-eigen mixtures (relative residuals `12.1-18.5`, best overlap with any
+converged eigenvector `0.376`). The toy mesh's 4 isolated vertices give an
+exact 48-dimensional structural kernel per branch, excluded by the
+target-blind selection rule. `[M_psi, X_hat] = 0` holds exactly, so the
+mesh-volume branch carries the Phase389 gauge-compatibility identity by exact
+conjugation, and the sharp pure-gauge Ward zero-current statement holds on
+both rebuilt branches (max current `9.3e-13`). This closes the Phase372
+actionable obstruction at the control-branch level; it does not create a
+physical `M_psi`-compatible GU branch.

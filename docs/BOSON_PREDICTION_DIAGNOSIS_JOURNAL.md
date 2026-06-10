@@ -15673,3 +15673,81 @@ branch. Neither substitutes for the still-missing observed photon/W/Z/H
 namespace map, separate W/Z source rows, Higgs scalar-source row,
 weak-angle/coupling lineage, VEV/source scale, pole extraction, and GeV
 normalization.
+
+## 2026-06-10 - Phase390 Converged Control-Branch Mode Rebuild and Sharp Ward Probe
+
+### Context
+
+Phase389 disclosed two control-branch defects: the persisted Phase12 fermion
+modes are not tight eigenmodes of the persisted base Dirac matrix
+(`residualNorm ~ 12` recorded in the mode artifacts), so the pure-gauge Ward
+zero-current statement was not sharply testable; and the mesh-volume `M_psi`
+generalized branch was still blocked by the Phase372 actionable obstruction
+("Rebuild an M_psi-compatible Dirac branch and solve matching
+M_psi-compatible fermion modes").
+
+### Action
+
+- Added `studies/phase390_converged_control_branch_fermion_mode_rebuild_001`
+  with an in-study complex Hermitian Jacobi eigensolver.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P390.md`.
+- Wired Phase390 into the generator, Phase101 package, Phase202 completion
+  audit, claim-integrity verifier, and the seven broad scanner exclusion
+  lists.
+- Updated `ExperimentReferences.md` and the linked local detail notes.
+
+### Result
+
+- Phase390 passed as a fail-closed control-branch rebuild:
+  `convergedControlBranchFermionModeRebuildPassed=True`.
+- Converged modes rebuilt on both branches of both backgrounds:
+  eigen-residuals `<= 3.1e-13`, orthonormality at solver precision, Jacobi
+  converged in 10-11 sweeps per solve.
+- Kernel accounting: the toy mesh has `4` isolated vertices producing an
+  exact `48`-dimensional structural kernel per branch; the target-blind
+  selection excludes it and takes the 12 smallest-|lambda| nonzero
+  eigenpairs (kernel modes would make the Ward test vacuous).
+- Structural fact: `[M_psi, X_hat] = 0` exactly, so the Phase389
+  gauge-compatibility identity conjugates exactly onto the M_psi-compatible
+  generalized branch and the generalized Ward statement is valid.
+- Sharp pure-gauge Ward zero-current verified across all `4032`
+  direction-mode rows: max |current| `1.7e-14` (identity branch) and
+  `9.3e-13` (mesh-volume branch). The Phase389 sharpness caveat is resolved
+  on the rebuilt branches.
+- Persisted Phase12 mode branch confirmed unconverged: relative eigen
+  residuals `12.1 - 18.5`, best overlap of any persisted mode with any
+  single converged eigenvector only `0.376`. The persisted modes are
+  non-eigen mixtures; the Phases 376-388 shell-response chain used them as
+  fixed study-defined test vectors, which remains a valid diagnostic but is
+  not spectral physics.
+- Phase390 accepted zero Phase201 or Phase256 fields:
+  `routeProvidesPhysicalMassPsiCompatibleBranch=False` (mesh, backgrounds,
+  and M_psi remain toy/study-defined), `canFillPhase201WzContract=False`,
+  `convergedControlBranchModesRebuiltCompletesVo7=False`.
+
+### Validation
+
+- Targeted Phase390 run passed.
+- Phase101 package run passed and includes the Phase390 block:
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- Phase202 objective audit remains incomplete by design:
+  `objectiveAchieved=False`, `checklistPassedCount=183`,
+  `checklistFailedCount=3`.
+- Claim-integrity verification passed with `sourceLineageMissing=true`,
+  `wzMissingFieldCount=15`, `higgsMissingFieldCount=14`, and
+  `promotedPhysicalMassClaimCount=0`.
+
+### Next Required Artifact
+
+With converged modes and the M_psi-compatible generalized control branch in
+hand, the VO-7 branch's next constructive step is the coupled boson-fermion
+second-variation (mixed Hessian) on the rebuilt branch, using the Phase389
+identity as the gauge-compatibility template and replacing the study-defined
+shell-response Gram with an action-derived source operator. Separately, a
+re-run of the shell-response diagnostics on converged modes would show
+whether the Phase378 rank-3 carrier image and the Phase379 suppressed axis
+are properties of the physics or artifacts of the unconverged persisted
+modes — a cheap and decisive follow-up. None of this substitutes for the
+still-missing observed photon/W/Z/H namespace map, separate W/Z source rows,
+Higgs scalar-source row, weak-angle/coupling lineage, VEV/source scale, pole
+extraction, and GeV normalization.
