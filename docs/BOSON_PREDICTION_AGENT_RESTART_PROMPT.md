@@ -96,7 +96,15 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work added Phase397:
+The latest work (2026-06-10, after Phase397) was the external scalar-sector
+source survey recorded in the journal: no GU-native scalar-sector or
+hypercharge publication exists (the Cox Geometric Unity I paper remains the
+only GU-native primary source, already fully audited by Phase386/387); the
+new external preprint arXiv:2602.19151 (SO(3,3) BF gravity+electroweak,
+2026) was catalogued in the ledger (SO33-BF-GRAVITY-ELECTROWEAK.md) and
+found to IMPORT the Higgs mechanism and hypercharge rather than derive
+them - externally corroborating the Phase397 closing diagnosis. Before
+that, the latest phase was Phase397:
 
 - Study:
   `studies/phase397_parametrized_u1_extension_neutral_mixing_underdetermination_probe_001`
@@ -190,10 +198,11 @@ The most useful next branches are:
 2. A complete W/Z/H source package: separate W/Z source rows, Higgs scalar
    source row, weak-angle/coupling lineage, VEV/source scale, pole
    extraction, and GeV normalization.
-3. External source survey for the GU scalar sector and hypercharge
-   embedding (primary sources only; update the reference ledger before
-   use). The internal toy-branch construction has reached its honest limit
-   (Phase397 journal entry records the closing diagnosis).
+3. Periodic external literature monitoring at checkpoint cadence (the
+   2026-06-10 survey found no GU-native scalar-sector source and catalogued
+   arXiv:2602.19151 as a non-promotable boundary source). The internal
+   toy-branch construction has reached its honest limit (Phase397 journal
+   entry records the closing diagnosis).
 
 If a source or new derivation appears to satisfy any of these, create a new
 fail-closed phase rather than editing Phase201/Phase256 directly. The phase

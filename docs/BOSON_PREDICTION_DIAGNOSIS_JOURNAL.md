@@ -16250,3 +16250,55 @@ observed vacuum. All three live in the unsolved GU derivation chain
 (VO-6/VO-7 physically completed) or in new theorem-level sources. Internal
 toy-branch construction has reached its honest limit; further phases should
 target source material or the physical GU branch itself.
+
+## 2026-06-10 - External Scalar-Sector Source Survey (Post-Phase397)
+
+### Context
+
+Phase397 closed the internal toy-branch program with the diagnosis that the
+binding electroweak gap is {hypercharge lineage, coupling-ratio lineage,
+symmetry-breaking scalar sector}, all living in the unsolved GU derivation
+chain or new theorem-level sources. Per the operating rules, an external
+primary-source survey was run before any further phase work.
+
+### Survey Scope And Findings
+
+Searched current (2024-2026) primary material for: a GU-native scalar
+sector or hypercharge embedding derivation, a "Geometric Unity II" or
+matter/symmetry-breaking sequel, and new geometric-unification sources
+deriving the electroweak sector.
+
+1. No GU-native scalar-sector publication exists. The only GU-native
+   primary publication remains the Cox "Geometric Unity I" paper already
+   audited in full text by Phase386/387 (zero electroweak, weak-mixing,
+   hypercharge, Higgs, or GeV content; scaffold-only positive evidence).
+   No sequel covering matter or symmetry breaking has appeared as of
+   2026-06-10.
+2. New external source catalogued: arXiv:2602.19151 (Wesley, Singh,
+   Isidro 2026), "Gravity and electroweak sector from symmetry breaking of
+   an SO(3,3) BF theory" - MacDowell-Mansouri-type breaking to
+   SU(2) x SU(2) with the electroweak sector realized "through the
+   standard Higgs mechanism". Ledger row and detail note
+   SO33-BF-GRAVITY-ELECTROWEAK.md added. It IMPORTS the Higgs mechanism
+   and hypercharge structurally: no derived potential, VEV, weak angle,
+   poles, or GeV lineage, and it is not GU-native. It can fill zero
+   contract fields.
+3. Corroboration: even the most current geometric-unification preprint on
+   exactly this theme does not derive the scalar sector. The Phase397
+   closing diagnosis stands unchanged and is now externally corroborated:
+   the symmetry-breaking scalar sector is the binding underived gap across
+   both GU-native and external geometric-unification sources.
+
+### Gate Impact
+
+None. No phase logic changed; no contract fields filled;
+`promotedPhysicalMassClaimCount=0` preserved. The reference ledger and this
+journal were updated; the next full generator run will absorb the
+documentation-driven scan-count drift in the usual way.
+
+### Next Required Artifact
+
+Unchanged from Phase397: the physically completed GU fermionic/scalar
+derivation (v29 obligations VO-6/VO-7) or a new theorem-level GU-native
+source for the scalar sector and hypercharge embedding. External
+literature monitoring should continue at checkpoint cadence.
