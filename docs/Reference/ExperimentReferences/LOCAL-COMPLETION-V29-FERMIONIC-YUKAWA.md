@@ -136,6 +136,16 @@ a physical `M_psi` branch, completed VO-7 mixed linearization, physical action
 Hessian, observed photon/W/Z/H namespace map, canonical selector, suppressed
 axis theorem, separate W/Z source rows, Higgs scalar source, weak-angle or
 coupling lineage, VEV/source scale, pole extraction, and GeV normalization.
+Phase389 constructs and machine-verifies the discrete control-branch
+gauge-compatibility identity for the candidate mixed block,
+`[D(omega), X_hat] = delta_D[v(X)] + R(X)` with
+`v(X)_e = DeltaX_e + [omega_e, Xbar_e]` and the exact symmetric anticommutator
+obstruction `S_e = {rho(omega_e), rho(DeltaX_e)}/2`, across 168 gauge
+directions on both Phase12 backgrounds (residual exactly zero; global
+parameters exactly equivariant). This is the first artifact for the
+gauge-compatibility component named by VO-7, but it remains an identity-weight
+control-branch result: it supplies no physical `M_psi` branch, no completed
+fermionic action, no coupled physical Hessian, and no contract fields.
 
 ## Limitation
 
@@ -149,8 +159,10 @@ not merely the typed placeholders.
   scalable solver path or enabling production mesh weighting.
 - Replace the isolated-vertex toy mesh and derive a physical `M_psi` branch
   before using the projected-shell replay as physical source-law evidence.
-- Add gauge-compatibility identities only after a fixed GU fermionic operator
-  branch and Yukawa-like coupling map are supplied.
+- Add physical gauge-compatibility identities only after a fixed GU fermionic
+  operator branch and Yukawa-like coupling map are supplied; the Phase389
+  discrete control-branch identity is the template but not the physical
+  artifact.
 - Require an explicit scalar extraction theorem and stability evidence before
   applying the result to the Phase201 Higgs intake contract.
 - Revisit the VO-7 branch only when a new artifact supplies either a

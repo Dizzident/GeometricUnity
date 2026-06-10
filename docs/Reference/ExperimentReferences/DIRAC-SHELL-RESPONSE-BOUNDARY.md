@@ -97,3 +97,14 @@ prediction. Phase388 is a theorem-probe boundary audit, not a prediction.
   before any W/Z/H prediction attempt.
 - Supply a direct observed electroweak namespace/source theorem before applying
   any shell-response branch to Phase201 or Phase256.
+
+## Phase389 Usage
+
+Phase389 extends the boundary cluster with a gauge-compatibility result: the
+discrete commutator `[D(omega), X_hat]` decomposes exactly into the candidate
+mixed block `delta_D[v(X)]` along the discrete covariant differential plus an
+explicitly characterized symmetric anticommutator obstruction `R(X)`. The
+obstruction vanishes for constant gauge parameters (exact equivariance) and is
+a midpoint-discretization artifact for vertex-local parameters. This remains a
+study-defined diagnostic on the toy control branch and does not upgrade the
+shell-response Gram to a physical effective-action Hessian.

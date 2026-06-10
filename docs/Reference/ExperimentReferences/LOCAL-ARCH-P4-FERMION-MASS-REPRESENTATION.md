@@ -139,3 +139,17 @@ physical boson mass can be promoted from this convention alone.
   weighted reciprocal blocks as source-law evidence.
 - Add a target-blind observed photon/W/Z/H namespace theorem before treating
   carrier-axis response data as physical W/Z/H rows.
+
+## Phase389 Usage
+
+Phase389 uses the persisted Phase12 explicit base Dirac matrices, the persisted
+`background_states/{bg}_omega.json` connection coefficients, and the persisted
+fermion modes to construct and machine-verify the discrete gauge-compatibility
+identity `[D(omega), X_hat] = delta_D[v(X)] + R(X)` on the identity-weight
+control branch. Two representation facts were confirmed in passing: the
+persisted Dirac assembly is exactly linear in `omega`
+(`D = D_kin + delta_D[omega]`, reconstruction residual exactly zero), and the
+persisted fermion modes are not tight eigenmodes of the persisted explicit
+base Dirac matrix (mode artifacts record `residualNorm ~ 12`), so Ward
+zero-current statements cannot be sharply tested on this branch until an
+`M_psi`-compatible branch with converged modes is rebuilt.

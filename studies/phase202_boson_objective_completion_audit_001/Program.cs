@@ -154,6 +154,7 @@ const string Phase385Path = "studies/phase385_observed_electroweak_namespace_map
 const string Phase386Path = "studies/phase386_current_cox_first_principles_i_source_delta_audit_001/output/current_cox_first_principles_i_source_delta_audit_summary.json";
 const string Phase387Path = "studies/phase387_current_cox_first_principles_i_full_text_contract_audit_001/output/current_cox_first_principles_i_full_text_contract_audit_summary.json";
 const string Phase388Path = "studies/phase388_vo7_observed_electroweak_namespace_source_theorem_probe_001/output/vo7_observed_electroweak_namespace_source_theorem_probe_summary.json";
+const string Phase389Path = "studies/phase389_vo7_mixed_linearization_gauge_compatibility_identity_probe_001/output/vo7_mixed_linearization_gauge_compatibility_identity_probe_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -341,6 +342,7 @@ using var phase385 = File.Exists(Phase385Path) ? JsonDocument.Parse(File.ReadAll
 using var phase386 = File.Exists(Phase386Path) ? JsonDocument.Parse(File.ReadAllText(Phase386Path)) : null;
 using var phase387 = File.Exists(Phase387Path) ? JsonDocument.Parse(File.ReadAllText(Phase387Path)) : null;
 using var phase388 = File.Exists(Phase388Path) ? JsonDocument.Parse(File.ReadAllText(Phase388Path)) : null;
+using var phase389 = File.Exists(Phase389Path) ? JsonDocument.Parse(File.ReadAllText(Phase389Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -4611,6 +4613,36 @@ var vo7ObservedElectroweakNamespaceSourceTheoremProbePassed = vo7ObservedElectro
     && phase388.RootElement.TryGetProperty("phase201FieldsDefensiblyFilled", out var phase388FieldsDefensiblyFilled)
     && phase388FieldsDefensiblyFilled.ValueKind == JsonValueKind.Array
     && phase388FieldsDefensiblyFilled.GetArrayLength() == 0;
+var vo7MixedLinearizationGaugeCompatibilityIdentityProbeMaterialized = phase389 is not null;
+var vo7MixedLinearizationGaugeCompatibilityIdentityProbePassed = vo7MixedLinearizationGaugeCompatibilityIdentityProbeMaterialized
+    && JsonBool(phase389!.RootElement, "vo7MixedLinearizationGaugeCompatibilityIdentityProbePassed") is true
+    && JsonBool(phase389.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase389.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase389.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase389.RootElement, "applicationSubjectKind") == "vo7-mixed-linearization-gauge-compatibility-identity-probe"
+    && JsonBool(phase389.RootElement, "discreteControlBranchGaugeCompatibilityIdentityMaterialized") is true
+    && JsonBool(phase389.RootElement, "discreteControlBranchGaugeCompatibilityIdentityIsVo7BuildingBlock") is true
+    && JsonBool(phase389.RootElement, "discreteControlBranchGaugeCompatibilityIdentityCompletesVo7") is false
+    && JsonBool(phase389.RootElement, "baseDiracReconstructionFromPersistedOmegaPassed") is true
+    && JsonBool(phase389.RootElement, "discreteGaugeCompatibilityIdentityExact") is true
+    && JsonBool(phase389.RootElement, "globalGaugeEquivarianceExactWithoutObstruction") is true
+    && JsonBool(phase389.RootElement, "pureGaugeWardContractionConsistent") is true
+    && JsonBool(phase389.RootElement, "persistedModeEigenResidualsLarge") is true
+    && JsonBool(phase389.RootElement, "routeProvidesPhysicalMassPsiCompatibleBranch") is false
+    && JsonBool(phase389.RootElement, "routeProvidesCompletedMixedLinearizationBlocks") is false
+    && JsonBool(phase389.RootElement, "routeProvidesMixedLinearizationGaugeCompatibilityIdentities") is false
+    && JsonBool(phase389.RootElement, "routeProvidesPhysicalEffectiveActionHessian") is false
+    && JsonBool(phase389.RootElement, "routeProvidesObservedElectroweakNamespaceMap") is false
+    && JsonBool(phase389.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase389.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase389.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase389.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase389.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase389.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase389.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase389.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase389.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase389.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -6691,6 +6723,14 @@ var checklist = new[]
             ? $"vo7ObservedNamespaceSourceTheoremProbePassed={JsonBool(phase388!.RootElement, "vo7ObservedNamespaceSourceTheoremProbePassed")}; targetBlind={JsonBool(phase388.RootElement, "targetBlindConstruction")}; candidateTheoremPresent={JsonBool(phase388.RootElement, "candidateTheoremPresent")}; missingTheoremRequirementCount={JsonInt(phase388.RootElement, "missingTheoremRequirementCount")}; phase372Vo7BuildingBlock={JsonNestedNestedBool(phase388.RootElement, "localChainEvidence", "phase372", "phase372Vo7BuildingBlock")}; phase372CompletesVo7={JsonNestedNestedBool(phase388.RootElement, "localChainEvidence", "phase372", "phase372CompletesVo7")}; phase378Rank={JsonNestedNestedInt(phase388.RootElement, "localChainEvidence", "phase378", "phase378Rank")}; phase379SuppressedAxis={JsonNestedNestedInt(phase388.RootElement, "localChainEvidence", "phase379", "phase379SuppressedAxis")}; phase381SelectedWUsesSuppressed={JsonNestedNestedBool(phase388.RootElement, "localChainEvidence", "phase381", "phase381SelectedWUsesSuppressed")}; phase383EveryWUsesSuppressed={JsonNestedNestedBool(phase388.RootElement, "localChainEvidence", "phase383", "phase383EveryWUsesSuppressed")}; phase384NoLowSuppressedProxy={JsonNestedNestedBool(phase388.RootElement, "localChainEvidence", "phase384", "phase384NoLowSuppressedProxy")}; canFillPhase201WzContract={JsonBool(phase388.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase388.RootElement, "decision")}"
             : "Phase388 artifact not materialized",
         Phase388Path),
+    new ObjectiveChecklistItem(
+        "vo7-mixed-linearization-gauge-compatibility-identity-probe-materialized",
+        "Materialize and machine-verify the discrete gauge-compatibility identity [D(omega), X_hat] = delta_D[v(X)] + R(X) for the candidate VO-7 mixed block on the identity-weight control branch.",
+        vo7MixedLinearizationGaugeCompatibilityIdentityProbePassed ? "passed" : "failed",
+        vo7MixedLinearizationGaugeCompatibilityIdentityProbeMaterialized
+            ? $"vo7MixedLinearizationGaugeCompatibilityIdentityProbePassed={JsonBool(phase389!.RootElement, "vo7MixedLinearizationGaugeCompatibilityIdentityProbePassed")}; targetBlind={JsonBool(phase389.RootElement, "targetBlindConstruction")}; identityMaterialized={JsonBool(phase389.RootElement, "discreteControlBranchGaugeCompatibilityIdentityMaterialized")}; completesVo7={JsonBool(phase389.RootElement, "discreteControlBranchGaugeCompatibilityIdentityCompletesVo7")}; identityExact={JsonBool(phase389.RootElement, "discreteGaugeCompatibilityIdentityExact")}; globalEquivarianceExact={JsonBool(phase389.RootElement, "globalGaugeEquivarianceExactWithoutObstruction")}; wardContractionConsistent={JsonBool(phase389.RootElement, "pureGaugeWardContractionConsistent")}; wardEigenBoundSharp={JsonBool(phase389.RootElement, "wardEigenBoundSharp")}; totalDirectionCount={JsonInt(phase389.RootElement, "totalDirectionCount")}; exactIdentityPassedCount={JsonInt(phase389.RootElement, "exactIdentityPassedCount")}; canFillPhase201WzContract={JsonBool(phase389.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase389.RootElement, "decision")}"
+            : "Phase389 artifact not materialized",
+        Phase389Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

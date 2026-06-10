@@ -15593,3 +15593,83 @@ theorem-level artifact that either maps carrier axes to observed photon/W/Z/H
 fields or explains why the physical W row must use the Phase379-suppressed
 carrier axis, and it must also supply source, scale, pole-extraction, and unit
 lineages before any physical mass prediction can be promoted.
+
+## 2026-06-10 - Phase389 VO-7 Discrete Gauge-Compatibility Identity Probe
+
+### Context
+
+Phase388 left thirteen theorem requirements unmet for the v29/VO-7
+shell-response branch. VO-7 itself names two components: the precise mixed
+linearization blocks and their gauge-compatibility identities. Phase371/372
+materialized the candidate mixed block `delta_D[b]` and its reciprocal
+bilinear structure, but the gauge-compatibility identities had never been
+constructed or tested at any level. The open question was whether the
+discrete control branch admits exact gauge-compatibility identities for the
+candidate mixed block, and what the exact obstruction is.
+
+### Action
+
+- Added
+  `studies/phase389_vo7_mixed_linearization_gauge_compatibility_identity_probe_001`.
+- Added `docs/Phases/Implementation/IMPLEMENTATION_P389.md`.
+- Wired Phase389 into the generator, Phase101 package, Phase202 completion
+  audit, claim-integrity verifier, and the seven broad scanner exclusion
+  lists.
+- Updated `ExperimentReferences.md` and the linked detail notes for the v29
+  completion source, the Phase4 fermion representation architecture, and the
+  Dirac shell-response boundary.
+
+### Result
+
+- Phase389 passed as a fail-closed control-branch audit:
+  `vo7MixedLinearizationGaugeCompatibilityIdentityProbePassed=True`.
+- The persisted Phase12 base Dirac assembly is exactly linear in the
+  persisted background connection: `D(omega) = D_kin + delta_D[omega]` with
+  reconstruction residual exactly `0` on both backgrounds.
+- The discrete gauge-compatibility identity
+  `[D(omega), X_hat] = delta_D[v(X)] + R(X)` holds with residual exactly `0`
+  for all `168` vertex-local and global su(2) gauge directions, where
+  `v(X)_e = DeltaX_e + [omega_e, Xbar_e]` is the midpoint-averaged discrete
+  covariant differential and the obstruction is exactly
+  `S_e = {rho(omega_e), rho(DeltaX_e)}/2` per edge.
+- Global (constant) gauge parameters are exactly equivariant with zero
+  obstruction; vertex-local parameters carry a genuine obstruction of up to
+  about `3.6%` of the commutator norm, fully characterized as a
+  midpoint-discretization artifact.
+- The contracted pure-gauge Ward identity holds at machine precision
+  (max residual `6.7e-16`) across all `2016` direction-mode rows.
+- Boundary finding: the persisted Phase12 fermion modes are not tight
+  eigenmodes of the persisted explicit base Dirac matrix (mode artifacts
+  record `residualNorm ~ 12`), so the Ward zero-current statement is not
+  sharply tested on this branch (`wardEigenBoundSharp=False`,
+  `persistedModeEigenResidualsLarge=True`).
+- Phase389 accepted zero Phase201 or Phase256 fields and kept
+  `routeProvidesMixedLinearizationGaugeCompatibilityIdentities=False` for the
+  physical claim, `canFillPhase201WzContract=False`, and
+  `discreteControlBranchGaugeCompatibilityIdentityCompletesVo7=False`.
+
+### Validation
+
+- Targeted Phase389 run passed with all identity checks exact.
+- Phase101 package run passed and includes the Phase389 block:
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- Phase202 objective audit remains incomplete by design:
+  `objectiveAchieved=False`, `checklistPassedCount=182`, and
+  `checklistFailedCount=3`.
+- Claim-integrity verification passed with
+  `sourceLineageMissing=true`, `wzMissingFieldCount=15`,
+  `higgsMissingFieldCount=14`, and `promotedPhysicalMassClaimCount=0`.
+- All seven broad scanners still report zero intake-ready evidence with the
+  Phase389 exclusions in place.
+
+### Next Required Artifact
+
+The discrete gauge-compatibility template now exists, which sharpens the VO-7
+gap: the remaining blockers are physical, not structural. The next useful
+step on this branch is an `M_psi`-compatible Dirac rebuild with converged
+modes (so Ward zero-current statements become sharply testable), followed by
+a coupled boson-fermion second-variation (mixed Hessian) construction on that
+branch. Neither substitutes for the still-missing observed photon/W/Z/H
+namespace map, separate W/Z source rows, Higgs scalar-source row,
+weak-angle/coupling lineage, VEV/source scale, pole extraction, and GeV
+normalization.
