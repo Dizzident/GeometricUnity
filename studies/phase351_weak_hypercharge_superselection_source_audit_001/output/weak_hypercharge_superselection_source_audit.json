@@ -1,7 +1,7 @@
 {
   "phaseId": "phase351-weak-hypercharge-superselection-source-audit",
   "terminalStatus": "weak-hypercharge-superselection-source-audit-external-higgs-w-relation-not-gu-source",
-  "generatedAt": "2026-06-11T17:30:22.7146875+00:00",
+  "generatedAt": "2026-06-11T18:45:12.1926324+00:00",
   "weakHyperchargeSuperselectionSourceAuditPassed": true,
   "weakHyperchargeSuperselectionLeadPresent": true,
   "weakHyperchargeSuperselectionPrimarySourceReviewed": true,

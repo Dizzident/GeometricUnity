@@ -35,12 +35,12 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase402 work:
+Current gate status after the Phase403 work:
 
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=195`,
+  `objectiveAchieved=False`, `checklistPassedCount=196`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -105,6 +105,14 @@ Current gate status after the Phase402 work:
   cannot produce the SM neutral sector; doublet can),
   `zeroDimensionfulAnchorsInPrimary=True` (no GeV/246 anywhere in the
   primary draft)
+- Phase403:
+  `adjointDoubletSubstructureBranchingProbePassed=True`,
+  `su2AdjointHasNoDoubletBlock=True` (toy branch algebra too small -
+  explains the Phase397 underdetermination),
+  `su3AdjointContainsConjugateDoubletPair=True` (|Y0| = sqrt(3)/2),
+  `custodialPatternProducedByAdjointDoubletBlock=True` (identity residual
+  0.0), `embeddingTanSquared=3` (derived, recorded blind),
+  `couplingRatioLineageMechanismIdentified=True`
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -125,39 +133,35 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work added Phase402, the GU-draft scalar-route dictionary
-audit. The primary 2021 draft text is now STORED IN-REPO
-(`docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt`, PDF
-SHA256 pinned) and machine-audited: the draft's own location dictionary
-(eq. 12.28) places the Higgs potential at <Upsilon, Upsilon> and the
-Higgs Klein-Gordon equation at D^* Upsilon = 0 - EXACTLY the repo's
-production Mode-B objective and stationarity condition, verified
-numerically at the persisted backgrounds. Consequence: the Phase393-401
-toy-branch program has been characterizing the draft-claimed Higgs
-potential's vacuum manifold all along. The primary potential is
-non-negative with no free quartic coupling, so symmetry breaking must
-come from the Upsilon = 0 locus geometry (the explainer's negative-mass-
-squared mechanism is reconstruction, not primary). The representation
-discriminator (closed-form su(2)xu(1) mass patterns, non-physical
-couplings) shows the draft's Lie-algebra-valued (adjoint) scalar cannot
-produce the SM neutral sector while a doublet can - the binding
-scalar-sector gap is SHARPENED to exhibiting a doublet-equivalent
-substructure inside the pulled-back connection component, plus the
-entirely absent quantitative chain (zero GeV anchors in the primary).
-Study: `studies/phase402_gu_draft_scalar_route_dictionary_audit_001`
-(IMPLEMENTATION_P402.md). Before that, Phase401 characterized the kernel
-relaxation as non-perturbative, and Phase400/399 closed the quartic-lift
-and quadratic-model questions.
+The latest work added Phase403, the adjoint doublet-substructure
+branching probe - pure group theory from the repo's own structure
+constants. The su(2) adjoint is a pure j=1 triplet with no doublet block
+(the su(2)-only control branch CANNOT realize the doublet route, which
+explains the Phase397 photon/Z underdetermination at the algebra level);
+the su(3) adjoint branches as 3_0 + 1_0 + (2_{+Y0} + 2_{-Y0}) with
+|Y0| = sqrt(3)/2, so doublet blocks exist generically inside larger
+adjoints (the gauge-Higgs-unification mechanism) and the GU route is not
+structurally excluded. A VEV in the doublet block produces the SM-shaped
+custodial pattern EXACTLY (identity residual 0.0) with
+tan^2(theta_emb) = 3 DERIVED from the embedding and recorded blind - a
+theorem-level, target-independent MECHANISM for the hypercharge/
+coupling-ratio lineage row. Named remaining gaps: the GU-specific
+embedding chain (spin(6,4)/su(3,2) -> SM with ITS derived ratio), the
+vacuum-manifold VEV selection, and the quantitative chain. Study:
+`studies/phase403_adjoint_doublet_substructure_branching_probe_001`
+(IMPLEMENTATION_P403.md). Before that, Phase402 pinned the Higgs
+potential to the repo's Mode-B objective via the primary draft's
+dictionary and sharpened the doublet requirement.
 
 ### Integration Points Already Updated
 
-Phase402 (like Phase388-401) is wired into:
+Phase403 (like Phase388-402) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (both invocation blocks)
 - `studies/phase101_boson_prediction_package_001/Program.cs`
 - `studies/phase202_boson_objective_completion_audit_001/Program.cs`
   (checklist item
-  `gu-draft-scalar-route-dictionary-audit-materialized`)
+  `adjoint-doublet-substructure-branching-probe-materialized`)
 - `scripts/verify_boson_claim_integrity.sh`
 - Broad scanner exclusions: phase204, phase205, phase207, phase279,
   phase281, phase295, phase296
@@ -171,15 +175,15 @@ The diagnosis journal entry is near the end of
 ### Validation Already Run
 
 ```bash
-dotnet run --project studies/phase402_gu_draft_scalar_route_dictionary_audit_001/Phase402GuDraftScalarRouteDictionaryAudit.csproj
+dotnet run --project studies/phase403_adjoint_doublet_substructure_branching_probe_001/Phase403AdjointDoubletSubstructureBranchingProbe.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
 ./scripts/generate_validated_boson_predictions.sh
 ```
 
-The full generator ended with the Phase402 line, the Phase202 incomplete
-status (`checklistPassedCount=195`, `checklistFailedCount=3`), and the same
+The full generator ended with the Phase403 line, the Phase202 incomplete
+status (`checklistPassedCount=196`, `checklistFailedCount=3`), and the same
 claim-integrity status (`promotedPhysicalMassClaimCount=0`). All seven broad
 scanners still report zero intake-ready evidence.
 
@@ -231,11 +235,16 @@ The most useful next branches are:
    SM neutral sector - machine-verified discriminator), (b) the
    vacuum-manifold breaking geometry on a physical branch, (c) the
    quantitative chain (VEV scale/pole/GeV - zero anchors exist in the
-   primary). Candidate next internal work: a fail-closed probe of whether
-   the pulled-back connection component on the toy/physical branch
-   contains any doublet-equivalent (custodial-pattern-capable)
-   substructure under the available group actions, citing GU-DRAFT-2021
-   sections 9/12 and the stored text.
+   primary). The doublet-substructure probe is DONE (Phase403): doublet
+   blocks exist generically in larger adjoints with the custodial pattern
+   exact and the coupling ratio EMBEDDING-DERIVED (tan^2 = 3 for the
+   su(3) toy, recorded blind) - the ratio-lineage mechanism is
+   identified. Candidate next internal work: compute the GU-SPECIFIC
+   branching chain (the draft's spin(6,4)/su(3,2) -> SM reduction, per
+   the stored text and the Iceberg analysis section on the embedding
+   paths) and its embedding-derived coupling ratio, fail-closed and
+   recorded blind; separately, the vacuum-manifold mechanism that selects
+   a doublet-block VEV on the Upsilon = 0 locus.
 2. (CLOSED by Phase399 + Phase400 + Phase401: the quadratic-model coupled
    critical point is solved modulo flat directions, every flat ray is
    quartically lifted, and the attempted construction of the relaxed
@@ -265,10 +274,10 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -120 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase402|guDraftScalarRouteDictionaryAudit|routeRequiresDoubletEquivalentSubstructure" \
+rg -n "Phase403|adjointDoubletSubstructureBranchingProbe|couplingRatioLineageMechanismIdentified" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
   ExperimentReferences.md \
-  studies/phase402_gu_draft_scalar_route_dictionary_audit_001 \
+  studies/phase403_adjoint_doublet_substructure_branching_probe_001 \
   studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
 ```
 
@@ -281,11 +290,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase402 output JSON files, and commit a checkpoint
+force-add the ignored Phase403 output JSON files, and commit a checkpoint
 after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase402 gu draft scalar route dictionary audit
+Add phase403 adjoint doublet substructure branching probe
 ```

@@ -1,0 +1,145 @@
+{
+  "phaseId": "phase403-adjoint-doublet-substructure-branching-probe",
+  "generatedAt": "2026-06-11T19:11:01.1033182+00:00",
+  "terminalStatus": "adjoint-doublet-substructure-exists-in-larger-adjoint-embedding-derived-ratio-mechanism-identified",
+  "adjointDoubletSubstructureBranchingProbePassed": true,
+  "phase397PrecursorPassed": true,
+  "phase402PrecursorPassed": true,
+  "probeInternallyConsistent": true,
+  "su2AdjointIsPureTriplet": true,
+  "su2AdjointHasNoDoubletBlock": true,
+  "su2DoubletBlockCount": 0,
+  "su3BranchingDimensionsConsistent": true,
+  "su3AdjointContainsConjugateDoubletPair": true,
+  "su3DoubletBlockCount": 1,
+  "su3DoubletAbsHypercharge": 0.8660254037844386,
+  "custodialPatternProducedByAdjointDoubletBlock": true,
+  "custodialIdentityResidual": 0,
+  "masslessCount": 1,
+  "chargedPairDegenerate": true,
+  "neutralMixingPresent": true,
+  "embeddingTanSquared": 2.9999999999999996,
+  "embeddingCosSquared": 0.25000000000000006,
+  "doubletSubstructureExistsInLargerAdjoint": true,
+  "couplingRatioLineageMechanismIdentified": true,
+  "toyBranchPhotonZUnderdeterminationExplained": true,
+  "su3IsGuAlgebra": false,
+  "physicalEmbeddingChainDerived": false,
+  "physicalCouplingProvided": false,
+  "probeDefinitions": {
+    "branching": "ad-matrices built from LieAlgebraFactory structure constants; j-Casimir = -sum_a (ad T_a)^2 over the embedded su(2) (generators lambda_1..3), hypercharge magnitude from -(ad lambda_8)^2; blocks identified by simultaneous eigenspaces",
+    "custodial": "M^2_{AB} = \u003C[T_A, phi0],[T_B, phi0]\u003E over (T1,T2,T3,lambda_8) with phi0 = v lambda_4 in the doublet block; pattern checks are structural (massless count, charged degeneracy, neutral mixing, custodial identity) with the mixing angle READ OFF the same matrix",
+    "targetBlindness": "no measured electroweak value appears anywhere; the embedding-derived tan^2(theta_emb) is recorded as a structural output without comparison",
+    "su2Branching": "dim=3 j=1.000 |Y|=0.000000",
+    "su3Branching": "dim=3 j=1.000 |Y|=0.000000; dim=4 j=0.500 |Y|=0.866025; dim=1 j=0.000 |Y|=0.000000"
+  },
+  "applicationSubjectKind": "adjoint-doublet-substructure-branching-probe",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "f15e9040ccad6af1475c5671a4705fc6715f76823e192b46ef24f80bc42128ea",
+  "routeProvidesPhysicalMassPsiCompatibleBranch": false,
+  "routeProvidesCompletedFermionicAction": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesObservedElectroweakNamespaceMap": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesWeakAngleOrCouplingLineage": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "su(3) is a minimal study toy for the branching mechanism, NOT GU\u0027s algebra; the GU-specific embedding chain remains underived",
+    "the embedding-derived ratio is recorded blind; no comparison against measured electroweak values is made",
+    "no vacuum-manifold mechanism selects the doublet-block VEV here; that remains a named gap",
+    "no scales, poles, or GeV lineage exist in this probe",
+    "no Phase201 or Phase256 fill",
+    "no physical predictions"
+  ],
+  "su2Blocks": [
+    {
+      "dimension": 3,
+      "jCasimir": 2,
+      "jValue": 1,
+      "absHypercharge": 0,
+      "isDoublet": false
+    }
+  ],
+  "su3Blocks": [
+    {
+      "dimension": 3,
+      "jCasimir": 2,
+      "jValue": 1,
+      "absHypercharge": 0,
+      "isDoublet": false
+    },
+    {
+      "dimension": 4,
+      "jCasimir": 0.75,
+      "jValue": 0.5,
+      "absHypercharge": 0.8660254037844386,
+      "isDoublet": true
+    },
+    {
+      "dimension": 1,
+      "jCasimir": 0,
+      "jValue": 0,
+      "absHypercharge": 0,
+      "isDoublet": false
+    }
+  ],
+  "massMatrix": {
+    "basis": [
+      "T1",
+      "T2",
+      "T3",
+      "lambda8"
+    ],
+    "entries": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1.7320508075688772,
+      0,
+      0,
+      1.7320508075688772,
+      2.9999999999999996
+    ],
+    "eigenvalues": [
+      -8.12739661758407E-17,
+      1,
+      1,
+      4
+    ],
+    "chargedMassSquared": 1,
+    "neutralMassiveMassSquared": 3.9999999999999996
+  },
+  "sourceEvidence": {
+    "phase397SummaryPath": "studies/phase397_parametrized_u1_extension_neutral_mixing_underdetermination_probe_001/output/parametrized_u1_extension_neutral_mixing_underdetermination_probe_summary.json",
+    "phase402SummaryPath": "studies/phase402_gu_draft_scalar_route_dictionary_audit_001/output/gu_draft_scalar_route_dictionary_audit_summary.json",
+    "structureConstantSource": "src/Gu.Math/LieAlgebraFactory.cs (CreateSu2WithTracePairing, CreateSu3)",
+    "primaryDraftDictionary": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt (eq. 12.28)"
+  },
+  "decision": "The Phase402 doublet-equivalent sub-gap is now machine-characterized at the algebra level, from the repo\u0027s own structure constants. (1) The su(2) adjoint is a pure j = 1 triplet with NO doublet block: the existing su(2)-only control branch CANNOT realize the doublet route, which explains the Phase397 photon/Z underdetermination at the algebra level - the toy algebra is too small. (2) The su(3) adjoint branches as 3_0 \u002B 1_0 \u002B 2_{\u002BY0} \u002B 2_{-Y0} under the canonical su(2) x u(1) subalgebra: doublet blocks DO exist inside larger adjoints (the gauge-Higgs-unification mechanism), so the GU route (Lie-algebra-valued scalar from a large algebra) is NOT structurally excluded - it requires the larger-algebra branching. (3) A VEV in the doublet block produces the SM-shaped custodial pattern EXACTLY (one massless neutral, T3-Y mixing, degenerate charged pair, custodial identity at machine precision), with the neutral mixing ratio tan^2(theta_emb) DERIVED from the embedding rather than input - a theorem-level, target-independent MECHANISM for the hypercharge/coupling-ratio lineage row. The derived toy value is recorded blind; su(3) is a study toy, NOT GU\u0027s algebra; the GU-specific embedding chain (spin(6,4)/su(3,2) -\u003E SM with its derived ratio), the vacuum-manifold selection of the doublet-block VEV, and the entire quantitative chain remain the open gaps. Nothing is promoted; no contract field is filled."
+}

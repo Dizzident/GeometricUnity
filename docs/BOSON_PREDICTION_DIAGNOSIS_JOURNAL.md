@@ -16701,3 +16701,51 @@ component (the primary does not exhibit one); (b) the vacuum-manifold
 symmetry-breaking geometry of the Upsilon = 0 locus on a physical (not
 toy) branch; (c) the entirely absent quantitative chain (VEV scale,
 pole, GeV). Plus literature monitoring at checkpoint cadence.
+
+## 2026-06-11 - Phase403: Doublet Substructure Exists in Larger Adjoints; Ratio Mechanism Identified
+
+### Context
+
+Phase402 left the scalar-sector head sub-gap: exhibit a doublet-equivalent
+substructure inside the Lie-algebra-valued connection component. Phase403
+machine-checks the only GU-native mechanism - branching of a larger
+adjoint under an embedded su(2) x u(1) - from the repo's own structure
+constants.
+
+### Result
+
+- The su(2) adjoint is a pure j=1 triplet with NO doublet block: the
+  su(2)-only control branch CANNOT realize the doublet route - the
+  Phase397 photon/Z underdetermination is now EXPLAINED at the algebra
+  level (toy algebra too small).
+- The su(3) adjoint branches as 3_0 + 1_0 + (2_{+Y0} + 2_{-Y0}) with
+  |Y0| = sqrt(3)/2: doublet blocks exist generically inside larger
+  adjoints (the gauge-Higgs-unification mechanism), so the GU route is
+  NOT structurally excluded.
+- A VEV in the doublet block produces the SM-shaped custodial pattern
+  EXACTLY (massless count 1, charged degeneracy, T3-Y mixing, custodial
+  identity residual 0.0), with tan^2(theta_emb) = 3 DERIVED from the
+  embedding and recorded blind - a theorem-level, target-independent
+  MECHANISM for the hypercharge/coupling-ratio lineage row: in any
+  candidate embedding chain the ratio is fixed by group theory, not
+  fitted.
+- Named remaining gaps: the GU-specific embedding chain
+  (spin(6,4)/su(3,2) -> SM with ITS derived ratio), the vacuum-manifold
+  mechanism selecting the doublet-block VEV (welds to the Upsilon = 0
+  locus geometry), and the quantitative chain. su(3) is a study toy.
+- Study: studies/phase403_adjoint_doublet_substructure_branching_probe_001
+  (IMPLEMENTATION_P403.md).
+
+### Validation
+
+- Targeted Phase403 run passed; Phase101 includes the block; Phase202:
+  checklistPassedCount=196, checklistFailedCount=3; claim integrity
+  verified with promotedPhysicalMassClaimCount=0.
+
+### Standing Next Work
+
+The scalar-sector program now has a concrete derivational target: compute
+the GU-specific branching chain (the draft's spin(6,4) -> SM reduction)
+and its embedding-derived coupling ratio, fail-closed, citing
+GU-DRAFT-2021 and the stored text. Plus the standing physical gaps and
+literature monitoring at checkpoint cadence.

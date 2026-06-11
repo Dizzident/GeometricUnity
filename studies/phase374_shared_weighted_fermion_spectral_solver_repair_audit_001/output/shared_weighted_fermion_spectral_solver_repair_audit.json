@@ -1,6 +1,6 @@
 {
   "phaseId": "phase374-shared-weighted-fermion-spectral-solver-repair-audit",
-  "generatedAt": "2026-06-11T17:32:08.2454335+00:00",
+  "generatedAt": "2026-06-11T18:46:51.1329662+00:00",
   "terminalStatus": "shared-weighted-fermion-spectral-solver-repair-validated-discrete-only",
   "sharedWeightedFermionSpectralSolverRepairAuditPassed": true,
   "phase373ConventionCandidatePresent": true,

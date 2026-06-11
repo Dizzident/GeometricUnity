@@ -434,6 +434,7 @@ static List<string> ClassifyBlockers(string lower, string file)
     AddIf(blockers, file.Contains("phase400_full_bosonic_action_flat_direction_lift_probe", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("phase401_full_quartic_action_coupled_critical_point_construction", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("phase402_gu_draft_scalar_route_dictionary_audit", StringComparison.Ordinal), "generated-diagnostic-artifact");
+    AddIf(blockers, file.Contains("phase403_adjoint_doublet_substructure_branching_probe", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P278.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P279.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P280.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
