@@ -1,0 +1,436 @@
+{
+  "phaseId": "phase400-full-bosonic-action-flat-direction-lift-probe",
+  "generatedAt": "2026-06-11T14:11:16.7415113+00:00",
+  "terminalStatus": "full-bosonic-action-flat-direction-lift-probe-completed-all-lifted-with-saddle-directions",
+  "fullBosonicActionFlatDirectionLiftProbePassed": true,
+  "phase394PrecursorPassed": true,
+  "phase399PrecursorPassed": true,
+  "probeInternallyConsistent": true,
+  "expectedCoveragePresent": true,
+  "modeOrthonormalityVerified": true,
+  "kernelAnnihilationVerified": true,
+  "quadraticExactnessVerified": true,
+  "gnOperatorParityVerified": true,
+  "polarizationConsistencyVerified": true,
+  "liftVerdict": "all-lifted-with-saddle-directions",
+  "allFlatDirectionsLifted": true,
+  "anySaddleDirectionPresent": true,
+  "kernelObstructionFullyRelaxableAtHigherOrder": true,
+  "totalKernelDirections": 36,
+  "totalQuadraticallyLifted": 10,
+  "totalSaddle": 10,
+  "totalQuarticallyLifted": 16,
+  "totalExactlyFlat": 0,
+  "totalGaugeAlignedExactlyFlat": 0,
+  "minObstructionLiftedFraction": 1,
+  "maxObstructionExactlyFlatFraction": 0,
+  "maxResidualNormAtBackground": 1.7743171418372248E-09,
+  "maxAbsCurvatureFormEntry": 2.0913027627896888E-11,
+  "maxKernelEigenvalueBound": 2.5177919154216046E-15,
+  "maxSaddleDepth": 4.52233991119279E-19,
+  "minQuarticNorm": 0.0011809123881890938,
+  "quadraticCoefficientsResidualScaleBounded": true,
+  "physicalBosonicActionUsed": false,
+  "physicalCouplingProvided": false,
+  "probeDefinitions": {
+    "objective": "S(omega) = (1/2)\u003CUpsilon(omega), M_R Upsilon(omega)\u003E \u002B (lambda/2)||d^*(omega - ref)||^2 with lambda = 0.1 (the compute-spectrum operator\u0027s penalty); Upsilon = F - T^aug exactly quadratic in omega on the toy branch",
+    "exactExpansion": "for kernel directions (J k = 0, d^* k = 0): S(omega0 \u002B t k) - S0 = (t^2/2)\u003CUpsilon0, M Q(k,k)\u003E \u002B (t^4/8)\u003CQ(k,k), M Q(k,k)\u003E with zero truncation error",
+    "secondDifference": "Q(k,k) = (Upsilon(omega0 \u002B t k) \u002B Upsilon(omega0 - t k) - 2 Upsilon0)/t^2, exact for quadratic Upsilon at any t; cross-checked at t = 0.5 and t = 0.25",
+    "curvatureForm": "B_ij = \u003CUpsilon0, M Q(k_i, k_j)\u003E by polarization Q(u,v) = (Q(u\u002Bv,u\u002Bv) - Q(u,u) - Q(v,v))/2; this is exactly the term Gauss-Newton drops",
+    "classification": "per B-eigendirection d: beta \u003E tol =\u003E quadratically lifted; beta \u003C -tol =\u003E saddle; |beta| \u003C= tol and ||Q(d,d)||_M \u003E tol =\u003E quartically lifted; else exactly flat",
+    "gaugeAlignment": "squared projection onto the orthonormalized range of the infinitesimal gauge map R_{z*}(xi) = d xi \u002B [omega*, xi] at the background",
+    "obstructionDecomposition": "the kernel component of the fermionic shell source J^(s) expressed in the B-eigenbasis; lifted fraction = weight on non-exactly-flat directions",
+    "saddleScaleAccounting": "|beta| \u003C= ||Upsilon0||_M ||Q(d,d)||_M (Cauchy-Schwarz, asserted): the quadratic coefficients are bounded by the converged background residual, and any saddle has depth beta^2 / (2 ||Q||_M^2) - residual-scale, not action-scale"
+  },
+  "applicationSubjectKind": "full-bosonic-action-flat-direction-lift-probe",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "a9cb6ae6f73a99532f90853e13a76fafa3168ef35ebc3f79c8dfd2f5b8049cf2",
+  "backgroundCount": 2,
+  "routeProvidesPhysicalMassPsiCompatibleBranch": false,
+  "routeProvidesCompletedFermionicAction": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesObservedElectroweakNamespaceMap": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesWeakAngleOrCouplingLineage": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "the full objective probed is the toy control-branch Mode-B objective (quartic in omega), not a physical GU bosonic action",
+    "the lift classification is a structural statement about the toy branch only",
+    "no physical coupling constant; kappa remains a non-physical study parameter",
+    "candidate bilinear fermionic action; not a completed GU fermionic action",
+    "toy control branch; no physical scales, poles, or GeV lineage",
+    "no Phase201 or Phase256 fill",
+    "no physical predictions"
+  ],
+  "backgrounds": [
+    {
+      "fermionBackgroundId": "bg-phase12-bg-a-20260315212202",
+      "kernelDimension": 18,
+      "maxKernelEigenvalue": 1.5292430126716867E-15,
+      "shellSize": 4,
+      "maxSaddleDepth": 4.142479361548791E-20,
+      "minQuarticNorm": 0.0013316633014589436,
+      "cauchySchwarzBetaBound": 2.9047356662571895E-11,
+      "betaWithinCauchySchwarzBound": true,
+      "residualNormAtBackground": 5.020004710472862E-10,
+      "objectiveAtBackground": 0.006327333791707363,
+      "maxGramDeviation": 4.094916597737192E-15,
+      "maxKernelQuadraticForm": 1.5145047108966224E-16,
+      "maxQuadraticExactnessResidual": 6.432276102141218E-16,
+      "maxGnParityRelativeDeviation": 1.4992791100044814E-14,
+      "maxPolarizationResidual": 8.117775051126712E-15,
+      "maxAbsCurvatureFormEntry": 6.766627826762143E-12,
+      "betaTolerance": 1E-12,
+      "quarticTolerance": 5.786320598857718E-08,
+      "gaugeOrbitRank": 69,
+      "quadraticallyLiftedCount": 5,
+      "saddleCount": 5,
+      "quarticallyLiftedCount": 8,
+      "exactlyFlatCount": 0,
+      "gaugeAlignedExactlyFlatCount": 0,
+      "directions": [
+        {
+          "rank": 0,
+          "quadraticCoefficient": -1.664261418098303E-11,
+          "quarticResidualNorm": 0.057819771455998745,
+          "gaugeFraction": 0.12083735938500237,
+          "classification": "saddle"
+        },
+        {
+          "rank": 1,
+          "quadraticCoefficient": -1.659009959783434E-11,
+          "quarticResidualNorm": 0.05786320598857718,
+          "gaugeFraction": 0.1496734247804169,
+          "classification": "saddle"
+        },
+        {
+          "rank": 2,
+          "quadraticCoefficient": -4.212170328130352E-12,
+          "quarticResidualNorm": 0.03395681500769473,
+          "gaugeFraction": 0.3866311369377933,
+          "classification": "saddle"
+        },
+        {
+          "rank": 3,
+          "quadraticCoefficient": -4.036198886184874E-12,
+          "quarticResidualNorm": 0.03261554902825627,
+          "gaugeFraction": 0.3447235592525029,
+          "classification": "saddle"
+        },
+        {
+          "rank": 4,
+          "quadraticCoefficient": -1.2435111925830973E-12,
+          "quarticResidualNorm": 0.051989504326247264,
+          "gaugeFraction": 0.026701699266053702,
+          "classification": "saddle"
+        },
+        {
+          "rank": 5,
+          "quadraticCoefficient": -5.89969612997087E-13,
+          "quarticResidualNorm": 0.023892041653610557,
+          "gaugeFraction": 0.05307882946348283,
+          "classification": "quartically-lifted"
+        },
+        {
+          "rank": 6,
+          "quadraticCoefficient": -3.8215733303426784E-13,
+          "quarticResidualNorm": 0.02048692159457379,
+          "gaugeFraction": 0.08548020529889448,
+          "classification": "quartically-lifted"
+        },
+        {
+          "rank": 7,
+          "quadraticCoefficient": -5.098607214708014E-14,
+          "quarticResidualNorm": 0.0034171949053625676,
+          "gaugeFraction": 0.0621957595331009,
+          "classification": "quartically-lifted"
+        },
+        {
+          "rank": 8,
+          "quadraticCoefficient": -3.1692417572350736E-15,
+          "quarticResidualNorm": 0.0013316633014589436,
+          "gaugeFraction": 0.4480740687035293,
+          "classification": "quartically-lifted"
+        },
+        {
+          "rank": 9,
+          "quadraticCoefficient": 1.951245105446112E-14,
+          "quarticResidualNorm": 0.0035799005914841572,
+          "gaugeFraction": 0.003332626851582957,
+          "classification": "quartically-lifted"
+        },
+        {
+          "rank": 10,
+          "quadraticCoefficient": 9.779273843285308E-14,
+          "quarticResidualNorm": 0.007864238073088966,
+          "gaugeFraction": 0.08438621796330775,
+          "classification": "quartically-lifted"
+        },
+        {
+          "rank": 11,
+          "quadraticCoefficient": 2.829741877195009E-13,
+          "quarticResidualNorm": 0.015970341665457192,
+          "gaugeFraction": 0.13217492074162207,
+          "classification": "quartically-lifted"
+        },
+        {
+          "rank": 12,
+          "quadraticCoefficient": 6.45681890290454E-13,
+          "quarticResidualNorm": 0.027560079347415653,
+          "gaugeFraction": 0.13632965744877634,
+          "classification": "quartically-lifted"
+        },
+        {
+          "rank": 13,
+          "quadraticCoefficient": 1.2486264157878445E-12,
+          "quarticResidualNorm": 0.048443344875702614,
+          "gaugeFraction": 0.05533933524468957,
+          "classification": "quadratically-lifted"
+        },
+        {
+          "rank": 14,
+          "quadraticCoefficient": 4.189004612332593E-12,
+          "quarticResidualNorm": 0.03327587562520639,
+          "gaugeFraction": 0.30815621149778466,
+          "classification": "quadratically-lifted"
+        },
+        {
+          "rank": 15,
+          "quadraticCoefficient": 4.61668097280661E-12,
+          "quarticResidualNorm": 0.03814471778057593,
+          "gaugeFraction": 0.337136538688929,
+          "classification": "quadratically-lifted"
+        },
+        {
+          "rank": 16,
+          "quadraticCoefficient": 1.6549892923273037E-11,
+          "quarticResidualNorm": 0.05751229526746951,
+          "gaugeFraction": 0.14489502913826371,
+          "classification": "quadratically-lifted"
+        },
+        {
+          "rank": 17,
+          "quadraticCoefficient": 1.6612796230658254E-11,
+          "quarticResidualNorm": 0.057515753153402946,
+          "gaugeFraction": 0.12167163592174943,
+          "classification": "quadratically-lifted"
+        }
+      ],
+      "sourceKernelFractions": [
+        0.34749604581184546,
+        0.34749604580921767,
+        0.34749604579053883,
+        0.3474960457913337
+      ],
+      "obstructionLiftedFractions": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "obstructionExactlyFlatFractions": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "fermionBackgroundId": "bg-phase12-bg-b-20260315212202",
+      "kernelDimension": 18,
+      "maxKernelEigenvalue": 2.5177919154216046E-15,
+      "shellSize": 4,
+      "maxSaddleDepth": 4.52233991119279E-19,
+      "minQuarticNorm": 0.0011809123881890938,
+      "cauchySchwarzBetaBound": 1.0359760959639282E-10,
+      "betaWithinCauchySchwarzBound": true,
+      "residualNormAtBackground": 1.7743171418372248E-09,
+      "objectiveAtBackground": 0.010984662552429351,
+      "maxGramDeviation": 4.550552761338234E-15,
+      "maxKernelQuadraticForm": 2.4225911266844365E-15,
+      "maxQuadraticExactnessResidual": 7.438982426634005E-16,
+      "maxGnParityRelativeDeviation": 3.0426869730842746E-14,
+      "maxPolarizationResidual": 5.716697268097935E-15,
+      "maxAbsCurvatureFormEntry": 2.0913027627896888E-11,
+      "betaTolerance": 1E-12,
+      "quarticTolerance": 5.838731259121027E-08,
+      "gaugeOrbitRank": 69,
+      "quadraticallyLiftedCount": 5,
+      "saddleCount": 5,
+      "quarticallyLiftedCount": 8,
+      "exactlyFlatCount": 0,
+      "gaugeAlignedExactlyFlatCount": 0,
+      "directions": [
+        {
+          "rank": 0,
+          "quadraticCoefficient": -5.501268856017368E-11,
+          "quarticResidualNorm": 0.057845059393797936,
+          "gaugeFraction": 0.07885944241094342,
+          "classification": "saddle"
+        },
+        {
+          "rank": 1,
+          "quadraticCoefficient": -5.495409365008647E-11,
+          "quarticResidualNorm": 0.05786375321553322,
+          "gaugeFraction": 0.11373702793660982,
+          "classification": "saddle"
+        },
+        {
+          "rank": 2,
+          "quadraticCoefficient": -1.75794556023913E-11,
+          "quarticResidualNorm": 0.030045984206585843,
+          "gaugeFraction": 0.39627793244609105,
+          "classification": "saddle"
+        },
+        {
+          "rank": 3,
+          "quadraticCoefficient": -1.746142899181828E-11,
+          "quarticResidualNorm": 0.02958779464693265,
+          "gaugeFraction": 0.38130642052828506,
+          "classification": "saddle"
+        },
+        {
+          "rank": 4,
+          "quadraticCoefficient": -1.8163605301134646E-12,
+          "quarticResidualNorm": 0.04852232572767874,
+          "gaugeFraction": 0.052364883253085685,
+          "classification": "saddle"
+        },
+        {
+          "rank": 5,
+          "quadraticCoefficient": -7.37549082288669E-13,
+          "quarticResidualNorm": 0.022720262484957492,
+          "gaugeFraction": 0.09704448950112553,
+          "classification": "quartically-lifted"
+        },
+        {
+          "rank": 6,
+          "quadraticCoefficient": -2.1218291628462143E-13,
+          "quarticResidualNorm": 0.0144296918690633,
+          "gaugeFraction": 0.011122272500133796,
+          "classification": "quartically-lifted"
+        },
+        {
+          "rank": 7,
+          "quadraticCoefficient": -8.895285287162026E-14,
+          "quarticResidualNorm": 0.005779721906995562,
+          "gaugeFraction": 0.12497798923066919,
+          "classification": "quartically-lifted"
+        },
+        {
+          "rank": 8,
+          "quadraticCoefficient": -2.9886181810775003E-15,
+          "quarticResidualNorm": 0.0011809123881890938,
+          "gaugeFraction": 0.45431777900275455,
+          "classification": "quartically-lifted"
+        },
+        {
+          "rank": 9,
+          "quadraticCoefficient": 1.452598675328479E-14,
+          "quarticResidualNorm": 0.002039236595055026,
+          "gaugeFraction": 0.004923841617674544,
+          "classification": "quartically-lifted"
+        },
+        {
+          "rank": 10,
+          "quadraticCoefficient": 5.007045736310043E-14,
+          "quarticResidualNorm": 0.0020075575326053423,
+          "gaugeFraction": 0.044131998169206765,
+          "classification": "quartically-lifted"
+        },
+        {
+          "rank": 11,
+          "quadraticCoefficient": 4.50901447228702E-13,
+          "quarticResidualNorm": 0.015565236911308636,
+          "gaugeFraction": 0.1575360080309386,
+          "classification": "quartically-lifted"
+        },
+        {
+          "rank": 12,
+          "quadraticCoefficient": 9.354459158704636E-13,
+          "quarticResidualNorm": 0.031125108332642756,
+          "gaugeFraction": 0.07317179569503107,
+          "classification": "quartically-lifted"
+        },
+        {
+          "rank": 13,
+          "quadraticCoefficient": 1.8810428421108645E-12,
+          "quarticResidualNorm": 0.04465694825001671,
+          "gaugeFraction": 0.09930108621091388,
+          "classification": "quadratically-lifted"
+        },
+        {
+          "rank": 14,
+          "quadraticCoefficient": 1.835165504722139E-11,
+          "quarticResidualNorm": 0.030429521888215665,
+          "gaugeFraction": 0.3595681820360168,
+          "classification": "quadratically-lifted"
+        },
+        {
+          "rank": 15,
+          "quadraticCoefficient": 1.8646874655683896E-11,
+          "quarticResidualNorm": 0.03147623185654295,
+          "gaugeFraction": 0.36789081180333055,
+          "classification": "quadratically-lifted"
+        },
+        {
+          "rank": 16,
+          "quadraticCoefficient": 5.540773987766628E-11,
+          "quarticResidualNorm": 0.05838731259121027,
+          "gaugeFraction": 0.12032872347682788,
+          "classification": "quadratically-lifted"
+        },
+        {
+          "rank": 17,
+          "quadraticCoefficient": 5.5486444766096927E-11,
+          "quarticResidualNorm": 0.05838532750622955,
+          "gaugeFraction": 0.06408995271638214,
+          "classification": "quadratically-lifted"
+        }
+      ],
+      "sourceKernelFractions": [
+        0.3654777418362542,
+        0.3654777418340581,
+        0.3654777418360364,
+        0.3654777418345426
+      ],
+      "obstructionLiftedFractions": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "obstructionExactlyFlatFractions": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "sourceEvidence": {
+    "phase394SummaryPath": "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/positive_bosonic_spectrum_backreaction_construction_summary.json",
+    "phase399SummaryPath": "studies/phase399_quadratic_model_coupled_critical_point_solve_001/output/quadratic_model_coupled_critical_point_solve_summary.json",
+    "phase394Workdir": "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir",
+    "phase12Root": "studies/phase12_joined_calculation_001/output/background_family"
+  },
+  "decision": "The Phase399 residual question is answered exactly on the toy control branch: because the production residual Upsilon is exactly quadratic in omega, the full bosonic objective restricted to the 18 Gauss-Newton flat directions terminates at quartic order and every term is computable without truncation error. The GN-dropped curvature form B_ij = \u003CUpsilon0, M Q(k_i,k_j)\u003E was assembled by polarization (verified against direct second differences), diagonalized, and every kernel eigendirection was classified as quadratically lifted, saddle, quartically lifted, or exactly flat, with gauge alignment measured against the infinitesimal gauge-orbit map at the background. The fermionic source kernel component (the Phase399 flat-direction obstruction) was decomposed onto the classified eigendirections to decide whether the obstruction is relaxable at higher order in the full action. The verdict fields carry the physical answer; the probe gates only on the verified measurement battery. The toy objective remains the control-branch Mode-B objective, not a physical GU action; nothing is promoted; no contract field is filled."
+}

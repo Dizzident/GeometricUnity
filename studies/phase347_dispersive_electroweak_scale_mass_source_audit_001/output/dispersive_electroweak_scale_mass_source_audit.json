@@ -1,7 +1,7 @@
 {
   "phaseId": "phase347-dispersive-electroweak-scale-mass-source-audit",
   "terminalStatus": "dispersive-electroweak-scale-mass-source-audit-external-sm-qcd-not-gu-source",
-  "generatedAt": "2026-06-10T23:55:31.1252694+00:00",
+  "generatedAt": "2026-06-11T13:47:17.8319845+00:00",
   "dispersiveElectroweakScaleMassSourceAuditPassed": true,
   "dispersiveElectroweakMassLeadPresent": true,
   "dispersivePrimarySourcesReviewed": true,

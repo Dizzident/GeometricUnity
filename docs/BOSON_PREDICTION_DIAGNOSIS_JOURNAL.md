@@ -16386,3 +16386,61 @@ The control-branch program is now complete in every component. Remaining
 work is the physical VO-6/VO-7 derivation against the Phase398 8-item gap
 ledger (headed by the scalar/VEV sector and hypercharge/coupling lineage)
 plus literature monitoring at checkpoint cadence.
+
+## 2026-06-11 - Phase400: Full Action Lifts All 18 Flat Directions (Obstruction Relaxable)
+
+### Context
+
+Phase399 left exactly one residual physical question for the VO-7
+coupled-stationarity component: the kernel component of the fermionic
+source (0.047 per unit kappa) is unrelaxable within the quadratic model,
+so the coupled critical point exists only modulo the 18 flat bosonic
+directions. Whether the full non-quadratic bosonic action lifts them was
+"beyond the persisted artifacts". Phase400 answers it exactly.
+
+### Result
+
+- Because the toy bosonic objective is exactly QUARTIC (Upsilon = F - T^aug
+  is quadratic in omega), the expansion along a Gauss-Newton kernel
+  direction terminates: S(omega0+tk) - S0 = (t^2/2)<U0, M Q(k,k)> +
+  (t^4/8)||Q(k,k)||^2, with Q recovered by symmetric second differences of
+  the production residual assembly WITHOUT truncation error. The GN-dropped
+  curvature form B_ij = <U0, M Q(k_i,k_j)> was assembled by polarization on
+  the 18-dim kernel and diagonalized; the measurement battery (kernel
+  orthonormality 4.6e-15, J/d^* annihilation 2.4e-15, exact quadraticity
+  7.4e-16, GN operator parity 3.0e-14, polarization consistency 8.1e-15,
+  Cauchy-Schwarz beta bound) is machine-verified.
+- **ALL 36 kernel directions (18 x 2 backgrounds) are LIFTED**: every
+  direction has a nonzero quartic norm (min 1.2e-3, max 5.8e-2, tolerance
+  5.8e-8); ZERO exactly flat. The quadratic coefficients are residual-scale
+  (|beta| <= 5.5e-11, Cauchy-Schwarz-bounded by the converged background
+  residual 1.8e-9); the nominal saddle directions have machine-bounded
+  depth <= 4.5e-19 - an artifact of the nonzero background residual, not
+  action-scale structure. Physically the lift is quartic.
+- **The Phase399 flat-direction obstruction is FULLY RELAXABLE at higher
+  order**: the fermionic source kernel component lies entirely (fraction
+  1.000000) in lifted directions for every shell mode in both backgrounds.
+  The coupled critical point exists as a genuine critical point of the full
+  toy bosonic action, not merely modulo flat directions.
+- Cross-check: source kernel norm-fractions 0.3475/0.3655 square to
+  0.1208/0.1336 = the Phase394 energy-fractions 0.121/0.134.
+- The kernel is NOT gauge-dominated (gauge fractions <= 0.46, orbit rank
+  69): the flat directions are physical-moduli-like at quadratic level and
+  all lifted at quartic order.
+- Study: `studies/phase400_full_bosonic_action_flat_direction_lift_probe_001`
+  (IMPLEMENTATION_P400.md; reads the Phase394 working directory).
+
+### Validation
+
+- Targeted Phase400 run passed; Phase101 includes the block; Phase202:
+  `checklistPassedCount=193`, `checklistFailedCount=3`; claim integrity
+  verified with `promotedPhysicalMassClaimCount=0`.
+
+### Standing Next Work
+
+The VO-7 coupled-stationarity component is now closed at the FULL
+toy-action control-branch level (quadratic solve + quartic lift). The
+remaining work is unchanged: the physical VO-6/VO-7 derivation against the
+Phase398 8-item gap ledger (headed by the symmetry-breaking scalar/VEV
+sector and the hypercharge/coupling lineage) plus literature monitoring at
+checkpoint cadence.

@@ -1,7 +1,7 @@
 {
   "phaseId": "phase370-completion-fermionic-yukawa-higgs-mixed-linearization-source-audit",
   "terminalStatus": "completion-fermionic-yukawa-higgs-mixed-linearization-source-audit-placeholder-not-source-lineage",
-  "generatedAt": "2026-06-10T23:55:48.4653358+00:00",
+  "generatedAt": "2026-06-11T13:47:35.6723557+00:00",
   "completionFermionicYukawaHiggsMixedLinearizationSourceAuditPassed": true,
   "officialDraftFermionicSectorArchitecturePresent": true,
   "officialDraftLocatesHiggsPotentialInUpsilonNorm": true,

@@ -165,6 +165,7 @@ const string Phase396Path = "studies/phase396_gauge_invariant_neutral_charged_se
 const string Phase397Path = "studies/phase397_parametrized_u1_extension_neutral_mixing_underdetermination_probe_001/output/parametrized_u1_extension_neutral_mixing_underdetermination_probe_summary.json";
 const string Phase398Path = "studies/phase398_vo6_vo7_control_branch_completion_ledger_audit_001/output/vo6_vo7_control_branch_completion_ledger_audit_summary.json";
 const string Phase399Path = "studies/phase399_quadratic_model_coupled_critical_point_solve_001/output/quadratic_model_coupled_critical_point_solve_summary.json";
+const string Phase400Path = "studies/phase400_full_bosonic_action_flat_direction_lift_probe_001/output/full_bosonic_action_flat_direction_lift_probe_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -363,6 +364,7 @@ using var phase396 = File.Exists(Phase396Path) ? JsonDocument.Parse(File.ReadAll
 using var phase397 = File.Exists(Phase397Path) ? JsonDocument.Parse(File.ReadAllText(Phase397Path)) : null;
 using var phase398 = File.Exists(Phase398Path) ? JsonDocument.Parse(File.ReadAllText(Phase398Path)) : null;
 using var phase399 = File.Exists(Phase399Path) ? JsonDocument.Parse(File.ReadAllText(Phase399Path)) : null;
+using var phase400 = File.Exists(Phase400Path) ? JsonDocument.Parse(File.ReadAllText(Phase400Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -4910,6 +4912,29 @@ var quadraticModelCoupledCriticalPointSolvePassed = quadraticModelCoupledCritica
     && JsonBool(phase399.RootElement, "phase201TemplateMutated") is false
     && JsonInt(phase399.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
     && JsonInt(phase399.RootElement, "acceptedContractFieldCount") == 0;
+var fullBosonicActionFlatDirectionLiftProbeMaterialized = phase400 is not null;
+var fullBosonicActionFlatDirectionLiftProbePassed = fullBosonicActionFlatDirectionLiftProbeMaterialized
+    && JsonBool(phase400!.RootElement, "fullBosonicActionFlatDirectionLiftProbePassed") is true
+    && JsonBool(phase400.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase400.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase400.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase400.RootElement, "applicationSubjectKind") == "full-bosonic-action-flat-direction-lift-probe"
+    && JsonBool(phase400.RootElement, "probeInternallyConsistent") is true
+    && JsonBool(phase400.RootElement, "quadraticExactnessVerified") is true
+    && JsonBool(phase400.RootElement, "gnOperatorParityVerified") is true
+    && JsonBool(phase400.RootElement, "polarizationConsistencyVerified") is true
+    && JsonBool(phase400.RootElement, "physicalBosonicActionUsed") is false
+    && JsonBool(phase400.RootElement, "physicalCouplingProvided") is false
+    && JsonBool(phase400.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase400.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase400.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase400.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase400.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase400.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase400.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase400.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase400.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase400.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -7078,6 +7103,14 @@ var checklist = new[]
             ? $"quadraticModelCoupledCriticalPointSolvePassed={JsonBool(phase399!.RootElement, "quadraticModelCoupledCriticalPointSolvePassed")}; targetBlind={JsonBool(phase399.RootElement, "targetBlindConstruction")}; fixedPointConverged={JsonBool(phase399.RootElement, "quadraticModelCoupledFixedPointConverged")}; sourceParity={JsonBool(phase399.RootElement, "sourceFormulaParityVerified")}; flatObstruction={JsonBool(phase399.RootElement, "flatDirectionObstructionPresent")}; kappaScaling={JsonBool(phase399.RootElement, "kappaScalingConsistentWithFirstOrder")}; vo7ComponentDischarged={JsonBool(phase399.RootElement, "vo7CoupledStationarityControlComponentDischarged")}; canFillPhase201WzContract={JsonBool(phase399.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase399.RootElement, "decision")}"
             : "Phase399 artifact not materialized",
         Phase399Path),
+    new ObjectiveChecklistItem(
+        "full-bosonic-action-flat-direction-lift-probe-materialized",
+        "Classify every flat bosonic kernel direction against the full (quartic) control-branch action and decide whether the Phase399 flat-direction obstruction is relaxable at higher order.",
+        fullBosonicActionFlatDirectionLiftProbePassed ? "passed" : "failed",
+        fullBosonicActionFlatDirectionLiftProbeMaterialized
+            ? $"fullBosonicActionFlatDirectionLiftProbePassed={JsonBool(phase400!.RootElement, "fullBosonicActionFlatDirectionLiftProbePassed")}; targetBlind={JsonBool(phase400.RootElement, "targetBlindConstruction")}; probeInternallyConsistent={JsonBool(phase400.RootElement, "probeInternallyConsistent")}; liftVerdict={JsonString(phase400.RootElement, "liftVerdict")}; allFlatDirectionsLifted={JsonBool(phase400.RootElement, "allFlatDirectionsLifted")}; obstructionRelaxable={JsonBool(phase400.RootElement, "kernelObstructionFullyRelaxableAtHigherOrder")}; canFillPhase201WzContract={JsonBool(phase400.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase400.RootElement, "decision")}"
+            : "Phase400 artifact not materialized",
+        Phase400Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

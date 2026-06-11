@@ -182,3 +182,18 @@ source operator) is verified at the discrete control-branch level
 hypercharge/coupling lineage. VO-6/VO-7 remain OPEN as physical
 obligations; the control-branch artifacts are the templates, not the
 solutions.
+
+## Phase399/Phase400 Coupled-Stationarity Closure (Control Branch)
+
+As of 2026-06-11, the coupled-stationarity component is closed at the FULL
+toy-action control-branch level: Phase399 solved the self-consistent
+coupled critical point within the exact quadratic model (8/8 runs,
+projected gradient <= 9.5e-11, flat-direction obstruction 0.047 per unit
+kappa recorded), and Phase400 proved that the full (quartic) control-branch
+bosonic action lifts ALL 18 flat Gauss-Newton directions (quartic norms
+1.2e-3 to 5.8e-2, zero exactly flat, saddle structure bounded at 4.5e-19 by
+the converged background residual) and that the obstruction lies entirely
+in lifted directions - the coupled critical point exists as a genuine
+critical point of the full toy action. This is a structural statement about
+the toy control branch only; the physical VO-6/VO-7 obligations and the
+Phase398 8-item gap ledger are unchanged.
