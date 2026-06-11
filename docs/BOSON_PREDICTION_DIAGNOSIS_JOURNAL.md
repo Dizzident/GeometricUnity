@@ -16473,3 +16473,101 @@ sector} for the Phase256/Phase201 contracts.
 
 Unchanged: the physical VO-6/VO-7 derivation against the Phase398 8-item
 gap ledger, plus literature monitoring at checkpoint cadence.
+
+## 2026-06-11 - Phase401: Kernel Relaxation Is Non-Perturbative (No Nearby Coupled Vacuum)
+
+### Context
+
+Phase400 left one optional constructive completion: actually solve the
+coupled critical point of the full quartic action with the 18-direction
+kernel obstruction relaxed, and verify the scaling of the relaxed
+amplitude. Phase401 attempted the construction with an exact solver
+(GN-preconditioned positive steps + exact 18-dim kernel Newton with
+closed-form gradient/Hessian + exact quartic line searches; every step
+verified monotone descent; battery at 4.4e-16 / 4.7e-10 / 3.6e-15; the
+kappa = 0 baselines converge to 2.7e-17 in 2 iterations).
+
+### Result
+
+- **NO PERTURBATIVE COUPLED CRITICAL POINT EXISTS on the toy control
+  branch.** All 12 coupled runs (2 backgrounds x {frozen-source kappa
+  ladder 1e-8/1e-7/1e-6 + alternate start + adiabatic self-consistent
+  probe}) descend monotonically out of their trust regions (frozen radius
+  1.0, adiabatic radius 0.15) without reaching stationarity.
+- Mechanism: the positive sector relaxes to absorb almost all of Q(d,d),
+  so Phase400's per-ray quartic lift collapses into near-null VALLEYS of
+  the quartic form: the measured effective kernel potential at amplitude
+  1.0 is S_B ~ 1e-13..5e-10 - a valley anisotropy ratio of 1.4e8 relative
+  to the softest per-direction quartic. Along these positive-relaxed
+  valleys the linear fermionic pull dominates indefinitely.
+- The adiabatic probe adds a second driver: the followed-mode source
+  STRENGTHENS with displacement (5.3x/7.4x at exit, overlap dips to 0.68).
+- The diagonal cube-root prediction underestimates the relaxation by
+  orders of magnitude (recorded as data): the per-direction picture misses
+  the valley structure entirely.
+- Combined closure: Phase399 (critical point exists modulo flat
+  directions, quadratic model) + Phase400 (every flat ray quartically
+  lifted) + Phase401 (the relaxed coupled vacuum is NOT a small
+  deformation of the background). This welds the VO-7 coupled-stationarity
+  component to the physical gap-ledger item "4D observed vacuum": a
+  trustworthy coupled vacuum requires the physical derivation chain, not
+  toy-branch relaxation.
+- Study: `studies/phase401_full_quartic_action_coupled_critical_point_construction_001`
+  (IMPLEMENTATION_P401.md; reads the Phase394 working directory).
+
+### Validation
+
+- Targeted Phase401 run passed; Phase101 includes the block; Phase202:
+  `checklistPassedCount=194`, `checklistFailedCount=3`; claim integrity
+  verified with `promotedPhysicalMassClaimCount=0`.
+
+### Standing Next Work
+
+The coupled-stationarity question is now closed in every internally
+accessible direction (exists-modulo-flat, all-rays-lifted,
+relaxation-non-perturbative). Remaining work is unchanged: the physical
+VO-6/VO-7 derivation against the Phase398 8-item gap ledger (headed by the
+scalar/VEV sector and hypercharge/coupling lineage; the "4D observed
+vacuum" row now carries the Phase401 boundary evidence) plus literature
+monitoring at checkpoint cadence.
+
+## 2026-06-11 - GU Iceberg Explainer Transcribed: GU-Native Scalar-Sector Ansatz Catalogued
+
+### Context
+
+The user supplied the Theories of Everything "Iceberg of Geometric Unity"
+video (Curt Jaimungal, 2025-04-23, 3h07m) as a candidate source of missing
+answers. The English captions were retrieved, converted to a timestamped
+transcript (~29.9k words), and stored at
+`docs/Reference/ExperimentReferences/transcripts/TOE-GU-ICEBERG-20250423-TRANSCRIPT.md`
+with ledger row TOE-GU-ICEBERG-20250423.
+
+### Result
+
+- The video supplies the first GU-NATIVE structural ansatz for the
+  scalar-sector gap rows catalogued by this program: Higgs = trace part of
+  the vertical symmetric-2-tensor component of the gauge potential on Y14
+  (graviton = traceless part of the same object); quartic potential from
+  the Yang-Mills self-coupling; negative mass-squared from phi-A cross
+  terms (a checkable sign condition); Yukawa = minimal coupling of the
+  chimeric Dirac operator; SM gauge group via det=1 on U(3) x U(2) inside
+  SU(3,2) (or a Pati-Salam path).
+- It supplies NOTHING quantitative: no VEV scale, no pole extraction, no
+  GeV normalization, no weak-angle value, and the hypercharge embedding is
+  explicitly MATCHED to observed assignments (not target-independent). It
+  is also a secondary source - any phase building on it must cite the
+  primary GU-DRAFT-2021 equations.
+- Net diagnosis change: the scalar-sector gap row upgrades from "no
+  GU-native source known" to "GU-native structural ansatz catalogued,
+  quantitative derivation absent". The binding gap is now sharply the
+  quantitative half plus hypercharge target-independence.
+
+### Standing Next Work
+
+Candidate next phase: a fail-closed structural audit (next free number)
+that formalizes the connection-decomposition route from the transcript
+against the primary GU-DRAFT-2021, maps it onto the repo's existing
+machinery (the curvature self-wedge already carries the A wedge A
+structure), and machine-checks which Phase201/Phase256 contract fields the
+route could in principle supply and which remain underived - letting the
+existing gates decide, as always.
