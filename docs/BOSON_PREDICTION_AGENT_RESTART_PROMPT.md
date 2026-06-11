@@ -35,12 +35,12 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase398 work:
+Current gate status after the Phase399 work:
 
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=191`,
+  `objectiveAchieved=False`, `checklistPassedCount=192`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -73,11 +73,15 @@ Current gate status after the Phase398 work:
   `neutralMixingElementVanishesInFermionBilinearChannel=True`,
   `photonZSeparationUnderdetermined=True`
 - Phase398:
-  `vo6Vo7ControlBranchCompletionLedgerAuditPassed=True`,
   `vo6ControlBranchComponentsComplete=True` (5/5),
-  `vo7ControlBranchComponentsComplete=True` (4/4, coupled stationarity partial),
-  `electroweakChainComponentsComplete=True` (3/3),
+  `vo7ControlBranchComponentsComplete=True` (4/4),
   `physicalCompletionStillMissing=True` (8-item gap ledger)
+- Phase399:
+  `quadraticModelCoupledCriticalPointSolvePassed=True`,
+  `quadraticModelCoupledFixedPointConverged=True` (8/8 runs, gradient <= 9.5e-11),
+  `flatDirectionObstructionPresent=True` (0.047 per unit kappa),
+  `kappaScalingConsistentWithFirstOrder=True`,
+  `vo7CoupledStationarityControlComponentDischarged=True`
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -98,8 +102,19 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work added Phase398, the v29 VO-6/VO-7 control-branch completion
-ledger audit:
+The latest work added Phase399, the quadratic-model self-consistent coupled
+critical-point solve, which discharges the last partial VO-7 control-branch
+component: the fixed point d* = -kappa H_B^+ J(psi(d*)) converged on all 8
+runs (projected gradient <= 9.5e-11, <= 9 iterations) with adiabatic
+mode-following; the flat-direction obstruction is quantified (kernel source
+component 0.047 per unit kappa, unrelaxable in the quadratic model - the
+critical point exists modulo the 18 flat directions); kappa-scaling matches
+the Phase394 first order (5.5%); the perturbative boundary is recorded
+(kappa = 0.1 diverges). Study:
+`studies/phase399_quadratic_model_coupled_critical_point_solve_001`
+(IMPLEMENTATION_P399.md; reads the Phase394 working directory). The
+CONTROL-BRANCH PROGRAM IS NOW COMPLETE IN EVERY COMPONENT. Before that,
+Phase398 was the v29 VO-6/VO-7 completion ledger audit:
 
 - Study:
   `studies/phase398_vo6_vo7_control_branch_completion_ledger_audit_001`
@@ -124,13 +139,13 @@ sector, corroborating the closing diagnosis.
 
 ### Integration Points Already Updated
 
-Phase398 (like Phase388-397) is wired into:
+Phase399 (like Phase388-398) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (both invocation blocks)
 - `studies/phase101_boson_prediction_package_001/Program.cs`
 - `studies/phase202_boson_objective_completion_audit_001/Program.cs`
   (checklist item
-  `vo6-vo7-control-branch-completion-ledger-audit-materialized`)
+  `quadratic-model-coupled-critical-point-solve-materialized`)
 - `scripts/verify_boson_claim_integrity.sh`
 - Broad scanner exclusions: phase204, phase205, phase207, phase279,
   phase281, phase295, phase296
@@ -144,15 +159,15 @@ The diagnosis journal entry is near the end of
 ### Validation Already Run
 
 ```bash
-dotnet run --project studies/phase398_vo6_vo7_control_branch_completion_ledger_audit_001/Phase398Vo6Vo7ControlBranchCompletionLedgerAudit.csproj
+dotnet run --project studies/phase399_quadratic_model_coupled_critical_point_solve_001/Phase399QuadraticModelCoupledCriticalPointSolve.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
 ./scripts/generate_validated_boson_predictions.sh
 ```
 
-The full generator ended with the Phase398 line, the Phase202 incomplete
-status (`checklistPassedCount=191`, `checklistFailedCount=3`), and the same
+The full generator ended with the Phase399 line, the Phase202 incomplete
+status (`checklistPassedCount=192`, `checklistFailedCount=3`), and the same
 claim-integrity status (`promotedPhysicalMassClaimCount=0`). All seven broad
 scanners still report zero intake-ready evidence.
 
@@ -191,9 +206,9 @@ The most useful next branches are:
    component solved should arrive through a new fail-closed phase that
    names the Phase398 ledger row it discharges, proves target independence,
    and lets the existing gates decide promotion.
-2. The remaining partial control-branch component: a self-consistent
-   coupled critical-point solve (the only VO-7 component not fully
-   verified; the Phase389/390/393/394 toolkit makes it constructible).
+2. (Discharged by Phase399 at the quadratic-model level.) The residual
+   question for this component is whether the full non-quadratic bosonic
+   action lifts the 18 flat directions - part of the physical derivation.
 3. Periodic external literature monitoring at checkpoint cadence (the
    2026-06-10 survey found no GU-native scalar-sector source; the internal
    toy-branch construction otherwise reached its honest limit).
@@ -211,10 +226,10 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -120 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase398|vo6ControlBranchComponentsComplete|physicalGapLedger" \
+rg -n "Phase399|quadraticModelCoupledFixedPointConverged|flatDirectionObstruction" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
   ExperimentReferences.md \
-  studies/phase398_vo6_vo7_control_branch_completion_ledger_audit_001 \
+  studies/phase399_quadratic_model_coupled_critical_point_solve_001 \
   studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
 ```
 
@@ -227,11 +242,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase398 output JSON files, and commit a checkpoint
+force-add the ignored Phase399 output JSON files, and commit a checkpoint
 after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase398 VO-6/VO-7 completion ledger audit
+Add phase399 coupled critical-point solve
 ```

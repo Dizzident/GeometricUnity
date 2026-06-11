@@ -16341,3 +16341,48 @@ The physical VO-6/VO-7 derivation against the 8-item gap ledger, plus
 literature monitoring at checkpoint cadence. Each physical component solved
 should be brought in through a new fail-closed phase referencing the
 Phase398 ledger row it discharges.
+
+## 2026-06-10 - Phase399: Coupled Critical Point Solved (Quadratic Model, Modulo Flat Directions)
+
+### Context
+
+The Phase398 ledger left one VO-7 control-branch component partial: coupled
+stationarity. Phase399 performed the self-consistent solve within the exact
+quadratic bosonic model.
+
+### Result
+
+- The fixed point d* = -kappa H_B^+ J(psi(d*)) CONVERGED on all 8 runs
+  (2 backgrounds x 2 target-blind start modes x kappa in {0.001, 0.003}):
+  projected coupled gradient <= 9.5e-11 within <= 9 iterations, with
+  adiabatic mode-following and the closed-form per-edge source verified at
+  4.4e-16. Convergence is to a critical ORBIT (the followed mode may rotate
+  within the remaining 2-fold-degenerate split level).
+- Perturbative-regime boundary recorded: kappa = 0.1 diverges (the induced
+  shift ~6.5e-3 kappa must stay below the shell scale ~8.4e-4); the ladder
+  {0.001, 0.003} converges cleanly.
+- FLAT-DIRECTION OBSTRUCTION quantified: the kernel component of the source
+  (0.047 per unit kappa) is unrelaxable within the quadratic model - the
+  coupled critical point exists only modulo the 18 flat bosonic directions.
+  Whether the full non-quadratic action lifts them is beyond persisted
+  artifacts and is the residual physical question for this component.
+- kappa scaling consistent with the Phase394 first-order backreaction
+  (5.5% at kappa = 0.001, orbit-selection effect documented); the
+  self-consistent correction reaches ~19% at kappa = 0.003.
+- This DISCHARGES the Phase398 partial VO-7 component at the
+  quadratic-model control-branch level. Every VO-6/VO-7 component now has a
+  full control-branch artifact; the physical gap ledger (8 items) is
+  unchanged.
+
+### Validation
+
+- Targeted Phase399 run passed; Phase101 includes the block; Phase202:
+  `checklistPassedCount=192`, `checklistFailedCount=3`; claim integrity
+  verified with `promotedPhysicalMassClaimCount=0`.
+
+### Standing Next Work
+
+The control-branch program is now complete in every component. Remaining
+work is the physical VO-6/VO-7 derivation against the Phase398 8-item gap
+ledger (headed by the scalar/VEV sector and hypercharge/coupling lineage)
+plus literature monitoring at checkpoint cadence.

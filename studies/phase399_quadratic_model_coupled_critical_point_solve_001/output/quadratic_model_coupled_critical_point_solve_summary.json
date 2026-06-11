@@ -1,0 +1,215 @@
+{
+  "phaseId": "phase399-quadratic-model-coupled-critical-point-solve",
+  "generatedAt": "2026-06-11T12:52:00.9216012+00:00",
+  "terminalStatus": "quadratic-model-coupled-critical-point-solved-modulo-flat-directions-vo7-control-component-discharged",
+  "quadraticModelCoupledCriticalPointSolvePassed": true,
+  "phase394PrecursorPassed": true,
+  "phase398PrecursorPassed": true,
+  "solveInternallyConsistent": true,
+  "quadraticModelCoupledFixedPointConverged": true,
+  "sourceFormulaParityVerified": true,
+  "flatDirectionObstructionPresent": true,
+  "kappaScalingConsistentWithFirstOrder": true,
+  "vo7CoupledStationarityControlComponentDischarged": true,
+  "fullNonquadraticBosonicActionUsed": false,
+  "physicalCouplingProvided": false,
+  "maxProjectedCoupledGradient": 9.519842183477532E-11,
+  "maxKernelObstructionPerKappa": 0.04695947290883384,
+  "maxKappaScalingRelativeDeviation": 0.055267117251683186,
+  "maxSelfConsistentCorrectionFraction": 0.19420295344410415,
+  "maxIterationsUsed": 9,
+  "maxSourceParityResidual": 4.440892098500626E-16,
+  "kappaLadder": [
+    0.001,
+    0.003
+  ],
+  "solveDefinitions": {
+    "model": "S = (1/2) d^T H_B d \u002B kappa Re\u003Cpsi, D(omega0 \u002B d) psi\u003E, \u003Cpsi,psi\u003E_M = 1; H_B from the Phase394 recomputed positive spectrum (kernel flat); D exactly linear (Phase389)",
+    "fixedPoint": "d_{n\u002B1} = -kappa sum_{mu_i \u003E tol} m_i (m_i . J(psi_n)) / mu_i; psi_n the adiabatic continuation (max-overlap) of the followed shell eigenmode of D(omega0 \u002B d_n)",
+    "source": "J_(e,a) = (2/h_e) Re sum_{bc} eps_{abc} W_e[b,c], W_e[g,g\u0027] = sum_{s,s\u0027} conj(psi_v[g,s]) Gamma[s,s\u0027] psi_w[g\u0027,s\u0027] (verified against delta_D matrices)",
+    "convergence": "projected coupled gradient ||H_B d \u002B kappa P_pos J|| \u003C= 1e-10 (the physical criterion; the fixed point converges to a critical ORBIT within the degenerate split level, so the raw displacement step may rotate without changing the gradient) or relative step \u003C= 1e-10",
+    "obstruction": "kappa ||P_ker J(psi*)|| over the recomputed 18-dim bosonic kernel: the unrelaxable flat-direction residual",
+    "kappaScaling": "lim_{kappa-\u003E0} ||d*||/kappa compared against the Phase394 first-order backreaction norm via the kappa ladder",
+    "modeStartRule": "target-blind: the first and last shell eigenvectors of the deterministic dense solve at omega0"
+  },
+  "applicationSubjectKind": "quadratic-model-coupled-critical-point-solve",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "b55bac3c4c37815f8356d156159d130ffd2abc6bebfa24c5692db99dc6ad4576",
+  "expectedCoveragePresent": true,
+  "backgroundCount": 2,
+  "routeProvidesPhysicalMassPsiCompatibleBranch": false,
+  "routeProvidesCompletedFermionicAction": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesObservedElectroweakNamespaceMap": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesWeakAngleOrCouplingLineage": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "quadratic-model solve only: the full non-quadratic bosonic action was not used",
+    "kappa is an explicit non-physical study parameter",
+    "the coupled critical point exists only modulo the flat bosonic kernel directions",
+    "candidate bilinear action; not a completed GU fermionic action",
+    "toy control branch; no physical scales, poles, or GeV lineage",
+    "no Phase201 or Phase256 fill",
+    "no physical predictions"
+  ],
+  "backgrounds": [
+    {
+      "fermionBackgroundId": "bg-phase12-bg-a-20260315212202",
+      "shellSize": 4,
+      "shellEigenvalues": [
+        -0.0008427613458545568,
+        0.0008427613458688838,
+        0.0008427613458887643,
+        -0.0008427613459189185
+      ],
+      "sourceParityResidual": 4.440892098500626E-16,
+      "firstOrderBackreactionNorms": [
+        0.44254359919524655,
+        0.44254359917386
+      ],
+      "kappaScalingRelativeDeviation": 0.055267117251683186,
+      "runs": [
+        {
+          "kappa": 0.001,
+          "startModeIndex": 0,
+          "iterationsUsed": 5,
+          "converged": true,
+          "finalRelativeStep": 1.9263459808856753E-05,
+          "finalDisplacementNorm": 0.0004670017081548197,
+          "finalFollowedEigenvalue": -0.0008724374558380553,
+          "finalProjectedCoupledGradientNorm": 5.925256678025353E-11,
+          "kernelObstructionNorm": 3.99434319447916E-05,
+          "selfConsistentCorrectionFraction": 0.0552671171926326
+        },
+        {
+          "kappa": 0.001,
+          "startModeIndex": 3,
+          "iterationsUsed": 5,
+          "converged": true,
+          "finalRelativeStep": 1.926342409474919E-05,
+          "finalDisplacementNorm": 0.0004670017081583836,
+          "finalFollowedEigenvalue": -0.000872437455804155,
+          "finalProjectedCoupledGradientNorm": 5.925324939619102E-11,
+          "kernelObstructionNorm": 3.994343194585208E-05,
+          "selfConsistentCorrectionFraction": 0.055267117251683165
+        },
+        {
+          "kappa": 0.003,
+          "startModeIndex": 0,
+          "iterationsUsed": 9,
+          "converged": true,
+          "finalRelativeStep": 3.026468819177406E-06,
+          "finalDisplacementNorm": 0.0015854606194953798,
+          "finalFollowedEigenvalue": -0.0009445669225230127,
+          "finalProjectedCoupledGradientNorm": 9.518642581051824E-11,
+          "kernelObstructionNorm": 0.00012458602555215186,
+          "selfConsistentCorrectionFraction": 0.19420295339524865
+        },
+        {
+          "kappa": 0.003,
+          "startModeIndex": 3,
+          "iterationsUsed": 9,
+          "converged": true,
+          "finalRelativeStep": 3.026502708830476E-06,
+          "finalDisplacementNorm": 0.0015854606194836223,
+          "finalFollowedEigenvalue": -0.0009445669225170256,
+          "finalProjectedCoupledGradientNorm": 9.519842183477532E-11,
+          "kernelObstructionNorm": 0.0001245860255633793,
+          "selfConsistentCorrectionFraction": 0.19420295344410415
+        }
+      ]
+    },
+    {
+      "fermionBackgroundId": "bg-phase12-bg-b-20260315212202",
+      "shellSize": 4,
+      "shellEigenvalues": [
+        -0.0009139800207631899,
+        -0.0009139800207672536,
+        0.0009139800207907077,
+        0.0009139800208134728
+      ],
+      "sourceParityResidual": 2.9609561330579126E-16,
+      "firstOrderBackreactionNorms": [
+        0.43494964213386733,
+        0.43494964212700377
+      ],
+      "kappaScalingRelativeDeviation": 0.053706177583578575,
+      "runs": [
+        {
+          "kappa": 0.001,
+          "startModeIndex": 0,
+          "iterationsUsed": 5,
+          "converged": true,
+          "finalRelativeStep": 1.8968051072254053E-05,
+          "finalDisplacementNorm": 0.0004583091248542228,
+          "finalFollowedEigenvalue": -0.0009451036472512277,
+          "finalProjectedCoupledGradientNorm": 5.8129307596987465E-11,
+          "kernelObstructionNorm": 4.509346619196177E-05,
+          "selfConsistentCorrectionFraction": 0.05370617758357855
+        },
+        {
+          "kappa": 0.001,
+          "startModeIndex": 3,
+          "iterationsUsed": 5,
+          "converged": true,
+          "finalRelativeStep": 2.056579829269059E-05,
+          "finalDisplacementNorm": 0.0004144935593698639,
+          "finalFollowedEigenvalue": 0.0008859245568061956,
+          "finalProjectedCoupledGradientNorm": 5.648327495329605E-11,
+          "kernelObstructionNorm": 4.353116673035585E-05,
+          "selfConsistentCorrectionFraction": 0.0470309221479179
+        },
+        {
+          "kappa": 0.003,
+          "startModeIndex": 0,
+          "iterationsUsed": 9,
+          "converged": true,
+          "finalRelativeStep": 2.915485878303996E-06,
+          "finalDisplacementNorm": 0.0015512981556732894,
+          "finalFollowedEigenvalue": -0.0010197523858452315,
+          "finalProjectedCoupledGradientNorm": 9.094697428118659E-11,
+          "kernelObstructionNorm": 0.0001408784187265015,
+          "selfConsistentCorrectionFraction": 0.18887184890539271
+        },
+        {
+          "kappa": 0.003,
+          "startModeIndex": 3,
+          "iterationsUsed": 9,
+          "converged": true,
+          "finalRelativeStep": 3.346122330422992E-06,
+          "finalDisplacementNorm": 0.0011405527958946386,
+          "finalFollowedEigenvalue": 0.0008370131502326096,
+          "finalProjectedCoupledGradientNorm": 7.451909404115942E-11,
+          "kernelObstructionNorm": 0.00012660000606057962,
+          "selfConsistentCorrectionFraction": 0.12591199422759755
+        }
+      ]
+    }
+  ],
+  "sourceEvidence": {
+    "phase394SummaryPath": "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/positive_bosonic_spectrum_backreaction_construction_summary.json",
+    "phase398SummaryPath": "studies/phase398_vo6_vo7_control_branch_completion_ledger_audit_001/output/vo6_vo7_control_branch_completion_ledger_audit_summary.json",
+    "phase394WorkdirModes": "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir/spectra/modes",
+    "phase12Root": "studies/phase12_joined_calculation_001/output/background_family"
+  },
+  "decision": "The self-consistent coupled critical point is solved within the exact quadratic model of the bosonic action at the persisted backgrounds: for every kappa and every followed shell mode the fixed point d* = -kappa H_B^\u002B J(psi(d*)) converges (projected coupled gradient at tolerance), with adiabatic mode-following and the closed-form per-edge source verified against the variation matrices. Two honest structural results: (1) a FLAT-DIRECTION OBSTRUCTION is present - the kernel component of the source cannot be relaxed within the quadratic model, so for asymmetric occupation the coupled critical point exists only modulo the 18 flat bosonic directions, and whether the full non-quadratic action lifts them is beyond the persisted artifacts; (2) the kappa -\u003E 0 scaling of d*/kappa matches the Phase394 first-order backreaction within tolerance, with the finite-kappa self-consistent correction quantified. This discharges the Phase398 partial VO-7 component at the QUADRATIC-MODEL control-branch level. kappa is not physical; nothing is promoted; no contract field is filled."
+}

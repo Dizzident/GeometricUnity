@@ -1,6 +1,6 @@
 {
   "phaseId": "phase373-mass-psi-stiffness-operator-convention-repair-audit",
-  "generatedAt": "2026-05-31T19:17:31.5963007+00:00",
+  "generatedAt": "2026-06-10T23:56:33.4147399+00:00",
   "terminalStatus": "branch-local-mass-psi-stiffness-operator-convention-candidate-materialized",
   "massPsiStiffnessOperatorConventionRepairAuditPassed": true,
   "phase372MeshVolumeWeightObstructionPresent": true,
