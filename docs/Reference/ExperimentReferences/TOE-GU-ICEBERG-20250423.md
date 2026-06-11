@@ -80,6 +80,20 @@ VO-6/VO-7 derivation - NOT as promotion evidence.
   GU-DRAFT-2021 equations (Section 9-10) and treat the video only as a
   guide to where to look.
 
+## Full Gap-Ledger Analysis
+
+A systematic mapping of the ENTIRE transcript against all 8 Phase398 gap
+rows (plus VO-6/VO-7 machinery and numerical-output categories) is in
+[TOE-GU-ICEBERG-20250423-GAP-ANALYSIS.md](TOE-GU-ICEBERG-20250423-GAP-ANALYSIS.md).
+Headline additions beyond the structural ansatz: a concrete checkable
+discrepancy (the claimed Higgs component is assigned the ADJOINT
+representation vs the SM fundamental doublet), an explicit admission that
+the observed 4D vacuum is an unconstrained section choice, a claim that
+the potential normalization is "fixed by contraction rules" (checkable
+against the primary draft), the total absence of any dimensionful anchor,
+and the acknowledged Euclidean-signature gap in the 3-generation index
+argument.
+
 ## Diagnosis Relevance
 
 Does not change the gate status (zero contract fields fillable - the

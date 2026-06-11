@@ -16608,3 +16608,42 @@ Unchanged: the physical VO-6/VO-7 derivation against the Phase398 gap
 ledger, with the TOE-GU-ICEBERG-20250423 structural ansatz as the
 roadmap and GU-DRAFT-2021 as the primary citation target; literature
 monitoring at checkpoint cadence.
+
+## 2026-06-11 - Full Gap-Ledger Mapping of the Iceberg Transcript
+
+### Context
+
+The earlier same-day cataloguing of TOE-GU-ICEBERG-20250423 was a
+targeted scan (Higgs/Yukawa/hypercharge passages). A systematic pass of
+the entire 3h07m transcript against all 8 Phase398 gap rows (plus
+VO-6/VO-7 machinery and numerical outputs) is now recorded in
+TOE-GU-ICEBERG-20250423-GAP-ANALYSIS.md (quotes spot-verified).
+
+### Result
+
+- Structural direction added for rows 1, 2, 5, 6, 9; sharp documented
+  ABSENCE for rows 3 (no coupled Hessian anywhere), 4 (no vacuum or
+  critical point exhibited), 7 (observed vacuum = explicitly
+  unconstrained section choice), 8 (zero dimensionful anchors in 3h07m -
+  the strongest absence).
+- Three new concrete check items for the candidate scalar-route audit
+  phase: (1) the claimed Higgs component is assigned the ADJOINT
+  representation - conflicts with the SM fundamental doublet; (2) the
+  claim that the potential normalization is "fixed by contraction rules"
+  implies a derivable quartic coefficient - verify against the primary
+  draft; (3) the phi-A cross-term sign condition for the negative
+  mass-squared.
+- The only claimed numerical outputs are integer multiplicities (3
+  generations, 16-dim family) resting on a deferred index argument with
+  an acknowledged Euclidean-signature gap; the Yukawa constant is
+  explicitly absorbed; the metric signature itself is an undetermined
+  choice; "swervature"/"displasion" never appear.
+- Reliability: narrator self-flags reconstructions and ~30-40%
+  unexplored coverage; load-bearing formulas are on-screen only (caption
+  scans under-detect) - primary verification must use GU-DRAFT-2021.
+
+### Standing Next Work
+
+Unchanged, now sharper: the scalar-route structural audit phase should
+gate its route on the three check items above before any contract-field
+reasoning.
