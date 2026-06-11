@@ -175,6 +175,7 @@ const paths = {
   phase403: "studies/phase403_adjoint_doublet_substructure_branching_probe_001/output/adjoint_doublet_substructure_branching_probe_summary.json",
   phase404: "studies/phase404_gu_embedding_chain_coupling_ratio_enumeration_001/output/gu_embedding_chain_coupling_ratio_enumeration_summary.json",
   phase405: "studies/phase405_vacuum_manifold_doublet_vev_orbit_scan_001/output/vacuum_manifold_doublet_vev_orbit_scan_summary.json",
+  phase406: "studies/phase406_choice_space_falsification_sweep_001/output/choice_space_falsification_sweep_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -421,6 +422,7 @@ const phase402 = requireFile(paths.phase402);
 const phase403 = requireFile(paths.phase403);
 const phase404 = requireFile(paths.phase404);
 const phase405 = requireFile(paths.phase405);
+const phase406 = requireFile(paths.phase406);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -4716,6 +4718,16 @@ if (sourceLineageMissing) {
   assert(phase405.sourceContractApplicationAllowed === false && phase405.canFillPhase201WzContract === false && phase405.canFillPhase201HiggsContract === false && phase405.canFillPhase256ObservedFieldExtractionContract === false, "Phase405 cannot fill Phase201 or Phase256 contracts.");
   assert(phase405.routePromotesWzMasses === false && phase405.routePromotesHiggsMass === false && phase405.routeCompletesBosonPredictions === false, "Phase405 cannot promote boson predictions.");
   assert(phase405.phase201TemplateMutated === false && phase405.fieldsAppliedToPhase201TemplateCount === 0 && phase405.acceptedContractFieldCount === 0, "Phase405 must not mutate or fill the Phase201 template.");
+  assert(phase406.choiceSpaceFalsificationSweepPassed === true, "Phase406 choice-space falsification sweep must pass as a fail-closed structural audit.");
+  assert(phase406.targetBlindConstruction === true && phase406.physicalTargetsConsultedForConstruction === false, "Phase406 construction must remain target-blind.");
+  assert(typeof phase406.targetBlindConstructionHash === "string" && phase406.targetBlindConstructionHash.length === 64, "Phase406 must persist a target-blind construction hash.");
+  assert(phase406.applicationSubjectKind === "choice-space-falsification-sweep", "Phase406 must classify its subject as the choice-space sweep.");
+  assert(phase406.ratioPathIndependent === true && phase406.signatureAxisVerified === true, "Phase406 must verify path independence and the signature axis.");
+  assert(phase406.survivorsAreExactlyNonAdjointLargerAlgebra === true && phase406.noCombinationProvidesVevSelection === true && phase406.su2ToyFalsifiedForDoubletRoute === true, "Phase406 must record the falsification-map verdicts.");
+  assert(phase406.physicalDerivationProvided === false && phase406.physicalCouplingProvided === false, "Phase406 provides no physical derivation or coupling.");
+  assert(phase406.sourceContractApplicationAllowed === false && phase406.canFillPhase201WzContract === false && phase406.canFillPhase201HiggsContract === false && phase406.canFillPhase256ObservedFieldExtractionContract === false, "Phase406 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase406.routePromotesWzMasses === false && phase406.routePromotesHiggsMass === false && phase406.routeCompletesBosonPredictions === false, "Phase406 cannot promote boson predictions.");
+  assert(phase406.phase201TemplateMutated === false && phase406.fieldsAppliedToPhase201TemplateCount === 0 && phase406.acceptedContractFieldCount === 0, "Phase406 must not mutate or fill the Phase201 template.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

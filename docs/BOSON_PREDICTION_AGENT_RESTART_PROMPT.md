@@ -35,12 +35,12 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase405 work:
+Current gate status after the Phase406 work:
 
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=198`,
+  `objectiveAchieved=False`, `checklistPassedCount=199`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -130,6 +130,13 @@ Current gate status after the Phase405 work:
   sharpened), `gpuParityDefectDetected=True` (native curvature kernel
   linear-part defect on real mesh topology - platform follow-up; science
   on CPU per IA-5)
+- Phase406 (brute force #3 of the user directive):
+  `choiceSpaceFalsificationSweepPassed=True`,
+  `ratioPathIndependent=True` (su(5) route tan^2 = 3/5 = Pati-Salam),
+  `signatureAxisVerified=True` (Cl(6,4)/Cl(7,3) both 16-dim chiral),
+  `survivorsAreExactlyNonAdjointLargerAlgebra=True` (4 of 16 combinations),
+  `noCombinationProvidesVevSelection=True` (binding gaps are
+  CHOICE-INDEPENDENT)
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -150,34 +157,34 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work added Phase405 (brute force #2): the su(3) orbit scan of
-the Upsilon = 0 vacuum manifold on a 6x6 mesh with closed (exact 1-form)
-profiles, so Upsilon = (1/2)[omega wedge omega] exactly and the landscape
-is purely bracket-driven. Results: the vacuum manifold PERMITS
-doublet-block VEVs (every rank-1 direction exactly flat); flatness
-coincides exactly with commutativity (11 = 11 pairs, 2592 samples, exact
-quartic shape verified); NO SELECTION MECHANISM exists at this level
-(triplet/doublet/singlet treated identically) - scalar-sector sub-gap (b)
-confirmed open with sharpened evidence. PLATFORM FINDING: the GPU run
-machine-detected a real-mesh topology defect in the native CUDA curvature
-kernel's linear (d omega) part (0/27 parity; CPU exactly 0 on closed
-profiles, GPU up to 17.5) - the platform's CUDA parity tests used
-synthetic topology only; science ran on CPU per IA-5; native
-buffer-handle monotonicity also recorded. Study:
-`studies/phase405_vacuum_manifold_doublet_vev_orbit_scan_001`
-(IMPLEMENTATION_P405.md; reproduce with LD_LIBRARY_PATH=native/build).
-NEXT PER DIRECTIVE: Phase406 = choice-space falsification sweep; then
-resume the standing research loop.
+THE USER DIRECTIVE'S THREE BRUTE-FORCE COMPUTATIONS ARE COMPLETE. The
+latest work added Phase406 (brute force #3): the choice-space
+falsification sweep. New computations: the SU(5)-type route's ratio
+computes to tan^2 = 3/5 exactly (path independence with Phase404's
+Pati-Salam value), and explicit Cl(6,4)/Cl(7,3) constructions both give
+16-dimensional chiral families (signature independence). The map over 16
+combinations x 5 filters: 4 survive, exactly {larger algebra} x
+{non-adjoint scalar location} x {either path} x {either signature}; the
+su(2)-only toy and the gauge-adjoint scalar location are falsified
+everywhere; NO combination provides a VEV selection mechanism - the
+binding gaps (VEV selection, quantitative chain) are CHOICE-INDEPENDENT
+and require the physical derivation. Study:
+`studies/phase406_choice_space_falsification_sweep_001`
+(IMPLEMENTATION_P406.md). Before that, Phase405 (vacuum manifold permits
+but does not select doublet VEVs; GPU kernel defect found) and Phase404
+(ratio menu, family pattern, adjoint exclusion). PER THE DIRECTIVE, THE
+LOOP NOW RESUMES THE STANDING RESEARCH PROGRAM, concentrated in the
+non-adjoint (vertical symmetric-2-tensor) sector on a larger algebra.
 
 ### Integration Points Already Updated
 
-Phase405 (like Phase388-404) is wired into:
+Phase406 (like Phase388-405) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (both invocation blocks)
 - `studies/phase101_boson_prediction_package_001/Program.cs`
 - `studies/phase202_boson_objective_completion_audit_001/Program.cs`
   (checklist item
-  `vacuum-manifold-doublet-vev-orbit-scan-materialized`)
+  `choice-space-falsification-sweep-materialized`)
 - `scripts/verify_boson_claim_integrity.sh`
 - Broad scanner exclusions: phase204, phase205, phase207, phase279,
   phase281, phase295, phase296
@@ -191,15 +198,15 @@ The diagnosis journal entry is near the end of
 ### Validation Already Run
 
 ```bash
-LD_LIBRARY_PATH=native/build dotnet run --project studies/phase405_vacuum_manifold_doublet_vev_orbit_scan_001/Phase405VacuumManifoldDoubletVevOrbitScan.csproj
+dotnet run --project studies/phase406_choice_space_falsification_sweep_001/Phase406ChoiceSpaceFalsificationSweep.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
 ./scripts/generate_validated_boson_predictions.sh
 ```
 
-The full generator ended with the Phase405 line, the Phase202 incomplete
-status (`checklistPassedCount=198`, `checklistFailedCount=3`), and the same
+The full generator ended with the Phase406 line, the Phase202 incomplete
+status (`checklistPassedCount=199`, `checklistFailedCount=3`), and the same
 claim-integrity status (`promotedPhysicalMassClaimCount=0`). All seven broad
 scanners still report zero intake-ready evidence.
 
@@ -234,16 +241,14 @@ Do not try to promote another numerical near-pass. The next useful work must
 either find or derive a theorem-level artifact that can fill the missing
 contract fields, or remove a physical blocker on the VO-7 branch.
 
-USER DIRECTIVE (2026-06-11): the next several phases are the three
-brute-force computations, run on the local GPU where the problem size
-warrants it (RTX 4080 SUPER, CUDA 13.3, repo native lib
-`native/build/libgu_cuda_core.so` verified functional via
-gu_cuda_device_init): Phase404 = exhaustive GU embedding-chain
-enumeration with the derived coupling-ratio menu (CPU - objects are
-10x10; GPU adds nothing); Phase405 = vacuum-manifold doublet-VEV orbit
-scan on larger algebras with GPU Hessian spectra; Phase406 =
-choice-space falsification sweep, GPU batch-parallel. After these three,
-resume the standing research loop below.
+USER DIRECTIVE (2026-06-11): COMPLETED. The three brute-force
+computations are done and committed: Phase404 (ratio menu tan^2 = 3/5,
+family pattern derived, adjoint Higgs-doublet excluded), Phase405
+(vacuum manifold permits but does not select doublet VEVs; native GPU
+curvature kernel real-mesh defect found and characterized - platform
+follow-up), Phase406 (falsification map: survivors are exactly
+non-adjoint x larger-algebra; binding gaps choice-independent). The loop
+now resumes the standing research program below.
 
 Phase405 design (ready to implement): su(3)-valued connections (the
 minimal doublet-bearing algebra per Phase403) on a LARGER structured
@@ -319,10 +324,10 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -120 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase405|vacuumManifoldDoubletVevOrbitScan|gpuParityDefectDetected" \
+rg -n "Phase406|choiceSpaceFalsificationSweep|noCombinationProvidesVevSelection" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
   ExperimentReferences.md \
-  studies/phase405_vacuum_manifold_doublet_vev_orbit_scan_001 \
+  studies/phase406_choice_space_falsification_sweep_001 \
   studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
 ```
 
@@ -335,11 +340,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase405 output JSON files, and commit a checkpoint
+force-add the ignored Phase406 output JSON files, and commit a checkpoint
 after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase405 vacuum manifold doublet vev orbit scan
+Add phase406 choice space falsification sweep
 ```

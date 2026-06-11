@@ -16844,3 +16844,51 @@ Brute force #3 (Phase406): choice-space falsification sweep. Then resume
 the standing research loop per the directive. Platform follow-up named:
 fix the native curvature kernel's linear part on real mesh topology and
 add real-mesh parity tests; consider buffer-handle recycling.
+
+## 2026-06-11 - Phase406 (Brute Force #3): The Falsification Map - Binding Gaps Are Choice-Independent
+
+### Context
+
+User directive brute force #3: sweep GU's open discrete choices against
+the machine-verified structural filters. Two new exact computations
+closed the open axes; the sweep composed them with the recorded filter
+outcomes of Phases 396/397/403/404/405.
+
+### Result
+
+- PATH INDEPENDENCE: the SU(5)-type route (the draft's U(3)xU(2) det=1
+  path) computes tan^2 = 3/5 exactly, equal to the Pati-Salam value -
+  the coupling-ratio lineage is a property of the chain's
+  complexification, not the route taken through it.
+- SIGNATURE INDEPENDENCE: explicit Cl(6,4) and Cl(7,3) constructions both
+  verify their Clifford relations exactly and both give 16-dimensional
+  chiral families - the draft's open signature choice does not affect the
+  family/ratio structure.
+- THE FALSIFICATION MAP (16 combinations x 5 filters): 4 survive, and
+  they are EXACTLY {larger algebra} x {non-adjoint scalar location} x
+  {either embedding path} x {either signature}. The su(2)-only toy is
+  falsified for the doublet route everywhere; the gauge-adjoint scalar
+  location is falsified on the chain everywhere.
+- THE BINDING GAPS ARE CHOICE-INDEPENDENT: no combination provides a VEV
+  selection mechanism, and none supplies the quantitative chain - the
+  remaining obstructions cannot be fixed by picking different discrete
+  options; they require the physical derivation.
+- Study: studies/phase406_choice_space_falsification_sweep_001
+  (IMPLEMENTATION_P406.md).
+
+### Validation
+
+- Targeted Phase406 run passed; Phase101 includes the block; Phase202:
+  checklistPassedCount=199, checklistFailedCount=3; claim integrity
+  verified with promotedPhysicalMassClaimCount=0.
+
+### Standing Next Work
+
+THE USER DIRECTIVE'S THREE BRUTE-FORCE COMPUTATIONS ARE COMPLETE
+(Phase404 ratio menu + adjoint exclusion; Phase405 vacuum-manifold
+permission/no-selection + GPU defect finding; Phase406 falsification
+map). Per the directive, resume the standing research loop: the physical
+VO-6/VO-7 derivation against the gap ledger - now concentrated in the
+non-adjoint (vertical symmetric-2-tensor) sector on a larger algebra -
+plus literature monitoring at checkpoint cadence and the named platform
+follow-up (native curvature kernel real-mesh fix).
