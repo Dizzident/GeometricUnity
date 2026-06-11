@@ -207,8 +207,13 @@ The most useful next branches are:
 2. (Closed by Phase399 + Phase400 at the full toy-action control-branch
    level: the quadratic-model coupled critical point is solved and the
    full quartic action lifts all 18 flat directions, so the obstruction is
-   relaxable at higher order. No residual internal question remains for
-   this component.)
+   relaxable at higher order.) One optional constructive completion
+   remains: a Phase401 that actually SOLVES the coupled critical point in
+   the full quartic action (extending the Phase399 fixed point with
+   kernel-direction relaxation) and verifies the cube-root scaling the
+   quartic lift predicts for the relaxed kernel amplitude,
+   d_ker ~ (kappa |P_ker J| / quartic-scale)^(1/3). This would upgrade the
+   component from "critical point exists" to "constructed and verified".
 3. Periodic external literature monitoring at checkpoint cadence (the
    2026-06-10 survey and the 2026-06-11 post-Phase400 sweep found no
    GU-native scalar-sector source; the 2026-06-11 sweep catalogued
