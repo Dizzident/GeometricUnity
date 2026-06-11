@@ -35,12 +35,12 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase401 work:
+Current gate status after the Phase402 work:
 
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=194`,
+  `objectiveAchieved=False`, `checklistPassedCount=195`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -96,6 +96,15 @@ Current gate status after the Phase401 work:
   2.7e-17),
   `valleyAnisotropyRatio=1.4e8` (positive-relaxed near-null valleys of the
   quartic form), `maxAdiabaticSourceNormGrowth=7.4`
+- Phase402:
+  `guDraftScalarRouteDictionaryAuditPassed=True`,
+  `higgsPotentialIsUpsilonPairingInPrimary=True` (draft eq. 12.28 places
+  the Higgs potential at <U,U> and Higgs KG at D*U=0 - the repo's Mode-B
+  objective and stationarity, verified at the backgrounds),
+  `routeRequiresDoubletEquivalentSubstructure=True` (adjoint-triplet VEV
+  cannot produce the SM neutral sector; doublet can),
+  `zeroDimensionfulAnchorsInPrimary=True` (no GeV/246 anywhere in the
+  primary draft)
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -116,38 +125,39 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work added Phase401, the full-quartic-action coupled
-critical-point construction attempt, which closes the optional constructive
-completion with a machine-characterized NEGATIVE structural result: the
-kernel relaxation is NON-PERTURBATIVE. Using an exact solver
-(GN-preconditioned positive steps + exact 18-dim kernel Newton with
-closed-form gradient/Hessian + exact quartic line searches, every step
-verified monotone descent), all 12 coupled runs (frozen-source kappa ladder
-1e-8/1e-7/1e-6 with trust radius 1.0, plus adiabatic self-consistent probes
-at radius 0.15) descend out of their trust regions without stationarity,
-while the kappa=0 baselines converge to 2.7e-17 in 2 iterations. Mechanism:
-the positive sector absorbs almost all of Q(d,d), collapsing Phase400's
-per-ray lift into near-null valleys (effective kernel potential ~1e-13 at
-amplitude 1.0; anisotropy ratio 1.4e8); the adiabatic source additionally
-STRENGTHENS with displacement (up to 7.4x). Combined closure: the relaxed
-coupled vacuum of the toy action is NOT a small deformation of the
-persisted background - welding the VO-7 coupled-stationarity component to
-the gap-ledger item "4D observed vacuum". Study:
-`studies/phase401_full_quartic_action_coupled_critical_point_construction_001`
-(IMPLEMENTATION_P401.md; reads the Phase394 working directory). Before
-that, Phase400 proved every flat kernel ray is quartically lifted and the
-obstruction relaxable in principle, and Phase399 solved the quadratic-model
-coupled critical point modulo the 18 flat directions.
+The latest work added Phase402, the GU-draft scalar-route dictionary
+audit. The primary 2021 draft text is now STORED IN-REPO
+(`docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt`, PDF
+SHA256 pinned) and machine-audited: the draft's own location dictionary
+(eq. 12.28) places the Higgs potential at <Upsilon, Upsilon> and the
+Higgs Klein-Gordon equation at D^* Upsilon = 0 - EXACTLY the repo's
+production Mode-B objective and stationarity condition, verified
+numerically at the persisted backgrounds. Consequence: the Phase393-401
+toy-branch program has been characterizing the draft-claimed Higgs
+potential's vacuum manifold all along. The primary potential is
+non-negative with no free quartic coupling, so symmetry breaking must
+come from the Upsilon = 0 locus geometry (the explainer's negative-mass-
+squared mechanism is reconstruction, not primary). The representation
+discriminator (closed-form su(2)xu(1) mass patterns, non-physical
+couplings) shows the draft's Lie-algebra-valued (adjoint) scalar cannot
+produce the SM neutral sector while a doublet can - the binding
+scalar-sector gap is SHARPENED to exhibiting a doublet-equivalent
+substructure inside the pulled-back connection component, plus the
+entirely absent quantitative chain (zero GeV anchors in the primary).
+Study: `studies/phase402_gu_draft_scalar_route_dictionary_audit_001`
+(IMPLEMENTATION_P402.md). Before that, Phase401 characterized the kernel
+relaxation as non-perturbative, and Phase400/399 closed the quartic-lift
+and quadratic-model questions.
 
 ### Integration Points Already Updated
 
-Phase401 (like Phase388-400) is wired into:
+Phase402 (like Phase388-401) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (both invocation blocks)
 - `studies/phase101_boson_prediction_package_001/Program.cs`
 - `studies/phase202_boson_objective_completion_audit_001/Program.cs`
   (checklist item
-  `full-quartic-action-coupled-critical-point-construction-materialized`)
+  `gu-draft-scalar-route-dictionary-audit-materialized`)
 - `scripts/verify_boson_claim_integrity.sh`
 - Broad scanner exclusions: phase204, phase205, phase207, phase279,
   phase281, phase295, phase296
@@ -161,15 +171,15 @@ The diagnosis journal entry is near the end of
 ### Validation Already Run
 
 ```bash
-dotnet run --project studies/phase401_full_quartic_action_coupled_critical_point_construction_001/Phase401FullQuarticActionCoupledCriticalPointConstruction.csproj
+dotnet run --project studies/phase402_gu_draft_scalar_route_dictionary_audit_001/Phase402GuDraftScalarRouteDictionaryAudit.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
 ./scripts/generate_validated_boson_predictions.sh
 ```
 
-The full generator ended with the Phase401 line, the Phase202 incomplete
-status (`checklistPassedCount=194`, `checklistFailedCount=3`), and the same
+The full generator ended with the Phase402 line, the Phase202 incomplete
+status (`checklistPassedCount=195`, `checklistFailedCount=3`), and the same
 claim-integrity status (`promotedPhysicalMassClaimCount=0`). All seven broad
 scanners still report zero intake-ready evidence.
 
@@ -211,17 +221,21 @@ The most useful next branches are:
    photon/Z mixing by Phase397) and the hypercharge/coupling lineage. Each
    component solved should arrive through a new fail-closed phase that
    names the Phase398 ledger row it discharges, proves target independence,
-   and lets the existing gates decide promotion. The GU-native structural
-   ansatz for the scalar/Yukawa rows is now catalogued
-   (TOE-GU-ICEBERG-20250423 + transcript; primary: GU-DRAFT-2021):
-   Higgs = trace of the vertical symmetric-2-tensor component of the
-   connection, quartic from the Yang-Mills self-coupling, negative
-   mass-squared from phi-A cross terms (checkable sign condition),
-   Yukawa = minimal coupling of the chimeric Dirac operator. The natural
-   next phase is a fail-closed structural audit of that route against the
-   primary draft, machine-checking which contract fields it could in
-   principle supply (everything quantitative remains underived; the
-   hypercharge embedding is matched to observation, not derived).
+   and lets the existing gates decide promotion. The scalar-route audit
+   against the primary draft is DONE (Phase402): the draft's eq. 12.28
+   dictionary pins the Higgs potential to <U,U> (= the repo's Mode-B
+   objective) and Higgs KG to D*U=0; symmetry breaking must come from the
+   Upsilon = 0 locus geometry; the scalar-sector row is now three named
+   sub-gaps: (a) a doublet-equivalent substructure inside the pulled-back
+   connection component (the adjoint-triplet pattern cannot produce the
+   SM neutral sector - machine-verified discriminator), (b) the
+   vacuum-manifold breaking geometry on a physical branch, (c) the
+   quantitative chain (VEV scale/pole/GeV - zero anchors exist in the
+   primary). Candidate next internal work: a fail-closed probe of whether
+   the pulled-back connection component on the toy/physical branch
+   contains any doublet-equivalent (custodial-pattern-capable)
+   substructure under the available group actions, citing GU-DRAFT-2021
+   sections 9/12 and the stored text.
 2. (CLOSED by Phase399 + Phase400 + Phase401: the quadratic-model coupled
    critical point is solved modulo flat directions, every flat ray is
    quartically lifted, and the attempted construction of the relaxed
@@ -251,10 +265,10 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -120 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase401|fullQuarticActionCoupledCriticalPointConstruction|noPerturbativeCoupledCriticalPointFound" \
+rg -n "Phase402|guDraftScalarRouteDictionaryAudit|routeRequiresDoubletEquivalentSubstructure" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
   ExperimentReferences.md \
-  studies/phase401_full_quartic_action_coupled_critical_point_construction_001 \
+  studies/phase402_gu_draft_scalar_route_dictionary_audit_001 \
   studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
 ```
 
@@ -267,11 +281,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase401 output JSON files, and commit a checkpoint
+force-add the ignored Phase402 output JSON files, and commit a checkpoint
 after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase401 nonperturbative kernel relaxation characterization
+Add phase402 gu draft scalar route dictionary audit
 ```

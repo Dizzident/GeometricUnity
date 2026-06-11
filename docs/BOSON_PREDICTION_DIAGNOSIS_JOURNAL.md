@@ -16647,3 +16647,57 @@ TOE-GU-ICEBERG-20250423-GAP-ANALYSIS.md (quotes spot-verified).
 Unchanged, now sharper: the scalar-route structural audit phase should
 gate its route on the three check items above before any contract-field
 reasoning.
+
+## 2026-06-11 - Phase402: Primary Draft Pins the Higgs Potential to the Repo's Own Objective
+
+### Context
+
+The TOE-GU-ICEBERG gap analysis left three check items for the scalar
+route. Phase402 audits them against the PRIMARY 2021 draft, whose text
+extraction is now stored in-repo
+(docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt, PDF
+SHA256 pinned).
+
+### Result
+
+- THE DRAFT'S OWN DICTIONARY (eq. 12.28) PLACES THE HIGGS POTENTIAL AT
+  <Upsilon_omega, Upsilon_omega> AND THE HIGGS KLEIN-GORDON EQUATION AT
+  D_omega^* Upsilon_omega = 0 - exactly the repo's production Mode-B
+  objective and stationarity condition (verified numerically: objective
+  = (1/2)<U, M U> exactly; persisted backgrounds on the Upsilon ~ 0
+  vacuum manifold at 5e-10/1.8e-9; discrete D^* Upsilon at the persisted
+  solve scale, polished to 2.7e-17 by Phase401's baseline). The
+  Phase393-401 toy-branch program has been characterizing the
+  draft-claimed Higgs potential's vacuum manifold all along.
+- The primary potential <U, U> is NON-NEGATIVE with no free quartic
+  coupling: the "contraction rules" normalization claim is
+  primary-faithful, but symmetry breaking must come from the geometry of
+  the Upsilon = 0 locus - the explainer's negative-mass-squared phi-A
+  mechanism is reconstruction, not the primary's mechanism.
+- REPRESENTATION DISCRIMINATOR: the draft assigns the scalar to a
+  Lie-algebra-valued (adjoint) object (section 2.3) and never applies
+  "doublet" to the Higgs. Closed-form su(2)xu(1) mass patterns with
+  non-physical couplings: the adjoint-triplet VEV CANNOT produce the SM
+  neutral sector (two massless neutrals, no W3-B mixing); the doublet
+  does (custodial identity to 1e-16). The binding scalar-sector gap is
+  SHARPENED: exhibit a doublet-equivalent substructure inside the
+  pulled-back connection component.
+- Zero dimensionful anchors in the primary (no "GeV", no "246"
+  anywhere); the dictionary's VEV rows carry no values.
+- Study: studies/phase402_gu_draft_scalar_route_dictionary_audit_001
+  (IMPLEMENTATION_P402.md).
+
+### Validation
+
+- Targeted Phase402 run passed (11/11 text evidence); Phase101 includes
+  the block; Phase202: checklistPassedCount=195, checklistFailedCount=3;
+  claim integrity verified with promotedPhysicalMassClaimCount=0.
+
+### Standing Next Work
+
+The scalar-sector gap row is now THREE named sub-gaps: (a) a
+doublet-equivalent substructure inside the pulled-back connection
+component (the primary does not exhibit one); (b) the vacuum-manifold
+symmetry-breaking geometry of the Upsilon = 0 locus on a physical (not
+toy) branch; (c) the entirely absent quantitative chain (VEV scale,
+pole, GeV). Plus literature monitoring at checkpoint cadence.

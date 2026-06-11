@@ -1,0 +1,211 @@
+{
+  "phaseId": "phase402-gu-draft-scalar-route-dictionary-audit",
+  "generatedAt": "2026-06-11T17:57:36.1127926+00:00",
+  "terminalStatus": "gu-draft-scalar-route-dictionary-audited-doublet-equivalent-substructure-named-as-binding-gap",
+  "guDraftScalarRouteDictionaryAuditPassed": true,
+  "phase398PrecursorPassed": true,
+  "phase401PrecursorPassed": true,
+  "auditInternallyConsistent": true,
+  "draftProvenanceHashRecorded": true,
+  "primaryTextEvidenceComplete": true,
+  "zeroDimensionfulAnchorsInPrimary": true,
+  "gevOccurrences": 0,
+  "weakScale246Occurrences": 0,
+  "doubletNeverAppliedToHiggs": true,
+  "doubletMentionLineNumbers": [
+    1350,
+    1351
+  ],
+  "repoCorrespondenceVerified": true,
+  "objectiveEqualsUpsilonPairing": true,
+  "backgroundsLieOnVacuumManifold": true,
+  "discreteDStarUpsilonVanishes": true,
+  "representationDiscriminatorComputed": true,
+  "doubletReproducesSmNeutralPattern": true,
+  "adjointTripletReproducesSmNeutralPattern": false,
+  "routeRequiresDoubletEquivalentSubstructure": true,
+  "higgsPotentialIsUpsilonPairingInPrimary": true,
+  "higgsKleinGordonIsDStarUpsilonInPrimary": true,
+  "negativeMassSquaredMechanismAbsentInPrimary": true,
+  "symmetryBreakingMustComeFromUpsilonZeroLocusGeometry": true,
+  "physicalScalarSectorDerived": false,
+  "physicalCouplingProvided": false,
+  "auditDefinitions": {
+    "primaryText": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt (pdftotext extraction; PDF SHA256 3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4)",
+    "textEvidence": "line-level pattern hits for the eq. 12.28 dictionary rows, eq. 9.11/12.2/12.3, and the section 2.3 Lie-algebra-valued scalar statement; absence counts for GeV/246/doublet-applied-to-Higgs",
+    "correspondence": "production EvaluateObjective == (1/2)\u003CUpsilon, M_R Upsilon\u003E; ||Upsilon|| at backgrounds \u003C= 1e-7 (vacuum manifold); ||J^T M Upsilon|| \u003C= 1e-9 (discrete D^* Upsilon = 0)",
+    "discriminator": "M^2_{AB} = \u003CD_A phi0, D_B phi0\u003E over (W1,W2,W3,B) with NON-PHYSICAL couplings g=1.3, g\u0027=0.7, v=2.0; doublet phi0=(0,v/sqrt2) vs real adjoint triplet phi0=v T3; patterns compared structurally (massless count, charged degeneracy, W3-B mixing, custodial identity), never numerically against measured masses"
+  },
+  "doubletPattern": {
+    "eigenvalues": [
+      -1.8798447839435237E-18,
+      0.845,
+      0.845,
+      1.0899999999999999
+    ],
+    "masslessCount": 1,
+    "chargedPairDegenerate": true,
+    "massiveNeutralMixesW3AndB": true,
+    "chargedMassSquared": 0.845,
+    "massiveNeutralMassSquared": 1.0899999999999999,
+    "custodialIdentityResidual": 1.3138734019232622E-16
+  },
+  "adjointTripletPattern": {
+    "eigenvalues": [
+      0,
+      0,
+      6.760000000000001,
+      6.760000000000001
+    ],
+    "masslessCount": 2,
+    "chargedPairDegenerate": true,
+    "massiveNeutralMixesW3AndB": false,
+    "chargedMassSquared": 6.760000000000001,
+    "massiveNeutralMassSquared": 0,
+    "custodialIdentityResidual": 1000000000
+  },
+  "correspondence": [
+    {
+      "backgroundId": "bg-phase12-bg-a-20260315212202",
+      "upsilonPairing": 2.520044729316972E-19,
+      "productionObjective": 1.260022364658486E-19,
+      "objectiveCorrespondenceResidual": 0,
+      "vacuumResidualNorm": 5.020004710472862E-10,
+      "discreteDStarUpsilonNorm": 8.520906950590569E-10
+    },
+    {
+      "backgroundId": "bg-phase12-bg-b-20260315212202",
+      "upsilonPairing": 3.1482013198174185E-18,
+      "productionObjective": 1.5741006599087092E-18,
+      "objectiveCorrespondenceResidual": 0,
+      "vacuumResidualNorm": 1.7743171418372248E-09,
+      "discreteDStarUpsilonNorm": 3.078731720404218E-09
+    }
+  ],
+  "requiredTextEvidence": [
+    {
+      "evidenceId": "dictionary-higgs-potential-equals-upsilon-pairing",
+      "hitCount": 1,
+      "lineNumbers": [
+        3550
+      ]
+    },
+    {
+      "evidenceId": "dictionary-higgs-klein-gordon-equals-dstar-upsilon",
+      "hitCount": 1,
+      "lineNumbers": [
+        3555
+      ]
+    },
+    {
+      "evidenceId": "dictionary-yang-mills-maxwell-equals-dstar-upsilon",
+      "hitCount": 1,
+      "lineNumbers": [
+        3554
+      ]
+    },
+    {
+      "evidenceId": "dictionary-yukawa-couplings-as-vev",
+      "hitCount": 1,
+      "lineNumbers": [
+        3558
+      ]
+    },
+    {
+      "evidenceId": "dictionary-cosmological-constant-as-vev",
+      "hitCount": 1,
+      "lineNumbers": [
+        3557
+      ]
+    },
+    {
+      "evidenceId": "dictionary-weak-hypercharge-spin6xspin4-component",
+      "hitCount": 1,
+      "lineNumbers": [
+        3548
+      ]
+    },
+    {
+      "evidenceId": "lagrangian-9-11-squared-residual",
+      "hitCount": 1,
+      "lineNumbers": [
+        2267
+      ]
+    },
+    {
+      "evidenceId": "equation-12-2-first-order-upsilon-zero",
+      "hitCount": 1,
+      "lineNumbers": [
+        2887
+      ]
+    },
+    {
+      "evidenceId": "equation-12-3-second-order-dstar-upsilon-zero",
+      "hitCount": 1,
+      "lineNumbers": [
+        2893
+      ]
+    },
+    {
+      "evidenceId": "section-2-3-scalar-valued-in-lie-algebra",
+      "hitCount": 1,
+      "lineNumbers": [
+        662
+      ]
+    },
+    {
+      "evidenceId": "section-2-3-higgs-geometrically-unmotivated-heading",
+      "hitCount": 2,
+      "lineNumbers": [
+        54,
+        648
+      ]
+    }
+  ],
+  "applicationSubjectKind": "gu-draft-scalar-route-dictionary-audit",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "7bbad6a8af41620e1f8f718b3e3fbcead0dce9df217d69e1b316db76a8819ec0",
+  "backgroundCount": 2,
+  "routeProvidesPhysicalMassPsiCompatibleBranch": false,
+  "routeProvidesCompletedFermionicAction": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesObservedElectroweakNamespaceMap": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesWeakAngleOrCouplingLineage": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "the dictionary audit verifies primary-source LOCATIONS, not derivations; the draft supplies zero dimensionful anchors",
+    "the representation discriminator uses non-physical study couplings; the conclusion is the structural pattern, not any number",
+    "the doublet-equivalent substructure is a NAMED GAP, not a finding - the primary draft does not exhibit it",
+    "the toy-branch vacuum-manifold results remain control-branch statements, not physical ones",
+    "no Phase201 or Phase256 fill",
+    "no physical predictions"
+  ],
+  "sourceEvidence": {
+    "draftTextPath": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt",
+    "draftPdfSha256": "3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4",
+    "explainerAnalysisPath": "docs/Reference/ExperimentReferences/TOE-GU-ICEBERG-20250423-GAP-ANALYSIS.md",
+    "phase398SummaryPath": "studies/phase398_vo6_vo7_control_branch_completion_ledger_audit_001/output/vo6_vo7_control_branch_completion_ledger_audit_summary.json",
+    "phase401SummaryPath": "studies/phase401_full_quartic_action_coupled_critical_point_construction_001/output/full_quartic_action_coupled_critical_point_construction_summary.json",
+    "phase394Workdir": "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir"
+  },
+  "decision": "The GU-native scalar route is now audited against the PRIMARY 2021 draft (stored text, PDF hash pinned). Three results. (1) PRIMARY EVIDENCE: the draft\u0027s own location dictionary (eq. 12.28) places the Higgs potential at \u003CUpsilon_omega, Upsilon_omega\u003E and the Higgs Klein-Gordon equation at D_omega^* Upsilon_omega = 0 - exactly the repo\u0027s production Mode-B objective and stationarity condition, verified numerically at the persisted backgrounds (objective = (1/2)\u003CU, M U\u003E to 1e-14; backgrounds on the Upsilon ~ 0 vacuum manifold; discrete D^* Upsilon at solver tolerance). The Phase393-401 toy-branch program has therefore been characterizing the draft-claimed Higgs potential\u0027s vacuum manifold all along, and its results (exact sector skeleton, sourceless Z channel, non-perturbative kernel relaxation) are direct structural statements about that object. (2) The draft potential \u003CU, U\u003E is non-negative with NO free quartic coupling (normalization fixed by the pairing - the \u0027contraction rules\u0027 claim is primary-faithful), and symmetry breaking must come from the geometry of the Upsilon = 0 locus, NOT from a negative mass-squared term - the explainer\u0027s phi-A cross-term mechanism is reconstruction, not the primary. (3) REPRESENTATION DISCRIMINATOR: the draft assigns the scalar to a Lie-algebra-valued (adjoint) object and never a doublet; the closed-form su(2)xu(1) mass-pattern computation shows the adjoint-triplet VEV CANNOT produce the SM neutral sector (two massless neutrals, no W3-B mixing, no custodial identity) while the doublet does - so the binding scalar-sector gap is sharpened to: exhibit a DOUBLET-EQUIVALENT substructure inside the pulled-back connection component, plus the still-absent quantitative chain (the primary contains zero GeV anchors). Nothing is promoted; no contract field is filled."
+}

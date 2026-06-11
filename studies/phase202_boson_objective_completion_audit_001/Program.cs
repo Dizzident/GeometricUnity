@@ -167,6 +167,7 @@ const string Phase398Path = "studies/phase398_vo6_vo7_control_branch_completion_
 const string Phase399Path = "studies/phase399_quadratic_model_coupled_critical_point_solve_001/output/quadratic_model_coupled_critical_point_solve_summary.json";
 const string Phase400Path = "studies/phase400_full_bosonic_action_flat_direction_lift_probe_001/output/full_bosonic_action_flat_direction_lift_probe_summary.json";
 const string Phase401Path = "studies/phase401_full_quartic_action_coupled_critical_point_construction_001/output/full_quartic_action_coupled_critical_point_construction_summary.json";
+const string Phase402Path = "studies/phase402_gu_draft_scalar_route_dictionary_audit_001/output/gu_draft_scalar_route_dictionary_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -367,6 +368,7 @@ using var phase398 = File.Exists(Phase398Path) ? JsonDocument.Parse(File.ReadAll
 using var phase399 = File.Exists(Phase399Path) ? JsonDocument.Parse(File.ReadAllText(Phase399Path)) : null;
 using var phase400 = File.Exists(Phase400Path) ? JsonDocument.Parse(File.ReadAllText(Phase400Path)) : null;
 using var phase401 = File.Exists(Phase401Path) ? JsonDocument.Parse(File.ReadAllText(Phase401Path)) : null;
+using var phase402 = File.Exists(Phase402Path) ? JsonDocument.Parse(File.ReadAllText(Phase402Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -4961,6 +4963,30 @@ var fullQuarticActionCoupledCriticalPointConstructionPassed = fullQuarticActionC
     && JsonBool(phase401.RootElement, "phase201TemplateMutated") is false
     && JsonInt(phase401.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
     && JsonInt(phase401.RootElement, "acceptedContractFieldCount") == 0;
+var guDraftScalarRouteDictionaryAuditMaterialized = phase402 is not null;
+var guDraftScalarRouteDictionaryAuditPassed = guDraftScalarRouteDictionaryAuditMaterialized
+    && JsonBool(phase402!.RootElement, "guDraftScalarRouteDictionaryAuditPassed") is true
+    && JsonBool(phase402.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase402.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase402.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase402.RootElement, "applicationSubjectKind") == "gu-draft-scalar-route-dictionary-audit"
+    && JsonBool(phase402.RootElement, "primaryTextEvidenceComplete") is true
+    && JsonBool(phase402.RootElement, "repoCorrespondenceVerified") is true
+    && JsonBool(phase402.RootElement, "zeroDimensionfulAnchorsInPrimary") is true
+    && JsonBool(phase402.RootElement, "doubletNeverAppliedToHiggs") is true
+    && JsonBool(phase402.RootElement, "routeRequiresDoubletEquivalentSubstructure") is true
+    && JsonBool(phase402.RootElement, "physicalScalarSectorDerived") is false
+    && JsonBool(phase402.RootElement, "physicalCouplingProvided") is false
+    && JsonBool(phase402.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase402.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase402.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase402.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase402.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase402.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase402.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase402.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase402.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase402.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -7145,6 +7171,14 @@ var checklist = new[]
             ? $"fullQuarticActionCoupledCriticalPointConstructionPassed={JsonBool(phase401!.RootElement, "fullQuarticActionCoupledCriticalPointConstructionPassed")}; targetBlind={JsonBool(phase401.RootElement, "targetBlindConstruction")}; allCoupledRunsCharacterized={JsonBool(phase401.RootElement, "allCoupledRunsCharacterized")}; noPerturbativeCoupledCriticalPointFound={JsonBool(phase401.RootElement, "noPerturbativeCoupledCriticalPointFound")}; kernelRelaxationNonperturbative={JsonBool(phase401.RootElement, "kernelRelaxationNonperturbative")}; canFillPhase201WzContract={JsonBool(phase401.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase401.RootElement, "decision")}"
             : "Phase401 artifact not materialized",
         Phase401Path),
+    new ObjectiveChecklistItem(
+        "gu-draft-scalar-route-dictionary-audit-materialized",
+        "Audit the GU-native scalar route against the stored primary 2021 draft: dictionary evidence, Mode-B/Higgs-potential correspondence, and the doublet-vs-adjoint representation discriminator.",
+        guDraftScalarRouteDictionaryAuditPassed ? "passed" : "failed",
+        guDraftScalarRouteDictionaryAuditMaterialized
+            ? $"guDraftScalarRouteDictionaryAuditPassed={JsonBool(phase402!.RootElement, "guDraftScalarRouteDictionaryAuditPassed")}; targetBlind={JsonBool(phase402.RootElement, "targetBlindConstruction")}; primaryTextEvidenceComplete={JsonBool(phase402.RootElement, "primaryTextEvidenceComplete")}; repoCorrespondenceVerified={JsonBool(phase402.RootElement, "repoCorrespondenceVerified")}; routeRequiresDoubletEquivalentSubstructure={JsonBool(phase402.RootElement, "routeRequiresDoubletEquivalentSubstructure")}; zeroDimensionfulAnchorsInPrimary={JsonBool(phase402.RootElement, "zeroDimensionfulAnchorsInPrimary")}; canFillPhase201WzContract={JsonBool(phase402.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase402.RootElement, "decision")}"
+            : "Phase402 artifact not materialized",
+        Phase402Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

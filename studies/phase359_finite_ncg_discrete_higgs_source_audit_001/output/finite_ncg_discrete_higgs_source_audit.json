@@ -1,7 +1,7 @@
 {
   "phaseId": "phase359-finite-ncg-discrete-higgs-source-audit",
   "terminalStatus": "finite-ncg-discrete-higgs-source-audit-geometric-mechanism-not-gu-mass-law",
-  "generatedAt": "2026-06-11T16:09:11.1058978+00:00",
+  "generatedAt": "2026-06-11T17:30:29.3885661+00:00",
   "finiteNcgDiscreteHiggsSourceAuditPassed": true,
   "finiteNcgLeadPresent": true,
   "finiteNcgPrimarySourcesReviewed": true,

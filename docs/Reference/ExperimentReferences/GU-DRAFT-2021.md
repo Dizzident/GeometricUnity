@@ -5,6 +5,10 @@
 - Title: Geometric Unity Author's Working Draft v1.0
 - URL: https://geometricunity.nyc3.digitaloceanspaces.com/Geometric_Unity-Draft-April-1st-2021.pdf
 - Source type: Primary GU source
+- Local text extraction (2026-06-11, for reproducible machine audits):
+  `docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt`
+  (PDF SHA256
+  `3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4`)
 - Reference index: [ExperimentReferences.md](../../../ExperimentReferences.md)
 
 ## Summary
@@ -69,3 +73,18 @@ The source remains necessary context, not sufficient prediction evidence.
   theta_omega or boson mass bridge law.
 - Any future promotion attempt must cite exact equations and show replayable
   source-lineage fields.
+
+## Phase402 Dictionary Audit (2026-06-11)
+
+The appendix location dictionary (eq. 12.28) was machine-audited against
+the stored text: the draft places the Higgs potential at
+<Upsilon_omega, Upsilon_omega>, the Higgs Klein-Gordon and
+Yang-Mills-Maxwell equations at D_omega^* Upsilon_omega = 0, the Yukawa
+couplings and cosmological constant "as a VEV" of pulled-back objects
+(no values), and weak hypercharge as the Spin(6)xSpin(4) component of
+the connection. These are exactly the objects the repository's Mode-B
+machinery computes (verified numerically in Phase402). The draft never
+assigns the Higgs a doublet representation ("a spinless field valued in
+a Lie Algebra", section 2.3), contains zero dimensionful anchors (no
+GeV, no 246), and exhibits no doublet-equivalent substructure - the
+three named sub-gaps of the scalar-sector row (Phase402 journal entry).
