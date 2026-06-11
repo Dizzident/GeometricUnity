@@ -16571,3 +16571,40 @@ machinery (the curvature self-wedge already carries the A wedge A
 structure), and machine-checks which Phase201/Phase256 contract fields the
 route could in principle supply and which remain underived - letting the
 existing gates decide, as always.
+
+## 2026-06-11 - Official GU Index Page Video Inventory: All Items Dispositioned
+
+### Context
+
+User asked whether the videos on the official GU index page
+(https://geometricunity.org/pull-that-up-jamie/) have been investigated
+thoroughly enough to eliminate them as sources for the remaining issues.
+Until today only the page itself (provenance), the draft, and the Oxford
+2013 lecture carried documented audit verdicts.
+
+### Result
+
+- Complete enumeration performed (18 embedded videos + linked items),
+  recorded as a disposition table in GU-DRAFT-INDEX.md:
+  - 16 clips are 22s-1:18 silent pedagogical animations (verified
+    caption-less; durations exclude derivations) - eliminated.
+  - The 1:46:34 embed is the Into The Impossible #135 launch interview
+    (Keating, 2021-04-02): transcribed (~16.8k words, stored under
+    transcripts/) and audited as KEATING-ITI135-GU-REVEALED-20210402 -
+    the Higgs-sector multiplicity and gauge-group selection appear only
+    as QUESTIONS, no derivations or scales - eliminated for contract
+    fields.
+  - JRE #1628 (linked, off-platform announcement interview) -
+    dispositioned as bounded by the draft; revisit only on a specific
+    reported technical claim.
+- Conclusion: every technical claim reachable from the official index
+  page is bounded by the GU-DRAFT-2021 manuscript already under audit.
+  The negative boundary (no GU-native quantitative scalar-sector source)
+  stands.
+
+### Standing Next Work
+
+Unchanged: the physical VO-6/VO-7 derivation against the Phase398 gap
+ledger, with the TOE-GU-ICEBERG-20250423 structural ansatz as the
+roadmap and GU-DRAFT-2021 as the primary citation target; literature
+monitoring at checkpoint cadence.
