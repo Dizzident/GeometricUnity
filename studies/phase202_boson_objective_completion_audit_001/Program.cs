@@ -169,6 +169,7 @@ const string Phase400Path = "studies/phase400_full_bosonic_action_flat_direction
 const string Phase401Path = "studies/phase401_full_quartic_action_coupled_critical_point_construction_001/output/full_quartic_action_coupled_critical_point_construction_summary.json";
 const string Phase402Path = "studies/phase402_gu_draft_scalar_route_dictionary_audit_001/output/gu_draft_scalar_route_dictionary_audit_summary.json";
 const string Phase403Path = "studies/phase403_adjoint_doublet_substructure_branching_probe_001/output/adjoint_doublet_substructure_branching_probe_summary.json";
+const string Phase404Path = "studies/phase404_gu_embedding_chain_coupling_ratio_enumeration_001/output/gu_embedding_chain_coupling_ratio_enumeration_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -371,6 +372,7 @@ using var phase400 = File.Exists(Phase400Path) ? JsonDocument.Parse(File.ReadAll
 using var phase401 = File.Exists(Phase401Path) ? JsonDocument.Parse(File.ReadAllText(Phase401Path)) : null;
 using var phase402 = File.Exists(Phase402Path) ? JsonDocument.Parse(File.ReadAllText(Phase402Path)) : null;
 using var phase403 = File.Exists(Phase403Path) ? JsonDocument.Parse(File.ReadAllText(Phase403Path)) : null;
+using var phase404 = File.Exists(Phase404Path) ? JsonDocument.Parse(File.ReadAllText(Phase404Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -5013,6 +5015,29 @@ var adjointDoubletSubstructureBranchingProbePassed = adjointDoubletSubstructureB
     && JsonBool(phase403.RootElement, "phase201TemplateMutated") is false
     && JsonInt(phase403.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
     && JsonInt(phase403.RootElement, "acceptedContractFieldCount") == 0;
+var guEmbeddingChainCouplingRatioEnumerationMaterialized = phase404 is not null;
+var guEmbeddingChainCouplingRatioEnumerationPassed = guEmbeddingChainCouplingRatioEnumerationMaterialized
+    && JsonBool(phase404!.RootElement, "guEmbeddingChainCouplingRatioEnumerationPassed") is true
+    && JsonBool(phase404.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase404.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase404.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase404.RootElement, "applicationSubjectKind") == "gu-embedding-chain-coupling-ratio-enumeration"
+    && JsonBool(phase404.RootElement, "enumerationInternallyConsistent") is true
+    && JsonBool(phase404.RootElement, "standardRatioMatchesClassicValue") is true
+    && JsonBool(phase404.RootElement, "familyPatternDerived") is true
+    && JsonBool(phase404.RootElement, "adjointColorSingletChargedDoubletAbsentEverywhere") is true
+    && JsonBool(phase404.RootElement, "compactFormUsedForNoncompactAlgebra") is true
+    && JsonBool(phase404.RootElement, "physicalCouplingProvided") is false
+    && JsonBool(phase404.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase404.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase404.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase404.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase404.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase404.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase404.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase404.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase404.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase404.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -7213,6 +7238,14 @@ var checklist = new[]
             ? $"adjointDoubletSubstructureBranchingProbePassed={JsonBool(phase403!.RootElement, "adjointDoubletSubstructureBranchingProbePassed")}; targetBlind={JsonBool(phase403.RootElement, "targetBlindConstruction")}; su2AdjointHasNoDoubletBlock={JsonBool(phase403.RootElement, "su2AdjointHasNoDoubletBlock")}; su3AdjointContainsConjugateDoubletPair={JsonBool(phase403.RootElement, "su3AdjointContainsConjugateDoubletPair")}; custodialPattern={JsonBool(phase403.RootElement, "custodialPatternProducedByAdjointDoubletBlock")}; ratioMechanism={JsonBool(phase403.RootElement, "couplingRatioLineageMechanismIdentified")}; canFillPhase201WzContract={JsonBool(phase403.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase403.RootElement, "decision")}"
             : "Phase403 artifact not materialized",
         Phase403Path),
+    new ObjectiveChecklistItem(
+        "gu-embedding-chain-coupling-ratio-enumeration-materialized",
+        "Exhaustively enumerate the GU-named embedding chain at the complexification level: derived coupling-ratio menu, derived family hypercharge pattern, and the adjoint Higgs-doublet exclusion verdict.",
+        guEmbeddingChainCouplingRatioEnumerationPassed ? "passed" : "failed",
+        guEmbeddingChainCouplingRatioEnumerationMaterialized
+            ? $"guEmbeddingChainCouplingRatioEnumerationPassed={JsonBool(phase404!.RootElement, "guEmbeddingChainCouplingRatioEnumerationPassed")}; targetBlind={JsonBool(phase404.RootElement, "targetBlindConstruction")}; standardRatioMatchesClassicValue={JsonBool(phase404.RootElement, "standardRatioMatchesClassicValue")}; familyPatternDerived={JsonBool(phase404.RootElement, "familyPatternDerived")}; adjointHiggsDoubletAbsent={JsonBool(phase404.RootElement, "adjointColorSingletChargedDoubletAbsentEverywhere")}; canFillPhase201WzContract={JsonBool(phase404.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase404.RootElement, "decision")}"
+            : "Phase404 artifact not materialized",
+        Phase404Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

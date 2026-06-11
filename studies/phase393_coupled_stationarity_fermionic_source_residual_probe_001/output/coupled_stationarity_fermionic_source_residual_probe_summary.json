@@ -1,6 +1,6 @@
 {
   "phaseId": "phase393-coupled-stationarity-fermionic-source-residual-probe",
-  "generatedAt": "2026-06-11T19:05:53.5330656+00:00",
+  "generatedAt": "2026-06-11T20:19:02.8742057+00:00",
   "terminalStatus": "coupled-stationarity-residual-characterized-backreaction-blocked-positive-bosonic-spectrum-missing",
   "coupledStationarityFermionicSourceResidualProbePassed": true,
   "phase379PrecursorPassed": true,

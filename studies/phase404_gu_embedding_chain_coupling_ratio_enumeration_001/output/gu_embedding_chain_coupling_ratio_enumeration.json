@@ -1,0 +1,2198 @@
+{
+  "phaseId": "phase404-gu-embedding-chain-coupling-ratio-enumeration",
+  "generatedAt": "2026-06-11T20:24:21.9987918+00:00",
+  "terminalStatus": "gu-embedding-chain-enumerated-ratio-menu-derived-adjoint-higgs-doublet-absent",
+  "guEmbeddingChainCouplingRatioEnumerationPassed": true,
+  "phase402PrecursorPassed": true,
+  "phase403PrecursorPassed": true,
+  "enumerationInternallyConsistent": true,
+  "scaffoldingVerified": true,
+  "su2ClosureResidual": 0,
+  "jCommutesWithSu2Residual": 0,
+  "u3Dimension": 9,
+  "colorDimension": 8,
+  "colorClosureResidual": 7.447602459741819E-16,
+  "spinorHomResidual": 0,
+  "spinor16IsSixteenDimensional": true,
+  "standardTanSquaredEmb": 0.6,
+  "standardSinSquaredEmb": 0.37499999999999994,
+  "standardRatioMatchesClassicValue": true,
+  "standardLeptonAbsYBeforeNormalization": 0.5,
+  "familyPatternDerived": true,
+  "adjointColorSingletNonzeroYDoubletCountStandard": 0,
+  "adjointColorSingletChargedDoubletAbsentEverywhere": true,
+  "adjointHiggsPatternDoubletExcludedOnThisChain": true,
+  "scalarDoubletMustComeFromNonAdjointConnectionComponents": true,
+  "scanCount": 224,
+  "directionsWithLeptonDoublet": 210,
+  "minTanSquaredOverScan": 0.027272727272727275,
+  "maxTanSquaredOverScan": 1.5,
+  "gpuUsed": false,
+  "gpuJustification": "objects are 10x10 / 32x32 matrices; the exhaustive enumeration completes on CPU in seconds - GPU is reserved for Phases 405/406 where problem sizes warrant it (user directive recorded in the restart prompt)",
+  "compactFormUsedForNoncompactAlgebra": true,
+  "physicalCouplingProvided": false,
+  "enumerationDefinitions": {
+    "chain": "so(10) compact level (D5 complexification of spin(6,4)): so(6)\u002Bso(4) Pati-Salam scaffolding; su(2)_L/R = (anti-)self-dual so(4) halves; color su(3) = traceless centralizer of the so(6) complex structure J; Y(alpha,beta) = alpha R3 \u002B beta J/2",
+    "adjointBranching": "blocks of the 45 under {su(2)_L Casimir, |Y|, color Casimir} via simultaneous eigenspaces of a generically mixed operator",
+    "spinorBranching": "Cl(10) on 32 complex dims (tensor-product gammas), Sigma_ij = [g_i,g_j]/4, chirality-projected 16; charges from Hermitian expectations",
+    "normalization": "Y scaled so the 16\u0027s color-singlet doublet carries |Y| = 1/2 (lepton-doublet bookkeeping; internal, not experimental)",
+    "ratio": "tan^2(theta_emb) = \u003CT3,T3\u003E/\u003CY_norm,Y_norm\u003E in the -Tr(AB)/2 pairing; sin^2 derived; recorded blind",
+    "crossChecks": "su(2) closure, [J, su(2)] = 0, u(3)/su(3) dimensions, color closure, spinor homomorphism residual, 16-dimensionality, tan^2 = 3/5 for the standard direction (group-theory constant, like asserting j(j\u002B1)), full SM family pattern"
+  },
+  "applicationSubjectKind": "gu-embedding-chain-coupling-ratio-enumeration",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "ed68a8f3e0d98f25f3c476e940103a4275a79f550346338d08c3c6319160a481",
+  "routeProvidesPhysicalMassPsiCompatibleBranch": false,
+  "routeProvidesCompletedFermionicAction": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesObservedElectroweakNamespaceMap": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesWeakAngleOrCouplingLineage": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "compact-form (so(10)) arithmetic stands in for the spin(6,4) complexification; real-form-specific effects are a recorded limitation",
+    "tan^2(theta_emb) = 3/5 is a tree-level algebraic constant of the embedding, recorded blind; no renormalization, no scale, and no comparison to measured values",
+    "the family pattern and ratio menu are charge bookkeeping; they fill no contract field (no VEV, pole, or GeV lineage exists here)",
+    "the adjoint-doublet exclusion is chain-specific (this D5 chain) and complexification-level",
+    "no Phase201 or Phase256 fill",
+    "no physical predictions"
+  ],
+  "standardAdjointBlocks": [
+    {
+      "dimension": 3,
+      "jValue": 1,
+      "absY": 0,
+      "colorCasimir": 0,
+      "isColorSinglet": true
+    },
+    {
+      "dimension": 12,
+      "jValue": 0.5,
+      "absY": 0.8333333066666662,
+      "colorCasimir": 2.6666667,
+      "isColorSinglet": false
+    },
+    {
+      "dimension": 12,
+      "jValue": 0.5,
+      "absY": 0.16666673333332,
+      "colorCasimir": 2.6666667,
+      "isColorSinglet": false
+    },
+    {
+      "dimension": 2,
+      "jValue": 0,
+      "absY": 1,
+      "colorCasimir": 0,
+      "isColorSinglet": true
+    },
+    {
+      "dimension": 6,
+      "jValue": 0,
+      "absY": 0.6666666333333325,
+      "colorCasimir": 2.6666667,
+      "isColorSinglet": false
+    },
+    {
+      "dimension": 8,
+      "jValue": 0,
+      "absY": 0,
+      "colorCasimir": 6,
+      "isColorSinglet": false
+    },
+    {
+      "dimension": 2,
+      "jValue": 0,
+      "absY": 0,
+      "colorCasimir": 0,
+      "isColorSinglet": true
+    }
+  ],
+  "standardSpinor16Blocks": [
+    {
+      "dimension": 6,
+      "jValue": 0.5,
+      "y": -0.166667,
+      "colorCasimir": 2.666667,
+      "isColorSinglet": false
+    },
+    {
+      "dimension": 2,
+      "jValue": 0.5,
+      "y": 0.5,
+      "colorCasimir": 0,
+      "isColorSinglet": true
+    },
+    {
+      "dimension": 1,
+      "jValue": 0,
+      "y": -1,
+      "colorCasimir": 0,
+      "isColorSinglet": true
+    },
+    {
+      "dimension": 3,
+      "jValue": 0,
+      "y": -0.333333,
+      "colorCasimir": 2.666667,
+      "isColorSinglet": false
+    },
+    {
+      "dimension": 1,
+      "jValue": 0,
+      "y": -0,
+      "colorCasimir": 0,
+      "isColorSinglet": true
+    },
+    {
+      "dimension": 3,
+      "jValue": 0,
+      "y": 0.666667,
+      "colorCasimir": 2.666667,
+      "isColorSinglet": false
+    }
+  ],
+  "scan": [
+    {
+      "alpha": -3,
+      "beta": 0.6666666666666666,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.10344827586206895
+    },
+    {
+      "alpha": -3,
+      "beta": -0.6666666666666666,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.10344827586206895
+    },
+    {
+      "alpha": -3,
+      "beta": 0.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.027272727272727275
+    },
+    {
+      "alpha": -3,
+      "beta": -0.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.027272727272727275
+    },
+    {
+      "alpha": -3,
+      "beta": 1.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.3428571428571428
+    },
+    {
+      "alpha": -3,
+      "beta": -1.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.3428571428571428
+    },
+    {
+      "alpha": -3,
+      "beta": 1,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.2142857142857143
+    },
+    {
+      "alpha": -3,
+      "beta": -1,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.2142857142857143
+    },
+    {
+      "alpha": -3,
+      "beta": 2,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.6000000000000001
+    },
+    {
+      "alpha": -3,
+      "beta": -2,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.6000000000000001
+    },
+    {
+      "alpha": -3,
+      "beta": 0.5,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.06000000000000001
+    },
+    {
+      "alpha": -3,
+      "beta": -0.5,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.06000000000000001
+    },
+    {
+      "alpha": -3,
+      "beta": 0,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": false,
+      "tanSquaredEmb": 0
+    },
+    {
+      "alpha": -3,
+      "beta": 3,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.8999999999999999
+    },
+    {
+      "alpha": -3,
+      "beta": -3,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.8999999999999999
+    },
+    {
+      "alpha": -1.5,
+      "beta": 0.6666666666666666,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.3428571428571428
+    },
+    {
+      "alpha": -1.5,
+      "beta": -0.6666666666666666,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.3428571428571428
+    },
+    {
+      "alpha": -1.5,
+      "beta": 0.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.10344827586206895
+    },
+    {
+      "alpha": -1.5,
+      "beta": -0.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.10344827586206895
+    },
+    {
+      "alpha": -1.5,
+      "beta": 1.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.8135593220338982
+    },
+    {
+      "alpha": -1.5,
+      "beta": -1.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.8135593220338982
+    },
+    {
+      "alpha": -1.5,
+      "beta": 1,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.6000000000000001
+    },
+    {
+      "alpha": -1.5,
+      "beta": -1,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.6000000000000001
+    },
+    {
+      "alpha": -1.5,
+      "beta": 2,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.090909090909091
+    },
+    {
+      "alpha": -1.5,
+      "beta": -2,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.090909090909091
+    },
+    {
+      "alpha": -1.5,
+      "beta": 0.5,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.2142857142857143
+    },
+    {
+      "alpha": -1.5,
+      "beta": -0.5,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.2142857142857143
+    },
+    {
+      "alpha": -1.5,
+      "beta": 0,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": false,
+      "tanSquaredEmb": 0
+    },
+    {
+      "alpha": -1.5,
+      "beta": 3,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.2857142857142858
+    },
+    {
+      "alpha": -1.5,
+      "beta": -3,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.2857142857142858
+    },
+    {
+      "alpha": -1,
+      "beta": 0.6666666666666666,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.6
+    },
+    {
+      "alpha": -1,
+      "beta": -0.6666666666666666,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.6
+    },
+    {
+      "alpha": -1,
+      "beta": 0.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.21428571428571427
+    },
+    {
+      "alpha": -1,
+      "beta": -0.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.21428571428571427
+    },
+    {
+      "alpha": -1,
+      "beta": 1.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.0909090909090908
+    },
+    {
+      "alpha": -1,
+      "beta": -1.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.0909090909090908
+    },
+    {
+      "alpha": -1,
+      "beta": 1,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.9000000000000001
+    },
+    {
+      "alpha": -1,
+      "beta": -1,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.9000000000000001
+    },
+    {
+      "alpha": -1,
+      "beta": 2,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.2857142857142858
+    },
+    {
+      "alpha": -1,
+      "beta": -2,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.2857142857142858
+    },
+    {
+      "alpha": -1,
+      "beta": 0.5,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.4090909090909091
+    },
+    {
+      "alpha": -1,
+      "beta": -0.5,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.4090909090909091
+    },
+    {
+      "alpha": -1,
+      "beta": 0,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": false,
+      "tanSquaredEmb": 0
+    },
+    {
+      "alpha": -1,
+      "beta": 3,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.3965517241379313
+    },
+    {
+      "alpha": -1,
+      "beta": -3,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.3965517241379313
+    },
+    {
+      "alpha": -2,
+      "beta": 0.6666666666666666,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.21428571428571427
+    },
+    {
+      "alpha": -2,
+      "beta": -0.6666666666666666,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.21428571428571427
+    },
+    {
+      "alpha": -2,
+      "beta": 0.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.06
+    },
+    {
+      "alpha": -2,
+      "beta": -0.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.06
+    },
+    {
+      "alpha": -2,
+      "beta": 1.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.6
+    },
+    {
+      "alpha": -2,
+      "beta": -1.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.6
+    },
+    {
+      "alpha": -2,
+      "beta": 1,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.4090909090909091
+    },
+    {
+      "alpha": -2,
+      "beta": -1,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.4090909090909091
+    },
+    {
+      "alpha": -2,
+      "beta": 2,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.9000000000000001
+    },
+    {
+      "alpha": -2,
+      "beta": -2,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.9000000000000001
+    },
+    {
+      "alpha": -2,
+      "beta": 0.5,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.1285714285714286
+    },
+    {
+      "alpha": -2,
+      "beta": -0.5,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.1285714285714286
+    },
+    {
+      "alpha": -2,
+      "beta": 0,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": false,
+      "tanSquaredEmb": 0
+    },
+    {
+      "alpha": -2,
+      "beta": 3,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.1571428571428573
+    },
+    {
+      "alpha": -2,
+      "beta": -3,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.1571428571428573
+    },
+    {
+      "alpha": -0.6666666666666666,
+      "beta": 0.6666666666666666,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.8999999999999998
+    },
+    {
+      "alpha": -0.6666666666666666,
+      "beta": -0.6666666666666666,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.8999999999999998
+    },
+    {
+      "alpha": -0.6666666666666666,
+      "beta": 0.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.40909090909090906
+    },
+    {
+      "alpha": -0.6666666666666666,
+      "beta": -0.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.40909090909090906
+    },
+    {
+      "alpha": -0.6666666666666666,
+      "beta": 1.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.2857142857142856
+    },
+    {
+      "alpha": -0.6666666666666666,
+      "beta": -1.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.2857142857142856
+    },
+    {
+      "alpha": -0.6666666666666666,
+      "beta": 1,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.1571428571428573
+    },
+    {
+      "alpha": -0.6666666666666666,
+      "beta": -1,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.1571428571428573
+    },
+    {
+      "alpha": -0.6666666666666666,
+      "beta": 2,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.3965517241379315
+    },
+    {
+      "alpha": -0.6666666666666666,
+      "beta": -2,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.3965517241379315
+    },
+    {
+      "alpha": -0.6666666666666666,
+      "beta": 0.5,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.6864406779661018
+    },
+    {
+      "alpha": -0.6666666666666666,
+      "beta": -0.5,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.6864406779661018
+    },
+    {
+      "alpha": -0.6666666666666666,
+      "beta": 0,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": false,
+      "tanSquaredEmb": 0
+    },
+    {
+      "alpha": -0.6666666666666666,
+      "beta": 3,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.4521912350597612
+    },
+    {
+      "alpha": -0.6666666666666666,
+      "beta": -3,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.4521912350597612
+    },
+    {
+      "alpha": -0.5,
+      "beta": 0.6666666666666666,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.0909090909090908
+    },
+    {
+      "alpha": -0.5,
+      "beta": -0.6666666666666666,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.0909090909090908
+    },
+    {
+      "alpha": -0.5,
+      "beta": 0.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.6
+    },
+    {
+      "alpha": -0.5,
+      "beta": -0.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.6
+    },
+    {
+      "alpha": -0.5,
+      "beta": 1.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.3714285714285712
+    },
+    {
+      "alpha": -0.5,
+      "beta": -1.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.3714285714285712
+    },
+    {
+      "alpha": -0.5,
+      "beta": 1,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.2857142857142858
+    },
+    {
+      "alpha": -0.5,
+      "beta": -1,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.2857142857142858
+    },
+    {
+      "alpha": -0.5,
+      "beta": 2,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.4400000000000004
+    },
+    {
+      "alpha": -0.5,
+      "beta": -2,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.4400000000000004
+    },
+    {
+      "alpha": -0.5,
+      "beta": 0.5,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.9000000000000001
+    },
+    {
+      "alpha": -0.5,
+      "beta": -0.5,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.9000000000000001
+    },
+    {
+      "alpha": -0.5,
+      "beta": 0,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": false,
+      "tanSquaredEmb": 0
+    },
+    {
+      "alpha": -0.5,
+      "beta": 3,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.4727272727272729
+    },
+    {
+      "alpha": -0.5,
+      "beta": -3,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.4727272727272729
+    },
+    {
+      "alpha": -0.3333333333333333,
+      "beta": 0.6666666666666666,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.2857142857142856
+    },
+    {
+      "alpha": -0.3333333333333333,
+      "beta": -0.6666666666666666,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.2857142857142856
+    },
+    {
+      "alpha": -0.3333333333333333,
+      "beta": 0.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.8999999999999998
+    },
+    {
+      "alpha": -0.3333333333333333,
+      "beta": -0.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.8999999999999998
+    },
+    {
+      "alpha": -0.3333333333333333,
+      "beta": 1.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.44
+    },
+    {
+      "alpha": -0.3333333333333333,
+      "beta": -1.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.44
+    },
+    {
+      "alpha": -0.3333333333333333,
+      "beta": 1,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.3965517241379315
+    },
+    {
+      "alpha": -0.3333333333333333,
+      "beta": -1,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.3965517241379315
+    },
+    {
+      "alpha": -0.3333333333333333,
+      "beta": 2,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.4727272727272729
+    },
+    {
+      "alpha": -0.3333333333333333,
+      "beta": -2,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.4727272727272729
+    },
+    {
+      "alpha": -0.3333333333333333,
+      "beta": 0.5,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.1571428571428573
+    },
+    {
+      "alpha": -0.3333333333333333,
+      "beta": -0.5,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.1571428571428573
+    },
+    {
+      "alpha": -0.3333333333333333,
+      "beta": 0,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": false,
+      "tanSquaredEmb": 0
+    },
+    {
+      "alpha": -0.3333333333333333,
+      "beta": 3,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.487755102040816
+    },
+    {
+      "alpha": -0.3333333333333333,
+      "beta": -3,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.487755102040816
+    },
+    {
+      "alpha": 0,
+      "beta": 0.6666666666666666,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.4999999999999998
+    },
+    {
+      "alpha": 0,
+      "beta": -0.6666666666666666,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.4999999999999998
+    },
+    {
+      "alpha": 0,
+      "beta": 0.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.4999999999999998
+    },
+    {
+      "alpha": 0,
+      "beta": -0.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.4999999999999998
+    },
+    {
+      "alpha": 0,
+      "beta": 1.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.4999999999999998
+    },
+    {
+      "alpha": 0,
+      "beta": -1.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.4999999999999998
+    },
+    {
+      "alpha": 0,
+      "beta": 1,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.5
+    },
+    {
+      "alpha": 0,
+      "beta": -1,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.5
+    },
+    {
+      "alpha": 0,
+      "beta": 2,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.5
+    },
+    {
+      "alpha": 0,
+      "beta": -2,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.5
+    },
+    {
+      "alpha": 0,
+      "beta": 0.5,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.5
+    },
+    {
+      "alpha": 0,
+      "beta": -0.5,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.5
+    },
+    {
+      "alpha": 0,
+      "beta": 3,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.5
+    },
+    {
+      "alpha": 0,
+      "beta": -3,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.5
+    },
+    {
+      "alpha": 1,
+      "beta": 0.6666666666666666,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.6
+    },
+    {
+      "alpha": 1,
+      "beta": -0.6666666666666666,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.6
+    },
+    {
+      "alpha": 1,
+      "beta": 0.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.21428571428571427
+    },
+    {
+      "alpha": 1,
+      "beta": -0.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.21428571428571427
+    },
+    {
+      "alpha": 1,
+      "beta": 1.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.0909090909090908
+    },
+    {
+      "alpha": 1,
+      "beta": -1.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.0909090909090908
+    },
+    {
+      "alpha": 1,
+      "beta": 1,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.9000000000000001
+    },
+    {
+      "alpha": 1,
+      "beta": -1,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.9000000000000001
+    },
+    {
+      "alpha": 1,
+      "beta": 2,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.2857142857142858
+    },
+    {
+      "alpha": 1,
+      "beta": -2,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.2857142857142858
+    },
+    {
+      "alpha": 1,
+      "beta": 0.5,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.4090909090909091
+    },
+    {
+      "alpha": 1,
+      "beta": -0.5,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.4090909090909091
+    },
+    {
+      "alpha": 1,
+      "beta": 0,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": false,
+      "tanSquaredEmb": 0
+    },
+    {
+      "alpha": 1,
+      "beta": 3,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.3965517241379313
+    },
+    {
+      "alpha": 1,
+      "beta": -3,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.3965517241379313
+    },
+    {
+      "alpha": 0.5,
+      "beta": 0.6666666666666666,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.0909090909090908
+    },
+    {
+      "alpha": 0.5,
+      "beta": -0.6666666666666666,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.0909090909090908
+    },
+    {
+      "alpha": 0.5,
+      "beta": 0.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.6
+    },
+    {
+      "alpha": 0.5,
+      "beta": -0.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.6
+    },
+    {
+      "alpha": 0.5,
+      "beta": 1.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.3714285714285712
+    },
+    {
+      "alpha": 0.5,
+      "beta": -1.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.3714285714285712
+    },
+    {
+      "alpha": 0.5,
+      "beta": 1,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.2857142857142858
+    },
+    {
+      "alpha": 0.5,
+      "beta": -1,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.2857142857142858
+    },
+    {
+      "alpha": 0.5,
+      "beta": 2,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.4400000000000004
+    },
+    {
+      "alpha": 0.5,
+      "beta": -2,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.4400000000000004
+    },
+    {
+      "alpha": 0.5,
+      "beta": 0.5,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.9000000000000001
+    },
+    {
+      "alpha": 0.5,
+      "beta": -0.5,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.9000000000000001
+    },
+    {
+      "alpha": 0.5,
+      "beta": 0,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": false,
+      "tanSquaredEmb": 0
+    },
+    {
+      "alpha": 0.5,
+      "beta": 3,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.4727272727272729
+    },
+    {
+      "alpha": 0.5,
+      "beta": -3,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.4727272727272729
+    },
+    {
+      "alpha": 0.3333333333333333,
+      "beta": 0.6666666666666666,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.2857142857142856
+    },
+    {
+      "alpha": 0.3333333333333333,
+      "beta": -0.6666666666666666,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.2857142857142856
+    },
+    {
+      "alpha": 0.3333333333333333,
+      "beta": 0.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.8999999999999998
+    },
+    {
+      "alpha": 0.3333333333333333,
+      "beta": -0.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.8999999999999998
+    },
+    {
+      "alpha": 0.3333333333333333,
+      "beta": 1.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.44
+    },
+    {
+      "alpha": 0.3333333333333333,
+      "beta": -1.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.44
+    },
+    {
+      "alpha": 0.3333333333333333,
+      "beta": 1,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.3965517241379315
+    },
+    {
+      "alpha": 0.3333333333333333,
+      "beta": -1,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.3965517241379315
+    },
+    {
+      "alpha": 0.3333333333333333,
+      "beta": 2,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.4727272727272729
+    },
+    {
+      "alpha": 0.3333333333333333,
+      "beta": -2,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.4727272727272729
+    },
+    {
+      "alpha": 0.3333333333333333,
+      "beta": 0.5,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.1571428571428573
+    },
+    {
+      "alpha": 0.3333333333333333,
+      "beta": -0.5,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.1571428571428573
+    },
+    {
+      "alpha": 0.3333333333333333,
+      "beta": 0,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": false,
+      "tanSquaredEmb": 0
+    },
+    {
+      "alpha": 0.3333333333333333,
+      "beta": 3,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.487755102040816
+    },
+    {
+      "alpha": 0.3333333333333333,
+      "beta": -3,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.487755102040816
+    },
+    {
+      "alpha": 2,
+      "beta": 0.6666666666666666,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.21428571428571427
+    },
+    {
+      "alpha": 2,
+      "beta": -0.6666666666666666,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.21428571428571427
+    },
+    {
+      "alpha": 2,
+      "beta": 0.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.06
+    },
+    {
+      "alpha": 2,
+      "beta": -0.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.06
+    },
+    {
+      "alpha": 2,
+      "beta": 1.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.6
+    },
+    {
+      "alpha": 2,
+      "beta": -1.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.6
+    },
+    {
+      "alpha": 2,
+      "beta": 1,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.4090909090909091
+    },
+    {
+      "alpha": 2,
+      "beta": -1,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.4090909090909091
+    },
+    {
+      "alpha": 2,
+      "beta": 2,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.9000000000000001
+    },
+    {
+      "alpha": 2,
+      "beta": -2,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.9000000000000001
+    },
+    {
+      "alpha": 2,
+      "beta": 0.5,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.1285714285714286
+    },
+    {
+      "alpha": 2,
+      "beta": -0.5,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.1285714285714286
+    },
+    {
+      "alpha": 2,
+      "beta": 0,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": false,
+      "tanSquaredEmb": 0
+    },
+    {
+      "alpha": 2,
+      "beta": 3,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.1571428571428573
+    },
+    {
+      "alpha": 2,
+      "beta": -3,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.1571428571428573
+    },
+    {
+      "alpha": 0.6666666666666666,
+      "beta": 0.6666666666666666,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.8999999999999998
+    },
+    {
+      "alpha": 0.6666666666666666,
+      "beta": -0.6666666666666666,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.8999999999999998
+    },
+    {
+      "alpha": 0.6666666666666666,
+      "beta": 0.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.40909090909090906
+    },
+    {
+      "alpha": 0.6666666666666666,
+      "beta": -0.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.40909090909090906
+    },
+    {
+      "alpha": 0.6666666666666666,
+      "beta": 1.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.2857142857142856
+    },
+    {
+      "alpha": 0.6666666666666666,
+      "beta": -1.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.2857142857142856
+    },
+    {
+      "alpha": 0.6666666666666666,
+      "beta": 1,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.1571428571428573
+    },
+    {
+      "alpha": 0.6666666666666666,
+      "beta": -1,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.1571428571428573
+    },
+    {
+      "alpha": 0.6666666666666666,
+      "beta": 2,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.3965517241379315
+    },
+    {
+      "alpha": 0.6666666666666666,
+      "beta": -2,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.3965517241379315
+    },
+    {
+      "alpha": 0.6666666666666666,
+      "beta": 0.5,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.6864406779661018
+    },
+    {
+      "alpha": 0.6666666666666666,
+      "beta": -0.5,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.6864406779661018
+    },
+    {
+      "alpha": 0.6666666666666666,
+      "beta": 0,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": false,
+      "tanSquaredEmb": 0
+    },
+    {
+      "alpha": 0.6666666666666666,
+      "beta": 3,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.4521912350597612
+    },
+    {
+      "alpha": 0.6666666666666666,
+      "beta": -3,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.4521912350597612
+    },
+    {
+      "alpha": 3,
+      "beta": 0.6666666666666666,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.10344827586206895
+    },
+    {
+      "alpha": 3,
+      "beta": -0.6666666666666666,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.10344827586206895
+    },
+    {
+      "alpha": 3,
+      "beta": 0.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.027272727272727275
+    },
+    {
+      "alpha": 3,
+      "beta": -0.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.027272727272727275
+    },
+    {
+      "alpha": 3,
+      "beta": 1.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.3428571428571428
+    },
+    {
+      "alpha": 3,
+      "beta": -1.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.3428571428571428
+    },
+    {
+      "alpha": 3,
+      "beta": 1,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.2142857142857143
+    },
+    {
+      "alpha": 3,
+      "beta": -1,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.2142857142857143
+    },
+    {
+      "alpha": 3,
+      "beta": 2,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.6000000000000001
+    },
+    {
+      "alpha": 3,
+      "beta": -2,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.6000000000000001
+    },
+    {
+      "alpha": 3,
+      "beta": 0.5,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.06000000000000001
+    },
+    {
+      "alpha": 3,
+      "beta": -0.5,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.06000000000000001
+    },
+    {
+      "alpha": 3,
+      "beta": 0,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": false,
+      "tanSquaredEmb": 0
+    },
+    {
+      "alpha": 3,
+      "beta": 3,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.8999999999999999
+    },
+    {
+      "alpha": 3,
+      "beta": -3,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.8999999999999999
+    },
+    {
+      "alpha": 1.5,
+      "beta": 0.6666666666666666,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.3428571428571428
+    },
+    {
+      "alpha": 1.5,
+      "beta": -0.6666666666666666,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.3428571428571428
+    },
+    {
+      "alpha": 1.5,
+      "beta": 0.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.10344827586206895
+    },
+    {
+      "alpha": 1.5,
+      "beta": -0.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.10344827586206895
+    },
+    {
+      "alpha": 1.5,
+      "beta": 1.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.8135593220338982
+    },
+    {
+      "alpha": 1.5,
+      "beta": -1.3333333333333333,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.8135593220338982
+    },
+    {
+      "alpha": 1.5,
+      "beta": 1,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.6000000000000001
+    },
+    {
+      "alpha": 1.5,
+      "beta": -1,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.6000000000000001
+    },
+    {
+      "alpha": 1.5,
+      "beta": 2,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.090909090909091
+    },
+    {
+      "alpha": 1.5,
+      "beta": -2,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.090909090909091
+    },
+    {
+      "alpha": 1.5,
+      "beta": 0.5,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.2142857142857143
+    },
+    {
+      "alpha": 1.5,
+      "beta": -0.5,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 0.2142857142857143
+    },
+    {
+      "alpha": 1.5,
+      "beta": 0,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": false,
+      "tanSquaredEmb": 0
+    },
+    {
+      "alpha": 1.5,
+      "beta": 3,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.2857142857142858
+    },
+    {
+      "alpha": 1.5,
+      "beta": -3,
+      "adjointDoubletStates": 24,
+      "adjointColorSingletNonzeroYDoubletPairs": 0,
+      "adjointColoredDoubletStates": 24,
+      "leptonDoubletPresentIn16": true,
+      "tanSquaredEmb": 1.2857142857142858
+    }
+  ],
+  "sourceEvidence": {
+    "phase402SummaryPath": "studies/phase402_gu_draft_scalar_route_dictionary_audit_001/output/gu_draft_scalar_route_dictionary_audit_summary.json",
+    "phase403SummaryPath": "studies/phase403_adjoint_doublet_substructure_branching_probe_001/output/adjoint_doublet_substructure_branching_probe_summary.json",
+    "primaryDraftDictionary": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt (sections 11-12, eq. 12.28)",
+    "explainerAnalysis": "docs/Reference/ExperimentReferences/TOE-GU-ICEBERG-20250423-GAP-ANALYSIS.md (rows 6, 10)"
+  },
+  "decision": "The GU-named embedding chain is now exhaustively enumerated at the complexification level, from first principles. THREE COMPUTED RESULTS. (1) The embedding-derived coupling ratio for the standard hypercharge direction is tan^2(theta_emb) = 3/5 (sin^2 = 3/8), with the normalization anchored INTERNALLY by the 16\u0027s color-singlet doublet (lepton-doublet bookkeeping) - the classic unified-chain constant, derived blind by the machine, identical for every chain sharing this hypercharge embedding; the bounded scan records the full ratio menu over hypercharge directions. (2) The 16-dimensional spinor block DERIVES the complete SM family hypercharge pattern (quark doublet |Y|=1/6, lepton doublet |Y|=1/2, up/down/electron/neutrino singlets at 2/3, 1/3, 1, 0 in lepton-normalized units) - the family quantum numbers come out of the chain rather than being matched. (3) DECISIVE NEGATIVE for the scalar route: the adjoint 45 contains NO color-singlet charged doublet block for ANY scanned hypercharge direction - every doublet in the adjoint is colored (X/Y-boson type). Since the draft\u0027s scalar candidate is the pulled-back CONNECTION component (adjoint-valued), the SM-Higgs-pattern doublet CANNOT come from the gauge-algebra-adjoint part of the connection on this chain: it must come from the NON-ADJOINT components of the GU connection (the vertical/symmetric-2-tensor part named by the Iceberg analysis) or not at all - sharply narrowing scalar-sector sub-gap (a). Limitations recorded: compact-form arithmetic for the spin(6,4) complexification; charges and ratios only - no VEV, no scale, no GeV; nothing is promoted."
+}

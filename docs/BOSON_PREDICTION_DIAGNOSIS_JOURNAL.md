@@ -16749,3 +16749,53 @@ the GU-specific branching chain (the draft's spin(6,4) -> SM reduction)
 and its embedding-derived coupling ratio, fail-closed, citing
 GU-DRAFT-2021 and the stored text. Plus the standing physical gaps and
 literature monitoring at checkpoint cadence.
+
+## 2026-06-11 - Phase404 (Brute Force #1): GU Chain Ratio = 3/5; Adjoint Higgs Doublet Excluded
+
+### Context
+
+User directive: run the three brute-forceable computations as the next
+phases (GPU where warranted; recorded in the restart prompt). Phase404 is
+the first: exhaustive enumeration of the GU-named embedding chain at the
+complexification level (so(10) for spin(6,4); compact-form caveat
+recorded). CPU only - the objects are 10x10/32x32 and the enumeration
+takes seconds; the GPU (RTX 4080 SUPER, CUDA 13.3, repo native lib
+verified functional) enters in Phases 405/406.
+
+### Result (computed values)
+
+- **tan^2(theta_emb) = 3/5 exactly (sin^2 = 3/8)** for the standard
+  hypercharge direction Y = R3 + (B-L)/2 (B-L = (2/3)J on this chain),
+  normalization anchored internally by the 16's lepton-doublet slot -
+  derived blind; the bounded scan (224 directions) spans tan^2 in
+  [0.027, 1.5]. This is the embedding-derived coupling-ratio menu the
+  Phase397 one-parameter family was missing - at the algebraic level,
+  without scale/pole/GeV.
+- **The complete SM family hypercharge pattern is DERIVED from the
+  spinor 16**: quark doublet 1/6, lepton doublet 1/2, singlets 2/3, 1/3,
+  1, 0 (lepton-normalized units); 16-dimensionality exact.
+- **DECISIVE NEGATIVE: the adjoint 45 contains NO color-singlet charged
+  doublet for ANY scanned hypercharge direction** - every adjoint doublet
+  is colored (X/Y-type). The draft's scalar candidate (pulled-back
+  connection component) cannot supply the SM-Higgs doublet from its
+  gauge-algebra-adjoint part on this chain: the doublet must come from
+  the NON-ADJOINT (vertical symmetric-2-tensor) components or not at all.
+  Scalar-sector sub-gap (a) is now sharply localized.
+- Battery: su(2) closure (signs auto-resolved), color su(3) = traceless
+  centralizer of J (dims 9/8, closure 7e-16), spinor homomorphism residual
+  0, Cl(10) chirality projection exact.
+- Study: studies/phase404_gu_embedding_chain_coupling_ratio_enumeration_001
+  (IMPLEMENTATION_P404.md).
+
+### Validation
+
+- Targeted Phase404 run passed; Phase101 includes the block; Phase202:
+  checklistPassedCount=197, checklistFailedCount=3; claim integrity
+  verified with promotedPhysicalMassClaimCount=0.
+
+### Standing Next Work
+
+Brute force #2 (Phase405): vacuum-manifold doublet-VEV orbit scan on
+larger algebras with GPU Hessian spectra. Brute force #3 (Phase406):
+choice-space falsification sweep, GPU batch-parallel. Then resume the
+standing research loop per the user directive.

@@ -35,12 +35,12 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase403 work:
+Current gate status after the Phase404 work:
 
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=196`,
+  `objectiveAchieved=False`, `checklistPassedCount=197`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -113,6 +113,14 @@ Current gate status after the Phase403 work:
   `custodialPatternProducedByAdjointDoubletBlock=True` (identity residual
   0.0), `embeddingTanSquared=3` (derived, recorded blind),
   `couplingRatioLineageMechanismIdentified=True`
+- Phase404 (brute force #1 of the user directive):
+  `guEmbeddingChainCouplingRatioEnumerationPassed=True`,
+  `standardTanSquaredEmb=3/5` (sin^2 = 3/8; derived blind, internal
+  lepton-doublet normalization; scan menu over 224 directions),
+  `familyPatternDerived=True` (16 -> 1/6, 1/2, 2/3, 1/3, 1, 0),
+  `adjointColorSingletChargedDoubletAbsentEverywhere=True` (the SM-Higgs
+  doublet CANNOT come from the gauge-adjoint part of the connection on
+  this chain - non-adjoint components required)
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -133,35 +141,34 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work added Phase403, the adjoint doublet-substructure
-branching probe - pure group theory from the repo's own structure
-constants. The su(2) adjoint is a pure j=1 triplet with no doublet block
-(the su(2)-only control branch CANNOT realize the doublet route, which
-explains the Phase397 photon/Z underdetermination at the algebra level);
-the su(3) adjoint branches as 3_0 + 1_0 + (2_{+Y0} + 2_{-Y0}) with
-|Y0| = sqrt(3)/2, so doublet blocks exist generically inside larger
-adjoints (the gauge-Higgs-unification mechanism) and the GU route is not
-structurally excluded. A VEV in the doublet block produces the SM-shaped
-custodial pattern EXACTLY (identity residual 0.0) with
-tan^2(theta_emb) = 3 DERIVED from the embedding and recorded blind - a
-theorem-level, target-independent MECHANISM for the hypercharge/
-coupling-ratio lineage row. Named remaining gaps: the GU-specific
-embedding chain (spin(6,4)/su(3,2) -> SM with ITS derived ratio), the
-vacuum-manifold VEV selection, and the quantitative chain. Study:
-`studies/phase403_adjoint_doublet_substructure_branching_probe_001`
-(IMPLEMENTATION_P403.md). Before that, Phase402 pinned the Higgs
-potential to the repo's Mode-B objective via the primary draft's
-dictionary and sharpened the doublet requirement.
+The latest work added Phase404 (brute force #1 of the 2026-06-11 user
+directive): the exhaustive GU embedding-chain enumeration at the
+complexification level (so(10) for spin(6,4), compact-form caveat
+recorded; CPU - the objects are tiny; the GPU enters in Phases 405/406).
+Computed values: tan^2(theta_emb) = 3/5 exactly (sin^2 = 3/8) for the
+standard hypercharge direction with internal lepton-doublet
+normalization, plus the full ratio menu over 224 scanned directions
+(tan^2 in [0.027, 1.5]); the complete SM family hypercharge pattern
+DERIVED from the spinor 16; and the decisive negative that the adjoint 45
+contains NO color-singlet charged doublet for any direction - the
+SM-Higgs doublet cannot come from the gauge-adjoint part of the
+connection on this chain, localizing scalar-sector sub-gap (a) to the
+non-adjoint (vertical symmetric-2-tensor) components. Study:
+`studies/phase404_gu_embedding_chain_coupling_ratio_enumeration_001`
+(IMPLEMENTATION_P404.md). NEXT PER DIRECTIVE: Phase405 = vacuum-manifold
+doublet-VEV orbit scan with GPU Hessian spectra; Phase406 = choice-space
+falsification sweep, GPU batch-parallel; then resume the standing
+research loop.
 
 ### Integration Points Already Updated
 
-Phase403 (like Phase388-402) is wired into:
+Phase404 (like Phase388-403) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (both invocation blocks)
 - `studies/phase101_boson_prediction_package_001/Program.cs`
 - `studies/phase202_boson_objective_completion_audit_001/Program.cs`
   (checklist item
-  `adjoint-doublet-substructure-branching-probe-materialized`)
+  `gu-embedding-chain-coupling-ratio-enumeration-materialized`)
 - `scripts/verify_boson_claim_integrity.sh`
 - Broad scanner exclusions: phase204, phase205, phase207, phase279,
   phase281, phase295, phase296
@@ -175,15 +182,15 @@ The diagnosis journal entry is near the end of
 ### Validation Already Run
 
 ```bash
-dotnet run --project studies/phase403_adjoint_doublet_substructure_branching_probe_001/Phase403AdjointDoubletSubstructureBranchingProbe.csproj
+dotnet run --project studies/phase404_gu_embedding_chain_coupling_ratio_enumeration_001/Phase404GuEmbeddingChainCouplingRatioEnumeration.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
 ./scripts/generate_validated_boson_predictions.sh
 ```
 
-The full generator ended with the Phase403 line, the Phase202 incomplete
-status (`checklistPassedCount=196`, `checklistFailedCount=3`), and the same
+The full generator ended with the Phase404 line, the Phase202 incomplete
+status (`checklistPassedCount=197`, `checklistFailedCount=3`), and the same
 claim-integrity status (`promotedPhysicalMassClaimCount=0`). All seven broad
 scanners still report zero intake-ready evidence.
 
@@ -217,6 +224,35 @@ Important current local detail notes:
 Do not try to promote another numerical near-pass. The next useful work must
 either find or derive a theorem-level artifact that can fill the missing
 contract fields, or remove a physical blocker on the VO-7 branch.
+
+USER DIRECTIVE (2026-06-11): the next several phases are the three
+brute-force computations, run on the local GPU where the problem size
+warrants it (RTX 4080 SUPER, CUDA 13.3, repo native lib
+`native/build/libgu_cuda_core.so` verified functional via
+gu_cuda_device_init): Phase404 = exhaustive GU embedding-chain
+enumeration with the derived coupling-ratio menu (CPU - objects are
+10x10; GPU adds nothing); Phase405 = vacuum-manifold doublet-VEV orbit
+scan on larger algebras with GPU Hessian spectra; Phase406 =
+choice-space falsification sweep, GPU batch-parallel. After these three,
+resume the standing research loop below.
+
+Phase405 design (ready to implement): su(3)-valued connections (the
+minimal doublet-bearing algebra per Phase403) on a LARGER structured
+fiber-bundle mesh (rows=cols=6+ for a carrier in the thousands);
+question: does the Upsilon = 0 vacuum manifold's local structure permit/
+select doublet-block VEV directions? (1) GN Hessian spectrum at the
+trivial vacuum, kernel/soft directions classified by the su(2)xu(1)
+block decomposition (triplet/doublet/singlet); (2) brute-force orbit
+scan: S_B evaluated exactly over a dense sample of doublet-block VEV
+directions x magnitudes, landscape mapped in gauge-invariant orbit
+coordinates; (3) GPU: Gu.Interop.GpuSolverBackend implements
+ISolverBackend with algebra-generic EvaluateDerived (curvature/torsion/
+Shiab/residual) - run the thousands of independent evaluations on the
+GPU (CudaNativeBackend; native lib verified) with CPU-parity gates on a
+subsample and recorded speedup; check whether BuildJacobian/
+ComputeGradient are GPU-implemented (header comment may be stale - Phase
+I GAP-4/8 added CUDA Stage 2/3 Jacobian/Krylov) and fall back to CPU for
+those pieces if not, honestly recorded.
 
 The most useful next branches are:
 
@@ -274,10 +310,10 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -120 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase403|adjointDoubletSubstructureBranchingProbe|couplingRatioLineageMechanismIdentified" \
+rg -n "Phase404|guEmbeddingChainCouplingRatioEnumeration|adjointColorSingletChargedDoubletAbsentEverywhere" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
   ExperimentReferences.md \
-  studies/phase403_adjoint_doublet_substructure_branching_probe_001 \
+  studies/phase404_gu_embedding_chain_coupling_ratio_enumeration_001 \
   studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
 ```
 
@@ -290,11 +326,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase403 output JSON files, and commit a checkpoint
+force-add the ignored Phase404 output JSON files, and commit a checkpoint
 after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase403 adjoint doublet substructure branching probe
+Add phase404 gu embedding chain coupling ratio enumeration
 ```
