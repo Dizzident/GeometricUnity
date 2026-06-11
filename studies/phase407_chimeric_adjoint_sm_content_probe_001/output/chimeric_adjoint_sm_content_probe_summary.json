@@ -1,0 +1,164 @@
+{
+  "phaseId": "phase407-chimeric-adjoint-sm-content-probe",
+  "generatedAt": "2026-06-11T23:44:38.385139+00:00",
+  "terminalStatus": "sm-higgs-pattern-doublet-exists-in-chimeric-frame-cross-internal-block-spin-zero-extraction-named",
+  "chimericAdjointSmContentProbePassed": true,
+  "phase404PrecursorPassed": true,
+  "phase406PrecursorPassed": true,
+  "probeInternallyConsistent": true,
+  "colorDimensionCorrect": true,
+  "spacetimeBlockCorrect": true,
+  "dimensionAccounting": true,
+  "totalStates": 91,
+  "higgsPatternDoubletExistsInChimericAdjoint": true,
+  "higgsPatternStateCount": 16,
+  "higgsPatternCarriesSpacetimeVectorIndex": true,
+  "higgsPatternLivesInFrameCrossInternalBlock": true,
+  "internalSectorStillExcluded": true,
+  "frameCrossStates": 46,
+  "spinZeroExtractionPerformed": false,
+  "spinZeroExtractionNamedAsNextStep": true,
+  "compactFormUsedForNoncompactAlgebra": true,
+  "physicalCouplingProvided": false,
+  "probeDefinitions": {
+    "algebra": "so(14) compact arithmetic for the chimeric spin(7,7): adjoint 91 = so(4)_spacetime 6 \u002B so(10)_internal 45 \u002B frame-cross-internal (4 x 10) 40",
+    "chain": "internal so(10) carries the Phase404 scaffolding (color = traceless centralizer of J on internal so(6); su(2)_L/R = Pati-Salam so(4) duality halves, signs auto-resolved; Y = R3 \u002B J/3)",
+    "branching": "simultaneous eigenspaces of {spacetime Casimir, color Casimir, su(2)_L Casimir, Y^2} on the 91; blocks tagged",
+    "higgsPattern": "color-singlet, j = 1/2, |Y| = 1/2 in lepton-normalized units (Phase404 normalization)",
+    "mechanism": "PS vector 4 = (2_L, 2_R) with B-L = 0: hypercharge on the doublet is the pure su(2)_R Cartan \u002B-1/2"
+  },
+  "applicationSubjectKind": "chimeric-adjoint-sm-content-probe",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "05c7d1d8a79e75710ce7c4f873b879c35f9f0547be81d9464a28d6426a754e01",
+  "routeProvidesPhysicalMassPsiCompatibleBranch": false,
+  "routeProvidesCompletedFermionicAction": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesObservedElectroweakNamespaceMap": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesWeakAngleOrCouplingLineage": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "representation bookkeeping at the compact/complexification level; spin(7,7) real-form effects are a recorded limitation",
+    "the Higgs-pattern doublets found carry a spacetime-vector index; the spin-0 extraction through the Y14 vertical-form structure is NOT performed here - it is the named next structural step",
+    "no dynamics, no VEV selection, no scales - the binding gaps are unchanged",
+    "no Phase201 or Phase256 fill",
+    "no physical predictions"
+  ],
+  "blocks": [
+    {
+      "dimension": 6,
+      "spacetimeCasimir": 4,
+      "isSpacetimeScalar": false,
+      "colorCasimir": 0,
+      "isColorSinglet": true,
+      "jValue": 0,
+      "absY": 0
+    },
+    {
+      "dimension": 16,
+      "spacetimeCasimir": 3,
+      "isSpacetimeScalar": false,
+      "colorCasimir": 0,
+      "isColorSinglet": true,
+      "jValue": 0.5,
+      "absY": 0.5
+    },
+    {
+      "dimension": 24,
+      "spacetimeCasimir": 3,
+      "isSpacetimeScalar": false,
+      "colorCasimir": 2.6666667,
+      "isColorSinglet": false,
+      "jValue": 0,
+      "absY": 0.33333331666666627
+    },
+    {
+      "dimension": 3,
+      "spacetimeCasimir": 0,
+      "isSpacetimeScalar": true,
+      "colorCasimir": 0,
+      "isColorSinglet": true,
+      "jValue": 1,
+      "absY": 0
+    },
+    {
+      "dimension": 12,
+      "spacetimeCasimir": 0,
+      "isSpacetimeScalar": true,
+      "colorCasimir": 2.6666667,
+      "isColorSinglet": false,
+      "jValue": 0.5,
+      "absY": 0.8333333066666662
+    },
+    {
+      "dimension": 12,
+      "spacetimeCasimir": 0,
+      "isSpacetimeScalar": true,
+      "colorCasimir": 2.6666667,
+      "isColorSinglet": false,
+      "jValue": 0.5,
+      "absY": 0.16666673333332
+    },
+    {
+      "dimension": 8,
+      "spacetimeCasimir": 0,
+      "isSpacetimeScalar": true,
+      "colorCasimir": 6,
+      "isColorSinglet": false,
+      "jValue": 0,
+      "absY": 0
+    },
+    {
+      "dimension": 6,
+      "spacetimeCasimir": 0,
+      "isSpacetimeScalar": true,
+      "colorCasimir": 2.6666667,
+      "isColorSinglet": false,
+      "jValue": 0,
+      "absY": 0.6666666333333325
+    },
+    {
+      "dimension": 2,
+      "spacetimeCasimir": 0,
+      "isSpacetimeScalar": true,
+      "colorCasimir": 0,
+      "isColorSinglet": true,
+      "jValue": 0,
+      "absY": 0
+    },
+    {
+      "dimension": 2,
+      "spacetimeCasimir": 0,
+      "isSpacetimeScalar": true,
+      "colorCasimir": 0,
+      "isColorSinglet": true,
+      "jValue": 0,
+      "absY": 1
+    }
+  ],
+  "sourceEvidence": {
+    "phase404SummaryPath": "studies/phase404_gu_embedding_chain_coupling_ratio_enumeration_001/output/gu_embedding_chain_coupling_ratio_enumeration_summary.json",
+    "phase406SummaryPath": "studies/phase406_choice_space_falsification_sweep_001/output/choice_space_falsification_sweep_summary.json",
+    "primaryDraft": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt (section 9; eq. 12.28 dictionary)",
+    "explainerAnalysis": "docs/Reference/ExperimentReferences/TOE-GU-ICEBERG-20250423-GAP-ANALYSIS.md (row 5: vertical symmetric-2-tensor claim)"
+  },
+  "decision": "The surviving route from the Phase406 falsification map receives its first POSITIVE existence result. The full chimeric algebra\u0027s adjoint (so(14) compact arithmetic for spin(7,7), 91 = 6 \u002B 45 \u002B 40) was branched completely under {spacetime so(4)} x {the Phase404 SM chain}, every block tagged with (spacetime content, color, isospin, |Y|). VERDICTS: (1) color-singlet su(2)_L doublets with EXACTLY |Y| = 1/2 - the SM-Higgs quantum numbers - DO exist in the chimeric adjoint, and they live precisely in the frame-cross-internal (4 x 10) block, the non-adjoint sector the falsification map isolated (they arise from the Pati-Salam so(4) vector 4 = (2_L, 2_R) with B-L = 0, so the hypercharge is pure su(2)_R Cartan = \u002B-1/2 - the mechanism is machine-verified, not assumed); (2) the spacetime-scalar sector (pure internal 45 \u002B pure spacetime 6) contains NO such doublet, re-confirming Phase404 inside the bigger frame; (3) the existing doublets carry a spacetime-VECTOR index - the spin-0 extraction (the Iceberg\u0027s symmetric-2-tensor/vertical-form route through the Y14 -\u003E X4 pullback, GU-DRAFT-2021 section 9) is the named remaining structural step before this block can be called a Higgs candidate, followed by the unchanged binding gaps (VEV selection, quantitative chain). Representation bookkeeping only; nothing is promoted; no contract field is filled."
+}

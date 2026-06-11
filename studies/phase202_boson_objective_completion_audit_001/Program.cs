@@ -172,6 +172,7 @@ const string Phase403Path = "studies/phase403_adjoint_doublet_substructure_branc
 const string Phase404Path = "studies/phase404_gu_embedding_chain_coupling_ratio_enumeration_001/output/gu_embedding_chain_coupling_ratio_enumeration_summary.json";
 const string Phase405Path = "studies/phase405_vacuum_manifold_doublet_vev_orbit_scan_001/output/vacuum_manifold_doublet_vev_orbit_scan_summary.json";
 const string Phase406Path = "studies/phase406_choice_space_falsification_sweep_001/output/choice_space_falsification_sweep_summary.json";
+const string Phase407Path = "studies/phase407_chimeric_adjoint_sm_content_probe_001/output/chimeric_adjoint_sm_content_probe_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -377,6 +378,7 @@ using var phase403 = File.Exists(Phase403Path) ? JsonDocument.Parse(File.ReadAll
 using var phase404 = File.Exists(Phase404Path) ? JsonDocument.Parse(File.ReadAllText(Phase404Path)) : null;
 using var phase405 = File.Exists(Phase405Path) ? JsonDocument.Parse(File.ReadAllText(Phase405Path)) : null;
 using var phase406 = File.Exists(Phase406Path) ? JsonDocument.Parse(File.ReadAllText(Phase406Path)) : null;
+using var phase407 = File.Exists(Phase407Path) ? JsonDocument.Parse(File.ReadAllText(Phase407Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -5092,6 +5094,29 @@ var choiceSpaceFalsificationSweepPassed = choiceSpaceFalsificationSweepMateriali
     && JsonBool(phase406.RootElement, "phase201TemplateMutated") is false
     && JsonInt(phase406.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
     && JsonInt(phase406.RootElement, "acceptedContractFieldCount") == 0;
+var chimericAdjointSmContentProbeMaterialized = phase407 is not null;
+var chimericAdjointSmContentProbePassed = chimericAdjointSmContentProbeMaterialized
+    && JsonBool(phase407!.RootElement, "chimericAdjointSmContentProbePassed") is true
+    && JsonBool(phase407.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase407.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase407.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase407.RootElement, "applicationSubjectKind") == "chimeric-adjoint-sm-content-probe"
+    && JsonBool(phase407.RootElement, "dimensionAccounting") is true
+    && JsonBool(phase407.RootElement, "higgsPatternDoubletExistsInChimericAdjoint") is true
+    && JsonBool(phase407.RootElement, "higgsPatternCarriesSpacetimeVectorIndex") is true
+    && JsonBool(phase407.RootElement, "internalSectorStillExcluded") is true
+    && JsonBool(phase407.RootElement, "spinZeroExtractionPerformed") is false
+    && JsonBool(phase407.RootElement, "physicalCouplingProvided") is false
+    && JsonBool(phase407.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase407.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase407.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase407.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase407.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase407.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase407.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase407.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase407.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase407.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -7316,6 +7341,14 @@ var checklist = new[]
             ? $"choiceSpaceFalsificationSweepPassed={JsonBool(phase406!.RootElement, "choiceSpaceFalsificationSweepPassed")}; targetBlind={JsonBool(phase406.RootElement, "targetBlindConstruction")}; ratioPathIndependent={JsonBool(phase406.RootElement, "ratioPathIndependent")}; signatureAxisVerified={JsonBool(phase406.RootElement, "signatureAxisVerified")}; survivorsAreExactlyNonAdjointLargerAlgebra={JsonBool(phase406.RootElement, "survivorsAreExactlyNonAdjointLargerAlgebra")}; noCombinationProvidesVevSelection={JsonBool(phase406.RootElement, "noCombinationProvidesVevSelection")}; canFillPhase201WzContract={JsonBool(phase406.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase406.RootElement, "decision")}"
             : "Phase406 artifact not materialized",
         Phase406Path),
+    new ObjectiveChecklistItem(
+        "chimeric-adjoint-sm-content-probe-materialized",
+        "Branch the full chimeric adjoint under spacetime x SM-chain and record whether the SM-Higgs-pattern doublet exists in the frame-cross-internal block.",
+        chimericAdjointSmContentProbePassed ? "passed" : "failed",
+        chimericAdjointSmContentProbeMaterialized
+            ? $"chimericAdjointSmContentProbePassed={JsonBool(phase407!.RootElement, "chimericAdjointSmContentProbePassed")}; targetBlind={JsonBool(phase407.RootElement, "targetBlindConstruction")}; higgsPatternDoubletExists={JsonBool(phase407.RootElement, "higgsPatternDoubletExistsInChimericAdjoint")}; carriesSpacetimeVectorIndex={JsonBool(phase407.RootElement, "higgsPatternCarriesSpacetimeVectorIndex")}; internalSectorStillExcluded={JsonBool(phase407.RootElement, "internalSectorStillExcluded")}; canFillPhase201WzContract={JsonBool(phase407.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase407.RootElement, "decision")}"
+            : "Phase407 artifact not materialized",
+        Phase407Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

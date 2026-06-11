@@ -16892,3 +16892,46 @@ VO-6/VO-7 derivation against the gap ledger - now concentrated in the
 non-adjoint (vertical symmetric-2-tensor) sector on a larger algebra -
 plus literature monitoring at checkpoint cadence and the named platform
 follow-up (native curvature kernel real-mesh fix).
+
+## 2026-06-11 - Phase407: SM-Higgs Quantum Numbers Found in the Chimeric Frame-Cross-Internal Block
+
+### Context
+
+First probe inside the Phase406 surviving region ({larger algebra} x
+{non-adjoint scalar location}): branch the FULL chimeric adjoint (so(14)
+compact arithmetic for spin(7,7), 91 = 6 + 45 + 40) under {spacetime
+so(4)} x {the Phase404 SM chain}.
+
+### Result
+
+- POSITIVE EXISTENCE: color-singlet su(2)_L doublets with EXACTLY
+  |Y| = 1/2 (the SM-Higgs quantum numbers) exist in the chimeric adjoint
+  - 16 states, all in the frame-cross-internal (4 x 10) block, precisely
+  the non-adjoint sector the falsification map isolated. Mechanism
+  (machine-verified): the Pati-Salam vector 4 = (2_L, 2_R) carries
+  B-L = 0, so the doublet hypercharge is the pure su(2)_R Cartan +-1/2.
+- The spacetime-scalar sector (pure internal 45 + pure spacetime 6)
+  contains NO such doublet - Phase404's exclusion re-confirmed inside the
+  bigger frame; dimension accounting exact (91 states).
+- HONEST TAG: the found doublets carry a spacetime-VECTOR index. The
+  spin-0 extraction - the Iceberg's symmetric-2-tensor/vertical-form
+  route through the Y14 -> X4 pullback (GU-DRAFT-2021 section 9) - is
+  the named next structural step; the binding gaps (VEV selection,
+  quantitative chain) are unchanged.
+- Study: studies/phase407_chimeric_adjoint_sm_content_probe_001
+  (IMPLEMENTATION_P407.md).
+
+### Validation
+
+- Targeted Phase407 run passed; Phase101 includes the block; Phase202:
+  checklistPassedCount=200, checklistFailedCount=3; claim integrity
+  verified with promotedPhysicalMassClaimCount=0.
+
+### Standing Next Work
+
+The surviving route now has a concrete object: the frame-cross-internal
+doublet block. Next: the spin-0 extraction through the Y14 vertical-form
+structure (does the pullback of the (4 x 10) components along the
+vertical directions of Y14 -> X4 yield an X4-scalar doublet?), citing
+the primary draft section 9 and the stored text. Plus the standing gaps
+and literature monitoring at checkpoint cadence.

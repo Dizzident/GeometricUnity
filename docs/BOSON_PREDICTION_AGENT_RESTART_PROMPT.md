@@ -35,12 +35,12 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase406 work:
+Current gate status after the Phase407 work:
 
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=199`,
+  `objectiveAchieved=False`, `checklistPassedCount=200`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -137,6 +137,15 @@ Current gate status after the Phase406 work:
   `survivorsAreExactlyNonAdjointLargerAlgebra=True` (4 of 16 combinations),
   `noCombinationProvidesVevSelection=True` (binding gaps are
   CHOICE-INDEPENDENT)
+- Phase407:
+  `chimericAdjointSmContentProbePassed=True`,
+  `higgsPatternDoubletExistsInChimericAdjoint=True` (16 states with
+  color-singlet j=1/2 |Y|=1/2 - the SM-Higgs quantum numbers - in the
+  frame-cross-internal (4 x 10) block of the chimeric adjoint 91),
+  `higgsPatternCarriesSpacetimeVectorIndex=True` (spin-0 extraction via
+  the Y14 vertical-form structure is the named next step),
+  `internalSectorStillExcluded=True` (Phase404 re-confirmed in the
+  bigger frame)
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -157,34 +166,32 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-THE USER DIRECTIVE'S THREE BRUTE-FORCE COMPUTATIONS ARE COMPLETE. The
-latest work added Phase406 (brute force #3): the choice-space
-falsification sweep. New computations: the SU(5)-type route's ratio
-computes to tan^2 = 3/5 exactly (path independence with Phase404's
-Pati-Salam value), and explicit Cl(6,4)/Cl(7,3) constructions both give
-16-dimensional chiral families (signature independence). The map over 16
-combinations x 5 filters: 4 survive, exactly {larger algebra} x
-{non-adjoint scalar location} x {either path} x {either signature}; the
-su(2)-only toy and the gauge-adjoint scalar location are falsified
-everywhere; NO combination provides a VEV selection mechanism - the
-binding gaps (VEV selection, quantitative chain) are CHOICE-INDEPENDENT
-and require the physical derivation. Study:
-`studies/phase406_choice_space_falsification_sweep_001`
-(IMPLEMENTATION_P406.md). Before that, Phase405 (vacuum manifold permits
-but does not select doublet VEVs; GPU kernel defect found) and Phase404
-(ratio menu, family pattern, adjoint exclusion). PER THE DIRECTIVE, THE
-LOOP NOW RESUMES THE STANDING RESEARCH PROGRAM, concentrated in the
-non-adjoint (vertical symmetric-2-tensor) sector on a larger algebra.
+The latest work added Phase407, the first probe inside the Phase406
+surviving region: the complete branching of the chimeric adjoint (so(14)
+compact arithmetic for spin(7,7), 91 = 6 + 45 + 40) under {spacetime
+so(4)} x {the Phase404 SM chain}. POSITIVE EXISTENCE RESULT: 16 states
+with exactly the SM-Higgs quantum numbers (color-singlet, j = 1/2,
+|Y| = 1/2) exist in the frame-cross-internal (4 x 10) block - the
+non-adjoint sector the falsification map isolated - via the
+machine-verified mechanism PS-vector 4 = (2_L, 2_R) with B-L = 0 and
+hypercharge = su(2)_R Cartan. The spacetime-scalar sector contains none
+(Phase404 re-confirmed). HONEST TAG: the found doublets carry a
+spacetime-VECTOR index; the spin-0 extraction through the Y14 -> X4
+vertical-form structure (GU-DRAFT-2021 section 9; the Iceberg's
+symmetric-2-tensor claim) is the named next structural step. Study:
+`studies/phase407_chimeric_adjoint_sm_content_probe_001`
+(IMPLEMENTATION_P407.md). Before that, Phases 404-406 completed the user
+directive's three brute-force computations.
 
 ### Integration Points Already Updated
 
-Phase406 (like Phase388-405) is wired into:
+Phase407 (like Phase388-406) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (both invocation blocks)
 - `studies/phase101_boson_prediction_package_001/Program.cs`
 - `studies/phase202_boson_objective_completion_audit_001/Program.cs`
   (checklist item
-  `choice-space-falsification-sweep-materialized`)
+  `chimeric-adjoint-sm-content-probe-materialized`)
 - `scripts/verify_boson_claim_integrity.sh`
 - Broad scanner exclusions: phase204, phase205, phase207, phase279,
   phase281, phase295, phase296
@@ -198,15 +205,15 @@ The diagnosis journal entry is near the end of
 ### Validation Already Run
 
 ```bash
-dotnet run --project studies/phase406_choice_space_falsification_sweep_001/Phase406ChoiceSpaceFalsificationSweep.csproj
+dotnet run --project studies/phase407_chimeric_adjoint_sm_content_probe_001/Phase407ChimericAdjointSmContentProbe.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
 ./scripts/generate_validated_boson_predictions.sh
 ```
 
-The full generator ended with the Phase406 line, the Phase202 incomplete
-status (`checklistPassedCount=199`, `checklistFailedCount=3`), and the same
+The full generator ended with the Phase407 line, the Phase202 incomplete
+status (`checklistPassedCount=200`, `checklistFailedCount=3`), and the same
 claim-integrity status (`promotedPhysicalMassClaimCount=0`). All seven broad
 scanners still report zero intake-ready evidence.
 
@@ -289,12 +296,16 @@ The most useful next branches are:
    blocks exist generically in larger adjoints with the custodial pattern
    exact and the coupling ratio EMBEDDING-DERIVED (tan^2 = 3 for the
    su(3) toy, recorded blind) - the ratio-lineage mechanism is
-   identified. Candidate next internal work: compute the GU-SPECIFIC
-   branching chain (the draft's spin(6,4)/su(3,2) -> SM reduction, per
-   the stored text and the Iceberg analysis section on the embedding
-   paths) and its embedding-derived coupling ratio, fail-closed and
-   recorded blind; separately, the vacuum-manifold mechanism that selects
-   a doublet-block VEV on the Upsilon = 0 locus.
+   identified. The GU-specific chain enumeration is DONE (Phase404:
+   tan^2 = 3/5, family pattern derived, adjoint Higgs-doublet excluded),
+   and Phase407 found the SM-Higgs quantum numbers in the chimeric
+   frame-cross-internal block (spacetime-vector-valued). Candidate next
+   internal work: the SPIN-0 EXTRACTION - formalize the Y14 -> X4
+   vertical-form pullback of the frame-cross-internal doublet block
+   (does it yield an X4-scalar doublet, per the draft section 9 and the
+   Iceberg symmetric-2-tensor claim?), fail-closed; separately, the
+   vacuum-manifold mechanism that selects a doublet-block VEV on the
+   Upsilon = 0 locus (choice-independent gap per Phase406).
 2. (CLOSED by Phase399 + Phase400 + Phase401: the quadratic-model coupled
    critical point is solved modulo flat directions, every flat ray is
    quartically lifted, and the attempted construction of the relaxed
@@ -324,10 +335,10 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -120 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase406|choiceSpaceFalsificationSweep|noCombinationProvidesVevSelection" \
+rg -n "Phase407|chimericAdjointSmContentProbe|higgsPatternDoubletExistsInChimericAdjoint" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
   ExperimentReferences.md \
-  studies/phase406_choice_space_falsification_sweep_001 \
+  studies/phase407_chimeric_adjoint_sm_content_probe_001 \
   studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
 ```
 
@@ -340,11 +351,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase406 output JSON files, and commit a checkpoint
+force-add the ignored Phase407 output JSON files, and commit a checkpoint
 after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase406 choice space falsification sweep
+Add phase407 chimeric adjoint sm content probe
 ```
