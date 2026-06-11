@@ -170,6 +170,7 @@ const string Phase401Path = "studies/phase401_full_quartic_action_coupled_critic
 const string Phase402Path = "studies/phase402_gu_draft_scalar_route_dictionary_audit_001/output/gu_draft_scalar_route_dictionary_audit_summary.json";
 const string Phase403Path = "studies/phase403_adjoint_doublet_substructure_branching_probe_001/output/adjoint_doublet_substructure_branching_probe_summary.json";
 const string Phase404Path = "studies/phase404_gu_embedding_chain_coupling_ratio_enumeration_001/output/gu_embedding_chain_coupling_ratio_enumeration_summary.json";
+const string Phase405Path = "studies/phase405_vacuum_manifold_doublet_vev_orbit_scan_001/output/vacuum_manifold_doublet_vev_orbit_scan_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -373,6 +374,7 @@ using var phase401 = File.Exists(Phase401Path) ? JsonDocument.Parse(File.ReadAll
 using var phase402 = File.Exists(Phase402Path) ? JsonDocument.Parse(File.ReadAllText(Phase402Path)) : null;
 using var phase403 = File.Exists(Phase403Path) ? JsonDocument.Parse(File.ReadAllText(Phase403Path)) : null;
 using var phase404 = File.Exists(Phase404Path) ? JsonDocument.Parse(File.ReadAllText(Phase404Path)) : null;
+using var phase405 = File.Exists(Phase405Path) ? JsonDocument.Parse(File.ReadAllText(Phase405Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -5038,6 +5040,32 @@ var guEmbeddingChainCouplingRatioEnumerationPassed = guEmbeddingChainCouplingRat
     && JsonBool(phase404.RootElement, "phase201TemplateMutated") is false
     && JsonInt(phase404.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
     && JsonInt(phase404.RootElement, "acceptedContractFieldCount") == 0;
+var vacuumManifoldDoubletVevOrbitScanMaterialized = phase405 is not null;
+var vacuumManifoldDoubletVevOrbitScanPassed = vacuumManifoldDoubletVevOrbitScanMaterialized
+    && JsonBool(phase405!.RootElement, "vacuumManifoldDoubletVevOrbitScanPassed") is true
+    && JsonBool(phase405.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase405.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase405.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase405.RootElement, "applicationSubjectKind") == "vacuum-manifold-doublet-vev-orbit-scan"
+    && JsonBool(phase405.RootElement, "scanInternallyConsistent") is true
+    && JsonBool(phase405.RootElement, "rank1DirectionsAllFlat") is true
+    && JsonBool(phase405.RootElement, "flatnessEqualsCommutativity") is true
+    && JsonBool(phase405.RootElement, "quarticShapeVerified") is true
+    && JsonBool(phase405.RootElement, "vacuumManifoldPermitsConstantDoubletVev") is true
+    && JsonBool(phase405.RootElement, "noSelectionMechanismAtConstantRank1Level") is true
+    && JsonBool(phase405.RootElement, "gpuParityCharacterizationCompleted") is true
+    && JsonBool(phase405.RootElement, "physicalVacuumDerived") is false
+    && JsonBool(phase405.RootElement, "physicalCouplingProvided") is false
+    && JsonBool(phase405.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase405.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase405.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase405.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase405.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase405.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase405.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase405.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase405.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase405.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -7246,6 +7274,14 @@ var checklist = new[]
             ? $"guEmbeddingChainCouplingRatioEnumerationPassed={JsonBool(phase404!.RootElement, "guEmbeddingChainCouplingRatioEnumerationPassed")}; targetBlind={JsonBool(phase404.RootElement, "targetBlindConstruction")}; standardRatioMatchesClassicValue={JsonBool(phase404.RootElement, "standardRatioMatchesClassicValue")}; familyPatternDerived={JsonBool(phase404.RootElement, "familyPatternDerived")}; adjointHiggsDoubletAbsent={JsonBool(phase404.RootElement, "adjointColorSingletChargedDoubletAbsentEverywhere")}; canFillPhase201WzContract={JsonBool(phase404.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase404.RootElement, "decision")}"
             : "Phase404 artifact not materialized",
         Phase404Path),
+    new ObjectiveChecklistItem(
+        "vacuum-manifold-doublet-vev-orbit-scan-materialized",
+        "Scan the Upsilon = 0 vacuum manifold over the su(3) orbit space for doublet-VEV permission and selection, with the GPU parity characterization recorded.",
+        vacuumManifoldDoubletVevOrbitScanPassed ? "passed" : "failed",
+        vacuumManifoldDoubletVevOrbitScanMaterialized
+            ? $"vacuumManifoldDoubletVevOrbitScanPassed={JsonBool(phase405!.RootElement, "vacuumManifoldDoubletVevOrbitScanPassed")}; targetBlind={JsonBool(phase405.RootElement, "targetBlindConstruction")}; permitsDoubletVev={JsonBool(phase405.RootElement, "vacuumManifoldPermitsConstantDoubletVev")}; noSelection={JsonBool(phase405.RootElement, "noSelectionMechanismAtConstantRank1Level")}; flatnessEqualsCommutativity={JsonBool(phase405.RootElement, "flatnessEqualsCommutativity")}; gpuParityDefectDetected={JsonBool(phase405.RootElement, "gpuParityDefectDetected")}; canFillPhase201WzContract={JsonBool(phase405.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase405.RootElement, "decision")}"
+            : "Phase405 artifact not materialized",
+        Phase405Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

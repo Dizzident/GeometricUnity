@@ -1,6 +1,6 @@
 {
   "phaseId": "phase396-gauge-invariant-neutral-charged-sector-separation-probe",
-  "generatedAt": "2026-06-11T20:19:51.4791586+00:00",
+  "generatedAt": "2026-06-11T21:42:02.9554051+00:00",
   "terminalStatus": "gauge-invariant-neutral-charged-sector-separation-materialized-contract-fields-still-unfillable",
   "gaugeInvariantNeutralChargedSectorSeparationProbePassed": true,
   "phase394PrecursorPassed": true,

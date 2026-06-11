@@ -1,6 +1,6 @@
 {
   "phaseId": "phase403-adjoint-doublet-substructure-branching-probe",
-  "generatedAt": "2026-06-11T20:24:11.9022258+00:00",
+  "generatedAt": "2026-06-11T21:46:13.246715+00:00",
   "terminalStatus": "adjoint-doublet-substructure-exists-in-larger-adjoint-embedding-derived-ratio-mechanism-identified",
   "adjointDoubletSubstructureBranchingProbePassed": true,
   "phase397PrecursorPassed": true,

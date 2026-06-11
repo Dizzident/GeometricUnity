@@ -16799,3 +16799,48 @@ Brute force #2 (Phase405): vacuum-manifold doublet-VEV orbit scan on
 larger algebras with GPU Hessian spectra. Brute force #3 (Phase406):
 choice-space falsification sweep, GPU batch-parallel. Then resume the
 standing research loop per the user directive.
+
+## 2026-06-11 - Phase405 (Brute Force #2): Vacuum Manifold Permits But Does Not Select Doublet VEVs; GPU Kernel Defect Found
+
+### Context
+
+User directive brute force #2, GPU-engaged: scan the Upsilon = 0 vacuum
+manifold (the draft-claimed Higgs potential's zero locus, Phase402) over
+the su(3) orbit space (minimal doublet-bearing algebra, Phase403) on a
+6x6 mesh for doublet-VEV permission and selection.
+
+### Result
+
+- The vacuum manifold PERMITS doublet-block VEVs: every rank-1 direction
+  (any single Lie direction with any closed profile) lies exactly on the
+  Upsilon = 0 locus. Flatness coincides exactly with commutativity (11
+  flat = 11 commuting pairs over 2592 samples) and the lifted landscape
+  matches the exact quartic shape K t^4 sin^2 cos^2 ||[u,v]||^2.
+- NO SELECTION MECHANISM at this level: triplet/doublet/singlet rank-1
+  directions are treated identically - scalar-sector sub-gap (b) is
+  confirmed open with sharpened evidence: selection must come from
+  structure beyond the bare control-branch bosonic objective.
+- PLATFORM FINDING: the GPU run machine-detected a real-mesh topology
+  defect in the native CUDA curvature kernel's LINEAR (d omega) part
+  (single-direction probe |diff| = 2.0356 invariant under bracket
+  addition; closed-profile samples: CPU exactly 0, GPU up to 17.5; 0/27
+  parity). The platform's CUDA parity tests used synthetic topology only.
+  Science ran on the CPU per IA-5 (8.1 s full scan). Also recorded: the
+  native buffer-handle table is monotonic (MAX_BUFFERS = 4096, no
+  recycling) requiring GPU session recycling; the su(3) Killing-vs-plain
+  objective metric differs by exactly -3 between backends.
+- Study: studies/phase405_vacuum_manifold_doublet_vev_orbit_scan_001
+  (IMPLEMENTATION_P405.md).
+
+### Validation
+
+- Targeted Phase405 run passed; Phase101 includes the block; Phase202:
+  checklistPassedCount=198, checklistFailedCount=3; claim integrity
+  verified with promotedPhysicalMassClaimCount=0.
+
+### Standing Next Work
+
+Brute force #3 (Phase406): choice-space falsification sweep. Then resume
+the standing research loop per the directive. Platform follow-up named:
+fix the native curvature kernel's linear part on real mesh topology and
+add real-mesh parity tests; consider buffer-handle recycling.

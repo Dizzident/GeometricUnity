@@ -35,12 +35,12 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase404 work:
+Current gate status after the Phase405 work:
 
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=197`,
+  `objectiveAchieved=False`, `checklistPassedCount=198`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -121,6 +121,15 @@ Current gate status after the Phase404 work:
   `adjointColorSingletChargedDoubletAbsentEverywhere=True` (the SM-Higgs
   doublet CANNOT come from the gauge-adjoint part of the connection on
   this chain - non-adjoint components required)
+- Phase405 (brute force #2 of the user directive):
+  `vacuumManifoldDoubletVevOrbitScanPassed=True`,
+  `vacuumManifoldPermitsConstantDoubletVev=True` (all rank-1 directions
+  exactly flat), `flatnessEqualsCommutativity=True` (11 = 11 over 2592
+  samples, exact quartic landscape),
+  `noSelectionMechanismAtConstantRank1Level=True` (sub-gap (b) open,
+  sharpened), `gpuParityDefectDetected=True` (native curvature kernel
+  linear-part defect on real mesh topology - platform follow-up; science
+  on CPU per IA-5)
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -141,34 +150,34 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work added Phase404 (brute force #1 of the 2026-06-11 user
-directive): the exhaustive GU embedding-chain enumeration at the
-complexification level (so(10) for spin(6,4), compact-form caveat
-recorded; CPU - the objects are tiny; the GPU enters in Phases 405/406).
-Computed values: tan^2(theta_emb) = 3/5 exactly (sin^2 = 3/8) for the
-standard hypercharge direction with internal lepton-doublet
-normalization, plus the full ratio menu over 224 scanned directions
-(tan^2 in [0.027, 1.5]); the complete SM family hypercharge pattern
-DERIVED from the spinor 16; and the decisive negative that the adjoint 45
-contains NO color-singlet charged doublet for any direction - the
-SM-Higgs doublet cannot come from the gauge-adjoint part of the
-connection on this chain, localizing scalar-sector sub-gap (a) to the
-non-adjoint (vertical symmetric-2-tensor) components. Study:
-`studies/phase404_gu_embedding_chain_coupling_ratio_enumeration_001`
-(IMPLEMENTATION_P404.md). NEXT PER DIRECTIVE: Phase405 = vacuum-manifold
-doublet-VEV orbit scan with GPU Hessian spectra; Phase406 = choice-space
-falsification sweep, GPU batch-parallel; then resume the standing
-research loop.
+The latest work added Phase405 (brute force #2): the su(3) orbit scan of
+the Upsilon = 0 vacuum manifold on a 6x6 mesh with closed (exact 1-form)
+profiles, so Upsilon = (1/2)[omega wedge omega] exactly and the landscape
+is purely bracket-driven. Results: the vacuum manifold PERMITS
+doublet-block VEVs (every rank-1 direction exactly flat); flatness
+coincides exactly with commutativity (11 = 11 pairs, 2592 samples, exact
+quartic shape verified); NO SELECTION MECHANISM exists at this level
+(triplet/doublet/singlet treated identically) - scalar-sector sub-gap (b)
+confirmed open with sharpened evidence. PLATFORM FINDING: the GPU run
+machine-detected a real-mesh topology defect in the native CUDA curvature
+kernel's linear (d omega) part (0/27 parity; CPU exactly 0 on closed
+profiles, GPU up to 17.5) - the platform's CUDA parity tests used
+synthetic topology only; science ran on CPU per IA-5; native
+buffer-handle monotonicity also recorded. Study:
+`studies/phase405_vacuum_manifold_doublet_vev_orbit_scan_001`
+(IMPLEMENTATION_P405.md; reproduce with LD_LIBRARY_PATH=native/build).
+NEXT PER DIRECTIVE: Phase406 = choice-space falsification sweep; then
+resume the standing research loop.
 
 ### Integration Points Already Updated
 
-Phase404 (like Phase388-403) is wired into:
+Phase405 (like Phase388-404) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (both invocation blocks)
 - `studies/phase101_boson_prediction_package_001/Program.cs`
 - `studies/phase202_boson_objective_completion_audit_001/Program.cs`
   (checklist item
-  `gu-embedding-chain-coupling-ratio-enumeration-materialized`)
+  `vacuum-manifold-doublet-vev-orbit-scan-materialized`)
 - `scripts/verify_boson_claim_integrity.sh`
 - Broad scanner exclusions: phase204, phase205, phase207, phase279,
   phase281, phase295, phase296
@@ -182,15 +191,15 @@ The diagnosis journal entry is near the end of
 ### Validation Already Run
 
 ```bash
-dotnet run --project studies/phase404_gu_embedding_chain_coupling_ratio_enumeration_001/Phase404GuEmbeddingChainCouplingRatioEnumeration.csproj
+LD_LIBRARY_PATH=native/build dotnet run --project studies/phase405_vacuum_manifold_doublet_vev_orbit_scan_001/Phase405VacuumManifoldDoubletVevOrbitScan.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
 ./scripts/generate_validated_boson_predictions.sh
 ```
 
-The full generator ended with the Phase404 line, the Phase202 incomplete
-status (`checklistPassedCount=197`, `checklistFailedCount=3`), and the same
+The full generator ended with the Phase405 line, the Phase202 incomplete
+status (`checklistPassedCount=198`, `checklistFailedCount=3`), and the same
 claim-integrity status (`promotedPhysicalMassClaimCount=0`). All seven broad
 scanners still report zero intake-ready evidence.
 
@@ -310,10 +319,10 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -120 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase404|guEmbeddingChainCouplingRatioEnumeration|adjointColorSingletChargedDoubletAbsentEverywhere" \
+rg -n "Phase405|vacuumManifoldDoubletVevOrbitScan|gpuParityDefectDetected" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
   ExperimentReferences.md \
-  studies/phase404_gu_embedding_chain_coupling_ratio_enumeration_001 \
+  studies/phase405_vacuum_manifold_doublet_vev_orbit_scan_001 \
   studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
 ```
 
@@ -326,11 +335,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase404 output JSON files, and commit a checkpoint
+force-add the ignored Phase405 output JSON files, and commit a checkpoint
 after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase404 gu embedding chain coupling ratio enumeration
+Add phase405 vacuum manifold doublet vev orbit scan
 ```

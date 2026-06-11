@@ -1,6 +1,6 @@
 {
   "phaseId": "phase392-coupled-mixed-hessian-fermion-induced-response-audit",
-  "generatedAt": "2026-06-11T20:18:52.5664711+00:00",
+  "generatedAt": "2026-06-11T21:41:08.1349641+00:00",
   "terminalStatus": "action-derived-fermion-induced-response-diverges-from-gram-structure-discrete-diagnostic-only",
   "coupledMixedHessianFermionInducedResponseAuditPassed": true,
   "phase379PrecursorPassed": true,
