@@ -210,7 +210,10 @@ The most useful next branches are:
    relaxable at higher order. No residual internal question remains for
    this component.)
 3. Periodic external literature monitoring at checkpoint cadence (the
-   2026-06-10 survey found no GU-native scalar-sector source; the internal
+   2026-06-10 survey and the 2026-06-11 post-Phase400 sweep found no
+   GU-native scalar-sector source; the 2026-06-11 sweep catalogued
+   arXiv:2503.14578, G2-RICCI-FLOW-TORSION-EWSB, which imports the 246 GeV
+   scale and weak angle - the negative boundary stands; the internal
    toy-branch construction otherwise reached its honest limit).
 
 If a source or new derivation appears to satisfy any of these, create a new
