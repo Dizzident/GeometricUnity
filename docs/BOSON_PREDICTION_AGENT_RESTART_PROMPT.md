@@ -35,12 +35,12 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase400 work:
+Current gate status after the Phase401 work:
 
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=193`,
+  `objectiveAchieved=False`, `checklistPassedCount=194`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -89,6 +89,13 @@ Current gate status after the Phase400 work:
   <= 4.5e-19 residual-scale),
   `kernelObstructionFullyRelaxableAtHigherOrder=True`,
   `minObstructionLiftedFraction=1`
+- Phase401:
+  `fullQuarticActionCoupledCriticalPointConstructionPassed=True`,
+  `noPerturbativeCoupledCriticalPointFound=True` (12/12 coupled runs exit
+  their trust regions without stationarity; kappa=0 baselines converge to
+  2.7e-17),
+  `valleyAnisotropyRatio=1.4e8` (positive-relaxed near-null valleys of the
+  quartic form), `maxAdiabaticSourceNormGrowth=7.4`
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -109,63 +116,60 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work added Phase400, the full-bosonic-action flat-direction lift
-probe, which answers the residual question Phase399 recorded: because the
-toy bosonic objective is exactly QUARTIC (Upsilon = F - T^aug is quadratic
-in omega), the expansion along Gauss-Newton kernel directions terminates
-exactly, and the GN-dropped curvature form B_ij = <U0, M Q(k_i,k_j)> was
-assembled by polarization (second differences of the production residual
-assembly, no truncation error) and diagonalized. ALL 36 kernel directions
-(18 x 2 backgrounds) are LIFTED (quartic norms 1.2e-3..5.8e-2, zero exactly
-flat; quadratic coefficients are residual-scale, Cauchy-Schwarz-bounded,
-saddle depth <= 4.5e-19); the fermionic source kernel component lies
-entirely in lifted directions, so THE PHASE399 OBSTRUCTION IS FULLY
-RELAXABLE AT HIGHER ORDER - the coupled critical point exists as a genuine
-critical point of the full toy action. Cross-check: source kernel
-norm-fractions square to the Phase394 energy-fractions (0.121/0.134). The
-kernel is not gauge-dominated (gauge fractions <= 0.46). Study:
-`studies/phase400_full_bosonic_action_flat_direction_lift_probe_001`
-(IMPLEMENTATION_P400.md; reads the Phase394 working directory). The
-COUPLED-STATIONARITY COMPONENT IS NOW CLOSED AT THE FULL TOY-ACTION
-CONTROL-BRANCH LEVEL. Before that, Phase399 solved the quadratic-model
-self-consistent coupled critical point (8/8 runs, projected gradient
-<= 9.5e-11, obstruction 0.047 per unit kappa recorded, kappa = 0.1
-perturbative boundary documented), and Phase398 was the v29 VO-6/VO-7
-completion ledger audit (VO-6 5/5, VO-7 4/4, EW chain 3/3, 8-item physical
-gap ledger headed by the symmetry-breaking scalar/VEV sector and the
-hypercharge/coupling lineage).
+The latest work added Phase401, the full-quartic-action coupled
+critical-point construction attempt, which closes the optional constructive
+completion with a machine-characterized NEGATIVE structural result: the
+kernel relaxation is NON-PERTURBATIVE. Using an exact solver
+(GN-preconditioned positive steps + exact 18-dim kernel Newton with
+closed-form gradient/Hessian + exact quartic line searches, every step
+verified monotone descent), all 12 coupled runs (frozen-source kappa ladder
+1e-8/1e-7/1e-6 with trust radius 1.0, plus adiabatic self-consistent probes
+at radius 0.15) descend out of their trust regions without stationarity,
+while the kappa=0 baselines converge to 2.7e-17 in 2 iterations. Mechanism:
+the positive sector absorbs almost all of Q(d,d), collapsing Phase400's
+per-ray lift into near-null valleys (effective kernel potential ~1e-13 at
+amplitude 1.0; anisotropy ratio 1.4e8); the adiabatic source additionally
+STRENGTHENS with displacement (up to 7.4x). Combined closure: the relaxed
+coupled vacuum of the toy action is NOT a small deformation of the
+persisted background - welding the VO-7 coupled-stationarity component to
+the gap-ledger item "4D observed vacuum". Study:
+`studies/phase401_full_quartic_action_coupled_critical_point_construction_001`
+(IMPLEMENTATION_P401.md; reads the Phase394 working directory). Before
+that, Phase400 proved every flat kernel ray is quartically lifted and the
+obstruction relaxable in principle, and Phase399 solved the quadratic-model
+coupled critical point modulo the 18 flat directions.
 
 ### Integration Points Already Updated
 
-Phase400 (like Phase388-399) is wired into:
+Phase401 (like Phase388-400) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (both invocation blocks)
 - `studies/phase101_boson_prediction_package_001/Program.cs`
 - `studies/phase202_boson_objective_completion_audit_001/Program.cs`
   (checklist item
-  `full-bosonic-action-flat-direction-lift-probe-materialized`)
+  `full-quartic-action-coupled-critical-point-construction-materialized`)
 - `scripts/verify_boson_claim_integrity.sh`
 - Broad scanner exclusions: phase204, phase205, phase207, phase279,
   phase281, phase295, phase296
 
 Reference tracking was updated in `ExperimentReferences.md` and
 `docs/Reference/ExperimentReferences/LOCAL-COMPLETION-V29-FERMIONIC-YUKAWA.md`
-(Phase399/Phase400 coupled-stationarity closure section).
+(Phase399/Phase400/Phase401 coupled-stationarity closure section).
 The diagnosis journal entry is near the end of
 `docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md`.
 
 ### Validation Already Run
 
 ```bash
-dotnet run --project studies/phase400_full_bosonic_action_flat_direction_lift_probe_001/Phase400FullBosonicActionFlatDirectionLiftProbe.csproj
+dotnet run --project studies/phase401_full_quartic_action_coupled_critical_point_construction_001/Phase401FullQuarticActionCoupledCriticalPointConstruction.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
 ./scripts/generate_validated_boson_predictions.sh
 ```
 
-The full generator ended with the Phase400 line, the Phase202 incomplete
-status (`checklistPassedCount=193`, `checklistFailedCount=3`), and the same
+The full generator ended with the Phase401 line, the Phase202 incomplete
+status (`checklistPassedCount=194`, `checklistFailedCount=3`), and the same
 claim-integrity status (`promotedPhysicalMassClaimCount=0`). All seven broad
 scanners still report zero intake-ready evidence.
 
@@ -189,6 +193,10 @@ Important current local detail notes:
 - `LOCAL-ARCH-P4-FERMION-MASS-REPRESENTATION.md`
 - `DIRAC-SHELL-RESPONSE-BOUNDARY.md`
 - `COX-FIRST-PRINCIPLES-I-19800512.md`
+- `TOE-GU-ICEBERG-20250423.md` (+ full transcript under
+  `docs/Reference/ExperimentReferences/transcripts/`): the GU-native
+  structural ansatz for the scalar/Yukawa gap rows - qualitative only;
+  cite GU-DRAFT-2021 as primary
 
 ### Best Next Work
 
@@ -203,17 +211,26 @@ The most useful next branches are:
    photon/Z mixing by Phase397) and the hypercharge/coupling lineage. Each
    component solved should arrive through a new fail-closed phase that
    names the Phase398 ledger row it discharges, proves target independence,
-   and lets the existing gates decide promotion.
-2. (Closed by Phase399 + Phase400 at the full toy-action control-branch
-   level: the quadratic-model coupled critical point is solved and the
-   full quartic action lifts all 18 flat directions, so the obstruction is
-   relaxable at higher order.) One optional constructive completion
-   remains: a Phase401 that actually SOLVES the coupled critical point in
-   the full quartic action (extending the Phase399 fixed point with
-   kernel-direction relaxation) and verifies the cube-root scaling the
-   quartic lift predicts for the relaxed kernel amplitude,
-   d_ker ~ (kappa |P_ker J| / quartic-scale)^(1/3). This would upgrade the
-   component from "critical point exists" to "constructed and verified".
+   and lets the existing gates decide promotion. The GU-native structural
+   ansatz for the scalar/Yukawa rows is now catalogued
+   (TOE-GU-ICEBERG-20250423 + transcript; primary: GU-DRAFT-2021):
+   Higgs = trace of the vertical symmetric-2-tensor component of the
+   connection, quartic from the Yang-Mills self-coupling, negative
+   mass-squared from phi-A cross terms (checkable sign condition),
+   Yukawa = minimal coupling of the chimeric Dirac operator. The natural
+   next phase is a fail-closed structural audit of that route against the
+   primary draft, machine-checking which contract fields it could in
+   principle supply (everything quantitative remains underived; the
+   hypercharge embedding is matched to observation, not derived).
+2. (CLOSED by Phase399 + Phase400 + Phase401: the quadratic-model coupled
+   critical point is solved modulo flat directions, every flat ray is
+   quartically lifted, and the attempted construction of the relaxed
+   critical point machine-characterized the kernel relaxation as
+   NON-PERTURBATIVE - positive-relaxed near-null valleys of the quartic
+   form (anisotropy 1.4e8) plus adiabatic source growth carry the
+   relaxation out of every trust region. No internal question remains for
+   this component; the "4D observed vacuum" gap-ledger row now carries the
+   Phase401 boundary evidence.)
 3. Periodic external literature monitoring at checkpoint cadence (the
    2026-06-10 survey and the 2026-06-11 post-Phase400 sweep found no
    GU-native scalar-sector source; the 2026-06-11 sweep catalogued
@@ -234,10 +251,10 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -120 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase400|fullBosonicActionFlatDirectionLiftProbe|kernelObstructionFullyRelaxable" \
+rg -n "Phase401|fullQuarticActionCoupledCriticalPointConstruction|noPerturbativeCoupledCriticalPointFound" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
   ExperimentReferences.md \
-  studies/phase400_full_bosonic_action_flat_direction_lift_probe_001 \
+  studies/phase401_full_quartic_action_coupled_critical_point_construction_001 \
   studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
 ```
 
@@ -250,11 +267,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase400 output JSON files, and commit a checkpoint
+force-add the ignored Phase401 output JSON files, and commit a checkpoint
 after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase400 flat-direction lift probe
+Add phase401 nonperturbative kernel relaxation characterization
 ```

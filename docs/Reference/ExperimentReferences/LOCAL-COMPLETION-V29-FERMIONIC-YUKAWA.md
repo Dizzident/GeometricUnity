@@ -183,7 +183,7 @@ hypercharge/coupling lineage. VO-6/VO-7 remain OPEN as physical
 obligations; the control-branch artifacts are the templates, not the
 solutions.
 
-## Phase399/Phase400 Coupled-Stationarity Closure (Control Branch)
+## Phase399/Phase400/Phase401 Coupled-Stationarity Closure (Control Branch)
 
 As of 2026-06-11, the coupled-stationarity component is closed at the FULL
 toy-action control-branch level: Phase399 solved the self-consistent
@@ -197,3 +197,14 @@ in lifted directions - the coupled critical point exists as a genuine
 critical point of the full toy action. This is a structural statement about
 the toy control branch only; the physical VO-6/VO-7 obligations and the
 Phase398 8-item gap ledger are unchanged.
+
+Phase401 (2026-06-11) closed the optional constructive completion with a
+machine-characterized negative: the kernel relaxation is NON-PERTURBATIVE.
+The positive sector absorbs almost all of Q(d,d), collapsing the per-ray
+quartic lift into near-null valleys (anisotropy ratio 1.4e8), and the
+adiabatic source strengthens with displacement (up to 7.4x), so all 12
+coupled runs exit their trust regions without stationarity while the
+kappa = 0 baselines converge to 2.7e-17. The relaxed coupled vacuum of the
+toy action is not a small deformation of the persisted background; the
+"4D observed vacuum" physical gap-ledger row carries this boundary
+evidence.

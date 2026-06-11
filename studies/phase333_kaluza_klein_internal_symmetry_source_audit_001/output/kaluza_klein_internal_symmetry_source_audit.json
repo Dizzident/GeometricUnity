@@ -1,7 +1,7 @@
 {
   "phaseId": "phase333-kaluza-klein-internal-symmetry-source-audit",
   "terminalStatus": "kaluza-klein-internal-symmetry-source-audit-geometric-mass-lead-not-gu-source",
-  "generatedAt": "2026-06-11T14:06:03.6624948+00:00",
+  "generatedAt": "2026-06-11T16:27:57.0056643+00:00",
   "kaluzaKleinInternalSymmetrySourceAuditPassed": true,
   "kkInternalSymmetryLeadPresent": true,
   "kkPrimarySourcesReviewed": true,
