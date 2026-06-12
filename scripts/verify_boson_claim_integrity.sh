@@ -180,6 +180,7 @@ const paths = {
   phase408: "studies/phase408_vertical_spin_zero_extraction_obstruction_probe_001/output/vertical_spin_zero_extraction_obstruction_probe_summary.json",
   phase409: "studies/phase409_invariant_pairing_menu_spin_zero_extraction_probe_001/output/invariant_pairing_menu_spin_zero_extraction_probe_summary.json",
   phase410: "studies/phase410_curvature_coupled_vev_selection_probe_001/output/curvature_coupled_vev_selection_probe_summary.json",
+  phase411: "studies/phase411_quartic_dirac_squared_spinor_composite_probe_001/output/quartic_dirac_squared_spinor_composite_probe_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -431,6 +432,7 @@ const phase407 = requireFile(paths.phase407);
 const phase408 = requireFile(paths.phase408);
 const phase409 = requireFile(paths.phase409);
 const phase410 = requireFile(paths.phase410);
+const phase411 = requireFile(paths.phase411);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -4779,6 +4781,18 @@ if (sourceLineageMissing) {
   assert(phase410.sourceContractApplicationAllowed === false && phase410.canFillPhase201WzContract === false && phase410.canFillPhase201HiggsContract === false && phase410.canFillPhase256ObservedFieldExtractionContract === false, "Phase410 cannot fill Phase201 or Phase256 contracts.");
   assert(phase410.routePromotesWzMasses === false && phase410.routePromotesHiggsMass === false && phase410.routeCompletesBosonPredictions === false, "Phase410 cannot promote boson predictions.");
   assert(phase410.phase201TemplateMutated === false && phase410.fieldsAppliedToPhase201TemplateCount === 0 && phase410.acceptedContractFieldCount === 0, "Phase410 must not mutate or fill the Phase201 template.");
+  assert(phase411.quarticDiracSquaredSpinorCompositeProbePassed === true, "Phase411 quartic/Dirac-squared spinor composite probe must pass as a fail-closed structural audit.");
+  assert(phase411.targetBlindConstruction === true && phase411.physicalTargetsConsultedForConstruction === false, "Phase411 construction must remain target-blind.");
+  assert(typeof phase411.targetBlindConstructionHash === "string" && phase411.targetBlindConstructionHash.length === 64, "Phase411 must persist a target-blind construction hash.");
+  assert(phase411.applicationSubjectKind === "quartic-dirac-squared-spinor-composite-probe", "Phase411 must classify its subject as the spinor composite probe.");
+  assert(phase411.irrepContentsRecovered === true && phase411.contentLMatchesCharacter === true && phase411.contentRMatchesCharacter === true, "Phase411 must recover the welded carrier contents with character cross-checks.");
+  assert(phase411.majoranaChannelDirectCheckMatches === true, "Phase411 must verify the Majorana channel by direct kernel.");
+  assert(phase411.leftRightBilinearChannelHasNoWeldedScalar === true, "Phase411 must record the Dirac-mass-channel theorem.");
+  assert(phase411.complexCompactArithmeticUsed === true && phase411.pinParityClassificationAttempted === false, "Phase411 must carry its named arithmetic caveats.");
+  assert(phase411.physicalCouplingProvided === false, "Phase411 derives no coupling.");
+  assert(phase411.sourceContractApplicationAllowed === false && phase411.canFillPhase201WzContract === false && phase411.canFillPhase201HiggsContract === false && phase411.canFillPhase256ObservedFieldExtractionContract === false, "Phase411 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase411.routePromotesWzMasses === false && phase411.routePromotesHiggsMass === false && phase411.routeCompletesBosonPredictions === false, "Phase411 cannot promote boson predictions.");
+  assert(phase411.phase201TemplateMutated === false && phase411.fieldsAppliedToPhase201TemplateCount === 0 && phase411.acceptedContractFieldCount === 0, "Phase411 must not mutate or fill the Phase201 template.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

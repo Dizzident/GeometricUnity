@@ -1,0 +1,149 @@
+{
+  "phaseId": "phase411-quartic-dirac-squared-spinor-composite-probe",
+  "generatedAt": "2026-06-12T19:38:25.9624685+00:00",
+  "terminalStatus": "spinor-bilinear-channels-carry-no-welded-scalar-sm-doublet",
+  "quarticDiracSquaredSpinorCompositeProbePassed": true,
+  "phase409PrecursorPassed": true,
+  "phase410PrecursorPassed": true,
+  "probeInternallyConsistent": true,
+  "chiralHalfIsSixteenDimensional": true,
+  "chiralInvarianceResidual": 0,
+  "weylHalvesAreTwoDimensional": true,
+  "sigma4HomResidual": 0,
+  "weylLabel2L": {
+    "j1": 0,
+    "j2": 0.5
+  },
+  "weylLabel2R": {
+    "j1": 0.5,
+    "j2": 0
+  },
+  "colorAlgebraDimensionIsEight": true,
+  "irrepContentsRecovered": true,
+  "welded16Content": [
+    {
+      "j1": 0.5,
+      "j2": 1.5,
+      "multiplicity": 2
+    },
+    {
+      "j1": 1.5,
+      "j2": 0.5,
+      "multiplicity": 2
+    }
+  ],
+  "weldedLeftCarrierContent": [
+    {
+      "j1": 0.5,
+      "j2": 1,
+      "multiplicity": 2
+    },
+    {
+      "j1": 0.5,
+      "j2": 2,
+      "multiplicity": 2
+    },
+    {
+      "j1": 1.5,
+      "j2": 0,
+      "multiplicity": 2
+    },
+    {
+      "j1": 1.5,
+      "j2": 1,
+      "multiplicity": 2
+    }
+  ],
+  "weldedRightCarrierContent": [
+    {
+      "j1": 0,
+      "j2": 1.5,
+      "multiplicity": 2
+    },
+    {
+      "j1": 1,
+      "j2": 0.5,
+      "multiplicity": 2
+    },
+    {
+      "j1": 1,
+      "j2": 1.5,
+      "multiplicity": 2
+    },
+    {
+      "j1": 2,
+      "j2": 0.5,
+      "multiplicity": 2
+    }
+  ],
+  "contentLMatchesCharacter": true,
+  "contentRMatchesCharacter": true,
+  "spinZeroDiracMassChannel": 0,
+  "spinZeroMajoranaLLChannel": 16,
+  "spinZeroMajoranaRRChannel": 16,
+  "spinZeroMajoranaLLDirectKernel": 16,
+  "majoranaChannelDirectCheckMatches": true,
+  "leftRightBilinearChannelHasNoWeldedScalar": true,
+  "diracMassChannelClosedForWeldedScalars": true,
+  "majoranaSmAnalysisComputed": true,
+  "majoranaSpinZeroSmDoubletCount": 0,
+  "spinorBilinearSpinZeroDoubletAbsent": true,
+  "quarticSpinZeroCountLRLR": 9632,
+  "quarticSpinZeroCountLLLL": 9856,
+  "quarticSmStableAnalysisComputed": false,
+  "complexCompactArithmeticUsed": true,
+  "pinParityClassificationAttempted": false,
+  "physicalCouplingProvided": false,
+  "probeDefinitions": {
+    "carrier": "chimeric chiral carriers S_L = 2_L (x) 16, S_R = 2_R (x) 16 with the welded action D(M) = sigma(M) (x) I \u002B I (x) Sigma(pi(M)); Cl(10) tensor-string gammas (Phase404), Sym^2 weld (Phase408)",
+    "w1w2": "welded (j1, j2) content via joint su(2)_A/su(2)_B sub-Casimir spectra on realified carriers, kappa-calibrated on the bare 2_L, cross-checked by character arithmetic",
+    "w3": "spin-0 content of S_L x S_R, S_L x S_L, S_R x S_R by exact character pairing; Majorana channel verified by direct blockwise kernel",
+    "w4": "largest SM-stable subspace of the Majorana spin-0 sector (su2L \u002B su2R Cartan \u002B Y \u002B full color su(3) in the spinor rep), machine-calibrated Casimir decomposition, SM-doublet pattern count",
+    "w5": "quartic spin-0 dimensions by character arithmetic over the machine-derived channel contents; quartic SM-stable analysis = named remaining order"
+  },
+  "applicationSubjectKind": "quartic-dirac-squared-spinor-composite-probe",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "278759884e1c5bc5b8b1d53fa85ba14046edab561105bd73e604785447896d96",
+  "routeProvidesPhysicalMassPsiCompatibleBranch": false,
+  "routeProvidesCompletedFermionicAction": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesObservedElectroweakNamespaceMap": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesWeakAngleOrCouplingLineage": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "spinor-bilinear composites are NOT the draft\u0027s fundamental scalar; this probe characterizes the Dirac-squared composite reading of the heuristics",
+    "all arithmetic is complex/compact (Cl(10), so(10)); the Nguyen-Polya complexification objection and noncompact real-form effects are carried as named caveats - a noncompact evasion remains conceivable and unprobed",
+    "Pin-group parity classification of spinor composites is NOT attempted",
+    "the quartic SM-stable analysis is NOT computed (spin-0 counts recorded by character arithmetic); it is the named remaining order",
+    "the draft\u0027s unobserved-phase fields remain unprobed",
+    "no dynamics, no scales, no VEV; the binding gaps are unchanged",
+    "no Phase201 or Phase256 fill",
+    "no physical predictions"
+  ],
+  "sourceEvidence": {
+    "phase409SummaryPath": "studies/phase409_invariant_pairing_menu_spin_zero_extraction_probe_001/output/invariant_pairing_menu_spin_zero_extraction_probe_summary.json",
+    "phase410SummaryPath": "studies/phase410_curvature_coupled_vev_selection_probe_001/output/curvature_coupled_vev_selection_probe_summary.json",
+    "primaryDraft": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt (sections 9, 12; S_g(C) = S(V) x S(H*))",
+    "heuristicContext": "docs/Reference/ExperimentReferences/DEEP-RESEARCH-20260612.md (\u0027quartic Higgs piece\u0027 from \u0027Dirac squaring of a quadratic\u0027, dating plausible-unverified) and TOE-GU-40YEARS-20250602.md (\u0027a VEV in a Dirac-like operator\u0027)"
+  },
+  "decision": "The Dirac-squared composite route is machine-characterized at its natural (bilinear) channel level. The welded branching of the internal 16 and the chiral carriers is exact, and the channel theorem follows: the DIRAC MASS / YUKAWA CHANNEL (S_L x S_R) - exactly where the SM Higgs couples - contains NO welded-scalar at all (its welded content pairs (integer, half-integer) against (half-integer, integer) types, so no singlet can form); whatever welded scalars exist live in the MAJORANA-type channels, and the SM-stable analysis of that sector finds NO SM-doublet pattern there either. CONSEQUENCE: a \u0027VEV in a Dirac-like operator coupling two chiral halves\u0027 cannot be a welded spacetime SCALAR on this chain\u0027s bilinear channels - the curvature-coaxing and Dirac-squared heuristics, in their composite readings, are now CLOSED through bilinear order alongside the Phase409 frame-cross closure. The quartic SM-stable analysis (the spin-0 counts are recorded by character arithmetic) and the draft\u0027s unobserved-phase fields remain the named open routes, along with a noncompact-real-form evasion (the Nguyen-Polya complexification caveat is carried: all arithmetic here is complex/compact). Nothing is promoted; no contract field is filled."
+}

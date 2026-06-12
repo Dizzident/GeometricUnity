@@ -176,6 +176,7 @@ const string Phase407Path = "studies/phase407_chimeric_adjoint_sm_content_probe_
 const string Phase408Path = "studies/phase408_vertical_spin_zero_extraction_obstruction_probe_001/output/vertical_spin_zero_extraction_obstruction_probe_summary.json";
 const string Phase409Path = "studies/phase409_invariant_pairing_menu_spin_zero_extraction_probe_001/output/invariant_pairing_menu_spin_zero_extraction_probe_summary.json";
 const string Phase410Path = "studies/phase410_curvature_coupled_vev_selection_probe_001/output/curvature_coupled_vev_selection_probe_summary.json";
+const string Phase411Path = "studies/phase411_quartic_dirac_squared_spinor_composite_probe_001/output/quartic_dirac_squared_spinor_composite_probe_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -385,6 +386,7 @@ using var phase407 = File.Exists(Phase407Path) ? JsonDocument.Parse(File.ReadAll
 using var phase408 = File.Exists(Phase408Path) ? JsonDocument.Parse(File.ReadAllText(Phase408Path)) : null;
 using var phase409 = File.Exists(Phase409Path) ? JsonDocument.Parse(File.ReadAllText(Phase409Path)) : null;
 using var phase410 = File.Exists(Phase410Path) ? JsonDocument.Parse(File.ReadAllText(Phase410Path)) : null;
+using var phase411 = File.Exists(Phase411Path) ? JsonDocument.Parse(File.ReadAllText(Phase411Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -5194,6 +5196,29 @@ var curvatureCoupledVevSelectionProbePassed = curvatureCoupledVevSelectionProbeM
     && JsonBool(phase410.RootElement, "phase201TemplateMutated") is false
     && JsonInt(phase410.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
     && JsonInt(phase410.RootElement, "acceptedContractFieldCount") == 0;
+var quarticDiracSquaredSpinorCompositeProbeMaterialized = phase411 is not null;
+var quarticDiracSquaredSpinorCompositeProbePassed = quarticDiracSquaredSpinorCompositeProbeMaterialized
+    && JsonBool(phase411!.RootElement, "quarticDiracSquaredSpinorCompositeProbePassed") is true
+    && JsonBool(phase411.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase411.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase411.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase411.RootElement, "applicationSubjectKind") == "quartic-dirac-squared-spinor-composite-probe"
+    && JsonBool(phase411.RootElement, "irrepContentsRecovered") is true
+    && JsonBool(phase411.RootElement, "contentLMatchesCharacter") is true
+    && JsonBool(phase411.RootElement, "contentRMatchesCharacter") is true
+    && JsonBool(phase411.RootElement, "majoranaChannelDirectCheckMatches") is true
+    && JsonBool(phase411.RootElement, "leftRightBilinearChannelHasNoWeldedScalar") is true
+    && JsonBool(phase411.RootElement, "physicalCouplingProvided") is false
+    && JsonBool(phase411.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase411.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase411.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase411.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase411.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase411.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase411.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase411.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase411.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase411.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -7450,6 +7475,14 @@ var checklist = new[]
             ? $"curvatureCoupledVevSelectionProbePassed={JsonBool(phase410!.RootElement, "curvatureCoupledVevSelectionProbePassed")}; targetBlind={JsonBool(phase410.RootElement, "targetBlindConstruction")}; runawayAlongFlatRays={JsonBool(phase410.RootElement, "curvatureCouplingProducesRunawayAlongFlatRays")}; maxDepthStratumBlockDegenerate={JsonBool(phase410.RootElement, "maxDepthStratumBlockDegenerate")}; doubletVevSelectedByCurvatureCoupling={JsonBool(phase410.RootElement, "doubletVevSelectedByCurvatureCoupling")}; canFillPhase201WzContract={JsonBool(phase410.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase410.RootElement, "decision")}"
             : "Phase410 artifact not materialized",
         Phase410Path),
+    new ObjectiveChecklistItem(
+        "quartic-dirac-squared-spinor-composite-probe-materialized",
+        "Machine-characterize the Dirac-squared composite route: welded branching of the chimeric chiral carriers, the bilinear channel singlet theorem, and the SM-doublet content of the Majorana spin-0 sector.",
+        quarticDiracSquaredSpinorCompositeProbePassed ? "passed" : "failed",
+        quarticDiracSquaredSpinorCompositeProbeMaterialized
+            ? $"quarticDiracSquaredSpinorCompositeProbePassed={JsonBool(phase411!.RootElement, "quarticDiracSquaredSpinorCompositeProbePassed")}; targetBlind={JsonBool(phase411.RootElement, "targetBlindConstruction")}; leftRightBilinearChannelHasNoWeldedScalar={JsonBool(phase411.RootElement, "leftRightBilinearChannelHasNoWeldedScalar")}; majoranaSpinZeroSmDoubletCount={JsonInt(phase411.RootElement, "majoranaSpinZeroSmDoubletCount")}; spinorBilinearSpinZeroDoubletAbsent={JsonBool(phase411.RootElement, "spinorBilinearSpinZeroDoubletAbsent")}; canFillPhase201WzContract={JsonBool(phase411.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase411.RootElement, "decision")}"
+            : "Phase411 artifact not materialized",
+        Phase411Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

@@ -35,13 +35,13 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase410 work (and the 2026-06-12
+Current gate status after the Phase411 work (and the 2026-06-12
 platform fix - GPU parity defect root-caused and discharged):
 
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=203`,
+  `objectiveAchieved=False`, `checklistPassedCount=204`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -181,6 +181,17 @@ platform fix - GPU parity defect root-caused and discharged):
   (the uniform bosonic curvature-coaxing realization is CLOSED;
   selection requires direction-dependent coupling or the Dirac-sector
   realization)
+- Phase411:
+  `quarticDiracSquaredSpinorCompositeProbePassed=True`,
+  `leftRightBilinearChannelHasNoWeldedScalar=True` (the Dirac mass/
+  Yukawa channel S_L x S_R contains NO welded scalar at all - its
+  (half,int) x (int,half) content cannot pair to a singlet),
+  `majoranaSpinZeroSmDoubletCount=0` (the Majorana channels' 16 welded
+  scalars carry no SM-doublet state),
+  `spinorBilinearSpinZeroDoubletAbsent=True` (the Dirac-squared
+  composite reading is CLOSED at bilinear-channel level; named
+  remaining: quartic SM-stable analysis, unobserved-phase fields,
+  noncompact real-form evasion)
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -201,7 +212,26 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work added Phase410, the curvature-coupled VEV-selection
+The latest work added Phase411, the quartic/Dirac-squared spinor-sector
+composite probe - the convergence point of Phase409, Phase410, and the
+"quartic Higgs from Dirac squaring" heuristic. On the chimeric chiral
+carriers S_L/R = 2_L/R (x) 16 (Cl(4) Weyl halves, machine-verified
+homomorphism; Phase404 Cl(10) 16; Phase408 weld), exactly: the internal
+16 branches as (1/2,3/2) + (3/2,1/2); the DIRAC MASS CHANNEL S_L x S_R
+(the Yukawa channel, where the SM Higgs couples) contains ZERO welded
+scalars - its (half,int) x (int,half) content cannot pair to a singlet
+for any alignment; the Majorana channels carry 16 welded scalars each
+(direct kernel = character count) with ZERO SM-doublet states in their
+SM-stable subspace. The composite-extraction question is now closed
+through bilinear order on EVERY probed carrier (frame-cross tensor,
+bosonic vacuum, spinor bilinear). Named remaining: the quartic
+SM-stable analysis, the draft's unobserved-phase fields, a noncompact
+real-form evasion (complex/compact arithmetic; Nguyen-Polya caveat
+carried). Study:
+`studies/phase411_quartic_dirac_squared_spinor_composite_probe_001`
+(IMPLEMENTATION_P411.md).
+
+Before that, Phase410, the curvature-coupled VEV-selection
 probe: the TOE-GU-40YEARS curvature-coaxing claim's simplest faithful
 bosonic realization (S_aug = S_B + (kappaR/2) R_eff ||omega||^2 on the
 Phase405 su(3) 6x6 landscape) FAILS two ways at once - (C1) RUNAWAY:
@@ -274,13 +304,13 @@ HONEST BOUNDARY. Study:
 
 ### Integration Points Already Updated
 
-Phase410 (like Phase388-409) is wired into:
+Phase411 (like Phase388-410) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (both invocation blocks)
 - `studies/phase101_boson_prediction_package_001/Program.cs`
 - `studies/phase202_boson_objective_completion_audit_001/Program.cs`
   (checklist item
-  `curvature-coupled-vev-selection-probe-materialized`)
+  `quartic-dirac-squared-spinor-composite-probe-materialized`)
 - `scripts/verify_boson_claim_integrity.sh`
 - Broad scanner exclusions: phase204, phase205, phase207, phase279,
   phase281, phase295, phase296
@@ -294,15 +324,15 @@ The diagnosis journal entry is near the end of
 ### Validation Already Run
 
 ```bash
-dotnet run --project studies/phase410_curvature_coupled_vev_selection_probe_001/Phase410CurvatureCoupledVevSelectionProbe.csproj
+dotnet run --project studies/phase411_quartic_dirac_squared_spinor_composite_probe_001/Phase411QuarticDiracSquaredSpinorCompositeProbe.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
 ./scripts/generate_validated_boson_predictions.sh
 ```
 
-The targeted Phase410 run passes all exactness checks; Phase202 now
-reports `checklistPassedCount=203`, `checklistFailedCount=3`; claim
+The targeted Phase411 run passes all consistency checks; Phase202 now
+reports `checklistPassedCount=204`, `checklistFailedCount=3`; claim
 integrity verified with `promotedPhysicalMassClaimCount=0`. (Platform
 state: Gu.Interop.Tests 158/158 with the real-mesh parity and
 buffer-handle recycling tests; both Phase405 platform notes discharged
@@ -408,25 +438,23 @@ The most useful next branches are:
    realization of the curvature-coaxing claim produces RUNAWAY along the
    exactly-flat vacuum rays and a block-degenerate deepest stratum on
    the lifted sector - no doublet selection; the mechanism requires
-   direction-dependent coupling or the Dirac-sector realization. ONE
-   NAMED INTERNAL PROBE remains as the Best Next Work (now doubly
-   motivated - Phase409's lowest-open-order theorem AND Phase410's
-   bosonic closure both point at the Dirac sector):
-   - Phase411 candidate, QUARTIC / DIRAC-SQUARED SPINOR-SECTOR
-     COMPOSITE PROBE: the primary-heuristic statement that the
-     "quartic Higgs piece" arises from "Dirac squaring of a quadratic"
-     (dating plausible-unverified; consistent with the draft's
-     Dirac-square scaffold audited in Phase368) converges with two
-     Phase409 theorems: quartic is the LOWEST OPEN ORDER for spin-0
-     composites, and the frame-cross block alone cannot carry the
-     doublet - the spinor sector (chimeric 128/16, content beyond the
-     frame-cross block) is the named carrier. Probe: build the welded
-     spinor content on the chain, machine-enumerate the spin-0 sector
-     of spinor-bilinear x spinor-bilinear (quartic) composites, and
-     test for SM-doublet quantum numbers, parity-classified, in the
-     Phase409 style. The Nguyen-Polya complexification objection
-     (Ad(P) vs Lambda^bullet over the reals) must be carried as a named
-     caveat on any construction found.
+   direction-dependent coupling or the Dirac-sector realization. The
+   Dirac-sector composite probe is DONE (Phase411): the Dirac mass
+   channel carries NO welded scalar at all; the Majorana channels'
+   welded scalars carry no SM doublet - the composite-extraction
+   question is CLOSED through bilinear order on every probed carrier
+   (frame-cross tensor, bosonic vacuum, spinor bilinear). THE INTERNAL
+   STRUCTURAL PROGRAM IS BACK AT ITS HONEST BOUNDARY. Standing work:
+   literature monitoring at checkpoint cadence; the epsilon/Shiab route
+   if a quantitative specification appears. Optional internal
+   follow-ups, in priority order, IF the loop has idle capacity:
+   (i) the quartic SM-stable analysis (heavy - the spin-0 dimensions
+   are 9632/9856; needs new machinery to be tractable), (ii) the
+   unobserved-phase sector IF the draft's Chapter 14 machinery can be
+   pinned to a computable structure (re-read the draft text first),
+   (iii) a noncompact real-form spot-check of the Phase408/409/411
+   no-gos (the single most plausible loophole per
+   DEEP-RESEARCH-20260612).
    Deep-research follow-ups (catalogue when revisited): GU IV (v2)
    "The Rig for Lambda" (DOI 10.5281/zenodo.17402261); the hinted
    "Geometric Unity V"; the Hebrew University dark-energy talk
@@ -460,9 +488,9 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -120 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase410|curvatureCoupledVevSelectionProbe|doubletVevSelectedByCurvatureCoupling" \
+rg -n "Phase411|quarticDiracSquaredSpinorCompositeProbe|leftRightBilinearChannelHasNoWeldedScalar" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
-  studies/phase410_curvature_coupled_vev_selection_probe_001 \
+  studies/phase411_quartic_dirac_squared_spinor_composite_probe_001 \
   studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
 ```
 
@@ -475,11 +503,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase410 output JSON files, and commit a checkpoint
+force-add the ignored Phase411 output JSON files, and commit a checkpoint
 after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase410 curvature coupled vev selection probe
+Add phase411 quartic dirac squared spinor composite probe
 ```

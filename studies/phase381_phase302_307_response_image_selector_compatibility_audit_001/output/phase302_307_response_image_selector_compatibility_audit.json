@@ -1,6 +1,6 @@
 {
   "phaseId": "phase381-phase302-307-response-image-selector-compatibility-audit",
-  "generatedAt": "2026-06-12T17:39:55.7089361+00:00",
+  "generatedAt": "2026-06-12T19:09:35.8416931+00:00",
   "terminalStatus": "phase302-307-response-image-selector-compatibility-audit-sidecar-conflict-nonpromotional",
   "phase302307ResponseImageSelectorCompatibilityAuditPassed": true,
   "targetBlindConstruction": true,

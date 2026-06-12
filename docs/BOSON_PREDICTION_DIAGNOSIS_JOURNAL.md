@@ -17342,3 +17342,61 @@ Phase411 (named): the quartic/Dirac-squared spinor-sector composite
 probe - now doubly motivated (Phase409's lowest-open-order theorem AND
 Phase410's bosonic-realization closure both point at the Dirac sector).
 Then literature monitoring at checkpoint cadence.
+
+## 2026-06-12 - Phase411: The Dirac Mass Channel Cannot Carry a Welded Scalar; Spinor Bilinears Have No SM-Doublet
+
+### Context
+
+The convergence point of Phase409 (quartic = lowest open order;
+frame-cross closed), Phase410 (bosonic curvature-coaxing closed; the
+claim's wording places the VEV "in a Dirac-like operator" coupling "two
+chiral halves"), and the relayed primary heuristic ("quartic Higgs
+piece" from "Dirac squaring of a quadratic"). Phase411 machine-tests
+whether a spinor bilinear can carry a welded-spin-0 SM doublet on the
+chimeric chiral carriers S_L/R = 2_L/R (x) 16 (Cl(4) Weyl halves with
+machine-verified homomorphism; Phase404 Cl(10) 16; Phase408 weld).
+
+### Result
+
+- WELDED BRANCHING (exact): the internal 16 = (1/2,3/2) + (3/2,1/2)
+  under the weld (realified x2); carrier contents recovered and
+  character-cross-checked.
+- THE DIRAC MASS CHANNEL THEOREM: S_L (x) S_R - the Yukawa/mass channel,
+  exactly where the SM Higgs couples - contains ZERO welded scalars: its
+  content pairs (half-integer, integer) types against (integer,
+  half-integer) types, so no singlet can form for any alignment. A "VEV
+  in a Dirac-like operator coupling two chiral halves" cannot be a
+  welded spacetime SCALAR on this chain.
+- MAJORANA CHANNELS: 16 welded scalars each (direct blockwise kernel =
+  character count); their largest SM-stable subspace contains ZERO
+  SM-doublet-pattern states.
+- QUARTIC (data): spin-0 dimensions (LR)^2 = 9632, (LL)^2 = 9856 by
+  character arithmetic; the quartic SM-stable analysis is the named
+  remaining order.
+- CONSEQUENCE: the Dirac-squared composite reading is CLOSED at its
+  natural bilinear-channel level, alongside the Phase409 frame-cross
+  closure and the Phase410 bosonic closure. The internal program's
+  remaining named routes: the quartic SM-stable analysis, the draft's
+  unobserved-phase fields, and a noncompact real-form evasion (all
+  Phase411 arithmetic is complex/compact; the Nguyen-Polya
+  complexification caveat is carried).
+- Study: studies/phase411_quartic_dirac_squared_spinor_composite_probe_001
+  (IMPLEMENTATION_P411.md).
+
+### Validation
+
+- Targeted Phase411 run passed (Cl(4)/Cl(10) residuals, content
+  recovery, character matches, direct-kernel match); Phase101 includes
+  the block; Phase202: checklistPassedCount=204, checklistFailedCount=3;
+  claim integrity verified with promotedPhysicalMassClaimCount=0.
+
+### Standing Next Work
+
+The internal structural program returns to its honest boundary with the
+composite-extraction question now closed through bilinear order on EVERY
+probed carrier (frame-cross tensor, bosonic vacuum, spinor bilinear).
+Standing work: literature monitoring at checkpoint cadence; the
+epsilon/Shiab route if a quantitative specification appears; optional
+internal follow-ups in priority order - the quartic SM-stable analysis
+(heavy), the unobserved-phase sector if the draft's Chapter 14
+machinery can be pinned to a computable structure.
