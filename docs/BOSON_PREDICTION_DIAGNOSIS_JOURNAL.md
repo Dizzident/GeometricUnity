@@ -17138,3 +17138,47 @@ scans needed periodic full session recycling (re-init + re-upload).
 - Native rebuild clean; Gu.Interop.Tests 158/158; full solution test
   exit 0. Phase405's session-recycling workaround remains valid but is
   no longer necessary.
+
+## 2026-06-12 - New Primary-Speaker Source Catalogued: TOE 40-Years Interview (Qualitative Only; Boundary Stands)
+
+### Context
+
+A user-supplied lead (an AI-generated summary citing recent "Shiab
+classification/uniqueness" formalizations and an interview link)
+prompted two checks during the standing sweep.
+
+### Dispositions
+
+1. The "Shiab uniqueness / seven invariant fiber pairings /
+   C_55 = 3 kappa/16" claims in the relayed summary could NOT be
+   verified against the catalogued Cox records: the Zenodo 19800512
+   abstract contains no uniqueness theorem statement, no pairing count,
+   no parity-odd epsilon classification, and no C_55 coefficient (it
+   mentions only the sign-safe O_55 basis). The relayed text appears to
+   be an embellished synthesis of the already-audited Cox series
+   (COX-GU-I-17252989, COX-FIRST-PRINCIPLES-I-19800512); Phase386/387
+   verdicts stand (scaffold-positive, zero electroweak content). Treat
+   the specific numbers as UNVERIFIED unless found in the actual PDFs.
+2. The linked video is NEW to the ledger: TOE-GU-40YEARS-20250602
+   (Weinstein with Jaimungal, 2025-06-02, 3:03:58) - a primary-speaker
+   post-draft interview absent from the geometricunity.org inventory.
+   Transcribed (~29.0k words) and catalogued with a detail note. Term
+   scan: ZERO Higgs/doublet/hypercharge/Yukawa/GeV/weak-angle/Shiab
+   occurrences. Gap-relevant content is qualitative only:
+   - CURVATURE-COAXED VEV (author's own words): a VEV in a
+     Dirac-Rarita-Schwinger-like operator sourced by scalar curvature in
+     GU's improved Einstein equation; it "plays the role of a
+     fundamental mass scale"; masses track curvature; Dirac-to-Weyl
+     decoupling at low curvature. This sharpens scalar-sector sub-gap
+     (b)'s mechanism class beyond the Iceberg ansatz (gravitational
+     sourcing named by the author) - recorded as a candidate class for a
+     future internal fail-closed probe.
+   - Epsilon mentions are notational/biographical plus a qualitative
+     Maurer-Cartan dark-energy claim; NOT the quantitative
+     epsilon-conjugation specification Phase408 requires.
+
+### Verdict
+
+No contract field can be filled; the quantitative negative boundary
+stands. The ledger gains a primary-speaker mechanism statement for VEV
+origin (curvature sourcing) as qualitative secondary evidence.
