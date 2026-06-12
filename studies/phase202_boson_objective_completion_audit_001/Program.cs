@@ -177,6 +177,7 @@ const string Phase408Path = "studies/phase408_vertical_spin_zero_extraction_obst
 const string Phase409Path = "studies/phase409_invariant_pairing_menu_spin_zero_extraction_probe_001/output/invariant_pairing_menu_spin_zero_extraction_probe_summary.json";
 const string Phase410Path = "studies/phase410_curvature_coupled_vev_selection_probe_001/output/curvature_coupled_vev_selection_probe_summary.json";
 const string Phase411Path = "studies/phase411_quartic_dirac_squared_spinor_composite_probe_001/output/quartic_dirac_squared_spinor_composite_probe_summary.json";
+const string Phase412Path = "studies/phase412_quartic_sm_doublet_intersection_analysis_001/output/quartic_sm_doublet_intersection_analysis_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -387,6 +388,7 @@ using var phase408 = File.Exists(Phase408Path) ? JsonDocument.Parse(File.ReadAll
 using var phase409 = File.Exists(Phase409Path) ? JsonDocument.Parse(File.ReadAllText(Phase409Path)) : null;
 using var phase410 = File.Exists(Phase410Path) ? JsonDocument.Parse(File.ReadAllText(Phase410Path)) : null;
 using var phase411 = File.Exists(Phase411Path) ? JsonDocument.Parse(File.ReadAllText(Phase411Path)) : null;
+using var phase412 = File.Exists(Phase412Path) ? JsonDocument.Parse(File.ReadAllText(Phase412Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -5219,6 +5221,27 @@ var quarticDiracSquaredSpinorCompositeProbePassed = quarticDiracSquaredSpinorCom
     && JsonBool(phase411.RootElement, "phase201TemplateMutated") is false
     && JsonInt(phase411.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
     && JsonInt(phase411.RootElement, "acceptedContractFieldCount") == 0;
+var quarticSmDoubletIntersectionAnalysisMaterialized = phase412 is not null;
+var quarticSmDoubletIntersectionAnalysisPassed = quarticSmDoubletIntersectionAnalysisMaterialized
+    && JsonBool(phase412!.RootElement, "quarticSmDoubletIntersectionAnalysisPassed") is true
+    && JsonBool(phase412.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase412.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase412.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase412.RootElement, "applicationSubjectKind") == "quartic-sm-doublet-intersection-analysis"
+    && JsonBool(phase412.RootElement, "smDiagonalBasisExact") is true
+    && JsonBool(phase412.RootElement, "quarticCountsMatchPhase411") is true
+    && JsonBool(phase412.RootElement, "ambientIntersectionIsNecessaryConditionOnly") is true
+    && JsonBool(phase412.RootElement, "physicalCouplingProvided") is false
+    && JsonBool(phase412.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase412.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase412.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase412.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase412.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase412.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase412.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase412.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase412.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase412.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -7483,6 +7506,14 @@ var checklist = new[]
             ? $"quarticDiracSquaredSpinorCompositeProbePassed={JsonBool(phase411!.RootElement, "quarticDiracSquaredSpinorCompositeProbePassed")}; targetBlind={JsonBool(phase411.RootElement, "targetBlindConstruction")}; leftRightBilinearChannelHasNoWeldedScalar={JsonBool(phase411.RootElement, "leftRightBilinearChannelHasNoWeldedScalar")}; majoranaSpinZeroSmDoubletCount={JsonInt(phase411.RootElement, "majoranaSpinZeroSmDoubletCount")}; spinorBilinearSpinZeroDoubletAbsent={JsonBool(phase411.RootElement, "spinorBilinearSpinZeroDoubletAbsent")}; canFillPhase201WzContract={JsonBool(phase411.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase411.RootElement, "decision")}"
             : "Phase411 artifact not materialized",
         Phase411Path),
+    new ObjectiveChecklistItem(
+        "quartic-sm-doublet-intersection-analysis-materialized",
+        "Decide the quartic order by the ambient-intersection argument: does the SM-doublet isotypic of 16^4 intersect the welded sectors available to quartic spacetime singlets in any channel?",
+        quarticSmDoubletIntersectionAnalysisPassed ? "passed" : "failed",
+        quarticSmDoubletIntersectionAnalysisMaterialized
+            ? $"quarticSmDoubletIntersectionAnalysisPassed={JsonBool(phase412!.RootElement, "quarticSmDoubletIntersectionAnalysisPassed")}; targetBlind={JsonBool(phase412.RootElement, "targetBlindConstruction")}; unionIntersectionRealDimension={JsonInt(phase412.RootElement, "unionIntersectionRealDimension")}; quarticWeldedScalarSmDoubletAbsentAllChannels={JsonBool(phase412.RootElement, "quarticWeldedScalarSmDoubletAbsentAllChannels")}; canFillPhase201WzContract={JsonBool(phase412.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase412.RootElement, "decision")}"
+            : "Phase412 artifact not materialized",
+        Phase412Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

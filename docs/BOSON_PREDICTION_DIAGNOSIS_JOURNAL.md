@@ -17400,3 +17400,64 @@ epsilon/Shiab route if a quantitative specification appears; optional
 internal follow-ups in priority order - the quartic SM-stable analysis
 (heavy), the unobserved-phase sector if the draft's Chapter 14
 machinery can be pinned to a computable structure.
+
+## 2026-06-12 - Phase412 (User Directive): The Quartic Order Is Closed - Zero Ambient Intersection in Every Channel
+
+### Context
+
+USER DIRECTIVE: execute the quartic SM-stable analysis named by
+Phase411. Phase412 decides it with an AMBIENT-INTERSECTION formulation
+strictly stronger than the deferred stable-subspace analysis: any
+welded-scalar SM-doublet quartic composite would force the ambient
+16^(x4) to contain a state simultaneously in the channel-allowed welded
+isotypics and the SM-doublet isotypic. Method: SM-diagonal weight basis
+(all SM Cartans diagonal by index arithmetic) -> candidate sector V_w
+(|Y| = 1/2, color weight 0, |mL| = 1/2; 896 of 65536 states) ->
+doublet isotypic D as the joint kernel of C_color and
+(C_L - (3/4)kappaL)^2 on V_w (480 real dims, residual 8.0e-15) ->
+product-form spectral projectors in the commuting welded sub-Casimirs
+(idempotency 9.4e-15) -> eigenvalue-1 count of the intersection Gram.
+
+### Result
+
+- THE INTERSECTION IS ZERO IN EVERY CHANNEL, with decisive margins: top
+  Gram eigenvalues 0.146 (LLLL), 0.000 (LLLR), 0.479 (LLRR), 0.000
+  (LRRR), 0.113 (RRRR), union 0.604 - an intersection state would
+  require eigenvalue exactly 1.
+- NEW CHANNEL DATA: the odd-mixed channels LLLR/LRRR carry ZERO welded
+  singlets at all; the even channels reproduce Phase411's character
+  counts exactly (LLLL = 9856, LLRR = 9632).
+- VERDICT: quartic-order-closed-no-welded-scalar-sm-doublet-in-any-
+  channel. The unrestricted tensor power contains every
+  statistics-projected composite space, so antisymmetrized composites
+  are covered. Together with Phases 408-411, EVERY internal
+  composite-extraction route on EVERY probed carrier is now closed
+  through QUARTIC order.
+- Remaining named routes (unchanged in kind, narrowed): the draft's
+  unobserved-phase fields; a noncompact real-form evasion of the
+  compact/complex arithmetic (Nguyen-Polya caveat carried); a new
+  primary-source specification.
+- Engineering note: the first run timed out at 1 h single-threaded; the
+  final run takes ~8 min (parallel leg-matvecs; dense Jacobi kernel
+  finder after a pivoted-Cholesky attempt proved numerically inadequate
+  - residual 2.2 vs 8.0e-15 and an undercounted kernel 338 vs 480 -
+  honest record of the discarded method).
+- Study: studies/phase412_quartic_sm_doublet_intersection_analysis_001
+  (IMPLEMENTATION_P412.md).
+
+### Validation
+
+- Targeted Phase412 run passed (all exactness checks + Phase411
+  character cross-checks); Phase101 includes the block; Phase202:
+  checklistPassedCount=205, checklistFailedCount=3; claim integrity
+  verified with promotedPhysicalMassClaimCount=0.
+
+### Standing Next Work
+
+The composite program is closed through quartic order. Standing work:
+literature monitoring at checkpoint cadence; the epsilon/Shiab route if
+a quantitative specification appears. Optional internal follow-ups, in
+priority order: (i) the noncompact real-form spot-check of the
+Phase408/409/411/412 no-gos (the most plausible loophole), (ii) the
+unobserved-phase sector if the draft's machinery can be pinned to a
+computable structure.

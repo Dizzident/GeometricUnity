@@ -35,13 +35,13 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase411 work (and the 2026-06-12
+Current gate status after the Phase412 work (and the 2026-06-12
 platform fix - GPU parity defect root-caused and discharged):
 
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=204`,
+  `objectiveAchieved=False`, `checklistPassedCount=205`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -192,6 +192,16 @@ platform fix - GPU parity defect root-caused and discharged):
   composite reading is CLOSED at bilinear-channel level; named
   remaining: quartic SM-stable analysis, unobserved-phase fields,
   noncompact real-form evasion)
+- Phase412 (user directive 2026-06-12):
+  `quarticSmDoubletIntersectionAnalysisPassed=True`,
+  `quarticWeldedScalarSmDoubletAbsentAllChannels=True` (the ambient
+  16^4 intersection of channel-allowed welded isotypics with the
+  SM-doublet isotypic is ZERO in every channel; top Gram eigenvalues
+  <= 0.604 vs the required 1.0 - decisive margins; covers all
+  statistics projections), `doubletIsotypicRealDimension=480`,
+  new data: odd-mixed channels LLLR/LRRR carry zero welded singlets;
+  THE COMPOSITE PROGRAM IS CLOSED THROUGH QUARTIC ORDER on every
+  probed carrier
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -212,7 +222,26 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work added Phase411, the quartic/Dirac-squared spinor-sector
+The latest work added Phase412 (user directive), the quartic
+SM-doublet intersection analysis, deciding the order Phase411 deferred
+- via an AMBIENT-INTERSECTION formulation strictly stronger than the
+stable-subspace one. Exact results: the SM-doublet candidates of
+16^(x4) live in a 896-state weight sector; the doublet isotypic is
+exactly 480 real dims (residual 8.0e-15); its intersection with the
+channel-allowed welded isotypics is ZERO in every channel (top Gram
+eigenvalues 0.146/0.000/0.479/0.000/0.113, union 0.604, vs the
+required 1.0); the odd-mixed channels LLLR/LRRR carry zero welded
+singlets at all; the even channels reproduce Phase411's counts. THE
+COMPOSITE PROGRAM IS CLOSED THROUGH QUARTIC ORDER on every probed
+carrier (frame-cross tensor, bosonic vacuum, spinor bilinear, spinor
+quartic), covering all statistics projections. Remaining named routes:
+the draft's unobserved-phase fields, a noncompact real-form evasion
+(Nguyen-Polya caveat), or a new primary-source specification. Study:
+`studies/phase412_quartic_sm_doublet_intersection_analysis_001`
+(IMPLEMENTATION_P412.md). Runtime ~8 min (parallelized; first attempt
+timed out single-threaded - engineering notes in the journal).
+
+Before that, Phase411, the quartic/Dirac-squared spinor-sector
 composite probe - the convergence point of Phase409, Phase410, and the
 "quartic Higgs from Dirac squaring" heuristic. On the chimeric chiral
 carriers S_L/R = 2_L/R (x) 16 (Cl(4) Weyl halves, machine-verified
@@ -304,13 +333,13 @@ HONEST BOUNDARY. Study:
 
 ### Integration Points Already Updated
 
-Phase411 (like Phase388-410) is wired into:
+Phase412 (like Phase388-411) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (both invocation blocks)
 - `studies/phase101_boson_prediction_package_001/Program.cs`
 - `studies/phase202_boson_objective_completion_audit_001/Program.cs`
   (checklist item
-  `quartic-dirac-squared-spinor-composite-probe-materialized`)
+  `quartic-sm-doublet-intersection-analysis-materialized`)
 - `scripts/verify_boson_claim_integrity.sh`
 - Broad scanner exclusions: phase204, phase205, phase207, phase279,
   phase281, phase295, phase296
@@ -324,15 +353,15 @@ The diagnosis journal entry is near the end of
 ### Validation Already Run
 
 ```bash
-dotnet run --project studies/phase411_quartic_dirac_squared_spinor_composite_probe_001/Phase411QuarticDiracSquaredSpinorCompositeProbe.csproj
+dotnet run --project studies/phase412_quartic_sm_doublet_intersection_analysis_001/Phase412QuarticSmDoubletIntersectionAnalysis.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
 ./scripts/generate_validated_boson_predictions.sh
 ```
 
-The targeted Phase411 run passes all consistency checks; Phase202 now
-reports `checklistPassedCount=204`, `checklistFailedCount=3`; claim
+The targeted Phase412 run passes all exactness checks; Phase202 now
+reports `checklistPassedCount=205`, `checklistFailedCount=3`; claim
 integrity verified with `promotedPhysicalMassClaimCount=0`. (Platform
 state: Gu.Interop.Tests 158/158 with the real-mesh parity and
 buffer-handle recycling tests; both Phase405 platform notes discharged
@@ -443,18 +472,19 @@ The most useful next branches are:
    channel carries NO welded scalar at all; the Majorana channels'
    welded scalars carry no SM doublet - the composite-extraction
    question is CLOSED through bilinear order on every probed carrier
-   (frame-cross tensor, bosonic vacuum, spinor bilinear). THE INTERNAL
-   STRUCTURAL PROGRAM IS BACK AT ITS HONEST BOUNDARY. Standing work:
-   literature monitoring at checkpoint cadence; the epsilon/Shiab route
-   if a quantitative specification appears. Optional internal
-   follow-ups, in priority order, IF the loop has idle capacity:
-   (i) the quartic SM-stable analysis (heavy - the spin-0 dimensions
-   are 9632/9856; needs new machinery to be tractable), (ii) the
-   unobserved-phase sector IF the draft's Chapter 14 machinery can be
-   pinned to a computable structure (re-read the draft text first),
-   (iii) a noncompact real-form spot-check of the Phase408/409/411
-   no-gos (the single most plausible loophole per
-   DEEP-RESEARCH-20260612).
+   (frame-cross tensor, bosonic vacuum, spinor bilinear). The quartic
+   order is DONE (Phase412, user directive): the ambient intersection
+   is ZERO in every channel with decisive margins - THE COMPOSITE
+   PROGRAM IS CLOSED THROUGH QUARTIC ORDER, all statistics projections
+   covered. THE INTERNAL STRUCTURAL PROGRAM IS BACK AT ITS HONEST
+   BOUNDARY. Standing work: literature monitoring at checkpoint
+   cadence; the epsilon/Shiab route if a quantitative specification
+   appears. Optional internal follow-ups, in priority order, IF the
+   loop has idle capacity: (i) a noncompact real-form spot-check of
+   the Phase408/409/411/412 no-gos (the single most plausible loophole
+   per DEEP-RESEARCH-20260612), (ii) the unobserved-phase sector IF
+   the draft's Chapter 14 machinery can be pinned to a computable
+   structure (re-read the draft text first).
    Deep-research follow-ups (catalogue when revisited): GU IV (v2)
    "The Rig for Lambda" (DOI 10.5281/zenodo.17402261); the hinted
    "Geometric Unity V"; the Hebrew University dark-energy talk
@@ -488,9 +518,9 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -120 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase411|quarticDiracSquaredSpinorCompositeProbe|leftRightBilinearChannelHasNoWeldedScalar" \
+rg -n "Phase412|quarticSmDoubletIntersectionAnalysis|quarticWeldedScalarSmDoubletAbsentAllChannels" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
-  studies/phase411_quartic_dirac_squared_spinor_composite_probe_001 \
+  studies/phase412_quartic_sm_doublet_intersection_analysis_001 \
   studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
 ```
 
@@ -503,11 +533,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase411 output JSON files, and commit a checkpoint
+force-add the ignored Phase412 output JSON files, and commit a checkpoint
 after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase411 quartic dirac squared spinor composite probe
+Add phase412 quartic sm doublet intersection analysis
 ```

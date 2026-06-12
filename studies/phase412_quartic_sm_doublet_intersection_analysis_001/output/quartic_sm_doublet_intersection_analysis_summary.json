@@ -1,0 +1,123 @@
+{
+  "phaseId": "phase412-quartic-sm-doublet-intersection-analysis",
+  "generatedAt": "2026-06-12T22:29:10.2805376+00:00",
+  "terminalStatus": "quartic-order-closed-no-welded-scalar-sm-doublet-in-any-channel",
+  "quarticSmDoubletIntersectionAnalysisPassed": true,
+  "phase411PrecursorPassed": true,
+  "analysisInternallyConsistent": true,
+  "chiralHalfIsSixteenDimensional": true,
+  "chiralInvarianceResidual": 0,
+  "colorAlgebraDimensionIsEight": true,
+  "colorCartanPairFound": true,
+  "smDiagonalBasisExact": true,
+  "maxCartanResidual": 7.850462293418876E-17,
+  "candidateSectorDimension": 896,
+  "weightSectorLeakageResidual": 3.8459253727671276E-16,
+  "doubletIsotypicRealDimension": 480,
+  "kappaCalibration": 1,
+  "kappaL": 1,
+  "maxProjectorIdempotencyResidual": 9.446023518080808E-15,
+  "channelIntersections": [
+    {
+      "channel": "LLLL",
+      "allowedLabelCount": 3,
+      "intersectionRealDimension": 0,
+      "topGramEigenvalue": 0.14617817720957602,
+      "secondGramEigenvalue": 0.146178177209576
+    },
+    {
+      "channel": "LLLR",
+      "allowedLabelCount": 2,
+      "intersectionRealDimension": 0,
+      "topGramEigenvalue": 1.509494032265886E-26,
+      "secondGramEigenvalue": 1.509494032265886E-26
+    },
+    {
+      "channel": "LLRR",
+      "allowedLabelCount": 4,
+      "intersectionRealDimension": 0,
+      "topGramEigenvalue": 0.479166666666671,
+      "secondGramEigenvalue": 0.4791666666666704
+    },
+    {
+      "channel": "LRRR",
+      "allowedLabelCount": 2,
+      "intersectionRealDimension": 0,
+      "topGramEigenvalue": 1.8172907396998335E-26,
+      "secondGramEigenvalue": 1.8172907396998335E-26
+    },
+    {
+      "channel": "RRRR",
+      "allowedLabelCount": 3,
+      "intersectionRealDimension": 0,
+      "topGramEigenvalue": 0.11276857075565845,
+      "secondGramEigenvalue": 0.11276857075565773
+    }
+  ],
+  "unionIntersectionRealDimension": 0,
+  "unionTopGramEigenvalue": 0.6041666666666706,
+  "quarticWeldedScalarSmDoubletAbsentAllChannels": true,
+  "quarticSingletDimensions": {
+    "llll": 9856,
+    "lllr": 0,
+    "llrr": 9632,
+    "lrrr": 0,
+    "rrrr": 9856
+  },
+  "quarticCountsMatchPhase411": true,
+  "statisticsProjectionApplied": false,
+  "ambientIntersectionIsNecessaryConditionOnly": true,
+  "complexCompactArithmeticUsed": true,
+  "physicalCouplingProvided": false,
+  "probeDefinitions": {
+    "x1": "SM-diagonal 16-basis: joint eigenbasis of the commuting Cartans (Y, L3, two color Cartans) via one generic-combination diagonalization, residual-verified",
+    "x2": "candidate sector V_w: indices of 16^(x4) with |Y_tot| = 1/2, color weight (0,0), |mL_tot| = 1/2 (every SM-doublet state lives there)",
+    "x3": "doublet isotypic D: joint kernel of C_color and (C_L - (3/4)kappaL)^2 restricted to V_w (weight-sector preservation machine-verified)",
+    "x4": "welded label projectors: product-form spectral polynomials in the commuting sub-Casimirs C_A, C_B (grid j(j\u002B1)kappa, j = 0..6), nearest-root-first, idempotency-verified; channel label sets from exact 2-leg su(2) character arithmetic",
+    "x5": "intersection: eigenvalue-1 count of the Hermitian Gram \u003Cd_k, P_allowed d_l\u003E per channel and for the union",
+    "x6": "character cross-checks: per-channel quartic singlet dimensions must reproduce Phase411\u0027s recorded values"
+  },
+  "applicationSubjectKind": "quartic-sm-doublet-intersection-analysis",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "f4caad9f100ae682b27cf376ab205b049ed62227bea05a9f1ef1ff0de400af46",
+  "routeProvidesPhysicalMassPsiCompatibleBranch": false,
+  "routeProvidesCompletedFermionicAction": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesObservedElectroweakNamespaceMap": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesWeakAngleOrCouplingLineage": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "the ambient-intersection argument is one-directional: ZERO closes the quartic order outright; NONZERO would be necessary-only evidence requiring statistics, coupling, and stability refinements",
+    "the unrestricted tensor power 16^(x4) is a conservative superset of every statistics-projected composite space",
+    "all arithmetic is complex/compact; the Nguyen-Polya complexification caveat and noncompact real-form effects are carried as named caveats",
+    "the draft\u0027s unobserved-phase fields remain unprobed",
+    "no dynamics, no scales, no VEV; the binding gaps are unchanged",
+    "no Phase201 or Phase256 fill",
+    "no physical predictions"
+  ],
+  "sourceEvidence": {
+    "phase411SummaryPath": "studies/phase411_quartic_dirac_squared_spinor_composite_probe_001/output/quartic_dirac_squared_spinor_composite_probe_summary.json",
+    "primaryDraft": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt (sections 9, 12)",
+    "userDirective": "2026-06-12: execute the quartic SM-stable analysis named in the journal"
+  },
+  "decision": "The quartic order is CLOSED for welded-scalar SM-doublets, by an ambient-intersection argument STRONGER than the deferred SM-stable-subspace analysis: the SM-doublet isotypic of 16^(x4) (constructed exactly inside the weight-filtered candidate sector) has ZERO intersection with the welded isotypic sectors available to quartic spacetime singlets, in EVERY channel (LLLL/LLLR/LLRR/LRRR/RRRR) and in their union. Since the unrestricted tensor power contains every statistics-projected composite space, the closure covers antisymmetrized composites too. Together with Phases 408-411, every internal composite-extraction route on every probed carrier is now closed through QUARTIC order. The remaining named routes are unchanged in kind but narrowed: the draft\u0027s unobserved-phase fields, a noncompact real-form evasion of the compact arithmetic (Nguyen-Polya caveat carried), or a genuinely new primary-source specification. Nothing is promoted; no contract field is filled."
+}

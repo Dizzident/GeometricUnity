@@ -1,6 +1,6 @@
 {
   "phaseId": "phase391-dense-converged-shell-response-replay-audit",
-  "generatedAt": "2026-06-12T19:29:59.4462037+00:00",
+  "generatedAt": "2026-06-12T22:05:37.6531555+00:00",
   "terminalStatus": "dense-converged-shell-response-replay-confirmed-discrete-diagnostic-only",
   "denseConvergedShellResponseReplayAuditPassed": true,
   "phase378PrecursorPassed": true,
