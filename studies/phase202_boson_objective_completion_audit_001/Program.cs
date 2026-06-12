@@ -175,6 +175,7 @@ const string Phase406Path = "studies/phase406_choice_space_falsification_sweep_0
 const string Phase407Path = "studies/phase407_chimeric_adjoint_sm_content_probe_001/output/chimeric_adjoint_sm_content_probe_summary.json";
 const string Phase408Path = "studies/phase408_vertical_spin_zero_extraction_obstruction_probe_001/output/vertical_spin_zero_extraction_obstruction_probe_summary.json";
 const string Phase409Path = "studies/phase409_invariant_pairing_menu_spin_zero_extraction_probe_001/output/invariant_pairing_menu_spin_zero_extraction_probe_summary.json";
+const string Phase410Path = "studies/phase410_curvature_coupled_vev_selection_probe_001/output/curvature_coupled_vev_selection_probe_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -383,6 +384,7 @@ using var phase406 = File.Exists(Phase406Path) ? JsonDocument.Parse(File.ReadAll
 using var phase407 = File.Exists(Phase407Path) ? JsonDocument.Parse(File.ReadAllText(Phase407Path)) : null;
 using var phase408 = File.Exists(Phase408Path) ? JsonDocument.Parse(File.ReadAllText(Phase408Path)) : null;
 using var phase409 = File.Exists(Phase409Path) ? JsonDocument.Parse(File.ReadAllText(Phase409Path)) : null;
+using var phase410 = File.Exists(Phase410Path) ? JsonDocument.Parse(File.ReadAllText(Phase410Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -5169,6 +5171,29 @@ var invariantPairingMenuSpinZeroExtractionProbePassed = invariantPairingMenuSpin
     && JsonBool(phase409.RootElement, "phase201TemplateMutated") is false
     && JsonInt(phase409.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
     && JsonInt(phase409.RootElement, "acceptedContractFieldCount") == 0;
+var curvatureCoupledVevSelectionProbeMaterialized = phase410 is not null;
+var curvatureCoupledVevSelectionProbePassed = curvatureCoupledVevSelectionProbeMaterialized
+    && JsonBool(phase410!.RootElement, "curvatureCoupledVevSelectionProbePassed") is true
+    && JsonBool(phase410.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase410.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase410.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase410.RootElement, "applicationSubjectKind") == "curvature-coupled-vev-selection-probe"
+    && JsonBool(phase410.RootElement, "rank1RaysExactlyFlat") is true
+    && JsonBool(phase410.RootElement, "quadraticInvariantDirectionBlind") is true
+    && JsonBool(phase410.RootElement, "kProportionalToBracketNorm") is true
+    && JsonBool(phase410.RootElement, "flatnessEqualsCommutativity") is true
+    && JsonBool(phase410.RootElement, "externalCurvatureParameterFitToData") is false
+    && JsonBool(phase410.RootElement, "physicalCouplingProvided") is false
+    && JsonBool(phase410.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase410.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase410.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase410.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase410.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase410.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase410.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase410.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase410.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase410.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -7417,6 +7442,14 @@ var checklist = new[]
             ? $"invariantPairingMenuSpinZeroExtractionProbePassed={JsonBool(phase409!.RootElement, "invariantPairingMenuSpinZeroExtractionProbePassed")}; targetBlind={JsonBool(phase409.RootElement, "targetBlindConstruction")}; linearSpinZeroContentIsZero={JsonBool(phase409.RootElement, "linearSpinZeroContentIsZero")}; bilinearSpinZeroDoubletAbsent={JsonBool(phase409.RootElement, "bilinearSpinZeroDoubletAbsent")}; obstructionMenuCompleteThroughBilinearOrder={JsonBool(phase409.RootElement, "obstructionMenuCompleteThroughBilinearOrder")}; oddOrderSpinZeroForbidden={JsonBool(phase409.RootElement, "oddOrderSpinZeroForbidden")}; canFillPhase201WzContract={JsonBool(phase409.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase409.RootElement, "decision")}"
             : "Phase409 artifact not materialized",
         Phase409Path),
+    new ObjectiveChecklistItem(
+        "curvature-coupled-vev-selection-probe-materialized",
+        "Machine-test the curvature-coaxing VEV claim's simplest uniform bosonic realization on the Phase405 vacuum landscape: flat-ray runaway, direction-blindness, and lifted-sector depth ordering with block classification.",
+        curvatureCoupledVevSelectionProbePassed ? "passed" : "failed",
+        curvatureCoupledVevSelectionProbeMaterialized
+            ? $"curvatureCoupledVevSelectionProbePassed={JsonBool(phase410!.RootElement, "curvatureCoupledVevSelectionProbePassed")}; targetBlind={JsonBool(phase410.RootElement, "targetBlindConstruction")}; runawayAlongFlatRays={JsonBool(phase410.RootElement, "curvatureCouplingProducesRunawayAlongFlatRays")}; maxDepthStratumBlockDegenerate={JsonBool(phase410.RootElement, "maxDepthStratumBlockDegenerate")}; doubletVevSelectedByCurvatureCoupling={JsonBool(phase410.RootElement, "doubletVevSelectedByCurvatureCoupling")}; canFillPhase201WzContract={JsonBool(phase410.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase410.RootElement, "decision")}"
+            : "Phase410 artifact not materialized",
+        Phase410Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

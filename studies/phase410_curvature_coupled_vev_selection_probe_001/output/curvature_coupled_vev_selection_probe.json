@@ -1,0 +1,370 @@
+{
+  "phaseId": "phase410-curvature-coupled-vev-selection-probe",
+  "generatedAt": "2026-06-12T18:04:12.1875817+00:00",
+  "terminalStatus": "uniform-curvature-coupling-produces-runaway-not-doublet-selection",
+  "curvatureCoupledVevSelectionProbePassed": true,
+  "phase405PrecursorPassed": true,
+  "phase409PrecursorPassed": true,
+  "probeInternallyConsistent": true,
+  "meshRows": 6,
+  "meshCols": 6,
+  "edgeCount": 420,
+  "rank1RaysExactlyFlat": true,
+  "rank1BareObjectiveMax": 0,
+  "quadraticInvariantDirectionBlind": true,
+  "quadraticInvariantMeanC2": 185.99999999999997,
+  "quadraticInvariantMaxRelativeDeviation": 0,
+  "curvatureCouplingProducesRunawayAlongFlatRays": true,
+  "flatnessEqualsCommutativity": true,
+  "commutingPairCount": 3,
+  "nonCommutingPairCount": 25,
+  "quarticFitsExact": true,
+  "maxQuarticFitResidual": 1.973729821555838E-15,
+  "kProportionalToBracketNorm": true,
+  "kOverBracketNormMean": 2.2499999999999987,
+  "kOverBracketNormCv": 1.184237892933501E-15,
+  "minNonzeroBracketNormSquared": 0.25,
+  "deepestStratumPairCount": 16,
+  "deepestStratumBlockPairs": [
+    "DD",
+    "DT"
+  ],
+  "deepestStratumExclusivelyDoubletInternal": false,
+  "maxDepthStratumBlockDegenerate": true,
+  "doubletVevSelectedByCurvatureCoupling": false,
+  "curvatureCouplingFailsToSelectDoublet": true,
+  "bracketNormStrata": [
+    {
+      "bracketNormSquared": 0.25,
+      "pairCount": 16,
+      "blockPairs": [
+        "DD",
+        "DT"
+      ]
+    },
+    {
+      "bracketNormSquared": 0.75,
+      "pairCount": 4,
+      "blockPairs": [
+        "DS"
+      ]
+    },
+    {
+      "bracketNormSquared": 1,
+      "pairCount": 5,
+      "blockPairs": [
+        "DD",
+        "TT"
+      ]
+    }
+  ],
+  "pairTable": [
+    {
+      "i": 0,
+      "j": 1,
+      "blockPair": "TT",
+      "bracketNormSquared": 1,
+      "quarticCoefficient": 2.2499999999999982,
+      "fitResidual": 0,
+      "flat": false
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "blockPair": "TT",
+      "bracketNormSquared": 1,
+      "quarticCoefficient": 2.2499999999999982,
+      "fitResidual": 0,
+      "flat": false
+    },
+    {
+      "i": 0,
+      "j": 3,
+      "blockPair": "DT",
+      "bracketNormSquared": 0.25,
+      "quarticCoefficient": 0.5624999999999996,
+      "fitResidual": 0,
+      "flat": false
+    },
+    {
+      "i": 0,
+      "j": 4,
+      "blockPair": "DT",
+      "bracketNormSquared": 0.25,
+      "quarticCoefficient": 0.5624999999999996,
+      "fitResidual": 0,
+      "flat": false
+    },
+    {
+      "i": 0,
+      "j": 5,
+      "blockPair": "DT",
+      "bracketNormSquared": 0.25,
+      "quarticCoefficient": 0.5624999999999996,
+      "fitResidual": 0,
+      "flat": false
+    },
+    {
+      "i": 0,
+      "j": 6,
+      "blockPair": "DT",
+      "bracketNormSquared": 0.25,
+      "quarticCoefficient": 0.5624999999999996,
+      "fitResidual": 0,
+      "flat": false
+    },
+    {
+      "i": 0,
+      "j": 7,
+      "blockPair": "ST",
+      "bracketNormSquared": 0,
+      "quarticCoefficient": 0,
+      "fitResidual": 0,
+      "flat": true
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "blockPair": "TT",
+      "bracketNormSquared": 1,
+      "quarticCoefficient": 2.2499999999999982,
+      "fitResidual": 0,
+      "flat": false
+    },
+    {
+      "i": 1,
+      "j": 3,
+      "blockPair": "DT",
+      "bracketNormSquared": 0.25,
+      "quarticCoefficient": 0.5624999999999996,
+      "fitResidual": 0,
+      "flat": false
+    },
+    {
+      "i": 1,
+      "j": 4,
+      "blockPair": "DT",
+      "bracketNormSquared": 0.25,
+      "quarticCoefficient": 0.5624999999999996,
+      "fitResidual": 0,
+      "flat": false
+    },
+    {
+      "i": 1,
+      "j": 5,
+      "blockPair": "DT",
+      "bracketNormSquared": 0.25,
+      "quarticCoefficient": 0.5624999999999996,
+      "fitResidual": 0,
+      "flat": false
+    },
+    {
+      "i": 1,
+      "j": 6,
+      "blockPair": "DT",
+      "bracketNormSquared": 0.25,
+      "quarticCoefficient": 0.5624999999999996,
+      "fitResidual": 0,
+      "flat": false
+    },
+    {
+      "i": 1,
+      "j": 7,
+      "blockPair": "ST",
+      "bracketNormSquared": 0,
+      "quarticCoefficient": 0,
+      "fitResidual": 0,
+      "flat": true
+    },
+    {
+      "i": 2,
+      "j": 3,
+      "blockPair": "DT",
+      "bracketNormSquared": 0.25,
+      "quarticCoefficient": 0.5624999999999996,
+      "fitResidual": 0,
+      "flat": false
+    },
+    {
+      "i": 2,
+      "j": 4,
+      "blockPair": "DT",
+      "bracketNormSquared": 0.25,
+      "quarticCoefficient": 0.5624999999999996,
+      "fitResidual": 0,
+      "flat": false
+    },
+    {
+      "i": 2,
+      "j": 5,
+      "blockPair": "DT",
+      "bracketNormSquared": 0.25,
+      "quarticCoefficient": 0.5624999999999996,
+      "fitResidual": 0,
+      "flat": false
+    },
+    {
+      "i": 2,
+      "j": 6,
+      "blockPair": "DT",
+      "bracketNormSquared": 0.25,
+      "quarticCoefficient": 0.5624999999999996,
+      "fitResidual": 0,
+      "flat": false
+    },
+    {
+      "i": 2,
+      "j": 7,
+      "blockPair": "ST",
+      "bracketNormSquared": 0,
+      "quarticCoefficient": 0,
+      "fitResidual": 0,
+      "flat": true
+    },
+    {
+      "i": 3,
+      "j": 4,
+      "blockPair": "DD",
+      "bracketNormSquared": 0.9999999999999999,
+      "quarticCoefficient": 2.2499999999999956,
+      "fitResidual": 1.973729821555838E-15,
+      "flat": false
+    },
+    {
+      "i": 3,
+      "j": 5,
+      "blockPair": "DD",
+      "bracketNormSquared": 0.25,
+      "quarticCoefficient": 0.5624999999999996,
+      "fitResidual": 0,
+      "flat": false
+    },
+    {
+      "i": 3,
+      "j": 6,
+      "blockPair": "DD",
+      "bracketNormSquared": 0.25,
+      "quarticCoefficient": 0.5624999999999996,
+      "fitResidual": 0,
+      "flat": false
+    },
+    {
+      "i": 3,
+      "j": 7,
+      "blockPair": "DS",
+      "bracketNormSquared": 0.7499999999999999,
+      "quarticCoefficient": 1.6874999999999984,
+      "fitResidual": 1.3158198810372237E-16,
+      "flat": false
+    },
+    {
+      "i": 4,
+      "j": 5,
+      "blockPair": "DD",
+      "bracketNormSquared": 0.25,
+      "quarticCoefficient": 0.5624999999999996,
+      "fitResidual": 0,
+      "flat": false
+    },
+    {
+      "i": 4,
+      "j": 6,
+      "blockPair": "DD",
+      "bracketNormSquared": 0.25,
+      "quarticCoefficient": 0.5624999999999996,
+      "fitResidual": 0,
+      "flat": false
+    },
+    {
+      "i": 4,
+      "j": 7,
+      "blockPair": "DS",
+      "bracketNormSquared": 0.7499999999999999,
+      "quarticCoefficient": 1.6874999999999984,
+      "fitResidual": 1.3158198810372237E-16,
+      "flat": false
+    },
+    {
+      "i": 5,
+      "j": 6,
+      "blockPair": "DD",
+      "bracketNormSquared": 0.9999999999999999,
+      "quarticCoefficient": 2.2499999999999956,
+      "fitResidual": 1.973729821555838E-15,
+      "flat": false
+    },
+    {
+      "i": 5,
+      "j": 7,
+      "blockPair": "DS",
+      "bracketNormSquared": 0.7499999999999999,
+      "quarticCoefficient": 1.6874999999999984,
+      "fitResidual": 1.3158198810372237E-16,
+      "flat": false
+    },
+    {
+      "i": 6,
+      "j": 7,
+      "blockPair": "DS",
+      "bracketNormSquared": 0.7499999999999999,
+      "quarticCoefficient": 1.6874999999999984,
+      "fitResidual": 1.3158198810372237E-16,
+      "flat": false
+    }
+  ],
+  "fermionicCurvatureCouplingProbed": false,
+  "directionDependentCouplingProbed": false,
+  "externalCurvatureParameterFitToData": false,
+  "physicalCouplingProvided": false,
+  "probeDefinitions": {
+    "augmentedObjective": "S_aug = S_B \u002B (kappaR/2) R_eff ||omega||^2 with R_eff, kappaR arbitrary-sign external parameters; VEV formation needs kappaR R_eff \u003C 0",
+    "c1": "exact flat-ray coefficients: quartic \u003C= 1e-20 floor, quadratic positive -\u003E unbounded descent for kappaR R_eff \u003C 0 (inference encoded from verified coefficients)",
+    "c2": "plain-norm quadratic invariant per rank-1 direction; direction-blindness to 1e-12 relative",
+    "c3": "exact quartic fit S_B = K t^4 at maximal mixing (45 degrees) over all 28 pairs; K / ||[u,v]||^2 constant across non-commuting pairs",
+    "c4": "deepest stratum = argmin nonzero ||[u,v]||^2 (depth proportional to 1/K); block classification triplet 0-2 / doublet 3-6 / singlet 7"
+  },
+  "applicationSubjectKind": "curvature-coupled-vev-selection-probe",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "e1f775818b56eb3dbd6a073fd53f30f87def2052f8bdf107281aa95816dee4e9",
+  "routeProvidesPhysicalMassPsiCompatibleBranch": false,
+  "routeProvidesCompletedFermionicAction": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesObservedElectroweakNamespaceMap": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesWeakAngleOrCouplingLineage": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "the curvature-coaxing claim is QUALITATIVE primary-speaker material (TOE-GU-40YEARS-20250602); this probe tests its simplest uniform bosonic realization, not the (unspecified) full mechanism",
+    "the fermionic/Dirac-sector realization (\u0027a VEV in a Dirac-like operator\u0027) is NOT probed here - it is the Phase411 candidate",
+    "direction-dependent curvature couplings are NOT probed - they presuppose the missing scalar-sector structure",
+    "R_eff and kappaR are arbitrary external parameters; no value is fit to any observable; no scale is produced",
+    "the toy branch has no dynamical metric; R_eff stands in for the claim\u0027s scalar curvature as an external parameter",
+    "no Phase201 or Phase256 fill",
+    "no physical predictions"
+  ],
+  "sourceEvidence": {
+    "phase405SummaryPath": "studies/phase405_vacuum_manifold_doublet_vev_orbit_scan_001/output/vacuum_manifold_doublet_vev_orbit_scan_summary.json",
+    "phase409SummaryPath": "studies/phase409_invariant_pairing_menu_spin_zero_extraction_probe_001/output/invariant_pairing_menu_spin_zero_extraction_probe_summary.json",
+    "motivatingInterview": "docs/Reference/ExperimentReferences/TOE-GU-40YEARS-20250602.md (qualitative; cite GU-DRAFT-2021 as primary)",
+    "deepResearchContext": "docs/Reference/ExperimentReferences/DEEP-RESEARCH-20260612.md (no public quantitative curvature-VEV formula exists)"
+  },
+  "decision": "The simplest faithful bosonic realization of the curvature-coaxing claim is machine-characterized and FAILS to select the doublet VEV, two ways at once. (C1) RUNAWAY: every rank-1 vacuum ray is exactly flat in the bare objective, so a uniform negative-mass-squared curvature term makes the augmented landscape UNBOUNDED BELOW along every such ray - no finite VEV forms where the vacuum manifold actually lives. (C2) The uniform quadratic invariant is direction-blind (identical c2 on all 8 rank-1 directions), so no triplet/doublet/singlet ordering can arise at quadratic level. (C3\u002BC4) On the lifted (non-commuting) sector the augmented landscape does form finite minima with depth ordered by INVERSE bracket norm - but the deepest stratum is BLOCK-DEGENERATE (it contains non-doublet-internal pairs), so even there the doublet is not selected. CONSEQUENCE: the interview\u0027s curvature-coaxing mechanism, realized as a uniform bosonic coupling, leaves scalar-sector sub-gap (b) open; selection requires DIRECTION-DEPENDENT curvature coupling or the fermionic/Dirac-sector realization (Phase411 candidate) - i.e. exactly the internal structure the missing scalar-sector specification would have to provide. R_eff and kappaR are arbitrary external parameters throughout; nothing is promoted; no contract field is filled."
+}

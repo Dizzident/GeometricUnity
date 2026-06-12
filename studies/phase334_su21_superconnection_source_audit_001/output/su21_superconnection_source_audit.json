@@ -1,7 +1,7 @@
 {
   "phaseId": "phase334-su21-superconnection-source-audit",
   "terminalStatus": "su21-superconnection-source-audit-geometric-ratio-lead-not-gu-source",
-  "generatedAt": "2026-06-12T14:40:44.0642264+00:00",
+  "generatedAt": "2026-06-12T17:57:24.2656852+00:00",
   "su21SuperconnectionSourceAuditPassed": true,
   "su21SuperconnectionLeadPresent": true,
   "su21PrimarySourcesReviewed": true,

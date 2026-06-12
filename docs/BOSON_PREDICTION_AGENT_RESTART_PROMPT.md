@@ -35,13 +35,13 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase409 work (and the 2026-06-12
+Current gate status after the Phase410 work (and the 2026-06-12
 platform fix - GPU parity defect root-caused and discharged):
 
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=202`,
+  `objectiveAchieved=False`, `checklistPassedCount=203`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -170,6 +170,17 @@ platform fix - GPU parity defect root-caused and discharged):
   on frame-cross content is CLOSED through bilinear order; remaining:
   quartic+ even composites, epsilon/Shiab on content beyond the
   frame-cross block, or a different welded carrier)
+- Phase410:
+  `curvatureCoupledVevSelectionProbePassed=True`,
+  `curvatureCouplingProducesRunawayAlongFlatRays=True` (every rank-1
+  vacuum ray exactly flat -> unbounded descent under the uniform
+  negative-mass-squared curvature term),
+  `maxDepthStratumBlockDegenerate=True` (the lifted sector's deepest
+  stratum, ||[u,v]||^2 = 1/4 with 16 pairs, spans doublet-doublet AND
+  doublet-triplet pairs), `doubletVevSelectedByCurvatureCoupling=False`
+  (the uniform bosonic curvature-coaxing realization is CLOSED;
+  selection requires direction-dependent coupling or the Dirac-sector
+  realization)
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -190,7 +201,24 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work added Phase409, the invariant-pairing-menu spin-zero
+The latest work added Phase410, the curvature-coupled VEV-selection
+probe: the TOE-GU-40YEARS curvature-coaxing claim's simplest faithful
+bosonic realization (S_aug = S_B + (kappaR/2) R_eff ||omega||^2 on the
+Phase405 su(3) 6x6 landscape) FAILS two ways at once - (C1) RUNAWAY:
+every rank-1 vacuum ray is exactly flat, so the augmented landscape is
+unbounded below along every such ray (no finite VEV forms where the
+vacuum manifold lives); (C2) the quadratic invariant is direction-blind
+(no block ordering at quadratic level); (C3) on the lifted sector the
+exact shape K proportional to ||[u,v]||^2 (cv 1.2e-15) makes the depth
+ordering the INVERSE bracket-norm ordering; (C4) the deepest stratum is
+BLOCK-DEGENERATE (doublet-doublet AND doublet-triplet pairs) - no
+doublet selection. Sub-gap (b) stays open, sharpened: the mechanism
+requires direction-dependent coupling or the fermionic/Dirac-sector
+realization (the Phase411 candidate). Study:
+`studies/phase410_curvature_coupled_vev_selection_probe_001`
+(IMPLEMENTATION_P410.md).
+
+Before that, Phase409, the invariant-pairing-menu spin-zero
 extraction probe (source-independent of the unverified relayed "Shiab
 uniqueness" summary - the menu is machine-enumerated on the chain from
 scratch). Exact results: the fiber pairing menu is 4x4 = 1 (even),
@@ -246,13 +274,13 @@ HONEST BOUNDARY. Study:
 
 ### Integration Points Already Updated
 
-Phase409 (like Phase388-408) is wired into:
+Phase410 (like Phase388-409) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (both invocation blocks)
 - `studies/phase101_boson_prediction_package_001/Program.cs`
 - `studies/phase202_boson_objective_completion_audit_001/Program.cs`
   (checklist item
-  `invariant-pairing-menu-spin-zero-extraction-probe-materialized`)
+  `curvature-coupled-vev-selection-probe-materialized`)
 - `scripts/verify_boson_claim_integrity.sh`
 - Broad scanner exclusions: phase204, phase205, phase207, phase279,
   phase281, phase295, phase296
@@ -266,15 +294,15 @@ The diagnosis journal entry is near the end of
 ### Validation Already Run
 
 ```bash
-dotnet run --project studies/phase409_invariant_pairing_menu_spin_zero_extraction_probe_001/Phase409InvariantPairingMenuSpinZeroExtractionProbe.csproj
+dotnet run --project studies/phase410_curvature_coupled_vev_selection_probe_001/Phase410CurvatureCoupledVevSelectionProbe.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
 ./scripts/generate_validated_boson_predictions.sh
 ```
 
-The targeted Phase409 run passes all consistency checks; Phase202 now
-reports `checklistPassedCount=202`, `checklistFailedCount=3`; claim
+The targeted Phase410 run passes all exactness checks; Phase202 now
+reports `checklistPassedCount=203`, `checklistFailedCount=3`; claim
 integrity verified with `promotedPhysicalMassClaimCount=0`. (Platform
 state: Gu.Interop.Tests 158/158 with the real-mesh parity and
 buffer-handle recycling tests; both Phase405 platform notes discharged
@@ -375,25 +403,15 @@ The most useful next branches are:
    guard it.) The invariant-pairing-menu probe is DONE (Phase409): the
    epsilon route on frame-cross content is CLOSED through bilinear
    order, all odd orders are closed exactly, and the menu is
-   machine-enumerated (no parity-odd fiber pairing exists). ONE NAMED
-   INTERNAL PROBE remains as the Best Next Work:
-   - Phase410 candidate, CURVATURE-COUPLED VEV-SELECTION PROBE: the new
-     primary-speaker source TOE-GU-40YEARS-20250602 states the VEV is
-     coaxed out of the vacuum by SCALAR CURVATURE in GU's improved
-     Einstein equation (mass scale tracks curvature). Internal test: add
-     a curvature-coupled term (control-branch scalar-curvature analog
-     coupled to the rank-1 VEV directions) to the Phase405 landscape and
-     machine-test whether it produces magnitude/direction selection
-     where the bare objective produced none. Fail-closed, target-blind,
-     qualitative-source-motivated; cite GU-DRAFT-2021 as primary.
-   THE INTERNAL STRUCTURAL PROGRAM otherwise remains at its honest
-   boundary; standing work after this probe is literature monitoring
-   at checkpoint cadence and the epsilon/Shiab route if a quantitative
-   specification appears (with Phase409 sharpening what such a
-   specification must now provide: content beyond the frame-cross
-   block, or a quartic+ even-composite construction).
-   A SECOND NAMED PROBE follows from the 2026-06-12 deep-research
-   ingestion (DEEP-RESEARCH-20260612):
+   machine-enumerated (no parity-odd fiber pairing exists). The
+   curvature-coupling probe is DONE (Phase410): the uniform bosonic
+   realization of the curvature-coaxing claim produces RUNAWAY along the
+   exactly-flat vacuum rays and a block-degenerate deepest stratum on
+   the lifted sector - no doublet selection; the mechanism requires
+   direction-dependent coupling or the Dirac-sector realization. ONE
+   NAMED INTERNAL PROBE remains as the Best Next Work (now doubly
+   motivated - Phase409's lowest-open-order theorem AND Phase410's
+   bosonic closure both point at the Dirac sector):
    - Phase411 candidate, QUARTIC / DIRAC-SQUARED SPINOR-SECTOR
      COMPOSITE PROBE: the primary-heuristic statement that the
      "quartic Higgs piece" arises from "Dirac squaring of a quadratic"
@@ -442,9 +460,9 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -120 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase409|invariantPairingMenuSpinZeroExtractionProbe|obstructionMenuCompleteThroughBilinearOrder" \
+rg -n "Phase410|curvatureCoupledVevSelectionProbe|doubletVevSelectedByCurvatureCoupling" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
-  studies/phase409_invariant_pairing_menu_spin_zero_extraction_probe_001 \
+  studies/phase410_curvature_coupled_vev_selection_probe_001 \
   studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
 ```
 
@@ -457,11 +475,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase409 output JSON files, and commit a checkpoint
+force-add the ignored Phase410 output JSON files, and commit a checkpoint
 after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase409 invariant pairing menu spin zero extraction probe
+Add phase410 curvature coupled vev selection probe
 ```

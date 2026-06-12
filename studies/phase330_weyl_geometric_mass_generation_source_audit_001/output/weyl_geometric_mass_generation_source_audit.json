@@ -1,7 +1,7 @@
 {
   "phaseId": "phase330-weyl-geometric-mass-generation-source-audit",
   "terminalStatus": "weyl-geometric-mass-generation-source-audit-external-model-not-gu-source",
-  "generatedAt": "2026-06-12T14:40:41.1413176+00:00",
+  "generatedAt": "2026-06-12T17:57:21.3912775+00:00",
   "weylGeometricMassGenerationSourceAuditPassed": true,
   "arxivWeylGeometricMassGenerationLeadPresent": true,
   "arxivWeylGeometricMassGenerationSubmittedMay2026": true,

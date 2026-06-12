@@ -17292,3 +17292,53 @@ external sweep with an explicit negative-space statement. The internal
 program gains two named probes: Phase410 (curvature-coupled VEV
 selection) and Phase411 (quartic/Dirac-squared spinor-sector
 composites).
+
+## 2026-06-12 - Phase410: Uniform Curvature Coupling Produces Runaway, Not Doublet Selection
+
+### Context
+
+The TOE-GU-40YEARS-20250602 primary-speaker claim (qualitative): scalar
+curvature in GU's improved Einstein equation "coaxes" the VEV out of the
+vacuum and the VEV is the fundamental mass scale. Phase410 machine-tests
+the simplest faithful bosonic realization on the Phase405 vacuum
+landscape: S_aug = S_B + (kappaR/2) R_eff ||omega||^2, with R_eff/kappaR
+arbitrary-sign external parameters (VEV formation needs
+kappaR R_eff < 0).
+
+### Result
+
+- RUNAWAY: every rank-1 vacuum ray is exactly flat in S_B (max bare
+  objective 0.0; Phase405 re-verified), so the augmented landscape is
+  UNBOUNDED BELOW along every such ray - the uniform coupling produces
+  runaway, not a finite VEV, exactly where the vacuum manifold lives.
+- DIRECTION-BLIND: the quadratic invariant c2 is identical across all 8
+  rank-1 directions (relative deviation 0.0) - no block ordering can
+  arise at quadratic level.
+- LIFTED SECTOR EXACT: flatness = commutativity (3 commuting / 25
+  non-commuting pairs); S_B = K t^4 exactly; K / ||[u,v]||^2 constant
+  across all non-commuting pairs (cv 1.2e-15). The augmented landscape's
+  finite minima are depth-ordered by INVERSE bracket norm.
+- NO DOUBLET SELECTION: the deepest stratum (||[u,v]||^2 = 1/4, 16
+  pairs) is BLOCK-DEGENERATE across doublet-doublet AND doublet-triplet
+  mixed pairs: doubletVevSelectedByCurvatureCoupling = False.
+- CONSEQUENCE: scalar-sector sub-gap (b) stays open with the sharpest
+  evidence yet - the curvature-coaxing mechanism requires
+  DIRECTION-DEPENDENT curvature coupling or the fermionic/Dirac-sector
+  realization ("a VEV in a Dirac-like operator"), i.e. exactly the
+  internal structure the missing scalar-sector specification would have
+  to provide. The fermionic realization is the Phase411 candidate.
+- Study: studies/phase410_curvature_coupled_vev_selection_probe_001
+  (IMPLEMENTATION_P410.md).
+
+### Validation
+
+- Targeted Phase410 run passed (all exactness checks); Phase101 includes
+  the block; Phase202: checklistPassedCount=203, checklistFailedCount=3;
+  claim integrity verified with promotedPhysicalMassClaimCount=0.
+
+### Standing Next Work
+
+Phase411 (named): the quartic/Dirac-squared spinor-sector composite
+probe - now doubly motivated (Phase409's lowest-open-order theorem AND
+Phase410's bosonic-realization closure both point at the Dirac sector).
+Then literature monitoring at checkpoint cadence.
