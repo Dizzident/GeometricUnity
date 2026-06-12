@@ -17069,3 +17069,46 @@ epsilon/Shiab extraction route IF a primary-source quantitative
 specification appears. The buffer-handle recycling improvement remains a
 low-priority platform note (the session-recycling workaround in Phase405
 is still valid and now also unnecessary for parity reasons).
+
+## 2026-06-12 - Post-Checkpoint Literature Sweep: Negative Boundary Stands
+
+### Context
+
+Checkpoint-cadence sweep after the 2026-06-12 platform-fix checkpoint
+(8839471), targeting the named open requirements: a primary-source
+quantitative specification of the epsilon-conjugation/Shiab extraction,
+a VEV-selection mechanism, or dimensionful anchors.
+
+### Items Checked and Dispositions
+
+- Primary source: geometricunity.org still lists the 2021-04-01 working
+  draft as the latest manuscript; no new or updated primary release in
+  2025-2026. The epsilon/Shiab machinery remains quantitatively
+  unspecified in the primary.
+- Cox GU-development series: Zenodo record 19800512
+  (COX-FIRST-PRINCIPLES-I) confirmed unchanged - `is_last: true`, sole
+  version under concept DOI 10.5281/zenodo.19800511, publication date
+  2026-04-26 (already reviewed 2026-06-09; Phase386/Phase387 audits
+  stand: scaffold-positive, zero electroweak/Higgs/GeV content). No GU
+  II/III/IV updates newer than the catalogued records surfaced.
+- arXiv:2605.02955 (Emergent Einstein-Standard Model, Weyl x SU(2)L x
+  U(1)Y geometric mass generation): already catalogued
+  (ARXIV-2605-02955); treats the key inputs as model parameters.
+- arXiv:2603.05857 (Two Higgs Doublet Model from Six Dimensional Gauge
+  Theory, Akamatsu/Hirose/Maru/Nago, 2026-03-06): inside the
+  already-audited gauge-Higgs-unification lane (Phase353). The SM Higgs
+  mass is obtained by TUNING brane-localized gauge kinetic terms plus the
+  orbifold compactification scale - no parameter-free doublet/VEV
+  selection, no GU-native content; cannot fill any Phase201/Phase256
+  contract field. Not promotion evidence; no detail note needed beyond
+  this disposition.
+- Zenodo 19465254 (Geometric-Refractive Unification, 95.4 GeV dilaton):
+  imports GeV-scale targets directly; fails target independence on its
+  face.
+
+### Verdict
+
+No source provides the epsilon/Shiab quantitative specification, a
+VEV-selection mechanism, or target-independent dimensionful anchors. The
+negative boundary stands; the program remains in its monitoring steady
+state.
