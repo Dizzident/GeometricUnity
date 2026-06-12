@@ -1,7 +1,7 @@
 {
   "phaseId": "phase365-dressing-field-electroweak-observed-variables-audit",
   "terminalStatus": "dressing-field-electroweak-observed-variables-audit-template-not-gu-source",
-  "generatedAt": "2026-06-12T13:02:12.8277963+00:00",
+  "generatedAt": "2026-06-12T14:20:09.5248929+00:00",
   "dressingFieldElectroweakObservedVariablesAuditPassed": true,
   "dressingFieldLeadPresent": true,
   "dressingFieldPrimarySourcesReviewed": true,

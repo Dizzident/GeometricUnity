@@ -35,13 +35,13 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase408 work and the 2026-06-12 platform
-fix (GPU parity defect root-caused and discharged):
+Current gate status after the Phase409 work (and the 2026-06-12
+platform fix - GPU parity defect root-caused and discharged):
 
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=201`,
+  `objectiveAchieved=False`, `checklistPassedCount=202`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -157,6 +157,19 @@ fix (GPU parity defect root-caused and discharged):
   4-real-dim doublet - the naive vertical-trace extraction is OBSTRUCTED
   for any weld alignment; the draft's epsilon/Shiab machinery is the
   named open route)
+- Phase409:
+  `invariantPairingMenuSpinZeroExtractionProbePassed=True`,
+  `linearSpinZeroContentIsZero=True` (V = 4x10 has no singlet - every
+  linear extraction closed, any parity),
+  `bilinearSpinZeroDoubletAbsent=True` (the complete 7-dim bilinear
+  spin-0 sector, 6 parity-even + 1 epsilon-built parity-odd, contains
+  no SM-doublet state; SM-stable subspace 1-dim),
+  `oddOrderSpinZeroForbidden=True` (all welded irreps half-integer
+  pairs; trilinear count exactly 0),
+  `obstructionMenuCompleteThroughBilinearOrder=True` (the epsilon route
+  on frame-cross content is CLOSED through bilinear order; remaining:
+  quartic+ even composites, epsilon/Shiab on content beyond the
+  frame-cross block, or a different welded carrier)
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -177,7 +190,27 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work (2026-06-12) discharged the named PLATFORM FOLLOW-UP:
+The latest work added Phase409, the invariant-pairing-menu spin-zero
+extraction probe (source-independent of the unverified relayed "Shiab
+uniqueness" summary - the menu is machine-enumerated on the chain from
+scratch). Exact results: the fiber pairing menu is 4x4 = 1 (even),
+10x10 = 2 (even), 4x10 = 0 (NO parity-odd fiber pairing exists); the
+welded frame-cross block V = 4x10 = (1/2,1/2)^2 + (1/2,3/2) + (3/2,1/2)
++ (3/2,3/2) has ZERO singlet content (every linear extraction closed,
+any parity); the complete bilinear spin-0 sector is exactly 7-dim
+(6 parity-even + 1 epsilon-built parity-odd) and its largest SM-stable
+subspace (1-dim) contains NO SM-doublet state in either parity sector;
+ALL ODD ORDERS are closed exactly (every welded irrep is half-integer x
+half-integer - trilinear count 0). The epsilon route ON FRAME-CROSS
+CONTENT is closed through bilinear order; the named remaining routes are
+quartic+ even composites, epsilon/Shiab machinery on content BEYOND the
+frame-cross block (spinorial / unobserved-phase fields), or a different
+welded carrier. Study:
+`studies/phase409_invariant_pairing_menu_spin_zero_extraction_probe_001`
+(IMPLEMENTATION_P409.md).
+
+Immediately before that, the same day discharged the named PLATFORM
+FOLLOW-UP:
 the Phase405 GPU parity defect was root-caused, fixed, and
 regression-tested. Fail-closed bisection (a minimal C harness on a
 single triangle and on the full real 420-edge/216-face mesh, then a C#
@@ -213,13 +246,13 @@ HONEST BOUNDARY. Study:
 
 ### Integration Points Already Updated
 
-Phase408 (like Phase388-407) is wired into:
+Phase409 (like Phase388-408) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (both invocation blocks)
 - `studies/phase101_boson_prediction_package_001/Program.cs`
 - `studies/phase202_boson_objective_completion_audit_001/Program.cs`
   (checklist item
-  `vertical-spin-zero-extraction-obstruction-probe-materialized`)
+  `invariant-pairing-menu-spin-zero-extraction-probe-materialized`)
 - `scripts/verify_boson_claim_integrity.sh`
 - Broad scanner exclusions: phase204, phase205, phase207, phase279,
   phase281, phase295, phase296
@@ -233,27 +266,20 @@ The diagnosis journal entry is near the end of
 ### Validation Already Run
 
 ```bash
-dotnet build && LD_LIBRARY_PATH=native/build dotnet test --no-build
-LD_LIBRARY_PATH=native/build dotnet test tests/Gu.Interop.Tests/Gu.Interop.Tests.csproj --no-build
-LD_LIBRARY_PATH=native/build dotnet run --project studies/phase405_vacuum_manifold_doublet_vev_orbit_scan_001/Phase405VacuumManifoldDoubletVevOrbitScan.csproj
+dotnet run --project studies/phase409_invariant_pairing_menu_spin_zero_extraction_probe_001/Phase409InvariantPairingMenuSpinZeroExtractionProbe.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
 ./scripts/generate_validated_boson_predictions.sh
 ```
 
-Gu.Interop.Tests passes 158/158 (the six new real-mesh parity tests and
-the buffer-handle recycling test included; CUDA tests live in the
-serialized GPU collection). The Phase405 re-run reports parity 27/27
-with `gpuParityDefectDetected=False` and unchanged science verdicts.
-Both Phase405 platform notes are now discharged: the parity defect
-(GpuSolverBackend.Initialize lifecycle fix) and the monotonic
-buffer-handle table (native LIFO handle recycling - sessions are bounded
-by live buffers, not lifetime allocations). The full generator ends with the Phase202
-incomplete status (`checklistPassedCount=201`, `checklistFailedCount=3`)
-and the same claim-integrity status
-(`promotedPhysicalMassClaimCount=0`). All seven broad scanners still
-report zero intake-ready evidence.
+The targeted Phase409 run passes all consistency checks; Phase202 now
+reports `checklistPassedCount=202`, `checklistFailedCount=3`; claim
+integrity verified with `promotedPhysicalMassClaimCount=0`. (Platform
+state: Gu.Interop.Tests 158/158 with the real-mesh parity and
+buffer-handle recycling tests; both Phase405 platform notes discharged
+2026-06-12.) All seven broad scanners still report zero intake-ready
+evidence.
 
 ### Current Reference Structure
 
@@ -346,22 +372,11 @@ The most useful next branches are:
    primary. (The platform follow-up - the Phase405 GPU parity defect -
    was root-caused and FIXED 2026-06-12: a GpuSolverBackend.Initialize
    lifecycle bug, not the native kernel; real-mesh parity tests now
-   guard it.) TWO NEW INTERNAL PROBES became well-posed on 2026-06-12
-   and are the named Best Next Work, in order:
-   - Phase409 candidate, INVARIANT-PAIRING-MENU SPIN-ZERO EXTRACTION
-     PROBE: Phase408 tested only the parity-even trace pairing. Extend
-     it to the COMPLETE machine-enumerated space of weld-equivariant
-     bilinear/extraction maps on the chain - including parity-odd
-     (Levi-Civita epsilon-built) invariants of so(4) (delta AND the
-     volume form on the 4; the induced invariants on Sym^2(4) = 9 + 1
-     and on the frame-cross 4 x 10 block). Question: does ANY invariant
-     pairing yield a spin-0 slot of real dimension >= 4 that carries the
-     SM-doublet quantum numbers, or is the Phase408 obstruction
-     menu-complete? Self-contained Schur/Gram computation in the
-     Phase408 style; no external input needed. (Motivated by a relayed
-     third-party "Shiab uniqueness/classification" summary whose
-     specific claims - seven pairings, C_55 = 3 kappa/16 - are UNVERIFIED
-     against the Cox PDFs; our enumeration is independent of them.)
+   guard it.) The invariant-pairing-menu probe is DONE (Phase409): the
+   epsilon route on frame-cross content is CLOSED through bilinear
+   order, all odd orders are closed exactly, and the menu is
+   machine-enumerated (no parity-odd fiber pairing exists). ONE NAMED
+   INTERNAL PROBE remains as the Best Next Work:
    - Phase410 candidate, CURVATURE-COUPLED VEV-SELECTION PROBE: the new
      primary-speaker source TOE-GU-40YEARS-20250602 states the VEV is
      coaxed out of the vacuum by SCALAR CURVATURE in GU's improved
@@ -372,9 +387,11 @@ The most useful next branches are:
      where the bare objective produced none. Fail-closed, target-blind,
      qualitative-source-motivated; cite GU-DRAFT-2021 as primary.
    THE INTERNAL STRUCTURAL PROGRAM otherwise remains at its honest
-   boundary; standing work after these probes is literature monitoring
+   boundary; standing work after this probe is literature monitoring
    at checkpoint cadence and the epsilon/Shiab route if a quantitative
-   specification appears.
+   specification appears (with Phase409 sharpening what such a
+   specification must now provide: content beyond the frame-cross
+   block, or a quartic+ even-composite construction).
 2. (CLOSED by Phase399 + Phase400 + Phase401: the quadratic-model coupled
    critical point is solved modulo flat directions, every flat ray is
    quartically lifted, and the attempted construction of the relaxed
@@ -404,11 +421,10 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -120 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-LD_LIBRARY_PATH=native/build dotnet test tests/Gu.Interop.Tests/Gu.Interop.Tests.csproj
-rg -n "gpuParityDefectDetected|RealMeshPhysicsParityTests" \
+rg -n "Phase409|invariantPairingMenuSpinZeroExtractionProbe|obstructionMenuCompleteThroughBilinearOrder" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
-  studies/phase405_vacuum_manifold_doublet_vev_orbit_scan_001/output/vacuum_manifold_doublet_vev_orbit_scan_summary.json \
-  tests/Gu.Interop.Tests
+  studies/phase409_invariant_pairing_menu_spin_zero_extraction_probe_001 \
+  studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
 ```
 
 Then verify the gate if needed:
@@ -420,11 +436,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase405 output JSON files (they are regenerated with
-the parity fix), and commit a checkpoint after validation.
+force-add the ignored Phase409 output JSON files, and commit a checkpoint
+after validation.
 
 Suggested checkpoint message:
 
 ```text
-Fix GpuSolverBackend session wipe behind phase405 GPU parity defect
+Add phase409 invariant pairing menu spin zero extraction probe
 ```

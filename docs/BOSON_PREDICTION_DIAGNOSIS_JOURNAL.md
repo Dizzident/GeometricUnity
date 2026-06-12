@@ -17182,3 +17182,57 @@ prompted two checks during the standing sweep.
 No contract field can be filled; the quantitative negative boundary
 stands. The ledger gains a primary-speaker mechanism statement for VEV
 origin (curvature sourcing) as qualitative secondary evidence.
+
+## 2026-06-12 - Phase409: The Invariant-Pairing Menu Is Enumerated - Spin-0 Doublet Absent Through Bilinear Order, Epsilon Sector Included
+
+### Context
+
+Phase408 obstructed the naive vertical-trace extraction and named the
+epsilon/Shiab route. The 2026-06-12 sweep relayed an unverifiable
+external "Shiab uniqueness / pairing count" summary; rather than rely on
+it, Phase409 machine-enumerates the complete invariant-pairing menu on
+the chain from scratch and closes the question through bilinear order.
+
+### Result
+
+- PAIRING MENU (exact): the fiber pairings are 4x4 = 1 (parity-even
+  metric), 10x10 = 2 (both parity-even), 4x10 = 0. NO parity-odd
+  (Levi-Civita epsilon-built) pairing exists on the fibers.
+- LINEAR ORDER CLOSED: the welded frame-cross block V = 4 (x) 10
+  decomposes as (1/2,1/2)^2 + (1/2,3/2) + (3/2,1/2) + (3/2,3/2)
+  (machine-recovered from the two su(2) sub-Casimirs) with ZERO singlet
+  content: no invariant linear extraction of any parity can produce a
+  spin-0 scalar from it - Phase408 V3 strengthened from the trace slot
+  to every linear map.
+- BILINEAR ORDER CLOSED: the complete spin-0 subspace of V (x) V is
+  exactly 7-dimensional (character cross-check 7 = 7; all invariants
+  annihilation-verified at 2.6e-15; cross-Casimir blocks contribute
+  nothing), splitting 6 parity-even + 1 parity-odd: the epsilon-built
+  sector EXISTS at bilinear order but is 1-dimensional. The largest
+  SM-stable subspace inside the spin-0 sector is 1-dimensional and
+  contains NO SM-doublet pattern state (color-singlet, j_L = 1/2,
+  |Y| = 1/2) in EITHER parity sector. The epsilon route at bilinear
+  order is closed together with the metric route.
+- ALL ODD ORDERS CLOSED (stronger than designed): every welded irrep of
+  V is half-integer x half-integer, so every odd tensor power has zero
+  spin-0 content (trilinear count exactly 0). The next open order is
+  QUARTIC (its SM decomposition = the named remaining order).
+- The extraction question now stands at: quartic-or-higher even
+  composites, the draft's unspecified epsilon-conjugation/Shiab
+  machinery acting on content BEYOND the frame-cross block (spinorial /
+  unobserved-phase fields), or a different welded carrier.
+- Study: studies/phase409_invariant_pairing_menu_spin_zero_extraction_probe_001
+  (IMPLEMENTATION_P409.md).
+
+### Validation
+
+- Targeted Phase409 run passed (all consistency checks); Phase101
+  includes the block; Phase202: checklistPassedCount=202,
+  checklistFailedCount=3; claim integrity verified with
+  promotedPhysicalMassClaimCount=0.
+
+### Standing Next Work
+
+Phase410 (named): the curvature-coupled VEV-selection probe motivated by
+the TOE-GU-40YEARS-20250602 primary-speaker statement. Then the loop
+returns to literature monitoring at checkpoint cadence.

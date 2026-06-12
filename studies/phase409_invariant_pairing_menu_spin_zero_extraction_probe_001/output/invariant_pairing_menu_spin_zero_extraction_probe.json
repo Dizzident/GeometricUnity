@@ -1,0 +1,152 @@
+{
+  "phaseId": "phase409-invariant-pairing-menu-spin-zero-extraction-probe",
+  "generatedAt": "2026-06-12T14:47:25.6486817+00:00",
+  "terminalStatus": "invariant-pairing-menu-enumerated-spin-zero-doublet-absent-through-bilinear-order",
+  "invariantPairingMenuSpinZeroExtractionProbePassed": true,
+  "phase408PrecursorPassed": true,
+  "probeInternallyConsistent": true,
+  "colorGeneratorCount": 8,
+  "colorAlgebraDimensionIsEight": true,
+  "pairingMenu": {
+    "fiber4x4": {
+      "dimension": 1,
+      "parityEven": 1,
+      "parityOdd": 0
+    },
+    "fiber10x10": {
+      "dimension": 2,
+      "parityEven": 2,
+      "parityOdd": 0
+    },
+    "fiber4x10": {
+      "dimension": 0,
+      "parityEven": 0,
+      "parityOdd": 0
+    },
+    "note": "machine-enumerated on this chain; external pairing-count claims were not used"
+  },
+  "linearSingletDimension": 0,
+  "linearSpinZeroContentIsZero": true,
+  "casimirBlockCount": 3,
+  "casimirBlockDimensions": [
+    8,
+    16,
+    16
+  ],
+  "irrepLabelsRecovered": true,
+  "vIrrepContent": [
+    {
+      "j1": 0.5,
+      "j2": 0.5
+    },
+    {
+      "j1": 0.5,
+      "j2": 0.5
+    },
+    {
+      "j1": 0.5,
+      "j2": 1.5
+    },
+    {
+      "j1": 1.5,
+      "j2": 0.5
+    },
+    {
+      "j1": 1.5,
+      "j2": 1.5
+    }
+  ],
+  "allVIrrepsHalfIntegerPairs": true,
+  "oddOrderSpinZeroForbidden": true,
+  "bilinearSpinZeroDimension": 7,
+  "bilinearCharacterCount": 7,
+  "bilinearCharacterCountMatches": true,
+  "crossBlocksContributeNothing": true,
+  "crossBlockKernels": [],
+  "maxInvariantAnnihilationResidual": 2.5865640329219783E-15,
+  "allInvariantsExactlyAnnihilated": true,
+  "spinZeroBasisIndependent": true,
+  "parityEvenInvariantCount": 6,
+  "parityOddInvariantCount": 1,
+  "parityEigenvalues": [
+    1.0000000000000007,
+    1.0000000000000002,
+    0.9999999999999999,
+    0.9999999999999999,
+    -0.9999999999999993,
+    0.9999999999999999,
+    0.9999999999999998
+  ],
+  "smStableSubspaceDimension": 1,
+  "stabilizationIterations": 2,
+  "su2LCasimirSpectrumOnSmStableSubspace": [
+    7.086948236022776E-31
+  ],
+  "hyperchargeSquaredSpectrumOnSmStableSubspace": [
+    4.237045877651919E-31
+  ],
+  "colorCasimirSpectrumOnSmStableSubspace": [
+    3.044373636049615E-30
+  ],
+  "doubletCasimirCalibration": 0.75,
+  "doubletHyperchargeSquaredCalibration": 0.1111111111111111,
+  "doubletPatternStateCount": 0,
+  "bilinearSpinZeroDoubletAbsent": true,
+  "obstructionMenuCompleteThroughBilinearOrder": true,
+  "trilinearSpinZeroDimension": 0,
+  "trilinearSmDecompositionEvaluated": false,
+  "draftEpsilonConjugationSpecificationUsed": false,
+  "compactFormUsedForNoncompactAlgebra": true,
+  "physicalCouplingProvided": false,
+  "probeDefinitions": {
+    "v": "the frame-cross block 4 (x) 10 with the weld-twisted so(4) action D(M) = M (x) I \u002B I (x) pi(M) (pi = the Phase408 Sym^2 weld); the SM chain acts on the internal factor only",
+    "m1": "exact kernel of the stacked tensor-sum so(4) action on each fiber pair, parity-split by the reflection R = diag(1,1,1,-1) (parity-odd = Levi-Civita epsilon-built)",
+    "m2": "so(4)-singlet content of V from the welded Casimir kernel (linear extractions of every parity)",
+    "m3": "complete spin-0 subspace of V (x) V from blockwise Schur kernels over ALL ordered Casimir-eigenspace pairs; every invariant re-verified by direct annihilation; largest SM-stable subspace by iterated stabilization under su(2)_L \u002B su(2)_R Cartan \u002B hypercharge \u002B full color su(3); decomposition by machine-calibrated Casimir spectra",
+    "m4": "trilinear singlet dimension by su(2) x su(2) triangle-rule character arithmetic over the machine-recovered irrep content of V"
+  },
+  "applicationSubjectKind": "invariant-pairing-menu-spin-zero-extraction-probe",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "8d3d9b85b24a079235fd8315b071f9dc10143f3bc40cabaf49fe6daba8d1ca22",
+  "routeProvidesPhysicalMassPsiCompatibleBranch": false,
+  "routeProvidesCompletedFermionicAction": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesObservedElectroweakNamespaceMap": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesWeakAngleOrCouplingLineage": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "pairing-built composites are NOT the draft\u0027s fundamental scalar; this probe characterizes the extraction menu, it does not construct a Higgs",
+    "odd-order composites are CLOSED exactly (all welded irreps are half-integer pairs); the QUARTIC-and-higher even-order SM decomposition is NOT computed and is the named remaining order",
+    "the draft\u0027s epsilon-conjugation/Shiab machinery may act on content beyond the frame-cross block (e.g. spinorial or unobserved-phase fields); that route remains open and unspecified quantitatively in the primary",
+    "compact-form arithmetic (so(10)/so(4)) stands in for the noncompact draft structures; real-form effects recorded",
+    "external pairing-count claims (e.g. relayed \u0027seven pairings\u0027 summaries) were NOT used; the menu here is machine-enumerated on this chain",
+    "no dynamics, no scales, no VEV; the binding gaps are unchanged",
+    "no Phase201 or Phase256 fill",
+    "no physical predictions"
+  ],
+  "sourceEvidence": {
+    "phase408SummaryPath": "studies/phase408_vertical_spin_zero_extraction_obstruction_probe_001/output/vertical_spin_zero_extraction_obstruction_probe_summary.json",
+    "primaryDraft": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt (sections 2.3, 9, 12.6)",
+    "sweepContext": "docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md 2026-06-12 entries (unverified external pairing-count claims; this probe is source-independent)"
+  },
+  "decision": "The Phase408 obstruction is extended from the single trace pairing to the COMPLETE invariant-pairing menu through bilinear order. (M1) The fiber pairing menu is machine-enumerated with parity labels - the epsilon-built (parity-odd) sector is now explicitly included, not just named. (M2) The frame-cross block 4x10 has ZERO so(4)-singlet content under the welded action: NO invariant linear extraction of any parity can produce a spin-0 scalar from it. (M3) The complete bilinear spin-0 sector is constructed exactly and its largest SM-stable subspace decomposed under the full SM chain (including full color su(3)): NO state carries the SM-doublet pattern (color-singlet, j_L = 1/2, |Y| = 1/2) in EITHER parity sector - the epsilon route at bilinear order is closed along with the metric route. (M4) STRONGER THAN PLANNED: every welded irrep of the frame-cross block is a half-integer x half-integer pair, so ALL ODD-ORDER composites have zero spin-0 content (the trilinear count is exactly 0 by character arithmetic, machine-cross-checked) - the next open order is QUARTIC, whose SM decomposition is the named remaining order. The extraction question now stands at: quartic-or-higher even composites, the draft\u0027s unspecified epsilon-conjugation/Shiab machinery acting on content BEYOND the frame-cross block (e.g. spinorial or unobserved-phase fields), or a different welded carrier. Nothing is promoted; no contract field is filled."
+}

@@ -174,6 +174,7 @@ const string Phase405Path = "studies/phase405_vacuum_manifold_doublet_vev_orbit_
 const string Phase406Path = "studies/phase406_choice_space_falsification_sweep_001/output/choice_space_falsification_sweep_summary.json";
 const string Phase407Path = "studies/phase407_chimeric_adjoint_sm_content_probe_001/output/chimeric_adjoint_sm_content_probe_summary.json";
 const string Phase408Path = "studies/phase408_vertical_spin_zero_extraction_obstruction_probe_001/output/vertical_spin_zero_extraction_obstruction_probe_summary.json";
+const string Phase409Path = "studies/phase409_invariant_pairing_menu_spin_zero_extraction_probe_001/output/invariant_pairing_menu_spin_zero_extraction_probe_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -381,6 +382,7 @@ using var phase405 = File.Exists(Phase405Path) ? JsonDocument.Parse(File.ReadAll
 using var phase406 = File.Exists(Phase406Path) ? JsonDocument.Parse(File.ReadAllText(Phase406Path)) : null;
 using var phase407 = File.Exists(Phase407Path) ? JsonDocument.Parse(File.ReadAllText(Phase407Path)) : null;
 using var phase408 = File.Exists(Phase408Path) ? JsonDocument.Parse(File.ReadAllText(Phase408Path)) : null;
+using var phase409 = File.Exists(Phase409Path) ? JsonDocument.Parse(File.ReadAllText(Phase409Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -5142,6 +5144,31 @@ var verticalSpinZeroExtractionObstructionProbePassed = verticalSpinZeroExtractio
     && JsonBool(phase408.RootElement, "phase201TemplateMutated") is false
     && JsonInt(phase408.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
     && JsonInt(phase408.RootElement, "acceptedContractFieldCount") == 0;
+var invariantPairingMenuSpinZeroExtractionProbeMaterialized = phase409 is not null;
+var invariantPairingMenuSpinZeroExtractionProbePassed = invariantPairingMenuSpinZeroExtractionProbeMaterialized
+    && JsonBool(phase409!.RootElement, "invariantPairingMenuSpinZeroExtractionProbePassed") is true
+    && JsonBool(phase409.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase409.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase409.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase409.RootElement, "applicationSubjectKind") == "invariant-pairing-menu-spin-zero-extraction-probe"
+    && JsonBool(phase409.RootElement, "linearSpinZeroContentIsZero") is true
+    && JsonBool(phase409.RootElement, "bilinearCharacterCountMatches") is true
+    && JsonBool(phase409.RootElement, "allInvariantsExactlyAnnihilated") is true
+    && JsonBool(phase409.RootElement, "bilinearSpinZeroDoubletAbsent") is true
+    && JsonBool(phase409.RootElement, "obstructionMenuCompleteThroughBilinearOrder") is true
+    && JsonBool(phase409.RootElement, "oddOrderSpinZeroForbidden") is true
+    && JsonBool(phase409.RootElement, "draftEpsilonConjugationSpecificationUsed") is false
+    && JsonBool(phase409.RootElement, "physicalCouplingProvided") is false
+    && JsonBool(phase409.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase409.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase409.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase409.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase409.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase409.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase409.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase409.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase409.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase409.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -7382,6 +7409,14 @@ var checklist = new[]
             ? $"verticalSpinZeroExtractionObstructionProbePassed={JsonBool(phase408!.RootElement, "verticalSpinZeroExtractionObstructionProbePassed")}; targetBlind={JsonBool(phase408.RootElement, "targetBlindConstruction")}; weldEntanglesSpinAndIsospin={JsonBool(phase408.RootElement, "weldEntanglesSpinAndIsospin")}; centralizerIsTrivial={JsonBool(phase408.RootElement, "centralizerIsTrivial")}; spinZeroSlotCannotCarryFullDoublet={JsonBool(phase408.RootElement, "spinZeroSlotCannotCarryFullDoublet")}; canFillPhase201WzContract={JsonBool(phase408.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase408.RootElement, "decision")}"
             : "Phase408 artifact not materialized",
         Phase408Path),
+    new ObjectiveChecklistItem(
+        "invariant-pairing-menu-spin-zero-extraction-probe-materialized",
+        "Enumerate the complete invariant-pairing menu (parity-even and epsilon-built parity-odd) on the welded frame-cross block and machine-check the spin-0 doublet content through bilinear order.",
+        invariantPairingMenuSpinZeroExtractionProbePassed ? "passed" : "failed",
+        invariantPairingMenuSpinZeroExtractionProbeMaterialized
+            ? $"invariantPairingMenuSpinZeroExtractionProbePassed={JsonBool(phase409!.RootElement, "invariantPairingMenuSpinZeroExtractionProbePassed")}; targetBlind={JsonBool(phase409.RootElement, "targetBlindConstruction")}; linearSpinZeroContentIsZero={JsonBool(phase409.RootElement, "linearSpinZeroContentIsZero")}; bilinearSpinZeroDoubletAbsent={JsonBool(phase409.RootElement, "bilinearSpinZeroDoubletAbsent")}; obstructionMenuCompleteThroughBilinearOrder={JsonBool(phase409.RootElement, "obstructionMenuCompleteThroughBilinearOrder")}; oddOrderSpinZeroForbidden={JsonBool(phase409.RootElement, "oddOrderSpinZeroForbidden")}; canFillPhase201WzContract={JsonBool(phase409.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase409.RootElement, "decision")}"
+            : "Phase409 artifact not materialized",
+        Phase409Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
