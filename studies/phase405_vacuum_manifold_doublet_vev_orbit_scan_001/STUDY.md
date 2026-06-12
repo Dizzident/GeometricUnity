@@ -44,6 +44,23 @@ negative-definite; metric convention recorded).
   is recorded as a named platform follow-up. A second limitation is also
   recorded: the native buffer-handle table is monotonic (no recycling,
   MAX_BUFFERS = 4096), requiring periodic GPU session recycling.
+- **PLATFORM FINDING RESOLVED (2026-06-12)**: root-cause isolation (single
+  triangle, then the full real 420-edge/216-face mesh, through a minimal C
+  harness and a C# bisect probe) exonerated the native curvature kernel -
+  it is exact on real mesh topology at both sizes. The defect was an API
+  lifecycle bug: `GpuSolverBackend.Initialize` re-initialized the
+  already-prepared native backend, and `gu_initialize` performs a full
+  shutdown that discards the uploaded topology/algebra/A0, silently
+  downgrading every physics kernel to its identity-stub fallback
+  (F = omega, T = 0 - exactly the recorded signature: |gpu F| = |omega|,
+  gpu objective = (1/2)||omega||^2). The fix makes
+  `GpuSolverBackend.Initialize` adopt a prepared backend instead of
+  re-initializing it, and real-mesh parity tests
+  (`tests/Gu.Interop.Tests/RealMeshPhysicsParityTests.cs`) now guard the
+  prepare-then-wrap session pattern on both the managed reference and real
+  CUDA. Re-run after the fix: 27/27 parity samples agree
+  (maxAbsDev 3.9e-34); all science verdicts unchanged (the scan always ran
+  on the CPU reference per IA-5).
 
 ## Status
 

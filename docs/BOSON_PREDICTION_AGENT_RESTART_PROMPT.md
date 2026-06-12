@@ -35,7 +35,8 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase408 work:
+Current gate status after the Phase408 work and the 2026-06-12 platform
+fix (GPU parity defect root-caused and discharged):
 
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
@@ -127,9 +128,11 @@ Current gate status after the Phase408 work:
   exactly flat), `flatnessEqualsCommutativity=True` (11 = 11 over 2592
   samples, exact quartic landscape),
   `noSelectionMechanismAtConstantRank1Level=True` (sub-gap (b) open,
-  sharpened), `gpuParityDefectDetected=True` (native curvature kernel
-  linear-part defect on real mesh topology - platform follow-up; science
-  on CPU per IA-5)
+  sharpened), `gpuParityDefectDetected=False` (the originally detected
+  defect was root-caused 2026-06-12 to a GpuSolverBackend.Initialize
+  lifecycle bug - NOT the native kernel - fixed and regression-tested;
+  post-fix parity 27/27 at maxAbsDev 3.9e-34; science ran on CPU per
+  IA-5 throughout)
 - Phase406 (brute force #3 of the user directive):
   `choiceSpaceFalsificationSweepPassed=True`,
   `ratioPathIndependent=True` (su(5) route tan^2 = 3/5 = Pati-Salam),
@@ -174,23 +177,39 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work added Phase408, the vertical spin-zero extraction
-obstruction probe. The chimeric weld (internal 10 = metrics fiber
-Sym^2(R^4)) was formalized exactly (homomorphism residual 2.2e-16) and
-three consequences machine-verified: (V1) the weld ENTANGLES spin and
-isospin - pi(so(4)) commutes with no SM generator; (V2) the centralizer
-of pi(so(4)) in so(10) is TRIVIAL (Schur on the multiplicity-free
-9 + 1); (V3) the spin-0 slot of the vertical 10 is exactly the 1-dim
-trace direction, so the naive vertical-trace extraction CANNOT carry the
-4-real-dim SM doublet for ANY weld alignment. Scalar-sector sub-gap (a)
-reaches its final internal form: the Phase407 frame-cross doublet cannot
-descend through the trace slot; the draft's epsilon-conjugation/Shiab
-machinery or unobserved-phase fields (not specified quantitatively in
-the primary text) is the precisely named requirement. THE INTERNAL
-STRUCTURAL PROGRAM IS AT ITS HONEST BOUNDARY. Study:
+The latest work (2026-06-12) discharged the named PLATFORM FOLLOW-UP:
+the Phase405 GPU parity defect was root-caused, fixed, and
+regression-tested. Fail-closed bisection (a minimal C harness on a
+single triangle and on the full real 420-edge/216-face mesh, then a C#
+probe splitting the production path) EXONERATED the native CUDA
+curvature kernel - it is exact on real mesh topology. The actual defect:
+`GpuSolverBackend.Initialize` re-initialized the already-prepared native
+backend; `gu_initialize` does a full shutdown first, silently discarding
+the uploaded topology/algebra/A0, so every native physics kernel
+silently degraded to its identity-stub fallback (F = omega, T = 0 -
+exactly the recorded DIAG signature). Fix:
+`src/Gu.Interop/GpuSolverBackend.cs` Initialize now adopts a prepared
+backend instead of wiping it. Guard: real-mesh parity tests in
+`tests/Gu.Interop.Tests/RealMeshPhysicsParityTests.cs` (managed
+reference + real CUDA, in the serialized GPU collection). Phase405
+re-run: parity 27/27 (maxAbsDev 3.9e-34), all science verdicts
+unchanged (science ran on CPU per IA-5 throughout); its summary JSON,
+STUDY.md, and IMPLEMENTATION_P405.md carry the dated resolution. See
+the 2026-06-12 journal entry.
+
+Before that, Phase408 (the vertical spin-zero extraction obstruction
+probe) formalized the chimeric weld exactly (homomorphism residual
+2.2e-16) and machine-verified: (V1) the weld ENTANGLES spin and isospin;
+(V2) the centralizer of pi(so(4)) in so(10) is TRIVIAL; (V3) the spin-0
+slot of the vertical 10 is the 1-dim trace direction, so the naive
+vertical-trace extraction CANNOT carry the 4-real-dim SM doublet for ANY
+weld alignment. Scalar-sector sub-gap (a) is at its final internal form:
+the draft's epsilon-conjugation/Shiab machinery or unobserved-phase
+fields (not specified quantitatively in the primary text) is the
+precisely named requirement. THE INTERNAL STRUCTURAL PROGRAM IS AT ITS
+HONEST BOUNDARY. Study:
 `studies/phase408_vertical_spin_zero_extraction_obstruction_probe_001`
-(IMPLEMENTATION_P408.md). Before that, Phase407 found the SM-Higgs
-quantum numbers in the chimeric frame-cross-internal block.
+(IMPLEMENTATION_P408.md).
 
 ### Integration Points Already Updated
 
@@ -214,17 +233,23 @@ The diagnosis journal entry is near the end of
 ### Validation Already Run
 
 ```bash
-dotnet run --project studies/phase408_vertical_spin_zero_extraction_obstruction_probe_001/Phase408VerticalSpinZeroExtractionObstructionProbe.csproj
+dotnet build && LD_LIBRARY_PATH=native/build dotnet test --no-build
+LD_LIBRARY_PATH=native/build dotnet test tests/Gu.Interop.Tests/Gu.Interop.Tests.csproj --no-build
+LD_LIBRARY_PATH=native/build dotnet run --project studies/phase405_vacuum_manifold_doublet_vev_orbit_scan_001/Phase405VacuumManifoldDoubletVevOrbitScan.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
 ./scripts/generate_validated_boson_predictions.sh
 ```
 
-The full generator ended with the Phase408 line, the Phase202 incomplete
-status (`checklistPassedCount=201`, `checklistFailedCount=3`), and the same
-claim-integrity status (`promotedPhysicalMassClaimCount=0`). All seven broad
-scanners still report zero intake-ready evidence.
+Gu.Interop.Tests passes 157/157 (the six new real-mesh parity tests
+included; CUDA tests live in the serialized GPU collection). The Phase405
+re-run reports parity 27/27 with `gpuParityDefectDetected=False` and
+unchanged science verdicts. The full generator ends with the Phase202
+incomplete status (`checklistPassedCount=201`, `checklistFailedCount=3`)
+and the same claim-integrity status
+(`promotedPhysicalMassClaimCount=0`). All seven broad scanners still
+report zero intake-ready evidence.
 
 ### Current Reference Structure
 
@@ -317,9 +342,11 @@ The most useful next branches are:
    primary. THE INTERNAL STRUCTURAL PROGRAM IS AT ITS HONEST BOUNDARY:
    remaining internal candidates require new primary-source
    specifications or theorem-level sources; standing work is literature
-   monitoring at checkpoint cadence, the epsilon/Shiab route if a
-   specification appears, and the platform follow-up (native CUDA
-   curvature kernel real-mesh fix + real-mesh parity tests).
+   monitoring at checkpoint cadence and the epsilon/Shiab route if a
+   specification appears. (The platform follow-up - the Phase405 GPU
+   parity defect - was root-caused and FIXED 2026-06-12: a
+   GpuSolverBackend.Initialize lifecycle bug, not the native kernel;
+   real-mesh parity tests now guard it.)
 2. (CLOSED by Phase399 + Phase400 + Phase401: the quadratic-model coupled
    critical point is solved modulo flat directions, every flat ray is
    quartically lifted, and the attempted construction of the relaxed
@@ -349,11 +376,11 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -120 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase408|verticalSpinZeroExtractionObstructionProbe|spinZeroSlotCannotCarryFullDoublet" \
+LD_LIBRARY_PATH=native/build dotnet test tests/Gu.Interop.Tests/Gu.Interop.Tests.csproj
+rg -n "gpuParityDefectDetected|RealMeshPhysicsParityTests" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
-  ExperimentReferences.md \
-  studies/phase408_vertical_spin_zero_extraction_obstruction_probe_001 \
-  studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
+  studies/phase405_vacuum_manifold_doublet_vev_orbit_scan_001/output/vacuum_manifold_doublet_vev_orbit_scan_summary.json \
+  tests/Gu.Interop.Tests
 ```
 
 Then verify the gate if needed:
@@ -365,11 +392,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase408 output JSON files, and commit a checkpoint
-after validation.
+force-add the ignored Phase405 output JSON files (they are regenerated with
+the parity fix), and commit a checkpoint after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase408 vertical spin zero extraction obstruction probe
+Fix GpuSolverBackend session wipe behind phase405 GPU parity defect
 ```

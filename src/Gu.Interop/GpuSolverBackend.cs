@@ -43,7 +43,13 @@ public sealed class GpuSolverBackend : ISolverBackend, IDisposable
     {
         ObjectDisposedException.ThrowIf(_disposed, this);
         ArgumentNullException.ThrowIfNull(manifest);
-        _nativeBackend.Initialize(manifest);
+        // gu_initialize performs a full native shutdown first, discarding any
+        // mesh topology / structure constants / background connection already
+        // uploaded by the caller. Without physics data every native physics
+        // kernel silently degrades to its identity-stub fallback (F = omega,
+        // T = 0), so a prepared backend must be adopted, not re-initialized.
+        if (!_nativeBackend.HasPhysicsData)
+            _nativeBackend.Initialize(manifest);
         _manifest = manifest;
     }
 

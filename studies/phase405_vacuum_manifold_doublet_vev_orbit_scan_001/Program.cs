@@ -293,13 +293,14 @@ double EvaluateObjectiveOn(ISolverBackend backend, double[] coefficients)
     return 0.5 * sum;
 }
 
-// SCIENCE RUNS ON THE CPU REFERENCE: the GPU characterization (below)
-// machine-detected a real-mesh topology defect in the native curvature
-// kernel's linear part, so the platform's CPU-reference-first rule (IA-5)
-// applies - the GPU is demoted to a characterized parity finding for this
-// phase, honestly recorded. (At this problem size the CPU scan takes
-// seconds; the directive's GPU emphasis surfaced the defect, which is the
-// genuinely valuable GPU result here.)
+// SCIENCE RUNS ON THE CPU REFERENCE: when this scan first ran, the GPU
+// characterization (below) machine-detected a real-mesh parity defect, so
+// the platform's CPU-reference-first rule (IA-5) applied and the GPU was
+// demoted to a characterized parity finding. Root cause (2026-06-12):
+// GpuSolverBackend.Initialize wiped the prepared native session, silently
+// engaging the identity-stub fallbacks; the native curvature kernel itself
+// was exact. The lifecycle bug is fixed and regression-tested; the science
+// stays on the CPU here so the recorded scan remains the IA-5 baseline.
 double EvaluateScanObjective(double[] coefficients) => EvaluateObjectiveOn(cpuBackend, coefficients);
 
 double EvaluateGpuObjective(double[] coefficients)
@@ -557,7 +558,7 @@ var result = new
     gpuBackendId,
     gpuInitError,
     nativeLinearCurvatureParityGap = true,
-    nativeLinearCurvatureParityGapNote = "the native curvature kernel's linear d-omega part disagrees with the CPU reference on real mesh topology (single-direction probe: |cpu|=3.4176, |gpu|=3.5165, |diff|=2.0356, identical diff with brackets added); this scan uses closed (exact 1-form) profiles so d omega = 0 for every sample and the discrepant term never contributes - named platform follow-up",
+    nativeLinearCurvatureParityGapNote = "RESOLVED (2026-06-12): the parity defect this scan originally machine-detected was NOT in the native curvature kernel - GpuSolverBackend.Initialize re-initialized the prepared native backend, wiping the uploaded topology/algebra/A0 and silently engaging the native identity-stub fallbacks (F = omega, T = 0); the lifecycle bug is fixed in GpuSolverBackend.Initialize and guarded by tests/Gu.Interop.Tests/RealMeshPhysicsParityTests.cs; this scan's science always ran on the CPU reference per IA-5, so its verdicts were never affected",
     gpuSessionRecycleCount,
     gpuEvaluations,
     gpuScanSeconds,

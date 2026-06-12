@@ -23,8 +23,9 @@ the directive.
 | Rank-1 flatness | ALL flat (doublet included) - vacuum manifold permits doublet VEVs |
 | Flatness = commutativity | exact (11 = 11); quartic landscape shape verified |
 | Selection mechanism | NONE at this level (all blocks treated identically) - sub-gap (b) open, sharpened |
-| GPU | CUDA active; native curvature kernel LINEAR-part defect on real mesh topology machine-characterized (0/27 parity, maxAbsDev 17.5); science on CPU per IA-5 (8.1 s full scan) |
+| GPU | CUDA active; real-mesh parity defect machine-characterized (0/27 parity, maxAbsDev 17.5); science on CPU per IA-5 (8.1 s full scan) |
 | Native limitations recorded | monotonic buffer-handle table (session recycling required); Killing-vs-plain objective metric convention |
+| Defect RESOLVED (2026-06-12) | root cause was NOT the native kernel (exact on real mesh in isolation): `GpuSolverBackend.Initialize` re-initialized the prepared backend, wiping uploaded physics data and silently engaging identity-stub fallbacks (F = omega, T = 0); fixed in `GpuSolverBackend.Initialize` + guarded by `tests/Gu.Interop.Tests/RealMeshPhysicsParityTests.cs`; post-fix re-run: 27/27 parity (maxAbsDev 3.9e-34), science verdicts unchanged |
 
 ## Integration
 

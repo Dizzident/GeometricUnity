@@ -16985,3 +16985,87 @@ new theorem-level sources). Remaining standing work: literature
 monitoring at checkpoint cadence; the epsilon/Shiab extraction route IF a
 primary-source specification appears; the platform follow-up (native
 CUDA curvature kernel real-mesh fix).
+
+## 2026-06-12 - Platform Follow-Up Discharged: GPU Parity Defect Root-Caused and Fixed (Native Curvature Kernel Exonerated)
+
+### Context
+
+The Phase405 GPU run machine-detected a real-mesh parity defect
+(closed-profile curvature: CPU exactly 0, GPU up to 17.5, 0/27 parity)
+and attributed it provisionally to the native CUDA curvature kernel's
+linear (d omega) part. The restart prompt carried it as the named
+platform follow-up. This entry records the root-cause isolation, the
+fix, and the corrected attribution.
+
+### Root-Cause Isolation (fail-closed bisection)
+
+- A minimal C harness against libgu_cuda_core.so (single triangle,
+  abelian algebra, known d omega) was EXACT.
+- The same harness on the full real mesh (the 6x6 structured fiber
+  bundle: 420 edges, 216 faces, dim_g = 8, a closed random-potential
+  1-form) was EXACT (maxDiff = 0.0). The native curvature kernel is NOT
+  defective on real mesh topology.
+- A C# bisect probe then split the production path: the raw
+  CudaNativeBackend path (allocate/upload/evaluate/download) was EXACT;
+  only GpuSolverBackend.EvaluateDerived produced the defect - and its
+  output was |F| = |omega| exactly (first bad component = the probe's
+  Lie direction), i.e. the native IDENTITY-STUB fallback (F = omega),
+  not a wrong physics kernel.
+- Root cause: GpuSolverBackend.Initialize unconditionally re-initialized
+  the wrapped native backend. gu_initialize performs a full gu_shutdown
+  first, which frees the uploaded mesh topology / structure constants /
+  background connection. The studies' session pattern (initialize native
+  backend, upload physics data, then wrap in GpuSolverBackend and
+  initialize the wrapper) therefore silently wiped its own uploads, and
+  every native physics kernel silently degraded to its stub fallback
+  (F = omega, T = 0, Shiab = copy). Every recorded Phase405 DIAG
+  signature matches exactly: |gpu F| = |gpu Shiab| = |gpu Upsilon| =
+  |omega| = 3.9395, gpu torsion = 0, gpu objective = (1/2)||omega||^2 =
+  7.76, and the "linear-part" appearance (single-direction probes make
+  every bracket vanish, so the stub's error is purely in the linear
+  term).
+
+### Fix and Regression Guard
+
+- src/Gu.Interop/GpuSolverBackend.cs: Initialize now adopts a native
+  backend that already has physics data uploaded instead of
+  re-initializing (and wiping) it.
+- tests/Gu.Interop.Tests/RealMeshPhysicsParityTests.cs (new): the exact
+  prepare-then-wrap session pattern on real mesh topology
+  (CreateStructuredFiberBundle2D), against the managed CpuReferenceBackend
+  (3 tests, run everywhere) and the real CUDA backend (3 tests,
+  SkipIfNoCuda; joined to the serialized "GPU" collection because the
+  native library holds one global session, with the shared fixture
+  session restored after the class runs): lifecycle preservation,
+  closed-profile curvature = 0, curvature vs direct assembly (linear +
+  bracket terms), and full derived-state CPU/CUDA parity.
+- The pre-existing identity-stub fallback semantics (no physics data ->
+  F = omega) are unchanged: platform tests cover them intentionally;
+  the trap was the silent WIPE, which is now impossible through
+  GpuSolverBackend.
+
+### Validation
+
+- Gu.Interop.Tests: 157/157 pass (3 consecutive runs; previously the new
+  CUDA tests raced the global native session until they joined the GPU
+  collection).
+- Full solution: build clean, dotnet test exit 0, no failures.
+- Phase405 re-run end-to-end on the unchanged scan: parity now 27/27
+  (maxParityAbsoluteDeviation 3.9e-34), gpuParityDefectDetected = false,
+  and ALL science verdicts byte-identical in meaning (permits = true,
+  no-selection = true, flatness = commutativity 11 = 11, quartic shape
+  verified). The scan's science always ran on the CPU reference per
+  IA-5, so no committed scientific result changes.
+- Phase405's nativeLinearCurvatureParityGapNote, STUDY.md, and
+  IMPLEMENTATION_P405.md now carry the corrected root cause as a dated
+  resolution (the original finding text is preserved as the historical
+  record).
+
+### Standing Next Work
+
+The named platform follow-up is discharged. Remaining standing work is
+unchanged: literature monitoring at checkpoint cadence; the
+epsilon/Shiab extraction route IF a primary-source quantitative
+specification appears. The buffer-handle recycling improvement remains a
+low-priority platform note (the session-recycling workaround in Phase405
+is still valid and now also unnecessary for parity reasons).
