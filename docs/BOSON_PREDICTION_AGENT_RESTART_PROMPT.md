@@ -242,10 +242,14 @@ dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase
 ./scripts/generate_validated_boson_predictions.sh
 ```
 
-Gu.Interop.Tests passes 157/157 (the six new real-mesh parity tests
-included; CUDA tests live in the serialized GPU collection). The Phase405
-re-run reports parity 27/27 with `gpuParityDefectDetected=False` and
-unchanged science verdicts. The full generator ends with the Phase202
+Gu.Interop.Tests passes 158/158 (the six new real-mesh parity tests and
+the buffer-handle recycling test included; CUDA tests live in the
+serialized GPU collection). The Phase405 re-run reports parity 27/27
+with `gpuParityDefectDetected=False` and unchanged science verdicts.
+Both Phase405 platform notes are now discharged: the parity defect
+(GpuSolverBackend.Initialize lifecycle fix) and the monotonic
+buffer-handle table (native LIFO handle recycling - sessions are bounded
+by live buffers, not lifetime allocations). The full generator ends with the Phase202
 incomplete status (`checklistPassedCount=201`, `checklistFailedCount=3`)
 and the same claim-integrity status
 (`promotedPhysicalMassClaimCount=0`). All seven broad scanners still

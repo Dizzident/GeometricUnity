@@ -85,6 +85,11 @@ static struct {
     gu_manifest_snapshot_t manifest;
     buffer_entry_t buffers[MAX_BUFFERS];
     int32_t next_handle;
+    /* Freed handles are recycled (LIFO) so long-running sessions are not
+     * bounded by MAX_BUFFERS total allocations, only by MAX_BUFFERS
+     * simultaneously live buffers. */
+    int32_t free_handles[MAX_BUFFERS];
+    int32_t free_handle_count;
     gu_error_packet_t last_error;
     int has_error;
     physics_data_t physics;
@@ -194,7 +199,7 @@ gu_buffer_handle_t gu_allocate_buffer(int32_t total_elements, int32_t bytes_per_
         set_error(GU_ERROR_INVALID_ARGUMENT, "Invalid buffer dimensions", "gu_allocate_buffer");
         return -1;
     }
-    if (g_state.next_handle >= MAX_BUFFERS) {
+    if (g_state.free_handle_count == 0 && g_state.next_handle >= MAX_BUFFERS) {
         set_error(GU_ERROR_ALLOCATION_FAILED, "Buffer handle limit reached", "gu_allocate_buffer");
         return -1;
     }
@@ -215,7 +220,9 @@ gu_buffer_handle_t gu_allocate_buffer(int32_t total_elements, int32_t bytes_per_
         return -1;
     }
 
-    int32_t handle = g_state.next_handle++;
+    int32_t handle = (g_state.free_handle_count > 0)
+        ? g_state.free_handles[--g_state.free_handle_count]
+        : g_state.next_handle++;
     g_state.buffers[handle].data = data;
     g_state.buffers[handle].element_count = total_elements;
     g_state.buffers[handle].bytes_per_element = bytes_per_element;
@@ -298,6 +305,7 @@ gu_error_code_t gu_free_buffer(gu_buffer_handle_t handle) {
 
     g_state.buffers[handle].data = NULL;
     g_state.buffers[handle].active = 0;
+    g_state.free_handles[g_state.free_handle_count++] = handle;
 
     clear_error();
     return GU_SUCCESS;

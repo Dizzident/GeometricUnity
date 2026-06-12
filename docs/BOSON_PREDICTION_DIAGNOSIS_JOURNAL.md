@@ -17112,3 +17112,29 @@ No source provides the epsilon/Shiab quantitative specification, a
 VEV-selection mechanism, or target-independent dimensionful anchors. The
 negative boundary stands; the program remains in its monitoring steady
 state.
+
+## 2026-06-12 - Platform Note Discharged: Native Buffer-Handle Recycling
+
+### Context
+
+The second platform limitation recorded by Phase405: the native
+buffer-handle table was monotonic (next_handle++ only, MAX_BUFFERS =
+4096), so ~4096 lifetime allocations exhausted a session and long GPU
+scans needed periodic full session recycling (re-init + re-upload).
+
+### Change
+
+- native/gu_cuda_core/src/gu_cuda_core.c: freed handles are now pushed
+  onto a LIFO free list and reused by gu_allocate_buffer. Sessions are
+  bounded only by simultaneously LIVE buffers (4096), not lifetime
+  allocations. gu_initialize's memset still resets the free list.
+- Regression test Cuda_BufferHandles_AreRecycledBeyondTableSize
+  (RealMeshPhysicsParityTests.cs, GPU collection): 5000 allocate/free
+  cycles in one session with periodic upload/download round-trips -
+  previously failed at ~4090 with "Buffer handle limit reached".
+
+### Validation
+
+- Native rebuild clean; Gu.Interop.Tests 158/158; full solution test
+  exit 0. Phase405's session-recycling workaround remains valid but is
+  no longer necessary.

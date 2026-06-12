@@ -381,4 +381,43 @@ public sealed class RealMeshCudaPhysicsParityTests : IDisposable
         Assert.True(maxDiff < 1e-12,
             $"{name} real-mesh CPU/CUDA parity failed; max diff = {maxDiff:E3}");
     }
+
+    [SkipIfNoCuda]
+    public void Cuda_BufferHandles_AreRecycledBeyondTableSize()
+    {
+        // The native handle table holds 4096 entries. Before handle
+        // recycling, 4096 lifetime allocations exhausted it and long scans
+        // needed periodic full session recycling (see Phase405). Allocate
+        // and free more than 4096 buffers in one session: every cycle must
+        // succeed and the buffer must stay usable.
+        var native = new CudaNativeBackend();
+        native.Initialize(new ManifestSnapshot
+        {
+            BaseDimension = 2,
+            AmbientDimension = 2,
+            LieAlgebraDimension = DimG,
+            LieAlgebraId = "su2",
+            MeshCellCount = 1,
+            MeshVertexCount = 3,
+            ComponentOrderId = "order-row-major",
+            TorsionBranchId = "trivial",
+            ShiabBranchId = "identity",
+        });
+
+        var layout = BufferLayoutDescriptor.CreateSoA("recycle-probe", new[] { "c" }, 8);
+        var payload = new double[] { 1, 2, 3, 4, 5, 6, 7, 8 };
+        var roundTrip = new double[8];
+
+        for (int cycle = 0; cycle < 5000; cycle++)
+        {
+            var buffer = native.AllocateBuffer(layout);
+            if (cycle % 1000 == 0)
+            {
+                native.UploadBuffer(buffer, payload);
+                native.DownloadBuffer(buffer, roundTrip);
+                Assert.Equal(payload, roundTrip);
+            }
+            native.FreeBuffer(buffer);
+        }
+    }
 }
