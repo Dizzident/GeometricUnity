@@ -343,14 +343,38 @@ The most useful next branches are:
    entangles spin/isospin with trivial centralizer) - the draft's
    epsilon-conjugation/Shiab machinery or unobserved-phase fields is the
    precisely named open requirement, unspecified quantitatively in the
-   primary. THE INTERNAL STRUCTURAL PROGRAM IS AT ITS HONEST BOUNDARY:
-   remaining internal candidates require new primary-source
-   specifications or theorem-level sources; standing work is literature
-   monitoring at checkpoint cadence and the epsilon/Shiab route if a
-   specification appears. (The platform follow-up - the Phase405 GPU
-   parity defect - was root-caused and FIXED 2026-06-12: a
-   GpuSolverBackend.Initialize lifecycle bug, not the native kernel;
-   real-mesh parity tests now guard it.)
+   primary. (The platform follow-up - the Phase405 GPU parity defect -
+   was root-caused and FIXED 2026-06-12: a GpuSolverBackend.Initialize
+   lifecycle bug, not the native kernel; real-mesh parity tests now
+   guard it.) TWO NEW INTERNAL PROBES became well-posed on 2026-06-12
+   and are the named Best Next Work, in order:
+   - Phase409 candidate, INVARIANT-PAIRING-MENU SPIN-ZERO EXTRACTION
+     PROBE: Phase408 tested only the parity-even trace pairing. Extend
+     it to the COMPLETE machine-enumerated space of weld-equivariant
+     bilinear/extraction maps on the chain - including parity-odd
+     (Levi-Civita epsilon-built) invariants of so(4) (delta AND the
+     volume form on the 4; the induced invariants on Sym^2(4) = 9 + 1
+     and on the frame-cross 4 x 10 block). Question: does ANY invariant
+     pairing yield a spin-0 slot of real dimension >= 4 that carries the
+     SM-doublet quantum numbers, or is the Phase408 obstruction
+     menu-complete? Self-contained Schur/Gram computation in the
+     Phase408 style; no external input needed. (Motivated by a relayed
+     third-party "Shiab uniqueness/classification" summary whose
+     specific claims - seven pairings, C_55 = 3 kappa/16 - are UNVERIFIED
+     against the Cox PDFs; our enumeration is independent of them.)
+   - Phase410 candidate, CURVATURE-COUPLED VEV-SELECTION PROBE: the new
+     primary-speaker source TOE-GU-40YEARS-20250602 states the VEV is
+     coaxed out of the vacuum by SCALAR CURVATURE in GU's improved
+     Einstein equation (mass scale tracks curvature). Internal test: add
+     a curvature-coupled term (control-branch scalar-curvature analog
+     coupled to the rank-1 VEV directions) to the Phase405 landscape and
+     machine-test whether it produces magnitude/direction selection
+     where the bare objective produced none. Fail-closed, target-blind,
+     qualitative-source-motivated; cite GU-DRAFT-2021 as primary.
+   THE INTERNAL STRUCTURAL PROGRAM otherwise remains at its honest
+   boundary; standing work after these probes is literature monitoring
+   at checkpoint cadence and the epsilon/Shiab route if a quantitative
+   specification appears.
 2. (CLOSED by Phase399 + Phase400 + Phase401: the quadratic-model coupled
    critical point is solved modulo flat directions, every flat ray is
    quartically lifted, and the attempted construction of the relaxed
