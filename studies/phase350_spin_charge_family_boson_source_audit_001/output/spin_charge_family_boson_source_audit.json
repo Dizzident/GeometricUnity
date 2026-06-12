@@ -1,7 +1,7 @@
 {
   "phaseId": "phase350-spin-charge-family-boson-source-audit",
   "terminalStatus": "spin-charge-family-source-audit-external-multiscalar-model-not-gu-source",
-  "generatedAt": "2026-06-11T23:18:29.2791362+00:00",
+  "generatedAt": "2026-06-12T00:31:29.7404676+00:00",
   "spinChargeFamilyBosonSourceAuditPassed": true,
   "spinChargeFamilyBosonLeadPresent": true,
   "spinChargeFamilyPrimarySourcesReviewed": true,

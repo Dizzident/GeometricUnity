@@ -16935,3 +16935,53 @@ structure (does the pullback of the (4 x 10) components along the
 vertical directions of Y14 -> X4 yield an X4-scalar doublet?), citing
 the primary draft section 9 and the stored text. Plus the standing gaps
 and literature monitoring at checkpoint cadence.
+
+## 2026-06-11 - Phase408: Naive Vertical Spin-Zero Extraction Obstructed; Weld Entangles Spin and Isospin
+
+### Context
+
+Phase407 named the spin-0 extraction of the frame-cross-internal doublet
+through the Y14 -> X4 vertical-form structure. Phase408 formalizes the
+chimeric weld (internal 10 = metrics fiber Sym^2(R^4); spacetime so(4)
+acts through pi = Sym^2 embedding, homomorphism residual 2.2e-16) and
+machine-checks three exact consequences.
+
+### Result
+
+- V1: THE WELD ENTANGLES SPIN AND ISOSPIN - pi(so(4)) does not commute
+  with any tested SM generator (max commutator 2.83).
+- V2: THE CENTRALIZER IS TRIVIAL - kernel dimension 0 over so(10)
+  (Sym^2 = 9 + 1 multiplicity-free, Schur): after the weld, NO internal
+  symmetry commutes with spacetime rotations - the Coleman-Mandula-shaped
+  tension the draft's observerse construction must evade by keeping the
+  weld observational.
+- V3: THE DIMENSION BOUND - the spin-0 (so(4)-singlet) slot of the
+  vertical 10 is exactly the 1-dim trace direction (alignment 1.0); the
+  SM complex doublet needs 4 real dims: 1 < 4 - the naive vertical-trace
+  extraction CANNOT carry a full SM doublet for any weld alignment.
+- CONSEQUENCE: scalar-sector sub-gap (a) reaches its final internal form:
+  the Phase407 doublet cannot descend through the trace slot; the draft's
+  epsilon-conjugation/Shiab machinery or unobserved-phase fields (not
+  specified quantitatively in the primary) is the precisely named
+  requirement. The internal program has now characterized the scalar
+  route to its boundary in every accessible direction.
+- Study: studies/phase408_vertical_spin_zero_extraction_obstruction_probe_001
+  (IMPLEMENTATION_P408.md).
+
+### Validation
+
+- Targeted Phase408 run passed; Phase101 includes the block; Phase202:
+  checklistPassedCount=201, checklistFailedCount=3; claim integrity
+  verified with promotedPhysicalMassClaimCount=0.
+
+### Standing Next Work
+
+The internal structural program is at its honest boundary: every named
+route is either characterized positive (doublet existence in the
+frame-cross block, ratio menu, family pattern) or obstructed/open with
+the obstruction machine-recorded (trace-slot bound, VEV selection,
+quantitative chain - all requiring the draft's unspecified machinery or
+new theorem-level sources). Remaining standing work: literature
+monitoring at checkpoint cadence; the epsilon/Shiab extraction route IF a
+primary-source specification appears; the platform follow-up (native
+CUDA curvature kernel real-mesh fix).

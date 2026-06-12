@@ -35,12 +35,12 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase407 work:
+Current gate status after the Phase408 work:
 
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=200`,
+  `objectiveAchieved=False`, `checklistPassedCount=201`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -146,6 +146,14 @@ Current gate status after the Phase407 work:
   the Y14 vertical-form structure is the named next step),
   `internalSectorStillExcluded=True` (Phase404 re-confirmed in the
   bigger frame)
+- Phase408:
+  `verticalSpinZeroExtractionObstructionProbePassed=True`,
+  `weldEntanglesSpinAndIsospin=True` (pi(so(4)) commutes with NO SM
+  generator), `centralizerIsTrivial=True` (kernel dim 0),
+  `spinZeroSlotCannotCarryFullDoublet=True` (trace slot is 1-dim vs the
+  4-real-dim doublet - the naive vertical-trace extraction is OBSTRUCTED
+  for any weld alignment; the draft's epsilon/Shiab machinery is the
+  named open route)
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -166,32 +174,33 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work added Phase407, the first probe inside the Phase406
-surviving region: the complete branching of the chimeric adjoint (so(14)
-compact arithmetic for spin(7,7), 91 = 6 + 45 + 40) under {spacetime
-so(4)} x {the Phase404 SM chain}. POSITIVE EXISTENCE RESULT: 16 states
-with exactly the SM-Higgs quantum numbers (color-singlet, j = 1/2,
-|Y| = 1/2) exist in the frame-cross-internal (4 x 10) block - the
-non-adjoint sector the falsification map isolated - via the
-machine-verified mechanism PS-vector 4 = (2_L, 2_R) with B-L = 0 and
-hypercharge = su(2)_R Cartan. The spacetime-scalar sector contains none
-(Phase404 re-confirmed). HONEST TAG: the found doublets carry a
-spacetime-VECTOR index; the spin-0 extraction through the Y14 -> X4
-vertical-form structure (GU-DRAFT-2021 section 9; the Iceberg's
-symmetric-2-tensor claim) is the named next structural step. Study:
-`studies/phase407_chimeric_adjoint_sm_content_probe_001`
-(IMPLEMENTATION_P407.md). Before that, Phases 404-406 completed the user
-directive's three brute-force computations.
+The latest work added Phase408, the vertical spin-zero extraction
+obstruction probe. The chimeric weld (internal 10 = metrics fiber
+Sym^2(R^4)) was formalized exactly (homomorphism residual 2.2e-16) and
+three consequences machine-verified: (V1) the weld ENTANGLES spin and
+isospin - pi(so(4)) commutes with no SM generator; (V2) the centralizer
+of pi(so(4)) in so(10) is TRIVIAL (Schur on the multiplicity-free
+9 + 1); (V3) the spin-0 slot of the vertical 10 is exactly the 1-dim
+trace direction, so the naive vertical-trace extraction CANNOT carry the
+4-real-dim SM doublet for ANY weld alignment. Scalar-sector sub-gap (a)
+reaches its final internal form: the Phase407 frame-cross doublet cannot
+descend through the trace slot; the draft's epsilon-conjugation/Shiab
+machinery or unobserved-phase fields (not specified quantitatively in
+the primary text) is the precisely named requirement. THE INTERNAL
+STRUCTURAL PROGRAM IS AT ITS HONEST BOUNDARY. Study:
+`studies/phase408_vertical_spin_zero_extraction_obstruction_probe_001`
+(IMPLEMENTATION_P408.md). Before that, Phase407 found the SM-Higgs
+quantum numbers in the chimeric frame-cross-internal block.
 
 ### Integration Points Already Updated
 
-Phase407 (like Phase388-406) is wired into:
+Phase408 (like Phase388-407) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (both invocation blocks)
 - `studies/phase101_boson_prediction_package_001/Program.cs`
 - `studies/phase202_boson_objective_completion_audit_001/Program.cs`
   (checklist item
-  `chimeric-adjoint-sm-content-probe-materialized`)
+  `vertical-spin-zero-extraction-obstruction-probe-materialized`)
 - `scripts/verify_boson_claim_integrity.sh`
 - Broad scanner exclusions: phase204, phase205, phase207, phase279,
   phase281, phase295, phase296
@@ -205,15 +214,15 @@ The diagnosis journal entry is near the end of
 ### Validation Already Run
 
 ```bash
-dotnet run --project studies/phase407_chimeric_adjoint_sm_content_probe_001/Phase407ChimericAdjointSmContentProbe.csproj
+dotnet run --project studies/phase408_vertical_spin_zero_extraction_obstruction_probe_001/Phase408VerticalSpinZeroExtractionObstructionProbe.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
 ./scripts/generate_validated_boson_predictions.sh
 ```
 
-The full generator ended with the Phase407 line, the Phase202 incomplete
-status (`checklistPassedCount=200`, `checklistFailedCount=3`), and the same
+The full generator ended with the Phase408 line, the Phase202 incomplete
+status (`checklistPassedCount=201`, `checklistFailedCount=3`), and the same
 claim-integrity status (`promotedPhysicalMassClaimCount=0`). All seven broad
 scanners still report zero intake-ready evidence.
 
@@ -299,13 +308,18 @@ The most useful next branches are:
    identified. The GU-specific chain enumeration is DONE (Phase404:
    tan^2 = 3/5, family pattern derived, adjoint Higgs-doublet excluded),
    and Phase407 found the SM-Higgs quantum numbers in the chimeric
-   frame-cross-internal block (spacetime-vector-valued). Candidate next
-   internal work: the SPIN-0 EXTRACTION - formalize the Y14 -> X4
-   vertical-form pullback of the frame-cross-internal doublet block
-   (does it yield an X4-scalar doublet, per the draft section 9 and the
-   Iceberg symmetric-2-tensor claim?), fail-closed; separately, the
-   vacuum-manifold mechanism that selects a doublet-block VEV on the
-   Upsilon = 0 locus (choice-independent gap per Phase406).
+   frame-cross-internal block (spacetime-vector-valued). The spin-0
+   extraction is now CHARACTERIZED (Phase408): the naive vertical-trace
+   route is OBSTRUCTED (trace slot 1-dim vs doublet 4-dim; weld
+   entangles spin/isospin with trivial centralizer) - the draft's
+   epsilon-conjugation/Shiab machinery or unobserved-phase fields is the
+   precisely named open requirement, unspecified quantitatively in the
+   primary. THE INTERNAL STRUCTURAL PROGRAM IS AT ITS HONEST BOUNDARY:
+   remaining internal candidates require new primary-source
+   specifications or theorem-level sources; standing work is literature
+   monitoring at checkpoint cadence, the epsilon/Shiab route if a
+   specification appears, and the platform follow-up (native CUDA
+   curvature kernel real-mesh fix + real-mesh parity tests).
 2. (CLOSED by Phase399 + Phase400 + Phase401: the quadratic-model coupled
    critical point is solved modulo flat directions, every flat ray is
    quartically lifted, and the attempted construction of the relaxed
@@ -335,10 +349,10 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -120 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase407|chimericAdjointSmContentProbe|higgsPatternDoubletExistsInChimericAdjoint" \
+rg -n "Phase408|verticalSpinZeroExtractionObstructionProbe|spinZeroSlotCannotCarryFullDoublet" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
   ExperimentReferences.md \
-  studies/phase407_chimeric_adjoint_sm_content_probe_001 \
+  studies/phase408_vertical_spin_zero_extraction_obstruction_probe_001 \
   studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
 ```
 
@@ -351,11 +365,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase407 output JSON files, and commit a checkpoint
+force-add the ignored Phase408 output JSON files, and commit a checkpoint
 after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase407 chimeric adjoint sm content probe
+Add phase408 vertical spin zero extraction obstruction probe
 ```

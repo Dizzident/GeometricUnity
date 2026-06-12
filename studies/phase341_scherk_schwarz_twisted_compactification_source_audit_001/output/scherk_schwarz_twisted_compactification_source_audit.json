@@ -1,7 +1,7 @@
 {
   "phaseId": "phase341-scherk-schwarz-twisted-compactification-source-audit",
   "terminalStatus": "scherk-schwarz-twisted-compactification-source-audit-external-twist-mass-lead-not-gu-source",
-  "generatedAt": "2026-06-11T23:38:19.4857902+00:00",
+  "generatedAt": "2026-06-12T00:51:20.3138278+00:00",
   "scherkSchwarzTwistedCompactificationSourceAuditPassed": true,
   "scherkSchwarzLeadPresent": true,
   "scherkSchwarzPrimarySourcesReviewed": true,
