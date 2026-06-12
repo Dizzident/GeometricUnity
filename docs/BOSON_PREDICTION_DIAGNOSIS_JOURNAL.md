@@ -17236,3 +17236,59 @@ the chain from scratch and closes the question through bilinear order.
 Phase410 (named): the curvature-coupled VEV-selection probe motivated by
 the TOE-GU-40YEARS-20250602 primary-speaker statement. Then the loop
 returns to literature monitoring at checkpoint cadence.
+
+## 2026-06-12 - Deep-Research Report Ingested: Gaps Confirmed Unfilled Publicly; "Seven Pairings" Resolved as OCR Corruption; Quartic/Dirac-Squaring Lead Named
+
+### Context
+
+The user ran the commissioned deep-research operation
+(DEEP_RESEARCH_PROMPT.md, commit a553084) and returned the report; it
+is stored verbatim under
+docs/Reference/ExperimentReferences/reports/DEEP-RESEARCH-20260612-REPORT.md
+with the assessment in DEEP-RESEARCH-20260612.md.
+
+### Dispositions (after local verification)
+
+- ALL FIVE GAPS REMAIN UNFILLED for promotion purposes; the report's
+  negative-space statement independently matches this repo's boundary:
+  no public epsilon-conjugation doublet map, no coefficient-level
+  curvature-VEV formula, no Hebrew-University dark-energy artifact, no
+  GU-native weak-angle running, no pole-mass extraction (as of
+  2026-06-12).
+- "SEVEN PAIRINGS" RESOLVED AS CONTRADICTED: the actual Cox theorem is
+  the dimension identity dim S^even_{Shiab,p} = dim Bil_H(E_y);
+  "seven" was an OCR/relay corruption of "S^even". The 2026-06-12
+  sweep's unverified relay is now closed.
+- COX CLAIM SURFACE CORRECTED: Shiab uniqueness is real but
+  parity-even-gated and unconditional only in 2+1 D; in 3+1 D an
+  independent PARITY-ODD unstarred density coexists - structurally
+  CONSISTENT with Phase409's machine enumeration (exactly 1
+  epsilon-built bilinear invariant beside the parity-even sector).
+  C_55 = 3 kappa/16 confirmed at update-summary level. GU II's
+  normalization ledger is real but its scalar sector is STIPULATED
+  Pati-Salam content - matching the Phase406 choice-independence
+  verdict from outside.
+- VERIFIED LOCALLY: the curvature-coaxed-VEV quote (verbatim in the
+  repo's TOE-GU-40YEARS transcript). UNVERIFIED: the report's 2013
+  Oxford attribution for the "coax"/"quartic Higgs from Dirac
+  squaring"/"many shiab operators" quotes (two fetch attempts; possible
+  truncation) - treated as plausible-unverified. UNVERIFIED: the
+  "Kleis" machine-audit lead (no independent surface).
+- NEW LEAD WITH INTERNAL CONVERGENCE: the quartic/Dirac-squaring
+  heuristic ("quartic Higgs piece" = "Dirac squaring of a quadratic")
+  points at QUARTIC order and the SPINOR sector - precisely Phase409's
+  lowest open order and its named beyond-frame-cross route. Named as
+  the Phase411 candidate: a quartic/Dirac-squared spin-0 composite
+  probe on spinor-sector content.
+- New catalogue targets: GU IV (v2) "The Rig for Lambda"
+  (DOI 10.5281/zenodo.17402261); hinted "Geometric Unity V" (monitor);
+  the Nguyen-Polya complexification objection recorded as a named
+  constraint for any extraction construction.
+
+### Verdict
+
+The quantitative negative boundary STANDS and is now corroborated by an
+external sweep with an explicit negative-space statement. The internal
+program gains two named probes: Phase410 (curvature-coupled VEV
+selection) and Phase411 (quartic/Dirac-squared spinor-sector
+composites).

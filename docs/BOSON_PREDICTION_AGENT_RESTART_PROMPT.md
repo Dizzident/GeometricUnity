@@ -392,6 +392,27 @@ The most useful next branches are:
    specification appears (with Phase409 sharpening what such a
    specification must now provide: content beyond the frame-cross
    block, or a quartic+ even-composite construction).
+   A SECOND NAMED PROBE follows from the 2026-06-12 deep-research
+   ingestion (DEEP-RESEARCH-20260612):
+   - Phase411 candidate, QUARTIC / DIRAC-SQUARED SPINOR-SECTOR
+     COMPOSITE PROBE: the primary-heuristic statement that the
+     "quartic Higgs piece" arises from "Dirac squaring of a quadratic"
+     (dating plausible-unverified; consistent with the draft's
+     Dirac-square scaffold audited in Phase368) converges with two
+     Phase409 theorems: quartic is the LOWEST OPEN ORDER for spin-0
+     composites, and the frame-cross block alone cannot carry the
+     doublet - the spinor sector (chimeric 128/16, content beyond the
+     frame-cross block) is the named carrier. Probe: build the welded
+     spinor content on the chain, machine-enumerate the spin-0 sector
+     of spinor-bilinear x spinor-bilinear (quartic) composites, and
+     test for SM-doublet quantum numbers, parity-classified, in the
+     Phase409 style. The Nguyen-Polya complexification objection
+     (Ad(P) vs Lambda^bullet over the reals) must be carried as a named
+     caveat on any construction found.
+   Deep-research follow-ups (catalogue when revisited): GU IV (v2)
+   "The Rig for Lambda" (DOI 10.5281/zenodo.17402261); the hinted
+   "Geometric Unity V"; the Hebrew University dark-energy talk
+   artifact; the unverified "Kleis" machine-audit lead.
 2. (CLOSED by Phase399 + Phase400 + Phase401: the quadratic-model coupled
    critical point is solved modulo flat directions, every flat ray is
    quartically lifted, and the attempted construction of the relaxed
