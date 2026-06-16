@@ -1,7 +1,7 @@
 {
   "phaseId": "phase348-right-handed-weak-coupling-source-audit",
   "terminalStatus": "right-handed-weak-coupling-source-audit-external-four-fermion-fit-not-gu-source",
-  "generatedAt": "2026-06-12T21:27:08.7380954+00:00",
+  "generatedAt": "2026-06-16T17:17:21.0062306+00:00",
   "xueRightHandedWeakCouplingSourceAuditPassed": true,
   "xueWMassTensionLeadPresent": true,
   "xueVectorlikeWLeadPresent": true,

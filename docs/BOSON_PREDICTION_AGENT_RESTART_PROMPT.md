@@ -35,13 +35,13 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase412 work (and the 2026-06-12
+Current gate status after the Phase413 work (and the 2026-06-12
 platform fix - GPU parity defect root-caused and discharged):
 
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=205`,
+  `objectiveAchieved=False`, `checklistPassedCount=206`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -132,7 +132,11 @@ platform fix - GPU parity defect root-caused and discharged):
   defect was root-caused 2026-06-12 to a GpuSolverBackend.Initialize
   lifecycle bug - NOT the native kernel - fixed and regression-tested;
   post-fix parity 27/27 at maxAbsDev 3.9e-34; science ran on CPU per
-  IA-5 throughout)
+  IA-5 throughout). As of 2026-06-16 the default validation path is
+  CPU-only (`gpuParitySkippedByDefault=True`, `gpuParityGateSatisfied=True`)
+  so the generator does not initialize both CPU and CUDA paths; set
+  `PHASE405_ENABLE_GPU=1` only when explicitly re-running the CUDA parity
+  characterization.
 - Phase406 (brute force #3 of the user directive):
   `choiceSpaceFalsificationSweepPassed=True`,
   `ratioPathIndependent=True` (su(5) route tan^2 = 3/5 = Pati-Salam),
@@ -202,6 +206,18 @@ platform fix - GPU parity defect root-caused and discharged):
   new data: odd-mixed channels LLLR/LRRR carry zero welded singlets;
   THE COMPOSITE PROGRAM IS CLOSED THROUGH QUARTIC ORDER on every
   probed carrier
+- Phase413:
+  `noncompactRealFormTransferProbePassed=True`,
+  `complexifiedWeldsCoincide=True` (the Lorentzian Sym^2(R^{1,3}) weld
+  complexifies exactly to the compact weld under T4 = diag(i,1,1,1),
+  residual 2.2e-16 - every complex-linear no-go count transfers),
+  `inducedFormSignature=(7,3)` (matching the Phase406 Cl(7,3) axis),
+  `linearCountTransfers=True` and `bilinearCountTransfers=True` (direct
+  noncompact recomputation: 0 and 7, equal to compact),
+  `realFormTransferEstablished=True` (THE NO-GOS ARE REAL-FORM
+  INDEPENDENT; the noncompact evasion is closed on finite-dimensional
+  carriers; named residuals: real-structure bookkeeping, unitary
+  category)
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -222,7 +238,22 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work added Phase412 (user directive), the quartic
+The latest work added Phase413, the noncompact real-form transfer
+probe, closing the most plausible loophole named by
+DEEP-RESEARCH-20260612. Exact results: the Lorentzian chimeric weld
+pi_eta: so(1,3) -> gl(10) on Sym^2(R^{1,3}) is an exact homomorphism
+preserving the induced trace form of machine signature (7,3) (the
+Phase406 Cl(7,3) axis); the KEYSTONE - the complexified Lorentzian and
+compact welds coincide exactly under T4 = diag(i,1,1,1) (2.2e-16) - so
+every complex-linear kernel count in Phases 408-412 transfers verbatim;
+direct noncompact recomputation confirms (linear singlet 0, bilinear
+spin-0 = 7). THE NO-GOS ARE REAL-FORM INDEPENDENT. The remaining named
+routes reduce to TWO: the draft's unobserved-phase fields, or a new
+primary-source specification. Study:
+`studies/phase413_noncompact_real_form_transfer_probe_001`
+(IMPLEMENTATION_P413.md).
+
+Before that, Phase412 (user directive), the quartic
 SM-doublet intersection analysis, deciding the order Phase411 deferred
 - via an AMBIENT-INTERSECTION formulation strictly stronger than the
 stable-subspace one. Exact results: the SM-doublet candidates of
@@ -333,35 +364,40 @@ HONEST BOUNDARY. Study:
 
 ### Integration Points Already Updated
 
-Phase412 (like Phase388-411) is wired into:
+Phase413 (like Phase388-412) is wired into:
 
-- `scripts/generate_validated_boson_predictions.sh` (both invocation blocks)
+- `scripts/generate_validated_boson_predictions.sh` (single broad pass; the
+  older duplicated final sweep was removed on 2026-06-16)
 - `studies/phase101_boson_prediction_package_001/Program.cs`
 - `studies/phase202_boson_objective_completion_audit_001/Program.cs`
   (checklist item
-  `quartic-sm-doublet-intersection-analysis-materialized`)
+  `noncompact-real-form-transfer-probe-materialized`)
 - `scripts/verify_boson_claim_integrity.sh`
 - Broad scanner exclusions: phase204, phase205, phase207, phase279,
   phase281, phase295, phase296
 
-Reference tracking was updated in `ExperimentReferences.md` and
+Reference tracking was updated in `ExperimentReferences.md`,
 `docs/Reference/ExperimentReferences/LOCAL-COMPLETION-V29-FERMIONIC-YUKAWA.md`
-(Phase399/Phase400/Phase401 coupled-stationarity closure section).
-The diagnosis journal entry is near the end of
+(Phase399/Phase400/Phase401 coupled-stationarity closure section), and
+`docs/Reference/ExperimentReferences/SUPERPHYSICS-GU-DRAFT-MIRROR-20250530.md`
+(2026-06-16 expanded Superphysics mirror check). The diagnosis journal entry is
+near the end of
 `docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md`.
 
 ### Validation Already Run
 
 ```bash
-dotnet run --project studies/phase412_quartic_sm_doublet_intersection_analysis_001/Phase412QuarticSmDoubletIntersectionAnalysis.csproj
+dotnet run --project studies/phase413_noncompact_real_form_transfer_probe_001/Phase413NoncompactRealFormTransferProbe.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
 ./scripts/generate_validated_boson_predictions.sh
+# Optional Phase405 CUDA parity characterization only when needed:
+PHASE405_ENABLE_GPU=1 LD_LIBRARY_PATH=native/build dotnet run --project studies/phase405_vacuum_manifold_doublet_vev_orbit_scan_001/Phase405VacuumManifoldDoubletVevOrbitScan.csproj
 ```
 
-The targeted Phase412 run passes all exactness checks; Phase202 now
-reports `checklistPassedCount=205`, `checklistFailedCount=3`; claim
+The targeted Phase413 run passes all batteries at 2.2e-16 residuals;
+Phase202 now reports `checklistPassedCount=206`, `checklistFailedCount=3`; claim
 integrity verified with `promotedPhysicalMassClaimCount=0`. (Platform
 state: Gu.Interop.Tests 158/158 with the real-mesh parity and
 buffer-handle recycling tests; both Phase405 platform notes discharged
@@ -392,6 +428,11 @@ Important current local detail notes:
   `docs/Reference/ExperimentReferences/transcripts/`): the GU-native
   structural ansatz for the scalar/Yukawa gap rows - qualitative only;
   cite GU-DRAFT-2021 as primary
+- `SUPERPHYSICS-GU-DRAFT-MIRROR-20250530.md`: readable mirror/search aid for
+  the public GU draft. The 2026-06-16 all-page pass found no fillable
+  epsilon/Shiab doublet map, curvature-to-electroweak-VEV law,
+  observed-field projection rows, weak-angle running, pole extraction, or GeV
+  normalization.
 
 ### Best Next Work
 
@@ -408,27 +449,54 @@ follow-up), Phase406 (falsification map: survivors are exactly
 non-adjoint x larger-algebra; binding gaps choice-independent). The loop
 now resumes the standing research program below.
 
-Phase405 design (ready to implement): su(3)-valued connections (the
-minimal doublet-bearing algebra per Phase403) on a LARGER structured
-fiber-bundle mesh (rows=cols=6+ for a carrier in the thousands);
-question: does the Upsilon = 0 vacuum manifold's local structure permit/
-select doublet-block VEV directions? (1) GN Hessian spectrum at the
-trivial vacuum, kernel/soft directions classified by the su(2)xu(1)
-block decomposition (triplet/doublet/singlet); (2) brute-force orbit
-scan: S_B evaluated exactly over a dense sample of doublet-block VEV
-directions x magnitudes, landscape mapped in gauge-invariant orbit
-coordinates; (3) GPU: Gu.Interop.GpuSolverBackend implements
-ISolverBackend with algebra-generic EvaluateDerived (curvature/torsion/
-Shiab/residual) - run the thousands of independent evaluations on the
-GPU (CudaNativeBackend; native lib verified) with CPU-parity gates on a
-subsample and recorded speedup; check whether BuildJacobian/
-ComputeGradient are GPU-implemented (header comment may be stale - Phase
-I GAP-4/8 added CUDA Stage 2/3 Jacobian/Krylov) and fall back to CPU for
-those pieces if not, honestly recorded.
+Historical note: the old Phase405 design is complete. Its outcome is the
+current vacuum-manifold boundary: rank-1 doublet VEV directions are permitted
+and exactly flat, but the bare Upsilon = 0 landscape does not select them; the
+GPU parity issue discovered during that work was a platform lifecycle defect
+and has been fixed/regression-tested.
 
 The most useful next branches are:
 
-1. The physical VO-6/VO-7 derivation against the Phase398 8-item gap
+1. Mathematical hypothesis-test branches against the remaining gaps. These are
+   NOT promotion routes by themselves; treat them as target-blind experiments
+   that can find a concrete candidate structure or rule out broad ansatz
+   families. Each should be a new fail-closed phase, update the journal, and
+   leave Phase201/Phase256 untouched unless every contract field is actually
+   filled. Recommended order:
+   - General Shiab/epsilon operator ansatz (highest priority): construct the
+     broadest low-order invariant menu using wedge, Hodge star, contraction,
+     commutator, `i`-weighted anticommutator, Clifford volume, and epsilon
+     conjugation. Test whether any such operator can map GU field content into
+     a welded spin-0 SM doublet. This attacks the highest-value open gap while
+     not depending on Weinstein's missing/lost operator-choice notes.
+   - Fermionic cohomology square-root ansatz: use Superphysics `part-09b`
+     section 9.3 as a research clue, not a theorem. It places observed
+     fermions plus LookingGlass/dark/Rarita-Schwinger matter in `chi`, says
+     `omega` subfields accommodate Higgs-like soft masses, Yukawa couplings,
+     CKM, and gauge potentials, then asks whether mixed spinorial-tensorial
+     `Upsilon_omega` is a cohomology obstruction with a first-order square
+     root `delta_omega`. Build target-blind candidate first-order complexes
+     and test whether any produce a welded spin-0 SM doublet or observed-field
+     projection data.
+   - Unobserved-phase carrier census: enumerate field/carrier slots not already
+     ruled out by Phases408-413, especially any draft "unobserved phase" or
+     beyond-frame-cross content that can be pinned to a computable
+     representation. Ask whether a welded spin-0 SM doublet can occur there.
+   - Direction-dependent curvature/VEV coupling scan: Phase410 closed only the
+     uniform bosonic curvature coupling. Enumerate gauge-invariant
+     direction-dependent curvature/connection couplings and test whether any
+     select doublet VEVs without importing electroweak targets.
+   - Observed-field extraction template: assume a candidate scalar doublet
+     exists and build an FMS/dressing-field-style symbolic map that states the
+     minimal algebraic data needed for photon, W, Z, Higgs projection rows,
+     weak-angle lineage, and pole extraction. This clarifies the Phase256
+     contract even if it does not solve the scalar gap.
+   - Scale sanity checks: test naive readings such as the Superphysics/draft
+     stylized `m = R/4` curvature-mass relation by dimensional analysis and
+     target-blind normalization bookkeeping. A likely negative result is still
+     useful because it proves that any viable scale law needs a nontrivial
+     unit/normalization anchor.
+2. The physical VO-6/VO-7 derivation against the Phase398 8-item gap
    ledger, headed by the symmetry-breaking scalar/VEV sector (welded to
    photon/Z mixing by Phase397) and the hypercharge/coupling lineage. Each
    component solved should arrive through a new fail-closed phase that
@@ -476,20 +544,22 @@ The most useful next branches are:
    order is DONE (Phase412, user directive): the ambient intersection
    is ZERO in every channel with decisive margins - THE COMPOSITE
    PROGRAM IS CLOSED THROUGH QUARTIC ORDER, all statistics projections
-   covered. THE INTERNAL STRUCTURAL PROGRAM IS BACK AT ITS HONEST
-   BOUNDARY. Standing work: literature monitoring at checkpoint
+   covered. The noncompact loophole is DONE (Phase413): the
+   complexified welds coincide exactly, so the no-gos are REAL-FORM
+   INDEPENDENT - the noncompact evasion is closed on finite-dimensional
+   carriers (induced signature (7,3), matching the Phase406 Cl(7,3)
+   axis). THE INTERNAL STRUCTURAL PROGRAM IS AT ITS HONEST BOUNDARY,
+   NOW WITH ONLY TWO NAMED ROUTES: the draft's unobserved-phase fields
+   (IF its Chapter-14-era machinery can be pinned to a computable
+   structure - re-read the draft text first), or a new primary-source
+   specification. Standing work: literature monitoring at checkpoint
    cadence; the epsilon/Shiab route if a quantitative specification
-   appears. Optional internal follow-ups, in priority order, IF the
-   loop has idle capacity: (i) a noncompact real-form spot-check of
-   the Phase408/409/411/412 no-gos (the single most plausible loophole
-   per DEEP-RESEARCH-20260612), (ii) the unobserved-phase sector IF
-   the draft's Chapter 14 machinery can be pinned to a computable
-   structure (re-read the draft text first).
+   appears.
    Deep-research follow-ups (catalogue when revisited): GU IV (v2)
    "The Rig for Lambda" (DOI 10.5281/zenodo.17402261); the hinted
    "Geometric Unity V"; the Hebrew University dark-energy talk
    artifact; the unverified "Kleis" machine-audit lead.
-2. (CLOSED by Phase399 + Phase400 + Phase401: the quadratic-model coupled
+3. (CLOSED by Phase399 + Phase400 + Phase401: the quadratic-model coupled
    critical point is solved modulo flat directions, every flat ray is
    quartically lifted, and the attempted construction of the relaxed
    critical point machine-characterized the kernel relaxation as
@@ -498,12 +568,16 @@ The most useful next branches are:
    relaxation out of every trust region. No internal question remains for
    this component; the "4D observed vacuum" gap-ledger row now carries the
    Phase401 boundary evidence.)
-3. Periodic external literature monitoring at checkpoint cadence (the
+4. Periodic external literature monitoring at checkpoint cadence (the
    2026-06-10 survey and the 2026-06-11 post-Phase400 sweep found no
    GU-native scalar-sector source; the 2026-06-11 sweep catalogued
    arXiv:2503.14578, G2-RICCI-FLOW-TORSION-EWSB, which imports the 246 GeV
-   scale and weak angle - the negative boundary stands; the internal
-   toy-branch construction otherwise reached its honest limit).
+   scale and weak angle; the 2026-06-16 expanded Superphysics GU draft mirror
+   pass reviewed all twenty-five RSS-listed pages and found no fillable
+   epsilon/Shiab doublet map, curvature-to-electroweak-VEV law, observed
+   photon/W/Z/H projection rows, weak-angle running, pole extraction, or GeV
+   normalization - the negative boundary stands; the internal toy-branch
+   construction otherwise reached its honest limit).
 
 If a source or new derivation appears to satisfy any of these, create a new
 fail-closed phase rather than editing Phase201/Phase256 directly. The phase
@@ -518,9 +592,9 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -120 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase412|quarticSmDoubletIntersectionAnalysis|quarticWeldedScalarSmDoubletAbsentAllChannels" \
+rg -n "Phase413|noncompactRealFormTransferProbe|realFormTransferEstablished" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
-  studies/phase412_quartic_sm_doublet_intersection_analysis_001 \
+  studies/phase413_noncompact_real_form_transfer_probe_001 \
   studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
 ```
 
@@ -533,11 +607,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase412 output JSON files, and commit a checkpoint
+force-add the ignored Phase413 output JSON files, and commit a checkpoint
 after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase412 quartic sm doublet intersection analysis
+Add phase413 noncompact real form transfer probe
 ```

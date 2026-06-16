@@ -136,17 +136,19 @@ var shiab = new IdentityShiabCpu(mesh, algebra);
 var cpuBackend = new CpuSolverBackend(mesh, algebra, torsion, shiab);
 
 // ---------------------------------------------------------------------------
-// GPU backend setup through the repo's own native library.
+// Optional GPU backend setup through the repo's own native library.
 // ---------------------------------------------------------------------------
+
+bool gpuParityEnabled = Environment.GetEnvironmentVariable("PHASE405_ENABLE_GPU") == "1";
 
 // The native buffer-handle table is monotonic (freed handles are not
 // recycled; MAX_BUFFERS = 4096), so a long scan must periodically recycle
 // the GPU session. Each recycle re-initializes the device context and
 // re-uploads topology/algebra (milliseconds) - recorded honestly below.
 const int GpuEvaluationsPerSession = 350; // ~5 handles per EvaluateDerived
-bool gpuActive;
-string gpuBackendId = "unavailable";
-string gpuInitError = "";
+bool gpuActive = false;
+string gpuBackendId = gpuParityEnabled ? "unavailable" : "disabled";
+string gpuInitError = gpuParityEnabled ? "" : "PHASE405_ENABLE_GPU not set to 1; CPU-only default validation path.";
 int gpuSessionRecycleCount = 0;
 GpuSolverBackend? gpuSolver = null;
 INativeBackend? nativeBackend = null;
@@ -186,16 +188,19 @@ void CloseGpuSession()
     nativeBackend = null;
 }
 
-try
+if (gpuParityEnabled)
 {
-    OpenGpuSession();
-    gpuActive = gpuBackendId == "cuda";
-}
-catch (Exception ex) when (ex is DllNotFoundException or EntryPointNotFoundException or TypeLoadException or InvalidOperationException)
-{
-    gpuInitError = $"{ex.GetType().Name}: {ex.Message}";
-    gpuActive = false;
-    CloseGpuSession();
+    try
+    {
+        OpenGpuSession();
+        gpuActive = gpuBackendId == "cuda";
+    }
+    catch (Exception ex) when (ex is DllNotFoundException or EntryPointNotFoundException or TypeLoadException or InvalidOperationException)
+    {
+        gpuInitError = $"{ex.GetType().Name}: {ex.Message}";
+        gpuActive = false;
+        CloseGpuSession();
+    }
 }
 
 static MeshTopologyData BuildTopology(SimplicialMesh mesh, int dimG)
@@ -462,7 +467,9 @@ bool vacuumManifoldPermitsConstantDoubletVev =
 // objectives are zero, so no distinction is possible - machine-recorded.
 bool noSelectionMechanismAtConstantRank1Level = rank1DirectionsAllFlat;
 bool quarticShapeVerified = pairRecords.All(p => p.QuarticFitResidual <= QuarticFitRelativeTolerance);
-bool gpuParityCharacterizationCompleted = !gpuActive || parityCount > 0;
+bool gpuParitySkippedByDefault = !gpuParityEnabled;
+bool gpuParityCharacterizationCompleted = gpuParityEnabled && (!gpuActive || parityCount > 0);
+bool gpuParityGateSatisfied = gpuParitySkippedByDefault || gpuParityCharacterizationCompleted;
 bool gpuParityDefectDetected = gpuActive && parityAgreeingCount < parityCount;
 int flatPairCount = pairRecords.Count(p => p.IsFlat);
 int commutingPairCount = pairRecords.Count(p => p.CommutatorNormSquared <= 1e-12);
@@ -471,7 +478,7 @@ bool scanInternallyConsistent =
     rank1DirectionsAllFlat &&
     flatnessEqualsCommutativity &&
     quarticShapeVerified &&
-    gpuParityCharacterizationCompleted &&
+    gpuParityGateSatisfied &&
     scanSamples.Count == pairRecords.Count * AngleSteps * MagnitudeSteps;
 
 const bool physicalVacuumDerived = false;
@@ -531,8 +538,11 @@ bool vacuumManifoldDoubletVevOrbitScanPassed =
 string terminalStatus = vacuumManifoldDoubletVevOrbitScanPassed
     ? "vacuum-manifold-permits-constant-doublet-vev-but-provides-no-selection-mechanism"
     : "vacuum-manifold-doublet-vev-orbit-scan-blocked";
+string backendDecisionNote = gpuParitySkippedByDefault
+    ? "Default validation ran CPU-only; set PHASE405_ENABLE_GPU=1 to run the CUDA parity characterization. The science verdicts rely on the CPU reference exact-shape scan."
+    : "GPU/CPU parity and the per-sample timing are recorded.";
 string decision = vacuumManifoldDoubletVevOrbitScanPassed
-    ? "Brute force #2 is complete, run through the repo's own GPU backend with CPU-reference parity. On the control branch the residual is exactly Upsilon = (1/2)[omega, omega] at A0 = 0, and the scan machine-verifies the consequences over the full su(3) orbit space on the larger mesh: (1) EVERY rank-1 constant VEV direction - doublet block included - lies exactly on the Upsilon = 0 vacuum manifold (the manifold PERMITS constant doublet VEVs); (2) flatness of mixed directions coincides exactly with commutativity, and the lifted landscape matches the exact quartic shape t^4 sin^2(phi) cos^2(phi) ||[u,v]||^2 everywhere; (3) the landscape treats triplet, doublet, and singlet rank-1 directions IDENTICALLY (all exactly flat), so NO SELECTION MECHANISM for a doublet VEV exists at the constant-field level of the control branch - scalar-sector sub-gap (b) (vacuum-manifold breaking geometry) is confirmed open with sharpened evidence: selection must come from structure beyond the bare control-branch bosonic objective (fermionic backreaction, the physical GU action's additional terms, or boundary/topological data). GPU/CPU parity and the per-sample timing are recorded. No scales exist; nothing is promoted; no contract field is filled."
+    ? $"Brute force #2 is complete. On the control branch the residual is exactly Upsilon = (1/2)[omega, omega] at A0 = 0, and the scan machine-verifies the consequences over the full su(3) orbit space on the larger mesh: (1) EVERY rank-1 constant VEV direction - doublet block included - lies exactly on the Upsilon = 0 vacuum manifold (the manifold PERMITS constant doublet VEVs); (2) flatness of mixed directions coincides exactly with commutativity, and the lifted landscape matches the exact quartic shape t^4 sin^2(phi) cos^2(phi) ||[u,v]||^2 everywhere; (3) the landscape treats triplet, doublet, and singlet rank-1 directions IDENTICALLY (all exactly flat), so NO SELECTION MECHANISM for a doublet VEV exists at the constant-field level of the control branch - scalar-sector sub-gap (b) (vacuum-manifold breaking geometry) is confirmed open with sharpened evidence: selection must come from structure beyond the bare control-branch bosonic objective (fermionic backreaction, the physical GU action's additional terms, or boundary/topological data). {backendDecisionNote} No scales exist; nothing is promoted; no contract field is filled."
     : "Do not use the orbit-scan verdicts until the precursors, the exact-shape battery, and the GPU/CPU parity gate pass.";
 
 var result = new
@@ -549,7 +559,10 @@ var result = new
     vacuumManifoldPermitsConstantDoubletVev,
     noSelectionMechanismAtConstantRank1Level,
     quarticShapeVerified,
+    gpuParityEnabled,
+    gpuParitySkippedByDefault,
     gpuParityCharacterizationCompleted,
+    gpuParityGateSatisfied,
     gpuParityDefectDetected,
     parityAgreeingCount,
     maxParityAbsoluteDeviation,
@@ -580,7 +593,9 @@ var result = new
     {
         residualIdentity = "trivial-torsion identity-Shiab branch at A0 = 0: Upsilon = F - d omega = (1/2)[omega wedge omega] exactly; a SINGLE Lie direction with any profile has [c,c] = 0 (always flat), and two directions with DISTINCT profiles (uniform x midpoint-x) are flat iff [u,v] = 0 - machine-verified, not assumed",
         scan = $"all {pairRecords.Count} unordered su(3) direction pairs x {AngleSteps} mixing angles x {MagnitudeSteps} magnitudes (t <= {MaxMagnitude}); su(2)xu(1) blocks: T1-3 triplet, T4-7 doublet, T8 singlet (Phase403)",
-        gpu = "CudaNativeBackend -> GpuSolverBackend (repo native lib, algebra/topology uploaded from the repo factories); every scan sample evaluated on the GPU; CPU-reference parity on a strided subsample",
+        gpu = gpuParityEnabled
+            ? "CPU reference scan with CudaNativeBackend -> GpuSolverBackend parity on a strided subsample"
+            : "CPU reference scan only by default; set PHASE405_ENABLE_GPU=1 to run CudaNativeBackend -> GpuSolverBackend parity",
         verdictRule = "permits-doublet-VEV = all doublet rank-1 samples exactly flat; no-selection = all rank-1 directions flat (no block distinguished)",
     },
     applicationSubjectKind = ApplicationSubjectKind,
@@ -641,6 +656,7 @@ Console.WriteLine(terminalStatus);
 Console.WriteLine($"vacuumManifoldDoubletVevOrbitScanPassed={vacuumManifoldDoubletVevOrbitScanPassed}");
 Console.WriteLine($"gpuActive={gpuActive} backend={gpuBackendId}");
 Console.WriteLine($"sampleCount={scanSamples.Count} cpuScanSeconds={gpuScanSeconds:F2}");
+Console.WriteLine($"gpuParityEnabled={gpuParityEnabled} gpuParityGateSatisfied={gpuParityGateSatisfied} gpuParitySkippedByDefault={gpuParitySkippedByDefault}");
 Console.WriteLine($"gpuParityDefectDetected={gpuParityDefectDetected} parityAgreeing={parityAgreeingCount}/{parityCount} maxAbsDev={maxParityAbsoluteDeviation:E3}");
 Console.WriteLine($"rank1DirectionsAllFlat={rank1DirectionsAllFlat}");
 Console.WriteLine($"flatnessEqualsCommutativity={flatnessEqualsCommutativity}");

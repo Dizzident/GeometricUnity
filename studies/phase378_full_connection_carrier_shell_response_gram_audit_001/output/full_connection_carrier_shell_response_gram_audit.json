@@ -1,6 +1,6 @@
 {
   "phaseId": "phase378-full-connection-carrier-shell-response-gram-audit",
-  "generatedAt": "2026-06-12T21:30:07.8095307+00:00",
+  "generatedAt": "2026-06-16T17:20:10.9022089+00:00",
   "terminalStatus": "full-connection-carrier-shell-response-gram-validated-discrete-only",
   "fullConnectionCarrierShellResponseGramAuditPassed": true,
   "phase376DiscreteShellReplayPresent": true,

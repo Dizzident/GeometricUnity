@@ -61,6 +61,10 @@ negative-definite; metric convention recorded).
   CUDA. Re-run after the fix: 27/27 parity samples agree
   (maxAbsDev 3.9e-34); all science verdicts unchanged (the scan always ran
   on the CPU reference per IA-5).
+- **DEFAULT VALIDATION MODE (2026-06-16)**: the study now runs the CPU
+  reference scan only by default and records `gpuParitySkippedByDefault=true`.
+  Set `PHASE405_ENABLE_GPU=1` only when explicitly re-running the CUDA parity
+  characterization.
 
 ## Status
 
@@ -72,4 +76,6 @@ fields.
 
 ```bash
 LD_LIBRARY_PATH=native/build dotnet run --project studies/phase405_vacuum_manifold_doublet_vev_orbit_scan_001/Phase405VacuumManifoldDoubletVevOrbitScan.csproj
+
+PHASE405_ENABLE_GPU=1 LD_LIBRARY_PATH=native/build dotnet run --project studies/phase405_vacuum_manifold_doublet_vev_orbit_scan_001/Phase405VacuumManifoldDoubletVevOrbitScan.csproj
 ```

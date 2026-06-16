@@ -1,7 +1,7 @@
 {
   "phaseId": "phase356-eguchi-hanson-substandard-higgs-source-audit",
   "terminalStatus": "eguchi-hanson-substandard-higgs-source-audit-imported-w-angle-relation-not-gu-source",
-  "generatedAt": "2026-06-12T21:27:14.7936355+00:00",
+  "generatedAt": "2026-06-16T17:17:26.0332899+00:00",
   "eguchiHansonSubstandardHiggsSourceAuditPassed": true,
   "eguchiHansonSubstandardLeadPresent": true,
   "eguchiHansonSubstandardPrimarySourceReviewed": true,

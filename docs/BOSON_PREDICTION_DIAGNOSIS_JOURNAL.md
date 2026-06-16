@@ -17461,3 +17461,116 @@ priority order: (i) the noncompact real-form spot-check of the
 Phase408/409/411/412 no-gos (the most plausible loophole), (ii) the
 unobserved-phase sector if the draft's machinery can be pinned to a
 computable structure.
+
+## 2026-06-12 - Phase413: The Noncompact Loophole Is Closed - The No-Gos Are Real-Form Independent
+
+### Context
+
+DEEP-RESEARCH-20260612 named a noncompact-only invariant (one absent on
+the compact form) as the single most plausible evasion of the
+Phase408-412 composite no-gos, all of which were proved on the compact
+so(4)/so(10) chain while the draft's structures are Lorentzian/
+Spin(6,4). Phase413 decides the loophole.
+
+### Result
+
+- TRANSFER PRINCIPLE (machine-verified): every no-go in the series is a
+  complex-linear kernel dimension of operator families built
+  functorially from the weld. The Lorentzian chimeric weld
+  pi_eta: so(1,3) -> gl(10) on Sym^2(R^{1,3}) (eta = diag(-1,1,1,1)) is
+  an exact Lie homomorphism (residual 2.2e-16) preserving the induced
+  trace form, whose machine signature is (7,3) - exactly the Cl(7,3)
+  signature axis Phase406 verified independently.
+- THE KEYSTONE: under T4 = diag(i,1,1,1) the complexified Lorentzian
+  weld COINCIDES exactly with the complexified compact weld (residual
+  2.2e-16). Every complex-linear kernel count therefore transfers
+  verbatim to the noncompact form - no noncompact-only invariant can
+  exist on the chain's finite-dimensional carriers.
+- DIRECT RECOMPUTATION (fail-closed): on the noncompact form, the welded
+  frame-cross block has linear singlet content 0 and bilinear spin-0
+  dimension exactly 7 - matching the compact counts.
+- VERDICT: the Phase408/409/411/412 no-gos are REAL-FORM INDEPENDENT.
+  Named residuals: real/Majorana structure bookkeeping (relabels real
+  dimensions; cannot create complex invariants) and the unitary
+  infinite-dimensional representation category (out of scope).
+- THE REMAINING NAMED ROUTES REDUCE TO TWO: the draft's unobserved-phase
+  fields, or a new primary-source specification.
+- Study: studies/phase413_noncompact_real_form_transfer_probe_001
+  (IMPLEMENTATION_P413.md).
+
+### Validation
+
+- Targeted Phase413 run passed (all residuals 2.2e-16); Phase101
+  includes the block; Phase202: checklistPassedCount=206,
+  checklistFailedCount=3; claim integrity verified with
+  promotedPhysicalMassClaimCount=0.
+
+### Standing Next Work
+
+Literature monitoring at checkpoint cadence; the epsilon/Shiab route if
+a quantitative specification appears; optional: the unobserved-phase
+sector if the draft's machinery can be pinned to a computable structure.
+
+## 2026-06-16 - Superphysics GU Draft Mirror Expanded Coverage Check
+
+### Context
+
+User asked to read the restart prompt, catch up, and navigate the
+Superphysics GU article set if it was not already in the research logs. The
+mirror was already present through Phase328, but Phase328 explicitly logged
+only the index and selected pages. The 2026-06-16 pass checked the current
+RSS/index coverage and reviewed all twenty-five pages from `part-01` through
+`part-12d`, focusing on the outstanding post-Phase413 contract fields.
+
+### Result
+
+- Coverage finding: Superphysics is already a known search aid, but the current
+  RSS index also exposes pages not individually named in Phase328, including
+  `part-08` Shiab, `part-09`/`part-09b` Lagrangians, `part-11` observed field
+  content, and `part-12c` chirality/curvature.
+- GAP 1 remains unfilled. `part-08` gives a Shiab contraction template with
+  gauge conjugation by `epsilon` and invariant forms, but says the
+  representation-theoretic operator-choice notes could not be located and would
+  need reconstruction from Bianchi-identity criteria. No spin-0 SM-doublet
+  extraction map is specified.
+- `part-09` sharpens the same boundary: it explicitly allows multiple Shiab
+  choices, starts from an Einstein-contraction-like Shiab operator that
+  annihilates Weyl curvature while preserving/mixing Ricci/scalar analogues,
+  and says the author's settled operator was chosen for Bianchi-identity
+  properties but cannot currently be located. This is a useful target for a
+  Shiab-ansatz reconstruction experiment, not a fillable operator theorem.
+- `part-09b` section 9.3 is relevant to the experimental branch list: it places
+  observed fermions plus LookingGlass/dark/Rarita-Schwinger matter in `chi`,
+  says `omega` subfields accommodate Higgs-like soft masses, Yukawa couplings,
+  CKM, and gauge potentials, and asks whether mixed spinorial-tensorial
+  `Upsilon_omega` is a cohomology obstruction with a first-order square root.
+  This is a good target for a fermionic cohomology/square-root ansatz phase,
+  but it still gives no scalar doublet extraction map, observed-boson
+  projection rows, weak-angle lineage, pole prescription, or GeV law.
+- GAP 2 remains unfilled. `part-12c` gives only a stylized curvature/chirality
+  relation `m = R(y)/4` for a Dirac equation in approximately constant scalar
+  curvature, and `part-12d` states that the cosmological constant is a VEV of a
+  field playing the role of fundamental mass. No electroweak VEV-selection
+  equation, coefficient chain, unit normalization, or GeV anchor appears.
+- GAP 4 remains unfilled. `part-11` gives pullback/branching language for
+  observed field content and internal quantum numbers; `part-12d` gives a
+  location table for Higgs field, weak isospin, weak hypercharge, Higgs
+  potential, Higgs KG, cosmological constant, and Yukawa couplings. It gives no
+  photon/Z/W/H observed projection rows, weak-angle running prescription,
+  mass-matrix diagonalization, pole extraction, or physical source rows.
+- The Phase328 verdict is strengthened, not changed: the mirror preserves GU
+  route names and draft context, but cannot fill Phase201 W/Z, Phase201 Higgs,
+  or Phase256 observed-field extraction contracts.
+
+### Reference Update
+
+- Added `SUPERPHYSICS-GU-DRAFT-MIRROR-20250530` to `ExperimentReferences.md`.
+- Added detail note
+  `docs/Reference/ExperimentReferences/SUPERPHYSICS-GU-DRAFT-MIRROR-20250530.md`.
+
+### Standing Next Work
+
+No promotion gates change. After Phase413 and this all-page Superphysics check,
+the standing routes remain exactly: the draft's unobserved-phase fields if a
+computable quantitative specification appears, or a new primary-source
+specification.

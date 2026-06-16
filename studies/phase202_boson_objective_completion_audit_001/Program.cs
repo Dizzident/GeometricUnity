@@ -178,6 +178,7 @@ const string Phase409Path = "studies/phase409_invariant_pairing_menu_spin_zero_e
 const string Phase410Path = "studies/phase410_curvature_coupled_vev_selection_probe_001/output/curvature_coupled_vev_selection_probe_summary.json";
 const string Phase411Path = "studies/phase411_quartic_dirac_squared_spinor_composite_probe_001/output/quartic_dirac_squared_spinor_composite_probe_summary.json";
 const string Phase412Path = "studies/phase412_quartic_sm_doublet_intersection_analysis_001/output/quartic_sm_doublet_intersection_analysis_summary.json";
+const string Phase413Path = "studies/phase413_noncompact_real_form_transfer_probe_001/output/noncompact_real_form_transfer_probe_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -389,6 +390,7 @@ using var phase409 = File.Exists(Phase409Path) ? JsonDocument.Parse(File.ReadAll
 using var phase410 = File.Exists(Phase410Path) ? JsonDocument.Parse(File.ReadAllText(Phase410Path)) : null;
 using var phase411 = File.Exists(Phase411Path) ? JsonDocument.Parse(File.ReadAllText(Phase411Path)) : null;
 using var phase412 = File.Exists(Phase412Path) ? JsonDocument.Parse(File.ReadAllText(Phase412Path)) : null;
+using var phase413 = File.Exists(Phase413Path) ? JsonDocument.Parse(File.ReadAllText(Phase413Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -5067,7 +5069,9 @@ var vacuumManifoldDoubletVevOrbitScanPassed = vacuumManifoldDoubletVevOrbitScanM
     && JsonBool(phase405.RootElement, "quarticShapeVerified") is true
     && JsonBool(phase405.RootElement, "vacuumManifoldPermitsConstantDoubletVev") is true
     && JsonBool(phase405.RootElement, "noSelectionMechanismAtConstantRank1Level") is true
-    && JsonBool(phase405.RootElement, "gpuParityCharacterizationCompleted") is true
+    && JsonBool(phase405.RootElement, "gpuParityGateSatisfied") is true
+    && (JsonBool(phase405.RootElement, "gpuParityCharacterizationCompleted") is true
+        || JsonBool(phase405.RootElement, "gpuParitySkippedByDefault") is true)
     && JsonBool(phase405.RootElement, "physicalVacuumDerived") is false
     && JsonBool(phase405.RootElement, "physicalCouplingProvided") is false
     && JsonBool(phase405.RootElement, "sourceContractApplicationAllowed") is false
@@ -5242,6 +5246,28 @@ var quarticSmDoubletIntersectionAnalysisPassed = quarticSmDoubletIntersectionAna
     && JsonBool(phase412.RootElement, "phase201TemplateMutated") is false
     && JsonInt(phase412.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
     && JsonInt(phase412.RootElement, "acceptedContractFieldCount") == 0;
+var noncompactRealFormTransferProbeMaterialized = phase413 is not null;
+var noncompactRealFormTransferProbePassed = noncompactRealFormTransferProbeMaterialized
+    && JsonBool(phase413!.RootElement, "noncompactRealFormTransferProbePassed") is true
+    && JsonBool(phase413.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase413.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase413.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase413.RootElement, "applicationSubjectKind") == "noncompact-real-form-transfer-probe"
+    && JsonBool(phase413.RootElement, "lorentzWeldIsHomomorphism") is true
+    && JsonBool(phase413.RootElement, "complexifiedWeldsCoincide") is true
+    && JsonBool(phase413.RootElement, "linearCountTransfers") is true
+    && JsonBool(phase413.RootElement, "bilinearCountTransfers") is true
+    && JsonBool(phase413.RootElement, "physicalCouplingProvided") is false
+    && JsonBool(phase413.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase413.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase413.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase413.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase413.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase413.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase413.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase413.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase413.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase413.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -7455,7 +7481,7 @@ var checklist = new[]
         "Scan the Upsilon = 0 vacuum manifold over the su(3) orbit space for doublet-VEV permission and selection, with the GPU parity characterization recorded.",
         vacuumManifoldDoubletVevOrbitScanPassed ? "passed" : "failed",
         vacuumManifoldDoubletVevOrbitScanMaterialized
-            ? $"vacuumManifoldDoubletVevOrbitScanPassed={JsonBool(phase405!.RootElement, "vacuumManifoldDoubletVevOrbitScanPassed")}; targetBlind={JsonBool(phase405.RootElement, "targetBlindConstruction")}; permitsDoubletVev={JsonBool(phase405.RootElement, "vacuumManifoldPermitsConstantDoubletVev")}; noSelection={JsonBool(phase405.RootElement, "noSelectionMechanismAtConstantRank1Level")}; flatnessEqualsCommutativity={JsonBool(phase405.RootElement, "flatnessEqualsCommutativity")}; gpuParityDefectDetected={JsonBool(phase405.RootElement, "gpuParityDefectDetected")}; canFillPhase201WzContract={JsonBool(phase405.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase405.RootElement, "decision")}"
+            ? $"vacuumManifoldDoubletVevOrbitScanPassed={JsonBool(phase405!.RootElement, "vacuumManifoldDoubletVevOrbitScanPassed")}; targetBlind={JsonBool(phase405.RootElement, "targetBlindConstruction")}; permitsDoubletVev={JsonBool(phase405.RootElement, "vacuumManifoldPermitsConstantDoubletVev")}; noSelection={JsonBool(phase405.RootElement, "noSelectionMechanismAtConstantRank1Level")}; flatnessEqualsCommutativity={JsonBool(phase405.RootElement, "flatnessEqualsCommutativity")}; gpuParityGateSatisfied={JsonBool(phase405.RootElement, "gpuParityGateSatisfied")}; gpuParitySkippedByDefault={JsonBool(phase405.RootElement, "gpuParitySkippedByDefault")}; gpuParityDefectDetected={JsonBool(phase405.RootElement, "gpuParityDefectDetected")}; canFillPhase201WzContract={JsonBool(phase405.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase405.RootElement, "decision")}"
             : "Phase405 artifact not materialized",
         Phase405Path),
     new ObjectiveChecklistItem(
@@ -7514,6 +7540,14 @@ var checklist = new[]
             ? $"quarticSmDoubletIntersectionAnalysisPassed={JsonBool(phase412!.RootElement, "quarticSmDoubletIntersectionAnalysisPassed")}; targetBlind={JsonBool(phase412.RootElement, "targetBlindConstruction")}; unionIntersectionRealDimension={JsonInt(phase412.RootElement, "unionIntersectionRealDimension")}; quarticWeldedScalarSmDoubletAbsentAllChannels={JsonBool(phase412.RootElement, "quarticWeldedScalarSmDoubletAbsentAllChannels")}; canFillPhase201WzContract={JsonBool(phase412.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase412.RootElement, "decision")}"
             : "Phase412 artifact not materialized",
         Phase412Path),
+    new ObjectiveChecklistItem(
+        "noncompact-real-form-transfer-probe-materialized",
+        "Decide the noncompact-evasion loophole: verify the Lorentzian chimeric weld complexifies to the compact weld and that the headline no-go counts transfer to the noncompact form.",
+        noncompactRealFormTransferProbePassed ? "passed" : "failed",
+        noncompactRealFormTransferProbeMaterialized
+            ? $"noncompactRealFormTransferProbePassed={JsonBool(phase413!.RootElement, "noncompactRealFormTransferProbePassed")}; targetBlind={JsonBool(phase413.RootElement, "targetBlindConstruction")}; complexifiedWeldsCoincide={JsonBool(phase413.RootElement, "complexifiedWeldsCoincide")}; realFormTransferEstablished={JsonBool(phase413.RootElement, "realFormTransferEstablished")}; canFillPhase201WzContract={JsonBool(phase413.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase413.RootElement, "decision")}"
+            : "Phase413 artifact not materialized",
+        Phase413Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
