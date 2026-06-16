@@ -180,6 +180,7 @@ const string Phase411Path = "studies/phase411_quartic_dirac_squared_spinor_compo
 const string Phase412Path = "studies/phase412_quartic_sm_doublet_intersection_analysis_001/output/quartic_sm_doublet_intersection_analysis_summary.json";
 const string Phase413Path = "studies/phase413_noncompact_real_form_transfer_probe_001/output/noncompact_real_form_transfer_probe_summary.json";
 const string Phase414Path = "studies/phase414_general_shiab_epsilon_operator_ansatz_probe_001/output/general_shiab_epsilon_operator_ansatz_probe_summary.json";
+const string Phase415Path = "studies/phase415_fermionic_cohomology_square_root_ansatz_probe_001/output/fermionic_cohomology_square_root_ansatz_probe_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -393,6 +394,7 @@ using var phase411 = File.Exists(Phase411Path) ? JsonDocument.Parse(File.ReadAll
 using var phase412 = File.Exists(Phase412Path) ? JsonDocument.Parse(File.ReadAllText(Phase412Path)) : null;
 using var phase413 = File.Exists(Phase413Path) ? JsonDocument.Parse(File.ReadAllText(Phase413Path)) : null;
 using var phase414 = File.Exists(Phase414Path) ? JsonDocument.Parse(File.ReadAllText(Phase414Path)) : null;
+using var phase415 = File.Exists(Phase415Path) ? JsonDocument.Parse(File.ReadAllText(Phase415Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -5297,6 +5299,47 @@ var generalShiabEpsilonOperatorAnsatzProbePassed = generalShiabEpsilonOperatorAn
     && JsonBool(phase414.RootElement, "phase201TemplateMutated") is false
     && JsonInt(phase414.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
     && JsonInt(phase414.RootElement, "acceptedContractFieldCount") == 0;
+var fermionicCohomologySquareRootAnsatzProbeMaterialized = phase415 is not null;
+var fermionicCohomologySquareRootAnsatzProbePassed = fermionicCohomologySquareRootAnsatzProbeMaterialized
+    && JsonBool(phase415!.RootElement, "fermionicCohomologySquareRootAnsatzProbePassed") is true
+    && JsonBool(phase415.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase415.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase415.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase415.RootElement, "applicationSubjectKind") == "fermionic-cohomology-square-root-ansatz-probe"
+    && JsonBool(phase415.RootElement, "phase370PrecursorPassed") is true
+    && JsonBool(phase415.RootElement, "phase389PrecursorPassed") is true
+    && JsonBool(phase415.RootElement, "phase397PrecursorPassed") is true
+    && JsonBool(phase415.RootElement, "phase401PrecursorPassed") is true
+    && JsonBool(phase415.RootElement, "phase411PrecursorPassed") is true
+    && JsonBool(phase415.RootElement, "phase414PrecursorPassed") is true
+    && JsonInt(phase415.RootElement, "requiredSpecificationFieldCount") == 8
+    && JsonInt(phase415.RootElement, "suppliedRequiredSpecificationFieldCount") == 0
+    && JsonBool(phase415.RootElement, "requiredSpecificationAbsent") is true
+    && JsonBool(phase415.RootElement, "sourceProvidesExplicitDeltaOmega") is false
+    && JsonBool(phase415.RootElement, "sourceProvidesFirstOrderComplex") is false
+    && JsonBool(phase415.RootElement, "sourceProvidesCohomologyTarget") is false
+    && JsonBool(phase415.RootElement, "sourceProvidesSquareLaw") is false
+    && JsonInt(phase415.RootElement, "localCandidateComplexCount") == 6
+    && JsonInt(phase415.RootElement, "locallySpecifiedCandidateCount") == 3
+    && JsonInt(phase415.RootElement, "closedLocalCandidateCount") == 3
+    && JsonInt(phase415.RootElement, "openSpecificationCandidateCount") == 3
+    && JsonBool(phase415.RootElement, "specifiedLocalCandidatesClosed") is true
+    && JsonBool(phase415.RootElement, "openCandidatesRequireNewSpecification") is true
+    && JsonInt(phase415.RootElement, "candidateComplexesWithWeldedScalarSmDoubletCount") == 0
+    && JsonInt(phase415.RootElement, "candidateComplexesWithObservedProjectionDataCount") == 0
+    && JsonBool(phase415.RootElement, "deltaOmegaStillRequiresSpecification") is true
+    && JsonBool(phase415.RootElement, "unobservedPhaseStillRequiresCarrier") is true
+    && JsonBool(phase415.RootElement, "physicalCouplingProvided") is false
+    && JsonBool(phase415.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase415.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase415.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase415.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase415.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase415.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase415.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase415.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase415.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase415.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -7585,6 +7628,14 @@ var checklist = new[]
             ? $"generalShiabEpsilonOperatorAnsatzProbePassed={JsonBool(phase414!.RootElement, "generalShiabEpsilonOperatorAnsatzProbePassed")}; targetBlind={JsonBool(phase414.RootElement, "targetBlindConstruction")}; requestedOperatorAlphabetCovered={JsonBool(phase414.RootElement, "requestedOperatorAlphabetCovered")}; lowOrderProbedCarrierFamiliesClosed={JsonBool(phase414.RootElement, "lowOrderProbedCarrierFamiliesClosed")}; openResidualFamilyCount={JsonInt(phase414.RootElement, "openResidualFamilyCount")}; canFillPhase201WzContract={JsonBool(phase414.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase414.RootElement, "decision")}"
             : "Phase414 artifact not materialized",
         Phase414Path),
+    new ObjectiveChecklistItem(
+        "fermionic-cohomology-square-root-ansatz-probe-materialized",
+        "Turn the part-09b delta_omega cohomology/square-root clue into an admissibility probe, closing locally specified candidates and naming the source-level specification still required.",
+        fermionicCohomologySquareRootAnsatzProbePassed ? "passed" : "failed",
+        fermionicCohomologySquareRootAnsatzProbeMaterialized
+            ? $"fermionicCohomologySquareRootAnsatzProbePassed={JsonBool(phase415!.RootElement, "fermionicCohomologySquareRootAnsatzProbePassed")}; targetBlind={JsonBool(phase415.RootElement, "targetBlindConstruction")}; suppliedRequiredSpecificationFieldCount={JsonInt(phase415.RootElement, "suppliedRequiredSpecificationFieldCount")}; specifiedLocalCandidatesClosed={JsonBool(phase415.RootElement, "specifiedLocalCandidatesClosed")}; deltaOmegaStillRequiresSpecification={JsonBool(phase415.RootElement, "deltaOmegaStillRequiresSpecification")}; canFillPhase201WzContract={JsonBool(phase415.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase415.RootElement, "decision")}"
+            : "Phase415 artifact not materialized",
+        Phase415Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

@@ -1,0 +1,217 @@
+{
+  "phaseId": "phase415-fermionic-cohomology-square-root-ansatz-probe",
+  "generatedAt": "2026-06-16T21:37:50.2481827+00:00",
+  "terminalStatus": "fermionic-cohomology-square-root-ansatz-closed-on-specified-carriers-delta-omega-source-required",
+  "fermionicCohomologySquareRootAnsatzProbePassed": true,
+  "phase370PrecursorPassed": true,
+  "phase389PrecursorPassed": true,
+  "phase397PrecursorPassed": true,
+  "phase401PrecursorPassed": true,
+  "phase411PrecursorPassed": true,
+  "phase414PrecursorPassed": true,
+  "probeInternallyConsistent": true,
+  "part09bClue": {
+    "source": "https://www.superphysics.org/research/weinstein/unity/part-09b/#93-the-fermionic-sector",
+    "sourceRole": "secondary readable mirror / research clue, not promotion evidence",
+    "reviewedByLocalLedger": "docs/Reference/ExperimentReferences/SUPERPHYSICS-GU-DRAFT-MIRROR-20250530.md",
+    "chiContentNamed": true,
+    "omegaSubfieldsNamed": true,
+    "upsilonOmegaCohomologyObstructionQuestionPresent": true,
+    "squareRootDeltaOmegaQuestionPresent": true,
+    "sourceProvidesExplicitDeltaOmegaDifferential": false,
+    "sourceProvidesCarrierComplex": false,
+    "sourceProvidesCohomologyTarget": false,
+    "sourceProvidesNilpotenceOrSquareLaw": false,
+    "sourceProvidesAdjointOrInnerProductConvention": false,
+    "sourceProvidesScalarDoubletProjection": false,
+    "sourceProvidesObservedPhotonWzHiggsRows": false,
+    "sourceProvidesWeakAngleScalePoleOrGevLineage": false
+  },
+  "requiredSpecificationFields": [
+    {
+      "id": "delta-omega-differential",
+      "requirement": "Explicit first-order operator delta_omega, including principal symbol and lower-order terms.",
+      "suppliedByReviewedSource": false
+    },
+    {
+      "id": "carrier-complex",
+      "requirement": "Domain/codomain carrier sequence for chi, omega, and Upsilon_omega.",
+      "suppliedByReviewedSource": false
+    },
+    {
+      "id": "cohomology-target",
+      "requirement": "The cohomology group or obstruction class whose vanishing/non-vanishing is tested.",
+      "suppliedByReviewedSource": false
+    },
+    {
+      "id": "square-law",
+      "requirement": "A source-defined equation such as delta_omega^2 = wedge(Upsilon_omega) plus curvature/obstruction terms.",
+      "suppliedByReviewedSource": false
+    },
+    {
+      "id": "adjoint-inner-product",
+      "requirement": "Adjoint and inner-product convention connecting the complex to the action.",
+      "suppliedByReviewedSource": false
+    },
+    {
+      "id": "scalar-doublet-projection",
+      "requirement": "A target-independent projection from the complex to a welded spin-0 SM doublet.",
+      "suppliedByReviewedSource": false
+    },
+    {
+      "id": "observed-boson-rows",
+      "requirement": "Photon/W/Z/H observed-field extraction rows or namespace map.",
+      "suppliedByReviewedSource": false
+    },
+    {
+      "id": "normalization-lineage",
+      "requirement": "Weak-angle, VEV/source-scale, pole extraction, and GeV/unit normalization lineage.",
+      "suppliedByReviewedSource": false
+    }
+  ],
+  "requiredSpecificationFieldCount": 8,
+  "suppliedRequiredSpecificationFieldCount": 0,
+  "requiredSpecificationAbsent": true,
+  "sourceProvidesExplicitDeltaOmega": false,
+  "sourceProvidesFirstOrderComplex": false,
+  "sourceProvidesCohomologyTarget": false,
+  "sourceProvidesSquareLaw": false,
+  "sourceProvidesScalarDoubletProjection": false,
+  "sourceProvidesObservedFieldExtractionRows": false,
+  "sourceProvidesWeakAngleScalePoleOrGevLineage": false,
+  "candidateComplexes": [
+    {
+      "id": "de-rham-upsilon-wedge-complex",
+      "carrier": "omega-form complex with zero-order Upsilon_omega wedge map",
+      "evidencePhase": "source clue only",
+      "locallySpecified": false,
+      "targetBlind": false,
+      "squareLawMaterialized": false,
+      "producesWeldedScalarSmDoublet": false,
+      "producesObservedProjectionData": false,
+      "status": "open",
+      "decisionReason": "The page suggests a cohomology obstruction but does not define the first-order square root, grading, or square law."
+    },
+    {
+      "id": "dirac-pair-chiral-square-root",
+      "carrier": "chiral Dirac-pair route S_L -\u003E S_R with a Dirac-squared/Yukawa reading",
+      "evidencePhase": "phase411",
+      "locallySpecified": true,
+      "targetBlind": true,
+      "squareLawMaterialized": false,
+      "producesWeldedScalarSmDoublet": false,
+      "producesObservedProjectionData": false,
+      "status": "closed",
+      "decisionReason": "Phase411 closes the natural bilinear Yukawa channel: the left-right Dirac mass channel contains no welded scalar, and the Majorana welded scalars carry no SM doublet."
+    },
+    {
+      "id": "vo7-gauge-compatibility-control-complex",
+      "carrier": "candidate mixed block with exact discrete gauge-compatibility identity",
+      "evidencePhase": "phase389",
+      "locallySpecified": true,
+      "targetBlind": true,
+      "squareLawMaterialized": false,
+      "producesWeldedScalarSmDoublet": false,
+      "producesObservedProjectionData": false,
+      "status": "closed",
+      "decisionReason": "Phase389 materializes an exact control-branch identity, but no physical M_psi branch, completed fermionic action, or physical effective Hessian is supplied."
+    },
+    {
+      "id": "fermion-induced-source-backreaction-complex",
+      "carrier": "mixed-Hessian/backreaction route to coupled stationarity",
+      "evidencePhase": "phase397/phase401",
+      "locallySpecified": true,
+      "targetBlind": true,
+      "squareLawMaterialized": false,
+      "producesWeldedScalarSmDoublet": false,
+      "producesObservedProjectionData": false,
+      "status": "closed",
+      "decisionReason": "Phase397 shows neutral mixing vanishes in the fermion-bilinear channel, and Phase401 characterizes the coupled critical-point relaxation as non-perturbative on the toy action."
+    },
+    {
+      "id": "superconnection-lower-right-quadrant-complex",
+      "carrier": "superconnection-style completion with a nontrivial lower-right quadrant",
+      "evidencePhase": "none",
+      "locallySpecified": false,
+      "targetBlind": false,
+      "squareLawMaterialized": false,
+      "producesWeldedScalarSmDoublet": false,
+      "producesObservedProjectionData": false,
+      "status": "open",
+      "decisionReason": "No source-defined lower-right map, grading, or square law exists in the local/public material reviewed."
+    },
+    {
+      "id": "unobserved-phase-augmented-complex",
+      "carrier": "delta_omega complex on draft unobserved-phase fields",
+      "evidencePhase": "none",
+      "locallySpecified": false,
+      "targetBlind": false,
+      "squareLawMaterialized": false,
+      "producesWeldedScalarSmDoublet": false,
+      "producesObservedProjectionData": false,
+      "status": "open",
+      "decisionReason": "No computable unobserved-phase representation, action, or coupling has been pinned to source text."
+    }
+  ],
+  "localCandidateComplexCount": 6,
+  "locallySpecifiedCandidateCount": 3,
+  "closedLocalCandidateCount": 3,
+  "openSpecificationCandidateCount": 3,
+  "specifiedLocalCandidatesClosed": true,
+  "openCandidatesRequireNewSpecification": true,
+  "candidateComplexesWithWeldedScalarSmDoubletCount": 0,
+  "candidateComplexesWithObservedProjectionDataCount": 0,
+  "deltaOmegaStillRequiresSpecification": true,
+  "unobservedPhaseStillRequiresCarrier": true,
+  "applicationSubjectKind": "fermionic-cohomology-square-root-ansatz-probe",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "4b1c998bbc23f8482dcdc703e3dc709405b285be43880b78cd39531d645c7f15",
+  "physicalCouplingProvided": false,
+  "routeProvidesPhysicalMassPsiCompatibleBranch": false,
+  "routeProvidesCompletedFermionicAction": false,
+  "routeProvidesFixedFermionicOperatorBranch": false,
+  "routeProvidesExplicitYukawaFunctional": false,
+  "routeProvidesSolvedYukawaCouplingMap": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesObservedElectroweakNamespaceMap": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesWeakAngleOrCouplingLineage": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "sourceEvidence": {
+    "phase370SummaryPath": "studies/phase370_completion_fermionic_yukawa_higgs_mixed_linearization_source_audit_001/output/completion_fermionic_yukawa_higgs_mixed_linearization_source_audit_summary.json",
+    "phase389SummaryPath": "studies/phase389_vo7_mixed_linearization_gauge_compatibility_identity_probe_001/output/vo7_mixed_linearization_gauge_compatibility_identity_probe_summary.json",
+    "phase397SummaryPath": "studies/phase397_parametrized_u1_extension_neutral_mixing_underdetermination_probe_001/output/parametrized_u1_extension_neutral_mixing_underdetermination_probe_summary.json",
+    "phase401SummaryPath": "studies/phase401_full_quartic_action_coupled_critical_point_construction_001/output/full_quartic_action_coupled_critical_point_construction_summary.json",
+    "phase411SummaryPath": "studies/phase411_quartic_dirac_squared_spinor_composite_probe_001/output/quartic_dirac_squared_spinor_composite_probe_summary.json",
+    "phase414SummaryPath": "studies/phase414_general_shiab_epsilon_operator_ansatz_probe_001/output/general_shiab_epsilon_operator_ansatz_probe_summary.json",
+    "superphysicsPart09b": "https://www.superphysics.org/research/weinstein/unity/part-09b/#93-the-fermionic-sector",
+    "superphysicsMirrorNote": "docs/Reference/ExperimentReferences/SUPERPHYSICS-GU-DRAFT-MIRROR-20250530.md"
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "this is an ansatz admissibility and closure probe, not a derivation of delta_omega",
+    "the Superphysics mirror clue is not promotion evidence and does not supply a differential or cohomology complex",
+    "locally specified candidates produce neither a welded spin-0 SM doublet nor observed photon/W/Z/H projection rows",
+    "open candidates require a new source-level delta_omega specification or a computable unobserved-phase carrier",
+    "no physical coupling, VEV, pole extraction, or GeV normalization is supplied",
+    "no Phase201 or Phase256 contract field is filled"
+  ],
+  "decision": "The fermionic cohomology/square-root ansatz is CLOSED on every locally specified carrier currently available. The Superphysics part-09b clue names chi, omega subfields, Upsilon_omega, cohomology obstruction language, and a possible first-order square root delta_omega, but it does not define delta_omega, a carrier complex, a cohomology target, a square law, or any scalar-doublet/observed-boson projection data. The locally specified candidates reduce to existing no-go evidence: Phase411 closes the chiral Dirac/Yukawa bilinear route; Phase389 materializes only a discrete control-branch gauge-compatibility identity; Phase397 shows neutral mixing vanishes in the fermion-bilinear channel; Phase401 closes the perturbative coupled-critical-point route on the toy action; Phase414 already closes the low-order Shiab/epsilon envelope. Further progress requires a new source-level delta_omega specification or a computable unobserved-phase carrier. No contract field is filled."
+}

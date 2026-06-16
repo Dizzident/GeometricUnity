@@ -35,13 +35,13 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase414 work (and the 2026-06-12
+Current gate status after the Phase415 work (and the 2026-06-12
 platform fix - GPU parity defect root-caused and discharged):
 
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=207`,
+  `objectiveAchieved=False`, `checklistPassedCount=208`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -230,6 +230,17 @@ platform fix - GPU parity defect root-caused and discharged):
   `onlyOpenFamiliesRequireNewCarrierOrSourceSpecification=True`
   (remaining: computable unobserved-phase carrier, or explicit first-order
   cohomology/square-root `delta_omega` specification)
+- Phase415:
+  `fermionicCohomologySquareRootAnsatzProbePassed=True`,
+  `requiredSpecificationFieldCount=8`,
+  `suppliedRequiredSpecificationFieldCount=0`,
+  `localCandidateComplexCount=6` (3 locally specified and closed, 3 open
+  because they require new source specification),
+  `specifiedLocalCandidatesClosed=True`,
+  `candidateComplexesWithWeldedScalarSmDoubletCount=0`,
+  `candidateComplexesWithObservedProjectionDataCount=0`,
+  `deltaOmegaStillRequiresSpecification=True`,
+  `unobservedPhaseStillRequiresCarrier=True`
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -250,7 +261,31 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work added Phase414, the general Shiab/epsilon operator ansatz
+The latest work added Phase415, the fermionic cohomology/square-root
+`delta_omega` ansatz probe. It treats Superphysics `part-09b` section 9.3 as a
+research clue, not a theorem, and turns the clue into an admissibility ledger:
+the reviewed source names `chi`, `omega` subfields, `Upsilon_omega`,
+cohomology-obstruction language, and a possible first-order square root, but
+supplies none of the eight required specification fields (differential, carrier
+complex, cohomology target, square law, adjoint/inner product, scalar-doublet
+projection, observed boson rows, normalization lineage). The locally
+specifiable candidates are closed by prior evidence: Phase411 closes the
+chiral Dirac/Yukawa bilinear route, Phase389 materializes only a discrete
+control-branch identity, Phase397 shows neutral mixing vanishes in the
+fermion-bilinear channel, Phase401 closes the perturbative coupled-critical
+point route on the toy action, and Phase414 closes the low-order
+Shiab/epsilon envelope. Exact result:
+`fermionicCohomologySquareRootAnsatzProbePassed=True`,
+`localCandidateComplexCount=6`, `locallySpecifiedCandidateCount=3`,
+`closedLocalCandidateCount=3`, `openSpecificationCandidateCount=3`,
+`candidateComplexesWithWeldedScalarSmDoubletCount=0`, and
+`candidateComplexesWithObservedProjectionDataCount=0`. Remaining work now
+requires a source-defined `delta_omega` complex or a computable
+unobserved-phase carrier. Study:
+`studies/phase415_fermionic_cohomology_square_root_ansatz_probe_001`
+(IMPLEMENTATION_P415.md).
+
+Before that, Phase414, the general Shiab/epsilon operator ansatz
 closure certificate requested by the 2026-06-16 restart guidance. It enumerates
 the low-order invariant operation alphabet (wedge, Hodge star, contraction,
 commutator, `i`-weighted anticommutator, Clifford volume, epsilon conjugation)
@@ -394,14 +429,14 @@ HONEST BOUNDARY. Study:
 
 ### Integration Points Already Updated
 
-Phase414 (like Phase388-413) is wired into:
+Phase415 (like Phase388-414) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (single broad pass; the
   older duplicated final sweep was removed on 2026-06-16)
 - `studies/phase101_boson_prediction_package_001/Program.cs`
 - `studies/phase202_boson_objective_completion_audit_001/Program.cs`
   (checklist item
-  `general-shiab-epsilon-operator-ansatz-probe-materialized`)
+  `fermionic-cohomology-square-root-ansatz-probe-materialized`)
 - `scripts/verify_boson_claim_integrity.sh`
 - Broad scanner exclusions: phase204, phase205, phase207, phase279,
   phase281, phase295, phase296
@@ -410,8 +445,9 @@ Reference tracking was updated in `ExperimentReferences.md`,
 `docs/Reference/ExperimentReferences/LOCAL-COMPLETION-V29-FERMIONIC-YUKAWA.md`
 (Phase399/Phase400/Phase401 coupled-stationarity closure section), and
 `docs/Reference/ExperimentReferences/SUPERPHYSICS-GU-DRAFT-MIRROR-20250530.md`
-(2026-06-16 expanded Superphysics mirror check). The diagnosis journal entry is
-near the end of
+(2026-06-16 expanded Superphysics mirror check plus Phase415 use of part-09b
+as a non-promotional `delta_omega` clue). The diagnosis journal entry is near
+the end of
 `docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md`.
 
 ### Validation Already Run
@@ -419,6 +455,7 @@ near the end of
 ```bash
 dotnet run --project studies/phase413_noncompact_real_form_transfer_probe_001/Phase413NoncompactRealFormTransferProbe.csproj
 dotnet run --project studies/phase414_general_shiab_epsilon_operator_ansatz_probe_001/Phase414GeneralShiabEpsilonOperatorAnsatzProbe.csproj
+dotnet run --project studies/phase415_fermionic_cohomology_square_root_ansatz_probe_001/Phase415FermionicCohomologySquareRootAnsatzProbe.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
@@ -427,8 +464,8 @@ dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase
 PHASE405_ENABLE_GPU=1 LD_LIBRARY_PATH=native/build dotnet run --project studies/phase405_vacuum_manifold_doublet_vev_orbit_scan_001/Phase405VacuumManifoldDoubletVevOrbitScan.csproj
 ```
 
-The targeted Phase414 run passes and preserves the fail-closed boundary;
-Phase202 now reports `checklistPassedCount=207`, `checklistFailedCount=3`; claim
+The targeted Phase415 run passes and preserves the fail-closed boundary;
+Phase202 now reports `checklistPassedCount=208`, `checklistFailedCount=3`; claim
 integrity verified with `promotedPhysicalMassClaimCount=0`. (Platform
 state: Gu.Interop.Tests 158/158 with the real-mesh parity and
 buffer-handle recycling tests; both Phase405 platform notes discharged
@@ -501,24 +538,22 @@ The most useful next branches are:
    families. Each should be a new fail-closed phase, update the journal, and
    leave Phase201/Phase256 untouched unless every contract field is actually
    filled. Recommended order:
-   - Fermionic cohomology square-root ansatz (highest priority after
-     Phase414): use Superphysics `part-09b`
-     section 9.3 as a research clue, not a theorem. It places observed
-     fermions plus LookingGlass/dark/Rarita-Schwinger matter in `chi`, says
-     `omega` subfields accommodate Higgs-like soft masses, Yukawa couplings,
-     CKM, and gauge potentials, then asks whether mixed spinorial-tensorial
-     `Upsilon_omega` is a cohomology obstruction with a first-order square
-     root `delta_omega`. Build target-blind candidate first-order complexes
-     and test whether any produce a welded spin-0 SM doublet or observed-field
-     projection data.
+   - Unobserved-phase carrier census (highest priority after Phase415):
+     enumerate field/carrier slots not already ruled out by Phases408-415,
+     especially any draft "unobserved phase" or beyond-frame-cross content
+     that can be pinned to a computable representation. Ask whether a welded
+     spin-0 SM doublet can occur there.
+   - Fermionic cohomology square-root ansatz: DONE by Phase415 on the
+     currently specifiable carriers. `part-09b` section 9.3 is useful as a
+     research clue, but no reviewed source supplies the `delta_omega`
+     differential, carrier complex, cohomology target, square law, projection
+     rows, or normalization lineage. Further progress requires a new
+     source-level `delta_omega` specification rather than another local
+     near-pass.
    - General Shiab/epsilon operator ansatz: DONE by Phase414 on the currently
      computable carriers. The low-order alphabet is covered, 11 families are
      closed by Phases408-413, and the 2 remaining residuals require a new
      carrier/source specification rather than another internal near-pass.
-   - Unobserved-phase carrier census: enumerate field/carrier slots not already
-     ruled out by Phases408-414, especially any draft "unobserved phase" or
-     beyond-frame-cross content that can be pinned to a computable
-     representation. Ask whether a welded spin-0 SM doublet can occur there.
    - Direction-dependent curvature/VEV coupling scan: Phase410 closed only the
      uniform bosonic curvature coupling. Enumerate gauge-invariant
      direction-dependent curvature/connection couplings and test whether any
@@ -629,9 +664,9 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -120 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase414|generalShiabEpsilonOperatorAnsatzProbe|lowOrderProbedCarrierFamiliesClosed" \
+rg -n "Phase415|fermionicCohomologySquareRootAnsatzProbe|deltaOmegaStillRequiresSpecification" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
-  studies/phase414_general_shiab_epsilon_operator_ansatz_probe_001 \
+  studies/phase415_fermionic_cohomology_square_root_ansatz_probe_001 \
   studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
 ```
 
@@ -644,11 +679,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase414 output JSON files, and commit a checkpoint
+force-add the ignored Phase415 output JSON files, and commit a checkpoint
 after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase414 general Shiab epsilon ansatz probe
+Add phase415 fermionic cohomology square root probe
 ```

@@ -184,6 +184,7 @@ const paths = {
   phase412: "studies/phase412_quartic_sm_doublet_intersection_analysis_001/output/quartic_sm_doublet_intersection_analysis_summary.json",
   phase413: "studies/phase413_noncompact_real_form_transfer_probe_001/output/noncompact_real_form_transfer_probe_summary.json",
   phase414: "studies/phase414_general_shiab_epsilon_operator_ansatz_probe_001/output/general_shiab_epsilon_operator_ansatz_probe_summary.json",
+  phase415: "studies/phase415_fermionic_cohomology_square_root_ansatz_probe_001/output/fermionic_cohomology_square_root_ansatz_probe_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -439,6 +440,7 @@ const phase411 = requireFile(paths.phase411);
 const phase412 = requireFile(paths.phase412);
 const phase413 = requireFile(paths.phase413);
 const phase414 = requireFile(paths.phase414);
+const phase415 = requireFile(paths.phase415);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -4838,6 +4840,20 @@ if (sourceLineageMissing) {
   assert(phase414.sourceContractApplicationAllowed === false && phase414.canFillPhase201WzContract === false && phase414.canFillPhase201HiggsContract === false && phase414.canFillPhase256ObservedFieldExtractionContract === false, "Phase414 cannot fill Phase201 or Phase256 contracts.");
   assert(phase414.routePromotesWzMasses === false && phase414.routePromotesHiggsMass === false && phase414.routeCompletesBosonPredictions === false, "Phase414 cannot promote boson predictions.");
   assert(phase414.phase201TemplateMutated === false && phase414.fieldsAppliedToPhase201TemplateCount === 0 && phase414.acceptedContractFieldCount === 0, "Phase414 must not mutate or fill the Phase201 template.");
+  assert(phase415.fermionicCohomologySquareRootAnsatzProbePassed === true, "Phase415 fermionic cohomology square-root ansatz probe must pass as a fail-closed admissibility probe.");
+  assert(phase415.targetBlindConstruction === true && phase415.physicalTargetsConsultedForConstruction === false, "Phase415 construction must remain target-blind.");
+  assert(typeof phase415.targetBlindConstructionHash === "string" && phase415.targetBlindConstructionHash.length === 64, "Phase415 must persist a target-blind construction hash.");
+  assert(phase415.applicationSubjectKind === "fermionic-cohomology-square-root-ansatz-probe", "Phase415 must classify its subject as the fermionic cohomology square-root ansatz probe.");
+  assert(phase415.requiredSpecificationFieldCount === 8 && phase415.suppliedRequiredSpecificationFieldCount === 0 && phase415.requiredSpecificationAbsent === true, "Phase415 must preserve the absent delta_omega specification accounting.");
+  assert(phase415.sourceProvidesExplicitDeltaOmega === false && phase415.sourceProvidesFirstOrderComplex === false && phase415.sourceProvidesCohomologyTarget === false && phase415.sourceProvidesSquareLaw === false, "Phase415 must not invent a delta_omega differential, complex, target, or square law.");
+  assert(phase415.localCandidateComplexCount === 6 && phase415.locallySpecifiedCandidateCount === 3 && phase415.closedLocalCandidateCount === 3 && phase415.openSpecificationCandidateCount === 3, "Phase415 must preserve local/open square-root candidate accounting.");
+  assert(phase415.specifiedLocalCandidatesClosed === true && phase415.openCandidatesRequireNewSpecification === true, "Phase415 must close only locally specified candidates and keep source-required candidates open.");
+  assert(phase415.candidateComplexesWithWeldedScalarSmDoubletCount === 0 && phase415.candidateComplexesWithObservedProjectionDataCount === 0, "Phase415 cannot produce a welded scalar doublet or observed projection data.");
+  assert(phase415.deltaOmegaStillRequiresSpecification === true && phase415.unobservedPhaseStillRequiresCarrier === true, "Phase415 must name the remaining delta_omega and unobserved-phase requirements.");
+  assert(phase415.physicalCouplingProvided === false, "Phase415 derives no coupling.");
+  assert(phase415.sourceContractApplicationAllowed === false && phase415.canFillPhase201WzContract === false && phase415.canFillPhase201HiggsContract === false && phase415.canFillPhase256ObservedFieldExtractionContract === false, "Phase415 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase415.routePromotesWzMasses === false && phase415.routePromotesHiggsMass === false && phase415.routeCompletesBosonPredictions === false, "Phase415 cannot promote boson predictions.");
+  assert(phase415.phase201TemplateMutated === false && phase415.fieldsAppliedToPhase201TemplateCount === 0 && phase415.acceptedContractFieldCount === 0, "Phase415 must not mutate or fill the Phase201 template.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

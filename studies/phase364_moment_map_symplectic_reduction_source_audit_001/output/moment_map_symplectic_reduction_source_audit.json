@@ -1,7 +1,7 @@
 {
   "phaseId": "phase364-moment-map-symplectic-reduction-source-audit",
   "terminalStatus": "moment-map-symplectic-reduction-source-audit-phase-space-lead-not-gu-mass-law",
-  "generatedAt": "2026-06-16T20:17:21.3188067+00:00",
+  "generatedAt": "2026-06-16T21:10:01.3288662+00:00",
   "momentMapSymplecticReductionSourceAuditPassed": true,
   "momentMapSymplecticReductionLeadPresent": true,
   "momentMapSymplecticReductionPrimarySourcesReviewed": true,

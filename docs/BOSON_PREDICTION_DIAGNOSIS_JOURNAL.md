@@ -17625,3 +17625,68 @@ first-order complexes only if the differential, carrier, and cohomology target
 can be specified without importing observed W/Z/H values. In parallel, the
 unobserved-phase carrier census remains the only representation-theoretic route
 not already closed by Phases408-414.
+
+## 2026-06-16 - Phase415: Fermionic Cohomology/Square-Root Ansatz Closed on Specified Carriers
+
+### Context
+
+After Phase414 closed the low-order Shiab/epsilon operator menu, the restart
+prompt's highest-priority remaining experiment was the Superphysics `part-09b`
+section 9.3 fermionic cohomology/square-root clue. The clue places observed
+fermions and other matter in `chi`, assigns Higgs-like soft masses, Yukawa
+couplings, CKM, and gauge potentials to `omega` subfields, and asks whether
+mixed spinorial-tensorial `Upsilon_omega` is a cohomology obstruction with a
+first-order square root `delta_omega`.
+
+### Result
+
+- Phase415 treats `part-09b` as a research clue, not a theorem or promotion
+  source.
+- The source supplies zero of the eight required specification fields for a
+  mathematical `delta_omega` complex: no explicit differential, carrier
+  complex, cohomology target, square law, adjoint/inner product,
+  scalar-doublet projection, observed boson rows, or normalization lineage.
+- The phase enumerates six candidate complexes. Three are locally specified
+  and closed by existing evidence:
+  - the chiral Dirac/Yukawa square-root reading is closed by Phase411
+    (`leftRightBilinearChannelHasNoWeldedScalar=True`,
+    `majoranaSpinZeroSmDoubletCount=0`);
+  - the VO-7 gauge-compatibility control complex is exact only on the
+    discrete control branch by Phase389 and lacks a physical `M_psi` branch,
+    completed fermionic action, or physical Hessian;
+  - the fermion-induced source/backreaction complex cannot supply observed
+    photon/Z separation because Phase397's neutral mixing element vanishes in
+    the fermion-bilinear channel, and Phase401 characterizes the coupled
+    critical point route as non-perturbative on the toy action.
+- The three remaining candidates are not near-passes; they require new source
+  data: a source-defined `delta_omega` complex, a superconnection lower-right
+  map, or a computable unobserved-phase carrier/action.
+- Machine result:
+  `fermionicCohomologySquareRootAnsatzProbePassed=True`,
+  `requiredSpecificationFieldCount=8`,
+  `suppliedRequiredSpecificationFieldCount=0`,
+  `localCandidateComplexCount=6`,
+  `locallySpecifiedCandidateCount=3`,
+  `closedLocalCandidateCount=3`,
+  `openSpecificationCandidateCount=3`,
+  `candidateComplexesWithWeldedScalarSmDoubletCount=0`,
+  `candidateComplexesWithObservedProjectionDataCount=0`.
+- No Phase201 or Phase256 field is filled; no W/Z/H mass claim is promoted.
+- Study: `studies/phase415_fermionic_cohomology_square_root_ansatz_probe_001`
+  (IMPLEMENTATION_P415.md).
+
+### Validation
+
+- Targeted Phase415 run passed.
+- Phase101 includes the block.
+- Phase202: `checklistPassedCount=208`, `checklistFailedCount=3`.
+- Claim integrity verified with `promotedPhysicalMassClaimCount=0`.
+
+### Standing Next Work
+
+The `delta_omega` branch is now closed on every currently specifiable local
+carrier. Further progress on that branch requires a source-level definition of
+`delta_omega` and its complex. The next internal representation-theoretic
+experiment is the unobserved-phase carrier census: find whether any draft
+unobserved-phase or beyond-frame-cross field can be pinned to a computable
+carrier not already ruled out by Phases408-415.

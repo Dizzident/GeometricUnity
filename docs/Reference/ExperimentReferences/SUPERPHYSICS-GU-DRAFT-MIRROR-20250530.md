@@ -82,6 +82,11 @@ High-value findings from the expanded pass:
 - The 2026-06-16 pass answered a user-directed check whether the outstanding
   boson-prediction answers were present in Superphysics pages not already
   covered by the logs.
+- Phase415 used `part-09b` section 9.3 as the named research clue for the
+  fermionic cohomology/square-root `delta_omega` ansatz. The phase records
+  that the page names the architecture but does not define the first-order
+  differential, carrier complex, cohomology target, square law, scalar-doublet
+  projection, observed boson rows, or normalization lineage.
 - The source remains a search aid below the official GU draft; promotion claims
   must cite the primary draft or another theorem-level source.
 
@@ -116,3 +121,7 @@ anchor such as `246 GeV`, `G_F`, or a GU-native unit conversion.
 - A useful future update would need explicit equations for the epsilon/Shiab
   scalar-doublet extraction, the curvature/VEV source law, or the observed
   electroweak mass-eigenstate and pole-extraction map.
+- For the Phase415 branch specifically, a useful update would need a
+  source-defined `delta_omega` complex: domain/codomain carriers, grading,
+  principal symbol/lower-order terms, square/nilpotence law, adjoint
+  convention, and projection data.
