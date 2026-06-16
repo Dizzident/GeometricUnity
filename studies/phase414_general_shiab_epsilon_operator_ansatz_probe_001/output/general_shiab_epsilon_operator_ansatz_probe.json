@@ -1,0 +1,293 @@
+{
+  "phaseId": "phase414-general-shiab-epsilon-operator-ansatz-probe",
+  "generatedAt": "2026-06-16T20:44:50.2898919+00:00",
+  "terminalStatus": "general-shiab-epsilon-operator-ansatz-closed-on-probed-carriers-new-source-required",
+  "generalShiabEpsilonOperatorAnsatzProbePassed": true,
+  "phase408PrecursorPassed": true,
+  "phase409PrecursorPassed": true,
+  "phase409PairingMenuComplete": true,
+  "phase411PrecursorPassed": true,
+  "phase412PrecursorPassed": true,
+  "phase413PrecursorPassed": true,
+  "probeInternallyConsistent": true,
+  "requiredOperatorAlphabet": [
+    "wedge",
+    "hodge-star",
+    "contraction",
+    "commutator",
+    "i-weighted-anticommutator",
+    "clifford-volume",
+    "epsilon-conjugation"
+  ],
+  "requestedOperatorAlphabetCovered": true,
+  "operatorMenuCandidateCount": 13,
+  "closedLowOrderFamilyCount": 11,
+  "openResidualFamilyCount": 2,
+  "lowOrderProbedCarrierFamiliesClosed": true,
+  "anyClosedLowOrderAnsatzProducesWeldedScalarSmDoublet": false,
+  "onlyOpenFamiliesRequireNewCarrierOrSourceSpecification": true,
+  "unobservedPhaseStillRequiredForFurtherProgress": true,
+  "fermionicCohomologySquareRootStillRequiresSpecification": true,
+  "operatorMenu": [
+    {
+      "id": "linear-hodge-clifford-volume",
+      "order": 1,
+      "operations": [
+        "hodge-star",
+        "clifford-volume"
+      ],
+      "carrier": "frame-cross V = 4 x 10",
+      "evidencePhase": "phase409",
+      "closureReason": "Linear functorial form operators are welded-spin intertwiners; Phase409 found zero linear spin-zero content in V.",
+      "closedByExistingProof": true,
+      "producesWeldedScalarSmDoublet": false,
+      "requiresNewSourceSpecification": false
+    },
+    {
+      "id": "linear-epsilon-conjugation",
+      "order": 1,
+      "operations": [
+        "epsilon-conjugation",
+        "hodge-star"
+      ],
+      "carrier": "frame-cross V = 4 x 10",
+      "evidencePhase": "phase408/phase409",
+      "closureReason": "The naive trace slot is one-dimensional and too small, while the full linear frame-cross singlet count is zero.",
+      "closedByExistingProof": true,
+      "producesWeldedScalarSmDoublet": false,
+      "requiresNewSourceSpecification": false
+    },
+    {
+      "id": "linear-contraction-trace",
+      "order": 1,
+      "operations": [
+        "contraction"
+      ],
+      "carrier": "vertical Sym^2(4) trace slot",
+      "evidencePhase": "phase408",
+      "closureReason": "The only vertical spin-zero slot is the trace direction; it cannot carry a four-real-dimensional SM doublet.",
+      "closedByExistingProof": true,
+      "producesWeldedScalarSmDoublet": false,
+      "requiresNewSourceSpecification": false
+    },
+    {
+      "id": "mixed-4x10-fiber-pairing",
+      "order": 2,
+      "operations": [
+        "contraction",
+        "wedge"
+      ],
+      "carrier": "fiber 4 x 10",
+      "evidencePhase": "phase409",
+      "closureReason": "The complete invariant fiber-pairing menu has dimension zero on 4 x 10, so there is no mixed fiber pairing for Shiab-style extraction on the probed carrier.",
+      "closedByExistingProof": true,
+      "producesWeldedScalarSmDoublet": false,
+      "requiresNewSourceSpecification": false
+    },
+    {
+      "id": "metric-even-bilinear-pairings",
+      "order": 2,
+      "operations": [
+        "wedge",
+        "hodge-star",
+        "contraction"
+      ],
+      "carrier": "V tensor V, parity-even sector",
+      "evidencePhase": "phase409",
+      "closureReason": "The complete bilinear spin-zero sector has six parity-even directions after all metric/Hodge/contraction pairings, and its SM-stable subspace contains no doublet.",
+      "closedByExistingProof": true,
+      "producesWeldedScalarSmDoublet": false,
+      "requiresNewSourceSpecification": false
+    },
+    {
+      "id": "epsilon-built-bilinear-pairing",
+      "order": 2,
+      "operations": [
+        "wedge",
+        "epsilon-conjugation"
+      ],
+      "carrier": "V tensor V, parity-odd sector",
+      "evidencePhase": "phase409",
+      "closureReason": "The epsilon-built parity-odd bilinear sector is exactly one-dimensional and contains no SM-doublet state.",
+      "closedByExistingProof": true,
+      "producesWeldedScalarSmDoublet": false,
+      "requiresNewSourceSpecification": false
+    },
+    {
+      "id": "commutator-shiab-curvature",
+      "order": 2,
+      "operations": [
+        "wedge",
+        "commutator"
+      ],
+      "carrier": "Upsilon-like bracket [omega wedge omega]",
+      "evidencePhase": "phase409/phase412",
+      "closureReason": "The commutator bracket is a bilinear invariant on the same welded tensor envelope; Phase409 closes bilinear doublets and Phase412 closes quartic composites needed by bracket-squared variants.",
+      "closedByExistingProof": true,
+      "producesWeldedScalarSmDoublet": false,
+      "requiresNewSourceSpecification": false
+    },
+    {
+      "id": "i-weighted-anticommutator-hermitian",
+      "order": 2,
+      "operations": [
+        "i-weighted-anticommutator"
+      ],
+      "carrier": "complexified V tensor V",
+      "evidencePhase": "phase409/phase413",
+      "closureReason": "Multiplication by i and anticommutator symmetrization change real/parity bookkeeping but not the complexified invariant module; Phase409 found no doublet and Phase413 transfers the no-go across real forms.",
+      "closedByExistingProof": true,
+      "producesWeldedScalarSmDoublet": false,
+      "requiresNewSourceSpecification": false
+    },
+    {
+      "id": "hodge-wedge-star-f2",
+      "order": 2,
+      "operations": [
+        "wedge",
+        "hodge-star"
+      ],
+      "carrier": "two-form-valued bilinear residuals",
+      "evidencePhase": "phase409",
+      "closureReason": "Hodge-star on the form index is an equivariant post-composition of the bilinear residual; it cannot create an SM doublet absent from the bilinear spin-zero module.",
+      "closedByExistingProof": true,
+      "producesWeldedScalarSmDoublet": false,
+      "requiresNewSourceSpecification": false
+    },
+    {
+      "id": "quartic-dirac-square-and-bracket-square",
+      "order": 4,
+      "operations": [
+        "wedge",
+        "commutator",
+        "clifford-volume"
+      ],
+      "carrier": "spinor bilinear/quartic and bracket-squared composites",
+      "evidencePhase": "phase411/phase412",
+      "closureReason": "The Dirac-squared bilinear route has no welded scalar in the Yukawa channel, and the ambient quartic intersection with the SM-doublet is zero in every channel.",
+      "closedByExistingProof": true,
+      "producesWeldedScalarSmDoublet": false,
+      "requiresNewSourceSpecification": false
+    },
+    {
+      "id": "noncompact-shiab-epsilon-real-form",
+      "order": 4,
+      "operations": [
+        "epsilon-conjugation",
+        "clifford-volume",
+        "hodge-star"
+      ],
+      "carrier": "Lorentzian/noncompact finite-dimensional welded carriers",
+      "evidencePhase": "phase413",
+      "closureReason": "The Lorentzian weld complexifies to the compact weld; all complex-linear no-go counts transfer to the noncompact finite-dimensional form.",
+      "closedByExistingProof": true,
+      "producesWeldedScalarSmDoublet": false,
+      "requiresNewSourceSpecification": false
+    },
+    {
+      "id": "unobserved-phase-carrier",
+      "order": null,
+      "operations": [
+        "epsilon-conjugation",
+        "wedge",
+        "commutator"
+      ],
+      "carrier": "draft unobserved-phase fields not pinned to a computable representation",
+      "evidencePhase": "none",
+      "closureReason": "Not closed by this operator menu because no explicit carrier/action exists locally or in the reviewed public mirror.",
+      "closedByExistingProof": false,
+      "producesWeldedScalarSmDoublet": null,
+      "requiresNewSourceSpecification": true
+    },
+    {
+      "id": "fermionic-cohomology-square-root-delta-omega",
+      "order": null,
+      "operations": [
+        "square-root-delta-omega",
+        "commutator",
+        "i-weighted-anticommutator"
+      ],
+      "carrier": "Superphysics part-09b cohomology/square-root clue",
+      "evidencePhase": "none",
+      "closureReason": "Not closed here because a first-order complex, differential, and cohomology target must be specified before representation counting is meaningful.",
+      "closedByExistingProof": false,
+      "producesWeldedScalarSmDoublet": null,
+      "requiresNewSourceSpecification": true
+    }
+  ],
+  "closureEvidence": {
+    "phase408": {
+      "summaryPath": "studies/phase408_vertical_spin_zero_extraction_obstruction_probe_001/output/vertical_spin_zero_extraction_obstruction_probe_summary.json",
+      "spinZeroSlotCannotCarryFullDoublet": true,
+      "centralizerIsTrivial": true
+    },
+    "phase409": {
+      "summaryPath": "studies/phase409_invariant_pairing_menu_spin_zero_extraction_probe_001/output/invariant_pairing_menu_spin_zero_extraction_probe_summary.json",
+      "linearSingletDimension": 0,
+      "bilinearSpinZeroDimension": 7,
+      "parityEvenInvariantCount": 6,
+      "parityOddInvariantCount": 1,
+      "doubletPatternStateCount": 0
+    },
+    "phase411": {
+      "summaryPath": "studies/phase411_quartic_dirac_squared_spinor_composite_probe_001/output/quartic_dirac_squared_spinor_composite_probe_summary.json",
+      "leftRightBilinearChannelHasNoWeldedScalar": true,
+      "majoranaSpinZeroSmDoubletCount": 0
+    },
+    "phase412": {
+      "summaryPath": "studies/phase412_quartic_sm_doublet_intersection_analysis_001/output/quartic_sm_doublet_intersection_analysis_summary.json",
+      "unionIntersectionRealDimension": 0,
+      "quarticWeldedScalarSmDoubletAbsentAllChannels": true
+    },
+    "phase413": {
+      "summaryPath": "studies/phase413_noncompact_real_form_transfer_probe_001/output/noncompact_real_form_transfer_probe_summary.json",
+      "complexifiedWeldsCoincide": true,
+      "realFormTransferEstablished": true
+    }
+  },
+  "applicationSubjectKind": "general-shiab-epsilon-operator-ansatz-probe",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "748e03ebf6b76ea26b779bca014c31290e31807af2f8d5e490ed7a729d44805c",
+  "physicalCouplingProvided": false,
+  "routeProvidesPhysicalMassPsiCompatibleBranch": false,
+  "routeProvidesCompletedFermionicAction": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesObservedElectroweakNamespaceMap": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesWeakAngleOrCouplingLineage": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "this is a low-order closure certificate on currently computable finite-dimensional carriers, not a derivation of the draft\u0027s missing operator-choice notes",
+    "unobserved-phase fields are not closed here because no explicit representation/action has been pinned to local or public source text",
+    "the Superphysics part-09b cohomology square-root clue remains a research branch until delta_omega, its complex, and its target cohomology are specified",
+    "no physical coupling, VEV, pole extraction, or GeV normalization is supplied",
+    "no Phase201 or Phase256 contract field is filled"
+  ],
+  "sourceEvidence": {
+    "phase408SummaryPath": "studies/phase408_vertical_spin_zero_extraction_obstruction_probe_001/output/vertical_spin_zero_extraction_obstruction_probe_summary.json",
+    "phase409SummaryPath": "studies/phase409_invariant_pairing_menu_spin_zero_extraction_probe_001/output/invariant_pairing_menu_spin_zero_extraction_probe_summary.json",
+    "phase411SummaryPath": "studies/phase411_quartic_dirac_squared_spinor_composite_probe_001/output/quartic_dirac_squared_spinor_composite_probe_summary.json",
+    "phase412SummaryPath": "studies/phase412_quartic_sm_doublet_intersection_analysis_001/output/quartic_sm_doublet_intersection_analysis_summary.json",
+    "phase413SummaryPath": "studies/phase413_noncompact_real_form_transfer_probe_001/output/noncompact_real_form_transfer_probe_summary.json",
+    "superphysicsMirrorNote": "docs/Reference/ExperimentReferences/SUPERPHYSICS-GU-DRAFT-MIRROR-20250530.md"
+  },
+  "decision": "The general low-order Shiab/epsilon operator ansatz is CLOSED on the currently computable carriers. The requested operation alphabet is explicitly covered: wedge, Hodge star, contraction, commutator, i-weighted anticommutator, Clifford volume, and epsilon conjugation. Every closed family reduces to an upstream exact no-go: Phase408 kills the naive trace extraction; Phase409 kills linear, bilinear, and epsilon-built frame-cross doublets; Phase411/412 kill Dirac-squared and quartic composite channels; Phase413 kills finite-dimensional noncompact real-form evasion. No closed low-order family produces a welded spin-0 SM doublet. The only remaining branches require genuinely new input: a computable unobserved-phase carrier, or an explicit first-order cohomology/square-root operator delta_omega. No contract field is filled."
+}

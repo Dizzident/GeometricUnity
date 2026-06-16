@@ -183,6 +183,7 @@ const paths = {
   phase411: "studies/phase411_quartic_dirac_squared_spinor_composite_probe_001/output/quartic_dirac_squared_spinor_composite_probe_summary.json",
   phase412: "studies/phase412_quartic_sm_doublet_intersection_analysis_001/output/quartic_sm_doublet_intersection_analysis_summary.json",
   phase413: "studies/phase413_noncompact_real_form_transfer_probe_001/output/noncompact_real_form_transfer_probe_summary.json",
+  phase414: "studies/phase414_general_shiab_epsilon_operator_ansatz_probe_001/output/general_shiab_epsilon_operator_ansatz_probe_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -437,6 +438,7 @@ const phase410 = requireFile(paths.phase410);
 const phase411 = requireFile(paths.phase411);
 const phase412 = requireFile(paths.phase412);
 const phase413 = requireFile(paths.phase413);
+const phase414 = requireFile(paths.phase414);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -4823,6 +4825,19 @@ if (sourceLineageMissing) {
   assert(phase413.sourceContractApplicationAllowed === false && phase413.canFillPhase201WzContract === false && phase413.canFillPhase201HiggsContract === false && phase413.canFillPhase256ObservedFieldExtractionContract === false, "Phase413 cannot fill Phase201 or Phase256 contracts.");
   assert(phase413.routePromotesWzMasses === false && phase413.routePromotesHiggsMass === false && phase413.routeCompletesBosonPredictions === false, "Phase413 cannot promote boson predictions.");
   assert(phase413.phase201TemplateMutated === false && phase413.fieldsAppliedToPhase201TemplateCount === 0 && phase413.acceptedContractFieldCount === 0, "Phase413 must not mutate or fill the Phase201 template.");
+  assert(phase414.generalShiabEpsilonOperatorAnsatzProbePassed === true, "Phase414 general Shiab/epsilon operator ansatz probe must pass as a fail-closed closure certificate.");
+  assert(phase414.targetBlindConstruction === true && phase414.physicalTargetsConsultedForConstruction === false, "Phase414 construction must remain target-blind.");
+  assert(typeof phase414.targetBlindConstructionHash === "string" && phase414.targetBlindConstructionHash.length === 64, "Phase414 must persist a target-blind construction hash.");
+  assert(phase414.applicationSubjectKind === "general-shiab-epsilon-operator-ansatz-probe", "Phase414 must classify its subject as the general Shiab/epsilon ansatz probe.");
+  assert(phase414.requestedOperatorAlphabetCovered === true, "Phase414 must cover the requested low-order operator alphabet.");
+  assert(phase414.operatorMenuCandidateCount === 13 && phase414.closedLowOrderFamilyCount === 11 && phase414.openResidualFamilyCount === 2, "Phase414 must preserve the closed/open operator-family accounting.");
+  assert(phase414.lowOrderProbedCarrierFamiliesClosed === true && phase414.anyClosedLowOrderAnsatzProducesWeldedScalarSmDoublet === false, "Phase414 must close the probed low-order carriers without producing a doublet.");
+  assert(phase414.onlyOpenFamiliesRequireNewCarrierOrSourceSpecification === true, "Phase414 open residuals must require new carrier/source specification.");
+  assert(phase414.unobservedPhaseStillRequiredForFurtherProgress === true && phase414.fermionicCohomologySquareRootStillRequiresSpecification === true, "Phase414 must name the remaining unobserved-phase and cohomology-square-root residuals.");
+  assert(phase414.physicalCouplingProvided === false, "Phase414 derives no coupling.");
+  assert(phase414.sourceContractApplicationAllowed === false && phase414.canFillPhase201WzContract === false && phase414.canFillPhase201HiggsContract === false && phase414.canFillPhase256ObservedFieldExtractionContract === false, "Phase414 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase414.routePromotesWzMasses === false && phase414.routePromotesHiggsMass === false && phase414.routeCompletesBosonPredictions === false, "Phase414 cannot promote boson predictions.");
+  assert(phase414.phase201TemplateMutated === false && phase414.fieldsAppliedToPhase201TemplateCount === 0 && phase414.acceptedContractFieldCount === 0, "Phase414 must not mutate or fill the Phase201 template.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

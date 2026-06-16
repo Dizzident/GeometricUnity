@@ -17574,3 +17574,54 @@ No promotion gates change. After Phase413 and this all-page Superphysics check,
 the standing routes remain exactly: the draft's unobserved-phase fields if a
 computable quantitative specification appears, or a new primary-source
 specification.
+
+## 2026-06-16 - Phase414: General Shiab/Epsilon Operator Ansatz Closed on Computable Carriers
+
+### Context
+
+The restart prompt's highest-priority internal experiment after the
+Superphysics mirror pass was the general Shiab/epsilon operator ansatz:
+enumerate the low-order invariant operation alphabet (wedge, Hodge star,
+contraction, commutator, `i`-weighted anticommutator, Clifford volume, epsilon
+conjugation) and test whether it can produce a welded spin-0 SM doublet without
+depending on Weinstein's missing operator-choice notes.
+
+### Result
+
+- Phase414 is a closure certificate, not a fitted operator. It enumerates
+  13 operator-family rows: 11 closed low-order families and 2 open residual
+  families.
+- The requested alphabet is fully covered:
+  `requestedOperatorAlphabetCovered=True`.
+- Every computable low-order family reduces to upstream exact evidence:
+  Phase408 closes the naive vertical trace slot; Phase409 closes linear,
+  bilinear, and epsilon-built parity-odd frame-cross extraction; Phase411/412
+  close spinor-bilinear and quartic composite variants; Phase413 closes
+  finite-dimensional noncompact real-form evasion.
+- Machine result:
+  `generalShiabEpsilonOperatorAnsatzProbePassed=True`,
+  `lowOrderProbedCarrierFamiliesClosed=True`,
+  `anyClosedLowOrderAnsatzProducesWeldedScalarSmDoublet=False`.
+- The only open residuals now require genuinely new input, not another
+  low-order menu variation: (1) a computable unobserved-phase carrier/action,
+  or (2) an explicit first-order cohomology/square-root `delta_omega`
+  specification.
+- No Phase201 or Phase256 field is filled; no W/Z/H mass claim is promoted.
+- Study: `studies/phase414_general_shiab_epsilon_operator_ansatz_probe_001`
+  (IMPLEMENTATION_P414.md).
+
+### Validation
+
+- Targeted Phase414 run passed.
+- Phase101 includes the block.
+- Phase202: `checklistPassedCount=207`, `checklistFailedCount=3`.
+- Claim integrity verified with `promotedPhysicalMassClaimCount=0`.
+
+### Standing Next Work
+
+The next internal branch is the fermionic cohomology/square-root ansatz from
+Superphysics `part-09b` section 9.3: construct target-blind candidate
+first-order complexes only if the differential, carrier, and cohomology target
+can be specified without importing observed W/Z/H values. In parallel, the
+unobserved-phase carrier census remains the only representation-theoretic route
+not already closed by Phases408-414.

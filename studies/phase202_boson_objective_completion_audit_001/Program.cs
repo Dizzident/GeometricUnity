@@ -179,6 +179,7 @@ const string Phase410Path = "studies/phase410_curvature_coupled_vev_selection_pr
 const string Phase411Path = "studies/phase411_quartic_dirac_squared_spinor_composite_probe_001/output/quartic_dirac_squared_spinor_composite_probe_summary.json";
 const string Phase412Path = "studies/phase412_quartic_sm_doublet_intersection_analysis_001/output/quartic_sm_doublet_intersection_analysis_summary.json";
 const string Phase413Path = "studies/phase413_noncompact_real_form_transfer_probe_001/output/noncompact_real_form_transfer_probe_summary.json";
+const string Phase414Path = "studies/phase414_general_shiab_epsilon_operator_ansatz_probe_001/output/general_shiab_epsilon_operator_ansatz_probe_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -391,6 +392,7 @@ using var phase410 = File.Exists(Phase410Path) ? JsonDocument.Parse(File.ReadAll
 using var phase411 = File.Exists(Phase411Path) ? JsonDocument.Parse(File.ReadAllText(Phase411Path)) : null;
 using var phase412 = File.Exists(Phase412Path) ? JsonDocument.Parse(File.ReadAllText(Phase412Path)) : null;
 using var phase413 = File.Exists(Phase413Path) ? JsonDocument.Parse(File.ReadAllText(Phase413Path)) : null;
+using var phase414 = File.Exists(Phase414Path) ? JsonDocument.Parse(File.ReadAllText(Phase414Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -5268,6 +5270,33 @@ var noncompactRealFormTransferProbePassed = noncompactRealFormTransferProbeMater
     && JsonBool(phase413.RootElement, "phase201TemplateMutated") is false
     && JsonInt(phase413.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
     && JsonInt(phase413.RootElement, "acceptedContractFieldCount") == 0;
+var generalShiabEpsilonOperatorAnsatzProbeMaterialized = phase414 is not null;
+var generalShiabEpsilonOperatorAnsatzProbePassed = generalShiabEpsilonOperatorAnsatzProbeMaterialized
+    && JsonBool(phase414!.RootElement, "generalShiabEpsilonOperatorAnsatzProbePassed") is true
+    && JsonBool(phase414.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase414.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase414.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase414.RootElement, "applicationSubjectKind") == "general-shiab-epsilon-operator-ansatz-probe"
+    && JsonBool(phase414.RootElement, "requestedOperatorAlphabetCovered") is true
+    && JsonInt(phase414.RootElement, "operatorMenuCandidateCount") == 13
+    && JsonInt(phase414.RootElement, "closedLowOrderFamilyCount") == 11
+    && JsonInt(phase414.RootElement, "openResidualFamilyCount") == 2
+    && JsonBool(phase414.RootElement, "lowOrderProbedCarrierFamiliesClosed") is true
+    && JsonBool(phase414.RootElement, "anyClosedLowOrderAnsatzProducesWeldedScalarSmDoublet") is false
+    && JsonBool(phase414.RootElement, "onlyOpenFamiliesRequireNewCarrierOrSourceSpecification") is true
+    && JsonBool(phase414.RootElement, "unobservedPhaseStillRequiredForFurtherProgress") is true
+    && JsonBool(phase414.RootElement, "fermionicCohomologySquareRootStillRequiresSpecification") is true
+    && JsonBool(phase414.RootElement, "physicalCouplingProvided") is false
+    && JsonBool(phase414.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase414.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase414.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase414.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase414.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase414.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase414.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase414.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase414.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase414.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -7548,6 +7577,14 @@ var checklist = new[]
             ? $"noncompactRealFormTransferProbePassed={JsonBool(phase413!.RootElement, "noncompactRealFormTransferProbePassed")}; targetBlind={JsonBool(phase413.RootElement, "targetBlindConstruction")}; complexifiedWeldsCoincide={JsonBool(phase413.RootElement, "complexifiedWeldsCoincide")}; realFormTransferEstablished={JsonBool(phase413.RootElement, "realFormTransferEstablished")}; canFillPhase201WzContract={JsonBool(phase413.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase413.RootElement, "decision")}"
             : "Phase413 artifact not materialized",
         Phase413Path),
+    new ObjectiveChecklistItem(
+        "general-shiab-epsilon-operator-ansatz-probe-materialized",
+        "Enumerate the low-order Shiab/epsilon operator alphabet and bind every computable family to exact upstream no-go certificates, preserving the remaining new-source residuals.",
+        generalShiabEpsilonOperatorAnsatzProbePassed ? "passed" : "failed",
+        generalShiabEpsilonOperatorAnsatzProbeMaterialized
+            ? $"generalShiabEpsilonOperatorAnsatzProbePassed={JsonBool(phase414!.RootElement, "generalShiabEpsilonOperatorAnsatzProbePassed")}; targetBlind={JsonBool(phase414.RootElement, "targetBlindConstruction")}; requestedOperatorAlphabetCovered={JsonBool(phase414.RootElement, "requestedOperatorAlphabetCovered")}; lowOrderProbedCarrierFamiliesClosed={JsonBool(phase414.RootElement, "lowOrderProbedCarrierFamiliesClosed")}; openResidualFamilyCount={JsonInt(phase414.RootElement, "openResidualFamilyCount")}; canFillPhase201WzContract={JsonBool(phase414.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase414.RootElement, "decision")}"
+            : "Phase414 artifact not materialized",
+        Phase414Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

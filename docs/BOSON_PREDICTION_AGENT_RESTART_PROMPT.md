@@ -35,13 +35,13 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase413 work (and the 2026-06-12
+Current gate status after the Phase414 work (and the 2026-06-12
 platform fix - GPU parity defect root-caused and discharged):
 
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=206`,
+  `objectiveAchieved=False`, `checklistPassedCount=207`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -218,6 +218,18 @@ platform fix - GPU parity defect root-caused and discharged):
   INDEPENDENT; the noncompact evasion is closed on finite-dimensional
   carriers; named residuals: real-structure bookkeeping, unitary
   category)
+- Phase414:
+  `generalShiabEpsilonOperatorAnsatzProbePassed=True`,
+  `requestedOperatorAlphabetCovered=True` (wedge, Hodge star, contraction,
+  commutator, `i`-weighted anticommutator, Clifford volume, epsilon
+  conjugation),
+  `operatorMenuCandidateCount=13` (11 closed low-order families, 2 open
+  residual families),
+  `lowOrderProbedCarrierFamiliesClosed=True`,
+  `anyClosedLowOrderAnsatzProducesWeldedScalarSmDoublet=False`,
+  `onlyOpenFamiliesRequireNewCarrierOrSourceSpecification=True`
+  (remaining: computable unobserved-phase carrier, or explicit first-order
+  cohomology/square-root `delta_omega` specification)
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -238,7 +250,25 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work added Phase413, the noncompact real-form transfer
+The latest work added Phase414, the general Shiab/epsilon operator ansatz
+closure certificate requested by the 2026-06-16 restart guidance. It enumerates
+the low-order invariant operation alphabet (wedge, Hodge star, contraction,
+commutator, `i`-weighted anticommutator, Clifford volume, epsilon conjugation)
+and binds every currently computable family to exact upstream no-go evidence:
+Phase408 closes the naive vertical trace route; Phase409 closes linear,
+bilinear, and epsilon-built frame-cross extraction; Phase411/412 close
+spinor-bilinear and quartic composite variants; Phase413 closes finite-
+dimensional noncompact real-form evasion. Exact result:
+`generalShiabEpsilonOperatorAnsatzProbePassed=True`,
+`operatorMenuCandidateCount=13`, `closedLowOrderFamilyCount=11`,
+`openResidualFamilyCount=2`, and
+`anyClosedLowOrderAnsatzProducesWeldedScalarSmDoublet=False`. The remaining
+work is now sharply two-pronged: a computable unobserved-phase carrier, or an
+explicit first-order cohomology/square-root `delta_omega` specification. Study:
+`studies/phase414_general_shiab_epsilon_operator_ansatz_probe_001`
+(IMPLEMENTATION_P414.md).
+
+Before that, Phase413, the noncompact real-form transfer
 probe, closing the most plausible loophole named by
 DEEP-RESEARCH-20260612. Exact results: the Lorentzian chimeric weld
 pi_eta: so(1,3) -> gl(10) on Sym^2(R^{1,3}) is an exact homomorphism
@@ -364,14 +394,14 @@ HONEST BOUNDARY. Study:
 
 ### Integration Points Already Updated
 
-Phase413 (like Phase388-412) is wired into:
+Phase414 (like Phase388-413) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (single broad pass; the
   older duplicated final sweep was removed on 2026-06-16)
 - `studies/phase101_boson_prediction_package_001/Program.cs`
 - `studies/phase202_boson_objective_completion_audit_001/Program.cs`
   (checklist item
-  `noncompact-real-form-transfer-probe-materialized`)
+  `general-shiab-epsilon-operator-ansatz-probe-materialized`)
 - `scripts/verify_boson_claim_integrity.sh`
 - Broad scanner exclusions: phase204, phase205, phase207, phase279,
   phase281, phase295, phase296
@@ -388,6 +418,7 @@ near the end of
 
 ```bash
 dotnet run --project studies/phase413_noncompact_real_form_transfer_probe_001/Phase413NoncompactRealFormTransferProbe.csproj
+dotnet run --project studies/phase414_general_shiab_epsilon_operator_ansatz_probe_001/Phase414GeneralShiabEpsilonOperatorAnsatzProbe.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
@@ -396,8 +427,8 @@ dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase
 PHASE405_ENABLE_GPU=1 LD_LIBRARY_PATH=native/build dotnet run --project studies/phase405_vacuum_manifold_doublet_vev_orbit_scan_001/Phase405VacuumManifoldDoubletVevOrbitScan.csproj
 ```
 
-The targeted Phase413 run passes all batteries at 2.2e-16 residuals;
-Phase202 now reports `checklistPassedCount=206`, `checklistFailedCount=3`; claim
+The targeted Phase414 run passes and preserves the fail-closed boundary;
+Phase202 now reports `checklistPassedCount=207`, `checklistFailedCount=3`; claim
 integrity verified with `promotedPhysicalMassClaimCount=0`. (Platform
 state: Gu.Interop.Tests 158/158 with the real-mesh parity and
 buffer-handle recycling tests; both Phase405 platform notes discharged
@@ -470,13 +501,8 @@ The most useful next branches are:
    families. Each should be a new fail-closed phase, update the journal, and
    leave Phase201/Phase256 untouched unless every contract field is actually
    filled. Recommended order:
-   - General Shiab/epsilon operator ansatz (highest priority): construct the
-     broadest low-order invariant menu using wedge, Hodge star, contraction,
-     commutator, `i`-weighted anticommutator, Clifford volume, and epsilon
-     conjugation. Test whether any such operator can map GU field content into
-     a welded spin-0 SM doublet. This attacks the highest-value open gap while
-     not depending on Weinstein's missing/lost operator-choice notes.
-   - Fermionic cohomology square-root ansatz: use Superphysics `part-09b`
+   - Fermionic cohomology square-root ansatz (highest priority after
+     Phase414): use Superphysics `part-09b`
      section 9.3 as a research clue, not a theorem. It places observed
      fermions plus LookingGlass/dark/Rarita-Schwinger matter in `chi`, says
      `omega` subfields accommodate Higgs-like soft masses, Yukawa couplings,
@@ -485,8 +511,12 @@ The most useful next branches are:
      root `delta_omega`. Build target-blind candidate first-order complexes
      and test whether any produce a welded spin-0 SM doublet or observed-field
      projection data.
+   - General Shiab/epsilon operator ansatz: DONE by Phase414 on the currently
+     computable carriers. The low-order alphabet is covered, 11 families are
+     closed by Phases408-413, and the 2 remaining residuals require a new
+     carrier/source specification rather than another internal near-pass.
    - Unobserved-phase carrier census: enumerate field/carrier slots not already
-     ruled out by Phases408-413, especially any draft "unobserved phase" or
+     ruled out by Phases408-414, especially any draft "unobserved phase" or
      beyond-frame-cross content that can be pinned to a computable
      representation. Ask whether a welded spin-0 SM doublet can occur there.
    - Direction-dependent curvature/VEV coupling scan: Phase410 closed only the
@@ -599,9 +629,9 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -120 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase413|noncompactRealFormTransferProbe|realFormTransferEstablished" \
+rg -n "Phase414|generalShiabEpsilonOperatorAnsatzProbe|lowOrderProbedCarrierFamiliesClosed" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
-  studies/phase413_noncompact_real_form_transfer_probe_001 \
+  studies/phase414_general_shiab_epsilon_operator_ansatz_probe_001 \
   studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
 ```
 
@@ -614,11 +644,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase413 output JSON files, and commit a checkpoint
+force-add the ignored Phase414 output JSON files, and commit a checkpoint
 after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase413 noncompact real form transfer probe
+Add phase414 general Shiab epsilon ansatz probe
 ```
