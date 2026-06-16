@@ -404,6 +404,13 @@ buffer-handle recycling tests; both Phase405 platform notes discharged
 2026-06-12.) All seven broad scanners still report zero intake-ready
 evidence.
 
+Validation-context warning from 2026-06-16: run the generator directly as shown
+above. In this Codex shell, redirecting `dotnet run`/`dotnet build` output to a
+plain file produced a local shell/fnm false failure (`Build FAILED` with zero
+compiler errors) around Phase280, while the same project and the direct full
+generator invocation passed. Do not treat a redirected/piped tail script as the
+validation signal; use the real script exit code from the direct command.
+
 ### Current Reference Structure
 
 `ExperimentReferences.md` is the top-level source ledger. Each row should have
