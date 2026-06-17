@@ -183,6 +183,7 @@ const string Phase414Path = "studies/phase414_general_shiab_epsilon_operator_ans
 const string Phase415Path = "studies/phase415_fermionic_cohomology_square_root_ansatz_probe_001/output/fermionic_cohomology_square_root_ansatz_probe_summary.json";
 const string Phase416Path = "studies/phase416_unobserved_phase_carrier_census_001/output/unobserved_phase_carrier_census_summary.json";
 const string Phase417Path = "studies/phase417_vector_spinor_144_decomposition_probe_001/output/vector_spinor_144_decomposition_probe_summary.json";
+const string Phase418Path = "studies/phase418_direction_dependent_curvature_vev_coupling_scan_001/output/direction_dependent_curvature_vev_coupling_scan_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -399,6 +400,7 @@ using var phase414 = File.Exists(Phase414Path) ? JsonDocument.Parse(File.ReadAll
 using var phase415 = File.Exists(Phase415Path) ? JsonDocument.Parse(File.ReadAllText(Phase415Path)) : null;
 using var phase416 = File.Exists(Phase416Path) ? JsonDocument.Parse(File.ReadAllText(Phase416Path)) : null;
 using var phase417 = File.Exists(Phase417Path) ? JsonDocument.Parse(File.ReadAllText(Phase417Path)) : null;
+using var phase418 = File.Exists(Phase418Path) ? JsonDocument.Parse(File.ReadAllText(Phase418Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -5423,6 +5425,44 @@ var vectorSpinor144DecompositionProbePassed = vectorSpinor144DecompositionProbeM
     && JsonBool(phase417.RootElement, "phase201TemplateMutated") is false
     && JsonInt(phase417.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
     && JsonInt(phase417.RootElement, "acceptedContractFieldCount") == 0;
+var directionDependentCurvatureVevCouplingScanMaterialized = phase418 is not null;
+var directionDependentCurvatureVevCouplingScanPassed = directionDependentCurvatureVevCouplingScanMaterialized
+    && JsonBool(phase418!.RootElement, "directionDependentCurvatureVevCouplingScanPassed") is true
+    && JsonBool(phase418.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase418.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase418.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase418.RootElement, "applicationSubjectKind") == "direction-dependent-curvature-vev-coupling-scan"
+    && JsonBool(phase418.RootElement, "phase405PrecursorPassed") is true
+    && JsonBool(phase418.RootElement, "phase410PrecursorPassed") is true
+    && JsonBool(phase418.RootElement, "phase417PrecursorPassed") is true
+    && JsonBool(phase418.RootElement, "blockProjectorsCommuteWithResidualGaugeAction") is true
+    && JsonBool(phase418.RootElement, "blockProjectorsCommuteWithFullSu3") is false
+    && JsonBool(phase418.RootElement, "pureQuadraticDirectionDependentCouplingsStillRunAway") is true
+    && JsonInt(phase418.RootElement, "pureQuadraticFiniteVevCandidateCount") == 0
+    && JsonInt(phase418.RootElement, "stabilizedLandauMenuCandidateCount") == 9
+    && JsonInt(phase418.RootElement, "stabilizedCandidateSelectsDoubletCount") > 0
+    && JsonInt(phase418.RootElement, "nonTautologicalDoubletSelectorCount") > 0
+    && JsonInt(phase418.RootElement, "sourceDefinedCandidateCount") == 0
+    && JsonInt(phase418.RootElement, "sourceDefinedDoubletSelectorCount") == 0
+    && JsonBool(phase418.RootElement, "directionDependentCouplingCanSelectDoubletInAdHocLandauAnsatz") is true
+    && JsonBool(phase418.RootElement, "sourceDefinedDirectionDependentCurvatureCouplingFound") is false
+    && JsonBool(phase418.RootElement, "sourceDefinedDoubletSelectingCurvatureCouplingFound") is false
+    && JsonBool(phase418.RootElement, "directionDependentCouplingSourceLawStillMissing") is true
+    && JsonBool(phase418.RootElement, "finiteVevScaleStillExternal") is true
+    && JsonBool(phase418.RootElement, "quarticStabilizerStillExternal") is true
+    && JsonInt(phase418.RootElement, "requiredSpecificationFieldCount") == 8
+    && JsonInt(phase418.RootElement, "suppliedRequiredSpecificationFieldCount") == 0
+    && JsonBool(phase418.RootElement, "physicalCouplingProvided") is false
+    && JsonBool(phase418.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase418.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase418.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase418.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase418.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase418.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase418.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase418.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase418.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase418.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -7735,6 +7775,14 @@ var checklist = new[]
             ? $"vectorSpinor144DecompositionProbePassed={JsonBool(phase417!.RootElement, "vectorSpinor144DecompositionProbePassed")}; gammaTraceRankComplex={JsonInt(phase417.RootElement, "gammaTraceRankComplex")}; vectorSpinor144KernelComplexDimension={JsonInt(phase417.RootElement, "vectorSpinor144KernelComplexDimension")}; internalSmHiggsPatternComplexDimension={JsonInt(phase417.RootElement, "internalSmHiggsPatternComplexDimension")}; linearWeldedScalarCountTotal={JsonInt(phase417.RootElement, "linearWeldedScalarCountTotal")}; vectorSpinor144StillRequiresBosonicProjectionMap={JsonBool(phase417.RootElement, "vectorSpinor144StillRequiresBosonicProjectionMap")}; canFillPhase201WzContract={JsonBool(phase417.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase417.RootElement, "decision")}"
             : "Phase417 artifact not materialized",
         Phase417Path),
+    new ObjectiveChecklistItem(
+        "direction-dependent-curvature-vev-coupling-scan-materialized",
+        "Scan residual-gauge-invariant direction-dependent curvature/connection block couplings, separating pure quadratic runaway from ad hoc stabilized doublet selectors and preserving the missing source-law boundary.",
+        directionDependentCurvatureVevCouplingScanPassed ? "passed" : "failed",
+        directionDependentCurvatureVevCouplingScanMaterialized
+            ? $"directionDependentCurvatureVevCouplingScanPassed={JsonBool(phase418!.RootElement, "directionDependentCurvatureVevCouplingScanPassed")}; blockProjectorsCommuteWithResidualGaugeAction={JsonBool(phase418.RootElement, "blockProjectorsCommuteWithResidualGaugeAction")}; pureQuadraticDirectionDependentCouplingsStillRunAway={JsonBool(phase418.RootElement, "pureQuadraticDirectionDependentCouplingsStillRunAway")}; stabilizedCandidateSelectsDoubletCount={JsonInt(phase418.RootElement, "stabilizedCandidateSelectsDoubletCount")}; sourceDefinedDoubletSelectorCount={JsonInt(phase418.RootElement, "sourceDefinedDoubletSelectorCount")}; directionDependentCouplingSourceLawStillMissing={JsonBool(phase418.RootElement, "directionDependentCouplingSourceLawStillMissing")}; canFillPhase201WzContract={JsonBool(phase418.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase418.RootElement, "decision")}"
+            : "Phase418 artifact not materialized",
+        Phase418Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

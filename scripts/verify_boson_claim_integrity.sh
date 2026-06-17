@@ -187,6 +187,7 @@ const paths = {
   phase415: "studies/phase415_fermionic_cohomology_square_root_ansatz_probe_001/output/fermionic_cohomology_square_root_ansatz_probe_summary.json",
   phase416: "studies/phase416_unobserved_phase_carrier_census_001/output/unobserved_phase_carrier_census_summary.json",
   phase417: "studies/phase417_vector_spinor_144_decomposition_probe_001/output/vector_spinor_144_decomposition_probe_summary.json",
+  phase418: "studies/phase418_direction_dependent_curvature_vev_coupling_scan_001/output/direction_dependent_curvature_vev_coupling_scan_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -445,6 +446,7 @@ const phase414 = requireFile(paths.phase414);
 const phase415 = requireFile(paths.phase415);
 const phase416 = requireFile(paths.phase416);
 const phase417 = requireFile(paths.phase417);
+const phase418 = requireFile(paths.phase418);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -4885,6 +4887,22 @@ if (sourceLineageMissing) {
   assert(phase417.sourceContractApplicationAllowed === false && phase417.canFillPhase201WzContract === false && phase417.canFillPhase201HiggsContract === false && phase417.canFillPhase256ObservedFieldExtractionContract === false, "Phase417 cannot fill Phase201 or Phase256 contracts.");
   assert(phase417.routePromotesWzMasses === false && phase417.routePromotesHiggsMass === false && phase417.routeCompletesBosonPredictions === false, "Phase417 cannot promote boson predictions.");
   assert(phase417.phase201TemplateMutated === false && phase417.fieldsAppliedToPhase201TemplateCount === 0 && phase417.acceptedContractFieldCount === 0, "Phase417 must not mutate or fill the Phase201 template.");
+  assert(phase418.directionDependentCurvatureVevCouplingScanPassed === true, "Phase418 direction-dependent curvature/VEV coupling scan must pass as a fail-closed workbench.");
+  assert(phase418.targetBlindConstruction === true && phase418.physicalTargetsConsultedForConstruction === false, "Phase418 construction must remain target-blind.");
+  assert(typeof phase418.targetBlindConstructionHash === "string" && phase418.targetBlindConstructionHash.length === 64, "Phase418 must persist a target-blind construction hash.");
+  assert(phase418.applicationSubjectKind === "direction-dependent-curvature-vev-coupling-scan", "Phase418 must classify its subject as the direction-dependent curvature/VEV scan.");
+  assert(phase418.phase405PrecursorPassed === true && phase418.phase410PrecursorPassed === true && phase418.phase417PrecursorPassed === true, "Phase418 must preserve Phase405/410/417 precursor gates.");
+  assert(phase418.blockProjectorsCommuteWithResidualGaugeAction === true && phase418.blockProjectorsCommuteWithFullSu3 === false && phase418.directionDependentAnsatzIsResidualGaugeInvariantOnly === true, "Phase418 must verify residual-gauge block projectors and carry the full-SU3 boundary.");
+  assert(phase418.pureQuadraticDirectionDependentCouplingsStillRunAway === true && phase418.pureQuadraticFiniteVevCandidateCount === 0, "Phase418 pure direction-dependent quadratics must remain runaway on rank-1 flat rays.");
+  assert(phase418.stabilizedLandauMenuCandidateCount === 9 && phase418.stabilizedCandidateSelectsDoubletCount > 0 && phase418.nonTautologicalDoubletSelectorCount > 0, "Phase418 must materialize the target-blind stabilized selector menu.");
+  assert(phase418.sourceDefinedCandidateCount === 0 && phase418.sourceDefinedDoubletSelectorCount === 0, "Phase418 cannot report a source-defined direction-dependent doublet selector.");
+  assert(phase418.directionDependentCouplingCanSelectDoubletInAdHocLandauAnsatz === true && phase418.directionDependentCouplingSourceLawStillMissing === true, "Phase418 must distinguish ad hoc mathematical selectors from missing source law.");
+  assert(phase418.finiteVevScaleStillExternal === true && phase418.quarticStabilizerStillExternal === true, "Phase418 must preserve the external scale/stabilizer boundary.");
+  assert(phase418.requiredSpecificationFieldCount === 8 && phase418.suppliedRequiredSpecificationFieldCount === 0, "Phase418 must preserve the empty direction-dependent coupling specification contract.");
+  assert(phase418.physicalCouplingProvided === false, "Phase418 derives no coupling.");
+  assert(phase418.sourceContractApplicationAllowed === false && phase418.canFillPhase201WzContract === false && phase418.canFillPhase201HiggsContract === false && phase418.canFillPhase256ObservedFieldExtractionContract === false, "Phase418 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase418.routePromotesWzMasses === false && phase418.routePromotesHiggsMass === false && phase418.routeCompletesBosonPredictions === false, "Phase418 cannot promote boson predictions.");
+  assert(phase418.phase201TemplateMutated === false && phase418.fieldsAppliedToPhase201TemplateCount === 0 && phase418.acceptedContractFieldCount === 0, "Phase418 must not mutate or fill the Phase201 template.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

@@ -1,6 +1,6 @@
 {
   "phaseId": "phase390-converged-control-branch-fermion-mode-rebuild",
-  "generatedAt": "2026-06-17T13:53:30.8622789+00:00",
+  "generatedAt": "2026-06-17T14:47:00.7489523+00:00",
   "terminalStatus": "converged-control-branch-modes-rebuilt-sharp-ward-verified-vo7-still-incomplete",
   "convergedControlBranchFermionModeRebuildPassed": true,
   "phase372PrecursorPassed": true,

@@ -35,13 +35,13 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase417 work (and the 2026-06-12
+Current gate status after the Phase418 work (and the 2026-06-12
 platform fix - GPU parity defect root-caused and discharged):
 
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=210`,
+  `objectiveAchieved=False`, `checklistPassedCount=211`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -259,6 +259,15 @@ platform fix - GPU parity defect root-caused and discharged):
   `internalSmHiggsPatternComplexDimension=0`,
   `linearWeldedScalarCountTotal=0`,
   `vectorSpinor144StillRequiresBosonicProjectionMap=True`
+- Phase418:
+  `directionDependentCurvatureVevCouplingScanPassed=True`,
+  `blockProjectorsCommuteWithResidualGaugeAction=True`,
+  `pureQuadraticDirectionDependentCouplingsStillRunAway=True`,
+  `stabilizedCandidateSelectsDoubletCount=5`,
+  `nonTautologicalDoubletSelectorCount=4`,
+  `sourceDefinedDoubletSelectorCount=0`,
+  `directionDependentCouplingSourceLawStillMissing=True`,
+  `finiteVevScaleStillExternal=True`
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -279,7 +288,30 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work added Phase417, the vector-spinor `144` decomposition probe.
+The latest work added Phase418, the direction-dependent curvature/VEV coupling
+scan. It extends Phase410's uniform-curvature no-go by enumerating the minimal
+residual-`su(2)+u(1)` block-isotypic menu on the same `su(3)` control branch:
+triplet `T={0,1,2}`, doublet `D={3,4,5,6}`, and singlet `S={7}`. Exact
+result: `directionDependentCurvatureVevCouplingScanPassed=True`,
+`blockProjectorsCommuteWithResidualGaugeAction=True`,
+`blockProjectorsCommuteWithFullSu3=False`,
+`pureQuadraticDirectionDependentCouplingsStillRunAway=True`,
+`stabilizedLandauMenuCandidateCount=9`,
+`stabilizedCandidateSelectsDoubletCount=5`,
+`nonTautologicalDoubletSelectorCount=4`,
+`sourceDefinedDoubletSelectorCount=0`,
+`directionDependentCouplingSourceLawStillMissing=True`,
+`finiteVevScaleStillExternal=True`, and
+`quarticStabilizerStillExternal=True`. Interpretation: the direction-dependent
+curvature branch is not mathematically empty - stabilized block laws can select
+the doublet - but every successful selector imports an extra block mass law and
+quartic stabilizer that current sources do not define. Pure quadratic
+direction-dependent curvature terms still run away on the Phase405/410 flat
+rays. No Phase201 or Phase256 field is filled. Study:
+`studies/phase418_direction_dependent_curvature_vev_coupling_scan_001`
+(IMPLEMENTATION_P418.md).
+
+Before that, Phase417 added the vector-spinor `144` decomposition probe.
 It takes the Phase416 `Z_{1/2}` carrier target and constructs the
 `10 x 16 -> 16 + 144` split directly as the gamma-trace kernel
 `10 x 16+ -> 16-`, using the same Cl(10), SM-chain, and Sym^2 welded-spin
@@ -480,14 +512,14 @@ HONEST BOUNDARY. Study:
 
 ### Integration Points Already Updated
 
-Phase417 (like Phase388-416) is wired into:
+Phase418 (like Phase388-417) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (single broad pass; the
   older duplicated final sweep was removed on 2026-06-16)
 - `studies/phase101_boson_prediction_package_001/Program.cs`
 - `studies/phase202_boson_objective_completion_audit_001/Program.cs`
   (checklist item
-  `vector-spinor-144-decomposition-probe-materialized`)
+  `direction-dependent-curvature-vev-coupling-scan-materialized`)
 - `scripts/verify_boson_claim_integrity.sh`
 - Broad scanner exclusions: phase204, phase205, phase207, phase279,
   phase281, phase295, phase296
@@ -499,7 +531,8 @@ Reference tracking was updated in `ExperimentReferences.md`,
 (2026-06-16 expanded Superphysics mirror check plus Phase415 use of part-09b
 as a non-promotional `delta_omega` clue), and `GU-DRAFT-2021.md` / the TOE
 Iceberg note (Phase416 carrier census plus Phase417 vector-spinor `144`
-decomposition). The diagnosis journal entry is near the end of
+decomposition plus Phase418 direction-dependent curvature boundary). The
+diagnosis journal entry is near the end of
 `docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md`.
 
 ### Validation Already Run
@@ -510,6 +543,7 @@ dotnet run --project studies/phase414_general_shiab_epsilon_operator_ansatz_prob
 dotnet run --project studies/phase415_fermionic_cohomology_square_root_ansatz_probe_001/Phase415FermionicCohomologySquareRootAnsatzProbe.csproj
 dotnet run --project studies/phase416_unobserved_phase_carrier_census_001/Phase416UnobservedPhaseCarrierCensus.csproj
 dotnet run --project studies/phase417_vector_spinor_144_decomposition_probe_001/Phase417VectorSpinor144DecompositionProbe.csproj
+dotnet run --project studies/phase418_direction_dependent_curvature_vev_coupling_scan_001/Phase418DirectionDependentCurvatureVevCouplingScan.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
@@ -518,8 +552,8 @@ dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase
 PHASE405_ENABLE_GPU=1 LD_LIBRARY_PATH=native/build dotnet run --project studies/phase405_vacuum_manifold_doublet_vev_orbit_scan_001/Phase405VacuumManifoldDoubletVevOrbitScan.csproj
 ```
 
-The targeted Phase417 run passes and preserves the fail-closed boundary;
-Phase202 now reports `checklistPassedCount=210`, `checklistFailedCount=3`; claim
+The targeted Phase418 run passes and preserves the fail-closed boundary;
+Phase202 now reports `checklistPassedCount=211`, `checklistFailedCount=3`; claim
 integrity verified with `promotedPhysicalMassClaimCount=0`. (Platform
 state: Gu.Interop.Tests 158/158 with the real-mesh parity and
 buffer-handle recycling tests; both Phase405 platform notes discharged
@@ -592,16 +626,24 @@ The most useful next branches are:
    families. Each should be a new fail-closed phase, update the journal, and
    leave Phase201/Phase256 untouched unless every contract field is actually
    filled. Recommended order:
-   - Direction-dependent curvature/VEV coupling scan (highest priority after
-     Phase417): Phase410 closed only the uniform bosonic curvature coupling.
-     Enumerate gauge-invariant direction-dependent curvature/connection
-     couplings and test whether any select doublet VEVs without importing
-     electroweak targets.
-   - Observed-field extraction template: assume a candidate scalar doublet
-     exists and build an FMS/dressing-field-style symbolic map that states the
-     minimal algebraic data needed for photon, W, Z, Higgs projection rows,
-     weak-angle lineage, and pole extraction. This clarifies the Phase256
-     contract even if it does not solve the scalar gap.
+   - Observed-field extraction template (highest priority after Phase418):
+     assume a candidate scalar doublet exists and build an
+     FMS/dressing-field-style symbolic map that states the minimal algebraic
+     data needed for photon, W, Z, Higgs projection rows, weak-angle lineage,
+     and pole extraction. This clarifies the Phase256 contract even if it
+     does not solve the scalar gap.
+   - Scale sanity checks: test naive readings such as the Superphysics/draft
+     stylized `m = R/4` curvature-mass relation by dimensional analysis and
+     target-blind normalization bookkeeping. A likely negative result is still
+     useful because it proves that any viable scale law needs a nontrivial
+     unit/normalization anchor.
+   - Direction-dependent curvature/VEV coupling scan: DONE at the minimal
+   block-isotypic workbench level by Phase418. Phase410 closed only the
+   uniform bosonic curvature coupling; Phase418 shows pure block-weighted
+   quadratics still run away, while stabilized block laws can select the
+   doublet only by adding a non-source-defined block mass law and quartic
+   stabilizer. Further progress requires a source-defined curvature kernel,
+   stabilizer, sign/scale, and observed-field extraction.
    - Vector-spinor `144` decomposition / composite probe: DONE at the linear
      gamma-trace/decomposition level by Phase417. The source-pinned `Z_{1/2}`
      carrier's `144` has exact kernel dimension, no internal SM-Higgs-pattern
@@ -622,11 +664,6 @@ The most useful next branches are:
      computable carriers. The low-order alphabet is covered, 11 families are
      closed by Phases408-413, and the 2 remaining residuals require a new
      carrier/source specification rather than another internal near-pass.
-   - Scale sanity checks: test naive readings such as the Superphysics/draft
-     stylized `m = R/4` curvature-mass relation by dimensional analysis and
-     target-blind normalization bookkeeping. A likely negative result is still
-     useful because it proves that any viable scale law needs a nontrivial
-     unit/normalization anchor.
 2. The physical VO-6/VO-7 derivation against the Phase398 8-item gap
    ledger, headed by the symmetry-breaking scalar/VEV sector (welded to
    photon/Z mixing by Phase397) and the hypercharge/coupling lineage. Each
@@ -688,10 +725,13 @@ The most useful next branches are:
    supplied. Phase417 then decomposed the `Z` vector-spinor `144` itself:
    the gamma-trace split is exact, the internal SM-Higgs-pattern count is
    zero, and the chiral `2 x 144` carrier has no linear welded scalar.
-   THE INTERNAL STRUCTURAL PROGRAM IS AT ITS HONEST BOUNDARY, NOW WITH
-   THREE NAMED ROUTES: a source-defined vector-spinor/composite bosonic
-   projection map, a direction-dependent curvature/VEV coupling that
-   evades Phase410's uniform-coupling no-go, or a new primary-source
+   Phase418 then showed that direction-dependent block laws can select the
+   doublet only after adding a non-source-defined block mass law and quartic
+   stabilizer; pure block-weighted quadratics still run away. THE INTERNAL
+   STRUCTURAL PROGRAM IS AT ITS HONEST BOUNDARY, NOW WITH NAMED ROUTES:
+   a source-defined vector-spinor/composite bosonic projection map, a
+   source-defined direction-dependent curvature kernel with stabilizer and
+   scale, an observed-field extraction theorem/template, or a new primary-source
    specification. Standing work: literature monitoring at checkpoint
    cadence; the epsilon/Shiab route if a quantitative specification
    appears.
@@ -732,9 +772,9 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -120 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase417|vectorSpinor144DecompositionProbe|linearWeldedScalarCountTotal" \
+rg -n "Phase418|directionDependentCurvatureVevCouplingScan|sourceDefinedDoubletSelectorCount" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
-  studies/phase417_vector_spinor_144_decomposition_probe_001 \
+  studies/phase418_direction_dependent_curvature_vev_coupling_scan_001 \
   studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
 ```
 
@@ -747,11 +787,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase417 output JSON files, and commit a checkpoint
+force-add the ignored Phase418 output JSON files, and commit a checkpoint
 after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase417 vector-spinor 144 decomposition probe
+Add phase418 direction-dependent curvature scan
 ```

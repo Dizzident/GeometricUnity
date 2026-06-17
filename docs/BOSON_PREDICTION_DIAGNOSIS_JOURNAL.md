@@ -17795,3 +17795,63 @@ level. Further progress from `Z_{1/2}` requires a source-defined bosonic
 projection/composite map, action, or VEV selection rule. Without that, the next
 useful target-blind experiments are the direction-dependent curvature/VEV
 coupling scan and the observed-field extraction template branch.
+
+## 2026-06-17 - Phase418: Direction-Dependent Curvature/VEV Coupling Scan
+
+### Context
+
+Phase410 closed only the uniform bosonic curvature coupling: every rank-1 VEV
+ray in the Phase405 `su(3)` control branch is bare-flat, so a uniform negative
+curvature mass term runs away and the lifted sector is block-degenerate. After
+Phase417 closed the vector-spinor `144` branch at linear level, the restart
+prompt's highest-priority target-blind experiment was the remaining curvature
+possibility: direction-dependent curvature/connection couplings.
+
+### Result
+
+- Phase418 enumerates the minimal residual-`su(2)+u(1)` block-isotypic menu on
+  the same `su(3)` chain: triplet `T={0,1,2}`, doublet `D={3,4,5,6}`, and
+  singlet `S={7}`.
+- The block projectors commute with the residual gauge action:
+  `blockProjectorsCommuteWithResidualGaugeAction=True`; they do not commute
+  with full `su(3)`, so the ansatz is honestly recorded as residual-gauge
+  invariant only.
+- Pure direction-dependent quadratic curvature terms still run away on the
+  Phase405/410 rank-1 flat rays:
+  `pureQuadraticDirectionDependentCouplingsStillRunAway=True` and
+  `pureQuadraticFiniteVevCandidateCount=0`.
+- Stabilized Landau-style block terms can select the doublet in the finite
+  target-blind menu:
+  `stabilizedLandauMenuCandidateCount=9`,
+  `stabilizedCandidateSelectsDoubletCount=5`, and
+  `nonTautologicalDoubletSelectorCount=4`.
+- None of those selectors is source-defined:
+  `sourceDefinedCandidateCount=0`,
+  `sourceDefinedDoubletSelectorCount=0`, and
+  `directionDependentCouplingSourceLawStillMissing=True`.
+- The missing fields are now explicit: a source equation for the curvature
+  kernel, a non-post-hoc block selector, sign/normalization, a quartic or
+  higher stabilizer, VEV scale lineage, observed W/Z/H projection rows,
+  weak-angle/coupling lineage, and pole/GeV normalization.
+- No Phase201 or Phase256 field is filled; no W/Z/H mass claim is promoted.
+- Study:
+  `studies/phase418_direction_dependent_curvature_vev_coupling_scan_001`
+  (IMPLEMENTATION_P418.md).
+
+### Validation
+
+- Targeted Phase418 run passed:
+  `directionDependentCurvatureVevCouplingScanPassed=True`.
+- Phase101 includes the block.
+- Phase202: `checklistPassedCount=211`, `checklistFailedCount=3`.
+- Claim integrity verified with `promotedPhysicalMassClaimCount=0`.
+- Full `./scripts/generate_validated_boson_predictions.sh` completed with
+  Phase418 included and ended at `boson-claim-integrity-verified`.
+
+### Standing Next Work
+
+The direction-dependent curvature branch is not empty mathematically, but the
+successful doublet selectors are workbench laws, not GU source laws. Further
+progress needs a source-defined curvature kernel/stabilizer/scale or the next
+target-blind branch: an observed-field extraction template that spells out the
+minimal photon/W/Z/H projection and pole-extraction data required by Phase256.

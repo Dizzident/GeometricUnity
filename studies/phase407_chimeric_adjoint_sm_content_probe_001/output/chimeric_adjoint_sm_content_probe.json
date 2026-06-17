@@ -1,6 +1,6 @@
 {
   "phaseId": "phase407-chimeric-adjoint-sm-content-probe",
-  "generatedAt": "2026-06-17T13:59:16.6724776+00:00",
+  "generatedAt": "2026-06-17T14:52:56.522563+00:00",
   "terminalStatus": "sm-higgs-pattern-doublet-exists-in-chimeric-frame-cross-internal-block-spin-zero-extraction-named",
   "chimericAdjointSmContentProbePassed": true,
   "phase404PrecursorPassed": true,
