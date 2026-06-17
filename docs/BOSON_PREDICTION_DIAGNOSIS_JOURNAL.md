@@ -17855,3 +17855,73 @@ successful doublet selectors are workbench laws, not GU source laws. Further
 progress needs a source-defined curvature kernel/stabilizer/scale or the next
 target-blind branch: an observed-field extraction template that spells out the
 minimal photon/W/Z/H projection and pole-extraction data required by Phase256.
+
+## 2026-06-17 - Phase419: Observed-Field Symbolic Extraction Template
+
+### Context
+
+Phase418 closed the minimal direction-dependent curvature workbench boundary:
+block laws can select the doublet only by importing a non-source-defined mass
+law and stabilizer. The restart prompt's highest-priority remaining
+target-blind branch was then the observed-field extraction template: assume a
+candidate scalar doublet exists and spell out the FMS/dressing-field-style
+algebraic rows needed for photon, W, Z, and Higgs projection before Phase256
+could be filled.
+
+### Result
+
+- Phase419 reuses Phase317, Phase344, and Phase365 only as external dependency
+  and FMS/dressing-field template support. It preserves their non-promotional
+  boundary.
+- The phase builds an eight-row symbolic map covering all 20 Phase256 fields:
+  native scalar doublet carrier, observed vacuum and dressing field, dressed
+  charged weak fields, neutral basis and weak angle, photon projection, Z
+  projection, Higgs radial row, and pole/unit normalization.
+- The four projection rows are explicit template rows:
+  photon, W, Z, and Higgs.
+- The required GU inputs are also explicit: native doublet carrier, observed
+  vacuum, native dressing field, electroweak embedding, weak-angle/coupling
+  lineage, quadratic mass operator, W/Z source rows, photon row, Higgs row,
+  pole extraction, stability sidecars, and GeV normalization.
+- Machine result:
+  `observedFieldSymbolicExtractionTemplatePassed=True`,
+  `fmsDressingExternalTemplateSupport=True`,
+  `fmsDressingExternalTemplatesPromotional=False`,
+  `symbolicMapRowCount=8`,
+  `projectionRowCount=4`,
+  `allPhase256FieldsMappedBySymbolicTemplate=True`,
+  `sourceDefinedPhase256FieldCount=0`,
+  `requiredGuInputProvidedCount=0`,
+  `phase295IntakeReadyCandidateCount=0`,
+  `canFillPhase256ObservedFieldExtractionContract=False`.
+- No Phase201 or Phase256 field is filled; no W/Z/H mass claim is promoted.
+- Study:
+  `studies/phase419_observed_field_symbolic_extraction_template_001`
+  (IMPLEMENTATION_P419.md).
+
+### Validation
+
+- Targeted Phase419 run passed.
+- Scanner reruns passed with no intake-ready evidence:
+  Phase204 `intakeReadyCandidateCount=0`,
+  Phase205 `intakeReadyFindingCount=0`,
+  Phase207 `intakeReadyFindingCount=0`,
+  Phase279/281 `localSearchMatchingFileCount=0`,
+  Phase295 `intakeReadyObservedFieldExtractionCandidateCount=0`,
+  Phase296 `intakeReadySourceLineageFieldCandidateCount=0`.
+- `dotnet test` passed; the existing xUnit2013 collection-size warning remains
+  in `tests/Gu.Phase5.QuantitativeValidation.Tests`.
+- Phase101 includes the Phase419 block.
+- Phase202: `checklistPassedCount=212`, `checklistFailedCount=3`.
+- Claim integrity verified with `promotedPhysicalMassClaimCount=0`.
+- Full `./scripts/generate_validated_boson_predictions.sh` completed with
+  Phase419 included and ended at `boson-claim-integrity-verified`.
+
+### Standing Next Work
+
+The observed-field extraction branch is now explicit as a template, not a
+solution. The next target-blind experimental branch is the scale sanity check:
+test naive curvature-mass readings such as the Superphysics/draft stylized
+`m = R/4` relation by dimensional analysis and normalization bookkeeping. A
+negative result would still be useful because it would prove that any viable
+scale law needs a nontrivial source unit/normalization anchor.

@@ -52,6 +52,11 @@ does not supply a GU-native dressing field, observed vacuum/expansion, photon,
 W, Z, and Higgs projection rows, or Phase201/Phase256 application-ready source
 lineage.
 
+Phase419 reuses this source family as external template support for a concrete
+symbolic extraction map. It records the needed dressed charged fields,
+neutral photon/Z mixing, Higgs radial row, pole extraction, and Phase256 field
+coverage, while preserving `sourceDefinedPhase256FieldCount=0`.
+
 ## Prediction Relevance
 
 The route is relevant to:
@@ -72,6 +77,10 @@ It does not currently supply:
 - gauge-coupling normalization, mass scale, or GeV lineage;
 - a GU Higgs scalar-source operator or self-coupling source;
 - correlation-function or physical-pole extraction.
+
+Phase419 confirms that this absence is exactly the remaining contract gap:
+the dressing-field map can organize the rows, but no GU-native source fills
+them.
 
 ## Limitation
 

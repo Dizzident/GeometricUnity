@@ -1,0 +1,233 @@
+{
+  "templateId": "observed-field-symbolic-fms-dressing-template-v1",
+  "applicationSubjectKind": "fms-dressing-field-observed-extraction-template",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "8286124c3f1b0eff02a0e5a5154c315c85212220426b6561a3e1458efd2e4784",
+  "status": "symbolic-template-only",
+  "symbolicMapRows": [
+    {
+      "rowId": "native-scalar-doublet-carrier",
+      "stage": "carrier",
+      "algebraicExpression": "Provide a GU-native field Phi transforming as an observed SU(2)L doublet with hypercharge convention Y(Phi).",
+      "requiredPhase256FieldIds": [
+        "observedFieldExtractionTheoremId",
+        "sourceReferenceIds",
+        "higgsScalarSourceOperatorId",
+        "higgsMassiveScalarProfileId"
+      ],
+      "sourceDefined": false,
+      "externalTemplateOnly": true,
+      "acceptance": "A source-derived doublet-equivalent carrier and scalar source/operator, not a Standard Model import."
+    },
+    {
+      "rowId": "observed-vacuum-and-dressing-field",
+      "stage": "dressing",
+      "algebraicExpression": "For Phi != 0, construct a normalized dressing U(Phi) and a radial scalar h = ||Phi|| - v from the source vacuum.",
+      "requiredPhase256FieldIds": [
+        "canonicalOrDeclaredShiabBranchId",
+        "branchNormalizationSourceId",
+        "fourDimensionalObservedVacuumArtifactId",
+        "targetBlindConstructionHash"
+      ],
+      "sourceDefined": false,
+      "externalTemplateOnly": true,
+      "acceptance": "A GU-derived observed vacuum, branch normalization, and dressing rule fixed before target comparison."
+    },
+    {
+      "rowId": "dressed-charged-weak-fields",
+      "stage": "projection",
+      "algebraicExpression": "Form dressed weak variables W^d_a from U(Phi); define W\u002B = (W^d_1 - i W^d_2)/sqrt(2), W- = (W^d_1 \u002B i W^d_2)/sqrt(2).",
+      "requiredPhase256FieldIds": [
+        "electroweakGaugeEmbeddingId",
+        "wBosonSourceRowId",
+        "wBosonRawAmplitudeGatePassed",
+        "stabilitySidecarIds"
+      ],
+      "sourceDefined": false,
+      "externalTemplateOnly": true,
+      "acceptance": "Separate charged W projection/source rows with source replay and stability sidecars."
+    },
+    {
+      "rowId": "dressed-neutral-basis-and-weak-angle",
+      "stage": "neutral-mixing",
+      "algebraicExpression": "Keep the dressed neutral basis (W^d_3, B) and require a source weak-angle relation tan(theta_W)=gPrime/g before defining A and Z.",
+      "requiredPhase256FieldIds": [
+        "electroweakGaugeEmbeddingId",
+        "quadraticElectroweakMassOperatorId",
+        "zBosonSourceRowId",
+        "zBosonRawAmplitudeGatePassed"
+      ],
+      "sourceDefined": false,
+      "externalTemplateOnly": true,
+      "acceptance": "A GU weak-angle/coupling lineage and neutral quadratic mass operator, not an observed-mass fit."
+    },
+    {
+      "rowId": "photon-projection-row",
+      "stage": "projection",
+      "algebraicExpression": "Define A = cos(theta_W) B \u002B sin(theta_W) W^d_3 and require an exactly massless source row before W/Z promotion.",
+      "requiredPhase256FieldIds": [
+        "photonEigenstateProjectionId",
+        "targetComparisonAfterConstructionGatePassed"
+      ],
+      "sourceDefined": false,
+      "externalTemplateOnly": true,
+      "acceptance": "A massless photon projection row derived from the same neutral mass operator and weak-angle convention."
+    },
+    {
+      "rowId": "z-projection-row",
+      "stage": "projection",
+      "algebraicExpression": "Define Z = cos(theta_W) W^d_3 - sin(theta_W) B and require the Z row to diagonalize the same source mass operator.",
+      "requiredPhase256FieldIds": [
+        "zBosonSourceRowId",
+        "zBosonRawAmplitudeGatePassed",
+        "wzCommonBridgeGatePassed"
+      ],
+      "sourceDefined": false,
+      "externalTemplateOnly": true,
+      "acceptance": "A Z projection/source row and common W/Z bridge from source normalization."
+    },
+    {
+      "rowId": "higgs-radial-row",
+      "stage": "projection",
+      "algebraicExpression": "Identify the scalar radial excitation h and its quadratic pole from the source potential or Upsilon pairing.",
+      "requiredPhase256FieldIds": [
+        "higgsScalarSourceOperatorId",
+        "higgsMassiveScalarProfileId",
+        "higgsPotentialSelfCouplingRelationId"
+      ],
+      "sourceDefined": false,
+      "externalTemplateOnly": true,
+      "acceptance": "A Higgs scalar source/operator, massive profile, and self-coupling/excitation relation fixed without target masses."
+    },
+    {
+      "rowId": "pole-and-unit-normalization",
+      "stage": "physical-output",
+      "algebraicExpression": "Extract poles of gauge-invariant two-point functions or an equivalent source spectral operator, then attach GeV/unit normalization.",
+      "requiredPhase256FieldIds": [
+        "quadraticElectroweakMassOperatorId",
+        "branchNormalizationSourceId",
+        "stabilitySidecarIds",
+        "phase201And209ApplicationReady"
+      ],
+      "sourceDefined": false,
+      "externalTemplateOnly": true,
+      "acceptance": "Pole extraction, unit normalization, and application readiness sidecars for Phase201/209/256."
+    }
+  ],
+  "projectionRows": [
+    {
+      "particleId": "photon",
+      "symbolicField": "A = cos(theta_W) B \u002B sin(theta_W) W^d_3",
+      "requiredInputs": "massless photon eigenstate; weak-angle and neutral mass-matrix lineage",
+      "primaryPhase256FieldId": "photonEigenstateProjectionId",
+      "requiresPoleExtraction": true,
+      "sourceDefined": false
+    },
+    {
+      "particleId": "w-boson",
+      "symbolicField": "W\u002B/- = (W^d_1 -/\u002B i W^d_2)/sqrt(2)",
+      "requiredInputs": "charged source rows; raw W amplitude gate; common W/Z bridge",
+      "primaryPhase256FieldId": "wBosonSourceRowId",
+      "requiresPoleExtraction": true,
+      "sourceDefined": false
+    },
+    {
+      "particleId": "z-boson",
+      "symbolicField": "Z = cos(theta_W) W^d_3 - sin(theta_W) B",
+      "requiredInputs": "neutral source row; raw Z amplitude gate; same weak-angle convention as photon",
+      "primaryPhase256FieldId": "zBosonSourceRowId",
+      "requiresPoleExtraction": true,
+      "sourceDefined": false
+    },
+    {
+      "particleId": "higgs",
+      "symbolicField": "h = ||Phi|| - v",
+      "requiredInputs": "scalar source operator; massive profile; self-coupling or excitation relation",
+      "primaryPhase256FieldId": "higgsMassiveScalarProfileId",
+      "requiresPoleExtraction": true,
+      "sourceDefined": false
+    }
+  ],
+  "requiredGuInputs": [
+    {
+      "inputId": "gu-native-doublet-carrier",
+      "acceptance": "Native scalar/doublet-equivalent carrier with observed electroweak representation.",
+      "provided": false
+    },
+    {
+      "inputId": "source-observed-vacuum",
+      "acceptance": "Four-dimensional observed-sector vacuum and nonzero VEV scale from GU.",
+      "provided": false
+    },
+    {
+      "inputId": "native-dressing-field",
+      "acceptance": "Dressing field U(Phi) or equivalent gauge-invariant composite map from GU variables.",
+      "provided": false
+    },
+    {
+      "inputId": "electroweak-embedding",
+      "acceptance": "Observed SU(2)L x U(1)Y embedding and hypercharge convention.",
+      "provided": false
+    },
+    {
+      "inputId": "weak-angle-coupling-lineage",
+      "acceptance": "Target-independent g, gPrime, and weak-angle relation with transport to the mass shell.",
+      "provided": false
+    },
+    {
+      "inputId": "quadratic-mass-operator",
+      "acceptance": "Gauge-invariant quadratic mass/pole operator around the observed vacuum.",
+      "provided": false
+    },
+    {
+      "inputId": "wz-source-rows",
+      "acceptance": "Separate W and Z source rows plus common bridge normalization.",
+      "provided": false
+    },
+    {
+      "inputId": "photon-source-row",
+      "acceptance": "Massless photon projection row from the same neutral operator.",
+      "provided": false
+    },
+    {
+      "inputId": "higgs-source-row",
+      "acceptance": "Scalar source/operator, massive profile, and self-coupling/excitation lineage.",
+      "provided": false
+    },
+    {
+      "inputId": "pole-and-gev-normalization",
+      "acceptance": "Pole extraction, units, stability sidecars, and GeV normalization.",
+      "provided": false
+    }
+  ],
+  "coveredPhase256Fields": [
+    "branchNormalizationSourceId",
+    "canonicalOrDeclaredShiabBranchId",
+    "electroweakGaugeEmbeddingId",
+    "fourDimensionalObservedVacuumArtifactId",
+    "higgsMassiveScalarProfileId",
+    "higgsPotentialSelfCouplingRelationId",
+    "higgsScalarSourceOperatorId",
+    "observedFieldExtractionTheoremId",
+    "phase201And209ApplicationReady",
+    "photonEigenstateProjectionId",
+    "quadraticElectroweakMassOperatorId",
+    "sourceReferenceIds",
+    "stabilitySidecarIds",
+    "targetBlindConstructionHash",
+    "targetComparisonAfterConstructionGatePassed",
+    "wBosonRawAmplitudeGatePassed",
+    "wBosonSourceRowId",
+    "wzCommonBridgeGatePassed",
+    "zBosonRawAmplitudeGatePassed",
+    "zBosonSourceRowId"
+  ],
+  "uncoveredPhase256FieldIds": [],
+  "extraPhase256FieldIds": [],
+  "applicationInstructions": [
+    "Treat every row as a template row until a GU-native source supplies the corresponding field.",
+    "Do not apply this template to Phase201 or Phase256 without source-defined carrier, vacuum, embedding, weak-angle, source rows, pole extraction, and unit normalization.",
+    "After a source artifact fills the rows, run Phase201/209/210/213/256 and the full boson generator before any target comparison."
+  ]
+}

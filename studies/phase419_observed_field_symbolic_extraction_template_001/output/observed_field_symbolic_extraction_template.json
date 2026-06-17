@@ -1,0 +1,113 @@
+{
+  "phaseId": "phase419-observed-field-symbolic-extraction-template",
+  "terminalStatus": "observed-field-symbolic-extraction-template-materialized-contract-unfilled",
+  "generatedAt": "2026-06-17T18:41:13.9667393+00:00",
+  "observedFieldSymbolicExtractionTemplatePassed": true,
+  "applicationSubjectKind": "fms-dressing-field-observed-extraction-template",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "8286124c3f1b0eff02a0e5a5154c315c85212220426b6561a3e1458efd2e4784",
+  "symbolicTemplatePromotable": false,
+  "fmsDressingExternalTemplateSupport": true,
+  "fmsDressingExternalTemplatesPromotional": false,
+  "symbolicMapRowCount": 8,
+  "projectionRowCount": 4,
+  "allProjectionRowsPresent": true,
+  "allProjectionRowsRequirePoleExtraction": true,
+  "anyProjectionRowSourceDefined": false,
+  "requiredGuInputCount": 10,
+  "requiredGuInputProvidedCount": 0,
+  "phase256TemplateFieldCount": 20,
+  "phase256RequiredFieldCount": 20,
+  "phase256FilledRequiredFieldCount": 0,
+  "phase256ContractPromotable": false,
+  "coveredPhase256FieldCount": 20,
+  "sourceDefinedPhase256FieldCount": 0,
+  "externalTemplateOnlyRowCount": 8,
+  "allPhase256FieldsMappedBySymbolicTemplate": true,
+  "uncoveredPhase256FieldIds": [],
+  "extraPhase256FieldIds": [],
+  "phase295CandidateScanPassed": true,
+  "phase295IntakeReadyCandidateCount": 0,
+  "phase295AnyCandidateFillsContract": false,
+  "phase317MassMatrixBridgePassed": true,
+  "phase317ExternalDependencyMap": true,
+  "phase317PromotesWzMasses": false,
+  "phase317PromotesHiggsMass": false,
+  "phase344FmsPassed": true,
+  "phase344FmsTemplate": true,
+  "phase344PromotesObservedExtraction": false,
+  "phase365DressingPassed": true,
+  "phase365ExternalTemplate": true,
+  "phase365PromotesObservedExtraction": false,
+  "phase418Passed": true,
+  "phase418CanFillObserved": false,
+  "sourceContractApplicationAllowed": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "checks": [
+    {
+      "checkId": "phase256-contract-loaded-and-still-unfilled",
+      "passed": true,
+      "detail": "phase256Required=20; templateFields=20; phase256Filled=0; phase256Promotable=False"
+    },
+    {
+      "checkId": "phase295-scan-preserves-no-intake-ready-artifact",
+      "passed": true,
+      "detail": "phase295Passed=True; intakeReady=0; anyFills=False"
+    },
+    {
+      "checkId": "fms-dressing-external-template-support-loaded",
+      "passed": true,
+      "detail": "support=True; promotional=False; p317ExternalDependency=True; fmsTemplate=True; dressingTemplate=True"
+    },
+    {
+      "checkId": "phase418-boundary-preserved",
+      "passed": true,
+      "detail": "phase418Passed=True; phase418CanFillObserved=False"
+    },
+    {
+      "checkId": "symbolic-map-covers-phase256-template",
+      "passed": true,
+      "detail": "rows=8; covered=20; missing=0; extra=0"
+    },
+    {
+      "checkId": "projection-rows-present-but-source-undefined",
+      "passed": true,
+      "detail": "projectionRows=4; allRequirePole=True; anySourceDefined=False"
+    },
+    {
+      "checkId": "required-gu-inputs-not-supplied-by-template",
+      "passed": true,
+      "detail": "requiredGuInputs=10; provided=0; sourceDefinedPhase256FieldCount=0; externalTemplateRows=8"
+    },
+    {
+      "checkId": "no-contract-application-or-promotion",
+      "passed": true,
+      "detail": "targetBlind=True; consultedTargets=False; hashLength=64; promotable=False; canFillWz=False; canFillObserved=False; phase201Mutated=False; fieldsApplied=0"
+    }
+  ],
+  "decision": "The FMS/dressing-style observed-field map is now explicit as a target-blind symbolic template, but it supplies zero source-defined Phase256 fields and cannot promote W/Z/H predictions.",
+  "nextRequiredArtifact": [
+    "A GU-native scalar/doublet-equivalent carrier or dressing field derived from source geometry.",
+    "A source-derived observed vacuum, electroweak embedding, weak-angle/coupling lineage, and quadratic mass operator.",
+    "Photon/W/Z/H projection rows with pole extraction, stability sidecars, target-independent scale, and GeV/unit normalization."
+  ],
+  "templatePath": "studies/phase419_observed_field_symbolic_extraction_template_001/output/observed_field_symbolic_extraction_template_map.json",
+  "sourceEvidence": {
+    "phase256SummaryPath": "studies/phase256_observed_field_extraction_intake_contract_001/output/observed_field_extraction_intake_contract_summary.json",
+    "phase256TemplatePath": "studies/phase256_observed_field_extraction_intake_contract_001/output/observed_field_extraction_intake_template.json",
+    "phase295SummaryPath": "studies/phase295_observed_field_extraction_contract_candidate_scan_001/output/observed_field_extraction_contract_candidate_scan_summary.json",
+    "phase317SummaryPath": "studies/phase317_electroweak_mass_matrix_bridge_source_audit_001/output/electroweak_mass_matrix_bridge_source_audit_summary.json",
+    "phase344SummaryPath": "studies/phase344_fms_gauge_invariant_spectrum_source_audit_001/output/fms_gauge_invariant_spectrum_source_audit_summary.json",
+    "phase365SummaryPath": "studies/phase365_dressing_field_electroweak_observed_variables_audit_001/output/dressing_field_electroweak_observed_variables_audit_summary.json",
+    "phase418SummaryPath": "studies/phase418_direction_dependent_curvature_vev_coupling_scan_001/output/direction_dependent_curvature_vev_coupling_scan_summary.json"
+  }
+}

@@ -42,6 +42,11 @@ of observed states.
   The result remains negative for promotion: FMS is an external observed-field
   extraction template and does not supply GU-native projection rows or
   Phase201/Phase256-ready source lineage.
+- Reused again in Phase419 to build the target-blind symbolic
+  FMS/dressing-style observed-field extraction template. Phase419 covers all
+  20 Phase256 fields and writes photon/W/Z/H symbolic projection rows, but
+  records `sourceDefinedPhase256FieldCount=0`; FMS remains template support,
+  not GU source-lineage evidence.
 
 ## Prediction Relevance
 
@@ -55,6 +60,9 @@ theorem defining physical photon/W/Z/H composite operators from native fields,
 no source-derived observed-sector vacuum and expansion rule, no correlation
 function or spectral-pole extraction rows, no target-independent mass scale or
 coupling lineage, and no GeV normalization.
+
+Phase419 makes that limitation executable: the symbolic map is complete as a
+checklist but all GU-input rows remain unprovided.
 
 ## Limitation
 

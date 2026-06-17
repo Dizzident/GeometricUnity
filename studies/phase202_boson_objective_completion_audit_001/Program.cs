@@ -184,6 +184,7 @@ const string Phase415Path = "studies/phase415_fermionic_cohomology_square_root_a
 const string Phase416Path = "studies/phase416_unobserved_phase_carrier_census_001/output/unobserved_phase_carrier_census_summary.json";
 const string Phase417Path = "studies/phase417_vector_spinor_144_decomposition_probe_001/output/vector_spinor_144_decomposition_probe_summary.json";
 const string Phase418Path = "studies/phase418_direction_dependent_curvature_vev_coupling_scan_001/output/direction_dependent_curvature_vev_coupling_scan_summary.json";
+const string Phase419Path = "studies/phase419_observed_field_symbolic_extraction_template_001/output/observed_field_symbolic_extraction_template_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -401,6 +402,7 @@ using var phase415 = File.Exists(Phase415Path) ? JsonDocument.Parse(File.ReadAll
 using var phase416 = File.Exists(Phase416Path) ? JsonDocument.Parse(File.ReadAllText(Phase416Path)) : null;
 using var phase417 = File.Exists(Phase417Path) ? JsonDocument.Parse(File.ReadAllText(Phase417Path)) : null;
 using var phase418 = File.Exists(Phase418Path) ? JsonDocument.Parse(File.ReadAllText(Phase418Path)) : null;
+using var phase419 = File.Exists(Phase419Path) ? JsonDocument.Parse(File.ReadAllText(Phase419Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -5463,6 +5465,45 @@ var directionDependentCurvatureVevCouplingScanPassed = directionDependentCurvatu
     && JsonBool(phase418.RootElement, "phase201TemplateMutated") is false
     && JsonInt(phase418.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
     && JsonInt(phase418.RootElement, "acceptedContractFieldCount") == 0;
+var observedFieldSymbolicExtractionTemplateMaterialized = phase419 is not null;
+var observedFieldSymbolicExtractionTemplatePassed = observedFieldSymbolicExtractionTemplateMaterialized
+    && JsonBool(phase419!.RootElement, "observedFieldSymbolicExtractionTemplatePassed") is true
+    && JsonBool(phase419.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase419.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase419.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase419.RootElement, "applicationSubjectKind") == "fms-dressing-field-observed-extraction-template"
+    && JsonBool(phase419.RootElement, "symbolicTemplatePromotable") is false
+    && JsonBool(phase419.RootElement, "fmsDressingExternalTemplateSupport") is true
+    && JsonBool(phase419.RootElement, "fmsDressingExternalTemplatesPromotional") is false
+    && JsonInt(phase419.RootElement, "symbolicMapRowCount") == 8
+    && JsonInt(phase419.RootElement, "projectionRowCount") == 4
+    && JsonBool(phase419.RootElement, "allProjectionRowsPresent") is true
+    && JsonBool(phase419.RootElement, "allProjectionRowsRequirePoleExtraction") is true
+    && JsonBool(phase419.RootElement, "anyProjectionRowSourceDefined") is false
+    && JsonInt(phase419.RootElement, "requiredGuInputCount") == 10
+    && JsonInt(phase419.RootElement, "requiredGuInputProvidedCount") == 0
+    && JsonInt(phase419.RootElement, "phase256TemplateFieldCount") == 20
+    && JsonInt(phase419.RootElement, "phase256RequiredFieldCount") == 20
+    && JsonInt(phase419.RootElement, "phase256FilledRequiredFieldCount") == 0
+    && JsonBool(phase419.RootElement, "phase256ContractPromotable") is false
+    && JsonInt(phase419.RootElement, "coveredPhase256FieldCount") == 20
+    && JsonInt(phase419.RootElement, "sourceDefinedPhase256FieldCount") == 0
+    && JsonBool(phase419.RootElement, "allPhase256FieldsMappedBySymbolicTemplate") is true
+    && JsonBool(phase419.RootElement, "phase295CandidateScanPassed") is true
+    && JsonInt(phase419.RootElement, "phase295IntakeReadyCandidateCount") == 0
+    && JsonBool(phase419.RootElement, "phase295AnyCandidateFillsContract") is false
+    && JsonBool(phase419.RootElement, "phase418Passed") is true
+    && JsonBool(phase419.RootElement, "phase418CanFillObserved") is false
+    && JsonBool(phase419.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase419.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase419.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase419.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase419.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase419.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase419.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase419.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase419.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase419.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -7783,6 +7824,14 @@ var checklist = new[]
             ? $"directionDependentCurvatureVevCouplingScanPassed={JsonBool(phase418!.RootElement, "directionDependentCurvatureVevCouplingScanPassed")}; blockProjectorsCommuteWithResidualGaugeAction={JsonBool(phase418.RootElement, "blockProjectorsCommuteWithResidualGaugeAction")}; pureQuadraticDirectionDependentCouplingsStillRunAway={JsonBool(phase418.RootElement, "pureQuadraticDirectionDependentCouplingsStillRunAway")}; stabilizedCandidateSelectsDoubletCount={JsonInt(phase418.RootElement, "stabilizedCandidateSelectsDoubletCount")}; sourceDefinedDoubletSelectorCount={JsonInt(phase418.RootElement, "sourceDefinedDoubletSelectorCount")}; directionDependentCouplingSourceLawStillMissing={JsonBool(phase418.RootElement, "directionDependentCouplingSourceLawStillMissing")}; canFillPhase201WzContract={JsonBool(phase418.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase418.RootElement, "decision")}"
             : "Phase418 artifact not materialized",
         Phase418Path),
+    new ObjectiveChecklistItem(
+        "observed-field-symbolic-extraction-template-materialized",
+        "Materialize a target-blind FMS/dressing-style symbolic map for photon/W/Z/H projection rows while preserving the unfilled Phase256 source boundary.",
+        observedFieldSymbolicExtractionTemplatePassed ? "passed" : "failed",
+        observedFieldSymbolicExtractionTemplateMaterialized
+            ? $"observedFieldSymbolicExtractionTemplatePassed={JsonBool(phase419!.RootElement, "observedFieldSymbolicExtractionTemplatePassed")}; allPhase256FieldsMappedBySymbolicTemplate={JsonBool(phase419.RootElement, "allPhase256FieldsMappedBySymbolicTemplate")}; projectionRowCount={JsonInt(phase419.RootElement, "projectionRowCount")}; sourceDefinedPhase256FieldCount={JsonInt(phase419.RootElement, "sourceDefinedPhase256FieldCount")}; phase295IntakeReadyCandidateCount={JsonInt(phase419.RootElement, "phase295IntakeReadyCandidateCount")}; canFillPhase256ObservedFieldExtractionContract={JsonBool(phase419.RootElement, "canFillPhase256ObservedFieldExtractionContract")}; decision={JsonString(phase419.RootElement, "decision")}"
+            : "Phase419 artifact not materialized",
+        Phase419Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

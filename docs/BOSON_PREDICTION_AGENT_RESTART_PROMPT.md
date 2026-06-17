@@ -35,13 +35,13 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase418 work (and the 2026-06-12
+Current gate status after the Phase419 work (and the 2026-06-12
 platform fix - GPU parity defect root-caused and discharged):
 
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=211`,
+  `objectiveAchieved=False`, `checklistPassedCount=212`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -268,6 +268,13 @@ platform fix - GPU parity defect root-caused and discharged):
   `sourceDefinedDoubletSelectorCount=0`,
   `directionDependentCouplingSourceLawStillMissing=True`,
   `finiteVevScaleStillExternal=True`
+- Phase419:
+  `observedFieldSymbolicExtractionTemplatePassed=True`,
+  `allPhase256FieldsMappedBySymbolicTemplate=True`,
+  `projectionRowCount=4`,
+  `sourceDefinedPhase256FieldCount=0`,
+  `phase295IntakeReadyCandidateCount=0`,
+  `canFillPhase256ObservedFieldExtractionContract=False`
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -288,7 +295,30 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work added Phase418, the direction-dependent curvature/VEV coupling
+The latest work added Phase419, the observed-field symbolic extraction
+template. It materializes the restart prompt's FMS/dressing-field-style branch:
+assume a scalar doublet exists, then write the target-blind algebraic rows
+needed for photon, W, Z, and Higgs observed-field projection before Phase256
+could ever be filled. Exact result:
+`observedFieldSymbolicExtractionTemplatePassed=True`,
+`applicationSubjectKind=fms-dressing-field-observed-extraction-template`,
+`fmsDressingExternalTemplateSupport=True`,
+`fmsDressingExternalTemplatesPromotional=False`,
+`symbolicMapRowCount=8`, `projectionRowCount=4`,
+`allPhase256FieldsMappedBySymbolicTemplate=True`,
+`sourceDefinedPhase256FieldCount=0`,
+`requiredGuInputProvidedCount=0`,
+`phase295IntakeReadyCandidateCount=0`, and
+`canFillPhase256ObservedFieldExtractionContract=False`. Interpretation: the
+minimal observed-field map is now explicit as a symbolic checklist, but it
+does not supply a GU-native doublet carrier, observed vacuum, dressing field,
+electroweak embedding, weak-angle/coupling lineage, mass operator, pole
+extraction, stability sidecars, or GeV normalization. No Phase201 or Phase256
+field is filled. Study:
+`studies/phase419_observed_field_symbolic_extraction_template_001`
+(IMPLEMENTATION_P419.md).
+
+Before that, Phase418 added the direction-dependent curvature/VEV coupling
 scan. It extends Phase410's uniform-curvature no-go by enumerating the minimal
 residual-`su(2)+u(1)` block-isotypic menu on the same `su(3)` control branch:
 triplet `T={0,1,2}`, doublet `D={3,4,5,6}`, and singlet `S={7}`. Exact
@@ -512,19 +542,22 @@ HONEST BOUNDARY. Study:
 
 ### Integration Points Already Updated
 
-Phase418 (like Phase388-417) is wired into:
+Phase419 (like Phase388-418) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (single broad pass; the
   older duplicated final sweep was removed on 2026-06-16)
 - `studies/phase101_boson_prediction_package_001/Program.cs`
 - `studies/phase202_boson_objective_completion_audit_001/Program.cs`
   (checklist item
-  `direction-dependent-curvature-vev-coupling-scan-materialized`)
+  `observed-field-symbolic-extraction-template-materialized`)
 - `scripts/verify_boson_claim_integrity.sh`
 - Broad scanner exclusions: phase204, phase205, phase207, phase279,
   phase281, phase295, phase296
 
 Reference tracking was updated in `ExperimentReferences.md`,
+`docs/Reference/ExperimentReferences/FMS-GAUGE-INVARIANT-SPECTRUM.md` and
+`docs/Reference/ExperimentReferences/DRESSING-FIELD-ELECTROWEAK-OBSERVED-VARIABLES.md`
+(Phase419 external-template use notes),
 `docs/Reference/ExperimentReferences/LOCAL-COMPLETION-V29-FERMIONIC-YUKAWA.md`
 (Phase399/Phase400/Phase401 coupled-stationarity closure section), and
 `docs/Reference/ExperimentReferences/SUPERPHYSICS-GU-DRAFT-MIRROR-20250530.md`
@@ -544,6 +577,7 @@ dotnet run --project studies/phase415_fermionic_cohomology_square_root_ansatz_pr
 dotnet run --project studies/phase416_unobserved_phase_carrier_census_001/Phase416UnobservedPhaseCarrierCensus.csproj
 dotnet run --project studies/phase417_vector_spinor_144_decomposition_probe_001/Phase417VectorSpinor144DecompositionProbe.csproj
 dotnet run --project studies/phase418_direction_dependent_curvature_vev_coupling_scan_001/Phase418DirectionDependentCurvatureVevCouplingScan.csproj
+dotnet run --project studies/phase419_observed_field_symbolic_extraction_template_001/Phase419ObservedFieldSymbolicExtractionTemplate.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
@@ -552,9 +586,9 @@ dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase
 PHASE405_ENABLE_GPU=1 LD_LIBRARY_PATH=native/build dotnet run --project studies/phase405_vacuum_manifold_doublet_vev_orbit_scan_001/Phase405VacuumManifoldDoubletVevOrbitScan.csproj
 ```
 
-The targeted Phase418 run passes and preserves the fail-closed boundary;
-Phase202 now reports `checklistPassedCount=211`, `checklistFailedCount=3`; claim
-integrity verified with `promotedPhysicalMassClaimCount=0`. (Platform
+The targeted Phase419 run passes and preserves the fail-closed boundary;
+Phase202 now reports `checklistPassedCount=212`, `checklistFailedCount=3`; claim
+integrity verifies with `promotedPhysicalMassClaimCount=0`. (Platform
 state: Gu.Interop.Tests 158/158 with the real-mesh parity and
 buffer-handle recycling tests; both Phase405 platform notes discharged
 2026-06-12.) All seven broad scanners still report zero intake-ready
@@ -626,17 +660,18 @@ The most useful next branches are:
    families. Each should be a new fail-closed phase, update the journal, and
    leave Phase201/Phase256 untouched unless every contract field is actually
    filled. Recommended order:
-   - Observed-field extraction template (highest priority after Phase418):
-     assume a candidate scalar doublet exists and build an
-     FMS/dressing-field-style symbolic map that states the minimal algebraic
-     data needed for photon, W, Z, Higgs projection rows, weak-angle lineage,
-     and pole extraction. This clarifies the Phase256 contract even if it
-     does not solve the scalar gap.
-   - Scale sanity checks: test naive readings such as the Superphysics/draft
+   - Scale sanity checks (highest priority after Phase419): test naive
+     readings such as the Superphysics/draft
      stylized `m = R/4` curvature-mass relation by dimensional analysis and
      target-blind normalization bookkeeping. A likely negative result is still
      useful because it proves that any viable scale law needs a nontrivial
      unit/normalization anchor.
+   - Observed-field extraction template: DONE at symbolic-template level by
+     Phase419. The FMS/dressing-style map covers all 20 Phase256 fields and
+     states photon/W/Z/H projection rows, weak-angle lineage, and pole
+     extraction requirements, but it supplies zero source-defined fields. Further
+     progress requires a GU-native carrier, observed vacuum/dressing theorem,
+     embedding, couplings, mass operator, scale, and unit lineage.
    - Direction-dependent curvature/VEV coupling scan: DONE at the minimal
    block-isotypic workbench level by Phase418. Phase410 closed only the
    uniform bosonic curvature coupling; Phase418 shows pure block-weighted
@@ -727,12 +762,16 @@ The most useful next branches are:
    zero, and the chiral `2 x 144` carrier has no linear welded scalar.
    Phase418 then showed that direction-dependent block laws can select the
    doublet only after adding a non-source-defined block mass law and quartic
-   stabilizer; pure block-weighted quadratics still run away. THE INTERNAL
+   stabilizer; pure block-weighted quadratics still run away. Phase419 then
+   materialized the FMS/dressing-style observed-field projection template:
+   photon, W, Z, and Higgs rows are now explicit symbolic requirements, but no
+   source-defined Phase256 field is supplied. THE INTERNAL
    STRUCTURAL PROGRAM IS AT ITS HONEST BOUNDARY, NOW WITH NAMED ROUTES:
    a source-defined vector-spinor/composite bosonic projection map, a
    source-defined direction-dependent curvature kernel with stabilizer and
-   scale, an observed-field extraction theorem/template, or a new primary-source
-   specification. Standing work: literature monitoring at checkpoint
+   scale, a source-defined observed-field extraction theorem filling the
+   Phase419 template, or a new primary-source specification. Standing work:
+   literature monitoring at checkpoint
    cadence; the epsilon/Shiab route if a quantitative specification
    appears.
    Deep-research follow-ups (catalogue when revisited): GU IV (v2)
@@ -772,9 +811,9 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -120 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase418|directionDependentCurvatureVevCouplingScan|sourceDefinedDoubletSelectorCount" \
+rg -n "Phase419|observedFieldSymbolicExtractionTemplate|sourceDefinedPhase256FieldCount" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
-  studies/phase418_direction_dependent_curvature_vev_coupling_scan_001 \
+  studies/phase419_observed_field_symbolic_extraction_template_001 \
   studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
 ```
 
@@ -787,11 +826,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase418 output JSON files, and commit a checkpoint
+force-add the ignored Phase419 output JSON files, and commit a checkpoint
 after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase418 direction-dependent curvature scan
+Add phase419 observed-field symbolic template
 ```

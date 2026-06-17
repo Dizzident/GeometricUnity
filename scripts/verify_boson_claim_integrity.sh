@@ -188,6 +188,7 @@ const paths = {
   phase416: "studies/phase416_unobserved_phase_carrier_census_001/output/unobserved_phase_carrier_census_summary.json",
   phase417: "studies/phase417_vector_spinor_144_decomposition_probe_001/output/vector_spinor_144_decomposition_probe_summary.json",
   phase418: "studies/phase418_direction_dependent_curvature_vev_coupling_scan_001/output/direction_dependent_curvature_vev_coupling_scan_summary.json",
+  phase419: "studies/phase419_observed_field_symbolic_extraction_template_001/output/observed_field_symbolic_extraction_template_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -447,6 +448,7 @@ const phase415 = requireFile(paths.phase415);
 const phase416 = requireFile(paths.phase416);
 const phase417 = requireFile(paths.phase417);
 const phase418 = requireFile(paths.phase418);
+const phase419 = requireFile(paths.phase419);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -4903,6 +4905,24 @@ if (sourceLineageMissing) {
   assert(phase418.sourceContractApplicationAllowed === false && phase418.canFillPhase201WzContract === false && phase418.canFillPhase201HiggsContract === false && phase418.canFillPhase256ObservedFieldExtractionContract === false, "Phase418 cannot fill Phase201 or Phase256 contracts.");
   assert(phase418.routePromotesWzMasses === false && phase418.routePromotesHiggsMass === false && phase418.routeCompletesBosonPredictions === false, "Phase418 cannot promote boson predictions.");
   assert(phase418.phase201TemplateMutated === false && phase418.fieldsAppliedToPhase201TemplateCount === 0 && phase418.acceptedContractFieldCount === 0, "Phase418 must not mutate or fill the Phase201 template.");
+  assert(phase419.observedFieldSymbolicExtractionTemplatePassed === true, "Phase419 observed-field symbolic extraction template must pass as a fail-closed workbench.");
+  assert(phase419.targetBlindConstruction === true && phase419.physicalTargetsConsultedForConstruction === false, "Phase419 construction must remain target-blind.");
+  assert(typeof phase419.targetBlindConstructionHash === "string" && phase419.targetBlindConstructionHash.length === 64, "Phase419 must persist a target-blind construction hash.");
+  assert(phase419.applicationSubjectKind === "fms-dressing-field-observed-extraction-template", "Phase419 must classify its subject as the observed-field symbolic extraction template.");
+  assert(phase419.symbolicTemplatePromotable === false, "Phase419 symbolic template cannot be promotable.");
+  assert(phase419.fmsDressingExternalTemplateSupport === true && phase419.fmsDressingExternalTemplatesPromotional === false, "Phase419 must use FMS/dressing-field sources only as external non-promotional template support.");
+  assert(phase419.symbolicMapRowCount === 8 && phase419.projectionRowCount === 4, "Phase419 must materialize the symbolic map and photon/W/Z/H projection rows.");
+  assert(phase419.allProjectionRowsPresent === true && phase419.allProjectionRowsRequirePoleExtraction === true && phase419.anyProjectionRowSourceDefined === false, "Phase419 projection rows must be present as source-undefined template rows.");
+  assert(phase419.requiredGuInputCount === 10 && phase419.requiredGuInputProvidedCount === 0, "Phase419 must preserve the missing GU-input boundary.");
+  assert(phase419.phase256TemplateFieldCount === 20 && phase419.phase256RequiredFieldCount === 20 && phase419.phase256FilledRequiredFieldCount === 0, "Phase419 must inherit the unfilled Phase256 contract.");
+  assert(phase419.coveredPhase256FieldCount === 20 && phase419.allPhase256FieldsMappedBySymbolicTemplate === true && phase419.sourceDefinedPhase256FieldCount === 0, "Phase419 must cover Phase256 symbolically without filling source-defined fields.");
+  assert(Array.isArray(phase419.uncoveredPhase256FieldIds) && phase419.uncoveredPhase256FieldIds.length === 0, "Phase419 must leave no unmapped Phase256 template fields.");
+  assert(Array.isArray(phase419.extraPhase256FieldIds) && phase419.extraPhase256FieldIds.length === 0, "Phase419 must not invent extra Phase256 template fields.");
+  assert(phase419.phase295CandidateScanPassed === true && phase419.phase295IntakeReadyCandidateCount === 0 && phase419.phase295AnyCandidateFillsContract === false, "Phase419 must preserve the Phase295 no-candidate boundary.");
+  assert(phase419.phase418Passed === true && phase419.phase418CanFillObserved === false, "Phase419 must preserve the Phase418 observed-field boundary.");
+  assert(phase419.sourceContractApplicationAllowed === false && phase419.canFillPhase201WzContract === false && phase419.canFillPhase201HiggsContract === false && phase419.canFillPhase256ObservedFieldExtractionContract === false, "Phase419 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase419.routePromotesWzMasses === false && phase419.routePromotesHiggsMass === false && phase419.routeCompletesBosonPredictions === false, "Phase419 cannot promote boson predictions.");
+  assert(phase419.phase201TemplateMutated === false && phase419.fieldsAppliedToPhase201TemplateCount === 0 && phase419.acceptedContractFieldCount === 0, "Phase419 must not mutate or fill the Phase201 template.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");
