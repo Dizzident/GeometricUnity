@@ -66,7 +66,9 @@ High-value findings from the expanded pass:
   curvature, plus the qualitative link
   `Cosmological Constant <-> Spinless Gauge Field <-> Fermion Mass`. It does
   not supply an electroweak VEV-selection law, coefficients, units, or GeV
-  normalization.
+  normalization. Phase420 turns this into an explicit sanity check: the
+  literal scalar-curvature mass reading is dimensionally invalid, while the
+  squared-mass repair `m^2 = R/4` remains only a symbolic scale shell.
 - `part-12d` records the final-method boundary: GU offers algebraic internal
   quantum-number predictions but says quantum-field-theory work would be needed
   to sharpen them into energy scales. Its location table matches the already
@@ -87,6 +89,12 @@ High-value findings from the expanded pass:
   that the page names the architecture but does not define the first-order
   differential, carrier complex, cohomology target, square law, scalar-doublet
   projection, observed boson rows, or normalization lineage.
+- Phase420 used `part-12c` as the named research clue for the naive curvature
+  mass-scale sanity check. It records that `m = R(y)/4` cannot be promoted:
+  if `R` is scalar curvature the literal mass relation is dimensionally wrong,
+  and if repaired to `m^2 = R/4`, the route still lacks sign, coefficient
+  normalization, curvature value, VEV map, weak-angle/coupling lineage,
+  particle rows, pole extraction, and GeV/unit normalization.
 - The source remains a search aid below the official GU draft; promotion claims
   must cite the primary draft or another theorem-level source.
 
@@ -104,7 +112,9 @@ The mirror reinforces the current route names and negative boundaries:
   pole-mass prescription.
 - It gives qualitative curvature/fundamental-mass language, but not a
   target-independent electroweak VEV scale, weak-angle running prescription, or
-  GeV unit normalization.
+  GeV unit normalization. Phase420 sharpens this: the naive curvature scale
+  relation has one definitional ingredient at most and nine missing
+  source-specification fields before any Phase201/Phase256 application.
 
 ## Limitation
 

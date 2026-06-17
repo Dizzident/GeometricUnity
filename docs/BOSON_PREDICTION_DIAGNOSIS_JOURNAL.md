@@ -17925,3 +17925,67 @@ test naive curvature-mass readings such as the Superphysics/draft stylized
 `m = R/4` relation by dimensional analysis and normalization bookkeeping. A
 negative result would still be useful because it would prove that any viable
 scale law needs a nontrivial source unit/normalization anchor.
+
+## 2026-06-17 - Phase420: Naive Curvature Mass Scale Sanity Check
+
+### Context
+
+Phase419 made the observed-field projection requirements explicit but source
+undefined. The restart prompt then named the scale sanity-check branch as the
+highest-priority target-blind experiment: test naive curvature-mass readings
+such as the Superphysics/GU-draft `part-12c` stylized relation `m = R(y)/4`
+before spending more effort on scale numerology.
+
+### Result
+
+- Phase420 tests three readings without consulting W/Z/H target masses:
+  literal `m = R/4`, Lichnerowicz-style `m^2 = R/4`, and a generic
+  one-curvature common-scale shell `m_i = c_i sqrt(R)/2`.
+- The literal scalar-curvature reading is closed:
+  `literalScalarCurvatureMassReadingDimensionallyConsistent=False` because
+  scalar curvature has mass dimension 2 while mass has dimension 1.
+- The squared-mass repair is dimensionally coherent but nonpromotional:
+  `squaredMassCurvatureReadingDimensionallyConsistent=True` and
+  `squaredMassReadingProvidesOnlySymbolicScaleShell=True`.
+- The scale-specification ledger is now explicit:
+  `requiredScaleSpecificationFieldCount=10`,
+  `providedRequiredScaleSpecificationFieldCount=1`, and
+  `missingScaleSpecificationFieldCount=9`. Missing: mass-vs-mass-squared
+  convention, sign, coefficient normalization, curvature value/equation, VEV
+  map, weak-angle/coupling lineage, particle-specific rows, pole extraction,
+  and GeV normalization.
+- The route cannot fill contracts:
+  `canFillPhase201WzContract=False`,
+  `canFillPhase201HiggsContract=False`,
+  `canFillPhase256ObservedFieldExtractionContract=False`,
+  `routePromotesWzMasses=False`, and `routePromotesHiggsMass=False`.
+- Study:
+  `studies/phase420_naive_curvature_mass_scale_sanity_check_001`
+  (IMPLEMENTATION_P420.md).
+
+### Validation
+
+- Targeted Phase420 run passed:
+  `naiveCurvatureMassScaleSanityCheckPassed=True`.
+- Phase101 includes the Phase420 block and still reports
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- Phase202: `checklistPassedCount=213`, `checklistFailedCount=3`.
+- Claim integrity verified with `promotedPhysicalMassClaimCount=0`.
+- Scanner reruns passed with no intake-ready evidence:
+  Phase204 `intakeReadyCandidateCount=0`,
+  Phase205 `intakeReadyFindingCount=0`,
+  Phase207 `intakeReadyFindingCount=0`,
+  Phase279/281 `localSearchMatchingFileCount=0`,
+  Phase295 `intakeReadyObservedFieldExtractionCandidateCount=0`,
+  Phase296 `intakeReadySourceLineageFieldCandidateCount=0`.
+
+### Standing Next Work
+
+The naive curvature-scale route is now closed as a direct source law. Any
+viable curvature route must add a source-defined curvature-to-electroweak-VEV
+equation with sign, coefficient, unit, and vacuum normalization, plus
+observed-field/pole rows and weak-angle/coupling lineage. Without a new source
+artifact, the useful branches are now source-level theorem searches: a
+source-defined curvature kernel/stabilizer/scale, a source-defined observed
+field extraction theorem filling Phase419, a source-defined vector-spinor or
+composite bosonic projection map, or a new primary-source specification.

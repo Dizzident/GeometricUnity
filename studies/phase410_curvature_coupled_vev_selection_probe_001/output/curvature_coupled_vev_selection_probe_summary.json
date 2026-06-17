@@ -1,6 +1,6 @@
 {
   "phaseId": "phase410-curvature-coupled-vev-selection-probe",
-  "generatedAt": "2026-06-17T18:22:33.8550806+00:00",
+  "generatedAt": "2026-06-17T19:19:07.5323834+00:00",
   "terminalStatus": "uniform-curvature-coupling-produces-runaway-not-doublet-selection",
   "curvatureCoupledVevSelectionProbePassed": true,
   "phase405PrecursorPassed": true,

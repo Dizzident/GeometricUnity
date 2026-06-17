@@ -185,6 +185,7 @@ const string Phase416Path = "studies/phase416_unobserved_phase_carrier_census_00
 const string Phase417Path = "studies/phase417_vector_spinor_144_decomposition_probe_001/output/vector_spinor_144_decomposition_probe_summary.json";
 const string Phase418Path = "studies/phase418_direction_dependent_curvature_vev_coupling_scan_001/output/direction_dependent_curvature_vev_coupling_scan_summary.json";
 const string Phase419Path = "studies/phase419_observed_field_symbolic_extraction_template_001/output/observed_field_symbolic_extraction_template_summary.json";
+const string Phase420Path = "studies/phase420_naive_curvature_mass_scale_sanity_check_001/output/naive_curvature_mass_scale_sanity_check_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -403,6 +404,7 @@ using var phase416 = File.Exists(Phase416Path) ? JsonDocument.Parse(File.ReadAll
 using var phase417 = File.Exists(Phase417Path) ? JsonDocument.Parse(File.ReadAllText(Phase417Path)) : null;
 using var phase418 = File.Exists(Phase418Path) ? JsonDocument.Parse(File.ReadAllText(Phase418Path)) : null;
 using var phase419 = File.Exists(Phase419Path) ? JsonDocument.Parse(File.ReadAllText(Phase419Path)) : null;
+using var phase420 = File.Exists(Phase420Path) ? JsonDocument.Parse(File.ReadAllText(Phase420Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -5504,6 +5506,42 @@ var observedFieldSymbolicExtractionTemplatePassed = observedFieldSymbolicExtract
     && JsonBool(phase419.RootElement, "phase201TemplateMutated") is false
     && JsonInt(phase419.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
     && JsonInt(phase419.RootElement, "acceptedContractFieldCount") == 0;
+var naiveCurvatureMassScaleSanityCheckMaterialized = phase420 is not null;
+var naiveCurvatureMassScaleSanityCheckPassed = naiveCurvatureMassScaleSanityCheckMaterialized
+    && JsonBool(phase420!.RootElement, "naiveCurvatureMassScaleSanityCheckPassed") is true
+    && JsonBool(phase420.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase420.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase420.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase420.RootElement, "applicationSubjectKind") == "naive-curvature-mass-scale-sanity-check"
+    && JsonBool(phase420.RootElement, "literalScalarCurvatureMassReadingDimensionallyConsistent") is false
+    && JsonBool(phase420.RootElement, "squaredMassCurvatureReadingDimensionallyConsistent") is true
+    && JsonBool(phase420.RootElement, "squaredMassReadingProvidesOnlySymbolicScaleShell") is true
+    && JsonBool(phase420.RootElement, "singleCurvatureScalarCanOnlySetCommonScale") is true
+    && JsonBool(phase420.RootElement, "naiveCurvatureLawCanDistinguishWzHRows") is false
+    && JsonInt(phase420.RootElement, "requiredScaleSpecificationFieldCount") == 10
+    && JsonInt(phase420.RootElement, "providedRequiredScaleSpecificationFieldCount") == 1
+    && JsonInt(phase420.RootElement, "missingScaleSpecificationFieldCount") == 9
+    && JsonBool(phase420.RootElement, "sourceProvidesCurvatureValueOrUnitAnchor") is false
+    && JsonBool(phase420.RootElement, "sourceProvidesSignConvention") is false
+    && JsonBool(phase420.RootElement, "sourceProvidesMassCoefficientNormalization") is false
+    && JsonBool(phase420.RootElement, "sourceProvidesElectroweakVevMap") is false
+    && JsonBool(phase420.RootElement, "sourceProvidesWeakAngleOrCouplingLineage") is false
+    && JsonBool(phase420.RootElement, "sourceProvidesSeparateWzRows") is false
+    && JsonBool(phase420.RootElement, "sourceProvidesPhotonZMixingRows") is false
+    && JsonBool(phase420.RootElement, "sourceProvidesHiggsScalarExcitationRow") is false
+    && JsonBool(phase420.RootElement, "sourceProvidesPoleExtraction") is false
+    && JsonBool(phase420.RootElement, "sourceProvidesGeVUnitNormalization") is false
+    && JsonBool(phase420.RootElement, "naiveCurvatureLawPromotable") is false
+    && JsonBool(phase420.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase420.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase420.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase420.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase420.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase420.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase420.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase420.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase420.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase420.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -7832,6 +7870,14 @@ var checklist = new[]
             ? $"observedFieldSymbolicExtractionTemplatePassed={JsonBool(phase419!.RootElement, "observedFieldSymbolicExtractionTemplatePassed")}; allPhase256FieldsMappedBySymbolicTemplate={JsonBool(phase419.RootElement, "allPhase256FieldsMappedBySymbolicTemplate")}; projectionRowCount={JsonInt(phase419.RootElement, "projectionRowCount")}; sourceDefinedPhase256FieldCount={JsonInt(phase419.RootElement, "sourceDefinedPhase256FieldCount")}; phase295IntakeReadyCandidateCount={JsonInt(phase419.RootElement, "phase295IntakeReadyCandidateCount")}; canFillPhase256ObservedFieldExtractionContract={JsonBool(phase419.RootElement, "canFillPhase256ObservedFieldExtractionContract")}; decision={JsonString(phase419.RootElement, "decision")}"
             : "Phase419 artifact not materialized",
         Phase419Path),
+    new ObjectiveChecklistItem(
+        "naive-curvature-mass-scale-sanity-check-materialized",
+        "Test the stylized curvature mass-scale reading by dimensional and contract bookkeeping while preserving the missing unit/normalization anchor boundary.",
+        naiveCurvatureMassScaleSanityCheckPassed ? "passed" : "failed",
+        naiveCurvatureMassScaleSanityCheckMaterialized
+            ? $"naiveCurvatureMassScaleSanityCheckPassed={JsonBool(phase420!.RootElement, "naiveCurvatureMassScaleSanityCheckPassed")}; literalScalarCurvatureMassReadingDimensionallyConsistent={JsonBool(phase420.RootElement, "literalScalarCurvatureMassReadingDimensionallyConsistent")}; squaredMassCurvatureReadingDimensionallyConsistent={JsonBool(phase420.RootElement, "squaredMassCurvatureReadingDimensionallyConsistent")}; providedRequiredScaleSpecificationFieldCount={JsonInt(phase420.RootElement, "providedRequiredScaleSpecificationFieldCount")}; missingScaleSpecificationFieldCount={JsonInt(phase420.RootElement, "missingScaleSpecificationFieldCount")}; sourceProvidesGeVUnitNormalization={JsonBool(phase420.RootElement, "sourceProvidesGeVUnitNormalization")}; canFillPhase201WzContract={JsonBool(phase420.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase420.RootElement, "decision")}"
+            : "Phase420 artifact not materialized",
+        Phase420Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

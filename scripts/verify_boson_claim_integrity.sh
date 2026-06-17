@@ -189,6 +189,7 @@ const paths = {
   phase417: "studies/phase417_vector_spinor_144_decomposition_probe_001/output/vector_spinor_144_decomposition_probe_summary.json",
   phase418: "studies/phase418_direction_dependent_curvature_vev_coupling_scan_001/output/direction_dependent_curvature_vev_coupling_scan_summary.json",
   phase419: "studies/phase419_observed_field_symbolic_extraction_template_001/output/observed_field_symbolic_extraction_template_summary.json",
+  phase420: "studies/phase420_naive_curvature_mass_scale_sanity_check_001/output/naive_curvature_mass_scale_sanity_check_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -449,6 +450,7 @@ const phase416 = requireFile(paths.phase416);
 const phase417 = requireFile(paths.phase417);
 const phase418 = requireFile(paths.phase418);
 const phase419 = requireFile(paths.phase419);
+const phase420 = requireFile(paths.phase420);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -4923,6 +4925,22 @@ if (sourceLineageMissing) {
   assert(phase419.sourceContractApplicationAllowed === false && phase419.canFillPhase201WzContract === false && phase419.canFillPhase201HiggsContract === false && phase419.canFillPhase256ObservedFieldExtractionContract === false, "Phase419 cannot fill Phase201 or Phase256 contracts.");
   assert(phase419.routePromotesWzMasses === false && phase419.routePromotesHiggsMass === false && phase419.routeCompletesBosonPredictions === false, "Phase419 cannot promote boson predictions.");
   assert(phase419.phase201TemplateMutated === false && phase419.fieldsAppliedToPhase201TemplateCount === 0 && phase419.acceptedContractFieldCount === 0, "Phase419 must not mutate or fill the Phase201 template.");
+  assert(phase420.naiveCurvatureMassScaleSanityCheckPassed === true, "Phase420 naive curvature mass scale sanity check must pass as a fail-closed workbench.");
+  assert(phase420.targetBlindConstruction === true && phase420.physicalTargetsConsultedForConstruction === false, "Phase420 construction must remain target-blind.");
+  assert(typeof phase420.targetBlindConstructionHash === "string" && phase420.targetBlindConstructionHash.length === 64, "Phase420 must persist a target-blind construction hash.");
+  assert(phase420.applicationSubjectKind === "naive-curvature-mass-scale-sanity-check", "Phase420 must classify its subject as the naive curvature mass scale sanity check.");
+  assert(phase420.literalScalarCurvatureMassReadingDimensionallyConsistent === false, "Phase420 must close the literal m=R/4 scalar-curvature mass reading dimensionally.");
+  assert(phase420.squaredMassCurvatureReadingDimensionallyConsistent === true && phase420.squaredMassReadingProvidesOnlySymbolicScaleShell === true, "Phase420 must preserve that the m^2=R/4 repair is only a symbolic scale shell.");
+  assert(phase420.singleCurvatureScalarCanOnlySetCommonScale === true && phase420.naiveCurvatureLawCanDistinguishWzHRows === false, "Phase420 must preserve that a single curvature scalar cannot distinguish W/Z/H rows by itself.");
+  assert(phase420.requiredScaleSpecificationFieldCount === 10 && phase420.providedRequiredScaleSpecificationFieldCount === 1 && phase420.missingScaleSpecificationFieldCount === 9, "Phase420 must preserve scale-specification gap accounting.");
+  assert(phase420.sourceProvidesCurvatureValueOrUnitAnchor === false && phase420.sourceProvidesSignConvention === false && phase420.sourceProvidesMassCoefficientNormalization === false, "Phase420 must not invent curvature value, sign, or coefficient normalization.");
+  assert(phase420.sourceProvidesElectroweakVevMap === false && phase420.sourceProvidesWeakAngleOrCouplingLineage === false, "Phase420 must not invent electroweak VEV or weak-angle lineage.");
+  assert(phase420.sourceProvidesSeparateWzRows === false && phase420.sourceProvidesPhotonZMixingRows === false && phase420.sourceProvidesHiggsScalarExcitationRow === false, "Phase420 must not invent particle-specific projection/source rows.");
+  assert(phase420.sourceProvidesPoleExtraction === false && phase420.sourceProvidesGeVUnitNormalization === false, "Phase420 must not invent pole extraction or GeV normalization.");
+  assert(phase420.naiveCurvatureLawPromotable === false && phase420.physicalCouplingProvided === false, "Phase420 cannot promote a naive curvature law or claim a physical coupling.");
+  assert(phase420.sourceContractApplicationAllowed === false && phase420.canFillPhase201WzContract === false && phase420.canFillPhase201HiggsContract === false && phase420.canFillPhase256ObservedFieldExtractionContract === false, "Phase420 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase420.routePromotesWzMasses === false && phase420.routePromotesHiggsMass === false && phase420.routeCompletesBosonPredictions === false, "Phase420 cannot promote boson predictions.");
+  assert(phase420.phase201TemplateMutated === false && phase420.fieldsAppliedToPhase201TemplateCount === 0 && phase420.acceptedContractFieldCount === 0, "Phase420 must not mutate or fill the Phase201 template.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

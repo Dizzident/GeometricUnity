@@ -277,6 +277,7 @@ const string Phase416UnobservedPhaseCarrierCensusPath = "studies/phase416_unobse
 const string Phase417VectorSpinor144DecompositionProbePath = "studies/phase417_vector_spinor_144_decomposition_probe_001/output/vector_spinor_144_decomposition_probe_summary.json";
 const string Phase418DirectionDependentCurvatureVevCouplingScanPath = "studies/phase418_direction_dependent_curvature_vev_coupling_scan_001/output/direction_dependent_curvature_vev_coupling_scan_summary.json";
 const string Phase419ObservedFieldSymbolicExtractionTemplatePath = "studies/phase419_observed_field_symbolic_extraction_template_001/output/observed_field_symbolic_extraction_template_summary.json";
+const string Phase420NaiveCurvatureMassScaleSanityCheckPath = "studies/phase420_naive_curvature_mass_scale_sanity_check_001/output/naive_curvature_mass_scale_sanity_check_summary.json";
 const string Phase282BranchLocalDirectInvariantCensusPath = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census.json";
 const string Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit.json";
 const string Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic.json";
@@ -574,6 +575,7 @@ using var phase416 = TryParseJson(Phase416UnobservedPhaseCarrierCensusPath);
 using var phase417 = TryParseJson(Phase417VectorSpinor144DecompositionProbePath);
 using var phase418 = TryParseJson(Phase418DirectionDependentCurvatureVevCouplingScanPath);
 using var phase419 = TryParseJson(Phase419ObservedFieldSymbolicExtractionTemplatePath);
+using var phase420 = TryParseJson(Phase420NaiveCurvatureMassScaleSanityCheckPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -7308,6 +7310,43 @@ var package = new
             fieldsAppliedToPhase201TemplateCount = JsonInt(phase419.RootElement, "fieldsAppliedToPhase201TemplateCount"),
             acceptedContractFieldCount = JsonInt(phase419.RootElement, "acceptedContractFieldCount"),
             decision = JsonString(phase419.RootElement, "decision"),
+        }
+        : null,
+    naiveCurvatureMassScaleSanityCheck = phase420 is not null
+        ? new
+        {
+            status = JsonString(phase420.RootElement, "terminalStatus"),
+            naiveCurvatureMassScaleSanityCheckPassed = JsonBool(phase420.RootElement, "naiveCurvatureMassScaleSanityCheckPassed"),
+            targetBlindConstruction = JsonBool(phase420.RootElement, "targetBlindConstruction"),
+            physicalTargetsConsultedForConstruction = JsonBool(phase420.RootElement, "physicalTargetsConsultedForConstruction"),
+            applicationSubjectKind = JsonString(phase420.RootElement, "applicationSubjectKind"),
+            literalScalarCurvatureMassReadingDimensionallyConsistent = JsonBool(phase420.RootElement, "literalScalarCurvatureMassReadingDimensionallyConsistent"),
+            squaredMassCurvatureReadingDimensionallyConsistent = JsonBool(phase420.RootElement, "squaredMassCurvatureReadingDimensionallyConsistent"),
+            squaredMassReadingProvidesOnlySymbolicScaleShell = JsonBool(phase420.RootElement, "squaredMassReadingProvidesOnlySymbolicScaleShell"),
+            singleCurvatureScalarCanOnlySetCommonScale = JsonBool(phase420.RootElement, "singleCurvatureScalarCanOnlySetCommonScale"),
+            naiveCurvatureLawCanDistinguishWzHRows = JsonBool(phase420.RootElement, "naiveCurvatureLawCanDistinguishWzHRows"),
+            providedRequiredScaleSpecificationFieldCount = JsonInt(phase420.RootElement, "providedRequiredScaleSpecificationFieldCount"),
+            missingScaleSpecificationFieldCount = JsonInt(phase420.RootElement, "missingScaleSpecificationFieldCount"),
+            sourceProvidesCurvatureValueOrUnitAnchor = JsonBool(phase420.RootElement, "sourceProvidesCurvatureValueOrUnitAnchor"),
+            sourceProvidesElectroweakVevMap = JsonBool(phase420.RootElement, "sourceProvidesElectroweakVevMap"),
+            sourceProvidesWeakAngleOrCouplingLineage = JsonBool(phase420.RootElement, "sourceProvidesWeakAngleOrCouplingLineage"),
+            sourceProvidesSeparateWzRows = JsonBool(phase420.RootElement, "sourceProvidesSeparateWzRows"),
+            sourceProvidesPhotonZMixingRows = JsonBool(phase420.RootElement, "sourceProvidesPhotonZMixingRows"),
+            sourceProvidesHiggsScalarExcitationRow = JsonBool(phase420.RootElement, "sourceProvidesHiggsScalarExcitationRow"),
+            sourceProvidesPoleExtraction = JsonBool(phase420.RootElement, "sourceProvidesPoleExtraction"),
+            sourceProvidesGeVUnitNormalization = JsonBool(phase420.RootElement, "sourceProvidesGeVUnitNormalization"),
+            naiveCurvatureLawPromotable = JsonBool(phase420.RootElement, "naiveCurvatureLawPromotable"),
+            sourceContractApplicationAllowed = JsonBool(phase420.RootElement, "sourceContractApplicationAllowed"),
+            canFillPhase201WzContract = JsonBool(phase420.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase420.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase420.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            routePromotesWzMasses = JsonBool(phase420.RootElement, "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonBool(phase420.RootElement, "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonBool(phase420.RootElement, "routeCompletesBosonPredictions"),
+            phase201TemplateMutated = JsonBool(phase420.RootElement, "phase201TemplateMutated"),
+            fieldsAppliedToPhase201TemplateCount = JsonInt(phase420.RootElement, "fieldsAppliedToPhase201TemplateCount"),
+            acceptedContractFieldCount = JsonInt(phase420.RootElement, "acceptedContractFieldCount"),
+            decision = JsonString(phase420.RootElement, "decision"),
         }
         : null,
     branchLocalDirectInvariantCensus = phase282 is not null
