@@ -35,13 +35,13 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase415 work (and the 2026-06-12
+Current gate status after the Phase416 work (and the 2026-06-12
 platform fix - GPU parity defect root-caused and discharged):
 
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=208`,
+  `objectiveAchieved=False`, `checklistPassedCount=209`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -241,6 +241,15 @@ platform fix - GPU parity defect root-caused and discharged):
   `candidateComplexesWithObservedProjectionDataCount=0`,
   `deltaOmegaStillRequiresSpecification=True`,
   `unobservedPhaseStillRequiresCarrier=True`
+- Phase416:
+  `unobservedPhaseCarrierCensusPassed=True`,
+  `sourcePinnedUnobservedCarrierCount=3`,
+  `computableUnobservedCarrierCount=3`,
+  `draftZetaDecompositionDimensionCheck=True` (`64 + 192 + 576 = 832`),
+  `sourcePinnedUnobservedLinearBosonicSpinZeroCandidateCount=0`,
+  `sourcePinnedUnobservedWeldedScalarSmDoubletCandidateCount=0`,
+  `unobservedPhaseStillRequiresBosonicMap=True`,
+  `vectorSpinor144RemainsConcreteNextCarrier=True`
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -261,7 +270,27 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work added Phase415, the fermionic cohomology/square-root
+The latest work added Phase416, the unobserved-phase carrier census. It
+grounds the previously vague "unobserved phase" residual in GU-DRAFT-2021
+sections 11-12: the source pins three unobserved/dark fermionic carrier
+families, `Q_{3/2}` (192 states per displayed `zeta` side), `Z_{1/2}` (576
+states per side from the vector-spinor `144` remainder in `10 x 16 = 16 +
+144`), and a dark decoupled Weyl-half / Looking Glass mirror sector (64
+states). The source dimension check is exact: `64 + 192 + 576 = 832`. Exact
+result: `unobservedPhaseCarrierCensusPassed=True`,
+`sourcePinnedUnobservedCarrierCount=3`,
+`computableUnobservedCarrierCount=3`,
+`sourcePinnedUnobservedLinearBosonicSpinZeroCandidateCount=0`,
+`sourcePinnedUnobservedWeldedScalarSmDoubletCandidateCount=0`,
+`unobservedPhaseStillRequiresBosonicMap=True`, and
+`vectorSpinor144RemainsConcreteNextCarrier=True`. The branch is now sharpened:
+the next mathematical carrier is the vector-spinor `144` decomposition and any
+source-defined even-composite/bosonic projection built from it. No Phase201 or
+Phase256 field is filled. Study:
+`studies/phase416_unobserved_phase_carrier_census_001`
+(IMPLEMENTATION_P416.md).
+
+Before that, Phase415, the fermionic cohomology/square-root
 `delta_omega` ansatz probe. It treats Superphysics `part-09b` section 9.3 as a
 research clue, not a theorem, and turns the clue into an admissibility ledger:
 the reviewed source names `chi`, `omega` subfields, `Upsilon_omega`,
@@ -429,14 +458,14 @@ HONEST BOUNDARY. Study:
 
 ### Integration Points Already Updated
 
-Phase415 (like Phase388-414) is wired into:
+Phase416 (like Phase388-415) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (single broad pass; the
   older duplicated final sweep was removed on 2026-06-16)
 - `studies/phase101_boson_prediction_package_001/Program.cs`
 - `studies/phase202_boson_objective_completion_audit_001/Program.cs`
   (checklist item
-  `fermionic-cohomology-square-root-ansatz-probe-materialized`)
+  `unobserved-phase-carrier-census-materialized`)
 - `scripts/verify_boson_claim_integrity.sh`
 - Broad scanner exclusions: phase204, phase205, phase207, phase279,
   phase281, phase295, phase296
@@ -446,8 +475,9 @@ Reference tracking was updated in `ExperimentReferences.md`,
 (Phase399/Phase400/Phase401 coupled-stationarity closure section), and
 `docs/Reference/ExperimentReferences/SUPERPHYSICS-GU-DRAFT-MIRROR-20250530.md`
 (2026-06-16 expanded Superphysics mirror check plus Phase415 use of part-09b
-as a non-promotional `delta_omega` clue). The diagnosis journal entry is near
-the end of
+as a non-promotional `delta_omega` clue), and `GU-DRAFT-2021.md` / the TOE
+Iceberg note (Phase416 carrier census). The diagnosis journal entry is near the
+end of
 `docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md`.
 
 ### Validation Already Run
@@ -456,6 +486,7 @@ the end of
 dotnet run --project studies/phase413_noncompact_real_form_transfer_probe_001/Phase413NoncompactRealFormTransferProbe.csproj
 dotnet run --project studies/phase414_general_shiab_epsilon_operator_ansatz_probe_001/Phase414GeneralShiabEpsilonOperatorAnsatzProbe.csproj
 dotnet run --project studies/phase415_fermionic_cohomology_square_root_ansatz_probe_001/Phase415FermionicCohomologySquareRootAnsatzProbe.csproj
+dotnet run --project studies/phase416_unobserved_phase_carrier_census_001/Phase416UnobservedPhaseCarrierCensus.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
@@ -464,8 +495,8 @@ dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase
 PHASE405_ENABLE_GPU=1 LD_LIBRARY_PATH=native/build dotnet run --project studies/phase405_vacuum_manifold_doublet_vev_orbit_scan_001/Phase405VacuumManifoldDoubletVevOrbitScan.csproj
 ```
 
-The targeted Phase415 run passes and preserves the fail-closed boundary;
-Phase202 now reports `checklistPassedCount=208`, `checklistFailedCount=3`; claim
+The targeted Phase416 run passes and preserves the fail-closed boundary;
+Phase202 now reports `checklistPassedCount=209`, `checklistFailedCount=3`; claim
 integrity verified with `promotedPhysicalMassClaimCount=0`. (Platform
 state: Gu.Interop.Tests 158/158 with the real-mesh parity and
 buffer-handle recycling tests; both Phase405 platform notes discharged
@@ -538,11 +569,15 @@ The most useful next branches are:
    families. Each should be a new fail-closed phase, update the journal, and
    leave Phase201/Phase256 untouched unless every contract field is actually
    filled. Recommended order:
-   - Unobserved-phase carrier census (highest priority after Phase415):
-     enumerate field/carrier slots not already ruled out by Phases408-415,
-     especially any draft "unobserved phase" or beyond-frame-cross content
-     that can be pinned to a computable representation. Ask whether a welded
-     spin-0 SM doublet can occur there.
+   - Vector-spinor `144` decomposition / composite probe (highest priority
+     after Phase416): Phase416 materialized the source-pinned dark carriers
+     and named `Z_{1/2}` / the vector-spinor `144` as the sharpest remaining
+     representation target. Decompose the `144` under the SM and welded spin
+     actions, then test only source-defined even-composite or bosonic
+     projection maps for a spin-0 SM doublet.
+   - Unobserved-phase carrier census: DONE at source-pinned linear-carrier
+     level by Phase416. The current sources define dark fermionic carriers but
+     no linear bosonic spin-zero SM-doublet carrier or projection map.
    - Fermionic cohomology square-root ansatz: DONE by Phase415 on the
      currently specifiable carriers. `part-09b` section 9.3 is useful as a
      research clue, but no reviewed source supplies the `delta_omega`
@@ -620,13 +655,18 @@ The most useful next branches are:
    complexified welds coincide exactly, so the no-gos are REAL-FORM
    INDEPENDENT - the noncompact evasion is closed on finite-dimensional
    carriers (induced signature (7,3), matching the Phase406 Cl(7,3)
-   axis). THE INTERNAL STRUCTURAL PROGRAM IS AT ITS HONEST BOUNDARY,
-   NOW WITH ONLY TWO NAMED ROUTES: the draft's unobserved-phase fields
-   (IF its Chapter-14-era machinery can be pinned to a computable
-   structure - re-read the draft text first), or a new primary-source
-   specification. Standing work: literature monitoring at checkpoint
-   cadence; the epsilon/Shiab route if a quantitative specification
-   appears.
+   axis). Phase414 and Phase415 then closed the low-order Shiab/epsilon
+   and `delta_omega` square-root branches on currently specifiable
+   carriers. Phase416 pinned the draft's unobserved/dark carrier census:
+   `Q_{3/2}`, `Z_{1/2}` with vector-spinor `144`, and the dark mirror
+   Weyl half are source-defined fermionic carriers, but none is a linear
+   bosonic spin-zero SM-doublet carrier and no bosonic map/action is
+   supplied. THE INTERNAL STRUCTURAL PROGRAM IS AT ITS HONEST BOUNDARY,
+   NOW WITH TWO NAMED ROUTES: the vector-spinor `144` decomposition plus
+   any source-defined even-composite/bosonic projection map, or a new
+   primary-source specification. Standing work: literature monitoring at
+   checkpoint cadence; the epsilon/Shiab route if a quantitative
+   specification appears.
    Deep-research follow-ups (catalogue when revisited): GU IV (v2)
    "The Rig for Lambda" (DOI 10.5281/zenodo.17402261); the hinted
    "Geometric Unity V"; the Hebrew University dark-energy talk
@@ -664,9 +704,9 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -120 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase415|fermionicCohomologySquareRootAnsatzProbe|deltaOmegaStillRequiresSpecification" \
+rg -n "Phase416|unobservedPhaseCarrierCensus|vectorSpinor144RemainsConcreteNextCarrier" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
-  studies/phase415_fermionic_cohomology_square_root_ansatz_probe_001 \
+  studies/phase416_unobserved_phase_carrier_census_001 \
   studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
 ```
 
@@ -679,11 +719,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase415 output JSON files, and commit a checkpoint
+force-add the ignored Phase416 output JSON files, and commit a checkpoint
 after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase415 fermionic cohomology square root probe
+Add phase416 unobserved phase carrier census
 ```

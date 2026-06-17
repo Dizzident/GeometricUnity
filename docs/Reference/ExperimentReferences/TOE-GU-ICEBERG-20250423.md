@@ -56,6 +56,11 @@ STRUCTURAL MAP of the GU-native ansatz for the Phase398 gap-ledger rows
 hypercharge/coupling lineage), i.e., as direction for the physical
 VO-6/VO-7 derivation - NOT as promotion evidence.
 
+Phase416 used the transcript's open-question language about unobserved
+decoupled sectors only as a secondary search cue, then grounded the actual
+carrier census in GU-DRAFT-2021 sections 11-12. The transcript supplies no
+primary carrier/action or boson projection row.
+
 ## What It Can And Cannot Supply
 
 - CAN supply (structural only): the first GU-NATIVE scalar-sector pointer

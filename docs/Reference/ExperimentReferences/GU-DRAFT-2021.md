@@ -53,6 +53,12 @@ mirrors are merely search aids or can support promotion-ready claims.
   deformation program, but it does not turn the study-defined
   `Q_ab=Re Tr(G_a^dagger G_b)` shell-response Gram precursor into a physical
   action Hessian or electroweak mass operator.
+- Supported Phase416's unobserved-phase carrier census. Section 11.2 / eq.
+  `11.6` pins the `F/Q/Z` decomposition (`64 + 192 + 576 = 832` per displayed
+  `zeta` side), section 12.9 / eq. `12.20` names dark decoupled Looking Glass
+  matter, and section 12.10 / eq. `12.22` identifies the vector-spinor
+  remainder. Phase416 records these as source-pinned fermionic carriers, not
+  as bosonic spin-zero scalar/VEV source rows.
 
 ## Prediction Relevance
 
@@ -73,6 +79,10 @@ The source remains necessary context, not sufficient prediction evidence.
   theta_omega or boson mass bridge law.
 - Any future promotion attempt must cite exact equations and show replayable
   source-lineage fields.
+- For the Phase416 branch, the next useful draft-backed computation is an
+  explicit SM/welded decomposition of the `144` vector-spinor carrier plus any
+  source-defined even-composite or bosonic projection map. Without that map,
+  the dark carriers cannot fill Phase201 or Phase256.
 
 ## Phase402 Dictionary Audit (2026-06-11)
 

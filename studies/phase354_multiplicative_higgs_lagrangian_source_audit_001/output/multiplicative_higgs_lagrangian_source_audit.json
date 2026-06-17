@@ -1,7 +1,7 @@
 {
   "phaseId": "phase354-multiplicative-higgs-lagrangian-source-audit",
   "terminalStatus": "multiplicative-higgs-lagrangian-source-audit-external-variational-higgs-lead-not-gu-source",
-  "generatedAt": "2026-06-16T21:09:54.2122958+00:00",
+  "generatedAt": "2026-06-17T12:50:22.7415017+00:00",
   "multiplicativeHiggsLagrangianSourceAuditPassed": true,
   "multiplicativeHiggsLagrangianLeadPresent": true,
   "multiplicativeHiggsLagrangianPrimarySourcesReviewed": true,

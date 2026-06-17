@@ -17690,3 +17690,57 @@ carrier. Further progress on that branch requires a source-level definition of
 experiment is the unobserved-phase carrier census: find whether any draft
 unobserved-phase or beyond-frame-cross field can be pinned to a computable
 carrier not already ruled out by Phases408-415.
+
+## 2026-06-17 - Phase416: Unobserved-Phase Carrier Census Materialized
+
+### Context
+
+After Phase415 closed the `delta_omega` square-root branch on every currently
+specifiable local carrier, the restart prompt's next representation-theoretic
+branch was the draft's unobserved/dark phase content. The goal was to stop
+treating "unobserved phase" as a vague residual and ask which carriers are
+actually pinned by source text.
+
+### Result
+
+- Phase416 reads GU-DRAFT-2021 sections 9.3, 11.2, 12.9, and 12.10 as the
+  authoritative carrier source, with the TOE Iceberg transcript used only as a
+  secondary search cue.
+- The draft pins three unobserved/dark fermionic carrier families:
+  - `Q_{3/2}`: 192 states per displayed `zeta` side;
+  - `Z_{1/2}`: 576 states per side, built from the vector-spinor `144`
+    remainder in `10 x 16 = 16 + 144`;
+  - a dark decoupled Weyl-half / Looking Glass mirror sector: 64 states.
+- The draft dimension check is exact: `64 + 192 + 576 = 832`.
+- None of these source-pinned unobserved carriers is a linear bosonic spin-zero
+  SM-doublet carrier.
+- No source supplies the missing bosonic map/action, VEV selection, observed
+  photon/W/Z/H projection rows, weak-angle lineage, pole extraction, or GeV
+  normalization.
+- Machine result:
+  `unobservedPhaseCarrierCensusPassed=True`,
+  `sourcePinnedUnobservedCarrierCount=3`,
+  `computableUnobservedCarrierCount=3`,
+  `draftZetaDecompositionDimensionCheck=True`,
+  `sourcePinnedUnobservedLinearBosonicSpinZeroCandidateCount=0`,
+  `sourcePinnedUnobservedWeldedScalarSmDoubletCandidateCount=0`,
+  `unobservedPhaseStillRequiresBosonicMap=True`,
+  `vectorSpinor144RemainsConcreteNextCarrier=True`.
+- No Phase201 or Phase256 field is filled; no W/Z/H mass claim is promoted.
+- Study: `studies/phase416_unobserved_phase_carrier_census_001`
+  (IMPLEMENTATION_P416.md).
+
+### Validation
+
+- Targeted Phase416 run passed.
+- Phase101 includes the block.
+- Phase202: `checklistPassedCount=209`, `checklistFailedCount=3`.
+- Claim integrity verified with `promotedPhysicalMassClaimCount=0`.
+
+### Standing Next Work
+
+The broad "unobserved phase" residual is now sharpened to a concrete
+mathematical branch: decompose the vector-spinor `144` under the SM and welded
+spin actions, then test only source-defined even-composite or bosonic
+projection maps. Without such a map, the dark carriers remain fermionic
+representation leads, not scalar/VEV source rows.

@@ -181,6 +181,7 @@ const string Phase412Path = "studies/phase412_quartic_sm_doublet_intersection_an
 const string Phase413Path = "studies/phase413_noncompact_real_form_transfer_probe_001/output/noncompact_real_form_transfer_probe_summary.json";
 const string Phase414Path = "studies/phase414_general_shiab_epsilon_operator_ansatz_probe_001/output/general_shiab_epsilon_operator_ansatz_probe_summary.json";
 const string Phase415Path = "studies/phase415_fermionic_cohomology_square_root_ansatz_probe_001/output/fermionic_cohomology_square_root_ansatz_probe_summary.json";
+const string Phase416Path = "studies/phase416_unobserved_phase_carrier_census_001/output/unobserved_phase_carrier_census_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -395,6 +396,7 @@ using var phase412 = File.Exists(Phase412Path) ? JsonDocument.Parse(File.ReadAll
 using var phase413 = File.Exists(Phase413Path) ? JsonDocument.Parse(File.ReadAllText(Phase413Path)) : null;
 using var phase414 = File.Exists(Phase414Path) ? JsonDocument.Parse(File.ReadAllText(Phase414Path)) : null;
 using var phase415 = File.Exists(Phase415Path) ? JsonDocument.Parse(File.ReadAllText(Phase415Path)) : null;
+using var phase416 = File.Exists(Phase416Path) ? JsonDocument.Parse(File.ReadAllText(Phase416Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -5340,6 +5342,48 @@ var fermionicCohomologySquareRootAnsatzProbePassed = fermionicCohomologySquareRo
     && JsonBool(phase415.RootElement, "phase201TemplateMutated") is false
     && JsonInt(phase415.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
     && JsonInt(phase415.RootElement, "acceptedContractFieldCount") == 0;
+var unobservedPhaseCarrierCensusMaterialized = phase416 is not null;
+var unobservedPhaseCarrierCensusPassed = unobservedPhaseCarrierCensusMaterialized
+    && JsonBool(phase416!.RootElement, "unobservedPhaseCarrierCensusPassed") is true
+    && JsonBool(phase416.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase416.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase416.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase416.RootElement, "applicationSubjectKind") == "unobserved-phase-carrier-census"
+    && JsonBool(phase416.RootElement, "phase404PrecursorPassed") is true
+    && JsonBool(phase416.RootElement, "phase407PrecursorPassed") is true
+    && JsonBool(phase416.RootElement, "phase408PrecursorPassed") is true
+    && JsonBool(phase416.RootElement, "phase409PrecursorPassed") is true
+    && JsonBool(phase416.RootElement, "phase412PrecursorPassed") is true
+    && JsonBool(phase416.RootElement, "phase414PrecursorPassed") is true
+    && JsonBool(phase416.RootElement, "phase415PrecursorPassed") is true
+    && JsonInt(phase416.RootElement, "sourcePinnedUnobservedCarrierCount") == 3
+    && JsonInt(phase416.RootElement, "computableUnobservedCarrierCount") == 3
+    && JsonBool(phase416.RootElement, "draftZetaDecompositionDimensionCheck") is true
+    && JsonInt(phase416.RootElement, "observedFDimensionPerZetaSide") == 64
+    && JsonInt(phase416.RootElement, "qRaritaSchwingerDimensionPerZetaSide") == 192
+    && JsonInt(phase416.RootElement, "zVectorSpinorDimensionPerZetaSide") == 576
+    && JsonInt(phase416.RootElement, "zetaSideDimension") == 832
+    && JsonInt(phase416.RootElement, "sourcePinnedUnobservedLinearBosonicSpinZeroCandidateCount") == 0
+    && JsonInt(phase416.RootElement, "sourcePinnedUnobservedWeldedScalarSmDoubletCandidateCount") == 0
+    && JsonBool(phase416.RootElement, "noLinearBosonicSpinZeroCarrierInPinnedUnobservedSectors") is true
+    && JsonBool(phase416.RootElement, "sourceDefinesUnobservedBosonicVevCarrier") is false
+    && JsonBool(phase416.RootElement, "sourceDefinesUnobservedCarrierAction") is false
+    && JsonBool(phase416.RootElement, "sourceDefinesUnobservedSpinZeroExtractionMap") is false
+    && JsonBool(phase416.RootElement, "sourceDefinesUnobservedObservedBosonProjectionRows") is false
+    && JsonBool(phase416.RootElement, "sourceDefinesUnobservedWeakAngleScalePoleOrGevLineage") is false
+    && JsonBool(phase416.RootElement, "unobservedPhaseStillRequiresBosonicMap") is true
+    && JsonBool(phase416.RootElement, "vectorSpinor144RemainsConcreteNextCarrier") is true
+    && JsonBool(phase416.RootElement, "physicalCouplingProvided") is false
+    && JsonBool(phase416.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase416.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase416.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase416.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase416.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase416.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase416.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase416.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase416.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase416.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -7636,6 +7680,14 @@ var checklist = new[]
             ? $"fermionicCohomologySquareRootAnsatzProbePassed={JsonBool(phase415!.RootElement, "fermionicCohomologySquareRootAnsatzProbePassed")}; targetBlind={JsonBool(phase415.RootElement, "targetBlindConstruction")}; suppliedRequiredSpecificationFieldCount={JsonInt(phase415.RootElement, "suppliedRequiredSpecificationFieldCount")}; specifiedLocalCandidatesClosed={JsonBool(phase415.RootElement, "specifiedLocalCandidatesClosed")}; deltaOmegaStillRequiresSpecification={JsonBool(phase415.RootElement, "deltaOmegaStillRequiresSpecification")}; canFillPhase201WzContract={JsonBool(phase415.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase415.RootElement, "decision")}"
             : "Phase415 artifact not materialized",
         Phase415Path),
+    new ObjectiveChecklistItem(
+        "unobserved-phase-carrier-census-materialized",
+        "Census source-pinned unobserved/dark carriers and verify that none supplies a linear bosonic spin-zero SM-doublet source or observed-boson projection map.",
+        unobservedPhaseCarrierCensusPassed ? "passed" : "failed",
+        unobservedPhaseCarrierCensusMaterialized
+            ? $"unobservedPhaseCarrierCensusPassed={JsonBool(phase416!.RootElement, "unobservedPhaseCarrierCensusPassed")}; sourcePinnedUnobservedCarrierCount={JsonInt(phase416.RootElement, "sourcePinnedUnobservedCarrierCount")}; computableUnobservedCarrierCount={JsonInt(phase416.RootElement, "computableUnobservedCarrierCount")}; linearBosonicCandidates={JsonInt(phase416.RootElement, "sourcePinnedUnobservedLinearBosonicSpinZeroCandidateCount")}; vectorSpinor144RemainsConcreteNextCarrier={JsonBool(phase416.RootElement, "vectorSpinor144RemainsConcreteNextCarrier")}; canFillPhase201WzContract={JsonBool(phase416.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase416.RootElement, "decision")}"
+            : "Phase416 artifact not materialized",
+        Phase416Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
