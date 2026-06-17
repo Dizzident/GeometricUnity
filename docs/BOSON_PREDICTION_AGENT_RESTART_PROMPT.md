@@ -35,13 +35,13 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase416 work (and the 2026-06-12
+Current gate status after the Phase417 work (and the 2026-06-12
 platform fix - GPU parity defect root-caused and discharged):
 
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=209`,
+  `objectiveAchieved=False`, `checklistPassedCount=210`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -250,6 +250,15 @@ platform fix - GPU parity defect root-caused and discharged):
   `sourcePinnedUnobservedWeldedScalarSmDoubletCandidateCount=0`,
   `unobservedPhaseStillRequiresBosonicMap=True`,
   `vectorSpinor144RemainsConcreteNextCarrier=True`
+- Phase417:
+  `vectorSpinor144DecompositionProbePassed=True`,
+  `gammaTraceRankComplex=16`,
+  `vectorSpinor144KernelComplexDimension=144`,
+  `vectorSpinor144DimensionCheck=True`,
+  `vectorSpinor144InvariantUnderProbedGenerators=True`,
+  `internalSmHiggsPatternComplexDimension=0`,
+  `linearWeldedScalarCountTotal=0`,
+  `vectorSpinor144StillRequiresBosonicProjectionMap=True`
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -270,23 +279,36 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work added Phase416, the unobserved-phase carrier census. It
-grounds the previously vague "unobserved phase" residual in GU-DRAFT-2021
-sections 11-12: the source pins three unobserved/dark fermionic carrier
-families, `Q_{3/2}` (192 states per displayed `zeta` side), `Z_{1/2}` (576
-states per side from the vector-spinor `144` remainder in `10 x 16 = 16 +
-144`), and a dark decoupled Weyl-half / Looking Glass mirror sector (64
-states). The source dimension check is exact: `64 + 192 + 576 = 832`. Exact
-result: `unobservedPhaseCarrierCensusPassed=True`,
-`sourcePinnedUnobservedCarrierCount=3`,
-`computableUnobservedCarrierCount=3`,
-`sourcePinnedUnobservedLinearBosonicSpinZeroCandidateCount=0`,
-`sourcePinnedUnobservedWeldedScalarSmDoubletCandidateCount=0`,
-`unobservedPhaseStillRequiresBosonicMap=True`, and
-`vectorSpinor144RemainsConcreteNextCarrier=True`. The branch is now sharpened:
-the next mathematical carrier is the vector-spinor `144` decomposition and any
-source-defined even-composite/bosonic projection built from it. No Phase201 or
-Phase256 field is filled. Study:
+The latest work added Phase417, the vector-spinor `144` decomposition probe.
+It takes the Phase416 `Z_{1/2}` carrier target and constructs the
+`10 x 16 -> 16 + 144` split directly as the gamma-trace kernel
+`10 x 16+ -> 16-`, using the same Cl(10), SM-chain, and Sym^2 welded-spin
+conventions as Phases407/411. Exact result:
+`vectorSpinor144DecompositionProbePassed=True`,
+`gammaTraceRankComplex=16`,
+`vectorSpinor144KernelComplexDimension=144`,
+`vectorSpinor144DimensionCheck=True`,
+`vectorSpinor144InvariantUnderProbedGenerators=True`,
+`internalSmHiggsPatternComplexDimension=0`,
+`linearWeldedScalarCountTotal=0`,
+`vectorSpinor144LinearCarrierHasNoWeldedScalar=True`, and
+`sourceDefinedEvenCompositeOrBosonicProjectionMapCount=0`. The vector-spinor
+branch is now closed at the linear gamma-trace/decomposition level: no linear
+scalar/VEV carrier emerges, and current sources still supply no bosonic
+projection/action/VEV map, observed photon/W/Z/H rows, weak-angle lineage,
+pole extraction, or GeV normalization. No Phase201 or Phase256 field is
+filled. Study:
+`studies/phase417_vector_spinor_144_decomposition_probe_001`
+(IMPLEMENTATION_P417.md).
+
+Before that, Phase416, the unobserved-phase carrier census, grounded the
+previously vague "unobserved phase" residual in GU-DRAFT-2021 sections 11-12:
+the source pins three unobserved/dark fermionic carrier families, `Q_{3/2}`
+(192 states per displayed `zeta` side), `Z_{1/2}` (576 states per side from
+the vector-spinor `144` remainder in `10 x 16 = 16 + 144`), and a dark
+decoupled Weyl-half / Looking Glass mirror sector (64 states). The source
+dimension check is exact: `64 + 192 + 576 = 832`. No Phase201 or Phase256
+field is filled. Study:
 `studies/phase416_unobserved_phase_carrier_census_001`
 (IMPLEMENTATION_P416.md).
 
@@ -458,14 +480,14 @@ HONEST BOUNDARY. Study:
 
 ### Integration Points Already Updated
 
-Phase416 (like Phase388-415) is wired into:
+Phase417 (like Phase388-416) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (single broad pass; the
   older duplicated final sweep was removed on 2026-06-16)
 - `studies/phase101_boson_prediction_package_001/Program.cs`
 - `studies/phase202_boson_objective_completion_audit_001/Program.cs`
   (checklist item
-  `unobserved-phase-carrier-census-materialized`)
+  `vector-spinor-144-decomposition-probe-materialized`)
 - `scripts/verify_boson_claim_integrity.sh`
 - Broad scanner exclusions: phase204, phase205, phase207, phase279,
   phase281, phase295, phase296
@@ -476,8 +498,8 @@ Reference tracking was updated in `ExperimentReferences.md`,
 `docs/Reference/ExperimentReferences/SUPERPHYSICS-GU-DRAFT-MIRROR-20250530.md`
 (2026-06-16 expanded Superphysics mirror check plus Phase415 use of part-09b
 as a non-promotional `delta_omega` clue), and `GU-DRAFT-2021.md` / the TOE
-Iceberg note (Phase416 carrier census). The diagnosis journal entry is near the
-end of
+Iceberg note (Phase416 carrier census plus Phase417 vector-spinor `144`
+decomposition). The diagnosis journal entry is near the end of
 `docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md`.
 
 ### Validation Already Run
@@ -487,6 +509,7 @@ dotnet run --project studies/phase413_noncompact_real_form_transfer_probe_001/Ph
 dotnet run --project studies/phase414_general_shiab_epsilon_operator_ansatz_probe_001/Phase414GeneralShiabEpsilonOperatorAnsatzProbe.csproj
 dotnet run --project studies/phase415_fermionic_cohomology_square_root_ansatz_probe_001/Phase415FermionicCohomologySquareRootAnsatzProbe.csproj
 dotnet run --project studies/phase416_unobserved_phase_carrier_census_001/Phase416UnobservedPhaseCarrierCensus.csproj
+dotnet run --project studies/phase417_vector_spinor_144_decomposition_probe_001/Phase417VectorSpinor144DecompositionProbe.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
@@ -495,8 +518,8 @@ dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase
 PHASE405_ENABLE_GPU=1 LD_LIBRARY_PATH=native/build dotnet run --project studies/phase405_vacuum_manifold_doublet_vev_orbit_scan_001/Phase405VacuumManifoldDoubletVevOrbitScan.csproj
 ```
 
-The targeted Phase416 run passes and preserves the fail-closed boundary;
-Phase202 now reports `checklistPassedCount=209`, `checklistFailedCount=3`; claim
+The targeted Phase417 run passes and preserves the fail-closed boundary;
+Phase202 now reports `checklistPassedCount=210`, `checklistFailedCount=3`; claim
 integrity verified with `promotedPhysicalMassClaimCount=0`. (Platform
 state: Gu.Interop.Tests 158/158 with the real-mesh parity and
 buffer-handle recycling tests; both Phase405 platform notes discharged
@@ -569,12 +592,22 @@ The most useful next branches are:
    families. Each should be a new fail-closed phase, update the journal, and
    leave Phase201/Phase256 untouched unless every contract field is actually
    filled. Recommended order:
-   - Vector-spinor `144` decomposition / composite probe (highest priority
-     after Phase416): Phase416 materialized the source-pinned dark carriers
-     and named `Z_{1/2}` / the vector-spinor `144` as the sharpest remaining
-     representation target. Decompose the `144` under the SM and welded spin
-     actions, then test only source-defined even-composite or bosonic
-     projection maps for a spin-0 SM doublet.
+   - Direction-dependent curvature/VEV coupling scan (highest priority after
+     Phase417): Phase410 closed only the uniform bosonic curvature coupling.
+     Enumerate gauge-invariant direction-dependent curvature/connection
+     couplings and test whether any select doublet VEVs without importing
+     electroweak targets.
+   - Observed-field extraction template: assume a candidate scalar doublet
+     exists and build an FMS/dressing-field-style symbolic map that states the
+     minimal algebraic data needed for photon, W, Z, Higgs projection rows,
+     weak-angle lineage, and pole extraction. This clarifies the Phase256
+     contract even if it does not solve the scalar gap.
+   - Vector-spinor `144` decomposition / composite probe: DONE at the linear
+     gamma-trace/decomposition level by Phase417. The source-pinned `Z_{1/2}`
+     carrier's `144` has exact kernel dimension, no internal SM-Higgs-pattern
+     block, and the chiral `2 x 144` carrier has no linear welded scalar.
+     Further progress from this branch requires a source-defined
+     even-composite/bosonic projection map, action, or VEV selection rule.
    - Unobserved-phase carrier census: DONE at source-pinned linear-carrier
      level by Phase416. The current sources define dark fermionic carriers but
      no linear bosonic spin-zero SM-doublet carrier or projection map.
@@ -589,15 +622,6 @@ The most useful next branches are:
      computable carriers. The low-order alphabet is covered, 11 families are
      closed by Phases408-413, and the 2 remaining residuals require a new
      carrier/source specification rather than another internal near-pass.
-   - Direction-dependent curvature/VEV coupling scan: Phase410 closed only the
-     uniform bosonic curvature coupling. Enumerate gauge-invariant
-     direction-dependent curvature/connection couplings and test whether any
-     select doublet VEVs without importing electroweak targets.
-   - Observed-field extraction template: assume a candidate scalar doublet
-     exists and build an FMS/dressing-field-style symbolic map that states the
-     minimal algebraic data needed for photon, W, Z, Higgs projection rows,
-     weak-angle lineage, and pole extraction. This clarifies the Phase256
-     contract even if it does not solve the scalar gap.
    - Scale sanity checks: test naive readings such as the Superphysics/draft
      stylized `m = R/4` curvature-mass relation by dimensional analysis and
      target-blind normalization bookkeeping. A likely negative result is still
@@ -661,12 +685,16 @@ The most useful next branches are:
    `Q_{3/2}`, `Z_{1/2}` with vector-spinor `144`, and the dark mirror
    Weyl half are source-defined fermionic carriers, but none is a linear
    bosonic spin-zero SM-doublet carrier and no bosonic map/action is
-   supplied. THE INTERNAL STRUCTURAL PROGRAM IS AT ITS HONEST BOUNDARY,
-   NOW WITH TWO NAMED ROUTES: the vector-spinor `144` decomposition plus
-   any source-defined even-composite/bosonic projection map, or a new
-   primary-source specification. Standing work: literature monitoring at
-   checkpoint cadence; the epsilon/Shiab route if a quantitative
-   specification appears.
+   supplied. Phase417 then decomposed the `Z` vector-spinor `144` itself:
+   the gamma-trace split is exact, the internal SM-Higgs-pattern count is
+   zero, and the chiral `2 x 144` carrier has no linear welded scalar.
+   THE INTERNAL STRUCTURAL PROGRAM IS AT ITS HONEST BOUNDARY, NOW WITH
+   THREE NAMED ROUTES: a source-defined vector-spinor/composite bosonic
+   projection map, a direction-dependent curvature/VEV coupling that
+   evades Phase410's uniform-coupling no-go, or a new primary-source
+   specification. Standing work: literature monitoring at checkpoint
+   cadence; the epsilon/Shiab route if a quantitative specification
+   appears.
    Deep-research follow-ups (catalogue when revisited): GU IV (v2)
    "The Rig for Lambda" (DOI 10.5281/zenodo.17402261); the hinted
    "Geometric Unity V"; the Hebrew University dark-energy talk
@@ -704,9 +732,9 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -120 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase416|unobservedPhaseCarrierCensus|vectorSpinor144RemainsConcreteNextCarrier" \
+rg -n "Phase417|vectorSpinor144DecompositionProbe|linearWeldedScalarCountTotal" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
-  studies/phase416_unobserved_phase_carrier_census_001 \
+  studies/phase417_vector_spinor_144_decomposition_probe_001 \
   studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
 ```
 
@@ -719,11 +747,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase416 output JSON files, and commit a checkpoint
+force-add the ignored Phase417 output JSON files, and commit a checkpoint
 after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase416 unobserved phase carrier census
+Add phase417 vector-spinor 144 decomposition probe
 ```

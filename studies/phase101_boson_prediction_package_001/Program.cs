@@ -274,6 +274,7 @@ const string Phase413NoncompactRealFormTransferProbePath = "studies/phase413_non
 const string Phase414GeneralShiabEpsilonOperatorAnsatzProbePath = "studies/phase414_general_shiab_epsilon_operator_ansatz_probe_001/output/general_shiab_epsilon_operator_ansatz_probe_summary.json";
 const string Phase415FermionicCohomologySquareRootAnsatzProbePath = "studies/phase415_fermionic_cohomology_square_root_ansatz_probe_001/output/fermionic_cohomology_square_root_ansatz_probe_summary.json";
 const string Phase416UnobservedPhaseCarrierCensusPath = "studies/phase416_unobserved_phase_carrier_census_001/output/unobserved_phase_carrier_census_summary.json";
+const string Phase417VectorSpinor144DecompositionProbePath = "studies/phase417_vector_spinor_144_decomposition_probe_001/output/vector_spinor_144_decomposition_probe_summary.json";
 const string Phase282BranchLocalDirectInvariantCensusPath = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census.json";
 const string Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit.json";
 const string Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic.json";
@@ -568,6 +569,7 @@ using var phase413 = TryParseJson(Phase413NoncompactRealFormTransferProbePath);
 using var phase414 = TryParseJson(Phase414GeneralShiabEpsilonOperatorAnsatzProbePath);
 using var phase415 = TryParseJson(Phase415FermionicCohomologySquareRootAnsatzProbePath);
 using var phase416 = TryParseJson(Phase416UnobservedPhaseCarrierCensusPath);
+using var phase417 = TryParseJson(Phase417VectorSpinor144DecompositionProbePath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -7201,6 +7203,40 @@ var package = new
             phase201TemplateMutated = JsonBool(phase416.RootElement, "phase201TemplateMutated"),
             fieldsAppliedToPhase201TemplateCount = JsonInt(phase416.RootElement, "fieldsAppliedToPhase201TemplateCount"),
             decision = JsonString(phase416.RootElement, "decision"),
+        }
+        : null,
+    vectorSpinor144DecompositionProbe = phase417 is not null
+        ? new
+        {
+            status = JsonString(phase417.RootElement, "terminalStatus"),
+            vectorSpinor144DecompositionProbePassed = JsonBool(phase417.RootElement, "vectorSpinor144DecompositionProbePassed"),
+            targetBlindConstruction = JsonBool(phase417.RootElement, "targetBlindConstruction"),
+            physicalTargetsConsultedForConstruction = JsonBool(phase417.RootElement, "physicalTargetsConsultedForConstruction"),
+            applicationSubjectKind = JsonString(phase417.RootElement, "applicationSubjectKind"),
+            gammaTraceRankComplex = JsonInt(phase417.RootElement, "gammaTraceRankComplex"),
+            vectorSpinor144KernelComplexDimension = JsonInt(phase417.RootElement, "vectorSpinor144KernelComplexDimension"),
+            vectorSpinor144DimensionCheck = JsonBool(phase417.RootElement, "vectorSpinor144DimensionCheck"),
+            vectorSpinor144InvariantUnderProbedGenerators = JsonBool(phase417.RootElement, "vectorSpinor144InvariantUnderProbedGenerators"),
+            internalSmHiggsPatternComplexDimension = JsonInt(phase417.RootElement, "internalSmHiggsPatternComplexDimension"),
+            linearWeldedScalarCountTotal = JsonInt(phase417.RootElement, "linearWeldedScalarCountTotal"),
+            vectorSpinor144LinearCarrierHasNoWeldedScalar = JsonBool(phase417.RootElement, "vectorSpinor144LinearCarrierHasNoWeldedScalar"),
+            sourceDefinedEvenCompositeOrBosonicProjectionMapCount = JsonInt(phase417.RootElement, "sourceDefinedEvenCompositeOrBosonicProjectionMapCount"),
+            vectorSpinor144StillRequiresBosonicProjectionMap = JsonBool(phase417.RootElement, "vectorSpinor144StillRequiresBosonicProjectionMap"),
+            sourceDefinesVectorSpinor144BosonicProjectionMap = JsonBool(phase417.RootElement, "sourceDefinesVectorSpinor144BosonicProjectionMap"),
+            sourceDefinesVectorSpinor144CarrierAction = JsonBool(phase417.RootElement, "sourceDefinesVectorSpinor144CarrierAction"),
+            sourceDefinesVectorSpinor144ObservedProjectionRows = JsonBool(phase417.RootElement, "sourceDefinesVectorSpinor144ObservedProjectionRows"),
+            sourceDefinesVectorSpinor144WeakAngleScalePoleOrGevLineage = JsonBool(phase417.RootElement, "sourceDefinesVectorSpinor144WeakAngleScalePoleOrGevLineage"),
+            physicalCouplingProvided = JsonBool(phase417.RootElement, "physicalCouplingProvided"),
+            sourceContractApplicationAllowed = JsonBool(phase417.RootElement, "sourceContractApplicationAllowed"),
+            canFillPhase201WzContract = JsonBool(phase417.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase417.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase417.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            routePromotesWzMasses = JsonBool(phase417.RootElement, "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonBool(phase417.RootElement, "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonBool(phase417.RootElement, "routeCompletesBosonPredictions"),
+            phase201TemplateMutated = JsonBool(phase417.RootElement, "phase201TemplateMutated"),
+            fieldsAppliedToPhase201TemplateCount = JsonInt(phase417.RootElement, "fieldsAppliedToPhase201TemplateCount"),
+            decision = JsonString(phase417.RootElement, "decision"),
         }
         : null,
     branchLocalDirectInvariantCensus = phase282 is not null

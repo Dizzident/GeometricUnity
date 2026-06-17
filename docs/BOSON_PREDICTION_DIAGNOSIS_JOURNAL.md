@@ -17744,3 +17744,54 @@ mathematical branch: decompose the vector-spinor `144` under the SM and welded
 spin actions, then test only source-defined even-composite or bosonic
 projection maps. Without such a map, the dark carriers remain fermionic
 representation leads, not scalar/VEV source rows.
+
+## 2026-06-17 - Phase417: Vector-Spinor 144 Decomposition Probe
+
+### Context
+
+Phase416 named the `Z_{1/2}` dark carrier as the sharpest remaining
+unobserved-phase representation target: the vector-spinor `144` remainder in
+`10 x 16 = 16 + 144`. Phase417 turns that source-text pointer into an actual
+machine decomposition.
+
+### Result
+
+- Phase417 constructs the gamma-trace map `10 x 16+ -> 16-` directly from the
+  same Cl(10), SM-chain, and Sym^2 weld conventions used in Phases407/411.
+- The split is exact at current tolerance:
+  `gammaTraceRankComplex=16`,
+  `vectorSpinor144KernelComplexDimension=144`,
+  `vectorSpinor144DimensionCheck=True`, with kernel residual `3.3e-16`.
+- The kernel is invariant under the probed welded and SM generators:
+  `vectorSpinor144InvariantUnderProbedGenerators=True`.
+- The welded content of the `144` is:
+  `(0.5,0.5)x4`, `(0.5,1.5)x4`, `(0.5,2.5)x2`,
+  `(1.5,0.5)x4`, `(1.5,1.5)x4`, `(1.5,2.5)x2`,
+  `(2.5,0.5)x2`, `(2.5,1.5)x2`.
+- The internal SM-Higgs-pattern count is zero:
+  `internalSmHiggsPatternComplexDimension=0`.
+- The actual chiral `2 x 144` carrier has no linear welded scalar:
+  `linearWeldedScalarCountTotal=0` and
+  `vectorSpinor144LinearCarrierHasNoWeldedScalar=True`.
+- The source-defined map count is still zero:
+  `sourceDefinedEvenCompositeOrBosonicProjectionMapCount=0` and
+  `vectorSpinor144StillRequiresBosonicProjectionMap=True`.
+- No Phase201 or Phase256 field is filled; no W/Z/H mass claim is promoted.
+- Study: `studies/phase417_vector_spinor_144_decomposition_probe_001`
+  (IMPLEMENTATION_P417.md).
+
+### Validation
+
+- Targeted Phase417 run passed.
+- Phase101 includes the block.
+- Phase202 includes checklist item
+  `vector-spinor-144-decomposition-probe-materialized`.
+- Claim integrity now asserts the Phase417 fail-closed boundary.
+
+### Standing Next Work
+
+The vector-spinor branch is closed at the linear gamma-trace/decomposition
+level. Further progress from `Z_{1/2}` requires a source-defined bosonic
+projection/composite map, action, or VEV selection rule. Without that, the next
+useful target-blind experiments are the direction-dependent curvature/VEV
+coupling scan and the observed-field extraction template branch.

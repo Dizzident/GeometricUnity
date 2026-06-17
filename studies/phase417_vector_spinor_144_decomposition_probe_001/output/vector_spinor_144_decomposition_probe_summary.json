@@ -1,0 +1,406 @@
+{
+  "phaseId": "phase417-vector-spinor-144-decomposition-probe",
+  "generatedAt": "2026-06-17T14:18:11.3825166+00:00",
+  "terminalStatus": "vector-spinor-144-decomposed-linear-carrier-no-welded-scalar-map-still-missing",
+  "vectorSpinor144DecompositionProbePassed": true,
+  "phase411PrecursorPassed": true,
+  "phase416PrecursorPassed": true,
+  "applicationSubjectKind": "vector-spinor-144-decomposition-probe",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "71f800fc6dfda89eed3aed25ca853e065f4c1c09d924af1085edf6cd2d097d87",
+  "chiralHalvesAreSixteenDimensional": true,
+  "gammaTraceRankReal": 32,
+  "gammaTraceRankComplex": 16,
+  "vectorSpinor144KernelRealDimension": 288,
+  "vectorSpinor144KernelComplexDimension": 144,
+  "vectorSpinor144DimensionCheck": true,
+  "gammaTraceKernelMaxResidual": 3.3306690738754696E-16,
+  "kernelInvarianceMaxResidual": 4.440892098500626E-16,
+  "vectorSpinor144InvariantUnderProbedGenerators": true,
+  "colorAlgebraDimensionIsEight": true,
+  "welded144ContentRecovered": true,
+  "weldedDimensionAccounting": true,
+  "smBlockDimensionAccounting": true,
+  "zCarrierDimensionAccounting": true,
+  "weylHalvesAreTwoDimensional": true,
+  "sigma4HomResidual": 0,
+  "weylLabel2L": {
+    "j1": 0,
+    "j2": 0.5
+  },
+  "weylLabel2R": {
+    "j1": 0.5,
+    "j2": 0
+  },
+  "vectorSpinor144WeldedContent": [
+    {
+      "j1": 0.5,
+      "j2": 0.5,
+      "multiplicity": 4
+    },
+    {
+      "j1": 0.5,
+      "j2": 1.5,
+      "multiplicity": 4
+    },
+    {
+      "j1": 0.5,
+      "j2": 2.5,
+      "multiplicity": 2
+    },
+    {
+      "j1": 1.5,
+      "j2": 0.5,
+      "multiplicity": 4
+    },
+    {
+      "j1": 1.5,
+      "j2": 1.5,
+      "multiplicity": 4
+    },
+    {
+      "j1": 1.5,
+      "j2": 2.5,
+      "multiplicity": 2
+    },
+    {
+      "j1": 2.5,
+      "j2": 0.5,
+      "multiplicity": 2
+    },
+    {
+      "j1": 2.5,
+      "j2": 1.5,
+      "multiplicity": 2
+    }
+  ],
+  "vectorSpinor144SmBlocks": [
+    {
+      "dimension": 2,
+      "colorCasimir": -0,
+      "su2LCasimir": 0,
+      "ySquared": -0,
+      "jL": 0,
+      "absYRelativeToHalf": 0
+    },
+    {
+      "dimension": 2,
+      "colorCasimir": -0,
+      "su2LCasimir": 0,
+      "ySquared": 1,
+      "jL": 0,
+      "absYRelativeToHalf": 1.4999999999999998
+    },
+    {
+      "dimension": 12,
+      "colorCasimir": -0,
+      "su2LCasimir": 0.75,
+      "ySquared": 0.25,
+      "jL": 0.5,
+      "absYRelativeToHalf": 0.7499999999999999
+    },
+    {
+      "dimension": 4,
+      "colorCasimir": -0,
+      "su2LCasimir": 0.75,
+      "ySquared": 2.25,
+      "jL": 0.5,
+      "absYRelativeToHalf": 2.25
+    },
+    {
+      "dimension": 6,
+      "colorCasimir": -0,
+      "su2LCasimir": 2,
+      "ySquared": -0,
+      "jL": 1,
+      "absYRelativeToHalf": 0
+    },
+    {
+      "dimension": 6,
+      "colorCasimir": -0,
+      "su2LCasimir": 2,
+      "ySquared": 1,
+      "jL": 1,
+      "absYRelativeToHalf": 1.4999999999999998
+    },
+    {
+      "dimension": 18,
+      "colorCasimir": 2.6666667,
+      "su2LCasimir": 0,
+      "ySquared": 0.1111111,
+      "jL": 0,
+      "absYRelativeToHalf": 0.4999999749999993
+    },
+    {
+      "dimension": 12,
+      "colorCasimir": 2.6666667,
+      "su2LCasimir": 0,
+      "ySquared": 0.4444444,
+      "jL": 0,
+      "absYRelativeToHalf": 0.9999999499999986
+    },
+    {
+      "dimension": 6,
+      "colorCasimir": 2.6666667,
+      "su2LCasimir": -0,
+      "ySquared": 1.7777778,
+      "jL": 0,
+      "absYRelativeToHalf": 2.0000000124999997
+    },
+    {
+      "dimension": 36,
+      "colorCasimir": 2.6666667,
+      "su2LCasimir": 0.75,
+      "ySquared": 0.0277778,
+      "jL": 0.5,
+      "absYRelativeToHalf": 0.25000009999997996
+    },
+    {
+      "dimension": 24,
+      "colorCasimir": 2.6666667,
+      "su2LCasimir": 0.75,
+      "ySquared": 0.6944444,
+      "jL": 0.5,
+      "absYRelativeToHalf": 1.2499999599999994
+    },
+    {
+      "dimension": 12,
+      "colorCasimir": 2.6666667,
+      "su2LCasimir": 0.75,
+      "ySquared": 1.3611111,
+      "jL": 0.5,
+      "absYRelativeToHalf": 1.7499999928571426
+    },
+    {
+      "dimension": 18,
+      "colorCasimir": 2.6666667,
+      "su2LCasimir": 2,
+      "ySquared": 0.1111111,
+      "jL": 1,
+      "absYRelativeToHalf": 0.4999999749999993
+    },
+    {
+      "dimension": 18,
+      "colorCasimir": 2.6666667,
+      "su2LCasimir": 2,
+      "ySquared": 0.4444444,
+      "jL": 1,
+      "absYRelativeToHalf": 0.9999999499999986
+    },
+    {
+      "dimension": 16,
+      "colorCasimir": 6,
+      "su2LCasimir": 0,
+      "ySquared": 0,
+      "jL": 0,
+      "absYRelativeToHalf": 0
+    },
+    {
+      "dimension": 16,
+      "colorCasimir": 6,
+      "su2LCasimir": 0,
+      "ySquared": 1,
+      "jL": 0,
+      "absYRelativeToHalf": 1.4999999999999998
+    },
+    {
+      "dimension": 32,
+      "colorCasimir": 6,
+      "su2LCasimir": 0.75,
+      "ySquared": 0.25,
+      "jL": 0.5,
+      "absYRelativeToHalf": 0.7499999999999999
+    },
+    {
+      "dimension": 12,
+      "colorCasimir": 6.6666667,
+      "su2LCasimir": 0,
+      "ySquared": 0.1111111,
+      "jL": 0,
+      "absYRelativeToHalf": 0.4999999749999993
+    },
+    {
+      "dimension": 12,
+      "colorCasimir": 6.6666667,
+      "su2LCasimir": 0,
+      "ySquared": 0.4444444,
+      "jL": 0,
+      "absYRelativeToHalf": 0.9999999499999986
+    },
+    {
+      "dimension": 24,
+      "colorCasimir": 6.6666667,
+      "su2LCasimir": 0.75,
+      "ySquared": 0.0277778,
+      "jL": 0.5,
+      "absYRelativeToHalf": 0.25000009999997996
+    }
+  ],
+  "internalSmHiggsPatternRealDimension": 0,
+  "internalSmHiggsPatternComplexDimension": 0,
+  "zCarrierLeftWeldedContent": [
+    {
+      "j1": 0.5,
+      "j2": 0,
+      "multiplicity": 4
+    },
+    {
+      "j1": 0.5,
+      "j2": 1,
+      "multiplicity": 8
+    },
+    {
+      "j1": 0.5,
+      "j2": 2,
+      "multiplicity": 6
+    },
+    {
+      "j1": 0.5,
+      "j2": 3,
+      "multiplicity": 2
+    },
+    {
+      "j1": 1.5,
+      "j2": 0,
+      "multiplicity": 4
+    },
+    {
+      "j1": 1.5,
+      "j2": 1,
+      "multiplicity": 8
+    },
+    {
+      "j1": 1.5,
+      "j2": 2,
+      "multiplicity": 6
+    },
+    {
+      "j1": 1.5,
+      "j2": 3,
+      "multiplicity": 2
+    },
+    {
+      "j1": 2.5,
+      "j2": 0,
+      "multiplicity": 2
+    },
+    {
+      "j1": 2.5,
+      "j2": 1,
+      "multiplicity": 4
+    },
+    {
+      "j1": 2.5,
+      "j2": 2,
+      "multiplicity": 2
+    }
+  ],
+  "zCarrierRightWeldedContent": [
+    {
+      "j1": 0,
+      "j2": 0.5,
+      "multiplicity": 4
+    },
+    {
+      "j1": 0,
+      "j2": 1.5,
+      "multiplicity": 4
+    },
+    {
+      "j1": 0,
+      "j2": 2.5,
+      "multiplicity": 2
+    },
+    {
+      "j1": 1,
+      "j2": 0.5,
+      "multiplicity": 8
+    },
+    {
+      "j1": 1,
+      "j2": 1.5,
+      "multiplicity": 8
+    },
+    {
+      "j1": 1,
+      "j2": 2.5,
+      "multiplicity": 4
+    },
+    {
+      "j1": 2,
+      "j2": 0.5,
+      "multiplicity": 6
+    },
+    {
+      "j1": 2,
+      "j2": 1.5,
+      "multiplicity": 6
+    },
+    {
+      "j1": 2,
+      "j2": 2.5,
+      "multiplicity": 2
+    },
+    {
+      "j1": 3,
+      "j2": 0.5,
+      "multiplicity": 2
+    },
+    {
+      "j1": 3,
+      "j2": 1.5,
+      "multiplicity": 2
+    }
+  ],
+  "linearWeldedScalarCountLeft": 0,
+  "linearWeldedScalarCountRight": 0,
+  "linearWeldedScalarCountTotal": 0,
+  "vectorSpinor144LinearCarrierHasNoWeldedScalar": true,
+  "sourceDefinesVectorSpinor144BosonicProjectionMap": false,
+  "sourceDefinesVectorSpinor144CarrierAction": false,
+  "sourceDefinesVectorSpinor144VevSelection": false,
+  "sourceDefinesVectorSpinor144ObservedProjectionRows": false,
+  "sourceDefinesVectorSpinor144WeakAngleScalePoleOrGevLineage": false,
+  "sourceDefinedEvenCompositeOrBosonicProjectionMapCount": 0,
+  "testedSourceDefinedEvenCompositeOrBosonicProjectionMapCount": 0,
+  "vectorSpinor144StillRequiresBosonicProjectionMap": true,
+  "physicalCouplingProvided": false,
+  "routeProvidesPhysicalMassPsiCompatibleBranch": false,
+  "routeProvidesCompletedFermionicAction": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesObservedElectroweakNamespaceMap": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesWeakAngleOrCouplingLineage": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "sourceEvidence": {
+    "phase411SummaryPath": "studies/phase411_quartic_dirac_squared_spinor_composite_probe_001/output/quartic_dirac_squared_spinor_composite_probe_summary.json",
+    "phase416SummaryPath": "studies/phase416_unobserved_phase_carrier_census_001/output/unobserved_phase_carrier_census_summary.json",
+    "primaryDraft": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt (section 11.2 eq. 11.6; section 12.22; 10 x 16 = 16 \u002B 144 vector-spinor remainder)"
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "The vector-spinor 144 is a source-pinned fermionic carrier, not a source-defined bosonic scalar VEV carrier.",
+    "This phase decomposes the gamma-trace kernel and chiral 2 x 144 carrier; it does not invent arbitrary non-source-defined composite maps.",
+    "Internal SM doublet-pattern content, if present, is representation data only and is not an observed Higgs projection row.",
+    "No carrier action, VEV selection, weak-angle lineage, pole extraction, or GeV normalization is supplied.",
+    "No Phase201 or Phase256 fill."
+  ],
+  "decision": "The source-pinned vector-spinor 144 has been materialized as the exact gamma-trace kernel in 10 x 16 = 16 \u002B 144 and decomposed under the same SM and welded-spin actions used by the prior phases. The actual chiral 2 x 144 Z carrier contains no linear welded spin-zero component, so it cannot by itself supply a linear scalar VEV carrier. The internal 144 does contain the recorded SM block content, including any color-singlet j_L=1/2 |Y|=1/2 dimensions listed in the artifact, but that is not enough: the source still does not define a bosonic projection, even-composite map, carrier action, VEV selection, observed photon/W/Z/H rows, weak-angle lineage, pole extraction, or GeV normalization. No Phase201 or Phase256 field is filled."
+}

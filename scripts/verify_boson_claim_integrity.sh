@@ -186,6 +186,7 @@ const paths = {
   phase414: "studies/phase414_general_shiab_epsilon_operator_ansatz_probe_001/output/general_shiab_epsilon_operator_ansatz_probe_summary.json",
   phase415: "studies/phase415_fermionic_cohomology_square_root_ansatz_probe_001/output/fermionic_cohomology_square_root_ansatz_probe_summary.json",
   phase416: "studies/phase416_unobserved_phase_carrier_census_001/output/unobserved_phase_carrier_census_summary.json",
+  phase417: "studies/phase417_vector_spinor_144_decomposition_probe_001/output/vector_spinor_144_decomposition_probe_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -443,6 +444,7 @@ const phase413 = requireFile(paths.phase413);
 const phase414 = requireFile(paths.phase414);
 const phase415 = requireFile(paths.phase415);
 const phase416 = requireFile(paths.phase416);
+const phase417 = requireFile(paths.phase417);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -4869,6 +4871,20 @@ if (sourceLineageMissing) {
   assert(phase416.sourceContractApplicationAllowed === false && phase416.canFillPhase201WzContract === false && phase416.canFillPhase201HiggsContract === false && phase416.canFillPhase256ObservedFieldExtractionContract === false, "Phase416 cannot fill Phase201 or Phase256 contracts.");
   assert(phase416.routePromotesWzMasses === false && phase416.routePromotesHiggsMass === false && phase416.routeCompletesBosonPredictions === false, "Phase416 cannot promote boson predictions.");
   assert(phase416.phase201TemplateMutated === false && phase416.fieldsAppliedToPhase201TemplateCount === 0 && phase416.acceptedContractFieldCount === 0, "Phase416 must not mutate or fill the Phase201 template.");
+  assert(phase417.vectorSpinor144DecompositionProbePassed === true, "Phase417 vector-spinor 144 decomposition probe must pass as fail-closed representation bookkeeping.");
+  assert(phase417.targetBlindConstruction === true && phase417.physicalTargetsConsultedForConstruction === false, "Phase417 construction must remain target-blind.");
+  assert(typeof phase417.targetBlindConstructionHash === "string" && phase417.targetBlindConstructionHash.length === 64, "Phase417 must persist a target-blind construction hash.");
+  assert(phase417.applicationSubjectKind === "vector-spinor-144-decomposition-probe", "Phase417 must classify its subject as the vector-spinor 144 decomposition probe.");
+  assert(phase417.phase411PrecursorPassed === true && phase417.phase416PrecursorPassed === true, "Phase417 must preserve Phase411/416 precursor gates.");
+  assert(phase417.gammaTraceRankComplex === 16 && phase417.vectorSpinor144KernelComplexDimension === 144 && phase417.vectorSpinor144DimensionCheck === true, "Phase417 must preserve the gamma-trace 10x16=16+144 dimension check.");
+  assert(phase417.vectorSpinor144InvariantUnderProbedGenerators === true && phase417.welded144ContentRecovered === true && phase417.weldedDimensionAccounting === true && phase417.smBlockDimensionAccounting === true, "Phase417 must recover invariant SM/welded decomposition accounting.");
+  assert(phase417.internalSmHiggsPatternComplexDimension === 0 && phase417.linearWeldedScalarCountTotal === 0 && phase417.vectorSpinor144LinearCarrierHasNoWeldedScalar === true, "Phase417 cannot report a linear vector-spinor 144 welded scalar SM-Higgs pattern.");
+  assert(phase417.sourceDefinesVectorSpinor144BosonicProjectionMap === false && phase417.sourceDefinesVectorSpinor144CarrierAction === false && phase417.sourceDefinesVectorSpinor144VevSelection === false && phase417.sourceDefinesVectorSpinor144ObservedProjectionRows === false && phase417.sourceDefinesVectorSpinor144WeakAngleScalePoleOrGevLineage === false, "Phase417 must not invent missing vector-spinor 144 bosonic/action/projection/scale data.");
+  assert(phase417.sourceDefinedEvenCompositeOrBosonicProjectionMapCount === 0 && phase417.testedSourceDefinedEvenCompositeOrBosonicProjectionMapCount === 0 && phase417.vectorSpinor144StillRequiresBosonicProjectionMap === true, "Phase417 must keep arbitrary non-source-defined vector-spinor composites out of the promotion path.");
+  assert(phase417.physicalCouplingProvided === false, "Phase417 derives no coupling.");
+  assert(phase417.sourceContractApplicationAllowed === false && phase417.canFillPhase201WzContract === false && phase417.canFillPhase201HiggsContract === false && phase417.canFillPhase256ObservedFieldExtractionContract === false, "Phase417 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase417.routePromotesWzMasses === false && phase417.routePromotesHiggsMass === false && phase417.routeCompletesBosonPredictions === false, "Phase417 cannot promote boson predictions.");
+  assert(phase417.phase201TemplateMutated === false && phase417.fieldsAppliedToPhase201TemplateCount === 0 && phase417.acceptedContractFieldCount === 0, "Phase417 must not mutate or fill the Phase201 template.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

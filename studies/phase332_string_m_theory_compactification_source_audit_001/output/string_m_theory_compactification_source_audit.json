@@ -1,7 +1,7 @@
 {
   "phaseId": "phase332-string-m-theory-compactification-source-audit",
   "terminalStatus": "string-m-theory-compactification-source-audit-external-boundary-not-gu-source",
-  "generatedAt": "2026-06-17T12:50:06.5385989+00:00",
+  "generatedAt": "2026-06-17T13:49:48.6484448+00:00",
   "stringMTheoryCompactificationSourceAuditPassed": true,
   "stringCompactificationLeadPresent": true,
   "stringMTheoryPrimarySourcesReviewed": true,

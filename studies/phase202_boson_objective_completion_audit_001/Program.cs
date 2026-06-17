@@ -182,6 +182,7 @@ const string Phase413Path = "studies/phase413_noncompact_real_form_transfer_prob
 const string Phase414Path = "studies/phase414_general_shiab_epsilon_operator_ansatz_probe_001/output/general_shiab_epsilon_operator_ansatz_probe_summary.json";
 const string Phase415Path = "studies/phase415_fermionic_cohomology_square_root_ansatz_probe_001/output/fermionic_cohomology_square_root_ansatz_probe_summary.json";
 const string Phase416Path = "studies/phase416_unobserved_phase_carrier_census_001/output/unobserved_phase_carrier_census_summary.json";
+const string Phase417Path = "studies/phase417_vector_spinor_144_decomposition_probe_001/output/vector_spinor_144_decomposition_probe_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -397,6 +398,7 @@ using var phase413 = File.Exists(Phase413Path) ? JsonDocument.Parse(File.ReadAll
 using var phase414 = File.Exists(Phase414Path) ? JsonDocument.Parse(File.ReadAllText(Phase414Path)) : null;
 using var phase415 = File.Exists(Phase415Path) ? JsonDocument.Parse(File.ReadAllText(Phase415Path)) : null;
 using var phase416 = File.Exists(Phase416Path) ? JsonDocument.Parse(File.ReadAllText(Phase416Path)) : null;
+using var phase417 = File.Exists(Phase417Path) ? JsonDocument.Parse(File.ReadAllText(Phase417Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -5384,6 +5386,43 @@ var unobservedPhaseCarrierCensusPassed = unobservedPhaseCarrierCensusMaterialize
     && JsonBool(phase416.RootElement, "phase201TemplateMutated") is false
     && JsonInt(phase416.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
     && JsonInt(phase416.RootElement, "acceptedContractFieldCount") == 0;
+var vectorSpinor144DecompositionProbeMaterialized = phase417 is not null;
+var vectorSpinor144DecompositionProbePassed = vectorSpinor144DecompositionProbeMaterialized
+    && JsonBool(phase417!.RootElement, "vectorSpinor144DecompositionProbePassed") is true
+    && JsonBool(phase417.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase417.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase417.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase417.RootElement, "applicationSubjectKind") == "vector-spinor-144-decomposition-probe"
+    && JsonBool(phase417.RootElement, "phase411PrecursorPassed") is true
+    && JsonBool(phase417.RootElement, "phase416PrecursorPassed") is true
+    && JsonInt(phase417.RootElement, "gammaTraceRankComplex") == 16
+    && JsonInt(phase417.RootElement, "vectorSpinor144KernelComplexDimension") == 144
+    && JsonBool(phase417.RootElement, "vectorSpinor144DimensionCheck") is true
+    && JsonBool(phase417.RootElement, "vectorSpinor144InvariantUnderProbedGenerators") is true
+    && JsonBool(phase417.RootElement, "welded144ContentRecovered") is true
+    && JsonBool(phase417.RootElement, "weldedDimensionAccounting") is true
+    && JsonBool(phase417.RootElement, "smBlockDimensionAccounting") is true
+    && JsonInt(phase417.RootElement, "internalSmHiggsPatternComplexDimension") == 0
+    && JsonInt(phase417.RootElement, "linearWeldedScalarCountTotal") == 0
+    && JsonBool(phase417.RootElement, "vectorSpinor144LinearCarrierHasNoWeldedScalar") is true
+    && JsonBool(phase417.RootElement, "sourceDefinesVectorSpinor144BosonicProjectionMap") is false
+    && JsonBool(phase417.RootElement, "sourceDefinesVectorSpinor144CarrierAction") is false
+    && JsonBool(phase417.RootElement, "sourceDefinesVectorSpinor144VevSelection") is false
+    && JsonBool(phase417.RootElement, "sourceDefinesVectorSpinor144ObservedProjectionRows") is false
+    && JsonBool(phase417.RootElement, "sourceDefinesVectorSpinor144WeakAngleScalePoleOrGevLineage") is false
+    && JsonInt(phase417.RootElement, "sourceDefinedEvenCompositeOrBosonicProjectionMapCount") == 0
+    && JsonBool(phase417.RootElement, "vectorSpinor144StillRequiresBosonicProjectionMap") is true
+    && JsonBool(phase417.RootElement, "physicalCouplingProvided") is false
+    && JsonBool(phase417.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase417.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase417.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase417.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase417.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase417.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase417.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase417.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase417.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase417.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -7688,6 +7727,14 @@ var checklist = new[]
             ? $"unobservedPhaseCarrierCensusPassed={JsonBool(phase416!.RootElement, "unobservedPhaseCarrierCensusPassed")}; sourcePinnedUnobservedCarrierCount={JsonInt(phase416.RootElement, "sourcePinnedUnobservedCarrierCount")}; computableUnobservedCarrierCount={JsonInt(phase416.RootElement, "computableUnobservedCarrierCount")}; linearBosonicCandidates={JsonInt(phase416.RootElement, "sourcePinnedUnobservedLinearBosonicSpinZeroCandidateCount")}; vectorSpinor144RemainsConcreteNextCarrier={JsonBool(phase416.RootElement, "vectorSpinor144RemainsConcreteNextCarrier")}; canFillPhase201WzContract={JsonBool(phase416.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase416.RootElement, "decision")}"
             : "Phase416 artifact not materialized",
         Phase416Path),
+    new ObjectiveChecklistItem(
+        "vector-spinor-144-decomposition-probe-materialized",
+        "Decompose the source-pinned vector-spinor 144 remainder and verify that the chiral 2 x 144 carrier supplies no linear welded scalar or source-defined bosonic projection map.",
+        vectorSpinor144DecompositionProbePassed ? "passed" : "failed",
+        vectorSpinor144DecompositionProbeMaterialized
+            ? $"vectorSpinor144DecompositionProbePassed={JsonBool(phase417!.RootElement, "vectorSpinor144DecompositionProbePassed")}; gammaTraceRankComplex={JsonInt(phase417.RootElement, "gammaTraceRankComplex")}; vectorSpinor144KernelComplexDimension={JsonInt(phase417.RootElement, "vectorSpinor144KernelComplexDimension")}; internalSmHiggsPatternComplexDimension={JsonInt(phase417.RootElement, "internalSmHiggsPatternComplexDimension")}; linearWeldedScalarCountTotal={JsonInt(phase417.RootElement, "linearWeldedScalarCountTotal")}; vectorSpinor144StillRequiresBosonicProjectionMap={JsonBool(phase417.RootElement, "vectorSpinor144StillRequiresBosonicProjectionMap")}; canFillPhase201WzContract={JsonBool(phase417.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase417.RootElement, "decision")}"
+            : "Phase417 artifact not materialized",
+        Phase417Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

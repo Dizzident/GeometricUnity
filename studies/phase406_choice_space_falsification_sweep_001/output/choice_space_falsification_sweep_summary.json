@@ -1,6 +1,6 @@
 {
   "phaseId": "phase406-choice-space-falsification-sweep",
-  "generatedAt": "2026-06-17T12:59:44.9132456+00:00",
+  "generatedAt": "2026-06-17T13:59:15.7268048+00:00",
   "terminalStatus": "choice-space-swept-survivors-are-nonadjoint-larger-algebra-no-vev-selection-anywhere",
   "choiceSpaceFalsificationSweepPassed": true,
   "precursorsPassed": true,

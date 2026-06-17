@@ -1,6 +1,6 @@
 {
   "phaseId": "phase412-quartic-sm-doublet-intersection-analysis",
-  "generatedAt": "2026-06-17T13:17:53.396751+00:00",
+  "generatedAt": "2026-06-17T14:17:15.2240109+00:00",
   "terminalStatus": "quartic-order-closed-no-welded-scalar-sm-doublet-in-any-channel",
   "quarticSmDoubletIntersectionAnalysisPassed": true,
   "phase411PrecursorPassed": true,

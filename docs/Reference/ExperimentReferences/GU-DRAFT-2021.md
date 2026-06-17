@@ -59,6 +59,11 @@ mirrors are merely search aids or can support promotion-ready claims.
   matter, and section 12.10 / eq. `12.22` identifies the vector-spinor
   remainder. Phase416 records these as source-pinned fermionic carriers, not
   as bosonic spin-zero scalar/VEV source rows.
+- Supported Phase417's vector-spinor `144` decomposition probe. The phase
+  constructs the `10 x 16 -> 16 + 144` gamma-trace split directly, decomposes
+  the `144` under the SM and welded-spin actions, and records that the chiral
+  `2 x 144` carrier supplies no linear welded scalar. The draft still supplies
+  no bosonic projection/action/VEV map or observed W/Z/H extraction rows.
 
 ## Prediction Relevance
 
@@ -79,10 +84,12 @@ The source remains necessary context, not sufficient prediction evidence.
   theta_omega or boson mass bridge law.
 - Any future promotion attempt must cite exact equations and show replayable
   source-lineage fields.
-- For the Phase416 branch, the next useful draft-backed computation is an
-  explicit SM/welded decomposition of the `144` vector-spinor carrier plus any
-  source-defined even-composite or bosonic projection map. Without that map,
-  the dark carriers cannot fill Phase201 or Phase256.
+- After Phase417, the draft-backed vector-spinor branch is closed at the
+  linear gamma-trace/decomposition level. Further progress from this source
+  requires a source-defined bosonic projection/composite map, action, or VEV
+  selection rule; otherwise the useful internal branches move to
+  direction-dependent curvature/VEV coupling tests or observed-field
+  extraction templates.
 
 ## Phase402 Dictionary Audit (2026-06-11)
 
