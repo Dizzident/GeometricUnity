@@ -18057,3 +18057,66 @@ University dark-energy formula artifact if it becomes public, the unverified
 Kleis machine-audit lead, or any primary source that explicitly fills the
 Phase419 observed-field template or Phase420 curvature/scale specification
 fields.
+
+## 2026-06-18 - Phase422: Vector-Spinor 144 Bilinear Scalar-Capacity Audit
+
+### Context
+
+Phase417 closed the source-pinned `Z_{1/2}` vector-spinor `144` branch at
+linear order: the chiral `2 x 144` carrier has no welded scalar and supplies no
+linear scalar/VEV slot. The next target-blind mathematical experiment was to
+test whether bilinears of the same source-pinned vector-spinor carriers have
+any welded scalar capacity before either discarding the branch or asking for a
+new source map.
+
+### Result
+
+- Phase422 computes exact welded-character scalar capacity for `Z_L x Z_L`,
+  `Z_R x Z_R`, and `Z_L x Z_R`, using the Phase417 audited vector-spinor
+  content.
+- The mixed-chirality, Dirac-like channel is closed:
+  `mixedChiralityScalarCapacity=0`.
+- The same-chirality, Majorana-like channels have candidate scalar capacity:
+  `sameChiralityScalarCapacity=528`, split as `264 + 264`.
+- The chiral carrier dimensions remain source-consistent:
+  `leftCarrierRealDimension=576`, `rightCarrierRealDimension=576`.
+- The large same-chirality sector is not promoted:
+  `directSmStableSpinZeroSubspaceComputed=False` and
+  `directSmStableAnalysisDeferredDueToLargeSector=True`.
+- Contract gates remain closed:
+  `vectorSpinor144BilinearStillRequiresSourceProjectionMap=True`,
+  `canFillPhase201WzContract=False`,
+  `canFillPhase201HiggsContract=False`,
+  `canFillPhase256ObservedFieldExtractionContract=False`,
+  `routePromotesWzMasses=False`, and `routePromotesHiggsMass=False`.
+- Study:
+  `studies/phase422_vector_spinor_144_bilinear_scalar_capacity_audit_001`
+  (IMPLEMENTATION_P422.md).
+
+### Validation
+
+- Targeted Phase422 run passed:
+  `vectorSpinor144BilinearScalarCapacityAuditPassed=True`.
+- Phase101 includes the Phase422 package block and still reports
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- Phase202 now reports `checklistPassedCount=215`, `checklistFailedCount=3`.
+- Claim integrity verified with `promotedPhysicalMassClaimCount=0`.
+- Full `./scripts/generate_validated_boson_predictions.sh` completed with
+  Phase422 included and ended at `boson-claim-integrity-verified`.
+- Scanner reruns passed with no intake-ready evidence:
+  Phase204 `intakeReadyCandidateCount=0`,
+  Phase205 `intakeReadyFindingCount=0`,
+  Phase207 `intakeReadyFindingCount=0`,
+  Phase279/281 `localSearchMatchingFileCount=0`,
+  Phase295 `intakeReadyObservedFieldExtractionCandidateCount=0`,
+  Phase296 `intakeReadySourceLineageFieldCandidateCount=0`.
+
+### Standing Next Work
+
+The vector-spinor branch is no longer closed merely at the linear level. The
+mixed-chirality Dirac-like bilinear route is closed, while the same-chirality
+Majorana-like scalar capacity remains a candidate-only opening. Progress now
+requires a source-defined bosonic projection map/action/VEV rule, or a direct
+SM-stable decomposition of the large same-chirality scalar sector together with
+observed photon/W/Z/H projection rows, weak-angle lineage, pole extraction, and
+GeV normalization.

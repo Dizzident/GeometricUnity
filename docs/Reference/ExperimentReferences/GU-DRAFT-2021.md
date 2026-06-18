@@ -64,6 +64,12 @@ mirrors are merely search aids or can support promotion-ready claims.
   the `144` under the SM and welded-spin actions, and records that the chiral
   `2 x 144` carrier supplies no linear welded scalar. The draft still supplies
   no bosonic projection/action/VEV map or observed W/Z/H extraction rows.
+- Supported Phase422's vector-spinor `144` bilinear scalar-capacity audit. The
+  phase uses the same source-pinned `Z_{1/2}` vector-spinor content from
+  Phase417, closes the mixed-chirality Dirac-like scalar channel, and records
+  same-chirality Majorana-like welded-scalar capacity (`264 + 264 = 528`) as
+  candidate-only. The draft still supplies no source-defined projection map,
+  action, VEV rule, observed-field rows, pole extraction, or GeV normalization.
 - Supported Phase418's direction-dependent curvature/VEV coupling scan only as
   context for the missing scalar-sector/curvature branch. The phase shows that
   residual-gauge block laws can select the doublet after adding a stabilizer,
@@ -90,12 +96,16 @@ The source remains necessary context, not sufficient prediction evidence.
   theta_omega or boson mass bridge law.
 - Any future promotion attempt must cite exact equations and show replayable
   source-lineage fields.
-- After Phase418, the draft-backed vector-spinor branch is closed at the
-  linear gamma-trace/decomposition level and the minimal direction-dependent
-  curvature workbench has named the extra source law required. Further progress
-  from this source requires a source-defined bosonic projection/composite map,
-  action, VEV selection rule, direction-dependent curvature kernel/stabilizer,
-  or observed-field extraction theorem.
+- After Phase422, the draft-backed vector-spinor branch is characterized
+  through the bilinear scalar-capacity boundary: linear scalar extraction is
+  closed, the mixed-chirality bilinear scalar route is closed, and the
+  same-chirality scalar capacity remains candidate-only until a source-defined
+  projection/action/VEV map or direct SM-stable observed-field extraction is
+  supplied. The minimal direction-dependent curvature workbench has also named
+  its extra source law requirement. Further progress from this source requires
+  a source-defined bosonic projection/composite map, action, VEV selection
+  rule, direction-dependent curvature kernel/stabilizer, or observed-field
+  extraction theorem.
 
 ## Phase402 Dictionary Audit (2026-06-11)
 

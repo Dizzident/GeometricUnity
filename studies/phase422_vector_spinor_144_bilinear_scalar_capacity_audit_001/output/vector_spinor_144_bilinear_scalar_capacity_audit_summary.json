@@ -1,0 +1,357 @@
+{
+  "phaseId": "phase422-vector-spinor-144-bilinear-scalar-capacity-audit",
+  "generatedAt": "2026-06-18T18:14:43.7468954+00:00",
+  "terminalStatus": "vector-spinor-144-bilinear-scalar-capacity-characterized-source-map-still-missing",
+  "vectorSpinor144BilinearScalarCapacityAuditPassed": true,
+  "phase417PrecursorPassed": true,
+  "applicationSubjectKind": "vector-spinor-144-bilinear-scalar-capacity-audit",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "b651b2178a9c6f26152dd291af8cd45e2023ece850df5c696598cfd52691b7fa",
+  "chiralCarrierDimensionAccounting": true,
+  "phase417ReportedKernelRealDimension": 288,
+  "leftCarrierRealDimension": 576,
+  "rightCarrierRealDimension": 576,
+  "leftCarrierWeldedContent": [
+    {
+      "j1": 0.5,
+      "j2": 0,
+      "multiplicity": 4
+    },
+    {
+      "j1": 0.5,
+      "j2": 1,
+      "multiplicity": 8
+    },
+    {
+      "j1": 0.5,
+      "j2": 2,
+      "multiplicity": 6
+    },
+    {
+      "j1": 0.5,
+      "j2": 3,
+      "multiplicity": 2
+    },
+    {
+      "j1": 1.5,
+      "j2": 0,
+      "multiplicity": 4
+    },
+    {
+      "j1": 1.5,
+      "j2": 1,
+      "multiplicity": 8
+    },
+    {
+      "j1": 1.5,
+      "j2": 2,
+      "multiplicity": 6
+    },
+    {
+      "j1": 1.5,
+      "j2": 3,
+      "multiplicity": 2
+    },
+    {
+      "j1": 2.5,
+      "j2": 0,
+      "multiplicity": 2
+    },
+    {
+      "j1": 2.5,
+      "j2": 1,
+      "multiplicity": 4
+    },
+    {
+      "j1": 2.5,
+      "j2": 2,
+      "multiplicity": 2
+    }
+  ],
+  "rightCarrierWeldedContent": [
+    {
+      "j1": 0,
+      "j2": 0.5,
+      "multiplicity": 4
+    },
+    {
+      "j1": 0,
+      "j2": 1.5,
+      "multiplicity": 4
+    },
+    {
+      "j1": 0,
+      "j2": 2.5,
+      "multiplicity": 2
+    },
+    {
+      "j1": 1,
+      "j2": 0.5,
+      "multiplicity": 8
+    },
+    {
+      "j1": 1,
+      "j2": 1.5,
+      "multiplicity": 8
+    },
+    {
+      "j1": 1,
+      "j2": 2.5,
+      "multiplicity": 4
+    },
+    {
+      "j1": 2,
+      "j2": 0.5,
+      "multiplicity": 6
+    },
+    {
+      "j1": 2,
+      "j2": 1.5,
+      "multiplicity": 6
+    },
+    {
+      "j1": 2,
+      "j2": 2.5,
+      "multiplicity": 2
+    },
+    {
+      "j1": 3,
+      "j2": 0.5,
+      "multiplicity": 2
+    },
+    {
+      "j1": 3,
+      "j2": 1.5,
+      "multiplicity": 2
+    }
+  ],
+  "bilinearChannels": [
+    {
+      "channelId": "Z_L x Z_L",
+      "scalarMultiplicity": 264,
+      "contributors": [
+        {
+          "j1": 0.5,
+          "j2": 0,
+          "leftMultiplicity": 4,
+          "rightMultiplicity": 4,
+          "contribution": 16
+        },
+        {
+          "j1": 0.5,
+          "j2": 1,
+          "leftMultiplicity": 8,
+          "rightMultiplicity": 8,
+          "contribution": 64
+        },
+        {
+          "j1": 0.5,
+          "j2": 2,
+          "leftMultiplicity": 6,
+          "rightMultiplicity": 6,
+          "contribution": 36
+        },
+        {
+          "j1": 0.5,
+          "j2": 3,
+          "leftMultiplicity": 2,
+          "rightMultiplicity": 2,
+          "contribution": 4
+        },
+        {
+          "j1": 1.5,
+          "j2": 0,
+          "leftMultiplicity": 4,
+          "rightMultiplicity": 4,
+          "contribution": 16
+        },
+        {
+          "j1": 1.5,
+          "j2": 1,
+          "leftMultiplicity": 8,
+          "rightMultiplicity": 8,
+          "contribution": 64
+        },
+        {
+          "j1": 1.5,
+          "j2": 2,
+          "leftMultiplicity": 6,
+          "rightMultiplicity": 6,
+          "contribution": 36
+        },
+        {
+          "j1": 1.5,
+          "j2": 3,
+          "leftMultiplicity": 2,
+          "rightMultiplicity": 2,
+          "contribution": 4
+        },
+        {
+          "j1": 2.5,
+          "j2": 0,
+          "leftMultiplicity": 2,
+          "rightMultiplicity": 2,
+          "contribution": 4
+        },
+        {
+          "j1": 2.5,
+          "j2": 1,
+          "leftMultiplicity": 4,
+          "rightMultiplicity": 4,
+          "contribution": 16
+        },
+        {
+          "j1": 2.5,
+          "j2": 2,
+          "leftMultiplicity": 2,
+          "rightMultiplicity": 2,
+          "contribution": 4
+        }
+      ]
+    },
+    {
+      "channelId": "Z_R x Z_R",
+      "scalarMultiplicity": 264,
+      "contributors": [
+        {
+          "j1": 0,
+          "j2": 0.5,
+          "leftMultiplicity": 4,
+          "rightMultiplicity": 4,
+          "contribution": 16
+        },
+        {
+          "j1": 0,
+          "j2": 1.5,
+          "leftMultiplicity": 4,
+          "rightMultiplicity": 4,
+          "contribution": 16
+        },
+        {
+          "j1": 0,
+          "j2": 2.5,
+          "leftMultiplicity": 2,
+          "rightMultiplicity": 2,
+          "contribution": 4
+        },
+        {
+          "j1": 1,
+          "j2": 0.5,
+          "leftMultiplicity": 8,
+          "rightMultiplicity": 8,
+          "contribution": 64
+        },
+        {
+          "j1": 1,
+          "j2": 1.5,
+          "leftMultiplicity": 8,
+          "rightMultiplicity": 8,
+          "contribution": 64
+        },
+        {
+          "j1": 1,
+          "j2": 2.5,
+          "leftMultiplicity": 4,
+          "rightMultiplicity": 4,
+          "contribution": 16
+        },
+        {
+          "j1": 2,
+          "j2": 0.5,
+          "leftMultiplicity": 6,
+          "rightMultiplicity": 6,
+          "contribution": 36
+        },
+        {
+          "j1": 2,
+          "j2": 1.5,
+          "leftMultiplicity": 6,
+          "rightMultiplicity": 6,
+          "contribution": 36
+        },
+        {
+          "j1": 2,
+          "j2": 2.5,
+          "leftMultiplicity": 2,
+          "rightMultiplicity": 2,
+          "contribution": 4
+        },
+        {
+          "j1": 3,
+          "j2": 0.5,
+          "leftMultiplicity": 2,
+          "rightMultiplicity": 2,
+          "contribution": 4
+        },
+        {
+          "j1": 3,
+          "j2": 1.5,
+          "leftMultiplicity": 2,
+          "rightMultiplicity": 2,
+          "contribution": 4
+        }
+      ]
+    },
+    {
+      "channelId": "Z_L x Z_R",
+      "scalarMultiplicity": 0,
+      "contributors": []
+    }
+  ],
+  "sameChiralityScalarCapacity": 528,
+  "mixedChiralityScalarCapacity": 0,
+  "totalBilinearScalarCapacity": 528,
+  "mixedChiralityDiracLikeScalarChannelClosed": true,
+  "sameChiralityMajoranaLikeScalarSectorPresent": true,
+  "bilinearWeldedScalarCapacityPresent": true,
+  "directSmStableSpinZeroSubspaceComputed": false,
+  "directSmStableSpinZeroSubspaceDimension": -1,
+  "directSmStableSpinZeroDoubletCount": -1,
+  "directSmStableAnalysisDeferredThreshold": 40,
+  "directSmStableAnalysisDeferredDueToLargeSector": true,
+  "sourceDefinesVectorSpinor144BilinearProjectionMap": false,
+  "sourceDefinesVectorSpinor144BilinearAction": false,
+  "sourceDefinesVectorSpinor144BilinearVevSelection": false,
+  "sourceDefinesObservedProjectionRows": false,
+  "sourceDefinesWeakAngleScalePoleOrGevLineage": false,
+  "sourceDefinedBilinearProjectionMapCount": 0,
+  "vectorSpinor144BilinearStillRequiresSourceProjectionMap": true,
+  "physicalCouplingProvided": false,
+  "routeProvidesPhysicalMassPsiCompatibleBranch": false,
+  "routeProvidesCompletedFermionicAction": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesObservedElectroweakNamespaceMap": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesWeakAngleOrCouplingLineage": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "sourceEvidence": {
+    "phase417SummaryPath": "studies/phase417_vector_spinor_144_decomposition_probe_001/output/vector_spinor_144_decomposition_probe_summary.json",
+    "primaryDraft": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt (section 11.2 eq. 11.6; section 12.22; Z_{1/2} vector-spinor 144 remainder)"
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "The mixed-chirality Z_L x Z_R bilinear is closed only as a welded scalar capacity channel.",
+    "Same-chirality scalar capacity is representation data only, not a source-defined Higgs field.",
+    "The SM-stable subspace of the 528-dimensional same-chirality scalar capacity sector is not computed in this phase.",
+    "No bosonic projection map, action, VEV selection, observed-field rows, weak-angle lineage, pole extraction, or GeV normalization is supplied.",
+    "No Phase201 or Phase256 fill."
+  ],
+  "decision": "The source-pinned vector-spinor 144 branch is now characterized one step beyond Phase417\u0027s linear no-go. Exact welded-character arithmetic closes the mixed-chirality Dirac-like Z_L x Z_R bilinear channel: it has zero welded-scalar capacity. Same-chirality Majorana-like Z_L x Z_L and Z_R x Z_R channels do have welded-scalar capacity (264 each, 528 total), so representation content alone cannot rule out a bilinear vector-spinor scalar ansatz. This is only a capacity result: the large spin-zero sector has not been decomposed into the largest SM-stable subspace, and current sources still supply no bosonic projection map, action, VEV selection, observed photon/W/Z/H rows, weak-angle lineage, pole extraction, or GeV normalization. No Phase201 or Phase256 field is filled."
+}
