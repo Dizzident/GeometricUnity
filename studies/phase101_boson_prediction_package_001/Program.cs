@@ -278,6 +278,7 @@ const string Phase417VectorSpinor144DecompositionProbePath = "studies/phase417_v
 const string Phase418DirectionDependentCurvatureVevCouplingScanPath = "studies/phase418_direction_dependent_curvature_vev_coupling_scan_001/output/direction_dependent_curvature_vev_coupling_scan_summary.json";
 const string Phase419ObservedFieldSymbolicExtractionTemplatePath = "studies/phase419_observed_field_symbolic_extraction_template_001/output/observed_field_symbolic_extraction_template_summary.json";
 const string Phase420NaiveCurvatureMassScaleSanityCheckPath = "studies/phase420_naive_curvature_mass_scale_sanity_check_001/output/naive_curvature_mass_scale_sanity_check_summary.json";
+const string Phase421CoxGuIvV2LcdmRigBosonContractAuditPath = "studies/phase421_cox_gu_iv_v2_lcdm_rig_boson_contract_audit_001/output/cox_gu_iv_v2_lcdm_rig_boson_contract_audit_summary.json";
 const string Phase282BranchLocalDirectInvariantCensusPath = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census.json";
 const string Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit.json";
 const string Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic.json";
@@ -576,6 +577,7 @@ using var phase417 = TryParseJson(Phase417VectorSpinor144DecompositionProbePath)
 using var phase418 = TryParseJson(Phase418DirectionDependentCurvatureVevCouplingScanPath);
 using var phase419 = TryParseJson(Phase419ObservedFieldSymbolicExtractionTemplatePath);
 using var phase420 = TryParseJson(Phase420NaiveCurvatureMassScaleSanityCheckPath);
+using var phase421 = TryParseJson(Phase421CoxGuIvV2LcdmRigBosonContractAuditPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -7347,6 +7349,44 @@ var package = new
             fieldsAppliedToPhase201TemplateCount = JsonInt(phase420.RootElement, "fieldsAppliedToPhase201TemplateCount"),
             acceptedContractFieldCount = JsonInt(phase420.RootElement, "acceptedContractFieldCount"),
             decision = JsonString(phase420.RootElement, "decision"),
+        }
+        : null,
+    coxGuIvV2LcdmRigBosonContractAudit = phase421 is not null
+        ? new
+        {
+            status = JsonString(phase421.RootElement, "terminalStatus"),
+            coxGuIvV2LcdmRigBosonContractAuditPassed = JsonBool(phase421.RootElement, "coxGuIvV2LcdmRigBosonContractAuditPassed"),
+            targetBlindConstruction = JsonBool(phase421.RootElement, "targetBlindConstruction"),
+            physicalTargetsConsultedForConstruction = JsonBool(phase421.RootElement, "physicalTargetsConsultedForConstruction"),
+            applicationSubjectKind = JsonString(phase421.RootElement, "applicationSubjectKind"),
+            fullTextReviewed = JsonBool(phase421.RootElement, "fullTextReviewed"),
+            lcdmRigScopeConfirmed = JsonBool(phase421.RootElement, "lcdmRigScopeConfirmed"),
+            projectorVariationTheoremPresent = JsonBool(phase421.RootElement, "projectorVariationTheoremPresent"),
+            etheringtonGuardrailPresent = JsonBool(phase421.RootElement, "etheringtonGuardrailPresent"),
+            sevenCosmologyHooksPresent = JsonBool(phase421.RootElement, "sevenCosmologyHooksPresent"),
+            rigHookCount = JsonInt(phase421.RootElement, "rigHookCount"),
+            electroweakProjectionHookCount = JsonInt(phase421.RootElement, "electroweakProjectionHookCount"),
+            absentContractKeywordCount = JsonInt(phase421.RootElement, "absentContractKeywordCount"),
+            sourceProvidesBosonContractEvidence = JsonBool(phase421.RootElement, "sourceProvidesBosonContractEvidence"),
+            sourceProvidesObservedElectroweakNamespaceMap = JsonBool(phase421.RootElement, "sourceProvidesObservedElectroweakNamespaceMap"),
+            sourceProvidesPhotonWzHProjectionRows = JsonBool(phase421.RootElement, "sourceProvidesPhotonWzHProjectionRows"),
+            sourceProvidesWzSourceRows = JsonBool(phase421.RootElement, "sourceProvidesWzSourceRows"),
+            sourceProvidesHiggsScalarSourceRow = JsonBool(phase421.RootElement, "sourceProvidesHiggsScalarSourceRow"),
+            sourceProvidesElectroweakVevMap = JsonBool(phase421.RootElement, "sourceProvidesElectroweakVevMap"),
+            sourceProvidesWeakAngleOrCouplingLineage = JsonBool(phase421.RootElement, "sourceProvidesWeakAngleOrCouplingLineage"),
+            sourceProvidesCurvatureToElectroweakScaleLaw = JsonBool(phase421.RootElement, "sourceProvidesCurvatureToElectroweakScaleLaw"),
+            sourceProvidesPoleExtraction = JsonBool(phase421.RootElement, "sourceProvidesPoleExtraction"),
+            sourceProvidesGeVUnitNormalization = JsonBool(phase421.RootElement, "sourceProvidesGeVUnitNormalization"),
+            sourceProvidesPhase419TemplateFields = JsonBool(phase421.RootElement, "sourceProvidesPhase419TemplateFields"),
+            sourceSatisfiesPhase420ScaleFields = JsonBool(phase421.RootElement, "sourceSatisfiesPhase420ScaleFields"),
+            sourceContractApplicationAllowed = JsonBool(phase421.RootElement, "sourceContractApplicationAllowed"),
+            canFillPhase201WzContract = JsonBool(phase421.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase421.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase421.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            routePromotesWzMasses = JsonBool(phase421.RootElement, "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonBool(phase421.RootElement, "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonBool(phase421.RootElement, "routeCompletesBosonPredictions"),
+            decision = JsonString(phase421.RootElement, "decision"),
         }
         : null,
     branchLocalDirectInvariantCensus = phase282 is not null

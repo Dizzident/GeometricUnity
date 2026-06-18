@@ -17989,3 +17989,71 @@ artifact, the useful branches are now source-level theorem searches: a
 source-defined curvature kernel/stabilizer/scale, a source-defined observed
 field extraction theorem filling Phase419, a source-defined vector-spinor or
 composite bosonic projection map, or a new primary-source specification.
+
+## 2026-06-18 - Phase421: Cox GU IV v2 LCDM Rig Boson Contract Audit
+
+### Context
+
+After Phase420 closed the naive curvature-scale shortcut, the restart prompt's
+next actionable branch was source-level theorem monitoring. The strongest
+primary-source handle named by the deep-research follow-up was Cox GU IV v2,
+Zenodo DOI `10.5281/zenodo.17402261`, described as `The Testing Rig for
+LambdaCDM`.
+
+### Source Retrieval
+
+- Zenodo API record: `https://zenodo.org/api/records/17402261`.
+- PDF artifact: `GUT.4.1.pdf`.
+- Verified size: `702258` bytes.
+- Verified checksum: `md5:1d51f99a44cf51c8023dbc500e58ed3c`.
+- Full-text extraction: `pdftotext`, `3305` lines.
+- Reference note added:
+  `docs/Reference/ExperimentReferences/COX-GU-IV-V2-17402261.md`.
+
+### Result
+
+- Phase421 records the source as a LambdaCDM/cosmology test rig, not an
+  electroweak source-law paper.
+- Positive scope: BRST/BV guardrails, projector-variation commutation,
+  admissible boundaries, Etherington reciprocity, seven cosmology hooks,
+  reproducibility manifests, robustness gates, and corridor checks.
+- Contract-critical terms are absent from the extracted full text:
+  electroweak, weak mixing, weak angle, Weinberg, hypercharge, Higgs, W boson,
+  Z boson, Standard Model, GeV, VEV, pole, Dirac, and Yang-Mills.
+- Positive terms such as photon, mass, curvature, observed, particle, and
+  spinor occur only in cosmology/optics/corridor/glossary contexts.
+- Exact result:
+  `coxGuIvV2LcdmRigBosonContractAuditPassed=True`,
+  `lcdmRigScopeConfirmed=True`, `rigHookCount=7`,
+  `electroweakProjectionHookCount=0`,
+  `absentContractKeywordCount=14`,
+  `sourceProvidesBosonContractEvidence=False`,
+  `sourceProvidesObservedElectroweakNamespaceMap=False`,
+  `sourceProvidesPhotonWzHProjectionRows=False`,
+  `sourceProvidesWzSourceRows=False`,
+  `sourceProvidesHiggsScalarSourceRow=False`,
+  `sourceProvidesElectroweakVevMap=False`,
+  `sourceProvidesWeakAngleOrCouplingLineage=False`,
+  `sourceProvidesCurvatureToElectroweakScaleLaw=False`,
+  `sourceProvidesPoleExtraction=False`,
+  `sourceProvidesGeVUnitNormalization=False`,
+  `canFillPhase201WzContract=False`,
+  `canFillPhase201HiggsContract=False`,
+  `canFillPhase256ObservedFieldExtractionContract=False`.
+- No Phase201 or Phase256 field is filled; no W/Z/H mass claim is promoted.
+
+### Validation
+
+- Targeted Phase421 run passed.
+- Phase101 includes the Phase421 block and still reports
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- Phase202 now reports `checklistPassedCount=214`, `checklistFailedCount=3`.
+
+### Standing Next Work
+
+GU IV v2 is no longer an unaudited follow-up. The remaining source-level
+monitoring targets are a public GU V artifact if released, the Hebrew
+University dark-energy formula artifact if it becomes public, the unverified
+Kleis machine-audit lead, or any primary source that explicitly fills the
+Phase419 observed-field template or Phase420 curvature/scale specification
+fields.

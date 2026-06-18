@@ -35,13 +35,13 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase420 work (and the 2026-06-12
+Current gate status after the Phase421 work (and the 2026-06-12
 platform fix - GPU parity defect root-caused and discharged):
 
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=213`,
+  `objectiveAchieved=False`, `checklistPassedCount=214`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -285,6 +285,16 @@ platform fix - GPU parity defect root-caused and discharged):
   `sourceProvidesGeVUnitNormalization=False`,
   `canFillPhase201WzContract=False`,
   `canFillPhase256ObservedFieldExtractionContract=False`
+- Phase421:
+  `coxGuIvV2LcdmRigBosonContractAuditPassed=True`,
+  `lcdmRigScopeConfirmed=True`, `rigHookCount=7`,
+  `electroweakProjectionHookCount=0`,
+  `absentContractKeywordCount=14`,
+  `sourceProvidesBosonContractEvidence=False`,
+  `sourceProvidesPhotonWzHProjectionRows=False`,
+  `sourceProvidesGeVUnitNormalization=False`,
+  `canFillPhase201WzContract=False`,
+  `canFillPhase256ObservedFieldExtractionContract=False`
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -305,7 +315,38 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work added Phase420, the naive curvature mass-scale sanity check.
+The latest work added Phase421, the Cox GU IV v2 LCDM rig boson contract audit.
+It materializes the restart prompt's source-level theorem-search follow-up for
+Zenodo DOI `10.5281/zenodo.17402261` by verifying the actual `GUT.4.1.pdf`
+artifact (`702258` bytes, `md5:1d51f99a44cf51c8023dbc500e58ed3c`,
+`pdftotext` line count `3305`). Exact result:
+`coxGuIvV2LcdmRigBosonContractAuditPassed=True`,
+`lcdmRigScopeConfirmed=True`, `projectorVariationTheoremPresent=True`,
+`etheringtonGuardrailPresent=True`, `sevenCosmologyHooksPresent=True`,
+`rigHookCount=7`, `electroweakProjectionHookCount=0`,
+`absentContractKeywordCount=14`,
+`sourceProvidesBosonContractEvidence=False`,
+`sourceProvidesObservedElectroweakNamespaceMap=False`,
+`sourceProvidesPhotonWzHProjectionRows=False`,
+`sourceProvidesWzSourceRows=False`,
+`sourceProvidesHiggsScalarSourceRow=False`,
+`sourceProvidesElectroweakVevMap=False`,
+`sourceProvidesWeakAngleOrCouplingLineage=False`,
+`sourceProvidesCurvatureToElectroweakScaleLaw=False`,
+`sourceProvidesPoleExtraction=False`,
+`sourceProvidesGeVUnitNormalization=False`,
+`canFillPhase201WzContract=False`,
+`canFillPhase201HiggsContract=False`,
+`canFillPhase256ObservedFieldExtractionContract=False`,
+`routePromotesWzMasses=False`, and `routePromotesHiggsMass=False`.
+Interpretation: GU IV v2 is a LambdaCDM/cosmology test rig with BRST/BV
+projector-variation guardrails, Etherington reciprocity, seven data hooks, and
+reproducibility/corridor checks. It is not an electroweak source-law paper and
+contains no fillable Phase201/Phase256 contract evidence. Study:
+`studies/phase421_cox_gu_iv_v2_lcdm_rig_boson_contract_audit_001`
+(IMPLEMENTATION_P421.md).
+
+Before that, Phase420 added the naive curvature mass-scale sanity check.
 It materializes the restart prompt's post-Phase419 scale branch by testing the
 Superphysics/GU-draft `part-12c` stylized `m = R(y)/4` clue without consulting
 physical W/Z/H targets. Exact result:
@@ -578,7 +619,7 @@ HONEST BOUNDARY. Study:
 
 ### Integration Points Already Updated
 
-Phase420 (like Phase388-419) is wired into:
+Phase421 (like Phase388-420) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (single broad pass; the
   older duplicated final sweep was removed on 2026-06-16)
@@ -586,12 +627,15 @@ Phase420 (like Phase388-419) is wired into:
 - `studies/phase202_boson_objective_completion_audit_001/Program.cs`
   (checklist items
   `observed-field-symbolic-extraction-template-materialized` and
-  `naive-curvature-mass-scale-sanity-check-materialized`)
+  `naive-curvature-mass-scale-sanity-check-materialized` and
+  `cox-gu-iv-v2-lcdm-rig-boson-contract-audit-materialized`)
 - `scripts/verify_boson_claim_integrity.sh`
 - Broad scanner exclusions: phase204, phase205, phase207, phase279,
   phase281, phase295, phase296
 
 Reference tracking was updated in `ExperimentReferences.md`,
+`docs/Reference/ExperimentReferences/COX-GU-IV-V2-17402261.md`
+(Phase421 full-text source audit),
 `docs/Reference/ExperimentReferences/FMS-GAUGE-INVARIANT-SPECTRUM.md` and
 `docs/Reference/ExperimentReferences/DRESSING-FIELD-ELECTROWEAK-OBSERVED-VARIABLES.md`
 (Phase419 external-template use notes),
@@ -617,6 +661,7 @@ dotnet run --project studies/phase417_vector_spinor_144_decomposition_probe_001/
 dotnet run --project studies/phase418_direction_dependent_curvature_vev_coupling_scan_001/Phase418DirectionDependentCurvatureVevCouplingScan.csproj
 dotnet run --project studies/phase419_observed_field_symbolic_extraction_template_001/Phase419ObservedFieldSymbolicExtractionTemplate.csproj
 dotnet run --project studies/phase420_naive_curvature_mass_scale_sanity_check_001/Phase420NaiveCurvatureMassScaleSanityCheck.csproj
+dotnet run --project studies/phase421_cox_gu_iv_v2_lcdm_rig_boson_contract_audit_001/Phase421CoxGuIvV2LcdmRigBosonContractAudit.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
@@ -625,8 +670,8 @@ dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase
 PHASE405_ENABLE_GPU=1 LD_LIBRARY_PATH=native/build dotnet run --project studies/phase405_vacuum_manifold_doublet_vev_orbit_scan_001/Phase405VacuumManifoldDoubletVevOrbitScan.csproj
 ```
 
-The targeted Phase420 run passes and preserves the fail-closed boundary;
-Phase202 now reports `checklistPassedCount=213`, `checklistFailedCount=3`; claim
+The targeted Phase421 run passes and preserves the fail-closed boundary;
+Phase202 now reports `checklistPassedCount=214`, `checklistFailedCount=3`; claim
 integrity verifies with `promotedPhysicalMassClaimCount=0`. (Platform
 state: Gu.Interop.Tests 158/158 with the real-mesh parity and
 buffer-handle recycling tests; both Phase405 platform notes discharged
@@ -660,6 +705,10 @@ Important current local detail notes:
 - `LOCAL-ARCH-P4-FERMION-MASS-REPRESENTATION.md`
 - `DIRAC-SHELL-RESPONSE-BOUNDARY.md`
 - `COX-FIRST-PRINCIPLES-I-19800512.md`
+- `COX-GU-IV-V2-17402261.md`: full-text audit of GU IV v2's LambdaCDM
+  testing rig; positive for guardrails/hooks, negative for electroweak
+  observed-field rows, W/Z/H source lineage, VEV/scale, pole, and GeV
+  normalization
 - `TOE-GU-ICEBERG-20250423.md` (+ full transcript under
   `docs/Reference/ExperimentReferences/transcripts/`): the GU-native
   structural ansatz for the scalar/Yukawa gap rows - qualitative only;
@@ -823,9 +872,9 @@ The most useful next branches are:
    cadence; the epsilon/Shiab route if a quantitative specification
    appears.
    Deep-research follow-ups (catalogue when revisited): GU IV (v2)
-   "The Rig for Lambda" (DOI 10.5281/zenodo.17402261); the hinted
-   "Geometric Unity V"; the Hebrew University dark-energy talk
-   artifact; the unverified "Kleis" machine-audit lead.
+   "The Rig for Lambda" is DONE by Phase421 and is non-promotional; remaining
+   monitor targets are the hinted "Geometric Unity V", the Hebrew University
+   dark-energy talk artifact, and the unverified "Kleis" machine-audit lead.
 3. (CLOSED by Phase399 + Phase400 + Phase401: the quadratic-model coupled
    critical point is solved modulo flat directions, every flat ray is
    quartically lifted, and the attempted construction of the relaxed
@@ -844,8 +893,11 @@ The most useful next branches are:
    epsilon/Shiab doublet map, curvature-to-electroweak-VEV law, observed
    photon/W/Z/H projection rows, weak-angle running, pole extraction, or GeV
    normalization; Phase420 then closed the naive `m=R/4` scale shortcut at the
-   dimensional/bookkeeping level - the negative boundary stands; the internal
-   toy-branch construction otherwise reached its honest limit).
+   dimensional/bookkeeping level; Phase421 then audited GU IV v2's LambdaCDM
+   rig full text and found guardrails/hooks but no electroweak source rows,
+   observed-field theorem, scale law, pole extraction, or GeV normalization -
+   the negative boundary stands; the internal toy-branch construction otherwise
+   reached its honest limit).
 
 If a source or new derivation appears to satisfy any of these, create a new
 fail-closed phase rather than editing Phase201/Phase256 directly. The phase
@@ -860,8 +912,10 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -120 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase420|naiveCurvatureMassScaleSanityCheck|missingScaleSpecificationFieldCount" \
+rg -n "Phase421|coxGuIvV2LcdmRigBosonContractAudit|COX-GU-IV-V2|Phase420" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
+  docs/Reference/ExperimentReferences/COX-GU-IV-V2-17402261.md \
+  studies/phase421_cox_gu_iv_v2_lcdm_rig_boson_contract_audit_001 \
   studies/phase420_naive_curvature_mass_scale_sanity_check_001 \
   studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
 ```
@@ -875,11 +929,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase420 output JSON files, and commit a checkpoint
+force-add the ignored Phase421 output JSON files, and commit a checkpoint
 after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase420 naive curvature scale sanity check
+Add phase421 GU IV v2 boson contract audit
 ```

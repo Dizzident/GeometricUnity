@@ -1,6 +1,6 @@
 {
   "phaseId": "phase417-vector-spinor-144-decomposition-probe",
-  "generatedAt": "2026-06-17T19:37:40.9899777+00:00",
+  "generatedAt": "2026-06-18T13:13:41.8339492+00:00",
   "terminalStatus": "vector-spinor-144-decomposed-linear-carrier-no-welded-scalar-map-still-missing",
   "vectorSpinor144DecompositionProbePassed": true,
   "phase411PrecursorPassed": true,

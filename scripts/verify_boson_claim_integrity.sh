@@ -190,6 +190,7 @@ const paths = {
   phase418: "studies/phase418_direction_dependent_curvature_vev_coupling_scan_001/output/direction_dependent_curvature_vev_coupling_scan_summary.json",
   phase419: "studies/phase419_observed_field_symbolic_extraction_template_001/output/observed_field_symbolic_extraction_template_summary.json",
   phase420: "studies/phase420_naive_curvature_mass_scale_sanity_check_001/output/naive_curvature_mass_scale_sanity_check_summary.json",
+  phase421: "studies/phase421_cox_gu_iv_v2_lcdm_rig_boson_contract_audit_001/output/cox_gu_iv_v2_lcdm_rig_boson_contract_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -451,6 +452,7 @@ const phase417 = requireFile(paths.phase417);
 const phase418 = requireFile(paths.phase418);
 const phase419 = requireFile(paths.phase419);
 const phase420 = requireFile(paths.phase420);
+const phase421 = requireFile(paths.phase421);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -4941,6 +4943,23 @@ if (sourceLineageMissing) {
   assert(phase420.sourceContractApplicationAllowed === false && phase420.canFillPhase201WzContract === false && phase420.canFillPhase201HiggsContract === false && phase420.canFillPhase256ObservedFieldExtractionContract === false, "Phase420 cannot fill Phase201 or Phase256 contracts.");
   assert(phase420.routePromotesWzMasses === false && phase420.routePromotesHiggsMass === false && phase420.routeCompletesBosonPredictions === false, "Phase420 cannot promote boson predictions.");
   assert(phase420.phase201TemplateMutated === false && phase420.fieldsAppliedToPhase201TemplateCount === 0 && phase420.acceptedContractFieldCount === 0, "Phase420 must not mutate or fill the Phase201 template.");
+  assert(phase421.coxGuIvV2LcdmRigBosonContractAuditPassed === true, "Phase421 GU IV v2 LCDM rig boson contract audit must pass as a fail-closed source audit.");
+  assert(phase421.targetBlindConstruction === true && phase421.physicalTargetsConsultedForConstruction === false, "Phase421 construction must remain target-blind.");
+  assert(typeof phase421.targetBlindConstructionHash === "string" && phase421.targetBlindConstructionHash.length === 64, "Phase421 must persist a target-blind construction hash.");
+  assert(phase421.applicationSubjectKind === "cox-gu-iv-v2-lcdm-rig-boson-contract-audit", "Phase421 must classify its subject as the GU IV v2 LCDM rig boson contract audit.");
+  assert(phase421.fullTextReviewed === true && phase421.lcdmRigScopeConfirmed === true, "Phase421 must preserve the full-text LCDM rig scope.");
+  assert(phase421.projectorVariationTheoremPresent === true && phase421.etheringtonGuardrailPresent === true && phase421.sevenCosmologyHooksPresent === true, "Phase421 must preserve the GU IV v2 guardrail/hook scope.");
+  assert(phase421.rigHookCount === 7 && phase421.electroweakProjectionHookCount === 0, "Phase421 must not treat cosmology hooks as electroweak projection rows.");
+  assert(phase421.absentContractKeywordCount === 14, "Phase421 must preserve absent electroweak contract keyword accounting.");
+  assert(phase421.source?.zenodoRecordId === 17402261 && phase421.source?.artifactChecksum === "md5:1d51f99a44cf51c8023dbc500e58ed3c" && phase421.source?.extractedLineCount === 3305, "Phase421 must preserve GU IV v2 Zenodo artifact identity, checksum, and extracted line count.");
+  assert(phase421.sourceProvidesBosonContractEvidence === false && phase421.sourceProvidesObservedElectroweakNamespaceMap === false && phase421.sourceProvidesPhotonWzHProjectionRows === false, "Phase421 cannot claim GU IV v2 supplies boson contract or observed-field rows.");
+  assert(phase421.sourceProvidesWzSourceRows === false && phase421.sourceProvidesHiggsScalarSourceRow === false, "Phase421 cannot claim GU IV v2 supplies W/Z or Higgs source rows.");
+  assert(phase421.sourceProvidesElectroweakVevMap === false && phase421.sourceProvidesWeakAngleOrCouplingLineage === false && phase421.sourceProvidesCurvatureToElectroweakScaleLaw === false, "Phase421 cannot invent VEV, weak-angle, or curvature-to-electroweak scale lineage.");
+  assert(phase421.sourceProvidesPoleExtraction === false && phase421.sourceProvidesGeVUnitNormalization === false, "Phase421 cannot invent pole extraction or GeV normalization.");
+  assert(phase421.sourceProvidesPhase419TemplateFields === false && phase421.sourceSatisfiesPhase420ScaleFields === false, "Phase421 cannot fill Phase419 or Phase420 missing fields.");
+  assert(phase421.sourceContractApplicationAllowed === false && phase421.canFillPhase201WzContract === false && phase421.canFillPhase201HiggsContract === false && phase421.canFillPhase256ObservedFieldExtractionContract === false, "Phase421 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase421.routePromotesWzMasses === false && phase421.routePromotesHiggsMass === false && phase421.routeCompletesBosonPredictions === false, "Phase421 cannot promote boson predictions.");
+  assert(phase421.phase201TemplateMutated === false && phase421.fieldsAppliedToPhase201TemplateCount === 0 && phase421.acceptedContractFieldCount === 0, "Phase421 must not mutate or fill the Phase201 template.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

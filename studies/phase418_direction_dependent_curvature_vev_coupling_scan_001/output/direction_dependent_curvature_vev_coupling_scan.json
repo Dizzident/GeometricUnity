@@ -1,6 +1,6 @@
 {
   "phaseId": "phase418-direction-dependent-curvature-vev-coupling-scan",
-  "generatedAt": "2026-06-17T19:37:42.1623883+00:00",
+  "generatedAt": "2026-06-18T13:13:43.0108083+00:00",
   "terminalStatus": "direction-dependent-curvature-couplings-can-select-doublet-only-with-extra-source-law",
   "directionDependentCurvatureVevCouplingScanPassed": true,
   "phase405PrecursorPassed": true,

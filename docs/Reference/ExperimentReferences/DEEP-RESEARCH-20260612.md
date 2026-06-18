@@ -95,11 +95,12 @@
   block, exactly the Phase409-named open route); (2) the corrected Cox
   claim surface for future citation (use the April 2026
   First-Principles-I DOI release for the cleanest theorem language);
-  (3) new catalogue targets: GU IV (v2) "The Rig for Lambda"
-  (DOI 10.5281/zenodo.17402261), the hinted "Geometric Unity V: The
-  Lambda Rig" (monitor), the Nguyen-Polya complexification objection
-  (Ad(P) not isomorphic to Lambda^bullet(T*U) over the reals) as a
-  named constraint any extraction must address.
+  (3) catalogue targets: GU IV (v2) "The Rig for Lambda" was audited
+  by Phase421 and found non-promotional; the hinted "Geometric Unity V:
+  The Lambda Rig" remains a monitor target; the Nguyen-Polya
+  complexification objection (Ad(P) not isomorphic to
+  Lambda^bullet(T*U) over the reals) remains a named constraint any
+  extraction must address.
 
 ## How It Was Used
 
@@ -107,5 +108,6 @@
   and the corrected "seven pairings" reading.
 - Motivates Phase411 (named candidate): the quartic/Dirac-squared
   spin-0 composite probe on spinor-sector content.
-- Adds follow-up rows: GU-IV-v2 and (if released) GU V; the Hebrew
-  University talk artifact remains a standing monitoring target.
+- Added follow-up rows: GU-IV-v2 is now catalogued and audited by Phase421;
+  GU V, if released, and the Hebrew University talk artifact remain standing
+  monitoring targets.

@@ -1,0 +1,120 @@
+{
+  "phaseId": "phase421-cox-gu-iv-v2-lcdm-rig-boson-contract-audit",
+  "terminalStatus": "cox-gu-iv-v2-lcdm-rig-boson-contract-audit-no-electroweak-source",
+  "generatedAt": "2026-06-18T13:13:45.137605+00:00",
+  "coxGuIvV2LcdmRigBosonContractAuditPassed": true,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "f5414025f3ef7e134aa5b85c8b9f367fb5cf65f0b06673a4235153cfbab7dd41",
+  "applicationSubjectKind": "cox-gu-iv-v2-lcdm-rig-boson-contract-audit",
+  "fullTextReviewed": true,
+  "lcdmRigScopeConfirmed": true,
+  "projectorVariationTheoremPresent": true,
+  "etheringtonGuardrailPresent": true,
+  "sevenCosmologyHooksPresent": true,
+  "rigHookCount": 7,
+  "electroweakProjectionHookCount": 0,
+  "absentContractKeywordCount": 14,
+  "nonContractHitCount": 6,
+  "rigScopeHitCount": 10,
+  "sourceProvidesBosonContractEvidence": false,
+  "sourceProvidesObservedElectroweakNamespaceMap": false,
+  "sourceProvidesPhotonWzHProjectionRows": false,
+  "sourceProvidesWzSourceRows": false,
+  "sourceProvidesHiggsScalarSourceRow": false,
+  "sourceProvidesElectroweakVevMap": false,
+  "sourceProvidesWeakAngleOrCouplingLineage": false,
+  "sourceProvidesCurvatureToElectroweakScaleLaw": false,
+  "sourceProvidesPoleExtraction": false,
+  "sourceProvidesGeVUnitNormalization": false,
+  "sourceProvidesPhase419TemplateFields": false,
+  "sourceSatisfiesPhase420ScaleFields": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "source": {
+    "refId": "COX-GU-IV-V2-17402261",
+    "title": "Geometric Unity IV (v2): The Testing Rig for LambdaCDM -- A Standards-Driven Framework",
+    "author": "Joseph Cox",
+    "doi": "10.5281/zenodo.17402261",
+    "conceptDoi": "10.5281/zenodo.17402260",
+    "zenodoRecordId": 17402261,
+    "zenodoApiRecord": "https://zenodo.org/api/records/17402261",
+    "pdfContentUrl": "https://zenodo.org/api/records/17402261/files/GUT.4.1.pdf/content",
+    "publicationDate": "2025-10-21",
+    "metadataCreated": "2025-10-20T23:57:37Z",
+    "metadataModified": "2025-11-05T20:25:14Z",
+    "artifactName": "GUT.4.1.pdf",
+    "artifactSizeBytes": 702258,
+    "artifactChecksum": "md5:1d51f99a44cf51c8023dbc500e58ed3c",
+    "reviewedOn": "2026-06-18",
+    "extractionTool": "pdftotext",
+    "extractedLineCount": 3305
+  },
+  "contractBoundary": {
+    "phase201SummaryPath": "studies/phase201_boson_source_lineage_intake_contract_001/output/boson_source_lineage_intake_contract_summary.json",
+    "phase201AllRequiredLineagesPromotable": false,
+    "phase213SummaryPath": "studies/phase213_boson_source_lineage_blocker_matrix_001/output/boson_source_lineage_blocker_matrix_summary.json",
+    "phase213WzMissingFieldCount": 15,
+    "phase213HiggsMissingFieldCount": 14,
+    "phase256SummaryPath": "studies/phase256_observed_field_extraction_intake_contract_001/output/observed_field_extraction_intake_contract_summary.json",
+    "phase256RequiredFieldCount": 20,
+    "phase256FilledRequiredFieldCount": 0,
+    "phase256ContractPromotable": false,
+    "phase419SummaryPath": "studies/phase419_observed_field_symbolic_extraction_template_001/output/observed_field_symbolic_extraction_template_summary.json",
+    "observedFieldSymbolicExtractionTemplatePassed": true,
+    "phase419SourceDefinedPhase256FieldCount": 0,
+    "phase419RequiredGuInputProvidedCount": 0,
+    "phase419CanFillObserved": false,
+    "phase420SummaryPath": "studies/phase420_naive_curvature_mass_scale_sanity_check_001/output/naive_curvature_mass_scale_sanity_check_summary.json",
+    "naiveCurvatureMassScaleSanityCheckPassed": true,
+    "phase420MissingScaleSpecificationFieldCount": 9,
+    "phase420SourceProvidesGeVUnitNormalization": false,
+    "phase420CanFillWz": false
+  },
+  "checks": [
+    {
+      "checkId": "zenodo-artifact-and-full-text-extraction-recorded",
+      "passed": true,
+      "evidence": "recordId=17402261; checksum=md5:1d51f99a44cf51c8023dbc500e58ed3c; extractedLineCount=3305; extractionTool=pdftotext"
+    },
+    {
+      "checkId": "full-text-scope-is-lcdm-rig-not-electroweak-source-law",
+      "passed": true,
+      "evidence": "rigScopeHitCount=10; hookCount=7; electroweakProjectionHookCount=0"
+    },
+    {
+      "checkId": "electroweak-contract-keywords-absent-from-full-text",
+      "passed": true,
+      "evidence": "absentContractKeywordCount=14; absentTerms=electroweak,weak mixing,weak angle,weinberg,hypercharge,higgs,w boson,z boson,standard model,gev,vev,pole,dirac,yang-mills"
+    },
+    {
+      "checkId": "positive-term-hits-are-cosmology-or-guardrail-only",
+      "passed": true,
+      "evidence": "nonContractHitCount=6; photonCount=41; curvatureCount=20; massCount=6"
+    },
+    {
+      "checkId": "phase419-and-phase420-contract-gaps-preserved",
+      "passed": true,
+      "evidence": "p419SourceDefined=0; p419Inputs=0; p420MissingScaleFields=9; p420Gev=False"
+    },
+    {
+      "checkId": "phase201-and-phase256-contracts-remain-unfilled",
+      "passed": true,
+      "evidence": "phase201Promotable=False; wzMissing=15; higgsMissing=14; p256Filled=0"
+    },
+    {
+      "checkId": "source-contracts-not-mutated-or-promoted",
+      "passed": true,
+      "evidence": "sourceContractApplicationAllowed=False; targetBlindHashLength=64; acceptedContractFieldCount=0; phase201TemplateMutated=False"
+    }
+  ],
+  "decision": "Treat GU IV v2 as a cosmology testing-rig and guardrail source, not a boson-prediction source. The PDF supplies BRST/BV projection-variation, Etherington, LCDM hook, and reproducibility/corridor content, but no electroweak observed-field map, W/Z/H projection rows, Higgs scalar source, weak-angle or coupling lineage, curvature-to-electroweak scale law, pole extraction, or GeV normalization."
+}

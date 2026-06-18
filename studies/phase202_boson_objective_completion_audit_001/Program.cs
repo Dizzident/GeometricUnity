@@ -186,6 +186,7 @@ const string Phase417Path = "studies/phase417_vector_spinor_144_decomposition_pr
 const string Phase418Path = "studies/phase418_direction_dependent_curvature_vev_coupling_scan_001/output/direction_dependent_curvature_vev_coupling_scan_summary.json";
 const string Phase419Path = "studies/phase419_observed_field_symbolic_extraction_template_001/output/observed_field_symbolic_extraction_template_summary.json";
 const string Phase420Path = "studies/phase420_naive_curvature_mass_scale_sanity_check_001/output/naive_curvature_mass_scale_sanity_check_summary.json";
+const string Phase421Path = "studies/phase421_cox_gu_iv_v2_lcdm_rig_boson_contract_audit_001/output/cox_gu_iv_v2_lcdm_rig_boson_contract_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -405,6 +406,7 @@ using var phase417 = File.Exists(Phase417Path) ? JsonDocument.Parse(File.ReadAll
 using var phase418 = File.Exists(Phase418Path) ? JsonDocument.Parse(File.ReadAllText(Phase418Path)) : null;
 using var phase419 = File.Exists(Phase419Path) ? JsonDocument.Parse(File.ReadAllText(Phase419Path)) : null;
 using var phase420 = File.Exists(Phase420Path) ? JsonDocument.Parse(File.ReadAllText(Phase420Path)) : null;
+using var phase421 = File.Exists(Phase421Path) ? JsonDocument.Parse(File.ReadAllText(Phase421Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -5542,6 +5544,43 @@ var naiveCurvatureMassScaleSanityCheckPassed = naiveCurvatureMassScaleSanityChec
     && JsonBool(phase420.RootElement, "phase201TemplateMutated") is false
     && JsonInt(phase420.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
     && JsonInt(phase420.RootElement, "acceptedContractFieldCount") == 0;
+var coxGuIvV2LcdmRigBosonContractAuditMaterialized = phase421 is not null;
+var coxGuIvV2LcdmRigBosonContractAuditPassed = coxGuIvV2LcdmRigBosonContractAuditMaterialized
+    && JsonBool(phase421!.RootElement, "coxGuIvV2LcdmRigBosonContractAuditPassed") is true
+    && JsonBool(phase421.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase421.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase421.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase421.RootElement, "applicationSubjectKind") == "cox-gu-iv-v2-lcdm-rig-boson-contract-audit"
+    && JsonBool(phase421.RootElement, "fullTextReviewed") is true
+    && JsonBool(phase421.RootElement, "lcdmRigScopeConfirmed") is true
+    && JsonBool(phase421.RootElement, "projectorVariationTheoremPresent") is true
+    && JsonBool(phase421.RootElement, "etheringtonGuardrailPresent") is true
+    && JsonBool(phase421.RootElement, "sevenCosmologyHooksPresent") is true
+    && JsonInt(phase421.RootElement, "rigHookCount") == 7
+    && JsonInt(phase421.RootElement, "electroweakProjectionHookCount") == 0
+    && JsonInt(phase421.RootElement, "absentContractKeywordCount") == 14
+    && JsonBool(phase421.RootElement, "sourceProvidesBosonContractEvidence") is false
+    && JsonBool(phase421.RootElement, "sourceProvidesObservedElectroweakNamespaceMap") is false
+    && JsonBool(phase421.RootElement, "sourceProvidesPhotonWzHProjectionRows") is false
+    && JsonBool(phase421.RootElement, "sourceProvidesWzSourceRows") is false
+    && JsonBool(phase421.RootElement, "sourceProvidesHiggsScalarSourceRow") is false
+    && JsonBool(phase421.RootElement, "sourceProvidesElectroweakVevMap") is false
+    && JsonBool(phase421.RootElement, "sourceProvidesWeakAngleOrCouplingLineage") is false
+    && JsonBool(phase421.RootElement, "sourceProvidesCurvatureToElectroweakScaleLaw") is false
+    && JsonBool(phase421.RootElement, "sourceProvidesPoleExtraction") is false
+    && JsonBool(phase421.RootElement, "sourceProvidesGeVUnitNormalization") is false
+    && JsonBool(phase421.RootElement, "sourceProvidesPhase419TemplateFields") is false
+    && JsonBool(phase421.RootElement, "sourceSatisfiesPhase420ScaleFields") is false
+    && JsonBool(phase421.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase421.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase421.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase421.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase421.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase421.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase421.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase421.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase421.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase421.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -7878,6 +7917,14 @@ var checklist = new[]
             ? $"naiveCurvatureMassScaleSanityCheckPassed={JsonBool(phase420!.RootElement, "naiveCurvatureMassScaleSanityCheckPassed")}; literalScalarCurvatureMassReadingDimensionallyConsistent={JsonBool(phase420.RootElement, "literalScalarCurvatureMassReadingDimensionallyConsistent")}; squaredMassCurvatureReadingDimensionallyConsistent={JsonBool(phase420.RootElement, "squaredMassCurvatureReadingDimensionallyConsistent")}; providedRequiredScaleSpecificationFieldCount={JsonInt(phase420.RootElement, "providedRequiredScaleSpecificationFieldCount")}; missingScaleSpecificationFieldCount={JsonInt(phase420.RootElement, "missingScaleSpecificationFieldCount")}; sourceProvidesGeVUnitNormalization={JsonBool(phase420.RootElement, "sourceProvidesGeVUnitNormalization")}; canFillPhase201WzContract={JsonBool(phase420.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase420.RootElement, "decision")}"
             : "Phase420 artifact not materialized",
         Phase420Path),
+    new ObjectiveChecklistItem(
+        "cox-gu-iv-v2-lcdm-rig-boson-contract-audit-materialized",
+        "Audit GU IV v2 full text as a source-level theorem search and preserve the LCDM-rig-not-electroweak-source boundary.",
+        coxGuIvV2LcdmRigBosonContractAuditPassed ? "passed" : "failed",
+        coxGuIvV2LcdmRigBosonContractAuditMaterialized
+            ? $"coxGuIvV2LcdmRigBosonContractAuditPassed={JsonBool(phase421!.RootElement, "coxGuIvV2LcdmRigBosonContractAuditPassed")}; lcdmRigScopeConfirmed={JsonBool(phase421.RootElement, "lcdmRigScopeConfirmed")}; absentContractKeywordCount={JsonInt(phase421.RootElement, "absentContractKeywordCount")}; sourceProvidesBosonContractEvidence={JsonBool(phase421.RootElement, "sourceProvidesBosonContractEvidence")}; sourceProvidesPhotonWzHProjectionRows={JsonBool(phase421.RootElement, "sourceProvidesPhotonWzHProjectionRows")}; sourceProvidesGeVUnitNormalization={JsonBool(phase421.RootElement, "sourceProvidesGeVUnitNormalization")}; canFillPhase201WzContract={JsonBool(phase421.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase421.RootElement, "decision")}"
+            : "Phase421 artifact not materialized",
+        Phase421Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
