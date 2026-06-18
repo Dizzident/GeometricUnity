@@ -35,13 +35,13 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase422 work (and the 2026-06-12
+Current gate status after the Phase423 work (and the 2026-06-12
 platform fix - GPU parity defect root-caused and discharged):
 
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=215`,
+  `objectiveAchieved=False`, `checklistPassedCount=216`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -307,6 +307,20 @@ platform fix - GPU parity defect root-caused and discharged):
   `vectorSpinor144BilinearStillRequiresSourceProjectionMap=True`,
   `canFillPhase201WzContract=False`,
   `canFillPhase256ObservedFieldExtractionContract=False`
+- Phase423:
+  `zenodoGuRvgSpinorialDarkSectorBosonContractAuditPassed=True`,
+  `currentJune2026SourceDeltaConfirmed=True`,
+  `sourceProvidesSpinorialDarkSectorContext=True`,
+  `sourceMentions95GevDilaton=True`,
+  `sourceMentionsKoideDilatonShift=True`,
+  `sourceUsesExternalElectroweakVev246Gev=True`,
+  `sourceProvidesVectorSpinor144ProjectionMap=False`,
+  `sourceProvidesWzSourceRows=False`,
+  `sourceProvidesHiggsScalarSourceRow=False`,
+  `sourceProvidesObservedElectroweakNamespaceMap=False`,
+  `sourceProvidesGeVUnitNormalization=False`,
+  `canFillPhase201WzContract=False`,
+  `canFillPhase256ObservedFieldExtractionContract=False`
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -327,28 +341,53 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work added Phase422, the vector-spinor `144` bilinear
-scalar-capacity audit. It extends Phase417's source-pinned `Z_{1/2}`
-vector-spinor branch beyond the linear `2 x 144` no-go by testing exact welded
-character scalar capacity for `Z_L x Z_L`, `Z_R x Z_R`, and `Z_L x Z_R`.
-Exact result: `vectorSpinor144BilinearScalarCapacityAuditPassed=True`,
-`leftCarrierRealDimension=576`, `rightCarrierRealDimension=576`,
+The latest work added Phase423, the June 2026 Zenodo GU-RVG spinorial
+dark-sector boson contract audit for DOI `10.5281/zenodo.20618066`. It records
+the PDF (`1647698` bytes,
+`md5:da23008825cf90eb89138b5c560ef47f`), supplemental ZIP (`1556360` bytes,
+`md5:53b2461515af445e3a6a459ace3619bb`), `pdftotext` extraction line count
+`4015`, and supplemental search scope (`58` archive entries, `32` text/code
+files). Exact result:
+`zenodoGuRvgSpinorialDarkSectorBosonContractAuditPassed=True`,
+`currentJune2026SourceDeltaConfirmed=True`,
+`priorPhase312SourceSetDidNotIncludeThisRecord=True`,
+`sourceProvidesSpinorialDarkSectorContext=True`,
+`sourceMentions95GevDilaton=True`,
+`sourceMentionsKoideDilatonShift=True`,
+`sourceUsesExternalElectroweakVev246Gev=True`,
+`sourceProvidesVectorSpinor144ProjectionMap=False`,
+`sourceProvidesBosonContractEvidence=False`,
+`sourceProvidesObservedElectroweakNamespaceMap=False`,
+`sourceProvidesPhotonWzHProjectionRows=False`,
+`sourceProvidesWzSourceRows=False`,
+`sourceProvidesHiggsScalarSourceRow=False`,
+`sourceProvidesWeakAngleOrCouplingLineage=False`,
+`sourceProvidesPoleExtraction=False`,
+`sourceProvidesGeVUnitNormalization=False`,
+`canFillPhase201WzContract=False`,
+`canFillPhase201HiggsContract=False`, and
+`canFillPhase256ObservedFieldExtractionContract=False`. Interpretation: the
+new source is useful current GU-RVG spinorial dark-sector / 95.4 GeV
+dilaton/Koide context, but it supplies no electroweak source-lineage rows and
+does not answer Phase422's vector-spinor projection-map requirement. Study:
+`studies/phase423_zenodo_gu_rvg_spinorial_dark_sector_boson_contract_audit_001`
+(IMPLEMENTATION_P423.md).
+
+Before that, Phase422 added the vector-spinor `144` bilinear scalar-capacity
+audit. It extends Phase417's source-pinned `Z_{1/2}` vector-spinor branch beyond
+the linear `2 x 144` no-go by testing exact welded character scalar capacity for
+`Z_L x Z_L`, `Z_R x Z_R`, and `Z_L x Z_R`. Exact result:
+`vectorSpinor144BilinearScalarCapacityAuditPassed=True`,
 `sameChiralityScalarCapacity=528`, `mixedChiralityScalarCapacity=0`,
-`totalBilinearScalarCapacity=528`,
 `mixedChiralityDiracLikeScalarChannelClosed=True`,
 `sameChiralityMajoranaLikeScalarSectorPresent=True`,
-`directSmStableSpinZeroSubspaceComputed=False`,
 `directSmStableAnalysisDeferredDueToLargeSector=True`,
-`vectorSpinor144BilinearStillRequiresSourceProjectionMap=True`,
-`canFillPhase201WzContract=False`,
-`canFillPhase201HiggsContract=False`,
-`canFillPhase256ObservedFieldExtractionContract=False`,
-`routePromotesWzMasses=False`, and `routePromotesHiggsMass=False`.
-Interpretation: the mixed-chirality Dirac-like bilinear route is closed, while
-same-chirality Majorana-like bilinears have a large welded-scalar capacity.
-That capacity is candidate-only: the current source material still supplies no
-bosonic projection map, action, VEV selection, observed photon/W/Z/H rows,
-weak-angle lineage, pole extraction, or GeV normalization. Study:
+`vectorSpinor144BilinearStillRequiresSourceProjectionMap=True`, and no
+Phase201/Phase256 field can be filled. Interpretation: the mixed-chirality
+Dirac-like bilinear route is closed, while same-chirality Majorana-like
+bilinears have a large candidate-only welded-scalar capacity requiring a
+source-defined projection map, action, VEV rule, observed-field rows, weak-angle
+lineage, pole extraction, and GeV normalization. Study:
 `studies/phase422_vector_spinor_144_bilinear_scalar_capacity_audit_001`
 (IMPLEMENTATION_P422.md).
 
@@ -656,7 +695,7 @@ HONEST BOUNDARY. Study:
 
 ### Integration Points Already Updated
 
-Phase422 (like Phase388-421) is wired into:
+Phase423 (like Phase388-422) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (single broad pass; the
   older duplicated final sweep was removed on 2026-06-16)
@@ -666,12 +705,15 @@ Phase422 (like Phase388-421) is wired into:
   `observed-field-symbolic-extraction-template-materialized` and
   `naive-curvature-mass-scale-sanity-check-materialized` and
   `cox-gu-iv-v2-lcdm-rig-boson-contract-audit-materialized` and
-  `vector-spinor-144-bilinear-scalar-capacity-audit-materialized`)
+  `vector-spinor-144-bilinear-scalar-capacity-audit-materialized` and
+  `zenodo-gu-rvg-spinorial-dark-sector-boson-contract-audit-materialized`)
 - `scripts/verify_boson_claim_integrity.sh`
 - Broad scanner exclusions: phase204, phase205, phase207, phase279,
   phase281, phase295, phase296
 
 Reference tracking was updated in `ExperimentReferences.md`,
+`docs/Reference/ExperimentReferences/ZENODO-20618066-GURVG-SPINORIAL-DARK-SECTOR.md`
+(Phase423 current GU-RVG spinorial dark-sector source audit),
 `docs/Reference/ExperimentReferences/COX-GU-IV-V2-17402261.md`
 (Phase421 full-text source audit),
 `docs/Reference/ExperimentReferences/FMS-GAUGE-INVARIANT-SPECTRUM.md` and
@@ -702,6 +744,7 @@ dotnet run --project studies/phase419_observed_field_symbolic_extraction_templat
 dotnet run --project studies/phase420_naive_curvature_mass_scale_sanity_check_001/Phase420NaiveCurvatureMassScaleSanityCheck.csproj
 dotnet run --project studies/phase421_cox_gu_iv_v2_lcdm_rig_boson_contract_audit_001/Phase421CoxGuIvV2LcdmRigBosonContractAudit.csproj
 dotnet run --project studies/phase422_vector_spinor_144_bilinear_scalar_capacity_audit_001/Phase422VectorSpinor144BilinearScalarCapacityAudit.csproj
+dotnet run --project studies/phase423_zenodo_gu_rvg_spinorial_dark_sector_boson_contract_audit_001/Phase423ZenodoGuRvgSpinorialDarkSectorBosonContractAudit.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
@@ -710,11 +753,11 @@ dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase
 PHASE405_ENABLE_GPU=1 LD_LIBRARY_PATH=native/build dotnet run --project studies/phase405_vacuum_manifold_doublet_vev_orbit_scan_001/Phase405VacuumManifoldDoubletVevOrbitScan.csproj
 ```
 
-The targeted Phase422 run passes and preserves the fail-closed boundary;
-Phase202 now reports `checklistPassedCount=215`, `checklistFailedCount=3`; claim
-integrity verifies with `promotedPhysicalMassClaimCount=0`. The full direct
+The targeted Phase423 run passes and preserves the fail-closed source boundary;
+Phase202 now reports `checklistPassedCount=216`, `checklistFailedCount=3`; claim
+integrity verifies Phase423 with `promotedPhysicalMassClaimCount=0`. The full direct
 `./scripts/generate_validated_boson_predictions.sh` pass completed with
-Phase422 included and ended at `boson-claim-integrity-verified`. (Platform
+Phase423 included and ended at `boson-claim-integrity-verified`. (Platform
 state: Gu.Interop.Tests 158/158 with the real-mesh parity and
 buffer-handle recycling tests; both Phase405 platform notes discharged
 2026-06-12.) All seven broad scanners still report zero intake-ready
@@ -924,8 +967,10 @@ The most useful next branches are:
    appears.
    Deep-research follow-ups (catalogue when revisited): GU IV (v2)
    "The Rig for Lambda" is DONE by Phase421 and is non-promotional; remaining
-   monitor targets are the hinted "Geometric Unity V", the Hebrew University
-   dark-energy talk artifact, and the unverified "Kleis" machine-audit lead.
+   GU-RVG June 2026 spinorial dark-sector source delta is DONE by Phase423 and
+   is non-promotional; remaining monitor targets are the hinted "Geometric
+   Unity V", the Hebrew University dark-energy talk artifact, and the
+   unverified "Kleis" machine-audit lead.
 3. (CLOSED by Phase399 + Phase400 + Phase401: the quadratic-model coupled
    critical point is solved modulo flat directions, every flat ray is
    quartically lifted, and the attempted construction of the relaxed
@@ -946,9 +991,12 @@ The most useful next branches are:
    normalization; Phase420 then closed the naive `m=R/4` scale shortcut at the
    dimensional/bookkeeping level; Phase421 then audited GU IV v2's LambdaCDM
    rig full text and found guardrails/hooks but no electroweak source rows,
-   observed-field theorem, scale law, pole extraction, or GeV normalization -
-   the negative boundary stands; the internal toy-branch construction otherwise
-   reached its honest limit).
+   observed-field theorem, scale law, pole extraction, or GeV normalization;
+   Phase423 then audited the June 2026 Zenodo GU-RVG spinorial dark-sector
+   article and supplement, finding current spinorial/95 GeV/Koide context but
+   no W/Z/H source rows, no observed projection, no vector-spinor projection
+   map, and no unit/pole lineage - the negative boundary stands; the internal
+   toy-branch construction otherwise reached its honest limit).
 
 If a source or new derivation appears to satisfy any of these, create a new
 fail-closed phase rather than editing Phase201/Phase256 directly. The phase
@@ -963,10 +1011,12 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -120 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase422|vectorSpinor144BilinearScalarCapacityAudit|Phase421|coxGuIvV2LcdmRigBosonContractAudit|COX-GU-IV-V2" \
+rg -n "Phase423|zenodoGuRvgSpinorialDarkSectorBosonContractAudit|Phase422|vectorSpinor144BilinearScalarCapacityAudit|Phase421|coxGuIvV2LcdmRigBosonContractAudit|ZENODO-20618066|COX-GU-IV-V2" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
   docs/Reference/ExperimentReferences/GU-DRAFT-2021.md \
+  docs/Reference/ExperimentReferences/ZENODO-20618066-GURVG-SPINORIAL-DARK-SECTOR.md \
   docs/Reference/ExperimentReferences/COX-GU-IV-V2-17402261.md \
+  studies/phase423_zenodo_gu_rvg_spinorial_dark_sector_boson_contract_audit_001 \
   studies/phase422_vector_spinor_144_bilinear_scalar_capacity_audit_001 \
   studies/phase421_cox_gu_iv_v2_lcdm_rig_boson_contract_audit_001 \
   studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
@@ -981,11 +1031,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase421 output JSON files, and commit a checkpoint
+force-add the ignored Phase423 output JSON files, and commit a checkpoint
 after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase421 GU IV v2 boson contract audit
+Add phase423 GU-RVG spinorial dark-sector audit
 ```

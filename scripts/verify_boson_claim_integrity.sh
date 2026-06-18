@@ -193,6 +193,7 @@ const paths = {
   phase420: "studies/phase420_naive_curvature_mass_scale_sanity_check_001/output/naive_curvature_mass_scale_sanity_check_summary.json",
   phase421: "studies/phase421_cox_gu_iv_v2_lcdm_rig_boson_contract_audit_001/output/cox_gu_iv_v2_lcdm_rig_boson_contract_audit_summary.json",
   phase422: "studies/phase422_vector_spinor_144_bilinear_scalar_capacity_audit_001/output/vector_spinor_144_bilinear_scalar_capacity_audit_summary.json",
+  phase423: "studies/phase423_zenodo_gu_rvg_spinorial_dark_sector_boson_contract_audit_001/output/zenodo_gu_rvg_spinorial_dark_sector_boson_contract_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -457,6 +458,7 @@ const phase419 = requireFile(paths.phase419);
 const phase420 = requireFile(paths.phase420);
 const phase421 = requireFile(paths.phase421);
 const phase422 = requireFile(paths.phase422);
+const phase423 = requireFile(paths.phase423);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -4978,6 +4980,28 @@ if (sourceLineageMissing) {
   assert(phase422.phase201TemplateMutated === false && phase422.fieldsAppliedToPhase201TemplateCount === 0 && phase422.acceptedContractFieldCount === 0, "Phase422 must not mutate or fill the Phase201 template.");
   assert(phase101Package?.vectorSpinor144BilinearScalarCapacityAudit?.vectorSpinor144BilinearScalarCapacityAuditPassed === true, "Phase101 must include the Phase422 vector-spinor bilinear scalar-capacity audit block.");
   assert(phase101Package.vectorSpinor144BilinearScalarCapacityAudit.mixedChiralityScalarCapacity === 0 && phase101Package.vectorSpinor144BilinearScalarCapacityAudit.sameChiralityScalarCapacity === 528, "Phase101 must preserve Phase422 scalar-capacity counts.");
+  assert(phase423.zenodoGuRvgSpinorialDarkSectorBosonContractAuditPassed === true, "Phase423 Zenodo GU-RVG spinorial dark-sector source audit must pass as a fail-closed source audit.");
+  assert(phase423.targetBlindConstruction === true && phase423.physicalTargetsConsultedForConstruction === false, "Phase423 construction must remain target-blind.");
+  assert(typeof phase423.targetBlindConstructionHash === "string" && phase423.targetBlindConstructionHash.length === 64, "Phase423 must persist a target-blind construction hash.");
+  assert(phase423.applicationSubjectKind === "zenodo-gu-rvg-spinorial-dark-sector-boson-contract-audit", "Phase423 must classify its subject as the Zenodo GU-RVG spinorial dark-sector source audit.");
+  assert(phase423.currentJune2026SourceDeltaConfirmed === true && phase423.priorPhase312SourceSetDidNotIncludeThisRecord === true, "Phase423 must record the June 2026 source delta beyond Phase312.");
+  assert(phase423.fullTextReviewed === true && phase423.supplementalManifestReviewed === true && phase423.supplementalTextCodeReviewed === true, "Phase423 must preserve full-text and supplemental review scope.");
+  assert(phase423.guRvgSpinorialDarkSectorScopeConfirmed === true && phase423.sourceProvidesSpinorialDarkSectorContext === true, "Phase423 must preserve the positive spinorial dark-sector context.");
+  assert(phase423.sourceMentions95GevDilaton === true && phase423.sourceMentionsKoideDilatonShift === true && phase423.sourceUsesExternalElectroweakVev246Gev === true, "Phase423 must classify the 95 GeV/Koide/VEV material as externally input phenomenology.");
+  assert(phase423.source?.zenodoRecordId === 20618066 && phase423.source?.doi === "10.5281/zenodo.20618066", "Phase423 must preserve Zenodo 20618066 source identity.");
+  assert(phase423.source?.pdfChecksum === "md5:da23008825cf90eb89138b5c560ef47f" && phase423.source?.supplementalChecksum === "md5:53b2461515af445e3a6a459ace3619bb", "Phase423 must preserve PDF and supplemental checksums.");
+  assert(phase423.source?.extractedLineCount === 4015 && phase423.source?.supplementalArchiveEntryCount === 58 && phase423.source?.supplementalTextCodeSearchFileCount === 32, "Phase423 must preserve extraction and supplemental search-scope counts.");
+  assert(phase423.counts?.supplementalElectroweakProjectionRowCount === 0 && phase423.counts?.supplementalExternalElectroweakInputRowCount === 1, "Phase423 must preserve supplemental projection-row absence and external VEV-input accounting.");
+  assert(phase423.sourceProvidesVectorSpinor144ProjectionMap === false, "Phase423 cannot claim the new GU-RVG source supplies the Phase422 vector-spinor projection map.");
+  assert(phase423.sourceProvidesBosonContractEvidence === false && phase423.sourceProvidesObservedElectroweakNamespaceMap === false && phase423.sourceProvidesPhotonWzHProjectionRows === false, "Phase423 cannot claim boson contract or observed-field rows.");
+  assert(phase423.sourceProvidesWzSourceRows === false && phase423.sourceProvidesSeparateWzRows === false && phase423.sourceProvidesHiggsScalarSourceRow === false, "Phase423 cannot claim W/Z or Higgs source rows.");
+  assert(phase423.sourceProvidesElectroweakVevMap === false && phase423.sourceProvidesTargetIndependentVevSource === false && phase423.sourceProvidesWeakAngleOrCouplingLineage === false, "Phase423 cannot invent VEV, target-independent scale, or weak-angle lineage.");
+  assert(phase423.sourceProvidesPoleExtraction === false && phase423.sourceProvidesGeVUnitNormalization === false, "Phase423 cannot invent pole extraction or GeV normalization.");
+  assert(phase423.sourceContractApplicationAllowed === false && phase423.canFillPhase201WzContract === false && phase423.canFillPhase201HiggsContract === false && phase423.canFillPhase256ObservedFieldExtractionContract === false, "Phase423 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase423.routePromotesWzMasses === false && phase423.routePromotesHiggsMass === false && phase423.routeCompletesBosonPredictions === false, "Phase423 cannot promote boson predictions.");
+  assert(phase423.phase201TemplateMutated === false && phase423.fieldsAppliedToPhase201TemplateCount === 0 && phase423.acceptedContractFieldCount === 0, "Phase423 must not mutate or fill the Phase201 template.");
+  assert(phase101Package?.zenodoGuRvgSpinorialDarkSectorBosonContractAudit?.zenodoGuRvgSpinorialDarkSectorBosonContractAuditPassed === true, "Phase101 must include the Phase423 Zenodo GU-RVG spinorial dark-sector audit block.");
+  assert(phase101Package.zenodoGuRvgSpinorialDarkSectorBosonContractAudit.source?.zenodoRecordId === 20618066 && phase101Package.zenodoGuRvgSpinorialDarkSectorBosonContractAudit.sourceProvidesVectorSpinor144ProjectionMap === false, "Phase101 must preserve Phase423 source identity and projection-map absence.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

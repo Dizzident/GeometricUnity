@@ -18120,3 +18120,83 @@ requires a source-defined bosonic projection map/action/VEV rule, or a direct
 SM-stable decomposition of the large same-chirality scalar sector together with
 observed photon/W/Z/H projection rows, weak-angle lineage, pole extraction, and
 GeV normalization.
+
+## 2026-06-18 - Phase423: June 2026 Zenodo GU-RVG Spinorial Dark-Sector Source Audit
+
+### Context
+
+Current-source monitoring found a Zenodo record not covered by the Phase312
+May 2026 GU-RVG source set: `10.5281/zenodo.20618066`, published 2026-06-09,
+with GU-RVG, retained spinorial dark sector, Looking-Glass matter, 95.4 GeV
+dilaton, Koide, SPARC/CMB, and supplemental pipeline claims. Because it is
+current and GU-adjacent, I audited it before treating the GU-RVG source branch
+as closed for this checkpoint.
+
+### Source Retrieval
+
+- Zenodo record: `https://zenodo.org/records/20618066`.
+- Zenodo API record: `https://zenodo.org/api/records/20618066`.
+- DOI: `10.5281/zenodo.20618066`.
+- PDF artifact size/checksum:
+  `1647698`, `md5:da23008825cf90eb89138b5c560ef47f`.
+- Supplemental ZIP size/checksum:
+  `1556360`, `md5:53b2461515af445e3a6a459ace3619bb`.
+- Full-text extraction: `pdftotext`, `4015` lines.
+- Supplemental scope: `58` archive entries, `32` text/code files searched.
+- Reference note added:
+  `docs/Reference/ExperimentReferences/ZENODO-20618066-GURVG-SPINORIAL-DARK-SECTOR.md`.
+
+### Result
+
+- Phase423 records the source as current GU-RVG spinorial-dark-sector and
+  95.4 GeV dilaton/Koide phenomenology context, not a W/Z/H source-law paper.
+- Positive scope:
+  `sourceProvidesSpinorialDarkSectorContext=True`,
+  `sourceMentions95GevDilaton=True`,
+  `sourceMentionsKoideDilatonShift=True`.
+- The source uses external electroweak/phenomenology inputs:
+  `sourceUsesExternalElectroweakVev246Gev=True`,
+  `sourceUsesExternalCollider95GevSignal=True`,
+  `sourceUsesExternalStandardModelInputs=True`.
+- Contract gates remain closed:
+  `sourceProvidesVectorSpinor144ProjectionMap=False`,
+  `sourceProvidesBosonContractEvidence=False`,
+  `sourceProvidesObservedElectroweakNamespaceMap=False`,
+  `sourceProvidesPhotonWzHProjectionRows=False`,
+  `sourceProvidesWzSourceRows=False`,
+  `sourceProvidesSeparateWzRows=False`,
+  `sourceProvidesHiggsScalarSourceRow=False`,
+  `sourceProvidesElectroweakVevMap=False`,
+  `sourceProvidesTargetIndependentVevSource=False`,
+  `sourceProvidesWeakAngleOrCouplingLineage=False`,
+  `sourceProvidesPoleExtraction=False`,
+  `sourceProvidesGeVUnitNormalization=False`.
+- No Phase201 or Phase256 field is filled:
+  `canFillPhase201WzContract=False`,
+  `canFillPhase201HiggsContract=False`,
+  `canFillPhase256ObservedFieldExtractionContract=False`.
+- No W/Z/H mass claim is promoted:
+  `routePromotesWzMasses=False`,
+  `routePromotesHiggsMass=False`,
+  `routeCompletesBosonPredictions=False`.
+
+### Validation
+
+- Targeted Phase423 run passed:
+  `zenodoGuRvgSpinorialDarkSectorBosonContractAuditPassed=True`.
+- Phase101 includes the Phase423 package block and still reports
+  `internal-boson-prediction-package-built-physical-comparison-blocked`.
+- Phase202 includes the Phase423 checklist item.
+- Claim integrity verifies Phase423 source identity, checksums, no projection
+  map, no contract fill, and no promotion.
+
+### Standing Next Work
+
+The June 2026 GU-RVG source is no longer an unaudited current lead. It does not
+answer the Phase422 vector-spinor projection-map question and does not fill the
+observed electroweak namespace/source-lineage contracts. Remaining progress
+requires either a source-defined projection/action/VEV law for the
+same-chirality vector-spinor bilinear scalar sector, or a separate primary GU
+source with explicit W/Z source rows, photon/W/Z/H projection, Higgs scalar
+source, weak-angle/coupling lineage, pole extraction, and GeV/unit
+normalization.

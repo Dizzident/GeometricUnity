@@ -1,0 +1,172 @@
+{
+  "phaseId": "phase423-zenodo-gu-rvg-spinorial-dark-sector-boson-contract-audit",
+  "terminalStatus": "zenodo-gu-rvg-spinorial-dark-sector-audit-no-electroweak-source",
+  "generatedAt": "2026-06-18T19:21:29.661286+00:00",
+  "zenodoGuRvgSpinorialDarkSectorBosonContractAuditPassed": true,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "40564aabb3685ee6c6b55859251d966f75331b20caca8c682aca8f97daf30f33",
+  "applicationSubjectKind": "zenodo-gu-rvg-spinorial-dark-sector-boson-contract-audit",
+  "zenodoRecordReviewed": true,
+  "fullTextReviewed": true,
+  "supplementalManifestReviewed": true,
+  "supplementalTextCodeReviewed": true,
+  "currentJune2026SourceDeltaConfirmed": true,
+  "priorPhase312SourceSetDidNotIncludeThisRecord": true,
+  "guRvgSpinorialDarkSectorScopeConfirmed": true,
+  "sourceMentions95GevDilaton": true,
+  "sourceMentionsKoideDilatonShift": true,
+  "sourceUsesExternalCollider95GevSignal": true,
+  "sourceUsesExternalElectroweakVev246Gev": true,
+  "sourceUsesExternalStandardModelInputs": true,
+  "sourceProvidesSpinorialDarkSectorContext": true,
+  "sourceProvidesVectorSpinor144ProjectionMap": false,
+  "sourceProvidesBosonContractEvidence": false,
+  "sourceProvidesObservedElectroweakNamespaceMap": false,
+  "sourceProvidesPhotonWzHProjectionRows": false,
+  "sourceProvidesWzSourceRows": false,
+  "sourceProvidesSeparateWzRows": false,
+  "sourceProvidesHiggsScalarSourceRow": false,
+  "sourceProvidesElectroweakVevMap": false,
+  "sourceProvidesTargetIndependentVevSource": false,
+  "sourceProvidesWeakAngleOrCouplingLineage": false,
+  "sourceProvidesCurvatureToElectroweakScaleLaw": false,
+  "sourceProvidesPoleExtraction": false,
+  "sourceProvidesGeVUnitNormalization": false,
+  "sourceProvidesPhase419TemplateFields": false,
+  "sourceSatisfiesPhase420ScaleFields": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "source": {
+    "refId": "ZENODO-20618066-GURVG-SPINORIAL-DARK-SECTOR",
+    "title": "Refractive Vacuum Gravity in a 14-Dimensional Holographic Framework: Galactic-Scale Vacuum Refraction and a Retained Spinorial Dark Sector",
+    "authors": [
+      "Jesse D. Hofseth",
+      "Eric R. Weinstein"
+    ],
+    "doi": "10.5281/zenodo.20618066",
+    "zenodoRecordId": 20618066,
+    "zenodoRecord": "https://zenodo.org/records/20618066",
+    "zenodoApiRecord": "https://zenodo.org/api/records/20618066",
+    "publicationDate": "2026-06-09",
+    "version": "v1",
+    "reviewedOn": "2026-06-18",
+    "pdfArtifactName": "Refractive Vacuum Gravity in a 14-Dimensional Holographic Framework--Galactic-Scale Vacuum Refraction and a Retained Spinorial Dark Sector.pdf",
+    "pdfContentUrl": "https://zenodo.org/api/records/20618066/files/Refractive%20Vacuum%20Gravity%20in%20a%2014-Dimensional%20Holographic%20Framework%E2%80%94Galactic-Scale%20Vacuum%20Refraction%20and%20a%20Retained%20Spinorial%20Dark%20Sector.pdf/content",
+    "pdfSizeBytes": 1647698,
+    "pdfChecksum": "md5:da23008825cf90eb89138b5c560ef47f",
+    "extractionTool": "pdftotext",
+    "extractedLineCount": 4015,
+    "supplementalArtifactName": "Supplemental_Material.zip",
+    "supplementalContentUrl": "https://zenodo.org/api/records/20618066/files/Supplemental_Material.zip/content",
+    "supplementalSizeBytes": 1556360,
+    "supplementalChecksum": "md5:53b2461515af445e3a6a459ace3619bb",
+    "supplementalArchiveEntryCount": 58,
+    "supplementalTextCodeSearchFileCount": 32
+  },
+  "counts": {
+    "absentPdfContractKeywordCount": 6,
+    "pdfPositiveContractKeywordHitCount": 8,
+    "supplementalElectroweakProjectionRowCount": 0,
+    "supplementalExternalElectroweakInputRowCount": 1
+  },
+  "contractBoundary": {
+    "phase201SummaryPath": "studies/phase201_boson_source_lineage_intake_contract_001/output/boson_source_lineage_intake_contract_summary.json",
+    "phase201AllRequiredLineagesPromotable": false,
+    "phase213SummaryPath": "studies/phase213_boson_source_lineage_blocker_matrix_001/output/boson_source_lineage_blocker_matrix_summary.json",
+    "phase213WzMissingFieldCount": 15,
+    "phase213HiggsMissingFieldCount": 14,
+    "phase256SummaryPath": "studies/phase256_observed_field_extraction_intake_contract_001/output/observed_field_extraction_intake_contract_summary.json",
+    "phase256RequiredFieldCount": 20,
+    "phase256FilledRequiredFieldCount": 0,
+    "phase256ContractPromotable": false,
+    "phase312SummaryPath": "studies/phase312_current_public_gu_rvg_revision_delta_audit_001/output/current_public_gu_rvg_revision_delta_audit_summary.json",
+    "phase312Passed": true,
+    "phase312PromotesWz": false,
+    "phase312PromotesHiggs": false,
+    "phase419SummaryPath": "studies/phase419_observed_field_symbolic_extraction_template_001/output/observed_field_symbolic_extraction_template_summary.json",
+    "phase419Passed": true,
+    "phase419SourceDefinedPhase256FieldCount": 0,
+    "phase419CanFillObserved": false,
+    "phase420SummaryPath": "studies/phase420_naive_curvature_mass_scale_sanity_check_001/output/naive_curvature_mass_scale_sanity_check_summary.json",
+    "phase420Passed": true,
+    "phase420MissingScaleSpecificationFieldCount": 9,
+    "phase420SourceProvidesGeVUnitNormalization": false,
+    "phase420CanFillWz": false,
+    "phase422SummaryPath": "studies/phase422_vector_spinor_144_bilinear_scalar_capacity_audit_001/output/vector_spinor_144_bilinear_scalar_capacity_audit_summary.json",
+    "phase422Passed": true,
+    "phase422RequiresProjectionMap": true
+  },
+  "checks": [
+    {
+      "checkId": "zenodo-record-and-artifacts-recorded",
+      "passed": true,
+      "evidence": "recordId=20618066; publicationDate=2026-06-09; pdfChecksum=md5:da23008825cf90eb89138b5c560ef47f; supplementalChecksum=md5:53b2461515af445e3a6a459ace3619bb"
+    },
+    {
+      "checkId": "full-text-and-supplement-search-scope-recorded",
+      "passed": true,
+      "evidence": "extractionTool=pdftotext; extractedLineCount=4015; supplementalArchiveEntryCount=58; supplementalTextCodeSearchFileCount=32"
+    },
+    {
+      "checkId": "current-june-2026-source-delta-is-new-relative-to-phase312",
+      "passed": true,
+      "evidence": "currentJune2026SourceDeltaConfirmed=True; priorPhase312SourceSetDidNotIncludeThisRecord=True; phase312Passed=True; phase312PromotesWz=False; phase312PromotesHiggs=False"
+    },
+    {
+      "checkId": "positive-source-scope-is-spinorial-dark-sector-and-rvg",
+      "passed": true,
+      "evidence": "spinorialCount=49; lookingGlassCount=13; providesSpinorialDarkSectorContext=True"
+    },
+    {
+      "checkId": "positive-95gev-and-koide-material-uses-external-inputs",
+      "passed": true,
+      "evidence": "mentions95GevDilaton=True; mentionsKoideDilatonShift=True; usesExternalElectroweakVev246Gev=True; supplementalExternalElectroweakInputRowCount=1"
+    },
+    {
+      "checkId": "wz-contract-key-source-terms-absent-or-noncontract",
+      "passed": true,
+      "evidence": "absentPdfContractKeywordCount=6; wBosonCount=0; zBosonCount=0; weakAngleCount=0"
+    },
+    {
+      "checkId": "higgs-and-95gev-material-does-not-fill-observed-higgs-source",
+      "passed": true,
+      "evidence": "higgsCount=15; sourceProvidesHiggsScalarSourceRow=False; sourceProvidesPoleExtraction=False; sourceProvidesGeVUnitNormalization=False"
+    },
+    {
+      "checkId": "supplement-is-reproducibility-pipeline-not-electroweak-projection-source",
+      "passed": true,
+      "evidence": "supplementalElectroweakProjectionRowCount=0; supplementalWCount=0; supplementalZCount=0; supplementalProjectionCount=0"
+    },
+    {
+      "checkId": "phase419-phase420-and-phase422-boundaries-preserved",
+      "passed": true,
+      "evidence": "phase419SourceDefinedFields=0; phase420MissingScaleFields=9; phase422RequiresProjectionMap=True; sourceProvidesVectorSpinor144ProjectionMap=False"
+    },
+    {
+      "checkId": "phase201-and-phase256-contracts-remain-unfilled",
+      "passed": true,
+      "evidence": "phase201Promotable=False; wzMissing=15; higgsMissing=14; phase256Filled=0"
+    },
+    {
+      "checkId": "source-contracts-not-mutated-or-promoted",
+      "passed": true,
+      "evidence": "sourceContractApplicationAllowed=False; targetBlindHashLength=64; acceptedContractFieldCount=0; routeCompletesBosonPredictions=False"
+    }
+  ],
+  "decision": "Treat Zenodo record 20618066 as current GU-RVG spinorial-dark-sector and 95.4 GeV dilaton/Koide/cosmology context, not as boson-prediction promotion evidence. The paper and supplement contain dark spinorial matter, Looking-Glass matter, two-field cosmology, 95.4 GeV dilaton, Koide, SPARC/CMB, and collider/detection checks, but they do not provide W/Z source rows, photon/W/Z/H observed projection rows, a GU-local electroweak VEV or weak-angle source, an observed-Higgs scalar source row, pole extraction, GeV/unit normalization, or the vector-spinor 144 projection map required after Phase422.",
+  "nextRequiredArtifact": [
+    "A GU-local target-independent W/Z theorem with separate W and Z source rows.",
+    "A source-defined observed-field extraction map with photon/W/Z/H projection rows and pole extraction.",
+    "A GU-local scalar-sector source for the observed Higgs row, including scale, self-coupling, and GeV/unit normalization.",
+    "If using Phase422, a source-defined vector-spinor 144 projection map from the same-chirality scalar capacity to observed electroweak fields."
+  ]
+}

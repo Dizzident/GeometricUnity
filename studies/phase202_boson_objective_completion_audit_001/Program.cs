@@ -188,6 +188,7 @@ const string Phase419Path = "studies/phase419_observed_field_symbolic_extraction
 const string Phase420Path = "studies/phase420_naive_curvature_mass_scale_sanity_check_001/output/naive_curvature_mass_scale_sanity_check_summary.json";
 const string Phase421Path = "studies/phase421_cox_gu_iv_v2_lcdm_rig_boson_contract_audit_001/output/cox_gu_iv_v2_lcdm_rig_boson_contract_audit_summary.json";
 const string Phase422Path = "studies/phase422_vector_spinor_144_bilinear_scalar_capacity_audit_001/output/vector_spinor_144_bilinear_scalar_capacity_audit_summary.json";
+const string Phase423Path = "studies/phase423_zenodo_gu_rvg_spinorial_dark_sector_boson_contract_audit_001/output/zenodo_gu_rvg_spinorial_dark_sector_boson_contract_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -409,6 +410,7 @@ using var phase419 = File.Exists(Phase419Path) ? JsonDocument.Parse(File.ReadAll
 using var phase420 = File.Exists(Phase420Path) ? JsonDocument.Parse(File.ReadAllText(Phase420Path)) : null;
 using var phase421 = File.Exists(Phase421Path) ? JsonDocument.Parse(File.ReadAllText(Phase421Path)) : null;
 using var phase422 = File.Exists(Phase422Path) ? JsonDocument.Parse(File.ReadAllText(Phase422Path)) : null;
+using var phase423 = File.Exists(Phase423Path) ? JsonDocument.Parse(File.ReadAllText(Phase423Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -5610,6 +5612,54 @@ var vectorSpinor144BilinearScalarCapacityAuditPassed = vectorSpinor144BilinearSc
     && JsonBool(phase422.RootElement, "phase201TemplateMutated") is false
     && JsonInt(phase422.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
     && JsonInt(phase422.RootElement, "acceptedContractFieldCount") == 0;
+var zenodoGuRvgSpinorialDarkSectorBosonContractAuditMaterialized = phase423 is not null;
+var zenodoGuRvgSpinorialDarkSectorBosonContractAuditPassed = zenodoGuRvgSpinorialDarkSectorBosonContractAuditMaterialized
+    && JsonBool(phase423!.RootElement, "zenodoGuRvgSpinorialDarkSectorBosonContractAuditPassed") is true
+    && JsonBool(phase423.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase423.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase423.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase423.RootElement, "applicationSubjectKind") == "zenodo-gu-rvg-spinorial-dark-sector-boson-contract-audit"
+    && JsonBool(phase423.RootElement, "currentJune2026SourceDeltaConfirmed") is true
+    && JsonBool(phase423.RootElement, "priorPhase312SourceSetDidNotIncludeThisRecord") is true
+    && JsonBool(phase423.RootElement, "fullTextReviewed") is true
+    && JsonBool(phase423.RootElement, "supplementalTextCodeReviewed") is true
+    && JsonBool(phase423.RootElement, "guRvgSpinorialDarkSectorScopeConfirmed") is true
+    && JsonBool(phase423.RootElement, "sourceMentions95GevDilaton") is true
+    && JsonBool(phase423.RootElement, "sourceMentionsKoideDilatonShift") is true
+    && JsonBool(phase423.RootElement, "sourceUsesExternalElectroweakVev246Gev") is true
+    && JsonBool(phase423.RootElement, "sourceProvidesSpinorialDarkSectorContext") is true
+    && JsonBool(phase423.RootElement, "sourceProvidesVectorSpinor144ProjectionMap") is false
+    && JsonBool(phase423.RootElement, "sourceProvidesBosonContractEvidence") is false
+    && JsonBool(phase423.RootElement, "sourceProvidesObservedElectroweakNamespaceMap") is false
+    && JsonBool(phase423.RootElement, "sourceProvidesPhotonWzHProjectionRows") is false
+    && JsonBool(phase423.RootElement, "sourceProvidesWzSourceRows") is false
+    && JsonBool(phase423.RootElement, "sourceProvidesSeparateWzRows") is false
+    && JsonBool(phase423.RootElement, "sourceProvidesHiggsScalarSourceRow") is false
+    && JsonBool(phase423.RootElement, "sourceProvidesElectroweakVevMap") is false
+    && JsonBool(phase423.RootElement, "sourceProvidesTargetIndependentVevSource") is false
+    && JsonBool(phase423.RootElement, "sourceProvidesWeakAngleOrCouplingLineage") is false
+    && JsonBool(phase423.RootElement, "sourceProvidesPoleExtraction") is false
+    && JsonBool(phase423.RootElement, "sourceProvidesGeVUnitNormalization") is false
+    && JsonBool(phase423.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase423.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase423.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase423.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase423.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase423.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase423.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase423.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase423.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase423.RootElement, "acceptedContractFieldCount") == 0
+    && phase423.RootElement.TryGetProperty("source", out var p423Source)
+    && JsonInt(p423Source, "zenodoRecordId") == 20618066
+    && JsonString(p423Source, "doi") == "10.5281/zenodo.20618066"
+    && JsonString(p423Source, "pdfChecksum") == "md5:da23008825cf90eb89138b5c560ef47f"
+    && JsonString(p423Source, "supplementalChecksum") == "md5:53b2461515af445e3a6a459ace3619bb"
+    && JsonInt(p423Source, "extractedLineCount") == 4015
+    && JsonInt(p423Source, "supplementalArchiveEntryCount") == 58
+    && phase423.RootElement.TryGetProperty("counts", out var p423Counts)
+    && JsonInt(p423Counts, "supplementalElectroweakProjectionRowCount") == 0
+    && JsonInt(p423Counts, "supplementalExternalElectroweakInputRowCount") == 1;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -7962,6 +8012,14 @@ var checklist = new[]
             ? $"vectorSpinor144BilinearScalarCapacityAuditPassed={JsonBool(phase422!.RootElement, "vectorSpinor144BilinearScalarCapacityAuditPassed")}; sameChiralityScalarCapacity={JsonInt(phase422.RootElement, "sameChiralityScalarCapacity")}; mixedChiralityScalarCapacity={JsonInt(phase422.RootElement, "mixedChiralityScalarCapacity")}; mixedChiralityDiracLikeScalarChannelClosed={JsonBool(phase422.RootElement, "mixedChiralityDiracLikeScalarChannelClosed")}; directSmStableAnalysisDeferredDueToLargeSector={JsonBool(phase422.RootElement, "directSmStableAnalysisDeferredDueToLargeSector")}; vectorSpinor144BilinearStillRequiresSourceProjectionMap={JsonBool(phase422.RootElement, "vectorSpinor144BilinearStillRequiresSourceProjectionMap")}; canFillPhase201WzContract={JsonBool(phase422.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase422.RootElement, "decision")}"
             : "Phase422 artifact not materialized",
         Phase422Path),
+    new ObjectiveChecklistItem(
+        "zenodo-gu-rvg-spinorial-dark-sector-boson-contract-audit-materialized",
+        "Audit the June 2026 Zenodo GU-RVG spinorial dark-sector source delta without importing 95.4 GeV, Koide, collider, or cosmology context as W/Z/H source-lineage rows.",
+        zenodoGuRvgSpinorialDarkSectorBosonContractAuditPassed ? "passed" : "failed",
+        zenodoGuRvgSpinorialDarkSectorBosonContractAuditMaterialized
+            ? $"zenodoGuRvgSpinorialDarkSectorBosonContractAuditPassed={JsonBool(phase423!.RootElement, "zenodoGuRvgSpinorialDarkSectorBosonContractAuditPassed")}; currentJune2026SourceDeltaConfirmed={JsonBool(phase423.RootElement, "currentJune2026SourceDeltaConfirmed")}; sourceProvidesSpinorialDarkSectorContext={JsonBool(phase423.RootElement, "sourceProvidesSpinorialDarkSectorContext")}; sourceUsesExternalElectroweakVev246Gev={JsonBool(phase423.RootElement, "sourceUsesExternalElectroweakVev246Gev")}; sourceProvidesVectorSpinor144ProjectionMap={JsonBool(phase423.RootElement, "sourceProvidesVectorSpinor144ProjectionMap")}; sourceProvidesWzSourceRows={JsonBool(phase423.RootElement, "sourceProvidesWzSourceRows")}; sourceProvidesHiggsScalarSourceRow={JsonBool(phase423.RootElement, "sourceProvidesHiggsScalarSourceRow")}; canFillPhase201WzContract={JsonBool(phase423.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase423.RootElement, "decision")}"
+            : "Phase423 artifact not materialized",
+        Phase423Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
