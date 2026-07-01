@@ -195,6 +195,7 @@ const paths = {
   phase422: "studies/phase422_vector_spinor_144_bilinear_scalar_capacity_audit_001/output/vector_spinor_144_bilinear_scalar_capacity_audit_summary.json",
   phase423: "studies/phase423_zenodo_gu_rvg_spinorial_dark_sector_boson_contract_audit_001/output/zenodo_gu_rvg_spinorial_dark_sector_boson_contract_audit_summary.json",
   phase424: "studies/phase424_vector_spinor_144_bilinear_sm_doublet_intersection_001/output/vector_spinor_144_bilinear_sm_doublet_intersection_summary.json",
+  phase425: "studies/phase425_cross_carrier_bilinear_sm_doublet_completion_audit_001/output/cross_carrier_bilinear_sm_doublet_completion_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -461,6 +462,7 @@ const phase421 = requireFile(paths.phase421);
 const phase422 = requireFile(paths.phase422);
 const phase423 = requireFile(paths.phase423);
 const phase424 = requireFile(paths.phase424);
+const phase425 = requireFile(paths.phase425);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -5019,6 +5021,21 @@ if (sourceLineageMissing) {
   assert(phase424.phase201TemplateMutated === false && phase424.fieldsAppliedToPhase201TemplateCount === 0 && phase424.acceptedContractFieldCount === 0, "Phase424 must not mutate or fill the Phase201 template.");
   assert(phase101Package?.vectorSpinor144BilinearSmDoubletIntersection?.vectorSpinor144BilinearSmDoubletIntersectionAnalysisPassed === true, "Phase101 must include the Phase424 vector-spinor 144 bilinear SM-doublet intersection block.");
   assert(phase101Package.vectorSpinor144BilinearSmDoubletIntersection.sameChiralityWeldedScalarSmDoubletAbsent === true && phase101Package.vectorSpinor144BilinearSmDoubletIntersection.vectorSpinor144BilinearCompositeRouteClosed === true, "Phase101 must preserve the Phase424 same-chirality closure verdict.");
+  assert(phase425.crossCarrierBilinearSmDoubletCompletionAuditPassed === true, "Phase425 cross-carrier bilinear SM-doublet completion audit must pass as fail-closed representation arithmetic.");
+  assert(phase425.targetBlindConstruction === true && phase425.physicalTargetsConsultedForConstruction === false, "Phase425 construction must remain target-blind.");
+  assert(typeof phase425.targetBlindConstructionHash === "string" && phase425.targetBlindConstructionHash.length === 64, "Phase425 must persist a target-blind construction hash.");
+  assert(phase425.applicationSubjectKind === "cross-carrier-bilinear-sm-doublet-completion-audit", "Phase425 must classify its subject as the cross-carrier bilinear SM-doublet completion audit.");
+  assert(phase425.phase416PrecursorPassed === true && phase425.phase417PrecursorPassed === true && phase425.phase422PrecursorPassed === true && phase425.phase424PrecursorPassed === true, "Phase425 must preserve the Phase416/417/422/424 precursor gates.");
+  assert(phase425.analysisInternallyConsistent === true && phase425.allCapacitiesMatchExpectations === true && phase425.content144MatchesPhase417 === true, "Phase425 must verify internal consistency and the character-capacity cross-checks.");
+  assert(phase425.gamma4FrameExact === true && phase425.sixKernelsAreSixDimensional === true && phase425.sixWeldedContentExact === true && phase425.qLinearCarrierHasNoWeldedScalar === true, "Phase425 must construct the Q_{3/2} carrier exactly and record its linear no-go.");
+  assert(phase425.crossCarrierWeldedScalarSmDoubletCount === 0 && phase425.allNonzeroChannelsSmDoubletAbsent === true, "Phase425 must record zero welded-scalar SM-doublets across every cross-carrier bilinear channel.");
+  assert(phase425.mirrorChannelsTransferFromDecidedChannels === true && phase425.bilinearCompositeLayerClosedOnAllSourcePinnedCarriers === true, "Phase425 must record the bilinear-layer closure on all source-pinned carriers including mirror transfer.");
+  assert(phase425.sourceDefinesCrossCarrierProjectionMap === false && phase425.sourceDefinesCrossCarrierAction === false && phase425.sourceDefinesCrossCarrierVevSelection === false, "Phase425 must not invent missing bosonic projection/action/VEV data.");
+  assert(phase425.sourceContractApplicationAllowed === false && phase425.canFillPhase201WzContract === false && phase425.canFillPhase201HiggsContract === false && phase425.canFillPhase256ObservedFieldExtractionContract === false, "Phase425 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase425.routePromotesWzMasses === false && phase425.routePromotesHiggsMass === false && phase425.routeCompletesBosonPredictions === false, "Phase425 cannot promote boson predictions.");
+  assert(phase425.phase201TemplateMutated === false && phase425.fieldsAppliedToPhase201TemplateCount === 0 && phase425.acceptedContractFieldCount === 0, "Phase425 must not mutate or fill the Phase201 template.");
+  assert(phase101Package?.crossCarrierBilinearSmDoubletCompletionAudit?.crossCarrierBilinearSmDoubletCompletionAuditPassed === true, "Phase101 must include the Phase425 cross-carrier bilinear completion block.");
+  assert(phase101Package.crossCarrierBilinearSmDoubletCompletionAudit.bilinearCompositeLayerClosedOnAllSourcePinnedCarriers === true, "Phase101 must preserve the Phase425 bilinear-layer closure verdict.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

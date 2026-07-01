@@ -18311,3 +18311,93 @@ dark-energy talk artifact, the unverified "Kleis" lead). Physical progress
 still requires a source-defined bosonic projection/action/VEV law or a new
 primary source with explicit electroweak rows, weak-angle lineage, pole
 extraction, and GeV normalization.
+
+## 2026-07-01 - Phase425: Cross-Carrier Bilinear Completion; Literature Sweep
+
+### Context
+
+Continuing the same session after the Phase424 checkpoint, two independent
+workstreams ran in parallel: (1) the internal completion of the bilinear
+composite layer on the full source-pinned carrier menu, and (2) the
+checkpoint-cadence literature monitoring sweep of the three named targets.
+
+### Phase425 Result
+
+Phase425 constructs the Q_{3/2} carrier exactly - the spacetime factor 6 is
+the gamma-traceless remainder in 4 x 2 = 2 + 6, the 4D analog of Phase417's
+10 x 16 = 16 + 144 split, with A4 A4^dag = 4I exact and welded content
+exactly (1/2,1)/(1,1/2) - and decides every unprobed two-carrier bilinear
+channel among S = 2 x 16, Z = 2 x 144, Q = 6 x 16, and the mirror sector:
+
+- Seven mixed-parity channels have EXACTLY ZERO welded-scalar capacity by
+  character arithmetic (closed with no numeric step; the prototype showed
+  the integer Casimir filter is not even well-posed there, so parity
+  closure is the honest method).
+- Eight same-parity channels have nonzero capacity (complex convention:
+  Z x S = 13, Q x Q = 14, Q x S = 6, Q x Z = 29 per chirality pair) but
+  ZERO SM-doublet content by ambient intersection: intersection real
+  dimension 0 in every channel, top Gram eigenvalues 0.017-0.444 vs the
+  required 1.0. The Z_L x S_L realified capacity 52 confirms the
+  2026-07-01 exploration-agent hand arithmetic.
+- The chiral Q carriers have no linear welded scalar; mirror channels
+  transfer from decided channels by representation identity (Phase416).
+- A NumPy prototype reproduced every capacity, dimension, and eigenvalue
+  before the C# study was written. Runtime ~1 min (Release).
+
+Interpretation: combined with Phases 409/411/412/422/424, NO BILINEAR
+COMPOSITE OF ANY SOURCE-PINNED CARRIER PAIR CARRIES A WELDED-SCALAR
+SM-DOUBLET. The bilinear layer of the composite program is CLOSED on the
+complete carrier menu of the primary draft. The named internal residuals
+above bilinear order are higher-order composites on the new carriers
+(expected closure-shaped, large) and the standing source-defined
+projection/action/VEV requirement. No Phase201 or Phase256 field is
+filled.
+
+### Literature Monitoring Sweep (2026-07-01)
+
+- "Geometric Unity V" target RESOLVED: Cox published a renumbered GU
+  series on Zenodo 2026-06-02..05 (GU V "The Lambda Rig"
+  10.5281/zenodo.20531776; GU IV "The Observable Interface"
+  10.5281/zenodo.20518853; GU III 10.5281/zenodo.20517502; GU I reissue
+  10.5281/zenodo.20550275). Pre-screen: cosmology-only audit protocol
+  (BAO/SNe/growth/GW packets), no electroweak contract content. NEW-LEAD
+  for a short fail-closed source-audit phase, expected non-promotional.
+- New GU-RVG delta: Hofseth "Superluminal Metric Engineering ... GU-RVG"
+  10.5281/zenodo.21056575 (2026-06-18, v4), successor to the Phase423
+  record; no W/Z masses, no 246 GeV, condensate amplitude "fixed by
+  observation rather than computation"; the claimed Weinstein-Harvard
+  co-authorship matches the known fabricated-attribution pattern
+  (arXiv:2606.02184). NEW-LEAD for series continuity, expected
+  non-promotional.
+- Hebrew University dark-energy talk artifact: NOTHING EXISTS to
+  download; closest proxy is the April 2025 UCSD "From Dark to Geometric
+  Energy" talk (theportal.group transcript/video) - dark-energy
+  qualitative content only, CONTEXT-ONLY.
+- "Kleis" lead RESOLVED: kleis.io is a Z3/SMT-based verification
+  platform with no findable Geometric Unity content - lead closed,
+  CONTEXT-ONLY.
+- geometricunity.org unchanged (still the 2021-04-01 draft); no other
+  post-2026-06-09 Zenodo GU records; no June-July 2026 arXiv paper
+  derives electroweak masses from geometry without importing measured
+  scales.
+
+### Validation
+
+- Targeted Phase425 run passes (Release, ~1 min); Phase101 includes the
+  Phase425 block; Phase202 reports checklistPassedCount=218,
+  checklistFailedCount=3; claim integrity verifies Phase425 with
+  promotedPhysicalMassClaimCount=0.
+- Phase425 wired into the generator script (Release), Phase101, Phase202
+  checklist item
+  `cross-carrier-bilinear-sm-doublet-completion-audit-materialized`,
+  the claim-integrity script, and all seven broad-scanner exclusions.
+
+### Standing Next Work
+
+Named next: short fail-closed source audits of the Cox GU V series
+(zenodo 20531776 et al.) and the Hofseth GU-RVG successor record
+(zenodo 21056575), both expected non-promotional; higher-order composite
+probes on the completed carrier menu only if a source names a specific
+composite; otherwise the standing source-defined
+projection/action/VEV/observed-field requirement and checkpoint-cadence
+monitoring continue.

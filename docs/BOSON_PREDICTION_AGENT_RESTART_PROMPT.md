@@ -35,7 +35,7 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase424 work (plus the 2026-06-12 platform
+Current gate status after the Phase425 work (plus the 2026-06-12 platform
 fix - GPU parity defect root-caused and discharged - and the 2026-07-01
 |Y|=1/2 calibration defect fix in the Phase411/417 informational SM
 censuses):
@@ -43,7 +43,7 @@ censuses):
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=217`,
+  `objectiveAchieved=False`, `checklistPassedCount=218`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -339,6 +339,21 @@ censuses):
   `characterCapacitiesMatchPhase422=True` (264/264/0),
   `canFillPhase201WzContract=False`,
   `canFillPhase256ObservedFieldExtractionContract=False`
+- Phase425:
+  `crossCarrierBilinearSmDoubletCompletionAuditPassed=True`,
+  `gamma4FrameExact=True`, `sixWeldedContentExact=True` (Q_{3/2} built
+  exactly: 6 = gamma-traceless remainder in 4 x 2 = 2 + 6, content
+  (1/2,1)/(1,1/2)), `qLinearCarrierHasNoWeldedScalar=True`,
+  `allCapacitiesMatchExpectations=True` (complex capacities: Z x S = 13,
+  Q x Q = 14, Q x S = 6, Q x Z = 29 per chirality pair; all seven
+  mixed-parity channels exactly 0),
+  `crossCarrierWeldedScalarSmDoubletCount=0`,
+  `allNonzeroChannelsSmDoubletAbsent=True` (top Gram eigenvalues
+  0.017-0.444 vs required 1.0),
+  `mirrorChannelsTransferFromDecidedChannels=True`,
+  `bilinearCompositeLayerClosedOnAllSourcePinnedCarriers=True`,
+  `canFillPhase201WzContract=False`,
+  `canFillPhase256ObservedFieldExtractionContract=False`
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -359,7 +374,44 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work (2026-07-01) added Phase424, the vector-spinor `144`
+The latest work (2026-07-01, second checkpoint of the session) added
+Phase425, the cross-carrier bilinear SM-doublet completion audit. It
+constructs the `Q_{3/2}` carrier exactly (the spacetime `6` = the
+gamma-traceless remainder in `4 x 2 = 2 + 6`, the 4D analog of Phase417's
+`10 x 16 = 16 + 144` split; `A4 A4^dag = 4I` exact; welded content exactly
+`(1/2,1)`/`(1,1/2)`; no linear welded scalar) and decides every unprobed
+two-carrier bilinear channel among `S = 2 x 16`, `Z = 2 x 144`,
+`Q = 6 x 16`, and the mirror sector: the seven mixed-parity channels have
+exactly zero welded-scalar capacity by character arithmetic, and the eight
+same-parity channels (capacities 13/14/6/29 complex per chirality pair)
+all have ZERO SM-doublet content by the ambient intersection (top Gram
+eigenvalues 0.017-0.444 vs the required 1.0). Mirror channels transfer by
+representation identity. Combined with Phases 409/411/412/422/424, NO
+BILINEAR COMPOSITE OF ANY SOURCE-PINNED CARRIER PAIR CARRIES A
+WELDED-SCALAR SM-DOUBLET - the bilinear composite layer is CLOSED on the
+complete carrier menu of the primary draft. A NumPy prototype validated
+every number first; the study runs Release (~1 min). Study:
+`studies/phase425_cross_carrier_bilinear_sm_doublet_completion_audit_001`
+(IMPLEMENTATION_P425.md).
+
+The same session's literature sweep resolved two named monitor targets and
+found two NEW-LEAD records (both pre-screening non-promotional, named for
+short fail-closed audits at the next checkpoint): the Cox "Geometric
+Unity V" series now exists (GU V "The Lambda Rig"
+`10.5281/zenodo.20531776`, GU IV "The Observable Interface"
+`10.5281/zenodo.20518853`, GU III `10.5281/zenodo.20517502`, GU I reissue
+`10.5281/zenodo.20550275`, published 2026-06-02..05; cosmology-only audit
+protocol), and the Hofseth GU-RVG successor record
+`10.5281/zenodo.21056575` (2026-06-18; superluminal metric engineering;
+condensate amplitude "fixed by observation rather than computation"; the
+claimed Weinstein co-authorship matches the known fabricated-attribution
+pattern, arXiv:2606.02184). The "Kleis" lead is RESOLVED (kleis.io, a
+Z3/SMT verification platform, no GU content) and the Hebrew University
+dark-energy talk has NO artifact (closest proxy: the April 2025 UCSD
+"From Dark to Geometric Energy" talk on theportal.group, qualitative
+dark-energy content only). geometricunity.org is unchanged.
+
+Before that, the work (2026-07-01) added Phase424, the vector-spinor `144`
 bilinear SM-doublet intersection analysis, deciding the question Phase422
 explicitly deferred. Using the Phase412 ambient-intersection method
 (strictly stronger than a stable-subspace census; covers all statistics
@@ -756,7 +808,7 @@ HONEST BOUNDARY. Study:
 
 ### Integration Points Already Updated
 
-Phase424 (like Phase388-423) is wired into:
+Phase425 (like Phase388-424) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (single broad pass; the
   older duplicated final sweep was removed on 2026-06-16; the Phase424 line
@@ -770,7 +822,8 @@ Phase424 (like Phase388-423) is wired into:
   `cox-gu-iv-v2-lcdm-rig-boson-contract-audit-materialized` and
   `vector-spinor-144-bilinear-scalar-capacity-audit-materialized` and
   `zenodo-gu-rvg-spinorial-dark-sector-boson-contract-audit-materialized` and
-  `vector-spinor-144-bilinear-sm-doublet-intersection-analysis-materialized`;
+  `vector-spinor-144-bilinear-sm-doublet-intersection-analysis-materialized` and
+  `cross-carrier-bilinear-sm-doublet-completion-audit-materialized`;
   the Phase417 checklist row now asserts the corrected
   `yHalfCalibrationExact=True` and `internalSmHiggsPatternComplexDimension=6`)
 - `scripts/verify_boson_claim_integrity.sh` (Phase424 asserts plus the
@@ -813,6 +866,7 @@ dotnet run --project studies/phase421_cox_gu_iv_v2_lcdm_rig_boson_contract_audit
 dotnet run --project studies/phase422_vector_spinor_144_bilinear_scalar_capacity_audit_001/Phase422VectorSpinor144BilinearScalarCapacityAudit.csproj
 dotnet run --project studies/phase423_zenodo_gu_rvg_spinorial_dark_sector_boson_contract_audit_001/Phase423ZenodoGuRvgSpinorialDarkSectorBosonContractAudit.csproj
 dotnet run -c Release --project studies/phase424_vector_spinor_144_bilinear_sm_doublet_intersection_001/Phase424VectorSpinor144BilinearSmDoubletIntersection.csproj
+dotnet run -c Release --project studies/phase425_cross_carrier_bilinear_sm_doublet_completion_audit_001/Phase425CrossCarrierBilinearSmDoubletCompletionAudit.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
@@ -821,13 +875,14 @@ dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase
 PHASE405_ENABLE_GPU=1 LD_LIBRARY_PATH=native/build dotnet run --project studies/phase405_vacuum_manifold_doublet_vev_orbit_scan_001/Phase405VacuumManifoldDoubletVevOrbitScan.csproj
 ```
 
-The targeted Phase424 run passes (Release, ~7 min) and preserves the
-fail-closed boundary; the fixed Phase411/Phase417 re-runs pass with their
-corrected censuses; Phase202 now reports `checklistPassedCount=217`,
-`checklistFailedCount=3`; claim integrity verifies Phase424 (and the
-corrected Phase417 values) with `promotedPhysicalMassClaimCount=0`. The full
-direct `./scripts/generate_validated_boson_predictions.sh` pass completed
-with Phase424 included and ended at `boson-claim-integrity-verified`. (Platform
+The targeted Phase424 (Release, ~7 min) and Phase425 (Release, ~1 min) runs
+pass and preserve the fail-closed boundary; the fixed Phase411/Phase417
+re-runs pass with their corrected censuses; Phase202 now reports
+`checklistPassedCount=218`, `checklistFailedCount=3`; claim integrity
+verifies Phase424/Phase425 (and the corrected Phase417 values) with
+`promotedPhysicalMassClaimCount=0`. The full direct
+`./scripts/generate_validated_boson_predictions.sh` pass completed with
+Phase424 and Phase425 included and ended at `boson-claim-integrity-verified`. (Platform
 state: Gu.Interop.Tests 158/158 with the real-mesh parity and
 buffer-handle recycling tests; both Phase405 platform notes discharged
 2026-06-12.) All seven broad scanners still report zero intake-ready
@@ -938,6 +993,16 @@ The most useful next branches are:
      Further progress from this branch requires a genuinely new
      source-defined bosonic projection map, action, or VEV selection rule -
      no internal decomposition question remains at bilinear order.
+   - Cross-carrier bilinear completion: DONE by Phase425 on the FULL
+     source-pinned carrier menu. The Q_{3/2} carrier is constructed exactly
+     (6 = gamma-traceless remainder in 4 x 2 = 2 + 6, welded content
+     (1/2,1)/(1,1/2), no linear welded scalar); all mixed-parity channels
+     are exactly zero-capacity; all same-parity channels (Z x S, Q x Q,
+     Q x S, Q x Z) carry no welded-scalar SM-doublet by ambient
+     intersection; mirror channels transfer by representation identity.
+     THE BILINEAR COMPOSITE LAYER IS CLOSED ON EVERY SOURCE-PINNED CARRIER
+     PAIR. Remaining composite territory is quartic+ on the new carriers -
+     pursue only if a source names a specific composite.
    - Unobserved-phase carrier census: DONE at source-pinned linear-carrier
      level by Phase416. The current sources define dark fermionic carriers but
      no linear bosonic spin-zero SM-doublet carrier or projection map.
@@ -1044,19 +1109,26 @@ The most useful next branches are:
    scale, a source-defined observed-field extraction theorem filling the
    Phase419 template, a source-defined curvature-to-electroweak scale law
    satisfying Phase420's missing specification fields, or a new primary-source
-   specification. Remaining census-level internal candidates (both expected
-   closure-shaped): a Q_{3/2} (192-state) carrier probe mirroring
-   Phase417/422/424, and a cross-carrier `Z x S` bilinear capacity
-   consolidation. Standing work:
+   specification. The census-level internal candidates named after Phase424
+   (the Q_{3/2} carrier probe and the cross-carrier bilinear consolidation)
+   are BOTH DONE by Phase425 - the bilinear layer is closed on every
+   source-pinned carrier pair. Standing work:
    literature monitoring at checkpoint
    cadence; the epsilon/Shiab route if a quantitative specification
    appears.
-   Deep-research follow-ups (catalogue when revisited): GU IV (v2)
-   "The Rig for Lambda" is DONE by Phase421 and is non-promotional; remaining
-   GU-RVG June 2026 spinorial dark-sector source delta is DONE by Phase423 and
-   is non-promotional; remaining monitor targets are the hinted "Geometric
-   Unity V", the Hebrew University dark-energy talk artifact, and the
-   unverified "Kleis" machine-audit lead.
+   Deep-research follow-ups: GU IV (v2) "The Rig for Lambda" is DONE by
+   Phase421 (non-promotional); the GU-RVG June 2026 spinorial dark-sector
+   delta is DONE by Phase423 (non-promotional); the 2026-07-01 sweep
+   RESOLVED the remaining named targets - "Kleis" = kleis.io (a Z3/SMT
+   verification platform, no GU content; lead closed), the Hebrew
+   University talk has no artifact (UCSD April 2025 proxy is qualitative
+   only), and TWO NEW-LEAD records are named for short fail-closed source
+   audits at the next checkpoint: the Cox "Geometric Unity V" series
+   (10.5281/zenodo.20531776 with GU IV 20518853, GU III 20517502, GU I
+   20550275; cosmology-only pre-screen) and the Hofseth GU-RVG successor
+   (10.5281/zenodo.21056575; observationally-fixed condensate amplitude;
+   likely fabricated co-authorship per arXiv:2606.02184). Both are
+   expected non-promotional.
 3. (CLOSED by Phase399 + Phase400 + Phase401: the quadratic-model coupled
    critical point is solved modulo flat directions, every flat ray is
    quartically lifted, and the attempted construction of the relaxed
@@ -1097,13 +1169,11 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -160 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase424|vectorSpinor144BilinearSmDoubletIntersection|yHalfCalibrationExact|majoranaYHalfCalibrationExact|Phase423|zenodoGuRvgSpinorialDarkSectorBosonContractAudit|Phase422|vectorSpinor144BilinearScalarCapacityAudit" \
+rg -n "Phase425|crossCarrierBilinearSmDoubletCompletionAudit|Phase424|vectorSpinor144BilinearSmDoubletIntersection|yHalfCalibrationExact|majoranaYHalfCalibrationExact|zenodo.20531776|zenodo.21056575" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
   docs/Reference/ExperimentReferences/GU-DRAFT-2021.md \
-  docs/Reference/ExperimentReferences/ZENODO-20618066-GURVG-SPINORIAL-DARK-SECTOR.md \
+  studies/phase425_cross_carrier_bilinear_sm_doublet_completion_audit_001 \
   studies/phase424_vector_spinor_144_bilinear_sm_doublet_intersection_001 \
-  studies/phase423_zenodo_gu_rvg_spinorial_dark_sector_boson_contract_audit_001 \
-  studies/phase422_vector_spinor_144_bilinear_scalar_capacity_audit_001 \
   studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
 ```
 
@@ -1116,11 +1186,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase424 output JSON files (plus the re-run
-Phase411/417 outputs), and commit a checkpoint after validation.
+force-add the ignored Phase425 output JSON files, and commit a checkpoint
+after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase424 bilinear SM-doublet intersection; fix Y calibration
+Add phase425 cross-carrier bilinear completion audit
 ```

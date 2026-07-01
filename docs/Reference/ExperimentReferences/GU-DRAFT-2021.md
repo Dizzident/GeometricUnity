@@ -81,6 +81,14 @@ mirrors are merely search aids or can support promotion-ready claims.
   intersection zero in both channels, top Gram eigenvalue 0.059259 vs the
   required 1.0). The draft-backed vector-spinor bilinear composite route is
   closed at linear, mixed-chirality, and same-chirality bilinear order.
+- Supported Phase425's cross-carrier bilinear completion audit. Sections
+  11.2/12.9/12.10 pin the full carrier menu (F/S, Q_{3/2}, Z_{1/2},
+  mirror); the phase constructs Q_{3/2}'s spacetime factor exactly
+  (6 = gamma-traceless remainder in 4 x 2 = 2 + 6) and decides every
+  unprobed two-carrier bilinear channel: mixed-parity channels are exactly
+  zero-capacity, same-parity channels carry no welded-scalar SM-doublet,
+  and mirror channels transfer by representation identity. The bilinear
+  composite layer is closed on every source-pinned carrier pair.
 - Supported Phase418's direction-dependent curvature/VEV coupling scan only as
   context for the missing scalar-sector/curvature branch. The phase shows that
   residual-gauge block laws can select the doublet after adding a stabilizer,

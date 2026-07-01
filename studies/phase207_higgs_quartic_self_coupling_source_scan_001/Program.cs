@@ -456,6 +456,7 @@ static List<string> ClassifyBlockers(string lower, string file)
     AddIf(blockers, file.Contains("phase422_vector_spinor_144_bilinear_scalar_capacity_audit", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("phase423_zenodo_gu_rvg_spinorial_dark_sector_boson_contract_audit", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("phase424_vector_spinor_144_bilinear_sm_doublet_intersection", StringComparison.Ordinal), "generated-diagnostic-artifact");
+    AddIf(blockers, file.Contains("phase425_cross_carrier_bilinear_sm_doublet_completion_audit", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P278.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P279.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P280.md", StringComparison.Ordinal), "generated-diagnostic-artifact");

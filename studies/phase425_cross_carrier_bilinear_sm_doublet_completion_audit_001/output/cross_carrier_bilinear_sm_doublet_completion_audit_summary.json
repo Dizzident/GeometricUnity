@@ -1,0 +1,245 @@
+{
+  "phaseId": "phase425-cross-carrier-bilinear-sm-doublet-completion-audit",
+  "generatedAt": "2026-07-01T23:10:40.3947648+00:00",
+  "terminalStatus": "cross-carrier-bilinear-welded-scalar-sm-doublet-absent-bilinear-layer-closed",
+  "crossCarrierBilinearSmDoubletCompletionAuditPassed": true,
+  "phase416PrecursorPassed": true,
+  "phase417PrecursorPassed": true,
+  "phase422PrecursorPassed": true,
+  "phase424PrecursorPassed": true,
+  "applicationSubjectKind": "cross-carrier-bilinear-sm-doublet-completion-audit",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "acbedc54ce4160f382ca2319ab8dca0113ded77d227641c00df18494a565e9e8",
+  "chiralHalvesAreSixteenDimensional": true,
+  "colorAlgebraDimensionIsEight": true,
+  "colorCartanPairExactlyCommuting": true,
+  "sixteenCarriesLeptonDoubletYQuarter": true,
+  "kappaCalibration": 1,
+  "kappaL": 1,
+  "gammaTraceFrameResidual": 0,
+  "gammaTraceFrameExact": true,
+  "gamma4FrameResidual": 0,
+  "gamma4FrameExact": true,
+  "sixKernelsAreSixDimensional": true,
+  "sixKernelMembershipResidual": 3.885780586188048E-16,
+  "sixCasimirContentResidual": 1.3468923735932335E-15,
+  "sixWeldedContentExact": true,
+  "qCarrierComplexDimensionPerChirality": 96,
+  "qLinearWeldedScalarCount": 0,
+  "qLinearCarrierHasNoWeldedScalar": true,
+  "kernelDimensionIs144": true,
+  "kernel144MembershipResidual": 1.7763568394002505E-15,
+  "kernel144MembershipExact": true,
+  "basis16Complete": true,
+  "smDiagonalBasesMaxCartanResidual": 1.1665932979962253E-10,
+  "smDiagonalBasesExact": true,
+  "weylHalvesAreTwoDimensional": true,
+  "sigma4HomResidual": 0,
+  "complexContentDimensionChecks": true,
+  "content144MatchesPhase417": true,
+  "legContentDimensionChecks": true,
+  "capacities": [
+    {
+      "channelId": "Z_L x S_L",
+      "complexCapacity": 13,
+      "closedByParity": false
+    },
+    {
+      "channelId": "Z_R x S_R",
+      "complexCapacity": 13,
+      "closedByParity": false
+    },
+    {
+      "channelId": "Z_L x S_R",
+      "complexCapacity": 0,
+      "closedByParity": true
+    },
+    {
+      "channelId": "Z_R x S_L",
+      "complexCapacity": 0,
+      "closedByParity": true
+    },
+    {
+      "channelId": "Q_L x Q_L",
+      "complexCapacity": 14,
+      "closedByParity": false
+    },
+    {
+      "channelId": "Q_R x Q_R",
+      "complexCapacity": 14,
+      "closedByParity": false
+    },
+    {
+      "channelId": "Q_L x Q_R",
+      "complexCapacity": 0,
+      "closedByParity": true
+    },
+    {
+      "channelId": "Q_L x S_R",
+      "complexCapacity": 6,
+      "closedByParity": false
+    },
+    {
+      "channelId": "Q_R x S_L",
+      "complexCapacity": 6,
+      "closedByParity": false
+    },
+    {
+      "channelId": "Q_L x S_L",
+      "complexCapacity": 0,
+      "closedByParity": true
+    },
+    {
+      "channelId": "Q_R x S_R",
+      "complexCapacity": 0,
+      "closedByParity": true
+    },
+    {
+      "channelId": "Q_L x Z_R",
+      "complexCapacity": 29,
+      "closedByParity": false
+    },
+    {
+      "channelId": "Q_R x Z_L",
+      "complexCapacity": 29,
+      "closedByParity": false
+    },
+    {
+      "channelId": "Q_L x Z_L",
+      "complexCapacity": 0,
+      "closedByParity": true
+    },
+    {
+      "channelId": "Q_R x Z_R",
+      "complexCapacity": 0,
+      "closedByParity": true
+    }
+  ],
+  "allCapacitiesMatchExpectations": true,
+  "zlslRealifiedCapacity": 52,
+  "weightClassLeakageResidual": 1.5069676712606487E-10,
+  "classKernelMaxResidual": 1.5056170625760313E-15,
+  "projectorIdempotencyResidual": 6.811716086654561E-15,
+  "gramHermiticityResidual": 3.272664257647495E-16,
+  "casimirGridMaxJ": 7,
+  "statisticsProjectionApplied": false,
+  "ambientIntersectionIsNecessaryConditionOnly": true,
+  "channels": [
+    {
+      "channelId": "Z_L x S_L",
+      "candidateWeightSectorDimension": 136,
+      "doubletIsotypicRealDimension": 128,
+      "intersectionRealDimension": 0,
+      "topGramEigenvalue": 0.02222222222223804,
+      "secondGramEigenvalue": 0.022222222222237943
+    },
+    {
+      "channelId": "Z_R x S_R",
+      "candidateWeightSectorDimension": 136,
+      "doubletIsotypicRealDimension": 128,
+      "intersectionRealDimension": 0,
+      "topGramEigenvalue": 0.016666666666575774,
+      "secondGramEigenvalue": 0.016666666666575725
+    },
+    {
+      "channelId": "Q_L x Q_L",
+      "candidateWeightSectorDimension": 1152,
+      "doubletIsotypicRealDimension": 1152,
+      "intersectionRealDimension": 0,
+      "topGramEigenvalue": 0.4444444444444847,
+      "secondGramEigenvalue": 0.4444444444444818
+    },
+    {
+      "channelId": "Q_R x Q_R",
+      "candidateWeightSectorDimension": 1152,
+      "doubletIsotypicRealDimension": 1152,
+      "intersectionRealDimension": 0,
+      "topGramEigenvalue": 0.4444444444444894,
+      "secondGramEigenvalue": 0.44444444444448883
+    },
+    {
+      "channelId": "Q_L x S_R",
+      "candidateWeightSectorDimension": 384,
+      "doubletIsotypicRealDimension": 384,
+      "intersectionRealDimension": 0,
+      "topGramEigenvalue": 0.44444444444445663,
+      "secondGramEigenvalue": 0.4444444444444543
+    },
+    {
+      "channelId": "Q_R x S_L",
+      "candidateWeightSectorDimension": 384,
+      "doubletIsotypicRealDimension": 384,
+      "intersectionRealDimension": 0,
+      "topGramEigenvalue": 0.44444444444445974,
+      "secondGramEigenvalue": 0.44444444444445735
+    },
+    {
+      "channelId": "Q_L x Z_R",
+      "candidateWeightSectorDimension": 408,
+      "doubletIsotypicRealDimension": 384,
+      "intersectionRealDimension": 0,
+      "topGramEigenvalue": 0.03362842421019185,
+      "secondGramEigenvalue": 0.03362842421019175
+    },
+    {
+      "channelId": "Q_R x Z_L",
+      "candidateWeightSectorDimension": 408,
+      "doubletIsotypicRealDimension": 384,
+      "intersectionRealDimension": 0,
+      "topGramEigenvalue": 0.03362842421019192,
+      "secondGramEigenvalue": 0.033628424210191875
+    }
+  ],
+  "crossCarrierWeldedScalarSmDoubletCount": 0,
+  "allNonzeroChannelsSmDoubletAbsent": true,
+  "mirrorSectorRepresentationIdenticalToObservedSector": true,
+  "mirrorChannelsTransferFromDecidedChannels": true,
+  "bilinearCompositeLayerClosedOnAllSourcePinnedCarriers": true,
+  "analysisInternallyConsistent": true,
+  "sourceDefinesCrossCarrierProjectionMap": false,
+  "sourceDefinesCrossCarrierAction": false,
+  "sourceDefinesCrossCarrierVevSelection": false,
+  "sourceDefinesObservedProjectionRows": false,
+  "sourceDefinesWeakAngleScalePoleOrGevLineage": false,
+  "physicalCouplingProvided": false,
+  "routeProvidesPhysicalMassPsiCompatibleBranch": false,
+  "routeProvidesCompletedFermionicAction": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesObservedElectroweakNamespaceMap": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesWeakAngleOrCouplingLineage": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "sourceEvidence": {
+    "phase416SummaryPath": "studies/phase416_unobserved_phase_carrier_census_001/output/unobserved_phase_carrier_census_summary.json",
+    "phase417SummaryPath": "studies/phase417_vector_spinor_144_decomposition_probe_001/output/vector_spinor_144_decomposition_probe_summary.json",
+    "phase422SummaryPath": "studies/phase422_vector_spinor_144_bilinear_scalar_capacity_audit_001/output/vector_spinor_144_bilinear_scalar_capacity_audit_summary.json",
+    "phase424SummaryPath": "studies/phase424_vector_spinor_144_bilinear_sm_doublet_intersection_001/output/vector_spinor_144_bilinear_sm_doublet_intersection_summary.json",
+    "primaryDraft": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt (section 11.2 eq. 11.6 F/Q/Z census; section 12.9 eq. 12.20 mirror sector; section 12.10 eq. 12.22 vector-spinor remainder)"
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "The ambient intersection is a necessary-condition test; zeros close channels, a nonzero would only name a candidate.",
+    "Zero-capacity channels are closed by exact welded character parity arithmetic, not by numeric filtering.",
+    "Mirror-sector channels are decided by representation-identity transfer from the corresponding S channels, per the Phase416 census pinning.",
+    "No bosonic projection map, action, VEV selection, observed-field rows, weak-angle lineage, pole extraction, or GeV normalization is supplied by any reviewed source.",
+    "No Phase201 or Phase256 fill."
+  ],
+  "decision": "The bilinear composite layer is now decided on the COMPLETE source-pinned carrier menu. The Q_{3/2} carrier is constructed exactly (6 = gamma-traceless remainder in 4 x 2 = 2 \u002B 6, A4 A4^dag = 4I exact, welded content (1/2,1)/(1,1/2) exact) and has no linear welded scalar. Every mixed-parity cross-carrier bilinear channel has exactly zero welded-scalar capacity by character arithmetic; every same-parity channel (Z x S, Q x Q, Q x S, Q x Z) has nonzero capacity but ZERO SM-doublet content by the ambient intersection, with top Gram eigenvalues far below 1. Mirror-sector channels transfer from decided channels by representation identity. Combined with Phases 409/411/412/422/424, NO BILINEAR COMPOSITE OF ANY SOURCE-PINNED CARRIER PAIR CARRIES A WELDED-SCALAR SM-DOUBLET. No source supplies a bosonic projection map, action, VEV selection, observed rows, weak-angle lineage, pole extraction, or GeV normalization; no Phase201 or Phase256 field is filled."
+}
