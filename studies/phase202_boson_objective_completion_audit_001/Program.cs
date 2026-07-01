@@ -189,6 +189,7 @@ const string Phase420Path = "studies/phase420_naive_curvature_mass_scale_sanity_
 const string Phase421Path = "studies/phase421_cox_gu_iv_v2_lcdm_rig_boson_contract_audit_001/output/cox_gu_iv_v2_lcdm_rig_boson_contract_audit_summary.json";
 const string Phase422Path = "studies/phase422_vector_spinor_144_bilinear_scalar_capacity_audit_001/output/vector_spinor_144_bilinear_scalar_capacity_audit_summary.json";
 const string Phase423Path = "studies/phase423_zenodo_gu_rvg_spinorial_dark_sector_boson_contract_audit_001/output/zenodo_gu_rvg_spinorial_dark_sector_boson_contract_audit_summary.json";
+const string Phase424Path = "studies/phase424_vector_spinor_144_bilinear_sm_doublet_intersection_001/output/vector_spinor_144_bilinear_sm_doublet_intersection_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -411,6 +412,7 @@ using var phase420 = File.Exists(Phase420Path) ? JsonDocument.Parse(File.ReadAll
 using var phase421 = File.Exists(Phase421Path) ? JsonDocument.Parse(File.ReadAllText(Phase421Path)) : null;
 using var phase422 = File.Exists(Phase422Path) ? JsonDocument.Parse(File.ReadAllText(Phase422Path)) : null;
 using var phase423 = File.Exists(Phase423Path) ? JsonDocument.Parse(File.ReadAllText(Phase423Path)) : null;
+using var phase424 = File.Exists(Phase424Path) ? JsonDocument.Parse(File.ReadAllText(Phase424Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -5414,7 +5416,12 @@ var vectorSpinor144DecompositionProbePassed = vectorSpinor144DecompositionProbeM
     && JsonBool(phase417.RootElement, "welded144ContentRecovered") is true
     && JsonBool(phase417.RootElement, "weldedDimensionAccounting") is true
     && JsonBool(phase417.RootElement, "smBlockDimensionAccounting") is true
-    && JsonInt(phase417.RootElement, "internalSmHiggsPatternComplexDimension") == 0
+    // 2026-07-01: the pre-fix |Y|=1/2 calibration heuristic selected the
+    // |Y|=1/3 value and undercounted this block as 0; the corrected exact
+    // Y^2=1/4 census finds 6 complex SM-Higgs-pattern dimensions (still
+    // fermionic representation data, not a welded scalar).
+    && JsonBool(phase417.RootElement, "yHalfCalibrationExact") is true
+    && JsonInt(phase417.RootElement, "internalSmHiggsPatternComplexDimension") == 6
     && JsonInt(phase417.RootElement, "linearWeldedScalarCountTotal") == 0
     && JsonBool(phase417.RootElement, "vectorSpinor144LinearCarrierHasNoWeldedScalar") is true
     && JsonBool(phase417.RootElement, "sourceDefinesVectorSpinor144BosonicProjectionMap") is false
@@ -5660,6 +5667,36 @@ var zenodoGuRvgSpinorialDarkSectorBosonContractAuditPassed = zenodoGuRvgSpinoria
     && phase423.RootElement.TryGetProperty("counts", out var p423Counts)
     && JsonInt(p423Counts, "supplementalElectroweakProjectionRowCount") == 0
     && JsonInt(p423Counts, "supplementalExternalElectroweakInputRowCount") == 1;
+var vectorSpinor144BilinearSmDoubletIntersectionAnalysisMaterialized = phase424 is not null;
+var vectorSpinor144BilinearSmDoubletIntersectionAnalysisPassed = vectorSpinor144BilinearSmDoubletIntersectionAnalysisMaterialized
+    && JsonBool(phase424!.RootElement, "vectorSpinor144BilinearSmDoubletIntersectionAnalysisPassed") is true
+    && JsonBool(phase424.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase424.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase424.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase424.RootElement, "applicationSubjectKind") == "vector-spinor-144-bilinear-sm-doublet-intersection-analysis"
+    && JsonBool(phase424.RootElement, "analysisInternallyConsistent") is true
+    && JsonBool(phase424.RootElement, "characterCapacitiesMatchPhase422") is true
+    && JsonBool(phase424.RootElement, "sixteenCarriesLeptonDoubletYQuarter") is true
+    && JsonInt(phase424.RootElement, "llIntersectionRealDimension") == 0
+    && JsonInt(phase424.RootElement, "rrIntersectionRealDimension") == 0
+    && JsonBool(phase424.RootElement, "sameChiralityWeldedScalarSmDoubletAbsent") is true
+    && JsonBool(phase424.RootElement, "majorana16AmbientRecheckSmDoubletAbsent") is true
+    && JsonBool(phase424.RootElement, "vectorSpinor144BilinearCompositeRouteClosed") is true
+    && JsonBool(phase424.RootElement, "sourceDefinesVectorSpinor144BilinearProjectionMap") is false
+    && JsonBool(phase424.RootElement, "sourceDefinesVectorSpinor144BilinearAction") is false
+    && JsonBool(phase424.RootElement, "sourceDefinesVectorSpinor144BilinearVevSelection") is false
+    && JsonBool(phase424.RootElement, "sourceDefinesObservedProjectionRows") is false
+    && JsonBool(phase424.RootElement, "sourceDefinesWeakAngleScalePoleOrGevLineage") is false
+    && JsonBool(phase424.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase424.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase424.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase424.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase424.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase424.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase424.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase424.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase424.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase424.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -8020,6 +8057,14 @@ var checklist = new[]
             ? $"zenodoGuRvgSpinorialDarkSectorBosonContractAuditPassed={JsonBool(phase423!.RootElement, "zenodoGuRvgSpinorialDarkSectorBosonContractAuditPassed")}; currentJune2026SourceDeltaConfirmed={JsonBool(phase423.RootElement, "currentJune2026SourceDeltaConfirmed")}; sourceProvidesSpinorialDarkSectorContext={JsonBool(phase423.RootElement, "sourceProvidesSpinorialDarkSectorContext")}; sourceUsesExternalElectroweakVev246Gev={JsonBool(phase423.RootElement, "sourceUsesExternalElectroweakVev246Gev")}; sourceProvidesVectorSpinor144ProjectionMap={JsonBool(phase423.RootElement, "sourceProvidesVectorSpinor144ProjectionMap")}; sourceProvidesWzSourceRows={JsonBool(phase423.RootElement, "sourceProvidesWzSourceRows")}; sourceProvidesHiggsScalarSourceRow={JsonBool(phase423.RootElement, "sourceProvidesHiggsScalarSourceRow")}; canFillPhase201WzContract={JsonBool(phase423.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase423.RootElement, "decision")}"
             : "Phase423 artifact not materialized",
         Phase423Path),
+    new ObjectiveChecklistItem(
+        "vector-spinor-144-bilinear-sm-doublet-intersection-analysis-materialized",
+        "Decide the Phase422-deferred same-chirality vector-spinor bilinear question by ambient intersection of the SM-doublet and welded-scalar isotypics.",
+        vectorSpinor144BilinearSmDoubletIntersectionAnalysisPassed ? "passed" : "failed",
+        vectorSpinor144BilinearSmDoubletIntersectionAnalysisMaterialized
+            ? $"vectorSpinor144BilinearSmDoubletIntersectionAnalysisPassed={JsonBool(phase424!.RootElement, "vectorSpinor144BilinearSmDoubletIntersectionAnalysisPassed")}; llIntersectionRealDimension={JsonInt(phase424.RootElement, "llIntersectionRealDimension")}; rrIntersectionRealDimension={JsonInt(phase424.RootElement, "rrIntersectionRealDimension")}; sameChiralityWeldedScalarSmDoubletAbsent={JsonBool(phase424.RootElement, "sameChiralityWeldedScalarSmDoubletAbsent")}; majorana16AmbientRecheckSmDoubletAbsent={JsonBool(phase424.RootElement, "majorana16AmbientRecheckSmDoubletAbsent")}; vectorSpinor144BilinearCompositeRouteClosed={JsonBool(phase424.RootElement, "vectorSpinor144BilinearCompositeRouteClosed")}; canFillPhase201WzContract={JsonBool(phase424.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase424.RootElement, "decision")}"
+            : "Phase424 artifact not materialized",
+        Phase424Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

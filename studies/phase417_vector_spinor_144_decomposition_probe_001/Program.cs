@@ -381,7 +381,13 @@ var (calEvL, _) = Jacobi(calSu2L);
 double jHalfValue = calEvL.Max();
 var calY = CasimirRealComplex(new[] { hyperchargeOn16 });
 var (calEvY, _) = Jacobi(calY);
-double yHalfValue = calEvY.Where(v => v > 0.05).DefaultIfEmpty(0.0).Min();
+// |Y| = 1/2 in this chain's physical normalization: the 16 carries the
+// lepton-doublet weights y = +/-1/2, so the SM-Higgs-pattern Y^2 value is
+// exactly 1/4. The pre-2026-07-01 heuristic here ("smallest Y^2 above 0.05")
+// selected the |Y| = 1/3 family value 1/9 instead, undercounting the
+// SM-Higgs-pattern block; see the 2026-07-01 journal defect entry.
+double yHalfValue = calEvY.OrderBy(v => Math.Abs(v - 0.25)).First();
+bool yHalfCalibrationExact = Math.Abs(yHalfValue - 0.25) <= 1e-9;
 
 int internalSmHiggsPatternRealDimension = smBlocks
     .Where(b => Math.Abs(b.ColorCasimir) <= 1e-6 &&
@@ -440,6 +446,7 @@ bool vectorSpinor144DecompositionProbePassed =
     chiralHalvesAreSixteenDimensional &&
     vectorSpinor144DimensionCheck &&
     vectorSpinor144InvariantUnderProbedGenerators &&
+    yHalfCalibrationExact &&
     colorAlgebraDimensionIsEight &&
     welded144ContentRecovered &&
     ok2L &&
@@ -529,6 +536,8 @@ var result = new
         jL = CasimirToJ(b.Su2LCasimir, jHalfValue / 0.75),
         absYRelativeToHalf = yHalfValue > 0 ? Math.Sqrt(Math.Max(b.YSquared, 0.0) / yHalfValue) * 0.5 : 0.0,
     }).ToArray(),
+    yHalfValueSquared = yHalfValue,
+    yHalfCalibrationExact,
     internalSmHiggsPatternRealDimension,
     internalSmHiggsPatternComplexDimension,
     zCarrierLeftWeldedContent = zCarrierLeftContent.Select(t => new { j1 = t.J1, j2 = t.J2, multiplicity = t.Multiplicity }).ToArray(),
@@ -599,6 +608,7 @@ Console.WriteLine($"gammaTraceRankComplex={gammaTraceRankComplex} vectorSpinor14
 Console.WriteLine($"vectorSpinor144DimensionCheck={vectorSpinor144DimensionCheck} gammaTraceKernelMaxResidual={gammaTraceKernelMaxResidual:E3}");
 Console.WriteLine($"vectorSpinor144InvariantUnderProbedGenerators={vectorSpinor144InvariantUnderProbedGenerators} kernelInvarianceMaxResidual={kernelInvarianceMaxResidual:E3}");
 Console.WriteLine($"welded144Content=[{string.Join(",", welded144Content.Select(t => $"({t.J1},{t.J2})x{t.Multiplicity}"))}]");
+Console.WriteLine($"yHalfCalibrationExact={yHalfCalibrationExact} yHalfValueSquared={yHalfValue}");
 Console.WriteLine($"internalSmHiggsPatternComplexDimension={internalSmHiggsPatternComplexDimension}");
 Console.WriteLine($"linearWeldedScalarCountTotal={linearWeldedScalarCountTotal}");
 Console.WriteLine($"sourceDefinedEvenCompositeOrBosonicProjectionMapCount={sourceDefinedEvenCompositeOrBosonicProjectionMapCount}");

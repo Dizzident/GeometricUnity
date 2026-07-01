@@ -194,6 +194,7 @@ const paths = {
   phase421: "studies/phase421_cox_gu_iv_v2_lcdm_rig_boson_contract_audit_001/output/cox_gu_iv_v2_lcdm_rig_boson_contract_audit_summary.json",
   phase422: "studies/phase422_vector_spinor_144_bilinear_scalar_capacity_audit_001/output/vector_spinor_144_bilinear_scalar_capacity_audit_summary.json",
   phase423: "studies/phase423_zenodo_gu_rvg_spinorial_dark_sector_boson_contract_audit_001/output/zenodo_gu_rvg_spinorial_dark_sector_boson_contract_audit_summary.json",
+  phase424: "studies/phase424_vector_spinor_144_bilinear_sm_doublet_intersection_001/output/vector_spinor_144_bilinear_sm_doublet_intersection_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -459,6 +460,7 @@ const phase420 = requireFile(paths.phase420);
 const phase421 = requireFile(paths.phase421);
 const phase422 = requireFile(paths.phase422);
 const phase423 = requireFile(paths.phase423);
+const phase424 = requireFile(paths.phase424);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -4892,7 +4894,7 @@ if (sourceLineageMissing) {
   assert(phase417.phase411PrecursorPassed === true && phase417.phase416PrecursorPassed === true, "Phase417 must preserve Phase411/416 precursor gates.");
   assert(phase417.gammaTraceRankComplex === 16 && phase417.vectorSpinor144KernelComplexDimension === 144 && phase417.vectorSpinor144DimensionCheck === true, "Phase417 must preserve the gamma-trace 10x16=16+144 dimension check.");
   assert(phase417.vectorSpinor144InvariantUnderProbedGenerators === true && phase417.welded144ContentRecovered === true && phase417.weldedDimensionAccounting === true && phase417.smBlockDimensionAccounting === true, "Phase417 must recover invariant SM/welded decomposition accounting.");
-  assert(phase417.internalSmHiggsPatternComplexDimension === 0 && phase417.linearWeldedScalarCountTotal === 0 && phase417.vectorSpinor144LinearCarrierHasNoWeldedScalar === true, "Phase417 cannot report a linear vector-spinor 144 welded scalar SM-Higgs pattern.");
+  assert(phase417.yHalfCalibrationExact === true && phase417.internalSmHiggsPatternComplexDimension === 6 && phase417.linearWeldedScalarCountTotal === 0 && phase417.vectorSpinor144LinearCarrierHasNoWeldedScalar === true, "Phase417 must carry the corrected exact Y^2=1/4 census (6 fermionic SM-Higgs-pattern complex dimensions, 2026-07-01 defect fix) and still no linear welded scalar.");
   assert(phase417.sourceDefinesVectorSpinor144BosonicProjectionMap === false && phase417.sourceDefinesVectorSpinor144CarrierAction === false && phase417.sourceDefinesVectorSpinor144VevSelection === false && phase417.sourceDefinesVectorSpinor144ObservedProjectionRows === false && phase417.sourceDefinesVectorSpinor144WeakAngleScalePoleOrGevLineage === false, "Phase417 must not invent missing vector-spinor 144 bosonic/action/projection/scale data.");
   assert(phase417.sourceDefinedEvenCompositeOrBosonicProjectionMapCount === 0 && phase417.testedSourceDefinedEvenCompositeOrBosonicProjectionMapCount === 0 && phase417.vectorSpinor144StillRequiresBosonicProjectionMap === true, "Phase417 must keep arbitrary non-source-defined vector-spinor composites out of the promotion path.");
   assert(phase417.physicalCouplingProvided === false, "Phase417 derives no coupling.");
@@ -5002,6 +5004,21 @@ if (sourceLineageMissing) {
   assert(phase423.phase201TemplateMutated === false && phase423.fieldsAppliedToPhase201TemplateCount === 0 && phase423.acceptedContractFieldCount === 0, "Phase423 must not mutate or fill the Phase201 template.");
   assert(phase101Package?.zenodoGuRvgSpinorialDarkSectorBosonContractAudit?.zenodoGuRvgSpinorialDarkSectorBosonContractAuditPassed === true, "Phase101 must include the Phase423 Zenodo GU-RVG spinorial dark-sector audit block.");
   assert(phase101Package.zenodoGuRvgSpinorialDarkSectorBosonContractAudit.source?.zenodoRecordId === 20618066 && phase101Package.zenodoGuRvgSpinorialDarkSectorBosonContractAudit.sourceProvidesVectorSpinor144ProjectionMap === false, "Phase101 must preserve Phase423 source identity and projection-map absence.");
+  assert(phase424.vectorSpinor144BilinearSmDoubletIntersectionAnalysisPassed === true, "Phase424 vector-spinor 144 bilinear SM-doublet intersection analysis must pass as fail-closed representation arithmetic.");
+  assert(phase424.targetBlindConstruction === true && phase424.physicalTargetsConsultedForConstruction === false, "Phase424 construction must remain target-blind.");
+  assert(typeof phase424.targetBlindConstructionHash === "string" && phase424.targetBlindConstructionHash.length === 64, "Phase424 must persist a target-blind construction hash.");
+  assert(phase424.applicationSubjectKind === "vector-spinor-144-bilinear-sm-doublet-intersection-analysis", "Phase424 must classify its subject as the vector-spinor 144 bilinear SM-doublet intersection analysis.");
+  assert(phase424.phase417PrecursorPassed === true && phase424.phase422PrecursorPassed === true && phase424.phase411PrecursorPassed === true, "Phase424 must preserve the Phase411/417/422 precursor gates including the corrected |Y|=1/2 calibration.");
+  assert(phase424.analysisInternallyConsistent === true && phase424.characterCapacitiesMatchPhase422 === true && phase424.sixteenCarriesLeptonDoubletYQuarter === true, "Phase424 must verify internal consistency, the exact Y^2=1/4 calibration, and the Phase422 capacity cross-check.");
+  assert(phase424.llIntersectionRealDimension === 0 && phase424.rrIntersectionRealDimension === 0 && phase424.sameChiralityWeldedScalarSmDoubletAbsent === true, "Phase424 must record the same-chirality welded-scalar SM-doublet absence that closes the deferred Phase422 sector.");
+  assert(phase424.majorana16AmbientRecheckSmDoubletAbsent === true, "Phase424 must confirm the corrected Phase411 Majorana verdict with the stronger ambient method.");
+  assert(phase424.vectorSpinor144BilinearCompositeRouteClosed === true, "Phase424 must record the vector-spinor 144 bilinear composite route as closed.");
+  assert(phase424.sourceDefinesVectorSpinor144BilinearProjectionMap === false && phase424.sourceDefinesVectorSpinor144BilinearAction === false && phase424.sourceDefinesVectorSpinor144BilinearVevSelection === false, "Phase424 must not invent missing bosonic projection/action/VEV data.");
+  assert(phase424.sourceContractApplicationAllowed === false && phase424.canFillPhase201WzContract === false && phase424.canFillPhase201HiggsContract === false && phase424.canFillPhase256ObservedFieldExtractionContract === false, "Phase424 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase424.routePromotesWzMasses === false && phase424.routePromotesHiggsMass === false && phase424.routeCompletesBosonPredictions === false, "Phase424 cannot promote boson predictions.");
+  assert(phase424.phase201TemplateMutated === false && phase424.fieldsAppliedToPhase201TemplateCount === 0 && phase424.acceptedContractFieldCount === 0, "Phase424 must not mutate or fill the Phase201 template.");
+  assert(phase101Package?.vectorSpinor144BilinearSmDoubletIntersection?.vectorSpinor144BilinearSmDoubletIntersectionAnalysisPassed === true, "Phase101 must include the Phase424 vector-spinor 144 bilinear SM-doublet intersection block.");
+  assert(phase101Package.vectorSpinor144BilinearSmDoubletIntersection.sameChiralityWeldedScalarSmDoubletAbsent === true && phase101Package.vectorSpinor144BilinearSmDoubletIntersection.vectorSpinor144BilinearCompositeRouteClosed === true, "Phase101 must preserve the Phase424 same-chirality closure verdict.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

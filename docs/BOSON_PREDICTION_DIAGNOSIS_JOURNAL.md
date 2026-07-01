@@ -18200,3 +18200,114 @@ same-chirality vector-spinor bilinear scalar sector, or a separate primary GU
 source with explicit W/Z source rows, photon/W/Z/H projection, Higgs scalar
 source, weak-angle/coupling lineage, pole extraction, and GeV/unit
 normalization.
+
+## 2026-07-01 - Phase424: Vector-Spinor Bilinear SM-Doublet Intersection; |Y|=1/2 Calibration Defect Fixed
+
+### Context
+
+With external sources exhausted for this checkpoint (Phase421/423 negative),
+the loop turned to internal experimentation. Four candidate branches were
+assessed in parallel before implementation:
+
+- (A) the Phase422-deferred direct SM analysis of the 528-dimensional
+  same-chirality welded-scalar sector - selected (decisive, cheap, closes or
+  opens the branch exactly);
+- (B) a Q_{3/2} (192-state) carrier probe - deferred (symmetric-in-kind to
+  Z_{1/2}, weaker source pinning, same missing-bosonic-map wall);
+- (C) deriving Phase418's "external" quartic stabilizer from the action
+  itself - CLOSED NEGATIVE by existing Phase410 data (see below);
+- (D) cross-carrier Z x S bilinear capacities - consolidation only, deferred.
+
+### Candidate C Closure (Phase410 Data Post-Processing)
+
+The hypothesis that the full action's own quartic form, projected on the
+Phase418 triplet/doublet/singlet block menu, could supply the missing
+stabilizer and select the doublet is answered negatively by the committed
+Phase410 pair table (no new computation needed): within-block quartic
+coefficients are TT = 2.25 uniformly (3 pairs) vs DD in [0.5625, 2.25] with
+average 1.125 (6 pairs), and every block-pair class sums to exactly 6.75
+(ST = 0). The action's quartic prefers the triplet at min/avg level, is
+block-symmetric in aggregate, and leaves the rank-1 rays exactly flat - so
+the direction-dependent-coupling branch genuinely requires an external,
+source-defined block law and stabilizer, exactly as Phase418 recorded.
+
+### |Y| = 1/2 Calibration Defect (Found and Fixed 2026-07-01)
+
+While preparing the Phase424 construction, a cross-check of Phase417's own
+recorded SM block census against its headline exposed a defect: the
+Phase411/417 informational SM censuses calibrated the |Y| = 1/2 test value
+as the "smallest Y^2 eigenvalue above 0.05" on the 16. The 16 carries
+Y in {0, +/-1/6, +/-1/3, +/-1/2, +/-2/3, 1}, so the heuristic selected the
+|Y| = 1/3 value 1/9 = 0.111..., not the lepton-doublet value 1/4
+(machine-verified: the 16's Y weights include +/-1/2 exactly; Phase412's
+weight-census method was never affected). Phase411's census additionally
+compared per-Casimir spectra from independent Jacobi diagonalizations
+index-by-index rather than on a joint eigenbasis.
+
+Fixes (both re-run, both still pass):
+
+- Phase417: exact `yHalfValue` (closest eigenvalue to 1/4, asserted within
+  1e-9, gated by new `yHalfCalibrationExact`); corrected census
+  `internalSmHiggsPatternComplexDimension = 6` (was 0): the 144 DOES
+  contain a 6-complex-dimensional color-singlet j_L = 1/2 |Y| = 1/2 block.
+  It is fermionic representation data, not a welded scalar - the linear
+  no-go (`linearWeldedScalarCountTotal = 0`) is unchanged.
+- Phase411: same exact calibration (`majoranaYHalfCalibrationExact`) plus a
+  joint-eigenbasis census (single incommensurate Casimir combination,
+  Rayleigh quotients per operator). Corrected
+  `majoranaSpinZeroSmDoubletCount = 0` - the verdict survives the fix.
+- Gates: Phase202's checklist and the claim-integrity script now assert the
+  corrected value 6 with a dated note.
+
+Impact assessment: no promotion decision depended on either count (both
+were informational, and both phases' pass gates held); the corrected
+Phase417 value strengthens the motivation for the bilinear analysis below.
+
+### Phase424 Result
+
+Phase424 decides the Phase422-deferred question with the Phase412
+ambient-intersection method (strictly stronger than a stable-subspace
+census; covers all statistics projections), on an exact SM-diagonal complex
+kernel basis (gamma-trace frame `A A^dag = 10 I` exact; Cartan residual
+1.2e-10; projector idempotency <= 1e-6). Exact result:
+
+- `Z_L x Z_L`: Vw = 3584, doublet isotypic 1344 real dims,
+  intersection with the welded (0,0) isotypic = 0
+  (top Gram eigenvalue 0.059259 vs required 1.0).
+- `Z_R x Z_R`: identical counts, intersection = 0.
+- `sameChiralityWeldedScalarSmDoubletAbsent=True`: THE 528-DIMENSIONAL
+  SAME-CHIRALITY MAJORANA-LIKE WELDED-SCALAR SECTOR CONTAINS NO SM-DOUBLET.
+- `S_L x S_L` / `S_R x S_R` ambient re-check: intersection = 0 in both -
+  the corrected Phase411 verdict confirmed with a stronger method.
+- Character cross-checks reproduce Phase422's 264/264/0 exactly.
+- An independent NumPy prototype reproduced every count and eigenvalue
+  before the C# study was written (engineering note: the study runs
+  Release in the generator; the dense complex spectral projectors take
+  ~25 min under the Debug JIT vs ~7 min optimized).
+
+Interpretation: the vector-spinor 144 bilinear composite route is CLOSED -
+linear order by Phase417, mixed-chirality Dirac-like bilinears by Phase422,
+same-chirality Majorana-like bilinears by Phase424. Combined with
+Phases 408-415 this closes every probed composite carrier through
+bilinear order and the 16-carrier program through quartic order. No
+Phase201 or Phase256 field is filled; no W/Z/H mass is promoted.
+
+### Validation
+
+- Targeted runs pass: Phase411 (fixed), Phase417 (fixed), Phase424 (new),
+  each with unchanged fail-closed boundaries.
+- Phase424 wired into `generate_validated_boson_predictions.sh` (Release),
+  Phase101 package block, Phase202 checklist item
+  `vector-spinor-144-bilinear-sm-doublet-intersection-analysis-materialized`,
+  the claim-integrity script, and all seven broad-scanner exclusion lists.
+
+### Standing Next Work
+
+The named internal branches are now: the Q_{3/2} (192-state) carrier
+census-level probe and the cross-carrier Z x S bilinear capacity
+consolidation (both expected closure-shaped), plus checkpoint-cadence
+literature monitoring ("Geometric Unity V", the Hebrew University
+dark-energy talk artifact, the unverified "Kleis" lead). Physical progress
+still requires a source-defined bosonic projection/action/VEV law or a new
+primary source with explicit electroweak rows, weak-angle lineage, pole
+extraction, and GeV normalization.

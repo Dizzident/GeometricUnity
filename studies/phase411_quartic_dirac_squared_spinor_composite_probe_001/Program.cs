@@ -936,6 +936,7 @@ bool diracMassChannelClosedForWeldedScalars = leftRightBilinearChannelHasNoWelde
 
 int majoranaSpinZeroSmDoubletCount = -1; // -1 = not computed
 bool majoranaSmAnalysisComputed = false;
+bool majoranaYHalfCalibrationExact = false;
 if (spinZeroLLDirect > 0 && spinZeroLLDirect <= 40)
 {
     // Reconstruct the spin-0 basis of S_L (x) S_L (realified) and decompose
@@ -1117,12 +1118,17 @@ if (spinZeroLLDirect > 0 && spinZeroLLDirect <= 40)
         if (stable)
             break;
     }
-    // SM Casimir decomposition on the stable subspace
-    double[] SpectrumOnU(IEnumerable<double[,]> gens)
+    // Joint SM Casimir census on the stable subspace: diagonalize ONE
+    // incommensurate combination and read every Casimir off the shared
+    // eigenbasis. The pre-2026-06-18 code diagonalized each Casimir
+    // separately (index-matched spectra from independent Jacobi calls) and
+    // calibrated |Y| = 1/2 with a "smallest Y^2 above 0.05" heuristic that
+    // actually selected the |Y| = 1/3 family value 1/9; the 16 carries the
+    // lepton-doublet weights +/-1/2, so the SM-doublet Y^2 value is exactly
+    // 1/4. See the 2026-07-01 journal defect entry.
+    double[,] CasimirMatrixOnU(IEnumerable<double[,]> gens)
     {
         int s = uBasis.Count;
-        if (s == 0)
-            return Array.Empty<double>();
         var casimir = new double[s, s];
         foreach (var a2 in gens)
             for (int k = 0; k < s; k++)
@@ -1136,28 +1142,45 @@ if (spinZeroLLDirect > 0 && spinZeroLLDirect <= 40)
         for (int x = 0; x < s; x++)
             for (int y = 0; y < s; y++)
                 sym[x, y] = 0.5 * (casimir[x, y] + casimir[y, x]);
-        var (ev, _) = Jacobi(sym);
-        return ev;
+        return sym;
     }
-    var su2LSpec = SpectrumOnU(su2LOn16.Select(SmOnCarrierReal));
-    var ySpec = SpectrumOnU(new[] { SmOnCarrierReal(hyperchargeOn16) });
-    var colorSpec = SpectrumOnU(colorOn16.Select(SmOnCarrierReal));
-    // calibration on the 16 itself (realified): doublet j_L = 1/2 value and
-    // |Y| = 1/2 value from the known family content.
     var calSu2L = CasimirReal(su2LOn16);
     var (calEvL, _) = Jacobi(calSu2L);
     double jHalfValue = calEvL.Max();
     var calY = CasimirReal(new[] { hyperchargeOn16 });
     var (calEvY, _) = Jacobi(calY);
-    double yHalfValue = calEvY.Where(v => v > 0.05).DefaultIfEmpty(0.0).Min();
+    double yHalfValue = calEvY.OrderBy(v => System.Math.Abs(v - 0.25)).First();
+    majoranaYHalfCalibrationExact = System.Math.Abs(yHalfValue - 0.25) <= 1e-9;
     int count = 0;
-    for (int k = 0; k < uBasis.Count; k++)
+    if (uBasis.Count > 0)
     {
-        bool jHalf = System.Math.Abs(su2LSpec[k] - jHalfValue) <= 1e-6;
-        bool yHalf = System.Math.Abs(ySpec[k] - yHalfValue) <= 1e-6;
-        bool colorSinglet = System.Math.Abs(colorSpec[k]) <= 1e-6;
-        if (jHalf && yHalf && colorSinglet)
-            count++;
+        int s = uBasis.Count;
+        var cLU = CasimirMatrixOnU(su2LOn16.Select(SmOnCarrierReal));
+        var cYU = CasimirMatrixOnU(new[] { SmOnCarrierReal(hyperchargeOn16) });
+        var cColU = CasimirMatrixOnU(colorOn16.Select(SmOnCarrierReal));
+        var combined = new double[s, s];
+        const double m1 = 0.318309886183790671;
+        const double m2 = 0.159154943091895335;
+        for (int x = 0; x < s; x++)
+            for (int y = 0; y < s; y++)
+                combined[x, y] = cLU[x, y] + m1 * cYU[x, y] + m2 * cColU[x, y];
+        var (_, vecJ) = Jacobi(combined);
+        double Quad(double[,] op, int col)
+        {
+            double sum = 0.0;
+            for (int x = 0; x < s; x++)
+                for (int y = 0; y < s; y++)
+                    sum += vecJ[x, col] * op[x, y] * vecJ[y, col];
+            return sum;
+        }
+        for (int e = 0; e < s; e++)
+        {
+            bool jHalf = System.Math.Abs(Quad(cLU, e) - jHalfValue) <= 1e-6;
+            bool yHalf = System.Math.Abs(Quad(cYU, e) - yHalfValue) <= 1e-6;
+            bool colorSinglet = System.Math.Abs(Quad(cColU, e)) <= 1e-6;
+            if (jHalf && yHalf && colorSinglet)
+                count++;
+        }
     }
     majoranaSpinZeroSmDoubletCount = count;
     majoranaSmAnalysisComputed = true;
@@ -1165,7 +1188,7 @@ if (spinZeroLLDirect > 0 && spinZeroLLDirect <= 40)
 
 bool spinorBilinearSpinZeroDoubletAbsent =
     leftRightBilinearChannelHasNoWeldedScalar &&
-    (!majoranaSmAnalysisComputed || majoranaSpinZeroSmDoubletCount == 0) &&
+    (!majoranaSmAnalysisComputed || (majoranaSpinZeroSmDoubletCount == 0 && majoranaYHalfCalibrationExact)) &&
     (spinZeroLLDirect == 0 || majoranaSmAnalysisComputed);
 
 // ---------------------------------------------------------------------------
@@ -1269,6 +1292,7 @@ var result = new
     leftRightBilinearChannelHasNoWeldedScalar,
     diracMassChannelClosedForWeldedScalars,
     majoranaSmAnalysisComputed,
+    majoranaYHalfCalibrationExact,
     majoranaSpinZeroSmDoubletCount,
     spinorBilinearSpinZeroDoubletAbsent,
     quarticSpinZeroCountLRLR = quarticSpinZeroLRLR,
@@ -1347,7 +1371,7 @@ Console.WriteLine($"S_L content=[{string.Join(",", contentL.Select(t => $"({t.J1
 Console.WriteLine($"S_R content=[{string.Join(",", contentR.Select(t => $"({t.J1},{t.J2})x{t.Multiplicity}"))}] characterMatch={contentRMatchesCharacter}");
 Console.WriteLine($"spinZero: DiracMass(LR)={spinZeroLR} MajoranaLL={spinZeroLL} (direct {spinZeroLLDirect}, match={majoranaChannelDirectCheckMatches}) MajoranaRR={spinZeroRR}");
 Console.WriteLine($"leftRightBilinearChannelHasNoWeldedScalar={leftRightBilinearChannelHasNoWeldedScalar}");
-Console.WriteLine($"majoranaSmAnalysisComputed={majoranaSmAnalysisComputed} majoranaSpinZeroSmDoubletCount={majoranaSpinZeroSmDoubletCount}");
+Console.WriteLine($"majoranaSmAnalysisComputed={majoranaSmAnalysisComputed} majoranaYHalfCalibrationExact={majoranaYHalfCalibrationExact} majoranaSpinZeroSmDoubletCount={majoranaSpinZeroSmDoubletCount}");
 Console.WriteLine($"spinorBilinearSpinZeroDoubletAbsent={spinorBilinearSpinZeroDoubletAbsent}");
 Console.WriteLine($"quarticSpinZero: (LR)^2={quarticSpinZeroLRLR} (LL)^2={quarticSpinZeroLLLL} (SM-stable analysis = named remaining order)");
 Console.WriteLine($"canFillPhase201WzContract={canFillPhase201WzContract}");

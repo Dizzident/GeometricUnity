@@ -35,13 +35,15 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase423 work (and the 2026-06-12
-platform fix - GPU parity defect root-caused and discharged):
+Current gate status after the Phase424 work (plus the 2026-06-12 platform
+fix - GPU parity defect root-caused and discharged - and the 2026-07-01
+|Y|=1/2 calibration defect fix in the Phase411/417 informational SM
+censuses):
 
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=216`,
+  `objectiveAchieved=False`, `checklistPassedCount=217`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -250,13 +252,17 @@ platform fix - GPU parity defect root-caused and discharged):
   `sourcePinnedUnobservedWeldedScalarSmDoubletCandidateCount=0`,
   `unobservedPhaseStillRequiresBosonicMap=True`,
   `vectorSpinor144RemainsConcreteNextCarrier=True`
-- Phase417:
+- Phase417 (re-run 2026-07-01 with the exact |Y|=1/2 calibration fix):
   `vectorSpinor144DecompositionProbePassed=True`,
   `gammaTraceRankComplex=16`,
   `vectorSpinor144KernelComplexDimension=144`,
   `vectorSpinor144DimensionCheck=True`,
   `vectorSpinor144InvariantUnderProbedGenerators=True`,
-  `internalSmHiggsPatternComplexDimension=0`,
+  `yHalfCalibrationExact=True`,
+  `internalSmHiggsPatternComplexDimension=6` (CORRECTED from the pre-fix 0:
+  the old ">0.05" heuristic tested |Y|=1/3; the 144 does contain a
+  6-complex-dim color-singlet j_L=1/2 |Y|=1/2 FERMIONIC block - it is not
+  a welded scalar, so the linear no-go stands),
   `linearWeldedScalarCountTotal=0`,
   `vectorSpinor144StillRequiresBosonicProjectionMap=True`
 - Phase418:
@@ -321,6 +327,18 @@ platform fix - GPU parity defect root-caused and discharged):
   `sourceProvidesGeVUnitNormalization=False`,
   `canFillPhase201WzContract=False`,
   `canFillPhase256ObservedFieldExtractionContract=False`
+- Phase424:
+  `vectorSpinor144BilinearSmDoubletIntersectionAnalysisPassed=True`,
+  `llIntersectionRealDimension=0`, `rrIntersectionRealDimension=0`
+  (candidate weight sectors 3584 each, doublet isotypics 1344 real dims
+  each, top Gram eigenvalues 0.059259 vs the required 1.0),
+  `sameChiralityWeldedScalarSmDoubletAbsent=True`,
+  `majorana16AmbientRecheckSmDoubletAbsent=True` (corrected Phase411
+  verdict confirmed by the strictly stronger ambient method),
+  `vectorSpinor144BilinearCompositeRouteClosed=True`,
+  `characterCapacitiesMatchPhase422=True` (264/264/0),
+  `canFillPhase201WzContract=False`,
+  `canFillPhase256ObservedFieldExtractionContract=False`
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -341,7 +359,48 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work added Phase423, the June 2026 Zenodo GU-RVG spinorial
+The latest work (2026-07-01) added Phase424, the vector-spinor `144`
+bilinear SM-doublet intersection analysis, deciding the question Phase422
+explicitly deferred. Using the Phase412 ambient-intersection method
+(strictly stronger than a stable-subspace census; covers all statistics
+projections) on an exact SM-diagonal complex kernel basis (gamma-trace
+frame `A A^dag = 10 I` exact, Cartan residual `1.2e-10`, projector
+idempotency `<= 1e-6`), it shows the 528-dimensional same-chirality
+Majorana-like welded-scalar sector contains NO SM-doublet state:
+`Z_L x Z_L` and `Z_R x Z_R` each have candidate weight sector `3584`,
+doublet isotypic `1344` real dims, and intersection ZERO with top Gram
+eigenvalues `0.059259` vs the required `1.0`. With Phase417 (linear) and
+Phase422 (mixed-chirality) this CLOSES the vector-spinor `144` bilinear
+composite route. The same run confirms the corrected Phase411 Majorana
+verdict on the observed `2 x 16` channels (intersection zero in both) and
+cross-checks Phase422's capacities by character arithmetic (264/264/0
+exact). An independent NumPy prototype reproduced every count and
+eigenvalue first. The phase runs Release in the generator (~7 min vs
+~25 min under the Debug JIT). Study:
+`studies/phase424_vector_spinor_144_bilinear_sm_doublet_intersection_001`
+(IMPLEMENTATION_P424.md).
+
+The same session found and fixed the |Y|=1/2 CALIBRATION DEFECT in the
+Phase411/417 informational SM censuses: both calibrated |Y|=1/2 as the
+"smallest Y^2 eigenvalue above 0.05" on the 16, which selects the |Y|=1/3
+family value 1/9, not the lepton-doublet value 1/4 (the 16's Y weights
+include +/-1/2 exactly; Phase412's weight-census method was never
+affected). After the fix (exact Y^2=1/4, asserted to 1e-9; Phase411 also
+moved to a joint-eigenbasis census), Phase417 reports
+`internalSmHiggsPatternComplexDimension=6` (a fermionic block, not a
+welded scalar - the linear no-go is unchanged) and Phase411 keeps
+`majoranaSpinZeroSmDoubletCount=0`. No promotion decision depended on
+either count. Phase202 and the claim-integrity script assert the corrected
+values with dated notes; see the 2026-07-01 journal entry.
+
+The session also CLOSED exploration candidate C (deriving Phase418's
+"external" quartic stabilizer from the action itself) using committed
+Phase410 pair-table data alone: within-block quartics are TT=2.25 uniform
+vs DD min 0.5625 / avg 1.125, block sums exactly symmetric (6.75), rank-1
+rays exactly flat - the action's own quartic cannot select the doublet, so
+Phase418's external-stabilizer requirement is genuine.
+
+Before that, the work added Phase423, the June 2026 Zenodo GU-RVG spinorial
 dark-sector boson contract audit for DOI `10.5281/zenodo.20618066`. It records
 the PDF (`1647698` bytes,
 `md5:da23008825cf90eb89138b5c560ef47f`), supplemental ZIP (`1556360` bytes,
@@ -504,7 +563,9 @@ conventions as Phases407/411. Exact result:
 `vectorSpinor144KernelComplexDimension=144`,
 `vectorSpinor144DimensionCheck=True`,
 `vectorSpinor144InvariantUnderProbedGenerators=True`,
-`internalSmHiggsPatternComplexDimension=0`,
+`internalSmHiggsPatternComplexDimension=6` (the value originally recorded
+here as 0 was a |Y|=1/2 calibration defect, fixed and re-run 2026-07-01 -
+the block is fermionic representation data, not a welded scalar),
 `linearWeldedScalarCountTotal=0`,
 `vectorSpinor144LinearCarrierHasNoWeldedScalar=True`, and
 `sourceDefinedEvenCompositeOrBosonicProjectionMapCount=0`. The vector-spinor
@@ -695,10 +756,12 @@ HONEST BOUNDARY. Study:
 
 ### Integration Points Already Updated
 
-Phase423 (like Phase388-422) is wired into:
+Phase424 (like Phase388-423) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (single broad pass; the
-  older duplicated final sweep was removed on 2026-06-16)
+  older duplicated final sweep was removed on 2026-06-16; the Phase424 line
+  uses `dotnet run -c Release` because its dense complex spectral
+  projectors take ~25 min under the Debug JIT vs ~7 min optimized)
 - `studies/phase101_boson_prediction_package_001/Program.cs`
 - `studies/phase202_boson_objective_completion_audit_001/Program.cs`
   (checklist items
@@ -706,8 +769,12 @@ Phase423 (like Phase388-422) is wired into:
   `naive-curvature-mass-scale-sanity-check-materialized` and
   `cox-gu-iv-v2-lcdm-rig-boson-contract-audit-materialized` and
   `vector-spinor-144-bilinear-scalar-capacity-audit-materialized` and
-  `zenodo-gu-rvg-spinorial-dark-sector-boson-contract-audit-materialized`)
-- `scripts/verify_boson_claim_integrity.sh`
+  `zenodo-gu-rvg-spinorial-dark-sector-boson-contract-audit-materialized` and
+  `vector-spinor-144-bilinear-sm-doublet-intersection-analysis-materialized`;
+  the Phase417 checklist row now asserts the corrected
+  `yHalfCalibrationExact=True` and `internalSmHiggsPatternComplexDimension=6`)
+- `scripts/verify_boson_claim_integrity.sh` (Phase424 asserts plus the
+  corrected Phase417 census assert)
 - Broad scanner exclusions: phase204, phase205, phase207, phase279,
   phase281, phase295, phase296
 
@@ -745,6 +812,7 @@ dotnet run --project studies/phase420_naive_curvature_mass_scale_sanity_check_00
 dotnet run --project studies/phase421_cox_gu_iv_v2_lcdm_rig_boson_contract_audit_001/Phase421CoxGuIvV2LcdmRigBosonContractAudit.csproj
 dotnet run --project studies/phase422_vector_spinor_144_bilinear_scalar_capacity_audit_001/Phase422VectorSpinor144BilinearScalarCapacityAudit.csproj
 dotnet run --project studies/phase423_zenodo_gu_rvg_spinorial_dark_sector_boson_contract_audit_001/Phase423ZenodoGuRvgSpinorialDarkSectorBosonContractAudit.csproj
+dotnet run -c Release --project studies/phase424_vector_spinor_144_bilinear_sm_doublet_intersection_001/Phase424VectorSpinor144BilinearSmDoubletIntersection.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
@@ -753,11 +821,13 @@ dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase
 PHASE405_ENABLE_GPU=1 LD_LIBRARY_PATH=native/build dotnet run --project studies/phase405_vacuum_manifold_doublet_vev_orbit_scan_001/Phase405VacuumManifoldDoubletVevOrbitScan.csproj
 ```
 
-The targeted Phase423 run passes and preserves the fail-closed source boundary;
-Phase202 now reports `checklistPassedCount=216`, `checklistFailedCount=3`; claim
-integrity verifies Phase423 with `promotedPhysicalMassClaimCount=0`. The full direct
-`./scripts/generate_validated_boson_predictions.sh` pass completed with
-Phase423 included and ended at `boson-claim-integrity-verified`. (Platform
+The targeted Phase424 run passes (Release, ~7 min) and preserves the
+fail-closed boundary; the fixed Phase411/Phase417 re-runs pass with their
+corrected censuses; Phase202 now reports `checklistPassedCount=217`,
+`checklistFailedCount=3`; claim integrity verifies Phase424 (and the
+corrected Phase417 values) with `promotedPhysicalMassClaimCount=0`. The full
+direct `./scripts/generate_validated_boson_predictions.sh` pass completed
+with Phase424 included and ended at `boson-claim-integrity-verified`. (Platform
 state: Gu.Interop.Tests 158/158 with the real-mesh parity and
 buffer-handle recycling tests; both Phase405 platform notes discharged
 2026-06-12.) All seven broad scanners still report zero intake-ready
@@ -856,16 +926,18 @@ The most useful next branches are:
    doublet only by adding a non-source-defined block mass law and quartic
    stabilizer. Further progress requires a source-defined curvature kernel,
    stabilizer, sign/scale, and observed-field extraction.
-   - Vector-spinor `144` decomposition / composite probe: DONE through the
-     bilinear scalar-capacity boundary by Phases417 and 422. Phase417 shows
-     the source-pinned `Z_{1/2}` carrier's `144` has exact kernel dimension,
-     no internal SM-Higgs-pattern block, and no linear welded scalar. Phase422
-     then closes the mixed-chirality Dirac-like bilinear scalar channel
-     (`Z_L x Z_R = 0`) while preserving a same-chirality Majorana-like
-     welded-scalar capacity (`264 + 264 = 528`). That is only a capacity
-     result; further progress from this branch requires a source-defined
-     bosonic projection map, action, VEV selection rule, and/or direct
-     SM-stable decomposition of the large same-chirality scalar sector.
+   - Vector-spinor `144` decomposition / composite probe: CLOSED through
+     bilinear order by Phases417, 422, and 424. Phase417 shows the
+     source-pinned `Z_{1/2}` carrier's `144` has exact kernel dimension, a
+     6-complex-dim fermionic SM-Higgs-pattern block (corrected 2026-07-01),
+     and no linear welded scalar. Phase422 closes the mixed-chirality
+     Dirac-like bilinear scalar channel (`Z_L x Z_R = 0`). Phase424 then
+     decides the deferred same-chirality question: the 528-dim
+     Majorana-like welded-scalar sector contains NO SM-doublet (ambient
+     intersection zero in both channels, top Gram eigenvalue 0.059259).
+     Further progress from this branch requires a genuinely new
+     source-defined bosonic projection map, action, or VEV selection rule -
+     no internal decomposition question remains at bilinear order.
    - Unobserved-phase carrier census: DONE at source-pinned linear-carrier
      level by Phase416. The current sources define dark fermionic carriers but
      no linear bosonic spin-zero SM-doublet carrier or projection map.
@@ -939,15 +1011,25 @@ The most useful next branches are:
    Weyl half are source-defined fermionic carriers, but none is a linear
    bosonic spin-zero SM-doublet carrier and no bosonic map/action is
    supplied. Phase417 then decomposed the `Z` vector-spinor `144` itself:
-   the gamma-trace split is exact, the internal SM-Higgs-pattern count is
-   zero, and the chiral `2 x 144` carrier has no linear welded scalar.
+   the gamma-trace split is exact, the internal SM-Higgs-pattern census
+   holds a 6-complex-dim fermionic block (corrected 2026-07-01 after the
+   |Y|=1/2 calibration defect fix; originally misrecorded as zero), and the
+   chiral `2 x 144` carrier has no linear welded scalar.
    Phase422 then characterized the bilinear boundary: the mixed-chirality
    Dirac-like `Z_L x Z_R` scalar channel is closed, while same-chirality
-   Majorana-like channels have 528 welded-scalar capacity but still lack a
-   source projection map and direct SM-stable observed-field extraction.
+   Majorana-like channels have 528 welded-scalar capacity. Phase424 then
+   DECIDED that deferred sector: the ambient intersection of the SM-doublet
+   isotypic with the welded-scalar isotypic is ZERO in both same-chirality
+   channels (top Gram eigenvalue 0.059259 vs required 1.0) - the
+   vector-spinor `144` bilinear composite route is CLOSED, and the corrected
+   Phase411 Majorana verdict is confirmed by the same stronger method.
    Phase418 then showed that direction-dependent block laws can select the
    doublet only after adding a non-source-defined block mass law and quartic
-   stabilizer; pure block-weighted quadratics still run away. Phase419 then
+   stabilizer; pure block-weighted quadratics still run away (and the
+   2026-07-01 Phase410 pair-table post-processing shows the action's own
+   quartic cannot supply that stabilizer: TT=2.25 uniform vs DD avg 1.125,
+   block sums exactly symmetric - the external requirement is genuine).
+   Phase419 then
    materialized the FMS/dressing-style observed-field projection template:
    photon, W, Z, and Higgs rows are now explicit symbolic requirements, but no
    source-defined Phase256 field is supplied. Phase420 then closed the naive
@@ -955,13 +1037,17 @@ The most useful next branches are:
    scalar curvature, and the repaired squared-mass reading supplies no unit,
    VEV, particle-row, pole, or GeV lineage. THE INTERNAL
    STRUCTURAL PROGRAM IS AT ITS HONEST BOUNDARY, NOW WITH NAMED ROUTES:
-   a source-defined vector-spinor/composite bosonic projection map plus
-   same-chirality scalar-sector decomposition, a
+   a source-defined vector-spinor/composite bosonic projection map (the
+   same-chirality scalar-sector decomposition itself is DONE and negative,
+   Phase424), a
    source-defined direction-dependent curvature kernel with stabilizer and
    scale, a source-defined observed-field extraction theorem filling the
    Phase419 template, a source-defined curvature-to-electroweak scale law
    satisfying Phase420's missing specification fields, or a new primary-source
-   specification. Standing work:
+   specification. Remaining census-level internal candidates (both expected
+   closure-shaped): a Q_{3/2} (192-state) carrier probe mirroring
+   Phase417/422/424, and a cross-carrier `Z x S` bilinear capacity
+   consolidation. Standing work:
    literature monitoring at checkpoint
    cadence; the epsilon/Shiab route if a quantitative specification
    appears.
@@ -1010,15 +1096,14 @@ Run these first:
 ```bash
 git status --short
 git log -3 --oneline
-tail -120 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase423|zenodoGuRvgSpinorialDarkSectorBosonContractAudit|Phase422|vectorSpinor144BilinearScalarCapacityAudit|Phase421|coxGuIvV2LcdmRigBosonContractAudit|ZENODO-20618066|COX-GU-IV-V2" \
+tail -160 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
+rg -n "Phase424|vectorSpinor144BilinearSmDoubletIntersection|yHalfCalibrationExact|majoranaYHalfCalibrationExact|Phase423|zenodoGuRvgSpinorialDarkSectorBosonContractAudit|Phase422|vectorSpinor144BilinearScalarCapacityAudit" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
   docs/Reference/ExperimentReferences/GU-DRAFT-2021.md \
   docs/Reference/ExperimentReferences/ZENODO-20618066-GURVG-SPINORIAL-DARK-SECTOR.md \
-  docs/Reference/ExperimentReferences/COX-GU-IV-V2-17402261.md \
+  studies/phase424_vector_spinor_144_bilinear_sm_doublet_intersection_001 \
   studies/phase423_zenodo_gu_rvg_spinorial_dark_sector_boson_contract_audit_001 \
   studies/phase422_vector_spinor_144_bilinear_scalar_capacity_audit_001 \
-  studies/phase421_cox_gu_iv_v2_lcdm_rig_boson_contract_audit_001 \
   studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
 ```
 
@@ -1031,11 +1116,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase423 output JSON files, and commit a checkpoint
-after validation.
+force-add the ignored Phase424 output JSON files (plus the re-run
+Phase411/417 outputs), and commit a checkpoint after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase423 GU-RVG spinorial dark-sector audit
+Add phase424 bilinear SM-doublet intersection; fix Y calibration
 ```

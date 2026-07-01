@@ -62,14 +62,25 @@ mirrors are merely search aids or can support promotion-ready claims.
 - Supported Phase417's vector-spinor `144` decomposition probe. The phase
   constructs the `10 x 16 -> 16 + 144` gamma-trace split directly, decomposes
   the `144` under the SM and welded-spin actions, and records that the chiral
-  `2 x 144` carrier supplies no linear welded scalar. The draft still supplies
-  no bosonic projection/action/VEV map or observed W/Z/H extraction rows.
+  `2 x 144` carrier supplies no linear welded scalar. The 2026-07-01
+  calibration fix corrected its informational census: the `144` carries a
+  6-complex-dim color-singlet `j_L=1/2` `|Y|=1/2` FERMIONIC block
+  (`internalSmHiggsPatternComplexDimension=6`, previously misrecorded as 0
+  by a `|Y|=1/3` threshold defect); the linear no-go is unchanged. The
+  draft still supplies no bosonic projection/action/VEV map or observed
+  W/Z/H extraction rows.
 - Supported Phase422's vector-spinor `144` bilinear scalar-capacity audit. The
   phase uses the same source-pinned `Z_{1/2}` vector-spinor content from
   Phase417, closes the mixed-chirality Dirac-like scalar channel, and records
   same-chirality Majorana-like welded-scalar capacity (`264 + 264 = 528`) as
   candidate-only. The draft still supplies no source-defined projection map,
   action, VEV rule, observed-field rows, pole extraction, or GeV normalization.
+- Supported Phase424's vector-spinor `144` bilinear SM-doublet intersection
+  analysis, which decided Phase422's deferred question: the 528-dimensional
+  same-chirality welded-scalar sector contains NO SM-doublet state (ambient
+  intersection zero in both channels, top Gram eigenvalue 0.059259 vs the
+  required 1.0). The draft-backed vector-spinor bilinear composite route is
+  closed at linear, mixed-chirality, and same-chirality bilinear order.
 - Supported Phase418's direction-dependent curvature/VEV coupling scan only as
   context for the missing scalar-sector/curvature branch. The phase shows that
   residual-gauge block laws can select the doublet after adding a stabilizer,
@@ -96,16 +107,16 @@ The source remains necessary context, not sufficient prediction evidence.
   theta_omega or boson mass bridge law.
 - Any future promotion attempt must cite exact equations and show replayable
   source-lineage fields.
-- After Phase422, the draft-backed vector-spinor branch is characterized
-  through the bilinear scalar-capacity boundary: linear scalar extraction is
-  closed, the mixed-chirality bilinear scalar route is closed, and the
-  same-chirality scalar capacity remains candidate-only until a source-defined
-  projection/action/VEV map or direct SM-stable observed-field extraction is
-  supplied. The minimal direction-dependent curvature workbench has also named
-  its extra source law requirement. Further progress from this source requires
-  a source-defined bosonic projection/composite map, action, VEV selection
-  rule, direction-dependent curvature kernel/stabilizer, or observed-field
-  extraction theorem.
+- After Phase424, the draft-backed vector-spinor branch is CLOSED through
+  bilinear order: linear scalar extraction is closed (Phase417), the
+  mixed-chirality bilinear scalar route is closed (Phase422), and the
+  same-chirality scalar sector carries no SM-doublet (Phase424). The minimal
+  direction-dependent curvature workbench has also named its extra source
+  law requirement (and the 2026-07-01 Phase410 pair-table post-processing
+  shows the action's own quartic cannot supply it). Further progress from
+  this source requires a source-defined bosonic projection/composite map,
+  action, VEV selection rule, direction-dependent curvature
+  kernel/stabilizer, or observed-field extraction theorem.
 
 ## Phase402 Dictionary Audit (2026-06-11)
 

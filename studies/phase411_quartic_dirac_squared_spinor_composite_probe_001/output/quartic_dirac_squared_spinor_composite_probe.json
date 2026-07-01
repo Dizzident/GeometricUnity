@@ -1,6 +1,6 @@
 {
   "phaseId": "phase411-quartic-dirac-squared-spinor-composite-probe",
-  "generatedAt": "2026-06-18T12:57:34.7464193+00:00",
+  "generatedAt": "2026-07-01T21:37:25.2130813+00:00",
   "terminalStatus": "spinor-bilinear-channels-carry-no-welded-scalar-sm-doublet",
   "quarticDiracSquaredSpinorCompositeProbePassed": true,
   "phase409PrecursorPassed": true,
@@ -86,6 +86,7 @@
   "leftRightBilinearChannelHasNoWeldedScalar": true,
   "diracMassChannelClosedForWeldedScalars": true,
   "majoranaSmAnalysisComputed": true,
+  "majoranaYHalfCalibrationExact": true,
   "majoranaSpinZeroSmDoubletCount": 0,
   "spinorBilinearSpinZeroDoubletAbsent": true,
   "quarticSpinZeroCountLRLR": 9632,

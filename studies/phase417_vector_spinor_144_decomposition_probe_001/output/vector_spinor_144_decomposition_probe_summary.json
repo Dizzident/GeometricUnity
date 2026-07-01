@@ -1,6 +1,6 @@
 {
   "phaseId": "phase417-vector-spinor-144-decomposition-probe",
-  "generatedAt": "2026-06-18T13:13:41.8339492+00:00",
+  "generatedAt": "2026-07-01T21:53:16.3530776+00:00",
   "terminalStatus": "vector-spinor-144-decomposed-linear-carrier-no-welded-scalar-map-still-missing",
   "vectorSpinor144DecompositionProbePassed": true,
   "phase411PrecursorPassed": true,
@@ -90,7 +90,7 @@
       "su2LCasimir": 0,
       "ySquared": 1,
       "jL": 0,
-      "absYRelativeToHalf": 1.4999999999999998
+      "absYRelativeToHalf": 1
     },
     {
       "dimension": 12,
@@ -98,7 +98,7 @@
       "su2LCasimir": 0.75,
       "ySquared": 0.25,
       "jL": 0.5,
-      "absYRelativeToHalf": 0.7499999999999999
+      "absYRelativeToHalf": 0.5
     },
     {
       "dimension": 4,
@@ -106,7 +106,7 @@
       "su2LCasimir": 0.75,
       "ySquared": 2.25,
       "jL": 0.5,
-      "absYRelativeToHalf": 2.25
+      "absYRelativeToHalf": 1.5
     },
     {
       "dimension": 6,
@@ -122,7 +122,7 @@
       "su2LCasimir": 2,
       "ySquared": 1,
       "jL": 1,
-      "absYRelativeToHalf": 1.4999999999999998
+      "absYRelativeToHalf": 1
     },
     {
       "dimension": 18,
@@ -130,7 +130,7 @@
       "su2LCasimir": 0,
       "ySquared": 0.1111111,
       "jL": 0,
-      "absYRelativeToHalf": 0.4999999749999993
+      "absYRelativeToHalf": 0.33333331666666627
     },
     {
       "dimension": 12,
@@ -138,7 +138,7 @@
       "su2LCasimir": 0,
       "ySquared": 0.4444444,
       "jL": 0,
-      "absYRelativeToHalf": 0.9999999499999986
+      "absYRelativeToHalf": 0.6666666333333325
     },
     {
       "dimension": 6,
@@ -146,7 +146,7 @@
       "su2LCasimir": -0,
       "ySquared": 1.7777778,
       "jL": 0,
-      "absYRelativeToHalf": 2.0000000124999997
+      "absYRelativeToHalf": 1.3333333416666666
     },
     {
       "dimension": 36,
@@ -154,7 +154,7 @@
       "su2LCasimir": 0.75,
       "ySquared": 0.0277778,
       "jL": 0.5,
-      "absYRelativeToHalf": 0.25000009999997996
+      "absYRelativeToHalf": 0.16666673333332
     },
     {
       "dimension": 24,
@@ -162,7 +162,7 @@
       "su2LCasimir": 0.75,
       "ySquared": 0.6944444,
       "jL": 0.5,
-      "absYRelativeToHalf": 1.2499999599999994
+      "absYRelativeToHalf": 0.8333333066666662
     },
     {
       "dimension": 12,
@@ -170,7 +170,7 @@
       "su2LCasimir": 0.75,
       "ySquared": 1.3611111,
       "jL": 0.5,
-      "absYRelativeToHalf": 1.7499999928571426
+      "absYRelativeToHalf": 1.1666666619047619
     },
     {
       "dimension": 18,
@@ -178,7 +178,7 @@
       "su2LCasimir": 2,
       "ySquared": 0.1111111,
       "jL": 1,
-      "absYRelativeToHalf": 0.4999999749999993
+      "absYRelativeToHalf": 0.33333331666666627
     },
     {
       "dimension": 18,
@@ -186,7 +186,7 @@
       "su2LCasimir": 2,
       "ySquared": 0.4444444,
       "jL": 1,
-      "absYRelativeToHalf": 0.9999999499999986
+      "absYRelativeToHalf": 0.6666666333333325
     },
     {
       "dimension": 16,
@@ -202,7 +202,7 @@
       "su2LCasimir": 0,
       "ySquared": 1,
       "jL": 0,
-      "absYRelativeToHalf": 1.4999999999999998
+      "absYRelativeToHalf": 1
     },
     {
       "dimension": 32,
@@ -210,7 +210,7 @@
       "su2LCasimir": 0.75,
       "ySquared": 0.25,
       "jL": 0.5,
-      "absYRelativeToHalf": 0.7499999999999999
+      "absYRelativeToHalf": 0.5
     },
     {
       "dimension": 12,
@@ -218,7 +218,7 @@
       "su2LCasimir": 0,
       "ySquared": 0.1111111,
       "jL": 0,
-      "absYRelativeToHalf": 0.4999999749999993
+      "absYRelativeToHalf": 0.33333331666666627
     },
     {
       "dimension": 12,
@@ -226,7 +226,7 @@
       "su2LCasimir": 0,
       "ySquared": 0.4444444,
       "jL": 0,
-      "absYRelativeToHalf": 0.9999999499999986
+      "absYRelativeToHalf": 0.6666666333333325
     },
     {
       "dimension": 24,
@@ -234,11 +234,13 @@
       "su2LCasimir": 0.75,
       "ySquared": 0.0277778,
       "jL": 0.5,
-      "absYRelativeToHalf": 0.25000009999997996
+      "absYRelativeToHalf": 0.16666673333332
     }
   ],
-  "internalSmHiggsPatternRealDimension": 0,
-  "internalSmHiggsPatternComplexDimension": 0,
+  "yHalfValueSquared": 0.25,
+  "yHalfCalibrationExact": true,
+  "internalSmHiggsPatternRealDimension": 12,
+  "internalSmHiggsPatternComplexDimension": 6,
   "zCarrierLeftWeldedContent": [
     {
       "j1": 0.5,

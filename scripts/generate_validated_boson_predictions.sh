@@ -292,6 +292,9 @@ dotnet run --project studies/phase420_naive_curvature_mass_scale_sanity_check_00
 dotnet run --project studies/phase421_cox_gu_iv_v2_lcdm_rig_boson_contract_audit_001/Phase421CoxGuIvV2LcdmRigBosonContractAudit.csproj
 dotnet run --project studies/phase422_vector_spinor_144_bilinear_scalar_capacity_audit_001/Phase422VectorSpinor144BilinearScalarCapacityAudit.csproj
 dotnet run --project studies/phase423_zenodo_gu_rvg_spinorial_dark_sector_boson_contract_audit_001/Phase423ZenodoGuRvgSpinorialDarkSectorBosonContractAudit.csproj
+# Phase424 runs Release: its dense complex-matrix spectral projectors are
+# ~25 min in Debug JIT vs a few minutes with optimizations enabled.
+dotnet run -c Release --project studies/phase424_vector_spinor_144_bilinear_sm_doublet_intersection_001/Phase424VectorSpinor144BilinearSmDoubletIntersection.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 
