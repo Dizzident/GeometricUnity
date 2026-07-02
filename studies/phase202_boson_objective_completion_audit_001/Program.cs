@@ -191,6 +191,7 @@ const string Phase422Path = "studies/phase422_vector_spinor_144_bilinear_scalar_
 const string Phase423Path = "studies/phase423_zenodo_gu_rvg_spinorial_dark_sector_boson_contract_audit_001/output/zenodo_gu_rvg_spinorial_dark_sector_boson_contract_audit_summary.json";
 const string Phase424Path = "studies/phase424_vector_spinor_144_bilinear_sm_doublet_intersection_001/output/vector_spinor_144_bilinear_sm_doublet_intersection_summary.json";
 const string Phase425Path = "studies/phase425_cross_carrier_bilinear_sm_doublet_completion_audit_001/output/cross_carrier_bilinear_sm_doublet_completion_audit_summary.json";
+const string Phase426Path = "studies/phase426_cox_gu_series_boson_contract_audit_001/output/cox_gu_series_boson_contract_audit_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -415,6 +416,7 @@ using var phase422 = File.Exists(Phase422Path) ? JsonDocument.Parse(File.ReadAll
 using var phase423 = File.Exists(Phase423Path) ? JsonDocument.Parse(File.ReadAllText(Phase423Path)) : null;
 using var phase424 = File.Exists(Phase424Path) ? JsonDocument.Parse(File.ReadAllText(Phase424Path)) : null;
 using var phase425 = File.Exists(Phase425Path) ? JsonDocument.Parse(File.ReadAllText(Phase425Path)) : null;
+using var phase426 = File.Exists(Phase426Path) ? JsonDocument.Parse(File.ReadAllText(Phase426Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -5726,6 +5728,36 @@ var crossCarrierBilinearSmDoubletCompletionAuditPassed = crossCarrierBilinearSmD
     && JsonBool(phase425.RootElement, "phase201TemplateMutated") is false
     && JsonInt(phase425.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
     && JsonInt(phase425.RootElement, "acceptedContractFieldCount") == 0;
+var coxGuSeriesBosonContractAuditMaterialized = phase426 is not null;
+var coxGuSeriesBosonContractAuditPassed = coxGuSeriesBosonContractAuditMaterialized
+    && JsonBool(phase426!.RootElement, "coxGuSeriesBosonContractAuditPassed") is true
+    && JsonBool(phase426.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase426.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase426.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase426.RootElement, "applicationSubjectKind") == "cox-gu-series-boson-contract-audit"
+    && JsonInt(phase426.RootElement, "seriesRecordCount") == 5
+    && JsonBool(phase426.RootElement, "guIiDerivesTanSquaredThreeFifthsAtUnification") is true
+    && JsonBool(phase426.RootElement, "guIiKernelRelationCorroboratesPhase404") is true
+    && JsonBool(phase426.RootElement, "guIiNamesPatiSalamBiDoubletScalarChannel") is true
+    && JsonBool(phase426.RootElement, "guIiProvidesScalarPotential") is false
+    && JsonBool(phase426.RootElement, "guIiProvidesVevOrScale") is false
+    && JsonBool(phase426.RootElement, "guIiProvidesMassSpectrumOrPole") is false
+    && JsonBool(phase426.RootElement, "sourceProvidesBosonContractEvidence") is false
+    && JsonBool(phase426.RootElement, "sourceProvidesWzSourceRows") is false
+    && JsonBool(phase426.RootElement, "sourceProvidesHiggsScalarSourceRow") is false
+    && JsonBool(phase426.RootElement, "sourceProvidesWeakAngleOrCouplingLineage") is false
+    && JsonBool(phase426.RootElement, "sourceProvidesPoleExtraction") is false
+    && JsonBool(phase426.RootElement, "sourceProvidesGeVUnitNormalization") is false
+    && JsonBool(phase426.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase426.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase426.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase426.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase426.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase426.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase426.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase426.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase426.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase426.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -8102,6 +8134,14 @@ var checklist = new[]
             ? $"crossCarrierBilinearSmDoubletCompletionAuditPassed={JsonBool(phase425!.RootElement, "crossCarrierBilinearSmDoubletCompletionAuditPassed")}; allCapacitiesMatchExpectations={JsonBool(phase425.RootElement, "allCapacitiesMatchExpectations")}; qLinearCarrierHasNoWeldedScalar={JsonBool(phase425.RootElement, "qLinearCarrierHasNoWeldedScalar")}; crossCarrierWeldedScalarSmDoubletCount={JsonInt(phase425.RootElement, "crossCarrierWeldedScalarSmDoubletCount")}; allNonzeroChannelsSmDoubletAbsent={JsonBool(phase425.RootElement, "allNonzeroChannelsSmDoubletAbsent")}; bilinearCompositeLayerClosedOnAllSourcePinnedCarriers={JsonBool(phase425.RootElement, "bilinearCompositeLayerClosedOnAllSourcePinnedCarriers")}; canFillPhase201WzContract={JsonBool(phase425.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase425.RootElement, "decision")}"
             : "Phase425 artifact not materialized",
         Phase425Path),
+    new ObjectiveChecklistItem(
+        "cox-gu-series-boson-contract-audit-materialized",
+        "Audit the June 2026 Cox Geometric Unity I-V Zenodo series without importing its tree-level kernel relation or candidate bi-doublet channel as W/Z/H source-lineage rows.",
+        coxGuSeriesBosonContractAuditPassed ? "passed" : "failed",
+        coxGuSeriesBosonContractAuditMaterialized
+            ? $"coxGuSeriesBosonContractAuditPassed={JsonBool(phase426!.RootElement, "coxGuSeriesBosonContractAuditPassed")}; seriesRecordCount={JsonInt(phase426.RootElement, "seriesRecordCount")}; guIiDerivesTanSquaredThreeFifthsAtUnification={JsonBool(phase426.RootElement, "guIiDerivesTanSquaredThreeFifthsAtUnification")}; guIiKernelRelationCorroboratesPhase404={JsonBool(phase426.RootElement, "guIiKernelRelationCorroboratesPhase404")}; guIiNamesPatiSalamBiDoubletScalarChannel={JsonBool(phase426.RootElement, "guIiNamesPatiSalamBiDoubletScalarChannel")}; guIiProvidesScalarPotential={JsonBool(phase426.RootElement, "guIiProvidesScalarPotential")}; sourceProvidesWzSourceRows={JsonBool(phase426.RootElement, "sourceProvidesWzSourceRows")}; canFillPhase201WzContract={JsonBool(phase426.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase426.RootElement, "decision")}"
+            : "Phase426 artifact not materialized",
+        Phase426Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

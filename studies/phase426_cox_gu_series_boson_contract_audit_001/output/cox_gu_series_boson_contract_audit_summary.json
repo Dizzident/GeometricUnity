@@ -1,0 +1,311 @@
+{
+  "phaseId": "phase426-cox-gu-series-boson-contract-audit",
+  "generatedAt": "2026-07-02T00:10:26.3421622+00:00",
+  "terminalStatus": "cox-gu-series-audited-gu-ii-corroborates-embedding-no-contract-fill",
+  "coxGuSeriesBosonContractAuditPassed": true,
+  "phase421PrecursorPassed": true,
+  "phase425PrecursorPassed": true,
+  "applicationSubjectKind": "cox-gu-series-boson-contract-audit",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "a52d3bb7921b2cc8bd35e99043f392be802fcd8a289bca0b4c3f01f06956565c",
+  "seriesAuthor": "Cox, Joseph",
+  "seriesAuthorMatchesPhase421Lineage": true,
+  "priorPhase421SourceSetDidNotIncludeSeries": true,
+  "seriesRecordCount": 5,
+  "seriesRecords": [
+    {
+      "label": "GU I",
+      "zenodoRecordId": 20550275,
+      "doi": "10.5281/zenodo.20550275",
+      "publicationDate": "2026-06-05",
+      "title": "Geometric Unity I: From Heuristic Proposal to Testable Classical Framework",
+      "pdfFileName": "Geometric Unity I.pdf",
+      "pdfSizeBytes": 851223,
+      "pdfChecksum": "md5:781776e80a7f6bfa05d48048da354709",
+      "extractedLineCount": 8214,
+      "extractionTool": "pdftotext"
+    },
+    {
+      "label": "GU II",
+      "zenodoRecordId": 20517363,
+      "doi": "10.5281/zenodo.20517363",
+      "publicationDate": "2026-06-02",
+      "title": "Geometric Unity II: The Matter Ledger. Minimal Chiral Completion, One-Family Pati-Salam, Spin(10), Anomaly Closure",
+      "pdfFileName": "Geometric Unity II_The Matter Ledger.pdf",
+      "pdfSizeBytes": 812590,
+      "pdfChecksum": "md5:3bd0362c0eeaba243b7d99e40e17325a",
+      "extractedLineCount": 5030,
+      "extractionTool": "pdftotext"
+    },
+    {
+      "label": "GU III",
+      "zenodoRecordId": 20517502,
+      "doi": "10.5281/zenodo.20517502",
+      "publicationDate": "2026-06-02",
+      "title": "Geometric Unity III: The Quantum Legality Layer. Semidirect BRST/BV, Anomaly Closure, Counterterms",
+      "pdfFileName": "Geometric Unity III_The Quantum Legality Layer.pdf",
+      "pdfSizeBytes": 570657,
+      "pdfChecksum": "md5:20b077215324dfcfd8589deb6d4817fe",
+      "extractedLineCount": 2616,
+      "extractionTool": "pdftotext"
+    },
+    {
+      "label": "GU IV",
+      "zenodoRecordId": 20518853,
+      "doi": "10.5281/zenodo.20518853",
+      "publicationDate": "2026-06-03",
+      "title": "Geometric Unity IV: The Observable Interface. The sigma0 Export Packet, Negative-Stiff Backgrounds, Source Adapters",
+      "pdfFileName": "Geometric Unity IV_The Observable Interface.pdf",
+      "pdfSizeBytes": 687393,
+      "pdfChecksum": "md5:d023411476979a2aac72b7538dc85ce1",
+      "extractedLineCount": 4904,
+      "extractionTool": "pdftotext"
+    },
+    {
+      "label": "GU V",
+      "zenodoRecordId": 20531776,
+      "doi": "10.5281/zenodo.20531776",
+      "publicationDate": "2026-06-03",
+      "title": "Geometric Unity V: The Lambda Rig. A Sign-Aware and Pre-Registered Audit Protocol for Declared Cosmological Export Packets",
+      "pdfFileName": "Geometric Unity V_The Lambda Rig.pdf",
+      "pdfSizeBytes": 645497,
+      "pdfChecksum": "md5:1907f2f643907355bc9310d26955382b",
+      "extractedLineCount": 3705,
+      "extractionTool": "pdftotext"
+    }
+  ],
+  "contractKeywordEvidence": [
+    {
+      "record": "GU I",
+      "term": "246",
+      "count": 1,
+      "evidenceClass": "equation-number-not-vev"
+    },
+    {
+      "record": "GU I",
+      "term": "yukawa",
+      "count": 2,
+      "evidenceClass": "principal-symbol-prose-no-values"
+    },
+    {
+      "record": "GU I",
+      "term": "electroweak",
+      "count": 0,
+      "evidenceClass": "absent-contract-keyword"
+    },
+    {
+      "record": "GU I",
+      "term": "higgs",
+      "count": 0,
+      "evidenceClass": "absent-contract-keyword"
+    },
+    {
+      "record": "GU II",
+      "term": "hypercharge",
+      "count": 65,
+      "evidenceClass": "representation-ledger-kernel-relation-no-values"
+    },
+    {
+      "record": "GU II",
+      "term": "doublet",
+      "count": 17,
+      "evidenceClass": "pati-salam-bi-doublet-candidate-channel-only"
+    },
+    {
+      "record": "GU II",
+      "term": "yukawa",
+      "count": 36,
+      "evidenceClass": "selection-rule-no-texture-or-values"
+    },
+    {
+      "record": "GU II",
+      "term": "electroweak",
+      "count": 0,
+      "evidenceClass": "absent-contract-keyword"
+    },
+    {
+      "record": "GU II",
+      "term": "higgs",
+      "count": 0,
+      "evidenceClass": "absent-contract-keyword"
+    },
+    {
+      "record": "GU II",
+      "term": "vev",
+      "count": 0,
+      "evidenceClass": "absent-contract-keyword"
+    },
+    {
+      "record": "GU II",
+      "term": "gev",
+      "count": 0,
+      "evidenceClass": "absent-contract-keyword"
+    },
+    {
+      "record": "GU II",
+      "term": "weinberg",
+      "count": 1,
+      "evidenceClass": "textbook-citation-only"
+    },
+    {
+      "record": "GU III",
+      "term": "hypercharge",
+      "count": 4,
+      "evidenceClass": "imported-gu-ii-map-bookkeeping"
+    },
+    {
+      "record": "GU III",
+      "term": "doublet",
+      "count": 1,
+      "evidenceClass": "witten-anomaly-count-only"
+    },
+    {
+      "record": "GU III",
+      "term": "electroweak",
+      "count": 0,
+      "evidenceClass": "absent-contract-keyword"
+    },
+    {
+      "record": "GU IV",
+      "term": "electroweak",
+      "count": 0,
+      "evidenceClass": "absent-contract-keyword"
+    },
+    {
+      "record": "GU IV",
+      "term": "higgs",
+      "count": 0,
+      "evidenceClass": "absent-contract-keyword"
+    },
+    {
+      "record": "GU IV",
+      "term": "hypercharge",
+      "count": 0,
+      "evidenceClass": "absent-contract-keyword"
+    },
+    {
+      "record": "GU V",
+      "term": "electroweak",
+      "count": 0,
+      "evidenceClass": "absent-contract-keyword"
+    },
+    {
+      "record": "GU V",
+      "term": "higgs",
+      "count": 0,
+      "evidenceClass": "absent-contract-keyword"
+    },
+    {
+      "record": "GU V",
+      "term": "hypercharge",
+      "count": 0,
+      "evidenceClass": "absent-contract-keyword"
+    },
+    {
+      "record": "GU V",
+      "term": "w boson",
+      "count": 0,
+      "evidenceClass": "absent-contract-keyword"
+    },
+    {
+      "record": "GU V",
+      "term": "z boson",
+      "count": 0,
+      "evidenceClass": "absent-contract-keyword"
+    },
+    {
+      "record": "GU V",
+      "term": "weak mixing",
+      "count": 0,
+      "evidenceClass": "absent-contract-keyword"
+    },
+    {
+      "record": "GU V",
+      "term": "246",
+      "count": 0,
+      "evidenceClass": "absent-contract-keyword"
+    },
+    {
+      "record": "GU V",
+      "term": "pole mass",
+      "count": 0,
+      "evidenceClass": "absent-contract-keyword"
+    }
+  ],
+  "absentContractKeywordCount": 18,
+  "presentContractAdjacentKeywordCount": 8,
+  "guVScopeIsCosmologicalAuditRig": true,
+  "guIvScopeIsCosmologicalExportPacket": true,
+  "guIiiScopeIsBrstBvLegalityLayer": true,
+  "guIScopeIsClassicalFrameworkBase": true,
+  "guIiProvidesPatiSalamMatterLedger": true,
+  "guIiNamesPatiSalamBiDoubletScalarChannel": true,
+  "guIiDerivesTreeLevelHyperchargeKernel": true,
+  "guIiDerivesTanSquaredThreeFifthsAtUnification": true,
+  "guIiKernelRelationCorroboratesPhase404": true,
+  "guIiDoubletChannelMatchesPhase403Requirement": true,
+  "guIiProvidesScalarPotential": false,
+  "guIiProvidesVevOrScale": false,
+  "guIiProvidesMassSpectrumOrPole": false,
+  "guIiProvidesMeasuredCouplingFit": false,
+  "guIiProvesInternalFluctuationContainsBiDoublet": false,
+  "guIiProvidesGeVUnitNormalization": false,
+  "sourceProvidesBosonContractEvidence": false,
+  "sourceProvidesObservedElectroweakNamespaceMap": false,
+  "sourceProvidesPhotonWzHProjectionRows": false,
+  "sourceProvidesWzSourceRows": false,
+  "sourceProvidesSeparateWzRows": false,
+  "sourceProvidesHiggsScalarSourceRow": false,
+  "sourceProvidesElectroweakVevMap": false,
+  "sourceProvidesTargetIndependentVevSource": false,
+  "sourceProvidesWeakAngleOrCouplingLineage": false,
+  "sourceProvidesCurvatureToElectroweakScaleLaw": false,
+  "sourceProvidesPoleExtraction": false,
+  "sourceProvidesGeVUnitNormalization": false,
+  "sourceProvidesVectorSpinor144ProjectionMap": false,
+  "sourceProvidesCrossCarrierProjectionMap": false,
+  "upstreamContractState": {
+    "phase201SummaryPath": "studies/phase201_boson_source_lineage_intake_contract_001/output/boson_source_lineage_intake_contract_summary.json",
+    "phase201AllRequiredLineagesPromotable": false,
+    "phase213SummaryPath": "studies/phase213_boson_source_lineage_blocker_matrix_001/output/boson_source_lineage_blocker_matrix_summary.json",
+    "phase213WzMissingFieldCount": 15,
+    "phase213HiggsMissingFieldCount": 14,
+    "phase256SummaryPath": "studies/phase256_observed_field_extraction_intake_contract_001/output/observed_field_extraction_intake_contract_summary.json",
+    "phase256ContractPromotable": false,
+    "phase421SummaryPath": "studies/phase421_cox_gu_iv_v2_lcdm_rig_boson_contract_audit_001/output/cox_gu_iv_v2_lcdm_rig_boson_contract_audit_summary.json",
+    "phase425SummaryPath": "studies/phase425_cross_carrier_bilinear_sm_doublet_completion_audit_001/output/cross_carrier_bilinear_sm_doublet_completion_audit_summary.json"
+  },
+  "physicalCouplingProvided": false,
+  "routeProvidesPhysicalMassPsiCompatibleBranch": false,
+  "routeProvidesCompletedFermionicAction": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesObservedElectroweakNamespaceMap": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesWeakAngleOrCouplingLineage": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "GU II\u0027s tree-level hypercharge-kernel relation is representation bookkeeping at a declared unification point; it supplies no scale, running, threshold model, or measured fit and is recorded only as corroboration of the repository\u0027s blind Phase404 result.",
+    "GU II\u0027s (1,2,2) bi-doublet is a named candidate seed channel; the source explicitly does not prove any internal geometric fluctuation contains it, and supplies no potential, VEV, or mass operator.",
+    "GU I/III/IV/V are classical-framework, BRST/BV, and cosmology export/audit papers with no electroweak contract content.",
+    "No Phase201 or Phase256 fill."
+  ],
+  "decision": "The June 2026 Cox Geometric Unity I-V Zenodo series is audited and non-promotional. GU I/III/IV/V carry no electroweak contract content (classical framework base, BRST/BV legality layer, and cosmological export/audit rigs). GU II, The Matter Ledger, is genuinely electroweak-adjacent: it derives the tree-level hypercharge kernel with g_Y^2 = (3/5) g^2 at a Pati-Salam unification point - independently corroborating the repository\u0027s blind Phase404 embedding result - and names the minimal Pati-Salam bi-doublet scalar channel (1,2,2), matching the doublet-carrier requirement Phase403/409 identified. But GU II\u0027s own scope boundaries deny a scalar potential, VEV, mass spectrum, unification scale, threshold model, or measured-coupling fit, and it explicitly does not prove any internal geometric fluctuation contains the (1,2,2) channel. No Phase201 or Phase256 field can be filled; no W/Z/H mass is promoted."
+}

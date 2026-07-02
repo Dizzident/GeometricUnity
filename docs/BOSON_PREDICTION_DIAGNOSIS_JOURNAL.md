@@ -18401,3 +18401,58 @@ probes on the completed carrier menu only if a source names a specific
 composite; otherwise the standing source-defined
 projection/action/VEV/observed-field requirement and checkpoint-cadence
 monitoring continue.
+
+## 2026-07-01 - Phase426: Cox GU Series (I-V) Source Audit
+
+### Context
+
+Third checkpoint of the session, discharging the first of the two NEW-LEAD
+items from the same-day literature sweep: the Cox "Geometric Unity V"
+monitor target, which resolved to a renumbered five-part Zenodo series
+(2026-06-02..05). GU II was located through GU III's read-only-import
+clause (the sweep initially surfaced only I/III/IV/V).
+
+### Source Retrieval
+
+All five records retrieved via the Zenodo API on 2026-07-01, PDFs
+md5-verified against record metadata, texts extracted with pdftotext:
+GU I 20550275 (8214 lines), GU II 20517363 (5030), GU III 20517502
+(2616), GU IV 20518853 (4904), GU V 20531776 (3705). Reference note:
+`docs/Reference/ExperimentReferences/COX-GU-SERIES-I-V-202606.md`.
+
+### Result
+
+- GU I/III/IV/V: no electroweak contract content (GU I's "246" is an
+  equation number; GU III's hypercharge mentions are read-only GU II
+  imports; GU IV/V are cosmology export/audit rigs with zero
+  contract-keyword hits).
+- GU II "The Matter Ledger" is the interesting member: it derives the
+  tree-level hypercharge kernel (Y = T_R3 + (B-L)/2, g_BL = sqrt(3/2) g4)
+  and Theorem H.3's unification-point relation g_Y^2 = (3/5) g^2 -
+  INDEPENDENTLY CORROBORATING the repository's blind Phase404 result
+  (tan^2 = 3/5) - and names the minimal Pati-Salam bi-doublet scalar
+  channel (1,2,2), matching the Phase403/409 doublet-carrier requirement.
+  Its own scope boundaries (8.4, H.4, sections 10-11) deny a scalar
+  potential, VEV, mass spectrum, unification scale, threshold model, or
+  measured fit, and it explicitly does not prove any internal geometric
+  fluctuation contains the channel.
+- Verdict: `cox-gu-series-audited-gu-ii-corroborates-embedding-no-contract-fill`.
+  No Phase201 or Phase256 field is filled; no W/Z/H mass is promoted.
+
+### Interpretation
+
+An independent GU-lineage formalization program has now reproduced, from
+its own direction, exactly the boundary the repository mapped internally:
+the embedding-derived coupling ratio exists (corroborated twice), the
+doublet channel is representation-theoretically available (corroborated),
+and the missing physics is precisely the symmetry-breaking
+potential/VEV/scale chain that no source supplies. The negative boundary
+stands, now with external corroboration of its shape.
+
+### Standing Next Work
+
+The remaining NEW-LEAD is the Hofseth GU-RVG successor record
+(10.5281/zenodo.21056575) - a short fail-closed audit at the next
+checkpoint. Otherwise the standing source-defined
+projection/action/VEV/observed-field requirement and checkpoint-cadence
+monitoring continue.

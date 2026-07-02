@@ -35,7 +35,7 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase425 work (plus the 2026-06-12 platform
+Current gate status after the Phase426 work (plus the 2026-06-12 platform
 fix - GPU parity defect root-caused and discharged - and the 2026-07-01
 |Y|=1/2 calibration defect fix in the Phase411/417 informational SM
 censuses):
@@ -43,7 +43,7 @@ censuses):
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=218`,
+  `objectiveAchieved=False`, `checklistPassedCount=219`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -354,6 +354,20 @@ censuses):
   `bilinearCompositeLayerClosedOnAllSourcePinnedCarriers=True`,
   `canFillPhase201WzContract=False`,
   `canFillPhase256ObservedFieldExtractionContract=False`
+- Phase426:
+  `coxGuSeriesBosonContractAuditPassed=True`, `seriesRecordCount=5`
+  (Cox GU I-V, zenodo 20550275/20517363/20517502/20518853/20531776),
+  `guIiDerivesTanSquaredThreeFifthsAtUnification=True`,
+  `guIiKernelRelationCorroboratesPhase404=True` (independent tree-level
+  corroboration of the blind tan^2 = 3/5 embedding result),
+  `guIiNamesPatiSalamBiDoubletScalarChannel=True` (candidate (1,2,2) seed
+  only; not proven realized),
+  `guIiProvidesScalarPotential=False`, `guIiProvidesVevOrScale=False`,
+  `guIiProvidesMassSpectrumOrPole=False`,
+  `sourceProvidesWzSourceRows=False`,
+  `sourceProvidesGeVUnitNormalization=False`,
+  `canFillPhase201WzContract=False`,
+  `canFillPhase256ObservedFieldExtractionContract=False`
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -374,7 +388,26 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work (2026-07-01, second checkpoint of the session) added
+The latest work (2026-07-01, third checkpoint of the session) added
+Phase426, the Cox GU series (I-V) boson contract audit, discharging the
+first NEW-LEAD from the same-day literature sweep. All five June 2026
+Zenodo records are retrieved, md5-verified, extracted, and audited:
+GU I/III/IV/V carry no electroweak contract content, while GU II ("The
+Matter Ledger") derives the tree-level hypercharge kernel with
+`g_Y^2 = (3/5) g^2` at a Pati-Salam unification point - INDEPENDENTLY
+CORROBORATING the repository's blind Phase404 result - and names the
+minimal Pati-Salam bi-doublet scalar channel `(1,2,2)` (the Phase403/409
+doublet-carrier shape). GU II's own scope boundaries deny a scalar
+potential, VEV, mass spectrum, unification scale, or measured fit, and it
+does not prove any internal fluctuation contains the channel: verdict
+`cox-gu-series-audited-gu-ii-corroborates-embedding-no-contract-fill`,
+no contract fill, nothing promoted. Reference note:
+`docs/Reference/ExperimentReferences/COX-GU-SERIES-I-V-202606.md`. Study:
+`studies/phase426_cox_gu_series_boson_contract_audit_001`
+(IMPLEMENTATION_P426.md). The remaining NEW-LEAD (Hofseth GU-RVG
+successor, zenodo 21056575) is the named next audit.
+
+Before that, the work (2026-07-01, second checkpoint of the session) added
 Phase425, the cross-carrier bilinear SM-doublet completion audit. It
 constructs the `Q_{3/2}` carrier exactly (the spacetime `6` = the
 gamma-traceless remainder in `4 x 2 = 2 + 6`, the 4D analog of Phase417's
@@ -808,7 +841,7 @@ HONEST BOUNDARY. Study:
 
 ### Integration Points Already Updated
 
-Phase425 (like Phase388-424) is wired into:
+Phase426 (like Phase388-425) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (single broad pass; the
   older duplicated final sweep was removed on 2026-06-16; the Phase424 line
@@ -823,7 +856,8 @@ Phase425 (like Phase388-424) is wired into:
   `vector-spinor-144-bilinear-scalar-capacity-audit-materialized` and
   `zenodo-gu-rvg-spinorial-dark-sector-boson-contract-audit-materialized` and
   `vector-spinor-144-bilinear-sm-doublet-intersection-analysis-materialized` and
-  `cross-carrier-bilinear-sm-doublet-completion-audit-materialized`;
+  `cross-carrier-bilinear-sm-doublet-completion-audit-materialized` and
+  `cox-gu-series-boson-contract-audit-materialized`;
   the Phase417 checklist row now asserts the corrected
   `yHalfCalibrationExact=True` and `internalSmHiggsPatternComplexDimension=6`)
 - `scripts/verify_boson_claim_integrity.sh` (Phase424 asserts plus the
@@ -867,6 +901,7 @@ dotnet run --project studies/phase422_vector_spinor_144_bilinear_scalar_capacity
 dotnet run --project studies/phase423_zenodo_gu_rvg_spinorial_dark_sector_boson_contract_audit_001/Phase423ZenodoGuRvgSpinorialDarkSectorBosonContractAudit.csproj
 dotnet run -c Release --project studies/phase424_vector_spinor_144_bilinear_sm_doublet_intersection_001/Phase424VectorSpinor144BilinearSmDoubletIntersection.csproj
 dotnet run -c Release --project studies/phase425_cross_carrier_bilinear_sm_doublet_completion_audit_001/Phase425CrossCarrierBilinearSmDoubletCompletionAudit.csproj
+dotnet run --project studies/phase426_cox_gu_series_boson_contract_audit_001/Phase426CoxGuSeriesBosonContractAudit.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
@@ -878,11 +913,12 @@ PHASE405_ENABLE_GPU=1 LD_LIBRARY_PATH=native/build dotnet run --project studies/
 The targeted Phase424 (Release, ~7 min) and Phase425 (Release, ~1 min) runs
 pass and preserve the fail-closed boundary; the fixed Phase411/Phase417
 re-runs pass with their corrected censuses; Phase202 now reports
-`checklistPassedCount=218`, `checklistFailedCount=3`; claim integrity
-verifies Phase424/Phase425 (and the corrected Phase417 values) with
-`promotedPhysicalMassClaimCount=0`. The full direct
+`checklistPassedCount=219`, `checklistFailedCount=3`; claim integrity
+verifies Phase424/Phase425/Phase426 (and the corrected Phase417 values)
+with `promotedPhysicalMassClaimCount=0`. The full direct
 `./scripts/generate_validated_boson_predictions.sh` pass completed with
-Phase424 and Phase425 included and ended at `boson-claim-integrity-verified`. (Platform
+Phase424, Phase425, and Phase426 included and ended at
+`boson-claim-integrity-verified`. (Platform
 state: Gu.Interop.Tests 158/158 with the real-mesh parity and
 buffer-handle recycling tests; both Phase405 platform notes discharged
 2026-06-12.) All seven broad scanners still report zero intake-ready
@@ -1123,12 +1159,13 @@ The most useful next branches are:
    verification platform, no GU content; lead closed), the Hebrew
    University talk has no artifact (UCSD April 2025 proxy is qualitative
    only), and TWO NEW-LEAD records are named for short fail-closed source
-   audits at the next checkpoint: the Cox "Geometric Unity V" series
-   (10.5281/zenodo.20531776 with GU IV 20518853, GU III 20517502, GU I
-   20550275; cosmology-only pre-screen) and the Hofseth GU-RVG successor
-   (10.5281/zenodo.21056575; observationally-fixed condensate amplitude;
-   likely fabricated co-authorship per arXiv:2606.02184). Both are
-   expected non-promotional.
+   audits at the next checkpoint: the Cox "Geometric Unity V" series is
+   DONE by Phase426 (all five records audited; GU II corroborates the
+   Phase404 tan^2 = 3/5 lineage and the (1,2,2) doublet-channel shape but
+   supplies no potential/VEV/spectrum/scale/fit); the Hofseth GU-RVG
+   successor (10.5281/zenodo.21056575; observationally-fixed condensate
+   amplitude; likely fabricated co-authorship per arXiv:2606.02184)
+   remains the named next audit, expected non-promotional.
 3. (CLOSED by Phase399 + Phase400 + Phase401: the quadratic-model coupled
    critical point is solved modulo flat directions, every flat ray is
    quartically lifted, and the attempted construction of the relaxed
@@ -1169,9 +1206,11 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -160 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase425|crossCarrierBilinearSmDoubletCompletionAudit|Phase424|vectorSpinor144BilinearSmDoubletIntersection|yHalfCalibrationExact|majoranaYHalfCalibrationExact|zenodo.20531776|zenodo.21056575" \
+rg -n "Phase426|coxGuSeriesBosonContractAudit|Phase425|crossCarrierBilinearSmDoubletCompletionAudit|Phase424|zenodo.20531776|zenodo.21056575" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
   docs/Reference/ExperimentReferences/GU-DRAFT-2021.md \
+  docs/Reference/ExperimentReferences/COX-GU-SERIES-I-V-202606.md \
+  studies/phase426_cox_gu_series_boson_contract_audit_001 \
   studies/phase425_cross_carrier_bilinear_sm_doublet_completion_audit_001 \
   studies/phase424_vector_spinor_144_bilinear_sm_doublet_intersection_001 \
   studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json
@@ -1186,11 +1225,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase425 output JSON files, and commit a checkpoint
+force-add the ignored Phase426 output JSON files, and commit a checkpoint
 after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase425 cross-carrier bilinear completion audit
+Add phase426 Cox GU series boson contract audit
 ```
