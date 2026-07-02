@@ -193,6 +193,7 @@ const string Phase424Path = "studies/phase424_vector_spinor_144_bilinear_sm_doub
 const string Phase425Path = "studies/phase425_cross_carrier_bilinear_sm_doublet_completion_audit_001/output/cross_carrier_bilinear_sm_doublet_completion_audit_summary.json";
 const string Phase426Path = "studies/phase426_cox_gu_series_boson_contract_audit_001/output/cox_gu_series_boson_contract_audit_summary.json";
 const string Phase427Path = "studies/phase427_hofseth_gu_rvg_superluminal_source_audit_001/output/hofseth_gu_rvg_superluminal_source_audit_summary.json";
+const string Phase428Path = "studies/phase428_fermion_loop_block_selection_no_go_probe_001/output/fermion_loop_block_selection_no_go_probe_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -419,6 +420,7 @@ using var phase424 = File.Exists(Phase424Path) ? JsonDocument.Parse(File.ReadAll
 using var phase425 = File.Exists(Phase425Path) ? JsonDocument.Parse(File.ReadAllText(Phase425Path)) : null;
 using var phase426 = File.Exists(Phase426Path) ? JsonDocument.Parse(File.ReadAllText(Phase426Path)) : null;
 using var phase427 = File.Exists(Phase427Path) ? JsonDocument.Parse(File.ReadAllText(Phase427Path)) : null;
+using var phase428 = File.Exists(Phase428Path) ? JsonDocument.Parse(File.ReadAllText(Phase428Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -5788,6 +5790,32 @@ var hofsethGuRvgSuperluminalSourceAuditPassed = hofsethGuRvgSuperluminalSourceAu
     && JsonBool(phase427.RootElement, "phase201TemplateMutated") is false
     && JsonInt(phase427.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
     && JsonInt(phase427.RootElement, "acceptedContractFieldCount") == 0;
+var fermionLoopBlockSelectionNoGoProbeMaterialized = phase428 is not null;
+var fermionLoopBlockSelectionNoGoProbePassed = fermionLoopBlockSelectionNoGoProbeMaterialized
+    && JsonBool(phase428!.RootElement, "fermionLoopBlockSelectionNoGoProbePassed") is true
+    && JsonBool(phase428.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase428.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase428.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase428.RootElement, "applicationSubjectKind") == "fermion-loop-block-selection-no-go-probe"
+    && JsonBool(phase428.RootElement, "analysisInternallyConsistent") is true
+    && JsonBool(phase428.RootElement, "conjugacyWitnessExact") is true
+    && JsonBool(phase428.RootElement, "closedFormSpectrumVerified") is true
+    && JsonBool(phase428.RootElement, "fermionLoopClassFunctionOnRankOneRays") is true
+    && JsonBool(phase428.RootElement, "tripletDoubletFermionLoopExactlyDegenerate") is true
+    && JsonBool(phase428.RootElement, "fermionLoopProvidesPositiveQuarticStabilizer") is false
+    && JsonBool(phase428.RootElement, "doubletSelectedByFermionLoop") is false
+    && JsonBool(phase428.RootElement, "fermionLoopBlockSelectionMechanismClosed") is true
+    && JsonBool(phase428.RootElement, "sourceDefinesSu3BreakingFermionicStructure") is false
+    && JsonBool(phase428.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase428.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase428.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase428.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase428.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase428.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase428.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase428.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase428.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase428.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -8180,6 +8208,14 @@ var checklist = new[]
             ? $"hofsethGuRvgSuperluminalSourceAuditPassed={JsonBool(phase427!.RootElement, "hofsethGuRvgSuperluminalSourceAuditPassed")}; originalRecordTombstoned={JsonBool(phase427.RootElement, "originalRecordTombstoned")}; liveSuccessorRecordLocated={JsonBool(phase427.RootElement, "liveSuccessorRecordLocated")}; sourceUsesExternalElectroweakVev246Gev={JsonBool(phase427.RootElement, "sourceUsesExternalElectroweakVev246Gev")}; sourceProvidesWzSourceRows={JsonBool(phase427.RootElement, "sourceProvidesWzSourceRows")}; canFillPhase201WzContract={JsonBool(phase427.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase427.RootElement, "decision")}"
             : "Phase427 artifact not materialized",
         Phase427Path),
+    new ObjectiveChecklistItem(
+        "fermion-loop-block-selection-no-go-probe-materialized",
+        "Decide the fermionic-backreaction mechanism class on the block menu: the one-loop determinant is an adjoint-orbit class function, exactly triplet/doublet-degenerate, with no quartic stabilizer.",
+        fermionLoopBlockSelectionNoGoProbePassed ? "passed" : "failed",
+        fermionLoopBlockSelectionNoGoProbeMaterialized
+            ? $"fermionLoopBlockSelectionNoGoProbePassed={JsonBool(phase428!.RootElement, "fermionLoopBlockSelectionNoGoProbePassed")}; fermionLoopClassFunctionOnRankOneRays={JsonBool(phase428.RootElement, "fermionLoopClassFunctionOnRankOneRays")}; tripletDoubletFermionLoopExactlyDegenerate={JsonBool(phase428.RootElement, "tripletDoubletFermionLoopExactlyDegenerate")}; fermionLoopProvidesPositiveQuarticStabilizer={JsonBool(phase428.RootElement, "fermionLoopProvidesPositiveQuarticStabilizer")}; doubletSelectedByFermionLoop={JsonBool(phase428.RootElement, "doubletSelectedByFermionLoop")}; fermionLoopBlockSelectionMechanismClosed={JsonBool(phase428.RootElement, "fermionLoopBlockSelectionMechanismClosed")}; canFillPhase201WzContract={JsonBool(phase428.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase428.RootElement, "decision")}"
+            : "Phase428 artifact not materialized",
+        Phase428Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

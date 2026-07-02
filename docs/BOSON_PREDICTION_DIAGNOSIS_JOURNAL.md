@@ -18541,3 +18541,49 @@ earlier uninstrumented Debug passes the same day.
    dependency-DAG parallel generator, content-hash incremental validation,
    and a shared build pass. Each requires full-pass validation before
    adoption.
+
+## 2026-07-01 - Phase428: Fermion-Loop Block-Selection No-Go (Mechanism Class Closed)
+
+### Context
+
+First experiment under the same-day beyond-the-literature directive.
+Phases 405/410/418 proved the bare bosonic objective cannot select a
+doublet VEV and explicitly named fermionic backreaction as the remaining
+internal mechanism class; the Phase394 machinery only covers the su(2)
+branch, whose Dirac operator has no legs in the doublet directions, so the
+question required a new su(3)-coupled workbench.
+
+### Result
+
+Phase428 decides the class at theorem grade. On constant rank-1 rays the
+one-loop fermion determinant is an adjoint-orbit CLASS FUNCTION (exact
+closed-form ray spectrum, verified against a dense solve at 1.6e-13), and
+the Gell-Mann axes lambda_1..lambda_7 lie on ONE orbit - the color-swap
+conjugator maps lambda_4 to lambda_1 exactly - so the fermion-loop
+potential is EXACTLY degenerate between the triplet and doublet blocks
+(residual 1.1e-13, fundamental-3 and adjoint-8 representations). Only the
+lambda_8 orbit differs. Along every ray the functional falls like
+-N log t with N matching the coupled-mode count exactly (fund T/D -128,
+S -192; adj T/D -384, S -256): no positive quartic stabilizer exists in
+any direction. A NumPy prototype (including a 2x2-lattice trap where the
+central-difference hop vanishes identically, fixed to 4x4) preceded the
+C# study.
+
+Interpretation: an su(3)-invariant fermionic sector CANNOT produce the
+direction-dependent block mass law or the stabilizer Phase418 had to
+import - doublet selection via fermionic backreaction requires
+su(3)-breaking fermionic structure that no reviewed source defines. With
+this, EVERY named internal mechanism class for doublet VEV selection on
+the control branch is closed: bare bosonic objective (405), uniform
+curvature (410), direction-dependent quadratics (418), the action's own
+quartic (Phase410 post-processing), and one-loop fermionic backreaction
+(428). The scoped residuals: non-constant/mixed configurations,
+multi-loop effects, and source-defined su(3)-breaking structure.
+
+### Validation
+
+Targeted run passes in seconds (closed-form spectrum; no heavy solver).
+Wired into the generator (Release), Phase101, Phase202 checklist item
+`fermion-loop-block-selection-no-go-probe-materialized`, claim integrity,
+all seven scanner exclusions, and the phase281/phase207 implementation-doc
+registries (per the scanner-registration hazard rule).

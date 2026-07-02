@@ -303,6 +303,7 @@ dotnet run -c Release --project studies/phase424_vector_spinor_144_bilinear_sm_d
 dotnet run -c Release --project studies/phase425_cross_carrier_bilinear_sm_doublet_completion_audit_001/Phase425CrossCarrierBilinearSmDoubletCompletionAudit.csproj
 dotnet run -c Release --project studies/phase426_cox_gu_series_boson_contract_audit_001/Phase426CoxGuSeriesBosonContractAudit.csproj
 dotnet run -c Release --project studies/phase427_hofseth_gu_rvg_superluminal_source_audit_001/Phase427HofsethGuRvgSuperluminalSourceAudit.csproj
+dotnet run -c Release --project studies/phase428_fermion_loop_block_selection_no_go_probe_001/Phase428FermionLoopBlockSelectionNoGoProbe.csproj
 dotnet run -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

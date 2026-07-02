@@ -49,7 +49,7 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase427 work (plus the 2026-06-12 platform
+Current gate status after the Phase428 work (plus the 2026-06-12 platform
 fix - GPU parity defect root-caused and discharged - and the 2026-07-01
 |Y|=1/2 calibration defect fix in the Phase411/417 informational SM
 censuses):
@@ -57,7 +57,7 @@ censuses):
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=220`,
+  `objectiveAchieved=False`, `checklistPassedCount=221`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -394,6 +394,19 @@ censuses):
   `sourceProvidesGeVUnitNormalization=False`,
   `canFillPhase201WzContract=False`,
   `canFillPhase256ObservedFieldExtractionContract=False`
+- Phase428 (first beyond-the-literature experiment):
+  `fermionLoopBlockSelectionNoGoProbePassed=True`,
+  `fermionLoopClassFunctionOnRankOneRays=True` (closed-form ray spectrum
+  verified 1.6e-13; conjugacy witness exact),
+  `tripletDoubletFermionLoopExactlyDegenerate=True` (1.1e-13, both
+  fundamental-3 and adjoint-8),
+  `fermionLoopProvidesPositiveQuarticStabilizer=False` (large-t slopes
+  -N log t match coupled-mode counts exactly),
+  `doubletSelectedByFermionLoop=False`,
+  `fermionLoopBlockSelectionMechanismClosed=True`
+  (su(3)-breaking fermionic structure required and not source-defined),
+  `canFillPhase201WzContract=False`,
+  `canFillPhase256ObservedFieldExtractionContract=False`
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -414,7 +427,26 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work (2026-07-01, fourth checkpoint of the session) added
+The latest work (2026-07-01, fifth checkpoint of the session) added
+Phase428, the fermion-loop block-selection no-go probe - the FIRST
+experiment of the beyond-the-literature directive, closing the last named
+internal mechanism class for doublet VEV selection. On constant rank-1
+rays the one-loop fermion determinant is an adjoint-orbit class function
+(exact closed-form spectrum, dense-solve verified 1.6e-13); the color-swap
+conjugator places lambda_1..lambda_7 on one orbit, so the potential is
+EXACTLY triplet/doublet-degenerate (1.1e-13) in both probed
+representations; every ray falls like -N log t (slopes match coupled-mode
+counts exactly) so no quartic stabilizer is generated. Fermionic
+backreaction therefore cannot select the doublet without su(3)-breaking
+fermionic structure that no source defines. All named internal doublet-
+selection mechanism classes are now closed (405 bosonic, 410 curvature,
+418 quadratics, action-quartic post-processing, 428 fermion loop);
+residuals are non-constant configurations, multi-loop effects, and a
+source-defined su(3)-breaking specification. Study:
+`studies/phase428_fermion_loop_block_selection_no_go_probe_001`
+(IMPLEMENTATION_P428.md).
+
+Before that, the work (2026-07-01, fourth checkpoint of the session) added
 Phase427, the Hofseth GU-RVG superluminal source audit, discharging the
 second and final NEW-LEAD from the same-day literature sweep. The
 originally-catalogued record 21056575 was DELETED from Zenodo on
@@ -889,7 +921,7 @@ HONEST BOUNDARY. Study:
 
 ### Integration Points Already Updated
 
-Phase427 (like Phase388-426) is wired into:
+Phase428 (like Phase388-427) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (single broad pass; the
   older duplicated final sweep was removed on 2026-06-16; the Phase424 line
@@ -906,7 +938,8 @@ Phase427 (like Phase388-426) is wired into:
   `vector-spinor-144-bilinear-sm-doublet-intersection-analysis-materialized` and
   `cross-carrier-bilinear-sm-doublet-completion-audit-materialized` and
   `cox-gu-series-boson-contract-audit-materialized` and
-  `hofseth-gu-rvg-superluminal-source-audit-materialized`;
+  `hofseth-gu-rvg-superluminal-source-audit-materialized` and
+  `fermion-loop-block-selection-no-go-probe-materialized`;
   the Phase417 checklist row now asserts the corrected
   `yHalfCalibrationExact=True` and `internalSmHiggsPatternComplexDimension=6`)
 - `scripts/verify_boson_claim_integrity.sh` (Phase424 asserts plus the
@@ -963,11 +996,11 @@ PHASE405_ENABLE_GPU=1 LD_LIBRARY_PATH=native/build dotnet run --project studies/
 The targeted Phase424 (Release, ~7 min) and Phase425 (Release, ~1 min) runs
 pass and preserve the fail-closed boundary; the fixed Phase411/Phase417
 re-runs pass with their corrected censuses; Phase202 now reports
-`checklistPassedCount=220`, `checklistFailedCount=3`; claim integrity
-verifies Phase424/Phase425/Phase426/Phase427 (and the corrected Phase417
-values) with `promotedPhysicalMassClaimCount=0`. The full direct
+`checklistPassedCount=221`, `checklistFailedCount=3`; claim integrity
+verifies Phase424 through Phase428 (and the corrected Phase417 values)
+with `promotedPhysicalMassClaimCount=0`. The full direct
 `./scripts/generate_validated_boson_predictions.sh` pass completed with
-Phase424 through Phase427 included and ended at
+Phase424 through Phase428 included and ended at
 `boson-claim-integrity-verified`. (Platform
 state: Gu.Interop.Tests 158/158 with the real-mesh parity and
 buffer-handle recycling tests; both Phase405 platform notes discharged
@@ -1030,16 +1063,14 @@ fail-closed experiment phases, and let the computation decide. Named
 candidate experiments (each a legitimate internal computation, no new
 sources required):
 
-- FERMION-LOOP EFFECTIVE POTENTIAL ON THE DOUBLET BLOCK: Phase405/410/418
-  proved doublet selection cannot come from the bare bosonic objective and
-  explicitly named fermionic backreaction as the open mechanism class.
-  Compute the one-loop fermionic determinant (Coleman-Weinberg-style)
-  induced on the Phase418 block menu by the control branch's fermionic
-  couplings, and test whether it supplies the direction-dependent block
-  mass law and quartic stabilizer that Phase418 had to import. Either
-  outcome is decisive: selection-from-fermion-loops would be the first
-  internal symmetry-breaking mechanism candidate; a negative closes the
-  named mechanism class on the control branch.
+- FERMION-LOOP EFFECTIVE POTENTIAL ON THE DOUBLET BLOCK: DONE by
+  Phase428 with a decisive NEGATIVE: the one-loop determinant on constant
+  rank-1 rays is an adjoint-orbit class function, exactly
+  triplet/doublet-degenerate, with no quartic stabilizer - the mechanism
+  class is closed; only su(3)-breaking fermionic structure (not
+  source-defined) could evade it. Remaining experiment territory in this
+  direction: non-constant/mixed configurations and multi-loop effects,
+  pursue only with a concrete structural reason.
 - TARGET-BLIND DIMENSIONLESS-RATIO LEDGER: absolute GeV promotion is
   contract-blocked, but the embedding chain already fixes dimensionless
   quantities blind (tan^2 = 3/5, corroborated externally by Phase426).
@@ -1314,11 +1345,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase427 output JSON files, and commit a checkpoint
+force-add the ignored Phase428 output JSON files, and commit a checkpoint
 after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase427 Hofseth GU-RVG superluminal source audit
+Add phase428 fermion-loop block-selection no-go probe
 ```

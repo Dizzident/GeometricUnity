@@ -198,6 +198,7 @@ const paths = {
   phase425: "studies/phase425_cross_carrier_bilinear_sm_doublet_completion_audit_001/output/cross_carrier_bilinear_sm_doublet_completion_audit_summary.json",
   phase426: "studies/phase426_cox_gu_series_boson_contract_audit_001/output/cox_gu_series_boson_contract_audit_summary.json",
   phase427: "studies/phase427_hofseth_gu_rvg_superluminal_source_audit_001/output/hofseth_gu_rvg_superluminal_source_audit_summary.json",
+  phase428: "studies/phase428_fermion_loop_block_selection_no_go_probe_001/output/fermion_loop_block_selection_no_go_probe_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -467,6 +468,7 @@ const phase424 = requireFile(paths.phase424);
 const phase425 = requireFile(paths.phase425);
 const phase426 = requireFile(paths.phase426);
 const phase427 = requireFile(paths.phase427);
+const phase428 = requireFile(paths.phase428);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -5070,6 +5072,20 @@ if (sourceLineageMissing) {
   assert(phase427.phase201TemplateMutated === false && phase427.fieldsAppliedToPhase201TemplateCount === 0 && phase427.acceptedContractFieldCount === 0, "Phase427 must not mutate or fill the Phase201 template.");
   assert(phase101Package?.hofsethGuRvgSuperluminalSourceAudit?.hofsethGuRvgSuperluminalSourceAuditPassed === true, "Phase101 must include the Phase427 Hofseth GU-RVG audit block.");
   assert(phase101Package.hofsethGuRvgSuperluminalSourceAudit.sourceUsesExternalElectroweakVev246Gev === true && phase101Package.hofsethGuRvgSuperluminalSourceAudit.canFillPhase201WzContract === false, "Phase101 must preserve the Phase427 external-input verdict.");
+  assert(phase428.fermionLoopBlockSelectionNoGoProbePassed === true, "Phase428 fermion-loop block-selection no-go probe must pass as fail-closed representation arithmetic.");
+  assert(phase428.targetBlindConstruction === true && phase428.physicalTargetsConsultedForConstruction === false, "Phase428 construction must remain target-blind.");
+  assert(typeof phase428.targetBlindConstructionHash === "string" && phase428.targetBlindConstructionHash.length === 64, "Phase428 must persist a target-blind construction hash.");
+  assert(phase428.applicationSubjectKind === "fermion-loop-block-selection-no-go-probe", "Phase428 must classify its subject as the fermion-loop block-selection no-go probe.");
+  assert(phase428.phase405PrecursorPassed === true && phase428.phase410PrecursorPassed === true && phase428.phase418PrecursorPassed === true, "Phase428 must preserve the Phase405/410/418 precursor gates.");
+  assert(phase428.conjugacyWitnessExact === true && phase428.tripletDoubletOnSingleAdjointOrbit === true && phase428.closedFormSpectrumVerified === true, "Phase428 must verify the orbit conjugacy witness and the closed-form spectrum.");
+  assert(phase428.fermionLoopClassFunctionOnRankOneRays === true && phase428.tripletDoubletFermionLoopExactlyDegenerate === true, "Phase428 must record the class-function theorem and the exact triplet/doublet degeneracy.");
+  assert(phase428.fermionLoopProvidesPositiveQuarticStabilizer === false && phase428.doubletSelectedByFermionLoop === false && phase428.fermionLoopBlockSelectionMechanismClosed === true, "Phase428 must record the mechanism-class closure (no stabilizer, no doublet selection).");
+  assert(phase428.sourceDefinesSu3BreakingFermionicStructure === false && phase428.sourceDefinesFermionOccupationOrRegularization === false, "Phase428 must not invent su(3)-breaking fermionic structure.");
+  assert(phase428.sourceContractApplicationAllowed === false && phase428.canFillPhase201WzContract === false && phase428.canFillPhase201HiggsContract === false && phase428.canFillPhase256ObservedFieldExtractionContract === false, "Phase428 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase428.routePromotesWzMasses === false && phase428.routePromotesHiggsMass === false && phase428.routeCompletesBosonPredictions === false, "Phase428 cannot promote boson predictions.");
+  assert(phase428.phase201TemplateMutated === false && phase428.fieldsAppliedToPhase201TemplateCount === 0 && phase428.acceptedContractFieldCount === 0, "Phase428 must not mutate or fill the Phase201 template.");
+  assert(phase101Package?.fermionLoopBlockSelectionNoGoProbe?.fermionLoopBlockSelectionNoGoProbePassed === true, "Phase101 must include the Phase428 fermion-loop no-go block.");
+  assert(phase101Package.fermionLoopBlockSelectionNoGoProbe.fermionLoopBlockSelectionMechanismClosed === true, "Phase101 must preserve the Phase428 mechanism-class closure verdict.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");
