@@ -211,6 +211,7 @@ const paths = {
   phase438: "studies/phase438_self_consistent_condensate_gap_equation_probe_001/output/self_consistent_condensate_gap_equation_probe_summary.json",
   phase439: "studies/phase439_gap_equation_lambda8_background_channel_steering_probe_001/output/gap_equation_lambda8_background_channel_steering_probe_summary.json",
   phase440: "studies/phase440_coupled_background_condensate_fixed_point_probe_001/output/coupled_background_condensate_fixed_point_probe_summary.json",
+  phase441: "studies/phase441_toy_branch_family_universality_sweep_001/output/toy_branch_family_universality_sweep_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -493,6 +494,7 @@ const phase437 = requireFile(paths.phase437);
 const phase438 = requireFile(paths.phase438);
 const phase439 = requireFile(paths.phase439);
 const phase440 = requireFile(paths.phase440);
+const phase441 = requireFile(paths.phase441);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -5232,6 +5234,16 @@ if (sourceLineageMissing) {
   assert(phase440.routePromotesWzMasses === false && phase440.routePromotesHiggsMass === false && phase440.routeCompletesBosonPredictions === false, "Phase440 cannot promote boson predictions.");
   assert(phase101Package?.coupledBackgroundCondensateFixedPointProbe?.coupledBackgroundCondensateFixedPointProbePassed === true, "Phase101 must include the Phase440 fixed-point block.");
   assert(phase101Package.coupledBackgroundCondensateFixedPointProbe.jointFixedPointExists === false, "Phase101 must preserve the Phase440 honest-negative verdict.");
+  assert(phase441.toyBranchFamilyUniversalitySweepPassed === true, "Phase441 family universality sweep must pass as fail-closed representation arithmetic.");
+  assert(phase441.targetBlindConstruction === true && typeof phase441.targetBlindConstructionHash === "string" && phase441.targetBlindConstructionHash.length === 64, "Phase441 must remain target-blind with a persisted construction hash.");
+  assert(phase441.applicationSubjectKind === "toy-branch-family-universality-sweep", "Phase441 must classify its subject as the family universality sweep.");
+  assert(phase441.universalityVerdicts?.upsilonDegreeTwoUniversalAcrossFamily === true && phase441.universalityVerdicts?.hessianQuadraticDecompositionUniversalAcrossFamily === true && phase441.universalityVerdicts?.noSaturationTheoremExtendsToEntireToyFamily === true, "Phase441 must extend the no-saturation theorem family-wide.");
+  assert(phase441.universalityVerdicts?.growingModeCountUniversalAcrossFamily === true && phase441.universalityVerdicts?.runawayVerdictUniversalAcrossFamily === true, "Phase441 must record the count and runaway universality verdicts.");
+  assert(phase441.universalityVerdicts?.canonicalPhysicalShiabRealizableOnToy === false && phase441.universalityVerdicts?.scaleGapRequiresDimFourSpinorShiabOrSourceAnchor === true, "Phase441 must record the canonical-Shiab impossibility and the terminal frontier statement.");
+  assert(phase441.honestBoundaries?.toyFamilyOnly === true && phase441.honestBoundaries?.workbenchPolarizationConventionReused === true && phase441.honestBoundaries?.noGevPromotion === true, "Phase441 must keep the toy-family, convention, and no-promotion boundaries.");
+  assert(phase441.sourceContractApplicationAllowed === false && phase441.canFillPhase201WzContract === false && phase441.canFillPhase201HiggsContract === false && phase441.canFillPhase256ObservedFieldExtractionContract === false, "Phase441 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase441.routePromotesWzMasses === false && phase441.routePromotesHiggsMass === false && phase441.routeCompletesBosonPredictions === false, "Phase441 cannot promote boson predictions.");
+  assert(phase101Package?.toyBranchFamilyUniversalitySweep?.toyBranchFamilyUniversalitySweepPassed === true, "Phase101 must include the Phase441 universality block.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

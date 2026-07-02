@@ -32,6 +32,11 @@ var excludedPathFragments = new[]
     "/obj/",
     "/output/",
     "studies/phase253_global_observed_sector_vacuum_scan_001/",
+    // 2026-07-02: phase441 family-universality study legitimately DISCUSSES
+    // the dimX >= 4 requirement as a recorded impossibility statement
+    // (canonical Shiab not realizable on the 2D toy); it is a generated
+    // fail-closed diagnostic artifact, not an observed-sector vacuum claim.
+    "studies/phase441_toy_branch_family_universality_sweep_001/",
 };
 
 var dimension4Pattern = new Regex("""

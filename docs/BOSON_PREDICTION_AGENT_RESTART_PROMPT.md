@@ -49,7 +49,7 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase440 work (plus the 2026-06-12 platform
+Current gate status after the Phase441 work (plus the 2026-06-12 platform
 fix - GPU parity defect root-caused and discharged - and the 2026-07-01
 |Y|=1/2 calibration defect fix in the Phase411/417 informational SM
 censuses):
@@ -57,7 +57,7 @@ censuses):
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=233`,
+  `objectiveAchieved=False`, `checklistPassedCount=234`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -485,6 +485,13 @@ censuses):
   failure on the workbench bosonic sector - the THIRD independent
   convergence (with 435/436) onto the physical VO-6/VO-7 structure or a
   source anchor
+- Phase441: `toyBranchFamilyUniversalitySweepPassed=True` - ALL SEVEN
+  universality verdicts hold across the 36-member family (Shiab x
+  torsion x A0): degree-2 Upsilon (1.5e-15), quadratic Hessian
+  decomposition (2.8e-14), counts 64/96 invariant, runaway -640
+  universal; the canonical physical Shiab is NOT realizable on the toy
+  (dimX>=4 + Cl(7,7)/128 spinor basis required); TERMINAL FRONTIER:
+  `scaleGapRequiresDimFourSpinorShiabOrSourceAnchor=True`
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -505,7 +512,24 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work (2026-07-02, twelfth checkpoint) added Phase440, the
+The latest work (2026-07-02, thirteenth checkpoint) added Phase441, the
+toy-branch family universality sweep - THE TERMINAL INTERNAL RESULT: all
+seven universality verdicts hold across the full 36-member family, the
+no-saturation theorem extends family-wide (verified insight: [u,u]=0
+makes every member's Upsilon affine along single-direction rays and A0
+cancels from the growing-mode operator), the runaway is universal, and
+the draft's canonical physical Shiab is NOT realizable on the toy.
+TERMINAL FRONTIER STATEMENT (family-complete, theorem-grade):
+scaleGapRequiresDimFourSpinorShiabOrSourceAnchor=True. THE INTERNAL
+EXPERIMENT PROGRAM IS COMPLETE. Remaining: steady-state monitoring;
+incremental-validation design note; and the ONE named platform
+prerequisite for further internal progress - a dimX>=4 mesh + Clifford
+structure to realize the canonical Shiab (a PLATFORM ENGINEERING
+investment decision for the user, not a phase). Study:
+phase441_toy_branch_family_universality_sweep_001
+(IMPLEMENTATION_P441.md).
+
+Before that, the work (2026-07-02, twelfth checkpoint) added Phase440, the
 coupled background-condensate fixed-point probe - the final link of the
 candidate chain, decided as an HONEST NEGATIVE: the joint (t8, Sigma)
 system has no interior fixed point (29 trivial / 19 runaway / 0 interior
@@ -1125,7 +1149,7 @@ HONEST BOUNDARY. Study:
 
 ### Integration Points Already Updated
 
-Phase440 (like Phase388-439) is wired into:
+Phase441 (like Phase388-440) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (single broad pass; the
   older duplicated final sweep was removed on 2026-06-16; the Phase424 line
@@ -1155,7 +1179,8 @@ Phase440 (like Phase388-439) is wired into:
   `four-dimensional-transmutation-scaling-probe-materialized` and
   `self-consistent-condensate-gap-equation-probe-materialized` and
   `gap-equation-lambda8-background-channel-steering-probe-materialized` and
-  `coupled-background-condensate-fixed-point-probe-materialized`;
+  `coupled-background-condensate-fixed-point-probe-materialized` and
+  `toy-branch-family-universality-sweep-materialized`;
   the Phase417 checklist row now asserts the corrected
   `yHalfCalibrationExact=True` and `internalSmHiggsPatternComplexDimension=6`)
 - `scripts/verify_boson_claim_integrity.sh` (Phase424 asserts plus the
@@ -1212,8 +1237,8 @@ PHASE405_ENABLE_GPU=1 LD_LIBRARY_PATH=native/build dotnet run --project studies/
 The targeted Phase424 (Release, ~7 min) and Phase425 (Release, ~1 min) runs
 pass and preserve the fail-closed boundary; the fixed Phase411/Phase417
 re-runs pass with their corrected censuses; Phase202 now reports
-`checklistPassedCount=233`, `checklistFailedCount=3`; claim integrity
-verifies Phase424 through Phase440 (and the corrected Phase417 values)
+`checklistPassedCount=234`, `checklistFailedCount=3`; claim integrity
+verifies Phase424 through Phase441 (and the corrected Phase417 values)
 with `promotedPhysicalMassClaimCount=0`. The full direct
 `./scripts/generate_validated_boson_predictions.sh` pass completed with
 Phase424 through Phase436 included and ended at
@@ -1581,6 +1606,25 @@ fail-closed phase rather than editing Phase201/Phase256 directly. The phase
 should prove target independence, check every required contract field, and then
 let the existing gates decide whether promotion is allowed.
 
+### VALIDATION STATE AT HANDOFF (2026-07-02, read first)
+
+The Phase441 checkpoint was committed WITHOUT a completed full generator
+pass: the first full pass failed on a newly-discovered EIGHTH scanner
+(phase253, global observed-sector vacuum scan - it regexes `dimX >= 4`
+combined with vacuum/VEV/Hessian terms and classifies studies|reports
+.md/.json as production artifacts; the Phase441 frontier-statement text
+tripped it, cascading 253->254->255 into ~114 failed checklist items).
+The fix (phase441 study dir registered in phase253's
+excludedPathFragments with a dated justification) was applied and
+verified: phase253/254/255 rerun clean individually, and the direct gate
+chain (phase101 -> phase202 -> integrity) reports 234 passed / 3 failed
+with promotedPhysicalMassClaimCount=0. The RERUN full pass was then
+CANCELLED at user request mid-flight. FIRST ACTION ON RESUME: run
+`./scripts/generate_validated_boson_predictions.sh` from scratch and
+confirm it ends at `boson-claim-integrity-verified` before any further
+science work. Note the killed pass left some untracked phase outputs
+partially regenerated (harmless - the fresh pass regenerates all).
+
 ### Start-Up Checklist
 
 Run these first:
@@ -1608,12 +1652,12 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase440 output JSON files, and commit a checkpoint
+force-add the ignored Phase441 output JSON files, and commit a checkpoint
 after validation. REMEMBER: new phases must be registered in BOTH the
 generator script AND scripts/BosonPhasesTraversal.proj.
 
 Suggested checkpoint message:
 
 ```text
-Add phase440 coupled fixed-point probe
+Add phase441 toy-branch family universality sweep
 ```

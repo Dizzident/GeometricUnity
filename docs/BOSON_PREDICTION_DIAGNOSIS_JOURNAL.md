@@ -18894,3 +18894,40 @@ The physical-branch candidate-family universality sweep is now the ONLY
 named internal experiment remaining (design exploration of the
 nontrivial Shiab/torsion machinery required). Otherwise: incremental
 validation design, monitoring at checkpoint cadence.
+
+## 2026-07-02 - Phase441: Family Universality (The Terminal Internal Result)
+
+### Result
+
+All seven universality verdicts hold across the full 36-member toy branch
+family (Shiab x torsion x A0): Upsilon degree <= 2 (1.5e-15), Hessian
+quadratic decomposition (2.8e-14), growing-mode counts invariant (64/96),
+runaway universal (net -640 every member), no-saturation theorem
+family-wide. Verified structural insight: along single-direction rays
+[u,u]=0 makes every member's Upsilon affine and A0 cancels from the
+growing-mode operator. The draft's canonical physical Shiab is NOT
+REALIZABLE on the toy (dimX>=4 + Cl(7,7)/128 spinor basis required).
+
+### Interpretation
+
+THE INTERNAL EXPERIMENT PROGRAM IS COMPLETE. The terminal frontier
+statement is now family-complete and theorem-grade:
+scaleGapRequiresDimFourSpinorShiabOrSourceAnchor=True. No completion
+realizable in the toy geometry can produce a dynamical scale at one loop
+- not any Shiab variant, not any torsion operator, not any constant A0
+background, not the gap-equation backreaction (440), not dimensional/
+finite-size scaling (437). What computation established along the way:
+dynamical direction selection (430), background-steered su(2)xu(1)-
+aligned condensates (439), a genuine transmutation mechanism (438), and
+the exact structural reason the toy cannot go further (436/441). The ask
+is now singular and precise: realize the dimX>=4 spinor-realized Shiab
+(the physical VO-6/VO-7 completion) or obtain a source anchor for the
+background scale. promotedPhysicalMassClaimCount=0 throughout.
+
+### Standing Work
+
+Steady state: checkpoint-cadence literature monitoring (track by
+checksum); incremental-validation design note (restart prompt);
+dimX>=4 platform geometry is a PLATFORM ENGINEERING prerequisite (a
+4D mesh + Clifford structure build) - name it to the user as the next
+big investment decision rather than starting it unilaterally.

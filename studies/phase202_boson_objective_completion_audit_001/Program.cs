@@ -201,6 +201,7 @@ const string Phase432Path = "studies/phase432_welded_fermion_loop_block_selectio
 const string Phase433Path = "studies/phase433_blind_beta_coefficient_running_ledger_001/output/blind_beta_coefficient_running_ledger_summary.json";
 const string Phase435Path = "studies/phase435_two_condensate_scale_gap_probe_001/output/two_condensate_scale_gap_probe_summary.json";
 const string Phase437Path = "studies/phase437_four_dimensional_transmutation_scaling_probe_001/output/four_dimensional_transmutation_scaling_probe_summary.json";
+const string Phase441Path = "studies/phase441_toy_branch_family_universality_sweep_001/output/toy_branch_family_universality_sweep_summary.json";
 const string Phase440Path = "studies/phase440_coupled_background_condensate_fixed_point_probe_001/output/coupled_background_condensate_fixed_point_probe_summary.json";
 const string Phase439Path = "studies/phase439_gap_equation_lambda8_background_channel_steering_probe_001/output/gap_equation_lambda8_background_channel_steering_probe_summary.json";
 const string Phase438Path = "studies/phase438_self_consistent_condensate_gap_equation_probe_001/output/self_consistent_condensate_gap_equation_probe_summary.json";
@@ -445,6 +446,7 @@ using var phase437 = File.Exists(Phase437Path) ? JsonDocument.Parse(File.ReadAll
 using var phase438 = File.Exists(Phase438Path) ? JsonDocument.Parse(File.ReadAllText(Phase438Path)) : null;
 using var phase439 = File.Exists(Phase439Path) ? JsonDocument.Parse(File.ReadAllText(Phase439Path)) : null;
 using var phase440 = File.Exists(Phase440Path) ? JsonDocument.Parse(File.ReadAllText(Phase440Path)) : null;
+using var phase441 = File.Exists(Phase441Path) ? JsonDocument.Parse(File.ReadAllText(Phase441Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -6088,6 +6090,20 @@ var coupledBackgroundCondensateFixedPointProbePassed = coupledBackgroundCondensa
     && JsonBool(phase440.RootElement, "routePromotesHiggsMass") is false
     && JsonBool(phase440.RootElement, "routeCompletesBosonPredictions") is false
     && JsonInt(phase440.RootElement, "acceptedContractFieldCount") == 0;
+var toyBranchFamilyUniversalitySweepMaterialized = phase441 is not null;
+var toyBranchFamilyUniversalitySweepPassed = toyBranchFamilyUniversalitySweepMaterialized
+    && JsonBool(phase441!.RootElement, "toyBranchFamilyUniversalitySweepPassed") is true
+    && JsonBool(phase441.RootElement, "targetBlindConstruction") is true
+    && (JsonString(phase441.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase441.RootElement, "applicationSubjectKind") == "toy-branch-family-universality-sweep"
+    && JsonBool(phase441.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase441.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase441.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase441.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase441.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase441.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase441.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonInt(phase441.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -8584,6 +8600,14 @@ var checklist = new[]
             ? $"coupledBackgroundCondensateFixedPointProbePassed={JsonBool(phase440!.RootElement, "coupledBackgroundCondensateFixedPointProbePassed")}; condensateSaturatesFermionicRunaway={JsonBool(phase440.RootElement, "condensateSaturatesFermionicRunaway")}; jointFixedPointExists={JsonBool(phase440.RootElement, "jointFixedPointExists")}; runawayPersistsInCoupledSystem={JsonBool(phase440.RootElement, "runawayPersistsInCoupledSystem")}; noGevPromotion={JsonBool(phase440.RootElement, "noGevPromotion")}; canFillPhase201WzContract={JsonBool(phase440.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase440.RootElement, "decision")}"
             : "Phase440 artifact not materialized",
         Phase440Path),
+    new ObjectiveChecklistItem(
+        "toy-branch-family-universality-sweep-materialized",
+        "Extend the no-saturation theorem to the entire realizable toy branch family (36 members): every completion shares the scale gap; the requirement is the dimX>=4 spinor-realized Shiab or a source anchor.",
+        toyBranchFamilyUniversalitySweepPassed ? "passed" : "failed",
+        toyBranchFamilyUniversalitySweepMaterialized
+            ? $"toyBranchFamilyUniversalitySweepPassed={JsonBool(phase441!.RootElement, "toyBranchFamilyUniversalitySweepPassed")}; decision={JsonString(phase441.RootElement, "decision")}"
+            : "Phase441 artifact not materialized",
+        Phase441Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
