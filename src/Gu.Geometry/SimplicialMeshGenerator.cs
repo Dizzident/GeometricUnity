@@ -150,4 +150,108 @@ public static class SimplicialMeshGenerator
             vertexCount: vertexCount,
             cellVertices: cells.ToArray());
     }
+
+    /// <summary>
+    /// Creates a uniform 4D pentachoral mesh of a tesseract grid [0, n]^4.
+    /// Each hypercube is split via the Coxeter–Freudenthal–Kuhn (S4 permutation)
+    /// triangulation into 4! = 24 pentachora (4-simplices), giving 24 * n^4 cells.
+    /// The construction is conforming across shared cell boundaries, so
+    /// <see cref="MeshTopologyBuilder"/>'s vertex-tuple dedup yields a valid manifold.
+    /// </summary>
+    /// <param name="n">Number of grid divisions per axis (>= 1).</param>
+    /// <returns>A <see cref="SimplicialMesh"/> with embedding dimension 4 and simplicial dimension 4.</returns>
+    public static SimplicialMesh CreateUniform4D(int n)
+    {
+        if (n < 1) throw new ArgumentOutOfRangeException(nameof(n), "Must be >= 1.");
+
+        int side = n + 1;
+        int vertexCount = side * side * side * side;
+        var coords = new double[vertexCount * 4];
+
+        // Row-major index, w fastest.
+        int Idx(int x, int y, int z, int w) => ((x * side + y) * side + z) * side + w;
+
+        for (int x = 0; x <= n; x++)
+        {
+            for (int y = 0; y <= n; y++)
+            {
+                for (int z = 0; z <= n; z++)
+                {
+                    for (int w = 0; w <= n; w++)
+                    {
+                        int v = Idx(x, y, z, w);
+                        coords[v * 4 + 0] = x;
+                        coords[v * 4 + 1] = y;
+                        coords[v * 4 + 2] = z;
+                        coords[v * 4 + 3] = w;
+                    }
+                }
+            }
+        }
+
+        // The 24 permutations of the 4 axes (Heap-free explicit enumeration).
+        var permutations = Permutations4();
+
+        var cells = new List<int[]>(24 * n * n * n * n);
+        var corner = new int[4];
+        var p = new int[4];
+
+        for (int x = 0; x < n; x++)
+        {
+            for (int y = 0; y < n; y++)
+            {
+                for (int z = 0; z < n; z++)
+                {
+                    for (int w = 0; w < n; w++)
+                    {
+                        corner[0] = x; corner[1] = y; corner[2] = z; corner[3] = w;
+
+                        foreach (var perm in permutations)
+                        {
+                            var cellVerts = new int[5];
+                            p[0] = corner[0]; p[1] = corner[1]; p[2] = corner[2]; p[3] = corner[3];
+                            cellVerts[0] = Idx(p[0], p[1], p[2], p[3]);
+                            for (int k = 0; k < 4; k++)
+                            {
+                                p[perm[k]] += 1;
+                                cellVerts[k + 1] = Idx(p[0], p[1], p[2], p[3]);
+                            }
+                            cells.Add(cellVerts);
+                        }
+                    }
+                }
+            }
+        }
+
+        return MeshTopologyBuilder.Build(
+            embeddingDimension: 4,
+            simplicialDimension: 4,
+            vertexCoordinates: coords,
+            vertexCount: vertexCount,
+            cellVertices: cells.ToArray());
+    }
+
+    /// <summary>Returns all 24 permutations of {0,1,2,3}.</summary>
+    private static int[][] Permutations4()
+    {
+        var result = new List<int[]>(24);
+        var items = new[] { 0, 1, 2, 3 };
+        Permute(items, 0, result);
+        return result.ToArray();
+    }
+
+    private static void Permute(int[] arr, int start, List<int[]> result)
+    {
+        if (start == arr.Length - 1)
+        {
+            result.Add((int[])arr.Clone());
+            return;
+        }
+        for (int i = start; i < arr.Length; i++)
+        {
+            (arr[start], arr[i]) = (arr[i], arr[start]);
+            Permute(arr, start + 1, result);
+            (arr[start], arr[i]) = (arr[i], arr[start]);
+        }
+    }
 }

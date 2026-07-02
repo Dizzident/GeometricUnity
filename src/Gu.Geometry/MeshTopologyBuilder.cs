@@ -123,6 +123,67 @@ public static class MeshTopologyBuilder
             faceBoundaryOrientations[fi] = new[] { +1, -1, +1 };
         }
 
+        // Extract unique volumes (3-subsimplices / tetrahedra) with canonical ordering
+        // (v0 < v1 < v2 < v3). Mirrors the face block one degree higher.
+        var volumeMap = new Dictionary<(int, int, int, int), int>();
+        var volumeList = new List<int[]>();
+        var cellVolumesList = new List<int[]>();
+
+        if (simplicialDimension >= 3)
+        {
+            foreach (var cell in cellVertices)
+            {
+                var cellVolumes = new List<int>();
+                for (int i = 0; i < cell.Length; i++)
+                {
+                    for (int j = i + 1; j < cell.Length; j++)
+                    {
+                        for (int k = j + 1; k < cell.Length; k++)
+                        {
+                            for (int l = k + 1; l < cell.Length; l++)
+                            {
+                                var sorted = SortFour(cell[i], cell[j], cell[k], cell[l]);
+                                if (!volumeMap.TryGetValue(sorted, out int volIdx))
+                                {
+                                    volIdx = volumeList.Count;
+                                    volumeMap[sorted] = volIdx;
+                                    volumeList.Add(new[] { sorted.Item1, sorted.Item2, sorted.Item3, sorted.Item4 });
+                                }
+                                cellVolumes.Add(volIdx);
+                            }
+                        }
+                    }
+                }
+                cellVolumesList.Add(cellVolumes.ToArray());
+            }
+        }
+        else
+        {
+            for (int i = 0; i < cellVertices.Length; i++)
+                cellVolumesList.Add(Array.Empty<int>());
+        }
+
+        // Compute volume boundary faces and orientations.
+        // For volume {v0,v1,v2,v3} (canonical order), the boundary is:
+        //   +[v1,v2,v3] - [v0,v2,v3] + [v0,v1,v3] - [v0,v1,v2]
+        // i.e. omit v_i carries sign (-1)^i, mirroring the face->edge convention.
+        var volumeBoundaryFaces = new int[volumeList.Count][];
+        var volumeBoundaryOrientations = new int[volumeList.Count][];
+
+        for (int vi = 0; vi < volumeList.Count; vi++)
+        {
+            var vol = volumeList[vi];
+            int v0 = vol[0], v1 = vol[1], v2 = vol[2], v3 = vol[3];
+
+            int f0 = faceMap[SortThree(v1, v2, v3)]; // omit v0, sign +1
+            int f1 = faceMap[SortThree(v0, v2, v3)]; // omit v1, sign -1
+            int f2 = faceMap[SortThree(v0, v1, v3)]; // omit v2, sign +1
+            int f3 = faceMap[SortThree(v0, v1, v2)]; // omit v3, sign -1
+
+            volumeBoundaryFaces[vi] = new[] { f0, f1, f2, f3 };
+            volumeBoundaryOrientations[vi] = new[] { +1, -1, +1, -1 };
+        }
+
         // Compute vertex-edge incidence and orientations
         // For each vertex, collect incident edges and signs.
         // Edge {v0, v1} with v0 < v1: v0 gets sign +1, v1 gets sign -1.
@@ -151,6 +212,11 @@ public static class MeshTopologyBuilder
             vertexEdgeOrientations[v] = vertexEdgeOrientLists[v].ToArray();
         }
 
+        // The volume (3-subsimplex) layer is populated only for simplicialDimension >= 3.
+        // For lower dimensions the new arrays keep their empty-array defaults so the
+        // 2D construction path is unchanged.
+        bool hasVolumes = simplicialDimension >= 3;
+
         return new SimplicialMesh
         {
             EmbeddingDimension = embeddingDimension,
@@ -166,6 +232,10 @@ public static class MeshTopologyBuilder
             FaceBoundaryOrientations = faceBoundaryOrientations,
             VertexEdges = vertexEdges,
             VertexEdgeOrientations = vertexEdgeOrientations,
+            Volumes = hasVolumes ? volumeList.ToArray() : Array.Empty<int[]>(),
+            VolumeBoundaryFaces = hasVolumes ? volumeBoundaryFaces : Array.Empty<int[]>(),
+            VolumeBoundaryOrientations = hasVolumes ? volumeBoundaryOrientations : Array.Empty<int[]>(),
+            CellVolumes = hasVolumes ? cellVolumesList.ToArray() : Array.Empty<int[]>(),
         };
     }
 
@@ -175,5 +245,15 @@ public static class MeshTopologyBuilder
         if (b > c) (b, c) = (c, b);
         if (a > b) (a, b) = (b, a);
         return (a, b, c);
+    }
+
+    private static (int, int, int, int) SortFour(int a, int b, int c, int d)
+    {
+        if (a > b) (a, b) = (b, a);
+        if (c > d) (c, d) = (d, c);
+        if (a > c) (a, c) = (c, a);
+        if (b > d) (b, d) = (d, b);
+        if (b > c) (b, c) = (c, b);
+        return (a, b, c, d);
     }
 }

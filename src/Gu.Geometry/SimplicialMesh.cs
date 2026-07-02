@@ -69,6 +69,35 @@ public sealed class SimplicialMesh
     public required int[][] FaceBoundaryOrientations { get; init; }
 
     /// <summary>
+    /// Volumes (3-subsimplices). Each volume is a quadruple of vertex indices,
+    /// canonical order v0 &lt; v1 &lt; v2 &lt; v3. Populated only when SimplicialDimension &gt;= 3
+    /// (empty for 2D meshes). ad-valued 3-forms live on volumes.
+    /// </summary>
+    public int[][] Volumes { get; init; } = Array.Empty<int[]>();
+
+    /// <summary>
+    /// For each volume, its 4 boundary faces (2-subsimplices), stored in the
+    /// omit-vertex order (omit v0, omit v1, omit v2, omit v3) i.e. faces
+    /// {v1v2v3, v0v2v3, v0v1v3, v0v1v2}, each in canonical sorted form.
+    /// </summary>
+    public int[][] VolumeBoundaryFaces { get; init; } = Array.Empty<int[]>();
+
+    /// <summary>
+    /// Orientation signs for each volume's boundary faces:
+    /// VolumeBoundaryOrientations[vol][i] = (-1)^i  →  {+1, -1, +1, -1}.
+    /// Discrete d: (d omega3form)[vol] uses these; d(2-form)-&gt;3-form is the
+    /// transpose/coboundary and uses the SAME signs.
+    /// </summary>
+    public int[][] VolumeBoundaryOrientations { get; init; } = Array.Empty<int[]>();
+
+    /// <summary>
+    /// For each top cell (4-simplex / pentachoron), the indices of its volumes.
+    /// CellVolumes[cellIdx] = the C(5,4)=5 volume indices (omit each vertex).
+    /// Empty for meshes with SimplicialDimension &lt; 3.
+    /// </summary>
+    public int[][] CellVolumes { get; init; } = Array.Empty<int[]>();
+
+    /// <summary>
     /// For each vertex, the indices of incident edges.
     /// VertexEdges[vertIdx] = array of edge indices touching this vertex.
     /// Used by the codifferential d* (maps 1-forms on edges to 0-forms on vertices).
@@ -92,6 +121,9 @@ public sealed class SimplicialMesh
 
     /// <summary>Number of faces (2-subsimplices).</summary>
     public int FaceCount => Faces.Length;
+
+    /// <summary>Number of volumes (3-subsimplices). Zero for 2D meshes.</summary>
+    public int VolumeCount => Volumes.Length;
 
     /// <summary>
     /// Gets the coordinates of a vertex as a span.

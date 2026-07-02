@@ -453,4 +453,139 @@ public static class ToyGeometryFactory
             SectionCoefficients = sectionCoeffs,
         };
     }
+
+    /// <summary>
+    /// Creates a 4D toy fiber bundle: a single tesseract via the Coxeter–Freudenthal–Kuhn
+    /// triangulation (24 pentachora, equivalent to <see cref="SimplicialMeshGenerator.CreateUniform4D"/>
+    /// with n=1), wrapped as a trivial-fiber <see cref="FiberBundleMesh"/> (BaseMesh == AmbientMesh,
+    /// identity pi/sigma maps). This is the smallest human-debuggable 4D case for the M3 Shiab tests.
+    /// </summary>
+    public static FiberBundleMesh CreateToy4D()
+    {
+        var mesh = SimplicialMeshGenerator.CreateUniform4D(1);
+        return WrapTrivialFiber4D(mesh);
+    }
+
+    /// <summary>
+    /// Creates a structured 4D fiber-bundle geometry on the base X_h = CreateUniform4D(n) (dimX = 4).
+    /// With <paramref name="fiberSize"/> == 1 (default) the fiber is trivial (BaseMesh == AmbientMesh,
+    /// identity maps), which is what the M3 Einsteinian Shiab studies consume. With
+    /// <paramref name="fiberSize"/> &gt; 1 a fiber of that many points is attached per base vertex in an
+    /// embedding dimension dimY = 4 + fiberSize, with sigma selecting fiber point 0. The nontrivial-fiber
+    /// (14D Y_h) dimension policy is a physicist-gated open question; the parameter defers it.
+    /// </summary>
+    public static FiberBundleMesh CreateStructuredFiberBundle4D(int n, int fiberSize = 1)
+    {
+        if (fiberSize < 1) throw new ArgumentOutOfRangeException(nameof(fiberSize), "Must be >= 1.");
+
+        var xMesh = SimplicialMeshGenerator.CreateUniform4D(n);
+
+        if (fiberSize == 1)
+            return WrapTrivialFiber4D(xMesh);
+
+        int xVertCount = xMesh.VertexCount;
+        int yVertCount = xVertCount * fiberSize;
+        int dimY = 4 + fiberSize;
+
+        var yCoords = new double[yVertCount * dimY];
+        var yVertToXVert = new int[yVertCount];
+        var fiberVerts = new int[xVertCount][];
+        var xVertToYVert = new int[xVertCount];
+
+        for (int xv = 0; xv < xVertCount; xv++)
+        {
+            double x0 = xMesh.VertexCoordinates[xv * 4 + 0];
+            double x1 = xMesh.VertexCoordinates[xv * 4 + 1];
+            double x2 = xMesh.VertexCoordinates[xv * 4 + 2];
+            double x3 = xMesh.VertexCoordinates[xv * 4 + 3];
+
+            fiberVerts[xv] = new int[fiberSize];
+            for (int f = 0; f < fiberSize; f++)
+            {
+                int yv = xv * fiberSize + f;
+                fiberVerts[xv][f] = yv;
+                yVertToXVert[yv] = xv;
+
+                yCoords[yv * dimY + 0] = x0;
+                yCoords[yv * dimY + 1] = x1;
+                yCoords[yv * dimY + 2] = x2;
+                yCoords[yv * dimY + 3] = x3;
+                for (int j = 0; j < fiberSize; j++)
+                    yCoords[yv * dimY + (4 + j)] = f * 0.1 * (j + 1);
+            }
+
+            // sigma selects fiber point 0
+            xVertToYVert[xv] = xv * fiberSize;
+        }
+
+        // Y cells: the sigma-selected pentachoron per base cell.
+        var yCells = new List<int[]>(xMesh.CellCount);
+        var xCellToYCell = new int[xMesh.CellCount];
+        for (int xc = 0; xc < xMesh.CellCount; xc++)
+        {
+            var xCell = xMesh.CellVertices[xc];
+            xCellToYCell[xc] = yCells.Count;
+            yCells.Add(xCell.Select(v => xVertToYVert[v]).ToArray());
+        }
+
+        var yMesh = MeshTopologyBuilder.Build(
+            embeddingDimension: dimY,
+            simplicialDimension: 4,
+            vertexCoordinates: yCoords,
+            vertexCount: yVertCount,
+            cellVertices: yCells.ToArray());
+
+        var sectionCoeffs = new double[xMesh.CellCount][];
+        for (int xc = 0; xc < xMesh.CellCount; xc++)
+            sectionCoeffs[xc] = new[] { 1.0, 0.0, 0.0, 0.0, 0.0 };
+
+        return new FiberBundleMesh
+        {
+            BaseMesh = xMesh,
+            AmbientMesh = yMesh,
+            YVertexToXVertex = yVertToXVert,
+            FiberVerticesPerXVertex = fiberVerts,
+            XVertexToYVertex = xVertToYVert,
+            XCellToYCell = xCellToYCell,
+            SectionCoefficients = sectionCoeffs,
+        };
+    }
+
+    /// <summary>
+    /// Wraps a 4D base mesh as a trivial-fiber <see cref="FiberBundleMesh"/>
+    /// (BaseMesh == AmbientMesh, identity pi/sigma maps), mirroring CreateStructured2D.
+    /// </summary>
+    private static FiberBundleMesh WrapTrivialFiber4D(SimplicialMesh mesh)
+    {
+        int vertCount = mesh.VertexCount;
+        int cellCount = mesh.CellCount;
+
+        var xToY = new int[vertCount];
+        var fiberVerts = new int[vertCount][];
+        var yToX = new int[vertCount];
+        for (int v = 0; v < vertCount; v++)
+        {
+            xToY[v] = v;
+            fiberVerts[v] = new[] { v };
+            yToX[v] = v;
+        }
+
+        var cellMap = new int[cellCount];
+        for (int c = 0; c < cellCount; c++) cellMap[c] = c;
+
+        var sectionCoeffs = new double[cellCount][];
+        for (int c = 0; c < cellCount; c++)
+            sectionCoeffs[c] = new[] { 1.0, 0.0, 0.0, 0.0, 0.0 };
+
+        return new FiberBundleMesh
+        {
+            BaseMesh = mesh,
+            AmbientMesh = mesh,
+            YVertexToXVertex = yToX,
+            FiberVerticesPerXVertex = fiberVerts,
+            XVertexToYVertex = xToY,
+            XCellToYCell = cellMap,
+            SectionCoefficients = sectionCoeffs,
+        };
+    }
 }
