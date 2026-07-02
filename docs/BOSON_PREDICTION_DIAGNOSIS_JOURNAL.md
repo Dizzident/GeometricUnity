@@ -18756,3 +18756,14 @@ requirements: physical VO-6/VO-7 branch completion or new source
 anchors. Named engineering work: the performance program (DAG-parallel
 generator, incremental validation). Monitoring continues at checkpoint
 cadence.
+
+## 2026-07-02 - Performance Program: Build-Once Traversal Generator
+
+The generator now builds all 301 phase projects once in parallel
+(scripts/BosonPhasesTraversal.proj) and runs phases with --no-build; run
+order and behavior unchanged; full pass verified at
+boson-claim-integrity-verified with jitter-only output diffs. Honest
+measurement: 20.2 min vs 22.1-min baseline (~9%) - the pass is
+compute-bound in the heavy numeric phases (8563 s CPU, 710% utilization),
+not build-bound as hypothesized. Next named lever: fail-closed
+content-hash incremental validation (design note in the restart prompt).

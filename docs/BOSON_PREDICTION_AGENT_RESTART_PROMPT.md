@@ -1179,6 +1179,25 @@ Important current local detail notes:
   found the literal scalar-curvature mass reading dimensionally invalid and the
   squared-mass repair only a symbolic one-scale shell.
 
+### Performance Program Status (2026-07-02)
+
+The generator now builds all 301 phase projects ONCE via
+`scripts/BosonPhasesTraversal.proj` (parallel MSBuild) and runs each phase
+with `dotnet run --no-build -c Release`; run order and behavior are
+unchanged (full pass verified, jitter-only diffs). Measured honestly:
+20.2 min vs the 22.1-min baseline (~9%) - the pass is COMPUTE-BOUND in
+the heavy numeric phases (8563 s CPU at 710% utilization), not
+build-bound. Side benefit: single-phase iteration is much faster after
+one traversal build. NOTE: new phases must be added BOTH to the generator
+script AND to scripts/BosonPhasesTraversal.proj (the traversal item
+list), or --no-build will fail on the unbuilt project. THE NEXT REAL
+LEVER is content-hash incremental validation (skip re-running phases
+whose code and precursor inputs are unchanged); it changes gate semantics
+(a skipped run is not a re-validation) and must be designed fail-closed
+(hash-manifest gate recording exactly which phases were skipped and why,
+with a mandatory full pass before any promotion-relevant claim) - named
+future work, not yet implemented.
+
 ### Best Next Work
 
 Do not try to promote another numerical near-pass. The next useful work must
