@@ -49,7 +49,7 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase430-434 team wave (plus the 2026-06-12 platform
+Current gate status after the Phase435 work (plus the 2026-06-12 platform
 fix - GPU parity defect root-caused and discharged - and the 2026-07-01
 |Y|=1/2 calibration defect fix in the Phase411/417 informational SM
 censuses):
@@ -57,7 +57,7 @@ censuses):
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=227`,
+  `objectiveAchieved=False`, `checklistPassedCount=228`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -441,6 +441,13 @@ censuses):
   `extractionRowsExact=True` (6 rows; template partition 7/4/9 of 20),
   `candidateVevExistenceEstablished=False`,
   `isObservedFieldExtractionTheorem=False`
+- Phase435: `twoCondensateScaleGapProbePassed=True`,
+  `derivedAxisRunawayUndercutsInterior=True` (interior LOCAL two-condensate
+  minimum exists for the derived content, gradient 5e-4, but the lambda_8
+  runaway undercuts it), `fundamentalShowsNoCondensationOnset=True`,
+  `finiteSelfConsistentScaleExists=False`,
+  `scaleRequiresLogSaturationBeyondWorkbench=True`,
+  `logSaturationStructureSourceDefined=False` (THE quantified scale gap)
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -461,7 +468,23 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work (2026-07-02, seventh checkpoint: the five-phase TEAM WAVE
+The latest work (2026-07-02, eighth checkpoint) added Phase435, the
+two-condensate scale-gap probe, deciding the self-consistent background
+question: with an IR-continuous relative potential (zero-dispersion
+doubler sector excluded from both determinants, a recorded convention;
+block functional dense-verified at 1.7e-12), the fundamental content
+shows no condensation onset, and the derived content has a genuine
+interior LOCAL two-condensate minimum (gradient 5e-4, positive-definite
+Hessian; candidate-only) that the pure-lambda_8 log-runaway undercuts -
+NO finite global minimum exists. The scale gap is now one named missing
+structure: log-saturation (higher-order/compactness/UV) that no reviewed
+source defines. Study: studies/phase435_two_condensate_scale_gap_probe_001
+(IMPLEMENTATION_P435.md). Named next: the EXACT-HESSIAN TIE-IN (replace
+the workbench bosonic model with the true control-branch Hessian via the
+Phase400/405 machinery - the last internal experiment with scale-law
+potential), then the performance program and monitoring.
+
+Before that, the work (2026-07-02, seventh checkpoint: the five-phase TEAM WAVE
 430-434, built by parallel agents in isolated study dirs and integrated
 centrally) executed the full Coleman-Weinberg program named on 2026-07-01:
 Phase430 - the full one-loop landscape is direction-selecting and THE
@@ -996,7 +1019,7 @@ HONEST BOUNDARY. Study:
 
 ### Integration Points Already Updated
 
-Phases 430-434 (like Phase388-429) are wired into:
+Phase435 (like Phase388-434) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (single broad pass; the
   older duplicated final sweep was removed on 2026-06-16; the Phase424 line
@@ -1020,7 +1043,8 @@ Phases 430-434 (like Phase388-429) are wired into:
   `lambda8-background-doublet-reopening-probe-materialized` and
   `welded-fermion-loop-block-selection-probe-materialized` and
   `blind-beta-coefficient-running-ledger-materialized` and
-  `conditional-observed-field-extraction-row-ledger-materialized`;
+  `conditional-observed-field-extraction-row-ledger-materialized` and
+  `two-condensate-scale-gap-probe-materialized`;
   the Phase417 checklist row now asserts the corrected
   `yHalfCalibrationExact=True` and `internalSmHiggsPatternComplexDimension=6`)
 - `scripts/verify_boson_claim_integrity.sh` (Phase424 asserts plus the
@@ -1077,11 +1101,11 @@ PHASE405_ENABLE_GPU=1 LD_LIBRARY_PATH=native/build dotnet run --project studies/
 The targeted Phase424 (Release, ~7 min) and Phase425 (Release, ~1 min) runs
 pass and preserve the fail-closed boundary; the fixed Phase411/Phase417
 re-runs pass with their corrected censuses; Phase202 now reports
-`checklistPassedCount=227`, `checklistFailedCount=3`; claim integrity
-verifies Phase424 through Phase434 (and the corrected Phase417 values)
+`checklistPassedCount=228`, `checklistFailedCount=3`; claim integrity
+verifies Phase424 through Phase435 (and the corrected Phase417 values)
 with `promotedPhysicalMassClaimCount=0`. The full direct
 `./scripts/generate_validated_boson_predictions.sh` pass completed with
-Phase424 through Phase434 included and ended at
+Phase424 through Phase435 included and ended at
 `boson-claim-integrity-verified`. (Platform
 state: Gu.Interop.Tests 158/158 with the real-mesh parity and
 buffer-handle recycling tests; both Phase405 platform notes discharged
@@ -1454,11 +1478,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase430-434 output JSON files, and commit a
-checkpoint after validation.
+force-add the ignored Phase435 output JSON files, and commit a checkpoint
+after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phases 430-434: Coleman-Weinberg program team wave
+Add phase435 two-condensate scale-gap probe
 ```

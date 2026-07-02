@@ -18681,3 +18681,43 @@ on the workbench, recording whether a finite self-consistent point exists;
 (engineering) tie the bosonic determinant to the exact control-branch
 Hessian via the Phase400/405 machinery; the performance program; and
 checkpoint-cadence monitoring.
+
+## 2026-07-02 - Phase435: Two-Condensate Scale-Gap Probe (Scale Gap Quantified)
+
+### Result
+
+The self-consistent background question is decided on the workbench. With
+an IR-continuous relative potential (zero-dispersion doubler sector
+excluded from both determinants; V(0,0)=0 exactly; block functional
+verified vs dense at 1.7e-12): the FUNDAMENTAL content shows no interior
+structure and no condensation onset; the DERIVED content has a genuine
+interior LOCAL minimum (gradient 5e-4, positive-definite Hessian) at
+(a,b) ~ (3.72, 3.36) - a metastable two-condensate state, candidate-only -
+but the pure-lambda_8 log-runaway undercuts it (-814 at a=20 vs +276), so
+NO FINITE GLOBAL MINIMUM exists. Verdict:
+finiteSelfConsistentScaleExists=False;
+scaleRequiresLogSaturationBeyondWorkbench=True;
+logSaturationStructureSourceDefined=False. An engineering note: the first
+run exposed an IR discontinuity artifact (reference-point mode counting)
+and a NaN-serialization crash - both fixed with the recorded IR
+convention and finite-value sanitization; the phase's own batteries
+caught the former.
+
+### Interpretation
+
+The Coleman-Weinberg program is now complete at workbench level with a
+sharply quantified residual: direction selection exists (430), the
+background-induced mass law exists (431), source-pinned breaking
+structure exists (432), the blind running surface exists (433), the
+conditional extraction algebra exists (434), and the ONLY missing
+dynamical ingredient is log-saturation structure for a finite scale -
+which no reviewed source defines. The scale question has been reduced
+from "no mechanism" to "one named missing structure".
+
+### Standing Next Work
+
+Named next: the exact-Hessian tie-in (replace the workbench bosonic model
+with the true control-branch Hessian via the Phase400/405 machinery - it
+could in principle supply the saturation the model lacks, making this the
+last internal experiment with scale-law potential); the performance
+program; checkpoint-cadence monitoring.

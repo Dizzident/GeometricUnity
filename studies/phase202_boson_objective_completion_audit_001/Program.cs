@@ -199,6 +199,7 @@ const string Phase430Path = "studies/phase430_net_one_loop_direction_selection_p
 const string Phase431Path = "studies/phase431_lambda8_background_doublet_reopening_probe_001/output/lambda8_background_doublet_reopening_probe_summary.json";
 const string Phase432Path = "studies/phase432_welded_fermion_loop_block_selection_probe_001/output/welded_fermion_loop_block_selection_probe_summary.json";
 const string Phase433Path = "studies/phase433_blind_beta_coefficient_running_ledger_001/output/blind_beta_coefficient_running_ledger_summary.json";
+const string Phase435Path = "studies/phase435_two_condensate_scale_gap_probe_001/output/two_condensate_scale_gap_probe_summary.json";
 const string Phase434Path = "studies/phase434_conditional_observed_field_extraction_row_ledger_001/output/conditional_observed_field_extraction_row_ledger_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
@@ -433,6 +434,7 @@ using var phase431 = File.Exists(Phase431Path) ? JsonDocument.Parse(File.ReadAll
 using var phase432 = File.Exists(Phase432Path) ? JsonDocument.Parse(File.ReadAllText(Phase432Path)) : null;
 using var phase433 = File.Exists(Phase433Path) ? JsonDocument.Parse(File.ReadAllText(Phase433Path)) : null;
 using var phase434 = File.Exists(Phase434Path) ? JsonDocument.Parse(File.ReadAllText(Phase434Path)) : null;
+using var phase435 = File.Exists(Phase435Path) ? JsonDocument.Parse(File.ReadAllText(Phase435Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -5960,6 +5962,27 @@ var conditionalObservedFieldExtractionRowLedgerPassed = conditionalObservedField
     && JsonBool(phase434.RootElement, "phase201TemplateMutated") is false
     && JsonInt(phase434.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
     && JsonInt(phase434.RootElement, "acceptedContractFieldCount") == 0;
+var twoCondensateScaleGapProbeMaterialized = phase435 is not null;
+var twoCondensateScaleGapProbePassed = twoCondensateScaleGapProbeMaterialized
+    && JsonBool(phase435!.RootElement, "twoCondensateScaleGapProbePassed") is true
+    && JsonBool(phase435.RootElement, "targetBlindConstruction") is true
+    && (JsonString(phase435.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase435.RootElement, "applicationSubjectKind") == "two-condensate-scale-gap-probe"
+    && JsonBool(phase435.RootElement, "analysisInternallyConsistent") is true
+    && JsonBool(phase435.RootElement, "blockFunctionalVerified") is true
+    && JsonBool(phase435.RootElement, "derivedAxisRunawayUndercutsInterior") is true
+    && JsonBool(phase435.RootElement, "fundamentalShowsNoCondensationOnset") is true
+    && JsonBool(phase435.RootElement, "finiteSelfConsistentScaleExists") is false
+    && JsonBool(phase435.RootElement, "scaleRequiresLogSaturationBeyondWorkbench") is true
+    && JsonBool(phase435.RootElement, "logSaturationStructureSourceDefined") is false
+    && JsonBool(phase435.RootElement, "interiorStationaryDataIsCandidateOnly") is true
+    && JsonBool(phase435.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase435.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase435.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase435.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase435.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase435.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonInt(phase435.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -8408,6 +8431,14 @@ var checklist = new[]
             ? $"conditionalObservedFieldExtractionRowLedgerPassed={JsonBool(phase434!.RootElement, "conditionalObservedFieldExtractionRowLedgerPassed")}; candidateVevExistenceEstablished={JsonBool(phase434.RootElement, "candidateVevExistenceEstablished")}; extractionRowsExact={JsonBool(phase434.RootElement, "extractionRowsExact")}; conditionallyDeterminedRowCount={JsonInt(phase434.RootElement, "conditionallyDeterminedRowCount")}; measuredElectroweakValuesConsulted={JsonBool(phase434.RootElement, "measuredElectroweakValuesConsulted")}; canFillPhase256ObservedFieldExtractionContract={JsonBool(phase434.RootElement, "canFillPhase256ObservedFieldExtractionContract")}; decision={JsonString(phase434.RootElement, "decision")}"
             : "Phase434 artifact not materialized",
         Phase434Path),
+    new ObjectiveChecklistItem(
+        "two-condensate-scale-gap-probe-materialized",
+        "Decide the self-consistent background question: the two-condensate landscape has interior stationary structure but no finite global minimum; a scale requires saturation structure no source defines.",
+        twoCondensateScaleGapProbePassed ? "passed" : "failed",
+        twoCondensateScaleGapProbeMaterialized
+            ? $"twoCondensateScaleGapProbePassed={JsonBool(phase435!.RootElement, "twoCondensateScaleGapProbePassed")}; derivedAxisRunawayUndercutsInterior={JsonBool(phase435.RootElement, "derivedAxisRunawayUndercutsInterior")}; fundamentalShowsNoCondensationOnset={JsonBool(phase435.RootElement, "fundamentalShowsNoCondensationOnset")}; finiteSelfConsistentScaleExists={JsonBool(phase435.RootElement, "finiteSelfConsistentScaleExists")}; scaleRequiresLogSaturationBeyondWorkbench={JsonBool(phase435.RootElement, "scaleRequiresLogSaturationBeyondWorkbench")}; canFillPhase201WzContract={JsonBool(phase435.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase435.RootElement, "decision")}"
+            : "Phase435 artifact not materialized",
+        Phase435Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

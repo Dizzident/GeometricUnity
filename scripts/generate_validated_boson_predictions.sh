@@ -310,6 +310,7 @@ dotnet run -c Release --project studies/phase431_lambda8_background_doublet_reop
 dotnet run -c Release --project studies/phase432_welded_fermion_loop_block_selection_probe_001/Phase432WeldedFermionLoopBlockSelectionProbe.csproj
 dotnet run -c Release --project studies/phase433_blind_beta_coefficient_running_ledger_001/Phase433BlindBetaCoefficientRunningLedger.csproj
 dotnet run -c Release --project studies/phase434_conditional_observed_field_extraction_row_ledger_001/Phase434ConditionalObservedFieldExtractionRowLedger.csproj
+dotnet run -c Release --project studies/phase435_two_condensate_scale_gap_probe_001/Phase435TwoCondensateScaleGapProbe.csproj
 dotnet run -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

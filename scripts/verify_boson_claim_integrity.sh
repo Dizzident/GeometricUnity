@@ -205,6 +205,7 @@ const paths = {
   phase432: "studies/phase432_welded_fermion_loop_block_selection_probe_001/output/welded_fermion_loop_block_selection_probe_summary.json",
   phase433: "studies/phase433_blind_beta_coefficient_running_ledger_001/output/blind_beta_coefficient_running_ledger_summary.json",
   phase434: "studies/phase434_conditional_observed_field_extraction_row_ledger_001/output/conditional_observed_field_extraction_row_ledger_summary.json",
+  phase435: "studies/phase435_two_condensate_scale_gap_probe_001/output/two_condensate_scale_gap_probe_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -481,6 +482,7 @@ const phase431 = requireFile(paths.phase431);
 const phase432 = requireFile(paths.phase432);
 const phase433 = requireFile(paths.phase433);
 const phase434 = requireFile(paths.phase434);
+const phase435 = requireFile(paths.phase435);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -5160,6 +5162,17 @@ if (sourceLineageMissing) {
   assert(phase434.phase201TemplateMutated === false && phase434.fieldsAppliedToPhase201TemplateCount === 0 && phase434.acceptedContractFieldCount === 0, "Phase434 must not mutate or fill the Phase201 template.");
   assert(phase101Package?.conditionalObservedFieldExtractionRowLedger?.conditionalObservedFieldExtractionRowLedgerPassed === true, "Phase101 must include the Phase434 conditional extraction-row block.");
   assert(phase101Package.conditionalObservedFieldExtractionRowLedger.candidateVevExistenceEstablished === false && phase101Package.conditionalObservedFieldExtractionRowLedger.canFillPhase256ObservedFieldExtractionContract === false, "Phase101 must preserve the Phase434 candidate-only verdict.");
+  assert(phase435.twoCondensateScaleGapProbePassed === true, "Phase435 two-condensate scale-gap probe must pass as fail-closed representation arithmetic.");
+  assert(phase435.targetBlindConstruction === true && typeof phase435.targetBlindConstructionHash === "string" && phase435.targetBlindConstructionHash.length === 64, "Phase435 must remain target-blind with a persisted construction hash.");
+  assert(phase435.applicationSubjectKind === "two-condensate-scale-gap-probe", "Phase435 must classify its subject as the two-condensate scale-gap probe.");
+  assert(phase435.blockFunctionalVerified === true && phase435.potentialContinuousAtOrigin === true, "Phase435 must verify the block functional and the IR-continuous relative potential.");
+  assert(phase435.derivedAxisRunawayUndercutsInterior === true && phase435.fundamentalShowsNoCondensationOnset === true, "Phase435 must record the axis-runaway undercut and the fundamental no-onset verdicts.");
+  assert(phase435.finiteSelfConsistentScaleExists === false && phase435.scaleRequiresLogSaturationBeyondWorkbench === true && phase435.logSaturationStructureSourceDefined === false, "Phase435 must record the quantified scale gap with no source-defined saturation structure.");
+  assert(phase435.interiorStationaryDataIsCandidateOnly === true, "Phase435 must keep interior stationary data candidate-only.");
+  assert(phase435.sourceContractApplicationAllowed === false && phase435.canFillPhase201WzContract === false && phase435.canFillPhase201HiggsContract === false && phase435.canFillPhase256ObservedFieldExtractionContract === false, "Phase435 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase435.routePromotesWzMasses === false && phase435.routePromotesHiggsMass === false && phase435.routeCompletesBosonPredictions === false, "Phase435 cannot promote boson predictions.");
+  assert(phase101Package?.twoCondensateScaleGapProbe?.twoCondensateScaleGapProbePassed === true, "Phase101 must include the Phase435 scale-gap block.");
+  assert(phase101Package.twoCondensateScaleGapProbe.finiteSelfConsistentScaleExists === false, "Phase101 must preserve the Phase435 scale-gap verdict.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");
