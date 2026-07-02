@@ -110,6 +110,45 @@ public sealed class SpinorField
     public SpinorField Clone()
         => new(Mesh, SpinorDimension, GaugeComponents, (Complex[])Values.Clone());
 
+    /// <summary>
+    /// Convert to the Gu.Phase4.Dirac assembler's flat real spinor vector: complex
+    /// DOF k (= <see cref="Index"/>) maps to real entries (2k, 2k+1) = (Re, Im).
+    /// This is the lossless bridge to CpuDiracOperatorAssembler / FermionSpectralSolver,
+    /// whose complex DOF index equals <see cref="Index"/>. Length = 2 * Values.Length
+    /// = 2 * VertexCount * GaugeComponents * SpinorDimension.
+    /// </summary>
+    public double[] ToFlat()
+    {
+        var flat = new double[2 * Values.Length];
+        for (int k = 0; k < Values.Length; k++)
+        {
+            flat[2 * k] = Values[k].Real;
+            flat[2 * k + 1] = Values[k].Imaginary;
+        }
+        return flat;
+    }
+
+    /// <summary>
+    /// Reconstruct a <see cref="SpinorField"/> from the assembler's flat real
+    /// spinor vector (inverse of <see cref="ToFlat"/>). <paramref name="flat"/>
+    /// must have length 2 * VertexCount * GaugeComponents * SpinorDimension.
+    /// </summary>
+    public static SpinorField FromFlat(SimplicialMesh mesh, int spinorDimension, int gaugeComponents, double[] flat)
+    {
+        ArgumentNullException.ThrowIfNull(mesh);
+        ArgumentNullException.ThrowIfNull(flat);
+        int expected = 2 * mesh.VertexCount * gaugeComponents * spinorDimension;
+        if (flat.Length != expected)
+            throw new ArgumentException(
+                $"flat length {flat.Length} does not match 2 * VertexCount ({mesh.VertexCount}) * GaugeComponents ({gaugeComponents}) * SpinorDimension ({spinorDimension}) = {expected}.",
+                nameof(flat));
+
+        var values = new Complex[flat.Length / 2];
+        for (int k = 0; k < values.Length; k++)
+            values[k] = new Complex(flat[2 * k], flat[2 * k + 1]);
+        return new SpinorField(mesh, spinorDimension, gaugeComponents, values);
+    }
+
     /// <summary>Component-wise sum. Both fields must share layout (mesh, dims).</summary>
     public SpinorField Add(SpinorField other)
     {

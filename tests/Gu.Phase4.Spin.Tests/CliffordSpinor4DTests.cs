@@ -179,6 +179,55 @@ public sealed class CliffordSpinor4DTests
     }
 
     // ---------------------------------------------------------------
+    // SpinorField ⟷ assembler flat-vector bridge (ToFlat / FromFlat).
+    // ---------------------------------------------------------------
+
+    [Fact]
+    public void SpinorField_ToFlat_FromFlat_RoundTrips()
+    {
+        var mesh = SimplicialMeshGenerator.CreateUniform4D(1);
+        var field = new SpinorField(mesh, spinorDimension: 4, gaugeComponents: 2);
+        var rng = new Random(2024);
+        for (int i = 0; i < field.Values.Length; i++)
+            field.Values[i] = new Complex(rng.NextDouble(), rng.NextDouble());
+
+        double[] flat = field.ToFlat();
+        Assert.Equal(2 * field.Values.Length, flat.Length);
+
+        var restored = SpinorField.FromFlat(mesh, 4, 2, flat);
+        for (int i = 0; i < field.Values.Length; i++)
+            Assert.Equal(field.Values[i], restored.Values[i]);
+    }
+
+    [Fact]
+    public void SpinorField_ToFlat_MatchesAssemblerInterleavedLayout()
+    {
+        // The assembler stores complex DOF k as real (2k, 2k+1); SpinorField.Index
+        // is exactly that complex DOF index, so ToFlat matches the assembler layout.
+        var mesh = SimplicialMeshGenerator.CreateUniform4D(1);
+        var field = new SpinorField(mesh, spinorDimension: 4, gaugeComponents: 1);
+        for (int v = 0; v < mesh.VertexCount; v++)
+            for (int sp = 0; sp < 4; sp++)
+                field.Values[field.Index(v, 0, sp)] = new Complex(v + 1, sp - 1);
+
+        double[] flat = field.ToFlat();
+        for (int v = 0; v < mesh.VertexCount; v++)
+            for (int sp = 0; sp < 4; sp++)
+            {
+                int k = field.Index(v, 0, sp);
+                Assert.Equal(v + 1, flat[2 * k]);
+                Assert.Equal(sp - 1, flat[2 * k + 1]);
+            }
+    }
+
+    [Fact]
+    public void SpinorField_FromFlat_RejectsWrongLength()
+    {
+        var mesh = SimplicialMeshGenerator.CreateUniform4D(1);
+        Assert.Throws<ArgumentException>(() => SpinorField.FromFlat(mesh, 4, 1, new double[7]));
+    }
+
+    // ---------------------------------------------------------------
     // SpinorDiracOperator — SpinorField-native reference/probe (delegates the
     // unit edge-gamma to the shared EdgeGammaContraction). NOT the production
     // fermion operator (that is the Gu.Phase4.Dirac assembler).
