@@ -199,6 +199,7 @@ const paths = {
   phase426: "studies/phase426_cox_gu_series_boson_contract_audit_001/output/cox_gu_series_boson_contract_audit_summary.json",
   phase427: "studies/phase427_hofseth_gu_rvg_superluminal_source_audit_001/output/hofseth_gu_rvg_superluminal_source_audit_summary.json",
   phase428: "studies/phase428_fermion_loop_block_selection_no_go_probe_001/output/fermion_loop_block_selection_no_go_probe_summary.json",
+  phase429: "studies/phase429_target_blind_dimensionless_ratio_ledger_001/output/target_blind_dimensionless_ratio_ledger_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -469,6 +470,7 @@ const phase425 = requireFile(paths.phase425);
 const phase426 = requireFile(paths.phase426);
 const phase427 = requireFile(paths.phase427);
 const phase428 = requireFile(paths.phase428);
+const phase429 = requireFile(paths.phase429);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -5086,6 +5088,18 @@ if (sourceLineageMissing) {
   assert(phase428.phase201TemplateMutated === false && phase428.fieldsAppliedToPhase201TemplateCount === 0 && phase428.acceptedContractFieldCount === 0, "Phase428 must not mutate or fill the Phase201 template.");
   assert(phase101Package?.fermionLoopBlockSelectionNoGoProbe?.fermionLoopBlockSelectionNoGoProbePassed === true, "Phase101 must include the Phase428 fermion-loop no-go block.");
   assert(phase101Package.fermionLoopBlockSelectionNoGoProbe.fermionLoopBlockSelectionMechanismClosed === true, "Phase101 must preserve the Phase428 mechanism-class closure verdict.");
+  assert(phase429.targetBlindDimensionlessRatioLedgerPassed === true, "Phase429 target-blind dimensionless-ratio ledger must pass as fail-closed exact arithmetic.");
+  assert(phase429.targetBlindConstruction === true && phase429.physicalTargetsConsultedForConstruction === false, "Phase429 construction must remain target-blind.");
+  assert(typeof phase429.targetBlindConstructionHash === "string" && phase429.targetBlindConstructionHash.length === 64, "Phase429 must persist a target-blind construction hash.");
+  assert(phase429.applicationSubjectKind === "target-blind-dimensionless-ratio-ledger", "Phase429 must classify its subject as the target-blind dimensionless-ratio ledger.");
+  assert(phase429.exactArithmeticVerified === true && phase429.fixedRowCount === 3 && phase429.conditionalRowCount === 1, "Phase429 must preserve the exact ledger (three fixed rows, one breaking-sector-conditional row).");
+  assert(phase429.measuredElectroweakValuesConsulted === false && phase429.comparisonAgainstObservationPerformed === false && phase429.derivationComparisonSeparationMaintained === true, "Phase429 must keep derivation strictly separated from comparison.");
+  assert(phase429.sourceDefinedComparisonLineageFieldCount === 0, "Phase429 must record that zero comparison-lineage fields are source-defined.");
+  assert(phase429.sourceContractApplicationAllowed === false && phase429.canFillPhase201WzContract === false && phase429.canFillPhase201HiggsContract === false && phase429.canFillPhase256ObservedFieldExtractionContract === false, "Phase429 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase429.routePromotesWzMasses === false && phase429.routePromotesHiggsMass === false && phase429.routeCompletesBosonPredictions === false, "Phase429 cannot promote boson predictions.");
+  assert(phase429.phase201TemplateMutated === false && phase429.fieldsAppliedToPhase201TemplateCount === 0 && phase429.acceptedContractFieldCount === 0, "Phase429 must not mutate or fill the Phase201 template.");
+  assert(phase101Package?.targetBlindDimensionlessRatioLedger?.targetBlindDimensionlessRatioLedgerPassed === true, "Phase101 must include the Phase429 ratio-ledger block.");
+  assert(phase101Package.targetBlindDimensionlessRatioLedger.derivationComparisonSeparationMaintained === true, "Phase101 must preserve the Phase429 derivation/comparison separation.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

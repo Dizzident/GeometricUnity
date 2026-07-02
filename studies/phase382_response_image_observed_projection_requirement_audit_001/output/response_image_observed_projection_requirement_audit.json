@@ -1,6 +1,6 @@
 {
   "phaseId": "phase382-response-image-observed-projection-requirement-audit",
-  "generatedAt": "2026-07-02T02:03:22.1621707+00:00",
+  "generatedAt": "2026-07-02T02:30:54.4778474+00:00",
   "terminalStatus": "response-image-observed-projection-requirement-audit-no-namespace-separation-map",
   "responseImageObservedProjectionRequirementAuditPassed": true,
   "targetBlindConstruction": true,
@@ -77,7 +77,7 @@
       },
       {
         "fieldId": "targetBlindConstructionHash",
-        "candidateLineCount": 1002,
+        "candidateLineCount": 1021,
         "intakeReadyCandidateCount": 0,
         "filled": false
       }

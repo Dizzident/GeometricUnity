@@ -1,0 +1,111 @@
+{
+  "phaseId": "phase429-target-blind-dimensionless-ratio-ledger",
+  "generatedAt": "2026-07-02T02:46:23.310437+00:00",
+  "terminalStatus": "dimensionless-ratio-ledger-materialized-comparison-lineage-still-missing",
+  "targetBlindDimensionlessRatioLedgerPassed": true,
+  "phase404PrecursorPassed": true,
+  "phase426PrecursorPassed": true,
+  "phase428PrecursorPassed": true,
+  "applicationSubjectKind": "target-blind-dimensionless-ratio-ledger",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "08be48554fcaf28028cf1069874d00124fea0887a14fb4b7c7d207a75fa54f12",
+  "exactArithmeticVerified": true,
+  "ledger": [
+    {
+      "rowId": "tan-squared-theta-w-at-unification",
+      "definition": "tan^2 theta_W = g_Y^2 / g^2",
+      "value": 0.6,
+      "exactForm": "3/5",
+      "lineageNote": "Phase404 blind embedding enumeration; independently corroborated by Cox GU II Theorem H.3 (Phase426).",
+      "fixedByInternalStructure": true
+    },
+    {
+      "rowId": "sin-squared-theta-w-at-unification",
+      "definition": "sin^2 theta_W = tan^2 / (1 \u002B tan^2)",
+      "value": 0.37499999999999994,
+      "exactForm": "3/8",
+      "lineageNote": "Exact arithmetic from the kernel relation; the classic tree-level unification value.",
+      "fixedByInternalStructure": true
+    },
+    {
+      "rowId": "gut-normalized-coupling-ratio-at-unification",
+      "definition": "g_1^2 / g_2^2 with g_1^2 = (5/3) g_Y^2",
+      "value": 1,
+      "exactForm": "1",
+      "lineageNote": "Unification-point normalization identity; content equivalent to the tan^2 row.",
+      "fixedByInternalStructure": true
+    },
+    {
+      "rowId": "tree-level-w-z-mass-ratio-at-unification",
+      "definition": "m_W / m_Z = cos theta_W (tree level, custodial limit)",
+      "value": 0.7905694150420949,
+      "exactForm": "sqrt(5/8)",
+      "lineageNote": "Requires, in addition to the shared lineage, a source-defined symmetry-breaking sector: the mass ratio presupposes exactly the doublet VEV whose internal selection mechanisms Phases 405/410/418/428 closed.",
+      "fixedByInternalStructure": false
+    }
+  ],
+  "fixedRowCount": 3,
+  "conditionalRowCount": 1,
+  "comparisonLineageFields": [
+    "renormalization-group-running-from-the-unification-point-to-the-comparison-scale",
+    "threshold-corrections-and-matching-scheme",
+    "renormalization-scheme-definition-for-the-compared-quantity",
+    "the-unification-scale-itself (no dimensionful anchor exists in any source)",
+    "pole-vs-running-quantity-extraction",
+    "custodial/radiative-corrections-for-mass-ratio-rows"
+  ],
+  "comparisonLineageFieldCount": 6,
+  "sourceDefinedComparisonLineageFieldCount": 0,
+  "notDetermined": [
+    "any dimensionful scale (no GeV anchor exists in any reviewed source)",
+    "the running of the ratios away from the unification point (requires a matter content and scale lineage)",
+    "the existence or amplitude of a symmetry-breaking VEV (all named internal selection mechanisms are closed: Phases 405/410/418/428)",
+    "the Higgs self-coupling or any Higgs-sector ratio (no scalar potential exists in any source)",
+    "pole-scheme observables (no pole extraction is defined)"
+  ],
+  "measuredElectroweakValuesConsulted": false,
+  "comparisonAgainstObservationPerformed": false,
+  "derivationComparisonSeparationMaintained": true,
+  "sourceDefinesRunningOrThresholds": false,
+  "sourceDefinesUnificationScale": false,
+  "sourceDefinesSymmetryBreakingSector": false,
+  "physicalCouplingProvided": false,
+  "routeProvidesPhysicalMassPsiCompatibleBranch": false,
+  "routeProvidesCompletedFermionicAction": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesObservedElectroweakNamespaceMap": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesWeakAngleOrCouplingLineage": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "sourceEvidence": {
+    "phase404SummaryPath": "studies/phase404_gu_embedding_chain_coupling_ratio_enumeration_001/output/gu_embedding_chain_coupling_ratio_enumeration_summary.json",
+    "phase426SummaryPath": "studies/phase426_cox_gu_series_boson_contract_audit_001/output/cox_gu_series_boson_contract_audit_summary.json",
+    "phase428SummaryPath": "studies/phase428_fermion_loop_block_selection_no_go_probe_001/output/fermion_loop_block_selection_no_go_probe_summary.json"
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "The ledger records unification-point tree-level structure only; nothing here is an observable prediction.",
+    "No measured electroweak value appears in this phase and no comparison was performed; derivation and comparison are strictly separated by construction.",
+    "The tree-level mass-ratio row is conditional on a symmetry-breaking sector that no internal mechanism supplies and no source defines.",
+    "Any future comparison phase must import the listed lineage fields explicitly and pass the existing promotion gates.",
+    "No Phase201 or Phase256 fill."
+  ],
+  "decision": "The complete scale-free surface of the internal embedding chain is now an explicit fail-closed ledger: three ratios are fixed blind at the unification point (tan^2 = 3/5, sin^2 = 3/8, GUT-normalized ratio 1) and one (the tree-level m_W/m_Z = sqrt(5/8)) is additionally conditional on a symmetry-breaking sector that no internal mechanism supplies (Phases 405/410/418/428) and no source defines. Every row lists the exact comparison lineage it lacks - running, thresholds, scheme, the unification scale, pole extraction, and (for mass ratios) the breaking sector. No measured value was consulted, no comparison was performed, and no Phase201 or Phase256 field is filled: any future comparison phase must import that lineage explicitly and will be judged by the existing gates."
+}

@@ -18587,3 +18587,32 @@ Wired into the generator (Release), Phase101, Phase202 checklist item
 `fermion-loop-block-selection-no-go-probe-materialized`, claim integrity,
 all seven scanner exclusions, and the phase281/phase207 implementation-doc
 registries (per the scanner-registration hazard rule).
+
+## 2026-07-01 - Phase429: Target-Blind Dimensionless-Ratio Ledger
+
+### Result
+
+Second beyond-the-literature experiment. The complete scale-free surface
+of the internal embedding chain is now an explicit fail-closed ledger,
+exact arithmetic from the single blind input tan^2 = 3/5 (Phase404;
+externally corroborated by Cox GU II, Phase426): sin^2 theta_W = 3/8 and
+the GUT-normalized ratio 1 are FIXED at the unification point; the
+tree-level m_W/m_Z = sqrt(5/8) is CONDITIONAL on a symmetry-breaking
+sector that no internal mechanism supplies (405/410/418/428) and no
+source defines. Each row lists its six missing comparison-lineage fields
+(running, thresholds, scheme, the unification scale, pole extraction,
+custodial corrections); zero are source-defined. Derivation is strictly
+separated from comparison: no measured electroweak value appears anywhere
+in the phase and no residual was computed. Any future comparison phase
+must import the lineage explicitly and face the existing gates.
+
+### Standing Next Work
+
+Both named experiments of the 2026-07-01 directive are done (Phase428
+no-go, Phase429 ledger). The sharpest remaining experiment territory:
+non-constant/mixed-configuration extensions of the Phase428 no-go (only
+with a concrete structural reason), the performance program (DAG-parallel
+generator, content-hash incremental validation), and checkpoint-cadence
+monitoring. Physical progress still requires a source-defined
+symmetry-breaking sector, scale law, or observed-field extraction
+theorem.

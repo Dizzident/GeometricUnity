@@ -49,7 +49,7 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase428 work (plus the 2026-06-12 platform
+Current gate status after the Phase429 work (plus the 2026-06-12 platform
 fix - GPU parity defect root-caused and discharged - and the 2026-07-01
 |Y|=1/2 calibration defect fix in the Phase411/417 informational SM
 censuses):
@@ -57,7 +57,7 @@ censuses):
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=221`,
+  `objectiveAchieved=False`, `checklistPassedCount=222`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -407,6 +407,17 @@ censuses):
   (su(3)-breaking fermionic structure required and not source-defined),
   `canFillPhase201WzContract=False`,
   `canFillPhase256ObservedFieldExtractionContract=False`
+- Phase429 (second beyond-the-literature experiment):
+  `targetBlindDimensionlessRatioLedgerPassed=True`,
+  `exactArithmeticVerified=True` (tan^2 = 3/5 -> sin^2 = 3/8,
+  GUT-normalized ratio 1 fixed; tree m_W/m_Z = sqrt(5/8) conditional on
+  the missing breaking sector), `fixedRowCount=3`, `conditionalRowCount=1`,
+  `comparisonLineageFieldCount=6`,
+  `sourceDefinedComparisonLineageFieldCount=0`,
+  `measuredElectroweakValuesConsulted=False`,
+  `derivationComparisonSeparationMaintained=True`,
+  `canFillPhase201WzContract=False`,
+  `canFillPhase256ObservedFieldExtractionContract=False`
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -427,7 +438,21 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work (2026-07-01, fifth checkpoint of the session) added
+The latest work (2026-07-01, sixth checkpoint of the session) added
+Phase429, the target-blind dimensionless-ratio ledger - the second
+beyond-the-literature experiment. The complete scale-free surface of the
+embedding chain is an explicit fail-closed ledger (exact arithmetic from
+the blind tan^2 = 3/5 only): sin^2 = 3/8 and the GUT-normalized ratio 1
+are fixed at the unification point; the tree-level m_W/m_Z = sqrt(5/8) is
+conditional on the missing symmetry-breaking sector; each row lists its
+six missing comparison-lineage fields, zero source-defined; derivation is
+strictly separated from comparison (no measured value appears in the
+phase). Study:
+`studies/phase429_target_blind_dimensionless_ratio_ledger_001`
+(IMPLEMENTATION_P429.md). Both named experiments of the 2026-07-01
+directive are now done.
+
+Before that, the work (2026-07-01, fifth checkpoint of the session) added
 Phase428, the fermion-loop block-selection no-go probe - the FIRST
 experiment of the beyond-the-literature directive, closing the last named
 internal mechanism class for doublet VEV selection. On constant rank-1
@@ -921,7 +946,7 @@ HONEST BOUNDARY. Study:
 
 ### Integration Points Already Updated
 
-Phase428 (like Phase388-427) is wired into:
+Phase429 (like Phase388-428) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (single broad pass; the
   older duplicated final sweep was removed on 2026-06-16; the Phase424 line
@@ -939,7 +964,8 @@ Phase428 (like Phase388-427) is wired into:
   `cross-carrier-bilinear-sm-doublet-completion-audit-materialized` and
   `cox-gu-series-boson-contract-audit-materialized` and
   `hofseth-gu-rvg-superluminal-source-audit-materialized` and
-  `fermion-loop-block-selection-no-go-probe-materialized`;
+  `fermion-loop-block-selection-no-go-probe-materialized` and
+  `target-blind-dimensionless-ratio-ledger-materialized`;
   the Phase417 checklist row now asserts the corrected
   `yHalfCalibrationExact=True` and `internalSmHiggsPatternComplexDimension=6`)
 - `scripts/verify_boson_claim_integrity.sh` (Phase424 asserts plus the
@@ -996,11 +1022,11 @@ PHASE405_ENABLE_GPU=1 LD_LIBRARY_PATH=native/build dotnet run --project studies/
 The targeted Phase424 (Release, ~7 min) and Phase425 (Release, ~1 min) runs
 pass and preserve the fail-closed boundary; the fixed Phase411/Phase417
 re-runs pass with their corrected censuses; Phase202 now reports
-`checklistPassedCount=221`, `checklistFailedCount=3`; claim integrity
-verifies Phase424 through Phase428 (and the corrected Phase417 values)
+`checklistPassedCount=222`, `checklistFailedCount=3`; claim integrity
+verifies Phase424 through Phase429 (and the corrected Phase417 values)
 with `promotedPhysicalMassClaimCount=0`. The full direct
 `./scripts/generate_validated_boson_predictions.sh` pass completed with
-Phase424 through Phase428 included and ended at
+Phase424 through Phase429 included and ended at
 `boson-claim-integrity-verified`. (Platform
 state: Gu.Interop.Tests 158/158 with the real-mesh parity and
 buffer-handle recycling tests; both Phase405 platform notes discharged
@@ -1071,15 +1097,11 @@ sources required):
   source-defined) could evade it. Remaining experiment territory in this
   direction: non-constant/mixed configurations and multi-loop effects,
   pursue only with a concrete structural reason.
-- TARGET-BLIND DIMENSIONLESS-RATIO LEDGER: absolute GeV promotion is
-  contract-blocked, but the embedding chain already fixes dimensionless
-  quantities blind (tan^2 = 3/5, corroborated externally by Phase426).
-  Enumerate which dimensionless electroweak ratios (e.g. mW/mZ at tree
-  level from the kernel relation) the internal structure determines
-  without importing any scale, record them as a fail-closed ledger with
-  the exact additional lineage (running, thresholds, scheme) each would
-  need before any comparison, and DO NOT compare against measured values
-  in the same phase that derives them.
+- TARGET-BLIND DIMENSIONLESS-RATIO LEDGER: DONE by Phase429: three rows
+  fixed blind (tan^2 = 3/5, sin^2 = 3/8, GUT ratio 1), the tree mass
+  ratio conditional on the missing breaking sector, six comparison-
+  lineage fields per row with zero source-defined. A future comparison
+  phase must import that lineage explicitly and face the existing gates.
 - PERFORMANCE PROGRAM (validation wall-time bounds innovation pace):
   Release builds everywhere (DONE 2026-07-01); next candidates are a
   dependency-DAG parallel generator (independent phase chains run
@@ -1345,11 +1367,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase428 output JSON files, and commit a checkpoint
+force-add the ignored Phase429 output JSON files, and commit a checkpoint
 after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase428 fermion-loop block-selection no-go probe
+Add phase429 target-blind dimensionless ratio ledger
 ```
