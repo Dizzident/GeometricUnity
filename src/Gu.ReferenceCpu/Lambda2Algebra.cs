@@ -265,6 +265,33 @@ public static class Lambda2Algebra
         return result;
     }
 
+    /// <summary>
+    /// Fréchet derivative of the matrix exponential: the directional derivative
+    /// d/ds exp(a + s·e)|_{s=0}. Computed by the standard block-triangular identity
+    ///   exp([[a, e],[0, a]]) = [[exp(a), L],[0, exp(a)]],
+    /// where L is the derivative — extracted as the top-right n x n block. Exact and robust;
+    /// used for the analytic LinearizeTheta (dAd_theta in direction delta_theta). At a = 0 it
+    /// returns e (so dAd(delta_theta)·X reduces to [delta_theta, X], matching physics §6e).
+    /// </summary>
+    public static double[,] MatrixExpFrechet(double[,] a, double[,] e)
+    {
+        int n = a.GetLength(0);
+        var big = new double[2 * n, 2 * n];
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++)
+            {
+                big[i, j] = a[i, j];
+                big[i + n, j + n] = a[i, j];
+                big[i, j + n] = e[i, j];
+            }
+        var expBig = MatrixExp(big);
+        var l = new double[n, n];
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++)
+                l[i, j] = expBig[i, j + n];
+        return l;
+    }
+
     private static double InfinityNorm(double[,] a)
     {
         int r = a.GetLength(0), c = a.GetLength(1);

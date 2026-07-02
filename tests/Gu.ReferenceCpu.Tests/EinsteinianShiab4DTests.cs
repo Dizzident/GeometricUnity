@@ -468,8 +468,10 @@ public class EinsteinianShiab4DTests
     // The slaved Wilson eps(omega)=exp(kappa*sum omega_e) realization SURVIVES as an OPTIONAL,
     // LABELED, NON-GATING smoke-test — NOT the pinned treatment. These tests carry
     // [Trait("Gating","false")] so QA excludes them from the M3 acceptance gate. The true
-    // independent-theta arm (with its gating controls: theta=0 reproduces Phase436 degree-2, and
-    // LinearizeTheta matches FD) is implemented only when the co-signed §3.5 lands (possibly M3b).
+    // independent-theta arm is implemented only when the physicist-RATIFIED §3.5 lands (possibly
+    // M3b), with three gating controls: (a) LinearizeTheta matches FD; (b) theta=0 reproduces
+    // Phase436 degree-2; (c) ISOLATION — with the identity Shiab the theta-block of the joint
+    // Hessian is exactly degenerate, proving the lift is from the Shiab eps-dependence, not the DOF.
 
     [Fact]
     [Trait("Gating", "false")]
@@ -572,6 +574,85 @@ public class EinsteinianShiab4DTests
         for (int i = 1; i < d3.Length; i++)
             Assert.True(d3[i] > d3[i - 1],
                 $"third t-difference must grow with kappa: |D3|[{i}]={d3[i]:G6} !> |D3|[{i - 1}]={d3[i - 1]:G6}.");
+    }
+
+    // ===== MODE (2): independent-theta / joint (omega,theta) Hessian — GATING =====
+    // The pinned treatment arm (physicist §6e; ratified co-signed §3.5 pending — these encode the
+    // leader-quoted spec and adjust if the ratified text differs). theta is a genuine independent
+    // H-valued vertex field (length VertexCount*dim(g)). Three gating controls: (i) LinearizeTheta
+    // matches FD; (ii) theta=0 reproduces Phase436 degree-2; (iii) ISOLATION — identity Shiab =>
+    // theta-block of the joint Hessian exactly degenerate.
+
+    [Fact]
+    public void IndependentTheta_LinearizeTheta_MatchesFiniteDifference()
+    {
+        var mesh = Mesh4D();
+        var algebra = LieAlgebraFactory.CreateSu2WithTracePairing();
+        var op = new EinsteinianShiabOperator(mesh, algebra, Sd2Member("independent-theta"));
+
+        int nTheta = mesh.VertexCount * algebra.Dimension;
+        var omega = RandomOmega(mesh, algebra, 61, 0.2).Coefficients;
+        var theta = RandomVector(nTheta, 62, 0.15);
+        var dTheta = RandomVector(nTheta, 63, 1.0);
+
+        double residual = EinsteinianShiabBatteries.LinearizeThetaFdResidual(
+            op, mesh, algebra, omega, theta, dTheta, Manifest(), Geometry());
+
+        Assert.True(residual < 1e-5,
+            $"Analytic LinearizeTheta must match the finite difference; max|diff|={residual:G6}.");
+    }
+
+    [Fact]
+    public void IndependentTheta_ThetaZero_ReproducesLinearModeAndDegreeTwo()
+    {
+        var mesh = Mesh4D();
+        var algebra = LieAlgebraFactory.CreateSu2WithTracePairing();
+        var op = new EinsteinianShiabOperator(mesh, algebra, Sd2Member("independent-theta"));
+        var trivial = new EinsteinianShiabOperator(mesh, algebra, Sd2Member("trivial"));
+
+        var omega = RandomOmega(mesh, algebra, 64, 0.2);
+        var omegaT = omega.ToFieldTensor();
+        var f = CurvatureAssembler.Assemble(omega).ToFieldTensor();
+        var zeroTheta = new double[mesh.VertexCount * algebra.Dimension];
+
+        // theta=0 slice equals the linear (trivial) evaluation exactly.
+        var sTheta0 = op.EvaluateWithTheta(f, omegaT, zeroTheta, Manifest(), Geometry());
+        var sTrivial = trivial.Evaluate(f, omegaT, Manifest(), Geometry());
+        Assert.True(MaxDiff(sTheta0.Coefficients, sTrivial.Coefficients) < 1e-12,
+            "theta=0 must reproduce the linear (trivial) Shiab evaluation exactly.");
+
+        // Its omega-ray Hessian is degree-2 (vanishing third t-difference).
+        int n = mesh.EdgeCount * algebra.Dimension;
+        double d3 = EinsteinianShiabBatteries.HessianThirdTDifference(
+            op, mesh, algebra, RandomVector(n, 55), RandomVector(n, 77), Manifest(), Geometry());
+        Assert.True(System.Math.Abs(d3) < 1e-6,
+            $"theta=0 must reproduce the Phase436 degree-2 Hessian; |third t-diff|={d3:G6}.");
+    }
+
+    [Fact]
+    public void IndependentTheta_Isolation_IdentityShiabThetaBlockDegenerate()
+    {
+        var mesh = Mesh4D();
+        var algebra = LieAlgebraFactory.CreateSu2WithTracePairing();
+        int nTheta = mesh.VertexCount * algebra.Dimension;
+        var omega = RandomOmega(mesh, algebra, 65, 0.2).Coefficients;
+        var theta = new double[nTheta]; // background theta = 0
+
+        // ISOLATION: identity Shiab is theta-blind => theta-block exactly degenerate (~0).
+        var identityEval = EinsteinianShiabBatteries.IdentityThetaEval(mesh, algebra, Manifest(), Geometry());
+        double identityBlock = EinsteinianShiabBatteries.ThetaBlockFrobenius(
+            identityEval, mesh, algebra, omega, theta, Manifest(), Geometry());
+        Assert.True(identityBlock < 1e-6,
+            $"Identity Shiab must give an exactly-degenerate theta-block; ||block||={identityBlock:G6}.");
+
+        // CONTRAST (informative): the Einsteinian sd2 Shiab couples theta => nonzero theta-block,
+        // so any degree-lift is Shiab-caused, not a free-DOF artifact of inserting theta.
+        var op = new EinsteinianShiabOperator(mesh, algebra, Sd2Member("independent-theta"));
+        var einsteinEval = EinsteinianShiabBatteries.EinsteinianThetaEval(op, mesh, algebra, Manifest(), Geometry());
+        double einsteinBlock = EinsteinianShiabBatteries.ThetaBlockFrobenius(
+            einsteinEval, mesh, algebra, omega, theta, Manifest(), Geometry());
+        Assert.True(einsteinBlock > 1e-6,
+            $"Einsteinian Shiab must couple theta (non-degenerate theta-block); ||block||={einsteinBlock:G6}.");
     }
 
     // ===== helpers =====

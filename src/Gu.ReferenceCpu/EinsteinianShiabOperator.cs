@@ -95,9 +95,10 @@ public sealed class EinsteinianShiabOperator : IShiabBranchOperator
                 "The Lambda^2(T*X^4) contraction is undefined below dim 4 — this is the documented 2D blocker.",
                 nameof(mesh));
 
-        if (member.EpsilonMode is not ("trivial" or "frozen-background" or "omega-coupled"))
+        if (member.EpsilonMode is not ("trivial" or "frozen-background" or "omega-coupled" or "independent-theta"))
             throw new ArgumentException(
-                $"Unknown EpsilonMode '{member.EpsilonMode}' (expected trivial|frozen-background|omega-coupled).",
+                $"Unknown EpsilonMode '{member.EpsilonMode}' " +
+                "(expected trivial|frozen-background|omega-coupled|independent-theta).",
                 nameof(member));
 
         var r = Lambda2Algebra.MemberEndomorphism(member);
@@ -180,15 +181,15 @@ public sealed class EinsteinianShiabOperator : IShiabBranchOperator
     }
 
     /// <summary>
-    /// Analytic exact Jacobian for the LINEAR modes (trivial, frozen-background):
-    /// dS/domega(delta) = M( Ad_eps( dF/domega(delta) ) ), where Ad_eps is the constant
-    /// conjugator and dF/domega(delta) = d(delta) + [omega, delta] is the identity-Shiab
-    /// curvature linearization. Degree-2 in omega (reproduces the no-go).
+    /// Analytic exact Jacobian for the LINEAR modes (trivial, frozen-background, and
+    /// independent-theta at its theta=0 background): dS/domega(delta) = M( Ad_eps( dF/domega(delta) ) ),
+    /// where Ad_eps is the constant conjugator and dF/domega(delta) = d(delta) + [omega, delta] is
+    /// the identity-Shiab curvature linearization. Degree-2 in omega (reproduces the no-go).
     /// </summary>
     private FieldTensor LinearizeAnalytic(FieldTensor omega, FieldTensor deltaOmega)
     {
-        // Ad is constant in omega for these modes (trivial -> I, frozen -> _adPerCell).
-        var ad = _adPerCell; // null => identity
+        // Ad is constant in omega for these modes (trivial/independent-theta -> I, frozen -> _adPerCell).
+        var ad = PerCellSelector(_adPerCell); // null => identity
         var dF = CovariantExteriorDerivative(omega.Coefficients, deltaOmega.Coefficients);
         var result = ApplyContraction(dF, ad);
 
@@ -250,11 +251,14 @@ public sealed class EinsteinianShiabOperator : IShiabBranchOperator
     // ------------------------------------------------------------------
 
     /// <summary>
-    /// Apply the per-cell Lambda^2 contraction with a given ad-conjugation
-    /// (<paramref name="adPerCell"/> = null means Ad = identity). Linear in the input
-    /// coefficients for fixed Ad.
+    /// Apply the per-cell Lambda^2 contraction with a given ad-conjugation. The
+    /// <paramref name="adSelector"/> returns the dim(g) x dim(g) Ad matrix for a given
+    /// (cell, global-face) pair, or null there for the identity; a null selector means
+    /// Ad = identity everywhere. Per-cell dressing (frozen / omega-coupled smoke-test)
+    /// ignores the face argument; per-face dressing (independent-theta) ignores the cell
+    /// argument. Linear in the input coefficients for fixed Ad.
     /// </summary>
-    private double[] ApplyContraction(double[] fCoeffs, double[][,]? adPerCell)
+    private double[] ApplyContraction(double[] fCoeffs, Func<int, int, double[,]?>? adSelector)
     {
         var acc = new double[_faceCount * _dimG];
 
@@ -266,11 +270,11 @@ public sealed class EinsteinianShiabOperator : IShiabBranchOperator
 
             // Gather local face block, applying Ad on the ad-index.
             var fa = new double[nF][];
-            var ad = adPerCell?[c];
             for (int j = 0; j < nF; j++)
             {
                 int gf = faces[j];
                 var row = new double[_dimG];
+                var ad = adSelector?.Invoke(c, gf);
                 if (ad == null)
                 {
                     for (int a = 0; a < _dimG; a++)
@@ -314,18 +318,33 @@ public sealed class EinsteinianShiabOperator : IShiabBranchOperator
     }
 
     /// <summary>
-    /// Resolve the per-cell ad-conjugation for a given connection, per epsilon mode.
+    /// Resolve the ad-conjugation selector (cell, global-face) -> Ad matrix for a given
+    /// connection, per epsilon mode. "trivial" and "independent-theta" (whose Evaluate uses
+    /// the theta=0 background) return null (Ad = identity); "frozen-background" and the
+    /// "omega-coupled" smoke-test return per-cell dressing.
     /// </summary>
-    private double[][,]? ResolveAd(double[] omega)
+    private Func<int, int, double[,]?>? ResolveAd(double[] omega)
     {
-        return _member.EpsilonMode switch
+        switch (_member.EpsilonMode)
         {
-            "trivial" => null,
-            "frozen-background" => _adPerCell,
-            "omega-coupled" => BuildOmegaCoupledAd(omega),
-            _ => null,
-        };
+            case "frozen-background":
+            {
+                var ad = _adPerCell!;
+                return (cell, _) => ad[cell];
+            }
+            case "omega-coupled":
+            {
+                var ad = BuildOmegaCoupledAd(omega);
+                return (cell, _) => ad[cell];
+            }
+            default: // "trivial", "independent-theta" (theta=0 background)
+                return null;
+        }
     }
+
+    /// <summary>Wrap per-cell Ad matrices as a (cell, face) selector; null stays null.</summary>
+    private static Func<int, int, double[,]?>? PerCellSelector(double[][,]? adPerCell)
+        => adPerCell == null ? null : (cell, _) => adPerCell[cell];
 
     /// <summary>
     /// Build the omega-coupled conjugator Ad_cell = exp(ad_theta) with the Wilson-line
@@ -337,9 +356,12 @@ public sealed class EinsteinianShiabOperator : IShiabBranchOperator
     /// resolved 2026-07-02). The physicist LOCKED independent-theta: theta is a genuine
     /// independent H-valued field varied in a joint (omega, theta) Hessian, NOT a function of
     /// omega. This Wilson eps(omega) = exp(kappa * sum_edges omega_e) map is retained as an
-    /// OPTIONAL, LABELED, NON-GATING smoke-test only. The pinned independent-theta arm (with
-    /// gating controls: theta=0 reproduces Phase436 degree-2, and LinearizeTheta matches FD)
-    /// is a separate path implemented only when the co-signed design §3.5 lands (possibly M3b).
+    /// OPTIONAL, LABELED, NON-GATING smoke-test only. The pinned independent-theta arm (separate
+    /// path, implemented only when the physicist-RATIFIED design §3.5 lands, possibly M3b) has
+    /// three gating controls: (a) LinearizeTheta matches FD; (b) theta=0 reproduces Phase436
+    /// degree-2; (c) ISOLATION — with the identity Shiab the theta-block of the joint Hessian is
+    /// exactly degenerate (theta absent from Upsilon), proving the degree-lift is from the Shiab's
+    /// epsilon-dependence, not the inserted DOF.
     /// This method is the SINGLE point embodying the slaved map. Trivial and frozen-background
     /// modes are unaffected and remain the gating linear modes.
     /// </summary>
@@ -359,19 +381,137 @@ public sealed class EinsteinianShiabOperator : IShiabBranchOperator
         return ad;
     }
 
-    /// <summary>Ad = exp(ad_theta), where (ad_theta)^c_b = sum_a f^c_{ab} theta^a.</summary>
-    private double[,] AdExp(double[] theta)
+    /// <summary>The ad-representation matrix (ad_x)^c_b = sum_a f^c_{ab} x^a.</summary>
+    private double[,] AdMatrix(double[] x)
     {
-        var adMat = new double[_dimG, _dimG];
+        var m = new double[_dimG, _dimG];
         for (int cc = 0; cc < _dimG; cc++)
             for (int b = 0; b < _dimG; b++)
             {
                 double s = 0;
                 for (int a = 0; a < _dimG; a++)
-                    s += _algebra.GetStructureConstant(a, b, cc) * theta[a];
-                adMat[cc, b] = s;
+                    s += _algebra.GetStructureConstant(a, b, cc) * x[a];
+                m[cc, b] = s;
             }
-        return Lambda2Algebra.MatrixExp(adMat);
+        return m;
+    }
+
+    /// <summary>Ad = exp(ad_theta).</summary>
+    private double[,] AdExp(double[] theta) => Lambda2Algebra.MatrixExp(AdMatrix(theta));
+
+    // ------------------------------------------------------------------
+    // Mode (2): independent-theta / joint (omega, theta) Hessian plumbing.
+    //
+    // theta is a genuine INDEPENDENT H-valued fluctuation field on vertices (length
+    // VertexCount * dim(g)), NOT a function of omega (physics memo §6e, ratified spec
+    // pending). eps_v = exp(theta_v); the ad-conjugator Ad = exp(ad_theta) acts on the
+    // ad-index and is evaluated per face at the face's representative vertex = the
+    // lowest-index incident vertex (mesh.Faces[f][0], already canonically sorted).
+    // S_h(F; theta)_face = M( Ad_{theta at face}(F_face) ), M the per-cell Lambda^2
+    // contraction. theta = 0 => Ad = I => S_h = M(F) (identical to the trivial mode), so
+    // the theta=0 slice reproduces the Phase436 degree-2 structure. The joint (omega,theta)
+    // Hessian is assembled by the harness (EinsteinianShiabBatteries) via the same Phase436
+    // finite-difference machinery on the enlarged vector.
+    // ------------------------------------------------------------------
+
+    /// <summary>
+    /// Evaluate S_h at an explicit independent theta field (mode 2). <paramref name="theta"/>
+    /// has length VertexCount * dim(g); theta = 0 reproduces the linear (trivial) evaluation.
+    /// </summary>
+    public FieldTensor EvaluateWithTheta(
+        FieldTensor curvatureF,
+        FieldTensor omega,
+        double[] theta,
+        BranchManifest manifest,
+        GeometryContext geometry)
+    {
+        ArgumentNullException.ThrowIfNull(curvatureF);
+        ArgumentNullException.ThrowIfNull(theta);
+        var adPerFace = BuildPerFaceAd(theta);
+        var result = ApplyContraction(curvatureF.Coefficients, (_, gf) => adPerFace[gf]);
+        return new FieldTensor
+        {
+            Label = "S_h",
+            Signature = OutputSignature,
+            Coefficients = result,
+            Shape = new[] { _faceCount, _dimG },
+        };
+    }
+
+    /// <summary>
+    /// Analytic Jacobian in the theta direction (mode 2): dS/dtheta(deltaTheta). Since
+    /// S_h = M(Ad(theta)·F) with M linear and F fixed w.r.t. theta,
+    /// dS/dtheta = M( dAd/dtheta(deltaTheta)·F ), where per face dAd is the Fréchet derivative
+    /// of exp(ad_theta_v) in direction ad_{deltaTheta_v} (v = the face's representative vertex).
+    /// The §4.5 finite-difference battery validates it. GATING control (i) for mode 2.
+    /// </summary>
+    public FieldTensor LinearizeTheta(
+        FieldTensor curvatureF,
+        FieldTensor omega,
+        double[] theta,
+        double[] deltaTheta,
+        BranchManifest manifest,
+        GeometryContext geometry)
+    {
+        ArgumentNullException.ThrowIfNull(curvatureF);
+        ArgumentNullException.ThrowIfNull(theta);
+        ArgumentNullException.ThrowIfNull(deltaTheta);
+
+        // gField[f] = dAd_f(deltaTheta) · F_face, then apply the pure M-contraction (no Ad).
+        var g = new double[_faceCount * _dimG];
+        for (int f = 0; f < _faceCount; f++)
+        {
+            int v = _mesh.Faces[f][0]; // representative vertex = lowest index
+            var thetaV = ExtractVertexBlock(theta, v);
+            var dThetaV = ExtractVertexBlock(deltaTheta, v);
+            var dAd = Lambda2Algebra.MatrixExpFrechet(AdMatrix(thetaV), AdMatrix(dThetaV));
+            for (int a = 0; a < _dimG; a++)
+            {
+                double s = 0;
+                for (int b = 0; b < _dimG; b++)
+                    s += dAd[a, b] * curvatureF.Coefficients[f * _dimG + b];
+                g[f * _dimG + a] = s;
+            }
+        }
+
+        var result = ApplyContraction(g, null);
+        return new FieldTensor
+        {
+            Label = "dS_h_dtheta",
+            Signature = OutputSignature,
+            Coefficients = result,
+            Shape = new[] { _faceCount, _dimG },
+        };
+    }
+
+    /// <summary>Per-face Ad = exp(ad_theta) at each face's representative (lowest-index) vertex.</summary>
+    private double[][,] BuildPerFaceAd(double[] theta)
+    {
+        int expectedLen = _mesh.VertexCount * _dimG;
+        if (theta.Length != expectedLen)
+            throw new ArgumentException(
+                $"theta length {theta.Length} must be VertexCount*dim(g) = {expectedLen}.", nameof(theta));
+
+        var ad = new double[_faceCount][,];
+        var cache = new Dictionary<int, double[,]>();
+        for (int f = 0; f < _faceCount; f++)
+        {
+            int v = _mesh.Faces[f][0];
+            if (!cache.TryGetValue(v, out var m))
+            {
+                m = AdExp(ExtractVertexBlock(theta, v));
+                cache[v] = m;
+            }
+            ad[f] = m;
+        }
+        return ad;
+    }
+
+    private double[] ExtractVertexBlock(double[] field, int vertex)
+    {
+        var block = new double[_dimG];
+        Array.Copy(field, vertex * _dimG, block, 0, _dimG);
+        return block;
     }
 
     /// <summary>

@@ -30,8 +30,14 @@ namespace Gu.ReferenceCpu;
 ///         t-difference of the Hessian must grow monotonically with kappa, separating a
 ///         genuine degree-lift from a numerical artifact.</item>
 /// </list>
-/// The pinned independent-theta arm's gating controls (theta=0 reproduces Phase436 degree-2;
-/// LinearizeTheta matches FD) are added when the co-signed design §3.5 lands (possibly M3b).
+/// The pinned independent-theta arm (theta a genuine independent field, joint (omega,theta)
+/// Hessian) is implemented only when the physicist-RATIFIED design §3.5 lands (possibly M3b),
+/// with THREE gating controls:
+///   (a) LinearizeTheta matches finite difference;
+///   (b) theta=0 reproduces the Phase436 degree-2 Hessian;
+///   (c) ISOLATION battery — with the IDENTITY Shiab, theta is absent from Upsilon, so the
+///       theta-block of the joint Hessian must be EXACTLY degenerate. This proves any degree-lift
+///       comes from the Shiab's epsilon-dependence, not from merely inserting the theta DOF.
 ///
 /// Framing (physicist): the third t-difference reports the Hessian degree structure of
 /// THIS operator as-is. A degree-2 result for the Einsteinian family is a legitimate
@@ -306,6 +312,166 @@ public static class EinsteinianShiabBatteries
     {
         var r = new double[baseW.Length];
         for (int i = 0; i < r.Length; i++) r[i] = baseW[i] + s * d[i];
+        return r;
+    }
+
+    // ---- mode (2) independent-theta GATING batteries (joint (omega,theta) Hessian) ----
+    //
+    // theta is a genuine independent H-valued fluctuation field (length VertexCount*dim(g)).
+    // The joint Hessian of S_B over the enlarged vector (omega, theta) is probed with the same
+    // Phase436 finite-difference machinery. shiabEval : (omega, theta) -> S_h coefficients lets
+    // the harness treat any Shiab uniformly (the identity Shiab simply ignores theta).
+
+    /// <summary>Joint objective S_B(omega, theta) = (1/2)||S_h(omega,theta) - T(omega)||^2_M.</summary>
+    public static double JointObjective(
+        Func<double[], double[], double[]> shiabEval,
+        ITorsionBranchOperator torsion,
+        CpuMassMatrix mass,
+        SimplicialMesh mesh,
+        LieAlgebra algebra,
+        double[] omega,
+        double[] theta,
+        BranchManifest manifest,
+        GeometryContext geometry)
+    {
+        var conn = new ConnectionField(mesh, algebra, omega);
+        var omegaT = conn.ToFieldTensor();
+        var a0 = ConnectionField.Zero(mesh, algebra).ToFieldTensor();
+        var sCoeffs = shiabEval(omega, theta);
+        var s = FaceTensor(mesh, algebra, sCoeffs, "S_h");
+        var t = torsion.Evaluate(omegaT, a0, manifest, geometry);
+        var upsilon = FieldTensorOps.Subtract(s, t);
+        return 0.5 * mass.InnerProduct(upsilon, upsilon);
+    }
+
+    /// <summary>
+    /// A shiabEval that runs the Einsteinian operator at an explicit theta (mode 2): recomputes
+    /// the curvature from omega and calls <see cref="EinsteinianShiabOperator.EvaluateWithTheta"/>.
+    /// </summary>
+    public static Func<double[], double[], double[]> EinsteinianThetaEval(
+        EinsteinianShiabOperator op, SimplicialMesh mesh, LieAlgebra algebra,
+        BranchManifest manifest, GeometryContext geometry)
+        => (omega, theta) =>
+        {
+            var conn = new ConnectionField(mesh, algebra, omega);
+            var f = CurvatureAssembler.Assemble(conn).ToFieldTensor();
+            return op.EvaluateWithTheta(f, conn.ToFieldTensor(), theta, manifest, geometry).Coefficients;
+        };
+
+    /// <summary>
+    /// A shiabEval for the IDENTITY Shiab (S = F): theta-blind, used for the isolation battery.
+    /// </summary>
+    public static Func<double[], double[], double[]> IdentityThetaEval(
+        SimplicialMesh mesh, LieAlgebra algebra, BranchManifest manifest, GeometryContext geometry)
+    {
+        var identity = new IdentityShiabCpu(mesh, algebra);
+        return (omega, theta) =>
+        {
+            var conn = new ConnectionField(mesh, algebra, omega);
+            var f = CurvatureAssembler.Assemble(conn).ToFieldTensor();
+            return identity.Evaluate(f, conn.ToFieldTensor(), manifest, geometry).Coefficients;
+        };
+    }
+
+    /// <summary>
+    /// Frobenius norm of the theta-block of the joint (omega,theta) Hessian of S_B at
+    /// (<paramref name="omega"/>, <paramref name="theta"/>), sampled on a random
+    /// <paramref name="subspaceDim"/>-dimensional subspace of theta DOFs via second-order
+    /// central finite differences (omega held fixed). ISOLATION battery (control iii): with the
+    /// identity Shiab this is ~0 (theta absent from Upsilon => the theta-block is exactly
+    /// degenerate), proving any degree-lift is Shiab-caused, not a free-DOF artifact.
+    /// </summary>
+    public static double ThetaBlockFrobenius(
+        Func<double[], double[], double[]> shiabEval,
+        SimplicialMesh mesh,
+        LieAlgebra algebra,
+        double[] omega,
+        double[] theta,
+        BranchManifest manifest,
+        GeometryContext geometry,
+        int subspaceDim = 6,
+        double h = 1e-4,
+        int seed = 20260702)
+    {
+        var torsion = new TrivialTorsionCpu(mesh, algebra);
+        var mass = new CpuMassMatrix(mesh, algebra);
+        int nTheta = theta.Length;
+        int k = System.Math.Min(subspaceDim, nTheta);
+
+        var rng = new Random(seed);
+        var dirs = new double[k][];
+        for (int i = 0; i < k; i++)
+        {
+            var d = new double[nTheta];
+            double norm = 0;
+            for (int j = 0; j < nTheta; j++) { d[j] = rng.NextDouble() - 0.5; norm += d[j] * d[j]; }
+            norm = System.Math.Sqrt(norm);
+            for (int j = 0; j < nTheta; j++) d[j] /= norm;
+            dirs[i] = d;
+        }
+
+        double Obj(double[] th) => JointObjective(shiabEval, torsion, mass, mesh, algebra, omega, th, manifest, geometry);
+
+        double frob = 0;
+        for (int i = 0; i < k; i++)
+            for (int j = 0; j < k; j++)
+            {
+                double fpp = Obj(Axpy2(theta, dirs[i], +h, dirs[j], +h));
+                double fpm = Obj(Axpy2(theta, dirs[i], +h, dirs[j], -h));
+                double fmp = Obj(Axpy2(theta, dirs[i], -h, dirs[j], +h));
+                double fmm = Obj(Axpy2(theta, dirs[i], -h, dirs[j], -h));
+                double hij = (fpp - fpm - fmp + fmm) / (4.0 * h * h);
+                frob += hij * hij;
+            }
+        return System.Math.Sqrt(frob);
+    }
+
+    /// <summary>
+    /// Residual between the analytic <see cref="EinsteinianShiabOperator.LinearizeTheta"/> and a
+    /// central finite difference of <see cref="EinsteinianShiabOperator.EvaluateWithTheta"/> in the
+    /// theta direction. GATING control (i) for mode 2: analytic LinearizeTheta must match FD.
+    /// </summary>
+    public static double LinearizeThetaFdResidual(
+        EinsteinianShiabOperator op,
+        SimplicialMesh mesh,
+        LieAlgebra algebra,
+        double[] omega,
+        double[] theta,
+        double[] deltaTheta,
+        BranchManifest manifest,
+        GeometryContext geometry,
+        double h = 1e-7)
+    {
+        var conn = new ConnectionField(mesh, algebra, omega);
+        var omegaT = conn.ToFieldTensor();
+        var f = CurvatureAssembler.Assemble(conn).ToFieldTensor();
+
+        var analytic = op.LinearizeTheta(f, omegaT, theta, deltaTheta, manifest, geometry).Coefficients;
+
+        var plus = new double[theta.Length];
+        var minus = new double[theta.Length];
+        for (int i = 0; i < theta.Length; i++)
+        {
+            plus[i] = theta[i] + h * deltaTheta[i];
+            minus[i] = theta[i] - h * deltaTheta[i];
+        }
+        var sP = op.EvaluateWithTheta(f, omegaT, plus, manifest, geometry).Coefficients;
+        var sM = op.EvaluateWithTheta(f, omegaT, minus, manifest, geometry).Coefficients;
+
+        double max = 0;
+        for (int i = 0; i < analytic.Length; i++)
+        {
+            double fd = (sP[i] - sM[i]) / (2 * h);
+            double diff = System.Math.Abs(fd - analytic[i]);
+            if (diff > max) max = diff;
+        }
+        return max;
+    }
+
+    private static double[] Axpy2(double[] baseV, double[] d1, double s1, double[] d2, double s2)
+    {
+        var r = new double[baseV.Length];
+        for (int i = 0; i < r.Length; i++) r[i] = baseV[i] + s1 * d1[i] + s2 * d2[i];
         return r;
     }
 
