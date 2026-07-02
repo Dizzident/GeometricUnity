@@ -18931,3 +18931,32 @@ checksum); incremental-validation design note (restart prompt);
 dimX>=4 platform geometry is a PLATFORM ENGINEERING prerequisite (a
 4D mesh + Clifford structure build) - name it to the user as the next
 big investment decision rather than starting it unilaterally.
+
+## 2026-07-02 - Resume Beat: Monitoring Clean, Validation Pass Restarted
+
+Goal resumed by user. From-scratch full validation pass launched (the
+Phase441 checkpoint's pending validation). Monitoring: Hofseth 21117379
+stable at rev15/md5 ff7b93b3... (no new drift). Observed three later
+versions of the already-audited GRU synthesis lineage (Zenodo 20822678
+2026-02-18, 20822708 2026-03-28, 20822729 2026-04-07 "Holographic");
+Phase281 audited the earlier 18692706/19465143 versions of this lineage
+and classified it as external input, non-promotional for the boson
+ledger. New versions of the same synthesis do not change our gates
+(scanners scan repo text, not the web); a delta audit is warranted only
+if a version materially changes claim posture toward GU boson masses -
+track by checksum at monitoring cadence. Also launched: a costed
+engineering plan exploration for the dimX>=4 platform build (the
+terminal frontier's named prerequisite).
+
+## 2026-07-02 - Validation Confirmed; 4D Build Plan Delivered
+
+The from-scratch full Release pass completed clean: 234 passed / 3
+failed, boson-claim-integrity-verified, promotedPhysicalMassClaimCount=0.
+The Phase441 checkpoint's pending-validation caveat is RESOLVED - the
+phase253 scanner fix holds under the full pass. The costed engineering
+plan for the dimension-four platform build is recorded at
+docs/Phases/FOUR_D_PLATFORM_BUILD_PLAN.md (three additive milestones,
+~3,600 LOC, 5.5-8 weeks; physics under-determination of the draft Shiab
+is the dominant risk, handled by the Phase441 candidate-family
+methodology). The build awaits user approval; the loop is at steady
+state (monitoring cadence).

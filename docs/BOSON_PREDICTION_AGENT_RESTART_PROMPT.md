@@ -1310,6 +1310,17 @@ whose code and precursor inputs are unchanged); it changes gate semantics
 with a mandatory full pass before any promotion-relevant claim) - named
 future work, not yet implemented.
 
+### Four-Dimensional Platform Build (decision pending)
+
+The costed engineering plan for the dimX-four platform build - the
+terminal frontier's named prerequisite - is at
+docs/Phases/FOUR_D_PLATFORM_BUILD_PLAN.md: ~3,600 LOC, 10 new classes,
+three additive milestones (4D mesh, Cl(3,1) spinor layer, eq. 9.3
+Einsteinian Shiab), 5.5-8 weeks, main risk = physics
+under-determination of the draft's Shiab (Definition 8.1 / eq. 9.3),
+which the Phase441 candidate-family methodology is designed to handle.
+AWAITING USER APPROVAL before any build work starts.
+
 ### Best Next Work
 
 Do not try to promote another numerical near-pass. The next useful work must
