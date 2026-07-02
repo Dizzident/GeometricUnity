@@ -1094,9 +1094,41 @@ sources required):
   rank-1 rays is an adjoint-orbit class function, exactly
   triplet/doublet-degenerate, with no quartic stabilizer - the mechanism
   class is closed; only su(3)-breaking fermionic structure (not
-  source-defined) could evade it. Remaining experiment territory in this
-  direction: non-constant/mixed configurations and multi-loop effects,
-  pursue only with a concrete structural reason.
+  source-defined) could evade it.
+- FULL ONE-LOOP COLEMAN-WEINBERG PROGRAM (named 2026-07-01 after the
+  Phase430 prototype; THE current best physics opportunity, four staged
+  experiments):
+  (430a) NET ONE-LOOP RAY SLOPE: the fermion-only mixed-configuration
+  prototype showed minima always escape along the rank-1 rays (the
+  bosonic tree quartic vanishes there exactly, so the fermionic -N_F log t
+  descent is unopposed). But the BOSONIC fluctuation determinant enters
+  with the opposite sign: transverse masses grow like t^2 ||[u,v]||^2, so
+  the ray-direction one-loop slope is (N_B - N_F) log t with both counts
+  exact orbit/mode-count data. Toy counts: ~+192 bosonic vs -128
+  fundamental-fermion modes -> net CONFINING (+64); adjoint fermions
+  (-384) -> runaway. THE SIGN IS A COMPUTABLE FUNCTION OF THE MATTER
+  CONTENT, and the matter content is the blind Phase404 derivation -
+  compute slope(content) exactly, record whether the DERIVED content
+  confines.
+  (430b) If confined: full one-loop (bosonic + fermionic) landscape on
+  mixed two-direction configurations (pair types TT/TD/DD/TS/DS have
+  genuinely different joint orbits - the Phase428 class-function no-go
+  does NOT apply) -> do interior minima form, which pair types are
+  deepest, does the deepest carry doublet content, and what dimensionless
+  scale ratio does the log/quartic balance generate (dimensional
+  transmutation)?
+  (431) WELDED-FERMION LOOPS: the chimeric weld (Phase408,
+  source-pinned) is fermionic structure BEYOND an su(3)-invariant sector
+  - test whether the weld itself supplies the su(3)-breaking that
+  Phase428 proved is required, without inventing anything.
+  (432) BLIND BETA-COEFFICIENT LEDGER: one-loop beta coefficients from
+  the Phase404-derived family content are pure group theory (no scales);
+  extend the Phase429 ledger to the one-parameter running family
+  sin^2(mu) - the strongest legal step toward a future comparison phase.
+  (433) CONDITIONAL EXTRACTION ROWS: derive the photon/W/Z projection
+  rows as FUNCTIONS of a candidate VEV direction (candidate-only),
+  converting the Phase419 template to conditionally-computed so that a
+  dynamical VEV from 430b would mechanically complete it.
 - TARGET-BLIND DIMENSIONLESS-RATIO LEDGER: DONE by Phase429: three rows
   fixed blind (tan^2 = 3/5, sin^2 = 3/8, GUT ratio 1), the tree mass
   ratio conditional on the missing breaking sector, six comparison-
