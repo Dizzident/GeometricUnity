@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Gu.Core\Gu.Core.csproj" />
+    <ProjectReference Include="..\Gu.Geometry\Gu.Geometry.csproj" />
     <ProjectReference Include="..\Gu.Math\Gu.Math.csproj" />
   </ItemGroup>
 

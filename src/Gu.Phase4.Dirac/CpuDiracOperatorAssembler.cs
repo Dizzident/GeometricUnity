@@ -13,16 +13,45 @@ namespace Gu.Phase4.Dirac;
 ///
 ///   (D_h psi)_v = sum_{e=(v,w) in edges} Gamma_hat(e) * (psi_w - psi_v) / |e|
 ///
-/// where Gamma_hat(e) is the gamma matrix for the principal direction of edge e
-/// (direction mu = argmax |e_mu|).
+/// where Gamma_hat(e) is the edge Clifford element. Two schemes are supported via
+/// <see cref="GammaEdgeScheme"/>:
+///   - DominantAxis (default, backward-compatible): gamma of the principal
+///     direction mu = argmax |e_mu|.
+///   - EdgeVectorContraction (4D refinement, design §2.4): the Clifford
+///     contraction of the unit edge vector, Gamma_hat(e) = sum_mu (e_mu/|e|) gamma^mu,
+///     which is well-defined on the diagonal (Freudenthal) edges of the 4D mesh
+///     and reduces exactly to DominantAxis on axis-aligned edges.
+///
+/// The scheme is chosen at construction; the default keeps every existing caller
+/// byte-identical.
 ///
 /// PhysicsNote: This is a minimal vertex-based discrete Dirac operator.
-/// Accuracy improves with mesh refinement.
+/// Accuracy improves with mesh refinement. The naive central difference carries
+/// fermion doublers — a pre-existing property of the discretization, not new to
+/// the 4D path (studies flag naiveDiracDoublersPresent = true).
 /// </summary>
 public sealed class CpuDiracOperatorAssembler : IDiracOperatorAssembler
 {
     private const int MaxExplicitMatrixDof = 4096;
     private const double DefaultHermiticityTolerance = 1e-10;
+
+    private readonly GammaEdgeScheme _scheme;
+
+    /// <summary>The edge→gamma scheme this assembler uses. Default DominantAxis.</summary>
+    public GammaEdgeScheme Scheme => _scheme;
+
+    /// <summary>
+    /// Construct the assembler.
+    /// </summary>
+    /// <param name="scheme">
+    /// Edge→gamma scheme. Defaults to <see cref="GammaEdgeScheme.DominantAxis"/>
+    /// (existing behavior, byte-identical for all current callers). The 4D path
+    /// passes <see cref="GammaEdgeScheme.EdgeVectorContraction"/>.
+    /// </param>
+    public CpuDiracOperatorAssembler(GammaEdgeScheme scheme = GammaEdgeScheme.DominantAxis)
+    {
+        _scheme = scheme;
+    }
 
     /// <inheritdoc />
     public DiracOperatorBundle Assemble(
@@ -145,7 +174,7 @@ public sealed class CpuDiracOperatorAssembler : IDiracOperatorAssembler
     // Private helpers
     // -------------------------------------------------------
 
-    private static double[] BuildExplicitComplexMatrix(
+    private double[] BuildExplicitComplexMatrix(
         SpinConnectionBundle connection,
         GammaOperatorBundle gammas,
         Gu.Geometry.SimplicialMesh mesh,
@@ -174,7 +203,7 @@ public sealed class CpuDiracOperatorAssembler : IDiracOperatorAssembler
         return M;
     }
 
-    private static double[] ApplyMatrixFree(
+    private double[] ApplyMatrixFree(
         SpinConnectionBundle connection,
         GammaOperatorBundle gammas,
         Gu.Geometry.SimplicialMesh mesh,
@@ -194,10 +223,8 @@ public sealed class CpuDiracOperatorAssembler : IDiracOperatorAssembler
             int v = edge[0];
             int w = edge[1];
 
-            int mu = DominantDirection(coords, v, w, embDim, out double length);
-            if (length < 1e-14 || mu >= nGammas) continue;
-
-            var gamma = gammas.GammaMatrices[mu];
+            var gamma = BuildEdgeGamma(coords, v, w, embDim, gammas, nGammas, out double length);
+            if (gamma is null) continue;
 
             for (int g = 0; g < gaugeDim; g++)
             {
@@ -365,6 +392,43 @@ public sealed class CpuDiracOperatorAssembler : IDiracOperatorAssembler
         double norm = System.Math.Sqrt(normSq);
         double diff = System.Math.Sqrt(diffSq);
         return norm > 1e-14 ? diff / norm : diff;
+    }
+
+    /// <summary>
+    /// Test seam: the edge Clifford element Gamma_hat(e) for a given edge index,
+    /// under this assembler's configured scheme (null if the edge is skipped).
+    /// </summary>
+    internal Complex[,]? EdgeGamma(Gu.Geometry.SimplicialMesh mesh, GammaOperatorBundle gammas, int edgeIndex)
+    {
+        int[] edge = mesh.Edges[edgeIndex];
+        return BuildEdgeGamma(
+            mesh.VertexCoordinates, edge[0], edge[1], mesh.EmbeddingDimension,
+            gammas, gammas.GammaMatrices.Length, out _);
+    }
+
+    /// <summary>
+    /// Build the edge Clifford element Gamma_hat(e) per the configured
+    /// <see cref="GammaEdgeScheme"/>, and output the edge length. Returns null
+    /// (skip this edge) when the length is degenerate, or — in DominantAxis mode —
+    /// when the dominant axis has no corresponding gamma.
+    /// </summary>
+    private Complex[,]? BuildEdgeGamma(
+        double[] coords, int v, int w, int embDim, GammaOperatorBundle gammas, int nGammas, out double length)
+    {
+        if (_scheme == GammaEdgeScheme.DominantAxis)
+        {
+            int mu = DominantDirection(coords, v, w, embDim, out length);
+            if (length < 1e-14 || mu >= nGammas) return null;
+            return gammas.GammaMatrices[mu];
+        }
+
+        // EdgeVectorContraction: delegate to the SINGLE SOURCE OF TRUTH in
+        // Gu.Phase4.Spin — Gamma_hat(e) = e_hat . Gamma = sum_mu (Delta_mu/|e|) gamma^mu.
+        // The 1/|e| finite-difference factor is applied by the caller stencil (diff / length).
+        return EdgeGammaContraction.UnitContract(
+            coords.AsSpan(v * embDim, embDim),
+            coords.AsSpan(w * embDim, embDim),
+            gammas, out length);
     }
 
     private static int DominantDirection(double[] coords, int v, int w, int embDim, out double length)
