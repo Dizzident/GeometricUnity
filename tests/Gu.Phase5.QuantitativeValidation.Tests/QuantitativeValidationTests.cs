@@ -312,7 +312,7 @@ public sealed class QuantitativeValidationTests
         Assert.Single(scoreCard.Matches);
         Assert.Equal("internal-benchmark", scoreCard.Matches[0].TargetBenchmarkClass);
         Assert.Equal(1, scoreCard.BenchmarkClassCounts!["internal-benchmark"]);
-        Assert.Equal(0, scoreCard.FailedBenchmarkClassCounts!.Count);
+        Assert.Empty(scoreCard.FailedBenchmarkClassCounts!);
     }
 
     [Fact]
