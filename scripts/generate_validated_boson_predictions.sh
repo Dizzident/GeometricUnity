@@ -320,6 +320,7 @@ dotnet run --no-build -c Release --project studies/phase435_two_condensate_scale
 dotnet run --no-build -c Release --project studies/phase436_exact_hessian_saturation_no_go_probe_001/Phase436ExactHessianSaturationNoGoProbe.csproj
 dotnet run --no-build -c Release --project studies/phase437_four_dimensional_transmutation_scaling_probe_001/Phase437FourDimensionalTransmutationScalingProbe.csproj
 dotnet run --no-build -c Release --project studies/phase438_self_consistent_condensate_gap_equation_probe_001/Phase438SelfConsistentCondensateGapEquationProbe.csproj
+dotnet run --no-build -c Release --project studies/phase439_gap_equation_lambda8_background_channel_steering_probe_001/Phase439GapEquationLambda8BackgroundChannelSteeringProbe.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

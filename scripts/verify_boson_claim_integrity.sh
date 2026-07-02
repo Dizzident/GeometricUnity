@@ -209,6 +209,7 @@ const paths = {
   phase436: "studies/phase436_exact_hessian_saturation_no_go_probe_001/output/exact_hessian_saturation_no_go_probe_summary.json",
   phase437: "studies/phase437_four_dimensional_transmutation_scaling_probe_001/output/four_dimensional_transmutation_scaling_probe_summary.json",
   phase438: "studies/phase438_self_consistent_condensate_gap_equation_probe_001/output/self_consistent_condensate_gap_equation_probe_summary.json",
+  phase439: "studies/phase439_gap_equation_lambda8_background_channel_steering_probe_001/output/gap_equation_lambda8_background_channel_steering_probe_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -489,6 +490,7 @@ const phase435 = requireFile(paths.phase435);
 const phase436 = requireFile(paths.phase436);
 const phase437 = requireFile(paths.phase437);
 const phase438 = requireFile(paths.phase438);
+const phase439 = requireFile(paths.phase439);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -5208,6 +5210,16 @@ if (sourceLineageMissing) {
   assert(phase438.routePromotesWzMasses === false && phase438.routePromotesHiggsMass === false && phase438.routeCompletesBosonPredictions === false, "Phase438 cannot promote boson predictions.");
   assert(phase101Package?.selfConsistentCondensateGapEquationProbe?.selfConsistentCondensateGapEquationProbePassed === true, "Phase101 must include the Phase438 gap-equation block.");
   assert(phase101Package.selfConsistentCondensateGapEquationProbe.hyperchargeChannelCompetitiveWithSinglet === false, "Phase101 must preserve the Phase438 channel-competition verdict.");
+  assert(phase439.gapEquationLambda8BackgroundChannelSteeringProbePassed === true, "Phase439 channel-steering probe must pass as fail-closed representation arithmetic.");
+  assert(phase439.targetBlindConstruction === true && typeof phase439.targetBlindConstructionHash === "string" && phase439.targetBlindConstructionHash.length === 64, "Phase439 must remain target-blind with a persisted construction hash.");
+  assert(phase439.applicationSubjectKind === "gap-equation-lambda8-background-channel-steering-probe", "Phase439 must classify its subject as the channel-steering probe.");
+  assert(phase439.batteries?.allBatteriesPassed === true, "Phase439 exactness batteries must all pass.");
+  assert(phase439.backgroundInducesChannelSteering === true && phase439.dynamicalMassPatternAlignsWithSu2U1 === true && phase439.transmutationSignatureSurvivesBackground === true, "Phase439 must record the steering, alignment, and surviving-transmutation verdicts.");
+  assert(phase439.backgroundParameterT8IsRecordedCandidateOnly === true && phase439.gapEquationIsMeanFieldApproximation === true && phase439.scaleAndPatternAreCandidateOnly === true && phase439.noGevPromotion === true, "Phase439 must keep the candidate-only, mean-field, and no-promotion boundaries.");
+  assert(phase439.sourceContractApplicationAllowed === false && phase439.canFillPhase201WzContract === false && phase439.canFillPhase201HiggsContract === false && phase439.canFillPhase256ObservedFieldExtractionContract === false, "Phase439 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase439.routePromotesWzMasses === false && phase439.routePromotesHiggsMass === false && phase439.routeCompletesBosonPredictions === false, "Phase439 cannot promote boson predictions.");
+  assert(phase101Package?.gapEquationLambda8BackgroundChannelSteeringProbe?.gapEquationLambda8BackgroundChannelSteeringProbePassed === true, "Phase101 must include the Phase439 steering block.");
+  assert(phase101Package.gapEquationLambda8BackgroundChannelSteeringProbe.noGevPromotion === true && phase101Package.gapEquationLambda8BackgroundChannelSteeringProbe.scaleAndPatternAreCandidateOnly === true, "Phase101 must preserve the Phase439 candidate-only boundary.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

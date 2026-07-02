@@ -18822,3 +18822,41 @@ broken) or the physical-branch structure. Named next experiments:
 phase439 gap-equation-in-background probe (combine 431 x 438); phase440
 physical-branch candidate-family universality sweep (design exploration
 needed).
+
+## 2026-07-02 - Phase439: Background Steers the Gap Equation (Candidate Loop Closed)
+
+### Result
+
+The lambda_8 background steers the condensate channel: strict
+free-energy margins at every t8 > 0 (monotone, 2.2e-5 -> 5.6e-3), and
+the free-per-color gap equation (decoupling exactly in the diagonal
+background; dense-verified closed form; t8=0 reproduces Phase438) yields
+the pattern Sigma_1 = Sigma_2 != Sigma_3 - automatically
+su(2)xu(1)-aligned because lambda_8's eigenvalues are (x, x, -2x).
+Splitting monotone in t8; per-color critical couplings shift (color-3
+condensation becomes easier at moderate t8); the exponential
+transmutation signature survives.
+
+### Interpretation
+
+The internal story is now closed AT CANDIDATE LEVEL end to end: the
+one-loop landscape dynamically selects the hypercharge direction
+(Phase430); a background along it steers the nonperturbative gap
+equation (this phase); the steered condensate carries an
+su(2)xu(1)-aligned dynamical mass pattern with a genuine transmutation
+scale (Phase438). Every stage is machine-verified and fail-closed. THE
+ONE REMAINING LINK is self-consistency of the background itself: t8 is
+still a recorded parameter, and Phases 435/436 showed the one-loop
+landscape alone cannot fix its scale on the exactly-quartic control
+branch. Options: solve the COUPLED fixed point (background strength
+determined by the condensate it steers - a two-field gap system, the
+natural phase440); or the physical-branch candidate-family sweep.
+
+### Standing Next Work
+
+phase440: coupled background-condensate fixed-point probe (does the
+(t8, Sigma_vec) joint gap system have a nontrivial self-consistent
+solution with finite t8*? - if yes, the candidate chain becomes fully
+self-consistent internally, still workbench-conventional); then the
+physical-branch universality sweep; performance program's incremental
+validation design; monitoring.

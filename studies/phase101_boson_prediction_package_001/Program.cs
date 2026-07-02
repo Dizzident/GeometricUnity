@@ -292,6 +292,7 @@ const string Phase431Lambda8BackgroundDoubletReopeningProbePath = "studies/phase
 const string Phase432WeldedFermionLoopBlockSelectionProbePath = "studies/phase432_welded_fermion_loop_block_selection_probe_001/output/welded_fermion_loop_block_selection_probe_summary.json";
 const string Phase433BlindBetaCoefficientRunningLedgerPath = "studies/phase433_blind_beta_coefficient_running_ledger_001/output/blind_beta_coefficient_running_ledger_summary.json";
 const string Phase437FourDimensionalTransmutationScalingProbePath = "studies/phase437_four_dimensional_transmutation_scaling_probe_001/output/four_dimensional_transmutation_scaling_probe_summary.json";
+const string Phase439GapEquationLambda8BackgroundChannelSteeringProbePath = "studies/phase439_gap_equation_lambda8_background_channel_steering_probe_001/output/gap_equation_lambda8_background_channel_steering_probe_summary.json";
 const string Phase438SelfConsistentCondensateGapEquationProbePath = "studies/phase438_self_consistent_condensate_gap_equation_probe_001/output/self_consistent_condensate_gap_equation_probe_summary.json";
 const string Phase436ExactHessianSaturationNoGoProbePath = "studies/phase436_exact_hessian_saturation_no_go_probe_001/output/exact_hessian_saturation_no_go_probe_summary.json";
 const string Phase435TwoCondensateScaleGapProbePath = "studies/phase435_two_condensate_scale_gap_probe_001/output/two_condensate_scale_gap_probe_summary.json";
@@ -612,6 +613,7 @@ using var phase435 = TryParseJson(Phase435TwoCondensateScaleGapProbePath);
 using var phase436 = TryParseJson(Phase436ExactHessianSaturationNoGoProbePath);
 using var phase437 = TryParseJson(Phase437FourDimensionalTransmutationScalingProbePath);
 using var phase438 = TryParseJson(Phase438SelfConsistentCondensateGapEquationProbePath);
+using var phase439 = TryParseJson(Phase439GapEquationLambda8BackgroundChannelSteeringProbePath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -7882,6 +7884,31 @@ var package = new
             routePromotesHiggsMass = JsonBool(phase438.RootElement, "routePromotesHiggsMass"),
             routeCompletesBosonPredictions = JsonBool(phase438.RootElement, "routeCompletesBosonPredictions"),
             decision = JsonString(phase438.RootElement, "decision"),
+        }
+        : null,
+    gapEquationLambda8BackgroundChannelSteeringProbe = phase439 is not null
+        ? new
+        {
+            status = JsonString(phase439.RootElement, "terminalStatus"),
+            gapEquationLambda8BackgroundChannelSteeringProbePassed = JsonBool(phase439.RootElement, "gapEquationLambda8BackgroundChannelSteeringProbePassed"),
+            targetBlindConstruction = JsonBool(phase439.RootElement, "targetBlindConstruction"),
+            applicationSubjectKind = JsonString(phase439.RootElement, "applicationSubjectKind"),
+            backgroundInducesChannelSteering = JsonBool(phase439.RootElement, "backgroundInducesChannelSteering"),
+            dynamicalMassPatternAlignsWithSu2U1 = JsonBool(phase439.RootElement, "dynamicalMassPatternAlignsWithSu2U1"),
+            colorGapSplittingMonotoneInBackground = JsonBool(phase439.RootElement, "colorGapSplittingMonotoneInBackground"),
+            transmutationSignatureSurvivesBackground = JsonBool(phase439.RootElement, "transmutationSignatureSurvivesBackground"),
+            backgroundParameterT8IsRecordedCandidateOnly = JsonBool(phase439.RootElement, "backgroundParameterT8IsRecordedCandidateOnly"),
+            gapEquationIsMeanFieldApproximation = JsonBool(phase439.RootElement, "gapEquationIsMeanFieldApproximation"),
+            scaleAndPatternAreCandidateOnly = JsonBool(phase439.RootElement, "scaleAndPatternAreCandidateOnly"),
+            noGevPromotion = JsonBool(phase439.RootElement, "noGevPromotion"),
+            sourceContractApplicationAllowed = JsonBool(phase439.RootElement, "sourceContractApplicationAllowed"),
+            canFillPhase201WzContract = JsonBool(phase439.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase439.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase439.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            routePromotesWzMasses = JsonBool(phase439.RootElement, "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonBool(phase439.RootElement, "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonBool(phase439.RootElement, "routeCompletesBosonPredictions"),
+            decision = JsonString(phase439.RootElement, "decision"),
         }
         : null,
     branchLocalDirectInvariantCensus = phase282 is not null

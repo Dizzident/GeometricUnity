@@ -306,6 +306,7 @@
     <PhaseProject Include="../studies/phase436_exact_hessian_saturation_no_go_probe_001/Phase436ExactHessianSaturationNoGoProbe.csproj" />
     <PhaseProject Include="../studies/phase437_four_dimensional_transmutation_scaling_probe_001/Phase437FourDimensionalTransmutationScalingProbe.csproj" />
     <PhaseProject Include="../studies/phase438_self_consistent_condensate_gap_equation_probe_001/Phase438SelfConsistentCondensateGapEquationProbe.csproj" />
+    <PhaseProject Include="../studies/phase439_gap_equation_lambda8_background_channel_steering_probe_001/Phase439GapEquationLambda8BackgroundChannelSteeringProbe.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />

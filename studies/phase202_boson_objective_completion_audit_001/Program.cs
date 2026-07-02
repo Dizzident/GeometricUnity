@@ -201,6 +201,7 @@ const string Phase432Path = "studies/phase432_welded_fermion_loop_block_selectio
 const string Phase433Path = "studies/phase433_blind_beta_coefficient_running_ledger_001/output/blind_beta_coefficient_running_ledger_summary.json";
 const string Phase435Path = "studies/phase435_two_condensate_scale_gap_probe_001/output/two_condensate_scale_gap_probe_summary.json";
 const string Phase437Path = "studies/phase437_four_dimensional_transmutation_scaling_probe_001/output/four_dimensional_transmutation_scaling_probe_summary.json";
+const string Phase439Path = "studies/phase439_gap_equation_lambda8_background_channel_steering_probe_001/output/gap_equation_lambda8_background_channel_steering_probe_summary.json";
 const string Phase438Path = "studies/phase438_self_consistent_condensate_gap_equation_probe_001/output/self_consistent_condensate_gap_equation_probe_summary.json";
 const string Phase436Path = "studies/phase436_exact_hessian_saturation_no_go_probe_001/output/exact_hessian_saturation_no_go_probe_summary.json";
 const string Phase434Path = "studies/phase434_conditional_observed_field_extraction_row_ledger_001/output/conditional_observed_field_extraction_row_ledger_summary.json";
@@ -441,6 +442,7 @@ using var phase435 = File.Exists(Phase435Path) ? JsonDocument.Parse(File.ReadAll
 using var phase436 = File.Exists(Phase436Path) ? JsonDocument.Parse(File.ReadAllText(Phase436Path)) : null;
 using var phase437 = File.Exists(Phase437Path) ? JsonDocument.Parse(File.ReadAllText(Phase437Path)) : null;
 using var phase438 = File.Exists(Phase438Path) ? JsonDocument.Parse(File.ReadAllText(Phase438Path)) : null;
+using var phase439 = File.Exists(Phase439Path) ? JsonDocument.Parse(File.ReadAllText(Phase439Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -6041,6 +6043,27 @@ var selfConsistentCondensateGapEquationProbePassed = selfConsistentCondensateGap
     && JsonBool(phase438.RootElement, "routePromotesHiggsMass") is false
     && JsonBool(phase438.RootElement, "routeCompletesBosonPredictions") is false
     && JsonInt(phase438.RootElement, "acceptedContractFieldCount") == 0;
+var gapEquationLambda8BackgroundChannelSteeringProbeMaterialized = phase439 is not null;
+var gapEquationLambda8BackgroundChannelSteeringProbePassed = gapEquationLambda8BackgroundChannelSteeringProbeMaterialized
+    && JsonBool(phase439!.RootElement, "gapEquationLambda8BackgroundChannelSteeringProbePassed") is true
+    && JsonBool(phase439.RootElement, "targetBlindConstruction") is true
+    && (JsonString(phase439.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase439.RootElement, "applicationSubjectKind") == "gap-equation-lambda8-background-channel-steering-probe"
+    && JsonBool(phase439.RootElement, "backgroundInducesChannelSteering") is true
+    && JsonBool(phase439.RootElement, "dynamicalMassPatternAlignsWithSu2U1") is true
+    && JsonBool(phase439.RootElement, "transmutationSignatureSurvivesBackground") is true
+    && JsonBool(phase439.RootElement, "backgroundParameterT8IsRecordedCandidateOnly") is true
+    && JsonBool(phase439.RootElement, "gapEquationIsMeanFieldApproximation") is true
+    && JsonBool(phase439.RootElement, "scaleAndPatternAreCandidateOnly") is true
+    && JsonBool(phase439.RootElement, "noGevPromotion") is true
+    && JsonBool(phase439.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase439.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase439.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase439.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase439.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase439.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase439.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonInt(phase439.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -8521,6 +8544,14 @@ var checklist = new[]
             ? $"selfConsistentCondensateGapEquationProbePassed={JsonBool(phase438!.RootElement, "selfConsistentCondensateGapEquationProbePassed")}; gapEquationHasNontrivialSolutions={JsonBool(phase438.RootElement, "gapEquationHasNontrivialSolutions")}; dynamicalScaleGenerationObserved={JsonBool(phase438.RootElement, "dynamicalScaleGenerationObserved")}; criticalCouplingFallsWithVolume={JsonBool(phase438.RootElement, "criticalCouplingFallsWithVolume")}; hyperchargeChannelCompetitiveWithSinglet={JsonBool(phase438.RootElement, "hyperchargeChannelCompetitiveWithSinglet")}; canFillPhase201WzContract={JsonBool(phase438.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase438.RootElement, "decision")}"
             : "Phase438 artifact not materialized",
         Phase438Path),
+    new ObjectiveChecklistItem(
+        "gap-equation-lambda8-background-channel-steering-probe-materialized",
+        "Decide whether the lambda_8 background steers the gap-equation condensate: it does - strict free-energy margins with an su(2)xu(1)-aligned per-color gap pattern and a surviving transmutation signature, all candidate-only.",
+        gapEquationLambda8BackgroundChannelSteeringProbePassed ? "passed" : "failed",
+        gapEquationLambda8BackgroundChannelSteeringProbeMaterialized
+            ? $"gapEquationLambda8BackgroundChannelSteeringProbePassed={JsonBool(phase439!.RootElement, "gapEquationLambda8BackgroundChannelSteeringProbePassed")}; backgroundInducesChannelSteering={JsonBool(phase439.RootElement, "backgroundInducesChannelSteering")}; dynamicalMassPatternAlignsWithSu2U1={JsonBool(phase439.RootElement, "dynamicalMassPatternAlignsWithSu2U1")}; transmutationSignatureSurvivesBackground={JsonBool(phase439.RootElement, "transmutationSignatureSurvivesBackground")}; noGevPromotion={JsonBool(phase439.RootElement, "noGevPromotion")}; canFillPhase201WzContract={JsonBool(phase439.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase439.RootElement, "decision")}"
+            : "Phase439 artifact not materialized",
+        Phase439Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

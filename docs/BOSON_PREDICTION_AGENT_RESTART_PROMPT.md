@@ -49,7 +49,7 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase437-438 scale-gap attack wave (plus the 2026-06-12 platform
+Current gate status after the Phase439 work (plus the 2026-06-12 platform
 fix - GPU parity defect root-caused and discharged - and the 2026-07-01
 |Y|=1/2 calibration defect fix in the Phase411/417 informational SM
 censuses):
@@ -57,7 +57,7 @@ censuses):
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=231`,
+  `objectiveAchieved=False`, `checklistPassedCount=232`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -468,6 +468,14 @@ censuses):
   `hyperchargeChannelCompetitiveWithSinglet=False` (the singlet wins:
   scale and breaking direction live in DIFFERENT mechanisms);
   mean-field + convention + candidate-only boundaries recorded
+- Phase439: `gapEquationLambda8BackgroundChannelSteeringProbePassed=True`,
+  `backgroundInducesChannelSteering=True` (strict margins, monotone in
+  t8), `dynamicalMassPatternAlignsWithSu2U1=True` (Sigma_1=Sigma_2 !=
+  Sigma_3 - automatic alignment from lambda_8's (x,x,-2x) eigenvalues),
+  `transmutationSignatureSurvivesBackground=True` - THE CANDIDATE-LEVEL
+  LOOP IS CLOSED: direction selection (430) -> background steering (439)
+  -> aligned dynamical masses with a transmutation scale (438); the one
+  remaining link is self-consistency of t8 itself
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -488,7 +496,23 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work (2026-07-02, tenth checkpoint: the SCALE-GAP ATTACK WAVE,
+The latest work (2026-07-02, eleventh checkpoint) added Phase439, the
+gap-equation-in-lambda_8-background channel-steering probe, closing the
+internal story AT CANDIDATE LEVEL: the background steers the condensate
+channel (strict free-energy margins, monotone in t8), the free-per-color
+gap equation decouples exactly and yields the su(2)xu(1)-ALIGNED pattern
+Sigma_1=Sigma_2 != Sigma_3 (automatic from lambda_8's (x,x,-2x)
+eigenvalues), and the transmutation signature survives. Chain: direction
+selection (430) -> background steering (439) -> aligned dynamical masses
++ scale (438). THE ONE REMAINING LINK: t8 is still a recorded candidate
+parameter. NAMED NEXT: phase440 = coupled background-condensate
+fixed-point probe (joint (t8, Sigma_vec) gap system - does a nontrivial
+self-consistent t8* exist?); then the physical-branch universality
+sweep; incremental-validation design; monitoring. Study:
+phase439_gap_equation_lambda8_background_channel_steering_probe_001
+(IMPLEMENTATION_P439.md).
+
+Before that, the work (2026-07-02, tenth checkpoint: the SCALE-GAP ATTACK WAVE,
 phases 437-438 built by parallel agents) decided two of the three
 computable surfaces of the pinned scale gap. Phase437: the one-loop
 runaway is STRUCTURAL, not a small-2D-lattice artifact - 4D per-volume
@@ -1075,7 +1099,7 @@ HONEST BOUNDARY. Study:
 
 ### Integration Points Already Updated
 
-Phases 437-438 (like Phase388-436) are wired into:
+Phase439 (like Phase388-438) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (single broad pass; the
   older duplicated final sweep was removed on 2026-06-16; the Phase424 line
@@ -1103,7 +1127,8 @@ Phases 437-438 (like Phase388-436) are wired into:
   `two-condensate-scale-gap-probe-materialized` and
   `exact-hessian-saturation-no-go-probe-materialized` and
   `four-dimensional-transmutation-scaling-probe-materialized` and
-  `self-consistent-condensate-gap-equation-probe-materialized`;
+  `self-consistent-condensate-gap-equation-probe-materialized` and
+  `gap-equation-lambda8-background-channel-steering-probe-materialized`;
   the Phase417 checklist row now asserts the corrected
   `yHalfCalibrationExact=True` and `internalSmHiggsPatternComplexDimension=6`)
 - `scripts/verify_boson_claim_integrity.sh` (Phase424 asserts plus the
@@ -1160,8 +1185,8 @@ PHASE405_ENABLE_GPU=1 LD_LIBRARY_PATH=native/build dotnet run --project studies/
 The targeted Phase424 (Release, ~7 min) and Phase425 (Release, ~1 min) runs
 pass and preserve the fail-closed boundary; the fixed Phase411/Phase417
 re-runs pass with their corrected censuses; Phase202 now reports
-`checklistPassedCount=231`, `checklistFailedCount=3`; claim integrity
-verifies Phase424 through Phase438 (and the corrected Phase417 values)
+`checklistPassedCount=232`, `checklistFailedCount=3`; claim integrity
+verifies Phase424 through Phase439 (and the corrected Phase417 values)
 with `promotedPhysicalMassClaimCount=0`. The full direct
 `./scripts/generate_validated_boson_predictions.sh` pass completed with
 Phase424 through Phase436 included and ended at
@@ -1556,12 +1581,12 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase437-438 output JSON files, and commit a
-checkpoint after validation. REMEMBER: new phases must be registered in
-BOTH the generator script AND scripts/BosonPhasesTraversal.proj.
+force-add the ignored Phase439 output JSON files, and commit a checkpoint
+after validation. REMEMBER: new phases must be registered in BOTH the
+generator script AND scripts/BosonPhasesTraversal.proj.
 
 Suggested checkpoint message:
 
 ```text
-Add phases 437-438: scale-gap attack wave
+Add phase439 gap-equation channel-steering probe
 ```
