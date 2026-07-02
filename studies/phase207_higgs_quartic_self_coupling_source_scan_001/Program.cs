@@ -471,6 +471,7 @@ static List<string> ClassifyBlockers(string lower, string file)
     AddIf(blockers, file.Contains("phase437_four_dimensional_transmutation_scaling_probe", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("phase438_self_consistent_condensate_gap_equation_probe", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("phase439_gap_equation_lambda8_background_channel_steering_probe", StringComparison.Ordinal), "generated-diagnostic-artifact");
+    AddIf(blockers, file.Contains("phase440_coupled_background_condensate_fixed_point_probe", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P278.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P279.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P280.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
@@ -530,6 +531,7 @@ static List<string> ClassifyBlockers(string lower, string file)
     AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P437.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P438.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P439.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
+    AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P440.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P304.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P305.md", StringComparison.Ordinal), "generated-diagnostic-artifact");
     AddIf(blockers, file.Contains("docs/Phases/Implementation/IMPLEMENTATION_P306.md", StringComparison.Ordinal), "generated-diagnostic-artifact");

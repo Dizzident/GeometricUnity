@@ -49,7 +49,7 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase439 work (plus the 2026-06-12 platform
+Current gate status after the Phase440 work (plus the 2026-06-12 platform
 fix - GPU parity defect root-caused and discharged - and the 2026-07-01
 |Y|=1/2 calibration defect fix in the Phase411/417 informational SM
 censuses):
@@ -57,7 +57,7 @@ censuses):
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=232`,
+  `objectiveAchieved=False`, `checklistPassedCount=233`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -476,6 +476,15 @@ censuses):
   LOOP IS CLOSED: direction selection (430) -> background steering (439)
   -> aligned dynamical masses with a transmutation scale (438); the one
   remaining link is self-consistency of t8 itself
+- Phase440: `coupledBackgroundCondensateFixedPointProbePassed=True`,
+  HONEST NEGATIVE: `jointFixedPointExists=False` (29 trivial / 19
+  runaway / 0 interior over 48 configs);
+  `condensateSaturatesFermionicRunaway=True` (delays but cannot stop -
+  at large t8 the background gaps out the condensing IR modes and the
+  joint-optimal Sigma falls to zero); boundary decomposition pins the
+  failure on the workbench bosonic sector - the THIRD independent
+  convergence (with 435/436) onto the physical VO-6/VO-7 structure or a
+  source anchor
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -496,7 +505,24 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work (2026-07-02, eleventh checkpoint) added Phase439, the
+The latest work (2026-07-02, twelfth checkpoint) added Phase440, the
+coupled background-condensate fixed-point probe - the final link of the
+candidate chain, decided as an HONEST NEGATIVE: the joint (t8, Sigma)
+system has no interior fixed point (29 trivial / 19 runaway / 0 interior
+over 48 configs). The condensate saturates the fermionic runaway but
+cannot stop it (at large t8 the background gaps out the condensing IR
+modes; joint-optimal Sigma -> 0; slope resumes). The boundary dW/dt8
+decomposition (bosonic +, fermionic -, net -) pins the failure on the
+workbench bosonic sector - the third independent convergence onto the
+physical VO-6/VO-7 structure or a source anchor. THE INTERNAL DYNAMICAL
+PROGRAM IS COMPLETE WITH A FULLY MAPPED FRONTIER: what remains internal
+is ONLY the physical-branch candidate-family universality sweep (needs a
+design exploration of the nontrivial Shiab/torsion machinery); otherwise
+incremental-validation design and checkpoint-cadence monitoring. Study:
+phase440_coupled_background_condensate_fixed_point_probe_001
+(IMPLEMENTATION_P440.md).
+
+Before that, the work (2026-07-02, eleventh checkpoint) added Phase439, the
 gap-equation-in-lambda_8-background channel-steering probe, closing the
 internal story AT CANDIDATE LEVEL: the background steers the condensate
 channel (strict free-energy margins, monotone in t8), the free-per-color
@@ -1099,7 +1125,7 @@ HONEST BOUNDARY. Study:
 
 ### Integration Points Already Updated
 
-Phase439 (like Phase388-438) is wired into:
+Phase440 (like Phase388-439) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (single broad pass; the
   older duplicated final sweep was removed on 2026-06-16; the Phase424 line
@@ -1128,7 +1154,8 @@ Phase439 (like Phase388-438) is wired into:
   `exact-hessian-saturation-no-go-probe-materialized` and
   `four-dimensional-transmutation-scaling-probe-materialized` and
   `self-consistent-condensate-gap-equation-probe-materialized` and
-  `gap-equation-lambda8-background-channel-steering-probe-materialized`;
+  `gap-equation-lambda8-background-channel-steering-probe-materialized` and
+  `coupled-background-condensate-fixed-point-probe-materialized`;
   the Phase417 checklist row now asserts the corrected
   `yHalfCalibrationExact=True` and `internalSmHiggsPatternComplexDimension=6`)
 - `scripts/verify_boson_claim_integrity.sh` (Phase424 asserts plus the
@@ -1185,8 +1212,8 @@ PHASE405_ENABLE_GPU=1 LD_LIBRARY_PATH=native/build dotnet run --project studies/
 The targeted Phase424 (Release, ~7 min) and Phase425 (Release, ~1 min) runs
 pass and preserve the fail-closed boundary; the fixed Phase411/Phase417
 re-runs pass with their corrected censuses; Phase202 now reports
-`checklistPassedCount=232`, `checklistFailedCount=3`; claim integrity
-verifies Phase424 through Phase439 (and the corrected Phase417 values)
+`checklistPassedCount=233`, `checklistFailedCount=3`; claim integrity
+verifies Phase424 through Phase440 (and the corrected Phase417 values)
 with `promotedPhysicalMassClaimCount=0`. The full direct
 `./scripts/generate_validated_boson_predictions.sh` pass completed with
 Phase424 through Phase436 included and ended at
@@ -1581,12 +1608,12 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase439 output JSON files, and commit a checkpoint
+force-add the ignored Phase440 output JSON files, and commit a checkpoint
 after validation. REMEMBER: new phases must be registered in BOTH the
 generator script AND scripts/BosonPhasesTraversal.proj.
 
 Suggested checkpoint message:
 
 ```text
-Add phase439 gap-equation channel-steering probe
+Add phase440 coupled fixed-point probe
 ```

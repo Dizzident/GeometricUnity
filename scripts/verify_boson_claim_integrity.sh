@@ -210,6 +210,7 @@ const paths = {
   phase437: "studies/phase437_four_dimensional_transmutation_scaling_probe_001/output/four_dimensional_transmutation_scaling_probe_summary.json",
   phase438: "studies/phase438_self_consistent_condensate_gap_equation_probe_001/output/self_consistent_condensate_gap_equation_probe_summary.json",
   phase439: "studies/phase439_gap_equation_lambda8_background_channel_steering_probe_001/output/gap_equation_lambda8_background_channel_steering_probe_summary.json",
+  phase440: "studies/phase440_coupled_background_condensate_fixed_point_probe_001/output/coupled_background_condensate_fixed_point_probe_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -491,6 +492,7 @@ const phase436 = requireFile(paths.phase436);
 const phase437 = requireFile(paths.phase437);
 const phase438 = requireFile(paths.phase438);
 const phase439 = requireFile(paths.phase439);
+const phase440 = requireFile(paths.phase440);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -5220,6 +5222,16 @@ if (sourceLineageMissing) {
   assert(phase439.routePromotesWzMasses === false && phase439.routePromotesHiggsMass === false && phase439.routeCompletesBosonPredictions === false, "Phase439 cannot promote boson predictions.");
   assert(phase101Package?.gapEquationLambda8BackgroundChannelSteeringProbe?.gapEquationLambda8BackgroundChannelSteeringProbePassed === true, "Phase101 must include the Phase439 steering block.");
   assert(phase101Package.gapEquationLambda8BackgroundChannelSteeringProbe.noGevPromotion === true && phase101Package.gapEquationLambda8BackgroundChannelSteeringProbe.scaleAndPatternAreCandidateOnly === true, "Phase101 must preserve the Phase439 candidate-only boundary.");
+  assert(phase440.coupledBackgroundCondensateFixedPointProbePassed === true, "Phase440 coupled fixed-point probe must pass as fail-closed representation arithmetic.");
+  assert(phase440.targetBlindConstruction === true && typeof phase440.targetBlindConstructionHash === "string" && phase440.targetBlindConstructionHash.length === 64, "Phase440 must remain target-blind with a persisted construction hash.");
+  assert(phase440.applicationSubjectKind === "coupled-background-condensate-fixed-point-probe", "Phase440 must classify its subject as the coupled fixed-point probe.");
+  assert(phase440.batteries?.allBatteriesPassed === true, "Phase440 exactness batteries must all pass.");
+  assert(phase440.condensateSaturatesFermionicRunaway === true && phase440.jointFixedPointExists === false && phase440.runawayPersistsInCoupledSystem === true && phase440.backgroundSelfGenerates === false, "Phase440 must record the honest negative: the condensate delays but cannot stop the runaway.");
+  assert(phase440.scaleRatiosAreCandidateOnly === true && phase440.bosonicSectorIsWorkbenchModel === true && phase440.gapEquationIsMeanFieldApproximation === true && phase440.noGevPromotion === true, "Phase440 must keep the workbench-model, mean-field, and no-promotion boundaries.");
+  assert(phase440.sourceContractApplicationAllowed === false && phase440.canFillPhase201WzContract === false && phase440.canFillPhase201HiggsContract === false && phase440.canFillPhase256ObservedFieldExtractionContract === false, "Phase440 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase440.routePromotesWzMasses === false && phase440.routePromotesHiggsMass === false && phase440.routeCompletesBosonPredictions === false, "Phase440 cannot promote boson predictions.");
+  assert(phase101Package?.coupledBackgroundCondensateFixedPointProbe?.coupledBackgroundCondensateFixedPointProbePassed === true, "Phase101 must include the Phase440 fixed-point block.");
+  assert(phase101Package.coupledBackgroundCondensateFixedPointProbe.jointFixedPointExists === false, "Phase101 must preserve the Phase440 honest-negative verdict.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

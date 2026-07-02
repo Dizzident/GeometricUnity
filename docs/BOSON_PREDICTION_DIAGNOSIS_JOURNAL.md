@@ -18860,3 +18860,37 @@ solution with finite t8*? - if yes, the candidate chain becomes fully
 self-consistent internally, still workbench-conventional); then the
 physical-branch universality sweep; performance program's incremental
 validation design; monitoring.
+
+## 2026-07-02 - Phase440: The Candidate Chain Does Not Close (Honest Negative)
+
+### Result
+
+The joint (t8, Sigma) variational system has NO interior fixed point: 29
+trivial / 19 runaway / 0 interior over 48 configurations. The mechanism
+is sharp: the condensate saturates the fermionic runaway (IR cutoff
+shifted to sqrt(eps^2+Sigma^2); moderate-slope depressed -2.65 -> -0.42)
+but at large t8 the background gaps out the condensing IR modes, the
+joint-optimal Sigma falls to zero, and the runaway resumes (-7.28). The
+boundary decomposition (bosonic +, fermionic -, net -) pins the failure
+on the workbench bosonic sector.
+
+### Interpretation
+
+The internal dynamical program is now COMPLETE with a fully mapped
+frontier. What computation established: direction selection is dynamical
+(430); a background steers the condensate into an su(2)xu(1)-aligned
+pattern (439); the gap-equation mechanism generates a genuine
+transmutation scale (438); saturation exists but self-consistency fails
+on the workbench because the bosonic sector is too weak (440) - the same
+requirement Phases 435/436 reached from the landscape side. THREE
+INDEPENDENT ROUTES now converge on one requirement: a stronger bosonic
+sector than the workbench model - i.e., the physical VO-6/VO-7 branch
+structure - or a source anchor for the background scale. Every claim
+fail-closed; promotedPhysicalMassClaimCount=0 throughout.
+
+### Standing Next Work
+
+The physical-branch candidate-family universality sweep is now the ONLY
+named internal experiment remaining (design exploration of the
+nontrivial Shiab/torsion machinery required). Otherwise: incremental
+validation design, monitoring at checkpoint cadence.

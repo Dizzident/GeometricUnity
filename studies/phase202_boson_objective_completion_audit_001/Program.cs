@@ -201,6 +201,7 @@ const string Phase432Path = "studies/phase432_welded_fermion_loop_block_selectio
 const string Phase433Path = "studies/phase433_blind_beta_coefficient_running_ledger_001/output/blind_beta_coefficient_running_ledger_summary.json";
 const string Phase435Path = "studies/phase435_two_condensate_scale_gap_probe_001/output/two_condensate_scale_gap_probe_summary.json";
 const string Phase437Path = "studies/phase437_four_dimensional_transmutation_scaling_probe_001/output/four_dimensional_transmutation_scaling_probe_summary.json";
+const string Phase440Path = "studies/phase440_coupled_background_condensate_fixed_point_probe_001/output/coupled_background_condensate_fixed_point_probe_summary.json";
 const string Phase439Path = "studies/phase439_gap_equation_lambda8_background_channel_steering_probe_001/output/gap_equation_lambda8_background_channel_steering_probe_summary.json";
 const string Phase438Path = "studies/phase438_self_consistent_condensate_gap_equation_probe_001/output/self_consistent_condensate_gap_equation_probe_summary.json";
 const string Phase436Path = "studies/phase436_exact_hessian_saturation_no_go_probe_001/output/exact_hessian_saturation_no_go_probe_summary.json";
@@ -443,6 +444,7 @@ using var phase436 = File.Exists(Phase436Path) ? JsonDocument.Parse(File.ReadAll
 using var phase437 = File.Exists(Phase437Path) ? JsonDocument.Parse(File.ReadAllText(Phase437Path)) : null;
 using var phase438 = File.Exists(Phase438Path) ? JsonDocument.Parse(File.ReadAllText(Phase438Path)) : null;
 using var phase439 = File.Exists(Phase439Path) ? JsonDocument.Parse(File.ReadAllText(Phase439Path)) : null;
+using var phase440 = File.Exists(Phase440Path) ? JsonDocument.Parse(File.ReadAllText(Phase440Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -6064,6 +6066,28 @@ var gapEquationLambda8BackgroundChannelSteeringProbePassed = gapEquationLambda8B
     && JsonBool(phase439.RootElement, "routePromotesHiggsMass") is false
     && JsonBool(phase439.RootElement, "routeCompletesBosonPredictions") is false
     && JsonInt(phase439.RootElement, "acceptedContractFieldCount") == 0;
+var coupledBackgroundCondensateFixedPointProbeMaterialized = phase440 is not null;
+var coupledBackgroundCondensateFixedPointProbePassed = coupledBackgroundCondensateFixedPointProbeMaterialized
+    && JsonBool(phase440!.RootElement, "coupledBackgroundCondensateFixedPointProbePassed") is true
+    && JsonBool(phase440.RootElement, "targetBlindConstruction") is true
+    && (JsonString(phase440.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase440.RootElement, "applicationSubjectKind") == "coupled-background-condensate-fixed-point-probe"
+    && JsonBool(phase440.RootElement, "condensateSaturatesFermionicRunaway") is true
+    && JsonBool(phase440.RootElement, "jointFixedPointExists") is false
+    && JsonBool(phase440.RootElement, "runawayPersistsInCoupledSystem") is true
+    && JsonBool(phase440.RootElement, "backgroundSelfGenerates") is false
+    && JsonBool(phase440.RootElement, "scaleRatiosAreCandidateOnly") is true
+    && JsonBool(phase440.RootElement, "bosonicSectorIsWorkbenchModel") is true
+    && JsonBool(phase440.RootElement, "gapEquationIsMeanFieldApproximation") is true
+    && JsonBool(phase440.RootElement, "noGevPromotion") is true
+    && JsonBool(phase440.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase440.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase440.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase440.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase440.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase440.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase440.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonInt(phase440.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -8552,6 +8576,14 @@ var checklist = new[]
             ? $"gapEquationLambda8BackgroundChannelSteeringProbePassed={JsonBool(phase439!.RootElement, "gapEquationLambda8BackgroundChannelSteeringProbePassed")}; backgroundInducesChannelSteering={JsonBool(phase439.RootElement, "backgroundInducesChannelSteering")}; dynamicalMassPatternAlignsWithSu2U1={JsonBool(phase439.RootElement, "dynamicalMassPatternAlignsWithSu2U1")}; transmutationSignatureSurvivesBackground={JsonBool(phase439.RootElement, "transmutationSignatureSurvivesBackground")}; noGevPromotion={JsonBool(phase439.RootElement, "noGevPromotion")}; canFillPhase201WzContract={JsonBool(phase439.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase439.RootElement, "decision")}"
             : "Phase439 artifact not materialized",
         Phase439Path),
+    new ObjectiveChecklistItem(
+        "coupled-background-condensate-fixed-point-probe-materialized",
+        "Decide whether the candidate chain closes into a self-consistent joint fixed point: it does not - the condensate delays but cannot stop the runaway, and the failure is pinned on the workbench bosonic sector.",
+        coupledBackgroundCondensateFixedPointProbePassed ? "passed" : "failed",
+        coupledBackgroundCondensateFixedPointProbeMaterialized
+            ? $"coupledBackgroundCondensateFixedPointProbePassed={JsonBool(phase440!.RootElement, "coupledBackgroundCondensateFixedPointProbePassed")}; condensateSaturatesFermionicRunaway={JsonBool(phase440.RootElement, "condensateSaturatesFermionicRunaway")}; jointFixedPointExists={JsonBool(phase440.RootElement, "jointFixedPointExists")}; runawayPersistsInCoupledSystem={JsonBool(phase440.RootElement, "runawayPersistsInCoupledSystem")}; noGevPromotion={JsonBool(phase440.RootElement, "noGevPromotion")}; canFillPhase201WzContract={JsonBool(phase440.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase440.RootElement, "decision")}"
+            : "Phase440 artifact not materialized",
+        Phase440Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
