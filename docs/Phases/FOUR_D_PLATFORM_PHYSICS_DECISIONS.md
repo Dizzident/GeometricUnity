@@ -579,6 +579,24 @@ with antisymmetric edge contribution (`+Gamma·diff` at `v`, `-Gamma·diff` at `
   4D lattice (legitimate initial simplification, `phase4-physics` P4-IA-003);
   gauge coupling `omega_mu^a rho(T_a)` enters per edge via the existing
   `AddGaugeCouplingContribution` path, default representation adjoint.
+- **Fermion carrier / boundary conditions (PINNED — periodic 4-torus).** The
+  difference-form `D` (with the on-site `−Gamma psi_v` term) is exactly
+  anti-Hermitian only where incident-edge on-site terms cancel — i.e. at interior
+  vertices where the neighbor set is `±`-symmetric so `sum_q ê_{pq} = 0`. On the
+  OPEN block `[0,n]^4` this fails at boundary vertices (`sum_q ê_{pq} != 0` ⇒ a
+  Hermitian diagonal defect), so `iD` is not exactly Hermitian there. **Fermion
+  spectral studies therefore run on a PERIODIC 4-torus** (identify opposite faces
+  of `[0,n]^4`): every vertex is interior, `D` is exactly anti-Hermitian, `iD`
+  Hermitian to machine precision, the existing `DiracOperatorValidator` bound
+  holds unchanged, and translation invariance gives a clean, analytically
+  understood spectrum (`~ sum_mu gamma_mu sin k_mu`) free of boundary artifacts —
+  the standard naive-lattice-Dirac setup. The OPEN block is retained for the
+  bosonic Hessian-degree probe (which does not consume `D`). Record
+  `fermionCarrier = periodic-4-torus`. Do NOT drop the on-site term to force
+  anti-Hermiticity on the open block (the pure-hopping operator is a *different*
+  operator with an implicit Neumann-like BC — acceptable only as a fallback if
+  periodic meshing is infeasible). Optional later refinement: anti-periodic BC in
+  one direction to lift the trivial `k=0` zero mode.
 
 Continuum-limit consistency: with the edge-contracted `Gamma_hat`, the naive
 lattice `D_h` converges to `Gamma^mu(partial_mu + omega_mu)` — the same operator
@@ -702,57 +720,116 @@ already realizes the `T_omega = varpi − epsilon^{-1} d_0 epsilon` structure wi
 `A0` in the pure-gauge/reference role; keep `epsilon` and the augmented-torsion
 reference mutually consistent when both are active.
 
-### Reconciliation with arch-4d's `eps = eps(omega)` (design §3.5) — CONFIRMED
+### FINAL on the `epsilon` realization — INDEPENDENT `H`-valued field (supersedes the slaved detour)
 
-arch-4d's design realizes `omega-coupled` as `eps = eps(omega)` — `eps` **slaved
-to the connection** via a cell-local Wilson-line-like accumulation
-`eps_cell = exp( kappa · sum_{e in cell} omega_e )`, `kappa = 0` ⇒ `eps = 1`.
-This differs from the "independent `H`-valued field" framing above, and after
-checking the probe mechanics I **confirm arch-4d's slaved form as the correct
-FIRST-PASS choice** (it supersedes the independent-field framing above for the
-first study):
+Honest record of the decision path: I first specified `epsilon` as an
+independent field (above); on reading arch-4d's first design I endorsed a
+*slaved* `eps = eps(omega) = exp(kappa·sum_{e in cell} omega_e)` as a simpler
+first pass; arch-4d then correctly pushed back to the independent field. **The
+independent `H`-valued field is the right realization and it is now final.** I am
+retracting the slaved-form endorsement. Why the independent field is correct, not
+merely more faithful:
 
-- **It lifts the degree on the *exact* Phase436 single-direction ray, with zero
-  change to the probe machinery.** At `omega = t*u` (single Lie direction,
-  `[u,u] = 0`): `sum_{e in cell} omega_e = t * U_cell` so
-  `Ad_{eps(t)} = exp( t * kappa * ad_{U_cell} )` is all-orders nonlinear in `t`,
-  while `F(t) = t * d(u)` stays linear. Hence `S_h(t)` is non-affine in `t` and
-  the Hessian acquires degree `> 2`. The independent-field version would instead
-  require enlarging the probe ray to carry an `eps`-component — heavier and
-  unnecessary for a first pass. arch-4d's choice is the better engineering *and*
-  physically sufficient.
-- **It is faithful to the sigma-field reading.** `draft:2084` calls `epsilon` a
-  "non-linear sigma-field of sorts"; a sigma-field built from the connection is a
-  legitimate section of the `(epsilon, varpi)` pair. RECORDED BOUNDARY: this is a
-  first-pass *section* where `epsilon` is slaved to `omega` on the flat reference
-  (`∇_0` flat, so the naive cell edge-sum needs no parallel transport); the fully
-  independent `(epsilon, varpi)` inhomogeneous-gauge-group treatment is the more
-  complete follow-up. Record `epsilonRealization = slaved-sigma-field`,
-  `independentEpsFieldDeferred = true`.
-- **`kappa` becomes a scanned family axis** (`kappa = 0` = control). Add a
-  diagnostic battery: the third `t`-difference of `H(t)` must → 0 as `kappa → 0`
-  and grow with `kappa` — this cleanly separates a genuine degree-lift from a
-  numerical artifact.
-- **Analytic `dEps/dω` caveat.** arch-4d's `dEps/dω(δ) = kappa · eps · (sum_e
-  δ_e)` is the *abelian / first-order* approximation (exact only when `[Ω, δ]`
-  commute, `Ω = sum_e ω_e`). The exact form is the d-exp integral above
-  (`∫_0^1 exp(u·kappa·ad_Ω) ad_{kappa·Σδ} exp((1-u)·kappa·ad_Ω) du`). Since the
-  FD `Linearize` is (correctly) pinned as the first-pass reference, the
-  approximation is off the critical path; use the exact d-exp only when moving to
-  an analytic Jacobian.
-- **Ad convention:** fix `eps^{-1}(·)eps` vs `eps(·)eps^{-1}` consistently with
-  the gauge-covariance battery (§4.5 battery 5); either is admissible, just be
-  uniform.
+- **It is the draft's actual field content.** The bosonic connection is the
+  inhomogeneous-gauge-group pair `omega_Y = (epsilon, varpi)` with `epsilon in H`
+  and `varpi in N` **independent** (`draft:1617`, `G = H ⋉ N`; `draft:2200`,
+  `T_omega = varpi − epsilon^{-1} d_0 epsilon`, treats `epsilon` as a field). The
+  one-loop effective potential — the object whose log-saturation would give a
+  dynamical scale — is a trace-log over the second variation w.r.t. **all**
+  physical fields, i.e. the **joint `(varpi, theta)` Hessian**. The slaved form
+  computes the wrong Hessian (it collapses `theta` onto a chosen function of
+  `varpi`).
+- **The slaved form's degree-lift is dismissible as an artifact.** `theta =
+  kappa·sum omega_e` is an *arbitrary* functional (why that accumulation? why
+  `kappa`?); a critic could attribute its non-affineness to the choice, not to
+  physics. The independent field's degree-lift comes from a genuine physical
+  fluctuation direction — defensible.
 
-**SIGN-OFF (both criteria):** I confirm arch-4d's Ω²→Ω² carrier decision (§3.2)
-and the `eps_cell = exp(kappa·Σω_e)` discrete conjugator (§3.5) as faithful for
-the first-pass Einsteinian family. Final sign-off on the implemented operator
-clears once (a) the `omega-coupled` FD `Linearize` and the degree-probe show the
-third `t`-difference vanishing at `kappa = 0` and growing with `kappa`, and
-(b) the control arm (`kappa = 0` / `eps = 1`, trivial torsion) reproduces
-Phase436 degree-2 exactly. Nothing about the degree verdict itself gates the
-sign-off — a degree-2 Einsteinian result is a legitimate (frontier-sharpening)
-outcome, per §5.
+Realization (matches arch-4d's revised §3.5/§3.6):
+
+- `epsilon_v = exp(theta^a_v T_a) in H` per vertex; `theta` is an **independent
+  dynamical DOF**, threaded as operator state `EpsilonTheta` (length
+  `VertexCount · dimG`) with a separate `LinearizeTheta` for the `theta`-block —
+  additive, no `IShiabBranchOperator` signature change.
+- `g = Ad_{epsilon_v} = exp(ad_{theta_v})`; `S_h(F)_face = R(Ad_epsilon(F))`.
+- Modes: `trivial` (`theta = 0`, not varied — control), `frozen-background`
+  (`theta` fixed, not varied — linear), `omega-coupled` = **`epsilon-dynamical`**
+  (`theta` varied — the only degree-lifting mode). NB the name "omega-coupled" is
+  a misnomer; "epsilon-dynamical" is clearer since `theta` is independent of
+  `omega`.
+- **Exact `theta`-Linearize:** `delta(Ad_epsilon X) = [∫_0^1 exp(u·ad_theta)
+  ad_{delta_theta} exp((1-u)·ad_theta) du] X`, → `[delta_theta, X]` at
+  `theta = 0`. FD fallback (Phase436-style) is the pinned first-pass reference.
+- `B_omega` does NOT enter (only `Ad_epsilon`); differential `Sigma_mc` deferred.
+
+Probe consequences (design §3.9): the `epsilon-dynamical` arm's Hessian is over
+the **joint `(omega, theta)` DOF**, and the rank-1 background ray must carry a
+`theta`-component `(u_omega, u_theta)`. Then `Ad_{epsilon(t)} = exp(t·ad_{u_theta})`
+is all-orders nonlinear in `t` while `F(t) = t·d(u_omega)` is linear ⇒ `S_h(t)`
+non-affine ⇒ joint Hessian degree `> 2`. The `theta = 0` control (pure-`omega`
+ray) recovers Phase436 degree-2 exactly — the validation gate is preserved.
+
+Batteries (update §3.7):
+- **Isolation battery (answers the skeptic — REQUIRED).** With **identity Shiab**
+  (`R = I` / `S = F`), `theta` must NOT appear in `Upsilon` at all (`F` is
+  `epsilon`-independent), so the `theta`-Hessian block is degenerate/zero. Assert
+  this. It proves the degree-lift is attributable to the **Einsteinian Shiab's
+  `epsilon`-dependence**, not to `theta` as a free field.
+- **Honesty sweep.** Third `t`-difference of `H(t)` → 0 as `|u_theta| → 0` and
+  grows with `|u_theta|` — separates a genuine degree-lift from numerical noise.
+- **`Ad` convention:** fix `eps^{-1}(·)eps` vs `eps(·)eps^{-1}` consistently with
+  the gauge-covariance battery (§4.5 battery 5).
+
+Record keys (aligned with co-signed design §3.5):
+`epsilonRealization = independent-theta-dof`, `hessianOverJointOmegaTheta = true`,
+`slavedWilsonKeptAsSmokeTestOnly = true`, `shiabOutputDegree = 2`.
+
+#### `EpsilonMode` taxonomy (co-signed with arch-4d) — three ways to treat ε, do not conflate
+
+The lead's insight (correct): an independent ε solved by its own stationarity
+`∂S/∂ε = 0` yields an `omega`-dependent composite `eps*(omega)` — so "slaved" and
+"independent" are not opposites, they differ in *how the eps→omega relation
+arises*. But there are **three** distinct realizations, and the first study hinges
+on not merging the middle one into the third:
+
+1. **`slaved-ansatz`** — `theta = kappa·sum omega_e` **POSTULATED** (Wilson
+   ansatz). `omega`-only Hessian. Its degree-lift is *muddied-but-real*: it does
+   exhibit the genuine `exp(ad_theta)` non-polynomiality of the eps-conjugation,
+   but routes it through an arbitrary `omega`-functional, so it **cannot run the
+   isolation battery** and cannot cleanly separate physics from the postulate.
+   → OPTIONAL smoke-test, non-gating, NOT the headline.
+2. **`epsilon-dynamical` (joint Hessian)** — `theta` an **INDEPENDENT fluctuation
+   direction**; compute the **joint `(omega, theta)` Hessian**; *no stationarity
+   solve*. This is what memo §6e specifies and what the `EpsilonTheta` /
+   `LinearizeTheta` plumbing delivers. Cost is modest (a larger Hessian vector +
+   one isolation run — the same Phase436 FD machinery, no new algorithm). The
+   isolation battery runs here and certifies the degree-lift is Shiab-caused.
+   → **FIRST-PASS HEADLINE.**
+3. **`variational`** — `eps*(omega)` obtained by solving `∂S/∂ε = 0` and
+   integrating ε out (the true one-loop effective potential; `Linearize` needs the
+   implicit-function derivative through the stationarity condition). This is the
+   genuinely costly one and is where the eventual dynamical-*scale* extraction
+   lives. → DEFERRED faithful upgrade (named follow-up study).
+
+Plus `trivial` (`theta = 0`, control) and `frozen-background` (`theta` fixed,
+linear — diagnostic).
+
+**Is the costly `variational` (3) REQUIRED for the first study to be meaningful?
+NO.** The first study's question (§5) is the *structural* one — does the
+Einsteinian Shiab break the exact-quadraticity Phase436/441 established? — and
+that is answered cleanly by the joint Hessian (2) with the isolation battery,
+which needs no stationarity solve. `variational` (3) is required for the eventual
+*scale* extraction, not for the degree-verdict. So we pin **(2) as first-pass
+headline**, **(1) as optional smoke-test**, **(3) as deferred**. (`slaved-ansatz`
+is retained as a labelled cross-check, not retracted outright — it is a legitimate
+smoke-test, just not the headline.)
+
+**SIGN-OFF (both criteria, unchanged in spirit):** I confirm the Ω²→Ω² carrier
+(§3.2) and the independent-`epsilon` conjugator (§3.5/§3.6). Final sign-off on
+the built operator clears once (a) `LinearizeTheta` matches its finite-difference
+check, and (b) the `theta = 0` control arm reproduces Phase436 degree-2 exactly.
+The degree verdict itself does not gate sign-off — a degree-2 Einsteinian result
+is a legitimate frontier-sharpening outcome (§5).
 
 ### The single most important message to the developers
 

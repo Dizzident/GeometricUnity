@@ -467,23 +467,30 @@ Dirac operator is `src/Gu.Phase4.Dirac/CpuDiracOperatorAssembler.cs` — consume
 `FermionSpectralSolver`, `DiracVariationComputer`, ~7 phase studies, and many
 tests; `SpinorDiracOperator`'s only consumer is its own test file. Dependency
 direction: `Gu.Phase4.Dirac → Gu.Phase4.Spin` (and `Gu.Geometry → Gu.Core` only,
-so `Spin → Geometry` is clean, no cycle). **Ruling = option (ii): ONE source of
-truth for `Γ̂(e)`, the production refinement lands in the assembler, the standalone
-survives as a `SpinorField`-native reference that delegates to the shared helper.**
+so `Spin → Geometry` is clean, no cycle). **Ruling = option (i) (dev-spinor's
+elected refinement of the arch ruling): DELETE the standalone `SpinorDiracOperator`
+and land the `ê·Γ` refinement in the production assembler.** With the standalone
+gone there is exactly ONE Dirac operator, so single-source-of-truth for `Γ̂(e)` is
+trivially satisfied and the "shared helper" becomes just the assembler's internal
+contraction — cleaner than keeping a second reference operator (my earlier option
+(ii)). Accepted.
 
-- **Single source of truth (REQUIRED):** extract the edge-gamma contraction into
-  one shared helper in `Gu.Phase4.Spin` (co-located with `GammaOperatorBundle`),
-  computing the **unit** `Γ̂(e) = Σ_μ (Δx_μ/|e|)·γ^μ = ê·Γ` (physicist §6c). Both
-  the assembler and the standalone call it — no second implementation of `Γ̂(e)`.
-- **Production path (REQUIRED, load-bearing):** add the opt-in `GammaEdgeScheme`
-  to `CpuDiracOperatorAssembler` using the shared helper (below). This is the
-  operator the fermion solver actually consumes, so the 4D correction MUST live
-  here, not only in the standalone.
-- **Standalone (`SpinorDiracOperator`):** KEEP (dev-spinor's 48 tests stay), but
-  refactor `FrameGamma` to delegate to the shared helper and adopt the unit
-  `ê·Γ` + `/|e|` normalization (it currently uses raw `Δx` with no `/|e|` — see
-  the rework note below). Document it explicitly as the `SpinorField`-native
-  reference/probe, NOT the production fermion operator (that is the assembler).
+- **Delete the standalone** `src/Gu.Phase4.Spin/SpinorDiracOperator.cs` and its
+  tests (the `CliffordAlgebraFactory` + `SpinorField` + `ReducedCliffordSliceProjector`
+  work stays green). No orphan second operator to confuse "which is canonical."
+- **Production path (REQUIRED, load-bearing):** the `ê·Γ` refinement lands in
+  `CpuDiracOperatorAssembler` via the opt-in `GammaEdgeScheme` (below), the unit
+  `Γ̂(e) = Σ_μ (Δx_μ/|e|)·γ^μ` (physicist §6c). This is the operator the fermion
+  solver actually consumes. The `GammaEdgeScheme` enum lives in `Gu.Phase4.Dirac`
+  (next to the assembler; `Dirac → Spin`, so it cannot live in `Spin` if the
+  assembler is its only consumer).
+- **`SpinorField` stays** (verified: `Gu.Phase4.Dirac` has NO typed vertex-spinor
+  class — it uses a flat interleaved `double[]`; per §2.3 "if not, add SpinorField").
+  Since its only operator consumer (the standalone) is deleted, keep it as the
+  canonical typed spinor with explicit `ToFlat`/`FromFlat` bridges to the
+  assembler's `2*(v*dofsPerCell+g*spinorDim+s)` layout, so it is a usable typed
+  view rather than dead code. (If a bridge buys nothing yet, dropping `SpinorField`
+  is also acceptable — dev's call; but if kept, make it bridge, not just docs.)
 
 The assembler already provides: vertex-centered central difference
 `(D_h ψ)_v = Σ_{e=(v,w)} Γ̂(e)·(ψ_w − ψ_v)/|e|`, antisymmetric edge contribution,
@@ -532,12 +539,12 @@ the 4D path selects `EdgeVectorContraction`. This preserves all 3169 tests.
   (anti-)Hermiticity of the difference-form `D` on an open mesh (see below);
   (d) all existing `Gu.Phase4.Dirac.Tests` green (default scheme unchanged).
 
-**Rework note for dev-spinor (normalization).** The standalone currently uses
-raw `Γ(e) = Σ Δx_μ γ^μ` with no `/|e|`, so on diagonal edges it is `|e|²` times
-the physicist's `ê·Γ`-with-`/|e|` convention (identical only on unit axis edges).
-Adopt the shared unit `ê·Γ` helper and the `/|e|` stencil so the standalone and
-the assembler compute the same `Γ̂(e)`. This changes only diagonal-edge test
-constants (the axis-edge and Hermiticity tests are unaffected).
+**Normalization note.** `EdgeVectorContraction` must use the **unit** `ê·Γ` with
+the `/|e|` stencil (physicist §6c), so on axis-aligned edges it reduces EXACTLY to
+the existing `DominantAxis` single-gamma scheme (that exact reduction is what keeps
+the `DominantAxis` default byte-identical and is a §2.4 acceptance check). Do NOT
+use raw `Σ Δx_μ γ^μ` (it is `|e|²` off on diagonal edges). (The deleted standalone
+had used the raw form; the assembler's new scheme uses unit `ê·Γ`.)
 
 **Hermiticity carrier — dev-spinor's `BuildHoppingMatrix` resolution ENDORSED,
 one physics confirmation pending.** dev-spinor correctly identified that the
@@ -682,8 +689,9 @@ the memo's own physics:
    assembler are all unchanged.
 4. **Recorded boundary.** Landing in Ω² is the exact Ω²→Ω² curvature-operator
    core of eq 9.3's Ω^{d-1} content, consistent with M2's reduced-slice scope
-   (§2.5). The projection away from the outer degree-raising `D_A`/Hodge leg is
-   documented, not hidden — studies record `shiabOutputDegree = 2` and
+   (§2.5). Studies record `shiabOutputDegree = 2`,
+   `draftOperatorIsDegreeRaising = true`,
+   `reducedRealizationCapturesRicciWeylAlgebraNotFormDegree = true`,
    `draftDegreeReductionRecorded = true`.
 5. **Reversible/extensible.** If physics later demands the honest Ω³ output, M1
    already ships `Volumes` + `FaceToVolume` (§1.5); a 3-form carrier + 3-form
@@ -691,9 +699,17 @@ the memo's own physics:
    escape hatch is why M1 built the volume layer even though M3 does not consume
    it yet.
 
-*(Confirmation requested from physicist-4d: that the eps-conjugation / Weyl-
-selection realization is intended as the Ω²→Ω² core, i.e. the outer degree-raising
-leg is out of scope for the first realization. Design proceeds on this basis.)*
+**CONFIRMED by physicist-4d (memo §6e), with the rigor:** the draft operator IS
+genuinely degree-raising — eq 9.2 (`draft:2121`) maps Ω²(Y)→Ω^{d-1}(Y), and the
+degree bookkeeping forces `Φ₁` to be a **1-form** (`Φ₁ ∧ *ξ`, with `*ξ` a
+(d−2)-form, must land in Ω^{d-1}). BUT the degree-raising Hodge/wedge legs are
+**linear in `ξ=F` and carry ZERO ω-dependence**, so they are irrelevant to the
+Hessian-degree question. The eps-conjugation (degree-preserving similarity on the
+ad-value) plus the `Λ²→Λ²` projectors carry ALL the ω-dependence and ALL the
+richness. So Ω²→Ω² is not a compromise — it is the correct minimal realization
+that isolates exactly the physics the probe measures, and makes the control arm
+literally the existing identity-Shiab pipeline. The honest Ω³ + 3-form-torsion
+realization is a legitimate LATER milestone (the M1 escape hatch), deferred.
 
 ### 3.3 The pinned eq 9.3 shape and its Ω²→Ω² (Λ²) realization
 
@@ -724,7 +740,7 @@ matrix, confirming the Ω²→Ω² reading is the intended one.
 
 ```
 Evaluate(F_faces, ω, manifest, geom):
-  eps = BuildEps(spec.EpsilonMode, ω, background)     // §3.5; identity/frozen/omega-coupled
+  eps_c = exp(ad_{θ_c})   per cell     // θ = EpsilonTheta (independent DOF); θ=0 ⇒ ε=1. §3.5
   for each cell (pentachoron):
     faces = mesh.CellFaces[cell]                        // 10 faces span the 6-dim Λ²
     // 1. face 2-vector B_face = edge_a ∧ edge_b in R^4  → assemble W (6 x 10); build ∗ (6x6).
@@ -760,12 +776,16 @@ public sealed class EinsteinianShiabFamilyMember
     public double EinsteinCoefficient { get; init; } = 0.5;
     /// PINNED default "commutator" (matches existing [ω,ω]); sweep adds "i-anticommutator".
     public string BracketType { get; init; } = "commutator";
-    /// THE SCALE-BREAKING LEVER (memo §0/§4.3). Three modes; see §3.5.
-    ///   "trivial"          eps=1 — CONTROL, linear in ω, degree-2 Hessian (reproduces the no-go)
-    ///   "frozen-background" eps from a FIXED background field — still LINEAR in ω
-    ///   "omega-coupled"    eps carries connection DOF — NONLINEAR in ω; only this can lift degree>2
+    /// THE SCALE-BREAKING LEVER (CO-SIGNED §3.5). ε carries θ, an INDEPENDENT
+    /// H-valued DOF; the Hessian is over the joint (ω, θ). Modes; see §3.5.
+    ///   "trivial"                θ=0 (ε=1) — CONTROL, degree-2 (reproduces the no-go)
+    ///   "frozen-background"      θ fixed ≠ 0, not varied — still linear, degree-2
+    ///   "independent-theta"      θ VARIED — THE STUDY INSTRUMENT; joint (ω,θ) Hessian, degree > 2
+    ///   "slaved-wilson-smoketest" ε=exp(κ·Σ_{e∈cell}ω_e) — optional NON-GATING smoke-test only
     public string EpsilonMode { get; init; } = "trivial";
-    /// Derived, e.g. "einsteinian-shiab/sd2-id0/c0.5/comm/omega-coupled".
+    /// κ — ONLY used by the slaved-wilson-smoketest mode (non-gating). Ignored otherwise.
+    public double SlavedWilsonKappa { get; init; } = 0.0;
+    /// Derived, e.g. "einsteinian-shiab/sd2-id0/c0.5/comm/independent-theta".
     public string BranchId => $"einsteinian-shiab/{Phi1.InvariantElement}-{Phi2.InvariantElement}" +
                               $"/c{EinsteinCoefficient}/{Abbrev(BracketType)}/{EpsilonMode}";
 }
@@ -774,48 +794,114 @@ public sealed class EinsteinianShiabFamilyMember
 - **Control member** `{Phi1=id0, Phi2=id0, EpsilonMode="trivial"}` reduces to a
   scalar multiple of `F` and MUST reproduce the toy no-go (§3.6 battery 1 expects
   the control to *fail* the richness certificate — the correct outcome).
-- **THE ONE THING DEVS MUST INTERNALIZE (memo §0, carried verbatim):** the 4D
-  base is necessary but NOT sufficient. eq 9.3 is *linear in F*; with
-  `EpsilonMode ∈ {trivial, frozen-background}` the whole map is linear in ω, so
-  `Upsilon` stays degree-2 in ω and the Hessian stays degree-2 in `t` — this
-  **reproduces the Phase436/441 no-go on a bigger mesh.** Degree > 2 is reachable
-  **only** through the ω-dependence turned on by `EpsilonMode="omega-coupled"`.
-  Build and test toward `omega-coupled`; keep `trivial` as the validation control.
+- **THE ONE THING DEVS MUST INTERNALIZE (memo §0):** the 4D base is necessary but
+  NOT sufficient. eq 9.3 is *linear in F*; with `EpsilonMode ∈ {trivial,
+  frozen-background}` the whole map is linear, so the Hessian stays degree-2 in
+  `t` — **reproducing the Phase436/441 no-go on a bigger mesh.** Degree > 2 is
+  reachable **only** with `EpsilonMode="independent-theta"` (the varied θ DOF over
+  the joint `(ω, θ)` Hessian). Build and test toward `independent-theta`; keep
+  `trivial` as the validation control. (`slaved-wilson-smoketest` is a non-gating
+  diagnostic only — never the study instrument, per the co-signed §3.5.)
 - The M3 sweep pairs this menu with the M1 torsion and A0 menus exactly as
   Phase441; the registry `ValidateCarrierMatch`es every member.
 
-### 3.5 The `eps` dressing per mode + `Linearize` contract
+### 3.5 The `ε` dressing + `Linearize` contract — PROVISIONAL (co-sign pending)
 
-`eps` is an `H`-valued (reduced-slice: `End(S)`/`ad`-valued) field on the mesh;
-the conjugation `eps⁻¹ Φ eps` is a similarity transform — **degree-preserving**,
-which is why it can supply ω-nonlinearity without changing the 2-form carrier.
+> **STATUS (team-lead arbitration, 2026-07-02): NOT co-signed yet.** The binding
+> decision is **(B) INDEPENDENT ε** — the physicist's settled, categorical answer
+> to the lead's forced binary ("I will not reverse it; arch-4d's 'slaved pinned'
+> note is the stale one"). Physics decisions belong to the physicist role.
+>
+> **Process (mandatory):** the PHYSICS HALF of this subsection is being drafted by
+> **physicist-4d themselves** — it is NOT to be paraphrased from message fragments
+> by the architect (doing so is what invalidated the earlier "co-signed" version).
+> When their physics text arrives, it replaces the placeholder below; the
+> architect's ARCHITECTURE HALF (§3.6 plumbing) slots under it; and the **co-sign
+> is valid ONLY when physicist-4d sends team-lead their explicit ratification of
+> the final combined text.** Per team-lead direction, dev-shiab is cleared to
+> START M3b on the binding (B) substance now; the physicist's ratified final text
+> is the **M3b QA-gate prerequisite** (the ε-dynamical arm cannot PASS its gate
+> until ratification reaches the lead), not a blocker on beginning the build.
+>
+> **Binding content (B), for reference while the physicist drafts:** ε carries a
+> `θ` field that is an **independent `H`-valued DOF** (NOT a function of ω); the
+> Hessian is over the **joint `(ω, θ)`**; carrier stays **Ω²→Ω²**; the slaved
+> Wilson form is demoted to an optional labelled NON-GATING smoke-test. The
+> physicist's own text will supply the authoritative physics rationale (the
+> `(ε,ϖ)` independence of `G=H⋉N`, why the slaved form computes the wrong object,
+> and the θ-block isolation battery). Record keys:
+> `epsilonRealization=independent-theta-dof`, `hessianOverJointOmegaTheta=true`,
+> `slavedWilsonKeptAsSmokeTestOnly=true`, `shiabOutputDegree=2`.
+>
+> **[PHYSICS HALF — to be supplied or blessed by physicist-4d.]** physicist-4d
+> either inserts their own physics-rationale prose here (the `(ε,ϖ)` independence
+> of `G=H⋉N`, why the slaved form computes the wrong object, the artifact-
+> separation role of the θ-block isolation battery) OR ratifies the neutral
+> binding-content statement above as sufficient. The architect will not author
+> this half. Ratification = physicist-4d's explicit confirmation of the final
+> §3.5 text sent to team-lead (that closes the freeze).
+>
+> **SCOPE FLAG (architect, for team-lead):** the joint-`(ω,θ)` Hessian is a
+> **material design addition** beyond original M3 — recommend relabelling **M3b**
+> (estimate at the end of this subsection). This is an architecture/sizing note,
+> not a physics objection; I do NOT dispute (B) — it is feasible (the plumbing is
+> §3.6, which the lead confirmed is the target).
 
-| `EpsilonMode` | `eps` source | linear in ω? | `Linearize` |
+The **architecture half** below (modes, `Linearize` mechanics, §3.6 plumbing,
+batteries) is arch-4d's and is written to the binding (B) content; it stays
+stable under the physicist's physics text.
+
+**Discrete form (architecture, consistent with (B)):** `ε_c = exp(θ^a_c T_a) ∈ H`
+per cell `c`; `θ_c` (dimG components) the independent DOF, `θ≡0 ⇔ ε=1`;
+`g_c = Ad_{ε_c} = exp(ad_{θ_c})`; `S_h(F)_face = R(Ad_{ε_c}(F_advalue))`.
+
+**Modes.** `θ` is the independent DOF; the modes say how it is treated:
+
+| `EpsilonMode` | `θ` treatment | Hessian DOF | `Linearize` |
 |---|---|---|---|
-| `trivial` | `eps = 1` | yes | analytic: `dS/dω(δ) = S̃(dF/dω(δ))`, `S̃` = the (const) Λ² composition; `dF/dω(δ)=d(δ)+[ω,δ]` reused from `IdentityShiabCpu.Linearize`. Exact Jacobian, degree-2. |
-| `frozen-background` | `eps = eps(bg)`, a FIXED field passed to the ctor, independent of the live ω | yes | analytic, same as trivial but with the constant `eps`-conjugated `S̃`. Still degree-2. |
-| `omega-coupled` | `eps = eps(ω)` carries connection DOF (sigma-field, `draft:2083-2084`) | **no** | see below |
+| `trivial` | `θ=0` (ε=1) | `ω` only | analytic `dS/dω(δ)=R(dF/dω(δ))`; reuse `IdentityShiabCpu.Linearize`. Degree-2, Phase436 exact. |
+| `frozen-background` | `θ` FIXED ≠ 0, not varied | `ω` only | analytic, constant `Ad_ε`. Degree-2. |
+| `independent-theta` | `θ` VARIED (the instrument) | `(ω, θ)` jointly | ω-block analytic (as frozen); θ-block `LinearizeTheta` via the d-exp below. Degree > 2. |
+| `slaved-wilson-smoketest` | `ε=exp(κΣ_{e∈cell}ω_e)` | `ω` only | non-gating smoke-test; FD reference; NOT the study instrument. |
 
-**`omega-coupled` Linearize (the nonlinear mode).** `S = S̃_{eps(ω)}(F(ω))` with
-BOTH `F` and `eps` depending on ω:
-`dS/dω(δ) = S̃_{eps}(dF/dω(δ)) + (∂S̃/∂eps · dEps/dω(δ))(F)`.
-The second term is the extra piece **absent when eps=1** — it is the mechanism
-that lifts the Hessian degree (physicist-4d §6d makes its non-vanishing the
-sign-off criterion).
-- **Fallback (PINNED for the first pass): finite-difference `Linearize`,
-  Phase436-style.** Until the discrete `dEps/dω` is pinned (below), implement
-  `Linearize` for `omega-coupled` as the central difference of `Evaluate`
-  (exactly `phase436`'s `JacobianColumn`: `(S(ω+hδ) − S(ω−hδ))/2h`). This is
-  exact-enough for the Hessian-degree probe (which itself finite-differences) and
-  removes the analytic-derivative risk from the critical path.
-- **Proposed concrete discrete `eps(ω)` for physicist-4d §6d sign-off
-  (CANDIDATE, not yet pinned):** an `H`-valued vertex/cell field
-  `eps_cell = exp( κ · Σ_{e∈cell} ω_e )` (a Wilson-line-like accumulation of the
-  connection over the cell's edges), coupling `κ`; `κ=0` recovers `eps=1`. This
-  makes `eps` genuinely carry connection DOF and gives `dEps/dω(δ) = κ · eps ·
-  (Σ_e δ_e)` for the analytic form. **dev-shiab must NOT trust the omega-coupled
-  arm until physicist-4d confirms this discrete `eps` map (memo §6d): the check
-  is that `dEps/dω ≠ 0` feeds `dS/dω` a term that vanishes at `eps=1`.**
+**Why degree > 2 (mechanics, consistent with (B); physicist text authoritative).**
+`Ad_{ε(θ)} = exp(ad_θ)` is all-orders nonlinear in `θ` while `R(F)` is degree-2 in
+`ϖ`; over the joint `(ω, θ)` DOF the objective is degree > 2, so the Hessian at a
+joint background `t·(u_ω, u_θ)` exceeds degree-2 in `t`. At `θ=0`, `Ad=I`,
+`S_h=R(F)` degree-2 → Phase436 reproduced exactly.
+
+**θ-direction Linearize — EXACT (mechanics).** For `θ → θ+δθ`:
+`δ(Ad_ε X) = [ ∫₀¹ exp(u·ad_θ)·ad_{δθ}·exp((1−u)·ad_θ) du ] X` (the d-exp of the
+matrix exponential); at `θ=0` it reduces to `δ(Ad_ε X) = [δθ, X]`. Implement via
+eigendecomposition of `ad_θ` or series. The ω-block `Linearize` holds `Ad_ε` fixed
+and is analytic; `B_ω` does NOT enter (that is the deferred differential `Σ_mc`
+branch).
+
+**Ad convention:** fix `ε⁻¹(·)ε` vs `ε(·)ε⁻¹` uniformly, consistent with the
+gauge-covariance battery (§3.7 #5).
+
+**Consistency (physicist, non-blocking):** the A0-based augmented torsion already
+realizes `T_ω = ϖ − ε⁻¹d₀ε` with `A0` in the pure-gauge/reference role; keep `ε`
+and the augmented-torsion reference consistent when both are active.
+
+**Sign-off (PENDING physicist ratification to team-lead; not yet granted).**
+Conditions the implementation must meet: (a) the `θ=0` control (trivial torsion)
+reproduces Phase436 degree-2 exactly; (b) the analytic `LinearizeTheta` matches
+its finite-difference check; (c) the **θ-block isolation battery** passes — under
+the identity Shiab (`R=id`) the θ-block of the joint Hessian is degenerate (the
+check the slaved form structurally cannot run; lead arbitration). These REPLACE
+the earlier κ-scan pair (which moves to the non-gating smoke-test). The degree
+*verdict* itself does NOT gate — a degree-2 result over the joint DOF is a
+legitimate frontier-sharpening outcome (memo §5).
+
+**SCOPE NOTE — recommend M3b (architect).** Independent-θ adds, beyond original M3:
+(i) the `θ` field state + `Ad_ε=exp(ad_θ)` conjugation in `Evaluate`; (ii)
+`LinearizeTheta` (d-exp); (iii) a **joint `(ω, θ)` Hessian assembled at the study
+level** — the phase442 probe's DOF vector becomes `(ω_edges·dimG ⊕ θ_cells·dimG)`
+and it must finite-difference over BOTH fields (Hessian dimension grows
+accordingly). Estimate: ~300–500 new LOC (operator ~150–250, study joint-DOF
+harness ~150, tests ~200), ≈0.5–1 dev-week. This is a genuine addition, not
+original-M3 scope — flagging it as **M3b** rather than absorbing it silently.
 
 ### 3.6 Class contract
 
@@ -823,56 +909,94 @@ sign-off criterion).
 public sealed class EinsteinianShiabOperator : IShiabBranchOperator
 {
     public EinsteinianShiabOperator(SimplicialMesh mesh, LieAlgebra algebra,
-                                    EinsteinianShiabFamilyMember member,
-                                    /* frozen-background eps (null unless EpsilonMode="frozen-background") */
-                                    double[]? backgroundEps = null);
-    // BranchId => member.BranchId (e.g. "einsteinian-shiab/sd2-id0/c0.5/comm/omega-coupled");
-    // OutputCarrierType => "curvature-2form";
+                                    EinsteinianShiabFamilyMember member);
+    // BranchId => member.BranchId; OutputCarrierType => "curvature-2form";
     // OutputSignature => identical to IdentityShiabCpu.OutputSignature (carrier match REQUIRED).
+
+    /// The independent ε DOF: θ field, length CellCount*dimG (all-zero ⇔ ε≡1).
+    /// trivial: stays zero. frozen-background: set once. independent-theta: the
+    /// study harness sets it before each Evaluate as it sweeps the (ω, θ) DOF.
+    public double[] EpsilonTheta { get; set; }
 
     public FieldTensor Evaluate(FieldTensor curvatureF, FieldTensor omega,
                                 BranchManifest manifest, GeometryContext geometry);
     public FieldTensor Linearize(FieldTensor curvatureF, FieldTensor omega,
                                  FieldTensor deltaOmega, BranchManifest manifest,
-                                 GeometryContext geometry);
+                                 GeometryContext geometry);   // ω-block, Ad_ε held fixed
+
+    /// θ-block linearization (the §3.5 d-exp). Separate because IShiabBranchOperator's
+    /// Linearize carries only δω, not δθ. Validated vs FD (sign-off criterion b).
+    public FieldTensor LinearizeTheta(FieldTensor curvatureF, double[] deltaTheta,
+                                      BranchManifest manifest, GeometryContext geometry);
 }
 ```
+
+**How the independent `ε` DOF threads through the fixed interface (the real M3b
+design work).** `θ` cannot ride `IShiabBranchOperator.Evaluate(…, omega, …)` /
+`Linearize(…, δω, …)` — those signatures carry only `ω`. So:
+- `θ` is **operator state** (`EpsilonTheta`, `CellCount*dimG`); `Evaluate`
+  conjugates by `Ad_{ε(θ)}` using the current value.
+- `Linearize` (interface) supplies the **ω-block** of the Jacobian (analytic,
+  `Ad_ε` fixed); `LinearizeTheta` supplies the **θ-block** via the d-exp.
+- The **joint `(ω, θ)` Hessian is assembled at the STUDY level** (§3.9): the
+  phase442 probe forms the DOF vector `(ω_edges·dimG ⊕ θ_cells·dimG)` and
+  finite-differences the objective over BOTH fields (mutating `EpsilonTheta`
+  between evaluations), using `LinearizeTheta` to satisfy the FD-vs-analytic
+  battery. This keeps `IShiabBranchOperator` unchanged (additive: `EpsilonTheta`
+  and `LinearizeTheta` are new members, not signature changes) — the study-side
+  joint-DOF harness is the M3b addition flagged in §3.5.
 
 **`OutputSignature`** must be byte-identical to the torsion operator it pairs
 with (all fields; `Degree="2"`, `ComponentOrderId="face-major"`,
 `CarrierType="curvature-2form"`, …). Copy `IdentityShiabCpu.OutputSignature`
 exactly; QA runs `BranchOperatorRegistry.ValidateCarrierMatch`.
 
-**`Linearize` is dispatched by `EpsilonMode` per the §3.5 table:** analytic exact
-Jacobian for `trivial`/`frozen-background` (both linear in ω, degree-2 residual);
-Phase436-style finite-difference fallback for `omega-coupled` (nonlinear in ω,
-degree can exceed 2). Do not duplicate the contract here — §3.5 is authoritative.
+**`Linearize` per §3.5:** analytic degree-2 for `trivial`/`frozen-background`; for
+`independent-theta` the ω-block is analytic (`Ad_ε` fixed) and the θ-block is
+`LinearizeTheta` (the exact d-exp), validated against FD over θ. §3.5 is authoritative.
 
 ### 3.7 M3 acceptance batteries — memo §4.5, verbatim five (qa-4d enforces)
 
-1. **Richness certificate (THE HEADLINE).** For any member with a nontrivial `Φ`
-   (e.g. `sd2`), assert `S_h(F) ≠ c·F` for every scalar `c`: the operator's
-   matrix on `Λ²⊗ad` is **not** proportional to identity (eigenvalue spread /
-   off-identity Frobenius norm above a floor) on `CreateUniform4D(1)`. This is
-   exactly the capability the 2D toy provably lacks (`ShiabFamilyScopeChecker`
-   blocked-reason 1). **The control member `(id0,id0,trivial)` MUST FAIL this**
-   (it *is* a scalar multiple of `F`) — that failure is the correct, expected
-   control outcome, not a bug.
-2. **Weyl annihilation** (`draft:2133`). Feed a pure Weyl-like 2-form (the
-   `Λ²` part orthogonal to the scalar/traceless-Ricci directions the chosen `Φ`
-   reaches) and assert `S_h` sends it to zero / projects it out to tolerance. If
-   the operator does not annihilate the Weyl part, it is not the Einsteinian
-   contraction.
+1. **Richness certificate (THE HEADLINE) — projector language (physicist-4d §6e).**
+   The member must use a **genuinely non-scalar** `Λ²` projector — `sd2 = P₊`, or
+   `R = P₊ − ½·(trace part)` — i.e. `R` must NOT be `∝ identity` on the 6-dim
+   `Λ²`. Assert `S_h(F) ≠ c·F` for every scalar `c` (the operator's matrix on
+   `Λ²⊗ad` has eigenvalue spread / off-identity Frobenius norm above a floor) on
+   `CreateUniform4D(1)`. This is exactly the capability the 2D toy provably lacks
+   (`ShiabFamilyScopeChecker` blocked-reason 1). **The control `(id0,id0,trivial)`
+   MUST FAIL this** (`R ∝ identity` ⇒ scalar multiple of `F`) — the correct,
+   expected control outcome.
+2. **Weyl annihilation** (`draft:2133`) — projector composition. Using the
+   `Λ² = scalar ⊕ traceless-Ricci ⊕ Weyl₊ ⊕ Weyl₋` decomposition, feed a 2-form
+   in the Weyl-like sector and assert the projector composition `R` sends it to
+   zero to tolerance. If `R` does not annihilate the Weyl part, it is not the
+   Einsteinian contraction.
 3. **Carrier-signature identity:** `S_h.OutputSignature == T.OutputSignature`
    (strict, all fields).
-4. **Linearization / Hessian symmetry:** analytic `Linearize` matches the
-   finite-difference of `Evaluate` (Phase436 machinery) for `trivial` and
-   `frozen-background`; for `omega-coupled` the FD `Linearize` IS the reference.
-   Assemble `H` (via `CpuLocalJacobian`/`CpuMassMatrix` with
+4. **`θ=0` control reproduces Phase436 (sign-off condition a).** With
+   `EpsilonMode="trivial"` (θ=0, ε=1) + trivial torsion, the joint-DOF Hessian
+   restricted to ω reproduces Phase436 degree-2 exactly (third `t`-difference
+   vanishes). If the control does not reproduce it, the 4D backend is wrong.
+5. **`LinearizeTheta` matches FD + Hessian symmetry (sign-off condition b).** The
+   analytic θ-block `LinearizeTheta` (d-exp, §3.5) matches a finite-difference of
+   `Evaluate` over `θ` to ~1e-7 relative; the ω-block `Linearize` matches FD over ω.
+   Assemble the joint `H` (via `CpuLocalJacobian`/`CpuMassMatrix` with
    `LieAlgebraFactory.CreateSu2WithTracePairing()`, positive-definite — project
    memory) and assert `‖H − Hᵀ‖ / ‖H‖` below floor (self-adjointness, IX.32.2.1).
-5. **Gauge covariance** under `eps`-dressing: `S_h(Ξ·h) = S_h(Ξ)·h` to first
-   order (`v26:1661-1667`; physics-guidance falsifier 5).
+6. **θ-block isolation battery (sign-off condition c; lead arbitration).** Under
+   the identity Shiab (`R = id`), assert the **θ-block of the joint Hessian is
+   degenerate** — ε-conjugation of an identity projector cannot lift the degree,
+   so a genuine degree-lift must come from the non-scalar `R`, not from the θ
+   parametrization alone. This is the check the slaved Wilson form structurally
+   **cannot** run (it has no independent θ-block), and it is why the independent-θ
+   realization is the faithful instrument.
+7. **Gauge covariance** under `ε`-dressing: `S_h(Ξ·h) = S_h(Ξ)·h` to first order
+   (`v26:1661-1667`; physics-guidance falsifier 5). Fix the `ε⁻¹(·)ε` vs
+   `ε(·)ε⁻¹` convention uniformly to make this pass.
+
+(Batteries 4–6 REPLACE the earlier κ-scan pair, which applied to the now-demoted
+slaved form. The degree *verdict* does NOT gate sign-off — a degree-2 result over the
+joint `(ω, θ)` DOF is a legitimate frontier-sharpening outcome, memo §5.)
 
 Plus regression: all existing tests green, 0 warnings.
 
@@ -891,10 +1015,11 @@ degree-2/decomposition/flatness batteries in 4D. Preserving this seam is a hard
 requirement and is covered by §3.7 battery 3 (carrier identity) + battery 4
 (Jacobian plugs into the existing assembler).
 
-### 3.9 First physics study (task #12 handoff) — 4D Hessian-degree probe
+### 3.9 First physics study (task #12 handoff) — 4D joint-(ω,θ) Hessian-degree/saturation probe
 
 physicist-4d decision 5 defines the first study: **"4D control-vs-Einsteinian
-Hessian-degree probe."** It is the natural terminus of M1–M3 and the acceptance
+joint-(ω,θ) Hessian-degree/saturation probe"** (updated per the co-signed §3.5:
+θ is an independent DOF, so the probe's Hessian is over the joint `(ω, θ)`). It is the natural terminus of M1–M3 and the acceptance
 demonstration that the platform delivers a genuinely richer Shiab than the 2D
 toy. Design contract:
 
@@ -908,17 +1033,31 @@ toy. Design contract:
   gate — if the control arm is not degree-2, the 4D backend is wrong, not the
   physics. (It must also FAIL the §3.7 richness certificate — the expected
   control outcome.)
-- **Einsteinian arm** `{Phi1∈{sd2,asd2}, EpsilonMode="omega-coupled", …}` measures
-  whether `H(t)` acquires degree > 2 (nonzero third/fourth `t`-difference). Per
-  memo §5 both verdicts are legitimate and publishable: `hessianRemainsDegreeTwo`
-  (theorem extends; sharpens frontier onto the differential `Σ_mc` term) or
-  `hessianDegreeExceedsTwo` (necessary condition for a scale met on a
-  draft-canonical operator for the first time — a candidate mechanism, NOT a
-  scale, NOT a promotion). **Nothing is promoted either way.**
+- **Einsteinian arm** `{Phi1∈{sd2,asd2}, EpsilonMode="independent-theta"}` measures
+  whether the JOINT Hessian acquires degree > 2. **DOF NOTE (CO-SIGNED §3.5):** the
+  probe is a **joint `(ω, θ)` Hessian-degree/saturation probe** — θ (the cell-based
+  independent H-valued DOF, `CellCount·dimG`) is a first-class variable alongside ω.
+  The rank-1 background is `t·(u_ω, u_θ)` with a nonzero θ-component; θ enters via the
+  operator's `EpsilonTheta` state as the harness sweeps `t`. `Ad_{ε(θ)}=exp(ad_θ)`
+  all-orders nonlinear in θ is the degree-lift mechanism (physicist final lock).
+  This is the **M3b joint-DOF harness addition** flagged in §3.5. Per memo §5 both
+  verdicts are legitimate and publishable: `hessianRemainsDegreeTwo` (theorem
+  extends; sharpens the frontier onto the differential `Σ_mc` term) or
+  `hessianDegreeExceedsTwo` (necessary condition for a scale met on a draft-canonical
+  operator for the first time — a candidate mechanism, NOT a scale, NOT a promotion).
+  **Nothing is promoted either way.** (The slaved-Wilson form may be run as a
+  labelled NON-GATING smoke-test only — never the verdict instrument.)
 - **Fail-closed wall (mandatory, copy `phase436`):** target-blind construction,
   no scales/poles/GeV lineage, `draftAlignmentStatus = surrogate`,
-  `shiabOutputDegree = 2`, `draftDegreeReductionRecorded = true`, plus the full
-  recorded-boundary key set the physicist enumerated (memo §3/§6b/§6c):
+  `shiabOutputDegree = 2`, `draftOperatorIsDegreeRaising = true`,
+  `reducedRealizationCapturesRicciWeylAlgebraNotFormDegree = true`,
+  `draftDegreeReductionRecorded = true`,
+  `epsilonRealization = independent-theta-dof`, `hessianOverJointOmegaTheta = true`,
+  `slavedWilsonKeptAsSmokeTestOnly = true`, `isolationBatteryPassed` (the θ-block
+  degeneracy under identity Shiab — the artifact-separation instrument that proves
+  any degree-lift is caused by the Shiab's ε-dependence, not the inserted θ DOF;
+  GATING, sign-off condition c), plus the full recorded-boundary key set the
+  physicist enumerated (memo §3/§6b/§6c/§6e):
   `canFillPhase201WzContract = canFillPhase201HiggsContract =
   canFillPhase256Contract = false` (unconditionally),
   `definition81Scope = reduced-spin4-slice`, `ambientSevenSevenRealized = false`,
