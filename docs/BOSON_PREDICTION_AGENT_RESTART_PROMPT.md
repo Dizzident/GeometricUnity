@@ -49,7 +49,7 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase435 work (plus the 2026-06-12 platform
+Current gate status after the Phase436 work (plus the 2026-06-12 platform
 fix - GPU parity defect root-caused and discharged - and the 2026-07-01
 |Y|=1/2 calibration defect fix in the Phase411/417 informational SM
 censuses):
@@ -57,7 +57,7 @@ censuses):
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=228`,
+  `objectiveAchieved=False`, `checklistPassedCount=229`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -448,6 +448,14 @@ censuses):
   `finiteSelfConsistentScaleExists=False`,
   `scaleRequiresLogSaturationBeyondWorkbench=True`,
   `logSaturationStructureSourceDefined=False` (THE quantified scale gap)
+- Phase436: `exactHessianSaturationNoGoProbePassed=True`,
+  `exactHessianMassesGrowExactlyAsTSquared=True` (H(t) = A0 + t A1 + t^2 A2
+  exactly; third t-difference 0),
+  `logSaturationImpossibleFromExactControlBranchHessianAtOneLoop=True`,
+  `scaleGapPinnedBeyondControlBranch=True` (theorem-grade: the gap is the
+  control branch itself, not workbench modeling),
+  `phase430SlopeCountsConfirmedByExactHessian=True` (64 = 4x16, 96 = 6x16),
+  `workbenchMassValuesDifferFromExactHessian=True` (recorded honestly)
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -468,7 +476,22 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work (2026-07-02, eighth checkpoint) added Phase435, the
+The latest work (2026-07-02, ninth checkpoint) added Phase436, the
+exact-Hessian saturation no-go probe, completing the Coleman-Weinberg
+program: the true control-branch Hessian at backgrounds t*u decomposes
+EXACTLY as H(t) = A0 + t A1 + t^2 A2 (third t-difference zero; the odd
+term vanishes for Cartan and is ~0.15 relative for root directions,
+recorded honestly), so masses grow exactly as t^2 and NO log-saturation
+can arise at one loop - THE SCALE GAP IS PINNED BEYOND THE CONTROL BRANCH
+AT THEOREM GRADE, coinciding exactly with the program's oldest standing
+gap (physical VO-6/VO-7 completion or a source anchor). Growing-mode
+counts confirm the Phase430 slope arithmetic under the exact Hessian.
+Study: studies/phase436_exact_hessian_saturation_no_go_probe_001
+(IMPLEMENTATION_P436.md). THE INTERNAL EXPERIMENT PROGRAM HAS CONVERGED
+onto the standing requirements; named engineering work is the
+performance program; monitoring continues at checkpoint cadence.
+
+Before that, the work (2026-07-02, eighth checkpoint) added Phase435, the
 two-condensate scale-gap probe, deciding the self-consistent background
 question: with an IR-continuous relative potential (zero-dispersion
 doubler sector excluded from both determinants, a recorded convention;
@@ -1019,7 +1042,7 @@ HONEST BOUNDARY. Study:
 
 ### Integration Points Already Updated
 
-Phase435 (like Phase388-434) is wired into:
+Phase436 (like Phase388-435) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (single broad pass; the
   older duplicated final sweep was removed on 2026-06-16; the Phase424 line
@@ -1044,7 +1067,8 @@ Phase435 (like Phase388-434) is wired into:
   `welded-fermion-loop-block-selection-probe-materialized` and
   `blind-beta-coefficient-running-ledger-materialized` and
   `conditional-observed-field-extraction-row-ledger-materialized` and
-  `two-condensate-scale-gap-probe-materialized`;
+  `two-condensate-scale-gap-probe-materialized` and
+  `exact-hessian-saturation-no-go-probe-materialized`;
   the Phase417 checklist row now asserts the corrected
   `yHalfCalibrationExact=True` and `internalSmHiggsPatternComplexDimension=6`)
 - `scripts/verify_boson_claim_integrity.sh` (Phase424 asserts plus the
@@ -1101,11 +1125,11 @@ PHASE405_ENABLE_GPU=1 LD_LIBRARY_PATH=native/build dotnet run --project studies/
 The targeted Phase424 (Release, ~7 min) and Phase425 (Release, ~1 min) runs
 pass and preserve the fail-closed boundary; the fixed Phase411/Phase417
 re-runs pass with their corrected censuses; Phase202 now reports
-`checklistPassedCount=228`, `checklistFailedCount=3`; claim integrity
-verifies Phase424 through Phase435 (and the corrected Phase417 values)
+`checklistPassedCount=229`, `checklistFailedCount=3`; claim integrity
+verifies Phase424 through Phase436 (and the corrected Phase417 values)
 with `promotedPhysicalMassClaimCount=0`. The full direct
 `./scripts/generate_validated_boson_predictions.sh` pass completed with
-Phase424 through Phase435 included and ended at
+Phase424 through Phase436 included and ended at
 `boson-claim-integrity-verified`. (Platform
 state: Gu.Interop.Tests 158/158 with the real-mesh parity and
 buffer-handle recycling tests; both Phase405 platform notes discharged
@@ -1478,11 +1502,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase435 output JSON files, and commit a checkpoint
+force-add the ignored Phase436 output JSON files, and commit a checkpoint
 after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase435 two-condensate scale-gap probe
+Add phase436 exact-Hessian saturation no-go probe
 ```

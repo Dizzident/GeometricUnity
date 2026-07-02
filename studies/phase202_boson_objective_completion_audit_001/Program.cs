@@ -200,6 +200,7 @@ const string Phase431Path = "studies/phase431_lambda8_background_doublet_reopeni
 const string Phase432Path = "studies/phase432_welded_fermion_loop_block_selection_probe_001/output/welded_fermion_loop_block_selection_probe_summary.json";
 const string Phase433Path = "studies/phase433_blind_beta_coefficient_running_ledger_001/output/blind_beta_coefficient_running_ledger_summary.json";
 const string Phase435Path = "studies/phase435_two_condensate_scale_gap_probe_001/output/two_condensate_scale_gap_probe_summary.json";
+const string Phase436Path = "studies/phase436_exact_hessian_saturation_no_go_probe_001/output/exact_hessian_saturation_no_go_probe_summary.json";
 const string Phase434Path = "studies/phase434_conditional_observed_field_extraction_row_ledger_001/output/conditional_observed_field_extraction_row_ledger_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
@@ -435,6 +436,7 @@ using var phase432 = File.Exists(Phase432Path) ? JsonDocument.Parse(File.ReadAll
 using var phase433 = File.Exists(Phase433Path) ? JsonDocument.Parse(File.ReadAllText(Phase433Path)) : null;
 using var phase434 = File.Exists(Phase434Path) ? JsonDocument.Parse(File.ReadAllText(Phase434Path)) : null;
 using var phase435 = File.Exists(Phase435Path) ? JsonDocument.Parse(File.ReadAllText(Phase435Path)) : null;
+using var phase436 = File.Exists(Phase436Path) ? JsonDocument.Parse(File.ReadAllText(Phase436Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -5983,6 +5985,26 @@ var twoCondensateScaleGapProbePassed = twoCondensateScaleGapProbeMaterialized
     && JsonBool(phase435.RootElement, "routePromotesHiggsMass") is false
     && JsonBool(phase435.RootElement, "routeCompletesBosonPredictions") is false
     && JsonInt(phase435.RootElement, "acceptedContractFieldCount") == 0;
+var exactHessianSaturationNoGoProbeMaterialized = phase436 is not null;
+var exactHessianSaturationNoGoProbePassed = exactHessianSaturationNoGoProbeMaterialized
+    && JsonBool(phase436!.RootElement, "exactHessianSaturationNoGoProbePassed") is true
+    && JsonBool(phase436.RootElement, "targetBlindConstruction") is true
+    && (JsonString(phase436.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase436.RootElement, "applicationSubjectKind") == "exact-hessian-saturation-no-go-probe"
+    && JsonBool(phase436.RootElement, "analysisInternallyConsistent") is true
+    && JsonBool(phase436.RootElement, "exactHessianMassesGrowExactlyAsTSquared") is true
+    && JsonBool(phase436.RootElement, "logSaturationImpossibleFromExactControlBranchHessianAtOneLoop") is true
+    && JsonBool(phase436.RootElement, "scaleGapPinnedBeyondControlBranch") is true
+    && JsonBool(phase436.RootElement, "phase430SlopeCountsConfirmedByExactHessian") is true
+    && JsonBool(phase436.RootElement, "workbenchMassValuesDifferFromExactHessian") is true
+    && JsonBool(phase436.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase436.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase436.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase436.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase436.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase436.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase436.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonInt(phase436.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -8439,6 +8461,14 @@ var checklist = new[]
             ? $"twoCondensateScaleGapProbePassed={JsonBool(phase435!.RootElement, "twoCondensateScaleGapProbePassed")}; derivedAxisRunawayUndercutsInterior={JsonBool(phase435.RootElement, "derivedAxisRunawayUndercutsInterior")}; fundamentalShowsNoCondensationOnset={JsonBool(phase435.RootElement, "fundamentalShowsNoCondensationOnset")}; finiteSelfConsistentScaleExists={JsonBool(phase435.RootElement, "finiteSelfConsistentScaleExists")}; scaleRequiresLogSaturationBeyondWorkbench={JsonBool(phase435.RootElement, "scaleRequiresLogSaturationBeyondWorkbench")}; canFillPhase201WzContract={JsonBool(phase435.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase435.RootElement, "decision")}"
             : "Phase435 artifact not materialized",
         Phase435Path),
+    new ObjectiveChecklistItem(
+        "exact-hessian-saturation-no-go-probe-materialized",
+        "Tie the workbench bosonic determinant to the exact control-branch Hessian: masses grow exactly as t^2, no log-saturation is possible at one loop, and the scale gap is pinned beyond the control branch.",
+        exactHessianSaturationNoGoProbePassed ? "passed" : "failed",
+        exactHessianSaturationNoGoProbeMaterialized
+            ? $"exactHessianSaturationNoGoProbePassed={JsonBool(phase436!.RootElement, "exactHessianSaturationNoGoProbePassed")}; exactHessianMassesGrowExactlyAsTSquared={JsonBool(phase436.RootElement, "exactHessianMassesGrowExactlyAsTSquared")}; logSaturationImpossibleFromExactControlBranchHessianAtOneLoop={JsonBool(phase436.RootElement, "logSaturationImpossibleFromExactControlBranchHessianAtOneLoop")}; scaleGapPinnedBeyondControlBranch={JsonBool(phase436.RootElement, "scaleGapPinnedBeyondControlBranch")}; phase430SlopeCountsConfirmedByExactHessian={JsonBool(phase436.RootElement, "phase430SlopeCountsConfirmedByExactHessian")}; canFillPhase201WzContract={JsonBool(phase436.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase436.RootElement, "decision")}"
+            : "Phase436 artifact not materialized",
+        Phase436Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

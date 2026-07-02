@@ -1,0 +1,184 @@
+{
+  "phaseId": "phase436-exact-hessian-saturation-no-go-probe",
+  "generatedAt": "2026-07-02T13:14:27.4777838+00:00",
+  "terminalStatus": "exact-control-branch-hessian-grows-exactly-as-tsquared-no-log-saturation-scale-gap-pinned-beyond-control-branch",
+  "exactHessianSaturationNoGoProbePassed": true,
+  "phase405PrecursorPassed": true,
+  "phase430PrecursorPassed": true,
+  "phase435PrecursorPassed": true,
+  "precursorsPassed": true,
+  "applicationSubjectKind": "exact-hessian-saturation-no-go-probe",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "2b0a4f09f8bc493377e8b35c1a5d65a60db617fca3f314d6ef31cb9d687e3d2c",
+  "controlBranch": {
+    "lieAlgebraId": "su3",
+    "meshRows": 2,
+    "meshCols": 2,
+    "edgeCount": 52,
+    "faceCount": 24,
+    "carrierDimension": 416,
+    "upsilonDimension": 192,
+    "torsionBranch": "trivial",
+    "shiabBranch": "identity-shiab",
+    "backgroundConnectionA0": "zero",
+    "residualIdentity": "Upsilon = F - T^aug = d omega \u002B (1/2)[omega wedge omega], exactly degree-2 in omega; linear part L = d (free Yang-Mills kinetic, annihilates closed forms); S_B = (1/2)||Upsilon||^2 exactly quartic",
+    "rankOneProfile": "exact 1-form d(vertex y-coordinate); single Lie direction =\u003E [c,c] = 0 and L(closed) = 0 =\u003E exactly flat",
+    "workbenchConventionsAreSourceDefined": false
+  },
+  "batteries": {
+    "flatnessOnRank1Verified": true,
+    "maxRankOneObjective": 0,
+    "upsilonExactlyDegreeTwoInField": true,
+    "upsilonThirdFieldDifference": 3.509292754828606E-16,
+    "linearPartIsNonzeroFreeKinetic": true,
+    "linearPartNorm": 24,
+    "linearPartAnnihilatesClosedProfile": true,
+    "linearPartOnClosedProfileNorm": 0,
+    "secondDifferenceStepSizeInvariant": true,
+    "secondDifferenceStepResidual": 0,
+    "hessianExactlyDegreeTwoInBackground": true,
+    "zeroBackgroundHessianIsFreeKineticNonzero": true,
+    "exactHessianQuadraticDecompositionVerified": true,
+    "sampledHessianPairs": 200,
+    "decompositionRelativeTolerance": 1E-08
+  },
+  "decomposition": {
+    "model": "H(t) = A0 \u002B t*A1 \u002B t^2*A2 (exactly degree-2 in t)",
+    "freeKineticGrowingRank": 192,
+    "byDirection": [
+      {
+        "su3Index": 7,
+        "maxThirdTDifferenceRelative": 0,
+        "a0FreeKineticFrobeniusOverSample": 1,
+        "a1OddInTFrobeniusOverSample": 0,
+        "oddTermRelativeToFreeKinetic": 0
+      },
+      {
+        "su3Index": 3,
+        "maxThirdTDifferenceRelative": 0,
+        "a0FreeKineticFrobeniusOverSample": 1.4142135623730951,
+        "a1OddInTFrobeniusOverSample": 0.21650635094610965,
+        "oddTermRelativeToFreeKinetic": 0.15309310892394862
+      }
+    ],
+    "oddTermVanishesForCartanDirection": true,
+    "oddTermNonzeroForRootDirection": true
+  },
+  "exactHessianMassesGrowExactlyAsTSquared": true,
+  "logSaturationImpossibleFromExactControlBranchHessianAtOneLoop": true,
+  "scaleGapPinnedBeyondControlBranch": true,
+  "analysisInternallyConsistent": true,
+  "growingModeStructure": [
+    {
+      "su3Index": 7,
+      "label": "lambda_8-type",
+      "exactGrowingModeCount": 64,
+      "exactCarrierKernelDimension": 352,
+      "a2TopEigenvalues": [
+        0.2031656499160749,
+        0.2031656499160749,
+        0.2031656499160749,
+        0.2031656499160749,
+        0.2031656499160749,
+        0.2031656499160749,
+        0.2031656499160749,
+        0.2031656499160749
+      ],
+      "a2SmallestGrowingEigenvalues": [
+        0.012202626105860327,
+        0.012202626105860327,
+        0.012202626105860327,
+        0.012202626105860327
+      ],
+      "workbenchNonzeroAdjointSquaredCount": 4,
+      "workbenchAdjointKernelDimension": 4,
+      "perDirectionGeometricMultiplicity": 16,
+      "workbenchMasses": [
+        0.7499999999999999,
+        0.7499999999999999,
+        0.7499999999999999,
+        0.7499999999999999
+      ]
+    },
+    {
+      "su3Index": 3,
+      "label": "lambda_4-type",
+      "exactGrowingModeCount": 96,
+      "exactCarrierKernelDimension": 320,
+      "a2TopEigenvalues": [
+        0.2708875332214334,
+        0.2708875332214334,
+        0.270887533221433,
+        0.270887533221433,
+        0.1937240410502365,
+        0.1937240410502365,
+        0.19372404105023638,
+        0.19372404105023638
+      ],
+      "a2SmallestGrowingEigenvalues": [
+        0.004067542035286779,
+        0.004067542035286779,
+        0.004067542035286779,
+        0.004067542035286779
+      ],
+      "workbenchNonzeroAdjointSquaredCount": 6,
+      "workbenchAdjointKernelDimension": 2,
+      "perDirectionGeometricMultiplicity": 16,
+      "workbenchMasses": [
+        0.9999999999999999,
+        0.9999999999999996,
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ]
+    }
+  ],
+  "geometricMultiplicity": 16,
+  "sharedGeometricMultiplicity": true,
+  "phase430SlopeCountsConfirmedByExactHessian": true,
+  "workbenchMassValuesDifferFromExactHessian": true,
+  "maxExactA2Eigenvalue": 0.2708875332214334,
+  "maxWorkbenchMass": 0.9999999999999999,
+  "workbenchFidelityNote": "The exact growing-mode counts (positive eigenvalues of the t^2 mass term A2 = J2^T J2) are 64 (lambda_8-type) and 96 (lambda_4-type), factoring as rank(-(ad_u)^2) * 16 (= 4*16 and 6*16) with a single shared geometric multiplicity. The per-su(3)-direction counts therefore match the workbench -(ad_u)^2 nonzero counts (4 vs 6): Phase430\u0027s log-slope direction-selection arithmetic is confirmed under the exact control-branch Hessian. Mass VALUES differ (exact A2 eigenvalues are O(0.01..0.3); workbench -(ad_u)^2 eigenvalues are O(0.25..1)); the workbench model is a recorded convention and only counts entered Phase430\u0027s verdicts.",
+  "runtimeSeconds": 0.3429537,
+  "exactHessianIsCandidateOnlyStructure": true,
+  "physicalCouplingProvided": false,
+  "routeProvidesPhysicalMassPsiCompatibleBranch": false,
+  "routeProvidesCompletedFermionicAction": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesObservedElectroweakNamespaceMap": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesWeakAngleOrCouplingLineage": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "sourceEvidence": {
+    "phase405SummaryPath": "studies/phase405_vacuum_manifold_doublet_vev_orbit_scan_001/output/vacuum_manifold_doublet_vev_orbit_scan_summary.json",
+    "phase430SummaryPath": "studies/phase430_net_one_loop_direction_selection_probe_001/output/net_one_loop_direction_selection_probe_summary.json",
+    "phase435SummaryPath": "studies/phase435_two_condensate_scale_gap_probe_001/output/two_condensate_scale_gap_probe_summary.json"
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "The exact Hessian, its A0/A1/A2 decomposition, the A2 spectrum, and the growing-mode counts are control-branch (trivial-torsion identity-Shiab) structure data, not physical mass spectra.",
+    "The workbench -(ad_u)^2 bosonic mass model is a recorded convention; the exact Hessian confirms its per-direction COUNTS but its mass VALUES differ.",
+    "The no-log-saturation result is a statement about the EXACT control-branch one-loop Hessian; a finite scale requires structure beyond the control branch (a physical VO-6/VO-7 completion or a source anchor) that no reviewed source defines.",
+    "No VEV scale, pole, or GeV lineage; no Phase201 or Phase256 fill; no physical predictions."
+  ],
+  "decision": "The Phase435 tie-in is decided against the TRUE control-branch Hessian. On the trivial-torsion identity-Shiab branch at A0 = 0 the residual Upsilon = d omega \u002B (1/2)[omega wedge omega] is exactly degree-2 in omega (verified: the third field-difference of Upsilon vanishes; the mixed second difference is step-size invariant). Its linear part is L = d, the free Yang-Mills kinetic operator, which is nonzero in general but annihilates closed forms - which is exactly why the exact-1-form rank-1 backgrounds stay flat (S_B(t*u) = 0). Consequently the exact Hessian at a rank-1 background t*u is EXACTLY a degree-2 matrix polynomial in t, H(t) = A0 \u002B t*A1 \u002B t^2*A2 with NOTHING beyond t^2: on 200 sampled matrix elements per direction the third t-difference vanishes to relative residual \u003C= 1e-8. A0 = H(0) is the background-independent free-kinetic Hessian; A2 is the quadratic-in-background mass term. The linear-in-t (odd) term A1 is recorded honestly: it VANISHES for the lambda_8-type Cartan/hypercharge background and is NONZERO for the lambda_4-type root background (a genuine covariant cross term, not a defect). CONSEQUENCE (the headline): asymptotically H(t) -\u003E t^2*A2, so the growing Hessian masses^2 scale EXACTLY as t^2, the bosonic one-loop grows exactly logarithmically in the background amplitude, and NO LOG-SATURATION can arise from the exact control-branch Hessian at one loop - the Phase435 scale gap is pinned to structure BEYOND the control branch, not to workbench modeling. On workbench fidelity: the exact growing-mode counts (positive eigenvalues of A2) are 64 (lambda_8-type) and 96 (lambda_4-type), which factor EXACTLY as rank(-(ad_u)^2) * 16 with a single shared geometric multiplicity (64 = 4*16, 96 = 6*16). The per-su(3)-direction counts therefore equal the workbench -(ad_u)^2 nonzero counts (4 vs 6), and Phase430\u0027s log-slope direction-selection arithmetic is CONFIRMED under the exact control-branch Hessian; only the mass VALUES differ (the workbench model is a recorded convention, and only counts entered Phase430\u0027s verdicts). Everything is control-branch structure recorded blind; no scale, pole, or GeV lineage exists; no Phase201 or Phase256 field is filled; nothing is promoted."
+}

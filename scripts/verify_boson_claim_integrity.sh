@@ -206,6 +206,7 @@ const paths = {
   phase433: "studies/phase433_blind_beta_coefficient_running_ledger_001/output/blind_beta_coefficient_running_ledger_summary.json",
   phase434: "studies/phase434_conditional_observed_field_extraction_row_ledger_001/output/conditional_observed_field_extraction_row_ledger_summary.json",
   phase435: "studies/phase435_two_condensate_scale_gap_probe_001/output/two_condensate_scale_gap_probe_summary.json",
+  phase436: "studies/phase436_exact_hessian_saturation_no_go_probe_001/output/exact_hessian_saturation_no_go_probe_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -483,6 +484,7 @@ const phase432 = requireFile(paths.phase432);
 const phase433 = requireFile(paths.phase433);
 const phase434 = requireFile(paths.phase434);
 const phase435 = requireFile(paths.phase435);
+const phase436 = requireFile(paths.phase436);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -5173,6 +5175,15 @@ if (sourceLineageMissing) {
   assert(phase435.routePromotesWzMasses === false && phase435.routePromotesHiggsMass === false && phase435.routeCompletesBosonPredictions === false, "Phase435 cannot promote boson predictions.");
   assert(phase101Package?.twoCondensateScaleGapProbe?.twoCondensateScaleGapProbePassed === true, "Phase101 must include the Phase435 scale-gap block.");
   assert(phase101Package.twoCondensateScaleGapProbe.finiteSelfConsistentScaleExists === false, "Phase101 must preserve the Phase435 scale-gap verdict.");
+  assert(phase436.exactHessianSaturationNoGoProbePassed === true, "Phase436 exact-Hessian saturation no-go probe must pass as fail-closed exact arithmetic.");
+  assert(phase436.targetBlindConstruction === true && typeof phase436.targetBlindConstructionHash === "string" && phase436.targetBlindConstructionHash.length === 64, "Phase436 must remain target-blind with a persisted construction hash.");
+  assert(phase436.applicationSubjectKind === "exact-hessian-saturation-no-go-probe", "Phase436 must classify its subject as the exact-Hessian saturation no-go probe.");
+  assert(phase436.exactHessianMassesGrowExactlyAsTSquared === true && phase436.logSaturationImpossibleFromExactControlBranchHessianAtOneLoop === true, "Phase436 must record the exact t^2 growth and the one-loop saturation no-go.");
+  assert(phase436.scaleGapPinnedBeyondControlBranch === true && phase436.phase430SlopeCountsConfirmedByExactHessian === true && phase436.workbenchMassValuesDifferFromExactHessian === true, "Phase436 must pin the scale gap beyond the control branch while confirming the Phase430 counts and recording the honest mass-value discrepancy.");
+  assert(phase436.sourceContractApplicationAllowed === false && phase436.canFillPhase201WzContract === false && phase436.canFillPhase201HiggsContract === false && phase436.canFillPhase256ObservedFieldExtractionContract === false, "Phase436 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase436.routePromotesWzMasses === false && phase436.routePromotesHiggsMass === false && phase436.routeCompletesBosonPredictions === false, "Phase436 cannot promote boson predictions.");
+  assert(phase101Package?.exactHessianSaturationNoGoProbe?.exactHessianSaturationNoGoProbePassed === true, "Phase101 must include the Phase436 exact-Hessian block.");
+  assert(phase101Package.exactHessianSaturationNoGoProbe.scaleGapPinnedBeyondControlBranch === true, "Phase101 must preserve the Phase436 scale-gap pinning verdict.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

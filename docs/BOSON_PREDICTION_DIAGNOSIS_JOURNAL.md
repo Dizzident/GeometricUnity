@@ -18721,3 +18721,38 @@ with the true control-branch Hessian via the Phase400/405 machinery - it
 could in principle supply the saturation the model lacks, making this the
 last internal experiment with scale-law potential); the performance
 program; checkpoint-cadence monitoring.
+
+## 2026-07-02 - Phase436: Exact-Hessian Saturation No-Go (Scale Gap Pinned at Theorem Grade)
+
+### Result
+
+The exact-Hessian tie-in is decided. Using the Phase405 su(3)
+control-branch machinery, the exact bosonic Hessian at backgrounds t*u
+decomposes as H(t) = A0 + t*A1 + t^2*A2 with the third t-difference
+EXACTLY ZERO (the action is exactly quartic; the odd term vanishes for
+the Cartan direction and is ~0.15 relative for the root direction -
+recorded honestly, irrelevant asymptotically). Exact masses therefore
+grow exactly as t^2, the bosonic one-loop is exactly logarithmic, and NO
+LOG-SATURATION CAN ARISE FROM THE EXACT CONTROL-BRANCH HESSIAN AT ONE
+LOOP. Growing-mode counts (64 = 4x16 for lambda_8, 96 = 6x16 for
+lambda_4) confirm the Phase430 slope arithmetic under the exact Hessian;
+workbench mass VALUES differ (recorded; only counts entered verdicts).
+
+### Interpretation
+
+The scale gap is now pinned at theorem grade: it is a property of the
+exactly-quartic control branch itself, not of workbench modeling. A
+finite dynamical scale requires structure beyond the control branch -
+the physical VO-6/VO-7 completion's additional action terms (the branch
+whose physical completion is already the program's standing gap) or a
+source anchor. The Coleman-Weinberg program is complete: every stage has
+machine-verified structure, and its single missing ingredient now
+coincides exactly with the program's oldest named gap.
+
+### Standing Next Work
+
+The internal experiment program has converged onto the standing
+requirements: physical VO-6/VO-7 branch completion or new source
+anchors. Named engineering work: the performance program (DAG-parallel
+generator, incremental validation). Monitoring continues at checkpoint
+cadence.
