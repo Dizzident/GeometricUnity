@@ -56,3 +56,16 @@ weight.
 - Revisit only if a future revision derives (rather than imports) an
   electroweak scale or supplies explicit source rows.
 - Track record deletions/re-uploads by checksum, not record ID.
+
+## Revision Drift Log
+
+- 2026-07-02 (checkpoint-cadence monitoring): record updated to revision 15
+  (Zenodo `updated` 2026-07-02T04:59:35Z; version index 4, parent 20753049).
+  Same single PDF filename, new checksum `md5:ff7b93b3942d4cddadf5d65f6e8774f7`
+  (audited version was `md5:90be901bc227bc90e493c295aa276046`, 6465 extracted
+  lines; rev15 extracts 6769 lines, +~300). Delta reviewed: the 95.4 GeV usage
+  is unchanged in posture (author-framework "dilaton" identified with an LHC
+  diphoton excess; new material extends a "geometric g-2" muon argument). The
+  Phase427 classification (external input; non-promotional for the boson-claims
+  ledger; no Phase201/Phase256 lineage supplied) is UNCHANGED by this revision.
+  The Phase427 audit verdict remains pinned to the audited checksum.

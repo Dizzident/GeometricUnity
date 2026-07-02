@@ -18767,3 +18767,16 @@ measurement: 20.2 min vs 22.1-min baseline (~9%) - the pass is
 compute-bound in the heavy numeric phases (8563 s CPU, 710% utilization),
 not build-bound as hypothesized. Next named lever: fail-closed
 content-hash incremental validation (design note in the restart prompt).
+
+## 2026-07-02 - Checkpoint-Cadence Monitoring: Hofseth Record Revised (Verdict Unchanged)
+
+Zenodo 21117379 (Hofseth GU-RVG superluminal, Phase427) was revised to
+rev15 hours before this check (new md5 ff7b93b3942d4cddadf5d65f6e8774f7
+vs audited 90be901bc227bc90e493c295aa276046; +~300 extracted lines). The
+checksum-tracking discipline caught the drift exactly as designed. Delta
+review: 95.4 GeV posture unchanged (author-framework dilaton/diphoton
+identification; new "geometric g-2" muon section); no GU boson-mass
+promotion claim; no Phase201/Phase256 lineage. Phase427's verdict is
+unchanged and remains pinned to the audited checksum; drift logged in the
+reference doc. GU I-V series records stable; no new GU-relevant records
+in the sweep.
