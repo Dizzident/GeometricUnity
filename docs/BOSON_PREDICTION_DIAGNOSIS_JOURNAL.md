@@ -18616,3 +18616,68 @@ generator, content-hash incremental validation), and checkpoint-cadence
 monitoring. Physical progress still requires a source-defined
 symmetry-breaking sector, scale law, or observed-field extraction
 theorem.
+
+## 2026-07-02 - Team Wave: Phases 430-434 (Coleman-Weinberg Program Executed)
+
+### Context
+
+Per the 2026-07-01 user directive to pursue the outstanding problems with
+agents in parallel, a five-agent team built the full experiment program in
+isolated study directories (integration, wiring, and validation performed
+centrally). All five passed standalone at 0 warnings before wiring.
+
+### Results
+
+- Phase430 (net one-loop direction selection): the FULL one-loop landscape
+  (bosonic + fermionic determinants) is DIRECTION-SELECTING. Fundamental
+  fermions confine T/D (+64 log t) with the hypercharge axis the unique
+  unbounded direction (-64); adjoint content flips the selection; THE
+  DERIVED PHASE404 CONTENT SELECTS THE HYPERCHARGE AXIS (steepest descent
+  -640 vs -320) - the su(3) -> su(2) x u(1) breaking direction is
+  dynamically preferred by the blindly-derived matter content. All slopes
+  match exact integer mode counts (Richardson residuals <= 3.2e-4);
+  no-scale-law and workbench-model caveats recorded.
+- Phase431 (lambda_8 background, stage two): the candidate background
+  REOPENS the T/D distinction Phase428 closed (separation ~70 vs 3.6e-14
+  at t8=0) and INDUCES a block-dependent mass law with opposite signs
+  (doublet destabilized, triplet stabilized) - the structure Phase418 had
+  to import. Background candidate-only; no scale law.
+- Phase432 (welded fermions): the SOURCE-PINNED chimeric weld breaks the
+  internal loop degeneracies (su(2)_L-axis splits 0 -> 0.35 -> 3.40 with
+  weld strength) - the su-breaking fermionic structure Phase428 proved
+  necessary exists in the draft's own welded carriers; coupling
+  normalization remains a workbench convention.
+- Phase433 (blind beta ledger): exact-rational one-loop coefficients from
+  the derived family content (n_f=3+Higgs row reproduces the standard SM
+  set as a correctness witness); blind running sin^2(x) =
+  3(1-b2 x)/[8-(5b1+3b2)x] with a family-independent linear slope
+  (-55/32 / -109/64). Derivation strictly separated from comparison.
+- Phase434 (conditional extraction rows): photon/W/Z rows exact in terms
+  of a candidate VEV; the Phase419 template partitions 7 conditionally
+  determined / 4 amplitude-blocked / 9 lineage-blocked of 20.
+
+### Interpretation
+
+The Coleman-Weinberg program now has machine-verified structure at every
+stage: a dynamically preferred first-stage breaking direction (430), a
+second stage that reopens the doublet question and produces the needed
+block mass law under a candidate background (431), source-pinned
+symmetry-breaking fermionic structure in the weld (432), the blind running
+surface (433), and the conditional extraction algebra (434). THE HONEST
+GAPS ARE NOW PRECISELY TWO: (i) closing the loop from the stage-one
+runaway direction to a DERIVED (not candidate) background with a finite
+scale - the runaways are log-unbounded on the workbench, so a scale law
+still requires either higher-order structure or a source anchor; and (ii)
+tying the workbench bosonic determinant and weld normalization to the
+actual control-branch Hessian and draft normalization. No contract field
+is filled; nothing is promoted.
+
+### Standing Next Work
+
+Named next experiments: (430-chain continuation) self-consistent
+background iteration - feed the Phase430 stage-one direction into the
+Phase431 machinery and iterate toward a self-consistent (t8, t) landscape
+on the workbench, recording whether a finite self-consistent point exists;
+(engineering) tie the bosonic determinant to the exact control-branch
+Hessian via the Phase400/405 machinery; the performance program; and
+checkpoint-cadence monitoring.

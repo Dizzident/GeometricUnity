@@ -1,0 +1,379 @@
+{
+  "phaseId": "phase432-welded-fermion-loop-block-selection-probe",
+  "generatedAt": "2026-07-02T03:52:43.6738913+00:00",
+  "runtimeSeconds": 24.1494769,
+  "terminalStatus": "welded-fermion-loop-breaks-internal-only-block-degeneracies-no-contract-fill",
+  "weldedFermionLoopBlockSelectionProbePassed": true,
+  "phase408PrecursorPassed": true,
+  "phase417PrecursorPassed": true,
+  "phase428PrecursorPassed": true,
+  "applicationSubjectKind": "welded-fermion-loop-block-selection-probe",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "3c735cd36409d726293e934c2875dec6ad2e2ec4c37708028acc4b9c1a9a056a",
+  "workbenchConventions": {
+    "latticeSize": 4,
+    "latticeDimension": 2,
+    "spinorDimension": 4,
+    "internalDimension": 16,
+    "diracDiscretization": "naive-central-difference-hermitian",
+    "weldCouplingWeights": "c_q = 1 (recorded)",
+    "weldCouplingGrid": [
+      0,
+      0.5,
+      1
+    ],
+    "directionsProbed": [
+      "su2L_1",
+      "su2L_2",
+      "su2L_3",
+      "Y",
+      "colorCartan_1",
+      "colorCartan_2"
+    ],
+    "workbenchConventionsAreSourceDefined": false,
+    "weldStructureSourcePinned": true,
+    "weldCouplingNormalizationSourceDefined": false
+  },
+  "chiralHalvesAreSixteenDimensional": true,
+  "latticeGammaMatchResidual": 0,
+  "latticeGammasMatchPhase428": true,
+  "herm16HermiticityResidual": 0,
+  "herm16Hermitian": true,
+  "weld64HermiticityResidual": 0,
+  "weldCouplingHermitian": true,
+  "colorAlgebraDimensionIsEight": true,
+  "colorCartanCommutatorResidual": 2.220446049250313E-16,
+  "twoCommutingColorCartansFound": true,
+  "closedFormCrossCheckResidual": 6.217248937900877E-15,
+  "carrierAClosedFormVerified": true,
+  "blockVsFullDenseResidual": 6.123990203832363E-13,
+  "blockDiagonalizationVerified": true,
+  "prototypeTwoDimensionalFullDenseVsBlockResidual": 1.71E-14,
+  "directionMultisets": [
+    {
+      "name": "su2L_1",
+      "family": "su2L",
+      "herm16Eigenvalues": [
+        -0.5,
+        -0.5,
+        -0.5,
+        -0.5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "su2L_2",
+      "family": "su2L",
+      "herm16Eigenvalues": [
+        -0.4999999999999999,
+        -0.4999999999999999,
+        -0.4999999999999999,
+        -0.4999999999999999,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.4999999999999999,
+        0.4999999999999999,
+        0.4999999999999999,
+        0.4999999999999999
+      ]
+    },
+    {
+      "name": "su2L_3",
+      "family": "su2L",
+      "herm16Eigenvalues": [
+        -0.4999999999999999,
+        -0.4999999999999999,
+        -0.4999999999999999,
+        -0.4999999999999999,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.4999999999999999,
+        0.4999999999999999,
+        0.4999999999999999,
+        0.4999999999999999
+      ]
+    },
+    {
+      "name": "Y",
+      "family": "hypercharge",
+      "herm16Eigenvalues": [
+        -0.6666666666666666,
+        -0.6666666666666666,
+        -0.6666666666666666,
+        -0.5,
+        -0.5,
+        0,
+        0.16666666666666663,
+        0.16666666666666663,
+        0.16666666666666663,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.33333333333333337,
+        0.33333333333333337,
+        0.33333333333333337,
+        1
+      ]
+    },
+    {
+      "name": "colorCartan_1",
+      "family": "colorCartan",
+      "herm16Eigenvalues": [
+        -0.8142673160355844,
+        -0.8142673160355843,
+        -0.45935006853359495,
+        -0.4593500685335941,
+        -0.35491724750199005,
+        -0.35491724750198994,
+        -1.942890293094024E-16,
+        -1.942890293094024E-16,
+        1.942890293094024E-16,
+        1.942890293094024E-16,
+        0.35491724750199,
+        0.3549172475019902,
+        0.4593500685335941,
+        0.45935006853359467,
+        0.8142673160355844,
+        0.8142673160355848
+      ]
+    },
+    {
+      "name": "colorCartan_2",
+      "family": "colorCartan",
+      "herm16Eigenvalues": [
+        -0.7353233398256025,
+        -0.7353233398256023,
+        -0.6750290224907735,
+        -0.6750290224907731,
+        -0.06029431733482883,
+        -0.060294317334828824,
+        -2.220446049250313E-16,
+        -2.220446049250313E-16,
+        2.220446049250313E-16,
+        2.220446049250313E-16,
+        0.06029431733482888,
+        0.06029431733482892,
+        0.6750290224907742,
+        0.6750290224907742,
+        0.735323339825602,
+        0.7353233398256024
+      ]
+    }
+  ],
+  "multisetPairs": [
+    {
+      "a": "su2L_1",
+      "b": "su2L_2",
+      "distance": 1.1102230246251565E-16
+    },
+    {
+      "a": "su2L_1",
+      "b": "su2L_3",
+      "distance": 1.1102230246251565E-16
+    },
+    {
+      "a": "su2L_1",
+      "b": "Y",
+      "distance": 0.5
+    },
+    {
+      "a": "su2L_1",
+      "b": "colorCartan_1",
+      "distance": 0.3549172475019902
+    },
+    {
+      "a": "su2L_1",
+      "b": "colorCartan_2",
+      "distance": 0.2353233398256025
+    },
+    {
+      "a": "su2L_2",
+      "b": "su2L_3",
+      "distance": 0
+    },
+    {
+      "a": "su2L_2",
+      "b": "Y",
+      "distance": 0.5000000000000001
+    },
+    {
+      "a": "su2L_2",
+      "b": "colorCartan_1",
+      "distance": 0.3549172475019902
+    },
+    {
+      "a": "su2L_2",
+      "b": "colorCartan_2",
+      "distance": 0.2353233398256026
+    },
+    {
+      "a": "su2L_3",
+      "b": "Y",
+      "distance": 0.5000000000000001
+    },
+    {
+      "a": "su2L_3",
+      "b": "colorCartan_1",
+      "distance": 0.3549172475019902
+    },
+    {
+      "a": "su2L_3",
+      "b": "colorCartan_2",
+      "distance": 0.2353233398256026
+    },
+    {
+      "a": "Y",
+      "b": "colorCartan_1",
+      "distance": 0.4809339827022511
+    },
+    {
+      "a": "Y",
+      "b": "colorCartan_2",
+      "distance": 0.4397056826651712
+    },
+    {
+      "a": "colorCartan_1",
+      "b": "colorCartan_2",
+      "distance": 0.2946229301671613
+    }
+  ],
+  "su2LAxisMultisetMaxResidual": 1.1102230246251565E-16,
+  "su2LAxesMutuallyLoopDegenerate": true,
+  "su2LVsHyperchargeMultisetDistance": 0.5,
+  "hyperchargeDistinctFromSu2L": true,
+  "colorCartanMultisetDistance": 0.2946229301671613,
+  "internalOnlyLoopDegeneraciesRecorded": true,
+  "weldZeroReproducesCarrierASplit": 5.115907697472721E-13,
+  "weldZeroReproducesCarrierA": true,
+  "su2LSplitPerTw": [
+    {
+      "tw": 0,
+      "maxSplit": 5.115907697472721E-13
+    },
+    {
+      "tw": 0.5,
+      "maxSplit": 0.3470540928194765
+    },
+    {
+      "tw": 1,
+      "maxSplit": 3.39851510298665
+    }
+  ],
+  "colorCartanSplitPerTw": [
+    {
+      "tw": 0,
+      "maxSplit": 95.33965417690831
+    },
+    {
+      "tw": 0.5,
+      "maxSplit": 3.249251266746981
+    },
+    {
+      "tw": 1,
+      "maxSplit": 16.02704304695365
+    }
+  ],
+  "weldSplitThreshold": 0.05,
+  "weldBreaksInternalLoopDegeneracies": true,
+  "su2LVsHyperchargeOrdering": [
+    {
+      "tw": 0,
+      "wSu2L": 226.98588712873834,
+      "wY": 525.5529784351197,
+      "difference": -298.56709130638137,
+      "su2LDeeper": true
+    },
+    {
+      "tw": 0.5,
+      "wSu2L": 5.082999605338074,
+      "wY": 10.959465372828149,
+      "difference": -5.876465767490075,
+      "su2LDeeper": true
+    },
+    {
+      "tw": 1,
+      "wSu2L": 4.350170731837039,
+      "wY": 15.504933946380731,
+      "difference": -11.154763214543692,
+      "su2LDeeper": true
+    }
+  ],
+  "weldChangesSu2LVsHyperchargeOrdering": false,
+  "smallTSampledPoints": [
+    0.03,
+    0.06,
+    0.09,
+    0.12,
+    0.15,
+    0.18,
+    0.21,
+    0.24
+  ],
+  "weldStructureSourcePinned": true,
+  "weldCouplingNormalizationSourceDefined": false,
+  "sourceDefinesWeldedFermionOccupationOrRegularization": false,
+  "analysisInternallyConsistent": true,
+  "physicalCouplingProvided": false,
+  "routeProvidesPhysicalMassPsiCompatibleBranch": false,
+  "routeProvidesCompletedFermionicAction": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesObservedElectroweakNamespaceMap": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesWeakAngleOrCouplingLineage": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "sourceEvidence": {
+    "phase408SummaryPath": "studies/phase408_vertical_spin_zero_extraction_obstruction_probe_001/output/vertical_spin_zero_extraction_obstruction_probe_summary.json",
+    "phase417SummaryPath": "studies/phase417_vector_spinor_144_decomposition_probe_001/output/vector_spinor_144_decomposition_probe_summary.json",
+    "phase428SummaryPath": "studies/phase428_fermion_loop_block_selection_no_go_probe_001/output/fermion_loop_block_selection_no_go_probe_summary.json",
+    "primaryDraft": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt (chimeric weld / Sym^2 embedding; welded carrier S = 2 (x) 16)"
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "The chimeric weld pi: so(4) -\u003E so(10) (Sym^2) is source-pinned structure (Phase408/417); its role here is to test whether the Phase428 internal-only class-function no-go survives the welded fermion sector.",
+    "The weld COUPLING NORMALIZATION (t_w grid, c_q = 1) is a recorded workbench convention, not a source-defined coupling; the split magnitudes are diagnostic, not physical.",
+    "The 4x4 lattice, 4-dim Euclidean spinors, and naive central-difference Dirac are recorded conventions; the block-diagonalization was cross-checked against a full dense solve (numpy 2D residual 1.7e-14; C# 1D residual reported).",
+    "Splitting the su(2)_L-axis loop degeneracy is a representation/one-loop distinguishability statement; it is NOT a doublet-VEV selection, a scalar source, or a mass prediction.",
+    "No welded-carrier action, VEV selection, observed electroweak rows, weak-angle lineage, pole extraction, or GeV normalization is supplied. No Phase201 or Phase256 fill."
+  ],
+  "decision": "The source-pinned chimeric weld changes which internal gauge-ray directions the one-loop fermion determinant can distinguish. At t_w = 0 the welded operator reproduces the Phase428 internal-only carrier exactly (su(2)_L-axis functional split 5.12E-013), so the three su(2)_L axes are exactly loop-degenerate and Y is on a distinct multiset (distance 0.500). Turning on the weld (t_w in {0.5, 1.0}) SPLITS the previously-degenerate su(2)_L axes (max split 3.399 at t_w = 1.0): the su(2)_L conjugator that made the axes loop-degenerate no longer commutes with the welded operator because su(2)_L overlaps the weld\u0027s pi image in the 6789 block. The Phase428 class-function no-go therefore does NOT survive intact for the GU-draft\u0027s welded fermion structure - the weld is exactly the su(N)-invariance-breaking structure the no-go named as the only escape, and here it is SOURCE-PINNED rather than invented. This is a representation/one-loop diagnostic only: the weld coupling normalization (t_w, c_q = 1), the 4x4 lattice, the 4-dim spinors, and the naive Dirac are recorded workbench conventions; the source still does not define a welded-carrier action, VEV selection, observed electroweak rows, weak-angle lineage, pole extraction, or GeV normalization. No Phase201 or Phase256 field is filled; nothing is promoted."
+}

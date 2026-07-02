@@ -200,6 +200,11 @@ const paths = {
   phase427: "studies/phase427_hofseth_gu_rvg_superluminal_source_audit_001/output/hofseth_gu_rvg_superluminal_source_audit_summary.json",
   phase428: "studies/phase428_fermion_loop_block_selection_no_go_probe_001/output/fermion_loop_block_selection_no_go_probe_summary.json",
   phase429: "studies/phase429_target_blind_dimensionless_ratio_ledger_001/output/target_blind_dimensionless_ratio_ledger_summary.json",
+  phase430: "studies/phase430_net_one_loop_direction_selection_probe_001/output/net_one_loop_direction_selection_probe_summary.json",
+  phase431: "studies/phase431_lambda8_background_doublet_reopening_probe_001/output/lambda8_background_doublet_reopening_probe_summary.json",
+  phase432: "studies/phase432_welded_fermion_loop_block_selection_probe_001/output/welded_fermion_loop_block_selection_probe_summary.json",
+  phase433: "studies/phase433_blind_beta_coefficient_running_ledger_001/output/blind_beta_coefficient_running_ledger_summary.json",
+  phase434: "studies/phase434_conditional_observed_field_extraction_row_ledger_001/output/conditional_observed_field_extraction_row_ledger_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -471,6 +476,11 @@ const phase426 = requireFile(paths.phase426);
 const phase427 = requireFile(paths.phase427);
 const phase428 = requireFile(paths.phase428);
 const phase429 = requireFile(paths.phase429);
+const phase430 = requireFile(paths.phase430);
+const phase431 = requireFile(paths.phase431);
+const phase432 = requireFile(paths.phase432);
+const phase433 = requireFile(paths.phase433);
+const phase434 = requireFile(paths.phase434);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -5100,6 +5110,56 @@ if (sourceLineageMissing) {
   assert(phase429.phase201TemplateMutated === false && phase429.fieldsAppliedToPhase201TemplateCount === 0 && phase429.acceptedContractFieldCount === 0, "Phase429 must not mutate or fill the Phase201 template.");
   assert(phase101Package?.targetBlindDimensionlessRatioLedger?.targetBlindDimensionlessRatioLedgerPassed === true, "Phase101 must include the Phase429 ratio-ledger block.");
   assert(phase101Package.targetBlindDimensionlessRatioLedger.derivationComparisonSeparationMaintained === true, "Phase101 must preserve the Phase429 derivation/comparison separation.");
+  assert(phase430.netOneLoopDirectionSelectionProbePassed === true, "Phase430 net one-loop direction-selection probe must pass as fail-closed representation arithmetic.");
+  assert(phase430.targetBlindConstruction === true && typeof phase430.targetBlindConstructionHash === "string" && phase430.targetBlindConstructionHash.length === 64, "Phase430 must remain target-blind with a persisted construction hash.");
+  assert(phase430.applicationSubjectKind === "net-one-loop-direction-selection-probe", "Phase430 must classify its subject as the net one-loop direction-selection probe.");
+  assert(phase430.netSlopesMatchTargets === true && phase430.tdNetSlopeExactlyDegenerate === true && phase430.closedFormSpectrumVerified === true, "Phase430 must verify the integer slope arithmetic, the T/D class-function degeneracy, and the closed-form spectrum.");
+  assert(phase430.netOneLoopDirectionSelective === true && phase430.derivedContentSelectsHyperchargeAxis === true && phase430.su3ToSu2U1BreakingDirectionDynamicallyPreferred === true, "Phase430 must record the direction-selective landscape and the derived-content hypercharge-axis preference.");
+  assert(phase430.noFiniteMinimumOnRays === true && phase430.bosonicOneLoopIsRecordedWorkbenchModel === true, "Phase430 must preserve the no-scale-law caveat and the workbench-model boundary.");
+  assert(phase430.sourceContractApplicationAllowed === false && phase430.canFillPhase201WzContract === false && phase430.canFillPhase201HiggsContract === false && phase430.canFillPhase256ObservedFieldExtractionContract === false, "Phase430 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase430.routePromotesWzMasses === false && phase430.routePromotesHiggsMass === false && phase430.routeCompletesBosonPredictions === false, "Phase430 cannot promote boson predictions.");
+  assert(phase101Package?.netOneLoopDirectionSelectionProbe?.netOneLoopDirectionSelectionProbePassed === true, "Phase101 must include the Phase430 net one-loop block.");
+  assert(phase101Package.netOneLoopDirectionSelectionProbe.derivedContentSelectsHyperchargeAxis === true && phase101Package.netOneLoopDirectionSelectionProbe.noFiniteMinimumOnRays === true, "Phase101 must preserve the Phase430 selection verdict with its no-scale caveat.");
+  assert(phase431.lambda8BackgroundDoubletReopeningProbePassed === true, "Phase431 lambda_8-background doublet-reopening probe must pass as fail-closed representation arithmetic.");
+  assert(phase431.targetBlindConstruction === true && typeof phase431.targetBlindConstructionHash === "string" && phase431.targetBlindConstructionHash.length === 64, "Phase431 must remain target-blind with a persisted construction hash.");
+  assert(phase431.applicationSubjectKind === "lambda8-background-doublet-reopening-probe", "Phase431 must classify its subject as the lambda_8-background doublet-reopening probe.");
+  assert(phase431.closedFormBlockSpectrumVerified === true && phase431.tdDegenerateAtZeroBackground === true, "Phase431 must verify the block spectrum and the Phase428 zero-background consistency battery.");
+  assert(phase431.tdDegeneracyBrokenByBackground === true && phase431.backgroundInducesBlockDependentMassLaw === true, "Phase431 must record the reopened T/D distinction and the induced block-dependent mass law.");
+  assert(phase431.backgroundParameterT8IsRecordedCandidateOnly === true && phase431.backgroundParameterT8DynamicallyDerived === false && phase431.scaleLawProduced === false, "Phase431 must keep the background candidate-only with no scale law.");
+  assert(phase431.sourceContractApplicationAllowed === false && phase431.canFillPhase201WzContract === false && phase431.canFillPhase201HiggsContract === false && phase431.canFillPhase256ObservedFieldExtractionContract === false, "Phase431 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase431.routePromotesWzMasses === false && phase431.routePromotesHiggsMass === false && phase431.routeCompletesBosonPredictions === false, "Phase431 cannot promote boson predictions.");
+  assert(phase101Package?.lambda8BackgroundDoubletReopeningProbe?.lambda8BackgroundDoubletReopeningProbePassed === true, "Phase101 must include the Phase431 lambda_8-background block.");
+  assert(phase101Package.lambda8BackgroundDoubletReopeningProbe.backgroundParameterT8DynamicallyDerived === false, "Phase101 must preserve the Phase431 candidate-only background boundary.");
+  assert(phase432.weldedFermionLoopBlockSelectionProbePassed === true, "Phase432 welded-fermion-loop probe must pass as fail-closed representation arithmetic.");
+  assert(phase432.targetBlindConstruction === true && typeof phase432.targetBlindConstructionHash === "string" && phase432.targetBlindConstructionHash.length === 64, "Phase432 must remain target-blind with a persisted construction hash.");
+  assert(phase432.applicationSubjectKind === "welded-fermion-loop-block-selection-probe", "Phase432 must classify its subject as the welded-fermion-loop probe.");
+  assert(phase432.carrierAClosedFormVerified === true && phase432.blockDiagonalizationVerified === true && phase432.weldZeroReproducesCarrierA === true, "Phase432 must verify the closed form, the block diagonalization, and the weld-off consistency battery.");
+  assert(phase432.su2LAxesMutuallyLoopDegenerate === true && phase432.weldBreaksInternalLoopDegeneracies === true, "Phase432 must record the internal degeneracy baseline and its weld-induced breaking.");
+  assert(phase432.weldStructureSourcePinned === true && phase432.weldCouplingNormalizationSourceDefined === false, "Phase432 must keep the weld source-pinned but its coupling normalization non-source-defined.");
+  assert(phase432.sourceContractApplicationAllowed === false && phase432.canFillPhase201WzContract === false && phase432.canFillPhase201HiggsContract === false && phase432.canFillPhase256ObservedFieldExtractionContract === false, "Phase432 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase432.routePromotesWzMasses === false && phase432.routePromotesHiggsMass === false && phase432.routeCompletesBosonPredictions === false, "Phase432 cannot promote boson predictions.");
+  assert(phase101Package?.weldedFermionLoopBlockSelectionProbe?.weldedFermionLoopBlockSelectionProbePassed === true, "Phase101 must include the Phase432 welded-fermion block.");
+  assert(phase101Package.weldedFermionLoopBlockSelectionProbe.weldBreaksInternalLoopDegeneracies === true && phase101Package.weldedFermionLoopBlockSelectionProbe.weldCouplingNormalizationSourceDefined === false, "Phase101 must preserve the Phase432 weld verdict with its normalization boundary.");
+  assert(phase433.blindBetaCoefficientRunningLedgerPassed === true, "Phase433 blind beta-coefficient running ledger must pass as fail-closed exact rational arithmetic.");
+  assert(phase433.targetBlindConstruction === true && typeof phase433.targetBlindConstructionHash === "string" && phase433.targetBlindConstructionHash.length === 64, "Phase433 must remain target-blind with a persisted construction hash.");
+  assert(phase433.applicationSubjectKind === "blind-beta-coefficient-running-ledger", "Phase433 must classify its subject as the blind beta-coefficient running ledger.");
+  assert(phase433.exactRationalArithmeticVerified === true && phase433.betaLedgerRowCount === 4 && phase433.b1MinusB2FamilyIndependent === true, "Phase433 must preserve the exact four-row beta ledger and the family-independent sin^2 slope.");
+  assert(phase433.measuredElectroweakValuesConsulted === false && phase433.comparisonAgainstObservationPerformed === false && phase433.derivationComparisonSeparationMaintained === true, "Phase433 must keep derivation strictly separated from comparison.");
+  assert(phase433.canFillPhase201WzContract === false && phase433.canFillPhase201HiggsContract === false && phase433.canFillPhase256ObservedFieldExtractionContract === false, "Phase433 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase433.routePromotesWzMasses === false && phase433.routePromotesHiggsMass === false && phase433.routeCompletesBosonPredictions === false, "Phase433 cannot promote boson predictions.");
+  assert(phase101Package?.blindBetaCoefficientRunningLedger?.blindBetaCoefficientRunningLedgerPassed === true, "Phase101 must include the Phase433 beta-ledger block.");
+  assert(phase434.conditionalObservedFieldExtractionRowLedgerPassed === true, "Phase434 conditional extraction-row ledger must pass as fail-closed exact algebra.");
+  assert(phase434.targetBlindConstruction === true && phase434.physicalTargetsConsultedForConstruction === false, "Phase434 construction must remain target-blind.");
+  assert(typeof phase434.targetBlindConstructionHash === "string" && phase434.targetBlindConstructionHash.length === 64, "Phase434 must persist a target-blind construction hash.");
+  assert(phase434.applicationSubjectKind === "conditional-observed-field-extraction-row-ledger", "Phase434 must classify its subject as the conditional extraction-row ledger.");
+  assert(phase434.mixingExact === true && phase434.massMatrixExact === true && phase434.extractionRowsExact === true, "Phase434 must verify the exact mixing, mass-matrix, and extraction-row algebra.");
+  assert(phase434.candidateVevExistenceEstablished === false && phase434.isObservedFieldExtractionTheorem === false, "Phase434 must record the VEV as candidate-only and the rows as conditional algebra, not a theorem.");
+  assert(phase434.measuredElectroweakValuesConsulted === false && phase434.comparisonAgainstObservationPerformed === false && phase434.derivationComparisonSeparationMaintained === true, "Phase434 must keep derivation strictly separated from comparison.");
+  assert(phase434.sourceContractApplicationAllowed === false && phase434.canFillPhase201WzContract === false && phase434.canFillPhase201HiggsContract === false && phase434.canFillPhase256ObservedFieldExtractionContract === false, "Phase434 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase434.routePromotesWzMasses === false && phase434.routePromotesHiggsMass === false && phase434.routeCompletesBosonPredictions === false, "Phase434 cannot promote boson predictions.");
+  assert(phase434.phase201TemplateMutated === false && phase434.fieldsAppliedToPhase201TemplateCount === 0 && phase434.acceptedContractFieldCount === 0, "Phase434 must not mutate or fill the Phase201 template.");
+  assert(phase101Package?.conditionalObservedFieldExtractionRowLedger?.conditionalObservedFieldExtractionRowLedgerPassed === true, "Phase101 must include the Phase434 conditional extraction-row block.");
+  assert(phase101Package.conditionalObservedFieldExtractionRowLedger.candidateVevExistenceEstablished === false && phase101Package.conditionalObservedFieldExtractionRowLedger.canFillPhase256ObservedFieldExtractionContract === false, "Phase101 must preserve the Phase434 candidate-only verdict.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

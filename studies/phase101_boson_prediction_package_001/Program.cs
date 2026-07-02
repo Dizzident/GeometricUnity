@@ -287,6 +287,11 @@ const string Phase426CoxGuSeriesBosonContractAuditPath = "studies/phase426_cox_g
 const string Phase427HofsethGuRvgSuperluminalSourceAuditPath = "studies/phase427_hofseth_gu_rvg_superluminal_source_audit_001/output/hofseth_gu_rvg_superluminal_source_audit_summary.json";
 const string Phase428FermionLoopBlockSelectionNoGoProbePath = "studies/phase428_fermion_loop_block_selection_no_go_probe_001/output/fermion_loop_block_selection_no_go_probe_summary.json";
 const string Phase429TargetBlindDimensionlessRatioLedgerPath = "studies/phase429_target_blind_dimensionless_ratio_ledger_001/output/target_blind_dimensionless_ratio_ledger_summary.json";
+const string Phase430NetOneLoopDirectionSelectionProbePath = "studies/phase430_net_one_loop_direction_selection_probe_001/output/net_one_loop_direction_selection_probe_summary.json";
+const string Phase431Lambda8BackgroundDoubletReopeningProbePath = "studies/phase431_lambda8_background_doublet_reopening_probe_001/output/lambda8_background_doublet_reopening_probe_summary.json";
+const string Phase432WeldedFermionLoopBlockSelectionProbePath = "studies/phase432_welded_fermion_loop_block_selection_probe_001/output/welded_fermion_loop_block_selection_probe_summary.json";
+const string Phase433BlindBetaCoefficientRunningLedgerPath = "studies/phase433_blind_beta_coefficient_running_ledger_001/output/blind_beta_coefficient_running_ledger_summary.json";
+const string Phase434ConditionalObservedFieldExtractionRowLedgerPath = "studies/phase434_conditional_observed_field_extraction_row_ledger_001/output/conditional_observed_field_extraction_row_ledger_summary.json";
 const string Phase282BranchLocalDirectInvariantCensusPath = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census.json";
 const string Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit.json";
 const string Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic.json";
@@ -594,6 +599,11 @@ using var phase426 = TryParseJson(Phase426CoxGuSeriesBosonContractAuditPath);
 using var phase427 = TryParseJson(Phase427HofsethGuRvgSuperluminalSourceAuditPath);
 using var phase428 = TryParseJson(Phase428FermionLoopBlockSelectionNoGoProbePath);
 using var phase429 = TryParseJson(Phase429TargetBlindDimensionlessRatioLedgerPath);
+using var phase430 = TryParseJson(Phase430NetOneLoopDirectionSelectionProbePath);
+using var phase431 = TryParseJson(Phase431Lambda8BackgroundDoubletReopeningProbePath);
+using var phase432 = TryParseJson(Phase432WeldedFermionLoopBlockSelectionProbePath);
+using var phase433 = TryParseJson(Phase433BlindBetaCoefficientRunningLedgerPath);
+using var phase434 = TryParseJson(Phase434ConditionalObservedFieldExtractionRowLedgerPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -7650,6 +7660,134 @@ var package = new
             routePromotesHiggsMass = JsonBool(phase429.RootElement, "routePromotesHiggsMass"),
             routeCompletesBosonPredictions = JsonBool(phase429.RootElement, "routeCompletesBosonPredictions"),
             decision = JsonString(phase429.RootElement, "decision"),
+        }
+        : null,
+    netOneLoopDirectionSelectionProbe = phase430 is not null
+        ? new
+        {
+            status = JsonString(phase430.RootElement, "terminalStatus"),
+            netOneLoopDirectionSelectionProbePassed = JsonBool(phase430.RootElement, "netOneLoopDirectionSelectionProbePassed"),
+            targetBlindConstruction = JsonBool(phase430.RootElement, "targetBlindConstruction"),
+            applicationSubjectKind = JsonString(phase430.RootElement, "applicationSubjectKind"),
+            analysisInternallyConsistent = JsonBool(phase430.RootElement, "analysisInternallyConsistent"),
+            netSlopesMatchTargets = JsonBool(phase430.RootElement, "netSlopesMatchTargets"),
+            tdNetSlopeExactlyDegenerate = JsonBool(phase430.RootElement, "tdNetSlopeExactlyDegenerate"),
+            netOneLoopDirectionSelective = JsonBool(phase430.RootElement, "netOneLoopDirectionSelective"),
+            fundamentalContentConfinesTdRays = JsonBool(phase430.RootElement, "fundamentalContentConfinesTdRays"),
+            fundamentalContentSelectsHyperchargeAxis = JsonBool(phase430.RootElement, "fundamentalContentSelectsHyperchargeAxis"),
+            selectionIsMatterContentDependent = JsonBool(phase430.RootElement, "selectionIsMatterContentDependent"),
+            derivedContentSelectsHyperchargeAxis = JsonBool(phase430.RootElement, "derivedContentSelectsHyperchargeAxis"),
+            su3ToSu2U1BreakingDirectionDynamicallyPreferred = JsonBool(phase430.RootElement, "su3ToSu2U1BreakingDirectionDynamicallyPreferred"),
+            noFiniteMinimumOnRays = JsonBool(phase430.RootElement, "noFiniteMinimumOnRays"),
+            bosonicOneLoopIsRecordedWorkbenchModel = JsonBool(phase430.RootElement, "bosonicOneLoopIsRecordedWorkbenchModel"),
+            sourceContractApplicationAllowed = JsonBool(phase430.RootElement, "sourceContractApplicationAllowed"),
+            canFillPhase201WzContract = JsonBool(phase430.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase430.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase430.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            routePromotesWzMasses = JsonBool(phase430.RootElement, "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonBool(phase430.RootElement, "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonBool(phase430.RootElement, "routeCompletesBosonPredictions"),
+            decision = JsonString(phase430.RootElement, "decision"),
+        }
+        : null,
+    lambda8BackgroundDoubletReopeningProbe = phase431 is not null
+        ? new
+        {
+            status = JsonString(phase431.RootElement, "terminalStatus"),
+            lambda8BackgroundDoubletReopeningProbePassed = JsonBool(phase431.RootElement, "lambda8BackgroundDoubletReopeningProbePassed"),
+            targetBlindConstruction = JsonBool(phase431.RootElement, "targetBlindConstruction"),
+            applicationSubjectKind = JsonString(phase431.RootElement, "applicationSubjectKind"),
+            analysisInternallyConsistent = JsonBool(phase431.RootElement, "analysisInternallyConsistent"),
+            closedFormBlockSpectrumVerified = JsonBool(phase431.RootElement, "closedFormBlockSpectrumVerified"),
+            tdDegenerateAtZeroBackground = JsonBool(phase431.RootElement, "tdDegenerateAtZeroBackground"),
+            tdDegeneracyBrokenByBackground = JsonBool(phase431.RootElement, "tdDegeneracyBrokenByBackground"),
+            backgroundInducesBlockDependentMassLaw = JsonBool(phase431.RootElement, "backgroundInducesBlockDependentMassLaw"),
+            fermionTripletCurvaturePositiveDoubletNegative = JsonBool(phase431.RootElement, "fermionTripletCurvaturePositiveDoubletNegative"),
+            doubletDirectionGaugeGappedTripletNot = JsonBool(phase431.RootElement, "doubletDirectionGaugeGappedTripletNot"),
+            backgroundParameterT8IsRecordedCandidateOnly = JsonBool(phase431.RootElement, "backgroundParameterT8IsRecordedCandidateOnly"),
+            backgroundParameterT8DynamicallyDerived = JsonBool(phase431.RootElement, "backgroundParameterT8DynamicallyDerived"),
+            scaleLawProduced = JsonBool(phase431.RootElement, "scaleLawProduced"),
+            sourceContractApplicationAllowed = JsonBool(phase431.RootElement, "sourceContractApplicationAllowed"),
+            canFillPhase201WzContract = JsonBool(phase431.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase431.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase431.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            routePromotesWzMasses = JsonBool(phase431.RootElement, "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonBool(phase431.RootElement, "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonBool(phase431.RootElement, "routeCompletesBosonPredictions"),
+            decision = JsonString(phase431.RootElement, "decision"),
+        }
+        : null,
+    weldedFermionLoopBlockSelectionProbe = phase432 is not null
+        ? new
+        {
+            status = JsonString(phase432.RootElement, "terminalStatus"),
+            weldedFermionLoopBlockSelectionProbePassed = JsonBool(phase432.RootElement, "weldedFermionLoopBlockSelectionProbePassed"),
+            targetBlindConstruction = JsonBool(phase432.RootElement, "targetBlindConstruction"),
+            applicationSubjectKind = JsonString(phase432.RootElement, "applicationSubjectKind"),
+            analysisInternallyConsistent = JsonBool(phase432.RootElement, "analysisInternallyConsistent"),
+            su2LAxesMutuallyLoopDegenerate = JsonBool(phase432.RootElement, "su2LAxesMutuallyLoopDegenerate"),
+            weldZeroReproducesCarrierA = JsonBool(phase432.RootElement, "weldZeroReproducesCarrierA"),
+            weldBreaksInternalLoopDegeneracies = JsonBool(phase432.RootElement, "weldBreaksInternalLoopDegeneracies"),
+            weldChangesSu2LVsHyperchargeOrdering = JsonBool(phase432.RootElement, "weldChangesSu2LVsHyperchargeOrdering"),
+            weldStructureSourcePinned = JsonBool(phase432.RootElement, "weldStructureSourcePinned"),
+            weldCouplingNormalizationSourceDefined = JsonBool(phase432.RootElement, "weldCouplingNormalizationSourceDefined"),
+            sourceContractApplicationAllowed = JsonBool(phase432.RootElement, "sourceContractApplicationAllowed"),
+            canFillPhase201WzContract = JsonBool(phase432.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase432.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase432.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            routePromotesWzMasses = JsonBool(phase432.RootElement, "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonBool(phase432.RootElement, "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonBool(phase432.RootElement, "routeCompletesBosonPredictions"),
+            decision = JsonString(phase432.RootElement, "decision"),
+        }
+        : null,
+    blindBetaCoefficientRunningLedger = phase433 is not null
+        ? new
+        {
+            status = JsonString(phase433.RootElement, "terminalStatus"),
+            blindBetaCoefficientRunningLedgerPassed = JsonBool(phase433.RootElement, "blindBetaCoefficientRunningLedgerPassed"),
+            targetBlindConstruction = JsonBool(phase433.RootElement, "targetBlindConstruction"),
+            applicationSubjectKind = JsonString(phase433.RootElement, "applicationSubjectKind"),
+            exactRationalArithmeticVerified = JsonBool(phase433.RootElement, "exactRationalArithmeticVerified"),
+            betaLedgerRowCount = JsonInt(phase433.RootElement, "betaLedgerRowCount"),
+            b1MinusB2FamilyIndependent = JsonBool(phase433.RootElement, "b1MinusB2FamilyIndependent"),
+            measuredElectroweakValuesConsulted = JsonBool(phase433.RootElement, "measuredElectroweakValuesConsulted"),
+            comparisonAgainstObservationPerformed = JsonBool(phase433.RootElement, "comparisonAgainstObservationPerformed"),
+            derivationComparisonSeparationMaintained = JsonBool(phase433.RootElement, "derivationComparisonSeparationMaintained"),
+            canFillPhase201WzContract = JsonBool(phase433.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase433.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase433.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            routePromotesWzMasses = JsonBool(phase433.RootElement, "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonBool(phase433.RootElement, "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonBool(phase433.RootElement, "routeCompletesBosonPredictions"),
+            decision = JsonString(phase433.RootElement, "decision"),
+        }
+        : null,
+    conditionalObservedFieldExtractionRowLedger = phase434 is not null
+        ? new
+        {
+            status = JsonString(phase434.RootElement, "terminalStatus"),
+            conditionalObservedFieldExtractionRowLedgerPassed = JsonBool(phase434.RootElement, "conditionalObservedFieldExtractionRowLedgerPassed"),
+            targetBlindConstruction = JsonBool(phase434.RootElement, "targetBlindConstruction"),
+            physicalTargetsConsultedForConstruction = JsonBool(phase434.RootElement, "physicalTargetsConsultedForConstruction"),
+            applicationSubjectKind = JsonString(phase434.RootElement, "applicationSubjectKind"),
+            mixingExact = JsonBool(phase434.RootElement, "mixingExact"),
+            massMatrixExact = JsonBool(phase434.RootElement, "massMatrixExact"),
+            extractionRowsExact = JsonBool(phase434.RootElement, "extractionRowsExact"),
+            extractionRowCount = JsonInt(phase434.RootElement, "extractionRowCount"),
+            conditionallyDeterminedRowCount = JsonInt(phase434.RootElement, "conditionallyDeterminedRowCount"),
+            candidateVevExistenceEstablished = JsonBool(phase434.RootElement, "candidateVevExistenceEstablished"),
+            isObservedFieldExtractionTheorem = JsonBool(phase434.RootElement, "isObservedFieldExtractionTheorem"),
+            measuredElectroweakValuesConsulted = JsonBool(phase434.RootElement, "measuredElectroweakValuesConsulted"),
+            derivationComparisonSeparationMaintained = JsonBool(phase434.RootElement, "derivationComparisonSeparationMaintained"),
+            sourceContractApplicationAllowed = JsonBool(phase434.RootElement, "sourceContractApplicationAllowed"),
+            canFillPhase201WzContract = JsonBool(phase434.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase434.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase434.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            routePromotesWzMasses = JsonBool(phase434.RootElement, "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonBool(phase434.RootElement, "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonBool(phase434.RootElement, "routeCompletesBosonPredictions"),
+            decision = JsonString(phase434.RootElement, "decision"),
         }
         : null,
     branchLocalDirectInvariantCensus = phase282 is not null

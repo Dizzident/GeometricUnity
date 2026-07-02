@@ -49,7 +49,7 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase429 work (plus the 2026-06-12 platform
+Current gate status after the Phase430-434 team wave (plus the 2026-06-12 platform
 fix - GPU parity defect root-caused and discharged - and the 2026-07-01
 |Y|=1/2 calibration defect fix in the Phase411/417 informational SM
 censuses):
@@ -57,7 +57,7 @@ censuses):
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=222`,
+  `objectiveAchieved=False`, `checklistPassedCount=227`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -418,6 +418,29 @@ censuses):
   `derivationComparisonSeparationMaintained=True`,
   `canFillPhase201WzContract=False`,
   `canFillPhase256ObservedFieldExtractionContract=False`
+- Phase430 (team wave): `netOneLoopDirectionSelectionProbePassed=True`,
+  `netOneLoopDirectionSelective=True`,
+  `derivedContentSelectsHyperchargeAxis=True`,
+  `su3ToSu2U1BreakingDirectionDynamicallyPreferred=True`,
+  `noFiniteMinimumOnRays=True` (no scale law),
+  `bosonicOneLoopIsRecordedWorkbenchModel=True`
+- Phase431 (team wave): `lambda8BackgroundDoubletReopeningProbePassed=True`,
+  `tdDegeneracyBrokenByBackground=True`,
+  `backgroundInducesBlockDependentMassLaw=True`,
+  `backgroundParameterT8DynamicallyDerived=False` (candidate-only),
+  `scaleLawProduced=False`
+- Phase432 (team wave): `weldedFermionLoopBlockSelectionProbePassed=True`,
+  `weldBreaksInternalLoopDegeneracies=True`,
+  `weldStructureSourcePinned=True`,
+  `weldCouplingNormalizationSourceDefined=False`
+- Phase433 (team wave): `blindBetaCoefficientRunningLedgerPassed=True`,
+  `exactRationalArithmeticVerified=True`, `betaLedgerRowCount=4`,
+  `b1MinusB2FamilyIndependent=True` (blind slope -55/32 / -109/64),
+  `measuredElectroweakValuesConsulted=False`
+- Phase434 (team wave): `conditionalObservedFieldExtractionRowLedgerPassed=True`,
+  `extractionRowsExact=True` (6 rows; template partition 7/4/9 of 20),
+  `candidateVevExistenceEstablished=False`,
+  `isObservedFieldExtractionTheorem=False`
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -438,7 +461,34 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work (2026-07-01, sixth checkpoint of the session) added
+The latest work (2026-07-02, seventh checkpoint: the five-phase TEAM WAVE
+430-434, built by parallel agents in isolated study dirs and integrated
+centrally) executed the full Coleman-Weinberg program named on 2026-07-01:
+Phase430 - the full one-loop landscape is direction-selecting and THE
+DERIVED MATTER CONTENT DYNAMICALLY SELECTS THE HYPERCHARGE AXIS (the
+su(3)->su(2)xu(1) breaking direction), integer-exact slopes, no scale law;
+Phase431 - a candidate lambda_8 background REOPENS the T/D distinction and
+INDUCES the block-dependent mass law Phase418 had to import (opposite
+signs: doublet destabilized), background candidate-only; Phase432 - the
+SOURCE-PINNED chimeric weld breaks internal loop degeneracies (the
+su-breaking fermionic structure Phase428 proved necessary exists in the
+draft's own carriers); Phase433 - exact-rational blind beta ledger (the
+n_f=3+Higgs row reproduces the standard SM set as a witness; blind running
+slope family-independent); Phase434 - conditional photon/W/Z extraction
+rows partitioning the Phase419 template 7/4/9. THE TWO HONEST REMAINING
+GAPS: a derived (not candidate) background with a finite scale, and tying
+the workbench bosonic determinant / weld normalization to the actual
+control-branch Hessian and draft normalization. Studies:
+phase430_net_one_loop_direction_selection_probe_001,
+phase431_lambda8_background_doublet_reopening_probe_001,
+phase432_welded_fermion_loop_block_selection_probe_001,
+phase433_blind_beta_coefficient_running_ledger_001,
+phase434_conditional_observed_field_extraction_row_ledger_001
+(IMPLEMENTATION_P430..434.md). Named next: self-consistent background
+iteration (feed stage-one into stage-two and iterate), exact-Hessian
+tie-in, performance program, monitoring.
+
+Before that, the work (2026-07-01, sixth checkpoint of the session) added
 Phase429, the target-blind dimensionless-ratio ledger - the second
 beyond-the-literature experiment. The complete scale-free surface of the
 embedding chain is an explicit fail-closed ledger (exact arithmetic from
@@ -946,7 +996,7 @@ HONEST BOUNDARY. Study:
 
 ### Integration Points Already Updated
 
-Phase429 (like Phase388-428) is wired into:
+Phases 430-434 (like Phase388-429) are wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (single broad pass; the
   older duplicated final sweep was removed on 2026-06-16; the Phase424 line
@@ -965,7 +1015,12 @@ Phase429 (like Phase388-428) is wired into:
   `cox-gu-series-boson-contract-audit-materialized` and
   `hofseth-gu-rvg-superluminal-source-audit-materialized` and
   `fermion-loop-block-selection-no-go-probe-materialized` and
-  `target-blind-dimensionless-ratio-ledger-materialized`;
+  `target-blind-dimensionless-ratio-ledger-materialized` and
+  `net-one-loop-direction-selection-probe-materialized` and
+  `lambda8-background-doublet-reopening-probe-materialized` and
+  `welded-fermion-loop-block-selection-probe-materialized` and
+  `blind-beta-coefficient-running-ledger-materialized` and
+  `conditional-observed-field-extraction-row-ledger-materialized`;
   the Phase417 checklist row now asserts the corrected
   `yHalfCalibrationExact=True` and `internalSmHiggsPatternComplexDimension=6`)
 - `scripts/verify_boson_claim_integrity.sh` (Phase424 asserts plus the
@@ -1022,11 +1077,11 @@ PHASE405_ENABLE_GPU=1 LD_LIBRARY_PATH=native/build dotnet run --project studies/
 The targeted Phase424 (Release, ~7 min) and Phase425 (Release, ~1 min) runs
 pass and preserve the fail-closed boundary; the fixed Phase411/Phase417
 re-runs pass with their corrected censuses; Phase202 now reports
-`checklistPassedCount=222`, `checklistFailedCount=3`; claim integrity
-verifies Phase424 through Phase429 (and the corrected Phase417 values)
+`checklistPassedCount=227`, `checklistFailedCount=3`; claim integrity
+verifies Phase424 through Phase434 (and the corrected Phase417 values)
 with `promotedPhysicalMassClaimCount=0`. The full direct
 `./scripts/generate_validated_boson_predictions.sh` pass completed with
-Phase424 through Phase429 included and ended at
+Phase424 through Phase434 included and ended at
 `boson-claim-integrity-verified`. (Platform
 state: Gu.Interop.Tests 158/158 with the real-mesh parity and
 buffer-handle recycling tests; both Phase405 platform notes discharged
@@ -1399,11 +1454,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase429 output JSON files, and commit a checkpoint
-after validation.
+force-add the ignored Phase430-434 output JSON files, and commit a
+checkpoint after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase429 target-blind dimensionless ratio ledger
+Add phases 430-434: Coleman-Weinberg program team wave
 ```

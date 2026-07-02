@@ -531,6 +531,11 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath.Contains("studies/phase427_hofseth_gu_rvg_superluminal_source_audit_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase428_fermion_loop_block_selection_no_go_probe_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase429_target_blind_dimensionless_ratio_ledger_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase430_net_one_loop_direction_selection_probe_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase431_lambda8_background_doublet_reopening_probe_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase432_welded_fermion_loop_block_selection_probe_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase433_blind_beta_coefficient_running_ledger_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase434_conditional_observed_field_extraction_row_ledger_001/", StringComparison.Ordinal)
     || normalizedPath == "studies/phase101_boson_prediction_package_001/Program.cs"
     || normalizedPath == "studies/phase202_boson_objective_completion_audit_001/Program.cs"
     || normalizedPath == "studies/phase204_boson_source_lineage_candidate_scan_001/Program.cs"
@@ -572,7 +577,12 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P426.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P427.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P428.md"
-    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P429.md";
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P429.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P430.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P431.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P432.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P433.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P434.md";
 
 static bool? JsonBool(JsonElement element, string propertyName) =>
     element.TryGetProperty(propertyName, out var value) && (value.ValueKind == JsonValueKind.True || value.ValueKind == JsonValueKind.False)

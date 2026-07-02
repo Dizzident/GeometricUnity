@@ -1,0 +1,810 @@
+{
+  "phaseId": "phase431-lambda8-background-doublet-reopening-probe",
+  "generatedAt": "2026-07-02T03:52:18.8616616+00:00",
+  "runtimeSeconds": 0.2320398,
+  "terminalStatus": "lambda8-background-reopens-td-distinction-and-induces-doublet-block-mass-law-candidate-only",
+  "lambda8BackgroundDoubletReopeningProbePassed": true,
+  "phase428PrecursorPassed": true,
+  "phase418PrecursorPassed": true,
+  "applicationSubjectKind": "lambda8-background-doublet-reopening-probe",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "7c276ba30f49abd9a6f6ccb95445c365d4c9ec35d171014d210fbc3cdfaaea7a",
+  "workbenchConventions": {
+    "latticeSize": 4,
+    "latticeVertices": 16,
+    "spinorDimension": 4,
+    "diracDiscretization": "naive-central-difference-hermitian",
+    "fermionContentsProbed": [
+      "fundamental-3",
+      "adjoint-8"
+    ],
+    "backgroundDirection": "lambda_8/2 (singlet axis)",
+    "probeMenu": "T={lambda_1,lambda_3}, D={lambda_4,lambda_5} representatives",
+    "t8Grid": [
+      0,
+      0.5,
+      1,
+      2
+    ],
+    "tGridMax": 1.5,
+    "workbenchConventionsAreSourceDefined": false
+  },
+  "traceNormalizationResidual": 1.1102230246251565E-16,
+  "traceNormalizationExact": true,
+  "structureConstantResidual": 1.1102230246251565E-16,
+  "structureConstantsExact": true,
+  "adjointHermiticityResidual": 0,
+  "adjointRepresentationHermitian": true,
+  "maxTripletBackgroundCommutator": 0,
+  "backgroundCommutesWithTriplet": true,
+  "minDoubletBackgroundCommutator": 0.4330127018922194,
+  "backgroundBreaksDoublet": true,
+  "closedFormCrossCheckResidual": 4.3876013933186186E-13,
+  "closedFormBlockSpectrumVerified": true,
+  "maxT8ZeroDegeneracyResidual": 3.552713678800501E-14,
+  "tdDegenerateAtZeroBackground": true,
+  "minBrokenSeparationAtNonzeroT8": 44.94211556138745,
+  "degeneracyBreakThreshold": 1,
+  "tdDegeneracyBrokenByBackground": true,
+  "degeneracyRows": [
+    {
+      "representation": "fundamental-3",
+      "sector": "fermion",
+      "t8": 0,
+      "maxTripletDoubletPotentialDifference": 0
+    },
+    {
+      "representation": "fundamental-3",
+      "sector": "fermion",
+      "t8": 0.5,
+      "maxTripletDoubletPotentialDifference": 47.31654488740072
+    },
+    {
+      "representation": "fundamental-3",
+      "sector": "fermion",
+      "t8": 1,
+      "maxTripletDoubletPotentialDifference": 46.83077505386838
+    },
+    {
+      "representation": "fundamental-3",
+      "sector": "fermion",
+      "t8": 2,
+      "maxTripletDoubletPotentialDifference": 46.64757109060723
+    },
+    {
+      "representation": "fundamental-3",
+      "sector": "net",
+      "t8": 0,
+      "maxTripletDoubletPotentialDifference": 2.842170943040401E-14
+    },
+    {
+      "representation": "fundamental-3",
+      "sector": "net",
+      "t8": 0.5,
+      "maxTripletDoubletPotentialDifference": 70.21259873966488
+    },
+    {
+      "representation": "fundamental-3",
+      "sector": "net",
+      "t8": 1,
+      "maxTripletDoubletPotentialDifference": 70.33427354040812
+    },
+    {
+      "representation": "fundamental-3",
+      "sector": "net",
+      "t8": 2,
+      "maxTripletDoubletPotentialDifference": 75.41354745053928
+    },
+    {
+      "representation": "adjoint-8",
+      "sector": "fermion",
+      "t8": 0,
+      "maxTripletDoubletPotentialDifference": 2.842170943040401E-14
+    },
+    {
+      "representation": "adjoint-8",
+      "sector": "fermion",
+      "t8": 0.5,
+      "maxTripletDoubletPotentialDifference": 89.94603261038569
+    },
+    {
+      "representation": "adjoint-8",
+      "sector": "fermion",
+      "t8": 1,
+      "maxTripletDoubletPotentialDifference": 111.93799188394003
+    },
+    {
+      "representation": "adjoint-8",
+      "sector": "fermion",
+      "t8": 2,
+      "maxTripletDoubletPotentialDifference": 135.2109623307227
+    },
+    {
+      "representation": "adjoint-8",
+      "sector": "net",
+      "t8": 0,
+      "maxTripletDoubletPotentialDifference": 3.552713678800501E-14
+    },
+    {
+      "representation": "adjoint-8",
+      "sector": "net",
+      "t8": 0.5,
+      "maxTripletDoubletPotentialDifference": 44.94211556138745
+    },
+    {
+      "representation": "adjoint-8",
+      "sector": "net",
+      "t8": 1,
+      "maxTripletDoubletPotentialDifference": 55.34493232862845
+    },
+    {
+      "representation": "adjoint-8",
+      "sector": "net",
+      "t8": 2,
+      "maxTripletDoubletPotentialDifference": 67.33639095587581
+    }
+  ],
+  "massLawBlockThreshold": 1,
+  "fermionMassLawDegenerateAtZeroBackground": true,
+  "fermionMassLawBlockDependent": true,
+  "fermionTripletCurvaturePositiveDoubletNegative": true,
+  "backgroundInducesBlockDependentMassLaw": true,
+  "doubletDirectionGaugeGappedTripletNot": true,
+  "massLawRows": [
+    {
+      "representation": "fundamental-3",
+      "block": "T",
+      "gellMannAxis": 1,
+      "t8": 0,
+      "fermionQuadraticCoefficient": 232138523.81638402,
+      "fermionAnalyticAtOrigin": false,
+      "bosonQuadraticCoefficient": -353752933.16907114,
+      "bosonAnalyticAtOrigin": false,
+      "netQuadraticCoefficient": -121614409.35268712,
+      "netAnalyticAtOrigin": false,
+      "probeMasslessLift": 6
+    },
+    {
+      "representation": "fundamental-3",
+      "block": "T",
+      "gellMannAxis": 1,
+      "t8": 0.5,
+      "fermionQuadraticCoefficient": 190.25948195405817,
+      "fermionAnalyticAtOrigin": true,
+      "bosonQuadraticCoefficient": -110524079.6725504,
+      "bosonAnalyticAtOrigin": false,
+      "netQuadraticCoefficient": -110523889.41306844,
+      "netAnalyticAtOrigin": false,
+      "probeMasslessLift": 2
+    },
+    {
+      "representation": "fundamental-3",
+      "block": "T",
+      "gellMannAxis": 1,
+      "t8": 1,
+      "fermionQuadraticCoefficient": 41.51316720779619,
+      "fermionAnalyticAtOrigin": true,
+      "bosonQuadraticCoefficient": -110524068.48283868,
+      "bosonAnalyticAtOrigin": false,
+      "netQuadraticCoefficient": -110524026.96967147,
+      "netAnalyticAtOrigin": false,
+      "probeMasslessLift": 2
+    },
+    {
+      "representation": "fundamental-3",
+      "block": "T",
+      "gellMannAxis": 1,
+      "t8": 2,
+      "fermionQuadraticCoefficient": 4.184925813888185,
+      "fermionAnalyticAtOrigin": true,
+      "bosonQuadraticCoefficient": -110524066.95705655,
+      "bosonAnalyticAtOrigin": false,
+      "netQuadraticCoefficient": -110524062.77213074,
+      "netAnalyticAtOrigin": false,
+      "probeMasslessLift": 2
+    },
+    {
+      "representation": "fundamental-3",
+      "block": "T",
+      "gellMannAxis": 3,
+      "t8": 0,
+      "fermionQuadraticCoefficient": 232138523.81638402,
+      "fermionAnalyticAtOrigin": false,
+      "bosonQuadraticCoefficient": -353752933.16907114,
+      "bosonAnalyticAtOrigin": false,
+      "netQuadraticCoefficient": -121614409.35268712,
+      "netAnalyticAtOrigin": false,
+      "probeMasslessLift": 6
+    },
+    {
+      "representation": "fundamental-3",
+      "block": "T",
+      "gellMannAxis": 3,
+      "t8": 0.5,
+      "fermionQuadraticCoefficient": 190.25948194695275,
+      "fermionAnalyticAtOrigin": true,
+      "bosonQuadraticCoefficient": -110524079.67255044,
+      "bosonAnalyticAtOrigin": false,
+      "netQuadraticCoefficient": -110523889.41306847,
+      "netAnalyticAtOrigin": false,
+      "probeMasslessLift": 2
+    },
+    {
+      "representation": "fundamental-3",
+      "block": "T",
+      "gellMannAxis": 3,
+      "t8": 1,
+      "fermionQuadraticCoefficient": 41.51316719536169,
+      "fermionAnalyticAtOrigin": true,
+      "bosonQuadraticCoefficient": -110524068.48283868,
+      "bosonAnalyticAtOrigin": false,
+      "netQuadraticCoefficient": -110524026.96967149,
+      "netAnalyticAtOrigin": false,
+      "probeMasslessLift": 2
+    },
+    {
+      "representation": "fundamental-3",
+      "block": "T",
+      "gellMannAxis": 3,
+      "t8": 2,
+      "fermionQuadraticCoefficient": 4.18492579967733,
+      "fermionAnalyticAtOrigin": true,
+      "bosonQuadraticCoefficient": -110524066.95705658,
+      "bosonAnalyticAtOrigin": false,
+      "netQuadraticCoefficient": -110524062.77213079,
+      "netAnalyticAtOrigin": false,
+      "probeMasslessLift": 2
+    },
+    {
+      "representation": "fundamental-3",
+      "block": "D",
+      "gellMannAxis": 4,
+      "t8": 0,
+      "fermionQuadraticCoefficient": 232138523.81638402,
+      "fermionAnalyticAtOrigin": false,
+      "bosonQuadraticCoefficient": -353752933.16907114,
+      "bosonAnalyticAtOrigin": false,
+      "netQuadraticCoefficient": -121614409.35268712,
+      "netAnalyticAtOrigin": false,
+      "probeMasslessLift": 6
+    },
+    {
+      "representation": "fundamental-3",
+      "block": "D",
+      "gellMannAxis": 4,
+      "t8": 0.5,
+      "fermionQuadraticCoefficient": -97.69971595119387,
+      "fermionAnalyticAtOrigin": true,
+      "bosonQuadraticCoefficient": 89.6960769694033,
+      "bosonAnalyticAtOrigin": true,
+      "netQuadraticCoefficient": -8.003638981790573,
+      "netAnalyticAtOrigin": true,
+      "probeMasslessLift": 0
+    },
+    {
+      "representation": "fundamental-3",
+      "block": "D",
+      "gellMannAxis": 4,
+      "t8": 1,
+      "fermionQuadraticCoefficient": -28.676036491148693,
+      "fermionAnalyticAtOrigin": true,
+      "bosonQuadraticCoefficient": 34.077909059959666,
+      "bosonAnalyticAtOrigin": true,
+      "netQuadraticCoefficient": 5.4018725688109726,
+      "netAnalyticAtOrigin": true,
+      "probeMasslessLift": 0
+    },
+    {
+      "representation": "fundamental-3",
+      "block": "D",
+      "gellMannAxis": 4,
+      "t8": 2,
+      "fermionQuadraticCoefficient": -16.03981285569489,
+      "fermionAnalyticAtOrigin": true,
+      "bosonQuadraticCoefficient": 12.399998873036111,
+      "bosonAnalyticAtOrigin": true,
+      "netQuadraticCoefficient": -3.6398139826587794,
+      "netAnalyticAtOrigin": true,
+      "probeMasslessLift": 0
+    },
+    {
+      "representation": "fundamental-3",
+      "block": "D",
+      "gellMannAxis": 5,
+      "t8": 0,
+      "fermionQuadraticCoefficient": 232138523.81638402,
+      "fermionAnalyticAtOrigin": false,
+      "bosonQuadraticCoefficient": -353752933.16907114,
+      "bosonAnalyticAtOrigin": false,
+      "netQuadraticCoefficient": -121614409.35268712,
+      "netAnalyticAtOrigin": false,
+      "probeMasslessLift": 6
+    },
+    {
+      "representation": "fundamental-3",
+      "block": "D",
+      "gellMannAxis": 5,
+      "t8": 0.5,
+      "fermionQuadraticCoefficient": -97.69971595119387,
+      "fermionAnalyticAtOrigin": true,
+      "bosonQuadraticCoefficient": 89.69607699427229,
+      "bosonAnalyticAtOrigin": true,
+      "netQuadraticCoefficient": -8.003638956921577,
+      "netAnalyticAtOrigin": true,
+      "probeMasslessLift": 0
+    },
+    {
+      "representation": "fundamental-3",
+      "block": "D",
+      "gellMannAxis": 5,
+      "t8": 1,
+      "fermionQuadraticCoefficient": -28.676036491148693,
+      "fermionAnalyticAtOrigin": true,
+      "bosonQuadraticCoefficient": 34.0779090954868,
+      "bosonAnalyticAtOrigin": true,
+      "netQuadraticCoefficient": 5.401872604338109,
+      "netAnalyticAtOrigin": true,
+      "probeMasslessLift": 0
+    },
+    {
+      "representation": "fundamental-3",
+      "block": "D",
+      "gellMannAxis": 5,
+      "t8": 2,
+      "fermionQuadraticCoefficient": -16.03981285569489,
+      "fermionAnalyticAtOrigin": true,
+      "bosonQuadraticCoefficient": 12.399998922774103,
+      "bosonAnalyticAtOrigin": true,
+      "netQuadraticCoefficient": -3.639813932920788,
+      "netAnalyticAtOrigin": true,
+      "probeMasslessLift": 0
+    },
+    {
+      "representation": "adjoint-8",
+      "block": "T",
+      "gellMannAxis": 1,
+      "t8": 0,
+      "fermionQuadraticCoefficient": 674234861.671181,
+      "fermionAnalyticAtOrigin": false,
+      "bosonQuadraticCoefficient": -353752933.16907114,
+      "bosonAnalyticAtOrigin": false,
+      "netQuadraticCoefficient": 320481928.5021098,
+      "netAnalyticAtOrigin": false,
+      "probeMasslessLift": 6
+    },
+    {
+      "representation": "adjoint-8",
+      "block": "T",
+      "gellMannAxis": 1,
+      "t8": 0.5,
+      "fermionQuadraticCoefficient": 209957835.22225252,
+      "fermionAnalyticAtOrigin": false,
+      "bosonQuadraticCoefficient": -110524079.6725504,
+      "bosonAnalyticAtOrigin": false,
+      "netQuadraticCoefficient": 99433755.54970212,
+      "netAnalyticAtOrigin": false,
+      "probeMasslessLift": 2
+    },
+    {
+      "representation": "adjoint-8",
+      "block": "T",
+      "gellMannAxis": 1,
+      "t8": 1,
+      "fermionQuadraticCoefficient": 209957932.97103742,
+      "fermionAnalyticAtOrigin": false,
+      "bosonQuadraticCoefficient": -110524068.48283868,
+      "bosonAnalyticAtOrigin": false,
+      "netQuadraticCoefficient": 99433864.48819873,
+      "netAnalyticAtOrigin": false,
+      "probeMasslessLift": 2
+    },
+    {
+      "representation": "adjoint-8",
+      "block": "T",
+      "gellMannAxis": 1,
+      "t8": 2,
+      "fermionQuadraticCoefficient": 209957825.83327678,
+      "fermionAnalyticAtOrigin": false,
+      "bosonQuadraticCoefficient": -110524066.95705655,
+      "bosonAnalyticAtOrigin": false,
+      "netQuadraticCoefficient": 99433758.87622021,
+      "netAnalyticAtOrigin": false,
+      "probeMasslessLift": 2
+    },
+    {
+      "representation": "adjoint-8",
+      "block": "T",
+      "gellMannAxis": 3,
+      "t8": 0,
+      "fermionQuadraticCoefficient": 674234861.671181,
+      "fermionAnalyticAtOrigin": false,
+      "bosonQuadraticCoefficient": -353752933.16907114,
+      "bosonAnalyticAtOrigin": false,
+      "netQuadraticCoefficient": 320481928.5021098,
+      "netAnalyticAtOrigin": false,
+      "probeMasslessLift": 6
+    },
+    {
+      "representation": "adjoint-8",
+      "block": "T",
+      "gellMannAxis": 3,
+      "t8": 0.5,
+      "fermionQuadraticCoefficient": 209957835.22225252,
+      "fermionAnalyticAtOrigin": false,
+      "bosonQuadraticCoefficient": -110524079.67255044,
+      "bosonAnalyticAtOrigin": false,
+      "netQuadraticCoefficient": 99433755.54970208,
+      "netAnalyticAtOrigin": false,
+      "probeMasslessLift": 2
+    },
+    {
+      "representation": "adjoint-8",
+      "block": "T",
+      "gellMannAxis": 3,
+      "t8": 1,
+      "fermionQuadraticCoefficient": 209957932.97103742,
+      "fermionAnalyticAtOrigin": false,
+      "bosonQuadraticCoefficient": -110524068.48283868,
+      "bosonAnalyticAtOrigin": false,
+      "netQuadraticCoefficient": 99433864.48819873,
+      "netAnalyticAtOrigin": false,
+      "probeMasslessLift": 2
+    },
+    {
+      "representation": "adjoint-8",
+      "block": "T",
+      "gellMannAxis": 3,
+      "t8": 2,
+      "fermionQuadraticCoefficient": 209957825.8332769,
+      "fermionAnalyticAtOrigin": false,
+      "bosonQuadraticCoefficient": -110524066.95705658,
+      "bosonAnalyticAtOrigin": false,
+      "netQuadraticCoefficient": 99433758.87622033,
+      "netAnalyticAtOrigin": false,
+      "probeMasslessLift": 2
+    },
+    {
+      "representation": "adjoint-8",
+      "block": "D",
+      "gellMannAxis": 4,
+      "t8": 0,
+      "fermionQuadraticCoefficient": 674234861.671181,
+      "fermionAnalyticAtOrigin": false,
+      "bosonQuadraticCoefficient": -353752933.16907114,
+      "bosonAnalyticAtOrigin": false,
+      "netQuadraticCoefficient": 320481928.5021098,
+      "netAnalyticAtOrigin": false,
+      "probeMasslessLift": 6
+    },
+    {
+      "representation": "adjoint-8",
+      "block": "D",
+      "gellMannAxis": 4,
+      "t8": 0.5,
+      "fermionQuadraticCoefficient": -154.8973990548319,
+      "fermionAnalyticAtOrigin": true,
+      "bosonQuadraticCoefficient": 89.6960769694033,
+      "bosonAnalyticAtOrigin": true,
+      "netQuadraticCoefficient": -65.20132208542861,
+      "netAnalyticAtOrigin": true,
+      "probeMasslessLift": 0
+    },
+    {
+      "representation": "adjoint-8",
+      "block": "D",
+      "gellMannAxis": 4,
+      "t8": 1,
+      "fermionQuadraticCoefficient": -35.164724344838305,
+      "fermionAnalyticAtOrigin": true,
+      "bosonQuadraticCoefficient": 34.077909059959666,
+      "bosonAnalyticAtOrigin": true,
+      "netQuadraticCoefficient": -1.0868152848786394,
+      "netAnalyticAtOrigin": true,
+      "probeMasslessLift": 0
+    },
+    {
+      "representation": "adjoint-8",
+      "block": "D",
+      "gellMannAxis": 4,
+      "t8": 2,
+      "fermionQuadraticCoefficient": -32.567562286089924,
+      "fermionAnalyticAtOrigin": true,
+      "bosonQuadraticCoefficient": 12.399998873036111,
+      "bosonAnalyticAtOrigin": true,
+      "netQuadraticCoefficient": -20.167563413053813,
+      "netAnalyticAtOrigin": true,
+      "probeMasslessLift": 0
+    },
+    {
+      "representation": "adjoint-8",
+      "block": "D",
+      "gellMannAxis": 5,
+      "t8": 0,
+      "fermionQuadraticCoefficient": 674234861.671181,
+      "fermionAnalyticAtOrigin": false,
+      "bosonQuadraticCoefficient": -353752933.16907114,
+      "bosonAnalyticAtOrigin": false,
+      "netQuadraticCoefficient": 320481928.5021098,
+      "netAnalyticAtOrigin": false,
+      "probeMasslessLift": 6
+    },
+    {
+      "representation": "adjoint-8",
+      "block": "D",
+      "gellMannAxis": 5,
+      "t8": 0.5,
+      "fermionQuadraticCoefficient": -154.89739909746447,
+      "fermionAnalyticAtOrigin": true,
+      "bosonQuadraticCoefficient": 89.69607699427229,
+      "bosonAnalyticAtOrigin": true,
+      "netQuadraticCoefficient": -65.20132210319218,
+      "netAnalyticAtOrigin": true,
+      "probeMasslessLift": 0
+    },
+    {
+      "representation": "adjoint-8",
+      "block": "D",
+      "gellMannAxis": 5,
+      "t8": 1,
+      "fermionQuadraticCoefficient": -35.16472435194373,
+      "fermionAnalyticAtOrigin": true,
+      "bosonQuadraticCoefficient": 34.0779090954868,
+      "bosonAnalyticAtOrigin": true,
+      "netQuadraticCoefficient": -1.08681525645693,
+      "netAnalyticAtOrigin": true,
+      "probeMasslessLift": 0
+    },
+    {
+      "representation": "adjoint-8",
+      "block": "D",
+      "gellMannAxis": 5,
+      "t8": 2,
+      "fermionQuadraticCoefficient": -32.567562470831035,
+      "fermionAnalyticAtOrigin": true,
+      "bosonQuadraticCoefficient": 12.399998922774103,
+      "bosonAnalyticAtOrigin": true,
+      "netQuadraticCoefficient": -20.167563548056933,
+      "netAnalyticAtOrigin": true,
+      "probeMasslessLift": 0
+    }
+  ],
+  "orderingRows": [
+    {
+      "representation": "fundamental-3",
+      "sector": "fermion",
+      "t8": 0.5,
+      "t": 0.75,
+      "doubletMinusTripletPotential": 4.332336737319121,
+      "ordering": "doublet-higher"
+    },
+    {
+      "representation": "fundamental-3",
+      "sector": "net",
+      "t8": 0.5,
+      "t": 0.75,
+      "doubletMinusTripletPotential": 24.30329803946676,
+      "ordering": "doublet-higher"
+    },
+    {
+      "representation": "fundamental-3",
+      "sector": "fermion",
+      "t8": 0.5,
+      "t": 1.5,
+      "doubletMinusTripletPotential": 7.96601338122305,
+      "ordering": "doublet-higher"
+    },
+    {
+      "representation": "fundamental-3",
+      "sector": "net",
+      "t8": 0.5,
+      "t": 1.5,
+      "doubletMinusTripletPotential": 16.039074280432942,
+      "ordering": "doublet-higher"
+    },
+    {
+      "representation": "fundamental-3",
+      "sector": "fermion",
+      "t8": 1,
+      "t": 0.75,
+      "doubletMinusTripletPotential": -15.190695709091326,
+      "ordering": "doublet-lower"
+    },
+    {
+      "representation": "fundamental-3",
+      "sector": "net",
+      "t8": 1,
+      "t": 0.75,
+      "doubletMinusTripletPotential": -32.551478873593666,
+      "ordering": "doublet-lower"
+    },
+    {
+      "representation": "fundamental-3",
+      "sector": "fermion",
+      "t8": 1,
+      "t": 1.5,
+      "doubletMinusTripletPotential": 9.343756609586698,
+      "ordering": "doublet-higher"
+    },
+    {
+      "representation": "fundamental-3",
+      "sector": "net",
+      "t8": 1,
+      "t": 1.5,
+      "doubletMinusTripletPotential": 30.527012386549686,
+      "ordering": "doublet-higher"
+    },
+    {
+      "representation": "fundamental-3",
+      "sector": "fermion",
+      "t8": 2,
+      "t": 0.75,
+      "doubletMinusTripletPotential": -17.051153644800475,
+      "ordering": "doublet-lower"
+    },
+    {
+      "representation": "fundamental-3",
+      "sector": "net",
+      "t8": 2,
+      "t": 0.75,
+      "doubletMinusTripletPotential": -54.395944732831154,
+      "ordering": "doublet-lower"
+    },
+    {
+      "representation": "fundamental-3",
+      "sector": "fermion",
+      "t8": 2,
+      "t": 1.5,
+      "doubletMinusTripletPotential": -12.623487865433411,
+      "ordering": "doublet-lower"
+    },
+    {
+      "representation": "fundamental-3",
+      "sector": "net",
+      "t8": 2,
+      "t": 1.5,
+      "doubletMinusTripletPotential": -35.00680794457937,
+      "ordering": "doublet-lower"
+    },
+    {
+      "representation": "adjoint-8",
+      "sector": "fermion",
+      "t8": 0.5,
+      "t": 0.75,
+      "doubletMinusTripletPotential": -37.639522973171644,
+      "ordering": "doublet-lower"
+    },
+    {
+      "representation": "adjoint-8",
+      "sector": "net",
+      "t8": 0.5,
+      "t": 0.75,
+      "doubletMinusTripletPotential": -17.66856167102401,
+      "ordering": "doublet-lower"
+    },
+    {
+      "representation": "adjoint-8",
+      "sector": "fermion",
+      "t8": 0.5,
+      "t": 1.5,
+      "doubletMinusTripletPotential": 22.384632545588403,
+      "ordering": "doublet-higher"
+    },
+    {
+      "representation": "adjoint-8",
+      "sector": "net",
+      "t8": 0.5,
+      "t": 1.5,
+      "doubletMinusTripletPotential": 30.457693444798288,
+      "ordering": "doublet-higher"
+    },
+    {
+      "representation": "adjoint-8",
+      "sector": "fermion",
+      "t8": 1,
+      "t": 0.75,
+      "doubletMinusTripletPotential": 59.87684469209061,
+      "ordering": "doublet-higher"
+    },
+    {
+      "representation": "adjoint-8",
+      "sector": "net",
+      "t8": 1,
+      "t": 0.75,
+      "doubletMinusTripletPotential": 42.51606152758827,
+      "ordering": "doublet-higher"
+    },
+    {
+      "representation": "adjoint-8",
+      "sector": "fermion",
+      "t8": 1,
+      "t": 1.5,
+      "doubletMinusTripletPotential": -33.478420031681054,
+      "ordering": "doublet-lower"
+    },
+    {
+      "representation": "adjoint-8",
+      "sector": "net",
+      "t8": 1,
+      "t": 1.5,
+      "doubletMinusTripletPotential": -12.295164254718074,
+      "ordering": "doublet-lower"
+    },
+    {
+      "representation": "adjoint-8",
+      "sector": "fermion",
+      "t8": 2,
+      "t": 0.75,
+      "doubletMinusTripletPotential": 58.71587329157501,
+      "ordering": "doublet-higher"
+    },
+    {
+      "representation": "adjoint-8",
+      "sector": "net",
+      "t8": 2,
+      "t": 0.75,
+      "doubletMinusTripletPotential": 21.371082203544333,
+      "ordering": "doublet-higher"
+    },
+    {
+      "representation": "adjoint-8",
+      "sector": "fermion",
+      "t8": 2,
+      "t": 1.5,
+      "doubletMinusTripletPotential": 15.388226564691308,
+      "ordering": "doublet-higher"
+    },
+    {
+      "representation": "adjoint-8",
+      "sector": "net",
+      "t8": 2,
+      "t": 1.5,
+      "doubletMinusTripletPotential": -6.995093514454652,
+      "ordering": "doublet-lower"
+    }
+  ],
+  "analysisInternallyConsistent": true,
+  "backgroundParameterT8IsRecordedCandidateOnly": true,
+  "backgroundParameterT8DynamicallyDerived": false,
+  "sourceDefinesSu3BreakingFermionicStructure": false,
+  "sourceDefinesBackgroundScaleOrOccupation": false,
+  "scaleLawProduced": false,
+  "physicalCouplingProvided": false,
+  "routeProvidesPhysicalMassPsiCompatibleBranch": false,
+  "routeProvidesCompletedFermionicAction": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesObservedElectroweakNamespaceMap": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesWeakAngleOrCouplingLineage": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "sourceEvidence": {
+    "phase428SummaryPath": "studies/phase428_fermion_loop_block_selection_no_go_probe_001/output/fermion_loop_block_selection_no_go_probe_summary.json",
+    "phase418SummaryPath": "studies/phase418_direction_dependent_curvature_vev_coupling_scan_001/output/direction_dependent_curvature_vev_coupling_scan_summary.json"
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "t8 is a RECORDED CANDIDATE BACKGROUND PARAMETER swept over a grid, not a dynamically derived scale; deriving it is the Phase430 chain\u0027s job. No dimensionful anchor and no scale law appear in this phase.",
+    "The workbench (4x4 lattice, 4-spinors, naive central-difference Dirac, fundamental/adjoint fermions) and the bosonic structural model are recorded conventions, not source-defined physics; the commutator mechanism [lambda_8,T]=0 vs [lambda_8,D]!=0 that drives the reopening is representation-independent.",
+    "The lambda_8 background is one candidate su(3)-breaking structure; no reviewed source defines it, an occupation/chemical potential, or a regularization scheme.",
+    "The triplet-vs-doublet ordering of the one-loop potential is t8- and t-dependent (recorded, not used to claim dynamical selection); the phase demonstrates a block-dependent mass law, not a completed vacuum.",
+    "The gauge/boson non-analyticity on the triplet direction is the phase428 massless-mode log runaway of the probe itself; the doublet gapping is the new background effect.",
+    "No Phase201 or Phase256 fill; nothing is promoted."
+  ],
+  "decision": "A constant lambda_8 background omega_bg = t8*(lambda_8/2) reopens the triplet-vs-doublet distinction that Phase428 proved is exactly degenerate for any su(3)-invariant fermion sector. The mechanism is transparent: [lambda_8, T-axes] = 0 (the background leaves the triplet unbroken) while [lambda_8, D-axes] != 0 (it breaks the doublet). On the recorded 4x4 naive-Dirac workbench the one-loop potentials, exactly degenerate at t8 = 0 (residual \u003C= 1e-9), split by O(10-100) once t8 \u003E 0. The background induces a genuine BLOCK-DEPENDENT MASS LAW: the small-t quadratic coefficient of the fermion one-loop potential is POSITIVE on the triplet probe and NEGATIVE on the doublet probe (opposite signs, both finite and h-stable in the fundamental rep), and in the gauge/boson sector the doublet direction is gapped (analytic finite quadratic) while the triplet retains probe-Higgsed massless-to-massive modes (non-analytic log runaway). This is exactly the kind of direction-dependent quadratic structure Phase418 had to import by hand - but t8 is a RECORDED CANDIDATE BACKGROUND PARAMETER, not a dynamically derived scale (deriving it is the Phase430 chain\u0027s job). No scale law is produced, no target value is consulted, and no Phase201 or Phase256 field is filled."
+}

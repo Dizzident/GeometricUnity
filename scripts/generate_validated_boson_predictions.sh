@@ -305,6 +305,11 @@ dotnet run -c Release --project studies/phase426_cox_gu_series_boson_contract_au
 dotnet run -c Release --project studies/phase427_hofseth_gu_rvg_superluminal_source_audit_001/Phase427HofsethGuRvgSuperluminalSourceAudit.csproj
 dotnet run -c Release --project studies/phase428_fermion_loop_block_selection_no_go_probe_001/Phase428FermionLoopBlockSelectionNoGoProbe.csproj
 dotnet run -c Release --project studies/phase429_target_blind_dimensionless_ratio_ledger_001/Phase429TargetBlindDimensionlessRatioLedger.csproj
+dotnet run -c Release --project studies/phase430_net_one_loop_direction_selection_probe_001/Phase430NetOneLoopDirectionSelectionProbe.csproj
+dotnet run -c Release --project studies/phase431_lambda8_background_doublet_reopening_probe_001/Phase431Lambda8BackgroundDoubletReopeningProbe.csproj
+dotnet run -c Release --project studies/phase432_welded_fermion_loop_block_selection_probe_001/Phase432WeldedFermionLoopBlockSelectionProbe.csproj
+dotnet run -c Release --project studies/phase433_blind_beta_coefficient_running_ledger_001/Phase433BlindBetaCoefficientRunningLedger.csproj
+dotnet run -c Release --project studies/phase434_conditional_observed_field_extraction_row_ledger_001/Phase434ConditionalObservedFieldExtractionRowLedger.csproj
 dotnet run -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

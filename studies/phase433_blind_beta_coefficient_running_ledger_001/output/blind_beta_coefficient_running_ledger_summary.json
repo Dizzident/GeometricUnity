@@ -1,0 +1,240 @@
+{
+  "phaseId": "phase433-blind-beta-coefficient-running-ledger",
+  "generatedAt": "2026-07-02T03:52:44.3588494+00:00",
+  "terminalStatus": "blind-beta-coefficient-running-ledger-materialized-comparison-lineage-still-missing",
+  "blindBetaCoefficientRunningLedgerPassed": true,
+  "phase404PrecursorPassed": true,
+  "phase429PrecursorPassed": true,
+  "applicationSubjectKind": "blind-beta-coefficient-running-ledger",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "c55f69a907b954582540467bd1465eae2fa7193380da348bf9ffec8cf0310369",
+  "exactRationalArithmeticVerified": true,
+  "convention": {
+    "rgEquation": "d g_i / d ln mu = - b_i g_i^3 / (16 pi^2)",
+    "signMeaning": "positive b_i means asymptotic freedom (coupling weakens toward the ultraviolet)",
+    "runningRelation": "1/g_i^2(mu) = 1/g_GUT^2 - (b_i/(8 pi^2)) ln(M/mu)",
+    "coefficientFormula": "b = (11/3) C_2(G) - (2/3) sum_Weyl T(R) - (1/3) sum_complex-scalar T(R)",
+    "gutNormalization": "g_1^2 = (5/3) g_Y^2  =\u003E  U(1) index = (3/5) sum Y^2"
+  },
+  "derivedFamilyContent": [
+    {
+      "name": "Q",
+      "colorDim": 3,
+      "su2Dim": 2,
+      "hyperchargeY": "1/6",
+      "isTotalSinglet": false
+    },
+    {
+      "name": "u^c",
+      "colorDim": 3,
+      "su2Dim": 1,
+      "hyperchargeY": "-2/3",
+      "isTotalSinglet": false
+    },
+    {
+      "name": "d^c",
+      "colorDim": 3,
+      "su2Dim": 1,
+      "hyperchargeY": "1/3",
+      "isTotalSinglet": false
+    },
+    {
+      "name": "L",
+      "colorDim": 1,
+      "su2Dim": 2,
+      "hyperchargeY": "-1/2",
+      "isTotalSinglet": false
+    },
+    {
+      "name": "e^c",
+      "colorDim": 1,
+      "su2Dim": 1,
+      "hyperchargeY": "1",
+      "isTotalSinglet": false
+    },
+    {
+      "name": "nu^c",
+      "colorDim": 1,
+      "su2Dim": 1,
+      "hyperchargeY": "0",
+      "isTotalSinglet": true
+    }
+  ],
+  "perFamilyIndexSums": {
+    "su3ColorIndexSum": "2",
+    "su2WeakIndexSum": "2",
+    "u1HyperIndexSumGutNormalized": "2",
+    "sumYSquared": "10/3",
+    "fermionContributionColor": "4/3",
+    "fermionContributionWeak": "4/3",
+    "fermionContributionHyper": "4/3"
+  },
+  "gaugeContributions": {
+    "color": "11",
+    "weak": "22/3",
+    "hyper": "0"
+  },
+  "conditionalHiggsContribution": {
+    "recordedAsConditional": true,
+    "breakingSectorEstablished": false,
+    "deltaB3": "0",
+    "deltaB2": "-1/6",
+    "deltaB1": "-1/10",
+    "note": "one complex doublet (1,2,1/2); contributes only if a symmetry-breaking sector exists (Phases 405/410/418/428 closed internal mechanisms; phase430-chain experiments pending)."
+  },
+  "betaLedger": [
+    {
+      "familyCount": 1,
+      "familyCountProvenance": "derived-single-family",
+      "higgsIncluded": false,
+      "b3": "29/3",
+      "b2": "6",
+      "b1": "-4/3",
+      "b3Decimal": 9.666666666666666,
+      "b2Decimal": 6,
+      "b1Decimal": -1.3333333333333333,
+      "runningSinSquared": {
+        "closedForm": "sin^2(x) = (numConst \u002B numLinear*x) / (denConst \u002B denLinear*x)",
+        "runningVariable": "x = (g_GUT^2/(16 pi^2)) ln(M^2/mu^2) = (g_GUT^2/(8 pi^2)) ln(M/mu)",
+        "numConst": "3",
+        "numLinear": "-18",
+        "denConst": "8",
+        "denLinear": "-34/3",
+        "valueAtUnification": "3/8",
+        "linearSlope": "-55/32",
+        "linearForm": "sin^2(x) = 3/8 \u002B (-55/32) x \u002B O(x^2)"
+      }
+    },
+    {
+      "familyCount": 1,
+      "familyCountProvenance": "derived-single-family",
+      "higgsIncluded": true,
+      "b3": "29/3",
+      "b2": "35/6",
+      "b1": "-43/30",
+      "b3Decimal": 9.666666666666666,
+      "b2Decimal": 5.833333333333333,
+      "b1Decimal": -1.4333333333333333,
+      "runningSinSquared": {
+        "closedForm": "sin^2(x) = (numConst \u002B numLinear*x) / (denConst \u002B denLinear*x)",
+        "runningVariable": "x = (g_GUT^2/(16 pi^2)) ln(M^2/mu^2) = (g_GUT^2/(8 pi^2)) ln(M/mu)",
+        "numConst": "3",
+        "numLinear": "-35/2",
+        "denConst": "8",
+        "denLinear": "-31/3",
+        "valueAtUnification": "3/8",
+        "linearSlope": "-109/64",
+        "linearForm": "sin^2(x) = 3/8 \u002B (-109/64) x \u002B O(x^2)"
+      }
+    },
+    {
+      "familyCount": 3,
+      "familyCountProvenance": "imported-observed-structural-parameter",
+      "higgsIncluded": false,
+      "b3": "7",
+      "b2": "10/3",
+      "b1": "-4",
+      "b3Decimal": 7,
+      "b2Decimal": 3.3333333333333335,
+      "b1Decimal": -4,
+      "runningSinSquared": {
+        "closedForm": "sin^2(x) = (numConst \u002B numLinear*x) / (denConst \u002B denLinear*x)",
+        "runningVariable": "x = (g_GUT^2/(16 pi^2)) ln(M^2/mu^2) = (g_GUT^2/(8 pi^2)) ln(M/mu)",
+        "numConst": "3",
+        "numLinear": "-10",
+        "denConst": "8",
+        "denLinear": "10",
+        "valueAtUnification": "3/8",
+        "linearSlope": "-55/32",
+        "linearForm": "sin^2(x) = 3/8 \u002B (-55/32) x \u002B O(x^2)"
+      }
+    },
+    {
+      "familyCount": 3,
+      "familyCountProvenance": "imported-observed-structural-parameter",
+      "higgsIncluded": true,
+      "b3": "7",
+      "b2": "19/6",
+      "b1": "-41/10",
+      "b3Decimal": 7,
+      "b2Decimal": 3.1666666666666665,
+      "b1Decimal": -4.1,
+      "runningSinSquared": {
+        "closedForm": "sin^2(x) = (numConst \u002B numLinear*x) / (denConst \u002B denLinear*x)",
+        "runningVariable": "x = (g_GUT^2/(16 pi^2)) ln(M^2/mu^2) = (g_GUT^2/(8 pi^2)) ln(M/mu)",
+        "numConst": "3",
+        "numLinear": "-19/2",
+        "denConst": "8",
+        "denLinear": "11",
+        "valueAtUnification": "3/8",
+        "linearSlope": "-109/64",
+        "linearForm": "sin^2(x) = 3/8 \u002B (-109/64) x \u002B O(x^2)"
+      }
+    }
+  ],
+  "betaLedgerRowCount": 4,
+  "familyCountProvenanceNote": {
+    "derivedFamilyCount": 1,
+    "importedObservedFamilyCount": 3,
+    "familyCountIsDerived": false,
+    "familyCountIsImportedStructuralParameter": true
+  },
+  "b1MinusB2FamilyIndependent": true,
+  "comparisonLineageFields": [
+    "the-unification-scale-M-itself (no dimensionful anchor exists in any source)",
+    "two-loop-and-higher-running-corrections",
+    "threshold-corrections-and-matching-at-intermediate-and-electroweak-scales",
+    "renormalization-scheme-definition-for-the-compared-coupling",
+    "the-actual-matter-content-between-scales (this ledger assumes exactly the derived family, nothing more)",
+    "input-coupling-value-g_GUT-at-the-unification-point (a scale-fixing datum, deliberately not supplied)"
+  ],
+  "comparisonLineageFieldCount": 6,
+  "sourceDefinedComparisonLineageFieldCount": 0,
+  "measuredElectroweakValuesConsulted": false,
+  "comparisonAgainstObservationPerformed": false,
+  "derivationComparisonSeparationMaintained": true,
+  "sourceDefinesRunningOrThresholds": false,
+  "sourceDefinesUnificationScale": false,
+  "sourceDefinesSymmetryBreakingSector": false,
+  "higgsBreakingSectorEstablished": false,
+  "physicalCouplingProvided": false,
+  "routeProvidesPhysicalMassPsiCompatibleBranch": false,
+  "routeProvidesCompletedFermionicAction": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesObservedElectroweakNamespaceMap": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesWeakAngleOrCouplingLineage": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "sourceEvidence": {
+    "phase404SummaryPath": "studies/phase404_gu_embedding_chain_coupling_ratio_enumeration_001/output/gu_embedding_chain_coupling_ratio_enumeration_summary.json",
+    "phase429SummaryPath": "studies/phase429_target_blind_dimensionless_ratio_ledger_001/output/target_blind_dimensionless_ratio_ledger_summary.json"
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "The b_i are pure group theory of the derived matter content; they are scale-free and carry no dimensionful information.",
+    "No measured electroweak value appears in this phase and no comparison was performed; derivation and comparison are strictly separated by construction.",
+    "Family multiplicity is NOT derived: n_f = 1 is the derived single family; n_f = 3 is an imported observed structural parameter, marked as such on every row.",
+    "The Higgs row is conditional on a symmetry-breaking sector that no internal mechanism supplies (Phases 405/410/418/428 closed) and no source defines; it is recorded separately and never asserted.",
+    "The running family sin^2(x) is a symbolic one-parameter surface in a dimensionless variable; it is NOT evaluated at any physical scale because no unification scale or input coupling exists in any source.",
+    "Any future comparison phase must import the listed lineage fields explicitly and pass the existing promotion gates.",
+    "No Phase201 or Phase256 fill."
+  ],
+  "decision": "The one-loop beta coefficients of the derived matter content are now an explicit fail-closed ledger of EXACT rationals, computed as pure group theory with no measured value and no comparison anywhere. Per derived family every gauge group receives the identical fermion index sum 2 (color, weak, and GUT-normalized hypercharge alike), giving the family-universal contribution 4/3; the conditional Higgs doublet adds -1/6 to b_2 and -1/10 to b_1 and is recorded separately and marked conditional (no breaking sector is established). The n_f = 3 (imported, not derived) with-Higgs row reproduces the standard SM set (b_3, b_2, b_1) = (7, 19/6, -41/10) in the asymptotic-freedom-positive convention. The running family sin^2 theta_W(x) = 3(1 - b_2 x)/(8 - (5 b_1 \u002B 3 b_2) x) is fixed at 3/8 at the unification point with exact linear slope 15(b_1 - b_2)/64, which is family-INDEPENDENT (-55/32 without Higgs, -109/64 with). Every row still lacks the full comparison lineage - the unification scale, higher-order and threshold corrections, the scheme, the actual inter-scale matter content, and an input coupling; no measured value was consulted, no comparison was performed, and no Phase201/Phase256 field is filled."
+}

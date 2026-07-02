@@ -195,6 +195,11 @@ const string Phase426Path = "studies/phase426_cox_gu_series_boson_contract_audit
 const string Phase427Path = "studies/phase427_hofseth_gu_rvg_superluminal_source_audit_001/output/hofseth_gu_rvg_superluminal_source_audit_summary.json";
 const string Phase428Path = "studies/phase428_fermion_loop_block_selection_no_go_probe_001/output/fermion_loop_block_selection_no_go_probe_summary.json";
 const string Phase429Path = "studies/phase429_target_blind_dimensionless_ratio_ledger_001/output/target_blind_dimensionless_ratio_ledger_summary.json";
+const string Phase430Path = "studies/phase430_net_one_loop_direction_selection_probe_001/output/net_one_loop_direction_selection_probe_summary.json";
+const string Phase431Path = "studies/phase431_lambda8_background_doublet_reopening_probe_001/output/lambda8_background_doublet_reopening_probe_summary.json";
+const string Phase432Path = "studies/phase432_welded_fermion_loop_block_selection_probe_001/output/welded_fermion_loop_block_selection_probe_summary.json";
+const string Phase433Path = "studies/phase433_blind_beta_coefficient_running_ledger_001/output/blind_beta_coefficient_running_ledger_summary.json";
+const string Phase434Path = "studies/phase434_conditional_observed_field_extraction_row_ledger_001/output/conditional_observed_field_extraction_row_ledger_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
 const string Phase283Path = "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json";
 const string Phase284Path = "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json";
@@ -423,6 +428,11 @@ using var phase426 = File.Exists(Phase426Path) ? JsonDocument.Parse(File.ReadAll
 using var phase427 = File.Exists(Phase427Path) ? JsonDocument.Parse(File.ReadAllText(Phase427Path)) : null;
 using var phase428 = File.Exists(Phase428Path) ? JsonDocument.Parse(File.ReadAllText(Phase428Path)) : null;
 using var phase429 = File.Exists(Phase429Path) ? JsonDocument.Parse(File.ReadAllText(Phase429Path)) : null;
+using var phase430 = File.Exists(Phase430Path) ? JsonDocument.Parse(File.ReadAllText(Phase430Path)) : null;
+using var phase431 = File.Exists(Phase431Path) ? JsonDocument.Parse(File.ReadAllText(Phase431Path)) : null;
+using var phase432 = File.Exists(Phase432Path) ? JsonDocument.Parse(File.ReadAllText(Phase432Path)) : null;
+using var phase433 = File.Exists(Phase433Path) ? JsonDocument.Parse(File.ReadAllText(Phase433Path)) : null;
+using var phase434 = File.Exists(Phase434Path) ? JsonDocument.Parse(File.ReadAllText(Phase434Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -5842,6 +5852,114 @@ var targetBlindDimensionlessRatioLedgerPassed = targetBlindDimensionlessRatioLed
     && JsonBool(phase429.RootElement, "phase201TemplateMutated") is false
     && JsonInt(phase429.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
     && JsonInt(phase429.RootElement, "acceptedContractFieldCount") == 0;
+var netOneLoopDirectionSelectionProbeMaterialized = phase430 is not null;
+var netOneLoopDirectionSelectionProbePassed = netOneLoopDirectionSelectionProbeMaterialized
+    && JsonBool(phase430!.RootElement, "netOneLoopDirectionSelectionProbePassed") is true
+    && JsonBool(phase430.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase430.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase430.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase430.RootElement, "applicationSubjectKind") == "net-one-loop-direction-selection-probe"
+    && JsonBool(phase430.RootElement, "analysisInternallyConsistent") is true
+    && JsonBool(phase430.RootElement, "netSlopesMatchTargets") is true
+    && JsonBool(phase430.RootElement, "tdNetSlopeExactlyDegenerate") is true
+    && JsonBool(phase430.RootElement, "netOneLoopDirectionSelective") is true
+    && JsonBool(phase430.RootElement, "derivedContentSelectsHyperchargeAxis") is true
+    && JsonBool(phase430.RootElement, "su3ToSu2U1BreakingDirectionDynamicallyPreferred") is true
+    && JsonBool(phase430.RootElement, "noFiniteMinimumOnRays") is true
+    && JsonBool(phase430.RootElement, "bosonicOneLoopIsRecordedWorkbenchModel") is true
+    && JsonBool(phase430.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase430.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase430.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase430.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase430.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase430.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase430.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonInt(phase430.RootElement, "acceptedContractFieldCount") == 0;
+var lambda8BackgroundDoubletReopeningProbeMaterialized = phase431 is not null;
+var lambda8BackgroundDoubletReopeningProbePassed = lambda8BackgroundDoubletReopeningProbeMaterialized
+    && JsonBool(phase431!.RootElement, "lambda8BackgroundDoubletReopeningProbePassed") is true
+    && JsonBool(phase431.RootElement, "targetBlindConstruction") is true
+    && (JsonString(phase431.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase431.RootElement, "applicationSubjectKind") == "lambda8-background-doublet-reopening-probe"
+    && JsonBool(phase431.RootElement, "analysisInternallyConsistent") is true
+    && JsonBool(phase431.RootElement, "closedFormBlockSpectrumVerified") is true
+    && JsonBool(phase431.RootElement, "tdDegenerateAtZeroBackground") is true
+    && JsonBool(phase431.RootElement, "tdDegeneracyBrokenByBackground") is true
+    && JsonBool(phase431.RootElement, "backgroundInducesBlockDependentMassLaw") is true
+    && JsonBool(phase431.RootElement, "backgroundParameterT8IsRecordedCandidateOnly") is true
+    && JsonBool(phase431.RootElement, "backgroundParameterT8DynamicallyDerived") is false
+    && JsonBool(phase431.RootElement, "scaleLawProduced") is false
+    && JsonBool(phase431.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase431.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase431.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase431.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase431.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase431.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonInt(phase431.RootElement, "acceptedContractFieldCount") == 0;
+var weldedFermionLoopBlockSelectionProbeMaterialized = phase432 is not null;
+var weldedFermionLoopBlockSelectionProbePassed = weldedFermionLoopBlockSelectionProbeMaterialized
+    && JsonBool(phase432!.RootElement, "weldedFermionLoopBlockSelectionProbePassed") is true
+    && JsonBool(phase432.RootElement, "targetBlindConstruction") is true
+    && (JsonString(phase432.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase432.RootElement, "applicationSubjectKind") == "welded-fermion-loop-block-selection-probe"
+    && JsonBool(phase432.RootElement, "analysisInternallyConsistent") is true
+    && JsonBool(phase432.RootElement, "carrierAClosedFormVerified") is true
+    && JsonBool(phase432.RootElement, "blockDiagonalizationVerified") is true
+    && JsonBool(phase432.RootElement, "su2LAxesMutuallyLoopDegenerate") is true
+    && JsonBool(phase432.RootElement, "weldZeroReproducesCarrierA") is true
+    && JsonBool(phase432.RootElement, "weldBreaksInternalLoopDegeneracies") is true
+    && JsonBool(phase432.RootElement, "weldStructureSourcePinned") is true
+    && JsonBool(phase432.RootElement, "weldCouplingNormalizationSourceDefined") is false
+    && JsonBool(phase432.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase432.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase432.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase432.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase432.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase432.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonInt(phase432.RootElement, "acceptedContractFieldCount") == 0;
+var blindBetaCoefficientRunningLedgerMaterialized = phase433 is not null;
+var blindBetaCoefficientRunningLedgerPassed = blindBetaCoefficientRunningLedgerMaterialized
+    && JsonBool(phase433!.RootElement, "blindBetaCoefficientRunningLedgerPassed") is true
+    && JsonBool(phase433.RootElement, "targetBlindConstruction") is true
+    && (JsonString(phase433.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase433.RootElement, "applicationSubjectKind") == "blind-beta-coefficient-running-ledger"
+    && JsonBool(phase433.RootElement, "exactRationalArithmeticVerified") is true
+    && JsonInt(phase433.RootElement, "betaLedgerRowCount") == 4
+    && JsonBool(phase433.RootElement, "b1MinusB2FamilyIndependent") is true
+    && JsonBool(phase433.RootElement, "measuredElectroweakValuesConsulted") is false
+    && JsonBool(phase433.RootElement, "comparisonAgainstObservationPerformed") is false
+    && JsonBool(phase433.RootElement, "derivationComparisonSeparationMaintained") is true
+    && JsonBool(phase433.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase433.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase433.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase433.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase433.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase433.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonInt(phase433.RootElement, "acceptedContractFieldCount") == 0;
+var conditionalObservedFieldExtractionRowLedgerMaterialized = phase434 is not null;
+var conditionalObservedFieldExtractionRowLedgerPassed = conditionalObservedFieldExtractionRowLedgerMaterialized
+    && JsonBool(phase434!.RootElement, "conditionalObservedFieldExtractionRowLedgerPassed") is true
+    && JsonBool(phase434.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase434.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && (JsonString(phase434.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase434.RootElement, "applicationSubjectKind") == "conditional-observed-field-extraction-row-ledger"
+    && JsonBool(phase434.RootElement, "measuredElectroweakValuesConsulted") is false
+    && JsonBool(phase434.RootElement, "candidateVevExistenceEstablished") is false
+    && JsonBool(phase434.RootElement, "isObservedFieldExtractionTheorem") is false
+    && JsonBool(phase434.RootElement, "mixingExact") is true
+    && JsonBool(phase434.RootElement, "massMatrixExact") is true
+    && JsonBool(phase434.RootElement, "extractionRowsExact") is true
+    && JsonBool(phase434.RootElement, "derivationComparisonSeparationMaintained") is true
+    && JsonBool(phase434.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase434.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase434.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase434.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase434.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase434.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase434.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonBool(phase434.RootElement, "phase201TemplateMutated") is false
+    && JsonInt(phase434.RootElement, "fieldsAppliedToPhase201TemplateCount") == 0
+    && JsonInt(phase434.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -8250,6 +8368,46 @@ var checklist = new[]
             ? $"targetBlindDimensionlessRatioLedgerPassed={JsonBool(phase429!.RootElement, "targetBlindDimensionlessRatioLedgerPassed")}; fixedRowCount={JsonInt(phase429.RootElement, "fixedRowCount")}; conditionalRowCount={JsonInt(phase429.RootElement, "conditionalRowCount")}; comparisonLineageFieldCount={JsonInt(phase429.RootElement, "comparisonLineageFieldCount")}; sourceDefinedComparisonLineageFieldCount={JsonInt(phase429.RootElement, "sourceDefinedComparisonLineageFieldCount")}; measuredElectroweakValuesConsulted={JsonBool(phase429.RootElement, "measuredElectroweakValuesConsulted")}; canFillPhase201WzContract={JsonBool(phase429.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase429.RootElement, "decision")}"
             : "Phase429 artifact not materialized",
         Phase429Path),
+    new ObjectiveChecklistItem(
+        "net-one-loop-direction-selection-probe-materialized",
+        "Decide whether the full one-loop landscape is direction-selecting on the block menu and whether the derived matter content prefers the hypercharge (su(3)->su(2)xu(1)) axis.",
+        netOneLoopDirectionSelectionProbePassed ? "passed" : "failed",
+        netOneLoopDirectionSelectionProbeMaterialized
+            ? $"netOneLoopDirectionSelectionProbePassed={JsonBool(phase430!.RootElement, "netOneLoopDirectionSelectionProbePassed")}; netOneLoopDirectionSelective={JsonBool(phase430.RootElement, "netOneLoopDirectionSelective")}; derivedContentSelectsHyperchargeAxis={JsonBool(phase430.RootElement, "derivedContentSelectsHyperchargeAxis")}; noFiniteMinimumOnRays={JsonBool(phase430.RootElement, "noFiniteMinimumOnRays")}; canFillPhase201WzContract={JsonBool(phase430.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase430.RootElement, "decision")}"
+            : "Phase430 artifact not materialized",
+        Phase430Path),
+    new ObjectiveChecklistItem(
+        "lambda8-background-doublet-reopening-probe-materialized",
+        "Test whether a candidate lambda_8 background reopens the triplet/doublet distinction and induces the block-dependent mass law without claiming dynamical derivation of the background.",
+        lambda8BackgroundDoubletReopeningProbePassed ? "passed" : "failed",
+        lambda8BackgroundDoubletReopeningProbeMaterialized
+            ? $"lambda8BackgroundDoubletReopeningProbePassed={JsonBool(phase431!.RootElement, "lambda8BackgroundDoubletReopeningProbePassed")}; tdDegeneracyBrokenByBackground={JsonBool(phase431.RootElement, "tdDegeneracyBrokenByBackground")}; backgroundInducesBlockDependentMassLaw={JsonBool(phase431.RootElement, "backgroundInducesBlockDependentMassLaw")}; backgroundParameterT8DynamicallyDerived={JsonBool(phase431.RootElement, "backgroundParameterT8DynamicallyDerived")}; canFillPhase201WzContract={JsonBool(phase431.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase431.RootElement, "decision")}"
+            : "Phase431 artifact not materialized",
+        Phase431Path),
+    new ObjectiveChecklistItem(
+        "welded-fermion-loop-block-selection-probe-materialized",
+        "Test whether the source-pinned chimeric weld supplies loop-level symmetry-breaking fermionic structure beyond an internal-gauge-invariant sector.",
+        weldedFermionLoopBlockSelectionProbePassed ? "passed" : "failed",
+        weldedFermionLoopBlockSelectionProbeMaterialized
+            ? $"weldedFermionLoopBlockSelectionProbePassed={JsonBool(phase432!.RootElement, "weldedFermionLoopBlockSelectionProbePassed")}; weldBreaksInternalLoopDegeneracies={JsonBool(phase432.RootElement, "weldBreaksInternalLoopDegeneracies")}; weldChangesSu2LVsHyperchargeOrdering={JsonBool(phase432.RootElement, "weldChangesSu2LVsHyperchargeOrdering")}; weldStructureSourcePinned={JsonBool(phase432.RootElement, "weldStructureSourcePinned")}; weldCouplingNormalizationSourceDefined={JsonBool(phase432.RootElement, "weldCouplingNormalizationSourceDefined")}; canFillPhase201WzContract={JsonBool(phase432.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase432.RootElement, "decision")}"
+            : "Phase432 artifact not materialized",
+        Phase432Path),
+    new ObjectiveChecklistItem(
+        "blind-beta-coefficient-running-ledger-materialized",
+        "Compute exact-rational one-loop beta coefficients from the derived family content and the one-parameter blind running of sin^2 theta_W, with derivation strictly separated from comparison.",
+        blindBetaCoefficientRunningLedgerPassed ? "passed" : "failed",
+        blindBetaCoefficientRunningLedgerMaterialized
+            ? $"blindBetaCoefficientRunningLedgerPassed={JsonBool(phase433!.RootElement, "blindBetaCoefficientRunningLedgerPassed")}; exactRationalArithmeticVerified={JsonBool(phase433.RootElement, "exactRationalArithmeticVerified")}; betaLedgerRowCount={JsonInt(phase433.RootElement, "betaLedgerRowCount")}; b1MinusB2FamilyIndependent={JsonBool(phase433.RootElement, "b1MinusB2FamilyIndependent")}; measuredElectroweakValuesConsulted={JsonBool(phase433.RootElement, "measuredElectroweakValuesConsulted")}; canFillPhase201WzContract={JsonBool(phase433.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase433.RootElement, "decision")}"
+            : "Phase433 artifact not materialized",
+        Phase433Path),
+    new ObjectiveChecklistItem(
+        "conditional-observed-field-extraction-row-ledger-materialized",
+        "Derive the photon/W/Z extraction rows as exact functions of a candidate doublet VEV, conditionally partitioning the Phase419 template without filling any contract field.",
+        conditionalObservedFieldExtractionRowLedgerPassed ? "passed" : "failed",
+        conditionalObservedFieldExtractionRowLedgerMaterialized
+            ? $"conditionalObservedFieldExtractionRowLedgerPassed={JsonBool(phase434!.RootElement, "conditionalObservedFieldExtractionRowLedgerPassed")}; candidateVevExistenceEstablished={JsonBool(phase434.RootElement, "candidateVevExistenceEstablished")}; extractionRowsExact={JsonBool(phase434.RootElement, "extractionRowsExact")}; conditionallyDeterminedRowCount={JsonInt(phase434.RootElement, "conditionallyDeterminedRowCount")}; measuredElectroweakValuesConsulted={JsonBool(phase434.RootElement, "measuredElectroweakValuesConsulted")}; canFillPhase256ObservedFieldExtractionContract={JsonBool(phase434.RootElement, "canFillPhase256ObservedFieldExtractionContract")}; decision={JsonString(phase434.RootElement, "decision")}"
+            : "Phase434 artifact not materialized",
+        Phase434Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

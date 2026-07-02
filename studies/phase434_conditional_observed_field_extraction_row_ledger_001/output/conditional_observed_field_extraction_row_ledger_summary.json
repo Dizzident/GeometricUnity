@@ -1,0 +1,345 @@
+{
+  "phaseId": "phase434-conditional-observed-field-extraction-row-ledger",
+  "generatedAt": "2026-07-02T03:52:45.0427135+00:00",
+  "terminalStatus": "conditional-observed-field-extraction-row-ledger-materialized-vev-and-lineage-still-missing",
+  "conditionalObservedFieldExtractionRowLedgerPassed": true,
+  "phase404PrecursorPassed": true,
+  "phase419PrecursorPassed": true,
+  "phase429PrecursorPassed": true,
+  "applicationSubjectKind": "conditional-observed-field-extraction-row-ledger",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "f5eafcc74583ecdf83872fdf914c1a5483847499f97359d9cbe8ae44c396023b",
+  "mixingExact": true,
+  "massMatrixExact": true,
+  "extractionRowsExact": true,
+  "kernelRelation": {
+    "tanSquaredThetaW": 0.6,
+    "tanSquaredExactForm": "3/5",
+    "sinSquaredThetaW": 0.37499999999999994,
+    "sinSquaredExactForm": "3/8",
+    "cosSquaredThetaW": 0.625,
+    "cosSquaredExactForm": "5/8",
+    "sinThetaWExactForm": "(1/4)*sqrt(6)",
+    "cosThetaWExactForm": "(1/4)*sqrt(10)"
+  },
+  "massMatrix": {
+    "basis": [
+      "W1",
+      "W2",
+      "W3",
+      "B"
+    ],
+    "prefactor": "v^2/4",
+    "gPrimeSqOverGSq": 0.6,
+    "gPrimeSqOverGSqExactForm": "3/5",
+    "eigenvaluesInVevUnitsExactForm": "(v^2/4) * { g^2, g^2, g^2\u002BgPrime^2, 0 }",
+    "eigenvalues": [
+      {
+        "eigenId": "w1-charged",
+        "exactForm": "(v^2/4) g^2",
+        "symbolicValue": "g^2",
+        "numericInGSqUnits": 1,
+        "note": "charged W1 direction; degenerate with W2."
+      },
+      {
+        "eigenId": "w2-charged",
+        "exactForm": "(v^2/4) g^2",
+        "symbolicValue": "g^2",
+        "numericInGSqUnits": 1,
+        "note": "charged W2 direction; degenerate with W1."
+      },
+      {
+        "eigenId": "z-neutral",
+        "exactForm": "(v^2/4) (g^2 \u002B gPrime^2)",
+        "symbolicValue": "g^2 \u002B gPrime^2 = (8/5) g^2",
+        "numericInGSqUnits": 1.6,
+        "note": "massive neutral eigenvalue of the (W3,B) block."
+      },
+      {
+        "eigenId": "photon-neutral",
+        "exactForm": "0",
+        "symbolicValue": "0",
+        "numericInGSqUnits": -1.1102230246251565E-16,
+        "note": "massless neutral eigenvalue; det of the (W3,B) block is exactly 0."
+      }
+    ],
+    "mWSqOverMZSq": 0.625,
+    "mWSqOverMZSqExactForm": "5/8",
+    "mWOverMZExactForm": "sqrt(5/8) = sqrt(10)/4",
+    "photonMassSqInGSqUnits": -1.1102230246251565E-16,
+    "phase429RatioRowFound": true,
+    "phase429TreeMwOverMz": 0.7905694150420949,
+    "crossCheckMatchesPhase429": true
+  },
+  "extractionRows": [
+    {
+      "rowId": "photon-eigenstate",
+      "field": "A = sin(theta_W) W3 \u002B cos(theta_W) B",
+      "terms": [
+        {
+          "basisComponent": "W3",
+          "coefficientExactForm": "(1/4)*sqrt(6)",
+          "coefficientValue": 0.6123724356957945,
+          "coefficientVerified": true,
+          "note": "sin theta_W = sqrt(6)/4"
+        },
+        {
+          "basisComponent": "B",
+          "coefficientExactForm": "(1/4)*sqrt(10)",
+          "coefficientValue": 0.7905694150420949,
+          "coefficientVerified": true,
+          "note": "cos theta_W = sqrt(10)/4"
+        }
+      ],
+      "note": "massless neutral eigenstate; eigenvector of the (W3,B) block for eigenvalue 0.",
+      "category": "conditionally-determined",
+      "requiresVevAmplitude": false
+    },
+    {
+      "rowId": "z-eigenstate",
+      "field": "Z = cos(theta_W) W3 - sin(theta_W) B",
+      "terms": [
+        {
+          "basisComponent": "W3",
+          "coefficientExactForm": "(1/4)*sqrt(10)",
+          "coefficientValue": 0.7905694150420949,
+          "coefficientVerified": true,
+          "note": "cos theta_W = sqrt(10)/4"
+        },
+        {
+          "basisComponent": "B",
+          "coefficientExactForm": "(-1/4)*sqrt(6)",
+          "coefficientValue": -0.6123724356957945,
+          "coefficientVerified": true,
+          "note": "-sin theta_W = -sqrt(6)/4"
+        }
+      ],
+      "note": "massive neutral eigenstate orthogonal to the photon; eigenvector for eigenvalue g^2\u002BgPrime^2.",
+      "category": "conditionally-determined",
+      "requiresVevAmplitude": false
+    },
+    {
+      "rowId": "w-plus-eigenstate",
+      "field": "W\u002B = (W1 - i W2)/sqrt(2)",
+      "terms": [
+        {
+          "basisComponent": "W1",
+          "coefficientExactForm": "(1/2)*sqrt(2)",
+          "coefficientValue": 0.7071067811865476,
+          "coefficientVerified": true,
+          "note": "1/sqrt(2) = sqrt(2)/2"
+        },
+        {
+          "basisComponent": "-i*W2",
+          "coefficientExactForm": "(1/2)*sqrt(2)",
+          "coefficientValue": 0.7071067811865476,
+          "coefficientVerified": true,
+          "note": "coefficient of -i W2 is 1/sqrt(2)"
+        }
+      ],
+      "note": "charged eigenstate; degenerate mass (v^2/4) g^2 with W-.",
+      "category": "conditionally-determined",
+      "requiresVevAmplitude": false
+    },
+    {
+      "rowId": "w-minus-eigenstate",
+      "field": "W- = (W1 \u002B i W2)/sqrt(2)",
+      "terms": [
+        {
+          "basisComponent": "W1",
+          "coefficientExactForm": "(1/2)*sqrt(2)",
+          "coefficientValue": 0.7071067811865476,
+          "coefficientVerified": true,
+          "note": "1/sqrt(2) = sqrt(2)/2"
+        },
+        {
+          "basisComponent": "\u002Bi*W2",
+          "coefficientExactForm": "(1/2)*sqrt(2)",
+          "coefficientValue": 0.7071067811865476,
+          "coefficientVerified": true,
+          "note": "coefficient of \u002Bi W2 is 1/sqrt(2)"
+        }
+      ],
+      "note": "charged eigenstate; degenerate mass (v^2/4) g^2 with W\u002B.",
+      "category": "conditionally-determined",
+      "requiresVevAmplitude": false
+    },
+    {
+      "rowId": "electric-charge-relation",
+      "field": "e = g sin(theta_W)  (e^2 = (3/8) g^2)",
+      "terms": [
+        {
+          "basisComponent": "g",
+          "coefficientExactForm": "(1/4)*sqrt(6)",
+          "coefficientValue": 0.6123724356957945,
+          "coefficientVerified": true,
+          "note": "e/g = sin theta_W = sqrt(6)/4, so e^2/g^2 = 3/8"
+        }
+      ],
+      "note": "unbroken U(1)_em coupling from the photon projection; dimensionless ratio e^2/g^2 = 3/8.",
+      "category": "conditionally-determined",
+      "requiresVevAmplitude": false
+    },
+    {
+      "rowId": "w-z-mass-ratio",
+      "field": "m_W^2/m_Z^2 = g^2/(g^2\u002BgPrime^2) = cos^2 theta_W = 5/8",
+      "terms": [
+        {
+          "basisComponent": "m_W^2/m_Z^2",
+          "coefficientExactForm": "5/8",
+          "coefficientValue": 0.625,
+          "coefficientVerified": true,
+          "note": "5/8 (rational; VEV-independent)"
+        }
+      ],
+      "note": "custodial tree-level mass ratio; VEV amplitude cancels. Cross-checked against Phase429.",
+      "category": "conditionally-determined",
+      "requiresVevAmplitude": false
+    }
+  ],
+  "extractionRowCount": 6,
+  "conditionallyDeterminedRowCount": 6,
+  "conditionalCompletionLedger": {
+    "phase256TemplateFieldCount": 20,
+    "classificationPartitionsTemplate": true,
+    "conditionallyDeterminedByRowsGivenAnyVev": [
+      {
+        "field": "electroweakGaugeEmbeddingId",
+        "why": "SU(2)_L x U(1)_Y embedding and weak angle tan^2=3/5 fixed by the internal kernel relation."
+      },
+      {
+        "field": "photonEigenstateProjectionId",
+        "why": "A = sin W3 \u002B cos B with the exact-radical coefficients above; massless by construction."
+      },
+      {
+        "field": "zBosonSourceRowId",
+        "why": "Z = cos W3 - sin B eigenstate direction fixed by the same block; only its amplitude needs v."
+      },
+      {
+        "field": "wBosonSourceRowId",
+        "why": "W\u002B- = (W1 -\u002B i W2)/sqrt(2) charged eigenstate direction fixed; only its amplitude needs v."
+      },
+      {
+        "field": "wzCommonBridgeGatePassed",
+        "why": "the common bridge is the mass RATIO m_W/m_Z = cos = sqrt(5/8), VEV-independent."
+      },
+      {
+        "field": "quadraticElectroweakMassOperatorId",
+        "why": "the mass-matrix FORM (v^2/4)*[[g^2..],[..gPrime^2]] and its eigenstructure/ratios are fixed."
+      },
+      {
+        "field": "targetBlindConstructionHash",
+        "why": "provenance of the target-blind construction is fixed by this phase\u0027s algebra itself."
+      }
+    ],
+    "stillRequiresVevAmplitudeOrScale": [
+      {
+        "field": "fourDimensionalObservedVacuumArtifactId",
+        "why": "the candidate VEV/vacuum amplitude (and its very existence) is not supplied; Phases 405/410/418/428 closed the mechanisms."
+      },
+      {
+        "field": "branchNormalizationSourceId",
+        "why": "the overall normalization that sets the dimensionful scale of the mass operator needs the VEV amplitude."
+      },
+      {
+        "field": "wBosonRawAmplitudeGatePassed",
+        "why": "m_W = (v/2) g is an absolute amplitude requiring the VEV scale, not a ratio."
+      },
+      {
+        "field": "zBosonRawAmplitudeGatePassed",
+        "why": "m_Z = (v/2) sqrt(g^2\u002BgPrime^2) is an absolute amplitude requiring the VEV scale, not a ratio."
+      }
+    ],
+    "stillRequiresIndependentLineage": [
+      {
+        "field": "observedFieldExtractionTheoremId",
+        "why": "no extraction THEOREM exists; this is only the conditional algebra a theorem must reproduce."
+      },
+      {
+        "field": "sourceReferenceIds",
+        "why": "requires the independent source lineage that would establish VEV existence and comparison provenance."
+      },
+      {
+        "field": "higgsScalarSourceOperatorId",
+        "why": "no scalar potential exists in any source; the Higgs source operator is unavailable."
+      },
+      {
+        "field": "higgsMassiveScalarProfileId",
+        "why": "the Higgs mass row requires a potential; no potential exists (independent lineage)."
+      },
+      {
+        "field": "higgsPotentialSelfCouplingRelationId",
+        "why": "the Higgs self-coupling requires a potential; none exists."
+      },
+      {
+        "field": "canonicalOrDeclaredShiabBranchId",
+        "why": "branch selection is a closed internal mechanism (Phases 405/410/418/428); independent lineage."
+      },
+      {
+        "field": "stabilitySidecarIds",
+        "why": "stability sidecars are independent artifacts, not fixed by the tree-level mixing algebra."
+      },
+      {
+        "field": "targetComparisonAfterConstructionGatePassed",
+        "why": "comparison requires pole extraction, scheme, running from the unification point - none present."
+      },
+      {
+        "field": "phase201And209ApplicationReady",
+        "why": "application readiness requires pole extraction, GeV normalization, and units lineage."
+      }
+    ],
+    "conditionallyDeterminedFieldCount": 7,
+    "stillRequiresVevAmplitudeFieldCount": 4,
+    "stillRequiresIndependentLineageFieldCount": 9
+  },
+  "honestBoundaries": [
+    "The doublet VEV is a CANDIDATE parameter; its existence is not established (Phases 405/410/418/428 closed the internal mechanisms; the phase430-chain experiments are pending).",
+    "The extraction rows are tree-level in the custodial limit.",
+    "Nothing here is an observed-field extraction THEOREM; it is the conditional algebra that such a theorem must reproduce.",
+    "Derivation is strictly separated from comparison as in Phase429: no measured value is consulted and no residual against observation is computed.",
+    "All ratios (mixing angles, eigenstate directions, charge relation, m_W/m_Z) are VEV-independent; every absolute mass still needs the VEV amplitude, and pole/GeV/scheme lineage is independent of everything here."
+  ],
+  "candidateVevExistenceEstablished": false,
+  "measuredElectroweakValuesConsulted": false,
+  "comparisonAgainstObservationPerformed": false,
+  "derivationComparisonSeparationMaintained": true,
+  "treeLevelCustodialLimit": true,
+  "isObservedFieldExtractionTheorem": false,
+  "physicalCouplingProvided": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesObservedElectroweakNamespaceMap": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "sourceDefinedFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "canFillPhase256Reason": "The eigenstate rows, mixing angles, charge relation and mass RATIOS are only conditionally determined; the VEV existence/amplitude fields and the pole/GeV/scheme lineage fields remain unfilled, so the observed-field extraction contract stays closed.",
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "sourceEvidence": {
+    "phase404SummaryPath": "studies/phase404_gu_embedding_chain_coupling_ratio_enumeration_001/output/gu_embedding_chain_coupling_ratio_enumeration_summary.json",
+    "phase419SummaryPath": "studies/phase419_observed_field_symbolic_extraction_template_001/output/observed_field_symbolic_extraction_template_summary.json",
+    "phase429SummaryPath": "studies/phase429_target_blind_dimensionless_ratio_ledger_001/output/target_blind_dimensionless_ratio_ledger_summary.json"
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "The extraction rows are conditional algebra keyed to a CANDIDATE doublet VEV whose existence and amplitude no internal mechanism supplies.",
+    "No measured electroweak value appears and no comparison against observation was performed; derivation and comparison are strictly separated.",
+    "Nothing here is an observed-field extraction theorem; it is the algebra such a theorem must reproduce.",
+    "Absolute W/Z masses and all pole/GeV/scheme/Higgs-potential lineage remain outside this phase.",
+    "No Phase201 or Phase256 fill."
+  ],
+  "decision": "The Phase419 extraction targets are now explicit as exact functions of a candidate doublet VEV. From the internal kernel relation tan^2 theta_W = 3/5 alone, the |D_mu Phi|^2 mass matrix in the (W1,W2,W3,B) basis has eigenvalues (v^2/4){g^2,g^2,g^2\u002BgPrime^2,0}, giving a massless photon and m_W^2/m_Z^2 = cos^2 = 5/8 exactly (cross-checked against Phase429). The photon A = (sqrt6/4)W3 \u002B (sqrt10/4)B, Z = (sqrt10/4)W3 - (sqrt6/4)B, W\u002B- = (W1 -\u002B i W2)/sqrt(2), and e = g sin (e^2 = (3/8)g^2) are recorded with exact radical coefficients verified to 1e-15. Against the 20-field Phase419 template: 7 fields are now conditionally determined by these rows given any doublet VEV, 4 still require the VEV amplitude/scale for absolute masses, and 9 still require independent lineage (pole extraction, GeV normalization, running/scheme, Higgs potential). The candidate VEV\u0027s existence is not established and no measured value was consulted, so no Phase201 or Phase256 field is filled."
+}
