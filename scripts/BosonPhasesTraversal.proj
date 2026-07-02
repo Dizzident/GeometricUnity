@@ -304,6 +304,8 @@
     <PhaseProject Include="../studies/phase434_conditional_observed_field_extraction_row_ledger_001/Phase434ConditionalObservedFieldExtractionRowLedger.csproj" />
     <PhaseProject Include="../studies/phase435_two_condensate_scale_gap_probe_001/Phase435TwoCondensateScaleGapProbe.csproj" />
     <PhaseProject Include="../studies/phase436_exact_hessian_saturation_no_go_probe_001/Phase436ExactHessianSaturationNoGoProbe.csproj" />
+    <PhaseProject Include="../studies/phase437_four_dimensional_transmutation_scaling_probe_001/Phase437FourDimensionalTransmutationScalingProbe.csproj" />
+    <PhaseProject Include="../studies/phase438_self_consistent_condensate_gap_equation_probe_001/Phase438SelfConsistentCondensateGapEquationProbe.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />

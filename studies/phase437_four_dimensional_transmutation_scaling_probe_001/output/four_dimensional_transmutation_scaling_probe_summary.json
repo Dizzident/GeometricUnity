@@ -1,0 +1,764 @@
+{
+  "phaseId": "phase437-four-dimensional-transmutation-scaling-probe",
+  "generatedAt": "2026-07-02T14:37:55.1643806+00:00",
+  "terminalStatus": "four-dimensional-landscape-log-dominated-runaway-structural-cw-regime-unreachable-on-bounded-dispersion-lattice",
+  "fourDimensionalTransmutationScalingProbePassed": true,
+  "precursorsPassed": true,
+  "phase430PrecursorPassed": true,
+  "phase435PrecursorPassed": true,
+  "phase436PrecursorPassed": true,
+  "applicationSubjectKind": "four-dimensional-transmutation-scaling-probe",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "7422ed1e2b44306363efdbffb78f54c5aac248e094b2618ccb8c483b54c090e0",
+  "workbenchConventions": {
+    "latticeDimension": 4,
+    "latticeSizes": [
+      4,
+      6,
+      8,
+      12
+    ],
+    "spinorDimension": 4,
+    "diracDiscretization": "naive-central-difference-hermitian-momentum-blocks",
+    "rayConfiguration": "omega_mu = t*U on ALL four lattice directions (Phase430 convention)",
+    "gaugeGroup": "su(3) Gell-Mann",
+    "probedDirections": [
+      "u = lambda_8/2 (hypercharge/Cartan axis)",
+      "u = lambda_1/2 (T-type reference)"
+    ],
+    "probedContents": [
+      "fundamental (x1)",
+      "derived (x4 fundamental copies, Phase404/430 convention)"
+    ],
+    "fermionicModel": "closed-form Clifford block: lambda^2(k,g) = sum_mu (sin k_mu \u002B t*mu_g)^2, multiplicity 4",
+    "bosonicModel": "combined-direction adjoint masses^2 = t^2*eigenvalues(-(ad_U)^2) (Phase430 workbench model)",
+    "polarizationConvention": 2,
+    "polarizationConventionNote": "2 polarizations is a RECORDED WORKBENCH CONVENTION consistent with Phase430; the physical D-2=2 (massless) vs 3 (massive) transverse count is NOT asserted",
+    "treeOnRays": 0,
+    "treeOnRaysNote": "[U,U] = 0 on the pure ray =\u003E tree field strength and its quartic vanish (recorded)",
+    "dispersion": "eps_k^2 = sum_mu sin^2 k_mu (bounded: |sin k|\u003C=1)",
+    "infraredConvention": "zero-dispersion doubler momenta excluded from BOTH determinants (V continuous, V(0)=0)",
+    "largeTLogSlopeConvention": "all-momenta Phase430 convention, Richardson-extrapolated across t=40/80/160 octaves",
+    "workbenchConventionsAreSourceDefined": false
+  },
+  "adjointMassStructure": {
+    "nonzeroAdjointCountLambda8": 4,
+    "nonzeroAdjointCountLambda1": 6,
+    "gaugeEigenvaluesLambda8": [
+      -0.5773502691896258,
+      0.2886751345948129,
+      0.2886751345948129
+    ],
+    "gaugeEigenvaluesLambda1": [
+      -0.4999999999999999,
+      0,
+      0.4999999999999999
+    ]
+  },
+  "batteries": {
+    "gammaAnticommutationResidual": 0,
+    "gammaAnticommutationVerified": true,
+    "denseBlockResidual": 6.536993168992922E-13,
+    "denseBlockVerified": true,
+    "denseCheckDimension": 192,
+    "twoDAnchorMaxResidual": 1.8912373008106442E-05,
+    "twoDAnchorReproducesPhase430": true,
+    "twoDimVsFourDMaxSlopeGap": 1.4318010329361641E-05,
+    "twoDimVsFourDConsistent": true,
+    "maxPerVolumeSlopeResidual": 2.153202989818581E-05,
+    "perVolumeSlopesMatchIntegers": true,
+    "maxOctaveGrowthRatio": 1.0877376384328779,
+    "octaveSlopesFlat": true,
+    "octaveGrowthRatioNote": "a genuine t^4 log t term would give octaveGrowthRatio ~ 16 per octave; ~1 means logarithmic",
+    "maxCancellationRatio": 48.20057991955584,
+    "cwFitIsIllConditioned": true,
+    "batteriesConsistent": true
+  },
+  "twoDConsistencyAnchor": [
+    {
+      "content": "fundamental",
+      "fermionCopies": 1,
+      "direction": "hypercharge-lambda8",
+      "gellMannAxis": 8,
+      "richardsonLogSlopePerLattice": -63.9999327935387,
+      "perSiteSlope": -3.9999957995961686,
+      "targetPerSite": -4,
+      "phase430SlopePerLattice": -64,
+      "residual": 4.200403831422506E-06
+    },
+    {
+      "content": "fundamental",
+      "fermionCopies": 1,
+      "direction": "T-type-lambda1",
+      "gellMannAxis": 1,
+      "richardsonLogSlopePerLattice": 63.99990421529048,
+      "perSiteSlope": 3.999994013455655,
+      "targetPerSite": 4,
+      "phase430SlopePerLattice": 64,
+      "residual": 5.986544345137901E-06
+    },
+    {
+      "content": "derived-4x",
+      "fermionCopies": 4,
+      "direction": "hypercharge-lambda8",
+      "gellMannAxis": 8,
+      "richardsonLogSlopePerLattice": -639.9996974020319,
+      "perSiteSlope": -39.99998108762699,
+      "targetPerSite": -40,
+      "phase430SlopePerLattice": -640,
+      "residual": 1.8912373008106442E-05
+    },
+    {
+      "content": "derived-4x",
+      "fermionCopies": 4,
+      "direction": "T-type-lambda1",
+      "gellMannAxis": 1,
+      "richardsonLogSlopePerLattice": -320.00007042458896,
+      "perSiteSlope": -20.00000440153681,
+      "targetPerSite": -20,
+      "phase430SlopePerLattice": -320,
+      "residual": 4.401536809695017E-06
+    }
+  ],
+  "cases": [
+    {
+      "lattice": 4,
+      "content": "fundamental",
+      "fermionCopies": 1,
+      "direction": "hypercharge-lambda8",
+      "gellMannAxis": 8,
+      "excludedZeroDispersionMomentumCount": 16,
+      "cwFit": {
+        "bT4LogT": 0.00030783575965118284,
+        "cT4": -0.001220913985746306,
+        "dT2LogT": 0.15279913186390354,
+        "eT2": -0.359165403631219,
+        "aConst": 0.9104139453419876,
+        "rms": 0.024037241914789422,
+        "meanAbsW": 4.778475500787356,
+        "cancellationRatio": 40.88045186947626,
+        "fitImpliedTStar": 41.10465490282068,
+        "fitImpliedTStarInWindow": false
+      },
+      "minimumScan": {
+        "minT": 20,
+        "minValue": -7.4970946033565795,
+        "endValue": -7.4970946033565795,
+        "interiorMinimum": false
+      },
+      "largeTSlope": {
+        "perVolumeRichardsonSlope": -4.000001121409128,
+        "analyticPerVolumeSlope": -4,
+        "slopeResidual": 1.1214091282241156E-06,
+        "octaveSlopeNear": -3.9681997193409484,
+        "octaveSlopeFar": -3.9995206996437793,
+        "octaveGrowthRatio": 1.0078929949392852
+      }
+    },
+    {
+      "lattice": 4,
+      "content": "fundamental",
+      "fermionCopies": 1,
+      "direction": "T-type-lambda1",
+      "gellMannAxis": 1,
+      "excludedZeroDispersionMomentumCount": 16,
+      "cwFit": {
+        "bT4LogT": 9.13042246013969E-05,
+        "cT4": -0.00032463584015824884,
+        "dT2LogT": -0.00855170795028747,
+        "eT2": 0.05916162554702675,
+        "aConst": -0.31760462639403425,
+        "rms": 0.04101746235733574,
+        "meanAbsW": 2.5960244933475645,
+        "cancellationRatio": 20.008183496890325,
+        "fitImpliedTStar": 27.263264976090287,
+        "fitImpliedTStarInWindow": false
+      },
+      "minimumScan": {
+        "minT": 0.05,
+        "minValue": 0.0013370216334633866,
+        "endValue": 4.871932223110743,
+        "interiorMinimum": false
+      },
+      "largeTSlope": {
+        "perVolumeRichardsonSlope": 3.999978467970102,
+        "analyticPerVolumeSlope": 4,
+        "slopeResidual": 2.153202989818581E-05,
+        "octaveSlopeNear": 3.6743688022354157,
+        "octaveSlopeFar": 3.9945953024809415,
+        "octaveGrowthRatio": 1.0871514313018078
+      }
+    },
+    {
+      "lattice": 4,
+      "content": "derived-4x",
+      "fermionCopies": 4,
+      "direction": "hypercharge-lambda8",
+      "gellMannAxis": 8,
+      "excludedZeroDispersionMomentumCount": 16,
+      "cwFit": {
+        "bT4LogT": 0.0036651136236081922,
+        "cT4": -0.014424782103837448,
+        "dT2LogT": 1.685941253160353,
+        "eT2": -3.884690976571838,
+        "aConst": -1.2642624639226094,
+        "rms": 0.3422533964490781,
+        "meanAbsW": 59.67338782977331,
+        "cancellationRatio": 38.676623207614504,
+        "fitImpliedTStar": 39.8729630447366,
+        "fitImpliedTStarInWindow": false
+      },
+      "minimumScan": {
+        "minT": 20,
+        "minValue": -86.78088002907928,
+        "endValue": -86.78088002907928,
+        "interiorMinimum": false
+      },
+      "largeTSlope": {
+        "perVolumeRichardsonSlope": -39.99999745558139,
+        "analyticPerVolumeSlope": -40,
+        "slopeResidual": 2.544418606476029E-06,
+        "octaveSlopeNear": -39.53358262892982,
+        "octaveSlopeFar": -39.99267445255581,
+        "octaveGrowthRatio": 1.011612704771412
+      }
+    },
+    {
+      "lattice": 4,
+      "content": "derived-4x",
+      "fermionCopies": 4,
+      "direction": "T-type-lambda1",
+      "gellMannAxis": 1,
+      "excludedZeroDispersionMomentumCount": 16,
+      "cwFit": {
+        "bT4LogT": 0.0030603954034546005,
+        "cT4": -0.011924047391452863,
+        "dT2LogT": 1.2452879513316546,
+        "eT2": -2.751662572585997,
+        "aConst": -5.013467769005408,
+        "rms": 0.4315511866607871,
+        "meanAbsW": 40.77050814173888,
+        "cancellationRatio": 46.79479529663491,
+        "fitImpliedTStar": 38.330428298221435,
+        "fitImpliedTStarInWindow": false
+      },
+      "minimumScan": {
+        "minT": 20,
+        "minValue": -55.107305295367595,
+        "endValue": -55.107305295367595,
+        "interiorMinimum": false
+      },
+      "largeTSlope": {
+        "perVolumeRichardsonSlope": -20.00002113621679,
+        "analyticPerVolumeSlope": -20,
+        "slopeResidual": 2.1136216791006746E-05,
+        "octaveSlopeNear": -20.196188586680712,
+        "octaveSlopeFar": -20.003376006658744,
+        "octaveGrowthRatio": 0.9904530214107267
+      }
+    },
+    {
+      "lattice": 6,
+      "content": "fundamental",
+      "fermionCopies": 1,
+      "direction": "hypercharge-lambda8",
+      "gellMannAxis": 8,
+      "excludedZeroDispersionMomentumCount": 16,
+      "cwFit": {
+        "bT4LogT": 0.0003765232951991651,
+        "cT4": -0.0014867112935920456,
+        "dT2LogT": 0.17793548044481625,
+        "eT2": -0.412233924681482,
+        "aConst": 1.1864580554881612,
+        "rms": 0.044159631573575754,
+        "meanAbsW": 5.063779961005898,
+        "cancellationRatio": 46.975541750727,
+        "fitImpliedTStar": 40.3876509582709,
+        "fitImpliedTStarInWindow": false
+      },
+      "minimumScan": {
+        "minT": 20,
+        "minValue": -7.948469045992578,
+        "endValue": -7.948469045992578,
+        "interiorMinimum": false
+      },
+      "largeTSlope": {
+        "perVolumeRichardsonSlope": -4.000000269294769,
+        "analyticPerVolumeSlope": -4,
+        "slopeResidual": 2.692947687066294E-07,
+        "octaveSlopeNear": -3.969127237939913,
+        "octaveSlopeFar": -3.9995209117975397,
+        "octaveGrowthRatio": 1.0076575206677933
+      }
+    },
+    {
+      "lattice": 6,
+      "content": "fundamental",
+      "fermionCopies": 1,
+      "direction": "T-type-lambda1",
+      "gellMannAxis": 1,
+      "excludedZeroDispersionMomentumCount": 16,
+      "cwFit": {
+        "bT4LogT": 0.00011474869702605662,
+        "cT4": -0.0004114408181005354,
+        "dT2LogT": -0.004664090450494884,
+        "eT2": 0.05486290398012219,
+        "aConst": -0.2867189822686043,
+        "rms": 0.05452951396302897,
+        "meanAbsW": 2.767975367192227,
+        "cancellationRatio": 23.782917896000892,
+        "fitImpliedTStar": 28.09471870893334,
+        "fitImpliedTStarInWindow": false
+      },
+      "minimumScan": {
+        "minT": 0.05,
+        "minValue": 0.001422889873566997,
+        "endValue": 5.17916464749247,
+        "interiorMinimum": false
+      },
+      "largeTSlope": {
+        "perVolumeRichardsonSlope": 3.9999806847200823,
+        "analyticPerVolumeSlope": 4,
+        "slopeResidual": 1.9315279917719863E-05,
+        "octaveSlopeNear": 3.6724004664715952,
+        "octaveSlopeFar": 3.9945947425669357,
+        "octaveGrowthRatio": 1.0877339710189344
+      }
+    },
+    {
+      "lattice": 6,
+      "content": "derived-4x",
+      "fermionCopies": 4,
+      "direction": "hypercharge-lambda8",
+      "gellMannAxis": 8,
+      "excludedZeroDispersionMomentumCount": 16,
+      "cwFit": {
+        "bT4LogT": 0.004101887365984492,
+        "cT4": -0.016121080790421734,
+        "dT2LogT": 1.8549607877626886,
+        "eT2": -4.250415444523772,
+        "aConst": -0.4982921769766951,
+        "rms": 0.40462466608342434,
+        "meanAbsW": 63.25649878380204,
+        "cancellationRatio": 40.77640995090883,
+        "fitImpliedTStar": 39.65280702640448,
+        "fitImpliedTStarInWindow": false
+      },
+      "minimumScan": {
+        "minT": 20,
+        "minValue": -91.92473755082342,
+        "endValue": -91.92473755082342,
+        "interiorMinimum": false
+      },
+      "largeTSlope": {
+        "perVolumeRichardsonSlope": -39.99999474838872,
+        "analyticPerVolumeSlope": -40,
+        "slopeResidual": 5.25161127740148E-06,
+        "octaveSlopeNear": -39.53661150101059,
+        "octaveSlopeFar": -39.99267512523922,
+        "octaveGrowthRatio": 1.0115352228457153
+      }
+    },
+    {
+      "lattice": 6,
+      "content": "derived-4x",
+      "fermionCopies": 4,
+      "direction": "T-type-lambda1",
+      "gellMannAxis": 1,
+      "excludedZeroDispersionMomentumCount": 16,
+      "cwFit": {
+        "bT4LogT": 0.0033387501018413233,
+        "cT4": -0.012996909213250684,
+        "dT2LogT": 1.3448106160845257,
+        "eT2": -2.9617278201417494,
+        "aConst": -5.130777124738436,
+        "rms": 0.4998542411289018,
+        "meanAbsW": 43.19551231283851,
+        "cancellationRatio": 48.1417018291051,
+        "fitImpliedTStar": 38.196616228340815,
+        "fitImpliedTStarInWindow": false
+      },
+      "minimumScan": {
+        "minT": 20,
+        "minValue": -58.31153227323959,
+        "endValue": -58.31153227323959,
+        "interiorMinimum": false
+      },
+      "largeTSlope": {
+        "perVolumeRichardsonSlope": -20.000018720749086,
+        "analyticPerVolumeSlope": -20,
+        "slopeResidual": 1.8720749086043043E-05,
+        "octaveSlopeNear": -20.19836769897873,
+        "octaveSlopeFar": -20.003376616135274,
+        "octaveGrowthRatio": 0.9903461960021
+      }
+    },
+    {
+      "lattice": 8,
+      "content": "fundamental",
+      "fermionCopies": 1,
+      "direction": "hypercharge-lambda8",
+      "gellMannAxis": 8,
+      "excludedZeroDispersionMomentumCount": 16,
+      "cwFit": {
+        "bT4LogT": 0.0003921689893524374,
+        "cT4": -0.0015460902288368683,
+        "dT2LogT": 0.18265168180381033,
+        "eT2": -0.42161534888196434,
+        "aConst": 1.2021803776759985,
+        "rms": 0.03677392049205969,
+        "meanAbsW": 5.1321879742267305,
+        "cancellationRatio": 48.20057991955584,
+        "fitImpliedTStar": 40.14139808747423,
+        "fitImpliedTStarInWindow": false
+      },
+      "minimumScan": {
+        "minT": 20,
+        "minValue": -8.041821933311258,
+        "endValue": -8.041821933311258,
+        "interiorMinimum": false
+      },
+      "largeTSlope": {
+        "perVolumeRichardsonSlope": -4.000000268766712,
+        "analyticPerVolumeSlope": -4,
+        "slopeResidual": 2.687667119971593E-07,
+        "octaveSlopeNear": -3.969134302356944,
+        "octaveSlopeFar": -3.999520911826757,
+        "octaveGrowthRatio": 1.0076557272077615
+      }
+    },
+    {
+      "lattice": 8,
+      "content": "fundamental",
+      "fermionCopies": 1,
+      "direction": "T-type-lambda1",
+      "gellMannAxis": 1,
+      "excludedZeroDispersionMomentumCount": 16,
+      "cwFit": {
+        "bT4LogT": 0.00010846756409687762,
+        "cT4": -0.000387134138543486,
+        "dT2LogT": -0.007051922132139381,
+        "eT2": 0.060038867193663276,
+        "aConst": -0.30687170635258526,
+        "rms": 0.05262139803497395,
+        "meanAbsW": 2.8117968826199027,
+        "cancellationRatio": 22.02913821756697,
+        "fitImpliedTStar": 27.636118548897688,
+        "fitImpliedTStarInWindow": false
+      },
+      "minimumScan": {
+        "minT": 0.05,
+        "minValue": 0.0014670243634524738,
+        "endValue": 5.248239048759622,
+        "interiorMinimum": false
+      },
+      "largeTSlope": {
+        "perVolumeRichardsonSlope": 3.9999806858646205,
+        "analyticPerVolumeSlope": 4,
+        "slopeResidual": 1.9314135379477904E-05,
+        "octaveSlopeNear": 3.672388169878907,
+        "octaveSlopeFar": 3.9945947424995802,
+        "octaveGrowthRatio": 1.0877376131595853
+      }
+    },
+    {
+      "lattice": 8,
+      "content": "derived-4x",
+      "fermionCopies": 4,
+      "direction": "hypercharge-lambda8",
+      "gellMannAxis": 8,
+      "excludedZeroDispersionMomentumCount": 16,
+      "cwFit": {
+        "bT4LogT": 0.004195618929361518,
+        "cT4": -0.016479954624404988,
+        "dT2LogT": 1.8865363606985526,
+        "eT2": -4.316089339840509,
+        "aConst": -0.5790914623804998,
+        "rms": 0.4235262100328055,
+        "meanAbsW": 64.04426890256444,
+        "cancellationRatio": 41.171408231958395,
+        "fitImpliedTStar": 39.56306399994757,
+        "fitImpliedTStarInWindow": false
+      },
+      "minimumScan": {
+        "minT": 20,
+        "minValue": -92.96424888098232,
+        "endValue": -92.96424888098232,
+        "interiorMinimum": false
+      },
+      "largeTSlope": {
+        "perVolumeRichardsonSlope": -39.99999474637382,
+        "analyticPerVolumeSlope": -40,
+        "slopeResidual": 5.25362617764813E-06,
+        "octaveSlopeNear": -39.53663820794886,
+        "octaveSlopeFar": -39.99267512533717,
+        "octaveGrowthRatio": 1.0115345395577064
+      }
+    },
+    {
+      "lattice": 8,
+      "content": "derived-4x",
+      "fermionCopies": 4,
+      "direction": "T-type-lambda1",
+      "gellMannAxis": 1,
+      "excludedZeroDispersionMomentumCount": 16,
+      "cwFit": {
+        "bT4LogT": 0.00335572867916103,
+        "cT4": -0.013064106825850548,
+        "dT2LogT": 1.3529277641782123,
+        "eT2": -2.98052198501735,
+        "aConst": -5.350227596438311,
+        "rms": 0.49859703852340154,
+        "meanAbsW": 43.69588668585986,
+        "cancellationRatio": 47.83647273628853,
+        "fitImpliedTStar": 38.209188092177506,
+        "fitImpliedTStarInWindow": false
+      },
+      "minimumScan": {
+        "minT": 20,
+        "minValue": -58.93769209604909,
+        "endValue": -58.93769209604909,
+        "interiorMinimum": false
+      },
+      "largeTSlope": {
+        "perVolumeRichardsonSlope": -20.00001871954714,
+        "analyticPerVolumeSlope": -20,
+        "slopeResidual": 1.8719547139056658E-05,
+        "octaveSlopeNear": -20.1983807139688,
+        "octaveSlopeFar": -20.003376616201248,
+        "octaveGrowthRatio": 0.9903455578677804
+      }
+    },
+    {
+      "lattice": 12,
+      "content": "fundamental",
+      "fermionCopies": 1,
+      "direction": "hypercharge-lambda8",
+      "gellMannAxis": 8,
+      "excludedZeroDispersionMomentumCount": 16,
+      "cwFit": {
+        "bT4LogT": 0.0003892384469503226,
+        "cT4": -0.0015350955018231156,
+        "dT2LogT": 0.18198579655103028,
+        "eT2": -0.4205406632151421,
+        "aConst": 1.173602428781922,
+        "rms": 0.034724833039504736,
+        "meanAbsW": 5.164735903889266,
+        "cancellationRatio": 47.55621291434083,
+        "fitImpliedTStar": 40.199053717643785,
+        "fitImpliedTStarInWindow": false
+      },
+      "minimumScan": {
+        "minT": 20,
+        "minValue": -8.082783819908617,
+        "endValue": -8.082783819908617,
+        "interiorMinimum": false
+      },
+      "largeTSlope": {
+        "perVolumeRichardsonSlope": -4.000000268792184,
+        "analyticPerVolumeSlope": -4,
+        "slopeResidual": 2.6879218406605787E-07,
+        "octaveSlopeNear": -3.9691343087730098,
+        "octaveSlopeFar": -3.9995209118470196,
+        "octaveGrowthRatio": 1.007655725584001
+      }
+    },
+    {
+      "lattice": 12,
+      "content": "fundamental",
+      "fermionCopies": 1,
+      "direction": "T-type-lambda1",
+      "gellMannAxis": 1,
+      "excludedZeroDispersionMomentumCount": 16,
+      "cwFit": {
+        "bT4LogT": 0.00010750722481888355,
+        "cT4": -0.0003832873684574975,
+        "dT2LogT": -0.007565656304568571,
+        "eT2": 0.06126224962399565,
+        "aConst": -0.3039156483397506,
+        "rms": 0.05289935663563614,
+        "meanAbsW": 2.8344605216749574,
+        "cancellationRatio": 21.635855741945726,
+        "fitImpliedTStar": 27.528567465363853,
+        "fitImpliedTStarInWindow": false
+      },
+      "minimumScan": {
+        "minT": 0.05,
+        "minValue": 0.001507694488185998,
+        "endValue": 5.280183123833339,
+        "interiorMinimum": false
+      },
+      "largeTSlope": {
+        "perVolumeRichardsonSlope": 3.9999806859515545,
+        "analyticPerVolumeSlope": 4,
+        "slopeResidual": 1.9314048445462362E-05,
+        "octaveSlopeNear": 3.6723880846063395,
+        "octaveSlopeFar": 3.994594742558739,
+        "octaveGrowthRatio": 1.0877376384328779
+      }
+    },
+    {
+      "lattice": 12,
+      "content": "derived-4x",
+      "fermionCopies": 4,
+      "direction": "hypercharge-lambda8",
+      "gellMannAxis": 8,
+      "excludedZeroDispersionMomentumCount": 16,
+      "cwFit": {
+        "bT4LogT": 0.004195778456540689,
+        "cT4": -0.01648223835695633,
+        "dT2LogT": 1.8886857086954276,
+        "eT2": -4.322422624411447,
+        "aConst": -0.783269146648468,
+        "rms": 0.4207372161015288,
+        "meanAbsW": 64.40309355472762,
+        "cancellationRatio": 40.9476935276726,
+        "fitImpliedTStar": 39.57869255290202,
+        "fitImpliedTStarInWindow": false
+      },
+      "minimumScan": {
+        "minT": 20,
+        "minValue": -93.41323248032835,
+        "endValue": -93.41323248032835,
+        "interiorMinimum": false
+      },
+      "largeTSlope": {
+        "perVolumeRichardsonSlope": -39.99999474637979,
+        "analyticPerVolumeSlope": -40,
+        "slopeResidual": 5.253620209089149E-06,
+        "octaveSlopeNear": -39.53663822980862,
+        "octaveSlopeFar": -39.992675125341755,
+        "octaveGrowthRatio": 1.0115345389985462
+      }
+    },
+    {
+      "lattice": 12,
+      "content": "derived-4x",
+      "fermionCopies": 4,
+      "direction": "T-type-lambda1",
+      "gellMannAxis": 1,
+      "excludedZeroDispersionMomentumCount": 16,
+      "cwFit": {
+        "bT4LogT": 0.0033693071404287587,
+        "cT4": -0.013116582611864111,
+        "dT2LogT": 1.357973866961892,
+        "eT2": -2.991348372435686,
+        "aConst": -5.438871602122624,
+        "rms": 0.5019513075192363,
+        "meanAbsW": 43.91234360642825,
+        "cancellationRatio": 47.79187457421516,
+        "fitImpliedTStar": 38.20480873966061,
+        "fitImpliedTStarInWindow": false
+      },
+      "minimumScan": {
+        "minT": 20,
+        "minValue": -59.20170544815069,
+        "endValue": -59.20170544815069,
+        "interiorMinimum": false
+      },
+      "largeTSlope": {
+        "perVolumeRichardsonSlope": -20.000018719448658,
+        "analyticPerVolumeSlope": -20,
+        "slopeResidual": 1.8719448657833482E-05,
+        "octaveSlopeNear": -20.19838079977863,
+        "octaveSlopeFar": -20.003376616131273,
+        "octaveGrowthRatio": 0.9903455536569796
+      }
+    }
+  ],
+  "bCoefficientStabilityAcrossL": [
+    {
+      "content": "fundamental",
+      "direction": "hypercharge-lambda8",
+      "bByLattice": [
+        0.00030783575965118284,
+        0.0003765232951991651,
+        0.0003921689893524374,
+        0.0003892384469503226
+      ]
+    },
+    {
+      "content": "fundamental",
+      "direction": "T-type-lambda1",
+      "bByLattice": [
+        9.13042246013969E-05,
+        0.00011474869702605662,
+        0.00010846756409687762,
+        0.00010750722481888355
+      ]
+    },
+    {
+      "content": "derived-4x",
+      "direction": "hypercharge-lambda8",
+      "bByLattice": [
+        0.0036651136236081922,
+        0.004101887365984492,
+        0.004195618929361518,
+        0.004195778456540689
+      ]
+    },
+    {
+      "content": "derived-4x",
+      "direction": "T-type-lambda1",
+      "bByLattice": [
+        0.0030603954034546005,
+        0.0033387501018413233,
+        0.00335572867916103,
+        0.0033693071404287587
+      ]
+    }
+  ],
+  "verdicts": {
+    "landscapeLogDominatedAtEveryL": true,
+    "fourDimensionalCwRegimeReached": false,
+    "transmutationMinimumExists": false,
+    "anyTransmutationMinimumExists": false,
+    "runawayStructuralAtOneLoopInFourD": true,
+    "derivedHyperchargeRunawayAtEveryL": true,
+    "twoDimVsFourDConsistent": true,
+    "cwFitIsIllConditioned": true,
+    "scalingDataIsCandidateOnly": true,
+    "noScalePromoted": true
+  },
+  "physicalCouplingProvided": false,
+  "routeProvidesPhysicalMassPsiCompatibleBranch": false,
+  "routeProvidesCompletedFermionicAction": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesObservedElectroweakNamespaceMap": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesWeakAngleOrCouplingLineage": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "runtimeSeconds": 3.1748954,
+  "sourceEvidence": {
+    "phase430SummaryPath": "studies/phase430_net_one_loop_direction_selection_probe_001/output/net_one_loop_direction_selection_probe_summary.json",
+    "phase435SummaryPath": "studies/phase435_two_condensate_scale_gap_probe_001/output/two_condensate_scale_gap_probe_summary.json",
+    "phase436SummaryPath": "studies/phase436_exact_hessian_saturation_no_go_probe_001/output/exact_hessian_saturation_no_go_probe_summary.json"
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "The per-volume slopes, CW fit coefficients, minimum scans, and octave-slope diagnostics are workbench scaling structure, not physical spectra or condensate predictions.",
+    "The bosonic one-loop is a RECORDED WORKBENCH MODEL (masses^2 = t^2*eigenvalues(-(ad_U)^2), 2 polarizations); only the mode-count arithmetic is exact, and the exact control-branch Hessian of Phase436 confirms only the COUNTS, not the mass values.",
+    "The lattice, 4-spinors, naive Dirac, gamma set, and the fermion representations are recorded conventions, not source-defined physics.",
+    "The finding is that the CW t^4 log t regime is UNREACHABLE on a bounded-dispersion finite lattice, so the no-minimum runaway is structural; this is a statement about THIS workbench, and any log-saturation/scale structure that could stop the runaway remains undefined by any reviewed source.",
+    "The fit-implied t* ~ 40 for the derived hypercharge content is an out-of-window extrapolation artifact of an ill-conditioned polynomial fit; it is NOT a realised minimum and is NOT a scale.",
+    "No VEV scale, pole, or GeV lineage; no Phase201 or Phase256 fill; no physical predictions."
+  ],
+  "decision": "The no-minimum verdict is decided against the four-dimensional Coleman-Weinberg question and survives it: it is STRUCTURAL, not a small-2D-lattice artifact. On a Euclidean L^4 lattice (L in {4,6,8,12}) with the naive bounded dispersion |sin k|\u003C=1, the per-unit-volume net one-loop functional along the pure ray omega_mu = t*U (tree = 0 because [U,U]=0) is LOG-DOMINATED at every L: its large-t octave log slope s(t) = [W(2t)-W(t)]/log 2 is FLAT (growth ratio ~ 1, not the ~16x/octave a genuine t^4 log t term would give) and its Richardson value equals the analytic integer count exactly. That per-volume slope reproduces the 2D-per-site slope to \u003C1e-2 (derived hypercharge -40, derived T -20, fundamental hypercharge -4, fundamental T \u002B4 = Phase430 slope / 16), so the 4D landscape is the SAME regime as the 2D workbench - the dimension does not change the verdict. The genuine dimensional-transmutation t^4 log t regime is not reachable on a finite lattice with bounded dispersion (it requires the unbounded continuum phase space); accordingly the CW polynomial fit yields only tiny, ill-conditioned t^4-family coefficients (individual fitted terms exceed |W| by large cancelling factors), and although the fit formally implies a turning point t* = exp(-C/B - 1/4) ~ 40 for the derived hypercharge content, t* lies OUTSIDE the analysed window and is NEVER realised: the direct minimum scan finds no interior minimum at any L (derived contents run away monotonically to the t=20 boundary; the fundamental T-axis rises monotonically from the origin). The runaway is therefore structural at one loop in four dimensions. Consistency batteries pass exactly: gamma anticommutation to 1e-12, the L=2 dense 192-dim operator reproduces the momentum-block functional to \u003C1e-8, and the 2D anchor reproduces Phase430\u0027s slope integers to \u003C1e-3. Everything is recorded blind as candidate-only workbench structure; no scale, pole, or GeV lineage exists; no Phase201 or Phase256 field is filled; nothing is promoted."
+}

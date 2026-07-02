@@ -200,6 +200,8 @@ const string Phase431Path = "studies/phase431_lambda8_background_doublet_reopeni
 const string Phase432Path = "studies/phase432_welded_fermion_loop_block_selection_probe_001/output/welded_fermion_loop_block_selection_probe_summary.json";
 const string Phase433Path = "studies/phase433_blind_beta_coefficient_running_ledger_001/output/blind_beta_coefficient_running_ledger_summary.json";
 const string Phase435Path = "studies/phase435_two_condensate_scale_gap_probe_001/output/two_condensate_scale_gap_probe_summary.json";
+const string Phase437Path = "studies/phase437_four_dimensional_transmutation_scaling_probe_001/output/four_dimensional_transmutation_scaling_probe_summary.json";
+const string Phase438Path = "studies/phase438_self_consistent_condensate_gap_equation_probe_001/output/self_consistent_condensate_gap_equation_probe_summary.json";
 const string Phase436Path = "studies/phase436_exact_hessian_saturation_no_go_probe_001/output/exact_hessian_saturation_no_go_probe_summary.json";
 const string Phase434Path = "studies/phase434_conditional_observed_field_extraction_row_ledger_001/output/conditional_observed_field_extraction_row_ledger_summary.json";
 const string Phase282Path = "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json";
@@ -437,6 +439,8 @@ using var phase433 = File.Exists(Phase433Path) ? JsonDocument.Parse(File.ReadAll
 using var phase434 = File.Exists(Phase434Path) ? JsonDocument.Parse(File.ReadAllText(Phase434Path)) : null;
 using var phase435 = File.Exists(Phase435Path) ? JsonDocument.Parse(File.ReadAllText(Phase435Path)) : null;
 using var phase436 = File.Exists(Phase436Path) ? JsonDocument.Parse(File.ReadAllText(Phase436Path)) : null;
+using var phase437 = File.Exists(Phase437Path) ? JsonDocument.Parse(File.ReadAllText(Phase437Path)) : null;
+using var phase438 = File.Exists(Phase438Path) ? JsonDocument.Parse(File.ReadAllText(Phase438Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -6005,6 +6009,38 @@ var exactHessianSaturationNoGoProbePassed = exactHessianSaturationNoGoProbeMater
     && JsonBool(phase436.RootElement, "routePromotesHiggsMass") is false
     && JsonBool(phase436.RootElement, "routeCompletesBosonPredictions") is false
     && JsonInt(phase436.RootElement, "acceptedContractFieldCount") == 0;
+var fourDimensionalTransmutationScalingProbeMaterialized = phase437 is not null;
+var fourDimensionalTransmutationScalingProbePassed = fourDimensionalTransmutationScalingProbeMaterialized
+    && JsonBool(phase437!.RootElement, "fourDimensionalTransmutationScalingProbePassed") is true
+    && JsonBool(phase437.RootElement, "targetBlindConstruction") is true
+    && (JsonString(phase437.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase437.RootElement, "applicationSubjectKind") == "four-dimensional-transmutation-scaling-probe"
+    && JsonBool(phase437.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase437.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase437.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase437.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase437.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase437.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase437.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonInt(phase437.RootElement, "acceptedContractFieldCount") == 0;
+var selfConsistentCondensateGapEquationProbeMaterialized = phase438 is not null;
+var selfConsistentCondensateGapEquationProbePassed = selfConsistentCondensateGapEquationProbeMaterialized
+    && JsonBool(phase438!.RootElement, "selfConsistentCondensateGapEquationProbePassed") is true
+    && JsonBool(phase438.RootElement, "targetBlindConstruction") is true
+    && (JsonString(phase438.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase438.RootElement, "applicationSubjectKind") == "self-consistent-condensate-gap-equation-probe"
+    && JsonBool(phase438.RootElement, "gapEquationHasNontrivialSolutions") is true
+    && JsonBool(phase438.RootElement, "dynamicalScaleGenerationObserved") is true
+    && JsonBool(phase438.RootElement, "criticalCouplingFallsWithVolume") is true
+    && JsonBool(phase438.RootElement, "hyperchargeChannelCompetitiveWithSinglet") is false
+    && JsonBool(phase438.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase438.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase438.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase438.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase438.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase438.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase438.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonInt(phase438.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -8469,6 +8505,22 @@ var checklist = new[]
             ? $"exactHessianSaturationNoGoProbePassed={JsonBool(phase436!.RootElement, "exactHessianSaturationNoGoProbePassed")}; exactHessianMassesGrowExactlyAsTSquared={JsonBool(phase436.RootElement, "exactHessianMassesGrowExactlyAsTSquared")}; logSaturationImpossibleFromExactControlBranchHessianAtOneLoop={JsonBool(phase436.RootElement, "logSaturationImpossibleFromExactControlBranchHessianAtOneLoop")}; scaleGapPinnedBeyondControlBranch={JsonBool(phase436.RootElement, "scaleGapPinnedBeyondControlBranch")}; phase430SlopeCountsConfirmedByExactHessian={JsonBool(phase436.RootElement, "phase430SlopeCountsConfirmedByExactHessian")}; canFillPhase201WzContract={JsonBool(phase436.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase436.RootElement, "decision")}"
             : "Phase436 artifact not materialized",
         Phase436Path),
+    new ObjectiveChecklistItem(
+        "four-dimensional-transmutation-scaling-probe-materialized",
+        "Decide whether the one-loop runaway is a small-2D-lattice artifact: it is structural - the 4D per-volume slopes equal the 2D ones and the continuum CW regime is unreachable on bounded-dispersion lattices.",
+        fourDimensionalTransmutationScalingProbePassed ? "passed" : "failed",
+        fourDimensionalTransmutationScalingProbeMaterialized
+            ? $"fourDimensionalTransmutationScalingProbePassed={JsonBool(phase437!.RootElement, "fourDimensionalTransmutationScalingProbePassed")}; decision={JsonString(phase437.RootElement, "decision")}"
+            : "Phase437 artifact not materialized",
+        Phase437Path),
+    new ObjectiveChecklistItem(
+        "self-consistent-condensate-gap-equation-probe-materialized",
+        "Test the never-probed backreaction mechanism class: the mean-field gap equation generates a candidate dynamical scale (transmutation trend with volume) while the scalar singlet outcompetes the hypercharge channel.",
+        selfConsistentCondensateGapEquationProbePassed ? "passed" : "failed",
+        selfConsistentCondensateGapEquationProbeMaterialized
+            ? $"selfConsistentCondensateGapEquationProbePassed={JsonBool(phase438!.RootElement, "selfConsistentCondensateGapEquationProbePassed")}; gapEquationHasNontrivialSolutions={JsonBool(phase438.RootElement, "gapEquationHasNontrivialSolutions")}; dynamicalScaleGenerationObserved={JsonBool(phase438.RootElement, "dynamicalScaleGenerationObserved")}; criticalCouplingFallsWithVolume={JsonBool(phase438.RootElement, "criticalCouplingFallsWithVolume")}; hyperchargeChannelCompetitiveWithSinglet={JsonBool(phase438.RootElement, "hyperchargeChannelCompetitiveWithSinglet")}; canFillPhase201WzContract={JsonBool(phase438.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase438.RootElement, "decision")}"
+            : "Phase438 artifact not materialized",
+        Phase438Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

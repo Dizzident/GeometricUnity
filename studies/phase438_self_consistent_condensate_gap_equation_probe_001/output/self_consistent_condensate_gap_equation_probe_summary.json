@@ -1,0 +1,1877 @@
+{
+  "phaseId": "phase438-self-consistent-condensate-gap-equation-probe",
+  "generatedAt": "2026-07-02T14:37:55.5930586+00:00",
+  "terminalStatus": "self-consistent-gap-equation-generates-candidate-scale-mechanism-class-viable-no-gev-promotion",
+  "selfConsistentCondensateGapEquationProbePassed": true,
+  "precursorsPassed": true,
+  "phase428PrecursorPassed": true,
+  "phase430PrecursorPassed": true,
+  "phase436PrecursorPassed": true,
+  "applicationSubjectKind": "self-consistent-condensate-gap-equation-probe",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "fe5592df24fbb8b6cb2046d9b8a2816e88456ea363ab8f6df06db8e726661d50",
+  "workbenchConventions": {
+    "lattices": [
+      4,
+      8,
+      16
+    ],
+    "spinorDimension": 4,
+    "colorDimension": 3,
+    "diracDiscretization": "naive-central-difference-hermitian",
+    "massInsertion": "Gamma = sz (x) I2 (gamma_5-like), anticommutes with kinetic gamma1=sx(x)I2, gamma2=sy(x)I2",
+    "channels": "scalar singlet (mass Sigma all colors) and lambda_8/2 hypercharge axis (mass Sigma*u_c)",
+    "contents": "fundamental (1 copy) and derived-4x (4 copies)",
+    "infraredConvention": "zero-dispersion doubler momentum sector excluded from every mode sum",
+    "couplingGrid": "20 log-spaced g2 in [0.1, 10]",
+    "latticeCutoffLambda": 1.4142135623730951,
+    "workbenchConventionsAreSourceDefined": false
+  },
+  "modeCounts": {
+    "colorDim": 3,
+    "spinorDim": 4,
+    "singletLogDetCoeffPerMomentum": 6,
+    "singletGapMultiplicity": 12,
+    "hyperLogDetCoeffPerColorPerMomentum": 2,
+    "hyperColorChargesSquared": [
+      0.08333333333333336,
+      0.08333333333333336,
+      0.3333333333333334
+    ],
+    "hyperColorChargesSquaredSum": 0.5000000000000001,
+    "derivedContentCopies": 4,
+    "derivationNote": "logdet H per momentum = (Ns/2)*(color factor)*log(eps^2 \u002B m^2); the (1/2) is the \u002B/- eigenvalue pairing of the Hermitian H and cancels under d/dSigma, giving gap-equation multiplicity Nc*Ns=12 (singlet, per copy)."
+  },
+  "excludedZeroDispersionModeCounts": {
+    "L4": 4,
+    "L8": 4,
+    "L16": 4
+  },
+  "batteries": {
+    "gammaAnticommutationResidual": 0,
+    "gammaAnticommutationExact": true,
+    "hyperColorChargesConsistent": true,
+    "denseResidualSinglet": 1.4654943925052066E-14,
+    "denseResidualHyper": 7.993605777301127E-15,
+    "closedFormSpectrumMatchesDense": true,
+    "gapDerivativeIdentityResidual": 3.4504310519878345E-10,
+    "gapZeroCrossingResidual": 4.440892098500626E-16,
+    "gapZeroCrossingConsistent": true,
+    "freeEnergyLoweredByCondensate": true,
+    "continuityMaxJump": 0.2032066625344705,
+    "sigmaZeroLimitContinuous": true,
+    "allBatteriesPassed": true
+  },
+  "configs": [
+    {
+      "lattice": 4,
+      "content": "fundamental",
+      "copies": 1,
+      "channel": "singlet",
+      "g2Crit": 0.13333333333333333,
+      "gapEquationHasNontrivialSolutions": true,
+      "lnSigmaVsInvG2Slope": -0.4479233465499615,
+      "lnSigmaVsInvG2Intercept": 1.7597085053073624,
+      "lnSigmaVsInvG2R2": 0.8988421127118263,
+      "lnSigmaFitPointCount": 18,
+      "sigmaBranch": [
+        {
+          "g2": 0.1,
+          "sigma": 0,
+          "sigmaOverLambda": 0
+        },
+        {
+          "g2": 0.12742749857031338,
+          "sigma": 0,
+          "sigmaOverLambda": 0
+        },
+        {
+          "g2": 0.16237767391887217,
+          "sigma": 0.4943182344249797,
+          "sigmaOverLambda": 0.3495357756260646
+        },
+        {
+          "g2": 0.20691380811147897,
+          "sigma": 0.7910914675854559,
+          "sigmaOverLambda": 0.5593861412684937
+        },
+        {
+          "g2": 0.26366508987303583,
+          "sigma": 1.0580236590621581,
+          "sigmaOverLambda": 0.7481357039786557
+        },
+        {
+          "g2": 0.33598182862837817,
+          "sigma": 1.3249303282931644,
+          "sigmaOverLambda": 0.9368672197358151
+        },
+        {
+          "g2": 0.42813323987193935,
+          "sigma": 1.6038359116261929,
+          "sigmaOverLambda": 1.1340832490213892
+        },
+        {
+          "g2": 0.5455594781168519,
+          "sigma": 1.9023002937764026,
+          "sigmaOverLambda": 1.3451294375824556
+        },
+        {
+          "g2": 0.6951927961775606,
+          "sigma": 2.2264213000831603,
+          "sigmaOverLambda": 1.5743175990669718
+        },
+        {
+          "g2": 0.8858667904100825,
+          "sigma": 2.5818861603103507,
+          "sigmaOverLambda": 1.8256692122071463
+        },
+        {
+          "g2": 1.1288378916846888,
+          "sigma": 2.9744484381835052,
+          "sigmaOverLambda": 2.1032526609292916
+        },
+        {
+          "g2": 1.438449888287663,
+          "sigma": 3.4101948632535404,
+          "sigmaOverLambda": 2.4113719129741096
+        },
+        {
+          "g2": 1.8329807108324356,
+          "sigma": 3.895726701273901,
+          "sigmaOverLambda": 2.7546947681202747
+        },
+        {
+          "g2": 2.3357214690901227,
+          "sigma": 4.438306096359879,
+          "sigmaOverLambda": 3.138356337717665
+        },
+        {
+          "g2": 2.9763514416313175,
+          "sigma": 5.045990591749568,
+          "sigmaOverLambda": 3.5680541652296394
+        },
+        {
+          "g2": 3.79269019073225,
+          "sigma": 5.727767843293236,
+          "sigmaOverLambda": 4.050143483054893
+        },
+        {
+          "g2": 4.832930238571752,
+          "sigma": 6.493697587320012,
+          "sigmaOverLambda": 4.591737598968703
+        },
+        {
+          "g2": 6.158482110660264,
+          "sigma": 7.355065651317581,
+          "sigmaOverLambda": 5.200816798118912
+        },
+        {
+          "g2": 7.847599703514611,
+          "sigma": 8.324553768130848,
+          "sigmaOverLambda": 5.886348419797349
+        },
+        {
+          "g2": 10,
+          "sigma": 9.416428549310897,
+          "sigmaOverLambda": 6.658420481776339
+        }
+      ]
+    },
+    {
+      "lattice": 8,
+      "content": "fundamental",
+      "copies": 1,
+      "channel": "singlet",
+      "g2Crit": 0.07766990291262137,
+      "gapEquationHasNontrivialSolutions": true,
+      "lnSigmaVsInvG2Slope": -0.29219217288806487,
+      "lnSigmaVsInvG2Intercept": 1.7385634770804657,
+      "lnSigmaVsInvG2R2": 0.8611590173971272,
+      "lnSigmaFitPointCount": 20,
+      "sigmaBranch": [
+        {
+          "g2": 0.1,
+          "sigma": 0.4623320203313501,
+          "sigmaOverLambda": 0.32691810673597443
+        },
+        {
+          "g2": 0.12742749857031338,
+          "sigma": 0.701387179582242,
+          "sigmaOverLambda": 0.49595563091991
+        },
+        {
+          "g2": 0.16237767391887217,
+          "sigma": 0.9273890558847697,
+          "sigmaOverLambda": 0.6557630902143107
+        },
+        {
+          "g2": 0.20691380811147897,
+          "sigma": 1.157879543837895,
+          "sigmaOverLambda": 0.8187444772449619
+        },
+        {
+          "g2": 0.26366508987303583,
+          "sigma": 1.4009668599397305,
+          "sigmaOverLambda": 0.9906331668810074
+        },
+        {
+          "g2": 0.33598182862837817,
+          "sigma": 1.6622635495704343,
+          "sigmaOverLambda": 1.1753978280204749
+        },
+        {
+          "g2": 0.42813323987193935,
+          "sigma": 1.9466229562973778,
+          "sigmaOverLambda": 1.3764702928112802
+        },
+        {
+          "g2": 0.5455594781168519,
+          "sigma": 2.258773447028097,
+          "sigmaOverLambda": 1.59719402155768
+        },
+        {
+          "g2": 0.6951927961775606,
+          "sigma": 2.6036189182391904,
+          "sigmaOverLambda": 1.8410365927125147
+        },
+        {
+          "g2": 0.8858667904100825,
+          "sigma": 2.9864180495760166,
+          "sigmaOverLambda": 2.1117164543131044
+        },
+        {
+          "g2": 1.1288378916846888,
+          "sigma": 3.4129158204719685,
+          "sigmaOverLambda": 2.4132959202745785
+        },
+        {
+          "g2": 1.438449888287663,
+          "sigma": 3.8894571975343135,
+          "sigmaOverLambda": 2.7502615595113378
+        },
+        {
+          "g2": 1.8329807108324356,
+          "sigma": 4.423096962181992,
+          "sigmaOverLambda": 3.127601855804505
+        },
+        {
+          "g2": 2.3357214690901227,
+          "sigma": 5.021713162676738,
+          "sigmaOverLambda": 3.5508874305024656
+        },
+        {
+          "g2": 2.9763514416313175,
+          "sigma": 5.694128844826192,
+          "sigmaOverLambda": 4.026357119126523
+        },
+        {
+          "g2": 3.79269019073225,
+          "sigma": 6.450245449618503,
+          "sigmaOverLambda": 4.561012297742915
+        },
+        {
+          "g2": 4.832930238571752,
+          "sigma": 7.301190730799448,
+          "sigmaOverLambda": 5.162721476484654
+        },
+        {
+          "g2": 6.158482110660264,
+          "sigma": 8.259483882005888,
+          "sigmaOverLambda": 5.840337062067353
+        },
+        {
+          "g2": 7.847599703514611,
+          "sigma": 9.339220607332944,
+          "sigmaOverLambda": 6.6038262224422715
+        },
+        {
+          "g2": 10,
+          "sigma": 10.55628104299986,
+          "sigmaOverLambda": 7.464417909616201
+        }
+      ]
+    },
+    {
+      "lattice": 16,
+      "content": "fundamental",
+      "copies": 1,
+      "channel": "singlet",
+      "g2Crit": 0.054926509829941364,
+      "gapEquationHasNontrivialSolutions": true,
+      "lnSigmaVsInvG2Slope": -0.2733574647101682,
+      "lnSigmaVsInvG2Intercept": 1.7479222244443868,
+      "lnSigmaVsInvG2R2": 0.8329275874666405,
+      "lnSigmaFitPointCount": 20,
+      "sigmaBranch": [
+        {
+          "g2": 0.1,
+          "sigma": 0.6077874602960118,
+          "sigmaOverLambda": 0.42977063469545945
+        },
+        {
+          "g2": 0.12742749857031338,
+          "sigma": 0.8053680872275306,
+          "sigmaOverLambda": 0.5694812358298258
+        },
+        {
+          "g2": 0.16237767391887217,
+          "sigma": 1.0132425635328435,
+          "sigmaOverLambda": 0.7164706876609148
+        },
+        {
+          "g2": 0.20691380811147897,
+          "sigma": 1.2351891709208247,
+          "sigmaOverLambda": 0.8734106388063045
+        },
+        {
+          "g2": 0.26366508987303583,
+          "sigma": 1.474783596092729,
+          "sigmaOverLambda": 1.042829481579851
+        },
+        {
+          "g2": 0.33598182862837817,
+          "sigma": 1.7357297579726514,
+          "sigmaOverLambda": 1.2273462821697465
+        },
+        {
+          "g2": 0.42813323987193935,
+          "sigma": 2.021979951080036,
+          "sigmaOverLambda": 1.429755734831937
+        },
+        {
+          "g2": 0.5455594781168519,
+          "sigma": 2.3378183181652767,
+          "sigmaOverLambda": 1.6530871859567968
+        },
+        {
+          "g2": 0.6951927961775606,
+          "sigma": 2.6879380891422624,
+          "sigmaOverLambda": 1.9006592502421042
+        },
+        {
+          "g2": 0.8858667904100825,
+          "sigma": 3.077519687116032,
+          "sigmaOverLambda": 2.1761350399948483
+        },
+        {
+          "g2": 1.1288378916846888,
+          "sigma": 3.512312827023748,
+          "sigmaOverLambda": 2.483580217636985
+        },
+        {
+          "g2": 1.438449888287663,
+          "sigma": 3.9987249043499293,
+          "sigmaOverLambda": 2.8275254959653635
+        },
+        {
+          "g2": 1.8329807108324356,
+          "sigma": 4.543917694325852,
+          "sigmaOverLambda": 3.213035014811352
+        },
+        {
+          "g2": 2.3357214690901227,
+          "sigma": 5.155914265099881,
+          "sigmaOverLambda": 3.6457819400685803
+        },
+        {
+          "g2": 2.9763514416313175,
+          "sigma": 5.843717992045889,
+          "sigmaOverLambda": 4.132132619517483
+        },
+        {
+          "g2": 3.79269019073225,
+          "sigma": 6.617445625812794,
+          "sigmaOverLambda": 4.679240676145483
+        },
+        {
+          "g2": 4.832930238571752,
+          "sigma": 7.488476499872382,
+          "sigmaOverLambda": 5.2951525138158635
+        },
+        {
+          "g2": 6.158482110660264,
+          "sigma": 8.469620153660049,
+          "sigmaOverLambda": 5.988925844727269
+        },
+        {
+          "g2": 7.847599703514611,
+          "sigma": 9.57530488847878,
+          "sigmaOverLambda": 6.770763018572043
+        },
+        {
+          "g2": 10,
+          "sigma": 10.821790062400527,
+          "sigmaOverLambda": 7.652161137700603
+        }
+      ]
+    },
+    {
+      "lattice": 4,
+      "content": "fundamental",
+      "copies": 1,
+      "channel": "hyper",
+      "g2Crit": 0.7999999999999998,
+      "gapEquationHasNontrivialSolutions": true,
+      "lnSigmaVsInvG2Slope": -2.291806858512374,
+      "lnSigmaVsInvG2Intercept": 2.266534848823552,
+      "lnSigmaVsInvG2R2": 0.9890138598963975,
+      "lnSigmaFitPointCount": 11,
+      "sigmaBranch": [
+        {
+          "g2": 0.1,
+          "sigma": 0,
+          "sigmaOverLambda": 0
+        },
+        {
+          "g2": 0.12742749857031338,
+          "sigma": 0,
+          "sigmaOverLambda": 0
+        },
+        {
+          "g2": 0.16237767391887217,
+          "sigma": 0,
+          "sigmaOverLambda": 0
+        },
+        {
+          "g2": 0.20691380811147897,
+          "sigma": 0,
+          "sigmaOverLambda": 0
+        },
+        {
+          "g2": 0.26366508987303583,
+          "sigma": 0,
+          "sigmaOverLambda": 0
+        },
+        {
+          "g2": 0.33598182862837817,
+          "sigma": 0,
+          "sigmaOverLambda": 0
+        },
+        {
+          "g2": 0.42813323987193935,
+          "sigma": 0,
+          "sigmaOverLambda": 0
+        },
+        {
+          "g2": 0.5455594781168519,
+          "sigma": 0,
+          "sigmaOverLambda": 0
+        },
+        {
+          "g2": 0.6951927961775606,
+          "sigma": 0,
+          "sigmaOverLambda": 0
+        },
+        {
+          "g2": 0.8858667904100825,
+          "sigma": 0.700768356201356,
+          "sigmaOverLambda": 0.4955180567109288
+        },
+        {
+          "g2": 1.1288378916846888,
+          "sigma": 1.4194774388457416,
+          "sigmaOverLambda": 1.0037221227491366
+        },
+        {
+          "g2": 1.438449888287663,
+          "sigma": 2.0436989359235715,
+          "sigmaOverLambda": 1.4451133762952888
+        },
+        {
+          "g2": 1.8329807108324356,
+          "sigma": 2.676955005083699,
+          "sigmaOverLambda": 1.8928930370259525
+        },
+        {
+          "g2": 2.3357214690901227,
+          "sigma": 3.3471974176039945,
+          "sigmaOverLambda": 2.3668259919578847
+        },
+        {
+          "g2": 2.9763514416313175,
+          "sigma": 4.069025023375374,
+          "sigmaOverLambda": 2.877235186846477
+        },
+        {
+          "g2": 3.79269019073225,
+          "sigma": 4.853911898989576,
+          "sigmaOverLambda": 3.4322340190576015
+        },
+        {
+          "g2": 4.832930238571752,
+          "sigma": 5.713130195840801,
+          "sigmaOverLambda": 4.039793103280658
+        },
+        {
+          "g2": 6.158482110660264,
+          "sigma": 6.658772399664203,
+          "sigmaOverLambda": 4.7084631181803775
+        },
+        {
+          "g2": 7.847599703514611,
+          "sigma": 7.704200504982927,
+          "sigmaOverLambda": 5.447692420694251
+        },
+        {
+          "g2": 10,
+          "sigma": 8.864322933099892,
+          "sigmaOverLambda": 6.26802285662236
+        }
+      ]
+    },
+    {
+      "lattice": 8,
+      "content": "fundamental",
+      "copies": 1,
+      "channel": "hyper",
+      "g2Crit": 0.4660194174757281,
+      "gapEquationHasNontrivialSolutions": true,
+      "lnSigmaVsInvG2Slope": -1.4273981800506454,
+      "lnSigmaVsInvG2Intercept": 2.202300775813043,
+      "lnSigmaVsInvG2R2": 0.9729134842119602,
+      "lnSigmaFitPointCount": 13,
+      "sigmaBranch": [
+        {
+          "g2": 0.1,
+          "sigma": 0,
+          "sigmaOverLambda": 0
+        },
+        {
+          "g2": 0.12742749857031338,
+          "sigma": 0,
+          "sigmaOverLambda": 0
+        },
+        {
+          "g2": 0.16237767391887217,
+          "sigma": 0,
+          "sigmaOverLambda": 0
+        },
+        {
+          "g2": 0.20691380811147897,
+          "sigma": 0,
+          "sigmaOverLambda": 0
+        },
+        {
+          "g2": 0.26366508987303583,
+          "sigma": 0,
+          "sigmaOverLambda": 0
+        },
+        {
+          "g2": 0.33598182862837817,
+          "sigma": 0,
+          "sigmaOverLambda": 0
+        },
+        {
+          "g2": 0.42813323987193935,
+          "sigma": 0,
+          "sigmaOverLambda": 0
+        },
+        {
+          "g2": 0.5455594781168519,
+          "sigma": 0.7218254537813913,
+          "sigmaOverLambda": 0.5104076732018786
+        },
+        {
+          "g2": 0.6951927961775606,
+          "sigma": 1.2835618377298572,
+          "sigmaOverLambda": 0.9076152795310489
+        },
+        {
+          "g2": 0.8858667904100825,
+          "sigma": 1.8088693163635203,
+          "sigmaOverLambda": 1.2790637598809196
+        },
+        {
+          "g2": 1.1288378916846888,
+          "sigma": 2.351958889421283,
+          "sigmaOverLambda": 1.6630860797817704
+        },
+        {
+          "g2": 1.438449888287663,
+          "sigma": 2.9316085910233793,
+          "sigmaOverLambda": 2.0729603144973714
+        },
+        {
+          "g2": 1.8329807108324356,
+          "sigma": 3.5592090736270032,
+          "sigmaOverLambda": 2.5167408716223436
+        },
+        {
+          "g2": 2.3357214690901227,
+          "sigma": 4.2442437548641525,
+          "sigmaOverLambda": 3.0011335400730967
+        },
+        {
+          "g2": 2.9763514416313175,
+          "sigma": 4.996134642756827,
+          "sigmaOverLambda": 3.532800685614381
+        },
+        {
+          "g2": 3.79269019073225,
+          "sigma": 5.825057941284648,
+          "sigmaOverLambda": 4.1189379710869245
+        },
+        {
+          "g2": 4.832930238571752,
+          "sigma": 6.742366620519663,
+          "sigmaOverLambda": 4.767573158615279
+        },
+        {
+          "g2": 6.158482110660264,
+          "sigma": 7.760850332632305,
+          "sigmaOverLambda": 5.487749897978175
+        },
+        {
+          "g2": 7.847599703514611,
+          "sigma": 8.894937490250285,
+          "sigmaOverLambda": 6.2896706175864265
+        },
+        {
+          "g2": 10,
+          "sigma": 10.160890604920777,
+          "sigmaOverLambda": 7.184834649634162
+        }
+      ]
+    },
+    {
+      "lattice": 16,
+      "content": "fundamental",
+      "copies": 1,
+      "channel": "hyper",
+      "g2Crit": 0.3295590589796481,
+      "gapEquationHasNontrivialSolutions": true,
+      "lnSigmaVsInvG2Slope": -1.2500137369914863,
+      "lnSigmaVsInvG2Intercept": 2.193481378035684,
+      "lnSigmaVsInvG2R2": 0.9692937219344588,
+      "lnSigmaFitPointCount": 15,
+      "sigmaBranch": [
+        {
+          "g2": 0.1,
+          "sigma": 0,
+          "sigmaOverLambda": 0
+        },
+        {
+          "g2": 0.12742749857031338,
+          "sigma": 0,
+          "sigmaOverLambda": 0
+        },
+        {
+          "g2": 0.16237767391887217,
+          "sigma": 0,
+          "sigmaOverLambda": 0
+        },
+        {
+          "g2": 0.20691380811147897,
+          "sigma": 0,
+          "sigmaOverLambda": 0
+        },
+        {
+          "g2": 0.26366508987303583,
+          "sigma": 0,
+          "sigmaOverLambda": 0
+        },
+        {
+          "g2": 0.33598182862837817,
+          "sigma": 0.16046674492987173,
+          "sigmaOverLambda": 0.11346712349484434
+        },
+        {
+          "g2": 0.42813323987193935,
+          "sigma": 0.7033609496444326,
+          "sigmaOverLambda": 0.49735129711538806
+        },
+        {
+          "g2": 0.5455594781168519,
+          "sigma": 1.1371100000408503,
+          "sigmaOverLambda": 0.8040581919839205
+        },
+        {
+          "g2": 0.6951927961775606,
+          "sigma": 1.5829810584775807,
+          "sigmaOverLambda": 1.119336640939356
+        },
+        {
+          "g2": 0.8858667904100825,
+          "sigma": 2.0594016278032736,
+          "sigmaOverLambda": 1.4562168562063091
+        },
+        {
+          "g2": 1.1288378916846888,
+          "sigma": 2.576612148819933,
+          "sigmaOverLambda": 1.8219399229182165
+        },
+        {
+          "g2": 1.438449888287663,
+          "sigma": 3.1424779049759204,
+          "sigmaOverLambda": 2.2220674363373685
+        },
+        {
+          "g2": 1.8329807108324356,
+          "sigma": 3.7641890475002793,
+          "sigmaOverLambda": 2.6616836011555787
+        },
+        {
+          "g2": 2.3357214690901227,
+          "sigma": 4.449218673910744,
+          "sigmaOverLambda": 3.1460726953041056
+        },
+        {
+          "g2": 2.9763514416313175,
+          "sigma": 5.205926216282744,
+          "sigmaOverLambda": 3.6811457298903534
+        },
+        {
+          "g2": 3.79269019073225,
+          "sigma": 6.043923447045643,
+          "sigmaOverLambda": 4.273699254378347
+        },
+        {
+          "g2": 4.832930238571752,
+          "sigma": 6.974298610558904,
+          "sigmaOverLambda": 4.931573841546117
+        },
+        {
+          "g2": 6.158482110660264,
+          "sigma": 8.009776551652912,
+          "sigmaOverLambda": 5.663767315462775
+        },
+        {
+          "g2": 7.847599703514611,
+          "sigma": 9.164866655047668,
+          "sigmaOverLambda": 6.480539360454676
+        },
+        {
+          "g2": 10,
+          "sigma": 10.456027868655493,
+          "sigmaOverLambda": 7.393528210201822
+        }
+      ]
+    },
+    {
+      "lattice": 4,
+      "content": "derived-4x",
+      "copies": 4,
+      "channel": "singlet",
+      "g2Crit": 0.03333333333333333,
+      "gapEquationHasNontrivialSolutions": true,
+      "lnSigmaVsInvG2Slope": -0.23935719970522337,
+      "lnSigmaVsInvG2Intercept": 2.2966336578770776,
+      "lnSigmaVsInvG2R2": 0.7851989444298106,
+      "lnSigmaFitPointCount": 20,
+      "sigmaBranch": [
+        {
+          "g2": 0.1,
+          "sigma": 1.5239340017256877,
+          "sigmaOverLambda": 1.0775840667009855
+        },
+        {
+          "g2": 0.12742749857031338,
+          "sigma": 1.816262664569793,
+          "sigmaOverLambda": 1.2842916465332483
+        },
+        {
+          "g2": 0.16237767391887217,
+          "sigma": 2.1326088519676603,
+          "sigmaOverLambda": 1.5079821808447906
+        },
+        {
+          "g2": 0.20691380811147897,
+          "sigma": 2.478712332169727,
+          "sigmaOverLambda": 1.752714298687936
+        },
+        {
+          "g2": 0.26366508987303583,
+          "sigma": 2.860275419827982,
+          "sigmaOverLambda": 2.022520145421565
+        },
+        {
+          "g2": 0.33598182862837817,
+          "sigma": 3.283270723414857,
+          "sigmaOverLambda": 2.3216229929979066
+        },
+        {
+          "g2": 0.42813323987193935,
+          "sigma": 3.7541395140497444,
+          "sigmaOverLambda": 2.6545775079049445
+        },
+        {
+          "g2": 0.5455594781168519,
+          "sigma": 4.279944807511868,
+          "sigmaOverLambda": 3.026377996495794
+        },
+        {
+          "g2": 0.6951927961775606,
+          "sigma": 4.868507668135829,
+          "sigmaOverLambda": 3.4425547863975496
+        },
+        {
+          "g2": 0.8858667904100825,
+          "sigma": 5.528541010290228,
+          "sigmaOverLambda": 3.9092688384441465
+        },
+        {
+          "g2": 1.1288378916846888,
+          "sigma": 6.26978898163701,
+          "sigmaOverLambda": 4.4334103055242275
+        },
+        {
+          "g2": 1.438449888287663,
+          "sigma": 7.103177187949909,
+          "sigmaOverLambda": 5.022704757568972
+        },
+        {
+          "g2": 1.8329807108324356,
+          "sigma": 8.040977727388185,
+          "sigmaOverLambda": 5.685829878406179
+        },
+        {
+          "g2": 2.3357214690901227,
+          "sigma": 9.09699246094048,
+          "sigmaOverLambda": 6.432545057533913
+        },
+        {
+          "g2": 2.9763514416313175,
+          "sigma": 10.286757800957602,
+          "sigmaOverLambda": 7.273836197480738
+        },
+        {
+          "g2": 3.79269019073225,
+          "sigma": 11.627774383444585,
+          "sigmaOverLambda": 8.222078116640892
+        },
+        {
+          "g2": 4.832930238571752,
+          "sigma": 13.139765220478655,
+          "sigmaOverLambda": 9.291217090599607
+        },
+        {
+          "g2": 6.158482110660264,
+          "sigma": 14.844966267139366,
+          "sigmaOverLambda": 10.496976313979793
+        },
+        {
+          "g2": 7.847599703514611,
+          "sigma": 16.768453764540034,
+          "sigmaOverLambda": 11.857087366919348
+        },
+        {
+          "g2": 10,
+          "sigma": 18.93851323041308,
+          "sigmaOverLambda": 13.391551130816236
+        }
+      ]
+    },
+    {
+      "lattice": 8,
+      "content": "derived-4x",
+      "copies": 4,
+      "channel": "singlet",
+      "g2Crit": 0.01941747572815534,
+      "gapEquationHasNontrivialSolutions": true,
+      "lnSigmaVsInvG2Slope": -0.23076063183973405,
+      "lnSigmaVsInvG2Intercept": 2.406528874651883,
+      "lnSigmaVsInvG2R2": 0.7710730912365336,
+      "lnSigmaFitPointCount": 20,
+      "sigmaBranch": [
+        {
+          "g2": 0.1,
+          "sigma": 1.8642810508647818,
+          "sigmaOverLambda": 1.31824577310407
+        },
+        {
+          "g2": 0.12742749857031338,
+          "sigma": 2.1681548052092134,
+          "sigmaOverLambda": 1.5331169654256327
+        },
+        {
+          "g2": 0.16237767391887217,
+          "sigma": 2.503319006231945,
+          "sigmaOverLambda": 1.7701138447797775
+        },
+        {
+          "g2": 0.20691380811147897,
+          "sigma": 2.8749182785773426,
+          "sigmaOverLambda": 2.0328742101391946
+        },
+        {
+          "g2": 0.26366508987303583,
+          "sigma": 3.2885493308972276,
+          "sigmaOverLambda": 2.325355532143913
+        },
+        {
+          "g2": 0.33598182862837817,
+          "sigma": 3.750377801710669,
+          "sigmaOverLambda": 2.651917575601111
+        },
+        {
+          "g2": 0.42813323987193935,
+          "sigma": 4.26724823025395,
+          "sigmaOverLambda": 3.0174001606188616
+        },
+        {
+          "g2": 0.5455594781168519,
+          "sigma": 4.846795940228638,
+          "sigmaOverLambda": 3.4272022763630985
+        },
+        {
+          "g2": 0.6951927961775606,
+          "sigma": 5.497566070516987,
+          "sigmaOverLambda": 3.8873662484836427
+        },
+        {
+          "g2": 0.8858667904100825,
+          "sigma": 6.229143399032784,
+          "sigmaOverLambda": 4.404669538439501
+        },
+        {
+          "g2": 1.1288378916846888,
+          "sigma": 7.0522959148481625,
+          "sigmaOverLambda": 4.986726264323322
+        },
+        {
+          "g2": 1.438449888287663,
+          "sigma": 7.979134848172983,
+          "sigmaOverLambda": 5.642100359145009
+        },
+        {
+          "g2": 1.8329807108324356,
+          "sigma": 9.023293864217237,
+          "sigmaOverLambda": 6.380432280026974
+        },
+        {
+          "g2": 2.3357214690901227,
+          "sigma": 10.200130269461841,
+          "sigmaOverLambda": 7.212581282522634
+        },
+        {
+          "g2": 2.9763514416313175,
+          "sigma": 11.52695132118243,
+          "sigmaOverLambda": 8.150785445615329
+        },
+        {
+          "g2": 3.79269019073225,
+          "sigma": 13.023269051452182,
+          "sigmaOverLambda": 9.208841859498733
+        },
+        {
+          "g2": 4.832930238571752,
+          "sigma": 14.71108740626594,
+          "sigmaOverLambda": 10.402309663598663
+        },
+        {
+          "g2": 6.158482110660264,
+          "sigma": 16.61522595693124,
+          "sigmaOverLambda": 11.748738945092823
+        },
+        {
+          "g2": 7.847599703514611,
+          "sigma": 18.763684966769297,
+          "sigmaOverLambda": 13.267928880050647
+        },
+        {
+          "g2": 10,
+          "sigma": 21.18805719660822,
+          "sigmaOverLambda": 14.982218923890102
+        }
+      ]
+    },
+    {
+      "lattice": 16,
+      "content": "derived-4x",
+      "copies": 4,
+      "channel": "singlet",
+      "g2Crit": 0.013731627457485341,
+      "gapEquationHasNontrivialSolutions": true,
+      "lnSigmaVsInvG2Slope": -0.22933677574962702,
+      "lnSigmaVsInvG2Intercept": 2.430650172261844,
+      "lnSigmaVsInvG2R2": 0.7686318648085347,
+      "lnSigmaFitPointCount": 20,
+      "sigmaBranch": [
+        {
+          "g2": 0.1,
+          "sigma": 1.9389129129933855,
+          "sigmaOverLambda": 1.3710184689077851
+        },
+        {
+          "g2": 0.12742749857031338,
+          "sigma": 2.2459993853580853,
+          "sigmaOverLambda": 1.5881613959275198
+        },
+        {
+          "g2": 0.16237767391887217,
+          "sigma": 2.586005399600265,
+          "sigmaOverLambda": 1.828581954242375
+        },
+        {
+          "g2": 0.20691380811147897,
+          "sigma": 2.963966689838264,
+          "sigmaOverLambda": 2.095840945595681
+        },
+        {
+          "g2": 0.26366508987303583,
+          "sigma": 3.3854647163144636,
+          "sigmaOverLambda": 2.3938850583737485
+        },
+        {
+          "g2": 0.33598182862837817,
+          "sigma": 3.85671307835396,
+          "sigmaOverLambda": 2.7271079707949295
+        },
+        {
+          "g2": 0.42813323987193935,
+          "sigma": 4.384651688035088,
+          "sigmaOverLambda": 3.100416941750653
+        },
+        {
+          "g2": 0.5455594781168519,
+          "sigma": 4.977050629592071,
+          "sigmaOverLambda": 3.519306250493329
+        },
+        {
+          "g2": 0.6951927961775606,
+          "sigma": 5.642625587372148,
+          "sigmaOverLambda": 3.9899388165275713
+        },
+        {
+          "g2": 0.8858667904100825,
+          "sigma": 6.391166769217747,
+          "sigmaOverLambda": 4.5192373622079876
+        },
+        {
+          "g2": 1.1288378916846888,
+          "sigma": 7.233683367542785,
+          "sigmaOverLambda": 5.114986562145844
+        },
+        {
+          "g2": 1.438449888287663,
+          "sigma": 8.182565775498766,
+          "sigmaOverLambda": 5.785947747360138
+        },
+        {
+          "g2": 1.8329807108324356,
+          "sigma": 9.251768002896995,
+          "sigmaOverLambda": 6.541987892813187
+        },
+        {
+          "g2": 2.3357214690901227,
+          "sigma": 10.45701301225358,
+          "sigmaOverLambda": 7.394224811920472
+        },
+        {
+          "g2": 2.9763514416313175,
+          "sigma": 11.816024018882079,
+          "sigmaOverLambda": 8.35519071041464
+        },
+        {
+          "g2": 3.79269019073225,
+          "sigma": 13.348785172193512,
+          "sigmaOverLambda": 9.439016515860468
+        },
+        {
+          "g2": 4.832930238571752,
+          "sigma": 15.077835461924543,
+          "sigmaOverLambda": 10.661639700741844
+        },
+        {
+          "g2": 6.158482110660264,
+          "sigma": 17.028600178038786,
+          "sigmaOverLambda": 12.041038660005675
+        },
+        {
+          "g2": 7.847599703514611,
+          "sigma": 19.229764802950612,
+          "sigmaOverLambda": 13.597497092788771
+        },
+        {
+          "g2": 10,
+          "sigma": 21.71369683715637,
+          "sigmaOverLambda": 15.353902278182158
+        }
+      ]
+    },
+    {
+      "lattice": 4,
+      "content": "derived-4x",
+      "copies": 4,
+      "channel": "hyper",
+      "g2Crit": 0.19999999999999996,
+      "gapEquationHasNontrivialSolutions": true,
+      "lnSigmaVsInvG2Slope": -0.708459480138441,
+      "lnSigmaVsInvG2Intercept": 2.578721631421871,
+      "lnSigmaVsInvG2R2": 0.9548232742080687,
+      "lnSigmaFitPointCount": 17,
+      "sigmaBranch": [
+        {
+          "g2": 0.1,
+          "sigma": 0,
+          "sigmaOverLambda": 0
+        },
+        {
+          "g2": 0.12742749857031338,
+          "sigma": 0,
+          "sigmaOverLambda": 0
+        },
+        {
+          "g2": 0.16237767391887217,
+          "sigma": 0,
+          "sigmaOverLambda": 0
+        },
+        {
+          "g2": 0.20691380811147897,
+          "sigma": 0.3938613115168824,
+          "sigmaOverLambda": 0.2785020042206148
+        },
+        {
+          "g2": 0.26366508987303583,
+          "sigma": 1.2372469780960649,
+          "sigmaOverLambda": 0.8748657282142912
+        },
+        {
+          "g2": 0.33598182862837817,
+          "sigma": 1.8696575691293127,
+          "sigmaOverLambda": 1.3220475456280931
+        },
+        {
+          "g2": 0.42813323987193935,
+          "sigma": 2.496441337397024,
+          "sigmaOverLambda": 1.7652505985078495
+        },
+        {
+          "g2": 0.5455594781168519,
+          "sigma": 3.1545665870219413,
+          "sigmaOverLambda": 2.2306154253877177
+        },
+        {
+          "g2": 0.6951927961775606,
+          "sigma": 3.860717455268057,
+          "sigmaOverLambda": 2.7299394928653147
+        },
+        {
+          "g2": 0.8858667904100825,
+          "sigma": 4.6268017058468995,
+          "sigmaOverLambda": 3.2716428614098283
+        },
+        {
+          "g2": 1.1288378916846888,
+          "sigma": 5.464001315391453,
+          "sigmaOverLambda": 3.8636323825255117
+        },
+        {
+          "g2": 1.438449888287663,
+          "sigma": 6.3841200110538185,
+          "sigmaOverLambda": 4.514254551724892
+        },
+        {
+          "g2": 1.8329807108324356,
+          "sigma": 7.400132007898266,
+          "sigmaOverLambda": 5.2326835244604855
+        },
+        {
+          "g2": 2.3357214690901227,
+          "sigma": 8.526487807844841,
+          "sigmaOverLambda": 6.029137348631507
+        },
+        {
+          "g2": 2.9763514416313175,
+          "sigma": 9.779353854405652,
+          "sigmaOverLambda": 6.915047426073038
+        },
+        {
+          "g2": 3.79269019073225,
+          "sigma": 11.176846697416263,
+          "sigmaOverLambda": 7.903224092025507
+        },
+        {
+          "g2": 4.832930238571752,
+          "sigma": 12.73928577058263,
+          "sigmaOverLambda": 9.00803535585227
+        },
+        {
+          "g2": 6.158482110660264,
+          "sigma": 14.48947664876577,
+          "sigmaOverLambda": 10.245607194186407
+        },
+        {
+          "g2": 7.847599703514611,
+          "sigma": 16.453032193012206,
+          "sigmaOverLambda": 11.634050634759504
+        },
+        {
+          "g2": 10,
+          "sigma": 18.65873739051589,
+          "sigmaOverLambda": 13.19371973721277
+        }
+      ]
+    },
+    {
+      "lattice": 8,
+      "content": "derived-4x",
+      "copies": 4,
+      "channel": "hyper",
+      "g2Crit": 0.11650485436893203,
+      "gapEquationHasNontrivialSolutions": true,
+      "lnSigmaVsInvG2Slope": -0.42892533290793333,
+      "lnSigmaVsInvG2Intercept": 2.5193585686929447,
+      "lnSigmaVsInvG2R2": 0.9207817007641439,
+      "lnSigmaFitPointCount": 19,
+      "sigmaBranch": [
+        {
+          "g2": 0.1,
+          "sigma": 0,
+          "sigmaOverLambda": 0
+        },
+        {
+          "g2": 0.12742749857031338,
+          "sigma": 0.5275304443125426,
+          "sigmaOverLambda": 0.3730203544557512
+        },
+        {
+          "g2": 0.16237767391887217,
+          "sigma": 1.134327323291592,
+          "sigmaOverLambda": 0.8020905423846698
+        },
+        {
+          "g2": 0.20691380811147897,
+          "sigma": 1.6609515627471607,
+          "sigmaOverLambda": 1.1744701132409106
+        },
+        {
+          "g2": 0.26366508987303583,
+          "sigma": 2.196563587089476,
+          "sigmaOverLambda": 1.5532050077384159
+        },
+        {
+          "g2": 0.33598182862837817,
+          "sigma": 2.764650800022885,
+          "sigmaOverLambda": 1.9549033283089954
+        },
+        {
+          "g2": 0.42813323987193935,
+          "sigma": 3.37781368719447,
+          "sigmaOverLambda": 2.388474963799945
+        },
+        {
+          "g2": 0.5455594781168519,
+          "sigma": 4.04580892169486,
+          "sigmaOverLambda": 2.860818923915469
+        },
+        {
+          "g2": 0.6951927961775606,
+          "sigma": 4.777966989139108,
+          "sigmaOverLambda": 3.378532858305734
+        },
+        {
+          "g2": 0.8858667904100825,
+          "sigma": 5.5841989529413905,
+          "sigmaOverLambda": 3.9486249471196753
+        },
+        {
+          "g2": 1.1288378916846888,
+          "sigma": 6.475497142769553,
+          "sigmaOverLambda": 4.578867941206464
+        },
+        {
+          "g2": 1.438449888287663,
+          "sigma": 7.464226699309622,
+          "sigmaOverLambda": 5.278005315395514
+        },
+        {
+          "g2": 1.8329807108324356,
+          "sigma": 8.56433709365771,
+          "sigmaOverLambda": 6.055900835292854
+        },
+        {
+          "g2": 2.3357214690901227,
+          "sigma": 9.791556038319495,
+          "sigmaOverLambda": 6.9236756730638005
+        },
+        {
+          "g2": 2.9763514416313175,
+          "sigma": 11.163596325894737,
+          "sigmaOverLambda": 7.893854664469395
+        },
+        {
+          "g2": 3.79269019073225,
+          "sigma": 12.70039063403119,
+          "sigmaOverLambda": 8.98053234104157
+        },
+        {
+          "g2": 4.832930238571752,
+          "sigma": 14.424362255075284,
+          "sigmaOverLambda": 10.199564364855012
+        },
+        {
+          "g2": 6.158482110660264,
+          "sigma": 16.360736874848456,
+          "sigmaOverLambda": 11.568787989414146
+        },
+        {
+          "g2": 7.847599703514611,
+          "sigma": 18.53789975616015,
+          "sigmaOverLambda": 13.108274626537288
+        },
+        {
+          "g2": 10,
+          "sigma": 20.987802891027897,
+          "sigmaOverLambda": 14.840617746452452
+        }
+      ]
+    },
+    {
+      "lattice": 16,
+      "content": "derived-4x",
+      "copies": 4,
+      "channel": "hyper",
+      "g2Crit": 0.08238976474491203,
+      "gapEquationHasNontrivialSolutions": true,
+      "lnSigmaVsInvG2Slope": -0.3386507859840399,
+      "lnSigmaVsInvG2Intercept": 2.457246358124564,
+      "lnSigmaVsInvG2R2": 0.8941685697071549,
+      "lnSigmaFitPointCount": 20,
+      "sigmaBranch": [
+        {
+          "g2": 0.1,
+          "sigma": 0.577476819224034,
+          "sigmaOverLambda": 0.4083377748513525
+        },
+        {
+          "g2": 0.12742749857031338,
+          "sigma": 1.0155117083570238,
+          "sigmaOverLambda": 0.718075215353587
+        },
+        {
+          "g2": 0.16237767391887217,
+          "sigma": 1.4554098055333222,
+          "sigmaOverLambda": 1.0291301428980064
+        },
+        {
+          "g2": 0.20691380811147897,
+          "sigma": 1.922060034036,
+          "sigmaOverLambda": 1.3591016839145018
+        },
+        {
+          "g2": 0.26366508987303583,
+          "sigma": 2.4269777232976466,
+          "sigmaOverLambda": 1.716132405932454
+        },
+        {
+          "g2": 0.33598182862837817,
+          "sigma": 2.978466023417008,
+          "sigmaOverLambda": 2.1060935226918964
+        },
+        {
+          "g2": 0.42813323987193935,
+          "sigma": 3.583788265926966,
+          "sigmaOverLambda": 2.5341209851737356
+        },
+        {
+          "g2": 0.5455594781168519,
+          "sigma": 4.250264629764697,
+          "sigmaOverLambda": 3.005390941543948
+        },
+        {
+          "g2": 0.6951927961775606,
+          "sigma": 4.985960687220524,
+          "sigmaOverLambda": 3.525606612663171
+        },
+        {
+          "g2": 0.8858667904100825,
+          "sigma": 5.800109940762775,
+          "sigmaOverLambda": 4.101297070740863
+        },
+        {
+          "g2": 1.1288378916846888,
+          "sigma": 6.703368858102548,
+          "sigmaOverLambda": 4.739997576359035
+        },
+        {
+          "g2": 1.438449888287663,
+          "sigma": 7.707988583236867,
+          "sigmaOverLambda": 5.450370996515278
+        },
+        {
+          "g2": 1.8329807108324356,
+          "sigma": 8.827962513532263,
+          "sigmaOverLambda": 6.242312157379302
+        },
+        {
+          "g2": 2.3357214690901227,
+          "sigma": 10.079184562547365,
+          "sigmaOverLambda": 7.127059753008007
+        },
+        {
+          "g2": 2.9763514416313175,
+          "sigma": 11.479636189613533,
+          "sigmaOverLambda": 8.117328595230228
+        },
+        {
+          "g2": 3.79269019073225,
+          "sigma": 13.049611039384786,
+          "sigmaOverLambda": 9.227468457795812
+        },
+        {
+          "g2": 4.832930238571752,
+          "sigma": 14.811981825736346,
+          "sigmaOverLambda": 10.473652791790068
+        },
+        {
+          "g2": 6.158482110660264,
+          "sigma": 16.792512698759133,
+          "sigmaOverLambda": 11.874099602453795
+        },
+        {
+          "g2": 7.847599703514611,
+          "sigma": 19.020220348628378,
+          "sigmaOverLambda": 13.449326788177483
+        },
+        {
+          "g2": 10,
+          "sigma": 21.527787769581515,
+          "sigmaOverLambda": 15.222444715815909
+        }
+      ]
+    }
+  ],
+  "gapEquationHasNontrivialSolutions": true,
+  "dynamicalScaleGenerationObserved": true,
+  "allConfigsNegativeSlope": true,
+  "fundamentalContentConfigsLinear": true,
+  "lnSigmaFitR2Min": 0.7686318648085347,
+  "lnSigmaFitR2Max": 0.9890138598963975,
+  "criticalCouplingScaling": [
+    {
+      "content": "fundamental",
+      "copies": 1,
+      "channel": "singlet",
+      "g2CritByLattice": [
+        {
+          "lattice": 4,
+          "g2Crit": 0.13333333333333333
+        },
+        {
+          "lattice": 8,
+          "g2Crit": 0.07766990291262137
+        },
+        {
+          "lattice": 16,
+          "g2Crit": 0.054926509829941364
+        }
+      ],
+      "monotoneDecreasing": true,
+      "invLnLSlope": 0.2194052780987671,
+      "invLnLIntercept": -0.02566102315674068,
+      "invLnLR2": 0.9977269690269934,
+      "powerLawExponent": -0.6397314859538142,
+      "powerLawR2": 0.9843137746068926
+    },
+    {
+      "content": "fundamental",
+      "copies": 1,
+      "channel": "hyper",
+      "g2CritByLattice": [
+        {
+          "lattice": 4,
+          "g2Crit": 0.7999999999999998
+        },
+        {
+          "lattice": 8,
+          "g2Crit": 0.4660194174757281
+        },
+        {
+          "lattice": 16,
+          "g2Crit": 0.3295590589796481
+        }
+      ],
+      "monotoneDecreasing": true,
+      "invLnLSlope": 1.3164316685925999,
+      "invLnLIntercept": -0.15396613894044275,
+      "invLnLR2": 0.9977269690269934,
+      "powerLawExponent": -0.6397314859538124,
+      "powerLawR2": 0.9843137746068925
+    },
+    {
+      "content": "derived-4x",
+      "copies": 4,
+      "channel": "singlet",
+      "g2CritByLattice": [
+        {
+          "lattice": 4,
+          "g2Crit": 0.03333333333333333
+        },
+        {
+          "lattice": 8,
+          "g2Crit": 0.01941747572815534
+        },
+        {
+          "lattice": 16,
+          "g2Crit": 0.013731627457485341
+        }
+      ],
+      "monotoneDecreasing": true,
+      "invLnLSlope": 0.05485131952469177,
+      "invLnLIntercept": -0.00641525578918517,
+      "invLnLR2": 0.9977269690269934,
+      "powerLawExponent": -0.6397314859538117,
+      "powerLawR2": 0.9843137746068925
+    },
+    {
+      "content": "derived-4x",
+      "copies": 4,
+      "channel": "hyper",
+      "g2CritByLattice": [
+        {
+          "lattice": 4,
+          "g2Crit": 0.19999999999999996
+        },
+        {
+          "lattice": 8,
+          "g2Crit": 0.11650485436893203
+        },
+        {
+          "lattice": 16,
+          "g2Crit": 0.08238976474491203
+        }
+      ],
+      "monotoneDecreasing": true,
+      "invLnLSlope": 0.32910791714814996,
+      "invLnLIntercept": -0.03849153473511069,
+      "invLnLR2": 0.9977269690269934,
+      "powerLawExponent": -0.6397314859538117,
+      "powerLawR2": 0.9843137746068924
+    }
+  ],
+  "criticalCouplingFallsWithVolume": true,
+  "channelCompetition": [
+    {
+      "content": "fundamental",
+      "copies": 1,
+      "lattice": 4,
+      "rows": [
+        {
+          "g2": 1,
+          "singletSigma": 2.7731598871726497,
+          "hyperSigma": 1.088184502917123,
+          "singletFreeEnergyDelta": -5.008439690659894,
+          "hyperFreeEnergyDelta": -0.06705355847152061,
+          "hyperWins": false,
+          "singletSigmaOverLambda": 1.9609201615343015,
+          "hyperSigmaOverLambda": 0.7694626411948101
+        },
+        {
+          "g2": 2,
+          "singletSigma": 4.083966194196876,
+          "hyperSigma": 2.912950630243941,
+          "singletFreeEnergyDelta": -7.7987615603342,
+          "hyperFreeEnergyDelta": -1.0341537654964037,
+          "hyperWins": false,
+          "singletSigmaOverLambda": 2.8878001900532273,
+          "hyperSigmaOverLambda": 2.059767143907118
+        },
+        {
+          "g2": 5,
+          "singletSigma": 6.608446723512966,
+          "hyperSigma": 5.840222897476538,
+          "singletFreeEnergyDelta": -11.723348078780033,
+          "hyperFreeEnergyDelta": -3.6307376239510303,
+          "hyperWins": false,
+          "singletSigmaOverLambda": 4.672877491306039,
+          "hyperSigmaOverLambda": 4.129661214446607
+        },
+        {
+          "g2": 10,
+          "singletSigma": 9.416428549310897,
+          "hyperSigma": 8.864322933099892,
+          "singletFreeEnergyDelta": -14.776027836750787,
+          "hyperFreeEnergyDelta": -6.192183758913951,
+          "hyperWins": false,
+          "singletSigmaOverLambda": 6.658420481776339,
+          "hyperSigmaOverLambda": 6.26802285662236
+        }
+      ]
+    },
+    {
+      "content": "fundamental",
+      "copies": 1,
+      "lattice": 8,
+      "rows": [
+        {
+          "g2": 1,
+          "singletSigma": 3.1938233902456883,
+          "hyperSigma": 2.076727921317798,
+          "singletFreeEnergyDelta": -8.690186279694764,
+          "hyperFreeEnergyDelta": -0.8512216029503255,
+          "hyperWins": false,
+          "singletSigmaOverLambda": 2.258374177154935,
+          "hyperSigmaOverLambda": 1.4684683958432578
+        },
+        {
+          "g2": 2,
+          "singletSigma": 4.63054767578617,
+          "hyperSigma": 3.7985771982316425,
+          "singletFreeEnergyDelta": -12.325701205637564,
+          "hyperFreeEnergyDelta": -2.8810887054338497,
+          "hyperWins": false,
+          "singletSigmaOverLambda": 3.274291662156007,
+          "hyperSigmaOverLambda": 2.6859996957301906
+        },
+        {
+          "g2": 5,
+          "singletSigma": 7.428781954145979,
+          "hyperSigma": 6.878762566295039,
+          "singletFreeEnergyDelta": -17.32074502222124,
+          "hyperFreeEnergyDelta": -6.761917698030023,
+          "hyperWins": false,
+          "singletSigmaOverLambda": 5.252942095732873,
+          "hyperSigmaOverLambda": 4.8640196567994005
+        },
+        {
+          "g2": 10,
+          "singletSigma": 10.55628104299986,
+          "hyperSigma": 10.160890604920777,
+          "singletFreeEnergyDelta": -21.16649470006191,
+          "hyperFreeEnergyDelta": -10.206228351321329,
+          "hyperWins": false,
+          "singletSigmaOverLambda": 7.464417909616201,
+          "hyperSigmaOverLambda": 7.184834649634162
+        }
+      ]
+    },
+    {
+      "content": "fundamental",
+      "copies": 1,
+      "lattice": 16,
+      "rows": [
+        {
+          "g2": 1,
+          "singletSigma": 3.288880854400535,
+          "hyperSigma": 2.3123863348035822,
+          "singletFreeEnergyDelta": -10.080226502243583,
+          "hyperFreeEnergyDelta": -1.4646454968115503,
+          "hyperWins": false,
+          "singletSigmaOverLambda": 2.325589954661224,
+          "hyperSigmaOverLambda": 1.6351040580627192
+        },
+        {
+          "g2": 2,
+          "singletSigma": 4.755963339214798,
+          "hyperSigma": 4.002947154477106,
+          "singletFreeEnergyDelta": -13.923930260297606,
+          "hyperFreeEnergyDelta": -3.80734955272018,
+          "hyperWins": false,
+          "singletSigmaOverLambda": 3.3629739282333997,
+          "hyperSigmaOverLambda": 2.8305110776621554
+        },
+        {
+          "g2": 5,
+          "singletSigma": 7.619097894241596,
+          "hyperSigma": 7.112840169691696,
+          "singletFreeEnergyDelta": -19.184447950276144,
+          "hyperFreeEnergyDelta": -8.015828878726746,
+          "hyperWins": false,
+          "singletSigmaOverLambda": 5.387515787542377,
+          "hyperSigmaOverLambda": 5.029537517485071
+        },
+        {
+          "g2": 10,
+          "singletSigma": 10.821790062400527,
+          "hyperSigma": 10.456027868655493,
+          "singletFreeEnergyDelta": -23.22770580978936,
+          "hyperFreeEnergyDelta": -11.678148484410585,
+          "hyperWins": false,
+          "singletSigmaOverLambda": 7.652161137700603,
+          "hyperSigmaOverLambda": 7.393528210201822
+        }
+      ]
+    },
+    {
+      "content": "derived-4x",
+      "copies": 4,
+      "lattice": 4,
+      "rows": [
+        {
+          "g2": 1,
+          "singletSigma": 5.888359860384405,
+          "hyperSigma": 5.035797263944753,
+          "singletFreeEnergyDelta": -43.009590855341884,
+          "hyperFreeEnergyDelta": -11.582915014070124,
+          "hyperWins": false,
+          "singletSigmaOverLambda": 4.163699187344485,
+          "hyperSigmaOverLambda": 3.560846394015997
+        },
+        {
+          "g2": 2,
+          "singletSigma": 8.406529529646207,
+          "hyperSigma": 7.7918647305911115,
+          "singletFreeEnergyDelta": -55.15405578460004,
+          "hyperFreeEnergyDelta": -21.319905329658567,
+          "hyperWins": false,
+          "singletSigmaOverLambda": 5.94431403665779,
+          "hyperSigmaOverLambda": 5.509680389089266
+        },
+        {
+          "g2": 5,
+          "singletSigma": 13.366671199073327,
+          "hyperSigma": 12.972816349669934,
+          "singletFreeEnergyDelta": -71.44761191391534,
+          "hyperFreeEnergyDelta": -36.08898857573723,
+          "hyperWins": false,
+          "singletSigmaOverLambda": 9.45166384675567,
+          "hyperSigmaOverLambda": 9.173166411939324
+        },
+        {
+          "g2": 10,
+          "singletSigma": 18.93851323041308,
+          "hyperSigma": 18.65873739051589,
+          "singletFreeEnergyDelta": -83.8576407268436,
+          "hyperFreeEnergyDelta": -47.97671130806203,
+          "hyperWins": false,
+          "singletSigmaOverLambda": 13.391551130816236,
+          "hyperSigmaOverLambda": 13.19371973721277
+        }
+      ]
+    },
+    {
+      "content": "derived-4x",
+      "copies": 4,
+      "lattice": 8,
+      "rows": [
+        {
+          "g2": 1,
+          "singletSigma": 6.628549288466896,
+          "hyperSigma": 6.018476794544901,
+          "singletFreeEnergyDelta": -64.36852682595737,
+          "hyperFreeEnergyDelta": -22.912430225154704,
+          "hyperWins": false,
+          "singletSigmaOverLambda": 4.687092151304206,
+          "hyperSigmaOverLambda": 4.255705753836574
+        },
+        {
+          "g2": 2,
+          "singletSigma": 9.43056216895193,
+          "hyperSigma": 8.990353009571376,
+          "singletFreeEnergyDelta": -79.69848458753788,
+          "hyperFreeEnergyDelta": -36.26492470213187,
+          "hyperWins": false,
+          "singletSigmaOverLambda": 6.668414460067225,
+          "hyperSigmaOverLambda": 6.357139578328805
+        },
+        {
+          "g2": 5,
+          "singletSigma": 14.964431226466466,
+          "hyperSigma": 14.682453102928346,
+          "singletFreeEnergyDelta": -100.15525394127118,
+          "hyperFreeEnergyDelta": -55.48667363600482,
+          "hyperWins": false,
+          "singletSigmaOverLambda": 10.581450796834162,
+          "hyperSigmaOverLambda": 10.382062153534099
+        },
+        {
+          "g2": 10,
+          "singletSigma": 21.18805719660822,
+          "hyperSigma": 20.987802891027897,
+          "singletFreeEnergyDelta": -115.69776474744691,
+          "hyperFreeEnergyDelta": -70.60904809925657,
+          "hyperWins": false,
+          "singletSigmaOverLambda": 14.982218923890102,
+          "hyperSigmaOverLambda": 14.840617746452452
+        }
+      ]
+    },
+    {
+      "content": "derived-4x",
+      "copies": 4,
+      "lattice": 16,
+      "rows": [
+        {
+          "g2": 1,
+          "singletSigma": 6.799938146373966,
+          "hyperSigma": 6.239874109948367,
+          "singletFreeEnergyDelta": -71.56715982434716,
+          "hyperFreeEnergyDelta": -27.630708618463537,
+          "hyperWins": false,
+          "singletSigmaOverLambda": 4.808282374950114,
+          "hyperSigmaOverLambda": 4.412257296894863
+        },
+        {
+          "g2": 2,
+          "singletSigma": 9.668849122371611,
+          "hyperSigma": 9.262125663571855,
+          "singletFreeEnergyDelta": -87.68973725155703,
+          "hyperFreeEnergyDelta": -41.87856011629967,
+          "hyperWins": false,
+          "singletSigmaOverLambda": 6.836908780698565,
+          "hyperSigmaOverLambda": 6.5493118649136095
+        },
+        {
+          "g2": 5,
+          "singletSigma": 15.33737701328996,
+          "hyperSigma": 15.075903571355322,
+          "singletFreeEnergyDelta": -109.18498907129067,
+          "hyperFreeEnergyDelta": -62.200057324216274,
+          "hyperWins": false,
+          "singletSigmaOverLambda": 10.845163291712007,
+          "hyperSigmaOverLambda": 10.660273647819837
+        },
+        {
+          "g2": 10,
+          "singletSigma": 21.71369683715637,
+          "hyperSigma": 21.527787769581515,
+          "singletFreeEnergyDelta": -125.50983531177803,
+          "hyperFreeEnergyDelta": -78.12512764619804,
+          "hyperWins": false,
+          "singletSigmaOverLambda": 15.353902278182158,
+          "hyperSigmaOverLambda": 15.222444715815909
+        }
+      ]
+    }
+  ],
+  "hyperchargeChannelCompetitiveWithSinglet": false,
+  "channelCompetitionOrdering": "scalar-singlet-wins-at-every-sampled-coupling",
+  "mechanismClassGeneratesScaleOnWorkbench": true,
+  "honestBoundaries": {
+    "gapEquationIsMeanFieldApproximation": true,
+    "fourFermionCouplingNormalizationIsRecordedConvention": true,
+    "scaleRatioIsCandidateOnly": true,
+    "noGevPromotion": true
+  },
+  "physicalCouplingProvided": false,
+  "routeProvidesPhysicalMassPsiCompatibleBranch": false,
+  "routeProvidesCompletedFermionicAction": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesObservedElectroweakNamespaceMap": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesWeakAngleOrCouplingLineage": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "sourceEvidence": {
+    "phase428SummaryPath": "studies/phase428_fermion_loop_block_selection_no_go_probe_001/output/fermion_loop_block_selection_no_go_probe_summary.json",
+    "phase430SummaryPath": "studies/phase430_net_one_loop_direction_selection_probe_001/output/net_one_loop_direction_selection_probe_summary.json",
+    "phase436SummaryPath": "studies/phase436_exact_hessian_saturation_no_go_probe_001/output/exact_hessian_saturation_no_go_probe_summary.json"
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "The gap equation is a mean-field (Hartree) approximation; fluctuations beyond the fermion loop are not included.",
+    "The four-fermion coupling g2 is a scanned parameter; its physical normalization is fixed only up to the workbench kappa_B and is a recorded convention, NOT source-derived.",
+    "Sigma* and Sigma*/Lambda are candidate-only workbench numbers; the lattice cutoff Lambda is itself a recorded convention (max dispersion sqrt(2)).",
+    "g2_crit is finite on the doubler-excluded lattice; the 1/lnL fall is a transmutation TREND, not a proof that g2_crit vanishes in the continuum.",
+    "This phase establishes only that the self-consistent-backreaction MECHANISM CLASS can generate a scale on the workbench; it does not close the GeV scale gap and promotes nothing.",
+    "No Phase201 or Phase256 field is filled."
+  ],
+  "decision": "The self-consistent backreaction mechanism is decided on the workbench: the Gross-Neveu-style gap equation - where the fermion-loop-preferred condensate feeds back into the fermion spectrum - HAS nontrivial solutions above a finite critical coupling g2_crit(L) for every content and channel. This is the first mechanism class (dimensional transmutation via self-consistency) that generates a scale on the workbench at all; every prior landscape phase used external rays and found no finite minimum. Three quantitative signatures are recorded: (1) g2_crit(L) falls monotonically with volume (~1/lnL, the transmutation trend expected as the 2D IR sum diverges), though it stays finite on the doubler-excluded lattice; (2) ln Sigma* is approximately linear in 1/g2 (the exponential scale law Sigma* ~ Lambda*exp(-c/g2), R^2 ~ 0.83-0.90), the dimensional-transmutation signature; (3) the scalar singlet condensate wins the free-energy competition over the hypercharge (lambda_8) channel at every sampled coupling. THE HONEST BOUNDARIES: the four-fermion coupling normalization is a recorded convention (not source-derived on the workbench - it is fixed only up to kappa_B); the gap equation is a mean-field (Hartree) approximation; the scale ratio Sigma*/Lambda is candidate-only. This phase does NOT close the scale gap and promotes nothing to GeV. No Phase201 or Phase256 field is filled."
+}

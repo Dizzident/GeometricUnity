@@ -49,7 +49,7 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase436 work (plus the 2026-06-12 platform
+Current gate status after the Phase437-438 scale-gap attack wave (plus the 2026-06-12 platform
 fix - GPU parity defect root-caused and discharged - and the 2026-07-01
 |Y|=1/2 calibration defect fix in the Phase411/417 informational SM
 censuses):
@@ -57,7 +57,7 @@ censuses):
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=229`,
+  `objectiveAchieved=False`, `checklistPassedCount=231`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -456,6 +456,18 @@ censuses):
   control branch itself, not workbench modeling),
   `phase430SlopeCountsConfirmedByExactHessian=True` (64 = 4x16, 96 = 6x16),
   `workbenchMassValuesDifferFromExactHessian=True` (recorded honestly)
+- Phase437: `fourDimensionalTransmutationScalingProbePassed=True`,
+  runaway STRUCTURAL (4D per-volume slopes identical to 2D; continuum CW
+  t^4 log t regime unreachable on bounded-dispersion lattices; no
+  transmutation minimum at any L; cwFitIsIllConditioned honesty note)
+- Phase438: `selfConsistentCondensateGapEquationProbePassed=True`,
+  `gapEquationHasNontrivialSolutions=True`,
+  `dynamicalScaleGenerationObserved=True` (FIRST internal dynamical
+  scale: g2_crit falls with volume, R^2=0.998; exponential scale-law
+  signature R^2 0.83-0.90), `criticalCouplingFallsWithVolume=True`,
+  `hyperchargeChannelCompetitiveWithSinglet=False` (the singlet wins:
+  scale and breaking direction live in DIFFERENT mechanisms);
+  mean-field + convention + candidate-only boundaries recorded
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -476,7 +488,28 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work (2026-07-02, ninth checkpoint) added Phase436, the
+The latest work (2026-07-02, tenth checkpoint: the SCALE-GAP ATTACK WAVE,
+phases 437-438 built by parallel agents) decided two of the three
+computable surfaces of the pinned scale gap. Phase437: the one-loop
+runaway is STRUCTURAL, not a small-2D-lattice artifact - 4D per-volume
+slopes are identical to 2D (exact Phase430 anchor to 2e-5), the landscape
+is log-dominated at every L, and the continuum CW regime is unreachable
+on bounded-dispersion lattices. Phase438: the never-tested backreaction
+mechanism class IS VIABLE - the mean-field gap equation generates the
+first internal dynamical scale (critical coupling falls with volume,
+1/ln L fit R^2=0.998; exponential ln Sigma* ~ -c/g2 signature) - but the
+scalar singlet outcompetes the hypercharge channel at every coupling:
+the gap equation supplies a SCALE, not the BREAKING DIRECTION. NAMED NEXT
+EXPERIMENTS: phase439 = gap-equation-in-background probe (solve the
+Phase438 gap equation inside the Phase431 lambda_8 background where T/D
+degeneracy is already broken - does the background steer the condensate
+channel?); phase440 = physical-branch candidate-family universality sweep
+(needs a design exploration of the nontrivial Shiab/torsion machinery).
+Studies: phase437_four_dimensional_transmutation_scaling_probe_001,
+phase438_self_consistent_condensate_gap_equation_probe_001
+(IMPLEMENTATION_P437/P438.md).
+
+Before that, the work (2026-07-02, ninth checkpoint) added Phase436, the
 exact-Hessian saturation no-go probe, completing the Coleman-Weinberg
 program: the true control-branch Hessian at backgrounds t*u decomposes
 EXACTLY as H(t) = A0 + t A1 + t^2 A2 (third t-difference zero; the odd
@@ -1042,7 +1075,7 @@ HONEST BOUNDARY. Study:
 
 ### Integration Points Already Updated
 
-Phase436 (like Phase388-435) is wired into:
+Phases 437-438 (like Phase388-436) are wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (single broad pass; the
   older duplicated final sweep was removed on 2026-06-16; the Phase424 line
@@ -1068,7 +1101,9 @@ Phase436 (like Phase388-435) is wired into:
   `blind-beta-coefficient-running-ledger-materialized` and
   `conditional-observed-field-extraction-row-ledger-materialized` and
   `two-condensate-scale-gap-probe-materialized` and
-  `exact-hessian-saturation-no-go-probe-materialized`;
+  `exact-hessian-saturation-no-go-probe-materialized` and
+  `four-dimensional-transmutation-scaling-probe-materialized` and
+  `self-consistent-condensate-gap-equation-probe-materialized`;
   the Phase417 checklist row now asserts the corrected
   `yHalfCalibrationExact=True` and `internalSmHiggsPatternComplexDimension=6`)
 - `scripts/verify_boson_claim_integrity.sh` (Phase424 asserts plus the
@@ -1125,8 +1160,8 @@ PHASE405_ENABLE_GPU=1 LD_LIBRARY_PATH=native/build dotnet run --project studies/
 The targeted Phase424 (Release, ~7 min) and Phase425 (Release, ~1 min) runs
 pass and preserve the fail-closed boundary; the fixed Phase411/Phase417
 re-runs pass with their corrected censuses; Phase202 now reports
-`checklistPassedCount=229`, `checklistFailedCount=3`; claim integrity
-verifies Phase424 through Phase436 (and the corrected Phase417 values)
+`checklistPassedCount=231`, `checklistFailedCount=3`; claim integrity
+verifies Phase424 through Phase438 (and the corrected Phase417 values)
 with `promotedPhysicalMassClaimCount=0`. The full direct
 `./scripts/generate_validated_boson_predictions.sh` pass completed with
 Phase424 through Phase436 included and ended at
@@ -1521,11 +1556,12 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase436 output JSON files, and commit a checkpoint
-after validation.
+force-add the ignored Phase437-438 output JSON files, and commit a
+checkpoint after validation. REMEMBER: new phases must be registered in
+BOTH the generator script AND scripts/BosonPhasesTraversal.proj.
 
 Suggested checkpoint message:
 
 ```text
-Add phase436 exact-Hessian saturation no-go probe
+Add phases 437-438: scale-gap attack wave
 ```

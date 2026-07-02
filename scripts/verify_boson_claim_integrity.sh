@@ -207,6 +207,8 @@ const paths = {
   phase434: "studies/phase434_conditional_observed_field_extraction_row_ledger_001/output/conditional_observed_field_extraction_row_ledger_summary.json",
   phase435: "studies/phase435_two_condensate_scale_gap_probe_001/output/two_condensate_scale_gap_probe_summary.json",
   phase436: "studies/phase436_exact_hessian_saturation_no_go_probe_001/output/exact_hessian_saturation_no_go_probe_summary.json",
+  phase437: "studies/phase437_four_dimensional_transmutation_scaling_probe_001/output/four_dimensional_transmutation_scaling_probe_summary.json",
+  phase438: "studies/phase438_self_consistent_condensate_gap_equation_probe_001/output/self_consistent_condensate_gap_equation_probe_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -485,6 +487,8 @@ const phase433 = requireFile(paths.phase433);
 const phase434 = requireFile(paths.phase434);
 const phase435 = requireFile(paths.phase435);
 const phase436 = requireFile(paths.phase436);
+const phase437 = requireFile(paths.phase437);
+const phase438 = requireFile(paths.phase438);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -5184,6 +5188,26 @@ if (sourceLineageMissing) {
   assert(phase436.routePromotesWzMasses === false && phase436.routePromotesHiggsMass === false && phase436.routeCompletesBosonPredictions === false, "Phase436 cannot promote boson predictions.");
   assert(phase101Package?.exactHessianSaturationNoGoProbe?.exactHessianSaturationNoGoProbePassed === true, "Phase101 must include the Phase436 exact-Hessian block.");
   assert(phase101Package.exactHessianSaturationNoGoProbe.scaleGapPinnedBeyondControlBranch === true, "Phase101 must preserve the Phase436 scale-gap pinning verdict.");
+  assert(phase437.fourDimensionalTransmutationScalingProbePassed === true, "Phase437 4D transmutation scaling probe must pass as fail-closed representation arithmetic.");
+  assert(phase437.targetBlindConstruction === true && typeof phase437.targetBlindConstructionHash === "string" && phase437.targetBlindConstructionHash.length === 64, "Phase437 must remain target-blind with a persisted construction hash.");
+  assert(phase437.applicationSubjectKind === "four-dimensional-transmutation-scaling-probe", "Phase437 must classify its subject as the 4D transmutation scaling probe.");
+  assert(phase437.batteries?.batteriesConsistent === true && phase437.batteries?.twoDAnchorReproducesPhase430 === true, "Phase437 batteries including the Phase430 2D consistency anchor must pass.");
+  assert(phase437.verdicts?.runawayStructuralAtOneLoopInFourD === true && phase437.verdicts?.transmutationMinimumExists === false && phase437.verdicts?.fourDimensionalCwRegimeReached === false, "Phase437 must record the structural-runaway verdict with the unreachable-CW-regime boundary.");
+  assert(phase437.verdicts?.cwFitIsIllConditioned === true && phase437.verdicts?.noScalePromoted === true && phase437.verdicts?.scalingDataIsCandidateOnly === true, "Phase437 must record the ill-conditioned-fit honesty note and promote no scale.");
+  assert(phase437.sourceContractApplicationAllowed === false && phase437.canFillPhase201WzContract === false && phase437.canFillPhase201HiggsContract === false && phase437.canFillPhase256ObservedFieldExtractionContract === false, "Phase437 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase437.routePromotesWzMasses === false && phase437.routePromotesHiggsMass === false && phase437.routeCompletesBosonPredictions === false, "Phase437 cannot promote boson predictions.");
+  assert(phase101Package?.fourDimensionalTransmutationScalingProbe?.fourDimensionalTransmutationScalingProbePassed === true, "Phase101 must include the Phase437 scaling block.");
+  assert(phase438.selfConsistentCondensateGapEquationProbePassed === true, "Phase438 gap-equation probe must pass as fail-closed representation arithmetic.");
+  assert(phase438.targetBlindConstruction === true && typeof phase438.targetBlindConstructionHash === "string" && phase438.targetBlindConstructionHash.length === 64, "Phase438 must remain target-blind with a persisted construction hash.");
+  assert(phase438.applicationSubjectKind === "self-consistent-condensate-gap-equation-probe", "Phase438 must classify its subject as the gap-equation probe.");
+  assert(phase438.batteries?.allBatteriesPassed === true, "Phase438 exactness batteries must all pass.");
+  assert(phase438.gapEquationHasNontrivialSolutions === true && phase438.dynamicalScaleGenerationObserved === true && phase438.criticalCouplingFallsWithVolume === true, "Phase438 must record the candidate dynamical-scale mechanism verdicts.");
+  assert(phase438.hyperchargeChannelCompetitiveWithSinglet === false, "Phase438 must record honestly that the scalar singlet outcompetes the hypercharge channel.");
+  assert(phase438.honestBoundaries?.gapEquationIsMeanFieldApproximation === true && phase438.honestBoundaries?.fourFermionCouplingNormalizationIsRecordedConvention === true && phase438.honestBoundaries?.scaleRatioIsCandidateOnly === true && phase438.honestBoundaries?.noGevPromotion === true, "Phase438 must keep the mean-field, convention, and candidate-only boundaries.");
+  assert(phase438.sourceContractApplicationAllowed === false && phase438.canFillPhase201WzContract === false && phase438.canFillPhase201HiggsContract === false && phase438.canFillPhase256ObservedFieldExtractionContract === false, "Phase438 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase438.routePromotesWzMasses === false && phase438.routePromotesHiggsMass === false && phase438.routeCompletesBosonPredictions === false, "Phase438 cannot promote boson predictions.");
+  assert(phase101Package?.selfConsistentCondensateGapEquationProbe?.selfConsistentCondensateGapEquationProbePassed === true, "Phase101 must include the Phase438 gap-equation block.");
+  assert(phase101Package.selfConsistentCondensateGapEquationProbe.hyperchargeChannelCompetitiveWithSinglet === false, "Phase101 must preserve the Phase438 channel-competition verdict.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

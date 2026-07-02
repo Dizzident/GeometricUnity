@@ -18780,3 +18780,45 @@ promotion claim; no Phase201/Phase256 lineage. Phase427's verdict is
 unchanged and remains pinned to the audited checksum; drift logged in the
 reference doc. GU I-V series records stable; no new GU-relevant records
 in the sweep.
+
+## 2026-07-02 - Phases 437-438: The Scale-Gap Attack Wave
+
+### Context
+
+User directive: attack the pinned scale gap with computation. Three
+computable surfaces were identified: (1) is the runaway a small-2D-lattice
+artifact (4D/finite-size scaling)? (2) can the never-tested backreaction
+mechanism class generate a scale (gap equation)? (3) is the physical-branch
+candidate family universal (design pending, phase439)? Two agents built
+(1) and (2) in parallel.
+
+### Results
+
+- Phase437 (4D transmutation scaling): the runaway is STRUCTURAL. The 4D
+  per-volume slopes are IDENTICAL to the 2D ones (exact Phase430 anchor
+  reproduced to 2e-5); the landscape is log-dominated at every L in
+  {4,6,8,12}; the continuum CW t^4 log t regime is UNREACHABLE on
+  bounded-dispersion lattices; no transmutation minimum anywhere. Honesty
+  note: the CW fit is ill-conditioned with a phantom out-of-window t*;
+  the flat octave log-slope (growth ratio 1.088 vs ~16x) is decisive.
+- Phase438 (gap equation): THE MECHANISM CLASS IS VIABLE - first internal
+  dynamical-scale generation observed: g2_crit falls with volume
+  (0.133/0.078/0.055 at L=4/8/16, R^2=0.998 vs 1/ln L) and ln Sigma* is
+  ~linear in 1/g2 (exponential scale law, R^2 0.83-0.90, honest). BUT the
+  scalar singlet outcompetes the hypercharge channel at every coupling:
+  the gap equation supplies a SCALE, not the BREAKING DIRECTION.
+
+### Interpretation
+
+The scale gap now has a sharp internal structure: (i) the perturbative
+one-loop landscape can never produce a scale on this workbench class -
+structural, dimension-independent; (ii) the nonperturbative backreaction
+class CAN generate a scale (transmutation trend machine-verified,
+candidate-only) but prefers a direction-neutral singlet condensate;
+(iii) therefore a complete internal scale-plus-direction story needs the
+two mechanisms COMBINED (e.g., the gap equation solved in the Phase431
+lambda_8 background where the class-function degeneracy is already
+broken) or the physical-branch structure. Named next experiments:
+phase439 gap-equation-in-background probe (combine 431 x 438); phase440
+physical-branch candidate-family universality sweep (design exploration
+needed).

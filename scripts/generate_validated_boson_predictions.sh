@@ -318,6 +318,8 @@ dotnet run --no-build -c Release --project studies/phase433_blind_beta_coefficie
 dotnet run --no-build -c Release --project studies/phase434_conditional_observed_field_extraction_row_ledger_001/Phase434ConditionalObservedFieldExtractionRowLedger.csproj
 dotnet run --no-build -c Release --project studies/phase435_two_condensate_scale_gap_probe_001/Phase435TwoCondensateScaleGapProbe.csproj
 dotnet run --no-build -c Release --project studies/phase436_exact_hessian_saturation_no_go_probe_001/Phase436ExactHessianSaturationNoGoProbe.csproj
+dotnet run --no-build -c Release --project studies/phase437_four_dimensional_transmutation_scaling_probe_001/Phase437FourDimensionalTransmutationScalingProbe.csproj
+dotnet run --no-build -c Release --project studies/phase438_self_consistent_condensate_gap_equation_probe_001/Phase438SelfConsistentCondensateGapEquationProbe.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 
