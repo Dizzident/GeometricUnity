@@ -197,6 +197,7 @@ const paths = {
   phase424: "studies/phase424_vector_spinor_144_bilinear_sm_doublet_intersection_001/output/vector_spinor_144_bilinear_sm_doublet_intersection_summary.json",
   phase425: "studies/phase425_cross_carrier_bilinear_sm_doublet_completion_audit_001/output/cross_carrier_bilinear_sm_doublet_completion_audit_summary.json",
   phase426: "studies/phase426_cox_gu_series_boson_contract_audit_001/output/cox_gu_series_boson_contract_audit_summary.json",
+  phase427: "studies/phase427_hofseth_gu_rvg_superluminal_source_audit_001/output/hofseth_gu_rvg_superluminal_source_audit_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -465,6 +466,7 @@ const phase423 = requireFile(paths.phase423);
 const phase424 = requireFile(paths.phase424);
 const phase425 = requireFile(paths.phase425);
 const phase426 = requireFile(paths.phase426);
+const phase427 = requireFile(paths.phase427);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -5053,6 +5055,21 @@ if (sourceLineageMissing) {
   assert(phase426.phase201TemplateMutated === false && phase426.fieldsAppliedToPhase201TemplateCount === 0 && phase426.acceptedContractFieldCount === 0, "Phase426 must not mutate or fill the Phase201 template.");
   assert(phase101Package?.coxGuSeriesBosonContractAudit?.coxGuSeriesBosonContractAuditPassed === true, "Phase101 must include the Phase426 Cox GU series audit block.");
   assert(phase101Package.coxGuSeriesBosonContractAudit.guIiKernelRelationCorroboratesPhase404 === true && phase101Package.coxGuSeriesBosonContractAudit.canFillPhase201WzContract === false, "Phase101 must preserve the Phase426 corroboration-only verdict.");
+  assert(phase427.hofsethGuRvgSuperluminalSourceAuditPassed === true, "Phase427 Hofseth GU-RVG superluminal source audit must pass as a fail-closed source audit.");
+  assert(phase427.targetBlindConstruction === true && phase427.physicalTargetsConsultedForConstruction === false, "Phase427 construction must remain target-blind.");
+  assert(typeof phase427.targetBlindConstructionHash === "string" && phase427.targetBlindConstructionHash.length === 64, "Phase427 must persist a target-blind construction hash.");
+  assert(phase427.applicationSubjectKind === "hofseth-gu-rvg-superluminal-source-audit", "Phase427 must classify its subject as the Hofseth GU-RVG superluminal audit.");
+  assert(phase427.originalRecordTombstoned === true && phase427.liveSuccessorRecordLocated === true, "Phase427 must record the 21056575 tombstone and the live 21117379 successor lineage.");
+  assert(phase427.weinsteinCoAuthorshipExternallyVerified === false && phase427.attributionMatchesDocumentedFabricationPattern === true, "Phase427 must record the co-authorship attribution as externally unverified.");
+  assert(phase427.source?.liveZenodoRecordId === 21117379 && phase427.source?.pdfChecksum === "md5:90be901bc227bc90e493c295aa276046" && phase427.source?.extractedLineCount === 6465, "Phase427 must preserve the live-record identity and artifact checksums.");
+  assert(phase427.sourceUsesExternalElectroweakVev246Gev === true && phase427.sourceMarksCondensateAmplitudeAsObservationalInput === true, "Phase427 must classify the 246 GeV and condensate-amplitude material as external inputs.");
+  assert(phase427.sourceProvidesBosonContractEvidence === false && phase427.sourceProvidesWzSourceRows === false && phase427.sourceProvidesHiggsScalarSourceRow === false && phase427.sourceProvidesWeakAngleOrCouplingLineage === false, "Phase427 cannot claim boson contract, source-row, or coupling-lineage evidence.");
+  assert(phase427.sourceProvidesPoleExtraction === false && phase427.sourceProvidesGeVUnitNormalization === false && phase427.sourceProvidesVectorSpinor144ProjectionMap === false, "Phase427 cannot invent pole extraction, GeV normalization, or projection maps.");
+  assert(phase427.sourceContractApplicationAllowed === false && phase427.canFillPhase201WzContract === false && phase427.canFillPhase201HiggsContract === false && phase427.canFillPhase256ObservedFieldExtractionContract === false, "Phase427 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase427.routePromotesWzMasses === false && phase427.routePromotesHiggsMass === false && phase427.routeCompletesBosonPredictions === false, "Phase427 cannot promote boson predictions.");
+  assert(phase427.phase201TemplateMutated === false && phase427.fieldsAppliedToPhase201TemplateCount === 0 && phase427.acceptedContractFieldCount === 0, "Phase427 must not mutate or fill the Phase201 template.");
+  assert(phase101Package?.hofsethGuRvgSuperluminalSourceAudit?.hofsethGuRvgSuperluminalSourceAuditPassed === true, "Phase101 must include the Phase427 Hofseth GU-RVG audit block.");
+  assert(phase101Package.hofsethGuRvgSuperluminalSourceAudit.sourceUsesExternalElectroweakVev246Gev === true && phase101Package.hofsethGuRvgSuperluminalSourceAudit.canFillPhase201WzContract === false, "Phase101 must preserve the Phase427 external-input verdict.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

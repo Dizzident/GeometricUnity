@@ -18456,3 +18456,88 @@ The remaining NEW-LEAD is the Hofseth GU-RVG successor record
 checkpoint. Otherwise the standing source-defined
 projection/action/VEV/observed-field requirement and checkpoint-cadence
 monitoring continue.
+
+## 2026-07-01 - Phase427: Hofseth GU-RVG Superluminal Source Audit
+
+### Context
+
+Fourth checkpoint of the session, discharging the second NEW-LEAD from the
+same-day sweep. On retrieval, the catalogued record 21056575 returned a
+410 tombstone: DELETED at 2026-07-01T22:51:40Z (reason "duplicate",
+grace-period-v1) - hours after the sweep found it. A title-scoped Zenodo
+search located the live successor 21117379 (same title and claimed
+authorship, published 2026-06-18).
+
+### Source Retrieval
+
+Live record PDF (3084101 bytes, md5:90be901bc227bc90e493c295aa276046)
+retrieved via the Zenodo API and extracted with pdftotext (6465 lines).
+Reference note:
+`docs/Reference/ExperimentReferences/ZENODO-21117379-GURVG-SUPERLUMINAL.md`.
+
+### Result
+
+- The paper's electroweak content is IMPORTED, not derived: v = 246 GeV
+  enters as an explicit input (eqs. 5-6) to set the 27.2 TeV dilaton
+  decay constant, the 95.4 GeV diphoton excess is an external collider
+  signal, and the paper's own derived/input/open bookkeeping marks the
+  condensate amplitude as "fixed by observation rather than computation".
+- W boson, Z boson, weak mixing, Weinberg angle, hypercharge, pole mass,
+  and vector-spinor projection terms are absent from the text.
+- The claimed Weinstein-Harvard co-authorship is externally unverified
+  and matches the fabricated-attribution pattern of arXiv:2606.02184;
+  recorded without endorsement.
+- Verdict:
+  `hofseth-gu-rvg-superluminal-audited-external-inputs-no-contract-fill`.
+  No Phase201 or Phase256 field is filled; nothing is promoted.
+
+### Standing Next Work
+
+Both 2026-07-01 sweep leads are now discharged (Phase426, Phase427). The
+program returns to its standing state: the source-defined
+projection/action/VEV/observed-field requirement, higher-order composite
+probes only if a source names one, and literature monitoring at
+checkpoint cadence (track Zenodo deletions/re-uploads by checksum, not
+record ID).
+
+## 2026-07-01 - Validation Cascade Root-Caused; Release Conversion; Standing Directives
+
+### Scanner Cascade Incident (Resolved)
+
+The first Phase427 generator pass failed at claim integrity with 48 phases
+flipped to fail-closed. Root cause (traced 427 -> 426 -> ... -> 315 -> 312
+-> 281): `docs/Phases/Implementation/IMPLEMENTATION_P427.md` contains
+phase281's GU-RVG scan terms ("95.4 GeV", "metric engineering") and was not
+registered in phase281's implementation-doc exclusion list (which ended at
+IMPLEMENTATION_P423.md). Phase281 correctly reported unregistered
+GU-RVG-related local text and failed closed; the verdict cascaded through
+the precursor graph (312 -> 315/331 -> 364..369 -> 385..388 -> 389..427).
+THE SYSTEM WORKED AS DESIGNED - the miss was the doc-registration step that
+the Phase423 checkpoint had performed for its own note. Fix: registered
+IMPLEMENTATION_P424..P427.md in phase281's and phase207's exclusion lists.
+Lesson recorded in the restart prompt as the SCANNER-REGISTRATION HAZARD
+rule: register every new scanner-term-bearing doc in the same checkpoint;
+never weaken the scanners.
+
+### Release Conversion (User Directive 2026-07-01)
+
+All 299 generator invocations now run `dotnet run -c Release` (the Debug
+JIT costs 3-8x on the numeric phases; validation wall-time bounds the
+innovation pace). The conversion plus the cascade fix were validated by a
+fresh full generator pass: 22.1 min wall, ending at
+boson-claim-integrity-verified with checklistPassedCount=220 and
+promotedPhysicalMassClaimCount=0 - roughly half the wall time of the
+earlier uninstrumented Debug passes the same day.
+
+### Standing Directives Recorded (User, 2026-07-01)
+
+1. Go beyond the literature: formulate candidate solutions to the
+   outstanding problems as target-blind hypotheses and decide them with
+   fail-closed experiment phases. Named first candidates: the fermion-loop
+   (Coleman-Weinberg) effective potential on the Phase418 doublet block
+   (the mechanism class Phase405/410/418 explicitly left open), and a
+   target-blind dimensionless-ratio ledger from the embedding chain.
+2. Performance program: after Release, the next wall-time candidates are a
+   dependency-DAG parallel generator, content-hash incremental validation,
+   and a shared build pass. Each requires full-pass validation before
+   adoption.

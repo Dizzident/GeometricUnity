@@ -1,0 +1,188 @@
+{
+  "phaseId": "phase427-hofseth-gu-rvg-superluminal-source-audit",
+  "generatedAt": "2026-07-02T01:41:18.1625673+00:00",
+  "terminalStatus": "hofseth-gu-rvg-superluminal-audited-external-inputs-no-contract-fill",
+  "hofsethGuRvgSuperluminalSourceAuditPassed": true,
+  "phase423PrecursorPassed": true,
+  "phase426PrecursorPassed": true,
+  "applicationSubjectKind": "hofseth-gu-rvg-superluminal-source-audit",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "775fccd735ffe412be6c87facf48601b91582607fdbc025b2a2eb459643817fb",
+  "source": {
+    "originalZenodoRecordId": 21056575,
+    "originalDoi": "10.5281/zenodo.21056575",
+    "originalRecordDeleted": true,
+    "originalRemovalDateUtc": "2026-07-01T22:51:40Z",
+    "originalRemovalReason": "duplicate",
+    "originalDeletionPolicy": "grace-period-v1",
+    "liveZenodoRecordId": 21117379,
+    "liveDoi": "10.5281/zenodo.21117379",
+    "publicationDate": "2026-06-18",
+    "title": "The Mechanics, Material Constraints, and Causal Preservation of Superluminal Metric Engineering within the GU-RVG Framework: with an Independently Verified Photonic Sector",
+    "claimedAuthors": "Hofseth, Jesse D. (Liberty University); Weinstein, Eric R. (Harvard University)",
+    "pdfSizeBytes": 3084101,
+    "pdfChecksum": "md5:90be901bc227bc90e493c295aa276046",
+    "extractionTool": "pdftotext",
+    "extractedLineCount": 6465
+  },
+  "originalRecordTombstoned": true,
+  "liveSuccessorRecordLocated": true,
+  "weinsteinCoAuthorshipExternallyVerified": false,
+  "attributionMatchesDocumentedFabricationPattern": true,
+  "priorPhase423SourceSetDidNotIncludeThisRecord": true,
+  "termEvidence": [
+    {
+      "term": "electroweak",
+      "count": 4,
+      "evidenceClass": "external-vev-import-and-precision-bound-context"
+    },
+    {
+      "term": "246",
+      "count": 2,
+      "evidenceClass": "external-electroweak-vev-input-for-dilaton-decay-constant"
+    },
+    {
+      "term": "vacuum expectation",
+      "count": 1,
+      "evidenceClass": "dilaton-vev-radiative-reading-uses-imported-v246"
+    },
+    {
+      "term": "95.4",
+      "count": 25,
+      "evidenceClass": "external-collider-diphoton-signal-context"
+    },
+    {
+      "term": "dilaton",
+      "count": 104,
+      "evidenceClass": "gu-rvg-dilaton-phenomenology-scope"
+    },
+    {
+      "term": "koide",
+      "count": 16,
+      "evidenceClass": "koide-relation-phenomenology-scope"
+    },
+    {
+      "term": "condensate",
+      "count": 164,
+      "evidenceClass": "warp-drive-condensate-scope"
+    },
+    {
+      "term": "fixed by observation",
+      "count": 2,
+      "evidenceClass": "source-marks-condensate-amplitude-as-observational-input"
+    },
+    {
+      "term": "higgs",
+      "count": 2,
+      "evidenceClass": "two-higgs-doublet-comparison-prose-only"
+    },
+    {
+      "term": "doublet",
+      "count": 2,
+      "evidenceClass": "two-higgs-doublet-comparison-prose-only"
+    },
+    {
+      "term": "yukawa",
+      "count": 1,
+      "evidenceClass": "koide-motivation-prose-only"
+    },
+    {
+      "term": "w boson",
+      "count": 0,
+      "evidenceClass": "absent-contract-keyword"
+    },
+    {
+      "term": "z boson",
+      "count": 0,
+      "evidenceClass": "absent-contract-keyword"
+    },
+    {
+      "term": "weak mixing",
+      "count": 0,
+      "evidenceClass": "absent-contract-keyword"
+    },
+    {
+      "term": "weinberg angle",
+      "count": 0,
+      "evidenceClass": "absent-contract-keyword"
+    },
+    {
+      "term": "hypercharge",
+      "count": 0,
+      "evidenceClass": "absent-contract-keyword"
+    },
+    {
+      "term": "pole mass",
+      "count": 0,
+      "evidenceClass": "absent-contract-keyword"
+    },
+    {
+      "term": "vector-spinor",
+      "count": 0,
+      "evidenceClass": "absent-projection-map-keyword"
+    }
+  ],
+  "absentContractKeywordCount": 7,
+  "sourceScopeIsSuperluminalMetricEngineering": true,
+  "sourceUsesExternalElectroweakVev246Gev": true,
+  "sourceUsesExternalCollider95GevSignal": true,
+  "sourceMarksCondensateAmplitudeAsObservationalInput": true,
+  "sourceProvidesBosonContractEvidence": false,
+  "sourceProvidesObservedElectroweakNamespaceMap": false,
+  "sourceProvidesPhotonWzHProjectionRows": false,
+  "sourceProvidesWzSourceRows": false,
+  "sourceProvidesSeparateWzRows": false,
+  "sourceProvidesHiggsScalarSourceRow": false,
+  "sourceProvidesElectroweakVevMap": false,
+  "sourceProvidesTargetIndependentVevSource": false,
+  "sourceProvidesWeakAngleOrCouplingLineage": false,
+  "sourceProvidesCurvatureToElectroweakScaleLaw": false,
+  "sourceProvidesPoleExtraction": false,
+  "sourceProvidesGeVUnitNormalization": false,
+  "sourceProvidesVectorSpinor144ProjectionMap": false,
+  "sourceProvidesCrossCarrierProjectionMap": false,
+  "upstreamContractState": {
+    "phase201SummaryPath": "studies/phase201_boson_source_lineage_intake_contract_001/output/boson_source_lineage_intake_contract_summary.json",
+    "phase201AllRequiredLineagesPromotable": false,
+    "phase213SummaryPath": "studies/phase213_boson_source_lineage_blocker_matrix_001/output/boson_source_lineage_blocker_matrix_summary.json",
+    "phase213WzMissingFieldCount": 15,
+    "phase213HiggsMissingFieldCount": 14,
+    "phase256SummaryPath": "studies/phase256_observed_field_extraction_intake_contract_001/output/observed_field_extraction_intake_contract_summary.json",
+    "phase256ContractPromotable": false,
+    "phase423SummaryPath": "studies/phase423_zenodo_gu_rvg_spinorial_dark_sector_boson_contract_audit_001/output/zenodo_gu_rvg_spinorial_dark_sector_boson_contract_audit_summary.json",
+    "phase426SummaryPath": "studies/phase426_cox_gu_series_boson_contract_audit_001/output/cox_gu_series_boson_contract_audit_summary.json"
+  },
+  "physicalCouplingProvided": false,
+  "routeProvidesPhysicalMassPsiCompatibleBranch": false,
+  "routeProvidesCompletedFermionicAction": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesObservedElectroweakNamespaceMap": false,
+  "routeProvidesHiggsScalarSourceOperator": false,
+  "routeProvidesWeakAngleOrCouplingLineage": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "The paper\u0027s electroweak content is imported (v = 246 GeV as input; 95.4 GeV as external collider signal), not derived.",
+    "The claimed Weinstein-Harvard co-authorship is externally unverified and matches a documented fabricated-attribution pattern; the audit records the attribution without endorsing it.",
+    "The original record\u0027s deletion (reason: duplicate) and the live successor\u0027s identity are recorded for lineage; neither changes the non-promotional verdict.",
+    "No Phase201 or Phase256 fill."
+  ],
+  "decision": "The Hofseth GU-RVG superluminal metric engineering lead is audited and non-promotional. The originally-catalogued record 21056575 was deleted on 2026-07-01 (tombstone reason: duplicate); the live successor 21117379 carries the same title and the same externally-unverified Weinstein-Harvard co-authorship attribution, which matches the fabricated-attribution pattern documented in arXiv:2606.02184. The full text is 95.4 GeV dilaton/Koide/warp-condensate phenomenology that IMPORTS the electroweak VEV v = 246 GeV as an explicit input to set a 27.2 TeV dilaton decay constant, and its own bookkeeping marks the condensate amplitude as fixed by observation rather than computation. No W/Z/H source rows, observed-field projection, weak-angle lineage, pole extraction, or GeV-from-geometry normalization exists anywhere in the text. No Phase201 or Phase256 field is filled; no W/Z/H mass is promoted."
+}

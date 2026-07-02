@@ -28,6 +28,20 @@ promote W/Z/H masses unless the source-lineage contracts are genuinely filled.
   GeV/unit normalization.
 - If external research is needed, use current primary/official sources where
   possible and add/update reference detail notes before using the source.
+- USER DIRECTIVE (2026-07-01): run every validation phase with Release builds
+  (`dotnet run -c Release`). The generator script encodes this; use the same
+  flag for targeted runs. The Debug JIT costs 3-8x on numeric phases and
+  validation wall-time bounds the innovation pace. Measured: the full
+  generator pass takes 22.1 min in Release (2026-07-01), vs roughly twice
+  that for the earlier uninstrumented Debug passes the same day.
+- SCANNER-REGISTRATION HAZARD (learned 2026-07-01): the broad text scanners
+  (phase281's GU-RVG local search, phase207's blocker list, and kin) audit
+  repo text OUTSIDE their known-file lists. Any NEW doc that names scanner
+  terms (95.4 GeV, metric engineering, GU-RVG, source rows, ...) - including
+  IMPLEMENTATION_PNNN.md files - must be registered in those exclusion lists
+  in the same checkpoint, or the next generator pass fails with a 48-phase
+  fail-closed cascade rooted at the scanner. This is the system working as
+  designed; register docs deliberately, never weaken the scanners.
 
 ### Current Scientific Status
 
@@ -35,7 +49,7 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase426 work (plus the 2026-06-12 platform
+Current gate status after the Phase427 work (plus the 2026-06-12 platform
 fix - GPU parity defect root-caused and discharged - and the 2026-07-01
 |Y|=1/2 calibration defect fix in the Phase411/417 informational SM
 censuses):
@@ -43,7 +57,7 @@ censuses):
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=219`,
+  `objectiveAchieved=False`, `checklistPassedCount=220`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -368,6 +382,18 @@ censuses):
   `sourceProvidesGeVUnitNormalization=False`,
   `canFillPhase201WzContract=False`,
   `canFillPhase256ObservedFieldExtractionContract=False`
+- Phase427:
+  `hofsethGuRvgSuperluminalSourceAuditPassed=True`,
+  `originalRecordTombstoned=True` (zenodo 21056575 deleted 2026-07-01 as
+  "duplicate"), `liveSuccessorRecordLocated=True` (zenodo 21117379),
+  `weinsteinCoAuthorshipExternallyVerified=False`,
+  `sourceUsesExternalElectroweakVev246Gev=True` (imported input for the
+  27.2 TeV dilaton decay constant),
+  `sourceMarksCondensateAmplitudeAsObservationalInput=True`,
+  `sourceProvidesWzSourceRows=False`,
+  `sourceProvidesGeVUnitNormalization=False`,
+  `canFillPhase201WzContract=False`,
+  `canFillPhase256ObservedFieldExtractionContract=False`
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -388,7 +414,29 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work (2026-07-01, third checkpoint of the session) added
+The latest work (2026-07-01, fourth checkpoint of the session) added
+Phase427, the Hofseth GU-RVG superluminal source audit, discharging the
+second and final NEW-LEAD from the same-day literature sweep. The
+originally-catalogued record 21056575 was DELETED from Zenodo on
+2026-07-01 (tombstone reason "duplicate", hours after the sweep found
+it); the audit located and audited the live successor 21117379 (same
+title; PDF md5 90be901bc227bc90e493c295aa276046; 6465 extracted lines).
+The paper imports v = 246 GeV as an explicit input (its own
+derived/input/open table marks it "I") to set a 27.2 TeV dilaton decay
+constant, marks its condensate amplitude as "fixed by observation rather
+than computation", and carries the externally-unverified
+Weinstein-Harvard co-authorship matching the arXiv:2606.02184
+fabricated-attribution pattern. No W/Z/H rows, projection, weak-angle,
+pole, or GeV-from-geometry lineage; verdict
+`hofseth-gu-rvg-superluminal-audited-external-inputs-no-contract-fill`.
+Reference note:
+`docs/Reference/ExperimentReferences/ZENODO-21117379-GURVG-SUPERLUMINAL.md`.
+Study: `studies/phase427_hofseth_gu_rvg_superluminal_source_audit_001`
+(IMPLEMENTATION_P427.md). BOTH sweep leads are now discharged; the
+standing program returns to checkpoint-cadence monitoring and the
+source-defined projection/action/VEV requirement.
+
+Before that, the work (2026-07-01, third checkpoint of the session) added
 Phase426, the Cox GU series (I-V) boson contract audit, discharging the
 first NEW-LEAD from the same-day literature sweep. All five June 2026
 Zenodo records are retrieved, md5-verified, extracted, and audited:
@@ -841,7 +889,7 @@ HONEST BOUNDARY. Study:
 
 ### Integration Points Already Updated
 
-Phase426 (like Phase388-425) is wired into:
+Phase427 (like Phase388-426) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (single broad pass; the
   older duplicated final sweep was removed on 2026-06-16; the Phase424 line
@@ -857,7 +905,8 @@ Phase426 (like Phase388-425) is wired into:
   `zenodo-gu-rvg-spinorial-dark-sector-boson-contract-audit-materialized` and
   `vector-spinor-144-bilinear-sm-doublet-intersection-analysis-materialized` and
   `cross-carrier-bilinear-sm-doublet-completion-audit-materialized` and
-  `cox-gu-series-boson-contract-audit-materialized`;
+  `cox-gu-series-boson-contract-audit-materialized` and
+  `hofseth-gu-rvg-superluminal-source-audit-materialized`;
   the Phase417 checklist row now asserts the corrected
   `yHalfCalibrationExact=True` and `internalSmHiggsPatternComplexDimension=6`)
 - `scripts/verify_boson_claim_integrity.sh` (Phase424 asserts plus the
@@ -902,6 +951,7 @@ dotnet run --project studies/phase423_zenodo_gu_rvg_spinorial_dark_sector_boson_
 dotnet run -c Release --project studies/phase424_vector_spinor_144_bilinear_sm_doublet_intersection_001/Phase424VectorSpinor144BilinearSmDoubletIntersection.csproj
 dotnet run -c Release --project studies/phase425_cross_carrier_bilinear_sm_doublet_completion_audit_001/Phase425CrossCarrierBilinearSmDoubletCompletionAudit.csproj
 dotnet run --project studies/phase426_cox_gu_series_boson_contract_audit_001/Phase426CoxGuSeriesBosonContractAudit.csproj
+dotnet run --project studies/phase427_hofseth_gu_rvg_superluminal_source_audit_001/Phase427HofsethGuRvgSuperluminalSourceAudit.csproj
 dotnet run --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 ./scripts/verify_boson_claim_integrity.sh
@@ -913,11 +963,11 @@ PHASE405_ENABLE_GPU=1 LD_LIBRARY_PATH=native/build dotnet run --project studies/
 The targeted Phase424 (Release, ~7 min) and Phase425 (Release, ~1 min) runs
 pass and preserve the fail-closed boundary; the fixed Phase411/Phase417
 re-runs pass with their corrected censuses; Phase202 now reports
-`checklistPassedCount=219`, `checklistFailedCount=3`; claim integrity
-verifies Phase424/Phase425/Phase426 (and the corrected Phase417 values)
-with `promotedPhysicalMassClaimCount=0`. The full direct
+`checklistPassedCount=220`, `checklistFailedCount=3`; claim integrity
+verifies Phase424/Phase425/Phase426/Phase427 (and the corrected Phase417
+values) with `promotedPhysicalMassClaimCount=0`. The full direct
 `./scripts/generate_validated_boson_predictions.sh` pass completed with
-Phase424, Phase425, and Phase426 included and ended at
+Phase424 through Phase427 included and ended at
 `boson-claim-integrity-verified`. (Platform
 state: Gu.Interop.Tests 158/158 with the real-mesh parity and
 buffer-handle recycling tests; both Phase405 platform notes discharged
@@ -972,6 +1022,41 @@ Important current local detail notes:
 Do not try to promote another numerical near-pass. The next useful work must
 either find or derive a theorem-level artifact that can fill the missing
 contract fields, or remove a physical blocker on the VO-7 branch.
+
+USER DIRECTIVE (2026-07-01, standing): GO BEYOND THE LITERATURE. Do not
+only audit sources - attempt to solve the outstanding problems directly:
+formulate candidate solutions as target-blind hypotheses, implement them as
+fail-closed experiment phases, and let the computation decide. Named
+candidate experiments (each a legitimate internal computation, no new
+sources required):
+
+- FERMION-LOOP EFFECTIVE POTENTIAL ON THE DOUBLET BLOCK: Phase405/410/418
+  proved doublet selection cannot come from the bare bosonic objective and
+  explicitly named fermionic backreaction as the open mechanism class.
+  Compute the one-loop fermionic determinant (Coleman-Weinberg-style)
+  induced on the Phase418 block menu by the control branch's fermionic
+  couplings, and test whether it supplies the direction-dependent block
+  mass law and quartic stabilizer that Phase418 had to import. Either
+  outcome is decisive: selection-from-fermion-loops would be the first
+  internal symmetry-breaking mechanism candidate; a negative closes the
+  named mechanism class on the control branch.
+- TARGET-BLIND DIMENSIONLESS-RATIO LEDGER: absolute GeV promotion is
+  contract-blocked, but the embedding chain already fixes dimensionless
+  quantities blind (tan^2 = 3/5, corroborated externally by Phase426).
+  Enumerate which dimensionless electroweak ratios (e.g. mW/mZ at tree
+  level from the kernel relation) the internal structure determines
+  without importing any scale, record them as a fail-closed ledger with
+  the exact additional lineage (running, thresholds, scheme) each would
+  need before any comparison, and DO NOT compare against measured values
+  in the same phase that derives them.
+- PERFORMANCE PROGRAM (validation wall-time bounds innovation pace):
+  Release builds everywhere (DONE 2026-07-01); next candidates are a
+  dependency-DAG parallel generator (independent phase chains run
+  concurrently), content-hash incremental validation (skip phases whose
+  inputs are unchanged), and a single shared build pass instead of
+  per-phase MSBuild invocations. Any such change must preserve the
+  sequential semantics of dependent phases and be validated by a full
+  pass before adoption.
 
 USER DIRECTIVE (2026-06-11): COMPLETED. The three brute-force
 computations are done and committed: Phase404 (ratio menu tan^2 = 3/5,
@@ -1165,7 +1250,11 @@ The most useful next branches are:
    supplies no potential/VEV/spectrum/scale/fit); the Hofseth GU-RVG
    successor (10.5281/zenodo.21056575; observationally-fixed condensate
    amplitude; likely fabricated co-authorship per arXiv:2606.02184)
-   remains the named next audit, expected non-promotional.
+   is DONE by Phase427: the original record was deleted 2026-07-01
+   (tombstone "duplicate"); the live successor 21117379 imports
+   v = 246 GeV and fixes its condensate amplitude by observation -
+   non-promotional. Both sweep leads are discharged; monitoring returns
+   to checkpoint cadence.
 3. (CLOSED by Phase399 + Phase400 + Phase401: the quadratic-model coupled
    critical point is solved modulo flat directions, every flat ray is
    quartically lifted, and the attempted construction of the relaxed
@@ -1206,7 +1295,7 @@ Run these first:
 git status --short
 git log -3 --oneline
 tail -160 docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
-rg -n "Phase426|coxGuSeriesBosonContractAudit|Phase425|crossCarrierBilinearSmDoubletCompletionAudit|Phase424|zenodo.20531776|zenodo.21056575" \
+rg -n "Phase427|hofsethGuRvgSuperluminalSourceAudit|Phase426|coxGuSeriesBosonContractAudit|Phase425|zenodo.20531776|zenodo.21117379" \
   docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md \
   docs/Reference/ExperimentReferences/GU-DRAFT-2021.md \
   docs/Reference/ExperimentReferences/COX-GU-SERIES-I-V-202606.md \
@@ -1225,11 +1314,11 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase426 output JSON files, and commit a checkpoint
+force-add the ignored Phase427 output JSON files, and commit a checkpoint
 after validation.
 
 Suggested checkpoint message:
 
 ```text
-Add phase426 Cox GU series boson contract audit
+Add phase427 Hofseth GU-RVG superluminal source audit
 ```
