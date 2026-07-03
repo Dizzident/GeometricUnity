@@ -18999,3 +18999,31 @@ next study - the joint effective potential with variational eps*(omega)
 and the CW/gap-equation saturation analysis (Phase435/438 machinery on
 the lifted Hessian) - is, for the first time, a scale question with no
 known structural obstruction.
+
+## 2026-07-03 - Phase443: Necessary Yes, Sufficient Not Yet (One Loop, Minimal Mesh)
+
+### Result
+
+The saturation question is answered honestly at the first accessible
+scale: NO log-saturation at one loop on the minimal 4D workbench. The
+variational theta*(omega) stationarity was solved to 3.4e-9 relative at
+every composite point (after a four-round solver hardening the phase's
+own fail-closed gate forced: the phase refused to pass physics verdicts
+at unconverged theta through three runs - the discipline working
+exactly as designed). With valid stationarity: the identity control
+shows no saturation (anchoring the theorems), and every Einsteinian
+member classifies trivial-origin - the Phase442 degree-lift does not,
+at one loop on a single-tesseract mesh, saturate V_eff into an interior
+minimum.
+
+### Interpretation
+
+The frontier after phases 442+443: the NECESSARY condition for a
+dynamical scale (joint-Hessian degree > 2) is POSITIVELY DELIVERED by
+the draft's own operator - the toy-era impossibility is gone - but
+sufficiency fails on the smallest possible 4D mesh at one loop. The
+Phase437 lesson names the probable reason: the genuine CW t^4 log t
+regime needs mode volume a 16-vertex mesh cannot supply. Named next
+levers: the same probe on CreateUniform4D(2)+ (engineering: smarter
+joint-Hessian assembly than dense FD), two-loop/RG improvement, richer
+Phi menus. Everything fail-closed; nothing promoted.

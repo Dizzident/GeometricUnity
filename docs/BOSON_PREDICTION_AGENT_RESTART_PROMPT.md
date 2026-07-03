@@ -49,7 +49,7 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase442 work (plus the 2026-06-12 platform
+Current gate status after the Phase443 work (plus the 2026-06-12 platform
 fix - GPU parity defect root-caused and discharged - and the 2026-07-01
 |Y|=1/2 calibration defect fix in the Phase411/417 informational SM
 censuses):
@@ -57,7 +57,7 @@ censuses):
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=235`,
+  `objectiveAchieved=False`, `checklistPassedCount=236`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -502,6 +502,14 @@ censuses):
   - THE DRAFT-CANONICAL SHIAB BREAKS THE EXACT-QUADRATICITY: the
   structural wall against a dynamical bosonic scale is ABSENT on the 4D
   platform (necessary-not-sufficient; nothing promoted)
+- Phase443: `jointEffectivePotentialSaturationProbePassed=True`,
+  `variationalThetaStationaritySolved=True` (3.4e-9 relative at every
+  composite point), `identityControlShowsNoSaturation=True`,
+  `einsteinianLogSaturationObserved=False` - the honest verdict: the
+  degree-lift does NOT saturate V_eff at one loop on the minimal
+  16-vertex 4D mesh (necessary satisfied, sufficiency not yet);
+  named levers: CreateUniform4D(2)+ with smarter Hessian assembly,
+  two-loop/RG improvement, richer Phi menus
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -522,7 +530,27 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work (2026-07-03) is PHASE442 - the first physics study on
+The latest work (2026-07-03, after Phase442) is PHASE443, the joint
+effective-potential saturation probe: variational theta*(omega) solved
+by scale-aware Newton with continuation (relative stationarity 3.4e-9
+everywhere; the phase fail-closed itself through THREE runs until the
+solver was provably converged - four hardening rounds: analytic-Jacobian
+Newton, warm-start continuation + backward first-point re-solve,
+dimensionally-correct relative gates, scale-aware LM damping +
+multi-start rescue). VERDICT: no log-saturation at one loop on the
+minimal 4D workbench - identity control anchors the theorems, every
+Einsteinian member trivial-origin. NECESSARY (Phase442) satisfied;
+SUFFICIENCY fails on the 16-vertex mesh at one loop; the Phase437
+mode-volume lesson names the probable reason. NAMED NEXT (phase444):
+the same probe on CreateUniform4D(2) - requires an ENGINEERING item
+first (joint-Hessian assembly smarter than dense FD: the 81-vertex mesh
+has joint DOF ~1500, so dense FD Hessians are ~2.3M evaluations per
+point - use LinearizeTheta/Linearize Jacobian assembly + Gauss-Newton
+structure instead). Alternatives: two-loop/RG improvement; richer Phi
+menus. Study: phase443_joint_effective_potential_saturation_probe_001
+(IMPLEMENTATION_P443.md).
+
+Before that, the work (2026-07-03) was PHASE442 - the first physics study on
 the user-approved dimension-four platform (built by a six-agent team:
 M1 4D mesh, M1b periodic torus, M2 Clifford/spinor + Dirac scheme, M3a
 Einsteinian Shiab family, M3b independent-theta joint-Hessian arm; all
@@ -1180,7 +1208,7 @@ HONEST BOUNDARY. Study:
 
 ### Integration Points Already Updated
 
-Phase442 (like Phase388-441) is wired into:
+Phases 442-443 (like Phase388-441) are wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (single broad pass; the
   older duplicated final sweep was removed on 2026-06-16; the Phase424 line
@@ -1212,7 +1240,8 @@ Phase442 (like Phase388-441) is wired into:
   `gap-equation-lambda8-background-channel-steering-probe-materialized` and
   `coupled-background-condensate-fixed-point-probe-materialized` and
   `toy-branch-family-universality-sweep-materialized` and
-  `joint-omega-theta-hessian-degree-probe-materialized`;
+  `joint-omega-theta-hessian-degree-probe-materialized` and
+  `joint-effective-potential-saturation-probe-materialized`;
   the Phase417 checklist row now asserts the corrected
   `yHalfCalibrationExact=True` and `internalSmHiggsPatternComplexDimension=6`)
 - `scripts/verify_boson_claim_integrity.sh` (Phase424 asserts plus the
@@ -1269,8 +1298,8 @@ PHASE405_ENABLE_GPU=1 LD_LIBRARY_PATH=native/build dotnet run --project studies/
 The targeted Phase424 (Release, ~7 min) and Phase425 (Release, ~1 min) runs
 pass and preserve the fail-closed boundary; the fixed Phase411/Phase417
 re-runs pass with their corrected censuses; Phase202 now reports
-`checklistPassedCount=235`, `checklistFailedCount=3`; claim integrity
-verifies Phase424 through Phase442 (and the corrected Phase417 values)
+`checklistPassedCount=236`, `checklistFailedCount=3`; claim integrity
+verifies Phase424 through Phase443 (and the corrected Phase417 values)
 with `promotedPhysicalMassClaimCount=0`. The full direct
 `./scripts/generate_validated_boson_predictions.sh` pass completed with
 Phase424 through Phase436 included and ended at
@@ -1695,7 +1724,7 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase442 output JSON files, and commit a checkpoint
+force-add the ignored Phase443 output JSON files, and commit a checkpoint
 after validation. REMEMBER: new phases must be registered in BOTH the
 generator script AND scripts/BosonPhasesTraversal.proj, and in ALL EIGHT
 scanners (including phase253's dimension-4 exclusions).
@@ -1703,5 +1732,5 @@ scanners (including phase253's dimension-4 exclusions).
 Suggested checkpoint message:
 
 ```text
-Add phase442 joint Hessian-degree probe
+Add phase443 joint effective-potential saturation probe
 ```

@@ -41,6 +41,7 @@ var excludedPathFragments = new[]
     // sufficient degree-lift probe); a generated fail-closed diagnostic
     // artifact, not an observed-sector vacuum claim.
     "studies/phase442_joint_omega_theta_hessian_degree_probe_001/",
+    "studies/phase443_joint_effective_potential_saturation_probe_001/",
 };
 
 var dimension4Pattern = new Regex("""

@@ -213,6 +213,7 @@ const paths = {
   phase440: "studies/phase440_coupled_background_condensate_fixed_point_probe_001/output/coupled_background_condensate_fixed_point_probe_summary.json",
   phase441: "studies/phase441_toy_branch_family_universality_sweep_001/output/toy_branch_family_universality_sweep_summary.json",
   phase442: "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json",
+  phase443: "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -497,6 +498,7 @@ const phase439 = requireFile(paths.phase439);
 const phase440 = requireFile(paths.phase440);
 const phase441 = requireFile(paths.phase441);
 const phase442 = requireFile(paths.phase442);
+const phase443 = requireFile(paths.phase443);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -5259,6 +5261,17 @@ if (sourceLineageMissing) {
   assert(phase442.routePromotesWzMasses === false && phase442.routePromotesHiggsMass === false && phase442.routeCompletesBosonPredictions === false, "Phase442 cannot promote boson predictions.");
   assert(phase101Package?.jointOmegaThetaHessianDegreeProbe?.jointOmegaThetaHessianDegreeProbePassed === true, "Phase101 must include the Phase442 block.");
   assert(phase101Package.jointOmegaThetaHessianDegreeProbe.noScaleProduced === true && phase101Package.jointOmegaThetaHessianDegreeProbe.degreeLiftIsNecessaryNotSufficientForScale === true, "Phase101 must preserve the Phase442 necessary-not-sufficient boundary.");
+  assert(phase443.jointEffectivePotentialSaturationProbePassed === true, "Phase443 saturation probe must pass as fail-closed representation arithmetic.");
+  assert(phase443.targetBlindConstruction === true && typeof phase443.targetBlindConstructionHash === "string" && phase443.targetBlindConstructionHash.length === 64, "Phase443 must remain target-blind with a persisted construction hash.");
+  assert(phase443.applicationSubjectKind === "joint-effective-potential-saturation-probe", "Phase443 must classify its subject as the saturation probe.");
+  assert(phase443.batteries?.batteriesAllPassed === true && phase443.variationalThetaStationaritySolved === true, "Phase443 batteries incl. the theta-stationarity gate must pass.");
+  assert(phase443.identityControlShowsNoSaturation === true, "Phase443 must anchor the identity no-saturation control.");
+  assert(phase443.einsteinianLogSaturationObserved === false, "Phase443 must record the honest no-saturation verdict at one loop on the minimal workbench.");
+  assert(phase443.scaleIsWorkbenchRelativeCandidateOnly === true && phase443.noGevPromotion === true, "Phase443 must keep the workbench-relative and no-promotion boundaries.");
+  assert(phase443.recordedBoundary?.definition81Scope === "reduced-spin4-slice" && phase443.recordedBoundary?.weldRealized === false, "Phase443 must carry the reduced-slice recorded boundary.");
+  assert(phase443.sourceContractApplicationAllowed === false && phase443.canFillPhase201WzContract === false && phase443.canFillPhase201HiggsContract === false && phase443.canFillPhase256ObservedFieldExtractionContract === false, "Phase443 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase443.routePromotesWzMasses === false && phase443.routePromotesHiggsMass === false && phase443.routeCompletesBosonPredictions === false, "Phase443 cannot promote boson predictions.");
+  assert(phase101Package?.jointEffectivePotentialSaturationProbe?.jointEffectivePotentialSaturationProbePassed === true, "Phase101 must include the Phase443 block.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");
