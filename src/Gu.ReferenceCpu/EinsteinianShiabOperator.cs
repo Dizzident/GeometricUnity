@@ -52,6 +52,7 @@ public sealed class EinsteinianShiabOperator : IShiabBranchOperator
     private readonly int _dimG;
     private readonly int _faceCount;
     private readonly double _kappa;
+    private readonly int _latticePeriod;
 
     // Per-cell precomputed data (mesh- and member-fixed, omega-independent).
     private readonly int[][] _cellFaces;          // global face indices per cell
@@ -75,12 +76,24 @@ public sealed class EinsteinianShiabOperator : IShiabBranchOperator
     /// The omega-coupling strength kappa for EpsilonMode="slaved-wilson-smoketest": the per-cell
     /// theta is theta_cell = kappa * sum_{e in cell} omega_e. kappa = 0 recovers eps = 1.
     /// Discrete eps map per design §3.5 / physics §6e — physicist sign-off pending.</param>
+    /// <param name="latticePeriod">
+    /// Lattice period for the MINIMAL-IMAGE convention on a PERIODIC (torus) base mesh. 0 (default)
+    /// disables it: face bivectors use raw coordinate differences, byte-identical to every prior
+    /// (open-mesh) result. When &gt; 0, each face-bivector edge-vector component d is reduced to its
+    /// nearest image d - period*round(d/period) before the Lambda^2 wedge. On a periodic mesh the
+    /// raw differences of seam-crossing faces are inflated to magnitude period-1, which makes the
+    /// per-cell contraction NOT translation-invariant (a documented consumer-contract requirement of
+    /// <see cref="SimplicialMeshGenerator.CreateUniform4DPeriodic"/>); the minimal-image reduction is
+    /// the UNIQUE convention under which the contraction is well-defined and translation-invariant on
+    /// a torus. Open meshes have no wrapping, so minimal-image == raw there. Physicist review of the
+    /// periodic-mesh contraction semantics may be pending; the convention is documented and open-mesh-inert.</param>
     public EinsteinianShiabOperator(
         SimplicialMesh mesh,
         LieAlgebra algebra,
         EinsteinianShiabFamilyMember member,
         double[]? backgroundEps = null,
-        double omegaCouplingKappa = 1.0)
+        double omegaCouplingKappa = 1.0,
+        int latticePeriod = 0)
     {
         _mesh = mesh ?? throw new ArgumentNullException(nameof(mesh));
         _algebra = algebra ?? throw new ArgumentNullException(nameof(algebra));
@@ -88,6 +101,7 @@ public sealed class EinsteinianShiabOperator : IShiabBranchOperator
         _dimG = algebra.Dimension;
         _faceCount = mesh.FaceCount;
         _kappa = omegaCouplingKappa;
+        _latticePeriod = latticePeriod;
 
         if (mesh.EmbeddingDimension < 4)
             throw new ArgumentException(
@@ -458,12 +472,15 @@ public sealed class EinsteinianShiabOperator : IShiabBranchOperator
         ArgumentNullException.ThrowIfNull(deltaTheta);
 
         // gField[f] = dAd_f(deltaTheta) · F_face, then apply the pure M-contraction (no Ad).
+        // theta_face and its variation deltaTheta_face are the SAME linear functional of the
+        // vertex field per the vertex-face rule (lowest-index: the rep vertex; incident-average:
+        // the mean, whose chain-rule weight is 1/|incident| per incident vertex), so FaceTheta
+        // computes both.
         var g = new double[_faceCount * _dimG];
         for (int f = 0; f < _faceCount; f++)
         {
-            int v = _mesh.Faces[f][0]; // representative vertex = lowest index
-            var thetaV = ExtractVertexBlock(theta, v);
-            var dThetaV = ExtractVertexBlock(deltaTheta, v);
+            var thetaV = FaceTheta(theta, f);
+            var dThetaV = FaceTheta(deltaTheta, f);
             var dAd = Lambda2Algebra.MatrixExpFrechet(AdMatrix(thetaV), AdMatrix(dThetaV));
             for (int a = 0; a < _dimG; a++)
             {
@@ -484,7 +501,11 @@ public sealed class EinsteinianShiabOperator : IShiabBranchOperator
         };
     }
 
-    /// <summary>Per-face Ad = exp(ad_theta) at each face's representative (lowest-index) vertex.</summary>
+    /// <summary>
+    /// Per-face Ad = exp(ad_{theta_face}), where theta_face is chosen by the member's
+    /// <see cref="VertexFaceRule"/>: the lowest-index incident vertex (default; per-vertex cached)
+    /// or the mean over all incident vertices (translation-covariant).
+    /// </summary>
     private double[][,] BuildPerFaceAd(double[] theta)
     {
         int expectedLen = _mesh.VertexCount * _dimG;
@@ -493,6 +514,15 @@ public sealed class EinsteinianShiabOperator : IShiabBranchOperator
                 $"theta length {theta.Length} must be VertexCount*dim(g) = {expectedLen}.", nameof(theta));
 
         var ad = new double[_faceCount][,];
+        if (_member.VertexFaceRule == VertexFaceRule.IncidentAverage)
+        {
+            // Each face's averaged theta is distinct, so no per-vertex cache applies.
+            for (int f = 0; f < _faceCount; f++)
+                ad[f] = AdExp(FaceTheta(theta, f));
+            return ad;
+        }
+
+        // LowestIndex (default): faces sharing a representative vertex share the same Ad.
         var cache = new Dictionary<int, double[,]>();
         for (int f = 0; f < _faceCount; f++)
         {
@@ -505,6 +535,28 @@ public sealed class EinsteinianShiabOperator : IShiabBranchOperator
             ad[f] = m;
         }
         return ad;
+    }
+
+    /// <summary>
+    /// The single per-face theta from a vertex field per the member's <see cref="VertexFaceRule"/>:
+    /// the lowest-index incident vertex's block (default) or the mean over all incident vertices.
+    /// This is a LINEAR functional of the field, so it maps both theta and its variation deltaTheta.
+    /// </summary>
+    private double[] FaceTheta(double[] field, int face)
+    {
+        var verts = _mesh.Faces[face];
+        if (_member.VertexFaceRule == VertexFaceRule.IncidentAverage)
+        {
+            var acc = new double[_dimG];
+            foreach (int v in verts)
+                for (int a = 0; a < _dimG; a++)
+                    acc[a] += field[v * _dimG + a];
+            double inv = 1.0 / verts.Length;
+            for (int a = 0; a < _dimG; a++) acc[a] *= inv;
+            return acc;
+        }
+
+        return ExtractVertexBlock(field, verts[0]);
     }
 
     private double[] ExtractVertexBlock(double[] field, int vertex)
@@ -601,6 +653,14 @@ public sealed class EinsteinianShiabOperator : IShiabBranchOperator
                 {
                     u[d] = pb[d] - pa[d];
                     v[d] = pc[d] - pa[d];
+                    if (_latticePeriod > 0)
+                    {
+                        // Minimal-image reduction for a periodic (torus) base: a wrapped edge's raw
+                        // coordinate difference is period-1, not 1; reduce it to the nearest image so
+                        // the bivector (hence the whole contraction) is translation-invariant.
+                        u[d] -= _latticePeriod * System.Math.Round(u[d] / _latticePeriod);
+                        v[d] -= _latticePeriod * System.Math.Round(v[d] / _latticePeriod);
+                    }
                 }
                 var biv = Lambda2Algebra.Wedge(u, v);
                 for (int k = 0; k < Lambda2Algebra.Dim; k++) w[k, j] = biv[k];

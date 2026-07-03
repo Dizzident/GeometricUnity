@@ -201,6 +201,7 @@ const string Phase432Path = "studies/phase432_welded_fermion_loop_block_selectio
 const string Phase433Path = "studies/phase433_blind_beta_coefficient_running_ledger_001/output/blind_beta_coefficient_running_ledger_summary.json";
 const string Phase435Path = "studies/phase435_two_condensate_scale_gap_probe_001/output/two_condensate_scale_gap_probe_summary.json";
 const string Phase437Path = "studies/phase437_four_dimensional_transmutation_scaling_probe_001/output/four_dimensional_transmutation_scaling_probe_summary.json";
+const string Phase444Path = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443Path = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442Path = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
 const string Phase441Path = "studies/phase441_toy_branch_family_universality_sweep_001/output/toy_branch_family_universality_sweep_summary.json";
@@ -451,6 +452,7 @@ using var phase440 = File.Exists(Phase440Path) ? JsonDocument.Parse(File.ReadAll
 using var phase441 = File.Exists(Phase441Path) ? JsonDocument.Parse(File.ReadAllText(Phase441Path)) : null;
 using var phase442 = File.Exists(Phase442Path) ? JsonDocument.Parse(File.ReadAllText(Phase442Path)) : null;
 using var phase443 = File.Exists(Phase443Path) ? JsonDocument.Parse(File.ReadAllText(Phase443Path)) : null;
+using var phase444 = File.Exists(Phase444Path) ? JsonDocument.Parse(File.ReadAllText(Phase444Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -6149,6 +6151,24 @@ var jointEffectivePotentialSaturationProbePassed = jointEffectivePotentialSatura
     && JsonBool(phase443.RootElement, "routePromotesHiggsMass") is false
     && JsonBool(phase443.RootElement, "routeCompletesBosonPredictions") is false
     && JsonInt(phase443.RootElement, "acceptedContractFieldCount") == 0;
+var modeVolumeScaledSaturationProbeMaterialized = phase444 is not null;
+var modeVolumeScaledSaturationProbePassed = modeVolumeScaledSaturationProbeMaterialized
+    && JsonBool(phase444!.RootElement, "phase444Passed") is true
+    && JsonBool(phase444.RootElement, "targetBlindConstruction") is true
+    && (JsonString(phase444.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase444.RootElement, "applicationSubjectKind") == "mode-volume-scaled-saturation-probe"
+    && JsonString(phase444.RootElement, "modeVolumeChangesVerdict") == "undetermined-tooling-blocked"
+    && JsonBool(phase444.RootElement, "blockDiagonalizationViable") is false
+    && JsonBool(phase444.RootElement, "scaleIsWorkbenchRelativeCandidateOnly") is true
+    && JsonBool(phase444.RootElement, "noGevPromotion") is true
+    && JsonBool(phase444.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase444.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase444.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase444.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase444.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase444.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase444.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonInt(phase444.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -8669,6 +8689,14 @@ var checklist = new[]
             ? $"jointEffectivePotentialSaturationProbePassed={JsonBool(phase443!.RootElement, "jointEffectivePotentialSaturationProbePassed")}; variationalThetaStationaritySolved={JsonBool(phase443.RootElement, "variationalThetaStationaritySolved")}; einsteinianLogSaturationObserved={JsonBool(phase443.RootElement, "einsteinianLogSaturationObserved")}; identityControlShowsNoSaturation={JsonBool(phase443.RootElement, "identityControlShowsNoSaturation")}; noGevPromotion={JsonBool(phase443.RootElement, "noGevPromotion")}; canFillPhase201WzContract={JsonBool(phase443.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase443.RootElement, "decision")}"
             : "Phase443 artifact not materialized",
         Phase443Path),
+    new ObjectiveChecklistItem(
+        "mode-volume-scaled-saturation-probe-materialized",
+        "Record the honest tooling-blocked outcome of the mode-volume question: periodic-mesh block-diagonalization is defeated by global-index orientation conventions (measured at three levels), SLQ is over budget, and the two unlock projects are named for user decision.",
+        modeVolumeScaledSaturationProbePassed ? "passed" : "failed",
+        modeVolumeScaledSaturationProbeMaterialized
+            ? $"phase444Passed={JsonBool(phase444!.RootElement, "phase444Passed")}; modeVolumeChangesVerdict={JsonString(phase444.RootElement, "modeVolumeChangesVerdict")}; blockDiagonalizationViable={JsonBool(phase444.RootElement, "blockDiagonalizationViable")}; noGevPromotion={JsonBool(phase444.RootElement, "noGevPromotion")}; canFillPhase201WzContract={JsonBool(phase444.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase444.RootElement, "decision")}"
+            : "Phase444 artifact not materialized",
+        Phase444Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

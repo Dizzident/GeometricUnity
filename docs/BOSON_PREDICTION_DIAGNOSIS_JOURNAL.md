@@ -19027,3 +19027,32 @@ regime needs mode volume a 16-vertex mesh cannot supply. Named next
 levers: the same probe on CreateUniform4D(2)+ (engineering: smarter
 joint-Hessian assembly than dense FD), two-loop/RG improvement, richer
 Phi menus. Everything fail-closed; nothing promoted.
+
+## 2026-07-03 - Phase444: The Mode-Volume Question Is Tooling-Blocked (Honestly Recorded)
+
+### Result
+
+The phase443-named mode-volume lever cannot yet be pulled: exact
+momentum block-diagonalization on the M1b torus is DEFEATED at three
+measured levels, bottoming out in Gu.Geometry's global-index orientation
+conventions (even pure ||F||^2 fails translation covariance at 2.5e-4);
+the SLQ fallback costs ~60 s per Hessian-vector product without a
+platform adjoint (~2 h per composite point). The probe agent stopped at
+every verification gate rather than substituting an unfaithful
+Gauss-Newton spectrum, superseded its own earlier confounded measurement
+with a clean signed test, and the phase records the findings verbatim
+with modeVolumeChangesVerdict="undetermined-tooling-blocked".
+Additive platform conventions (incident-average rule; minimal-image
+bivectors on periodic meshes) were authorized, leader-reviewed, and
+kept - open-mesh byte-identity hard-gated.
+
+### Interpretation
+
+Phase443's honest negative stands as the frontier: necessary condition
+delivered (442), sufficiency undetermined beyond the minimal mesh. TWO
+measurement-scoped unlock projects are named for user decision:
+(i) lattice-canonical geometry conventions (enables exact torus
+block-diagonalization); (ii) adjoint/joint-gradient (enables SLQ).
+Alternatives that need no platform work: two-loop/RG improvement on the
+minimal mesh; richer Phi menus. Everything fail-closed; nothing
+promoted; promotedPhysicalMassClaimCount=0 throughout.

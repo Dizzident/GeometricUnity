@@ -311,6 +311,7 @@
     <PhaseProject Include="../studies/phase441_toy_branch_family_universality_sweep_001/Phase441ToyBranchFamilyUniversalitySweep.csproj" />
     <PhaseProject Include="../studies/phase442_joint_omega_theta_hessian_degree_probe_001/Phase442JointOmegaThetaHessianDegreeProbe.csproj" />
     <PhaseProject Include="../studies/phase443_joint_effective_potential_saturation_probe_001/Phase443JointEffectivePotentialSaturationProbe.csproj" />
+    <PhaseProject Include="../studies/phase444_mode_volume_scaled_saturation_probe_001/Phase444ModeVolumeScaledSaturationProbe.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />

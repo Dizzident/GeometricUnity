@@ -214,6 +214,7 @@ const paths = {
   phase441: "studies/phase441_toy_branch_family_universality_sweep_001/output/toy_branch_family_universality_sweep_summary.json",
   phase442: "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json",
   phase443: "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json",
+  phase444: "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -499,6 +500,7 @@ const phase440 = requireFile(paths.phase440);
 const phase441 = requireFile(paths.phase441);
 const phase442 = requireFile(paths.phase442);
 const phase443 = requireFile(paths.phase443);
+const phase444 = requireFile(paths.phase444);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -5272,6 +5274,15 @@ if (sourceLineageMissing) {
   assert(phase443.sourceContractApplicationAllowed === false && phase443.canFillPhase201WzContract === false && phase443.canFillPhase201HiggsContract === false && phase443.canFillPhase256ObservedFieldExtractionContract === false, "Phase443 cannot fill Phase201 or Phase256 contracts.");
   assert(phase443.routePromotesWzMasses === false && phase443.routePromotesHiggsMass === false && phase443.routeCompletesBosonPredictions === false, "Phase443 cannot promote boson predictions.");
   assert(phase101Package?.jointEffectivePotentialSaturationProbe?.jointEffectivePotentialSaturationProbePassed === true, "Phase101 must include the Phase443 block.");
+  assert(phase444.phase444Passed === true, "Phase444 recorded-findings study must pass on internal consistency.");
+  assert(phase444.targetBlindConstruction === true && typeof phase444.targetBlindConstructionHash === "string" && phase444.targetBlindConstructionHash.length === 64, "Phase444 must remain target-blind with a persisted construction hash.");
+  assert(phase444.applicationSubjectKind === "mode-volume-scaled-saturation-probe", "Phase444 must classify its subject as the mode-volume probe.");
+  assert(phase444.modeVolumeChangesVerdict === "undetermined-tooling-blocked" && phase444.blockDiagonalizationViable === false, "Phase444 must record the honest tooling-blocked outcome with no physics verdict.");
+  assert(phase444.recordedBoundary?.definition81Scope === "reduced-spin4-slice" && phase444.recordedBoundary?.physicistReviewPending === true, "Phase444 must carry the recorded boundary with the pending physicist review flagged.");
+  assert(phase444.scaleIsWorkbenchRelativeCandidateOnly === true && phase444.noGevPromotion === true, "Phase444 must keep the workbench-relative and no-promotion boundaries.");
+  assert(phase444.sourceContractApplicationAllowed === false && phase444.canFillPhase201WzContract === false && phase444.canFillPhase201HiggsContract === false && phase444.canFillPhase256ObservedFieldExtractionContract === false, "Phase444 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase444.routePromotesWzMasses === false && phase444.routePromotesHiggsMass === false && phase444.routeCompletesBosonPredictions === false, "Phase444 cannot promote boson predictions.");
+  assert(phase101Package?.modeVolumeScaledSaturationProbe?.phase444Passed === true, "Phase101 must include the Phase444 block.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

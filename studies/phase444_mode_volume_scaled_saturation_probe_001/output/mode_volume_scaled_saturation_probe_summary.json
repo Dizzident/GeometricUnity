@@ -1,0 +1,180 @@
+{
+  "phaseId": "phase444-mode-volume-scaled-saturation-probe",
+  "generatedAt": "2026-07-03T12:35:13.7385976+00:00",
+  "terminalStatus": "mode-volume-scaled-saturation-probe-passed-tooling-blocked-block-diagonalization-non-viable-slq-over-budget-verdict-undetermined",
+  "phase444Passed": true,
+  "applicationSubjectKind": "mode-volume-scaled-saturation-probe",
+  "studyKind": "recorded-findings (engineering/architecture); no physics verdict",
+  "modeVolumeChangesVerdict": "undetermined-tooling-blocked",
+  "blockDiagonalizationViable": false,
+  "precursors": {
+    "phase443PrecursorPassed": true,
+    "phase443NoSaturation": true,
+    "phase442PrecursorPassed": true,
+    "precursorsPassed": true,
+    "phase443Vertices": 16,
+    "phase443JointDof": 243
+  },
+  "torusWorkbench": {
+    "torusN": 3,
+    "lieAlgebraId": "su2-trace-pairing",
+    "vertexCount": 81,
+    "edgeCount": 1215,
+    "faceCount": 4050,
+    "volumeCount": 4860,
+    "cellCount": 1944,
+    "nOmega": 3645,
+    "nTheta": 243,
+    "jointDof": 3888,
+    "meshGoldensMatch": true,
+    "goldens": {
+      "vertices": 81,
+      "edges": 1215,
+      "faces": 4050,
+      "volumes": 4860,
+      "cells": 1944
+    },
+    "modeVolumeRatioOverPhase443": 16
+  },
+  "findings": {
+    "f1_lowestIndexRepresentativeVertex": {
+      "note": "Lowest-index rule v(f)=Faces[f][0] is NOT translation-covariant: the row-major index wrap reorders which incident vertex is smallest.",
+      "checks": 328050,
+      "violations": 186300,
+      "nonCovarianceFraction": 0.5679012345679012,
+      "covariant": false
+    },
+    "f2_bivectorMinimalImage": {
+      "note": "Operator builds face bivectors from RAW coordinate differences; seam-crossing faces are inflated (up to period-1). Minimal-image reduction restores exact orbit-invariance of the bivector norms.",
+      "rawNormMin": 1,
+      "rawNormMax": 8,
+      "rawNormRatio": 8,
+      "seamFaces": 3042,
+      "seamFraction": 0.7511111111111111,
+      "rawBivectorOrbitDiff": 4.83772233983162,
+      "minimalImageNormMin": 1,
+      "minimalImageNormMax": 2,
+      "minimalImageNormRatio": 2,
+      "minimalImageBivectorOrbitDiff": 0,
+      "minimalImageRestoresOrbitInvariance": true
+    },
+    "f3_definitiveCovariance": {
+      "note": "Convention-agnostic: S_B(T_R x) vs S_B(x) under SIGNED edge permutation \u002B unsigned vertex permutation; max relative deviation over sampled translations \u0026 random x. All four conventions fail the block-diagonalization bar; curvature ||F||^2 alone (upstream, Gu.Geometry) is already non-covariant.",
+      "blockDiagonalizationBar": 1E-08,
+      "covarianceResidual": {
+        "lowestIndex_rawBivectors": 0.049404375777242916,
+        "lowestIndex_minimalImage": 0.005183832628995846,
+        "incidentAverage_rawBivectors": 0.05049265351922433,
+        "incidentAverage_minimalImage": 0.004806687038219642,
+        "curvatureOnly_noShiab": 0.0002475749303617302
+      },
+      "bestResidual": 0.004806687038219642,
+      "allConventionsNonCovariant": true,
+      "curvatureAloneNonCovariant": true,
+      "rootCause": "global-index-sorted orientation conventions (mesh face-boundary orientation signs, bivector vertex-sort parity, cell-face ordering) do not commute with lattice translation on a periodic mesh.",
+      "supersededEarlierMeasurementNote": "Earlier theta-Hessian residuals (1.6e-2 lowest-index / 8.7e-3 averaged) used a background that ignored edge-orientation signs, so H(x) and H(T_R x) were Hessians at different physical points -- a confound. This signed-S_B test is the clean, convention-agnostic measurement and supersedes those; the qualitative conclusion is unchanged."
+    },
+    "f4_slqCost": {
+      "note": "Platform exposes only O(full-mesh) forward evaluations (no adjoint/joint-gradient), so every gradient costs O(nDOF x mesh). Measured on the torus, extrapolated to SLQ.",
+      "jointObjectiveEvalMs": 5.742050000000001,
+      "fullThetaGradientSeconds": 3.1844654,
+      "oneJOmegaColumnMs": 7.34237,
+      "fullJointGradientSeconds": 29.94740405,
+      "slqHessianVectorSeconds": 59.8948081,
+      "slqProbesPerPointAssumed": 120,
+      "slqPerCompositePointHours": 1.9964936033333334,
+      "overBudget": true
+    }
+  },
+  "authorizedPlatformChange": {
+    "note": "Leader-authorized (option A\u0027): additive VertexFaceRule.IncidentAverage on the member \u002B minimal-image latticePeriod ctor flag on the operator. Verified-correct and necessary-but-insufficient for the block path.",
+    "vertexFaceRulePrimary": "incident-average(translation-covariant vertex-\u003Eface attachment)",
+    "minimalImageBivectorsOnPeriodicMeshes": true,
+    "physicistReviewPending": true,
+    "openMeshThetaZeroByteIdentity": 0,
+    "openMeshByteIdentical": true,
+    "avgLinearizeThetaFdResidual": 4.0197899175975493E-10,
+    "avgGatingControlsHold": true,
+    "pinnedRuleNonCovarianceRecordedLimitation": 0.5679012345679012
+  },
+  "namedFutureWorkUnlocks": [
+    {
+      "id": "lattice-canonical-geometry-conventions",
+      "kind": "user-decision-major-platform-investment",
+      "scope": "MeshTopologyBuilder orientation/sort conventions \u002B CurvatureAssembler \u002B the Einsteinian Shiab per-cell assembly (Gu.Geometry): replace global-index-sorted orientation/bivector/cell-face conventions with lattice-canonical ones so the whole stack commutes with lattice translation on a periodic mesh.",
+      "evidenceThatDemandsIt": "F3: even incident-average \u002B minimal-image leaves the operator non-covariant; the curvature ||F||^2 alone is already non-covariant (global-index conventions do not commute with lattice translation).",
+      "expectedOutcome": "exact block-diagonalization of the joint Hessian by lattice momentum on tori (81 blocks of 48x48 for su(2) at n=3), giving exact eigenvalues that match Phase443\u0027s Jacobi convention -- enabling the mode-volume physics run cheaply.",
+      "started": false
+    },
+    {
+      "id": "adjoint-joint-gradient-platform-path",
+      "kind": "engineering-enabler-for-slq",
+      "scope": "expose an analytic joint (omega,theta) gradient / contraction-adjoint on EinsteinianShiabOperator so a Hessian-vector product costs O(mesh) instead of O(nDOF x mesh).",
+      "evidenceThatDemandsIt": "F4: through public forward-only methods a faithful Hessian-vector product costs ~60 s, so a single composite point\u0027s SLQ tr-log is ~2.0 h -- ~2 orders of magnitude over the 60-min budget.",
+      "expectedOutcome": "SLQ tr-log of the joint Hessian becomes feasible (variance-bounded estimates, NOT exact eigenvalue counts) on the torus without the geometry rewrite.",
+      "started": false
+    }
+  ],
+  "modeVolumeHeuristic": {
+    "label": "LABELED NON-VERDICT expectation (superseded by any computed verdict)",
+    "statement": "At one loop with a quartic tree action S_B ~ t^4, additional modes rescale only the subleading ~N log t one-loop term and cannot overturn the t^4-dominated runaway asymptotics (t^4 \u003E\u003E N log t as t -\u003E infinity for any fixed mode count N). This LABELED expectation suggests mode volume alone would NOT flip Phase443\u0027s no-saturation verdict -- consistent with the Phase437 lesson that a new MECHANISM, not just mode volume, is what is missing. It is NOT a computed verdict; the block-path or SLQ computation (future work) would supersede it either way."
+  },
+  "internalConsistency": {
+    "findingsInternallyConsistent": true,
+    "f1RepresentativeVertexNonCovariant": true,
+    "f2RawBivectorsInflated": true,
+    "f2MinimalImageRestoresBivectorOrbitInvariance": true,
+    "f3AllConventionsNonCovariant": true,
+    "f3CurvatureAloneNonCovariant": true,
+    "f4SlqOverBudget": true,
+    "avgGatingControlsHold": true,
+    "blockDiagonalizationViable": false
+  },
+  "recordedBoundary": {
+    "definition81Scope": "reduced-spin4-slice",
+    "ambientSevenSevenRealized": false,
+    "internalGaugeContentRealized": false,
+    "weldRealized": false,
+    "canFillPhase201WzContract": false,
+    "canFillPhase256Contract": false,
+    "minimalImageBivectorsOnPeriodicMeshes": true,
+    "physicistReviewPending": true,
+    "baseSignature": "Cl(4,0)-euclidean-slice",
+    "spinorUsedAsShiabCarrierNotFiber": true,
+    "draft14dObserverseNotRealized": true
+  },
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "93377f073f75ebf6e1819805a11397ae13cdff1ebe592d4d9206f87713a87432",
+  "scaleIsWorkbenchRelativeCandidateOnly": true,
+  "noGevPromotion": true,
+  "physicalCouplingProvided": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256Contract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "explicitCandidateOnlyNonclaims": [
+    "This is a recorded-findings (engineering/architecture) study; it carries NO physics verdict on saturation or mode volume.",
+    "modeVolumeChangesVerdict is undetermined because the platform cannot block-diagonalize the periodic-mesh joint Hessian and the dense/SLQ alternatives are over budget.",
+    "The mode-volume heuristic is a LABELED expectation, not a computed result; a future block-path or SLQ run would supersede it.",
+    "No VEV scale, pole, or GeV lineage; no Phase201 or Phase256 contract field is filled; the reduced slice does not realize the ambient 7,7 / internal gauge / weld content."
+  ],
+  "sourceEvidence": {
+    "phase443SummaryPath": "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json",
+    "phase442SummaryPath": "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json",
+    "designSourcePath": "docs/Phases/FOUR_D_PLATFORM_DESIGN.md",
+    "physicsDecisionsSourcePath": "docs/Phases/FOUR_D_PLATFORM_PHYSICS_DECISIONS.md"
+  },
+  "runtimeSeconds": 4.4738639,
+  "decision": "Phase444 is decided on internal consistency as a RECORDED-FINDINGS study; it carries NO physics verdict. The mode-volume question (does the Phase443 no-saturation verdict change on a larger mesh?) is left modeVolumeChangesVerdict=\u0022undetermined-tooling-blocked\u0022 because the mandated engineering unlock -- block-diagonalizing the joint Hessian by lattice momentum on the periodic 81-vertex torus (mode-volume ratio 16.0x over Phase443\u0027s 16 vertices) -- is NOT viable on this platform, and the SLQ fallback is ~2.0 h per composite point (~2 orders over budget). EVIDENCE: (F1) the lowest-index representative-vertex rule violates translation covariance on 56.8% of (face, translation) pairs; (F2) 75.1% of faces are seam-inflated with raw bivectors (orbit-norm spread 4.8), and the minimal-image convention restores exact bivector orbit-invariance (0.0E\u002B000); (F3) DEFINITIVE -- even incident-average \u002B minimal-image leaves S_B non-covariant under the signed permutation (best residual 4.81E-003 \u003E\u003E 1E-008 bar), and the curvature ||F||^2 alone is already non-covariant (2.48E-004); the root cause is global-index orientation conventions that do not commute with lattice translation; (F4) a faithful Hessian-vector product costs ~60 s. The authorized platform change (incident-average VertexFaceRule \u002B minimal-image bivectors) is verified-correct and open-mesh byte-identical (theta=0 low-vs-avg diff 0.0E\u002B000; avg LinearizeTheta-vs-FD 4.02E-010) -- necessary-but-insufficient. Two named unlocks are recorded as future work. MANDATORY FRAMING: the mode-volume heuristic is a LABELED, NON-VERDICT expectation. Everything is target-blind, reduced-spin4-slice; no Phase201/Phase256 contract field is filled; nothing is promoted."
+}

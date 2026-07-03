@@ -49,7 +49,7 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase443 work (plus the 2026-06-12 platform
+Current gate status after the Phase444 work (plus the 2026-06-12 platform
 fix - GPU parity defect root-caused and discharged - and the 2026-07-01
 |Y|=1/2 calibration defect fix in the Phase411/417 informational SM
 censuses):
@@ -57,7 +57,7 @@ censuses):
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=236`,
+  `objectiveAchieved=False`, `checklistPassedCount=237`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -510,6 +510,16 @@ censuses):
   16-vertex 4D mesh (necessary satisfied, sufficiency not yet);
   named levers: CreateUniform4D(2)+ with smarter Hessian assembly,
   two-loop/RG improvement, richer Phi menus
+- Phase444: `phase444Passed=True`,
+  `modeVolumeChangesVerdict="undetermined-tooling-blocked"` - the
+  mode-volume lever is BLOCKED at three measured levels (lowest-index
+  rule 57% non-covariant; raw bivectors violate the minimal-image
+  contract, 75% seam faces; DEFINITIVE: Gu.Geometry global-index
+  orientation conventions break translation covariance - even ||F||^2
+  fails at 2.5e-4; SLQ ~60s/Hv infeasible). Additive conventions kept
+  (VertexFaceRule.IncidentAverage; latticePeriod minimal-image);
+  TWO NAMED UNLOCK PROJECTS for user decision: lattice-canonical
+  geometry conventions OR adjoint/joint-gradient for SLQ
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -530,7 +540,26 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work (2026-07-03, after Phase442) is PHASE443, the joint
+The latest work (2026-07-03, after Phase443) is PHASE444, the
+mode-volume-scaled saturation probe - honestly TOOLING-BLOCKED: exact
+momentum block-diagonalization on the M1b torus is defeated by
+Gu.Geometry's global-index orientation conventions (three measured
+levels, definitive signed-S_B covariance test; even pure curvature
+fails at 2.5e-4), and SLQ is infeasible without a platform adjoint
+(~60s per Hessian-vector product). Additive periodic-mesh conventions
+were authorized and kept (VertexFaceRule.IncidentAverage +
+latticePeriod minimal-image bivectors; open-mesh byte-identical,
+hard-gated; 8 new tests incl. a documented-limitation test).
+NAMED UNLOCK PROJECTS (user decisions, measurement-scoped, NOT
+started): (i) lattice-canonical orientation conventions through
+Gu.Geometry => exact torus block-diagonalization; (ii) adjoint/joint-
+gradient platform path => feasible SLQ. No-platform-work alternatives:
+two-loop/RG on the minimal mesh; richer Phi menus.
+physicistReviewPending=true on the minimal-image contraction semantics.
+Study: phase444_mode_volume_scaled_saturation_probe_001
+(IMPLEMENTATION_P444.md).
+
+Before that, the work (2026-07-03, after Phase442) was PHASE443, the joint
 effective-potential saturation probe: variational theta*(omega) solved
 by scale-aware Newton with continuation (relative stationarity 3.4e-9
 everywhere; the phase fail-closed itself through THREE runs until the
@@ -1208,7 +1237,7 @@ HONEST BOUNDARY. Study:
 
 ### Integration Points Already Updated
 
-Phases 442-443 (like Phase388-441) are wired into:
+Phases 442-444 (like Phase388-441) are wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (single broad pass; the
   older duplicated final sweep was removed on 2026-06-16; the Phase424 line
@@ -1241,7 +1270,8 @@ Phases 442-443 (like Phase388-441) are wired into:
   `coupled-background-condensate-fixed-point-probe-materialized` and
   `toy-branch-family-universality-sweep-materialized` and
   `joint-omega-theta-hessian-degree-probe-materialized` and
-  `joint-effective-potential-saturation-probe-materialized`;
+  `joint-effective-potential-saturation-probe-materialized` and
+  `mode-volume-scaled-saturation-probe-materialized`;
   the Phase417 checklist row now asserts the corrected
   `yHalfCalibrationExact=True` and `internalSmHiggsPatternComplexDimension=6`)
 - `scripts/verify_boson_claim_integrity.sh` (Phase424 asserts plus the
@@ -1298,8 +1328,8 @@ PHASE405_ENABLE_GPU=1 LD_LIBRARY_PATH=native/build dotnet run --project studies/
 The targeted Phase424 (Release, ~7 min) and Phase425 (Release, ~1 min) runs
 pass and preserve the fail-closed boundary; the fixed Phase411/Phase417
 re-runs pass with their corrected censuses; Phase202 now reports
-`checklistPassedCount=236`, `checklistFailedCount=3`; claim integrity
-verifies Phase424 through Phase443 (and the corrected Phase417 values)
+`checklistPassedCount=237`, `checklistFailedCount=3`; claim integrity
+verifies Phase424 through Phase444 (and the corrected Phase417 values)
 with `promotedPhysicalMassClaimCount=0`. The full direct
 `./scripts/generate_validated_boson_predictions.sh` pass completed with
 Phase424 through Phase436 included and ended at
@@ -1732,5 +1762,5 @@ scanners (including phase253's dimension-4 exclusions).
 Suggested checkpoint message:
 
 ```text
-Add phase443 joint effective-potential saturation probe
+Add phase444 mode-volume probe (tooling-blocked) + periodic conventions
 ```

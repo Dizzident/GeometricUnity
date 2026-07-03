@@ -325,6 +325,7 @@ dotnet run --no-build -c Release --project studies/phase440_coupled_background_c
 dotnet run --no-build -c Release --project studies/phase441_toy_branch_family_universality_sweep_001/Phase441ToyBranchFamilyUniversalitySweep.csproj
 dotnet run --no-build -c Release --project studies/phase442_joint_omega_theta_hessian_degree_probe_001/Phase442JointOmegaThetaHessianDegreeProbe.csproj
 dotnet run --no-build -c Release --project studies/phase443_joint_effective_potential_saturation_probe_001/Phase443JointEffectivePotentialSaturationProbe.csproj
+dotnet run --no-build -c Release --project studies/phase444_mode_volume_scaled_saturation_probe_001/Phase444ModeVolumeScaledSaturationProbe.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

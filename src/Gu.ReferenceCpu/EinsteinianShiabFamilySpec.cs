@@ -3,6 +3,29 @@ using System.Globalization;
 namespace Gu.ReferenceCpu;
 
 /// <summary>
+/// The rule that maps a face's incident vertices to the single per-face theta used by the
+/// independent-theta epsilon dressing (design §3.5). Both rules were run in Phase442/443 and
+/// the verdicts were rule-robust; the physicist pinned lowest-index as default and mandated
+/// incident-average as the robustness variant.
+/// <list type="bullet">
+///   <item><see cref="LowestIndex"/> (DEFAULT): theta_face = theta at the face's lowest-index
+///         incident vertex (mesh.Faces[f][0]). Cheapest; byte-identical to all prior results.</item>
+///   <item><see cref="IncidentAverage"/>: theta_face = mean of theta over ALL incident vertices.
+///         Manifestly translation-covariant (no arbitrary global-index choice), so on a
+///         translation-invariant background the joint Hessian commutes with lattice translations —
+///         the property the momentum block-diagonalization on a periodic mesh needs.</item>
+/// </list>
+/// </summary>
+public enum VertexFaceRule
+{
+    /// <summary>theta_face = theta at the lowest-index incident vertex (default; byte-identical to prior results).</summary>
+    LowestIndex = 0,
+
+    /// <summary>theta_face = mean of theta over all incident vertices (translation-covariant).</summary>
+    IncidentAverage = 1,
+}
+
+/// <summary>
 /// One invariant element Phi drawn from the reduced Spin(4) slice menu
 /// (physicist-4d decision 3 / design §3.4). It names a form degree and the
 /// concrete Lambda^2(T*X^4) endomorphism it realizes:
@@ -91,13 +114,25 @@ public sealed class EinsteinianShiabFamilyMember
     public string EpsilonMode { get; init; } = "trivial";
 
     /// <summary>
+    /// Vertex -> face theta rule for the independent-theta epsilon dressing. PINNED default
+    /// <see cref="Gu.ReferenceCpu.VertexFaceRule.LowestIndex"/> (byte-identical to all prior
+    /// results). <see cref="Gu.ReferenceCpu.VertexFaceRule.IncidentAverage"/> is the
+    /// translation-covariant robustness variant. Only affects the independent-theta mode; the
+    /// theta=0 slice (hence the omega-sector and every non-theta member) is unchanged either way.
+    /// </summary>
+    public VertexFaceRule VertexFaceRule { get; init; } = VertexFaceRule.LowestIndex;
+
+    /// <summary>
     /// Derived branch identifier, e.g.
-    /// "einsteinian-shiab/sd2-id0/c0.5/comm/slaved-wilson-smoketest".
+    /// "einsteinian-shiab/sd2-id0/c0.5/comm/slaved-wilson-smoketest". The
+    /// "/avg" suffix is appended only for the non-default incident-average vertex-face rule,
+    /// so every prior BranchId is byte-identical.
     /// </summary>
     public string BranchId =>
         $"einsteinian-shiab/{Phi1.InvariantElement}-{Phi2.InvariantElement}" +
         $"/c{EinsteinCoefficient.ToString("0.###", CultureInfo.InvariantCulture)}" +
-        $"/{Abbrev(BracketType)}/{EpsilonMode}";
+        $"/{Abbrev(BracketType)}/{EpsilonMode}" +
+        (VertexFaceRule == VertexFaceRule.IncidentAverage ? "/avg" : string.Empty);
 
     private static string Abbrev(string bracketType) => bracketType switch
     {
