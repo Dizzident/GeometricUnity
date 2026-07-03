@@ -88,6 +88,114 @@ public class Mesh4DTests
         Assert.Throws<ArgumentOutOfRangeException>(() => SimplicialMeshGenerator.CreateUniform4D(0));
     }
 
+    // ---- Periodic 4-torus variant (M1b) ------------------------------------
+
+    // Derived counts: the Kuhn triangulation is Z^4-translation-invariant, so on the
+    // torus (Z_n)^4 each subsimplex type has exactly n^4 translates. Per lattice point
+    // the orbit counts (chains ∅ ⊊ B1 ⊊ ... ⊊ Bk of subsets of {1,2,3,4}) are
+    // V:1, E:15, F:50, Vol:60, C:24; their alternating sum 1-15+50-60+24 = 0 = χ(T^4).
+
+    [Fact]
+    public void CreateUniform4DPeriodic_3_HasDerivedTorusCounts()
+    {
+        var mesh = SimplicialMeshGenerator.CreateUniform4DPeriodic(3);
+        int n4 = 81; // 3^4
+
+        Assert.Equal(4, mesh.EmbeddingDimension);
+        Assert.Equal(4, mesh.SimplicialDimension);
+        Assert.Equal(1 * n4, mesh.VertexCount);   // 81
+        Assert.Equal(15 * n4, mesh.EdgeCount);     // 1215
+        Assert.Equal(50 * n4, mesh.FaceCount);     // 4050
+        Assert.Equal(60 * n4, mesh.VolumeCount);   // 4860
+        Assert.Equal(24 * n4, mesh.CellCount);     // 1944
+
+        // Euler characteristic of the 4-torus is 0.
+        int euler = mesh.VertexCount - mesh.EdgeCount + mesh.FaceCount
+                    - mesh.VolumeCount + mesh.CellCount;
+        Assert.Equal(0, euler);
+    }
+
+    [Fact]
+    public void CreateUniform4DPeriodic_4_HasDerivedTorusCounts()
+    {
+        var mesh = SimplicialMeshGenerator.CreateUniform4DPeriodic(4);
+        int n4 = 256; // 4^4
+
+        Assert.Equal(1 * n4, mesh.VertexCount);   // 256
+        Assert.Equal(15 * n4, mesh.EdgeCount);     // 3840
+        Assert.Equal(50 * n4, mesh.FaceCount);     // 12800
+        Assert.Equal(60 * n4, mesh.VolumeCount);   // 15360
+        Assert.Equal(24 * n4, mesh.CellCount);     // 6144
+
+        int euler = mesh.VertexCount - mesh.EdgeCount + mesh.FaceCount
+                    - mesh.VolumeCount + mesh.CellCount;
+        Assert.Equal(0, euler);
+    }
+
+    [Fact]
+    public void CreateUniform4DPeriodic_HasNoBoundary_EveryVolumeSharedByExactlyTwoCells()
+    {
+        var mesh = SimplicialMeshGenerator.CreateUniform4DPeriodic(3);
+
+        // In 4D the codimension-1 facets are the volumes (3-subsimplices). A closed
+        // manifold (no boundary) requires every volume to be shared by exactly 2 cells.
+        var volMult = new int[mesh.VolumeCount];
+        foreach (var cellVols in mesh.CellVolumes)
+            foreach (int v in cellVols)
+                volMult[v]++;
+        foreach (int m in volMult)
+            Assert.Equal(2, m);
+
+        // Faces are codimension-2; their star is a closed cycle of cells, so their
+        // multiplicity is a link size (>= 2), never a boundary value of 1. Pinned to
+        // the stable {4,6} pattern of the Freudenthal torus.
+        var faceMult = new int[mesh.FaceCount];
+        foreach (var cf in mesh.CellFaces)
+            foreach (int f in cf)
+                faceMult[f]++;
+        foreach (int m in faceMult)
+            Assert.True(m == 4 || m == 6, $"Face shared by {m} cells; expected 4 or 6 on the Freudenthal 4-torus.");
+    }
+
+    [Fact]
+    public void CreateUniform4DPeriodic_BoundaryOfBoundary_IsExactlyZero()
+    {
+        var mesh = SimplicialMeshGenerator.CreateUniform4DPeriodic(3);
+
+        int[,] b1 = BuildVertexEdgeBoundary(mesh);
+        int[,] b2 = BuildEdgeFaceBoundary(mesh);
+        int[,] b3 = BuildFaceVolumeBoundary(mesh);
+
+        AssertAllZero(MultiplyIntMatrices(b1, b2), "periodic B1 * B2");
+        AssertAllZero(MultiplyIntMatrices(b2, b3), "periodic B2 * B3");
+    }
+
+    [Fact]
+    public void CreateUniform4DPeriodic_DiscreteDerivative_DDIsZero()
+    {
+        var mesh = SimplicialMeshGenerator.CreateUniform4DPeriodic(3);
+        const int dimG = 2;
+
+        var rng = new Random(20260702);
+        var edgeCoeffs = new double[mesh.EdgeCount * dimG];
+        for (int i = 0; i < edgeCoeffs.Length; i++)
+            edgeCoeffs[i] = rng.NextDouble() * 2.0 - 1.0;
+
+        double[] faceCoeffs = DiscreteExteriorDerivative.EdgeToFace(mesh, edgeCoeffs, dimG);
+        ThreeFormField ddOmega = DiscreteExteriorDerivative.FaceToVolume(mesh, faceCoeffs, dimG);
+
+        foreach (double c in ddOmega.Coefficients)
+            Assert.True(System.Math.Abs(c) < 1e-9, $"periodic d(d omega) component {c} is not zero.");
+    }
+
+    [Fact]
+    public void CreateUniform4DPeriodic_BelowMinimum_Throws()
+    {
+        // n < 3 collapses distinct subsimplices under the wrap (not a valid complex).
+        Assert.Throws<ArgumentOutOfRangeException>(() => SimplicialMeshGenerator.CreateUniform4DPeriodic(2));
+        Assert.Throws<ArgumentOutOfRangeException>(() => SimplicialMeshGenerator.CreateUniform4DPeriodic(0));
+    }
+
     // ---- Volume topology structural sanity ---------------------------------
 
     [Fact]

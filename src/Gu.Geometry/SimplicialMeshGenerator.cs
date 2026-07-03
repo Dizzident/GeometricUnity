@@ -163,21 +163,68 @@ public static class SimplicialMeshGenerator
     public static SimplicialMesh CreateUniform4D(int n)
     {
         if (n < 1) throw new ArgumentOutOfRangeException(nameof(n), "Must be >= 1.");
+        return BuildKuhn4D(n, periodic: false);
+    }
 
-        int side = n + 1;
+    /// <summary>
+    /// Creates a PERIODIC uniform 4D pentachoral mesh: the Coxeter–Freudenthal–Kuhn
+    /// triangulation of [0, n]^4 with opposite faces identified, i.e. a triangulated
+    /// flat 4-torus (Z_n)^4. Identification (coordinate n ≡ coordinate 0 per axis)
+    /// wraps edges/faces/volumes, so every subsimplex is interior: each face and each
+    /// volume is shared by exactly 2 pentachora, and there is no boundary. The
+    /// identification is applied purely at the vertex-index level, so the Freudenthal
+    /// conformity and the (-1)^i boundary-orientation convention are preserved and the
+    /// combinatorial ∂∘∂ = 0 (B1·B2 = 0, B2·B3 = 0) still holds exactly.
+    /// </summary>
+    /// <param name="n">
+    /// Number of grid divisions per axis. Must be &gt;= 3: with n &lt; 3 the wrap
+    /// collapses distinct subsimplices onto each other (the quotient is not a valid
+    /// simplicial complex — a subsimplex would be shared by more than two cells), so
+    /// the smallest well-formed 4-torus mesh is n = 3.
+    /// </param>
+    /// <returns>A <see cref="SimplicialMesh"/> with embedding dimension 4 and simplicial dimension 4.</returns>
+    /// <remarks>
+    /// Vertex coordinates are the base lattice positions in [0, n)^4; a wrapped edge
+    /// therefore has a coordinate difference of magnitude n-1, not 1. Consumers that
+    /// need geometric edge vectors (e.g. the frame-contracted Dirac operator) must apply
+    /// the minimal-image convention using the period n. The mesh topology itself is
+    /// coordinate-independent.
+    /// </remarks>
+    public static SimplicialMesh CreateUniform4DPeriodic(int n)
+    {
+        if (n < 3) throw new ArgumentOutOfRangeException(nameof(n), "Must be >= 3 for a well-formed 4-torus.");
+        return BuildKuhn4D(n, periodic: true);
+    }
+
+    /// <summary>
+    /// Shared Coxeter–Freudenthal–Kuhn 4-cube triangulation core. When
+    /// <paramref name="periodic"/> is false this tiles the open block [0, n]^4
+    /// ((n+1)^4 vertices); when true, opposite faces are identified (n^4 vertices,
+    /// a flat 4-torus). Cell generation is identical; only the vertex indexing differs.
+    /// </summary>
+    private static SimplicialMesh BuildKuhn4D(int n, bool periodic)
+    {
+        int side = periodic ? n : n + 1;
         int vertexCount = side * side * side * side;
         var coords = new double[vertexCount * 4];
 
-        // Row-major index, w fastest.
-        int Idx(int x, int y, int z, int w) => ((x * side + y) * side + z) * side + w;
-
-        for (int x = 0; x <= n; x++)
+        // Row-major index, w fastest. Periodic identification wraps coordinate n to 0.
+        int Idx(int x, int y, int z, int w)
         {
-            for (int y = 0; y <= n; y++)
+            if (periodic)
             {
-                for (int z = 0; z <= n; z++)
+                x %= n; y %= n; z %= n; w %= n;
+            }
+            return ((x * side + y) * side + z) * side + w;
+        }
+
+        for (int x = 0; x < side; x++)
+        {
+            for (int y = 0; y < side; y++)
+            {
+                for (int z = 0; z < side; z++)
                 {
-                    for (int w = 0; w <= n; w++)
+                    for (int w = 0; w < side; w++)
                     {
                         int v = Idx(x, y, z, w);
                         coords[v * 4 + 0] = x;
