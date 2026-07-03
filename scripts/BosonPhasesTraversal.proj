@@ -309,6 +309,7 @@
     <PhaseProject Include="../studies/phase439_gap_equation_lambda8_background_channel_steering_probe_001/Phase439GapEquationLambda8BackgroundChannelSteeringProbe.csproj" />
     <PhaseProject Include="../studies/phase440_coupled_background_condensate_fixed_point_probe_001/Phase440CoupledBackgroundCondensateFixedPointProbe.csproj" />
     <PhaseProject Include="../studies/phase441_toy_branch_family_universality_sweep_001/Phase441ToyBranchFamilyUniversalitySweep.csproj" />
+    <PhaseProject Include="../studies/phase442_joint_omega_theta_hessian_degree_probe_001/Phase442JointOmegaThetaHessianDegreeProbe.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />

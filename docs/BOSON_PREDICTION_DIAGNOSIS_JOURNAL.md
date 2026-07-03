@@ -18960,3 +18960,42 @@ docs/Phases/FOUR_D_PLATFORM_BUILD_PLAN.md (three additive milestones,
 is the dominant risk, handled by the Phase441 candidate-family
 methodology). The build awaits user approval; the loop is at steady
 state (monitoring cadence).
+
+## 2026-07-03 - Phase442: The Wall Breaks (Necessary-Not-Sufficient)
+
+### Context
+
+The user approved the dimension-four platform build (the terminal
+frontier's named prerequisite); a six-agent team (architect, physicist,
+three developers, QA) delivered it across ten commits with every
+milestone independently validated, the epsilon treatment resolved
+through a leader-arbitrated co-signed design (independent-theta joint
+Hessian pinned; slaved Wilson demoted to smoke-test), and the boson
+generator pass proven undisturbed (234/3) over the platform additions.
+Phase442 is the first physics study on that platform.
+
+### Result
+
+THE DRAFT-CANONICAL EINSTEINIAN SHIAB BREAKS THE EXACT-QUADRATICITY.
+Control: the identity member reproduces the Phase436/441 no-go on the 4D
+mesh at 2.6e-15 - the wall exists on this platform exactly as the
+theorems say. Isolation: the identity member's theta-block is bit-exactly
+zero while the Einsteinian block is 6.6e-2 - the lift is Shiab-caused.
+Treatment: all nine Einsteinian members exceed degree-2 in the joint
+(omega,theta) Hessian, robust under both vertex-to-face rules, with the
+amplitude honesty sweep monotone. The structural mechanism that forbade
+a dynamical bosonic scale across the entire toy family is ABSENT for the
+draft's own operator on the dimension-four platform.
+
+### Interpretation (physicist-pinned framing)
+
+Degree > 2 is necessary for log-saturation, not sufficient, and not a
+scale: nothing is promoted, no GeV value exists, and the honest chain is
+intact (promotedPhysicalMassClaimCount=0 throughout). What changed is
+the character of the frontier: Phases 435/436/440/441 proved the scale
+gap COULD NOT close on the toy; Phase442 shows the necessary condition
+IS SATISFIED on the platform the draft actually specifies. The named
+next study - the joint effective potential with variational eps*(omega)
+and the CW/gap-equation saturation analysis (Phase435/438 machinery on
+the lifted Hessian) - is, for the first time, a scale question with no
+known structural obstruction.

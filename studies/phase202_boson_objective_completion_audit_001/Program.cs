@@ -201,6 +201,7 @@ const string Phase432Path = "studies/phase432_welded_fermion_loop_block_selectio
 const string Phase433Path = "studies/phase433_blind_beta_coefficient_running_ledger_001/output/blind_beta_coefficient_running_ledger_summary.json";
 const string Phase435Path = "studies/phase435_two_condensate_scale_gap_probe_001/output/two_condensate_scale_gap_probe_summary.json";
 const string Phase437Path = "studies/phase437_four_dimensional_transmutation_scaling_probe_001/output/four_dimensional_transmutation_scaling_probe_summary.json";
+const string Phase442Path = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
 const string Phase441Path = "studies/phase441_toy_branch_family_universality_sweep_001/output/toy_branch_family_universality_sweep_summary.json";
 const string Phase440Path = "studies/phase440_coupled_background_condensate_fixed_point_probe_001/output/coupled_background_condensate_fixed_point_probe_summary.json";
 const string Phase439Path = "studies/phase439_gap_equation_lambda8_background_channel_steering_probe_001/output/gap_equation_lambda8_background_channel_steering_probe_summary.json";
@@ -447,6 +448,7 @@ using var phase438 = File.Exists(Phase438Path) ? JsonDocument.Parse(File.ReadAll
 using var phase439 = File.Exists(Phase439Path) ? JsonDocument.Parse(File.ReadAllText(Phase439Path)) : null;
 using var phase440 = File.Exists(Phase440Path) ? JsonDocument.Parse(File.ReadAllText(Phase440Path)) : null;
 using var phase441 = File.Exists(Phase441Path) ? JsonDocument.Parse(File.ReadAllText(Phase441Path)) : null;
+using var phase442 = File.Exists(Phase442Path) ? JsonDocument.Parse(File.ReadAllText(Phase442Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -6104,6 +6106,29 @@ var toyBranchFamilyUniversalitySweepPassed = toyBranchFamilyUniversalitySweepMat
     && JsonBool(phase441.RootElement, "routePromotesHiggsMass") is false
     && JsonBool(phase441.RootElement, "routeCompletesBosonPredictions") is false
     && JsonInt(phase441.RootElement, "acceptedContractFieldCount") == 0;
+var jointOmegaThetaHessianDegreeProbeMaterialized = phase442 is not null;
+var jointOmegaThetaHessianDegreeProbePassed = jointOmegaThetaHessianDegreeProbeMaterialized
+    && JsonBool(phase442!.RootElement, "jointOmegaThetaHessianDegreeProbePassed") is true
+    && JsonBool(phase442.RootElement, "targetBlindConstruction") is true
+    && (JsonString(phase442.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase442.RootElement, "applicationSubjectKind") == "joint-omega-theta-hessian-degree-probe"
+    && JsonBool(phase442.RootElement, "controlArmReproducesPhase436DegreeTwo") is true
+    && JsonBool(phase442.RootElement, "isolationThetaBlockExactlyDegenerate") is true
+    && JsonBool(phase442.RootElement, "isolationBatteryPassed") is true
+    && JsonBool(phase442.RootElement, "honestySweepPassed") is true
+    && JsonBool(phase442.RootElement, "degreeLiftIsNecessaryNotSufficientForScale") is true
+    && JsonBool(phase442.RootElement, "noScaleProduced") is true
+    && JsonBool(phase442.RootElement, "noGevPromotion") is true
+    && JsonBool(phase442.RootElement, "slavedWilsonKeptAsSmokeTestOnly") is true
+    && JsonString(phase442.RootElement, "epsilonRealization") == "independent-theta-dof"
+    && JsonBool(phase442.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase442.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase442.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase442.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase442.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase442.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase442.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonInt(phase442.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -8608,6 +8633,14 @@ var checklist = new[]
             ? $"toyBranchFamilyUniversalitySweepPassed={JsonBool(phase441!.RootElement, "toyBranchFamilyUniversalitySweepPassed")}; decision={JsonString(phase441.RootElement, "decision")}"
             : "Phase441 artifact not materialized",
         Phase441Path),
+    new ObjectiveChecklistItem(
+        "joint-omega-theta-hessian-degree-probe-materialized",
+        "Decide whether the draft-canonical Einsteinian Shiab breaks the Phase436/441 exact-quadraticity of the joint (omega,theta) Hessian on the dimension-four platform: it does - necessary-not-sufficient for a scale, nothing promoted.",
+        jointOmegaThetaHessianDegreeProbePassed ? "passed" : "failed",
+        jointOmegaThetaHessianDegreeProbeMaterialized
+            ? $"jointOmegaThetaHessianDegreeProbePassed={JsonBool(phase442!.RootElement, "jointOmegaThetaHessianDegreeProbePassed")}; controlArmReproducesPhase436DegreeTwo={JsonBool(phase442.RootElement, "controlArmReproducesPhase436DegreeTwo")}; isolationThetaBlockExactlyDegenerate={JsonBool(phase442.RootElement, "isolationThetaBlockExactlyDegenerate")}; einsteinianJointHessianDegreeExceedsTwo={JsonBool(phase442.RootElement, "einsteinianJointHessianDegreeExceedsTwo")}; vertexFaceRuleRobust={JsonBool(phase442.RootElement, "vertexFaceRuleRobust")}; noScaleProduced={JsonBool(phase442.RootElement, "noScaleProduced")}; canFillPhase201WzContract={JsonBool(phase442.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase442.RootElement, "decision")}"
+            : "Phase442 artifact not materialized",
+        Phase442Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

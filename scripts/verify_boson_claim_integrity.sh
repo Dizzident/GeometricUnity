@@ -212,6 +212,7 @@ const paths = {
   phase439: "studies/phase439_gap_equation_lambda8_background_channel_steering_probe_001/output/gap_equation_lambda8_background_channel_steering_probe_summary.json",
   phase440: "studies/phase440_coupled_background_condensate_fixed_point_probe_001/output/coupled_background_condensate_fixed_point_probe_summary.json",
   phase441: "studies/phase441_toy_branch_family_universality_sweep_001/output/toy_branch_family_universality_sweep_summary.json",
+  phase442: "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -495,6 +496,7 @@ const phase438 = requireFile(paths.phase438);
 const phase439 = requireFile(paths.phase439);
 const phase440 = requireFile(paths.phase440);
 const phase441 = requireFile(paths.phase441);
+const phase442 = requireFile(paths.phase442);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -5244,6 +5246,19 @@ if (sourceLineageMissing) {
   assert(phase441.sourceContractApplicationAllowed === false && phase441.canFillPhase201WzContract === false && phase441.canFillPhase201HiggsContract === false && phase441.canFillPhase256ObservedFieldExtractionContract === false, "Phase441 cannot fill Phase201 or Phase256 contracts.");
   assert(phase441.routePromotesWzMasses === false && phase441.routePromotesHiggsMass === false && phase441.routeCompletesBosonPredictions === false, "Phase441 cannot promote boson predictions.");
   assert(phase101Package?.toyBranchFamilyUniversalitySweep?.toyBranchFamilyUniversalitySweepPassed === true, "Phase101 must include the Phase441 universality block.");
+  assert(phase442.jointOmegaThetaHessianDegreeProbePassed === true, "Phase442 joint Hessian-degree probe must pass as fail-closed representation arithmetic.");
+  assert(phase442.targetBlindConstruction === true && typeof phase442.targetBlindConstructionHash === "string" && phase442.targetBlindConstructionHash.length === 64, "Phase442 must remain target-blind with a persisted construction hash.");
+  assert(phase442.applicationSubjectKind === "joint-omega-theta-hessian-degree-probe", "Phase442 must classify its subject as the joint Hessian-degree probe.");
+  assert(phase442.batteries?.batteriesAllPassed === true, "Phase442 exactness batteries must all pass.");
+  assert(phase442.controlArmReproducesPhase436DegreeTwo === true && phase442.isolationThetaBlockExactlyDegenerate === true && phase442.isolationBatteryPassed === true, "Phase442 must anchor the control and isolation arms.");
+  assert(phase442.honestySweepPassed === true && phase442.vertexFaceRuleRobust === true, "Phase442 must pass the amplitude honesty sweep and the vertex-face robustness check.");
+  assert(phase442.degreeLiftIsNecessaryNotSufficientForScale === true && phase442.noScaleProduced === true && phase442.noGevPromotion === true, "Phase442 must carry the necessary-not-sufficient framing and promote no scale.");
+  assert(phase442.epsilonRealization === "independent-theta-dof" && phase442.slavedWilsonKeptAsSmokeTestOnly === true, "Phase442 must use the ratified epsilon realization with the Wilson form as smoke-test only.");
+  assert(phase442.recordedBoundary?.definition81Scope === "reduced-spin4-slice" && phase442.recordedBoundary?.ambientSevenSevenRealized === false && phase442.recordedBoundary?.internalGaugeContentRealized === false && phase442.recordedBoundary?.weldRealized === false, "Phase442 must carry the reduced-slice recorded boundary verbatim.");
+  assert(phase442.sourceContractApplicationAllowed === false && phase442.canFillPhase201WzContract === false && phase442.canFillPhase201HiggsContract === false && phase442.canFillPhase256ObservedFieldExtractionContract === false, "Phase442 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase442.routePromotesWzMasses === false && phase442.routePromotesHiggsMass === false && phase442.routeCompletesBosonPredictions === false, "Phase442 cannot promote boson predictions.");
+  assert(phase101Package?.jointOmegaThetaHessianDegreeProbe?.jointOmegaThetaHessianDegreeProbePassed === true, "Phase101 must include the Phase442 block.");
+  assert(phase101Package.jointOmegaThetaHessianDegreeProbe.noScaleProduced === true && phase101Package.jointOmegaThetaHessianDegreeProbe.degreeLiftIsNecessaryNotSufficientForScale === true, "Phase101 must preserve the Phase442 necessary-not-sufficient boundary.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

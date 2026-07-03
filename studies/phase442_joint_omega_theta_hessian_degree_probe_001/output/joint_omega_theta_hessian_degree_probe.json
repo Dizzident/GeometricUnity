@@ -1,0 +1,396 @@
+{
+  "phaseId": "phase442-joint-omega-theta-hessian-degree-probe",
+  "generatedAt": "2026-07-03T03:59:09.5818576+00:00",
+  "terminalStatus": "joint-omega-theta-hessian-degree-probe-passed-einsteinian-lift-above-degree-two-necessary-not-sufficient-no-scale",
+  "jointOmegaThetaHessianDegreeProbePassed": true,
+  "phase436PrecursorPassed": true,
+  "phase441PrecursorPassed": true,
+  "precursorsPassed": true,
+  "applicationSubjectKind": "joint-omega-theta-hessian-degree-probe",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "1f7b296cf3f48d5ca388178721f4c58c8e4b8bea81b304c9e1856e982cb93872",
+  "probeConfiguration": {
+    "meshRefinement": 1,
+    "lieAlgebraId": "su2-trace-pairing",
+    "vertexCount": 16,
+    "edgeCount": 65,
+    "faceCount": 110,
+    "cellCount": 24,
+    "nOmega": 195,
+    "nTheta": 48,
+    "jointDof": 243,
+    "rayT0": 0.2,
+    "rayDt": 0.15,
+    "probeDs": 0.05,
+    "raySeedCount": 4,
+    "thetaAmplitude": 1,
+    "degreeThreshold": 2.637738120023088E-11,
+    "degreeThresholdBasis": "noise-relative: max(absoluteBackstop, noiseMultiple * control machine floor)",
+    "noiseMultipleForDegree": 10000,
+    "absoluteDegreeBackstop": 1E-11,
+    "controlMachineFloorD5ObjRel": 2.637738120023088E-15,
+    "machineDegreeFloor": 1E-08,
+    "degreeMeasurement": "objective 5th t-difference (deg-4 exact =\u003E 0) and Hessian 3rd t-difference (deg-2 =\u003E 0) along joint rays t*(u_omega, u_theta)",
+    "residualIdentity": "Upsilon = S_h(omega, theta) - T; T = TrivialTorsion = 0; S_h = M(Ad_theta(F)); Ad_theta = exp(ad_theta) per face at the representative vertex"
+  },
+  "epsilonRealization": "independent-theta-dof",
+  "hessianOverJointOmegaTheta": true,
+  "slavedWilsonKeptAsSmokeTestOnly": true,
+  "controlArmReproducesPhase436DegreeTwo": true,
+  "isolationThetaBlockExactlyDegenerate": true,
+  "isolationBatteryPassed": true,
+  "einsteinianJointHessianDegreeExceedsTwo": true,
+  "einsteinianJointHessianDegreeExceedsTwoAny": true,
+  "honestySweepPassed": true,
+  "vertexFaceRuleRobust": true,
+  "vertexFaceRuleDisagreements": [],
+  "degreeLiftIsNecessaryNotSufficientForScale": true,
+  "noScaleProduced": true,
+  "noGevPromotion": true,
+  "recordedBoundary": {
+    "definition81Scope": "reduced-spin4-slice",
+    "ambientSevenSevenRealized": false,
+    "internalGaugeContentRealized": false,
+    "weldRealized": false,
+    "canFillPhase201WzContract": false,
+    "canFillPhase256Contract": false,
+    "shiabOutputDegree": 2,
+    "draftOperatorIsDegreeRaising": true,
+    "reducedRealizationCapturesRicciWeylAlgebraNotFormDegree": true,
+    "draftDegreeReductionRecorded": true,
+    "draftAlignmentStatus": "surrogate",
+    "baseSignature": "Cl(4,0)-euclidean-slice",
+    "lorentzianBaseNotYetRealized": true,
+    "geometricFiberTrivial": true,
+    "spinorUsedAsShiabCarrierNotFiber": true,
+    "draft14dObserverseNotRealized": true,
+    "noKaluzaKleinTowerModeled": true,
+    "naiveDiracDoublersPresent": true
+  },
+  "batteries": {
+    "batteriesAllPassed": true,
+    "controlArmReproducesPhase436DegreeTwo": true,
+    "controlRichnessFails": true,
+    "controlMaxD5ObjRelative": 2.637738120023088E-15,
+    "controlMaxD3HessRelative": 1.1360769510535613E-13,
+    "isolationThetaBlockExactlyDegenerate": true,
+    "isolationThetaBlockFrobenius": 0,
+    "einsteinianThetaBlockFrobenius": 0.06575791405920708,
+    "einsteinianThetaBlockNonzero": true,
+    "isolationBatteryPassed": true,
+    "crossCheckPinnedMatchesOperator": true,
+    "crossCheckMaxDiff": 0,
+    "honestySweepPassed": true,
+    "carrierMatchAllPassed": true,
+    "richnessFloor": 1E-09,
+    "isolationSubspaceDim": 8
+  },
+  "treatmentTable": [
+    {
+      "index": 0,
+      "member": "sd2-id0/c0",
+      "phi1": "sd2",
+      "phi2": "id0",
+      "einsteinCoefficient": 0,
+      "richnessDeviation": 1.224744871391589,
+      "isRich": true,
+      "carrierMatchPassed": true,
+      "pinnedRule": {
+        "maxD5ObjRelative": 7.14468970609922E-06,
+        "maxD3HessRelative": 2.8336558818470577E-05,
+        "maxD5ObjAbsolute": 2.2318502524272532E-05,
+        "maxD3HessAbsolute": 0.0002678787287919704,
+        "degreeExceedsTwo": true
+      },
+      "incidentAverageRule": {
+        "maxD5ObjRelative": 8.446761213595294E-07,
+        "maxD3HessRelative": 3.4892947344708973E-06,
+        "maxD5ObjAbsolute": 2.837597011889903E-06,
+        "maxD3HessAbsolute": 3.4935274805469874E-05,
+        "degreeExceedsTwo": true
+      },
+      "vertexFaceRuleVerdictsAgree": true
+    },
+    {
+      "index": 1,
+      "member": "sd2-id0/c0.5",
+      "phi1": "sd2",
+      "phi2": "id0",
+      "einsteinCoefficient": 0.5,
+      "richnessDeviation": 0.6123724356957945,
+      "isRich": true,
+      "carrierMatchPassed": true,
+      "pinnedRule": {
+        "maxD5ObjRelative": 2.7334844167006174E-05,
+        "maxD3HessRelative": 5.198553379530875E-05,
+        "maxD5ObjAbsolute": 2.080050199291042E-05,
+        "maxD3HessAbsolute": 0.00014577566543305664,
+        "degreeExceedsTwo": true
+      },
+      "incidentAverageRule": {
+        "maxD5ObjRelative": 1.1982324685171516E-06,
+        "maxD3HessRelative": 4.971090138622303E-06,
+        "maxD5ObjAbsolute": 9.584522002448193E-07,
+        "maxD3HessAbsolute": 1.3668111293663188E-05,
+        "degreeExceedsTwo": true
+      },
+      "vertexFaceRuleVerdictsAgree": true
+    },
+    {
+      "index": 2,
+      "member": "sd2-id0/c1",
+      "phi1": "sd2",
+      "phi2": "id0",
+      "einsteinCoefficient": 1,
+      "richnessDeviation": 0,
+      "isRich": false,
+      "carrierMatchPassed": true,
+      "pinnedRule": {
+        "maxD5ObjRelative": 0.0003237434925854558,
+        "maxD3HessRelative": 0.0012914993728056203,
+        "maxD5ObjAbsolute": 1.2765518060121044E-05,
+        "maxD3HessAbsolute": 0.00015060877993322737,
+        "degreeExceedsTwo": true
+      },
+      "incidentAverageRule": {
+        "maxD5ObjRelative": 9.95420578459264E-05,
+        "maxD3HessRelative": 0.0008121836610938181,
+        "maxD5ObjAbsolute": 9.340491058533794E-07,
+        "maxD3HessAbsolute": 1.6494494590565045E-05,
+        "degreeExceedsTwo": true
+      },
+      "vertexFaceRuleVerdictsAgree": true
+    },
+    {
+      "index": 3,
+      "member": "asd2-id0/c0",
+      "phi1": "asd2",
+      "phi2": "id0",
+      "einsteinCoefficient": 0,
+      "richnessDeviation": 1.224744871391589,
+      "isRich": true,
+      "carrierMatchPassed": true,
+      "pinnedRule": {
+        "maxD5ObjRelative": 5.935978534730246E-06,
+        "maxD3HessRelative": 5.857909109796123E-06,
+        "maxD5ObjAbsolute": 1.9032986762833326E-05,
+        "maxD3HessAbsolute": 7.106356452624141E-05,
+        "degreeExceedsTwo": true
+      },
+      "incidentAverageRule": {
+        "maxD5ObjRelative": 7.529972583098505E-07,
+        "maxD3HessRelative": 2.322462493849868E-06,
+        "maxD5ObjAbsolute": 2.68526732676716E-06,
+        "maxD3HessAbsolute": 2.20604545382308E-05,
+        "degreeExceedsTwo": true
+      },
+      "vertexFaceRuleVerdictsAgree": true
+    },
+    {
+      "index": 4,
+      "member": "asd2-id0/c0.5",
+      "phi1": "asd2",
+      "phi2": "id0",
+      "einsteinCoefficient": 0.5,
+      "richnessDeviation": 0.6123724356957945,
+      "isRich": true,
+      "carrierMatchPassed": true,
+      "pinnedRule": {
+        "maxD5ObjRelative": 2.0067008318271124E-05,
+        "maxD3HessRelative": 5.5302513371670315E-05,
+        "maxD5ObjAbsolute": 1.5855978005767032E-05,
+        "maxD3HessAbsolute": 0.00014971960660703498,
+        "degreeExceedsTwo": true
+      },
+      "incidentAverageRule": {
+        "maxD5ObjRelative": 9.499202399193588E-07,
+        "maxD3HessRelative": 3.2428190279118354E-06,
+        "maxD5ObjAbsolute": 7.79658677394976E-07,
+        "maxD3HessAbsolute": 9.657528468265397E-06,
+        "degreeExceedsTwo": true
+      },
+      "vertexFaceRuleVerdictsAgree": true
+    },
+    {
+      "index": 5,
+      "member": "asd2-id0/c1",
+      "phi1": "asd2",
+      "phi2": "id0",
+      "einsteinCoefficient": 1,
+      "richnessDeviation": 0,
+      "isRich": false,
+      "carrierMatchPassed": true,
+      "pinnedRule": {
+        "maxD5ObjRelative": 0.0005199589687809017,
+        "maxD3HessRelative": 0.001809903944131612,
+        "maxD5ObjAbsolute": 2.2196462344266634E-05,
+        "maxD3HessAbsolute": 0.00019040315177723272,
+        "degreeExceedsTwo": true
+      },
+      "incidentAverageRule": {
+        "maxD5ObjRelative": 0.00018975829334844443,
+        "maxD3HessRelative": 0.0005654336075873779,
+        "maxD5ObjAbsolute": 2.928355988008782E-06,
+        "maxD3HessAbsolute": 1.9043721110775964E-05,
+        "degreeExceedsTwo": true
+      },
+      "vertexFaceRuleVerdictsAgree": true
+    },
+    {
+      "index": 6,
+      "member": "sd2-none/c0",
+      "phi1": "sd2",
+      "phi2": "none",
+      "einsteinCoefficient": 0,
+      "richnessDeviation": 1.224744871391589,
+      "isRich": true,
+      "carrierMatchPassed": true,
+      "pinnedRule": {
+        "maxD5ObjRelative": 3.0697608237057433E-06,
+        "maxD3HessRelative": 8.27758772808876E-06,
+        "maxD5ObjAbsolute": 7.806181918264266E-06,
+        "maxD3HessAbsolute": 8.611228883514954E-05,
+        "degreeExceedsTwo": true
+      },
+      "incidentAverageRule": {
+        "maxD5ObjRelative": 3.8007927928863233E-07,
+        "maxD3HessRelative": 1.0598358358335927E-06,
+        "maxD5ObjAbsolute": 1.1359964369739295E-06,
+        "maxD3HessAbsolute": 1.2514351965364767E-05,
+        "degreeExceedsTwo": true
+      },
+      "vertexFaceRuleVerdictsAgree": true
+    },
+    {
+      "index": 7,
+      "member": "sd2-none/c0.5",
+      "phi1": "sd2",
+      "phi2": "none",
+      "einsteinCoefficient": 0.5,
+      "richnessDeviation": 1.224744871391589,
+      "isRich": true,
+      "carrierMatchPassed": true,
+      "pinnedRule": {
+        "maxD5ObjRelative": 7.1279424635676505E-06,
+        "maxD3HessRelative": 2.9593021524218896E-05,
+        "maxD5ObjAbsolute": 1.9852520940402685E-05,
+        "maxD3HessAbsolute": 0.0002528785855719917,
+        "degreeExceedsTwo": true
+      },
+      "incidentAverageRule": {
+        "maxD5ObjRelative": 6.430453745096544E-07,
+        "maxD3HessRelative": 1.3560936506704773E-06,
+        "maxD5ObjAbsolute": 1.876439257475493E-06,
+        "maxD3HessAbsolute": 1.3823749672070562E-05,
+        "degreeExceedsTwo": true
+      },
+      "vertexFaceRuleVerdictsAgree": true
+    },
+    {
+      "index": 8,
+      "member": "sd2-none/c1",
+      "phi1": "sd2",
+      "phi2": "none",
+      "einsteinCoefficient": 1,
+      "richnessDeviation": 1.224744871391589,
+      "isRich": true,
+      "carrierMatchPassed": true,
+      "pinnedRule": {
+        "maxD5ObjRelative": 1.3777467326117118E-06,
+        "maxD3HessRelative": 1.0280549806350161E-05,
+        "maxD5ObjAbsolute": 4.446744826899773E-06,
+        "maxD3HessAbsolute": 9.680327416150547E-05,
+        "degreeExceedsTwo": true
+      },
+      "incidentAverageRule": {
+        "maxD5ObjRelative": 1.215354830237629E-06,
+        "maxD3HessRelative": 1.1791801919836258E-06,
+        "maxD5ObjAbsolute": 3.357587899883996E-06,
+        "maxD3HessAbsolute": 1.2706856346245132E-05,
+        "degreeExceedsTwo": true
+      },
+      "vertexFaceRuleVerdictsAgree": true
+    }
+  ],
+  "einsteinianJointHessianDegreeExceedsTwoAll": true,
+  "richMemberCount": 7,
+  "incidentAverageMeanAttenuationOnRichMembers": 11.510589127126412,
+  "honestySweep": {
+    "amplitudes": [
+      0,
+      0.25,
+      0.5,
+      1
+    ],
+    "thirdTDifferenceHessianRelative": [
+      1.2838661121211153E-13,
+      8.49091860087377E-07,
+      6.5559645772572305E-06,
+      6.403703329889345E-05
+    ],
+    "fifthTDifferenceObjectiveRelative": [
+      1.9991315678527583E-16,
+      3.8384666529146206E-09,
+      5.373197240518703E-07,
+      8.957061087093021E-06
+    ],
+    "zeroAmplitudeVanishes": true,
+    "monotoneInAmplitude": true,
+    "growsWithAmplitude": true,
+    "honestySweepPassed": true,
+    "note": "sd2-id0/c0.5, independent-theta, pinned rule; the third t-difference of the Hessian must vanish at theta amplitude 0 and grow with amplitude (design battery #8)."
+  },
+  "slavedWilsonSmokeTest": {
+    "gating": false,
+    "epsilonMode": "slaved-wilson-smoketest",
+    "member": "sd2-id0/c0.5",
+    "kappa": 1,
+    "hessianThirdTDifferenceAbs": 0.5584692236865845,
+    "note": "NON-GATING smoke-test only (design \u00A73.5). eps(omega)=exp(kappa*sum omega_e) routes the exp(ad_theta) non-polynomiality through an inserted omega-functional; it cannot run the isolation battery, so it is NOT the study instrument. slavedWilsonKeptAsSmokeTestOnly=true."
+  },
+  "framing": {
+    "degreeLiftIsNecessaryNotSufficientForScale": true,
+    "noScaleProduced": true,
+    "namedNextStudy": "joint effective-potential \u002B variational eps*(omega) (solve dS/deps=0, integrate epsilon out) \u002B Coleman-Weinberg / gap-equation saturation analysis (Phase435/438 machinery on the lifted joint Hessian). Degree \u003E 2 is the NECESSARY condition for log-saturation, NOT sufficient, and NOT a scale.",
+    "treatmentVerdict": "every genuinely-rich Einsteinian member lifts the joint (omega,theta) Hessian above degree 2",
+    "robustness": "the degree verdict AGREES under both vertex-\u003Eface rules (lowest-index and incident-average); the incident-average rule attenuates the lift MAGNITUDE by ~11.5x (it smooths theta over the face\u0027s three vertices) but the verdict is robust"
+  },
+  "runtimeSeconds": 0.6637687,
+  "physicalCouplingProvided": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256Contract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256Contract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "sourceEvidence": {
+    "phase436SummaryPath": "studies/phase436_exact_hessian_saturation_no_go_probe_001/output/exact_hessian_saturation_no_go_probe_summary.json",
+    "phase441SummaryPath": "studies/phase441_toy_branch_family_universality_sweep_001/output/toy_branch_family_universality_sweep_summary.json",
+    "designSourcePath": "docs/Phases/FOUR_D_PLATFORM_DESIGN.md",
+    "physicsDecisionsSourcePath": "docs/Phases/FOUR_D_PLATFORM_PHYSICS_DECISIONS.md"
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "The joint (omega,theta) Hessian degrees, block norms, and t-differences are candidate-only structure data of the reduced spin-4 slice, not physical mass spectra.",
+    "A degree \u003E 2 verdict is the NECESSARY condition for one-loop log-saturation, NOT sufficient, and NOT a scale; no scale, pole, VEV, or GeV is produced.",
+    "The isolation battery certifies any lift is caused by the non-scalar Einsteinian contraction, not by inserting the theta DOF (identity Shiab =\u003E bit-exact-zero theta-block).",
+    "Extracting an actual scale requires the deferred variational eps*(omega) \u002B effective-potential saturation analysis (the named next study); nothing here is promoted.",
+    "No VEV scale, pole, or GeV lineage; no Phase201 or Phase256 contract field is filled; the reduced slice does not realize the ambient 7,7 / internal gauge / weld content."
+  ],
+  "decision": "The joint (omega, theta) Hessian-degree probe on the draft-canonical Einsteinian Shiab is decided on internal consistency. On CreateUniform4D(1) (su(2) trace pairing; nOmega=195, nTheta=48), with theta a genuine INDEPENDENT H-valued vertex DOF and the Hessian over the JOINT (omega, theta): the CONTROL arm (identity-equivalent {id0, none, trivial}) reproduces the Phase436/441 no-go exactly on the 4D mesh -- the objective is degree-4-exact (max relative 5th t-difference 2.64E-015 \u003C 1E-008) and the Hessian degree-2 (3rd t-difference 1.14E-013) -- and it FAILS the richness certificate (the expected control outcome). The ISOLATION battery is bit-exact: with the identity-equivalent Shiab theta is absent from Upsilon so the theta-block of the joint Hessian is EXACTLY zero (||block|| = 0.0E\u002B000), while a genuine sd2 member couples theta (||block|| = 6.576E-002 \u003E 0) -- so every genuinely-rich Einsteinian member lifts the joint (omega,theta) Hessian above degree 2, and that lift (where present) is Shiab-caused, NOT a free-DOF artifact of inserting theta. The HONESTY sweep confirms the third t-difference vanishes at theta amplitude 0 (1.28E-013) and grows with amplitude (to 6.40E-005), separating a genuine lift from a numerical artifact. The degree verdict AGREES under both vertex-\u003Eface rules (lowest-index and incident-average); the incident-average rule attenuates the lift MAGNITUDE by ~11.5x (it smooths theta over the face\u0027s three vertices) but the verdict is robust. The study-side per-face Ad machinery reproduces the shipped EvaluateWithTheta to 0.0E\u002B000. MANDATORY FRAMING: a degree \u003E 2 verdict is the NECESSARY condition for log-saturation, NOT sufficient, and is NOT a scale -- no scale, pole, VEV, or GeV is produced. The named NEXT study is: joint effective-potential \u002B variational eps*(omega) (solve dS/deps=0, integrate epsilon out) \u002B Coleman-Weinberg / gap-equation saturation analysis (Phase435/438 machinery on the lifted joint Hessian). Degree \u003E 2 is the NECESSARY condition for log-saturation, NOT sufficient, and NOT a scale. Everything is target-blind, reduced-spin4-slice structure; no Phase201/Phase256 contract field is filled; nothing is promoted."
+}

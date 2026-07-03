@@ -37,6 +37,10 @@ var excludedPathFragments = new[]
     // (canonical Shiab not realizable on the 2D toy); it is a generated
     // fail-closed diagnostic artifact, not an observed-sector vacuum claim.
     "studies/phase441_toy_branch_family_universality_sweep_001/",
+    // 2026-07-03: phase442 runs ON the dimension-four platform (necessary-not-
+    // sufficient degree-lift probe); a generated fail-closed diagnostic
+    // artifact, not an observed-sector vacuum claim.
+    "studies/phase442_joint_omega_theta_hessian_degree_probe_001/",
 };
 
 var dimension4Pattern = new Regex("""

@@ -49,7 +49,7 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase441 work (plus the 2026-06-12 platform
+Current gate status after the Phase442 work (plus the 2026-06-12 platform
 fix - GPU parity defect root-caused and discharged - and the 2026-07-01
 |Y|=1/2 calibration defect fix in the Phase411/417 informational SM
 censuses):
@@ -57,7 +57,7 @@ censuses):
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=234`,
+  `objectiveAchieved=False`, `checklistPassedCount=235`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -492,6 +492,16 @@ censuses):
   universal; the canonical physical Shiab is NOT realizable on the toy
   (dimX>=4 + Cl(7,7)/128 spinor basis required); TERMINAL FRONTIER:
   `scaleGapRequiresDimFourSpinorShiabOrSourceAnchor=True`
+- Phase442 (ON THE USER-APPROVED DIMENSION-FOUR PLATFORM, commits
+  13725f97..f33bc791): `jointOmegaThetaHessianDegreeProbePassed=True`,
+  `controlArmReproducesPhase436DegreeTwo=True` (2.6e-15),
+  `isolationThetaBlockExactlyDegenerate=True` (bit-exact 0 vs 6.6e-2),
+  `einsteinianJointHessianDegreeExceedsTwo=True` (all nine members,
+  BOTH vertex->face rules), `honestySweepPassed=True`,
+  `noScaleProduced=True`, `degreeLiftIsNecessaryNotSufficientForScale=True`
+  - THE DRAFT-CANONICAL SHIAB BREAKS THE EXACT-QUADRATICITY: the
+  structural wall against a dynamical bosonic scale is ABSENT on the 4D
+  platform (necessary-not-sufficient; nothing promoted)
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -512,7 +522,28 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work (2026-07-02, thirteenth checkpoint) added Phase441, the
+The latest work (2026-07-03) is PHASE442 - the first physics study on
+the user-approved dimension-four platform (built by a six-agent team:
+M1 4D mesh, M1b periodic torus, M2 Clifford/spinor + Dirac scheme, M3a
+Einsteinian Shiab family, M3b independent-theta joint-Hessian arm; all
+QA-certified, physicist-signed, generator pass proven undisturbed; see
+docs/Phases/FOUR_D_PLATFORM_DESIGN.md + FOUR_D_PLATFORM_PHYSICS_DECISIONS.md).
+RESULT: the draft-canonical Einsteinian Shiab with independent-theta
+epsilon-conjugation BREAKS the Phase436/441 exact-quadraticity of the
+joint (omega,theta) Hessian - control anchored at 2.6e-15, isolation
+bit-exact, all nine members lift, both vertex->face rules agree.
+NECESSARY-NOT-SUFFICIENT: no scale/pole/VEV/GeV produced; nothing
+promoted. THE NAMED NEXT STUDY (phase443): the joint (omega,theta)
+EFFECTIVE POTENTIAL - variational eps*(omega) mode + the
+Coleman-Weinberg/gap-equation saturation analysis (the Phase435/438
+machinery on the lifted Hessian) - for the first time a scale question
+with NO known structural obstruction. Study:
+phase442_joint_omega_theta_hessian_degree_probe_001
+(IMPLEMENTATION_P442.md). HAZARD NOTE: phase442 is registered in ALL
+EIGHT scanners including phase253 (dimension-4 regex) and both
+IMPLEMENTATION_P442.md registries.
+
+Before that, the work (2026-07-02, thirteenth checkpoint) added Phase441, the
 toy-branch family universality sweep - THE TERMINAL INTERNAL RESULT: all
 seven universality verdicts hold across the full 36-member family, the
 no-saturation theorem extends family-wide (verified insight: [u,u]=0
@@ -1149,7 +1180,7 @@ HONEST BOUNDARY. Study:
 
 ### Integration Points Already Updated
 
-Phase441 (like Phase388-440) is wired into:
+Phase442 (like Phase388-441) is wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (single broad pass; the
   older duplicated final sweep was removed on 2026-06-16; the Phase424 line
@@ -1180,7 +1211,8 @@ Phase441 (like Phase388-440) is wired into:
   `self-consistent-condensate-gap-equation-probe-materialized` and
   `gap-equation-lambda8-background-channel-steering-probe-materialized` and
   `coupled-background-condensate-fixed-point-probe-materialized` and
-  `toy-branch-family-universality-sweep-materialized`;
+  `toy-branch-family-universality-sweep-materialized` and
+  `joint-omega-theta-hessian-degree-probe-materialized`;
   the Phase417 checklist row now asserts the corrected
   `yHalfCalibrationExact=True` and `internalSmHiggsPatternComplexDimension=6`)
 - `scripts/verify_boson_claim_integrity.sh` (Phase424 asserts plus the
@@ -1237,8 +1269,8 @@ PHASE405_ENABLE_GPU=1 LD_LIBRARY_PATH=native/build dotnet run --project studies/
 The targeted Phase424 (Release, ~7 min) and Phase425 (Release, ~1 min) runs
 pass and preserve the fail-closed boundary; the fixed Phase411/Phase417
 re-runs pass with their corrected censuses; Phase202 now reports
-`checklistPassedCount=234`, `checklistFailedCount=3`; claim integrity
-verifies Phase424 through Phase441 (and the corrected Phase417 values)
+`checklistPassedCount=235`, `checklistFailedCount=3`; claim integrity
+verifies Phase424 through Phase442 (and the corrected Phase417 values)
 with `promotedPhysicalMassClaimCount=0`. The full direct
 `./scripts/generate_validated_boson_predictions.sh` pass completed with
 Phase424 through Phase436 included and ended at
@@ -1663,12 +1695,13 @@ Then verify the gate if needed:
 ### Commit Guidance
 
 If this prompt file is present in an uncommitted worktree, inspect all diffs,
-force-add the ignored Phase441 output JSON files, and commit a checkpoint
+force-add the ignored Phase442 output JSON files, and commit a checkpoint
 after validation. REMEMBER: new phases must be registered in BOTH the
-generator script AND scripts/BosonPhasesTraversal.proj.
+generator script AND scripts/BosonPhasesTraversal.proj, and in ALL EIGHT
+scanners (including phase253's dimension-4 exclusions).
 
 Suggested checkpoint message:
 
 ```text
-Add phase441 toy-branch family universality sweep
+Add phase442 joint Hessian-degree probe
 ```
