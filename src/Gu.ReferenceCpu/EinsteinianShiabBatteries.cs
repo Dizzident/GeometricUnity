@@ -20,7 +20,7 @@ namespace Gu.ReferenceCpu;
 ///   <item>Gauge covariance under the eps-dressing — <see cref="GaugeCovarianceResidual"/>.</item>
 /// </list>
 /// Plus two NON-GATING kappa-scan batteries that move with the slaved-Wilson SMOKE-TEST
-/// (physics memo §6e resolved 2026-07-02: the pinned omega-coupled treatment is independent-theta
+/// (physics memo §6e resolved 2026-07-02: the pinned slaved-wilson-smoketest treatment is independent-theta
 /// with a joint (omega,theta) Hessian; the Wilson eps(omega) realization is a labeled non-gating
 /// smoke-test, NOT the pinned physics). These validate the smoke-test wiring only:
 /// <list type="number">
@@ -229,7 +229,7 @@ public static class EinsteinianShiabBatteries
         return 0.5 * mass.InnerProduct(upsilon, upsilon);
     }
 
-    // ---- omega-coupled degree batteries (physicist conditional sign-off) ----
+    // ---- slaved-wilson-smoketest degree batteries (physicist conditional sign-off) ----
 
     /// <summary>
     /// The third finite t-difference of the Hessian of S_B along the ray omega = t·u,
@@ -274,7 +274,7 @@ public static class EinsteinianShiabBatteries
     /// <summary>
     /// Scan the omega-coupling kappa and return |third t-difference of the Hessian| for
     /// each kappa (one operator built per kappa from <paramref name="baseMember"/>, which
-    /// must have EpsilonMode="omega-coupled"). kappa=0 should give ~0 (degree-2 control);
+    /// must have EpsilonMode="slaved-wilson-smoketest"). kappa=0 should give ~0 (degree-2 control);
     /// the sequence should grow monotonically, separating a genuine degree-lift from a
     /// numerical artifact (physicist conditional sign-off battery).
     /// </summary>

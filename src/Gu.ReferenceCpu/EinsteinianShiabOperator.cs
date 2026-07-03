@@ -72,7 +72,7 @@ public sealed class EinsteinianShiabOperator : IShiabBranchOperator
     /// either length dim(g) (a single global theta) or CellCount*dim(g) (per-cell theta).
     /// The conjugator is Ad = exp(ad_theta). Ignored for other modes.</param>
     /// <param name="omegaCouplingKappa">
-    /// The omega-coupling strength kappa for EpsilonMode="omega-coupled": the per-cell
+    /// The omega-coupling strength kappa for EpsilonMode="slaved-wilson-smoketest": the per-cell
     /// theta is theta_cell = kappa * sum_{e in cell} omega_e. kappa = 0 recovers eps = 1.
     /// Discrete eps map per design §3.5 / physics §6e — physicist sign-off pending.</param>
     public EinsteinianShiabOperator(
@@ -95,10 +95,10 @@ public sealed class EinsteinianShiabOperator : IShiabBranchOperator
                 "The Lambda^2(T*X^4) contraction is undefined below dim 4 — this is the documented 2D blocker.",
                 nameof(mesh));
 
-        if (member.EpsilonMode is not ("trivial" or "frozen-background" or "omega-coupled" or "independent-theta"))
+        if (member.EpsilonMode is not ("trivial" or "frozen-background" or "slaved-wilson-smoketest" or "independent-theta"))
             throw new ArgumentException(
                 $"Unknown EpsilonMode '{member.EpsilonMode}' " +
-                "(expected trivial|frozen-background|omega-coupled|independent-theta).",
+                "(expected trivial|frozen-background|slaved-wilson-smoketest|independent-theta).",
                 nameof(member));
 
         var r = Lambda2Algebra.MemberEndomorphism(member);
@@ -117,7 +117,7 @@ public sealed class EinsteinianShiabOperator : IShiabBranchOperator
     /// <summary>The 6x6 Lambda^2 endomorphism R this member realizes (for the richness certificate).</summary>
     public double[,] Lambda2Endomorphism => Lambda2Algebra.MemberEndomorphism(_member);
 
-    /// <summary>The epsilon mode (trivial | frozen-background | omega-coupled).</summary>
+    /// <summary>The epsilon mode (trivial | frozen-background | slaved-wilson-smoketest).</summary>
     public string EpsilonMode => _member.EpsilonMode;
 
     public string BranchId => _member.BranchId;
@@ -175,7 +175,7 @@ public sealed class EinsteinianShiabOperator : IShiabBranchOperator
         ArgumentNullException.ThrowIfNull(omega);
         ArgumentNullException.ThrowIfNull(deltaOmega);
 
-        return _member.EpsilonMode == "omega-coupled"
+        return _member.EpsilonMode == "slaved-wilson-smoketest"
             ? LinearizeFiniteDifference(omega, deltaOmega, manifest, geometry)
             : LinearizeAnalytic(omega, deltaOmega);
     }
@@ -203,7 +203,7 @@ public sealed class EinsteinianShiabOperator : IShiabBranchOperator
     }
 
     /// <summary>
-    /// Central finite-difference Jacobian for the NONLINEAR omega-coupled mode
+    /// Central finite-difference Jacobian for the NONLINEAR slaved-wilson-smoketest mode
     /// (design §3.5, Phase436 JacobianColumn style): dS/domega(delta) ≈
     /// (S(omega + h·delta) - S(omega - h·delta)) / (2h). This captures both the
     /// F-dependence and the eps(omega)-dependence, which is the extra term that lifts
@@ -254,7 +254,7 @@ public sealed class EinsteinianShiabOperator : IShiabBranchOperator
     /// Apply the per-cell Lambda^2 contraction with a given ad-conjugation. The
     /// <paramref name="adSelector"/> returns the dim(g) x dim(g) Ad matrix for a given
     /// (cell, global-face) pair, or null there for the identity; a null selector means
-    /// Ad = identity everywhere. Per-cell dressing (frozen / omega-coupled smoke-test)
+    /// Ad = identity everywhere. Per-cell dressing (frozen / slaved-wilson-smoketest smoke-test)
     /// ignores the face argument; per-face dressing (independent-theta) ignores the cell
     /// argument. Linear in the input coefficients for fixed Ad.
     /// </summary>
@@ -321,7 +321,7 @@ public sealed class EinsteinianShiabOperator : IShiabBranchOperator
     /// Resolve the ad-conjugation selector (cell, global-face) -> Ad matrix for a given
     /// connection, per epsilon mode. "trivial" and "independent-theta" (whose Evaluate uses
     /// the theta=0 background) return null (Ad = identity); "frozen-background" and the
-    /// "omega-coupled" smoke-test return per-cell dressing.
+    /// "slaved-wilson-smoketest" smoke-test return per-cell dressing.
     /// </summary>
     private Func<int, int, double[,]?>? ResolveAd(double[] omega)
     {
@@ -332,7 +332,7 @@ public sealed class EinsteinianShiabOperator : IShiabBranchOperator
                 var ad = _adPerCell!;
                 return (cell, _) => ad[cell];
             }
-            case "omega-coupled":
+            case "slaved-wilson-smoketest":
             {
                 var ad = BuildOmegaCoupledAd(omega);
                 return (cell, _) => ad[cell];
@@ -347,7 +347,7 @@ public sealed class EinsteinianShiabOperator : IShiabBranchOperator
         => adPerCell == null ? null : (cell, _) => adPerCell[cell];
 
     /// <summary>
-    /// Build the omega-coupled conjugator Ad_cell = exp(ad_theta) with the Wilson-line
+    /// Build the slaved-wilson-smoketest conjugator Ad_cell = exp(ad_theta) with the Wilson-line
     /// accumulation theta_cell = kappa * sum_{e in cell} omega_e (discrete eps map per
     /// design §3.5 / physics §6e). theta = 0 (kappa = 0 or omega = 0) gives Ad = I, so
     /// the operator reduces to the linear R(F) and reproduces Phase436 degree-2.

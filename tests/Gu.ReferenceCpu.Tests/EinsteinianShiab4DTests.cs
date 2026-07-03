@@ -15,7 +15,7 @@ namespace Gu.ReferenceCpu.Tests;
 /// lifts); registry carrier-match; the richness certificate (control fails, sd2
 /// passes); Weyl annihilation; analytic-vs-finite-difference Linearize for the
 /// linear modes; Hessian self-adjointness for all three eps modes; gauge covariance;
-/// and an informational omega-coupled degree probe.
+/// and an informational slaved-wilson-smoketest degree probe.
 /// </summary>
 public class EinsteinianShiab4DTests
 {
@@ -286,7 +286,7 @@ public class EinsteinianShiab4DTests
             ControlAnchor(), ScalarControl(), Sd2Member(), Asd2Member(),
             new EinsteinianShiabFamilyMember
             { Phi1 = InvariantElementSpec.Sd2, Phi2 = InvariantElementSpec.Vol4, EpsilonMode = "trivial" },
-            Sd2Member("frozen-background"), Sd2Member("omega-coupled"),
+            Sd2Member("frozen-background"), Sd2Member("slaved-wilson-smoketest"),
         };
 
         foreach (var member in menu)
@@ -426,7 +426,7 @@ public class EinsteinianShiab4DTests
     [Trait("Gating", "false")] // slaved-Wilson smoke-test mode; not the pinned physics treatment
     public void HessianSymmetry_OmegaCoupled_IsSelfAdjoint()
     {
-        AssertHessianSymmetric(Sd2Member("omega-coupled"));
+        AssertHessianSymmetric(Sd2Member("slaved-wilson-smoketest"));
     }
 
     private void AssertHessianSymmetric(EinsteinianShiabFamilyMember member, double[]? backgroundEps = null)
@@ -462,9 +462,9 @@ public class EinsteinianShiab4DTests
             $"Trivial-eps Shiab must be exactly gauge covariant; residual={residual:G6}.");
     }
 
-    // ===== omega-coupled = SLAVED-WILSON SMOKE-TEST (NON-GATING) =====
+    // ===== slaved-wilson-smoketest = SLAVED-WILSON SMOKE-TEST (NON-GATING) =====
     // RESOLVED (2026-07-02): the physicist LOCKED independent-theta (a genuine independent field
-    // with a joint (omega,theta) Hessian) as the pinned omega-coupled physics treatment (§6e).
+    // with a joint (omega,theta) Hessian) as the pinned slaved-wilson-smoketest physics treatment (§6e).
     // The slaved Wilson eps(omega)=exp(kappa*sum omega_e) realization SURVIVES as an OPTIONAL,
     // LABELED, NON-GATING smoke-test — NOT the pinned treatment. These tests carry
     // [Trait("Gating","false")] so QA excludes them from the M3 acceptance gate. The true
@@ -480,7 +480,7 @@ public class EinsteinianShiab4DTests
         // theta = kappa * sum omega_e = 0 at omega=0 => Ad = I => same as trivial.
         var mesh = Mesh4D();
         var algebra = LieAlgebraFactory.CreateSu2();
-        var coupled = new EinsteinianShiabOperator(mesh, algebra, Sd2Member("omega-coupled"));
+        var coupled = new EinsteinianShiabOperator(mesh, algebra, Sd2Member("slaved-wilson-smoketest"));
         var trivial = new EinsteinianShiabOperator(mesh, algebra, Sd2Member("trivial"));
 
         // Feed a nonzero curvature but ZERO omega (so theta=0).
@@ -491,7 +491,7 @@ public class EinsteinianShiab4DTests
         var sC = coupled.Evaluate(fT, zeroOmega, Manifest(), Geometry());
         var sT = trivial.Evaluate(fT, zeroOmega, Manifest(), Geometry());
         Assert.True(MaxDiff(sC.Coefficients, sT.Coefficients) < 1e-12,
-            "omega-coupled at omega=0 must equal trivial (theta=0 => Ad=I).");
+            "slaved-wilson-smoketest at omega=0 must equal trivial (theta=0 => Ad=I).");
     }
 
     [Fact]
@@ -502,7 +502,7 @@ public class EinsteinianShiab4DTests
         // S(F, 2*omega) != 2*S(F, omega) - S(F, 0) (an affine map would satisfy equality).
         var mesh = Mesh4D();
         var algebra = LieAlgebraFactory.CreateSu2();
-        var op = new EinsteinianShiabOperator(mesh, algebra, Sd2Member("omega-coupled"), omegaCouplingKappa: 1.0);
+        var op = new EinsteinianShiabOperator(mesh, algebra, Sd2Member("slaved-wilson-smoketest"), omegaCouplingKappa: 1.0);
 
         var f = EinsteinianShiabBatteries.ConstantTwoForm(mesh, algebra, EinsteinianShiabBatteries.SelfDualSample(), 0);
         var fT = FaceTensor(mesh, algebra, f);
@@ -522,7 +522,7 @@ public class EinsteinianShiab4DTests
                 System.Math.Abs(s2.Coefficients[i] - (2 * s1.Coefficients[i] - s0.Coefficients[i])));
 
         Assert.True(dev > 1e-6,
-            $"omega-coupled Evaluate must be nonlinear in omega (affine deviation={dev:G6}).");
+            $"slaved-wilson-smoketest Evaluate must be nonlinear in omega (affine deviation={dev:G6}).");
     }
 
     // ===== kappa-scan degree batteries — SMOKE-TEST (NON-GATING) =====
@@ -538,7 +538,7 @@ public class EinsteinianShiab4DTests
         // (vanishing third t-difference), because eps = exp(0) = 1 => S_h linear in omega.
         var mesh = Mesh4D();
         var algebra = LieAlgebraFactory.CreateSu2WithTracePairing();
-        var member = Sd2Member("omega-coupled");
+        var member = Sd2Member("slaved-wilson-smoketest");
         var op = new EinsteinianShiabOperator(mesh, algebra, member, null, omegaCouplingKappa: 0.0);
 
         int n = mesh.EdgeCount * algebra.Dimension;
@@ -560,7 +560,7 @@ public class EinsteinianShiab4DTests
         // perturbative window, separating a genuine degree-lift from a numerical artifact.
         var mesh = Mesh4D();
         var algebra = LieAlgebraFactory.CreateSu2WithTracePairing();
-        var member = Sd2Member("omega-coupled");
+        var member = Sd2Member("slaved-wilson-smoketest");
 
         int n = mesh.EdgeCount * algebra.Dimension;
         var u = RandomVector(n, 55);

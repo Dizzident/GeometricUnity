@@ -80,7 +80,7 @@ public sealed class EinsteinianShiabFamilyMember
     ///   <item>"trivial": eps = 1 — CONTROL, linear in omega, degree-2 Hessian
     ///         (reproduces the Phase436/441 no-go on a bigger mesh).</item>
     ///   <item>"frozen-background": eps from a FIXED background field — still LINEAR in omega.</item>
-    ///   <item>"omega-coupled": the slaved-Wilson SMOKE-TEST eps(omega)=exp(kappa*sum omega_e)
+    ///   <item>"slaved-wilson-smoketest": the slaved-Wilson SMOKE-TEST eps(omega)=exp(kappa*sum omega_e)
     ///         — NONLINEAR in omega, but NON-GATING and NOT the pinned physics treatment. Physics
     ///         memo §6e (resolved 2026-07-02) LOCKED the pinned omega-coupling as independent-theta
     ///         (a genuine independent field with a joint (omega,theta) Hessian), which arrives as a
@@ -92,7 +92,7 @@ public sealed class EinsteinianShiabFamilyMember
 
     /// <summary>
     /// Derived branch identifier, e.g.
-    /// "einsteinian-shiab/sd2-id0/c0.5/comm/omega-coupled".
+    /// "einsteinian-shiab/sd2-id0/c0.5/comm/slaved-wilson-smoketest".
     /// </summary>
     public string BranchId =>
         $"einsteinian-shiab/{Phi1.InvariantElement}-{Phi2.InvariantElement}" +
