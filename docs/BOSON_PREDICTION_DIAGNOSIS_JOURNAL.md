@@ -19056,3 +19056,30 @@ block-diagonalization); (ii) adjoint/joint-gradient (enables SLQ).
 Alternatives that need no platform work: two-loop/RG improvement on the
 minimal mesh; richer Phi menus. Everything fail-closed; nothing
 promoted; promotedPhysicalMassClaimCount=0 throughout.
+
+## 2026-07-03 - Phase445: First Interior Minima Ever - Recorded as Scheme-Dependent Candidate
+
+### Result
+
+Under RG improvement (workbench beta MEASURED from the potential,
+leading logs resummed), the Einsteinian members develop the FIRST
+interior finite minima in the program's history (t* ~ 1.5-2.25, windows
+3/5, measured running strongly positive [8, 2500] vs the identity's
+negative) - but the verdict FLIPS at the widest window (poor fits, R^2
+0.31), so verdictSchemeStable=false and the phase records
+einsteinianRgSaturationObserved=false. A suggestive candidate, NOT an
+established saturation - exactly what the phase's pre-committed design
+demands. Controls pristine: no spurious identity minimum, identity beta
+consistent with pure-quartic at 5.6e-9, theta gate 1.4e-9.
+
+### Interpretation
+
+The chain now reads: necessary condition delivered (442); one-loop
+fixed-coupling insufficient on the minimal mesh (443); mode-volume
+tooling-blocked with unlocks named (444); RG improvement produces
+candidate minima pending scheme control (445). Phase446 (no platform
+work needed) must resolve the scheme dependence: regime-aware windows,
+direct beta from the running Hessian, denser t-grids at the candidates.
+If the minima survive scheme control, the program has its first
+workbench-relative dynamical-scale candidate; if not, another honest
+negative. promotedPhysicalMassClaimCount=0 throughout.

@@ -1,0 +1,1243 @@
+{
+  "phaseId": "phase445-rg-improved-joint-potential-probe",
+  "generatedAt": "2026-07-03T14:43:58.2721051+00:00",
+  "terminalStatus": "rg-improved-joint-potential-probe-passed-einsteinian-rg-saturation-candidate-scheme-dependent-recorded-no-gev",
+  "rgImprovedJointPotentialProbePassed": true,
+  "phase443PrecursorPassed": true,
+  "phase444PrecursorPassed": true,
+  "precursorsPassed": true,
+  "applicationSubjectKind": "rg-improved-joint-potential-probe",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "f3622205458dda393d3ca128dc2658cd609cc377fc04daec4df79ad797e0bc7e",
+  "probeConfiguration": {
+    "meshRefinement": 1,
+    "lieAlgebraId": "su2-trace-pairing",
+    "vertexCount": 16,
+    "edgeCount": 65,
+    "faceCount": 110,
+    "cellCount": 24,
+    "nOmega": 195,
+    "nTheta": 48,
+    "jointDof": 243,
+    "raySeedCount": 2,
+    "tMax": 3,
+    "gridN": 16,
+    "tGrid": [
+      0.1875,
+      0.375,
+      0.5625,
+      0.75,
+      0.9375,
+      1.125,
+      1.3125,
+      1.5,
+      1.6875,
+      1.875,
+      2.0625,
+      2.25,
+      2.4375,
+      2.625,
+      2.8125,
+      3
+    ],
+    "windowWidths": [
+      3,
+      5,
+      7
+    ],
+    "latticeScale": 1.258423568577004,
+    "latticeScaleBasis": "mean mesh edge length (workbench convention)",
+    "hessStep": 0.0001,
+    "zeroModeRelTol": 1E-08,
+    "zeroModeAbsFloor": 1E-10,
+    "thetaTol": 1E-09,
+    "thetaResidualBattery": 1E-08,
+    "epsilonRealization": "independent-theta-dof-variational",
+    "epsilonTaxonomyMode": "mode-3-variational",
+    "vEffDefinition": "V_eff(t) = S_B(t*u, theta*(t*u)) \u002B (1/2) sum_i log lambda_i over positive eigenvalues of the joint (omega,theta) FD Hessian at the composite point (recomputed with the Phase443 hardened machinery)",
+    "thetaStationarity": "dS_B/dtheta = 0 solved by the VERBATIM Phase443 hardened Newton iteration (exact analytic gradient via LinearizeTheta; theta-block Hessian by forward-differencing that gradient; regularized-Newton step accepted only if ||g|| decreases); relative gate \u003C= 1e-8; identity theta*=0 exact",
+    "rgPrescription": "WORKBENCH CONVENTION: lambda_tree(t) = local t^4 coefficient of S_B fit to {t^2,t^3,t^4}; delta_lambda(t) = local t^4 coefficient of the one-loop correction V_1loop=V_eff-S_B fit to c*t^4 (leading-log resummation target); lambda_eff = lambda_tree \u002B delta_lambda; beta(t) = d lambda_eff / d ln t (central difference over window centers); V_RG(t) = lambda_eff(t)*t^4 \u002B measured subleading (a t^2 \u002B b t^3). Window width scanned over {3,5,7}",
+    "irConvention": "exact zero modes excluded at zeroTol = max(absFloor, relTol*maxAbsEig); positive eigenvalues enter the one-loop log sum; negative modes recorded"
+  },
+  "einsteinianRgSaturationObserved": false,
+  "einsteinianRgSaturationObservedAny": true,
+  "verdictSchemeStable": false,
+  "verdictSeedStable": true,
+  "controlNoSpuriousMinimum": true,
+  "identityBetaConsistent": true,
+  "scaleIsWorkbenchRelativeCandidateOnly": true,
+  "noGevPromotion": true,
+  "rgPrescriptionIsWorkbenchConvention": true,
+  "physicistReviewPending": true,
+  "candidateScaleRatios": [
+    {
+      "member": "sd2-id0/c0.5",
+      "interiorFiniteMinimumSchemeStable": false,
+      "tStarMeanOverSchemes": 1.875,
+      "tStarOverLatticeScale": 1.4899593799885726,
+      "perSchemeTStar": [
+        {
+          "windowWidth": 3,
+          "classification": "interior-finite",
+          "tStar": 1.6875
+        },
+        {
+          "windowWidth": 5,
+          "classification": "interior-finite",
+          "tStar": 2.0625
+        },
+        {
+          "windowWidth": 7,
+          "classification": "runaway",
+          "tStar": null
+        }
+      ]
+    },
+    {
+      "member": "asd2-id0/c0.5",
+      "interiorFiniteMinimumSchemeStable": false,
+      "tStarMeanOverSchemes": 1.875,
+      "tStarOverLatticeScale": 1.4899593799885726,
+      "perSchemeTStar": [
+        {
+          "windowWidth": 3,
+          "classification": "interior-finite",
+          "tStar": 1.5
+        },
+        {
+          "windowWidth": 5,
+          "classification": "interior-finite",
+          "tStar": 2.25
+        },
+        {
+          "windowWidth": 7,
+          "classification": "runaway",
+          "tStar": null
+        }
+      ]
+    }
+  ],
+  "batteries": {
+    "batteriesAllPassed": true,
+    "thetaStationarityGate": true,
+    "maxThetaResidualNonIdentity": 1.3831568660353952E-09,
+    "allThetaConverged": true,
+    "identityThetaExactZero": true,
+    "thetaResidualBatteryRel": 1E-08,
+    "linThetaFdBattery": true,
+    "linThetaFdMaxResidual": 4.801845676291605E-09,
+    "identityBetaConsistent": true,
+    "identityMaxLamTreeRelVariation": 5.573807536018859E-09,
+    "identityMinLambdaEff": 1.7513035727086497,
+    "identityOneLoopLogSlope": 14.654138693545608,
+    "controlNoSpuriousMinimum": true,
+    "verdictSchemeStable": false,
+    "verdictSeedStable": true,
+    "fitQualityFloorMet": true,
+    "fitR2UncenteredFloor": 0.1,
+    "minOneLoopR2Uncentered": 0.30662139817366696
+  },
+  "memberTable": [
+    {
+      "index": 0,
+      "member": "identity",
+      "phi1": "id0",
+      "phi2": "none",
+      "einsteinCoefficient": 0.5,
+      "isControl": true,
+      "schemeStable": true,
+      "seedStable": true,
+      "identityOneLoopLogSlope": 14.654138693545608,
+      "primaryRayByWindow": [
+        {
+          "windowWidth": 3,
+          "classification": "trivial-origin",
+          "interiorFiniteMinimum": false,
+          "tStar": null,
+          "vRgAtTStar": null,
+          "tStarOverLatticeScale": null,
+          "lamTreeRelativeVariation": 5.573807536018859E-09,
+          "minR2OneLoopUncentered": 0.5261505322553324,
+          "minR2OneLoopCentered": -3684.6530164218757,
+          "minR2Tree": 1,
+          "tCenters": [
+            0.375,
+            0.5625,
+            0.75,
+            0.9375,
+            1.125,
+            1.3125,
+            1.5,
+            1.6875,
+            1.875,
+            2.0625,
+            2.25,
+            2.4375,
+            2.625,
+            2.8125
+          ],
+          "lambdaTree": [
+            0.0059783084485875515,
+            0.005978308445913019,
+            0.005978308449009731,
+            0.005978308451931412,
+            0.0059783084462373196,
+            0.005978308455179186,
+            0.005978308455685991,
+            0.005978308441307949,
+            0.005978308448574843,
+            0.005978308440030282,
+            0.0059783084397383515,
+            0.0059783084648035445,
+            0.005978308443901014,
+            0.005978308473060292
+          ],
+          "deltaLambdaOneLoop": [
+            1075.0344790828367,
+            372.1132740671883,
+            160.78198370207807,
+            81.17166157249409,
+            45.28572569355095,
+            26.768889099218324,
+            16.89237161350989,
+            10.9899479669477,
+            7.559048357140772,
+            5.37661929607513,
+            3.95350567185217,
+            2.966134190307205,
+            2.2685918616104415,
+            1.7453252642355894
+          ],
+          "lambdaEff": [
+            1075.0404573912854,
+            372.1192523756342,
+            160.78796201052708,
+            81.17763988094602,
+            45.29170400199719,
+            26.774867407673504,
+            16.898349921965576,
+            10.995926275389008,
+            7.565026665589347,
+            5.38259760451516,
+            3.9594839802919086,
+            2.9721124987720087,
+            2.2745701700543424,
+            1.7513035727086497
+          ],
+          "betaFunction": [
+            null,
+            -1318.98754120618,
+            -569.5517197233798,
+            -284.8488210179589,
+            -161.68576943992258,
+            -98.69698809539372,
+            -62.78565556390428,
+            -41.82654260635085,
+            -27.97283707990432,
+            -19.775734415059517,
+            -14.429369450040394,
+            -10.930304116243184,
+            -8.5311092164405,
+            null
+          ],
+          "vRg": [
+            21.587854137527017,
+            37.99348678616308,
+            52.18976815601793,
+            64.76429411460332,
+            75.51150407126461,
+            83.49068604872858,
+            90.82102813546766,
+            95.84496293399278,
+            101.74896303329368,
+            107.38754126073455,
+            113.36726771936833,
+            118.87822680586154,
+            124.1991959925543,
+            128.1880853521909
+          ]
+        },
+        {
+          "windowWidth": 5,
+          "classification": "trivial-origin",
+          "interiorFiniteMinimum": false,
+          "tStar": null,
+          "vRgAtTStar": null,
+          "tStarOverLatticeScale": null,
+          "lamTreeRelativeVariation": 6.623639473424246E-10,
+          "minR2OneLoopUncentered": 0.45831303076902796,
+          "minR2OneLoopCentered": -709.0245471682565,
+          "minR2Tree": 1,
+          "tCenters": [
+            0.5625,
+            0.75,
+            0.9375,
+            1.125,
+            1.3125,
+            1.5,
+            1.6875,
+            1.875,
+            2.0625,
+            2.25,
+            2.4375,
+            2.625
+          ],
+          "lambdaTree": [
+            0.005978308448512513,
+            0.005978308448184712,
+            0.00597830844832059,
+            0.005978308447853275,
+            0.005978308447501958,
+            0.005978308447467489,
+            0.005978308447482982,
+            0.00597830844801447,
+            0.0059783084469135885,
+            0.005978308446832728,
+            0.005978308448298518,
+            0.005978308450792544
+          ],
+          "deltaLambdaOneLoop": [
+            163.23308275582676,
+            84.30335974806395,
+            48.1374143429219,
+            29.039472163589252,
+            18.64724705666335,
+            12.331613048276974,
+            8.540418758919719,
+            6.104315669113252,
+            4.4829528967591274,
+            3.362902048950459,
+            2.5760565038940246,
+            1.9865609137276765
+          ],
+          "lambdaEff": [
+            163.23906106427526,
+            84.30933805651213,
+            48.14339265137022,
+            29.045450472037107,
+            18.653225365110853,
+            12.337591356724442,
+            8.546397067367202,
+            6.110293977561266,
+            4.488931205206041,
+            3.3688803573972916,
+            2.5820348123423233,
+            1.992539222178469
+          ],
+          "betaFunction": [
+            null,
+            -225.31302866989773,
+            -136.29751729397265,
+            -87.64517269654621,
+            -58.07751234868176,
+            -40.215869685153,
+            -27.907135754035224,
+            -20.219523597188353,
+            -15.036146401832791,
+            -11.414844460155662,
+            -8.928544050283493,
+            null
+          ],
+          "vRg": [
+            17.081881940065617,
+            27.991453545568145,
+            39.24612446743095,
+            49.48814728169457,
+            59.38935142229249,
+            67.73218789897645,
+            75.98137266538282,
+            83.76902105785587,
+            91.21600576965686,
+            98.23074283710936,
+            105.10836424279307,
+            110.80816552985993
+          ]
+        },
+        {
+          "windowWidth": 7,
+          "classification": "trivial-origin",
+          "interiorFiniteMinimum": false,
+          "tStar": null,
+          "vRgAtTStar": null,
+          "tStarOverLatticeScale": null,
+          "lamTreeRelativeVariation": 1.3971362407379144E-10,
+          "minR2OneLoopUncentered": 0.4550650855561811,
+          "minR2OneLoopCentered": -334.48244672212985,
+          "minR2Tree": 1,
+          "tCenters": [
+            0.75,
+            0.9375,
+            1.125,
+            1.3125,
+            1.5,
+            1.6875,
+            1.875,
+            2.0625,
+            2.25,
+            2.4375
+          ],
+          "lambdaTree": [
+            0.005978308448470365,
+            0.005978308447637795,
+            0.005978308447942634,
+            0.005978308447774575,
+            0.005978308447669335,
+            0.005978308447635114,
+            0.005978308447882641,
+            0.0059783084478617875,
+            0.005978308448224057,
+            0.005978308447848925
+          ],
+          "deltaLambdaOneLoop": [
+            48.28458757708533,
+            29.325696761416115,
+            19.008517752105753,
+            12.704955629730307,
+            8.896484928144305,
+            6.425638887656015,
+            4.754972097503342,
+            3.590850388496289,
+            2.7614240106336725,
+            2.139432597440499
+          ],
+          "lambdaEff": [
+            48.2905658855338,
+            29.331675069863753,
+            19.014496060553697,
+            12.710933938178082,
+            8.902463236591975,
+            6.43161719610365,
+            4.760950405951225,
+            3.5968286969441507,
+            2.7674023190818966,
+            2.145410905888348
+          ],
+          "betaFunction": [
+            null,
+            -72.2036723741226,
+            -49.39706556055808,
+            -35.150027729505545,
+            -24.985898282989705,
+            -18.55985891704781,
+            -14.126569365949969,
+            -10.934242345913477,
+            -8.68831069879147,
+            null
+          ],
+          "vRg": [
+            16.594888913344462,
+            24.714520424405297,
+            33.42049789357365,
+            41.755336850128074,
+            50.34185179080479,
+            58.832313681553245,
+            67.09164842290676,
+            75.07277001066042,
+            82.81551858165402,
+            89.69540576547159
+          ]
+        }
+      ],
+      "seeds": [
+        {
+          "seed": 0,
+          "byWindow": [
+            {
+              "windowWidth": 3,
+              "classification": "trivial-origin",
+              "interiorFiniteMinimum": false,
+              "tStar": null
+            },
+            {
+              "windowWidth": 5,
+              "classification": "trivial-origin",
+              "interiorFiniteMinimum": false,
+              "tStar": null
+            },
+            {
+              "windowWidth": 7,
+              "classification": "trivial-origin",
+              "interiorFiniteMinimum": false,
+              "tStar": null
+            }
+          ]
+        },
+        {
+          "seed": 1,
+          "byWindow": [
+            {
+              "windowWidth": 3,
+              "classification": "trivial-origin",
+              "interiorFiniteMinimum": false,
+              "tStar": null
+            },
+            {
+              "windowWidth": 5,
+              "classification": "trivial-origin",
+              "interiorFiniteMinimum": false,
+              "tStar": null
+            },
+            {
+              "windowWidth": 7,
+              "classification": "trivial-origin",
+              "interiorFiniteMinimum": false,
+              "tStar": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "member": "sd2-id0/c0.5",
+      "phi1": "sd2",
+      "phi2": "id0",
+      "einsteinCoefficient": 0.5,
+      "isControl": false,
+      "schemeStable": false,
+      "seedStable": true,
+      "identityOneLoopLogSlope": null,
+      "primaryRayByWindow": [
+        {
+          "windowWidth": 3,
+          "classification": "interior-finite",
+          "interiorFiniteMinimum": true,
+          "tStar": 1.6875,
+          "vRgAtTStar": -93.68489450741524,
+          "tStarOverLatticeScale": 1.3409634419897154,
+          "lamTreeRelativeVariation": 0.03920186243352893,
+          "minR2OneLoopUncentered": 0.41360787656202735,
+          "minR2OneLoopCentered": -319.251758002957,
+          "minR2Tree": 1,
+          "tCenters": [
+            0.375,
+            0.5625,
+            0.75,
+            0.9375,
+            1.125,
+            1.3125,
+            1.5,
+            1.6875,
+            1.875,
+            2.0625,
+            2.25,
+            2.4375,
+            2.625,
+            2.8125
+          ],
+          "lambdaTree": [
+            0.0020378538995803287,
+            0.00204595249787802,
+            0.0020537611687973206,
+            0.002061267517914449,
+            0.0020684643480540117,
+            0.002075348536427513,
+            0.0020819201001471546,
+            0.0020881814849447278,
+            0.002094136982992834,
+            0.0020997921503897476,
+            0.002105152992579754,
+            0.0021102245301727095,
+            0.002115008043215546,
+            0.002119496147427194
+          ],
+          "deltaLambdaOneLoop": [
+            -1752.0742440938473,
+            -557.2285485728387,
+            -227.43138260724345,
+            -107.4082025262544,
+            -56.40139226707576,
+            -31.505754428747863,
+            -18.575101452832314,
+            -11.679176761801301,
+            -7.597103205890182,
+            -5.1000901351513575,
+            -3.494449000579972,
+            -2.4568348045168005,
+            -1.7649001508424103,
+            -1.291742873820141
+          ],
+          "lambdaEff": [
+            -1752.0722062399477,
+            -557.2265026203409,
+            -227.42932884607464,
+            -107.40614125873648,
+            -56.3993238027277,
+            -31.503679080211437,
+            -18.573019532732168,
+            -11.677088580316356,
+            -7.595009068907189,
+            -5.097990343000967,
+            -3.4923438475873922,
+            -2.4547245799866277,
+            -1.7627851427991947,
+            -1.289623377672714
+          ],
+          "betaFunction": [
+            null,
+            2199.5947183428207,
+            880.5751717099986,
+            421.8118936086651,
+            225.58313559752335,
+            131.48648418589133,
+            78.89157274223014,
+            49.19707694517589,
+            32.785545603275615,
+            22.50235953149689,
+            15.822814319949128,
+            11.219922654420637,
+            8.14181924209676,
+            null
+          ],
+          "vRg": [
+            -34.59861314655328,
+            -55.67451493757007,
+            -71.762398733074,
+            -82.6594811852904,
+            -89.8950437947136,
+            -92.88114669977543,
+            -93.23165886944997,
+            -93.68489450741524,
+            -92.62771488497856,
+            -90.74533535412725,
+            -87.71029531883174,
+            -84.54418434790226,
+            -81.25070023513022,
+            -77.88002469987059
+          ]
+        },
+        {
+          "windowWidth": 5,
+          "classification": "interior-finite",
+          "interiorFiniteMinimum": true,
+          "tStar": 2.0625,
+          "vRgAtTStar": -72.7361182603035,
+          "tStarOverLatticeScale": 1.63895531798743,
+          "lamTreeRelativeVariation": 0.031024444085295064,
+          "minR2OneLoopUncentered": 0.33455758043281514,
+          "minR2OneLoopCentered": -146.3688728544222,
+          "minR2Tree": 0.9999999999986721,
+          "tCenters": [
+            0.5625,
+            0.75,
+            0.9375,
+            1.125,
+            1.3125,
+            1.5,
+            1.6875,
+            1.875,
+            2.0625,
+            2.25,
+            2.4375,
+            2.625
+          ],
+          "lambdaTree": [
+            0.0020507055503556993,
+            0.0020568245460041074,
+            0.002063437472303065,
+            0.002070110692353317,
+            0.0020766500640553654,
+            0.0020829763643414323,
+            0.0020890541475817835,
+            0.0020948671674285053,
+            0.0021004086520300504,
+            0.002105676431471867,
+            0.0021106693468327642,
+            0.00211538314893882
+          ],
+          "deltaLambdaOneLoop": [
+            -231.9973114606459,
+            -112.57589846329513,
+            -60.729073003147825,
+            -34.79180765621765,
+            -20.97585229493949,
+            -13.40102700086499,
+            -8.802351090449015,
+            -5.935976312690127,
+            -4.104870332228852,
+            -2.9027667243336777,
+            -2.08673554961521,
+            -1.5272705453700188
+          ],
+          "lambdaEff": [
+            -231.99526075509556,
+            -112.57384163874913,
+            -60.72700956567552,
+            -34.7897375455253,
+            -20.973775644875435,
+            -13.398944024500649,
+            -8.800262036301433,
+            -5.933881445522699,
+            -4.102769923576822,
+            -2.9006610479022057,
+            -2.084624880268377,
+            -1.52515516222108
+          ],
+          "betaFunction": [
+            null,
+            335.2773299169465,
+            191.8392052429667,
+            118.1471443825325,
+            74.35567096246504,
+            48.43937410138301,
+            33.4540816215045,
+            23.40895915024431,
+            16.63665257668021,
+            12.080788370889957,
+            8.923125653565211,
+            null
+          ],
+          "vRg": [
+            -23.114667765390614,
+            -35.42140577424029,
+            -46.60096486424256,
+            -55.28066778582551,
+            -61.63319309193537,
+            -67.03790711336008,
+            -70.35629495221333,
+            -72.09681932193484,
+            -72.7361182603035,
+            -72.54612592752204,
+            -71.47956677583416,
+            -69.9678773657733
+          ]
+        },
+        {
+          "windowWidth": 7,
+          "classification": "runaway",
+          "interiorFiniteMinimum": false,
+          "tStar": null,
+          "vRgAtTStar": null,
+          "tStarOverLatticeScale": null,
+          "lamTreeRelativeVariation": 0.02377079798309059,
+          "minR2OneLoopUncentered": 0.30895849057865954,
+          "minR2OneLoopCentered": -82.58335704668916,
+          "minR2Tree": 0.9999999999933572,
+          "tCenters": [
+            0.75,
+            0.9375,
+            1.125,
+            1.3125,
+            1.5,
+            1.6875,
+            1.875,
+            2.0625,
+            2.25,
+            2.4375
+          ],
+          "lambdaTree": [
+            0.0020617362915835817,
+            0.002067096454572017,
+            0.0020728325802657423,
+            0.0020787517496910247,
+            0.0020846519171820637,
+            0.002090421107933042,
+            0.0020960006663114446,
+            0.0021013592154605185,
+            0.0021064789801708613,
+            0.0021113475551122344
+          ],
+          "deltaLambdaOneLoop": [
+            -61.00182672234789,
+            -35.26041136532033,
+            -21.518788424923827,
+            -13.93375303193305,
+            -9.28050752871955,
+            -6.343519677168532,
+            -4.434984270546118,
+            -3.1623676601763826,
+            -2.2958792112563207,
+            -1.6936391209173285
+          ],
+          "lambdaEff": [
+            -60.999764986056306,
+            -35.258344268865756,
+            -21.516715592343562,
+            -13.931674280183358,
+            -9.278422876802368,
+            -6.341429256060598,
+            -4.432888269879807,
+            -3.160266300960922,
+            -2.2937727322761496,
+            -1.6915277733622163
+          ],
+          "betaFunction": [
+            null,
+            97.37718142489342,
+            63.38314923941589,
+            42.54103361825747,
+            30.202185668539418,
+            21.71487626859329,
+            15.852653262467422,
+            11.73265287560656,
+            8.791994105143532,
+            null
+          ],
+          "vRg": [
+            -19.1030472475549,
+            -26.92703023821898,
+            -34.019857800077084,
+            -40.735450222650805,
+            -46.177777825932715,
+            -50.41727234884013,
+            -53.5451300089016,
+            -55.68085603506041,
+            -56.99226348781616,
+            -57.6031424395392
+          ]
+        }
+      ],
+      "seeds": [
+        {
+          "seed": 0,
+          "byWindow": [
+            {
+              "windowWidth": 3,
+              "classification": "interior-finite",
+              "interiorFiniteMinimum": true,
+              "tStar": 1.6875
+            },
+            {
+              "windowWidth": 5,
+              "classification": "interior-finite",
+              "interiorFiniteMinimum": true,
+              "tStar": 2.0625
+            },
+            {
+              "windowWidth": 7,
+              "classification": "runaway",
+              "interiorFiniteMinimum": false,
+              "tStar": null
+            }
+          ]
+        },
+        {
+          "seed": 1,
+          "byWindow": [
+            {
+              "windowWidth": 3,
+              "classification": "interior-finite",
+              "interiorFiniteMinimum": true,
+              "tStar": 1.6875
+            },
+            {
+              "windowWidth": 5,
+              "classification": "interior-finite",
+              "interiorFiniteMinimum": true,
+              "tStar": 2.25
+            },
+            {
+              "windowWidth": 7,
+              "classification": "runaway",
+              "interiorFiniteMinimum": false,
+              "tStar": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "member": "asd2-id0/c0.5",
+      "phi1": "asd2",
+      "phi2": "id0",
+      "einsteinCoefficient": 0.5,
+      "isControl": false,
+      "schemeStable": false,
+      "seedStable": true,
+      "identityOneLoopLogSlope": null,
+      "primaryRayByWindow": [
+        {
+          "windowWidth": 3,
+          "classification": "interior-finite",
+          "interiorFiniteMinimum": true,
+          "tStar": 1.5,
+          "vRgAtTStar": -114.52117354137386,
+          "tStarOverLatticeScale": 1.1919675039908582,
+          "lamTreeRelativeVariation": 0.2512558054883294,
+          "minR2OneLoopUncentered": 0.4237458114009197,
+          "minR2OneLoopCentered": -871.8111936646912,
+          "minR2Tree": 1,
+          "tCenters": [
+            0.375,
+            0.5625,
+            0.75,
+            0.9375,
+            1.125,
+            1.3125,
+            1.5,
+            1.6875,
+            1.875,
+            2.0625,
+            2.25,
+            2.4375,
+            2.625,
+            2.8125
+          ],
+          "lambdaTree": [
+            0.0019540993126747697,
+            0.0019860604013042294,
+            0.0020144993266928545,
+            0.002038983571478027,
+            0.002059796505499269,
+            0.002077592800557228,
+            0.0020932249388902324,
+            0.002107734887258037,
+            0.0021225350061628012,
+            0.0021399241306635833,
+            0.0021644221453025257,
+            0.002206418177418265,
+            0.0022924730634126494,
+            0.0024879408191983464
+          ],
+          "deltaLambdaOneLoop": [
+            -2000.2216057200103,
+            -655.9183929742526,
+            -271.21026377911255,
+            -126.93218706933499,
+            -66.58914475334066,
+            -37.9754423506256,
+            -22.743420411959224,
+            -14.183605208793841,
+            -9.156243319130265,
+            -6.1236137230097905,
+            -4.216066038948163,
+            -2.9872647315699163,
+            -2.1541936129631516,
+            -1.610026033830214
+          ],
+          "lambdaEff": [
+            -2000.2196516206977,
+            -655.9164069138512,
+            -271.20824927978583,
+            -126.9301480857635,
+            -66.58708495683516,
+            -37.97336475782504,
+            -22.741327187020335,
+            -14.181497473906584,
+            -9.154120784124103,
+            -6.121473798879127,
+            -4.21390161680286,
+            -2.985058313392498,
+            -2.151901139899739,
+            -1.6075380930110155
+          ],
+          "betaFunction": [
+            null,
+            2494.436175797706,
+            1035.5515350389246,
+            504.65788604519,
+            264.3807531379847,
+            152.41046268937708,
+            94.66972289121878,
+            60.889980117615,
+            40.165424535281346,
+            27.096187934070166,
+            18.7748506228425,
+            13.376525353075351,
+            9.626220120968961,
+            null
+          ],
+          "vRg": [
+            -39.51629055267706,
+            -65.57865763008832,
+            -85.65783267877327,
+            -97.81059673558018,
+            -106.31552056628313,
+            -112.22116321342045,
+            -114.52117354137386,
+            -114.23505973022888,
+            -112.2012978609652,
+            -109.63988408984581,
+            -106.65608978283404,
+            -103.80717975759087,
+            -100.3694156869725,
+            -98.53535350025065
+          ]
+        },
+        {
+          "windowWidth": 5,
+          "classification": "interior-finite",
+          "interiorFiniteMinimum": true,
+          "tStar": 2.25,
+          "vRgAtTStar": -88.71013550638442,
+          "tStarOverLatticeScale": 1.7879512559862873,
+          "lamTreeRelativeVariation": 0.15789184890275507,
+          "minR2OneLoopUncentered": 0.35870254056387907,
+          "minR2OneLoopCentered": -206.44166771904244,
+          "minR2Tree": 0.9999999975282343,
+          "tCenters": [
+            0.5625,
+            0.75,
+            0.9375,
+            1.125,
+            1.3125,
+            1.5,
+            1.6875,
+            1.875,
+            2.0625,
+            2.25,
+            2.4375,
+            2.625
+          ],
+          "lambdaTree": [
+            0.0020032763927774247,
+            0.0020241781841285602,
+            0.0020448525515459792,
+            0.0020636733231154795,
+            0.0020804205585851386,
+            0.00209559147591415,
+            0.0021101250603177213,
+            0.0021255475241962,
+            0.0021446399671645345,
+            0.002173325539706195,
+            0.002225940892595797,
+            0.0023378681627932727
+          ],
+          "deltaLambdaOneLoop": [
+            -276.23514342479814,
+            -132.81863934195115,
+            -71.70105792373856,
+            -41.90329116084611,
+            -25.552129583262083,
+            -16.191555882093468,
+            -10.621134059585273,
+            -7.169125626081692,
+            -4.955508323937094,
+            -3.5158427849095526,
+            -2.537961208930403,
+            -1.888347631358978
+          ],
+          "lambdaEff": [
+            -276.23314014840537,
+            -132.81661516376704,
+            -71.69901307118701,
+            -41.901227487522995,
+            -25.5500491627035,
+            -16.189460290617554,
+            -10.619023934524956,
+            -7.167000078557495,
+            -4.953363683969929,
+            -3.5136694593698463,
+            -2.535735268037807,
+            -1.8860097631961847
+          ],
+          "betaFunction": [
+            null,
+            400.39911382933195,
+            224.22493540921627,
+            137.15533968538443,
+            89.3756325438564,
+            59.41173107454628,
+            40.433434705695255,
+            28.23362044720495,
+            20.037842389182497,
+            14.472129914134246,
+            10.55888756376308,
+            null
+          ],
+          "vRg": [
+            -27.56746086130584,
+            -41.869857993791165,
+            -55.14586446572384,
+            -66.77355666889447,
+            -75.35442938236872,
+            -81.35235972208183,
+            -85.34646106634003,
+            -87.64128056436185,
+            -88.50217868408261,
+            -88.71013550638442,
+            -87.9466312741544,
+            -87.74687010626006
+          ]
+        },
+        {
+          "windowWidth": 7,
+          "classification": "runaway",
+          "interiorFiniteMinimum": false,
+          "tStar": null,
+          "vRgAtTStar": null,
+          "tStarOverLatticeScale": null,
+          "lamTreeRelativeVariation": 0.10640766331164016,
+          "minR2OneLoopUncentered": 0.32231465870832643,
+          "minR2OneLoopCentered": -129.832886485178,
+          "minR2Tree": 0.9999999957275661,
+          "tCenters": [
+            0.75,
+            0.9375,
+            1.125,
+            1.3125,
+            1.5,
+            1.6875,
+            1.875,
+            2.0625,
+            2.25,
+            2.4375
+          ],
+          "lambdaTree": [
+            0.0020393093219886016,
+            0.0020547725208455436,
+            0.0020702172725853823,
+            0.0020851617090973354,
+            0.0020995791265154304,
+            0.002114241751537364,
+            0.002130937360358523,
+            0.0021535003046378085,
+            0.0021909105001315554,
+            0.0022649314635024053
+          ],
+          "deltaLambdaOneLoop": [
+            -72.00174953187161,
+            -42.437709924990365,
+            -26.192592665186012,
+            -16.828717380143647,
+            -11.184276445280831,
+            -7.6472934976569205,
+            -5.356130086287636,
+            -3.8378299780559115,
+            -2.7906219245928225,
+            -2.085456893201424
+          ],
+          "lambdaEff": [
+            -71.99971022254962,
+            -42.43565515246952,
+            -26.190522447913427,
+            -16.82663221843455,
+            -11.182176866154316,
+            -7.645179255905383,
+            -5.353999148927278,
+            -3.8356764777512735,
+            -2.788431014092691,
+            -2.0831919617379215
+          ],
+          "betaFunction": [
+            null,
+            112.97935841723736,
+            76.11035962787203,
+            52.169902190463034,
+            36.533727989013904,
+            26.1185128716552,
+            18.983851973905313,
+            14.071666455404324,
+            10.490521794465035,
+            null
+          ],
+          "vRg": [
+            -22.627014296524735,
+            -32.540625395532196,
+            -41.60805641628176,
+            -49.467316095116935,
+            -56.00300886972664,
+            -61.23115505522082,
+            -65.23334857854543,
+            -68.27699031341392,
+            -70.12352710687833,
+            -71.97311157040821
+          ]
+        }
+      ],
+      "seeds": [
+        {
+          "seed": 0,
+          "byWindow": [
+            {
+              "windowWidth": 3,
+              "classification": "interior-finite",
+              "interiorFiniteMinimum": true,
+              "tStar": 1.5
+            },
+            {
+              "windowWidth": 5,
+              "classification": "interior-finite",
+              "interiorFiniteMinimum": true,
+              "tStar": 2.25
+            },
+            {
+              "windowWidth": 7,
+              "classification": "runaway",
+              "interiorFiniteMinimum": false,
+              "tStar": null
+            }
+          ]
+        },
+        {
+          "seed": 1,
+          "byWindow": [
+            {
+              "windowWidth": 3,
+              "classification": "interior-finite",
+              "interiorFiniteMinimum": true,
+              "tStar": 1.5
+            },
+            {
+              "windowWidth": 5,
+              "classification": "interior-finite",
+              "interiorFiniteMinimum": true,
+              "tStar": 2.25
+            },
+            {
+              "windowWidth": 7,
+              "classification": "runaway",
+              "interiorFiniteMinimum": false,
+              "tStar": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "saturationVerdict": "RG improvement produces an interior minimum for some Einsteinian schemes but the classification is SCHEME-DEPENDENT (window-width sensitive) -- recorded as scheme-dependent, not a stable candidate",
+  "recordedBoundary": {
+    "definition81Scope": "reduced-spin4-slice",
+    "ambientSevenSevenRealized": false,
+    "internalGaugeContentRealized": false,
+    "weldRealized": false,
+    "canFillPhase201WzContract": false,
+    "canFillPhase256Contract": false,
+    "physicistReviewPending": true,
+    "rgPrescriptionIsWorkbenchConvention": true,
+    "epsilonRealization": "independent-theta-dof-variational",
+    "epsilonTaxonomyMode": "mode-3-variational",
+    "baseSignature": "Cl(4,0)-euclidean-slice",
+    "spinorUsedAsShiabCarrierNotFiber": true,
+    "draft14dObserverseNotRealized": true
+  },
+  "runtimeSeconds": 974.8693702,
+  "physicalCouplingProvided": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256Contract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256Contract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "sourceEvidence": {
+    "phase443SummaryPath": "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json",
+    "phase444SummaryPath": "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json",
+    "designSourcePath": "docs/Phases/FOUR_D_PLATFORM_DESIGN.md",
+    "physicsDecisionsSourcePath": "docs/Phases/FOUR_D_PLATFORM_PHYSICS_DECISIONS.md"
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "V_RG, its interior minima, t*, and t*/latticeScale are candidate-only structure data of the reduced spin-4 slice, NOT physical masses, VEVs, or a scale in GeV.",
+    "The RG-improvement prescription (window fit basis, resummation target, window width) is a WORKBENCH CONVENTION pending physicist review; it is scanned for scheme stability and recorded as scheme-dependent where it is.",
+    "The measured beta function is the log-derivative of the locally-fit effective quartic of the su(2)-toy one-loop potential; it is not a physical renormalization-group beta function.",
+    "An RG-saturation (interior minimum) result, where observed and scheme-stable, is a workbench-relative dynamical-scale CANDIDATE only; a no-saturation or scheme-dependent result sharpens the frontier. Neither promotes anything.",
+    "No VEV scale, pole, or GeV lineage; no Phase201 or Phase256 contract field is filled; the reduced slice does not realize the ambient 7,7 / internal gauge / weld content."
+  ],
+  "decision": "The RG-improved joint effective-potential probe is decided on internal consistency. On CreateUniform4D(1) (su(2) trace pairing; nOmega=195, nTheta=48, joint DOF 243) the Phase443-style V_eff(t) rays were recomputed with the hardened Newton theta*-stationarity solver (max non-identity RELATIVE residual 1.38E-009 \u003C= 1E-008; identity theta*=0 exact; analytic LinearizeTheta matched FD to 4.80E-009). The workbench beta function was MEASURED from the potential (lambda_tree from S_B~{t^2,t^3,t^4}, delta_lambda from the one-loop correction ~c*t^4, lambda_eff=sum, beta=d lambda_eff/d ln t) and V_RG(t)=lambda_eff(t)*t^4\u002Bsubleading built per member over window widths {3,5,7}. CONTROL DISCIPLINE: the identity control\u0027s tree quartic is window-constant (max rel variation 5.57E-009) with lambda_eff\u003E0 (min 1.75E\u002B000); it develops NO spurious interior minimum. SATURATION VERDICT: RG improvement produces an interior minimum for some Einsteinian schemes but the classification is SCHEME-DEPENDENT (window-width sensitive) -- recorded as scheme-dependent, not a stable candidate. MANDATORY FRAMING: any scale is a WORKBENCH-RELATIVE CANDIDATE ONLY (su(2) toy algebra, reduced Spin(4) slice, lattice units, one loop); the RG prescription is a WORKBENCH CONVENTION pending physicist review; NO GeV/pole/VEV promotion. Everything is target-blind, reduced-spin4-slice; no Phase201/Phase256 contract field is filled; nothing is promoted."
+}

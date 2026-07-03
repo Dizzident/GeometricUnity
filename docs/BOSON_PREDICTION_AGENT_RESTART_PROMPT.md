@@ -49,7 +49,7 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase444 work (plus the 2026-06-12 platform
+Current gate status after the Phase445 work (plus the 2026-06-12 platform
 fix - GPU parity defect root-caused and discharged - and the 2026-07-01
 |Y|=1/2 calibration defect fix in the Phase411/417 informational SM
 censuses):
@@ -57,7 +57,7 @@ censuses):
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=237`,
+  `objectiveAchieved=False`, `checklistPassedCount=238`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -520,6 +520,14 @@ censuses):
   (VertexFaceRule.IncidentAverage; latticePeriod minimal-image);
   TWO NAMED UNLOCK PROJECTS for user decision: lattice-canonical
   geometry conventions OR adjoint/joint-gradient for SLQ
+- Phase445: `rgImprovedJointPotentialProbePassed=True`,
+  `verdictSchemeStable=False`, `einsteinianRgSaturationObserved=False`
+  - THE FIRST INTERIOR FINITE MINIMA IN THE PROGRAM'S HISTORY appear
+  under RG improvement (t* ~ 1.5-2.25, measured running strongly
+  positive vs identity negative, controls pristine) but the verdict
+  flips at the widest fit window: a SCHEME-DEPENDENT CANDIDATE,
+  suggestive not established; phase446 must resolve the scheme
+  dependence (no platform work needed)
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -540,7 +548,24 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work (2026-07-03, after Phase443) is PHASE444, the
+The latest work (2026-07-03, after Phase444) is PHASE445, the
+RG-improved joint potential probe - the no-platform alternative,
+delivering the arc's most tantalizing result: THE FIRST INTERIOR FINITE
+MINIMA EVER (Einsteinian members, t* ~ 1.5-2.25, windows 3/5; measured
+workbench beta strongly positive [8,2500] vs identity negative; identity
+develops NO spurious minimum under the same prescription; theta gate
+1.4e-9) - recorded honestly as a SCHEME-DEPENDENT CANDIDATE because the
+verdict flips at window 7 (poor fits there, R^2 0.31):
+verdictSchemeStable=false, einsteinianRgSaturationObserved=false.
+NAMED NEXT (phase446, no platform work): resolve the scheme dependence
+- regime-aware/adaptive windows, DIRECT beta measurement from the
+running Hessian rather than potential fits, denser t-grids around the
+candidate minima; if the minima survive scheme control the program has
+its first workbench-relative dynamical-scale candidate. RG prescription
+carries physicistReviewPending. Study:
+phase445_rg_improved_joint_potential_probe_001 (IMPLEMENTATION_P445.md).
+
+Before that, the work (2026-07-03, after Phase443) was PHASE444, the
 mode-volume-scaled saturation probe - honestly TOOLING-BLOCKED: exact
 momentum block-diagonalization on the M1b torus is defeated by
 Gu.Geometry's global-index orientation conventions (three measured
@@ -1237,7 +1262,7 @@ HONEST BOUNDARY. Study:
 
 ### Integration Points Already Updated
 
-Phases 442-444 (like Phase388-441) are wired into:
+Phases 442-445 (like Phase388-441) are wired into:
 
 - `scripts/generate_validated_boson_predictions.sh` (single broad pass; the
   older duplicated final sweep was removed on 2026-06-16; the Phase424 line
@@ -1271,7 +1296,8 @@ Phases 442-444 (like Phase388-441) are wired into:
   `toy-branch-family-universality-sweep-materialized` and
   `joint-omega-theta-hessian-degree-probe-materialized` and
   `joint-effective-potential-saturation-probe-materialized` and
-  `mode-volume-scaled-saturation-probe-materialized`;
+  `mode-volume-scaled-saturation-probe-materialized` and
+  `rg-improved-joint-potential-probe-materialized`;
   the Phase417 checklist row now asserts the corrected
   `yHalfCalibrationExact=True` and `internalSmHiggsPatternComplexDimension=6`)
 - `scripts/verify_boson_claim_integrity.sh` (Phase424 asserts plus the
@@ -1328,8 +1354,8 @@ PHASE405_ENABLE_GPU=1 LD_LIBRARY_PATH=native/build dotnet run --project studies/
 The targeted Phase424 (Release, ~7 min) and Phase425 (Release, ~1 min) runs
 pass and preserve the fail-closed boundary; the fixed Phase411/Phase417
 re-runs pass with their corrected censuses; Phase202 now reports
-`checklistPassedCount=237`, `checklistFailedCount=3`; claim integrity
-verifies Phase424 through Phase444 (and the corrected Phase417 values)
+`checklistPassedCount=238`, `checklistFailedCount=3`; claim integrity
+verifies Phase424 through Phase445 (and the corrected Phase417 values)
 with `promotedPhysicalMassClaimCount=0`. The full direct
 `./scripts/generate_validated_boson_predictions.sh` pass completed with
 Phase424 through Phase436 included and ended at
@@ -1762,5 +1788,5 @@ scanners (including phase253's dimension-4 exclusions).
 Suggested checkpoint message:
 
 ```text
-Add phase444 mode-volume probe (tooling-blocked) + periodic conventions
+Add phase445 RG-improved potential probe (scheme-dependent candidate)
 ```
