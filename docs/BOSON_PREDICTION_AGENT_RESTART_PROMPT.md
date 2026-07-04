@@ -49,7 +49,7 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase445 work (plus the 2026-06-12 platform
+Current gate status after the Phase446 work (plus the 2026-06-12 platform
 fix - GPU parity defect root-caused and discharged - and the 2026-07-01
 |Y|=1/2 calibration defect fix in the Phase411/417 informational SM
 censuses):
@@ -610,6 +610,31 @@ genuine beyond-one-loop structure, or a source anchor. Runtime ~15 min.
 Study: phase446_rg_scheme_dependence_resolution_probe_001
 (IMPLEMENTATION_P446.md).
 
+POST-PHASE446 SCOUTING (2026-07-03, same day): three parallel
+investigations decided the next moves. (1) Literature sweep: NOTHING
+new merits an audit (geometricunity.org unchanged; no new
+Zenodo/arXiv records; the tracked GU-RVG record 21117379 churned to a
+THIRD checksum in two weeks - drift-logged in its reference note,
+posture unchanged, Phase427 verdict pinned to the audited checksum).
+(2) The two Phase444 unlock projects were engineering-scoped
+(studies/phase444_.../UNLOCK_SCOPING.md): fund the adjoint/joint-
+gradient path FIRST (S-M, low-medium risk, fully additive, clears the
+measured ~60s/Hv SLQ blocker via three ~30-50-line transposes of
+existing FD-verified forward linearizations); the geometry-conventions
+project is M-L with an UNPROVEN mathematical core - spike the
+Bloch-twist (SO-valued cocycle) alternative before committing.
+(3) NAMED NEXT: PHASE447 = genuine TWO-LOOP saturation probe, scouted
+FEASIBLE with existing machinery (design note:
+studies/phase446_.../PHASE447_TWO_LOOP_DESIGN.md). Key structure
+result: S_B is an EXACT QUARTIC in omega but TRANSCENDENTAL in theta
+(Ad = exp(ad_theta)) - resolving Phase442's "degree > 2" as
+theta-transcendentality and handing the probe an EXACT-arithmetic
+identity control. Route: positive-subspace propagator (recorded
+convention, physicistReviewPending - the negative-mode/saddle question
+is the flag), exact figure-eight (~5 s/point) + soft-mode-truncated
+sunset (~20 s/point, convergence-in-K battery + stochastic cross-check
++ full deterministic anchor points); ~1.5-3 h total at phase443 scope.
+
 Before that, the work (2026-07-03, after Phase444) was PHASE445, the
 RG-improved joint potential probe - the no-platform alternative,
 delivering the arc's most tantalizing result: THE FIRST INTERIOR FINITE
@@ -638,7 +663,13 @@ were authorized and kept (VertexFaceRule.IncidentAverage +
 latticePeriod minimal-image bivectors; open-mesh byte-identical,
 hard-gated; 8 new tests incl. a documented-limitation test).
 NAMED UNLOCK PROJECTS (user decisions, measurement-scoped, NOT
-started): (i) lattice-canonical orientation conventions through
+started; engineering scoping memo delivered 2026-07-03 at
+studies/phase444_mode_volume_scaled_saturation_probe_001/UNLOCK_SCOPING.md
+- recommendation: fund the adjoint path FIRST, S-M size, low-medium
+risk, fully additive, reusable for two-loop work; the geometry-
+conventions project is M-L with unproven math, spike the Bloch-twist
+alternative before committing): (i) lattice-canonical orientation
+conventions through
 Gu.Geometry => exact torus block-diagonalization; (ii) adjoint/joint-
 gradient platform path => feasible SLQ. No-platform-work alternatives:
 two-loop/RG on the minimal mesh; richer Phi menus.

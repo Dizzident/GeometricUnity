@@ -69,3 +69,12 @@ weight.
   Phase427 classification (external input; non-promotional for the boson-claims
   ledger; no Phase201/Phase256 lineage supplied) is UNCHANGED by this revision.
   The Phase427 audit verdict remains pinned to the audited checksum.
+- 2026-07-03 (checkpoint-cadence monitoring, post-Phase446 sweep): record has
+  moved again, now presenting as version 5 (Zenodo metadata: published
+  2026-06-18, created 2026-07-01, modified 2026-07-02; single PDF ~3.2 MB,
+  `md5:bdffd4e25bfd9718e10a77cc550e41f1` per Zenodo metadata - the THIRD
+  distinct checksum for this record ID). Pre-screen: title/content posture
+  unchanged (superluminal metric engineering / "photonic sector"; contextual
+  for electroweak, not contract-bearing), so no re-audit phase is warranted;
+  the Phase427 verdict stays pinned to the audited checksum. The record's
+  churn rate (3 checksums in ~2 weeks) reinforces the track-by-checksum rule.
