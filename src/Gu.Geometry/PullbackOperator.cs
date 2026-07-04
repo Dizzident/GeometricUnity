@@ -11,7 +11,7 @@ public sealed class PullbackOperator
 {
     private readonly FiberBundleMesh _bundle;
     private readonly Dictionary<(int, int), int> _yEdgeLookup;
-    private readonly Dictionary<(int, int, int), int> _yFaceLookup;
+    private readonly Dictionary<(int, int, int), (int FaceIdx, int StoredParity)> _yFaceLookup;
 
     public PullbackOperator(FiberBundleMesh bundle)
     {
@@ -25,12 +25,15 @@ public sealed class PullbackOperator
             _yEdgeLookup[(edge[0], edge[1])] = ye;
         }
 
-        // Build O(1) face lookup for ApplyFaceField
-        _yFaceLookup = new Dictionary<(int, int, int), int>(bundle.AmbientMesh.FaceCount);
+        // Build O(1) face lookup for ApplyFaceField, keyed by the ascending triple.
+        // The stored tuple may deviate from ascending order (lattice-canonical meshes);
+        // record its parity so extraction signs stay relative to the STORED orientation.
+        _yFaceLookup = new Dictionary<(int, int, int), (int, int)>(bundle.AmbientMesh.FaceCount);
         for (int yf = 0; yf < bundle.AmbientMesh.FaceCount; yf++)
         {
             var face = bundle.AmbientMesh.Faces[yf];
-            _yFaceLookup[(face[0], face[1], face[2])] = yf;
+            int storedParity = CanonicalFaceSign(face[0], face[1], face[2], out int s0, out int s1, out int s2);
+            _yFaceLookup[(s0, s1, s2)] = (yf, storedParity);
         }
     }
 
@@ -201,15 +204,18 @@ public sealed class PullbackOperator
             int yv1 = _bundle.XVertexToYVertex[xv1];
             int yv2 = _bundle.XVertexToYVertex[xv2];
 
-            // Sort to canonical ordering and track permutation parity
+            // Sort to ascending ordering and track permutation parity; the stored
+            // tuple's own parity (relative to ascending) converts the sign to the
+            // stored orientation. For ascending-tuple meshes StoredParity is +1.
             int sign = CanonicalFaceSign(yv0, yv1, yv2, out int ys0, out int ys1, out int ys2);
 
-            if (_yFaceLookup.TryGetValue((ys0, ys1, ys2), out int yFaceIdx))
+            if (_yFaceLookup.TryGetValue((ys0, ys1, ys2), out var yFace))
             {
+                int storedSign = sign * yFace.StoredParity;
                 for (int c = 0; c < componentsPerFace; c++)
                 {
                     xFaceCoeffs[xf * componentsPerFace + c] =
-                        sign * yField.Coefficients[yFaceIdx * componentsPerFace + c];
+                        storedSign * yField.Coefficients[yFace.FaceIdx * componentsPerFace + c];
                 }
             }
             // else: face not found in Y -- leave as zero

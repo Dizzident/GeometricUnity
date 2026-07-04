@@ -182,6 +182,18 @@ public static class SimplicialMeshGenerator
     /// simplicial complex — a subsimplex would be shared by more than two cells), so
     /// the smallest well-formed 4-torus mesh is n = 3.
     /// </param>
+    /// <param name="latticeCanonical">
+    /// false (default): the historical global-index-sorted face/volume tuple
+    /// convention (byte-identical to all prior periodic meshes). true: the
+    /// LATTICE-CANONICAL orientation convention — face/volume tuples are stored in
+    /// the chain order of their minimal-image lattice displacements and boundary
+    /// orientation signs are derived from the stored tuples
+    /// (see <see cref="MeshTopologyBuilder.Build"/>, latticePeriod). This makes the
+    /// entire oriented topology commute with lattice translations, so discrete
+    /// actions built on the emitted arrays (curvature, Shiab residuals) are exactly
+    /// translation-covariant — the prerequisite for momentum block-diagonalization.
+    /// ∂∘∂ = 0 holds exactly in both modes.
+    /// </param>
     /// <returns>A <see cref="SimplicialMesh"/> with embedding dimension 4 and simplicial dimension 4.</returns>
     /// <remarks>
     /// Vertex coordinates are the base lattice positions in [0, n)^4; a wrapped edge
@@ -190,10 +202,10 @@ public static class SimplicialMeshGenerator
     /// the minimal-image convention using the period n. The mesh topology itself is
     /// coordinate-independent.
     /// </remarks>
-    public static SimplicialMesh CreateUniform4DPeriodic(int n)
+    public static SimplicialMesh CreateUniform4DPeriodic(int n, bool latticeCanonical = false)
     {
         if (n < 3) throw new ArgumentOutOfRangeException(nameof(n), "Must be >= 3 for a well-formed 4-torus.");
-        return BuildKuhn4D(n, periodic: true);
+        return BuildKuhn4D(n, periodic: true, latticeCanonical);
     }
 
     /// <summary>
@@ -202,7 +214,7 @@ public static class SimplicialMeshGenerator
     /// ((n+1)^4 vertices); when true, opposite faces are identified (n^4 vertices,
     /// a flat 4-torus). Cell generation is identical; only the vertex indexing differs.
     /// </summary>
-    private static SimplicialMesh BuildKuhn4D(int n, bool periodic)
+    private static SimplicialMesh BuildKuhn4D(int n, bool periodic, bool latticeCanonical = false)
     {
         int side = periodic ? n : n + 1;
         int vertexCount = side * side * side * side;
@@ -275,7 +287,8 @@ public static class SimplicialMeshGenerator
             simplicialDimension: 4,
             vertexCoordinates: coords,
             vertexCount: vertexCount,
-            cellVertices: cells.ToArray());
+            cellVertices: cells.ToArray(),
+            latticePeriod: latticeCanonical && periodic ? n : 0);
     }
 
     /// <summary>Returns all 24 permutations of {0,1,2,3}.</summary>

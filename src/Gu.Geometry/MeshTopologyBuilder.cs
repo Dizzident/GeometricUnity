@@ -16,12 +16,26 @@ public static class MeshTopologyBuilder
     /// <param name="vertexCoordinates">Flat vertex coordinate array [vertexCount * embeddingDim].</param>
     /// <param name="vertexCount">Number of vertices.</param>
     /// <param name="cellVertices">Cell definitions: cellVertices[cellIdx] = vertex indices.</param>
+    /// <param name="latticePeriod">
+    /// 0 (default): the historical convention — face/volume vertex tuples stored in
+    /// ascending GLOBAL-INDEX order. &gt; 0: LATTICE-CANONICAL mode for periodic lattice
+    /// (torus) meshes with the given period per axis: face/volume tuples are stored in
+    /// the coordinatewise chain order of their minimal-image lattice displacements,
+    /// which depends only on the simplex's intrinsic lattice geometry (never on global
+    /// vertex indices) and therefore commutes with every lattice translation.
+    /// Boundary orientation signs are derived from the stored tuples, so the oriented
+    /// chain complex (∂∘∂ = 0) is preserved exactly. Requires every subsimplex to span
+    /// at most one lattice step per axis (Kuhn/Freudenthal-type lattice triangulations)
+    /// and latticePeriod &gt;= 3 (minimal-image unambiguity); otherwise throws.
+    /// The default path (0) is byte-identical to the historical behavior.
+    /// </param>
     public static SimplicialMesh Build(
         int embeddingDimension,
         int simplicialDimension,
         double[] vertexCoordinates,
         int vertexCount,
-        int[][] cellVertices)
+        int[][] cellVertices,
+        int latticePeriod = 0)
     {
         if (embeddingDimension < 1)
             throw new ArgumentOutOfRangeException(nameof(embeddingDimension));
@@ -29,6 +43,12 @@ public static class MeshTopologyBuilder
             throw new ArgumentOutOfRangeException(nameof(simplicialDimension));
         if (vertexCoordinates.Length != vertexCount * embeddingDimension)
             throw new ArgumentException("Vertex coordinate array length mismatch.");
+        if (latticePeriod < 0)
+            throw new ArgumentOutOfRangeException(nameof(latticePeriod), "Must be >= 0.");
+        if (latticePeriod is 1 or 2)
+            throw new ArgumentOutOfRangeException(
+                nameof(latticePeriod),
+                "Lattice-canonical mode requires period >= 3 (minimal-image displacements of unit-step subsimplices are ambiguous below 3).");
 
         foreach (var cell in cellVertices)
         {
@@ -84,7 +104,10 @@ public static class MeshTopologyBuilder
                             {
                                 faceIdx = faceList.Count;
                                 faceMap[sorted] = faceIdx;
-                                faceList.Add(new[] { sorted.Item1, sorted.Item2, sorted.Item3 });
+                                var tuple = new[] { sorted.Item1, sorted.Item2, sorted.Item3 };
+                                if (latticePeriod > 0)
+                                    LatticeChainOrder(tuple, vertexCoordinates, embeddingDimension, latticePeriod);
+                                faceList.Add(tuple);
                             }
                             cellFaces.Add(faceIdx);
                         }
@@ -101,10 +124,14 @@ public static class MeshTopologyBuilder
         }
 
         // Compute face boundary edges and orientations
-        // For face {v0, v1, v2} (canonical order), the boundary is:
-        //   +edge(v0,v1) - edge(v0,v2) + edge(v1,v2)
-        // This follows the standard simplicial boundary operator:
+        // For face {v0, v1, v2} (stored tuple order), the boundary is the standard
+        // simplicial boundary operator:
         //   d[v0,v1,v2] = [v1,v2] - [v0,v2] + [v0,v1]
+        // Each oriented boundary edge [vi,vj] is expressed on the stored edge
+        // (min,max): a factor +1 when vi < vj, -1 when the stored direction is
+        // reversed. For the default (ascending) tuples this is exactly {+1,-1,+1};
+        // lattice-canonical tuples may reorder, and the derived signs keep the
+        // oriented chain complex (∂∘∂ = 0) exact.
         var faceBoundaryEdges = new int[faceList.Count][];
         var faceBoundaryOrientations = new int[faceList.Count][];
 
@@ -118,9 +145,13 @@ public static class MeshTopologyBuilder
             int e02 = edgeMap[(Math.Min(v0, v2), Math.Max(v0, v2))];
             int e12 = edgeMap[(Math.Min(v1, v2), Math.Max(v1, v2))];
 
-            // Standard simplicial boundary: d[v0,v1,v2] = [v1,v2] - [v0,v2] + [v0,v1]
             faceBoundaryEdges[fi] = new[] { e01, e02, e12 };
-            faceBoundaryOrientations[fi] = new[] { +1, -1, +1 };
+            faceBoundaryOrientations[fi] = new[]
+            {
+                v0 < v1 ? +1 : -1, // +[v0,v1]
+                v0 < v2 ? -1 : +1, // -[v0,v2]
+                v1 < v2 ? +1 : -1, // +[v1,v2]
+            };
         }
 
         // Extract unique volumes (3-subsimplices / tetrahedra) with canonical ordering
@@ -147,7 +178,10 @@ public static class MeshTopologyBuilder
                                 {
                                     volIdx = volumeList.Count;
                                     volumeMap[sorted] = volIdx;
-                                    volumeList.Add(new[] { sorted.Item1, sorted.Item2, sorted.Item3, sorted.Item4 });
+                                    var tuple = new[] { sorted.Item1, sorted.Item2, sorted.Item3, sorted.Item4 };
+                                    if (latticePeriod > 0)
+                                        LatticeChainOrder(tuple, vertexCoordinates, embeddingDimension, latticePeriod);
+                                    volumeList.Add(tuple);
                                 }
                                 cellVolumes.Add(volIdx);
                             }
@@ -164,24 +198,42 @@ public static class MeshTopologyBuilder
         }
 
         // Compute volume boundary faces and orientations.
-        // For volume {v0,v1,v2,v3} (canonical order), the boundary is:
+        // For volume {v0,v1,v2,v3} (stored tuple order), the boundary is:
         //   +[v1,v2,v3] - [v0,v2,v3] + [v0,v1,v3] - [v0,v1,v2]
         // i.e. omit v_i carries sign (-1)^i, mirroring the face->edge convention.
+        // Each omitted ordered triple is expressed on the STORED face tuple with the
+        // parity of the relating permutation. For the default path both tuples are
+        // ascending, so the parity is +1 and the signs are exactly {+1,-1,+1,-1};
+        // in lattice-canonical mode the omitted triple of a chain-ordered quadruple
+        // is itself chain-ordered (a subchain), so the parity is again +1, but it is
+        // computed generically to keep the oriented-chain-complex contract explicit.
         var volumeBoundaryFaces = new int[volumeList.Count][];
         var volumeBoundaryOrientations = new int[volumeList.Count][];
+        Span<int> tri = stackalloc int[3];
 
         for (int vi = 0; vi < volumeList.Count; vi++)
         {
             var vol = volumeList[vi];
-            int v0 = vol[0], v1 = vol[1], v2 = vol[2], v3 = vol[3];
+            var faces = new int[4];
+            var orientations = new int[4];
 
-            int f0 = faceMap[SortThree(v1, v2, v3)]; // omit v0, sign +1
-            int f1 = faceMap[SortThree(v0, v2, v3)]; // omit v1, sign -1
-            int f2 = faceMap[SortThree(v0, v1, v3)]; // omit v2, sign +1
-            int f3 = faceMap[SortThree(v0, v1, v2)]; // omit v3, sign -1
+            for (int omit = 0; omit < 4; omit++)
+            {
+                int t = 0;
+                for (int k = 0; k < 4; k++)
+                {
+                    if (k != omit)
+                        tri[t++] = vol[k];
+                }
 
-            volumeBoundaryFaces[vi] = new[] { f0, f1, f2, f3 };
-            volumeBoundaryOrientations[vi] = new[] { +1, -1, +1, -1 };
+                int faceIdx = faceMap[SortThree(tri[0], tri[1], tri[2])];
+                faces[omit] = faceIdx;
+                int baseSign = (omit & 1) == 0 ? +1 : -1; // (-1)^omit
+                orientations[omit] = baseSign * TriplePermutationParity(tri[0], tri[1], tri[2], faceList[faceIdx]);
+            }
+
+            volumeBoundaryFaces[vi] = faces;
+            volumeBoundaryOrientations[vi] = orientations;
         }
 
         // Compute vertex-edge incidence and orientations
@@ -237,6 +289,75 @@ public static class MeshTopologyBuilder
             VolumeBoundaryOrientations = hasVolumes ? volumeBoundaryOrientations : Array.Empty<int[]>(),
             CellVolumes = hasVolumes ? cellVolumesList.ToArray() : Array.Empty<int[]>(),
         };
+    }
+
+    /// <summary>
+    /// Parity (+1 even / -1 odd) of the permutation relating the ordered triple
+    /// (a, b, c) to the stored face tuple (a permutation of the same 3 vertices).
+    /// </summary>
+    private static int TriplePermutationParity(int a, int b, int c, int[] stored)
+    {
+        int p0 = stored[0] == a ? 0 : stored[0] == b ? 1 : 2;
+        int p1 = stored[1] == a ? 0 : stored[1] == b ? 1 : 2;
+        int p2 = stored[2] == a ? 0 : stored[2] == b ? 1 : 2;
+        int inversions = (p0 > p1 ? 1 : 0) + (p0 > p2 ? 1 : 0) + (p1 > p2 ? 1 : 0);
+        return (inversions & 1) == 0 ? +1 : -1;
+    }
+
+    /// <summary>
+    /// Reorders a subsimplex vertex tuple IN PLACE into the lattice-canonical chain
+    /// order: ascending in the coordinatewise partial order of minimal-image lattice
+    /// displacements. On a Kuhn/Freudenthal-type lattice triangulation every
+    /// subsimplex is a chain under that order (any two of its vertices differ by a
+    /// componentwise-comparable 0/±1 step vector), so the order is total and strict.
+    /// The rule reads only relative displacements, never global indices, hence it
+    /// commutes with every lattice translation.
+    /// </summary>
+    private static void LatticeChainOrder(int[] tuple, double[] coords, int embeddingDimension, int period)
+    {
+        // Insertion sort (tuples have <= 4 entries).
+        for (int i = 1; i < tuple.Length; i++)
+        {
+            int j = i;
+            while (j > 0 && !LatticeLeq(tuple[j - 1], tuple[j], coords, embeddingDimension, period))
+            {
+                (tuple[j - 1], tuple[j]) = (tuple[j], tuple[j - 1]);
+                j--;
+            }
+        }
+    }
+
+    /// <summary>
+    /// True when the minimal-image lattice displacement from vertex <paramref name="a"/>
+    /// to vertex <paramref name="b"/> is componentwise &gt;= 0. Throws when the two
+    /// vertices are not chain-comparable or do not differ by a unit lattice step per
+    /// axis — i.e. when the mesh is not a Kuhn-type lattice triangulation, for which
+    /// the lattice-canonical convention is undefined.
+    /// </summary>
+    private static bool LatticeLeq(int a, int b, double[] coords, int embeddingDimension, int period)
+    {
+        bool anyPositive = false, anyNegative = false;
+
+        for (int d = 0; d < embeddingDimension; d++)
+        {
+            double diff = coords[b * embeddingDimension + d] - coords[a * embeddingDimension + d];
+            double reduced = diff - period * Math.Round(diff / period);
+            int step = (int)Math.Round(reduced);
+            if (Math.Abs(reduced - step) > 1e-9 || Math.Abs(step) > 1)
+                throw new InvalidOperationException(
+                    $"Lattice-canonical mode requires unit-step lattice subsimplices: vertices {a} and {b} " +
+                    $"have minimal-image displacement component {reduced} on axis {d} (period {period}).");
+
+            if (step > 0) anyPositive = true;
+            else if (step < 0) anyNegative = true;
+        }
+
+        if (anyPositive && anyNegative)
+            throw new InvalidOperationException(
+                $"Lattice-canonical mode requires chain-comparable subsimplex vertices, but vertices {a} and {b} " +
+                "have a mixed-sign minimal-image displacement (not a Kuhn-type lattice triangulation).");
+
+        return !anyNegative;
     }
 
     private static (int, int, int) SortThree(int a, int b, int c)

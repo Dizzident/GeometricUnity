@@ -38,7 +38,11 @@ public sealed class SimplicialMesh
 
     /// <summary>
     /// Faces (2-subsimplices). Each face is a triple of vertex indices.
-    /// Faces[faceIdx] = { v0, v1, v2 } with v0 &lt; v1 &lt; v2 (canonical ordering).
+    /// Faces[faceIdx] = { v0, v1, v2 } stored in the mesh's canonical tuple order:
+    /// ascending global index by default, or lattice-canonical chain order when the
+    /// mesh was built with <see cref="MeshTopologyBuilder.Build"/>'s latticePeriod
+    /// (translation-covariant on periodic lattice meshes). FaceBoundaryOrientations
+    /// is always consistent with the stored tuple order.
     /// F_h (curvature 2-form) lives on faces.
     /// </summary>
     public required int[][] Faces { get; init; }
@@ -69,8 +73,9 @@ public sealed class SimplicialMesh
     public required int[][] FaceBoundaryOrientations { get; init; }
 
     /// <summary>
-    /// Volumes (3-subsimplices). Each volume is a quadruple of vertex indices,
-    /// canonical order v0 &lt; v1 &lt; v2 &lt; v3. Populated only when SimplicialDimension &gt;= 3
+    /// Volumes (3-subsimplices). Each volume is a quadruple of vertex indices in the
+    /// mesh's canonical tuple order (ascending global index by default; lattice-canonical
+    /// chain order in latticePeriod mode). Populated only when SimplicialDimension &gt;= 3
     /// (empty for 2D meshes). ad-valued 3-forms live on volumes.
     /// </summary>
     public int[][] Volumes { get; init; } = Array.Empty<int[]>();
@@ -84,7 +89,10 @@ public sealed class SimplicialMesh
 
     /// <summary>
     /// Orientation signs for each volume's boundary faces:
-    /// VolumeBoundaryOrientations[vol][i] = (-1)^i  →  {+1, -1, +1, -1}.
+    /// VolumeBoundaryOrientations[vol][i] = (-1)^i × (parity of the stored face tuple
+    /// relative to the omitted-vertex triple). Both the default and the
+    /// lattice-canonical conventions realize the pure {+1, -1, +1, -1} pattern
+    /// (sub-tuples of ascending tuples are ascending; subchains of chains are chains).
     /// Discrete d: (d omega3form)[vol] uses these; d(2-form)-&gt;3-form is the
     /// transpose/coboundary and uses the SAME signs.
     /// </summary>
