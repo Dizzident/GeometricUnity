@@ -621,6 +621,364 @@ public sealed class EinsteinianShiabOperator : IShiabBranchOperator
     }
 
     // ------------------------------------------------------------------
+    // Reverse-mode adjoints / matrix-free joint gradient (unlock project ii).
+    //
+    // True O(mesh) transposes of the three FD-verified forward linearizations
+    // (ApplyContraction, CovariantExteriorDerivative, LinearizeTheta), composed
+    // into a single reverse-pass joint gradient nabla S_B(omega, theta) =
+    // J^T (M Upsilon). This replaces the column-by-column
+    // CpuLocalJacobian.ApplyTranspose (O(nIn x nOut) forward applies) with one
+    // O(mesh) VJP for the joint (omega, theta) objective. Every adjoint is a
+    // literal matrix transpose of its forward map w.r.t. the Euclidean pairing
+    // on the flat coefficient arrays, gated by the dot-product identity
+    // <J v, w> = <v, J^T w> in the test battery. Fully ADDITIVE: no forward
+    // path is modified.
+    // ------------------------------------------------------------------
+
+    /// <summary>
+    /// The forward contraction stage as an explicit linear map on face coefficients:
+    /// X -> M(Ad(theta)·X), i.e. exactly what <see cref="EvaluateWithTheta"/> applies to the
+    /// curvature. <paramref name="theta"/> null means Ad = I (the trivial / theta=0 dressing).
+    /// Public so the adjoint gating tests can pair it with
+    /// <see cref="ApplyContractionWithThetaTranspose"/>.
+    /// </summary>
+    public double[] ApplyContractionWithTheta(double[] faceCoeffs, double[]? theta = null)
+    {
+        ValidateFaceLength(faceCoeffs, nameof(faceCoeffs));
+        return ApplyContraction(faceCoeffs, ThetaSelector(theta));
+    }
+
+    /// <summary>
+    /// TRANSPOSE of the contraction stage: face-covector -> face-covector w = Ad(theta)^T M^T w.
+    /// Mirror of <see cref="ApplyContraction"/> with gather and scatter swapped, the per-cell
+    /// faceMap transposed, the per-face averaging (<c>_faceInvCount</c>, a symmetric diagonal)
+    /// moved to the INPUT side, and Ad^T applied on the ad-index at the output side.
+    /// </summary>
+    public double[] ApplyContractionWithThetaTranspose(double[] faceCovector, double[]? theta = null)
+    {
+        ValidateFaceLength(faceCovector, nameof(faceCovector));
+        return ApplyContractionTransposeCore(faceCovector, ThetaSelector(theta));
+    }
+
+    /// <summary>
+    /// The forward curvature linearization dF/domega(delta) = d(delta) + [omega, delta] as a
+    /// public map (thin wrapper over <see cref="CovariantExteriorDerivative"/>) so the adjoint
+    /// gating tests can pair it with <see cref="LinearizeCurvatureTranspose"/>.
+    /// </summary>
+    public double[] LinearizeCurvature(double[] omega, double[] deltaOmega)
+    {
+        ArgumentNullException.ThrowIfNull(omega);
+        ArgumentNullException.ThrowIfNull(deltaOmega);
+        return CovariantExteriorDerivative(omega, deltaOmega);
+    }
+
+    /// <summary>
+    /// TRANSPOSE of the curvature linearization at frozen <paramref name="omega"/>:
+    /// face-covector -> edge-covector. The d-part becomes the coboundary scatter
+    /// r[e_i] += sign_i * w_face; the bracket part reuses the frozen omega: the pair (i&lt;j)
+    /// forward term 0.5*([omega_i, delta_j] + [delta_i, omega_j]) (x_i = s_i x[e_i])
+    /// contributes 0.5*s_j*(ad_{omega_i})^T w to edge e_j and -0.5*s_i*(ad_{omega_j})^T w
+    /// to edge e_i (since [delta_i, omega_j] = -ad_{omega_j} delta_i).
+    /// </summary>
+    public double[] LinearizeCurvatureTranspose(double[] omega, double[] faceCovector)
+    {
+        ArgumentNullException.ThrowIfNull(omega);
+        ValidateFaceLength(faceCovector, nameof(faceCovector));
+
+        var result = new double[_mesh.EdgeCount * _dimG];
+        for (int fi = 0; fi < _faceCount; fi++)
+        {
+            var boundaryEdges = _mesh.FaceBoundaryEdges[fi];
+            var boundaryOrientations = _mesh.FaceBoundaryOrientations[fi];
+
+            var w = new double[_dimG];
+            Array.Copy(faceCovector, fi * _dimG, w, 0, _dimG);
+
+            // d-part transpose: coboundary scatter.
+            for (int i = 0; i < boundaryEdges.Length; i++)
+            {
+                int edgeIdx = boundaryEdges[i];
+                int sign = boundaryOrientations[i];
+                for (int a = 0; a < _dimG; a++)
+                    result[edgeIdx * _dimG + a] += sign * w[a];
+            }
+
+            // Bracket-part transpose (frozen omega).
+            for (int i = 0; i < boundaryEdges.Length; i++)
+                for (int j = i + 1; j < boundaryEdges.Length; j++)
+                {
+                    int ei = boundaryEdges[i];
+                    int ej = boundaryEdges[j];
+                    int si = boundaryOrientations[i];
+                    int sj = boundaryOrientations[j];
+
+                    var omegaI = new double[_dimG];
+                    var omegaJ = new double[_dimG];
+                    for (int a = 0; a < _dimG; a++)
+                    {
+                        omegaI[a] = si * omega[ei * _dimG + a];
+                        omegaJ[a] = sj * omega[ej * _dimG + a];
+                    }
+
+                    var adIw = AdTransposeApply(omegaI, w);
+                    var adJw = AdTransposeApply(omegaJ, w);
+                    for (int a = 0; a < _dimG; a++)
+                    {
+                        result[ej * _dimG + a] += 0.5 * sj * adIw[a];
+                        result[ei * _dimG + a] -= 0.5 * si * adJw[a];
+                    }
+                }
+        }
+        return result;
+    }
+
+    /// <summary>
+    /// TRANSPOSE of <see cref="LinearizeTheta"/> w.r.t. theta: face-covector -> vertex-covector.
+    /// Reverse pass: u = C^T w (the pure M-contraction transpose, no Ad); per face the adjoint
+    /// of the exp-Fréchet derivative — the standard identity
+    /// &lt;Dexp(X)[E], G&gt;_F = &lt;E, Dexp(X^T)[G]&gt;_F, so the face covector pairs through
+    /// G = Dexp(X^T)[u_f (x) F_f] with component a given by &lt;ad(e_a), G&gt;_F =
+    /// sum_{c,b} f^c_{ab} G[c,b] — then the transpose of the FaceTheta vertex->face rule
+    /// (scatter to the representative vertex, or 1/|verts| to each incident vertex).
+    /// </summary>
+    public double[] LinearizeThetaTranspose(double[] curvatureF, double[] theta, double[] faceCovector)
+    {
+        ValidateFaceLength(curvatureF, nameof(curvatureF));
+        ArgumentNullException.ThrowIfNull(theta);
+        ValidateFaceLength(faceCovector, nameof(faceCovector));
+
+        var u = ApplyContractionTransposeCore(faceCovector, null);
+        var result = new double[_mesh.VertexCount * _dimG];
+        for (int f = 0; f < _faceCount; f++)
+        {
+            var thetaV = FaceTheta(theta, f);
+
+            // G = Dexp(ad_theta^T)[ u_f (x) F_f ], the exp-Fréchet adjoint at the transposed argument.
+            var outer = new double[_dimG, _dimG];
+            for (int cc = 0; cc < _dimG; cc++)
+                for (int b = 0; b < _dimG; b++)
+                    outer[cc, b] = u[f * _dimG + cc] * curvatureF[f * _dimG + b];
+            var g = Lambda2Algebra.MatrixExpFrechet(
+                Lambda2Algebra.Transpose(AdMatrix(thetaV)), outer);
+
+            // Component a of the per-face theta covector: <ad(e_a), G>_F = sum_{c,b} f^c_{ab} G[c,b].
+            var gFace = new double[_dimG];
+            for (int a = 0; a < _dimG; a++)
+            {
+                double s = 0;
+                for (int cc = 0; cc < _dimG; cc++)
+                    for (int b = 0; b < _dimG; b++)
+                        s += _algebra.GetStructureConstant(a, b, cc) * g[cc, b];
+                gFace[a] = s;
+            }
+
+            // Transpose of the FaceTheta vertex->face averaging (the member's VertexFaceRule).
+            var verts = _mesh.Faces[f];
+            if (_member.VertexFaceRule == VertexFaceRule.IncidentAverage)
+            {
+                double inv = 1.0 / verts.Length;
+                foreach (int v in verts)
+                    for (int a = 0; a < _dimG; a++)
+                        result[v * _dimG + a] += inv * gFace[a];
+            }
+            else
+            {
+                int v = verts[0];
+                for (int a = 0; a < _dimG; a++)
+                    result[v * _dimG + a] += gFace[a];
+            }
+        }
+        return result;
+    }
+
+    /// <summary>
+    /// Matrix-free JOINT gradient of the mode-2 objective
+    /// S_B(omega, theta) = (1/2)&lt;Upsilon, M Upsilon&gt; with Upsilon = M(Ad(theta)·F(omega))
+    /// (trivial torsion, matching <see cref="EinsteinianShiabBatteries.JointObjective"/> with
+    /// <see cref="TrivialTorsionCpu"/>): nabla S_B = J^T (M Upsilon) in ONE reverse pass —
+    /// grad_omega = dF^T Ad^T C^T (M Upsilon), grad_theta = dAd^T C^T (M Upsilon). The O(mesh)
+    /// analogue of <see cref="CpuLocalJacobian.ComputeGradient"/> without the column loop.
+    /// </summary>
+    public (double Objective, double[] GradOmega, double[] GradTheta) ComputeJointGradient(
+        double[] omega, double[] theta, CpuMassMatrix massMatrix)
+    {
+        ArgumentNullException.ThrowIfNull(omega);
+        ArgumentNullException.ThrowIfNull(theta);
+        ArgumentNullException.ThrowIfNull(massMatrix);
+
+        // Forward pass.
+        var conn = new ConnectionField(_mesh, _algebra, omega);
+        var f = CurvatureAssembler.Assemble(conn).Coefficients;
+        var adPerFace = BuildPerFaceAd(theta);
+        Func<int, int, double[,]?> sel = (_, gf) => adPerFace[gf];
+        var upsilon = ApplyContraction(f, sel);
+
+        var mUpsilon = massMatrix.Apply(FaceTensor(upsilon, "Upsilon")).Coefficients;
+        double objective = 0;
+        for (int i = 0; i < upsilon.Length; i++) objective += upsilon[i] * mUpsilon[i];
+        objective *= 0.5;
+
+        // Reverse pass.
+        var wOmega = ApplyContractionTransposeCore(mUpsilon, sel);
+        var gradOmega = LinearizeCurvatureTranspose(omega, wOmega);
+        var gradTheta = LinearizeThetaTranspose(f, theta, mUpsilon);
+        return (objective, gradOmega, gradTheta);
+    }
+
+    /// <summary>
+    /// Joint Hessian-vector product H·(vOmega, vTheta) of the mode-2 objective via a central
+    /// finite difference of the ANALYTIC joint gradient along the direction: exactly 2
+    /// <see cref="ComputeJointGradient"/> evaluations, so O(mesh) per product (the SLQ unlock).
+    /// </summary>
+    public (double[] HvOmega, double[] HvTheta) JointHessianVectorProduct(
+        double[] omega, double[] theta, double[] vOmega, double[] vTheta,
+        CpuMassMatrix massMatrix, double step = 1e-5)
+    {
+        ArgumentNullException.ThrowIfNull(omega);
+        ArgumentNullException.ThrowIfNull(theta);
+        ArgumentNullException.ThrowIfNull(vOmega);
+        ArgumentNullException.ThrowIfNull(vTheta);
+        if (vOmega.Length != omega.Length)
+            throw new ArgumentException(
+                $"vOmega length {vOmega.Length} must match omega length {omega.Length}.", nameof(vOmega));
+        if (vTheta.Length != theta.Length)
+            throw new ArgumentException(
+                $"vTheta length {vTheta.Length} must match theta length {theta.Length}.", nameof(vTheta));
+
+        var omegaP = new double[omega.Length];
+        var omegaM = new double[omega.Length];
+        for (int i = 0; i < omega.Length; i++)
+        {
+            omegaP[i] = omega[i] + step * vOmega[i];
+            omegaM[i] = omega[i] - step * vOmega[i];
+        }
+        var thetaP = new double[theta.Length];
+        var thetaM = new double[theta.Length];
+        for (int i = 0; i < theta.Length; i++)
+        {
+            thetaP[i] = theta[i] + step * vTheta[i];
+            thetaM[i] = theta[i] - step * vTheta[i];
+        }
+
+        var gp = ComputeJointGradient(omegaP, thetaP, massMatrix);
+        var gm = ComputeJointGradient(omegaM, thetaM, massMatrix);
+
+        var hvOmega = new double[omega.Length];
+        for (int i = 0; i < omega.Length; i++)
+            hvOmega[i] = (gp.GradOmega[i] - gm.GradOmega[i]) / (2.0 * step);
+        var hvTheta = new double[theta.Length];
+        for (int i = 0; i < theta.Length; i++)
+            hvTheta[i] = (gp.GradTheta[i] - gm.GradTheta[i]) / (2.0 * step);
+        return (hvOmega, hvTheta);
+    }
+
+    /// <summary>
+    /// Core transpose of <see cref="ApplyContraction"/> for a given ad-selector: average the
+    /// incoming covector (the symmetric diagonal moved to the input side), gather per cell,
+    /// apply (I + faceMap)^T on the face index and Ad^T on the ad-index, scatter-add.
+    /// </summary>
+    private double[] ApplyContractionTransposeCore(double[] wCoeffs, Func<int, int, double[,]?>? adSelector)
+    {
+        int len = _faceCount * _dimG;
+        var wAvg = new double[len];
+        for (int f = 0; f < _faceCount; f++)
+        {
+            double inv = _faceInvCount[f];
+            for (int a = 0; a < _dimG; a++)
+                wAvg[f * _dimG + a] = wCoeffs[f * _dimG + a] * inv;
+        }
+
+        var acc = new double[len];
+        for (int c = 0; c < _cellFaces.Length; c++)
+        {
+            var faces = _cellFaces[c];
+            int nF = faces.Length;
+            var faceMap = _cellFaceMap[c]; // = M - I
+
+            // Gather the averaged covector on the cell's faces.
+            var wl = new double[nF][];
+            for (int j = 0; j < nF; j++)
+            {
+                var row = new double[_dimG];
+                Array.Copy(wAvg, faces[j] * _dimG, row, 0, _dimG);
+                wl[j] = row;
+            }
+
+            // y = (I + faceMap)^T wl -> y[k] = wl[k] + sum_j faceMap[j,k] wl[j],
+            // then Ad^T on the ad-index and scatter-add to the input covector.
+            for (int k = 0; k < nF; k++)
+            {
+                int gf = faces[k];
+                var y = new double[_dimG];
+                for (int a = 0; a < _dimG; a++)
+                {
+                    double s = wl[k][a];
+                    for (int j = 0; j < nF; j++)
+                        s += faceMap[j, k] * wl[j][a];
+                    y[a] = s;
+                }
+
+                var ad = adSelector?.Invoke(c, gf);
+                if (ad == null)
+                {
+                    for (int a = 0; a < _dimG; a++)
+                        acc[gf * _dimG + a] += y[a];
+                }
+                else
+                {
+                    for (int b = 0; b < _dimG; b++)
+                    {
+                        double s = 0;
+                        for (int a = 0; a < _dimG; a++)
+                            s += ad[a, b] * y[a];
+                        acc[gf * _dimG + b] += s;
+                    }
+                }
+            }
+        }
+        return acc;
+    }
+
+    /// <summary>Per-face Ad(theta) selector for the mode-2 dressing; null theta means Ad = I.</summary>
+    private Func<int, int, double[,]?>? ThetaSelector(double[]? theta)
+    {
+        if (theta == null) return null;
+        var adPerFace = BuildPerFaceAd(theta);
+        return (_, gf) => adPerFace[gf];
+    }
+
+    /// <summary>(ad_x)^T w: component b = sum_{a,c} f^c_{ab} x^a w_c (the bracket adjoint).</summary>
+    private double[] AdTransposeApply(double[] x, double[] w)
+    {
+        var r = new double[_dimG];
+        for (int b = 0; b < _dimG; b++)
+        {
+            double s = 0;
+            for (int a = 0; a < _dimG; a++)
+                for (int cc = 0; cc < _dimG; cc++)
+                    s += _algebra.GetStructureConstant(a, b, cc) * x[a] * w[cc];
+            r[b] = s;
+        }
+        return r;
+    }
+
+    private void ValidateFaceLength(double[] coeffs, string paramName)
+    {
+        ArgumentNullException.ThrowIfNull(coeffs, paramName);
+        if (coeffs.Length != _faceCount * _dimG)
+            throw new ArgumentException(
+                $"{paramName} length {coeffs.Length} must be FaceCount*dim(g) = {_faceCount * _dimG}.", paramName);
+    }
+
+    private FieldTensor FaceTensor(double[] coeffs, string label) => new()
+    {
+        Label = label,
+        Signature = OutputSignature,
+        Coefficients = coeffs,
+        Shape = new[] { _faceCount, _dimG },
+    };
+
+    // ------------------------------------------------------------------
     // Precomputation
     // ------------------------------------------------------------------
 
