@@ -19252,3 +19252,117 @@ beyond-one-loop at volume (the block machinery makes larger tori cheap
 if the physicist review sanctions a convention), the physicist review
 queue itself, or a source anchor from monitoring.
 promotedPhysicalMassClaimCount=0 throughout.
+
+## 2026-07-04 - Review Board + Adversarial Referee: The Perturbative EP Is Retired; The Non-Perturbative Question REOPENS
+
+### Process
+
+A three-specialist review board (QFT/effective-potential physicist,
+lattice/non-perturbative physicist, mathematician) reviewed the
+program's accumulated blockers and pending conventions with explorative
+calculations, followed by a hostile adversarial referee who reproduced
+every checkable claim (including three NEW calculations against the
+real platform operator and an independent rerun of the HMC prototype).
+All scratch work outside the repo; nothing below is promoted.
+
+### The adjudicated findings (each independently verified)
+
+1. RETIRE THE POSITIVE-SUBSPACE SADDLE V_eff (unconditional). Three
+   proofs: it is not stationary in omega (uncancelled tadpoles); it is
+   DISCONTINUOUS at negative-mode crossings (toy demonstration + the
+   committed n=3 sd2 data show the W increment dip at the 64->62
+   crossing); and its loop hierarchy is INVERTED - from the committed
+   phase447 data, median |V_1loop|/S_B = 127-205 and |V2/V1| = 155
+   (max 1567), so even the one-loop object was outside its validity.
+   The object is also UNBOUNDED BELOW at t->0 (K log t, K>0): its
+   infimum was always the perturbatively-invalid symmetric boundary.
+2. WHAT SURVIVES OF THE NO-GOS (the corrected ledger): (a) TREE-LEVEL
+   NO-SCALE, robust: on invariant rays S_B = a2 t^2 + a4 t^4 with
+   a2, a4 > 0 (a2 dominating by ~1e4) - minimum pinned at t=0;
+   (b) the perturbative-EP route is dead as an OBJECT, so 443/448's
+   conclusions stand only in the narrowed form "NO PERTURBATIVE
+   COLEMAN-WEINBERG SCALE" - the mathematician's stronger claim
+   ("internal route provably empty") was REJECTED by the referee as
+   overreach: Theorem A is about the saddle object, not the physics;
+   (c) NEW EXACT FACT, rescoped by the referee: a3 = 0 exactly ON
+   INVARIANT RAYS by the omega -> -omega reflection symmetry of the
+   translation-invariant configuration (parity gap 0 at machine
+   precision; a3/a2 ~ 1e-4 REAL off-sector) - this Z2 is also what
+   legitimizes a Binder-cumulant analysis; (d) K=0 rays CANNOT exist
+   (every ray excites ker-d soft modes lifting as t^2), closing the
+   theorem's self-declared scope hole while making the t->0
+   divergence generic.
+3. THE HONEST SCALE QUESTION IS OPEN (the lattice memo's convexity
+   flag, upheld): the true effective potential is convex - "interior
+   minimum" was the WRONG SIGNATURE all along; SSB manifests as a
+   flat Maxwell bottom / degenerate +-v minima, diagnosed by
+   finite-volume constraint-EP + Binder crossing across the torus
+   family. The 30-235 negative modes the retired convention DISCARDED
+   are transverse instabilities - exactly where a dynamical scale
+   could hide. For the first time in the program's history an internal
+   computable route REOPENS rather than closes.
+4. NEW MANDATORY CONVENTIONS for any non-perturbative run:
+   (a) THETA-HAAR: theta enters S_B only through exp(ad_theta) in
+   SO(3) per vertex (verified: uniform theta leaves S_B exactly
+   constant; the R^n theta-integral DIVERGES) - the compact-group Haar
+   measure is required, theta is an angle, not a Stueckelberg field;
+   (b) GAUGE-INVARIANT COLLECTIVE COORDINATE: a random-ray constraint
+   leaks pure-gauge motion (ker d overlap) - the CEP must constrain
+   the gauge-invariant invariant-ray projection with global-SO(3)
+   zero modes projected out; (c) FADDEEV-POPOV CAVEAT: cross-member
+   comparisons of spectral sums with different excluded-zero-mode
+   counts (identity 243/768 vs Einsteinian 3) are differently
+   normalized - within-member t-dependence is safe.
+5. FEASIBILITY IS PROVEN: a working HMC harness against the real
+   platform action (16-vertex, 195 omega-DOF) runs at 8.5-8.8
+   ms/trajectory, acceptance ~0.996-0.999, exact gates green
+   (measure preservation <e^-dH>=1.0000; equipartition 192-195/195)
+   - independently reproduced by the referee. The theta=0 slice
+   result (single well) is a sampler demo, NOT a physics verdict.
+
+### Ranked surviving paths (adversarially filtered)
+
+1. VARIATIONAL GAUSSIAN (CJT-Hartree) EP - run FIRST (~free): a
+   RIGOROUS upper bound (S_B >= 0 makes Feynman-Jensen valid; the
+   quartic generates positive Hartree mass so a self-consistent
+   Sigma > 0 exists); the closed-form Wick contractions exist because
+   S_B is exactly quartic in omega. A NULL (Sigma-consistent only at
+   phi=0) is strong evidence against a scale; a POSITIVE is mean-field
+   only and must be confirmed by the CEP.
+2. CONSTRAINT-EP HMC with four conditions (gauge-invariant collective
+   coordinate; theta-Haar; demonstrated ergodicity control - already
+   tau_int(Phi)~20-33 on the easy slice, worse near a crossing;
+   theta=0 slice not a result). The only route that honestly
+   integrates the transverse negative modes.
+3. BINDER/CORRELATION-LENGTH ACROSS THE TORUS FAMILY - the physical
+   test, but needs >= 4 torus sizes (n=3,4 insufficient for a
+   critical extrapolation); the n>=5 compute path exists via the
+   block machinery for spectra but the CEP needs sampling at 12288+
+   DOF (~50 ms/traj measured estimate).
+4. FRG-on-invariant-sector: REFUTED (restricted to the invariant
+   slice it reproduces the failed CW null; as full-field FRG it is a
+   costlier CEP).
+
+### Convention review queue: DISCHARGED with outcomes
+
+The 445/446 RG prescriptions: moot (route closed as artifact -
+correct). The 447 positive-subspace propagator + soft floor: the
+convention question is superseded - the OBJECT is retired (the
+447 non-perturbativity verdict itself stands and is now understood as
+the correct symptom of an invalid expansion point). The 448 invariant
+rays: sound (and the referee corrected the lattice memo's reasoning -
+S_B on these rays is mass-dominated positive quadratic+quartic, NOT a
+homogeneous quartic; the conclusion was right, the mechanism wrong).
+NEW pending items: theta-Haar + collective-coordinate + FP conventions
+above, to be pinned in the phase449/450 designs.
+
+### The recorded frontier statement (replaces "provably empty")
+
+No scale exists at tree level or from the (retired) perturbative
+effective potential on this action class. The NON-PERTURBATIVE
+constrained free energy - which integrates the discarded transverse
+negative modes - is an open, workbench-computable, sign-problem-free
+question; phase449 (variational Gaussian bound) and phase450
+(constraint-EP HMC) are the named next experiments. The
+external/source-anchor track continues in parallel.
+promotedPhysicalMassClaimCount=0 throughout.

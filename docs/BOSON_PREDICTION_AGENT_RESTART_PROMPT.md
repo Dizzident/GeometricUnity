@@ -594,6 +594,57 @@ hypercharge/coupling lineage, 4D observed vacuum, scale/pole/GeV) all live
 in the unsolved GU derivation chain (VO-6/VO-7 physically completed) or new
 theorem-level sources.
 
+### 2026-07-04 Review Board Outcome (post-Phase448) — READ THIS FIRST
+
+A three-specialist review board (QFT, lattice, mathematician) plus a
+hostile adversarial referee (who reproduced every checkable claim
+against the committed data and the live platform) adjudicated the
+accumulated blockers. Full record: the 2026-07-04 review-board entry in
+docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md. Outcomes that BIND future
+work:
+
+1. THE POSITIVE-SUBSPACE SADDLE V_eff IS RETIRED (unconditional): not
+   stationary in omega; discontinuous at negative-mode crossings;
+   loop hierarchy inverted (median |V_1loop|/S_B = 127-205 from the
+   committed phase447 data); unbounded below at t->0 (K log t, K>0,
+   and K=0 rays are impossible). Do not build further phases on it.
+2. CORRECTED LEDGER: what survives of 443/448 is (a) TREE-LEVEL
+   NO-SCALE (robust: S_B = a2 t^2 + a4 t^4, a2,a4 > 0 on invariant
+   rays) and (b) "NO PERTURBATIVE COLEMAN-WEINBERG SCALE". The
+   stronger phrasing "internal route provably empty" is REJECTED.
+   New exact fact: a3 = 0 exactly on invariant rays by the
+   omega -> -omega reflection symmetry (a genuine Z2; a3 is REAL
+   ~1e-4 off the invariant sector).
+3. THE NON-PERTURBATIVE QUESTION IS OPEN (first internal route to
+   REOPEN): the true effective potential is CONVEX - "interior
+   minimum" was the wrong signature; SSB = flat Maxwell bottom /
+   degenerate +-v minima, diagnosed by finite-volume constraint-EP +
+   Binder crossing. The 30-235 transverse negative modes the retired
+   convention discarded are exactly where a dynamical scale could
+   hide. S_B >= 0 real => e^{-S_B} has NO SIGN PROBLEM.
+4. NAMED NEXT EXPERIMENTS (adversarially filtered, ranked):
+   PHASE449 = variational Gaussian (CJT-Hartree) EP - a rigorous
+   Feynman-Jensen upper bound, closed-form Wick contractions from the
+   omega-quartic structure, ~free using the block spectra; a null is
+   strong evidence against a scale, a positive is mean-field-only.
+   PHASE450 = constraint-EP HMC with FOUR BINDING CONDITIONS:
+   (i) gauge-invariant invariant-ray collective coordinate (random
+   rays leak pure-gauge motion through ker d), (ii) THETA-HAAR measure
+   (theta enters only via exp(ad_theta) in SO(3) per vertex; the R^n
+   theta-integral diverges - verified), (iii) demonstrated
+   ergodicity/critical-slowing control, (iv) the theta=0 slice is a
+   sampler demo, never a physics verdict. Feasibility is PROVEN:
+   working HMC harness on the real action, 8.5-8.8 ms/trajectory,
+   acceptance ~0.996+, exact gates green (referee-reproduced).
+   THEN Binder/correlation-length across >= 4 torus sizes (n=3,4
+   insufficient). FRG-on-invariant-sector is REFUTED - do not build.
+5. Convention review queue DISCHARGED with outcomes (445/446 moot;
+   447 object retired - its non-perturbativity verdict stands as the
+   correct symptom; 448 invariant rays sound). New pending
+   conventions to pin in the phase449/450 designs: theta-Haar,
+   collective coordinate, Faddeev-Popov normalization caveat for
+   cross-member spectral comparisons.
+
 ### Most Recent Implemented Work
 
 The latest work (2026-07-04, after both phase444 unlock projects were
