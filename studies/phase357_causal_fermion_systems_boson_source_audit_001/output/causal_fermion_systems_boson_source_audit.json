@@ -1,7 +1,7 @@
 {
   "phaseId": "phase357-causal-fermion-systems-boson-source-audit",
   "terminalStatus": "causal-fermion-systems-boson-source-audit-open-higgs-and-regularization-not-gu-source",
-  "generatedAt": "2026-06-18T12:44:48.1256638+00:00",
+  "generatedAt": "2026-07-04T02:09:10.6358757+00:00",
   "causalFermionSystemsBosonSourceAuditPassed": true,
   "causalFermionSystemsLeadPresent": true,
   "causalFermionSystemsPrimarySourcesReviewed": true,

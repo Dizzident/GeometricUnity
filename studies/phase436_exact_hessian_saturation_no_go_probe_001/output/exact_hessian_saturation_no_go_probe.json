@@ -1,6 +1,6 @@
 {
   "phaseId": "phase436-exact-hessian-saturation-no-go-probe",
-  "generatedAt": "2026-07-02T13:14:27.4777838+00:00",
+  "generatedAt": "2026-07-04T02:24:30.9644845+00:00",
   "terminalStatus": "exact-control-branch-hessian-grows-exactly-as-tsquared-no-log-saturation-scale-gap-pinned-beyond-control-branch",
   "exactHessianSaturationNoGoProbePassed": true,
   "phase405PrecursorPassed": true,
@@ -142,7 +142,7 @@
   "maxExactA2Eigenvalue": 0.2708875332214334,
   "maxWorkbenchMass": 0.9999999999999999,
   "workbenchFidelityNote": "The exact growing-mode counts (positive eigenvalues of the t^2 mass term A2 = J2^T J2) are 64 (lambda_8-type) and 96 (lambda_4-type), factoring as rank(-(ad_u)^2) * 16 (= 4*16 and 6*16) with a single shared geometric multiplicity. The per-su(3)-direction counts therefore match the workbench -(ad_u)^2 nonzero counts (4 vs 6): Phase430\u0027s log-slope direction-selection arithmetic is confirmed under the exact control-branch Hessian. Mass VALUES differ (exact A2 eigenvalues are O(0.01..0.3); workbench -(ad_u)^2 eigenvalues are O(0.25..1)); the workbench model is a recorded convention and only counts entered Phase430\u0027s verdicts.",
-  "runtimeSeconds": 0.3429537,
+  "runtimeSeconds": 0.3272952,
   "exactHessianIsCandidateOnlyStructure": true,
   "physicalCouplingProvided": false,
   "routeProvidesPhysicalMassPsiCompatibleBranch": false,

@@ -216,6 +216,7 @@ const paths = {
   phase443: "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json",
   phase444: "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json",
   phase445: "studies/phase445_rg_improved_joint_potential_probe_001/output/rg_improved_joint_potential_probe_summary.json",
+  phase446: "studies/phase446_rg_scheme_dependence_resolution_probe_001/output/rg_scheme_dependence_resolution_probe_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -503,6 +504,7 @@ const phase442 = requireFile(paths.phase442);
 const phase443 = requireFile(paths.phase443);
 const phase444 = requireFile(paths.phase444);
 const phase445 = requireFile(paths.phase445);
+const phase446 = requireFile(paths.phase446);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -5295,6 +5297,18 @@ if (sourceLineageMissing) {
   assert(phase445.sourceContractApplicationAllowed === false && phase445.canFillPhase201WzContract === false && phase445.canFillPhase201HiggsContract === false && phase445.canFillPhase256ObservedFieldExtractionContract === false, "Phase445 cannot fill Phase201 or Phase256 contracts.");
   assert(phase445.routePromotesWzMasses === false && phase445.routePromotesHiggsMass === false && phase445.routeCompletesBosonPredictions === false, "Phase445 cannot promote boson predictions.");
   assert(phase101Package?.rgImprovedJointPotentialProbe?.rgImprovedJointPotentialProbePassed === true, "Phase101 must include the Phase445 block.");
+  assert(phase446.rgSchemeDependenceResolutionProbePassed === true, "Phase446 scheme-dependence resolution probe must pass on internal consistency.");
+  assert(phase446.targetBlindConstruction === true && typeof phase446.targetBlindConstructionHash === "string" && phase446.targetBlindConstructionHash.length === 64, "Phase446 must remain target-blind with a persisted construction hash.");
+  assert(phase446.applicationSubjectKind === "rg-scheme-dependence-resolution-probe", "Phase446 must classify its subject as the scheme-dependence resolution probe.");
+  assert(phase446.batteries?.batteriesAllPassed === true, "Phase446 batteries incl. the theta gate, controls, offset-invariance, and synthetic-control cleanliness must pass.");
+  assert(phase446.resolutionKind === "fit-normalization-artifact" && phase446.phase445MinimaResolvedAsFitNormalizationArtifact === true, "Phase446 must record the Phase445 minima resolution as a fit-normalization artifact.");
+  assert(phase446.einsteinianRgSaturationObserved === false && phase446.candidateSurvivesSchemeControl === false, "Phase446 cannot report a surviving RG-saturation candidate.");
+  assert(phase446.replicationMatchesPhase445 === true && phase446.constantSubtractionKillsInteriorMinima === true && phase446.directRgMinimumSupported === false, "Phase446 must carry the replication, constant-subtraction, and direct-arm evidence for the artifact resolution.");
+  assert(phase446.rgPrescriptionIsWorkbenchConvention === true && phase446.scaleIsWorkbenchRelativeCandidateOnly === true && phase446.noGevPromotion === true, "Phase446 must keep the convention and no-promotion boundaries.");
+  assert(phase446.recordedBoundary?.physicistReviewPending === true, "Phase446 must flag the pending physicist review of the RG prescriptions.");
+  assert(phase446.sourceContractApplicationAllowed === false && phase446.canFillPhase201WzContract === false && phase446.canFillPhase201HiggsContract === false && phase446.canFillPhase256ObservedFieldExtractionContract === false, "Phase446 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase446.routePromotesWzMasses === false && phase446.routePromotesHiggsMass === false && phase446.routeCompletesBosonPredictions === false, "Phase446 cannot promote boson predictions.");
+  assert(phase101Package?.rgSchemeDependenceResolutionProbe?.rgSchemeDependenceResolutionProbePassed === true, "Phase101 must include the Phase446 block.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

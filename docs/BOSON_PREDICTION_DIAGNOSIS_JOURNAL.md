@@ -19083,3 +19083,76 @@ direct beta from the running Hessian, denser t-grids at the candidates.
 If the minima survive scheme control, the program has its first
 workbench-relative dynamical-scale candidate; if not, another honest
 negative. promotedPhysicalMassClaimCount=0 throughout.
+
+## 2026-07-03 - Phase446: The First Interior Minima Are a Fit-Normalization Artifact (Resolved, Closed)
+
+### The pre-registered mechanism
+
+Before any new compute, replaying the committed Phase443 raw rays
+exposed the suspect: the Phase445 one-loop fit basis {t^4} LEAKS the
+t-independent one-loop constant (deeply negative for Einsteinian
+members, ~-160 at t->0; pure vacuum normalization that provably cannot
+move the true V_eff minimum) into the fitted coefficient, forcing
+V_RG -> 0 at t -> 0 and manufacturing an interior dip for ANY deeply
+negative, slowly rising curve. The positive-one-loop identity control is
+structurally blind to this artifact class - "control clean" certified
+nothing. An independent reviewer pass reached the same verdict from the
+committed arrays alone (delta_lambda ~ oneLoop/t^4; the tree subleading
+is only 0.1-3.7% of the well depth, so there was never a tree-vs-loop
+CW balance; centered R^2 ~ -100 everywhere, a diagnostic Phase445 never
+gated on).
+
+### Result (decisive, seed-stable, batteries all green)
+
+Phase446 recomputed the rays with the verbatim hardened machinery on a
+48-point grid whose strided subset EXACTLY matches the Phase445 grid
+(same rays, same RngSeed), then ran four arms plus a synthetic control:
+
+- REPLICATION: the Phase445 classifications reproduce exactly on the
+  refined ray data (matches=true) - the minima were real under the
+  verbatim prescription.
+- OFFSET INVARIANCE: the raw V_eff argmin is exactly constant-shift
+  invariant (asserted battery), but the fitted classification is
+  offset-SENSITIVE, and subtracting the one-loop constant KILLS every
+  interior minimum at every window on both grids.
+- FIT-BASIS MENU (4 bases x windows x 2 grids x 2 normalizations):
+  irreducibly scheme-dependent; NO member survives the menu; some
+  enriched scheme even hands the identity control a manufactured
+  minimum.
+- SYNTHETIC ARTIFACT-SENSITIVE CONTROL (provably monotone by
+  construction: positive tree + (-150 + 40 ln t) one-loop): the verbatim
+  Phase445 scheme manufactures an interior minimum on it at every
+  window; constant subtraction kills that too; the direct arm stays
+  clean on it (blocker if not).
+- DIRECT (CONSTANT-IMMUNE): L = t d/dt annihilates the constant
+  exactly; jump-aware midpoint log-derivatives (30-40 usable intervals
+  per member; mode-transition intervals excluded) fit in the L-image
+  basis {1, 2t^2, 3t^3, 4t^4, 4t^4 ln t + t^4} give sd2 cL = -0.79
+  (nonpositive) and asd2 cL = +4.45 with implied t* far outside the
+  grid; offset-immunity battery exact; NO resummation minimum is
+  supported for any member.
+
+resolutionKind=fit-normalization-artifact;
+einsteinianRgSaturationObserved=false;
+candidateSurvivesSchemeControl=false. Theta gate: every non-identity
+point passes relative <= 1e-8 or the absolute-gradient floor 1e-10 (2
+smallest-t points via the floor - the Phase443 dimensional-gate lesson
+recurred at tiny t, where warm-started initial gradients are already
+near zero and the relative measure is ill-defined). Runtime ~15 min.
+
+### Interpretation
+
+THE RG-IMPROVED POTENTIAL-FIT ROUTE ON THE MINIMAL MESH IS CLOSED. The
+first-interior-minima excitement of Phase445 is fully explained as
+normalization leakage into an under-specified fit basis; there is no
+large-log regime to resum on this grid (ln t spans only [-2.8, 1.1]),
+and the constant-immune running is either negative or too weak to form
+an in-range minimum. The frontier returns, sharpened, to the named
+levers: the two Phase444 unlock projects (lattice-canonical geometry
+conventions for exact torus block-diagonalization, or the adjoint/
+joint-gradient path for feasible SLQ), genuine beyond-one-loop
+structure, or a source anchor. METHOD LESSONS now encoded in the phase:
+gate on CENTERED R^2 (uncentered through-origin R^2 is vacuous); a
+control must be able to EXHIBIT the artifact class it guards against;
+any windowed-fit classifier must be constant-shift invariant before its
+minima are believed. promotedPhysicalMassClaimCount=0 throughout.

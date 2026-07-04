@@ -1,6 +1,6 @@
 {
   "phaseId": "phase443-joint-effective-potential-saturation-probe",
-  "generatedAt": "2026-07-03T10:36:09.8991762+00:00",
+  "generatedAt": "2026-07-04T03:10:50.0290342+00:00",
   "terminalStatus": "joint-effective-potential-saturation-probe-passed-no-log-saturation-necessary-not-sufficient-frontier-sharpened",
   "jointEffectivePotentialSaturationProbePassed": true,
   "phase442PrecursorPassed": true,
@@ -1489,7 +1489,7 @@
     "spinorUsedAsShiabCarrierNotFiber": true,
     "draft14dObserverseNotRealized": true
   },
-  "runtimeSeconds": 2785.7346188,
+  "runtimeSeconds": 2750.2975331,
   "physicalCouplingProvided": false,
   "routeProvidesPhysicalEffectiveActionHessian": false,
   "routeProvidesVevOrSourceScaleLineage": false,

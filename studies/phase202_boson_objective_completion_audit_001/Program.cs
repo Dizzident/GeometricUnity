@@ -202,6 +202,7 @@ const string Phase433Path = "studies/phase433_blind_beta_coefficient_running_led
 const string Phase435Path = "studies/phase435_two_condensate_scale_gap_probe_001/output/two_condensate_scale_gap_probe_summary.json";
 const string Phase437Path = "studies/phase437_four_dimensional_transmutation_scaling_probe_001/output/four_dimensional_transmutation_scaling_probe_summary.json";
 const string Phase445Path = "studies/phase445_rg_improved_joint_potential_probe_001/output/rg_improved_joint_potential_probe_summary.json";
+const string Phase446Path = "studies/phase446_rg_scheme_dependence_resolution_probe_001/output/rg_scheme_dependence_resolution_probe_summary.json";
 const string Phase444Path = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443Path = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442Path = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -455,6 +456,7 @@ using var phase442 = File.Exists(Phase442Path) ? JsonDocument.Parse(File.ReadAll
 using var phase443 = File.Exists(Phase443Path) ? JsonDocument.Parse(File.ReadAllText(Phase443Path)) : null;
 using var phase444 = File.Exists(Phase444Path) ? JsonDocument.Parse(File.ReadAllText(Phase444Path)) : null;
 using var phase445 = File.Exists(Phase445Path) ? JsonDocument.Parse(File.ReadAllText(Phase445Path)) : null;
+using var phase446 = File.Exists(Phase446Path) ? JsonDocument.Parse(File.ReadAllText(Phase446Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -6190,6 +6192,30 @@ var rgImprovedJointPotentialProbePassed = rgImprovedJointPotentialProbeMateriali
     && JsonBool(phase445.RootElement, "routePromotesHiggsMass") is false
     && JsonBool(phase445.RootElement, "routeCompletesBosonPredictions") is false
     && JsonInt(phase445.RootElement, "acceptedContractFieldCount") == 0;
+var rgSchemeDependenceResolutionProbeMaterialized = phase446 is not null;
+var rgSchemeDependenceResolutionProbePassed = rgSchemeDependenceResolutionProbeMaterialized
+    && JsonBool(phase446!.RootElement, "rgSchemeDependenceResolutionProbePassed") is true
+    && JsonBool(phase446.RootElement, "targetBlindConstruction") is true
+    && (JsonString(phase446.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase446.RootElement, "applicationSubjectKind") == "rg-scheme-dependence-resolution-probe"
+    && JsonString(phase446.RootElement, "resolutionKind") == "fit-normalization-artifact"
+    && JsonBool(phase446.RootElement, "phase445MinimaResolvedAsFitNormalizationArtifact") is true
+    && JsonBool(phase446.RootElement, "einsteinianRgSaturationObserved") is false
+    && JsonBool(phase446.RootElement, "candidateSurvivesSchemeControl") is false
+    && JsonBool(phase446.RootElement, "replicationMatchesPhase445") is true
+    && JsonBool(phase446.RootElement, "constantSubtractionKillsInteriorMinima") is true
+    && JsonBool(phase446.RootElement, "directRgMinimumSupported") is false
+    && JsonBool(phase446.RootElement, "rgPrescriptionIsWorkbenchConvention") is true
+    && JsonBool(phase446.RootElement, "scaleIsWorkbenchRelativeCandidateOnly") is true
+    && JsonBool(phase446.RootElement, "noGevPromotion") is true
+    && JsonBool(phase446.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase446.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase446.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase446.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase446.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase446.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase446.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonInt(phase446.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -8726,6 +8752,14 @@ var checklist = new[]
             ? $"rgImprovedJointPotentialProbePassed={JsonBool(phase445!.RootElement, "rgImprovedJointPotentialProbePassed")}; verdictSchemeStable={JsonBool(phase445.RootElement, "verdictSchemeStable")}; einsteinianRgSaturationObserved={JsonBool(phase445.RootElement, "einsteinianRgSaturationObserved")}; noGevPromotion={JsonBool(phase445.RootElement, "noGevPromotion")}; canFillPhase201WzContract={JsonBool(phase445.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase445.RootElement, "decision")}"
             : "Phase445 artifact not materialized",
         Phase445Path),
+    new ObjectiveChecklistItem(
+        "rg-scheme-dependence-resolution-probe-materialized",
+        "Resolve the Phase445 scheme dependence: the first-ever interior minima are a FIT-NORMALIZATION ARTIFACT (the one-loop constant leaks into the c*t^4 coefficient) - constant subtraction kills them, the fit-basis menu is irreducibly scheme-dependent, a provably-monotone synthetic control gets a manufactured minimum from the verbatim scheme, and the constant-immune direct measurement supports no minimum; the RG-improved potential-fit route on the minimal mesh is closed; nothing promoted.",
+        rgSchemeDependenceResolutionProbePassed ? "passed" : "failed",
+        rgSchemeDependenceResolutionProbeMaterialized
+            ? $"rgSchemeDependenceResolutionProbePassed={JsonBool(phase446!.RootElement, "rgSchemeDependenceResolutionProbePassed")}; resolutionKind={JsonString(phase446.RootElement, "resolutionKind")}; phase445MinimaResolvedAsFitNormalizationArtifact={JsonBool(phase446.RootElement, "phase445MinimaResolvedAsFitNormalizationArtifact")}; candidateSurvivesSchemeControl={JsonBool(phase446.RootElement, "candidateSurvivesSchemeControl")}; constantSubtractionKillsInteriorMinima={JsonBool(phase446.RootElement, "constantSubtractionKillsInteriorMinima")}; directRgMinimumSupported={JsonBool(phase446.RootElement, "directRgMinimumSupported")}; noGevPromotion={JsonBool(phase446.RootElement, "noGevPromotion")}; canFillPhase201WzContract={JsonBool(phase446.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase446.RootElement, "decision")}"
+            : "Phase446 artifact not materialized",
+        Phase446Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

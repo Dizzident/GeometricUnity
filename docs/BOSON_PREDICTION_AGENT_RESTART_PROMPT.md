@@ -57,7 +57,7 @@ censuses):
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=238`,
+  `objectiveAchieved=False`, `checklistPassedCount=239`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -528,6 +528,25 @@ censuses):
   flips at the widest fit window: a SCHEME-DEPENDENT CANDIDATE,
   suggestive not established; phase446 must resolve the scheme
   dependence (no platform work needed)
+- Phase446: `rgSchemeDependenceResolutionProbePassed=True`,
+  `resolutionKind=fit-normalization-artifact`,
+  `phase445MinimaResolvedAsFitNormalizationArtifact=True`,
+  `einsteinianRgSaturationObserved=False`,
+  `candidateSurvivesSchemeControl=False` - RESOLVED: the Phase445
+  minima are normalization leakage of the deep-negative one-loop
+  constant into the {t^4} fit basis. Replication exact on the strided
+  48-point grid; constant subtraction kills every minimum (the raw
+  V_eff argmin is provably shift-invariant); the 4-basis fit menu is
+  irreducibly scheme-dependent (no member survives; one enriched
+  scheme even hands the IDENTITY control a manufactured minimum); a
+  provably-monotone SYNTHETIC control gets a manufactured minimum from
+  the verbatim scheme (and constant subtraction kills that too); the
+  constant-immune direct measurement (L = t d/dt, jump-aware, 30-40
+  usable intervals, offset-immunity exact) supports NO minimum (sd2
+  cL=-0.79; asd2 cL=+4.45 with t* far out of range). THE RG-IMPROVED
+  POTENTIAL-FIT ROUTE ON THE MINIMAL MESH IS CLOSED; frontier returns
+  to the Phase444 unlock projects, beyond-one-loop structure, or a
+  source anchor
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -548,7 +567,50 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work (2026-07-03, after Phase444) is PHASE445, the
+The latest work (2026-07-03, after Phase445) is PHASE446, the RG
+scheme-dependence resolution probe - closing the arc's most tantalizing
+lead with a decisive, pre-registered diagnosis: THE PHASE445 INTERIOR
+MINIMA ARE A FIT-NORMALIZATION ARTIFACT. The mechanism (found by
+prototype replay of the committed Phase443 rays BEFORE new compute, and
+independently confirmed by a reviewer pass over the committed arrays):
+the {t^4} one-loop fit basis leaks the deep-negative t-independent
+one-loop constant (~-160; pure vacuum normalization that provably
+cannot move the true V_eff minimum) into the fitted coefficient,
+forcing V_RG -> 0 at t -> 0 and manufacturing an interior dip for any
+deeply negative, slowly rising curve; the positive-one-loop identity
+control is structurally blind to this artifact class. Phase446
+recomputed the rays (verbatim hardened machinery, same rays/RngSeed,
+48-point grid whose strided subset EXACTLY matches the Phase445 grid)
+and decided it with four arms + a synthetic control: replication exact;
+constant subtraction kills every minimum at every window on both grids
+(offset arm; the raw argmin is provably shift-invariant, asserted);
+the 4-basis x windows x grids x normalizations menu is irreducibly
+scheme-dependent with NO surviving member (one enriched scheme even
+hands the identity control a manufactured minimum); a provably-monotone
+synthetic control (positive tree + [-150 + 40 ln t] one-loop) receives
+a manufactured minimum from the verbatim scheme at every window (and
+the direct arm must stay clean on it - a fail-closed blocker); the
+constant-immune direct measurement (L = t d/dt annihilates constants
+exactly; jump-aware midpoint log-derivatives, 30-40 usable intervals,
+L-image basis {1, 2t^2, 3t^3, 4t^4, 4t^4 ln t + t^4}, offset-immunity
+exact, centered-R^2 gated) supports NO resummation minimum (sd2
+cL=-0.79 nonpositive; asd2 cL=+4.45 with implied t* far outside the
+grid). Theta gate: all points pass relative <= 1e-8 or the 1e-10
+absolute-gradient floor (2 smallest-t points via the floor - the
+Phase443 dimensional-gate lesson recurring at tiny t). Verdict:
+resolutionKind=fit-normalization-artifact,
+einsteinianRgSaturationObserved=false,
+candidateSurvivesSchemeControl=false - THE RG-IMPROVED POTENTIAL-FIT
+ROUTE ON THE MINIMAL MESH IS CLOSED. Method lessons encoded: gate on
+CENTERED R^2 (through-origin uncentered R^2 is vacuous); a control must
+be able to EXHIBIT the artifact class it guards; windowed-fit
+classifiers must be constant-shift invariant before their minima are
+believed. Frontier (sharpened): the two Phase444 unlock projects,
+genuine beyond-one-loop structure, or a source anchor. Runtime ~15 min.
+Study: phase446_rg_scheme_dependence_resolution_probe_001
+(IMPLEMENTATION_P446.md).
+
+Before that, the work (2026-07-03, after Phase444) was PHASE445, the
 RG-improved joint potential probe - the no-platform alternative,
 delivering the arc's most tantalizing result: THE FIRST INTERIOR FINITE
 MINIMA EVER (Einsteinian members, t* ~ 1.5-2.25, windows 3/5; measured
@@ -1354,8 +1416,8 @@ PHASE405_ENABLE_GPU=1 LD_LIBRARY_PATH=native/build dotnet run --project studies/
 The targeted Phase424 (Release, ~7 min) and Phase425 (Release, ~1 min) runs
 pass and preserve the fail-closed boundary; the fixed Phase411/Phase417
 re-runs pass with their corrected censuses; Phase202 now reports
-`checklistPassedCount=238`, `checklistFailedCount=3`; claim integrity
-verifies Phase424 through Phase445 (and the corrected Phase417 values)
+`checklistPassedCount=239`, `checklistFailedCount=3`; claim integrity
+verifies Phase424 through Phase446 (and the corrected Phase417 values)
 with `promotedPhysicalMassClaimCount=0`. The full direct
 `./scripts/generate_validated_boson_predictions.sh` pass completed with
 Phase424 through Phase436 included and ended at

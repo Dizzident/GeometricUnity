@@ -44,6 +44,7 @@ var excludedPathFragments = new[]
     "studies/phase443_joint_effective_potential_saturation_probe_001/",
     "studies/phase444_mode_volume_scaled_saturation_probe_001/",
     "studies/phase445_rg_improved_joint_potential_probe_001/",
+    "studies/phase446_rg_scheme_dependence_resolution_probe_001/",
 };
 
 var dimension4Pattern = new Regex("""

@@ -1,7 +1,7 @@
 {
   "phaseId": "phase421-cox-gu-iv-v2-lcdm-rig-boson-contract-audit",
   "terminalStatus": "cox-gu-iv-v2-lcdm-rig-boson-contract-audit-no-electroweak-source",
-  "generatedAt": "2026-06-18T13:13:45.137605+00:00",
+  "generatedAt": "2026-07-04T02:16:12.016348+00:00",
   "coxGuIvV2LcdmRigBosonContractAuditPassed": true,
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
