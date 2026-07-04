@@ -1,0 +1,2428 @@
+{
+  "phaseId": "phase448-torus-mode-volume-saturation-probe",
+  "generatedAt": "2026-07-04T16:09:52.1013862+00:00",
+  "terminalStatus": "torus-mode-volume-saturation-probe-passed-no-saturation-persists-across-mode-volumes-frontier-sharpened",
+  "torusModeVolumeSaturationProbePassed": true,
+  "phase443PrecursorPassed": true,
+  "phase444PrecursorPassed": true,
+  "phase447PrecursorPassed": true,
+  "precursorsPassed": true,
+  "applicationSubjectKind": "torus-mode-volume-saturation-probe",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "66284b54ff948c24df502634db22723183d244e85d194711eb5e33a181d9fe99",
+  "probeConfiguration": {
+    "lieAlgebraId": "su2-trace-pairing",
+    "torusSizes": [
+      3,
+      4
+    ],
+    "latticeCanonical": true,
+    "raySeedCount": 2,
+    "tMax": 3,
+    "gridN": 16,
+    "tGrid": [
+      0.1875,
+      0.375,
+      0.5625,
+      0.75,
+      0.9375,
+      1.125,
+      1.3125,
+      1.5,
+      1.6875,
+      1.875,
+      2.0625,
+      2.25,
+      2.4375,
+      2.625,
+      2.8125,
+      3
+    ],
+    "hvStep": 1E-05,
+    "zeroModeRelTol": 1E-08,
+    "zeroModeAbsFloor": 1E-10,
+    "covarianceGate": 1E-10,
+    "blockReconstructGate": 0.0001,
+    "thetaTol": 1E-09,
+    "thetaResidualBattery": 1E-08,
+    "equivarianceGate": 1E-08,
+    "rayConvention": "translation-INVARIANT unit rays (constant per edge-type/Lie coefficients, shared across volumes and normalized per volume) -- the constant-field Coleman-Weinberg analogue; RECORDED as a convention difference vs Phase443\u0027s random open-mesh rays",
+    "spectrumMethod": "block-circulant momentum decomposition: 48 orbit-representative columns (15 minimal-image edge-displacement types \u002B 1 vertex type, x su(2)) each from ONE adjoint-path Hessian-vector product; DFT over (Z_n)^4 into Hermitian 48x48 momentum blocks; {k,-k} pairs eigensolved via the real symmetric embedding; validity gated by the covariance, block-reconstruction, and trace batteries",
+    "thetaStationarity": "projected Newton in the translation-invariant theta sector (3 DOF) on the analytic joint gradient; the equivariance battery requires the FULL theta gradient to vanish at theta* (covariance =\u003E an invariant configuration has an invariant gradient)",
+    "irConvention": "exact zero modes excluded at zeroTol = max(absFloor, relTol*maxAbsEig); positive eigenvalues enter the one-loop log sum; negative modes recorded",
+    "unlocksUsed": "lattice-canonical conventions (commit 82d43559) \u002B adjoint/joint-gradient path (commit 7a7e397d)"
+  },
+  "modeVolumeVerdict": "no-saturation-persists-across-mode-volumes",
+  "anySaturationAnyVolume": false,
+  "volumeTrendSeedStable": true,
+  "scaleIsWorkbenchRelativeCandidateOnly": true,
+  "noGevPromotion": true,
+  "invariantRayConventionRecorded": true,
+  "physicistReviewPending": true,
+  "classifications": [
+    {
+      "torusN": 3,
+      "member": "identity",
+      "isControl": true,
+      "classificationBySeed": [
+        "trivial-origin",
+        "trivial-origin"
+      ],
+      "tStar": null
+    },
+    {
+      "torusN": 3,
+      "member": "sd2-id0/c0.5",
+      "isControl": false,
+      "classificationBySeed": [
+        "trivial-origin",
+        "trivial-origin"
+      ],
+      "tStar": null
+    },
+    {
+      "torusN": 3,
+      "member": "asd2-id0/c0.5",
+      "isControl": false,
+      "classificationBySeed": [
+        "trivial-origin",
+        "trivial-origin"
+      ],
+      "tStar": null
+    },
+    {
+      "torusN": 4,
+      "member": "identity",
+      "isControl": true,
+      "classificationBySeed": [
+        "trivial-origin",
+        "trivial-origin"
+      ],
+      "tStar": null
+    },
+    {
+      "torusN": 4,
+      "member": "sd2-id0/c0.5",
+      "isControl": false,
+      "classificationBySeed": [
+        "trivial-origin",
+        "trivial-origin"
+      ],
+      "tStar": null
+    },
+    {
+      "torusN": 4,
+      "member": "asd2-id0/c0.5",
+      "isControl": false,
+      "classificationBySeed": [
+        "trivial-origin",
+        "trivial-origin"
+      ],
+      "tStar": null
+    }
+  ],
+  "batteries": {
+    "batteriesAllPassed": true,
+    "orbitMapsOk": true,
+    "covarianceBattery": true,
+    "covarianceWorst": 1.4037391021161155E-14,
+    "objectiveConsistencyBattery": true,
+    "objConsistencyWorst": 1.3504325539344908E-14,
+    "gradientBattery": true,
+    "gradFdWorst": 8.787284025424391E-10,
+    "identityThetaIndependent": true,
+    "identityThetaGradWorst": 3.011931285303657E-17,
+    "blockReconstructionBattery": true,
+    "blockReconWorst": 2.9267134596338265E-11,
+    "traceConsistencyRecorded": true,
+    "traceWorst": 0.17337113661513504,
+    "thetaGate": true,
+    "thetaResidWorst": 0.0005463548487856472,
+    "equivarianceWorst": 5.3022866715584686E-05
+  },
+  "volumes": [
+    {
+      "torusN": 3,
+      "vertexCount": 81,
+      "edgeCount": 1215,
+      "nOmega": 3645,
+      "nTheta": 243,
+      "jointDof": 3888,
+      "covarianceMax": 9.535832080487965E-15,
+      "blockReconstructMax": 2.9267134596338265E-11,
+      "members": [
+        {
+          "member": "identity",
+          "isControl": true,
+          "seeds": [
+            {
+              "seed": 0,
+              "points": [
+                {
+                  "t": 0.1875,
+                  "sB": 0.12944380013784407,
+                  "oneLoop": 3004.6823390747345,
+                  "vEff": 3004.8117828748723,
+                  "positiveModes": 3585,
+                  "zeroModes": 243,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 0.375,
+                  "sB": 0.5177790206598997,
+                  "oneLoop": 3117.359095473969,
+                  "vEff": 3117.8768744946287,
+                  "positiveModes": 3585,
+                  "zeroModes": 243,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 0.5625,
+                  "sB": 1.1650171218916983,
+                  "oneLoop": 3183.4491306995847,
+                  "vEff": 3184.6141478214763,
+                  "positiveModes": 3585,
+                  "zeroModes": 243,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 0.75,
+                  "sB": 2.071177204375711,
+                  "oneLoop": 3230.4762377985094,
+                  "vEff": 3232.547415002885,
+                  "positiveModes": 3585,
+                  "zeroModes": 243,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 0.9375,
+                  "sB": 3.236286008871612,
+                  "oneLoop": 3267.0661657710534,
+                  "vEff": 3270.302451779925,
+                  "positiveModes": 3585,
+                  "zeroModes": 243,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 1.125,
+                  "sB": 4.660377916356049,
+                  "oneLoop": 3297.0611200051726,
+                  "vEff": 3301.7214979215287,
+                  "positiveModes": 3585,
+                  "zeroModes": 243,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 1.3125,
+                  "sB": 6.343494948022592,
+                  "oneLoop": 3322.510699873629,
+                  "vEff": 3328.8541948216516,
+                  "positiveModes": 3585,
+                  "zeroModes": 243,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 1.5,
+                  "sB": 8.285686765281962,
+                  "oneLoop": 3344.6383724009124,
+                  "vEff": 3352.924059166194,
+                  "positiveModes": 3585,
+                  "zeroModes": 243,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 1.6875,
+                  "sB": 10.487010669761537,
+                  "oneLoop": 3364.233329625632,
+                  "vEff": 3374.7203402953937,
+                  "positiveModes": 3585,
+                  "zeroModes": 243,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 1.875,
+                  "sB": 12.947531603306226,
+                  "oneLoop": 3381.834450828969,
+                  "vEff": 3394.781982432275,
+                  "positiveModes": 3585,
+                  "zeroModes": 243,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 2.0625,
+                  "sB": 15.667322147977476,
+                  "oneLoop": 3397.8261161469422,
+                  "vEff": 3413.4934382949195,
+                  "positiveModes": 3585,
+                  "zeroModes": 243,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 2.25,
+                  "sB": 18.64646252605474,
+                  "oneLoop": 3412.4921534842315,
+                  "vEff": 3431.138616010286,
+                  "positiveModes": 3585,
+                  "zeroModes": 243,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 2.4375,
+                  "sB": 21.8850406000335,
+                  "oneLoop": 3426.048117597878,
+                  "vEff": 3447.9331581979113,
+                  "positiveModes": 3585,
+                  "zeroModes": 243,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 2.625,
+                  "sB": 25.383151872625863,
+                  "oneLoop": 3438.661572738421,
+                  "vEff": 3464.044724611047,
+                  "positiveModes": 3585,
+                  "zeroModes": 243,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 2.8125,
+                  "sB": 29.14089948676221,
+                  "oneLoop": 3450.465360889606,
+                  "vEff": 3479.606260376368,
+                  "positiveModes": 3585,
+                  "zeroModes": 243,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 3,
+                  "sB": 33.15839422558945,
+                  "oneLoop": 3461.566579260604,
+                  "vEff": 3494.7249734861934,
+                  "positiveModes": 3585,
+                  "zeroModes": 243,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                }
+              ]
+            },
+            {
+              "seed": 1,
+              "points": [
+                {
+                  "t": 0.1875,
+                  "sB": 0.17105872803014893,
+                  "oneLoop": 3027.776371002786,
+                  "vEff": 3027.947429730816,
+                  "positiveModes": 3585,
+                  "zeroModes": 243,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 0.375,
+                  "sB": 0.6842429648652407,
+                  "oneLoop": 3140.5059326004994,
+                  "vEff": 3141.190175565365,
+                  "positiveModes": 3585,
+                  "zeroModes": 243,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 0.5625,
+                  "sB": 1.5395768687392777,
+                  "oneLoop": 3206.657739196194,
+                  "vEff": 3208.1973160649336,
+                  "positiveModes": 3585,
+                  "zeroModes": 243,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 0.75,
+                  "sB": 2.737100703375362,
+                  "oneLoop": 3253.755598586735,
+                  "vEff": 3256.49269929011,
+                  "positiveModes": 3585,
+                  "zeroModes": 243,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 0.9375,
+                  "sB": 4.276870837986068,
+                  "oneLoop": 3290.425273535002,
+                  "vEff": 3294.702144372988,
+                  "positiveModes": 3585,
+                  "zeroModes": 243,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 1.125,
+                  "sB": 6.158959747273271,
+                  "oneLoop": 3320.5089806079704,
+                  "vEff": 3326.667940355244,
+                  "positiveModes": 3585,
+                  "zeroModes": 243,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 1.3125,
+                  "sB": 8.383456011428434,
+                  "oneLoop": 3346.0563290200726,
+                  "vEff": 3354.439785031501,
+                  "positiveModes": 3585,
+                  "zeroModes": 243,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 1.5,
+                  "sB": 10.950464316130914,
+                  "oneLoop": 3368.290793571386,
+                  "vEff": 3379.241257887517,
+                  "positiveModes": 3585,
+                  "zeroModes": 243,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 1.6875,
+                  "sB": 13.860105452551837,
+                  "oneLoop": 3388.0015720709316,
+                  "vEff": 3401.8616775234836,
+                  "positiveModes": 3585,
+                  "zeroModes": 243,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 1.875,
+                  "sB": 17.112516317349115,
+                  "oneLoop": 3405.727547597017,
+                  "vEff": 3422.840063914366,
+                  "positiveModes": 3585,
+                  "zeroModes": 243,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 2.0625,
+                  "sB": 20.707849912671847,
+                  "oneLoop": 3421.853102100677,
+                  "vEff": 3442.560952013349,
+                  "positiveModes": 3585,
+                  "zeroModes": 243,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 2.25,
+                  "sB": 24.646275346156408,
+                  "oneLoop": 3436.6620633287375,
+                  "vEff": 3461.308338674894,
+                  "positiveModes": 3585,
+                  "zeroModes": 243,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 2.4375,
+                  "sB": 28.927977830931635,
+                  "oneLoop": 3450.3699839146543,
+                  "vEff": 3479.297961745586,
+                  "positiveModes": 3585,
+                  "zeroModes": 243,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 2.625,
+                  "sB": 33.55315868561162,
+                  "oneLoop": 3463.1444238381127,
+                  "vEff": 3496.6975825237246,
+                  "positiveModes": 3585,
+                  "zeroModes": 243,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 2.8125,
+                  "sB": 38.52203533430323,
+                  "oneLoop": 3475.1182190714067,
+                  "vEff": 3513.64025440571,
+                  "positiveModes": 3585,
+                  "zeroModes": 243,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 3,
+                  "sB": 43.83484130660172,
+                  "oneLoop": 3486.3984586715555,
+                  "vEff": 3530.2332999781574,
+                  "positiveModes": 3585,
+                  "zeroModes": 243,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "member": "sd2-id0/c0.5",
+          "isControl": false,
+          "seeds": [
+            {
+              "seed": 0,
+              "points": [
+                {
+                  "t": 0.1875,
+                  "sB": 0.012402313736066387,
+                  "oneLoop": -2062.8084876534595,
+                  "vEff": -2062.7960853397235,
+                  "positiveModes": 3821,
+                  "zeroModes": 3,
+                  "negativeModes": 64,
+                  "thetaResidualRel": 5.025534816443923E-07,
+                  "equivarianceResidual": 9.271438477247443E-08
+                },
+                {
+                  "t": 0.375,
+                  "sB": 0.04961080027676256,
+                  "oneLoop": -1785.9323782723015,
+                  "vEff": -1785.8827674720249,
+                  "positiveModes": 3821,
+                  "zeroModes": 3,
+                  "negativeModes": 64,
+                  "thetaResidualRel": 7.444879157566332E-06,
+                  "equivarianceResidual": 8.882087608065243E-07
+                },
+                {
+                  "t": 0.5625,
+                  "sB": 0.11163009561958416,
+                  "oneLoop": -1623.6135324793831,
+                  "vEff": -1623.5019023837635,
+                  "positiveModes": 3821,
+                  "zeroModes": 3,
+                  "negativeModes": 64,
+                  "thetaResidualRel": 7.0257927362951305E-06,
+                  "equivarianceResidual": 1.122823564954883E-06
+                },
+                {
+                  "t": 0.75,
+                  "sB": 0.1984679264270146,
+                  "oneLoop": -1508.256544358581,
+                  "vEff": -1508.0580764321542,
+                  "positiveModes": 3821,
+                  "zeroModes": 3,
+                  "negativeModes": 64,
+                  "thetaResidualRel": 1.2253986624747051E-05,
+                  "equivarianceResidual": 1.9963508196757778E-06
+                },
+                {
+                  "t": 0.9375,
+                  "sB": 0.3101351100265516,
+                  "oneLoop": -1418.7614297291177,
+                  "vEff": -1418.4512946190912,
+                  "positiveModes": 3821,
+                  "zeroModes": 3,
+                  "negativeModes": 64,
+                  "thetaResidualRel": 2.4362481017814713E-05,
+                  "equivarianceResidual": 3.3098752916069433E-06
+                },
+                {
+                  "t": 1.125,
+                  "sB": 0.4466455544106495,
+                  "oneLoop": -1346.1887423553399,
+                  "vEff": -1345.7420968009292,
+                  "positiveModes": 3821,
+                  "zeroModes": 3,
+                  "negativeModes": 64,
+                  "thetaResidualRel": 1.2152519815280573E-05,
+                  "equivarianceResidual": 2.5889384325730826E-06
+                },
+                {
+                  "t": 1.3125,
+                  "sB": 0.6080162582368422,
+                  "oneLoop": -1281.1742748316958,
+                  "vEff": -1280.566258573459,
+                  "positiveModes": 3821,
+                  "zeroModes": 3,
+                  "negativeModes": 64,
+                  "thetaResidualRel": 4.35331100539745E-05,
+                  "equivarianceResidual": 6.42414447177234E-06
+                },
+                {
+                  "t": 1.5,
+                  "sB": 0.7942673108275266,
+                  "oneLoop": -1225.8711608770452,
+                  "vEff": -1225.0768935662177,
+                  "positiveModes": 3821,
+                  "zeroModes": 3,
+                  "negativeModes": 64,
+                  "thetaResidualRel": 5.019257337088701E-05,
+                  "equivarianceResidual": 7.918796819930409E-06
+                },
+                {
+                  "t": 1.6875,
+                  "sB": 1.005421892170204,
+                  "oneLoop": -1177.327848639822,
+                  "vEff": -1176.3224267476517,
+                  "positiveModes": 3821,
+                  "zeroModes": 3,
+                  "negativeModes": 64,
+                  "thetaResidualRel": 2.643421377172993E-05,
+                  "equivarianceResidual": 5.502993597042424E-06
+                },
+                {
+                  "t": 1.875,
+                  "sB": 1.2415062729173223,
+                  "oneLoop": -1133.8545868598537,
+                  "vEff": -1132.6130805869363,
+                  "positiveModes": 3821,
+                  "zeroModes": 3,
+                  "negativeModes": 64,
+                  "thetaResidualRel": 0.0001421427070418532,
+                  "equivarianceResidual": 1.7465185441750158E-05
+                },
+                {
+                  "t": 2.0625,
+                  "sB": 1.5025498143864364,
+                  "oneLoop": -1094.4242136845062,
+                  "vEff": -1092.9216638701198,
+                  "positiveModes": 3821,
+                  "zeroModes": 3,
+                  "negativeModes": 64,
+                  "thetaResidualRel": 0.0001252090442927901,
+                  "equivarianceResidual": 1.5988134041717382E-05
+                },
+                {
+                  "t": 2.25,
+                  "sB": 1.7885849685598862,
+                  "oneLoop": -1058.3070285520107,
+                  "vEff": -1056.5184435834508,
+                  "positiveModes": 3821,
+                  "zeroModes": 3,
+                  "negativeModes": 64,
+                  "thetaResidualRel": 8.795740579023656E-05,
+                  "equivarianceResidual": 1.436968645024727E-05
+                },
+                {
+                  "t": 2.4375,
+                  "sB": 2.099647278085116,
+                  "oneLoop": -1034.44063413066,
+                  "vEff": -1032.340986852575,
+                  "positiveModes": 3823,
+                  "zeroModes": 3,
+                  "negativeModes": 62,
+                  "thetaResidualRel": 0.0001123476226942982,
+                  "equivarianceResidual": 1.9430056411880618E-05
+                },
+                {
+                  "t": 2.625,
+                  "sB": 2.4357753762746306,
+                  "oneLoop": -1002.0109581086492,
+                  "vEff": -999.5751827323746,
+                  "positiveModes": 3823,
+                  "zeroModes": 3,
+                  "negativeModes": 62,
+                  "thetaResidualRel": 0.00017905885477582624,
+                  "equivarianceResidual": 2.409680488653648E-05
+                },
+                {
+                  "t": 2.8125,
+                  "sB": 2.797010987105928,
+                  "oneLoop": -972.4062678345099,
+                  "vEff": -969.6092568474039,
+                  "positiveModes": 3823,
+                  "zeroModes": 3,
+                  "negativeModes": 62,
+                  "thetaResidualRel": 7.248129727369791E-05,
+                  "equivarianceResidual": 2.1931724360226942E-05
+                },
+                {
+                  "t": 3,
+                  "sB": 3.183398925221312,
+                  "oneLoop": -944.7550971856281,
+                  "vEff": -941.5716982604067,
+                  "positiveModes": 3823,
+                  "zeroModes": 3,
+                  "negativeModes": 62,
+                  "thetaResidualRel": 0.00023024306977602495,
+                  "equivarianceResidual": 3.227611095329946E-05
+                }
+              ]
+            },
+            {
+              "seed": 1,
+              "points": [
+                {
+                  "t": 0.1875,
+                  "sB": 0.016315475121479583,
+                  "oneLoop": -1996.2405749746558,
+                  "vEff": -1996.2242594995344,
+                  "positiveModes": 3825,
+                  "zeroModes": 3,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 2.0637659327631476E-06,
+                  "equivarianceResidual": 2.5893235758533437E-07
+                },
+                {
+                  "t": 0.375,
+                  "sB": 0.0652650222099411,
+                  "oneLoop": -1716.4714889359334,
+                  "vEff": -1716.4062239137234,
+                  "positiveModes": 3825,
+                  "zeroModes": 3,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 6.460603200624945E-06,
+                  "equivarianceResidual": 9.347360697142768E-07
+                },
+                {
+                  "t": 0.5625,
+                  "sB": 0.1468580064374537,
+                  "oneLoop": -1552.3167054917449,
+                  "vEff": -1552.1698474853074,
+                  "positiveModes": 3825,
+                  "zeroModes": 3,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 1.132575225706009E-05,
+                  "equivarianceResidual": 1.909188400232627E-06
+                },
+                {
+                  "t": 0.75,
+                  "sB": 0.26111003642412794,
+                  "oneLoop": -1435.4681220879327,
+                  "vEff": -1435.2070120515086,
+                  "positiveModes": 3825,
+                  "zeroModes": 3,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 1.5301290814332036E-05,
+                  "equivarianceResidual": 2.5336894891936875E-06
+                },
+                {
+                  "t": 0.9375,
+                  "sB": 0.40804296423812525,
+                  "oneLoop": -1344.5166699728059,
+                  "vEff": -1344.1086270085677,
+                  "positiveModes": 3825,
+                  "zeroModes": 3,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 1.3204988829038222E-05,
+                  "equivarianceResidual": 3.343323916711481E-06
+                },
+                {
+                  "t": 1.125,
+                  "sB": 0.5876848853956391,
+                  "oneLoop": -1269.92508942785,
+                  "vEff": -1269.3374045424544,
+                  "positiveModes": 3825,
+                  "zeroModes": 3,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 4.7106650994807986E-05,
+                  "equivarianceResidual": 7.599751046644501E-06
+                },
+                {
+                  "t": 1.3125,
+                  "sB": 0.8000701388609334,
+                  "oneLoop": -1206.6052360077963,
+                  "vEff": -1205.8051658689353,
+                  "positiveModes": 3825,
+                  "zeroModes": 3,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 6.773168693804987E-05,
+                  "equivarianceResidual": 9.553640116275778E-06
+                },
+                {
+                  "t": 1.5,
+                  "sB": 1.0452393070462704,
+                  "oneLoop": -1151.5194889904199,
+                  "vEff": -1150.4742496833735,
+                  "positiveModes": 3825,
+                  "zeroModes": 3,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0.00013134234011465628,
+                  "equivarianceResidual": 1.6715112534837906E-05
+                },
+                {
+                  "t": 1.6875,
+                  "sB": 1.3232392158120327,
+                  "oneLoop": -1111.4063686120794,
+                  "vEff": -1110.0831293962674,
+                  "positiveModes": 3827,
+                  "zeroModes": 3,
+                  "negativeModes": 58,
+                  "thetaResidualRel": 0.0001524326756031387,
+                  "equivarianceResidual": 1.986181923626657E-05
+                },
+                {
+                  "t": 1.875,
+                  "sB": 1.6341229344666144,
+                  "oneLoop": -1066.5603797443503,
+                  "vEff": -1064.9262568098836,
+                  "positiveModes": 3827,
+                  "zeroModes": 3,
+                  "negativeModes": 58,
+                  "thetaResidualRel": 0.00029005673202626227,
+                  "equivarianceResidual": 3.4268914914333155E-05
+                },
+                {
+                  "t": 2.0625,
+                  "sB": 1.977949775766335,
+                  "oneLoop": -1026.1183342426027,
+                  "vEff": -1024.1403844668364,
+                  "positiveModes": 3827,
+                  "zeroModes": 3,
+                  "negativeModes": 58,
+                  "thetaResidualRel": 0.00013337286760345166,
+                  "equivarianceResidual": 2.4298169428562255E-05
+                },
+                {
+                  "t": 2.25,
+                  "sB": 2.354785295915827,
+                  "oneLoop": -989.1063393972668,
+                  "vEff": -986.751554101351,
+                  "positiveModes": 3827,
+                  "zeroModes": 3,
+                  "negativeModes": 58,
+                  "thetaResidualRel": 6.418326339305214E-05,
+                  "equivarianceResidual": 2.0980572699918012E-05
+                },
+                {
+                  "t": 2.4375,
+                  "sB": 2.7647012945674216,
+                  "oneLoop": -954.9174468654334,
+                  "vEff": -952.1527455708659,
+                  "positiveModes": 3827,
+                  "zeroModes": 3,
+                  "negativeModes": 58,
+                  "thetaResidualRel": 0.00038380586924761375,
+                  "equivarianceResidual": 5.048303085960682E-05
+                },
+                {
+                  "t": 2.625,
+                  "sB": 3.2077758148218396,
+                  "oneLoop": -923.1053179806622,
+                  "vEff": -919.8975421658404,
+                  "positiveModes": 3827,
+                  "zeroModes": 3,
+                  "negativeModes": 58,
+                  "thetaResidualRel": 0.00032767972676564196,
+                  "equivarianceResidual": 4.7164352239136355E-05
+                },
+                {
+                  "t": 2.8125,
+                  "sB": 3.6840931432277673,
+                  "oneLoop": -893.3242835666751,
+                  "vEff": -889.6401904234474,
+                  "positiveModes": 3827,
+                  "zeroModes": 3,
+                  "negativeModes": 58,
+                  "thetaResidualRel": 0.00037218222783703855,
+                  "equivarianceResidual": 5.0001295457269434E-05
+                },
+                {
+                  "t": 3,
+                  "sB": 4.19374380978153,
+                  "oneLoop": -865.2990424224778,
+                  "vEff": -861.1052986126963,
+                  "positiveModes": 3827,
+                  "zeroModes": 3,
+                  "negativeModes": 58,
+                  "thetaResidualRel": 0.00023161040997757369,
+                  "equivarianceResidual": 4.195365101857632E-05
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "member": "asd2-id0/c0.5",
+          "isControl": false,
+          "seeds": [
+            {
+              "seed": 0,
+              "points": [
+                {
+                  "t": 0.1875,
+                  "sB": 0.012402302866190337,
+                  "oneLoop": -2036.3977622277744,
+                  "vEff": -2036.3853599249082,
+                  "positiveModes": 3817,
+                  "zeroModes": 3,
+                  "negativeModes": 68,
+                  "thetaResidualRel": 4.316324817587706E-07,
+                  "equivarianceResidual": 8.14000425125181E-08
+                },
+                {
+                  "t": 0.375,
+                  "sB": 0.04961062635874976,
+                  "oneLoop": -1762.112215240952,
+                  "vEff": -1762.0626046145933,
+                  "positiveModes": 3817,
+                  "zeroModes": 3,
+                  "negativeModes": 68,
+                  "thetaResidualRel": 3.4142173945842508E-06,
+                  "equivarianceResidual": 4.876857936812199E-07
+                },
+                {
+                  "t": 0.5625,
+                  "sB": 0.11162921515964319,
+                  "oneLoop": -1601.1807919958028,
+                  "vEff": -1601.0691627806432,
+                  "positiveModes": 3817,
+                  "zeroModes": 3,
+                  "negativeModes": 68,
+                  "thetaResidualRel": 4.536074886154062E-06,
+                  "equivarianceResidual": 7.319364565421007E-07
+                },
+                {
+                  "t": 0.75,
+                  "sB": 0.19846514373882038,
+                  "oneLoop": -1486.6505015019588,
+                  "vEff": -1486.45203635822,
+                  "positiveModes": 3817,
+                  "zeroModes": 3,
+                  "negativeModes": 68,
+                  "thetaResidualRel": 5.508994976219584E-06,
+                  "equivarianceResidual": 1.5910489753672773E-06
+                },
+                {
+                  "t": 0.9375,
+                  "sB": 0.31012831635418325,
+                  "oneLoop": -1397.5357491709779,
+                  "vEff": -1397.2256208546237,
+                  "positiveModes": 3817,
+                  "zeroModes": 3,
+                  "negativeModes": 68,
+                  "thetaResidualRel": 1.3402459260028041E-05,
+                  "equivarianceResidual": 2.2781023158970056E-06
+                },
+                {
+                  "t": 1.125,
+                  "sB": 0.4466314670516344,
+                  "oneLoop": -1324.4873431537644,
+                  "vEff": -1324.0407116867127,
+                  "positiveModes": 3817,
+                  "zeroModes": 3,
+                  "negativeModes": 68,
+                  "thetaResidualRel": 1.3384522064713882E-05,
+                  "equivarianceResidual": 3.536919118149368E-06
+                },
+                {
+                  "t": 1.3125,
+                  "sB": 0.6079901596650575,
+                  "oneLoop": -1271.7642166787311,
+                  "vEff": -1271.1562265190662,
+                  "positiveModes": 3819,
+                  "zeroModes": 3,
+                  "negativeModes": 66,
+                  "thetaResidualRel": 2.122722944717467E-05,
+                  "equivarianceResidual": 4.13399842604337E-06
+                },
+                {
+                  "t": 1.5,
+                  "sB": 0.7942227878162841,
+                  "oneLoop": -1216.7941199746754,
+                  "vEff": -1215.999897186859,
+                  "positiveModes": 3819,
+                  "zeroModes": 3,
+                  "negativeModes": 66,
+                  "thetaResidualRel": 0.00012128405898335204,
+                  "equivarianceResidual": 1.4532412532866355E-05
+                },
+                {
+                  "t": 1.6875,
+                  "sB": 1.00535057491513,
+                  "oneLoop": -1168.5109945225724,
+                  "vEff": -1167.5056439476573,
+                  "positiveModes": 3819,
+                  "zeroModes": 3,
+                  "negativeModes": 66,
+                  "thetaResidualRel": 4.860078337321732E-05,
+                  "equivarianceResidual": 7.695007485361703E-06
+                },
+                {
+                  "t": 1.875,
+                  "sB": 1.2413975741594092,
+                  "oneLoop": -1125.2669589758618,
+                  "vEff": -1124.0255614017024,
+                  "positiveModes": 3819,
+                  "zeroModes": 3,
+                  "negativeModes": 66,
+                  "thetaResidualRel": 2.7162375102148065E-05,
+                  "equivarianceResidual": 7.3705191858030216E-06
+                },
+                {
+                  "t": 2.0625,
+                  "sB": 1.5023906685349921,
+                  "oneLoop": -1086.0441400177945,
+                  "vEff": -1084.5417493492594,
+                  "positiveModes": 3819,
+                  "zeroModes": 3,
+                  "negativeModes": 66,
+                  "thetaResidualRel": 0.0001104305186636601,
+                  "equivarianceResidual": 1.4202401854805444E-05
+                },
+                {
+                  "t": 2.25,
+                  "sB": 1.788359570815409,
+                  "oneLoop": -1061.7092332875502,
+                  "vEff": -1059.9208737167348,
+                  "positiveModes": 3821,
+                  "zeroModes": 3,
+                  "negativeModes": 64,
+                  "thetaResidualRel": 0.00014709256935345133,
+                  "equivarianceResidual": 2.1111048698674E-05
+                },
+                {
+                  "t": 2.4375,
+                  "sB": 2.099336823562661,
+                  "oneLoop": -1025.3070910572114,
+                  "vEff": -1023.2077542336488,
+                  "positiveModes": 3821,
+                  "zeroModes": 3,
+                  "negativeModes": 64,
+                  "thetaResidualRel": 0.00012695772496298127,
+                  "equivarianceResidual": 1.743203782135398E-05
+                },
+                {
+                  "t": 2.625,
+                  "sB": 2.435357799126233,
+                  "oneLoop": -993.7372317980904,
+                  "vEff": -991.3018739989642,
+                  "positiveModes": 3821,
+                  "zeroModes": 3,
+                  "negativeModes": 64,
+                  "thetaResidualRel": 0.00011280628968957794,
+                  "equivarianceResidual": 2.0981531277861065E-05
+                },
+                {
+                  "t": 2.8125,
+                  "sB": 2.7964606996440198,
+                  "oneLoop": -964.4523063890254,
+                  "vEff": -961.6558456893813,
+                  "positiveModes": 3821,
+                  "zeroModes": 3,
+                  "negativeModes": 64,
+                  "thetaResidualRel": 0.0002708565967010697,
+                  "equivarianceResidual": 3.543405092190531E-05
+                },
+                {
+                  "t": 3,
+                  "sB": 3.1826865570413436,
+                  "oneLoop": -937.027058641369,
+                  "vEff": -933.8443720843276,
+                  "positiveModes": 3821,
+                  "zeroModes": 3,
+                  "negativeModes": 64,
+                  "thetaResidualRel": 0.000437224341030455,
+                  "equivarianceResidual": 5.258910036471843E-05
+                }
+              ]
+            },
+            {
+              "seed": 1,
+              "points": [
+                {
+                  "t": 0.1875,
+                  "sB": 0.01631548122771114,
+                  "oneLoop": -1986.8664927831965,
+                  "vEff": -1986.8501773019686,
+                  "positiveModes": 3823,
+                  "zeroModes": 3,
+                  "negativeModes": 62,
+                  "thetaResidualRel": 1.5584125017906236E-06,
+                  "equivarianceResidual": 2.6689590998980164E-07
+                },
+                {
+                  "t": 0.375,
+                  "sB": 0.0652651199096473,
+                  "oneLoop": -1708.397430788246,
+                  "vEff": -1708.3321656683365,
+                  "positiveModes": 3823,
+                  "zeroModes": 3,
+                  "negativeModes": 62,
+                  "thetaResidualRel": 5.267635783582371E-06,
+                  "equivarianceResidual": 9.31617848368458E-07
+                },
+                {
+                  "t": 0.5625,
+                  "sB": 0.14685850104221249,
+                  "oneLoop": -1544.9682971066813,
+                  "vEff": -1544.821438605639,
+                  "positiveModes": 3823,
+                  "zeroModes": 3,
+                  "negativeModes": 62,
+                  "thetaResidualRel": 1.880822471975783E-05,
+                  "equivarianceResidual": 2.3926805501677442E-06
+                },
+                {
+                  "t": 0.75,
+                  "sB": 0.2611115996194061,
+                  "oneLoop": -1428.6096125166368,
+                  "vEff": -1428.3485009170174,
+                  "positiveModes": 3823,
+                  "zeroModes": 3,
+                  "negativeModes": 62,
+                  "thetaResidualRel": 2.0889271067640064E-05,
+                  "equivarianceResidual": 3.4116042713236284E-06
+                },
+                {
+                  "t": 0.9375,
+                  "sB": 0.408046780632857,
+                  "oneLoop": -1338.018351536093,
+                  "vEff": -1337.61030475546,
+                  "positiveModes": 3823,
+                  "zeroModes": 3,
+                  "negativeModes": 62,
+                  "thetaResidualRel": 3.433076865962428E-05,
+                  "equivarianceResidual": 5.519328511778182E-06
+                },
+                {
+                  "t": 1.125,
+                  "sB": 0.587692799071758,
+                  "oneLoop": -1263.7044974453706,
+                  "vEff": -1263.116804646299,
+                  "positiveModes": 3823,
+                  "zeroModes": 3,
+                  "negativeModes": 62,
+                  "thetaResidualRel": 3.448461578506345E-05,
+                  "equivarianceResidual": 7.379556520778075E-06
+                },
+                {
+                  "t": 1.3125,
+                  "sB": 0.8000847999229209,
+                  "oneLoop": -1200.6051283207855,
+                  "vEff": -1199.8050435208627,
+                  "positiveModes": 3823,
+                  "zeroModes": 3,
+                  "negativeModes": 62,
+                  "thetaResidualRel": 6.244320839464621E-05,
+                  "equivarianceResidual": 9.892670546772275E-06
+                },
+                {
+                  "t": 1.5,
+                  "sB": 1.0452643181707848,
+                  "oneLoop": -1145.697698754708,
+                  "vEff": -1144.652434436537,
+                  "positiveModes": 3823,
+                  "zeroModes": 3,
+                  "negativeModes": 62,
+                  "thetaResidualRel": 0.00017480808818368435,
+                  "equivarianceResidual": 2.137419412106853E-05
+                },
+                {
+                  "t": 1.6875,
+                  "sB": 1.3232792787973922,
+                  "oneLoop": -1107.1972247385834,
+                  "vEff": -1105.873945459786,
+                  "positiveModes": 3825,
+                  "zeroModes": 3,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0.00013848038002184097,
+                  "equivarianceResidual": 1.892255088089024E-05
+                },
+                {
+                  "t": 1.875,
+                  "sB": 1.6341839967823095,
+                  "oneLoop": -1061.4600787052193,
+                  "vEff": -1059.825894708437,
+                  "positiveModes": 3825,
+                  "zeroModes": 3,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 8.143893805507767E-05,
+                  "equivarianceResidual": 1.4365535548251109E-05
+                },
+                {
+                  "t": 2.0625,
+                  "sB": 1.9780391771027412,
+                  "oneLoop": -1020.9623865967812,
+                  "vEff": -1018.9843474196786,
+                  "positiveModes": 3825,
+                  "zeroModes": 3,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0.00024083595361731693,
+                  "equivarianceResidual": 4.02731836786794E-05
+                },
+                {
+                  "t": 2.25,
+                  "sB": 2.354911914733641,
+                  "oneLoop": -983.9684133036219,
+                  "vEff": -981.6135013888883,
+                  "positiveModes": 3825,
+                  "zeroModes": 3,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 6.636093325138617E-05,
+                  "equivarianceResidual": 3.5449102761165454E-05
+                },
+                {
+                  "t": 2.4375,
+                  "sB": 2.764875694647416,
+                  "oneLoop": -949.8118468506284,
+                  "vEff": -947.0469711559809,
+                  "positiveModes": 3825,
+                  "zeroModes": 3,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0.0001874602362395393,
+                  "equivarianceResidual": 3.178851866619025E-05
+                },
+                {
+                  "t": 2.625,
+                  "sB": 3.208010391814081,
+                  "oneLoop": -918.0322914270049,
+                  "vEff": -914.8242810351908,
+                  "positiveModes": 3825,
+                  "zeroModes": 3,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0.0001588376485695523,
+                  "equivarianceResidual": 4.747074312030454E-05
+                },
+                {
+                  "t": 2.8125,
+                  "sB": 3.6844022712010824,
+                  "oneLoop": -888.2796445013709,
+                  "vEff": -884.5952422301698,
+                  "positiveModes": 3825,
+                  "zeroModes": 3,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0.0003872428592454547,
+                  "equivarianceResidual": 5.3022866715584686E-05
+                },
+                {
+                  "t": 3,
+                  "sB": 4.194143987773926,
+                  "oneLoop": -860.2771258234396,
+                  "vEff": -856.0829818356657,
+                  "positiveModes": 3825,
+                  "zeroModes": 3,
+                  "negativeModes": 60,
+                  "thetaResidualRel": 0.0002632101691294217,
+                  "equivarianceResidual": 4.387258044758648E-05
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "torusN": 4,
+      "vertexCount": 256,
+      "edgeCount": 3840,
+      "nOmega": 11520,
+      "nTheta": 768,
+      "jointDof": 12288,
+      "covarianceMax": 1.4037391021161155E-14,
+      "blockReconstructMax": 2.85531580491924E-11,
+      "members": [
+        {
+          "member": "identity",
+          "isControl": true,
+          "seeds": [
+            {
+              "seed": 0,
+              "points": [
+                {
+                  "t": 0.1875,
+                  "sB": 0.12944358252098748,
+                  "oneLoop": 9559.02548528484,
+                  "vEff": 9559.15492886736,
+                  "positiveModes": 11300,
+                  "zeroModes": 768,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 0.375,
+                  "sB": 0.5177755387901734,
+                  "oneLoop": 9869.644977222117,
+                  "vEff": 9870.162752760907,
+                  "positiveModes": 11300,
+                  "zeroModes": 768,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 0.5625,
+                  "sB": 1.164999494926111,
+                  "oneLoop": 10051.68770960127,
+                  "vEff": 10052.852709096196,
+                  "positiveModes": 11300,
+                  "zeroModes": 768,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 0.75,
+                  "sB": 2.0711214944600327,
+                  "oneLoop": 10181.098664281208,
+                  "vEff": 10183.169785775668,
+                  "positiveModes": 11300,
+                  "zeroModes": 768,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 0.9375,
+                  "sB": 3.2361499983352617,
+                  "oneLoop": 10281.678246985699,
+                  "vEff": 10284.914396984033,
+                  "positiveModes": 11300,
+                  "zeroModes": 768,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 1.125,
+                  "sB": 4.660095884907546,
+                  "oneLoop": 10364.027847852096,
+                  "vEff": 10368.687943737003,
+                  "positiveModes": 11300,
+                  "zeroModes": 768,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 1.3125,
+                  "sB": 6.342972449944984,
+                  "oneLoop": 10433.802615548933,
+                  "vEff": 10440.145587998879,
+                  "positiveModes": 11300,
+                  "zeroModes": 768,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 1.5,
+                  "sB": 8.284795406629632,
+                  "oneLoop": 10494.378205415225,
+                  "vEff": 10502.663000821854,
+                  "positiveModes": 11300,
+                  "zeroModes": 768,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 1.6875,
+                  "sB": 10.485582885552635,
+                  "oneLoop": 10547.93201475589,
+                  "vEff": 10558.417597641443,
+                  "positiveModes": 11300,
+                  "zeroModes": 768,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 1.875,
+                  "sB": 12.945355434720579,
+                  "oneLoop": 10595.950780006342,
+                  "vEff": 10608.896135441062,
+                  "positiveModes": 11300,
+                  "zeroModes": 768,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 2.0625,
+                  "sB": 15.664136019551984,
+                  "oneLoop": 10639.494951027013,
+                  "vEff": 10655.159087046564,
+                  "positiveModes": 11300,
+                  "zeroModes": 768,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 2.25,
+                  "sB": 18.641950022875616,
+                  "oneLoop": 10679.347544121953,
+                  "vEff": 10697.989494144827,
+                  "positiveModes": 11300,
+                  "zeroModes": 768,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 2.4375,
+                  "sB": 21.878825244936138,
+                  "oneLoop": 10716.103206094942,
+                  "vEff": 10737.982031339878,
+                  "positiveModes": 11300,
+                  "zeroModes": 768,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 2.625,
+                  "sB": 25.3747919033873,
+                  "oneLoop": 10750.224179819454,
+                  "vEff": 10775.59897172284,
+                  "positiveModes": 11300,
+                  "zeroModes": 768,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 2.8125,
+                  "sB": 29.1298826332974,
+                  "oneLoop": 10782.076913281016,
+                  "vEff": 10811.206795914313,
+                  "positiveModes": 11300,
+                  "zeroModes": 768,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 3,
+                  "sB": 33.14413248714799,
+                  "oneLoop": 10811.956830170284,
+                  "vEff": 10845.100962657432,
+                  "positiveModes": 11300,
+                  "zeroModes": 768,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                }
+              ]
+            },
+            {
+              "seed": 1,
+              "points": [
+                {
+                  "t": 0.1875,
+                  "sB": 0.1710582692963139,
+                  "oneLoop": 9621.364371649533,
+                  "vEff": 9621.53542991883,
+                  "positiveModes": 11300,
+                  "zeroModes": 768,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 0.375,
+                  "sB": 0.6842356251240201,
+                  "oneLoop": 9932.095134970079,
+                  "vEff": 9932.779370595203,
+                  "positiveModes": 11300,
+                  "zeroModes": 768,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 0.5625,
+                  "sB": 1.5395397112994529,
+                  "oneLoop": 10114.257142917279,
+                  "vEff": 10115.796682628577,
+                  "positiveModes": 11300,
+                  "zeroModes": 768,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 0.75,
+                  "sB": 2.736983267515979,
+                  "oneLoop": 10243.795453301453,
+                  "vEff": 10246.532436568968,
+                  "positiveModes": 11300,
+                  "zeroModes": 768,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 0.9375,
+                  "sB": 4.27658412934485,
+                  "oneLoop": 10344.510540382598,
+                  "vEff": 10348.787124511942,
+                  "positiveModes": 11300,
+                  "zeroModes": 768,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 1.125,
+                  "sB": 6.1583652282348105,
+                  "oneLoop": 10427.003859204335,
+                  "vEff": 10433.16222443257,
+                  "positiveModes": 11300,
+                  "zeroModes": 768,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 1.3125,
+                  "sB": 8.382354591512698,
+                  "oneLoop": 10496.930617108916,
+                  "vEff": 10505.312971700429,
+                  "positiveModes": 11300,
+                  "zeroModes": 768,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 1.5,
+                  "sB": 10.948585342379513,
+                  "oneLoop": 10557.666523348316,
+                  "vEff": 10568.615108690696,
+                  "positiveModes": 11300,
+                  "zeroModes": 768,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 1.6875,
+                  "sB": 13.857095699918709,
+                  "oneLoop": 10611.389024590775,
+                  "vEff": 10625.246120290694,
+                  "positiveModes": 11300,
+                  "zeroModes": 768,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 1.875,
+                  "sB": 17.107928979088985,
+                  "oneLoop": 10659.584902858933,
+                  "vEff": 10676.692831838021,
+                  "positiveModes": 11300,
+                  "zeroModes": 768,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 2.0625,
+                  "sB": 20.701133590725707,
+                  "oneLoop": 10703.31465029044,
+                  "vEff": 10724.015783881166,
+                  "positiveModes": 11300,
+                  "zeroModes": 768,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 2.25,
+                  "sB": 24.636763041540803,
+                  "oneLoop": 10743.361320997761,
+                  "vEff": 10767.998084039302,
+                  "positiveModes": 11300,
+                  "zeroModes": 768,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 2.4375,
+                  "sB": 28.914875934127444,
+                  "oneLoop": 10780.319597724641,
+                  "vEff": 10809.23447365877,
+                  "positiveModes": 11300,
+                  "zeroModes": 768,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 2.625,
+                  "sB": 33.53553596695205,
+                  "oneLoop": 10814.651755167775,
+                  "vEff": 10848.187291134727,
+                  "positiveModes": 11300,
+                  "zeroModes": 768,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 2.8125,
+                  "sB": 38.49881193436503,
+                  "oneLoop": 10846.724271129311,
+                  "vEff": 10885.223083063676,
+                  "positiveModes": 11300,
+                  "zeroModes": 768,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                },
+                {
+                  "t": 3,
+                  "sB": 43.80477772658353,
+                  "oneLoop": 10876.832596533706,
+                  "vEff": 10920.63737426029,
+                  "positiveModes": 11300,
+                  "zeroModes": 768,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 0,
+                  "equivarianceResidual": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "member": "sd2-id0/c0.5",
+          "isControl": false,
+          "seeds": [
+            {
+              "seed": 0,
+              "points": [
+                {
+                  "t": 0.1875,
+                  "sB": 0.012402225704430392,
+                  "oneLoop": -6942.534533990852,
+                  "vEff": -6942.522131765148,
+                  "positiveModes": 12055,
+                  "zeroModes": 3,
+                  "negativeModes": 230,
+                  "thetaResidualRel": 8.865886847748193E-07,
+                  "equivarianceResidual": 7.043526783635169E-08
+                },
+                {
+                  "t": 0.375,
+                  "sB": 0.04960939177058058,
+                  "oneLoop": -6106.867808970813,
+                  "vEff": -6106.818199579042,
+                  "positiveModes": 12055,
+                  "zeroModes": 3,
+                  "negativeModes": 230,
+                  "thetaResidualRel": 2.0100650479016687E-06,
+                  "equivarianceResidual": 1.9570090313258832E-07
+                },
+                {
+                  "t": 0.5625,
+                  "sB": 0.11162296505703205,
+                  "oneLoop": -5617.033951973234,
+                  "vEff": -5616.922329008177,
+                  "positiveModes": 12055,
+                  "zeroModes": 3,
+                  "negativeModes": 230,
+                  "thetaResidualRel": 6.275331986062647E-06,
+                  "equivarianceResidual": 5.34428581348442E-07
+                },
+                {
+                  "t": 0.75,
+                  "sB": 0.1984453903281006,
+                  "oneLoop": -5268.795724546778,
+                  "vEff": -5268.59727915645,
+                  "positiveModes": 12055,
+                  "zeroModes": 3,
+                  "negativeModes": 230,
+                  "thetaResidualRel": 1.3298583150391437E-05,
+                  "equivarianceResidual": 1.0521999795480423E-06
+                },
+                {
+                  "t": 0.9375,
+                  "sB": 0.31008009025377437,
+                  "oneLoop": -4998.14265715991,
+                  "vEff": -4997.8325770696565,
+                  "positiveModes": 12055,
+                  "zeroModes": 3,
+                  "negativeModes": 230,
+                  "thetaResidualRel": 2.057094749949064E-05,
+                  "equivarianceResidual": 1.7650874075966115E-06
+                },
+                {
+                  "t": 1.125,
+                  "sB": 0.4465314654098471,
+                  "oneLoop": -4776.560416946025,
+                  "vEff": -4776.113885480615,
+                  "positiveModes": 12055,
+                  "zeroModes": 3,
+                  "negativeModes": 230,
+                  "thetaResidualRel": 4.370433077623047E-05,
+                  "equivarianceResidual": 3.2041899501068654E-06
+                },
+                {
+                  "t": 1.3125,
+                  "sB": 0.6078048942777379,
+                  "oneLoop": -4588.837166029512,
+                  "vEff": -4588.229361135234,
+                  "positiveModes": 12055,
+                  "zeroModes": 3,
+                  "negativeModes": 230,
+                  "thetaResidualRel": 8.504199149627792E-05,
+                  "equivarianceResidual": 5.5978548440776216E-06
+                },
+                {
+                  "t": 1.5,
+                  "sB": 0.7939067332446949,
+                  "oneLoop": -4425.891840398837,
+                  "vEff": -4425.097933665593,
+                  "positiveModes": 12055,
+                  "zeroModes": 3,
+                  "negativeModes": 230,
+                  "thetaResidualRel": 6.270161943007536E-05,
+                  "equivarianceResidual": 4.322583329949456E-06
+                },
+                {
+                  "t": 1.6875,
+                  "sB": 1.004844316603587,
+                  "oneLoop": -4281.866290007184,
+                  "vEff": -4280.861445690581,
+                  "positiveModes": 12055,
+                  "zeroModes": 3,
+                  "negativeModes": 230,
+                  "thetaResidualRel": 0.0001208722196504222,
+                  "equivarianceResidual": 8.189223873117585E-06
+                },
+                {
+                  "t": 1.875,
+                  "sB": 1.2406259565530202,
+                  "oneLoop": -4152.760108367238,
+                  "vEff": -4151.519482410685,
+                  "positiveModes": 12055,
+                  "zeroModes": 3,
+                  "negativeModes": 230,
+                  "thetaResidualRel": 5.206777985432225E-05,
+                  "equivarianceResidual": 5.284606992644955E-06
+                },
+                {
+                  "t": 2.0625,
+                  "sB": 1.5012609431973913,
+                  "oneLoop": -4046.340452692607,
+                  "vEff": -4044.8391917494096,
+                  "positiveModes": 12057,
+                  "zeroModes": 3,
+                  "negativeModes": 228,
+                  "thetaResidualRel": 0.00012208917826093545,
+                  "equivarianceResidual": 9.45745267351711E-06
+                },
+                {
+                  "t": 2.25,
+                  "sB": 1.7867595445467412,
+                  "oneLoop": -3937.9520645548123,
+                  "vEff": -3936.1653050102655,
+                  "positiveModes": 12057,
+                  "zeroModes": 3,
+                  "negativeModes": 228,
+                  "thetaResidualRel": 4.712494030537645E-05,
+                  "equivarianceResidual": 6.972715953934045E-06
+                },
+                {
+                  "t": 2.4375,
+                  "sB": 2.097133006517049,
+                  "oneLoop": -3838.6227221648937,
+                  "vEff": -3836.5255891583765,
+                  "positiveModes": 12057,
+                  "zeroModes": 3,
+                  "negativeModes": 228,
+                  "thetaResidualRel": 0.00010930791707147822,
+                  "equivarianceResidual": 1.1260204576898804E-05
+                },
+                {
+                  "t": 2.625,
+                  "sB": 2.4323935529297045,
+                  "oneLoop": -3746.6010134790677,
+                  "vEff": -3744.168619926138,
+                  "positiveModes": 12057,
+                  "zeroModes": 3,
+                  "negativeModes": 228,
+                  "thetaResidualRel": 9.0785631356231E-05,
+                  "equivarianceResidual": 8.86046862284235E-06
+                },
+                {
+                  "t": 2.8125,
+                  "sB": 2.7925543855114623,
+                  "oneLoop": -3660.800811590401,
+                  "vEff": -3658.0082572048896,
+                  "positiveModes": 12057,
+                  "zeroModes": 3,
+                  "negativeModes": 228,
+                  "thetaResidualRel": 0.00011328873398065275,
+                  "equivarianceResidual": 1.0612576359285806E-05
+                },
+                {
+                  "t": 3,
+                  "sB": 3.1776296838961167,
+                  "oneLoop": -3580.388865339612,
+                  "vEff": -3577.211235655716,
+                  "positiveModes": 12057,
+                  "zeroModes": 3,
+                  "negativeModes": 228,
+                  "thetaResidualRel": 0.00013911951742205043,
+                  "equivarianceResidual": 1.4199959039660425E-05
+                }
+              ]
+            },
+            {
+              "seed": 1,
+              "points": [
+                {
+                  "t": 0.1875,
+                  "sB": 0.01631529728889213,
+                  "oneLoop": -6736.167208268037,
+                  "vEff": -6736.150892970748,
+                  "positiveModes": 12065,
+                  "zeroModes": 3,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 1.7962863653384998E-06,
+                  "equivarianceResidual": 1.2435336597078685E-07
+                },
+                {
+                  "t": 0.375,
+                  "sB": 0.0652621768885659,
+                  "oneLoop": -5893.64293346935,
+                  "vEff": -5893.577671292462,
+                  "positiveModes": 12065,
+                  "zeroModes": 3,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 1.6414543399438034E-06,
+                  "equivarianceResidual": 2.9358916399591615E-07
+                },
+                {
+                  "t": 0.5625,
+                  "sB": 0.14684360199799265,
+                  "oneLoop": -5399.792572513372,
+                  "vEff": -5399.645728911374,
+                  "positiveModes": 12065,
+                  "zeroModes": 3,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 1.5754792531111655E-05,
+                  "equivarianceResidual": 1.2759066215325217E-06
+                },
+                {
+                  "t": 0.75,
+                  "sB": 0.26106451128212227,
+                  "oneLoop": -5048.680868737367,
+                  "vEff": -5048.419804226085,
+                  "positiveModes": 12065,
+                  "zeroModes": 3,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 2.8288470376460137E-05,
+                  "equivarianceResidual": 2.150947484239756E-06
+                },
+                {
+                  "t": 0.9375,
+                  "sB": 0.4079318188719319,
+                  "oneLoop": -4775.765763748792,
+                  "vEff": -4775.3578319299195,
+                  "positiveModes": 12065,
+                  "zeroModes": 3,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 4.039512741236067E-05,
+                  "equivarianceResidual": 2.9400035293785884E-06
+                },
+                {
+                  "t": 1.125,
+                  "sB": 0.5874544143642374,
+                  "oneLoop": -4552.29644230891,
+                  "vEff": -4551.708987894545,
+                  "positiveModes": 12065,
+                  "zeroModes": 3,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 3.2247797683905344E-05,
+                  "equivarianceResidual": 3.0269066953072972E-06
+                },
+                {
+                  "t": 1.3125,
+                  "sB": 0.7996431628220843,
+                  "oneLoop": -4362.935101257018,
+                  "vEff": -4362.135458094196,
+                  "positiveModes": 12065,
+                  "zeroModes": 3,
+                  "negativeModes": 220,
+                  "thetaResidualRel": 8.372561427677841E-05,
+                  "equivarianceResidual": 7.751765374282818E-06
+                },
+                {
+                  "t": 1.5,
+                  "sB": 1.04451090477437,
+                  "oneLoop": -4211.333991873293,
+                  "vEff": -4210.289480968519,
+                  "positiveModes": 12067,
+                  "zeroModes": 3,
+                  "negativeModes": 218,
+                  "thetaResidualRel": 7.516843488895529E-05,
+                  "equivarianceResidual": 7.1058114440913764E-06
+                },
+                {
+                  "t": 1.6875,
+                  "sB": 1.322072456215782,
+                  "oneLoop": -4062.724135904927,
+                  "vEff": -4061.4020634487115,
+                  "positiveModes": 12067,
+                  "zeroModes": 3,
+                  "negativeModes": 218,
+                  "thetaResidualRel": 9.29983949001717E-05,
+                  "equivarianceResidual": 9.151885846474387E-06
+                },
+                {
+                  "t": 1.875,
+                  "sB": 1.6323446086071682,
+                  "oneLoop": -3931.6026351830105,
+                  "vEff": -3929.9702905744034,
+                  "positiveModes": 12067,
+                  "zeroModes": 3,
+                  "negativeModes": 218,
+                  "thetaResidualRel": 0.00010679794634947929,
+                  "equivarianceResidual": 9.955400741204198E-06
+                },
+                {
+                  "t": 2.0625,
+                  "sB": 1.975346128875945,
+                  "oneLoop": -3812.899583926789,
+                  "vEff": -3810.924237797913,
+                  "positiveModes": 12067,
+                  "zeroModes": 3,
+                  "negativeModes": 218,
+                  "thetaResidualRel": 0.00015408674963143484,
+                  "equivarianceResidual": 1.3092956484500804E-05
+                },
+                {
+                  "t": 2.25,
+                  "sB": 2.351097759414178,
+                  "oneLoop": -3704.3295543064382,
+                  "vEff": -3701.978456547024,
+                  "positiveModes": 12067,
+                  "zeroModes": 3,
+                  "negativeModes": 218,
+                  "thetaResidualRel": 0.00017127434064610452,
+                  "equivarianceResidual": 1.4476341721415977E-05
+                },
+                {
+                  "t": 2.4375,
+                  "sB": 2.7596222180809664,
+                  "oneLoop": -3604.2265036745434,
+                  "vEff": -3601.4668814564625,
+                  "positiveModes": 12067,
+                  "zeroModes": 3,
+                  "negativeModes": 218,
+                  "thetaResidualRel": 0.0001292990442988324,
+                  "equivarianceResidual": 2.0193633833242847E-05
+                },
+                {
+                  "t": 2.625,
+                  "sB": 3.200944198201157,
+                  "oneLoop": -3523.301006550096,
+                  "vEff": -3520.100062351895,
+                  "positiveModes": 12069,
+                  "zeroModes": 3,
+                  "negativeModes": 216,
+                  "thetaResidualRel": 0.00032741049628740276,
+                  "equivarianceResidual": 2.6683136343472806E-05
+                },
+                {
+                  "t": 2.8125,
+                  "sB": 3.675090368565494,
+                  "oneLoop": -3433.6948293807955,
+                  "vEff": -3430.01973901223,
+                  "positiveModes": 12069,
+                  "zeroModes": 3,
+                  "negativeModes": 216,
+                  "thetaResidualRel": 0.00043358452015222797,
+                  "equivarianceResidual": 2.9985045197687053E-05
+                },
+                {
+                  "t": 3,
+                  "sB": 4.182089373430797,
+                  "oneLoop": -3351.6093540392485,
+                  "vEff": -3347.427264665818,
+                  "positiveModes": 12069,
+                  "zeroModes": 3,
+                  "negativeModes": 216,
+                  "thetaResidualRel": 0.00025349202321406177,
+                  "equivarianceResidual": 2.4270548091282188E-05
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "member": "asd2-id0/c0.5",
+          "isControl": false,
+          "seeds": [
+            {
+              "seed": 0,
+              "points": [
+                {
+                  "t": 0.1875,
+                  "sB": 0.012402222265132405,
+                  "oneLoop": -6908.56449824862,
+                  "vEff": -6908.552096026355,
+                  "positiveModes": 12050,
+                  "zeroModes": 3,
+                  "negativeModes": 235,
+                  "thetaResidualRel": 5.802229962354369E-07,
+                  "equivarianceResidual": 5.791281091897204E-08
+                },
+                {
+                  "t": 0.375,
+                  "sB": 0.04960933674183371,
+                  "oneLoop": -6076.372808813688,
+                  "vEff": -6076.323199476946,
+                  "positiveModes": 12050,
+                  "zeroModes": 3,
+                  "negativeModes": 235,
+                  "thetaResidualRel": 2.4535211937007787E-06,
+                  "equivarianceResidual": 2.140996468788987E-07
+                },
+                {
+                  "t": 0.5625,
+                  "sB": 0.11162268647399604,
+                  "oneLoop": -5588.574510878585,
+                  "vEff": -5588.462888192111,
+                  "positiveModes": 12050,
+                  "zeroModes": 3,
+                  "negativeModes": 235,
+                  "thetaResidualRel": 7.514985876972655E-06,
+                  "equivarianceResidual": 6.229670721459937E-07
+                },
+                {
+                  "t": 0.75,
+                  "sB": 0.19844450986816203,
+                  "oneLoop": -5241.782293296004,
+                  "vEff": -5241.5838487861365,
+                  "positiveModes": 12050,
+                  "zeroModes": 3,
+                  "negativeModes": 235,
+                  "thetaResidualRel": 1.0490710798452626E-05,
+                  "equivarianceResidual": 1.0578916765011466E-06
+                },
+                {
+                  "t": 0.9375,
+                  "sB": 0.31007794069334815,
+                  "oneLoop": -4972.251895380824,
+                  "vEff": -4971.941817440131,
+                  "positiveModes": 12050,
+                  "zeroModes": 3,
+                  "negativeModes": 235,
+                  "thetaResidualRel": 8.250304096001266E-06,
+                  "equivarianceResidual": 1.6265091585213308E-06
+                },
+                {
+                  "t": 1.125,
+                  "sB": 0.4465270080814096,
+                  "oneLoop": -4751.587477311799,
+                  "vEff": -4751.140950303718,
+                  "positiveModes": 12050,
+                  "zeroModes": 3,
+                  "negativeModes": 235,
+                  "thetaResidualRel": 2.2253695799859236E-05,
+                  "equivarianceResidual": 1.8651765511244434E-06
+                },
+                {
+                  "t": 1.3125,
+                  "sB": 0.6077966365265057,
+                  "oneLoop": -4564.640357449214,
+                  "vEff": -4564.032560812688,
+                  "positiveModes": 12050,
+                  "zeroModes": 3,
+                  "negativeModes": 235,
+                  "thetaResidualRel": 3.4404315177138163E-05,
+                  "equivarianceResidual": 3.126356153111283E-06
+                },
+                {
+                  "t": 1.5,
+                  "sB": 0.7938926458856725,
+                  "oneLoop": -4402.367131605228,
+                  "vEff": -4401.573238959342,
+                  "positiveModes": 12050,
+                  "zeroModes": 3,
+                  "negativeModes": 235,
+                  "thetaResidualRel": 5.733086305704705E-05,
+                  "equivarianceResidual": 4.394402032320889E-06
+                },
+                {
+                  "t": 1.6875,
+                  "sB": 1.0048217513783828,
+                  "oneLoop": -4271.630906062787,
+                  "vEff": -4270.626084311409,
+                  "positiveModes": 12052,
+                  "zeroModes": 3,
+                  "negativeModes": 233,
+                  "thetaResidualRel": 7.218010415779188E-05,
+                  "equivarianceResidual": 5.3692712326960386E-06
+                },
+                {
+                  "t": 1.875,
+                  "sB": 1.2405915635866476,
+                  "oneLoop": -4139.957637276117,
+                  "vEff": -4138.71704571253,
+                  "positiveModes": 12052,
+                  "zeroModes": 3,
+                  "negativeModes": 233,
+                  "thetaResidualRel": 9.00749264707862E-05,
+                  "equivarianceResidual": 6.907108653642113E-06
+                },
+                {
+                  "t": 2.0625,
+                  "sB": 1.5012105884553755,
+                  "oneLoop": -4022.644065563981,
+                  "vEff": -4021.1428549755256,
+                  "positiveModes": 12052,
+                  "zeroModes": 3,
+                  "negativeModes": 233,
+                  "thetaResidualRel": 5.422812551509061E-05,
+                  "equivarianceResidual": 5.774045606214894E-06
+                },
+                {
+                  "t": 2.25,
+                  "sB": 1.786688227291821,
+                  "oneLoop": -3915.5261379072117,
+                  "vEff": -3913.7394496799197,
+                  "positiveModes": 12052,
+                  "zeroModes": 3,
+                  "negativeModes": 233,
+                  "thetaResidualRel": 7.969147131980962E-05,
+                  "equivarianceResidual": 6.880597482750675E-06
+                },
+                {
+                  "t": 2.4375,
+                  "sB": 2.0970347767658604,
+                  "oneLoop": -3816.8509319571017,
+                  "vEff": -3814.753897180336,
+                  "positiveModes": 12052,
+                  "zeroModes": 3,
+                  "negativeModes": 233,
+                  "thetaResidualRel": 8.724030297649772E-05,
+                  "equivarianceResidual": 8.400946388452483E-06
+                },
+                {
+                  "t": 2.625,
+                  "sB": 2.4322614289096403,
+                  "oneLoop": -3725.3273537959108,
+                  "vEff": -3722.8950923670013,
+                  "positiveModes": 12052,
+                  "zeroModes": 3,
+                  "negativeModes": 233,
+                  "thetaResidualRel": 0.00031698782386776765,
+                  "equivarianceResidual": 2.14433862525809E-05
+                },
+                {
+                  "t": 2.8125,
+                  "sB": 2.792380271119162,
+                  "oneLoop": -3639.949036303069,
+                  "vEff": -3637.1566560319498,
+                  "positiveModes": 12052,
+                  "zeroModes": 3,
+                  "negativeModes": 233,
+                  "thetaResidualRel": 0.00019533456356262812,
+                  "equivarianceResidual": 1.800724696320327E-05
+                },
+                {
+                  "t": 3,
+                  "sB": 3.1774042861516483,
+                  "oneLoop": -3570.21986373574,
+                  "vEff": -3567.0424594495885,
+                  "positiveModes": 12054,
+                  "zeroModes": 3,
+                  "negativeModes": 231,
+                  "thetaResidualRel": 0.00028021241100472386,
+                  "equivarianceResidual": 2.0825454595058535E-05
+                }
+              ]
+            },
+            {
+              "seed": 1,
+              "points": [
+                {
+                  "t": 0.1875,
+                  "sB": 0.016315299220942645,
+                  "oneLoop": -6725.7740804298555,
+                  "vEff": -6725.757765130635,
+                  "positiveModes": 12062,
+                  "zeroModes": 3,
+                  "negativeModes": 223,
+                  "thetaResidualRel": 8.567352262422129E-07,
+                  "equivarianceResidual": 8.249505079030307E-08
+                },
+                {
+                  "t": 0.375,
+                  "sB": 0.06526220780136358,
+                  "oneLoop": -5885.204327402785,
+                  "vEff": -5885.139065194983,
+                  "positiveModes": 12062,
+                  "zeroModes": 3,
+                  "negativeModes": 223,
+                  "thetaResidualRel": 2.372725504332579E-06,
+                  "equivarianceResidual": 3.498951708229729E-07
+                },
+                {
+                  "t": 0.5625,
+                  "sB": 0.14684375849401549,
+                  "oneLoop": -5392.447494359872,
+                  "vEff": -5392.300650601377,
+                  "positiveModes": 12062,
+                  "zeroModes": 3,
+                  "negativeModes": 223,
+                  "thetaResidualRel": 1.985215016581711E-05,
+                  "equivarianceResidual": 1.3495125196316455E-06
+                },
+                {
+                  "t": 0.75,
+                  "sB": 0.2610650058868793,
+                  "oneLoop": -5042.076005999634,
+                  "vEff": -5041.814940993747,
+                  "positiveModes": 12062,
+                  "zeroModes": 3,
+                  "negativeModes": 223,
+                  "thetaResidualRel": 3.889015904597465E-05,
+                  "equivarianceResidual": 2.628159699856372E-06
+                },
+                {
+                  "t": 0.9375,
+                  "sB": 0.40793302640307005,
+                  "oneLoop": -4769.7067960373215,
+                  "vEff": -4769.2988630109185,
+                  "positiveModes": 12062,
+                  "zeroModes": 3,
+                  "negativeModes": 223,
+                  "thetaResidualRel": 2.2957852005789617E-05,
+                  "equivarianceResidual": 2.1412529156891843E-06
+                },
+                {
+                  "t": 1.125,
+                  "sB": 0.5874569183008844,
+                  "oneLoop": -4546.659935389455,
+                  "vEff": -4546.072478471155,
+                  "positiveModes": 12062,
+                  "zeroModes": 3,
+                  "negativeModes": 223,
+                  "thetaResidualRel": 3.07707675265979E-05,
+                  "equivarianceResidual": 4.026654852349089E-06
+                },
+                {
+                  "t": 1.3125,
+                  "sB": 0.7996478016737276,
+                  "oneLoop": -4357.6355095561,
+                  "vEff": -4356.835861754426,
+                  "positiveModes": 12062,
+                  "zeroModes": 3,
+                  "negativeModes": 223,
+                  "thetaResidualRel": 4.129346271276731E-05,
+                  "equivarianceResidual": 5.098997936384633E-06
+                },
+                {
+                  "t": 1.5,
+                  "sB": 1.0445188184504557,
+                  "oneLoop": -4193.50006090504,
+                  "vEff": -4192.45554208659,
+                  "positiveModes": 12062,
+                  "zeroModes": 3,
+                  "negativeModes": 223,
+                  "thetaResidualRel": 0.00011140116263874881,
+                  "equivarianceResidual": 8.140365311189447E-06
+                },
+                {
+                  "t": 1.6875,
+                  "sB": 1.3220851323947742,
+                  "oneLoop": -4058.2885565085903,
+                  "vEff": -4056.9664713761954,
+                  "positiveModes": 12064,
+                  "zeroModes": 3,
+                  "negativeModes": 221,
+                  "thetaResidualRel": 6.080516593626418E-05,
+                  "equivarianceResidual": 9.127867249210184E-06
+                },
+                {
+                  "t": 1.875,
+                  "sB": 1.6323639291055776,
+                  "oneLoop": -3927.17516790742,
+                  "vEff": -3925.5428039783146,
+                  "positiveModes": 12064,
+                  "zeroModes": 3,
+                  "negativeModes": 221,
+                  "thetaResidualRel": 6.6551917878971E-05,
+                  "equivarianceResidual": 8.531169692045522E-06
+                },
+                {
+                  "t": 2.0625,
+                  "sB": 1.975374416017511,
+                  "oneLoop": -3808.572814770565,
+                  "vEff": -3806.5974403545474,
+                  "positiveModes": 12064,
+                  "zeroModes": 3,
+                  "negativeModes": 221,
+                  "thetaResidualRel": 9.733750947457384E-05,
+                  "equivarianceResidual": 1.1268332519317543E-05
+                },
+                {
+                  "t": 2.25,
+                  "sB": 2.3511378223994694,
+                  "oneLoop": -3700.105822679545,
+                  "vEff": -3697.7546848571455,
+                  "positiveModes": 12064,
+                  "zeroModes": 3,
+                  "negativeModes": 221,
+                  "thetaResidualRel": 0.00023949354681303218,
+                  "equivarianceResidual": 2.20280255943999E-05
+                },
+                {
+                  "t": 2.4375,
+                  "sB": 2.7596773993561223,
+                  "oneLoop": -3600.095008623796,
+                  "vEff": -3597.33533122444,
+                  "positiveModes": 12064,
+                  "zeroModes": 3,
+                  "negativeModes": 221,
+                  "thetaResidualRel": 0.0002591586802795042,
+                  "equivarianceResidual": 2.2972769502254247E-05
+                },
+                {
+                  "t": 2.625,
+                  "sB": 3.2010184198274527,
+                  "oneLoop": -3517.0663598762,
+                  "vEff": -3513.8653414563723,
+                  "positiveModes": 12066,
+                  "zeroModes": 3,
+                  "negativeModes": 219,
+                  "thetaResidualRel": 0.0002734429266557867,
+                  "equivarianceResidual": 2.1652145012749603E-05
+                },
+                {
+                  "t": 2.8125,
+                  "sB": 3.675188178588291,
+                  "oneLoop": -3429.28351626191,
+                  "vEff": -3425.608328083322,
+                  "positiveModes": 12066,
+                  "zeroModes": 3,
+                  "negativeModes": 219,
+                  "thetaResidualRel": 0.0002965713860004294,
+                  "equivarianceResidual": 2.471257903275719E-05
+                },
+                {
+                  "t": 3,
+                  "sB": 4.182215992248058,
+                  "oneLoop": -3347.412212289978,
+                  "vEff": -3343.22999629773,
+                  "positiveModes": 12066,
+                  "zeroModes": 3,
+                  "negativeModes": 219,
+                  "thetaResidualRel": 0.0005463548487856472,
+                  "equivarianceResidual": 3.9615910790028025E-05
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "recordedBoundary": {
+    "definition81Scope": "reduced-spin4-slice",
+    "ambientSevenSevenRealized": false,
+    "internalGaugeContentRealized": false,
+    "weldRealized": false,
+    "canFillPhase201WzContract": false,
+    "canFillPhase256Contract": false,
+    "physicistReviewPending": true,
+    "invariantRayConventionRecorded": true,
+    "baseSignature": "Cl(4,0)-euclidean-slice",
+    "spinorUsedAsShiabCarrierNotFiber": true,
+    "draft14dObserverseNotRealized": true
+  },
+  "runtimeSeconds": 941.3802011,
+  "physicalCouplingProvided": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256Contract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256Contract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "sourceEvidence": {
+    "phase443SummaryPath": "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json",
+    "phase444SummaryPath": "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json",
+    "phase447SummaryPath": "studies/phase447_two_loop_saturation_probe_001/output/two_loop_saturation_probe_summary.json",
+    "designSourcePath": "docs/Phases/FOUR_D_PLATFORM_DESIGN.md",
+    "physicsDecisionsSourcePath": "docs/Phases/FOUR_D_PLATFORM_PHYSICS_DECISIONS.md"
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "V_eff, its classifications, and any t* are candidate-only structure data of the reduced spin-4 slice on lattice-canonical tori, NOT physical masses, VEVs, or a scale in GeV.",
+    "The invariant-ray convention is recorded; the controlled statement is the saturation TREND across mode volumes, not a numeric comparison to Phase443\u0027s open-mesh values.",
+    "A saturation observation, where stable, is a workbench-relative CANDIDATE only; a no-saturation result sharpens the frontier. Neither promotes anything.",
+    "No VEV scale, pole, or GeV lineage; no Phase201 or Phase256 contract field is filled; the reduced slice does not realize the ambient 7,7 / internal gauge / weld content."
+  ],
+  "decision": "The torus mode-volume saturation probe is decided on internal consistency, answering the question Phase444 left undetermined-tooling-blocked using BOTH unlock projects. On lattice-canonical tori n in {3,4} (joint DOF 3888, 12288) with translation-INVARIANT unit rays (shared per-type coefficients across volumes, 2 seeds), the joint (omega,theta) Hessian is block-circulant and its EXACT spectrum was obtained from 48 orbit-representative Hessian-vector products per point via momentum decomposition. BATTERIES: S_B translation covariance worst 1.40E-014 \u003C= 1E-010 (every member, every torus); objective consistency 1.35E-014; analytic-vs-FD gradient 8.79E-010; identity theta-independence 3.01E-017; block reconstruction (H*v via translated columns vs direct Hv) 2.93E-011 \u003C= 1E-004; trace consistency 1.73E-001 (recorded; stochastic-diagonal comparator); theta* projected-Newton relative residual worst 5.46E-004 with FULL-gradient equivariance worst 5.30E-005 \u003C= 1E-008. MODE-VOLUME VERDICT: no-saturation-persists-across-mode-volumes (per-volume Einsteinian classifications: n=3: trivial-origin,trivial-origin; n=4: trivial-origin,trivial-origin; seed-stable True). RECORDED CONVENTION: invariant rays differ from Phase443\u0027s random open-mesh rays -- the controlled comparison is the TREND ACROSS TORI, not a direct numeric comparison to the 16-vertex values. MANDATORY FRAMING: workbench-relative structure data only (su(2) toy algebra, reduced Spin(4) slice, lattice units, one loop); NO GeV/pole/VEV promotion. Everything is target-blind; no Phase201/Phase256 contract field is filled; nothing is promoted."
+}

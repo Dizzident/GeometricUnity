@@ -218,6 +218,7 @@ const paths = {
   phase445: "studies/phase445_rg_improved_joint_potential_probe_001/output/rg_improved_joint_potential_probe_summary.json",
   phase446: "studies/phase446_rg_scheme_dependence_resolution_probe_001/output/rg_scheme_dependence_resolution_probe_summary.json",
   phase447: "studies/phase447_two_loop_saturation_probe_001/output/two_loop_saturation_probe_summary.json",
+  phase448: "studies/phase448_torus_mode_volume_saturation_probe_001/output/torus_mode_volume_saturation_probe_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -507,6 +508,7 @@ const phase444 = requireFile(paths.phase444);
 const phase445 = requireFile(paths.phase445);
 const phase446 = requireFile(paths.phase446);
 const phase447 = requireFile(paths.phase447);
+const phase448 = requireFile(paths.phase448);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -5323,6 +5325,17 @@ if (sourceLineageMissing) {
   assert(phase447.sourceContractApplicationAllowed === false && phase447.canFillPhase201WzContract === false && phase447.canFillPhase201HiggsContract === false && phase447.canFillPhase256ObservedFieldExtractionContract === false, "Phase447 cannot fill Phase201 or Phase256 contracts.");
   assert(phase447.routePromotesWzMasses === false && phase447.routePromotesHiggsMass === false && phase447.routeCompletesBosonPredictions === false, "Phase447 cannot promote boson predictions.");
   assert(phase101Package?.twoLoopSaturationProbe?.twoLoopSaturationProbePassed === true, "Phase101 must include the Phase447 block.");
+  assert(phase448.torusModeVolumeSaturationProbePassed === true, "Phase448 torus mode-volume saturation probe must pass on internal consistency.");
+  assert(phase448.targetBlindConstruction === true && typeof phase448.targetBlindConstructionHash === "string" && phase448.targetBlindConstructionHash.length === 64, "Phase448 must remain target-blind with a persisted construction hash.");
+  assert(phase448.applicationSubjectKind === "torus-mode-volume-saturation-probe", "Phase448 must classify its subject as the torus mode-volume probe.");
+  assert(phase448.batteries?.batteriesAllPassed === true, "Phase448 batteries incl. covariance, block-reconstruction, and theta gates must pass.");
+  assert(phase448.modeVolumeVerdict === "no-saturation-persists-across-mode-volumes" && phase448.anySaturationAnyVolume === false, "Phase448 must record the mode-volume answer: the one-loop no-saturation verdict persists across volumes.");
+  assert(phase448.volumeTrendSeedStable === true, "Phase448 volume-trend classifications must be seed-stable.");
+  assert(phase448.scaleIsWorkbenchRelativeCandidateOnly === true && phase448.noGevPromotion === true, "Phase448 must keep the workbench-relative and no-promotion boundaries.");
+  assert(phase448.recordedBoundary?.physicistReviewPending === true && phase448.recordedBoundary?.invariantRayConventionRecorded === true, "Phase448 must flag the invariant-ray convention and pending physicist review.");
+  assert(phase448.sourceContractApplicationAllowed === false && phase448.canFillPhase201WzContract === false && phase448.canFillPhase201HiggsContract === false && phase448.canFillPhase256ObservedFieldExtractionContract === false, "Phase448 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase448.routePromotesWzMasses === false && phase448.routePromotesHiggsMass === false && phase448.routeCompletesBosonPredictions === false, "Phase448 cannot promote boson predictions.");
+  assert(phase101Package?.torusModeVolumeSaturationProbe?.torusModeVolumeSaturationProbePassed === true, "Phase101 must include the Phase448 block.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

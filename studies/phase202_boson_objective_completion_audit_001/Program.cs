@@ -204,6 +204,7 @@ const string Phase437Path = "studies/phase437_four_dimensional_transmutation_sca
 const string Phase445Path = "studies/phase445_rg_improved_joint_potential_probe_001/output/rg_improved_joint_potential_probe_summary.json";
 const string Phase446Path = "studies/phase446_rg_scheme_dependence_resolution_probe_001/output/rg_scheme_dependence_resolution_probe_summary.json";
 const string Phase447Path = "studies/phase447_two_loop_saturation_probe_001/output/two_loop_saturation_probe_summary.json";
+const string Phase448Path = "studies/phase448_torus_mode_volume_saturation_probe_001/output/torus_mode_volume_saturation_probe_summary.json";
 const string Phase444Path = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443Path = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442Path = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -459,6 +460,7 @@ using var phase444 = File.Exists(Phase444Path) ? JsonDocument.Parse(File.ReadAll
 using var phase445 = File.Exists(Phase445Path) ? JsonDocument.Parse(File.ReadAllText(Phase445Path)) : null;
 using var phase446 = File.Exists(Phase446Path) ? JsonDocument.Parse(File.ReadAllText(Phase446Path)) : null;
 using var phase447 = File.Exists(Phase447Path) ? JsonDocument.Parse(File.ReadAllText(Phase447Path)) : null;
+using var phase448 = File.Exists(Phase448Path) ? JsonDocument.Parse(File.ReadAllText(Phase448Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -6241,6 +6243,25 @@ var twoLoopSaturationProbePassed = twoLoopSaturationProbeMaterialized
     && JsonBool(phase447.RootElement, "routePromotesHiggsMass") is false
     && JsonBool(phase447.RootElement, "routeCompletesBosonPredictions") is false
     && JsonInt(phase447.RootElement, "acceptedContractFieldCount") == 0;
+var torusModeVolumeSaturationProbeMaterialized = phase448 is not null;
+var torusModeVolumeSaturationProbePassed = torusModeVolumeSaturationProbeMaterialized
+    && JsonBool(phase448!.RootElement, "torusModeVolumeSaturationProbePassed") is true
+    && JsonBool(phase448.RootElement, "targetBlindConstruction") is true
+    && (JsonString(phase448.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase448.RootElement, "applicationSubjectKind") == "torus-mode-volume-saturation-probe"
+    && JsonString(phase448.RootElement, "modeVolumeVerdict") == "no-saturation-persists-across-mode-volumes"
+    && JsonBool(phase448.RootElement, "anySaturationAnyVolume") is false
+    && JsonBool(phase448.RootElement, "volumeTrendSeedStable") is true
+    && JsonBool(phase448.RootElement, "scaleIsWorkbenchRelativeCandidateOnly") is true
+    && JsonBool(phase448.RootElement, "noGevPromotion") is true
+    && JsonBool(phase448.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase448.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase448.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase448.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase448.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase448.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase448.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonInt(phase448.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -8793,6 +8814,14 @@ var checklist = new[]
             ? $"twoLoopSaturationProbePassed={JsonBool(phase447!.RootElement, "twoLoopSaturationProbePassed")}; resolutionKind={JsonString(phase447.RootElement, "resolutionKind")}; twoLoopVerdictAdmissible={JsonBool(phase447.RootElement, "twoLoopVerdictAdmissible")}; perturbativeRegime={JsonBool(phase447.RootElement, "perturbativeRegime")}; floorSweepStable={JsonBool(phase447.RootElement, "floorSweepStable")}; twoLoopCandidate={JsonBool(phase447.RootElement, "twoLoopCandidate")}; noGevPromotion={JsonBool(phase447.RootElement, "noGevPromotion")}; canFillPhase201WzContract={JsonBool(phase447.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase447.RootElement, "decision")}"
             : "Phase447 artifact not materialized",
         Phase447Path),
+    new ObjectiveChecklistItem(
+        "torus-mode-volume-saturation-probe-materialized",
+        "Answer the question Phase444 left undetermined using both completed unlock projects: on lattice-canonical tori (n=3,4; joint DOF 3888/12288; exact block-circulant spectra from 48 Hessian-vector products per point) the one-loop no-saturation verdict PERSISTS across mode volumes - the phase443 minimal-mesh result is not a small-mesh artifact; nothing promoted.",
+        torusModeVolumeSaturationProbePassed ? "passed" : "failed",
+        torusModeVolumeSaturationProbeMaterialized
+            ? $"torusModeVolumeSaturationProbePassed={JsonBool(phase448!.RootElement, "torusModeVolumeSaturationProbePassed")}; modeVolumeVerdict={JsonString(phase448.RootElement, "modeVolumeVerdict")}; anySaturationAnyVolume={JsonBool(phase448.RootElement, "anySaturationAnyVolume")}; volumeTrendSeedStable={JsonBool(phase448.RootElement, "volumeTrendSeedStable")}; noGevPromotion={JsonBool(phase448.RootElement, "noGevPromotion")}; canFillPhase201WzContract={JsonBool(phase448.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase448.RootElement, "decision")}"
+            : "Phase448 artifact not materialized",
+        Phase448Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

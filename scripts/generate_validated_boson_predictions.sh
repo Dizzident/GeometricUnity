@@ -329,6 +329,7 @@ dotnet run --no-build -c Release --project studies/phase444_mode_volume_scaled_s
 dotnet run --no-build -c Release --project studies/phase445_rg_improved_joint_potential_probe_001/Phase445RgImprovedJointPotentialProbe.csproj
 dotnet run --no-build -c Release --project studies/phase446_rg_scheme_dependence_resolution_probe_001/Phase446RgSchemeDependenceResolutionProbe.csproj
 dotnet run --no-build -c Release --project studies/phase447_two_loop_saturation_probe_001/Phase447TwoLoopSaturationProbe.csproj
+dotnet run --no-build -c Release --project studies/phase448_torus_mode_volume_saturation_probe_001/Phase448TorusModeVolumeSaturationProbe.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

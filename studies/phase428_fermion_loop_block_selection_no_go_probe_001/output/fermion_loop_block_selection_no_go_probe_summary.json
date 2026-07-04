@@ -1,6 +1,6 @@
 {
   "phaseId": "phase428-fermion-loop-block-selection-no-go-probe",
-  "generatedAt": "2026-07-04T09:02:37.4723484+00:00",
+  "generatedAt": "2026-07-04T13:51:00.7275903+00:00",
   "terminalStatus": "fermion-loop-cannot-select-doublet-on-rank-one-rays-mechanism-class-closed",
   "fermionLoopBlockSelectionNoGoProbePassed": true,
   "phase405PrecursorPassed": true,

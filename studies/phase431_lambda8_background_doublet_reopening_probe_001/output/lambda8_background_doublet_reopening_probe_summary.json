@@ -1,7 +1,7 @@
 {
   "phaseId": "phase431-lambda8-background-doublet-reopening-probe",
-  "generatedAt": "2026-07-04T09:02:38.9795477+00:00",
-  "runtimeSeconds": 0.260874,
+  "generatedAt": "2026-07-04T13:51:02.2050402+00:00",
+  "runtimeSeconds": 0.2305106,
   "terminalStatus": "lambda8-background-reopens-td-distinction-and-induces-doublet-block-mass-law-candidate-only",
   "lambda8BackgroundDoubletReopeningProbePassed": true,
   "phase428PrecursorPassed": true,

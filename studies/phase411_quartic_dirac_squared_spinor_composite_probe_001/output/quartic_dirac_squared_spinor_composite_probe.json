@@ -1,6 +1,6 @@
 {
   "phaseId": "phase411-quartic-dirac-squared-spinor-composite-probe",
-  "generatedAt": "2026-07-04T08:49:57.1415661+00:00",
+  "generatedAt": "2026-07-04T13:39:02.9369934+00:00",
   "terminalStatus": "spinor-bilinear-channels-carry-no-welded-scalar-sm-doublet",
   "quarticDiracSquaredSpinorCompositeProbePassed": true,
   "phase409PrecursorPassed": true,

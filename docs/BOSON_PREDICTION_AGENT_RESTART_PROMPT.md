@@ -49,7 +49,7 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase447 work (plus the 2026-06-12 platform
+Current gate status after the Phase448 work (plus the 2026-06-12 platform
 fix - GPU parity defect root-caused and discharged - and the 2026-07-01
 |Y|=1/2 calibration defect fix in the Phase411/417 informational SM
 censuses):
@@ -57,7 +57,7 @@ censuses):
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=240`,
+  `objectiveAchieved=False`, `checklistPassedCount=241`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -563,6 +563,19 @@ censuses):
   THROUGH TWO LOOPS (443 one-loop no; 446 RG-fit artifact; 447
   two-loop non-perturbative); saddle/propagator convention
   physicistReviewPending
+- Phase448: `torusModeVolumeSaturationProbePassed=True`,
+  `modeVolumeVerdict=no-saturation-persists-across-mode-volumes`,
+  `anySaturationAnyVolume=False`, `volumeTrendSeedStable=True` - THE
+  PHASE444 QUESTION IS ANSWERED using both completed unlock projects:
+  on lattice-canonical tori n=3/4 (joint DOF 3888/12288) with
+  translation-INVARIANT rays, the joint Hessian is BLOCK-CIRCULANT
+  and its EXACT spectrum comes from 48 orbit-representative
+  Hessian-vector products per point (covariance 9.5e-15/1.4e-14;
+  block-reconstruction 2.9e-11; 12.7 min total vs the pre-unlock
+  ~2h/point). Every Einsteinian member stays trivial-origin at 5x and
+  16x the minimal mode count: THE ONE-LOOP NO-SATURATION VERDICT IS
+  NOT A SMALL-MESH ARTIFACT - phase443's mode-volume lever is decided
+  negative. Invariant-ray convention recorded; physicistReviewPending
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -583,7 +596,40 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work (2026-07-04, after the post-Phase446 scouting) is
+The latest work (2026-07-04, after both phase444 unlock projects were
+completed at user direction - adjoint/joint-gradient path commit
+7a7e397d, gradient 2.2 ms / Hv 4.7 ms vs the old ~60 s/Hv;
+lattice-canonical conventions commit 82d43559, translation covariance
+1.18e-4 -> 7.8e-15, opt-in, open meshes SHA256-byte-identical) is
+PHASE448, the torus mode-volume saturation probe - ANSWERING THE
+QUESTION PHASE444 LEFT UNDETERMINED. On translation-invariant rays
+(the constant-field CW analogue; per-type coefficients shared across
+volumes) exact covariance makes the joint (omega,theta) Hessian
+BLOCK-CIRCULANT over (Z_n)^4, so its ENTIRE spectrum comes from 48
+orbit-representative Hessian-vector products per point, DFT-assembled
+into Hermitian 48x48 momentum blocks ({k,-k} pairs via the real
+symmetric embedding). The 3888-dim (n=3) and 12288-dim (n=4) joint
+Hessians were eigensolved EXACTLY - covariance 9.5e-15/1.4e-14,
+block-reconstruction 2.9e-11, theta equivariance battery, seed-stable
+- in 12.7 minutes total. VERDICT:
+modeVolumeVerdict=no-saturation-persists-across-mode-volumes; every
+Einsteinian member remains trivial-origin (V_eff monotone rising) at
+5x and 16x the minimal mode count. PHASE443'S MODE-VOLUME LEVER IS
+DECIDED NEGATIVE: the one-loop no-saturation verdict is not a
+small-mesh artifact. BUILD LESSON (fail-closed smoke): the stored
+index-ordered edge direction does not commute with translation - the
+covariance battery caught the missing orientation signs at 1.6e-2;
+the lattice-gauge fix (all orbit machinery in the base->tip gauge)
+collapsed it to 9.5e-15. Recorded conventions (invariant rays,
+positive-mode IR rule, saddle backgrounds) carry
+physicistReviewPending. Remaining frontier: beyond-one-loop at volume
+(cheap with the block machinery IF a physicist-sanctioned convention
+exists), the accumulated physicist review queue (445/446/447/448
+conventions), or a source anchor from checkpoint-cadence monitoring.
+Study: phase448_torus_mode_volume_saturation_probe_001
+(IMPLEMENTATION_P448.md). Runtime ~13 min.
+
+Before that, the work (2026-07-04, after the post-Phase446 scouting) is
 PHASE447, the two-loop saturation probe - the last no-platform lever,
 decided honestly: THE TWO-LOOP LEVER IS NON-PERTURBATIVE AT THE
 MINIMAL-MESH SCOPE. The genuine two-loop vacuum terms (figure-eight
@@ -1510,8 +1556,8 @@ PHASE405_ENABLE_GPU=1 LD_LIBRARY_PATH=native/build dotnet run --project studies/
 The targeted Phase424 (Release, ~7 min) and Phase425 (Release, ~1 min) runs
 pass and preserve the fail-closed boundary; the fixed Phase411/Phase417
 re-runs pass with their corrected censuses; Phase202 now reports
-`checklistPassedCount=240`, `checklistFailedCount=3`; claim integrity
-verifies Phase424 through Phase447 (and the corrected Phase417 values)
+`checklistPassedCount=241`, `checklistFailedCount=3`; claim integrity
+verifies Phase424 through Phase448 (and the corrected Phase417 values)
 with `promotedPhysicalMassClaimCount=0`. The full direct
 `./scripts/generate_validated_boson_predictions.sh` pass completed with
 Phase424 through Phase436 included and ended at

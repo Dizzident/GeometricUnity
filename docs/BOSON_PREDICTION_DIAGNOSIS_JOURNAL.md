@@ -19200,3 +19200,55 @@ IR spectrum (the two Phase444 unlock projects - the scoping memo
 recommends the adjoint/joint-gradient path first) or a source anchor.
 The saddle/propagator convention carries physicistReviewPending.
 promotedPhysicalMassClaimCount=0 throughout.
+
+## 2026-07-04 - Both Phase444 Unlock Projects Completed (User-Directed Platform Investment)
+
+Parallel worktree builds, serial integration with full-suite validation
+between merges:
+- ADJOINT/JOINT-GRADIENT PATH (commit 7a7e397d): three true reverse-mode
+  transposes mirroring the FD-verified forward linearizations, a
+  composite O(mesh) joint gradient, and a Hessian-vector product.
+  Gradient 2.2 ms / Hv 4.7 ms vs the ~60 s/Hv blocker phase444 measured;
+  adjoint dot-product identities 1e-10.
+- LATTICE-CANONICAL ORIENTATION CONVENTIONS (commit 82d43559): the
+  previously unproven mathematical core EXISTS - ordering simplex tuples
+  by the chain of minimal-image lattice displacements is translation-
+  covariant by construction (Kuhn subsimplices are chains under the
+  componentwise partial order). Covariance 1.18e-4 -> 7.8e-15; OPT-IN
+  via CreateUniform4DPeriodic(n, latticeCanonical: true); open meshes
+  SHA256-byte-identical; the committed phase444 study reproduces
+  byte-stably.
+
+## 2026-07-04 - Phase448: No-Saturation PERSISTS Across Mode Volumes (Phase444's Question Answered)
+
+### Result
+
+Using BOTH unlocks together: on translation-INVARIANT rays (the
+constant-field CW analogue), exact covariance makes the joint Hessian
+BLOCK-CIRCULANT, so its ENTIRE spectrum comes from 48 orbit-
+representative Hessian-vector products per point, DFT-assembled into
+Hermitian 48x48 momentum blocks. The 3888-dim (n=3 torus) and 12288-dim
+(n=4) joint Hessians were eigensolved EXACTLY - covariance batteries
+9.5e-15/1.4e-14, block-reconstruction 2.9e-11, seed-stable - in 12.7
+minutes total (the pre-unlock estimate was ~2 hours PER POINT).
+VERDICT: modeVolumeVerdict=no-saturation-persists-across-mode-volumes.
+Every Einsteinian member remains trivial-origin (V_eff monotone rising)
+at 5x and 16x the minimal mesh's mode count. The one-loop no-saturation
+result of Phase443 is NOT a small-mesh artifact.
+
+The build was fail-closed: the first smoke run's covariance battery
+caught a missing edge-orientation sign (the stored index-ordered edge
+direction does not commute with translation) at 1.6e-2; the lattice-
+gauge fix collapsed it to 9.5e-15.
+
+### Interpretation
+
+Phase443's named mode-volume lever is DECIDED NEGATIVE. The internal
+one-loop program is now closed at BOTH scopes (minimal mesh and growing
+tori); the two-loop lever is closed as non-perturbative at the minimal
+scope (447). The recorded conventions (invariant rays; positive-mode IR
+rule; saddle backgrounds) carry physicistReviewPending. What remains:
+beyond-one-loop at volume (the block machinery makes larger tori cheap
+if the physicist review sanctions a convention), the physicist review
+queue itself, or a source anchor from monitoring.
+promotedPhysicalMassClaimCount=0 throughout.

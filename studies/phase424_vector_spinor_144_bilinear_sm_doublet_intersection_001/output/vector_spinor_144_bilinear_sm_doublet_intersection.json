@@ -1,6 +1,6 @@
 {
   "phaseId": "phase424-vector-spinor-144-bilinear-sm-doublet-intersection-analysis",
-  "generatedAt": "2026-07-04T09:01:44.2710925+00:00",
+  "generatedAt": "2026-07-04T13:50:09.149358+00:00",
   "terminalStatus": "vector-spinor-144-bilinear-welded-scalar-sm-doublet-absent-branch-closed",
   "vectorSpinor144BilinearSmDoubletIntersectionAnalysisPassed": true,
   "phase417PrecursorPassed": true,

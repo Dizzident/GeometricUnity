@@ -1,7 +1,7 @@
 {
   "phaseId": "phase439-gap-equation-lambda8-background-channel-steering-probe",
-  "generatedAt": "2026-07-04T09:03:07.6862717+00:00",
-  "runtimeSeconds": 0.4684029,
+  "generatedAt": "2026-07-04T13:51:32.542094+00:00",
+  "runtimeSeconds": 0.4119866,
   "terminalStatus": "lambda8-background-steers-gap-equation-into-su2u1-aligned-color-split-condensate-candidate-only-no-gev-promotion",
   "gapEquationLambda8BackgroundChannelSteeringProbePassed": true,
   "precursorsPassed": true,
