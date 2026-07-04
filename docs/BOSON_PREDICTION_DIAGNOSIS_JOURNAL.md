@@ -19473,11 +19473,44 @@ calc2.py are the correct versions. The "b*alpha_GUT ~ 2" figure is
 wrong (correct: 0.159). None were committed to the repo; recorded here
 so they cannot resurface.
 
+### Referee addendum ruling on the bi-doublet triple (BINDING revisions)
+
+1. THE TRIPLE'S CONDITIONAL IS TAUTOLOGICAL AS FRAMED: once a custodial
+   bi-doublet with <M> ~ I is postulated, rho=1 and m_W/m_Z = cos(theta)
+   follow BY CONSTRUCTION (the 1967 SM); the verified mass matrix
+   contains zero GU content, and the Stage-2 "m_W/m_Z vs sqrt(5/8)"
+   additionally IMPORTS the coupling ratio (the phase397 gap), making
+   it a discretization consistency check, not a GU prediction. The
+   bare Mexican-hat variant is DEMOTED to a template/discretization
+   control, never reportable as a GU-conditional prediction.
+2. THE UPSILON-PORTAL IS THE ONLY GU-BEARING CONTENT and is SANCTIONED
+   as a dynamical-condensation probe: does xi Tr(M dagger Upsilon M)
+   drive M^2 < 0 and condense the DOUBLET channel to a FINITE VEV?
+   PRE-REGISTERED fail-closed gates against the corpus's two concrete
+   failure modes: (a) phase410 - uniform negative curvature mass^2
+   gave unbounded RUNAWAY, not a finite VEV; (b) phase438 - when
+   condensation happens, the SINGLET wins. The portal must show the
+   doublet condensing (i) instead of/before the singlet and (ii) to a
+   finite VEV. The committed corpus predicts this FAILS - which is
+   exactly why it is worth measuring.
+3. THE BINDER DESIGN (WS4) IS SPLIT: (i) the adjoint/Upsilon-condensate
+   order-parameter column has a GENUINE transition - Binder crossing is
+   a valid SSB diagnostic (and note: PURE gauge alone in 4D has no bulk
+   transition, so a bare pure-gauge Binder column diagnoses nothing -
+   the pure-gauge deliverable is the D1 mass gap); (ii) the
+   fundamental-M physical scan is an Osterwalder-Seiler CROSSOVER -
+   Binder only locates the Higgs-like region, and the deliverable
+   there is the SPECTRUM (triplet degeneracy, mass ratios), never a
+   transition point ("does M condense" has no sharp yes/no for
+   fundamental matter).
+
 ### Standing epistemic state
 
 The two program-level blockers that no internal computation can
 remove: (i) a source-defined hypercharge + coupling-ratio lineage
 (the phase397 gap), (ii) the single mandatory dimensionful anchor
 (M_Planck recommended). Both are theorem/source-level. Everything
-else now has a certified, parallelizable work plan.
+else now has a certified, parallelizable work plan - with WS3 scoped
+to the Upsilon-portal condensation question and WS4 split per the
+addendum ruling above.
 promotedPhysicalMassClaimCount=0 throughout.

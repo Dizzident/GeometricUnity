@@ -670,19 +670,30 @@ PARALLEL WORKSTREAMS (they are independent):
   free-field gate (flat to 1e-5), theta-Haar measure + phase450
   binding conditions. Measurement-tests the review board's
   convex/gapped picture.
-  WS3 [1-2 dev-days + short runs; no dependencies]: SINGLET COMPOSITE
-  + CUSTODIAL-DEGENERACY phase — sample the Team-A bi-doublet triple
-  (rep: custodial bi-doublet per vertex; coupling: covariant hopping +
-  Mexican hat AND the GU-native portal xi Tr(M†YM) variant; vacuum:
-  <M> ~ I2) in the HMC harness. su(2)-HONEST SCOPE IS BINDING: no
-  hypercharge on this workbench => rho and the Weinberg angle are NOT
-  measurable; the honest gates are the O_H mass gap + CUSTODIAL
-  TRIPLET DEGENERACY (necessary-not-sufficient); an O_H gap proves a
-  singlet state, never "the Higgs"; fundamental matter => crossover
-  (Osterwalder-Seiler), not a sharp transition.
-  WS4 [weeks, embarrassingly parallel]: FRADKIN-SHENKER/BINDER ADJOINT
-  PHASE MAP — pure-gauge coupling column first (genuine transition on
-  the adjoint-only theory), >= 4 torus volumes.
+  WS3 [1-2 dev-days + short runs; no dependencies]: UPSILON-PORTAL
+  CONDENSATION PROBE (referee-rescoped from the bi-doublet triple) —
+  the bare Mexican-hat variant is a TEMPLATE CONTROL ONLY (the
+  postulated-doublet conditional is tautological: rho=1 and
+  m_W/m_Z=cos theta follow by construction and carry zero GU content;
+  the "vs sqrt(5/8)" comparison also imports the coupling ratio =
+  the phase397 gap). The GU-bearing question, SANCTIONED: does
+  xi Tr(M† Upsilon M) dynamically drive the DOUBLET channel to a
+  FINITE VEV? PRE-REGISTERED fail-closed gates: must beat the
+  phase410 runaway mode (finite VEV, not unbounded descent) AND the
+  phase438 singlet-wins mode (doublet before/instead of singlet).
+  The corpus predicts failure - that is why it is worth measuring.
+  su(2)-HONEST SCOPE BINDING: no hypercharge => rho/Weinberg not
+  measurable; gates are O_H mass gap + CUSTODIAL TRIPLET DEGENERACY
+  (necessary-not-sufficient); an O_H gap proves a singlet state,
+  never "the Higgs".
+  WS4 [weeks, embarrassingly parallel]: BINDER PHASE MAP, SPLIT BY
+  ORDER PARAMETER (referee-binding): (i) the ADJOINT/Upsilon-condensate
+  column has a GENUINE transition - Binder-valid SSB diagnostic
+  (pure gauge alone has NO bulk transition; its deliverable is the
+  WS2 mass gap, not Binder); (ii) any fundamental-M scan is an
+  Osterwalder-Seiler CROSSOVER - Binder locates the region only, the
+  deliverable is the spectrum (degeneracy/mass ratios), never a
+  transition point. >= 4 torus volumes.
   WS5 [weeks; heavy, higher risk, run behind WS1-4]: CL(7,7)/128-SPINOR
   SHIAB BUILD — the only structural attack on the scale wall; risk of
   reproducing necessary-not-sufficient at higher cost.
