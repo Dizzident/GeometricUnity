@@ -203,6 +203,7 @@ const string Phase435Path = "studies/phase435_two_condensate_scale_gap_probe_001
 const string Phase437Path = "studies/phase437_four_dimensional_transmutation_scaling_probe_001/output/four_dimensional_transmutation_scaling_probe_summary.json";
 const string Phase445Path = "studies/phase445_rg_improved_joint_potential_probe_001/output/rg_improved_joint_potential_probe_summary.json";
 const string Phase446Path = "studies/phase446_rg_scheme_dependence_resolution_probe_001/output/rg_scheme_dependence_resolution_probe_summary.json";
+const string Phase447Path = "studies/phase447_two_loop_saturation_probe_001/output/two_loop_saturation_probe_summary.json";
 const string Phase444Path = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443Path = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442Path = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -457,6 +458,7 @@ using var phase443 = File.Exists(Phase443Path) ? JsonDocument.Parse(File.ReadAll
 using var phase444 = File.Exists(Phase444Path) ? JsonDocument.Parse(File.ReadAllText(Phase444Path)) : null;
 using var phase445 = File.Exists(Phase445Path) ? JsonDocument.Parse(File.ReadAllText(Phase445Path)) : null;
 using var phase446 = File.Exists(Phase446Path) ? JsonDocument.Parse(File.ReadAllText(Phase446Path)) : null;
+using var phase447 = File.Exists(Phase447Path) ? JsonDocument.Parse(File.ReadAllText(Phase447Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -6216,6 +6218,29 @@ var rgSchemeDependenceResolutionProbePassed = rgSchemeDependenceResolutionProbeM
     && JsonBool(phase446.RootElement, "routePromotesHiggsMass") is false
     && JsonBool(phase446.RootElement, "routeCompletesBosonPredictions") is false
     && JsonInt(phase446.RootElement, "acceptedContractFieldCount") == 0;
+var twoLoopSaturationProbeMaterialized = phase447 is not null;
+var twoLoopSaturationProbePassed = twoLoopSaturationProbeMaterialized
+    && JsonBool(phase447!.RootElement, "twoLoopSaturationProbePassed") is true
+    && JsonBool(phase447.RootElement, "targetBlindConstruction") is true
+    && (JsonString(phase447.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase447.RootElement, "applicationSubjectKind") == "two-loop-saturation-probe"
+    && JsonString(phase447.RootElement, "resolutionKind") == "non-perturbative-or-convention-bound"
+    && JsonBool(phase447.RootElement, "twoLoopVerdictAdmissible") is false
+    && JsonBool(phase447.RootElement, "perturbativeRegime") is false
+    && JsonBool(phase447.RootElement, "floorSweepStable") is false
+    && JsonBool(phase447.RootElement, "twoLoopCandidate") is false
+    && JsonBool(phase447.RootElement, "einsteinianTwoLoopSaturationObserved") is false
+    && JsonBool(phase447.RootElement, "twoLoopConventionIsWorkbenchConvention") is true
+    && JsonBool(phase447.RootElement, "scaleIsWorkbenchRelativeCandidateOnly") is true
+    && JsonBool(phase447.RootElement, "noGevPromotion") is true
+    && JsonBool(phase447.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase447.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase447.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase447.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase447.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase447.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase447.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonInt(phase447.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -8760,6 +8785,14 @@ var checklist = new[]
             ? $"rgSchemeDependenceResolutionProbePassed={JsonBool(phase446!.RootElement, "rgSchemeDependenceResolutionProbePassed")}; resolutionKind={JsonString(phase446.RootElement, "resolutionKind")}; phase445MinimaResolvedAsFitNormalizationArtifact={JsonBool(phase446.RootElement, "phase445MinimaResolvedAsFitNormalizationArtifact")}; candidateSurvivesSchemeControl={JsonBool(phase446.RootElement, "candidateSurvivesSchemeControl")}; constantSubtractionKillsInteriorMinima={JsonBool(phase446.RootElement, "constantSubtractionKillsInteriorMinima")}; directRgMinimumSupported={JsonBool(phase446.RootElement, "directRgMinimumSupported")}; noGevPromotion={JsonBool(phase446.RootElement, "noGevPromotion")}; canFillPhase201WzContract={JsonBool(phase446.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase446.RootElement, "decision")}"
             : "Phase446 artifact not materialized",
         Phase446Path),
+    new ObjectiveChecklistItem(
+        "two-loop-saturation-probe-materialized",
+        "Decide the beyond-one-loop lever honestly: the genuine two-loop vacuum terms (figure-eight + sunset) on the minimal 4D workbench are IR-dominated, floor-convention-bound, and violate perturbativity (max |V2/V1| ~ 1.6e3), so no two-loop saturation verdict is admissible at this scope - the lever is closed as non-perturbative; deciding it beyond this scope requires the platform unlock projects or a source anchor; nothing promoted.",
+        twoLoopSaturationProbePassed ? "passed" : "failed",
+        twoLoopSaturationProbeMaterialized
+            ? $"twoLoopSaturationProbePassed={JsonBool(phase447!.RootElement, "twoLoopSaturationProbePassed")}; resolutionKind={JsonString(phase447.RootElement, "resolutionKind")}; twoLoopVerdictAdmissible={JsonBool(phase447.RootElement, "twoLoopVerdictAdmissible")}; perturbativeRegime={JsonBool(phase447.RootElement, "perturbativeRegime")}; floorSweepStable={JsonBool(phase447.RootElement, "floorSweepStable")}; twoLoopCandidate={JsonBool(phase447.RootElement, "twoLoopCandidate")}; noGevPromotion={JsonBool(phase447.RootElement, "noGevPromotion")}; canFillPhase201WzContract={JsonBool(phase447.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase447.RootElement, "decision")}"
+            : "Phase447 artifact not materialized",
+        Phase447Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

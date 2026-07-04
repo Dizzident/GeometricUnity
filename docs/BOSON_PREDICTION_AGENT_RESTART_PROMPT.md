@@ -49,7 +49,7 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-Current gate status after the Phase446 work (plus the 2026-06-12 platform
+Current gate status after the Phase447 work (plus the 2026-06-12 platform
 fix - GPU parity defect root-caused and discharged - and the 2026-07-01
 |Y|=1/2 calibration defect fix in the Phase411/417 informational SM
 censuses):
@@ -57,7 +57,7 @@ censuses):
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=239`,
+  `objectiveAchieved=False`, `checklistPassedCount=240`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -547,6 +547,22 @@ censuses):
   POTENTIAL-FIT ROUTE ON THE MINIMAL MESH IS CLOSED; frontier returns
   to the Phase444 unlock projects, beyond-one-loop structure, or a
   source anchor
+- Phase447: `twoLoopSaturationProbePassed=True`,
+  `resolutionKind=non-perturbative-or-convention-bound`,
+  `twoLoopVerdictAdmissible=False`, `perturbativeRegime=False`
+  (max |V_2loop|/|V_1loop| = 1.6e3, median 155),
+  `floorSweepStable=False`, `twoLoopCandidate=False` - the GENUINE
+  two-loop vacuum terms (figure-eight + soft-mode sunset on the
+  positive-subspace propagator; all numerical batteries green incl.
+  the exact-quartic identity anchor at 1.3e-7) are IR-dominated,
+  convention-bound, and violate perturbativity at the minimal-mesh
+  backgrounds: THE TWO-LOOP LEVER IS CLOSED AS NON-PERTURBATIVE AT
+  THIS SCOPE. Structure result: S_B is EXACTLY quartic in omega and
+  transcendental in theta (resolves the Phase442 degree finding).
+  The internal no-platform program at the minimal mesh is EXHAUSTED
+  THROUGH TWO LOOPS (443 one-loop no; 446 RG-fit artifact; 447
+  two-loop non-perturbative); saddle/propagator convention
+  physicistReviewPending
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -567,7 +583,41 @@ theorem-level sources.
 
 ### Most Recent Implemented Work
 
-The latest work (2026-07-03, after Phase445) is PHASE446, the RG
+The latest work (2026-07-04, after the post-Phase446 scouting) is
+PHASE447, the two-loop saturation probe - the last no-platform lever,
+decided honestly: THE TWO-LOOP LEVER IS NON-PERTURBATIVE AT THE
+MINIMAL-MESH SCOPE. The genuine two-loop vacuum terms (figure-eight
+over all positive mode pairs + soft-mode-truncated sunset with K-sweep,
+full-deterministic anchors, and a recorded propagator soft-floor
+convention with floor sweep; directional FD stencils at h=0.1 on the
+joint Hessian eigenvectors, exact on the omega sector because S_B is
+EXACTLY QUARTIC in omega - the structure result that also resolves
+Phase442's "degree > 2" as theta-transcendentality) pass every
+numerical battery (theta 1.4e-9; identity exact-quartic anchor 1.3e-7;
+Einsteinian Richardson 7.6e-4; offset immunity 2.9e-7) and then fail
+every PHYSICS admissibility axis: max |V_2loop|/|V_1loop| = 1.6e3
+(median 155 - the loop expansion is out of control), the
+classification flips across the soft-floor sweep, the seeds, and the
+propagator-convention arm, and even the identity control acquires a
+spurious "minimum" (not a theorem violation at two loops - evidence of
+the same breakdown). Pre-registered taxonomy verdict:
+resolutionKind=non-perturbative-or-convention-bound,
+twoLoopVerdictAdmissible=false, twoLoopCandidate=false. THE INTERNAL
+NO-PLATFORM PROGRAM AT THE MINIMAL MESH IS EXHAUSTED THROUGH TWO
+LOOPS (443/446/447). BUILD LESSONS (fail-closed smoke runs earned
+their keep): the scouted stencil step h=5e-3 was PROVEN
+noise-dominated by the offset-immunity battery (impossible to fail
+with clean stencils; failed at 135%) and fixed by exploiting the
+omega-quartic exactness at large h; the IR-domination forced the
+recorded soft-floor convention + sweep and the perturbativity gate.
+Deciding the scale question beyond this scope requires changing the
+IR spectrum (the two Phase444 unlock projects; the committed scoping
+memo recommends the adjoint/joint-gradient path first) or a source
+anchor. Saddle/propagator convention physicistReviewPending. Runtime
+42 min. Study: phase447_two_loop_saturation_probe_001
+(IMPLEMENTATION_P447.md).
+
+Before that, the work (2026-07-03, after Phase445) was PHASE446, the RG
 scheme-dependence resolution probe - closing the arc's most tantalizing
 lead with a decisive, pre-registered diagnosis: THE PHASE445 INTERIOR
 MINIMA ARE A FIT-NORMALIZATION ARTIFACT. The mechanism (found by
@@ -1447,8 +1497,8 @@ PHASE405_ENABLE_GPU=1 LD_LIBRARY_PATH=native/build dotnet run --project studies/
 The targeted Phase424 (Release, ~7 min) and Phase425 (Release, ~1 min) runs
 pass and preserve the fail-closed boundary; the fixed Phase411/Phase417
 re-runs pass with their corrected censuses; Phase202 now reports
-`checklistPassedCount=239`, `checklistFailedCount=3`; claim integrity
-verifies Phase424 through Phase446 (and the corrected Phase417 values)
+`checklistPassedCount=240`, `checklistFailedCount=3`; claim integrity
+verifies Phase424 through Phase447 (and the corrected Phase417 values)
 with `promotedPhysicalMassClaimCount=0`. The full direct
 `./scripts/generate_validated_boson_predictions.sh` pass completed with
 Phase424 through Phase436 included and ended at

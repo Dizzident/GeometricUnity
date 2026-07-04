@@ -217,6 +217,7 @@ const paths = {
   phase444: "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json",
   phase445: "studies/phase445_rg_improved_joint_potential_probe_001/output/rg_improved_joint_potential_probe_summary.json",
   phase446: "studies/phase446_rg_scheme_dependence_resolution_probe_001/output/rg_scheme_dependence_resolution_probe_summary.json",
+  phase447: "studies/phase447_two_loop_saturation_probe_001/output/two_loop_saturation_probe_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -505,6 +506,7 @@ const phase443 = requireFile(paths.phase443);
 const phase444 = requireFile(paths.phase444);
 const phase445 = requireFile(paths.phase445);
 const phase446 = requireFile(paths.phase446);
+const phase447 = requireFile(paths.phase447);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -5309,6 +5311,18 @@ if (sourceLineageMissing) {
   assert(phase446.sourceContractApplicationAllowed === false && phase446.canFillPhase201WzContract === false && phase446.canFillPhase201HiggsContract === false && phase446.canFillPhase256ObservedFieldExtractionContract === false, "Phase446 cannot fill Phase201 or Phase256 contracts.");
   assert(phase446.routePromotesWzMasses === false && phase446.routePromotesHiggsMass === false && phase446.routeCompletesBosonPredictions === false, "Phase446 cannot promote boson predictions.");
   assert(phase101Package?.rgSchemeDependenceResolutionProbe?.rgSchemeDependenceResolutionProbePassed === true, "Phase101 must include the Phase446 block.");
+  assert(phase447.twoLoopSaturationProbePassed === true, "Phase447 two-loop saturation probe must pass on internal consistency.");
+  assert(phase447.targetBlindConstruction === true && typeof phase447.targetBlindConstructionHash === "string" && phase447.targetBlindConstructionHash.length === 64, "Phase447 must remain target-blind with a persisted construction hash.");
+  assert(phase447.applicationSubjectKind === "two-loop-saturation-probe", "Phase447 must classify its subject as the two-loop saturation probe.");
+  assert(phase447.batteries?.batteriesAllPassed === true, "Phase447 batteries incl. the theta gate, exact-quartic anchor, Richardson, and offset-immunity must pass.");
+  assert(phase447.resolutionKind === "non-perturbative-or-convention-bound" && phase447.twoLoopVerdictAdmissible === false && phase447.perturbativeRegime === false, "Phase447 must record the two-loop lever as non-perturbative/convention-bound at the minimal-mesh scope.");
+  assert(phase447.twoLoopCandidate === false && phase447.einsteinianTwoLoopSaturationObserved === false, "Phase447 cannot report a two-loop saturation candidate.");
+  assert(phase447.floorSweepStable === false, "Phase447 must carry the floor-sweep instability evidence for the convention-bound resolution.");
+  assert(phase447.twoLoopConventionIsWorkbenchConvention === true && phase447.scaleIsWorkbenchRelativeCandidateOnly === true && phase447.noGevPromotion === true, "Phase447 must keep the convention and no-promotion boundaries.");
+  assert(phase447.recordedBoundary?.physicistReviewPending === true, "Phase447 must flag the pending physicist review of the saddle/propagator convention.");
+  assert(phase447.sourceContractApplicationAllowed === false && phase447.canFillPhase201WzContract === false && phase447.canFillPhase201HiggsContract === false && phase447.canFillPhase256ObservedFieldExtractionContract === false, "Phase447 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase447.routePromotesWzMasses === false && phase447.routePromotesHiggsMass === false && phase447.routeCompletesBosonPredictions === false, "Phase447 cannot promote boson predictions.");
+  assert(phase101Package?.twoLoopSaturationProbe?.twoLoopSaturationProbePassed === true, "Phase101 must include the Phase447 block.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

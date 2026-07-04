@@ -1,6 +1,6 @@
 {
   "phaseId": "phase395-source-current-axis-structure-gauge-covariance-probe",
-  "generatedAt": "2026-07-04T02:10:22.7769386+00:00",
+  "generatedAt": "2026-07-04T08:48:30.1456044+00:00",
   "terminalStatus": "suppressed-axis-shown-gauge-covariant-not-canonical-namespace-map-must-be-gauge-invariant",
   "sourceCurrentAxisStructureGaugeCovarianceProbePassed": true,
   "phase393PrecursorPassed": true,

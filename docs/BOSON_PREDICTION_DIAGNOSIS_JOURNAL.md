@@ -19156,3 +19156,47 @@ gate on CENTERED R^2 (uncentered through-origin R^2 is vacuous); a
 control must be able to EXHIBIT the artifact class it guards against;
 any windowed-fit classifier must be constant-shift invariant before its
 minima are believed. promotedPhysicalMassClaimCount=0 throughout.
+
+## 2026-07-04 - Phase447: The Two-Loop Lever Is Non-Perturbative at the Minimal Scope (Closed Honestly)
+
+### Result
+
+The genuine two-loop vacuum terms (figure-eight over all positive mode
+pairs + soft-mode-truncated sunset, directional FD stencils on the joint
+Hessian eigenvectors, positive-subspace propagator convention) were
+computed along the Phase445/446 rays. All numerical batteries green
+(theta gate 1.4e-9; identity exact-quartic stencil h-independence
+1.3e-7 - S_B is EXACTLY quartic in omega, transcendental in theta,
+which also resolves Phase442's "degree > 2" finding; Einsteinian
+Richardson 7.6e-4; offset immunity 2.9e-7). THE PHYSICS VERDICT:
+max |V_2loop|/|V_1loop| = 1.6e3 (median 155) - the loop expansion is
+catastrophically out of control; the classification flips across the
+soft-floor sweep, the seeds, AND the propagator-convention arm; even
+the identity control acquires a spurious "minimum" (identity
+monotonicity is not a theorem at two loops - its fake minimum is
+evidence of the same breakdown). Under the pre-registered admissibility
+taxonomy: resolutionKind=non-perturbative-or-convention-bound,
+twoLoopVerdictAdmissible=false, twoLoopCandidate=false. Runtime 42 min
+(48.4M action evaluations).
+
+### The build was itself fail-closed
+
+Two smoke runs earned their keep before production: the first proved
+the scouted stencil step h=5e-3 NOISE-DOMINATED (the offset-immunity
+battery - impossible to fail with clean stencils - failed at 135%),
+fixed by exploiting the omega-quartic structure (h=0.1 is exact on the
+omega sector, Richardson-controlled on theta); the second surfaced the
+IR-domination and forced the recorded propagator soft-floor convention
++ floor sweep and the perturbativity admissibility gate.
+
+### Interpretation
+
+THE INTERNAL NO-PLATFORM PROGRAM AT THE MINIMAL MESH IS NOW EXHAUSTED
+THROUGH TWO LOOPS: one loop shows no saturation (443); the
+RG-improvement shortcut was a fit artifact (446); the genuine two-loop
+term cannot be evaluated perturbatively at these backgrounds (447).
+Deciding the scale question beyond this scope requires changing the
+IR spectrum (the two Phase444 unlock projects - the scoping memo
+recommends the adjoint/joint-gradient path first) or a source anchor.
+The saddle/propagator convention carries physicistReviewPending.
+promotedPhysicalMassClaimCount=0 throughout.

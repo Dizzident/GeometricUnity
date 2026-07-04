@@ -314,6 +314,7 @@
     <PhaseProject Include="../studies/phase444_mode_volume_scaled_saturation_probe_001/Phase444ModeVolumeScaledSaturationProbe.csproj" />
     <PhaseProject Include="../studies/phase445_rg_improved_joint_potential_probe_001/Phase445RgImprovedJointPotentialProbe.csproj" />
     <PhaseProject Include="../studies/phase446_rg_scheme_dependence_resolution_probe_001/Phase446RgSchemeDependenceResolutionProbe.csproj" />
+    <PhaseProject Include="../studies/phase447_two_loop_saturation_probe_001/Phase447TwoLoopSaturationProbe.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />

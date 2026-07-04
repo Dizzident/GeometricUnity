@@ -1,6 +1,6 @@
 {
   "phaseId": "phase446-rg-scheme-dependence-resolution-probe",
-  "generatedAt": "2026-07-04T03:41:39.0842344+00:00",
+  "generatedAt": "2026-07-04T10:20:40.0200949+00:00",
   "terminalStatus": "rg-scheme-dependence-resolution-probe-passed-phase445-minima-resolved-as-fit-normalization-artifact-frontier-sharpened",
   "rgSchemeDependenceResolutionProbePassed": true,
   "phase443PrecursorPassed": true,
@@ -6488,7 +6488,7 @@
     "spinorUsedAsShiabCarrierNotFiber": true,
     "draft14dObserverseNotRealized": true
   },
-  "runtimeSeconds": 905.3367444,
+  "runtimeSeconds": 913.3270336,
   "physicalCouplingProvided": false,
   "routeProvidesPhysicalEffectiveActionHessian": false,
   "routeProvidesVevOrSourceScaleLineage": false,
