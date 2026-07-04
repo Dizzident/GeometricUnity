@@ -712,14 +712,27 @@ fails at 2.5e-4), and SLQ is infeasible without a platform adjoint
 were authorized and kept (VertexFaceRule.IncidentAverage +
 latticePeriod minimal-image bivectors; open-mesh byte-identical,
 hard-gated; 8 new tests incl. a documented-limitation test).
-NAMED UNLOCK PROJECTS (user decisions, measurement-scoped, NOT
-started; engineering scoping memo delivered 2026-07-03 at
-studies/phase444_mode_volume_scaled_saturation_probe_001/UNLOCK_SCOPING.md
-- recommendation: fund the adjoint path FIRST, S-M size, low-medium
-risk, fully additive, reusable for two-loop work; the geometry-
-conventions project is M-L with unproven math, spike the Bloch-twist
-alternative before committing): (i) lattice-canonical orientation
-conventions through
+NAMED UNLOCK PROJECTS - BOTH COMPLETED 2026-07-04 (user-directed;
+scoping memo at
+studies/phase444_mode_volume_scaled_saturation_probe_001/UNLOCK_SCOPING.md;
+parallel worktree builds, serial integration, full-suite validation
+between merges): (i) lattice-canonical conventions COMMIT 82d43559 -
+the spike PROVED the math core (chain order of minimal-image lattice
+displacements; Kuhn subsimplices are chains under the componentwise
+partial order => translation-covariant by construction); OPT-IN via
+CreateUniform4DPeriodic(n, latticeCanonical: true) (default false so
+this study's committed non-covariance assertions keep reproducing -
+verified by rerun, Passed=True, verdict byte-stable); covariance
+1.18e-4 -> 7.8e-15, open meshes SHA256-byte-identical, 14 gating
+tests. (ii) adjoint/joint-gradient path COMMIT 7a7e397d - three
+reverse-mode transposes + ComputeJointGradient + JointHessianVector-
+Product; gradient 2.2 ms / Hv 4.7 ms vs the measured ~60 s/Hv; adjoint
+dot-product identities 1e-10. THE MODE-VOLUME LEVER IS UNBLOCKED:
+exact momentum block-diagonalization AND feasible SLQ are both
+available; a phase448 mode-volume-scaled saturation probe on the
+latticeCanonical torus is the NAMED NEXT physics study (torus studies
+MUST opt in with latticeCanonical: true). Original project statements:
+(i) lattice-canonical orientation conventions through
 Gu.Geometry => exact torus block-diagonalization; (ii) adjoint/joint-
 gradient platform path => feasible SLQ. No-platform-work alternatives:
 two-loop/RG on the minimal mesh; richer Phi menus.
