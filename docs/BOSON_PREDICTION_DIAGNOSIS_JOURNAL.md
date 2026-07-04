@@ -19366,3 +19366,118 @@ question; phase449 (variational Gaussian bound) and phase450
 (constraint-EP HMC) are the named next experiments. The
 external/source-anchor track continues in parallel.
 promotedPhysicalMassClaimCount=0 throughout.
+
+## 2026-07-05 - Theory-Completion Task Force: Three Teams + Adversarial Ruling (PARTIALLY ACTIONABLE - Four Certified Steps)
+
+### Process
+
+Three parallel teams (A "Breaking": BSM/lattice/rep-theory; B "Scale":
+gravity/RG/analysis; C "Observables": FMS/lattice-spectroscopy/operator
+theory), each with a communication member; cross-team bulletins relayed
+throughout (5 bulletins/addenda exchanged); complete package then
+adjudicated by a hostile adversarial referee who reran every checkable
+number. One cycle sufficed: the referee certified four steps as
+actionable and proved the remaining blockers are theorem/source-level
+(unreachable by further brainstorming).
+
+### The five load-bearing findings (adversarially filtered)
+
+1. ELITZUR/FMS REFRAME (Team A; referee: conclusion-correct,
+   premise-imprecise). Gauge-variant VEVs are identically zero without
+   gauge fixing, so the physical electroweak content lives in
+   GAUGE-INVARIANT COMPOSITE POLES (FMS), and the program's
+   VEV-selection no-gos (405/440) are true classical/mean-field facts
+   that are simply IRRELEVANT to the physical question - not failures.
+   What this licenses: composite-correlator spectroscopy. What it does
+   NOT license: it does not overturn the 408-425 operator-content
+   no-gos (group theory, untouched) and derives no scale (FMS is a
+   dictionary, not a mechanism).
+2. THE UNIT-OF-MEASURE SPINE (Team B; sustained): one dimensionful
+   import is mathematically mandatory for ANY theory (the SM imports
+   v). GU's defensible anchor is M_Planck (the gravity sector GU
+   already contains); v=246 is doubly illegitimate (circular AND
+   gauge-variant). Honest deliverables are dimensionless ratios.
+   CC/dark-energy anchor killed (misses by ~460x, referee-confirmed).
+3. CIRCULARITY RULING on the sin^2 running (referee, sustained):
+   the "gap closure" sqrt(5/8) -> 0.877 vs observed 0.881 imports the
+   measured sin^2(m_Z) as its IR endpoint - a consistency relabel, not
+   a prediction. The GENUINE one-loop prediction from {3/8 at the
+   a1=a2 crossing + one IR coupling} is sin^2(m_Z) = 0.208 - the
+   textbook ~10% GUT miss. The TWO-LOOP LEDGER with derived content is
+   therefore a real falsifiable test (hit ~0.231 within a few % or the
+   derived content is wrong), with the honest caveat that even success
+   is GUT-generic until the observerse's intermediate content is
+   defined. CORRECTED NUMBER for the ledger: the exact hierarchy
+   condition is b*alpha_GUT = 2pi/ln(M_Pl/m_W) = 0.159 (the package's
+   "~2" was wrong by ~12x; naturalness argument survives - natural
+   b~4, alpha_GUT~1/25 lands Lambda ~ 108 GeV).
+4. THE CONCRETE TRIPLE (Team A): a custodial bi-doublet scalar M_v with
+   gauge-covariant hopping + Mexican hat, plus a GU-NATIVE PORTAL
+   variant xi Tr(M dagger Upsilon M) sourcing the mass^2 from the
+   curvature-torsion residual instead of an imported tachyon; verified
+   rho = 1 mass matrix. Referee scope corrections (BINDING): on the
+   su(2)-only workbench there is NO hypercharge, so rho and the
+   Weinberg angle are NOT measurable - the su(2)-honest observables are
+   the O_H singlet mass gap and CUSTODIAL TRIPLET DEGENERACY
+   (necessary-not-sufficient for rho=1); the would-be doublet's
+   vector-indexed carrier (4x10 block) means an O_H gap proves a
+   singlet state exists, not "the Higgs"; and with fundamental matter
+   Higgs/confinement are analytically connected (crossover -
+   Osterwalder-Seiler - the physically correct SM situation).
+5. THE HEADLINE IS BLOCKED, HONESTLY: m_W/m_Z vs sqrt(5/8) - the
+   program's first would-be falsifiable electroweak ratio - requires
+   the unbroken-direction/mixing input, which IS the committed
+   phase397 gap {hypercharge lineage, coupling-ratio lineage}. That is
+   a theorem/source-level blocker, not a compute blocker. Do not
+   advertise it as near-term.
+
+### CERTIFIED ACTIONABLE NEXT STEPS (referee-ranked, with binding conditions)
+
+1. TWO-LOOP UNIFICATION LEDGER [track B; hours]: predict sin^2(m_Z)
+   from the derived 3/8 boundary + exactly ONE low-energy coupling
+   (never import sin^2(m_Z)); expect and report the GUT tension;
+   fail-closed ledger. Falsifies the derived b-content if it cannot
+   reach ~0.231 within threshold error.
+2. 0++ MASS-GAP SPECTROSCOPY [track C; ~0.4-4 h at n=3]: tr(F^2) AND
+   Mode-B <Tr Upsilon dagger Upsilon> interpolators, zero-momentum
+   time-slice correlators on the lattice-canonical torus, COSH-
+   CORRECTED effective masses ONLY (the naive log-ratio was shown
+   corrupted by the periodic image), exact block-spectrum free-field
+   gate (proven flat to 1e-5), theta-Haar measure. Directly
+   measurement-tests the review board's convex/gapped picture.
+3. SINGLET COMPOSITE + CUSTODIAL-DEGENERACY PROBE [track A; 1-2
+   dev-days + short runs]: the bi-doublet triple sampled in the HMC
+   harness (both the Mexican-hat and the Upsilon-portal variants);
+   gates: plateau quality, CUSTODIAL-DEGENERACY (renamed from
+   rho-gate), crossover location; su(2)-honest scope language binding.
+4. FRADKIN-SHENKER/BINDER ADJOINT PHASE MAP [track C; weeks,
+   embarrassingly parallel]: pure-gauge coupling column now; the
+   adjoint-only theory has a GENUINE transition; volume scan across
+   >= 4 tori.
+5. (Heavy parallel, higher risk) CL(7,7)/128-SPINOR SHIAB BUILD
+   [track A; weeks]: the only structural attack on the scale wall
+   (the workbench sector three phases blamed); risk: may reproduce
+   necessary-not-sufficient at higher cost.
+
+NOT ACTIONABLE (recorded): the 144-block fermion condensate (needs an
+undefined GU fermionic action/Yukawa - source input); the m_W/m_Z,
+photon/Z, and rho measurements (blocked on the phase397
+hypercharge/coupling lineage gap).
+
+### Corrections ordered by the referee (before anyone cites them)
+
+The task-force scratch scripts custodial.py (prints rho=1 for the
+non-custodial VEV too) and calc.py CALC2 (naive log-ratio corrupted by
+the periodic image, prints a false "matches") are BROKEN; rho.py and
+calc2.py are the correct versions. The "b*alpha_GUT ~ 2" figure is
+wrong (correct: 0.159). None were committed to the repo; recorded here
+so they cannot resurface.
+
+### Standing epistemic state
+
+The two program-level blockers that no internal computation can
+remove: (i) a source-defined hypercharge + coupling-ratio lineage
+(the phase397 gap), (ii) the single mandatory dimensionful anchor
+(M_Planck recommended). Both are theorem/source-level. Everything
+else now has a certified, parallelizable work plan.
+promotedPhysicalMassClaimCount=0 throughout.

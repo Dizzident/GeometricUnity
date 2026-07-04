@@ -645,6 +645,63 @@ work:
    collective coordinate, Faddeev-Popov normalization caveat for
    cross-member spectral comparisons.
 
+### 2026-07-05 Theory-Completion Task Force — THE PARALLEL WORK PLAN (BINDING)
+
+Three specialist teams (Breaking / Scale / Observables) with cross-team
+bulletins, adjudicated by a hostile adversarial referee who reran every
+checkable number (full record: the 2026-07-05 journal entry). Ruling:
+PARTIALLY ACTIONABLE — four certified steps, two theorem/source-level
+blockers no computation can remove. IMPLEMENT THE CERTIFIED STEPS AS
+PARALLEL WORKSTREAMS (they are independent):
+
+  WS1 [hours; no dependencies]: TWO-LOOP UNIFICATION LEDGER phase —
+  predict sin^2(m_Z) from the derived 3/8 boundary at the a1=a2
+  crossing + exactly ONE low-energy coupling (NEVER import sin^2(m_Z)
+  — the referee ruled the one-loop "gap closure" circular; the honest
+  one-loop prediction is 0.208, the textbook GUT miss, making the
+  two-loop test genuinely falsifiable). Fail-closed; report the
+  tension; success is GUT-generic until observerse intermediate
+  content is defined. Corrected figure: exact hierarchy condition
+  b*alpha_GUT = 2pi/ln(M_Pl/m_W) = 0.159.
+  WS2 [~0.4-4 h runs; no dependencies]: 0++ MASS-GAP SPECTROSCOPY
+  phase — tr(F^2) + Mode-B <Tr Upsilon†Upsilon> interpolators,
+  zero-momentum time-slice correlators on lattice-canonical tori
+  (n=3,4), COSH-CORRECTED effective masses ONLY, exact block-spectrum
+  free-field gate (flat to 1e-5), theta-Haar measure + phase450
+  binding conditions. Measurement-tests the review board's
+  convex/gapped picture.
+  WS3 [1-2 dev-days + short runs; no dependencies]: SINGLET COMPOSITE
+  + CUSTODIAL-DEGENERACY phase — sample the Team-A bi-doublet triple
+  (rep: custodial bi-doublet per vertex; coupling: covariant hopping +
+  Mexican hat AND the GU-native portal xi Tr(M†YM) variant; vacuum:
+  <M> ~ I2) in the HMC harness. su(2)-HONEST SCOPE IS BINDING: no
+  hypercharge on this workbench => rho and the Weinberg angle are NOT
+  measurable; the honest gates are the O_H mass gap + CUSTODIAL
+  TRIPLET DEGENERACY (necessary-not-sufficient); an O_H gap proves a
+  singlet state, never "the Higgs"; fundamental matter => crossover
+  (Osterwalder-Seiler), not a sharp transition.
+  WS4 [weeks, embarrassingly parallel]: FRADKIN-SHENKER/BINDER ADJOINT
+  PHASE MAP — pure-gauge coupling column first (genuine transition on
+  the adjoint-only theory), >= 4 torus volumes.
+  WS5 [weeks; heavy, higher risk, run behind WS1-4]: CL(7,7)/128-SPINOR
+  SHIAB BUILD — the only structural attack on the scale wall; risk of
+  reproducing necessary-not-sufficient at higher cost.
+
+  BLOCKED (do not attempt without new source input): m_W/m_Z vs
+  sqrt(5/8), photon/Z separation, rho measurement — all require the
+  phase397 {hypercharge, coupling-ratio} lineage; the 144-block fermion
+  condensate requires an undefined GU fermionic action. The single
+  mandatory dimensionful anchor (M_Planck recommended over v=246,
+  which is circular AND gauge-variant per Elitzur) remains a
+  source-level decision. ELITZUR REFRAME (recorded): the program's
+  VEV-selection no-gos were true classical/mean-field facts irrelevant
+  to the physical question; physical content = gauge-invariant
+  composite poles; the 408-425 operator-content no-gos stand.
+
+  Phase449 (variational Gaussian bound) and phase450 (CEP-HMC, four
+  binding conditions) remain in flight and are complementary to
+  WS1-WS4 (WS2/WS3 share the HMC infrastructure with phase450).
+
 ### Most Recent Implemented Work
 
 The latest work (2026-07-04, after both phase444 unlock projects were
