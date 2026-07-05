@@ -1,6 +1,6 @@
 {
   "phaseId": "phase441-toy-branch-family-universality-sweep",
-  "generatedAt": "2026-07-04T13:51:54.3020305+00:00",
+  "generatedAt": "2026-07-05T00:30:47.802948+00:00",
   "terminalStatus": "no-saturation-theorem-extends-to-entire-toy-family-scale-gap-requires-dim-four-spinor-shiab-or-source-anchor",
   "toyBranchFamilyUniversalitySweepPassed": true,
   "phase436PrecursorPassed": true,
@@ -958,7 +958,7 @@
     "workbenchPolarizationConventionReused": true,
     "noGevPromotion": true
   },
-  "runtimeSeconds": 20.3846306,
+  "runtimeSeconds": 20.4287405,
   "physicalCouplingProvided": false,
   "routeProvidesPhysicalMassPsiCompatibleBranch": false,
   "routeProvidesCompletedFermionicAction": false,

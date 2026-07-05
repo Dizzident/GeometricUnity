@@ -47,6 +47,7 @@ var excludedPathFragments = new[]
     "studies/phase446_rg_scheme_dependence_resolution_probe_001/",
     "studies/phase447_two_loop_saturation_probe_001/",
     "studies/phase448_torus_mode_volume_saturation_probe_001/",
+    "studies/phase449_variational_gaussian_effective_potential_probe_001/",
 };
 
 var dimension4Pattern = new Regex("""

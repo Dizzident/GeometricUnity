@@ -1,7 +1,7 @@
 {
   "phaseId": "phase340-bf-topological-mass-source-audit",
   "terminalStatus": "bf-topological-mass-source-audit-external-topological-mass-lead-not-gu-source",
-  "generatedAt": "2026-07-04T13:36:17.3944073+00:00",
+  "generatedAt": "2026-07-05T00:14:29.5717103+00:00",
   "bfTopologicalMassSourceAuditPassed": true,
   "bfTopologicalMassLeadPresent": true,
   "bfTopologicalPrimarySourcesReviewed": true,

@@ -1,7 +1,7 @@
 {
   "phaseId": "phase352-higgs-top-z-nnlo-matching-source-audit",
   "terminalStatus": "higgs-top-z-nnlo-matching-source-audit-pole-coincidence-running-boundary-fails",
-  "generatedAt": "2026-07-04T13:36:20.8383915+00:00",
+  "generatedAt": "2026-07-05T00:14:33.0036756+00:00",
   "higgsTopZNnloMatchingSourceAuditPassed": true,
   "higgsTopZNnloLeadPresent": true,
   "higgsTopZNnloPrimarySourceReviewed": true,

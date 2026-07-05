@@ -19514,3 +19514,36 @@ else now has a certified, parallelizable work plan - with WS3 scoped
 to the Upsilon-portal condensation question and WS4 split per the
 addendum ruling above.
 promotedPhysicalMassClaimCount=0 throughout.
+
+## 2026-07-05 - Phase449: The Diagonal Gaussian Bound BREAKS DOWN (Pre-Registered Outcome, Recorded)
+
+### Result
+
+The review board's #1 experiment - the diagonal CJT-Hartree
+variational effective potential (rigorous Feynman-Jensen upper bound;
+T4 pair table over ALL modes at the phase447 large-h stencil
+convention; damped fixed-point gap solver with NO clamping) - decided
+on its pre-registered THIRD outcome: verdictKind=gap-equation-breakdown.
+The diagonal-Gaussian family FAILS TO EXIST on 32 of 64 Einsteinian
+ray points (Hartree mass nonpositive at the prescribed init; converged
+points reach residual <= 9.9e-9); the identity control converges at
+every point (trivial-origin, minM 0.43-0.66); the anchor
+basis-rotation honesty check found GENUINE ansatz dependence (a
+rotated basis converges where the eigenbasis start fails). All
+numerical batteries green (theta 1.4e-9; identity exact-quartic anchor
+1.2e-7; Richardson 8.8e-3; offset immunity 1.3e-6; solver plumbing
+1.1e-16; descent monotone 1.000). Runtime 21 min.
+
+### Interpretation
+
+The cheapest rung of the non-perturbative ladder cannot hold the
+Einsteinian negative-mode structure: the quartic's Hartree lift is
+insufficient on half the ray. This is NOT a null (which would have
+been strong bound-level evidence against a scale) and NOT a candidate
+- it is the honest record that the diagonal-Gaussian ansatz class is
+too weak for these backgrounds, sharpening WHERE the Gaussian family
+fails. The scale question passes intact to the phase450 constraint-EP
+HMC (ansatz-free, sign-problem-free, four binding conditions) -
+exactly the eventuality the review board's ranking anticipated. The
+2026-07-05 task-force workstreams WS1-WS4 proceed independently in
+parallel. promotedPhysicalMassClaimCount=0 throughout.

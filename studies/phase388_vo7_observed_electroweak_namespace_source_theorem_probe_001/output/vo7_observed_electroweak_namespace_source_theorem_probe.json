@@ -1,7 +1,7 @@
 {
   "phaseId": "phase388-vo7-observed-electroweak-namespace-source-theorem-probe",
   "terminalStatus": "vo7-observed-electroweak-namespace-source-theorem-probe-failed-closed-new-theorem-required",
-  "generatedAt": "2026-07-04T13:36:59.2478947+00:00",
+  "generatedAt": "2026-07-05T00:15:11.8554837+00:00",
   "vo7ObservedNamespaceSourceTheoremProbePassed": true,
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,

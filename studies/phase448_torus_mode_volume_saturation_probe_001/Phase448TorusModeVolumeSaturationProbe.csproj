@@ -7,6 +7,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <!-- The preserved CEP HMC feasibility prototype is a standalone project in a
+       subdirectory; exclude it from this study's compilation glob. -->
+  <ItemGroup>
+    <Compile Remove="cep_hmc_prototype/**/*.cs" />
+    <None Remove="cep_hmc_prototype/**" />
+  </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="../../src/Gu.Geometry/Gu.Geometry.csproj" />
     <ProjectReference Include="../../src/Gu.Interop/Gu.Interop.csproj" />

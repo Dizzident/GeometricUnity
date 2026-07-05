@@ -1,6 +1,6 @@
 {
   "phaseId": "phase437-four-dimensional-transmutation-scaling-probe",
-  "generatedAt": "2026-07-04T13:51:31.468307+00:00",
+  "generatedAt": "2026-07-05T00:30:24.9287821+00:00",
   "terminalStatus": "four-dimensional-landscape-log-dominated-runaway-structural-cw-regime-unreachable-on-bounded-dispersion-lattice",
   "fourDimensionalTransmutationScalingProbePassed": true,
   "precursorsPassed": true,
@@ -746,7 +746,7 @@
     "canFillPhase256ObservedFieldExtractionContract": false,
     "phase201FieldsDefensiblyFilled": []
   },
-  "runtimeSeconds": 2.8249034,
+  "runtimeSeconds": 2.7955947,
   "sourceEvidence": {
     "phase430SummaryPath": "studies/phase430_net_one_loop_direction_selection_probe_001/output/net_one_loop_direction_selection_probe_summary.json",
     "phase435SummaryPath": "studies/phase435_two_condensate_scale_gap_probe_001/output/two_condensate_scale_gap_probe_summary.json",

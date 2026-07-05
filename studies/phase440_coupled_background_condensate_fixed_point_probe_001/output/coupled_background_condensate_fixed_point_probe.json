@@ -1,7 +1,7 @@
 {
   "phaseId": "phase440-coupled-background-condensate-fixed-point-probe",
-  "generatedAt": "2026-07-04T13:51:33.6200098+00:00",
-  "runtimeSeconds": 0.7997737,
+  "generatedAt": "2026-07-05T00:30:27.0756817+00:00",
+  "runtimeSeconds": 0.8029571,
   "terminalStatus": "coupled-system-has-no-interior-fixed-point-condensate-delays-but-cannot-stop-runaway-candidate-chain-does-not-close-no-gev-promotion",
   "coupledBackgroundCondensateFixedPointProbePassed": true,
   "precursorsPassed": true,

@@ -1,6 +1,6 @@
 {
   "phaseId": "phase424-vector-spinor-144-bilinear-sm-doublet-intersection-analysis",
-  "generatedAt": "2026-07-04T13:50:09.149358+00:00",
+  "generatedAt": "2026-07-05T00:29:04.7409224+00:00",
   "terminalStatus": "vector-spinor-144-bilinear-welded-scalar-sm-doublet-absent-branch-closed",
   "vectorSpinor144BilinearSmDoubletIntersectionAnalysisPassed": true,
   "phase417PrecursorPassed": true,
@@ -31,7 +31,7 @@
   "sigma4HomResidual": 0,
   "weightClassLeakageResidual": 5.370027344986397E-10,
   "classKernelMaxResidual": 9.435095229568542E-14,
-  "projectorIdempotencyResidual": 4.367340623805185E-14,
+  "projectorIdempotencyResidual": 2.2360447251332013E-14,
   "gramHermiticityResidual": 1.0605597888617424E-15,
   "casimirGridMaxJ": 6,
   "statisticsProjectionApplied": false,

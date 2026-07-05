@@ -219,6 +219,7 @@ const paths = {
   phase446: "studies/phase446_rg_scheme_dependence_resolution_probe_001/output/rg_scheme_dependence_resolution_probe_summary.json",
   phase447: "studies/phase447_two_loop_saturation_probe_001/output/two_loop_saturation_probe_summary.json",
   phase448: "studies/phase448_torus_mode_volume_saturation_probe_001/output/torus_mode_volume_saturation_probe_summary.json",
+  phase449: "studies/phase449_variational_gaussian_effective_potential_probe_001/output/variational_gaussian_effective_potential_probe_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -509,6 +510,7 @@ const phase445 = requireFile(paths.phase445);
 const phase446 = requireFile(paths.phase446);
 const phase447 = requireFile(paths.phase447);
 const phase448 = requireFile(paths.phase448);
+const phase449 = requireFile(paths.phase449);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -5336,6 +5338,17 @@ if (sourceLineageMissing) {
   assert(phase448.sourceContractApplicationAllowed === false && phase448.canFillPhase201WzContract === false && phase448.canFillPhase201HiggsContract === false && phase448.canFillPhase256ObservedFieldExtractionContract === false, "Phase448 cannot fill Phase201 or Phase256 contracts.");
   assert(phase448.routePromotesWzMasses === false && phase448.routePromotesHiggsMass === false && phase448.routeCompletesBosonPredictions === false, "Phase448 cannot promote boson predictions.");
   assert(phase101Package?.torusModeVolumeSaturationProbe?.torusModeVolumeSaturationProbePassed === true, "Phase101 must include the Phase448 block.");
+  assert(phase449.variationalGaussianEffectivePotentialProbePassed === true, "Phase449 variational Gaussian probe must pass on internal consistency.");
+  assert(phase449.targetBlindConstruction === true && typeof phase449.targetBlindConstructionHash === "string" && phase449.targetBlindConstructionHash.length === 64, "Phase449 must remain target-blind with a persisted construction hash.");
+  assert(phase449.applicationSubjectKind === "variational-gaussian-effective-potential-probe", "Phase449 must classify its subject as the variational Gaussian probe.");
+  assert(phase449.batteries?.batteriesAllPassed === true, "Phase449 batteries incl. theta gate, stencil anchors, and gap-solver internal consistency must pass.");
+  assert(phase449.verdictKind === "gap-equation-breakdown" && phase449.hartreeSelfConsistentSolutionExistsEverywhere === false, "Phase449 must record the diagonal-Hartree gap-equation breakdown honestly.");
+  assert(phase449.einsteinianGaussianSaturationObserved === false, "Phase449 cannot report a Gaussian saturation candidate.");
+  assert(phase449.gaussianAnsatzIsWorkbenchConvention === true && phase449.scaleIsWorkbenchRelativeCandidateOnly === true && phase449.noGevPromotion === true, "Phase449 must keep the convention and no-promotion boundaries.");
+  assert(phase449.recordedBoundary?.physicistReviewPending === true, "Phase449 must flag the pending physicist review of the Gaussian ansatz conventions.");
+  assert(phase449.sourceContractApplicationAllowed === false && phase449.canFillPhase201WzContract === false && phase449.canFillPhase201HiggsContract === false && phase449.canFillPhase256ObservedFieldExtractionContract === false, "Phase449 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase449.routePromotesWzMasses === false && phase449.routePromotesHiggsMass === false && phase449.routeCompletesBosonPredictions === false, "Phase449 cannot promote boson predictions.");
+  assert(phase101Package?.variationalGaussianEffectivePotentialProbe?.variationalGaussianEffectivePotentialProbePassed === true, "Phase101 must include the Phase449 block.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

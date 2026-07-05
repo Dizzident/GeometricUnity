@@ -205,6 +205,7 @@ const string Phase445Path = "studies/phase445_rg_improved_joint_potential_probe_
 const string Phase446Path = "studies/phase446_rg_scheme_dependence_resolution_probe_001/output/rg_scheme_dependence_resolution_probe_summary.json";
 const string Phase447Path = "studies/phase447_two_loop_saturation_probe_001/output/two_loop_saturation_probe_summary.json";
 const string Phase448Path = "studies/phase448_torus_mode_volume_saturation_probe_001/output/torus_mode_volume_saturation_probe_summary.json";
+const string Phase449Path = "studies/phase449_variational_gaussian_effective_potential_probe_001/output/variational_gaussian_effective_potential_probe_summary.json";
 const string Phase444Path = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443Path = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442Path = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -461,6 +462,7 @@ using var phase445 = File.Exists(Phase445Path) ? JsonDocument.Parse(File.ReadAll
 using var phase446 = File.Exists(Phase446Path) ? JsonDocument.Parse(File.ReadAllText(Phase446Path)) : null;
 using var phase447 = File.Exists(Phase447Path) ? JsonDocument.Parse(File.ReadAllText(Phase447Path)) : null;
 using var phase448 = File.Exists(Phase448Path) ? JsonDocument.Parse(File.ReadAllText(Phase448Path)) : null;
+using var phase449 = File.Exists(Phase449Path) ? JsonDocument.Parse(File.ReadAllText(Phase449Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -6262,6 +6264,26 @@ var torusModeVolumeSaturationProbePassed = torusModeVolumeSaturationProbeMateria
     && JsonBool(phase448.RootElement, "routePromotesHiggsMass") is false
     && JsonBool(phase448.RootElement, "routeCompletesBosonPredictions") is false
     && JsonInt(phase448.RootElement, "acceptedContractFieldCount") == 0;
+var variationalGaussianEffectivePotentialProbeMaterialized = phase449 is not null;
+var variationalGaussianEffectivePotentialProbePassed = variationalGaussianEffectivePotentialProbeMaterialized
+    && JsonBool(phase449!.RootElement, "variationalGaussianEffectivePotentialProbePassed") is true
+    && JsonBool(phase449.RootElement, "targetBlindConstruction") is true
+    && (JsonString(phase449.RootElement, "targetBlindConstructionHash")?.Length ?? 0) == 64
+    && JsonString(phase449.RootElement, "applicationSubjectKind") == "variational-gaussian-effective-potential-probe"
+    && JsonString(phase449.RootElement, "verdictKind") == "gap-equation-breakdown"
+    && JsonBool(phase449.RootElement, "einsteinianGaussianSaturationObserved") is false
+    && JsonBool(phase449.RootElement, "hartreeSelfConsistentSolutionExistsEverywhere") is false
+    && JsonBool(phase449.RootElement, "gaussianAnsatzIsWorkbenchConvention") is true
+    && JsonBool(phase449.RootElement, "scaleIsWorkbenchRelativeCandidateOnly") is true
+    && JsonBool(phase449.RootElement, "noGevPromotion") is true
+    && JsonBool(phase449.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase449.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase449.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase449.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase449.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase449.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase449.RootElement, "routeCompletesBosonPredictions") is false
+    && JsonInt(phase449.RootElement, "acceptedContractFieldCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -8822,6 +8844,14 @@ var checklist = new[]
             ? $"torusModeVolumeSaturationProbePassed={JsonBool(phase448!.RootElement, "torusModeVolumeSaturationProbePassed")}; modeVolumeVerdict={JsonString(phase448.RootElement, "modeVolumeVerdict")}; anySaturationAnyVolume={JsonBool(phase448.RootElement, "anySaturationAnyVolume")}; volumeTrendSeedStable={JsonBool(phase448.RootElement, "volumeTrendSeedStable")}; noGevPromotion={JsonBool(phase448.RootElement, "noGevPromotion")}; canFillPhase201WzContract={JsonBool(phase448.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase448.RootElement, "decision")}"
             : "Phase448 artifact not materialized",
         Phase448Path),
+    new ObjectiveChecklistItem(
+        "variational-gaussian-effective-potential-probe-materialized",
+        "Execute the review board's #1 experiment: the diagonal CJT-Hartree variational bound. Recorded outcome: GAP-EQUATION BREAKDOWN - the diagonal-Gaussian family fails to exist on half the Einsteinian ray points (identity control converges everywhere; genuine ansatz-basis dependence recorded) - the cheapest non-perturbative rung is insufficient and the scale question passes intact to the phase450 constraint-EP HMC; nothing promoted.",
+        variationalGaussianEffectivePotentialProbePassed ? "passed" : "failed",
+        variationalGaussianEffectivePotentialProbeMaterialized
+            ? $"variationalGaussianEffectivePotentialProbePassed={JsonBool(phase449!.RootElement, "variationalGaussianEffectivePotentialProbePassed")}; verdictKind={JsonString(phase449.RootElement, "verdictKind")}; einsteinianGaussianSaturationObserved={JsonBool(phase449.RootElement, "einsteinianGaussianSaturationObserved")}; hartreeSelfConsistentSolutionExistsEverywhere={JsonBool(phase449.RootElement, "hartreeSelfConsistentSolutionExistsEverywhere")}; noGevPromotion={JsonBool(phase449.RootElement, "noGevPromotion")}; canFillPhase201WzContract={JsonBool(phase449.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase449.RootElement, "decision")}"
+            : "Phase449 artifact not materialized",
+        Phase449Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
