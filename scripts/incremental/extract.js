@@ -102,8 +102,8 @@ function splitTopLevelArgs(argText) {
 }
 
 // The first argument of a scanner call, taking parenthesis nesting into
-// account (RE_SCAN_CALL's naive split breaks on Path.Combine(...)), so we
-// re-extract from source at each match position.
+// account (a naive comma split breaks on Path.Combine(...)), extracted
+// from the source at each match position.
 function firstScannerArg(src, matchIndex) {
   const open = src.indexOf("(", matchIndex);
   if (open < 0) return null;
