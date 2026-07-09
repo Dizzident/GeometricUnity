@@ -21,9 +21,24 @@ const path = require("path");
 const RE_PATH_LITERAL = /"((?:studies|docs|src|native|scripts)\/[^"\\\n]*)"/g;
 const RE_CONST_STRING =
   /(?:const\s+string|static\s+readonly\s+string|(?:^|[\s(])(?:string|var))\s+([A-Za-z_]\w*)\s*=\s*"([^"\\\n]*)"/g;
-const RE_SCAN_CALL =
-  /Directory\.(?:EnumerateFiles|GetFiles|EnumerateDirectories|GetDirectories)\s*\(\s*([^;]*?)(?:\)|,)/g;
+const RE_CONST_INTERP =
+  /(?:const\s+string|static\s+readonly\s+string|(?:^|[\s(])(?:string|var))\s+([A-Za-z_]\w*)\s*=\s*\$"([^"\\\n]*)"/g;
 const RE_PROJECT_REF = /ProjectReference\s+Include="([^"]+)"/g;
+const RE_REPO_PATH = /^(?:studies|docs|src|native|scripts)\//;
+
+// Resolve a C# interpolated-string template whose placeholders are all
+// resolvable identifiers ({Name} only; format specifiers or expressions
+// fail resolution). Returns the resolved string or null.
+function resolveInterp(template, constMap) {
+  let ok = true;
+  const out = template.replace(/\{([A-Za-z_]\w*)\}/g, (_, id) => {
+    if (Object.prototype.hasOwnProperty.call(constMap, id)) return constMap[id];
+    ok = false;
+    return "";
+  });
+  if (!ok || /[{}]/.test(out)) return null;
+  return out;
+}
 
 function readIfExists(p) {
   try {
@@ -40,6 +55,8 @@ function resolveExpr(expr, constMap) {
   expr = expr.trim();
   let m = expr.match(/^"([^"\\]*)"$/);
   if (m) return m[1];
+  m = expr.match(/^\$"([^"\\]*)"$/);
+  if (m) return resolveInterp(m[1], constMap);
   m = expr.match(/^[A-Za-z_]\w*$/);
   if (m && Object.prototype.hasOwnProperty.call(constMap, expr)) {
     return constMap[expr];
@@ -166,16 +183,41 @@ function extractPhaseInputs(repoRoot, projectRelPath) {
     const constMap = {};
     for (const m of src.matchAll(RE_CONST_STRING)) constMap[m[1]] = m[2];
 
+    // Fixpoint-resolve interpolated const strings whose placeholders are
+    // themselves resolvable consts (e.g. const F = $"{Root}/fermions").
+    const interpDefs = [...src.matchAll(RE_CONST_INTERP)].map((m) => [m[1], m[2]]);
+    let progressed = true;
+    while (progressed) {
+      progressed = false;
+      for (const [name, tmpl] of interpDefs) {
+        if (Object.prototype.hasOwnProperty.call(constMap, name)) continue;
+        const resolved = resolveInterp(tmpl, constMap);
+        if (resolved !== null) {
+          constMap[name] = resolved;
+          progressed = true;
+        }
+      }
+    }
+
     for (const m of src.matchAll(RE_PATH_LITERAL)) {
       const rel = normalizeRel(m[1]);
       if (rel === projectDirRel || rel.startsWith(projectDirRel + "/")) continue; // self
       pathLiterals.add(rel);
     }
 
-    // Interpolated strings containing repo paths are statically unresolvable;
-    // record a hint so callers can fail closed for this phase.
+    // Resolved const values that are repo paths count as declared inputs
+    // (this covers interpolated consts like $"{Phase12Root}/fermions").
+    for (const v of Object.values(constMap)) {
+      if (typeof v !== "string" || !RE_REPO_PATH.test(v)) continue;
+      const rel = normalizeRel(v);
+      if (rel === projectDirRel || rel.startsWith(projectDirRel + "/")) continue;
+      pathLiterals.add(rel);
+    }
+
+    // Interpolated strings containing repo paths that did NOT resolve are
+    // statically unresolvable; record a hint so callers can fail closed.
     for (const m of src.matchAll(/\$"((?:studies|docs|src|native|scripts)\/[^"\n]*)"/g)) {
-      interpolatedPathHints.add(m[1]);
+      if (resolveInterp(m[1], constMap) === null) interpolatedPathHints.add(m[1]);
     }
 
     const scanRe = /Directory\.(?:EnumerateFiles|GetFiles|EnumerateDirectories|GetDirectories)\s*\(/g;

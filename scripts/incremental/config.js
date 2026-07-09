@@ -56,6 +56,19 @@ const READSET_EXCLUDE_SEGMENTS = Object.freeze(["/obj/", "/bin/"]);
 // Native library inputs for phases invoked with LD_LIBRARY_PATH=native/build.
 const NATIVE_BUILD_RELDIR = "native/build";
 
+// Repo-root build-configuration files read by EVERY `dotnet run` invocation
+// (confirmed by read-set capture: dotnet run --no-build re-evaluates MSBuild
+// and reads Directory.Build.props). A change to any of these can change what
+// the phases execute, so they are frozen components of every fingerprint.
+const GLOBAL_INPUT_RELPATHS = Object.freeze([
+  "Directory.Build.props",
+  "Directory.Build.targets",
+  "Directory.Packages.props",
+  "global.json",
+  "nuget.config",
+  "NuGet.config",
+]);
+
 function repoRootFromHere() {
   // scripts/incremental/config.js -> repo root is two levels up.
   return path.resolve(__dirname, "..", "..");
@@ -71,5 +84,6 @@ module.exports = {
   READSET_EXCLUDE_RELPREFIXES,
   READSET_EXCLUDE_SEGMENTS,
   NATIVE_BUILD_RELDIR,
+  GLOBAL_INPUT_RELPATHS,
   repoRootFromHere,
 };

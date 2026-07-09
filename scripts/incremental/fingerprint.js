@@ -30,7 +30,7 @@ const { sha256Hex, hashFileCanonical } = require("./canonical");
 const { dirTreeHash } = require("./treehash");
 const { extractPhaseInputs } = require("./extract");
 const { outputsMapHash } = require("./manifest");
-const { SCHEMA_VERSION, NATIVE_BUILD_RELDIR } = require("./config");
+const { SCHEMA_VERSION, NATIVE_BUILD_RELDIR, GLOBAL_INPUT_RELPATHS } = require("./config");
 
 const RE_PHASE_OUTPUT = /^studies\/phase(\d+)_[^/]+\/output(\/|$)/;
 
@@ -61,6 +61,13 @@ function computeFingerprint({ repoRoot, step, registryPhaseSet, manifest, entry 
 
   components.push(`scheme:${SCHEMA_VERSION}`);
   components.push(`invoke:${step.invocation}`);
+
+  // Repo-root build configuration read by every `dotnet run` invocation.
+  const coveredGlobals = [];
+  for (const rel of GLOBAL_INPUT_RELPATHS) {
+    components.push(`frozen:${rel}:${hashPathAuto(repoRoot, rel)}`);
+    coveredGlobals.push(rel);
+  }
 
   // self
   const selfTree = dirTreeHash(path.join(repoRoot, extraction.projectDirRel), {
@@ -115,6 +122,7 @@ function computeFingerprint({ repoRoot, step, registryPhaseSet, manifest, entry 
   // recorded read-set (real reads captured under instrumentation)
   const recorded = (entry && entry.recordedInputs) || [];
   for (const srcDir of extraction.srcRefs) coveredPrefixes.push(srcDir);
+  for (const rel of coveredGlobals) coveredPrefixes.push(rel);
   for (const rel of recorded) {
     if (isCovered(rel, coveredPrefixes)) continue;
     components.push(`readset:${rel}:${hashPathAuto(repoRoot, rel)}`);

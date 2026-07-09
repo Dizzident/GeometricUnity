@@ -157,6 +157,17 @@ test("invocation line changes flip the fingerprint", (t) => {
   assert.notStrictEqual(fp1.fingerprint, fp2.fingerprint);
 });
 
+test("repo-root build config (Directory.Build.props) is a global frozen component", (t) => {
+  const { root, steps, registryPhaseSet } = setup();
+  t.after(() => rmrf(root));
+  const manifest = emptyManifest();
+  const fp1 = computeFingerprint({ repoRoot: root, step: steps[1], registryPhaseSet, manifest });
+  assert.ok(fp1.components.some((c) => c.startsWith("frozen:Directory.Build.props:")));
+  fs.writeFileSync(path.join(root, "Directory.Build.props"), "<Project />\n");
+  const fp2 = computeFingerprint({ repoRoot: root, step: steps[1], registryPhaseSet, manifest });
+  assert.notStrictEqual(fp1.fingerprint, fp2.fingerprint, "build-config change must invalidate");
+});
+
 test("src project edits (transitive) flip the fingerprint", (t) => {
   const { root, steps, registryPhaseSet } = setup();
   t.after(() => rmrf(root));

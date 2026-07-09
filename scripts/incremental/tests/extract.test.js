@@ -33,6 +33,28 @@ test("extraction: literals, const scan roots, Path.Combine, src refs, own-output
   assert.deepStrictEqual(p3.unresolvedScanRoots, ["dir"]);
 });
 
+test("extraction: interpolated consts resolve via fixpoint (scan roots and paths)", (t) => {
+  const root = makeFixtureRepo();
+  t.after(() => rmrf(root));
+  const fs = require("fs");
+  const path = require("path");
+  fs.writeFileSync(
+    path.join(root, "studies/phase3_gamma_001/Program.cs"),
+    [
+      'const string Phase12Root = "studies/phase0_matrices_001/output";',
+      'const string FermionDir = $"{Phase12Root}/matrices";',
+      'const string SpinorPath = $"{FermionDir}/spinor.json";',
+      'var files = Directory.GetFiles(FermionDir, "*.json");',
+      "",
+    ].join("\n")
+  );
+  const p3 = extractPhaseInputs(root, "studies/phase3_gamma_001/Phase3Gamma.csproj");
+  assert.deepStrictEqual(p3.unresolvedScanRoots, []);
+  assert.deepStrictEqual(p3.scanRoots, ["studies/phase0_matrices_001/output/matrices"]);
+  assert.ok(p3.pathLiterals.includes("studies/phase0_matrices_001/output/matrices/spinor.json"));
+  assert.deepStrictEqual(p3.interpolatedPathHints, []);
+});
+
 test("extraction: interpolated repo paths are reported as hints", (t) => {
   const root = makeFixtureRepo();
   t.after(() => rmrf(root));
