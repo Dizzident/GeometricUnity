@@ -1,7 +1,7 @@
 {
   "phaseId": "phase346-nielsen-pole-mass-gauge-independence-source-audit",
   "terminalStatus": "nielsen-pole-mass-gauge-independence-source-audit-pole-boundary-not-gu-source",
-  "generatedAt": "2026-07-09T21:04:29.3595405+00:00",
+  "generatedAt": "2026-07-10T11:50:10.6944975+00:00",
   "nielsenPoleMassGaugeIndependenceSourceAuditPassed": true,
   "nielsenPoleMassLeadPresent": true,
   "nielsenPrimarySourcesReviewed": true,

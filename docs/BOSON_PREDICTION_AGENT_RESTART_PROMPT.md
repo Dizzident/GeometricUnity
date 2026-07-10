@@ -778,6 +778,29 @@ binding design record; NOTHING was implemented (program halt stands).
 
 RULING: INCREMENTAL VALIDATION FIRST, CUDA NOT NOW.
 
+STATUS UPDATE (2026-07-10): item (1) is IMPLEMENTED AND ACCEPTED.
+Tooling: scripts/incremental/ (Node stdlib, 47 unit tests) + wrapper
+scripts/run_boson_phases_incremental.sh (--incremental / --full; the
+original generator script is untouched and remains the default
+semantics). Acceptance: no-change pass 159.8 s wall (77 ran / 248
+skipped) ending boson-claim-integrity-verified with only-volatile
+output diffs; staleness injection on leaf phase181 flips run/skip
+correctly; downstream invalidation proven organically (six scanner
+edits -> exactly their consumer cascade re-ran). ~160x on the typical
+checkpoint. TWO BINDING LESSONS: (a) Directory.Build.props is a real
+undeclared input of every phase (dotnet run --no-build re-evaluates
+MSBuild) - it is a global fingerprint component; (b) ANY new repo file
+whose PATH or text contains scanner topic keywords will flip the
+whole-repo scanners to review-required and cascade blocked verdicts
+through the precursor gates (the first acceptance attempt failed
+exactly this way: the driver's own skip reports + manifest embed phase
+project paths; "technicolor"/"relaxion" matched inside path strings;
+7.25 h cascade, integrity red; a FULL pass would have failed the same
+way). scripts/incremental/ and the manifest are now excluded in the
+six scripts-root scanners (278/279/281/289/295/296); apply the same
+exclusion-list discipline to any future non-phase tooling that writes
+inside the repo. Promotion-relevant claims still require --full.
+
 (1) FAIL-CLOSED CONTENT-HASH INCREMENTAL VALIDATION - the ~100x lever.
 Measured facts (prototype DAG extractor + recorded runtimeSeconds):
 the generator re-runs 317 phases; the dependency graph is

@@ -464,6 +464,8 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     normalizedPath.Contains("/bin/", StringComparison.Ordinal)
     || normalizedPath.Contains("/obj/", StringComparison.Ordinal)
     || normalizedPath.Contains("/output/", StringComparison.Ordinal)
+    || normalizedPath.Contains("scripts/incremental/", StringComparison.Ordinal)
+    || normalizedPath.Contains("scripts/boson_incremental_manifest.json", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase279_technicolor_walking_electroweak_scale_source_audit_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase327_oblique_precision_electroweak_source_audit_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase328_superphysics_draft_energy_scale_source_audit_001/", StringComparison.Ordinal)

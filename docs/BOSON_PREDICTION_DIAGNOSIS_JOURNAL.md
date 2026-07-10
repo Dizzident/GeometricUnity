@@ -19669,3 +19669,47 @@ recorded in the restart prompt. Verdict: implement incremental
 validation before any CUDA work; it removes computation instead of
 accelerating throttled fp64 and adds no new parity surface.
 promotedPhysicalMassClaimCount=0 throughout (design-only entry).
+
+## 2026-07-10 - Incremental validation IMPLEMENTED, acceptance-tested at 160 s (vs 7.25 h); first attempt failed fail-closed on self-pollution (instructive)
+
+The 2026-07-09 design was implemented (worktree build: Node stdlib
+tooling under scripts/incremental/, committed manifest, new wrapper
+scripts/run_boson_phases_incremental.sh; existing generator untouched;
+47/47 unit tests; registry parse = exactly the 317 phases; the
+read-set smoke immediately caught Directory.Build.props as a real
+undeclared input of every phase - promoted to a global fingerprint
+component, so the props-linter correctly invalidates everything).
+
+FIRST ACCEPTANCE ATTEMPT FAILED - AND THE FAILURE WAS THE SYSTEM
+WORKING. The real --incremental pass invalidated 104 phases (7.25 h)
+and ended integrity-red. Root cause traced end-to-end: the driver's
+own skip reports (scripts/incremental/skip_reports/pass_*.json) and
+the committed manifest embed every phase project path; the phase278/
+phase279 whole-repo text scanners (relaxion/technicolor electroweak
+audits) matched their own topic keywords INSIDE those path strings
+(e.g. "technicolor" in technicolor_walking_electroweak_scale_...),
+honestly flipped to review-required, and the precursor-gate cascade
+propagated blocked verdicts through 371-395 -> 442 -> 443 -> 448 ->
+449 -> 450 -> 452 -> phase101 blocks -> integrity abort. The
+incremental tooling had polluted the very corpus the scanners audit -
+gitignore is irrelevant to filesystem-walking scanners. NOTE: a FULL
+pass run after any such file landed would have failed identically;
+this is not an incremental-scheme defect.
+
+FIX + RECOVERY: scripts/incremental/ and the manifest added to the
+exclusion helpers of the six scanners that walk the scripts root
+(278/279/281/289/295/296 - the sanctioned per-scanner exclusion-list
+surface); polluted outputs backed up (scratchpad tar + git stash) and
+restored to the committed green state; manifest re-seeded.
+
+ACCEPTANCE (all green): (1) recovery --incremental pass: 159.8 s wall,
+77 ran / 248 skipped (the six edited scanners + their audit consumers
+correctly re-ran - organic proof of downstream invalidation),
+boson-claim-integrity-verified, promotedPhysicalMassClaimCount=0, and
+all 40 rewritten outputs differ ONLY in volatile timing fields;
+(2) staleness injection: a comment appended to leaf phase181's
+Program.cs flips it to run (37 ran), revert flips it back to skip
+(36 ran). The typical checkpoint is now ~2.7 min against the measured
+6.5-7 h full pass (~160x). Promotion-relevant claims still require
+--full per the recorded policy. promotedPhysicalMassClaimCount=0
+throughout.
