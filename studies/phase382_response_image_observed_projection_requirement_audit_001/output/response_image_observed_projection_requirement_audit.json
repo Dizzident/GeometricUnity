@@ -1,6 +1,6 @@
 {
   "phaseId": "phase382-response-image-observed-projection-requirement-audit",
-  "generatedAt": "2026-07-10T11:50:31.4795666+00:00",
+  "generatedAt": "2026-07-10T12:00:28.0080169+00:00",
   "terminalStatus": "response-image-observed-projection-requirement-audit-no-namespace-separation-map",
   "responseImageObservedProjectionRequirementAuditPassed": true,
   "targetBlindConstruction": true,
@@ -47,7 +47,7 @@
       },
       {
         "fieldId": "electroweakGaugeEmbeddingId",
-        "candidateLineCount": 883,
+        "candidateLineCount": 889,
         "intakeReadyCandidateCount": 0,
         "filled": false
       },

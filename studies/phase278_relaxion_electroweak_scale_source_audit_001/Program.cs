@@ -443,6 +443,7 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath == "scripts/generate_validated_boson_predictions.sh"
     || normalizedPath == "scripts/verify_boson_claim_integrity.sh"
     || normalizedPath == "docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md"
+    || normalizedPath == "docs/BOSON_PREDICTION_AGENT_RESTART_PROMPT.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P278.md";
 
 static bool? JsonBool(JsonElement element, string propertyName) =>

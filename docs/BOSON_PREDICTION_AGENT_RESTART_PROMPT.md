@@ -794,9 +794,9 @@ whose PATH or text contains scanner topic keywords will flip the
 whole-repo scanners to review-required and cascade blocked verdicts
 through the precursor gates (the first acceptance attempt failed
 exactly this way: the driver's own skip reports + manifest embed phase
-project paths; "technicolor"/"relaxion" matched inside path strings;
-7.25 h cascade, integrity red; a FULL pass would have failed the same
-way). scripts/incremental/ and the manifest are now excluded in the
+project paths; the phase278/phase279 audit topic terms matched inside
+those path strings; 7.25 h cascade, integrity red; a FULL pass would
+have failed the same way). scripts/incremental/ and the manifest are now excluded in the
 six scripts-root scanners (278/279/281/289/295/296); apply the same
 exclusion-list discipline to any future non-phase tooling that writes
 inside the repo. Promotion-relevant claims still require --full.

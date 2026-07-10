@@ -17,6 +17,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const { STATIC_EXTRACTION_EXCLUDE_RELPATHS } = require("./config.js");
 
 const RE_PATH_LITERAL = /"((?:studies|docs|src|native|scripts)\/[^"\\\n]*)"/g;
 const RE_CONST_STRING =
@@ -202,6 +203,7 @@ function extractPhaseInputs(repoRoot, projectRelPath) {
     for (const m of src.matchAll(RE_PATH_LITERAL)) {
       const rel = normalizeRel(m[1]);
       if (rel === projectDirRel || rel.startsWith(projectDirRel + "/")) continue; // self
+      if (STATIC_EXTRACTION_EXCLUDE_RELPATHS.includes(rel)) continue; // provenance-only mention
       pathLiterals.add(rel);
     }
 
@@ -211,6 +213,7 @@ function extractPhaseInputs(repoRoot, projectRelPath) {
       if (typeof v !== "string" || !RE_REPO_PATH.test(v)) continue;
       const rel = normalizeRel(v);
       if (rel === projectDirRel || rel.startsWith(projectDirRel + "/")) continue;
+      if (STATIC_EXTRACTION_EXCLUDE_RELPATHS.includes(rel)) continue; // provenance-only mention
       pathLiterals.add(rel);
     }
 

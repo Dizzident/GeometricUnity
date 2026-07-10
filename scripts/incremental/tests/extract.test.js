@@ -67,3 +67,23 @@ test("extraction: interpolated repo paths are reported as hints", (t) => {
   const p3 = extractPhaseInputs(root, "studies/phase3_gamma_001/Phase3Gamma.csproj");
   assert.strictEqual(p3.interpolatedPathHints.length, 1);
 });
+
+test("extraction: narrative program docs are excluded as provenance-only mentions", (t) => {
+  const root = makeFixtureRepo();
+  t.after(() => rmrf(root));
+  const fs = require("fs");
+  const path = require("path");
+  const dir = path.join(root, "studies", "phase9_prov_001");
+  fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(path.join(dir, "Phase9Prov.csproj"), "<Project Sdk=\"Microsoft.NET.Sdk\"></Project>\n");
+  fs.writeFileSync(path.join(dir, "Program.cs"), [
+    'const string ReviewBoardSourcePath = "docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md";',
+    'const string RestartPromptSourcePath = "docs/BOSON_PREDICTION_AGENT_RESTART_PROMPT.md";',
+    'const string RealInput = "docs/NOTES.md";',
+    'System.Console.WriteLine(ReviewBoardSourcePath + RestartPromptSourcePath + RealInput);',
+  ].join("\n"));
+  const p9 = extractPhaseInputs(root, "studies/phase9_prov_001/Phase9Prov.csproj");
+  assert.ok(!p9.pathLiterals.includes("docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md"));
+  assert.ok(!p9.pathLiterals.includes("docs/BOSON_PREDICTION_AGENT_RESTART_PROMPT.md"));
+  assert.ok(p9.pathLiterals.includes("docs/NOTES.md"));
+});

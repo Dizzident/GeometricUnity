@@ -69,6 +69,19 @@ const GLOBAL_INPUT_RELPATHS = Object.freeze([
   "NuGet.config",
 ]);
 
+// Narrative program documents that phases MENTION as provenance strings in
+// their output metadata but never read (verified 2026-07-10: no File.* call
+// targets them in any phase). The journal is appended at every checkpoint,
+// so binding these as static inputs would re-trigger every mentioning phase
+// (including multi-hour probes) on every checkpoint. Excluded from STATIC
+// extraction only: a phase that genuinely reads one of these must carry it
+// in a recorded read-set (capture_readset.js), which is folded into the
+// fingerprint on top of static extraction and is NOT filtered by this list.
+const STATIC_EXTRACTION_EXCLUDE_RELPATHS = Object.freeze([
+  "docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md",
+  "docs/BOSON_PREDICTION_AGENT_RESTART_PROMPT.md",
+]);
+
 function repoRootFromHere() {
   // scripts/incremental/config.js -> repo root is two levels up.
   return path.resolve(__dirname, "..", "..");
@@ -85,5 +98,6 @@ module.exports = {
   READSET_EXCLUDE_SEGMENTS,
   NATIVE_BUILD_RELDIR,
   GLOBAL_INPUT_RELPATHS,
+  STATIC_EXTRACTION_EXCLUDE_RELPATHS,
   repoRootFromHere,
 };

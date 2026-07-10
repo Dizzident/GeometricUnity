@@ -4,36 +4,70 @@ A reproducible research engine implementing an executable bosonic and fermionic 
 
 ## Current Status
 
-This repository is currently a **benchmark and validation platform**, not yet a real particle-property prediction engine.
+This repository is a **research and validation platform**, not a physical
+particle-property prediction engine. Nothing here should be read as a boson
+mass prediction.
 
-What works now:
+**The platform is complete.** Phases I through VI are all done (every milestone
+and gap round closed), with **3169 tests** across the test projects and a
+0-warnings build.
 
-- computed GU observables are serialized with provenance and uncertainty;
-- target tables compare computed observables against toy, internal, and external benchmark values;
-- target coverage fails closed when a declared target has no computed observable;
-- the reference Phase V campaign runs branch, refinement, environment, quantitative, falsification, dossier, and report stages;
-- the active external benchmark is DOI-backed: Zenodo record `10.5281/zenodo.16739090`, a pure SU(2) plaquette-chain exact-diagonalization benchmark;
-- generated/downloaded study outputs are kept under ignored `study-runs/`.
+**The active work is the boson-prediction / source-law research program.** It
+is a large fail-closed investigation carried out as standalone study phases
+that assert precise verdicts and refuse to pass on any mismatch. As of the
+current checkpoint:
 
-Latest checked-in reference campaign status:
+- **452 fail-closed phases** have been executed and wired into the validation
+  surface;
+- **zero physical mass claims have been promoted** (`promotedPhysicalMassClaimCount = 0`);
+- no computed observable is validated as a physical W/Z/Higgs/photon property,
+  and no calibration to GeV exists;
+- the legal deliverable class is **anchor-free dimensionless ratios**, kept
+  strictly separate from any measured comparison value.
 
-- total targets: 9;
-- matched targets: 9;
-- missing targets: 0;
-- passed matches: 8;
-- failed matches: 1;
-- score: 8 / 9 = 0.8888888888888888.
+### The honest frontier
 
-The remaining quantitative failure is `bosonic-mode-2-imported-repo-benchmark`: computed value `0.98`, target value `0.6`, pull `5.374`.
+The program has traced every electroweak-shaped gap to a physical root and
+reached the following standing conclusions:
 
-What is not done yet:
+- **No dimensionful anchor exists in the sources.** A single external
+  dimensionful scale is a source-level decision the derivation has not
+  supplied; without it no absolute mass can be stated.
+- **No dynamical scale was found along the directions tested, through two
+  loops.** Tree level is provably no-scale on invariant rays; the perturbative
+  one-loop and two-loop levers, and the cheapest non-perturbative rungs, did
+  not produce a self-consistent internal scale on the tested meshes. The
+  non-perturbative question along invariant rays remains open, not settled.
+- **A hypercharge / coupling-ratio lineage gap remains.** Photon/Z separation
+  is a one-parameter family blocked by the still-missing hypercharge and
+  coupling-ratio lineage together with the symmetry-breaking scalar sector.
+- **First measured workbench pole.** The program's first measured pole is a
+  gapped scalar channel at `a·m ≈ 2.44` in **lattice units only** — a
+  ratio-grade quantity, never a particle mass and never relabeled as one.
 
-- no current observable is validated as a physical W/Z/Higgs/photon property;
-- no physical unit calibration to GeV or measured couplings exists yet;
-- no PDG-style experimental target campaign is active yet;
-- active fatal/high falsifiers still block physical prediction claims.
+See `docs/BOSON_PREDICTION_AGENT_RESTART_PROMPT.md` for the full gate status and
+next steps, and `docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md` for the history.
 
-See `docs/Phases/Implementation/IMPLEMENTATION_P15.md` for the next benchmark-repair milestone and `docs/Phases/Implementation/IMPLEMENTATION_P16.md` for the physical-observable mapping plan.
+### Validation tooling
+
+The full validation pass runs hundreds of phase invocations and takes hours.
+A fail-closed content-hash **incremental** runner skips provably-unchanged
+phases for iteration:
+
+```bash
+./scripts/run_boson_phases_incremental.sh --incremental   # ~3 min checkpoint
+./scripts/run_boson_phases_incremental.sh --full           # required for promotion-relevant claims
+```
+
+The committed manifest `scripts/boson_incremental_manifest.json` is the
+freshness guarantee; the skip rule fails closed on any doubt. See
+`scripts/incremental/README.md` for exact semantics.
+
+### Next platform work
+
+`docs/Phases/FOUR_D_PLATFORM_BUILD_PLAN.md` describes a dimension-four platform
+build (the structural route toward the scale question). It is a planned
+build awaiting approval.
 
 ## Overview
 
@@ -87,7 +121,7 @@ dotnet build
 dotnet build && dotnet test --no-build
 ```
 
-There are 2,960+ tests across 52 test projects covering core types, geometry, reference CPU operators, interop, validation, artifacts, observation, external comparison, all Phase II modules, all Phase III modules, all Phase IV modules, and all Phase V modules.
+There are 3,169 tests across the test projects covering core types, geometry, reference CPU operators, interop, validation, artifacts, observation, external comparison, and all Phase II through Phase VI modules.
 
 ## CLI Usage
 
@@ -244,7 +278,7 @@ GeometricUnity/
 │   ├── Gu.Phase5.Falsification/   # 7 falsifier types, severity policy, registry demotion (M50)
 │   ├── Gu.Phase5.Dossiers/        # Claim escalation, negative-result ledger, dossiers (M51-M52)
 │   └── Gu.Phase5.Reporting/       # Phase V reports, atlases, falsification dashboard (M53)
-├── tests/                         # 52 test projects (Phase I + II + III + IV + V)
+├── tests/                         # test projects (Phase I through VI)
 ├── native/                        # CUDA kernels (C/CUDA)
 ├── examples/                      # Toy 2D/3D/4D geometries for debugging
 └── schemas/                       # JSON schemas for all phases
@@ -429,18 +463,18 @@ Visualization is strictly **read-only** — it consumes artifact snapshots and n
 ## Codebase
 
 - ~600 C# source files
-- ~350 test files
 - 15 native source files (CUDA/Vulkan)
-- 2,960+ tests across 52 test projects
+- 3,169 tests across the test projects
 - Phase 1 (Minimal GU v1): **Complete** — all 13 milestones (M0-M12)
 - Phase 2 (Research Instrumentation): **Complete** — all 10 milestones (M13-M22)
 - Phase 3 (Boson Spectrum Extraction): **Complete** — all 10 milestones (M23-M32) + all 23 gap closures
 - Phase 4 (Fermionic Spectrum): **Complete** — all 13 milestones (M33-M45) + all 8 gap closures
 - Phase 5 (Quantitative Validation): **Complete** — all 8 milestones (M46-M53) + all 6 entry gap closures
+- Phase 6 (platform build-out): **Complete** — all milestones and gap rounds closed
 
 ## Theory Context
 
-The `TheoryCompletitionRevisions/` directory contains the evolving Geometric Unity Completion manuscript. The software implements executable portions of this completion program and a validation framework around them. See `docs/Phases/Plans/IMPLEMENTATION_PLAN.md` through `docs/Phases/Implementation/IMPLEMENTATION_P16.md` for the phase history and next milestones.
+The `TheoryCompletitionRevisions/` directory contains the evolving Geometric Unity Completion manuscript. The software implements executable portions of this completion program and a validation framework around them. See `docs/Phases/Plans/IMPLEMENTATION_PLAN.md` and the `docs/Phases/Implementation/` history for the platform milestones, and `docs/BOSON_PREDICTION_AGENT_RESTART_PROMPT.md` for the current research-program state and next steps.
 
 ## License
 

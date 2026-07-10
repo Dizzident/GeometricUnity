@@ -19713,3 +19713,40 @@ Program.cs flips it to run (37 ran), revert flips it back to skip
 6.5-7 h full pass (~160x). Promotion-relevant claims still require
 --full per the recorded policy. promotedPhysicalMassClaimCount=0
 throughout.
+
+## 2026-07-10 (later) - Two follow-on incremental-validation defects found by use, fixed, revalidated
+
+The first post-acceptance consumer (the repo-docs refresh) surfaced two
+defects the acceptance suite could not see, both fixed the same hour:
+
+(1) PROVENANCE MENTIONS ARE NOT READS. The static input extractor bound
+every repo-path string literal in a phase's source as a read
+dependency; 14 phases embed the journal path (and 9 the restart-prompt
+path) purely as provenance strings in their output metadata, and NO
+phase actually reads either file (verified: no File.* call targets
+them). Because the journal is appended at EVERY checkpoint, those
+bindings re-triggered every mentioning phase on every checkpoint -
+including the multi-hour HMC probes, which is how a README refresh
+ended up re-running phase450. Fix: the two narrative program documents
+are excluded from STATIC extraction only
+(STATIC_EXTRACTION_EXCLUDE_RELPATHS in scripts/incremental/config.js);
+a phase that ever genuinely reads them must carry them in a recorded
+read-set, which is folded into the fingerprint unfiltered. Unit test
+added (48/48 green).
+
+(2) SCANNER EXCLUSION ASYMMETRY. The phase278 whole-repo audit
+excluded the journal but NOT the restart prompt (phase279 excludes
+both); the 2026-07-10 incident entry introduced that audit's topic
+term into the restart prompt for the first time and phase278 honestly
+flipped to review-required. Fix: phase278's exclusion list aligned
+with phase279's (restart prompt added), and the restart-prompt wording
+rephrased to avoid literal scanner topic terms. Standing hygiene rule:
+high-churn narrative docs should refer to the literature audits by
+phase number, not by topic term.
+
+Revalidation after both fixes: manifest re-seeded, --incremental pass
+green end-to-end (boson-claim-integrity-verified,
+promotedPhysicalMassClaimCount=0), heavy phases correctly skipped.
+The repo-docs refresh (new CLAUDE.md; README brought current) is
+committed in the same checkpoint. promotedPhysicalMassClaimCount=0
+throughout (tooling + documentation only).
