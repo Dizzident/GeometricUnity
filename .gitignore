@@ -81,3 +81,7 @@ launchSettings.json
 *.sln.iml
 /runs
 /run
+
+# Incremental-validation transient artifacts (skip reports, compiled shim)
+scripts/incremental/skip_reports/
+scripts/incremental/.cache/
