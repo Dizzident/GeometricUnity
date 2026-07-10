@@ -19582,6 +19582,18 @@ binding: this is THIS action's scalar gap in lattice units, never m_H.
 Limitations recorded: T=3 single informative cosh point; reduced
 8000/6000-trajectory committed budget (78 min).
 
+[SUPERSEDED 2026-07-10, record reconciliation: the numbers above
+describe a reduced-budget env-override run whose output was never
+committed. The committed default-budget 16000/10000-trajectory output
+at f7249d8e is the sole canonical phase452 record: identity a*m =
+2.7132 +- 0.1846 (plateauChi2Dof null, window {0} -
+inconclusive-by-construction as a measurement); sd2 combined
+2.5260 +- 0.0712 (mO1 2.5553 +- 0.0725, mO2 2.4986 +- 0.0701,
+cross-check 0.56 sigma). Cross-action ratio sd2/identity =
+0.931 +- 0.069, 0.9 sigma from the exact free ratio 0.9926 -
+FREE-FIELD-COMPATIBLE label binding. See the 2026-07-10 three-team
+program entry.]
+
 ### Phase450 (constraint-EP HMC): honestly INCONCLUSIVE - single-well everywhere, null NOT claimed
 
 The ansatz-free umbrella/WHAM constraint effective potential under all
@@ -19750,3 +19762,91 @@ promotedPhysicalMassClaimCount=0), heavy phases correctly skipped.
 The repo-docs refresh (new CLAUDE.md; README brought current) is
 committed in the same checkpoint. promotedPhysicalMassClaimCount=0
 throughout (tooling + documentation only).
+
+## 2026-07-10 - THREE-TEAM ELIMINATION PROGRAM adversarially approved; phase452 record reconciled; Wave-0 ops checkpoint
+
+At user direction, three teams (each a theoretical physicist + a
+mathematician, with a cross-team communicator and two adversarial
+referees per team - physics and methodology) designed methodical
+elimination programs for the three proven blockers, cycling
+propose -> bulletin -> synthesize -> adversarial review until every
+program survived both referees (A-anchor approved round 2; B-scale and
+C-lineage round 3; 44 agents total). The full unified program - a
+22-item kill-ordered experiment queue in five waves with an explicit
+cross-team dependency spine, per-team fallback deliverables, and nine
+honestly-recorded unresolved objections - is committed as
+docs/Phases/TEAM_ELIMINATION_PROGRAM_2026-07-10.md (BINDING). Highlights:
+
+- TEAM A (anchor): units-equivariance kernel theorem over the audited
+  corpus (exact Smith-normal-form kernels; the part-12d relation
+  pre-registered as the expected equivariance-breaking hit), the
+  part-12d reading menu with look-elsewhere control, dim-2 transport
+  structure theorems gating any conditional HMC, the scaling-window
+  search behind a Gaussian-domination pre-theorem, and the terminal A6
+  conjunction adjudication ("every anchor available is a labeled
+  convention adoption; M_Planck recommended" - reachable only as a
+  three-way conjunction). Fallback: the anchor-free ratio table with a
+  free-field-proximity gate on every row.
+- TEAM B (scale): phase453 WHAM parity-antisymmetry error-model repair
+  FIRST (completes the n=3 invariant-ray non-perturbative null; spec
+  in the program document, three-terminal taxonomy pre-registered),
+  then beyond-invariant-ray exclusion (exact quadratic certificates on
+  the 48 momentum blocks), exact fermionic backreaction via closed-form
+  -log det D(t), THE one consolidated n=4 launch hosting all teams'
+  pre-registered columns, the WS3 portal probe (verdict-emission HOLD
+  until C's contract schema commits), and WS4 Binder columns as the
+  weeks-scale closure instrument (the only CUDA trigger, per the
+  2026-07-09 ruling). Fallback: the B2 closure theorem-of-record.
+- TEAM C (lineage): anomaly-consistency variety kernel on the Phase404
+  signed slot space, derived-operator ray census on the true 4-dim
+  commutant, the WS3-VEV completion contract (schema BEFORE any WS3
+  verdict), Cl(7,7)/128 isotypic pinning gating the weeks-scale WS5
+  spend, the phase451 two-loop ledger as standing falsification
+  filter, and the C-PERMANENCE five-limb implication ledger. Fallback:
+  the scoped negative theorem "B3 permanent relative to audited
+  sources" with named per-limb reopening conditions.
+
+PHASE452 RECORD RECONCILIATION (team A's gating catch, verified
+against the committed tree this session): the journal/restart-prompt
+pole numbers (2.4352+-0.1682 / 2.4547+-0.1242) came from a
+reduced-budget (8000/6000-trajectory) env-override run whose output
+was NEVER committed; the committed output at f7249d8e is the
+default-budget (16000/10000, rngSeed 20260705) regeneration from the
+pre-checkpoint full generator pass. CANONICAL COMMITTED NUMBERS:
+identity a*m = 2.7132+-0.1846 (plateauChi2Dof null, window {0} -
+inconclusive-by-construction as a measurement); sd2 combined
+2.5260+-0.0712 (mO1 2.5553+-0.0725, mO2 2.4986+-0.0701, cross-check
+0.56 sigma); exact analytic free gaps 2.5509/2.5320/2.3570;
+cross-action ratio sd2/identity = 0.931+-0.069 (CROSS-ACTION
+deliverable class; 0.9 sigma from the free ratio 0.9926 -
+FREE-FIELD-COMPATIBLE label binding today). Both docs corrected with
+superseded notes; the formal machine-checked attestation phase is
+queued as phase459 (A's first registry number). SCOPE CORRECTION
+(neutral form per the unresolved-objection O2 record): the 2026-07-10
+acceptance-entry claim "all 40 rewritten outputs differ only in
+volatile timing fields" described the RECOVERY pass file list;
+phase452's regeneration belongs to the earlier wave commit and its
+physics values differ from the never-committed run the docs had been
+quoting - the acceptance claim is scoped to the recovery pass, not to
+the wave. The standing honest prior (objection O5): the ENTIRE
+committed spectrum is currently free-field-compatible (identity
++0.88 sigma, sd2 O1 +0.32 sigma, O2 +2.02 sigma vs the exact Gaussian
+gaps); every dynamical-structure claim gates on >=3 sigma departure
+from the exact free control.
+
+WAVE-0 OPS CHECKPOINT (this commit): (a) tree already clean +
+manifest seeded from committed state; (b) GENERIC env-knob fingerprint
+fix - process env filtered to the PHASE<N>_ prefix (all 404 knobs
+across the studies follow it) folded into each phase's fingerprint;
+proven by unit test (49/49 green) AND a live injection test
+(PHASE181_X=1 flips phase181 to run, unset flips back to skip);
+--incremental was UNSOUND for env-override runs until this landed
+(objection O9, the phase452 incident being the proven exploit);
+(c) the three-team phase-number registry committed at
+docs/Phases/PHASE_NUMBER_REGISTRY.md (B=453-458, A=459-464,
+C=465-470); (d) WS3 verdict-emission hold written into the restart
+queue; (e) the binding program document committed; (f) this
+reconciliation entry. Physicist sign-off on the 445-452 conventions
+(Wave-0 item 0.3, objection O4) remains OPEN and is the standing
+review-queue item. NEXT: phase453 per the committed spec.
+promotedPhysicalMassClaimCount=0 throughout.

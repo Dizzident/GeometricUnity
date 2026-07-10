@@ -611,13 +611,24 @@ censuses):
   content row is source-defined). Even closure would be GUT-generic
 - Phase452: `scalarChannelSpectroscopyProbePassed=True`,
   `scalarChannelVerdict=scalar-channel-gapped-measured` - THE
-  PROGRAM'S FIRST MEASURED POLE: a*m_0++ = 2.4352+-0.1682 (identity,
-  14.5 sigma) / 2.4547+-0.1242 (sd2, 19.8 sigma; interpolators
-  cross-check 1.04 sigma; zero modes 252 = dim ker d exactly), gated
-  by the exact block-spectrum free-field control. The review board's
-  convex/gapped picture is CONFIRMED BY MEASUREMENT. Lattice units
-  only, never m_H (label caveat binding); T=3 single-cosh-point and
-  reduced-budget limitations recorded
+  PROGRAM'S FIRST MEASURED POLE. CANONICAL COMMITTED NUMBERS
+  (record reconciliation 2026-07-10; the committed default-budget
+  16000/10000-trajectory output at f7249d8e is the sole canonical
+  record; earlier journal/restart values 2.4352/2.4547 came from a
+  never-committed reduced-budget env-override run and are
+  superseded): identity a*m_0++ = 2.7132+-0.1846 (plateauChi2Dof
+  null, window {0} - inconclusive-by-construction as a measurement);
+  sd2 combined 2.5260+-0.0712 (mO1 2.5553+-0.0725, mO2
+  2.4986+-0.0701, interpolator cross-check 0.56 sigma; zero modes
+  252 = dim ker d exactly), gated by the exact block-spectrum
+  free-field control (exact free gaps 2.5509/2.5320/2.3570).
+  Cross-action ratio sd2/identity = 0.931+-0.069 (CROSS-ACTION
+  deliverable class, never folded into the spectrum-ratio table;
+  0.9 sigma from the free ratio 0.9926 - FREE-FIELD-COMPATIBLE label
+  binding). The review board's convex/gapped picture is CONFIRMED BY
+  MEASUREMENT. Lattice units only, never m_H (label caveat binding);
+  T=3 single-cosh-point limitation recorded; formal attestation
+  phase queued as A-team's first registry number
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -755,20 +766,42 @@ PARALLEL WORKSTREAMS (they are independent):
   binding conditions) remain in flight and are complementary to
   WS1-WS4 (WS2/WS3 share the HMC infrastructure with phase450).
 
-### PROGRAM HALT NOTE (2026-07-05, user instruction)
+### PROGRAM HALT NOTE (2026-07-05) - SUPERSEDED by the 2026-07-10 three-team program
 
-The user halted all work after the phase450/451/452 wave landed. The
-QUEUE for the next session, in priority order: (1) the phase450 WHAM
-parity-asymmetry error-model fix (block bootstrap over windows or a
-within-window antisymmetrized estimator) - ONE item away from the
-non-perturbative symmetric-phase null; (2) WS3, the Upsilon-portal
-condensation probe (referee-rescoped; builds on the phase450 harness);
-(3) phase452 n=4 for the second cosh window point; (4) WS4 Binder
-columns (adjoint order parameter only - the fundamental scan is a
-crossover); (5) WS5 Cl(7,7) Shiab build (heavy); (6) the physicist
-review queue (conventions of 445-452); (7) checkpoint-cadence
-literature monitoring (last sweep 2026-07-04, clean; track Zenodo by
-checksum). Next free phase number: 453.
+The 2026-07-05 halt was lifted at user direction on 2026-07-09/10. The
+BINDING work plan is now docs/Phases/TEAM_ELIMINATION_PROGRAM_2026-07-10.md
+(three adversarially-approved team elimination programs; 22-item
+kill-ordered queue in five waves; cross-team dependency spine; nine
+recorded unresolved objections). Wave 0 (ops checkpoint: env-knob
+fingerprint fix proven by injection test; phase-number registry
+docs/Phases/PHASE_NUMBER_REGISTRY.md with B=453-458, A=459-464,
+C=465-470; phase452 record reconciliation - see the corrected Phase452
+gate bullet; WS3 verdict-emission HOLD until team C's completion
+contract schema commits) is DONE. Wave-0 item 0.3 remains OPEN: the
+physicist sign-off memo on the 445-452 conventions (invariant rays,
+positive-mode IR rule, theta-Haar, saddle backgrounds) - phases may
+pre-register against pending status citing physicistReviewPending.
+QUEUE (kill-ordered, from the program document): (1) PHASE453 - WHAM
+parity-antisymmetry error-model repair per the committed spec (Stage-0
+pre-registration incl. per-bin localization commit, synthetic-ensemble
+threshold calibration, S(k) hooks ex ante; production 2.5-4.5 h;
+Arm A = 400-replicate moving-block bootstrap with full WHAM re-solve,
+Arm B = within-window antisymmetrized U_odd; three-terminal taxonomy
+T1 null / T2 Z2-breaking-candidate / T3 discordance); (2) Wave-1
+parallel cheap kills: A1 units-equivariance kernel, A2 part-12d
+reading menu, C-KERNEL v3, C-STABILIZER v3, C-CONTRACT v3 (schema
+BEFORE any WS3 verdict), B beyond-ray Arms A/B, B exact fermionic
+-log det D(t), C-CLOSURE items; (3) Wave-2 gating analytics (A5
+Gaussian-domination pre-theorem CAN CANCEL the beta ladders; A3
+transport structure theorems; A4 automorphism/irrep enumeration EX
+ANTE of any n=4 launch; C-LIFT Stages -1..2); (4) Wave-3 consolidated
+sampling (THE one n=4 launch hosting all teams' pre-registered
+columns; WS3 portal probe under the emission hold rules); (5) Wave-4
+weeks-scale closure (WS4 Binder columns - the only CUDA trigger; WS5
+Cl(7,7) build); then the terminal adjudications (A6, C-PERMANENCE, B
+closure theorem-of-record). Checkpoint-cadence literature monitoring
+continues (last sweep 2026-07-04, clean). Phase numbers: registry
+only - next B number 453, next A number 459, next C number 465.
 
 ### PERFORMANCE EXPLORATION OUTCOME (2026-07-09, user-directed, design-only)
 

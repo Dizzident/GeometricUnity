@@ -178,3 +178,26 @@ test("src project edits (transitive) flip the fingerprint", (t) => {
   const fp2 = computeFingerprint({ repoRoot: root, step: step1, registryPhaseSet, manifest });
   assert.notStrictEqual(fp1.fingerprint, fp2.fingerprint, "transitive src ref must be fingerprinted");
 });
+
+test("fingerprint: PHASE<N>_ env knobs fold in and force mismatch (injection)", (t) => {
+  const root = makeFixtureRepo();
+  t.after(() => rmrf(root));
+  const step = { phase: 1, project: "studies/phase1_alpha_001/Phase1Alpha.csproj", invocation: "dotnet run --no-build -c Release --project studies/phase1_alpha_001/Phase1Alpha.csproj" };
+  const registryPhaseSet = new Set([0, 1]);
+  const manifest = { schemaVersion: 1, phases: {} };
+  const clean = computeFingerprint({ repoRoot: root, step, registryPhaseSet, manifest });
+  process.env.PHASE1_TRAJ = "8000";
+  process.env.PHASE2_TRAJ = "junk-for-other-phase";
+  let withKnob;
+  try {
+    withKnob = computeFingerprint({ repoRoot: root, step, registryPhaseSet, manifest });
+  } finally {
+    delete process.env.PHASE1_TRAJ;
+    delete process.env.PHASE2_TRAJ;
+  }
+  assert.notStrictEqual(withKnob.fingerprint, clean.fingerprint);
+  assert.ok(withKnob.components.includes("env:PHASE1_TRAJ=8000"));
+  assert.ok(!withKnob.components.some((c) => c.includes("PHASE2_TRAJ")));
+  const cleanAgain = computeFingerprint({ repoRoot: root, step, registryPhaseSet, manifest });
+  assert.strictEqual(cleanAgain.fingerprint, clean.fingerprint);
+});

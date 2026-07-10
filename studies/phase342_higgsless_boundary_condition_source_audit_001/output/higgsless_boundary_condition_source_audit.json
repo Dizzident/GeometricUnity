@@ -1,7 +1,7 @@
 {
   "phaseId": "phase342-higgsless-boundary-condition-source-audit",
   "terminalStatus": "higgsless-boundary-condition-source-audit-external-boundary-mass-lead-not-gu-source",
-  "generatedAt": "2026-07-10T11:50:09.4535561+00:00",
+  "generatedAt": "2026-07-10T17:09:18.1625648+00:00",
   "higgslessBoundaryConditionSourceAuditPassed": true,
   "higgslessBoundaryLeadPresent": true,
   "higgslessPrimarySourcesReviewed": true,

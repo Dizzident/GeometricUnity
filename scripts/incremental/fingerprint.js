@@ -62,6 +62,19 @@ function computeFingerprint({ repoRoot, step, registryPhaseSet, manifest, entry 
   components.push(`scheme:${SCHEMA_VERSION}`);
   components.push(`invoke:${step.invocation}`);
 
+  // env: every process-environment knob addressed to THIS phase
+  // (^PHASE<N>_ prefix; all 404 knobs across the studies follow it).
+  // Seeding happens from a clean environment, so any knob set at decision
+  // time mismatches the manifest and forces RUN: an env-override run is a
+  // DIFFERENT computation and must never satisfy a clean-run fingerprint
+  // (the phase452 record-reconciliation lesson, 2026-07-10).
+  const envKnobPrefix = `PHASE${step.phase}_`;
+  for (const key of Object.keys(process.env).sort()) {
+    if (key.startsWith(envKnobPrefix)) {
+      components.push(`env:${key}=${process.env[key]}`);
+    }
+  }
+
   // Repo-root build configuration read by every `dotnet run` invocation.
   const coveredGlobals = [];
   for (const rel of GLOBAL_INPUT_RELPATHS) {
