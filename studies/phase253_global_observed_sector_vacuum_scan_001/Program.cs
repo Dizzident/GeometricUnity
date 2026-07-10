@@ -48,6 +48,8 @@ var excludedPathFragments = new[]
     "studies/phase447_two_loop_saturation_probe_001/",
     "studies/phase448_torus_mode_volume_saturation_probe_001/",
     "studies/phase449_variational_gaussian_effective_potential_probe_001/",
+    "studies/phase450_constraint_effective_potential_hmc_probe_001/",
+    "studies/phase451_two_loop_unification_ledger_001/",
 };
 
 var dimension4Pattern = new Regex("""

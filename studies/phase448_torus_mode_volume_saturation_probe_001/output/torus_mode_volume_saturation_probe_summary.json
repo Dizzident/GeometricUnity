@@ -1,6 +1,6 @@
 {
   "phaseId": "phase448-torus-mode-volume-saturation-probe",
-  "generatedAt": "2026-07-05T02:43:05.5439466+00:00",
+  "generatedAt": "2026-07-09T23:33:36.6105097+00:00",
   "terminalStatus": "torus-mode-volume-saturation-probe-passed-no-saturation-persists-across-mode-volumes-frontier-sharpened",
   "torusModeVolumeSaturationProbePassed": true,
   "phase443PrecursorPassed": true,
@@ -2388,7 +2388,7 @@
     "spinorUsedAsShiabCarrierNotFiber": true,
     "draft14dObserverseNotRealized": true
   },
-  "runtimeSeconds": 765.6266092,
+  "runtimeSeconds": 761.6997698,
   "physicalCouplingProvided": false,
   "routeProvidesPhysicalEffectiveActionHessian": false,
   "routeProvidesVevOrSourceScaleLineage": false,

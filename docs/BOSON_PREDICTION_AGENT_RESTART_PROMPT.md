@@ -57,7 +57,7 @@ censuses):
 - Phase101:
   `internal-boson-prediction-package-built-physical-comparison-blocked`
 - Phase202:
-  `objectiveAchieved=False`, `checklistPassedCount=242`,
+  `objectiveAchieved=False`, `checklistPassedCount=245`,
   `checklistFailedCount=3`
 - Claim integrity:
   `boson-claim-integrity-verified`,
@@ -588,6 +588,36 @@ censuses):
   non-perturbative rung cannot hold the negative-mode structure; the
   scale question passes intact to the phase450 constraint-EP HMC
   (ansatz-free, four binding conditions)
+- Phase450: `constraintEffectivePotentialHmcProbePassed=True`,
+  `verdictKind=inconclusive-gates-failed`,
+  `allEinsteinianSingleWell=True`, `anyEinsteinianFlatBottom=False`,
+  `controlClean=True`, `onlyAntisymmetryGatesFailed=True` - the
+  ansatz-free umbrella/WHAM CEP under all four binding conditions:
+  BOTH production runs show single-well-at-zero everywhere (large-beta
+  Pearson 0.9996) but the parity-antisymmetry gate trips at 5.06 sigma
+  while the independent tadpole is zero (-0.04+-0.10) - an
+  unattributed WHAM stitching-error-model item; THE SYMMETRIC-PHASE
+  NULL IS NOT CLAIMED. Named fix: the WHAM parity-asymmetry error
+  model (block bootstrap over windows or a within-window
+  antisymmetrized estimator); when green, the frontier upgrades to
+  "no non-perturbative scale along invariant rays at n=3"
+- Phase451: `twoLoopUnificationLedgerPassed=True`,
+  `verdictKind=tension-persists-quantified` - sin^2(m_Z) predicted
+  0.2076 (1L, referee witness) / 0.2106 (2L) from the derived 3/8
+  boundary + one IR coupling vs observed 0.23122: gap ~115x the honest
+  threshold band. THE DERIVED SM-CONTENT RUNNING IS QUANTITATIVELY
+  FALSIFIED AS-IS; the ledger is the standing falsification filter for
+  any proposed observerse intermediate content (rerun it the moment a
+  content row is source-defined). Even closure would be GUT-generic
+- Phase452: `scalarChannelSpectroscopyProbePassed=True`,
+  `scalarChannelVerdict=scalar-channel-gapped-measured` - THE
+  PROGRAM'S FIRST MEASURED POLE: a*m_0++ = 2.4352+-0.1682 (identity,
+  14.5 sigma) / 2.4547+-0.1242 (sd2, 19.8 sigma; interpolators
+  cross-check 1.04 sigma; zero modes 252 = dim ker d exactly), gated
+  by the exact block-spectrum free-field control. The review board's
+  convex/gapped picture is CONFIRMED BY MEASUREMENT. Lattice units
+  only, never m_H (label caveat binding); T=3 single-cosh-point and
+  reduced-budget limitations recorded
 
 Interpretation: the control-branch program has traced every
 electroweak-shaped gap to its physical root. The sector skeleton is exact
@@ -724,6 +754,90 @@ PARALLEL WORKSTREAMS (they are independent):
   Phase449 (variational Gaussian bound) and phase450 (CEP-HMC, four
   binding conditions) remain in flight and are complementary to
   WS1-WS4 (WS2/WS3 share the HMC infrastructure with phase450).
+
+### PROGRAM HALT NOTE (2026-07-05, user instruction)
+
+The user halted all work after the phase450/451/452 wave landed. The
+QUEUE for the next session, in priority order: (1) the phase450 WHAM
+parity-asymmetry error-model fix (block bootstrap over windows or a
+within-window antisymmetrized estimator) - ONE item away from the
+non-perturbative symmetric-phase null; (2) WS3, the Upsilon-portal
+condensation probe (referee-rescoped; builds on the phase450 harness);
+(3) phase452 n=4 for the second cosh window point; (4) WS4 Binder
+columns (adjoint order parameter only - the fundamental scan is a
+crossover); (5) WS5 Cl(7,7) Shiab build (heavy); (6) the physicist
+review queue (conventions of 445-452); (7) checkpoint-cadence
+literature monitoring (last sweep 2026-07-04, clean; track Zenodo by
+checksum). Next free phase number: 453.
+
+### PERFORMANCE EXPLORATION OUTCOME (2026-07-09, user-directed, design-only)
+
+At user direction two parallel read-only investigations assessed the
+two named performance levers. Both memos are recorded here as the
+binding design record; NOTHING was implemented (program halt stands).
+
+RULING: INCREMENTAL VALIDATION FIRST, CUDA NOT NOW.
+
+(1) FAIL-CLOSED CONTENT-HASH INCREMENTAL VALIDATION - the ~100x lever.
+Measured facts (prototype DAG extractor + recorded runtimeSeconds):
+the generator re-runs 317 phases; the dependency graph is
+NEAR-TOTALLY-ORDERED (279 of 317 phases have ~272 downstream
+dependents; mega-hubs phase213 fan-out 163, phase201 85, phase256 74),
+so subtree pruning for mid-graph edits buys nothing - the win is
+content-hash SKIPPING of unchanged phases on the common
+append-one-phase checkpoint. Cost is extreme-tail concentrated: 8
+numeric probes (450: 2.53 h, 452: 1.29 h, 443, 447, 449, 445, 446,
+448) hold 6.28 h of the full pass, which NOW MEASURES ~6.5-7 h (the
+3-5.5 h figure elsewhere in this document predates the HMC-era
+phases). A typical append-one-audit checkpoint under the scheme: ~2-4
+min (~99% saved); an append-one-HMC-probe checkpoint: its own runtime
++ ~3 min (~55-60% saved); any src/ engine edit correctly invalidates
+the 39 src-linked phases -> effectively full rerun (fail-closed).
+Design (binding): committed manifest scripts/boson_incremental_manifest.json
+mapping phase -> {schemaVersion, inputFingerprint, outputs canonical
+hashes}; skip IFF exact fingerprint + output-hash match, ANY doubt ->
+run. Output hashing canonicalizes JSON minus a declared volatile-key
+list (generatedAt, runtimeSeconds, timing fields) - files on disk are
+never rewritten. The 7 whole-repo text scanners (204/205/253/279/281/
+295/296) and the tail gates (101/202/212/216/217/158/219 + integrity
+script + 151/156 which read the generator script itself) ALWAYS run.
+CRITICAL SOUNDNESS FINDINGS: (a) the claim-integrity verifier asserts
+VALUES and external checksums but does not recompute output hashes -
+it CANNOT detect a silently-stale-but-valid output, so the manifest is
+the load-bearing freshness guarantee; (b) static const-path parsing is
+UNSOUND for fingerprinting - 103 phases read undeclared inputs (legacy
+dir-root JSONs, phase12 background_family tree reads, phase142 csproj
+enumeration, 151/156 reading the generator script) - so per-phase real
+read-sets must be captured ONCE via an instrumented run (strace -f -e
+openat, filtered to repo paths) and stored in the manifest,
+re-instrumented when the phase's code changes. Migration: land
+extractor + DAG-generated phase registry (no behavior change); seed
+the manifest from one full pass; gate skipping behind --incremental
+with --full retained for promotion-relevant claims and periodic CI
+re-validation. Prototype extractor + machine report were produced in
+session scratch (disposable; the design above is self-contained).
+
+(2) CUDA - NOT NOW (two capping facts). (a) The physics is entirely
+fp64 and the resident RTX 4080 SUPER (Ada, CC 8.9) runs fp64 at 1/64
+fp32 rate (~0.5 TFLOP/s) - the 16-core CPU already delivers ~1 TFLOP/s
+aggregate fp64, so honest ceilings are only ~8-20x on HMC phases (via
+batching the 16 umbrella windows into one kernel), ~3-8x on the 48M-eval
+stencil scans, and NEGATIVE on eigensolves (12288-dim syevd slower than
+16-core LAPACK). (b) The shipped native library is NOT a CUDA build:
+ldd shows native/build/libgu_cuda_core.so is not linked against
+libcudart (CPU-fallback #else path) - the CPU-vs-CUDA parity tests
+pass trivially because both sides are the same CPU code - and the
+device kernels that exist implement the TOY CONTROL branch (identity
+Shiab), not the Einsteinian operator. A real port = writing the
+production operator + per-face 3x3 matrix-exp + MatrixExpFrechet as
+new fp64 device code (6-12 dev-days), with the risk concentrated
+exactly where silent numerical bias could contaminate physics (the
+program was already bitten by the 2026-06-12 silent GPU fallback).
+REVISIT CUDA IFF: WS4 Binder commits to weeks of continuous HMC (then
+fund only Inc 0 real-CUDA-build + Inc 1 batched forward-action kernel,
+~3-5 dev-days, for the stencil-scan 3-8x), or hardware moves to a
+data-center card with full-rate fp64 (then the full port is a genuine
+20-40x and eigensolves move too).
 
 ### Most Recent Implemented Work
 
@@ -1687,8 +1801,8 @@ PHASE405_ENABLE_GPU=1 LD_LIBRARY_PATH=native/build dotnet run --project studies/
 The targeted Phase424 (Release, ~7 min) and Phase425 (Release, ~1 min) runs
 pass and preserve the fail-closed boundary; the fixed Phase411/Phase417
 re-runs pass with their corrected censuses; Phase202 now reports
-`checklistPassedCount=241`, `checklistFailedCount=3`; claim integrity
-verifies Phase424 through Phase448 (and the corrected Phase417 values)
+`checklistPassedCount=245`, `checklistFailedCount=3`; claim integrity
+verifies Phase424 through Phase452 (and the corrected Phase417 values)
 with `promotedPhysicalMassClaimCount=0`. The full direct
 `./scripts/generate_validated_boson_predictions.sh` pass completed with
 Phase424 through Phase436 included and ended at
@@ -1753,12 +1867,12 @@ build-bound. Side benefit: single-phase iteration is much faster after
 one traversal build. NOTE: new phases must be added BOTH to the generator
 script AND to scripts/BosonPhasesTraversal.proj (the traversal item
 list), or --no-build will fail on the unbuilt project. THE NEXT REAL
-LEVER is content-hash incremental validation (skip re-running phases
-whose code and precursor inputs are unchanged); it changes gate semantics
-(a skipped run is not a re-validation) and must be designed fail-closed
-(hash-manifest gate recording exactly which phases were skipped and why,
-with a mandatory full pass before any promotion-relevant claim) - named
-future work, not yet implemented.
+LEVER is content-hash incremental validation - DESIGN NOW COMPLETE AND
+BINDING, see "PERFORMANCE EXPLORATION OUTCOME (2026-07-09)" above
+(~100x on the typical append-one-phase checkpoint; committed
+fingerprint manifest; instrumented read-set capture because static
+parsing is unsound; whole-repo scanners and tail gates always run;
+--full retained for promotion-relevant claims). Not yet implemented.
 
 ### Four-Dimensional Platform Build (decision pending)
 
@@ -1830,13 +1944,17 @@ sources required):
   lineage fields per row with zero source-defined. A future comparison
   phase must import that lineage explicitly and face the existing gates.
 - PERFORMANCE PROGRAM (validation wall-time bounds innovation pace):
-  Release builds everywhere (DONE 2026-07-01); next candidates are a
-  dependency-DAG parallel generator (independent phase chains run
-  concurrently), content-hash incremental validation (skip phases whose
-  inputs are unchanged), and a single shared build pass instead of
-  per-phase MSBuild invocations. Any such change must preserve the
-  sequential semantics of dependent phases and be validated by a full
-  pass before adoption.
+  Release builds everywhere (DONE 2026-07-01); single shared build pass
+  (DONE 2026-07-02, BosonPhasesTraversal.proj, ~9%); content-hash
+  incremental validation DESIGNED 2026-07-09 (see PERFORMANCE
+  EXPLORATION OUTCOME above; ~100x on typical checkpoints; NOT yet
+  implemented); dependency-DAG parallel generator DEPRIORITIZED (the
+  graph is near-totally-ordered - measured 2026-07-09 - so there is
+  almost no exploitable width); CUDA ruled NOT NOW 2026-07-09 (fp64
+  1/64-rate on the resident Ada card; native lib not actually built
+  against CUDA; revisit conditions recorded above). Any adopted change
+  must preserve the sequential semantics of dependent phases and be
+  validated by a full pass before adoption.
 
 USER DIRECTIVE (2026-06-11): COMPLETED. The three brute-force
 computations are done and committed: Phase404 (ratio menu tan^2 = 3/5,

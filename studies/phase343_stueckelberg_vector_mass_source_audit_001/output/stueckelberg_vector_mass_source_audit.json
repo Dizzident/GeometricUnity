@@ -1,7 +1,7 @@
 {
   "phaseId": "phase343-stueckelberg-vector-mass-source-audit",
   "terminalStatus": "stueckelberg-vector-mass-source-audit-external-mass-parameter-not-gu-source",
-  "generatedAt": "2026-07-05T00:14:30.4232877+00:00",
+  "generatedAt": "2026-07-09T21:04:28.5317837+00:00",
   "stueckelbergVectorMassSourceAuditPassed": true,
   "stueckelbergLeadPresent": true,
   "stueckelbergPrimarySourcesReviewed": true,

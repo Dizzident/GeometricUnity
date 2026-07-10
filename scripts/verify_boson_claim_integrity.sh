@@ -220,6 +220,9 @@ const paths = {
   phase447: "studies/phase447_two_loop_saturation_probe_001/output/two_loop_saturation_probe_summary.json",
   phase448: "studies/phase448_torus_mode_volume_saturation_probe_001/output/torus_mode_volume_saturation_probe_summary.json",
   phase449: "studies/phase449_variational_gaussian_effective_potential_probe_001/output/variational_gaussian_effective_potential_probe_summary.json",
+  phase451: "studies/phase451_two_loop_unification_ledger_001/output/two_loop_unification_ledger_summary.json",
+  phase452: "studies/phase452_scalar_channel_spectroscopy_probe_001/output/scalar_channel_spectroscopy_probe_summary.json",
+  phase450: "studies/phase450_constraint_effective_potential_hmc_probe_001/output/constraint_effective_potential_hmc_probe_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -511,6 +514,9 @@ const phase446 = requireFile(paths.phase446);
 const phase447 = requireFile(paths.phase447);
 const phase448 = requireFile(paths.phase448);
 const phase449 = requireFile(paths.phase449);
+const phase451 = requireFile(paths.phase451);
+const phase452 = requireFile(paths.phase452);
+const phase450 = requireFile(paths.phase450);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -5349,6 +5355,32 @@ if (sourceLineageMissing) {
   assert(phase449.sourceContractApplicationAllowed === false && phase449.canFillPhase201WzContract === false && phase449.canFillPhase201HiggsContract === false && phase449.canFillPhase256ObservedFieldExtractionContract === false, "Phase449 cannot fill Phase201 or Phase256 contracts.");
   assert(phase449.routePromotesWzMasses === false && phase449.routePromotesHiggsMass === false && phase449.routeCompletesBosonPredictions === false, "Phase449 cannot promote boson predictions.");
   assert(phase101Package?.variationalGaussianEffectivePotentialProbe?.variationalGaussianEffectivePotentialProbePassed === true, "Phase101 must include the Phase449 block.");
+  assert(phase451.twoLoopUnificationLedgerPassed === true, "Phase451 two-loop unification ledger must pass on internal consistency.");
+  assert(phase451.applicationSubjectKind === "two-loop-unification-ledger", "Phase451 must classify its subject as the two-loop unification ledger.");
+  assert(phase451.verdictKind === "tension-persists-quantified", "Phase451 must record the quantified unification tension honestly.");
+  assert(phase451.batteries?.batteriesAllPassed === true, "Phase451 batteries incl. the phase433 witness row and RK4 controls must pass.");
+  assert(phase451.falsificationComparison?.twoLoopClosesWithinThresholdBand === false, "Phase451 must record that the two-loop running does not close the gap within the honest threshold band.");
+  assert(phase451.separation?.sin2ObservedUsedInPredictionComputation === false && phase451.separation?.derivationComparisonSeparationMaintained === true, "Phase451 must keep the observed sin^2 out of the derivation (phase429 separation discipline).");
+  assert(phase451.separation?.successWouldBeGutGenericNotGuSpecific === true, "Phase451 must carry the GUT-generic nonclaim.");
+  assert(phase451.predictionContractImpact?.canFillPhase201WzContract === false && phase451.predictionContractImpact?.canFillPhase201HiggsContract === false && phase451.predictionContractImpact?.canFillPhase256ObservedFieldExtractionContract === false, "Phase451 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase101Package?.twoLoopUnificationLedger?.twoLoopUnificationLedgerPassed === true, "Phase101 must include the Phase451 block.");
+  assert(phase452.scalarChannelSpectroscopyProbePassed === true, "Phase452 scalar-channel spectroscopy probe must pass on internal consistency.");
+  assert(phase452.applicationSubjectKind === "scalar-channel-spectroscopy-probe", "Phase452 must classify its subject as the scalar-channel spectroscopy probe.");
+  assert(phase452.scalarChannelVerdict === "scalar-channel-gapped-measured", "Phase452 must record the measured scalar-channel gap.");
+  assert(phase452.batteries?.batteriesAllPassed === true, "Phase452 batteries incl. the block-spectrum free-field gate must pass.");
+  assert(phase452.coshCorrectedEffectiveMassesOnly === true && phase452.thetaHaarMeasureUsed === true && phase452.theta0SliceIsSamplerDemoOnly === true, "Phase452 must honor the WS2 binding conditions.");
+  assert(phase452.scaleIsWorkbenchRelativeCandidateOnly === true && phase452.noGevPromotion === true, "Phase452 must keep the workbench-relative and no-promotion boundaries.");
+  assert(phase452.sourceContractApplicationAllowed === false && phase452.canFillPhase201WzContract === false && phase452.canFillPhase201HiggsContract === false && phase452.canFillPhase256ObservedFieldExtractionContract === false, "Phase452 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase452.routePromotesWzMasses === false && phase452.routePromotesHiggsMass === false && phase452.routeCompletesBosonPredictions === false, "Phase452 cannot promote boson predictions.");
+  assert(phase101Package?.scalarChannelSpectroscopyProbe?.scalarChannelSpectroscopyProbePassed === true, "Phase101 must include the Phase452 block.");
+  assert(phase450.constraintEffectivePotentialHmcProbePassed === true, "Phase450 constraint-EP HMC probe must pass on internal consistency.");
+  assert(phase450.applicationSubjectKind === "constraint-effective-potential-hmc-probe", "Phase450 must classify its subject as the constraint-EP HMC probe.");
+  assert(phase450.verdictKind === "inconclusive-gates-failed" && phase450.onlyAntisymmetryGatesFailed === true, "Phase450 must record its honest inconclusive verdict (antisymmetry error-model item).");
+  assert(phase450.controlClean === true && phase450.anyEinsteinianFlatBottom === false && phase450.allEinsteinianSingleWell === true, "Phase450 must carry the single-well-everywhere observation without claiming the null.");
+  assert(phase450.cepConventionsAreWorkbenchConventions === true && phase450.scaleIsWorkbenchRelativeCandidateOnly === true && phase450.noGevPromotion === true, "Phase450 must keep the convention and no-promotion boundaries.");
+  assert(phase450.sourceContractApplicationAllowed === false && phase450.canFillPhase201WzContract === false && phase450.canFillPhase201HiggsContract === false && phase450.canFillPhase256ObservedFieldExtractionContract === false, "Phase450 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase450.routePromotesWzMasses === false && phase450.routePromotesHiggsMass === false && phase450.routeCompletesBosonPredictions === false, "Phase450 cannot promote boson predictions.");
+  assert(phase101Package?.constraintEffectivePotentialHmcProbe?.constraintEffectivePotentialHmcProbePassed === true, "Phase101 must include the Phase450 block.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

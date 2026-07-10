@@ -1,0 +1,681 @@
+{
+  "phaseId": "phase452-scalar-channel-spectroscopy-probe",
+  "generatedAt": "2026-07-10T04:14:48.9454094+00:00",
+  "terminalStatus": "scalar-channel-spectroscopy-probe-passed-scalar-channel-gapped-measured-workbench-relative-no-gev",
+  "scalarChannelSpectroscopyProbePassed": true,
+  "phase448PrecursorPassed": true,
+  "phase449PrecursorPassed": true,
+  "precursorsPassed": true,
+  "applicationSubjectKind": "scalar-channel-spectroscopy-probe",
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "e50a7b4b62d4cfbb8fa914ad34839642d938ffeea5d77a6445ce107dcc195159",
+  "probeConfiguration": {
+    "lieAlgebraId": "su2-trace-pairing",
+    "torusSizes": [
+      3
+    ],
+    "latticeCanonical": true,
+    "timeAxis": 0,
+    "sliceConvention": "lattice axis 0 is Euclidean time; a face belongs to the slice of its CANONICAL BASE VERTEX = the unique face vertex from which the minimal-image displacements of the other two vertices both lie in {0,1}^4 (the Kuhn-chain minimum; manifestly translation covariant)",
+    "interpolators": {
+      "o1": "O1(tau) = sum over faces in slice tau of tr(F_f^2) (trace-pairing InnerProduct of the CurvatureAssembler face coefficients); gauge invariant (F transforms in the adjoint), theta-blind",
+      "o2": "O2(tau) = sum over faces in slice tau of Tr(Upsilon_f^dagger Upsilon_f) with Upsilon = the S_B residual via the operator\u0027s EvaluateWithTheta path (Evaluate for the identity member); with the uniform unit face weights sum_tau O2(tau) = 2 S_B exactly (battery-verified)"
+    },
+    "ensemble": {
+      "action": "pure S_B = (1/2)\u003CUpsilon, M Upsilon\u003E (exactly quartic in omega, transcendental in theta; S_B \u003E= 0: no sign problem)",
+      "betaProduction": 1,
+      "betaHigherControl": 4,
+      "betaFreeField": 400,
+      "omegaSampler": "HMC, leapfrog nLeap steps, analytic ComputeJointGradient forces, warmup step-size auto-tune (the cep_hmc_prototype pattern at torus scale)",
+      "thetaSampler": "Haar-invariant rotation Metropolis: per-vertex group-composition proposals R\u0027_v = exp(ad_delta_v) exp(ad_theta_v) (delta isotropic Gaussian, symmetric w.r.t. Haar), applied as collective all-vertex moves each trajectory plus a periodic single-site sweep; targets Haar x e^{-beta S_B} (binding condition (ii): theta lives in SO(3) per vertex; the R^n theta integral diverges)",
+      "identityThetaNote": "the identity member is exactly theta-independent (battery: GradTheta = 0), so its theta-Haar factor cancels in every observable and theta is not sampled for it",
+      "freeColumnConvention": "free-field control columns run at theta = 0 (SAMPLER-DEMO label per binding condition (iv)) and sample e^{-beta S_B} restricted to the orthogonal complement of ker H(0) -- the exact flat/pure-gauge cone tangent, on which the Gaussian theory does not exist and which the analytic prediction excludes (RECORDED CONVENTION; physics columns are unrestricted)",
+      "trajProduction": 16000,
+      "trajControl": 10000,
+      "warmup": 2000,
+      "nLeap": 12,
+      "thetaMovesPerTraj": 2,
+      "thetaSweepEvery": 50
+    },
+    "correlators": "C(t) = \u003CO(t)O(0)\u003E - \u003CO\u003E^2 averaged over all time translations (vacuum-subtracted connected); jackknife over 50 blocks",
+    "coshConvention": "COSH-CORRECTED ONLY (the naive log-ratio was proven corrupted by the periodic image): solve C(t)/C(t\u002B1) = cosh(m(t - T/2))/cosh(m(t \u002B 1 - T/2)) by bisection; informative points t \u003C= T/2 - 1",
+    "windowRule": "PRE-REGISTERED: window = { t : 1 \u003C= t \u003C= T/2 - 1 } if nonempty, else {0} with the excited-state-contamination caveat recorded (T = 3 has exactly one informative point); plateau chi^2/dof \u003C= 3 gates windows with \u003E= 2 points",
+    "freeFieldGate": "analytic Gaussian correlator from the exact block spectrum: Cov(dx) = (1/(beta V)) sum_k e^{2 pi i k.dx/n} G(k) H(k)^\u002B G(k)^dagger with H(k) the 45x45 momentum blocks (45 orbit-representative Hv columns, phase448 machinery) and G(k) the interpolator\u0027s exact linearization kernel; C_free(t) = 2 n^3 sum_{F,F\u0027,dx_s} Tr(K M K M^T); sampler large-beta cosh m_eff must match within 3 sigma (O1 gating, O2 recorded); the formula itself is validated by an exact direct-Gaussian-sampling battery through the identical measurement pipeline (quadratic-truncated interpolators; gate 5 sigma)",
+    "verdictRules": "pre-registered: gapped-measured if m \u003E= 3 sigma; gapless if m \u003C= 2 sigma and sigma \u003C= 0.3; else inconclusive-statistics; O1-vs-O2 incompatibility (\u003E 3 sigma) fail-closes to inconclusive-statistics; combined mass = inverse-variance weighted mean with the CORRELATION-CONSERVATIVE rho=1 error s1 s2 (s1\u002Bs2)/(s1^2\u002Bs2^2) (both interpolators live on the same ensemble; for the identity member O2 = O1 exactly)",
+    "gates": {
+      "objectiveConsistencyGate": 1E-10,
+      "rotationInvarianceGate": 1E-08,
+      "blockResidualGate": 1E-09,
+      "planeWaveHvGate": 1E-05,
+      "expLogGate": 1E-10,
+      "gaussSimSigmaGate": 5,
+      "freeFieldSigmaGate": 3,
+      "crossCheckSigmaGate": 3,
+      "dhSigmaGate": 3,
+      "dhAbsGate": 0.01,
+      "virialSigmaGate": 3,
+      "virialRelGate": 0.02,
+      "nEffMin": 100,
+      "zeroModeRelTol": 1E-08,
+      "zeroModeAbsFloor": 1E-10,
+      "hvStep": 1E-05,
+      "linStep": 0.001
+    },
+    "rngSeed": 20260705,
+    "gaussSimSamples": 4000
+  },
+  "scalarChannelVerdict": "scalar-channel-gapped-measured",
+  "scaleIsWorkbenchRelativeCandidateOnly": true,
+  "noGevPromotion": true,
+  "coshCorrectedEffectiveMassesOnly": true,
+  "thetaHaarMeasureUsed": true,
+  "theta0SliceIsSamplerDemoOnly": true,
+  "physicistReviewPending": true,
+  "pureGaugeRatioNote": "a*m_0\u002B\u002B is the scalar glueball-like gap of THIS pure-S_B lattice action, in lattice units of the reduced spin-4 slice workbench. It is a pure-gauge-sector composite-pole scale: ratios to any electroweak-labeled quantity are undefined here, and per the binding label caveat the W/Z/H labels attach only in a Higgs phase -- this number is NEVER m_H.",
+  "batteries": {
+    "batteriesAllPassed": true,
+    "orbitMapsOk": true,
+    "objectiveConsistencyBattery": true,
+    "objConsistencyWorst": 5.1028693165560685E-15,
+    "uniformThetaInvarianceGate": true,
+    "rotInvarianceWorst": 8.572820451814164E-15,
+    "identityThetaIndependent": true,
+    "identityThetaGradWorst": 1.226217978578734E-15,
+    "expLogBattery": true,
+    "expLogWorst": 5.551115123125783E-16,
+    "blockResidualBattery": true,
+    "blockResidWorst": 4.718878744194532E-15,
+    "planeWaveBattery": true,
+    "planeWaveWorst": 3.334184518257461E-11,
+    "gaussSimBattery": true,
+    "gaussSimWorstZ": 0.8619887407006304,
+    "negativeModeAbsent": true,
+    "samplerGates": true,
+    "freeFieldGate": true,
+    "nEffGateAll": true
+  },
+  "tori": [
+    {
+      "torusN": 3,
+      "vertexCount": 81,
+      "edgeCount": 1215,
+      "faceCount": 4050,
+      "nOmega": 3645,
+      "nTheta": 243,
+      "faceTypeCount": 50,
+      "faceBaseMatchesStoredOrder": true,
+      "informativePoints": [
+        0
+      ],
+      "window": [
+        0
+      ],
+      "windowIncludesT0": true,
+      "memberBatteries": [
+        {
+          "member": "identity",
+          "objectiveConsistency": 5.1028693165560685E-15,
+          "uniformThetaInvariance": 8.572820451814164E-15,
+          "identityThetaGradNorm": 1.226217978578734E-15,
+          "identityThetaSDiff": 6.93990227051624E-15,
+          "expLogResid": 5.551115123125783E-16,
+          "hvThetaLeakAtOrigin": 0,
+          "blockResidual": 4.567778095433564E-15,
+          "planeWaveHvResid": 8.108639408697898E-12,
+          "covImagMax": 1.345494896054511E-16,
+          "zeroBasisGramResid": 1.5634195327240974E-16,
+          "zeroBasisHzResid": 3.057662610333957E-16
+        },
+        {
+          "member": "sd2-id0/c0.5",
+          "objectiveConsistency": 8.702951193815237E-16,
+          "uniformThetaInvariance": 2.6108853581445666E-15,
+          "identityThetaGradNorm": 0,
+          "identityThetaSDiff": 0,
+          "expLogResid": 5.551115123125783E-16,
+          "hvThetaLeakAtOrigin": 0,
+          "blockResidual": 4.718878744194532E-15,
+          "planeWaveHvResid": 3.334184518257461E-11,
+          "covImagMax": 1.2542050731312315E-15,
+          "zeroBasisGramResid": 4.073739830412925E-17,
+          "zeroBasisHzResid": 3.941521930634655E-16
+        }
+      ],
+      "spectra": [
+        {
+          "member": "identity",
+          "positiveModes": 3393,
+          "zeroModes": 252,
+          "negativeModes": 0,
+          "minEigenvalue": -3.026014447906265E-15,
+          "maxAbsEigenvalue": 22.898979485566414,
+          "zeroTol": 2.2898979485566414E-07,
+          "analyticC1": [
+            1936.4479621428918,
+            162.77601892820326,
+            162.7760189282093
+          ],
+          "analyticC2": [
+            1936.4479621428918,
+            162.77601892820326,
+            162.7760189282093
+          ],
+          "analyticMeanO1PerSlice": 1130.9999999999977,
+          "analyticMeanO2PerSlice": 1130.9999999999977,
+          "analyticMeffO1": 2.550880306794233,
+          "analyticMeffO2": 2.550880306794233
+        },
+        {
+          "member": "sd2-id0/c0.5",
+          "positiveModes": 3393,
+          "zeroModes": 252,
+          "negativeModes": 0,
+          "minEigenvalue": -3.907750328285073E-16,
+          "maxAbsEigenvalue": 1.9759054464063566,
+          "zeroTol": 1.9759054464063566E-08,
+          "analyticC1": [
+            254825.61754863703,
+            21857.509487751915,
+            21857.509487752446
+          ],
+          "analyticC2": [
+            1873.7874064935068,
+            194.106296753351,
+            194.10629675335008
+          ],
+          "analyticMeanO1PerSlice": 12167.747395451273,
+          "analyticMeanO2PerSlice": 1131,
+          "analyticMeffO1": 2.532028376864343,
+          "analyticMeffO2": 2.3569501678347393
+        }
+      ],
+      "gaussianSimBattery": [
+        {
+          "member": "identity",
+          "worstZO1": 0.8619887407006304,
+          "worstZO2": 0.8619887406726275,
+          "selfConjImagMax": 0,
+          "simC1": [
+            1957.8484482239,
+            180.21094383811578,
+            180.21094383811578
+          ],
+          "simC2": [
+            1957.8484482236672,
+            180.21094383765012,
+            180.21094383765012
+          ]
+        },
+        {
+          "member": "sd2-id0/c0.5",
+          "worstZO1": 0.4183700883459722,
+          "worstZO2": 0.7465295969646681,
+          "selfConjImagMax": 0,
+          "simC1": [
+            253295.61858853698,
+            20783.634234279394,
+            20783.634234309196
+          ],
+          "simC2": [
+            1854.2794174635783,
+            184.1355034513399,
+            184.13550345157273
+          ]
+        }
+      ],
+      "columns": [
+        {
+          "member": "identity",
+          "beta": 1,
+          "kind": "production",
+          "samplerDemoLabel": false,
+          "trajectories": 16000,
+          "warmup": 2000,
+          "nDof": 3645,
+          "zeroModesProjected": 0,
+          "eps": 0.07786879999999999,
+          "sigmaTheta": null,
+          "acceptance": 0.659,
+          "thetaCollectiveAcceptance": null,
+          "thetaSiteAcceptance": null,
+          "expDH": 1.0034730461565864,
+          "expDHSigma": 0.006464370622085883,
+          "dhGate": true,
+          "virial": 3645.755390921066,
+          "virialSigma": 2.918120089444973,
+          "virialTarget": 3645,
+          "virialGate": true,
+          "tauIntO1": 12.906779149400686,
+          "tauIntO2": 12.906779149400712,
+          "tauIntS": 12.906779149400712,
+          "nEff": 619.8293088769134,
+          "nEffGate": true,
+          "meanS": 1638.7213243729866,
+          "meanO1PerSlice": 1092.4808829153244,
+          "meanO2PerSlice": 1092.4808829153244,
+          "c1": [
+            1829.65018531424,
+            129.3544614505954,
+            129.35446145036258
+          ],
+          "c1Sigma": [
+            28.736902988140198,
+            25.765643783170578,
+            25.765643783086237
+          ],
+          "c2": [
+            1829.650185314007,
+            129.35446145036258,
+            129.35446145036258
+          ],
+          "c2Sigma": [
+            28.736902988494464,
+            25.765643783052592,
+            25.765643783106523
+          ],
+          "meffO1": [
+            {
+              "t": 0,
+              "ratio": 14.1444691183925,
+              "m": 2.7132465417703235,
+              "sigma": 0.18463902186135914
+            }
+          ],
+          "meffO2": [
+            {
+              "t": 0,
+              "ratio": 14.14446911841616,
+              "m": 2.7132465417719,
+              "sigma": 0.18463902186055506
+            }
+          ],
+          "msPerTrajectory": 249.3464482625
+        },
+        {
+          "member": "identity",
+          "beta": 400,
+          "kind": "free-field-control",
+          "samplerDemoLabel": true,
+          "trajectories": 10000,
+          "warmup": 2000,
+          "nDof": 3393,
+          "zeroModesProjected": 252,
+          "eps": 0.0039027087684154436,
+          "sigmaTheta": null,
+          "acceptance": 0.7702,
+          "thetaCollectiveAcceptance": null,
+          "thetaSiteAcceptance": null,
+          "expDH": 1.0043655605214088,
+          "expDHSigma": 0.005782261668049432,
+          "dhGate": true,
+          "virial": 3379.035199689962,
+          "virialSigma": 3.92329055023046,
+          "virialTarget": 3393,
+          "virialGate": true,
+          "tauIntO1": 15.590854368002757,
+          "tauIntO2": 15.590854368002766,
+          "tauIntS": 15.590854368002766,
+          "nEff": 320.7008340903716,
+          "nEffGate": true,
+          "meanS": 4.223239127479669,
+          "meanO1PerSlice": 2.8154927516531125,
+          "meanO2PerSlice": 2.8154927516531125,
+          "c1": [
+            0.011358763633713131,
+            0.0010372210234459445,
+            0.0010372210234468326
+          ],
+          "c1Sigma": [
+            0.00022019475314457733,
+            0.00021133449240940942,
+            0.00021133449240960512
+          ],
+          "c2": [
+            0.011358763633710467,
+            0.0010372210234459445,
+            0.0010372210234459445
+          ],
+          "c2Sigma": [
+            0.00022019475314598278,
+            0.00021133449240935505,
+            0.00021133449240935505
+          ],
+          "meffO1": [
+            {
+              "t": 0,
+              "ratio": 10.95115060045358,
+              "m": 2.4737515346990993,
+              "sigma": 0.18434774354439537
+            }
+          ],
+          "meffO2": [
+            {
+              "t": 0,
+              "ratio": 10.951150600451012,
+              "m": 2.4737515346988808,
+              "sigma": 0.1843477435442834
+            }
+          ],
+          "msPerTrajectory": 249.33339378
+        },
+        {
+          "member": "sd2-id0/c0.5",
+          "beta": 1,
+          "kind": "production",
+          "samplerDemoLabel": false,
+          "trajectories": 16000,
+          "warmup": 2000,
+          "nDof": 3645,
+          "zeroModesProjected": 0,
+          "eps": 0.10298148799999995,
+          "sigmaTheta": 0.03145728000000001,
+          "acceptance": 0.8576875,
+          "thetaCollectiveAcceptance": 0.3225,
+          "thetaSiteAcceptance": 0.17716049382716048,
+          "expDH": 1.001398390720795,
+          "expDHSigma": 0.002456766215471567,
+          "dhGate": true,
+          "virial": 3645.3775127706367,
+          "virialSigma": 1.3336870487429464,
+          "virialTarget": 3645,
+          "virialGate": true,
+          "tauIntO1": 3.596345431918538,
+          "tauIntO2": 1.7430809296569703,
+          "tauIntS": 1.7430809296569703,
+          "nEff": 2224.480420873322,
+          "nEffGate": true,
+          "meanS": 1332.6756316140516,
+          "meanO1PerSlice": 6463.804731077794,
+          "meanO2PerSlice": 888.4504210760343,
+          "c1": [
+            78493.46184372157,
+            6566.666114166379,
+            6566.666114166379
+          ],
+          "c1Sigma": [
+            659.8623052248726,
+            527.13978259293,
+            527.1397825908354
+          ],
+          "c2": [
+            1375.022559181787,
+            122.24364740320016,
+            122.24364740320016
+          ],
+          "c2Sigma": [
+            13.174422965912509,
+            9.50861663152468,
+            9.50861663152468
+          ],
+          "meffO1": [
+            {
+              "t": 0,
+              "ratio": 11.953320068213353,
+              "m": 2.555338250004908,
+              "sigma": 0.07246835972150631
+            }
+          ],
+          "meffO2": [
+            {
+              "t": 0,
+              "ratio": 11.248212797892933,
+              "m": 2.4986465424511284,
+              "sigma": 0.07007825117627481
+            }
+          ],
+          "msPerTrajectory": 389.36012773125003
+        },
+        {
+          "member": "sd2-id0/c0.5",
+          "beta": 4,
+          "kind": "higher-beta-control",
+          "samplerDemoLabel": false,
+          "trajectories": 10000,
+          "warmup": 2000,
+          "nDof": 3645,
+          "zeroModesProjected": 0,
+          "eps": 0.07401794449999997,
+          "sigmaTheta": 0.025165824000000003,
+          "acceptance": 0.8261,
+          "thetaCollectiveAcceptance": 0.34705,
+          "thetaSiteAcceptance": 0.12975308641975308,
+          "expDH": 0.9949339613163142,
+          "expDHSigma": 0.003483747538633356,
+          "dhGate": true,
+          "virial": 3643.4534043580866,
+          "virialSigma": 3.065242399307238,
+          "virialTarget": 3645,
+          "virialGate": true,
+          "tauIntO1": 11.047002563269949,
+          "tauIntO2": 3.7300018006202573,
+          "tauIntS": 3.7300018006202573,
+          "nEff": 452.61146373084426,
+          "nEffGate": true,
+          "meanS": 373.1585161365288,
+          "meanO1PerSlice": 2083.6879409977605,
+          "meanO2PerSlice": 248.77234409101922,
+          "c1": [
+            7824.282853471115,
+            713.5483049955219,
+            713.5483049955219
+          ],
+          "c1Sigma": [
+            83.54473075282621,
+            70.35610371019219,
+            70.35610371019219
+          ],
+          "c2": [
+            98.26180646808643,
+            10.147941409872146,
+            10.147941409872146
+          ],
+          "c2Sigma": [
+            1.4098662462007259,
+            1.008552800503087,
+            1.008552800503087
+          ],
+          "meffO1": [
+            {
+              "t": 0,
+              "ratio": 10.965316291404012,
+              "m": 2.474953055896073,
+              "sigma": 0.08919846120642345
+            }
+          ],
+          "meffO2": [
+            {
+              "t": 0,
+              "ratio": 9.682930014997439,
+              "m": 2.359767356499069,
+              "sigma": 0.08863910275257231
+            }
+          ],
+          "msPerTrajectory": 396.32687642999997
+        },
+        {
+          "member": "sd2-id0/c0.5",
+          "beta": 400,
+          "kind": "free-field-control",
+          "samplerDemoLabel": true,
+          "trajectories": 10000,
+          "warmup": 2000,
+          "nDof": 3393,
+          "zeroModesProjected": 252,
+          "eps": 0.012236091450156241,
+          "sigmaTheta": null,
+          "acceptance": 0.7889,
+          "thetaCollectiveAcceptance": null,
+          "thetaSiteAcceptance": null,
+          "expDH": 0.9998502686077092,
+          "expDHSigma": 0.004107938869839355,
+          "dhGate": true,
+          "virial": 3388.2891376769803,
+          "virialSigma": 4.893261450188993,
+          "virialTarget": 3393,
+          "virialGate": true,
+          "tauIntO1": 19.947498137382585,
+          "tauIntO2": 18.668716938753334,
+          "tauIntS": 18.668716938753334,
+          "nEff": 250.65800059556122,
+          "nEffGate": true,
+          "meanS": 4.218066979197192,
+          "meanO1PerSlice": 30.173813501392143,
+          "meanO2PerSlice": 2.812044652798128,
+          "c1": [
+            1.6051360302434432,
+            0.1544843560999425,
+            0.1544843560999425
+          ],
+          "c1Sigma": [
+            0.04984554602531211,
+            0.0326369717977724,
+            0.0326369717977724
+          ],
+          "c2": [
+            0.011803874529309866,
+            0.0013643070386875067,
+            0.0013643070386875067
+          ],
+          "c2Sigma": [
+            0.0003602070417340718,
+            0.00027727882813936096,
+            0.00027727882813942503
+          ],
+          "meffO1": [
+            {
+              "t": 0,
+              "ratio": 10.390282037392916,
+              "m": 2.424962054702508,
+              "sigma": 0.1893530045646925
+            }
+          ],
+          "meffO2": [
+            {
+              "t": 0,
+              "ratio": 8.651919395406368,
+              "m": 2.2562454442320155,
+              "sigma": 0.17626534272056854
+            }
+          ],
+          "msPerTrajectory": 250.06123284999998
+        }
+      ],
+      "freeFieldGates": [
+        {
+          "member": "identity",
+          "beta": 400,
+          "analyticMeffO1": 2.550880306794233,
+          "analyticMeffO2": 2.550880306794233,
+          "measuredMeffO1": 2.4737515346990993,
+          "measuredMeffO1Sigma": 0.18434774354439537,
+          "measuredMeffO2": 2.4737515346988808,
+          "measuredMeffO2Sigma": 0.1843477435442834,
+          "zO1": 0.41838739445465045,
+          "zO2Recorded": 0.4183873944560898,
+          "gateO1": true
+        },
+        {
+          "member": "sd2-id0/c0.5",
+          "beta": 400,
+          "analyticMeffO1": 2.532028376864343,
+          "analyticMeffO2": 2.3569501678347393,
+          "measuredMeffO1": 2.424962054702508,
+          "measuredMeffO1Sigma": 0.1893530045646925,
+          "measuredMeffO2": 2.2562454442320155,
+          "measuredMeffO2Sigma": 0.17626534272056854,
+          "zO1": 0.5654323912523681,
+          "zO2Recorded": 0.5713245839959017,
+          "gateO1": true
+        }
+      ],
+      "verdicts": [
+        {
+          "member": "identity",
+          "isControl": true,
+          "beta": 1,
+          "mO1": 2.7132465417703235,
+          "mO1Sigma": 0.18463902186135914,
+          "plateauChi2DofO1": null,
+          "mO2": 2.7132465417719,
+          "mO2Sigma": 0.18463902186055506,
+          "plateauChi2DofO2": null,
+          "crossCheckSigma": 6.03754089698849E-12,
+          "crossCheckCompatible": true,
+          "statisticsGatesPassed": true,
+          "verdict": "scalar-channel-gapped-measured",
+          "reason": "a*m_0\u002B\u002B = 2.7132 \u002B- 0.1846 (14.7 sigma from zero)"
+        },
+        {
+          "member": "sd2-id0/c0.5",
+          "isControl": false,
+          "beta": 1,
+          "mO1": 2.555338250004908,
+          "mO1Sigma": 0.07246835972150631,
+          "plateauChi2DofO1": null,
+          "mO2": 2.4986465424511284,
+          "mO2Sigma": 0.07007825117627481,
+          "plateauChi2DofO2": null,
+          "crossCheckSigma": 0.5623628195265302,
+          "crossCheckCompatible": true,
+          "statisticsGatesPassed": true,
+          "verdict": "scalar-channel-gapped-measured",
+          "reason": "a*m_0\u002B\u002B = 2.5260 \u002B- 0.0712 (35.5 sigma from zero)"
+        }
+      ]
+    }
+  ],
+  "recordedBoundary": {
+    "definition81Scope": "reduced-spin4-slice",
+    "ambientSevenSevenRealized": false,
+    "internalGaugeContentRealized": false,
+    "weldRealized": false,
+    "canFillPhase201WzContract": false,
+    "canFillPhase256Contract": false,
+    "physicistReviewPending": true,
+    "baseSignature": "Cl(4,0)-euclidean-slice",
+    "spinorUsedAsShiabCarrierNotFiber": true,
+    "draft14dObserverseNotRealized": true
+  },
+  "runtimeSeconds": 6982.5564152,
+  "physicalCouplingProvided": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256Contract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256Contract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "sourceEvidence": {
+    "phase448SummaryPath": "studies/phase448_torus_mode_volume_saturation_probe_001/output/torus_mode_volume_saturation_probe_summary.json",
+    "phase449SummaryPath": "studies/phase449_variational_gaussian_effective_potential_probe_001/output/variational_gaussian_effective_potential_probe_summary.json",
+    "designSourcePath": "docs/Phases/FOUR_D_PLATFORM_DESIGN.md",
+    "physicsDecisionsSourcePath": "docs/Phases/FOUR_D_PLATFORM_PHYSICS_DECISIONS.md",
+    "reviewBoardSourcePath": "docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md",
+    "restartPromptSourcePath": "docs/BOSON_PREDICTION_AGENT_RESTART_PROMPT.md",
+    "hmcPrototypePath": "studies/phase448_torus_mode_volume_saturation_probe_001/cep_hmc_prototype/"
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "LABEL CAVEAT (binding): any a*m_0\u002B\u002B reported here is the scalar glueball-like gap of THIS pure-S_B action in lattice units; it is NEVER m_H, and no W/Z/H label attaches to anything in this phase -- those labels attach only in a Higgs phase.",
+    "This phase measurement-tests the 2026-07-04 review board\u0027s convex/gapped picture (physical content = gauge-invariant composite poles per the Elitzur/FMS reframe); a gapped verdict supports the picture at workbench level, a gapless or inconclusive verdict is recorded as exactly that (null reported as null).",
+    "All masses are workbench-relative structure data of the reduced spin-4 slice (su(2) toy algebra, lattice-canonical torus, lattice units, beta = 1 convention recorded): NOT physical masses, NOT a scale in GeV; no VEV/pole/GeV lineage exists on this route.",
+    "The theta = 0 free-field control columns are SAMPLER DEMOS (binding condition (iv)): they validate the sampler and measurement pipeline against the exactly solvable Gaussian theory and carry no physics verdict; the ker-H(0) restriction there is a recorded control convention, not a physics choice.",
+    "The T = 3 time extent admits exactly one informative cosh point; the pre-registered window rule fires on it with the excited-state-contamination caveat recorded -- single-window masses are upper-bound-flavored estimates of the 0\u002B\u002B gap, and n = 4 (env-enabled) adds the second point.",
+    "No Phase201 or Phase256 contract field is filled; the reduced slice does not realize the ambient 7,7 / internal gauge / weld content; nothing is promoted either way."
+  ],
+  "decision": "The 0\u002B\u002B scalar-channel spectroscopy probe is decided on internal consistency. On the lattice-canonical torus/tori n in {3} the pure S_B ensemble e^{-beta S_B} was sampled by omega-HMC (analytic joint-gradient forces, prototype pattern) interleaved with a Haar-invariant per-vertex rotation Metropolis on theta (review-board binding condition (ii)); the strictly gauge\u002Btranslation-invariant interpolators O1 = time-slice tr(F^2) and O2 = time-slice Tr(Upsilon^dagger Upsilon) (the action\u0027s own residual) were measured every trajectory; vacuum-subtracted connected correlators were time-translation averaged and COSH-CORRECTED effective masses extracted (never the log-ratio) with jackknife errors and a pre-registered window rule. GATES: free-field control (sampler large-beta columns vs the analytic Gaussian correlator built from the exact block-circulant momentum spectrum, validated by an exact direct-Gaussian pipeline battery at worst 0.86 sigma) = True; \u003Ce^-dH\u003E/equipartition per column = True; uniform-theta (global gauge rotation) invariance worst 8.57E-015 \u003C= 1E-008; objective consistency 5.10E-015; block eigensolver residual 4.72E-015; plane-wave Hv 3.33E-011; exp/log rotation-coordinate batteries 5.55E-016. VERDICT (scalar-channel-gapped-measured): per-member channel verdicts n=3 identity: scalar-channel-gapped-measured; n=3 sd2-id0/c0.5: scalar-channel-gapped-measured. a*m_0\u002B\u002B is the scalar glueball-like gap of THIS pure-S_B lattice action, in lattice units of the reduced spin-4 slice workbench. It is a pure-gauge-sector composite-pole scale: ratios to any electroweak-labeled quantity are undefined here, and per the binding label caveat the W/Z/H labels attach only in a Higgs phase -- this number is NEVER m_H. MANDATORY FRAMING: workbench-relative structure data ONLY (su(2) toy algebra, reduced Spin(4) slice, lattice units, beta = 1 recorded); NO GeV/pole/VEV promotion; theta=0 free-field columns are sampler demos, never physics verdicts. Everything is target-blind; no Phase201/Phase256 contract field is filled; nothing is promoted."
+}

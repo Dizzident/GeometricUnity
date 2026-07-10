@@ -19547,3 +19547,125 @@ HMC (ansatz-free, sign-problem-free, four binding conditions) -
 exactly the eventuality the review board's ranking anticipated. The
 2026-07-05 task-force workstreams WS1-WS4 proceed independently in
 parallel. promotedPhysicalMassClaimCount=0 throughout.
+
+## 2026-07-05 - The Parallel Wave Lands: Phases 450/451/452 (Then the Program Halts at User Instruction)
+
+### Phase451 (WS1, two-loop unification ledger): TENSION PERSISTS, QUANTIFIED
+
+From the derived 3/8 boundary (= alpha_1 = alpha_2, blind Phase404
+kernel) + the Phase433 exact-rational SM b-row + textbook two-loop
+b_ij, importing ONLY alpha_em(m_Z) and alpha_s(m_Z) (phase429-style
+declared-comparison separation; the observed sin^2 NEVER enters the
+derivation): sin^2(m_Z) predicted = 0.207589 (one loop; reproduces the
+referee's witness) / 0.210637 (two loops). Gap to observed 0.23122 =
+-0.02058 = ~115x the honest threshold band (1.79e-4; the naive
+matching-scale variation was proven an exact relabel - delta == 0 - and
+replaced by one-order-lower input evolution). Triple-unification
+tension -5.6/-4.9 in 1/alpha. THE DERIVED SM-CONTENT RUNNING IS
+QUANTITATIVELY FALSIFIED AS-IS; the ledger is now the standing
+falsification filter for any proposed observerse intermediate content.
+Even closure would be GUT-generic (mandatory nonclaim). Runtime 0.8 s.
+
+### Phase452 (WS2, scalar-channel spectroscopy): THE PROGRAM'S FIRST MEASURED POLE - GAPPED
+
+HMC correlator spectroscopy (theta-Haar + omega-HMC) of two strictly
+gauge-invariant scalar interpolators (tr F^2 and Tr Upsilon dagger
+Upsilon) on the canonical n=3 torus, cosh-corrected effective masses
+only, gated by the exact block-spectrum free-field control (sampler
+large-beta column z = 0.7-1.1 vs the analytic Gaussian correlator).
+RESULT: the 0++ channel is GAPPED - a*m = 2.4352 +- 0.1682 (identity,
+14.5 sigma) and 2.4547 +- 0.1242 (sd2, 19.8 sigma; interpolator
+cross-check 1.04 sigma; zero-mode count 252 = dim ker d EXACTLY). The
+review board's convex/gapped picture is CONFIRMED BY MEASUREMENT - the
+quantity the retired saddle-V_eff arc could never reach. Label caveat
+binding: this is THIS action's scalar gap in lattice units, never m_H.
+Limitations recorded: T=3 single informative cosh point; reduced
+8000/6000-trajectory committed budget (78 min).
+
+### Phase450 (constraint-EP HMC): honestly INCONCLUSIVE - single-well everywhere, null NOT claimed
+
+The ansatz-free umbrella/WHAM constraint effective potential under all
+four binding conditions (gauge-invariant invariant-ray coordinate with
+su(2) zero modes projected to 2.9e-17; theta-Haar rotations; N_eff
+gates; theta=0-never-a-verdict). TWO production runs (~2.5 h each; the
+second after a recorded spring-rule softening 2.2 -> 2.0 fixed the
+identity's marginal 0.149-vs-0.15 overlap to 0.28-0.30) AGREE ON THE
+OBSERVATION: every classification is single-well-at-zero (control
+clean; no flat Maxwell bottom; large-beta tree-shape Pearson 0.9996;
+acceptance 0.92-0.96, <e^-dH> ~ 1, virial ~ 0 on all windows). BUT the
+parity-antisymmetry gate trips at 5.06 sigma on sd2 while the
+INDEPENDENT unconstrained tadpole is consistent with zero (-0.04 +-
+0.10) - an unattributed WHAM stitching-error-model artifact class. Per
+the phase445/446 discipline: verdictKind=inconclusive-gates-failed;
+the symmetric-phase null is NOT claimed. ONE NAMED ITEM stands between
+this record and the null: the WHAM parity-asymmetry error model
+(block bootstrap over windows, or a within-window antisymmetrized
+estimator). When fixed and green, the frontier statement upgrades from
+"no perturbative CW scale" to "no non-perturbative scale along
+invariant rays at n=3".
+
+### Program state at halt (user instruction, 2026-07-05)
+
+Phase202: 245 passed / 3 failed; claim integrity verified;
+promotedPhysicalMassClaimCount=0 - as it has been through all 452
+phases, because no source supplies the lineage. QUEUED (not started,
+per the halt): WS3 (Upsilon-portal condensation probe, referee-scoped),
+the phase450 error-model fix, phase452 n=4 second window point, WS4
+Binder columns, WS5 Cl(7,7) Shiab build, the physicist review queue,
+and checkpoint-cadence literature monitoring. The restart prompt's
+PARALLEL WORK PLAN section carries the full queue.
+promotedPhysicalMassClaimCount=0 throughout.
+
+## 2026-07-09 - Performance exploration (user-directed, design-only): incremental validation first, CUDA not now
+
+The user asked whether the slow calculations would benefit from CUDA
+and whether the phase dependency chain permits running only the phases
+that need rerunning. Two parallel read-only investigations answered
+both; nothing was implemented (the program halt stands) and the full
+design is recorded in the restart prompt's "PERFORMANCE EXPLORATION
+OUTCOME (2026-07-09)" section.
+
+INCREMENTAL VALIDATION - the ~100x lever. A prototype extractor
+measured the real phase DAG: 317 generator-run phases, 2,182
+dependency edges, and a NEAR-TOTALLY-ORDERED structure (279 phases
+have ~272 downstream dependents; phase213 alone has direct fan-out
+163), so subtree pruning for mid-graph edits is worthless - the win is
+content-hash SKIPPING of unchanged phases on the standard
+append-one-phase checkpoint. The full pass now measures ~6.5-7 h
+(superseding the recorded 3-5.5 h; the HMC-era probes grew the tail),
+with 6.28 h concentrated in 8 numeric phases (450/452/443/447/449/
+445/446/448). Under the designed scheme a typical append-one-audit
+checkpoint runs in ~2-4 min (~99% saved); appending an HMC-class probe
+costs its own runtime + ~3 min. Two soundness findings shape the
+design: (a) the claim-integrity verifier asserts VALUES, not
+freshness - a silently-stale-but-still-valid output would pass it, so
+the committed fingerprint manifest is the load-bearing freshness
+guarantee; (b) static const-path parsing is UNSOUND (103 phases read
+undeclared inputs - legacy dir-root JSONs, phase12 background-family
+tree reads, phase142 csproj enumeration, 151/156 reading the generator
+script itself), so per-phase read-sets are captured once via an
+instrumented run (strace openat) and re-captured when the phase's code
+changes. Whole-repo scanners (204/205/253/279/281/295/296) and the
+tail gates always run. Fail-closed rule: skip only on exact
+fingerprint + output-hash match; any doubt reruns; --full retained for
+promotion-relevant claims.
+
+CUDA - ruled NOT NOW. Two capping facts: (a) the physics is entirely
+fp64 and the resident RTX 4080 SUPER runs fp64 at 1/64 the fp32 rate
+(~0.5 TFLOP/s vs ~1 TFLOP/s already available on the 16-core CPU), so
+honest ceilings are ~8-20x on the HMC phases (batching the 16 umbrella
+windows), ~3-8x on the 48M-eval stencil scans, and NEGATIVE on the
+large eigensolves; (b) the shipped native library is NOT a CUDA build
+(ldd: libgu_cuda_core.so not linked against libcudart - the parity
+tests pass because both arms are the same CPU code) and the device
+kernels that do exist implement the toy control branch, not the
+Einsteinian operator - a real port is 6-12 dev-days of new fp64 device
+code (production operator + matrix-exp + Frechet transpose) with the
+risk concentrated exactly where silent numerical bias could enter, a
+failure class this program has already met once (2026-06-12). Revisit
+conditions (WS4-commits-to-weeks-of-HMC -> fund only the batched
+forward-action kernel; or data-center fp64 hardware -> full port) are
+recorded in the restart prompt. Verdict: implement incremental
+validation before any CUDA work; it removes computation instead of
+accelerating throttled fp64 and adds no new parity surface.
+promotedPhysicalMassClaimCount=0 throughout (design-only entry).

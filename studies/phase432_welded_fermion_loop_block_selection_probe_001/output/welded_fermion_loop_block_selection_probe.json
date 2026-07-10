@@ -1,7 +1,7 @@
 {
   "phaseId": "phase432-welded-fermion-loop-block-selection-probe",
-  "generatedAt": "2026-07-05T00:30:19.409814+00:00",
-  "runtimeSeconds": 21.3957797,
+  "generatedAt": "2026-07-09T21:19:56.9046577+00:00",
+  "runtimeSeconds": 22.2830232,
   "terminalStatus": "welded-fermion-loop-breaks-internal-only-block-degeneracies-no-contract-fill",
   "weldedFermionLoopBlockSelectionProbePassed": true,
   "phase408PrecursorPassed": true,

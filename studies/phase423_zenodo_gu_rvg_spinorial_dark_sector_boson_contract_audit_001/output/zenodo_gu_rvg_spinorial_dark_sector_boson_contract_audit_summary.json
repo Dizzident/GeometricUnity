@@ -1,7 +1,7 @@
 {
   "phaseId": "phase423-zenodo-gu-rvg-spinorial-dark-sector-boson-contract-audit",
   "terminalStatus": "zenodo-gu-rvg-spinorial-dark-sector-audit-no-electroweak-source",
-  "generatedAt": "2026-07-05T00:22:06.1728002+00:00",
+  "generatedAt": "2026-07-09T21:11:35.5646161+00:00",
   "zenodoGuRvgSpinorialDarkSectorBosonContractAuditPassed": true,
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,

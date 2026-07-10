@@ -1,6 +1,6 @@
 {
   "phaseId": "phase449-variational-gaussian-effective-potential-probe",
-  "generatedAt": "2026-07-05T03:03:40.153101+00:00",
+  "generatedAt": "2026-07-09T23:54:36.9564158+00:00",
   "terminalStatus": "variational-gaussian-effective-potential-probe-passed-gap-equation-breakdown-recorded",
   "variationalGaussianEffectivePotentialProbePassed": true,
   "phase447PrecursorPassed": true,
@@ -3236,7 +3236,7 @@
     "spinorUsedAsShiabCarrierNotFiber": true,
     "draft14dObserverseNotRealized": true
   },
-  "runtimeSeconds": 1234.2996409,
+  "runtimeSeconds": 1260.0307051,
   "physicalCouplingProvided": false,
   "routeProvidesPhysicalEffectiveActionHessian": false,
   "routeProvidesVevOrSourceScaleLineage": false,

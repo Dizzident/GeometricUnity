@@ -206,6 +206,9 @@ const string Phase446Path = "studies/phase446_rg_scheme_dependence_resolution_pr
 const string Phase447Path = "studies/phase447_two_loop_saturation_probe_001/output/two_loop_saturation_probe_summary.json";
 const string Phase448Path = "studies/phase448_torus_mode_volume_saturation_probe_001/output/torus_mode_volume_saturation_probe_summary.json";
 const string Phase449Path = "studies/phase449_variational_gaussian_effective_potential_probe_001/output/variational_gaussian_effective_potential_probe_summary.json";
+const string Phase451Path = "studies/phase451_two_loop_unification_ledger_001/output/two_loop_unification_ledger_summary.json";
+const string Phase452Path = "studies/phase452_scalar_channel_spectroscopy_probe_001/output/scalar_channel_spectroscopy_probe_summary.json";
+const string Phase450Path = "studies/phase450_constraint_effective_potential_hmc_probe_001/output/constraint_effective_potential_hmc_probe_summary.json";
 const string Phase444Path = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443Path = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442Path = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -463,6 +466,9 @@ using var phase446 = File.Exists(Phase446Path) ? JsonDocument.Parse(File.ReadAll
 using var phase447 = File.Exists(Phase447Path) ? JsonDocument.Parse(File.ReadAllText(Phase447Path)) : null;
 using var phase448 = File.Exists(Phase448Path) ? JsonDocument.Parse(File.ReadAllText(Phase448Path)) : null;
 using var phase449 = File.Exists(Phase449Path) ? JsonDocument.Parse(File.ReadAllText(Phase449Path)) : null;
+using var phase451 = File.Exists(Phase451Path) ? JsonDocument.Parse(File.ReadAllText(Phase451Path)) : null;
+using var phase452 = File.Exists(Phase452Path) ? JsonDocument.Parse(File.ReadAllText(Phase452Path)) : null;
+using var phase450 = File.Exists(Phase450Path) ? JsonDocument.Parse(File.ReadAllText(Phase450Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -6284,6 +6290,61 @@ var variationalGaussianEffectivePotentialProbePassed = variationalGaussianEffect
     && JsonBool(phase449.RootElement, "routePromotesHiggsMass") is false
     && JsonBool(phase449.RootElement, "routeCompletesBosonPredictions") is false
     && JsonInt(phase449.RootElement, "acceptedContractFieldCount") == 0;
+var twoLoopUnificationLedgerMaterialized = phase451 is not null;
+var twoLoopUnificationLedgerPassed = twoLoopUnificationLedgerMaterialized
+    && JsonBool(phase451!.RootElement, "twoLoopUnificationLedgerPassed") is true
+    && JsonString(phase451.RootElement, "applicationSubjectKind") == "two-loop-unification-ledger"
+    && JsonString(phase451.RootElement, "verdictKind") == "tension-persists-quantified"
+    && phase451.RootElement.TryGetProperty("batteries", out var p451Bat)
+    && JsonBool(p451Bat, "batteriesAllPassed") is true
+    && phase451.RootElement.TryGetProperty("falsificationComparison", out var p451Fc2)
+    && JsonBool(p451Fc2, "twoLoopClosesWithinThresholdBand") is false
+    && phase451.RootElement.TryGetProperty("separation", out var p451Sep2)
+    && JsonBool(p451Sep2, "sin2ObservedUsedInPredictionComputation") is false
+    && JsonBool(p451Sep2, "derivationComparisonSeparationMaintained") is true
+    && JsonBool(p451Sep2, "successWouldBeGutGenericNotGuSpecific") is true
+    && phase451.RootElement.TryGetProperty("predictionContractImpact", out var p451Pci2)
+    && JsonBool(p451Pci2, "canFillPhase201WzContract") is false
+    && JsonBool(p451Pci2, "canFillPhase201HiggsContract") is false
+    && JsonBool(p451Pci2, "canFillPhase256ObservedFieldExtractionContract") is false;
+var scalarChannelSpectroscopyProbeMaterialized = phase452 is not null;
+var scalarChannelSpectroscopyProbePassed = scalarChannelSpectroscopyProbeMaterialized
+    && JsonBool(phase452!.RootElement, "scalarChannelSpectroscopyProbePassed") is true
+    && JsonBool(phase452.RootElement, "targetBlindConstruction") is true
+    && JsonString(phase452.RootElement, "applicationSubjectKind") == "scalar-channel-spectroscopy-probe"
+    && JsonString(phase452.RootElement, "scalarChannelVerdict") == "scalar-channel-gapped-measured"
+    && JsonBool(phase452.RootElement, "coshCorrectedEffectiveMassesOnly") is true
+    && JsonBool(phase452.RootElement, "thetaHaarMeasureUsed") is true
+    && JsonBool(phase452.RootElement, "theta0SliceIsSamplerDemoOnly") is true
+    && JsonBool(phase452.RootElement, "scaleIsWorkbenchRelativeCandidateOnly") is true
+    && JsonBool(phase452.RootElement, "noGevPromotion") is true
+    && JsonBool(phase452.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase452.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase452.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase452.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase452.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase452.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase452.RootElement, "routeCompletesBosonPredictions") is false;
+var constraintEffectivePotentialHmcProbeMaterialized = phase450 is not null;
+var constraintEffectivePotentialHmcProbePassed = constraintEffectivePotentialHmcProbeMaterialized
+    && JsonBool(phase450!.RootElement, "constraintEffectivePotentialHmcProbePassed") is true
+    && JsonBool(phase450.RootElement, "targetBlindConstruction") is true
+    && JsonString(phase450.RootElement, "applicationSubjectKind") == "constraint-effective-potential-hmc-probe"
+    && JsonString(phase450.RootElement, "verdictKind") == "inconclusive-gates-failed"
+    && JsonBool(phase450.RootElement, "onlyAntisymmetryGatesFailed") is true
+    && JsonBool(phase450.RootElement, "controlClean") is true
+    && JsonBool(phase450.RootElement, "anyEinsteinianFlatBottom") is false
+    && JsonBool(phase450.RootElement, "allEinsteinianSingleWell") is true
+    && JsonBool(phase450.RootElement, "cepConventionsAreWorkbenchConventions") is true
+    && JsonBool(phase450.RootElement, "scaleIsWorkbenchRelativeCandidateOnly") is true
+    && JsonBool(phase450.RootElement, "noGevPromotion") is true
+    && JsonBool(phase450.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase450.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase450.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase450.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase450.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase450.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase450.RootElement, "routeCompletesBosonPredictions") is false;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -8852,6 +8913,30 @@ var checklist = new[]
             ? $"variationalGaussianEffectivePotentialProbePassed={JsonBool(phase449!.RootElement, "variationalGaussianEffectivePotentialProbePassed")}; verdictKind={JsonString(phase449.RootElement, "verdictKind")}; einsteinianGaussianSaturationObserved={JsonBool(phase449.RootElement, "einsteinianGaussianSaturationObserved")}; hartreeSelfConsistentSolutionExistsEverywhere={JsonBool(phase449.RootElement, "hartreeSelfConsistentSolutionExistsEverywhere")}; noGevPromotion={JsonBool(phase449.RootElement, "noGevPromotion")}; canFillPhase201WzContract={JsonBool(phase449.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase449.RootElement, "decision")}"
             : "Phase449 artifact not materialized",
         Phase449Path),
+    new ObjectiveChecklistItem(
+        "two-loop-unification-ledger-materialized",
+        "Execute the task-force WS1: predict sin^2(m_Z) from the derived 3/8 boundary + one IR coupling (never importing the observed value into the derivation). Recorded outcome: TENSION PERSISTS QUANTIFIED - one-loop 0.2076 / two-loop 0.2106 vs observed 0.23122, a gap ~115x the honest threshold band; the derived SM-content running is quantitatively insufficient as-is, making this ledger the standing falsification filter for any proposed observerse intermediate content; nothing promoted.",
+        twoLoopUnificationLedgerPassed ? "passed" : "failed",
+        twoLoopUnificationLedgerMaterialized
+            ? $"twoLoopUnificationLedgerPassed={JsonBool(phase451!.RootElement, "twoLoopUnificationLedgerPassed")}; verdictKind={JsonString(phase451.RootElement, "verdictKind")}; twoLoopClosesWithinThresholdBand={(phase451.RootElement.TryGetProperty("falsificationComparison", out var p451FcX) ? JsonBool(p451FcX, "twoLoopClosesWithinThresholdBand") : null)}; sin2ObservedUsedInPredictionComputation={(phase451.RootElement.TryGetProperty("separation", out var p451SepX) ? JsonBool(p451SepX, "sin2ObservedUsedInPredictionComputation") : null)}; decision={JsonString(phase451.RootElement, "decision")}"
+            : "Phase451 artifact not materialized",
+        Phase451Path),
+    new ObjectiveChecklistItem(
+        "scalar-channel-spectroscopy-probe-materialized",
+        "Execute the task-force WS2: the program's first MEASURED pole - HMC correlator spectroscopy of two gauge-invariant scalar interpolators on the lattice-canonical torus, cosh-corrected effective masses gated by the exact block-spectrum free-field control. Recorded outcome: the 0++ channel is GAPPED (a*m ~ 2.44, 14-20 sigma; both interpolators compatible), confirming the review board's convex/gapped picture by measurement; lattice units only, never m_H; nothing promoted.",
+        scalarChannelSpectroscopyProbePassed ? "passed" : "failed",
+        scalarChannelSpectroscopyProbeMaterialized
+            ? $"scalarChannelSpectroscopyProbePassed={JsonBool(phase452!.RootElement, "scalarChannelSpectroscopyProbePassed")}; scalarChannelVerdict={JsonString(phase452.RootElement, "scalarChannelVerdict")}; coshCorrectedEffectiveMassesOnly={JsonBool(phase452.RootElement, "coshCorrectedEffectiveMassesOnly")}; thetaHaarMeasureUsed={JsonBool(phase452.RootElement, "thetaHaarMeasureUsed")}; noGevPromotion={JsonBool(phase452.RootElement, "noGevPromotion")}; canFillPhase201WzContract={JsonBool(phase452.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase452.RootElement, "decision")}"
+            : "Phase452 artifact not materialized",
+        Phase452Path),
+    new ObjectiveChecklistItem(
+        "constraint-effective-potential-hmc-probe-materialized",
+        "Execute the review board's ansatz-free experiment: umbrella-sampled WHAM constraint effective potential under the four binding conditions. Recorded outcome honestly INCONCLUSIVE-GATES-FAILED: every classification in both production runs is single-well-at-zero (control clean, no flat bottom, large-beta Pearson 0.9996) but the parity-antisymmetry gate trips at 5.06 sigma on sd2 while the independent tadpole is consistent with zero - an unattributed WHAM stitching-error-model item, named for follow-up; the symmetric-phase null is NOT claimed; nothing promoted.",
+        constraintEffectivePotentialHmcProbePassed ? "passed" : "failed",
+        constraintEffectivePotentialHmcProbeMaterialized
+            ? $"constraintEffectivePotentialHmcProbePassed={JsonBool(phase450!.RootElement, "constraintEffectivePotentialHmcProbePassed")}; verdictKind={JsonString(phase450.RootElement, "verdictKind")}; allEinsteinianSingleWell={JsonBool(phase450.RootElement, "allEinsteinianSingleWell")}; anyEinsteinianFlatBottom={JsonBool(phase450.RootElement, "anyEinsteinianFlatBottom")}; onlyAntisymmetryGatesFailed={JsonBool(phase450.RootElement, "onlyAntisymmetryGatesFailed")}; controlClean={JsonBool(phase450.RootElement, "controlClean")}; noGevPromotion={JsonBool(phase450.RootElement, "noGevPromotion")}; canFillPhase201WzContract={JsonBool(phase450.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase450.RootElement, "decision")}"
+            : "Phase450 artifact not materialized",
+        Phase450Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

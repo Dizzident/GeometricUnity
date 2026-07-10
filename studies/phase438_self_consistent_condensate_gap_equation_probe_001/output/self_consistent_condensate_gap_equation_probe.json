@@ -1,6 +1,6 @@
 {
   "phaseId": "phase438-self-consistent-condensate-gap-equation-probe",
-  "generatedAt": "2026-07-05T00:30:25.3132123+00:00",
+  "generatedAt": "2026-07-09T21:20:02.6555927+00:00",
   "terminalStatus": "self-consistent-gap-equation-generates-candidate-scale-mechanism-class-viable-no-gev-promotion",
   "selfConsistentCondensateGapEquationProbePassed": true,
   "precursorsPassed": true,

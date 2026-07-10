@@ -1,7 +1,7 @@
 {
   "phaseId": "phase420-naive-curvature-mass-scale-sanity-check",
   "terminalStatus": "naive-curvature-mass-scale-sanity-check-fail-closed",
-  "generatedAt": "2026-07-05T00:22:05.310789+00:00",
+  "generatedAt": "2026-07-09T21:11:34.6746459+00:00",
   "naiveCurvatureMassScaleSanityCheckPassed": true,
   "applicationSubjectKind": "naive-curvature-mass-scale-sanity-check",
   "targetBlindConstruction": true,

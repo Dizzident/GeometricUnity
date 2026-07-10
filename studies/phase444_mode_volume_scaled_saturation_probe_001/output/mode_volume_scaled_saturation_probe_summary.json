@@ -1,6 +1,6 @@
 {
   "phaseId": "phase444-mode-volume-scaled-saturation-probe",
-  "generatedAt": "2026-07-05T01:17:08.9893614+00:00",
+  "generatedAt": "2026-07-09T22:06:52.3997213+00:00",
   "terminalStatus": "mode-volume-scaled-saturation-probe-passed-tooling-blocked-block-diagonalization-non-viable-slq-over-budget-verdict-undetermined",
   "phase444Passed": true,
   "applicationSubjectKind": "mode-volume-scaled-saturation-probe",
@@ -76,13 +76,13 @@
     },
     "f4_slqCost": {
       "note": "Platform exposes only O(full-mesh) forward evaluations (no adjoint/joint-gradient), so every gradient costs O(nDOF x mesh). Measured on the torus, extrapolated to SLQ.",
-      "jointObjectiveEvalMs": 5.777506666666667,
-      "fullThetaGradientSeconds": 3.1148867,
-      "oneJOmegaColumnMs": 6.50323,
-      "fullJointGradientSeconds": 26.81916005,
-      "slqHessianVectorSeconds": 53.6383201,
+      "jointObjectiveEvalMs": 6.551576666666667,
+      "fullThetaGradientSeconds": 3.4997339,
+      "oneJOmegaColumnMs": 7.379325,
+      "fullJointGradientSeconds": 30.397373525,
+      "slqHessianVectorSeconds": 60.79474705,
       "slqProbesPerPointAssumed": 120,
-      "slqPerCompositePointHours": 1.7879440033333334,
+      "slqPerCompositePointHours": 2.0264915683333333,
       "overBudget": true
     }
   },
@@ -110,7 +110,7 @@
       "id": "adjoint-joint-gradient-platform-path",
       "kind": "engineering-enabler-for-slq",
       "scope": "expose an analytic joint (omega,theta) gradient / contraction-adjoint on EinsteinianShiabOperator so a Hessian-vector product costs O(mesh) instead of O(nDOF x mesh).",
-      "evidenceThatDemandsIt": "F4: through public forward-only methods a faithful Hessian-vector product costs ~54 s, so a single composite point\u0027s SLQ tr-log is ~1.8 h -- ~2 orders of magnitude over the 60-min budget.",
+      "evidenceThatDemandsIt": "F4: through public forward-only methods a faithful Hessian-vector product costs ~61 s, so a single composite point\u0027s SLQ tr-log is ~2.0 h -- ~2 orders of magnitude over the 60-min budget.",
       "expectedOutcome": "SLQ tr-log of the joint Hessian becomes feasible (variance-bounded estimates, NOT exact eigenvalue counts) on the torus without the geometry rewrite.",
       "started": false
     }
@@ -175,6 +175,6 @@
     "designSourcePath": "docs/Phases/FOUR_D_PLATFORM_DESIGN.md",
     "physicsDecisionsSourcePath": "docs/Phases/FOUR_D_PLATFORM_PHYSICS_DECISIONS.md"
   },
-  "runtimeSeconds": 4.3886064,
-  "decision": "Phase444 is decided on internal consistency as a RECORDED-FINDINGS study; it carries NO physics verdict. The mode-volume question (does the Phase443 no-saturation verdict change on a larger mesh?) is left modeVolumeChangesVerdict=\u0022undetermined-tooling-blocked\u0022 because the mandated engineering unlock -- block-diagonalizing the joint Hessian by lattice momentum on the periodic 81-vertex torus (mode-volume ratio 16.0x over Phase443\u0027s 16 vertices) -- is NOT viable on this platform, and the SLQ fallback is ~1.8 h per composite point (~2 orders over budget). EVIDENCE: (F1) the lowest-index representative-vertex rule violates translation covariance on 56.8% of (face, translation) pairs; (F2) 75.1% of faces are seam-inflated with raw bivectors (orbit-norm spread 4.8), and the minimal-image convention restores exact bivector orbit-invariance (0.0E\u002B000); (F3) DEFINITIVE -- even incident-average \u002B minimal-image leaves S_B non-covariant under the signed permutation (best residual 4.81E-003 \u003E\u003E 1E-008 bar), and the curvature ||F||^2 alone is already non-covariant (2.48E-004); the root cause is global-index orientation conventions that do not commute with lattice translation; (F4) a faithful Hessian-vector product costs ~54 s. The authorized platform change (incident-average VertexFaceRule \u002B minimal-image bivectors) is verified-correct and open-mesh byte-identical (theta=0 low-vs-avg diff 0.0E\u002B000; avg LinearizeTheta-vs-FD 4.02E-010) -- necessary-but-insufficient. Two named unlocks are recorded as future work. MANDATORY FRAMING: the mode-volume heuristic is a LABELED, NON-VERDICT expectation. Everything is target-blind, reduced-spin4-slice; no Phase201/Phase256 contract field is filled; nothing is promoted."
+  "runtimeSeconds": 4.8428022,
+  "decision": "Phase444 is decided on internal consistency as a RECORDED-FINDINGS study; it carries NO physics verdict. The mode-volume question (does the Phase443 no-saturation verdict change on a larger mesh?) is left modeVolumeChangesVerdict=\u0022undetermined-tooling-blocked\u0022 because the mandated engineering unlock -- block-diagonalizing the joint Hessian by lattice momentum on the periodic 81-vertex torus (mode-volume ratio 16.0x over Phase443\u0027s 16 vertices) -- is NOT viable on this platform, and the SLQ fallback is ~2.0 h per composite point (~2 orders over budget). EVIDENCE: (F1) the lowest-index representative-vertex rule violates translation covariance on 56.8% of (face, translation) pairs; (F2) 75.1% of faces are seam-inflated with raw bivectors (orbit-norm spread 4.8), and the minimal-image convention restores exact bivector orbit-invariance (0.0E\u002B000); (F3) DEFINITIVE -- even incident-average \u002B minimal-image leaves S_B non-covariant under the signed permutation (best residual 4.81E-003 \u003E\u003E 1E-008 bar), and the curvature ||F||^2 alone is already non-covariant (2.48E-004); the root cause is global-index orientation conventions that do not commute with lattice translation; (F4) a faithful Hessian-vector product costs ~61 s. The authorized platform change (incident-average VertexFaceRule \u002B minimal-image bivectors) is verified-correct and open-mesh byte-identical (theta=0 low-vs-avg diff 0.0E\u002B000; avg LinearizeTheta-vs-FD 4.02E-010) -- necessary-but-insufficient. Two named unlocks are recorded as future work. MANDATORY FRAMING: the mode-volume heuristic is a LABELED, NON-VERDICT expectation. Everything is target-blind, reduced-spin4-slice; no Phase201/Phase256 contract field is filled; nothing is promoted."
 }

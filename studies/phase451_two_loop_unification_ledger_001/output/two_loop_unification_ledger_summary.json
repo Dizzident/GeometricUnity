@@ -1,0 +1,374 @@
+{
+  "phaseId": "phase451-two-loop-unification-ledger",
+  "generatedAt": "2026-07-10T02:18:26.0547084+00:00",
+  "terminalStatus": "two-loop-unification-ledger-tension-persists-quantified",
+  "twoLoopUnificationLedgerPassed": true,
+  "verdictKind": "tension-persists-quantified",
+  "applicationSubjectKind": "two-loop-unification-ledger",
+  "constructionHash": "b3a1c2cf29953d5d1ed47f1301b782fbdc6cab8dcab06cc9d6c2c81bd01b4167",
+  "precursors": {
+    "phase404PrecursorPassed": true,
+    "phase429PrecursorPassed": true,
+    "phase433PrecursorPassed": true,
+    "phase404SummaryPath": "studies/phase404_gu_embedding_chain_coupling_ratio_enumeration_001/output/gu_embedding_chain_coupling_ratio_enumeration_summary.json",
+    "phase429SummaryPath": "studies/phase429_target_blind_dimensionless_ratio_ledger_001/output/target_blind_dimensionless_ratio_ledger_summary.json",
+    "phase433SummaryPath": "studies/phase433_blind_beta_coefficient_running_ledger_001/output/blind_beta_coefficient_running_ledger_summary.json"
+  },
+  "conventions": {
+    "oneLoopSign": "asymptotic-freedom-positive (Phase433): d(1/alpha_i)/d ln mu = \u002B b_i^AF/(2 pi) at one loop",
+    "twoLoopSystem": "d(1/alpha_i)/d ln mu = \u002B b_i^AF/(2 pi) - sum_j b_ij^std alpha_j/(8 pi^2), with b_i^std = -b_i^AF (standard textbook convention for b_ij)",
+    "gutNormalization": "g_1^2 = (5/3) g_Y^2; at m_Z: 1/alpha_1 = (3/5)(1-s2)/alpha_em, 1/alpha_2 = s2/alpha_em",
+    "sinSquaredFromCouplings": "sin^2(mu) = 3 y_2 / (5 y_1 \u002B 3 y_2), y_i = 1/alpha_i; equals 3/8 exactly at y_1 = y_2 (the derived boundary; verified as a battery)",
+    "runningVariable": "t = ln(mu/m_Z); integrator RK4, fixed step h = 1/256, segment-aligned at content breakpoints"
+  },
+  "derivedInputs": {
+    "measuredValuesConsultedInDerivedInputs": false,
+    "boundaryCondition": {
+      "statement": "sin^2 theta_W = 3/8 at the unification point, equivalent to alpha_1(mu*) = alpha_2(mu*)",
+      "provenance": "Phase404 blind embedding-chain kernel (tan^2 theta_W = 3/5); Phase429 ledger row"
+    },
+    "oneLoopBetaAfPositive": {
+      "b3": "7",
+      "b2": "19/6",
+      "b1": "-41/10",
+      "contentRow": "n_f = 3 (imported structural parameter) \u002B one Higgs doublet (conditional; recorded per Phase433)",
+      "recomputedFromGroupTheory": true,
+      "phase433WitnessRowMatchesExactly": true,
+      "phase433WitnessStrings": {
+        "b3": "7",
+        "b2": "19/6",
+        "b1": "-41/10"
+      }
+    },
+    "thresholdVariantRows": {
+      "noHiggs": {
+        "b3": "7",
+        "b2": "10/3",
+        "b1": "-4",
+        "exactCheck": true
+      },
+      "topRemoved": {
+        "b3": "23/3",
+        "b2": "11/3",
+        "b1": "-53/15",
+        "exactCheck": true,
+        "note": "step-function decoupling of t_L \u002B t_R; removing half the Q doublet is the standard threshold bookkeeping (SU(2)-covariance-breaking below the step is a declared band convention); b_3 = 23/3 matches QCD n_f = 5"
+      }
+    },
+    "twoLoopBijStandardConvention": {
+      "matrix": [
+        [
+          "199/50",
+          "27/10",
+          "44/5"
+        ],
+        [
+          "27/50",
+          "35/6",
+          "12"
+        ],
+        [
+          "11/10",
+          "9/2",
+          "-26"
+        ]
+      ],
+      "coefficientDocumentation": [
+        {
+          "i": 1,
+          "j": 1,
+          "value": "199/50",
+          "note": "U(1)_Y self-coupling two-loop gauge term, GUT-normalized ((3/5) per U(1) index); fermion Y^4-type sums over n_f = 3 families plus the Higgs-doublet scalar contribution; C2(U(1)) = 0 so no pure-gauge part."
+        },
+        {
+          "i": 1,
+          "j": 2,
+          "value": "27/10",
+          "note": "U(1)-SU(2) cross term: doublets carrying hypercharge (Q, L, Higgs), GUT-normalized."
+        },
+        {
+          "i": 1,
+          "j": 3,
+          "value": "44/5",
+          "note": "U(1)-SU(3) cross term: colored fermions weighted by Y^2, GUT-normalized."
+        },
+        {
+          "i": 2,
+          "j": 1,
+          "value": "27/50",
+          "note": "SU(2)-U(1) cross term: same mixed doublet-hypercharge content seen from the SU(2) line, GUT-normalized."
+        },
+        {
+          "i": 2,
+          "j": 2,
+          "value": "35/6",
+          "note": "SU(2) self term: -(136/3) pure Yang-Mills (C2 = 2) \u002B fermion doublets (n_f = 3) \u002B Higgs doublet."
+        },
+        {
+          "i": 2,
+          "j": 3,
+          "value": "12",
+          "note": "SU(2)-SU(3) cross term: the colored doublets Q (3 families)."
+        },
+        {
+          "i": 3,
+          "j": 1,
+          "value": "11/10",
+          "note": "SU(3)-U(1) cross term: colored fermions weighted by Y^2, GUT-normalized."
+        },
+        {
+          "i": 3,
+          "j": 2,
+          "value": "9/2",
+          "note": "SU(3)-SU(2) cross term: the colored doublets Q (3 families)."
+        },
+        {
+          "i": 3,
+          "j": 3,
+          "value": "-26",
+          "note": "SU(3) self term: -(34/3) C2^2 = -102 pure Yang-Mills \u002B 38 n_q/3 fermions (n_q = 6 quark flavors) = -26; equals -beta_1(QCD, n_f = 6) = -(102 - 38*6/3)."
+        }
+      ],
+      "source": "textbook SM two-loop gauge b_ij (Machacek-Vaughn gauge part for n_f = 3 \u002B one Higgs doublet; GUT-normalized U(1)); Yukawa-trace two-loop terms omitted (declared truncation)",
+      "checks": {
+        "qcdBeta1WitnessNf6": "26 = 102 - 38*6/3",
+        "mixedU1Su2NormalizationRatio": "5",
+        "mixedU1Su3NormalizationRatio": "8",
+        "allChecksPass": true
+      }
+    }
+  },
+  "comparisonImports": {
+    "measuredElectroweakValuesConsulted": true,
+    "declaration": "the ONLY measured numbers consumed by the computation; alpha_em fixes the electroweak normalization, alpha_s is the ONE additional low-energy coupling; sin^2 observed is falsification-target-only",
+    "alphaEmInverseAtMz": 127.955,
+    "alphaEmSourceLabel": "alpha_em^{-1}(m_Z), MS-bar, PDG-style world average, declared exact",
+    "alphaSAtMz": 0.1179,
+    "alphaSSourceLabel": "alpha_s(m_Z), MS-bar, PDG-style world average, declared exact",
+    "sin2ThetaWObservedMz": 0.23122,
+    "sin2ObservedSourceLabel": "MS-bar sin^2 theta_W(m_Z), PDG-style; FALSIFICATION COMPARISON TARGET ONLY - never used in the derivation",
+    "sin2ObservedUsedInPredictionComputation": false,
+    "mzGeVDeclaredAnchor": 91.1876,
+    "mzAnchorRole": "illustrative-display-only; gated off from promotion"
+  },
+  "predictions": {
+    "sin2MzPredictedOneLoop": 0.20758851977298845,
+    "sin2MzPredictedOneLoopClosedForm": "s2 = (3/5 \u002B k S/A)/(8/5 \u002B k), k = (b2-b1)/(b3-b2) = 218/115 exactly",
+    "sin2MzPredictedTwoLoop": 0.21063705618289308,
+    "twoLoopMinusOneLoopShift": 0.0030485364099046286,
+    "unificationScaleGeVOverMz": {
+      "note": "dimensionless ratio mu*/m_Z; NO absolute GeV is emitted by this field despite the requested name",
+      "oneLoop": 7419617535331.819,
+      "twoLoop": 4579084360229.264,
+      "lnOneLoop": 29.635148626675814,
+      "lnTwoLoop": 29.152520172720383
+    },
+    "alphaGutInverseOneLoop": 41.497826959350824,
+    "alphaGutInverseTwoLoop": 41.36379246259535,
+    "solverResidualOneLoop": 4.369837824924616E-12,
+    "solverResidualTwoLoop": 5.755396159656812E-13
+  },
+  "thresholdUncertainty": {
+    "conventions": "matching-scale variation moves the matching point to mu0 in [m_Z/2, 2 m_Z], evolving the declared m_Z inputs to mu0 at one order LOWER than the solve (tree-level matching for the one-loop solve, one-loop matching for the two-loop solve; same-order evolution would be an exact relabel of the autonomous system) - the residual mu0-dependence is the truncation ambiguity; EW-threshold band decouples the top Weyl pair / the Higgs doublet below mu_th in (m_Z, 2 m_Z] by step functions; no particle mass imported",
+    "variants": [
+      {
+        "name": "matching-mu0-half-mz",
+        "kind": "matching-scale",
+        "converged": true,
+        "sin2OneLoop": 0.20758851977300533,
+        "sin2TwoLoop": 0.21081584396524028,
+        "lnUnificationOverMzTwoLoop": 29.1242119948435,
+        "deltaSin2OneLoop": 7.729927808952652E-14,
+        "deltaSin2TwoLoop": 0.0001787877823472006
+      },
+      {
+        "name": "matching-mu0-0.71-mz",
+        "kind": "matching-scale",
+        "converged": true,
+        "sin2OneLoop": 0.20758851977300533,
+        "sin2TwoLoop": 0.2107244152088446,
+        "lnUnificationOverMzTwoLoop": 29.138691430309994,
+        "deltaSin2OneLoop": 7.729927808952652E-14,
+        "deltaSin2TwoLoop": 8.735902595152778E-05
+      },
+      {
+        "name": "matching-mu0-1.41-mz",
+        "kind": "matching-scale",
+        "converged": true,
+        "sin2OneLoop": 0.20758851977292803,
+        "sin2TwoLoop": 0.2105534176053993,
+        "lnUnificationOverMzTwoLoop": 29.165754329202905,
+        "deltaSin2OneLoop": 0,
+        "deltaSin2TwoLoop": -8.363857749377202E-05
+      },
+      {
+        "name": "matching-mu0-2-mz",
+        "kind": "matching-scale",
+        "converged": true,
+        "sin2OneLoop": 0.20758851977300533,
+        "sin2TwoLoop": 0.21047319344535254,
+        "lnUnificationOverMzTwoLoop": 29.17844305683997,
+        "deltaSin2OneLoop": 7.729927808952652E-14,
+        "deltaSin2TwoLoop": -0.00016386273754054326
+      },
+      {
+        "name": "top-decoupled-below-1.5-mz",
+        "kind": "ew-threshold",
+        "converged": true,
+        "sin2OneLoop": 0.2076437202691227,
+        "sin2TwoLoop": 0.2106846866939327,
+        "lnUnificationOverMzTwoLoop": 29.14766627369247,
+        "deltaSin2OneLoop": 5.520049619467393E-05,
+        "deltaSin2TwoLoop": 4.763051103962024E-05
+      },
+      {
+        "name": "top-decoupled-below-2-mz",
+        "kind": "ew-threshold",
+        "converged": true,
+        "sin2OneLoop": 0.20768288564446488,
+        "sin2TwoLoop": 0.21071877981142506,
+        "lnUnificationOverMzTwoLoop": 29.14417467144981,
+        "deltaSin2OneLoop": 9.43658715368556E-05,
+        "deltaSin2TwoLoop": 8.172362853198223E-05
+      },
+      {
+        "name": "higgs-decoupled-below-1.5-mz",
+        "kind": "ew-threshold",
+        "converged": true,
+        "sin2OneLoop": 0.20753331927681073,
+        "sin2TwoLoop": 0.21058216978060273,
+        "lnUnificationOverMzTwoLoop": 29.158522291144454,
+        "deltaSin2OneLoop": -5.5200496117291387E-05,
+        "deltaSin2TwoLoop": -5.4886402290343916E-05
+      },
+      {
+        "name": "higgs-decoupled-below-2-mz",
+        "kind": "ew-threshold",
+        "converged": true,
+        "sin2OneLoop": 0.20749415390154582,
+        "sin2TwoLoop": 0.21054322778336199,
+        "lnUnificationOverMzTwoLoop": 29.162780875958035,
+        "deltaSin2OneLoop": -9.436587138220154E-05,
+        "deltaSin2TwoLoop": -9.38283995310929E-05
+      }
+    ],
+    "thresholdBandOneLoop": 9.43658715368556E-05,
+    "thresholdBandTwoLoop": 0.0001787877823472006,
+    "thresholdBandTwoLoopQuadrature": 0.00020191295073668846,
+    "bandDefinition": "max over variants of |sin2_variant - sin2_central| (conservative single-source spread); quadrature combination recorded",
+    "oneLoopMatchingVariantsAreExactRelabels": "the strict one-loop prediction is matching-scale INVARIANT (tree matching of an autonomous system is an exact relabel; the closed form contains no mu0), so the one-loop band contains only the EW-threshold spread - the honest one-loop truncation proxy is the recorded two-loop shift itself",
+    "omittedEffectsDeclared": [
+      "two-loop Yukawa-trace terms (dominant omitted piece: top Yukawa)",
+      "three-loop running",
+      "finite (non-logarithmic) matching corrections at m_Z and at mu*",
+      "GUT-scale thresholds (no intermediate observerse content is defined - the same gap that makes success GUT-generic)"
+    ]
+  },
+  "falsificationComparison": {
+    "target": 0.23122,
+    "gapOneLoop": -0.02363148022701156,
+    "gapTwoLoop": -0.02058294381710693,
+    "gapTwoLoopAbs": 0.02058294381710693,
+    "thresholdBandTwoLoop": 0.0001787877823472006,
+    "twoLoopClosesWithinThresholdBand": false,
+    "gapOverBand": 115.1250020940215,
+    "alpha3AtUnificationMismatch": {
+      "definition": "COMPARISON-SIDE diagnostic: with sin^2(m_Z) fixed to the OBSERVED value, 1/alpha_3 - 1/alpha_(1=2) at the a1 = a2 crossing (1/alpha units); the derivation-side residual is zero by construction (solver residual recorded under predictions)",
+      "oneLoop": -5.575935564604592,
+      "twoLoop": -4.906870240036859,
+      "oneLoopClosedVsNumeric": 4.547473508864641E-13
+    },
+    "illustrativeScaleDisplay": {
+      "gatedOffFromPromotion": true,
+      "label": "illustrative-with-declared-anchor (m_Z = 91.1876 GeV declared above); NOT a prediction, NOT promoted",
+      "illustrativeUnificationScaleGeVOneLoop": 676577115964823.9,
+      "illustrativeUnificationScaleGeVTwoLoop": 417555713006842
+    },
+    "recordedCorrectedHierarchyFigure": {
+      "value": 0.159,
+      "formula": "b*alpha_GUT = 2 pi / ln(M_Pl/m_W)",
+      "provenance": "2026-07-05 adversarial referee correction (the task-force package\u0027s \u0027~2\u0027 was wrong by ~12x)",
+      "role": "recorded-context-only; used nowhere in this computation"
+    }
+  },
+  "batteries": {
+    "smRowGroupTheoryCorrect": true,
+    "noHiggsRowCorrect": true,
+    "topRemovedRowCorrect": true,
+    "phase433WitnessRowMatchesExactly": true,
+    "twoLoopMatrixChecksPass": true,
+    "kClosedIsExactRational": true,
+    "oneLoopClosedFormBattery": true,
+    "closedVsNumericS2": 6.042388811522414E-14,
+    "closedVsNumericTStar": 5.950795411990839E-12,
+    "closedVsNumericAlphaGutInv": 1.7820411812863313E-11,
+    "refereeWitnessBattery": true,
+    "refereeWitnessValue": 0.2076,
+    "boundaryIdentityBattery": true,
+    "boundaryIdentityOneLoopDev": 0,
+    "boundaryIdentityTwoLoopDev": 0,
+    "solverResidualBattery": true,
+    "richardsonBattery": true,
+    "richardsonMaxDiff": 2.1316282072803006E-13,
+    "richardsonS2Diff": 0,
+    "roundTripBattery": true,
+    "roundTripMaxDiff": 3.552713678800501E-15,
+    "downRecoveryS2Diff": 3.0531133177191805E-16,
+    "downRecoveryAlphaSDiff": 4.725109192804666E-13,
+    "allVariantsConverged": true,
+    "batteriesAllPassed": true
+  },
+  "separation": {
+    "sin2ObservedUsedInPredictionComputation": false,
+    "measuredInputsConfinedToDeclaredComparisonImports": true,
+    "derivationComparisonSeparationMaintained": true,
+    "comparisonAgainstObservationPerformed": true,
+    "successWouldBeGutGenericNotGuSpecific": true,
+    "noAbsoluteGevEmittedOutsideGatedIllustrativeBlock": true,
+    "sourceDefinesUnificationScale": false,
+    "sourceDefinesSymmetryBreakingSector": false,
+    "higgsBreakingSectorEstablished": false,
+    "familyCountIsImportedStructuralParameter": true
+  },
+  "failClosed": {
+    "targetBlindConstruction": false,
+    "physicalTargetsConsultedForConstruction": false,
+    "physicalCouplingProvided": false,
+    "routeProvidesPhysicalMassPsiCompatibleBranch": false,
+    "routeProvidesCompletedFermionicAction": false,
+    "routeProvidesPhysicalEffectiveActionHessian": false,
+    "routeProvidesObservedElectroweakNamespaceMap": false,
+    "routeProvidesHiggsScalarSourceOperator": false,
+    "routeProvidesWeakAngleOrCouplingLineage": false,
+    "routeProvidesVevOrSourceScaleLineage": false,
+    "routeProvidesPoleExtractionAndGeVNormalization": false,
+    "routeCompletesBosonPredictions": false,
+    "routePromotesWzMasses": false,
+    "routePromotesHiggsMass": false,
+    "sourceContractApplicationAllowed": false,
+    "phase201TemplateMutated": false,
+    "fieldsAppliedToPhase201TemplateCount": 0,
+    "acceptedContractFieldCount": 0,
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256Contract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false
+  },
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "explicitNonclaims": [
+    "GUT-GENERIC (mandatory): a within-band closure would confirm generic grand unification of the SM content row, NOT Geometric Unity - nothing here distinguishes GU until the observerse\u0027s intermediate matter content is defined.",
+    "The observed sin^2(m_Z) never entered the derivation; it appears only as the falsification target and in the comparison-side alpha_3 non-closure diagnostic (the 2026-07-05 referee circularity ruling is binding).",
+    "alpha_em(m_Z) and alpha_s(m_Z) are DECLARED measured comparison imports (the electroweak normalization plus exactly ONE additional low-energy coupling); no other measured value is consumed.",
+    "No absolute scale is predicted: the unification scale is emitted only as the dimensionless ratio mu*/m_Z; the GeV display is illustrative-with-declared-anchor and gated off from promotion.",
+    "n_f = 3 is an imported observed structural parameter and the Higgs doublet is a conditional content assumption (Phase433 provenance rows apply verbatim).",
+    "Two-loop Yukawa traces, three-loop running, finite matching terms, and GUT-scale thresholds are omitted and declared; the threshold band covers only the declared matching/EW-step variations.",
+    "The referee-corrected hierarchy figure b*alpha_GUT = 2 pi/ln(M_Pl/m_W) = 0.159 is recorded context, used nowhere.",
+    "No Phase201 or Phase256 contract field is filled; nothing is promoted."
+  ],
+  "decision": "The two-loop unification ledger is decided fail-closed. DERIVED INPUTS: the blind Phase404 kernel boundary sin^2 = 3/8 (alpha_1 = alpha_2 at mu*) and the Phase433 exact-rational SM content row (b3, b2, b1) = (7, 19/6, -41/10) (AF-positive; witness row matched EXACTLY against the committed Phase433 JSON) plus the textbook SM two-loop gauge b_ij (GUT-normalized; QCD beta_1 witness -b_33 = 26 at n_f = 6). DECLARED COMPARISON IMPORTS: alpha_em(m_Z) = 1/127.955 and alpha_s(m_Z) = 0.1179; the observed sin^2(m_Z) = 0.23122 entered ONLY the falsification comparison, never the derivation. PREDICTIONS: sin^2(m_Z) = 0.207589 at one loop (closed form, reproducing the referee\u0027s 0.2076/0.208 witness; numeric agreement 6.0E-014) and 0.210637 at two loops (RK4, step-halving 2.1E-013 \u003C= 1e-8, up-down round trip 3.6E-015 \u003C= 1e-9, exact-unified downward recovery 3.1E-016); unification at mu*/m_Z = 4.579E\u002B012 (dimensionless; no GeV promoted), 1/alpha_GUT = 41.364. FALSIFICATION COMPARISON: predicted-minus-observed = -0.02058 against the threshold/matching band 1.79E-004 (matching scale in [m_Z/2, 2 m_Z] plus step EW thresholds); the comparison-side triple-unification tension is 1/alpha_3 - 1/alpha_(1=2) = -5.576 (one loop) / -4.907 (two loops) at the observed-sin^2 crossing. VERDICT: tension-persists-quantified. MANDATORY FRAMING: even a within-band closure would be GUT-GENERIC (this ledger cannot distinguish GU until the observerse\u0027s intermediate content is defined); the referee-corrected hierarchy figure b*alpha_GUT = 2 pi/ln(M_Pl/m_W) = 0.159 is recorded as context only; two-loop Yukawa traces are omitted (declared truncation); nothing is promoted, no Phase201/Phase256 field is filled."
+}

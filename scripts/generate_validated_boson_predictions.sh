@@ -331,6 +331,9 @@ dotnet run --no-build -c Release --project studies/phase446_rg_scheme_dependence
 dotnet run --no-build -c Release --project studies/phase447_two_loop_saturation_probe_001/Phase447TwoLoopSaturationProbe.csproj
 dotnet run --no-build -c Release --project studies/phase448_torus_mode_volume_saturation_probe_001/Phase448TorusModeVolumeSaturationProbe.csproj
 dotnet run --no-build -c Release --project studies/phase449_variational_gaussian_effective_potential_probe_001/Phase449VariationalGaussianEffectivePotentialProbe.csproj
+dotnet run --no-build -c Release --project studies/phase450_constraint_effective_potential_hmc_probe_001/Phase450ConstraintEffectivePotentialHmcProbe.csproj
+dotnet run --no-build -c Release --project studies/phase451_two_loop_unification_ledger_001/Phase451TwoLoopUnificationLedger.csproj
+dotnet run --no-build -c Release --project studies/phase452_scalar_channel_spectroscopy_probe_001/Phase452ScalarChannelSpectroscopyProbe.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

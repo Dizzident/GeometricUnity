@@ -317,6 +317,9 @@
     <PhaseProject Include="../studies/phase447_two_loop_saturation_probe_001/Phase447TwoLoopSaturationProbe.csproj" />
     <PhaseProject Include="../studies/phase448_torus_mode_volume_saturation_probe_001/Phase448TorusModeVolumeSaturationProbe.csproj" />
     <PhaseProject Include="../studies/phase449_variational_gaussian_effective_potential_probe_001/Phase449VariationalGaussianEffectivePotentialProbe.csproj" />
+    <PhaseProject Include="../studies/phase450_constraint_effective_potential_hmc_probe_001/Phase450ConstraintEffectivePotentialHmcProbe.csproj" />
+    <PhaseProject Include="../studies/phase451_two_loop_unification_ledger_001/Phase451TwoLoopUnificationLedger.csproj" />
+    <PhaseProject Include="../studies/phase452_scalar_channel_spectroscopy_probe_001/Phase452ScalarChannelSpectroscopyProbe.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />
