@@ -50,6 +50,7 @@ var excludedPathFragments = new[]
     "studies/phase449_variational_gaussian_effective_potential_probe_001/",
     "studies/phase450_constraint_effective_potential_hmc_probe_001/",
     "studies/phase451_two_loop_unification_ledger_001/",
+    "studies/phase453_wham_parity_error_model_repair_001/",
 };
 
 var dimension4Pattern = new Regex("""

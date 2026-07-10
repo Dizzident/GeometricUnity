@@ -334,6 +334,7 @@ dotnet run --no-build -c Release --project studies/phase449_variational_gaussian
 dotnet run --no-build -c Release --project studies/phase450_constraint_effective_potential_hmc_probe_001/Phase450ConstraintEffectivePotentialHmcProbe.csproj
 dotnet run --no-build -c Release --project studies/phase451_two_loop_unification_ledger_001/Phase451TwoLoopUnificationLedger.csproj
 dotnet run --no-build -c Release --project studies/phase452_scalar_channel_spectroscopy_probe_001/Phase452ScalarChannelSpectroscopyProbe.csproj
+dotnet run --no-build -c Release --project studies/phase453_wham_parity_error_model_repair_001/Phase453WhamParityErrorModelRepair.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

@@ -223,6 +223,7 @@ const paths = {
   phase451: "studies/phase451_two_loop_unification_ledger_001/output/two_loop_unification_ledger_summary.json",
   phase452: "studies/phase452_scalar_channel_spectroscopy_probe_001/output/scalar_channel_spectroscopy_probe_summary.json",
   phase450: "studies/phase450_constraint_effective_potential_hmc_probe_001/output/constraint_effective_potential_hmc_probe_summary.json",
+  phase453: "studies/phase453_wham_parity_error_model_repair_001/output/wham_parity_error_model_repair_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -517,6 +518,7 @@ const phase449 = requireFile(paths.phase449);
 const phase451 = requireFile(paths.phase451);
 const phase452 = requireFile(paths.phase452);
 const phase450 = requireFile(paths.phase450);
+const phase453 = requireFile(paths.phase453);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -5381,6 +5383,23 @@ if (sourceLineageMissing) {
   assert(phase450.sourceContractApplicationAllowed === false && phase450.canFillPhase201WzContract === false && phase450.canFillPhase201HiggsContract === false && phase450.canFillPhase256ObservedFieldExtractionContract === false, "Phase450 cannot fill Phase201 or Phase256 contracts.");
   assert(phase450.routePromotesWzMasses === false && phase450.routePromotesHiggsMass === false && phase450.routeCompletesBosonPredictions === false, "Phase450 cannot promote boson predictions.");
   assert(phase101Package?.constraintEffectivePotentialHmcProbe?.constraintEffectivePotentialHmcProbePassed === true, "Phase101 must include the Phase450 block.");
+  // Phase453 -- Team B Wave-1 WHAM parity-antisymmetry error-model repair.
+  // These asserts are wired to the STAGE-0 PRE-REGISTRATION output; the
+  // production T1/T2/T3 verdict asserts are finalized AFTER the production run.
+  assert(phase453.whamParityErrorModelRepairPassed === true, "Phase453 WHAM parity error-model repair must pass on internal consistency.");
+  assert(phase453.applicationSubjectKind === "wham-parity-error-model-repair", "Phase453 must classify its subject as the WHAM parity error-model repair.");
+  assert(phase453.mode === "preregister", "Phase453 committed checkpoint must be the env-clean Stage-0 pre-registration (production runs later).");
+  assert(phase453.verdictKind === "pre-registration-committed", "Phase453 must carry the pre-registration-committed verdict (no physics verdict before the fresh production run).");
+  assert(phase453.precursorsPassed === true, "Phase453 must confirm phase448/449/450 precursors (it repairs phase450's one failing gate).");
+  assert(phase453.phase450DiscrepancyLocalization?.reproducesCommitted === true, "Phase453 must reproduce the committed phase450 antisymmetry-max (Stage-0 item 1 localization).");
+  assert(phase453.calibration?.calibrationComplete === true, "Phase453 must carry the baked even-CEP calibration thresholds (Stage-0 item 4).");
+  assert(phase453.correctedLadder?.smokeComplete === true, "Phase453 must carry the smoke-confirmed junction overlap (Stage-0 item 3).");
+  assert(phase453.correctedLadder?.smokeJunctionMinOverlap >= phase453.correctedLadder?.neighborOverlapGate, "Phase453 junction neighbor-overlap must clear the gate.");
+  assert(phase453.physicistReviewPending === true, "Phase453 must carry physicistReviewPending explicitly (Wave-0 item 0.3 open).");
+  assert(phase453.cepConventionsAreWorkbenchConventions === true && phase453.scaleIsWorkbenchRelativeCandidateOnly === true && phase453.noGevPromotion === true, "Phase453 must keep the convention and no-promotion boundaries.");
+  assert(phase453.sourceContractApplicationAllowed === false && phase453.canFillPhase201WzContract === false && phase453.canFillPhase201HiggsContract === false && phase453.canFillPhase256ObservedFieldExtractionContract === false, "Phase453 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase453.routePromotesWzMasses === false && phase453.routePromotesHiggsMass === false && phase453.routeCompletesBosonPredictions === false, "Phase453 cannot promote boson predictions.");
+  assert(phase101Package?.whamParityErrorModelRepair?.whamParityErrorModelRepairPassed === true, "Phase101 must include the Phase453 block.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

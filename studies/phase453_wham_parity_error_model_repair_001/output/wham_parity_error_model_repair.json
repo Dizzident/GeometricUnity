@@ -1,0 +1,399 @@
+{
+  "phaseId": "phase453-wham-parity-error-model-repair",
+  "generatedAt": "2026-07-10T17:59:50.7421053+00:00",
+  "mode": "preregister",
+  "terminalStatus": "wham-parity-error-model-repair-passed-pre-registration-committed",
+  "whamParityErrorModelRepairPassed": true,
+  "applicationSubjectKind": "wham-parity-error-model-repair",
+  "phase448PrecursorPassed": true,
+  "phase449PrecursorPassed": true,
+  "phase450PrecursorPassed": true,
+  "precursorsPassed": true,
+  "verdictKind": "pre-registration-committed",
+  "verdictPhrase": "Stage-0 pre-registration committed: the phase450 per-bin antisymmetry localization is recorded as committed provenance; the corrected c=0/\u002B-0.25 soft-spring sub-ladder and its smoke-confirmed junction overlap are pre-registered; the max-over-bins antisymmetry-statistic 99th-percentile thresholds are calibrated against the fitted even CEP and baked as committed constants; the S(k) structure-factor hooks and the two-arm (moving-block-bootstrap-WHAM-re-solve / within-window-antisymmetrized) analysis and the T1/T2/T3 verdict taxonomy are pre-registered. NO production trajectory is run in this checkpoint; the fresh-ensemble run executes later env-clean.",
+  "phase450DiscrepancyLocalization": {
+    "note": "recomputed from the COMMITTED phase450 sd2 cepCurve (only max fields are committed there); committed provenance for the motivating discrepancy",
+    "member": "sd2-id0/c0.5",
+    "binWidth": 0.125,
+    "maxSigma": 5.059417248130994,
+    "maxAbs": 1.0976637547467707,
+    "maxAbsPhi": 2.375,
+    "committedAntisymmetryMaxSigma": 5.059417248130994,
+    "reproducesCommitted": true,
+    "signedBinCountAsymmetryNote": "signal grows monotonically toward the edges and the max sits at the far edge |Phi|~2.375 -- the WHAM stitch-error signature (edge windows accumulate the most f_i random-walk variance), while the independent unconstrained tadpole is -0.04 \u002B- 0.10 (0.44 sigma): consistent with an error-model artifact, the hypothesis this phase discriminates",
+    "perBin": [
+      {
+        "phi": 0.125,
+        "deltaU": 0.12415423022568195,
+        "combinedError": 0.12367219111430501,
+        "sigma": 1.0038977162693867,
+        "countPos": 372,
+        "countNeg": 397
+      },
+      {
+        "phi": 0.25,
+        "deltaU": 0.07033867916656877,
+        "combinedError": 0.13704535505876944,
+        "sigma": 0.5132510995093945,
+        "countPos": 383,
+        "countNeg": 361
+      },
+      {
+        "phi": 0.375,
+        "deltaU": 0.06703948895739664,
+        "combinedError": 0.14722724106844656,
+        "sigma": 0.4553470435965699,
+        "countPos": 432,
+        "countNeg": 378
+      },
+      {
+        "phi": 0.5,
+        "deltaU": 0.24596796718575575,
+        "combinedError": 0.14747841224673844,
+        "sigma": 1.667823537279745,
+        "countPos": 403,
+        "countNeg": 396
+      },
+      {
+        "phi": 0.625,
+        "deltaU": 0.41980791573422493,
+        "combinedError": 0.14667235210894225,
+        "sigma": 2.8622157461714988,
+        "countPos": 394,
+        "countNeg": 431
+      },
+      {
+        "phi": 0.75,
+        "deltaU": 0.4512354619536971,
+        "combinedError": 0.1554187005291714,
+        "sigma": 2.9033537175212856,
+        "countPos": 422,
+        "countNeg": 442
+      },
+      {
+        "phi": 0.875,
+        "deltaU": 0.5801877017552597,
+        "combinedError": 0.16724822097772904,
+        "sigma": 3.46902166351006,
+        "countPos": 372,
+        "countNeg": 415
+      },
+      {
+        "phi": 1,
+        "deltaU": 0.5295753465522051,
+        "combinedError": 0.16672117909915007,
+        "sigma": 3.176413155267235,
+        "countPos": 399,
+        "countNeg": 403
+      },
+      {
+        "phi": 1.125,
+        "deltaU": 0.5491050278122138,
+        "combinedError": 0.16628207128806094,
+        "sigma": 3.302250348210809,
+        "countPos": 411,
+        "countNeg": 406
+      },
+      {
+        "phi": 1.25,
+        "deltaU": 0.5510002238332077,
+        "combinedError": 0.17646141607238788,
+        "sigma": 3.1224968953393004,
+        "countPos": 399,
+        "countNeg": 380
+      },
+      {
+        "phi": 1.375,
+        "deltaU": 0.7433818363497369,
+        "combinedError": 0.1846979705872868,
+        "sigma": 4.024851133913356,
+        "countPos": 379,
+        "countNeg": 425
+      },
+      {
+        "phi": 1.5,
+        "deltaU": 0.6676623663375243,
+        "combinedError": 0.18326906370218018,
+        "sigma": 3.643071846662038,
+        "countPos": 425,
+        "countNeg": 433
+      },
+      {
+        "phi": 1.625,
+        "deltaU": 0.7386275603456762,
+        "combinedError": 0.18452171813357313,
+        "sigma": 4.002930212317838,
+        "countPos": 390,
+        "countNeg": 419
+      },
+      {
+        "phi": 1.75,
+        "deltaU": 0.6070561783419208,
+        "combinedError": 0.19328146348180167,
+        "sigma": 3.140788399499458,
+        "countPos": 404,
+        "countNeg": 373
+      },
+      {
+        "phi": 1.875,
+        "deltaU": 0.5581163720738296,
+        "combinedError": 0.20154838379771553,
+        "sigma": 2.769143376679142,
+        "countPos": 415,
+        "countNeg": 355
+      },
+      {
+        "phi": 2,
+        "deltaU": 0.6614448146523184,
+        "combinedError": 0.20115419764900147,
+        "sigma": 3.2882476348144047,
+        "countPos": 410,
+        "countNeg": 372
+      },
+      {
+        "phi": 2.125,
+        "deltaU": 0.8696742639659707,
+        "combinedError": 0.2014083259112328,
+        "sigma": 4.317965804200489,
+        "countPos": 376,
+        "countNeg": 395
+      },
+      {
+        "phi": 2.25,
+        "deltaU": 0.7938090627779566,
+        "combinedError": 0.20892244854896305,
+        "sigma": 3.799539342426956,
+        "countPos": 397,
+        "countNeg": 365
+      },
+      {
+        "phi": 2.375,
+        "deltaU": 1.0976637547467707,
+        "combinedError": 0.2169545821017747,
+        "sigma": 5.059417248130994,
+        "countPos": 331,
+        "countNeg": 398
+      },
+      {
+        "phi": 2.5,
+        "deltaU": 0.9652643023870677,
+        "combinedError": 0.22536202654225948,
+        "sigma": 4.283171913197466,
+        "countPos": 250,
+        "countNeg": 259
+      },
+      {
+        "phi": 2.625,
+        "deltaU": 1.1267870048672344,
+        "combinedError": 0.2407287394208072,
+        "sigma": 4.680733208582745,
+        "countPos": 148,
+        "countNeg": 179
+      },
+      {
+        "phi": 2.75,
+        "deltaU": 0.9517567972126195,
+        "combinedError": 0.28004831774202654,
+        "sigma": 3.398544954265192,
+        "countPos": 79,
+        "countNeg": 80
+      }
+    ]
+  },
+  "calibration": {
+    "note": "synthetic control ensembles from the fitted EVEN CEP of the committed phase450 sd2 record with matched per-window tauInt and the exact production window layout; 99th-percentile thresholds baked as committed decision boundaries",
+    "calibrationComplete": true,
+    "replicates": 2000,
+    "syntheticTrajPerWindow": 1500,
+    "bakedMaxAntisymSigma99": 3.1597,
+    "bakedMaxAntisymAbs99": 0.7773,
+    "bakedFalseFlagRateAt5Sigma": 0,
+    "bakedFalseFlagRateAt3Sigma": 0.017,
+    "evenCepFit": {
+      "a2": 0.5143134667366203,
+      "a4": 0.0077244775787249234,
+      "a6": -0.0008506963508021269
+    },
+    "freshRun": null
+  },
+  "correctedLadder": {
+    "note": "c=0/\u002B-0.25 soft-spring sub-ladder straddling the origin, spring from the phase450 auto-spring rule at the recorded 2.0 softening factor; junction neighbor-overlap smoke-tested before production",
+    "mainLadderSpacing": 0.5,
+    "mainLadderSpring": 16,
+    "subLadderSpacing": 0.25,
+    "subLadderHalfSpan": 0.25,
+    "autoSpringSoftening": 2,
+    "subLadderStartSpring": 64,
+    "smokeComplete": true,
+    "smokeBudgetedIterations": 2,
+    "smokeIterationsUsed": 0,
+    "smokeFinalSubLadderSpring": 64,
+    "smokeJunctionMinOverlap": 0.425,
+    "smokeTrajPerWindow": 400,
+    "neighborOverlapGate": 0.15,
+    "smokeIterationLog": [
+      "iter0 (pre-registered auto-rule spring (2.0/0.25)^2 = 64.0): sd2 junction min overlap 0.4250 vs 0.15 gate: PASS (windows at \u002B-0.25 straddling the origin at spacing 0.25 overlap the 0 and \u002B-0.5 neighbors comfortably) -- NO softening needed, 0/2 budgeted fix-and-reruns used",
+      "iter1 (informational, softened spring 16.0 matching the phase450 main-ladder k): sd2 junction min overlap 0.5875 vs 0.15 gate: PASS (wider still) -- recorded as the softer alternative; the committed production spring stays at the auto-rule 64.0"
+    ],
+    "productionWindowCenters": [
+      -2.5,
+      -2,
+      -1.5,
+      -1,
+      -0.5,
+      -0.25,
+      0,
+      0.25,
+      0.5,
+      1,
+      1.5,
+      2,
+      2.5
+    ],
+    "productionWindowSprings": [
+      16,
+      16,
+      16,
+      16,
+      16,
+      64,
+      16,
+      64,
+      16,
+      16,
+      16,
+      16,
+      16
+    ],
+    "freshSmoke": null
+  },
+  "structureFactorHooks": {
+    "note": "Team B rank-2 Arm C: S(k) on the UNCONSTRAINED/released (k=0) columns only, pre-registered EX ANTE (slice-summed summaries cannot be retro-extracted)",
+    "momenta": "k = 2*pi*m/n, m in {0..n-1}^4 on the (Z_n)^4 reciprocal lattice",
+    "observable": "S(k) = \u003C | sum_e \u003Cu_inv,omega\u003E_e exp(-i k . x_edgeBase(e)) |^2 \u003E over the released joint ensemble (per-config, accumulated online)",
+    "columns": "measured on the k=0 tadpole/released window of each member arm",
+    "emittedInProduction": false
+  },
+  "verdictTaxonomy": {
+    "t1": "symmetric-phase-null: both arms green (all per-bin antisymmetry within the calibrated thresholds) AND single-well-at-zero on both members AND fresh tadpole zero within errors AND identity control clean -\u003E the null IS claimed",
+    "t2": "z2-breaking-candidate: antisymmetry survives BOTH corrected arms above the calibrated thresholds AND the fresh independent tadpole moves off zero at \u003E= 5 sigma with coherent sign on the same member -\u003E simultaneous program-level alarm; escalate to a volume scan at Phi*",
+    "t3": "estimator-discordance-or-new-defect: arms disagree, or gates fail in a new pattern -\u003E no physics claim; commit the discordance pattern as the diagnostic",
+    "hardBatteryRule": "any phase450 hard-battery failure (axis-angle chart, su(2) projection, \u003Ce^-dH\u003E, virial, acceptance windows) =\u003E inconclusive-gates-failed regardless of the arms"
+  },
+  "productionArms": [],
+  "batteries": {
+    "batteriesAllPassed": true,
+    "whamPlumbingBattery": true,
+    "whamPlumbingMaxErr": 0.049881873409894695,
+    "perTorus": [
+      {
+        "n": 3,
+        "orbitMapOk": true,
+        "covarianceMax": 4.21456712706499E-15,
+        "covarianceBattery": true,
+        "objectiveConsistencyMax": 2.218193224771057E-16,
+        "objectiveConsistencyBattery": true,
+        "gradFdMax": 1.136868384438031E-07,
+        "gradFdBattery": true,
+        "thetaChartBattery": true,
+        "identityThetaGradNorm": 1.2931973661541879E-14,
+        "identityThetaIndependenceBattery": true,
+        "projectorOverlapMaxAfter": 2.851536416931602E-17,
+        "projectorBattery": true,
+        "hardBatteriesPassed": true
+      }
+    ]
+  },
+  "probeConfiguration": {
+    "torusSizes": [
+      3
+    ],
+    "latticeCanonical": true,
+    "lieAlgebraId": "su2-trace-pairing",
+    "memberTags": [
+      "identity",
+      "sd2"
+    ],
+    "tMax": 2.5,
+    "beta": 1,
+    "betaConvention": 1,
+    "neffTarget": 100,
+    "leapfrogSteps": 10,
+    "thetaProposalsPerTrajectory": 8,
+    "samplerSeed": 453453,
+    "rayRngSeed": 20260703,
+    "armABootstrapReplicates": 400,
+    "armBMinEffectiveSignBinCounts": 25,
+    "defaultMode": "preregister",
+    "productionLaunchCommand": "PHASE453_MODE=production dotnet run --no-build -c Release --project studies/phase453_wham_parity_error_model_repair_001/Phase453WhamParityErrorModelRepair.csproj  (env-clean once the committed DefaultMode is flipped to production; ~2.5-4.5 h from the phase450 per-window rates)",
+    "fourBindingConditions": [
+      "(i) gauge-invariant invariant-ray collective coordinate (oSign lattice gauge; global-su(2) zero modes projected; projector recorded)",
+      "(ii) theta-Haar measure (per-vertex SO(3) rotations, symmetric Metropolis; axis-angle fundamental-domain chart)",
+      "(iii) ergodicity control (tau_int per window; N_eff \u003E= 100 gate; adaptive trajectories)",
+      "(iv) theta=0 slice is never a verdict -- the physics run is the joint (omega, theta-Haar) ensemble"
+    ],
+    "faddeevPopovCaveat": "cross-member normalization comparisons barred; only within-member Phi-dependence is classified",
+    "sbGradEvals": 2,
+    "sbObjEvals": 69
+  },
+  "scaleIsWorkbenchRelativeCandidateOnly": true,
+  "noGevPromotion": true,
+  "cepConventionsAreWorkbenchConventions": true,
+  "physicistReviewPending": true,
+  "recordedBoundary": {
+    "definition81Scope": "reduced-spin4-slice",
+    "ambientSevenSevenRealized": false,
+    "internalGaugeContentRealized": false,
+    "weldRealized": false,
+    "canFillPhase201WzContract": false,
+    "canFillPhase256Contract": false,
+    "physicistReviewPending": true,
+    "cepConventionsAreWorkbenchConventions": true,
+    "epsilonRealization": "independent-theta-dof-haar-sampled",
+    "epsilonTaxonomyMode": "mode-4-nonperturbative-cep",
+    "baseSignature": "Cl(4,0)-euclidean-slice",
+    "spinorUsedAsShiabCarrierNotFiber": true
+  },
+  "runtimeSeconds": 1.7791624,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "cd1539de7aa4a854335c47a36991d773199416101badd23b0615380cb767a1be",
+  "physicalCouplingProvided": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256Contract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256Contract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "sourceEvidence": {
+    "phase448SummaryPath": "studies/phase448_torus_mode_volume_saturation_probe_001/output/torus_mode_volume_saturation_probe_summary.json",
+    "phase449SummaryPath": "studies/phase449_variational_gaussian_effective_potential_probe_001/output/variational_gaussian_effective_potential_probe_summary.json",
+    "phase450SummaryPath": "studies/phase450_constraint_effective_potential_hmc_probe_001/output/constraint_effective_potential_hmc_probe_summary.json",
+    "designSourcePath": "docs/Phases/FOUR_D_PLATFORM_DESIGN.md",
+    "physicsDecisionsSourcePath": "docs/Phases/FOUR_D_PLATFORM_PHYSICS_DECISIONS.md",
+    "programSourcePath": "docs/Phases/TEAM_ELIMINATION_PROGRAM_2026-07-10.md"
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "This is a Stage-0 PRE-REGISTRATION; no production trajectory is run in this checkpoint and no physics verdict (T1/T2/T3) is emitted here. The fresh-ensemble production run executes later, env-clean.",
+    "A T1 symmetric-phase null, if reached in production, is finite-volume single-beta evidence along one gauge-invariant collective coordinate -- workbench-relative, su(2) toy algebra, reduced Spin(4) slice, lattice units; NOT a theorem; NO GeV/pole/VEV.",
+    "A T2 Z2-breaking candidate, if reached, is a program-level ALARM (an exact symmetry contradicted), never a physical SSB claim; it triggers a volume scan, not a promotion.",
+    "beta, the umbrella springs, the Euclidean Phi inner product, the flat HMC kinetic mass, the theta-Haar chart, and the WHAM bin/error conventions are WORKBENCH CONVENTIONS pending physicist review (Wave-0 item 0.3 OPEN).",
+    "No VEV scale, pole, or GeV lineage; no Phase201/Phase256 contract field is filled; nothing is promoted."
+  ],
+  "decision": "The WHAM parity-antisymmetry error-model repair is decided on internal consistency (mode=preregister). Stage-0 pre-registration is committed BEFORE any production trajectory: (1) the phase450 sd2 per-bin antisymmetry localization is recomputed from the committed cepCurve and recorded (max 5.059 sigma at |Phi|=2.375); (2) the output schema records per-bin antisymmetry and per-window signed-bin counts; (3) the c=0/\u002B-0.25 soft-spring sub-ladder is pre-registered (start spring 64.0, smoke-confirmed spring 64.0, junction overlap 0.425 \u003E= 0.15); (4) the max-over-bins antisymmetry statistic is calibrated against the fitted even CEP (99th-pct sigma 3.160, abs 0.777; false-flag at 5 sigma 0.00%, at 3 sigma 1.70%); (5) the S(k) structure-factor hooks on the released columns and the two-arm analysis \u002B T1/T2/T3 taxonomy are pre-registered. VERDICT (pre-registration-committed): Stage-0 pre-registration committed: the phase450 per-bin antisymmetry localization is recorded as committed provenance; the corrected c=0/\u002B-0.25 soft-spring sub-ladder and its smoke-confirmed junction overlap are pre-registered; the max-over-bins antisymmetry-statistic 99th-percentile thresholds are calibrated against the fitted even CEP and baked as committed constants; the S(k) structure-factor hooks and the two-arm (moving-block-bootstrap-WHAM-re-solve / within-window-antisymmetrized) analysis and the T1/T2/T3 verdict taxonomy are pre-registered. NO production trajectory is run in this checkpoint; the fresh-ensemble run executes later env-clean. MANDATORY FRAMING: workbench-relative candidate data ONLY (su(2) toy algebra, reduced Spin(4) slice, lattice units); beta, umbrella springs, the Phi inner product, the HMC kinetic mass, and the theta-Haar chart are WORKBENCH CONVENTIONS pending physicist review (Wave-0 item 0.3 OPEN); NO GeV/pole/VEV promotion; no Phase201/Phase256 contract field is filled; nothing is promoted."
+}

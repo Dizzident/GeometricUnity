@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/Gu.Geometry/Gu.Geometry.csproj" />
+    <ProjectReference Include="../../src/Gu.Interop/Gu.Interop.csproj" />
+    <ProjectReference Include="../../src/Gu.ReferenceCpu/Gu.ReferenceCpu.csproj" />
+  </ItemGroup>
+
+</Project>

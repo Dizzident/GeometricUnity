@@ -209,6 +209,7 @@ const string Phase449Path = "studies/phase449_variational_gaussian_effective_pot
 const string Phase451Path = "studies/phase451_two_loop_unification_ledger_001/output/two_loop_unification_ledger_summary.json";
 const string Phase452Path = "studies/phase452_scalar_channel_spectroscopy_probe_001/output/scalar_channel_spectroscopy_probe_summary.json";
 const string Phase450Path = "studies/phase450_constraint_effective_potential_hmc_probe_001/output/constraint_effective_potential_hmc_probe_summary.json";
+const string Phase453Path = "studies/phase453_wham_parity_error_model_repair_001/output/wham_parity_error_model_repair_summary.json";
 const string Phase444Path = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443Path = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442Path = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -469,6 +470,7 @@ using var phase449 = File.Exists(Phase449Path) ? JsonDocument.Parse(File.ReadAll
 using var phase451 = File.Exists(Phase451Path) ? JsonDocument.Parse(File.ReadAllText(Phase451Path)) : null;
 using var phase452 = File.Exists(Phase452Path) ? JsonDocument.Parse(File.ReadAllText(Phase452Path)) : null;
 using var phase450 = File.Exists(Phase450Path) ? JsonDocument.Parse(File.ReadAllText(Phase450Path)) : null;
+using var phase453 = File.Exists(Phase453Path) ? JsonDocument.Parse(File.ReadAllText(Phase453Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -6345,6 +6347,23 @@ var constraintEffectivePotentialHmcProbePassed = constraintEffectivePotentialHmc
     && JsonBool(phase450.RootElement, "routePromotesWzMasses") is false
     && JsonBool(phase450.RootElement, "routePromotesHiggsMass") is false
     && JsonBool(phase450.RootElement, "routeCompletesBosonPredictions") is false;
+var whamParityErrorModelRepairMaterialized = phase453 is not null;
+var whamParityErrorModelRepairPassed = whamParityErrorModelRepairMaterialized
+    && JsonBool(phase453!.RootElement, "whamParityErrorModelRepairPassed") is true
+    && JsonBool(phase453.RootElement, "targetBlindConstruction") is true
+    && JsonString(phase453.RootElement, "applicationSubjectKind") == "wham-parity-error-model-repair"
+    && JsonBool(phase453.RootElement, "precursorsPassed") is true
+    && JsonBool(phase453.RootElement, "cepConventionsAreWorkbenchConventions") is true
+    && JsonBool(phase453.RootElement, "physicistReviewPending") is true
+    && JsonBool(phase453.RootElement, "scaleIsWorkbenchRelativeCandidateOnly") is true
+    && JsonBool(phase453.RootElement, "noGevPromotion") is true
+    && JsonBool(phase453.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase453.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase453.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase453.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase453.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase453.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase453.RootElement, "routeCompletesBosonPredictions") is false;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -8937,6 +8956,14 @@ var checklist = new[]
             ? $"constraintEffectivePotentialHmcProbePassed={JsonBool(phase450!.RootElement, "constraintEffectivePotentialHmcProbePassed")}; verdictKind={JsonString(phase450.RootElement, "verdictKind")}; allEinsteinianSingleWell={JsonBool(phase450.RootElement, "allEinsteinianSingleWell")}; anyEinsteinianFlatBottom={JsonBool(phase450.RootElement, "anyEinsteinianFlatBottom")}; onlyAntisymmetryGatesFailed={JsonBool(phase450.RootElement, "onlyAntisymmetryGatesFailed")}; controlClean={JsonBool(phase450.RootElement, "controlClean")}; noGevPromotion={JsonBool(phase450.RootElement, "noGevPromotion")}; canFillPhase201WzContract={JsonBool(phase450.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase450.RootElement, "decision")}"
             : "Phase450 artifact not materialized",
         Phase450Path),
+    new ObjectiveChecklistItem(
+        "wham-parity-error-model-repair-materialized",
+        "Execute Team B's Wave-1 phase453: the WHAM parity-antisymmetry error-model repair of phase450 (the ONE gate that stood between phase450 and the null). Stage-0 PRE-REGISTRATION committed before any production trajectory: the phase450 per-bin antisymmetry localization is recorded as committed provenance (max 5.06 sigma at the far edge |Phi|~2.375 - the stitch-error signature); the c=0/+-0.25 soft-spring sub-ladder + smoke-confirmed junction overlap, the even-CEP-calibrated max-antisymmetry thresholds, the S(k) hooks, and the two-arm (block-bootstrap-WHAM-re-solve / within-window-antisymmetrized) analysis + T1/T2/T3 taxonomy are pre-registered; production runs later env-clean; nothing promoted.",
+        whamParityErrorModelRepairPassed ? "passed" : "failed",
+        whamParityErrorModelRepairMaterialized
+            ? $"whamParityErrorModelRepairPassed={JsonBool(phase453!.RootElement, "whamParityErrorModelRepairPassed")}; mode={JsonString(phase453.RootElement, "mode")}; verdictKind={JsonString(phase453.RootElement, "verdictKind")}; physicistReviewPending={JsonBool(phase453.RootElement, "physicistReviewPending")}; noGevPromotion={JsonBool(phase453.RootElement, "noGevPromotion")}; canFillPhase201WzContract={JsonBool(phase453.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase453.RootElement, "decision")}"
+            : "Phase453 artifact not materialized",
+        Phase453Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

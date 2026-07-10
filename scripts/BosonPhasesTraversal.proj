@@ -320,6 +320,7 @@
     <PhaseProject Include="../studies/phase450_constraint_effective_potential_hmc_probe_001/Phase450ConstraintEffectivePotentialHmcProbe.csproj" />
     <PhaseProject Include="../studies/phase451_two_loop_unification_ledger_001/Phase451TwoLoopUnificationLedger.csproj" />
     <PhaseProject Include="../studies/phase452_scalar_channel_spectroscopy_probe_001/Phase452ScalarChannelSpectroscopyProbe.csproj" />
+    <PhaseProject Include="../studies/phase453_wham_parity_error_model_repair_001/Phase453WhamParityErrorModelRepair.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />
