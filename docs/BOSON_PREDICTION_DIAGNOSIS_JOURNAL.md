@@ -19850,3 +19850,74 @@ reconciliation entry. Physicist sign-off on the 445-452 conventions
 (Wave-0 item 0.3, objection O4) remains OPEN and is the standing
 review-queue item. NEXT: phase453 per the committed spec.
 promotedPhysicalMassClaimCount=0 throughout.
+
+## 2026-07-10 - PHASE453 T1: THE SYMMETRIC-PHASE NULL IS CLAIMED; phase450's 5.06-sigma gate failure explained as a WHAM stitching artifact
+
+Phase453 (WHAM parity-antisymmetry error-model repair, the three-team
+program's first experiment) reached its pre-registered T1 terminal on
+the second budgeted fix-and-rerun iteration - and the two T3
+iterations on the way are themselves the explanation of the phase450
+anomaly. Full arc (all three production runs env-clean at the
+committed defaults; iteration outputs preserved in session scratch
+and the final committed record):
+
+- STAGE 0 (committed d63ce0b): per-bin localization of the committed
+  phase450 discrepancy (max 5.059 sigma at |Phi|=2.375, reproduced
+  exactly); synthetic even-CEP calibration of the max-over-bins
+  statistic (2000 ensembles, matched per-window tauInt -> baked
+  99th-percentile thresholds sigma99=3.16, abs99=0.777; false-flag
+  0/2000 at 5 sigma, 1.70% at 3 sigma - the naive 3-sigma read on a
+  ~20-bin max was ALWAYS a few-percent false-flagger); origin-
+  straddling +-0.25 sub-ladder smoke-gated at the auto-rule spring 64
+  (junction overlap 0.425 vs 0.15 gate); S(k) hooks pre-registered.
+- PROD ITERATION 1 (MinTraj 1500): T3. Both corrected arms GREEN on
+  sd2 (Arm A 2.03 sigma / Arm B 1.18 sigma vs 3.16) - the committed
+  5.06-sigma class does NOT reproduce under either corrected
+  estimator - but sd2 classified inconclusive-structure and the
+  released-column N_eff missed the 100 gate: underpowered. Fix #1:
+  MinTraj 1500 -> 3000, released column 3x.
+- PROD ITERATION 2 (MinTraj 3000, sub-ladder ON): T3, and the
+  decisive diagnostic. Both arms now FLAG sd2 (7.14 / 6.50 sigma),
+  the odd residual LOCALIZES at |Phi|=0.25 - exactly the junction
+  where the k=64 sub-windows meet the k=16 main ladder - GROWS with
+  statistics, and the direct tadpole stays at zero (0.91 sigma, N_eff
+  110): a systematic of the MIXED-STIFFNESS ladder stitching, not
+  physics. The built-in control agrees: the identity member, whose
+  ladder is UNIFORM (k=64 everywhere), is clean under the same arms.
+  Fix #2: drop the sub-ladder; sd2 reverts to the exact phase450
+  committed uniform ladder (centers -2.5..2.5 step 0.5, k=16) at the
+  doubled budget.
+- PROD ITERATION 3 (uniform ladders, MinTraj 3000; the committed
+  record, runtime 77.5 min): T1. Both arms green on BOTH members
+  (identity A 2.49 / B 0.89; sd2 A 2.30 / B 2.46 - all under the
+  baked 3.16); U(Phi) single-well-at-zero on both members; fresh
+  independent tadpoles zero within errors (identity 0.217+-0.195, sd2
+  0.026+-0.088); identity control clean; all hard batteries and
+  overlap/WHAM/coverage gates green; WHAM plumbing battery 0.049 max
+  err. verdictKind=symmetric-phase-null.
+
+CONCLUSIONS. (1) The phase450 5.06-sigma parity-antisymmetry gate
+failure is EXPLAINED: the phase450 error model treated per-bin errors
+as independent while V(+Phi) and V(-Phi) share every jointly-solved
+stitching constant f_i, and the arms that propagate that covariance
+(400-replicate moving-block bootstrap with full WHAM re-solves;
+within-window antisymmetrized U_odd) kill it; the phase453 iteration-2
+episode additionally demonstrates the same artifact class arising
+from mixed-stiffness ladder junctions, with uniform ladders immune on
+the direct control comparison. Phase450's honest-inconclusive record
+stands (it was the correct verdict for its evidence); its open gate
+is now closed by phase453. (2) THE FRONTIER STATEMENT UPGRADES: the
+review-board line "no perturbative CW scale" strengthens to NO
+NON-PERTURBATIVE SCALE ALONG TRANSLATION-INVARIANT RAYS AT n=3 - the
+strongest internal statement available, now held non-perturbatively
+(tree 443 / one-loop 446 / two-loop 447 / Hartree 449 / HMC CEP
+450+453). Scope honestly bounded: translation-invariant rays, n=3,
+the audited member family, workbench conventions
+(physicistReviewPending). Beyond-ray directions and volume scaling
+are the live B2 candidates (team B ranks 2-6). (3) Ladder-design
+lesson for every future umbrella program: junction stitching between
+windows of different spring stiffness injects a statistics-growing
+ODD artifact into WHAM reconstructions; use uniform-stiffness ladders
+or junction-aware error models. promotedPhysicalMassClaimCount=0
+throughout - the null is a NEGATIVE result about scale generation,
+not a prediction.

@@ -596,11 +596,33 @@ censuses):
   BOTH production runs show single-well-at-zero everywhere (large-beta
   Pearson 0.9996) but the parity-antisymmetry gate trips at 5.06 sigma
   while the independent tadpole is zero (-0.04+-0.10) - an
-  unattributed WHAM stitching-error-model item; THE SYMMETRIC-PHASE
-  NULL IS NOT CLAIMED. Named fix: the WHAM parity-asymmetry error
-  model (block bootstrap over windows or a within-window
-  antisymmetrized estimator); when green, the frontier upgrades to
-  "no non-perturbative scale along invariant rays at n=3"
+  unattributed WHAM stitching-error-model item; phase450 itself did
+  NOT claim the null. RESOLVED BY PHASE453 (2026-07-10): the 5.06
+  sigma was a WHAM stitching artifact (shared f_i covariance omitted
+  from the per-bin error model; the same class also arises at
+  mixed-stiffness ladder junctions) - see the Phase453 bullet
+- Phase453: `whamParityErrorModelRepairPassed=True`,
+  `verdictKind=symmetric-phase-null` (T1) - the corrected error
+  models (Arm A: 400-replicate moving-block bootstrap with a full
+  WHAM re-solve per replicate, propagating the f_i stitching
+  covariance; Arm B: within-window antisymmetrized U_odd; thresholds
+  CALIBRATED on 2000 synthetic even-CEP ensembles, baked sigma99=3.16)
+  are BOTH GREEN on BOTH members (identity 2.49/0.89, sd2 2.30/2.46),
+  single-well-at-zero everywhere, fresh tadpoles zero (0.217+-0.195 /
+  0.026+-0.088), identity control clean, all batteries green. THE
+  SYMMETRIC-PHASE NULL IS CLAIMED; the frontier statement is now
+  "NO NON-PERTURBATIVE SCALE ALONG TRANSLATION-INVARIANT RAYS AT n=3"
+  (tree 443 / one-loop 446 / two-loop 447 / Hartree 449 / HMC CEP
+  450+453), scoped to the audited member family and workbench
+  conventions (physicistReviewPending). The two budgeted T3
+  iterations are committed diagnostics: iteration 2 PROVED the
+  artifact class by localizing a statistics-growing odd residual
+  (7.14/6.50 sigma) at the |Phi|=0.25 mixed-stiffness sub-ladder
+  junction with the direct tadpole at zero and the uniform-ladder
+  identity clean - LADDER LESSON: umbrella programs use
+  uniform-stiffness ladders or junction-aware error models. Beyond-ray
+  directions and volume scaling are the live B2 candidates (team B
+  ranks 2-6)
 - Phase451: `twoLoopUnificationLedgerPassed=True`,
   `verdictKind=tension-persists-quantified` - sin^2(m_Z) predicted
   0.2076 (1L, referee witness) / 0.2106 (2L) from the derived 3/8
@@ -781,13 +803,11 @@ contract schema commits) is DONE. Wave-0 item 0.3 remains OPEN: the
 physicist sign-off memo on the 445-452 conventions (invariant rays,
 positive-mode IR rule, theta-Haar, saddle backgrounds) - phases may
 pre-register against pending status citing physicistReviewPending.
-QUEUE (kill-ordered, from the program document): (1) PHASE453 - WHAM
-parity-antisymmetry error-model repair per the committed spec (Stage-0
-pre-registration incl. per-bin localization commit, synthetic-ensemble
-threshold calibration, S(k) hooks ex ante; production 2.5-4.5 h;
-Arm A = 400-replicate moving-block bootstrap with full WHAM re-solve,
-Arm B = within-window antisymmetrized U_odd; three-terminal taxonomy
-T1 null / T2 Z2-breaking-candidate / T3 discordance); (2) Wave-1
+QUEUE (kill-ordered, from the program document): (1) PHASE453 - DONE
+2026-07-10, T1 SYMMETRIC-PHASE-NULL CLAIMED (see the Phase453 gate
+bullet; frontier upgraded; phase450's 5.06-sigma gate failure
+explained as a WHAM stitching artifact; both budgeted T3 iterations
+committed as diagnostics); (2) Wave-1
 parallel cheap kills: A1 units-equivariance kernel, A2 part-12d
 reading menu, C-KERNEL v3, C-STABILIZER v3, C-CONTRACT v3 (schema
 BEFORE any WS3 verdict), B beyond-ray Arms A/B, B exact fermionic

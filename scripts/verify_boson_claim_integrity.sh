@@ -5388,8 +5388,14 @@ if (sourceLineageMissing) {
   // production T1/T2/T3 verdict asserts are finalized AFTER the production run.
   assert(phase453.whamParityErrorModelRepairPassed === true, "Phase453 WHAM parity error-model repair must pass on internal consistency.");
   assert(phase453.applicationSubjectKind === "wham-parity-error-model-repair", "Phase453 must classify its subject as the WHAM parity error-model repair.");
-  assert(phase453.mode === "preregister", "Phase453 committed checkpoint must be the env-clean Stage-0 pre-registration (production runs later).");
-  assert(phase453.verdictKind === "pre-registration-committed", "Phase453 must carry the pre-registration-committed verdict (no physics verdict before the fresh production run).");
+  assert(phase453.mode === "production", "Phase453 committed record must be the env-clean production run.");
+  assert(phase453.verdictKind === "symmetric-phase-null", "Phase453 must carry the T1 symmetric-phase-null verdict (both corrected arms green, single-well both members, tadpole zero, identity clean).");
+  assert(phase453.batteries?.batteriesAllPassed === true && phase453.batteries?.whamPlumbingBattery === true, "Phase453 hard batteries incl. WHAM plumbing must pass.");
+  assert(Array.isArray(phase453.productionArms) && phase453.productionArms.length === 2, "Phase453 must carry both production members.");
+  assert(phase453.productionArms.every((m) => m.armA?.flagsAntisymmetry === false && m.armB?.flagsAntisymmetry === false), "Phase453 corrected arms (block-bootstrap WHAM re-solve; within-window U_odd) must both be green on both members.");
+  assert(phase453.productionArms.every((m) => m.classification === "single-well-at-zero"), "Phase453 must classify single-well-at-zero on both members.");
+  assert(phase453.productionArms.every((m) => Math.abs(m.tadpoleDiagnostic?.significanceSigma) < 5), "Phase453 fresh independent tadpoles must be zero within errors (no T2 coincidence).");
+  assert(phase453.correctedLadder?.productionSubLadderDropped === true && phase453.correctedLadder?.productionIterationLog?.length === 2, "Phase453 must record both budgeted fix-and-rerun iterations (T3 diagnostics) and the final uniform sd2 ladder.");
   assert(phase453.precursorsPassed === true, "Phase453 must confirm phase448/449/450 precursors (it repairs phase450's one failing gate).");
   assert(phase453.phase450DiscrepancyLocalization?.reproducesCommitted === true, "Phase453 must reproduce the committed phase450 antisymmetry-max (Stage-0 item 1 localization).");
   assert(phase453.calibration?.calibrationComplete === true, "Phase453 must carry the baked even-CEP calibration thresholds (Stage-0 item 4).");

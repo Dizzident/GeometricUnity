@@ -111,7 +111,13 @@ const string TerminalPrefix = "wham-parity-error-model-repair-";
 // production  : the full fresh-ensemble run with both arms (runs LATER, by the
 //               team; enabled by flipping DefaultMode -- env-clean, per the
 //               phase452 reconciliation lesson).
-const string DefaultMode = "preregister";
+const string DefaultMode = "production";
+// Released-column (k=0 tadpole/S(k)) trajectory multiplier -- iteration 2
+// (T3 budgeted fix): the released column's autocorrelation time is far longer
+// than any constrained window's (iteration 1: N_eff 49 < the 100 gate at the
+// shared budget); 3x the window budget gives the N_eff>=100 gate honest
+// headroom on both members without redesigning the sampler.
+const int TadpoleTrajMultiplier = 3;
 string Mode = (Environment.GetEnvironmentVariable("PHASE453_MODE") ?? DefaultMode).Trim().ToLowerInvariant();
 if (Mode is not ("preregister" or "calibrate" or "smoke" or "production"))
     throw new InvalidOperationException($"PHASE453_MODE '{Mode}' invalid (preregister|calibrate|smoke|production).");
@@ -131,7 +137,10 @@ double Beta = EnvD("PHASE453_BETA", 1.0);              // recorded convention (d
 double BetaLarge = EnvD("PHASE453_BETA_LARGE", 8.0);   // large-beta tree-shape control column
 double KUmbEnv = EnvD("PHASE453_KUMB", 0.0);           // 0 = auto from window spacing + tree curvature
 int NLeap = EnvI("PHASE453_NLEAP", 10);
-int MinTraj = EnvI("PHASE453_MINTRAJ", 1500);          // statistics floor per window (WHAM bins)
+int MinTraj = EnvI("PHASE453_MINTRAJ", 3000);          // statistics floor per window (WHAM bins)
+                                                       // iteration 2 (T3 budgeted fix): 1500 -> 3000;
+                                                       // iteration-1 run left sd2 structure unresolved
+                                                       // (flat-bottom depthSigma=0 at halfWidth 0.125)
 int MaxParallel = EnvI("PHASE453_PARALLEL", System.Math.Min(16, Environment.ProcessorCount));
 double EpsEnv = EnvD("PHASE453_EPS", 0.0);             // 0 = auto-tuned in warmup
 int ThetaProps = EnvI("PHASE453_THETA_PROPS", 8);      // Haar-Metropolis proposals per trajectory
@@ -214,6 +223,13 @@ string[] SmokeIterationLog = new[]
 {
     "iter0 (pre-registered auto-rule spring (2.0/0.25)^2 = 64.0): sd2 junction min overlap 0.4250 vs 0.15 gate: PASS (windows at +-0.25 straddling the origin at spacing 0.25 overlap the 0 and +-0.5 neighbors comfortably) -- NO softening needed, 0/2 budgeted fix-and-reruns used",
     "iter1 (informational, softened spring 16.0 matching the phase450 main-ladder k): sd2 junction min overlap 0.5875 vs 0.15 gate: PASS (wider still) -- recorded as the softer alternative; the committed production spring stays at the auto-rule 64.0",
+};
+
+// Production fix-and-rerun iteration log (frozen; 2 budgeted, 2 used).
+string[] ProductionIterationLog = new[]
+{
+    "prod-iter1 (MinTraj 1500, sub-ladder ON): T3 -- arms GREEN on sd2 (A 2.03 / B 1.18 sigma vs 3.16 threshold; the committed phase450 5.06-sigma class does NOT reproduce under either corrected arm) but sd2 classification inconclusive-structure and released-column N_eff 49 < 100: underpowered; fix #1 = MinTraj 1500->3000, released column 3x",
+    "prod-iter2 (MinTraj 3000, sub-ladder ON): T3 -- both arms now FLAG sd2 (A 7.14 / B 6.50 sigma), the odd residual LOCALIZES at the |Phi|=0.25 mixed-stiffness junction (k=64 sub-windows vs k=16 main), GROWS with statistics, tadpole 0.91 sigma (N_eff 110, gate green), identity control (UNIFORM k=64 ladder) clean: junction stitching systematic hypothesis; fix #2 = drop the sub-ladder, sd2 reverts to the exact phase450 uniform ladder at the iteration-2 budget",
 };
 
 // Hard-battery tolerances (identical to phase450).
@@ -513,12 +529,24 @@ WindowPlan? recordedSd2Plan = null;
 // PLUS the Stage-0 item-3 sub-ladder (+-0.25) at the smoke-confirmed spring.
 // The identity control already carries spacing 0.25 in phase450 so it needs no
 // sub-ladder; sd2 (spacing 0.5) is the member the sub-ladder densifies.
+// Iteration 3 (second and FINAL budgeted fix-and-rerun, recorded): drop the
+// mixed-stiffness sub-ladder from sd2. Iteration-2 evidence: both corrected
+// arms flag an odd WHAM residual (7.14/6.50 sigma) that LOCALIZES at the
+// |Phi|=0.25 junction where the k=64 sub-windows meet the k=16 main ladder,
+// GROWS with statistics, and is uncorroborated by the direct tadpole (0.91
+// sigma) -- while the identity control, whose ladder is UNIFORM (k=64
+// everywhere), is clean under the same arms. Hypothesis under test: the odd
+// component is a mixed-stiffness junction stitching systematic, not physics.
+// sd2 therefore reverts to the exact phase450 committed uniform ladder
+// (centers -2.5..2.5 step 0.5, spring 16) at the iteration-2 budget.
+const bool DropSubLadderIteration3 = true;
+
 WindowPlan BuildSd2ProductionLadder(double subLadderSpring)
 {
     double mainSpacing = 0.5, mainSpring = 16.0;
     var centers = new List<(double C, double K)>();
     for (int i = -5; i <= 5; i++) centers.Add((i * mainSpacing, mainSpring)); // -2.5..2.5
-    for (double s = SubLadderSpacing; s <= SubLadderHalfSpan + 1e-9; s += SubLadderSpacing)
+    for (double s = SubLadderSpacing; !DropSubLadderIteration3 && s <= SubLadderHalfSpan + 1e-9; s += SubLadderSpacing)
     {
         centers.Add((+s, subLadderSpring));
         centers.Add((-s, subLadderSpring));
@@ -1144,7 +1172,8 @@ foreach (int n in TorusSizes)
             bool diag = w == nw;
             var res = RunWindow(opW, mmW, isControl, beta,
                 diag ? 0.0 : plan.Centers[w], diag ? 0.0 : plan.Springs[w],
-                plan.BinPhi, plan.BinW, warm, sampleTarget,
+                plan.BinPhi, plan.BinW, warm,
+                diag ? sampleTarget * TadpoleTrajMultiplier : sampleTarget,
                 diag, diag ? skReC : null, new Random(seeds[w]));
             windowsArr[w] = res;
             lock (consoleLock)
@@ -1545,6 +1574,8 @@ var result = new
         smokeTrajPerWindow = SmokeTrajPerWindow,
         neighborOverlapGate = OverlapMin,
         smokeIterationLog = SmokeIterationLog,
+        productionIterationLog = ProductionIterationLog,
+        productionSubLadderDropped = DropSubLadderIteration3,
         productionWindowCenters = recordedSd2Plan!.Centers,
         productionWindowSprings = recordedSd2Plan!.Springs,
         freshSmoke = smokeResult is null ? null : (object)new

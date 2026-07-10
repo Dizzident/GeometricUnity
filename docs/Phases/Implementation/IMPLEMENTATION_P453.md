@@ -37,31 +37,41 @@ with:
 
 ## Verdict: PENDING PRODUCTION
 
-No physics verdict (T1/T2/T3) is emitted before the fresh production run. The
-Stage-0 pre-registration is complete and internally consistent.
+## Production verdict (2026-07-10): T1 — SYMMETRIC-PHASE NULL CLAIMED
 
-**Production launch (later, env-clean):** flip the committed `DefaultMode` in
-`Program.cs` from `"preregister"` to `"production"`, rebuild, then
+Three env-clean production runs (the two budgeted fix-and-rerun iterations
+were both used, each recorded in `productionIterationLog`):
 
-```
-dotnet run --no-build -c Release --project \
-  studies/phase453_wham_parity_error_model_repair_001/Phase453WhamParityErrorModelRepair.csproj
-```
+- **Iteration 1** (MinTraj 1500, sub-ladder on): T3. Both corrected arms
+  GREEN on sd2 (A 2.03σ / B 1.18σ vs the calibrated 3.16) — the committed
+  phase450 5.06σ class does not reproduce under either corrected estimator —
+  but sd2 classified inconclusive-structure and the released column missed
+  the N_eff gate. Fix #1: MinTraj 1500 → 3000, released column 3×.
+- **Iteration 2** (MinTraj 3000, sub-ladder on): T3, the decisive diagnostic.
+  Both arms FLAG sd2 (7.14σ / 6.50σ); the odd residual localizes at the
+  |Φ| = 0.25 mixed-stiffness junction (k=64 sub-windows vs k=16 main),
+  grows with statistics, tadpole zero (0.91σ, N_eff 110); the uniform-ladder
+  identity control is clean — a junction stitching systematic, not physics.
+  Fix #2: drop the sub-ladder; sd2 reverts to the exact phase450 uniform
+  ladder at the doubled budget.
+- **Iteration 3** (uniform ladders, the committed record, 77.5 min): **T1**.
+  Arms green on both members (identity 2.49/0.89, sd2 2.30/2.46);
+  single-well-at-zero on both; fresh tadpoles zero (0.217±0.195 /
+  0.026±0.088); identity clean; all hard batteries and gates green.
 
-Expected wall time ~2.5-4.5 h from the phase450 per-window rates (identity
-constrained 215-462 ms/traj, sd2 constrained 537-542). Two analysis arms
-(moving-block bootstrap + full WHAM re-solve; within-window antisymmetrized
-`U_odd`) decide the antisymmetry against the calibrated σ99 = 3.16 boundary.
+The phase450 gate failure is explained (per-bin errors treated as
+independent while V(±Φ) share every jointly-solved stitching constant f_i;
+the corrected arms propagate that covariance and kill it). THE FRONTIER
+UPGRADES: no non-perturbative scale along translation-invariant rays at
+n=3 (tree 443 / 1-loop 446 / 2-loop 447 / Hartree 449 / HMC CEP 450+453),
+scoped to the audited member family and workbench conventions. LADDER
+LESSON: umbrella programs use uniform-stiffness ladders or junction-aware
+error models — mixed-stiffness junctions inject a statistics-growing odd
+artifact into WHAM reconstructions.
 
-## Asserts to finalize post-production
-
-`scripts/verify_boson_claim_integrity.sh` currently asserts the STAGE-0
-pre-registration fields (`mode === "preregister"`,
-`verdictKind === "pre-registration-committed"`, localization reproduces,
-calibration/smoke complete, junction overlap clears the gate, boundaries). After
-the production run these are replaced/augmented with the production asserts:
-`mode === "production"`, the T1/T2/T3 `verdictKind`, both-arm agreement
-booleans, fresh-tadpole significance, and the phase101 block.
+The integrity verifier asserts the production record (mode, T1 verdictKind,
+both-arm green booleans, classifications, tadpole bounds, both iteration-log
+rows, uniform final ladder).
 
 ## Framing
 
