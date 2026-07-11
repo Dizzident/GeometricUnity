@@ -1,10 +1,10 @@
 {
   "phaseId": "phase433-blind-beta-coefficient-running-ledger",
-  "generatedAt": "2026-07-09T21:19:57.1900396+00:00",
-  "terminalStatus": "blind-beta-coefficient-running-ledger-materialized-comparison-lineage-still-missing",
-  "blindBetaCoefficientRunningLedgerPassed": true,
-  "phase404PrecursorPassed": true,
-  "phase429PrecursorPassed": true,
+  "generatedAt": "2026-07-10T22:18:26.3039396+00:00",
+  "terminalStatus": "blind-beta-coefficient-running-ledger-blocked",
+  "blindBetaCoefficientRunningLedgerPassed": false,
+  "phase404PrecursorPassed": false,
+  "phase429PrecursorPassed": false,
   "applicationSubjectKind": "blind-beta-coefficient-running-ledger",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
@@ -236,5 +236,5 @@
     "Any future comparison phase must import the listed lineage fields explicitly and pass the existing promotion gates.",
     "No Phase201 or Phase256 fill."
   ],
-  "decision": "The one-loop beta coefficients of the derived matter content are now an explicit fail-closed ledger of EXACT rationals, computed as pure group theory with no measured value and no comparison anywhere. Per derived family every gauge group receives the identical fermion index sum 2 (color, weak, and GUT-normalized hypercharge alike), giving the family-universal contribution 4/3; the conditional Higgs doublet adds -1/6 to b_2 and -1/10 to b_1 and is recorded separately and marked conditional (no breaking sector is established). The n_f = 3 (imported, not derived) with-Higgs row reproduces the standard SM set (b_3, b_2, b_1) = (7, 19/6, -41/10) in the asymptotic-freedom-positive convention. The running family sin^2 theta_W(x) = 3(1 - b_2 x)/(8 - (5 b_1 \u002B 3 b_2) x) is fixed at 3/8 at the unification point with exact linear slope 15(b_1 - b_2)/64, which is family-INDEPENDENT (-55/32 without Higgs, -109/64 with). Every row still lacks the full comparison lineage - the unification scale, higher-order and threshold corrections, the scheme, the actual inter-scale matter content, and an input coupling; no measured value was consulted, no comparison was performed, and no Phase201/Phase256 field is filled."
+  "decision": "Do not use the beta-coefficient running ledger until the precursor and separation batteries pass."
 }

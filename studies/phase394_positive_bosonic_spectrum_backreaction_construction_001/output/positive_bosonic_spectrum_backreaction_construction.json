@@ -1,9 +1,9 @@
 {
   "phaseId": "phase394-positive-bosonic-spectrum-backreaction-construction",
-  "generatedAt": "2026-07-10T21:56:14.4816475+00:00",
-  "terminalStatus": "positive-bosonic-spectrum-recomputed-first-order-backreaction-constructed-discrete-diagnostic-only",
-  "positiveBosonicSpectrumBackreactionConstructionPassed": true,
-  "phase393PrecursorPassed": true,
+  "generatedAt": "2026-07-10T22:03:27.6839178+00:00",
+  "terminalStatus": "positive-bosonic-spectrum-backreaction-construction-blocked",
+  "positiveBosonicSpectrumBackreactionConstructionPassed": false,
+  "phase393PrecursorPassed": false,
   "cliRunsSucceeded": true,
   "constructionInternallyConsistent": true,
   "positiveBosonicSpectrumRecomputed": true,
@@ -224,5 +224,5 @@
     "familyWorkdir": "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir",
     "persistedBosonModeDir": "studies/phase12_joined_calculation_001/output/background_family/spectra/modes"
   },
-  "decision": "The full 156-mode bosonic Gauss-Newton spectrum was recomputed per background through the repo\u0027s production compute-spectrum pipeline on a study-local copy of the Phase12 family (persisted artifacts untouched). The operator is PSD with a finite kernel and a clear spectral gap, the eigenvalues cluster in su(2) triplets, and every persisted kernel mode is contained in the recomputed kernel subspace. With the positive spectrum in hand, the per-mode first-order backreaction for asymmetric shell occupation is now CONSTRUCTED per unit coupling, together with each source\u0027s unabsorbable kernel component and the second-order bosonic relaxation energy. This closes the Phase393 artifact gap. It remains a toy control-branch diagnostic: the coupling is not physical, no coupled critical point is solved, and no Phase201/Phase256 contract field is filled."
+  "decision": "Do not use the recomputed spectrum or backreaction until the Phase393 precursor, CLI recomputation, PSD and kernel-containment checks, and backreaction coverage all pass."
 }

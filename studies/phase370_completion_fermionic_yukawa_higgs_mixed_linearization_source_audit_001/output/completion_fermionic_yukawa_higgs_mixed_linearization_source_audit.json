@@ -1,8 +1,8 @@
 {
   "phaseId": "phase370-completion-fermionic-yukawa-higgs-mixed-linearization-source-audit",
-  "terminalStatus": "completion-fermionic-yukawa-higgs-mixed-linearization-source-audit-placeholder-not-source-lineage",
-  "generatedAt": "2026-07-10T17:58:01.5640024+00:00",
-  "completionFermionicYukawaHiggsMixedLinearizationSourceAuditPassed": true,
+  "terminalStatus": "completion-fermionic-yukawa-higgs-mixed-linearization-source-audit-review-required",
+  "generatedAt": "2026-07-10T22:02:14.2377552+00:00",
+  "completionFermionicYukawaHiggsMixedLinearizationSourceAuditPassed": false,
   "officialDraftFermionicSectorArchitecturePresent": true,
   "officialDraftLocatesHiggsPotentialInUpsilonNorm": true,
   "officialDraftLocatesYukawaCouplingsAsObservedVev": true,
@@ -152,12 +152,12 @@
       "p227OfficialGuShiabUpsilonExtractionPromotable": false
     },
     "phase237": {
-      "p237CoxIiHiggsYukawaTextureDependencyAuditPassed": true,
+      "p237CoxIiHiggsYukawaTextureDependencyAuditPassed": false,
       "p237CoxIiYukawaTextureLeadPresent": true,
       "p237CoxIiHiggsYukawaTexturePromotableForHiggsMass": false
     },
     "phase256": {
-      "p256ObservedFieldExtractionIntakeContractPassed": true,
+      "p256ObservedFieldExtractionIntakeContractPassed": false,
       "p256FilledRequiredFieldCount": 0,
       "p256ObservedFieldExtractionContractPromotable": false
     },
@@ -217,8 +217,8 @@
     },
     {
       "checkId": "prior-gu-higgs-and-coupled-extraction-boundaries-remain-binding",
-      "passed": true,
-      "detail": "p226=True; p227=True; p237=True; p237YukawaLead=True; p237Promotable=False; p322=True; scalarOperator=False; massiveProfile=False; quartic=False; p323=True; quadraticExpansion=False; projectionRows=False"
+      "passed": false,
+      "detail": "p226=True; p227=True; p237=False; p237YukawaLead=True; p237Promotable=False; p322=True; scalarOperator=False; massiveProfile=False; quartic=False; p323=True; quadraticExpansion=False; projectionRows=False"
     },
     {
       "checkId": "completion-and-proxy-routes-still-nonpromotional",
@@ -237,8 +237,8 @@
     },
     {
       "checkId": "phase201-phase207-phase213-blocker-state-preserved",
-      "passed": true,
-      "detail": "phase201AllLineages=False; p207Promotable=False; p207IntakeReady=0; wzMissing=15; higgsMissing=14; p256=True; p256Filled=0; p256Promotable=False"
+      "passed": false,
+      "detail": "phase201AllLineages=False; p207Promotable=False; p207IntakeReady=0; wzMissing=15; higgsMissing=14; p256=False; p256Filled=0; p256Promotable=False"
     }
   ],
   "decision": "Do not promote W/Z or Higgs masses from the v29 fermionic variational / Yukawa-Higgs mixed-linearization route. The official GU material and the completion revision identify a meaningful GU-native research direction, but v29 explicitly leaves the Yukawa map as a target, the fermionic action as a typed placeholder, the coupled mixed-linearization blocks as VO-7, and fermionic coupling outside the first executable branch. No solved Higgs scalar-source operator, identity envelope, massive profile, quartic or excitation relation, observed projection, W/Z theorem, target-independent scale, pole extraction, or GeV normalization is supplied.",

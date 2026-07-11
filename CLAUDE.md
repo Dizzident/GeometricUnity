@@ -86,6 +86,17 @@ filesystem directly (gitignore-blind) across `studies/`, `docs/`, `scripts/`,
 and `src/`, auditing repo text for topic keywords outside their known-file
 lists. This is a deliberate integrity mechanism.
 
+**The dual hazard — content-REQUIREMENT audits** (2026-07-11 incident):
+some phases require specific sentences to EXIST in prose docs. Phase230
+greps README.md for the exact non-prediction boundary sentences ("no
+current observable is validated as a physical W/Z/Higgs/photon property";
+"no physical unit calibration to GeV or measured couplings exists yet") —
+a README rewrite that drops or rewords them flips phase230
+review-required and cascades blocked verdicts exactly like a scanner
+keyword hit. Before editing README.md or other program prose, grep the
+studies for `Contains(` checks that bind the file's text, and keep the
+bound sentences verbatim. The gate is right; the prose is load-bearing.
+
 Consequence (learned the hard way in the 2026-07-10 incident — see the last
 entry of `docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md`): **any new file whose
 PATH or TEXT contains a scanner topic keyword flips the scanners to

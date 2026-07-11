@@ -1,11 +1,11 @@
 {
   "phaseId": "phase441-toy-branch-family-universality-sweep",
-  "generatedAt": "2026-07-09T21:20:25.3085607+00:00",
-  "terminalStatus": "no-saturation-theorem-extends-to-entire-toy-family-scale-gap-requires-dim-four-spinor-shiab-or-source-anchor",
-  "toyBranchFamilyUniversalitySweepPassed": true,
-  "phase436PrecursorPassed": true,
-  "phase440PrecursorPassed": true,
-  "precursorsPassed": true,
+  "generatedAt": "2026-07-10T22:18:56.0938301+00:00",
+  "terminalStatus": "toy-branch-family-universality-sweep-blocked",
+  "toyBranchFamilyUniversalitySweepPassed": false,
+  "phase436PrecursorPassed": false,
+  "phase440PrecursorPassed": false,
+  "precursorsPassed": false,
   "applicationSubjectKind": "toy-branch-family-universality-sweep",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
@@ -64,7 +64,7 @@
     "decompositionRelativeTolerance": 1E-08,
     "sampledHessianPairs": 200,
     "degreeProbeCount": 4,
-    "batteriesAllPassed": true
+    "batteriesAllPassed": false
   },
   "familyTable": [
     {
@@ -958,7 +958,7 @@
     "workbenchPolarizationConventionReused": true,
     "noGevPromotion": true
   },
-  "runtimeSeconds": 20.4752507,
+  "runtimeSeconds": 21.7790679,
   "physicalCouplingProvided": false,
   "routeProvidesPhysicalMassPsiCompatibleBranch": false,
   "routeProvidesCompletedFermionicAction": false,
@@ -996,5 +996,5 @@
     "The no-saturation result extends across the toy family; a finite scale still requires structure beyond the toy family (a dimX\u003E=4 spinor-realized canonical Shiab or a source anchor) that no reviewed source realizes on the toy.",
     "No VEV scale, pole, or GeV lineage; no Phase201 or Phase256 fill; no physical predictions."
   ],
-  "decision": "The toy-branch family universality sweep is decided. Over the full 36-member Cartesian product of Shiab in {identity-shiab, first-order-curvature, metric-scaled-shiab(lambda=2)}, torsion in {trivial, augmented-torsion, local-algebraic}, and A0 in {0, const lambda_8 (0.5, 1.0), mixed lambda_8\u002Blambda_4}, the residual Upsilon = S(F) - T is EXACTLY degree-2 in omega for every member (symmetric third field-difference vanishes to \u003C= 1E-008), including the augmented-torsion members whose degree-0 A0 inhomogeneity and degree-1 free-kinetic part are recorded nonzero. Consequently the exact Hessian at every rank-1 background t*u is EXACTLY a degree-2 matrix polynomial H(t) = H0 \u002B t*H1 \u002B t^2*H2 (third t-difference of the exact Hessian vanishes to \u003C= 1E-008 on sampled elements), so the Phase436 no-log-saturation theorem EXTENDS to the entire toy family: no realizable toy completion can produce a dynamical scale at one loop. This holds because along a single-Lie-direction background every quadratic bracket [u,u] vanishes, making U(t*u) affine in t so H2 = J2^T J2 exactly, and A0 cancels from J2 = J(u)-J(0) so the growing-mode structure is A0-independent. On the honest count/runaway questions: the growing-mode COUNT is invariant across the entire family (only mass VALUES rescale); the hypercharge-axis runaway verdict (net negative for derived content) holds for EVERY family member. The control member (identity-shiab, trivial, A0=0) reproduces Phase436 exactly (counts 64/96; odd-in-t term vanishing for the lambda_8 Cartan direction and nonzero for the lambda_4 root direction). The draft\u0027s canonical physical Shiab (Sigma_mc, draft Section 32.2: a background algebraic contraction K_{A0} of Ricci/Weyl type) is NOT realizable on the 2D toy - it requires dimX \u003E= 4 and a metric-spinor (Cl(7,7)/128) invariant basis, as MetricScaledShiabOperator\u0027s own comment records - so the terminal frontier statement holds: the scale gap requires structure beyond the toy family (a dimX\u003E=4 spinor-realized Shiab or a source anchor). Everything is toy-family structure recorded blind against the workbench polarization/fermion-count convention; no scale, pole, or GeV lineage exists; no Phase201 or Phase256 field is filled; nothing is promoted."
+  "decision": "Do not use the family-universality verdicts until the precursors, carrier-match, control cross-anchor, inhomogeneity, and degree/decomposition batteries pass."
 }

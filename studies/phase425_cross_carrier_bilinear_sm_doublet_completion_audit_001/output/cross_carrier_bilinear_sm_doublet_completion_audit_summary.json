@@ -1,12 +1,12 @@
 {
   "phaseId": "phase425-cross-carrier-bilinear-sm-doublet-completion-audit",
-  "generatedAt": "2026-07-09T21:19:31.8785822+00:00",
-  "terminalStatus": "cross-carrier-bilinear-welded-scalar-sm-doublet-absent-bilinear-layer-closed",
-  "crossCarrierBilinearSmDoubletCompletionAuditPassed": true,
-  "phase416PrecursorPassed": true,
-  "phase417PrecursorPassed": true,
-  "phase422PrecursorPassed": true,
-  "phase424PrecursorPassed": true,
+  "generatedAt": "2026-07-10T22:17:59.8866646+00:00",
+  "terminalStatus": "cross-carrier-bilinear-sm-doublet-completion-audit-blocked",
+  "crossCarrierBilinearSmDoubletCompletionAuditPassed": false,
+  "phase416PrecursorPassed": false,
+  "phase417PrecursorPassed": false,
+  "phase422PrecursorPassed": false,
+  "phase424PrecursorPassed": false,
   "applicationSubjectKind": "cross-carrier-bilinear-sm-doublet-completion-audit",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
@@ -120,7 +120,7 @@
   "zlslRealifiedCapacity": 52,
   "weightClassLeakageResidual": 1.5069676712606487E-10,
   "classKernelMaxResidual": 1.5056170625760313E-15,
-  "projectorIdempotencyResidual": 6.083853997332041E-15,
+  "projectorIdempotencyResidual": 6.575190200120342E-15,
   "gramHermiticityResidual": 3.272664257647495E-16,
   "casimirGridMaxJ": 7,
   "statisticsProjectionApplied": false,
@@ -195,7 +195,7 @@
   "allNonzeroChannelsSmDoubletAbsent": true,
   "mirrorSectorRepresentationIdenticalToObservedSector": true,
   "mirrorChannelsTransferFromDecidedChannels": true,
-  "bilinearCompositeLayerClosedOnAllSourcePinnedCarriers": true,
+  "bilinearCompositeLayerClosedOnAllSourcePinnedCarriers": false,
   "analysisInternallyConsistent": true,
   "sourceDefinesCrossCarrierProjectionMap": false,
   "sourceDefinesCrossCarrierAction": false,
@@ -241,5 +241,5 @@
     "No bosonic projection map, action, VEV selection, observed-field rows, weak-angle lineage, pole extraction, or GeV normalization is supplied by any reviewed source.",
     "No Phase201 or Phase256 fill."
   ],
-  "decision": "The bilinear composite layer is now decided on the COMPLETE source-pinned carrier menu. The Q_{3/2} carrier is constructed exactly (6 = gamma-traceless remainder in 4 x 2 = 2 \u002B 6, A4 A4^dag = 4I exact, welded content (1/2,1)/(1,1/2) exact) and has no linear welded scalar. Every mixed-parity cross-carrier bilinear channel has exactly zero welded-scalar capacity by character arithmetic; every same-parity channel (Z x S, Q x Q, Q x S, Q x Z) has nonzero capacity but ZERO SM-doublet content by the ambient intersection, with top Gram eigenvalues far below 1. Mirror-sector channels transfer from decided channels by representation identity. Combined with Phases 409/411/412/422/424, NO BILINEAR COMPOSITE OF ANY SOURCE-PINNED CARRIER PAIR CARRIES A WELDED-SCALAR SM-DOUBLET. No source supplies a bosonic projection map, action, VEV selection, observed rows, weak-angle lineage, pole extraction, or GeV normalization; no Phase201 or Phase256 field is filled."
+  "decision": "Do not use the cross-carrier bilinear completion audit until the precursor and consistency batteries pass."
 }

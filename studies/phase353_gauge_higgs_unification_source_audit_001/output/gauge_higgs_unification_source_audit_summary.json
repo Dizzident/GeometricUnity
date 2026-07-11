@@ -1,7 +1,7 @@
 {
   "phaseId": "phase353-gauge-higgs-unification-source-audit",
-  "terminalStatus": "gauge-higgs-unification-source-audit-geometric-hosotani-lead-not-gu-source",
-  "gaugeHiggsUnificationSourceAuditPassed": true,
+  "terminalStatus": "gauge-higgs-unification-source-audit-review-required",
+  "gaugeHiggsUnificationSourceAuditPassed": false,
   "gaugeHiggsUnificationLeadPresent": true,
   "gaugeHiggsUnificationPrimarySourcesReviewed": true,
   "gaugeHiggsUnificationRouteExternalToGu": true,
@@ -74,10 +74,10 @@
     "kkInternalSymmetryAuditPassed": true,
     "kkRoutePromotesWzMasses": false,
     "kkRoutePromotesHiggsMass": false,
-    "scherkSchwarzAuditPassed": true,
+    "scherkSchwarzAuditPassed": false,
     "scherkRoutePromotesWzMasses": false,
     "scherkRoutePromotesHiggsMass": false,
-    "higgslessBoundaryAuditPassed": true,
+    "higgslessBoundaryAuditPassed": false,
     "higgslessRoutePromotesWzMasses": false,
     "higgslessRoutePromotesHiggsMass": false
   },

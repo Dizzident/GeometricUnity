@@ -1,11 +1,11 @@
 {
   "phaseId": "phase430-net-one-loop-direction-selection-probe",
-  "generatedAt": "2026-07-09T21:19:33.8462726+00:00",
-  "terminalStatus": "net-one-loop-direction-selective-hypercharge-axis-preferred-no-scale-law",
-  "netOneLoopDirectionSelectionProbePassed": true,
-  "phase404PrecursorPassed": true,
-  "phase410PrecursorPassed": true,
-  "phase428PrecursorPassed": true,
+  "generatedAt": "2026-07-10T22:18:02.0130322+00:00",
+  "terminalStatus": "net-one-loop-direction-selection-probe-blocked",
+  "netOneLoopDirectionSelectionProbePassed": false,
+  "phase404PrecursorPassed": false,
+  "phase410PrecursorPassed": false,
+  "phase428PrecursorPassed": false,
   "applicationSubjectKind": "net-one-loop-direction-selection-probe",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
@@ -314,5 +314,5 @@
     "The direction selection is matter-content dependent (adjoint fermions flip it to the T/D block), so it is a structural observation about the competition, not a promotion.",
     "No Phase201 or Phase256 fill."
   ],
-  "decision": "The net one-loop functional W(t) = W_B(t) \u002B W_F(t) along constant rank-1 rays is direction-selective, and the selection is matter-content dependent. Bosonic and fermionic log slopes have opposite signs (bosonic T/D \u002B192, S \u002B128; fermionic fund T/D -128, S -192), so the net large-t slope is a genuine competition. For fundamental-3 fermions the net T/D slope is \u002B64 (CONFINED, rising) while the singlet/hypercharge axis carries the unique negative slope -64: the su(3)-\u003Esu(2)xu(1) breaking direction is the steepest descent. For adjoint-8 fermions the selection FLIPS (T/D -192 steeper than S -128). For the Phase404-derived content (the 16 read as 4 triplet-type reps \u002B 4 su(3) singlets = 4 copies of the fundamental) the net slopes are T/D -320 and S -640, so the hypercharge axis is again the steepest descent - though BOTH directions are unbounded, so \u0027selected\u0027 means steepest-descent direction, not a stabilized minimum. Every ray is a log runaway: there is NO finite minimum and hence NO scale law. The bosonic side is a recorded workbench model (only the mode-count arithmetic is exact; tying the masses to the actual control-branch Hessian is named future work). No target value is consulted; no Phase201 or Phase256 field is filled; nothing is promoted."
+  "decision": "Do not use the net one-loop direction-selection verdicts until the precursor and consistency batteries pass."
 }

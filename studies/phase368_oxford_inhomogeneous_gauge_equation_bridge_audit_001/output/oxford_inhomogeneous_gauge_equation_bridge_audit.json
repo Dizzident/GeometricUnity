@@ -1,7 +1,7 @@
 {
   "phaseId": "phase368-oxford-inhomogeneous-gauge-equation-bridge-audit",
-  "terminalStatus": "oxford-inhomogeneous-gauge-equation-bridge-audit-scaffold-not-source-law",
-  "oxfordInhomogeneousGaugeEquationBridgeAuditPassed": true,
+  "terminalStatus": "oxford-inhomogeneous-gauge-equation-bridge-audit-review-required",
+  "oxfordInhomogeneousGaugeEquationBridgeAuditPassed": false,
   "officialOxfordTranscriptReviewed": true,
   "officialOxfordTranscriptIsPrimaryGuLectureSource": true,
   "officialOxfordPowerpointSectionsAvailable": true,
@@ -119,13 +119,13 @@
     },
     {
       "CheckId": "official-draft-and-theta-omega-boundaries-remain-binding",
-      "Passed": true,
-      "Detail": "p313Passed=True; p313PhotonZ=False; p313WeakAngle=False; p323Passed=True; p323Vev=False; p323Coupling=False; p323Observed=False; p331Passed=True; p331DirectBridge=False; p331Rows=False; p331Vev=False"
+      "Passed": false,
+      "Detail": "p313Passed=True; p313PhotonZ=False; p313WeakAngle=False; p323Passed=True; p323Vev=False; p323Coupling=False; p323Observed=False; p331Passed=False; p331DirectBridge=False; p331Rows=False; p331Vev=False"
     },
     {
       "CheckId": "phase367-current-availability-boundary-remains-binding",
-      "Passed": true,
-      "Detail": "p367Passed=True; oxfordEquations=True; thetaOmegaEquation=False; wzLaw=False; higgsLaw=False; publicEquation=False"
+      "Passed": false,
+      "Detail": "p367Passed=False; oxfordEquations=True; thetaOmegaEquation=False; wzLaw=False; higgsLaw=False; publicEquation=False"
     },
     {
       "CheckId": "phase213-and-phase256-blocker-state-preserved",
@@ -150,14 +150,14 @@
     "officialPublicSourcesProvideHiggsScalarSelfCouplingSource": false,
     "coupledYangMillsHiggsRoutePromotesWzMasses": false,
     "coupledYangMillsHiggsRoutePromotesHiggsMass": false,
-    "thetaOmegaInhomogeneousGaugeSourceAuditPassed": true,
+    "thetaOmegaInhomogeneousGaugeSourceAuditPassed": false,
     "thetaOmegaInhomogeneousGaugeRouteGuNative": true,
     "thetaOmegaRouteProvidesDirectTargetIndependentWzBridgeSourceLaw": false,
     "thetaOmegaRouteProvidesSeparateWzSourceRows": false,
     "thetaOmegaRouteProvidesTargetIndependentVevSource": false,
     "thetaOmegaRoutePromotesWzMasses": false,
     "thetaOmegaRoutePromotesHiggsMass": false,
-    "thetaOmegaSourceEquationAvailabilityAuditPassed": true,
+    "thetaOmegaSourceEquationAvailabilityAuditPassed": false,
     "officialOxfordTranscriptInhomogeneousGaugeEquationsAvailable": true,
     "phase367OfficialOxfordTranscriptProvidesThetaOmegaEquation": false,
     "phase367OfficialOxfordTranscriptProvidesDirectWzMassLaw": false,

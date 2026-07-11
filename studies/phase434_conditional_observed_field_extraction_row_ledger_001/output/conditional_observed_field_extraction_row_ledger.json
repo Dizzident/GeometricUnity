@@ -1,11 +1,11 @@
 {
   "phaseId": "phase434-conditional-observed-field-extraction-row-ledger",
-  "generatedAt": "2026-07-09T21:19:57.4756693+00:00",
-  "terminalStatus": "conditional-observed-field-extraction-row-ledger-materialized-vev-and-lineage-still-missing",
-  "conditionalObservedFieldExtractionRowLedgerPassed": true,
-  "phase404PrecursorPassed": true,
-  "phase419PrecursorPassed": true,
-  "phase429PrecursorPassed": true,
+  "generatedAt": "2026-07-10T22:18:26.6144355+00:00",
+  "terminalStatus": "conditional-observed-field-extraction-row-ledger-blocked",
+  "conditionalObservedFieldExtractionRowLedgerPassed": false,
+  "phase404PrecursorPassed": false,
+  "phase419PrecursorPassed": false,
+  "phase429PrecursorPassed": false,
   "applicationSubjectKind": "conditional-observed-field-extraction-row-ledger",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
@@ -341,5 +341,5 @@
     "Absolute W/Z masses and all pole/GeV/scheme/Higgs-potential lineage remain outside this phase.",
     "No Phase201 or Phase256 fill."
   ],
-  "decision": "The Phase419 extraction targets are now explicit as exact functions of a candidate doublet VEV. From the internal kernel relation tan^2 theta_W = 3/5 alone, the |D_mu Phi|^2 mass matrix in the (W1,W2,W3,B) basis has eigenvalues (v^2/4){g^2,g^2,g^2\u002BgPrime^2,0}, giving a massless photon and m_W^2/m_Z^2 = cos^2 = 5/8 exactly (cross-checked against Phase429). The photon A = (sqrt6/4)W3 \u002B (sqrt10/4)B, Z = (sqrt10/4)W3 - (sqrt6/4)B, W\u002B- = (W1 -\u002B i W2)/sqrt(2), and e = g sin (e^2 = (3/8)g^2) are recorded with exact radical coefficients verified to 1e-15. Against the 20-field Phase419 template: 7 fields are now conditionally determined by these rows given any doublet VEV, 4 still require the VEV amplitude/scale for absolute masses, and 9 still require independent lineage (pole extraction, GeV normalization, running/scheme, Higgs potential). The candidate VEV\u0027s existence is not established and no measured value was consulted, so no Phase201 or Phase256 field is filled."
+  "decision": "Do not use the conditional extraction row ledger until the precursor, exact-arithmetic, and classification batteries pass."
 }

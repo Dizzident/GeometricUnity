@@ -1,11 +1,11 @@
 {
   "phaseId": "phase411-quartic-dirac-squared-spinor-composite-probe",
-  "generatedAt": "2026-07-09T21:07:13.1520357+00:00",
-  "terminalStatus": "spinor-bilinear-channels-carry-no-welded-scalar-sm-doublet",
-  "quarticDiracSquaredSpinorCompositeProbePassed": true,
-  "phase409PrecursorPassed": true,
-  "phase410PrecursorPassed": true,
-  "probeInternallyConsistent": true,
+  "generatedAt": "2026-07-10T22:05:09.4440003+00:00",
+  "terminalStatus": "quartic-dirac-squared-spinor-composite-probe-blocked",
+  "quarticDiracSquaredSpinorCompositeProbePassed": false,
+  "phase409PrecursorPassed": false,
+  "phase410PrecursorPassed": false,
+  "probeInternallyConsistent": false,
   "chiralHalfIsSixteenDimensional": true,
   "chiralInvarianceResidual": 0,
   "weylHalvesAreTwoDimensional": true,
@@ -146,5 +146,5 @@
     "primaryDraft": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt (sections 9, 12; S_g(C) = S(V) x S(H*))",
     "heuristicContext": "docs/Reference/ExperimentReferences/DEEP-RESEARCH-20260612.md (\u0027quartic Higgs piece\u0027 from \u0027Dirac squaring of a quadratic\u0027, dating plausible-unverified) and TOE-GU-40YEARS-20250602.md (\u0027a VEV in a Dirac-like operator\u0027)"
   },
-  "decision": "The Dirac-squared composite route is machine-characterized at its natural (bilinear) channel level. The welded branching of the internal 16 and the chiral carriers is exact, and the channel theorem follows: the DIRAC MASS / YUKAWA CHANNEL (S_L x S_R) - exactly where the SM Higgs couples - contains NO welded-scalar at all (its welded content pairs (integer, half-integer) against (half-integer, integer) types, so no singlet can form); whatever welded scalars exist live in the MAJORANA-type channels, and the SM-stable analysis of that sector finds NO SM-doublet pattern there either. CONSEQUENCE: a \u0027VEV in a Dirac-like operator coupling two chiral halves\u0027 cannot be a welded spacetime SCALAR on this chain\u0027s bilinear channels - the curvature-coaxing and Dirac-squared heuristics, in their composite readings, are now CLOSED through bilinear order alongside the Phase409 frame-cross closure. The quartic SM-stable analysis (the spin-0 counts are recorded by character arithmetic) and the draft\u0027s unobserved-phase fields remain the named open routes, along with a noncompact-real-form evasion (the Nguyen-Polya complexification caveat is carried: all arithmetic here is complex/compact). Nothing is promoted; no contract field is filled."
+  "decision": "Do not use the channel characterization until the precursors and the exactness battery pass."
 }

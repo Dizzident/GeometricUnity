@@ -1,12 +1,12 @@
 {
   "phaseId": "phase448-torus-mode-volume-saturation-probe",
-  "generatedAt": "2026-07-09T23:33:36.6105097+00:00",
-  "terminalStatus": "torus-mode-volume-saturation-probe-passed-no-saturation-persists-across-mode-volumes-frontier-sharpened",
-  "torusModeVolumeSaturationProbePassed": true,
-  "phase443PrecursorPassed": true,
-  "phase444PrecursorPassed": true,
-  "phase447PrecursorPassed": true,
-  "precursorsPassed": true,
+  "generatedAt": "2026-07-11T00:32:13.1767424+00:00",
+  "terminalStatus": "torus-mode-volume-saturation-probe-blocked",
+  "torusModeVolumeSaturationProbePassed": false,
+  "phase443PrecursorPassed": false,
+  "phase444PrecursorPassed": false,
+  "phase447PrecursorPassed": false,
+  "precursorsPassed": false,
   "applicationSubjectKind": "torus-mode-volume-saturation-probe",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
@@ -53,7 +53,7 @@
     "irConvention": "exact zero modes excluded at zeroTol = max(absFloor, relTol*maxAbsEig); positive eigenvalues enter the one-loop log sum; negative modes recorded",
     "unlocksUsed": "lattice-canonical conventions (commit 82d43559) \u002B adjoint/joint-gradient path (commit 7a7e397d)"
   },
-  "modeVolumeVerdict": "no-saturation-persists-across-mode-volumes",
+  "modeVolumeVerdict": "blocked",
   "anySaturationAnyVolume": false,
   "volumeTrendSeedStable": true,
   "scaleIsWorkbenchRelativeCandidateOnly": true,
@@ -123,7 +123,7 @@
     }
   ],
   "batteries": {
-    "batteriesAllPassed": true,
+    "batteriesAllPassed": false,
     "orbitMapsOk": true,
     "covarianceBattery": true,
     "covarianceWorst": 1.4037391021161155E-14,
@@ -2388,7 +2388,7 @@
     "spinorUsedAsShiabCarrierNotFiber": true,
     "draft14dObserverseNotRealized": true
   },
-  "runtimeSeconds": 761.6997698,
+  "runtimeSeconds": 781.8417112,
   "physicalCouplingProvided": false,
   "routeProvidesPhysicalEffectiveActionHessian": false,
   "routeProvidesVevOrSourceScaleLineage": false,
@@ -2424,5 +2424,5 @@
     "A saturation observation, where stable, is a workbench-relative CANDIDATE only; a no-saturation result sharpens the frontier. Neither promotes anything.",
     "No VEV scale, pole, or GeV lineage; no Phase201 or Phase256 contract field is filled; the reduced slice does not realize the ambient 7,7 / internal gauge / weld content."
   ],
-  "decision": "The torus mode-volume saturation probe is decided on internal consistency, answering the question Phase444 left undetermined-tooling-blocked using BOTH unlock projects. On lattice-canonical tori n in {3,4} (joint DOF 3888, 12288) with translation-INVARIANT unit rays (shared per-type coefficients across volumes, 2 seeds), the joint (omega,theta) Hessian is block-circulant and its EXACT spectrum was obtained from 48 orbit-representative Hessian-vector products per point via momentum decomposition. BATTERIES: S_B translation covariance worst 1.40E-014 \u003C= 1E-010 (every member, every torus); objective consistency 1.35E-014; analytic-vs-FD gradient 8.79E-010; identity theta-independence 3.01E-017; block reconstruction (H*v via translated columns vs direct Hv) 2.93E-011 \u003C= 1E-004; trace consistency 1.73E-001 (recorded; stochastic-diagonal comparator); theta* projected-Newton relative residual worst 5.46E-004 with FULL-gradient equivariance worst 5.30E-005 \u003C= 1E-008. MODE-VOLUME VERDICT: no-saturation-persists-across-mode-volumes (per-volume Einsteinian classifications: n=3: trivial-origin,trivial-origin; n=4: trivial-origin,trivial-origin; seed-stable True). RECORDED CONVENTION: invariant rays differ from Phase443\u0027s random open-mesh rays -- the controlled comparison is the TREND ACROSS TORI, not a direct numeric comparison to the 16-vertex values. MANDATORY FRAMING: workbench-relative structure data only (su(2) toy algebra, reduced Spin(4) slice, lattice units, one loop); NO GeV/pole/VEV promotion. Everything is target-blind; no Phase201/Phase256 contract field is filled; nothing is promoted."
+  "decision": "Do not use the mode-volume verdicts until the precursor, covariance, block-reconstruction, and theta batteries pass."
 }

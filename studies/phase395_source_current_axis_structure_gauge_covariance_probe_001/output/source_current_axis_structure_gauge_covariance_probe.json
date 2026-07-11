@@ -1,10 +1,10 @@
 {
   "phaseId": "phase395-source-current-axis-structure-gauge-covariance-probe",
-  "generatedAt": "2026-07-09T21:05:42.1361562+00:00",
-  "terminalStatus": "suppressed-axis-shown-gauge-covariant-not-canonical-namespace-map-must-be-gauge-invariant",
-  "sourceCurrentAxisStructureGaugeCovarianceProbePassed": true,
-  "phase393PrecursorPassed": true,
-  "phase394PrecursorPassed": true,
+  "generatedAt": "2026-07-10T22:03:34.0906132+00:00",
+  "terminalStatus": "source-current-axis-structure-gauge-covariance-probe-blocked",
+  "sourceCurrentAxisStructureGaugeCovarianceProbePassed": false,
+  "phase393PrecursorPassed": false,
+  "phase394PrecursorPassed": false,
   "probeInternallyConsistent": true,
   "globalGaugeCovarianceVerified": true,
   "suppressedAxisIsGaugeCovariantNotCanonical": true,
@@ -202,5 +202,5 @@
     "phase12Root": "studies/phase12_joined_calculation_001/output/background_family",
     "backgroundStateDir": "studies/phase12_joined_calculation_001/output/background_family/background_states"
   },
-  "decision": "The axis structure of the fermionic source currents and the carrier response image is now explained structurally. The background omega is the symmetric ansatz (second-moment matrix nearly rank-1 along (1,1,1)/sqrt(3)), and the basis-invariant per-edge block Gram T = sum_e T_e has a suppressed direction whose geometry is recorded relative to the coordinate axis e_1 and the omega invariant axis. Decisively, the discrete model is EXACTLY equivariant under global gauge rotations: rotating the background (D\u0027 = D - delta_D[omega] \u002B delta_D[R omega], constructible from persisted artifacts by exact linearity) leaves the fermion shell spectrum invariant at machine precision and transforms the block Gram covariantly, T\u0027 = R T R^T. The suppressed axis is therefore GAUGE-COVARIANT, NOT CANONICAL: it is a property of the background presentation\u0027s gauge frame, and rotating the frame rotates the suppressed axis. Consequence for the namespace program: no target-blind canonical photon/W/Z/H namespace map can be built from raw carrier axes; any defensible map must use gauge-invariant data (e.g., components relative to the omega invariant axis), which strengthens the Phase385 missing-namespace-map boundary with a constructive reason. No namespace map, axis selector, or Phase201/Phase256 contract field is provided."
+  "decision": "Do not use the axis-structure conclusions until the Phase393/394 precursors, dense solve convergence, omega-ansatz characterization, and exact covariance checks all pass."
 }

@@ -1,11 +1,11 @@
 {
   "phaseId": "phase418-direction-dependent-curvature-vev-coupling-scan",
-  "generatedAt": "2026-07-09T21:11:34.0208285+00:00",
-  "terminalStatus": "direction-dependent-curvature-couplings-can-select-doublet-only-with-extra-source-law",
-  "directionDependentCurvatureVevCouplingScanPassed": true,
-  "phase405PrecursorPassed": true,
-  "phase410PrecursorPassed": true,
-  "phase417PrecursorPassed": true,
+  "generatedAt": "2026-07-10T22:09:57.1098233+00:00",
+  "terminalStatus": "direction-dependent-curvature-vev-coupling-scan-blocked",
+  "directionDependentCurvatureVevCouplingScanPassed": false,
+  "phase405PrecursorPassed": false,
+  "phase410PrecursorPassed": false,
+  "phase417PrecursorPassed": false,
   "applicationSubjectKind": "direction-dependent-curvature-vev-coupling-scan",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
@@ -63,7 +63,7 @@
   "directionDependentAnsatzIsResidualGaugeInvariantOnly": true,
   "pureQuadraticCandidateCount": 9,
   "pureQuadraticFiniteVevCandidateCount": 0,
-  "pureQuadraticDirectionDependentCouplingsStillRunAway": true,
+  "pureQuadraticDirectionDependentCouplingsStillRunAway": false,
   "stabilizedLandauMenuCandidateCount": 9,
   "stabilizedCandidateSelectsDoubletCount": 5,
   "nonTautologicalDoubletSelectorCount": 4,
@@ -518,5 +518,5 @@
     "phase417SummaryPath": "studies/phase417_vector_spinor_144_decomposition_probe_001/output/vector_spinor_144_decomposition_probe_summary.json",
     "motivatingPromptBranch": "docs/BOSON_PREDICTION_AGENT_RESTART_PROMPT.md: direction-dependent curvature/VEV coupling scan"
   },
-  "decision": "The direction-dependent curvature branch is now characterized at the minimal block-isotypic level. Residual su(2)\u002Bu(1)-invariant block projectors exist and stabilized Landau-style block weights can select the doublet in target-blind algebraic menus, so the branch is not mathematically empty. However, pure direction-dependent quadratic curvature terms still run away on the Phase405/410 rank-1 flat rays, and every finite-VEV selector in the stabilized menu imports an extra block mass law plus an extra quartic stabilizer. The current GU sources define neither the direction-dependent curvature kernel nor its sign, scale, stabilizer, VEV amplitude, observed-field rows, weak-angle lineage, pole extraction, or GeV normalization. This phase therefore materializes the exact source-law shape needed for progress, but fills no Phase201 or Phase256 field and promotes no W/Z/H mass."
+  "decision": "Do not use the scan until the precursor, projector, and fail-closed checks pass."
 }

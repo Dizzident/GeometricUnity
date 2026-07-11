@@ -1,8 +1,8 @@
 {
   "phaseId": "phase339-macdowell-mansouri-cartan-breaking-source-audit",
-  "terminalStatus": "macdowell-mansouri-cartan-breaking-source-audit-external-gauge-breaking-lead-not-gu-source",
-  "generatedAt": "2026-07-09T21:04:27.3678548+00:00",
-  "macdowellMansouriCartanSourceAuditPassed": true,
+  "terminalStatus": "macdowell-mansouri-cartan-breaking-source-audit-review-required",
+  "generatedAt": "2026-07-10T22:02:04.6337241+00:00",
+  "macdowellMansouriCartanSourceAuditPassed": false,
   "macdowellMansouriCartanLeadPresent": true,
   "macdowellMansouriPrimarySourcesReviewed": true,
   "macdowellMansouriRouteExternalToGu": true,
@@ -101,8 +101,8 @@
     },
     {
       "CheckId": "related-route-boundaries-preserved",
-      "Passed": true,
-      "Detail": "distinctFromTorsion=True; overlapsGraviweak=True; graviweakAudit=True; graviweakPromotesWz=False; graviweakPromotesHiggs=False; torsionAudit=True; torsionCompletes=False"
+      "Passed": false,
+      "Detail": "distinctFromTorsion=True; overlapsGraviweak=True; graviweakAudit=True; graviweakPromotesWz=False; graviweakPromotesHiggs=False; torsionAudit=False; torsionCompletes=False"
     },
     {
       "CheckId": "macdowell-route-requires-missing-gu-source-data",

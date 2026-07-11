@@ -1,12 +1,12 @@
 {
   "phaseId": "phase436-exact-hessian-saturation-no-go-probe",
-  "generatedAt": "2026-07-09T21:19:59.2050972+00:00",
-  "terminalStatus": "exact-control-branch-hessian-grows-exactly-as-tsquared-no-log-saturation-scale-gap-pinned-beyond-control-branch",
-  "exactHessianSaturationNoGoProbePassed": true,
-  "phase405PrecursorPassed": true,
-  "phase430PrecursorPassed": true,
-  "phase435PrecursorPassed": true,
-  "precursorsPassed": true,
+  "generatedAt": "2026-07-10T22:18:28.3808529+00:00",
+  "terminalStatus": "exact-hessian-saturation-no-go-probe-blocked",
+  "exactHessianSaturationNoGoProbePassed": false,
+  "phase405PrecursorPassed": false,
+  "phase430PrecursorPassed": false,
+  "phase435PrecursorPassed": false,
+  "precursorsPassed": false,
   "applicationSubjectKind": "exact-hessian-saturation-no-go-probe",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
@@ -67,7 +67,7 @@
   },
   "exactHessianMassesGrowExactlyAsTSquared": true,
   "logSaturationImpossibleFromExactControlBranchHessianAtOneLoop": true,
-  "scaleGapPinnedBeyondControlBranch": true,
+  "scaleGapPinnedBeyondControlBranch": false,
   "analysisInternallyConsistent": true,
   "growingModeStructure": [
     {
@@ -142,7 +142,7 @@
   "maxExactA2Eigenvalue": 0.2708875332214334,
   "maxWorkbenchMass": 0.9999999999999999,
   "workbenchFidelityNote": "The exact growing-mode counts (positive eigenvalues of the t^2 mass term A2 = J2^T J2) are 64 (lambda_8-type) and 96 (lambda_4-type), factoring as rank(-(ad_u)^2) * 16 (= 4*16 and 6*16) with a single shared geometric multiplicity. The per-su(3)-direction counts therefore match the workbench -(ad_u)^2 nonzero counts (4 vs 6): Phase430\u0027s log-slope direction-selection arithmetic is confirmed under the exact control-branch Hessian. Mass VALUES differ (exact A2 eigenvalues are O(0.01..0.3); workbench -(ad_u)^2 eigenvalues are O(0.25..1)); the workbench model is a recorded convention and only counts entered Phase430\u0027s verdicts.",
-  "runtimeSeconds": 0.3818108,
+  "runtimeSeconds": 0.3298299,
   "exactHessianIsCandidateOnlyStructure": true,
   "physicalCouplingProvided": false,
   "routeProvidesPhysicalMassPsiCompatibleBranch": false,
@@ -180,5 +180,5 @@
     "The no-log-saturation result is a statement about the EXACT control-branch one-loop Hessian; a finite scale requires structure beyond the control branch (a physical VO-6/VO-7 completion or a source anchor) that no reviewed source defines.",
     "No VEV scale, pole, or GeV lineage; no Phase201 or Phase256 fill; no physical predictions."
   ],
-  "decision": "The Phase435 tie-in is decided against the TRUE control-branch Hessian. On the trivial-torsion identity-Shiab branch at A0 = 0 the residual Upsilon = d omega \u002B (1/2)[omega wedge omega] is exactly degree-2 in omega (verified: the third field-difference of Upsilon vanishes; the mixed second difference is step-size invariant). Its linear part is L = d, the free Yang-Mills kinetic operator, which is nonzero in general but annihilates closed forms - which is exactly why the exact-1-form rank-1 backgrounds stay flat (S_B(t*u) = 0). Consequently the exact Hessian at a rank-1 background t*u is EXACTLY a degree-2 matrix polynomial in t, H(t) = A0 \u002B t*A1 \u002B t^2*A2 with NOTHING beyond t^2: on 200 sampled matrix elements per direction the third t-difference vanishes to relative residual \u003C= 1e-8. A0 = H(0) is the background-independent free-kinetic Hessian; A2 is the quadratic-in-background mass term. The linear-in-t (odd) term A1 is recorded honestly: it VANISHES for the lambda_8-type Cartan/hypercharge background and is NONZERO for the lambda_4-type root background (a genuine covariant cross term, not a defect). CONSEQUENCE (the headline): asymptotically H(t) -\u003E t^2*A2, so the growing Hessian masses^2 scale EXACTLY as t^2, the bosonic one-loop grows exactly logarithmically in the background amplitude, and NO LOG-SATURATION can arise from the exact control-branch Hessian at one loop - the Phase435 scale gap is pinned to structure BEYOND the control branch, not to workbench modeling. On workbench fidelity: the exact growing-mode counts (positive eigenvalues of A2) are 64 (lambda_8-type) and 96 (lambda_4-type), which factor EXACTLY as rank(-(ad_u)^2) * 16 with a single shared geometric multiplicity (64 = 4*16, 96 = 6*16). The per-su(3)-direction counts therefore equal the workbench -(ad_u)^2 nonzero counts (4 vs 6), and Phase430\u0027s log-slope direction-selection arithmetic is CONFIRMED under the exact control-branch Hessian; only the mass VALUES differ (the workbench model is a recorded convention, and only counts entered Phase430\u0027s verdicts). Everything is control-branch structure recorded blind; no scale, pole, or GeV lineage exists; no Phase201 or Phase256 field is filled; nothing is promoted."
+  "decision": "Do not use the exact-Hessian no-go verdicts until the precursors and the decomposition/degree-two/flatness batteries pass."
 }

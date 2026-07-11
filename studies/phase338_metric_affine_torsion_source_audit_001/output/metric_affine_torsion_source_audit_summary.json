@@ -1,7 +1,7 @@
 {
   "phaseId": "phase338-metric-affine-torsion-source-audit",
-  "terminalStatus": "metric-affine-torsion-source-audit-external-ewsb-lead-not-gu-source",
-  "metricAffineTorsionSourceAuditPassed": true,
+  "terminalStatus": "metric-affine-torsion-source-audit-review-required",
+  "metricAffineTorsionSourceAuditPassed": false,
   "metricAffineTorsionLeadPresent": true,
   "metricAffineTorsionPrimarySourcesReviewed": true,
   "metricAffineTorsionRouteExternalToGu": true,

@@ -1,11 +1,11 @@
 {
   "phaseId": "phase431-lambda8-background-doublet-reopening-probe",
-  "generatedAt": "2026-07-09T21:19:34.3451661+00:00",
-  "runtimeSeconds": 0.2316588,
-  "terminalStatus": "lambda8-background-reopens-td-distinction-and-induces-doublet-block-mass-law-candidate-only",
-  "lambda8BackgroundDoubletReopeningProbePassed": true,
-  "phase428PrecursorPassed": true,
-  "phase418PrecursorPassed": true,
+  "generatedAt": "2026-07-10T22:18:02.5639448+00:00",
+  "runtimeSeconds": 0.2467124,
+  "terminalStatus": "lambda8-background-doublet-reopening-probe-blocked",
+  "lambda8BackgroundDoubletReopeningProbePassed": false,
+  "phase428PrecursorPassed": false,
+  "phase418PrecursorPassed": false,
   "applicationSubjectKind": "lambda8-background-doublet-reopening-probe",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
@@ -806,5 +806,5 @@
     "The gauge/boson non-analyticity on the triplet direction is the phase428 massless-mode log runaway of the probe itself; the doublet gapping is the new background effect.",
     "No Phase201 or Phase256 fill; nothing is promoted."
   ],
-  "decision": "A constant lambda_8 background omega_bg = t8*(lambda_8/2) reopens the triplet-vs-doublet distinction that Phase428 proved is exactly degenerate for any su(3)-invariant fermion sector. The mechanism is transparent: [lambda_8, T-axes] = 0 (the background leaves the triplet unbroken) while [lambda_8, D-axes] != 0 (it breaks the doublet). On the recorded 4x4 naive-Dirac workbench the one-loop potentials, exactly degenerate at t8 = 0 (residual \u003C= 1e-9), split by O(10-100) once t8 \u003E 0. The background induces a genuine BLOCK-DEPENDENT MASS LAW: the small-t quadratic coefficient of the fermion one-loop potential is POSITIVE on the triplet probe and NEGATIVE on the doublet probe (opposite signs, both finite and h-stable in the fundamental rep), and in the gauge/boson sector the doublet direction is gapped (analytic finite quadratic) while the triplet retains probe-Higgsed massless-to-massive modes (non-analytic log runaway). This is exactly the kind of direction-dependent quadratic structure Phase418 had to import by hand - but t8 is a RECORDED CANDIDATE BACKGROUND PARAMETER, not a dynamically derived scale (deriving it is the Phase430 chain\u0027s job). No scale law is produced, no target value is consulted, and no Phase201 or Phase256 field is filled."
+  "decision": "Do not use the reopening verdicts until the precursor and consistency batteries pass."
 }

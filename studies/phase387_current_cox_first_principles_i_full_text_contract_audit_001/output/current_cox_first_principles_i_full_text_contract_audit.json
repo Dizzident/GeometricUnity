@@ -1,8 +1,8 @@
 {
   "phaseId": "phase387-current-cox-first-principles-i-full-text-contract-audit",
-  "terminalStatus": "current-cox-first-principles-i-full-text-scaffold-only-no-boson-contract",
-  "generatedAt": "2026-07-09T21:05:09.9340001+00:00",
-  "currentCoxFirstPrinciplesIFullTextContractAuditPassed": true,
+  "terminalStatus": "current-cox-first-principles-i-full-text-contract-review-required",
+  "generatedAt": "2026-07-10T22:02:53.9344983+00:00",
+  "currentCoxFirstPrinciplesIFullTextContractAuditPassed": false,
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
   "targetBlindConstructionHash": "1ddea9bebb3da39e1153486c5b0a2ec2bfda47ab8e248371db02740b69b1ad1d",
@@ -286,17 +286,17 @@
     "phase213WzMissingFieldCount": 15,
     "phase213HiggsMissingFieldCount": 14,
     "phase256Path": "studies/phase256_observed_field_extraction_intake_contract_001/output/observed_field_extraction_intake_contract_summary.json",
-    "phase256ContractMaterialized": true,
+    "phase256ContractMaterialized": false,
     "phase256RequiredFieldCount": 20,
     "phase256FilledRequiredFieldCount": 0,
     "phase256ObservedFieldExtractionContractPromotable": false,
     "phase385Path": "studies/phase385_observed_electroweak_namespace_map_intake_audit_001/output/observed_electroweak_namespace_map_intake_audit_summary.json",
-    "phase385NamespaceMapAuditPassed": true,
+    "phase385NamespaceMapAuditPassed": false,
     "phase385NoNamespaceMapCandidate": true,
     "phase385NoPhase256Candidate": true,
     "phase385NoPhase201Candidate": true,
     "phase386Path": "studies/phase386_current_cox_first_principles_i_source_delta_audit_001/output/current_cox_first_principles_i_source_delta_audit_summary.json",
-    "phase386SourceDeltaAuditPassed": true,
+    "phase386SourceDeltaAuditPassed": false,
     "phase386ScaffoldDeltaPresent": true,
     "phase386PromotableForBosonMasses": false,
     "phase386CompletesNamespaceMap": false,
@@ -333,17 +333,17 @@
     },
     {
       "checkId": "phase386-boundary-confirmed-by-full-text",
-      "passed": true,
-      "detail": "phase386Passed=True; phase386ScaffoldDeltaPresent=True; phase386Promotable=False"
+      "passed": false,
+      "detail": "phase386Passed=False; phase386ScaffoldDeltaPresent=True; phase386Promotable=False"
     },
     {
       "checkId": "observed-electroweak-namespace-map-still-missing",
-      "passed": true,
-      "detail": "phase385NamespaceMapAuditPassed=True; phase385NoNamespaceMapCandidate=True; fullTextObservedNamespaceMapFound=False"
+      "passed": false,
+      "detail": "phase385NamespaceMapAuditPassed=False; phase385NoNamespaceMapCandidate=True; fullTextObservedNamespaceMapFound=False"
     },
     {
       "checkId": "phase201-and-phase256-contracts-remain-unfilled",
-      "passed": true,
+      "passed": false,
       "detail": "phase201Promotable=False; wzMissing=15; higgsMissing=14; phase256Filled=0"
     },
     {
@@ -352,7 +352,7 @@
       "detail": "sourceContractApplicationAllowed=False; acceptedContractFieldCount=0; phase201TemplateMutated=False"
     }
   ],
-  "decision": "Treat the full text as scaffold-only evidence for boson work. The extracted PDF contains strong classical GU scaffold terms and open-layer markers, but no electroweak observed namespace map, W/Z source rows, Higgs scalar-source row, weak mixing or coupling lineage, pole extraction, or GeV normalization.",
+  "decision": "Review the full-text contract audit before relying on this source boundary.",
   "nextRequiredArtifact": [
     "A GU-native observed electroweak namespace map with photon/W/Z/H rows.",
     "A target-independent W/Z bridge-source theorem with separate W and Z source rows and stability sidecars.",

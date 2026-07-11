@@ -1,10 +1,10 @@
 {
   "phaseId": "phase403-adjoint-doublet-substructure-branching-probe",
-  "generatedAt": "2026-07-09T21:06:34.4530046+00:00",
-  "terminalStatus": "adjoint-doublet-substructure-exists-in-larger-adjoint-embedding-derived-ratio-mechanism-identified",
-  "adjointDoubletSubstructureBranchingProbePassed": true,
-  "phase397PrecursorPassed": true,
-  "phase402PrecursorPassed": true,
+  "generatedAt": "2026-07-10T22:04:31.0688044+00:00",
+  "terminalStatus": "adjoint-doublet-substructure-branching-probe-blocked",
+  "adjointDoubletSubstructureBranchingProbePassed": false,
+  "phase397PrecursorPassed": false,
+  "phase402PrecursorPassed": false,
   "probeInternallyConsistent": true,
   "su2AdjointIsPureTriplet": true,
   "su2AdjointHasNoDoubletBlock": true,
@@ -22,7 +22,7 @@
   "embeddingCosSquared": 0.25000000000000006,
   "doubletSubstructureExistsInLargerAdjoint": true,
   "couplingRatioLineageMechanismIdentified": true,
-  "toyBranchPhotonZUnderdeterminationExplained": true,
+  "toyBranchPhotonZUnderdeterminationExplained": false,
   "su3IsGuAlgebra": false,
   "physicalEmbeddingChainDerived": false,
   "physicalCouplingProvided": false,
@@ -141,5 +141,5 @@
     "structureConstantSource": "src/Gu.Math/LieAlgebraFactory.cs (CreateSu2WithTracePairing, CreateSu3)",
     "primaryDraftDictionary": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt (eq. 12.28)"
   },
-  "decision": "The Phase402 doublet-equivalent sub-gap is now machine-characterized at the algebra level, from the repo\u0027s own structure constants. (1) The su(2) adjoint is a pure j = 1 triplet with NO doublet block: the existing su(2)-only control branch CANNOT realize the doublet route, which explains the Phase397 photon/Z underdetermination at the algebra level - the toy algebra is too small. (2) The su(3) adjoint branches as 3_0 \u002B 1_0 \u002B 2_{\u002BY0} \u002B 2_{-Y0} under the canonical su(2) x u(1) subalgebra: doublet blocks DO exist inside larger adjoints (the gauge-Higgs-unification mechanism), so the GU route (Lie-algebra-valued scalar from a large algebra) is NOT structurally excluded - it requires the larger-algebra branching. (3) A VEV in the doublet block produces the SM-shaped custodial pattern EXACTLY (one massless neutral, T3-Y mixing, degenerate charged pair, custodial identity at machine precision), with the neutral mixing ratio tan^2(theta_emb) DERIVED from the embedding rather than input - a theorem-level, target-independent MECHANISM for the hypercharge/coupling-ratio lineage row. The derived toy value is recorded blind; su(3) is a study toy, NOT GU\u0027s algebra; the GU-specific embedding chain (spin(6,4)/su(3,2) -\u003E SM with its derived ratio), the vacuum-manifold selection of the doublet-block VEV, and the entire quantitative chain remain the open gaps. Nothing is promoted; no contract field is filled."
+  "decision": "Do not use the branching characterization until the precursors and the branching/custodial battery pass."
 }

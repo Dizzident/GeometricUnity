@@ -1,7 +1,7 @@
 {
   "phaseId": "phase369-weyl-conformal-sm-stueckelberg-source-audit",
-  "terminalStatus": "weyl-conformal-sm-stueckelberg-source-audit-external-template-not-source-law",
-  "weylConformalSmStueckelbergSourceAuditPassed": true,
+  "terminalStatus": "weyl-conformal-sm-stueckelberg-source-audit-review-required",
+  "weylConformalSmStueckelbergSourceAuditPassed": false,
   "weylConformalSmLeadPresent": true,
   "weylConformalSmPrimarySourceReviewed": true,
   "weylConformalSmRouteExternalToGu": true,
@@ -82,19 +82,19 @@
       "phase330WeylRoutePromotesHiggsMass": false
     },
     "phase343": {
-      "stueckelbergVectorMassSourceAuditPassed": true,
+      "stueckelbergVectorMassSourceAuditPassed": false,
       "stueckelbergRouteProvidesGaugeInvariantVectorMassMechanism": true,
       "stueckelbergRoutePromotesWzMasses": false,
       "stueckelbergRoutePromotesHiggsMass": false
     },
     "phase346": {
-      "nielsenPoleMassGaugeIndependenceSourceAuditPassed": true,
+      "nielsenPoleMassGaugeIndependenceSourceAuditPassed": false,
       "poleMassRouteProvidesPhysicalMassExtractionBoundary": true,
       "nielsenRoutePromotesWzMasses": false,
       "nielsenRoutePromotesHiggsMass": false
     },
     "phase368": {
-      "oxfordInhomogeneousGaugeEquationBridgeAuditPassed": true,
+      "oxfordInhomogeneousGaugeEquationBridgeAuditPassed": false,
       "phase368RouteProvidesBridgeEquationScaffold": true,
       "phase368RouteProvidesDirectTargetIndependentWzBridgeSourceLaw": false,
       "phase368RoutePromotesWzMasses": false,
@@ -131,18 +131,18 @@
     },
     {
       "checkId": "adjacent-weyl-and-stueckelberg-boundaries-remain-nonpromotional",
-      "passed": true,
-      "detail": "p330=True; p330External=True; p330PromotesWz=False; p330PromotesHiggs=False; p343=True; p343Mechanism=True; p343PromotesWz=False; p343PromotesHiggs=False"
+      "passed": false,
+      "detail": "p330=True; p330External=True; p330PromotesWz=False; p330PromotesHiggs=False; p343=False; p343Mechanism=True; p343PromotesWz=False; p343PromotesHiggs=False"
     },
     {
       "checkId": "observed-mass-extraction-boundary-remains-required",
-      "passed": true,
-      "detail": "p346=True; physicalBoundary=True; p346PromotesWz=False; p346PromotesHiggs=False; routePoleExtraction=False"
+      "passed": false,
+      "detail": "p346=False; physicalBoundary=True; p346PromotesWz=False; p346PromotesHiggs=False; routePoleExtraction=False"
     },
     {
       "checkId": "gu-native-bridge-boundary-remains-unfilled",
-      "passed": true,
-      "detail": "p368=True; p368Scaffold=True; p368DirectBridge=False; p368PromotesWz=False; guWeylEmbedding=False; guWzTheorem=False; directBridge=False"
+      "passed": false,
+      "detail": "p368=False; p368Scaffold=True; p368DirectBridge=False; p368PromotesWz=False; guWeylEmbedding=False; guWzTheorem=False; directBridge=False"
     },
     {
       "checkId": "weyl-conformal-route-does-not-fill-source-contracts",

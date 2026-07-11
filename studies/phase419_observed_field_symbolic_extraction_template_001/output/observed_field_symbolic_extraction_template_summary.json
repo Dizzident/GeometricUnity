@@ -1,13 +1,13 @@
 {
   "phaseId": "phase419-observed-field-symbolic-extraction-template",
-  "terminalStatus": "observed-field-symbolic-extraction-template-materialized-contract-unfilled",
-  "observedFieldSymbolicExtractionTemplatePassed": true,
+  "terminalStatus": "observed-field-symbolic-extraction-template-review-required",
+  "observedFieldSymbolicExtractionTemplatePassed": false,
   "applicationSubjectKind": "fms-dressing-field-observed-extraction-template",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
   "targetBlindConstructionHash": "8286124c3f1b0eff02a0e5a5154c315c85212220426b6561a3e1458efd2e4784",
   "symbolicTemplatePromotable": false,
-  "fmsDressingExternalTemplateSupport": true,
+  "fmsDressingExternalTemplateSupport": false,
   "fmsDressingExternalTemplatesPromotional": false,
   "symbolicMapRowCount": 8,
   "projectionRowCount": 4,
@@ -26,20 +26,20 @@
   "allPhase256FieldsMappedBySymbolicTemplate": true,
   "uncoveredPhase256FieldIds": [],
   "extraPhase256FieldIds": [],
-  "phase295CandidateScanPassed": true,
+  "phase295CandidateScanPassed": false,
   "phase295IntakeReadyCandidateCount": 0,
   "phase295AnyCandidateFillsContract": false,
   "phase317MassMatrixBridgePassed": true,
   "phase317ExternalDependencyMap": true,
   "phase317PromotesWzMasses": false,
   "phase317PromotesHiggsMass": false,
-  "phase344FmsPassed": true,
+  "phase344FmsPassed": false,
   "phase344FmsTemplate": true,
   "phase344PromotesObservedExtraction": false,
-  "phase365DressingPassed": true,
+  "phase365DressingPassed": false,
   "phase365ExternalTemplate": true,
   "phase365PromotesObservedExtraction": false,
-  "phase418Passed": true,
+  "phase418Passed": false,
   "phase418CanFillObserved": false,
   "sourceContractApplicationAllowed": false,
   "canFillPhase201WzContract": false,
@@ -59,18 +59,18 @@
     },
     {
       "checkId": "phase295-scan-preserves-no-intake-ready-artifact",
-      "passed": true,
-      "detail": "phase295Passed=True; intakeReady=0; anyFills=False"
+      "passed": false,
+      "detail": "phase295Passed=False; intakeReady=0; anyFills=False"
     },
     {
       "checkId": "fms-dressing-external-template-support-loaded",
-      "passed": true,
-      "detail": "support=True; promotional=False; p317ExternalDependency=True; fmsTemplate=True; dressingTemplate=True"
+      "passed": false,
+      "detail": "support=False; promotional=False; p317ExternalDependency=True; fmsTemplate=True; dressingTemplate=True"
     },
     {
       "checkId": "phase418-boundary-preserved",
-      "passed": true,
-      "detail": "phase418Passed=True; phase418CanFillObserved=False"
+      "passed": false,
+      "detail": "phase418Passed=False; phase418CanFillObserved=False"
     },
     {
       "checkId": "symbolic-map-covers-phase256-template",
@@ -93,7 +93,7 @@
       "detail": "targetBlind=True; consultedTargets=False; hashLength=64; promotable=False; canFillWz=False; canFillObserved=False; phase201Mutated=False; fieldsApplied=0"
     }
   ],
-  "decision": "The FMS/dressing-style observed-field map is now explicit as a target-blind symbolic template, but it supplies zero source-defined Phase256 fields and cannot promote W/Z/H predictions.",
+  "decision": "Review the symbolic extraction template before relying on it.",
   "nextRequiredArtifact": [
     "A GU-native scalar/doublet-equivalent carrier or dressing field derived from source geometry.",
     "A source-derived observed vacuum, electroweak embedding, weak-angle/coupling lineage, and quadratic mass operator.",

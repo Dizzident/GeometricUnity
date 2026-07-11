@@ -1,7 +1,7 @@
 {
   "phaseId": "phase340-bf-topological-mass-source-audit",
-  "terminalStatus": "bf-topological-mass-source-audit-external-topological-mass-lead-not-gu-source",
-  "bfTopologicalMassSourceAuditPassed": true,
+  "terminalStatus": "bf-topological-mass-source-audit-review-required",
+  "bfTopologicalMassSourceAuditPassed": false,
   "bfTopologicalMassLeadPresent": true,
   "bfTopologicalPrimarySourcesReviewed": true,
   "bfTopologicalRouteExternalToGu": true,

@@ -1,8 +1,8 @@
 {
   "phaseId": "phase361-matrix-model-higgs-geometry-source-audit",
-  "terminalStatus": "matrix-model-higgs-geometry-source-audit-geometric-higgs-lead-not-gu-mass-law",
-  "generatedAt": "2026-07-09T21:04:33.891532+00:00",
-  "matrixModelHiggsGeometrySourceAuditPassed": true,
+  "terminalStatus": "matrix-model-higgs-geometry-source-audit-review-required",
+  "generatedAt": "2026-07-10T22:02:11.4656724+00:00",
+  "matrixModelHiggsGeometrySourceAuditPassed": false,
   "matrixModelLeadPresent": true,
   "matrixModelPrimarySourcesReviewed": true,
   "matrixModelRouteExternalToGu": true,
@@ -118,7 +118,7 @@
     "stringCompactificationSourceAuditPassed": true,
     "stringRoutePromotesWzMasses": false,
     "stringRoutePromotesHiggsMass": false,
-    "gaugeHiggsUnificationSourceAuditPassed": true,
+    "gaugeHiggsUnificationSourceAuditPassed": false,
     "gaugeHiggsRoutePromotesWzMasses": false,
     "gaugeHiggsRoutePromotesHiggsMass": false,
     "finiteNcgDiscreteHiggsSourceAuditPassed": true,
@@ -156,8 +156,8 @@
     },
     {
       "Id": "adjacent-brane-ncg-gauge-higgs-routes-remain-nonpromotional",
-      "Passed": true,
-      "Evidence": "stringPassed=True; stringWz=False; stringHiggs=False; gaugeHiggsPassed=True; gaugeHiggsWz=False; gaugeHiggsHiggs=False; finiteNcgPassed=True; finiteNcgWz=False; finiteNcgHiggs=False"
+      "Passed": false,
+      "Evidence": "stringPassed=True; stringWz=False; stringHiggs=False; gaugeHiggsPassed=False; gaugeHiggsWz=False; gaugeHiggsHiggs=False; finiteNcgPassed=True; finiteNcgWz=False; finiteNcgHiggs=False"
     },
     {
       "Id": "route-does-not-fill-gu-contracts",

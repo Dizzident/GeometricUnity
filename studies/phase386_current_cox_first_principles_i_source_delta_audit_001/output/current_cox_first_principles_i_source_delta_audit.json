@@ -1,8 +1,8 @@
 {
   "phaseId": "phase386-current-cox-first-principles-i-source-delta-audit",
-  "terminalStatus": "current-cox-first-principles-i-source-delta-scaffold-only-no-boson-prediction",
-  "generatedAt": "2026-07-09T21:05:09.6152333+00:00",
-  "currentCoxFirstPrinciplesISourceDeltaAuditPassed": true,
+  "terminalStatus": "current-cox-first-principles-i-source-delta-review-required",
+  "generatedAt": "2026-07-10T22:02:53.629359+00:00",
+  "currentCoxFirstPrinciplesISourceDeltaAuditPassed": false,
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
   "targetBlindConstructionHash": "ab8ebc4aa868082d83e53301e877bea672fa010a3ea04c346d721eace48a0a60",
@@ -156,12 +156,12 @@
     "phase213WzMissingFieldCount": 15,
     "phase213HiggsMissingFieldCount": 14,
     "phase256Path": "studies/phase256_observed_field_extraction_intake_contract_001/output/observed_field_extraction_intake_contract_summary.json",
-    "phase256ContractMaterialized": true,
+    "phase256ContractMaterialized": false,
     "phase256RequiredFieldCount": 20,
     "phase256FilledRequiredFieldCount": 0,
     "phase256ObservedFieldExtractionContractPromotable": false,
     "phase385Path": "studies/phase385_observed_electroweak_namespace_map_intake_audit_001/output/observed_electroweak_namespace_map_intake_audit_summary.json",
-    "phase385NamespaceMapAuditPassed": true,
+    "phase385NamespaceMapAuditPassed": false,
     "phase385NoNamespaceMapCandidate": true,
     "phase385NoPhase256Candidate": true,
     "phase385NoPhase201Candidate": true,
@@ -199,12 +199,12 @@
     },
     {
       "checkId": "observed-electroweak-namespace-map-still-missing",
-      "passed": true,
-      "detail": "phase385NamespaceMapAuditPassed=True; phase385NoNamespaceMapCandidate=True; completesObservedNamespaceMap=False"
+      "passed": false,
+      "detail": "phase385NamespaceMapAuditPassed=False; phase385NoNamespaceMapCandidate=True; completesObservedNamespaceMap=False"
     },
     {
       "checkId": "phase201-and-phase256-contracts-remain-unfilled",
-      "passed": true,
+      "passed": false,
       "detail": "phase201AllRequiredLineagesPromotable=False; wzMissing=15; higgsMissing=14; phase256Filled=0"
     },
     {
@@ -218,7 +218,7 @@
       "detail": "sourceContractApplicationAllowed=False; acceptedContractFieldCount=0; phase201TemplateMutated=False"
     }
   ],
-  "decision": "Preserve the 2026 Cox first-principles paper as a stronger classical scaffold lead, but do not promote W/Z/H masses from it. It supplies no observed electroweak namespace map, W/Z source rows, Higgs scalar-source row, target-independent electroweak scale/coupling lineage, or GeV normalization.",
+  "decision": "Review the current Cox first-principles source delta before relying on this audit.",
   "nextRequiredArtifact": [
     "A GU-native observed electroweak namespace map with photon/W/Z/H rows.",
     "A target-independent W/Z bridge-source theorem with separate W and Z source rows and stability sidecars.",

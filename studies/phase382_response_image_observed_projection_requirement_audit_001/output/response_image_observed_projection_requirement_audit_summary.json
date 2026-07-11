@@ -1,7 +1,7 @@
 {
   "phaseId": "phase382-response-image-observed-projection-requirement-audit",
-  "terminalStatus": "response-image-observed-projection-requirement-audit-no-namespace-separation-map",
-  "responseImageObservedProjectionRequirementAuditPassed": true,
+  "terminalStatus": "response-image-observed-projection-requirement-audit-review-required",
+  "responseImageObservedProjectionRequirementAuditPassed": false,
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
   "targetBlindConstructionHash": "d40f8d09f625683f64e8387778e663ad5061ef995a05907a1952a50730b56624",
@@ -25,8 +25,8 @@
   "phase381ResponseImageSelectorSidecarCompatible": false,
   "phase381ResponseImageSidecarConflictPresent": true,
   "phase256ContractUnfilled": true,
-  "phase295NoIntakeReadyObservedProjection": true,
-  "phase311ObservedMapAbsent": true,
+  "phase295NoIntakeReadyObservedProjection": false,
+  "phase311ObservedMapAbsent": false,
   "phase313OfficialProjectionMapAbsent": true,
   "phase320StandardBoundaryOnly": true,
   "phase321NeutralMixingRouteUnpromotable": true,
@@ -60,12 +60,12 @@
     },
     {
       "checkId": "observed-field-contract-and-scanner-remain-unfilled",
-      "passed": true,
+      "passed": false,
       "details": "phase256RequiredFields=20; phase256FilledRequiredFields=0; phase256Promotable=False; phase295IntakeReadyCount=0; fields=observedFieldExtractionTheoremId:0/False;electroweakGaugeEmbeddingId:0/False;quadraticElectroweakMassOperatorId:0/False;photonEigenstateProjectionId:0/False;wBosonSourceRowId:0/False;zBosonSourceRowId:0/False;targetBlindConstructionHash:0/False"
     },
     {
       "checkId": "completion-and-official-draft-do-not-supply-observed-projection-map",
-      "passed": true,
+      "passed": false,
       "details": "phase311PhysicalMap=False; phase311WProjection=False; phase311ZProjection=False; phase313WRows=False; phase313ZRow=False; phase313ObservedEmbedding=False"
     },
     {
@@ -84,5 +84,5 @@
       "details": "namespaceMapPresent=False; targetIndependent=False; sourceLineageEligible=False; separatesAxes=False; rehabilitatesPhase307=False; responseImageConflictRemainsActive=True; phase201Blocked=True; acceptedFields=0; blockedFields=15"
     }
   ],
-  "decision": "No current artifact provides the observed electroweak projection map needed to treat Phase379 carrier axes as a separate namespace from physical W/Z axes. The Phase381 conflict therefore remains active: the selected W row uses the Phase379-suppressed axis, while the existing standard and neutral-mixing audits only state external dependency boundaries and cannot rehabilitate the selector or fill Phase201."
+  "decision": "Review the observed-projection requirement audit before using Phase379 carrier-axis data to reinterpret physical W/Z selector axes."
 }

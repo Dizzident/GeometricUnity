@@ -1,10 +1,10 @@
 {
   "phaseId": "phase405-vacuum-manifold-doublet-vev-orbit-scan",
-  "generatedAt": "2026-07-09T21:06:37.6099555+00:00",
-  "terminalStatus": "vacuum-manifold-permits-constant-doublet-vev-but-provides-no-selection-mechanism",
-  "vacuumManifoldDoubletVevOrbitScanPassed": true,
-  "phase403PrecursorPassed": true,
-  "phase404PrecursorPassed": true,
+  "generatedAt": "2026-07-10T22:04:34.1513111+00:00",
+  "terminalStatus": "vacuum-manifold-doublet-vev-orbit-scan-blocked",
+  "vacuumManifoldDoubletVevOrbitScanPassed": false,
+  "phase403PrecursorPassed": false,
+  "phase404PrecursorPassed": false,
   "scanInternallyConsistent": true,
   "rank1DirectionsAllFlat": true,
   "flatnessEqualsCommutativity": true,
@@ -26,7 +26,7 @@
   "nativeLinearCurvatureParityGapNote": "RESOLVED (2026-06-12): the parity defect this scan originally machine-detected was NOT in the native curvature kernel - GpuSolverBackend.Initialize re-initialized the prepared native backend, wiping the uploaded topology/algebra/A0 and silently engaging the native identity-stub fallbacks (F = omega, T = 0); the lifecycle bug is fixed in GpuSolverBackend.Initialize and guarded by tests/Gu.Interop.Tests/RealMeshPhysicsParityTests.cs; this scan\u0027s science always ran on the CPU reference per IA-5, so its verdicts were never affected",
   "gpuSessionRecycleCount": 0,
   "gpuEvaluations": 2592,
-  "gpuScanSeconds": 0.7024351,
+  "gpuScanSeconds": 0.717495,
   "cpuParitySampleCount": 0,
   "cpuParitySeconds": 0,
   "estimatedCpuFullScanSeconds": 0,
@@ -451,5 +451,5 @@
     "nativeLibrary": "native/build/libgu_cuda_core.so",
     "primaryDraftDictionary": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt (eq. 12.28: Higgs potential = \u003CU,U\u003E)"
   },
-  "decision": "Brute force #2 is complete. On the control branch the residual is exactly Upsilon = (1/2)[omega, omega] at A0 = 0, and the scan machine-verifies the consequences over the full su(3) orbit space on the larger mesh: (1) EVERY rank-1 constant VEV direction - doublet block included - lies exactly on the Upsilon = 0 vacuum manifold (the manifold PERMITS constant doublet VEVs); (2) flatness of mixed directions coincides exactly with commutativity, and the lifted landscape matches the exact quartic shape t^4 sin^2(phi) cos^2(phi) ||[u,v]||^2 everywhere; (3) the landscape treats triplet, doublet, and singlet rank-1 directions IDENTICALLY (all exactly flat), so NO SELECTION MECHANISM for a doublet VEV exists at the constant-field level of the control branch - scalar-sector sub-gap (b) (vacuum-manifold breaking geometry) is confirmed open with sharpened evidence: selection must come from structure beyond the bare control-branch bosonic objective (fermionic backreaction, the physical GU action\u0027s additional terms, or boundary/topological data). Default validation ran CPU-only; set PHASE405_ENABLE_GPU=1 to run the CUDA parity characterization. The science verdicts rely on the CPU reference exact-shape scan. No scales exist; nothing is promoted; no contract field is filled."
+  "decision": "Do not use the orbit-scan verdicts until the precursors, the exact-shape battery, and the GPU/CPU parity gate pass."
 }

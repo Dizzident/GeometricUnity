@@ -1,8 +1,8 @@
 {
   "phaseId": "phase363-hitchin-higgs-bundle-source-audit",
-  "terminalStatus": "hitchin-higgs-bundle-source-audit-spectral-cover-lead-not-gu-mass-law",
-  "generatedAt": "2026-07-09T21:04:34.4472629+00:00",
-  "hitchinHiggsBundleSourceAuditPassed": true,
+  "terminalStatus": "hitchin-higgs-bundle-source-audit-review-required",
+  "generatedAt": "2026-07-10T22:02:12.0838869+00:00",
+  "hitchinHiggsBundleSourceAuditPassed": false,
   "hitchinHiggsBundleLeadPresent": true,
   "hitchinHiggsBundlePrimarySourcesReviewed": true,
   "hitchinHiggsBundleRouteExternalToGu": true,
@@ -137,10 +137,10 @@
     "stringMTheoryCompactificationSourceAuditPassed": true,
     "stringRoutePromotesWzMasses": false,
     "stringRoutePromotesHiggsMass": false,
-    "gaugeHiggsUnificationSourceAuditPassed": true,
+    "gaugeHiggsUnificationSourceAuditPassed": false,
     "gaugeHiggsRoutePromotesWzMasses": false,
     "gaugeHiggsRoutePromotesHiggsMass": false,
-    "framedStandardModelSourceAuditPassed": true,
+    "framedStandardModelSourceAuditPassed": false,
     "framedStandardModelRoutePromotesWzMasses": false,
     "framedStandardModelRoutePromotesHiggsMass": false
   },
@@ -175,8 +175,8 @@
     },
     {
       "Id": "adjacent-compactification-higgs-routes-remain-nonpromotional",
-      "Passed": true,
-      "Evidence": "stringPassed=True; stringWz=False; stringHiggs=False; gaugeHiggsPassed=True; gaugeHiggsWz=False; gaugeHiggsHiggs=False; framedPassed=True; framedWz=False; framedHiggs=False"
+      "Passed": false,
+      "Evidence": "stringPassed=True; stringWz=False; stringHiggs=False; gaugeHiggsPassed=False; gaugeHiggsWz=False; gaugeHiggsHiggs=False; framedPassed=False; framedWz=False; framedHiggs=False"
     },
     {
       "Id": "route-does-not-fill-gu-contracts",

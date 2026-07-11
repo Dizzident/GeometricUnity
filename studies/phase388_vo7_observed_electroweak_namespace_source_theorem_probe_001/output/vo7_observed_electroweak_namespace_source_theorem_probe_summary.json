@@ -1,7 +1,7 @@
 {
   "phaseId": "phase388-vo7-observed-electroweak-namespace-source-theorem-probe",
-  "terminalStatus": "vo7-observed-electroweak-namespace-source-theorem-probe-failed-closed-new-theorem-required",
-  "vo7ObservedNamespaceSourceTheoremProbePassed": true,
+  "terminalStatus": "vo7-observed-electroweak-namespace-source-theorem-probe-review-required",
+  "vo7ObservedNamespaceSourceTheoremProbePassed": false,
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
   "targetBlindConstructionHash": "586281dccaddc6b0f53f93d9e5bd0f30188f3aab3effc660e1981efdeeaab603",
@@ -78,7 +78,7 @@
   "localChainEvidence": {
     "phase370": {
       "path": "studies/phase370_completion_fermionic_yukawa_higgs_mixed_linearization_source_audit_001/output/completion_fermionic_yukawa_higgs_mixed_linearization_source_audit_summary.json",
-      "phase370Passed": true,
+      "phase370Passed": false,
       "phase370RecordsVo7": true,
       "phase370MixedBlocksPresent": false,
       "phase370ObservedRowsPresent": false,
@@ -86,7 +86,7 @@
     },
     "phase372": {
       "path": "studies/phase372_discrete_fermionic_bilinear_reciprocal_mixed_block_audit_001/output/discrete_fermionic_bilinear_reciprocal_mixed_block_audit_summary.json",
-      "phase372Passed": true,
+      "phase372Passed": false,
       "phase372Vo7BuildingBlock": true,
       "phase372CompletesVo7": false,
       "phase372PhysicalMassPsiBranch": false,
@@ -127,14 +127,14 @@
     },
     "phase382": {
       "path": "studies/phase382_response_image_observed_projection_requirement_audit_001/output/response_image_observed_projection_requirement_audit_summary.json",
-      "phase382Passed": true,
+      "phase382Passed": false,
       "phase382NamespaceMapPresent": false,
       "phase382Rehabilitated": false,
       "phase382CanFillWz": false
     },
     "phase383": {
       "path": "studies/phase383_phase307_suppressed_axis_counterfactual_selector_audit_001/output/phase307_suppressed_axis_counterfactual_selector_audit_summary.json",
-      "phase383Passed": true,
+      "phase383Passed": false,
       "phase383EveryWUsesSuppressed": true,
       "phase383NoSelectorAvoidsSuppressed": true,
       "phase383SidecarCompatibleCount": 0,
@@ -142,7 +142,7 @@
     },
     "phase384": {
       "path": "studies/phase384_phase307_basis_energy_response_image_proxy_audit_001/output/phase307_basis_energy_response_image_proxy_audit_summary.json",
-      "phase384Passed": true,
+      "phase384Passed": false,
       "phase384NoLowSuppressedProxy": true,
       "phase384MinWSuppressedBasisEnergyFraction": 0.33627838840903185,
       "phase384SelectedSuppressedBasisEnergyFraction": 0.44501616745604355,
@@ -150,7 +150,7 @@
     },
     "phase387": {
       "path": "studies/phase387_current_cox_first_principles_i_full_text_contract_audit_001/output/current_cox_first_principles_i_full_text_contract_audit_summary.json",
-      "phase387Passed": true,
+      "phase387Passed": false,
       "phase387FullTextBosonContractEvidenceFound": false
     }
   },
@@ -162,12 +162,12 @@
     "phase213WzMissingFieldCount": 15,
     "phase213HiggsMissingFieldCount": 14,
     "phase256Path": "studies/phase256_observed_field_extraction_intake_contract_001/output/observed_field_extraction_intake_contract_summary.json",
-    "phase256ContractMaterialized": true,
+    "phase256ContractMaterialized": false,
     "phase256RequiredFieldCount": 20,
     "phase256FilledRequiredFieldCount": 0,
     "phase256ObservedFieldExtractionContractPromotable": false,
     "phase385Path": "studies/phase385_observed_electroweak_namespace_map_intake_audit_001/output/observed_electroweak_namespace_map_intake_audit_summary.json",
-    "phase385Passed": true,
+    "phase385Passed": false,
     "phase385CandidateCount": 9,
     "phase385IntakeReadyCandidateCount": 0,
     "phase385NoNamespaceCandidate": true,
@@ -190,8 +190,8 @@
   "checks": [
     {
       "checkId": "vo7-local-chain-materialized-but-incomplete",
-      "passed": true,
-      "detail": "phase370Passed=True; recordsVo7=True; phase372Passed=True; vo7BuildingBlock=True; completesVo7=False; physicalMassPsiBranch=False"
+      "passed": false,
+      "detail": "phase370Passed=False; recordsVo7=True; phase372Passed=False; vo7BuildingBlock=True; completesVo7=False; physicalMassPsiBranch=False"
     },
     {
       "checkId": "response-image-diagnostic-materialized-not-observed-map",
@@ -205,12 +205,12 @@
     },
     {
       "checkId": "no-current-selector-or-proxy-escapes-suppressed-axis",
-      "passed": true,
+      "passed": false,
       "detail": "everyWUsesSuppressed=True; noSelectorAvoids=True; sidecarCompatibleCount=0; minWSuppressedBasisEnergyFraction=0.33627838840903185; selectedSuppressedBasisEnergyFraction=0.44501616745604355"
     },
     {
       "checkId": "observed-namespace-and-source-contracts-remain-unfilled",
-      "passed": true,
+      "passed": false,
       "detail": "wzMissing=15; higgsMissing=14; phase256Filled=0; phase385CandidateCount=9; intakeReady=0"
     },
     {

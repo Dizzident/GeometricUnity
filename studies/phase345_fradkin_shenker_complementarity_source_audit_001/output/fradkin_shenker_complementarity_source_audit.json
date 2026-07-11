@@ -1,8 +1,8 @@
 {
   "phaseId": "phase345-fradkin-shenker-complementarity-source-audit",
-  "terminalStatus": "fradkin-shenker-complementarity-source-audit-boundary-not-gu-source",
-  "generatedAt": "2026-07-10T21:55:28.6906194+00:00",
-  "fradkinShenkerComplementaritySourceAuditPassed": true,
+  "terminalStatus": "fradkin-shenker-complementarity-source-audit-review-required",
+  "generatedAt": "2026-07-10T22:02:06.5045721+00:00",
+  "fradkinShenkerComplementaritySourceAuditPassed": false,
   "fradkinShenkerLeadPresent": true,
   "complementarityPrimarySourcesReviewed": true,
   "complementarityRouteExternalToGu": true,
@@ -103,13 +103,13 @@
     },
     {
       "CheckId": "fms-observed-spectrum-boundary-preserved",
-      "Passed": true,
-      "Detail": "supportsFms=True; p344=True; fmsTemplate=True; fmsPromotesObserved=False; fmsCompletes=False"
+      "Passed": false,
+      "Detail": "supportsFms=True; p344=False; fmsTemplate=True; fmsPromotesObserved=False; fmsCompletes=False"
     },
     {
       "CheckId": "current-contract-blockers-preserved",
-      "Passed": true,
-      "Detail": "phase201Promotable=False; existingEvidence=False; wzMissing=15; higgsMissing=14; observedRequired=20; observedFilled=0; observedPromotable=False; p295=True; observedCandidates=0"
+      "Passed": false,
+      "Detail": "phase201Promotable=False; existingEvidence=False; wzMissing=15; higgsMissing=14; observedRequired=20; observedFilled=0; observedPromotable=False; p295=False; observedCandidates=0"
     },
     {
       "CheckId": "complementarity-route-requires-missing-gu-source-data",
@@ -134,10 +134,10 @@
     "observedFieldExtractionRequiredFieldCount": 20,
     "observedFieldExtractionFilledRequiredFieldCount": 0,
     "observedFieldExtractionContractPromotable": false,
-    "observedFieldExtractionContractCandidateScanPassed": true,
+    "observedFieldExtractionContractCandidateScanPassed": false,
     "anyObservedFieldExtractionCandidateFillsContract": false,
     "intakeReadyObservedFieldExtractionCandidateCount": 0,
-    "fmsGaugeInvariantSpectrumSourceAuditPassed": true,
+    "fmsGaugeInvariantSpectrumSourceAuditPassed": false,
     "fmsProvidesObservedFieldExtractionTemplate": true,
     "fmsRoutePromotesObservedFieldExtraction": false,
     "fmsRouteCompletesBosonPredictions": false

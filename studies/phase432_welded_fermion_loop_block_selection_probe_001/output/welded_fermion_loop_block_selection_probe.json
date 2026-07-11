@@ -1,12 +1,12 @@
 {
   "phaseId": "phase432-welded-fermion-loop-block-selection-probe",
-  "generatedAt": "2026-07-09T21:19:56.9046577+00:00",
-  "runtimeSeconds": 22.2830232,
-  "terminalStatus": "welded-fermion-loop-breaks-internal-only-block-degeneracies-no-contract-fill",
-  "weldedFermionLoopBlockSelectionProbePassed": true,
-  "phase408PrecursorPassed": true,
-  "phase417PrecursorPassed": true,
-  "phase428PrecursorPassed": true,
+  "generatedAt": "2026-07-10T22:18:25.9853758+00:00",
+  "runtimeSeconds": 23.1134812,
+  "terminalStatus": "welded-fermion-loop-block-selection-probe-blocked",
+  "weldedFermionLoopBlockSelectionProbePassed": false,
+  "phase408PrecursorPassed": false,
+  "phase417PrecursorPassed": false,
+  "phase428PrecursorPassed": false,
   "applicationSubjectKind": "welded-fermion-loop-block-selection-probe",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
@@ -375,5 +375,5 @@
     "Splitting the su(2)_L-axis loop degeneracy is a representation/one-loop distinguishability statement; it is NOT a doublet-VEV selection, a scalar source, or a mass prediction.",
     "No welded-carrier action, VEV selection, observed electroweak rows, weak-angle lineage, pole extraction, or GeV normalization is supplied. No Phase201 or Phase256 fill."
   ],
-  "decision": "The source-pinned chimeric weld changes which internal gauge-ray directions the one-loop fermion determinant can distinguish. At t_w = 0 the welded operator reproduces the Phase428 internal-only carrier exactly (su(2)_L-axis functional split 5.12E-013), so the three su(2)_L axes are exactly loop-degenerate and Y is on a distinct multiset (distance 0.500). Turning on the weld (t_w in {0.5, 1.0}) SPLITS the previously-degenerate su(2)_L axes (max split 3.399 at t_w = 1.0): the su(2)_L conjugator that made the axes loop-degenerate no longer commutes with the welded operator because su(2)_L overlaps the weld\u0027s pi image in the 6789 block. The Phase428 class-function no-go therefore does NOT survive intact for the GU-draft\u0027s welded fermion structure - the weld is exactly the su(N)-invariance-breaking structure the no-go named as the only escape, and here it is SOURCE-PINNED rather than invented. This is a representation/one-loop diagnostic only: the weld coupling normalization (t_w, c_q = 1), the 4x4 lattice, the 4-dim spinors, and the naive Dirac are recorded workbench conventions; the source still does not define a welded-carrier action, VEV selection, observed electroweak rows, weak-angle lineage, pole extraction, or GeV normalization. No Phase201 or Phase256 field is filled; nothing is promoted."
+  "decision": "Do not use the welded-fermion-loop verdicts until the precursor and consistency batteries pass."
 }

@@ -1,10 +1,10 @@
 {
   "phaseId": "phase399-quadratic-model-coupled-critical-point-solve",
-  "generatedAt": "2026-07-10T21:56:59.3810536+00:00",
-  "terminalStatus": "quadratic-model-coupled-critical-point-solved-modulo-flat-directions-vo7-control-component-discharged",
-  "quadraticModelCoupledCriticalPointSolvePassed": true,
-  "phase394PrecursorPassed": true,
-  "phase398PrecursorPassed": true,
+  "generatedAt": "2026-07-10T22:04:19.2650833+00:00",
+  "terminalStatus": "quadratic-model-coupled-critical-point-solve-blocked",
+  "quadraticModelCoupledCriticalPointSolvePassed": false,
+  "phase394PrecursorPassed": false,
+  "phase398PrecursorPassed": false,
   "solveInternallyConsistent": true,
   "quadraticModelCoupledFixedPointConverged": true,
   "sourceFormulaParityVerified": true,
@@ -211,5 +211,5 @@
     "phase394WorkdirModes": "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir/spectra/modes",
     "phase12Root": "studies/phase12_joined_calculation_001/output/background_family"
   },
-  "decision": "The self-consistent coupled critical point is solved within the exact quadratic model of the bosonic action at the persisted backgrounds: for every kappa and every followed shell mode the fixed point d* = -kappa H_B^\u002B J(psi(d*)) converges (projected coupled gradient at tolerance), with adiabatic mode-following and the closed-form per-edge source verified against the variation matrices. Two honest structural results: (1) a FLAT-DIRECTION OBSTRUCTION is present - the kernel component of the source cannot be relaxed within the quadratic model, so for asymmetric occupation the coupled critical point exists only modulo the 18 flat bosonic directions, and whether the full non-quadratic action lifts them is beyond the persisted artifacts; (2) the kappa -\u003E 0 scaling of d*/kappa matches the Phase394 first-order backreaction within tolerance, with the finite-kappa self-consistent correction quantified. This discharges the Phase398 partial VO-7 component at the QUADRATIC-MODEL control-branch level. kappa is not physical; nothing is promoted; no contract field is filled."
+  "decision": "Do not use the coupled solve until the Phase394/398 precursors, source-formula parity, fixed-point convergence, obstruction accounting, and kappa-scaling checks all pass."
 }

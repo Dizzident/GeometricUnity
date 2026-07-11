@@ -1,8 +1,8 @@
 {
   "phaseId": "phase364-moment-map-symplectic-reduction-source-audit",
-  "terminalStatus": "moment-map-symplectic-reduction-source-audit-phase-space-lead-not-gu-mass-law",
-  "generatedAt": "2026-07-09T21:04:34.7498004+00:00",
-  "momentMapSymplecticReductionSourceAuditPassed": true,
+  "terminalStatus": "moment-map-symplectic-reduction-source-audit-review-required",
+  "generatedAt": "2026-07-10T22:02:12.3983721+00:00",
+  "momentMapSymplecticReductionSourceAuditPassed": false,
   "momentMapSymplecticReductionLeadPresent": true,
   "momentMapSymplecticReductionPrimarySourcesReviewed": true,
   "momentMapSymplecticReductionRouteExternalToGu": true,
@@ -121,16 +121,16 @@
     }
   ],
   "adjacentRouteBoundary": {
-    "nativeGuVacuumHessianCandidateAuditPassed": true,
+    "nativeGuVacuumHessianCandidateAuditPassed": false,
     "nativeGuVacuumHessianCandidatePromotable": false,
-    "globalObservedSectorVacuumScanPassed": true,
+    "globalObservedSectorVacuumScanPassed": false,
     "globalObservedSectorVacuumCandidateFound": false,
     "globalScanFillsVacuumMassMatrixUnlock": false,
     "productionObservedSectorVacuumCandidateCount": 0,
-    "thetaOmegaInhomogeneousGaugeSourceAuditPassed": true,
+    "thetaOmegaInhomogeneousGaugeSourceAuditPassed": false,
     "thetaOmegaRoutePromotesWzMasses": false,
     "thetaOmegaRoutePromotesHiggsMass": false,
-    "hitchinHiggsBundleSourceAuditPassed": true,
+    "hitchinHiggsBundleSourceAuditPassed": false,
     "hitchinRoutePromotesWzMasses": false,
     "hitchinRoutePromotesHiggsMass": false
   },
@@ -170,8 +170,8 @@
     },
     {
       "Id": "adjacent-vacuum-and-geometry-routes-remain-nonpromotional",
-      "Passed": true,
-      "Evidence": "nativeVacuumPassed=True; nativePromotable=False; globalVacuumPassed=True; globalCandidate=False; globalFills=False; productionVacuumCandidates=0; thetaOmegaPassed=True; thetaOmegaWz=False; thetaOmegaHiggs=False; hitchinPassed=True; hitchinWz=False; hitchinHiggs=False"
+      "Passed": false,
+      "Evidence": "nativeVacuumPassed=False; nativePromotable=False; globalVacuumPassed=False; globalCandidate=False; globalFills=False; productionVacuumCandidates=0; thetaOmegaPassed=False; thetaOmegaWz=False; thetaOmegaHiggs=False; hitchinPassed=False; hitchinWz=False; hitchinHiggs=False"
     },
     {
       "Id": "route-does-not-fill-gu-contracts",

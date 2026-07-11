@@ -1,8 +1,8 @@
 {
   "phaseId": "phase338-metric-affine-torsion-source-audit",
-  "terminalStatus": "metric-affine-torsion-source-audit-external-ewsb-lead-not-gu-source",
-  "generatedAt": "2026-07-10T17:58:00.0151012+00:00",
-  "metricAffineTorsionSourceAuditPassed": true,
+  "terminalStatus": "metric-affine-torsion-source-audit-review-required",
+  "generatedAt": "2026-07-10T22:02:04.3281495+00:00",
+  "metricAffineTorsionSourceAuditPassed": false,
   "metricAffineTorsionLeadPresent": true,
   "metricAffineTorsionPrimarySourcesReviewed": true,
   "metricAffineTorsionRouteExternalToGu": true,
@@ -117,8 +117,8 @@
     },
     {
       "CheckId": "torsion-route-overlap-and-existing-ewsb-blockers-preserved",
-      "Passed": true,
-      "Detail": "technicolorAudit=True; technicolorPromotesWz=False; technicolorPromotesHiggs=False; p323=True; p323Completes=False; obliqueAudit=True; obliqueConstrains=True; octonionAudit=True; octonionCompletes=False"
+      "Passed": false,
+      "Detail": "technicolorAudit=True; technicolorPromotesWz=False; technicolorPromotesHiggs=False; p323=True; p323Completes=False; obliqueAudit=False; obliqueConstrains=True; octonionAudit=True; octonionCompletes=False"
     },
     {
       "CheckId": "metric-affine-torsion-requires-missing-gu-source-data",

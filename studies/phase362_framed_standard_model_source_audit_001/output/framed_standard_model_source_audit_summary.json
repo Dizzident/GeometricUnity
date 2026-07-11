@@ -1,7 +1,7 @@
 {
   "phaseId": "phase362-framed-standard-model-source-audit",
-  "terminalStatus": "framed-standard-model-source-audit-framon-higgs-and-vector-mixing-lead-not-gu-mass-law",
-  "framedStandardModelSourceAuditPassed": true,
+  "terminalStatus": "framed-standard-model-source-audit-review-required",
+  "framedStandardModelSourceAuditPassed": false,
   "framedStandardModelLeadPresent": true,
   "framedStandardModelPrimarySourcesReviewed": true,
   "framedStandardModelRouteExternalToGu": true,
@@ -76,13 +76,13 @@
   "canFillPhase256ObservedFieldExtractionContract": false,
   "sourceRowCount": 7,
   "adjacentRouteBoundary": {
-    "stueckelbergVectorMassSourceAuditPassed": true,
+    "stueckelbergVectorMassSourceAuditPassed": false,
     "stueckelbergRoutePromotesWzMasses": false,
     "stueckelbergRoutePromotesHiggsMass": false,
     "finiteNcgDiscreteHiggsSourceAuditPassed": true,
     "finiteNcgRoutePromotesWzMasses": false,
     "finiteNcgRoutePromotesHiggsMass": false,
-    "matrixModelHiggsGeometrySourceAuditPassed": true,
+    "matrixModelHiggsGeometrySourceAuditPassed": false,
     "matrixModelRoutePromotesWzMasses": false,
     "matrixModelRoutePromotesHiggsMass": false
   },

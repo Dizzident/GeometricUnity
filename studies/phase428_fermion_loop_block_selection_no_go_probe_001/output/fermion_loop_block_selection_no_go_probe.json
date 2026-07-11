@@ -1,11 +1,11 @@
 {
   "phaseId": "phase428-fermion-loop-block-selection-no-go-probe",
-  "generatedAt": "2026-07-09T21:19:32.8928968+00:00",
-  "terminalStatus": "fermion-loop-cannot-select-doublet-on-rank-one-rays-mechanism-class-closed",
-  "fermionLoopBlockSelectionNoGoProbePassed": true,
-  "phase405PrecursorPassed": true,
-  "phase410PrecursorPassed": true,
-  "phase418PrecursorPassed": true,
+  "generatedAt": "2026-07-10T22:18:00.9901458+00:00",
+  "terminalStatus": "fermion-loop-block-selection-no-go-probe-blocked",
+  "fermionLoopBlockSelectionNoGoProbePassed": false,
+  "phase405PrecursorPassed": false,
+  "phase410PrecursorPassed": false,
+  "phase418PrecursorPassed": false,
   "applicationSubjectKind": "fermion-loop-block-selection-no-go-probe",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
@@ -263,5 +263,5 @@
     "The only escape - su(3)-breaking fermionic structure (background masses, chemical potentials, non-invariant occupations) - is not defined by any reviewed source and would be candidate-only if invented.",
     "No Phase201 or Phase256 fill."
   ],
-  "decision": "The fermionic-backreaction mechanism class named by Phases 405/410/418 is decided at one-loop order on constant rank-1 rays: the fermion determinant is an adjoint-orbit class function; the Gell-Mann axes lambda_1..lambda_7 lie on ONE orbit (explicit color-swap conjugator, exact), so the fermion-loop potential is EXACTLY degenerate between the triplet and doublet blocks in both the fundamental and adjoint representations - the loop can only distinguish the lambda_8 orbit type. Along every ray the functional falls like -N log t with N matching the coupled-mode count exactly, so no positive quartic stabilizer is generated in any direction. An su(3)-invariant fermionic sector therefore CANNOT produce the direction-dependent block mass law or the stabilizer Phase418 had to import; doublet selection via fermionic backreaction requires su(3)-breaking fermionic structure that no reviewed source defines. No Phase201 or Phase256 field is filled; nothing is promoted."
+  "decision": "Do not use the fermion-loop no-go verdicts until the precursor and consistency batteries pass."
 }

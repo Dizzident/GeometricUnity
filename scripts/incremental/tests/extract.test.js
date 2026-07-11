@@ -87,3 +87,22 @@ test("extraction: narrative program docs are excluded as provenance-only mention
   assert.ok(!p9.pathLiterals.includes("docs/BOSON_PREDICTION_AGENT_RESTART_PROMPT.md"));
   assert.ok(p9.pathLiterals.includes("docs/NOTES.md"));
 });
+
+test("extraction: bare repo-root file literals are captured as inputs (README.md class)", (t) => {
+  const root = makeFixtureRepo();
+  t.after(() => rmrf(root));
+  const fs = require("fs");
+  const path = require("path");
+  fs.writeFileSync(path.join(root, "README.md"), "boundary language lives here\n");
+  const dir = path.join(root, "studies", "phase8_root_001");
+  fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(path.join(dir, "Phase8Root.csproj"), "<Project Sdk=\"Microsoft.NET.Sdk\"></Project>\n");
+  fs.writeFileSync(path.join(dir, "Program.cs"), [
+    'const string ReadmePath = "README.md";',
+    'const string NotARootFile = "not_present_anywhere.json";',
+    'System.Console.WriteLine(ReadmePath + NotARootFile);',
+  ].join("\n"));
+  const p8 = extractPhaseInputs(root, "studies/phase8_root_001/Phase8Root.csproj");
+  assert.ok(p8.pathLiterals.includes("README.md"));
+  assert.ok(!p8.pathLiterals.includes("not_present_anywhere.json"));
+});

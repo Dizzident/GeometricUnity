@@ -1,8 +1,8 @@
 {
   "phaseId": "phase365-dressing-field-electroweak-observed-variables-audit",
-  "terminalStatus": "dressing-field-electroweak-observed-variables-audit-template-not-gu-source",
-  "generatedAt": "2026-07-10T12:00:07.8741114+00:00",
-  "dressingFieldElectroweakObservedVariablesAuditPassed": true,
+  "terminalStatus": "dressing-field-electroweak-observed-variables-audit-review-required",
+  "generatedAt": "2026-07-10T22:02:12.7126364+00:00",
+  "dressingFieldElectroweakObservedVariablesAuditPassed": false,
   "dressingFieldLeadPresent": true,
   "dressingFieldPrimarySourcesReviewed": true,
   "dressingFieldRouteExternalToGu": true,
@@ -102,15 +102,15 @@
     }
   ],
   "adjacentRouteBoundary": {
-    "observedFieldExtractionNoGoPassed": true,
+    "observedFieldExtractionNoGoPassed": false,
     "observedFieldExtractionBridgePromotable": false,
     "newObservedFieldExtractionArtifactRequired": true,
-    "fmsGaugeInvariantSpectrumSourceAuditPassed": true,
+    "fmsGaugeInvariantSpectrumSourceAuditPassed": false,
     "fmsProvidesObservedFieldExtractionTemplate": true,
     "fmsRoutePromotesObservedFieldExtraction": false,
-    "nielsenPoleMassGaugeIndependenceSourceAuditPassed": true,
+    "nielsenPoleMassGaugeIndependenceSourceAuditPassed": false,
     "nielsenRoutePromotesObservedFieldExtraction": false,
-    "momentMapSymplecticReductionSourceAuditPassed": true,
+    "momentMapSymplecticReductionSourceAuditPassed": false,
     "momentMapRoutePromotesWzMasses": false,
     "momentMapRoutePromotesHiggsMass": false
   },
@@ -141,13 +141,13 @@
     },
     {
       "Id": "observed-field-extraction-blockers-preserved",
-      "Passed": true,
-      "Evidence": "p255NoGo=True; p255Promotable=False; newArtifact=True; p256Required=20; p256Filled=0; p256Promotable=False"
+      "Passed": false,
+      "Evidence": "p255NoGo=False; p255Promotable=False; newArtifact=True; p256Required=20; p256Filled=0; p256Promotable=False"
     },
     {
       "Id": "adjacent-observed-field-boundaries-preserved",
-      "Passed": true,
-      "Evidence": "fmsPassed=True; fmsTemplate=True; fmsPromotesObserved=False; nielsenPassed=True; nielsenPromotesObserved=False; momentMapPassed=True; momentMapWz=False; momentMapHiggs=False"
+      "Passed": false,
+      "Evidence": "fmsPassed=False; fmsTemplate=True; fmsPromotesObserved=False; nielsenPassed=False; nielsenPromotesObserved=False; momentMapPassed=False; momentMapWz=False; momentMapHiggs=False"
     },
     {
       "Id": "dressing-field-promotion-obstructions-captured",

@@ -1,10 +1,10 @@
 {
   "phaseId": "phase427-hofseth-gu-rvg-superluminal-source-audit",
-  "generatedAt": "2026-07-09T21:19:32.4444458+00:00",
-  "terminalStatus": "hofseth-gu-rvg-superluminal-audited-external-inputs-no-contract-fill",
-  "hofsethGuRvgSuperluminalSourceAuditPassed": true,
-  "phase423PrecursorPassed": true,
-  "phase426PrecursorPassed": true,
+  "generatedAt": "2026-07-10T22:18:00.5081753+00:00",
+  "terminalStatus": "hofseth-gu-rvg-superluminal-source-audit-blocked",
+  "hofsethGuRvgSuperluminalSourceAuditPassed": false,
+  "phase423PrecursorPassed": false,
+  "phase426PrecursorPassed": false,
   "applicationSubjectKind": "hofseth-gu-rvg-superluminal-source-audit",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
@@ -184,5 +184,5 @@
     "The original record\u0027s deletion (reason: duplicate) and the live successor\u0027s identity are recorded for lineage; neither changes the non-promotional verdict.",
     "No Phase201 or Phase256 fill."
   ],
-  "decision": "The Hofseth GU-RVG superluminal metric engineering lead is audited and non-promotional. The originally-catalogued record 21056575 was deleted on 2026-07-01 (tombstone reason: duplicate); the live successor 21117379 carries the same title and the same externally-unverified Weinstein-Harvard co-authorship attribution, which matches the fabricated-attribution pattern documented in arXiv:2606.02184. The full text is 95.4 GeV dilaton/Koide/warp-condensate phenomenology that IMPORTS the electroweak VEV v = 246 GeV as an explicit input to set a 27.2 TeV dilaton decay constant, and its own bookkeeping marks the condensate amplitude as fixed by observation rather than computation. No W/Z/H source rows, observed-field projection, weak-angle lineage, pole extraction, or GeV-from-geometry normalization exists anywhere in the text. No Phase201 or Phase256 field is filled; no W/Z/H mass is promoted."
+  "decision": "Do not use the Hofseth GU-RVG audit until the precursor and fail-closed batteries pass."
 }

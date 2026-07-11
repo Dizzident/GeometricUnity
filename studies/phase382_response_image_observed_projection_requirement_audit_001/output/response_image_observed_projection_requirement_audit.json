@@ -1,8 +1,8 @@
 {
   "phaseId": "phase382-response-image-observed-projection-requirement-audit",
-  "generatedAt": "2026-07-10T21:55:48.6597628+00:00",
-  "terminalStatus": "response-image-observed-projection-requirement-audit-no-namespace-separation-map",
-  "responseImageObservedProjectionRequirementAuditPassed": true,
+  "generatedAt": "2026-07-10T22:02:52.2932294+00:00",
+  "terminalStatus": "response-image-observed-projection-requirement-audit-review-required",
+  "responseImageObservedProjectionRequirementAuditPassed": false,
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
   "targetBlindConstructionHash": "d40f8d09f625683f64e8387778e663ad5061ef995a05907a1952a50730b56624",
@@ -35,7 +35,7 @@
     "observedFieldFilledRequiredCount": 0,
     "observedFieldExtractionContractPromotable": false,
     "phase295Path": "studies/phase295_observed_field_extraction_contract_candidate_scan_001/output/observed_field_extraction_contract_candidate_scan_summary.json",
-    "phase295NoIntakeReadyObservedProjection": true,
+    "phase295NoIntakeReadyObservedProjection": false,
     "phase295IntakeReadyObservedFieldExtractionCandidateCount": 0,
     "phase295AnyObservedFieldExtractionCandidateFillsContract": false,
     "observedProjectionFieldResults": [
@@ -85,7 +85,7 @@
   },
   "priorMapAudits": {
     "phase311Path": "studies/phase311_completion_observed_sector_wz_row_selector_audit_001/output/completion_observed_sector_wz_row_selector_audit_summary.json",
-    "phase311ObservedMapAbsent": true,
+    "phase311ObservedMapAbsent": false,
     "completionDraftProvidesPhysicalWzObservableMap": false,
     "phase307WRowsHavePhysicalEigenstateProjectionId": false,
     "phase307ZRowsHavePhysicalEigenstateProjectionId": false,
@@ -146,12 +146,12 @@
     },
     {
       "checkId": "observed-field-contract-and-scanner-remain-unfilled",
-      "passed": true,
+      "passed": false,
       "details": "phase256RequiredFields=20; phase256FilledRequiredFields=0; phase256Promotable=False; phase295IntakeReadyCount=0; fields=observedFieldExtractionTheoremId:0/False;electroweakGaugeEmbeddingId:0/False;quadraticElectroweakMassOperatorId:0/False;photonEigenstateProjectionId:0/False;wBosonSourceRowId:0/False;zBosonSourceRowId:0/False;targetBlindConstructionHash:0/False"
     },
     {
       "checkId": "completion-and-official-draft-do-not-supply-observed-projection-map",
-      "passed": true,
+      "passed": false,
       "details": "phase311PhysicalMap=False; phase311WProjection=False; phase311ZProjection=False; phase313WRows=False; phase313ZRow=False; phase313ObservedEmbedding=False"
     },
     {
@@ -187,5 +187,5 @@
     "A source-lineage-eligible namespace-separation theorem explaining why Phase379 carrier-axis suppression should not apply to the Phase307 charged-ladder W row.",
     "Branch-stable photon, W, and Z projection/source rows with target-blind construction hashes, raw/common gates, and GeV normalization."
   ],
-  "decision": "No current artifact provides the observed electroweak projection map needed to treat Phase379 carrier axes as a separate namespace from physical W/Z axes. The Phase381 conflict therefore remains active: the selected W row uses the Phase379-suppressed axis, while the existing standard and neutral-mixing audits only state external dependency boundaries and cannot rehabilitate the selector or fill Phase201."
+  "decision": "Review the observed-projection requirement audit before using Phase379 carrier-axis data to reinterpret physical W/Z selector axes."
 }

@@ -1,7 +1,7 @@
 {
   "phaseId": "phase345-fradkin-shenker-complementarity-source-audit",
-  "terminalStatus": "fradkin-shenker-complementarity-source-audit-boundary-not-gu-source",
-  "fradkinShenkerComplementaritySourceAuditPassed": true,
+  "terminalStatus": "fradkin-shenker-complementarity-source-audit-review-required",
+  "fradkinShenkerComplementaritySourceAuditPassed": false,
   "fradkinShenkerLeadPresent": true,
   "complementarityPrimarySourcesReviewed": true,
   "complementarityRouteExternalToGu": true,
@@ -51,10 +51,10 @@
     "observedFieldExtractionRequiredFieldCount": 20,
     "observedFieldExtractionFilledRequiredFieldCount": 0,
     "observedFieldExtractionContractPromotable": false,
-    "observedFieldExtractionContractCandidateScanPassed": true,
+    "observedFieldExtractionContractCandidateScanPassed": false,
     "anyObservedFieldExtractionCandidateFillsContract": false,
     "intakeReadyObservedFieldExtractionCandidateCount": 0,
-    "fmsGaugeInvariantSpectrumSourceAuditPassed": true,
+    "fmsGaugeInvariantSpectrumSourceAuditPassed": false,
     "fmsProvidesObservedFieldExtractionTemplate": true,
     "fmsRoutePromotesObservedFieldExtraction": false,
     "fmsRouteCompletesBosonPredictions": false

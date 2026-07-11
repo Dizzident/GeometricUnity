@@ -1,8 +1,8 @@
 {
   "phaseId": "phase341-scherk-schwarz-twisted-compactification-source-audit",
-  "terminalStatus": "scherk-schwarz-twisted-compactification-source-audit-external-twist-mass-lead-not-gu-source",
-  "generatedAt": "2026-07-09T21:04:27.9408564+00:00",
-  "scherkSchwarzTwistedCompactificationSourceAuditPassed": true,
+  "terminalStatus": "scherk-schwarz-twisted-compactification-source-audit-review-required",
+  "generatedAt": "2026-07-10T22:02:05.2736005+00:00",
+  "scherkSchwarzTwistedCompactificationSourceAuditPassed": false,
   "scherkSchwarzLeadPresent": true,
   "scherkSchwarzPrimarySourcesReviewed": true,
   "scherkSchwarzRouteExternalToGu": true,
@@ -113,8 +113,8 @@
     },
     {
       "CheckId": "related-boundaries-preserved",
-      "Passed": true,
-      "Detail": "overlapsGaugeHiggs=True; phase265Passed=True; guWilsonLineSource=False; phase265Completes=False; overlapsKk=True; phase333Passed=True; phase333Completes=False; distinctFromBf=True; phase340Passed=True; phase340Completes=False"
+      "Passed": false,
+      "Detail": "overlapsGaugeHiggs=True; phase265Passed=True; guWilsonLineSource=False; phase265Completes=False; overlapsKk=True; phase333Passed=True; phase333Completes=False; distinctFromBf=True; phase340Passed=False; phase340Completes=False"
     },
     {
       "CheckId": "scherk-route-requires-missing-gu-source-data",
@@ -146,7 +146,7 @@
     "gaugeHiggsBoundaryCompletesBosonPredictions": false,
     "kaluzaKleinInternalSymmetrySourceAuditPassed": true,
     "kkRouteCompletesBosonPredictions": false,
-    "bfTopologicalMassSourceAuditPassed": true,
+    "bfTopologicalMassSourceAuditPassed": false,
     "bfRouteCompletesBosonPredictions": false
   },
   "decision": "Do not promote W/Z or Higgs physical masses from the Scherk-Schwarz/twisted-compactification route in this repository. The route is a genuine geometric mass-generation lead through compactification twists, Wilson-line phases, or boundary data, but the current evidence leaves the twist angle, compactification radius, electroweak embedding, weak angle, Higgs sector, and GeV normalization as external or model-dependent data rather than GU-local source-lineage rows.",

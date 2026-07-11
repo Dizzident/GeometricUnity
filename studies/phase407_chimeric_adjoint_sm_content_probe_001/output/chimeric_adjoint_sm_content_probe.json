@@ -1,11 +1,11 @@
 {
   "phaseId": "phase407-chimeric-adjoint-sm-content-probe",
-  "generatedAt": "2026-07-09T21:06:38.3299892+00:00",
-  "terminalStatus": "sm-higgs-pattern-doublet-exists-in-chimeric-frame-cross-internal-block-spin-zero-extraction-named",
-  "chimericAdjointSmContentProbePassed": true,
-  "phase404PrecursorPassed": true,
-  "phase406PrecursorPassed": true,
-  "probeInternallyConsistent": true,
+  "generatedAt": "2026-07-10T22:04:34.9016528+00:00",
+  "terminalStatus": "chimeric-adjoint-sm-content-probe-blocked",
+  "chimericAdjointSmContentProbePassed": false,
+  "phase404PrecursorPassed": false,
+  "phase406PrecursorPassed": false,
+  "probeInternallyConsistent": false,
   "colorDimensionCorrect": true,
   "spacetimeBlockCorrect": true,
   "dimensionAccounting": true,
@@ -160,5 +160,5 @@
     "primaryDraft": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt (section 9; eq. 12.28 dictionary)",
     "explainerAnalysis": "docs/Reference/ExperimentReferences/TOE-GU-ICEBERG-20250423-GAP-ANALYSIS.md (row 5: vertical symmetric-2-tensor claim)"
   },
-  "decision": "The surviving route from the Phase406 falsification map receives its first POSITIVE existence result. The full chimeric algebra\u0027s adjoint (so(14) compact arithmetic for spin(7,7), 91 = 6 \u002B 45 \u002B 40) was branched completely under {spacetime so(4)} x {the Phase404 SM chain}, every block tagged with (spacetime content, color, isospin, |Y|). VERDICTS: (1) color-singlet su(2)_L doublets with EXACTLY |Y| = 1/2 - the SM-Higgs quantum numbers - DO exist in the chimeric adjoint, and they live precisely in the frame-cross-internal (4 x 10) block, the non-adjoint sector the falsification map isolated (they arise from the Pati-Salam so(4) vector 4 = (2_L, 2_R) with B-L = 0, so the hypercharge is pure su(2)_R Cartan = \u002B-1/2 - the mechanism is machine-verified, not assumed); (2) the spacetime-scalar sector (pure internal 45 \u002B pure spacetime 6) contains NO such doublet, re-confirming Phase404 inside the bigger frame; (3) the existing doublets carry a spacetime-VECTOR index - the spin-0 extraction (the Iceberg\u0027s symmetric-2-tensor/vertical-form route through the Y14 -\u003E X4 pullback, GU-DRAFT-2021 section 9) is the named remaining structural step before this block can be called a Higgs candidate, followed by the unchanged binding gaps (VEV selection, quantitative chain). Representation bookkeeping only; nothing is promoted; no contract field is filled."
+  "decision": "Do not use the chimeric branching until the precursors and the dimension/exclusion battery pass."
 }

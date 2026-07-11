@@ -1,11 +1,11 @@
 {
   "phaseId": "phase442-joint-omega-theta-hessian-degree-probe",
-  "generatedAt": "2026-07-09T21:20:26.3055347+00:00",
-  "terminalStatus": "joint-omega-theta-hessian-degree-probe-passed-einsteinian-lift-above-degree-two-necessary-not-sufficient-no-scale",
-  "jointOmegaThetaHessianDegreeProbePassed": true,
-  "phase436PrecursorPassed": true,
-  "phase441PrecursorPassed": true,
-  "precursorsPassed": true,
+  "generatedAt": "2026-07-10T22:18:57.123589+00:00",
+  "terminalStatus": "joint-omega-theta-hessian-degree-probe-blocked",
+  "jointOmegaThetaHessianDegreeProbePassed": false,
+  "phase436PrecursorPassed": false,
+  "phase441PrecursorPassed": false,
+  "precursorsPassed": false,
   "applicationSubjectKind": "joint-omega-theta-hessian-degree-probe",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
@@ -69,7 +69,7 @@
     "naiveDiracDoublersPresent": true
   },
   "batteries": {
-    "batteriesAllPassed": true,
+    "batteriesAllPassed": false,
     "controlArmReproducesPhase436DegreeTwo": true,
     "controlRichnessFails": true,
     "controlMaxD5ObjRelative": 2.637738120023088E-15,
@@ -356,7 +356,7 @@
     "treatmentVerdict": "every genuinely-rich Einsteinian member lifts the joint (omega,theta) Hessian above degree 2",
     "robustness": "the degree verdict AGREES under both vertex-\u003Eface rules (lowest-index and incident-average); the incident-average rule attenuates the lift MAGNITUDE by ~11.5x (it smooths theta over the face\u0027s three vertices) but the verdict is robust"
   },
-  "runtimeSeconds": 0.6833431,
+  "runtimeSeconds": 0.6893691,
   "physicalCouplingProvided": false,
   "routeProvidesPhysicalEffectiveActionHessian": false,
   "routeProvidesVevOrSourceScaleLineage": false,
@@ -392,5 +392,5 @@
     "Extracting an actual scale requires the deferred variational eps*(omega) \u002B effective-potential saturation analysis (the named next study); nothing here is promoted.",
     "No VEV scale, pole, or GeV lineage; no Phase201 or Phase256 contract field is filled; the reduced slice does not realize the ambient 7,7 / internal gauge / weld content."
   ],
-  "decision": "The joint (omega, theta) Hessian-degree probe on the draft-canonical Einsteinian Shiab is decided on internal consistency. On CreateUniform4D(1) (su(2) trace pairing; nOmega=195, nTheta=48), with theta a genuine INDEPENDENT H-valued vertex DOF and the Hessian over the JOINT (omega, theta): the CONTROL arm (identity-equivalent {id0, none, trivial}) reproduces the Phase436/441 no-go exactly on the 4D mesh -- the objective is degree-4-exact (max relative 5th t-difference 2.64E-015 \u003C 1E-008) and the Hessian degree-2 (3rd t-difference 1.14E-013) -- and it FAILS the richness certificate (the expected control outcome). The ISOLATION battery is bit-exact: with the identity-equivalent Shiab theta is absent from Upsilon so the theta-block of the joint Hessian is EXACTLY zero (||block|| = 0.0E\u002B000), while a genuine sd2 member couples theta (||block|| = 6.576E-002 \u003E 0) -- so every genuinely-rich Einsteinian member lifts the joint (omega,theta) Hessian above degree 2, and that lift (where present) is Shiab-caused, NOT a free-DOF artifact of inserting theta. The HONESTY sweep confirms the third t-difference vanishes at theta amplitude 0 (1.28E-013) and grows with amplitude (to 6.40E-005), separating a genuine lift from a numerical artifact. The degree verdict AGREES under both vertex-\u003Eface rules (lowest-index and incident-average); the incident-average rule attenuates the lift MAGNITUDE by ~11.5x (it smooths theta over the face\u0027s three vertices) but the verdict is robust. The study-side per-face Ad machinery reproduces the shipped EvaluateWithTheta to 0.0E\u002B000. MANDATORY FRAMING: a degree \u003E 2 verdict is the NECESSARY condition for log-saturation, NOT sufficient, and is NOT a scale -- no scale, pole, VEV, or GeV is produced. The named NEXT study is: joint effective-potential \u002B variational eps*(omega) (solve dS/deps=0, integrate epsilon out) \u002B Coleman-Weinberg / gap-equation saturation analysis (Phase435/438 machinery on the lifted joint Hessian). Degree \u003E 2 is the NECESSARY condition for log-saturation, NOT sufficient, and NOT a scale. Everything is target-blind, reduced-spin4-slice structure; no Phase201/Phase256 contract field is filled; nothing is promoted."
+  "decision": "Do not use the degree verdicts until the precursors, control-arm reproduction, isolation battery, honesty sweep, cross-check, and carrier-match batteries pass."
 }

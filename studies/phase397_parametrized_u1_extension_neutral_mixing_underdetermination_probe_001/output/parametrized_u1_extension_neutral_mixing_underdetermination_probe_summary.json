@@ -1,10 +1,10 @@
 {
   "phaseId": "phase397-parametrized-u1-extension-neutral-mixing-underdetermination-probe",
-  "generatedAt": "2026-07-09T21:05:44.7216256+00:00",
-  "terminalStatus": "neutral-mixing-machinery-materialized-photon-z-separation-underdetermined-two-parameter-gap-named",
-  "parametrizedU1ExtensionNeutralMixingUnderdeterminationProbePassed": true,
-  "phase395PrecursorPassed": true,
-  "phase396PrecursorPassed": true,
+  "generatedAt": "2026-07-10T22:03:38.0397916+00:00",
+  "terminalStatus": "parametrized-u1-extension-neutral-mixing-underdetermination-probe-blocked",
+  "parametrizedU1ExtensionNeutralMixingUnderdeterminationProbePassed": false,
+  "phase395PrecursorPassed": false,
+  "phase396PrecursorPassed": false,
   "probeInternallyConsistent": true,
   "neutralMixingMachineryMaterialized": true,
   "photonZSeparationUnderdetermined": true,
@@ -176,5 +176,5 @@
     "phase12Root": "studies/phase12_joined_calculation_001/output/background_family",
     "backgroundStateDir": "studies/phase12_joined_calculation_001/output/background_family/background_states"
   },
-  "decision": "The u(1) extension machinery is materialized on the control branch: the per-edge u(1) variation blocks are Hermitian and the extended carrier decomposes under the residual U(1)_{n_omega} into charges {0, \u002B-1, 0} with TWO neutral channels. Three sector findings sharpen the electroweak gap. First, the su(2)-neutral source channel is nearly EMPTY (max fraction 0.0023): the Z-like channel is sourceless on this branch, consistent with the Phase395 response direction being orthogonal to n_omega. Second, the u(1) source channel is nonzero per unit charge. Third and decisively, the structural neutral-mixing element of the extended block Gram VANISHES identically (ratio ~1e-9, a trace selection rule tr(rho(n_omega)) = 0): the two neutral channels are exactly decoupled in the fermion-bilinear channel, so photon/Z-style mixing CANNOT be generated there even with couplings supplied - it requires a symmetry-breaking scalar/VEV sector, which this branch lacks and which is precisely the missing Phase201 Higgs scalar source row. The photon/Z separation therefore remains a one-parameter family with no target-blind member, blocked by the named gap {hypercharge lineage, coupling-ratio lineage, symmetry-breaking scalar sector}. No weak angle is selected, no charge is physical, and no contract field is filled."
+  "decision": "Do not use the u(1) extension until the Phase395/396 precursors, Hermiticity, sector-source, and mixing-element checks all pass."
 }

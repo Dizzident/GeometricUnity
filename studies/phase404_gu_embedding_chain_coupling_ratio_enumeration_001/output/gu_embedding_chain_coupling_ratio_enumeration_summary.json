@@ -1,10 +1,10 @@
 {
   "phaseId": "phase404-gu-embedding-chain-coupling-ratio-enumeration",
-  "generatedAt": "2026-07-09T21:06:36.6082198+00:00",
-  "terminalStatus": "gu-embedding-chain-enumerated-ratio-menu-derived-adjoint-higgs-doublet-absent",
-  "guEmbeddingChainCouplingRatioEnumerationPassed": true,
-  "phase402PrecursorPassed": true,
-  "phase403PrecursorPassed": true,
+  "generatedAt": "2026-07-10T22:04:33.1020105+00:00",
+  "terminalStatus": "gu-embedding-chain-coupling-ratio-enumeration-blocked",
+  "guEmbeddingChainCouplingRatioEnumerationPassed": false,
+  "phase402PrecursorPassed": false,
+  "phase403PrecursorPassed": false,
   "enumerationInternallyConsistent": true,
   "scaffoldingVerified": true,
   "su2ClosureResidual": 0,
@@ -2194,5 +2194,5 @@
     "primaryDraftDictionary": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt (sections 11-12, eq. 12.28)",
     "explainerAnalysis": "docs/Reference/ExperimentReferences/TOE-GU-ICEBERG-20250423-GAP-ANALYSIS.md (rows 6, 10)"
   },
-  "decision": "The GU-named embedding chain is now exhaustively enumerated at the complexification level, from first principles. THREE COMPUTED RESULTS. (1) The embedding-derived coupling ratio for the standard hypercharge direction is tan^2(theta_emb) = 3/5 (sin^2 = 3/8), with the normalization anchored INTERNALLY by the 16\u0027s color-singlet doublet (lepton-doublet bookkeeping) - the classic unified-chain constant, derived blind by the machine, identical for every chain sharing this hypercharge embedding; the bounded scan records the full ratio menu over hypercharge directions. (2) The 16-dimensional spinor block DERIVES the complete SM family hypercharge pattern (quark doublet |Y|=1/6, lepton doublet |Y|=1/2, up/down/electron/neutrino singlets at 2/3, 1/3, 1, 0 in lepton-normalized units) - the family quantum numbers come out of the chain rather than being matched. (3) DECISIVE NEGATIVE for the scalar route: the adjoint 45 contains NO color-singlet charged doublet block for ANY scanned hypercharge direction - every doublet in the adjoint is colored (X/Y-boson type). Since the draft\u0027s scalar candidate is the pulled-back CONNECTION component (adjoint-valued), the SM-Higgs-pattern doublet CANNOT come from the gauge-algebra-adjoint part of the connection on this chain: it must come from the NON-ADJOINT components of the GU connection (the vertical/symmetric-2-tensor part named by the Iceberg analysis) or not at all - sharply narrowing scalar-sector sub-gap (a). Limitations recorded: compact-form arithmetic for the spin(6,4) complexification; charges and ratios only - no VEV, no scale, no GeV; nothing is promoted."
+  "decision": "Do not use the enumeration until the precursors and the scaffolding/branching battery pass."
 }

@@ -1,7 +1,7 @@
 {
   "phaseId": "phase384-phase307-basis-energy-response-image-proxy-audit",
-  "terminalStatus": "phase307-basis-energy-response-image-proxy-audit-no-suppressed-axis-escape",
-  "phase307BasisEnergyResponseImageProxyAuditPassed": true,
+  "terminalStatus": "phase307-basis-energy-response-image-proxy-audit-review-required",
+  "phase307BasisEnergyResponseImageProxyAuditPassed": false,
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
   "targetBlindConstructionHash": "77da141091c1f673c094c44e88f468f0d0c10f95025c3b32d46ba9195816b199",
@@ -10,7 +10,7 @@
   "phase27BasisEnergyMaterialized": true,
   "phase307Materialized": true,
   "phase379ContextMaterialized": true,
-  "phase381382383BlockerMaterialized": true,
+  "phase381382383BlockerMaterialized": false,
   "suppressedGaugeAxis": 1,
   "phase379DominantGaugeAxes": [
     0,
@@ -54,8 +54,8 @@
     },
     {
       "checkId": "phase379-381-382-383-response-image-blocker-preserved",
-      "passed": true,
-      "details": "phase379Context=True; suppressedAxis=1; dominantAxes=0,2; phase381382383Blocker=True"
+      "passed": false,
+      "details": "phase379Context=True; suppressedAxis=1; dominantAxes=0,2; phase381382383Blocker=False"
     },
     {
       "checkId": "no-phase307-w-definition-has-low-suppressed-basis-energy-proxy",
@@ -73,5 +73,5 @@
       "details": "sourceContractApplicationAllowed=False; canFillPhase201WzContract=False; canFillPhase256ObservedFieldExtractionContract=False; acceptedContractFieldCount=0; blockedContractFieldCount=15; phase213WzMissingFieldCount=15"
     }
   ],
-  "decision": "Phase27 basis-energy metadata does not provide a finer suppressed-axis escape for Phase307. Every current W source definition has suppressed-axis basis energy above 0.1; the minimum is 0.33627838840903185, and the P302-scaled stable common selector has 0.44501616745604355. This proxy is not an observed projection map or a source-row theorem, so it cannot fill Phase201."
+  "decision": "Review the Phase307 basis-energy response-image proxy audit before using Phase27 basis-energy fractions as sidecar evidence."
 }

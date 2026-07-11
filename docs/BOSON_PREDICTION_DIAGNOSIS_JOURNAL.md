@@ -19921,3 +19921,46 @@ ODD artifact into WHAM reconstructions; use uniform-stiffness ladders
 or junction-aware error models. promotedPhysicalMassClaimCount=0
 throughout - the null is a NEGATIVE result about scale generation,
 not a prediction.
+
+## 2026-07-11 - Full-pass failure #1 for the phase453 claim: README rewrite broke phase230's boundary-language gate; third fingerprint blind spot fixed
+
+The promotion-gating --full pass for the phase453 T1 claim ABORTED at
+the integrity verifier. Root cause traced end-to-end and it is NOT
+physics: phase230 machine-asserts that README.md carries the exact
+non-prediction boundary sentences ("no current observable is validated
+as a physical W/Z/Higgs/photon property"; "no physical unit
+calibration to GeV or measured couplings exists yet"); the 2026-07-10
+README refresh dropped them; phase230 flipped review-required and the
+precursor cascade (231 -> 232 -> 237 -> 370 -> 371-396 -> 442-precursor
+chain -> 448/449/450 -> 453) recorded blocked verdicts through the
+entire heavy tail before the abort. The phase453 rerun itself
+REPRODUCED EVERY PHYSICS NUMBER of the committed T1 record exactly
+(arms 2.49/0.89 and 2.30/2.46, tadpoles 1.11/0.29, single-well
+everywhere, window gates green) - the HMC pipeline is deterministic;
+only the precursor gate failed. The T1 claim itself is untouched by
+this incident; it remains unpushed pending a green full pass.
+
+WHY NO INCREMENTAL PASS CAUGHT IT (the third fingerprint blind spot):
+the static extractor captured only directory-prefixed path literals
+(studies/|docs/|src/|native/|scripts/); phase230 reads bare
+"README.md" - a repo-ROOT literal - so its fingerprint was blind to
+the README change and every incremental pass since the rewrite
+silently SKIPPED phase230. Fix: bare filename literals that name an
+existing repo-root file are now fingerprint inputs (fail-closed: false
+positives only add sensitivity); unit-tested (50/50 green). Deep-scan
+verified: across ALL phases reading README.md under any variable name,
+every required substring is present in the restored README.
+
+FIXES IN THIS CHECKPOINT: (a) the two boundary sentences restored to
+README's honest-frontier section as machine-audited boundaries (the
+gate was RIGHT - the sentences are load-bearing; never weaken a gate);
+(b) README's stale pole number corrected to the canonical committed
+record (2.53 sd2, free-field-compatible) per the reconciliation rule;
+(c) the extractor root-file fix + test; (d) phase230 re-run green
+(native-gu-vacuum-hessian-candidate-audit-no-promotable-physical-
+extraction). LESSON (now in CLAUDE.md): content-requirement audits
+BIND specific sentences in README/docs - editing prose can break
+fail-closed gates that REQUIRE text, not only keyword scanners that
+FORBID text. The --full pass relaunches after this checkpoint; the
+cascade phases rerun and the T1 push waits for green.
+promotedPhysicalMassClaimCount=0 throughout.

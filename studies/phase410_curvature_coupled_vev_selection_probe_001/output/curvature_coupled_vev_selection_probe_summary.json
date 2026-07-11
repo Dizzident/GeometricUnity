@@ -1,11 +1,11 @@
 {
   "phaseId": "phase410-curvature-coupled-vev-selection-probe",
-  "generatedAt": "2026-07-09T21:06:40.1008573+00:00",
-  "terminalStatus": "uniform-curvature-coupling-produces-runaway-not-doublet-selection",
-  "curvatureCoupledVevSelectionProbePassed": true,
-  "phase405PrecursorPassed": true,
-  "phase409PrecursorPassed": true,
-  "probeInternallyConsistent": true,
+  "generatedAt": "2026-07-10T22:04:36.8507515+00:00",
+  "terminalStatus": "curvature-coupled-vev-selection-probe-blocked",
+  "curvatureCoupledVevSelectionProbePassed": false,
+  "phase405PrecursorPassed": false,
+  "phase409PrecursorPassed": false,
+  "probeInternallyConsistent": false,
   "meshRows": 6,
   "meshCols": 6,
   "edgeCount": 420,
@@ -366,5 +366,5 @@
     "motivatingInterview": "docs/Reference/ExperimentReferences/TOE-GU-40YEARS-20250602.md (qualitative; cite GU-DRAFT-2021 as primary)",
     "deepResearchContext": "docs/Reference/ExperimentReferences/DEEP-RESEARCH-20260612.md (no public quantitative curvature-VEV formula exists)"
   },
-  "decision": "The simplest faithful bosonic realization of the curvature-coaxing claim is machine-characterized and FAILS to select the doublet VEV, two ways at once. (C1) RUNAWAY: every rank-1 vacuum ray is exactly flat in the bare objective, so a uniform negative-mass-squared curvature term makes the augmented landscape UNBOUNDED BELOW along every such ray - no finite VEV forms where the vacuum manifold actually lives. (C2) The uniform quadratic invariant is direction-blind (identical c2 on all 8 rank-1 directions), so no triplet/doublet/singlet ordering can arise at quadratic level. (C3\u002BC4) On the lifted (non-commuting) sector the augmented landscape does form finite minima with depth ordered by INVERSE bracket norm - but the deepest stratum is BLOCK-DEGENERATE (it contains non-doublet-internal pairs), so even there the doublet is not selected. CONSEQUENCE: the interview\u0027s curvature-coaxing mechanism, realized as a uniform bosonic coupling, leaves scalar-sector sub-gap (b) open; selection requires DIRECTION-DEPENDENT curvature coupling or the fermionic/Dirac-sector realization (Phase411 candidate) - i.e. exactly the internal structure the missing scalar-sector specification would have to provide. R_eff and kappaR are arbitrary external parameters throughout; nothing is promoted; no contract field is filled."
+  "decision": "Do not use the characterization until the precursors and the exactness battery pass."
 }

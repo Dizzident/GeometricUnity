@@ -30,6 +30,9 @@ current checkpoint:
 The program has traced every electroweak-shaped gap to a physical root and
 reached the following standing conclusions:
 
+- **No promoted physical claims.** As machine-audited boundaries:
+  no current observable is validated as a physical W/Z/Higgs/photon property;
+  no physical unit calibration to GeV or measured couplings exists yet.
 - **No dimensionful anchor exists in the sources.** A single external
   dimensionful scale is a source-level decision the derivation has not
   supplied; without it no absolute mass can be stated.
@@ -42,8 +45,9 @@ reached the following standing conclusions:
   is a one-parameter family blocked by the still-missing hypercharge and
   coupling-ratio lineage together with the symmetry-breaking scalar sector.
 - **First measured workbench pole.** The program's first measured pole is a
-  gapped scalar channel at `a·m ≈ 2.44` in **lattice units only** — a
-  ratio-grade quantity, never a particle mass and never relabeled as one.
+  gapped scalar channel at `a·m ≈ 2.53` (canonical committed record; the
+  measurement is currently free-field-compatible) in **lattice units only** —
+  a ratio-grade quantity, never a particle mass and never relabeled as one.
 
 See `docs/BOSON_PREDICTION_AGENT_RESTART_PROMPT.md` for the full gate status and
 next steps, and `docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md` for the history.

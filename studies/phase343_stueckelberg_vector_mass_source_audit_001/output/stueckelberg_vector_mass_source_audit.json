@@ -1,8 +1,8 @@
 {
   "phaseId": "phase343-stueckelberg-vector-mass-source-audit",
-  "terminalStatus": "stueckelberg-vector-mass-source-audit-external-mass-parameter-not-gu-source",
-  "generatedAt": "2026-07-10T11:50:09.76372+00:00",
-  "stueckelbergVectorMassSourceAuditPassed": true,
+  "terminalStatus": "stueckelberg-vector-mass-source-audit-review-required",
+  "generatedAt": "2026-07-10T22:02:05.8802562+00:00",
+  "stueckelbergVectorMassSourceAuditPassed": false,
   "stueckelbergLeadPresent": true,
   "stueckelbergPrimarySourcesReviewed": true,
   "stueckelbergRouteExternalToGu": true,
@@ -102,8 +102,8 @@
     },
     {
       "CheckId": "related-electroweak-boundaries-preserved",
-      "Passed": true,
-      "Detail": "bf=True; higgsless=True; neutralMixing=True; standardBoundary=True; ymHiggs=True; unitarity=True; oblique=True"
+      "Passed": false,
+      "Detail": "bf=False; higgsless=False; neutralMixing=True; standardBoundary=True; ymHiggs=True; unitarity=True; oblique=False"
     },
     {
       "CheckId": "stueckelberg-route-requires-missing-gu-source-data",
@@ -138,11 +138,11 @@
     "coupledYangMillsHiggsRouteCompletesBosonPredictions": false,
     "electroweakUnitarityScatteringSourceAuditPassed": true,
     "unitarityRouteCompletesBosonPredictions": false,
-    "obliquePrecisionElectroweakSourceAuditPassed": true,
+    "obliquePrecisionElectroweakSourceAuditPassed": false,
     "obliqueRouteCompletesBosonPredictions": false,
-    "bfTopologicalMassSourceAuditPassed": true,
+    "bfTopologicalMassSourceAuditPassed": false,
     "bfRouteCompletesBosonPredictions": false,
-    "higgslessBoundaryConditionSourceAuditPassed": true,
+    "higgslessBoundaryConditionSourceAuditPassed": false,
     "higgslessRouteCompletesBosonPredictions": false
   },
   "decision": "Do not promote W/Z or Higgs physical masses from Stueckelberg vector-mass mechanisms. The route is a serious gauge-geometric mass-generation lead, especially for abelian vector fields and extra Z-prime sectors, but the current sources either introduce external mass parameters, modify photon or weak-mixing structure, remain effective rather than UV complete for W/Z, or require standard Higgs-sector compatibility. They do not fill GU-local W/Z/H source-lineage rows.",

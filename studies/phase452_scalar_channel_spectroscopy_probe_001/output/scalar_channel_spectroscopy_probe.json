@@ -1,11 +1,11 @@
 {
   "phaseId": "phase452-scalar-channel-spectroscopy-probe",
-  "generatedAt": "2026-07-10T04:14:48.9454094+00:00",
-  "terminalStatus": "scalar-channel-spectroscopy-probe-passed-scalar-channel-gapped-measured-workbench-relative-no-gev",
-  "scalarChannelSpectroscopyProbePassed": true,
-  "phase448PrecursorPassed": true,
-  "phase449PrecursorPassed": true,
-  "precursorsPassed": true,
+  "generatedAt": "2026-07-11T05:27:17.3433939+00:00",
+  "terminalStatus": "scalar-channel-spectroscopy-probe-blocked",
+  "scalarChannelSpectroscopyProbePassed": false,
+  "phase448PrecursorPassed": false,
+  "phase449PrecursorPassed": false,
+  "precursorsPassed": false,
   "applicationSubjectKind": "scalar-channel-spectroscopy-probe",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
@@ -65,7 +65,7 @@
     "rngSeed": 20260705,
     "gaussSimSamples": 4000
   },
-  "scalarChannelVerdict": "scalar-channel-gapped-measured",
+  "scalarChannelVerdict": "blocked",
   "scaleIsWorkbenchRelativeCandidateOnly": true,
   "noGevPromotion": true,
   "coshCorrectedEffectiveMassesOnly": true,
@@ -74,7 +74,7 @@
   "physicistReviewPending": true,
   "pureGaugeRatioNote": "a*m_0\u002B\u002B is the scalar glueball-like gap of THIS pure-S_B lattice action, in lattice units of the reduced spin-4 slice workbench. It is a pure-gauge-sector composite-pole scale: ratios to any electroweak-labeled quantity are undefined here, and per the binding label caveat the W/Z/H labels attach only in a Higgs phase -- this number is NEVER m_H.",
   "batteries": {
-    "batteriesAllPassed": true,
+    "batteriesAllPassed": false,
     "orbitMapsOk": true,
     "objectiveConsistencyBattery": true,
     "objConsistencyWorst": 5.1028693165560685E-15,
@@ -290,7 +290,7 @@
               "sigma": 0.18463902186055506
             }
           ],
-          "msPerTrajectory": 249.3464482625
+          "msPerTrajectory": 275.72716942499994
         },
         {
           "member": "identity",
@@ -357,7 +357,7 @@
               "sigma": 0.1843477435442834
             }
           ],
-          "msPerTrajectory": 249.33339378
+          "msPerTrajectory": 274.43073047
         },
         {
           "member": "sd2-id0/c0.5",
@@ -424,7 +424,7 @@
               "sigma": 0.07007825117627481
             }
           ],
-          "msPerTrajectory": 389.36012773125003
+          "msPerTrajectory": 424.14159089375005
         },
         {
           "member": "sd2-id0/c0.5",
@@ -491,7 +491,7 @@
               "sigma": 0.08863910275257231
             }
           ],
-          "msPerTrajectory": 396.32687642999997
+          "msPerTrajectory": 440.97300323999997
         },
         {
           "member": "sd2-id0/c0.5",
@@ -558,7 +558,7 @@
               "sigma": 0.17626534272056854
             }
           ],
-          "msPerTrajectory": 250.06123284999998
+          "msPerTrajectory": 273.78475161
         }
       ],
       "freeFieldGates": [
@@ -637,7 +637,7 @@
     "spinorUsedAsShiabCarrierNotFiber": true,
     "draft14dObserverseNotRealized": true
   },
-  "runtimeSeconds": 6982.5564152,
+  "runtimeSeconds": 7652.1124147,
   "physicalCouplingProvided": false,
   "routeProvidesPhysicalEffectiveActionHessian": false,
   "routeProvidesVevOrSourceScaleLineage": false,
@@ -677,5 +677,5 @@
     "The T = 3 time extent admits exactly one informative cosh point; the pre-registered window rule fires on it with the excited-state-contamination caveat recorded -- single-window masses are upper-bound-flavored estimates of the 0\u002B\u002B gap, and n = 4 (env-enabled) adds the second point.",
     "No Phase201 or Phase256 contract field is filled; the reduced slice does not realize the ambient 7,7 / internal gauge / weld content; nothing is promoted either way."
   ],
-  "decision": "The 0\u002B\u002B scalar-channel spectroscopy probe is decided on internal consistency. On the lattice-canonical torus/tori n in {3} the pure S_B ensemble e^{-beta S_B} was sampled by omega-HMC (analytic joint-gradient forces, prototype pattern) interleaved with a Haar-invariant per-vertex rotation Metropolis on theta (review-board binding condition (ii)); the strictly gauge\u002Btranslation-invariant interpolators O1 = time-slice tr(F^2) and O2 = time-slice Tr(Upsilon^dagger Upsilon) (the action\u0027s own residual) were measured every trajectory; vacuum-subtracted connected correlators were time-translation averaged and COSH-CORRECTED effective masses extracted (never the log-ratio) with jackknife errors and a pre-registered window rule. GATES: free-field control (sampler large-beta columns vs the analytic Gaussian correlator built from the exact block-circulant momentum spectrum, validated by an exact direct-Gaussian pipeline battery at worst 0.86 sigma) = True; \u003Ce^-dH\u003E/equipartition per column = True; uniform-theta (global gauge rotation) invariance worst 8.57E-015 \u003C= 1E-008; objective consistency 5.10E-015; block eigensolver residual 4.72E-015; plane-wave Hv 3.33E-011; exp/log rotation-coordinate batteries 5.55E-016. VERDICT (scalar-channel-gapped-measured): per-member channel verdicts n=3 identity: scalar-channel-gapped-measured; n=3 sd2-id0/c0.5: scalar-channel-gapped-measured. a*m_0\u002B\u002B is the scalar glueball-like gap of THIS pure-S_B lattice action, in lattice units of the reduced spin-4 slice workbench. It is a pure-gauge-sector composite-pole scale: ratios to any electroweak-labeled quantity are undefined here, and per the binding label caveat the W/Z/H labels attach only in a Higgs phase -- this number is NEVER m_H. MANDATORY FRAMING: workbench-relative structure data ONLY (su(2) toy algebra, reduced Spin(4) slice, lattice units, beta = 1 recorded); NO GeV/pole/VEV promotion; theta=0 free-field columns are sampler demos, never physics verdicts. Everything is target-blind; no Phase201/Phase256 contract field is filled; nothing is promoted."
+  "decision": "Do not use the channel verdicts until the precursor, free-field, sampler, invariance, and exactness gates pass."
 }

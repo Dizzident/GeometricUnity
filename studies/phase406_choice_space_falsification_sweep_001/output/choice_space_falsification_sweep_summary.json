@@ -1,10 +1,10 @@
 {
   "phaseId": "phase406-choice-space-falsification-sweep",
-  "generatedAt": "2026-07-09T21:06:37.9335319+00:00",
-  "terminalStatus": "choice-space-swept-survivors-are-nonadjoint-larger-algebra-no-vev-selection-anywhere",
-  "choiceSpaceFalsificationSweepPassed": true,
-  "precursorsPassed": true,
-  "sweepInternallyConsistent": true,
+  "generatedAt": "2026-07-10T22:04:34.4846118+00:00",
+  "terminalStatus": "choice-space-falsification-sweep-blocked",
+  "choiceSpaceFalsificationSweepPassed": false,
+  "precursorsPassed": false,
+  "sweepInternallyConsistent": false,
   "su5TanSquared": 0.6000000000000001,
   "patiSalamTanSquared": 0.6,
   "ratioPathIndependent": true,
@@ -269,5 +269,5 @@
     "phase405SummaryPath": "studies/phase405_vacuum_manifold_doublet_vev_orbit_scan_001/output/vacuum_manifold_doublet_vev_orbit_scan_summary.json",
     "primaryDraftDictionary": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt"
   },
-  "decision": "Brute force #3 is complete: the theory\u0027s discrete choice space is swept against the machine-verified structural filters, with two new computations closing the open axes. (A) PATH INDEPENDENCE: the SU(5)-type route\u0027s embedding-derived ratio computes to tan^2 = 3/5 exactly, equal to the Pati-Salam value (Phase404) - the coupling-ratio lineage is a property of the chain\u0027s complexification, not the route. (B) SIGNATURE INDEPENDENCE: Cl(6,4) and Cl(7,3) both verify their Clifford relations exactly and both give 16-dimensional chiral families, so the draft\u0027s open signature choice does not affect the family/ratio structure. THE FALSIFICATION MAP over 16 choice combinations: the su(2)-only toy branch fails the doublet filter everywhere (explaining Phase397 at the choice level); the gauge-adjoint scalar location fails on the chain everywhere (Phase404 exclusion); the SURVIVING REGION is exactly {larger algebra} x {non-adjoint scalar location} x {either embedding path} x {either signature} - and NO combination anywhere provides a VEV selection mechanism (Phase405). The map sharpens the program: all remaining internal work lives in the non-adjoint (vertical symmetric-2-tensor) sector of the connection on a larger algebra, and the binding physical gaps (VEV selection and the quantitative chain) are choice-independent - they cannot be fixed by picking different discrete options. No scales exist; nothing is promoted; no contract field is filled."
+  "decision": "Do not use the sweep verdicts until the precursors, the path-independence and signature computations, and the filter-composition battery pass."
 }

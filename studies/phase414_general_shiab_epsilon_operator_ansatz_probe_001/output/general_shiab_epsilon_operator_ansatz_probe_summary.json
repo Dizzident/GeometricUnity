@@ -1,15 +1,15 @@
 {
   "phaseId": "phase414-general-shiab-epsilon-operator-ansatz-probe",
-  "generatedAt": "2026-07-09T21:11:31.3807191+00:00",
-  "terminalStatus": "general-shiab-epsilon-operator-ansatz-closed-on-probed-carriers-new-source-required",
-  "generalShiabEpsilonOperatorAnsatzProbePassed": true,
-  "phase408PrecursorPassed": true,
-  "phase409PrecursorPassed": true,
+  "generatedAt": "2026-07-10T22:09:54.2523729+00:00",
+  "terminalStatus": "general-shiab-epsilon-operator-ansatz-probe-blocked",
+  "generalShiabEpsilonOperatorAnsatzProbePassed": false,
+  "phase408PrecursorPassed": false,
+  "phase409PrecursorPassed": false,
   "phase409PairingMenuComplete": true,
-  "phase411PrecursorPassed": true,
-  "phase412PrecursorPassed": true,
-  "phase413PrecursorPassed": true,
-  "probeInternallyConsistent": true,
+  "phase411PrecursorPassed": false,
+  "phase412PrecursorPassed": false,
+  "phase413PrecursorPassed": false,
+  "probeInternallyConsistent": false,
   "requiredOperatorAlphabet": [
     "wedge",
     "hodge-star",
@@ -23,7 +23,7 @@
   "operatorMenuCandidateCount": 13,
   "closedLowOrderFamilyCount": 11,
   "openResidualFamilyCount": 2,
-  "lowOrderProbedCarrierFamiliesClosed": true,
+  "lowOrderProbedCarrierFamiliesClosed": false,
   "anyClosedLowOrderAnsatzProducesWeldedScalarSmDoublet": false,
   "onlyOpenFamiliesRequireNewCarrierOrSourceSpecification": true,
   "unobservedPhaseStillRequiredForFurtherProgress": true,
@@ -289,5 +289,5 @@
     "phase413SummaryPath": "studies/phase413_noncompact_real_form_transfer_probe_001/output/noncompact_real_form_transfer_probe_summary.json",
     "superphysicsMirrorNote": "docs/Reference/ExperimentReferences/SUPERPHYSICS-GU-DRAFT-MIRROR-20250530.md"
   },
-  "decision": "The general low-order Shiab/epsilon operator ansatz is CLOSED on the currently computable carriers. The requested operation alphabet is explicitly covered: wedge, Hodge star, contraction, commutator, i-weighted anticommutator, Clifford volume, and epsilon conjugation. Every closed family reduces to an upstream exact no-go: Phase408 kills the naive trace extraction; Phase409 kills linear, bilinear, and epsilon-built frame-cross doublets; Phase411/412 kill Dirac-squared and quartic composite channels; Phase413 kills finite-dimensional noncompact real-form evasion. No closed low-order family produces a welded spin-0 SM doublet. The only remaining branches require genuinely new input: a computable unobserved-phase carrier, or an explicit first-order cohomology/square-root operator delta_omega. No contract field is filled."
+  "decision": "Do not use the ansatz-closure claim until every upstream no-go certificate and the operation alphabet coverage checks pass."
 }

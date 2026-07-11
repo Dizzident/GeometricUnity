@@ -1,11 +1,11 @@
 {
   "phaseId": "phase446-rg-scheme-dependence-resolution-probe",
-  "generatedAt": "2026-07-09T22:37:42.822347+00:00",
-  "terminalStatus": "rg-scheme-dependence-resolution-probe-passed-phase445-minima-resolved-as-fit-normalization-artifact-frontier-sharpened",
-  "rgSchemeDependenceResolutionProbePassed": true,
-  "phase443PrecursorPassed": true,
-  "phase445PrecursorPassed": true,
-  "precursorsPassed": true,
+  "generatedAt": "2026-07-10T23:36:41.0538107+00:00",
+  "terminalStatus": "rg-scheme-dependence-resolution-probe-blocked",
+  "rgSchemeDependenceResolutionProbePassed": false,
+  "phase443PrecursorPassed": false,
+  "phase445PrecursorPassed": false,
+  "precursorsPassed": false,
   "applicationSubjectKind": "rg-scheme-dependence-resolution-probe",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
@@ -146,7 +146,7 @@
   "rgPrescriptionIsWorkbenchConvention": true,
   "physicistReviewPending": true,
   "batteries": {
-    "batteriesAllPassed": true,
+    "batteriesAllPassed": false,
     "thetaStationarityGate": true,
     "maxThetaResidualNonIdentity": 2.8155852160794716E-08,
     "allThetaConverged": true,
@@ -6488,7 +6488,7 @@
     "spinorUsedAsShiabCarrierNotFiber": true,
     "draft14dObserverseNotRealized": true
   },
-  "runtimeSeconds": 924.1048998,
+  "runtimeSeconds": 911.0679792,
   "physicalCouplingProvided": false,
   "routeProvidesPhysicalEffectiveActionHessian": false,
   "routeProvidesVevOrSourceScaleLineage": false,
@@ -6524,5 +6524,5 @@
     "A survives-scheme-control outcome would be a workbench-relative dynamical-scale CANDIDATE only; an artifact or unresolved outcome sharpens the frontier. Neither promotes anything.",
     "No VEV scale, pole, or GeV lineage; no Phase201 or Phase256 contract field is filled; the reduced slice does not realize the ambient 7,7 / internal gauge / weld content."
   ],
-  "decision": "The RG scheme-dependence resolution probe is decided on internal consistency. On CreateUniform4D(1) (su(2) trace pairing; nOmega=195, nTheta=48, joint DOF 243) the V_eff(t) rays were recomputed with the verbatim Phase443/445 hardened machinery on a 48-point grid whose even subset EXACTLY matches the committed Phase445 grid (every non-identity theta point passes RELATIVE residual \u003C= 1E-008 or the absolute-gradient floor 1E-010 [2 small-t points via the floor; max relative 2.82E-008]; identity theta*=0 exact; analytic LinearizeTheta matched FD to 2.24E-009). ARM 1 (replication): comparisonPerformed=True, matchesPhase445=True. ARM 2 (offset invariance): the raw V_eff argmin is EXACTLY constant-shift invariant (asserted); the verbatim fitted scheme is offset-sensitive=True; constant subtraction kills the interior minima=True. ARM 3 (fit-basis menu, 4 bases x windows x 2 grids x 2 normalizations): classification irreducibly scheme-dependent=True; any member survives the full menu=False; the identity control is itself given a manufactured minimum by some enriched scheme=True. SYNTHETIC CONTROL (provably monotone; tree 0.05 t^2 \u002B 0.006 t^4, one-loop -150 \u002B 40 ln t): the verbatim scheme manufactures an interior minimum on it=True; constant subtraction kills that manufactured minimum=True; the direct arm stays clean on it=True. ARM 4 (direct, constant-immune, jump-aware, L-image basis incl. the fixed-log column): admissible=True (interval floor 10, offset-immunity battery passed=True, fit quality met=True); CW log coefficient positive for any Einsteinian member=True; direct minimum supported=False. RESOLUTION: the Phase445 interior minima are RESOLVED AS A FIT-NORMALIZATION ARTIFACT: a t-independent constant (pure vacuum normalization, provably unable to move the true V_eff minimum) controls the fitted t^4 coefficient; constant subtraction kills every interior minimum, the fit-basis menu gives irreducibly scheme-dependent classifications, and the constant-immune direct measurement finds a non-positive CW log coefficient (no resummation-driven minimum). The RG-improved potential-fit route on the minimal mesh is CLOSED; the frontier returns to the named levers (mode-volume unlock projects, beyond-one-loop structure, or a source anchor). MANDATORY FRAMING: all scales are WORKBENCH-RELATIVE CANDIDATE data ONLY (su(2) toy algebra, reduced Spin(4) slice, lattice units, one loop); every RG prescription here is a WORKBENCH CONVENTION pending physicist review; NO GeV/pole/VEV promotion either way. Everything is target-blind, reduced-spin4-slice; no Phase201/Phase256 contract field is filled; nothing is promoted."
+  "decision": "Do not use the resolution verdicts until the precursor, theta-stationarity, control-discipline, offset-invariance, and direct-arm honesty batteries pass."
 }

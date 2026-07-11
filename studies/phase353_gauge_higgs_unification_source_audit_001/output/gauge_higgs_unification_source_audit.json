@@ -1,8 +1,8 @@
 {
   "phaseId": "phase353-gauge-higgs-unification-source-audit",
-  "terminalStatus": "gauge-higgs-unification-source-audit-geometric-hosotani-lead-not-gu-source",
-  "generatedAt": "2026-07-09T21:04:31.5319745+00:00",
-  "gaugeHiggsUnificationSourceAuditPassed": true,
+  "terminalStatus": "gauge-higgs-unification-source-audit-review-required",
+  "generatedAt": "2026-07-10T22:02:08.9693685+00:00",
+  "gaugeHiggsUnificationSourceAuditPassed": false,
   "gaugeHiggsUnificationLeadPresent": true,
   "gaugeHiggsUnificationPrimarySourcesReviewed": true,
   "gaugeHiggsUnificationRouteExternalToGu": true,
@@ -124,8 +124,8 @@
     },
     {
       "CheckId": "adjacent-kk-twist-boundary-routes-remain-nonpromotional",
-      "Passed": true,
-      "Detail": "kkPassed=True; kkPromotesWz=False; kkPromotesHiggs=False; scherkPassed=True; scherkPromotesWz=False; scherkPromotesHiggs=False; higgslessPassed=True; higgslessPromotesWz=False; higgslessPromotesHiggs=False"
+      "Passed": false,
+      "Detail": "kkPassed=True; kkPromotesWz=False; kkPromotesHiggs=False; scherkPassed=False; scherkPromotesWz=False; scherkPromotesHiggs=False; higgslessPassed=False; higgslessPromotesWz=False; higgslessPromotesHiggs=False"
     },
     {
       "CheckId": "gauge-higgs-route-does-not-fill-gu-contracts",
@@ -142,10 +142,10 @@
     "kkInternalSymmetryAuditPassed": true,
     "kkRoutePromotesWzMasses": false,
     "kkRoutePromotesHiggsMass": false,
-    "scherkSchwarzAuditPassed": true,
+    "scherkSchwarzAuditPassed": false,
     "scherkRoutePromotesWzMasses": false,
     "scherkRoutePromotesHiggsMass": false,
-    "higgslessBoundaryAuditPassed": true,
+    "higgslessBoundaryAuditPassed": false,
     "higgslessRoutePromotesWzMasses": false,
     "higgslessRoutePromotesHiggsMass": false
   },

@@ -1,11 +1,11 @@
 {
   "phaseId": "phase445-rg-improved-joint-potential-probe",
-  "generatedAt": "2026-07-09T22:22:18.3699605+00:00",
-  "terminalStatus": "rg-improved-joint-potential-probe-passed-einsteinian-rg-saturation-candidate-scheme-dependent-recorded-no-gev",
-  "rgImprovedJointPotentialProbePassed": true,
-  "phase443PrecursorPassed": true,
-  "phase444PrecursorPassed": true,
-  "precursorsPassed": true,
+  "generatedAt": "2026-07-10T23:21:29.6215879+00:00",
+  "terminalStatus": "rg-improved-joint-potential-probe-blocked",
+  "rgImprovedJointPotentialProbePassed": false,
+  "phase443PrecursorPassed": false,
+  "phase444PrecursorPassed": false,
+  "precursorsPassed": false,
   "applicationSubjectKind": "rg-improved-joint-potential-probe",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
@@ -119,7 +119,7 @@
     }
   ],
   "batteries": {
-    "batteriesAllPassed": true,
+    "batteriesAllPassed": false,
     "thetaStationarityGate": true,
     "maxThetaResidualNonIdentity": 1.3831568660353952E-09,
     "allThetaConverged": true,
@@ -1203,7 +1203,7 @@
     "spinorUsedAsShiabCarrierNotFiber": true,
     "draft14dObserverseNotRealized": true
   },
-  "runtimeSeconds": 925.638708,
+  "runtimeSeconds": 945.5165713,
   "physicalCouplingProvided": false,
   "routeProvidesPhysicalEffectiveActionHessian": false,
   "routeProvidesVevOrSourceScaleLineage": false,
@@ -1239,5 +1239,5 @@
     "An RG-saturation (interior minimum) result, where observed and scheme-stable, is a workbench-relative dynamical-scale CANDIDATE only; a no-saturation or scheme-dependent result sharpens the frontier. Neither promotes anything.",
     "No VEV scale, pole, or GeV lineage; no Phase201 or Phase256 contract field is filled; the reduced slice does not realize the ambient 7,7 / internal gauge / weld content."
   ],
-  "decision": "The RG-improved joint effective-potential probe is decided on internal consistency. On CreateUniform4D(1) (su(2) trace pairing; nOmega=195, nTheta=48, joint DOF 243) the Phase443-style V_eff(t) rays were recomputed with the hardened Newton theta*-stationarity solver (max non-identity RELATIVE residual 1.38E-009 \u003C= 1E-008; identity theta*=0 exact; analytic LinearizeTheta matched FD to 4.80E-009). The workbench beta function was MEASURED from the potential (lambda_tree from S_B~{t^2,t^3,t^4}, delta_lambda from the one-loop correction ~c*t^4, lambda_eff=sum, beta=d lambda_eff/d ln t) and V_RG(t)=lambda_eff(t)*t^4\u002Bsubleading built per member over window widths {3,5,7}. CONTROL DISCIPLINE: the identity control\u0027s tree quartic is window-constant (max rel variation 5.57E-009) with lambda_eff\u003E0 (min 1.75E\u002B000); it develops NO spurious interior minimum. SATURATION VERDICT: RG improvement produces an interior minimum for some Einsteinian schemes but the classification is SCHEME-DEPENDENT (window-width sensitive) -- recorded as scheme-dependent, not a stable candidate. MANDATORY FRAMING: any scale is a WORKBENCH-RELATIVE CANDIDATE ONLY (su(2) toy algebra, reduced Spin(4) slice, lattice units, one loop); the RG prescription is a WORKBENCH CONVENTION pending physicist review; NO GeV/pole/VEV promotion. Everything is target-blind, reduced-spin4-slice; no Phase201/Phase256 contract field is filled; nothing is promoted."
+  "decision": "Do not use the saturation verdicts until the precursor, theta-stationarity, control-discipline, and honesty batteries pass."
 }

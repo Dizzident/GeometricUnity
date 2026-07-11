@@ -20,6 +20,14 @@ const path = require("path");
 const { STATIC_EXTRACTION_EXCLUDE_RELPATHS } = require("./config.js");
 
 const RE_PATH_LITERAL = /"((?:studies|docs|src|native|scripts)\/[^"\\\n]*)"/g;
+// Bare filename literals (no directory prefix). Many are Path.Combine
+// components, but some are DIRECT repo-root reads (phase230 reads
+// "README.md" and greps it for boundary language — missed by the prefixed
+// regex above, which let a README rewrite slip past every incremental pass
+// until the 2026-07-11 full-pass cascade). Fail-closed rule: any bare
+// filename literal that names an EXISTING repo-root file becomes an input;
+// false positives merely add sensitivity, misses hide real dependencies.
+const RE_BARE_FILE_LITERAL = /"([A-Za-z0-9][A-Za-z0-9_.\-]*\.(?:md|json|jsonl|sh|txt|props|slnx|csv|config))"/g;
 const RE_CONST_STRING =
   /(?:const\s+string|static\s+readonly\s+string|(?:^|[\s(])(?:string|var))\s+([A-Za-z_]\w*)\s*=\s*"([^"\\\n]*)"/g;
 const RE_CONST_INTERP =
@@ -205,6 +213,14 @@ function extractPhaseInputs(repoRoot, projectRelPath) {
       if (rel === projectDirRel || rel.startsWith(projectDirRel + "/")) continue; // self
       if (STATIC_EXTRACTION_EXCLUDE_RELPATHS.includes(rel)) continue; // provenance-only mention
       pathLiterals.add(rel);
+    }
+
+    for (const m of src.matchAll(RE_BARE_FILE_LITERAL)) {
+      const name = m[1];
+      if (STATIC_EXTRACTION_EXCLUDE_RELPATHS.includes(name)) continue;
+      try {
+        if (fs.statSync(path.join(repoRoot, name)).isFile()) pathLiterals.add(name);
+      } catch { /* not a repo-root file: a Path.Combine component elsewhere */ }
     }
 
     // Resolved const values that are repo paths count as declared inputs

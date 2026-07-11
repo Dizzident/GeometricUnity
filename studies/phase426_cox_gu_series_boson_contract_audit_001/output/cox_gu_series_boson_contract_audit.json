@@ -1,10 +1,10 @@
 {
   "phaseId": "phase426-cox-gu-series-boson-contract-audit",
-  "generatedAt": "2026-07-09T21:19:32.1664997+00:00",
-  "terminalStatus": "cox-gu-series-audited-gu-ii-corroborates-embedding-no-contract-fill",
-  "coxGuSeriesBosonContractAuditPassed": true,
-  "phase421PrecursorPassed": true,
-  "phase425PrecursorPassed": true,
+  "generatedAt": "2026-07-10T22:18:00.1990121+00:00",
+  "terminalStatus": "cox-gu-series-boson-contract-audit-blocked",
+  "coxGuSeriesBosonContractAuditPassed": false,
+  "phase421PrecursorPassed": false,
+  "phase425PrecursorPassed": false,
   "applicationSubjectKind": "cox-gu-series-boson-contract-audit",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
@@ -307,5 +307,5 @@
     "GU I/III/IV/V are classical-framework, BRST/BV, and cosmology export/audit papers with no electroweak contract content.",
     "No Phase201 or Phase256 fill."
   ],
-  "decision": "The June 2026 Cox Geometric Unity I-V Zenodo series is audited and non-promotional. GU I/III/IV/V carry no electroweak contract content (classical framework base, BRST/BV legality layer, and cosmological export/audit rigs). GU II, The Matter Ledger, is genuinely electroweak-adjacent: it derives the tree-level hypercharge kernel with g_Y^2 = (3/5) g^2 at a Pati-Salam unification point - independently corroborating the repository\u0027s blind Phase404 embedding result - and names the minimal Pati-Salam bi-doublet scalar channel (1,2,2), matching the doublet-carrier requirement Phase403/409 identified. But GU II\u0027s own scope boundaries deny a scalar potential, VEV, mass spectrum, unification scale, threshold model, or measured-coupling fit, and it explicitly does not prove any internal geometric fluctuation contains the (1,2,2) channel. No Phase201 or Phase256 field can be filled; no W/Z/H mass is promoted."
+  "decision": "Do not use the Cox GU series audit until the precursor and fail-closed batteries pass."
 }
