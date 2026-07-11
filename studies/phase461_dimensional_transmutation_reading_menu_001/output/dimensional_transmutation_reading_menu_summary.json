@@ -1,0 +1,206 @@
+{
+  "phaseId": "phase461-dimensional-transmutation-reading-menu",
+  "terminalStatus": "dimensional-transmutation-reading-menu-declared-comparison-consistency-only",
+  "dimensionalTransmutationReadingMenuPassed": true,
+  "targetBlindConstruction": false,
+  "applicationSubjectKind": "dimensional-transmutation-reading-menu",
+  "verdictKind": "declared-comparison-consistency-only",
+  "verdictTaxonomy": [
+    "candidate-anchor-forwarded-to-A3",
+    "declared-comparison-consistency-only",
+    "part12d-anchor-readings-all-miss",
+    "menu-incomplete"
+  ],
+  "reconstructionGate": {
+    "objectionId": "O6",
+    "found": true,
+    "preRegisteredKillBand": {
+      "lo": 300,
+      "hi": 700,
+      "quotedRefereeFigure": "~460x"
+    },
+    "killFactorConventions": [
+      "linear",
+      "cc-plane-squared"
+    ],
+    "reconstructedRefereeReading": {
+      "readingId": "M(1,1)-full",
+      "windowId": "vevEw246",
+      "convention": "cc-plane-squared",
+      "killFactor": 451.10527021047886,
+      "killBandLo": 300,
+      "killBandHi": 700,
+      "windowRole": "referee-reconstruction-only",
+      "windowBannedFromLiveVerdicts": true
+    },
+    "allCandidates": [
+      {
+        "readingId": "M(1,1)-full",
+        "windowId": "vevEw246",
+        "convention": "cc-plane-squared",
+        "killFactor": 451.10527021047886,
+        "killBandLo": 300,
+        "killBandHi": 700,
+        "windowRole": "referee-reconstruction-only",
+        "windowBannedFromLiveVerdicts": true
+      }
+    ],
+    "journalAnchorQuote": "CC/dark-energy anchor killed (misses by ~460x, referee-confirmed)"
+  },
+  "lookElsewhereControl": {
+    "primaryBand": {
+      "lo": 0.0795772854596384,
+      "hi": 12.5664,
+      "convention": "fixed rational endpoints approximating [1/(4*pi), 4*pi]"
+    },
+    "secondaryBand": {
+      "lo": 0.006332572791341093,
+      "hi": 157.9137,
+      "convention": "labeled secondary sweep only; approximates [1/(16*pi^2), 16*pi^2]"
+    },
+    "liveRowCount": 119,
+    "anchorRangeLn": 70.77324211792859,
+    "pConvention": "p1 = 2*ln(missFactor)/ln(anchorRange) under the log-uniform null; Bonferroni corrected over liveRowCount",
+    "trialsSurvivalThreshold": 0.05,
+    "minCorrectedP": 1
+  },
+  "liveRowCount": 119,
+  "primaryBandHitCount": 4,
+  "secondaryBandOnlyHitCount": 11,
+  "importCleanTrialsSurvivingHitCount": 0,
+  "primaryBandHits": [
+    {
+      "readingId": "M(1,2)-full",
+      "a": 1,
+      "b": 2,
+      "anchorVariant": "full",
+      "windowId": "qcdScaleNf5",
+      "windowRole": "test-only",
+      "importsObserved": true,
+      "banned": false,
+      "valueGeV": 0.03942068722163675,
+      "windowGeV": 0.21,
+      "ratioWindowOverValue": 5.327152183301811,
+      "missFactor": 5.327152183301811,
+      "inPrimaryBand": true,
+      "inSecondaryBandOnly": false,
+      "pSingle": 0.047272577764159524,
+      "pTrialsCorrected": 1,
+      "trialsSurviving": false,
+      "importLineage": [
+        "anchor-side: gravity-scale anchor (full convention, declared import)",
+        "anchor-side: dark-energy density quarter-root scale (observed cosmology, declared import)",
+        "window-side: qcdScaleNf5 (observed, declared-comparison, role=test-only)"
+      ]
+    },
+    {
+      "readingId": "M(1,2)-reduced",
+      "a": 1,
+      "b": 2,
+      "anchorVariant": "reduced",
+      "windowId": "qcdScaleNf5",
+      "windowRole": "test-only",
+      "importsObserved": true,
+      "banned": false,
+      "valueGeV": 0.02303301916854533,
+      "windowGeV": 0.21,
+      "ratioWindowOverValue": 9.117345774920516,
+      "missFactor": 9.117345774920516,
+      "inPrimaryBand": true,
+      "inSecondaryBandOnly": false,
+      "pSingle": 0.06245803250311168,
+      "pTrialsCorrected": 1,
+      "trialsSurviving": false,
+      "importLineage": [
+        "anchor-side: gravity-scale anchor (reduced convention, declared import)",
+        "anchor-side: dark-energy density quarter-root scale (observed cosmology, declared import)",
+        "window-side: qcdScaleNf5 (observed, declared-comparison, role=test-only)"
+      ]
+    },
+    {
+      "readingId": "M(1,3)-full",
+      "a": 1,
+      "b": 3,
+      "anchorVariant": "full",
+      "windowId": "massElectron",
+      "windowRole": "test-only",
+      "importsObserved": true,
+      "banned": false,
+      "valueGeV": 0.00010823186645086018,
+      "windowGeV": 0.000511,
+      "ratioWindowOverValue": 4.721345170851378,
+      "missFactor": 4.721345170851378,
+      "inPrimaryBand": true,
+      "inSecondaryBandOnly": false,
+      "pSingle": 0.04386103296589544,
+      "pTrialsCorrected": 1,
+      "trialsSurviving": false,
+      "importLineage": [
+        "anchor-side: gravity-scale anchor (full convention, declared import)",
+        "anchor-side: dark-energy density quarter-root scale (observed cosmology, declared import)",
+        "window-side: massElectron (observed, declared-comparison, role=test-only)"
+      ]
+    },
+    {
+      "readingId": "M(1,3)-reduced",
+      "a": 1,
+      "b": 3,
+      "anchorVariant": "reduced",
+      "windowId": "massElectron",
+      "windowRole": "test-only",
+      "importsObserved": true,
+      "banned": false,
+      "valueGeV": 7.233111441006746E-05,
+      "windowGeV": 0.000511,
+      "ratioWindowOverValue": 7.064732849309951,
+      "missFactor": 7.064732849309951,
+      "inPrimaryBand": true,
+      "inSecondaryBandOnly": false,
+      "pSingle": 0.05525012402010956,
+      "pTrialsCorrected": 1,
+      "trialsSurviving": false,
+      "importLineage": [
+        "anchor-side: gravity-scale anchor (reduced convention, declared import)",
+        "anchor-side: dark-energy density quarter-root scale (observed cosmology, declared import)",
+        "window-side: massElectron (observed, declared-comparison, role=test-only)"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "checkId": "exact-rational-battery",
+      "passed": true,
+      "detail": "decimal parsing, normalization, integer powers, multiplication/division, three-way comparisons"
+    },
+    {
+      "checkId": "menu-completeness-battery",
+      "passed": true,
+      "detail": "readings=17 (9 exponent pairs x anchor variants, degenerate (0,b) registered once); windows=8 (7 live test-only \u002B 1 banned reconstruction-only); bands nested; all flags declared ex ante"
+    },
+    {
+      "checkId": "banned-import-battery",
+      "passed": true,
+      "detail": "the 246-GeV electroweak VEV window is banned (circular and gauge-variant per the recorded task-force ruling), appears exactly once, is role=referee-reconstruction-only, and no live window carries its value"
+    },
+    {
+      "checkId": "routed-slot-statement-evidence",
+      "passed": true,
+      "detail": "the coefficient-free anchor slot statement routed by phase460 is present in the committed snapshot"
+    },
+    {
+      "checkId": "reconstruction-gate-o6",
+      "passed": true,
+      "detail": "reconstructed the referee\u0027s ~460x kill: candidates=1; committed row = {\u0022readingId\u0022:\u0022M(1,1)-full\u0022,\u0022windowId\u0022:\u0022vevEw246\u0022,\u0022convention\u0022:\u0022cc-plane-squared\u0022,\u0022killFactor\u0022:451.10527021047886,\u0022killBandLo\u0022:300,\u0022killBandHi\u0022:700,\u0022windowRole\u0022:\u0022referee-reconstruction-only\u0022,\u0022windowBannedFromLiveVerdicts\u0022:true}"
+    }
+  ],
+  "physicistReviewPending": true,
+  "noGevPromotion": true,
+  "sourceContractApplicationAllowed": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "decision": "The part-12d reading menu is decided fail-closed in exact rational arithmetic over 119 live (reading, window) rows. RECONSTRUCTION GATE (O6): the task-force referee\u0027s ~460x kill is REPRODUCED - the committed reconstructed referee reading (see reconstructionGate.reconstructedRefereeReading) gives kill factor 451.1 inside the pre-registered band [300, 700] against the BANNED referee-reconstruction-only window; that row contributes NOTHING to live verdicts. LIVE RESULT: 4 primary-band hits exist, but every one is import-laden (declared observed comparison windows) and NONE survives the trials correction (minimum Bonferroni-corrected coincidence probability 1.000 \u003E 0.05); 11 additional rows land only in the labeled secondary wide band and are demoted by pre-registration. VERDICT: declared-comparison-consistency-only - the part-12d anchor readings supply NO import-clean, trials-surviving dimensionful anchor; the cc/dark-energy anchor remains killed for anchor purposes; the A6 conjunction consumes this as an A2 rule-out of anchor-grade content (the readings are not all-miss, so the relation survives only as declared-comparison numerology). Nothing is promoted; no GeV value here is a prediction."
+}

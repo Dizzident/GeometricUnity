@@ -1,0 +1,1356 @@
+{
+  "phaseId": "phase460-source-corpus-units-equivariance-kernel",
+  "terminalStatus": "source-corpus-units-equivariance-kernel-breaking-relation-found-under-prescribed-reading",
+  "generatedAt": "2026-07-11T00:27:05.0956591+00:00",
+  "unitsEquivarianceKernelAuditPassed": true,
+  "targetBlindConstruction": true,
+  "applicationSubjectKind": "source-corpus-units-equivariance-kernel",
+  "verdictKind": "breaking-relation-found-under-prescribed-reading",
+  "preRegisteredExpectedBreakingRelationId": "sp12d-cc",
+  "part12dRoutingGate": {
+    "passed": true,
+    "quoteHasEquationGlyph": false,
+    "quoteHasNumericCoefficient": false,
+    "criterionExpectedClassification": "routed-to-anchor-menu",
+    "actualClassification": "routed-to-anchor-menu",
+    "appearsAsBreakingHitUnderPrescribedReading": false,
+    "routedToAnchorMenu": true,
+    "neverSilentKernelRow": true,
+    "routedToPhase": "phase461",
+    "hypotheticalResidualIfPinnedUnderPrescribedReading": "\u002B1 (cc term grade -2 vs mass-class right-hand side grade -1)"
+  },
+  "gradingConventions": {
+    "prescribedBase": {
+      "metricG": 2,
+      "connOmega": -1,
+      "curvFAndCurvR": -2,
+      "massClass": -1
+    },
+    "canonicalExtensions": {
+      "scalarAndVevClass": -1,
+      "potentialDensity": -4,
+      "inverseGravCouplingSquaredSymbol": 2,
+      "compactAndWarpRadii": 1,
+      "dimensionlessCouplings": 0
+    },
+    "ccTermReadings": [
+      -2,
+      -1,
+      -4
+    ],
+    "gradingConventionsAreWorkbenchConventions": true
+  },
+  "symbols": [
+    "metricG",
+    "connOmega",
+    "curvF",
+    "curvR",
+    "massGeneric",
+    "massW",
+    "massZ",
+    "massH",
+    "massDirac",
+    "massMode",
+    "massVectorGeom",
+    "massVectorGauge",
+    "massVectorExtra",
+    "massComposite",
+    "massElementary",
+    "massPlanck",
+    "massTopo",
+    "massParamVector",
+    "condensateScale",
+    "vevScalar",
+    "scalarField",
+    "scalarCompensator",
+    "potentialV",
+    "ccTerm",
+    "newtonConst",
+    "radiusCompact",
+    "radiusWarp",
+    "couplingA",
+    "couplingB",
+    "couplingQ",
+    "quarticSelf",
+    "twistParam",
+    "wilsonPhase"
+  ],
+  "pinnedRowCount": 34,
+  "readings": [
+    {
+      "readingId": "R0-prescribed-literal",
+      "description": "prescribed grading; literal curvature-mass row",
+      "matrixVariant": "literal",
+      "ccGrade": -2,
+      "kernelRankValue": 24,
+      "kernelNullityValue": 9,
+      "scaleVectorInKernel": false,
+      "scaleFamilyIntersectionDim": 0,
+      "breakingRelationIds": [
+        "sp12c-lit"
+      ],
+      "breakingResiduals": [
+        "sp12c-lit:1"
+      ],
+      "verdict": "equivariance-breaking-relation-found",
+      "blockingAmbiguousIds": []
+    },
+    {
+      "readingId": "R1-prescribed-squared",
+      "description": "prescribed grading; squared-mass repair row",
+      "matrixVariant": "squared",
+      "ccGrade": -2,
+      "kernelRankValue": 24,
+      "kernelNullityValue": 9,
+      "scaleVectorInKernel": true,
+      "scaleFamilyIntersectionDim": 1,
+      "breakingRelationIds": [],
+      "breakingResiduals": [],
+      "verdict": "corpus-dimensionally-ambiguous",
+      "blockingAmbiguousIds": [
+        "sp12d-yukawa",
+        "p331-a1",
+        "p331-a2",
+        "p332-a1",
+        "p332-a2",
+        "p333-a1",
+        "p333-a2",
+        "p334-a1",
+        "p335-a1",
+        "p335-a2",
+        "p335-a3",
+        "p336-a1",
+        "p338-a1",
+        "p339-a1",
+        "p339-a2",
+        "p339-a3",
+        "p340-a1",
+        "p340-a2",
+        "p340-a3",
+        "p341-a1",
+        "p341-a2",
+        "p342-a1",
+        "p342-a1b",
+        "p342-a2",
+        "p342-a3",
+        "p343-a1",
+        "p344-a1",
+        "p344-a2",
+        "p345-a1",
+        "p345-a2",
+        "p345-a3"
+      ]
+    },
+    {
+      "readingId": "R2-ccMass-literal",
+      "description": "cc term re-graded to mass class; literal curvature-mass row",
+      "matrixVariant": "literal",
+      "ccGrade": -1,
+      "kernelRankValue": 24,
+      "kernelNullityValue": 9,
+      "scaleVectorInKernel": false,
+      "scaleFamilyIntersectionDim": 0,
+      "breakingRelationIds": [
+        "sp12c-lit",
+        "p335-r2",
+        "p339-r1"
+      ],
+      "breakingResiduals": [
+        "sp12c-lit:1",
+        "p335-r2:-1",
+        "p339-r1:1"
+      ],
+      "verdict": "equivariance-breaking-relation-found",
+      "blockingAmbiguousIds": []
+    },
+    {
+      "readingId": "R3-ccMass-squared",
+      "description": "cc term re-graded to mass class; squared-mass repair row",
+      "matrixVariant": "squared",
+      "ccGrade": -1,
+      "kernelRankValue": 24,
+      "kernelNullityValue": 9,
+      "scaleVectorInKernel": false,
+      "scaleFamilyIntersectionDim": 0,
+      "breakingRelationIds": [
+        "p335-r2",
+        "p339-r1"
+      ],
+      "breakingResiduals": [
+        "p335-r2:-1",
+        "p339-r1:1"
+      ],
+      "verdict": "equivariance-breaking-relation-found",
+      "blockingAmbiguousIds": []
+    },
+    {
+      "readingId": "R4-ccDensity-squared",
+      "description": "cc term re-graded to energy-density class; squared-mass repair row",
+      "matrixVariant": "squared",
+      "ccGrade": -4,
+      "kernelRankValue": 24,
+      "kernelNullityValue": 9,
+      "scaleVectorInKernel": false,
+      "scaleFamilyIntersectionDim": 0,
+      "breakingRelationIds": [
+        "p335-r2",
+        "p339-r1"
+      ],
+      "breakingResiduals": [
+        "p335-r2:2",
+        "p339-r1:-2"
+      ],
+      "verdict": "equivariance-breaking-relation-found",
+      "blockingAmbiguousIds": []
+    }
+  ],
+  "inventory": [
+    {
+      "itemId": "sp12c-lit",
+      "corpusPath": "docs/Reference/ExperimentReferences/SUPERPHYSICS-GU-DRAFT-MIRROR-20250530.md",
+      "evidenceKind": "snapshot-quote",
+      "evidenceRef": "m = R(y)/4",
+      "classification": "pinned-row",
+      "exponents": {
+        "massDirac": 1,
+        "curvR": -1
+      },
+      "note": "first-power curvature-mass statement as written (literal matrix variant)"
+    },
+    {
+      "itemId": "sp12c-sq",
+      "corpusPath": "docs/Reference/ExperimentReferences/SUPERPHYSICS-GU-DRAFT-MIRROR-20250530.md",
+      "evidenceKind": "snapshot-quote",
+      "evidenceRef": "m^2 = R/4",
+      "classification": "pinned-row",
+      "exponents": {
+        "massDirac": 2,
+        "curvR": -1
+      },
+      "note": "the snapshot\u0027s own recorded squared-mass repair (squared matrix variant)"
+    },
+    {
+      "itemId": "sp12-upsilon-first",
+      "corpusPath": "docs/Reference/ExperimentReferences/SUPERPHYSICS-GU-DRAFT-MIRROR-20250530.md",
+      "evidenceKind": "snapshot-quote",
+      "evidenceRef": "Upsilon_omega = 0",
+      "classification": "pinned-trivial-homogeneous",
+      "exponents": {},
+      "note": "homogeneous field equation (zero right-hand side); no grading constraint"
+    },
+    {
+      "itemId": "sp12-upsilon-second",
+      "corpusPath": "docs/Reference/ExperimentReferences/SUPERPHYSICS-GU-DRAFT-MIRROR-20250530.md",
+      "evidenceKind": "snapshot-quote",
+      "evidenceRef": "D_omega^* Upsilon_omega = 0",
+      "classification": "pinned-trivial-homogeneous",
+      "exponents": {},
+      "note": "homogeneous field equation (zero right-hand side); no grading constraint"
+    },
+    {
+      "itemId": "sp12d-cc",
+      "corpusPath": "docs/Reference/ExperimentReferences/SUPERPHYSICS-GU-DRAFT-MIRROR-20250530.md",
+      "evidenceKind": "snapshot-quote",
+      "evidenceRef": "cosmological constant as a VEV",
+      "classification": "routed-to-anchor-menu",
+      "exponents": {
+        "ccTerm": 1,
+        "massGeneric": -1
+      },
+      "note": "PRE-REGISTERED expected breaking relation; coefficient-free anchor slot statement; exponents recorded as diagnostic only, never a kernel row"
+    },
+    {
+      "itemId": "sp12d-yukawa",
+      "corpusPath": "docs/Reference/ExperimentReferences/SUPERPHYSICS-GU-DRAFT-MIRROR-20250530.md",
+      "evidenceKind": "snapshot-quote",
+      "evidenceRef": "Yukawa couplings as a VEV",
+      "classification": "dimensionally-ambiguous",
+      "exponents": {},
+      "note": "coefficient-free slot statement outside the pre-registered anchor route; blocking set"
+    },
+    {
+      "itemId": "p330-r1",
+      "corpusPath": "studies/phase330_weyl_geometric_mass_generation_source_audit_001/output/weyl_geometric_mass_generation_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "43a429a4b8f0",
+      "classification": "pinned-row",
+      "exponents": {
+        "massW": 1,
+        "couplingA": -1,
+        "vevScalar": -1
+      },
+      "note": "charged vector mass = coupling x scalar VEV / 2"
+    },
+    {
+      "itemId": "p330-r2",
+      "corpusPath": "studies/phase330_weyl_geometric_mass_generation_source_audit_001/output/weyl_geometric_mass_generation_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "43a429a4b8f0",
+      "classification": "pinned-row",
+      "exponents": {
+        "massZ": 1,
+        "couplingA": -1,
+        "vevScalar": -1
+      },
+      "note": "neutral vector mass = root-sum-square coupling x scalar VEV / 2"
+    },
+    {
+      "itemId": "p330-r2b",
+      "corpusPath": "studies/phase330_weyl_geometric_mass_generation_source_audit_001/output/weyl_geometric_mass_generation_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "43a429a4b8f0",
+      "classification": "pinned-row",
+      "exponents": {
+        "couplingA": 1,
+        "couplingB": -1
+      },
+      "note": "summands under the root-sum-square must share a grade"
+    },
+    {
+      "itemId": "p330-r3",
+      "corpusPath": "studies/phase330_weyl_geometric_mass_generation_source_audit_001/output/weyl_geometric_mass_generation_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "153f904ab06d",
+      "classification": "pinned-row",
+      "exponents": {
+        "massH": 2,
+        "quarticSelf": -1,
+        "vevScalar": -2
+      },
+      "note": "scalar mass squared = quartic x VEV squared"
+    },
+    {
+      "itemId": "p330-r4",
+      "corpusPath": "studies/phase330_weyl_geometric_mass_generation_source_audit_001/output/weyl_geometric_mass_generation_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "90f18274d508",
+      "classification": "pinned-row",
+      "exponents": {
+        "massVectorGeom": 1,
+        "couplingQ": -1,
+        "scalarCompensator": -1
+      },
+      "note": "geometric vector mass = charge x compensator scalar"
+    },
+    {
+      "itemId": "p330-r5",
+      "corpusPath": "studies/phase330_weyl_geometric_mass_generation_source_audit_001/output/weyl_geometric_mass_generation_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "65f66d78d5fb",
+      "classification": "pinned-row",
+      "exponents": {
+        "massPlanck": 1,
+        "scalarCompensator": -1
+      },
+      "note": "gravity-scale normalization pins the compensator scalar to the mass class"
+    },
+    {
+      "itemId": "p330-r6",
+      "corpusPath": "studies/phase330_weyl_geometric_mass_generation_source_audit_001/output/weyl_geometric_mass_generation_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "fb1210f749b4",
+      "classification": "pinned-row",
+      "exponents": {
+        "scalarField": 1,
+        "vevScalar": -1
+      },
+      "note": "quartic potential shape forces field and VEV into the same grade"
+    },
+    {
+      "itemId": "p331-a1",
+      "corpusPath": "studies/phase331_theta_omega_inhomogeneous_gauge_source_audit_001/output/theta_omega_inhomogeneous_gauge_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "1ed0fa73cd18",
+      "classification": "dimensionally-ambiguous",
+      "exponents": {},
+      "note": "field/potential location statement, prose-only; blocking set"
+    },
+    {
+      "itemId": "p331-a2",
+      "corpusPath": "studies/phase331_theta_omega_inhomogeneous_gauge_source_audit_001/output/theta_omega_inhomogeneous_gauge_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "73d5b9c40061",
+      "classification": "dimensionally-ambiguous",
+      "exponents": {},
+      "note": "internal-charge location statement, prose-only; blocking set"
+    },
+    {
+      "itemId": "p332-a1",
+      "corpusPath": "studies/phase332_string_m_theory_compactification_source_audit_001/output/string_m_theory_compactification_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "183c2b8f397c",
+      "classification": "dimensionally-ambiguous",
+      "exponents": {},
+      "note": "framework-level scalar-mass claim without a committed symbolic relation; blocking set"
+    },
+    {
+      "itemId": "p332-a2",
+      "corpusPath": "studies/phase332_string_m_theory_compactification_source_audit_001/output/string_m_theory_compactification_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "7b1932df11a4",
+      "classification": "dimensionally-ambiguous",
+      "exponents": {},
+      "note": "numeric-interval scalar-mass claim without a committed symbolic relation; blocking set"
+    },
+    {
+      "itemId": "p333-r1",
+      "corpusPath": "studies/phase333_kaluza_klein_internal_symmetry_source_audit_001/output/kaluza_klein_internal_symmetry_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "4b7e3275769a",
+      "classification": "pinned-row",
+      "exponents": {
+        "massMode": 1,
+        "radiusCompact": 1
+      },
+      "note": "classical mode mass = inverse internal length scale"
+    },
+    {
+      "itemId": "p333-a1",
+      "corpusPath": "studies/phase333_kaluza_klein_internal_symmetry_source_audit_001/output/kaluza_klein_internal_symmetry_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "f8fafad6ee93",
+      "classification": "dimensionally-ambiguous",
+      "exponents": {},
+      "note": "arbitrarily-light-mass statement, prose-only; blocking set"
+    },
+    {
+      "itemId": "p333-a2",
+      "corpusPath": "studies/phase333_kaluza_klein_internal_symmetry_source_audit_001/output/kaluza_klein_internal_symmetry_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "6a8a86d68490",
+      "classification": "dimensionally-ambiguous",
+      "exponents": {},
+      "note": "scale-selection requirement slot outside the pre-registered anchor route; blocking set"
+    },
+    {
+      "itemId": "p334-r1",
+      "corpusPath": "studies/phase334_su21_superconnection_source_audit_001/output/su21_superconnection_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "ce150b68e2b7",
+      "classification": "pinned-row",
+      "exponents": {
+        "massH": 1,
+        "massW": -1
+      },
+      "note": "tree-level scalar-to-vector mass ratio"
+    },
+    {
+      "itemId": "p334-r1b",
+      "corpusPath": "studies/phase334_su21_superconnection_source_audit_001/output/su21_superconnection_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "ce150b68e2b7",
+      "classification": "pinned-row",
+      "exponents": {
+        "massW": 1,
+        "massZ": -1
+      },
+      "note": "tree-level vector-to-vector mass ratio"
+    },
+    {
+      "itemId": "p334-r2",
+      "corpusPath": "studies/phase334_su21_superconnection_source_audit_001/output/su21_superconnection_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "09e7eb9eae22",
+      "classification": "pinned-trivial-homogeneous",
+      "exponents": {},
+      "note": "dimensionless mixing-angle relation; no grading constraint"
+    },
+    {
+      "itemId": "p334-r3",
+      "corpusPath": "studies/phase334_su21_superconnection_source_audit_001/output/su21_superconnection_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "2ef764abd92a",
+      "classification": "pinned-row",
+      "exponents": {
+        "quarticSelf": 1,
+        "couplingA": -2
+      },
+      "note": "quartic constrained to coupling squared (both dimensionless-class)"
+    },
+    {
+      "itemId": "p334-a1",
+      "corpusPath": "studies/phase334_su21_superconnection_source_audit_001/output/su21_superconnection_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "3eef77c4aaba",
+      "classification": "dimensionally-ambiguous",
+      "exponents": {},
+      "note": "observed-comparison conflict statement, prose-only; blocking set"
+    },
+    {
+      "itemId": "p335-r1",
+      "corpusPath": "studies/phase335_graviweak_plebanski_source_audit_001/output/graviweak_plebanski_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "df894626c1f5",
+      "classification": "pinned-row",
+      "exponents": {
+        "massPlanck": 2,
+        "newtonConst": 1
+      },
+      "note": "gravity-scale squared x gravitational coupling = dimensionless"
+    },
+    {
+      "itemId": "p335-r2",
+      "corpusPath": "studies/phase335_graviweak_plebanski_source_audit_001/output/graviweak_plebanski_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "03c549b3dbe0",
+      "classification": "pinned-row",
+      "exponents": {
+        "couplingA": 2,
+        "newtonConst": -1,
+        "ccTerm": -1
+      },
+      "note": "gauge coupling squared = gravitational coupling x cc term (the corpus\u0027s pinned cc-bearing relation)"
+    },
+    {
+      "itemId": "p335-a1",
+      "corpusPath": "studies/phase335_graviweak_plebanski_source_audit_001/output/graviweak_plebanski_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "2a5d26b4bdf3",
+      "classification": "dimensionally-ambiguous",
+      "exponents": {},
+      "note": "bare-coupling/VEV relation statement, prose-only; blocking set"
+    },
+    {
+      "itemId": "p335-a2",
+      "corpusPath": "studies/phase335_graviweak_plebanski_source_audit_001/output/graviweak_plebanski_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "08eab7840440",
+      "classification": "dimensionally-ambiguous",
+      "exponents": {},
+      "note": "scalar-mass interval lead, prose-only; blocking set"
+    },
+    {
+      "itemId": "p335-a3",
+      "corpusPath": "studies/phase335_graviweak_plebanski_source_audit_001/output/graviweak_plebanski_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "c972643befbb",
+      "classification": "dimensionally-ambiguous",
+      "exponents": {},
+      "note": "second-sector scale lead, prose-only; blocking set"
+    },
+    {
+      "itemId": "p336-r1",
+      "corpusPath": "studies/phase336_heft_scalar_geometry_source_law_audit_001/output/heft_scalar_geometry_source_law_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "64f07dfb027a",
+      "classification": "pinned-row",
+      "exponents": {
+        "massW": 1,
+        "couplingA": -1,
+        "vevScalar": -1
+      },
+      "note": "vector masses from VEV, couplings, and scalar-manifold metric"
+    },
+    {
+      "itemId": "p336-r2",
+      "corpusPath": "studies/phase336_heft_scalar_geometry_source_law_audit_001/output/heft_scalar_geometry_source_law_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "fa8dba3c85b8",
+      "classification": "pinned-row",
+      "exponents": {
+        "massH": 2,
+        "potentialV": -1,
+        "scalarField": 2
+      },
+      "note": "scalar mass squared = second field derivative of the potential density"
+    },
+    {
+      "itemId": "p336-a1",
+      "corpusPath": "studies/phase336_heft_scalar_geometry_source_law_audit_001/output/heft_scalar_geometry_source_law_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "df2bdc5bddbc",
+      "classification": "dimensionally-ambiguous",
+      "exponents": {},
+      "note": "assumed massive-pattern statement, prose-only; blocking set"
+    },
+    {
+      "itemId": "p337-r1",
+      "corpusPath": "studies/phase337_octonion_clifford_internal_space_source_audit_001/output/octonion_clifford_internal_space_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "667980142c41",
+      "classification": "pinned-row",
+      "exponents": {
+        "massH": 1,
+        "massW": -1
+      },
+      "note": "scalar-to-vector mass relation (external ratio lead)"
+    },
+    {
+      "itemId": "p337-r2",
+      "corpusPath": "studies/phase337_octonion_clifford_internal_space_source_audit_001/output/octonion_clifford_internal_space_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "bded60be7783",
+      "classification": "pinned-trivial-homogeneous",
+      "exponents": {},
+      "note": "dimensionless mixing-angle relation; no grading constraint"
+    },
+    {
+      "itemId": "p338-r1",
+      "corpusPath": "studies/phase338_metric_affine_torsion_source_audit_001/output/metric_affine_torsion_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "061167142cd7",
+      "classification": "pinned-row",
+      "exponents": {
+        "massVectorGauge": 1,
+        "couplingA": -1,
+        "condensateScale": -1
+      },
+      "note": "vector mass = coupling x condensate scale"
+    },
+    {
+      "itemId": "p338-r2",
+      "corpusPath": "studies/phase338_metric_affine_torsion_source_audit_001/output/metric_affine_torsion_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "c952f4bff7b0",
+      "classification": "pinned-row",
+      "exponents": {
+        "massVectorGauge": 1,
+        "massParamVector": -1
+      },
+      "note": "explicit quadratic vector mass term pins the mass parameter"
+    },
+    {
+      "itemId": "p338-r3",
+      "corpusPath": "studies/phase338_metric_affine_torsion_source_audit_001/output/metric_affine_torsion_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "8a0df29a5137",
+      "classification": "pinned-row",
+      "exponents": {
+        "massW": 1,
+        "couplingA": -1,
+        "vevScalar": -1
+      },
+      "note": "textbook mass structure recovered: vector mass = coupling x VEV"
+    },
+    {
+      "itemId": "p338-r4",
+      "corpusPath": "studies/phase338_metric_affine_torsion_source_audit_001/output/metric_affine_torsion_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "56c6a1ba0fe7",
+      "classification": "pinned-row",
+      "exponents": {
+        "massH": 2,
+        "quarticSelf": -1,
+        "vevScalar": -2
+      },
+      "note": "formulated breaking mechanism includes the standard scalar-sector mass-squared = quartic x VEV squared"
+    },
+    {
+      "itemId": "p338-a1",
+      "corpusPath": "studies/phase338_metric_affine_torsion_source_audit_001/output/metric_affine_torsion_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "fa788f3dfff5",
+      "classification": "dimensionally-ambiguous",
+      "exponents": {},
+      "note": "scale-parameter requirement slot outside the pre-registered anchor route; blocking set"
+    },
+    {
+      "itemId": "p339-r1",
+      "corpusPath": "studies/phase339_macdowell_mansouri_cartan_breaking_source_audit_001/output/macdowell_mansouri_cartan_breaking_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "839eb96f99cf",
+      "classification": "pinned-row",
+      "exponents": {
+        "newtonConst": 1,
+        "ccTerm": 1
+      },
+      "note": "broken-gauge gravity action normalization: gravitational coupling x cc term = dimensionless"
+    },
+    {
+      "itemId": "p339-r2",
+      "corpusPath": "studies/phase339_macdowell_mansouri_cartan_breaking_source_audit_001/output/macdowell_mansouri_cartan_breaking_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "a3bc4e7a7fc2",
+      "classification": "pinned-row",
+      "exponents": {
+        "massW": 1,
+        "couplingA": -1,
+        "vevScalar": -1
+      },
+      "note": "electroweak branch uses standard vector mass = coupling x VEV"
+    },
+    {
+      "itemId": "p339-a1",
+      "corpusPath": "studies/phase339_macdowell_mansouri_cartan_breaking_source_audit_001/output/macdowell_mansouri_cartan_breaking_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "e1e0c1c0e343",
+      "classification": "dimensionally-ambiguous",
+      "exponents": {},
+      "note": "mass-assignment claim, prose-only; blocking set"
+    },
+    {
+      "itemId": "p339-a2",
+      "corpusPath": "studies/phase339_macdowell_mansouri_cartan_breaking_source_audit_001/output/macdowell_mansouri_cartan_breaking_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "9ae5036cdaf8",
+      "classification": "dimensionally-ambiguous",
+      "exponents": {},
+      "note": "mass matrix depends on breaking parameters, prose-only; blocking set"
+    },
+    {
+      "itemId": "p339-a3",
+      "corpusPath": "studies/phase339_macdowell_mansouri_cartan_breaking_source_audit_001/output/macdowell_mansouri_cartan_breaking_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "a8c0b3ee9e47",
+      "classification": "dimensionally-ambiguous",
+      "exponents": {},
+      "note": "scale-for-observed-mass trade statement, prose-only; blocking set"
+    },
+    {
+      "itemId": "p340-r1",
+      "corpusPath": "studies/phase340_bf_topological_mass_source_audit_001/output/bf_topological_mass_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "b84ff1d2c703",
+      "classification": "pinned-row",
+      "exponents": {
+        "massVectorGauge": 1,
+        "massTopo": -1
+      },
+      "note": "two-form coupling generates vector mass equal to the topological mass parameter"
+    },
+    {
+      "itemId": "p340-r2",
+      "corpusPath": "studies/phase340_bf_topological_mass_source_audit_001/output/bf_topological_mass_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "7c467beabc66",
+      "classification": "pinned-row",
+      "exponents": {
+        "massW": 1,
+        "radiusCompact": 1
+      },
+      "note": "vector masses set by inverse curvature radius"
+    },
+    {
+      "itemId": "p340-a1",
+      "corpusPath": "studies/phase340_bf_topological_mass_source_audit_001/output/bf_topological_mass_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "34f8e54d5722",
+      "classification": "dimensionally-ambiguous",
+      "exponents": {},
+      "note": "mass-parameter source requirement slot outside the pre-registered anchor route; blocking set"
+    },
+    {
+      "itemId": "p340-a2",
+      "corpusPath": "studies/phase340_bf_topological_mass_source_audit_001/output/bf_topological_mass_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "2e211bc7b684",
+      "classification": "dimensionally-ambiguous",
+      "exponents": {},
+      "note": "tensor-sector mass-gap lead, prose-only; blocking set"
+    },
+    {
+      "itemId": "p340-a3",
+      "corpusPath": "studies/phase340_bf_topological_mass_source_audit_001/output/bf_topological_mass_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "ff89f1a39f9f",
+      "classification": "dimensionally-ambiguous",
+      "exponents": {},
+      "note": "topological-mass lead, prose-only; blocking set"
+    },
+    {
+      "itemId": "p341-r1",
+      "corpusPath": "studies/phase341_scherk_schwarz_twisted_compactification_source_audit_001/output/scherk_schwarz_twisted_compactification_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "be1e5fea4fe5",
+      "classification": "pinned-row",
+      "exponents": {
+        "massMode": 1,
+        "twistParam": -1,
+        "radiusCompact": 1
+      },
+      "note": "mode mass = twist over compact radius"
+    },
+    {
+      "itemId": "p341-r2",
+      "corpusPath": "studies/phase341_scherk_schwarz_twisted_compactification_source_audit_001/output/scherk_schwarz_twisted_compactification_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "24fe1e8c94b2",
+      "classification": "pinned-row",
+      "exponents": {
+        "massW": 1,
+        "wilsonPhase": -1,
+        "radiusCompact": 1
+      },
+      "note": "vector mass = holonomy phase over compact radius"
+    },
+    {
+      "itemId": "p341-a1",
+      "corpusPath": "studies/phase341_scherk_schwarz_twisted_compactification_source_audit_001/output/scherk_schwarz_twisted_compactification_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "9630cda3bad0",
+      "classification": "dimensionally-ambiguous",
+      "exponents": {},
+      "note": "small-phase matching statement (observed-comparison), prose-only; blocking set"
+    },
+    {
+      "itemId": "p341-a2",
+      "corpusPath": "studies/phase341_scherk_schwarz_twisted_compactification_source_audit_001/output/scherk_schwarz_twisted_compactification_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "5d03aeda500f",
+      "classification": "dimensionally-ambiguous",
+      "exponents": {},
+      "note": "spectrum-difficulty statement, prose-only; blocking set"
+    },
+    {
+      "itemId": "p342-r1",
+      "corpusPath": "studies/phase342_higgsless_boundary_condition_source_audit_001/output/higgsless_boundary_condition_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "0077bf3365bb",
+      "classification": "pinned-row",
+      "exponents": {
+        "massW": 1,
+        "radiusWarp": 1
+      },
+      "note": "boundary-condition vector mass = inverse warp/interval scale"
+    },
+    {
+      "itemId": "p342-r2",
+      "corpusPath": "studies/phase342_higgsless_boundary_condition_source_audit_001/output/higgsless_boundary_condition_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "23d94059d514",
+      "classification": "pinned-row",
+      "exponents": {
+        "massZ": 1,
+        "radiusCompact": 1
+      },
+      "note": "second vector mass arranged by a second compactification scale"
+    },
+    {
+      "itemId": "p342-a1",
+      "corpusPath": "studies/phase342_higgsless_boundary_condition_source_audit_001/output/higgsless_boundary_condition_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "91da67aafa32",
+      "classification": "dimensionally-ambiguous",
+      "exponents": {},
+      "note": "precision-constraint boundary statement, prose-only; blocking set"
+    },
+    {
+      "itemId": "p342-a1b",
+      "corpusPath": "studies/phase342_higgsless_boundary_condition_source_audit_001/output/higgsless_boundary_condition_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "90ede7928227",
+      "classification": "dimensionally-ambiguous",
+      "exponents": {},
+      "note": "precision-constraint lead, prose-only; blocking set"
+    },
+    {
+      "itemId": "p342-a2",
+      "corpusPath": "studies/phase342_higgsless_boundary_condition_source_audit_001/output/higgsless_boundary_condition_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "f64b6a79a83f",
+      "classification": "dimensionally-ambiguous",
+      "exponents": {},
+      "note": "fit-by-varying-couplings statement, prose-only; blocking set"
+    },
+    {
+      "itemId": "p342-a3",
+      "corpusPath": "studies/phase342_higgsless_boundary_condition_source_audit_001/output/higgsless_boundary_condition_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "e3bccf2a1f59",
+      "classification": "dimensionally-ambiguous",
+      "exponents": {},
+      "note": "resonance-prediction statement, prose-only; blocking set"
+    },
+    {
+      "itemId": "p343-r1",
+      "corpusPath": "studies/phase343_stueckelberg_vector_mass_source_audit_001/output/stueckelberg_vector_mass_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "a679dc50bd3d",
+      "classification": "pinned-row",
+      "exponents": {
+        "massW": 1,
+        "massParamVector": -1
+      },
+      "note": "explicit vector mass parameter carries the charged vector mass"
+    },
+    {
+      "itemId": "p343-r1b",
+      "corpusPath": "studies/phase343_stueckelberg_vector_mass_source_audit_001/output/stueckelberg_vector_mass_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "a679dc50bd3d",
+      "classification": "pinned-row",
+      "exponents": {
+        "massZ": 1,
+        "massParamVector": -1
+      },
+      "note": "explicit vector mass parameter carries the neutral vector mass"
+    },
+    {
+      "itemId": "p343-r2",
+      "corpusPath": "studies/phase343_stueckelberg_vector_mass_source_audit_001/output/stueckelberg_vector_mass_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "3818304e1841",
+      "classification": "pinned-row",
+      "exponents": {
+        "massVectorExtra": 1,
+        "massParamVector": -1
+      },
+      "note": "extra neutral vector mass from the same explicit parameter class"
+    },
+    {
+      "itemId": "p343-r3",
+      "corpusPath": "studies/phase343_stueckelberg_vector_mass_source_audit_001/output/stueckelberg_vector_mass_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "57141158e9c6",
+      "classification": "pinned-row",
+      "exponents": {
+        "massVectorGauge": 1,
+        "massParamVector": -1
+      },
+      "note": "gauge-invariant compensator construction pins the abelian vector mass parameter"
+    },
+    {
+      "itemId": "p343-a1",
+      "corpusPath": "studies/phase343_stueckelberg_vector_mass_source_audit_001/output/stueckelberg_vector_mass_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "03c6cabe92aa",
+      "classification": "dimensionally-ambiguous",
+      "exponents": {},
+      "note": "mass-parameter source requirement slot outside the pre-registered anchor route; blocking set"
+    },
+    {
+      "itemId": "p344-r1",
+      "corpusPath": "studies/phase344_fms_gauge_invariant_spectrum_source_audit_001/output/fms_gauge_invariant_spectrum_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "21a7c1dc4447",
+      "classification": "pinned-row",
+      "exponents": {
+        "massComposite": 1,
+        "massElementary": -1
+      },
+      "note": "composite-state mass maps to elementary-state mass at leading order"
+    },
+    {
+      "itemId": "p344-a1",
+      "corpusPath": "studies/phase344_fms_gauge_invariant_spectrum_source_audit_001/output/fms_gauge_invariant_spectrum_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "10364a196bed",
+      "classification": "dimensionally-ambiguous",
+      "exponents": {},
+      "note": "doublet/VEV requirement slot, prose-only; blocking set"
+    },
+    {
+      "itemId": "p344-a2",
+      "corpusPath": "studies/phase344_fms_gauge_invariant_spectrum_source_audit_001/output/fms_gauge_invariant_spectrum_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "a5fccc95bfaa",
+      "classification": "dimensionally-ambiguous",
+      "exponents": {},
+      "note": "pole-extraction requirement, prose-only; blocking set"
+    },
+    {
+      "itemId": "p345-a1",
+      "corpusPath": "studies/phase345_fradkin_shenker_complementarity_source_audit_001/output/fradkin_shenker_complementarity_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "0d8765bc73b9",
+      "classification": "dimensionally-ambiguous",
+      "exponents": {},
+      "note": "phase-structure continuity statement; no symbolic mass relation; blocking set"
+    },
+    {
+      "itemId": "p345-a2",
+      "corpusPath": "studies/phase345_fradkin_shenker_complementarity_source_audit_001/output/fradkin_shenker_complementarity_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "44508c5ef370",
+      "classification": "dimensionally-ambiguous",
+      "exponents": {},
+      "note": "local-symmetry order-parameter obstruction statement; blocking set"
+    },
+    {
+      "itemId": "p345-a3",
+      "corpusPath": "studies/phase345_fradkin_shenker_complementarity_source_audit_001/output/fradkin_shenker_complementarity_source_audit.json",
+      "evidenceKind": "committed-audit-key",
+      "evidenceRef": "f98f98569195",
+      "classification": "dimensionally-ambiguous",
+      "exponents": {},
+      "note": "analytic-continuity statement; blocking set"
+    }
+  ],
+  "corpusDimensionallyAmbiguousBlockingSet": [
+    "sp12d-yukawa",
+    "p331-a1",
+    "p331-a2",
+    "p332-a1",
+    "p332-a2",
+    "p333-a1",
+    "p333-a2",
+    "p334-a1",
+    "p335-a1",
+    "p335-a2",
+    "p335-a3",
+    "p336-a1",
+    "p338-a1",
+    "p339-a1",
+    "p339-a2",
+    "p339-a3",
+    "p340-a1",
+    "p340-a2",
+    "p340-a3",
+    "p341-a1",
+    "p341-a2",
+    "p342-a1",
+    "p342-a1b",
+    "p342-a2",
+    "p342-a3",
+    "p343-a1",
+    "p344-a1",
+    "p344-a2",
+    "p345-a1",
+    "p345-a2",
+    "p345-a3"
+  ],
+  "coverage": [
+    {
+      "phase": 330,
+      "path": "studies/phase330_weyl_geometric_mass_generation_source_audit_001/output/weyl_geometric_mass_generation_source_audit.json",
+      "present": true,
+      "trueKeyCount": 19,
+      "trueKeyListSha16": "fefb97c31a50574e",
+      "freshnessPinOk": true,
+      "indicatorKeyCount": 3,
+      "unmappedIndicatorKeyCount": 0,
+      "inventoryItemCount": 7,
+      "pinnedRowCount": 7,
+      "ambiguousCount": 0
+    },
+    {
+      "phase": 331,
+      "path": "studies/phase331_theta_omega_inhomogeneous_gauge_source_audit_001/output/theta_omega_inhomogeneous_gauge_source_audit.json",
+      "present": true,
+      "trueKeyCount": 14,
+      "trueKeyListSha16": "e03c3708666a4088",
+      "freshnessPinOk": true,
+      "indicatorKeyCount": 0,
+      "unmappedIndicatorKeyCount": 0,
+      "inventoryItemCount": 2,
+      "pinnedRowCount": 0,
+      "ambiguousCount": 2
+    },
+    {
+      "phase": 332,
+      "path": "studies/phase332_string_m_theory_compactification_source_audit_001/output/string_m_theory_compactification_source_audit.json",
+      "present": true,
+      "trueKeyCount": 19,
+      "trueKeyListSha16": "6cec6183aa92b58f",
+      "freshnessPinOk": true,
+      "indicatorKeyCount": 0,
+      "unmappedIndicatorKeyCount": 0,
+      "inventoryItemCount": 2,
+      "pinnedRowCount": 0,
+      "ambiguousCount": 2
+    },
+    {
+      "phase": 333,
+      "path": "studies/phase333_kaluza_klein_internal_symmetry_source_audit_001/output/kaluza_klein_internal_symmetry_source_audit.json",
+      "present": true,
+      "trueKeyCount": 20,
+      "trueKeyListSha16": "b24aa34f7ee62a01",
+      "freshnessPinOk": true,
+      "indicatorKeyCount": 1,
+      "unmappedIndicatorKeyCount": 0,
+      "inventoryItemCount": 3,
+      "pinnedRowCount": 1,
+      "ambiguousCount": 2
+    },
+    {
+      "phase": 334,
+      "path": "studies/phase334_su21_superconnection_source_audit_001/output/su21_superconnection_source_audit.json",
+      "present": true,
+      "trueKeyCount": 23,
+      "trueKeyListSha16": "c8ec258efc04923d",
+      "freshnessPinOk": true,
+      "indicatorKeyCount": 3,
+      "unmappedIndicatorKeyCount": 0,
+      "inventoryItemCount": 5,
+      "pinnedRowCount": 3,
+      "ambiguousCount": 1
+    },
+    {
+      "phase": 335,
+      "path": "studies/phase335_graviweak_plebanski_source_audit_001/output/graviweak_plebanski_source_audit.json",
+      "present": true,
+      "trueKeyCount": 25,
+      "trueKeyListSha16": "2f555cbb567e47f5",
+      "freshnessPinOk": true,
+      "indicatorKeyCount": 1,
+      "unmappedIndicatorKeyCount": 0,
+      "inventoryItemCount": 5,
+      "pinnedRowCount": 2,
+      "ambiguousCount": 3
+    },
+    {
+      "phase": 336,
+      "path": "studies/phase336_heft_scalar_geometry_source_law_audit_001/output/heft_scalar_geometry_source_law_audit.json",
+      "present": true,
+      "trueKeyCount": 23,
+      "trueKeyListSha16": "b0455fabc446ae0d",
+      "freshnessPinOk": true,
+      "indicatorKeyCount": 2,
+      "unmappedIndicatorKeyCount": 0,
+      "inventoryItemCount": 3,
+      "pinnedRowCount": 2,
+      "ambiguousCount": 1
+    },
+    {
+      "phase": 337,
+      "path": "studies/phase337_octonion_clifford_internal_space_source_audit_001/output/octonion_clifford_internal_space_source_audit.json",
+      "present": true,
+      "trueKeyCount": 25,
+      "trueKeyListSha16": "171b9fe6d92d8b3f",
+      "freshnessPinOk": true,
+      "indicatorKeyCount": 2,
+      "unmappedIndicatorKeyCount": 0,
+      "inventoryItemCount": 2,
+      "pinnedRowCount": 1,
+      "ambiguousCount": 0
+    },
+    {
+      "phase": 338,
+      "path": "studies/phase338_metric_affine_torsion_source_audit_001/output/metric_affine_torsion_source_audit.json",
+      "present": true,
+      "trueKeyCount": 36,
+      "trueKeyListSha16": "814c97980797e2fd",
+      "freshnessPinOk": true,
+      "indicatorKeyCount": 4,
+      "unmappedIndicatorKeyCount": 0,
+      "inventoryItemCount": 5,
+      "pinnedRowCount": 4,
+      "ambiguousCount": 1
+    },
+    {
+      "phase": 339,
+      "path": "studies/phase339_macdowell_mansouri_cartan_breaking_source_audit_001/output/macdowell_mansouri_cartan_breaking_source_audit.json",
+      "present": true,
+      "trueKeyCount": 34,
+      "trueKeyListSha16": "509cecb5f87a5e70",
+      "freshnessPinOk": true,
+      "indicatorKeyCount": 1,
+      "unmappedIndicatorKeyCount": 0,
+      "inventoryItemCount": 5,
+      "pinnedRowCount": 2,
+      "ambiguousCount": 3
+    },
+    {
+      "phase": 340,
+      "path": "studies/phase340_bf_topological_mass_source_audit_001/output/bf_topological_mass_source_audit.json",
+      "present": true,
+      "trueKeyCount": 31,
+      "trueKeyListSha16": "9792f2013d868652",
+      "freshnessPinOk": true,
+      "indicatorKeyCount": 2,
+      "unmappedIndicatorKeyCount": 0,
+      "inventoryItemCount": 5,
+      "pinnedRowCount": 2,
+      "ambiguousCount": 3
+    },
+    {
+      "phase": 341,
+      "path": "studies/phase341_scherk_schwarz_twisted_compactification_source_audit_001/output/scherk_schwarz_twisted_compactification_source_audit.json",
+      "present": true,
+      "trueKeyCount": 31,
+      "trueKeyListSha16": "7f8818b0d5f74edf",
+      "freshnessPinOk": true,
+      "indicatorKeyCount": 2,
+      "unmappedIndicatorKeyCount": 0,
+      "inventoryItemCount": 4,
+      "pinnedRowCount": 2,
+      "ambiguousCount": 2
+    },
+    {
+      "phase": 342,
+      "path": "studies/phase342_higgsless_boundary_condition_source_audit_001/output/higgsless_boundary_condition_source_audit.json",
+      "present": true,
+      "trueKeyCount": 37,
+      "trueKeyListSha16": "9463bb28a99622b2",
+      "freshnessPinOk": true,
+      "indicatorKeyCount": 2,
+      "unmappedIndicatorKeyCount": 0,
+      "inventoryItemCount": 6,
+      "pinnedRowCount": 2,
+      "ambiguousCount": 4
+    },
+    {
+      "phase": 343,
+      "path": "studies/phase343_stueckelberg_vector_mass_source_audit_001/output/stueckelberg_vector_mass_source_audit.json",
+      "present": true,
+      "trueKeyCount": 29,
+      "trueKeyListSha16": "ae0536267d1cbea6",
+      "freshnessPinOk": true,
+      "indicatorKeyCount": 2,
+      "unmappedIndicatorKeyCount": 0,
+      "inventoryItemCount": 5,
+      "pinnedRowCount": 4,
+      "ambiguousCount": 1
+    },
+    {
+      "phase": 344,
+      "path": "studies/phase344_fms_gauge_invariant_spectrum_source_audit_001/output/fms_gauge_invariant_spectrum_source_audit.json",
+      "present": true,
+      "trueKeyCount": 22,
+      "trueKeyListSha16": "5e34dcb99e255d4f",
+      "freshnessPinOk": true,
+      "indicatorKeyCount": 0,
+      "unmappedIndicatorKeyCount": 0,
+      "inventoryItemCount": 3,
+      "pinnedRowCount": 1,
+      "ambiguousCount": 2
+    },
+    {
+      "phase": 345,
+      "path": "studies/phase345_fradkin_shenker_complementarity_source_audit_001/output/fradkin_shenker_complementarity_source_audit.json",
+      "present": true,
+      "trueKeyCount": 20,
+      "trueKeyListSha16": "c2316083c8484dfd",
+      "freshnessPinOk": true,
+      "indicatorKeyCount": 0,
+      "unmappedIndicatorKeyCount": 0,
+      "inventoryItemCount": 3,
+      "pinnedRowCount": 0,
+      "ambiguousCount": 3
+    }
+  ],
+  "snfBattery": {
+    "passed": true,
+    "cases": [
+      {
+        "caseId": "classic-3x3",
+        "passed": true,
+        "diagonal": [
+          "2",
+          "2",
+          "156"
+        ],
+        "rank": 3,
+        "kernelCount": 0,
+        "detail": "ok"
+      },
+      {
+        "caseId": "identity-3x3",
+        "passed": true,
+        "diagonal": [
+          "1",
+          "1",
+          "1"
+        ],
+        "rank": 3,
+        "kernelCount": 0,
+        "detail": "ok"
+      },
+      {
+        "caseId": "zero-2x3",
+        "passed": true,
+        "diagonal": [
+          "0",
+          "0"
+        ],
+        "rank": 0,
+        "kernelCount": 3,
+        "detail": "ok"
+      },
+      {
+        "caseId": "rank1-2x2",
+        "passed": true,
+        "diagonal": [
+          "1",
+          "0"
+        ],
+        "rank": 1,
+        "kernelCount": 1,
+        "detail": "ok"
+      },
+      {
+        "caseId": "rect-2x4-rank2",
+        "passed": true,
+        "diagonal": [
+          "1",
+          "6"
+        ],
+        "rank": 2,
+        "kernelCount": 2,
+        "detail": "ok"
+      },
+      {
+        "caseId": "mixed-4x3",
+        "passed": true,
+        "diagonal": [
+          "1",
+          "5",
+          "0"
+        ],
+        "rank": 2,
+        "kernelCount": 1,
+        "detail": "ok"
+      }
+    ]
+  },
+  "checks": [
+    {
+      "checkId": "snf-exact-battery",
+      "passed": true,
+      "detail": "cases=6; allPassed=True (divisibility chain, determinantal-divisor cross-check, kernel annihilation, kernel count)"
+    },
+    {
+      "checkId": "snapshot-quote-evidence",
+      "passed": true,
+      "detail": "all 6 snapshot quotes located (whitespace-normalized)"
+    },
+    {
+      "checkId": "corpus-coverage-gate",
+      "passed": true,
+      "detail": "all 16 committed audit outputs pinned (key counts \u002B sorted-true-key-list hashes) and every equation-indicator key is inventory-mapped"
+    },
+    {
+      "checkId": "corpus-kernel-verification",
+      "passed": true,
+      "detail": "literal: rank=24, nullity=9; squared: rank=24, nullity=9; every kernel basis vector annihilated exactly"
+    },
+    {
+      "checkId": "pre-registered-verdict-taxonomy",
+      "passed": true,
+      "detail": "readings=5; verdicts=[R0-prescribed-literal=equivariance-breaking-relation-found, R1-prescribed-squared=corpus-dimensionally-ambiguous, R2-ccMass-literal=equivariance-breaking-relation-found, R3-ccMass-squared=equivariance-breaking-relation-found, R4-ccDensity-squared=equivariance-breaking-relation-found]"
+    },
+    {
+      "checkId": "part12d-pre-registered-routing-gate",
+      "passed": true,
+      "detail": "expectedRelation=sp12d-cc; criterion(equationGlyph=False,numericCoefficient=False)=\u003Erouted-to-anchor-menu; classification=routed-to-anchor-menu; appearsAsBreakingHit=False; routedToAnchorMenu=True; neverSilentKernelRow=True; controlQuotePinnedByCriterion=True"
+    },
+    {
+      "checkId": "ambiguous-blocking-set-preserved",
+      "passed": true,
+      "detail": "blockingSetCount=31; no reading can reach scaling-symmetry-closes while the blocking set is non-empty"
+    }
+  ],
+  "physicistReviewPending": true,
+  "noGevPromotion": true,
+  "sourceContractApplicationAllowed": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "decision": "The units-equivariance kernel theorem is decided in exact integer arithmetic over 34 pinned grading-constraint rows in 33 symbol grades extracted from the 16 committed literature-audit outputs (phase330-345, referred to by number) plus the committed reference-snapshot relations. PRESCRIBED READING (metric \u002B2, connection -1, curvature -2, mass -1): the one-parameter scale family does NOT lie in the kernel - the single breaking row is the snapshot\u0027s literal first-power curvature-mass statement (residual \u002B1), reproducing the committed phase420 dimensional-invalidity finding; every audited external-model mass relation is scale-homogeneous. SQUARED-REPAIR READING: all pinned rows close (scale family lies in the full SNF kernel, rank 24, nullity 9) but the corpus-dimensionally-ambiguous BLOCKING set (31 prose-only relations, never dropped) forbids the closure verdict. CC RE-GRADED READINGS (mass-class -1 and density-class -4, the readings the CC-as-a-VEV slot itself suggests): the corpus\u0027s own pinned cc-bearing relations (p335-r2, p339-r1) BREAK - the anchor re-grading demanded by the pre-registered part-12d relation is units-inconsistent with the audited corpus. The part-12d relation itself is coefficient-free under the machine criterion and ROUTES to the phase461 anchor-reading menu (never a silent kernel row). ELIMINATION content only: no reading yields a units-equivariant corpus with an anchor-bearing scale; nothing is promoted.",
+  "sourceEvidence": {
+    "mirrorSnapshotPath": "docs/Reference/ExperimentReferences/SUPERPHYSICS-GU-DRAFT-MIRROR-20250530.md",
+    "auditOutputPaths": [
+      "studies/phase330_weyl_geometric_mass_generation_source_audit_001/output/weyl_geometric_mass_generation_source_audit.json",
+      "studies/phase331_theta_omega_inhomogeneous_gauge_source_audit_001/output/theta_omega_inhomogeneous_gauge_source_audit.json",
+      "studies/phase332_string_m_theory_compactification_source_audit_001/output/string_m_theory_compactification_source_audit.json",
+      "studies/phase333_kaluza_klein_internal_symmetry_source_audit_001/output/kaluza_klein_internal_symmetry_source_audit.json",
+      "studies/phase334_su21_superconnection_source_audit_001/output/su21_superconnection_source_audit.json",
+      "studies/phase335_graviweak_plebanski_source_audit_001/output/graviweak_plebanski_source_audit.json",
+      "studies/phase336_heft_scalar_geometry_source_law_audit_001/output/heft_scalar_geometry_source_law_audit.json",
+      "studies/phase337_octonion_clifford_internal_space_source_audit_001/output/octonion_clifford_internal_space_source_audit.json",
+      "studies/phase338_metric_affine_torsion_source_audit_001/output/metric_affine_torsion_source_audit.json",
+      "studies/phase339_macdowell_mansouri_cartan_breaking_source_audit_001/output/macdowell_mansouri_cartan_breaking_source_audit.json",
+      "studies/phase340_bf_topological_mass_source_audit_001/output/bf_topological_mass_source_audit.json",
+      "studies/phase341_scherk_schwarz_twisted_compactification_source_audit_001/output/scherk_schwarz_twisted_compactification_source_audit.json",
+      "studies/phase342_higgsless_boundary_condition_source_audit_001/output/higgsless_boundary_condition_source_audit.json",
+      "studies/phase343_stueckelberg_vector_mass_source_audit_001/output/stueckelberg_vector_mass_source_audit.json",
+      "studies/phase344_fms_gauge_invariant_spectrum_source_audit_001/output/fms_gauge_invariant_spectrum_source_audit.json",
+      "studies/phase345_fradkin_shenker_complementarity_source_audit_001/output/fradkin_shenker_complementarity_source_audit.json"
+    ],
+    "programSpecPath": "docs/Phases/TEAM_ELIMINATION_PROGRAM_2026-07-10.md",
+    "registryPath": "docs/Phases/PHASE_NUMBER_REGISTRY.md"
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "phaseId": "phase460-source-corpus-units-equivariance-kernel",
+  "terminalStatus": "source-corpus-units-equivariance-kernel-breaking-relation-found-under-prescribed-reading",
+  "unitsEquivarianceKernelAuditPassed": true,
+  "targetBlindConstruction": true,
+  "applicationSubjectKind": "source-corpus-units-equivariance-kernel",
+  "verdictKind": "breaking-relation-found-under-prescribed-reading",
+  "preRegisteredExpectedBreakingRelationId": "sp12d-cc",
+  "part12dRoutingGate": {
+    "passed": true,
+    "quoteHasEquationGlyph": false,
+    "quoteHasNumericCoefficient": false,
+    "criterionExpectedClassification": "routed-to-anchor-menu",
+    "actualClassification": "routed-to-anchor-menu",
+    "appearsAsBreakingHitUnderPrescribedReading": false,
+    "routedToAnchorMenu": true,
+    "neverSilentKernelRow": true,
+    "routedToPhase": "phase461",
+    "hypotheticalResidualIfPinnedUnderPrescribedReading": "\u002B1 (cc term grade -2 vs mass-class right-hand side grade -1)"
+  },
+  "pinnedRowCount": 34,
+  "corpusDimensionallyAmbiguousBlockingSetCount": 31,
+  "readings": [
+    {
+      "readingId": "R0-prescribed-literal",
+      "description": "prescribed grading; literal curvature-mass row",
+      "matrixVariant": "literal",
+      "ccGrade": -2,
+      "kernelRankValue": 24,
+      "kernelNullityValue": 9,
+      "scaleVectorInKernel": false,
+      "scaleFamilyIntersectionDim": 0,
+      "breakingRelationIds": [
+        "sp12c-lit"
+      ],
+      "breakingResiduals": [
+        "sp12c-lit:1"
+      ],
+      "verdict": "equivariance-breaking-relation-found",
+      "blockingAmbiguousIds": []
+    },
+    {
+      "readingId": "R1-prescribed-squared",
+      "description": "prescribed grading; squared-mass repair row",
+      "matrixVariant": "squared",
+      "ccGrade": -2,
+      "kernelRankValue": 24,
+      "kernelNullityValue": 9,
+      "scaleVectorInKernel": true,
+      "scaleFamilyIntersectionDim": 1,
+      "breakingRelationIds": [],
+      "breakingResiduals": [],
+      "verdict": "corpus-dimensionally-ambiguous",
+      "blockingAmbiguousIds": [
+        "sp12d-yukawa",
+        "p331-a1",
+        "p331-a2",
+        "p332-a1",
+        "p332-a2",
+        "p333-a1",
+        "p333-a2",
+        "p334-a1",
+        "p335-a1",
+        "p335-a2",
+        "p335-a3",
+        "p336-a1",
+        "p338-a1",
+        "p339-a1",
+        "p339-a2",
+        "p339-a3",
+        "p340-a1",
+        "p340-a2",
+        "p340-a3",
+        "p341-a1",
+        "p341-a2",
+        "p342-a1",
+        "p342-a1b",
+        "p342-a2",
+        "p342-a3",
+        "p343-a1",
+        "p344-a1",
+        "p344-a2",
+        "p345-a1",
+        "p345-a2",
+        "p345-a3"
+      ]
+    },
+    {
+      "readingId": "R2-ccMass-literal",
+      "description": "cc term re-graded to mass class; literal curvature-mass row",
+      "matrixVariant": "literal",
+      "ccGrade": -1,
+      "kernelRankValue": 24,
+      "kernelNullityValue": 9,
+      "scaleVectorInKernel": false,
+      "scaleFamilyIntersectionDim": 0,
+      "breakingRelationIds": [
+        "sp12c-lit",
+        "p335-r2",
+        "p339-r1"
+      ],
+      "breakingResiduals": [
+        "sp12c-lit:1",
+        "p335-r2:-1",
+        "p339-r1:1"
+      ],
+      "verdict": "equivariance-breaking-relation-found",
+      "blockingAmbiguousIds": []
+    },
+    {
+      "readingId": "R3-ccMass-squared",
+      "description": "cc term re-graded to mass class; squared-mass repair row",
+      "matrixVariant": "squared",
+      "ccGrade": -1,
+      "kernelRankValue": 24,
+      "kernelNullityValue": 9,
+      "scaleVectorInKernel": false,
+      "scaleFamilyIntersectionDim": 0,
+      "breakingRelationIds": [
+        "p335-r2",
+        "p339-r1"
+      ],
+      "breakingResiduals": [
+        "p335-r2:-1",
+        "p339-r1:1"
+      ],
+      "verdict": "equivariance-breaking-relation-found",
+      "blockingAmbiguousIds": []
+    },
+    {
+      "readingId": "R4-ccDensity-squared",
+      "description": "cc term re-graded to energy-density class; squared-mass repair row",
+      "matrixVariant": "squared",
+      "ccGrade": -4,
+      "kernelRankValue": 24,
+      "kernelNullityValue": 9,
+      "scaleVectorInKernel": false,
+      "scaleFamilyIntersectionDim": 0,
+      "breakingRelationIds": [
+        "p335-r2",
+        "p339-r1"
+      ],
+      "breakingResiduals": [
+        "p335-r2:2",
+        "p339-r1:-2"
+      ],
+      "verdict": "equivariance-breaking-relation-found",
+      "blockingAmbiguousIds": []
+    }
+  ],
+  "snfBatteryPassed": true,
+  "checks": [
+    {
+      "checkId": "snf-exact-battery",
+      "passed": true,
+      "detail": "cases=6; allPassed=True (divisibility chain, determinantal-divisor cross-check, kernel annihilation, kernel count)"
+    },
+    {
+      "checkId": "snapshot-quote-evidence",
+      "passed": true,
+      "detail": "all 6 snapshot quotes located (whitespace-normalized)"
+    },
+    {
+      "checkId": "corpus-coverage-gate",
+      "passed": true,
+      "detail": "all 16 committed audit outputs pinned (key counts \u002B sorted-true-key-list hashes) and every equation-indicator key is inventory-mapped"
+    },
+    {
+      "checkId": "corpus-kernel-verification",
+      "passed": true,
+      "detail": "literal: rank=24, nullity=9; squared: rank=24, nullity=9; every kernel basis vector annihilated exactly"
+    },
+    {
+      "checkId": "pre-registered-verdict-taxonomy",
+      "passed": true,
+      "detail": "readings=5; verdicts=[R0-prescribed-literal=equivariance-breaking-relation-found, R1-prescribed-squared=corpus-dimensionally-ambiguous, R2-ccMass-literal=equivariance-breaking-relation-found, R3-ccMass-squared=equivariance-breaking-relation-found, R4-ccDensity-squared=equivariance-breaking-relation-found]"
+    },
+    {
+      "checkId": "part12d-pre-registered-routing-gate",
+      "passed": true,
+      "detail": "expectedRelation=sp12d-cc; criterion(equationGlyph=False,numericCoefficient=False)=\u003Erouted-to-anchor-menu; classification=routed-to-anchor-menu; appearsAsBreakingHit=False; routedToAnchorMenu=True; neverSilentKernelRow=True; controlQuotePinnedByCriterion=True"
+    },
+    {
+      "checkId": "ambiguous-blocking-set-preserved",
+      "passed": true,
+      "detail": "blockingSetCount=31; no reading can reach scaling-symmetry-closes while the blocking set is non-empty"
+    }
+  ],
+  "physicistReviewPending": true,
+  "noGevPromotion": true,
+  "sourceContractApplicationAllowed": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "decision": "The units-equivariance kernel theorem is decided in exact integer arithmetic over 34 pinned grading-constraint rows in 33 symbol grades extracted from the 16 committed literature-audit outputs (phase330-345, referred to by number) plus the committed reference-snapshot relations. PRESCRIBED READING (metric \u002B2, connection -1, curvature -2, mass -1): the one-parameter scale family does NOT lie in the kernel - the single breaking row is the snapshot\u0027s literal first-power curvature-mass statement (residual \u002B1), reproducing the committed phase420 dimensional-invalidity finding; every audited external-model mass relation is scale-homogeneous. SQUARED-REPAIR READING: all pinned rows close (scale family lies in the full SNF kernel, rank 24, nullity 9) but the corpus-dimensionally-ambiguous BLOCKING set (31 prose-only relations, never dropped) forbids the closure verdict. CC RE-GRADED READINGS (mass-class -1 and density-class -4, the readings the CC-as-a-VEV slot itself suggests): the corpus\u0027s own pinned cc-bearing relations (p335-r2, p339-r1) BREAK - the anchor re-grading demanded by the pre-registered part-12d relation is units-inconsistent with the audited corpus. The part-12d relation itself is coefficient-free under the machine criterion and ROUTES to the phase461 anchor-reading menu (never a silent kernel row). ELIMINATION content only: no reading yields a units-equivariant corpus with an anchor-bearing scale; nothing is promoted."
+}
