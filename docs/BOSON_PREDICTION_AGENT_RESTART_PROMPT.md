@@ -831,8 +831,20 @@ choice routed to O4 as o4QueueItems; ledger limb L5 stays open).
 THE O4 PHYSICIST ENGAGEMENT IS THE PROGRAM-WIDE CRITICAL PATH: it
 decides the 455 flip, the WS3 M-probe (hold's second half), the
 445-455 convention families, and optionally the 462 quote-pinning
-reopening. Machine-executable next: phase456 pack (A4/A5 Stage-A
-first), phase457 Stage-A certificates, 467, 468.
+reopening. Dossier: docs/Phases/Adjudication/O4_CONVENTIONS_REGISTER.md.
+ALSO DONE 2026-07-12 (f02863be): phase456 pack committed behind the
+proven hash-refuse-to-run gate (A4: PARITY BANNED on the Kuhn torus -
+no realized improper element; exact-rational projectors for the
+identity 2x2 GEVP + A2 channel; per-site correlator storage flag
+MANDATORY; A5 Gaussian-domination NOT provable at Stage A, three
+obstructions recorded, beta ladders live -> feeds 458 G1) and
+phase457 Stage-A (all seven portal cells certified exactly, closed
+form g_crit = sqrt(2*lambda); verdict firewall machine-checked CLOSED
+pending the O4 M-probe ruling; Arm Q gated off). Machine-executable
+remaining: 467/468 (new dirs - batch their wiring in one checkpoint),
+458 gate evaluation (needs 456-production inputs), C-LIFT 469 (gated
+on 465+467 verdicts); phase456 production HMC is gated on the O4 memo
+(or explicit user-renewed risk acceptance) per the plan.
 
 WAVE-2 PLAN ADOPTED (2026-07-12, binding):
 docs/Phases/WAVE2_ACTION_PLAN_2026-07-12.md is the current execution
