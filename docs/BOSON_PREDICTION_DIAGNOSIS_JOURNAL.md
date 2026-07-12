@@ -19964,3 +19964,73 @@ fail-closed gates that REQUIRE text, not only keyword scanners that
 FORBID text. The --full pass relaunches after this checkpoint; the
 cascade phases rerun and the T1 push waits for green.
 promotedPhysicalMassClaimCount=0 throughout.
+
+## 2026-07-12 - Wave-1 complete: blocker status assessment (B1 two conjuncts landed; B2 strongest ever; B3 untouched)
+
+Wave 1 of the three-team elimination program is wired, validated
+end-to-end, and committed (phases 454/459/460/461, checkpoint
+e42fec44). This entry is the binding blocker assessment.
+
+B1 (NO DIMENSIONFUL ANCHOR) - two of three elimination conjuncts
+landed. Phase460: under the prescribed literal grading the audited
+corpus does NOT close under scaling, but the unique breaking relation
+is the draft's literal m = R(y)/4 - already dimensionally invalid
+(phase420) - NOT an anchor; under the squared reading the pinned
+relations close but a 31-ITEM PROSE-ONLY BLOCKING SET forbids
+theorem-grade closure (corpus-dimensionally-ambiguous); the
+re-gradings the CC-as-a-VEV reading demands break two pinned corpus
+relations (p335-r2, p339-r1) - stronger than pre-registered.
+Phase461: the reading menu is decidable (the task-force referee's
+~460x kill reconstructed at 451.105, in-band) and yields ZERO
+import-clean trials-surviving anchor candidates (min corrected
+p = 1.0); nothing is forwarded to A3. Phase459: the phase452 record
+is machine-attested (31/31). REMAINING for B1: A3 transport structure
+theorems (Wave-2); resolution of the 31-item blocking set (extend the
+extractor or physicist adjudication); then A6, whose honest terminal
+without blocking-set resolution is BLOCKED-UPSTREAM-AMBIGUOUS. The
+anchor-free ratio table (A4) remains the funded fallback, now with an
+attested input record.
+
+B2 (NO DYNAMICAL SCALE) - strongest state ever. Phase453 (T1): the
+symmetric-phase null holds ON translation-invariant rays at n=3,
+non-perturbatively (ladder: tree 443 / one-loop 446 / two-loop 447 /
+Hartree 449 / HMC CEP 450+453). Phase454: the origin vacuum is
+certified clean in all 48 momentum sectors (gauge kernel exactly 252,
+recomputed per background) with NO cubic-order degeneracy-capable
+direction (max a3^2/(4 a2 a4) ~ 5.5e-3); the 2016 named transverse
+negatives sit at NON-STATIONARY ray points (S_B >= 0 pins the global
+minimum at 0) and are sector-resolved inputs for the closure theorem,
+not vacua. THE LIVE B2 QUESTION HAS NARROWED TO FOUR NAMED
+CANDIDATES: (i) volume scaling (the consolidated n=4 launch), (ii)
+exact fermionic backreaction (-log det D(t), unbuilt), (iii) the
+Upsilon-portal (WS3, held on C-CONTRACT's schema), (iv) a
+thermodynamic transition (WS4 Binder, weeks-scale). Nothing else
+remains on the board. Standing tension: phase451's two-loop
+unification falsification filter.
+
+B3 (LINEAGE GAP) - untouched by Wave 1; the only blocker with no new
+evidence. Team C's adversarially-approved ladder (C-KERNEL,
+C-STABILIZER, C-CONTRACT [time-critical: schema before any WS3
+verdict], C-LIFT, C-CLOSURE, C-PERMANENCE) is designed but unbuilt.
+
+CROSS-CUTTING: five rungs died honestly in two days (on-ray scale,
+beyond-ray-at-origin, literal anchor, transmutation anchor,
+record-drift), each with a committed reproducible verdict. OPEN
+LIABILITIES: (O4) physicist sign-off on the 445-453 conventions still
+pending - every ledger verdict carries physicistReviewPending; (O5)
+free-field-compatibility hangs over the spectroscopy program
+(cross-action ratio 0.9 sigma from free); NEW: the phase460 31-item
+blocking set is now the concrete obstacle to B1's terminal
+adjudication.
+
+OPS LESSONS from the Wave-1 wiring cycle (three validation attempts):
+(1) editing scanner exclusion lists invalidates the ~134-phase
+scanner-consumer cascade including the heavy tail (~6 h) - BATCH all
+wiring for a wave into one checkpoint (we did: four phases, one
+cascade); (2) long validation passes must be launched harness-tracked
+by the session lead, never inside a sub-agent session (the wirer's
+pass died with its session mid-heavy-tail); (3) ephemeral
+wiring-instruction docs with quoted physics content must NOT persist
+in scanned roots - phase279 flagged the applied WIRING docs; they are
+now deleted after application (git history preserves them).
+promotedPhysicalMassClaimCount=0 throughout.

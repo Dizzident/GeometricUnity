@@ -803,11 +803,22 @@ contract schema commits) is DONE. Wave-0 item 0.3 remains OPEN: the
 physicist sign-off memo on the 445-452 conventions (invariant rays,
 positive-mode IR rule, theta-Haar, saddle backgrounds) - phases may
 pre-register against pending status citing physicistReviewPending.
+WAVE-1 COMPLETE (2026-07-12, checkpoint e42fec44; see the journal's
+blocker assessment): PHASE453 T1 null claimed + frontier upgraded;
+PHASE454 origin vacuum certified clean in all 48 momentum sectors
+through cubic order (2016 transverse negatives at non-stationary ray
+points, sector-resolved for the closure theorem); PHASE459 phase452
+record machine-attested 31/31; PHASE460 no derivable anchor under the
+prescribed reading (unique breaking relation = the dimensionally-
+invalid literal; squared reading blocked by a 31-item prose-only
+extraction set - THE concrete B1 obstacle; CC re-gradings break
+pinned corpus relations); PHASE461 zero import-clean transmutation
+anchors (referee ~460x kill reconstructed at 451.105; nothing
+forwarded to A3). B2 is narrowed to four named candidates: n=4
+volume, exact fermionic -log det, WS3 portal (held on C-CONTRACT
+schema), WS4 Binder. B3 untouched - team C's ladder is unbuilt.
 QUEUE (kill-ordered, from the program document): (1) PHASE453 - DONE
-2026-07-10, T1 SYMMETRIC-PHASE-NULL CLAIMED (see the Phase453 gate
-bullet; frontier upgraded; phase450's 5.06-sigma gate failure
-explained as a WHAM stitching artifact; both budgeted T3 iterations
-committed as diagnostics); (2) Wave-1
+(see above); (2) Wave-1
 parallel cheap kills: A1 units-equivariance kernel, A2 part-12d
 reading menu, C-KERNEL v3, C-STABILIZER v3, C-CONTRACT v3 (schema
 BEFORE any WS3 verdict), B beyond-ray Arms A/B, B exact fermionic

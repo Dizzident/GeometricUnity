@@ -7,9 +7,9 @@ back, NO new phase directory may be created outside this table.
 
 | Block | Owner | First planned use |
 |-------|-------|-------------------|
-| 453-458 | Team B-scale (dynamical-scale elimination) | 453 = WHAM parity-antisymmetry error-model repair |
-| 459-464 | Team A-anchor (dimensionful-anchor elimination) | 459 = phase452 record-reconciliation attestation |
-| 465-470 | Team C-lineage (quantum-number/coupling lineage elimination) | 465 = anomaly-consistency variety kernel |
+| 453-458 | Team B-scale (dynamical-scale elimination) | 453 DONE (T1 null); 454 DONE (beyond-ray certificates); next free: 455 |
+| 459-464 | Team A-anchor (dimensionful-anchor elimination) | 459 DONE (attestation); 460 DONE (kernel); 461 DONE (menu); next free: 462 |
+| 465-470 | Team C-lineage (quantum-number/coupling lineage elimination) | next free: 465 (anomaly-consistency variety kernel) |
 | 471+ | Unassigned - extend this registry before use | - |
 
 Rules: (1) a team takes the LOWEST free number in its own block;
