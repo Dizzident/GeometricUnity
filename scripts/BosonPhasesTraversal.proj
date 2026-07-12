@@ -321,6 +321,10 @@
     <PhaseProject Include="../studies/phase451_two_loop_unification_ledger_001/Phase451TwoLoopUnificationLedger.csproj" />
     <PhaseProject Include="../studies/phase452_scalar_channel_spectroscopy_probe_001/Phase452ScalarChannelSpectroscopyProbe.csproj" />
     <PhaseProject Include="../studies/phase453_wham_parity_error_model_repair_001/Phase453WhamParityErrorModelRepair.csproj" />
+    <PhaseProject Include="../studies/phase454_beyond_ray_quadratic_certificate_probe_001/Phase454BeyondRayQuadraticCertificateProbe.csproj" />
+    <PhaseProject Include="../studies/phase459_spectroscopy_record_attestation_001/Phase459SpectroscopyRecordAttestation.csproj" />
+    <PhaseProject Include="../studies/phase460_source_corpus_units_equivariance_kernel_001/Phase460SourceCorpusUnitsEquivarianceKernel.csproj" />
+    <PhaseProject Include="../studies/phase461_dimensional_transmutation_reading_menu_001/Phase461DimensionalTransmutationReadingMenu.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />

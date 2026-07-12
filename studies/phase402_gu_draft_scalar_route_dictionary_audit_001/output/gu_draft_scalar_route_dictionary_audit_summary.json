@@ -1,10 +1,10 @@
 {
   "phaseId": "phase402-gu-draft-scalar-route-dictionary-audit",
-  "generatedAt": "2026-07-10T22:04:30.7682342+00:00",
-  "terminalStatus": "gu-draft-scalar-route-dictionary-audit-blocked",
-  "guDraftScalarRouteDictionaryAuditPassed": false,
-  "phase398PrecursorPassed": false,
-  "phase401PrecursorPassed": false,
+  "generatedAt": "2026-07-12T01:45:16.9482629+00:00",
+  "terminalStatus": "gu-draft-scalar-route-dictionary-audited-doublet-equivalent-substructure-named-as-binding-gap",
+  "guDraftScalarRouteDictionaryAuditPassed": true,
+  "phase398PrecursorPassed": true,
+  "phase401PrecursorPassed": true,
   "auditInternallyConsistent": true,
   "draftProvenanceHashRecorded": true,
   "primaryTextEvidenceComplete": true,
@@ -207,5 +207,5 @@
     "phase401SummaryPath": "studies/phase401_full_quartic_action_coupled_critical_point_construction_001/output/full_quartic_action_coupled_critical_point_construction_summary.json",
     "phase394Workdir": "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir"
   },
-  "decision": "Do not use the dictionary audit until the precursors, the primary text evidence battery, the repo correspondence checks, and the representation discriminator all pass."
+  "decision": "The GU-native scalar route is now audited against the PRIMARY 2021 draft (stored text, PDF hash pinned). Three results. (1) PRIMARY EVIDENCE: the draft\u0027s own location dictionary (eq. 12.28) places the Higgs potential at \u003CUpsilon_omega, Upsilon_omega\u003E and the Higgs Klein-Gordon equation at D_omega^* Upsilon_omega = 0 - exactly the repo\u0027s production Mode-B objective and stationarity condition, verified numerically at the persisted backgrounds (objective = (1/2)\u003CU, M U\u003E to 1e-14; backgrounds on the Upsilon ~ 0 vacuum manifold; discrete D^* Upsilon at solver tolerance). The Phase393-401 toy-branch program has therefore been characterizing the draft-claimed Higgs potential\u0027s vacuum manifold all along, and its results (exact sector skeleton, sourceless Z channel, non-perturbative kernel relaxation) are direct structural statements about that object. (2) The draft potential \u003CU, U\u003E is non-negative with NO free quartic coupling (normalization fixed by the pairing - the \u0027contraction rules\u0027 claim is primary-faithful), and symmetry breaking must come from the geometry of the Upsilon = 0 locus, NOT from a negative mass-squared term - the explainer\u0027s phi-A cross-term mechanism is reconstruction, not the primary. (3) REPRESENTATION DISCRIMINATOR: the draft assigns the scalar to a Lie-algebra-valued (adjoint) object and never a doublet; the closed-form su(2)xu(1) mass-pattern computation shows the adjoint-triplet VEV CANNOT produce the SM neutral sector (two massless neutrals, no W3-B mixing, no custodial identity) while the doublet does - so the binding scalar-sector gap is sharpened to: exhibit a DOUBLET-EQUIVALENT substructure inside the pulled-back connection component, plus the still-absent quantitative chain (the primary contains zero GeV anchors). Nothing is promoted; no contract field is filled."
 }

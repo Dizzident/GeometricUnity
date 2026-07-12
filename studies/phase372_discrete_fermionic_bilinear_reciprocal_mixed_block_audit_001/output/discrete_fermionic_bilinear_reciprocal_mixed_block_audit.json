@@ -1,10 +1,10 @@
 {
   "phaseId": "phase372-discrete-fermionic-bilinear-reciprocal-mixed-block-audit",
-  "generatedAt": "2026-07-10T22:02:20.5442719+00:00",
-  "terminalStatus": "reciprocal-discrete-bilinear-source-block-candidate-audit-blocked",
-  "discreteFermionicBilinearReciprocalMixedBlockAuditPassed": false,
-  "phase371ConnectionToDiracPrecursorPresent": false,
-  "phase371PassedPrecursor": false,
+  "generatedAt": "2026-07-12T01:43:21.5167908+00:00",
+  "terminalStatus": "identity-weight-control-reciprocal-discrete-bilinear-source-block-candidate-materialized-vo7-building-block-only",
+  "discreteFermionicBilinearReciprocalMixedBlockAuditPassed": true,
+  "phase371ConnectionToDiracPrecursorPresent": true,
+  "phase371PassedPrecursor": true,
   "phase371NonpromotionalBoundaryVerified": true,
   "localDiscreteHermitianFermionicBilinearCandidateMaterialized": true,
   "reciprocalDiscreteBilinearSourceBlockCandidateMaterialized": true,
@@ -841,5 +841,5 @@
     "fermionDir": "studies/phase12_joined_calculation_001/output/background_family/fermions",
     "spinorRepresentationPath": "studies/phase12_joined_calculation_001/output/background_family/fermions/spinor_representation.json"
   },
-  "decision": "Do not promote the reciprocal discrete bilinear source-block candidate until the Phase371 boundary, 24 persisted variations, 288 direction checks, matrix parity, central-derivative ladder, and Hermitian adjoint checks all pass."
+  "decision": "The local reciprocal discrete bilinear source-block candidate is materialized across the persisted Phase12 identity-weight control branch. Its analytical and persisted first-variation matrices agree, all 288 branch-local directional checks satisfy the reciprocal central-derivative and Hermitian adjoint identities, and the Phase371 nonpromotional boundary is retained. Mesh-volume M_psi diagnostics are reported separately and do not establish a physical M_psi-compatible branch. This is a VO-7 building block, not completed VO-7 and not a physical prediction route."
 }

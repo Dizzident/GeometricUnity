@@ -1,8 +1,8 @@
 {
   "phaseId": "phase347-dispersive-electroweak-scale-mass-source-audit",
-  "terminalStatus": "dispersive-electroweak-scale-mass-source-audit-review-required",
-  "generatedAt": "2026-07-10T22:02:07.1152839+00:00",
-  "dispersiveElectroweakScaleMassSourceAuditPassed": false,
+  "terminalStatus": "dispersive-electroweak-scale-mass-source-audit-external-sm-qcd-not-gu-source",
+  "generatedAt": "2026-07-12T01:43:09.577988+00:00",
+  "dispersiveElectroweakScaleMassSourceAuditPassed": true,
   "dispersiveElectroweakMassLeadPresent": true,
   "dispersivePrimarySourcesReviewed": true,
   "dispersiveRouteExternalToGu": true,
@@ -91,8 +91,8 @@
     },
     {
       "CheckId": "observed-field-and-physical-mass-boundaries-preserved",
-      "Passed": false,
-      "Detail": "p260=True; poleFailurePersists=True; observedRequired=20; observedFilled=0; observedPromotable=False; p346=False; p346Completes=False"
+      "Passed": true,
+      "Detail": "p260=True; poleFailurePersists=True; observedRequired=20; observedFilled=0; observedPromotable=False; p346=True; p346Completes=False"
     },
     {
       "CheckId": "dispersive-route-requires-missing-gu-source-data",
@@ -123,7 +123,7 @@
     "smMassMatrixPromotesWzMasses": false,
     "smMassMatrixPromotesHiggsMass": false,
     "higgsUpsilonRouteCompletesBosonPredictions": false,
-    "nielsenPoleMassGaugeIndependenceSourceAuditPassed": false,
+    "nielsenPoleMassGaugeIndependenceSourceAuditPassed": true,
     "nielsenRouteCompletesBosonPredictions": false
   },
   "decision": "Do not promote W/Z or Higgs physical masses from the dispersive electroweak-scale mass route. It is a direct numerical external lead, but it imports the bottom-quark mass, Standard Model/QCD current correlators, perturbative inputs, and a regularized inverse-problem solution; reports m_H=114 GeV rather than the observed Higgs mass; gives Z but not an independent W source row; and supplies no GU-local observed-field extraction, source-lineage scale/coupling, Higgs scalar-source, or GeV-unit derivation.",

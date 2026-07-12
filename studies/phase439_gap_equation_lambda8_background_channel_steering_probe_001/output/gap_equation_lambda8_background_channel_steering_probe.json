@@ -1,12 +1,12 @@
 {
   "phaseId": "phase439-gap-equation-lambda8-background-channel-steering-probe",
-  "generatedAt": "2026-07-10T22:18:32.8489601+00:00",
-  "runtimeSeconds": 0.4435671,
-  "terminalStatus": "gap-equation-lambda8-background-channel-steering-probe-blocked",
-  "gapEquationLambda8BackgroundChannelSteeringProbePassed": false,
-  "precursorsPassed": false,
-  "phase431PrecursorPassed": false,
-  "phase438PrecursorPassed": false,
+  "generatedAt": "2026-07-12T01:58:39.0686649+00:00",
+  "runtimeSeconds": 0.4593634,
+  "terminalStatus": "lambda8-background-steers-gap-equation-into-su2u1-aligned-color-split-condensate-candidate-only-no-gev-promotion",
+  "gapEquationLambda8BackgroundChannelSteeringProbePassed": true,
+  "precursorsPassed": true,
+  "phase431PrecursorPassed": true,
+  "phase438PrecursorPassed": true,
   "applicationSubjectKind": "gap-equation-lambda8-background-channel-steering-probe",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
@@ -2374,5 +2374,5 @@
     "This phase decides only that a candidate lambda_8 background CAN steer the condensate channel and align its pattern on the workbench; it closes no GeV scale gap and promotes nothing.",
     "No Phase201 or Phase256 field is filled."
   ],
-  "decision": "Do not use the channel-steering verdicts until the precursor and battery gates pass."
+  "decision": "Solving the mean-field gap equation INSIDE a candidate lambda_8 background steers the condensate channel on the workbench. When the per-color gaps (Sigma_1, Sigma_2, Sigma_3) are minimized independently in the background-shifted dispersion eps_c(k,t8)^2 = (s1\u002Bt8 u_c)^2\u002B(s2\u002Bt8 u_c)^2, the free-diagonal optimum beats the singlet-constrained (all-equal) optimum in free energy by a STRICTLY POSITIVE margin at every t8 \u003E 0 (minimum sampled margin 1.611E-006), while the margin is exactly zero at t8 = 0 (max 4.974E-014) - so the steering is caused by the background, not the machinery. The induced pattern is Sigma_1 = Sigma_2 != Sigma_3 to machine precision (|Sigma_1-Sigma_2| \u003C= 0.0E\u002B000): a dynamically generated su(3)-\u003Esu(2)xu(1)-ALIGNED mass structure, since colors 1,2 share u_c = 1/(2 sqrt3) while color 3 has u_c = -1/sqrt3. The color-gap splitting ratio (Sigma_1-Sigma_3)/(Sigma_1\u002BSigma_3) rises MONOTONICALLY with t8 across every content/lattice/coupling sampled, and the exponential dimensional-transmutation scale law ln Sigma_c ~ -c/g2 SURVIVES the background per color (negative slope in every config; fundamental-content R^2 in [0.810, 0.968]). Batteries: the closed form eps_c^2 \u002B Sigma^2 c_c^2 matches a dense L=4 Dirac solve WITH the background to 1.6E-013 for singlet, hypercharge, and general diagonal channels; at t8 = 0 the singlet and hypercharge channels reproduce the Phase438 gap solutions to 7.1E-015. HONEST BOUNDARIES: t8 is a RECORDED CANDIDATE background parameter, not a dynamically derived scale (deriving it is the Phase430 chain\u0027s job); the gap equation is a mean-field approximation; the four-fermion coupling normalization is a workbench convention; the color-gap scale and the su(2)xu(1) pattern are candidate-only. This phase decides that the background CAN steer the channel and align the pattern on the workbench; it closes no scale gap, promotes nothing to GeV, and fills no Phase201 or Phase256 field."
 }

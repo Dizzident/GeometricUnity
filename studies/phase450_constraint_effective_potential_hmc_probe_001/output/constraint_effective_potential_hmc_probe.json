@@ -1,11 +1,11 @@
 {
   "phaseId": "phase450-constraint-effective-potential-hmc-probe",
-  "generatedAt": "2026-07-11T03:19:44.1094691+00:00",
-  "terminalStatus": "constraint-effective-potential-hmc-probe-blocked",
-  "constraintEffectivePotentialHmcProbePassed": false,
-  "phase448PrecursorPassed": false,
-  "phase449PrecursorPassed": false,
-  "precursorsPassed": false,
+  "generatedAt": "2026-07-12T07:00:38.5746589+00:00",
+  "terminalStatus": "constraint-effective-potential-hmc-probe-passed-inconclusive-gates-failed-recorded",
+  "constraintEffectivePotentialHmcProbePassed": true,
+  "phase448PrecursorPassed": true,
+  "phase449PrecursorPassed": true,
+  "precursorsPassed": true,
   "applicationSubjectKind": "constraint-effective-potential-hmc-probe",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
@@ -67,7 +67,7 @@
   "cepConventionsAreWorkbenchConventions": true,
   "physicistReviewPending": true,
   "batteries": {
-    "batteriesAllPassed": false,
+    "batteriesAllPassed": true,
     "whamPlumbingBattery": true,
     "whamPlumbingMaxErr": 0.030491954896749718,
     "perTorus": [
@@ -98,7 +98,7 @@
         ],
         "projectorOverlapMaxAfter": 2.851536416931602E-17,
         "projectorBattery": true,
-        "hardBatteriesPassed": false
+        "hardBatteriesPassed": true
       }
     ]
   },
@@ -238,7 +238,7 @@
               "thetaGlobalAcceptance": null,
               "thetaSingleVertexAcceptance": null,
               "thetaStepFinal": 0.4,
-              "msPerTrajectory": 462.55765313333336
+              "msPerTrajectory": 455.1514128666667
             },
             {
               "center": -2.25,
@@ -266,7 +266,7 @@
               "thetaGlobalAcceptance": null,
               "thetaSingleVertexAcceptance": null,
               "thetaStepFinal": 0.4,
-              "msPerTrajectory": 462.15865340000005
+              "msPerTrajectory": 456.2196118
             },
             {
               "center": -2,
@@ -294,7 +294,7 @@
               "thetaGlobalAcceptance": null,
               "thetaSingleVertexAcceptance": null,
               "thetaStepFinal": 0.4,
-              "msPerTrajectory": 462.72110960000003
+              "msPerTrajectory": 455.7395558666667
             },
             {
               "center": -1.75,
@@ -322,7 +322,7 @@
               "thetaGlobalAcceptance": null,
               "thetaSingleVertexAcceptance": null,
               "thetaStepFinal": 0.4,
-              "msPerTrajectory": 462.6730427333333
+              "msPerTrajectory": 456.22114739999995
             },
             {
               "center": -1.5,
@@ -350,7 +350,7 @@
               "thetaGlobalAcceptance": null,
               "thetaSingleVertexAcceptance": null,
               "thetaStepFinal": 0.4,
-              "msPerTrajectory": 463.3226850666667
+              "msPerTrajectory": 455.16540660000004
             },
             {
               "center": -1.25,
@@ -378,7 +378,7 @@
               "thetaGlobalAcceptance": null,
               "thetaSingleVertexAcceptance": null,
               "thetaStepFinal": 0.4,
-              "msPerTrajectory": 462.3068007333333
+              "msPerTrajectory": 455.01820186666663
             },
             {
               "center": -1,
@@ -406,7 +406,7 @@
               "thetaGlobalAcceptance": null,
               "thetaSingleVertexAcceptance": null,
               "thetaStepFinal": 0.4,
-              "msPerTrajectory": 463.11184206666667
+              "msPerTrajectory": 455.3766420666667
             },
             {
               "center": -0.75,
@@ -434,7 +434,7 @@
               "thetaGlobalAcceptance": null,
               "thetaSingleVertexAcceptance": null,
               "thetaStepFinal": 0.4,
-              "msPerTrajectory": 462.2777308666667
+              "msPerTrajectory": 455.9533598666667
             },
             {
               "center": -0.5,
@@ -462,7 +462,7 @@
               "thetaGlobalAcceptance": null,
               "thetaSingleVertexAcceptance": null,
               "thetaStepFinal": 0.4,
-              "msPerTrajectory": 463.32679773333336
+              "msPerTrajectory": 456.2491208
             },
             {
               "center": -0.25,
@@ -490,7 +490,7 @@
               "thetaGlobalAcceptance": null,
               "thetaSingleVertexAcceptance": null,
               "thetaStepFinal": 0.4,
-              "msPerTrajectory": 462.1543772666667
+              "msPerTrajectory": 456.7905732666667
             },
             {
               "center": 0,
@@ -518,7 +518,7 @@
               "thetaGlobalAcceptance": null,
               "thetaSingleVertexAcceptance": null,
               "thetaStepFinal": 0.4,
-              "msPerTrajectory": 463.74028193333334
+              "msPerTrajectory": 456.5294818666667
             },
             {
               "center": 0.25,
@@ -546,7 +546,7 @@
               "thetaGlobalAcceptance": null,
               "thetaSingleVertexAcceptance": null,
               "thetaStepFinal": 0.4,
-              "msPerTrajectory": 462.8185458
+              "msPerTrajectory": 455.9576635333333
             },
             {
               "center": 0.5,
@@ -574,7 +574,7 @@
               "thetaGlobalAcceptance": null,
               "thetaSingleVertexAcceptance": null,
               "thetaStepFinal": 0.4,
-              "msPerTrajectory": 462.1498704666667
+              "msPerTrajectory": 455.76199626666664
             },
             {
               "center": 0.75,
@@ -602,7 +602,7 @@
               "thetaGlobalAcceptance": null,
               "thetaSingleVertexAcceptance": null,
               "thetaStepFinal": 0.4,
-              "msPerTrajectory": 462.6170539333333
+              "msPerTrajectory": 455.81312106666667
             },
             {
               "center": 1,
@@ -630,7 +630,7 @@
               "thetaGlobalAcceptance": null,
               "thetaSingleVertexAcceptance": null,
               "thetaStepFinal": 0.4,
-              "msPerTrajectory": 462.1442464666667
+              "msPerTrajectory": 455.81385680000005
             },
             {
               "center": 1.25,
@@ -658,7 +658,7 @@
               "thetaGlobalAcceptance": null,
               "thetaSingleVertexAcceptance": null,
               "thetaStepFinal": 0.4,
-              "msPerTrajectory": 462.68039346666666
+              "msPerTrajectory": 456.7762812666666
             },
             {
               "center": 1.5,
@@ -686,7 +686,7 @@
               "thetaGlobalAcceptance": null,
               "thetaSingleVertexAcceptance": null,
               "thetaStepFinal": 0.4,
-              "msPerTrajectory": 243.73045826666666
+              "msPerTrajectory": 234.33822099999998
             },
             {
               "center": 1.75,
@@ -714,7 +714,7 @@
               "thetaGlobalAcceptance": null,
               "thetaSingleVertexAcceptance": null,
               "thetaStepFinal": 0.4,
-              "msPerTrajectory": 242.79216860000002
+              "msPerTrajectory": 233.9410248
             },
             {
               "center": 2,
@@ -742,7 +742,7 @@
               "thetaGlobalAcceptance": null,
               "thetaSingleVertexAcceptance": null,
               "thetaStepFinal": 0.4,
-              "msPerTrajectory": 243.9603509333333
+              "msPerTrajectory": 234.87476379999998
             },
             {
               "center": 2.25,
@@ -770,7 +770,7 @@
               "thetaGlobalAcceptance": null,
               "thetaSingleVertexAcceptance": null,
               "thetaStepFinal": 0.4,
-              "msPerTrajectory": 243.77104473333333
+              "msPerTrajectory": 234.5380813333333
             },
             {
               "center": 2.5,
@@ -798,7 +798,7 @@
               "thetaGlobalAcceptance": null,
               "thetaSingleVertexAcceptance": null,
               "thetaStepFinal": 0.4,
-              "msPerTrajectory": 243.66663873333331
+              "msPerTrajectory": 234.03374453333333
             }
           ],
           "minNeighborOverlap": 0.282,
@@ -844,7 +844,7 @@
               "thetaGlobalAcceptance": null,
               "thetaSingleVertexAcceptance": null,
               "thetaStepFinal": 0.4,
-              "msPerTrajectory": 186.2550876888889
+              "msPerTrajectory": 181.50661573333335
             },
             "meanPhi": 0.1258989533691847,
             "standardError": 0.0868446255372112,
@@ -1414,7 +1414,7 @@
               "thetaGlobalAcceptance": 0.297,
               "thetaSingleVertexAcceptance": 0.0085,
               "thetaStepFinal": 0.03294171999999999,
-              "msPerTrajectory": 547.9268708666667
+              "msPerTrajectory": 541.9429268666667
             },
             {
               "center": -2,
@@ -1442,7 +1442,7 @@
               "thetaGlobalAcceptance": 0.3,
               "thetaSingleVertexAcceptance": 0.010333333333333333,
               "thetaStepFinal": 0.03294171999999999,
-              "msPerTrajectory": 547.9887682666666
+              "msPerTrajectory": 544.2866602666667
             },
             {
               "center": -1.5,
@@ -1470,7 +1470,7 @@
               "thetaGlobalAcceptance": 0.2986666666666667,
               "thetaSingleVertexAcceptance": 0.013166666666666667,
               "thetaStepFinal": 0.03294171999999999,
-              "msPerTrajectory": 548.0726352666667
+              "msPerTrajectory": 542.6885839333333
             },
             {
               "center": -1,
@@ -1498,7 +1498,7 @@
               "thetaGlobalAcceptance": 0.29333333333333333,
               "thetaSingleVertexAcceptance": 0.011166666666666667,
               "thetaStepFinal": 0.03294171999999999,
-              "msPerTrajectory": 548.3468101333333
+              "msPerTrajectory": 542.0564716
             },
             {
               "center": -0.5,
@@ -1526,7 +1526,7 @@
               "thetaGlobalAcceptance": 0.2901666666666667,
               "thetaSingleVertexAcceptance": 0.008666666666666666,
               "thetaStepFinal": 0.03294171999999999,
-              "msPerTrajectory": 545.8916814666667
+              "msPerTrajectory": 540.0398521333333
             },
             {
               "center": 0,
@@ -1554,7 +1554,7 @@
               "thetaGlobalAcceptance": 0.292,
               "thetaSingleVertexAcceptance": 0.0105,
               "thetaStepFinal": 0.03294171999999999,
-              "msPerTrajectory": 548.2678131333333
+              "msPerTrajectory": 541.7191882666667
             },
             {
               "center": 0.5,
@@ -1582,7 +1582,7 @@
               "thetaGlobalAcceptance": 0.28683333333333333,
               "thetaSingleVertexAcceptance": 0.011666666666666667,
               "thetaStepFinal": 0.03294171999999999,
-              "msPerTrajectory": 547.7345022666667
+              "msPerTrajectory": 541.8740852666666
             },
             {
               "center": 1,
@@ -1610,7 +1610,7 @@
               "thetaGlobalAcceptance": 0.291,
               "thetaSingleVertexAcceptance": 0.011,
               "thetaStepFinal": 0.03294171999999999,
-              "msPerTrajectory": 548.4970579333333
+              "msPerTrajectory": 543.1507912000001
             },
             {
               "center": 1.5,
@@ -1638,7 +1638,7 @@
               "thetaGlobalAcceptance": 0.29883333333333334,
               "thetaSingleVertexAcceptance": 0.010333333333333333,
               "thetaStepFinal": 0.03294171999999999,
-              "msPerTrajectory": 547.5949516666667
+              "msPerTrajectory": 541.6295508666666
             },
             {
               "center": 2,
@@ -1666,7 +1666,7 @@
               "thetaGlobalAcceptance": 0.297,
               "thetaSingleVertexAcceptance": 0.0115,
               "thetaStepFinal": 0.03294171999999999,
-              "msPerTrajectory": 547.8626118
+              "msPerTrajectory": 542.4883546666666
             },
             {
               "center": 2.5,
@@ -1694,7 +1694,7 @@
               "thetaGlobalAcceptance": 0.3006666666666667,
               "thetaSingleVertexAcceptance": 0.009833333333333333,
               "thetaStepFinal": 0.03294171999999999,
-              "msPerTrajectory": 548.4747496
+              "msPerTrajectory": 543.6867129999999
             }
           ],
           "minNeighborOverlap": 0.2986666666666666,
@@ -1740,7 +1740,7 @@
               "thetaGlobalAcceptance": 0.2938235294117647,
               "thetaSingleVertexAcceptance": 0.010205882352941176,
               "thetaStepFinal": 0.03294171999999999,
-              "msPerTrajectory": 340.09237743529417
+              "msPerTrajectory": 336.3516748588235
             },
             "meanPhi": -0.04287721628453595,
             "standardError": 0.09762045533249403,
@@ -2071,7 +2071,7 @@
           "thetaGlobalAcceptance": 0.1835,
           "thetaSingleVertexAcceptance": 0.005333333333333333,
           "thetaStepFinal": 0.03294171999999999,
-          "msPerTrajectory": 682.7239584
+          "msPerTrajectory": 676.7376394666667
         },
         {
           "center": -2.1875,
@@ -2099,7 +2099,7 @@
           "thetaGlobalAcceptance": 0.18516666666666667,
           "thetaSingleVertexAcceptance": 0.0035,
           "thetaStepFinal": 0.03294171999999999,
-          "msPerTrajectory": 682.6466963333334
+          "msPerTrajectory": 677.3437338
         },
         {
           "center": -1.875,
@@ -2127,7 +2127,7 @@
           "thetaGlobalAcceptance": 0.182,
           "thetaSingleVertexAcceptance": 0.006833333333333334,
           "thetaStepFinal": 0.03294171999999999,
-          "msPerTrajectory": 686.0904554666666
+          "msPerTrajectory": 680.1051348666666
         },
         {
           "center": -1.5625,
@@ -2155,7 +2155,7 @@
           "thetaGlobalAcceptance": 0.18266666666666667,
           "thetaSingleVertexAcceptance": 0.003833333333333333,
           "thetaStepFinal": 0.03294171999999999,
-          "msPerTrajectory": 685.3964500666667
+          "msPerTrajectory": 678.582222
         },
         {
           "center": -1.25,
@@ -2183,7 +2183,7 @@
           "thetaGlobalAcceptance": 0.17683333333333334,
           "thetaSingleVertexAcceptance": 0.005666666666666667,
           "thetaStepFinal": 0.03294171999999999,
-          "msPerTrajectory": 685.8967872666667
+          "msPerTrajectory": 679.8292782
         },
         {
           "center": -0.9375,
@@ -2211,7 +2211,7 @@
           "thetaGlobalAcceptance": 0.19875,
           "thetaSingleVertexAcceptance": 0.00475,
           "thetaStepFinal": 0.03294171999999999,
-          "msPerTrajectory": 591.3027735000001
+          "msPerTrajectory": 585.8308601499999
         },
         {
           "center": -0.625,
@@ -2239,7 +2239,7 @@
           "thetaGlobalAcceptance": 0.18116666666666667,
           "thetaSingleVertexAcceptance": 0.0065,
           "thetaStepFinal": 0.03294171999999999,
-          "msPerTrajectory": 686.8872958
+          "msPerTrajectory": 680.6408872666666
         },
         {
           "center": -0.3125,
@@ -2267,7 +2267,7 @@
           "thetaGlobalAcceptance": 0.1815,
           "thetaSingleVertexAcceptance": 0.003833333333333333,
           "thetaStepFinal": 0.03294171999999999,
-          "msPerTrajectory": 684.6534154
+          "msPerTrajectory": 678.8110419999999
         },
         {
           "center": 0,
@@ -2295,7 +2295,7 @@
           "thetaGlobalAcceptance": 0.18083333333333335,
           "thetaSingleVertexAcceptance": 0.005333333333333333,
           "thetaStepFinal": 0.03294171999999999,
-          "msPerTrajectory": 685.2629361333334
+          "msPerTrajectory": 677.8003783333334
         },
         {
           "center": 0.3125,
@@ -2323,7 +2323,7 @@
           "thetaGlobalAcceptance": 0.18766666666666668,
           "thetaSingleVertexAcceptance": 0.004333333333333333,
           "thetaStepFinal": 0.03294171999999999,
-          "msPerTrajectory": 684.0728023333332
+          "msPerTrajectory": 677.8209439333333
         },
         {
           "center": 0.625,
@@ -2351,7 +2351,7 @@
           "thetaGlobalAcceptance": 0.19233333333333333,
           "thetaSingleVertexAcceptance": 0.004833333333333334,
           "thetaStepFinal": 0.03294171999999999,
-          "msPerTrajectory": 684.9689222
+          "msPerTrajectory": 678.7296989333333
         },
         {
           "center": 0.9375,
@@ -2379,7 +2379,7 @@
           "thetaGlobalAcceptance": 0.18233333333333332,
           "thetaSingleVertexAcceptance": 0.006333333333333333,
           "thetaStepFinal": 0.03294171999999999,
-          "msPerTrajectory": 685.044733
+          "msPerTrajectory": 679.2830798
         },
         {
           "center": 1.25,
@@ -2407,7 +2407,7 @@
           "thetaGlobalAcceptance": 0.1785,
           "thetaSingleVertexAcceptance": 0.004166666666666667,
           "thetaStepFinal": 0.03294171999999999,
-          "msPerTrajectory": 683.0346343333333
+          "msPerTrajectory": 676.0286026
         },
         {
           "center": 1.5625,
@@ -2435,7 +2435,7 @@
           "thetaGlobalAcceptance": 0.1895,
           "thetaSingleVertexAcceptance": 0.005333333333333333,
           "thetaStepFinal": 0.03294171999999999,
-          "msPerTrajectory": 683.4517096666666
+          "msPerTrajectory": 678.9435654666667
         },
         {
           "center": 1.875,
@@ -2463,7 +2463,7 @@
           "thetaGlobalAcceptance": 0.1865,
           "thetaSingleVertexAcceptance": 0.007,
           "thetaStepFinal": 0.03294171999999999,
-          "msPerTrajectory": 683.1467945333334
+          "msPerTrajectory": 677.1283632666666
         },
         {
           "center": 2.1875,
@@ -2491,7 +2491,7 @@
           "thetaGlobalAcceptance": 0.18766666666666668,
           "thetaSingleVertexAcceptance": 0.005333333333333333,
           "thetaStepFinal": 0.03294171999999999,
-          "msPerTrajectory": 686.5958999333334
+          "msPerTrajectory": 680.0546378
         },
         {
           "center": 2.5,
@@ -2519,7 +2519,7 @@
           "thetaGlobalAcceptance": 0.18516666666666667,
           "thetaSingleVertexAcceptance": 0.006166666666666667,
           "thetaStepFinal": 0.03294171999999999,
-          "msPerTrajectory": 346.06993166666666
+          "msPerTrajectory": 341.2885804666667
         }
       ],
       "minNeighborOverlap": 0.28933333333333333,
@@ -2565,7 +2565,7 @@
           "thetaGlobalAcceptance": 0.19705882352941176,
           "thetaSingleVertexAcceptance": 0.005352941176470588,
           "thetaStepFinal": 0.03294171999999999,
-          "msPerTrajectory": 294.9726854470588
+          "msPerTrajectory": 292.7176002235294
         },
         "meanPhi": -0.0640359515763757,
         "standardError": 0.055619160680543525,
@@ -3001,7 +3001,7 @@
     "spinorUsedAsShiabCarrierNotFiber": true,
     "draft14dObserverseNotRealized": true
   },
-  "runtimeSeconds": 8793.8507359,
+  "runtimeSeconds": 8681.3527156,
   "physicalCouplingProvided": false,
   "routeProvidesPhysicalEffectiveActionHessian": false,
   "routeProvidesVevOrSourceScaleLineage": false,
@@ -3040,5 +3040,5 @@
     "Cross-member normalization comparisons are barred by the recorded Faddeev-Popov caveat; only within-member Phi-dependence is classified.",
     "No VEV scale, pole, or GeV lineage; no Phase201 or Phase256 contract field is filled; the reduced slice does not realize the ambient 7,7 / internal gauge / weld content."
   ],
-  "decision": "Do not use the verdicts until the precursor, orbit/covariance, objective-consistency, gradient, theta-chart, projector, and WHAM-plumbing batteries pass."
+  "decision": "The constraint-effective-potential HMC probe is decided on internal consistency. On lattice-canonical tori [3] (su(2) trace pairing) the constrained free energy U(Phi) = -(1/beta) ln P(Phi), Phi = \u003Cu_inv, omega\u003E, was reconstructed by log-space WHAM from umbrella-sampled joint (omega-HMC, theta-Haar-Metropolis) ensembles under the four 2026-07-04 binding conditions: (i) u_inv is the phase448 translation-invariant per-type ray in the oSign lattice gauge with the 3 global-su(2) zero-mode directions projected out (projector recorded; post-projection overlaps \u003C= 2.9E-017); (ii) theta sampled as per-vertex SO(3) rotations by symmetric Haar-invariant Metropolis moves, charted to axis-angle |theta| \u003C= pi (chart batteries: uniform shift 2.2E-015, wrap 3.5E-016, 2pi periodicity 0.0E\u002B000); (iii) per-window tau_int recorded with the N_eff \u003E= 100 gate and adaptive trajectories; (iv) no theta=0 slice is quoted as physics. SAMPLING GATES FAILED (recorded per window): per-window \u003Ce^-dH\u003E=1 and equipartition virial, neighbor overlap \u003E= 15%, WHAM residual \u003C= 1E-008, coverage, the large-beta (beta=8) tree-shape control column (pearson 1.000, cls single-well-at-zero), and \u002B-Phi antisymmetry (the a3=0 parity). VERDICT (inconclusive-gates-failed): one or more sampling gates failed (per-window \u003Ce^-dH\u003E/equipartition/N_eff, window overlap, WHAM residual, coverage, large-beta tree-shape control, or \u002B-Phi antisymmetry) -- per binding condition (iii) and the pre-registered taxonomy the run is INCONCLUSIVE: no physics statement is made from a chain whose ergodicity or reconstruction quality is not demonstrated; every gate value is recorded per window. MANDATORY FRAMING: workbench-relative candidate data ONLY (su(2) toy algebra, reduced Spin(4) slice, lattice units); beta, umbrella springs, the Phi inner product, the HMC kinetic mass, and the theta-Haar chart are WORKBENCH CONVENTIONS pending physicist review; a flat-bottom signature is a workbench-relative SSB CANDIDATE only; NO GeV/pole/VEV promotion. Everything is target-blind, reduced-spin4-slice; no Phase201/Phase256 contract field is filled; nothing is promoted."
 }

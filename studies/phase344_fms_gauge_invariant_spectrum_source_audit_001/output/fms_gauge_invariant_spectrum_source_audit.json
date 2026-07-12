@@ -1,8 +1,8 @@
 {
   "phaseId": "phase344-fms-gauge-invariant-spectrum-source-audit",
-  "terminalStatus": "fms-gauge-invariant-spectrum-source-audit-review-required",
-  "generatedAt": "2026-07-10T22:02:06.1902166+00:00",
-  "fmsGaugeInvariantSpectrumSourceAuditPassed": false,
+  "terminalStatus": "fms-gauge-invariant-spectrum-source-audit-observed-map-template-not-gu-source",
+  "generatedAt": "2026-07-12T01:43:08.6299409+00:00",
+  "fmsGaugeInvariantSpectrumSourceAuditPassed": true,
   "fmsLeadPresent": true,
   "fmsPrimarySourcesReviewed": true,
   "fmsRouteExternalToGu": true,
@@ -97,13 +97,13 @@
     },
     {
       "CheckId": "current-observed-field-blockers-preserved",
-      "Passed": false,
-      "Detail": "phase256Required=20; phase256Filled=0; phase256Promotable=False; phase257CanFill=False; direct=False; phase3=False; massMatrix=False; phase295=False; intakeReady=0"
+      "Passed": true,
+      "Detail": "phase256Required=20; phase256Filled=0; phase256Promotable=False; phase257CanFill=False; direct=False; phase3=False; massMatrix=False; phase295=True; intakeReady=0"
     },
     {
       "CheckId": "related-electroweak-routes-preserved",
-      "Passed": false,
-      "Detail": "p323=True; p323Completes=False; p342=False; p342Completes=False"
+      "Passed": true,
+      "Detail": "p323=True; p323Completes=False; p342=True; p342Completes=False"
     },
     {
       "CheckId": "fms-route-requires-missing-gu-source-data",
@@ -137,12 +137,12 @@
     "directObservationPipelineBosonCapable": false,
     "phase3ObservationPipelineBosonCapable": false,
     "spectrumPhysicalBosonMassMatrixCapable": false,
-    "observedFieldExtractionContractCandidateScanPassed": false,
+    "observedFieldExtractionContractCandidateScanPassed": true,
     "anyObservedFieldExtractionCandidateFillsContract": false,
     "intakeReadyObservedFieldExtractionCandidateCount": 0,
     "coupledYangMillsHiggsMassExtractionAuditPassed": true,
     "coupledYangMillsHiggsRouteCompletesBosonPredictions": false,
-    "higgslessBoundaryConditionSourceAuditPassed": false,
+    "higgslessBoundaryConditionSourceAuditPassed": true,
     "higgslessRouteCompletesBosonPredictions": false
   },
   "decision": "Do not promote W/Z or Higgs physical masses from the FMS gauge-invariant spectrum mechanism. FMS is a strong external template for observed-field extraction because it maps gauge-invariant composite electroweak states to the familiar elementary W/Z/H fields in the Standard Model regime, but the current repository still lacks GU-local composite operators, observed vacuum/expansion data, correlation-function pole extraction, source-lineage mass scales, Higgs scalar-source lineage, and GeV normalization.",

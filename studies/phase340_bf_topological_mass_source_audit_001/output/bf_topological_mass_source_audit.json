@@ -1,8 +1,8 @@
 {
   "phaseId": "phase340-bf-topological-mass-source-audit",
-  "terminalStatus": "bf-topological-mass-source-audit-review-required",
-  "generatedAt": "2026-07-10T22:02:04.9474407+00:00",
-  "bfTopologicalMassSourceAuditPassed": false,
+  "terminalStatus": "bf-topological-mass-source-audit-external-topological-mass-lead-not-gu-source",
+  "generatedAt": "2026-07-12T01:43:07.4219866+00:00",
+  "bfTopologicalMassSourceAuditPassed": true,
   "bfTopologicalMassLeadPresent": true,
   "bfTopologicalPrimarySourcesReviewed": true,
   "bfTopologicalRouteExternalToGu": true,
@@ -121,8 +121,8 @@
     },
     {
       "CheckId": "related-macdowell-boundary-preserved",
-      "Passed": false,
-      "Detail": "distinctFromMacdowell=True; phase339Passed=False; phase339Completes=False"
+      "Passed": true,
+      "Detail": "distinctFromMacdowell=True; phase339Passed=True; phase339Completes=False"
     },
     {
       "CheckId": "bf-route-requires-missing-gu-source-data",

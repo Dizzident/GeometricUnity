@@ -1,7 +1,7 @@
 {
   "phaseId": "phase363-hitchin-higgs-bundle-source-audit",
-  "terminalStatus": "hitchin-higgs-bundle-source-audit-review-required",
-  "hitchinHiggsBundleSourceAuditPassed": false,
+  "terminalStatus": "hitchin-higgs-bundle-source-audit-spectral-cover-lead-not-gu-mass-law",
+  "hitchinHiggsBundleSourceAuditPassed": true,
   "hitchinHiggsBundleLeadPresent": true,
   "hitchinHiggsBundlePrimarySourcesReviewed": true,
   "hitchinHiggsBundleRouteExternalToGu": true,
@@ -85,10 +85,10 @@
     "stringMTheoryCompactificationSourceAuditPassed": true,
     "stringRoutePromotesWzMasses": false,
     "stringRoutePromotesHiggsMass": false,
-    "gaugeHiggsUnificationSourceAuditPassed": false,
+    "gaugeHiggsUnificationSourceAuditPassed": true,
     "gaugeHiggsRoutePromotesWzMasses": false,
     "gaugeHiggsRoutePromotesHiggsMass": false,
-    "framedStandardModelSourceAuditPassed": false,
+    "framedStandardModelSourceAuditPassed": true,
     "framedStandardModelRoutePromotesWzMasses": false,
     "framedStandardModelRoutePromotesHiggsMass": false
   },

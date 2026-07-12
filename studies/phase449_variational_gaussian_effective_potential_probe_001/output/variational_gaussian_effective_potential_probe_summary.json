@@ -1,11 +1,11 @@
 {
   "phaseId": "phase449-variational-gaussian-effective-potential-probe",
-  "generatedAt": "2026-07-11T00:53:09.9141563+00:00",
-  "terminalStatus": "variational-gaussian-effective-potential-probe-blocked",
-  "variationalGaussianEffectivePotentialProbePassed": false,
-  "phase447PrecursorPassed": false,
-  "phase448PrecursorPassed": false,
-  "precursorsPassed": false,
+  "generatedAt": "2026-07-12T04:35:56.8789881+00:00",
+  "terminalStatus": "variational-gaussian-effective-potential-probe-passed-gap-equation-breakdown-recorded",
+  "variationalGaussianEffectivePotentialProbePassed": true,
+  "phase447PrecursorPassed": true,
+  "phase448PrecursorPassed": true,
+  "precursorsPassed": true,
   "applicationSubjectKind": "variational-gaussian-effective-potential-probe",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
@@ -90,7 +90,7 @@
   "gaussianAnsatzIsWorkbenchConvention": true,
   "physicistReviewPending": true,
   "batteries": {
-    "batteriesAllPassed": false,
+    "batteriesAllPassed": true,
     "thetaStationarityGate": true,
     "maxThetaResidualNonIdentity": 1.3831568660353952E-09,
     "allThetaConverged": true,
@@ -3236,7 +3236,7 @@
     "spinorUsedAsShiabCarrierNotFiber": true,
     "draft14dObserverseNotRealized": true
   },
-  "runtimeSeconds": 1256.3987213,
+  "runtimeSeconds": 1234.7676958,
   "physicalCouplingProvided": false,
   "routeProvidesPhysicalEffectiveActionHessian": false,
   "routeProvidesVevOrSourceScaleLineage": false,
@@ -3274,5 +3274,5 @@
     "The T4 pair table is built from the su(2)-toy joint action\u0027s fourth derivative tensor; it is not a physical electroweak vertex.",
     "No VEV scale, pole, or GeV lineage; no Phase201 or Phase256 contract field is filled; the reduced slice does not realize the ambient 7,7 / internal gauge / weld content."
   ],
-  "decision": "Do not use the verdicts until the precursor, theta-stationarity, stencil, gap-equation, and plumbing batteries pass."
+  "decision": "The variational Gaussian (CJT-Hartree) effective potential probe is decided on internal consistency. On CreateUniform4D(1) (su(2) trace pairing; nOmega=195, nTheta=48, joint DOF 243) the composite points (omega = t*u, theta*(t*u)) were recomputed with the verbatim hardened machinery (theta point gate: relative \u003C= 1E-008 or absolute floor 1E-010, 0 via floor, max relative 1.38E-009; identity theta*=0 exact; LinearizeTheta FD 4.80E-009); at each point the T4 pair table over ALL modes above the zero tolerance (positive AND negative) was built by directional FD stencils (h=1E-001) on the joint Hessian eigenvectors and the diagonal-Gaussian Hartree gap equation 1/sigma_a = lambda_a \u002B (1/2) sum_b T4[a,b] sigma_b was solved by damped fixed-point iteration (fail-closed: no floor clamping; max residual among existing points 9.91E-009 \u003C= 1E-008). BATTERIES: identity exact-quartic stencil h-independence 1.17E-007 \u003C= 1E-006; Einsteinian Richardson 8.84E-003 \u003C= 5E-002; offset immunity (entrywise on T4) 1.33E-006 \u003C= 1E-005 (soft-mode-weighted scalar 5.37E-005 recorded, not gated); gap plumbing (T4:=0) max |sigma lambda - 1| = 1.11E-016 \u003C= 1E-010 with expected failure on the negative-mode set = True; descent battery True (monotone fraction 1.000); ansatz-rotation basis dependence recorded (not gated). HARTREE EXISTENCE: self-consistent solution everywhere = False. VERDICT (gap-equation-breakdown): the Hartree self-consistency FAILS at one or more composite points (some m_a \u003C= 0 or no convergence in the iteration budget) -- recorded honestly, fail-closed, with per-point failure reasons; the diagonal-Gaussian instrument does not cover those points and no saturation statement is made there. MANDATORY FRAMING: any structure is a WORKBENCH-RELATIVE CANDIDATE ONLY (su(2) toy algebra, reduced Spin(4) slice, lattice units); the diagonal Gaussian ansatz, beta = 1, and the theta quartic truncation are WORKBENCH CONVENTIONS pending physicist review; NO GeV/pole/VEV promotion. Everything is target-blind, reduced-spin4-slice; no Phase201/Phase256 contract field is filled; nothing is promoted."
 }

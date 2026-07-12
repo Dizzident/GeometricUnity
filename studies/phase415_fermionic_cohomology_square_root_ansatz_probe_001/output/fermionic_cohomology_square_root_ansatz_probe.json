@@ -1,15 +1,15 @@
 {
   "phaseId": "phase415-fermionic-cohomology-square-root-ansatz-probe",
-  "generatedAt": "2026-07-10T22:09:54.5803831+00:00",
-  "terminalStatus": "fermionic-cohomology-square-root-ansatz-probe-review-required",
-  "fermionicCohomologySquareRootAnsatzProbePassed": false,
-  "phase370PrecursorPassed": false,
-  "phase389PrecursorPassed": false,
-  "phase397PrecursorPassed": false,
-  "phase401PrecursorPassed": false,
-  "phase411PrecursorPassed": false,
-  "phase414PrecursorPassed": false,
-  "probeInternallyConsistent": false,
+  "generatedAt": "2026-07-12T01:50:06.8474312+00:00",
+  "terminalStatus": "fermionic-cohomology-square-root-ansatz-closed-on-specified-carriers-delta-omega-source-required",
+  "fermionicCohomologySquareRootAnsatzProbePassed": true,
+  "phase370PrecursorPassed": true,
+  "phase389PrecursorPassed": true,
+  "phase397PrecursorPassed": true,
+  "phase401PrecursorPassed": true,
+  "phase411PrecursorPassed": true,
+  "phase414PrecursorPassed": true,
+  "probeInternallyConsistent": true,
   "part09bClue": {
     "source": "https://www.superphysics.org/research/weinstein/unity/part-09b/#93-the-fermionic-sector",
     "sourceRole": "secondary readable mirror / research clue, not promotion evidence",
@@ -213,5 +213,5 @@
     "no physical coupling, VEV, pole extraction, or GeV normalization is supplied",
     "no Phase201 or Phase256 contract field is filled"
   ],
-  "decision": "Do not use this ansatz result until all precursor evidence and fail-closed accounting checks pass."
+  "decision": "The fermionic cohomology/square-root ansatz is CLOSED on every locally specified carrier currently available. The Superphysics part-09b clue names chi, omega subfields, Upsilon_omega, cohomology obstruction language, and a possible first-order square root delta_omega, but it does not define delta_omega, a carrier complex, a cohomology target, a square law, or any scalar-doublet/observed-boson projection data. The locally specified candidates reduce to existing no-go evidence: Phase411 closes the chiral Dirac/Yukawa bilinear route; Phase389 materializes only a discrete control-branch gauge-compatibility identity; Phase397 shows neutral mixing vanishes in the fermion-bilinear channel; Phase401 closes the perturbative coupled-critical-point route on the toy action; Phase414 already closes the low-order Shiab/epsilon envelope. Further progress requires a new source-level delta_omega specification or a computable unobserved-phase carrier. No contract field is filled."
 }

@@ -301,6 +301,10 @@ const string Phase451TwoLoopUnificationLedgerPath = "studies/phase451_two_loop_u
 const string Phase452ScalarChannelSpectroscopyProbePath = "studies/phase452_scalar_channel_spectroscopy_probe_001/output/scalar_channel_spectroscopy_probe_summary.json";
 const string Phase450ConstraintEffectivePotentialHmcProbePath = "studies/phase450_constraint_effective_potential_hmc_probe_001/output/constraint_effective_potential_hmc_probe_summary.json";
 const string Phase453WhamParityErrorModelRepairPath = "studies/phase453_wham_parity_error_model_repair_001/output/wham_parity_error_model_repair_summary.json";
+const string Phase454BeyondRayQuadraticCertificateProbePath = "studies/phase454_beyond_ray_quadratic_certificate_probe_001/output/beyond_ray_quadratic_certificate_probe_summary.json";
+const string Phase459SpectroscopyRecordAttestationPath = "studies/phase459_spectroscopy_record_attestation_001/output/spectroscopy_record_attestation_summary.json";
+const string Phase460SourceCorpusUnitsEquivarianceKernelPath = "studies/phase460_source_corpus_units_equivariance_kernel_001/output/source_corpus_units_equivariance_kernel_summary.json";
+const string Phase461DimensionalTransmutationReadingMenuPath = "studies/phase461_dimensional_transmutation_reading_menu_001/output/dimensional_transmutation_reading_menu_summary.json";
 const string Phase444ModeVolumeScaledSaturationProbePath = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443JointEffectivePotentialSaturationProbePath = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442JointOmegaThetaHessianDegreeProbePath = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -642,6 +646,10 @@ using var phase451 = TryParseJson(Phase451TwoLoopUnificationLedgerPath);
 using var phase452 = TryParseJson(Phase452ScalarChannelSpectroscopyProbePath);
 using var phase450 = TryParseJson(Phase450ConstraintEffectivePotentialHmcProbePath);
 using var phase453 = TryParseJson(Phase453WhamParityErrorModelRepairPath);
+using var phase454 = TryParseJson(Phase454BeyondRayQuadraticCertificateProbePath);
+using var phase459 = TryParseJson(Phase459SpectroscopyRecordAttestationPath);
+using var phase460 = TryParseJson(Phase460SourceCorpusUnitsEquivarianceKernelPath);
+using var phase461 = TryParseJson(Phase461DimensionalTransmutationReadingMenuPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -8272,6 +8280,91 @@ var package = new
             routePromotesHiggsMass = JsonBool(phase453.RootElement, "routePromotesHiggsMass"),
             routeCompletesBosonPredictions = JsonBool(phase453.RootElement, "routeCompletesBosonPredictions"),
             decision = JsonString(phase453.RootElement, "decision"),
+        }
+        : null,
+    beyondRayQuadraticCertificateProbe = phase454 is not null
+        ? new
+        {
+            status = JsonString(phase454.RootElement, "terminalStatus"),
+            beyondRayQuadraticCertificateProbePassed = JsonBool(phase454.RootElement, "beyondRayQuadraticCertificateProbePassed"),
+            targetBlindConstruction = JsonBool(phase454.RootElement, "targetBlindConstruction"),
+            applicationSubjectKind = JsonString(phase454.RootElement, "applicationSubjectKind"),
+            verdictKind = JsonString(phase454.RootElement, "verdictKind"),
+            certificateConventionsAreWorkbenchConventions = JsonBool(phase454.RootElement, "certificateConventionsAreWorkbenchConventions"),
+            physicistReviewPending = JsonBool(phase454.RootElement, "physicistReviewPending"),
+            scaleIsWorkbenchRelativeCandidateOnly = JsonBool(phase454.RootElement, "scaleIsWorkbenchRelativeCandidateOnly"),
+            noGevPromotion = JsonBool(phase454.RootElement, "noGevPromotion"),
+            sourceContractApplicationAllowed = JsonBool(phase454.RootElement, "sourceContractApplicationAllowed"),
+            canFillPhase201WzContract = JsonBool(phase454.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase454.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase454.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            routePromotesWzMasses = JsonBool(phase454.RootElement, "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonBool(phase454.RootElement, "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonBool(phase454.RootElement, "routeCompletesBosonPredictions"),
+            decision = JsonString(phase454.RootElement, "decision"),
+        }
+        : null,
+    spectroscopyRecordAttestation = phase459 is not null
+        ? new
+        {
+            status = JsonString(phase459.RootElement, "terminalStatus"),
+            spectroscopyRecordAttestationPassed = JsonBool(phase459.RootElement, "spectroscopyRecordAttestationPassed"),
+            targetBlindConstruction = JsonBool(phase459.RootElement, "targetBlindConstruction"),
+            applicationSubjectKind = JsonString(phase459.RootElement, "applicationSubjectKind"),
+            verdictKind = JsonString(phase459.RootElement, "verdictKind"),
+            checkCount = JsonInt(phase459.RootElement, "checkCount"),
+            passedCheckCount = JsonInt(phase459.RootElement, "passedCheckCount"),
+            physicistReviewPending = JsonBool(phase459.RootElement, "physicistReviewPending"),
+            scaleIsWorkbenchRelativeCandidateOnly = JsonBool(phase459.RootElement, "scaleIsWorkbenchRelativeCandidateOnly"),
+            noGevPromotion = JsonBool(phase459.RootElement, "noGevPromotion"),
+            sourceContractApplicationAllowed = JsonBool(phase459.RootElement, "sourceContractApplicationAllowed"),
+            canFillPhase201WzContract = JsonBool(phase459.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase459.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase459.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            routePromotesWzMasses = JsonBool(phase459.RootElement, "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonBool(phase459.RootElement, "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonBool(phase459.RootElement, "routeCompletesBosonPredictions"),
+            decision = JsonString(phase459.RootElement, "decision"),
+        }
+        : null,
+    sourceCorpusUnitsEquivarianceKernel = phase460 is not null
+        ? new
+        {
+            status = JsonString(phase460.RootElement, "terminalStatus"),
+            unitsEquivarianceKernelAuditPassed = JsonBool(phase460.RootElement, "unitsEquivarianceKernelAuditPassed"),
+            targetBlindConstruction = JsonBool(phase460.RootElement, "targetBlindConstruction"),
+            applicationSubjectKind = JsonString(phase460.RootElement, "applicationSubjectKind"),
+            verdictKind = JsonString(phase460.RootElement, "verdictKind"),
+            physicistReviewPending = JsonBool(phase460.RootElement, "physicistReviewPending"),
+            noGevPromotion = JsonBool(phase460.RootElement, "noGevPromotion"),
+            sourceContractApplicationAllowed = JsonBool(phase460.RootElement, "sourceContractApplicationAllowed"),
+            canFillPhase201WzContract = JsonBool(phase460.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase460.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase460.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            routePromotesWzMasses = JsonBool(phase460.RootElement, "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonBool(phase460.RootElement, "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonBool(phase460.RootElement, "routeCompletesBosonPredictions"),
+            decision = JsonString(phase460.RootElement, "decision"),
+        }
+        : null,
+    dimensionalTransmutationReadingMenu = phase461 is not null
+        ? new
+        {
+            status = JsonString(phase461.RootElement, "terminalStatus"),
+            dimensionalTransmutationReadingMenuPassed = JsonBool(phase461.RootElement, "dimensionalTransmutationReadingMenuPassed"),
+            targetBlindConstruction = JsonBool(phase461.RootElement, "targetBlindConstruction"),
+            applicationSubjectKind = JsonString(phase461.RootElement, "applicationSubjectKind"),
+            verdictKind = JsonString(phase461.RootElement, "verdictKind"),
+            physicistReviewPending = JsonBool(phase461.RootElement, "physicistReviewPending"),
+            noGevPromotion = JsonBool(phase461.RootElement, "noGevPromotion"),
+            sourceContractApplicationAllowed = JsonBool(phase461.RootElement, "sourceContractApplicationAllowed"),
+            canFillPhase201WzContract = JsonBool(phase461.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase461.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase461.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            routePromotesWzMasses = JsonBool(phase461.RootElement, "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonBool(phase461.RootElement, "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonBool(phase461.RootElement, "routeCompletesBosonPredictions"),
+            decision = JsonString(phase461.RootElement, "decision"),
         }
         : null,
     branchLocalDirectInvariantCensus = phase282 is not null

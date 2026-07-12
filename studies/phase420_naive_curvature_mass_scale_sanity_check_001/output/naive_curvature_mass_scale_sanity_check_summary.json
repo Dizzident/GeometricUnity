@@ -1,8 +1,8 @@
 {
   "phaseId": "phase420-naive-curvature-mass-scale-sanity-check",
-  "terminalStatus": "naive-curvature-mass-scale-sanity-check-review-required",
-  "generatedAt": "2026-07-10T22:09:57.7812926+00:00",
-  "naiveCurvatureMassScaleSanityCheckPassed": false,
+  "terminalStatus": "naive-curvature-mass-scale-sanity-check-fail-closed",
+  "generatedAt": "2026-07-12T01:50:09.9112561+00:00",
+  "naiveCurvatureMassScaleSanityCheckPassed": true,
   "applicationSubjectKind": "naive-curvature-mass-scale-sanity-check",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
@@ -137,18 +137,18 @@
       "mirrorPromotesHiggsMass": false
     },
     "phase410": {
-      "curvatureCoupledVevSelectionProbePassed": false,
+      "curvatureCoupledVevSelectionProbePassed": true,
       "curvatureCouplingProducesRunawayAlongFlatRays": true,
       "routeProvidesPoleExtractionAndGeVNormalization": false
     },
     "phase418": {
-      "directionDependentCurvatureVevCouplingScanPassed": false,
+      "directionDependentCurvatureVevCouplingScanPassed": true,
       "directionDependentCouplingSourceLawStillMissing": true,
       "finiteVevScaleStillExternal": true,
       "routeProvidesPoleExtractionAndGeVNormalization": false
     },
     "phase419": {
-      "observedFieldSymbolicExtractionTemplatePassed": false,
+      "observedFieldSymbolicExtractionTemplatePassed": true,
       "requiredGuInputProvidedCount": 0,
       "sourceDefinedPhase256FieldCount": 0,
       "canFillPhase256ObservedFieldExtractionContract": false
@@ -182,13 +182,13 @@
     },
     {
       "checkId": "curvature-vev-precursor-boundaries-preserved",
-      "passed": false,
-      "detail": "p410Passed=False; p410Runaway=True; p410PoleGev=False; p418Passed=False; sourceLawMissing=True; finiteScaleExternal=True; p418PoleGev=False"
+      "passed": true,
+      "detail": "p410Passed=True; p410Runaway=True; p410PoleGev=False; p418Passed=True; sourceLawMissing=True; finiteScaleExternal=True; p418PoleGev=False"
     },
     {
       "checkId": "observed-field-template-boundary-preserved",
-      "passed": false,
-      "detail": "p419Passed=False; p419Inputs=0; sourceDefinedP256=0; p256Filled=0; p256Promotable=False"
+      "passed": true,
+      "detail": "p419Passed=True; p419Inputs=0; sourceDefinedP256=0; p256Filled=0; p256Promotable=False"
     },
     {
       "checkId": "source-lineage-and-promotion-boundary-preserved",
@@ -225,7 +225,7 @@
     "no Phase201 or Phase256 field is filled",
     "no W/Z/H physical mass is promoted"
   ],
-  "decision": "Review the curvature scale bookkeeping before using Phase420 as a boundary.",
+  "decision": "The naive curvature-mass route is closed as a direct scale law. Any viable curvature route must add a nontrivial source-defined unit/normalization anchor, electroweak VEV map, particle-specific projection/source rows, weak-angle/coupling lineage, and pole/GeV normalization.",
   "nextRequiredArtifact": [
     "A source-defined curvature-to-electroweak-VEV equation with sign, coefficient, unit, and vacuum normalization.",
     "A source-defined observed-field extraction theorem tying that scale to photon/W/Z/H projection rows and pole extraction.",

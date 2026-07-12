@@ -1,19 +1,19 @@
 {
   "phaseId": "phase398-vo6-vo7-control-branch-completion-ledger-audit",
-  "generatedAt": "2026-07-10T22:03:39.2468819+00:00",
-  "terminalStatus": "vo6-vo7-control-branch-completion-ledger-audit-blocked",
-  "vo6Vo7ControlBranchCompletionLedgerAuditPassed": false,
-  "vo6ControlBranchComponentsComplete": false,
-  "vo7ControlBranchComponentsComplete": false,
+  "generatedAt": "2026-07-12T01:44:22.651422+00:00",
+  "terminalStatus": "vo6-vo7-control-branch-components-complete-physical-completion-still-missing",
+  "vo6Vo7ControlBranchCompletionLedgerAuditPassed": true,
+  "vo6ControlBranchComponentsComplete": true,
+  "vo7ControlBranchComponentsComplete": true,
   "coupledStationarityRemainsPartial": true,
-  "electroweakChainComponentsComplete": false,
+  "electroweakChainComponentsComplete": true,
   "physicalCompletionStillMissing": true,
   "vo6ComponentCount": 5,
-  "vo6VerifiedCount": 2,
+  "vo6VerifiedCount": 5,
   "vo7ComponentCount": 4,
-  "vo7VerifiedCount": 2,
+  "vo7VerifiedCount": 4,
   "electroweakChainComponentCount": 3,
-  "electroweakChainVerifiedCount": 2,
+  "electroweakChainVerifiedCount": 3,
   "components": [
     {
       "obligation": "VO-6",
@@ -21,7 +21,7 @@
       "description": "Connection-to-Dirac first variation delta_D[b] materialized and FD/analytic parity verified across the full variation set",
       "evidencePhase": "phase371",
       "evidenceSummaryPath": "studies/phase371_discrete_connection_dirac_first_variation_coverage_audit_001/output/discrete_connection_dirac_first_variation_coverage_audit_summary.json",
-      "controlBranchVerified": false,
+      "controlBranchVerified": true,
       "controlBranchStatus": "verified",
       "physicalStatus": "missing: variations are of the candidate bilinear at a toy background, not of a completed GU fermionic action"
     },
@@ -31,7 +31,7 @@
       "description": "Hermitian/M-adjoint conventions verified (identity-weight control and mesh-volume M_psi generalized branch)",
       "evidencePhase": "phase390",
       "evidenceSummaryPath": "studies/phase390_converged_control_branch_fermion_mode_rebuild_001/output/converged_control_branch_fermion_mode_rebuild_summary.json",
-      "controlBranchVerified": false,
+      "controlBranchVerified": true,
       "controlBranchStatus": "verified",
       "physicalStatus": "missing: the physical M_psi convention on the GU branch is undetermined (mesh and weights are study-defined)"
     },
@@ -41,7 +41,7 @@
       "description": "Operator domain characterized: 48-dim isolated-vertex structural kernel, converged nonzero spectrum, shell structure",
       "evidencePhase": "phase390",
       "evidenceSummaryPath": "studies/phase390_converged_control_branch_fermion_mode_rebuild_001/output/converged_control_branch_fermion_mode_rebuild_summary.json",
-      "controlBranchVerified": false,
+      "controlBranchVerified": true,
       "controlBranchStatus": "verified",
       "physicalStatus": "missing: toy 2D fiber-bundle mesh, not the GU 14-dimensional observerse domain"
     },
@@ -71,7 +71,7 @@
       "description": "Candidate mixed-Hessian blocks 2 delta_D[e_k] psi_s materialized on converged modes and Schur-complemented exactly",
       "evidencePhase": "phase392",
       "evidenceSummaryPath": "studies/phase392_coupled_mixed_hessian_fermion_induced_response_audit_001/output/coupled_mixed_hessian_fermion_induced_response_audit_summary.json",
-      "controlBranchVerified": false,
+      "controlBranchVerified": true,
       "controlBranchStatus": "verified",
       "physicalStatus": "missing: blocks of the candidate bilinear; the completed GU coupled action and its physical Hessian are absent"
     },
@@ -101,7 +101,7 @@
       "description": "Action-derived fermion-induced response operator (degenerate second-order perturbation) constructed; shown to diverge from the study-defined Gram (suppressed axis metric-dependent)",
       "evidencePhase": "phase392",
       "evidenceSummaryPath": "studies/phase392_coupled_mixed_hessian_fermion_induced_response_audit_001/output/coupled_mixed_hessian_fermion_induced_response_audit_summary.json",
-      "controlBranchVerified": false,
+      "controlBranchVerified": true,
       "controlBranchStatus": "verified",
       "physicalStatus": "missing: a physical effective-action Hessian replacing both study-defined response metrics"
     },
@@ -131,7 +131,7 @@
       "description": "u(1) extension machinery materialized; Z-like channel sourceless; fermion-bilinear neutral mixing vanishes (trace selection rule); photon/Z separation underdetermined",
       "evidencePhase": "phase397",
       "evidenceSummaryPath": "studies/phase397_parametrized_u1_extension_neutral_mixing_underdetermination_probe_001/output/parametrized_u1_extension_neutral_mixing_underdetermination_probe_summary.json",
-      "controlBranchVerified": false,
+      "controlBranchVerified": true,
       "controlBranchStatus": "verified",
       "physicalStatus": "missing: hypercharge lineage, coupling-ratio lineage, and the symmetry-breaking scalar/VEV sector (welded to the Phase201 Higgs scalar source row)"
     }
@@ -149,7 +149,7 @@
   "applicationSubjectKind": "vo6-vo7-control-branch-completion-ledger-audit",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
-  "targetBlindConstructionHash": "47b18a5624cab783ea5d7ffe41f146b64ac4a59630299a36d0d0206217210f20",
+  "targetBlindConstructionHash": "e20abe85930cb11faabb47ce2920cb12c7a02598215cceaa0c2eabd5fcf1b02b",
   "routeCompletesBosonPredictions": false,
   "routePromotesWzMasses": false,
   "routePromotesHiggsMass": false,
@@ -172,5 +172,5 @@
     "no contract fields filled; all promotion gates closed",
     "no physical predictions"
   ],
-  "decision": "Do not use the completion ledger until every component check against the underlying phase summaries passes."
+  "decision": "Every component named by the v29 obligations VO-6 (operator domain, adjoint convention, coupling terms, solved modes, first-variation coverage) and VO-7 (mixed linearization blocks, gauge-compatibility identities, effective source operator) is now VERIFIED at the discrete control-branch level, with one component partial (coupled stationarity: first-order picture proven, self-consistent coupled solve absent), and the post-VO-7 electroweak chain (gauge-covariant axis structure, exact sector skeleton, mixing machinery with its named gap) is also verified. The physical completion remains entirely missing, with the gap ledger enumerated component by component. This audit is the start-checklist for the physical VO-6/VO-7 derivation effort: it promotes nothing, fills no contract field, and keeps every gate closed."
 }

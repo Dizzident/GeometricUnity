@@ -1,16 +1,16 @@
 {
   "phaseId": "phase453-wham-parity-error-model-repair",
-  "generatedAt": "2026-07-11T06:43:47.8162624+00:00",
+  "generatedAt": "2026-07-12T10:22:26.1291768+00:00",
   "mode": "production",
-  "terminalStatus": "wham-parity-error-model-repair-blocked",
-  "whamParityErrorModelRepairPassed": false,
+  "terminalStatus": "wham-parity-error-model-repair-passed-symmetric-phase-null-single-well",
+  "whamParityErrorModelRepairPassed": true,
   "applicationSubjectKind": "wham-parity-error-model-repair",
-  "phase448PrecursorPassed": false,
-  "phase449PrecursorPassed": false,
-  "phase450PrecursorPassed": false,
-  "precursorsPassed": false,
-  "verdictKind": "inconclusive-gates-failed",
-  "verdictPhrase": "a phase450 hard battery failed on the fresh run -\u003E inconclusive regardless of the arms (fail-closed).",
+  "phase448PrecursorPassed": true,
+  "phase449PrecursorPassed": true,
+  "phase450PrecursorPassed": true,
+  "precursorsPassed": true,
+  "verdictKind": "symmetric-phase-null",
+  "verdictPhrase": "T1: both corrected arms are within the calibrated antisymmetry thresholds, U(Phi) is single-well-at-zero on both members, the fresh independent tadpole is zero within errors, and the identity control is clean -\u003E the symmetric-phase null IS claimed. The phase450 5.06-sigma antisymmetry was a WHAM stitching-error-model artifact; frontier statement upgrades to \u0027no non-perturbative scale along translation-invariant rays at n=3\u0027 (finite-volume, single-beta caveat; workbench-relative, no GeV).",
   "phase450DiscrepancyLocalization": {
     "note": "recomputed from the COMMITTED phase450 sd2 cepCurve (only max fields are committed there); committed provenance for the motivating discrepancy",
     "member": "sd2-id0/c0.5",
@@ -309,7 +309,7 @@
           "ergodicityGate": true,
           "meanPhi": -2.4355002136332873,
           "sdPhi": 0.12500614143088237,
-          "msPerTrajectory": 419.82445343333336
+          "msPerTrajectory": 478.9498653333333
         },
         {
           "center": -2.25,
@@ -330,7 +330,7 @@
           "ergodicityGate": true,
           "meanPhi": -2.1893722856131688,
           "sdPhi": 0.12423816031475758,
-          "msPerTrajectory": 418.6093704333333
+          "msPerTrajectory": 415.57255326666666
         },
         {
           "center": -2,
@@ -351,7 +351,7 @@
           "ergodicityGate": true,
           "meanPhi": -1.9308217863958108,
           "sdPhi": 0.1246210570654611,
-          "msPerTrajectory": 418.38935150000003
+          "msPerTrajectory": 414.1357638333333
         },
         {
           "center": -1.75,
@@ -372,7 +372,7 @@
           "ergodicityGate": true,
           "meanPhi": -1.7010687328198726,
           "sdPhi": 0.11892451573113415,
-          "msPerTrajectory": 418.5892669666666
+          "msPerTrajectory": 415.54359006666664
         },
         {
           "center": -1.5,
@@ -393,7 +393,7 @@
           "ergodicityGate": true,
           "meanPhi": -1.462477115412782,
           "sdPhi": 0.12000177823259922,
-          "msPerTrajectory": 418.87993823333335
+          "msPerTrajectory": 415.91361646666667
         },
         {
           "center": -1.25,
@@ -414,7 +414,7 @@
           "ergodicityGate": true,
           "meanPhi": -1.2231601330993733,
           "sdPhi": 0.12284881749097193,
-          "msPerTrajectory": 419.01685596666664
+          "msPerTrajectory": 415.5875518666667
         },
         {
           "center": -1,
@@ -435,7 +435,7 @@
           "ergodicityGate": true,
           "meanPhi": -0.970542501936633,
           "sdPhi": 0.12539568142313223,
-          "msPerTrajectory": 417.6356198666667
+          "msPerTrajectory": 414.58326036666665
         },
         {
           "center": -0.75,
@@ -456,7 +456,7 @@
           "ergodicityGate": true,
           "meanPhi": -0.7176359086894558,
           "sdPhi": 0.11902313827015293,
-          "msPerTrajectory": 419.07549836666664
+          "msPerTrajectory": 415.3998936666667
         },
         {
           "center": -0.5,
@@ -477,7 +477,7 @@
           "ergodicityGate": true,
           "meanPhi": -0.48920603491336123,
           "sdPhi": 0.12607880555100814,
-          "msPerTrajectory": 418.15939540000005
+          "msPerTrajectory": 414.8700627666667
         },
         {
           "center": -0.25,
@@ -498,7 +498,7 @@
           "ergodicityGate": true,
           "meanPhi": -0.2476674531718065,
           "sdPhi": 0.1233509790753772,
-          "msPerTrajectory": 417.97388213333335
+          "msPerTrajectory": 415.30907103333334
         },
         {
           "center": 0,
@@ -519,7 +519,7 @@
           "ergodicityGate": true,
           "meanPhi": -0.00400927485187557,
           "sdPhi": 0.12192013058084246,
-          "msPerTrajectory": 418.8870269
+          "msPerTrajectory": 415.35586950000004
         },
         {
           "center": 0.25,
@@ -540,7 +540,7 @@
           "ergodicityGate": true,
           "meanPhi": 0.24081799881050456,
           "sdPhi": 0.12162381806370148,
-          "msPerTrajectory": 418.1541366
+          "msPerTrajectory": 414.72980939999997
         },
         {
           "center": 0.5,
@@ -561,7 +561,7 @@
           "ergodicityGate": true,
           "meanPhi": 0.4771181485599117,
           "sdPhi": 0.12306561553477414,
-          "msPerTrajectory": 418.79223643333336
+          "msPerTrajectory": 415.33755886666665
         },
         {
           "center": 0.75,
@@ -582,7 +582,7 @@
           "ergodicityGate": true,
           "meanPhi": 0.7324018813517872,
           "sdPhi": 0.12077296258675176,
-          "msPerTrajectory": 418.6483068333333
+          "msPerTrajectory": 415.34041336666667
         },
         {
           "center": 1,
@@ -603,7 +603,7 @@
           "ergodicityGate": true,
           "meanPhi": 0.9730896863163923,
           "sdPhi": 0.11878671384664158,
-          "msPerTrajectory": 418.8873871
+          "msPerTrajectory": 415.4328825666667
         },
         {
           "center": 1.25,
@@ -624,7 +624,7 @@
           "ergodicityGate": true,
           "meanPhi": 1.2129665169803947,
           "sdPhi": 0.12509618064664624,
-          "msPerTrajectory": 418.2679328666667
+          "msPerTrajectory": 414.60553446666665
         },
         {
           "center": 1.5,
@@ -645,7 +645,7 @@
           "ergodicityGate": true,
           "meanPhi": 1.4525848592278199,
           "sdPhi": 0.12082875653070116,
-          "msPerTrajectory": 221.608469
+          "msPerTrajectory": 220.5879884
         },
         {
           "center": 1.75,
@@ -666,7 +666,7 @@
           "ergodicityGate": true,
           "meanPhi": 1.7064632877862393,
           "sdPhi": 0.12000364449947082,
-          "msPerTrajectory": 221.85404946666665
+          "msPerTrajectory": 221.89857926666667
         },
         {
           "center": 2,
@@ -687,7 +687,7 @@
           "ergodicityGate": true,
           "meanPhi": 1.9451246677634428,
           "sdPhi": 0.123182818562524,
-          "msPerTrajectory": 221.97379196666665
+          "msPerTrajectory": 220.39696833333335
         },
         {
           "center": 2.25,
@@ -708,7 +708,7 @@
           "ergodicityGate": true,
           "meanPhi": 2.193497852955876,
           "sdPhi": 0.12077579394166137,
-          "msPerTrajectory": 221.74612906666667
+          "msPerTrajectory": 220.09814633333335
         },
         {
           "center": 2.5,
@@ -729,7 +729,7 @@
           "ergodicityGate": true,
           "meanPhi": 2.434820930347182,
           "sdPhi": 0.11969669933876595,
-          "msPerTrajectory": 221.56641616666667
+          "msPerTrajectory": 220.5983085
         }
       ],
       "perWindowSignedBinCounts": [
@@ -2103,7 +2103,7 @@
           "ergodicityGate": true,
           "meanPhi": -2.34079896449303,
           "sdPhi": 0.23948388375679852,
-          "msPerTrajectory": 528.7143696666667
+          "msPerTrajectory": 512.2742134
         },
         {
           "center": -2,
@@ -2124,7 +2124,7 @@
           "ergodicityGate": true,
           "meanPhi": -1.8884282172544262,
           "sdPhi": 0.23891018077215723,
-          "msPerTrajectory": 528.2162614666667
+          "msPerTrajectory": 511.7118900333333
         },
         {
           "center": -1.5,
@@ -2145,7 +2145,7 @@
           "ergodicityGate": true,
           "meanPhi": -1.3996015687502046,
           "sdPhi": 0.23219052993705633,
-          "msPerTrajectory": 529.4392469333334
+          "msPerTrajectory": 514.2372597
         },
         {
           "center": -1,
@@ -2166,7 +2166,7 @@
           "ergodicityGate": true,
           "meanPhi": -0.9294498337510252,
           "sdPhi": 0.24593516245717614,
-          "msPerTrajectory": 529.7122095666666
+          "msPerTrajectory": 513.6516850333334
         },
         {
           "center": -0.5,
@@ -2187,7 +2187,7 @@
           "ergodicityGate": true,
           "meanPhi": -0.4751845298976434,
           "sdPhi": 0.24319727692868953,
-          "msPerTrajectory": 529.5679005
+          "msPerTrajectory": 512.9218253333333
         },
         {
           "center": 0,
@@ -2208,7 +2208,7 @@
           "ergodicityGate": true,
           "meanPhi": -0.01027077303094892,
           "sdPhi": 0.24618004375924374,
-          "msPerTrajectory": 529.6970043666666
+          "msPerTrajectory": 514.010798
         },
         {
           "center": 0.5,
@@ -2229,7 +2229,7 @@
           "ergodicityGate": true,
           "meanPhi": 0.47459332770308615,
           "sdPhi": 0.24566176606410006,
-          "msPerTrajectory": 530.2632293666667
+          "msPerTrajectory": 513.7255389
         },
         {
           "center": 1,
@@ -2250,7 +2250,7 @@
           "ergodicityGate": true,
           "meanPhi": 0.9327366046484663,
           "sdPhi": 0.23615639934811714,
-          "msPerTrajectory": 527.5993071333334
+          "msPerTrajectory": 510.94783499999994
         },
         {
           "center": 1.5,
@@ -2271,7 +2271,7 @@
           "ergodicityGate": true,
           "meanPhi": 1.4007027307480524,
           "sdPhi": 0.23500770163503987,
-          "msPerTrajectory": 529.8739339
+          "msPerTrajectory": 513.7889906
         },
         {
           "center": 2,
@@ -2292,7 +2292,7 @@
           "ergodicityGate": true,
           "meanPhi": 1.8792036210892131,
           "sdPhi": 0.2403897016572849,
-          "msPerTrajectory": 531.0209786333334
+          "msPerTrajectory": 514.4174610666666
         },
         {
           "center": 2.5,
@@ -2313,7 +2313,7 @@
           "ergodicityGate": true,
           "meanPhi": 2.3339615430478196,
           "sdPhi": 0.23809336876869466,
-          "msPerTrajectory": 531.2130623
+          "msPerTrajectory": 514.5040040666667
         }
       ],
       "perWindowSignedBinCounts": [
@@ -3392,7 +3392,7 @@
     }
   ],
   "batteries": {
-    "batteriesAllPassed": false,
+    "batteriesAllPassed": true,
     "whamPlumbingBattery": true,
     "whamPlumbingMaxErr": 0.049881873409894695,
     "perTorus": [
@@ -3410,7 +3410,7 @@
         "identityThetaIndependenceBattery": true,
         "projectorOverlapMaxAfter": 2.851536416931602E-17,
         "projectorBattery": true,
-        "hardBatteriesPassed": false
+        "hardBatteriesPassed": true
       }
     ]
   },
@@ -3464,7 +3464,7 @@
     "baseSignature": "Cl(4,0)-euclidean-slice",
     "spinorUsedAsShiabCarrierNotFiber": true
   },
-  "runtimeSeconds": 4590.1167266,
+  "runtimeSeconds": 4512.2191006,
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
   "targetBlindConstructionHash": "cd1539de7aa4a854335c47a36991d773199416101badd23b0615380cb767a1be",
@@ -3505,5 +3505,5 @@
     "beta, the umbrella springs, the Euclidean Phi inner product, the flat HMC kinetic mass, the theta-Haar chart, and the WHAM bin/error conventions are WORKBENCH CONVENTIONS pending physicist review (Wave-0 item 0.3 OPEN).",
     "No VEV scale, pole, or GeV lineage; no Phase201/Phase256 contract field is filled; nothing is promoted."
   ],
-  "decision": "Do not use the pre-registration until the precursors (448/449/450), the hard batteries, and the calibration \u002B smoke completeness flags pass."
+  "decision": "The WHAM parity-antisymmetry error-model repair is decided on internal consistency (mode=production). Stage-0 pre-registration is committed BEFORE any production trajectory: (1) the phase450 sd2 per-bin antisymmetry localization is recomputed from the committed cepCurve and recorded (max 5.059 sigma at |Phi|=2.375); (2) the output schema records per-bin antisymmetry and per-window signed-bin counts; (3) the c=0/\u002B-0.25 soft-spring sub-ladder is pre-registered (start spring 64.0, smoke-confirmed spring 64.0, junction overlap 0.425 \u003E= 0.15); (4) the max-over-bins antisymmetry statistic is calibrated against the fitted even CEP (99th-pct sigma 3.160, abs 0.777; false-flag at 5 sigma 0.00%, at 3 sigma 1.70%); (5) the S(k) structure-factor hooks on the released columns and the two-arm analysis \u002B T1/T2/T3 taxonomy are pre-registered. VERDICT (symmetric-phase-null): T1: both corrected arms are within the calibrated antisymmetry thresholds, U(Phi) is single-well-at-zero on both members, the fresh independent tadpole is zero within errors, and the identity control is clean -\u003E the symmetric-phase null IS claimed. The phase450 5.06-sigma antisymmetry was a WHAM stitching-error-model artifact; frontier statement upgrades to \u0027no non-perturbative scale along translation-invariant rays at n=3\u0027 (finite-volume, single-beta caveat; workbench-relative, no GeV). MANDATORY FRAMING: workbench-relative candidate data ONLY (su(2) toy algebra, reduced Spin(4) slice, lattice units); beta, umbrella springs, the Phi inner product, the HMC kinetic mass, and the theta-Haar chart are WORKBENCH CONVENTIONS pending physicist review (Wave-0 item 0.3 OPEN); NO GeV/pole/VEV promotion; no Phase201/Phase256 contract field is filled; nothing is promoted."
 }

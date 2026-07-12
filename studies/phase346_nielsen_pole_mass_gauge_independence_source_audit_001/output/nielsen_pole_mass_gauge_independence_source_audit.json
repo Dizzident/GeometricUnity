@@ -1,8 +1,8 @@
 {
   "phaseId": "phase346-nielsen-pole-mass-gauge-independence-source-audit",
-  "terminalStatus": "nielsen-pole-mass-gauge-independence-source-audit-review-required",
-  "generatedAt": "2026-07-10T22:02:06.8193459+00:00",
-  "nielsenPoleMassGaugeIndependenceSourceAuditPassed": false,
+  "terminalStatus": "nielsen-pole-mass-gauge-independence-source-audit-pole-boundary-not-gu-source",
+  "generatedAt": "2026-07-12T01:43:09.2653075+00:00",
+  "nielsenPoleMassGaugeIndependenceSourceAuditPassed": true,
   "nielsenPoleMassLeadPresent": true,
   "nielsenPrimarySourcesReviewed": true,
   "nielsenRouteExternalToGu": true,
@@ -96,13 +96,13 @@
     },
     {
       "CheckId": "mass-definition-and-observed-field-blockers-preserved",
-      "Passed": false,
-      "Detail": "p260=True; conventionPromotes=False; poleFailurePersists=True; observedRequired=20; observedFilled=0; observedPromotable=False; p295=False; observedCandidates=0"
+      "Passed": true,
+      "Detail": "p260=True; conventionPromotes=False; poleFailurePersists=True; observedRequired=20; observedFilled=0; observedPromotable=False; p295=True; observedCandidates=0"
     },
     {
       "CheckId": "fms-and-complementarity-boundaries-preserved",
-      "Passed": false,
-      "Detail": "p344=False; fmsTemplate=True; fmsPromotesObserved=False; p345=False; complementarityPromotesObserved=False"
+      "Passed": true,
+      "Detail": "p344=True; fmsTemplate=True; fmsPromotesObserved=False; p345=True; complementarityPromotesObserved=False"
     },
     {
       "CheckId": "current-source-lineage-blockers-preserved",
@@ -135,13 +135,13 @@
     "observedFieldExtractionRequiredFieldCount": 20,
     "observedFieldExtractionFilledRequiredFieldCount": 0,
     "observedFieldExtractionContractPromotable": false,
-    "observedFieldExtractionContractCandidateScanPassed": false,
+    "observedFieldExtractionContractCandidateScanPassed": true,
     "anyObservedFieldExtractionCandidateFillsContract": false,
     "intakeReadyObservedFieldExtractionCandidateCount": 0,
-    "fmsGaugeInvariantSpectrumSourceAuditPassed": false,
+    "fmsGaugeInvariantSpectrumSourceAuditPassed": true,
     "fmsProvidesObservedFieldExtractionTemplate": true,
     "fmsRoutePromotesObservedFieldExtraction": false,
-    "fradkinShenkerComplementaritySourceAuditPassed": false,
+    "fradkinShenkerComplementaritySourceAuditPassed": true,
     "complementarityRoutePromotesObservedFieldExtraction": false
   },
   "decision": "Do not promote W/Z or Higgs physical masses from Nielsen identities, complex-pole gauge independence, the complex-mass scheme, or pinch-technique resonance extraction. These sources define a rigorous gauge-independence boundary for physical pole masses and amplitudes, but the current repository still lacks GU-local BRST/Slavnov-Taylor control, observed W/Z/H operators, pole equations, target-independent scale/coupling lineage, Higgs scalar-source lineage, and GeV normalization.",

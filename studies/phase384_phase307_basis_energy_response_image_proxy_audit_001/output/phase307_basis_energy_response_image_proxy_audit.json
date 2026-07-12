@@ -1,8 +1,8 @@
 {
   "phaseId": "phase384-phase307-basis-energy-response-image-proxy-audit",
-  "generatedAt": "2026-07-10T22:02:52.9796351+00:00",
-  "terminalStatus": "phase307-basis-energy-response-image-proxy-audit-review-required",
-  "phase307BasisEnergyResponseImageProxyAuditPassed": false,
+  "generatedAt": "2026-07-11T06:59:49.9805839+00:00",
+  "terminalStatus": "phase307-basis-energy-response-image-proxy-audit-no-suppressed-axis-escape",
+  "phase307BasisEnergyResponseImageProxyAuditPassed": true,
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
   "targetBlindConstructionHash": "77da141091c1f673c094c44e88f468f0d0c10f95025c3b32d46ba9195816b199",
@@ -180,7 +180,7 @@
       2
     ],
     "phase379ContextMaterialized": true,
-    "phase381382383BlockerMaterialized": false
+    "phase381382383BlockerMaterialized": true
   },
   "sourceDefinitionBasisEnergyAudit": {
     "sourceDefinitionAudits": [
@@ -4038,8 +4038,8 @@
     },
     {
       "checkId": "phase379-381-382-383-response-image-blocker-preserved",
-      "passed": false,
-      "details": "phase379Context=True; suppressedAxis=1; dominantAxes=0,2; phase381382383Blocker=False"
+      "passed": true,
+      "details": "phase379Context=True; suppressedAxis=1; dominantAxes=0,2; phase381382383Blocker=True"
     },
     {
       "checkId": "no-phase307-w-definition-has-low-suppressed-basis-energy-proxy",
@@ -4073,5 +4073,5 @@
     "A theorem explaining why the Phase307 charged-ladder W row physically requires substantial suppressed-axis content.",
     "Separate W and Z Phase201 source rows with source-lineage ids, raw/common/target gates, stability sidecars, derivation ids, and GeV normalization."
   ],
-  "decision": "Review the Phase307 basis-energy response-image proxy audit before using Phase27 basis-energy fractions as sidecar evidence."
+  "decision": "Phase27 basis-energy metadata does not provide a finer suppressed-axis escape for Phase307. Every current W source definition has suppressed-axis basis energy above 0.1; the minimum is 0.33627838840903185, and the P302-scaled stable common selector has 0.44501616745604355. This proxy is not an observed projection map or a source-row theorem, so it cannot fill Phase201."
 }

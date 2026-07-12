@@ -1,15 +1,15 @@
 {
   "phaseId": "phase416-unobserved-phase-carrier-census",
-  "generatedAt": "2026-07-10T22:09:54.8969297+00:00",
-  "terminalStatus": "unobserved-phase-carrier-census-review-required",
-  "unobservedPhaseCarrierCensusPassed": false,
-  "phase404PrecursorPassed": false,
-  "phase407PrecursorPassed": false,
-  "phase408PrecursorPassed": false,
-  "phase409PrecursorPassed": false,
-  "phase412PrecursorPassed": false,
-  "phase414PrecursorPassed": false,
-  "phase415PrecursorPassed": false,
+  "generatedAt": "2026-07-12T01:50:07.1601152+00:00",
+  "terminalStatus": "unobserved-phase-carriers-censused-no-linear-bosonic-sm-doublet-map",
+  "unobservedPhaseCarrierCensusPassed": true,
+  "phase404PrecursorPassed": true,
+  "phase407PrecursorPassed": true,
+  "phase408PrecursorPassed": true,
+  "phase409PrecursorPassed": true,
+  "phase412PrecursorPassed": true,
+  "phase414PrecursorPassed": true,
+  "phase415PrecursorPassed": true,
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
   "targetBlindConstructionHash": "46c0b14530a42c0b33e231cf7352e17b87f415c2cab5ea125ef9927c3d7c6037",
@@ -205,5 +205,5 @@
     "phase414SummaryPath": "studies/phase414_general_shiab_epsilon_operator_ansatz_probe_001/output/general_shiab_epsilon_operator_ansatz_probe_summary.json",
     "phase415SummaryPath": "studies/phase415_fermionic_cohomology_square_root_ansatz_probe_001/output/fermionic_cohomology_square_root_ansatz_probe_summary.json"
   },
-  "decision": "Do not use the unobserved carrier census until all precursor and fail-closed accounting checks pass."
+  "decision": "The source-pinned unobserved/dark carriers have now been materialized as a fail-closed census. The primary draft pins three computable unobserved fermionic carriers: Q_{3/2} (192 states per zeta side), Z_{1/2} with the vector-spinor 144 remainder (576 states per zeta side), and the dark decoupled Weyl-half/mirror sector (64 states). None is a linear bosonic spin-zero SM-doublet carrier, and no source supplies a bosonic map/action/VEV/projection that would turn them into one. The most concrete next mathematical carrier is the Z/vector-spinor 144 decomposition and any source-defined even-composite or bosonic projection built from it. No Phase201 or Phase256 field is filled."
 }

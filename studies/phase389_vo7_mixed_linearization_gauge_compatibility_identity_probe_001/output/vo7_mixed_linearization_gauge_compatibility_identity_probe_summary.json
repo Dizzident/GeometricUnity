@@ -1,10 +1,10 @@
 {
   "phaseId": "phase389-vo7-mixed-linearization-gauge-compatibility-identity-probe",
-  "generatedAt": "2026-07-10T22:02:56.3593394+00:00",
-  "terminalStatus": "vo7-discrete-gauge-compatibility-identity-probe-blocked",
-  "vo7MixedLinearizationGaugeCompatibilityIdentityProbePassed": false,
-  "phase372PrecursorPassed": false,
-  "phase388PrecursorPassed": false,
+  "generatedAt": "2026-07-12T01:43:36.1015399+00:00",
+  "terminalStatus": "vo7-discrete-gauge-compatibility-identity-materialized-control-branch-only-vo7-still-incomplete",
+  "vo7MixedLinearizationGaugeCompatibilityIdentityProbePassed": true,
+  "phase372PrecursorPassed": true,
+  "phase388PrecursorPassed": true,
   "discreteControlBranchGaugeCompatibilityIdentityMaterialized": true,
   "discreteControlBranchGaugeCompatibilityIdentityIsVo7BuildingBlock": true,
   "discreteControlBranchGaugeCompatibilityIdentityCompletesVo7": false,
@@ -85,5 +85,5 @@
     "no physical predictions",
     "no Phase201 or Phase256 fill"
   ],
-  "decision": "Do not use the discrete gauge-compatibility identity until the Phase372/Phase388 precursors, base Dirac reconstruction from persisted omega, exact identity residuals, global equivariance, and Ward contraction checks all pass."
+  "decision": "The discrete gauge-compatibility identity [D(omega), X_hat] = delta_D[v(X)] \u002B R(X) holds at machine precision on both persisted Phase12 backgrounds for every vertex-supported and global su(2) gauge parameter, with v(X)_e = DeltaX_e \u002B [omega_e, Xbar_e] and the obstruction R(X) exactly characterized by the symmetric anticommutator S_e = {rho(omega_e), rho(DeltaX_e)}/2. Global gauge parameters are exactly equivariant with zero obstruction, and the pure-gauge mixed-block source currents satisfy the contracted identity J_v(X) = \u003Cpsi,[D,X_hat]psi\u003E - \u003Cpsi,R psi\u003E at machine precision. The Ward zero-current statement itself is NOT sharply tested because the persisted Phase12 fermion modes carry large solver residuals (recorded residualNorm ~ 12 in the mode artifacts); the eigen-residual bound is reported as diagnostic only. This is the first VO-7 gauge-compatibility artifact, but it is a discrete identity-weight control-branch result for the candidate mixed block only: it does not supply a physical M_psi-compatible branch, a completed fermionic action, completed physical mixed blocks, a physical effective-action Hessian, an observed electroweak namespace map, or any Phase201/Phase256 contract field. VO-7 remains incomplete and no physical W/Z/H promotion is possible from this route."
 }

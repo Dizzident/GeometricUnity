@@ -1,15 +1,15 @@
 {
   "phaseId": "phase451-two-loop-unification-ledger",
-  "generatedAt": "2026-07-11T03:19:44.8828346+00:00",
-  "terminalStatus": "two-loop-unification-ledger-blocked",
-  "twoLoopUnificationLedgerPassed": false,
-  "verdictKind": "blocked",
+  "generatedAt": "2026-07-12T07:00:39.431645+00:00",
+  "terminalStatus": "two-loop-unification-ledger-tension-persists-quantified",
+  "twoLoopUnificationLedgerPassed": true,
+  "verdictKind": "tension-persists-quantified",
   "applicationSubjectKind": "two-loop-unification-ledger",
   "constructionHash": "b3a1c2cf29953d5d1ed47f1301b782fbdc6cab8dcab06cc9d6c2c81bd01b4167",
   "precursors": {
-    "phase404PrecursorPassed": false,
-    "phase429PrecursorPassed": false,
-    "phase433PrecursorPassed": false,
+    "phase404PrecursorPassed": true,
+    "phase429PrecursorPassed": true,
+    "phase433PrecursorPassed": true,
     "phase404SummaryPath": "studies/phase404_gu_embedding_chain_coupling_ratio_enumeration_001/output/gu_embedding_chain_coupling_ratio_enumeration_summary.json",
     "phase429SummaryPath": "studies/phase429_target_blind_dimensionless_ratio_ledger_001/output/target_blind_dimensionless_ratio_ledger_summary.json",
     "phase433SummaryPath": "studies/phase433_blind_beta_coefficient_running_ledger_001/output/blind_beta_coefficient_running_ledger_summary.json"
@@ -370,5 +370,5 @@
     "The referee-corrected hierarchy figure b*alpha_GUT = 2 pi/ln(M_Pl/m_W) = 0.159 is recorded context, used nowhere.",
     "No Phase201 or Phase256 contract field is filled; nothing is promoted."
   ],
-  "decision": "Do not use the ledger numbers until the precursor, witness, closed-form, Richardson, round-trip, and boundary-identity batteries pass."
+  "decision": "The two-loop unification ledger is decided fail-closed. DERIVED INPUTS: the blind Phase404 kernel boundary sin^2 = 3/8 (alpha_1 = alpha_2 at mu*) and the Phase433 exact-rational SM content row (b3, b2, b1) = (7, 19/6, -41/10) (AF-positive; witness row matched EXACTLY against the committed Phase433 JSON) plus the textbook SM two-loop gauge b_ij (GUT-normalized; QCD beta_1 witness -b_33 = 26 at n_f = 6). DECLARED COMPARISON IMPORTS: alpha_em(m_Z) = 1/127.955 and alpha_s(m_Z) = 0.1179; the observed sin^2(m_Z) = 0.23122 entered ONLY the falsification comparison, never the derivation. PREDICTIONS: sin^2(m_Z) = 0.207589 at one loop (closed form, reproducing the referee\u0027s 0.2076/0.208 witness; numeric agreement 6.0E-014) and 0.210637 at two loops (RK4, step-halving 2.1E-013 \u003C= 1e-8, up-down round trip 3.6E-015 \u003C= 1e-9, exact-unified downward recovery 3.1E-016); unification at mu*/m_Z = 4.579E\u002B012 (dimensionless; no GeV promoted), 1/alpha_GUT = 41.364. FALSIFICATION COMPARISON: predicted-minus-observed = -0.02058 against the threshold/matching band 1.79E-004 (matching scale in [m_Z/2, 2 m_Z] plus step EW thresholds); the comparison-side triple-unification tension is 1/alpha_3 - 1/alpha_(1=2) = -5.576 (one loop) / -4.907 (two loops) at the observed-sin^2 crossing. VERDICT: tension-persists-quantified. MANDATORY FRAMING: even a within-band closure would be GUT-GENERIC (this ledger cannot distinguish GU until the observerse\u0027s intermediate content is defined); the referee-corrected hierarchy figure b*alpha_GUT = 2 pi/ln(M_Pl/m_W) = 0.159 is recorded as context only; two-loop Yukawa traces are omitted (declared truncation); nothing is promoted, no Phase201/Phase256 field is filled."
 }

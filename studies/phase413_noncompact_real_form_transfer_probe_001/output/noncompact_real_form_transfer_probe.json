@@ -1,11 +1,11 @@
 {
   "phaseId": "phase413-noncompact-real-form-transfer-probe",
-  "generatedAt": "2026-07-10T22:09:53.9274623+00:00",
-  "terminalStatus": "noncompact-real-form-transfer-probe-blocked",
-  "noncompactRealFormTransferProbePassed": false,
-  "phase409PrecursorPassed": false,
-  "phase412PrecursorPassed": false,
-  "probeInternallyConsistent": false,
+  "generatedAt": "2026-07-12T01:50:06.2223009+00:00",
+  "terminalStatus": "noncompact-real-form-transfer-established-no-gos-are-signature-independent",
+  "noncompactRealFormTransferProbePassed": true,
+  "phase409PrecursorPassed": true,
+  "phase412PrecursorPassed": true,
+  "probeInternallyConsistent": true,
   "lorentzWeldIsHomomorphism": true,
   "lorentzHomResidual": 2.220446049250313E-16,
   "inducedFormSignature": {
@@ -75,5 +75,5 @@
     "loopholeContext": "docs/Reference/ExperimentReferences/DEEP-RESEARCH-20260612.md (noncompact-only invariant named as the most plausible evasion)",
     "primaryDraft": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt (sections 2.3, 9; Spin(6,4) chain)"
   },
-  "decision": "Do not use the transfer claim until the precursors and the coincidence/recomputation battery pass."
+  "decision": "The most plausible loophole is CLOSED at the finite-dimensional level: the Phase408-412 composite no-gos are REAL-FORM INDEPENDENT. (N1) The Lorentzian chimeric weld pi_eta: so(1,3) -\u003E gl(10) on Sym^2(R^{1,3}) is an exact Lie homomorphism preserving the induced trace form, whose signature is machine-computed and recorded (connecting to the Phase406 Cl(7,3) signature axis). (N2) THE KEYSTONE: the complexified Lorentzian weld coincides exactly with the complexified compact weld under the explicit change of basis T4 = diag(i,1,1,1) - so every complex-linear kernel dimension (which is what every Phase408-412 no-go is) transfers verbatim to the noncompact form; no noncompact-only invariant can exist on this chain\u0027s finite-dimensional carriers. (N3) Direct fail-closed recomputation on the noncompact form confirms the transfer: the welded frame-cross block has ZERO linear singlet content and EXACTLY 7 bilinear spin-0 dimensions, matching the compact counts. NAMED RESIDUALS: real-structure (Majorana-type) bookkeeping can relabel real dimensions but cannot create complex invariants (recorded, not resolved); the unitary infinite-dimensional representation category is out of scope. The remaining named routes reduce to: the draft\u0027s unobserved-phase fields, or a new primary-source specification. Nothing is promoted; no contract field is filled."
 }

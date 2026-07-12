@@ -1,8 +1,8 @@
 {
   "phaseId": "phase423-zenodo-gu-rvg-spinorial-dark-sector-boson-contract-audit",
-  "terminalStatus": "zenodo-gu-rvg-spinorial-dark-sector-audit-review-required",
-  "generatedAt": "2026-07-10T22:09:58.7284965+00:00",
-  "zenodoGuRvgSpinorialDarkSectorBosonContractAuditPassed": false,
+  "terminalStatus": "zenodo-gu-rvg-spinorial-dark-sector-audit-no-electroweak-source",
+  "generatedAt": "2026-07-12T01:50:10.8474302+00:00",
+  "zenodoGuRvgSpinorialDarkSectorBosonContractAuditPassed": true,
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
   "targetBlindConstructionHash": "40564aabb3685ee6c6b55859251d966f75331b20caca8c682aca8f97daf30f33",
@@ -533,20 +533,20 @@
     "phase256FilledRequiredFieldCount": 0,
     "phase256ContractPromotable": false,
     "phase312SummaryPath": "studies/phase312_current_public_gu_rvg_revision_delta_audit_001/output/current_public_gu_rvg_revision_delta_audit_summary.json",
-    "phase312Passed": false,
+    "phase312Passed": true,
     "phase312PromotesWz": false,
     "phase312PromotesHiggs": false,
     "phase419SummaryPath": "studies/phase419_observed_field_symbolic_extraction_template_001/output/observed_field_symbolic_extraction_template_summary.json",
-    "phase419Passed": false,
+    "phase419Passed": true,
     "phase419SourceDefinedPhase256FieldCount": 0,
     "phase419CanFillObserved": false,
     "phase420SummaryPath": "studies/phase420_naive_curvature_mass_scale_sanity_check_001/output/naive_curvature_mass_scale_sanity_check_summary.json",
-    "phase420Passed": false,
+    "phase420Passed": true,
     "phase420MissingScaleSpecificationFieldCount": 9,
     "phase420SourceProvidesGeVUnitNormalization": false,
     "phase420CanFillWz": false,
     "phase422SummaryPath": "studies/phase422_vector_spinor_144_bilinear_scalar_capacity_audit_001/output/vector_spinor_144_bilinear_scalar_capacity_audit_summary.json",
-    "phase422Passed": false,
+    "phase422Passed": true,
     "phase422RequiresProjectionMap": true
   },
   "checks": [
@@ -562,8 +562,8 @@
     },
     {
       "checkId": "current-june-2026-source-delta-is-new-relative-to-phase312",
-      "passed": false,
-      "evidence": "currentJune2026SourceDeltaConfirmed=True; priorPhase312SourceSetDidNotIncludeThisRecord=True; phase312Passed=False; phase312PromotesWz=False; phase312PromotesHiggs=False"
+      "passed": true,
+      "evidence": "currentJune2026SourceDeltaConfirmed=True; priorPhase312SourceSetDidNotIncludeThisRecord=True; phase312Passed=True; phase312PromotesWz=False; phase312PromotesHiggs=False"
     },
     {
       "checkId": "positive-source-scope-is-spinorial-dark-sector-and-rvg",
@@ -592,7 +592,7 @@
     },
     {
       "checkId": "phase419-phase420-and-phase422-boundaries-preserved",
-      "passed": false,
+      "passed": true,
       "evidence": "phase419SourceDefinedFields=0; phase420MissingScaleFields=9; phase422RequiresProjectionMap=True; sourceProvidesVectorSpinor144ProjectionMap=False"
     },
     {

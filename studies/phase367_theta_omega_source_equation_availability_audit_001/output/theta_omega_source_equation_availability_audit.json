@@ -1,7 +1,7 @@
 {
   "phaseId": "phase367-theta-omega-source-equation-availability-audit",
-  "terminalStatus": "theta-omega-source-equation-availability-audit-review-required",
-  "thetaOmegaSourceEquationAvailabilityAuditPassed": false,
+  "terminalStatus": "theta-omega-source-equation-availability-audit-no-public-equation-source-law",
+  "thetaOmegaSourceEquationAvailabilityAuditPassed": true,
   "currentPublicSearchPerformed": true,
   "currentPublicSearchDate": "2026-05-26",
   "currentPublicSearchFoundNewPrimaryEquationSource": false,
@@ -106,8 +106,8 @@
     },
     {
       "CheckId": "public-transcript-and-slide-artifacts-remain-unavailable",
-      "Passed": false,
-      "Detail": "wikiPage=True; editedTranscript=False; privateMachineTranscript=True; publicTranscript=False; publicSlides=False; publicEquations=False; p316Passed=False; p316UsableTranscript=False"
+      "Passed": true,
+      "Detail": "wikiPage=True; editedTranscript=False; privateMachineTranscript=True; publicTranscript=False; publicSlides=False; publicEquations=False; p316Passed=True; p316UsableTranscript=False"
     },
     {
       "CheckId": "oxford-inhomogeneous-gauge-equations-do-not-fill-theta-omega-source-law",
@@ -116,13 +116,13 @@
     },
     {
       "CheckId": "prior-theta-omega-and-transcript-boundaries-remain-binding",
-      "Passed": false,
-      "Detail": "p315Passed=False; p315ThetaOmega=True; p315Transcript=False; p331Passed=False; p331ResearchLead=True; p331DirectBridge=False; p331Rows=False; p331Vev=False; p331WeakAngle=False; p331HiggsSource=False"
+      "Passed": true,
+      "Detail": "p315Passed=True; p315ThetaOmega=True; p315Transcript=False; p331Passed=True; p331ResearchLead=True; p331DirectBridge=False; p331Rows=False; p331Vev=False; p331WeakAngle=False; p331HiggsSource=False"
     },
     {
       "CheckId": "adjacent-seiberg-witten-and-observed-variable-boundaries-remain-binding",
-      "Passed": false,
-      "Detail": "p329Passed=False; swPromotesWz=False; swPromotesHiggs=False; p365Passed=False; dressingPromotesWz=False; dressingPromotesHiggs=False"
+      "Passed": true,
+      "Detail": "p329Passed=True; swPromotesWz=False; swPromotesHiggs=False; p365Passed=True; dressingPromotesWz=False; dressingPromotesHiggs=False"
     },
     {
       "CheckId": "theta-omega-current-availability-does-not-fill-gu-contracts",
@@ -136,17 +136,17 @@
     }
   ],
   "adjacentRouteBoundary": {
-    "ucsdDarkGeometricEnergySourceAuditPassed": false,
+    "ucsdDarkGeometricEnergySourceAuditPassed": true,
     "ucsdDarkGeometricEnergyMentionsThetaOmega": true,
     "ucsdDarkGeometricEnergyMentionsInhomogeneousGaugeGroup": true,
     "ucsdDarkGeometricEnergyEditedTranscriptAvailable": false,
     "ucsdDarkGeometricEnergyPromotesWzMasses": false,
     "ucsdDarkGeometricEnergyPromotesHiggsMass": false,
-    "ucsdTranscriptSourceStrengthAuditPassed": false,
+    "ucsdTranscriptSourceStrengthAuditPassed": true,
     "phase316CaptionOrTranscriptUsableAsSourceLineage": false,
     "phase316TranscriptAuditPromotesWzMasses": false,
     "phase316TranscriptAuditPromotesHiggsMass": false,
-    "thetaOmegaInhomogeneousGaugeSourceAuditPassed": false,
+    "thetaOmegaInhomogeneousGaugeSourceAuditPassed": true,
     "phase331ThetaOmegaRouteGivesResearchLeadForSourceLaw": true,
     "phase331ThetaOmegaRouteProvidesDirectTargetIndependentWzBridgeSourceLaw": false,
     "phase331ThetaOmegaRouteProvidesSeparateWzSourceRows": false,
@@ -155,10 +155,10 @@
     "phase331ThetaOmegaRouteProvidesHiggsScalarSourceOperator": false,
     "phase331ThetaOmegaRoutePromotesWzMasses": false,
     "phase331ThetaOmegaRoutePromotesHiggsMass": false,
-    "seibergWittenMonopoleElectroweakSourceAuditPassed": false,
+    "seibergWittenMonopoleElectroweakSourceAuditPassed": true,
     "seibergWittenPromotesWzMasses": false,
     "seibergWittenPromotesHiggsMass": false,
-    "dressingFieldElectroweakObservedVariablesAuditPassed": false,
+    "dressingFieldElectroweakObservedVariablesAuditPassed": true,
     "dressingFieldRoutePromotesWzMasses": false,
     "dressingFieldRoutePromotesHiggsMass": false
   },

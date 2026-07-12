@@ -157,23 +157,37 @@ identity analytic m(O1) = 2.5509 vs measured 2.4243 +- 0.1129 (z = 1.12);
 sd2 analytic 2.5320 vs 2.8556 +- 0.4141 (z = 0.78); O2 recorded
 (sd2: analytic 2.3570 vs 2.5824 +- 0.3265).
 
-**0++ masses (beta = 1 production, T = 3, single-window t = 0 with the
+**0++ masses (canonical committed record; default-budget 16000/10000
+trajectories, rngSeed 20260705, T = 3, single-window t = 0 with the
 excited-state caveat recorded):**
 
 | member | a*m (O1) | a*m (O2) | cross-check | combined a*m_0++ | verdict |
 |---|---|---|---|---|---|
-| identity (control) | 2.4352 +- 0.1682 | identical (O2 = O1 exactly) | 0.00 sigma | 2.4352 +- 0.1682 (14.5 sigma) | scalar-channel-gapped-measured |
-| sd2-id0/c0.5 | 2.3910 +- 0.1083 | 2.5901 +- 0.1580 | 1.04 sigma | 2.4547 +- 0.1242 (19.8 sigma) | scalar-channel-gapped-measured |
+| identity (control) | 2.7132 +- 0.1846 | identical (O2 = O1 exactly) | 0.00 sigma | 2.7132 +- 0.1846 (plateauChi2Dof null — inconclusive-by-construction) | scalar-channel-gapped-measured |
+| sd2-id0/c0.5 | 2.5553 +- 0.0725 | 2.4986 +- 0.0701 | 0.56 sigma | 2.5260 +- 0.0712 | scalar-channel-gapped-measured |
 
-`scalarChannelVerdict = scalar-channel-gapped-measured`: the first direct
-measurement test of the review board's convex/gapped picture comes back
-GAPPED in the 0++ channel for both members. Per the binding label caveat this
+Exact analytic free gaps 2.5509 / 2.5320 / 2.3570; cross-action ratio
+sd2/identity = 0.931 +- 0.069 (CROSS-ACTION deliverable class, 0.9 sigma
+from the free ratio 0.9926 — FREE-FIELD-COMPATIBLE label binding today).
+
+`scalarChannelVerdict = scalar-channel-gapped-measured`: the 0++ channel is
+gapped for both members in lattice units. Per the binding label caveat this
 is the scalar glueball-like gap of THIS action in lattice units — never m_H;
-no GeV/pole/VEV promotion; `promotedPhysicalMassClaimCount = 0`.
+no GeV/pole/VEV promotion; `promotedPhysicalMassClaimCount = 0`. The committed
+spectrum is currently free-field-compatible; every dynamical-structure claim
+gates on a >= 3 sigma departure from the exact Gaussian gaps.
+
+**SUPERSEDED (note per the diagnosis journal, 2026-07-10 reconciliation):**
+the earlier combined figures a*m = 2.4352 +- 0.1682 (identity) /
+2.4547 +- 0.1242 (sd2), quoted at 14.5 / 19.8 sigma, and the control
+comparison z-values recorded above from that run, came from a
+never-committed reduced-budget (8000/6000-trajectory) env-override run.
+They are superseded by the canonical committed default-budget numbers in
+this table and are deliberately absent from the committed output JSONs.
+The formal machine-checked attestation of the canonical record is phase459.
 
 **Recorded limitations:** T = 3 gives exactly one informative cosh point, so
 the window mass is an upper-bound-flavored estimate of the gap
 (excited-state contamination caveat serialized); n = 4 (`PHASE452_TORI=3,4`)
-adds the second point at ~3.2x cost. The committed run's statistics are the
-reduced 8000/6000-trajectory budget; the committed defaults (16000/10000)
-double it within a ~2 h wall.
+adds the second point at ~3.2x cost. The committed run is the default-budget
+16000/10000-trajectory regeneration from the full generator pass.

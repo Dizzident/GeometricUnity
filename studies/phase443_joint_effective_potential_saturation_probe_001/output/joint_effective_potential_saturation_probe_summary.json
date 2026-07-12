@@ -1,10 +1,10 @@
 {
   "phaseId": "phase443-joint-effective-potential-saturation-probe",
-  "generatedAt": "2026-07-10T23:05:38.655387+00:00",
-  "terminalStatus": "joint-effective-potential-saturation-probe-blocked",
-  "jointEffectivePotentialSaturationProbePassed": false,
-  "phase442PrecursorPassed": false,
-  "precursorsPassed": false,
+  "generatedAt": "2026-07-12T02:49:00.902719+00:00",
+  "terminalStatus": "joint-effective-potential-saturation-probe-passed-no-log-saturation-necessary-not-sufficient-frontier-sharpened",
+  "jointEffectivePotentialSaturationProbePassed": true,
+  "phase442PrecursorPassed": true,
+  "precursorsPassed": true,
   "applicationSubjectKind": "joint-effective-potential-saturation-probe",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
@@ -121,7 +121,7 @@
   "scaleIsWorkbenchRelativeCandidateOnly": true,
   "noGevPromotion": true,
   "batteries": {
-    "batteriesAllPassed": false,
+    "batteriesAllPassed": true,
     "variationalThetaStationaritySolved": true,
     "thetaStationarityBattery": true,
     "maxThetaResidualNonIdentity": 3.4272328515226026E-09,
@@ -1489,7 +1489,7 @@
     "spinorUsedAsShiabCarrierNotFiber": true,
     "draft14dObserverseNotRealized": true
   },
-  "runtimeSeconds": 2801.1987375,
+  "runtimeSeconds": 2997.5726698,
   "physicalCouplingProvided": false,
   "routeProvidesPhysicalEffectiveActionHessian": false,
   "routeProvidesVevOrSourceScaleLineage": false,
@@ -1524,5 +1524,5 @@
     "A log-saturation (interior minimum) result, where observed, is a workbench-relative dynamical-scale CANDIDATE only; a no-saturation result sharpens the frontier. Neither promotes anything.",
     "No VEV scale, pole, or GeV lineage; no Phase201 or Phase256 contract field is filled; the reduced slice does not realize the ambient 7,7 / internal gauge / weld content."
   ],
-  "decision": "Do not use the saturation verdicts until the precursor, variational-solve, control-discipline, and honesty batteries pass."
+  "decision": "The joint effective-potential saturation probe (mode-3 variational theta) is decided on internal consistency. On CreateUniform4D(1) (su(2) trace pairing; nOmega=195, nTheta=48, joint DOF 243), the theta-stationarity dS_B/dtheta=0 was solved for theta*(omega) at every composite point (max non-identity RELATIVE residual 3.43E-009 \u003C= 1E-008; identity control theta*=0 exact), and the analytic LinearizeTheta matched finite difference to 6.52E-009. The one-loop effective potential V_eff(t) = S_B(t*u, theta*(t*u)) \u002B (1/2) sum_i log lambda_i(H_joint\u003E0) was read along 2 omega-ray seed(s) over t in (0, 3], with exact zero modes excluded at a stated tolerance (rel 1E-008 of the largest |eigenvalue|, abs floor 1E-010); zero/negative-mode counts are recorded honestly. CONTROL DISCIPLINE: the identity-equivalent member reproduces the known no-saturation structure (pure degree-4 objective =\u003E log-runaway, no interior minimum). SATURATION VERDICT: no Einsteinian member\u0027s one-loop effective potential develops a finite interior minimum -- the necessary degree-lift (Phase442) is NOT sufficient for log-saturation on this workbench (a legitimate frontier-sharpening outcome). MANDATORY FRAMING: any scale found is a WORKBENCH-RELATIVE CANDIDATE ONLY -- su(2) toy algebra on the reduced Spin(4) slice, lattice units, one-loop; NO GeV/pole/VEV promotion. Everything is target-blind, reduced-spin4-slice structure; no Phase201/Phase256 contract field is filled; nothing is promoted."
 }

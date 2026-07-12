@@ -1,7 +1,7 @@
 {
   "phaseId": "phase341-scherk-schwarz-twisted-compactification-source-audit",
-  "terminalStatus": "scherk-schwarz-twisted-compactification-source-audit-review-required",
-  "scherkSchwarzTwistedCompactificationSourceAuditPassed": false,
+  "terminalStatus": "scherk-schwarz-twisted-compactification-source-audit-external-twist-mass-lead-not-gu-source",
+  "scherkSchwarzTwistedCompactificationSourceAuditPassed": true,
   "scherkSchwarzLeadPresent": true,
   "scherkSchwarzPrimarySourcesReviewed": true,
   "scherkSchwarzRouteExternalToGu": true,
@@ -65,7 +65,7 @@
     "gaugeHiggsBoundaryCompletesBosonPredictions": false,
     "kaluzaKleinInternalSymmetrySourceAuditPassed": true,
     "kkRouteCompletesBosonPredictions": false,
-    "bfTopologicalMassSourceAuditPassed": false,
+    "bfTopologicalMassSourceAuditPassed": true,
     "bfRouteCompletesBosonPredictions": false
   },
   "decision": "Do not promote W/Z or Higgs physical masses from the Scherk-Schwarz/twisted-compactification route in this repository. The route is a genuine geometric mass-generation lead through compactification twists, Wilson-line phases, or boundary data, but the current evidence leaves the twist angle, compactification radius, electroweak embedding, weak angle, Higgs sector, and GeV normalization as external or model-dependent data rather than GU-local source-lineage rows.",

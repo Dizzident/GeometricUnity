@@ -1,12 +1,12 @@
 {
   "phaseId": "phase437-four-dimensional-transmutation-scaling-probe",
-  "generatedAt": "2026-07-10T22:18:31.664338+00:00",
-  "terminalStatus": "four-dimensional-transmutation-scaling-probe-blocked",
-  "fourDimensionalTransmutationScalingProbePassed": false,
-  "precursorsPassed": false,
-  "phase430PrecursorPassed": false,
-  "phase435PrecursorPassed": false,
-  "phase436PrecursorPassed": false,
+  "generatedAt": "2026-07-12T01:58:37.8318952+00:00",
+  "terminalStatus": "four-dimensional-landscape-log-dominated-runaway-structural-cw-regime-unreachable-on-bounded-dispersion-lattice",
+  "fourDimensionalTransmutationScalingProbePassed": true,
+  "precursorsPassed": true,
+  "phase430PrecursorPassed": true,
+  "phase435PrecursorPassed": true,
+  "phase436PrecursorPassed": true,
   "applicationSubjectKind": "four-dimensional-transmutation-scaling-probe",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
@@ -746,7 +746,7 @@
     "canFillPhase256ObservedFieldExtractionContract": false,
     "phase201FieldsDefensiblyFilled": []
   },
-  "runtimeSeconds": 2.9753293,
+  "runtimeSeconds": 2.9011496,
   "sourceEvidence": {
     "phase430SummaryPath": "studies/phase430_net_one_loop_direction_selection_probe_001/output/net_one_loop_direction_selection_probe_summary.json",
     "phase435SummaryPath": "studies/phase435_two_condensate_scale_gap_probe_001/output/two_condensate_scale_gap_probe_summary.json",
@@ -760,5 +760,5 @@
     "The fit-implied t* ~ 40 for the derived hypercharge content is an out-of-window extrapolation artifact of an ill-conditioned polynomial fit; it is NOT a realised minimum and is NOT a scale.",
     "No VEV scale, pole, or GeV lineage; no Phase201 or Phase256 fill; no physical predictions."
   ],
-  "decision": "Do not use the four-dimensional scaling verdicts until the precursor and consistency batteries pass."
+  "decision": "The no-minimum verdict is decided against the four-dimensional Coleman-Weinberg question and survives it: it is STRUCTURAL, not a small-2D-lattice artifact. On a Euclidean L^4 lattice (L in {4,6,8,12}) with the naive bounded dispersion |sin k|\u003C=1, the per-unit-volume net one-loop functional along the pure ray omega_mu = t*U (tree = 0 because [U,U]=0) is LOG-DOMINATED at every L: its large-t octave log slope s(t) = [W(2t)-W(t)]/log 2 is FLAT (growth ratio ~ 1, not the ~16x/octave a genuine t^4 log t term would give) and its Richardson value equals the analytic integer count exactly. That per-volume slope reproduces the 2D-per-site slope to \u003C1e-2 (derived hypercharge -40, derived T -20, fundamental hypercharge -4, fundamental T \u002B4 = Phase430 slope / 16), so the 4D landscape is the SAME regime as the 2D workbench - the dimension does not change the verdict. The genuine dimensional-transmutation t^4 log t regime is not reachable on a finite lattice with bounded dispersion (it requires the unbounded continuum phase space); accordingly the CW polynomial fit yields only tiny, ill-conditioned t^4-family coefficients (individual fitted terms exceed |W| by large cancelling factors), and although the fit formally implies a turning point t* = exp(-C/B - 1/4) ~ 40 for the derived hypercharge content, t* lies OUTSIDE the analysed window and is NEVER realised: the direct minimum scan finds no interior minimum at any L (derived contents run away monotonically to the t=20 boundary; the fundamental T-axis rises monotonically from the origin). The runaway is therefore structural at one loop in four dimensions. Consistency batteries pass exactly: gamma anticommutation to 1e-12, the L=2 dense 192-dim operator reproduces the momentum-block functional to \u003C1e-8, and the 2D anchor reproduces Phase430\u0027s slope integers to \u003C1e-3. Everything is recorded blind as candidate-only workbench structure; no scale, pole, or GeV lineage exists; no Phase201 or Phase256 field is filled; nothing is promoted."
 }

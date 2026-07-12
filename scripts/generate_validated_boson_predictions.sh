@@ -335,6 +335,10 @@ dotnet run --no-build -c Release --project studies/phase450_constraint_effective
 dotnet run --no-build -c Release --project studies/phase451_two_loop_unification_ledger_001/Phase451TwoLoopUnificationLedger.csproj
 dotnet run --no-build -c Release --project studies/phase452_scalar_channel_spectroscopy_probe_001/Phase452ScalarChannelSpectroscopyProbe.csproj
 dotnet run --no-build -c Release --project studies/phase453_wham_parity_error_model_repair_001/Phase453WhamParityErrorModelRepair.csproj
+dotnet run --no-build -c Release --project studies/phase454_beyond_ray_quadratic_certificate_probe_001/Phase454BeyondRayQuadraticCertificateProbe.csproj
+dotnet run --no-build -c Release --project studies/phase459_spectroscopy_record_attestation_001/Phase459SpectroscopyRecordAttestation.csproj
+dotnet run --no-build -c Release --project studies/phase460_source_corpus_units_equivariance_kernel_001/Phase460SourceCorpusUnitsEquivarianceKernel.csproj
+dotnet run --no-build -c Release --project studies/phase461_dimensional_transmutation_reading_menu_001/Phase461DimensionalTransmutationReadingMenu.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

@@ -1,7 +1,7 @@
 {
   "phaseId": "phase361-matrix-model-higgs-geometry-source-audit",
-  "terminalStatus": "matrix-model-higgs-geometry-source-audit-review-required",
-  "matrixModelHiggsGeometrySourceAuditPassed": false,
+  "terminalStatus": "matrix-model-higgs-geometry-source-audit-geometric-higgs-lead-not-gu-mass-law",
+  "matrixModelHiggsGeometrySourceAuditPassed": true,
   "matrixModelLeadPresent": true,
   "matrixModelPrimarySourcesReviewed": true,
   "matrixModelRouteExternalToGu": true,
@@ -72,7 +72,7 @@
     "stringCompactificationSourceAuditPassed": true,
     "stringRoutePromotesWzMasses": false,
     "stringRoutePromotesHiggsMass": false,
-    "gaugeHiggsUnificationSourceAuditPassed": false,
+    "gaugeHiggsUnificationSourceAuditPassed": true,
     "gaugeHiggsRoutePromotesWzMasses": false,
     "gaugeHiggsRoutePromotesHiggsMass": false,
     "finiteNcgDiscreteHiggsSourceAuditPassed": true,

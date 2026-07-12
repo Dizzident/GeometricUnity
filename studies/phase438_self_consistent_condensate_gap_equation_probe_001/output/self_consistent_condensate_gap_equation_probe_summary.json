@@ -1,12 +1,12 @@
 {
   "phaseId": "phase438-self-consistent-condensate-gap-equation-probe",
-  "generatedAt": "2026-07-10T22:18:32.0929377+00:00",
-  "terminalStatus": "self-consistent-condensate-gap-equation-probe-blocked",
-  "selfConsistentCondensateGapEquationProbePassed": false,
-  "precursorsPassed": false,
-  "phase428PrecursorPassed": false,
-  "phase430PrecursorPassed": false,
-  "phase436PrecursorPassed": false,
+  "generatedAt": "2026-07-12T01:58:38.275943+00:00",
+  "terminalStatus": "self-consistent-gap-equation-generates-candidate-scale-mechanism-class-viable-no-gev-promotion",
+  "selfConsistentCondensateGapEquationProbePassed": true,
+  "precursorsPassed": true,
+  "phase428PrecursorPassed": true,
+  "phase430PrecursorPassed": true,
+  "phase436PrecursorPassed": true,
   "applicationSubjectKind": "self-consistent-condensate-gap-equation-probe",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
@@ -1873,5 +1873,5 @@
     "This phase establishes only that the self-consistent-backreaction MECHANISM CLASS can generate a scale on the workbench; it does not close the GeV scale gap and promotes nothing.",
     "No Phase201 or Phase256 field is filled."
   ],
-  "decision": "Do not use the self-consistent gap-equation verdicts until the precursor and battery gates pass."
+  "decision": "The self-consistent backreaction mechanism is decided on the workbench: the Gross-Neveu-style gap equation - where the fermion-loop-preferred condensate feeds back into the fermion spectrum - HAS nontrivial solutions above a finite critical coupling g2_crit(L) for every content and channel. This is the first mechanism class (dimensional transmutation via self-consistency) that generates a scale on the workbench at all; every prior landscape phase used external rays and found no finite minimum. Three quantitative signatures are recorded: (1) g2_crit(L) falls monotonically with volume (~1/lnL, the transmutation trend expected as the 2D IR sum diverges), though it stays finite on the doubler-excluded lattice; (2) ln Sigma* is approximately linear in 1/g2 (the exponential scale law Sigma* ~ Lambda*exp(-c/g2), R^2 ~ 0.83-0.90), the dimensional-transmutation signature; (3) the scalar singlet condensate wins the free-energy competition over the hypercharge (lambda_8) channel at every sampled coupling. THE HONEST BOUNDARIES: the four-fermion coupling normalization is a recorded convention (not source-derived on the workbench - it is fixed only up to kappa_B); the gap equation is a mean-field (Hartree) approximation; the scale ratio Sigma*/Lambda is candidate-only. This phase does NOT close the scale gap and promotes nothing to GeV. No Phase201 or Phase256 field is filled."
 }

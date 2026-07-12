@@ -1,10 +1,10 @@
 {
   "phaseId": "phase412-quartic-sm-doublet-intersection-analysis",
-  "generatedAt": "2026-07-10T22:09:41.7251145+00:00",
-  "terminalStatus": "quartic-sm-doublet-intersection-analysis-blocked",
-  "quarticSmDoubletIntersectionAnalysisPassed": false,
-  "phase411PrecursorPassed": false,
-  "analysisInternallyConsistent": false,
+  "generatedAt": "2026-07-12T01:49:54.1964961+00:00",
+  "terminalStatus": "quartic-order-closed-no-welded-scalar-sm-doublet-in-any-channel",
+  "quarticSmDoubletIntersectionAnalysisPassed": true,
+  "phase411PrecursorPassed": true,
+  "analysisInternallyConsistent": true,
   "chiralHalfIsSixteenDimensional": true,
   "chiralInvarianceResidual": 0,
   "colorAlgebraDimensionIsEight": true,
@@ -119,5 +119,5 @@
     "primaryDraft": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt (sections 9, 12)",
     "userDirective": "2026-06-12: execute the quartic SM-stable analysis named in the journal"
   },
-  "decision": "Do not use the closure claim until the precursor and the exactness battery pass."
+  "decision": "The quartic order is CLOSED for welded-scalar SM-doublets, by an ambient-intersection argument STRONGER than the deferred SM-stable-subspace analysis: the SM-doublet isotypic of 16^(x4) (constructed exactly inside the weight-filtered candidate sector) has ZERO intersection with the welded isotypic sectors available to quartic spacetime singlets, in EVERY channel (LLLL/LLLR/LLRR/LRRR/RRRR) and in their union. Since the unrestricted tensor power contains every statistics-projected composite space, the closure covers antisymmetrized composites too. Together with Phases 408-411, every internal composite-extraction route on every probed carrier is now closed through QUARTIC order. The remaining named routes are unchanged in kind but narrowed: the draft\u0027s unobserved-phase fields, a noncompact real-form evasion of the compact arithmetic (Nguyen-Polya caveat carried), or a genuinely new primary-source specification. Nothing is promoted; no contract field is filled."
 }

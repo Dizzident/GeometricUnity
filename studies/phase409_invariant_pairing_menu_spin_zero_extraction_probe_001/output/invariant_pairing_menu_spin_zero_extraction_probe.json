@@ -1,10 +1,10 @@
 {
   "phaseId": "phase409-invariant-pairing-menu-spin-zero-extraction-probe",
-  "generatedAt": "2026-07-10T22:04:36.2304819+00:00",
-  "terminalStatus": "invariant-pairing-menu-spin-zero-extraction-probe-blocked",
-  "invariantPairingMenuSpinZeroExtractionProbePassed": false,
-  "phase408PrecursorPassed": false,
-  "probeInternallyConsistent": false,
+  "generatedAt": "2026-07-12T01:45:22.3795119+00:00",
+  "terminalStatus": "invariant-pairing-menu-enumerated-spin-zero-doublet-absent-through-bilinear-order",
+  "invariantPairingMenuSpinZeroExtractionProbePassed": true,
+  "phase408PrecursorPassed": true,
+  "probeInternallyConsistent": true,
   "colorGeneratorCount": 8,
   "colorAlgebraDimensionIsEight": true,
   "pairingMenu": {
@@ -148,5 +148,5 @@
     "primaryDraft": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt (sections 2.3, 9, 12.6)",
     "sweepContext": "docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md 2026-06-12 entries (unverified external pairing-count claims; this probe is source-independent)"
   },
-  "decision": "Do not use the menu characterization until the precursor and the full enumeration battery pass."
+  "decision": "The Phase408 obstruction is extended from the single trace pairing to the COMPLETE invariant-pairing menu through bilinear order. (M1) The fiber pairing menu is machine-enumerated with parity labels - the epsilon-built (parity-odd) sector is now explicitly included, not just named. (M2) The frame-cross block 4x10 has ZERO so(4)-singlet content under the welded action: NO invariant linear extraction of any parity can produce a spin-0 scalar from it. (M3) The complete bilinear spin-0 sector is constructed exactly and its largest SM-stable subspace decomposed under the full SM chain (including full color su(3)): NO state carries the SM-doublet pattern (color-singlet, j_L = 1/2, |Y| = 1/2) in EITHER parity sector - the epsilon route at bilinear order is closed along with the metric route. (M4) STRONGER THAN PLANNED: every welded irrep of the frame-cross block is a half-integer x half-integer pair, so ALL ODD-ORDER composites have zero spin-0 content (the trilinear count is exactly 0 by character arithmetic, machine-cross-checked) - the next open order is QUARTIC, whose SM decomposition is the named remaining order. The extraction question now stands at: quartic-or-higher even composites, the draft\u0027s unspecified epsilon-conjugation/Shiab machinery acting on content BEYOND the frame-cross block (e.g. spinorial or unobserved-phase fields), or a different welded carrier. Nothing is promoted; no contract field is filled."
 }

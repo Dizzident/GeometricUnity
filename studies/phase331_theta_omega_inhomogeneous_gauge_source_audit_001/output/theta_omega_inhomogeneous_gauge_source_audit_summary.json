@@ -1,7 +1,7 @@
 {
   "phaseId": "phase331-theta-omega-inhomogeneous-gauge-source-audit",
-  "terminalStatus": "theta-omega-inhomogeneous-gauge-source-audit-review-required",
-  "thetaOmegaInhomogeneousGaugeSourceAuditPassed": false,
+  "terminalStatus": "theta-omega-inhomogeneous-gauge-source-audit-structural-geometry-not-wzh-source",
+  "thetaOmegaInhomogeneousGaugeSourceAuditPassed": true,
   "officialDraftPrimarySourceReviewed": true,
   "officialDraftDownloadPageReviewed": true,
   "officialOxfordLectureReviewed": true,
@@ -76,8 +76,8 @@
   "checks": [
     {
       "checkId": "theta-omega-official-source-lead-captured",
-      "passed": false,
-      "detail": "draftReviewed=True; ucsdPassed=False; thetaOmega=True; inhomogeneousGauge=True; fourteenDimensionalMetrics=True; supersymmetricEinsteinDirac=True; sourceRows=5"
+      "passed": true,
+      "detail": "draftReviewed=True; ucsdPassed=True; thetaOmega=True; inhomogeneousGauge=True; fourteenDimensionalMetrics=True; supersymmetricEinsteinDirac=True; sourceRows=5"
     },
     {
       "checkId": "official-draft-geometry-is-location-not-observed-electroweak-map",
@@ -101,8 +101,8 @@
     },
     {
       "checkId": "observed-field-extraction-and-completion-blockers-remain-binding",
-      "passed": false,
-      "detail": "p255Passed=False; p255Promotable=False; p256Required=20; p256Filled=0; p267Passed=True; p267DirectWz=False; p267Extraction=False; p267Scale=False; p267Higgs=False"
+      "passed": true,
+      "detail": "p255Passed=True; p255Promotable=False; p256Required=20; p256Filled=0; p267Passed=True; p267DirectWz=False; p267Extraction=False; p267Scale=False; p267Higgs=False"
     },
     {
       "checkId": "source-lineage-contracts-remain-unfilled-after-theta-omega-audit",
@@ -123,7 +123,7 @@
     "canFillPhase201HiggsContract": false,
     "canFillPhase256ObservedFieldExtractionContract": false
   },
-  "decision": "Review the theta_omega / inhomogeneous-gauge route before relying on this boundary.",
+  "decision": "Do not promote W/Z or Higgs physical masses from the theta_omega / inhomogeneous-gauge route. The route is GU-native and structurally relevant, but the public draft/lecture/abstract evidence currently supplies field locations and geometric research direction, not a direct target-independent W/Z bridge-source law, separate W/Z rows, electroweak VEV, weak-angle/coupling normalization, photon/W/Z/H observed-field extraction, Higgs scalar-source/self-coupling lineage, or GeV normalization.",
   "nextRequiredArtifact": [
     "A GU-local theta_omega or inhomogeneous-gauge theorem deriving the observed SU(2)_L x U(1)_Y embedding, weak angle, target-independent VEV, and separate W/Z source rows.",
     "A source-derived observed-field extraction theorem mapping GU-native Y variables to photon, W, Z, and Higgs rows with branch, normalization, and stability sidecars.",

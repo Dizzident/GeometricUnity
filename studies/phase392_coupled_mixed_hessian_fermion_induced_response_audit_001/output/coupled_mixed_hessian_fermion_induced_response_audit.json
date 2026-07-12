@@ -1,11 +1,11 @@
 {
   "phaseId": "phase392-coupled-mixed-hessian-fermion-induced-response-audit",
-  "generatedAt": "2026-07-10T22:03:07.5228695+00:00",
-  "terminalStatus": "coupled-mixed-hessian-fermion-induced-response-audit-blocked",
-  "coupledMixedHessianFermionInducedResponseAuditPassed": false,
+  "generatedAt": "2026-07-12T01:43:49.9377182+00:00",
+  "terminalStatus": "action-derived-fermion-induced-response-diverges-from-gram-structure-discrete-diagnostic-only",
+  "coupledMixedHessianFermionInducedResponseAuditPassed": true,
   "phase379PrecursorPassed": true,
-  "phase390PrecursorPassed": false,
-  "phase391PrecursorPassed": false,
+  "phase390PrecursorPassed": true,
+  "phase391PrecursorPassed": true,
   "constructionInternallyConsistent": true,
   "actionDerivedResponseStructureVerdict": "diverges-from-gram-structure",
   "actionDerivedResponseSharesRankThree": false,
@@ -468,5 +468,5 @@
     "phase12Root": "studies/phase12_joined_calculation_001/output/background_family",
     "backgroundStateDir": "studies/phase12_joined_calculation_001/output/background_family/background_states"
   },
-  "decision": "Do not use the action-derived response operator until the Phase379/390/391 precursors, dense solve convergence, response symmetry, and mixed-block coverage all pass."
+  "decision": "The action-derived fermion-induced carrier response operator R does NOT share the study-defined Gram structure; the recorded spectra, signatures, and axis fractions quantify the divergence. This reopens the carrier-image question: the suppressed-axis obstruction is metric-dependent, and the Phase381/383/384 blockers should be re-examined against the action-derived response before any further suppressed-axis theorem work."
 }

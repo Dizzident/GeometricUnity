@@ -1,13 +1,13 @@
 {
   "phaseId": "phase440-coupled-background-condensate-fixed-point-probe",
-  "generatedAt": "2026-07-10T22:18:33.9899394+00:00",
-  "runtimeSeconds": 0.8132315,
-  "terminalStatus": "coupled-background-condensate-fixed-point-probe-blocked",
-  "coupledBackgroundCondensateFixedPointProbePassed": false,
-  "precursorsPassed": false,
-  "phase430PrecursorPassed": false,
-  "phase438PrecursorPassed": false,
-  "phase439PrecursorPassed": false,
+  "generatedAt": "2026-07-12T01:58:40.2131639+00:00",
+  "runtimeSeconds": 0.8377387,
+  "terminalStatus": "coupled-system-has-no-interior-fixed-point-condensate-delays-but-cannot-stop-runaway-candidate-chain-does-not-close-no-gev-promotion",
+  "coupledBackgroundCondensateFixedPointProbePassed": true,
+  "precursorsPassed": true,
+  "phase430PrecursorPassed": true,
+  "phase438PrecursorPassed": true,
+  "phase439PrecursorPassed": true,
   "applicationSubjectKind": "coupled-background-condensate-fixed-point-probe",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
@@ -1135,5 +1135,5 @@
     "The result is an HONEST NEGATIVE: no interior joint fixed point exists; the condensate delays but cannot stop the runaway. The phase passes on internal consistency, closes no GeV scale gap, and promotes nothing.",
     "No Phase201 or Phase256 field is filled."
   ],
-  "decision": "Do not use the coupled fixed-point verdicts until the precursor and battery gates pass."
+  "decision": "The candidate chain 430-\u003E439-\u003E438 does NOT close into a self-consistent finite (t8*, Sigma*). Treating the lambda_8 background t8 and the free-diagonal condensate (Sigma_1=Sigma_2, Sigma_3) as a JOINT variational system - W_total = W_B(t8) [Phase430 bosonic workbench] \u002B the Phase439 free-diagonal fermionic gap functional, each relative to (t8=0, Sigma=0) - the joint minimum is TRIVIAL (t8*=0, condensate as in Phase438) at strong coupling and RUNAWAY (t8* escapes to the grid boundary) at weak coupling, with NO interior fixed point anywhere across 48 (lattice, content, coupling) configurations (29 trivial, 19 runaway, 0 interior). The SATURATION mechanism is real but insufficient: at fixed Sigma the gap shifts the fermionic IR cutoff eps -\u003E sqrt(eps^2\u002BSigma^2), depressing the moderate-t8 runaway slope (Sigma=0 window slope -2.651 -\u003E Sigma=4 window slope -0.421) and delaying the onset to t8 ~ Sigma; but the large-t8 slope resumes toward the same integer count (-7.281), because at large t8 the background gaps out the very IR modes that drive condensation (the joint-optimal Sigma -\u003E 0 there). The asymptotic net slope is therefore unchanged and negative (Phase430/Phase437 anchor: fundamental -4, derived hypercharge -40 per site; reproduced here to 3.1E-004), so the coupled system still runs away in the weak-coupling window - verified by the dW/dt8 decomposition at the boundary (bosonic \u003E 0, fermionic \u003C 0, net \u003C 0). Batteries: bosonic masses {four 0, four 3/4}; Phase430 cross-anchor slopes to 3.1E-004; t8=0 reproduces Phase438 gap to 0.0E\u002B000; closed form vs dense L=4 Dirac WITH background to 1.6E-013; Sigma_1=Sigma_2 to 0.0E\u002B000; every descent refinement verified (final W \u003C= grid W); reduced gradient at the minima to 4.5E-004. HONEST BOUNDARIES: t8 is a recorded candidate parameter (not dynamically derived); the gap equation is mean-field; the coupling normalization and the bosonic mode-mass model are recorded workbench conventions; all scale ratios are candidate-only. This phase decides the internal-consistency question negatively and promotes nothing to GeV; it fills no Phase201 or Phase256 field."
 }

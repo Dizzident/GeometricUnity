@@ -1,8 +1,8 @@
 {
   "phaseId": "phase421-cox-gu-iv-v2-lcdm-rig-boson-contract-audit",
-  "terminalStatus": "cox-gu-iv-v2-lcdm-rig-boson-contract-review-required",
-  "generatedAt": "2026-07-10T22:09:58.0952695+00:00",
-  "coxGuIvV2LcdmRigBosonContractAuditPassed": false,
+  "terminalStatus": "cox-gu-iv-v2-lcdm-rig-boson-contract-audit-no-electroweak-source",
+  "generatedAt": "2026-07-12T01:50:10.2192419+00:00",
+  "coxGuIvV2LcdmRigBosonContractAuditPassed": true,
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
   "targetBlindConstructionHash": "f5414025f3ef7e134aa5b85c8b9f367fb5cf65f0b06673a4235153cfbab7dd41",
@@ -408,12 +408,12 @@
     "phase256FilledRequiredFieldCount": 0,
     "phase256ContractPromotable": false,
     "phase419SummaryPath": "studies/phase419_observed_field_symbolic_extraction_template_001/output/observed_field_symbolic_extraction_template_summary.json",
-    "observedFieldSymbolicExtractionTemplatePassed": false,
+    "observedFieldSymbolicExtractionTemplatePassed": true,
     "phase419SourceDefinedPhase256FieldCount": 0,
     "phase419RequiredGuInputProvidedCount": 0,
     "phase419CanFillObserved": false,
     "phase420SummaryPath": "studies/phase420_naive_curvature_mass_scale_sanity_check_001/output/naive_curvature_mass_scale_sanity_check_summary.json",
-    "naiveCurvatureMassScaleSanityCheckPassed": false,
+    "naiveCurvatureMassScaleSanityCheckPassed": true,
     "phase420MissingScaleSpecificationFieldCount": 9,
     "phase420SourceProvidesGeVUnitNormalization": false,
     "phase420CanFillWz": false
@@ -441,7 +441,7 @@
     },
     {
       "checkId": "phase419-and-phase420-contract-gaps-preserved",
-      "passed": false,
+      "passed": true,
       "evidence": "p419SourceDefined=0; p419Inputs=0; p420MissingScaleFields=9; p420Gev=False"
     },
     {

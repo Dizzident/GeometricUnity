@@ -1,10 +1,10 @@
 {
   "phaseId": "phase435-two-condensate-scale-gap-probe",
-  "generatedAt": "2026-07-10T22:18:27.5263123+00:00",
-  "terminalStatus": "two-condensate-scale-gap-probe-blocked",
-  "twoCondensateScaleGapProbePassed": false,
-  "phase430PrecursorPassed": false,
-  "phase431PrecursorPassed": false,
+  "generatedAt": "2026-07-12T01:58:33.7035972+00:00",
+  "terminalStatus": "two-condensate-landscape-characterized-finite-scale-requires-saturation-beyond-workbench",
+  "twoCondensateScaleGapProbePassed": true,
+  "phase430PrecursorPassed": true,
+  "phase431PrecursorPassed": true,
   "applicationSubjectKind": "two-condensate-scale-gap-probe",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
@@ -112,5 +112,5 @@
     "No log-saturation structure (higher-order terms, compactness, UV data) is defined by any reviewed source; inventing one would be candidate-only.",
     "No Phase201 or Phase256 fill."
   ],
-  "decision": "Do not use the two-condensate landscape verdicts until the precursor and consistency batteries pass."
+  "decision": "The self-consistent background question is decided on the workbench: the two-condensate (lambda_8, lambda_4) landscape has interior stationary structure but NO finite global minimum. For the derived matter content the pure-lambda_8 log-runaway undercuts every interior value (the doublet admixture cannot stop it because the tree quartic vanishes as the doublet amplitude goes to zero); for the fundamental content no condensation onset exists near the origin on the sampled region. A finite self-consistent scale therefore requires log-saturation structure - higher-order terms, compact field space, or ultraviolet data - that no reviewed source defines. The interior stationary points and their dimensionless amplitude ratios are recorded blind as candidate-only structure. No Phase201 or Phase256 field is filled; nothing is promoted."
 }

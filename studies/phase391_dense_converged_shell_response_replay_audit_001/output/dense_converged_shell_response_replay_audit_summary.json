@@ -1,11 +1,11 @@
 {
   "phaseId": "phase391-dense-converged-shell-response-replay-audit",
-  "generatedAt": "2026-07-10T22:03:03.9505146+00:00",
-  "terminalStatus": "dense-converged-shell-response-replay-audit-blocked",
-  "denseConvergedShellResponseReplayAuditPassed": false,
+  "generatedAt": "2026-07-12T01:43:45.420149+00:00",
+  "terminalStatus": "dense-converged-shell-response-replay-confirmed-discrete-diagnostic-only",
+  "denseConvergedShellResponseReplayAuditPassed": true,
   "phase378PrecursorPassed": true,
   "phase379PrecursorPassed": true,
-  "phase390PrecursorPassed": false,
+  "phase390PrecursorPassed": true,
   "denseReplayInternallyConsistent": true,
   "denseReplayVerdict": "confirmed",
   "denseReplayConfirmsRankThree": true,
@@ -155,5 +155,5 @@
       "suppressedAxisMatchesPhase379": true
     }
   ],
-  "decision": "Do not use the dense replay until the Phase378/379/390 precursors, dense solve convergence, block Hermiticity, and transport computation all pass."
+  "decision": "The exact dense generalized eigensolve reproduces the Phase378/379 shell-response invariants: the lowest nonzero shell matches the Phase378 weighted-solver shell eigenvalues, the full-carrier response Gram has stable positive rank 3, the gauge-axis projector fractions show the same two-axis dominance with suppressed gauge axis 1, and the inter-background transport remains loose (strict transport still fails). The rank-3 image and the suppressed axis are therefore properties of the discretized control branch, NOT artifacts of the Phase378 iterative weighted solver, and the Phase381/383/384 suppressed-axis blockers against the Phase307 W near-pass stand on solver-independent ground. This remains a study-defined discrete diagnostic: no physical Hessian, observed namespace map, canonical axis selector, W/Z/H source rows, or Phase201/Phase256 contract fields are provided."
 }

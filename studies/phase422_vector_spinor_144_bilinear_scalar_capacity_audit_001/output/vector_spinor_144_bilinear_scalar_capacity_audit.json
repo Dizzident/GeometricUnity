@@ -1,9 +1,9 @@
 {
   "phaseId": "phase422-vector-spinor-144-bilinear-scalar-capacity-audit",
-  "generatedAt": "2026-07-10T22:09:58.3886306+00:00",
-  "terminalStatus": "vector-spinor-144-bilinear-scalar-capacity-audit-blocked",
-  "vectorSpinor144BilinearScalarCapacityAuditPassed": false,
-  "phase417PrecursorPassed": false,
+  "generatedAt": "2026-07-12T01:50:10.5136964+00:00",
+  "terminalStatus": "vector-spinor-144-bilinear-scalar-capacity-characterized-source-map-still-missing",
+  "vectorSpinor144BilinearScalarCapacityAuditPassed": true,
+  "phase417PrecursorPassed": true,
   "applicationSubjectKind": "vector-spinor-144-bilinear-scalar-capacity-audit",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
@@ -353,5 +353,5 @@
     "No bosonic projection map, action, VEV selection, observed-field rows, weak-angle lineage, pole extraction, or GeV normalization is supplied.",
     "No Phase201 or Phase256 fill."
   ],
-  "decision": "Do not use the vector-spinor bilinear scalar-capacity audit until the Phase417 precursor and fail-closed batteries pass."
+  "decision": "The source-pinned vector-spinor 144 branch is now characterized one step beyond Phase417\u0027s linear no-go. Exact welded-character arithmetic closes the mixed-chirality Dirac-like Z_L x Z_R bilinear channel: it has zero welded-scalar capacity. Same-chirality Majorana-like Z_L x Z_L and Z_R x Z_R channels do have welded-scalar capacity (264 each, 528 total), so representation content alone cannot rule out a bilinear vector-spinor scalar ansatz. This is only a capacity result: the large spin-zero sector has not been decomposed into the largest SM-stable subspace, and current sources still supply no bosonic projection map, action, VEV selection, observed photon/W/Z/H rows, weak-angle lineage, pole extraction, or GeV normalization. No Phase201 or Phase256 field is filled."
 }

@@ -224,6 +224,10 @@ const paths = {
   phase452: "studies/phase452_scalar_channel_spectroscopy_probe_001/output/scalar_channel_spectroscopy_probe_summary.json",
   phase450: "studies/phase450_constraint_effective_potential_hmc_probe_001/output/constraint_effective_potential_hmc_probe_summary.json",
   phase453: "studies/phase453_wham_parity_error_model_repair_001/output/wham_parity_error_model_repair_summary.json",
+  phase454: "studies/phase454_beyond_ray_quadratic_certificate_probe_001/output/beyond_ray_quadratic_certificate_probe_summary.json",
+  phase459: "studies/phase459_spectroscopy_record_attestation_001/output/spectroscopy_record_attestation_summary.json",
+  phase460: "studies/phase460_source_corpus_units_equivariance_kernel_001/output/source_corpus_units_equivariance_kernel_summary.json",
+  phase461: "studies/phase461_dimensional_transmutation_reading_menu_001/output/dimensional_transmutation_reading_menu_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -519,6 +523,10 @@ const phase451 = requireFile(paths.phase451);
 const phase452 = requireFile(paths.phase452);
 const phase450 = requireFile(paths.phase450);
 const phase453 = requireFile(paths.phase453);
+const phase454 = requireFile(paths.phase454);
+const phase459 = requireFile(paths.phase459);
+const phase460 = requireFile(paths.phase460);
+const phase461 = requireFile(paths.phase461);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -5406,6 +5414,81 @@ if (sourceLineageMissing) {
   assert(phase453.sourceContractApplicationAllowed === false && phase453.canFillPhase201WzContract === false && phase453.canFillPhase201HiggsContract === false && phase453.canFillPhase256ObservedFieldExtractionContract === false, "Phase453 cannot fill Phase201 or Phase256 contracts.");
   assert(phase453.routePromotesWzMasses === false && phase453.routePromotesHiggsMass === false && phase453.routeCompletesBosonPredictions === false, "Phase453 cannot promote boson predictions.");
   assert(phase101Package?.whamParityErrorModelRepair?.whamParityErrorModelRepairPassed === true, "Phase101 must include the Phase453 block.");
+  // Phase454 -- Team B Wave-1 rank-2 Arms A/B: beyond-invariant-ray quadratic/cubic certificates.
+  // Wired to the ACTUAL committed run: trivial background clean; ray-point
+  // transverse negatives real (non-gauge) and named; Arm B degeneracy-free.
+  assert(phase454.beyondRayQuadraticCertificateProbePassed === true, "Phase454 beyond-ray certificate probe must pass on internal consistency.");
+  assert(phase454.applicationSubjectKind === "beyond-ray-quadratic-certificate-probe", "Phase454 must classify its subject as the beyond-ray quadratic certificate probe.");
+  assert(phase454.precursorsPassed === true, "Phase454 must confirm the phase448/450/453 precursors.");
+  assert(phase454.verdictKind === "beyond-ray-instability-candidate-found", "Phase454 must carry the committed pre-registered verdict (named ray-background transverse candidates; trivial background clean).");
+  assert(phase454.armA?.allNonnegativeOnGaugeComplement === false && phase454.armA?.negativeComplementDirectionCount === 2016, "Phase454 Arm A must carry the committed 2016 named negative gauge-complement directions (ray backgrounds only).");
+  assert(phase454.armA?.kernelRestrictedNegativeCount === 0, "Phase454 must record zero negatives inside the projected-out kernel sub-blocks (nothing hidden by the projection).");
+  assert(phase454.armA?.backgrounds?.find(b => b.id === "trivial")?.members?.every(m => m.gaugeComplement?.negative === 0) === true, "Phase454 must certify ZERO negative complement directions at the trivial background for every member.");
+  assert(phase454.armA?.kernelTrivialTotalComplexDim === 252 && phase454.armA?.kernelTrivialPatternOk === true, "Phase454 must verify the trivial-background gauge-kernel dimension 252 with the 12 + 3x80 sector pattern.");
+  assert(phase454.armB?.noDegenerateCubicOnMenu === true && phase454.armB?.degenerateCapableDirectionCount === 0, "Phase454 Arm B must certify no degeneracy-capable cubic on the pre-registered menu.");
+  assert(phase454.armB?.nonzeroA3RowCount === 270, "Phase454 Arm B must carry the committed 270 nonzero-cubic rows (the audited-ray-modulated directions).");
+  assert(phase454.batteries?.batteriesAllPassed === true, "Phase454 batteries must all pass.");
+  assert(phase454.batteries?.lineage448Ok === true && phase454.armA?.lineage448?.comparisons === 24 && phase454.armA?.lineage448?.allMatch === true, "Phase454 must reproduce the committed phase448 mode counts exactly (24/24 lineage comparisons).");
+  assert(phase454.physicistReviewPending === true, "Phase454 must carry physicistReviewPending explicitly (Wave-0 item 0.3 open).");
+  assert(phase454.certificateConventionsAreWorkbenchConventions === true && phase454.scaleIsWorkbenchRelativeCandidateOnly === true && phase454.noGevPromotion === true, "Phase454 must keep the convention and no-promotion boundaries.");
+  assert(phase454.sourceContractApplicationAllowed === false && phase454.canFillPhase201WzContract === false && phase454.canFillPhase201HiggsContract === false && phase454.canFillPhase256ObservedFieldExtractionContract === false, "Phase454 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase454.routePromotesWzMasses === false && phase454.routePromotesHiggsMass === false && phase454.routeCompletesBosonPredictions === false, "Phase454 cannot promote boson predictions.");
+  assert(phase101Package?.beyondRayQuadraticCertificateProbe?.beyondRayQuadraticCertificateProbePassed === true, "Phase101 must include the Phase454 block.");
+  // Phase459 -- Team A rank-1 A0: the phase452 record-reconciliation attestation (Wave-0 item 0.2, standing).
+  assert(phase459.spectroscopyRecordAttestationPassed === true, "Phase459 record-reconciliation attestation must pass.");
+  assert(phase459.applicationSubjectKind === "spectroscopy-record-attestation", "Phase459 must classify its subject as the spectroscopy record attestation.");
+  assert(phase459.verdictKind === "record-reconciled-canonical", "Phase459 must attest the reconciled canonical phase452 record; config-mismatch-quarantine fail-closes the pass and quarantines all spectroscopy rows.");
+  assert(Array.isArray(phase459.failingChecks) && phase459.failingChecks.length === 0, "Phase459 must report zero failing attestation checks.");
+  assert(phase459.checkCount === 31 && phase459.passedCheckCount === 31, "Phase459 must run its full pre-registered 31-check battery green.");
+  assert(phase459.canonicalRecord?.configuration?.trajProduction === 16000 && phase459.canonicalRecord?.configuration?.trajControl === 10000 && phase459.canonicalRecord?.configuration?.rngSeed === 20260705, "Phase459 must pin the committed canonical phase452 configuration.");
+  assert(phase459.canonicalRecord?.identity?.mO1 === 2.7132465417703235 && phase459.canonicalRecord?.identity?.mO1Sigma === 0.18463902186135914, "Phase459 must pin the canonical identity gap.");
+  assert(phase459.canonicalRecord?.sd2?.combined === 2.526042101792096 && phase459.canonicalRecord?.sd2?.combinedSigma === 0.07123324126755279 && phase459.canonicalRecord?.sd2?.crossCheckSigma === 0.5623628195265302, "Phase459 must pin the canonical sd2 combined gap and cross-check.");
+  assert(phase459.canonicalRecord?.exactFreeGaps?.identity === 2.550880306794233 && phase459.canonicalRecord?.exactFreeGaps?.sd2O1 === 2.532028376864343 && phase459.canonicalRecord?.exactFreeGaps?.sd2O2 === 2.3569501678347393, "Phase459 must pin the exact analytic free gaps.");
+  assert(phase459.canonicalRecord?.derived?.crossActionRatio === 0.9310035276570129 && phase459.canonicalRecord?.derived?.crossActionRatioSigma === 0.06857994094256506 && phase459.canonicalRecord?.derived?.freeCrossActionRatio === 0.9926096375907257, "Phase459 must pin the derived cross-action ratio and its free-field comparator.");
+  assert(phase459.canonicalRecord?.supersededValues?.values?.length === 2, "Phase459 must carry the superseded-value tamper-protection record.");
+  assert(phase459.envKnobsRead === false && phase459.zeroPhysicsCompute === true, "Phase459 must be env-clean and zero-physics-compute by construction.");
+  assert(phase459.physicistReviewPending === true, "Phase459 must carry physicistReviewPending explicitly (Wave-0 item 0.3 open).");
+  assert(phase459.scaleIsWorkbenchRelativeCandidateOnly === true && phase459.noGevPromotion === true, "Phase459 must keep the workbench-relative and no-promotion boundaries.");
+  assert(phase459.sourceContractApplicationAllowed === false && phase459.canFillPhase201WzContract === false && phase459.canFillPhase201HiggsContract === false && phase459.canFillPhase256ObservedFieldExtractionContract === false, "Phase459 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase459.routePromotesWzMasses === false && phase459.routePromotesHiggsMass === false && phase459.routeCompletesBosonPredictions === false, "Phase459 cannot promote boson predictions.");
+  assert(phase101Package?.spectroscopyRecordAttestation?.spectroscopyRecordAttestationPassed === true, "Phase101 must include the Phase459 block.");
+  // Phase460 -- Team A Wave-1 A1: source-corpus units-equivariance kernel.
+  assert(phase460.unitsEquivarianceKernelAuditPassed === true, "Phase460 units-equivariance kernel audit must pass fail-closed.");
+  assert(phase460.targetBlindConstruction === true, "Phase460 must be target-blind (no observed value enters).");
+  assert(phase460.applicationSubjectKind === "source-corpus-units-equivariance-kernel", "Phase460 must classify its subject as the source-corpus units-equivariance kernel.");
+  assert(phase460.verdictKind === "breaking-relation-found-under-prescribed-reading", "Phase460 must carry the committed breaking-relation verdict.");
+  assert(phase460.snfBatteryPassed === true, "Phase460 exact SNF battery must be green.");
+  assert(phase460.part12dRoutingGate?.passed === true && phase460.part12dRoutingGate?.actualClassification === "routed-to-anchor-menu", "Phase460 pre-registered part-12d gate must route the coefficient-free slot statement to the phase461 anchor menu.");
+  assert(phase460.pinnedRowCount === 34 && phase460.corpusDimensionallyAmbiguousBlockingSetCount === 31, "Phase460 must carry 34 pinned rows and the 31-item blocking set (never dropped).");
+  const p460r0 = (phase460.readings ?? []).find((r) => r.readingId === "R0-prescribed-literal");
+  assert(p460r0?.verdict === "equivariance-breaking-relation-found" && (p460r0?.breakingRelationIds ?? []).join(",") === "sp12c-lit", "Phase460 prescribed reading must break exactly on the literal curvature-mass row.");
+  const p460r1 = (phase460.readings ?? []).find((r) => r.readingId === "R1-prescribed-squared");
+  assert(p460r1?.verdict === "corpus-dimensionally-ambiguous" && p460r1?.scaleVectorInKernel === true && p460r1?.kernelRankValue === 24 && p460r1?.kernelNullityValue === 9, "Phase460 squared-repair reading must close on pinned rows (rank 24 / nullity 9) but stay blocked by the ambiguous set.");
+  const p460r3 = (phase460.readings ?? []).find((r) => r.readingId === "R3-ccMass-squared");
+  assert((p460r3?.breakingRelationIds ?? []).join(",") === "p335-r2,p339-r1", "Phase460 cc-mass re-grading must break the corpus's pinned cc-bearing relations.");
+  assert(phase460.physicistReviewPending === true, "Phase460 must carry physicistReviewPending explicitly (Wave-0 item 0.3 open).");
+  assert(phase460.noGevPromotion === true, "Phase460 must keep the no-GeV boundary.");
+  assert(phase460.sourceContractApplicationAllowed === false && phase460.canFillPhase201WzContract === false && phase460.canFillPhase201HiggsContract === false && phase460.canFillPhase256ObservedFieldExtractionContract === false, "Phase460 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase460.routePromotesWzMasses === false && phase460.routePromotesHiggsMass === false && phase460.routeCompletesBosonPredictions === false, "Phase460 cannot promote boson predictions.");
+  assert(phase101Package?.sourceCorpusUnitsEquivarianceKernel?.unitsEquivarianceKernelAuditPassed === true, "Phase101 must include the Phase460 block.");
+  // Phase461 -- Team A Wave-1 A2: dimensional-transmutation reading menu.
+  assert(phase461.dimensionalTransmutationReadingMenuPassed === true, "Phase461 reading menu must pass fail-closed.");
+  assert(phase461.targetBlindConstruction === false, "Phase461 is a declared-comparison phase (429/451-style separation), never blind.");
+  assert(phase461.applicationSubjectKind === "dimensional-transmutation-reading-menu", "Phase461 must classify its subject as the dimensional-transmutation reading menu.");
+  assert(phase461.verdictKind === "declared-comparison-consistency-only", "Phase461 must carry the committed declared-comparison-consistency-only verdict.");
+  assert(phase461.reconstructionGate?.found === true, "Phase461 O6 reconstruction gate must be green (menu-incomplete otherwise, with NO verdict).");
+  const p461Rec = phase461.reconstructionGate?.reconstructedRefereeReading;
+  assert(p461Rec?.readingId === "M(1,1)-full" && p461Rec?.windowId === "vevEw246" && p461Rec?.convention === "cc-plane-squared", "Phase461 must commit the reconstructed referee reading (M(1,1)-full vs the banned VEV window, cc-plane-squared).");
+  assert(p461Rec?.killFactor > 300 && p461Rec?.killFactor < 700 && Math.abs(p461Rec?.killFactor - 451.105) < 0.01, "Phase461 reconstructed kill factor must reproduce the referee's ~460x figure (committed 451.105).");
+  assert(p461Rec?.windowBannedFromLiveVerdicts === true, "Phase461 reconstruction window must stay banned from live verdicts.");
+  assert(phase461.liveRowCount === 119 && phase461.primaryBandHitCount === 4 && phase461.secondaryBandOnlyHitCount === 11 && phase461.importCleanTrialsSurvivingHitCount === 0, "Phase461 must carry the committed row census (119 live; 4 import-laden primary hits; 0 import-clean trials-surviving).");
+  assert((phase461.primaryBandHits ?? []).every((h) => (h.windowId === "qcdScaleNf5" || h.windowId === "massElectron") && h.importsObserved === true && h.trialsSurviving === false), "Phase461 primary hits must all be import-laden and trials-failing.");
+  assert(phase461.lookElsewhereControl?.trialsSurvivalThreshold === 0.05 && phase461.lookElsewhereControl?.minCorrectedP === 1, "Phase461 look-elsewhere control must carry the pre-registered threshold and the committed minimum corrected p.");
+  assert(phase461.physicistReviewPending === true, "Phase461 must carry physicistReviewPending explicitly (Wave-0 item 0.3 open).");
+  assert(phase461.noGevPromotion === true, "Phase461 must keep the no-GeV boundary (all GeV numbers are test-only imports).");
+  assert(phase461.sourceContractApplicationAllowed === false && phase461.canFillPhase201WzContract === false && phase461.canFillPhase201HiggsContract === false && phase461.canFillPhase256ObservedFieldExtractionContract === false, "Phase461 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase461.routePromotesWzMasses === false && phase461.routePromotesHiggsMass === false && phase461.routeCompletesBosonPredictions === false, "Phase461 cannot promote boson predictions.");
+  assert(phase101Package?.dimensionalTransmutationReadingMenu?.dimensionalTransmutationReadingMenuPassed === true, "Phase101 must include the Phase461 block.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

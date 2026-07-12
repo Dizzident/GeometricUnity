@@ -1,0 +1,318 @@
+{
+  "phaseId": "phase459-spectroscopy-record-attestation",
+  "generatedAt": "2026-07-12T10:23:16.1290434+00:00",
+  "terminalStatus": "spectroscopy-record-attestation-passed-record-reconciled-canonical",
+  "spectroscopyRecordAttestationPassed": true,
+  "applicationSubjectKind": "spectroscopy-record-attestation",
+  "verdictKind": "record-reconciled-canonical",
+  "verdictPhrase": "every pre-registered attestation check is green: the committed phase452 output IS the Wave-0-reconciled canonical record (committed 16000/10000/seed-20260705 configuration equal to the committed source defaults; canonical gap values, derived cross-action ratio, and FREE-FIELD-COMPATIBLE label condition all reproduced to tolerance; superseded values absent; claim boundary intact). Every spectroscopy citation program-wide may rely on the canonical numbers.",
+  "verdictTaxonomy": {
+    "recordReconciledCanonical": "record-reconciled-canonical: ALL pre-registered checks green - the committed phase452 output is attested as the sole canonical spectroscopy record and program-wide citations may rely on it",
+    "configMismatchQuarantine": "config-mismatch-quarantine: ANY check fails (each failing check named in failingChecks) - phase452 is demoted to unverified-output, all spectroscopy rows are quarantined program-wide, and a mandatory --full re-run precedes any pole citation",
+    "failClosedRule": "the phase always writes its verdict and exits 0; scripts/verify_boson_claim_integrity.sh asserts verdictKind == record-reconciled-canonical and fail-closes the whole pass otherwise"
+  },
+  "checkCount": 31,
+  "passedCheckCount": 31,
+  "failingChecks": [],
+  "checks": [
+    {
+      "id": "phase452-summary-readable",
+      "requirement": "the committed phase452 summary JSON exists and parses (studies/phase452_scalar_channel_spectroscopy_probe_001/output/scalar_channel_spectroscopy_probe_summary.json)",
+      "passed": true,
+      "observed": "parsed"
+    },
+    {
+      "id": "phase452-full-output-readable",
+      "requirement": "the committed phase452 full output JSON exists and parses (studies/phase452_scalar_channel_spectroscopy_probe_001/output/scalar_channel_spectroscopy_probe.json)",
+      "passed": true,
+      "observed": "parsed"
+    },
+    {
+      "id": "phase452-program-source-readable",
+      "requirement": "the committed phase452 Program.cs exists (studies/phase452_scalar_channel_spectroscopy_probe_001/Program.cs)",
+      "passed": true,
+      "observed": "read"
+    },
+    {
+      "id": "config-traj-production-committed",
+      "requirement": "probeConfiguration.ensemble.trajProduction == 16000",
+      "passed": true,
+      "observed": "trajProduction=16000"
+    },
+    {
+      "id": "config-traj-control-committed",
+      "requirement": "probeConfiguration.ensemble.trajControl == 10000",
+      "passed": true,
+      "observed": "trajControl=10000"
+    },
+    {
+      "id": "config-rng-seed-committed",
+      "requirement": "probeConfiguration.rngSeed == 20260705",
+      "passed": true,
+      "observed": "rngSeed=20260705"
+    },
+    {
+      "id": "config-production-columns-trajectories",
+      "requirement": "every kind=production column records trajectories == 16000",
+      "passed": true,
+      "observed": "identity:16000, sd2-id0/c0.5:16000"
+    },
+    {
+      "id": "config-control-columns-trajectories",
+      "requirement": "every control column (free-field-control, higher-beta-control) records trajectories == 10000",
+      "passed": true,
+      "observed": "identity/free-field-control:10000, sd2-id0/c0.5/higher-beta-control:10000, sd2-id0/c0.5/free-field-control:10000"
+    },
+    {
+      "id": "record-single-n3-torus",
+      "requirement": "exactly one torus record with torusN == 3",
+      "passed": true,
+      "observed": "tori=1, torusN=3"
+    },
+    {
+      "id": "record-window-single-point",
+      "requirement": "window == {0} and informativePoints == {0} and windowIncludesT0 == true (T=3: exactly one informative cosh point)",
+      "passed": true,
+      "observed": "window.len=1, window[0]=0, informativePoints.len=1"
+    },
+    {
+      "id": "record-identity-gap-o1",
+      "requirement": "identity mO1 == 2.7132465417703235 \u002B- 0.18463902186135914 (|diff| \u003C 1E-09)",
+      "passed": true,
+      "observed": "mO1=2.7132465417703235, mO1Sigma=0.18463902186135914"
+    },
+    {
+      "id": "record-identity-gap-o2",
+      "requirement": "identity mO2 == 2.7132465417719 \u002B- 0.18463902186055506 (|diff| \u003C 1E-09)",
+      "passed": true,
+      "observed": "mO2=2.7132465417719, mO2Sigma=0.18463902186055506"
+    },
+    {
+      "id": "record-identity-plateau-inconclusive-by-construction",
+      "requirement": "identity plateauChi2DofO1 and plateauChi2DofO2 are null (single-point window: inconclusive-by-construction as a measurement)",
+      "passed": true,
+      "observed": "plateauChi2DofO1=Null, plateauChi2DofO2=Null"
+    },
+    {
+      "id": "record-identity-verdict-reason",
+      "requirement": "identity verdict == \u0027scalar-channel-gapped-measured\u0027, isControl == true, statisticsGatesPassed == true, reason quotes \u00272.7132 \u002B- 0.1846\u0027",
+      "passed": true,
+      "observed": "verdict=scalar-channel-gapped-measured, reason=\u0027a*m_0\u002B\u002B = 2.7132 \u002B- 0.1846 (14.7 sigma from zero)\u0027"
+    },
+    {
+      "id": "record-sd2-gap-o1",
+      "requirement": "sd2 mO1 == 2.555338250004908 \u002B- 0.07246835972150631 (|diff| \u003C 1E-09)",
+      "passed": true,
+      "observed": "mO1=2.555338250004908, mO1Sigma=0.07246835972150631"
+    },
+    {
+      "id": "record-sd2-gap-o2",
+      "requirement": "sd2 mO2 == 2.4986465424511284 \u002B- 0.07007825117627481 (|diff| \u003C 1E-09)",
+      "passed": true,
+      "observed": "mO2=2.4986465424511284, mO2Sigma=0.07007825117627481"
+    },
+    {
+      "id": "record-sd2-combined-gap",
+      "requirement": "sd2 combined gap, recomputed via the phase452 pre-registered rho=1 rule from the stored mO1/mO2, == 2.526042101792096 \u002B- 0.07123324126755279 (|diff| \u003C 1E-09); verdict reason quotes \u00272.5260 \u002B- 0.0712\u0027",
+      "passed": true,
+      "observed": "combined=2.526042101792096 \u002B- 0.07123324126755279, reason=\u0027a*m_0\u002B\u002B = 2.5260 \u002B- 0.0712 (35.5 sigma from zero)\u0027"
+    },
+    {
+      "id": "record-sd2-interpolator-cross-check",
+      "requirement": "sd2 stored crossCheckSigma == 0.5623628195265302 (|diff| \u003C 1E-09), matches its recomputation from the stored gaps, crossCheckCompatible == true, and sits below the pre-registered 3 sigma gate (the 0.56-sigma cross-check)",
+      "passed": true,
+      "observed": "stored=0.5623628195265302, recomputed=0.5623628195265302"
+    },
+    {
+      "id": "record-exact-free-gaps",
+      "requirement": "exact analytic free gaps pinned: identity O1 == O2 == 2.550880306794233; sd2 O1 == 2.532028376864343, O2 == 2.3569501678347393 (|diff| \u003C 1E-09)",
+      "passed": true,
+      "observed": "identity O1=2.550880306794233 O2=2.550880306794233; sd2 O1=2.532028376864343 O2=2.3569501678347393"
+    },
+    {
+      "id": "record-cross-action-ratio",
+      "requirement": "cross-action ratio sd2/identity, computed from the two stored combined gaps, == 0.9310035276570129 \u002B- 0.06857994094256506 (|diff| \u003C 1E-09) and equals 0.931 within 0.001 (CROSS-ACTION deliverable class, never folded into the spectrum-ratio table)",
+      "passed": true,
+      "observed": "ratio=0.9310035276570129 \u002B- 0.06857994094256506 (identity combined 2.713246541771112 \u002B- 0.1846390218609571)"
+    },
+    {
+      "id": "record-free-field-compatible-label",
+      "requirement": "the measured cross-action ratio sits within 1.5 sigma of the exact free ratio 0.9926096375907257 (= sd2 free O1 gap / identity free gap, recomputed and pinned to 1E-09) - the binding FREE-FIELD-COMPATIBLE label condition, sigma recomputed from the stored errors",
+      "passed": true,
+      "observed": "freeRatio=0.9926096375907257, sigmaFromFree=0.898310921342252"
+    },
+    {
+      "id": "record-terminal-status-canonical",
+      "requirement": "terminalStatus == \u0027scalar-channel-spectroscopy-probe-passed-scalar-channel-gapped-measured-workbench-relative-no-gev\u0027, scalarChannelVerdict == \u0027scalar-channel-gapped-measured\u0027, scalarChannelSpectroscopyProbePassed == true, batteries.batteriesAllPassed == true",
+      "passed": true,
+      "observed": "terminalStatus=scalar-channel-spectroscopy-probe-passed-scalar-channel-gapped-measured-workbench-relative-no-gev"
+    },
+    {
+      "id": "boundary-target-blind",
+      "requirement": "targetBlindConstruction == true and physicalTargetsConsultedForConstruction == false",
+      "passed": true,
+      "observed": "targetBlindConstruction=True, physicalTargetsConsultedForConstruction=False"
+    },
+    {
+      "id": "boundary-no-contract-fills",
+      "requirement": "no contract fills: sourceContractApplicationAllowed/phase201TemplateMutated false; fieldsAppliedToPhase201TemplateCount/acceptedContractFieldCount 0; every canFill* field false",
+      "passed": true,
+      "observed": "all contract-fill fields at their fail-closed values"
+    },
+    {
+      "id": "boundary-no-promotions",
+      "requirement": "no promotions: every route*/physicalCouplingProvided field false; noGevPromotion and scaleIsWorkbenchRelativeCandidateOnly true (the promotedPhysicalMassClaimCount-class booleans)",
+      "passed": true,
+      "observed": "all promotion fields at their fail-closed values"
+    },
+    {
+      "id": "boundary-physicist-review-pending",
+      "requirement": "physicistReviewPending == true at root and in recordedBoundary (Wave-0 item 0.3 OPEN, carried explicitly)",
+      "passed": true,
+      "observed": "root=True, recordedBoundary=True"
+    },
+    {
+      "id": "boundary-lattice-units-language",
+      "requirement": "lattice-units-only language: pureGaugeRatioNote carries \u0027lattice units\u0027 and the binding \u0027NEVER m_H\u0027 label caveat; the WS2 binding conditions (coshCorrectedEffectiveMassesOnly, thetaHaarMeasureUsed, theta0SliceIsSamplerDemoOnly) all true",
+      "passed": true,
+      "observed": "label caveat and binding-condition flags intact"
+    },
+    {
+      "id": "config-source-default-traj-production",
+      "requirement": "phase452 Program.cs PHASE452_TRAJ default literal == 16000",
+      "passed": true,
+      "observed": "default literal 16000"
+    },
+    {
+      "id": "config-source-default-traj-control",
+      "requirement": "phase452 Program.cs PHASE452_CTRL_TRAJ default literal == 10000",
+      "passed": true,
+      "observed": "default literal 10000"
+    },
+    {
+      "id": "config-source-rng-seed-const",
+      "requirement": "phase452 Program.cs \u0027const int RngSeed\u0027 literal == 20260705",
+      "passed": true,
+      "observed": "const literal 20260705"
+    },
+    {
+      "id": "tamper-superseded-values-absent",
+      "requirement": "the superseded gap literals \u00272.4352\u0027 and \u00272.4547\u0027 appear NOWHERE in the phase452 output JSONs (volatile-field-scrubbed)",
+      "passed": true,
+      "observed": "contains 2.4352: False; contains 2.4547: False"
+    }
+  ],
+  "canonicalRecord": {
+    "note": "pinned VERBATIM from the committed phase452 summary at the Wave-0 reconciliation (item 0.2); tight tolerance 1E-09",
+    "configuration": {
+      "trajProduction": 16000,
+      "trajControl": 10000,
+      "rngSeed": 20260705,
+      "torusN": 3
+    },
+    "identity": {
+      "mO1": 2.7132465417703235,
+      "mO1Sigma": 0.18463902186135914,
+      "mO2": 2.7132465417719,
+      "mO2Sigma": 0.18463902186055506,
+      "plateauChi2Dof": null,
+      "window": [
+        0
+      ],
+      "windowNote": "T = 3 admits exactly one informative cosh point: the plateau statistic is null and the window is {0} - inconclusive-by-construction as a measurement (upper-bound-flavored estimate), asserted as such",
+      "reasonFragment": "2.7132 \u002B- 0.1846"
+    },
+    "sd2": {
+      "mO1": 2.555338250004908,
+      "mO1Sigma": 0.07246835972150631,
+      "mO2": 2.4986465424511284,
+      "mO2Sigma": 0.07007825117627481,
+      "crossCheckSigma": 0.5623628195265302,
+      "combined": 2.526042101792096,
+      "combinedSigma": 0.07123324126755279,
+      "combinationRule": "phase452 pre-registered: inverse-variance weighted mean with the correlation-conservative rho=1 error s1 s2 (s1\u002Bs2)/(s1^2\u002Bs2^2)",
+      "reasonFragment": "2.5260 \u002B- 0.0712"
+    },
+    "exactFreeGaps": {
+      "identity": 2.550880306794233,
+      "sd2O1": 2.532028376864343,
+      "sd2O2": 2.3569501678347393
+    },
+    "derived": {
+      "identityCombined": 2.713246541771112,
+      "identityCombinedSigma": 0.1846390218609571,
+      "crossActionRatio": 0.9310035276570129,
+      "crossActionRatioSigma": 0.06857994094256506,
+      "crossActionNote": "CROSS-ACTION deliverable class (sd2 combined / identity combined), never folded into the spectrum-ratio table",
+      "freeCrossActionRatio": 0.9926096375907257,
+      "freeCompatibleSigmaMax": 1.5,
+      "freeFieldCompatibleNote": "the measured cross-action ratio sits ~0.90 sigma from the exact free ratio: the FREE-FIELD-COMPATIBLE label REMAINS BINDING on all attested rows"
+    },
+    "supersededValues": {
+      "values": [
+        "2.4352",
+        "2.4547"
+      ],
+      "note": "described a never-committed reduced-budget env-override run; superseded by the Wave-0 reconciliation and asserted ABSENT from the phase452 output JSONs as standing tamper protection"
+    }
+  },
+  "volatilityRule": "asserted content is restricted to configuration, seeded-deterministic measurement values, structure, boundary flags, and prose; generatedAt / runtimeSeconds / msPerTrajectory are never read and are scrubbed before the tamper scan (the generator regenerates the phase452 outputs each pass)",
+  "envKnobsRead": false,
+  "zeroPhysicsCompute": true,
+  "scaleIsWorkbenchRelativeCandidateOnly": true,
+  "noGevPromotion": true,
+  "physicistReviewPending": true,
+  "recordedBoundary": {
+    "definition81Scope": "reduced-spin4-slice",
+    "ambientSevenSevenRealized": false,
+    "internalGaugeContentRealized": false,
+    "weldRealized": false,
+    "canFillPhase201WzContract": false,
+    "canFillPhase256Contract": false,
+    "physicistReviewPending": true,
+    "baseSignature": "Cl(4,0)-euclidean-slice",
+    "spinorUsedAsShiabCarrierNotFiber": true
+  },
+  "runtimeSeconds": 0.0254375,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "218aeb42f63ea4a8a2e7b98a111d700aeda9d7944e9377d27d67204fe49a9a68",
+  "physicalCouplingProvided": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256Contract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256Contract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "sourceEvidence": {
+    "phase452SummaryPath": "studies/phase452_scalar_channel_spectroscopy_probe_001/output/scalar_channel_spectroscopy_probe_summary.json",
+    "phase452FullOutputPath": "studies/phase452_scalar_channel_spectroscopy_probe_001/output/scalar_channel_spectroscopy_probe.json",
+    "phase452ProgramSourcePath": "studies/phase452_scalar_channel_spectroscopy_probe_001/Program.cs",
+    "programSourcePath": "docs/Phases/TEAM_ELIMINATION_PROGRAM_2026-07-10.md",
+    "registrySourcePath": "docs/Phases/PHASE_NUMBER_REGISTRY.md"
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "This phase performs ZERO physics computation: it attests a committed record and re-derives two numbers (the rho=1 combination and the cross-action ratio) from stored values. A green attestation adds no physics content of its own.",
+    "Every attested gap is workbench-relative structure data of the reduced spin-4 slice (su(2) toy algebra, lattice-canonical n=3 torus, lattice units, beta = 1 convention recorded): NOT a physical mass, NOT a scale in GeV; the binding label caveat holds - no W/Z/H label attaches to anything here.",
+    "The cross-action ratio 0.931 \u002B- 0.069 is a CROSS-ACTION deliverable-class row and is never folded into the spectrum-ratio table; it carries the FREE-FIELD-COMPATIBLE label (~0.90 sigma from the exact free ratio), so no dynamical-structure claim attaches to it.",
+    "The identity single-window gap is inconclusive-by-construction as a measurement (plateauChi2Dof null, window {0}); it is attested AS THAT, never as a validated plateau.",
+    "physicistReviewPending = true is carried explicitly (Wave-0 item 0.3 OPEN): a convention overturned in review invalidates dependent verdicts fail-closed, including the record attested here.",
+    "No Phase201 or Phase256 contract field is filled; nothing is promoted either way; promotedPhysicalMassClaimCount remains 0."
+  ],
+  "decision": "The phase452 record-reconciliation attestation is decided on machine checks against the committed record (Team A rank-1 A0, Wave-0 item 0.2; zero physics compute). ATTESTED: the committed phase452 output carries the canonical configuration (trajProduction=16000, trajControl=10000, rngSeed=20260705), equal to the committed phase452 Program.cs default literals (parsed from source); the canonical gap record holds to 1E-09 (identity a*m = 2.7132 \u002B- 0.1846 with plateauChi2Dof null / window {0} recorded as inconclusive-by-construction as a measurement; sd2 combined 2.5260 \u002B- 0.0712 re-derived via the pre-registered rho=1 rule from the stored per-interpolator gaps, interpolator cross-check 0.56 sigma; exact analytic free gaps 2.5509 / 2.5320 / 2.3570); the derived cross-action ratio sd2/identity computed from the stored gaps is 0.931 \u002B- 0.069 (CROSS-ACTION deliverable class, never folded into the spectrum-ratio table) and sits ~0.90 sigma from the exact free ratio 0.9926 - within the 1.5-sigma FREE-FIELD-COMPATIBLE label condition, which therefore REMAINS BINDING on every one of these rows; the superseded never-committed values 2.4352 / 2.4547 appear nowhere in the output JSONs (tamper scan on volatile-scrubbed text); and the standing claim boundary is intact (target-blind, no contract fills, no promotions, physicistReviewPending carried, lattice-units-only language with the binding label caveat). VERDICT (record-reconciled-canonical): every pre-registered attestation check is green: the committed phase452 output IS the Wave-0-reconciled canonical record (committed 16000/10000/seed-20260705 configuration equal to the committed source defaults; canonical gap values, derived cross-action ratio, and FREE-FIELD-COMPATIBLE label condition all reproduced to tolerance; superseded values absent; claim boundary intact). Every spectroscopy citation program-wide may rely on the canonical numbers. MANDATORY FRAMING: this attestation performs zero physics computation and promotes nothing; the attested numbers are workbench-relative structure data of the reduced spin-4 slice (su(2) toy algebra, lattice-canonical n=3 torus, lattice units, beta = 1 convention recorded), NEVER physical masses; NO GeV/pole/VEV promotion; no Phase201/Phase256 contract field is filled."
+}

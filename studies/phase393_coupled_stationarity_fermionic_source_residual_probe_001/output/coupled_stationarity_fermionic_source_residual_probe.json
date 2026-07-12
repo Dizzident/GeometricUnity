@@ -1,11 +1,11 @@
 {
   "phaseId": "phase393-coupled-stationarity-fermionic-source-residual-probe",
-  "generatedAt": "2026-07-10T22:03:10.6674313+00:00",
-  "terminalStatus": "coupled-stationarity-fermionic-source-residual-probe-blocked",
-  "coupledStationarityFermionicSourceResidualProbePassed": false,
+  "generatedAt": "2026-07-12T01:43:53.9570121+00:00",
+  "terminalStatus": "coupled-stationarity-residual-characterized-backreaction-blocked-positive-bosonic-spectrum-missing",
+  "coupledStationarityFermionicSourceResidualProbePassed": true,
   "phase379PrecursorPassed": true,
-  "phase390PrecursorPassed": false,
-  "phase392PrecursorPassed": false,
+  "phase390PrecursorPassed": true,
+  "phase392PrecursorPassed": true,
   "probeInternallyConsistent": true,
   "persistedBosonicSpectrumIsNumericalKernelOnly": true,
   "firstOrderBackreactionConstructibleFromPersistedArtifacts": false,
@@ -209,5 +209,5 @@
     "bosonModeDir": "studies/phase12_joined_calculation_001/output/background_family/spectra/modes",
     "backgroundStateDir": "studies/phase12_joined_calculation_001/output/background_family/background_states"
   },
-  "decision": "Do not use the coupled-residual characterization until the Phase379/390/392 precursors, dense solve convergence, and nonzero source coverage all pass."
+  "decision": "The coupled stationarity residual at the persisted backgrounds is fully characterized, with three structural findings. First, the shell-aggregated fermionic source cancels EXACTLY between plus/minus eigenvalue partners (cancellation ratio ~1e-11): under symmetric shell occupation the persisted background is already first-order stationary in the coupled sense, and backreaction starts at second order, where the Phase392 response operator is the leading object. Second, every per-mode source current lies ENTIRELY in the rank-3 Gram carrier image (fraction 1.0), tying the diagonal coupled sources to the Phase378 image exactly; about two-thirds of each current is pure-gauge and about a tenth lies in the persisted bosonic numerical kernel. Third, the persisted Phase12 bosonic Gauss-Newton spectrum consists entirely of numerical kernel directions (all eigenvalues ~1e-15), so the asymmetric-occupation backreaction delta_omega = -kappa H_B^\u002B J is NOT constructible from persisted artifacts; completing the coupled-critical-point step beyond symmetric occupation requires recomputing the positive bosonic spectrum. The unit-source shell splitting is a clean plus/minus pair pattern (doubly degenerate \u002B-6.5e-3 and \u002B-7.2e-3 per unit coupling). No coupled critical point is constructed, no coupling is physical, and no Phase201/Phase256 contract field is filled."
 }

@@ -1,8 +1,8 @@
 {
   "phaseId": "phase342-higgsless-boundary-condition-source-audit",
-  "terminalStatus": "higgsless-boundary-condition-source-audit-review-required",
-  "generatedAt": "2026-07-10T22:02:05.5782488+00:00",
-  "higgslessBoundaryConditionSourceAuditPassed": false,
+  "terminalStatus": "higgsless-boundary-condition-source-audit-external-boundary-mass-lead-not-gu-source",
+  "generatedAt": "2026-07-12T01:43:08.0349319+00:00",
+  "higgslessBoundaryConditionSourceAuditPassed": true,
   "higgslessBoundaryLeadPresent": true,
   "higgslessPrimarySourcesReviewed": true,
   "higgslessRouteExternalToGu": true,
@@ -118,13 +118,13 @@
     },
     {
       "CheckId": "unitarity-and-precision-boundaries-preserved",
-      "Passed": false,
-      "Detail": "precisionLead=True; unitarityViolation=True; sumRules=True; kkTower=True; phase325=True; upperBoundOnly=True; phase327=False; obliqueFitUsesWz=True"
+      "Passed": true,
+      "Detail": "precisionLead=True; unitarityViolation=True; sumRules=True; kkTower=True; phase325=True; upperBoundOnly=True; phase327=True; obliqueFitUsesWz=True"
     },
     {
       "CheckId": "related-routes-preserved",
-      "Passed": false,
-      "Detail": "overlapsScherk=True; phase341=False; overlapsKk=True; phase333=True; overlapsTechnicolor=True; phase279=True; distinctGaugeHiggs=True; phase265=True"
+      "Passed": true,
+      "Detail": "overlapsScherk=True; phase341=True; overlapsKk=True; phase333=True; overlapsTechnicolor=True; phase279=True; distinctGaugeHiggs=True; phase265=True"
     },
     {
       "CheckId": "higgsless-route-requires-missing-gu-source-data",
@@ -158,12 +158,12 @@
     "electroweakUnitarityScatteringSourceAuditPassed": true,
     "unitarityRouteProvidesUpperBoundOnly": true,
     "unitarityRouteCompletesBosonPredictions": false,
-    "obliquePrecisionElectroweakSourceAuditPassed": false,
+    "obliquePrecisionElectroweakSourceAuditPassed": true,
     "obliqueFitUsesPrecisionWzData": true,
     "obliqueRouteCompletesBosonPredictions": false,
     "kaluzaKleinInternalSymmetrySourceAuditPassed": true,
     "kkRouteCompletesBosonPredictions": false,
-    "scherkSchwarzTwistedCompactificationSourceAuditPassed": false,
+    "scherkSchwarzTwistedCompactificationSourceAuditPassed": true,
     "scherkRouteCompletesBosonPredictions": false
   },
   "decision": "Do not promote W/Z or Higgs physical masses from Higgsless boundary-condition electroweak breaking. The route is a direct external W/Z mass-generation lead, but the current sources select boundary conditions, compactification or warp scales, bulk couplings, brane terms, and KK completions as model data; several versions also predict no Higgs or use precision-fit constraints, so they cannot fill GU-local W/Z/H source-lineage rows.",

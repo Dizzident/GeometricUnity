@@ -1,11 +1,11 @@
 {
   "phaseId": "phase424-vector-spinor-144-bilinear-sm-doublet-intersection-analysis",
-  "generatedAt": "2026-07-10T22:17:09.1076366+00:00",
-  "terminalStatus": "vector-spinor-144-bilinear-sm-doublet-intersection-analysis-blocked",
-  "vectorSpinor144BilinearSmDoubletIntersectionAnalysisPassed": false,
-  "phase417PrecursorPassed": false,
-  "phase422PrecursorPassed": false,
-  "phase411PrecursorPassed": false,
+  "generatedAt": "2026-07-12T01:57:15.7187445+00:00",
+  "terminalStatus": "vector-spinor-144-bilinear-welded-scalar-sm-doublet-absent-branch-closed",
+  "vectorSpinor144BilinearSmDoubletIntersectionAnalysisPassed": true,
+  "phase417PrecursorPassed": true,
+  "phase422PrecursorPassed": true,
+  "phase411PrecursorPassed": true,
   "applicationSubjectKind": "vector-spinor-144-bilinear-sm-doublet-intersection-analysis",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
@@ -31,7 +31,7 @@
   "sigma4HomResidual": 0,
   "weightClassLeakageResidual": 5.370027344986397E-10,
   "classKernelMaxResidual": 9.435095229568542E-14,
-  "projectorIdempotencyResidual": 1.8497656379368652E-14,
+  "projectorIdempotencyResidual": 4.082530994732948E-14,
   "gramHermiticityResidual": 1.0605597888617424E-15,
   "casimirGridMaxJ": 6,
   "statisticsProjectionApplied": false,
@@ -126,5 +126,5 @@
     "The 2026-07-01 |Y|=1/2 calibration defect fix changes recorded representation counts upstream (Phase411/417), not any promotion decision; this phase asserts and re-checks the corrected values.",
     "No Phase201 or Phase256 fill."
   ],
-  "decision": "Do not use the vector-spinor bilinear SM-doublet intersection analysis until the precursor and consistency batteries pass."
+  "decision": "The deferred Phase422 question is decided: the 528-dimensional same-chirality Majorana-like welded-scalar capacity of the vector-spinor Z carriers contains NO SM-doublet state. The ambient intersection of the SM-doublet isotypic with the welded-spin (0,0) isotypic is zero in both Z_L x Z_L and Z_R x Z_R (top Gram eigenvalues well below 1), covering all statistics projections. Together with Phase422\u0027s mixed-chirality closure and Phase417\u0027s linear closure, the vector-spinor 144 bilinear composite route is CLOSED. The same ambient method confirms the corrected Phase411 verdict on the observed 2 x 16 Majorana channels (zero in both), discharging the 2026-07-01 |Y|=1/2 calibration defect with a stronger check. No bosonic projection map, action, VEV selection, observed rows, weak-angle lineage, pole extraction, or GeV normalization exists in any reviewed source; no Phase201 or Phase256 field is filled."
 }

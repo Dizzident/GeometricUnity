@@ -1,10 +1,10 @@
 {
   "phaseId": "phase390-converged-control-branch-fermion-mode-rebuild",
-  "generatedAt": "2026-07-10T22:03:01.1671058+00:00",
-  "terminalStatus": "converged-control-branch-fermion-mode-rebuild-blocked",
-  "convergedControlBranchFermionModeRebuildPassed": false,
-  "phase372PrecursorPassed": false,
-  "phase389PrecursorPassed": false,
+  "generatedAt": "2026-07-12T01:43:41.7594687+00:00",
+  "terminalStatus": "converged-control-branch-modes-rebuilt-sharp-ward-verified-vo7-still-incomplete",
+  "convergedControlBranchFermionModeRebuildPassed": true,
+  "phase372PrecursorPassed": true,
+  "phase389PrecursorPassed": true,
   "convergedControlBranchModesRebuilt": true,
   "convergedControlBranchModesRebuiltIsVo7BuildingBlock": true,
   "convergedControlBranchModesRebuiltCompletesVo7": false,
@@ -84,5 +84,5 @@
     "no physical predictions",
     "no Phase201 or Phase256 fill"
   ],
-  "decision": "Do not use the rebuilt control-branch modes until the Phase372/Phase389 precursors, eigen-residual and orthonormality checks, M_psi gauge-commutation, sharp Ward tests, and persisted-branch unconvergence characterization all pass."
+  "decision": "Converged fermion modes were rebuilt on both persisted Phase12 backgrounds for both the identity-weight branch (direct eigensolve of the persisted base Dirac matrix) and the mesh-volume M_psi branch (symmetrized generalized pencil B = M^{-1/2} D M^{-1/2}), with eigen-residuals and orthonormality at solver precision. The structural identity [M_psi, X_hat] = 0 holds exactly, so the Phase389 discrete gauge-compatibility identity conjugates exactly onto the M_psi-compatible branch, and the pure-gauge Ward zero-current statement now holds SHARPLY on both converged branches across every gauge direction and rebuilt mode. The persisted Phase12 mode branch is confirmed unconverged (relative residuals far above threshold), which resolves the Phase389 sharpness caveat and closes the Phase372 actionable obstruction at the control-branch level. This remains a toy control-branch result: the mesh, backgrounds, and M_psi are study-defined, so no physical M_psi-compatible GU branch, completed fermionic action, physical mixed blocks, physical Hessian, observed namespace map, or Phase201/Phase256 contract field is provided. VO-7 remains incomplete and no physical W/Z/H promotion is possible from this route."
 }

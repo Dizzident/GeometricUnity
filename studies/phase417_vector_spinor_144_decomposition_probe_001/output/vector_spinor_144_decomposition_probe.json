@@ -1,10 +1,10 @@
 {
   "phaseId": "phase417-vector-spinor-144-decomposition-probe",
-  "generatedAt": "2026-07-10T22:09:56.7688473+00:00",
-  "terminalStatus": "vector-spinor-144-decomposition-probe-blocked",
-  "vectorSpinor144DecompositionProbePassed": false,
-  "phase411PrecursorPassed": false,
-  "phase416PrecursorPassed": false,
+  "generatedAt": "2026-07-12T01:50:08.954626+00:00",
+  "terminalStatus": "vector-spinor-144-decomposed-linear-carrier-no-welded-scalar-map-still-missing",
+  "vectorSpinor144DecompositionProbePassed": true,
+  "phase411PrecursorPassed": true,
+  "phase416PrecursorPassed": true,
   "applicationSubjectKind": "vector-spinor-144-decomposition-probe",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
@@ -404,5 +404,5 @@
     "No carrier action, VEV selection, weak-angle lineage, pole extraction, or GeV normalization is supplied.",
     "No Phase201 or Phase256 fill."
   ],
-  "decision": "Do not use the vector-spinor 144 decomposition until the precursor and dimension/invariance batteries pass."
+  "decision": "The source-pinned vector-spinor 144 has been materialized as the exact gamma-trace kernel in 10 x 16 = 16 \u002B 144 and decomposed under the same SM and welded-spin actions used by the prior phases. The actual chiral 2 x 144 Z carrier contains no linear welded spin-zero component, so it cannot by itself supply a linear scalar VEV carrier. The internal 144 does contain the recorded SM block content, including any color-singlet j_L=1/2 |Y|=1/2 dimensions listed in the artifact, but that is not enough: the source still does not define a bosonic projection, even-composite map, carrier action, VEV selection, observed photon/W/Z/H rows, weak-angle lineage, pole extraction, or GeV normalization. No Phase201 or Phase256 field is filled."
 }

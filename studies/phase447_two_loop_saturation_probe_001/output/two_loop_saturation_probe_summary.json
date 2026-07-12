@@ -1,11 +1,11 @@
 {
   "phaseId": "phase447-two-loop-saturation-probe",
-  "generatedAt": "2026-07-11T00:19:10.9955608+00:00",
-  "terminalStatus": "two-loop-saturation-probe-blocked",
-  "twoLoopSaturationProbePassed": false,
-  "phase443PrecursorPassed": false,
-  "phase446PrecursorPassed": false,
-  "precursorsPassed": false,
+  "generatedAt": "2026-07-12T04:02:18.847125+00:00",
+  "terminalStatus": "two-loop-saturation-probe-passed-two-loop-lever-non-perturbative-convention-bound-at-minimal-scope-frontier-sharpened",
+  "twoLoopSaturationProbePassed": true,
+  "phase443PrecursorPassed": true,
+  "phase446PrecursorPassed": true,
+  "precursorsPassed": true,
   "applicationSubjectKind": "two-loop-saturation-probe",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
@@ -93,7 +93,7 @@
   "twoLoopConventionIsWorkbenchConvention": true,
   "physicistReviewPending": true,
   "batteries": {
-    "batteriesAllPassed": false,
+    "batteriesAllPassed": true,
     "thetaStationarityGate": true,
     "maxThetaResidualNonIdentity": 1.3831568660353952E-09,
     "allThetaConverged": true,
@@ -1877,7 +1877,7 @@
     "spinorUsedAsShiabCarrierNotFiber": true,
     "draft14dObserverseNotRealized": true
   },
-  "runtimeSeconds": 2549.5787677,
+  "runtimeSeconds": 2554.3340521,
   "physicalCouplingProvided": false,
   "routeProvidesPhysicalEffectiveActionHessian": false,
   "routeProvidesVevOrSourceScaleLineage": false,
@@ -1914,5 +1914,5 @@
     "A two-loop saturation result, where observed and convention/seed-stable, is a workbench-relative dynamical-scale CANDIDATE only; a no-saturation result sharpens the frontier. Neither promotes anything.",
     "No VEV scale, pole, or GeV lineage; no Phase201 or Phase256 contract field is filled; the reduced slice does not realize the ambient 7,7 / internal gauge / weld content."
   ],
-  "decision": "Do not use the saturation verdicts until the precursor, theta-stationarity, stencil, cross-check, and control batteries pass."
+  "decision": "The two-loop saturation probe is decided on internal consistency. On CreateUniform4D(1) (su(2) trace pairing; nOmega=195, nTheta=48, joint DOF 243) the V_eff(t) rays were recomputed with the verbatim hardened machinery (theta point gate: relative \u003C= 1E-008 or absolute floor 1E-010, 0 via floor, max relative 1.38E-009; identity theta*=0 exact; LinearizeTheta FD 4.80E-009) and the TWO-LOOP vacuum terms (figure-eight over all positive pairs; sunset over the K=40 softest modes) evaluated by directional FD stencils (h=1E-001) on the joint Hessian eigenvectors, contracted onto the positive-subspace propagator (RECORDED CONVENTION about saddle backgrounds with ~37 negative modes; physicist review pending). BATTERIES: identity exact-quartic stencil h-independence 1.34E-007 \u003C= 1E-006; Einsteinian Richardson 7.58E-004 \u003C= 5E-002; offset immunity 2.92E-007; K-tail change 4.36E-001 (recorded); anchor truncation residuals recorded; floor-sweep stable False; control no spurious two-loop minimum False. SATURATION VERDICT: the two-loop terms on the minimal workbench are IR-dominated and NOT admissible as a saturation verdict: max |V_2loop|/|V_1loop| = 1.57E\u002B003 (ceiling 0.5), floor-sweep stable = False, identity control clean = False -- the loop expansion is out of control and/or the answer is bound to the soft-floor convention at these backgrounds. THE TWO-LOOP LEVER IS CLOSED AS NON-PERTURBATIVE/CONVENTION-BOUND AT THE MINIMAL-MESH SCOPE (a decisive frontier statement; nothing promoted; deciding it beyond this scope requires the platform unlock projects or a source anchor). MANDATORY FRAMING: any scale is a WORKBENCH-RELATIVE CANDIDATE ONLY (su(2) toy algebra, reduced Spin(4) slice, lattice units); the positive-subspace two-loop about a saddle is a WORKBENCH CONVENTION pending physicist review; NO GeV/pole/VEV promotion. Everything is target-blind, reduced-spin4-slice; no Phase201/Phase256 contract field is filled; nothing is promoted."
 }

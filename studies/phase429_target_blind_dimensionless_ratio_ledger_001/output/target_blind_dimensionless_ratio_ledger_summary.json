@@ -1,11 +1,11 @@
 {
   "phaseId": "phase429-target-blind-dimensionless-ratio-ledger",
-  "generatedAt": "2026-07-10T22:18:01.3048039+00:00",
-  "terminalStatus": "target-blind-dimensionless-ratio-ledger-blocked",
-  "targetBlindDimensionlessRatioLedgerPassed": false,
-  "phase404PrecursorPassed": false,
-  "phase426PrecursorPassed": false,
-  "phase428PrecursorPassed": false,
+  "generatedAt": "2026-07-12T01:58:08.0791494+00:00",
+  "terminalStatus": "dimensionless-ratio-ledger-materialized-comparison-lineage-still-missing",
+  "targetBlindDimensionlessRatioLedgerPassed": true,
+  "phase404PrecursorPassed": true,
+  "phase426PrecursorPassed": true,
+  "phase428PrecursorPassed": true,
   "applicationSubjectKind": "target-blind-dimensionless-ratio-ledger",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
@@ -107,5 +107,5 @@
     "Any future comparison phase must import the listed lineage fields explicitly and pass the existing promotion gates.",
     "No Phase201 or Phase256 fill."
   ],
-  "decision": "Do not use the ratio ledger until the precursor and separation batteries pass."
+  "decision": "The complete scale-free surface of the internal embedding chain is now an explicit fail-closed ledger: three ratios are fixed blind at the unification point (tan^2 = 3/5, sin^2 = 3/8, GUT-normalized ratio 1) and one (the tree-level m_W/m_Z = sqrt(5/8)) is additionally conditional on a symmetry-breaking sector that no internal mechanism supplies (Phases 405/410/418/428) and no source defines. Every row lists the exact comparison lineage it lacks - running, thresholds, scheme, the unification scale, pole extraction, and (for mass ratios) the breaking sector. No measured value was consulted, no comparison was performed, and no Phase201 or Phase256 field is filled: any future comparison phase must import that lineage explicitly and will be judged by the existing gates."
 }

@@ -1,11 +1,11 @@
 {
   "phaseId": "phase396-gauge-invariant-neutral-charged-sector-separation-probe",
-  "generatedAt": "2026-07-10T22:03:35.3668165+00:00",
-  "terminalStatus": "gauge-invariant-neutral-charged-sector-separation-probe-blocked",
-  "gaugeInvariantNeutralChargedSectorSeparationProbePassed": false,
-  "phase394PrecursorPassed": false,
-  "phase395PrecursorPassed": false,
-  "phase256ContractPresent": false,
+  "generatedAt": "2026-07-12T01:44:17.8656004+00:00",
+  "terminalStatus": "gauge-invariant-neutral-charged-sector-separation-materialized-contract-fields-still-unfillable",
+  "gaugeInvariantNeutralChargedSectorSeparationProbePassed": true,
+  "phase394PrecursorPassed": true,
+  "phase395PrecursorPassed": true,
+  "phase256ContractPresent": true,
   "phase394WorkdirPresent": true,
   "probeInternallyConsistent": true,
   "extractionGaugeInvarianceVerified": true,
@@ -487,5 +487,5 @@
     "phase394WorkdirModes": "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir/spectra/modes",
     "backgroundStateDir": "studies/phase12_joined_calculation_001/output/background_family/background_states"
   },
-  "decision": "Do not use the sector separation until the Phase394/395 precursors, extraction invariance, and triplet neutral-content checks all pass."
+  "decision": "The first gauge-invariant observed-field-extraction skeleton is materialized on the control branch: the invariant-axis/charged-plane separation relative to the background symmetric-ansatz direction n_omega is exactly gauge-invariant (verified under simultaneous rotations at machine precision), and EVERY exact su(2) triplet of the recomputed positive bosonic spectrum splits as one neutral plus one charged pair (cluster neutral content 1.0 within tolerance on both backgrounds). This is the discrete residual-U(1) skeleton of {Z-like, W-pair-like} sector classification, built from invariants as Phase395 requires. It cannot fill any Phase256 contract field: the su(2)-only branch has no hypercharge, photon mixing, weak angle, scalar sector, physical vacuum, or scale/pole/GeV lineage, and the construction is study-defined rather than theorem-backed. The structural prerequisite now exists; the contract remains fail-closed awaiting the genuine electroweak embedding and source-lineage artifacts."
 }

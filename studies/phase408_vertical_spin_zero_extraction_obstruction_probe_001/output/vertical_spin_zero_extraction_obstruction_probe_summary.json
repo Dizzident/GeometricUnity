@@ -1,10 +1,10 @@
 {
   "phaseId": "phase408-vertical-spin-zero-extraction-obstruction-probe",
-  "generatedAt": "2026-07-10T22:04:35.2306601+00:00",
-  "terminalStatus": "vertical-spin-zero-extraction-obstruction-probe-blocked",
-  "verticalSpinZeroExtractionObstructionProbePassed": false,
-  "phase407PrecursorPassed": false,
-  "probeInternallyConsistent": false,
+  "generatedAt": "2026-07-12T01:45:21.3918188+00:00",
+  "terminalStatus": "naive-vertical-trace-spin-zero-extraction-obstructed-weld-entangles-spin-and-isospin",
+  "verticalSpinZeroExtractionObstructionProbePassed": true,
+  "phase407PrecursorPassed": true,
+  "probeInternallyConsistent": true,
   "antisymmetryResidual": 0,
   "homomorphismResidual": 2.220446049250313E-16,
   "spinZeroSlotIsOneDimensional": true,
@@ -102,5 +102,5 @@
     "primaryDraft": "docs/Reference/ExperimentReferences/texts/GU-DRAFT-2021-TEXT.txt (sections 2.3, 9, 12.6)",
     "explainerAnalysis": "docs/Reference/ExperimentReferences/TOE-GU-ICEBERG-20250423-GAP-ANALYSIS.md (row 5)"
   },
-  "decision": "Do not use the obstruction characterization until the precursor and the embedding/commutator/centralizer battery pass."
+  "decision": "The spin-0 extraction route named by Phase407 is now machine-characterized, and the naive form is OBSTRUCTED - three exact results. (V1) THE WELD ENTANGLES SPIN AND ISOSPIN: the Sym^2(4) embedding pi(so(4)) does NOT commute with the SM chain inside so(10) (every tested SM generator has a nonzero commutator with the welded spacetime action). (V2) THE CENTRALIZER IS TRIVIAL: no nonzero element of so(10) commutes with pi(so(4)) (Sym^2 = 9 \u002B 1 is multiplicity-free; the machine confirms kernel dimension 0) - after the chimeric weld, NO internal symmetry commutes with spacetime rotations, the Coleman-Mandula-shaped tension the draft\u0027s observerse construction must (and claims to) evade by keeping the weld observational. (V3) THE DIMENSION BOUND: the spin-0 (so(4)-singlet) slot of the vertical 10 is EXACTLY the 1-dimensional trace direction, while the SM complex doublet needs the full 4-real-dimensional Pati-Salam block - the naive vertical/symmetric-2-tensor trace extraction CANNOT carry a full SM doublet, for ANY alignment of the weld. CONSEQUENCE: scalar-sector sub-gap (a) is sharpened to its final internal form - the Phase407 frame-cross-internal doublet cannot descend to an X4-scalar doublet through the trace slot; the draft\u0027s ADDITIONAL machinery (epsilon-conjugation/Shiab structure, the unobserved-phase fields, or a different extraction map - none of which is specified quantitatively in the primary text) is now the precisely named requirement. Exact arithmetic only; nothing is promoted; no contract field is filled."
 }

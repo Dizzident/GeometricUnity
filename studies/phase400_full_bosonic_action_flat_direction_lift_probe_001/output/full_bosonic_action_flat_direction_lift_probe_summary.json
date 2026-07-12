@@ -1,10 +1,10 @@
 {
   "phaseId": "phase400-full-bosonic-action-flat-direction-lift-probe",
-  "generatedAt": "2026-07-10T22:04:22.0087104+00:00",
-  "terminalStatus": "full-bosonic-action-flat-direction-lift-probe-blocked",
-  "fullBosonicActionFlatDirectionLiftProbePassed": false,
-  "phase394PrecursorPassed": false,
-  "phase399PrecursorPassed": false,
+  "generatedAt": "2026-07-12T01:45:07.6609364+00:00",
+  "terminalStatus": "full-bosonic-action-flat-direction-lift-probe-completed-all-lifted-with-saddle-directions",
+  "fullBosonicActionFlatDirectionLiftProbePassed": true,
+  "phase394PrecursorPassed": true,
+  "phase399PrecursorPassed": true,
   "probeInternallyConsistent": true,
   "expectedCoveragePresent": true,
   "modeOrthonormalityVerified": true,
@@ -432,5 +432,5 @@
     "phase394Workdir": "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir",
     "phase12Root": "studies/phase12_joined_calculation_001/output/background_family"
   },
-  "decision": "Do not use the lift classification until the Phase394/399 precursors and the full measurement battery (orthonormality, kernel annihilation, exact quadraticity, GN parity, polarization consistency) pass."
+  "decision": "The Phase399 residual question is answered exactly on the toy control branch: because the production residual Upsilon is exactly quadratic in omega, the full bosonic objective restricted to the 18 Gauss-Newton flat directions terminates at quartic order and every term is computable without truncation error. The GN-dropped curvature form B_ij = \u003CUpsilon0, M Q(k_i,k_j)\u003E was assembled by polarization (verified against direct second differences), diagonalized, and every kernel eigendirection was classified as quadratically lifted, saddle, quartically lifted, or exactly flat, with gauge alignment measured against the infinitesimal gauge-orbit map at the background. The fermionic source kernel component (the Phase399 flat-direction obstruction) was decomposed onto the classified eigendirections to decide whether the obstruction is relaxable at higher order in the full action. The verdict fields carry the physical answer; the probe gates only on the verified measurement battery. The toy objective remains the control-branch Mode-B objective, not a physical GU action; nothing is promoted; no contract field is filled."
 }

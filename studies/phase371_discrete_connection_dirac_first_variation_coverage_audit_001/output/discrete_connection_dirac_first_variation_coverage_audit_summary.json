@@ -1,11 +1,11 @@
 {
   "phaseId": "phase371-discrete-connection-dirac-first-variation-coverage-audit",
-  "generatedAt": "2026-07-10T22:02:15.1212097+00:00",
-  "terminalStatus": "discrete-connection-dirac-first-variation-coverage-audit-blocked",
-  "discreteConnectionDiracFirstVariationCoverageAuditPassed": false,
+  "generatedAt": "2026-07-12T01:43:15.1397796+00:00",
+  "terminalStatus": "discrete-connection-dirac-first-variation-coverage-audit-analytic-parity-only-not-coupled-hessian",
+  "discreteConnectionDiracFirstVariationCoverageAuditPassed": true,
   "phase120SelectedModeParityPresent": true,
   "phase273FiniteDifferenceProxyBoundaryPresent": true,
-  "phase370Vo7BoundaryPresent": false,
+  "phase370Vo7BoundaryPresent": true,
   "discreteConnectionToDiracFirstVariationCoverageMaterialized": true,
   "discreteConnectionToDiracFirstVariationIsVo7BuildingBlock": true,
   "discreteConnectionToDiracFirstVariationCompletesVo7": false,
@@ -56,5 +56,5 @@
     "canFillPhase256ObservedFieldExtractionContract": false,
     "phase201FieldsDefensiblyFilled": []
   },
-  "decision": "Do not treat the discrete connection-to-Dirac first variation as covered until every persisted Phase12 variation passes analytic parity and Hermiticity checks."
+  "decision": "The existing discrete connection-to-Dirac first variation is analytically replayable and Hermitian across all 24 persisted Phase12 branch-local mode directions. This is one implemented VO-7 building block, not a completed boson-fermion mixed Hessian: the repository still lacks a fixed GU fermionic branch, explicit Yukawa functional, coupled residual, the remaining mixed blocks, gauge-compatibility identities, scalar projection, observed-field extraction, pole extraction, and GeV normalization. Do not promote W/Z or Higgs masses."
 }

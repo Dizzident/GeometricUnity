@@ -1,11 +1,11 @@
 {
   "phaseId": "phase401-full-quartic-action-coupled-critical-point-construction",
-  "generatedAt": "2026-07-10T22:04:29.7324998+00:00",
-  "terminalStatus": "full-quartic-action-coupled-critical-point-construction-blocked",
-  "fullQuarticActionCoupledCriticalPointConstructionPassed": false,
-  "phase394PrecursorPassed": false,
-  "phase399PrecursorPassed": false,
-  "phase400PrecursorPassed": false,
+  "generatedAt": "2026-07-12T01:45:15.9661193+00:00",
+  "terminalStatus": "full-quartic-action-coupled-critical-point-nonperturbative-kernel-relaxation-characterized",
+  "fullQuarticActionCoupledCriticalPointConstructionPassed": true,
+  "phase394PrecursorPassed": true,
+  "phase399PrecursorPassed": true,
+  "phase400PrecursorPassed": true,
   "constructionInternallyConsistent": true,
   "expectedCoveragePresent": true,
   "sourceFormulaParityVerified": true,
@@ -401,5 +401,5 @@
     "phase394Workdir": "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir",
     "phase12Root": "studies/phase12_joined_calculation_001/output/background_family"
   },
-  "decision": "Do not use the relaxation characterization until the Phase394/399/400 precursors, the measurement battery (source parity, gradient parity, line-search exactness), the kappa-zero baseline, and the terminate-or-exit characterization of every coupled run all pass."
+  "decision": "The attempted construction of the coupled critical point of the full quartic control-branch action returned a sharp NEGATIVE structural result, machine-characterized: the kernel relaxation is NON-PERTURBATIVE. Phase400 proved every kernel RAY is quartically lifted, but the quartic form has ultra-soft curved valleys between rays (the measured effective quartic along the exact-Newton descent path is orders of magnitude below the softest per-direction quartic), and along these valleys the linear fermionic pull dominates indefinitely: every frozen-source run descends monotonically (each step is an exact quartic line-search descent) past the trust region without reaching stationarity, and the adiabatic self-consistent probe additionally shows the followed-mode source STRENGTHENING with displacement before exiting its trust region. No coupled critical point exists within the perturbative neighborhood of the background at any tested kappa, for either source treatment. Combined with Phase399 (critical point exists modulo flat directions in the quadratic model) and Phase400 (all rays lifted), the honest closure is: the relaxed coupled vacuum of the toy action is NOT a small deformation of the persisted background - connecting the VO-7 coupled-stationarity component to the physical gap-ledger item \u00274D observed vacuum\u0027. The toy objective is the control-branch Mode-B objective, not a physical GU action; kappa is not physical; nothing is promoted; no contract field is filled."
 }

@@ -1,8 +1,8 @@
 {
   "phaseId": "phase362-framed-standard-model-source-audit",
-  "terminalStatus": "framed-standard-model-source-audit-review-required",
-  "generatedAt": "2026-07-10T22:02:11.7675977+00:00",
-  "framedStandardModelSourceAuditPassed": false,
+  "terminalStatus": "framed-standard-model-source-audit-framon-higgs-and-vector-mixing-lead-not-gu-mass-law",
+  "generatedAt": "2026-07-12T01:43:11.132024+00:00",
+  "framedStandardModelSourceAuditPassed": true,
   "framedStandardModelLeadPresent": true,
   "framedStandardModelPrimarySourcesReviewed": true,
   "framedStandardModelRouteExternalToGu": true,
@@ -129,13 +129,13 @@
     }
   ],
   "adjacentRouteBoundary": {
-    "stueckelbergVectorMassSourceAuditPassed": false,
+    "stueckelbergVectorMassSourceAuditPassed": true,
     "stueckelbergRoutePromotesWzMasses": false,
     "stueckelbergRoutePromotesHiggsMass": false,
     "finiteNcgDiscreteHiggsSourceAuditPassed": true,
     "finiteNcgRoutePromotesWzMasses": false,
     "finiteNcgRoutePromotesHiggsMass": false,
-    "matrixModelHiggsGeometrySourceAuditPassed": false,
+    "matrixModelHiggsGeometrySourceAuditPassed": true,
     "matrixModelRoutePromotesWzMasses": false,
     "matrixModelRoutePromotesHiggsMass": false
   },
@@ -175,8 +175,8 @@
     },
     {
       "Id": "adjacent-frame-higgs-routes-remain-nonpromotional",
-      "Passed": false,
-      "Evidence": "stueckelbergPassed=False; stueckelbergWz=False; stueckelbergHiggs=False; finiteNcgPassed=True; finiteNcgWz=False; finiteNcgHiggs=False; matrixModelPassed=False; matrixModelWz=False; matrixModelHiggs=False"
+      "Passed": true,
+      "Evidence": "stueckelbergPassed=True; stueckelbergWz=False; stueckelbergHiggs=False; finiteNcgPassed=True; finiteNcgWz=False; finiteNcgHiggs=False; matrixModelPassed=True; matrixModelWz=False; matrixModelHiggs=False"
     },
     {
       "Id": "route-does-not-fill-gu-contracts",
