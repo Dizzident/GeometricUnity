@@ -1,27 +1,305 @@
 {
   "phaseId": "phase463-transport-structure-theorems",
-  "generatedAt": "2026-07-12T11:58:46.7633853+00:00",
-  "terminalStatus": "transport-structure-theorems-awaiting-inputs",
-  "interimTerminal": "awaiting-inputs",
-  "verdictKind": "awaiting-inputs",
+  "generatedAt": "2026-07-12T12:47:13.7241965+00:00",
+  "terminalStatus": "transport-structure-theorems-transport-killed-at-audited-menu",
+  "verdictKind": "transport-killed-at-audited-menu",
   "applicationSubjectKind": "transport-structure-theorems",
   "planSection": "WAVE2_ACTION_PLAN_2026-07-12 item 3",
-  "transportStructureTheoremsSkeletonBuilt": true,
-  "awaitingImplementation": true,
-  "zeroPhysicsCompute": true,
-  "theorems": [
-    "T1",
-    "T2",
-    "T3",
-    "T4"
+  "transportStructureTheoremsPassed": true,
+  "verdictTaxonomy": [
+    "transport-killed-at-audited-menu",
+    "transport-coercivity-certified",
+    "no-ray-instability-found-at-audited-menu",
+    "no-certificate-obtainable",
+    "review-required-inputs-missing",
+    "review-required-battery-failed"
   ],
-  "surviveTerminalRenamedTo": "no-ray-instability-found-at-audited-menu",
+  "zeroHmcInStageA": true,
+  "phase454InputSha256": "07221029421a83052825f346afb760acd7ee79245ea27106bd4d80ff499cc01c",
+  "phase454InputVerdict": "beyond-ray-instability-candidate-found",
+  "committedSpectraDependency": {
+    "backgroundCount": 12,
+    "trivialMemberCount": 3,
+    "trivialAllNonnegativeOnComplement": true,
+    "trivialRows": [
+      {
+        "member": "identity",
+        "complementNegative": 0,
+        "complementMinEigenvalue": 0
+      },
+      {
+        "member": "sd2-id0/c0.5",
+        "complementNegative": 0,
+        "complementMinEigenvalue": 0
+      },
+      {
+        "member": "asd2-id0/c0.5",
+        "complementNegative": 0,
+        "complementMinEigenvalue": 0
+      }
+    ],
+    "rayNamedNegativeCount": 2016,
+    "rayMinComplementEigenvalue": -0.1415948750593149,
+    "armBMinA2": 0.32578188399354946,
+    "armBMaxDegeneracyRatio": 0.005460301321652411,
+    "armBNoDegenerateCubicOnMenu": true,
+    "armBMenuHashFrom454": "09fb660928557e5286c8658142bcce599e915a953aefca531a735efb7b5a0fbb"
+  },
+  "operatorMenu": {
+    "auditedOperatorCount": 6,
+    "syntheticControlCount": 1,
+    "menuCompletenessHash": "081fcdf75411e2b304911af42b6d5400c94cc205510c7f4c304815746e00348a",
+    "operators": [
+      {
+        "id": "trF2-quadratic-curvature",
+        "origin": "workbench: tr F^2 quadratic order (the S_B Hessian)",
+        "signClass": "psd",
+        "inAuditedMenu": true,
+        "note": "S_B \u003E= 0 exactly with S_B(0)=0; the quadratic curvature form is positive-semidefinite"
+      },
+      {
+        "id": "explicit-vector-mass-sq",
+        "origin": "phase460 pinned rows p338-r2 / p343 (explicit vector mass parameter)",
+        "signClass": "psd",
+        "inAuditedMenu": true,
+        "note": "explicit vector mass-squared m^2 A^2 with m^2 \u003E 0 is PSD"
+      },
+      {
+        "id": "condensate-vector-mass-sq",
+        "origin": "phase460 pinned row p338-r1 (coupling x condensate scale)",
+        "signClass": "psd",
+        "inAuditedMenu": true,
+        "note": "condensate mass-squared (coupling x scale)^2 is PSD"
+      },
+      {
+        "id": "twoform-topological-mass-sq",
+        "origin": "phase460 pinned row p340-r1 (two-form topological mass)",
+        "signClass": "psd",
+        "inAuditedMenu": true,
+        "note": "topological mass-squared is PSD"
+      },
+      {
+        "id": "inverse-radius-mode-mass-sq",
+        "origin": "phase460 pinned rows p333-r1 / p340-r2 / p342 (inverse compact/warp radius)",
+        "signClass": "psd",
+        "inAuditedMenu": true,
+        "note": "inverse-radius mode mass-squared is PSD"
+      },
+      {
+        "id": "conformal-coupling-xi-R-phi2",
+        "origin": "workbench: tr F^2-conjugate dim-2 conformal coupling (xi \u003E= 0)",
+        "signClass": "psd",
+        "inAuditedMenu": true,
+        "note": "non-tachyonic conformal coupling xi R phi^2 with xi \u003E= 0 is PSD in the conformal sector"
+      },
+      {
+        "id": "synthetic-tachyonic-mass-sq",
+        "origin": "SYNTHETIC CONTROL (NOT audited): wrong-sign -m^2 A^2",
+        "signClass": "neg",
+        "inAuditedMenu": false,
+        "note": "tachyonic dim-2 form; injects an unbounded conformal direction - the synthetic-overturn control"
+      }
+    ]
+  },
+  "t4ConformalSectorKill": {
+    "killed": true,
+    "auditedMenuAllKilled": true,
+    "syntheticControlInjects": true,
+    "restsOnTrivialAllNonnegative": true,
+    "restsOnPositiveOnRayQuadraticCoefficient": true,
+    "perOperator": [
+      {
+        "id": "trF2-quadratic-curvature",
+        "origin": "workbench: tr F^2 quadratic order (the S_B Hessian)",
+        "signClass": "psd",
+        "inAuditedMenu": true,
+        "verdict": "does-not-inject-conformal-unbounded",
+        "note": "S_B \u003E= 0 exactly with S_B(0)=0; the quadratic curvature form is positive-semidefinite"
+      },
+      {
+        "id": "explicit-vector-mass-sq",
+        "origin": "phase460 pinned rows p338-r2 / p343 (explicit vector mass parameter)",
+        "signClass": "psd",
+        "inAuditedMenu": true,
+        "verdict": "does-not-inject-conformal-unbounded",
+        "note": "explicit vector mass-squared m^2 A^2 with m^2 \u003E 0 is PSD"
+      },
+      {
+        "id": "condensate-vector-mass-sq",
+        "origin": "phase460 pinned row p338-r1 (coupling x condensate scale)",
+        "signClass": "psd",
+        "inAuditedMenu": true,
+        "verdict": "does-not-inject-conformal-unbounded",
+        "note": "condensate mass-squared (coupling x scale)^2 is PSD"
+      },
+      {
+        "id": "twoform-topological-mass-sq",
+        "origin": "phase460 pinned row p340-r1 (two-form topological mass)",
+        "signClass": "psd",
+        "inAuditedMenu": true,
+        "verdict": "does-not-inject-conformal-unbounded",
+        "note": "topological mass-squared is PSD"
+      },
+      {
+        "id": "inverse-radius-mode-mass-sq",
+        "origin": "phase460 pinned rows p333-r1 / p340-r2 / p342 (inverse compact/warp radius)",
+        "signClass": "psd",
+        "inAuditedMenu": true,
+        "verdict": "does-not-inject-conformal-unbounded",
+        "note": "inverse-radius mode mass-squared is PSD"
+      },
+      {
+        "id": "conformal-coupling-xi-R-phi2",
+        "origin": "workbench: tr F^2-conjugate dim-2 conformal coupling (xi \u003E= 0)",
+        "signClass": "psd",
+        "inAuditedMenu": true,
+        "verdict": "does-not-inject-conformal-unbounded",
+        "note": "non-tachyonic conformal coupling xi R phi^2 with xi \u003E= 0 is PSD in the conformal sector"
+      },
+      {
+        "id": "synthetic-tachyonic-mass-sq",
+        "origin": "SYNTHETIC CONTROL (NOT audited): wrong-sign -m^2 A^2",
+        "signClass": "neg",
+        "inAuditedMenu": false,
+        "verdict": "injects-unbounded-conformal-direction",
+        "note": "tachyonic dim-2 form; injects an unbounded conformal direction - the synthetic-overturn control"
+      }
+    ]
+  },
+  "t1AbelianConeWitnesses": {
+    "abelianConeNonempty": true,
+    "cartanProjectorExactRank": 1,
+    "stationaryVacuumWitnessCount": 0,
+    "nonStationaryNamedWitnessCount": 2016,
+    "noStationaryInstability": true,
+    "note": "the off-ray named negatives are non-vacuum transverse witnesses; S_B \u003E= 0 pins the global minimum at 0"
+  },
+  "t2CurveEscapeRepair": {
+    "motzkinPolynomial": "f(x,y) = (y - x^2)(y - 2 x^2) = y^2 - 3 x^2 y \u002B 2 x^4",
+    "boundedOnEveryRayVerified": true,
+    "unboundedBelowAlongCurveVerified": true,
+    "motzkinVerified": true,
+    "rayGrid": [
+      {
+        "a": -1,
+        "b": -1,
+        "leadingCoefficient": 2,
+        "coerciveOnRay": true
+      },
+      {
+        "a": -1,
+        "b": 0,
+        "leadingCoefficient": 2,
+        "coerciveOnRay": true
+      },
+      {
+        "a": -1,
+        "b": 1,
+        "leadingCoefficient": 2,
+        "coerciveOnRay": true
+      },
+      {
+        "a": 0,
+        "b": -1,
+        "leadingCoefficient": 1,
+        "coerciveOnRay": true
+      },
+      {
+        "a": 0,
+        "b": 1,
+        "leadingCoefficient": 1,
+        "coerciveOnRay": true
+      },
+      {
+        "a": 1,
+        "b": -1,
+        "leadingCoefficient": 2,
+        "coerciveOnRay": true
+      },
+      {
+        "a": 1,
+        "b": 0,
+        "leadingCoefficient": 2,
+        "coerciveOnRay": true
+      },
+      {
+        "a": 1,
+        "b": 1,
+        "leadingCoefficient": 2,
+        "coerciveOnRay": true
+      }
+    ],
+    "curveSamples": [
+      {
+        "k": 1,
+        "x": "2",
+        "y": "6",
+        "f": "-4",
+        "negative": true
+      },
+      {
+        "k": 2,
+        "x": "4",
+        "y": "24",
+        "f": "-64",
+        "negative": true
+      },
+      {
+        "k": 3,
+        "x": "6",
+        "y": "54",
+        "f": "-324",
+        "negative": true
+      },
+      {
+        "k": 5,
+        "x": "10",
+        "y": "150",
+        "f": "-2500",
+        "negative": true
+      },
+      {
+        "k": 10,
+        "x": "20",
+        "y": "600",
+        "f": "-40000",
+        "negative": true
+      }
+    ],
+    "surviveTerminalRenamedTo": "no-ray-instability-found-at-audited-menu",
+    "surviveTerminalAuthorizesNothing": true
+  },
+  "t3CoercivityCertificate": {
+    "obligation": "global lower bound V(phi) \u003E= c ||phi||^p - C (c \u003E 0) OR an SOS/Positivstellensatz certificate valid off-ray for the transport-augmented potential",
+    "pureGaugeCoercivityCertified": true,
+    "transportAugmentedCertificateObtained": false,
+    "isTheOnlyStageBHmcGate": true,
+    "reopeningConditions": [
+      "operator-outside-audited-menu: a dim-2 operator not in the committed menu (e.g. a wrong-sign/tachyonic mass, or a higher structure) could inject an unbounded conformal direction and reopen the kill.",
+      "coercivity-proof-for-negative-c2-window: a genuine off-ray coercivity proof (or refutation) handling a negative-quadratic-coefficient window would upgrade this scoped elimination to a bounded-below certificate (transport-coercivity-certified) or reopen it."
+    ]
+  },
+  "batteries": {
+    "batteriesAllPassed": true,
+    "exactnessCrossChecksOk": true,
+    "menuCompletenessOk": true,
+    "determinismOk": true,
+    "syntheticOverturnOk": true,
+    "abelianConeBatteryOk": true,
+    "motzkinBatteryOk": true
+  },
+  "guards": [],
+  "phase464Impact": {
+    "deliversStrongestConjunctC3": true,
+    "cancelsItem16StageBWithTwoNamedReopeningConditions": true,
+    "neverCancelledPermanently": true
+  },
   "scaleIsWorkbenchRelativeCandidateOnly": true,
   "noGevPromotion": true,
   "physicistReviewPending": true,
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
-  "targetBlindConstructionHash": "c8e5180143edfab51682efbccbe4cfd937912c899f21456d672e4c3f61ca8fba",
+  "targetBlindConstructionHash": "8b9834335cc022fda6f30b14cbb0a274ea7863a117906613eee6e1ade2f006af",
   "physicalCouplingProvided": false,
   "routeProvidesPhysicalEffectiveActionHessian": false,
   "routeProvidesVevOrSourceScaleLineage": false,
@@ -44,14 +322,13 @@
     "phase201FieldsDefensiblyFilled": []
   },
   "recordedBoundary": {
-    "physicistReviewPending": true,
-    "awaitingImplementation": true
+    "physicistReviewPending": true
   },
   "explicitCandidateOnlyNonclaims": [
-    "STEP 0 skeleton: zero physics computation; the pre-registered design is recorded in STUDY.md and is not yet implemented or executed.",
-    "The interim terminal is a program-state marker, not a scientific verdict; no measurement, elimination, or promotion is claimed.",
-    "physicistReviewPending = true is carried explicitly; no contract field is filled and nothing is promoted (promotedPhysicalMassClaimCount remains 0)."
+    "T1-T4 are exact/structural elimination theorems over the committed phase454 block spectra; all eigenvalues/coefficients are lattice-unit workbench-relative structure data.",
+    "The transport-killed verdict is scoped to the audited menu and carries two named reopening conditions; it is NEVER a permanent cancellation and asserts NO bounded-below/vacuum claim (the T2 Motzkin repair forbids it).",
+    "physicistReviewPending = true; nothing is measured, filled, or promoted; promotedPhysicalMassClaimCount remains 0."
   ],
-  "decision": "STEP 0 skeleton for the transport structure theorems phase (plan item 3). Awaiting the committed sector inputs and the dimension-2 operator menu; the T1-T4 pre-registered design (including the renamed survive terminal that authorizes nothing) is recorded in STUDY.md. Nothing is certified or promoted yet.",
-  "runtimeSeconds": 0.0064022
+  "decision": "Transport is ELIMINATED at the committed dim-2 operator menu. T4 (conformal-sector, first): every one of the 6 audited dim-2 operators is a positive-semidefinite quadratic form and, added to the committed PSD stationary-vacuum Hessian (phase454 trivial background: 0 negative complement directions for all 3 members) with strictly positive on-ray quadratic coefficient (armB minA2 = 0.325782 \u003E 0), cannot inject an unbounded conformal-factor direction; only the synthetic wrong-sign control injects (the overturn battery has teeth). T1 (abelian cone): the rank-one abelian cone is provably nonempty, and it carries 0 spectral-instability witnesses at the stationary vacuum; the 2016 named transverse negatives live only at NON-STATIONARY ray backgrounds (S_B \u003E= 0 pins the global minimum at 0) and are non-vacuum witnesses. T2 (curve-escape repair): the Motzkin-type counterexample f=(y-x^2)(y-2x^2) is bounded on every ray yet unbounded below along y=(3/2)x^2 (verified exactly), so ray/cone analysis authorizes NO boundedness claim; the survive terminal is renamed no-ray-instability-found-at-audited-menu. T3: no off-ray coercivity certificate is obtainable in Stage A. This cancels item-16 Stage-B at the audited menu with TWO named reopening conditions (operator-outside-audited-menu; coercivity-proof-for-negative-c2-window) - NEVER cancelled permanently. Lattice-unit structure data only; nothing promoted.",
+  "runtimeSeconds": 0.0225934
 }

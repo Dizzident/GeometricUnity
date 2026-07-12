@@ -1,0 +1,22 @@
+{
+  "fixtureId": "adversarial-1.5sigma-from-free",
+  "description": "ADVERSARIAL: a fully-formed finite-VEV weak-doublet intake with the import branch adopted, but only 1.5 sigma from the exact free control. The O5 guard (>= 3 sigma or no completion) must REJECT it. This fixture exists to prove the guard cannot be talked past by an otherwise-conforming record.",
+  "vevIntake": {
+    "direction": "su2-doublet-neutral",
+    "magnitudeInLatticeUnits": 1.6,
+    "member": "identity-branch-doublet",
+    "channel": "doublet",
+    "errorModel": "jackknife-covariance",
+    "sigmaFromExactFreeControl": 1.5,
+    "branchNormalizationSourceId": "labeled-gprime2-over-g2-three-fifths-import"
+  },
+  "expected": {
+    "completes": false,
+    "completedConditionalFields": 0,
+    "completedAmplitudeFields": 0,
+    "zAmplitudeCompleted": false,
+    "completedLineageFields": 0,
+    "singletFlag": false,
+    "outcomeClass": "below-o5-guard-no-completion"
+  }
+}

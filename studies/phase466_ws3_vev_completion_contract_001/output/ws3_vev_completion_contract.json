@@ -1,29 +1,233 @@
 {
   "phaseId": "phase466-ws3-vev-completion-contract",
-  "generatedAt": "2026-07-12T11:58:47.6737419+00:00",
-  "terminalStatus": "ws3-vev-completion-contract-awaiting-schema",
-  "interimTerminal": "awaiting-schema",
-  "verdictKind": "awaiting-schema",
+  "generatedAt": "2026-07-12T12:47:15.8472285+00:00",
+  "terminalStatus": "ws3-vev-completion-contract-schema-committed",
+  "verdictKind": "schema-committed",
   "applicationSubjectKind": "ws3-vev-completion-contract",
   "planSection": "WAVE2_ACTION_PLAN_2026-07-12 item 5",
-  "ws3VevCompletionContractSkeletonBuilt": true,
-  "awaitingImplementation": true,
-  "zeroPhysicsCompute": true,
-  "phase434HashPin": "f5eafcc74583ecdf",
-  "partition": {
-    "finiteVev": 6,
-    "conditional": 7,
-    "amplitudeBlocked": 4,
-    "lineageBlocked": 9
+  "ws3VevCompletionContractSchemaCommitted": true,
+  "schema": {
+    "schemaId": "ws3-vev-completion-contract-schema-v1",
+    "schemaHash": "7159ea49a45e3044c4393542b24a5db596f5d1423150020b072849ec8cb322b9",
+    "schemaCanonicalPreimage": "schemaId=ws3-vev-completion-contract-schema-v1|phase434HashPin=f5eafcc74583ecdf83872fdf914c1a5483847499f97359d9cbe8ae44c396023b|phase256TemplateId=observed-field-extraction-wzh-intake-template-v1|extractionRows=6|conditional=electroweakGaugeEmbeddingId,photonEigenstateProjectionId,zBosonSourceRowId,wBosonSourceRowId,wzCommonBridgeGatePassed,quadraticElectroweakMassOperatorId,targetBlindConstructionHash|amplitude=fourDimensionalObservedVacuumArtifactId,branchNormalizationSourceId,wBosonRawAmplitudeGatePassed,zBosonRawAmplitudeGatePassed|lineage=observedFieldExtractionTheoremId,sourceReferenceIds,higgsScalarSourceOperatorId,higgsMassiveScalarProfileId,higgsPotentialSelfCouplingRelationId,canonicalOrDeclaredShiabBranchId,stabilitySidecarIds,targetComparisonAfterConstructionGatePassed,phase201And209ApplicationReady|amplitudeAlwaysOnFiniteVev=fourDimensionalObservedVacuumArtifactId,wBosonRawAmplitudeGatePassed|amplitudeOnlyWithImport=branchNormalizationSourceId,zBosonRawAmplitudeGatePassed|zImportBranchId=labeled-gprime2-over-g2-three-fifths-import|o5GuardSigmaThreshold=3.0|o8PermanentLineageBlocked=true|wsThreeCannotCompleteOnAllNineLineageFields=true",
+    "consumptionRule": "A WS3 verdict is admissible against this contract only if it supplies a conforming VEV intake record {direction, magnitudeInLatticeUnits, member, channel, errorModel} and clears the O5 guard (\u003E= 3 sigma from the exact free control). Consumers (e.g. the phase457 null-hash firewall) MUST pin to {schemaId, schemaHash}. The z-amplitude row completes ONLY on the labeled g\u0027^2/g^2 = 3/5 import branch (branchNormalizationSourceId as a labeled convention adoption). The 9 lineage rows can NEVER be completed by any WS3 measurement (O8). A gap proves a singlet, never the named electroweak scalar; the M field is a labeled probe convention and is never sourced.",
+    "o8MProbeScopeNote": "O8 M-probe scope: the WS3 probe field M is a LABELED probe convention, never defined by any audited source. A measured gap proves a singlet, never the named electroweak scalar; with no hypercharge the rho parameter and the weak mixing angle are not measurable. A portal rule-in yields a convention-scoped dynamical-scale candidate and anchor-free ratios only, never sourced content.",
+    "pins": {
+      "phase434HashPin": "f5eafcc74583ecdf83872fdf914c1a5483847499f97359d9cbe8ae44c396023b",
+      "phase434HashObserved": "f5eafcc74583ecdf83872fdf914c1a5483847499f97359d9cbe8ae44c396023b",
+      "phase434HashMatches": true,
+      "phase256TemplateIdPin": "observed-field-extraction-wzh-intake-template-v1",
+      "phase256TemplateIdObserved": "observed-field-extraction-wzh-intake-template-v1",
+      "templateIdMatches": true
+    },
+    "partition": {
+      "extractionRowCount": 6,
+      "extractionRowCountObserved": 6,
+      "conditionalRowCount": 7,
+      "amplitudeBlockedRowCount": 4,
+      "lineageBlockedRowCount": 9,
+      "templateFieldCount": 20,
+      "templateFieldCountObserved": 20,
+      "partitionMatches": true,
+      "partitionNote": "Partition 6-row / 7-conditional / 4-amplitude / 9-lineage recomputed and matched against the committed phase434 ledger and phase256 template (7\u002B4\u002B9 = 20 template fields).",
+      "conditionalFields": [
+        "electroweakGaugeEmbeddingId",
+        "photonEigenstateProjectionId",
+        "zBosonSourceRowId",
+        "wBosonSourceRowId",
+        "wzCommonBridgeGatePassed",
+        "quadraticElectroweakMassOperatorId",
+        "targetBlindConstructionHash"
+      ],
+      "amplitudeFields": [
+        "fourDimensionalObservedVacuumArtifactId",
+        "branchNormalizationSourceId",
+        "wBosonRawAmplitudeGatePassed",
+        "zBosonRawAmplitudeGatePassed"
+      ],
+      "lineageFields": [
+        "observedFieldExtractionTheoremId",
+        "sourceReferenceIds",
+        "higgsScalarSourceOperatorId",
+        "higgsMassiveScalarProfileId",
+        "higgsPotentialSelfCouplingRelationId",
+        "canonicalOrDeclaredShiabBranchId",
+        "stabilitySidecarIds",
+        "targetComparisonAfterConstructionGatePassed",
+        "phase201And209ApplicationReady"
+      ]
+    },
+    "vevIntakeRecordSchema": {
+      "fields": [
+        "direction",
+        "magnitudeInLatticeUnits",
+        "member",
+        "channel",
+        "errorModel"
+      ],
+      "o5GuardSigmaThreshold": 3,
+      "o8MProbeScope": "O8 M-probe scope: the WS3 probe field M is a LABELED probe convention, never defined by any audited source. A measured gap proves a singlet, never the named electroweak scalar; with no hypercharge the rho parameter and the weak mixing angle are not measurable. A portal rule-in yields a convention-scoped dynamical-scale candidate and anchor-free ratios only, never sourced content.",
+      "note": "magnitudeInLatticeUnits stays in lattice units and is never relabelled as a mass; no absolute-scale normalization is produced."
+    },
+    "completionMap": {
+      "conditionalRowsCompletedByAnyConformingVev": [
+        "electroweakGaugeEmbeddingId",
+        "photonEigenstateProjectionId",
+        "zBosonSourceRowId",
+        "wBosonSourceRowId",
+        "wzCommonBridgeGatePassed",
+        "quadraticElectroweakMassOperatorId",
+        "targetBlindConstructionHash"
+      ],
+      "amplitudeRowsAlwaysCompletedOnFiniteVev": [
+        "fourDimensionalObservedVacuumArtifactId",
+        "wBosonRawAmplitudeGatePassed"
+      ],
+      "amplitudeRowsCompletedOnlyWithImportBranch": [
+        "branchNormalizationSourceId",
+        "zBosonRawAmplitudeGatePassed"
+      ],
+      "zImportBranchId": "labeled-gprime2-over-g2-three-fifths-import",
+      "zAmplitudeRequiresImportBranch": true,
+      "lineageRowsEverCompletableByWsThree": false,
+      "o8SchemaTheorem": "wsThreeCannotComplete = true is PERMANENT on all 9 lineage fields."
+    },
+    "lineageImpossibilityCap": [
+      {
+        "field": "observedFieldExtractionTheoremId",
+        "wsThreeCannotComplete": true
+      },
+      {
+        "field": "sourceReferenceIds",
+        "wsThreeCannotComplete": true
+      },
+      {
+        "field": "higgsScalarSourceOperatorId",
+        "wsThreeCannotComplete": true
+      },
+      {
+        "field": "higgsMassiveScalarProfileId",
+        "wsThreeCannotComplete": true
+      },
+      {
+        "field": "higgsPotentialSelfCouplingRelationId",
+        "wsThreeCannotComplete": true
+      },
+      {
+        "field": "canonicalOrDeclaredShiabBranchId",
+        "wsThreeCannotComplete": true
+      },
+      {
+        "field": "stabilitySidecarIds",
+        "wsThreeCannotComplete": true
+      },
+      {
+        "field": "targetComparisonAfterConstructionGatePassed",
+        "wsThreeCannotComplete": true
+      },
+      {
+        "field": "phase201And209ApplicationReady",
+        "wsThreeCannotComplete": true
+      }
+    ],
+    "o8CapAssertedOnAllLineage": true,
+    "o5Guard": {
+      "sigmaThreshold": 3,
+      "rule": "Completion requires \u003E= 3 sigma departure from the exact free control; otherwise no completion."
+    },
+    "fixtureBattery": {
+      "committedBeforeMapper": true,
+      "requiredFixtureIds": [
+        "T-finite-vev",
+        "T-runaway",
+        "T-singlet-wins",
+        "T-inconclusive",
+        "adversarial-1.5sigma-from-free"
+      ],
+      "fixturesEvaluated": 5,
+      "fixtureSetComplete": true,
+      "allFixturesPassed": true,
+      "results": [
+        {
+          "fixtureId": "T-finite-vev",
+          "computed": {
+            "completes": true,
+            "conditionalCount": 7,
+            "amplitudeCount": 4,
+            "zAmplitudeCompleted": true,
+            "lineageCount": 0,
+            "singletFlag": false,
+            "outcomeClass": "finite-vev-convention-scoped-completion"
+          },
+          "match": true
+        },
+        {
+          "fixtureId": "T-runaway",
+          "computed": {
+            "completes": false,
+            "conditionalCount": 0,
+            "amplitudeCount": 0,
+            "zAmplitudeCompleted": false,
+            "lineageCount": 0,
+            "singletFlag": false,
+            "outcomeClass": "runaway-no-completion"
+          },
+          "match": true
+        },
+        {
+          "fixtureId": "T-singlet-wins",
+          "computed": {
+            "completes": false,
+            "conditionalCount": 0,
+            "amplitudeCount": 0,
+            "zAmplitudeCompleted": false,
+            "lineageCount": 0,
+            "singletFlag": true,
+            "outcomeClass": "singlet-dominates-not-electroweak-doublet-completion"
+          },
+          "match": true
+        },
+        {
+          "fixtureId": "T-inconclusive",
+          "computed": {
+            "completes": false,
+            "conditionalCount": 0,
+            "amplitudeCount": 0,
+            "zAmplitudeCompleted": false,
+            "lineageCount": 0,
+            "singletFlag": false,
+            "outcomeClass": "inconclusive-no-completion"
+          },
+          "match": true
+        },
+        {
+          "fixtureId": "adversarial-1.5sigma-from-free",
+          "computed": {
+            "completes": false,
+            "conditionalCount": 0,
+            "amplitudeCount": 0,
+            "zAmplitudeCompleted": false,
+            "lineageCount": 0,
+            "singletFlag": false,
+            "outcomeClass": "below-o5-guard-no-completion"
+          },
+          "match": true
+        }
+      ]
+    },
+    "templateMutationCount": 0,
+    "phase256TemplateMutated": false
   },
-  "wsThreeCannotCompleteOnAllLineageFields": true,
-  "consumptionRule": "{schemaId,schemaHash}",
+  "tokenSelfScan": {
+    "gevTokenCount": 0,
+    "unqualifiedScalarLabelTokenCount": 0,
+    "tokenScanClean": true
+  },
   "scaleIsWorkbenchRelativeCandidateOnly": true,
   "noGevPromotion": true,
   "physicistReviewPending": true,
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
-  "targetBlindConstructionHash": "f7f452553a22aa35de0c167f76f048e28d5ef6024e6e8bb5f5bfc62925395fa6",
   "physicalCouplingProvided": false,
   "routeProvidesPhysicalEffectiveActionHessian": false,
   "routeProvidesVevOrSourceScaleLineage": false,
@@ -45,15 +249,11 @@
     "canFillPhase256ObservedFieldExtractionContract": false,
     "phase201FieldsDefensiblyFilled": []
   },
-  "recordedBoundary": {
-    "physicistReviewPending": true,
-    "awaitingImplementation": true
-  },
   "explicitCandidateOnlyNonclaims": [
-    "STEP 0 skeleton: zero physics computation; the pre-registered design is recorded in STUDY.md and is not yet implemented or executed.",
-    "The interim terminal is a program-state marker, not a scientific verdict; no measurement, elimination, or promotion is claimed.",
-    "physicistReviewPending = true is carried explicitly; no contract field is filled and nothing is promoted (promotedPhysicalMassClaimCount remains 0)."
+    "This is a completion CONTRACT (a schema), not a completion: no VEV is asserted to exist, and no row is filled.",
+    "The 9 lineage rows are permanently un-completable by WS3 (O8); a workbench measurement can never supply independent source lineage.",
+    "A measured gap proves a singlet, never the named electroweak scalar. Lattice-unit quantities stay in lattice units; promotedPhysicalMassClaimCount remains 0."
   ],
-  "decision": "STEP 0 skeleton for the WS3 VEV-completion contract schema phase (plan item 5). Awaiting the committed schema pinned to the phase434 target-blind-construction hash f5eafcc74583ecdf and the phase256 templateId; the 6/7/4/9 field partition, the five golden fixtures, and the schema-consumption rule are recorded in STUDY.md. wsThreeCannotComplete is permanent on all 9 lineage fields. Nothing is completed or promoted yet.",
-  "runtimeSeconds": 0.0067686
+  "decision": "The WS3-VEV completion contract schema is COMMITTED. Pins to phase434 and phase256 hold; the 6/7/4/9 partition matches the committed structures; all five golden fixtures reproduce their pre-registered outcomes (only the conforming \u003E= 3 sigma weak-doublet fixture completes, and only the amplitude/conditional rows, never lineage); the O8 impossibility cap is machine-asserted on all 9 lineage fields. C\u0027s half of the WS3 hold may lift on the published schema-commit date; the hold fully lifts only jointly with the O4 M-probe ruling. Nothing is measured, completed, or promoted here; promotedPhysicalMassClaimCount remains 0.",
+  "runtimeSeconds": 0.0512016
 }

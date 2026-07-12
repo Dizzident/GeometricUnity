@@ -1,50 +1,47 @@
-# Phase466: WS3 VEV Completion Contract (STEP 0 skeleton)
+# Phase466: WS3 VEV Completion Contract (C-CONTRACT v3)
 
 Team C, plan item 5 (`docs/Phases/WAVE2_ACTION_PLAN_2026-07-12.md`; C-CONTRACT,
-time-critical). STEP 0 **skeleton**: emits the pre-registered interim terminal
-`awaiting-schema` and the standing claim boundary. The schema and mapper are not
-yet implemented. This file pre-registers the contract.
+time-critical). Implemented. See
+`docs/Phases/Implementation/IMPLEMENTATION_P466.md` for the full record.
 
-## Interim terminal
+## The contract
 
-`awaiting-schema` — skeleton only; zero physics compute; nothing completed or
-promoted; `physicistReviewPending = true`.
+Commits the schema a WS3 verdict must satisfy to mechanically complete rows of
+the phase256 intake template. A schema, not a measurement.
 
-## Pre-registered contract (to be implemented)
-
-- **Hash pins.** Hard-pin the phase434 `targetBlindConstructionHash`
-  **`f5eafcc74583ecdf…`** and the phase256 templateId.
-- **Field partition (6/7/4/9).** Recompute the partition into **6** finite-VEV
-  rows, **7** conditional rows, **4** amplitude-blocked rows, and **9**
-  lineage-blocked rows; any drift is a blocking terminal.
-- **Completion map.** The z-field enters only on the labeled `g′²/g² = 3/5`
-  import branch; `branchNormalizationSourceId` appears only as a labeled
-  convention adoption.
-- **Impossibility cap.** `wsThreeCannotComplete = true` is permanent on **all 9
-  lineage fields** (O8 becomes a schema theorem).
-- **O5 guard.** ≥ 3σ from exact free, or no completion.
-- **Consumption rule.** `{schemaId, schemaHash}` is hash-asserted in the
-  integrity script; consumers pin to that pair.
+- **Hash pins.** phase434 `targetBlindConstructionHash` `f5eafcc74583ecdf...`
+  (full) and phase256 `templateId`
+  `observed-field-extraction-wzh-intake-template-v1`; drift => blocking.
+- **Field partition (6/7/4/9).** Recomputed from the committed phase434 ledger
+  and phase256 template (`7 + 4 + 9 = 20`; `extractionRowCount = 6`); drift =>
+  blocking.
+- **VEV intake record** `{direction, magnitudeInLatticeUnits, member, channel,
+  errorModel}` with the O8 M-probe scope note.
+- **Completion map.** A conforming `>= 3 sigma` weak-doublet VEV completes the 7
+  conditional rows and the amplitude rows; the z-amplitude completes ONLY on the
+  labeled `g'^2/g^2 = 3/5` import branch (`branchNormalizationSourceId` as a
+  labeled convention adoption).
+- **Impossibility cap.** `wsThreeCannotComplete = true` machine-asserted on all 9
+  lineage fields (O8 schema theorem).
+- **O5 guard.** `>= 3 sigma` from exact free, or no completion.
+- **Consumption rule.** `{schemaId, schemaHash}` recorded; consumers pin to it.
 
 ## Five golden fixtures (committed BEFORE the mapper)
 
-1. **T-finite-vev** — a finite-VEV completion.
-2. **T-runaway** — a runaway direction.
-3. **T-singlet-wins** — the singlet channel dominates.
-4. **T-inconclusive** — an inconclusive completion.
-5. **adversarial 1.5σ-from-free** — an adversarial near-free case.
+`fixtures/`: `T-finite-vev` (completes), `T-runaway`, `T-singlet-wins` (O8
+singlet flag), `T-inconclusive`, `adversarial-1.5sigma-from-free` (below the O5
+guard). Only the first completes. Any mismatch => `schema-rejected-fixture-failure`
+and the hold stays. Self-scan asserts zero GeV tokens and zero capital
+scalar-label tokens; `templateMutationCount = 0`.
 
-Asserts: template mutation count 0; zero GeV tokens; zero unqualified
-scalar-label tokens. On any fixture failure the schema is REJECTED and the hold
-stays in force — never lifted by weakening an assert.
+## Actual result
 
-## Hold interaction
-
-On green, C's half of the WS3 hold lifts (published schema-commit date); the
-hold fully lifts only jointly with the O4 M-probe ruling. Phase457's null-hash
-firewall pins to this phase's triple in a later no-cascade checkpoint.
+Terminal **`schema-committed`**. `schemaId = ws3-vev-completion-contract-schema-v1`;
+`schemaHash = 7159ea49a45e3044c4393542b24a5db596f5d1423150020b072849ec8cb322b9`.
+On green, C's half of the WS3 hold may lift on the published schema-commit date;
+the hold fully lifts only jointly with the O4 M-probe ruling.
 
 ## Framing
 
-Zero physics computation at STEP 0. Lattice-unit quantities stay in lattice
-units; no GeV/pole/VEV promotion; `promotedPhysicalMassClaimCount = 0`.
+No VEV asserted; no row filled; lattice-unit quantities stay in lattice units;
+`promotedPhysicalMassClaimCount = 0`.

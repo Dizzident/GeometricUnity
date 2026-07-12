@@ -1,27 +1,886 @@
 {
   "phaseId": "phase455-exact-fermionic-backreaction-probe",
-  "generatedAt": "2026-07-12T11:58:45.2719956+00:00",
-  "terminalStatus": "exact-fermionic-backreaction-probe-awaiting-implementation",
-  "interimTerminal": "awaiting-implementation",
-  "verdictKind": "awaiting-implementation",
+  "generatedAt": "2026-07-12T12:47:12.0836868+00:00",
+  "terminalStatus": "exact-fermionic-backreaction-probe-convention-fragile",
+  "verdictKind": "convention-fragile",
   "applicationSubjectKind": "exact-fermionic-backreaction-probe",
   "planSection": "WAVE2_ACTION_PLAN_2026-07-12 item 1",
-  "exactFermionicBackreactionProbeSkeletonBuilt": true,
-  "awaitingImplementation": true,
-  "zeroPhysicsCompute": true,
+  "limbL5Status": "not-closed-by-this-phase",
   "taxonomy": {
-    "t0": "batteries-red-no-verdict",
-    "t1": "fermionic-backreaction-null",
-    "t2": "radiative-well-candidate",
-    "t3": "convention-fragile"
+    "t0": "batteries-failed-no-verdict",
+    "t1": "fermionic-backreaction-null (closes L5; reopening = a source-defined fermionic action)",
+    "t2": "radiative-well-candidate (t* forwarded to the phase456 pack; anchor-free ratios only, never a mass claim)",
+    "t3": "convention-fragile (flip axis routed to the O4 queue)"
   },
-  "limbConsumed": "L5",
+  "committedConventions": {
+    "sBIdentification": "S_B(t*u) := committed phase430 bosonic one-loop determinant W_B(t)=sum log(eps^2\u002Bt^2 m^2) (phase430 Program.cs 230-244); recorded workbench model; modeling choice, physicistReviewPending",
+    "vFConvention": "V_f(t) := committed W_F(t)=-(1/2) sum log lambda^2 (phase428 line 334, phase430 line 225); sign negative; committed -1/2 normalization",
+    "perModeCoefficients": "bosonic \u002B1 per (momentum, nonzero adjoint m^2); fermionic -2*N_f per (momentum, nonzero gauge eigenvalue)",
+    "zeroModeAxis": {
+      "zaPrimary": "symmetric k=0 exclusion: drop every momentum with eps^2 = s1^2\u002Bs2^2 = 0 from both sectors",
+      "zb": "keep k=0; phase447 committed soft floor floorRel default 1e-4 (swept {1e-5,1e-4,1e-3}) at value evaluation",
+      "zc": "keep k=0; exclude only exact zero modes (lambda^2 \u003C= 1e-18, phase428 convention)",
+      "physicistReviewPending": true
+    },
+    "tMax": "pre-registered rational strictly below the first exact fermionic zero-crossing (the V_f log divergence) per (rep, axis)",
+    "normalizationRobustnessNote": "the pre-registration shorthand V_f=-sum log lambda^2 (prefactor -1) doubles the effective N_f relative to the committed -1/2; the derived-row verdict is reported robust/fragile to this rescaling in the occupancy sweep"
+  },
+  "exactFermionicBackreactionProbePassed": true,
+  "batteries": [
+    {
+      "id": "g5",
+      "name": "sturm-battery-on-known-polynomials",
+      "passed": true,
+      "detail": "roots(t^3-6t^2\u002B11t-6,(0,4])=3 (exp 3); roots(t^2-3,(0,2])=1 (exp 1); roots(t^2\u002B1)=0 (exp 0); sqrt3-isolated-with-sign-flip=True"
+    },
+    {
+      "id": "g0",
+      "name": "committed-phase428-spectra-hash-pin",
+      "passed": true,
+      "detail": "present=True passed=True hashMatch=True eigResidual=4.44E-016 rayResidual=4.44E-016"
+    },
+    {
+      "id": "g2",
+      "name": "exact-vs-float-cross-check",
+      "passed": true,
+      "detail": "eigResidual=4.44E-016 rayResidual=4.44E-016"
+    },
+    {
+      "id": "g3",
+      "name": "setwise-evenness-of-pm-k-summed-Vf",
+      "passed": true,
+      "detail": "fundamental/T:even fundamental/S:even adjoint/T:even adjoint/S:even"
+    },
+    {
+      "id": "g4",
+      "name": "synthetic-positive-control-T2-reachable",
+      "passed": true,
+      "detail": "synthetic V\u0027(t)=(t-1)(t-2): interiorMins=1 (exp 1) interiorMaxes=1 (exp 1) -\u003E T2 detectable"
+    },
+    {
+      "id": "g6",
+      "name": "convention-flip-matrix-Za-Zb-Zc",
+      "passed": true,
+      "detail": "derived N_f=4 hasWell per axis: T[Za=False,Zb=True,Zc=True] D[Za=False,Zb=True,Zc=True] S[Za=False,Zb=False,Zc=False] -\u003E conventionFragile=True"
+    },
+    {
+      "id": "g1",
+      "name": "perturbativity-Nf-Vf-le-2-SB-C2",
+      "passed": true,
+      "detail": "derived-verdict-rows-bound-satisfied=True marginalWithin10pct=False; imported-3-family(non-gating) maxRatio=1.440 pass=False"
+    }
+  ],
+  "anyBatteryRed": false,
+  "verdictBearingRows": [
+    {
+      "rep": "fundamental",
+      "nF": 4,
+      "axis": "T",
+      "convention": "Za",
+      "tMax": 1.99,
+      "stationarityPolyDegree": 16,
+      "stationaryPoints": [
+        {
+          "isolatingIntervalLo": 0.9317318998279416,
+          "isolatingIntervalHi": 0.9317318998288465,
+          "depthKind": "max-barrier",
+          "valueAtRoot": 11.313148474287292,
+          "dipsBelowOrigin": false
+        },
+        {
+          "isolatingIntervalLo": 1.6190031173077797,
+          "isolatingIntervalHi": 1.6190031173086845,
+          "depthKind": "min-well",
+          "valueAtRoot": 1.920449518676449,
+          "dipsBelowOrigin": false
+        }
+      ],
+      "hasNegativeDepthWell": false
+    },
+    {
+      "rep": "fundamental",
+      "nF": 4,
+      "axis": "D",
+      "convention": "Za",
+      "tMax": 1.99,
+      "stationarityPolyDegree": 16,
+      "stationaryPoints": [
+        {
+          "isolatingIntervalLo": 0.9317318998279416,
+          "isolatingIntervalHi": 0.9317318998288465,
+          "depthKind": "max-barrier",
+          "valueAtRoot": 11.313148474287292,
+          "dipsBelowOrigin": false
+        },
+        {
+          "isolatingIntervalLo": 1.6190031173077797,
+          "isolatingIntervalHi": 1.6190031173086845,
+          "depthKind": "min-well",
+          "valueAtRoot": 1.920449518676449,
+          "dipsBelowOrigin": false
+        }
+      ],
+      "hasNegativeDepthWell": false
+    },
+    {
+      "rep": "fundamental",
+      "nF": 4,
+      "axis": "S",
+      "convention": "Za",
+      "tMax": 1.73,
+      "stationarityPolyDegree": 22,
+      "stationaryPoints": [
+        {
+          "isolatingIntervalLo": 0.9760055572293687,
+          "isolatingIntervalHi": 0.9760055572301554,
+          "depthKind": "max-barrier",
+          "valueAtRoot": 11.604893287203708,
+          "dipsBelowOrigin": false
+        },
+        {
+          "isolatingIntervalLo": 1.4176724559054583,
+          "isolatingIntervalHi": 1.417672455906245,
+          "depthKind": "min-well",
+          "valueAtRoot": 9.144623161037337,
+          "dipsBelowOrigin": false
+        }
+      ],
+      "hasNegativeDepthWell": false
+    }
+  ],
+  "verdictRowProvenance": [
+    {
+      "rep": "fundamental",
+      "nF": 4,
+      "provenance": "derived-single-family"
+    }
+  ],
+  "zaPrimaryArm": {
+    "note": "Z-a PRIMARY (symmetric k=0 exclusion): the derived N_f=4 content, perturbatively controlled (g1), has no below-origin well on any axis.",
+    "zaPrimaryNoWell": true,
+    "zaPrimaryWouldBeT1": true
+  },
+  "o4RoutedFlipAxis": "zero-mode-convention Z-a(symmetric k=0 exclusion) vs Z-b/Z-c(keep k=0): the below-origin-well verdict on the T/D axes flips; routed to the O4 physicist-adjudication queue",
+  "o4QueueItems": [
+    "zero-mode-convention-flip-axis",
+    "sb-workbench-model-choice-w430"
+  ],
+  "conventionFlipMatrix": [
+    {
+      "rep": "fundamental",
+      "nF": 4,
+      "axis": "T",
+      "convention": "Za",
+      "tMax": 1.99,
+      "stationarityPolyDegree": 16,
+      "stationaryPoints": [
+        {
+          "isolatingIntervalLo": 0.9317318998279416,
+          "isolatingIntervalHi": 0.9317318998288465,
+          "depthKind": "max-barrier",
+          "valueAtRoot": 11.313148474287292,
+          "dipsBelowOrigin": false
+        },
+        {
+          "isolatingIntervalLo": 1.6190031173077797,
+          "isolatingIntervalHi": 1.6190031173086845,
+          "depthKind": "min-well",
+          "valueAtRoot": 1.920449518676449,
+          "dipsBelowOrigin": false
+        }
+      ],
+      "hasNegativeDepthWell": false
+    },
+    {
+      "rep": "fundamental",
+      "nF": 4,
+      "axis": "D",
+      "convention": "Za",
+      "tMax": 1.99,
+      "stationarityPolyDegree": 16,
+      "stationaryPoints": [
+        {
+          "isolatingIntervalLo": 0.9317318998279416,
+          "isolatingIntervalHi": 0.9317318998288465,
+          "depthKind": "max-barrier",
+          "valueAtRoot": 11.313148474287292,
+          "dipsBelowOrigin": false
+        },
+        {
+          "isolatingIntervalLo": 1.6190031173077797,
+          "isolatingIntervalHi": 1.6190031173086845,
+          "depthKind": "min-well",
+          "valueAtRoot": 1.920449518676449,
+          "dipsBelowOrigin": false
+        }
+      ],
+      "hasNegativeDepthWell": false
+    },
+    {
+      "rep": "fundamental",
+      "nF": 4,
+      "axis": "S",
+      "convention": "Za",
+      "tMax": 1.73,
+      "stationarityPolyDegree": 22,
+      "stationaryPoints": [
+        {
+          "isolatingIntervalLo": 0.9760055572293687,
+          "isolatingIntervalHi": 0.9760055572301554,
+          "depthKind": "max-barrier",
+          "valueAtRoot": 11.604893287203708,
+          "dipsBelowOrigin": false
+        },
+        {
+          "isolatingIntervalLo": 1.4176724559054583,
+          "isolatingIntervalHi": 1.417672455906245,
+          "depthKind": "min-well",
+          "valueAtRoot": 9.144623161037337,
+          "dipsBelowOrigin": false
+        }
+      ],
+      "hasNegativeDepthWell": false
+    },
+    {
+      "rep": "fundamental",
+      "nF": 4,
+      "axis": "T",
+      "convention": "Zb",
+      "tMax": 1.99,
+      "stationarityPolyDegree": 18,
+      "stationaryPoints": [
+        {
+          "isolatingIntervalLo": 1.758137356533407,
+          "isolatingIntervalHi": 1.758137356534312,
+          "depthKind": "min-well",
+          "valueAtRoot": -18.408321664481647,
+          "dipsBelowOrigin": true
+        }
+      ],
+      "hasNegativeDepthWell": true
+    },
+    {
+      "rep": "fundamental",
+      "nF": 4,
+      "axis": "D",
+      "convention": "Zb",
+      "tMax": 1.99,
+      "stationarityPolyDegree": 18,
+      "stationaryPoints": [
+        {
+          "isolatingIntervalLo": 1.758137356533407,
+          "isolatingIntervalHi": 1.758137356534312,
+          "depthKind": "min-well",
+          "valueAtRoot": -18.408321664481647,
+          "dipsBelowOrigin": true
+        }
+      ],
+      "hasNegativeDepthWell": true
+    },
+    {
+      "rep": "fundamental",
+      "nF": 4,
+      "axis": "S",
+      "convention": "Zb",
+      "tMax": 1.73,
+      "stationarityPolyDegree": 24,
+      "stationaryPoints": [
+        {
+          "isolatingIntervalLo": 1.6304201273048011,
+          "isolatingIntervalHi": 1.6304201273055878,
+          "depthKind": "min-well",
+          "valueAtRoot": 60.262209990244514,
+          "dipsBelowOrigin": false
+        }
+      ],
+      "hasNegativeDepthWell": false
+    },
+    {
+      "rep": "fundamental",
+      "nF": 4,
+      "axis": "T",
+      "convention": "Zc",
+      "tMax": 1.99,
+      "stationarityPolyDegree": 18,
+      "stationaryPoints": [
+        {
+          "isolatingIntervalLo": 1.758137356533407,
+          "isolatingIntervalHi": 1.758137356534312,
+          "depthKind": "min-well",
+          "valueAtRoot": -18.408321664481647,
+          "dipsBelowOrigin": true
+        }
+      ],
+      "hasNegativeDepthWell": true
+    },
+    {
+      "rep": "fundamental",
+      "nF": 4,
+      "axis": "D",
+      "convention": "Zc",
+      "tMax": 1.99,
+      "stationarityPolyDegree": 18,
+      "stationaryPoints": [
+        {
+          "isolatingIntervalLo": 1.758137356533407,
+          "isolatingIntervalHi": 1.758137356534312,
+          "depthKind": "min-well",
+          "valueAtRoot": -18.408321664481647,
+          "dipsBelowOrigin": true
+        }
+      ],
+      "hasNegativeDepthWell": true
+    },
+    {
+      "rep": "fundamental",
+      "nF": 4,
+      "axis": "S",
+      "convention": "Zc",
+      "tMax": 1.73,
+      "stationarityPolyDegree": 24,
+      "stationaryPoints": [
+        {
+          "isolatingIntervalLo": 1.6304201273048011,
+          "isolatingIntervalHi": 1.6304201273055878,
+          "depthKind": "min-well",
+          "valueAtRoot": 60.262209990244514,
+          "dipsBelowOrigin": false
+        }
+      ],
+      "hasNegativeDepthWell": false
+    }
+  ],
+  "conventionFragile": true,
+  "importedThreeFamilyRowsNonGating": {
+    "provenance": "n_f=3 is an IMPORTED observed structural parameter (Phase433 familyCountIsImportedStructuralParameter=true), NOT derived; recorded, never in a terminal conjunct.",
+    "nF": 12,
+    "rows": [
+      {
+        "rep": "fundamental",
+        "nF": 12,
+        "axis": "T",
+        "convention": "Za",
+        "tMax": 1.99,
+        "stationarityPolyDegree": 16,
+        "stationaryPoints": [
+          {
+            "isolatingIntervalLo": 0.5538514358861812,
+            "isolatingIntervalHi": 0.5538514358870862,
+            "depthKind": "max-barrier",
+            "valueAtRoot": 4.4906724961505375,
+            "dipsBelowOrigin": false
+          },
+          {
+            "isolatingIntervalLo": 1.7170552216780015,
+            "isolatingIntervalHi": 1.7170552216789066,
+            "depthKind": "min-well",
+            "valueAtRoot": -94.56148715649407,
+            "dipsBelowOrigin": true
+          }
+        ],
+        "hasNegativeDepthWell": true
+      },
+      {
+        "rep": "fundamental",
+        "nF": 12,
+        "axis": "D",
+        "convention": "Za",
+        "tMax": 1.99,
+        "stationarityPolyDegree": 16,
+        "stationaryPoints": [
+          {
+            "isolatingIntervalLo": 0.5538514358861812,
+            "isolatingIntervalHi": 0.5538514358870862,
+            "depthKind": "max-barrier",
+            "valueAtRoot": 4.4906724961505375,
+            "dipsBelowOrigin": false
+          },
+          {
+            "isolatingIntervalLo": 1.7170552216780015,
+            "isolatingIntervalHi": 1.7170552216789066,
+            "depthKind": "min-well",
+            "valueAtRoot": -94.56148715649407,
+            "dipsBelowOrigin": true
+          }
+        ],
+        "hasNegativeDepthWell": true
+      },
+      {
+        "rep": "fundamental",
+        "nF": 12,
+        "axis": "S",
+        "convention": "Za",
+        "tMax": 1.73,
+        "stationarityPolyDegree": 22,
+        "stationaryPoints": [
+          {
+            "isolatingIntervalLo": 0.5561167891383502,
+            "isolatingIntervalHi": 0.556116789139137,
+            "depthKind": "max-barrier",
+            "valueAtRoot": 4.501456845918627,
+            "dipsBelowOrigin": false
+          },
+          {
+            "isolatingIntervalLo": 1.5323410853496353,
+            "isolatingIntervalHi": 1.532341085350422,
+            "depthKind": "min-well",
+            "valueAtRoot": -54.38412156849473,
+            "dipsBelowOrigin": true
+          }
+        ],
+        "hasNegativeDepthWell": true
+      }
+    ],
+    "perturbativityNonGating": [
+      {
+        "axis": "T",
+        "maxRatio": 1.440133233701774,
+        "passed": false
+      },
+      {
+        "axis": "D",
+        "maxRatio": 1.440133233701774,
+        "passed": false
+      },
+      {
+        "axis": "S",
+        "maxRatio": 1.1529609352469237,
+        "passed": false
+      }
+    ],
+    "observation": "for the imported 3-family count the one-loop backreaction is non-perturbative (g1 bound violated) and a below-origin well appears on all axes; outside the derived content and the controlled regime, so it decides nothing."
+  },
+  "occupancySweepRobustnessOnly": [
+    {
+      "rep": "fundamental",
+      "nF": 1,
+      "axis": "S",
+      "convention": "Za",
+      "tMax": 1.73,
+      "stationarityPolyDegree": 22,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false
+    },
+    {
+      "rep": "fundamental",
+      "nF": 2,
+      "axis": "S",
+      "convention": "Za",
+      "tMax": 1.73,
+      "stationarityPolyDegree": 22,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false
+    },
+    {
+      "rep": "fundamental",
+      "nF": 3,
+      "axis": "S",
+      "convention": "Za",
+      "tMax": 1.73,
+      "stationarityPolyDegree": 22,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false
+    },
+    {
+      "rep": "fundamental",
+      "nF": 4,
+      "axis": "S",
+      "convention": "Za",
+      "tMax": 1.73,
+      "stationarityPolyDegree": 22,
+      "stationaryPoints": [
+        {
+          "isolatingIntervalLo": 0.9760055572293687,
+          "isolatingIntervalHi": 0.9760055572301554,
+          "depthKind": "max-barrier",
+          "valueAtRoot": 11.604893287203708,
+          "dipsBelowOrigin": false
+        },
+        {
+          "isolatingIntervalLo": 1.4176724559054583,
+          "isolatingIntervalHi": 1.417672455906245,
+          "depthKind": "min-well",
+          "valueAtRoot": 9.144623161037337,
+          "dipsBelowOrigin": false
+        }
+      ],
+      "hasNegativeDepthWell": false
+    },
+    {
+      "rep": "fundamental",
+      "nF": 5,
+      "axis": "S",
+      "convention": "Za",
+      "tMax": 1.73,
+      "stationarityPolyDegree": 22,
+      "stationaryPoints": [
+        {
+          "isolatingIntervalLo": 0.8518950850646979,
+          "isolatingIntervalHi": 0.8518950850654846,
+          "depthKind": "max-barrier",
+          "valueAtRoot": 9.535134200201146,
+          "dipsBelowOrigin": false
+        },
+        {
+          "isolatingIntervalLo": 1.4676482556409383,
+          "isolatingIntervalHi": 1.467648255641725,
+          "depthKind": "min-well",
+          "valueAtRoot": 1.5815382836597038,
+          "dipsBelowOrigin": false
+        }
+      ],
+      "hasNegativeDepthWell": false
+    },
+    {
+      "rep": "fundamental",
+      "nF": 6,
+      "axis": "S",
+      "convention": "Za",
+      "tMax": 1.73,
+      "stationarityPolyDegree": 22,
+      "stationaryPoints": [
+        {
+          "isolatingIntervalLo": 0.7736199313480074,
+          "isolatingIntervalHi": 0.7736199313487941,
+          "depthKind": "max-barrier",
+          "valueAtRoot": 8.157613709112114,
+          "dipsBelowOrigin": false
+        },
+        {
+          "isolatingIntervalLo": 1.4909827916795257,
+          "isolatingIntervalHi": 1.4909827916803124,
+          "depthKind": "min-well",
+          "valueAtRoot": -6.23898479891718,
+          "dipsBelowOrigin": true
+        }
+      ],
+      "hasNegativeDepthWell": true
+    },
+    {
+      "rep": "fundamental",
+      "nF": 7,
+      "axis": "S",
+      "convention": "Za",
+      "tMax": 1.73,
+      "stationarityPolyDegree": 22,
+      "stationaryPoints": [
+        {
+          "isolatingIntervalLo": 0.7165633201642185,
+          "isolatingIntervalHi": 0.7165633201650052,
+          "depthKind": "max-barrier",
+          "valueAtRoot": 7.15501051961755,
+          "dipsBelowOrigin": false
+        },
+        {
+          "isolatingIntervalLo": 1.5047835726320682,
+          "isolatingIntervalHi": 1.504783572632855,
+          "depthKind": "min-well",
+          "valueAtRoot": -14.170986228532534,
+          "dipsBelowOrigin": true
+        }
+      ],
+      "hasNegativeDepthWell": true
+    },
+    {
+      "rep": "fundamental",
+      "nF": 8,
+      "axis": "S",
+      "convention": "Za",
+      "tMax": 1.73,
+      "stationarityPolyDegree": 22,
+      "stationaryPoints": [
+        {
+          "isolatingIntervalLo": 0.67197788598643,
+          "isolatingIntervalHi": 0.6719778859872167,
+          "depthKind": "max-barrier",
+          "valueAtRoot": 6.385623894058652,
+          "dipsBelowOrigin": false
+        },
+        {
+          "isolatingIntervalLo": 1.513956337001905,
+          "isolatingIntervalHi": 1.5139563370026918,
+          "depthKind": "min-well",
+          "valueAtRoot": -22.162475999992793,
+          "dipsBelowOrigin": true
+        }
+      ],
+      "hasNegativeDepthWell": true
+    },
+    {
+      "rep": "fundamental",
+      "nF": 9,
+      "axis": "S",
+      "convention": "Za",
+      "tMax": 1.73,
+      "stationarityPolyDegree": 22,
+      "stationaryPoints": [
+        {
+          "isolatingIntervalLo": 0.6356240662810433,
+          "isolatingIntervalHi": 0.63562406628183,
+          "depthKind": "max-barrier",
+          "valueAtRoot": 5.773420960013619,
+          "dipsBelowOrigin": false
+        },
+        {
+          "isolatingIntervalLo": 1.5205103903835788,
+          "isolatingIntervalHi": 1.5205103903843655,
+          "depthKind": "min-well",
+          "valueAtRoot": -30.189678138298504,
+          "dipsBelowOrigin": true
+        }
+      ],
+      "hasNegativeDepthWell": true
+    },
+    {
+      "rep": "fundamental",
+      "nF": 10,
+      "axis": "S",
+      "convention": "Za",
+      "tMax": 1.73,
+      "stationarityPolyDegree": 22,
+      "stationaryPoints": [
+        {
+          "isolatingIntervalLo": 0.6051060081856804,
+          "isolatingIntervalHi": 0.6051060081864671,
+          "depthKind": "max-barrier",
+          "valueAtRoot": 5.273084723377773,
+          "dipsBelowOrigin": false
+        },
+        {
+          "isolatingIntervalLo": 1.525432776873763,
+          "isolatingIntervalHi": 1.5254327768745497,
+          "depthKind": "min-well",
+          "valueAtRoot": -38.24006562894458,
+          "dipsBelowOrigin": true
+        }
+      ],
+      "hasNegativeDepthWell": true
+    },
+    {
+      "rep": "fundamental",
+      "nF": 11,
+      "axis": "S",
+      "convention": "Za",
+      "tMax": 1.73,
+      "stationarityPolyDegree": 22,
+      "stationaryPoints": [
+        {
+          "isolatingIntervalLo": 0.5789337071393993,
+          "isolatingIntervalHi": 0.578933707140186,
+          "depthKind": "max-barrier",
+          "valueAtRoot": 4.855614753104744,
+          "dipsBelowOrigin": false
+        },
+        {
+          "isolatingIntervalLo": 1.5292678002479807,
+          "isolatingIntervalHi": 1.5292678002487674,
+          "depthKind": "min-well",
+          "valueAtRoot": -46.30638155334718,
+          "dipsBelowOrigin": true
+        }
+      ],
+      "hasNegativeDepthWell": true
+    },
+    {
+      "rep": "fundamental",
+      "nF": 12,
+      "axis": "S",
+      "convention": "Za",
+      "tMax": 1.73,
+      "stationarityPolyDegree": 22,
+      "stationaryPoints": [
+        {
+          "isolatingIntervalLo": 0.5561167891383502,
+          "isolatingIntervalHi": 0.556116789139137,
+          "depthKind": "max-barrier",
+          "valueAtRoot": 4.501456845918627,
+          "dipsBelowOrigin": false
+        },
+        {
+          "isolatingIntervalLo": 1.5323410853496353,
+          "isolatingIntervalHi": 1.532341085350422,
+          "depthKind": "min-well",
+          "valueAtRoot": -54.38412156849473,
+          "dipsBelowOrigin": true
+        }
+      ],
+      "hasNegativeDepthWell": true
+    },
+    {
+      "rep": "fundamental",
+      "nF": 13,
+      "axis": "S",
+      "convention": "Za",
+      "tMax": 1.73,
+      "stationarityPolyDegree": 22,
+      "stationaryPoints": [
+        {
+          "isolatingIntervalLo": 0.5359637242066992,
+          "isolatingIntervalHi": 0.535963724207486,
+          "depthKind": "max-barrier",
+          "valueAtRoot": 4.1968827527204855,
+          "dipsBelowOrigin": false
+        },
+        {
+          "isolatingIntervalLo": 1.5348596842885127,
+          "isolatingIntervalHi": 1.5348596842892994,
+          "depthKind": "min-well",
+          "valueAtRoot": -62.470338080341385,
+          "dipsBelowOrigin": true
+        }
+      ],
+      "hasNegativeDepthWell": true
+    },
+    {
+      "rep": "fundamental",
+      "nF": 14,
+      "axis": "S",
+      "convention": "Za",
+      "tMax": 1.73,
+      "stationarityPolyDegree": 22,
+      "stationaryPoints": [
+        {
+          "isolatingIntervalLo": 0.5179728772766703,
+          "isolatingIntervalHi": 0.517972877277457,
+          "depthKind": "max-barrier",
+          "valueAtRoot": 3.931937742103658,
+          "dipsBelowOrigin": false
+        },
+        {
+          "isolatingIntervalLo": 1.5369616713769165,
+          "isolatingIntervalHi": 1.5369616713777032,
+          "depthKind": "min-well",
+          "valueAtRoot": -70.56301957086316,
+          "dipsBelowOrigin": true
+        }
+      ],
+      "hasNegativeDepthWell": true
+    },
+    {
+      "rep": "fundamental",
+      "nF": 15,
+      "axis": "S",
+      "convention": "Za",
+      "tMax": 1.73,
+      "stationarityPolyDegree": 22,
+      "stationaryPoints": [
+        {
+          "isolatingIntervalLo": 0.5017690994798795,
+          "isolatingIntervalHi": 0.5017690994806663,
+          "depthKind": "max-barrier",
+          "valueAtRoot": 3.6992091036113113,
+          "dipsBelowOrigin": false
+        },
+        {
+          "isolatingIntervalLo": 1.5387427163079155,
+          "isolatingIntervalHi": 1.5387427163087022,
+          "depthKind": "min-well",
+          "valueAtRoot": -78.66074557968831,
+          "dipsBelowOrigin": true
+        }
+      ],
+      "hasNegativeDepthWell": true
+    },
+    {
+      "rep": "fundamental",
+      "nF": 16,
+      "axis": "S",
+      "convention": "Za",
+      "tMax": 1.73,
+      "stationarityPolyDegree": 22,
+      "stationaryPoints": [
+        {
+          "isolatingIntervalLo": 0.4870647420852356,
+          "isolatingIntervalHi": 0.4870647420860223,
+          "depthKind": "max-barrier",
+          "valueAtRoot": 3.493052779229574,
+          "dipsBelowOrigin": false
+        },
+        {
+          "isolatingIntervalLo": 1.540271230113699,
+          "isolatingIntervalHi": 1.5402712301144856,
+          "depthKind": "min-well",
+          "valueAtRoot": -86.76248408632904,
+          "dipsBelowOrigin": true
+        }
+      ],
+      "hasNegativeDepthWell": true
+    },
+    {
+      "rep": "adjoint",
+      "nF": 1,
+      "axis": "S",
+      "convention": "Za",
+      "tMax": 1.14,
+      "stationarityPolyDegree": 12,
+      "stationaryPoints": [
+        {
+          "isolatingIntervalLo": 0.4867661723434958,
+          "isolatingIntervalHi": 0.4867661723440142,
+          "depthKind": "max-barrier",
+          "valueAtRoot": 3.303093611987924,
+          "dipsBelowOrigin": false
+        },
+        {
+          "isolatingIntervalLo": 0.932929236050777,
+          "isolatingIntervalHi": 0.9329292360512954,
+          "depthKind": "min-well",
+          "valueAtRoot": -2.35372878193229,
+          "dipsBelowOrigin": true
+        }
+      ],
+      "hasNegativeDepthWell": true
+    }
+  ],
+  "g1Perturbativity": {
+    "boundConstantC": 2,
+    "allRowsSatisfied": true,
+    "marginalWithin10Pct": false,
+    "rows": [
+      {
+        "rep": "fundamental",
+        "nf": 4,
+        "provenance": "derived-single-family",
+        "axis": "T",
+        "tStar": 0.9317318998283941,
+        "maxRatio": 0.228266894985969,
+        "endpointRatio": 0.228266894985969,
+        "passed": true,
+        "marginal": false
+      },
+      {
+        "rep": "fundamental",
+        "nf": 4,
+        "provenance": "derived-single-family",
+        "axis": "D",
+        "tStar": 0.9317318998283941,
+        "maxRatio": 0.228266894985969,
+        "endpointRatio": 0.228266894985969,
+        "passed": true,
+        "marginal": false
+      },
+      {
+        "rep": "fundamental",
+        "nf": 4,
+        "provenance": "derived-single-family",
+        "axis": "S",
+        "tStar": 0.976005557229762,
+        "maxRatio": 0.23789400786577058,
+        "endpointRatio": 0.23789400786577058,
+        "passed": true,
+        "marginal": false
+      }
+    ]
+  },
+  "tStarForwardedToPhase456Pack": [],
+  "criticalCouplingColumnInTerminalConjunct": false,
   "scaleIsWorkbenchRelativeCandidateOnly": true,
   "noGevPromotion": true,
   "physicistReviewPending": true,
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
-  "targetBlindConstructionHash": "d00aee049b8823e54bbedc78292fc61d5781eb29e48e46030463f01bd01f3e81",
+  "targetBlindConstructionHash": "235c328cc3330cf809df6c0005c746970ec12d782a47bdb37cee26a02152da1b",
+  "promotedPhysicalMassClaimCount": 0,
   "physicalCouplingProvided": false,
   "routeProvidesPhysicalEffectiveActionHessian": false,
   "routeProvidesVevOrSourceScaleLineage": false,
@@ -43,15 +902,18 @@
     "canFillPhase256ObservedFieldExtractionContract": false,
     "phase201FieldsDefensiblyFilled": []
   },
-  "recordedBoundary": {
-    "physicistReviewPending": true,
-    "awaitingImplementation": true
+  "sourceEvidence": {
+    "phase428SummaryPath": "studies/phase428_fermion_loop_block_selection_no_go_probe_001/output/fermion_loop_block_selection_no_go_probe_summary.json",
+    "phase404SummaryPath": "studies/phase404_gu_embedding_chain_coupling_ratio_enumeration_001/output/gu_embedding_chain_coupling_ratio_enumeration_summary.json",
+    "phase430SummaryPath": "studies/phase430_net_one_loop_direction_selection_probe_001/output/net_one_loop_direction_selection_probe_summary.json",
+    "phase433SummaryPath": "studies/phase433_blind_beta_coefficient_running_ledger_001/output/blind_beta_coefficient_running_ledger_summary.json"
   },
   "explicitCandidateOnlyNonclaims": [
-    "STEP 0 skeleton: zero physics computation; the pre-registered design is recorded in STUDY.md and is not yet implemented or executed.",
-    "The interim terminal is a program-state marker, not a scientific verdict; no measurement, elimination, or promotion is claimed.",
-    "physicistReviewPending = true is carried explicitly; no contract field is filled and nothing is promoted (promotedPhysicalMassClaimCount remains 0)."
+    "Every t and every V(t), S_B, V_f is a workbench-relative structure of the reduced su(3) slice in lattice units; no quantity is a physical mass and none is promoted (promotedPhysicalMassClaimCount = 0).",
+    "S_B is the committed phase430 bosonic one-loop determinant (a recorded workbench model, only its mode-count arithmetic is exact) and its identification as S_B is a pre-registered modeling choice; physicistReviewPending.",
+    "The zero-mode conventions Z-a/Z-b/Z-c are pre-registered conventions, not source-defined physics; the convention axis is a robustness probe and any flip routes to the O4 queue.",
+    "The critical-coupling column appears in NO terminal conjunct; the occupancy sweep is robustness-only and never verdict-bearing.",
+    "No Phase201 or Phase256 field is filled."
   ],
-  "decision": "STEP 0 skeleton for the exact fermionic backreaction probe (plan item 1). Awaiting implementation of the pre-registered T0-T3 taxonomy on the committed phase428 closed-form spectra; no physics is computed yet and nothing is promoted.",
-  "runtimeSeconds": 0.0070087
+  "runtimeSeconds": 0.5284554
 }

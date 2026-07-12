@@ -1,0 +1,22 @@
+{
+  "fixtureId": "T-runaway",
+  "description": "A runaway direction: no finite VEV magnitude exists (unbounded descent). Even at high stated significance the schema must NOT complete any row; the absence of a finite magnitude is disqualifying.",
+  "vevIntake": {
+    "direction": "unbounded-descent",
+    "magnitudeInLatticeUnits": null,
+    "member": "identity-branch-doublet",
+    "channel": "doublet",
+    "errorModel": "jackknife-covariance",
+    "sigmaFromExactFreeControl": 4.0,
+    "branchNormalizationSourceId": null
+  },
+  "expected": {
+    "completes": false,
+    "completedConditionalFields": 0,
+    "completedAmplitudeFields": 0,
+    "zAmplitudeCompleted": false,
+    "completedLineageFields": 0,
+    "singletFlag": false,
+    "outcomeClass": "runaway-no-completion"
+  }
+}

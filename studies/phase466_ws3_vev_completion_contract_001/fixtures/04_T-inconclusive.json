@@ -1,0 +1,22 @@
+{
+  "fixtureId": "T-inconclusive",
+  "description": "A finite-magnitude candidate above the O5 guard, but the breaking direction and member are unresolved: the intake does not determine which weak-doublet direction condenses. The schema must NOT complete; the record is inconclusive.",
+  "vevIntake": {
+    "direction": "unresolved",
+    "magnitudeInLatticeUnits": 1.3,
+    "member": "unresolved",
+    "channel": "doublet",
+    "errorModel": "jackknife-covariance",
+    "sigmaFromExactFreeControl": 3.4,
+    "branchNormalizationSourceId": "labeled-gprime2-over-g2-three-fifths-import"
+  },
+  "expected": {
+    "completes": false,
+    "completedConditionalFields": 0,
+    "completedAmplitudeFields": 0,
+    "zAmplitudeCompleted": false,
+    "completedLineageFields": 0,
+    "singletFlag": false,
+    "outcomeClass": "inconclusive-no-completion"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "fixtureId": "T-finite-vev",
+  "description": "A conforming finite-VEV completion in the electroweak weak-doublet channel with the labeled g'^2/g^2 = 3/5 import branch adopted, at >= 3 sigma from the exact free control. The schema completes the 7 conditional rows and all 4 amplitude rows (z-amplitude included via the import); the 9 lineage rows remain permanently blocked.",
+  "vevIntake": {
+    "direction": "su2-doublet-neutral",
+    "magnitudeInLatticeUnits": 1.7,
+    "member": "identity-branch-doublet",
+    "channel": "doublet",
+    "errorModel": "jackknife-covariance",
+    "sigmaFromExactFreeControl": 5.2,
+    "branchNormalizationSourceId": "labeled-gprime2-over-g2-three-fifths-import"
+  },
+  "expected": {
+    "completes": true,
+    "completedConditionalFields": 7,
+    "completedAmplitudeFields": 4,
+    "zAmplitudeCompleted": true,
+    "completedLineageFields": 0,
+    "singletFlag": false,
+    "outcomeClass": "finite-vev-convention-scoped-completion"
+  }
+}

@@ -5509,18 +5509,21 @@ if (sourceLineageMissing) {
   assert(phase461.sourceContractApplicationAllowed === false && phase461.canFillPhase201WzContract === false && phase461.canFillPhase201HiggsContract === false && phase461.canFillPhase256ObservedFieldExtractionContract === false, "Phase461 cannot fill Phase201 or Phase256 contracts.");
   assert(phase461.routePromotesWzMasses === false && phase461.routePromotesHiggsMass === false && phase461.routeCompletesBosonPredictions === false, "Phase461 cannot promote boson predictions.");
   assert(phase101Package?.dimensionalTransmutationReadingMenu?.dimensionalTransmutationReadingMenuPassed === true, "Phase101 must include the Phase461 block.");
-  // Phase455 -- Wave-2 STEP 0 skeleton (exact-fermionic-backreaction-probe): interim terminal awaiting-implementation.
-  assert(phase455.exactFermionicBackreactionProbeSkeletonBuilt === true, "Phase455 skeleton must be built with its standing claim boundary intact.");
+  // Phase455 -- Wave-2 first result (exact-fermionic-backreaction-probe): real terminal convention-fragile (T3); L5 stays open.
+  assert(phase455.exactFermionicBackreactionProbePassed === true, "Phase455 exact-fermionic-backreaction probe must pass its batteries.");
   assert(phase455.applicationSubjectKind === "exact-fermionic-backreaction-probe", "Phase455 must classify its subject as exact-fermionic-backreaction-probe.");
-  assert(phase455.interimTerminal === "awaiting-implementation", "Phase455 must emit its pre-registered interim terminal awaiting-implementation.");
-  assert(phase455.verdictKind === "awaiting-implementation", "Phase455 verdictKind must equal its interim terminal.");
-  assert(phase455.planSection === "WAVE2_ACTION_PLAN_2026-07-12 item 1", "Phase455 must cite its plan item.");
+  assert(phase455.terminalStatus === "exact-fermionic-backreaction-probe-convention-fragile", "Phase455 must emit its real terminal exact-fermionic-backreaction-probe-convention-fragile.");
+  assert(phase455.verdictKind === "convention-fragile", "Phase455 verdictKind must be convention-fragile.");
+  assert(phase455.anyBatteryRed === false, "Phase455 must carry no red battery.");
+  assert(Array.isArray(phase455.o4QueueItems) && phase455.o4QueueItems.includes("zero-mode-convention-flip-axis") && phase455.o4QueueItems.includes("sb-workbench-model-choice-w430"), "Phase455 must route both flip axes to the O4 queue.");
+  assert(phase455.criticalCouplingColumnInTerminalConjunct === false, "Phase455 critical-coupling column must appear in no terminal conjunct.");
+  assert(phase455.scaleIsWorkbenchRelativeCandidateOnly === true, "Phase455 scale must stay a workbench-relative candidate only.");
   assert(phase455.targetBlindConstruction === true, "Phase455 must be target-blind.");
   assert(phase455.physicistReviewPending === true, "Phase455 must carry physicistReviewPending explicitly.");
   assert(phase455.noGevPromotion === true, "Phase455 must keep the no-GeV boundary.");
   assert(phase455.sourceContractApplicationAllowed === false && phase455.canFillPhase201WzContract === false && phase455.canFillPhase201HiggsContract === false && phase455.canFillPhase256ObservedFieldExtractionContract === false, "Phase455 cannot fill Phase201 or Phase256 contracts.");
   assert(phase455.routePromotesWzMasses === false && phase455.routePromotesHiggsMass === false && phase455.routeCompletesBosonPredictions === false, "Phase455 cannot promote boson predictions.");
-  assert(phase101Package?.exactFermionicBackreactionProbe?.exactFermionicBackreactionProbeSkeletonBuilt === true, "Phase101 must include the Phase455 block.");
+  assert(phase101Package?.exactFermionicBackreactionProbe?.status === "exact-fermionic-backreaction-probe-convention-fragile", "Phase101 must include the Phase455 block at its real terminal.");
   // Phase456 -- Wave-2 STEP 0 skeleton (consolidated-n4-launch): interim terminal awaiting-pack.
   assert(phase456.consolidatedN4LaunchSkeletonBuilt === true, "Phase456 skeleton must be built with its standing claim boundary intact.");
   assert(phase456.applicationSubjectKind === "consolidated-n4-launch", "Phase456 must classify its subject as consolidated-n4-launch.");
@@ -5557,66 +5560,79 @@ if (sourceLineageMissing) {
   assert(phase458.sourceContractApplicationAllowed === false && phase458.canFillPhase201WzContract === false && phase458.canFillPhase201HiggsContract === false && phase458.canFillPhase256ObservedFieldExtractionContract === false, "Phase458 cannot fill Phase201 or Phase256 contracts.");
   assert(phase458.routePromotesWzMasses === false && phase458.routePromotesHiggsMass === false && phase458.routeCompletesBosonPredictions === false, "Phase458 cannot promote boson predictions.");
   assert(phase101Package?.binderGoNoGoGate?.binderGoNoGoGateSkeletonBuilt === true, "Phase101 must include the Phase458 block.");
-  // Phase462 -- Wave-2 STEP 0 skeleton (blocking-set-resolution): interim terminal awaiting-adjudication.
-  assert(phase462.blockingSetResolutionSkeletonBuilt === true, "Phase462 skeleton must be built with its standing claim boundary intact.");
-  assert(phase462.applicationSubjectKind === "blocking-set-resolution", "Phase462 must classify its subject as blocking-set-resolution.");
-  assert(phase462.interimTerminal === "awaiting-adjudication", "Phase462 must emit its pre-registered interim terminal awaiting-adjudication.");
-  assert(phase462.verdictKind === "awaiting-adjudication", "Phase462 verdictKind must equal its interim terminal.");
-  assert(phase462.planSection === "WAVE2_ACTION_PLAN_2026-07-12 item 2", "Phase462 must cite its plan item.");
-  assert(phase462.targetBlindConstruction === true, "Phase462 must be target-blind.");
+  // Phase462 -- Wave-2 first result (blocking-set-resolution): real terminal pinning-insufficient (30/31 unpinnable).
+  assert(phase462.blockingSetResolutionPassed === true, "Phase462 blocking-set resolution must pass.");
+  assert(phase462.terminalStatus === "blocking-set-resolution-pinning-insufficient", "Phase462 must emit its real terminal blocking-set-resolution-pinning-insufficient.");
+  assert(phase462.verdictKind === "pinning-insufficient", "Phase462 verdictKind must be pinning-insufficient.");
+  assert(phase462.blockingSetCount === 31, "Phase462 blocking set must be 31.");
+  assert(phase462.stagePCoverage?.paPinned === 1 && phase462.stagePCoverage?.pbPinned === 0 && phase462.stagePCoverage?.unpinnable === 30 && phase462.stagePCoverage?.pinningInsufficient === true, "Phase462 Stage-P coverage must be 1 PA-pinned / 0 PB / 30 unpinnable / pinning-insufficient.");
+  assert(phase462.stage0?.closureSensitiveCount === 31, "Phase462 Stage-0 must certify all 31 closure-sensitive.");
+  assert(phase462.stage1?.excisionYield === 0 && phase462.stage1?.pendingAfterStage1 === 31, "Phase462 Stage-1 machine excision must yield 0 with 31 still pending.");
+  assert(phase462.decoy?.decoyBatteryOk === true, "Phase462 decoy battery must pass.");
   assert(phase462.physicistReviewPending === true, "Phase462 must carry physicistReviewPending explicitly.");
   assert(phase462.noGevPromotion === true, "Phase462 must keep the no-GeV boundary.");
-  assert(phase462.sourceContractApplicationAllowed === false && phase462.canFillPhase201WzContract === false && phase462.canFillPhase201HiggsContract === false && phase462.canFillPhase256ObservedFieldExtractionContract === false, "Phase462 cannot fill Phase201 or Phase256 contracts.");
-  assert(phase462.routePromotesWzMasses === false && phase462.routePromotesHiggsMass === false && phase462.routeCompletesBosonPredictions === false, "Phase462 cannot promote boson predictions.");
-  assert(phase101Package?.blockingSetResolution?.blockingSetResolutionSkeletonBuilt === true, "Phase101 must include the Phase462 block.");
-  // Phase463 -- Wave-2 STEP 0 skeleton (transport-structure-theorems): interim terminal awaiting-inputs.
-  assert(phase463.transportStructureTheoremsSkeletonBuilt === true, "Phase463 skeleton must be built with its standing claim boundary intact.");
-  assert(phase463.applicationSubjectKind === "transport-structure-theorems", "Phase463 must classify its subject as transport-structure-theorems.");
-  assert(phase463.interimTerminal === "awaiting-inputs", "Phase463 must emit its pre-registered interim terminal awaiting-inputs.");
-  assert(phase463.verdictKind === "awaiting-inputs", "Phase463 verdictKind must equal its interim terminal.");
-  assert(phase463.planSection === "WAVE2_ACTION_PLAN_2026-07-12 item 3", "Phase463 must cite its plan item.");
-  assert(phase463.targetBlindConstruction === true, "Phase463 must be target-blind.");
+  assert(phase101Package?.blockingSetResolution?.status === "blocking-set-resolution-pinning-insufficient", "Phase101 must include the Phase462 block at its real terminal.");
+  // Phase463 -- Wave-2 first result (transport-structure-theorems): real terminal transport-killed-at-audited-menu.
+  assert(phase463.transportStructureTheoremsPassed === true, "Phase463 transport structure theorems must pass.");
+  assert(phase463.terminalStatus === "transport-structure-theorems-transport-killed-at-audited-menu", "Phase463 must emit its real terminal transport-structure-theorems-transport-killed-at-audited-menu.");
+  assert(phase463.verdictKind === "transport-killed-at-audited-menu", "Phase463 verdictKind must be transport-killed-at-audited-menu.");
+  assert(phase463.t4?.killed === true && phase463.t4?.auditedMenuAllKilled === true && phase463.t4?.syntheticControlInjects === true, "Phase463 T4 must kill the whole audited dim-2 menu with the synthetic control still injecting.");
+  assert(phase463.t1?.abelianConeNonempty === true, "Phase463 T1 abelian cone must be nonempty.");
+  assert(phase463.t2?.t2MotzkinVerified === true, "Phase463 T2 Motzkin counterexample must be verified.");
   assert(phase463.physicistReviewPending === true, "Phase463 must carry physicistReviewPending explicitly.");
   assert(phase463.noGevPromotion === true, "Phase463 must keep the no-GeV boundary.");
-  assert(phase463.sourceContractApplicationAllowed === false && phase463.canFillPhase201WzContract === false && phase463.canFillPhase201HiggsContract === false && phase463.canFillPhase256ObservedFieldExtractionContract === false, "Phase463 cannot fill Phase201 or Phase256 contracts.");
-  assert(phase463.routePromotesWzMasses === false && phase463.routePromotesHiggsMass === false && phase463.routeCompletesBosonPredictions === false, "Phase463 cannot promote boson predictions.");
-  assert(phase101Package?.transportStructureTheorems?.transportStructureTheoremsSkeletonBuilt === true, "Phase101 must include the Phase463 block.");
-  // Phase464 -- Wave-2 STEP 0 skeleton (anchor-adjudication-contract): interim terminal awaiting-upstream.
-  assert(phase464.anchorAdjudicationContractSkeletonBuilt === true, "Phase464 skeleton must be built with its standing claim boundary intact.");
-  assert(phase464.applicationSubjectKind === "anchor-adjudication-contract", "Phase464 must classify its subject as anchor-adjudication-contract.");
-  assert(phase464.interimTerminal === "awaiting-upstream", "Phase464 must emit its pre-registered interim terminal awaiting-upstream.");
-  assert(phase464.verdictKind === "awaiting-upstream", "Phase464 verdictKind must equal its interim terminal.");
-  assert(phase464.planSection === "WAVE2_ACTION_PLAN_2026-07-12 item 12", "Phase464 must cite its plan item.");
-  assert(phase464.targetBlindConstruction === true, "Phase464 must be target-blind.");
+  assert(phase101Package?.transportStructureTheorems?.status === "transport-structure-theorems-transport-killed-at-audited-menu", "Phase101 must include the Phase463 block at its real terminal.");
+  // Phase464 -- Wave-2 first result (anchor-adjudication-contract): real terminal blocked-upstream-ambiguous (C1 unsatisfied).
+  assert(phase464.anchorAdjudicationContractPassed === true, "Phase464 anchor-adjudication contract must pass.");
+  assert(phase464.terminalStatus === "anchor-adjudication-blocked-upstream-ambiguous", "Phase464 must emit its real terminal anchor-adjudication-blocked-upstream-ambiguous.");
+  assert(phase464.verdictKind === "blocked-upstream-ambiguous", "Phase464 verdictKind must be blocked-upstream-ambiguous.");
+  assert(phase464.inputFlipBatteryOk === true, "Phase464 input-flip battery must pass.");
+  assert(phase464.tripwireDenominator === 31, "Phase464 tripwire denominator must be 31.");
+  assert(typeof phase464.emittedSentence === "string" && phase464.emittedSentence.includes("neither supplies nor forbids"), "Phase464 pre-committed sentence must state the corpus neither supplies nor forbids a dimensionful anchor.");
+  assert(phase464.machineMonitorableReopeningFields?.sanctionedAnchorPresent === false && phase464.machineMonitorableReopeningFields?.coercivityCertified === false, "Phase464 machine-monitorable reopening fields must both read false (a flip of either reopens the record).");
   assert(phase464.physicistReviewPending === true, "Phase464 must carry physicistReviewPending explicitly.");
   assert(phase464.noGevPromotion === true, "Phase464 must keep the no-GeV boundary.");
-  assert(phase464.sourceContractApplicationAllowed === false && phase464.canFillPhase201WzContract === false && phase464.canFillPhase201HiggsContract === false && phase464.canFillPhase256ObservedFieldExtractionContract === false, "Phase464 cannot fill Phase201 or Phase256 contracts.");
-  assert(phase464.routePromotesWzMasses === false && phase464.routePromotesHiggsMass === false && phase464.routeCompletesBosonPredictions === false, "Phase464 cannot promote boson predictions.");
-  assert(phase101Package?.anchorAdjudicationContract?.anchorAdjudicationContractSkeletonBuilt === true, "Phase101 must include the Phase464 block.");
-  // Phase465 -- Wave-2 STEP 0 skeleton (anomaly-consistency-variety-kernel): interim terminal awaiting-implementation.
-  assert(phase465.anomalyConsistencyVarietyKernelSkeletonBuilt === true, "Phase465 skeleton must be built with its standing claim boundary intact.");
+  assert(phase101Package?.anchorAdjudicationContract?.status === "anchor-adjudication-blocked-upstream-ambiguous", "Phase101 must include the Phase464 block at its real terminal.");
+  // Phase465 -- Wave-2 first result (anomaly-consistency-variety-kernel): real terminal positive-dimensional-route-closed.
+  assert(phase465.anomalyConsistencyVarietyKernelExecuted === true, "Phase465 anomaly-consistency variety kernel must execute.");
   assert(phase465.applicationSubjectKind === "anomaly-consistency-variety-kernel", "Phase465 must classify its subject as anomaly-consistency-variety-kernel.");
-  assert(phase465.interimTerminal === "awaiting-implementation", "Phase465 must emit its pre-registered interim terminal awaiting-implementation.");
-  assert(phase465.verdictKind === "awaiting-implementation", "Phase465 verdictKind must equal its interim terminal.");
-  assert(phase465.planSection === "WAVE2_ACTION_PLAN_2026-07-12 item 4", "Phase465 must cite its plan item.");
+  assert(phase465.terminalStatus === "anomaly-consistency-variety-kernel-anomaly-variety-positive-dimensional-route-closed", "Phase465 must emit its real terminal positive-dimensional-route-closed.");
+  assert(phase465.verdictKind === "anomaly-variety-positive-dimensional-route-closed", "Phase465 verdictKind must be anomaly-variety-positive-dimensional-route-closed.");
+  assert(phase465.varietyClassification === "positive-dimensional" && phase465.varietyProjectiveDimension === 1 && phase465.varietyAffineDimension === 2, "Phase465 variety must be positive-dimensional (projective dim 1 / affine dim 2).");
+  assert(phase465.vectorLikePlaneOnVariety === true, "Phase465 must certify the vector-like plane lies on the variety.");
+  assert(phase465.phase404HashMatches === true && phase465.phase404ReconstructionMatches === true, "Phase465 must reproduce the Phase404 target-blind construction (hash + reconstruction).");
+  assert(phase465.anomalyRouteProvidesLowEnergyHyperchargeSource === false, "Phase465 anomaly route must not provide a low-energy hypercharge source (O7 cap).");
+  assert(phase465.smPatternTripwire?.smPatternTripwireFired === true && phase465.smPatternTripwire?.smPatternIsIsolatedSelection === false, "Phase465 SM-pattern tripwire must fire as a membership flag, never an isolated selection.");
+  assert(phase465.batteries?.allPassed === true, "Phase465 batteries must all pass.");
+  assert(phase465.kernelConstructionHash === "51ee4558001a50c42af7c003d92d2c4b4c83b8608a019b215816240e13ee8915", "Phase465 kernel-construction hash must match the committed pin.");
   assert(phase465.targetBlindConstruction === true, "Phase465 must be target-blind.");
   assert(phase465.physicistReviewPending === true, "Phase465 must carry physicistReviewPending explicitly.");
   assert(phase465.noGevPromotion === true, "Phase465 must keep the no-GeV boundary.");
   assert(phase465.sourceContractApplicationAllowed === false && phase465.canFillPhase201WzContract === false && phase465.canFillPhase201HiggsContract === false && phase465.canFillPhase256ObservedFieldExtractionContract === false, "Phase465 cannot fill Phase201 or Phase256 contracts.");
   assert(phase465.routePromotesWzMasses === false && phase465.routePromotesHiggsMass === false && phase465.routeCompletesBosonPredictions === false, "Phase465 cannot promote boson predictions.");
-  assert(phase101Package?.anomalyConsistencyVarietyKernel?.anomalyConsistencyVarietyKernelSkeletonBuilt === true, "Phase101 must include the Phase465 block.");
-  // Phase466 -- Wave-2 STEP 0 skeleton (ws3-vev-completion-contract): interim terminal awaiting-schema.
-  assert(phase466.ws3VevCompletionContractSkeletonBuilt === true, "Phase466 skeleton must be built with its standing claim boundary intact.");
+  assert(phase101Package?.anomalyConsistencyVarietyKernel?.status === "anomaly-consistency-variety-kernel-anomaly-variety-positive-dimensional-route-closed", "Phase101 must include the Phase465 block at its real terminal.");
+  // Phase466 -- Wave-2 first result (ws3-vev-completion-contract): real terminal schema-committed.
+  // CONSUMPTION RULE (plan-required): a WS3 verdict is admissible against this contract only through the committed
+  // schema {schemaId, schemaHash}; the 9 lineage rows are permanently un-completable by any WS3 measurement (O8),
+  // and the z-amplitude row completes only on the labeled g'^2/g^2 = 3/5 import branch. Consumers MUST pin the pair below.
+  assert(phase466.ws3VevCompletionContractSchemaCommitted === true, "Phase466 WS3-VEV completion contract schema must be committed.");
   assert(phase466.applicationSubjectKind === "ws3-vev-completion-contract", "Phase466 must classify its subject as ws3-vev-completion-contract.");
-  assert(phase466.interimTerminal === "awaiting-schema", "Phase466 must emit its pre-registered interim terminal awaiting-schema.");
-  assert(phase466.verdictKind === "awaiting-schema", "Phase466 verdictKind must equal its interim terminal.");
-  assert(phase466.planSection === "WAVE2_ACTION_PLAN_2026-07-12 item 5", "Phase466 must cite its plan item.");
+  assert(phase466.terminalStatus === "ws3-vev-completion-contract-schema-committed", "Phase466 must emit its real terminal ws3-vev-completion-contract-schema-committed.");
+  assert(phase466.verdictKind === "schema-committed", "Phase466 verdictKind must be schema-committed.");
+  assert(phase466.schema?.schemaId === "ws3-vev-completion-contract-schema-v1", "Phase466 schema id must be the committed v1 id.");
+  assert(phase466.schema?.schemaHash === "7159ea49a45e3044c4393542b24a5db596f5d1423150020b072849ec8cb322b9", "Phase466 schema hash must match the committed pin (the consumption rule consumers pin to).");
+  assert(phase466.schema?.pins?.phase434HashMatches === true && phase466.schema?.pins?.templateIdMatches === true, "Phase466 schema must pin the phase434 hash and the phase256 template id.");
+  assert(phase466.schema?.partition?.partitionMatches === true, "Phase466 6/7/4/9 partition must match the committed structures.");
+  assert(phase466.schema?.o8CapAssertedOnAllLineage === true && phase466.schema?.completionMap?.lineageRowsEverCompletableByWsThree === false, "Phase466 must assert the O8 cap on all 9 lineage rows (never completable by WS3).");
+  assert(phase466.schema?.fixtureBattery?.fixtureSetComplete === true && phase466.schema?.fixtureBattery?.allFixturesPassed === true, "Phase466 golden fixture battery must be complete and all-passing.");
+  assert(phase466.schema?.templateMutationCount === 0, "Phase466 must not mutate the phase256 template.");
+  assert(phase466.tokenSelfScan?.tokenScanClean === true, "Phase466 token self-scan must be clean.");
   assert(phase466.targetBlindConstruction === true, "Phase466 must be target-blind.");
   assert(phase466.physicistReviewPending === true, "Phase466 must carry physicistReviewPending explicitly.");
   assert(phase466.noGevPromotion === true, "Phase466 must keep the no-GeV boundary.");
   assert(phase466.sourceContractApplicationAllowed === false && phase466.canFillPhase201WzContract === false && phase466.canFillPhase201HiggsContract === false && phase466.canFillPhase256ObservedFieldExtractionContract === false, "Phase466 cannot fill Phase201 or Phase256 contracts.");
   assert(phase466.routePromotesWzMasses === false && phase466.routePromotesHiggsMass === false && phase466.routeCompletesBosonPredictions === false, "Phase466 cannot promote boson predictions.");
-  assert(phase101Package?.ws3VevCompletionContract?.ws3VevCompletionContractSkeletonBuilt === true, "Phase101 must include the Phase466 block.");
+  assert(phase101Package?.ws3VevCompletionContract?.status === "ws3-vev-completion-contract-schema-committed", "Phase101 must include the Phase466 block at its real terminal.");
   // Phase471 -- Wave-2 STEP 0 skeleton (b2-closure-ledger): interim terminal closure-not-decidable.
   assert(phase471.b2ClosureLedgerBuilt === true, "Phase471 skeleton must be built with its standing claim boundary intact.");
   assert(phase471.applicationSubjectKind === "b2-closure-ledger", "Phase471 must classify its subject as b2-closure-ledger.");

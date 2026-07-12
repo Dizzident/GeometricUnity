@@ -1,28 +1,1060 @@
 {
   "phaseId": "phase462-blocking-set-resolution",
-  "generatedAt": "2026-07-12T11:58:46.470116+00:00",
-  "terminalStatus": "blocking-set-resolution-awaiting-adjudication",
-  "interimTerminal": "awaiting-adjudication",
-  "verdictKind": "awaiting-adjudication",
+  "generatedAt": "2026-07-12T12:47:12.9122394+00:00",
+  "terminalStatus": "blocking-set-resolution-pinning-insufficient",
+  "verdictKind": "pinning-insufficient",
   "applicationSubjectKind": "blocking-set-resolution",
-  "planSection": "WAVE2_ACTION_PLAN_2026-07-12 item 2",
-  "blockingSetResolutionSkeletonBuilt": true,
-  "awaitingImplementation": true,
-  "zeroPhysicsCompute": true,
-  "pendingCount": 31,
-  "tripwireDenominator": 31,
-  "stages": [
+  "planSection": "WAVE2_ACTION_PLAN_2026-07-12 item 2; \u00A72(A)",
+  "blockingSetResolutionPassed": true,
+  "machineIntegrityOk": true,
+  "verdictTaxonomy": [
+    "awaiting-adjudication(k)",
+    "pinning-insufficient",
+    "closure-resolved(-with-excision)(k)",
+    "corpus-supplies-scale-breaking-relation(namedItem)",
+    "still-blocked(k)",
+    "input-hash-mismatch",
+    "symbol-outside-33-table",
+    "snf-nonconvergent",
+    "mirror-or-pdf-drift",
+    "decoy-battery-failed(sessionIndex)"
+  ],
+  "stagesImplementedThisSession": [
     "P",
     "0",
-    "1",
-    "2"
+    "1"
   ],
+  "stage2Runs": false,
+  "blockingSetCount": 31,
+  "tripwireDenominator": 31,
+  "symbolCount": 33,
+  "phase460InputSha256": "a53e56967a40937f172c4079058fae0a1cab2b3c8a461be647985b56a813e66e",
+  "stageP": {
+    "paPinnedCount": 1,
+    "pbPinnedCount": 0,
+    "unpinnableCount": 30,
+    "unpinnableTripwire": 7,
+    "pinningInsufficient": true,
+    "mirrorPinnedSha256": "53eaf32825b53cc9c4e871e6ada6a3b046ee817dcc3623cf5c8a0636018fecdb",
+    "mirrorSha256": "53eaf32825b53cc9c4e871e6ada6a3b046ee817dcc3623cf5c8a0636018fecdb",
+    "draftPdfUrl": "https://geometricunity.nyc3.digitaloceanspaces.com/Geometric_Unity-Draft-April-1st-2021.pdf",
+    "draftPdfPinnedSha256": "3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4",
+    "draftPdfProvenance": "docs/Reference/ExperimentReferences/GU-DRAFT-2021.md",
+    "pdfRefetchStatus": "not-attempted-reproducible-mode",
+    "pdfLiveSha256": null,
+    "pins": [
+      {
+        "itemId": "sp12d-yukawa",
+        "tier": "PA-mirror",
+        "status": "PINNED",
+        "reason": "mirror-resident-verbatim-corpus-text",
+        "normalizedByteOffset": 4397,
+        "normalizedPassageSha256": "f432fa8e5ab5a49099fe05d32b4d75bbaa83e1b77f580e6c13eef559d10203c9",
+        "auditKeyPreimageLabel": null,
+        "auditKeyPreimage": null,
+        "pinnedCorpusText": "Yukawa couplings as a VEV",
+        "driftGateSha256": "53eaf32825b53cc9c4e871e6ada6a3b046ee817dcc3623cf5c8a0636018fecdb"
+      },
+      {
+        "itemId": "p331-a1",
+        "tier": "PB-draft-pdf",
+        "status": "UNPINNABLE",
+        "reason": "pb-corpus-locator-unavailable-no-committed-excerpt-nlp-route-discarded",
+        "normalizedByteOffset": null,
+        "normalizedPassageSha256": null,
+        "auditKeyPreimageLabel": "AUDIT-AUTHORED-NOT-CORPUS",
+        "auditKeyPreimage": "thetaOmegaRouteLocatesHiggsAndPotential",
+        "pinnedCorpusText": null,
+        "driftGateSha256": "3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4"
+      },
+      {
+        "itemId": "p331-a2",
+        "tier": "PB-draft-pdf",
+        "status": "UNPINNABLE",
+        "reason": "pb-corpus-locator-unavailable-no-committed-excerpt-nlp-route-discarded",
+        "normalizedByteOffset": null,
+        "normalizedPassageSha256": null,
+        "auditKeyPreimageLabel": "AUDIT-AUTHORED-NOT-CORPUS",
+        "auditKeyPreimage": "thetaOmegaRouteLocatesWeakIsospinAndHypercharge",
+        "pinnedCorpusText": null,
+        "driftGateSha256": "3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4"
+      },
+      {
+        "itemId": "p332-a1",
+        "tier": "PB-draft-pdf",
+        "status": "UNPINNABLE",
+        "reason": "pb-corpus-locator-unavailable-no-committed-excerpt-nlp-route-discarded",
+        "normalizedByteOffset": null,
+        "normalizedPassageSha256": null,
+        "auditKeyPreimageLabel": "AUDIT-AUTHORED-NOT-CORPUS",
+        "auditKeyPreimage": "stringRouteIncludesFirstPrinciplesClosedStringHiggsMassFramework",
+        "pinnedCorpusText": null,
+        "driftGateSha256": "3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4"
+      },
+      {
+        "itemId": "p332-a2",
+        "tier": "PB-draft-pdf",
+        "status": "UNPINNABLE",
+        "reason": "pb-corpus-locator-unavailable-no-committed-excerpt-nlp-route-discarded",
+        "normalizedByteOffset": null,
+        "normalizedPassageSha256": null,
+        "auditKeyPreimageLabel": "AUDIT-AUTHORED-NOT-CORPUS",
+        "auditKeyPreimage": "stringRouteClaimsHiggsMassRangeNearObserved",
+        "pinnedCorpusText": null,
+        "driftGateSha256": "3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4"
+      },
+      {
+        "itemId": "p333-a1",
+        "tier": "PB-draft-pdf",
+        "status": "UNPINNABLE",
+        "reason": "pb-corpus-locator-unavailable-no-committed-excerpt-nlp-route-discarded",
+        "normalizedByteOffset": null,
+        "normalizedPassageSha256": null,
+        "auditKeyPreimageLabel": "AUDIT-AUTHORED-NOT-CORPUS",
+        "auditKeyPreimage": "kkRouteAllowsArbitrarilyLightMassiveBosons",
+        "pinnedCorpusText": null,
+        "driftGateSha256": "3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4"
+      },
+      {
+        "itemId": "p333-a2",
+        "tier": "PB-draft-pdf",
+        "status": "UNPINNABLE",
+        "reason": "pb-corpus-locator-unavailable-no-committed-excerpt-nlp-route-discarded",
+        "normalizedByteOffset": null,
+        "normalizedPassageSha256": null,
+        "auditKeyPreimageLabel": "AUDIT-AUTHORED-NOT-CORPUS",
+        "auditKeyPreimage": "kkRouteRequiresWeakScaleSelection",
+        "pinnedCorpusText": null,
+        "driftGateSha256": "3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4"
+      },
+      {
+        "itemId": "p334-a1",
+        "tier": "PB-draft-pdf",
+        "status": "UNPINNABLE",
+        "reason": "pb-corpus-locator-unavailable-no-committed-excerpt-nlp-route-discarded",
+        "normalizedByteOffset": null,
+        "normalizedPassageSha256": null,
+        "auditKeyPreimageLabel": "AUDIT-AUTHORED-NOT-CORPUS",
+        "auditKeyPreimage": "su21ClassicTreeLevelHiggsPredictionConflictsWithObservedMass",
+        "pinnedCorpusText": null,
+        "driftGateSha256": "3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4"
+      },
+      {
+        "itemId": "p335-a1",
+        "tier": "PB-draft-pdf",
+        "status": "UNPINNABLE",
+        "reason": "pb-corpus-locator-unavailable-no-committed-excerpt-nlp-route-discarded",
+        "normalizedByteOffset": null,
+        "normalizedPassageSha256": null,
+        "auditKeyPreimageLabel": "AUDIT-AUTHORED-NOT-CORPUS",
+        "auditKeyPreimage": "graviweakRouteRelatesBareCouplingsToUnifiedParameterAndVev",
+        "pinnedCorpusText": null,
+        "driftGateSha256": "3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4"
+      },
+      {
+        "itemId": "p335-a2",
+        "tier": "PB-draft-pdf",
+        "status": "UNPINNABLE",
+        "reason": "pb-corpus-locator-unavailable-no-committed-excerpt-nlp-route-discarded",
+        "normalizedByteOffset": null,
+        "normalizedPassageSha256": null,
+        "auditKeyPreimageLabel": "AUDIT-AUTHORED-NOT-CORPUS",
+        "auditKeyPreimage": "graviweakRouteIncludesMppHiggsMassIntervalLead",
+        "pinnedCorpusText": null,
+        "driftGateSha256": "3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4"
+      },
+      {
+        "itemId": "p335-a3",
+        "tier": "PB-draft-pdf",
+        "status": "UNPINNABLE",
+        "reason": "pb-corpus-locator-unavailable-no-committed-excerpt-nlp-route-discarded",
+        "normalizedByteOffset": null,
+        "normalizedPassageSha256": null,
+        "auditKeyPreimageLabel": "AUDIT-AUTHORED-NOT-CORPUS",
+        "auditKeyPreimage": "graviweakRouteIncludesMirrorSectorScaleLead",
+        "pinnedCorpusText": null,
+        "driftGateSha256": "3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4"
+      },
+      {
+        "itemId": "p336-a1",
+        "tier": "PB-draft-pdf",
+        "status": "UNPINNABLE",
+        "reason": "pb-corpus-locator-unavailable-no-committed-excerpt-nlp-route-discarded",
+        "normalizedByteOffset": null,
+        "normalizedPassageSha256": null,
+        "auditKeyPreimageLabel": "AUDIT-AUTHORED-NOT-CORPUS",
+        "auditKeyPreimage": "heftEwChiralLagrangianAssumesMassiveWzPattern",
+        "pinnedCorpusText": null,
+        "driftGateSha256": "3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4"
+      },
+      {
+        "itemId": "p338-a1",
+        "tier": "PB-draft-pdf",
+        "status": "UNPINNABLE",
+        "reason": "pb-corpus-locator-unavailable-no-committed-excerpt-nlp-route-discarded",
+        "normalizedByteOffset": null,
+        "normalizedPassageSha256": null,
+        "auditKeyPreimageLabel": "AUDIT-AUTHORED-NOT-CORPUS",
+        "auditKeyPreimage": "torsionRouteRequiresTevScaleTorsionMassParameter",
+        "pinnedCorpusText": null,
+        "driftGateSha256": "3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4"
+      },
+      {
+        "itemId": "p339-a1",
+        "tier": "PB-draft-pdf",
+        "status": "UNPINNABLE",
+        "reason": "pb-corpus-locator-unavailable-no-committed-excerpt-nlp-route-discarded",
+        "normalizedByteOffset": null,
+        "normalizedPassageSha256": null,
+        "auditKeyPreimageLabel": "AUDIT-AUTHORED-NOT-CORPUS",
+        "auditKeyPreimage": "deSitterGaugeClaimsCorrectBosonMassAssignments",
+        "pinnedCorpusText": null,
+        "driftGateSha256": "3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4"
+      },
+      {
+        "itemId": "p339-a2",
+        "tier": "PB-draft-pdf",
+        "status": "UNPINNABLE",
+        "reason": "pb-corpus-locator-unavailable-no-committed-excerpt-nlp-route-discarded",
+        "normalizedByteOffset": null,
+        "normalizedPassageSha256": null,
+        "auditKeyPreimageLabel": "AUDIT-AUTHORED-NOT-CORPUS",
+        "auditKeyPreimage": "deSitterGaugeMassMatrixDependsOnGeometricBreakingParameters",
+        "pinnedCorpusText": null,
+        "driftGateSha256": "3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4"
+      },
+      {
+        "itemId": "p339-a3",
+        "tier": "PB-draft-pdf",
+        "status": "UNPINNABLE",
+        "reason": "pb-corpus-locator-unavailable-no-committed-excerpt-nlp-route-discarded",
+        "normalizedByteOffset": null,
+        "normalizedPassageSha256": null,
+        "auditKeyPreimageLabel": "AUDIT-AUTHORED-NOT-CORPUS",
+        "auditKeyPreimage": "deSitterGaugeTradesScaleForObservedMwOrMz",
+        "pinnedCorpusText": null,
+        "driftGateSha256": "3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4"
+      },
+      {
+        "itemId": "p340-a1",
+        "tier": "PB-draft-pdf",
+        "status": "UNPINNABLE",
+        "reason": "pb-corpus-locator-unavailable-no-committed-excerpt-nlp-route-discarded",
+        "normalizedByteOffset": null,
+        "normalizedPassageSha256": null,
+        "auditKeyPreimageLabel": "AUDIT-AUTHORED-NOT-CORPUS",
+        "auditKeyPreimage": "bfRouteRequiresTopologicalMassParameterSource",
+        "pinnedCorpusText": null,
+        "driftGateSha256": "3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4"
+      },
+      {
+        "itemId": "p340-a2",
+        "tier": "PB-draft-pdf",
+        "status": "UNPINNABLE",
+        "reason": "pb-corpus-locator-unavailable-no-committed-excerpt-nlp-route-discarded",
+        "normalizedByteOffset": null,
+        "normalizedPassageSha256": null,
+        "auditKeyPreimageLabel": "AUDIT-AUTHORED-NOT-CORPUS",
+        "auditKeyPreimage": "savvidyTensorGaugeMassGapLeadPresent",
+        "pinnedCorpusText": null,
+        "driftGateSha256": "3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4"
+      },
+      {
+        "itemId": "p340-a3",
+        "tier": "PB-draft-pdf",
+        "status": "UNPINNABLE",
+        "reason": "pb-corpus-locator-unavailable-no-committed-excerpt-nlp-route-discarded",
+        "normalizedByteOffset": null,
+        "normalizedPassageSha256": null,
+        "auditKeyPreimageLabel": "AUDIT-AUTHORED-NOT-CORPUS",
+        "auditKeyPreimage": "dvaliJackiwPiTopologicalMassLeadPresent",
+        "pinnedCorpusText": null,
+        "driftGateSha256": "3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4"
+      },
+      {
+        "itemId": "p341-a1",
+        "tier": "PB-draft-pdf",
+        "status": "UNPINNABLE",
+        "reason": "pb-corpus-locator-unavailable-no-committed-excerpt-nlp-route-discarded",
+        "normalizedByteOffset": null,
+        "normalizedPassageSha256": null,
+        "auditKeyPreimageLabel": "AUDIT-AUTHORED-NOT-CORPUS",
+        "auditKeyPreimage": "electroweakRequiresSmallWilsonLinePhaseToMatchWMass",
+        "pinnedCorpusText": null,
+        "driftGateSha256": "3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4"
+      },
+      {
+        "itemId": "p341-a2",
+        "tier": "PB-draft-pdf",
+        "status": "UNPINNABLE",
+        "reason": "pb-corpus-locator-unavailable-no-committed-excerpt-nlp-route-discarded",
+        "normalizedByteOffset": null,
+        "normalizedPassageSha256": null,
+        "auditKeyPreimageLabel": "AUDIT-AUTHORED-NOT-CORPUS",
+        "auditKeyPreimage": "electroweakModelHasTopHiggsMassDifficulties",
+        "pinnedCorpusText": null,
+        "driftGateSha256": "3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4"
+      },
+      {
+        "itemId": "p342-a1",
+        "tier": "PB-draft-pdf",
+        "status": "UNPINNABLE",
+        "reason": "pb-corpus-locator-unavailable-no-committed-excerpt-nlp-route-discarded",
+        "normalizedByteOffset": null,
+        "normalizedPassageSha256": null,
+        "auditKeyPreimageLabel": "AUDIT-AUTHORED-NOT-CORPUS",
+        "auditKeyPreimage": "precisionConstraintBoundaryPresent",
+        "pinnedCorpusText": null,
+        "driftGateSha256": "3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4"
+      },
+      {
+        "itemId": "p342-a1b",
+        "tier": "PB-draft-pdf",
+        "status": "UNPINNABLE",
+        "reason": "pb-corpus-locator-unavailable-no-committed-excerpt-nlp-route-discarded",
+        "normalizedByteOffset": null,
+        "normalizedPassageSha256": null,
+        "auditKeyPreimageLabel": "AUDIT-AUTHORED-NOT-CORPUS",
+        "auditKeyPreimage": "warpedPhenomenologyPrecisionConstraintLeadPresent",
+        "pinnedCorpusText": null,
+        "driftGateSha256": "3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4"
+      },
+      {
+        "itemId": "p342-a2",
+        "tier": "PB-draft-pdf",
+        "status": "UNPINNABLE",
+        "reason": "pb-corpus-locator-unavailable-no-committed-excerpt-nlp-route-discarded",
+        "normalizedByteOffset": null,
+        "normalizedPassageSha256": null,
+        "auditKeyPreimageLabel": "AUDIT-AUTHORED-NOT-CORPUS",
+        "auditKeyPreimage": "theorySpaceRouteCanFitWzMassesByVaryingCouplings",
+        "pinnedCorpusText": null,
+        "driftGateSha256": "3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4"
+      },
+      {
+        "itemId": "p342-a3",
+        "tier": "PB-draft-pdf",
+        "status": "UNPINNABLE",
+        "reason": "pb-corpus-locator-unavailable-no-committed-excerpt-nlp-route-discarded",
+        "normalizedByteOffset": null,
+        "normalizedPassageSha256": null,
+        "auditKeyPreimageLabel": "AUDIT-AUTHORED-NOT-CORPUS",
+        "auditKeyPreimage": "warpedRouteHasTevVectorResonancePrediction",
+        "pinnedCorpusText": null,
+        "driftGateSha256": "3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4"
+      },
+      {
+        "itemId": "p343-a1",
+        "tier": "PB-draft-pdf",
+        "status": "UNPINNABLE",
+        "reason": "pb-corpus-locator-unavailable-no-committed-excerpt-nlp-route-discarded",
+        "normalizedByteOffset": null,
+        "normalizedPassageSha256": null,
+        "auditKeyPreimageLabel": "AUDIT-AUTHORED-NOT-CORPUS",
+        "auditKeyPreimage": "stueckelbergRouteRequiresTargetIndependentVectorMassParameter",
+        "pinnedCorpusText": null,
+        "driftGateSha256": "3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4"
+      },
+      {
+        "itemId": "p344-a1",
+        "tier": "PB-draft-pdf",
+        "status": "UNPINNABLE",
+        "reason": "pb-corpus-locator-unavailable-no-committed-excerpt-nlp-route-discarded",
+        "normalizedByteOffset": null,
+        "normalizedPassageSha256": null,
+        "auditKeyPreimageLabel": "AUDIT-AUTHORED-NOT-CORPUS",
+        "auditKeyPreimage": "fmsRouteRequiresSmHiggsDoubletAndVev",
+        "pinnedCorpusText": null,
+        "driftGateSha256": "3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4"
+      },
+      {
+        "itemId": "p344-a2",
+        "tier": "PB-draft-pdf",
+        "status": "UNPINNABLE",
+        "reason": "pb-corpus-locator-unavailable-no-committed-excerpt-nlp-route-discarded",
+        "normalizedByteOffset": null,
+        "normalizedPassageSha256": null,
+        "auditKeyPreimageLabel": "AUDIT-AUTHORED-NOT-CORPUS",
+        "auditKeyPreimage": "fmsRouteRequiresCorrelationFunctionPoleExtraction",
+        "pinnedCorpusText": null,
+        "driftGateSha256": "3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4"
+      },
+      {
+        "itemId": "p345-a1",
+        "tier": "PB-draft-pdf",
+        "status": "UNPINNABLE",
+        "reason": "pb-corpus-locator-unavailable-no-committed-excerpt-nlp-route-discarded",
+        "normalizedByteOffset": null,
+        "normalizedPassageSha256": null,
+        "auditKeyPreimageLabel": "AUDIT-AUTHORED-NOT-CORPUS",
+        "auditKeyPreimage": "gaugeHiggsConfinementComplementarityPresent",
+        "pinnedCorpusText": null,
+        "driftGateSha256": "3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4"
+      },
+      {
+        "itemId": "p345-a2",
+        "tier": "PB-draft-pdf",
+        "status": "UNPINNABLE",
+        "reason": "pb-corpus-locator-unavailable-no-committed-excerpt-nlp-route-discarded",
+        "normalizedByteOffset": null,
+        "normalizedPassageSha256": null,
+        "auditKeyPreimageLabel": "AUDIT-AUTHORED-NOT-CORPUS",
+        "auditKeyPreimage": "elitzurBlocksLocalGaugeSymmetryBreakingOrderParameter",
+        "pinnedCorpusText": null,
+        "driftGateSha256": "3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4"
+      },
+      {
+        "itemId": "p345-a3",
+        "tier": "PB-draft-pdf",
+        "status": "UNPINNABLE",
+        "reason": "pb-corpus-locator-unavailable-no-committed-excerpt-nlp-route-discarded",
+        "normalizedByteOffset": null,
+        "normalizedPassageSha256": null,
+        "auditKeyPreimageLabel": "AUDIT-AUTHORED-NOT-CORPUS",
+        "auditKeyPreimage": "fradkinShenkerAnalyticContinuityForFundamentalHiggs",
+        "pinnedCorpusText": null,
+        "driftGateSha256": "3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4"
+      }
+    ]
+  },
+  "stage0": {
+    "readingMenuCcGrades": [
+      -2,
+      -1,
+      -4
+    ],
+    "closureSensitiveCount": 31,
+    "closureIrrelevantCount": 0,
+    "kernelMonotonicity": {
+      "squaredReadingCloses": true,
+      "squaredNullity": 9,
+      "augmentedNullity": 8,
+      "syntheticResidual": "-1",
+      "kernelMonotone": true,
+      "syntheticOverturnFlips": true,
+      "note": "rulings only ADD rows =\u003E integer kernel can only shrink; an unadjudicated ambiguous item can never help closure"
+    },
+    "injectionBattery": {
+      "grade0OnlyCertifiesIrrelevant": true,
+      "massBearingStaysSensitive": true,
+      "injectionBatteryOk": true
+    },
+    "certificates": [
+      {
+        "itemId": "sp12d-yukawa",
+        "committedSupportSize": 0,
+        "classification": "CLOSURE-SENSITIVE",
+        "certificateDetail": "empty-committed-support-no-certificate"
+      },
+      {
+        "itemId": "p331-a1",
+        "committedSupportSize": 0,
+        "classification": "CLOSURE-SENSITIVE",
+        "certificateDetail": "empty-committed-support-no-certificate"
+      },
+      {
+        "itemId": "p331-a2",
+        "committedSupportSize": 0,
+        "classification": "CLOSURE-SENSITIVE",
+        "certificateDetail": "empty-committed-support-no-certificate"
+      },
+      {
+        "itemId": "p332-a1",
+        "committedSupportSize": 0,
+        "classification": "CLOSURE-SENSITIVE",
+        "certificateDetail": "empty-committed-support-no-certificate"
+      },
+      {
+        "itemId": "p332-a2",
+        "committedSupportSize": 0,
+        "classification": "CLOSURE-SENSITIVE",
+        "certificateDetail": "empty-committed-support-no-certificate"
+      },
+      {
+        "itemId": "p333-a1",
+        "committedSupportSize": 0,
+        "classification": "CLOSURE-SENSITIVE",
+        "certificateDetail": "empty-committed-support-no-certificate"
+      },
+      {
+        "itemId": "p333-a2",
+        "committedSupportSize": 0,
+        "classification": "CLOSURE-SENSITIVE",
+        "certificateDetail": "empty-committed-support-no-certificate"
+      },
+      {
+        "itemId": "p334-a1",
+        "committedSupportSize": 0,
+        "classification": "CLOSURE-SENSITIVE",
+        "certificateDetail": "empty-committed-support-no-certificate"
+      },
+      {
+        "itemId": "p335-a1",
+        "committedSupportSize": 0,
+        "classification": "CLOSURE-SENSITIVE",
+        "certificateDetail": "empty-committed-support-no-certificate"
+      },
+      {
+        "itemId": "p335-a2",
+        "committedSupportSize": 0,
+        "classification": "CLOSURE-SENSITIVE",
+        "certificateDetail": "empty-committed-support-no-certificate"
+      },
+      {
+        "itemId": "p335-a3",
+        "committedSupportSize": 0,
+        "classification": "CLOSURE-SENSITIVE",
+        "certificateDetail": "empty-committed-support-no-certificate"
+      },
+      {
+        "itemId": "p336-a1",
+        "committedSupportSize": 0,
+        "classification": "CLOSURE-SENSITIVE",
+        "certificateDetail": "empty-committed-support-no-certificate"
+      },
+      {
+        "itemId": "p338-a1",
+        "committedSupportSize": 0,
+        "classification": "CLOSURE-SENSITIVE",
+        "certificateDetail": "empty-committed-support-no-certificate"
+      },
+      {
+        "itemId": "p339-a1",
+        "committedSupportSize": 0,
+        "classification": "CLOSURE-SENSITIVE",
+        "certificateDetail": "empty-committed-support-no-certificate"
+      },
+      {
+        "itemId": "p339-a2",
+        "committedSupportSize": 0,
+        "classification": "CLOSURE-SENSITIVE",
+        "certificateDetail": "empty-committed-support-no-certificate"
+      },
+      {
+        "itemId": "p339-a3",
+        "committedSupportSize": 0,
+        "classification": "CLOSURE-SENSITIVE",
+        "certificateDetail": "empty-committed-support-no-certificate"
+      },
+      {
+        "itemId": "p340-a1",
+        "committedSupportSize": 0,
+        "classification": "CLOSURE-SENSITIVE",
+        "certificateDetail": "empty-committed-support-no-certificate"
+      },
+      {
+        "itemId": "p340-a2",
+        "committedSupportSize": 0,
+        "classification": "CLOSURE-SENSITIVE",
+        "certificateDetail": "empty-committed-support-no-certificate"
+      },
+      {
+        "itemId": "p340-a3",
+        "committedSupportSize": 0,
+        "classification": "CLOSURE-SENSITIVE",
+        "certificateDetail": "empty-committed-support-no-certificate"
+      },
+      {
+        "itemId": "p341-a1",
+        "committedSupportSize": 0,
+        "classification": "CLOSURE-SENSITIVE",
+        "certificateDetail": "empty-committed-support-no-certificate"
+      },
+      {
+        "itemId": "p341-a2",
+        "committedSupportSize": 0,
+        "classification": "CLOSURE-SENSITIVE",
+        "certificateDetail": "empty-committed-support-no-certificate"
+      },
+      {
+        "itemId": "p342-a1",
+        "committedSupportSize": 0,
+        "classification": "CLOSURE-SENSITIVE",
+        "certificateDetail": "empty-committed-support-no-certificate"
+      },
+      {
+        "itemId": "p342-a1b",
+        "committedSupportSize": 0,
+        "classification": "CLOSURE-SENSITIVE",
+        "certificateDetail": "empty-committed-support-no-certificate"
+      },
+      {
+        "itemId": "p342-a2",
+        "committedSupportSize": 0,
+        "classification": "CLOSURE-SENSITIVE",
+        "certificateDetail": "empty-committed-support-no-certificate"
+      },
+      {
+        "itemId": "p342-a3",
+        "committedSupportSize": 0,
+        "classification": "CLOSURE-SENSITIVE",
+        "certificateDetail": "empty-committed-support-no-certificate"
+      },
+      {
+        "itemId": "p343-a1",
+        "committedSupportSize": 0,
+        "classification": "CLOSURE-SENSITIVE",
+        "certificateDetail": "empty-committed-support-no-certificate"
+      },
+      {
+        "itemId": "p344-a1",
+        "committedSupportSize": 0,
+        "classification": "CLOSURE-SENSITIVE",
+        "certificateDetail": "empty-committed-support-no-certificate"
+      },
+      {
+        "itemId": "p344-a2",
+        "committedSupportSize": 0,
+        "classification": "CLOSURE-SENSITIVE",
+        "certificateDetail": "empty-committed-support-no-certificate"
+      },
+      {
+        "itemId": "p345-a1",
+        "committedSupportSize": 0,
+        "classification": "CLOSURE-SENSITIVE",
+        "certificateDetail": "empty-committed-support-no-certificate"
+      },
+      {
+        "itemId": "p345-a2",
+        "committedSupportSize": 0,
+        "classification": "CLOSURE-SENSITIVE",
+        "certificateDetail": "empty-committed-support-no-certificate"
+      },
+      {
+        "itemId": "p345-a3",
+        "committedSupportSize": 0,
+        "classification": "CLOSURE-SENSITIVE",
+        "certificateDetail": "empty-committed-support-no-certificate"
+      }
+    ]
+  },
+  "stage1": {
+    "excisionYield": 0,
+    "exAnteExcisionYieldMax": 1,
+    "excisionWithinExAnteBound": true,
+    "excisedIds": [],
+    "pendingAfterStage1": 31,
+    "conjunction": "CLOSURE-IRRELEVANT AND syntactic-non-relation AND pinned-corpus-text",
+    "rows": [
+      {
+        "itemId": "sp12d-yukawa",
+        "closureIrrelevant": false,
+        "syntacticNonRelation": true,
+        "pinnedCorpusText": true,
+        "excise": false
+      },
+      {
+        "itemId": "p331-a1",
+        "closureIrrelevant": false,
+        "syntacticNonRelation": true,
+        "pinnedCorpusText": false,
+        "excise": false
+      },
+      {
+        "itemId": "p331-a2",
+        "closureIrrelevant": false,
+        "syntacticNonRelation": true,
+        "pinnedCorpusText": false,
+        "excise": false
+      },
+      {
+        "itemId": "p332-a1",
+        "closureIrrelevant": false,
+        "syntacticNonRelation": true,
+        "pinnedCorpusText": false,
+        "excise": false
+      },
+      {
+        "itemId": "p332-a2",
+        "closureIrrelevant": false,
+        "syntacticNonRelation": true,
+        "pinnedCorpusText": false,
+        "excise": false
+      },
+      {
+        "itemId": "p333-a1",
+        "closureIrrelevant": false,
+        "syntacticNonRelation": true,
+        "pinnedCorpusText": false,
+        "excise": false
+      },
+      {
+        "itemId": "p333-a2",
+        "closureIrrelevant": false,
+        "syntacticNonRelation": true,
+        "pinnedCorpusText": false,
+        "excise": false
+      },
+      {
+        "itemId": "p334-a1",
+        "closureIrrelevant": false,
+        "syntacticNonRelation": true,
+        "pinnedCorpusText": false,
+        "excise": false
+      },
+      {
+        "itemId": "p335-a1",
+        "closureIrrelevant": false,
+        "syntacticNonRelation": true,
+        "pinnedCorpusText": false,
+        "excise": false
+      },
+      {
+        "itemId": "p335-a2",
+        "closureIrrelevant": false,
+        "syntacticNonRelation": true,
+        "pinnedCorpusText": false,
+        "excise": false
+      },
+      {
+        "itemId": "p335-a3",
+        "closureIrrelevant": false,
+        "syntacticNonRelation": true,
+        "pinnedCorpusText": false,
+        "excise": false
+      },
+      {
+        "itemId": "p336-a1",
+        "closureIrrelevant": false,
+        "syntacticNonRelation": true,
+        "pinnedCorpusText": false,
+        "excise": false
+      },
+      {
+        "itemId": "p338-a1",
+        "closureIrrelevant": false,
+        "syntacticNonRelation": true,
+        "pinnedCorpusText": false,
+        "excise": false
+      },
+      {
+        "itemId": "p339-a1",
+        "closureIrrelevant": false,
+        "syntacticNonRelation": true,
+        "pinnedCorpusText": false,
+        "excise": false
+      },
+      {
+        "itemId": "p339-a2",
+        "closureIrrelevant": false,
+        "syntacticNonRelation": true,
+        "pinnedCorpusText": false,
+        "excise": false
+      },
+      {
+        "itemId": "p339-a3",
+        "closureIrrelevant": false,
+        "syntacticNonRelation": true,
+        "pinnedCorpusText": false,
+        "excise": false
+      },
+      {
+        "itemId": "p340-a1",
+        "closureIrrelevant": false,
+        "syntacticNonRelation": true,
+        "pinnedCorpusText": false,
+        "excise": false
+      },
+      {
+        "itemId": "p340-a2",
+        "closureIrrelevant": false,
+        "syntacticNonRelation": true,
+        "pinnedCorpusText": false,
+        "excise": false
+      },
+      {
+        "itemId": "p340-a3",
+        "closureIrrelevant": false,
+        "syntacticNonRelation": true,
+        "pinnedCorpusText": false,
+        "excise": false
+      },
+      {
+        "itemId": "p341-a1",
+        "closureIrrelevant": false,
+        "syntacticNonRelation": true,
+        "pinnedCorpusText": false,
+        "excise": false
+      },
+      {
+        "itemId": "p341-a2",
+        "closureIrrelevant": false,
+        "syntacticNonRelation": true,
+        "pinnedCorpusText": false,
+        "excise": false
+      },
+      {
+        "itemId": "p342-a1",
+        "closureIrrelevant": false,
+        "syntacticNonRelation": true,
+        "pinnedCorpusText": false,
+        "excise": false
+      },
+      {
+        "itemId": "p342-a1b",
+        "closureIrrelevant": false,
+        "syntacticNonRelation": true,
+        "pinnedCorpusText": false,
+        "excise": false
+      },
+      {
+        "itemId": "p342-a2",
+        "closureIrrelevant": false,
+        "syntacticNonRelation": true,
+        "pinnedCorpusText": false,
+        "excise": false
+      },
+      {
+        "itemId": "p342-a3",
+        "closureIrrelevant": false,
+        "syntacticNonRelation": true,
+        "pinnedCorpusText": false,
+        "excise": false
+      },
+      {
+        "itemId": "p343-a1",
+        "closureIrrelevant": false,
+        "syntacticNonRelation": true,
+        "pinnedCorpusText": false,
+        "excise": false
+      },
+      {
+        "itemId": "p344-a1",
+        "closureIrrelevant": false,
+        "syntacticNonRelation": true,
+        "pinnedCorpusText": false,
+        "excise": false
+      },
+      {
+        "itemId": "p344-a2",
+        "closureIrrelevant": false,
+        "syntacticNonRelation": true,
+        "pinnedCorpusText": false,
+        "excise": false
+      },
+      {
+        "itemId": "p345-a1",
+        "closureIrrelevant": false,
+        "syntacticNonRelation": true,
+        "pinnedCorpusText": false,
+        "excise": false
+      },
+      {
+        "itemId": "p345-a2",
+        "closureIrrelevant": false,
+        "syntacticNonRelation": true,
+        "pinnedCorpusText": false,
+        "excise": false
+      },
+      {
+        "itemId": "p345-a3",
+        "closureIrrelevant": false,
+        "syntacticNonRelation": true,
+        "pinnedCorpusText": false,
+        "excise": false
+      }
+    ]
+  },
+  "decoyBattery": {
+    "minDecoyCount": 40,
+    "decoySeed": 20260712,
+    "decoySetACount": 48,
+    "decoySetBCount": 48,
+    "decoyUnique": true,
+    "decoyNoCollision": true,
+    "decoyBatteryOk": true,
+    "decoySetASha256": [
+      "27173da37a71e41448432d98068e5321c08e23aacb11d5f2fda286da424c1345",
+      "aedaf2b550f66c78e0ca02dfb666ff76a44b79ced832dd2ab31a607c8c1d0403",
+      "dd270c129c37cbfe8417459e0749a2067ac620b3468901394ee1243df677dfb3",
+      "ff13f7ba8a587291ea2a1a9c7b032ae0403f486d63e0dad5761ce73fc768b82c",
+      "12f0d6cac76f781a4b1423c3c4ccb6a1b194bc72d4941334c45aa1c7b256bc60",
+      "87881df26f90f3de4d71185745b473fc1805dc4cb9251cf0499db0b7b058686c",
+      "13d7d6d7e29b38a7dea86ea283c5d1a88a1718de3aaa21d292b7618baa0b0067",
+      "50eafee87980b08cae90486dbefbbfc17ede97a3c1ee655cef18e2357adaf1db",
+      "f39edc0b1129527854f6f9930203a4bf3740cb04f7919bc1a4f42a4b7d5c5011",
+      "abdfccdbe90d63eca6f39fced0315c57b6bd4029d4c5de7626f24915f8e2f09f",
+      "e6cbdb9a9eb89c50ac43090cf799e633017b1c77bcb0b1c2a6bf18b042381ef4",
+      "287423517770f424c8ca72d0e3a681fc844131c25d8c1c0dca1074cee0479e5f",
+      "0a46f225bce520f6e4b54f012ab8611204583f995a80fe63abaf001de00846de",
+      "299e60983fcc16d4eefc24f955225db368e1f3ba3cd5fc37ca1736e87d53fac9",
+      "d2b17fa822dc91320b422c6ba7de73e9a22acef2343a7b91508ca21eaea07d05",
+      "dc001a2d950a672e5d9c5badf92980db58770b00f9f51fe3fc5121b0c3215ab6",
+      "1f1d0dddddf5daa2d9c23a9445859b0ff0a825300fc8631647eb318ee8e562df",
+      "243159d7cb98883f3548068c7ebac271d48d7912b185fe89b6ccf80c5c7e65c8",
+      "a04a925efd67614d3bba87a747d556d77e2b36a0a6883f107a0067ba6bdd5670",
+      "06d44cd84437c54020d1add9e4afc86769fe61efc9f87bee8c282ee195dabcb7",
+      "04225537345d51e28ff3d874ea08b44c36b0660eee2e4a2f74d6ace1f777aee4",
+      "9e17b55e8217fa090ad59ae4c51e652bd09c994b3d79e16ea4ad14767a3b35fb",
+      "fd333a37988f6b605541a60045d59a3165852994e7e4ec2379f07c774bff7e86",
+      "00457ba763129044896d02b8be3dcc3119da3924c015a1183827b5cdca34d4fe",
+      "f7576a79ec58146c7fb34b014de7ae70902766330525bba5d693f617e45f0ac3",
+      "d6883f62db02517dd3d920b2a00f27ae619867d27c417abbaf11fbfc2ff67ac8",
+      "e51deb7156fba775eb334bc3552c59ece2a963d8a29f983eadcfcb4d41bd6b85",
+      "57d3b79be505784b736db2e09e394f912f568a412aedc34f1e6d87b1e603bb0f",
+      "c95a1e0f6edf568d489bc3ec1f343e95c6a67cd9359e4095b0861e5fbc081a91",
+      "9110b3f33e853631cf34d2f34f8f36f1d15cdfbbd0a1427346cd81aec5bcce31",
+      "2ac0f2249911a0ef323fbd6b2d44d41a9144c4ad472c5bbd44a164bc2d25815e",
+      "07b0bca9b04a8e150a40ccc78aabf7d33e0b485a3238d4d71357b416b3560988",
+      "c6238567c149daf26acbab98ea5e15a00ba55408e72d6f9822113e829a79be8b",
+      "deabc88895be0cb7a2073a7e8694fd4b3628014f4f687a96c924c35415bb0226",
+      "b88375441a63ff72cc3e618908f2596a9c4fa6371232a42c18f7c8e15e0c0d81",
+      "90ee8cecd46c80e7f5bfe3b15c91598bd745146d41a62c634708ec2fa8dc17d3",
+      "319621d7b9f107e78978a62548ee06f8e473b4718e6c4dae3ba342f7152cbaf7",
+      "f9d35ebbd223d2787dca7c5c47d0eb77e786a02daa096b2de5ed554e4e9a02b3",
+      "3bc79838bdede40cac9f50ecc4f0cde60aeb916cc8e0d16ccd1c5dbddaecfe43",
+      "3599c4d86bfd3b4ca9e76802a1c8dbad49e9c25d59b13d24b26b48005bdcad1a",
+      "ab0712e47b952c19254cee93d85ac08d9413ee5149582eabda8eebac54a797df",
+      "5d813bdbd3a3a261b0c3c877288fac3be4573185d68f4625e77b08b6001d2d23",
+      "47546f25f6f2be0739beed60b7b9dae32328bbf90e4f0474464c86d919b05a15",
+      "6945380df873a99e1478dd9c0b56593bdb1ac003381958df16fa13ca5336e0a6",
+      "1c6d7cb8fb2c149398774247c86d9dd0e4fda6e05ae5c8672721ce38bb559961",
+      "b9652ffdfde483f818de087ab0a3e72c5046df591236d089547b0ff91e118039",
+      "ccf0e5d7beb06b6903a688470350b4359c8ef043a0f14b52c88d2f972beaf299",
+      "98310b5431da8dab2fb62ba71b242a55e0b1e93037e8cee0e508bc18bf38b4c7"
+    ],
+    "decoySetBSha256": [
+      "4bc2ff8c5e2b79604ea0c17209fbf80b716a4a3c050a6f688daa9882f174580e",
+      "19689b0516f7e65b3909bdeb225f3ff4e6460f0c387234e7e5e9862234273f88",
+      "c8ea6054f0ae9115fcf075b3d5527bd38bf0f68fb8adc1e7bfc7e606dd817112",
+      "01b5de2b47079ce73a0a9d6d390740910b616bc4eda30cc2105a7778d4a7966e",
+      "91a6b86024cb908f1d0f8488de8750d9ad99baa44c893c3d05d07f650bcb700d",
+      "17c20204a731d547ce3d37be3ee5f5c51eea7fbfb4b1be49f065bf20434362d2",
+      "d0d9c1557aae21bc14e127a0860b499b589067c7cfef2b56345b06199f7810fa",
+      "9929f0c21079dcbb0f32a16363e319ebcf84dd139166fb4864254b43fa6ffe73",
+      "f1c19d23de285fc0b0862990124705381d030d57feb515e984b55de231986bd1",
+      "e456f07232fc7d7b2a97892e73d3833cfaf8ff63729e7d20084cc2ea82b56bd5",
+      "6bb3371ed99422de698c467966bd5dbdb6af03b8cbceaf78a4c3aa228891dbdf",
+      "be6eec45a1ce9fc6e4fb12ea00a8dda561632422395d5633401f0e15bd6da5e9",
+      "e2a412261cd9cf2a118d7cac7c45323dab67a6090cbfbbf812a624ffe1d85d85",
+      "55974987961ddddb43a018e3db742701d155d764f0c5006cf21702f17d80fdbe",
+      "ce37072c11c4629e4d6192877081df4dd290a4ae1917e06a89e9e135997316d6",
+      "18d64330ddabc0d6e7adb0a034b40f78eb28ff816d198f1f58c334f544973cb8",
+      "e7f31744dbcc5e3ad426d2d02b4184268ce59ff21f3fc9fc8c730b0ee109beba",
+      "bcf0d91ab93e295b3be3b65935f616c79381905e877a5e7d64610de23807d397",
+      "6ceda951cc66c1dcd610de6be30c6a19a65a00b4aae3ef6827484cd4704ceb17",
+      "bc60694d1a43762a52853f6c01fbc4ed778c84e2705dbc258588bf11374a9249",
+      "1a070bc44d83e2913dc2b1a5af87f5cac3e3b806f339120025b5a6aba2bcf490",
+      "ac0c52ea7c532e2b5094e1c308a5f22f292f5a3c85389efe7635da8f17086f86",
+      "e6386810e7eef2ca804a0114c9dc2182fd1e27987007031098f891417cba18c2",
+      "f6a46fbfa5ee2f5443ca58e6b7b74bc10d264f1f1168d78b5f952e1a0e6fb754",
+      "a5573c3fb800e6b1cee35ba691affb8ebcb159274f1ee7b38305abf9b433539e",
+      "3a6de7515f261b6023259fb980a26b4868fbeaf8f5809ad5ff46a4b9eb5a8db0",
+      "2f01843ee6983d543ecc599a4e8f6b629ff5653f5eeea5b4dc207d67f74dd797",
+      "58beed6ce7478f9efcb6999a09d0a4d4e42262c65da2504e2b1239c2c94f4e24",
+      "9f96abfe4943fae972ff43920a80c793d58ca085f6848888d237672fd7e6916d",
+      "a75a42223dfa426ed6bf3611363ec3de519111e8aed035e64bb7349f4fe96fe0",
+      "79ef5b427153d4360875b042197dc0ae1ac4456a63441aa6ad849497d7431390",
+      "efdebf8f692f961b77d67928bcd38da6dfdc5b91654fc11839f9318890323498",
+      "240849743a669f275f9090642e32af3b2e693e33d7459795bdadf3e916236062",
+      "fed575459f4ca10f2c55c059b5c18aca4657a0d6aec6609c1022b84956c6343d",
+      "54692107936f7159c58d854843c309abce140dda08c27e2777a558891c4eca79",
+      "af2213ca028b313ad80f20f9eaab46002361ecf371f607ca3c15b04bbd5f8a5c",
+      "33b4af8c5d3ed52beae16bfd26665931a485a51399a94b9eb0c0913ee4ff7062",
+      "d9fba1a8bd6823b21b456a34b44e6c31ed584209619d5c8edeed270db1ba908c",
+      "ae7bb049548288a7bcc4cf6fc0fd268b84c65cc0509651e2c54113c82b5de0af",
+      "ba4b495a7dc57811e0eec93a0edffcf00eb29183e3c6867a8484df4db6d752e6",
+      "df67b54714b830f5d261aac69a8dfd1c941a73bd86f8c0565b7b1d9b9017ac2d",
+      "a10f038b0e8c836b30f0e8029c27d756647d96484596387ae435ee425307e911",
+      "72ae14e7582a486fc1df9cb322e9afbed90915eded3fa933ee05a2374ffbcea2",
+      "d6e02698913e049f99e7e855aaf6c5756e6a40f92c32b76d3c142e2871dcfea9",
+      "ee82fc901a196cc2edbb3339c1e44579c89f6a271a11e6929b2f3f04140c8b97",
+      "7cb90dafbb576a79703b03a1238410b915fd0da02200bb1145c295461f943914",
+      "02fa766d20e40ccb9ccd829245164d663383be024cd0d1b096e1c40f49128617",
+      "e432facbb33974ef0991ae909e7373ab7bec8c23473efbe0c864811a971c8bdc"
+    ],
+    "decoySetAPlaintext": [
+      "Decoy rendering: extra neutral vector mass from the same explicit parameter class (decoy; ungradable) #341",
+      "Variant text: mode mass = twist over compact radius (paraphrase; not corpus) #463",
+      "Substitute reading: classical mode mass = inverse internal length scale (alternate) #6132",
+      "Substitute reading: gauge-invariant compensator construction pins the abelian vector mass parameter (non-corpus paraphrase) #5710",
+      "Decoy rendering: tree-level scalar-to-vector mass ratio (paraphrase; not corpus) #6014",
+      "Decoy rendering: neutral vector mass = root-sum-square coupling x scalar VEV / 2 (alternate) #89",
+      "Restated paraphrase: the snapshot\u0027s own recorded squared-mass repair (squared matrix variant) (decoy; ungradable) #3048",
+      "Substitute reading: gravity-scale squared x gravitational coupling = dimensionless (non-corpus paraphrase) #3270",
+      "Variant text: electroweak branch uses standard vector mass = coupling x VEV (non-corpus paraphrase) #1244",
+      "Reworded statement: scalar mass squared = second field derivative of the potential density (alternate) #7489",
+      "Decoy rendering: extra neutral vector mass from the same explicit parameter class (surrogate) #5951",
+      "Variant text: boundary-condition vector mass = inverse warp/interval scale (reworded) #2422",
+      "Reworded statement: neutral vector mass = root-sum-square coupling x scalar VEV / 2 (paraphrase; not corpus) #4833",
+      "Alternate wording: second vector mass arranged by a second compactification scale (paraphrase; not corpus) #5625",
+      "Decoy rendering: mode mass = twist over compact radius (decoy; ungradable) #6944",
+      "Decoy rendering: explicit vector mass parameter carries the neutral vector mass (alternate) #6441",
+      "Restated paraphrase: quartic potential shape forces field and VEV into the same grade (paraphrase; not corpus) #8246",
+      "Surrogate phrasing: classical mode mass = inverse internal length scale (surrogate) #3971",
+      "Surrogate phrasing: first-power curvature-mass statement as written (literal matrix variant) (surrogate) #8784",
+      "Variant text: geometric vector mass = charge x compensator scalar (reworded) #3370",
+      "Restated paraphrase: geometric vector mass = charge x compensator scalar (decoy; ungradable) #3096",
+      "Variant text: gravity-scale normalization pins the compensator scalar to the mass class (paraphrase; not corpus) #3999",
+      "Substitute reading: gravity-scale normalization pins the compensator scalar to the mass class (surrogate) #482",
+      "Paraphrased claim: explicit vector mass parameter carries the neutral vector mass (decoy; ungradable) #6843",
+      "Variant text: vector masses from VEV, couplings, and scalar-manifold metric (alternate) #7219",
+      "Substitute reading: gravity-scale squared x gravitational coupling = dimensionless (reworded) #8516",
+      "Paraphrased claim: vector mass = coupling x condensate scale (non-corpus paraphrase) #1494",
+      "Paraphrased claim: gravity-scale squared x gravitational coupling = dimensionless (reworded) #6728",
+      "Variant text: formulated breaking mechanism includes the standard scalar-sector mass-squared = quartic x VEV squared (alternate) #2546",
+      "Alternate wording: neutral vector mass = root-sum-square coupling x scalar VEV / 2 (alternate) #8021",
+      "Decoy rendering: formulated breaking mechanism includes the standard scalar-sector mass-squared = quartic x VEV squared (surrogate) #3312",
+      "Paraphrased claim: vector mass = coupling x condensate scale (non-corpus paraphrase) #9351",
+      "Surrogate phrasing: neutral vector mass = root-sum-square coupling x scalar VEV / 2 (reworded) #9169",
+      "Reworded statement: gravity-scale squared x gravitational coupling = dimensionless (alternate) #4368",
+      "Decoy rendering: gauge-invariant compensator construction pins the abelian vector mass parameter (paraphrase; not corpus) #8930",
+      "Alternate wording: two-form coupling generates vector mass equal to the topological mass parameter (paraphrase; not corpus) #7807",
+      "Restated paraphrase: quartic constrained to coupling squared (both dimensionless-class) (reworded) #3210",
+      "Decoy rendering: gravity-scale squared x gravitational coupling = dimensionless (reworded) #1278",
+      "Reworded statement: gravity-scale squared x gravitational coupling = dimensionless (reworded) #8619",
+      "Surrogate phrasing: gauge coupling squared = gravitational coupling x cc term (the corpus\u0027s pinned cc-bearing relation) (alternate) #4534",
+      "Substitute reading: tree-level scalar-to-vector mass ratio (alternate) #7777",
+      "Decoy rendering: tree-level vector-to-vector mass ratio (alternate) #9501",
+      "Alternate wording: extra neutral vector mass from the same explicit parameter class (reworded) #1438",
+      "Reworded statement: explicit vector mass parameter carries the neutral vector mass (alternate) #193",
+      "Paraphrased claim: composite-state mass maps to elementary-state mass at leading order (surrogate) #6779",
+      "Paraphrased claim: quartic potential shape forces field and VEV into the same grade (reworded) #5009",
+      "Reworded statement: vector masses set by inverse curvature radius (reworded) #2944",
+      "Substitute reading: neutral vector mass = root-sum-square coupling x scalar VEV / 2 (paraphrase; not corpus) #1981"
+    ],
+    "sealedRedoEscrowDir": "/tmp/claude-1000/-home-josh-Documents-GitHub-GeometricUnity/69018c76-9a8e-41d1-bf5c-9afa5af1644e/scratchpad/p462_sealed_decoys",
+    "sealedRedoEscrowSealSha256": "94ebf1eaf3b9e1329ef1d614693175316a35ff61ed62c82bf781c2f3161331cb",
+    "secondSignerRequiredBeforeStage2": true
+  },
+  "snfBattery": {
+    "passed": true,
+    "cases": [
+      {
+        "caseId": "classic-3x3",
+        "passed": true,
+        "diagonal": [
+          "2",
+          "2",
+          "156"
+        ]
+      },
+      {
+        "caseId": "identity-3x3",
+        "passed": true,
+        "diagonal": [
+          "1",
+          "1",
+          "1"
+        ]
+      },
+      {
+        "caseId": "rank1-2x2",
+        "passed": true,
+        "diagonal": [
+          "1",
+          "0"
+        ]
+      }
+    ]
+  },
+  "guards": [],
   "scaleIsWorkbenchRelativeCandidateOnly": true,
   "noGevPromotion": true,
   "physicistReviewPending": true,
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
-  "targetBlindConstructionHash": "d28e78ba1bb79dfd41dbf881085cd5ed27db95f1314c421538fea9892bfb2ec8",
+  "targetBlindConstructionHash": "034e23b4fbe65fcaf8a8e232915d40d8b470c94167ced3c82138e3e1da16d5be",
   "physicalCouplingProvided": false,
   "routeProvidesPhysicalEffectiveActionHessian": false,
   "routeProvidesVevOrSourceScaleLineage": false,
@@ -44,15 +1076,20 @@
     "canFillPhase256ObservedFieldExtractionContract": false,
     "phase201FieldsDefensiblyFilled": []
   },
+  "phase464Impact": {
+    "deliversConjunctC1": true,
+    "pinsPhase464ToBlockedUpstreamAmbiguous": true
+  },
   "recordedBoundary": {
     "physicistReviewPending": true,
-    "awaitingImplementation": true
+    "secondSignerRequiredBeforeStage2": true
   },
   "explicitCandidateOnlyNonclaims": [
-    "STEP 0 skeleton: zero physics computation; the pre-registered design is recorded in STUDY.md and is not yet implemented or executed.",
-    "The interim terminal is a program-state marker, not a scientific verdict; no measurement, elimination, or promotion is claimed.",
-    "physicistReviewPending = true is carried explicitly; no contract field is filled and nothing is promoted (promotedPhysicalMassClaimCount remains 0)."
+    "Stage P/0/1 is elimination-support machinery over a prose-only blocking set; no measurement, contract fill, or promotion is claimed.",
+    "Audit-key preimages are AUDIT-AUTHORED-NOT-CORPUS and are never gradable; pinned corpus text is committed ONLY for mirror-resident PA rows.",
+    "pinning-insufficient honestly proves the machine resolution route dead; it forbids any partial-closure citation and pins phase464 to BLOCKED-UPSTREAM-AMBIGUOUS.",
+    "physicistReviewPending = true; promotedPhysicalMassClaimCount remains 0."
   ],
-  "decision": "STEP 0 skeleton for the blocking-set resolution phase (plan item 2). Awaiting adjudication with k=31 statements pending under the committed 33-symbol grading; the staged design (Stage P/0/1/2) is recorded in STUDY.md and not yet implemented. Nothing is graded or promoted yet.",
-  "runtimeSeconds": 0.0063665
+  "decision": "Blocking-set resolution is machine-dead at the automated route: 30 of 31 prose-only statements are UNPINNABLE (\u003E 7 tripwire). One mirror-resident statement pins at PA tier; the 30 audit-key statements link by sha12 unique-preimage to AUDIT-AUTHORED-NOT-CORPUS findings but have no committed verbatim draft excerpt \u002B page locator (the NLP auto-locate route is deliberately discarded), so they cannot be pinned to gradable corpus text without human Stage-2 work. The official April-2021 draft drift gate is pinned (sha256 3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4). Stage 0 certifies all 31 items CLOSURE-SENSITIVE (kernel-monotonicity proven exactly: adjudication can only add constraint rows and shrink the integer kernel); Stage 1 machine excision yields 0 (ex-ante bound 1). ELIMINATION-support only: this honestly proves the machine resolution route dead and pins phase464 to BLOCKED-UPSTREAM-AMBIGUOUS; nothing is promoted.",
+  "runtimeSeconds": 0.0310712
 }

@@ -1,0 +1,22 @@
+{
+  "fixtureId": "T-singlet-wins",
+  "description": "The measured gap lives in the color-and-weak-singlet channel (O8 M-probe scope). A singlet gap proves a singlet, never the named electroweak scalar: the M field is a labeled probe convention and can supply neither the weak-doublet direction the completion needs nor any of the 9 lineage rows. The schema must NOT complete the doublet contract; it records the singlet flag as a convention-scoped candidate only.",
+  "vevIntake": {
+    "direction": "color-weak-singlet",
+    "magnitudeInLatticeUnits": 1.1,
+    "member": "o8-labeled-singlet-probe",
+    "channel": "singlet",
+    "errorModel": "jackknife-covariance",
+    "sigmaFromExactFreeControl": 4.5,
+    "branchNormalizationSourceId": null
+  },
+  "expected": {
+    "completes": false,
+    "completedConditionalFields": 0,
+    "completedAmplitudeFields": 0,
+    "zAmplitudeCompleted": false,
+    "completedLineageFields": 0,
+    "singletFlag": true,
+    "outcomeClass": "singlet-dominates-not-electroweak-doublet-completion"
+  }
+}

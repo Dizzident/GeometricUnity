@@ -20073,3 +20073,85 @@ admissibility in 464(i), 33-symbol scope, O7, phase451 tension, the
 tabled WS3 relaxation, PDF/physicist external dependencies, registry
 pressure, CUDA-not-now). Nothing promises a prediction;
 promotedPhysicalMassClaimCount=0 on every branch.
+
+## 2026-07-12 - WAVE-2 FIRST RESULTS: B1 terminally adjudicated (blocked-upstream-ambiguous); anomaly route closed; WS3 hold half-lifted; fermionic lever convention-fragile
+
+Six phases implemented over their Step-0 skeletons in one parallel
+wave (three team agents + the adjudicator + a finisher pinning every
+real terminal into the integrity surfaces). All fail-closed, all
+deterministic, all batteries green. The verdicts and their meaning:
+
+- PHASE462 (blocking-set resolution): pinning-insufficient - PA=1
+  (the mirror-resident item, exactly pinned), PB=0, UNPINNABLE=30 (the
+  30 audit-key items link only to audit-authored paraphrases, never
+  gradable; no committed verbatim draft locators exist; the NLP
+  auto-locate route was adversarially discarded). Machine excision
+  yield 0 (ex-ante bound <=1). THE MACHINE ROUTE TO B1 CLOSURE IS
+  PROVEN DEAD - a first-class pre-registered outcome, not a failure.
+  The 48+48 decoy battery and sealed-redo escrow stand ready if the
+  reopening condition (human-authored per-item draft locators, an
+  optional extension of the O4 engagement) is ever exercised.
+- PHASE463 (transport theorems): transport-killed-at-audited-menu -
+  all six audited dim-2 operators exactly conformal-safe-but-
+  transport-dead (synthetic wrong-sign control proves the test bites);
+  Motzkin curve-escape verified exactly (bounded-on-every-ray does not
+  imply bounded below - the survive terminal authorizes nothing); no
+  coercivity certificate obtainable. The STRONGEST form of the A6 C3
+  conjunct. Two named reopening conditions recorded.
+- PHASE464 (A6 adjudication): BLOCKED-UPSTREAM-AMBIGUOUS - the
+  pre-committed sentence is now the citable B1 record: the audited
+  corpus neither supplies nor forbids a dimensionful anchor at theorem
+  grade; 31 prose-only statements remain unadjudicated; no
+  reading-menu anchor survives; every dimensionful anchor in use is a
+  labeled convention adoption pending adjudication; no anchor theorem
+  is claimed and none may be cited. Input-flip battery proves terminal
+  (i) unreachable with zero physicist rulings and the reopening paths
+  live. B1 IS ADJUDICATED - not closed, HONESTLY BLOCKED, with
+  machine-monitorable reopening fields.
+- PHASE465 (anomaly kernel): positive-dimensional-route-closed - the
+  anomaly-consistency variety on the derived slot space is a
+  projective-dim-1 cone (explicit vector-like plane witness); the SM
+  hypercharge pattern LIES ON the cone (tripwire fired as membership)
+  but is NOT an isolated selection. ANOMALY CONSISTENCY ALONE CANNOT
+  DERIVE HYPERCHARGE - the expected branch, committed as a rule-out
+  feeding C-PERMANENCE P1 and rank-gating WS5 downward. O7 cap pinned.
+- PHASE466 (completion contract): schema-committed -
+  {ws3-vev-completion-contract-schema-v1, 7159ea49...} pinned as the
+  consumption rule in the integrity script; five golden fixtures all
+  reproduce pre-registration (only T-finite-vev completes; the
+  adversarial 1.5-sigma fixture refuses); wsThreeCannotComplete=true
+  machine-asserted on all 9 lineage fields (O8 is now a schema
+  theorem). C'S HALF OF THE WS3 HOLD IS LIFTED; the hold now waits
+  only on the O4 M-probe ruling.
+- PHASE455 (fermionic backreaction): CONVENTION-FRAGILE (T3) - the
+  exact computation (Q(sqrt3) arithmetic, Sturm-certified stationary
+  points, all batteries incl. the synthetic positive control green)
+  finds NO below-origin well under the primary zero-mode convention
+  Z-a, but a genuine well (T/D axes, V ~ -18.4) under Z-b/Z-c: the
+  verdict FLIPS on the zero-momentum-mode convention. Per the
+  pre-registered taxonomy the terminal is T3 - not a null, not a
+  candidate - and BOTH review items (the flip axis AND the
+  load-bearing S_B workbench-model choice, the phase430 one-loop W_B
+  adopted as the only committed bosonic functional in that sector)
+  are routed to the O4 queue as machine-readable o4QueueItems.
+  Ledger limb L5 stays OPEN, honestly.
+- PHASE471 ledger re-read: closure-not-decidable, openLimbs [L5, L6,
+  L8], withheld [L7 - half-lifted by 466, joint with the portal run],
+  closed [L1-L4]. The structural-incapability battery stands.
+
+PROGRAM PICTURE AFTER THIS WAVE: B1 is terminally adjudicated (the
+honest blocked record with named reopening paths). B3's cheapest two
+rungs are decided (anomaly route closed; the contract schema stands
+ready to consume a portal VEV). B2's cheapest rung came back
+convention-dependent. THE O4 PHYSICIST ENGAGEMENT IS NOW THE
+PROGRAM-WIDE CRITICAL PATH BY A WIDE MARGIN: its rulings decide the
+phase455 flip axis (L5 null vs radiative-well candidate), the WS3
+M-probe (the hold's second half, unlocking the portal probe), the
+445-455 convention families (shedding physicistReviewPending
+program-wide), and optionally the 462 quote-pinning reopening. The
+remaining machine-executable queue: the phase456 consolidated n=4
+pack (A4/A5 Stage-A gates first), phase457 Stage-A boundedness
+certificates, C-STABILIZER (467), C-CLOSURE (468).
+promotedPhysicalMassClaimCount=0 on every branch - four of this
+wave's six verdicts are eliminations, one is an honest block, one is
+infrastructure; nothing here is, or leads to, a prediction claim.

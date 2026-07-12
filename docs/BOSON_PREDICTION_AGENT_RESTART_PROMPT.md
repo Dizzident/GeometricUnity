@@ -817,6 +817,23 @@ anchors (referee ~460x kill reconstructed at 451.105; nothing
 forwarded to A3). B2 is narrowed to four named candidates: n=4
 volume, exact fermionic -log det, WS3 portal (held on C-CONTRACT
 schema), WS4 Binder. B3 untouched - team C's ladder is unbuilt.
+WAVE-2 FIRST RESULTS (2026-07-12, see the journal entry of the same
+date): PHASE464 ADJUDICATED B1 as blocked-upstream-ambiguous (the
+pre-committed no-claim sentence is the citable record; machine
+route proven dead by phase462 pinning-insufficient 30/31; transport
+killed at the audited menu by phase463 - the strongest C3);
+PHASE465 closed the anomaly route (positive-dimensional cone, SM not
+an isolated selection); PHASE466 committed the completion-contract
+schema (C's half of the WS3 hold LIFTED; O8 now a schema theorem);
+PHASE455 landed T3 CONVENTION-FRAGILE (the below-origin-well verdict
+flips on the zero-mode convention; flip axis + the S_B workbench-model
+choice routed to O4 as o4QueueItems; ledger limb L5 stays open).
+THE O4 PHYSICIST ENGAGEMENT IS THE PROGRAM-WIDE CRITICAL PATH: it
+decides the 455 flip, the WS3 M-probe (hold's second half), the
+445-455 convention families, and optionally the 462 quote-pinning
+reopening. Machine-executable next: phase456 pack (A4/A5 Stage-A
+first), phase457 Stage-A certificates, 467, 468.
+
 WAVE-2 PLAN ADOPTED (2026-07-12, binding):
 docs/Phases/WAVE2_ACTION_PLAN_2026-07-12.md is the current execution
 queue - STEP 0 batched wiring checkpoint (skeletons 455-458/462-466/

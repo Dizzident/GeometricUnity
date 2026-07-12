@@ -1,58 +1,27 @@
 {
   "phaseId": "phase462-blocking-set-resolution",
-  "generatedAt": "2026-07-12T11:58:46.470116+00:00",
-  "terminalStatus": "blocking-set-resolution-awaiting-adjudication",
-  "interimTerminal": "awaiting-adjudication",
-  "verdictKind": "awaiting-adjudication",
-  "applicationSubjectKind": "blocking-set-resolution",
-  "planSection": "WAVE2_ACTION_PLAN_2026-07-12 item 2",
-  "blockingSetResolutionSkeletonBuilt": true,
-  "awaitingImplementation": true,
-  "zeroPhysicsCompute": true,
-  "pendingCount": 31,
-  "tripwireDenominator": 31,
-  "stages": [
-    "P",
-    "0",
-    "1",
-    "2"
-  ],
-  "scaleIsWorkbenchRelativeCandidateOnly": true,
-  "noGevPromotion": true,
+  "terminalStatus": "blocking-set-resolution-pinning-insufficient",
+  "verdictKind": "pinning-insufficient",
+  "blockingSetResolutionPassed": true,
+  "blockingSetCount": 31,
+  "stagePCoverage": {
+    "paPinned": 1,
+    "pbPinned": 0,
+    "unpinnable": 30,
+    "pinningInsufficient": true
+  },
+  "stage0": {
+    "closureSensitiveCount": 31
+  },
+  "stage1": {
+    "excisionYield": 0,
+    "pendingAfterStage1": 31
+  },
+  "decoy": {
+    "count": 48,
+    "decoyBatteryOk": true
+  },
   "physicistReviewPending": true,
-  "targetBlindConstruction": true,
-  "physicalTargetsConsultedForConstruction": false,
-  "targetBlindConstructionHash": "d28e78ba1bb79dfd41dbf881085cd5ed27db95f1314c421538fea9892bfb2ec8",
-  "physicalCouplingProvided": false,
-  "routeProvidesPhysicalEffectiveActionHessian": false,
-  "routeProvidesVevOrSourceScaleLineage": false,
-  "routeProvidesPoleExtractionAndGeVNormalization": false,
-  "routeCompletesBosonPredictions": false,
-  "routePromotesWzMasses": false,
-  "routePromotesHiggsMass": false,
-  "sourceContractApplicationAllowed": false,
-  "phase201TemplateMutated": false,
-  "fieldsAppliedToPhase201TemplateCount": 0,
-  "acceptedContractFieldCount": 0,
-  "canFillPhase201WzContract": false,
-  "canFillPhase201HiggsContract": false,
-  "canFillPhase256Contract": false,
-  "canFillPhase256ObservedFieldExtractionContract": false,
-  "predictionContractImpact": {
-    "canFillPhase201WzContract": false,
-    "canFillPhase201HiggsContract": false,
-    "canFillPhase256ObservedFieldExtractionContract": false,
-    "phase201FieldsDefensiblyFilled": []
-  },
-  "recordedBoundary": {
-    "physicistReviewPending": true,
-    "awaitingImplementation": true
-  },
-  "explicitCandidateOnlyNonclaims": [
-    "STEP 0 skeleton: zero physics computation; the pre-registered design is recorded in STUDY.md and is not yet implemented or executed.",
-    "The interim terminal is a program-state marker, not a scientific verdict; no measurement, elimination, or promotion is claimed.",
-    "physicistReviewPending = true is carried explicitly; no contract field is filled and nothing is promoted (promotedPhysicalMassClaimCount remains 0)."
-  ],
-  "decision": "STEP 0 skeleton for the blocking-set resolution phase (plan item 2). Awaiting adjudication with k=31 statements pending under the committed 33-symbol grading; the staged design (Stage P/0/1/2) is recorded in STUDY.md and not yet implemented. Nothing is graded or promoted yet.",
-  "runtimeSeconds": 0.0063665
+  "noGevPromotion": true,
+  "decision": "Blocking-set resolution is machine-dead at the automated route: 30 of 31 prose-only statements are UNPINNABLE (\u003E 7 tripwire). One mirror-resident statement pins at PA tier; the 30 audit-key statements link by sha12 unique-preimage to AUDIT-AUTHORED-NOT-CORPUS findings but have no committed verbatim draft excerpt \u002B page locator (the NLP auto-locate route is deliberately discarded), so they cannot be pinned to gradable corpus text without human Stage-2 work. The official April-2021 draft drift gate is pinned (sha256 3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4). Stage 0 certifies all 31 items CLOSURE-SENSITIVE (kernel-monotonicity proven exactly: adjudication can only add constraint rows and shrink the integer kernel); Stage 1 machine excision yields 0 (ex-ante bound 1). ELIMINATION-support only: this honestly proves the machine resolution route dead and pins phase464 to BLOCKED-UPSTREAM-AMBIGUOUS; nothing is promoted."
 }

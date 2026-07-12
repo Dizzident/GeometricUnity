@@ -8391,8 +8391,7 @@ var package = new
         ? new
         {
             status = JsonString(phase455.RootElement, "terminalStatus"),
-            exactFermionicBackreactionProbeSkeletonBuilt = JsonBool(phase455.RootElement, "exactFermionicBackreactionProbeSkeletonBuilt"),
-            interimTerminal = JsonString(phase455.RootElement, "interimTerminal"),
+            exactFermionicBackreactionProbePassed = JsonBool(phase455.RootElement, "exactFermionicBackreactionProbePassed"),
             verdictKind = JsonString(phase455.RootElement, "verdictKind"),
             applicationSubjectKind = JsonString(phase455.RootElement, "applicationSubjectKind"),
             planSection = JsonString(phase455.RootElement, "planSection"),
@@ -8479,8 +8478,7 @@ var package = new
         ? new
         {
             status = JsonString(phase462.RootElement, "terminalStatus"),
-            blockingSetResolutionSkeletonBuilt = JsonBool(phase462.RootElement, "blockingSetResolutionSkeletonBuilt"),
-            interimTerminal = JsonString(phase462.RootElement, "interimTerminal"),
+            blockingSetResolutionPassed = JsonBool(phase462.RootElement, "blockingSetResolutionPassed"),
             verdictKind = JsonString(phase462.RootElement, "verdictKind"),
             applicationSubjectKind = JsonString(phase462.RootElement, "applicationSubjectKind"),
             planSection = JsonString(phase462.RootElement, "planSection"),
@@ -8501,8 +8499,7 @@ var package = new
         ? new
         {
             status = JsonString(phase463.RootElement, "terminalStatus"),
-            transportStructureTheoremsSkeletonBuilt = JsonBool(phase463.RootElement, "transportStructureTheoremsSkeletonBuilt"),
-            interimTerminal = JsonString(phase463.RootElement, "interimTerminal"),
+            transportStructureTheoremsPassed = JsonBool(phase463.RootElement, "transportStructureTheoremsPassed"),
             verdictKind = JsonString(phase463.RootElement, "verdictKind"),
             applicationSubjectKind = JsonString(phase463.RootElement, "applicationSubjectKind"),
             planSection = JsonString(phase463.RootElement, "planSection"),
@@ -8523,8 +8520,7 @@ var package = new
         ? new
         {
             status = JsonString(phase464.RootElement, "terminalStatus"),
-            anchorAdjudicationContractSkeletonBuilt = JsonBool(phase464.RootElement, "anchorAdjudicationContractSkeletonBuilt"),
-            interimTerminal = JsonString(phase464.RootElement, "interimTerminal"),
+            anchorAdjudicationContractPassed = JsonBool(phase464.RootElement, "anchorAdjudicationContractPassed"),
             verdictKind = JsonString(phase464.RootElement, "verdictKind"),
             applicationSubjectKind = JsonString(phase464.RootElement, "applicationSubjectKind"),
             planSection = JsonString(phase464.RootElement, "planSection"),
@@ -8545,8 +8541,7 @@ var package = new
         ? new
         {
             status = JsonString(phase465.RootElement, "terminalStatus"),
-            anomalyConsistencyVarietyKernelSkeletonBuilt = JsonBool(phase465.RootElement, "anomalyConsistencyVarietyKernelSkeletonBuilt"),
-            interimTerminal = JsonString(phase465.RootElement, "interimTerminal"),
+            anomalyConsistencyVarietyKernelExecuted = JsonBool(phase465.RootElement, "anomalyConsistencyVarietyKernelExecuted"),
             verdictKind = JsonString(phase465.RootElement, "verdictKind"),
             applicationSubjectKind = JsonString(phase465.RootElement, "applicationSubjectKind"),
             planSection = JsonString(phase465.RootElement, "planSection"),
@@ -8567,8 +8562,7 @@ var package = new
         ? new
         {
             status = JsonString(phase466.RootElement, "terminalStatus"),
-            ws3VevCompletionContractSkeletonBuilt = JsonBool(phase466.RootElement, "ws3VevCompletionContractSkeletonBuilt"),
-            interimTerminal = JsonString(phase466.RootElement, "interimTerminal"),
+            ws3VevCompletionContractSchemaCommitted = JsonBool(phase466.RootElement, "ws3VevCompletionContractSchemaCommitted"),
             verdictKind = JsonString(phase466.RootElement, "verdictKind"),
             applicationSubjectKind = JsonString(phase466.RootElement, "applicationSubjectKind"),
             planSection = JsonString(phase466.RootElement, "planSection"),

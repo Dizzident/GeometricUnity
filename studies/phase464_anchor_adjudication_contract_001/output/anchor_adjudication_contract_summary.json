@@ -1,53 +1,39 @@
 {
   "phaseId": "phase464-anchor-adjudication-contract",
-  "generatedAt": "2026-07-12T11:58:47.0676956+00:00",
-  "terminalStatus": "anchor-adjudication-contract-awaiting-upstream",
-  "interimTerminal": "awaiting-upstream",
-  "verdictKind": "awaiting-upstream",
-  "applicationSubjectKind": "anchor-adjudication-contract",
-  "planSection": "WAVE2_ACTION_PLAN_2026-07-12 item 12",
-  "anchorAdjudicationContractSkeletonBuilt": true,
-  "awaitingImplementation": true,
-  "zeroPhysicsCompute": true,
+  "terminalStatus": "anchor-adjudication-blocked-upstream-ambiguous",
+  "verdictKind": "blocked-upstream-ambiguous",
+  "anchorAdjudicationContractPassed": true,
   "conjunction": "C1-and-C2-and-C3",
   "tripwireDenominator": 31,
-  "terminalIRequiresPhysicistRulings": true,
-  "scaleIsWorkbenchRelativeCandidateOnly": true,
-  "noGevPromotion": true,
+  "nPending": 31,
+  "rulingsCount": 0,
+  "conjuncts": {
+    "c1BlockingSetClosure": {
+      "satisfied": false,
+      "source": "phase462",
+      "note": "satisfied ONLY by closure-resolved(-with-excision); pinning-insufficient =\u003E BLOCKED"
+    },
+    "c2ReadingMenuDisposal": {
+      "satisfied": true,
+      "source": "phase461",
+      "note": "declared-comparison-consistency-only / part12d-anchor-readings-all-miss"
+    },
+    "c3Transport": {
+      "satisfied": true,
+      "mode": "transport-killed-at-audited-menu",
+      "vacuous": false,
+      "source": "phase463",
+      "note": "transport-killed-at-audited-menu OR vacuous-given-zero-sanctioned-anchors (item-20 amendment A1)"
+    }
+  },
+  "machineMonitorableReopeningFields": {
+    "sanctionedAnchorPresent": false,
+    "coercivityCertified": false,
+    "note": "read from the phase461 / phase463 outputs; a flip of either from false reopens the record"
+  },
+  "inputFlipBatteryOk": true,
+  "emittedSentence": "The audited corpus neither supplies nor forbids a dimensionful anchor at theorem grade: 31 of 31 prose-only statements remain unadjudicated under the committed 33-symbol grading; no reading-menu anchor survives (phase461); every dimensionful anchor in use is a labeled convention adoption pending adjudication; no anchor theorem is claimed and none may be cited.",
   "physicistReviewPending": true,
-  "targetBlindConstruction": true,
-  "physicalTargetsConsultedForConstruction": false,
-  "targetBlindConstructionHash": "41f39ba38ab8d4e92a52186527edcb6aabdf21ade1799f04426db32618efa1c2",
-  "physicalCouplingProvided": false,
-  "routeProvidesPhysicalEffectiveActionHessian": false,
-  "routeProvidesVevOrSourceScaleLineage": false,
-  "routeProvidesPoleExtractionAndGeVNormalization": false,
-  "routeCompletesBosonPredictions": false,
-  "routePromotesWzMasses": false,
-  "routePromotesHiggsMass": false,
-  "sourceContractApplicationAllowed": false,
-  "phase201TemplateMutated": false,
-  "fieldsAppliedToPhase201TemplateCount": 0,
-  "acceptedContractFieldCount": 0,
-  "canFillPhase201WzContract": false,
-  "canFillPhase201HiggsContract": false,
-  "canFillPhase256Contract": false,
-  "canFillPhase256ObservedFieldExtractionContract": false,
-  "predictionContractImpact": {
-    "canFillPhase201WzContract": false,
-    "canFillPhase201HiggsContract": false,
-    "canFillPhase256ObservedFieldExtractionContract": false,
-    "phase201FieldsDefensiblyFilled": []
-  },
-  "recordedBoundary": {
-    "physicistReviewPending": true,
-    "awaitingImplementation": true
-  },
-  "explicitCandidateOnlyNonclaims": [
-    "STEP 0 skeleton: zero physics computation; the pre-registered design is recorded in STUDY.md and is not yet implemented or executed.",
-    "The interim terminal is a program-state marker, not a scientific verdict; no measurement, elimination, or promotion is claimed.",
-    "physicistReviewPending = true is carried explicitly; no contract field is filled and nothing is promoted (promotedPhysicalMassClaimCount remains 0)."
-  ],
-  "decision": "STEP 0 skeleton for the anchor adjudication contract phase (plan item 12). Awaiting the upstream phase462 and phase463 terminals; the exact C1-and-C2-and-C3 conjunction, the pinned tripwire denominator 31, and the pre-committed public sentences for both outcomes are recorded in STUDY.md. Terminal (i) can never emit with zero physicist rulings. Nothing is adjudicated or promoted yet.",
-  "runtimeSeconds": 0.0062708
+  "noGevPromotion": true,
+  "runtimeSeconds": 0.0129598
 }

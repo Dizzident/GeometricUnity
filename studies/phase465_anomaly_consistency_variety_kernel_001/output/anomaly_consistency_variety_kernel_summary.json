@@ -1,22 +1,155 @@
 {
   "phaseId": "phase465-anomaly-consistency-variety-kernel",
-  "generatedAt": "2026-07-12T11:58:47.3675144+00:00",
-  "terminalStatus": "anomaly-consistency-variety-kernel-awaiting-implementation",
-  "interimTerminal": "awaiting-implementation",
-  "verdictKind": "awaiting-implementation",
+  "generatedAt": "2026-07-12T12:47:15.1376785+00:00",
+  "terminalStatus": "anomaly-consistency-variety-kernel-anomaly-variety-positive-dimensional-route-closed",
+  "verdictKind": "anomaly-variety-positive-dimensional-route-closed",
   "applicationSubjectKind": "anomaly-consistency-variety-kernel",
   "planSection": "WAVE2_ACTION_PLAN_2026-07-12 item 4",
-  "anomalyConsistencyVarietyKernelSkeletonBuilt": true,
-  "awaitingImplementation": true,
-  "zeroPhysicsCompute": true,
-  "patternTripwireCommittedBeforeCensus": true,
+  "anomalyConsistencyVarietyKernelExecuted": true,
+  "zeroPhysicsPromotion": true,
+  "phase404SummaryPath": "studies/phase404_gu_embedding_chain_coupling_ratio_enumeration_001/output/gu_embedding_chain_coupling_ratio_enumeration_summary.json",
+  "phase404Present": true,
+  "phase404TargetBlindConstructionHashPin": "ed68a8f3e0d98f25f3c476e940103a4275a79f550346338d08c3c6319160a481",
+  "phase404TargetBlindConstructionHashObserved": "ed68a8f3e0d98f25f3c476e940103a4275a79f550346338d08c3c6319160a481",
+  "phase404HashMatches": true,
+  "phase404ReconstructionMatches": true,
+  "phase404ReconstructionNote": "Six committed blocks reproduced (dimensions 6/2/1/3/1/3; weak/color multiplicities re-derived; hypercharge slots match).",
+  "signedSlotSpace": [
+    {
+      "slotIndex": 0,
+      "dimension": 6,
+      "isWeakDoublet": true,
+      "isColorTriplet": true,
+      "weakMultiplicity": 2,
+      "colorMultiplicity": 3,
+      "committedHyperchargeSlot": "-1/6"
+    },
+    {
+      "slotIndex": 1,
+      "dimension": 2,
+      "isWeakDoublet": true,
+      "isColorTriplet": false,
+      "weakMultiplicity": 2,
+      "colorMultiplicity": 1,
+      "committedHyperchargeSlot": "1/2"
+    },
+    {
+      "slotIndex": 2,
+      "dimension": 1,
+      "isWeakDoublet": false,
+      "isColorTriplet": false,
+      "weakMultiplicity": 1,
+      "colorMultiplicity": 1,
+      "committedHyperchargeSlot": "-1"
+    },
+    {
+      "slotIndex": 3,
+      "dimension": 3,
+      "isWeakDoublet": false,
+      "isColorTriplet": true,
+      "weakMultiplicity": 1,
+      "colorMultiplicity": 3,
+      "committedHyperchargeSlot": "-1/3"
+    },
+    {
+      "slotIndex": 4,
+      "dimension": 1,
+      "isWeakDoublet": false,
+      "isColorTriplet": false,
+      "weakMultiplicity": 1,
+      "colorMultiplicity": 1,
+      "committedHyperchargeSlot": "0"
+    },
+    {
+      "slotIndex": 5,
+      "dimension": 3,
+      "isWeakDoublet": false,
+      "isColorTriplet": true,
+      "weakMultiplicity": 1,
+      "colorMultiplicity": 3,
+      "committedHyperchargeSlot": "2/3"
+    }
+  ],
+  "anomalyForms": {
+    "su2SquaredU1_linear": [
+      "3",
+      "1",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "su3SquaredU1_linear": [
+      "2",
+      "0",
+      "0",
+      "1",
+      "0",
+      "1"
+    ],
+    "gravSquaredU1_linear": [
+      "6",
+      "2",
+      "1",
+      "3",
+      "1",
+      "3"
+    ],
+    "u1Cubed_weights": [
+      6,
+      2,
+      1,
+      3,
+      1,
+      3
+    ],
+    "note": "Order Q,L,e,d,n,u. The [grav]^2-U(1) mixed gravitational-gauge form and the [U(1)]^3 cubic complete the standard chiral anomaly set."
+  },
+  "linearRank": 3,
+  "nullity": 3,
+  "cubicIdenticallyZeroOnNullspace": false,
+  "restrictedCubicMonomialCount": 9,
+  "varietyClassification": "positive-dimensional",
+  "varietyProjectiveDimension": 1,
+  "varietyAffineDimension": 2,
+  "varietyIsScaleInvariantCone": true,
+  "vectorLikePlaneOnVariety": true,
+  "positiveDimensionalityWitness": "The exact 2-parameter vector-like plane y=(0,0,-c,d,c,-d) lies wholly on the variety for all rational c,d (all four anomaly forms vanish identically), certifying affine dimension \u003E= 2 independently of any basis choice.",
+  "routeClosedAsRuleOut": true,
+  "conditionalRowEmitted": false,
+  "conditionalTheoremRows": [],
+  "smPatternTripwire": {
+    "committedBeforeCensus": true,
+    "committedSignature": [
+      "-1/6",
+      "1/2",
+      "-1",
+      "-1/3",
+      "0",
+      "2/3"
+    ],
+    "smPatternIsAnomalyConsistent": true,
+    "smPatternTripwireFired": true,
+    "smPatternIsIsolatedSelection": false,
+    "interpretation": "The SM hypercharge signature lies ON the variety (fires as a flag), but the variety is positive-dimensional, so the SM pattern is one ray among an infinite anomaly-free cone: NOT an isolated selection and NOT a promotion.",
+    "discriminatorSyntheticAnomalousFires": false
+  },
+  "batteries": {
+    "phase404ReconstructionMatch": true,
+    "exactArithmeticDeterminism": true,
+    "tripwireBattery": true,
+    "allPassed": true
+  },
+  "anomalyRouteProvidesLowEnergyHyperchargeSource": false,
+  "o7FermionicActionUndefined": true,
+  "o7ImportLabel": "Anomaly freedom is a LABELED theoretical-consistency import (O7): the GU fermionic action is recorded UNDEFINED, so anomalyRouteProvidesLowEnergyHyperchargeSource can never flip; even the strongest rule-in is conditional (direction only, normalization not provided) and the phase451 two-loop tension stands.",
   "o7LabeledImportCap": "conditional-only",
   "scaleIsWorkbenchRelativeCandidateOnly": true,
   "noGevPromotion": true,
   "physicistReviewPending": true,
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
-  "targetBlindConstructionHash": "0a47c34992ef89153568f6e980c4bca62d03290e633aefd862ba27cd84c4d34a",
+  "kernelConstructionHash": "51ee4558001a50c42af7c003d92d2c4b4c83b8608a019b215816240e13ee8915",
   "physicalCouplingProvided": false,
   "routeProvidesPhysicalEffectiveActionHessian": false,
   "routeProvidesVevOrSourceScaleLineage": false,
@@ -38,15 +171,11 @@
     "canFillPhase256ObservedFieldExtractionContract": false,
     "phase201FieldsDefensiblyFilled": []
   },
-  "recordedBoundary": {
-    "physicistReviewPending": true,
-    "awaitingImplementation": true
-  },
   "explicitCandidateOnlyNonclaims": [
-    "STEP 0 skeleton: zero physics computation; the pre-registered design is recorded in STUDY.md and is not yet implemented or executed.",
-    "The interim terminal is a program-state marker, not a scientific verdict; no measurement, elimination, or promotion is claimed.",
-    "physicistReviewPending = true is carried explicitly; no contract field is filled and nothing is promoted (promotedPhysicalMassClaimCount remains 0)."
+    "The anomaly variety is positive-dimensional: anomaly cancellation is a consistency condition, not a selection principle for the hypercharge assignment on this slot space.",
+    "The SM-pattern tripwire firing is a membership flag, never a promotion; an infinite anomaly-free cone contains the SM ray.",
+    "O7: the fermionic action is UNDEFINED, so anomaly freedom is a labeled theoretical import; no low-energy hypercharge source is provided and none may be claimed. promotedPhysicalMassClaimCount remains 0."
   ],
-  "decision": "STEP 0 skeleton for the anomaly-consistency variety kernel phase (plan item 4). Awaiting implementation on the committed signed slot space with the pattern tripwire committed before the census; the consistency import is a labeled theoretical import (O7). Nothing is computed or promoted yet.",
-  "runtimeSeconds": 0.0061531
+  "decision": "The chiral anomaly-consistency conditions on the Phase404 signed slot space define a POSITIVE-DIMENSIONAL solution variety (projective dimension 1; a scale-invariant cone containing an explicit vector-like 2-parameter plane alongside the SM ray). Anomaly freedom therefore does NOT isolate the SM hypercharge assignment - neither its normalization nor even its direction is selected - so this route CLOSES as a rule-out. O7 caps it further: the fermionic action is undefined, so the low-energy hypercharge-source flag can never flip. Nothing is promoted; promotedPhysicalMassClaimCount remains 0.",
+  "runtimeSeconds": 0.0203888
 }
