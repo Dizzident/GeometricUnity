@@ -8,9 +8,10 @@ back, NO new phase directory may be created outside this table.
 | Block | Owner | First planned use |
 |-------|-------|-------------------|
 | 453-458 | Team B-scale (dynamical-scale elimination) | 453 DONE (T1 null); 454 DONE (beyond-ray certificates); next free: 455 |
-| 459-464 | Team A-anchor (dimensionful-anchor elimination) | 459 DONE (attestation); 460 DONE (kernel); 461 DONE (menu); next free: 462 |
+| 459-464 | Team A-anchor (dimensionful-anchor elimination) | 459-461 DONE; 462 = blocking-set resolution, 463 = A3 transport theorems, 464 = A6 contract (EXHAUSTS the A block) |
 | 465-470 | Team C-lineage (quantum-number/coupling lineage elimination) | next free: 465 (anomaly-consistency variety kernel) |
-| 471+ | Unassigned - extend this registry before use | - |
+| 471-476 | Team B-scale (extension, 2026-07-12 Wave-2 plan) | 471 = B2 closure theorem-of-record ledger; sized for contingent n=5 escalation + Binder production |
+| 477+ | Unassigned - extend this registry before use | - |
 
 Rules: (1) a team takes the LOWEST free number in its own block;
 (2) cross-team phases take the number of the OWNING team per the

@@ -817,7 +817,19 @@ anchors (referee ~460x kill reconstructed at 451.105; nothing
 forwarded to A3). B2 is narrowed to four named candidates: n=4
 volume, exact fermionic -log det, WS3 portal (held on C-CONTRACT
 schema), WS4 Binder. B3 untouched - team C's ladder is unbuilt.
-QUEUE (kill-ordered, from the program document): (1) PHASE453 - DONE
+WAVE-2 PLAN ADOPTED (2026-07-12, binding):
+docs/Phases/WAVE2_ACTION_PLAN_2026-07-12.md is the current execution
+queue - STEP 0 batched wiring checkpoint (skeletons 455-458/462-466/
+471, one ~6 h cascade, three injection tests at the commit gate),
+then the 15-item kill-ordered queue with immediate parallel launches
+(462 Stage-P + 463 T4; 455 exact fermionic backreaction; 466+465 C
+batch; O4 register from day 1 - the program-wide critical path).
+Registry extended B:471-476. Phase456 requirements surviving session
+turnover: the hash-refuse-to-run pre-registration gate and the
+per-site (un-slice-summed) correlator storage flag are MANDATORY pack
+items. The WS3 hold lifts only on the conjunction (466 schema green)
+AND (O4 M-probe ruling). LEGACY QUEUE (superseded by the plan above,
+kept for lineage): (1) PHASE453 - DONE
 (see above); (2) Wave-1
 parallel cheap kills: A1 units-equivariance kernel, A2 part-12d
 reading menu, C-KERNEL v3, C-STABILIZER v3, C-CONTRACT v3 (schema

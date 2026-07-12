@@ -20034,3 +20034,42 @@ wiring-instruction docs with quoted physics content must NOT persist
 in scanned roots - phase279 flagged the applied WIRING docs; they are
 now deleted after application (git history preserves them).
 promotedPhysicalMassClaimCount=0 throughout.
+
+## 2026-07-12 - Second team round adversarially approved: WAVE-2 ACTION PLAN adopted (binding)
+
+The second physicist/mathematician round (three teams - B1-completion,
+B2-closure, B3-lineage - with cross-team bulletins and two adversarial
+referees per program; 28 agents; B1 approved round 1 after major
+referee-driven repairs, B2 and B3 through their cycles) produced the
+unified WAVE-2 ACTION PLAN, committed as
+docs/Phases/WAVE2_ACTION_PLAN_2026-07-12.md (BINDING; a labeled
+refinement of the 2026-07-10 standing program, never a silent
+redefinition). Structure: STEP 0 = ONE batched wave wiring checkpoint
+(skeletons with interim green terminals for phases 455-458, 462-466,
+and the 471 ledger; full-breadth scanner registration; registry
+extension B:471-476; labeled amendments; three injection tests at the
+commit gate) paying the ~6 h scanner-consumer cascade ONCE; then a
+15-item kill-ordered queue (cheapest-most-decisive first,
+theorem-before-sampling, the weeks-scale spend behind the
+zero-discretion phase458 gate). IMMEDIATE parallel launches after
+Step 0: (A) phase462 Stage-P quote-pinning + phase463 T4
+conformal-sector likely-kill; (B) phase455 exact fermionic
+backreaction on the committed phase428 spectra (Sturm-certified,
+zero HMC); (C) phase466 C-CONTRACT schema + phase465 C-KERNEL in one
+batch (466 green = C's half of the WS3 hold-lift conjunction); plus
+day-1 start of the O4 conventions overlay register - THE program-wide
+critical path (one physicist engagement discharges O4 + C dossiers +
+the 462 Stage-2 rulings with a 40-decoy battery and sealed redo).
+Notable referee-driven repairs recorded in the plan: the round-1
+machine-excision yield estimate WITHDRAWN (honest committed estimate:
+at most 1 of 31, likely 0); ray-only transport authorization
+discarded as mathematically unsound (Motzkin-type counterexample
+recorded); positive-evidence-by-syntactic-absence removed; the
+fastest full-negative B2 pattern (E1) identified - days of
+deterministic compute + ONE 6-16 h HMC launch + an analytic theorem,
+bypassing the weeks-scale program entirely. Ten unresolved objections
+carried honestly (O4 compute-at-risk, O5 free-field prior, post-hoc
+admissibility in 464(i), 33-symbol scope, O7, phase451 tension, the
+tabled WS3 relaxation, PDF/physicist external dependencies, registry
+pressure, CUDA-not-now). Nothing promises a prediction;
+promotedPhysicalMassClaimCount=0 on every branch.
