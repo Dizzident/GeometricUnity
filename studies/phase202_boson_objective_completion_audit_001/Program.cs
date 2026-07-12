@@ -6472,8 +6472,9 @@ var exactFermionicBackreactionProbePassed = exactFermionicBackreactionProbeMater
     && JsonBool(phase455.RootElement, "routeCompletesBosonPredictions") is false;
 var consolidatedN4LaunchMaterialized = phase456 is not null;
 var consolidatedN4LaunchPassed = consolidatedN4LaunchMaterialized
-    && JsonBool(phase456!.RootElement, "consolidatedN4LaunchSkeletonBuilt") is true
-    && JsonString(phase456.RootElement, "interimTerminal") == "awaiting-pack"
+    && JsonBool(phase456!.RootElement, "phase456GateGreen") is true
+    && JsonBool(phase456.RootElement, "claimBoundaryHeld") is true
+    && JsonString(phase456.RootElement, "verdictKind") == "pack-committed-awaiting-gates"
     && JsonString(phase456.RootElement, "applicationSubjectKind") == "consolidated-n4-launch"
     && JsonBool(phase456.RootElement, "targetBlindConstruction") is true
     && JsonBool(phase456.RootElement, "physicistReviewPending") is true
@@ -6488,7 +6489,7 @@ var consolidatedN4LaunchPassed = consolidatedN4LaunchMaterialized
 var upsilonPortalStageAMaterialized = phase457 is not null;
 var upsilonPortalStageAPassed = upsilonPortalStageAMaterialized
     && JsonBool(phase457!.RootElement, "upsilonPortalStageASkeletonBuilt") is true
-    && JsonString(phase457.RootElement, "interimTerminal") == "awaiting-stage-a"
+    && JsonString(phase457.RootElement, "verdictKind") == "stage-a-certificates-committed"
     && JsonString(phase457.RootElement, "applicationSubjectKind") == "upsilon-portal-stage-a"
     && JsonBool(phase457.RootElement, "targetBlindConstruction") is true
     && JsonBool(phase457.RootElement, "physicistReviewPending") is true

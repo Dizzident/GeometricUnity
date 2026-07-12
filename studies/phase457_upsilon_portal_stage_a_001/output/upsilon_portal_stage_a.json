@@ -1,18 +1,293 @@
 {
   "phaseId": "phase457-upsilon-portal-stage-a",
-  "generatedAt": "2026-07-12T11:58:45.8789751+00:00",
-  "terminalStatus": "upsilon-portal-stage-a-awaiting-stage-a",
-  "interimTerminal": "awaiting-stage-a",
-  "verdictKind": "awaiting-stage-a",
+  "generatedAt": "2026-07-12T13:11:01.6279041+00:00",
+  "terminalStatus": "upsilon-portal-stage-a-stage-a-certificates-committed",
+  "interimTerminal": "stage-a-certificates-committed",
+  "priorInterimTerminal": "awaiting-stage-a",
+  "verdictKind": "stage-a-certificates-committed",
   "applicationSubjectKind": "upsilon-portal-stage-a",
   "planSection": "WAVE2_ACTION_PLAN_2026-07-12 item 10",
+  "eliminationItem": "TEAM_ELIMINATION_PROGRAM_2026-07-10 item 15 (WS3 Upsilon-portal, dynamical (omega,theta,M), M = labeled probe convention)",
   "upsilonPortalStageASkeletonBuilt": true,
-  "awaitingImplementation": true,
-  "zeroPhysicsCompute": true,
+  "stageA": {
+    "cellMenuId": "upsilon-portal-stage-a-sign-cell-menu-v1",
+    "portalActionClass": "S_portal = S_B \u002B kappa*sum||D_omega M||^2 \u002B sum_x[lambda|M|^4 \u002B (mu2 \u002B g*Omega)|M|^2]; Omega in {||F|| (MAG), ||F||^2 (DEN)}; M = labeled probe convention (O8)",
+    "certifiedArm": "kappa = 0 reduced arm; kappa \u003E 0 is boundedness-favorable (recorded per cell)",
+    "controlBranchIdentity": "Upsilon = F on the control branch =\u003E ||F||^2 = 2 S_B exactly =\u003E rho = 1 =\u003E g_crit = sqrt(2 lambda)",
+    "cells": [
+      {
+        "id": "CELL-Q-NEG",
+        "signPredicate": "lambda \u003C 0",
+        "verdict": "UNBOUNDED-BELOW",
+        "lemma": "L-Q",
+        "mechanism": "quartic self-coupling negative: V -\u003E -inf in |M| at fixed omega",
+        "kappaScope": "all kappa \u003E= 0",
+        "floorOrThreshold": "-"
+      },
+      {
+        "id": "CELL-Z-MASSNEG",
+        "signPredicate": "lambda = 0 \u0026 mu2 \u003C 0",
+        "verdict": "UNBOUNDED-BELOW",
+        "lemma": "L-MASS",
+        "mechanism": "no quartic, negative probe mass^2: V -\u003E -inf on the flat vacuum",
+        "kappaScope": "all kappa \u003E= 0",
+        "floorOrThreshold": "-"
+      },
+      {
+        "id": "CELL-Z-PORTALNEG",
+        "signPredicate": "lambda = 0 \u0026 mu2 \u003E= 0 \u0026 g \u003C 0",
+        "verdict": "UNBOUNDED-BELOW",
+        "lemma": "L-PNQ",
+        "mechanism": "no quartic, negative curvature portal drives the effective mass^2 negative on non-flat rays",
+        "kappaScope": "all kappa \u003E= 0 (reduced arm; kinetic cannot restore a missing quartic)",
+        "floorOrThreshold": "-"
+      },
+      {
+        "id": "CELL-Z-SOS",
+        "signPredicate": "lambda = 0 \u0026 mu2 \u003E= 0 \u0026 g \u003E= 0",
+        "verdict": "BOUNDED-BELOW",
+        "lemma": "L-SOS",
+        "mechanism": "sum of squares: every term \u003E= 0",
+        "kappaScope": "all kappa \u003E= 0",
+        "floorOrThreshold": "floor 0"
+      },
+      {
+        "id": "CELL-P-GNONNEG",
+        "signPredicate": "lambda \u003E 0 \u0026 g \u003E= 0",
+        "verdict": "BOUNDED-BELOW",
+        "lemma": "L-CS",
+        "mechanism": "complete the square; g Omega \u003E= 0 only raises the floor",
+        "kappaScope": "all kappa \u003E= 0",
+        "floorOrThreshold": "floor -N_sites*(mu2)_-^2/(4 lambda)"
+      },
+      {
+        "id": "CELL-P-DEN",
+        "signPredicate": "lambda \u003E 0 \u0026 g \u003C 0 \u0026 convention = DEN",
+        "verdict": "UNBOUNDED-BELOW",
+        "lemma": "L-SUP",
+        "mechanism": "density curvature portal: -t^8 runaway strictly dominates S_B ~ t^4 and kinetic ~ t^2",
+        "kappaScope": "all kappa \u003E= 0 (growth-rate strictly dominant)",
+        "floorOrThreshold": "-"
+      },
+      {
+        "id": "CELL-P-MAG",
+        "signPredicate": "lambda \u003E 0 \u0026 g \u003C 0 \u0026 convention = MAG",
+        "verdict": "CONDITIONAL-CRITICAL",
+        "lemma": "L-CRIT",
+        "mechanism": "magnitude curvature portal: exact critical coupling g_crit = sqrt(2 lambda / rho), rho = 1 on control; |g| \u003C g_crit BOUNDED, |g| \u003E g_crit UNBOUNDED (kappa = 0), |g| = g_crit decided by sign(mu2)",
+        "kappaScope": "kappa = 0 certified arm; kappa \u003E 0 raises g_crit (boundedness-favorable)",
+        "floorOrThreshold": "g_crit = sqrt(2 lambda / rho)"
+      }
+    ],
+    "boundedCount": 2,
+    "unboundedCount": 4,
+    "conditionalCount": 1,
+    "partitionExhaustive": true,
+    "partitionDisjoint": true,
+    "partitionCoverageCount": 24,
+    "everyCellHasCertificate": true,
+    "allCellsCertified": true,
+    "criticalLemmaSelfCheck": {
+      "consistent": true,
+      "probe": [
+        {
+          "lambda": 0.25,
+          "g": -0.3535533905932738,
+          "gCrit": 0.7071067811865476,
+          "leadingCoefficient": 0.375,
+          "subVerdict": "BOUNDED",
+          "consistent": true
+        },
+        {
+          "lambda": 0.25,
+          "g": -0.7071067811865476,
+          "gCrit": 0.7071067811865476,
+          "leadingCoefficient": -1.1102230246251565E-16,
+          "subVerdict": "CRITICAL-LINE",
+          "consistent": true
+        },
+        {
+          "lambda": 0.25,
+          "g": -1.0606601717798214,
+          "gCrit": 0.7071067811865476,
+          "leadingCoefficient": -0.6250000000000002,
+          "subVerdict": "UNBOUNDED",
+          "consistent": true
+        },
+        {
+          "lambda": 1,
+          "g": -0.7071067811865476,
+          "gCrit": 1.4142135623730951,
+          "leadingCoefficient": 0.375,
+          "subVerdict": "BOUNDED",
+          "consistent": true
+        },
+        {
+          "lambda": 1,
+          "g": -1.4142135623730951,
+          "gCrit": 1.4142135623730951,
+          "leadingCoefficient": -1.1102230246251565E-16,
+          "subVerdict": "CRITICAL-LINE",
+          "consistent": true
+        },
+        {
+          "lambda": 1,
+          "g": -2.121320343559643,
+          "gCrit": 1.4142135623730951,
+          "leadingCoefficient": -0.6250000000000002,
+          "subVerdict": "UNBOUNDED",
+          "consistent": true
+        },
+        {
+          "lambda": 4,
+          "g": -1.4142135623730951,
+          "gCrit": 2.8284271247461903,
+          "leadingCoefficient": 0.375,
+          "subVerdict": "BOUNDED",
+          "consistent": true
+        },
+        {
+          "lambda": 4,
+          "g": -2.8284271247461903,
+          "gCrit": 2.8284271247461903,
+          "leadingCoefficient": -1.1102230246251565E-16,
+          "subVerdict": "CRITICAL-LINE",
+          "consistent": true
+        },
+        {
+          "lambda": 4,
+          "g": -4.242640687119286,
+          "gCrit": 2.8284271247461903,
+          "leadingCoefficient": -0.6250000000000002,
+          "subVerdict": "UNBOUNDED",
+          "consistent": true
+        }
+      ]
+    },
+    "framing": "EXACT mathematics about the action class; constrains the probe design; NOT a physics claim about any target."
+  },
+  "firewall": {
+    "keyedToPhase": "phase466",
+    "phase466SummaryPath": "studies/phase466_ws3_vev_completion_contract_001/output/ws3_vev_completion_contract_summary.json",
+    "phase466Present": true,
+    "pinnedSchemaId": "ws3-vev-completion-contract-schema-v1",
+    "pinnedSchemaHash": "7159ea49a45e3044c4393542b24a5db596f5d1423150020b072849ec8cb322b9",
+    "observedSchemaId": "ws3-vev-completion-contract-schema-v1",
+    "observedSchemaHash": "7159ea49a45e3044c4393542b24a5db596f5d1423150020b072849ec8cb322b9",
+    "schemaPinSatisfied": true,
+    "o4MProbeRulingCandidatePaths": [
+      "docs/Phases/Adjudication/O4_MPROBE_RULING.json",
+      "scripts/o4_register/o4_mprobe_ruling.json",
+      "studies/phase457_upsilon_portal_stage_a_001/o4_mprobe_ruling.json"
+    ],
+    "o4MProbeRulingSearched": [
+      {
+        "path": "docs/Phases/Adjudication/O4_MPROBE_RULING.json",
+        "exists": false,
+        "validRecord": false
+      },
+      {
+        "path": "scripts/o4_register/o4_mprobe_ruling.json",
+        "exists": false,
+        "validRecord": false
+      },
+      {
+        "path": "studies/phase457_upsilon_portal_stage_a_001/o4_mprobe_ruling.json",
+        "exists": false,
+        "validRecord": false
+      }
+    ],
+    "o4MProbeRulingPresent": false,
+    "o4RulingPathFound": null,
+    "firewallOpen": false,
+    "verdictEmissionAllowed": false,
+    "battery": [
+      {
+        "name": "nominal-schema-pin",
+        "computed": true,
+        "expected": true,
+        "pass": true,
+        "note": "the committed phase466 schema {schemaId, schemaHash} matches the pinned pair"
+      },
+      {
+        "name": "synthetic-wrong-hash-blocks",
+        "computed": false,
+        "expected": false,
+        "pass": true,
+        "note": "a tampered schemaHash must fail the pin"
+      },
+      {
+        "name": "synthetic-wrong-id-blocks",
+        "computed": false,
+        "expected": false,
+        "pass": true,
+        "note": "a tampered schemaId must fail the pin"
+      },
+      {
+        "name": "o4-absent-keeps-firewall-closed",
+        "computed": false,
+        "expected": false,
+        "pass": true,
+        "note": "schema pins but the o4MProbeRuling record does not exist =\u003E verdict emission blocked"
+      },
+      {
+        "name": "synthetic-o4-present-opens-conjunction",
+        "computed": true,
+        "expected": true,
+        "pass": true,
+        "note": "with the schema pinned, a valid o4MProbeRuling would open verdict emission (still gated on motivation-green for the portal verdict)"
+      }
+    ],
+    "firewallMachineChecked": true,
+    "note": "No verdict-bearing summary field is emitted unless the on-disk phase466 {schemaId, schemaHash} matches the pinned pair AND an o4MProbeRuling record exists. It does not; the portal verdict is withheld."
+  },
+  "armQ": {
+    "implemented": true,
+    "gatedOff": true,
+    "mayRun": false,
+    "launchConditions": [
+      "G-Q1: firewallOpen (phase466 schema pinned AND o4MProbeRuling present)",
+      "G-Q2: a committed seed-regenerated ensemble in the phase450/453 HMC format with precursor batteries green",
+      "G-Q3: the RNG-stream-neutrality battery passes on that ensemble (or the FRESH-labeled arm is declared)",
+      "G-Q4: Team C co-signature for any deadline terminal (never closes L7)"
+    ],
+    "committedDefault": "runs Arm Q automatically once G-Q1..G-Q3 hold; no manual step",
+    "ensembleFormat": "phase450/453 (omega,theta,M) HMC ensemble: per-sample (S_B, Phi, |M|^2), umbrella windows, theta-Haar",
+    "codeSelfTested": true,
+    "selfTest": {
+      "note": "SYNTHETIC plumbing self-test only; zero physics; not a measurement of any target.",
+      "measurement": {
+        "mSquaredMean": 0.4978737090762797,
+        "mSquaredStdErr": 0.0015777209323293905,
+        "susceptibility": 0.009956813361241284
+      },
+      "rngStreamNeutralityBattery": {
+        "positiveControlNeutralPass": true,
+        "positiveControlSBDelta": 0,
+        "positiveControlSBErr": 0.004486404423261871,
+        "negativeControlContaminatedPass": false,
+        "negativeControlSBDelta": 0.25000000000000444,
+        "batteryHasTeeth": true
+      },
+      "selfTestPassed": true
+    },
+    "piggybackLanguageDeleted": true
+  },
   "preUnlockOnlyReachableSummaryTerminal": "measurement-recorded-verdict-withheld",
+  "measurementRecorded": false,
+  "portalVerdictEmitted": false,
+  "summaryVerdictTerminal": "verdict-withheld-firewall-closed",
+  "portalVerdict": {
+    "emitted": false,
+    "withheldReason": "null-hash firewall closed: schemaPinSatisfied=True, o4MProbeRulingPresent=False",
+    "portalMeasureNonexistentAtWorkbenchScope": "WITHHELD",
+    "portalNullMeasured": "WITHHELD",
+    "portalScaleCandidate": "WITHHELD",
+    "l7Closure": "WITHHELD"
+  },
   "holdConjunction": {
-    "phase466SchemaPin": "required",
-    "o4MProbeRuling": "required"
+    "phase466SchemaPin": "satisfied",
+    "o4MProbeRuling": "absent"
   },
   "limbConsumed": "L7",
   "scaleIsWorkbenchRelativeCandidateOnly": true,
@@ -20,7 +295,7 @@
   "physicistReviewPending": true,
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
-  "targetBlindConstructionHash": "1f6ac204fe88fcef936177aa9175aaacbba684be357e8d0a5d3e192042fefbbb",
+  "targetBlindConstructionHash": "2d21de54ae809df1eff74536b3f4d39be0140e584e4f0f8673948116a793ccc9",
   "physicalCouplingProvided": false,
   "routeProvidesPhysicalEffectiveActionHessian": false,
   "routeProvidesVevOrSourceScaleLineage": false,
@@ -44,13 +319,21 @@
   },
   "recordedBoundary": {
     "physicistReviewPending": true,
-    "awaitingImplementation": true
+    "awaitingImplementation": false
   },
   "explicitCandidateOnlyNonclaims": [
-    "STEP 0 skeleton: zero physics computation; the pre-registered design is recorded in STUDY.md and is not yet implemented or executed.",
-    "The interim terminal is a program-state marker, not a scientific verdict; no measurement, elimination, or promotion is claimed.",
-    "physicistReviewPending = true is carried explicitly; no contract field is filled and nothing is promoted (promotedPhysicalMassClaimCount remains 0)."
+    "Stage A commits boundedness-below CERTIFICATES for the portal action class as EXACT MATHEMATICS; they constrain the probe design and are not physics claims about any target.",
+    "The null-hash firewall is CLOSED (no o4MProbeRuling record exists); no portal verdict is emitted. The reachable summary state is at most measurement-recorded-verdict-withheld.",
+    "Arm Q is implemented but GATED OFF; the only code executed here is a synthetic plumbing self-test with zero physics.",
+    "M is a labeled probe convention (O8); a gap proves a singlet, never a named electroweak scalar. Lattice-unit quantities stay in lattice units; promotedPhysicalMassClaimCount remains 0; physicistReviewPending carried explicitly."
   ],
-  "decision": "STEP 0 skeleton for the upsilon-portal Stage A phase under the standing hold (plan item 10). Pre-unlock the only reachable summary terminal is measurement-recorded-verdict-withheld; verdict emission is gated on the phase466 schema-pin and the O4 M-probe ruling in conjunction. Nothing is measured or promoted yet.",
-  "runtimeSeconds": 0.0069291
+  "assertExpectations": {
+    "stageACertificatesCommitted": true,
+    "firewallClosedVerdictWithheld": true,
+    "firewallBatteryPassed": true,
+    "armQGatedOff": true,
+    "standingClaimBoundaryIntact": true
+  },
+  "decision": "Stage A commits exhaustive-cell boundedness-below certificates for the Upsilon-portal action class: 2 bounded, 4 unbounded, 1 conditional-critical, over a disjoint exhaustive sign-cell menu (exact mathematics; control-branch identity ||F||^2 = 2 S_B fixes g_crit = sqrt(2 lambda)). The null-hash firewall keyed to phase466 is CLOSED (schema pins but no o4MProbeRuling record exists), so the portal verdict is WITHHELD; Arm Q is implemented and GATED OFF. Terminal stage-a-certificates-committed. Nothing is measured or promoted; promotedPhysicalMassClaimCount remains 0.",
+  "runtimeSeconds": 0.0209888
 }

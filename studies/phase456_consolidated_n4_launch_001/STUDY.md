@@ -1,14 +1,22 @@
-# Phase456: Consolidated n=4 Launch (STEP 0 skeleton)
+# Phase456: Consolidated n=4 Launch (pack-gated)
 
-Team B + A, plan item 9 (`docs/Phases/WAVE2_ACTION_PLAN_2026-07-12.md`). STEP 0
-**skeleton**: emits the pre-registered interim terminal `awaiting-pack` and the
-standing claim boundary. The consolidated pack and its sampling are not yet
-built. This file pre-registers the design.
+Team B + A, plan item 9 (`docs/Phases/WAVE2_ACTION_PLAN_2026-07-12.md`). The
+A4 + A5 Stage-A **pre-registration pack** is built and hash-pinned in
+`preregistration/`; this phase is now the pack **refuse-to-run gate** plus the
+standing claim boundary. The `~6-16 h` production HMC is deliberately **not
+implemented yet**. Design details and the pack contents are in
+`docs/Phases/Implementation/IMPLEMENTATION_P456.md`.
 
-## Interim terminal
+## Interim terminals (pre-registered, all reachable)
 
-`awaiting-pack` — skeleton only; zero physics compute; nothing measured or
-promoted; `physicistReviewPending = true`.
+- `awaiting-pack` — the pack is absent (interim green).
+- `pack-committed-awaiting-gates` — the pack is present and its SHA-256 matches
+  the pinned constant; awaiting the remaining hard gates before production.
+- `pack-hash-mismatch-refuse-to-run` — **BLOCKED**; the MANDATORY refuse-to-run
+  condition. Production must never sample against an unpinned/altered pack.
+
+Zero physics compute; nothing measured or promoted; `physicistReviewPending =
+true`; `promotedPhysicalMassClaimCount = 0`.
 
 ## Mandatory gates (pre-registered, non-negotiable)
 

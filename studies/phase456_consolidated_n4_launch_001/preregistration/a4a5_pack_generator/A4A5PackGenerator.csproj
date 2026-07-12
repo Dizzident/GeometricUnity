@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Pre-registration PACK GENERATOR for phase456 (A4 + A5 Stage-A). This is
+       standalone tooling: it is NOT a wired phase, NOT in the traversal, and NOT
+       in the .slnx. It runs once to emit the hash-pinned pre-registration pack
+       into ../ (the preregistration directory). phase456's production run only
+       ever reads the committed pack and hash-gates on it; it never invokes this
+       generator. Deterministic, no HMC, no sampling. -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../../../src/Gu.Geometry/Gu.Geometry.csproj" />
+    <ProjectReference Include="../../../../src/Gu.Interop/Gu.Interop.csproj" />
+    <ProjectReference Include="../../../../src/Gu.ReferenceCpu/Gu.ReferenceCpu.csproj" />
+  </ItemGroup>
+
+</Project>

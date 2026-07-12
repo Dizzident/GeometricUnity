@@ -1,25 +1,49 @@
 {
   "phaseId": "phase456-consolidated-n4-launch",
-  "generatedAt": "2026-07-12T11:58:45.5724524+00:00",
-  "terminalStatus": "consolidated-n4-launch-awaiting-pack",
-  "interimTerminal": "awaiting-pack",
-  "verdictKind": "awaiting-pack",
+  "generatedAt": "2026-07-12T13:17:10.900927+00:00",
+  "terminalStatus": "consolidated-n4-launch-pack-committed-awaiting-gates",
+  "interimTerminal": "pack-committed-awaiting-gates",
+  "verdictKind": "pack-committed-awaiting-gates",
   "applicationSubjectKind": "consolidated-n4-launch",
   "planSection": "WAVE2_ACTION_PLAN_2026-07-12 item 9",
-  "consolidatedN4LaunchSkeletonBuilt": true,
-  "awaitingImplementation": true,
+  "phase456GateGreen": true,
+  "claimBoundaryHeld": true,
   "zeroPhysicsCompute": true,
+  "productionSamplingImplemented": false,
+  "awaitingProductionImplementation": true,
+  "packGate": {
+    "packDir": "studies/phase456_consolidated_n4_launch_001/preregistration",
+    "packFiles": [
+      "a4_symmetry_irrep_projectors.json",
+      "a5_gaussian_domination_stage_a.json",
+      "pack_manifest.json"
+    ],
+    "packPresent": true,
+    "missingPackFiles": [],
+    "pinnedPackSha256": "40fd3c3488f94d18f50961e85d0bb3a3eabd1a31a071b61149875b8cf3d437aa",
+    "computedPackSha256": "40fd3c3488f94d18f50961e85d0bb3a3eabd1a31a071b61149875b8cf3d437aa",
+    "packHashMatches": true,
+    "refuseToRun": false,
+    "refuseToRunGate": "MANDATORY",
+    "hashAlgorithm": "SHA-256 over concatenation of packFiles in listed order (byte-exact contents)"
+  },
   "mandatoryGates": {
     "hashRefuseToRunGate": "MANDATORY",
-    "perSiteCorrelatorStorageFlag": "MANDATORY"
+    "perSiteCorrelatorStorageFlag": "MANDATORY",
+    "perSiteCorrelatorStorageEnvFlag": "PHASE456_STORE_PER_SITE_CORRELATORS"
   },
-  "limbConsumed": "L6",
+  "packContents": {
+    "a4": "Stage-A automorphism/irrep enumeration (n=4): realized point group order 48; rest-frame little group H_s = S_3 (order 6, irreps {1,1,2}); parity inadmissible (no realized spatial inversion) =\u003E 0-\u002B-like banned; exact-rational projector kernels for the identity-irrep 2x2 GEVP \u002B the realized non-identity (sign) channel; k_min=2*pi/4 dispersion spec",
+    "a5": "Stage-A Gaussian-domination attempt: NOT provable at Stage A; obstruction recorded (compositeness \u002B reflection positivity of the Kuhn-simplicial action); verdict a5-stage-a-gaussian-domination-not-provable-obstruction-recorded",
+    "manifest": "threshold max(family-wise\u003E=3sigma, per-row 3sigma) [bare 99th percentile forbidden]; power gate; mechanical AIC window aggregation (no analyst-chosen window); MV-456 fallback (scoping device, not a gate bypass)"
+  },
+  "limbConsumed": "L6 (closes at probed-volume scope on T1 with a Gaussian-null Binder column); L8 at two-volume strength",
   "scaleIsWorkbenchRelativeCandidateOnly": true,
   "noGevPromotion": true,
   "physicistReviewPending": true,
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
-  "targetBlindConstructionHash": "d854fe852be76a4b241d792a8e1a318123410eeba27868b4c2e1190d10c4abd7",
+  "targetBlindConstructionHash": "dcd3ff3c3bc13766ccd978b0eecbf452169f0dcfd31376d0d54550f5b9b525df",
   "physicalCouplingProvided": false,
   "routeProvidesPhysicalEffectiveActionHessian": false,
   "routeProvidesVevOrSourceScaleLineage": false,
@@ -43,13 +67,14 @@
   },
   "recordedBoundary": {
     "physicistReviewPending": true,
-    "awaitingImplementation": true
+    "awaitingProductionImplementation": true
   },
   "explicitCandidateOnlyNonclaims": [
-    "STEP 0 skeleton: zero physics computation; the pre-registered design is recorded in STUDY.md and is not yet implemented or executed.",
+    "The pre-registration pack fixes the A4 kernels and A5 verdict and the analysis thresholds BEFORE any physics number is computed; it measures nothing and promotes nothing.",
     "The interim terminal is a program-state marker, not a scientific verdict; no measurement, elimination, or promotion is claimed.",
-    "physicistReviewPending = true is carried explicitly; no contract field is filled and nothing is promoted (promotedPhysicalMassClaimCount remains 0)."
+    "physicistReviewPending = true is carried explicitly; no contract field is filled and nothing is promoted (promotedPhysicalMassClaimCount remains 0).",
+    "A4 group-theory content (irreps, projector coefficients) is exact rational structure of the reduced Spin(4)-slice lattice symmetry; it is not a physical spectrum."
   ],
-  "decision": "STEP 0 skeleton for the consolidated n=4 launch pack (plan item 9). Awaiting the hash-pinned pre-registration pack with the refuse-to-run gate and per-site correlator storage flag; no sampling is run yet and nothing is promoted.",
-  "runtimeSeconds": 0.0064541
+  "decision": "Consolidated n=4 launch (plan item 9): the A4\u002BA5 Stage-A pre-registration pack is committed and its SHA-256 matches the pinned constant, so the refuse-to-run gate is satisfied. The phase now awaits the remaining hard gates (phase455 terminal, O4 memo or user-renewed risk acceptance) before the ~6-16 h production HMC, which is deliberately not yet implemented. Per-site correlator storage is MANDATORY (pinned in the pack). Nothing is measured or promoted; promotedPhysicalMassClaimCount remains 0.",
+  "runtimeSeconds": 0.0080218
 }

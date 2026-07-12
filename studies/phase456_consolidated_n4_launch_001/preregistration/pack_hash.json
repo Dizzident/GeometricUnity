@@ -1,0 +1,11 @@
+{
+  "packItem": "phase456_preregistration_pack_hash",
+  "hashAlgorithm": "SHA-256 over concatenation of packFiles in listed order",
+  "packFiles": [
+    "a4_symmetry_irrep_projectors.json",
+    "a5_gaussian_domination_stage_a.json",
+    "pack_manifest.json"
+  ],
+  "packSha256": "40fd3c3488f94d18f50961e85d0bb3a3eabd1a31a071b61149875b8cf3d437aa",
+  "note": "phase456 Program.cs pins this value as PinnedPackSha256; production refuses to run on any mismatch"
+}

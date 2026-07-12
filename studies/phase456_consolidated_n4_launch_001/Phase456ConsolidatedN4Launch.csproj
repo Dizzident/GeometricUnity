@@ -8,4 +8,12 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
+  <!-- The pre-registration pack + its standalone generator live in a subdirectory; they are
+       committed data (and tooling), not part of this phase's compilation. The generator has
+       its own project/entry point — exclude it so this phase compiles to a single program. -->
+  <ItemGroup>
+    <Compile Remove="preregistration/**/*.cs" />
+    <None Remove="preregistration/**" />
+  </ItemGroup>
+
 </Project>

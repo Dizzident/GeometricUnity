@@ -20155,3 +20155,44 @@ certificates, C-STABILIZER (467), C-CLOSURE (468).
 promotedPhysicalMassClaimCount=0 on every branch - four of this
 wave's six verdicts are eliminations, one is an honest block, one is
 infrastructure; nothing here is, or leads to, a prediction claim.
+
+## 2026-07-12 - Phase456 pre-registration pack + Phase457 Stage-A committed: the machine-executable Wave-2 queue is exhausted
+
+PHASE456 (pack-committed-awaiting-gates): the A4+A5 Stage-A
+pre-registration pack is hash-pinned (40fd3c34...) behind a proven
+refuse-to-run gate (all three branches exercised: absent -> awaiting;
+mismatch -> BLOCKED; restored -> committed). A4 delivered the exact
+realized-symmetry result: the Kuhn-triangulated (Z_4)^4 torus realizes
+translations x (S_4 x {+/-I}) (order 48), rest-frame little group S_3
+- and NO improper element implements spatial inversion, so PARITY IS
+BANNED as a channel label (0-+-like labels forbidden; channels carry
+realized-irrep labels only). Exact-rational projectors committed for
+the identity 2x2 GEVP and the A2 sign-irrep channel; k_min dispersion
+row specced; the per-site correlator storage flag recorded MANDATORY.
+A5 verdict: the Gaussian-domination pre-theorem is NOT PROVABLE at
+Stage A - obstruction recorded honestly (composite 0++ correlator not
+controlled by field-level bounds; reflection positivity not
+established for the Kuhn-simplicial action; plaquette-local quartic).
+The beta ladders are NOT cancelled; the terminal string feeds
+phase458 gate G1.
+
+PHASE457 (stage-a-certificates-committed): exact boundedness
+certificates for ALL SEVEN portal-action cells (machine-verified
+disjoint + exhaustive over the sign menu): 2 bounded (sum-of-squares;
+complete-the-square), 4 unbounded-named (quartic/mass/portal runaways
+- probe-design constraints, not physics), 1 conditional-critical with
+the closed form g_crit = sqrt(2*lambda) at the control-branch rho=1.
+The verdict firewall is machine-checked CLOSED (synthetic wrong
+schema-hash blocks; the gate opens only on the phase466 schema pin
+AND an O4 M-probe ruling - which does not exist). Arm Q measurement
+code implemented but gated OFF, its RNG-contamination battery proven
+to have teeth on synthetic controls. Nothing here is a portal verdict.
+
+PROGRAM STATE: every machine-executable Wave-2 item through the plan's
+immediate-launch tier is now committed. Remaining: phases 467/468
+(C-STABILIZER, C-CLOSURE - new dirs, batch their wiring), the
+phase456 production HMC (gated on the O4 memo per the plan), and THE
+O4 PHYSICIST ENGAGEMENT - the program-wide critical path, which now
+decides: the phase455 flip axis, the WS3 M-probe (phase457's firewall
+key), the 445-455 convention families, and optionally the phase462
+quote-pinning reopening. promotedPhysicalMassClaimCount=0.

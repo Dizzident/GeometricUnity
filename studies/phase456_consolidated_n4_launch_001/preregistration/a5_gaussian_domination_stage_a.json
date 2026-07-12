@@ -1,0 +1,16 @@
+{
+  "packItem": "A5_stage_a_gaussian_domination_attempt",
+  "sector": "even (omega -\u003E -omega Z_2 invariant) sector of the exactly-quartic S_B",
+  "target": "m(beta) \u003E= m_free in the 0\u002B\u002B composite channel",
+  "sbStructure": "S_B(omega) quartic, even under omega -\u003E -omega; O1=Tr(F^2), O2=Tr(Upsilon^2) are even quadratic interpolators; the 0\u002B\u002B gap is a connected 4-omega composite correlator",
+  "provable": false,
+  "verdict": "a5-stage-a-gaussian-domination-not-provable-obstruction-recorded",
+  "obstructions": [
+    "O-A compositeness: field-level infrared/Gaussian-domination bounds control \u003Comega omega\u003E, not the connected 4-omega composite correlator defining the 0\u002B\u002B pole; no elementary inequality transports the field bound to the composite channel for the matrix-valued su(2) quartic (induced composite-coupling sign uncontrolled)",
+    "O-B reflection positivity: Gaussian domination presupposes reflection positivity across the axis-0 time reflection; the Kuhn body-diagonal is not preserved by the time-hyperplane reflection (A4: no realized improper element), so link-reflection positivity is not established for this simplicial S_B at Stage A",
+    "non-locality: the quartic coupling is plaquette/face-local, not single-site, so the single-site Gaussian-domination measure hypothesis does not apply"
+  ],
+  "whatItWouldHaveCancelled": "if provable, m(beta) \u003E= m_free would have bounded the interacting gap below by the free gap and removed the need to sample the beta ladder for the gap lower bound; it does NOT, so the beta ladders stand",
+  "consumes": "feeds phase458 gate G1 as the A5 terminal string; A5 does NOT close L8 analytically (no NO-GO-theorem-closed via A5)",
+  "mandatoryFraming": "no promotion; the obstruction record is a first-class negative result; promotedPhysicalMassClaimCount=0"
+}

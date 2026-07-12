@@ -1,0 +1,51 @@
+{
+  "packItem": "phase456_preregistration_pack_manifest",
+  "planSection": "WAVE2_ACTION_PLAN_2026-07-12 item 9; standing items 12 \u0026 14",
+  "generatedBy": "phase456 preregistration a4a5_pack_generator (deterministic; no HMC)",
+  "volumeN": 4,
+  "thresholdSpec": {
+    "rule": "max( calibratedFamilyWiseAtLeast3Sigma , perRow3Sigma )",
+    "familyWise": "family-wise significance calibrated across all pack rows to control the family-wise error at the \u003E=3 sigma level (calibration is mechanical, computed from the row count and the null covariance; NOT a bare percentile)",
+    "perRow": "each row must independently clear 3 sigma against its exact free-field control",
+    "bare99thPercentileForbidden": true,
+    "rationale": "O5 standing: the committed spectrum is free-field-compatible (0.9 sigma); a bare 99th percentile is forbidden as a dynamical-structure threshold"
+  },
+  "powerGate": {
+    "rule": "each row must reach pre-registered statistical power \u003E= 0.8 to detect a true 3 sigma effect at its threshold, computed from the achieved N_eff (tau_int-based) and the row\u0027s null variance",
+    "underpoweredTerminalRow": "underpowered",
+    "underpoweredMeaning": "no claim either way; the row records insufficient power, never a null-by-default",
+    "neffFloor": 100
+  },
+  "aicWindowAggregation": {
+    "rule": "MECHANICAL: enumerate every contiguous cosh-fit window within the informative range (1 \u003C= t \u003C= T/2 - 1, or the single-point {0} window with the excited-state caveat when T/2-1 \u003C 1); fit the constant-mass cosh model on each; select/aggregate by AICc weights (Akaike weights normalized over the enumerated window set)",
+    "aggregation": "AIC-weighted model average of a*m across windows; the systematic spread across windows enters the reported error in quadrature",
+    "analystChosenWindowExists": false,
+    "note": "no analyst-chosen window exists anywhere in the pipeline; the window set and the AICc formula are pinned here ex ante"
+  },
+  "mv456Fallback": {
+    "definition": "MV-456 (minimum viable) scopes WHICH rows are attempted if the full pack cannot run to budget: the n=4 exact free-field gate \u002B the identity-irrep 2x2 GEVP zero-momentum gap only; the k_min dispersion row and the non-identity channel are dropped from the ATTEMPTED set",
+    "isNotAGateBypass": true,
+    "invariant": "MV-456 never relaxes a gate and never bypasses A4: the A4 Stage-A kernels (identity \u002B non-identity \u002B dispersion) still exist ex ante and stay hash-pinned; MV-456 only reduces scope, never thresholds/power/AIC rules"
+  },
+  "hardGatesBeforeProductionSampling": [
+    "phase455 terminal recorded",
+    "A4 Stage-A kernels committed (this pack)",
+    "A5 Stage-A verdict committed (this pack)",
+    "O4 memo or explicit user-renewed risk acceptance before production HMC"
+  ],
+  "consumers": {
+    "limbL6": "closes at probed-volume scope on T1 with a Gaussian-null Binder column",
+    "limbL8": "O5 null at two-volume strength (Binder Gaussian-null at both volumes)",
+    "n5Escalation": "T2 = coherent \u003E=3 sigma departure in \u003E=2 distinct-irrep channels (|delta_ch|\u003C=2) =\u003E mandatory n=5 escalation (contingent consumer of registry B:471-476) before ANY claim"
+  },
+  "refuseToRunGate": {
+    "description": "phase456 production refuses to run unless the committed pack hash matches its pinned constant; awaiting-pack stays reachable when the pack is absent; pack-committed-awaiting-gates is emitted when the pack is present and the hash matches; a mismatch is a blocked refuse-to-run condition",
+    "packFiles": [
+      "a4_symmetry_irrep_projectors.json",
+      "a5_gaussian_domination_stage_a.json",
+      "pack_manifest.json"
+    ],
+    "hashAlgorithm": "SHA-256 over the concatenation of the pinned pack files in listed order (byte-exact file contents, listed-order concatenation)"
+  },
+  "mandatoryFraming": "workbench-relative structure data only; lattice units; nothing measured or promoted at Stage A; promotedPhysicalMassClaimCount=0"
+}

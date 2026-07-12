@@ -5525,22 +5525,26 @@ if (sourceLineageMissing) {
   assert(phase455.routePromotesWzMasses === false && phase455.routePromotesHiggsMass === false && phase455.routeCompletesBosonPredictions === false, "Phase455 cannot promote boson predictions.");
   assert(phase101Package?.exactFermionicBackreactionProbe?.status === "exact-fermionic-backreaction-probe-convention-fragile", "Phase101 must include the Phase455 block at its real terminal.");
   // Phase456 -- Wave-2 STEP 0 skeleton (consolidated-n4-launch): interim terminal awaiting-pack.
-  assert(phase456.consolidatedN4LaunchSkeletonBuilt === true, "Phase456 skeleton must be built with its standing claim boundary intact.");
   assert(phase456.applicationSubjectKind === "consolidated-n4-launch", "Phase456 must classify its subject as consolidated-n4-launch.");
-  assert(phase456.interimTerminal === "awaiting-pack", "Phase456 must emit its pre-registered interim terminal awaiting-pack.");
-  assert(phase456.verdictKind === "awaiting-pack", "Phase456 verdictKind must equal its interim terminal.");
+  assert(phase456.terminalStatus === "consolidated-n4-launch-pack-committed-awaiting-gates", "Phase456 must carry the pack-committed-awaiting-gates terminal (A4+A5 Stage-A pack landed; production HMC deliberately unbuilt).");
+  assert(phase456.verdictKind === "pack-committed-awaiting-gates", "Phase456 verdictKind must equal pack-committed-awaiting-gates.");
+  assert(phase456.phase456GateGreen === true && phase456.claimBoundaryHeld === true, "Phase456 gate and claim boundary must hold.");
+  assert(phase456.packGate?.packPresent === true && phase456.packGate?.packHashMatches === true && phase456.packGate?.refuseToRun === false && phase456.packGate?.refuseToRunGate === "MANDATORY", "Phase456 hash-refuse-to-run gate must be green against the pinned pack (40fd3c34...).");
   assert(phase456.planSection === "WAVE2_ACTION_PLAN_2026-07-12 item 9", "Phase456 must cite its plan item.");
   assert(phase456.targetBlindConstruction === true, "Phase456 must be target-blind.");
   assert(phase456.physicistReviewPending === true, "Phase456 must carry physicistReviewPending explicitly.");
   assert(phase456.noGevPromotion === true, "Phase456 must keep the no-GeV boundary.");
   assert(phase456.sourceContractApplicationAllowed === false && phase456.canFillPhase201WzContract === false && phase456.canFillPhase201HiggsContract === false && phase456.canFillPhase256ObservedFieldExtractionContract === false, "Phase456 cannot fill Phase201 or Phase256 contracts.");
   assert(phase456.routePromotesWzMasses === false && phase456.routePromotesHiggsMass === false && phase456.routeCompletesBosonPredictions === false, "Phase456 cannot promote boson predictions.");
-  assert(phase101Package?.consolidatedN4Launch?.consolidatedN4LaunchSkeletonBuilt === true, "Phase101 must include the Phase456 block.");
+  assert(phase101Package?.consolidatedN4Launch?.status === "consolidated-n4-launch-pack-committed-awaiting-gates", "Phase101 must include the Phase456 block with the pack-committed terminal.");
   // Phase457 -- Wave-2 STEP 0 skeleton (upsilon-portal-stage-a): interim terminal awaiting-stage-a.
   assert(phase457.upsilonPortalStageASkeletonBuilt === true, "Phase457 skeleton must be built with its standing claim boundary intact.");
   assert(phase457.applicationSubjectKind === "upsilon-portal-stage-a", "Phase457 must classify its subject as upsilon-portal-stage-a.");
-  assert(phase457.interimTerminal === "awaiting-stage-a", "Phase457 must emit its pre-registered interim terminal awaiting-stage-a.");
-  assert(phase457.verdictKind === "awaiting-stage-a", "Phase457 verdictKind must equal its interim terminal.");
+  assert(phase457.terminalStatus === "upsilon-portal-stage-a-stage-a-certificates-committed", "Phase457 must carry the stage-a-certificates-committed terminal (all seven portal cells certified; portal verdict withheld).");
+  assert(phase457.verdictKind === "stage-a-certificates-committed", "Phase457 verdictKind must equal stage-a-certificates-committed.");
+  assert(phase457.stageA?.allCellsCertified === true, "Phase457 must certify every portal-action cell (2 bounded / 4 unbounded-named / 1 conditional-critical).");
+  assert(phase457.firewall?.firewallOpen === false && phase457.firewall?.firewallMachineChecked === true, "Phase457 verdict firewall must be machine-checked and CLOSED (no O4 M-probe ruling exists; the WS3 hold's second half).");
+  assert(phase457.armQ?.gatedOff === true, "Phase457 Arm Q must remain gated off pre-unlock.");
   assert(phase457.planSection === "WAVE2_ACTION_PLAN_2026-07-12 item 10", "Phase457 must cite its plan item.");
   assert(phase457.targetBlindConstruction === true, "Phase457 must be target-blind.");
   assert(phase457.physicistReviewPending === true, "Phase457 must carry physicistReviewPending explicitly.");
