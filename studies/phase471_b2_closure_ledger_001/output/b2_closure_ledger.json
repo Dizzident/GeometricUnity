@@ -1,0 +1,185 @@
+{
+  "phaseId": "phase471-b2-closure-ledger",
+  "generatedAt": "2026-07-12T11:58:48.0050758+00:00",
+  "terminalStatus": "b2-closure-ledger-closure-not-decidable-open-limbs-named",
+  "interimTerminal": "closure-not-decidable",
+  "verdictKind": "closure-not-decidable",
+  "applicationSubjectKind": "b2-closure-ledger",
+  "planSection": "WAVE2_ACTION_PLAN_2026-07-12 item 14",
+  "b2ClosureLedgerBuilt": true,
+  "zeroPhysicsCompute": true,
+  "limbs": [
+    {
+      "id": "L1",
+      "name": "joint-effective-potential-saturation",
+      "phases": [
+        "phase443"
+      ],
+      "status": "closed",
+      "outcome": "recorded",
+      "committedTerminalStrings": "joint-effective-potential-saturation-probe-passed-no-log-saturation-necessary-not-sufficient-frontier-sharpened"
+    },
+    {
+      "id": "L2",
+      "name": "rg-scheme-and-two-loop-saturation",
+      "phases": [
+        "phase446",
+        "phase447"
+      ],
+      "status": "closed",
+      "outcome": "recorded",
+      "committedTerminalStrings": "rg-scheme-dependence-resolution-probe-passed-phase445-minima-resolved-as-fit-normalization-artifact-frontier-sharpened ; two-loop-saturation-probe-passed-two-loop-lever-non-perturbative-convention-bound-at-minimal-scope-frontier-sharpened"
+    },
+    {
+      "id": "L3",
+      "name": "gaussian-ep-and-cep-hmc",
+      "phases": [
+        "phase449",
+        "phase450"
+      ],
+      "status": "closed",
+      "outcome": "recorded",
+      "committedTerminalStrings": "variational-gaussian-effective-potential-probe-passed-gap-equation-breakdown-recorded ; constraint-effective-potential-hmc-probe-passed-inconclusive-gates-failed-recorded"
+    },
+    {
+      "id": "L4",
+      "name": "wham-parity-null-and-beyond-ray",
+      "phases": [
+        "phase453",
+        "phase454"
+      ],
+      "status": "closed",
+      "outcome": "recorded",
+      "committedTerminalStrings": "wham-parity-error-model-repair-passed-symmetric-phase-null-single-well ; beyond-ray-quadratic-certificate-probe-passed-beyond-ray-instability-candidate-found"
+    },
+    {
+      "id": "L5",
+      "name": "exact-fermionic-backreaction",
+      "phases": [
+        "phase455"
+      ],
+      "status": "open",
+      "outcome": "none",
+      "committedTerminalStrings": "exact-fermionic-backreaction-probe-awaiting-implementation"
+    },
+    {
+      "id": "L6",
+      "name": "consolidated-n4-launch",
+      "phases": [
+        "phase456"
+      ],
+      "status": "open",
+      "outcome": "none",
+      "committedTerminalStrings": "consolidated-n4-launch-awaiting-pack"
+    },
+    {
+      "id": "L7",
+      "name": "portal-and-ws3-schema",
+      "phases": [
+        "phase457",
+        "phase466"
+      ],
+      "status": "withheld",
+      "outcome": "none",
+      "committedTerminalStrings": "upsilon-portal-stage-a-awaiting-stage-a ; ws3-vev-completion-contract-awaiting-schema"
+    },
+    {
+      "id": "L8",
+      "name": "binder-go-no-go",
+      "phases": [
+        "phase458"
+      ],
+      "status": "open",
+      "outcome": "none",
+      "committedTerminalStrings": "binder-go-no-go-gate-blocked-inputs-incomplete"
+    }
+  ],
+  "closedLimbs": [
+    "L1",
+    "L2",
+    "L3",
+    "L4"
+  ],
+  "openLimbs": [
+    "L5",
+    "L6",
+    "L8"
+  ],
+  "withheldLimbs": [
+    "L7"
+  ],
+  "structuralIncapabilityBattery": {
+    "structuralIncapabilityBatteryPassed": true,
+    "closedNegativeUnreachableWhileAnyOpenOrWithheld": true,
+    "scenarios": [
+      {
+        "id": "real-limb-set",
+        "expected": "closure-not-decidable",
+        "observed": "closure-not-decidable",
+        "pass": true
+      },
+      {
+        "id": "forged-near-miss-negative-strings-on-open-limbs",
+        "expected": "closure-not-decidable",
+        "observed": "closure-not-decidable",
+        "pass": true
+      },
+      {
+        "id": "all-closed-negative",
+        "expected": "closed-negative",
+        "observed": "closed-negative",
+        "pass": true
+      },
+      {
+        "id": "all-closed-negative-except-one-withheld",
+        "expected": "closed-negative-except-portal-unprobed",
+        "observed": "closed-negative-except-portal-unprobed",
+        "pass": true
+      },
+      {
+        "id": "one-positive-inclusion",
+        "expected": "closed-with-positive-inclusion",
+        "observed": "closed-with-positive-inclusion",
+        "pass": true
+      }
+    ]
+  },
+  "scaleIsWorkbenchRelativeCandidateOnly": true,
+  "noGevPromotion": true,
+  "physicistReviewPending": true,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "2c5eba0d1ea98f4d2c1a5454b8243b186f55ccc354a7e3aba89e4e3b2d3966b2",
+  "physicalCouplingProvided": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256Contract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "recordedBoundary": {
+    "physicistReviewPending": true
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "This ledger reads committed limb outcomes and emits a program-state record; it performs zero physics computation and promotes nothing.",
+    "closure-not-decidable is a machine-attested statement that limbs remain open/withheld; it is NOT a closure theorem and asserts no physical property.",
+    "The strong negative terminal is unreachable while any limb is open/held/withheld; verdict-withheld may at most produce the explicit carve-out variant.",
+    "physicistReviewPending = true is carried explicitly; promotedPhysicalMassClaimCount remains 0."
+  ],
+  "decision": "B2 closure theorem-of-record ledger (plan item 14). Verdict: closure-not-decidable. Open/not-closed limbs: [L5, L6, L8]; withheld limbs: [L7]. The strong negative terminal is UNREACHABLE while any limb is open/held/withheld; proved by construction in the structural-incapability battery (forged near-miss with negative-looking strings on not-closed limbs still yields closure-not-decidable; a withheld limb can at most produce closed-negative-except-portal-unprobed with a carve-out). This is a program-state record, not a physics claim; nothing is promoted (promotedPhysicalMassClaimCount remains 0).",
+  "runtimeSeconds": 0.026106
+}

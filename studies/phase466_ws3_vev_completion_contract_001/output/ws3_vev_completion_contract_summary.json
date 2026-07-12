@@ -1,0 +1,59 @@
+{
+  "phaseId": "phase466-ws3-vev-completion-contract",
+  "generatedAt": "2026-07-12T11:58:47.6737419+00:00",
+  "terminalStatus": "ws3-vev-completion-contract-awaiting-schema",
+  "interimTerminal": "awaiting-schema",
+  "verdictKind": "awaiting-schema",
+  "applicationSubjectKind": "ws3-vev-completion-contract",
+  "planSection": "WAVE2_ACTION_PLAN_2026-07-12 item 5",
+  "ws3VevCompletionContractSkeletonBuilt": true,
+  "awaitingImplementation": true,
+  "zeroPhysicsCompute": true,
+  "phase434HashPin": "f5eafcc74583ecdf",
+  "partition": {
+    "finiteVev": 6,
+    "conditional": 7,
+    "amplitudeBlocked": 4,
+    "lineageBlocked": 9
+  },
+  "wsThreeCannotCompleteOnAllLineageFields": true,
+  "consumptionRule": "{schemaId,schemaHash}",
+  "scaleIsWorkbenchRelativeCandidateOnly": true,
+  "noGevPromotion": true,
+  "physicistReviewPending": true,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "f7f452553a22aa35de0c167f76f048e28d5ef6024e6e8bb5f5bfc62925395fa6",
+  "physicalCouplingProvided": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256Contract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "recordedBoundary": {
+    "physicistReviewPending": true,
+    "awaitingImplementation": true
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "STEP 0 skeleton: zero physics computation; the pre-registered design is recorded in STUDY.md and is not yet implemented or executed.",
+    "The interim terminal is a program-state marker, not a scientific verdict; no measurement, elimination, or promotion is claimed.",
+    "physicistReviewPending = true is carried explicitly; no contract field is filled and nothing is promoted (promotedPhysicalMassClaimCount remains 0)."
+  ],
+  "decision": "STEP 0 skeleton for the WS3 VEV-completion contract schema phase (plan item 5). Awaiting the committed schema pinned to the phase434 target-blind-construction hash f5eafcc74583ecdf and the phase256 templateId; the 6/7/4/9 field partition, the five golden fixtures, and the schema-consumption rule are recorded in STUDY.md. wsThreeCannotComplete is permanent on all 9 lineage fields. Nothing is completed or promoted yet.",
+  "runtimeSeconds": 0.0067686
+}

@@ -1,0 +1,60 @@
+{
+  "phaseId": "phase458-binder-go-no-go-gate",
+  "generatedAt": "2026-07-12T11:58:46.1702958+00:00",
+  "terminalStatus": "binder-go-no-go-gate-blocked-inputs-incomplete",
+  "interimTerminal": "blocked-inputs-incomplete",
+  "verdictKind": "blocked-inputs-incomplete",
+  "applicationSubjectKind": "binder-go-no-go-gate",
+  "planSection": "WAVE2_ACTION_PLAN_2026-07-12 item 11",
+  "binderGoNoGoGateSkeletonBuilt": true,
+  "awaitingImplementation": true,
+  "zeroPhysicsCompute": true,
+  "restingState": "blocked-inputs-incomplete",
+  "gates": [
+    "G1",
+    "G2",
+    "G3",
+    "G4",
+    "G5",
+    "G6"
+  ],
+  "limbConsumed": "L8",
+  "scaleIsWorkbenchRelativeCandidateOnly": true,
+  "noGevPromotion": true,
+  "physicistReviewPending": true,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "03d185d90d24ccb92d6680d34970a0a3ae98fa5fb4a2e6166621f68aa343a98f",
+  "physicalCouplingProvided": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256Contract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "recordedBoundary": {
+    "physicistReviewPending": true,
+    "awaitingImplementation": true
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "STEP 0 skeleton: zero physics computation; the pre-registered design is recorded in STUDY.md and is not yet implemented or executed.",
+    "The interim terminal is a program-state marker, not a scientific verdict; no measurement, elimination, or promotion is claimed.",
+    "physicistReviewPending = true is carried explicitly; no contract field is filled and nothing is promoted (promotedPhysicalMassClaimCount remains 0)."
+  ],
+  "decision": "STEP 0 skeleton for the zero-discretion Binder go/no-go gate (plan item 11). Its resting state is blocked-inputs-incomplete until the upstream terminals and the O4 register status land; no launch decision is emitted yet and nothing is promoted.",
+  "runtimeSeconds": 0.0063629
+}

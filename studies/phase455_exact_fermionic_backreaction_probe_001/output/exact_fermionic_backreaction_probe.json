@@ -1,0 +1,57 @@
+{
+  "phaseId": "phase455-exact-fermionic-backreaction-probe",
+  "generatedAt": "2026-07-12T11:58:45.2719956+00:00",
+  "terminalStatus": "exact-fermionic-backreaction-probe-awaiting-implementation",
+  "interimTerminal": "awaiting-implementation",
+  "verdictKind": "awaiting-implementation",
+  "applicationSubjectKind": "exact-fermionic-backreaction-probe",
+  "planSection": "WAVE2_ACTION_PLAN_2026-07-12 item 1",
+  "exactFermionicBackreactionProbeSkeletonBuilt": true,
+  "awaitingImplementation": true,
+  "zeroPhysicsCompute": true,
+  "taxonomy": {
+    "t0": "batteries-red-no-verdict",
+    "t1": "fermionic-backreaction-null",
+    "t2": "radiative-well-candidate",
+    "t3": "convention-fragile"
+  },
+  "limbConsumed": "L5",
+  "scaleIsWorkbenchRelativeCandidateOnly": true,
+  "noGevPromotion": true,
+  "physicistReviewPending": true,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "d00aee049b8823e54bbedc78292fc61d5781eb29e48e46030463f01bd01f3e81",
+  "physicalCouplingProvided": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256Contract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "recordedBoundary": {
+    "physicistReviewPending": true,
+    "awaitingImplementation": true
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "STEP 0 skeleton: zero physics computation; the pre-registered design is recorded in STUDY.md and is not yet implemented or executed.",
+    "The interim terminal is a program-state marker, not a scientific verdict; no measurement, elimination, or promotion is claimed.",
+    "physicistReviewPending = true is carried explicitly; no contract field is filled and nothing is promoted (promotedPhysicalMassClaimCount remains 0)."
+  ],
+  "decision": "STEP 0 skeleton for the exact fermionic backreaction probe (plan item 1). Awaiting implementation of the pre-registered T0-T3 taxonomy on the committed phase428 closed-form spectra; no physics is computed yet and nothing is promoted.",
+  "runtimeSeconds": 0.0070087
+}

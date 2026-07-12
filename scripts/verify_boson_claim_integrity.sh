@@ -228,6 +228,16 @@ const paths = {
   phase459: "studies/phase459_spectroscopy_record_attestation_001/output/spectroscopy_record_attestation_summary.json",
   phase460: "studies/phase460_source_corpus_units_equivariance_kernel_001/output/source_corpus_units_equivariance_kernel_summary.json",
   phase461: "studies/phase461_dimensional_transmutation_reading_menu_001/output/dimensional_transmutation_reading_menu_summary.json",
+  phase455: "studies/phase455_exact_fermionic_backreaction_probe_001/output/exact_fermionic_backreaction_probe_summary.json",
+  phase456: "studies/phase456_consolidated_n4_launch_001/output/consolidated_n4_launch_summary.json",
+  phase457: "studies/phase457_upsilon_portal_stage_a_001/output/upsilon_portal_stage_a_summary.json",
+  phase458: "studies/phase458_binder_go_no_go_gate_001/output/binder_go_no_go_gate_summary.json",
+  phase462: "studies/phase462_blocking_set_resolution_001/output/blocking_set_resolution_summary.json",
+  phase463: "studies/phase463_transport_structure_theorems_001/output/transport_structure_theorems_summary.json",
+  phase464: "studies/phase464_anchor_adjudication_contract_001/output/anchor_adjudication_contract_summary.json",
+  phase465: "studies/phase465_anomaly_consistency_variety_kernel_001/output/anomaly_consistency_variety_kernel_summary.json",
+  phase466: "studies/phase466_ws3_vev_completion_contract_001/output/ws3_vev_completion_contract_summary.json",
+  phase471: "studies/phase471_b2_closure_ledger_001/output/b2_closure_ledger_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -527,6 +537,16 @@ const phase454 = requireFile(paths.phase454);
 const phase459 = requireFile(paths.phase459);
 const phase460 = requireFile(paths.phase460);
 const phase461 = requireFile(paths.phase461);
+const phase455 = requireFile(paths.phase455);
+const phase456 = requireFile(paths.phase456);
+const phase457 = requireFile(paths.phase457);
+const phase458 = requireFile(paths.phase458);
+const phase462 = requireFile(paths.phase462);
+const phase463 = requireFile(paths.phase463);
+const phase464 = requireFile(paths.phase464);
+const phase465 = requireFile(paths.phase465);
+const phase466 = requireFile(paths.phase466);
+const phase471 = requireFile(paths.phase471);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -5489,6 +5509,130 @@ if (sourceLineageMissing) {
   assert(phase461.sourceContractApplicationAllowed === false && phase461.canFillPhase201WzContract === false && phase461.canFillPhase201HiggsContract === false && phase461.canFillPhase256ObservedFieldExtractionContract === false, "Phase461 cannot fill Phase201 or Phase256 contracts.");
   assert(phase461.routePromotesWzMasses === false && phase461.routePromotesHiggsMass === false && phase461.routeCompletesBosonPredictions === false, "Phase461 cannot promote boson predictions.");
   assert(phase101Package?.dimensionalTransmutationReadingMenu?.dimensionalTransmutationReadingMenuPassed === true, "Phase101 must include the Phase461 block.");
+  // Phase455 -- Wave-2 STEP 0 skeleton (exact-fermionic-backreaction-probe): interim terminal awaiting-implementation.
+  assert(phase455.exactFermionicBackreactionProbeSkeletonBuilt === true, "Phase455 skeleton must be built with its standing claim boundary intact.");
+  assert(phase455.applicationSubjectKind === "exact-fermionic-backreaction-probe", "Phase455 must classify its subject as exact-fermionic-backreaction-probe.");
+  assert(phase455.interimTerminal === "awaiting-implementation", "Phase455 must emit its pre-registered interim terminal awaiting-implementation.");
+  assert(phase455.verdictKind === "awaiting-implementation", "Phase455 verdictKind must equal its interim terminal.");
+  assert(phase455.planSection === "WAVE2_ACTION_PLAN_2026-07-12 item 1", "Phase455 must cite its plan item.");
+  assert(phase455.targetBlindConstruction === true, "Phase455 must be target-blind.");
+  assert(phase455.physicistReviewPending === true, "Phase455 must carry physicistReviewPending explicitly.");
+  assert(phase455.noGevPromotion === true, "Phase455 must keep the no-GeV boundary.");
+  assert(phase455.sourceContractApplicationAllowed === false && phase455.canFillPhase201WzContract === false && phase455.canFillPhase201HiggsContract === false && phase455.canFillPhase256ObservedFieldExtractionContract === false, "Phase455 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase455.routePromotesWzMasses === false && phase455.routePromotesHiggsMass === false && phase455.routeCompletesBosonPredictions === false, "Phase455 cannot promote boson predictions.");
+  assert(phase101Package?.exactFermionicBackreactionProbe?.exactFermionicBackreactionProbeSkeletonBuilt === true, "Phase101 must include the Phase455 block.");
+  // Phase456 -- Wave-2 STEP 0 skeleton (consolidated-n4-launch): interim terminal awaiting-pack.
+  assert(phase456.consolidatedN4LaunchSkeletonBuilt === true, "Phase456 skeleton must be built with its standing claim boundary intact.");
+  assert(phase456.applicationSubjectKind === "consolidated-n4-launch", "Phase456 must classify its subject as consolidated-n4-launch.");
+  assert(phase456.interimTerminal === "awaiting-pack", "Phase456 must emit its pre-registered interim terminal awaiting-pack.");
+  assert(phase456.verdictKind === "awaiting-pack", "Phase456 verdictKind must equal its interim terminal.");
+  assert(phase456.planSection === "WAVE2_ACTION_PLAN_2026-07-12 item 9", "Phase456 must cite its plan item.");
+  assert(phase456.targetBlindConstruction === true, "Phase456 must be target-blind.");
+  assert(phase456.physicistReviewPending === true, "Phase456 must carry physicistReviewPending explicitly.");
+  assert(phase456.noGevPromotion === true, "Phase456 must keep the no-GeV boundary.");
+  assert(phase456.sourceContractApplicationAllowed === false && phase456.canFillPhase201WzContract === false && phase456.canFillPhase201HiggsContract === false && phase456.canFillPhase256ObservedFieldExtractionContract === false, "Phase456 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase456.routePromotesWzMasses === false && phase456.routePromotesHiggsMass === false && phase456.routeCompletesBosonPredictions === false, "Phase456 cannot promote boson predictions.");
+  assert(phase101Package?.consolidatedN4Launch?.consolidatedN4LaunchSkeletonBuilt === true, "Phase101 must include the Phase456 block.");
+  // Phase457 -- Wave-2 STEP 0 skeleton (upsilon-portal-stage-a): interim terminal awaiting-stage-a.
+  assert(phase457.upsilonPortalStageASkeletonBuilt === true, "Phase457 skeleton must be built with its standing claim boundary intact.");
+  assert(phase457.applicationSubjectKind === "upsilon-portal-stage-a", "Phase457 must classify its subject as upsilon-portal-stage-a.");
+  assert(phase457.interimTerminal === "awaiting-stage-a", "Phase457 must emit its pre-registered interim terminal awaiting-stage-a.");
+  assert(phase457.verdictKind === "awaiting-stage-a", "Phase457 verdictKind must equal its interim terminal.");
+  assert(phase457.planSection === "WAVE2_ACTION_PLAN_2026-07-12 item 10", "Phase457 must cite its plan item.");
+  assert(phase457.targetBlindConstruction === true, "Phase457 must be target-blind.");
+  assert(phase457.physicistReviewPending === true, "Phase457 must carry physicistReviewPending explicitly.");
+  assert(phase457.noGevPromotion === true, "Phase457 must keep the no-GeV boundary.");
+  assert(phase457.sourceContractApplicationAllowed === false && phase457.canFillPhase201WzContract === false && phase457.canFillPhase201HiggsContract === false && phase457.canFillPhase256ObservedFieldExtractionContract === false, "Phase457 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase457.routePromotesWzMasses === false && phase457.routePromotesHiggsMass === false && phase457.routeCompletesBosonPredictions === false, "Phase457 cannot promote boson predictions.");
+  assert(phase101Package?.upsilonPortalStageA?.upsilonPortalStageASkeletonBuilt === true, "Phase101 must include the Phase457 block.");
+  // Phase458 -- Wave-2 STEP 0 skeleton (binder-go-no-go-gate): interim terminal blocked-inputs-incomplete.
+  assert(phase458.binderGoNoGoGateSkeletonBuilt === true, "Phase458 skeleton must be built with its standing claim boundary intact.");
+  assert(phase458.applicationSubjectKind === "binder-go-no-go-gate", "Phase458 must classify its subject as binder-go-no-go-gate.");
+  assert(phase458.interimTerminal === "blocked-inputs-incomplete", "Phase458 must emit its pre-registered interim terminal blocked-inputs-incomplete.");
+  assert(phase458.verdictKind === "blocked-inputs-incomplete", "Phase458 verdictKind must equal its interim terminal.");
+  assert(phase458.planSection === "WAVE2_ACTION_PLAN_2026-07-12 item 11", "Phase458 must cite its plan item.");
+  assert(phase458.targetBlindConstruction === true, "Phase458 must be target-blind.");
+  assert(phase458.physicistReviewPending === true, "Phase458 must carry physicistReviewPending explicitly.");
+  assert(phase458.noGevPromotion === true, "Phase458 must keep the no-GeV boundary.");
+  assert(phase458.sourceContractApplicationAllowed === false && phase458.canFillPhase201WzContract === false && phase458.canFillPhase201HiggsContract === false && phase458.canFillPhase256ObservedFieldExtractionContract === false, "Phase458 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase458.routePromotesWzMasses === false && phase458.routePromotesHiggsMass === false && phase458.routeCompletesBosonPredictions === false, "Phase458 cannot promote boson predictions.");
+  assert(phase101Package?.binderGoNoGoGate?.binderGoNoGoGateSkeletonBuilt === true, "Phase101 must include the Phase458 block.");
+  // Phase462 -- Wave-2 STEP 0 skeleton (blocking-set-resolution): interim terminal awaiting-adjudication.
+  assert(phase462.blockingSetResolutionSkeletonBuilt === true, "Phase462 skeleton must be built with its standing claim boundary intact.");
+  assert(phase462.applicationSubjectKind === "blocking-set-resolution", "Phase462 must classify its subject as blocking-set-resolution.");
+  assert(phase462.interimTerminal === "awaiting-adjudication", "Phase462 must emit its pre-registered interim terminal awaiting-adjudication.");
+  assert(phase462.verdictKind === "awaiting-adjudication", "Phase462 verdictKind must equal its interim terminal.");
+  assert(phase462.planSection === "WAVE2_ACTION_PLAN_2026-07-12 item 2", "Phase462 must cite its plan item.");
+  assert(phase462.targetBlindConstruction === true, "Phase462 must be target-blind.");
+  assert(phase462.physicistReviewPending === true, "Phase462 must carry physicistReviewPending explicitly.");
+  assert(phase462.noGevPromotion === true, "Phase462 must keep the no-GeV boundary.");
+  assert(phase462.sourceContractApplicationAllowed === false && phase462.canFillPhase201WzContract === false && phase462.canFillPhase201HiggsContract === false && phase462.canFillPhase256ObservedFieldExtractionContract === false, "Phase462 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase462.routePromotesWzMasses === false && phase462.routePromotesHiggsMass === false && phase462.routeCompletesBosonPredictions === false, "Phase462 cannot promote boson predictions.");
+  assert(phase101Package?.blockingSetResolution?.blockingSetResolutionSkeletonBuilt === true, "Phase101 must include the Phase462 block.");
+  // Phase463 -- Wave-2 STEP 0 skeleton (transport-structure-theorems): interim terminal awaiting-inputs.
+  assert(phase463.transportStructureTheoremsSkeletonBuilt === true, "Phase463 skeleton must be built with its standing claim boundary intact.");
+  assert(phase463.applicationSubjectKind === "transport-structure-theorems", "Phase463 must classify its subject as transport-structure-theorems.");
+  assert(phase463.interimTerminal === "awaiting-inputs", "Phase463 must emit its pre-registered interim terminal awaiting-inputs.");
+  assert(phase463.verdictKind === "awaiting-inputs", "Phase463 verdictKind must equal its interim terminal.");
+  assert(phase463.planSection === "WAVE2_ACTION_PLAN_2026-07-12 item 3", "Phase463 must cite its plan item.");
+  assert(phase463.targetBlindConstruction === true, "Phase463 must be target-blind.");
+  assert(phase463.physicistReviewPending === true, "Phase463 must carry physicistReviewPending explicitly.");
+  assert(phase463.noGevPromotion === true, "Phase463 must keep the no-GeV boundary.");
+  assert(phase463.sourceContractApplicationAllowed === false && phase463.canFillPhase201WzContract === false && phase463.canFillPhase201HiggsContract === false && phase463.canFillPhase256ObservedFieldExtractionContract === false, "Phase463 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase463.routePromotesWzMasses === false && phase463.routePromotesHiggsMass === false && phase463.routeCompletesBosonPredictions === false, "Phase463 cannot promote boson predictions.");
+  assert(phase101Package?.transportStructureTheorems?.transportStructureTheoremsSkeletonBuilt === true, "Phase101 must include the Phase463 block.");
+  // Phase464 -- Wave-2 STEP 0 skeleton (anchor-adjudication-contract): interim terminal awaiting-upstream.
+  assert(phase464.anchorAdjudicationContractSkeletonBuilt === true, "Phase464 skeleton must be built with its standing claim boundary intact.");
+  assert(phase464.applicationSubjectKind === "anchor-adjudication-contract", "Phase464 must classify its subject as anchor-adjudication-contract.");
+  assert(phase464.interimTerminal === "awaiting-upstream", "Phase464 must emit its pre-registered interim terminal awaiting-upstream.");
+  assert(phase464.verdictKind === "awaiting-upstream", "Phase464 verdictKind must equal its interim terminal.");
+  assert(phase464.planSection === "WAVE2_ACTION_PLAN_2026-07-12 item 12", "Phase464 must cite its plan item.");
+  assert(phase464.targetBlindConstruction === true, "Phase464 must be target-blind.");
+  assert(phase464.physicistReviewPending === true, "Phase464 must carry physicistReviewPending explicitly.");
+  assert(phase464.noGevPromotion === true, "Phase464 must keep the no-GeV boundary.");
+  assert(phase464.sourceContractApplicationAllowed === false && phase464.canFillPhase201WzContract === false && phase464.canFillPhase201HiggsContract === false && phase464.canFillPhase256ObservedFieldExtractionContract === false, "Phase464 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase464.routePromotesWzMasses === false && phase464.routePromotesHiggsMass === false && phase464.routeCompletesBosonPredictions === false, "Phase464 cannot promote boson predictions.");
+  assert(phase101Package?.anchorAdjudicationContract?.anchorAdjudicationContractSkeletonBuilt === true, "Phase101 must include the Phase464 block.");
+  // Phase465 -- Wave-2 STEP 0 skeleton (anomaly-consistency-variety-kernel): interim terminal awaiting-implementation.
+  assert(phase465.anomalyConsistencyVarietyKernelSkeletonBuilt === true, "Phase465 skeleton must be built with its standing claim boundary intact.");
+  assert(phase465.applicationSubjectKind === "anomaly-consistency-variety-kernel", "Phase465 must classify its subject as anomaly-consistency-variety-kernel.");
+  assert(phase465.interimTerminal === "awaiting-implementation", "Phase465 must emit its pre-registered interim terminal awaiting-implementation.");
+  assert(phase465.verdictKind === "awaiting-implementation", "Phase465 verdictKind must equal its interim terminal.");
+  assert(phase465.planSection === "WAVE2_ACTION_PLAN_2026-07-12 item 4", "Phase465 must cite its plan item.");
+  assert(phase465.targetBlindConstruction === true, "Phase465 must be target-blind.");
+  assert(phase465.physicistReviewPending === true, "Phase465 must carry physicistReviewPending explicitly.");
+  assert(phase465.noGevPromotion === true, "Phase465 must keep the no-GeV boundary.");
+  assert(phase465.sourceContractApplicationAllowed === false && phase465.canFillPhase201WzContract === false && phase465.canFillPhase201HiggsContract === false && phase465.canFillPhase256ObservedFieldExtractionContract === false, "Phase465 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase465.routePromotesWzMasses === false && phase465.routePromotesHiggsMass === false && phase465.routeCompletesBosonPredictions === false, "Phase465 cannot promote boson predictions.");
+  assert(phase101Package?.anomalyConsistencyVarietyKernel?.anomalyConsistencyVarietyKernelSkeletonBuilt === true, "Phase101 must include the Phase465 block.");
+  // Phase466 -- Wave-2 STEP 0 skeleton (ws3-vev-completion-contract): interim terminal awaiting-schema.
+  assert(phase466.ws3VevCompletionContractSkeletonBuilt === true, "Phase466 skeleton must be built with its standing claim boundary intact.");
+  assert(phase466.applicationSubjectKind === "ws3-vev-completion-contract", "Phase466 must classify its subject as ws3-vev-completion-contract.");
+  assert(phase466.interimTerminal === "awaiting-schema", "Phase466 must emit its pre-registered interim terminal awaiting-schema.");
+  assert(phase466.verdictKind === "awaiting-schema", "Phase466 verdictKind must equal its interim terminal.");
+  assert(phase466.planSection === "WAVE2_ACTION_PLAN_2026-07-12 item 5", "Phase466 must cite its plan item.");
+  assert(phase466.targetBlindConstruction === true, "Phase466 must be target-blind.");
+  assert(phase466.physicistReviewPending === true, "Phase466 must carry physicistReviewPending explicitly.");
+  assert(phase466.noGevPromotion === true, "Phase466 must keep the no-GeV boundary.");
+  assert(phase466.sourceContractApplicationAllowed === false && phase466.canFillPhase201WzContract === false && phase466.canFillPhase201HiggsContract === false && phase466.canFillPhase256ObservedFieldExtractionContract === false, "Phase466 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase466.routePromotesWzMasses === false && phase466.routePromotesHiggsMass === false && phase466.routeCompletesBosonPredictions === false, "Phase466 cannot promote boson predictions.");
+  assert(phase101Package?.ws3VevCompletionContract?.ws3VevCompletionContractSkeletonBuilt === true, "Phase101 must include the Phase466 block.");
+  // Phase471 -- Wave-2 STEP 0 skeleton (b2-closure-ledger): interim terminal closure-not-decidable.
+  assert(phase471.b2ClosureLedgerBuilt === true, "Phase471 skeleton must be built with its standing claim boundary intact.");
+  assert(phase471.applicationSubjectKind === "b2-closure-ledger", "Phase471 must classify its subject as b2-closure-ledger.");
+  assert(phase471.interimTerminal === "closure-not-decidable", "Phase471 must emit its pre-registered interim terminal closure-not-decidable.");
+  assert(phase471.verdictKind === "closure-not-decidable", "Phase471 verdictKind must equal its interim terminal.");
+  assert(phase471.planSection === "WAVE2_ACTION_PLAN_2026-07-12 item 14", "Phase471 must cite its plan item.");
+  assert(phase471.targetBlindConstruction === true, "Phase471 must be target-blind.");
+  assert(phase471.physicistReviewPending === true, "Phase471 must carry physicistReviewPending explicitly.");
+  assert(phase471.noGevPromotion === true, "Phase471 must keep the no-GeV boundary.");
+  assert(phase471.sourceContractApplicationAllowed === false && phase471.canFillPhase201WzContract === false && phase471.canFillPhase201HiggsContract === false && phase471.canFillPhase256ObservedFieldExtractionContract === false, "Phase471 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase471.routePromotesWzMasses === false && phase471.routePromotesHiggsMass === false && phase471.routeCompletesBosonPredictions === false, "Phase471 cannot promote boson predictions.");
+  assert(phase471.structuralIncapabilityBattery?.structuralIncapabilityBatteryPassed === true, "Phase471 structural-incapability battery must pass (strong negative unreachable while any limb is open/held/withheld).");
+  assert(phase471.structuralIncapabilityBattery?.closedNegativeUnreachableWhileAnyOpenOrWithheld === true, "Phase471 must certify closed-negative is unreachable while any limb is open/held/withheld.");
+  assert(Array.isArray(phase471.openLimbs) && ["L5","L6","L8"].every((l) => phase471.openLimbs.includes(l)), "Phase471 must name L5/L6/L8 as open limbs.");
+  assert(Array.isArray(phase471.withheldLimbs) && phase471.withheldLimbs.includes("L7"), "Phase471 must name L7 as withheld.");
+  assert(phase101Package?.b2ClosureLedger?.b2ClosureLedgerBuilt === true, "Phase101 must include the Phase471 block.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

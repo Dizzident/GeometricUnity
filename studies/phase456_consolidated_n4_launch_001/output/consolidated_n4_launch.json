@@ -1,0 +1,55 @@
+{
+  "phaseId": "phase456-consolidated-n4-launch",
+  "generatedAt": "2026-07-12T11:58:45.5724524+00:00",
+  "terminalStatus": "consolidated-n4-launch-awaiting-pack",
+  "interimTerminal": "awaiting-pack",
+  "verdictKind": "awaiting-pack",
+  "applicationSubjectKind": "consolidated-n4-launch",
+  "planSection": "WAVE2_ACTION_PLAN_2026-07-12 item 9",
+  "consolidatedN4LaunchSkeletonBuilt": true,
+  "awaitingImplementation": true,
+  "zeroPhysicsCompute": true,
+  "mandatoryGates": {
+    "hashRefuseToRunGate": "MANDATORY",
+    "perSiteCorrelatorStorageFlag": "MANDATORY"
+  },
+  "limbConsumed": "L6",
+  "scaleIsWorkbenchRelativeCandidateOnly": true,
+  "noGevPromotion": true,
+  "physicistReviewPending": true,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "d854fe852be76a4b241d792a8e1a318123410eeba27868b4c2e1190d10c4abd7",
+  "physicalCouplingProvided": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256Contract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "recordedBoundary": {
+    "physicistReviewPending": true,
+    "awaitingImplementation": true
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "STEP 0 skeleton: zero physics computation; the pre-registered design is recorded in STUDY.md and is not yet implemented or executed.",
+    "The interim terminal is a program-state marker, not a scientific verdict; no measurement, elimination, or promotion is claimed.",
+    "physicistReviewPending = true is carried explicitly; no contract field is filled and nothing is promoted (promotedPhysicalMassClaimCount remains 0)."
+  ],
+  "decision": "STEP 0 skeleton for the consolidated n=4 launch pack (plan item 9). Awaiting the hash-pinned pre-registration pack with the refuse-to-run gate and per-site correlator storage flag; no sampling is run yet and nothing is promoted.",
+  "runtimeSeconds": 0.0064541
+}

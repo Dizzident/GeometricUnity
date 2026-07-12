@@ -214,6 +214,16 @@ const string Phase454Path = "studies/phase454_beyond_ray_quadratic_certificate_p
 const string Phase459Path = "studies/phase459_spectroscopy_record_attestation_001/output/spectroscopy_record_attestation_summary.json";
 const string Phase460Path = "studies/phase460_source_corpus_units_equivariance_kernel_001/output/source_corpus_units_equivariance_kernel_summary.json";
 const string Phase461Path = "studies/phase461_dimensional_transmutation_reading_menu_001/output/dimensional_transmutation_reading_menu_summary.json";
+const string Phase455Path = "studies/phase455_exact_fermionic_backreaction_probe_001/output/exact_fermionic_backreaction_probe_summary.json";
+const string Phase456Path = "studies/phase456_consolidated_n4_launch_001/output/consolidated_n4_launch_summary.json";
+const string Phase457Path = "studies/phase457_upsilon_portal_stage_a_001/output/upsilon_portal_stage_a_summary.json";
+const string Phase458Path = "studies/phase458_binder_go_no_go_gate_001/output/binder_go_no_go_gate_summary.json";
+const string Phase462Path = "studies/phase462_blocking_set_resolution_001/output/blocking_set_resolution_summary.json";
+const string Phase463Path = "studies/phase463_transport_structure_theorems_001/output/transport_structure_theorems_summary.json";
+const string Phase464Path = "studies/phase464_anchor_adjudication_contract_001/output/anchor_adjudication_contract_summary.json";
+const string Phase465Path = "studies/phase465_anomaly_consistency_variety_kernel_001/output/anomaly_consistency_variety_kernel_summary.json";
+const string Phase466Path = "studies/phase466_ws3_vev_completion_contract_001/output/ws3_vev_completion_contract_summary.json";
+const string Phase471Path = "studies/phase471_b2_closure_ledger_001/output/b2_closure_ledger_summary.json";
 const string Phase444Path = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443Path = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442Path = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -479,6 +489,16 @@ using var phase454 = File.Exists(Phase454Path) ? JsonDocument.Parse(File.ReadAll
 using var phase459 = File.Exists(Phase459Path) ? JsonDocument.Parse(File.ReadAllText(Phase459Path)) : null;
 using var phase460 = File.Exists(Phase460Path) ? JsonDocument.Parse(File.ReadAllText(Phase460Path)) : null;
 using var phase461 = File.Exists(Phase461Path) ? JsonDocument.Parse(File.ReadAllText(Phase461Path)) : null;
+using var phase455 = File.Exists(Phase455Path) ? JsonDocument.Parse(File.ReadAllText(Phase455Path)) : null;
+using var phase456 = File.Exists(Phase456Path) ? JsonDocument.Parse(File.ReadAllText(Phase456Path)) : null;
+using var phase457 = File.Exists(Phase457Path) ? JsonDocument.Parse(File.ReadAllText(Phase457Path)) : null;
+using var phase458 = File.Exists(Phase458Path) ? JsonDocument.Parse(File.ReadAllText(Phase458Path)) : null;
+using var phase462 = File.Exists(Phase462Path) ? JsonDocument.Parse(File.ReadAllText(Phase462Path)) : null;
+using var phase463 = File.Exists(Phase463Path) ? JsonDocument.Parse(File.ReadAllText(Phase463Path)) : null;
+using var phase464 = File.Exists(Phase464Path) ? JsonDocument.Parse(File.ReadAllText(Phase464Path)) : null;
+using var phase465 = File.Exists(Phase465Path) ? JsonDocument.Parse(File.ReadAllText(Phase465Path)) : null;
+using var phase466 = File.Exists(Phase466Path) ? JsonDocument.Parse(File.ReadAllText(Phase466Path)) : null;
+using var phase471 = File.Exists(Phase471Path) ? JsonDocument.Parse(File.ReadAllText(Phase471Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -6433,6 +6453,156 @@ var dimensionalTransmutationReadingMenuPassed = dimensionalTransmutationReadingM
     && JsonBool(phase461.RootElement, "routePromotesWzMasses") is false
     && JsonBool(phase461.RootElement, "routePromotesHiggsMass") is false
     && JsonBool(phase461.RootElement, "routeCompletesBosonPredictions") is false;
+var exactFermionicBackreactionProbeMaterialized = phase455 is not null;
+var exactFermionicBackreactionProbePassed = exactFermionicBackreactionProbeMaterialized
+    && JsonBool(phase455!.RootElement, "exactFermionicBackreactionProbeSkeletonBuilt") is true
+    && JsonString(phase455.RootElement, "interimTerminal") == "awaiting-implementation"
+    && JsonString(phase455.RootElement, "applicationSubjectKind") == "exact-fermionic-backreaction-probe"
+    && JsonBool(phase455.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase455.RootElement, "physicistReviewPending") is true
+    && JsonBool(phase455.RootElement, "noGevPromotion") is true
+    && JsonBool(phase455.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase455.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase455.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase455.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase455.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase455.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase455.RootElement, "routeCompletesBosonPredictions") is false;
+var consolidatedN4LaunchMaterialized = phase456 is not null;
+var consolidatedN4LaunchPassed = consolidatedN4LaunchMaterialized
+    && JsonBool(phase456!.RootElement, "consolidatedN4LaunchSkeletonBuilt") is true
+    && JsonString(phase456.RootElement, "interimTerminal") == "awaiting-pack"
+    && JsonString(phase456.RootElement, "applicationSubjectKind") == "consolidated-n4-launch"
+    && JsonBool(phase456.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase456.RootElement, "physicistReviewPending") is true
+    && JsonBool(phase456.RootElement, "noGevPromotion") is true
+    && JsonBool(phase456.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase456.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase456.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase456.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase456.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase456.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase456.RootElement, "routeCompletesBosonPredictions") is false;
+var upsilonPortalStageAMaterialized = phase457 is not null;
+var upsilonPortalStageAPassed = upsilonPortalStageAMaterialized
+    && JsonBool(phase457!.RootElement, "upsilonPortalStageASkeletonBuilt") is true
+    && JsonString(phase457.RootElement, "interimTerminal") == "awaiting-stage-a"
+    && JsonString(phase457.RootElement, "applicationSubjectKind") == "upsilon-portal-stage-a"
+    && JsonBool(phase457.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase457.RootElement, "physicistReviewPending") is true
+    && JsonBool(phase457.RootElement, "noGevPromotion") is true
+    && JsonBool(phase457.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase457.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase457.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase457.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase457.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase457.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase457.RootElement, "routeCompletesBosonPredictions") is false;
+var binderGoNoGoGateMaterialized = phase458 is not null;
+var binderGoNoGoGatePassed = binderGoNoGoGateMaterialized
+    && JsonBool(phase458!.RootElement, "binderGoNoGoGateSkeletonBuilt") is true
+    && JsonString(phase458.RootElement, "interimTerminal") == "blocked-inputs-incomplete"
+    && JsonString(phase458.RootElement, "applicationSubjectKind") == "binder-go-no-go-gate"
+    && JsonBool(phase458.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase458.RootElement, "physicistReviewPending") is true
+    && JsonBool(phase458.RootElement, "noGevPromotion") is true
+    && JsonBool(phase458.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase458.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase458.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase458.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase458.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase458.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase458.RootElement, "routeCompletesBosonPredictions") is false;
+var blockingSetResolutionMaterialized = phase462 is not null;
+var blockingSetResolutionPassed = blockingSetResolutionMaterialized
+    && JsonBool(phase462!.RootElement, "blockingSetResolutionSkeletonBuilt") is true
+    && JsonString(phase462.RootElement, "interimTerminal") == "awaiting-adjudication"
+    && JsonString(phase462.RootElement, "applicationSubjectKind") == "blocking-set-resolution"
+    && JsonBool(phase462.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase462.RootElement, "physicistReviewPending") is true
+    && JsonBool(phase462.RootElement, "noGevPromotion") is true
+    && JsonBool(phase462.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase462.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase462.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase462.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase462.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase462.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase462.RootElement, "routeCompletesBosonPredictions") is false;
+var transportStructureTheoremsMaterialized = phase463 is not null;
+var transportStructureTheoremsPassed = transportStructureTheoremsMaterialized
+    && JsonBool(phase463!.RootElement, "transportStructureTheoremsSkeletonBuilt") is true
+    && JsonString(phase463.RootElement, "interimTerminal") == "awaiting-inputs"
+    && JsonString(phase463.RootElement, "applicationSubjectKind") == "transport-structure-theorems"
+    && JsonBool(phase463.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase463.RootElement, "physicistReviewPending") is true
+    && JsonBool(phase463.RootElement, "noGevPromotion") is true
+    && JsonBool(phase463.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase463.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase463.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase463.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase463.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase463.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase463.RootElement, "routeCompletesBosonPredictions") is false;
+var anchorAdjudicationContractMaterialized = phase464 is not null;
+var anchorAdjudicationContractPassed = anchorAdjudicationContractMaterialized
+    && JsonBool(phase464!.RootElement, "anchorAdjudicationContractSkeletonBuilt") is true
+    && JsonString(phase464.RootElement, "interimTerminal") == "awaiting-upstream"
+    && JsonString(phase464.RootElement, "applicationSubjectKind") == "anchor-adjudication-contract"
+    && JsonBool(phase464.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase464.RootElement, "physicistReviewPending") is true
+    && JsonBool(phase464.RootElement, "noGevPromotion") is true
+    && JsonBool(phase464.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase464.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase464.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase464.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase464.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase464.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase464.RootElement, "routeCompletesBosonPredictions") is false;
+var anomalyConsistencyVarietyKernelMaterialized = phase465 is not null;
+var anomalyConsistencyVarietyKernelPassed = anomalyConsistencyVarietyKernelMaterialized
+    && JsonBool(phase465!.RootElement, "anomalyConsistencyVarietyKernelSkeletonBuilt") is true
+    && JsonString(phase465.RootElement, "interimTerminal") == "awaiting-implementation"
+    && JsonString(phase465.RootElement, "applicationSubjectKind") == "anomaly-consistency-variety-kernel"
+    && JsonBool(phase465.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase465.RootElement, "physicistReviewPending") is true
+    && JsonBool(phase465.RootElement, "noGevPromotion") is true
+    && JsonBool(phase465.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase465.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase465.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase465.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase465.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase465.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase465.RootElement, "routeCompletesBosonPredictions") is false;
+var ws3VevCompletionContractMaterialized = phase466 is not null;
+var ws3VevCompletionContractPassed = ws3VevCompletionContractMaterialized
+    && JsonBool(phase466!.RootElement, "ws3VevCompletionContractSkeletonBuilt") is true
+    && JsonString(phase466.RootElement, "interimTerminal") == "awaiting-schema"
+    && JsonString(phase466.RootElement, "applicationSubjectKind") == "ws3-vev-completion-contract"
+    && JsonBool(phase466.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase466.RootElement, "physicistReviewPending") is true
+    && JsonBool(phase466.RootElement, "noGevPromotion") is true
+    && JsonBool(phase466.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase466.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase466.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase466.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase466.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase466.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase466.RootElement, "routeCompletesBosonPredictions") is false;
+var b2ClosureLedgerMaterialized = phase471 is not null;
+var b2ClosureLedgerPassed = b2ClosureLedgerMaterialized
+    && JsonBool(phase471!.RootElement, "b2ClosureLedgerBuilt") is true
+    && JsonString(phase471.RootElement, "interimTerminal") == "closure-not-decidable"
+    && JsonString(phase471.RootElement, "applicationSubjectKind") == "b2-closure-ledger"
+    && JsonBool(phase471.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase471.RootElement, "physicistReviewPending") is true
+    && JsonBool(phase471.RootElement, "noGevPromotion") is true
+    && JsonBool(phase471.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase471.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase471.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase471.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase471.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase471.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase471.RootElement, "routeCompletesBosonPredictions") is false;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -9065,6 +9235,86 @@ var checklist = new[]
             ? $"dimensionalTransmutationReadingMenuPassed={JsonBool(phase461!.RootElement, "dimensionalTransmutationReadingMenuPassed")}; verdictKind={JsonString(phase461.RootElement, "verdictKind")}; physicistReviewPending={JsonBool(phase461.RootElement, "physicistReviewPending")}; noGevPromotion={JsonBool(phase461.RootElement, "noGevPromotion")}; canFillPhase201WzContract={JsonBool(phase461.RootElement, "canFillPhase201WzContract")}; decision={JsonString(phase461.RootElement, "decision")}"
             : "Phase461 artifact not materialized",
         Phase461Path),
+    new ObjectiveChecklistItem(
+        "exact-fermionic-backreaction-probe-materialized",
+        "Team B plan item 1 STEP 0 skeleton: the exact fermionic backreaction probe, awaiting implementation of the pre-registered T0-T3 taxonomy; interim terminal only; nothing measured or promoted.",
+        exactFermionicBackreactionProbePassed ? "passed" : "failed",
+        exactFermionicBackreactionProbeMaterialized
+            ? $"exactFermionicBackreactionProbeSkeletonBuilt={JsonBool(phase455!.RootElement, "exactFermionicBackreactionProbeSkeletonBuilt")}; interimTerminal={JsonString(phase455.RootElement, "interimTerminal")}; planSection={JsonString(phase455.RootElement, "planSection")}; physicistReviewPending={JsonBool(phase455.RootElement, "physicistReviewPending")}; noGevPromotion={JsonBool(phase455.RootElement, "noGevPromotion")}; decision={JsonString(phase455.RootElement, "decision")}"
+            : "Phase455 artifact not materialized",
+        Phase455Path),
+    new ObjectiveChecklistItem(
+        "consolidated-n4-launch-materialized",
+        "Team B+A plan item 9 STEP 0 skeleton: the consolidated n=4 launch, awaiting the hash-pinned pack with the refuse-to-run gate and per-site correlator storage flag; interim terminal only; nothing measured or promoted.",
+        consolidatedN4LaunchPassed ? "passed" : "failed",
+        consolidatedN4LaunchMaterialized
+            ? $"consolidatedN4LaunchSkeletonBuilt={JsonBool(phase456!.RootElement, "consolidatedN4LaunchSkeletonBuilt")}; interimTerminal={JsonString(phase456.RootElement, "interimTerminal")}; planSection={JsonString(phase456.RootElement, "planSection")}; physicistReviewPending={JsonBool(phase456.RootElement, "physicistReviewPending")}; noGevPromotion={JsonBool(phase456.RootElement, "noGevPromotion")}; decision={JsonString(phase456.RootElement, "decision")}"
+            : "Phase456 artifact not materialized",
+        Phase456Path),
+    new ObjectiveChecklistItem(
+        "upsilon-portal-stage-a-materialized",
+        "Team B plan item 10 STEP 0 skeleton: the upsilon-portal Stage A under the hold; pre-unlock the only reachable summary terminal is measurement-recorded-verdict-withheld; interim terminal only; nothing measured or promoted.",
+        upsilonPortalStageAPassed ? "passed" : "failed",
+        upsilonPortalStageAMaterialized
+            ? $"upsilonPortalStageASkeletonBuilt={JsonBool(phase457!.RootElement, "upsilonPortalStageASkeletonBuilt")}; interimTerminal={JsonString(phase457.RootElement, "interimTerminal")}; planSection={JsonString(phase457.RootElement, "planSection")}; physicistReviewPending={JsonBool(phase457.RootElement, "physicistReviewPending")}; noGevPromotion={JsonBool(phase457.RootElement, "noGevPromotion")}; decision={JsonString(phase457.RootElement, "decision")}"
+            : "Phase457 artifact not materialized",
+        Phase457Path),
+    new ObjectiveChecklistItem(
+        "binder-go-no-go-gate-materialized",
+        "Team B plan item 11 STEP 0 skeleton: the zero-discretion Binder go/no-go gate resting at blocked-inputs-incomplete over gates G1-G6; interim terminal only; nothing promoted.",
+        binderGoNoGoGatePassed ? "passed" : "failed",
+        binderGoNoGoGateMaterialized
+            ? $"binderGoNoGoGateSkeletonBuilt={JsonBool(phase458!.RootElement, "binderGoNoGoGateSkeletonBuilt")}; interimTerminal={JsonString(phase458.RootElement, "interimTerminal")}; planSection={JsonString(phase458.RootElement, "planSection")}; physicistReviewPending={JsonBool(phase458.RootElement, "physicistReviewPending")}; noGevPromotion={JsonBool(phase458.RootElement, "noGevPromotion")}; decision={JsonString(phase458.RootElement, "decision")}"
+            : "Phase458 artifact not materialized",
+        Phase458Path),
+    new ObjectiveChecklistItem(
+        "blocking-set-resolution-materialized",
+        "Team A plan item 2 STEP 0 skeleton: the blocking-set resolution, awaiting adjudication with k=31 pending; the staged Stage P/0/1/2 design is pre-registered in STUDY.md; interim terminal only; nothing graded or promoted.",
+        blockingSetResolutionPassed ? "passed" : "failed",
+        blockingSetResolutionMaterialized
+            ? $"blockingSetResolutionSkeletonBuilt={JsonBool(phase462!.RootElement, "blockingSetResolutionSkeletonBuilt")}; interimTerminal={JsonString(phase462.RootElement, "interimTerminal")}; planSection={JsonString(phase462.RootElement, "planSection")}; physicistReviewPending={JsonBool(phase462.RootElement, "physicistReviewPending")}; noGevPromotion={JsonBool(phase462.RootElement, "noGevPromotion")}; decision={JsonString(phase462.RootElement, "decision")}"
+            : "Phase462 artifact not materialized",
+        Phase462Path),
+    new ObjectiveChecklistItem(
+        "transport-structure-theorems-materialized",
+        "Team A plan item 3 STEP 0 skeleton: the transport structure theorems T1-T4, awaiting inputs; the Motzkin-guarded survive terminal authorizes nothing; interim terminal only; nothing certified or promoted.",
+        transportStructureTheoremsPassed ? "passed" : "failed",
+        transportStructureTheoremsMaterialized
+            ? $"transportStructureTheoremsSkeletonBuilt={JsonBool(phase463!.RootElement, "transportStructureTheoremsSkeletonBuilt")}; interimTerminal={JsonString(phase463.RootElement, "interimTerminal")}; planSection={JsonString(phase463.RootElement, "planSection")}; physicistReviewPending={JsonBool(phase463.RootElement, "physicistReviewPending")}; noGevPromotion={JsonBool(phase463.RootElement, "noGevPromotion")}; decision={JsonString(phase463.RootElement, "decision")}"
+            : "Phase463 artifact not materialized",
+        Phase463Path),
+    new ObjectiveChecklistItem(
+        "anchor-adjudication-contract-materialized",
+        "Team A plan item 12 STEP 0 skeleton: the anchor adjudication contract (C1-and-C2-and-C3, tripwire 31), awaiting upstream; terminal (i) can never emit with zero physicist rulings; interim terminal only; nothing adjudicated or promoted.",
+        anchorAdjudicationContractPassed ? "passed" : "failed",
+        anchorAdjudicationContractMaterialized
+            ? $"anchorAdjudicationContractSkeletonBuilt={JsonBool(phase464!.RootElement, "anchorAdjudicationContractSkeletonBuilt")}; interimTerminal={JsonString(phase464.RootElement, "interimTerminal")}; planSection={JsonString(phase464.RootElement, "planSection")}; physicistReviewPending={JsonBool(phase464.RootElement, "physicistReviewPending")}; noGevPromotion={JsonBool(phase464.RootElement, "noGevPromotion")}; decision={JsonString(phase464.RootElement, "decision")}"
+            : "Phase464 artifact not materialized",
+        Phase464Path),
+    new ObjectiveChecklistItem(
+        "anomaly-consistency-variety-kernel-materialized",
+        "Team C plan item 4 STEP 0 skeleton: the anomaly-consistency variety kernel, awaiting implementation with the pattern tripwire committed before the census (O7 labeled-import cap); interim terminal only; nothing computed or promoted.",
+        anomalyConsistencyVarietyKernelPassed ? "passed" : "failed",
+        anomalyConsistencyVarietyKernelMaterialized
+            ? $"anomalyConsistencyVarietyKernelSkeletonBuilt={JsonBool(phase465!.RootElement, "anomalyConsistencyVarietyKernelSkeletonBuilt")}; interimTerminal={JsonString(phase465.RootElement, "interimTerminal")}; planSection={JsonString(phase465.RootElement, "planSection")}; physicistReviewPending={JsonBool(phase465.RootElement, "physicistReviewPending")}; noGevPromotion={JsonBool(phase465.RootElement, "noGevPromotion")}; decision={JsonString(phase465.RootElement, "decision")}"
+            : "Phase465 artifact not materialized",
+        Phase465Path),
+    new ObjectiveChecklistItem(
+        "ws3-vev-completion-contract-materialized",
+        "Team C plan item 5 STEP 0 skeleton: the WS3 VEV-completion contract schema pinned to the phase434 hash, awaiting schema; wsThreeCannotComplete permanent on all 9 lineage fields; interim terminal only; nothing completed or promoted.",
+        ws3VevCompletionContractPassed ? "passed" : "failed",
+        ws3VevCompletionContractMaterialized
+            ? $"ws3VevCompletionContractSkeletonBuilt={JsonBool(phase466!.RootElement, "ws3VevCompletionContractSkeletonBuilt")}; interimTerminal={JsonString(phase466.RootElement, "interimTerminal")}; planSection={JsonString(phase466.RootElement, "planSection")}; physicistReviewPending={JsonBool(phase466.RootElement, "physicistReviewPending")}; noGevPromotion={JsonBool(phase466.RootElement, "noGevPromotion")}; decision={JsonString(phase466.RootElement, "decision")}"
+            : "Phase466 artifact not materialized",
+        Phase466Path),
+    new ObjectiveChecklistItem(
+        "b2-closure-ledger-materialized",
+        "Team B plan item 14: the eight-limb B2 closure ledger (L1-L4 closed, L5-L8 open/withheld) emitting closure-not-decidable, with the structural-incapability battery proving the strong negative unreachable while any limb is open/held/withheld; nothing promoted.",
+        b2ClosureLedgerPassed ? "passed" : "failed",
+        b2ClosureLedgerMaterialized
+            ? $"b2ClosureLedgerBuilt={JsonBool(phase471!.RootElement, "b2ClosureLedgerBuilt")}; interimTerminal={JsonString(phase471.RootElement, "interimTerminal")}; planSection={JsonString(phase471.RootElement, "planSection")}; physicistReviewPending={JsonBool(phase471.RootElement, "physicistReviewPending")}; noGevPromotion={JsonBool(phase471.RootElement, "noGevPromotion")}; decision={JsonString(phase471.RootElement, "decision")}"
+            : "Phase471 artifact not materialized",
+        Phase471Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

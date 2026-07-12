@@ -1,0 +1,56 @@
+{
+  "phaseId": "phase457-upsilon-portal-stage-a",
+  "generatedAt": "2026-07-12T11:58:45.8789751+00:00",
+  "terminalStatus": "upsilon-portal-stage-a-awaiting-stage-a",
+  "interimTerminal": "awaiting-stage-a",
+  "verdictKind": "awaiting-stage-a",
+  "applicationSubjectKind": "upsilon-portal-stage-a",
+  "planSection": "WAVE2_ACTION_PLAN_2026-07-12 item 10",
+  "upsilonPortalStageASkeletonBuilt": true,
+  "awaitingImplementation": true,
+  "zeroPhysicsCompute": true,
+  "preUnlockOnlyReachableSummaryTerminal": "measurement-recorded-verdict-withheld",
+  "holdConjunction": {
+    "phase466SchemaPin": "required",
+    "o4MProbeRuling": "required"
+  },
+  "limbConsumed": "L7",
+  "scaleIsWorkbenchRelativeCandidateOnly": true,
+  "noGevPromotion": true,
+  "physicistReviewPending": true,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "1f6ac204fe88fcef936177aa9175aaacbba684be357e8d0a5d3e192042fefbbb",
+  "physicalCouplingProvided": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256Contract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "recordedBoundary": {
+    "physicistReviewPending": true,
+    "awaitingImplementation": true
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "STEP 0 skeleton: zero physics computation; the pre-registered design is recorded in STUDY.md and is not yet implemented or executed.",
+    "The interim terminal is a program-state marker, not a scientific verdict; no measurement, elimination, or promotion is claimed.",
+    "physicistReviewPending = true is carried explicitly; no contract field is filled and nothing is promoted (promotedPhysicalMassClaimCount remains 0)."
+  ],
+  "decision": "STEP 0 skeleton for the upsilon-portal Stage A phase under the standing hold (plan item 10). Pre-unlock the only reachable summary terminal is measurement-recorded-verdict-withheld; verdict emission is gated on the phase466 schema-pin and the O4 M-probe ruling in conjunction. Nothing is measured or promoted yet.",
+  "runtimeSeconds": 0.0069291
+}

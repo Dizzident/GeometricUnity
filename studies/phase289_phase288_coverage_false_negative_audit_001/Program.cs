@@ -318,6 +318,7 @@ static bool IsExcluded(string normalizedPath, IReadOnlyList<string> phase288Root
     || normalizedPath.Contains("/obj/", StringComparison.Ordinal)
     || normalizedPath.Contains("/output/", StringComparison.Ordinal)
     || normalizedPath.Contains("scripts/incremental/", StringComparison.Ordinal)
+    || normalizedPath.Contains("scripts/o4_register/", StringComparison.Ordinal)
     || normalizedPath.Contains("scripts/boson_incremental_manifest.json", StringComparison.Ordinal)
     || normalizedPath.Contains("/.git/", StringComparison.Ordinal)
     || normalizedPath.Contains("/.claude/", StringComparison.Ordinal)

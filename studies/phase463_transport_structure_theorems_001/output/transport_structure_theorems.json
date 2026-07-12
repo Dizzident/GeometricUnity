@@ -1,0 +1,57 @@
+{
+  "phaseId": "phase463-transport-structure-theorems",
+  "generatedAt": "2026-07-12T11:58:46.7633853+00:00",
+  "terminalStatus": "transport-structure-theorems-awaiting-inputs",
+  "interimTerminal": "awaiting-inputs",
+  "verdictKind": "awaiting-inputs",
+  "applicationSubjectKind": "transport-structure-theorems",
+  "planSection": "WAVE2_ACTION_PLAN_2026-07-12 item 3",
+  "transportStructureTheoremsSkeletonBuilt": true,
+  "awaitingImplementation": true,
+  "zeroPhysicsCompute": true,
+  "theorems": [
+    "T1",
+    "T2",
+    "T3",
+    "T4"
+  ],
+  "surviveTerminalRenamedTo": "no-ray-instability-found-at-audited-menu",
+  "scaleIsWorkbenchRelativeCandidateOnly": true,
+  "noGevPromotion": true,
+  "physicistReviewPending": true,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "targetBlindConstructionHash": "c8e5180143edfab51682efbccbe4cfd937912c899f21456d672e4c3f61ca8fba",
+  "physicalCouplingProvided": false,
+  "routeProvidesPhysicalEffectiveActionHessian": false,
+  "routeProvidesVevOrSourceScaleLineage": false,
+  "routeProvidesPoleExtractionAndGeVNormalization": false,
+  "routeCompletesBosonPredictions": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256Contract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "predictionContractImpact": {
+    "canFillPhase201WzContract": false,
+    "canFillPhase201HiggsContract": false,
+    "canFillPhase256ObservedFieldExtractionContract": false,
+    "phase201FieldsDefensiblyFilled": []
+  },
+  "recordedBoundary": {
+    "physicistReviewPending": true,
+    "awaitingImplementation": true
+  },
+  "explicitCandidateOnlyNonclaims": [
+    "STEP 0 skeleton: zero physics computation; the pre-registered design is recorded in STUDY.md and is not yet implemented or executed.",
+    "The interim terminal is a program-state marker, not a scientific verdict; no measurement, elimination, or promotion is claimed.",
+    "physicistReviewPending = true is carried explicitly; no contract field is filled and nothing is promoted (promotedPhysicalMassClaimCount remains 0)."
+  ],
+  "decision": "STEP 0 skeleton for the transport structure theorems phase (plan item 3). Awaiting the committed sector inputs and the dimension-2 operator menu; the T1-T4 pre-registered design (including the renamed survive terminal that authorizes nothing) is recorded in STUDY.md. Nothing is certified or promoted yet.",
+  "runtimeSeconds": 0.0064022
+}

@@ -54,6 +54,19 @@ var excludedPathFragments = new[]
     "studies/phase454_beyond_ray_quadratic_certificate_probe_001/",
     "studies/phase460_source_corpus_units_equivariance_kernel_001/",
     "studies/phase461_dimensional_transmutation_reading_menu_001/",
+    // 2026-07-12 Wave-2 STEP 0 skeletons: generated fail-closed diagnostic
+    // artifacts (source/anchor/VEV audit phases), never observed-sector vacuum
+    // claims.
+    "studies/phase455_exact_fermionic_backreaction_probe_001/",
+    "studies/phase456_consolidated_n4_launch_001/",
+    "studies/phase457_upsilon_portal_stage_a_001/",
+    "studies/phase458_binder_go_no_go_gate_001/",
+    "studies/phase462_blocking_set_resolution_001/",
+    "studies/phase463_transport_structure_theorems_001/",
+    "studies/phase464_anchor_adjudication_contract_001/",
+    "studies/phase465_anomaly_consistency_variety_kernel_001/",
+    "studies/phase466_ws3_vev_completion_contract_001/",
+    "studies/phase471_b2_closure_ledger_001/",
 };
 
 var dimension4Pattern = new Regex("""
