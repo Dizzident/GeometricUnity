@@ -316,6 +316,8 @@ const string Phase465AnomalyConsistencyVarietyKernelPath = "studies/phase465_ano
 const string Phase466Ws3VevCompletionContractPath = "studies/phase466_ws3_vev_completion_contract_001/output/ws3_vev_completion_contract_summary.json";
 const string Phase467DerivedOperatorStabilizerRayCensusPath = "studies/phase467_derived_operator_stabilizer_ray_census_001/output/derived_operator_stabilizer_ray_census_summary.json";
 const string Phase468TwoLoopContentRowClosureFilterPath = "studies/phase468_two_loop_content_row_closure_filter_001/output/two_loop_content_row_closure_filter_summary.json";
+const string Phase469CLiftRepresentationBookkeepingGatePath = "studies/phase469_c_lift_representation_bookkeeping_gate_001/output/c_lift_representation_bookkeeping_gate_summary.json";
+const string Phase470CPermanenceFiveLimbLedgerPath = "studies/phase470_c_permanence_five_limb_ledger_001/output/c_permanence_five_limb_ledger_summary.json";
 const string Phase471B2ClosureLedgerPath = "studies/phase471_b2_closure_ledger_001/output/b2_closure_ledger_summary.json";
 const string Phase444ModeVolumeScaledSaturationProbePath = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443JointEffectivePotentialSaturationProbePath = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
@@ -673,6 +675,8 @@ using var phase465 = TryParseJson(Phase465AnomalyConsistencyVarietyKernelPath);
 using var phase466 = TryParseJson(Phase466Ws3VevCompletionContractPath);
 using var phase467 = TryParseJson(Phase467DerivedOperatorStabilizerRayCensusPath);
 using var phase468 = TryParseJson(Phase468TwoLoopContentRowClosureFilterPath);
+using var phase469 = TryParseJson(Phase469CLiftRepresentationBookkeepingGatePath);
+using var phase470 = TryParseJson(Phase470CPermanenceFiveLimbLedgerPath);
 using var phase471 = TryParseJson(Phase471B2ClosureLedgerPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
@@ -8622,6 +8626,46 @@ var package = new
             routePromotesHiggsMass = JsonBool(phase468.RootElement, "routePromotesHiggsMass"),
             routeCompletesBosonPredictions = JsonBool(phase468.RootElement, "routeCompletesBosonPredictions"),
             decision = JsonString(phase468.RootElement, "decision"),
+        }
+        : null,
+    cLiftRepresentationBookkeepingGate = phase469 is not null
+        ? new
+        {
+            status = JsonString(phase469.RootElement, "terminalStatus"),
+            cLiftRepresentationBookkeepingGateExecuted = JsonBool(phase469.RootElement, "cLiftRepresentationBookkeepingGateExecuted"),
+            verdictKind = JsonString(phase469.RootElement, "verdictKind"),
+            applicationSubjectKind = JsonString(phase469.RootElement, "applicationSubjectKind"),
+            planSection = JsonString(phase469.RootElement, "planSection"),
+            targetBlindConstruction = JsonBool(phase469.RootElement, "targetBlindConstruction"),
+            noGevPromotion = JsonBool(phase469.RootElement, "noGevPromotion"),
+            sourceContractApplicationAllowed = JsonBool(phase469.RootElement, "sourceContractApplicationAllowed"),
+            canFillPhase201WzContract = JsonBool(phase469.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase469.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase469.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            routePromotesWzMasses = JsonBool(phase469.RootElement, "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonBool(phase469.RootElement, "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonBool(phase469.RootElement, "routeCompletesBosonPredictions"),
+            decision = JsonString(phase469.RootElement, "decision"),
+        }
+        : null,
+    cPermanenceFiveLimbLedger = phase470 is not null
+        ? new
+        {
+            status = JsonString(phase470.RootElement, "terminalStatus"),
+            cPermanenceLedgerExecuted = JsonBool(phase470.RootElement, "cPermanenceLedgerExecuted"),
+            verdictKind = JsonString(phase470.RootElement, "verdictKind"),
+            applicationSubjectKind = JsonString(phase470.RootElement, "applicationSubjectKind"),
+            planSection = JsonString(phase470.RootElement, "planSection"),
+            targetBlindConstruction = JsonBool(phase470.RootElement, "targetBlindConstruction"),
+            noGevPromotion = JsonBool(phase470.RootElement, "noGevPromotion"),
+            sourceContractApplicationAllowed = JsonBool(phase470.RootElement, "sourceContractApplicationAllowed"),
+            canFillPhase201WzContract = JsonBool(phase470.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase470.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase470.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            routePromotesWzMasses = JsonBool(phase470.RootElement, "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonBool(phase470.RootElement, "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonBool(phase470.RootElement, "routeCompletesBosonPredictions"),
+            decision = JsonString(phase470.RootElement, "decision"),
         }
         : null,
     b2ClosureLedger = phase471 is not null

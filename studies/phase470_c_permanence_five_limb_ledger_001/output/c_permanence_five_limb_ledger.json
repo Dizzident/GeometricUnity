@@ -1,0 +1,83 @@
+{
+  "phaseId": "phase470-c-permanence-five-limb-ledger",
+  "generatedAt": "2026-07-14T20:19:06.7676235+00:00",
+  "terminalStatus": "c-permanence-five-limb-ledger-permanence-not-decidable-open-p3",
+  "verdictKind": "permanence-not-decidable",
+  "cPermanenceLedgerExecuted": true,
+  "applicationSubjectKind": "c-permanence-five-limb-implication-ledger",
+  "planSection": "WAVE2_ACTION_PLAN_2026-07-12 item 15",
+  "constructionHash": "a2e8d9e96aca6573fb66c9470a04517f9f577acec18789262c0f14f4a2aa4291",
+  "inputs": {
+    "inputsPresent": true,
+    "reconciliationGatePassed": true,
+    "inputPinsGreen": true,
+    "phase459HashPin": "218aeb42f63ea4a8a2e7b98a111d700aeda9d7944e9377d27d67204fe49a9a68",
+    "phase465HashPin": "51ee4558001a50c42af7c003d92d2c4b4c83b8608a019b215816240e13ee8915",
+    "phase467HashPin": "b4e6525dd0509b161b1aa941c2c0c547b0a41ebb51ee654a3cd5fbc18db8cf06",
+    "phase468MenuHashPin": "1fcff9e863df9b06d89b67802fad216976d8fbbdd8d160fe5f9c5d7f958867d5",
+    "phase469HashPin": "9e1825ed51cf6204a3739e912af46164c85d0442574544a981b9294738653f3f"
+  },
+  "limbs": [
+    {
+      "id": "P1",
+      "name": "C-KERNEL anomaly-selection route",
+      "status": "closed-negative",
+      "evidence": "phase465"
+    },
+    {
+      "id": "P2",
+      "name": "C-STABILIZER derived-operator selection",
+      "status": "closed-negative",
+      "evidence": "phase467"
+    },
+    {
+      "id": "P3",
+      "name": "C-LIFT representation bookkeeping / WS5",
+      "status": "open-source-object-required",
+      "evidence": "phase469"
+    },
+    {
+      "id": "P4",
+      "name": "C-CLOSURE two-loop content menu",
+      "status": "closed-scoped",
+      "evidence": "phase468"
+    },
+    {
+      "id": "P5",
+      "name": "audit exhaustiveness",
+      "status": "closed-relative-to-audited-inputs",
+      "evidence": "phase459\u002Bphase465\u002Bphase467\u002Bphase468\u002Bphase469"
+    }
+  ],
+  "openLimbs": [
+    "P3"
+  ],
+  "p1ClosedNegative": true,
+  "p2ClosedNegative": true,
+  "p3Open": true,
+  "p4ClosedScoped": true,
+  "p5ClosedRelativeToAuditedInputs": true,
+  "auditScope": "Committed Phase459 reconciliation plus the exact Phase465/467/468/469 C-lineage artifacts. This is relative exhaustiveness only; unknown future sources are outside scope.",
+  "reopeningCondition": "Commit the source-defined Cl(7,7)/128 representation object named by Phase469, including its embedding, 64\u002B/- isotypics, Casimirs, Y-weight map, and epsilon-conjugation operator; rerun Phase469 and then Phase470.",
+  "batteries": {
+    "allClosedReachesPermanent": true,
+    "openLimbForcesNotDecidable": true,
+    "positiveInclusionForcesPartialOpen": true,
+    "driftForcesNotDecidable": true,
+    "currentOpenLimbNamed": true,
+    "structuralIncapabilityBatteryPassed": true
+  },
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "noGevPromotion": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "sourceContractApplicationAllowed": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "runtimeSeconds": 0.0148869,
+  "decision": "C-PERMANENCE is not decidable: P1 and P2 are closed negative, P4 is closed only over its committed menu, and P5 is closed only relative to the pinned audited inputs, while P3 remains open because the source-defined representation object required by C-LIFT is absent. No human ruling is simulated, no permanent theorem is claimed, and nothing is promoted."
+}

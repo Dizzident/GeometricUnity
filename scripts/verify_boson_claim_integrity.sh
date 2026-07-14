@@ -239,6 +239,8 @@ const paths = {
   phase466: "studies/phase466_ws3_vev_completion_contract_001/output/ws3_vev_completion_contract_summary.json",
   phase467: "studies/phase467_derived_operator_stabilizer_ray_census_001/output/derived_operator_stabilizer_ray_census_summary.json",
   phase468: "studies/phase468_two_loop_content_row_closure_filter_001/output/two_loop_content_row_closure_filter_summary.json",
+  phase469: "studies/phase469_c_lift_representation_bookkeeping_gate_001/output/c_lift_representation_bookkeeping_gate_summary.json",
+  phase470: "studies/phase470_c_permanence_five_limb_ledger_001/output/c_permanence_five_limb_ledger_summary.json",
   phase471: "studies/phase471_b2_closure_ledger_001/output/b2_closure_ledger_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
@@ -550,6 +552,8 @@ const phase465 = requireFile(paths.phase465);
 const phase466 = requireFile(paths.phase466);
 const phase467 = requireFile(paths.phase467);
 const phase468 = requireFile(paths.phase468);
+const phase469 = requireFile(paths.phase469);
+const phase470 = requireFile(paths.phase470);
 const phase471 = requireFile(paths.phase471);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
@@ -5671,6 +5675,40 @@ if (sourceLineageMissing) {
   assert(phase468.sourceContractApplicationAllowed === false && phase468.canFillPhase201WzContract === false && phase468.canFillPhase201HiggsContract === false && phase468.canFillPhase256ObservedFieldExtractionContract === false, "Phase468 cannot fill Phase201 or Phase256 contracts.");
   assert(phase468.routePromotesWzMasses === false && phase468.routePromotesHiggsMass === false && phase468.routeCompletesBosonPredictions === false, "Phase468 cannot promote boson predictions.");
   assert(phase101Package?.twoLoopContentRowClosureFilter?.status === "two-loop-content-row-closure-filter-full-menu-out-of-band-scoped-exhaustion", "Phase101 must include the Phase468 block at its real terminal.");
+  // Phase469 -- C-LIFT Stages -1..2: abstract 128=64+64 control, exact ray intersection, source-object bookkeeping failure.
+  assert(phase469.cLiftRepresentationBookkeepingGateExecuted === true, "Phase469 C-LIFT representation-bookkeeping gate must execute.");
+  assert(phase469.applicationSubjectKind === "c-lift-representation-bookkeeping-gate", "Phase469 must classify its subject as c-lift-representation-bookkeeping-gate.");
+  assert(phase469.terminalStatus === "c-lift-stages-minus1-through2-bookkeeping-fails-source-object-unpinned-ws5-rescoped", "Phase469 must emit its real bookkeeping-failure/WS5-rescope terminal.");
+  assert(phase469.verdictKind === "bookkeeping-fails-source-object-unpinned-ws5-rescoped", "Phase469 verdictKind must record the source-object bookkeeping failure.");
+  assert(phase469.inputs?.inputPinsGreen === true && phase469.inputs?.phase441HashMatches === true && phase469.inputs?.phase465HashMatches === true && phase469.inputs?.phase467HashMatches === true, "Phase469 must pin the Phase441/465/467 construction hashes and terminals.");
+  assert(phase469.stageMinusOneSourcePin?.phase441FrontierMentionsCl77128 === true && phase469.stageMinusOneSourcePin?.phase441ExplicitlySaysBasisAbsent === true, "Phase469 must distinguish Phase441's Cl(7,7)/128 frontier mention from a realized invariant basis.");
+  assert(phase469.stageMinusOneSourcePin?.sourceDefinedRepresentationObjectPinned === false && phase469.stageMinusOneSourcePin?.requiredObjectFieldCount === 13 && phase469.stageMinusOneSourcePin?.missingObjectFieldCount === 13, "Phase469 must record all thirteen source-defined representation fields as absent.");
+  assert(phase469.stageZeroAbstractCliffordControl?.abstractCliffordControlPassed === true && phase469.stageZeroAbstractCliffordControl?.fullSpinorDimension === 128 && phase469.stageZeroAbstractCliffordControl?.positiveChiralityDimension === 64 && phase469.stageZeroAbstractCliffordControl?.negativeChiralityDimension === 64, "Phase469 abstract Clifford control must verify 128=64+64 exactly.");
+  assert(phase469.stageZeroAbstractCliffordControl?.sourceDefinedEmbeddingClaimed === false, "Phase469 abstract Clifford control must never be relabeled as a source-defined embedding.");
+  assert(phase469.stageOneRepresentationGates?.representationBookkeepingPinned === false && phase469.stageOneRepresentationGates?.isotypicGatePassed === false && phase469.stageOneRepresentationGates?.casimirGatePassed === false && phase469.stageOneRepresentationGates?.yWeightGatePassed === false && phase469.stageOneRepresentationGates?.epsilonConjugationPreRegistered === false, "Phase469 Stage-1 representation gates must remain fail-closed.");
+  assert(phase469.stageTwoRayIntersection?.phase467GenericRayCount === 176 && phase469.stageTwoRayIntersection?.anomalyConsistentGenericRayCount === 176 && phase469.stageTwoRayIntersection?.phase465Phase467IntersectionExact === true && phase469.stageTwoRayIntersection?.menuNonempty === true, "Phase469 must retain the exact 176-ray Phase465/467 intersection.");
+  assert(phase469.stageTwoRayIntersection?.rayIntersectionHash === "ecb0649bf8c8a36b5523c614e3ddfd01721bb06fcd71aa4bd027517445bfd9a6", "Phase469 ray-intersection hash must match the committed pin.");
+  assert(phase469.fundingDecision?.ws5Funded === false && phase469.fundingDecision?.ws5CancelledOrRescoped === true && phase469.fundingDecision?.rankGateDecision === "rescope-ws5-source-object-required", "Phase469 must not fund WS5 without the source-defined representation object.");
+  assert(phase469.batteries?.syntheticCompleteObjectFundsWs5 === true && phase469.batteries?.syntheticMissingOneFieldRescopesWs5 === true && phase469.batteries?.syntheticEmptyMenuRescopesWs5 === true && phase469.batteries?.allPassed === true, "Phase469 funding-taxonomy sensitivity batteries must all pass.");
+  assert(phase469.constructionHash === "9e1825ed51cf6204a3739e912af46164c85d0442574544a981b9294738653f3f", "Phase469 construction hash must match the committed pin.");
+  assert(phase469.targetBlindConstruction === true && phase469.noGevPromotion === true && phase469.promotedPhysicalMassClaimCount === 0, "Phase469 must preserve target-blind and no-GeV boundaries.");
+  assert(phase469.sourceContractApplicationAllowed === false && phase469.canFillPhase201WzContract === false && phase469.canFillPhase201HiggsContract === false && phase469.canFillPhase256ObservedFieldExtractionContract === false, "Phase469 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase469.routePromotesWzMasses === false && phase469.routePromotesHiggsMass === false && phase469.routeCompletesBosonPredictions === false, "Phase469 cannot promote boson predictions.");
+  assert(phase101Package?.cLiftRepresentationBookkeepingGate?.status === "c-lift-stages-minus1-through2-bookkeeping-fails-source-object-unpinned-ws5-rescoped", "Phase101 must include the Phase469 block at its real terminal.");
+  // Phase470 -- C-PERMANENCE: five-limb implication ledger, P3 explicitly open.
+  assert(phase470.cPermanenceLedgerExecuted === true, "Phase470 C-PERMANENCE ledger must execute.");
+  assert(phase470.applicationSubjectKind === "c-permanence-five-limb-implication-ledger", "Phase470 must classify its subject as the C-PERMANENCE five-limb implication ledger.");
+  assert(phase470.terminalStatus === "c-permanence-five-limb-ledger-permanence-not-decidable-open-p3", "Phase470 must emit the real not-decidable/open-P3 terminal.");
+  assert(phase470.verdictKind === "permanence-not-decidable", "Phase470 verdict must remain not-decidable while P3 is open.");
+  assert(phase470.inputs?.inputPinsGreen === true && phase470.inputs?.reconciliationGatePassed === true, "Phase470 must pin all committed inputs and carry the Phase459 reconciliation gate.");
+  assert(phase470.p1ClosedNegative === true && phase470.p2ClosedNegative === true && phase470.p3Open === true && phase470.p4ClosedScoped === true && phase470.p5ClosedRelativeToAuditedInputs === true, "Phase470 must preserve the five real limb states.");
+  assert(Array.isArray(phase470.openLimbs) && phase470.openLimbs.length === 1 && phase470.openLimbs[0] === "P3", "Phase470 must name P3 as its only open limb.");
+  assert(phase470.batteries?.allClosedReachesPermanent === true && phase470.batteries?.openLimbForcesNotDecidable === true && phase470.batteries?.positiveInclusionForcesPartialOpen === true && phase470.batteries?.driftForcesNotDecidable === true && phase470.batteries?.structuralIncapabilityBatteryPassed === true, "Phase470 taxonomy batteries must all pass.");
+  assert(phase470.constructionHash === "a2e8d9e96aca6573fb66c9470a04517f9f577acec18789262c0f14f4a2aa4291", "Phase470 construction hash must match the committed pin.");
+  assert(phase470.targetBlindConstruction === true && phase470.noGevPromotion === true && phase470.promotedPhysicalMassClaimCount === 0, "Phase470 must preserve target-blind and no-GeV boundaries.");
+  assert(phase470.sourceContractApplicationAllowed === false && phase470.canFillPhase201WzContract === false && phase470.canFillPhase201HiggsContract === false && phase470.canFillPhase256ObservedFieldExtractionContract === false, "Phase470 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase470.routePromotesWzMasses === false && phase470.routePromotesHiggsMass === false && phase470.routeCompletesBosonPredictions === false, "Phase470 cannot promote boson predictions.");
+  assert(phase101Package?.cPermanenceFiveLimbLedger?.status === "c-permanence-five-limb-ledger-permanence-not-decidable-open-p3", "Phase101 must include the Phase470 block at its real terminal.");
   // Phase471 -- Wave-2 STEP 0 skeleton (b2-closure-ledger): interim terminal closure-not-decidable.
   assert(phase471.b2ClosureLedgerBuilt === true, "Phase471 skeleton must be built with its standing claim boundary intact.");
   assert(phase471.applicationSubjectKind === "b2-closure-ledger", "Phase471 must classify its subject as b2-closure-ledger.");

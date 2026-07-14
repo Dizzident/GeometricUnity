@@ -9,7 +9,7 @@ back, NO new phase directory may be created outside this table.
 |-------|-------|-------------------|
 | 453-458 | Team B-scale (dynamical-scale elimination) | 453-457 DONE/committed at their current terminals; next free: 458 |
 | 459-464 | Team A-anchor (dimensionful-anchor elimination) | 459-464 DONE; the A block is EXHAUSTED |
-| 465-470 | Team C-lineage (quantum-number/coupling lineage elimination) | 465-468 DONE; next free: 469 (C-LIFT, hard-gated on 465+467 verdicts) |
+| 465-470 | Team C-lineage (quantum-number/coupling lineage elimination) | 465-470 DONE; block exhausted |
 | 471-476 | Team B-scale (extension, 2026-07-12 Wave-2 plan) | 471 DONE (closure theorem-of-record ledger); next free: 472, reserved for contingent n=5 escalation + Binder production |
 | 477+ | Unassigned - extend this registry before use | - |
 

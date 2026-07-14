@@ -68,6 +68,8 @@ var excludedPathFragments = new[]
     "studies/phase466_ws3_vev_completion_contract_001/",
     "studies/phase467_derived_operator_stabilizer_ray_census_001/",
     "studies/phase468_two_loop_content_row_closure_filter_001/",
+    "studies/phase469_c_lift_representation_bookkeeping_gate_001/",
+    "studies/phase470_c_permanence_five_limb_ledger_001/",
     "studies/phase471_b2_closure_ledger_001/",
 };
 

@@ -599,6 +599,8 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath.Contains("studies/phase461_dimensional_transmutation_reading_menu_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase467_derived_operator_stabilizer_ray_census_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase468_two_loop_content_row_closure_filter_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase469_c_lift_representation_bookkeeping_gate_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase470_c_permanence_five_limb_ledger_001/", StringComparison.Ordinal)
     || normalizedPath == "studies/phase101_boson_prediction_package_001/Program.cs"
     || normalizedPath == "studies/phase202_boson_objective_completion_audit_001/Program.cs"
     || normalizedPath == "studies/phase204_boson_source_lineage_candidate_scan_001/Program.cs"
@@ -611,6 +613,8 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P279.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P467.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P468.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P469.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P470.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P327.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P328.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P338.md"

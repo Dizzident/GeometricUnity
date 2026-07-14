@@ -20238,3 +20238,41 @@ source-lineage deficits remained 15 W/Z fields and 14 Higgs fields, and
 `promotedPhysicalMassClaimCount=0`. The run required execution outside the
 workspace sandbox because parallel MSBuild exited silently under sandbox
 resource isolation; the repository command and validation gates were unchanged.
+
+## 2026-07-14 - Phases469/470: C-LIFT re-scoped on the absent source object; C-PERMANENCE remains undecidable at P3
+
+PHASE469 (C-LIFT Stages -1 through 2) separated the exact abstract Clifford
+control from the representation object the plan actually requires. The
+`Lambda*(Q^7)` signed Fock construction verifies `Cl(7,7)` and `128=64+64`
+exactly, and the Phase465/467 intersection retains all 176 generic
+dimension-13 rays. Neither result supplies the source-defined
+`Spin(10)xSpin(4)` embedding, graded isotypics, Casimir values, Y-weight map,
+or epsilon-conjugation operator. Phase441 names the Cl(7,7)/128 object as a
+frontier requirement and explicitly records the invariant basis absent; all
+13 required object fields are therefore missing. The fail-closed terminal is
+`bookkeeping-fails-source-object-unpinned-ws5-rescoped`. WS5 is not funded.
+Its exact reopening condition is a committed source-defined representation
+object carrying those 13 fields; no human ruling or representation data was
+invented.
+
+PHASE470 (C-PERMANENCE) reads only the committed Phase459/465/467/468/469
+artifacts. Its five-limb ledger records P1 and P2 closed negative, P4 closed
+only over the committed Phase468 menu, and P5 closed only relative to the
+explicitly pinned audited input set. P3 remains
+`open-source-object-required`, so the only defensible current verdict is
+`permanence-not-decidable`, naming P3. A synthetic taxonomy battery proves
+that an open or drifted limb cannot reach the permanent-relative terminal and
+that a positive inclusion maps to the separate `b3-partially-open` state.
+
+Targeted validation passed: all eight scanner surfaces remained green with
+zero intake-ready candidates; Phase101 remained
+`internal-boson-prediction-package-built-physical-comparison-blocked`;
+Phase202 reported 264 passed / 3 failed; integrity reported 15 W/Z and 14
+Higgs missing fields with `promotedPhysicalMassClaimCount=0`. The initial
+Phase470 smoke run failed before executing the ledger because the new project
+mistakenly targeted net8.0 while the repository targets net10.0; the project
+target was corrected, the scientific logic was unchanged, and the subsequent
+shared traversal build and targeted run passed. The mandatory incremental
+checkpoint then passed with 82 steps run and 262 skipped; the final integrity
+verifier again reported 15/14 missing fields and
+`promotedPhysicalMassClaimCount=0`.

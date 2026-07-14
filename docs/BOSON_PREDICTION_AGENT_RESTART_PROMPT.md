@@ -49,6 +49,20 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
+CURRENT CHECKPOINT (2026-07-14, Phases469/470): C-LIFT verified the abstract
+`Cl(7,7)` control (`128=64+64`) and the exact 176-ray Phase465/467 intersection,
+but Phase441 supplies none of the 13 source-defined representation-object
+fields required to fund WS5. Phase469 therefore emits
+`bookkeeping-fails-source-object-unpinned-ws5-rescoped`; no representation
+object is invented. C-PERMANENCE then records P1/P2 negative, P4 scoped, P5
+closed only relative to its pinned audited inputs, and P3 open. Phase470 emits
+`permanence-not-decidable` naming P3. The C-number block 465-470 is exhausted.
+The remaining machine queue is Phase458 only when G1-G6 exist; Phase456
+production HMC remains forbidden without the O4 memo or explicit written risk
+renewal. The O4 engagement remains the human critical path. Phase101 stays
+blocked, Phase202 is 264/3 after targeted validation, the missing-field counts
+remain 15/14, and `promotedPhysicalMassClaimCount=0`.
+
 Current gate status after the Phase448 work (plus the 2026-06-12 platform
 fix - GPU parity defect root-caused and discharged - and the 2026-07-01
 |Y|=1/2 calibration defect fix in the Phase411/417 informational SM

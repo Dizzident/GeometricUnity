@@ -225,6 +225,8 @@ const string Phase465Path = "studies/phase465_anomaly_consistency_variety_kernel
 const string Phase466Path = "studies/phase466_ws3_vev_completion_contract_001/output/ws3_vev_completion_contract_summary.json";
 const string Phase467Path = "studies/phase467_derived_operator_stabilizer_ray_census_001/output/derived_operator_stabilizer_ray_census_summary.json";
 const string Phase468Path = "studies/phase468_two_loop_content_row_closure_filter_001/output/two_loop_content_row_closure_filter_summary.json";
+const string Phase469Path = "studies/phase469_c_lift_representation_bookkeeping_gate_001/output/c_lift_representation_bookkeeping_gate_summary.json";
+const string Phase470Path = "studies/phase470_c_permanence_five_limb_ledger_001/output/c_permanence_five_limb_ledger_summary.json";
 const string Phase471Path = "studies/phase471_b2_closure_ledger_001/output/b2_closure_ledger_summary.json";
 const string Phase444Path = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443Path = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
@@ -502,6 +504,8 @@ using var phase465 = File.Exists(Phase465Path) ? JsonDocument.Parse(File.ReadAll
 using var phase466 = File.Exists(Phase466Path) ? JsonDocument.Parse(File.ReadAllText(Phase466Path)) : null;
 using var phase467 = File.Exists(Phase467Path) ? JsonDocument.Parse(File.ReadAllText(Phase467Path)) : null;
 using var phase468 = File.Exists(Phase468Path) ? JsonDocument.Parse(File.ReadAllText(Phase468Path)) : null;
+using var phase469 = File.Exists(Phase469Path) ? JsonDocument.Parse(File.ReadAllText(Phase469Path)) : null;
+using var phase470 = File.Exists(Phase470Path) ? JsonDocument.Parse(File.ReadAllText(Phase470Path)) : null;
 using var phase471 = File.Exists(Phase471Path) ? JsonDocument.Parse(File.ReadAllText(Phase471Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
@@ -6625,6 +6629,52 @@ var twoLoopContentRowClosureFilterPassed = twoLoopContentRowClosureFilterMateria
     && JsonBool(phase468.RootElement, "routePromotesWzMasses") is false
     && JsonBool(phase468.RootElement, "routePromotesHiggsMass") is false
     && JsonBool(phase468.RootElement, "routeCompletesBosonPredictions") is false;
+var cLiftRepresentationBookkeepingGateMaterialized = phase469 is not null;
+var cLiftRepresentationBookkeepingGatePassed = cLiftRepresentationBookkeepingGateMaterialized
+    && JsonBool(phase469!.RootElement, "cLiftRepresentationBookkeepingGateExecuted") is true
+    && JsonString(phase469.RootElement, "terminalStatus") == "c-lift-stages-minus1-through2-bookkeeping-fails-source-object-unpinned-ws5-rescoped"
+    && JsonString(phase469.RootElement, "verdictKind") == "bookkeeping-fails-source-object-unpinned-ws5-rescoped"
+    && JsonString(phase469.RootElement, "applicationSubjectKind") == "c-lift-representation-bookkeeping-gate"
+    && JsonNestedBool(phase469.RootElement, "stageMinusOneSourcePin", "sourceDefinedRepresentationObjectPinned") is false
+    && JsonNestedInt(phase469.RootElement, "stageMinusOneSourcePin", "missingObjectFieldCount") == 13
+    && JsonNestedBool(phase469.RootElement, "stageZeroAbstractCliffordControl", "abstractCliffordControlPassed") is true
+    && JsonNestedInt(phase469.RootElement, "stageZeroAbstractCliffordControl", "fullSpinorDimension") == 128
+    && JsonNestedInt(phase469.RootElement, "stageZeroAbstractCliffordControl", "positiveChiralityDimension") == 64
+    && JsonNestedInt(phase469.RootElement, "stageZeroAbstractCliffordControl", "negativeChiralityDimension") == 64
+    && JsonNestedBool(phase469.RootElement, "stageTwoRayIntersection", "phase465Phase467IntersectionExact") is true
+    && JsonNestedInt(phase469.RootElement, "stageTwoRayIntersection", "anomalyConsistentGenericRayCount") == 176
+    && JsonNestedBool(phase469.RootElement, "fundingDecision", "ws5Funded") is false
+    && JsonNestedBool(phase469.RootElement, "fundingDecision", "ws5CancelledOrRescoped") is true
+    && JsonBool(phase469.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase469.RootElement, "noGevPromotion") is true
+    && JsonBool(phase469.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase469.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase469.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase469.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase469.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase469.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase469.RootElement, "routeCompletesBosonPredictions") is false;
+var cPermanenceFiveLimbLedgerMaterialized = phase470 is not null;
+var cPermanenceFiveLimbLedgerPassed = cPermanenceFiveLimbLedgerMaterialized
+    && JsonBool(phase470!.RootElement, "cPermanenceLedgerExecuted") is true
+    && JsonString(phase470.RootElement, "terminalStatus") == "c-permanence-five-limb-ledger-permanence-not-decidable-open-p3"
+    && JsonString(phase470.RootElement, "verdictKind") == "permanence-not-decidable"
+    && JsonString(phase470.RootElement, "applicationSubjectKind") == "c-permanence-five-limb-implication-ledger"
+    && JsonBool(phase470.RootElement, "p1ClosedNegative") is true
+    && JsonBool(phase470.RootElement, "p2ClosedNegative") is true
+    && JsonBool(phase470.RootElement, "p3Open") is true
+    && JsonBool(phase470.RootElement, "p4ClosedScoped") is true
+    && JsonBool(phase470.RootElement, "p5ClosedRelativeToAuditedInputs") is true
+    && JsonNestedBool(phase470.RootElement, "batteries", "structuralIncapabilityBatteryPassed") is true
+    && JsonBool(phase470.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase470.RootElement, "noGevPromotion") is true
+    && JsonBool(phase470.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase470.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase470.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase470.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase470.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase470.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase470.RootElement, "routeCompletesBosonPredictions") is false;
 var b2ClosureLedgerMaterialized = phase471 is not null;
 var b2ClosureLedgerPassed = b2ClosureLedgerMaterialized
     && JsonBool(phase471!.RootElement, "b2ClosureLedgerBuilt") is true
@@ -9360,6 +9410,22 @@ var checklist = new[]
             ? $"twoLoopContentRowClosureFilterExecuted={JsonBool(phase468!.RootElement, "twoLoopContentRowClosureFilterExecuted")}; terminalStatus={JsonString(phase468.RootElement, "terminalStatus")}; verdictKind={JsonString(phase468.RootElement, "verdictKind")}; noGevPromotion={JsonBool(phase468.RootElement, "noGevPromotion")}; decision={JsonString(phase468.RootElement, "decision")}"
             : "Phase468 artifact not materialized",
         Phase468Path),
+    new ObjectiveChecklistItem(
+        "c-lift-representation-bookkeeping-gate-materialized",
+        "Team C plan item 13: the abstract Cl(7,7) control verifies 128=64+64 and the exact 465/467 intersection retains 176 rays, but Phase441 commits no source-defined embedding/isotypic/Casimir/Y-weight/epsilon object; WS5 is re-scoped under the pre-registered bookkeeping-failure branch.",
+        cLiftRepresentationBookkeepingGatePassed ? "passed" : "failed",
+        cLiftRepresentationBookkeepingGateMaterialized
+            ? $"cLiftRepresentationBookkeepingGateExecuted={JsonBool(phase469!.RootElement, "cLiftRepresentationBookkeepingGateExecuted")}; terminalStatus={JsonString(phase469.RootElement, "terminalStatus")}; verdictKind={JsonString(phase469.RootElement, "verdictKind")}; noGevPromotion={JsonBool(phase469.RootElement, "noGevPromotion")}; decision={JsonString(phase469.RootElement, "decision")}"
+            : "Phase469 artifact not materialized",
+        Phase469Path),
+    new ObjectiveChecklistItem(
+        "c-permanence-five-limb-ledger-materialized",
+        "Team C plan item 15: the five-limb implication ledger closes P1/P2 negative, P4 scoped, and P5 relative to audited inputs, while naming P3 open and emitting permanence-not-decidable without inventing the missing representation object or promoting a claim.",
+        cPermanenceFiveLimbLedgerPassed ? "passed" : "failed",
+        cPermanenceFiveLimbLedgerMaterialized
+            ? $"cPermanenceLedgerExecuted={JsonBool(phase470!.RootElement, "cPermanenceLedgerExecuted")}; terminalStatus={JsonString(phase470.RootElement, "terminalStatus")}; verdictKind={JsonString(phase470.RootElement, "verdictKind")}; p3Open={JsonBool(phase470.RootElement, "p3Open")}; noGevPromotion={JsonBool(phase470.RootElement, "noGevPromotion")}; decision={JsonString(phase470.RootElement, "decision")}"
+            : "Phase470 artifact not materialized",
+        Phase470Path),
     new ObjectiveChecklistItem(
         "b2-closure-ledger-materialized",
         "Team B plan item 14: the eight-limb B2 closure ledger (L1-L4 closed, L5-L8 open/withheld) emitting closure-not-decidable, with the structural-incapability battery proving the strong negative unreachable while any limb is open/held/withheld; nothing promoted.",
