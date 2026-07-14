@@ -15,6 +15,10 @@ node scripts/o4_register/generate.js          # (re)generate the register
 node scripts/o4_register/generate.js --check   # assert the register is current
 ```
 
+The currency check is also a mandatory precondition of
+`scripts/verify_boson_claim_integrity.sh`; a stale overlay now fails the main
+claim-integrity gate before any claim assertions run.
+
 Strict invariants:
 
 - **Read-only** over committed artifacts — the committed phase JSONs stay

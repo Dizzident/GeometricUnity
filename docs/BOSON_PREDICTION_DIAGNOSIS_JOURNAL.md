@@ -20276,3 +20276,43 @@ shared traversal build and targeted run passed. The mandatory incremental
 checkpoint then passed with 82 steps run and 262 skipped; the final integrity
 verifier again reported 15/14 missing fields and
 `promotedPhysicalMassClaimCount=0`.
+
+## 2026-07-14 - Blocker iteration: O4 register currency repaired and promoted into the integrity gate
+
+The post-Phase470 loop re-audited every remaining legal input before accepting
+the human O4 boundary. No physicist memo, M-probe ruling, or written Phase456
+risk renewal exists. Phase456 production remains unrun, so Phase458 lacks its
+measured-cost G2 input and Binder/susceptibility G3 input; G4 is also absent.
+
+Structured alternatives were checked fail-closed:
+
+1. Search committed artifacts and history for an overlooked memo or risk
+   authorization: none exists.
+2. Re-evaluate only a subset of Phase458 gates: rejected because the binding
+   queue allows evaluation only when G1-G6 exist, and its committed skeleton
+   already records `blocked-inputs-incomplete`.
+3. Build or run the Phase456 production HMC speculatively: prohibited by the
+   explicit O4/risk-renewal hard gate.
+4. Allocate Phase472 for a blocker diagnostic: rejected because the B-extension
+   numbers are reserved for triggered n=5/Binder contingencies, neither of
+   which has fired.
+5. Verify the existing O4 tooling itself: selected as the best safe machine
+   action because it can expose dependency/currency defects without supplying
+   a ruling.
+
+That check found a real defect: `node scripts/o4_register/generate.js --check`
+reported the derived register stale. Regeneration raised the review-pending
+count from 22 to 23, added Phase467, and replaced the obsolete Phase456/457
+skeleton terminals with their committed terminals. The main claim-integrity
+verifier previously did not enforce this documented currency check. It now
+runs the check before its Node assertion block, preventing the human-review
+blast radius from silently lagging future committed phases.
+
+The fail-closed injection battery had teeth: one synthetic extra line in the
+generated register made `verify_boson_claim_integrity.sh` exit 1 with
+`O4 register is stale`; regenerating the overlay restored
+`boson-claim-integrity-verified`, with 15/14 missing fields and
+`promotedPhysicalMassClaimCount=0`. No ruling content was created, inferred,
+or changed. Mandatory incremental validation passed with 54 steps run and 290
+skipped; the final integrity verifier again reported the register current,
+15/14 missing fields, and `promotedPhysicalMassClaimCount=0`.

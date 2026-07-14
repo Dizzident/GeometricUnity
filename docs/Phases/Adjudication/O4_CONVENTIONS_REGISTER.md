@@ -11,13 +11,14 @@ phase id / subject kind; it mutates nothing. The committed phase JSONs stay
 byte-identical and remain authoritative. Regenerate with
 `node scripts/o4_register/generate.js`; assert currency with `--check`.
 
-Total review-pending phase outputs: **22**.
+Total review-pending phase outputs: **23**.
 
-## Invariant rays (1)
+## Invariant rays (2)
 
 | phaseId | subjectKind | terminalStatus | source (DERIVED) |
 |---------|-------------|----------------|------------------|
 | phase454-beyond-ray-quadratic-certificate-probe | beyond-ray-quadratic-certificate-probe | beyond-ray-quadratic-certificate-probe-passed-beyond-ray-instability-candidate-found | `studies/phase454_beyond_ray_quadratic_certificate_probe_001/output/beyond_ray_quadratic_certificate_probe_summary.json` |
+| phase467-derived-operator-stabilizer-ray-census | derived-operator-stabilizer-ray-census | derived-operator-stabilizer-ray-census-all-symmetric-non-y-route-closed | `studies/phase467_derived_operator_stabilizer_ray_census_001/output/derived_operator_stabilizer_ray_census_summary.json` |
 
 ## Positive-mode IR rule (2)
 
@@ -57,8 +58,8 @@ _none_
 | phase448-torus-mode-volume-saturation-probe | torus-mode-volume-saturation-probe | torus-mode-volume-saturation-probe-passed-no-saturation-persists-across-mode-volumes-frontier-sharpened | `studies/phase448_torus_mode_volume_saturation_probe_001/output/torus_mode_volume_saturation_probe_summary.json` |
 | phase452-scalar-channel-spectroscopy-probe | scalar-channel-spectroscopy-probe | scalar-channel-spectroscopy-probe-passed-scalar-channel-gapped-measured-workbench-relative-no-gev | `studies/phase452_scalar_channel_spectroscopy_probe_001/output/scalar_channel_spectroscopy_probe_summary.json` |
 | phase455-exact-fermionic-backreaction-probe | exact-fermionic-backreaction-probe | exact-fermionic-backreaction-probe-convention-fragile | `studies/phase455_exact_fermionic_backreaction_probe_001/output/exact_fermionic_backreaction_probe_summary.json` |
-| phase456-consolidated-n4-launch | consolidated-n4-launch | consolidated-n4-launch-awaiting-pack | `studies/phase456_consolidated_n4_launch_001/output/consolidated_n4_launch_summary.json` |
-| phase457-upsilon-portal-stage-a | upsilon-portal-stage-a | upsilon-portal-stage-a-awaiting-stage-a | `studies/phase457_upsilon_portal_stage_a_001/output/upsilon_portal_stage_a_summary.json` |
+| phase456-consolidated-n4-launch | consolidated-n4-launch | consolidated-n4-launch-pack-committed-awaiting-gates | `studies/phase456_consolidated_n4_launch_001/output/consolidated_n4_launch_summary.json` |
+| phase457-upsilon-portal-stage-a | upsilon-portal-stage-a | upsilon-portal-stage-a-stage-a-certificates-committed | `studies/phase457_upsilon_portal_stage_a_001/output/upsilon_portal_stage_a_summary.json` |
 | phase458-binder-go-no-go-gate | binder-go-no-go-gate | binder-go-no-go-gate-blocked-inputs-incomplete | `studies/phase458_binder_go_no_go_gate_001/output/binder_go_no_go_gate_summary.json` |
 | phase459-spectroscopy-record-attestation | spectroscopy-record-attestation | spectroscopy-record-attestation-passed-record-reconciled-canonical | `studies/phase459_spectroscopy_record_attestation_001/output/spectroscopy_record_attestation_summary.json` |
 | phase460-source-corpus-units-equivariance-kernel | source-corpus-units-equivariance-kernel | source-corpus-units-equivariance-kernel-breaking-relation-found-under-prescribed-reading | `studies/phase460_source_corpus_units_equivariance_kernel_001/output/source_corpus_units_equivariance_kernel_summary.json` |

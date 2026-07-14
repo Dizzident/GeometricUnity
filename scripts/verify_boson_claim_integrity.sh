@@ -4,6 +4,12 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
 
+# The O4 register is a derived overlay over every review-pending phase output.
+# Fail before claim verification if a newly landed phase or terminal has not
+# been incorporated; otherwise the human-review blast radius can silently lag
+# the committed artifacts.
+node scripts/o4_register/generate.js --check
+
 node <<'NODE'
 const fs = require("fs");
 

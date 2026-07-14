@@ -63,6 +63,13 @@ renewal. The O4 engagement remains the human critical path. Phase101 stays
 blocked, Phase202 is 264/3 after targeted validation, the missing-field counts
 remain 15/14, and `promotedPhysicalMassClaimCount=0`.
 
+O4 REGISTER CURRENCY (2026-07-14): the derived overlay is current at 23
+review-pending outputs and now includes Phase467 plus the committed Phase456/
+457 terminals. `verify_boson_claim_integrity.sh` runs
+`node scripts/o4_register/generate.js --check` first, so future register drift
+fails the main integrity gate. This is tooling only: no O4 memo or ruling
+exists, and no `physicistReviewPending` value was changed.
+
 Current gate status after the Phase448 work (plus the 2026-06-12 platform
 fix - GPU parity defect root-caused and discharged - and the 2026-07-01
 |Y|=1/2 calibration defect fix in the Phase411/417 informational SM
