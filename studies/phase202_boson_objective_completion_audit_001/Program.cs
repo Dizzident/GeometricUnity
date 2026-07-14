@@ -223,6 +223,8 @@ const string Phase463Path = "studies/phase463_transport_structure_theorems_001/o
 const string Phase464Path = "studies/phase464_anchor_adjudication_contract_001/output/anchor_adjudication_contract_summary.json";
 const string Phase465Path = "studies/phase465_anomaly_consistency_variety_kernel_001/output/anomaly_consistency_variety_kernel_summary.json";
 const string Phase466Path = "studies/phase466_ws3_vev_completion_contract_001/output/ws3_vev_completion_contract_summary.json";
+const string Phase467Path = "studies/phase467_derived_operator_stabilizer_ray_census_001/output/derived_operator_stabilizer_ray_census_summary.json";
+const string Phase468Path = "studies/phase468_two_loop_content_row_closure_filter_001/output/two_loop_content_row_closure_filter_summary.json";
 const string Phase471Path = "studies/phase471_b2_closure_ledger_001/output/b2_closure_ledger_summary.json";
 const string Phase444Path = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443Path = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
@@ -498,6 +500,8 @@ using var phase463 = File.Exists(Phase463Path) ? JsonDocument.Parse(File.ReadAll
 using var phase464 = File.Exists(Phase464Path) ? JsonDocument.Parse(File.ReadAllText(Phase464Path)) : null;
 using var phase465 = File.Exists(Phase465Path) ? JsonDocument.Parse(File.ReadAllText(Phase465Path)) : null;
 using var phase466 = File.Exists(Phase466Path) ? JsonDocument.Parse(File.ReadAllText(Phase466Path)) : null;
+using var phase467 = File.Exists(Phase467Path) ? JsonDocument.Parse(File.ReadAllText(Phase467Path)) : null;
+using var phase468 = File.Exists(Phase468Path) ? JsonDocument.Parse(File.ReadAllText(Phase468Path)) : null;
 using var phase471 = File.Exists(Phase471Path) ? JsonDocument.Parse(File.ReadAllText(Phase471Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
@@ -6585,6 +6589,42 @@ var ws3VevCompletionContractPassed = ws3VevCompletionContractMaterialized
     && JsonBool(phase466.RootElement, "routePromotesWzMasses") is false
     && JsonBool(phase466.RootElement, "routePromotesHiggsMass") is false
     && JsonBool(phase466.RootElement, "routeCompletesBosonPredictions") is false;
+var derivedOperatorStabilizerRayCensusMaterialized = phase467 is not null;
+var derivedOperatorStabilizerRayCensusPassed = derivedOperatorStabilizerRayCensusMaterialized
+    && JsonBool(phase467!.RootElement, "derivedOperatorStabilizerRayCensusExecuted") is true
+    && JsonString(phase467.RootElement, "terminalStatus") == "derived-operator-stabilizer-ray-census-all-symmetric-non-y-route-closed"
+    && JsonString(phase467.RootElement, "verdictKind") == "all-symmetric-non-y-route-closed"
+    && JsonString(phase467.RootElement, "applicationSubjectKind") == "derived-operator-stabilizer-ray-census"
+    && JsonNestedBool(phase467.RootElement, "selection", "allSymmetricOrNonY") is true
+    && JsonNestedBool(phase467.RootElement, "selection", "yRaySelected") is false
+    && JsonBool(phase467.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase467.RootElement, "physicistReviewPending") is true
+    && JsonBool(phase467.RootElement, "noGevPromotion") is true
+    && JsonBool(phase467.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase467.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase467.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase467.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase467.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase467.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase467.RootElement, "routeCompletesBosonPredictions") is false;
+var twoLoopContentRowClosureFilterMaterialized = phase468 is not null;
+var twoLoopContentRowClosureFilterPassed = twoLoopContentRowClosureFilterMaterialized
+    && JsonBool(phase468!.RootElement, "twoLoopContentRowClosureFilterExecuted") is true
+    && JsonString(phase468.RootElement, "terminalStatus") == "two-loop-content-row-closure-filter-full-menu-out-of-band-scoped-exhaustion"
+    && JsonString(phase468.RootElement, "verdictKind") == "full-menu-out-of-band-scoped-exhaustion"
+    && JsonString(phase468.RootElement, "applicationSubjectKind") == "two-loop-content-row-closure-filter"
+    && JsonNestedBool(phase468.RootElement, "filter", "fullMenuOutOfBand") is true
+    && JsonNestedBool(phase468.RootElement, "filter", "cPermanenceP4ScopedExhaustion") is true
+    && JsonBool(phase468.RootElement, "targetBlindMenuConstruction") is true
+    && JsonBool(phase468.RootElement, "observedSin2UsedToConstructMenu") is false
+    && JsonBool(phase468.RootElement, "noGevPromotion") is true
+    && JsonBool(phase468.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase468.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase468.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase468.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase468.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase468.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase468.RootElement, "routeCompletesBosonPredictions") is false;
 var b2ClosureLedgerMaterialized = phase471 is not null;
 var b2ClosureLedgerPassed = b2ClosureLedgerMaterialized
     && JsonBool(phase471!.RootElement, "b2ClosureLedgerBuilt") is true
@@ -9304,6 +9344,22 @@ var checklist = new[]
             ? $"ws3VevCompletionContractSchemaCommitted={JsonBool(phase466!.RootElement, "ws3VevCompletionContractSchemaCommitted")}; terminalStatus={JsonString(phase466.RootElement, "terminalStatus")}; verdictKind={JsonString(phase466.RootElement, "verdictKind")}; physicistReviewPending={JsonBool(phase466.RootElement, "physicistReviewPending")}; noGevPromotion={JsonBool(phase466.RootElement, "noGevPromotion")}; decision={JsonString(phase466.RootElement, "decision")}"
             : "Phase466 artifact not materialized",
         Phase466Path),
+    new ObjectiveChecklistItem(
+        "derived-operator-stabilizer-ray-census-materialized",
+        "Team C plan item 7: the exact four-dimensional commutant and direct spin(6,4) field-of-definition arm pass, and the 13-versus-25 stabilizer discriminator has teeth, but many non-Y rays share the standard ray's generic dimension-13 stabilizer; the audited route closes without selecting hypercharge and nothing is promoted.",
+        derivedOperatorStabilizerRayCensusPassed ? "passed" : "failed",
+        derivedOperatorStabilizerRayCensusMaterialized
+            ? $"derivedOperatorStabilizerRayCensusExecuted={JsonBool(phase467!.RootElement, "derivedOperatorStabilizerRayCensusExecuted")}; terminalStatus={JsonString(phase467.RootElement, "terminalStatus")}; verdictKind={JsonString(phase467.RootElement, "verdictKind")}; physicistReviewPending={JsonBool(phase467.RootElement, "physicistReviewPending")}; noGevPromotion={JsonBool(phase467.RootElement, "noGevPromotion")}; decision={JsonString(phase467.RootElement, "decision")}"
+            : "Phase467 artifact not materialized",
+        Phase467Path),
+    new ObjectiveChecklistItem(
+        "two-loop-content-row-closure-filter-materialized",
+        "Team C plan item 8: the hash-pinned Phase404/407 content-row menu reproduces the Phase451 two-loop witness and every audited row remains outside the honest threshold band; this is a scoped exhaustion record for the declared conditional proxy menu, not a coupling or mass prediction.",
+        twoLoopContentRowClosureFilterPassed ? "passed" : "failed",
+        twoLoopContentRowClosureFilterMaterialized
+            ? $"twoLoopContentRowClosureFilterExecuted={JsonBool(phase468!.RootElement, "twoLoopContentRowClosureFilterExecuted")}; terminalStatus={JsonString(phase468.RootElement, "terminalStatus")}; verdictKind={JsonString(phase468.RootElement, "verdictKind")}; noGevPromotion={JsonBool(phase468.RootElement, "noGevPromotion")}; decision={JsonString(phase468.RootElement, "decision")}"
+            : "Phase468 artifact not materialized",
+        Phase468Path),
     new ObjectiveChecklistItem(
         "b2-closure-ledger-materialized",
         "Team B plan item 14: the eight-limb B2 closure ledger (L1-L4 closed, L5-L8 open/withheld) emitting closure-not-decidable, with the structural-incapability battery proving the strong negative unreachable while any limb is open/held/withheld; nothing promoted.",

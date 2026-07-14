@@ -1,0 +1,2121 @@
+{
+  "phaseId": "phase467-derived-operator-stabilizer-ray-census",
+  "generatedAt": "2026-07-14T18:45:03.2297003+00:00",
+  "terminalStatus": "derived-operator-stabilizer-ray-census-all-symmetric-non-y-route-closed",
+  "verdictKind": "all-symmetric-non-y-route-closed",
+  "derivedOperatorStabilizerRayCensusExecuted": true,
+  "applicationSubjectKind": "derived-operator-stabilizer-ray-census",
+  "planSection": "WAVE2_ACTION_PLAN_2026-07-12 item 7",
+  "constructionHash": "b4e6525dd0509b161b1aa941c2c0c547b0a41ebb51ee654a3cd5fbc18db8cf06",
+  "inputs": {
+    "phase404SummaryPath": "studies/phase404_gu_embedding_chain_coupling_ratio_enumeration_001/output/gu_embedding_chain_coupling_ratio_enumeration_summary.json",
+    "phase404Present": true,
+    "phase404Passed": true,
+    "phase404HashPin": "ed68a8f3e0d98f25f3c476e940103a4275a79f550346338d08c3c6319160a481",
+    "phase404HashMatches": true,
+    "phase404ScanCount": 224,
+    "reconstructedMenuCount": 224,
+    "menuMatchesPhase404": true,
+    "rayMenuHash": "f9096adcbb2d74dad76f913bca2a5c750e2e1fd3cb9eef48090812de11e09877"
+  },
+  "exactCommutant": {
+    "ambientAlgebra": "so(10) compact arithmetic; exact integer commutator equations",
+    "embeddedGeneratorRank": 11,
+    "expectedEmbeddedGeneratorRank": 11,
+    "commutantDimensionCompact": 4,
+    "expectedCommutantDimension": 4,
+    "expectedFourGeneratorRank": 4,
+    "expectedFourGeneratorsCommute": true,
+    "basisDescription": "u(1) complex structure J on R6 plus the three anti-self-dual su(2)_R generators on R4",
+    "compactCommutantExact": true
+  },
+  "fieldOfDefinitionArm": {
+    "metric": "eta=diag(\u002B,\u002B,\u002B,\u002B,\u002B,\u002B,-,-,-,-)",
+    "algebra": "so(6,4) computed directly from X^T eta \u002B eta X = 0",
+    "embeddedInSo64": true,
+    "expectedFourInSo64": true,
+    "commutantDimensionNoncompact": 4,
+    "fieldOfDefinitionArmPassed": true,
+    "scope": "finite-dimensional commutant and ray-stabilizer arithmetic only; no O4 human ruling is inferred or recorded"
+  },
+  "discriminator": {
+    "standardYRay": {
+      "alpha": "1",
+      "beta": "2/3",
+      "clearedR3Coefficient": "6",
+      "clearedJCoefficient": "2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    "su5EnhancedControlRay": {
+      "alpha": "1",
+      "beta": "2",
+      "clearedR3Coefficient": "2",
+      "clearedJCoefficient": "2",
+      "stabilizerDimension": 25,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": true
+    },
+    "expectedStandardDimension": 13,
+    "expectedEnhancedDimension": 25,
+    "genericThirteenCount": 176,
+    "enhancedTwentyFiveCount": 20,
+    "distinctStabilizerDimensionCount": 4,
+    "discriminatorPassed": true
+  },
+  "selection": {
+    "yProjectiveRayCount": 10,
+    "nonYThirteenCount": 166,
+    "yRaySelected": false,
+    "allSymmetricOrNonY": true,
+    "interpretation": "Stabilizer dimension distinguishes enhanced from generic rays, but does not isolate the standard Y direction among the generic dimension-13 rays.",
+    "cLiftStage2RayCount": 176,
+    "cPermanenceP2Negative": true
+  },
+  "stabilizerDimensionHistogram": {
+    "13": 176,
+    "15": 14,
+    "19": 14,
+    "25": 20
+  },
+  "rayCensus": [
+    {
+      "alpha": "-3",
+      "beta": "-3",
+      "clearedR3Coefficient": "-6",
+      "clearedJCoefficient": "-3",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-3",
+      "beta": "-2",
+      "clearedR3Coefficient": "-6",
+      "clearedJCoefficient": "-2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-3",
+      "beta": "-4/3",
+      "clearedR3Coefficient": "-18",
+      "clearedJCoefficient": "-4",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-3",
+      "beta": "-1",
+      "clearedR3Coefficient": "-6",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-3",
+      "beta": "-2/3",
+      "clearedR3Coefficient": "-18",
+      "clearedJCoefficient": "-2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-3",
+      "beta": "-1/2",
+      "clearedR3Coefficient": "-12",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-3",
+      "beta": "-1/3",
+      "clearedR3Coefficient": "-18",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-3",
+      "beta": "0",
+      "clearedR3Coefficient": "-6",
+      "clearedJCoefficient": "0",
+      "stabilizerDimension": 19,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-3",
+      "beta": "1/3",
+      "clearedR3Coefficient": "-18",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-3",
+      "beta": "1/2",
+      "clearedR3Coefficient": "-12",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-3",
+      "beta": "2/3",
+      "clearedR3Coefficient": "-18",
+      "clearedJCoefficient": "2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-3",
+      "beta": "1",
+      "clearedR3Coefficient": "-6",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-3",
+      "beta": "4/3",
+      "clearedR3Coefficient": "-18",
+      "clearedJCoefficient": "4",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-3",
+      "beta": "2",
+      "clearedR3Coefficient": "-6",
+      "clearedJCoefficient": "2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-3",
+      "beta": "3",
+      "clearedR3Coefficient": "-6",
+      "clearedJCoefficient": "3",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-2",
+      "beta": "-3",
+      "clearedR3Coefficient": "-4",
+      "clearedJCoefficient": "-3",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-2",
+      "beta": "-2",
+      "clearedR3Coefficient": "-4",
+      "clearedJCoefficient": "-2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-2",
+      "beta": "-4/3",
+      "clearedR3Coefficient": "-12",
+      "clearedJCoefficient": "-4",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-2",
+      "beta": "-1",
+      "clearedR3Coefficient": "-4",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-2",
+      "beta": "-2/3",
+      "clearedR3Coefficient": "-12",
+      "clearedJCoefficient": "-2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-2",
+      "beta": "-1/2",
+      "clearedR3Coefficient": "-8",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-2",
+      "beta": "-1/3",
+      "clearedR3Coefficient": "-12",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-2",
+      "beta": "0",
+      "clearedR3Coefficient": "-4",
+      "clearedJCoefficient": "0",
+      "stabilizerDimension": 19,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-2",
+      "beta": "1/3",
+      "clearedR3Coefficient": "-12",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-2",
+      "beta": "1/2",
+      "clearedR3Coefficient": "-8",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-2",
+      "beta": "2/3",
+      "clearedR3Coefficient": "-12",
+      "clearedJCoefficient": "2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-2",
+      "beta": "1",
+      "clearedR3Coefficient": "-4",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-2",
+      "beta": "4/3",
+      "clearedR3Coefficient": "-12",
+      "clearedJCoefficient": "4",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-2",
+      "beta": "2",
+      "clearedR3Coefficient": "-4",
+      "clearedJCoefficient": "2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-2",
+      "beta": "3",
+      "clearedR3Coefficient": "-4",
+      "clearedJCoefficient": "3",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-3/2",
+      "beta": "-3",
+      "clearedR3Coefficient": "-3",
+      "clearedJCoefficient": "-3",
+      "stabilizerDimension": 25,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": true
+    },
+    {
+      "alpha": "-3/2",
+      "beta": "-2",
+      "clearedR3Coefficient": "-3",
+      "clearedJCoefficient": "-2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-3/2",
+      "beta": "-4/3",
+      "clearedR3Coefficient": "-9",
+      "clearedJCoefficient": "-4",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-3/2",
+      "beta": "-1",
+      "clearedR3Coefficient": "-3",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-3/2",
+      "beta": "-2/3",
+      "clearedR3Coefficient": "-9",
+      "clearedJCoefficient": "-2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-3/2",
+      "beta": "-1/2",
+      "clearedR3Coefficient": "-6",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-3/2",
+      "beta": "-1/3",
+      "clearedR3Coefficient": "-9",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-3/2",
+      "beta": "0",
+      "clearedR3Coefficient": "-3",
+      "clearedJCoefficient": "0",
+      "stabilizerDimension": 19,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-3/2",
+      "beta": "1/3",
+      "clearedR3Coefficient": "-9",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-3/2",
+      "beta": "1/2",
+      "clearedR3Coefficient": "-6",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-3/2",
+      "beta": "2/3",
+      "clearedR3Coefficient": "-9",
+      "clearedJCoefficient": "2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-3/2",
+      "beta": "1",
+      "clearedR3Coefficient": "-3",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-3/2",
+      "beta": "4/3",
+      "clearedR3Coefficient": "-9",
+      "clearedJCoefficient": "4",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-3/2",
+      "beta": "2",
+      "clearedR3Coefficient": "-3",
+      "clearedJCoefficient": "2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-3/2",
+      "beta": "3",
+      "clearedR3Coefficient": "-3",
+      "clearedJCoefficient": "3",
+      "stabilizerDimension": 25,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": true
+    },
+    {
+      "alpha": "-1",
+      "beta": "-3",
+      "clearedR3Coefficient": "-2",
+      "clearedJCoefficient": "-3",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1",
+      "beta": "-2",
+      "clearedR3Coefficient": "-2",
+      "clearedJCoefficient": "-2",
+      "stabilizerDimension": 25,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": true
+    },
+    {
+      "alpha": "-1",
+      "beta": "-4/3",
+      "clearedR3Coefficient": "-6",
+      "clearedJCoefficient": "-4",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1",
+      "beta": "-1",
+      "clearedR3Coefficient": "-2",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1",
+      "beta": "-2/3",
+      "clearedR3Coefficient": "-6",
+      "clearedJCoefficient": "-2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1",
+      "beta": "-1/2",
+      "clearedR3Coefficient": "-4",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1",
+      "beta": "-1/3",
+      "clearedR3Coefficient": "-6",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1",
+      "beta": "0",
+      "clearedR3Coefficient": "-2",
+      "clearedJCoefficient": "0",
+      "stabilizerDimension": 19,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1",
+      "beta": "1/3",
+      "clearedR3Coefficient": "-6",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1",
+      "beta": "1/2",
+      "clearedR3Coefficient": "-4",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1",
+      "beta": "2/3",
+      "clearedR3Coefficient": "-6",
+      "clearedJCoefficient": "2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1",
+      "beta": "1",
+      "clearedR3Coefficient": "-2",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1",
+      "beta": "4/3",
+      "clearedR3Coefficient": "-6",
+      "clearedJCoefficient": "4",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1",
+      "beta": "2",
+      "clearedR3Coefficient": "-2",
+      "clearedJCoefficient": "2",
+      "stabilizerDimension": 25,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": true
+    },
+    {
+      "alpha": "-1",
+      "beta": "3",
+      "clearedR3Coefficient": "-2",
+      "clearedJCoefficient": "3",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-2/3",
+      "beta": "-3",
+      "clearedR3Coefficient": "-4",
+      "clearedJCoefficient": "-9",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-2/3",
+      "beta": "-2",
+      "clearedR3Coefficient": "-4",
+      "clearedJCoefficient": "-6",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-2/3",
+      "beta": "-4/3",
+      "clearedR3Coefficient": "-4",
+      "clearedJCoefficient": "-4",
+      "stabilizerDimension": 25,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": true
+    },
+    {
+      "alpha": "-2/3",
+      "beta": "-1",
+      "clearedR3Coefficient": "-4",
+      "clearedJCoefficient": "-3",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-2/3",
+      "beta": "-2/3",
+      "clearedR3Coefficient": "-4",
+      "clearedJCoefficient": "-2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-2/3",
+      "beta": "-1/2",
+      "clearedR3Coefficient": "-8",
+      "clearedJCoefficient": "-3",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-2/3",
+      "beta": "-1/3",
+      "clearedR3Coefficient": "-4",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-2/3",
+      "beta": "0",
+      "clearedR3Coefficient": "-4",
+      "clearedJCoefficient": "0",
+      "stabilizerDimension": 19,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-2/3",
+      "beta": "1/3",
+      "clearedR3Coefficient": "-4",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-2/3",
+      "beta": "1/2",
+      "clearedR3Coefficient": "-8",
+      "clearedJCoefficient": "3",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-2/3",
+      "beta": "2/3",
+      "clearedR3Coefficient": "-4",
+      "clearedJCoefficient": "2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-2/3",
+      "beta": "1",
+      "clearedR3Coefficient": "-4",
+      "clearedJCoefficient": "3",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-2/3",
+      "beta": "4/3",
+      "clearedR3Coefficient": "-4",
+      "clearedJCoefficient": "4",
+      "stabilizerDimension": 25,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": true
+    },
+    {
+      "alpha": "-2/3",
+      "beta": "2",
+      "clearedR3Coefficient": "-4",
+      "clearedJCoefficient": "6",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-2/3",
+      "beta": "3",
+      "clearedR3Coefficient": "-4",
+      "clearedJCoefficient": "9",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1/2",
+      "beta": "-3",
+      "clearedR3Coefficient": "-1",
+      "clearedJCoefficient": "-3",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1/2",
+      "beta": "-2",
+      "clearedR3Coefficient": "-1",
+      "clearedJCoefficient": "-2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1/2",
+      "beta": "-4/3",
+      "clearedR3Coefficient": "-3",
+      "clearedJCoefficient": "-4",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1/2",
+      "beta": "-1",
+      "clearedR3Coefficient": "-1",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 25,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": true
+    },
+    {
+      "alpha": "-1/2",
+      "beta": "-2/3",
+      "clearedR3Coefficient": "-3",
+      "clearedJCoefficient": "-2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1/2",
+      "beta": "-1/2",
+      "clearedR3Coefficient": "-2",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1/2",
+      "beta": "-1/3",
+      "clearedR3Coefficient": "-3",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1/2",
+      "beta": "0",
+      "clearedR3Coefficient": "-1",
+      "clearedJCoefficient": "0",
+      "stabilizerDimension": 19,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1/2",
+      "beta": "1/3",
+      "clearedR3Coefficient": "-3",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1/2",
+      "beta": "1/2",
+      "clearedR3Coefficient": "-2",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1/2",
+      "beta": "2/3",
+      "clearedR3Coefficient": "-3",
+      "clearedJCoefficient": "2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1/2",
+      "beta": "1",
+      "clearedR3Coefficient": "-1",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 25,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": true
+    },
+    {
+      "alpha": "-1/2",
+      "beta": "4/3",
+      "clearedR3Coefficient": "-3",
+      "clearedJCoefficient": "4",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1/2",
+      "beta": "2",
+      "clearedR3Coefficient": "-1",
+      "clearedJCoefficient": "2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1/2",
+      "beta": "3",
+      "clearedR3Coefficient": "-1",
+      "clearedJCoefficient": "3",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1/3",
+      "beta": "-3",
+      "clearedR3Coefficient": "-2",
+      "clearedJCoefficient": "-9",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1/3",
+      "beta": "-2",
+      "clearedR3Coefficient": "-2",
+      "clearedJCoefficient": "-6",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1/3",
+      "beta": "-4/3",
+      "clearedR3Coefficient": "-2",
+      "clearedJCoefficient": "-4",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1/3",
+      "beta": "-1",
+      "clearedR3Coefficient": "-2",
+      "clearedJCoefficient": "-3",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1/3",
+      "beta": "-2/3",
+      "clearedR3Coefficient": "-2",
+      "clearedJCoefficient": "-2",
+      "stabilizerDimension": 25,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": true
+    },
+    {
+      "alpha": "-1/3",
+      "beta": "-1/2",
+      "clearedR3Coefficient": "-4",
+      "clearedJCoefficient": "-3",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1/3",
+      "beta": "-1/3",
+      "clearedR3Coefficient": "-2",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1/3",
+      "beta": "0",
+      "clearedR3Coefficient": "-2",
+      "clearedJCoefficient": "0",
+      "stabilizerDimension": 19,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1/3",
+      "beta": "1/3",
+      "clearedR3Coefficient": "-2",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1/3",
+      "beta": "1/2",
+      "clearedR3Coefficient": "-4",
+      "clearedJCoefficient": "3",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1/3",
+      "beta": "2/3",
+      "clearedR3Coefficient": "-2",
+      "clearedJCoefficient": "2",
+      "stabilizerDimension": 25,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": true
+    },
+    {
+      "alpha": "-1/3",
+      "beta": "1",
+      "clearedR3Coefficient": "-2",
+      "clearedJCoefficient": "3",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1/3",
+      "beta": "4/3",
+      "clearedR3Coefficient": "-2",
+      "clearedJCoefficient": "4",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1/3",
+      "beta": "2",
+      "clearedR3Coefficient": "-2",
+      "clearedJCoefficient": "6",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "-1/3",
+      "beta": "3",
+      "clearedR3Coefficient": "-2",
+      "clearedJCoefficient": "9",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "0",
+      "beta": "-3",
+      "clearedR3Coefficient": "0",
+      "clearedJCoefficient": "-3",
+      "stabilizerDimension": 15,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "0",
+      "beta": "-2",
+      "clearedR3Coefficient": "0",
+      "clearedJCoefficient": "-2",
+      "stabilizerDimension": 15,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "0",
+      "beta": "-4/3",
+      "clearedR3Coefficient": "0",
+      "clearedJCoefficient": "-4",
+      "stabilizerDimension": 15,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "0",
+      "beta": "-1",
+      "clearedR3Coefficient": "0",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 15,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "0",
+      "beta": "-2/3",
+      "clearedR3Coefficient": "0",
+      "clearedJCoefficient": "-2",
+      "stabilizerDimension": 15,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "0",
+      "beta": "-1/2",
+      "clearedR3Coefficient": "0",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 15,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "0",
+      "beta": "-1/3",
+      "clearedR3Coefficient": "0",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 15,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "0",
+      "beta": "1/3",
+      "clearedR3Coefficient": "0",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 15,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "0",
+      "beta": "1/2",
+      "clearedR3Coefficient": "0",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 15,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "0",
+      "beta": "2/3",
+      "clearedR3Coefficient": "0",
+      "clearedJCoefficient": "2",
+      "stabilizerDimension": 15,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "0",
+      "beta": "1",
+      "clearedR3Coefficient": "0",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 15,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "0",
+      "beta": "4/3",
+      "clearedR3Coefficient": "0",
+      "clearedJCoefficient": "4",
+      "stabilizerDimension": 15,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "0",
+      "beta": "2",
+      "clearedR3Coefficient": "0",
+      "clearedJCoefficient": "2",
+      "stabilizerDimension": 15,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "0",
+      "beta": "3",
+      "clearedR3Coefficient": "0",
+      "clearedJCoefficient": "3",
+      "stabilizerDimension": 15,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1/3",
+      "beta": "-3",
+      "clearedR3Coefficient": "2",
+      "clearedJCoefficient": "-9",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1/3",
+      "beta": "-2",
+      "clearedR3Coefficient": "2",
+      "clearedJCoefficient": "-6",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1/3",
+      "beta": "-4/3",
+      "clearedR3Coefficient": "2",
+      "clearedJCoefficient": "-4",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1/3",
+      "beta": "-1",
+      "clearedR3Coefficient": "2",
+      "clearedJCoefficient": "-3",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1/3",
+      "beta": "-2/3",
+      "clearedR3Coefficient": "2",
+      "clearedJCoefficient": "-2",
+      "stabilizerDimension": 25,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": true
+    },
+    {
+      "alpha": "1/3",
+      "beta": "-1/2",
+      "clearedR3Coefficient": "4",
+      "clearedJCoefficient": "-3",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1/3",
+      "beta": "-1/3",
+      "clearedR3Coefficient": "2",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1/3",
+      "beta": "0",
+      "clearedR3Coefficient": "2",
+      "clearedJCoefficient": "0",
+      "stabilizerDimension": 19,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1/3",
+      "beta": "1/3",
+      "clearedR3Coefficient": "2",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1/3",
+      "beta": "1/2",
+      "clearedR3Coefficient": "4",
+      "clearedJCoefficient": "3",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1/3",
+      "beta": "2/3",
+      "clearedR3Coefficient": "2",
+      "clearedJCoefficient": "2",
+      "stabilizerDimension": 25,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": true
+    },
+    {
+      "alpha": "1/3",
+      "beta": "1",
+      "clearedR3Coefficient": "2",
+      "clearedJCoefficient": "3",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1/3",
+      "beta": "4/3",
+      "clearedR3Coefficient": "2",
+      "clearedJCoefficient": "4",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1/3",
+      "beta": "2",
+      "clearedR3Coefficient": "2",
+      "clearedJCoefficient": "6",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1/3",
+      "beta": "3",
+      "clearedR3Coefficient": "2",
+      "clearedJCoefficient": "9",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1/2",
+      "beta": "-3",
+      "clearedR3Coefficient": "1",
+      "clearedJCoefficient": "-3",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1/2",
+      "beta": "-2",
+      "clearedR3Coefficient": "1",
+      "clearedJCoefficient": "-2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1/2",
+      "beta": "-4/3",
+      "clearedR3Coefficient": "3",
+      "clearedJCoefficient": "-4",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1/2",
+      "beta": "-1",
+      "clearedR3Coefficient": "1",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 25,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": true
+    },
+    {
+      "alpha": "1/2",
+      "beta": "-2/3",
+      "clearedR3Coefficient": "3",
+      "clearedJCoefficient": "-2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1/2",
+      "beta": "-1/2",
+      "clearedR3Coefficient": "2",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1/2",
+      "beta": "-1/3",
+      "clearedR3Coefficient": "3",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1/2",
+      "beta": "0",
+      "clearedR3Coefficient": "1",
+      "clearedJCoefficient": "0",
+      "stabilizerDimension": 19,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1/2",
+      "beta": "1/3",
+      "clearedR3Coefficient": "3",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1/2",
+      "beta": "1/2",
+      "clearedR3Coefficient": "2",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1/2",
+      "beta": "2/3",
+      "clearedR3Coefficient": "3",
+      "clearedJCoefficient": "2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1/2",
+      "beta": "1",
+      "clearedR3Coefficient": "1",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 25,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": true
+    },
+    {
+      "alpha": "1/2",
+      "beta": "4/3",
+      "clearedR3Coefficient": "3",
+      "clearedJCoefficient": "4",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1/2",
+      "beta": "2",
+      "clearedR3Coefficient": "1",
+      "clearedJCoefficient": "2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1/2",
+      "beta": "3",
+      "clearedR3Coefficient": "1",
+      "clearedJCoefficient": "3",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "2/3",
+      "beta": "-3",
+      "clearedR3Coefficient": "4",
+      "clearedJCoefficient": "-9",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "2/3",
+      "beta": "-2",
+      "clearedR3Coefficient": "4",
+      "clearedJCoefficient": "-6",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "2/3",
+      "beta": "-4/3",
+      "clearedR3Coefficient": "4",
+      "clearedJCoefficient": "-4",
+      "stabilizerDimension": 25,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": true
+    },
+    {
+      "alpha": "2/3",
+      "beta": "-1",
+      "clearedR3Coefficient": "4",
+      "clearedJCoefficient": "-3",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "2/3",
+      "beta": "-2/3",
+      "clearedR3Coefficient": "4",
+      "clearedJCoefficient": "-2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "2/3",
+      "beta": "-1/2",
+      "clearedR3Coefficient": "8",
+      "clearedJCoefficient": "-3",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "2/3",
+      "beta": "-1/3",
+      "clearedR3Coefficient": "4",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "2/3",
+      "beta": "0",
+      "clearedR3Coefficient": "4",
+      "clearedJCoefficient": "0",
+      "stabilizerDimension": 19,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "2/3",
+      "beta": "1/3",
+      "clearedR3Coefficient": "4",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "2/3",
+      "beta": "1/2",
+      "clearedR3Coefficient": "8",
+      "clearedJCoefficient": "3",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "2/3",
+      "beta": "2/3",
+      "clearedR3Coefficient": "4",
+      "clearedJCoefficient": "2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "2/3",
+      "beta": "1",
+      "clearedR3Coefficient": "4",
+      "clearedJCoefficient": "3",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "2/3",
+      "beta": "4/3",
+      "clearedR3Coefficient": "4",
+      "clearedJCoefficient": "4",
+      "stabilizerDimension": 25,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": true
+    },
+    {
+      "alpha": "2/3",
+      "beta": "2",
+      "clearedR3Coefficient": "4",
+      "clearedJCoefficient": "6",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "2/3",
+      "beta": "3",
+      "clearedR3Coefficient": "4",
+      "clearedJCoefficient": "9",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1",
+      "beta": "-3",
+      "clearedR3Coefficient": "2",
+      "clearedJCoefficient": "-3",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1",
+      "beta": "-2",
+      "clearedR3Coefficient": "2",
+      "clearedJCoefficient": "-2",
+      "stabilizerDimension": 25,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": true
+    },
+    {
+      "alpha": "1",
+      "beta": "-4/3",
+      "clearedR3Coefficient": "6",
+      "clearedJCoefficient": "-4",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1",
+      "beta": "-1",
+      "clearedR3Coefficient": "2",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1",
+      "beta": "-2/3",
+      "clearedR3Coefficient": "6",
+      "clearedJCoefficient": "-2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1",
+      "beta": "-1/2",
+      "clearedR3Coefficient": "4",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1",
+      "beta": "-1/3",
+      "clearedR3Coefficient": "6",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1",
+      "beta": "0",
+      "clearedR3Coefficient": "2",
+      "clearedJCoefficient": "0",
+      "stabilizerDimension": 19,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1",
+      "beta": "1/3",
+      "clearedR3Coefficient": "6",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1",
+      "beta": "1/2",
+      "clearedR3Coefficient": "4",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1",
+      "beta": "2/3",
+      "clearedR3Coefficient": "6",
+      "clearedJCoefficient": "2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1",
+      "beta": "1",
+      "clearedR3Coefficient": "2",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1",
+      "beta": "4/3",
+      "clearedR3Coefficient": "6",
+      "clearedJCoefficient": "4",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "1",
+      "beta": "2",
+      "clearedR3Coefficient": "2",
+      "clearedJCoefficient": "2",
+      "stabilizerDimension": 25,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": true
+    },
+    {
+      "alpha": "1",
+      "beta": "3",
+      "clearedR3Coefficient": "2",
+      "clearedJCoefficient": "3",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "3/2",
+      "beta": "-3",
+      "clearedR3Coefficient": "3",
+      "clearedJCoefficient": "-3",
+      "stabilizerDimension": 25,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": true
+    },
+    {
+      "alpha": "3/2",
+      "beta": "-2",
+      "clearedR3Coefficient": "3",
+      "clearedJCoefficient": "-2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "3/2",
+      "beta": "-4/3",
+      "clearedR3Coefficient": "9",
+      "clearedJCoefficient": "-4",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "3/2",
+      "beta": "-1",
+      "clearedR3Coefficient": "3",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "3/2",
+      "beta": "-2/3",
+      "clearedR3Coefficient": "9",
+      "clearedJCoefficient": "-2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "3/2",
+      "beta": "-1/2",
+      "clearedR3Coefficient": "6",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "3/2",
+      "beta": "-1/3",
+      "clearedR3Coefficient": "9",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "3/2",
+      "beta": "0",
+      "clearedR3Coefficient": "3",
+      "clearedJCoefficient": "0",
+      "stabilizerDimension": 19,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "3/2",
+      "beta": "1/3",
+      "clearedR3Coefficient": "9",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "3/2",
+      "beta": "1/2",
+      "clearedR3Coefficient": "6",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "3/2",
+      "beta": "2/3",
+      "clearedR3Coefficient": "9",
+      "clearedJCoefficient": "2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "3/2",
+      "beta": "1",
+      "clearedR3Coefficient": "3",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "3/2",
+      "beta": "4/3",
+      "clearedR3Coefficient": "9",
+      "clearedJCoefficient": "4",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "3/2",
+      "beta": "2",
+      "clearedR3Coefficient": "3",
+      "clearedJCoefficient": "2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "3/2",
+      "beta": "3",
+      "clearedR3Coefficient": "3",
+      "clearedJCoefficient": "3",
+      "stabilizerDimension": 25,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": true
+    },
+    {
+      "alpha": "2",
+      "beta": "-3",
+      "clearedR3Coefficient": "4",
+      "clearedJCoefficient": "-3",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "2",
+      "beta": "-2",
+      "clearedR3Coefficient": "4",
+      "clearedJCoefficient": "-2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "2",
+      "beta": "-4/3",
+      "clearedR3Coefficient": "12",
+      "clearedJCoefficient": "-4",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "2",
+      "beta": "-1",
+      "clearedR3Coefficient": "4",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "2",
+      "beta": "-2/3",
+      "clearedR3Coefficient": "12",
+      "clearedJCoefficient": "-2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "2",
+      "beta": "-1/2",
+      "clearedR3Coefficient": "8",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "2",
+      "beta": "-1/3",
+      "clearedR3Coefficient": "12",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "2",
+      "beta": "0",
+      "clearedR3Coefficient": "4",
+      "clearedJCoefficient": "0",
+      "stabilizerDimension": 19,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "2",
+      "beta": "1/3",
+      "clearedR3Coefficient": "12",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "2",
+      "beta": "1/2",
+      "clearedR3Coefficient": "8",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "2",
+      "beta": "2/3",
+      "clearedR3Coefficient": "12",
+      "clearedJCoefficient": "2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "2",
+      "beta": "1",
+      "clearedR3Coefficient": "4",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "2",
+      "beta": "4/3",
+      "clearedR3Coefficient": "12",
+      "clearedJCoefficient": "4",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "2",
+      "beta": "2",
+      "clearedR3Coefficient": "4",
+      "clearedJCoefficient": "2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "2",
+      "beta": "3",
+      "clearedR3Coefficient": "4",
+      "clearedJCoefficient": "3",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "3",
+      "beta": "-3",
+      "clearedR3Coefficient": "6",
+      "clearedJCoefficient": "-3",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "3",
+      "beta": "-2",
+      "clearedR3Coefficient": "6",
+      "clearedJCoefficient": "-2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "3",
+      "beta": "-4/3",
+      "clearedR3Coefficient": "18",
+      "clearedJCoefficient": "-4",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "3",
+      "beta": "-1",
+      "clearedR3Coefficient": "6",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "3",
+      "beta": "-2/3",
+      "clearedR3Coefficient": "18",
+      "clearedJCoefficient": "-2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "3",
+      "beta": "-1/2",
+      "clearedR3Coefficient": "12",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "3",
+      "beta": "-1/3",
+      "clearedR3Coefficient": "18",
+      "clearedJCoefficient": "-1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "3",
+      "beta": "0",
+      "clearedR3Coefficient": "6",
+      "clearedJCoefficient": "0",
+      "stabilizerDimension": 19,
+      "isGenericThirteen": false,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "3",
+      "beta": "1/3",
+      "clearedR3Coefficient": "18",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "3",
+      "beta": "1/2",
+      "clearedR3Coefficient": "12",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "3",
+      "beta": "2/3",
+      "clearedR3Coefficient": "18",
+      "clearedJCoefficient": "2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "3",
+      "beta": "1",
+      "clearedR3Coefficient": "6",
+      "clearedJCoefficient": "1",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "3",
+      "beta": "4/3",
+      "clearedR3Coefficient": "18",
+      "clearedJCoefficient": "4",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "3",
+      "beta": "2",
+      "clearedR3Coefficient": "6",
+      "clearedJCoefficient": "2",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    },
+    {
+      "alpha": "3",
+      "beta": "3",
+      "clearedR3Coefficient": "6",
+      "clearedJCoefficient": "3",
+      "stabilizerDimension": 13,
+      "isGenericThirteen": true,
+      "isEnhancedTwentyFive": false
+    }
+  ],
+  "batteries": {
+    "rankBattery": true,
+    "weakenedCommutantDimension": 5,
+    "discriminatorBattery": true,
+    "deterministicMenuBattery": true,
+    "allPassed": true
+  },
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "physicistReviewPending": true,
+  "noGevPromotion": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "sourceContractApplicationAllowed": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "runtimeSeconds": 0.3034776,
+  "decision": "The exact four-dimensional commutant and its spin(6,4) field of definition survive, and the 13-versus-25 discriminator has teeth, but the derived stabilizer invariant does not select the standard Y ray: multiple non-Y rays share the same generic dimension-13 stabilizer. The C-STABILIZER route therefore closes at the audited Phase404 menu; C-PERMANENCE P2 is negative and C-LIFT must carry the surviving generic rays. This is representation-theory bookkeeping only, with no coupling normalization, scale, pole, or physical prediction."
+}

@@ -314,6 +314,8 @@ const string Phase463TransportStructureTheoremsPath = "studies/phase463_transpor
 const string Phase464AnchorAdjudicationContractPath = "studies/phase464_anchor_adjudication_contract_001/output/anchor_adjudication_contract_summary.json";
 const string Phase465AnomalyConsistencyVarietyKernelPath = "studies/phase465_anomaly_consistency_variety_kernel_001/output/anomaly_consistency_variety_kernel_summary.json";
 const string Phase466Ws3VevCompletionContractPath = "studies/phase466_ws3_vev_completion_contract_001/output/ws3_vev_completion_contract_summary.json";
+const string Phase467DerivedOperatorStabilizerRayCensusPath = "studies/phase467_derived_operator_stabilizer_ray_census_001/output/derived_operator_stabilizer_ray_census_summary.json";
+const string Phase468TwoLoopContentRowClosureFilterPath = "studies/phase468_two_loop_content_row_closure_filter_001/output/two_loop_content_row_closure_filter_summary.json";
 const string Phase471B2ClosureLedgerPath = "studies/phase471_b2_closure_ledger_001/output/b2_closure_ledger_summary.json";
 const string Phase444ModeVolumeScaledSaturationProbePath = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443JointEffectivePotentialSaturationProbePath = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
@@ -669,6 +671,8 @@ using var phase463 = TryParseJson(Phase463TransportStructureTheoremsPath);
 using var phase464 = TryParseJson(Phase464AnchorAdjudicationContractPath);
 using var phase465 = TryParseJson(Phase465AnomalyConsistencyVarietyKernelPath);
 using var phase466 = TryParseJson(Phase466Ws3VevCompletionContractPath);
+using var phase467 = TryParseJson(Phase467DerivedOperatorStabilizerRayCensusPath);
+using var phase468 = TryParseJson(Phase468TwoLoopContentRowClosureFilterPath);
 using var phase471 = TryParseJson(Phase471B2ClosureLedgerPath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
@@ -8577,6 +8581,47 @@ var package = new
             routePromotesHiggsMass = JsonBool(phase466.RootElement, "routePromotesHiggsMass"),
             routeCompletesBosonPredictions = JsonBool(phase466.RootElement, "routeCompletesBosonPredictions"),
             decision = JsonString(phase466.RootElement, "decision"),
+        }
+        : null,
+    derivedOperatorStabilizerRayCensus = phase467 is not null
+        ? new
+        {
+            status = JsonString(phase467.RootElement, "terminalStatus"),
+            derivedOperatorStabilizerRayCensusExecuted = JsonBool(phase467.RootElement, "derivedOperatorStabilizerRayCensusExecuted"),
+            verdictKind = JsonString(phase467.RootElement, "verdictKind"),
+            applicationSubjectKind = JsonString(phase467.RootElement, "applicationSubjectKind"),
+            planSection = JsonString(phase467.RootElement, "planSection"),
+            targetBlindConstruction = JsonBool(phase467.RootElement, "targetBlindConstruction"),
+            physicistReviewPending = JsonBool(phase467.RootElement, "physicistReviewPending"),
+            noGevPromotion = JsonBool(phase467.RootElement, "noGevPromotion"),
+            sourceContractApplicationAllowed = JsonBool(phase467.RootElement, "sourceContractApplicationAllowed"),
+            canFillPhase201WzContract = JsonBool(phase467.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase467.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase467.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            routePromotesWzMasses = JsonBool(phase467.RootElement, "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonBool(phase467.RootElement, "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonBool(phase467.RootElement, "routeCompletesBosonPredictions"),
+            decision = JsonString(phase467.RootElement, "decision"),
+        }
+        : null,
+    twoLoopContentRowClosureFilter = phase468 is not null
+        ? new
+        {
+            status = JsonString(phase468.RootElement, "terminalStatus"),
+            twoLoopContentRowClosureFilterExecuted = JsonBool(phase468.RootElement, "twoLoopContentRowClosureFilterExecuted"),
+            verdictKind = JsonString(phase468.RootElement, "verdictKind"),
+            applicationSubjectKind = JsonString(phase468.RootElement, "applicationSubjectKind"),
+            planSection = JsonString(phase468.RootElement, "planSection"),
+            targetBlindMenuConstruction = JsonBool(phase468.RootElement, "targetBlindMenuConstruction"),
+            noGevPromotion = JsonBool(phase468.RootElement, "noGevPromotion"),
+            sourceContractApplicationAllowed = JsonBool(phase468.RootElement, "sourceContractApplicationAllowed"),
+            canFillPhase201WzContract = JsonBool(phase468.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase468.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase468.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            routePromotesWzMasses = JsonBool(phase468.RootElement, "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonBool(phase468.RootElement, "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonBool(phase468.RootElement, "routeCompletesBosonPredictions"),
+            decision = JsonString(phase468.RootElement, "decision"),
         }
         : null,
     b2ClosureLedger = phase471 is not null

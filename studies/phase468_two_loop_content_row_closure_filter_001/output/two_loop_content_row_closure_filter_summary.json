@@ -1,0 +1,249 @@
+{
+  "phaseId": "phase468-two-loop-content-row-closure-filter",
+  "generatedAt": "2026-07-14T18:45:08.3667106+00:00",
+  "terminalStatus": "two-loop-content-row-closure-filter-full-menu-out-of-band-scoped-exhaustion",
+  "verdictKind": "full-menu-out-of-band-scoped-exhaustion",
+  "twoLoopContentRowClosureFilterExecuted": true,
+  "applicationSubjectKind": "two-loop-content-row-closure-filter",
+  "planSection": "WAVE2_ACTION_PLAN_2026-07-12 item 8",
+  "menu": {
+    "menuHash": "1fcff9e863df9b06d89b67802fad216976d8fbbdd8d160fe5f9c5d7f958867d5",
+    "menuHashPin": "1fcff9e863df9b06d89b67802fad216976d8fbbdd8d160fe5f9c5d7f958867d5",
+    "menuHashMatches": true,
+    "rowCount": 4,
+    "rows": [
+      {
+        "id": "sm-witness",
+        "familyCount": 3,
+        "doubletCount": 1,
+        "colorTripletCount": 0,
+        "provenance": "Phase451 mandatory witness: imported three-family multiplicity plus one conditional scalar doublet",
+        "conditionalProxy": false
+      },
+      {
+        "id": "phase404-complete-family-extension",
+        "familyCount": 4,
+        "doubletCount": 1,
+        "colorTripletCount": 0,
+        "provenance": "Phase404-derived complete 16 added to the Phase451 witness content",
+        "conditionalProxy": true
+      },
+      {
+        "id": "phase407-doublet-subblock-scalar-proxy",
+        "familyCount": 3,
+        "doubletCount": 5,
+        "colorTripletCount": 0,
+        "provenance": "Phase407 16-real-state frame-cross doublet block represented as four complex scalar doublets, in addition to the witness doublet",
+        "conditionalProxy": true
+      },
+      {
+        "id": "phase407-full-frame-cross-10-scalar-proxy",
+        "familyCount": 3,
+        "doubletCount": 5,
+        "colorTripletCount": 4,
+        "provenance": "Phase407 full 4x10 frame-cross block represented as four complete scalar 10 contents: four complex doublets plus four complex color triplets",
+        "conditionalProxy": true
+      }
+    ],
+    "committedBeforeScoring": true
+  },
+  "precursors": {
+    "phase404SummaryPath": "studies/phase404_gu_embedding_chain_coupling_ratio_enumeration_001/output/gu_embedding_chain_coupling_ratio_enumeration_summary.json",
+    "phase407SummaryPath": "studies/phase407_chimeric_adjoint_sm_content_probe_001/output/chimeric_adjoint_sm_content_probe_summary.json",
+    "phase451SummaryPath": "studies/phase451_two_loop_unification_ledger_001/output/two_loop_unification_ledger_summary.json",
+    "phase404Present": true,
+    "phase407Present": true,
+    "phase451Present": true,
+    "phase404Passed": true,
+    "phase407Passed": true,
+    "phase407DoubletCountMatches": true,
+    "phase451Passed": true
+  },
+  "filter": {
+    "alphaEmInverse": 127.955,
+    "alphaS": 0.1179,
+    "observedSin2ScoringTarget": 0.23122,
+    "thresholdBand": 0.0001787877823472006,
+    "integrationStep": 0.00390625,
+    "twoLoopConvention": "Phase451 gauge-only b_ij witness plus standard gauge-only matter deltas; Yukawa traces omitted",
+    "contentActiveInterval": "full m_Z-to-crossing interval (maximal fixed-content proxy; no source-defined intermediate threshold exists)",
+    "fullMenuOutOfBand": true,
+    "withinBandRowCount": 0,
+    "cPermanenceP4ScopedExhaustion": true
+  },
+  "scores": [
+    {
+      "rowId": "sm-witness",
+      "provenance": "Phase451 mandatory witness: imported three-family multiplicity plus one conditional scalar doublet",
+      "conditionalProxy": false,
+      "oneLoopBetaAfPositive": {
+        "b1": -4.1,
+        "b2": 3.166666666666667,
+        "b3": 6.999999999999999
+      },
+      "twoLoopMatrix": [
+        [
+          3.98,
+          2.7,
+          8.8
+        ],
+        [
+          0.54,
+          5.833333333333333,
+          12
+        ],
+        [
+          1.1,
+          4.5,
+          -26
+        ]
+      ],
+      "converged": true,
+      "sin2PredictedTwoLoop": 0.21063705618237694,
+      "predictedMinusScoringTarget": -0.020582943817623073,
+      "thresholdBand": 0.0001787877823472006,
+      "withinBand": false,
+      "unificationScaleOverInputScale": 4579084360577.012,
+      "scaleFieldIsDimensionlessRatio": true,
+      "alphaGutInverse": 41.36379246260598,
+      "candidateOnly": false
+    },
+    {
+      "rowId": "phase404-complete-family-extension",
+      "provenance": "Phase404-derived complete 16 added to the Phase451 witness content",
+      "conditionalProxy": true,
+      "oneLoopBetaAfPositive": {
+        "b1": -5.433333333333333,
+        "b2": 1.8333333333333333,
+        "b3": 5.666666666666666
+      },
+      "twoLoopMatrix": [
+        [
+          5.246666666666665,
+          3.3000000000000003,
+          11.733333333333334
+        ],
+        [
+          0.74,
+          22.16666666666667,
+          16
+        ],
+        [
+          1.4666666666666668,
+          6,
+          -0.6666666666666679
+        ]
+      ],
+      "converged": true,
+      "sin2PredictedTwoLoop": 0.21042185939503733,
+      "predictedMinusScoringTarget": -0.020798140604962684,
+      "thresholdBand": 0.0001787877823472006,
+      "withinBand": false,
+      "unificationScaleOverInputScale": 5712248082759.292,
+      "scaleFieldIsDimensionlessRatio": true,
+      "alphaGutInverse": 34.90204639199357,
+      "candidateOnly": false
+    },
+    {
+      "rowId": "phase407-doublet-subblock-scalar-proxy",
+      "provenance": "Phase407 16-real-state frame-cross doublet block represented as four complex scalar doublets, in addition to the witness doublet",
+      "conditionalProxy": true,
+      "oneLoopBetaAfPositive": {
+        "b1": -4.499999999999998,
+        "b2": 2.500000000000001,
+        "b3": 6.999999999999999
+      },
+      "twoLoopMatrix": [
+        [
+          4.699999999999999,
+          6.3,
+          8.8
+        ],
+        [
+          1.7400000000000002,
+          14.499999999999996,
+          12
+        ],
+        [
+          1.1,
+          4.5,
+          -26
+        ]
+      ],
+      "converged": true,
+      "sin2PredictedTwoLoop": 0.2260429486852354,
+      "predictedMinusScoringTarget": -0.005177051314764619,
+      "thresholdBand": 0.0001787877823472006,
+      "withinBand": false,
+      "unificationScaleOverInputScale": 858872745181.756,
+      "scaleFieldIsDimensionlessRatio": true,
+      "alphaGutInverse": 39.48902198208522,
+      "candidateOnly": false
+    },
+    {
+      "rowId": "phase407-full-frame-cross-10-scalar-proxy",
+      "provenance": "Phase407 full 4x10 frame-cross block represented as four complete scalar 10 contents: four complex doublets plus four complex color triplets",
+      "conditionalProxy": true,
+      "oneLoopBetaAfPositive": {
+        "b1": -4.766666666666664,
+        "b2": 2.500000000000001,
+        "b3": 6.333333333333331
+      },
+      "twoLoopMatrix": [
+        [
+          4.913333333333334,
+          6.3,
+          13.066666666666666
+        ],
+        [
+          1.7400000000000002,
+          14.499999999999996,
+          12
+        ],
+        [
+          1.6333333333333333,
+          4.5,
+          -11.333333333333332
+        ]
+      ],
+      "converged": true,
+      "sin2PredictedTwoLoop": 0.21004776306386247,
+      "predictedMinusScoringTarget": -0.02117223693613754,
+      "thresholdBand": 0.0001787877823472006,
+      "withinBand": false,
+      "unificationScaleOverInputScale": 5014091029616.6,
+      "scaleFieldIsDimensionlessRatio": true,
+      "alphaGutInverse": 38.10667708332671,
+      "candidateOnly": false
+    }
+  ],
+  "batteries": {
+    "phase451OneLoopWitnessMatches": true,
+    "phase451MatrixWitnessMatches": true,
+    "smWitnessReproduced": true,
+    "smWitnessDeviation": -5.161426841482353E-13,
+    "stepHalvingPassed": true,
+    "syntheticWithinBand": true,
+    "allPassed": true
+  },
+  "limitations": [
+    "Phase407 supplies representation content but not a low-energy action, statistics assignment, or threshold; its rows are explicitly conditional scalar proxies.",
+    "The full-interval content placement is a fixed maximal proxy, not a source-derived intermediate scale.",
+    "The Phase451 gauge-only two-loop convention omits Yukawa traces; this filter inherits that declared truncation.",
+    "Even a within-band row would be lineage-relevant candidate bookkeeping only and could not promote a coupling, mass, or GU-specific prediction."
+  ],
+  "targetBlindMenuConstruction": true,
+  "observedSin2UsedInScoringOnly": true,
+  "observedSin2UsedToConstructMenu": false,
+  "noGevPromotion": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "sourceContractApplicationAllowed": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "runtimeSeconds": 4.8490092,
+  "decision": "Every pre-committed Phase404/407-induced content row remains outside the Phase451 honest two-loop threshold band. This is a scoped C-CLOSURE exhaustion record for the audited full-interval scalar-proxy menu, not an absolute running theorem: Phase407 does not define field statistics, an action, or intermediate thresholds. No coupling normalization, scale, pole, or physical prediction is promoted."
+}

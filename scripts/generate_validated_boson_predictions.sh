@@ -348,6 +348,8 @@ dotnet run --no-build -c Release --project studies/phase463_transport_structure_
 dotnet run --no-build -c Release --project studies/phase464_anchor_adjudication_contract_001/Phase464AnchorAdjudicationContract.csproj
 dotnet run --no-build -c Release --project studies/phase465_anomaly_consistency_variety_kernel_001/Phase465AnomalyConsistencyVarietyKernel.csproj
 dotnet run --no-build -c Release --project studies/phase466_ws3_vev_completion_contract_001/Phase466Ws3VevCompletionContract.csproj
+dotnet run --no-build -c Release --project studies/phase467_derived_operator_stabilizer_ray_census_001/Phase467DerivedOperatorStabilizerRayCensus.csproj
+dotnet run --no-build -c Release --project studies/phase468_two_loop_content_row_closure_filter_001/Phase468TwoLoopContentRowClosureFilter.csproj
 dotnet run --no-build -c Release --project studies/phase471_b2_closure_ledger_001/Phase471B2ClosureLedger.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj

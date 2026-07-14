@@ -889,6 +889,10 @@ static bool IsExcluded(string normalizedPath) =>
     || normalizedPath.Contains("/studies/phase465_", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase466_", StringComparison.Ordinal)
     || normalizedPath.Contains("/studies/phase466_", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase467_", StringComparison.Ordinal)
+    || normalizedPath.Contains("/studies/phase467_", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase468_", StringComparison.Ordinal)
+    || normalizedPath.Contains("/studies/phase468_", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase471_", StringComparison.Ordinal)
     || normalizedPath.Contains("/studies/phase471_", StringComparison.Ordinal);
 

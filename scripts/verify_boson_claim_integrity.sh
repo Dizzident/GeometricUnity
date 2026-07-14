@@ -237,6 +237,8 @@ const paths = {
   phase464: "studies/phase464_anchor_adjudication_contract_001/output/anchor_adjudication_contract_summary.json",
   phase465: "studies/phase465_anomaly_consistency_variety_kernel_001/output/anomaly_consistency_variety_kernel_summary.json",
   phase466: "studies/phase466_ws3_vev_completion_contract_001/output/ws3_vev_completion_contract_summary.json",
+  phase467: "studies/phase467_derived_operator_stabilizer_ray_census_001/output/derived_operator_stabilizer_ray_census_summary.json",
+  phase468: "studies/phase468_two_loop_content_row_closure_filter_001/output/two_loop_content_row_closure_filter_summary.json",
   phase471: "studies/phase471_b2_closure_ledger_001/output/b2_closure_ledger_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
@@ -546,6 +548,8 @@ const phase463 = requireFile(paths.phase463);
 const phase464 = requireFile(paths.phase464);
 const phase465 = requireFile(paths.phase465);
 const phase466 = requireFile(paths.phase466);
+const phase467 = requireFile(paths.phase467);
+const phase468 = requireFile(paths.phase468);
 const phase471 = requireFile(paths.phase471);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
@@ -5637,6 +5641,36 @@ if (sourceLineageMissing) {
   assert(phase466.sourceContractApplicationAllowed === false && phase466.canFillPhase201WzContract === false && phase466.canFillPhase201HiggsContract === false && phase466.canFillPhase256ObservedFieldExtractionContract === false, "Phase466 cannot fill Phase201 or Phase256 contracts.");
   assert(phase466.routePromotesWzMasses === false && phase466.routePromotesHiggsMass === false && phase466.routeCompletesBosonPredictions === false, "Phase466 cannot promote boson predictions.");
   assert(phase101Package?.ws3VevCompletionContract?.status === "ws3-vev-completion-contract-schema-committed", "Phase101 must include the Phase466 block at its real terminal.");
+  // Phase467 -- C-STABILIZER: exact four-dimensional commutant, direct so(6,4) arm, scoped negative selection result.
+  assert(phase467.derivedOperatorStabilizerRayCensusExecuted === true, "Phase467 stabilizer ray census must execute.");
+  assert(phase467.applicationSubjectKind === "derived-operator-stabilizer-ray-census", "Phase467 must classify its subject as derived-operator-stabilizer-ray-census.");
+  assert(phase467.terminalStatus === "derived-operator-stabilizer-ray-census-all-symmetric-non-y-route-closed", "Phase467 must emit its real all-symmetric/non-Y terminal.");
+  assert(phase467.verdictKind === "all-symmetric-non-y-route-closed", "Phase467 verdictKind must record the scoped negative result.");
+  assert(phase467.exactCommutant?.commutantDimensionCompact === 4 && phase467.exactCommutant?.compactCommutantExact === true, "Phase467 compact commutant must have exact dimension four.");
+  assert(phase467.fieldOfDefinitionArm?.commutantDimensionNoncompact === 4 && phase467.fieldOfDefinitionArm?.fieldOfDefinitionArmPassed === true, "Phase467 direct so(6,4) field-of-definition arm must preserve the four-dimensional commutant.");
+  assert(phase467.discriminator?.standardYRay?.stabilizerDimension === 13 && phase467.discriminator?.su5EnhancedControlRay?.stabilizerDimension === 25 && phase467.discriminator?.discriminatorPassed === true, "Phase467 13-versus-25 discriminator must pass.");
+  assert(phase467.selection?.yRaySelected === false && phase467.selection?.allSymmetricOrNonY === true && phase467.selection?.nonYThirteenCount > 0, "Phase467 must not select Y when non-Y dimension-13 rays survive.");
+  assert(phase467.batteries?.allPassed === true, "Phase467 sensitivity batteries must all pass.");
+  assert(phase467.constructionHash === "b4e6525dd0509b161b1aa941c2c0c547b0a41ebb51ee654a3cd5fbc18db8cf06", "Phase467 construction hash must match the committed pin.");
+  assert(phase467.targetBlindConstruction === true && phase467.physicistReviewPending === true && phase467.noGevPromotion === true, "Phase467 must preserve target-blind, pending-review, and no-GeV boundaries.");
+  assert(phase467.promotedPhysicalMassClaimCount === 0, "Phase467 must promote zero physical mass claims.");
+  assert(phase467.sourceContractApplicationAllowed === false && phase467.canFillPhase201WzContract === false && phase467.canFillPhase201HiggsContract === false && phase467.canFillPhase256ObservedFieldExtractionContract === false, "Phase467 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase467.routePromotesWzMasses === false && phase467.routePromotesHiggsMass === false && phase467.routeCompletesBosonPredictions === false, "Phase467 cannot promote boson predictions.");
+  assert(phase101Package?.derivedOperatorStabilizerRayCensus?.status === "derived-operator-stabilizer-ray-census-all-symmetric-non-y-route-closed", "Phase101 must include the Phase467 block at its real terminal.");
+  // Phase468 -- C-CLOSURE ii/iii: pre-committed Phase404/407 content menu, Phase451 witness, scoped exhaustion.
+  assert(phase468.twoLoopContentRowClosureFilterExecuted === true, "Phase468 two-loop content-row closure filter must execute.");
+  assert(phase468.applicationSubjectKind === "two-loop-content-row-closure-filter", "Phase468 must classify its subject as two-loop-content-row-closure-filter.");
+  assert(phase468.terminalStatus === "two-loop-content-row-closure-filter-full-menu-out-of-band-scoped-exhaustion", "Phase468 must emit its real scoped-exhaustion terminal.");
+  assert(phase468.verdictKind === "full-menu-out-of-band-scoped-exhaustion", "Phase468 verdictKind must record full-menu out-of-band exhaustion.");
+  assert(phase468.menu?.menuHashMatches === true && phase468.menu?.menuHash === "1fcff9e863df9b06d89b67802fad216976d8fbbdd8d160fe5f9c5d7f958867d5", "Phase468 pre-committed content menu hash must match the pin.");
+  assert(phase468.menu?.rowCount === 4 && phase468.menu?.committedBeforeScoring === true, "Phase468 must score exactly the four pre-committed rows.");
+  assert(phase468.filter?.fullMenuOutOfBand === true && phase468.filter?.withinBandRowCount === 0 && phase468.filter?.cPermanenceP4ScopedExhaustion === true, "Phase468 must record scoped P4 exhaustion with zero within-band rows.");
+  assert(phase468.batteries?.phase451OneLoopWitnessMatches === true && phase468.batteries?.phase451MatrixWitnessMatches === true && phase468.batteries?.smWitnessReproduced === true && phase468.batteries?.stepHalvingPassed === true && phase468.batteries?.syntheticWithinBand === true && phase468.batteries?.allPassed === true, "Phase468 witness, convergence, and reachability batteries must pass.");
+  assert(phase468.targetBlindMenuConstruction === true && phase468.observedSin2UsedToConstructMenu === false && phase468.noGevPromotion === true, "Phase468 menu must be target-blind and preserve the no-GeV boundary.");
+  assert(phase468.promotedPhysicalMassClaimCount === 0, "Phase468 must promote zero physical mass claims.");
+  assert(phase468.sourceContractApplicationAllowed === false && phase468.canFillPhase201WzContract === false && phase468.canFillPhase201HiggsContract === false && phase468.canFillPhase256ObservedFieldExtractionContract === false, "Phase468 cannot fill Phase201 or Phase256 contracts.");
+  assert(phase468.routePromotesWzMasses === false && phase468.routePromotesHiggsMass === false && phase468.routeCompletesBosonPredictions === false, "Phase468 cannot promote boson predictions.");
+  assert(phase101Package?.twoLoopContentRowClosureFilter?.status === "two-loop-content-row-closure-filter-full-menu-out-of-band-scoped-exhaustion", "Phase101 must include the Phase468 block at its real terminal.");
   // Phase471 -- Wave-2 STEP 0 skeleton (b2-closure-ledger): interim terminal closure-not-decidable.
   assert(phase471.b2ClosureLedgerBuilt === true, "Phase471 skeleton must be built with its standing claim boundary intact.");
   assert(phase471.applicationSubjectKind === "b2-closure-ledger", "Phase471 must classify its subject as b2-closure-ledger.");

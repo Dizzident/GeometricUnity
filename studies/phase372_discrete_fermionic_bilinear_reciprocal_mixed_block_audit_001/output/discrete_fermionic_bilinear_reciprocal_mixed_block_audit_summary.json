@@ -1,6 +1,6 @@
 {
   "phaseId": "phase372-discrete-fermionic-bilinear-reciprocal-mixed-block-audit",
-  "generatedAt": "2026-07-12T14:25:54.5627152+00:00",
+  "generatedAt": "2026-07-14T18:49:46.1119629+00:00",
   "terminalStatus": "identity-weight-control-reciprocal-discrete-bilinear-source-block-candidate-materialized-vo7-building-block-only",
   "discreteFermionicBilinearReciprocalMixedBlockAuditPassed": true,
   "phase371ConnectionToDiracPrecursorPresent": true,

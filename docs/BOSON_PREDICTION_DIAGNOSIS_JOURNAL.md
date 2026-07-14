@@ -20196,3 +20196,45 @@ O4 PHYSICIST ENGAGEMENT - the program-wide critical path, which now
 decides: the phase455 flip axis, the WS3 M-probe (phase457's firewall
 key), the 445-455 convention families, and optionally the phase462
 quote-pinning reopening. promotedPhysicalMassClaimCount=0.
+
+## 2026-07-14 - Phases467/468: stabilizer selection closes and the audited two-loop content menu is exhausted
+
+The two remaining new-directory C-lineage items were implemented and wired as
+one checkpoint. Both computations are deterministic, target-blind at the menu
+construction stage, and preserve `promotedPhysicalMassClaimCount=0`.
+
+PHASE467 (C-STABILIZER) reconstructs the Phase404 embedding in exact matrix
+arithmetic. The embedded `su(3)_c+su(2)_L` generator rank is 11 and its
+commutant in `so(10)` has exact dimension four, exhibited as the internal
+complex structure plus `su(2)_R`. The direct field-of-definition arm constructs
+`so(6,4)` from `X^T eta+eta X=0` and recomputes the same dimension-four
+commutant; this discharges the compact-form proxy for this finite-dimensional
+surface only and records no human O4 ruling. The pre-registered discriminator
+works: the standard Y ray has stabilizer dimension 13 and the enhanced control
+ray dimension 25. It does not select Y: 176 rays in the committed Phase404 menu
+share dimension 13 and non-Y rays survive. Terminal
+`all-symmetric-non-y-route-closed`; C-PERMANENCE P2 is negative at the audited
+menu and C-LIFT must carry the generic survivors.
+
+PHASE468 (C-CLOSURE ii/iii) fixes a four-row content menu before scoring: the
+Phase451 witness, a Phase404 complete-family extension, and the Phase407
+doublet-subblock/full-frame-cross scalar proxies. The Phase451 one-loop and
+two-loop witnesses reproduce, step halving is stable, and a synthetic control
+proves within-band classification is reachable. Actual two-loop scores are
+0.2106371, 0.2104219, 0.2260429, and 0.2100478; all remain outside the committed
+1.7879e-4 band around the scoring target. Terminal
+`full-menu-out-of-band-scoped-exhaustion`; C-PERMANENCE P4 is supplied only at
+the declared proxy-menu/full-interval scope because Phase407 defines neither
+low-energy statistics, an action, nor an intermediate threshold.
+
+No coupling normalization, physical scale, pole, GeV claim, or source-contract
+field is produced. The next C number is 469. C-LIFT's 465+467 data dependency is
+now satisfied, but phase458 still waits on its G1-G6 inputs and production HMC
+still waits on the O4 memo or explicit written risk renewal.
+
+The required incremental checkpoint passed with 82 steps run and 260 skipped;
+the final integrity verifier reported `boson-claim-integrity-verified`, the
+source-lineage deficits remained 15 W/Z fields and 14 Higgs fields, and
+`promotedPhysicalMassClaimCount=0`. The run required execution outside the
+workspace sandbox because parallel MSBuild exited silently under sandbox
+resource isolation; the repository command and validation gates were unchanged.

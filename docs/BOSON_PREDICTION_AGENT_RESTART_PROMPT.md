@@ -846,6 +846,24 @@ remaining: 467/468 (new dirs - batch their wiring in one checkpoint),
 on 465+467 verdicts); phase456 production HMC is gated on the O4 memo
 (or explicit user-renewed risk acceptance) per the plan.
 
+WAVE-2 C-LINEAGE MACHINE RESULTS (2026-07-14, incremental validation green:
+82 ran / 260 skipped, integrity verified): PHASE467 reconstructs the exact
+four-dimensional `u(1)+su(2)_R` commutant in both the compact arithmetic
+and a direct `so(6,4)` field-of-definition arm. The 13-versus-25
+stabilizer discriminator passes, but 176 committed-menu rays have the
+generic dimension-13 stabilizer, including non-Y rays, so the terminal is
+`all-symmetric-non-y-route-closed`; C-PERMANENCE P2 is a scoped negative
+and C-LIFT must carry the surviving generic rays. PHASE468 hash-pins four
+Phase404/407-induced content rows, reproduces the Phase451 two-loop
+witness, and finds every row outside the honest threshold band; terminal
+`full-menu-out-of-band-scoped-exhaustion`, supplying C-PERMANENCE P4 only
+at the declared conditional scalar-proxy/full-interval scope. Neither
+phase supplies a coupling normalization, scale, pole, or prediction;
+`promotedPhysicalMassClaimCount=0`. Remaining machine queue: phase458 only
+when its G1-G6 inputs exist; C-LIFT 469 is now data-unblocked by the
+465+467 verdicts but must still be built only in registry order; phase456
+production remains gated on the O4 memo or explicit written risk renewal.
+
 WAVE-2 PLAN ADOPTED (2026-07-12, binding):
 docs/Phases/WAVE2_ACTION_PLAN_2026-07-12.md is the current execution
 queue - STEP 0 batched wiring checkpoint (skeletons 455-458/462-466/

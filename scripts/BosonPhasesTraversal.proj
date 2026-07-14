@@ -334,6 +334,8 @@
     <PhaseProject Include="../studies/phase464_anchor_adjudication_contract_001/Phase464AnchorAdjudicationContract.csproj" />
     <PhaseProject Include="../studies/phase465_anomaly_consistency_variety_kernel_001/Phase465AnomalyConsistencyVarietyKernel.csproj" />
     <PhaseProject Include="../studies/phase466_ws3_vev_completion_contract_001/Phase466Ws3VevCompletionContract.csproj" />
+    <PhaseProject Include="../studies/phase467_derived_operator_stabilizer_ray_census_001/Phase467DerivedOperatorStabilizerRayCensus.csproj" />
+    <PhaseProject Include="../studies/phase468_two_loop_content_row_closure_filter_001/Phase468TwoLoopContentRowClosureFilter.csproj" />
     <PhaseProject Include="../studies/phase471_b2_closure_ledger_001/Phase471B2ClosureLedger.csproj" />
   </ItemGroup>
   <Target Name="Build">
