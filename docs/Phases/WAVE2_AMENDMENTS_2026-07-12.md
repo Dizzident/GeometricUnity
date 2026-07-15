@@ -100,3 +100,29 @@ scouting, not a theorem; Phase483 remains source-input gated. The Phase456
 invalid-analysis firewall, Phase457 conjunction hold, Phase458 G1-G6 gate,
 Phase471 structural-incapability battery, and every standing claim boundary
 remain unchanged.
+
+## A5 — Exploratory self-audit lane (phases 484–486)
+
+External review is deferred as an operational dependency, not waived as an
+eventual promotion requirement. Phase480 and the Phase458 G4/G5 contract remain
+byte-for-byte authoritative: no A5 output is an O4 ruling, satisfies Phase458,
+or authorizes Binder, GPU, Arm-Q, production HMC, a source-contract fill, or a
+physical claim.
+
+The self-audit lane separates discovery from confirmation and promotion:
+
+1. **Phase484 — exploratory-lane governance firewall.** Machine-records the
+   three lanes, their allowed evidence flow, and the prohibition on
+   retrospective promotion.
+2. **Phase485 — O4 assumption/falsifier census.** Covers all 13 registered O4
+   items exactly once and assigns an explicit machine test, analytic route, or
+   irreducibly external interpretation check. It authors no ruling.
+3. **Phase486 — committed-evidence sensitivity triage.** Reads only committed
+   artifacts, identifies already exposed fragilities and scoped machine
+   checks, and emits the next reduced deterministic experiment priorities.
+
+Exploratory work may vary conventions, use reduced deterministic workloads,
+and preserve negative results. Confirmation still requires prospective
+freezing. Promotion still requires independent review or a later, explicitly
+amended substitute such as a convention-invariance theorem or independent
+reproduction. `promotedPhysicalMassClaimCount=0` throughout.

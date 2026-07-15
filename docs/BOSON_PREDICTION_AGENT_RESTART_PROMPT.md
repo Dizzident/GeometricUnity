@@ -80,6 +80,19 @@ exact-coverage, and overturn checks on every pass. This is tooling only: no O4
 memo or ruling exists, no pending flag changed, and Phase477 rests at
 `infrastructure-ready-pending-human-ruling`.
 
+EXPLORATORY SELF-AUDIT LANE (2026-07-15, Amendment A5; Phases484-486):
+external review is put aside as an operational blocker, not waived as an
+eventual promotion requirement. Phase484 opens only a reduced, target-blind
+exploration lane behind a prospective-only evidence firewall. Phase485 maps
+all 13 O4 items to explicit falsifiers without authoring rulings. Phase486
+replays committed evidence to expose the soft-floor and zero-mode fragilities,
+record the ladder repair and scoped compact-form check, and rank theta-measure,
+workbench-model, and checkpoint/restart controls next. None of these phases
+satisfies O4, G4/G5, Phase458, or a source contract; no production launch is
+authorized and `promotedPhysicalMassClaimCount=0`. Binding plan:
+`docs/Phases/EXPLORATORY_SELF_AUDIT_PLAN_2026-07-15.md`. Registry 484-486 is
+allocated; 487+ remains unassigned.
+
 PHASE458 CONTRACT (2026-07-15, Phase478): the G1-G6 four-state schema, exact
 upstream terminal allowlists, source bindings, outcome precedence, and G6
 projection are committed and machine-checked. The projection uses one

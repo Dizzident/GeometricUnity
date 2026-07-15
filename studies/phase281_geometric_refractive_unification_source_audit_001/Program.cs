@@ -571,6 +571,9 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath.Contains("studies/phase481_phase456_prospective_repair_preregistration_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase482_a5_theorem_scout_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase483_source_defined_reopening_intake_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase484_exploratory_lane_governance_firewall_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase485_o4_assumption_falsifier_census_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase486_committed_evidence_sensitivity_triage_001/", StringComparison.Ordinal)
     || normalizedPath == "studies/phase101_boson_prediction_package_001/Program.cs"
     || normalizedPath == "studies/phase202_boson_objective_completion_audit_001/Program.cs"
     || normalizedPath == "studies/phase204_boson_source_lineage_candidate_scan_001/Program.cs"
@@ -647,7 +650,11 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P480.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P481.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P482.md"
-    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P483.md";
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P483.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P484.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P485.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P486.md"
+    || normalizedPath == "docs/Phases/EXPLORATORY_SELF_AUDIT_PLAN_2026-07-15.md";
 
 static bool? JsonBool(JsonElement element, string propertyName) =>
     element.TryGetProperty(propertyName, out var value) && (value.ValueKind == JsonValueKind.True || value.ValueKind == JsonValueKind.False)

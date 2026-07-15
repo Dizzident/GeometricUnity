@@ -360,6 +360,9 @@ dotnet run --no-build -c Release --project studies/phase480_o4_physicist_adjudic
 dotnet run --no-build -c Release --project studies/phase481_phase456_prospective_repair_preregistration_001/Phase481Phase456ProspectiveRepairPreregistration.csproj
 dotnet run --no-build -c Release --project studies/phase482_a5_theorem_scout_001/Phase482A5TheoremScout.csproj
 dotnet run --no-build -c Release --project studies/phase483_source_defined_reopening_intake_001/Phase483SourceDefinedReopeningIntake.csproj
+dotnet run --no-build -c Release --project studies/phase484_exploratory_lane_governance_firewall_001/Phase484ExploratoryLaneGovernanceFirewall.csproj
+dotnet run --no-build -c Release --project studies/phase485_o4_assumption_falsifier_census_001/Phase485O4AssumptionFalsifierCensus.csproj
+dotnet run --no-build -c Release --project studies/phase486_committed_evidence_sensitivity_triage_001/Phase486CommittedEvidenceSensitivityTriage.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

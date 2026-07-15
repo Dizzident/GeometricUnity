@@ -78,6 +78,9 @@ var excludedPathFragments = new[]
     "studies/phase481_phase456_prospective_repair_preregistration_001/",
     "studies/phase482_a5_theorem_scout_001/",
     "studies/phase483_source_defined_reopening_intake_001/",
+    "studies/phase484_exploratory_lane_governance_firewall_001/",
+    "studies/phase485_o4_assumption_falsifier_census_001/",
+    "studies/phase486_committed_evidence_sensitivity_triage_001/",
     "docs/Phases/Implementation/IMPLEMENTATION_P477.md",
     "docs/Phases/Implementation/IMPLEMENTATION_P478.md",
     "docs/Phases/Implementation/IMPLEMENTATION_P479.md",
@@ -85,6 +88,10 @@ var excludedPathFragments = new[]
     "docs/Phases/Implementation/IMPLEMENTATION_P481.md",
     "docs/Phases/Implementation/IMPLEMENTATION_P482.md",
     "docs/Phases/Implementation/IMPLEMENTATION_P483.md",
+    "docs/Phases/Implementation/IMPLEMENTATION_P484.md",
+    "docs/Phases/Implementation/IMPLEMENTATION_P485.md",
+    "docs/Phases/Implementation/IMPLEMENTATION_P486.md",
+    "docs/Phases/EXPLORATORY_SELF_AUDIT_PLAN_2026-07-15.md",
 };
 
 var dimension4Pattern = new Regex("""

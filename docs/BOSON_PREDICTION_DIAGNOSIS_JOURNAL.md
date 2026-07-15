@@ -20566,3 +20566,27 @@ No external memo or reviewer key has been supplied. Phase480 therefore emits
 authentication conjuncts false, no ruling authored or inferred, the Phase457
 hold closed, all source-contract routes false, and
 `promotedPhysicalMassClaimCount=0`.
+
+## 2026-07-15 - Amendment A5: external review deferred operationally; exploratory self-audit lane opened
+
+The user directed that the program preserve the need for eventual review while
+putting it aside to make machine-executable progress. This is implemented as a
+new evidence lane, not a weakening of O4 or Phase458.
+
+Phase484 freezes the exploration/confirmation/promotion firewall. Exploratory
+work may vary conventions and use reduced deterministic workloads, but cannot
+feed a downstream scientific gate. Any transition requires a new prospective
+checkpoint; retrospective relabeling is forbidden. Phase485 covers the exact
+13 O4 ruling IDs with explicit falsifiers while authoring no ruling. Phase486
+reads committed evidence only: it reproduces Phase447 soft-floor instability,
+the Phase453 ladder repair, Phase455 zero-mode convention fragility, and the
+scoped Phase467 compact/noncompact arithmetic check. It ranks independent
+theta-measure, workbench-model leave-one-out, and checkpoint/restart
+equivalence batteries as the next reduced tests.
+
+External review remains required before community-facing physical
+interpretation unless a later labeled amendment supplies stronger independent
+or theorem-grade evidence. O4 stays pending, Phase458 stays blocked, Phase456
+is not mutated, and no Binder/GPU/HMC production is authorized. Registry
+484-486 is allocated; 487+ remains unassigned. Every A5 phase is target-blind,
+fills no source contract, and preserves `promotedPhysicalMassClaimCount=0`.

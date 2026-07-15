@@ -235,6 +235,9 @@ const string Phase480Path = "studies/phase480_o4_physicist_adjudication_intake_0
 const string Phase481Path = "studies/phase481_phase456_prospective_repair_preregistration_001/output/phase456_prospective_repair_preregistration_summary.json";
 const string Phase482Path = "studies/phase482_a5_theorem_scout_001/output/a5_theorem_scout_summary.json";
 const string Phase483Path = "studies/phase483_source_defined_reopening_intake_001/output/source_defined_reopening_intake_summary.json";
+const string Phase484Path = "studies/phase484_exploratory_lane_governance_firewall_001/output/exploratory_lane_governance_firewall_summary.json";
+const string Phase485Path = "studies/phase485_o4_assumption_falsifier_census_001/output/o4_assumption_falsifier_census_summary.json";
+const string Phase486Path = "studies/phase486_committed_evidence_sensitivity_triage_001/output/committed_evidence_sensitivity_triage_summary.json";
 const string Phase444Path = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443Path = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442Path = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -521,6 +524,9 @@ using var phase480 = File.Exists(Phase480Path) ? JsonDocument.Parse(File.ReadAll
 using var phase481 = File.Exists(Phase481Path) ? JsonDocument.Parse(File.ReadAllText(Phase481Path)) : null;
 using var phase482 = File.Exists(Phase482Path) ? JsonDocument.Parse(File.ReadAllText(Phase482Path)) : null;
 using var phase483 = File.Exists(Phase483Path) ? JsonDocument.Parse(File.ReadAllText(Phase483Path)) : null;
+using var phase484 = File.Exists(Phase484Path) ? JsonDocument.Parse(File.ReadAllText(Phase484Path)) : null;
+using var phase485 = File.Exists(Phase485Path) ? JsonDocument.Parse(File.ReadAllText(Phase485Path)) : null;
+using var phase486 = File.Exists(Phase486Path) ? JsonDocument.Parse(File.ReadAllText(Phase486Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -6922,6 +6928,24 @@ var sourceDefinedReopeningIntakePassed = sourceDefinedReopeningIntakeMaterialize
     && JsonBool(phase483.RootElement, "routePromotesWzMasses") is false
     && JsonBool(phase483.RootElement, "routePromotesHiggsMass") is false
     && JsonBool(phase483.RootElement, "routeCompletesBosonPredictions") is false;
+var exploratoryLaneGovernancePassed = phase484 is not null
+    && JsonString(phase484.RootElement, "verdictKind") == "three-lane-firewall-closed"
+    && JsonBool(phase484.RootElement, "externalReviewEventuallyRequired") is true
+    && JsonBool(phase484.RootElement, "phase458EvaluationAuthorized") is false
+    && JsonBool(phase484.RootElement, "productionAuthorized") is false
+    && JsonInt(phase484.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var o4AssumptionFalsifierCensusPassed = phase485 is not null
+    && JsonInt(phase485.RootElement, "rulingIdCount") == 13
+    && JsonInt(phase485.RootElement, "uniqueRulingIdCount") == 13
+    && JsonBool(phase485.RootElement, "everyItemHasFalsifier") is true
+    && JsonBool(phase485.RootElement, "o4Discharged") is false
+    && JsonInt(phase485.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var committedEvidenceSensitivityTriagePassed = phase486 is not null
+    && JsonBool(phase486.RootElement, "committedEvidenceOnly") is true
+    && JsonInt(phase486.RootElement, "priorityCount") == 3
+    && JsonBool(phase486.RootElement, "o4Discharged") is false
+    && JsonBool(phase486.RootElement, "productionAuthorized") is false
+    && JsonInt(phase486.RootElement, "promotedPhysicalMassClaimCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -9722,6 +9746,9 @@ var checklist = new[]
             ? $"skeletonBuilt={JsonBool(phase483!.RootElement, "skeletonBuilt")}; interimTerminal={JsonString(phase483.RootElement, "interimTerminal")}; applicationSubjectKind={JsonString(phase483.RootElement, "applicationSubjectKind")}; waveOrder={JsonInt(phase483.RootElement, "waveOrder")}; promotedPhysicalMassClaimCount={JsonInt(phase483.RootElement, "promotedPhysicalMassClaimCount")}; decision={JsonString(phase483.RootElement, "decision")}"
             : "Phase483 artifact not materialized",
         Phase483Path),
+    new ObjectiveChecklistItem("exploratory-lane-governance-firewall", "Open only the non-claim exploratory lane while retaining external review and Phase458 firewalls.", exploratoryLaneGovernancePassed ? "passed" : "failed", phase484 is null ? "Phase484 artifact not materialized" : JsonString(phase484.RootElement, "decision") ?? "missing decision", Phase484Path),
+    new ObjectiveChecklistItem("o4-assumption-falsifier-census", "Assign an explicit self-check to every O4 item without authoring a ruling.", o4AssumptionFalsifierCensusPassed ? "passed" : "failed", phase485 is null ? "Phase485 artifact not materialized" : JsonString(phase485.RootElement, "decision") ?? "missing decision", Phase485Path),
+    new ObjectiveChecklistItem("committed-evidence-sensitivity-triage", "Rank reduced deterministic follow-ups from committed convention-sensitivity evidence.", committedEvidenceSensitivityTriagePassed ? "passed" : "failed", phase486 is null ? "Phase486 artifact not materialized" : JsonString(phase486.RootElement, "decision") ?? "missing decision", Phase486Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

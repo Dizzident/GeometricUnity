@@ -1,0 +1,116 @@
+{
+  "phaseId": "phase485-o4-assumption-falsifier-census",
+  "generatedAt": "2026-07-15T17:31:14.0562605+00:00",
+  "terminalStatus": "o4-assumption-falsifier-census-exact-thirteen-item-census-complete",
+  "verdictKind": "exact-thirteen-item-census-complete",
+  "applicationSubjectKind": "o4-assumption-falsifier-census",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A5",
+  "amendmentOrder": 2,
+  "rulingIdCount": 13,
+  "uniqueRulingIdCount": 13,
+  "everyItemHasFalsifier": true,
+  "rows": [
+    {
+      "rulingId": "O4-F1-INVARIANT-RAYS",
+      "selfCheckMethod": "finite-ray-menu invariance and stabilizer census",
+      "falsifierDefined": true,
+      "externalInterpretationStillRequired": false,
+      "mayAuthorRuling": false
+    },
+    {
+      "rulingId": "O4-F1-COLLECTIVE-COORDINATE",
+      "selfCheckMethod": "collective-coordinate Jacobian and solvable-limit comparison",
+      "falsifierDefined": true,
+      "externalInterpretationStillRequired": false,
+      "mayAuthorRuling": false
+    },
+    {
+      "rulingId": "O4-F1-FP-NORMALIZATION",
+      "selfCheckMethod": "independent gauge-fixing determinant normalization",
+      "falsifierDefined": true,
+      "externalInterpretationStillRequired": false,
+      "mayAuthorRuling": false
+    },
+    {
+      "rulingId": "O4-F2-POSITIVE-MODE-IR",
+      "selfCheckMethod": "IR-family sweep with convergence and analytic free control",
+      "falsifierDefined": true,
+      "externalInterpretationStillRequired": false,
+      "mayAuthorRuling": false
+    },
+    {
+      "rulingId": "O4-F3-THETA-HAAR",
+      "selfCheckMethod": "left-composition invariance plus independent small-lattice integration",
+      "falsifierDefined": true,
+      "externalInterpretationStillRequired": false,
+      "mayAuthorRuling": false
+    },
+    {
+      "rulingId": "O4-F4-SADDLE-BACKGROUNDS",
+      "selfCheckMethod": "background-family and contour sensitivity sweep",
+      "falsifierDefined": true,
+      "externalInterpretationStillRequired": false,
+      "mayAuthorRuling": false
+    },
+    {
+      "rulingId": "O4-E1-P447-SOFT-FLOOR",
+      "selfCheckMethod": "floor-to-zero stability with perturbative-regime gate",
+      "falsifierDefined": true,
+      "externalInterpretationStillRequired": false,
+      "mayAuthorRuling": false
+    },
+    {
+      "rulingId": "O4-E2-P453-UNIFORM-LADDER",
+      "selfCheckMethod": "uniform-versus-corrected-ladder overlap and recovery controls",
+      "falsifierDefined": true,
+      "externalInterpretationStillRequired": false,
+      "mayAuthorRuling": false
+    },
+    {
+      "rulingId": "O4-P455-ZERO-MODE",
+      "selfCheckMethod": "exact zero-mode-menu terminal sensitivity",
+      "falsifierDefined": true,
+      "externalInterpretationStillRequired": false,
+      "mayAuthorRuling": false
+    },
+    {
+      "rulingId": "O4-P455-SB-MODEL",
+      "selfCheckMethod": "source-action alternatives and leave-one-model-out terminal sensitivity",
+      "falsifierDefined": true,
+      "externalInterpretationStillRequired": true,
+      "mayAuthorRuling": false
+    },
+    {
+      "rulingId": "O4-C1-COMPACT-REAL-FORM",
+      "selfCheckMethod": "compact/noncompact exact arithmetic transfer",
+      "falsifierDefined": true,
+      "externalInterpretationStillRequired": false,
+      "mayAuthorRuling": false
+    },
+    {
+      "rulingId": "O4-C2-YHALF-BOOKKEEPING",
+      "selfCheckMethod": "independent weight normalization and representation census",
+      "falsifierDefined": true,
+      "externalInterpretationStillRequired": false,
+      "mayAuthorRuling": false
+    },
+    {
+      "rulingId": "O4-C3-WS3-MPROBE-SCOPE",
+      "selfCheckMethod": "probe-scope alternatives frozen before reduced deterministic evaluation",
+      "falsifierDefined": true,
+      "externalInterpretationStillRequired": true,
+      "mayAuthorRuling": false
+    }
+  ],
+  "humanRulingAuthored": false,
+  "o4Discharged": false,
+  "phase458EvaluationAuthorized": false,
+  "productionAuthorized": false,
+  "sourceContractApplicationAllowed": false,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "noGevPromotion": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "decision": "All 13 O4 assumptions have an explicit self-check route. The census is experimental planning, not an O4 ruling or launch authorization.",
+  "runtimeSeconds": 0.0014284
+}

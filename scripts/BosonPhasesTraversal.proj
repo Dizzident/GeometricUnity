@@ -346,6 +346,9 @@
     <PhaseProject Include="../studies/phase481_phase456_prospective_repair_preregistration_001/Phase481Phase456ProspectiveRepairPreregistration.csproj" />
     <PhaseProject Include="../studies/phase482_a5_theorem_scout_001/Phase482A5TheoremScout.csproj" />
     <PhaseProject Include="../studies/phase483_source_defined_reopening_intake_001/Phase483SourceDefinedReopeningIntake.csproj" />
+    <PhaseProject Include="../studies/phase484_exploratory_lane_governance_firewall_001/Phase484ExploratoryLaneGovernanceFirewall.csproj" />
+    <PhaseProject Include="../studies/phase485_o4_assumption_falsifier_census_001/Phase485O4AssumptionFalsifierCensus.csproj" />
+    <PhaseProject Include="../studies/phase486_committed_evidence_sensitivity_triage_001/Phase486CommittedEvidenceSensitivityTriage.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />

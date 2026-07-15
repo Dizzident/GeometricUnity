@@ -1,6 +1,6 @@
 {
   "phaseId": "phase457-upsilon-portal-stage-a",
-  "generatedAt": "2026-07-15T16:43:52.617232+00:00",
+  "generatedAt": "2026-07-15T17:27:04.8370407+00:00",
   "terminalStatus": "upsilon-portal-stage-a-stage-a-certificates-committed",
   "interimTerminal": "stage-a-certificates-committed",
   "priorInterimTerminal": "awaiting-stage-a",
@@ -322,5 +322,5 @@
     "standingClaimBoundaryIntact": true
   },
   "decision": "Stage A commits exhaustive-cell boundedness-below certificates for the Upsilon-portal action class: 2 bounded, 4 unbounded, 1 conditional-critical, over a disjoint exhaustive sign-cell menu (exact mathematics; control-branch identity ||F||^2 = 2 S_B fixes g_crit = sqrt(2 lambda)). The null-hash firewall keyed to phase466 is CLOSED (schema pins but no o4MProbeRuling record exists), so the portal verdict is WITHHELD; Arm Q is implemented and GATED OFF. Terminal stage-a-certificates-committed. Nothing is measured or promoted; promotedPhysicalMassClaimCount remains 0.",
-  "runtimeSeconds": 0.0253024
+  "runtimeSeconds": 0.0244928
 }

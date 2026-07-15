@@ -919,7 +919,14 @@ static bool IsExcluded(string normalizedPath) =>
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P480.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P481.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P482.md"
-    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P483.md";
+    || normalizedPath.StartsWith("studies/phase484_exploratory_lane_governance_firewall_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase485_o4_assumption_falsifier_census_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase486_committed_evidence_sensitivity_triage_001/", StringComparison.Ordinal)
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P483.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P484.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P485.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P486.md"
+    || normalizedPath == "docs/Phases/EXPLORATORY_SELF_AUDIT_PLAN_2026-07-15.md";
 
 static string NormalizePath(string path) => path.Replace('\\', '/').TrimStart('.', '/');
 

@@ -1,0 +1,49 @@
+{
+  "phaseId": "phase486-committed-evidence-sensitivity-triage",
+  "generatedAt": "2026-07-15T17:31:14.3443964+00:00",
+  "terminalStatus": "committed-evidence-sensitivity-triage-fragilities-exposed-next-tests-ranked",
+  "verdictKind": "fragilities-exposed-next-tests-ranked",
+  "applicationSubjectKind": "committed-evidence-sensitivity-triage",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A5",
+  "amendmentOrder": 3,
+  "committedEvidenceOnly": true,
+  "findings": {
+    "softFloorFragile": true,
+    "ladderRepairRecorded": true,
+    "zeroModeFragile": true,
+    "compactTransferScoped": true
+  },
+  "priorityCount": 3,
+  "priorities": [
+    {
+      "rank": 1,
+      "item": "O4-F3-THETA-HAAR",
+      "nextTest": "independent small-lattice measure and proposal-invariance control",
+      "reason": "load-bearing and not yet alternative-checked"
+    },
+    {
+      "rank": 2,
+      "item": "O4-P455-SB-MODEL",
+      "nextTest": "leave-one-workbench-model-out terminal sensitivity",
+      "reason": "zero-mode axis already flips and the model choice remains external"
+    },
+    {
+      "rank": 3,
+      "item": "checkpoint-restart-equivalence",
+      "nextTest": "reduced deterministic uninterrupted-versus-resumed equality battery",
+      "reason": "required before any future expensive sampler"
+    }
+  ],
+  "humanRulingAuthored": false,
+  "o4Discharged": false,
+  "phase458EvaluationAuthorized": false,
+  "binderLaunchAuthorized": false,
+  "productionAuthorized": false,
+  "sourceContractApplicationAllowed": false,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "noGevPromotion": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "decision": "Existing artifacts already expose soft-floor and zero-mode fragility, record the ladder repair, and provide a scoped compact-form machine check. Reduced theta-measure, model-sensitivity, and restart-equivalence tests are next; no review gate is discharged.",
+  "runtimeSeconds": 0.0100304
+}

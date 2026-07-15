@@ -258,6 +258,9 @@ const paths = {
   phase481: "studies/phase481_phase456_prospective_repair_preregistration_001/output/phase456_prospective_repair_preregistration_summary.json",
   phase482: "studies/phase482_a5_theorem_scout_001/output/a5_theorem_scout_summary.json",
   phase483: "studies/phase483_source_defined_reopening_intake_001/output/source_defined_reopening_intake_summary.json",
+  phase484: "studies/phase484_exploratory_lane_governance_firewall_001/output/exploratory_lane_governance_firewall_summary.json",
+  phase485: "studies/phase485_o4_assumption_falsifier_census_001/output/o4_assumption_falsifier_census_summary.json",
+  phase486: "studies/phase486_committed_evidence_sensitivity_triage_001/output/committed_evidence_sensitivity_triage_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -578,6 +581,9 @@ const phase480 = requireFile(paths.phase480);
 const phase481 = requireFile(paths.phase481);
 const phase482 = requireFile(paths.phase482);
 const phase483 = requireFile(paths.phase483);
+const phase484 = requireFile(paths.phase484);
+const phase485 = requireFile(paths.phase485);
+const phase486 = requireFile(paths.phase486);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -5807,6 +5813,20 @@ if (sourceLineageMissing) {
     assert(phase.sourceContractApplicationAllowed === false && phase.canFillPhase201WzContract === false && phase.canFillPhase201HiggsContract === false && phase.canFillPhase256ObservedFieldExtractionContract === false, `Phase${phaseNumber} cannot fill source contracts.`);
     assert(phase.routePromotesWzMasses === false && phase.routePromotesHiggsMass === false && phase.routeCompletesBosonPredictions === false, `Phase${phaseNumber} cannot promote boson predictions.`);
   }
+  // Phases484-486 -- Amendment A5 exploratory self-audit lane; never an O4 substitute.
+  assert(phase484.verdictKind === "three-lane-firewall-closed" && phase484.planSection === "WAVE2_AMENDMENTS_2026-07-12 A5", "Phase484 governance firewall identity drifted.");
+  assert(Array.isArray(phase484.lanes) && phase484.lanes.length === 3 && phase484.prospectiveCheckpointRequiredForLaneTransition === true && phase484.retrospectiveRelabelingAllowed === false, "Phase484 must enforce the three-lane prospective-only evidence flow.");
+  assert(phase484.o4ReviewDeferredOperationally === true && phase484.externalReviewEventuallyRequired === true && phase484.authorsO4Ruling === false, "Phase484 must defer, never discharge, external review.");
+  assert(phase484.satisfiesPhase458G4 === false && phase484.satisfiesPhase458G5 === false && phase484.phase458EvaluationAuthorized === false && phase484.binderLaunchAuthorized === false && phase484.productionAuthorized === false, "Phase484 cannot open Phase458 or production.");
+  assert(phase485.verdictKind === "exact-thirteen-item-census-complete" && phase485.rulingIdCount === 13 && phase485.uniqueRulingIdCount === 13 && phase485.everyItemHasFalsifier === true, "Phase485 must cover every O4 item exactly once with a falsifier.");
+  assert(Array.isArray(phase485.rows) && phase485.rows.length === 13 && phase485.rows.every(r => r.falsifierDefined === true && r.mayAuthorRuling === false), "Phase485 rows escaped the planning-only boundary.");
+  assert(phase485.humanRulingAuthored === false && phase485.o4Discharged === false && phase485.phase458EvaluationAuthorized === false && phase485.productionAuthorized === false, "Phase485 cannot author a ruling or authorize compute.");
+  assert(phase486.verdictKind === "fragilities-exposed-next-tests-ranked" && phase486.committedEvidenceOnly === true && phase486.priorityCount === 3, "Phase486 sensitivity triage identity or priority count drifted.");
+  assert(phase486.findings?.softFloorFragile === true && phase486.findings?.ladderRepairRecorded === true && phase486.findings?.zeroModeFragile === true && phase486.findings?.compactTransferScoped === true, "Phase486 must reproduce the committed sensitivity facts exactly.");
+  assert(phase486.humanRulingAuthored === false && phase486.o4Discharged === false && phase486.phase458EvaluationAuthorized === false && phase486.binderLaunchAuthorized === false && phase486.productionAuthorized === false, "Phase486 cannot discharge O4 or authorize production.");
+  for (const phase of [phase484, phase485, phase486])
+    assert(phase.targetBlindConstruction === true && phase.physicalTargetsConsultedForConstruction === false && phase.sourceContractApplicationAllowed === false && phase.noGevPromotion === true && phase.promotedPhysicalMassClaimCount === 0, "A5 exploratory phases must preserve the target-blind zero-promotion boundary.");
+  assert(phase101Package?.exploratorySelfAudit?.governance?.phase458EvaluationAuthorized === false && phase101Package?.exploratorySelfAudit?.falsifierCensus?.o4Discharged === false && phase101Package?.exploratorySelfAudit?.sensitivityTriage?.o4Discharged === false, "Phase101 must mirror the A5 exploratory firewall.");
   // Phase480 -- implemented fail-closed external human memo intake; no memo is present.
   assert(phase480.skeletonBuilt === false && phase480.zeroPhysicsCompute === true && phase480.intakeImplemented === true && phase480.awaitingImplementation === false, "Phase480 must be the implemented zero-compute external memo intake.");
   assert(phase480.applicationSubjectKind === "o4-physicist-adjudication-intake" && phase480.waveOrder === 4, "Phase480 identity or wave order drifted.");
