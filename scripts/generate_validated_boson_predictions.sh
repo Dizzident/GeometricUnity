@@ -378,6 +378,9 @@ dotnet run --no-build -c Release --project studies/phase498_phase456_acquisition
 dotnet run --no-build -c Release --project studies/phase499_phase456_retained_empirical_noise_information_audit_001/Phase499Phase456RetainedEmpiricalNoiseInformationAudit.csproj
 dotnet run --no-build -c Release --project studies/phase500_phase456_adversarial_prospective_acquisition_stress_test_001/Phase500Phase456AdversarialProspectiveAcquisitionStressTest.csproj
 dotnet run --no-build -c Release --project studies/phase501_phase456_robust_sampling_readiness_adjudicator_001/Phase501Phase456RobustSamplingReadinessAdjudicator.csproj
+dotnet run --no-build -c Release --project studies/phase502_phase456_adaptive_calibration_protocol_specification_001/Phase502Phase456AdaptiveCalibrationProtocolSpecification.csproj
+dotnet run --no-build -c Release --project studies/phase503_phase456_adaptive_calibration_protocol_validation_001/Phase503Phase456AdaptiveCalibrationProtocolValidation.csproj
+dotnet run --no-build -c Release --project studies/phase504_phase456_calibration_repair_pack_readiness_adjudicator_001/Phase504Phase456CalibrationRepairPackReadinessAdjudicator.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

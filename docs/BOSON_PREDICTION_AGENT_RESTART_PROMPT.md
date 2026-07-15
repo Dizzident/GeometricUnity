@@ -65,7 +65,7 @@ input is invalid or drifted. G6 projects 1.5044386598 CPU-weeks under its
 committed n=3..6 n^4-volume model and therefore selects the CPU route; that is
 scheduling eligibility only and authorizes no launch. Phase471 remains open
 L5/L6/L8 with L7 withheld. The O4 engagement remains the human critical path.
-Phase101 stays blocked, Phase202 is 289/3 after the A11 checkpoint, the
+Phase101 stays blocked, Phase202 is 292/3 after the A12 checkpoint, the
 missing-field counts remain 15/14, and `promotedPhysicalMassClaimCount=0`.
 
 O4 INFRASTRUCTURE (2026-07-15, Phase477): the exact coverage register is
@@ -189,8 +189,27 @@ binds both outputs and Phase456's measured cost, then selects
 override missing empirical calibration. The selected synthetic point is not a
 production power guarantee. No Phase481 pack was created, no sampling was
 authorized, and Phase458 G3/G5 and O4 remain closed. Registry 499-501 is
-allocated; 502+ remains unassigned. Phase202 is 289/3 and
+allocated; its former 502+ frontier is superseded by Amendment A12 below. Phase202 is 289/3 and
 `promotedPhysicalMassClaimCount=0`.
+
+PHASE456 ADAPTIVE CALIBRATION DESIGN (2026-07-15, Amendment A12;
+Phases502-504): the user supplied written permission for sampling and
+reprocessing necessary to validate the repair program, but the three A12
+phases themselves run no sampler and grant no launch authority. Phase502
+exact-binds Phase501 and Phase456's measured cost and freezes a four-chain
+`T=16` protocol with conditional `T=32` escalation, configuration-level
+retention, explicit covariance/autocorrelation/ESS/split-R-hat rules, two
+stable checkpoints, a 2 CPU-week ceiling, and hash-refuse-to-run requirements.
+Phase503's frozen 36-row synthetic menu preserves a negative result: coverage
+and model-selection fail across the complete adversarial family, although the
+nominal single/separated-pair subset and all invalid, convergence, escalation,
+and cost controls pass. Its terminal is `assumption-conditional-protocol`.
+Phase504 exact-binds the chain and selects that conditional terminal by frozen
+precedence; the permission element cannot override it, no Phase481 pack is
+created, and no sampling or reprocessing is launched. Phase458 G3/G5 and O4
+remain closed, external review remains required, and no source-contract or
+physical-unit authority follows. Registry 502-504 is allocated; 505+ remains
+unassigned. Phase202 is 292/3 and `promotedPhysicalMassClaimCount=0`.
 
 PHASE482 DETERMINISTIC THEOREM SCOUT (2026-07-15, Amendment A9): Amendment A9
 narrowly permits Phase482's proof computation while Phase481 stays at its
@@ -1052,7 +1071,7 @@ hashing, a pre-pinned reviewer registry, and real Ed25519 verification are
 required as one conjunction. No genuine external memo or reviewer key is
 present, so no ruling is consumed, normalized rulings are empty, and the hold
 remains closed.
-Registry 477-501 is allocated; 502+ remains unassigned.
+Registry 477-504 is allocated; 505+ remains unassigned.
 
 WAVE-2 C-LINEAGE MACHINE RESULTS (2026-07-14, incremental validation green:
 82 ran / 260 skipped, integrity verified): PHASE467 reconstructs the exact

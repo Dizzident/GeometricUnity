@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase502-a12-adaptive-calibration-protocol-v1",
+  "frozenBeforePrecursorConsumption": true,
+  "requiredExactBindings": [
+    "phase501-summary-bytes",
+    "phase456-summary-bytes-and-measured-operational-cost"
+  ],
+  "stageOrder": [
+    "t16-calibration",
+    "conditional-t32-calibration"
+  ],
+  "retainedConfigurationSchema": {
+    "requiredIdentityFields": [
+      "schema-version",
+      "pack-sha256",
+      "implementation-sha256",
+      "default-configuration-sha256",
+      "chain-id",
+      "batch-id",
+      "trajectory-index",
+      "measurement-index",
+      "rng-stream-id"
+    ],
+    "requiredObservables": [
+      "per-site-unsummed-correlators",
+      "per-face-type-resolution",
+      "all-temporal-separations-t0-through-tminus1",
+      "all-preregistered-channel-and-momentum-projections",
+      "acceptance-and-hamiltonian-control-diagnostics"
+    ],
+    "serialization": "canonical-json-lines-or-lossless-equivalent-with-sha256-manifest",
+    "missingNonfiniteOrDuplicateRowAction": "invalidate-stage-no-imputation"
+  },
+  "chainAndBatchDesign": {
+    "independentChains": 4,
+    "warmupTrajectoriesPerChain": 512,
+    "measurementStrideTrajectories": 1,
+    "retainedBatchSizePerChain": 256,
+    "checkpointBatchMultiplePerChain": 4,
+    "minimumPostWarmupBatchesPerChainBeforeDecision": 4,
+    "maximumT16RetainedConfigurationsPerChain": 8192,
+    "maximumT32RetainedConfigurationsPerChain": 16384,
+    "chainSeeds": [5021601, 5021602, 5021603, 5021604],
+    "seedDerivationAllowed": false,
+    "crossChainStateSharingAllowed": false
+  },
+  "estimators": {
+    "covariance": "per-chain means followed by equal-chain-weight pooled unbiased covariance over aligned retained batches",
+    "autocorrelation": "Geyer initial-positive-sequence with initial-monotone-pair correction, computed per observable and chain",
+    "integratedAutocorrelationTimeFloor": 0.5,
+    "effectiveSampleSize": "sum over chains of retained-count divided by twice corrected integrated-autocorrelation-time; use minimum over preregistered primary observables",
+    "splitRhat": "rank-normalized split-Rhat with each chain divided into equal chronological halves; gate on the larger of folded and unfolded split-Rhat for every preregistered primary observable",
+    "uncertainty": "delete-one-whole-batch jackknife nested within chain, then equal-chain-weight combination",
+    "covarianceRegularization": "none-for-gate; singular-or-nonfinite-is-invalid",
+    "targetValuesUsed": false
+  },
+  "t16Rules": {
+    "temporalExtent": 16,
+    "minimumTotalEss": 2048,
+    "minimumPerChainEss": 256,
+    "maximumSplitRhat": 1.01,
+    "maximumRelativeEssDriftAcrossLastTwoCheckpoints": 0.1,
+    "maximumCovarianceFrobeniusDriftAcrossLastTwoCheckpoints": 0.1,
+    "requiredConsecutivePassingCheckpoints": 2,
+    "stopReadyWhenAllRulesPass": true,
+    "boundaryWindowContaminationDefinition": "absolute change in a primary estimate after removing the two largest temporal separations from its frozen full window exceeds two combined delete-whole-batch jackknife standard errors",
+    "boundaryModelAmbiguityDefinition": "the best admissible frozen-window model touches the largest allowed temporal separation and its score advantage over the best non-boundary model is no more than two delete-whole-batch jackknife standard errors",
+    "escalateToT32Predicate": "valid-t16-stage-reaches-two-consecutive-stable-checkpoints AND (boundary-window-contamination-definition-true OR boundary-model-ambiguity-definition-true)",
+    "stopWithoutEscalationWhen": "all-rules-pass-and-no-escalation-trigger",
+    "failWhen": "maximum-retained-configurations-reached-without-all-rules-pass"
+  },
+  "t32Rules": {
+    "temporalExtent": 32,
+    "minimumTotalEss": 8192,
+    "minimumPerChainEss": 1024,
+    "maximumSplitRhat": 1.01,
+    "maximumRelativeEssDriftAcrossLastTwoCheckpoints": 0.1,
+    "maximumCovarianceFrobeniusDriftAcrossLastTwoCheckpoints": 0.1,
+    "requiredConsecutivePassingCheckpoints": 2,
+    "stopReadyWhenAllRulesPass": true,
+    "failWhen": "maximum-retained-configurations-reached-without-all-rules-pass"
+  },
+  "costRules": {
+    "phase456MeasuredCpuWeeks": 0.11371015556660466,
+    "calibrationCpuWeekCeiling": 2.0,
+    "checkpointCostMeasurement": "aggregate-process-cpu-seconds-divided-by-604800",
+    "forecast": "lower-confidence-bound-throughput-from-completed-batches-applied-to-next-required-checkpoint",
+    "forecastSafetyFactor": 1.25,
+    "refuseNextBatchWhen": "measured-cost-plus-safety-factored-next-checkpoint-forecast-exceeds-ceiling",
+    "costOverrunAction": "stop-cost-overrun-no-ready-result"
+  },
+  "terminalTaxonomyInPrecedenceOrder": [
+    "invalid-precursor-or-fingerprint",
+    "invalid-calibration-data",
+    "cost-overrun",
+    "convergence-failure",
+    "t16-calibration-ready",
+    "t32-calibration-ready",
+    "unresolved"
+  ],
+  "futureExecutableFingerprintMustExactBind": [
+    "phase502-contract-sha256",
+    "phase501-summary-sha256",
+    "phase456-summary-sha256",
+    "implementation-sha256",
+    "default-configuration-sha256",
+    "rng-algorithm-and-four-fixed-streams",
+    "execution-topology-four-independent-chains",
+    "retained-output-schema-and-manifest-version"
+  ],
+  "refuseToRunOnAnyFingerprintMismatch": true,
+  "unknownCalibrationQuantitiesRemainUnknown": true,
+  "syntheticValuesMayBeRelabeledEmpirical": false,
+  "phase481PackCreationAllowed": false,
+  "samplingLaunchAllowed": false,
+  "productionAuthorizationAllowed": false,
+  "phase458InputAllowed": false,
+  "physicalClaimAllowed": false
+}

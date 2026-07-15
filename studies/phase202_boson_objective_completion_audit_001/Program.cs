@@ -253,6 +253,9 @@ const string Phase498Path = "studies/phase498_phase456_acquisition_repair_readin
 const string Phase499Path = "studies/phase499_phase456_retained_empirical_noise_information_audit_001/output/phase456_retained_empirical_noise_information_audit_summary.json";
 const string Phase500Path = "studies/phase500_phase456_adversarial_prospective_acquisition_stress_test_001/output/phase456_adversarial_prospective_acquisition_stress_test_summary.json";
 const string Phase501Path = "studies/phase501_phase456_robust_sampling_readiness_adjudicator_001/output/phase456_robust_sampling_readiness_adjudicator_summary.json";
+const string Phase502Path = "studies/phase502_phase456_adaptive_calibration_protocol_specification_001/output/phase456_adaptive_calibration_protocol_specification_summary.json";
+const string Phase503Path = "studies/phase503_phase456_adaptive_calibration_protocol_validation_001/output/phase456_adaptive_calibration_protocol_validation_summary.json";
+const string Phase504Path = "studies/phase504_phase456_calibration_repair_pack_readiness_adjudicator_001/output/phase456_calibration_repair_pack_readiness_adjudicator_summary.json";
 const string Phase444Path = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443Path = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442Path = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -557,6 +560,9 @@ using var phase498 = File.Exists(Phase498Path) ? JsonDocument.Parse(File.ReadAll
 using var phase499 = File.Exists(Phase499Path) ? JsonDocument.Parse(File.ReadAllText(Phase499Path)) : null;
 using var phase500 = File.Exists(Phase500Path) ? JsonDocument.Parse(File.ReadAllText(Phase500Path)) : null;
 using var phase501 = File.Exists(Phase501Path) ? JsonDocument.Parse(File.ReadAllText(Phase501Path)) : null;
+using var phase502 = File.Exists(Phase502Path) ? JsonDocument.Parse(File.ReadAllText(Phase502Path)) : null;
+using var phase503 = File.Exists(Phase503Path) ? JsonDocument.Parse(File.ReadAllText(Phase503Path)) : null;
+using var phase504 = File.Exists(Phase504Path) ? JsonDocument.Parse(File.ReadAllText(Phase504Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -7085,6 +7091,34 @@ var phase456RobustSamplingReadinessAdjudicatorPassed = phase501 is not null
     && JsonBool(phase501.RootElement, "samplingAuthorized") is false
     && JsonBool(phase501.RootElement, "a11BoundaryHeld") is true
     && JsonInt(phase501.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var phase456AdaptiveCalibrationProtocolSpecificationPassed = phase502 is not null
+    && JsonBool(phase502.RootElement, "inputsValid") is true
+    && JsonString(phase502.RootElement, "protocolClassification") == "protocol-specification-ready"
+    && JsonBool(phase502.RootElement, "frozenBeforePrecursorConsumption") is true
+    && JsonBool(phase502.RootElement, "mayInformLaterIndependentPhase481PackDesign") is true
+    && JsonBool(phase502.RootElement, "phase481RepairPackConstructed") is false
+    && JsonBool(phase502.RootElement, "samplingAuthorizedByThisPhase") is false
+    && JsonBool(phase502.RootElement, "a12BoundaryHeld") is true
+    && JsonInt(phase502.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var phase456AdaptiveCalibrationProtocolValidationPassed = phase503 is not null
+    && JsonBool(phase503.RootElement, "inputsValid") is true
+    && JsonString(phase503.RootElement, "verdictKind") == "assumption-conditional-protocol"
+    && JsonBool(phase503.RootElement, "validationBatteryValid") is true
+    && JsonBool(phase503.RootElement, "wholeFrozenMenuPassed") is false
+    && JsonBool(phase503.RootElement, "conditionalSubsetPassed") is true
+    && JsonBool(phase503.RootElement, "samplingAuthorized") is false
+    && JsonBool(phase503.RootElement, "phase481RepairPackConstructed") is false
+    && JsonBool(phase503.RootElement, "a12BoundaryHeld") is true
+    && JsonInt(phase503.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var phase456CalibrationRepairPackReadinessAdjudicatorPassed = phase504 is not null
+    && JsonBool(phase504.RootElement, "inputsValid") is true
+    && JsonString(phase504.RootElement, "readinessClassification") == "assumption-conditional-protocol"
+    && JsonBool(phase504.RootElement, "readyResultMayInformLaterIndependentPhase481PackDesign") is false
+    && JsonBool(phase504.RootElement, "phase481RepairPackConstructed") is false
+    && JsonBool(phase504.RootElement, "samplingAuthorized") is false
+    && JsonBool(phase504.RootElement, "launchAuthorized") is false
+    && JsonBool(phase504.RootElement, "a12BoundaryHeld") is true
+    && JsonInt(phase504.RootElement, "promotedPhysicalMassClaimCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -9903,6 +9937,9 @@ var checklist = new[]
     new ObjectiveChecklistItem("phase456-retained-empirical-noise-information-audit", "Separate retained T=4 empirical noise information from unavailable prospective T=16 calibration without extrapolation.", phase456RetainedEmpiricalNoiseInformationAuditPassed ? "passed" : "failed", phase499 is null ? "Phase499 artifact not materialized" : JsonString(phase499.RootElement, "decision") ?? "missing decision", Phase499Path),
     new ObjectiveChecklistItem("phase456-adversarial-prospective-acquisition-stress-test", "Stress the prospective acquisition design across the complete frozen covariance, autocorrelation, spectral, sign, and invalid-input menu.", phase456AdversarialProspectiveAcquisitionStressTestPassed ? "passed" : "failed", phase500 is null ? "Phase500 artifact not materialized" : JsonString(phase500.RootElement, "decision") ?? "missing decision", Phase500Path),
     new ObjectiveChecklistItem("phase456-robust-sampling-readiness-adjudicator", "Apply retained-calibration precedence over favorable synthetic robustness while creating no pack or sampling authority.", phase456RobustSamplingReadinessAdjudicatorPassed ? "passed" : "failed", phase501 is null ? "Phase501 artifact not materialized" : JsonString(phase501.RootElement, "decision") ?? "missing decision", Phase501Path),
+    new ObjectiveChecklistItem("phase456-adaptive-calibration-protocol-specification", "Freeze the sequential T16 and conditional-T32 calibration protocol with storage, convergence, cost, and refuse-to-run rules before any sampling.", phase456AdaptiveCalibrationProtocolSpecificationPassed ? "passed" : "failed", phase502 is null ? "Phase502 artifact not materialized" : JsonString(phase502.RootElement, "decision") ?? "missing decision", Phase502Path),
+    new ObjectiveChecklistItem("phase456-adaptive-calibration-protocol-validation", "Test the frozen adaptive protocol against the complete synthetic operating-characteristic menu and preserve assumption-conditional failure.", phase456AdaptiveCalibrationProtocolValidationPassed ? "passed" : "failed", phase503 is null ? "Phase503 artifact not materialized" : JsonString(phase503.RootElement, "decision") ?? "missing decision", Phase503Path),
+    new ObjectiveChecklistItem("phase456-calibration-repair-pack-readiness-adjudicator", "Apply A12 precedence so assumption-conditional validation cannot become pack or sampling authority.", phase456CalibrationRepairPackReadinessAdjudicatorPassed ? "passed" : "failed", phase504 is null ? "Phase504 artifact not materialized" : JsonString(phase504.RootElement, "decision") ?? "missing decision", Phase504Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

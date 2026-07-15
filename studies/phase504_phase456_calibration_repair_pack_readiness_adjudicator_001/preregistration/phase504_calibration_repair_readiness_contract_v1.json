@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase504-a12-calibration-repair-pack-readiness-v1",
+  "frozenBeforePrecursorConsumption": true,
+  "precedence": [
+    "invalid-precursor",
+    "protocol-validation-failure",
+    "assumption-conditional-protocol",
+    "adaptive-calibration-protocol-ready-for-independent-pack",
+    "unresolved"
+  ],
+  "requiredExactBindings": [
+    "phase501-summary-bytes",
+    "phase502-summary-bytes",
+    "phase503-summary-bytes"
+  ],
+  "writtenPermission": {
+    "date": "2026-07-15",
+    "textRecorded": "The user granted full permission to run sampling and reprocessing necessary to validate the results.",
+    "freshWrittenPermissionElementPresent": true,
+    "isLaunchAuthorityForThisPhase": false
+  },
+  "readyResultMayInformLaterIndependentPhase481PackDesign": true,
+  "phase481PackCreationAllowed": false,
+  "samplingOrProductionLaunchAllowed": false,
+  "o4OrPhase458RulingAllowed": false,
+  "sourceContractApplicationAllowed": false,
+  "physicalClaimAllowed": false
+}

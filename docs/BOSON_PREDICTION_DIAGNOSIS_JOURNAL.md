@@ -20841,3 +20841,41 @@ No Phase481 pack was created or mutated, and no sampling, HMC, benchmark,
 Phase458 evaluation, O4 discharge, source-contract application, or physical-
 unit claim is authorized. Fresh written sampling authorization and every
 Phase481 prerequisite remain mandatory; `promotedPhysicalMassClaimCount=0`.
+
+## 2026-07-15 - Amendment A12: adaptive calibration remains assumption-conditional
+
+The user authorized the next three adaptive-calibration design tasks as one
+agent-parallel checkpoint and separately supplied written permission for
+sampling and reprocessing necessary to validate the repair program. Registry
+502-504 was allocated before new phase directories were created. The
+permission is recorded as a future permission element; it does not by itself
+construct an executable pack or override any gate.
+
+Phase502 exact-binds the Phase501 insufficiency terminal and Phase456 measured
+cost. Its frozen target-blind protocol uses four independent chains, explicit
+configuration-level retention and batches, pooled covariance, Geyer
+autocorrelation/ESS, split-R-hat and checkpoint-stability gates, and a `T=16`
+stage with predicate-driven `T=32` escalation. It fixes invalid/no-imputation
+handling, a 2 CPU-week calibration ceiling, and exact future fingerprint
+refusal rules. The terminal is `protocol-specification-ready`; no sampler or
+reprocessor runs.
+
+Phase503 freezes and evaluates 36 deterministic operating-characteristic rows
+plus invalid, convergence/ESS, escalation, and cost batteries. The invalid
+controls pass 3/3, convergence cases 4/4, escalation cases 5/5, and cost cases
+5/5. The nominal single-component and well-separated-pair subset passes, but
+coverage and model selection fail across the complete adversarial family.
+The preserved terminal is therefore `assumption-conditional-protocol`, not a
+power guarantee.
+
+Phase504 exact-binds Phases501-503 and passes all seven frozen precedence
+cases. The assumption-conditional result dominates the ready branch, so the
+permission element cannot become launch authority and the terminal remains
+`assumption-conditional-protocol`. No Phase481 artifact is created or mutated
+and no sampling or reprocessing is launched.
+
+Targeted Release execution, Phase101, Phase202, and claim integrity pass.
+Phase202 moves to 292 passed / 3 standing failures; O4 coverage remains 31/31,
+the synthetic-overturn battery remains 94/94, source deficits remain 15/14,
+and `promotedPhysicalMassClaimCount=0`. Phase458 G3/G5, O4, external review,
+and every source-contract boundary remain unchanged.

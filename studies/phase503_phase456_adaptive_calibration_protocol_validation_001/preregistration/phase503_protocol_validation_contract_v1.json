@@ -1,0 +1,32 @@
+{
+  "contractId": "phase503-a12-protocol-validation-contract-v1",
+  "frozenBeforePhase502Read": true,
+  "replicatesPerRow": 24,
+  "seeds": [503003, 503017, 503021, 503039, 503053, 503077, 503099, 503123, 503137, 503153, 503179, 503197, 503207, 503233, 503249, 503267, 503287, 503303, 503317, 503333, 503357, 503369, 503389, 503407],
+  "covarianceFamilies": [
+    { "id": "toeplitz-moderate", "burden": 1.0 },
+    { "id": "heteroscedastic-long-range", "burden": 1.35 },
+    { "id": "common-mode-near-singular", "burden": 1.7 }
+  ],
+  "autocorrelationFamilies": [
+    { "id": "declared-ar1", "penalty": 1.0 },
+    { "id": "slow-mode", "penalty": 1.45 },
+    { "id": "hidden-long-tail", "penalty": 2.1 }
+  ],
+  "spectralCases": [
+    { "id": "positive-single", "kind": "single", "difficulty": 0.65 },
+    { "id": "positive-separated-pair", "kind": "double", "difficulty": 0.85 },
+    { "id": "positive-near-degenerate-pair", "kind": "double", "difficulty": 1.2 },
+    { "id": "positive-weak-secondary-pair", "kind": "double", "difficulty": 1.3 }
+  ],
+  "invalidControls": ["signed-amplitude", "nonfinite-row", "rank-deficient-covariance"],
+  "coverageNominalMinimum": 0.9,
+  "coverageAdversarialMinimum": 0.8,
+  "modelSelectionMinimum": 0.83,
+  "maximumSingleFalseSelectionRate": 0.05,
+  "minimumConvergenceEssPassRate": 0.9,
+  "minimumEscalationAccuracy": 0.9,
+  "maximumNormalizedCost": 1.0,
+  "conditionalSubset": "toeplitz-moderate plus declared-ar1 over positive-single and positive-separated-pair",
+  "invalidPolicy": "any malformed precursor, invalid-control acceptance, nonfinite statistic, missing row, or post-inspection threshold change fails closed"
+}

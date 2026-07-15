@@ -288,3 +288,50 @@ benchmark, acceleration, or Phase458 evaluation, satisfy G3/G5, discharge O4,
 reinterpret Phase456, fill a source contract, or support a physical-unit
 claim. New written sampling authorization and every Phase481 prerequisite
 remain mandatory; `promotedPhysicalMassClaimCount=0` throughout.
+
+## A12 — Phase456 adaptive-calibration design tranche (phases 502–504)
+
+Phase501 established that retained `T=4` information cannot empirically
+calibrate the prospective `T=16` or `T=32` acquisition. The next tranche
+therefore specifies a target-blind sequential calibration protocol rather
+than treating Phase500's synthetic `T=32` / ESS-floor `8192` survivor as a
+production power guarantee or committing the entire projected allocation at
+once.
+
+The user provided written permission on 2026-07-15 to run sampling and
+reprocessing necessary to validate this repair program. That permission
+satisfies the fresh-written-permission element for a later correctly frozen
+pack. It is not by itself a Phase481 pack, an executable fingerprint, an O4
+ruling, a Phase458 input, or authority to bypass any refuse-to-run,
+convergence, storage, cost, provenance, or upstream gate. Phases502–504 run no
+HMC and launch no benchmark or fresh acquisition.
+
+Phase502 exact-binds Phase501 and the committed Phase456 measured cost, then
+freezes a sequential `T=16` calibration followed by a conditional `T=32`
+escalation. Before any future sampling it must specify retained
+configuration-level observables, independent-chain and batch boundaries,
+covariance and autocorrelation estimators, ESS and convergence rules,
+escalation/stopping predicates, cost ceilings, invalid-row handling, output
+schema, and refuse-to-run fingerprints. Unknown calibration quantities remain
+unknown; no synthetic value may be relabeled empirical.
+
+Phase503 freezes its synthetic operating-characteristic menu, seeds,
+adversarial covariance/autocorrelation families, spectral cases, invalid
+controls, coverage/model-selection gates, and cost-overrun cases before
+reading Phase502. It validates the protocol's decision rules, not the
+Phase456 physics result. A valid negative or assumption-conditional terminal
+is preserved without tuning thresholds after inspection.
+
+Phase504 exact-binds Phases501–503 and applies frozen precedence across
+invalid precursor, protocol-validation failure, assumption-conditional
+protocol, adaptive-calibration protocol ready for an independently frozen
+pack, and unresolved. A ready terminal may inform later Phase481 pack design
+and records that fresh written permission exists, but it neither constructs
+nor mutates Phase481 and cannot launch sampling itself.
+
+A12 does not reinterpret Phase456, satisfy Phase458 G3/G5, discharge O4,
+authorize Phase458 evaluation, fill a source contract, or support a physical-
+unit claim. Any later sampling must use an independently frozen, hash-pinned
+pack and committed default configuration with the A12 storage, convergence,
+cost, and refuse-to-run rules enforced. `promotedPhysicalMassClaimCount=0`
+throughout.
