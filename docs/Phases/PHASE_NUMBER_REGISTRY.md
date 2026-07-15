@@ -19,7 +19,8 @@ back, NO new phase directory may be created outside this table.
 | 496-498 | Shared Phase456 measurement-repair design extension (A10) | 496 retained-data information census; 497 prospective estimator/acquisition oracle battery; 498 acquisition and repair-readiness adjudicator |
 | 499-501 | Shared Phase456 acquisition-robustness extension (A11) | 499 retained empirical noise-information audit; 500 adversarial prospective acquisition stress test; 501 robust sampling-readiness adjudicator |
 | 502-504 | Shared Phase456 adaptive-calibration design extension (A12) | 502 adaptive calibration protocol specification; 503 prospective protocol validation; 504 calibration-repair pack-readiness adjudicator |
-| 505+ | Unassigned - extend this registry before use | - |
+| 505-507 | Shared Phase456 selective-inference repair extension (A13) | 505 frozen-failure localization; 506 prospective selective-inference protocol validation; 507 repair-pack readiness adjudicator |
+| 508+ | Unassigned - extend this registry before use | - |
 
 Rules: (1) a team takes the LOWEST free number in its own block;
 (2) cross-team phases take the number of the OWNING team per the

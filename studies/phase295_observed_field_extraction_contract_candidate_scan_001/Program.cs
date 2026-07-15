@@ -932,6 +932,9 @@ static bool IsExcluded(string normalizedPath) =>
     || normalizedPath.StartsWith("studies/phase502_phase456_adaptive_calibration_protocol_specification_001/", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase503_phase456_adaptive_calibration_protocol_validation_001/", StringComparison.Ordinal)
     || normalizedPath.StartsWith("studies/phase504_phase456_calibration_repair_pack_readiness_adjudicator_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase505_phase503_frozen_failure_localization_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase506_phase456_selective_inference_protocol_validation_001/", StringComparison.Ordinal)
+    || normalizedPath.StartsWith("studies/phase507_phase456_selective_inference_pack_readiness_adjudicator_001/", StringComparison.Ordinal)
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P483.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P484.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P485.md"
@@ -954,6 +957,9 @@ static bool IsExcluded(string normalizedPath) =>
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P502.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P503.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P504.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P505.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P506.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P507.md"
     || normalizedPath == "docs/Phases/EXPLORATORY_SELF_AUDIT_PLAN_2026-07-15.md"
     || normalizedPath == "docs/Phases/CONVENTION_ROBUSTNESS_TRANCHE_PLAN_2026-07-15.md"
     || normalizedPath == "docs/Phases/PHASE455_CONVENTION_CLOSURE_PLAN_2026-07-15.md"

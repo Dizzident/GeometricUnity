@@ -335,3 +335,42 @@ unit claim. Any later sampling must use an independently frozen, hash-pinned
 pack and committed default configuration with the A12 storage, convergence,
 cost, and refuse-to-run rules enforced. `promotedPhysicalMassClaimCount=0`
 throughout.
+
+## A13 — Phase456 selective-inference repair tranche (phases 505–507)
+
+Phase503 preserved a valid negative result: its fixed decisive-selection rule
+fails coverage or model selection on eleven rows of the frozen adversarial
+family. The user authorized continued work and parallel execution on
+2026-07-15. This tranche may diagnose that failure and prospectively test a
+different fail-closed decision design; it may not tune Phase503's thresholds,
+erase its negative artifact, or count an ambiguous case as a successful
+decisive model selection.
+
+Phase505 exact-binds Phase503 and localizes every failed row into sampling-grid
+discretization, coverage deficiency, false decisive selection, or unresolved
+spectral ambiguity. It separates finite-replicate uncertainty from structural
+operating-characteristic failure and recommends no terminal by itself.
+
+Phase506 freezes its complete contract before consuming Phase505. The new
+design may use set-valued or abstaining inference only if a frozen truth-set
+coverage rule scores every abstention honestly, requires decisive calls on the
+identifiable single and separated-pair controls, and treats weak-secondary or
+near-degenerate cases as unresolved rather than falsely selected. Invalid,
+convergence, escalation, cost, and wrong-decisive-call gates remain mandatory.
+Passing requires the complete frozen menu; a nominal-subset pass is still
+assumption-conditional.
+
+Phase507 exact-binds Phases503, 505, and 506 and applies frozen precedence over
+invalid precursor, validation failure, assumption-conditional repair,
+selective-inference protocol ready for independent Phase481 pack construction,
+and unresolved. A ready terminal is planning evidence only. It cannot itself
+construct or mutate Phase481, launch sampling or reprocessing, reinterpret
+Phase456, satisfy Phase458 G3/G5, discharge O4, or authorize Phase458.
+
+The existing written permission remains a permission element only. An
+executable repair still requires the independent Phase481 pack, exact default-
+configuration and implementation fingerprints, storage and chain topology,
+RNG policy, convergence/ESS and cost refusal rules, and every still-binding
+upstream authorization. No A13 phase performs HMC or a benchmark, fills a
+source contract, or supports a physical-unit claim;
+`promotedPhysicalMassClaimCount=0` throughout.

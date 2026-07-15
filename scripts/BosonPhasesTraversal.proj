@@ -367,6 +367,9 @@
     <PhaseProject Include="../studies/phase502_phase456_adaptive_calibration_protocol_specification_001/Phase502Phase456AdaptiveCalibrationProtocolSpecification.csproj" />
     <PhaseProject Include="../studies/phase503_phase456_adaptive_calibration_protocol_validation_001/Phase503Phase456AdaptiveCalibrationProtocolValidation.csproj" />
     <PhaseProject Include="../studies/phase504_phase456_calibration_repair_pack_readiness_adjudicator_001/Phase504Phase456CalibrationRepairPackReadinessAdjudicator.csproj" />
+    <PhaseProject Include="../studies/phase505_phase503_frozen_failure_localization_001/Phase505Phase503FrozenFailureLocalization.csproj" />
+    <PhaseProject Include="../studies/phase506_phase456_selective_inference_protocol_validation_001/Phase506Phase456SelectiveInferenceProtocolValidation.csproj" />
+    <PhaseProject Include="../studies/phase507_phase456_selective_inference_pack_readiness_adjudicator_001/Phase507Phase456SelectiveInferencePackReadinessAdjudicator.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase507-a13-selective-inference-pack-readiness-v1",
+  "frozenBeforePrecursorConsumption": true,
+  "precedence": [
+    "invalid-precursor",
+    "protocol-validation-failure",
+    "assumption-conditional-repair",
+    "selective-inference-protocol-ready-for-independent-phase481-pack-construction",
+    "unresolved"
+  ],
+  "requiredExactBindings": [
+    "phase503-summary-bytes",
+    "phase505-summary-bytes",
+    "phase506-summary-bytes"
+  ],
+  "requiredPhase503Baseline": "assumption-conditional-protocol",
+  "writtenPermission": {
+    "date": "2026-07-15",
+    "permissionElementPresent": true,
+    "isLaunchAuthorityForThisPhase": false
+  },
+  "readyResultIsPlanningEvidenceOnly": true,
+  "phase481PackCreationAllowed": false,
+  "samplingOrReprocessingLaunchAllowed": false,
+  "o4OrPhase458RulingAllowed": false,
+  "sourceContractApplicationAllowed": false,
+  "physicalClaimAllowed": false
+}

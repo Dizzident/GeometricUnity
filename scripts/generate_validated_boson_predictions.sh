@@ -381,6 +381,9 @@ dotnet run --no-build -c Release --project studies/phase501_phase456_robust_samp
 dotnet run --no-build -c Release --project studies/phase502_phase456_adaptive_calibration_protocol_specification_001/Phase502Phase456AdaptiveCalibrationProtocolSpecification.csproj
 dotnet run --no-build -c Release --project studies/phase503_phase456_adaptive_calibration_protocol_validation_001/Phase503Phase456AdaptiveCalibrationProtocolValidation.csproj
 dotnet run --no-build -c Release --project studies/phase504_phase456_calibration_repair_pack_readiness_adjudicator_001/Phase504Phase456CalibrationRepairPackReadinessAdjudicator.csproj
+dotnet run --no-build -c Release --project studies/phase505_phase503_frozen_failure_localization_001/Phase505Phase503FrozenFailureLocalization.csproj
+dotnet run --no-build -c Release --project studies/phase506_phase456_selective_inference_protocol_validation_001/Phase506Phase456SelectiveInferenceProtocolValidation.csproj
+dotnet run --no-build -c Release --project studies/phase507_phase456_selective_inference_pack_readiness_adjudicator_001/Phase507Phase456SelectiveInferencePackReadinessAdjudicator.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

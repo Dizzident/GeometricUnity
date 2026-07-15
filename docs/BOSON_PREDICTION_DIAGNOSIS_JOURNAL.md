@@ -20879,3 +20879,41 @@ Phase202 moves to 292 passed / 3 standing failures; O4 coverage remains 31/31,
 the synthetic-overturn battery remains 94/94, source deficits remain 15/14,
 and `promotedPhysicalMassClaimCount=0`. Phase458 G3/G5, O4, external review,
 and every source-contract boundary remain unchanged.
+
+## 2026-07-15 - Amendment A13: selective inference earns pack planning, not launch
+
+The user authorized the recommended repair work with agent parallelism.
+Registry 505-507 was allocated before any new phase directory was created.
+The tranche preserves Phase503's negative artifact and tests a new prospective
+decision design rather than tuning its failed thresholds.
+
+Phase505 exact-binds Phase503 and accounts for all eleven failed rows. Four
+coverage failures are finite-24 grid misses under Phase503's own expected-
+probability model, but they remain failures. The primary localization is two
+coverage-only misses, two false decisive single-to-pair calls, and seven pair
+ambiguities. Seven selection failures are structural and two are finite-grid
+marginal misses. The terminal is `complete-negative-preserved` and recommends
+no outcome.
+
+Phase506 freezes a set-valued contract before consuming Phase505. Identifiable
+single and separated-pair controls must be decided; near-degenerate and weak-
+secondary cases may emit `{single,double}` only as an honestly unresolved
+result. Across the complete 36-row menu it records 576 decisive correct calls,
+576 unresolved calls, and zero wrong decisive calls. Truth-set coverage,
+identifiable-control decisions, false-selection, invalid, convergence/ESS,
+escalation, and cost gates all pass. The terminal is
+`selective-protocol-validation-passed`; this is synthetic planning evidence,
+not empirical power.
+
+Phase507 exact-binds Phases503, 505, and 506 and passes all nine precedence
+cases. It records
+`selective-inference-protocol-ready-for-independent-phase481-pack-construction`.
+The existing written permission is present but is not Phase507 launch
+authority. No Phase481 artifact is created or mutated, and no sampling or
+reprocessing is launched because Phase480/O4 and the still-binding upstream
+authorization remain unresolved.
+
+Phase458 G3/G5, every source-contract boundary, and the external-review
+requirement remain unchanged. Phase101 remains physically blocked, Phase202
+moves to 295 passed / 3 standing failures, and
+`promotedPhysicalMassClaimCount=0`.

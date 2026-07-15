@@ -1,0 +1,500 @@
+{
+  "phaseId": "phase505-phase503-frozen-failure-localization",
+  "terminalStatus": "phase503-frozen-failure-localization-complete-negative-preserved",
+  "verdictKind": "complete-negative-preserved",
+  "localizationClassification": "complete-negative-preserved",
+  "inputsValid": true,
+  "applicationSubjectKind": "phase503-frozen-operating-row-failure-localization",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A13",
+  "contract": {
+    "path": "studies/phase505_phase503_frozen_failure_localization_001/preregistration/phase505_failure_localization_contract_v1.json",
+    "byteSha256": "16d0053bdad73fb86c459b9c65373a622a520474bb1d68856e4de4a239c6f0dd",
+    "valid": true,
+    "frozenBeforePhase503Consumption": true,
+    "taxonomy": [
+      "false-decisive-single-to-pair-call",
+      "unresolved-pair-spectral-ambiguity",
+      "coverage-deficiency",
+      "unclassified-failed-row"
+    ]
+  },
+  "phase503": {
+    "path": "studies/phase503_phase456_adaptive_calibration_protocol_validation_001/output/phase456_adaptive_calibration_protocol_validation_summary.json",
+    "expectedSummarySha256": "9f5492b11f71cb2a62305837e68d0de6402f4d167f2199d33be31c62119e1d29",
+    "actualSummarySha256": "9f5492b11f71cb2a62305837e68d0de6402f4d167f2199d33be31c62119e1d29",
+    "exactHashMatch": true,
+    "precursorValid": true,
+    "originalVerdictKind": "assumption-conditional-protocol",
+    "originalTerminalStatus": "phase456-adaptive-calibration-protocol-validation-assumption-conditional-protocol",
+    "originalNegativeResultPreserved": true
+  },
+  "sourceRowCount": 36,
+  "failedSourceRowCount": 11,
+  "localizedRowCount": 11,
+  "allFailedRowsAccountedFor": true,
+  "gridStep": 0.041666666666666664,
+  "counts": {
+    "finiteCoverageMissCount": 4,
+    "structuralCoverageFailureCount": 0,
+    "falseDecisiveSingleCount": 2,
+    "unresolvedPairAmbiguityCount": 7,
+    "coverageOnlyCount": 2,
+    "structuralSelectionFailureCount": 7,
+    "finiteSelectionMissCount": 2
+  },
+  "localizations": [
+    {
+      "rowId": "toeplitz-moderate|declared-ar1|positive-weak-secondary-pair",
+      "covarianceId": "toeplitz-moderate",
+      "autocorrelationId": "declared-ar1",
+      "spectralCaseId": "positive-weak-secondary-pair",
+      "spectralKind": "double",
+      "replicates": 24,
+      "primaryLocalization": "coverage-deficiency",
+      "failedGates": [
+        "coverage"
+      ],
+      "observed": {
+        "covered": 21,
+        "selectedCorrectly": 23,
+        "falseSelections": 0,
+        "coverageRate": 0.875,
+        "correctSelectionRate": 0.9583333333333334,
+        "falseSelectionRate": 0
+      },
+      "frozenThresholds": {
+        "requiredCoverage": 0.9,
+        "modelSelectionMinimum": 0.83,
+        "maximumFalseSelectionRate": 0.05
+      },
+      "exactExpectedProbabilities": {
+        "burden": 1.3,
+        "expectedCoverageProbability": 0.956,
+        "expectedCorrectSelectionProbability": 0.9514999999999999,
+        "expectedFalseSelectionProbability": 0
+      },
+      "failureScale": {
+        "coverage": "finite-24-replicate-marginal-miss",
+        "modelSelection": "not-applicable"
+      },
+      "phase503GateFailurePreserved": true,
+      "countedAsSuccessfulDecisiveSelection": false
+    },
+    {
+      "rowId": "toeplitz-moderate|hidden-long-tail|positive-weak-secondary-pair",
+      "covarianceId": "toeplitz-moderate",
+      "autocorrelationId": "hidden-long-tail",
+      "spectralCaseId": "positive-weak-secondary-pair",
+      "spectralKind": "double",
+      "replicates": 24,
+      "primaryLocalization": "coverage-deficiency",
+      "failedGates": [
+        "coverage"
+      ],
+      "observed": {
+        "covered": 19,
+        "selectedCorrectly": 20,
+        "falseSelections": 0,
+        "coverageRate": 0.7916666666666666,
+        "correctSelectionRate": 0.8333333333333334,
+        "falseSelectionRate": 0
+      },
+      "frozenThresholds": {
+        "requiredCoverage": 0.8,
+        "modelSelectionMinimum": 0.83,
+        "maximumFalseSelectionRate": 0.05
+      },
+      "exactExpectedProbabilities": {
+        "burden": 2.7300000000000004,
+        "expectedCoverageProbability": 0.9131,
+        "expectedCorrectSelectionProbability": 0.81565,
+        "expectedFalseSelectionProbability": 0
+      },
+      "failureScale": {
+        "coverage": "finite-24-replicate-marginal-miss",
+        "modelSelection": "not-applicable"
+      },
+      "phase503GateFailurePreserved": true,
+      "countedAsSuccessfulDecisiveSelection": false
+    },
+    {
+      "rowId": "heteroscedastic-long-range|slow-mode|positive-single",
+      "covarianceId": "heteroscedastic-long-range",
+      "autocorrelationId": "slow-mode",
+      "spectralCaseId": "positive-single",
+      "spectralKind": "single",
+      "replicates": 24,
+      "primaryLocalization": "false-decisive-single-to-pair-call",
+      "failedGates": [
+        "model-selection"
+      ],
+      "observed": {
+        "covered": 23,
+        "selectedCorrectly": 22,
+        "falseSelections": 2,
+        "coverageRate": 0.9583333333333334,
+        "correctSelectionRate": 0.9166666666666666,
+        "falseSelectionRate": 0.08333333333333333
+      },
+      "frozenThresholds": {
+        "requiredCoverage": 0.8,
+        "modelSelectionMinimum": 0.83,
+        "maximumFalseSelectionRate": 0.05
+      },
+      "exactExpectedProbabilities": {
+        "burden": 1.272375,
+        "expectedCoverageProbability": 0.95682875,
+        "expectedCorrectSelectionProbability": 0.9541243749999999,
+        "expectedFalseSelectionProbability": 0.045875625000000086
+      },
+      "failureScale": {
+        "coverage": "not-applicable",
+        "modelSelection": "finite-24-replicate-marginal-miss"
+      },
+      "phase503GateFailurePreserved": true,
+      "countedAsSuccessfulDecisiveSelection": false
+    },
+    {
+      "rowId": "heteroscedastic-long-range|hidden-long-tail|positive-single",
+      "covarianceId": "heteroscedastic-long-range",
+      "autocorrelationId": "hidden-long-tail",
+      "spectralCaseId": "positive-single",
+      "spectralKind": "single",
+      "replicates": 24,
+      "primaryLocalization": "false-decisive-single-to-pair-call",
+      "failedGates": [
+        "model-selection"
+      ],
+      "observed": {
+        "covered": 20,
+        "selectedCorrectly": 22,
+        "falseSelections": 2,
+        "coverageRate": 0.8333333333333334,
+        "correctSelectionRate": 0.9166666666666666,
+        "falseSelectionRate": 0.08333333333333333
+      },
+      "frozenThresholds": {
+        "requiredCoverage": 0.8,
+        "modelSelectionMinimum": 0.83,
+        "maximumFalseSelectionRate": 0.05
+      },
+      "exactExpectedProbabilities": {
+        "burden": 1.8427500000000003,
+        "expectedCoverageProbability": 0.9397175,
+        "expectedCorrectSelectionProbability": 0.8999387499999999,
+        "expectedFalseSelectionProbability": 0.1000612500000001
+      },
+      "failureScale": {
+        "coverage": "not-applicable",
+        "modelSelection": "structural-expected-probability-failure"
+      },
+      "phase503GateFailurePreserved": true,
+      "countedAsSuccessfulDecisiveSelection": false
+    },
+    {
+      "rowId": "heteroscedastic-long-range|hidden-long-tail|positive-near-degenerate-pair",
+      "covarianceId": "heteroscedastic-long-range",
+      "autocorrelationId": "hidden-long-tail",
+      "spectralCaseId": "positive-near-degenerate-pair",
+      "spectralKind": "double",
+      "replicates": 24,
+      "primaryLocalization": "unresolved-pair-spectral-ambiguity",
+      "failedGates": [
+        "model-selection"
+      ],
+      "observed": {
+        "covered": 21,
+        "selectedCorrectly": 16,
+        "falseSelections": 0,
+        "coverageRate": 0.875,
+        "correctSelectionRate": 0.6666666666666666,
+        "falseSelectionRate": 0
+      },
+      "frozenThresholds": {
+        "requiredCoverage": 0.8,
+        "modelSelectionMinimum": 0.83,
+        "maximumFalseSelectionRate": 0.05
+      },
+      "exactExpectedProbabilities": {
+        "burden": 3.4020000000000006,
+        "expectedCoverageProbability": 0.89294,
+        "expectedCorrectSelectionProbability": 0.7518099999999999,
+        "expectedFalseSelectionProbability": 0
+      },
+      "failureScale": {
+        "coverage": "not-applicable",
+        "modelSelection": "structural-expected-probability-failure"
+      },
+      "phase503GateFailurePreserved": true,
+      "countedAsSuccessfulDecisiveSelection": false
+    },
+    {
+      "rowId": "heteroscedastic-long-range|hidden-long-tail|positive-weak-secondary-pair",
+      "covarianceId": "heteroscedastic-long-range",
+      "autocorrelationId": "hidden-long-tail",
+      "spectralCaseId": "positive-weak-secondary-pair",
+      "spectralKind": "double",
+      "replicates": 24,
+      "primaryLocalization": "unresolved-pair-spectral-ambiguity",
+      "failedGates": [
+        "coverage",
+        "model-selection"
+      ],
+      "observed": {
+        "covered": 18,
+        "selectedCorrectly": 19,
+        "falseSelections": 0,
+        "coverageRate": 0.75,
+        "correctSelectionRate": 0.7916666666666666,
+        "falseSelectionRate": 0
+      },
+      "frozenThresholds": {
+        "requiredCoverage": 0.8,
+        "modelSelectionMinimum": 0.83,
+        "maximumFalseSelectionRate": 0.05
+      },
+      "exactExpectedProbabilities": {
+        "burden": 3.6855000000000007,
+        "expectedCoverageProbability": 0.884435,
+        "expectedCorrectSelectionProbability": 0.7248774999999998,
+        "expectedFalseSelectionProbability": 0
+      },
+      "failureScale": {
+        "coverage": "finite-24-replicate-marginal-miss",
+        "modelSelection": "structural-expected-probability-failure"
+      },
+      "phase503GateFailurePreserved": true,
+      "countedAsSuccessfulDecisiveSelection": false
+    },
+    {
+      "rowId": "common-mode-near-singular|declared-ar1|positive-weak-secondary-pair",
+      "covarianceId": "common-mode-near-singular",
+      "autocorrelationId": "declared-ar1",
+      "spectralCaseId": "positive-weak-secondary-pair",
+      "spectralKind": "double",
+      "replicates": 24,
+      "primaryLocalization": "unresolved-pair-spectral-ambiguity",
+      "failedGates": [
+        "model-selection"
+      ],
+      "observed": {
+        "covered": 22,
+        "selectedCorrectly": 19,
+        "falseSelections": 0,
+        "coverageRate": 0.9166666666666666,
+        "correctSelectionRate": 0.7916666666666666,
+        "falseSelectionRate": 0
+      },
+      "frozenThresholds": {
+        "requiredCoverage": 0.8,
+        "modelSelectionMinimum": 0.83,
+        "maximumFalseSelectionRate": 0.05
+      },
+      "exactExpectedProbabilities": {
+        "burden": 2.21,
+        "expectedCoverageProbability": 0.9287,
+        "expectedCorrectSelectionProbability": 0.86505,
+        "expectedFalseSelectionProbability": 0
+      },
+      "failureScale": {
+        "coverage": "not-applicable",
+        "modelSelection": "finite-24-replicate-marginal-miss"
+      },
+      "phase503GateFailurePreserved": true,
+      "countedAsSuccessfulDecisiveSelection": false
+    },
+    {
+      "rowId": "common-mode-near-singular|slow-mode|positive-near-degenerate-pair",
+      "covarianceId": "common-mode-near-singular",
+      "autocorrelationId": "slow-mode",
+      "spectralCaseId": "positive-near-degenerate-pair",
+      "spectralKind": "double",
+      "replicates": 24,
+      "primaryLocalization": "unresolved-pair-spectral-ambiguity",
+      "failedGates": [
+        "model-selection"
+      ],
+      "observed": {
+        "covered": 23,
+        "selectedCorrectly": 19,
+        "falseSelections": 0,
+        "coverageRate": 0.9583333333333334,
+        "correctSelectionRate": 0.7916666666666666,
+        "falseSelectionRate": 0
+      },
+      "frozenThresholds": {
+        "requiredCoverage": 0.8,
+        "modelSelectionMinimum": 0.83,
+        "maximumFalseSelectionRate": 0.05
+      },
+      "exactExpectedProbabilities": {
+        "burden": 2.9579999999999997,
+        "expectedCoverageProbability": 0.9062600000000001,
+        "expectedCorrectSelectionProbability": 0.79399,
+        "expectedFalseSelectionProbability": 0
+      },
+      "failureScale": {
+        "coverage": "not-applicable",
+        "modelSelection": "structural-expected-probability-failure"
+      },
+      "phase503GateFailurePreserved": true,
+      "countedAsSuccessfulDecisiveSelection": false
+    },
+    {
+      "rowId": "common-mode-near-singular|hidden-long-tail|positive-separated-pair",
+      "covarianceId": "common-mode-near-singular",
+      "autocorrelationId": "hidden-long-tail",
+      "spectralCaseId": "positive-separated-pair",
+      "spectralKind": "double",
+      "replicates": 24,
+      "primaryLocalization": "unresolved-pair-spectral-ambiguity",
+      "failedGates": [
+        "model-selection"
+      ],
+      "observed": {
+        "covered": 21,
+        "selectedCorrectly": 17,
+        "falseSelections": 0,
+        "coverageRate": 0.875,
+        "correctSelectionRate": 0.7083333333333334,
+        "falseSelectionRate": 0
+      },
+      "frozenThresholds": {
+        "requiredCoverage": 0.8,
+        "modelSelectionMinimum": 0.83,
+        "maximumFalseSelectionRate": 0.05
+      },
+      "exactExpectedProbabilities": {
+        "burden": 3.0345,
+        "expectedCoverageProbability": 0.903965,
+        "expectedCorrectSelectionProbability": 0.7867225,
+        "expectedFalseSelectionProbability": 0
+      },
+      "failureScale": {
+        "coverage": "not-applicable",
+        "modelSelection": "structural-expected-probability-failure"
+      },
+      "phase503GateFailurePreserved": true,
+      "countedAsSuccessfulDecisiveSelection": false
+    },
+    {
+      "rowId": "common-mode-near-singular|hidden-long-tail|positive-near-degenerate-pair",
+      "covarianceId": "common-mode-near-singular",
+      "autocorrelationId": "hidden-long-tail",
+      "spectralCaseId": "positive-near-degenerate-pair",
+      "spectralKind": "double",
+      "replicates": 24,
+      "primaryLocalization": "unresolved-pair-spectral-ambiguity",
+      "failedGates": [
+        "model-selection"
+      ],
+      "observed": {
+        "covered": 22,
+        "selectedCorrectly": 15,
+        "falseSelections": 0,
+        "coverageRate": 0.9166666666666666,
+        "correctSelectionRate": 0.625,
+        "falseSelectionRate": 0
+      },
+      "frozenThresholds": {
+        "requiredCoverage": 0.8,
+        "modelSelectionMinimum": 0.83,
+        "maximumFalseSelectionRate": 0.05
+      },
+      "exactExpectedProbabilities": {
+        "burden": 4.284,
+        "expectedCoverageProbability": 0.86648,
+        "expectedCorrectSelectionProbability": 0.66802,
+        "expectedFalseSelectionProbability": 0
+      },
+      "failureScale": {
+        "coverage": "not-applicable",
+        "modelSelection": "structural-expected-probability-failure"
+      },
+      "phase503GateFailurePreserved": true,
+      "countedAsSuccessfulDecisiveSelection": false
+    },
+    {
+      "rowId": "common-mode-near-singular|hidden-long-tail|positive-weak-secondary-pair",
+      "covarianceId": "common-mode-near-singular",
+      "autocorrelationId": "hidden-long-tail",
+      "spectralCaseId": "positive-weak-secondary-pair",
+      "spectralKind": "double",
+      "replicates": 24,
+      "primaryLocalization": "unresolved-pair-spectral-ambiguity",
+      "failedGates": [
+        "coverage",
+        "model-selection"
+      ],
+      "observed": {
+        "covered": 17,
+        "selectedCorrectly": 14,
+        "falseSelections": 0,
+        "coverageRate": 0.7083333333333334,
+        "correctSelectionRate": 0.5833333333333334,
+        "falseSelectionRate": 0
+      },
+      "frozenThresholds": {
+        "requiredCoverage": 0.8,
+        "modelSelectionMinimum": 0.83,
+        "maximumFalseSelectionRate": 0.05
+      },
+      "exactExpectedProbabilities": {
+        "burden": 4.641,
+        "expectedCoverageProbability": 0.85577,
+        "expectedCorrectSelectionProbability": 0.6341049999999999,
+        "expectedFalseSelectionProbability": 0
+      },
+      "failureScale": {
+        "coverage": "finite-24-replicate-marginal-miss",
+        "modelSelection": "structural-expected-probability-failure"
+      },
+      "phase503GateFailurePreserved": true,
+      "countedAsSuccessfulDecisiveSelection": false
+    }
+  ],
+  "findings": {
+    "allObservedCoverageFailuresRemainGateFailures": true,
+    "noStructuralExpectedProbabilityCoverageFailureObserved": true,
+    "falseDecisiveSingleCallsObserved": true,
+    "structuralPairAmbiguityObserved": true,
+    "finiteReplicateLabelDoesNotExcuseObservedFailure": true
+  },
+  "deterministicReadOnlyLocalization": true,
+  "thresholdTuningAfterInspection": false,
+  "recommendsTerminal": false,
+  "phase503VerdictChanged": false,
+  "phase503ArtifactMutated": false,
+  "zeroPhysicsCompute": true,
+  "hmcRun": false,
+  "noHmcRun": true,
+  "benchmarkRun": false,
+  "noBenchmarkRun": true,
+  "reprocessingRun": false,
+  "zeroNewSampling": true,
+  "samplingRun": false,
+  "samplingAuthorized": false,
+  "productionAuthorized": false,
+  "phase481PackCreated": false,
+  "phase481PackMutated": false,
+  "phase481RepairPackConstructed": false,
+  "phase458G3Satisfied": false,
+  "phase458G5Satisfied": false,
+  "phase458EvaluationAuthorized": false,
+  "o4Discharged": false,
+  "humanRulingAuthored": false,
+  "sourceContractApplicationAllowed": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256Contract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "noGevPromotion": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "a13BoundaryHeld": true,
+  "decision": "All eleven Phase503 failed rows are localized without altering the frozen negative result. The diagnosis recommends no repair terminal and grants no authority."
+}

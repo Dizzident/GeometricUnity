@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase505-a13-phase503-failure-localization-v1",
+  "frozenBeforePhase503Consumption": true,
+  "expectedPhase503SummarySha256": "9f5492b11f71cb2a62305837e68d0de6402f4d167f2199d33be31c62119e1d29",
+  "requiredPhase503Verdict": "assumption-conditional-protocol",
+  "requiredOperatingRowCount": 36,
+  "requiredFailedOperatingRowCount": 11,
+  "replicateCount": 24,
+  "probabilityRulesMirroredFromFrozenPhase503Implementation": {
+    "burden": "covariance-value * autocorrelation-value * spectral-difficulty",
+    "coverageProbability": "clamp(0.995 - 0.030 * burden, 0, 1)",
+    "correctSelectionProbability": "clamp(1.075 - 0.095 * burden, 0, 1)",
+    "singleFalseSelectionProbability": "1 - correctSelectionProbability"
+  },
+  "localizationRulesInPrecedenceOrder": [
+    "false-decisive-single-to-pair-call",
+    "unresolved-pair-spectral-ambiguity",
+    "coverage-deficiency",
+    "unclassified-failed-row"
+  ],
+  "finiteVersusStructuralRule": {
+    "finite-24-replicate-marginal-miss": "observed rate fails its frozen threshold while the corresponding exact expected probability passes it",
+    "structural-expected-probability-failure": "the corresponding exact expected probability itself fails its frozen threshold",
+    "gridStep": 0.041666666666666664
+  },
+  "pairAmbiguityPolicy": "a failed decisive selection on any double-spectrum case is unresolved pair spectral ambiguity; it is not a successful decisive call",
+  "singleFailurePolicy": "a failed selection on a single-spectrum case is a false decisive single-to-pair call",
+  "coverageFailurePolicy": "every failed coverage gate is retained even when another failure has higher localization precedence",
+  "phase503NegativeResultMustRemain": true,
+  "thresholdTuningAllowed": false,
+  "terminalRecommendationAllowed": false,
+  "samplingOrReprocessingAllowed": false,
+  "phase481PackCreationAllowed": false,
+  "productionAuthorizationAllowed": false,
+  "physicalClaimAllowed": false
+}

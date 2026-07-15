@@ -1,0 +1,202 @@
+{
+  "phaseId": "phase507-phase456-selective-inference-pack-readiness-adjudicator",
+  "terminalStatus": "phase456-selective-inference-pack-readiness-adjudicator-selective-inference-protocol-ready-for-independent-phase481-pack-construction",
+  "verdictKind": "selective-inference-protocol-ready-for-independent-phase481-pack-construction",
+  "readinessClassification": "selective-inference-protocol-ready-for-independent-phase481-pack-construction",
+  "readinessTaxonomy": [
+    "invalid-precursor",
+    "protocol-validation-failure",
+    "assumption-conditional-repair",
+    "selective-inference-protocol-ready-for-independent-phase481-pack-construction",
+    "unresolved"
+  ],
+  "inputsValid": true,
+  "applicationSubjectKind": "phase456-a13-selective-inference-pack-readiness-adjudicator",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A13",
+  "explorationOnly": true,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "zeroPhysicsCompute": true,
+  "zeroNewSampling": true,
+  "noHmcRun": true,
+  "noBenchmarkRun": true,
+  "noReprocessingRun": true,
+  "frozenBeforePrecursorConsumption": true,
+  "contractBinding": {
+    "path": "studies/phase507_phase456_selective_inference_pack_readiness_adjudicator_001/preregistration/phase507_selective_inference_readiness_contract_v1.json",
+    "byteSha256": "fd23284a77ab63596c3cc71952c365a1ebdf4be69c85d2117cc15bdab8c3a523",
+    "valid": true
+  },
+  "precursorBindings": {
+    "phase503": {
+      "path": "studies/phase503_phase456_adaptive_calibration_protocol_validation_001/output/phase456_adaptive_calibration_protocol_validation_summary.json",
+      "byteSha256": "9f5492b11f71cb2a62305837e68d0de6402f4d167f2199d33be31c62119e1d29",
+      "valid": true,
+      "status": "exact",
+      "classification": "assumption-conditional-protocol",
+      "wholeFrozenMenuPassed": false
+    },
+    "phase505": {
+      "path": "studies/phase505_phase503_frozen_failure_localization_001/output/phase503_frozen_failure_localization_summary.json",
+      "byteSha256": "956beedf3cb166f92529fa3f577962e905a88e715cff7be132a3661b6a3e5a61",
+      "valid": true,
+      "status": "exact",
+      "classification": "complete-negative-preserved",
+      "wholeFrozenMenuPassed": false
+    },
+    "phase506": {
+      "path": "studies/phase506_phase456_selective_inference_protocol_validation_001/output/phase456_selective_inference_protocol_validation_summary.json",
+      "byteSha256": "d2ac471d5ef36c1351d680bef6d00b34b4fa846144c7e0d7d42f3fb9801046cd",
+      "valid": true,
+      "status": "exact",
+      "classification": "selective-protocol-validation-passed",
+      "wholeFrozenMenuPassed": true
+    }
+  },
+  "precedenceBattery": {
+    "cases": [
+      {
+        "caseId": "invalid-dominates-ready",
+        "expected": "invalid-precursor",
+        "actual": "invalid-precursor",
+        "passed": true
+      },
+      {
+        "caseId": "phase503-baseline-drift-fails-closed",
+        "expected": "invalid-precursor",
+        "actual": "invalid-precursor",
+        "passed": true
+      },
+      {
+        "caseId": "incomplete-localization-fails-closed",
+        "expected": "invalid-precursor",
+        "actual": "invalid-precursor",
+        "passed": true
+      },
+      {
+        "caseId": "contradictory-failed-and-ready-fails-closed",
+        "expected": "invalid-precursor",
+        "actual": "invalid-precursor",
+        "passed": true
+      },
+      {
+        "caseId": "contradictory-conditional-and-ready-fails-closed",
+        "expected": "invalid-precursor",
+        "actual": "invalid-precursor",
+        "passed": true
+      },
+      {
+        "caseId": "protocol-validation-failure",
+        "expected": "protocol-validation-failure",
+        "actual": "protocol-validation-failure",
+        "passed": true
+      },
+      {
+        "caseId": "assumption-conditional-repair",
+        "expected": "assumption-conditional-repair",
+        "actual": "assumption-conditional-repair",
+        "passed": true
+      },
+      {
+        "caseId": "complete-menu-ready",
+        "expected": "selective-inference-protocol-ready-for-independent-phase481-pack-construction",
+        "actual": "selective-inference-protocol-ready-for-independent-phase481-pack-construction",
+        "passed": true
+      },
+      {
+        "caseId": "valid-unresolved",
+        "expected": "unresolved",
+        "actual": "unresolved",
+        "passed": true
+      }
+    ],
+    "caseCount": 9,
+    "allCasesPassed": true,
+    "invalidCasesPassed": true,
+    "failureCasePassed": true,
+    "conditionalCasePassed": true,
+    "readyCasePassed": true,
+    "unresolvedCasePassed": true
+  },
+  "evidence": {
+    "phase503BaselinePreserved": true,
+    "failureLocalizationComplete": true,
+    "protocolValidationFailed": false,
+    "assumptionConditionalRepair": false,
+    "completeMenuPassed": true,
+    "contradictoryValidationState": false
+  },
+  "precedenceTrace": [
+    {
+      "order": 1,
+      "classification": "invalid-precursor",
+      "selected": false
+    },
+    {
+      "order": 2,
+      "classification": "protocol-validation-failure",
+      "selected": false
+    },
+    {
+      "order": 3,
+      "classification": "assumption-conditional-repair",
+      "selected": false
+    },
+    {
+      "order": 4,
+      "classification": "selective-inference-protocol-ready-for-independent-phase481-pack-construction",
+      "selected": true
+    },
+    {
+      "order": 5,
+      "classification": "unresolved",
+      "selected": false
+    }
+  ],
+  "phase503NegativeArtifactPreserved": true,
+  "phase503ThresholdsRetuned": false,
+  "ambiguousCaseCountedAsSuccessfulDecisiveSelection": false,
+  "writtenPermission": {
+    "providedByUser": true,
+    "providedDate": "2026-07-15",
+    "permissionElementPresent": true,
+    "isPhase507LaunchAuthority": false,
+    "doesNotBypassIndependentPackOrRefuseToRunGate": true
+  },
+  "readyResultMayInformLaterIndependentPhase481PackConstruction": true,
+  "readyResultIsPlanningEvidenceOnly": true,
+  "laterPhase481PackMustIndependentlyFreeze": [
+    "exact-default-configuration-and-implementation-fingerprints",
+    "storage-and-chain-topology",
+    "rng-policy",
+    "convergence-effective-sample-size-and-cost-refusal-rules",
+    "selective-inference-truth-set-and-abstention-scoring-rules",
+    "still-binding-upstream-authorizations"
+  ],
+  "phase481PackCreated": false,
+  "phase481PackMutated": false,
+  "phase481RepairPackConstructed": false,
+  "samplingRun": false,
+  "reprocessingRun": false,
+  "samplingAuthorized": false,
+  "productionAuthorized": false,
+  "launchAuthorized": false,
+  "phase456Reinterpreted": false,
+  "phase458G3Satisfied": false,
+  "phase458G5Satisfied": false,
+  "phase458EvaluationAuthorized": false,
+  "o4Discharged": false,
+  "humanRulingAuthored": false,
+  "sourceContractApplicationAllowed": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256Contract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "noGevPromotion": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "a13BoundaryHeld": true,
+  "decision": "The complete frozen menu supports later independent Phase481 pack construction. This result is planning evidence only and cannot launch sampling or reprocessing."
+}

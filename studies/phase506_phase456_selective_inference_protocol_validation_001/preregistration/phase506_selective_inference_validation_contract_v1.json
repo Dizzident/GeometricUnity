@@ -1,0 +1,39 @@
+{
+  "contractId": "phase506-a13-selective-inference-validation-contract-v1",
+  "frozenBeforePhase505Read": true,
+  "replicatesPerRow": 32,
+  "seeds": [506003, 506021, 506047, 506063, 506071, 506087, 506101, 506113, 506119, 506131, 506147, 506171, 506189, 506203, 506221, 506239, 506261, 506269, 506281, 506303, 506329, 506333, 506347, 506357, 506381, 506393, 506417, 506431, 506447, 506459, 506477, 506489],
+  "covarianceFamilies": [
+    { "id": "toeplitz-moderate", "burden": 1.0 },
+    { "id": "heteroscedastic-long-range", "burden": 1.35 },
+    { "id": "common-mode-near-singular", "burden": 1.7 }
+  ],
+  "autocorrelationFamilies": [
+    { "id": "declared-ar1", "penalty": 1.0 },
+    { "id": "slow-mode", "penalty": 1.45 },
+    { "id": "hidden-long-tail", "penalty": 2.1 }
+  ],
+  "spectralCases": [
+    { "id": "identifiable-single", "truth": "single", "signal": -2.0, "decisiveRequired": true },
+    { "id": "identifiable-separated-pair", "truth": "double", "signal": 2.0, "decisiveRequired": true },
+    { "id": "near-degenerate-pair", "truth": "double", "signal": 0.35, "decisiveRequired": false },
+    { "id": "weak-secondary-pair", "truth": "double", "signal": 0.2, "decisiveRequired": false }
+  ],
+  "decisionRule": {
+    "singleUpperScore": -0.75,
+    "doubleLowerScore": 0.75,
+    "betweenThresholdOutputSet": ["single", "double"],
+    "unresolvedCountsAsDecisive": false
+  },
+  "truthSetCoverageMinimum": 1.0,
+  "decisiveCorrectRateMinimumForIdentifiableCases": 0.9,
+  "maximumWrongDecisiveCalls": 0,
+  "maximumSingleFalseSelections": 0,
+  "invalidControls": ["signed-amplitude", "nonfinite-observation", "rank-deficient-covariance"],
+  "minimumConvergenceEssDecisionAccuracy": 1.0,
+  "minimumEscalationDecisionAccuracy": 1.0,
+  "maximumNormalizedCost": 1.0,
+  "wholeMenuRequired": true,
+  "conditionalSubsetCannotPassCompleteGate": true,
+  "invalidPolicy": "missing-or-mismatched-precursor, malformed-menu, wrong-decisive-call, false-selection, invalid-control-acceptance, nonfinite-statistic, missing-row, or post-inspection-threshold-change fails closed"
+}

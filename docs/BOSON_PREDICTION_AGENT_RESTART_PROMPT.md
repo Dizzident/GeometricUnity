@@ -65,7 +65,7 @@ input is invalid or drifted. G6 projects 1.5044386598 CPU-weeks under its
 committed n=3..6 n^4-volume model and therefore selects the CPU route; that is
 scheduling eligibility only and authorizes no launch. Phase471 remains open
 L5/L6/L8 with L7 withheld. The O4 engagement remains the human critical path.
-Phase101 stays blocked, Phase202 is 292/3 after the A12 checkpoint, the
+Phase101 stays blocked, Phase202 is 295/3 after the A13 checkpoint, the
 missing-field counts remain 15/14, and `promotedPhysicalMassClaimCount=0`.
 
 O4 INFRASTRUCTURE (2026-07-15, Phase477): the exact coverage register is
@@ -208,8 +208,27 @@ Phase504 exact-binds the chain and selects that conditional terminal by frozen
 precedence; the permission element cannot override it, no Phase481 pack is
 created, and no sampling or reprocessing is launched. Phase458 G3/G5 and O4
 remain closed, external review remains required, and no source-contract or
-physical-unit authority follows. Registry 502-504 is allocated; 505+ remains
-unassigned. Phase202 is 292/3 and `promotedPhysicalMassClaimCount=0`.
+physical-unit authority follows. Registry 502-504 is allocated; its former
+505+ frontier is superseded by Amendment A13 below. Phase202 is 292/3 and
+`promotedPhysicalMassClaimCount=0`.
+
+PHASE456 SELECTIVE-INFERENCE REPAIR (2026-07-15, Amendment A13;
+Phases505-507): Phase505 exact-binds the preserved Phase503 negative and
+accounts for all eleven failed rows. Two are coverage-only misses, two are
+false decisive single-to-pair calls, and seven are pair ambiguities; finite-
+replicate labels never excuse the original failures. Phase506 prospectively
+freezes a set-valued rule: identifiable controls require decisive calls while
+near-degenerate and weak-secondary cases may be explicitly unresolved. Its
+complete 36-row synthetic menu passes with 576 decisive correct calls, 576
+honestly unresolved calls, and zero wrong decisive calls. Phase507 passes its
+nine-case precedence battery and records
+`selective-inference-protocol-ready-for-independent-phase481-pack-construction`.
+This is planning evidence only. The user's existing permission element is
+present, but no Phase481 pack is created and no sampling or reprocessing is
+launched. Phase480 remains awaiting a genuine signed external memo, O4 and
+Phase458 G3/G5 remain closed, and still-binding upstream authorization prevents
+Phase481 implementation or launch. Registry 505-507 is allocated; 508+ remains
+unassigned. Phase202 is 295/3 and `promotedPhysicalMassClaimCount=0`.
 
 PHASE482 DETERMINISTIC THEOREM SCOUT (2026-07-15, Amendment A9): Amendment A9
 narrowly permits Phase482's proof computation while Phase481 stays at its
@@ -1071,7 +1090,7 @@ hashing, a pre-pinned reviewer registry, and real Ed25519 verification are
 required as one conjunction. No genuine external memo or reviewer key is
 present, so no ruling is consumed, normalized rulings are empty, and the hold
 remains closed.
-Registry 477-504 is allocated; 505+ remains unassigned.
+Registry 477-507 is allocated; 508+ remains unassigned.
 
 WAVE-2 C-LINEAGE MACHINE RESULTS (2026-07-14, incremental validation green:
 82 ran / 260 skipped, integrity verified): PHASE467 reconstructs the exact
