@@ -1,0 +1,15 @@
+{
+  "authorizationKind": "explicit-user-renewed-risk-acceptance",
+  "recordedDate": "2026-07-15",
+  "authority": "user",
+  "statement": "I explicitly renew risk acceptance for the Phase456 production HMC under its committed preregistration pack and default configuration. I understand that the O4 conventions remain physicist-review-pending, that results are workbench-relative and in lattice units only, and that this authorization permits no physical mass or GeV claim",
+  "authorizesPhase456ProductionHmc": true,
+  "committedPreregistrationPackRequired": true,
+  "committedDefaultConfigurationRequired": true,
+  "o4PhysicistRuling": false,
+  "physicistReviewPending": true,
+  "scaleIsWorkbenchRelativeCandidateOnly": true,
+  "latticeUnitsOnly": true,
+  "noGevPromotion": true,
+  "promotedPhysicalMassClaimCount": 0
+}

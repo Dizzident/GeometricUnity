@@ -1,6 +1,7 @@
 {
   "phaseId": "phase452-scalar-channel-spectroscopy-probe",
-  "generatedAt": "2026-07-12T09:07:13.5610256+00:00",
+  "generatedAt": "2026-07-15T14:54:29.1707695+00:00",
+  "phase456Run": null,
   "terminalStatus": "scalar-channel-spectroscopy-probe-passed-scalar-channel-gapped-measured-workbench-relative-no-gev",
   "scalarChannelSpectroscopyProbePassed": true,
   "phase448PrecursorPassed": true,
@@ -205,7 +206,8 @@
             1957.8484482236672,
             180.21094383765012,
             180.21094383765012
-          ]
+          ],
+          "phase456ExactGaussianControl": null
         },
         {
           "member": "sd2-id0/c0.5",
@@ -221,7 +223,8 @@
             1854.2794174635783,
             184.1355034513399,
             184.13550345157273
-          ]
+          ],
+          "phase456ExactGaussianControl": null
         }
       ],
       "columns": [
@@ -290,7 +293,8 @@
               "sigma": 0.18463902186055506
             }
           ],
-          "msPerTrajectory": 270.22711351875
+          "phase456": null,
+          "msPerTrajectory": 392.094079975
         },
         {
           "member": "identity",
@@ -357,7 +361,8 @@
               "sigma": 0.1843477435442834
             }
           ],
-          "msPerTrajectory": 270.54803171000003
+          "phase456": null,
+          "msPerTrajectory": 437.50140790999995
         },
         {
           "member": "sd2-id0/c0.5",
@@ -424,7 +429,8 @@
               "sigma": 0.07007825117627481
             }
           ],
-          "msPerTrajectory": 420.82107493125
+          "phase456": null,
+          "msPerTrajectory": 517.20525679375
         },
         {
           "member": "sd2-id0/c0.5",
@@ -491,7 +497,8 @@
               "sigma": 0.08863910275257231
             }
           ],
-          "msPerTrajectory": 431.32210224
+          "phase456": null,
+          "msPerTrajectory": 579.21284409
         },
         {
           "member": "sd2-id0/c0.5",
@@ -558,7 +565,8 @@
               "sigma": 0.17626534272056854
             }
           ],
-          "msPerTrajectory": 270.34012315
+          "phase456": null,
+          "msPerTrajectory": 437.98563343
         }
       ],
       "freeFieldGates": [
@@ -637,7 +645,7 @@
     "spinorUsedAsShiabCarrierNotFiber": true,
     "draft14dObserverseNotRealized": true
   },
-  "runtimeSeconds": 7593.7873306,
+  "runtimeSeconds": 9638.6318722,
   "physicalCouplingProvided": false,
   "routeProvidesPhysicalEffectiveActionHessian": false,
   "routeProvidesVevOrSourceScaleLineage": false,

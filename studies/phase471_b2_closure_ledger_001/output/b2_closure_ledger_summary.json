@@ -1,6 +1,6 @@
 {
   "phaseId": "phase471-b2-closure-ledger",
-  "generatedAt": "2026-07-12T12:47:16.5265174+00:00",
+  "generatedAt": "2026-07-15T15:01:40.9579104+00:00",
   "terminalStatus": "b2-closure-ledger-closure-not-decidable-open-limbs-named",
   "interimTerminal": "closure-not-decidable",
   "verdictKind": "closure-not-decidable",
@@ -70,7 +70,7 @@
       ],
       "status": "open",
       "outcome": "none",
-      "committedTerminalStrings": "consolidated-n4-launch-awaiting-pack"
+      "committedTerminalStrings": "consolidated-n4-launch-production-analysis-invalid"
     },
     {
       "id": "L7",
@@ -81,7 +81,7 @@
       ],
       "status": "withheld",
       "outcome": "none",
-      "committedTerminalStrings": "upsilon-portal-stage-a-awaiting-stage-a ; ws3-vev-completion-contract-schema-committed"
+      "committedTerminalStrings": "upsilon-portal-stage-a-stage-a-certificates-committed ; ws3-vev-completion-contract-schema-committed"
     },
     {
       "id": "L8",
@@ -181,5 +181,5 @@
     "physicistReviewPending = true is carried explicitly; promotedPhysicalMassClaimCount remains 0."
   ],
   "decision": "B2 closure theorem-of-record ledger (plan item 14). Verdict: closure-not-decidable. Open/not-closed limbs: [L5, L6, L8]; withheld limbs: [L7]. The strong negative terminal is UNREACHABLE while any limb is open/held/withheld; proved by construction in the structural-incapability battery (forged near-miss with negative-looking strings on not-closed limbs still yields closure-not-decidable; a withheld limb can at most produce closed-negative-except-portal-unprobed with a carve-out). This is a program-state record, not a physics claim; nothing is promoted (promotedPhysicalMassClaimCount remains 0).",
-  "runtimeSeconds": 0.0277089
+  "runtimeSeconds": 0.0249496
 }

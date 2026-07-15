@@ -7,8 +7,8 @@ using System.Text.Json;
 //
 // The A4 + A5 Stage-A PRE-REGISTRATION PACK now lives, hash-pinned, in this phase's
 // preregistration/ directory. This program is the pack REFUSE-TO-RUN GATE and the standing
-// claim boundary. It performs NO physics computation and launches NO sampling: production
-// (the ~6-16 h HMC) is deliberately NOT implemented yet. What this program does:
+// claim boundary and deterministic consumer of the separately launched, environment-clean
+// production HMC. The generator path NEVER launches the long sampler. What this program does:
 //
 //   * absent pack            -> emits the interim terminal "awaiting-pack" (still reachable);
 //   * committed pack, hash OK -> advances to "pack-committed-awaiting-gates";
@@ -20,7 +20,8 @@ using System.Text.Json;
 // echoed here as MANDATORY; the dispersion (k_min = 2*pi/4) and non-identity channel both
 // require it.
 //
-// MANDATORY FRAMING. Zero physics compute; nothing measured, filled, or promoted;
+// MANDATORY FRAMING. Production measurements remain workbench-relative lattice quantities;
+// nothing is filled or promoted;
 // promotedPhysicalMassClaimCount remains 0. physicistReviewPending is carried explicitly.
 // The pack is a pre-registration artifact only — no verdict is claimed by this program.
 
@@ -30,7 +31,15 @@ const string ApplicationSubjectKind = "consolidated-n4-launch";
 const string PlanSection = "WAVE2_ACTION_PLAN_2026-07-12 item 9";
 const string DefaultOutputDir = "studies/phase456_consolidated_n4_launch_001/output";
 const string PackDir = "studies/phase456_consolidated_n4_launch_001/preregistration";
+const string AuthorizationPath = "studies/phase456_consolidated_n4_launch_001/production_authorization.json";
+const string DefaultProductionSummaryPath = "studies/phase456_consolidated_n4_launch_001/production/phase452_n4/scalar_channel_spectroscopy_probe_summary.json";
 const string TerminalPrefix = "consolidated-n4-launch-";
+const string PinnedAuthorizationSha256 = "b097b0504c6eafdf79523ef7913c69ab37fe086411334fea7e91c9fc9be70642";
+
+bool analysisInputOverride = args.Length == 2 && args[0] == "--analysis-input";
+if (args.Length != 0 && !analysisInputOverride)
+    throw new InvalidOperationException("usage: Phase456ConsolidatedN4Launch [--analysis-input <test-artifact-path>]");
+string productionSummaryPath = analysisInputOverride ? args[1] : DefaultProductionSummaryPath;
 
 // --- MANDATORY hash-refuse-to-run gate: pinned committed pack hash --------------------
 // SHA-256 over the concatenation (listed order, byte-exact contents) of the pinned pack
@@ -44,7 +53,7 @@ string[] packFiles =
 };
 
 // --- standing claim boundary (verbatim across the program) ---
-const bool awaitingProductionImplementation = true;      // the ~6-16 h HMC is not implemented yet
+const bool productionSamplingImplemented = true;
 const bool targetBlindConstruction = true;
 const bool physicalTargetsConsultedForConstruction = false;
 const bool physicistReviewPending = true;
@@ -65,6 +74,7 @@ const bool routeProvidesPoleExtractionAndGeVNormalization = false;
 const bool routeCompletesBosonPredictions = false;
 const bool routePromotesWzMasses = false;
 const bool routePromotesHiggsMass = false;
+const int promotedPhysicalMassClaimCount = 0;
 
 bool claimBoundaryHeld =
     targetBlindConstruction && !physicalTargetsConsultedForConstruction &&
@@ -92,6 +102,41 @@ if (packPresent)
     packHashMatches = string.Equals(computedPackSha256, PinnedPackSha256, StringComparison.Ordinal);
 }
 
+// --- written-risk-renewal gate --------------------------------------------------------
+bool authorizationPresent = File.Exists(AuthorizationPath);
+string? computedAuthorizationSha256 = authorizationPresent
+    ? Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(AuthorizationPath))).ToLowerInvariant()
+    : null;
+bool authorizationHashMatches = computedAuthorizationSha256 == PinnedAuthorizationSha256;
+bool explicitUserRiskRenewalValid = false;
+if (authorizationPresent && authorizationHashMatches)
+{
+    using var authorization = JsonDocument.Parse(File.ReadAllText(AuthorizationPath));
+    var a = authorization.RootElement;
+    explicitUserRiskRenewalValid =
+        a.GetProperty("authorizationKind").GetString() == "explicit-user-renewed-risk-acceptance" &&
+        a.GetProperty("authority").GetString() == "user" &&
+        a.GetProperty("authorizesPhase456ProductionHmc").GetBoolean() &&
+        a.GetProperty("committedPreregistrationPackRequired").GetBoolean() &&
+        a.GetProperty("committedDefaultConfigurationRequired").GetBoolean() &&
+        !a.GetProperty("o4PhysicistRuling").GetBoolean() &&
+        a.GetProperty("physicistReviewPending").GetBoolean() &&
+        a.GetProperty("scaleIsWorkbenchRelativeCandidateOnly").GetBoolean() &&
+        a.GetProperty("latticeUnitsOnly").GetBoolean() &&
+        a.GetProperty("noGevPromotion").GetBoolean() &&
+        a.GetProperty("promotedPhysicalMassClaimCount").GetInt32() == 0;
+}
+
+// The long sampler is launched manually and tracked outside the generator. This consumer
+// reads an artifact only after the atomic final write exists; a partial run has no summary.
+bool productionArtifactPresent = File.Exists(productionSummaryPath);
+Phase456ProductionAnalysis? productionAnalysis = null;
+if (productionArtifactPresent && packHashMatches && explicitUserRiskRenewalValid)
+{
+    using var production = JsonDocument.Parse(File.ReadAllText(productionSummaryPath));
+    productionAnalysis = Phase456ProductionAnalyzer.Evaluate(production.RootElement);
+}
+
 // terminal taxonomy (pre-registered):
 //   awaiting-pack                     -- interim green; pack absent
 //   pack-committed-awaiting-gates     -- pack present + hash matches; awaiting the hard gates + O4
@@ -104,6 +149,18 @@ if (!packPresent)
     interimTerminal = "awaiting-pack";
     verdictKind = "awaiting-pack";
     refuseToRun = false;
+}
+else if (packHashMatches && productionAnalysis is not null)
+{
+    interimTerminal = productionAnalysis.VerdictKind;
+    verdictKind = productionAnalysis.VerdictKind;
+    refuseToRun = false;
+}
+else if (packHashMatches && productionArtifactPresent && !explicitUserRiskRenewalValid)
+{
+    interimTerminal = "production-artifact-refused-authorization-invalid";
+    verdictKind = "production-artifact-refused-authorization-invalid";
+    refuseToRun = true;
 }
 else if (packHashMatches)
 {
@@ -118,9 +175,21 @@ else
     refuseToRun = true;
 }
 
-// The phase validates green (no silent-promotion path) in the two non-refuse states; the
-// mismatch state is a fail-closed BLOCK. Production sampling is not implemented in any state.
-bool phase456GateGreen = claimBoundaryHeld && !refuseToRun;
+// The phase integrity gate is green when the pack/authorization/claim firewall either records
+// an input-valid analysis or records the exact fail-closed invalid-analysis terminal. A red
+// scientific/control outcome never turns this infrastructure gate into a promotion path.
+bool productionArtifactConsumed = productionAnalysis is not null;
+bool awaitingProductionRun = packHashMatches && explicitUserRiskRenewalValid && !productionArtifactPresent;
+bool productionAnalysisRecordedFailClosed = productionAnalysis is null || productionAnalysis.InputShapeValid ||
+    (productionAnalysis.VerdictKind == "production-analysis-invalid" &&
+     productionAnalysis.ProductionDefaultsVerified && productionAnalysis.PackHashVerified &&
+     productionAnalysis.PerSiteStorageVerified && productionAnalysis.ExactGaussianControlsVerified &&
+     productionAnalysis.RowCount == 5 && productionAnalysis.Rows.Length == 5 &&
+     productionAnalysis.Rows.Any(row => row.Terminal == "invalid") &&
+     productionAnalysis.InputErrors.Length > 0 && !productionAnalysis.MandatoryN5Escalation &&
+     !productionAnalysis.G3Motivated && productionAnalysis.FamilyWiseSigmaThreshold is null &&
+     productionAnalysis.AppliedSigmaThreshold is null);
+bool phase456GateGreen = claimBoundaryHeld && !refuseToRun && productionAnalysisRecordedFailClosed;
 string terminalStatus = TerminalPrefix + interimTerminal;
 
 string decision = interimTerminal switch
@@ -128,14 +197,17 @@ string decision = interimTerminal switch
     "awaiting-pack" =>
         "Consolidated n=4 launch (plan item 9): the pre-registration pack is not present; emitting the reachable interim terminal awaiting-pack. No sampling is run and nothing is promoted.",
     "pack-committed-awaiting-gates" =>
-        "Consolidated n=4 launch (plan item 9): the A4+A5 Stage-A pre-registration pack is committed and its SHA-256 matches the pinned constant, so the refuse-to-run gate is satisfied. The phase now awaits the remaining hard gates (phase455 terminal, O4 memo or user-renewed risk acceptance) before the ~6-16 h production HMC, which is deliberately not yet implemented. Per-site correlator storage is MANDATORY (pinned in the pack). Nothing is measured or promoted; promotedPhysicalMassClaimCount remains 0.",
+        explicitUserRiskRenewalValid
+            ? "Consolidated n=4 launch (plan item 9): the pack hash and explicit user-renewed risk acceptance are valid. The separately tracked environment-clean production HMC is authorized and either running or awaiting its atomic result artifact. The generator never launches it. Nothing is promoted; promotedPhysicalMassClaimCount remains 0."
+            : "Consolidated n=4 launch (plan item 9): the A4+A5 Stage-A pack hash is valid, but neither an O4 memo nor a valid explicit user risk renewal is available. Production remains forbidden. Nothing is promoted.",
     _ =>
-        "Consolidated n=4 launch (plan item 9): the committed pre-registration pack hash does NOT match the pinned constant. This is the mandatory refuse-to-run condition — production must never sample against an unpinned or altered pack. Fail-closed BLOCK; regenerate/repin the pack before proceeding.",
+        productionAnalysis is not null ? productionAnalysis.Decision
+        : "Consolidated n=4 launch (plan item 9): the committed pre-registration pack hash does NOT match the pinned constant. This is the mandatory refuse-to-run condition — production must never sample against an unpinned or altered pack. Fail-closed BLOCK; regenerate/repin the pack before proceeding.",
 };
 
 string targetBlindConstructionHash = Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(
     string.Join("|", ApplicationSubjectKind, interimTerminal, PlanSection,
-        "pack refuse-to-run gate; zero physics compute; standing claim boundary; production HMC not implemented")))).ToLowerInvariant();
+        "pack refuse-to-run gate; environment-clean production consumer; standing claim boundary; lattice units only; zero physical-mass claims")))).ToLowerInvariant();
 
 Directory.CreateDirectory(DefaultOutputDir);
 double runtimeSeconds = stopwatch.Elapsed.TotalSeconds;
@@ -151,9 +223,27 @@ var result = new
     planSection = PlanSection,
     phase456GateGreen,
     claimBoundaryHeld,
-    zeroPhysicsCompute = true,
-    productionSamplingImplemented = false,
-    awaitingProductionImplementation,
+    zeroPhysicsCompute = !productionArtifactConsumed,
+    productionSamplingImplemented,
+    awaitingProductionImplementation = false,
+    awaitingProductionRun,
+    productionArtifactPresent,
+    productionArtifactConsumed,
+    productionAnalysisRecordedFailClosed,
+    productionSummaryPath,
+    analysisInputOverride,
+    productionAnalysis,
+    productionAuthorization = new
+    {
+        authorizationPath = AuthorizationPath,
+        authorizationPresent,
+        pinnedAuthorizationSha256 = PinnedAuthorizationSha256,
+        computedAuthorizationSha256,
+        authorizationHashMatches,
+        explicitUserRiskRenewalValid,
+        o4PhysicistRuling = false,
+        physicistReviewPending,
+    },
     packGate = new
     {
         packDir = PackDir,
@@ -182,6 +272,7 @@ var result = new
     limbConsumed = "L6 (closes at probed-volume scope on T1 with a Gaussian-null Binder column); L8 at two-volume strength",
     scaleIsWorkbenchRelativeCandidateOnly,
     noGevPromotion,
+    promotedPhysicalMassClaimCount,
     physicistReviewPending,
     targetBlindConstruction,
     physicalTargetsConsultedForConstruction,
@@ -211,12 +302,14 @@ var result = new
     recordedBoundary = new
     {
         physicistReviewPending,
-        awaitingProductionImplementation,
+        awaitingProductionImplementation = false,
+        explicitUserRiskRenewalValid,
+        o4PhysicistRuling = false,
     },
     explicitCandidateOnlyNonclaims = new[]
     {
-        "The pre-registration pack fixes the A4 kernels and A5 verdict and the analysis thresholds BEFORE any physics number is computed; it measures nothing and promotes nothing.",
-        "The interim terminal is a program-state marker, not a scientific verdict; no measurement, elimination, or promotion is claimed.",
+        "The pre-registration pack fixed the A4 kernels, A5 verdict, thresholds, power rule, and mechanical window aggregation before the production measurements; the consumer never changes that pack.",
+        "Every reported a*m, dispersion residual, Binder cumulant, and susceptibility is workbench-relative lattice structure data only; none is a physical mass or GeV quantity.",
         "physicistReviewPending = true is carried explicitly; no contract field is filled and nothing is promoted (promotedPhysicalMassClaimCount remains 0).",
         "A4 group-theory content (irreps, projector coefficients) is exact rational structure of the reduced Spin(4)-slice lattice symmetry; it is not a physical spectrum.",
     },
@@ -233,4 +326,5 @@ Console.WriteLine($"interimTerminal={interimTerminal} packPresent={packPresent} 
 Console.WriteLine($"pinnedPackSha256={PinnedPackSha256}");
 Console.WriteLine($"computedPackSha256={computedPackSha256 ?? "(pack absent)"}");
 Console.WriteLine($"phase456GateGreen={phase456GateGreen} claimBoundaryHeld={claimBoundaryHeld}");
+Console.WriteLine($"authorizationValid={explicitUserRiskRenewalValid} productionArtifactPresent={productionArtifactPresent} consumed={productionArtifactConsumed}");
 Console.WriteLine($"runtimeSeconds={runtimeSeconds:F3}");

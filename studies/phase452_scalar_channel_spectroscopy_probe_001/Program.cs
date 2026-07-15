@@ -109,21 +109,64 @@ const string ReviewBoardSourcePath = "docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md
 const string RestartPromptSourcePath = "docs/BOSON_PREDICTION_AGENT_RESTART_PROMPT.md";
 const string ApplicationSubjectKind = "scalar-channel-spectroscopy-probe";
 const string TerminalPrefix = "scalar-channel-spectroscopy-probe-";
+const string Phase456ModeArg = "--phase456-production";
+const string Phase456SmokeArg = "--phase456-smoke";
+const string Phase456PackPath = "studies/phase456_consolidated_n4_launch_001/preregistration/a4_symmetry_irrep_projectors.json";
+const string Phase456PackDir = "studies/phase456_consolidated_n4_launch_001/preregistration";
+const string Phase456PinnedPackSha256 = "40fd3c3488f94d18f50961e85d0bb3a3eabd1a31a071b61149875b8cf3d437aa";
+const string Phase456OutputDir = "studies/phase456_consolidated_n4_launch_001/production/phase452_n4";
+
+bool phase456ProductionMode = args.Length == 1 && args[0] == Phase456ModeArg;
+bool phase456SmokeMode = args.Length == 1 && args[0] == Phase456SmokeArg;
+bool phase456Mode = phase456ProductionMode || phase456SmokeMode;
+if (args.Length != 0 && !phase456Mode)
+    throw new InvalidOperationException($"unknown argument(s): {string.Join(' ', args)}");
+if (phase456Mode)
+{
+    string[] forbiddenOverrides = Environment.GetEnvironmentVariables().Keys.Cast<object>()
+        .Select(x => x.ToString() ?? string.Empty)
+        .Where(x => x.StartsWith("PHASE", StringComparison.Ordinal))
+        .OrderBy(x => x, StringComparer.Ordinal)
+        .ToArray();
+    if (forbiddenOverrides.Length != 0)
+        throw new InvalidOperationException("Phase456 production must be env-clean; forbidden overrides: " + string.Join(", ", forbiddenOverrides));
+}
 
 // --- Configuration (production defaults; env overrides). --------------------
-int[] torusSizes = (Environment.GetEnvironmentVariable("PHASE452_TORI") ?? "3")
-    .Split(',').Select(int.Parse).ToArray();
-int trajProd = int.TryParse(Environment.GetEnvironmentVariable("PHASE452_TRAJ"), out int tp) ? tp : 16000;
-int trajCtrl = int.TryParse(Environment.GetEnvironmentVariable("PHASE452_CTRL_TRAJ"), out int tc) ? tc : 10000;
-int warmTraj = int.TryParse(Environment.GetEnvironmentVariable("PHASE452_WARM"), out int tw) ? tw : 2000;
-int nLeap = int.TryParse(Environment.GetEnvironmentVariable("PHASE452_NLEAP"), out int nl) ? nl : 12;
-int gaussSimSamples = int.TryParse(Environment.GetEnvironmentVariable("PHASE452_GAUSS_SIM"), out int gs) ? gs : 4000;
-double betaProd = double.TryParse(Environment.GetEnvironmentVariable("PHASE452_BETA"), out double bp) ? bp : 1.0;
-double betaMid = double.TryParse(Environment.GetEnvironmentVariable("PHASE452_BETA_MID"), out double bm) ? bm : 4.0;
-double betaFree = double.TryParse(Environment.GetEnvironmentVariable("PHASE452_BETA_FREE"), out double bf) ? bf : 400.0;
-var outputDir = Environment.GetEnvironmentVariable("PHASE452_OUTPUT_DIR") ?? DefaultOutputDir;
+int[] torusSizes = phase456Mode
+    ? new[] { 4 }
+    : (Environment.GetEnvironmentVariable("PHASE452_TORI") ?? "3").Split(',').Select(int.Parse).ToArray();
+int trajProd = phase456ProductionMode ? 16000 : phase456SmokeMode ? 8 : int.TryParse(Environment.GetEnvironmentVariable("PHASE452_TRAJ"), out int tp) ? tp : 16000;
+int trajCtrl = phase456ProductionMode ? 10000 : phase456SmokeMode ? 8 : int.TryParse(Environment.GetEnvironmentVariable("PHASE452_CTRL_TRAJ"), out int tc) ? tc : 10000;
+int warmTraj = phase456ProductionMode ? 2000 : phase456SmokeMode ? 2 : int.TryParse(Environment.GetEnvironmentVariable("PHASE452_WARM"), out int tw) ? tw : 2000;
+int nLeap = phase456Mode ? 12 : int.TryParse(Environment.GetEnvironmentVariable("PHASE452_NLEAP"), out int nl) ? nl : 12;
+int gaussSimSamples = phase456ProductionMode ? 4000 : phase456SmokeMode ? 8 : int.TryParse(Environment.GetEnvironmentVariable("PHASE452_GAUSS_SIM"), out int gs) ? gs : 4000;
+double betaProd = phase456Mode ? 1.0 : double.TryParse(Environment.GetEnvironmentVariable("PHASE452_BETA"), out double bp) ? bp : 1.0;
+double betaMid = phase456Mode ? 4.0 : double.TryParse(Environment.GetEnvironmentVariable("PHASE452_BETA_MID"), out double bm) ? bm : 4.0;
+double betaFree = phase456Mode ? 400.0 : double.TryParse(Environment.GetEnvironmentVariable("PHASE452_BETA_FREE"), out double bf) ? bf : 400.0;
+var outputDir = phase456ProductionMode ? Phase456OutputDir : phase456SmokeMode ? "/tmp/geometricunity_phase456_smoke" : Environment.GetEnvironmentVariable("PHASE452_OUTPUT_DIR") ?? DefaultOutputDir;
+
+int[] phase456A2Kernel = Array.Empty<int>();
+int phase456A2Denominator = 0;
+string? phase456ComputedPackSha256 = null;
+if (phase456Mode)
+{
+    string[] pinnedFiles = { "a4_symmetry_irrep_projectors.json", "a5_gaussian_domination_stage_a.json", "pack_manifest.json" };
+    var hashBytes = new List<byte>();
+    foreach (string file in pinnedFiles) hashBytes.AddRange(File.ReadAllBytes(Path.Combine(Phase456PackDir, file)));
+    phase456ComputedPackSha256 = Convert.ToHexString(SHA256.HashData(hashBytes.ToArray())).ToLowerInvariant();
+    if (phase456ComputedPackSha256 != Phase456PinnedPackSha256)
+        throw new InvalidOperationException($"Phase456 pack hash mismatch: expected {Phase456PinnedPackSha256}, got {phase456ComputedPackSha256}");
+    using var pack = JsonDocument.Parse(File.ReadAllText(Phase456PackPath));
+    var channel = pack.RootElement.GetProperty("projectorKernels").GetProperty("nonIdentityChannel");
+    phase456A2Kernel = channel.GetProperty("kernelRowNumerators").EnumerateArray().Select(x => x.GetInt32()).ToArray();
+    phase456A2Denominator = channel.GetProperty("kernelDenominator").GetInt32();
+    if (phase456A2Kernel.Length != 50 || phase456A2Denominator != 6)
+        throw new InvalidOperationException("Phase456 committed A2 projector does not have the expected exact 50-entry /6 form");
+}
 
 const int RngSeed = 20260705;
+const int InvariantRayRngSeed = 20260703;
 const int TimeAxis = 0;                    // documented convention: lattice axis 0 = Euclidean time
 const int ThetaMovesPerTraj = 2;           // collective Haar-Metropolis moves per trajectory
 const int ThetaSweepEvery = 50;            // single-site Haar sweep cadence (ergodicity aid)
@@ -284,6 +327,59 @@ foreach (int n in torusSizes)
     int fdim = faceTypeCount * dimG; // face-value block dimension (types x lie)
     int blockDim = 15 * dimG;        // omega momentum-block dimension
 
+    // Phase456 reuses the phase450/448 invariant-ray convention byte-for-byte.
+    // The projection removes the global su(2) orbit before Phi is measured.
+    var uInv = new double[nOmega];
+    double phase456ProjectorOverlapMax = 0.0;
+    if (phase456Mode)
+    {
+        if (faceTypeCount != phase456A2Kernel.Length)
+            throw new InvalidOperationException($"Phase456 face-type count {faceTypeCount} does not match the committed projector length {phase456A2Kernel.Length}");
+        var rayCoeffRng = new Random(InvariantRayRngSeed);
+        var typeCoeffs = new double[16 * dimG];
+        for (int i = 0; i < typeCoeffs.Length; i++) typeCoeffs[i] = rayCoeffRng.NextDouble() - 0.5;
+        for (int e = 0; e < mesh.EdgeCount; e++)
+            for (int l = 0; l < dimG; l++)
+                uInv[e * dimG + l] = oSign[e] * typeCoeffs[edgeType[e] * dimG + l];
+        double un = Norm(uInv);
+        for (int i = 0; i < nOmega; i++) uInv[i] /= un;
+
+        var zOrtho = new List<double[]>();
+        for (int l = 0; l < dimG; l++)
+        {
+            var z = new double[nOmega];
+            var el = new double[dimG]; el[l] = 1.0;
+            for (int e = 0; e < mesh.EdgeCount; e++)
+            {
+                var ue = new double[dimG];
+                for (int c = 0; c < dimG; c++) ue[c] = uInv[e * dimG + c];
+                var br = algebra.Bracket(el, ue);
+                for (int c = 0; c < dimG; c++) z[e * dimG + c] = br[c];
+            }
+            foreach (var q in zOrtho)
+            {
+                double d = Dot(z, q);
+                for (int i = 0; i < nOmega; i++) z[i] -= d * q[i];
+            }
+            double zn = Norm(z);
+            if (zn > 1e-12)
+            {
+                for (int i = 0; i < nOmega; i++) z[i] /= zn;
+                zOrtho.Add(z);
+            }
+        }
+        foreach (var q in zOrtho)
+        {
+            double d = Dot(uInv, q);
+            for (int i = 0; i < nOmega; i++) uInv[i] -= d * q[i];
+        }
+        un = Norm(uInv);
+        for (int i = 0; i < nOmega; i++) uInv[i] /= un;
+        phase456ProjectorOverlapMax = zOrtho.Count == 0 ? 0.0 : zOrtho.Max(q => System.Math.Abs(Dot(uInv, q)));
+        if (phase456ProjectorOverlapMax > 1e-12)
+            throw new InvalidOperationException($"Phase456 invariant-ray projection battery failed: {phase456ProjectorOverlapMax:E3}");
+    }
+
     int KeyOfK(int[] k) => ((k[0] * n + k[1]) * n + k[2]) * n + k[3];
     var kList = new List<int[]>();
     for (int a0 = 0; a0 < n; a0++) for (int a1 = 0; a1 < n; a1++)
@@ -335,6 +431,39 @@ foreach (int n in torusSizes)
                 }
             o1Out[s] += a1; o2Out[s] += a2;
         }
+    }
+
+    Phase456Measurement MeasurePhase456(double[] faceCoeffs, double[] upsCoeffs, double[] omega)
+    {
+        var a2O1 = new double[T];
+        var a2O2 = new double[T];
+        var kO1Re = Enumerable.Range(0, 3).Select(_ => new double[T]).ToArray();
+        var kO1Im = Enumerable.Range(0, 3).Select(_ => new double[T]).ToArray();
+        var siteO1 = new double[volume];
+        for (int f = 0; f < mesh.FaceCount; f++)
+        {
+            double d1 = 0.0, d2 = 0.0;
+            for (int l = 0; l < dimG; l++)
+                for (int m = 0; m < dimG; m++)
+                {
+                    d1 += lieGram[l, m] * faceCoeffs[f * dimG + l] * faceCoeffs[f * dimG + m];
+                    d2 += lieGram[l, m] * upsCoeffs[f * dimG + l] * upsCoeffs[f * dimG + m];
+                }
+            int s = faceSlice[f];
+            siteO1[faceBase[f]] += d1;
+            double w = (double)phase456A2Kernel[faceTypeId[f]] / phase456A2Denominator;
+            a2O1[s] += w * d1;
+            a2O2[s] += w * d2;
+            for (int axisIndex = 0; axisIndex < 3; axisIndex++)
+            {
+                int q = coords[faceBase[f]][axisIndex + 1] & 3;
+                double re = q switch { 0 => 1.0, 2 => -1.0, _ => 0.0 };
+                double im = q switch { 1 => -1.0, 3 => 1.0, _ => 0.0 };
+                kO1Re[axisIndex][s] += re * d1;
+                kO1Im[axisIndex][s] += im * d1;
+            }
+        }
+        return new Phase456Measurement(a2O1, a2O2, kO1Re, kO1Im, siteO1, Dot(uInv, omega));
     }
 
     // --- Startup batteries (per member) + analytic free-field machinery. -----
@@ -827,6 +956,11 @@ foreach (int n in torusSizes)
         double selfConjImagMax = 0.0;
         var o1Series = new double[gaussSimSamples][];
         var o2Series = new double[gaussSimSamples][];
+        var gaussA2O1Series = phase456Mode ? new double[gaussSimSamples][] : null;
+        var gaussA2O2Series = phase456Mode ? new double[gaussSimSamples][] : null;
+        var gaussKO1ReSeries = phase456Mode ? Enumerable.Range(0, 3).Select(_ => new double[gaussSimSamples][]).ToArray() : null;
+        var gaussKO1ImSeries = phase456Mode ? Enumerable.Range(0, 3).Select(_ => new double[gaussSimSamples][]).ToArray() : null;
+        var gaussPhiSeries = phase456Mode ? new double[gaussSimSamples] : null;
         var phiRe = new double[blockDim]; var phiIm = new double[blockDim];
         var lat = new double[volume, blockDim]; // synthesized lattice field per sample
         var omegaBuf = new double[nOmega];
@@ -896,6 +1030,18 @@ foreach (int n in torusSizes)
             var o1 = new double[T]; var o2 = new double[T];
             SliceSums(upsLin.FLin, o1, upsLin.ULin, o2);
             o1Series[s] = o1; o2Series[s] = o2;
+            if (phase456Mode)
+            {
+                var m456 = MeasurePhase456(upsLin.FLin, upsLin.ULin, omegaBuf);
+                gaussA2O1Series![s] = m456.A2O1;
+                gaussA2O2Series![s] = m456.A2O2;
+                for (int axis = 0; axis < 3; axis++)
+                {
+                    gaussKO1ReSeries![axis][s] = m456.KO1Re[axis];
+                    gaussKO1ImSeries![axis][s] = m456.KO1Im[axis];
+                }
+                gaussPhiSeries![s] = m456.Phi;
+            }
         }
         var c1Sim = ConnectedCorrelator(o1Series, T, JackknifeBlocks);
         var c2Sim = ConnectedCorrelator(o2Series, T, JackknifeBlocks);
@@ -905,7 +1051,21 @@ foreach (int n in torusSizes)
             worstZ1 = System.Math.Max(worstZ1, System.Math.Abs(c1Sim.C[t] - an.C1An[t]) / System.Math.Max(1e-30, c1Sim.Sigma[t]));
             worstZ2 = System.Math.Max(worstZ2, System.Math.Abs(c2Sim.C[t] - an.C2An[t]) / System.Math.Max(1e-30, c2Sim.Sigma[t]));
         }
-        gaussSim[mi] = new GaussSimResult(worstZ1, worstZ2, selfConjImagMax, c1Sim.C, c2Sim.C);
+        Phase456GaussianControl? phase456GaussianControl = null;
+        if (phase456Mode)
+        {
+            var c12Sim = CrossConnectedCorrelator(o1Series, o2Series, T, JackknifeBlocks);
+            var gevpSim = GevpFromCorrelators(c1Sim, c2Sim, c12Sim, T, JackknifeBlocks);
+            var a2c1Sim = ConnectedCorrelator(gaussA2O1Series!, T, JackknifeBlocks);
+            var a2c2Sim = ConnectedCorrelator(gaussA2O2Series!, T, JackknifeBlocks);
+            var kc1Sim = ComplexConnectedCorrelator(gaussKO1ReSeries!, gaussKO1ImSeries!, T, JackknifeBlocks);
+            phase456GaussianControl = new Phase456GaussianControl(
+                gaussSimSamples, gevpSim,
+                a2c1Sim, a2c2Sim, CoshEffectiveMasses(a2c1Sim, T, JackknifeBlocks), CoshEffectiveMasses(a2c2Sim, T, JackknifeBlocks),
+                kc1Sim, CoshEffectiveMasses(kc1Sim, T, JackknifeBlocks),
+                BinderStatistics(gaussPhiSeries!, volume, JackknifeBlocks));
+        }
+        gaussSim[mi] = new GaussSimResult(worstZ1, worstZ2, selfConjImagMax, c1Sim.C, c2Sim.C, phase456GaussianControl);
         lock (consoleLock)
             Console.WriteLine($"[n={n}] {memberNames[mi]}: gaussian-sim battery worstZ(O1)={worstZ1:F2} worstZ(O2)={worstZ2:F2}");
     }
@@ -1118,6 +1278,41 @@ foreach (int n in torusSizes)
         var virialSeries = new double[nSamp];
         var o1Bar = new double[nSamp];
         var o2Bar = new double[nSamp];
+        var phase456A2O1Series = phase456Mode ? new double[nSamp][] : null;
+        var phase456A2O2Series = phase456Mode ? new double[nSamp][] : null;
+        var phase456KO1ReSeries = phase456Mode ? Enumerable.Range(0, 3).Select(_ => new double[nSamp][]).ToArray() : null;
+        var phase456KO1ImSeries = phase456Mode ? Enumerable.Range(0, 3).Select(_ => new double[nSamp][]).ToArray() : null;
+        var phase456PhiSeries = phase456Mode ? new double[nSamp] : null;
+        int phase456SpatialBlockCount = phase456Mode ? System.Math.Min(JackknifeBlocks, System.Math.Max(2, nSamp / 4)) : 0;
+        const int Phase456SpatialMomentumCount = 64;
+        var phase456SpatialMeanRe = phase456Mode ? new double[phase456SpatialBlockCount, Phase456SpatialMomentumCount] : null;
+        var phase456SpatialMeanIm = phase456Mode ? new double[phase456SpatialBlockCount, Phase456SpatialMomentumCount] : null;
+        var phase456SpatialCorr = phase456Mode ? new double[phase456SpatialBlockCount, Phase456SpatialMomentumCount, T] : null;
+        var phase456SpatialCounts = phase456Mode ? new long[phase456SpatialBlockCount] : null;
+
+        void AccumulatePhase456PerSiteCorrelators(int sampleIndex, double[] siteO1)
+        {
+            int block = (int)((long)sampleIndex * phase456SpatialBlockCount / nSamp);
+            phase456SpatialCounts![block]++;
+            var re = new double[T]; var im = new double[T];
+            for (int kx = 0; kx < 4; kx++) for (int ky = 0; ky < 4; ky++) for (int kz = 0; kz < 4; kz++)
+            {
+                int ki = (kx * 4 + ky) * 4 + kz;
+                Array.Clear(re); Array.Clear(im);
+                for (int v = 0; v < volume; v++)
+                {
+                    int q = (kx * coords[v][1] + ky * coords[v][2] + kz * coords[v][3]) & 3;
+                    double pr = q switch { 0 => 1.0, 2 => -1.0, _ => 0.0 };
+                    double pi = q switch { 1 => -1.0, 3 => 1.0, _ => 0.0 };
+                    int tau = coords[v][TimeAxis];
+                    re[tau] += pr * siteO1[v]; im[tau] += pi * siteO1[v];
+                }
+                phase456SpatialMeanRe![block, ki] += re.Sum();
+                phase456SpatialMeanIm![block, ki] += im.Sum();
+                for (int dt = 0; dt < T; dt++) for (int tau = 0; tau < T; tau++)
+                    phase456SpatialCorr![block, ki, dt] += re[tau] * re[(tau + dt) % T] + im[tau] * im[(tau + dt) % T];
+            }
+        }
         var swCol = Stopwatch.StartNew();
         for (int it = 0; it < nSamp; it++)
         {
@@ -1149,6 +1344,19 @@ foreach (int n in torusSizes)
             o1Series[it] = o1; o2Series[it] = o2;
             o1Bar[it] = o1.Sum(); o2Bar[it] = o2.Sum();
             sSeries[it] = 0.5 * o2Bar[it]; // = S_B (uniform face weights; battery-verified)
+            if (phase456Mode)
+            {
+                var m456 = MeasurePhase456(fc, ups, omega);
+                phase456A2O1Series![it] = m456.A2O1;
+                phase456A2O2Series![it] = m456.A2O2;
+                for (int axis = 0; axis < 3; axis++)
+                {
+                    phase456KO1ReSeries![axis][it] = m456.KO1Re[axis];
+                    phase456KO1ImSeries![axis][it] = m456.KO1Im[axis];
+                }
+                phase456PhiSeries![it] = m456.Phi;
+                AccumulatePhase456PerSiteCorrelators(it, m456.SiteO1);
+            }
         }
         swCol.Stop();
         double msPerTraj = swCol.Elapsed.TotalMilliseconds / nSamp;
@@ -1172,6 +1380,55 @@ foreach (int n in torusSizes)
         bool virGate = System.Math.Abs(virMean - nDof) <= System.Math.Max(VirialSigmaGate * virSigma, VirialRelGate * nDof);
         bool nEffGate = nEff >= NeffMin;
 
+        Phase456ColumnData? phase456Data = null;
+        if (phase456Mode)
+        {
+            var c12 = CrossConnectedCorrelator(o1Series, o2Series, T, JackknifeBlocks);
+            var gevp = GevpFromCorrelators(c1, c2, c12, T, JackknifeBlocks);
+            var a2c1 = ConnectedCorrelator(phase456A2O1Series!, T, JackknifeBlocks);
+            var a2c2 = ConnectedCorrelator(phase456A2O2Series!, T, JackknifeBlocks);
+            var kc1 = ComplexConnectedCorrelator(phase456KO1ReSeries!, phase456KO1ImSeries!, T, JackknifeBlocks);
+            var binder = BinderStatistics(phase456PhiSeries!, volume, JackknifeBlocks);
+            double tauA2 = System.Math.Max(
+                TauInt(phase456A2O1Series!.Select(x => x.Sum()).ToArray()),
+                TauInt(phase456A2O2Series!.Select(x => x.Sum()).ToArray()));
+            double tauK = 0.5;
+            for (int axis = 0; axis < 3; axis++)
+            {
+                tauK = System.Math.Max(tauK, TauInt(phase456KO1ReSeries![axis].Select(x => x.Sum()).ToArray()));
+                tauK = System.Math.Max(tauK, TauInt(phase456KO1ImSeries![axis].Select(x => x.Sum()).ToArray()));
+            }
+            double nEffA2 = nSamp / (2.0 * System.Math.Max(0.5, tauA2));
+            double nEffKMin = nSamp / (2.0 * System.Math.Max(0.5, tauK));
+            var allSpatialMomenta = SpatialMomentumCorrelators(
+                phase456SpatialMeanRe!, phase456SpatialMeanIm!, phase456SpatialCorr!, phase456SpatialCounts!, T);
+            double spatialKMinReconstructionResidual = 0.0;
+            int[] unitSpatialIndices = { 16, 4, 1 };
+            for (int dt = 0; dt < T; dt++)
+            {
+                double reconstructed = unitSpatialIndices.Average(index => allSpatialMomenta[index].Correlator.C[dt]);
+                spatialKMinReconstructionResidual = System.Math.Max(spatialKMinReconstructionResidual,
+                    RelDiff(reconstructed, kc1.C[dt]));
+                for (int b = 0; b < kc1.Jackknife.Length; b++)
+                {
+                    double reconstructedJk = unitSpatialIndices.Average(index => allSpatialMomenta[index].Correlator.Jackknife[b][dt]);
+                    spatialKMinReconstructionResidual = System.Math.Max(spatialKMinReconstructionResidual,
+                        RelDiff(reconstructedJk, kc1.Jackknife[b][dt]));
+                }
+            }
+            phase456Data = new Phase456ColumnData(
+                gevp,
+                a2c1, a2c2, CoshEffectiveMasses(a2c1, T, JackknifeBlocks), CoshEffectiveMasses(a2c2, T, JackknifeBlocks),
+                kc1, CoshEffectiveMasses(kc1, T, JackknifeBlocks), allSpatialMomenta, binder,
+                tauA2, nEffA2, tauK, nEffKMin,
+                phase456A2Kernel, phase456A2Denominator,
+                phase456ProjectorOverlapMax,
+                allSpatialMomenta.Length == Phase456SpatialMomentumCount && spatialKMinReconstructionResidual <= 1e-10,
+                true,
+                spatialKMinReconstructionResidual,
+                "all 4^3 spatial-momentum correlators at every Euclidean-time separation are stored with aligned jackknifes; this complete discrete transform is invertible to the per-base-site spatial correlator, while the exact face-type projector is applied before any slice-only loss");
+        }
+
         columnResults[spec.Index] = new ColumnResult
         {
             Spec = spec,
@@ -1187,6 +1444,7 @@ foreach (int n in torusSizes)
             TauO1 = tauO1, TauO2 = tauO2, TauS = tauS, NEff = nEff, NEffGate = nEffGate,
             SMean = sMean, O1Mean = o1MeanBar / T, O2Mean = o2MeanBar / T,
             C1 = c1, C2 = c2, Meff1 = meff1, Meff2 = meff2,
+            Phase456 = phase456Data,
             MsPerTrajectory = msPerTraj,
         };
         lock (consoleLock)
@@ -1458,10 +1716,109 @@ object MeffJson(MeffResult m) => m.Points.Select(p => new
     sigma = p.Sigma is double sv ? FiniteOrNull(sv) : (double?)null,
 }).ToArray();
 
+object? Phase456Json(Phase456ColumnData? p) => p is null ? null : new
+{
+    identityIrrep2x2Gevp = new
+    {
+        dominantEigenvalue = p.IdentityIrrep2x2Gevp.DominantEigenvalue.Select(FiniteOrNull).ToArray(),
+        jackknifeDominantEigenvalue = p.IdentityIrrep2x2Gevp.JackknifeDominantEigenvalue
+            .Select(row => row.Select(FiniteOrNull).ToArray()).ToArray(),
+        effectiveMasses = MeffJson(p.IdentityIrrep2x2Gevp.EffectiveMasses),
+        p.IdentityIrrep2x2Gevp.C0PositiveDefinite,
+        p.IdentityIrrep2x2Gevp.T0,
+    },
+    a2 = new
+    {
+        o1 = new { c = p.A2O1.C.Select(FiniteOrNull).ToArray(), sigma = p.A2O1.Sigma.Select(FiniteOrNull).ToArray(), jackknife = p.A2O1.Jackknife.Select(row => row.Select(FiniteOrNull).ToArray()).ToArray(), meff = MeffJson(p.A2MeffO1) },
+        o2 = new { c = p.A2O2.C.Select(FiniteOrNull).ToArray(), sigma = p.A2O2.Sigma.Select(FiniteOrNull).ToArray(), jackknife = p.A2O2.Jackknife.Select(row => row.Select(FiniteOrNull).ToArray()).ToArray(), meff = MeffJson(p.A2MeffO2) },
+        p.A2KernelNumerators,
+        p.A2KernelDenominator,
+    },
+    kMin = new
+    {
+        spatialAxisAverageO1 = new { c = p.KMinO1.C.Select(FiniteOrNull).ToArray(), sigma = p.KMinO1.Sigma.Select(FiniteOrNull).ToArray(), jackknife = p.KMinO1.Jackknife.Select(row => row.Select(FiniteOrNull).ToArray()).ToArray(), meff = MeffJson(p.KMinMeffO1) },
+        momentum = "one exact fourth-root-of-unity unit, averaged over spatial axes 1,2,3",
+    },
+    perSiteSpatialCorrelators = p.AllSpatialMomenta.Select(k => new
+    {
+        k = new[] { k.Kx, k.Ky, k.Kz },
+        c = k.Correlator.C.Select(FiniteOrNull).ToArray(),
+        sigma = k.Correlator.Sigma.Select(FiniteOrNull).ToArray(),
+        jackknife = k.Correlator.Jackknife.Select(row => row.Select(FiniteOrNull).ToArray()).ToArray(),
+    }).ToArray(),
+    binder = new
+    {
+        binderCumulant = FiniteOrNull(p.Binder.BinderCumulant),
+        binderSigma = FiniteOrNull(p.Binder.BinderSigma),
+        binderJackknife = p.Binder.BinderJackknife.Select(FiniteOrNull).ToArray(),
+        susceptibility = FiniteOrNull(p.Binder.Susceptibility),
+        susceptibilitySigma = FiniteOrNull(p.Binder.SusceptibilitySigma),
+        susceptibilityJackknife = p.Binder.SusceptibilityJackknife.Select(FiniteOrNull).ToArray(),
+        tauPhi = FiniteOrNull(p.Binder.TauPhi),
+        nEffPhi = FiniteOrNull(p.Binder.NEffPhi),
+    },
+    rowEffectiveSampleSizes = new
+    {
+        tauA2 = FiniteOrNull(p.TauA2),
+        nEffA2 = FiniteOrNull(p.NEffA2),
+        tauKMin = FiniteOrNull(p.TauKMin),
+        nEffKMin = FiniteOrNull(p.NEffKMin),
+    },
+    invariantRayProjectorOverlapMax = FiniteOrNull(p.InvariantRayProjectorOverlapMax),
+    p.PerSiteCorrelatorStorage,
+    p.PerFaceTypeResolutionRetained,
+    spatialKMinReconstructionResidual = FiniteOrNull(p.SpatialKMinReconstructionResidual),
+    p.StorageMeaning,
+};
+
+object? Phase456GaussianJson(Phase456GaussianControl? p) => p is null ? null : new
+{
+    p.IndependentSamples,
+    identityIrrep2x2Gevp = new
+    {
+        dominantEigenvalue = p.IdentityIrrep2x2Gevp.DominantEigenvalue.Select(FiniteOrNull).ToArray(),
+        jackknifeDominantEigenvalue = p.IdentityIrrep2x2Gevp.JackknifeDominantEigenvalue
+            .Select(row => row.Select(FiniteOrNull).ToArray()).ToArray(),
+        effectiveMasses = MeffJson(p.IdentityIrrep2x2Gevp.EffectiveMasses),
+        p.IdentityIrrep2x2Gevp.C0PositiveDefinite,
+        p.IdentityIrrep2x2Gevp.T0,
+    },
+    a2 = new
+    {
+        o1 = new { c = p.A2O1.C.Select(FiniteOrNull).ToArray(), sigma = p.A2O1.Sigma.Select(FiniteOrNull).ToArray(), jackknife = p.A2O1.Jackknife.Select(row => row.Select(FiniteOrNull).ToArray()).ToArray(), meff = MeffJson(p.A2MeffO1) },
+        o2 = new { c = p.A2O2.C.Select(FiniteOrNull).ToArray(), sigma = p.A2O2.Sigma.Select(FiniteOrNull).ToArray(), jackknife = p.A2O2.Jackknife.Select(row => row.Select(FiniteOrNull).ToArray()).ToArray(), meff = MeffJson(p.A2MeffO2) },
+    },
+    kMin = new
+    {
+        spatialAxisAverageO1 = new { c = p.KMinO1.C.Select(FiniteOrNull).ToArray(), sigma = p.KMinO1.Sigma.Select(FiniteOrNull).ToArray(), jackknife = p.KMinO1.Jackknife.Select(row => row.Select(FiniteOrNull).ToArray()).ToArray(), meff = MeffJson(p.KMinMeffO1) },
+    },
+    binder = new
+    {
+        binderCumulant = FiniteOrNull(p.Binder.BinderCumulant),
+        binderSigma = FiniteOrNull(p.Binder.BinderSigma),
+        binderJackknife = p.Binder.BinderJackknife.Select(FiniteOrNull).ToArray(),
+        susceptibility = FiniteOrNull(p.Binder.Susceptibility),
+        susceptibilitySigma = FiniteOrNull(p.Binder.SusceptibilitySigma),
+        susceptibilityJackknife = p.Binder.SusceptibilityJackknife.Select(FiniteOrNull).ToArray(),
+        tauPhi = FiniteOrNull(p.Binder.TauPhi),
+        nEffPhi = FiniteOrNull(p.Binder.NEffPhi),
+    },
+};
+
 var result = new
 {
     phaseId = "phase452-scalar-channel-spectroscopy-probe",
     generatedAt = DateTimeOffset.UtcNow,
+    phase456Run = phase456Mode ? new
+    {
+        mode = phase456ProductionMode ? "production" : "smoke-nonproduction",
+        committedDefaults = phase456ProductionMode,
+        environmentOverridesRefused = true,
+        pinnedPackSha256 = Phase456PinnedPackSha256,
+        computedPackSha256 = phase456ComputedPackSha256,
+        perSiteCorrelatorStorage = true,
+        perFaceTypeResolutionRetained = true,
+    } : null,
     terminalStatus,
     scalarChannelSpectroscopyProbePassed,
 
@@ -1618,6 +1975,7 @@ var result = new
             selfConjImagMax = g.SelfConjImagMax,
             simC1 = g.SimC1,
             simC2 = g.SimC2,
+            phase456ExactGaussianControl = Phase456GaussianJson(g.Phase456ExactControl),
         }).ToArray(),
         columns = tr.Columns.Select(c => new
         {
@@ -1655,6 +2013,7 @@ var result = new
             c2Sigma = c.C2.Sigma,
             meffO1 = MeffJson(c.Meff1),
             meffO2 = MeffJson(c.Meff2),
+            phase456 = Phase456Json(c.Phase456),
             msPerTrajectory = c.MsPerTrajectory,
         }).ToArray(),
         freeFieldGates = tr.FreeGates.Select(g => new
@@ -1832,6 +2191,168 @@ static CorrelatorResult ConnectedCorrelator(double[][] series, int T, int nBlock
         sigma[t] = System.Math.Sqrt(var2 * (nBlocks - 1.0) / nBlocks);
     }
     return new CorrelatorResult(full, sigma, jk);
+}
+
+static CorrelatorResult CrossConnectedCorrelator(double[][] aSeries, double[][] bSeries, int T, int nBlocks)
+{
+    int nS = aSeries.Length;
+    nBlocks = System.Math.Min(nBlocks, System.Math.Max(2, nS / 4));
+    var bMeanA = new double[nBlocks]; var bMeanB = new double[nBlocks];
+    var bCorr = new double[nBlocks, T]; var bCount = new long[nBlocks];
+    for (int s = 0; s < nS; s++)
+    {
+        int b = (int)((long)s * nBlocks / nS);
+        bCount[b]++;
+        bMeanA[b] += aSeries[s].Sum(); bMeanB[b] += bSeries[s].Sum();
+        for (int t = 0; t < T; t++)
+            for (int tau = 0; tau < T; tau++)
+                bCorr[b, t] += 0.5 * (aSeries[s][tau] * bSeries[s][(tau + t) % T] + bSeries[s][tau] * aSeries[s][(tau + t) % T]);
+    }
+    double[] Calc(int skip)
+    {
+        double ma = 0, mb = 0; long cnt = 0; var sc = new double[T];
+        for (int b = 0; b < nBlocks; b++) if (b != skip)
+        {
+            ma += bMeanA[b]; mb += bMeanB[b]; cnt += bCount[b];
+            for (int t = 0; t < T; t++) sc[t] += bCorr[b, t];
+        }
+        ma /= cnt * T; mb /= cnt * T;
+        for (int t = 0; t < T; t++) sc[t] = sc[t] / (cnt * T) - ma * mb;
+        return sc;
+    }
+    var full = Calc(-1); var jk = Enumerable.Range(0, nBlocks).Select(Calc).ToArray();
+    return new CorrelatorResult(full, JackknifeSigma(jk, T), jk);
+}
+
+static CorrelatorResult ComplexConnectedCorrelator(double[][][] reSeries, double[][][] imSeries, int T, int nBlocks)
+{
+    int axes = reSeries.Length, nS = reSeries[0].Length;
+    nBlocks = System.Math.Min(nBlocks, System.Math.Max(2, nS / 4));
+    var bRe = new double[nBlocks, axes]; var bIm = new double[nBlocks, axes];
+    var bCorr = new double[nBlocks, T]; var bCount = new long[nBlocks];
+    for (int s = 0; s < nS; s++)
+    {
+        int b = (int)((long)s * nBlocks / nS); bCount[b]++;
+        for (int axis = 0; axis < axes; axis++)
+        {
+            bRe[b, axis] += reSeries[axis][s].Sum(); bIm[b, axis] += imSeries[axis][s].Sum();
+            for (int t = 0; t < T; t++) for (int tau = 0; tau < T; tau++)
+                bCorr[b, t] += reSeries[axis][s][tau] * reSeries[axis][s][(tau + t) % T]
+                    + imSeries[axis][s][tau] * imSeries[axis][s][(tau + t) % T];
+        }
+    }
+    double[] Calc(int skip)
+    {
+        long cnt = 0; var sr = new double[axes]; var si = new double[axes]; var c = new double[T];
+        for (int b = 0; b < nBlocks; b++) if (b != skip)
+        {
+            cnt += bCount[b];
+            for (int axis = 0; axis < axes; axis++) { sr[axis] += bRe[b, axis]; si[axis] += bIm[b, axis]; }
+            for (int t = 0; t < T; t++) c[t] += bCorr[b, t];
+        }
+        double vacuum = 0.0;
+        for (int axis = 0; axis < axes; axis++)
+        {
+            double mr = sr[axis] / (cnt * T), mi = si[axis] / (cnt * T);
+            vacuum += mr * mr + mi * mi;
+        }
+        vacuum /= axes;
+        for (int t = 0; t < T; t++) c[t] = c[t] / (cnt * T * axes) - vacuum;
+        return c;
+    }
+    var full = Calc(-1); var jk = Enumerable.Range(0, nBlocks).Select(Calc).ToArray();
+    return new CorrelatorResult(full, JackknifeSigma(jk, T), jk);
+}
+
+static SpatialMomentumCorrelator[] SpatialMomentumCorrelators(
+    double[,] meanRe, double[,] meanIm, double[,,] corr, long[] counts, int T)
+{
+    int blocks = counts.Length, momenta = meanRe.GetLength(1);
+    var result = new SpatialMomentumCorrelator[momenta];
+    for (int ki = 0; ki < momenta; ki++)
+    {
+        double[] Calc(int skip)
+        {
+            double sr = 0, si = 0; long count = 0; var c = new double[T];
+            for (int b = 0; b < blocks; b++) if (b != skip)
+            {
+                sr += meanRe[b, ki]; si += meanIm[b, ki]; count += counts[b];
+                for (int dt = 0; dt < T; dt++) c[dt] += corr[b, ki, dt];
+            }
+            double mr = sr / (count * T), mi = si / (count * T);
+            double vacuum = mr * mr + mi * mi;
+            for (int dt = 0; dt < T; dt++) c[dt] = c[dt] / (count * T) - vacuum;
+            return c;
+        }
+        var full = Calc(-1); var jk = Enumerable.Range(0, blocks).Select(Calc).ToArray();
+        var cr = new CorrelatorResult(full, JackknifeSigma(jk, T), jk);
+        int kx = ki / 16, ky = (ki / 4) % 4, kz = ki % 4;
+        result[ki] = new SpatialMomentumCorrelator(kx, ky, kz, cr);
+    }
+    return result;
+}
+
+static GevpResult GevpFromCorrelators(CorrelatorResult c11, CorrelatorResult c22, CorrelatorResult c12, int T, int nBlocks)
+{
+    double[] Solve(double[] a, double[] d, double[] b, out bool pd)
+    {
+        double det0 = a[0] * d[0] - b[0] * b[0];
+        pd = a[0] > 0 && d[0] > 0 && det0 > 1e-24;
+        var lambda = Enumerable.Repeat(double.NaN, T).ToArray();
+        if (!pd) return lambda;
+        for (int t = 0; t < T; t++)
+        {
+            double aa = (d[0] * a[t] - b[0] * b[t]) / det0;
+            double ab = (d[0] * b[t] - b[0] * d[t]) / det0;
+            double ba = (-b[0] * a[t] + a[0] * b[t]) / det0;
+            double dd = (-b[0] * b[t] + a[0] * d[t]) / det0;
+            double tr = aa + dd, det = aa * dd - ab * ba;
+            double disc = tr * tr - 4 * det;
+            if (disc >= -1e-12) lambda[t] = 0.5 * (tr + System.Math.Sqrt(System.Math.Max(0.0, disc)));
+        }
+        return lambda;
+    }
+    var full = Solve(c11.C, c22.C, c12.C, out bool pdFull);
+    var jk = new double[c11.Jackknife.Length][]; bool jkPd = true;
+    for (int block = 0; block < jk.Length; block++)
+    {
+        jk[block] = Solve(c11.Jackknife[block], c22.Jackknife[block], c12.Jackknife[block], out bool pd);
+        jkPd &= pd;
+    }
+    var corr = new CorrelatorResult(full, JackknifeSigma(jk, T), jk);
+    return new GevpResult(full, jk, CoshEffectiveMasses(corr, T, nBlocks), pdFull && jkPd, 0);
+}
+
+static BinderResult BinderStatistics(double[] series, int volume, int nBlocks)
+{
+    int nS = series.Length;
+    nBlocks = System.Math.Min(nBlocks, System.Math.Max(2, nS / 4));
+    (double U, double Chi) Calc(int skip)
+    {
+        var kept = Enumerable.Range(0, nS).Where(i => (int)((long)i * nBlocks / nS) != skip).Select(i => series[i]).ToArray();
+        double mean = kept.Average(); double m2 = kept.Average(x => (x - mean) * (x - mean));
+        double m4 = kept.Average(x => System.Math.Pow(x - mean, 4));
+        return (m2 > 0 ? 1.0 - m4 / (3.0 * m2 * m2) : double.NaN, volume * m2);
+    }
+    var full = Calc(-1); var ju = new double[nBlocks][]; var jc = new double[nBlocks][];
+    for (int b = 0; b < nBlocks; b++) { var x = Calc(b); ju[b] = new[] { x.U }; jc[b] = new[] { x.Chi }; }
+    double tau = TauInt(series); double neff = nS / (2.0 * System.Math.Max(0.5, tau));
+    return new BinderResult(full.U, JackknifeSigma(ju, 1)[0], ju.Select(x => x[0]).ToArray(),
+        full.Chi, JackknifeSigma(jc, 1)[0], jc.Select(x => x[0]).ToArray(), tau, neff);
+}
+
+static double[] JackknifeSigma(double[][] jk, int length)
+{
+    var sigma = new double[length];
+    if (jk.Length < 2) return sigma;
+    for (int i = 0; i < length; i++)
+    {
+        var finite = jk.Select(x => x[i]).Where(double.IsFinite).ToArray();
+        if (finite.Length != jk.Length) { sigma[i] = double.NaN; continue; }
+        double mean = finite.Average();
+        sigma[i] = System.Math.Sqrt(finite.Sum(x => (x - mean) * (x - mean)) * (finite.Length - 1.0) / finite.Length);
+    }
+    return sigma;
 }
 
 static MeffResult CoshEffectiveMasses(CorrelatorResult corr, int T, int nBlocks)
@@ -2267,6 +2788,34 @@ public sealed record MeffPoint(int T, double Ratio, double? M, double? Sigma);
 
 public sealed record MeffResult(MeffPoint[] Points);
 
+public sealed record Phase456Measurement(double[] A2O1, double[] A2O2, double[][] KO1Re, double[][] KO1Im,
+    double[] SiteO1, double Phi);
+
+public sealed record SpatialMomentumCorrelator(int Kx, int Ky, int Kz, CorrelatorResult Correlator);
+
+public sealed record GevpResult(double[] DominantEigenvalue, double[][] JackknifeDominantEigenvalue,
+    MeffResult EffectiveMasses, bool C0PositiveDefinite, int T0);
+
+public sealed record BinderResult(double BinderCumulant, double BinderSigma, double[] BinderJackknife,
+    double Susceptibility, double SusceptibilitySigma, double[] SusceptibilityJackknife,
+    double TauPhi, double NEffPhi);
+
+public sealed record Phase456GaussianControl(int IndependentSamples,
+    GevpResult IdentityIrrep2x2Gevp,
+    CorrelatorResult A2O1, CorrelatorResult A2O2, MeffResult A2MeffO1, MeffResult A2MeffO2,
+    CorrelatorResult KMinO1, MeffResult KMinMeffO1, BinderResult Binder);
+
+public sealed record Phase456ColumnData(
+    GevpResult IdentityIrrep2x2Gevp,
+    CorrelatorResult A2O1, CorrelatorResult A2O2, MeffResult A2MeffO1, MeffResult A2MeffO2,
+    CorrelatorResult KMinO1, MeffResult KMinMeffO1, SpatialMomentumCorrelator[] AllSpatialMomenta,
+    BinderResult Binder,
+    double TauA2, double NEffA2, double TauKMin, double NEffKMin,
+    int[] A2KernelNumerators, int A2KernelDenominator,
+    double InvariantRayProjectorOverlapMax,
+    bool PerSiteCorrelatorStorage, bool PerFaceTypeResolutionRetained,
+    double SpatialKMinReconstructionResidual, string StorageMeaning);
+
 public sealed class ColumnResult
 {
     public required ColumnSpec Spec { get; init; }
@@ -2295,6 +2844,7 @@ public sealed class ColumnResult
     public required CorrelatorResult C2 { get; init; }
     public required MeffResult Meff1 { get; init; }
     public required MeffResult Meff2 { get; init; }
+    public Phase456ColumnData? Phase456 { get; init; }
     public required double MsPerTrajectory { get; init; }
 }
 
@@ -2324,7 +2874,7 @@ public sealed record MemberBattery(
     double PlaneWaveResid, double CovImagMax, double ZGramResid, double ZHzResid);
 
 public sealed record GaussSimResult(double WorstZO1, double WorstZO2, double SelfConjImagMax,
-    double[] SimC1, double[] SimC2);
+    double[] SimC1, double[] SimC2, Phase456GaussianControl? Phase456ExactControl);
 
 public sealed record FreeFieldGate(string Member, double Beta, double? MAn1, double? MAn2,
     double? M1, double? S1, double? M2, double? S2, double? Z1, double? Z2, bool GateO1);

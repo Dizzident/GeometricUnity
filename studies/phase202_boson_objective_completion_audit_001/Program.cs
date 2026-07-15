@@ -6479,10 +6479,46 @@ var exactFermionicBackreactionProbePassed = exactFermionicBackreactionProbeMater
     && JsonBool(phase455.RootElement, "routePromotesHiggsMass") is false
     && JsonBool(phase455.RootElement, "routeCompletesBosonPredictions") is false;
 var consolidatedN4LaunchMaterialized = phase456 is not null;
+var consolidatedN4LaunchVerdict = consolidatedN4LaunchMaterialized ? JsonString(phase456!.RootElement, "verdictKind") : null;
+var consolidatedN4LaunchAllowedVerdicts = new HashSet<string>(StringComparer.Ordinal)
+{
+    "pack-committed-awaiting-gates",
+    "production-analysis-invalid",
+    "production-controls-failed",
+    "production-underpowered",
+    "t2-coherent-distinct-irrep-departure-n5-mandatory",
+    "t1-quasi-free-compatible-at-probed-volume",
+    "mixed-row-outcome-no-coherent-distinct-irrep-departure",
+};
+var consolidatedN4ProductionConsumed = consolidatedN4LaunchMaterialized
+    && JsonBool(phase456!.RootElement, "productionArtifactConsumed") is true;
+var consolidatedN4ProductionAnalysisInvalid = consolidatedN4ProductionConsumed
+    && consolidatedN4LaunchVerdict == "production-analysis-invalid";
+var consolidatedN4InvalidAnalysisRecordedFailClosed = consolidatedN4ProductionAnalysisInvalid
+    && JsonBool(phase456!.RootElement, "productionAnalysisRecordedFailClosed") is true
+    && JsonNestedBool(phase456.RootElement, "productionAnalysis", "inputShapeValid") is false
+    && JsonNestedBool(phase456.RootElement, "productionAnalysis", "productionDefaultsVerified") is true
+    && JsonNestedBool(phase456.RootElement, "productionAnalysis", "packHashVerified") is true
+    && JsonNestedBool(phase456.RootElement, "productionAnalysis", "perSiteStorageVerified") is true
+    && JsonNestedBool(phase456.RootElement, "productionAnalysis", "exactGaussianControlsVerified") is true
+    && JsonNestedInt(phase456.RootElement, "productionAnalysis", "rowCount") == 5
+    && JsonNestedBool(phase456.RootElement, "productionAnalysis", "mandatoryN5Escalation") is false
+    && JsonNestedBool(phase456.RootElement, "productionAnalysis", "g3Motivated") is false;
+var consolidatedN4ProductionRecordValid = !consolidatedN4ProductionConsumed ||
+    (JsonBool(phase456!.RootElement, "productionSamplingImplemented") is true
+     && JsonBool(phase456.RootElement, "productionArtifactPresent") is true
+     && (JsonNestedBool(phase456.RootElement, "productionAnalysis", "inputShapeValid") is true
+         || consolidatedN4InvalidAnalysisRecordedFailClosed)
+     && JsonNestedBool(phase456.RootElement, "productionAuthorization", "explicitUserRiskRenewalValid") is true
+     && JsonNestedBool(phase456.RootElement, "productionAuthorization", "o4PhysicistRuling") is false
+     && JsonInt(phase456.RootElement, "promotedPhysicalMassClaimCount") == 0);
 var consolidatedN4LaunchPassed = consolidatedN4LaunchMaterialized
     && JsonBool(phase456!.RootElement, "phase456GateGreen") is true
     && JsonBool(phase456.RootElement, "claimBoundaryHeld") is true
-    && JsonString(phase456.RootElement, "verdictKind") == "pack-committed-awaiting-gates"
+    && consolidatedN4LaunchVerdict is not null
+    && consolidatedN4LaunchAllowedVerdicts.Contains(consolidatedN4LaunchVerdict)
+    && JsonString(phase456.RootElement, "terminalStatus") == "consolidated-n4-launch-" + consolidatedN4LaunchVerdict
+    && consolidatedN4ProductionRecordValid
     && JsonString(phase456.RootElement, "applicationSubjectKind") == "consolidated-n4-launch"
     && JsonBool(phase456.RootElement, "targetBlindConstruction") is true
     && JsonBool(phase456.RootElement, "physicistReviewPending") is true

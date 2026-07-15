@@ -7,20 +7,36 @@ standing items 12 & 14). Registry number 456 per
 
 ## What this phase does now
 
-No physics compute and no sampling. The `~6-16 h` production HMC is
-deliberately **not implemented yet**. The program is the pre-registration pack
-**refuse-to-run gate** plus the standing claim boundary. Terminal taxonomy
-(pre-registered, all reachable):
+The production path is implemented by an explicit `--phase456-production`
+mode on the proven phase452 sampler. It fixes `n=4`, production/control
+trajectory counts `16000/10000`, warmup `2000`, twelve leapfrog steps, and
+`beta={1,4,400}` in code; it refuses every environment variable whose name
+starts with `PHASE`. The ordinary phase452 and phase456 generator paths never
+launch the long sampler. Phase456 is the pre-registration pack
+**refuse-to-run gate**, deterministic result consumer, and standing claim
+boundary. Terminal taxonomy includes:
 
 - `awaiting-pack` — interim green; the pack is absent.
 - `pack-committed-awaiting-gates` — the pack is present and its SHA-256 matches
-  the pinned constant; the phase awaits the remaining hard gates before
-  production.
+  the pinned constant and the separately tracked production artifact has not
+  landed.
 - `pack-hash-mismatch-refuse-to-run` — **BLOCKED**; the MANDATORY refuse-to-run
   condition (production must never sample against an unpinned or altered pack).
 
-All three branches were exercised locally (mismatch → block; absent →
-awaiting-pack; restored → pack-committed-awaiting-gates).
+The hash branches were exercised locally (mismatch → block; absent →
+awaiting-pack; restored → pack-committed-awaiting-gates). The production mode's
+negative environment control was also exercised: a synthetic `PHASE456_*`
+override refuses before mesh construction.
+
+The authorized production run completed on 2026-07-15 with terminal
+`production-analysis-invalid`. Pack, authorization, defaults, storage, and
+exact-control shape are valid, but the scientific analysis is not: the A2 and
+`k_min` mass rows are non-finite under the committed cosh/direct-Gaussian
+comparison, the large-beta free-field sampler gate is red, and the SD2
+production/control columns fail their autocorrelation-based effective-sample
+gates. The consumer therefore withholds the family-wise threshold and
+invalidates the complete five-row table. This is a pre-registered fail-closed
+outcome, not a reason to change an estimator, threshold, or gate.
 
 `promotedPhysicalMassClaimCount` remains 0; `physicistReviewPending` is carried
 explicitly; the claim boundary holds in every branch.
@@ -79,10 +95,15 @@ face-type interpolator space:
 - `k_min = 2π/4` dispersion-row spec (phases are 4th roots of unity): needs
   per-site correlators.
 
-**Per-site (un-slice-summed) correlator storage flag** —
-`PHASE456_STORE_PER_SITE_CORRELATORS` — is MANDATORY and pinned in the pack; the
-non-identity channel and the dispersion row both require it (committed phase452
-outputs are slice-summed, so retroactive extraction is impossible).
+**Per-site (un-slice-summed) correlator storage flag** — named
+`PHASE456_STORE_PER_SITE_CORRELATORS` in the pack — is MANDATORY. Production is
+environment-clean, so this is a committed internal true setting rather than an
+environment override. Every column stores the complete `4^3=64`
+spatial-momentum correlator table at every time separation, including aligned
+jackknifes. The transform is invertible to the spatial per-base-site
+correlator. A separately accumulated `k_min` projection must reconstruct from
+the complete table within `1e-10`; the smoke residual is at most `5.6e-14`.
+The exact face-type A2 projector is applied before slice aggregation.
 
 ### A5 Stage-A (Gaussian-domination pre-theorem attempt)
 
@@ -118,23 +139,69 @@ closed by A5); it feeds phase458 gate G1 as the A5 terminal string.
   2×2 GEVP zero-momentum gap only), **not** an A4-gate bypass — it never relaxes
   a gate and the A4 kernels stay committed ex ante.
 
+The consumer executes five rows: A1 2×2-GEVP gap vs exact-free control, A2 gap
+vs exact-free control, lattice-cosh `k_min` dispersion residual, centered
+Binder cumulant and susceptibility vs their exact-free controls. The exact
+controls are independent samples drawn directly
+from the block-diagonal Gaussian measure at `beta=1` and passed through the
+same A1/A2/dispersion/Binder/susceptibility pipeline; the large-`beta` HMC
+columns remain a separate sampler gate. At `T=4`, the mechanical
+informative-window set contains
+the single point `t=1`, so its AIC weight is exactly one. The family-wise
+threshold is the fixed-seed multivariate-normal max-`|Z|` quantile computed
+from the aligned null jackknife correlation, then maxed with the per-row 3σ
+floor. The power calculation uses the achieved conservative `N_eff`, the
+pack's `N_eff=100` floor as the reference resolution, and the pre-registered
+true 3σ effect; both `N_eff≥100` and power ≥0.8 must hold. A1 uses the
+conservative existing O1/O2/action estimate, A2 records its own O1/O2 maximum
+autocorrelation time, `k_min` records the maximum over all three spatial axes
+and real/imaginary components, and Binder/susceptibility use the invariant-ray
+autocorrelation time. No row inherits another row's power estimate silently.
+
 ## Hard gates (before production sampling)
 
 phase455 terminal recorded; A4 Stage-A kernels committed (this pack); A5
 Stage-A verdict committed (this pack); O4 memo (or explicit user-renewed risk
-acceptance) before the production HMC — the largest at-risk spend under O4.
+acceptance) before the production HMC. The user supplied that explicit renewal
+on 2026-07-15; it is hash-pinned in `production_authorization.json` and states
+that O4 remains pending and no physical-mass/GeV claim is permitted. It is not
+an O4 ruling.
 
 ## Consumers / limb
 
-Closes ledger limb L6 at probed-volume scope on T1 with a Gaussian-null Binder
-column (and L8 at two-volume strength). A coherent ≥3σ departure in ≥2
-distinct-irrep channels (`|Δ_ch| ≤ 2`) is a mandatory n=5 escalation (contingent
-consumer of registry block B:471–476) before ANY claim.
+T1 would close ledger limb L6 at probed-volume scope with a Gaussian-null
+Binder column (and L8 only at two-volume strength). The production artifact
+does not reach T1: `production-analysis-invalid` closes neither L6 nor L8. A
+coherent ≥3σ departure in ≥2 distinct-irrep channels (`|Δ_ch| ≤ 2`) would
+mandate n=5 before ANY claim; the invalid-analysis firewall suppresses that
+escalation and also suppresses Phase458/G3 motivation.
+
+## Production record (2026-07-15)
+
+- Environment-clean committed-default run: `16000` production trajectories,
+  `10000` per control, `2000` warmup; wall time `21846.5987934 s`.
+- Raw artifact SHA-256:
+  `9b7e965a0b8ac906bc1352f908b28b6eb22511579c02ee91562f63beb67ed9cb`.
+- Pack hash verified byte-exact:
+  `40fd3c3488f94d18f50961e85d0bb3a3eabd1a31a071b61149875b8cf3d437aa`.
+- All five columns, all `64` spatial momenta, per-site/per-face-type retention,
+  and `50` aligned jackknife blocks are present. A consumer typo expecting 20
+  blocks was corrected to the generator's fixed 50 before adjudication; no
+  scientific rule changed.
+- SD2 `beta=1`: generic `N_eff=7.1549`; row-specific
+  `N_eff(A2)=7601.40`, `N_eff(k_min)=16.623`. SD2 `beta=4` has generic
+  `N_eff=5.8589` and `N_eff(k_min)=17.802`.
+- The five-row terminal is wholly invalid after the non-finite-row firewall;
+  no family-wise threshold is calibrated, no n=5 escalation fires, and G3 is
+  not motivated. The measured cost is `0.1137102 CPU-weeks`, so Phase458/G2 is
+  available and within its 2.0 CPU-week budget.
+- Phase471 remains `closure-not-decidable`: L5/L6/L8 open, L7 withheld.
 
 ## Framing
 
 Workbench-relative structure data ONLY (su(2) toy algebra, reduced Spin(4)
 slice, lattice units). A4 group-theory content is exact rational structure, not
-a physical spectrum. Zero physics computation; nothing measured, filled, or
-promoted; `promotedPhysicalMassClaimCount = 0`; lattice-unit quantities stay in
-lattice units and are never relabelled.
+a physical spectrum. Production measures lattice quantities but fills no
+source-lineage contract and promotes nothing;
+`promotedPhysicalMassClaimCount = 0`. Lattice-unit quantities stay in lattice
+units and are never relabelled.

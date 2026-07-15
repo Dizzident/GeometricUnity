@@ -20316,3 +20316,56 @@ generated register made `verify_boson_claim_integrity.sh` exit 1 with
 or changed. Mandatory incremental validation passed with 54 steps run and 290
 skipped; the final integrity verifier again reported the register current,
 15/14 missing fields, and `promotedPhysicalMassClaimCount=0`.
+
+## 2026-07-15 - Phase456 production: six-hour run preserved as production-analysis-invalid
+
+The user explicitly renewed written risk acceptance for the Phase456
+production HMC while preserving O4 review-pending status, workbench-relative
+lattice units, and zero physical-mass/GeV claims. That authorization was
+hash-pinned as `production_authorization.json`; it is not an O4 ruling.
+
+The environment-clean committed-default run was launched and directly tracked
+by the session lead. It completed after `21846.5987934 s` with five columns
+(`16000` production trajectories, `10000` per control, `2000` warmup). The
+byte-identical raw and summary artifacts have SHA-256
+`9b7e965a0b8ac906bc1352f908b28b6eb22511579c02ee91562f63beb67ed9cb`.
+The pack hash `40fd3c34...`, defaults, environment-override refusal, all 64
+spatial momenta, per-site/per-face-type retention, 50 aligned jackknife blocks,
+and direct exact-Gaussian control shape all verify.
+
+The result is an honest red/invalid terminal. The large-beta free-field sampler
+gate fails. SD2 beta=1 reports `tau_int(O1,O2,S)=(1118.1,490.7,490.7)` and
+generic `N_eff=7.1549`; its row-specific A2 estimate is well sampled
+(`N_eff=7601.4`) but `k_min` is not (`N_eff=16.623`). SD2 beta=4 is similarly
+autocorrelated (`N_eff=5.8589`, `N_eff(k_min)=17.802`). More decisively, the A2
+and dispersion mass rows are non-finite under the committed cosh/direct-free
+comparison. Per the pre-registered any-invalid-row firewall, the consumer
+withholds family-wise calibration and emits
+`consolidated-n4-launch-production-analysis-invalid`.
+
+A schema typo in the uncommitted consumer expected 20 jackknife rows although
+the generator and artifact fix 50. It was corrected to 50 before adjudication;
+no estimator, threshold, power floor, control gate, or measurement changed. A
+second fail-closed defect was also corrected: G3 motivation is now impossible
+when the analysis is invalid, preventing finite Binder/susceptibility
+diagnostics from leaking past the all-row firewall.
+
+Consequences: no T1/T2, no n=5 escalation, no G3 motivation, no L6/L8 closure,
+and no spectrum or physical-mass claim. The measured cost is
+`0.1137101556 CPU-weeks`, a valid within-budget Phase458/G2 input only.
+Phase458 remains blocked because G3/G4 are absent and G5/G6 are incomplete or
+unevaluated. Targeted Release propagation leaves Phase101 blocked, Phase202 at
+264/3, and Phase471 `closure-not-decidable` with L5/L6/L8 open and L7 withheld.
+`promotedPhysicalMassClaimCount=0` throughout.
+
+The mandatory incremental validation exposed and resolved an operational
+incident before checkpointing. Two separate driver process groups from
+near-simultaneous confirmation invocations were found running Phase452 against
+the same output path. The earlier orphaned group was terminated before either
+driver advanced into concurrent downstream writes; the later directly tracked
+group then completed alone. Its Phase452 canonical values reproduced, Phase456
+remained `production-analysis-invalid`, and the full incremental tail exited 0
+with 41 steps run / 303 skipped. The final integrity verifier reported the O4
+register current, 15/14 missing fields, and
+`promotedPhysicalMassClaimCount=0`. No output from the terminated duplicate is
+used as evidence.

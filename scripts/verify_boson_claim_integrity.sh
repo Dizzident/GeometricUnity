@@ -5538,19 +5538,59 @@ if (sourceLineageMissing) {
   assert(phase455.sourceContractApplicationAllowed === false && phase455.canFillPhase201WzContract === false && phase455.canFillPhase201HiggsContract === false && phase455.canFillPhase256ObservedFieldExtractionContract === false, "Phase455 cannot fill Phase201 or Phase256 contracts.");
   assert(phase455.routePromotesWzMasses === false && phase455.routePromotesHiggsMass === false && phase455.routeCompletesBosonPredictions === false, "Phase455 cannot promote boson predictions.");
   assert(phase101Package?.exactFermionicBackreactionProbe?.status === "exact-fermionic-backreaction-probe-convention-fragile", "Phase101 must include the Phase455 block at its real terminal.");
-  // Phase456 -- Wave-2 STEP 0 skeleton (consolidated-n4-launch): interim terminal awaiting-pack.
+  // Phase456 -- pack-gated consolidated n=4 production and fail-closed analysis consumer.
   assert(phase456.applicationSubjectKind === "consolidated-n4-launch", "Phase456 must classify its subject as consolidated-n4-launch.");
-  assert(phase456.terminalStatus === "consolidated-n4-launch-pack-committed-awaiting-gates", "Phase456 must carry the pack-committed-awaiting-gates terminal (A4+A5 Stage-A pack landed; production HMC deliberately unbuilt).");
-  assert(phase456.verdictKind === "pack-committed-awaiting-gates", "Phase456 verdictKind must equal pack-committed-awaiting-gates.");
+  const phase456AllowedVerdicts = new Set([
+    "pack-committed-awaiting-gates",
+    "production-analysis-invalid",
+    "production-controls-failed",
+    "production-underpowered",
+    "t2-coherent-distinct-irrep-departure-n5-mandatory",
+    "t1-quasi-free-compatible-at-probed-volume",
+    "mixed-row-outcome-no-coherent-distinct-irrep-departure",
+  ]);
+  assert(phase456AllowedVerdicts.has(phase456.verdictKind), `Phase456 verdictKind is outside the closed production taxonomy: ${phase456.verdictKind}`);
+  assert(phase456.terminalStatus === `consolidated-n4-launch-${phase456.verdictKind}`, "Phase456 terminalStatus must be the exact terminal prefix plus verdictKind.");
   assert(phase456.phase456GateGreen === true && phase456.claimBoundaryHeld === true, "Phase456 gate and claim boundary must hold.");
   assert(phase456.packGate?.packPresent === true && phase456.packGate?.packHashMatches === true && phase456.packGate?.refuseToRun === false && phase456.packGate?.refuseToRunGate === "MANDATORY", "Phase456 hash-refuse-to-run gate must be green against the pinned pack (40fd3c34...).");
+  assert(phase456.productionSamplingImplemented === true, "Phase456 production sampling must be implemented while remaining separately launched from the generator.");
+  assert(phase456.productionAuthorization?.explicitUserRiskRenewalValid === true && phase456.productionAuthorization?.authorizationHashMatches === true, "Phase456 must bind production to the exact written user risk-renewal artifact.");
+  assert(phase456.productionAuthorization?.o4PhysicistRuling === false && phase456.physicistReviewPending === true, "Phase456 user risk renewal must never be relabeled as an O4 ruling.");
+  assert(phase456.promotedPhysicalMassClaimCount === 0, "Phase456 must promote zero physical masses.");
+  if (phase456.productionArtifactConsumed === true) {
+    assert(phase456.productionArtifactPresent === true, "Phase456 cannot consume an absent production artifact.");
+    assert(phase456.productionAnalysis?.productionDefaultsVerified === true && phase456.productionAnalysis?.packHashVerified === true && phase456.productionAnalysis?.perSiteStorageVerified === true && phase456.productionAnalysis?.exactGaussianControlsVerified === true, "Phase456 production analysis must verify defaults, pack hash, complete per-site storage, and full-row exact Gaussian controls.");
+    assert(phase456.productionAnalysis?.rowCount === 5 && Array.isArray(phase456.productionAnalysis?.rows) && phase456.productionAnalysis.rows.length === 5, "Phase456 must execute exactly the five pre-registered production rows.");
+    assert(Number.isFinite(phase456.productionAnalysis?.measuredRuntimeSeconds) && phase456.productionAnalysis.measuredRuntimeSeconds > 0 && Number.isFinite(phase456.productionAnalysis?.measuredCpuWeeks) && phase456.productionAnalysis.measuredCpuWeeks > 0, "Phase456 must record finite positive wall and CPU cost measurements for Phase458/G2.");
+    assert(phase456.productionAnalysis?.cpuWeekBudget === 2 && phase456.productionAnalysis?.g2WithinBudget === (phase456.productionAnalysis.measuredCpuWeeks <= 2), "Phase456 must evaluate measured n=4 CPU cost against the committed 2.0 CPU-week G2 budget mechanically.");
+    assert(phase456.productionAnalysis.rows.every(r => ["invalid", "underpowered", "threshold-clearing-departure", "free-compatible"].includes(r.terminal)), "Phase456 row terminal escaped the closed row taxonomy.");
+    if (phase456.verdictKind === "production-analysis-invalid") {
+      assert(phase456.productionAnalysis?.inputShapeValid === false && phase456.productionAnalysisRecordedFailClosed === true, "Phase456 invalid analysis must be recorded through the exact fail-closed terminal contract.");
+      assert(Array.isArray(phase456.productionAnalysis?.inputErrors) && phase456.productionAnalysis.inputErrors.length > 0, "Phase456 invalid analysis must preserve explicit machine-readable errors.");
+      assert(phase456.productionAnalysis.rows.some(r => r.terminal === "invalid"), "Phase456 invalid analysis must name at least one invalid row.");
+      assert(phase456.productionAnalysis?.familyWiseSigmaThreshold === null && phase456.productionAnalysis?.appliedSigmaThreshold === null && phase456.productionAnalysis?.familyWiseCalibrationMethod === "unavailable-input-invalid", "Phase456 invalid analysis must withhold family-wise calibration and its applied threshold.");
+      assert(phase456.productionAnalysis?.samplerAndControlGatesPassed === false && phase456.productionAnalysis?.allRowsAdequatelyPowered === false && phase456.productionAnalysis?.mandatoryN5Escalation === false && phase456.productionAnalysis?.g3Motivated === false, "Phase456 invalid analysis must fail closed with no n=5 or G3 escalation.");
+    } else {
+      assert(phase456.productionAnalysis?.inputShapeValid === true, "Phase456 non-invalid consumed analysis must pass its fail-closed input-shape gate.");
+      assert(phase456.productionAnalysis?.perRowSigmaThreshold === 3 && phase456.productionAnalysis?.appliedSigmaThreshold >= 3, "Phase456 valid analysis must apply max(family-wise >=3 sigma, per-row 3 sigma).");
+      assert(phase456.productionAnalysis?.familyWiseCalibrationMethod === "fixed-seed multivariate-normal max-|Z| calibration from aligned null jackknife correlation", "Phase456 valid analysis family-wise threshold calibration must remain mechanical and covariance-aware.");
+    }
+    assert(phase456.verdictKind !== "pack-committed-awaiting-gates", "Phase456 cannot retain the pre-production terminal after consuming production.");
+    if (phase456.productionAnalysis.mandatoryN5Escalation === true)
+      assert(phase456.verdictKind === "t2-coherent-distinct-irrep-departure-n5-mandatory", "Phase456 n=5 escalation may fire only at the exact T2 terminal.");
+  } else {
+    assert(phase456.productionArtifactPresent === false && phase456.verdictKind === "pack-committed-awaiting-gates", "Phase456 pre-production state must have no artifact and retain the pack-committed terminal.");
+  }
   assert(phase456.planSection === "WAVE2_ACTION_PLAN_2026-07-12 item 9", "Phase456 must cite its plan item.");
   assert(phase456.targetBlindConstruction === true, "Phase456 must be target-blind.");
   assert(phase456.physicistReviewPending === true, "Phase456 must carry physicistReviewPending explicitly.");
   assert(phase456.noGevPromotion === true, "Phase456 must keep the no-GeV boundary.");
   assert(phase456.sourceContractApplicationAllowed === false && phase456.canFillPhase201WzContract === false && phase456.canFillPhase201HiggsContract === false && phase456.canFillPhase256ObservedFieldExtractionContract === false, "Phase456 cannot fill Phase201 or Phase256 contracts.");
   assert(phase456.routePromotesWzMasses === false && phase456.routePromotesHiggsMass === false && phase456.routeCompletesBosonPredictions === false, "Phase456 cannot promote boson predictions.");
-  assert(phase101Package?.consolidatedN4Launch?.status === "consolidated-n4-launch-pack-committed-awaiting-gates", "Phase101 must include the Phase456 block with the pack-committed terminal.");
+  assert(phase101Package?.consolidatedN4Launch?.status === phase456.terminalStatus && phase101Package?.consolidatedN4Launch?.verdictKind === phase456.verdictKind, "Phase101 must mirror the exact Phase456 terminal and verdict.");
+  assert(phase101Package?.consolidatedN4Launch?.promotedPhysicalMassClaimCount === 0, "Phase101 must mirror Phase456's zero promoted-mass count.");
+  if (phase456.productionArtifactConsumed === true)
+    assert(phase101Package?.consolidatedN4Launch?.productionArtifactConsumed === true && phase101Package?.consolidatedN4Launch?.productionAnalysisInputShapeValid === phase456.productionAnalysis?.inputShapeValid, "Phase101 must mirror Phase456 production consumption and exact analysis-validity state.");
   // Phase457 -- Wave-2 STEP 0 skeleton (upsilon-portal-stage-a): interim terminal awaiting-stage-a.
   assert(phase457.upsilonPortalStageASkeletonBuilt === true, "Phase457 skeleton must be built with its standing claim boundary intact.");
   assert(phase457.applicationSubjectKind === "upsilon-portal-stage-a", "Phase457 must classify its subject as upsilon-portal-stage-a.");

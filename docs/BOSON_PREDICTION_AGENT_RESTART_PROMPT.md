@@ -49,19 +49,20 @@ No successful physical W/Z/H prediction has been achieved. The current package
 still blocks physical comparison because the source-lineage and observed-field
 contracts are empty.
 
-CURRENT CHECKPOINT (2026-07-14, Phases469/470): C-LIFT verified the abstract
-`Cl(7,7)` control (`128=64+64`) and the exact 176-ray Phase465/467 intersection,
-but Phase441 supplies none of the 13 source-defined representation-object
-fields required to fund WS5. Phase469 therefore emits
-`bookkeeping-fails-source-object-unpinned-ws5-rescoped`; no representation
-object is invented. C-PERMANENCE then records P1/P2 negative, P4 scoped, P5
-closed only relative to its pinned audited inputs, and P3 open. Phase470 emits
-`permanence-not-decidable` naming P3. The C-number block 465-470 is exhausted.
-The remaining machine queue is Phase458 only when G1-G6 exist; Phase456
-production HMC remains forbidden without the O4 memo or explicit written risk
-renewal. The O4 engagement remains the human critical path. Phase101 stays
-blocked, Phase202 is 264/3 after targeted validation, the missing-field counts
-remain 15/14, and `promotedPhysicalMassClaimCount=0`.
+CURRENT CHECKPOINT (2026-07-15, Phase456 production): the explicitly authorized,
+environment-clean consolidated n=4 HMC completed in 21846.6 s under the
+committed defaults. Pack/default/authorization/storage/exact-control shape is
+valid, but the pre-registered analysis is not: the free-field sampler gate is
+red, SD2 beta=1 has generic N_eff 7.15 and k_min-row N_eff 16.62, and the A2 and
+dispersion mass rows are non-finite. The any-invalid-row firewall withholds the
+family-wise threshold and emits `production-analysis-invalid`; no G3
+motivation, n=5 escalation, L6/L8 closure, spectrum characterization, or claim
+follows. The measured 0.1137 CPU-week cost supplies Phase458/G2 within budget.
+Phase458 remains `blocked-inputs-incomplete`: G1 and G2 are available, G3 and
+G4 are absent, G5 is incomplete, and G6 is unevaluated. Phase471 remains open
+L5/L6/L8 with L7 withheld. The O4 engagement remains the human critical path.
+Phase101 stays blocked, Phase202 is 264/3 after targeted validation, the
+missing-field counts remain 15/14, and `promotedPhysicalMassClaimCount=0`.
 
 O4 REGISTER CURRENCY (2026-07-14): the derived overlay is current at 23
 review-pending outputs and now includes Phase467 plus the committed Phase456/
@@ -861,11 +862,11 @@ MANDATORY; A5 Gaussian-domination NOT provable at Stage A, three
 obstructions recorded, beta ladders live -> feeds 458 G1) and
 phase457 Stage-A (all seven portal cells certified exactly, closed
 form g_crit = sqrt(2*lambda); verdict firewall machine-checked CLOSED
-pending the O4 M-probe ruling; Arm Q gated off). Machine-executable
-remaining: 467/468 (new dirs - batch their wiring in one checkpoint),
-458 gate evaluation (needs 456-production inputs), C-LIFT 469 (gated
-on 465+467 verdicts); phase456 production HMC is gated on the O4 memo
-(or explicit user-renewed risk acceptance) per the plan.
+pending the O4 M-probe ruling; Arm Q gated off). The new-directory C queue and
+C-LIFT are complete. Phase456 production completed under explicit written risk
+renewal. The only remaining machine queue item is Phase458, and it must not
+execute until all G1-G6 inputs exist; production supplies G2 but explicitly
+does not supply G3.
 
 WAVE-2 C-LINEAGE MACHINE RESULTS (2026-07-14, incremental validation green:
 82 ran / 260 skipped, integrity verified): PHASE467 reconstructs the exact
@@ -881,9 +882,9 @@ witness, and finds every row outside the honest threshold band; terminal
 at the declared conditional scalar-proxy/full-interval scope. Neither
 phase supplies a coupling normalization, scale, pole, or prediction;
 `promotedPhysicalMassClaimCount=0`. Remaining machine queue: phase458 only
-when its G1-G6 inputs exist; C-LIFT 469 is now data-unblocked by the
-465+467 verdicts but must still be built only in registry order; phase456
-production remains gated on the O4 memo or explicit written risk renewal.
+when its G1-G6 inputs exist. Phase456 production completed under explicit
+written risk renewal and supplies G2 only; its invalid-analysis terminal cannot
+supply G3. C-LIFT 469 and C-PERMANENCE 470 are complete.
 
 WAVE-2 PLAN ADOPTED (2026-07-12, binding):
 docs/Phases/WAVE2_ACTION_PLAN_2026-07-12.md is the current execution
