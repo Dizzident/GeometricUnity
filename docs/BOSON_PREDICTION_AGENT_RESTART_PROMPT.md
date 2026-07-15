@@ -904,8 +904,10 @@ adjudication infrastructure; 478 Phase458 gate-specification closure; 479
 Phase457 post-ruling readiness; 480 genuine external physicist-adjudication
 intake; 481 prospective Phase456 repair pre-registration; 482 A5 theorem
 scout; 483 source-defined reopening intake. Their initial skeletons perform
-zero physics computation and cannot satisfy a scientific gate. Phase480 stays
-human-input gated; Phase481 cannot sample or mutate/reinterpret Phase456;
+zero physics computation and cannot satisfy a scientific gate. Phase480 is now
+an implemented, exact-path, Ed25519-verified intake but stays human-input gated
+at `awaiting-external-physicist-ruling` because its memo path is absent and its
+pre-pinned reviewer registry is empty; Phase481 cannot sample or mutate/reinterpret Phase456;
 Phase482 cannot claim a theorem from a partial scout; Phase483 cannot invent
 source fields. Phase477 is now substantively complete at exact coverage 31/31,
 13 memo ruling IDs, and 94/94 synthetic dependency edges, while remaining
@@ -913,6 +915,12 @@ human-ruling pending. Phase478 is substantively complete but Phase458 remains
 blocked on G3/G4/G5. Phase479 is substantively complete: the exact Phase480
 derivative, Arm-Q provenance, and Team-C deadline interfaces are frozen, while
 the Phase457 hold remains closed and Phase471's firewall remains unchanged.
+Phase480 is substantively implemented: strict JSON, exact 13-ruling semantics,
+ancestor-commit/current-byte bindings, exact reviewed-artifact sets, JCS payload
+hashing, a pre-pinned reviewer registry, and real Ed25519 verification are
+required as one conjunction. No genuine external memo or reviewer key is
+present, so no ruling is consumed, normalized rulings are empty, and the hold
+remains closed.
 Registry 477-483 is allocated; 484+ remains unassigned.
 
 WAVE-2 C-LINEAGE MACHINE RESULTS (2026-07-14, incremental validation green:

@@ -1,0 +1,6 @@
+{
+  "schemaVersion": 1,
+  "registryId": "phase480-o4-reviewer-registry-v1",
+  "purpose": "Pre-pin external human physicist identities and Ed25519 verification keys before a production O4 memo is accepted.",
+  "records": []
+}

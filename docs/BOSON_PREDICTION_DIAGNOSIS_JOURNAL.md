@@ -20541,3 +20541,28 @@ runs no Arm Q or Stage B, leaves L7 withheld, fills no contract, and preserves
 with 73 steps run and 278 skipped. Phase202 remained 271/3; the final integrity
 gate repeated exact O4 coverage 31/31, synthetic dependency coverage 94/94,
 the 15/14 source deficits, and zero promoted physical-mass claims.
+
+## 2026-07-15 - Phase480: authenticated human-memo intake implemented; external ruling still absent
+
+Phase480 now implements the human boundary without crossing it. A single exact
+memo path is accepted. Duplicate-key or malformed JSON, the unsigned template,
+synthetic content, an unsupported signature mode, an unknown or inactive
+reviewer, repository drift, an incomplete reviewed-artifact set, a payload-hash
+mismatch, or a failed signature all remain at
+`awaiting-external-physicist-ruling` and consume no ruling.
+
+The production acceptance conjunction requires the exact 13 ruling IDs and
+their registered option semantics; a pre-pinned active human reviewer record;
+an ancestor commit containing byte-identical dossier, coverage, schema,
+dependency map, intake contract, registry, and verifier; exact per-ruling
+reviewed summary hashes at that commit; RFC8785-JCS payload hashing; and a real
+Ed25519 detached-signature verification. Shape-valid signature metadata and
+the user's Phase456 risk acceptance never count as an O4 ruling. The normalized
+derivative uses the exact field names required by Phase479, but it is empty in
+the current missing-input state.
+
+No external memo or reviewer key has been supplied. Phase480 therefore emits
+`o4-physicist-adjudication-intake-awaiting-external-physicist-ruling` with all
+authentication conjuncts false, no ruling authored or inferred, the Phase457
+hold closed, all source-contract routes false, and
+`promotedPhysicalMassClaimCount=0`.

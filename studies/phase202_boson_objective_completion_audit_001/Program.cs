@@ -6828,10 +6828,30 @@ var phase457PostRulingReadinessPassed = phase457PostRulingReadinessMaterialized
     && JsonBool(phase479.RootElement, "routeCompletesBosonPredictions") is false;
 var o4PhysicistAdjudicationIntakeMaterialized = phase480 is not null;
 var o4PhysicistAdjudicationIntakePassed = o4PhysicistAdjudicationIntakeMaterialized
-    && JsonBool(phase480!.RootElement, "skeletonBuilt") is true
+    && JsonBool(phase480!.RootElement, "skeletonBuilt") is false
+    && JsonBool(phase480.RootElement, "zeroPhysicsCompute") is true
+    && JsonBool(phase480.RootElement, "intakeImplemented") is true
+    && JsonBool(phase480.RootElement, "awaitingImplementation") is false
     && JsonString(phase480.RootElement, "applicationSubjectKind") == "o4-physicist-adjudication-intake"
     && JsonString(phase480.RootElement, "interimTerminal") == "awaiting-external-physicist-ruling"
     && JsonString(phase480.RootElement, "verdictKind") == "awaiting-external-physicist-ruling"
+    && JsonBool(phase480.RootElement, "inputPresent") is false
+    && JsonBool(phase480.RootElement, "awaitingExternalPhysicistRuling") is true
+    && JsonBool(phase480.RootElement, "genuineSignedMemoPresent") is false
+    && JsonBool(phase480.RootElement, "rulingConsumed") is false
+    && JsonBool(phase480.RootElement, "rulingAuthoredOrInferred") is false
+    && JsonBool(phase480.RootElement, "cryptographicVerificationPerformed") is false
+    && JsonBool(phase480.RootElement, "repositoryBindingVerified") is false
+    && JsonBool(phase480.RootElement, "reviewedArtifactSetsVerified") is false
+    && JsonBool(phase480.RootElement, "externalMemoValidated") is false
+    && JsonBool(phase480.RootElement, "humanAuthorshipValidated") is false
+    && JsonBool(phase480.RootElement, "repositoryBindingValidated") is false
+    && JsonBool(phase480.RootElement, "signedPayloadHashValidated") is false
+    && JsonBool(phase480.RootElement, "signatureProvenanceValidated") is false
+    && JsonString(phase480.RootElement, "signatureVerificationStatus") == "not-performed-input-absent-or-invalid"
+    && JsonBool(phase480.RootElement, "syntheticOrTemplateInput") is false
+    && JsonBool(phase480.RootElement, "rulingContentMachineAuthoredOrInferred") is false
+    && JsonBool(phase480.RootElement, "holdLifted") is false
     && JsonString(phase480.RootElement, "planSection") == "WAVE2_AMENDMENTS_2026-07-12 A4"
     && JsonInt(phase480.RootElement, "waveOrder") == 4
     && JsonBool(phase480.RootElement, "targetBlindConstruction") is true

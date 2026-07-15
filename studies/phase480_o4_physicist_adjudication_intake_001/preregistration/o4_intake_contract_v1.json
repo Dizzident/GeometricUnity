@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase480-o4-physicist-adjudication-intake-v1",
+  "memoInputPath": "studies/phase480_o4_physicist_adjudication_intake_001/input/o4_human_physicist_memo_v1.json",
+  "reviewerRegistryPath": "studies/phase480_o4_physicist_adjudication_intake_001/preregistration/o4_reviewer_registry_v1.json",
+  "memoSchemaPath": "scripts/o4_register/o4_human_memo_schema_v1.json",
+  "coverageContractPath": "scripts/o4_register/coverage_contract.json",
+  "dependencyMapPath": "scripts/o4_register/dependency_map.json",
+  "dossierPath": "docs/Phases/Adjudication/O4_CONVENTIONS_REGISTER.md",
+  "canonicalization": "RFC8785-JCS-restricted-json-domain",
+  "signedPayloadDefinition": "UTF-8 JCS of the complete memo after removing top-level signedPayloadSha256 and signatureEnvelope",
+  "acceptedSignatureModes": [
+    "ed25519-detached"
+  ],
+  "signatureMessage": "signed-payload-canonical-utf8",
+  "signatureArtifactPathPrefix": "studies/phase480_o4_physicist_adjudication_intake_001/input/",
+  "repositoryBindingCommitPolicy": "commit-must-exist-and-be-an-ancestor-of-HEAD; dossier, coverage, schema, and reviewer record are verified from that commit",
+  "requiredReviewerRegistryState": "pre-pinned-active-human-reviewer-with-ed25519-spki-pem",
+  "unsupportedSchemaSignatureModesFailClosed": [
+    "openpgp-detached",
+    "minisign-detached",
+    "witnessed-signed-document"
+  ],
+  "missingOrInvalidTerminal": "awaiting-external-physicist-ruling",
+  "validatedTerminal": "validated-external-physicist-ruling",
+  "riskAcceptanceCountsAsRuling": false,
+  "shapeValidationCountsAsSignatureVerification": false,
+  "syntheticOrTemplateInputAccepted": false,
+  "machineAuthoredOrInferredRulingAccepted": false,
+  "physicalMassOrGevClaimAuthorized": false
+}

@@ -11,6 +11,7 @@ cd "$ROOT"
 node scripts/o4_register/generate.js --check
 node scripts/o4_register/coverage_test.js
 node scripts/o4_register/synthetic_overturn_test.js --check
+node studies/phase480_o4_physicist_adjudication_intake_001/verify_intake_test.js
 
 node <<'NODE'
 const fs = require("fs");
@@ -5789,9 +5790,8 @@ if (sourceLineageMissing) {
   assert(Array.isArray(phase471.openLimbs) && ["L5","L6","L8"].every((l) => phase471.openLimbs.includes(l)), "Phase471 must name L5/L6/L8 as open limbs.");
   assert(Array.isArray(phase471.withheldLimbs) && phase471.withheldLimbs.includes("L7"), "Phase471 must name L7 as withheld.");
   assert(phase101Package?.b2ClosureLedger?.b2ClosureLedgerBuilt === true, "Phase101 must include the Phase471 block.");
-  // Phases480-483 -- remaining Amendment A4 fail-closed skeletons.
+  // Phases481-483 -- remaining Amendment A4 fail-closed skeletons.
   const a4Skeletons = [
-    [phase480, 480, 4, "o4-physicist-adjudication-intake", "awaiting-external-physicist-ruling"],
     [phase481, 481, 5, "phase456-prospective-repair-preregistration", "preregistration-skeleton-awaiting-implementation"],
     [phase482, 482, 6, "a5-theorem-scout", "theorem-scout-skeleton-awaiting-implementation"],
     [phase483, 483, 7, "source-defined-reopening-intake", "intake-skeleton-awaiting-source-input"],
@@ -5807,6 +5807,21 @@ if (sourceLineageMissing) {
     assert(phase.sourceContractApplicationAllowed === false && phase.canFillPhase201WzContract === false && phase.canFillPhase201HiggsContract === false && phase.canFillPhase256ObservedFieldExtractionContract === false, `Phase${phaseNumber} cannot fill source contracts.`);
     assert(phase.routePromotesWzMasses === false && phase.routePromotesHiggsMass === false && phase.routeCompletesBosonPredictions === false, `Phase${phaseNumber} cannot promote boson predictions.`);
   }
+  // Phase480 -- implemented fail-closed external human memo intake; no memo is present.
+  assert(phase480.skeletonBuilt === false && phase480.zeroPhysicsCompute === true && phase480.intakeImplemented === true && phase480.awaitingImplementation === false, "Phase480 must be the implemented zero-compute external memo intake.");
+  assert(phase480.applicationSubjectKind === "o4-physicist-adjudication-intake" && phase480.waveOrder === 4, "Phase480 identity or wave order drifted.");
+  assert(phase480.terminalStatus === "o4-physicist-adjudication-intake-awaiting-external-physicist-ruling" && phase480.verdictKind === "awaiting-external-physicist-ruling", "Phase480 must remain awaiting while no authenticated external memo exists.");
+  assert(phase480.inputPresent === false && phase480.awaitingExternalPhysicistRuling === true && phase480.genuineSignedMemoPresent === false && phase480.rulingConsumed === false, "Phase480 missing-input state must consume no ruling.");
+  assert(phase480.rulingAuthoredOrInferred === false && phase480.cryptographicVerificationPerformed === false && phase480.repositoryBindingVerified === false && phase480.reviewedArtifactSetsVerified === false, "Phase480 cannot author, infer, or claim verification of an absent memo.");
+  assert(phase480.acceptedSignatureMode === "ed25519-detached" && phase480.unsupportedSignatureModesFailClosed === true && phase480.riskAcceptanceCountsAsRuling === false && phase480.shapeValidationCountsAsSignatureVerification === false, "Phase480 authentication boundary drifted.");
+  assert(phase480.intakeContractSha256 === "a5f5b516807d53a6af5aa81b0d908c1308e693c40cd1cd15958b14924dee7927" && phase480.reviewerRegistrySha256 === "112494857673a7a21f80d0631f688f09922a4e0c88493c731363076981ecaf74", "Phase480 intake contract or pre-pinned empty reviewer registry drifted.");
+  assert(phase480.verifierSha256 === "594e6483d8e57de2443025a78affe48217a66ab97a7eb5d671c846662da806a9" && phase480.verifierTestSha256 === "23a44c40f3ac45259dd940d1324eca09b66511f750ca813d5bfaaceda69b23d8", "Phase480 verifier or strict JSON/JCS/Ed25519 test drifted.");
+  assert(phase480.memoSchemaSha256 === "989a49b6b70e839db6858a6ea26a93146860c0c109facdb276e56d4e3467d82a", "Phase480 memo schema binding drifted.");
+  assert(phase480.externalMemoValidated === false && phase480.humanAuthorshipValidated === false && phase480.repositoryBindingValidated === false && phase480.signedPayloadHashValidated === false && phase480.signatureProvenanceValidated === false, "Phase480 absent input cannot satisfy any downstream verified-envelope conjunct.");
+  assert(phase480.signatureVerificationStatus === "not-performed-input-absent-or-invalid" && phase480.syntheticOrTemplateInput === false && phase480.rulingContentMachineAuthoredOrInferred === false && Array.isArray(phase480.normalizedRulings) && phase480.normalizedRulings.length === 0, "Phase480 must emit an empty, non-synthetic derivative while input is absent.");
+  assert(phase480.verification?.valid === false && phase480.verification?.inputPresent === false && Array.isArray(phase480.verification?.reasons) && phase480.verification.reasons.includes("memo-input-absent"), "Phase480 must preserve the exact missing-input diagnostic.");
+  assert(phase480.holdLifted === false && phase480.physicistReviewPending === true, "Phase480 missing input cannot lift a hold or clear physicist review.");
+  assert(phase480.noGevPromotion === true && phase480.promotedPhysicalMassClaimCount === 0 && phase480.sourceContractApplicationAllowed === false, "Phase480 must preserve the no-claim boundary.");
   assert(phase477.infrastructureReady === true && phase477.exactCoveragePassed === true, "Phase477 exact O4 infrastructure readiness must be green.");
   assert(phase477.recursivePendingArtifactCount === 31 && phase477.coverageEntryCount === 31, "Phase477 must exactly cover all 31 recursively review-pending artifacts.");
   assert(phase477.unmappedPendingArtifactCount === 0 && phase477.ambiguousCoverageArtifactCount === 0, "Phase477 cannot leave an unmapped or ambiguous pending artifact.");
@@ -5863,6 +5878,7 @@ if (sourceLineageMissing) {
   assert(a4PackageBlocks.every((block) => block != null), "Phase101 must include every Phase477-483 A4 block.");
   assert(phase101Package?.phase458GateSpecificationClosure?.specificationClosed === true && phase101Package?.phase458GateSpecificationClosure?.phase458EvaluationAuthorized === false, "Phase101 must mirror Phase478 specification closure without authorizing Phase458.");
   assert(phase101Package?.phase457PostRulingReadiness?.contractClosed === true && phase101Package?.phase457PostRulingReadiness?.holdLifted === false && phase101Package?.phase457PostRulingReadiness?.stageBBuiltOrRun === false, "Phase101 must mirror Phase479 readiness closure without lifting the hold or running Stage B.");
+  assert(phase101Package?.o4PhysicistAdjudicationIntake?.intakeImplemented === true && phase101Package?.o4PhysicistAdjudicationIntake?.inputPresent === false && phase101Package?.o4PhysicistAdjudicationIntake?.rulingConsumed === false && phase101Package?.o4PhysicistAdjudicationIntake?.cryptographicVerificationPerformed === false && phase101Package?.o4PhysicistAdjudicationIntake?.holdLifted === false, "Phase101 must mirror Phase480's implemented missing-input boundary without consuming a ruling or lifting a hold.");
   assert(a4PackageBlocks.every((block) => block?.noGevPromotion === true && block?.promotedPhysicalMassClaimCount === 0), "Phase101 A4 blocks must preserve the no-GeV boundary.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
