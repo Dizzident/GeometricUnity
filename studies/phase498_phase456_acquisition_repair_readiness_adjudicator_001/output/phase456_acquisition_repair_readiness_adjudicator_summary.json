@@ -1,0 +1,212 @@
+{
+  "phaseId": "phase498-phase456-acquisition-repair-readiness-adjudicator",
+  "terminalStatus": "phase456-acquisition-repair-readiness-adjudicator-new-acquisition-specification-ready",
+  "verdictKind": "new-acquisition-specification-ready",
+  "readinessClassification": "new-acquisition-specification-ready",
+  "readinessTaxonomy": [
+    "invalid-precursor",
+    "retained-data-sufficient",
+    "new-acquisition-specification-ready",
+    "no-viable-specification-within-audited-grid",
+    "unresolved"
+  ],
+  "inputsValid": true,
+  "applicationSubjectKind": "phase456-acquisition-repair-readiness-planning-adjudicator",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A10",
+  "explorationOnly": true,
+  "zeroPhysicsCompute": true,
+  "noHmcRun": true,
+  "noBenchmarkRun": true,
+  "frozenBeforePrecursorConsumption": true,
+  "contractBinding": {
+    "path": "studies/phase498_phase456_acquisition_repair_readiness_adjudicator_001/preregistration/phase498_readiness_contract_v1.json",
+    "byteSha256": "cf9fed750f42683edb821d418994c95a2476053c60592148e60d27f16e917ad4",
+    "valid": true,
+    "reason": "exact"
+  },
+  "precursorBindings": {
+    "phase496": {
+      "path": "studies/phase496_phase456_retained_data_information_census_001/output/phase456_retained_data_information_census_summary.json",
+      "expectedByteSha256": "f87307724ec69e239b1b1354376274e7beced92559f00a7b5ef517012d92a9a9",
+      "actualByteSha256": "f87307724ec69e239b1b1354376274e7beced92559f00a7b5ef517012d92a9a9",
+      "byteHashValid": true,
+      "schemaAndBoundaryValid": true,
+      "valid": true,
+      "classification": "retained-data-insufficient-for-identifiable-repair",
+      "reason": "exact"
+    },
+    "phase497": {
+      "path": "studies/phase497_phase456_prospective_estimator_acquisition_oracle_001/output/phase456_prospective_estimator_acquisition_oracle_summary.json",
+      "expectedByteSha256": "c5594d5db2b89a8c9bdce0cde2a7090c162a15ca3471cdca5f711af811f7259c",
+      "actualByteSha256": "c5594d5db2b89a8c9bdce0cde2a7090c162a15ca3471cdca5f711af811f7259c",
+      "byteHashValid": true,
+      "schemaAndBoundaryValid": true,
+      "valid": true,
+      "classification": "acquisition-specification-viable",
+      "reason": "exact"
+    },
+    "bothExactBytesSchemasAndContractsValid": true
+  },
+  "precedenceBattery": {
+    "cases": [
+      {
+        "caseId": "invalid-over-everything",
+        "expected": "invalid-precursor",
+        "actual": "invalid-precursor",
+        "passed": true
+      },
+      {
+        "caseId": "contradictory-census-fails-closed",
+        "expected": "invalid-precursor",
+        "actual": "invalid-precursor",
+        "passed": true
+      },
+      {
+        "caseId": "contradictory-oracle-fails-closed",
+        "expected": "invalid-precursor",
+        "actual": "invalid-precursor",
+        "passed": true
+      },
+      {
+        "caseId": "retained-data-requires-recovery-gates",
+        "expected": "unresolved",
+        "actual": "unresolved",
+        "passed": true
+      },
+      {
+        "caseId": "retained-data-sufficient",
+        "expected": "retained-data-sufficient",
+        "actual": "retained-data-sufficient",
+        "passed": true
+      },
+      {
+        "caseId": "new-spec-requires-whole-menu",
+        "expected": "unresolved",
+        "actual": "unresolved",
+        "passed": true
+      },
+      {
+        "caseId": "new-spec-ready",
+        "expected": "new-acquisition-specification-ready",
+        "actual": "new-acquisition-specification-ready",
+        "passed": true
+      },
+      {
+        "caseId": "audited-grid-exhausted",
+        "expected": "no-viable-specification-within-audited-grid",
+        "actual": "no-viable-specification-within-audited-grid",
+        "passed": true
+      },
+      {
+        "caseId": "valid-unresolved",
+        "expected": "unresolved",
+        "actual": "unresolved",
+        "passed": true
+      }
+    ],
+    "caseCount": 9,
+    "allCasesPassed": true,
+    "invalidPrecedencePassed": true,
+    "readinessRequiresWholeMenuPassed": true
+  },
+  "evidence": {
+    "retainedDataSufficient": false,
+    "newAcquisitionRequired": true,
+    "oracleBatteryValid": true,
+    "viableSpecificationFound": true,
+    "selectedSpecificationPresent": true,
+    "newAcquisitionSpecificationReady": true,
+    "noViableSpecificationWithinAuditedGrid": false,
+    "contradictoryCensusState": false,
+    "contradictoryOracleState": false
+  },
+  "precedenceTrace": [
+    {
+      "order": 1,
+      "classification": "invalid-precursor",
+      "conditionSupported": false,
+      "selected": false
+    },
+    {
+      "order": 2,
+      "classification": "retained-data-sufficient",
+      "conditionSupported": false,
+      "selected": false
+    },
+    {
+      "order": 3,
+      "classification": "new-acquisition-specification-ready",
+      "conditionSupported": true,
+      "selected": true
+    },
+    {
+      "order": 4,
+      "classification": "no-viable-specification-within-audited-grid",
+      "conditionSupported": false,
+      "selected": false
+    },
+    {
+      "order": 5,
+      "classification": "unresolved",
+      "conditionSupported": false,
+      "selected": false
+    }
+  ],
+  "planningEvidenceOnly": true,
+  "mayInformLaterPhase481PackDesign": true,
+  "selectedAcquisitionSpecification": {
+    "temporalExtent": 16,
+    "effectiveSampleSizeFloor": 2048,
+    "retainedSeparations": 9,
+    "estimatorFamily": "positive-constrained periodic one/two-component GLS with frozen penalized model selection",
+    "covarianceTreatment": "full frozen Toeplitz covariance; reject non-positive-definite or rank-deficient matrices",
+    "minimumRecoveryPasses": 11,
+    "replicateCount": 12,
+    "modelSelectionDelta": 4,
+    "costMetric": "temporalExtent*effectiveSampleSize",
+    "cost": 32768
+  },
+  "futurePhase481MustIndependentlyFreezeAllA10ListedAcquisitionRules": true,
+  "futurePhase481RequiredIndependentFreezeItems": [
+    "observables",
+    "temporal-extent",
+    "effective-sample-size-and-power-floors",
+    "chain-and-autocorrelation-rules",
+    "estimator",
+    "covariance-treatment",
+    "terminal-taxonomy",
+    "refuse-to-run-fingerprint"
+  ],
+  "newWrittenSamplingAuthorizationStillRequired": true,
+  "phase456TerminalChanged": false,
+  "phase456InvalidRowsReinterpreted": false,
+  "phase456CommittedArtifactsMutated": false,
+  "phase481PackCreated": false,
+  "phase481PackMutated": false,
+  "phase481RepairPackConstructed": false,
+  "phase481PackAuthorized": false,
+  "phase458G3Satisfied": false,
+  "phase458G5Satisfied": false,
+  "phase458EvaluationAuthorized": false,
+  "binderLaunchAuthorized": false,
+  "samplingRun": false,
+  "samplingAuthorized": false,
+  "productionAuthorized": false,
+  "externalReviewStillRequired": true,
+  "humanRulingAuthored": false,
+  "o4Discharged": false,
+  "sourceContractApplicationAllowed": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256Contract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "noGevPromotion": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "a10BoundaryHeld": true,
+  "decision": "A frozen synthetic oracle specification survives the whole admitted menu and the retained bytes are insufficient. The result may inform a later independently frozen Phase481 pack, but creates no pack and authorizes no run."
+}

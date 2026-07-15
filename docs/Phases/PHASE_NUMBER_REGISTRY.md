@@ -16,7 +16,8 @@ back, NO new phase directory may be created outside this table.
 | 487-489 | Shared convention-robustness extension (A6) | 487 independent SO(3) Haar measure control; 488 proposal invariance control; 489 reduced sampler restart equivalence |
 | 490-492 | Shared Phase455 convention-closure extension (A7) | 490 zero-mode quotient audit; 491 committed bosonic-model family sensitivity; 492 prospective combined robustness adjudicator |
 | 493-495 | Shared Phase456 forensic-recovery extension (A8) | 493 stored-artifact failure decomposition; 494 estimator/oracle battery; 495 prospective repair-readiness adjudicator |
-| 496+ | Unassigned - extend this registry before use | - |
+| 496-498 | Shared Phase456 measurement-repair design extension (A10) | 496 retained-data information census; 497 prospective estimator/acquisition oracle battery; 498 acquisition and repair-readiness adjudicator |
+| 499+ | Unassigned - extend this registry before use | - |
 
 Rules: (1) a team takes the LOWEST free number in its own block;
 (2) cross-team phases take the number of the OWNING team per the

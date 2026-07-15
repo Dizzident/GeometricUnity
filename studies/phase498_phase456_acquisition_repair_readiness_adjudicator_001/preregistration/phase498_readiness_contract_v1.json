@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase498-a10-acquisition-repair-readiness-v1",
+  "frozenBeforePrecursorConsumption": true,
+  "precedence": [
+    "invalid-precursor",
+    "retained-data-sufficient",
+    "new-acquisition-specification-ready",
+    "no-viable-specification-within-audited-grid",
+    "unresolved"
+  ],
+  "phase496": {
+    "phaseId": "phase496-phase456-retained-data-information-census",
+    "classificationProperty": "censusClassification",
+    "taxonomy": [
+      "invalid-precursor",
+      "retained-data-insufficient-for-identifiable-repair",
+      "retained-data-sufficient-for-prospective-estimator-design"
+    ],
+    "requiredDecisionFields": [
+      "inputsValid",
+      "retainedDataSufficientForProspectiveEstimatorDesign",
+      "a10BoundaryHeld"
+    ]
+  },
+  "phase497": {
+    "phaseId": "phase497-phase456-prospective-estimator-acquisition-oracle",
+    "classificationProperty": "verdictKind",
+    "taxonomy": [
+      "invalid-oracle-battery",
+      "acquisition-specification-viable",
+      "no-viable-specification-within-audited-grid"
+    ],
+    "requiredDecisionFields": [
+      "inputsValid",
+      "oracleBatteryValid",
+      "viableSpecificationFound",
+      "selectedSpecification",
+      "frozenContractSha256",
+      "frozenBeforeEvaluation",
+      "syntheticPlanningEvidenceOnly"
+    ]
+  },
+  "readyResultIsPlanningEvidenceOnly": true,
+  "phase481PackCreationAllowed": false,
+  "phase458G3OrG5SatisfactionAllowed": false,
+  "samplingOrProductionAuthorizationAllowed": false,
+  "o4DischargeAllowed": false,
+  "sourceContractApplicationAllowed": false,
+  "physicalClaimAllowed": false
+}

@@ -436,6 +436,9 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath.Contains("scripts/o4_register/", StringComparison.Ordinal)
     || normalizedPath.Contains("scripts/boson_incremental_manifest.json", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase278_relaxion_electroweak_scale_source_audit_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase496_phase456_retained_data_information_census_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase497_phase456_prospective_estimator_acquisition_oracle_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase498_phase456_acquisition_repair_readiness_adjudicator_001/", StringComparison.Ordinal)
     || normalizedPath == "studies/phase101_boson_prediction_package_001/Program.cs"
     || normalizedPath == "studies/phase202_boson_objective_completion_audit_001/Program.cs"
     || normalizedPath == "studies/phase204_boson_source_lineage_candidate_scan_001/Program.cs"
@@ -445,7 +448,10 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath == "scripts/verify_boson_claim_integrity.sh"
     || normalizedPath == "docs/BOSON_PREDICTION_DIAGNOSIS_JOURNAL.md"
     || normalizedPath == "docs/BOSON_PREDICTION_AGENT_RESTART_PROMPT.md"
-    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P278.md";
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P278.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P496.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P497.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P498.md";
 
 static bool? JsonBool(JsonElement element, string propertyName) =>
     element.TryGetProperty(propertyName, out var value) && (value.ValueKind == JsonValueKind.True || value.ValueKind == JsonValueKind.False)

@@ -20764,3 +20764,43 @@ Consequently L8 and Phase458 G1 remain open. Phase482 does not evaluate or
 authorize Phase458, sampling, Binder work, acceleration, production, O4
 discharge, or a source-contract fill. It produces no physical-unit claim and
 preserves `promotedPhysicalMassClaimCount=0`.
+
+## 2026-07-15 - Amendment A10: retained data cannot identify the repair; one synthetic acquisition specification survives
+
+The user authorized the next three Phase456 measurement-repair design tasks as
+one agent-parallel checkpoint. Registry 496-498 was allocated before the new
+phase directories were created. Shared wiring and fail-closed validation
+remained with the session lead.
+
+Phase496 exact-binds the committed Phase456 production artifact, twin summary,
+and Phase493-495 forensic chain, then inventories only retained information.
+There are four stored time indices but at most three independent periodic
+values, 64 aggregate spatial-momentum correlators, and 50 aligned delete-block
+summaries. Raw configuration-level samples were not retained. The admitted
+two-component periodic model has four amplitude/mass parameters, exceeding the
+retained temporal Jacobian-rank bound of three. Phase496 therefore records
+`retained-data-insufficient-for-identifiable-repair`; it does not discard the
+retained aggregates or reinterpret an invalid Phase456 row.
+
+Phase497 freezes its analytic periodic correlators, positive one/two-component
+GLS estimators, correlated-noise law, seeds, acquisition grid, recovery and
+model-selection rules, sign rejection, covariance requirements, and invalid-row
+policy before evaluation. It does not read Phase496 or any physical target. Of
+16 synthetic grid points, only temporal extent 16 with effective-sample-size
+floor 2048 passes the entire frozen menu, using nine retained separations. The
+12-replicate selected row has 12 single-component recoveries, zero false
+two-component selections, 11 double-component recoveries and 12 correct double
+selections. This is conditional synthetic planning evidence, not a production
+power or cost guarantee.
+
+Phase498 exact-binds both precursor outputs and passes all nine frozen
+precedence cases. Because retained-data sufficiency is false and a whole-menu
+synthetic specification is present, it records
+`new-acquisition-specification-ready`. This permits only consideration of a
+later, independently frozen Phase481 pack. No Phase481 pack was created or
+authorized, and fresh written sampling authorization remains required.
+
+The tranche does not mutate or rehabilitate Phase456, satisfy Phase458 G3/G5,
+discharge O4, authorize HMC/sampling/benchmark work, fill a source contract, or
+support a physical-unit claim. External review remains required and
+`promotedPhysicalMassClaimCount=0`.

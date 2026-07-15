@@ -210,3 +210,45 @@ Every other valid result leaves L8 open. Phase482 cannot satisfy G3-G5,
 authorize Binder work, sampling, acceleration, or production, discharge O4,
 fill a source contract, reinterpret Phase456, or support a physical-unit claim;
 `promotedPhysicalMassClaimCount=0` on every branch.
+
+## A10 — Phase456 prospective measurement-repair design (phases 496–498)
+
+The next machine-executable blocker-resolution tranche addresses the
+Phase493–495 finding that the committed Phase456 `T=4` ratio estimator is
+structurally non-identifying and the retained effective sample sizes are below
+the frozen floor. All work is deterministic or read-only over committed data.
+It cannot reinterpret Phase456's invalid terminal, construct the Phase481
+pack, or authorize fresh sampling.
+
+Phase496 exact-binds the committed Phase456 production, retained correlator,
+configuration, analyzer, and Phase493–495 forensic artifacts. It inventories
+the actually retained temporal/spatial support, channel and configuration
+counts, covariance information, and parameter-identifiability bounds. It must
+distinguish information present in the bytes from information that a future
+acquisition would need. Missing or ambiguous fields fail closed; no fitted
+quantity from the invalid analysis becomes evidence.
+
+Phase497 freezes its estimator families, oracle menu, noise laws, tolerances,
+model-selection rule, invalid-row policy, and acquisition-grid search before
+reading Phase496's terminal. It uses only analytic or deterministic synthetic
+correlators. The battery covers positive one- and multi-component periodic
+correlators, correlated noise, sign-indefinite inputs, covariance rank, and
+false-selection controls. A viable terminal requires prospectively frozen
+discrimination and recovery gates across the whole admitted oracle menu; a
+good fit alone is insufficient.
+
+Phase498 exact-binds Phases496 and 497 and applies frozen precedence across
+invalid precursor, retained-data sufficient, new-acquisition specification
+ready, no viable specification within the audited grid, and unresolved. Any
+ready result is planning evidence permitting only later Phase481 pack design.
+It does not create that pack, satisfy Phase458 G3/G5, or authorize a run. A
+future Phase481 implementation must independently freeze the selected
+observables, temporal extent, effective-sample-size/power floors, chain and
+autocorrelation rules, estimator, covariance treatment, terminal taxonomy,
+and refuse-to-run fingerprint before requesting new written sampling
+authorization.
+
+All A10 phases remain in Phase484's exploration lane. They run no HMC or
+benchmark, mutate no committed artifact, author no O4 ruling, fill no source
+contract, and support no physical-unit claim;
+`promotedPhysicalMassClaimCount=0` throughout.

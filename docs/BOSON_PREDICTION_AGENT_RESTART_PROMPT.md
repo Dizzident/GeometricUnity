@@ -65,7 +65,7 @@ input is invalid or drifted. G6 projects 1.5044386598 CPU-weeks under its
 committed n=3..6 n^4-volume model and therefore selects the CPU route; that is
 scheduling eligibility only and authorizes no launch. Phase471 remains open
 L5/L6/L8 with L7 withheld. The O4 engagement remains the human critical path.
-Phase101 stays blocked, Phase202 is 283/3 after the A8 checkpoint, the
+Phase101 stays blocked, Phase202 is 286/3 after the A10 checkpoint, the
 missing-field counts remain 15/14, and `promotedPhysicalMassClaimCount=0`.
 
 O4 INFRASTRUCTURE (2026-07-15, Phase477): the exact coverage register is
@@ -150,9 +150,29 @@ declared. A8 does not reinterpret Phase456, construct or authorize Phase481,
 authorize fresh sampling or production, satisfy Phase458 G3/G5, discharge O4,
 fill a source contract, or support a physical-unit claim. Binding plan:
 `docs/Phases/PHASE456_FORENSIC_RECOVERY_PLAN_2026-07-15.md`. Registry 493-495
-is allocated; 496+ remains unassigned. Mandatory incremental validation passed;
+is allocated; its former 496+ frontier is superseded by Amendment A10 below. Mandatory incremental validation passed;
 Phase202 is 283/3 and integrity preserves the 15/14 source deficits and zero
 promoted claims.
+
+PHASE456 PROSPECTIVE MEASUREMENT-REPAIR DESIGN (2026-07-15, Amendment A10;
+Phases496-498): Phase496 exact-binds the retained Phase456 and forensic-chain
+bytes. Four stored time indices reduce to at most three independent periodic
+values, and no raw configuration-level samples survive; the admitted
+two-component periodic model has four free parameters. The retained bytes are
+therefore insufficient for identifiable repair, although the 64 spatial
+momentum aggregates and 50 aligned delete-block summaries remain inventoried.
+Phase497 freezes a target-blind synthetic one/two-component periodic-GLS oracle
+and acquisition grid. Only temporal extent 16 with effective-sample-size floor
+2048 passes its complete recovery, model-selection, covariance, sign, and
+invalid-row menu within that model. Phase498 exact-binds both results and
+records `new-acquisition-specification-ready`. This means only that the
+synthetic specification may inform a later independently frozen Phase481 pack;
+it is not a production power guarantee, creates no pack, and authorizes no
+sampling. New written sampling authorization is still required. Phase456 is
+not reinterpreted, Phase458 G3/G5 and O4 remain closed, external review remains
+required, and no source-contract or physical-unit authority follows. Registry
+496-498 is allocated; 499+ remains unassigned. Phase202 is 286/3 and
+`promotedPhysicalMassClaimCount=0`.
 
 PHASE482 DETERMINISTIC THEOREM SCOUT (2026-07-15, Amendment A9): Amendment A9
 narrowly permits Phase482's proof computation while Phase481 stays at its
@@ -1014,7 +1034,7 @@ hashing, a pre-pinned reviewer registry, and real Ed25519 verification are
 required as one conjunction. No genuine external memo or reviewer key is
 present, so no ruling is consumed, normalized rulings are empty, and the hold
 remains closed.
-Registry 477-495 is allocated; 496+ remains unassigned.
+Registry 477-498 is allocated; 499+ remains unassigned.
 
 WAVE-2 C-LINEAGE MACHINE RESULTS (2026-07-14, incremental validation green:
 82 ran / 260 skipped, integrity verified): PHASE467 reconstructs the exact

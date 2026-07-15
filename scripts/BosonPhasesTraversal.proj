@@ -358,6 +358,9 @@
     <PhaseProject Include="../studies/phase493_phase456_stored_artifact_failure_decomposition_001/Phase493Phase456StoredArtifactFailureDecomposition.csproj" />
     <PhaseProject Include="../studies/phase494_phase456_estimator_oracle_battery_001/Phase494Phase456EstimatorOracleBattery.csproj" />
     <PhaseProject Include="../studies/phase495_phase456_prospective_repair_readiness_adjudicator_001/Phase495Phase456ProspectiveRepairReadinessAdjudicator.csproj" />
+    <PhaseProject Include="../studies/phase496_phase456_retained_data_information_census_001/Phase496Phase456RetainedDataInformationCensus.csproj" />
+    <PhaseProject Include="../studies/phase497_phase456_prospective_estimator_acquisition_oracle_001/Phase497Phase456ProspectiveEstimatorAcquisitionOracle.csproj" />
+    <PhaseProject Include="../studies/phase498_phase456_acquisition_repair_readiness_adjudicator_001/Phase498Phase456AcquisitionRepairReadinessAdjudicator.csproj" />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="@(PhaseProject)" Targets="Build" Properties="Configuration=Release" BuildInParallel="true" />

@@ -583,6 +583,9 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath.Contains("studies/phase493_phase456_stored_artifact_failure_decomposition_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase494_phase456_estimator_oracle_battery_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase495_phase456_prospective_repair_readiness_adjudicator_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase496_phase456_retained_data_information_census_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase497_phase456_prospective_estimator_acquisition_oracle_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase498_phase456_acquisition_repair_readiness_adjudicator_001/", StringComparison.Ordinal)
     || normalizedPath == "studies/phase101_boson_prediction_package_001/Program.cs"
     || normalizedPath == "studies/phase202_boson_objective_completion_audit_001/Program.cs"
     || normalizedPath == "studies/phase204_boson_source_lineage_candidate_scan_001/Program.cs"
@@ -672,6 +675,9 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P493.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P494.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P495.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P496.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P497.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P498.md"
     || normalizedPath == "docs/Phases/EXPLORATORY_SELF_AUDIT_PLAN_2026-07-15.md"
     || normalizedPath == "docs/Phases/CONVENTION_ROBUSTNESS_TRANCHE_PLAN_2026-07-15.md"
     || normalizedPath == "docs/Phases/PHASE455_CONVENTION_CLOSURE_PLAN_2026-07-15.md"

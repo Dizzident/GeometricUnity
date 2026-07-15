@@ -1,0 +1,234 @@
+{
+  "phaseId": "phase496-phase456-retained-data-information-census",
+  "terminalStatus": "phase456-retained-data-information-census-retained-data-insufficient-for-identifiable-repair",
+  "verdictKind": "retained-data-insufficient-for-identifiable-repair",
+  "inputsValid": true,
+  "censusClassification": "retained-data-insufficient-for-identifiable-repair",
+  "decisionContractSha256": "fbc2e9358564d3de41b02ba577e92db3af39144b76553138415fe74e5e247815",
+  "retainedDataSufficientForProspectiveEstimatorDesign": false,
+  "applicationSubjectKind": "phase456-committed-retained-data-read-only-information-census",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A10; Phase496",
+  "taxonomy": [
+    "invalid-precursor",
+    "retained-data-insufficient-for-identifiable-repair",
+    "retained-data-sufficient-for-prospective-estimator-design"
+  ],
+  "decisionContract": {
+    "schemaId": "phase496-a10-retained-data-census-v1",
+    "canonical": "phase496-a10-v1|precedence=invalid-precursor\u003Eretained-data-insufficient-for-identifiable-repair\u003Eretained-data-sufficient-for-prospective-estimator-design|invalid=missing-byte-hash-schema-or-semantic-binding|insufficient=less-than-four-independent-temporal-values-or-no-configuration-level-samples-or-admitted-two-pole-jacobian-rank-bound-below-four|sufficient=valid-inputs-and-at-least-four-independent-temporal-values-and-configuration-level-samples-and-two-pole-rank-bound-at-least-four|inventory-only-no-invalid-row-reinterpretation-no-sampling-no-authority",
+    "sha256": "fbc2e9358564d3de41b02ba577e92db3af39144b76553138415fe74e5e247815"
+  },
+  "precursorBindings": {
+    "artifact": {
+      "path": "studies/phase456_consolidated_n4_launch_001/production/phase452_n4/scalar_channel_spectroscopy_probe.json",
+      "expectedSha256": "9b7e965a0b8ac906bc1352f908b28b6eb22511579c02ee91562f63beb67ed9cb",
+      "actualSha256": "9b7e965a0b8ac906bc1352f908b28b6eb22511579c02ee91562f63beb67ed9cb",
+      "byteHashMatches": true,
+      "byteCount": 3784085,
+      "schemaReadable": true
+    },
+    "phase456": {
+      "path": "studies/phase456_consolidated_n4_launch_001/output/consolidated_n4_launch_summary.json",
+      "expectedSha256": "1668cf2e7b477c24181afa04fcd76089d974c407c08257a62d72a81b8cb9138b",
+      "actualSha256": "1668cf2e7b477c24181afa04fcd76089d974c407c08257a62d72a81b8cb9138b",
+      "byteHashMatches": true,
+      "byteCount": 16234,
+      "schemaReadable": true
+    },
+    "phase493": {
+      "path": "studies/phase493_phase456_stored_artifact_failure_decomposition_001/output/phase456_stored_artifact_failure_decomposition_summary.json",
+      "expectedSha256": "dd2d00e7bb1a5dc3869a0b8362d8f2a855cd6b2c80cee62818ad4eb0671b5d85",
+      "actualSha256": "dd2d00e7bb1a5dc3869a0b8362d8f2a855cd6b2c80cee62818ad4eb0671b5d85",
+      "byteHashMatches": true,
+      "byteCount": 10036,
+      "schemaReadable": true
+    },
+    "phase494": {
+      "path": "studies/phase494_phase456_estimator_oracle_battery_001/output/phase456_estimator_oracle_battery_summary.json",
+      "expectedSha256": "e90f8e008c7d413275699f353603bb6dab9c4f3490ec5039ca6c9a50a6dbc25f",
+      "actualSha256": "e90f8e008c7d413275699f353603bb6dab9c4f3490ec5039ca6c9a50a6dbc25f",
+      "byteHashMatches": true,
+      "byteCount": 11809,
+      "schemaReadable": true
+    },
+    "phase495": {
+      "path": "studies/phase495_phase456_prospective_repair_readiness_adjudicator_001/output/phase456_prospective_repair_readiness_adjudicator_summary.json",
+      "expectedSha256": "9df00d53e9be384787f9ec55636cabd32a08764950d2aca613fea1a181f13b4a",
+      "actualSha256": "9df00d53e9be384787f9ec55636cabd32a08764950d2aca613fea1a181f13b4a",
+      "byteHashMatches": true,
+      "byteCount": 9213,
+      "schemaReadable": true
+    },
+    "phase456InvalidTerminalExact": true,
+    "phase493Exact": true,
+    "phase494Exact": true,
+    "phase495Exact": true,
+    "errors": []
+  },
+  "temporalInventory": {
+    "temporalExtent": 4,
+    "storedSeparations": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "uniquePeriodicSeparations": 3,
+    "independentNonzeroSeparations": 2,
+    "preregisteredFitWindow": [
+      1
+    ],
+    "preregisteredFitWindowPointCount": 1,
+    "periodicSymmetryExact": true,
+    "minimumCorrelatorLength": 4,
+    "interpretation": "T=4 stores t=0,1,2,3, but periodic symmetry makes t=3 duplicate t=1. Only three temporal values, two nonzero-separation values, are independent."
+  },
+  "spatialInventory": {
+    "spatialLinearExtent": 4,
+    "spatialDimensions": 3,
+    "spatialMomentumCount": 64,
+    "spatialOffsetCount": 64,
+    "fullDiscreteSpatialTransformRetained": true,
+    "perBaseSiteAggregateReconstructable": true,
+    "rawPerSitePerConfigurationMeasurementsRetained": false,
+    "interpretation": "All 4^3 spatial momenta of the aggregate O1 correlator are retained and invertible to 64 spatial offsets; these are correlator summaries, not raw site measurements for each configuration."
+  },
+  "channelInventory": {
+    "ensembleColumnCount": 5,
+    "productionColumnCount": 2,
+    "controlColumnCount": 3,
+    "actionMemberCount": 2,
+    "betaRegimeCount": 3,
+    "retainedFamilies": [
+      "identity-irrep-2x2-gevp",
+      "a2-o1",
+      "a2-o2",
+      "kmin-spatial-axis-average-o1",
+      "full-spatial-momentum-o1",
+      "binder-and-susceptibility"
+    ],
+    "perFaceTypeProjectionRetained": true,
+    "exactFaceTypeProjectorAppliedBeforeSliceAggregation": true,
+    "rawPerFacePerConfigurationMeasurementsRetained": false,
+    "columns": [
+      {
+        "member": "identity",
+        "beta": 1,
+        "kind": "production",
+        "trajectories": 16000,
+        "warmup": 2000,
+        "genericNEff": 4973.957252258446,
+        "minimumRecordedRowNEff": 6355.309880335228,
+        "correlatorLength": 4,
+        "jackknifeBlocks": 50,
+        "spatialMomentumModes": 64
+      },
+      {
+        "member": "identity",
+        "beta": 400,
+        "kind": "free-field-control",
+        "trajectories": 10000,
+        "warmup": 2000,
+        "genericNEff": 1947.2780368588167,
+        "minimumRecordedRowNEff": 2827.564475176562,
+        "correlatorLength": 4,
+        "jackknifeBlocks": 50,
+        "spatialMomentumModes": 64
+      },
+      {
+        "member": "sd2-id0/c0.5",
+        "beta": 1,
+        "kind": "production",
+        "trajectories": 16000,
+        "warmup": 2000,
+        "genericNEff": 7.154886811566248,
+        "minimumRecordedRowNEff": 16.622963970666376,
+        "correlatorLength": 4,
+        "jackknifeBlocks": 50,
+        "spatialMomentumModes": 64
+      },
+      {
+        "member": "sd2-id0/c0.5",
+        "beta": 4,
+        "kind": "higher-beta-control",
+        "trajectories": 10000,
+        "warmup": 2000,
+        "genericNEff": 5.858851417128422,
+        "minimumRecordedRowNEff": 17.802122033536907,
+        "correlatorLength": 4,
+        "jackknifeBlocks": 50,
+        "spatialMomentumModes": 64
+      },
+      {
+        "member": "sd2-id0/c0.5",
+        "beta": 400,
+        "kind": "free-field-control",
+        "trajectories": 10000,
+        "warmup": 2000,
+        "genericNEff": 2691.4586599939917,
+        "minimumRecordedRowNEff": 4125.941602067341,
+        "correlatorLength": 4,
+        "jackknifeBlocks": 50,
+        "spatialMomentumModes": 64
+      }
+    ]
+  },
+  "covarianceInventory": {
+    "jackknifeBlockCount": 50,
+    "jackknifeBlockCountMaximum": 50,
+    "alignedDeleteBlockSummariesRetained": true,
+    "covarianceOfAggregatesRecoverableFromJackknifes": true,
+    "covarianceOfIndividualConfigurationsRecoverable": false,
+    "configurationLevelSamplesRetained": false,
+    "crossColumnConfigurationCovarianceRecoverable": false,
+    "interpretation": "Fifty aligned delete-block summaries permit covariance reconstruction within each stored aggregate family. They do not restore configuration-level likelihoods or cross-ensemble covariance."
+  },
+  "statisticalInventory": {
+    "preRegisteredNEffFloor": 100,
+    "minimumProductionGenericNEff": 7.154886811566248,
+    "minimumProductionRowNEff": 16.622963970666376,
+    "productionColumnsBelowNEffFloor": 1,
+    "allProductionColumnsMeetNEffFloor": false
+  },
+  "identifiabilityBounds": {
+    "admittedTwoPoleParameterCount": 4,
+    "maximumTemporalJacobianRank": 3,
+    "maximumUnconstrainedExponentialCount": 1,
+    "twoPoleStructurallyIdentifiableFromTemporalSupport": false,
+    "singlePoleCouldBeIdentifiableOnlyUnderAdditionalModelRestriction": true,
+    "phase494OriginalEstimatorStructurallyIdentifiable": false,
+    "phase494T4RatioUnderdeterminesSpectralContent": true,
+    "identifiableRepairOfAdmittedTwoPoleClassPossibleFromRetainedData": false,
+    "bound": "Three independent T=4 temporal values give Jacobian rank at most three for a four-parameter unconstrained two-pole model. Spatial modes add momentum dependence but do not add Euclidean-time separations without a frozen dispersion or shared-spectrum assumption."
+  },
+  "phase456InvalidRowsReinterpreted": false,
+  "phase456ArtifactMutated": false,
+  "phase481PackCreated": false,
+  "hmcRun": false,
+  "benchmarkRun": false,
+  "zeroNewSampling": true,
+  "samplingAuthorized": false,
+  "productionAuthorized": false,
+  "phase458G3Satisfied": false,
+  "phase458G5Satisfied": false,
+  "phase458EvaluationAuthorized": false,
+  "phase458GateSatisfied": false,
+  "confirmationEvidence": false,
+  "explorationOnly": true,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "humanRulingAuthored": false,
+  "o4Discharged": false,
+  "sourceContractApplicationAllowed": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256Contract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "noGevPromotion": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "a10BoundaryHeld": true,
+  "decision": "The retained artifact preserves useful aggregate spatial correlators and aligned jackknife summaries, but T=4 supplies only three independent temporal values and no configuration-level samples. It cannot identify the admitted four-parameter two-pole class. Preserve Phase456\u0027s invalid terminal and specify prospective acquisition separately."
+}
