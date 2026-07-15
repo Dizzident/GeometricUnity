@@ -20588,5 +20588,49 @@ External review remains required before community-facing physical
 interpretation unless a later labeled amendment supplies stronger independent
 or theorem-grade evidence. O4 stays pending, Phase458 stays blocked, Phase456
 is not mutated, and no Binder/GPU/HMC production is authorized. Registry
-484-486 is allocated; 487+ remains unassigned. Every A5 phase is target-blind,
+484-486 is allocated; its former 487+ frontier is superseded by A6 below. Every A5 phase is target-blind,
 fills no source contract, and preserves `promotedPhysicalMassClaimCount=0`.
+
+## 2026-07-15 - Amendment A6: independent measure, proposal, and restart controls pass exploration batteries
+
+The user authorized the three Phase486 priorities as one agent-parallel,
+batched checkpoint. Registry 487-489 was allocated before any phase directory
+was created, and the contracts were frozen under Amendment A6. Each agent
+owned one isolated implementation; shared wiring and validation remained with
+the session lead.
+
+Phase487 independently reconstructs the normalized SO(3) Haar axis-angle law
+`p(theta)=(1-cos(theta))/pi` and `F(theta)=(theta-sin(theta))/pi`. A standalone
+147,456-node deterministic quadrature, local quaternion-sandwich construction,
+character Gram battery through l=4, matrix moments, fixed left/right
+composition checks, and identity/pi boundary cases all pass. The largest
+composition residual is `3.76e-14`; no Phase450 utility or project reference
+is used. This is a strong independent numerical control, not a human ruling.
+
+Phase488 requires the exact green Phase487 artifact and compares four distinct
+sampling paths at 200,000 draws each: quaternion independence, normalized-
+Gaussian left composition, radial-axis-angle right composition, and direct
+Rodrigues axis-angle sampling. All pass the frozen analytic moments,
+composition, inversion, equal-Haar-bin occupancy, unit acceptance on the
+zero-action target, and binned detailed-balance screens. The maximum flux
+asymmetry z is `2.497`, the maximum inversion z is `2.357`, and maximum bin
+occupancy error is `0.001635`, each below its committed threshold. The binned
+screen is not a proof of detailed balance, and the zero-action target does not
+validate acceptance behavior for a nonconstant production action.
+
+Phase489 requires both prior artifacts and runs a bounded synthetic rotation
+target with an explicitly serialized xoshiro256** RNG. For uniform
+independence, left-local, and right-local proposals, uninterrupted and JSON-
+resumed runs match bit-for-bit in all four RNG words, full acceptance sequence,
+quaternion state, counters, accumulators, observables, and checksums. The
+largest separate cross-proposal observable difference is `0.002996`, below
+the frozen `0.04` exploration tolerance. This proves the local reduced
+checkpoint contract only; it does not establish Phase456 production restart
+support or production-operator parity.
+
+The integrated targeted build and gates leave Phase101 blocked and move
+Phase202 to 277 passed / 3 standing failures. O4 exact coverage remains 31/31,
+the synthetic overturn battery remains 94/94, source deficits remain 15/14,
+and `promotedPhysicalMassClaimCount=0`. External review is still required;
+O4 and Phase458 remain closed, and no sampling or production authorization
+follows.

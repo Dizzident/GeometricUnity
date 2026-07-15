@@ -261,6 +261,9 @@ const paths = {
   phase484: "studies/phase484_exploratory_lane_governance_firewall_001/output/exploratory_lane_governance_firewall_summary.json",
   phase485: "studies/phase485_o4_assumption_falsifier_census_001/output/o4_assumption_falsifier_census_summary.json",
   phase486: "studies/phase486_committed_evidence_sensitivity_triage_001/output/committed_evidence_sensitivity_triage_summary.json",
+  phase487: "studies/phase487_independent_so3_haar_measure_control_001/output/independent_so3_haar_measure_control_summary.json",
+  phase488: "studies/phase488_haar_proposal_invariance_control_001/output/haar_proposal_invariance_control_summary.json",
+  phase489: "studies/phase489_reduced_sampler_restart_equivalence_001/output/reduced_sampler_restart_equivalence_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -584,6 +587,9 @@ const phase483 = requireFile(paths.phase483);
 const phase484 = requireFile(paths.phase484);
 const phase485 = requireFile(paths.phase485);
 const phase486 = requireFile(paths.phase486);
+const phase487 = requireFile(paths.phase487);
+const phase488 = requireFile(paths.phase488);
+const phase489 = requireFile(paths.phase489);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -5827,6 +5833,27 @@ if (sourceLineageMissing) {
   for (const phase of [phase484, phase485, phase486])
     assert(phase.targetBlindConstruction === true && phase.physicalTargetsConsultedForConstruction === false && phase.sourceContractApplicationAllowed === false && phase.noGevPromotion === true && phase.promotedPhysicalMassClaimCount === 0, "A5 exploratory phases must preserve the target-blind zero-promotion boundary.");
   assert(phase101Package?.exploratorySelfAudit?.governance?.phase458EvaluationAuthorized === false && phase101Package?.exploratorySelfAudit?.falsifierCensus?.o4Discharged === false && phase101Package?.exploratorySelfAudit?.sensitivityTriage?.o4Discharged === false, "Phase101 must mirror the A5 exploratory firewall.");
+  // Phases487-489 -- Amendment A6 convention robustness remains exploration-only.
+  assert(phase487.terminalStatus === "independent-so3-haar-measure-control-passed-all-batteries-exploration-only" && phase487.verdictKind === "all-independent-haar-batteries-passed", "Phase487 terminal or verdict drifted.");
+  assert(phase487.independentOfPhase450Utilities === true && phase487.phase450ProjectReferenceCount === 0 && phase487.allBatteriesPassed === true && phase487.failedBatteryCount === 0, "Phase487 must remain an independent all-green control.");
+  assert(phase487.quadrature?.thetaOrder === 96 && phase487.quadrature?.axisZOrder === 24 && phase487.quadrature?.axisPhiCount === 64 && phase487.quadrature?.totalSo3Nodes === 147456, "Phase487 quadrature contract drifted.");
+  assert(phase487.analyticRadialLaw?.passed === true && phase487.characters?.passed === true && phase487.matrixMoments?.passed === true && phase487.compositionInvariance?.passed === true && phase487.boundaryCases?.passed === true, "Phase487 battery result drifted.");
+  assert(phase488.terminalStatus === "haar-proposal-invariance-control-passed-exploration-only" && phase488.verdictKind === "all-four-families-within-frozen-tolerances", "Phase488 terminal or verdict drifted.");
+  assert(phase488.phase487PrecursorPassed === true && phase488.proposalInvarianceControlPassed === true && phase488.prospectivelyFrozen === true && phase488.frozenContractSha256 === "466e2fcbe40765be1133472945873227e8874e63743233cd7a4754f43662b010", "Phase488 frozen contract or precursor drifted.");
+  assert(phase488.configuration?.sampleCount === 200000 && Array.isArray(phase488.familyResults) && phase488.familyResults.length === 4 && phase488.familyResults.every(f => f.passed === true && f.acceptance === 1 && f.failures.length === 0), "Phase488 proposal family controls drifted.");
+  assert(Array.isArray(phase488.failures) && phase488.failures.length === 0, "Phase488 must preserve a zero-failure passing artifact.");
+  assert(phase489.terminalStatus === "reduced-sampler-restart-equivalence-restart-bit-exact-and-cross-proposal-agreement" && phase489.verdictKind === "restart-bit-exact-and-cross-proposal-agreement", "Phase489 terminal or verdict drifted.");
+  assert(phase489.precursorBindings?.precursorsPassed === true && phase489.controlsValid === true && phase489.samplerCounterControls === true, "Phase489 precursor or reduced control invalid.");
+  assert(phase489.frozenSpecification?.totalSteps === 120000 && phase489.frozenSpecification?.burnInSteps === 20000 && phase489.frozenSpecification?.splitStep === 47321 && phase489.frozenSpecification?.rngAlgorithm === "xoshiro256starstar-v1", "Phase489 deterministic specification drifted.");
+  assert(phase489.restartEquality?.bitExactRequired === true && phase489.restartEquality?.restartEqualityAll === true && Array.isArray(phase489.restartEquality?.comparisons) && phase489.restartEquality.comparisons.length === 3 && phase489.restartEquality.comparisons.every(c => c.restartExact === true && c.rngExact === true && c.sequenceExact === true && c.stateExact === true && c.countersExact === true && c.accumulatorsExact === true && c.observablesExact === true && c.checksumExact === true && c.acceptanceHashExact === true), "Phase489 restart equality must be bit-exact on every family.");
+  assert(phase489.crossProposalComparison?.statisticalOnly === true && phase489.crossProposalComparison?.crossProposalAgreement === true && Array.isArray(phase489.crossProposalComparison?.pairwise) && phase489.crossProposalComparison.pairwise.length === 3 && phase489.crossProposalComparison.pairwise.every(p => p.pairPassed === true), "Phase489 must keep cross-proposal agreement separate and green.");
+  for (const phase of [phase487, phase488, phase489]) {
+    assert(phase.humanRulingAuthored === false && phase.o4Discharged === false && phase.satisfiesPhase458G4 === false && phase.satisfiesPhase458G5 === false, "A6 phases cannot author O4 or satisfy Phase458.");
+    assert(phase.phase458EvaluationAuthorized === false && phase.binderLaunchAuthorized === false && phase.productionAuthorized === false, "A6 phases cannot authorize sampling or production.");
+    assert(phase.targetBlindConstruction === true && phase.physicalTargetsConsultedForConstruction === false && phase.sourceContractApplicationAllowed === false && phase.canFillPhase201WzContract === false && phase.canFillPhase201HiggsContract === false && phase.canFillPhase256ObservedFieldExtractionContract === false, "A6 phases must preserve target-blind source-contract closure.");
+    assert(phase.noGevPromotion === true && phase.promotedPhysicalMassClaimCount === 0, "A6 phases must preserve the zero-promotion boundary.");
+  }
+  assert(phase101Package?.exploratorySelfAudit?.independentHaarMeasure?.allBatteriesPassed === true && phase101Package?.exploratorySelfAudit?.proposalInvariance?.phase487PrecursorPassed === true && phase101Package?.exploratorySelfAudit?.restartEquivalence?.controlsValid === true, "Phase101 must mirror the A6 robustness tranche.");
   // Phase480 -- implemented fail-closed external human memo intake; no memo is present.
   assert(phase480.skeletonBuilt === false && phase480.zeroPhysicsCompute === true && phase480.intakeImplemented === true && phase480.awaitingImplementation === false, "Phase480 must be the implemented zero-compute external memo intake.");
   assert(phase480.applicationSubjectKind === "o4-physicist-adjudication-intake" && phase480.waveOrder === 4, "Phase480 identity or wave order drifted.");

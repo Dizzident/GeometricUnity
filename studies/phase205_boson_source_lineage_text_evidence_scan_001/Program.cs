@@ -508,11 +508,18 @@ static bool IsGeneratedAuditOrImplementationText(string path) =>
     || path.Contains("studies/phase484_exploratory_lane_governance_firewall_001/", StringComparison.Ordinal)
     || path.Contains("studies/phase485_o4_assumption_falsifier_census_001/", StringComparison.Ordinal)
     || path.Contains("studies/phase486_committed_evidence_sensitivity_triage_001/", StringComparison.Ordinal)
+    || path.Contains("studies/phase487_independent_so3_haar_measure_control_001/", StringComparison.Ordinal)
+    || path.Contains("studies/phase488_haar_proposal_invariance_control_001/", StringComparison.Ordinal)
+    || path.Contains("studies/phase489_reduced_sampler_restart_equivalence_001/", StringComparison.Ordinal)
     || path.Contains("docs/Phases/Implementation/IMPLEMENTATION_P483.md", StringComparison.Ordinal)
     || path.Contains("docs/Phases/Implementation/IMPLEMENTATION_P484.md", StringComparison.Ordinal)
     || path.Contains("docs/Phases/Implementation/IMPLEMENTATION_P485.md", StringComparison.Ordinal)
     || path.Contains("docs/Phases/Implementation/IMPLEMENTATION_P486.md", StringComparison.Ordinal)
-    || path.Contains("docs/Phases/EXPLORATORY_SELF_AUDIT_PLAN_2026-07-15.md", StringComparison.Ordinal);
+    || path.Contains("docs/Phases/Implementation/IMPLEMENTATION_P487.md", StringComparison.Ordinal)
+    || path.Contains("docs/Phases/Implementation/IMPLEMENTATION_P488.md", StringComparison.Ordinal)
+    || path.Contains("docs/Phases/Implementation/IMPLEMENTATION_P489.md", StringComparison.Ordinal)
+    || path.Contains("docs/Phases/EXPLORATORY_SELF_AUDIT_PLAN_2026-07-15.md", StringComparison.Ordinal)
+    || path.Contains("docs/Phases/CONVENTION_ROBUSTNESS_TRANCHE_PLAN_2026-07-15.md", StringComparison.Ordinal);
 
 static bool IsReferenceTrackerText(string normalizedPath) =>
     normalizedPath == "ExperimentReferences.md"

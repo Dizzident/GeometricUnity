@@ -1,0 +1,329 @@
+{
+  "phaseId": "phase489-reduced-sampler-restart-equivalence",
+  "generatedAt": "2026-07-15T17:50:50.2703068+00:00",
+  "terminalStatus": "reduced-sampler-restart-equivalence-restart-bit-exact-and-cross-proposal-agreement",
+  "verdictKind": "restart-bit-exact-and-cross-proposal-agreement",
+  "applicationSubjectKind": "reduced-sampler-restart-equivalence-control",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A6; CONVENTION_ROBUSTNESS_TRANCHE_PLAN_2026-07-15 Phase489",
+  "precursorBindings": {
+    "phase487SummaryPath": "studies/phase487_independent_so3_haar_measure_control_001/output/independent_so3_haar_measure_control_summary.json",
+    "phase488SummaryPath": "studies/phase488_haar_proposal_invariance_control_001/output/haar_proposal_invariance_control_summary.json",
+    "phase487PrecursorPassed": true,
+    "phase488PrecursorPassed": true,
+    "precursorsPassed": true
+  },
+  "explorationLane": true,
+  "targetBlindConstruction": true,
+  "physicalTargetValuesConsulted": false,
+  "physicalTargetsConsultedForConstruction": false,
+  "frozenSpecification": {
+    "totalSteps": 120000,
+    "burnInSteps": 20000,
+    "splitStep": 47321,
+    "batchCount": 50,
+    "localAngleHalfWidth": 1.4,
+    "targetStrength": 1.25,
+    "crossProposalAbsoluteTolerance": 0.04,
+    "baseSeedHex": "0x489a6c0ffee12345",
+    "rngAlgorithm": "xoshiro256starstar-v1",
+    "stateRepresentation": "canonical unit quaternion with nonnegative scalar component",
+    "reducedTarget": "exp(-targetStrength*(1-q0^2)); bounded synthetic rotation control",
+    "proposalFamilies": [
+      {
+        "id": "uniform-independence",
+        "seedHex": "0x489a6c0ffee12446",
+        "kind": "UniformIndependence"
+      },
+      {
+        "id": "left-local-composition",
+        "seedHex": "0x489a6c0ffee12547",
+        "kind": "LeftLocalComposition"
+      },
+      {
+        "id": "right-local-composition",
+        "seedHex": "0x489a6c0ffee12648",
+        "kind": "RightLocalComposition"
+      }
+    ],
+    "observables": [
+      "rotationTraceOverThree",
+      "axisBlindQuadratic",
+      "normalizedAction"
+    ]
+  },
+  "controlsValid": true,
+  "samplerCounterControls": true,
+  "restartEquality": {
+    "bitExactRequired": true,
+    "restartEqualityAll": true,
+    "comparisonMeaning": "Exact equality after JSON serialization/resume of quaternion bits, all four RNG words, counters, accumulated sums, accept/reject sequence, checksums, and observables.",
+    "comparisons": [
+      {
+        "proposalFamily": "uniform-independence",
+        "restartExact": true,
+        "rngExact": true,
+        "sequenceExact": true,
+        "stateExact": true,
+        "countersExact": true,
+        "accumulatorsExact": true,
+        "observablesExact": true,
+        "checksumExact": true,
+        "acceptanceHashExact": true,
+        "serializedCheckpointSha256": "9c1704d347810c1d3c37bd8a6c1e1f0631cbd7855f05cda5e4ec5caa3004b732",
+        "uninterruptedFinalRng": {
+          "s0": 5429308204412179276,
+          "s1": 10208749453243799096,
+          "s2": 7611203354358130810,
+          "s3": 360618636526637430
+        },
+        "resumedFinalRng": {
+          "s0": 5429308204412179276,
+          "s1": 10208749453243799096,
+          "s2": 7611203354358130810,
+          "s3": 360618636526637430
+        },
+        "uninterruptedAcceptanceSequenceSha256": "eabf6de1bf5018aa396c29a1e147d65c03b8d454f473e13e2bc6f1c7221ddcdc",
+        "resumedAcceptanceSequenceSha256": "eabf6de1bf5018aa396c29a1e147d65c03b8d454f473e13e2bc6f1c7221ddcdc",
+        "uninterruptedStateChecksum": "ed18a6015dc6af0b713dfbec7b005f3a43533989723024dd4742b19d76473acd",
+        "resumedStateChecksum": "ed18a6015dc6af0b713dfbec7b005f3a43533989723024dd4742b19d76473acd"
+      },
+      {
+        "proposalFamily": "left-local-composition",
+        "restartExact": true,
+        "rngExact": true,
+        "sequenceExact": true,
+        "stateExact": true,
+        "countersExact": true,
+        "accumulatorsExact": true,
+        "observablesExact": true,
+        "checksumExact": true,
+        "acceptanceHashExact": true,
+        "serializedCheckpointSha256": "2c5c628b32836528a085d727bbfc2ff339b83aa96dfa444f3f8ec26720596d79",
+        "uninterruptedFinalRng": {
+          "s0": 10241898390918811676,
+          "s1": 1749589932589908472,
+          "s2": 911118050853398298,
+          "s3": 14806810281306033061
+        },
+        "resumedFinalRng": {
+          "s0": 10241898390918811676,
+          "s1": 1749589932589908472,
+          "s2": 911118050853398298,
+          "s3": 14806810281306033061
+        },
+        "uninterruptedAcceptanceSequenceSha256": "326be938813cf8b1fdd8c46e1ebcf659772aed2c431dd34c9d9228b0976feaff",
+        "resumedAcceptanceSequenceSha256": "326be938813cf8b1fdd8c46e1ebcf659772aed2c431dd34c9d9228b0976feaff",
+        "uninterruptedStateChecksum": "35e8ec0bfaea60acc6b291f55df8302aa61a588c61c98c3996d5973025c73e4f",
+        "resumedStateChecksum": "35e8ec0bfaea60acc6b291f55df8302aa61a588c61c98c3996d5973025c73e4f"
+      },
+      {
+        "proposalFamily": "right-local-composition",
+        "restartExact": true,
+        "rngExact": true,
+        "sequenceExact": true,
+        "stateExact": true,
+        "countersExact": true,
+        "accumulatorsExact": true,
+        "observablesExact": true,
+        "checksumExact": true,
+        "acceptanceHashExact": true,
+        "serializedCheckpointSha256": "af94753ad6d151aeea82f50b28f6c1ab443284e57b5438a4b76049c1e782a8b9",
+        "uninterruptedFinalRng": {
+          "s0": 12678329881651192698,
+          "s1": 11665468840539473524,
+          "s2": 1505132861505684600,
+          "s3": 8583802756972323066
+        },
+        "resumedFinalRng": {
+          "s0": 12678329881651192698,
+          "s1": 11665468840539473524,
+          "s2": 1505132861505684600,
+          "s3": 8583802756972323066
+        },
+        "uninterruptedAcceptanceSequenceSha256": "74e89421d25dadc588c325536b80894475aff64026e7a05a0ccd172507e0ffdc",
+        "resumedAcceptanceSequenceSha256": "74e89421d25dadc588c325536b80894475aff64026e7a05a0ccd172507e0ffdc",
+        "uninterruptedStateChecksum": "e682cac1516d79347f15b647c12c062f5a3a887a591d246954502070ed3e7f9a",
+        "resumedStateChecksum": "e682cac1516d79347f15b647c12c062f5a3a887a591d246954502070ed3e7f9a"
+      }
+    ]
+  },
+  "crossProposalComparison": {
+    "statisticalOnly": true,
+    "crossProposalAgreement": true,
+    "tolerance": 0.04,
+    "comparisonMeaning": "Independent proposal families need statistical agreement on bounded synthetic observables; bit equality across different proposal families is neither expected nor claimed.",
+    "pairwise": [
+      {
+        "proposalA": "uniform-independence",
+        "proposalB": "left-local-composition",
+        "pairPassed": true,
+        "checks": [
+          {
+            "observable": "rotationTraceOverThree",
+            "a": 0.12132030644387289,
+            "b": 0.12138262846822903,
+            "absoluteDifference": 6.232202435614564E-05,
+            "tolerance": 0.04,
+            "passed": true
+          },
+          {
+            "observable": "axisBlindQuadratic",
+            "a": 0.5752857961489437,
+            "b": 0.5755760568156151,
+            "absoluteDifference": 0.0002902606666713714,
+            "tolerance": 0.04,
+            "passed": true
+          },
+          {
+            "observable": "normalizedAction",
+            "a": 0.659009770167113,
+            "b": 0.658963028648836,
+            "absoluteDifference": 4.674151827699369E-05,
+            "tolerance": 0.04,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "proposalA": "uniform-independence",
+        "proposalB": "right-local-composition",
+        "pairPassed": true,
+        "checks": [
+          {
+            "observable": "rotationTraceOverThree",
+            "a": 0.12132030644387289,
+            "b": 0.11899698646078292,
+            "absoluteDifference": 0.002323319983089961,
+            "tolerance": 0.04,
+            "passed": true
+          },
+          {
+            "observable": "axisBlindQuadratic",
+            "a": 0.5752857961489437,
+            "b": 0.5725798442284935,
+            "absoluteDifference": 0.0027059519204502003,
+            "tolerance": 0.04,
+            "passed": true
+          },
+          {
+            "observable": "normalizedAction",
+            "a": 0.659009770167113,
+            "b": 0.6607522601544125,
+            "absoluteDifference": 0.0017424899872994226,
+            "tolerance": 0.04,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "proposalA": "left-local-composition",
+        "proposalB": "right-local-composition",
+        "pairPassed": true,
+        "checks": [
+          {
+            "observable": "rotationTraceOverThree",
+            "a": 0.12138262846822903,
+            "b": 0.11899698646078292,
+            "absoluteDifference": 0.0023856420074461065,
+            "tolerance": 0.04,
+            "passed": true
+          },
+          {
+            "observable": "axisBlindQuadratic",
+            "a": 0.5755760568156151,
+            "b": 0.5725798442284935,
+            "absoluteDifference": 0.0029962125871215717,
+            "tolerance": 0.04,
+            "passed": true
+          },
+          {
+            "observable": "normalizedAction",
+            "a": 0.658963028648836,
+            "b": 0.6607522601544125,
+            "absoluteDifference": 0.0017892315055764163,
+            "tolerance": 0.04,
+            "passed": true
+          }
+        ]
+      }
+    ]
+  },
+  "proposalResults": [
+    {
+      "proposalFamily": "uniform-independence",
+      "proposed": 120000,
+      "accepted": 97814,
+      "acceptanceRate": 0.8151166666666667,
+      "observables": {
+        "rotationTraceOverThree": 0.12132030644387289,
+        "axisBlindQuadratic": 0.5752857961489437,
+        "normalizedAction": 0.659009770167113
+      },
+      "batchStandardErrors": {
+        "rotationTraceOverThree": 0.0017981857898904019,
+        "axisBlindQuadratic": 0.0013143837884197495,
+        "normalizedAction": 0.0013486393424178165
+      },
+      "stateChecksum": "ed18a6015dc6af0b713dfbec7b005f3a43533989723024dd4742b19d76473acd",
+      "acceptanceSequenceSha256": "eabf6de1bf5018aa396c29a1e147d65c03b8d454f473e13e2bc6f1c7221ddcdc",
+      "restartExact": true
+    },
+    {
+      "proposalFamily": "left-local-composition",
+      "proposed": 120000,
+      "accepted": 111036,
+      "acceptanceRate": 0.9253,
+      "observables": {
+        "rotationTraceOverThree": 0.12138262846822903,
+        "axisBlindQuadratic": 0.5755760568156151,
+        "normalizedAction": 0.658963028648836
+      },
+      "batchStandardErrors": {
+        "rotationTraceOverThree": 0.004843747499192853,
+        "axisBlindQuadratic": 0.00263874540110675,
+        "normalizedAction": 0.0036328106243946265
+      },
+      "stateChecksum": "35e8ec0bfaea60acc6b291f55df8302aa61a588c61c98c3996d5973025c73e4f",
+      "acceptanceSequenceSha256": "326be938813cf8b1fdd8c46e1ebcf659772aed2c431dd34c9d9228b0976feaff",
+      "restartExact": true
+    },
+    {
+      "proposalFamily": "right-local-composition",
+      "proposed": 120000,
+      "accepted": 111225,
+      "acceptanceRate": 0.926875,
+      "observables": {
+        "rotationTraceOverThree": 0.11899698646078292,
+        "axisBlindQuadratic": 0.5725798442284935,
+        "normalizedAction": 0.6607522601544125
+      },
+      "batchStandardErrors": {
+        "rotationTraceOverThree": 0.0038010313901649375,
+        "axisBlindQuadratic": 0.0029862735772493015,
+        "normalizedAction": 0.0028507735426236956
+      },
+      "stateChecksum": "e682cac1516d79347f15b647c12c062f5a3a887a591d246954502070ed3e7f9a",
+      "acceptanceSequenceSha256": "74e89421d25dadc588c325536b80894475aff64026e7a05a0ccd172507e0ffdc",
+      "restartExact": true
+    }
+  ],
+  "reducedDeterministicWorkload": true,
+  "nonphysicalBoundedObservablesOnly": true,
+  "humanRulingAuthored": false,
+  "o4Discharged": false,
+  "satisfiesPhase458G4": false,
+  "satisfiesPhase458G5": false,
+  "phase458EvaluationAuthorized": false,
+  "binderLaunchAuthorized": false,
+  "productionAuthorized": false,
+  "sourceContractApplicationAllowed": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "noGevPromotion": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "decision": "Reduced exploration control passed: each proposal family resumed bit-exactly and the independent families agree statistically on bounded synthetic observables. This does not validate a production sampler or discharge any scientific gate."
+}

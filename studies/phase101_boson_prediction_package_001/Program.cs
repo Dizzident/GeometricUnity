@@ -329,6 +329,9 @@ const string Phase483SourceDefinedReopeningIntakePath = "studies/phase483_source
 const string Phase484ExploratoryLaneGovernanceFirewallPath = "studies/phase484_exploratory_lane_governance_firewall_001/output/exploratory_lane_governance_firewall_summary.json";
 const string Phase485O4AssumptionFalsifierCensusPath = "studies/phase485_o4_assumption_falsifier_census_001/output/o4_assumption_falsifier_census_summary.json";
 const string Phase486CommittedEvidenceSensitivityTriagePath = "studies/phase486_committed_evidence_sensitivity_triage_001/output/committed_evidence_sensitivity_triage_summary.json";
+const string Phase487IndependentSo3HaarMeasureControlPath = "studies/phase487_independent_so3_haar_measure_control_001/output/independent_so3_haar_measure_control_summary.json";
+const string Phase488HaarProposalInvarianceControlPath = "studies/phase488_haar_proposal_invariance_control_001/output/haar_proposal_invariance_control_summary.json";
+const string Phase489ReducedSamplerRestartEquivalencePath = "studies/phase489_reduced_sampler_restart_equivalence_001/output/reduced_sampler_restart_equivalence_summary.json";
 const string Phase444ModeVolumeScaledSaturationProbePath = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443JointEffectivePotentialSaturationProbePath = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442JointOmegaThetaHessianDegreeProbePath = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -698,6 +701,9 @@ using var phase483 = TryParseJson(Phase483SourceDefinedReopeningIntakePath);
 using var phase484 = TryParseJson(Phase484ExploratoryLaneGovernanceFirewallPath);
 using var phase485 = TryParseJson(Phase485O4AssumptionFalsifierCensusPath);
 using var phase486 = TryParseJson(Phase486CommittedEvidenceSensitivityTriagePath);
+using var phase487 = TryParseJson(Phase487IndependentSo3HaarMeasureControlPath);
+using var phase488 = TryParseJson(Phase488HaarProposalInvarianceControlPath);
+using var phase489 = TryParseJson(Phase489ReducedSamplerRestartEquivalencePath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -8928,6 +8934,9 @@ var package = new
         governance = phase484 is null ? null : new { status = JsonString(phase484.RootElement, "terminalStatus"), externalReviewEventuallyRequired = JsonBool(phase484.RootElement, "externalReviewEventuallyRequired"), phase458EvaluationAuthorized = JsonBool(phase484.RootElement, "phase458EvaluationAuthorized"), promotedPhysicalMassClaimCount = JsonInt(phase484.RootElement, "promotedPhysicalMassClaimCount") },
         falsifierCensus = phase485 is null ? null : new { status = JsonString(phase485.RootElement, "terminalStatus"), rulingIdCount = JsonInt(phase485.RootElement, "rulingIdCount"), o4Discharged = JsonBool(phase485.RootElement, "o4Discharged"), promotedPhysicalMassClaimCount = JsonInt(phase485.RootElement, "promotedPhysicalMassClaimCount") },
         sensitivityTriage = phase486 is null ? null : new { status = JsonString(phase486.RootElement, "terminalStatus"), priorityCount = JsonInt(phase486.RootElement, "priorityCount"), o4Discharged = JsonBool(phase486.RootElement, "o4Discharged"), promotedPhysicalMassClaimCount = JsonInt(phase486.RootElement, "promotedPhysicalMassClaimCount") },
+        independentHaarMeasure = phase487 is null ? null : new { status = JsonString(phase487.RootElement, "terminalStatus"), allBatteriesPassed = JsonBool(phase487.RootElement, "allBatteriesPassed"), o4Discharged = JsonBool(phase487.RootElement, "o4Discharged"), promotedPhysicalMassClaimCount = JsonInt(phase487.RootElement, "promotedPhysicalMassClaimCount") },
+        proposalInvariance = phase488 is null ? null : new { status = JsonString(phase488.RootElement, "terminalStatus"), proposalInvarianceControlPassed = JsonBool(phase488.RootElement, "proposalInvarianceControlPassed"), phase487PrecursorPassed = JsonBool(phase488.RootElement, "phase487PrecursorPassed"), o4Discharged = JsonBool(phase488.RootElement, "o4Discharged"), promotedPhysicalMassClaimCount = JsonInt(phase488.RootElement, "promotedPhysicalMassClaimCount") },
+        restartEquivalence = phase489 is null ? null : new { status = JsonString(phase489.RootElement, "terminalStatus"), controlsValid = JsonBool(phase489.RootElement, "controlsValid"), o4Discharged = JsonBool(phase489.RootElement, "o4Discharged"), promotedPhysicalMassClaimCount = JsonInt(phase489.RootElement, "promotedPhysicalMassClaimCount") },
     },
     branchLocalDirectInvariantCensus = phase282 is not null
         ? new

@@ -91,7 +91,23 @@ workbench-model, and checkpoint/restart controls next. None of these phases
 satisfies O4, G4/G5, Phase458, or a source contract; no production launch is
 authorized and `promotedPhysicalMassClaimCount=0`. Binding plan:
 `docs/Phases/EXPLORATORY_SELF_AUDIT_PLAN_2026-07-15.md`. Registry 484-486 is
-allocated; 487+ remains unassigned.
+allocated; its former 487+ frontier is superseded by Amendment A6 below.
+
+CONVENTION-ROBUSTNESS TRANCHE (2026-07-15, Amendment A6; Phases487-489):
+all three Phase486 priorities are implemented. Phase487's independent SO(3)
+quadrature and analytic-moment batteries pass. Phase488's four separately
+constructed proposal families pass the frozen zero-action stationarity,
+inversion, composition, and binned detailed-balance controls. Phase489 proves
+bit-exact JSON checkpoint/resume for three reduced synthetic chains and records
+separate cross-proposal statistical agreement. These are exploration-lane
+controls only: the Phase488 test is coarse and zero-action, while Phase489 is a
+synthetic bounded target, so neither validates the Phase450/452/456 production
+operator. They do not author or discharge O4, modify committed upstream
+artifacts, satisfy Phase458, authorize production, fill a source contract, or
+support a physical-unit claim. A surviving result may motivate a new
+prospective confirmation checkpoint but cannot be retrospectively relabeled. Binding plan:
+`docs/Phases/CONVENTION_ROBUSTNESS_TRANCHE_PLAN_2026-07-15.md`. Registry
+487-489 is allocated; 490+ remains unassigned.
 
 PHASE458 CONTRACT (2026-07-15, Phase478): the G1-G6 four-state schema, exact
 upstream terminal allowlists, source bindings, outcome precedence, and G6

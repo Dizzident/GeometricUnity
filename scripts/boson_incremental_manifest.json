@@ -3,9 +3,9 @@
   "phases": {
     "101": {
       "schemaVersion": 1,
-      "inputFingerprint": "059fb4de75346e2c9ab7e7baf09a79b61666b0ad7faf89ff29c541bd4367e703",
+      "inputFingerprint": "c23471b9171b9b75bbce839c40f03f98fc14ec5640658dc8a4d9b1ff4c4fab03",
       "outputs": {
-        "studies/phase101_boson_prediction_package_001/output/boson_prediction_package.json": "2bab459565e75665e08fc6a53048662ec200c8cc7e17f996fda3785970e345c7",
+        "studies/phase101_boson_prediction_package_001/output/boson_prediction_package.json": "618970900b679d48cbb3d1c8e0cbc3808555e2e963d1da35429b69ddc8a7057b",
         "studies/phase101_boson_prediction_package_001/output/boson_prediction_package_summary.json": "ab3ec7ddf10b6db6605718d8b0497657fbee6c128f9a0360df15de78e86c06c1"
       }
     },
@@ -86,15 +86,15 @@
     },
     "146": {
       "schemaVersion": 1,
-      "inputFingerprint": "6d6f6f3b3a2bf5893488c5b6b4257101bcc0fab4b950be7dc956c0663792f6ab",
+      "inputFingerprint": "e0fed2d80c86c4ef236a3f08d3b55722fed6f4d91fa6ce5efb6faf39023f8a2d",
       "outputs": {
-        "studies/phase146_fermion_sector_evidence_census_001/output/fermion_sector_evidence_census.json": "a5efadd23887837a1c8b84c88307dce9d5bd0b029e7780242e25562979845797",
-        "studies/phase146_fermion_sector_evidence_census_001/output/fermion_sector_evidence_census_summary.json": "a938f26aaef06012598ce0aedb45d954a2d9defe511430f5eae6abf7b4819249"
+        "studies/phase146_fermion_sector_evidence_census_001/output/fermion_sector_evidence_census.json": "84f3fc9b7fc33c730985404d58f08bf863ec44a063a3da89dc66ec541b14d7d6",
+        "studies/phase146_fermion_sector_evidence_census_001/output/fermion_sector_evidence_census_summary.json": "707a564976e58a17cc43dc59fd4fd9dd4a2e9d51fd0d045f54bbf151d05bfe99"
       }
     },
     "147": {
       "schemaVersion": 1,
-      "inputFingerprint": "cdd9b0de2f8599534ce5ab473e927d9b340fe519be3ad9571f18b754c1381590",
+      "inputFingerprint": "97d8896beeb939d89d4629f6b61b37181c4da65187e0bdf3faf12a6765aba090",
       "outputs": {
         "studies/phase147_boson_prediction_completion_attempt_001/output/boson_prediction_completion_attempt.json": "2dee4e065fb03b98f8fa92a86c84de3a31d5fc377887a4fa794b42c46842f804",
         "studies/phase147_boson_prediction_completion_attempt_001/output/boson_prediction_completion_attempt_summary.json": "e06e353ad8236309ed892fe579e8572c10e9c21d4f2be4d81a4129ea524b6848"
@@ -110,7 +110,7 @@
     },
     "149": {
       "schemaVersion": 1,
-      "inputFingerprint": "f11fedb365b7a24356db2932dd961342793fa86f94454cdef14278b70f92162d",
+      "inputFingerprint": "27e52120acd0b7f28f1c959f997f6826018c1fbb62bfb265436c214c6554f54f",
       "outputs": {
         "studies/phase149_known_boson_predictability_contracts_001/output/known_boson_predictability_contracts.json": "47ecc46f25cf562c4424c57ae860e946500884f4aab8b9912583c0f005b8a16e",
         "studies/phase149_known_boson_predictability_contracts_001/output/known_boson_predictability_contracts_summary.json": "20fdf0ccffa7c8ce49259337371621fa62f8c47aba55e0f84b633f8d010ba0ff"
@@ -118,7 +118,7 @@
     },
     "150": {
       "schemaVersion": 1,
-      "inputFingerprint": "fa875283f868b5b8e6feb0f1d09e7c8aa3e9cb76daffa3ce990486c7756ef9d1",
+      "inputFingerprint": "0f890c035c1e380c37021d8de87366ac5ad371184ae1e52815a00a28d8f927ff",
       "outputs": {
         "studies/phase150_all_boson_prediction_prerequisite_execution_001/output/all_boson_prediction_prerequisite_execution.json": "aefcbed615c601254387422bb89a8e5a25bf779d7912367727acf18985ef4b74",
         "studies/phase150_all_boson_prediction_prerequisite_execution_001/output/all_boson_prediction_prerequisite_execution_summary.json": "821cb96f5e3a6ec36e596d868df316a0e50c19473e979e6e1c1a9480ff2ad253"
@@ -126,7 +126,7 @@
     },
     "151": {
       "schemaVersion": 1,
-      "inputFingerprint": "042a862238e0c593bcb9a9990951c7d888243b2b2b4a755c49f05492ce7084f0",
+      "inputFingerprint": "0b28c9abb5a5e76ef21647117eca2c6c691c9fbc9a9a6d4cc6281e8aa36a0f42",
       "outputs": {
         "studies/phase151_validated_boson_prediction_generator_001/output/validated_boson_predictions.json": "d893059c64c05eb655fea53c84b438c657a63cbb4358d6bb9d5abc1ae103d00d",
         "studies/phase151_validated_boson_prediction_generator_001/output/validated_boson_predictions.md": "f7e9633c8ef3b837594d891a6296d9032126a966f139f3557f758fe2392f487f",
@@ -153,7 +153,7 @@
     },
     "154": {
       "schemaVersion": 1,
-      "inputFingerprint": "34f50add631dcfa8c81337d07934fb92ab5f88dba8c0a691668f86ac1a2d7ff6",
+      "inputFingerprint": "d8a199021d66d5a019b92b601a393d47cbdcca3038eb52747e11baab305c4f93",
       "outputs": {
         "studies/phase154_wz_transition_bridge_root_cause_audit_001/output/wz_transition_bridge_root_cause_audit.json": "0e1f5ff030fb56cb15f336863de6bde39626e3a19b2e55c36e0222dcb7623223",
         "studies/phase154_wz_transition_bridge_root_cause_audit_001/output/wz_transition_bridge_root_cause_audit.md": "89d2d15eb24ebf6791679eebe9a438614b23a3a662f7575f7b061dea8a2ebe13",
@@ -162,7 +162,7 @@
     },
     "155": {
       "schemaVersion": 1,
-      "inputFingerprint": "eb103e696dfaabaaa4f7e8bfabeace0757b17e0807128a4d747fcc00c89a733a",
+      "inputFingerprint": "996c414701b006b7438cf7fc6671f3af642a7e9497aa2f65a8f29a0399074d6c",
       "outputs": {
         "studies/phase155_fermion_sector_transition_evidence_derivation_001/output/fermion_sector_transition_evidence_derivation.json": "7e02fbe85a4abfa04d5cf02e56cc8bd0466b213a46d68712e4d17b3dc689b095",
         "studies/phase155_fermion_sector_transition_evidence_derivation_001/output/fermion_sector_transition_evidence_derivation.md": "5c33ba4521b025e5edf668b7b8ba68517c74073bda11c0d2550faaa318c0b59d",
@@ -171,7 +171,7 @@
     },
     "156": {
       "schemaVersion": 1,
-      "inputFingerprint": "731256cf58ee1317e21577ef2f4d03b6dc6ec2b23c4603927793a1c824a1f1f2",
+      "inputFingerprint": "b3760c945cc97b24071d7c9479bfd87d9fcbfabfd701fef00b1a9d778705e599",
       "outputs": {
         "studies/phase156_boson_generation_execution_package_001/output/boson_generation_execution_package.json": "f6a1d141e58a8b90f0827db102c9d8b01c8e15dc9953451fab5a2f1d3191230f",
         "studies/phase156_boson_generation_execution_package_001/output/boson_generation_execution_package.md": "c2b176f414b312e69281c72383a52eade39134fc9f3940368005933593958e64",
@@ -180,7 +180,7 @@
     },
     "157": {
       "schemaVersion": 1,
-      "inputFingerprint": "5b12ca3f0e7e10296942a85a60fe47a4c33268991545a423de1d7210f8cb9c52",
+      "inputFingerprint": "456f5d112fc761a3b654cbafbbd263c8d116439405f3c6d7ad821e8f138e1dfb",
       "outputs": {
         "studies/phase157_scientific_defensibility_boundary_001/output/scientific_defensibility_boundary.json": "ef2f48723286d4d39028606fd3257b6f8a2a2967b800e1e438be7ad8c695e25c",
         "studies/phase157_scientific_defensibility_boundary_001/output/scientific_defensibility_boundary.md": "6d66bb4fad9e9e16c937a3c7d7200aabae2d3fd2d2671739d06d5baad923af5c",
@@ -472,7 +472,7 @@
     },
     "193": {
       "schemaVersion": 1,
-      "inputFingerprint": "ef9b3b947b56e5a0be6563b5b42ed7ffa04a1d9c689b8a279d0fc32e9b092701",
+      "inputFingerprint": "ddebcc5c7e3bf03bb3cc4b2d7490590afd186ffa7f0a3f678565e78f1dae2b39",
       "outputs": {
         "studies/phase193_boson_prediction_completion_audit_001/output/boson_prediction_completion_audit.json": "d73f61b41f7b630345d51837dad63774e5260ca1195a9b679a5595ef977e0fdf",
         "studies/phase193_boson_prediction_completion_audit_001/output/boson_prediction_completion_audit_summary.json": "bd366cfddb42da23f3db588737ae5488a0db2f35ce4ea5a2ebbbcfed8ed0e608"
@@ -546,10 +546,10 @@
     },
     "202": {
       "schemaVersion": 1,
-      "inputFingerprint": "980907b94c607335cd53f6e7ad6e1c90feeaedeffdb7d581ceec6d3d61731b7a",
+      "inputFingerprint": "61822b2e814f124d3922341560b75a68cb1173ad6670a83d6c066f7d05aede28",
       "outputs": {
-        "studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit.json": "b35bed3282666ca7256a904eaf32fc30cb02d18c6821e235b536e56c908f74aa",
-        "studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json": "4d707d9b09e8e74de511fe1188cf6c525f1b4bfa117a198ed1f5dcbd0905a82e"
+        "studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit.json": "0e70ab9a4f85405a0dd3a745027ba6583b8c5f0cde23955ab8376abb7e3eed14",
+        "studies/phase202_boson_objective_completion_audit_001/output/boson_objective_completion_audit_summary.json": "368a610e996f0273090b943d7104f7cc874d6e2626369551a52a2ef1cb1da1f4"
       }
     },
     "203": {
@@ -562,7 +562,7 @@
     },
     "204": {
       "schemaVersion": 1,
-      "inputFingerprint": "b16c755ce7f6cf81e8399ce8631632ce7203b1ff55f34a0173471babb21cf288",
+      "inputFingerprint": "4579b54a8aac5fe9a1c66d7c6cf706936a448481b4ab5fd683d46b48cb4b54f2",
       "outputs": {
         "studies/phase204_boson_source_lineage_candidate_scan_001/output/boson_source_lineage_candidate_scan.json": "68fc6a5896f0eb2cc491b71fd304aa4cc60b9dde85a344c3b993453800385035",
         "studies/phase204_boson_source_lineage_candidate_scan_001/output/boson_source_lineage_candidate_scan_summary.json": "c742c1fc6b4614c96ebe1ffc0b968c78f0cc6cb5a3f39ea5ec680aa23913eea6"
@@ -570,10 +570,10 @@
     },
     "205": {
       "schemaVersion": 1,
-      "inputFingerprint": "b82d317eb72a67fc10448d728749add82c4355277af009a0122bc791d5d4cf12",
+      "inputFingerprint": "8e30692be50d205e40e74dd56357ce4dbdde1a527012531ade7e3b35022a8bed",
       "outputs": {
-        "studies/phase205_boson_source_lineage_text_evidence_scan_001/output/boson_source_lineage_text_evidence_scan.json": "2aea9c29acfd3d732d4962da3dbad13942f656ef99a56b5553d7aa1b57ec5d45",
-        "studies/phase205_boson_source_lineage_text_evidence_scan_001/output/boson_source_lineage_text_evidence_scan_summary.json": "c394771d3abbe3fe6f9880823bbf6b2b1372c14e7015d799815d65c09e3f84f7"
+        "studies/phase205_boson_source_lineage_text_evidence_scan_001/output/boson_source_lineage_text_evidence_scan.json": "3a35c068b692ce89ae30c6983257e3d7c821428d7bd872c8cefcf3a6173289d7",
+        "studies/phase205_boson_source_lineage_text_evidence_scan_001/output/boson_source_lineage_text_evidence_scan_summary.json": "887211d6afdd0cd66fc941187f89dc2c322c13f9aa2719e329f7202072492e0b"
       }
     },
     "206": {
@@ -586,23 +586,23 @@
     },
     "207": {
       "schemaVersion": 1,
-      "inputFingerprint": "8c2a2d488568c007560871e91b3aa479f0443659ef459b319b7fa608c76eb312",
+      "inputFingerprint": "f4837cdad50f404e090464f4e6ba6ce9be5a0f0309f4c5ca18cd449ca6c7a6e7",
       "outputs": {
-        "studies/phase207_higgs_quartic_self_coupling_source_scan_001/output/higgs_quartic_self_coupling_source_scan.json": "279b394520c148f7252d20c8e0bf9d89ce6fc2a51fbfb444cdc4d5e12e731ac4",
-        "studies/phase207_higgs_quartic_self_coupling_source_scan_001/output/higgs_quartic_self_coupling_source_scan_summary.json": "83a8f54774d14dc192afbac37604a831c419c1c2970ee09dd18210479bd950b3"
+        "studies/phase207_higgs_quartic_self_coupling_source_scan_001/output/higgs_quartic_self_coupling_source_scan.json": "314fbfbc0d44760b456f63b461bdc1025b0b3ed0017b65775138f471c19f8fd4",
+        "studies/phase207_higgs_quartic_self_coupling_source_scan_001/output/higgs_quartic_self_coupling_source_scan_summary.json": "25acdacd2f11221ae435ff3e5d20b2a050b616b997144285a669c9bf91d6e9a3"
       }
     },
     "208": {
       "schemaVersion": 1,
-      "inputFingerprint": "79589871dc888e94f4118b7bb95b05e2acfa2d5e86a271fa5d29aa6a072b5d62",
+      "inputFingerprint": "0bd4518a3baddf93297752a7e480bbce38dad7d143025904902603b69ffffe95",
       "outputs": {
-        "studies/phase208_boson_local_route_exhaustion_certificate_001/output/boson_local_route_exhaustion_certificate.json": "e0f95ae44b9e661dacc225251ed6f5f9d215a00d176447d09cceeea62747cfcb",
-        "studies/phase208_boson_local_route_exhaustion_certificate_001/output/boson_local_route_exhaustion_certificate_summary.json": "c28a2a6ea588114ce41cb57502e0e7abce49f988ab2c07cad5553b99cab55536"
+        "studies/phase208_boson_local_route_exhaustion_certificate_001/output/boson_local_route_exhaustion_certificate.json": "c256665ca2b2a727f26e47e2dd2c7560b732e33bc66daeaf9e5ed50185bad36b",
+        "studies/phase208_boson_local_route_exhaustion_certificate_001/output/boson_local_route_exhaustion_certificate_summary.json": "a8450865c597f89e973b2e277c4d604fdc1e9ee6a5a4450d403213e0bff039c9"
       }
     },
     "209": {
       "schemaVersion": 1,
-      "inputFingerprint": "a8b77e484547eda8f4d453e89d76584278fe264acd840ad5d1550184d9a79e9a",
+      "inputFingerprint": "d3463f41f6e5978dd673038d9412227274cb6ee07a5f04b98278f4f70023de3e",
       "outputs": {
         "studies/phase209_boson_source_lineage_evidence_request_package_001/output/boson_source_lineage_evidence_request_package.json": "98122dd79b54e64db3b8c5725c08453c69da2f7e6a82f590e602d90864edef3f",
         "studies/phase209_boson_source_lineage_evidence_request_package_001/output/boson_source_lineage_evidence_request_package_summary.json": "e03c15a59e2d67422e3f8ce9f77739e0f9c1bfcf03fb7ec14155d870a3c166d3",
@@ -628,7 +628,7 @@
     },
     "212": {
       "schemaVersion": 1,
-      "inputFingerprint": "5c1b8f744d56e1ea150ffd450aa0c30c55e617a807fa8ca4b4a4b7d7f963b6fc",
+      "inputFingerprint": "af974e948353c456d7d55dd6c4c79ca41f48b640d5e275d534abe2d24f9ed01f",
       "outputs": {
         "studies/phase212_boson_scientific_claim_boundary_certificate_001/output/boson_scientific_claim_boundary_certificate.json": "736fa2c7c6a449b692d69bb659a2b417c72734724bf13caeaea3c7153846400c",
         "studies/phase212_boson_scientific_claim_boundary_certificate_001/output/boson_scientific_claim_boundary_certificate_summary.json": "a876a130260e158c55c53c58662494f279d8880a8662d8791ed90c39a146ea8b"
@@ -636,7 +636,7 @@
     },
     "213": {
       "schemaVersion": 1,
-      "inputFingerprint": "ac41cbe9085b2747664f8059314e3cbb33865da8b2f2ca884e2e5ac31cde0c94",
+      "inputFingerprint": "b6f051369275c65c3e9a959ab3328166cd0d9c7032cd741c7cb9152042135b0f",
       "outputs": {
         "studies/phase213_boson_source_lineage_blocker_matrix_001/output/boson_source_lineage_blocker_matrix.json": "69ca302c9f02b468b979bba8a110b2cc716aabe57d8e2d2972a1ab8e98f43f5d",
         "studies/phase213_boson_source_lineage_blocker_matrix_001/output/boson_source_lineage_blocker_matrix_summary.json": "0eb2ebf836221886e6f0038756cfbd8594c55e5b50b8e5e23239e97360f3c330"
@@ -652,7 +652,7 @@
     },
     "215": {
       "schemaVersion": 1,
-      "inputFingerprint": "9934b46fcee67d6c26e5c3d57534c131a1a318704f1cd12a4d5114344591fd6a",
+      "inputFingerprint": "396a7ea2be2b932efb04b91429dd43c1ebcb8fa76e35dff2348885b16d81afa6",
       "outputs": {
         "studies/phase215_higgs_target_implied_self_coupling_loophole_audit_001/output/higgs_target_implied_self_coupling_loophole_audit.json": "907b74ce33d704f38abb1e1fe15f07b646e1f995acaa3c9d877971f935dca9e7",
         "studies/phase215_higgs_target_implied_self_coupling_loophole_audit_001/output/higgs_target_implied_self_coupling_loophole_audit_summary.json": "6805f9ceffa9e2638b23f292ac06ca68c0f4f08a8ce9673357689619c6511277"
@@ -668,7 +668,7 @@
     },
     "217": {
       "schemaVersion": 1,
-      "inputFingerprint": "1d0400258587dbb6a7f13d01d5199a82bc93001d46b924b47a723e05458ec717",
+      "inputFingerprint": "d898851985d18891a7148565162afb5f7f9cc436acc85eb526c8227c31249a7a",
       "outputs": {
         "studies/phase217_boson_independent_source_review_001/output/boson_independent_source_review.json": "f2eaac093161fad4050ea7772173e069757172d7c12579dc2a178ea80d6e0d05",
         "studies/phase217_boson_independent_source_review_001/output/boson_independent_source_review_summary.json": "811151d8c00226c26958edaf808d3cf56fc0421352d6b1466c38d208bbd039bf"
@@ -716,7 +716,7 @@
     },
     "223": {
       "schemaVersion": 1,
-      "inputFingerprint": "792d806d1664a5d3f4276f8bcbe1a43dc21cb5da9133e0febee51ca58eb7dcb9",
+      "inputFingerprint": "799aaefdfead693e776dfc107440c0c27d5262ea815ffe653fc6c6f0c60968cf",
       "outputs": {
         "studies/phase223_higgs_casimir_quartic_numerical_probe_001/output/higgs_casimir_quartic_numerical_probe.json": "948772b2622d05a8b41645879e20894e8e534ab188b70fa269d9cae2e527158f",
         "studies/phase223_higgs_casimir_quartic_numerical_probe_001/output/higgs_casimir_quartic_numerical_probe_summary.json": "7e1f29c52a8375d1d9ed68da654e949eb97320bc4a404ce44bbd8c10cad29ce4"
@@ -740,7 +740,7 @@
     },
     "226": {
       "schemaVersion": 1,
-      "inputFingerprint": "3f187f0568bb91912baca3ca22959862720e2858139ae4a9bccd7bf8c9029966",
+      "inputFingerprint": "d5ae0e153b04c27d4ab2aac49e3643077042f87282613b917c9d678fdd061f5e",
       "outputs": {
         "studies/phase226_official_gu_higgs_potential_notation_audit_001/output/official_gu_higgs_potential_notation_audit.json": "9c04414fed2b5dd9e563936c243b0c8992abf5561f098343e5b89a1860e605ee",
         "studies/phase226_official_gu_higgs_potential_notation_audit_001/output/official_gu_higgs_potential_notation_audit_summary.json": "30007d304e552e45ab5e6955ac45d8bb66dc76052729cf7f989683c8066145bb"
@@ -820,7 +820,7 @@
     },
     "236": {
       "schemaVersion": 1,
-      "inputFingerprint": "c7ee17f2da891bb270212eae6319b3ebee45fcef48672f799b985e1cbcad0ab6",
+      "inputFingerprint": "e71f2ca718a72c1479deb2571c7a4e8185ee5179e068f0c8e99eeed07b043818",
       "outputs": {
         "studies/phase236_low_energy_rg_transport_source_audit_001/output/low_energy_rg_transport_source_audit.json": "93e296ab66ba0233e7619e3697e5ffa0f97df9b8f81cc8ff31b1b9b3ba33a7ed",
         "studies/phase236_low_energy_rg_transport_source_audit_001/output/low_energy_rg_transport_source_audit_summary.json": "84d04c5c2603271f40787aef7a0e8a69fe63d336e2925d9b04d62c15a430c8ea"
@@ -828,7 +828,7 @@
     },
     "237": {
       "schemaVersion": 1,
-      "inputFingerprint": "6b2d28d918cdd8e63c5056834ad7bee4b86bfb5ee312ed7919f286399d14530f",
+      "inputFingerprint": "43ffc22e543e3ea73c71c2d8e12e51f16b917ebe0d1e2698d95814751eb74899",
       "outputs": {
         "studies/phase237_cox_ii_higgs_yukawa_texture_dependency_audit_001/output/cox_ii_higgs_yukawa_texture_dependency_audit.json": "2e0a7f3f96f48dfe40f6d72e974b9b83818eeeca07f455e77f699fa3d8d55721",
         "studies/phase237_cox_ii_higgs_yukawa_texture_dependency_audit_001/output/cox_ii_higgs_yukawa_texture_dependency_audit_summary.json": "cf3b7f56b873c1786c4243d6a9c1791a424b7fa1539f3f8826e4ad93bc22c973"
@@ -852,7 +852,7 @@
     },
     "240": {
       "schemaVersion": 1,
-      "inputFingerprint": "62af99d47eb7cdc741c2100911252fb7d407288b26c16519af890b9ccfad5904",
+      "inputFingerprint": "9aa6df83fcb3e5c606427b46b4bd46391068b4e2f81023f940704ee86463e605",
       "outputs": {
         "studies/phase240_cox_iii_axial_contact_rg_boson_parameter_audit_001/output/cox_iii_axial_contact_rg_boson_parameter_audit.json": "015937a83309419146f80404fb4e4ef6d6bae0cf002fc2a771c5c591dcdfcdb4",
         "studies/phase240_cox_iii_axial_contact_rg_boson_parameter_audit_001/output/cox_iii_axial_contact_rg_boson_parameter_audit_summary.json": "0637922941eaf06ab22d86d729c824611f6699dfb18d2a9e744a518738ccfacd"
@@ -860,7 +860,7 @@
     },
     "241": {
       "schemaVersion": 1,
-      "inputFingerprint": "3e728c434b95cbcaf36d1493a466436d4d71d5809bc6f74f51b5712067860ab6",
+      "inputFingerprint": "7f92752b95f4de637e165b4616a8f4d52cfe7d78e192cfc620a8415115919396",
       "outputs": {
         "studies/phase241_cox_iv_quartic_gauge_sign_falsifier_boson_mass_audit_001/output/cox_iv_quartic_gauge_sign_falsifier_boson_mass_audit.json": "be50a542e79dcb8fb213e7f2dca02cc4e67baf78a03887da2fc2108320a4e44b",
         "studies/phase241_cox_iv_quartic_gauge_sign_falsifier_boson_mass_audit_001/output/cox_iv_quartic_gauge_sign_falsifier_boson_mass_audit_summary.json": "0f2fe7faa7803596b37382021d81d69e5fcab1164ff9d09fe85a571602d1e45b"
@@ -868,7 +868,7 @@
     },
     "242": {
       "schemaVersion": 1,
-      "inputFingerprint": "e36bfb1ac5073a3f2083c09138397a83f00bf48ebc6e9b80e57189045d3fe230",
+      "inputFingerprint": "a9c705730be2110beff03e46f8c379889180d9cce6700fcf51af99c92dd1bbab",
       "outputs": {
         "studies/phase242_post_p241_external_lead_consolidation_audit_001/output/post_p241_external_lead_consolidation_audit.json": "2702cfdaecb09293a564a143b2a131f84201744366a329110c6693f42d83165a",
         "studies/phase242_post_p241_external_lead_consolidation_audit_001/output/post_p241_external_lead_consolidation_audit_summary.json": "36412e966a36e9bc2c4969b0febc35df4036ea6be08eb11cfeba67f6f38fd4d1"
@@ -876,7 +876,7 @@
     },
     "243": {
       "schemaVersion": 1,
-      "inputFingerprint": "76ce166bb8baa4ca2286100ee2c2b8b91074497c3dbd2eae0c38c100a404d679",
+      "inputFingerprint": "bf73a950c2fabbc74eb03c6ab18c550db236490333dd367c3f1eab7bd13a5918",
       "outputs": {
         "studies/phase243_public_web_source_delta_audit_001/output/public_web_source_delta_audit.json": "cb88002d4f0756cd30912f1d2884e5ab73f1c2c8d702e2e75cbee2c7c4727bbb",
         "studies/phase243_public_web_source_delta_audit_001/output/public_web_source_delta_audit_summary.json": "74c0d418ecc18889baedd893bd89c190ed657b4766447079a1189602888a2004"
@@ -917,7 +917,7 @@
     },
     "248": {
       "schemaVersion": 1,
-      "inputFingerprint": "d3331bba105ef91b5e9015d42cb6133268a9fc248d2764d430181de934224b02",
+      "inputFingerprint": "2c06fec20c7bdc44d4251082f3fba78c45f41735e29688bffe262d67caf3a65e",
       "outputs": {
         "studies/phase248_higgs_scalar_repairability_audit_001/output/higgs_scalar_repairability_audit.json": "ed24df5c8cba99a27ec7bfcc0f8fd405535d826e3332f3d2885d0af292cbfc81",
         "studies/phase248_higgs_scalar_repairability_audit_001/output/higgs_scalar_repairability_audit_summary.json": "6adefe0b988768a0faf4a3f399296b9467cbaef2be1e48e88b73b6c93e5eec16"
@@ -957,9 +957,9 @@
     },
     "253": {
       "schemaVersion": 1,
-      "inputFingerprint": "ca189ea888b5e90f4c65fea1aa1798d4981f4550d5ac52a83ec121a26a8ac32d",
+      "inputFingerprint": "2ab5c0326d93cfe76ec890772573ffaa4f893d787e7e4b02c4ead67152645fae",
       "outputs": {
-        "studies/phase253_global_observed_sector_vacuum_scan_001/output/global_observed_sector_vacuum_scan.json": "fc764d5df4deee415acdb8b3b632ea77c8f47c531bc4a7fe596fecef49e0ae33",
+        "studies/phase253_global_observed_sector_vacuum_scan_001/output/global_observed_sector_vacuum_scan.json": "4808b3834fa56f375f8b01b2f622e17e3810af3aaa02d2a6c4006b4c21f4dd8c",
         "studies/phase253_global_observed_sector_vacuum_scan_001/output/global_observed_sector_vacuum_scan_summary.json": "ebcc91643ad1d6d09a70111d3f971d7ef74bdd0ff5aa602be0058a163777229c"
       }
     },
@@ -973,7 +973,7 @@
     },
     "255": {
       "schemaVersion": 1,
-      "inputFingerprint": "e568a7e61a9f81604fba8c1580e1539f263b7de9844786a66e8bc016d4083940",
+      "inputFingerprint": "7ac271a51d7b3244e968be3c6ffebefd5f9fea4d4daf59ae9a67898228dd2b7c",
       "outputs": {
         "studies/phase255_observed_field_extraction_no_go_audit_001/output/observed_field_extraction_no_go_audit.json": "e35cba79d5edc2ea9fdd6e58236f3a3ab47c89998f1c583098295a3a8e1d7d82",
         "studies/phase255_observed_field_extraction_no_go_audit_001/output/observed_field_extraction_no_go_audit_summary.json": "1544edadae2d7953901ff5b9dcea206a071a0d0ab9d83b67cd95b13a52d85437"
@@ -1158,15 +1158,15 @@
     },
     "278": {
       "schemaVersion": 1,
-      "inputFingerprint": "18f68cf01f9b2fa41b988b0fe0d9fd28f0ef2423e43ff8c9737d3f7964294d54",
+      "inputFingerprint": "9b27f12967a8d9fc9bea76865032a82a28fae4bad2f61824807d72003dc93acd",
       "outputs": {
-        "studies/phase278_relaxion_electroweak_scale_source_audit_001/output/relaxion_electroweak_scale_source_audit.json": "5e38b76e64d72219c7fabc0175f0caef22195c15fbf349cbe3e771dbc59dc6bc",
-        "studies/phase278_relaxion_electroweak_scale_source_audit_001/output/relaxion_electroweak_scale_source_audit_summary.json": "d70c0cb76021a3f952346950c3c6b0a47f24555c13429547ef22a5424851b371"
+        "studies/phase278_relaxion_electroweak_scale_source_audit_001/output/relaxion_electroweak_scale_source_audit.json": "b0d7e27fc9e0b3b3115e0c2f4d41b91c8325a8d680b2887e62872fa675b840b3",
+        "studies/phase278_relaxion_electroweak_scale_source_audit_001/output/relaxion_electroweak_scale_source_audit_summary.json": "c405b859423d4278755dc6df23f9c7581c427949ff4aa4ea65e48e71016fad84"
       }
     },
     "279": {
       "schemaVersion": 1,
-      "inputFingerprint": "4de1f97ec9ed66ce82e5038d2cd3295634afba96e8cb272b934288665edbeca6",
+      "inputFingerprint": "7207e7ee45aec150eb3112e48678ce638f02a82baa53be0d3a34b498697bc6b0",
       "outputs": {
         "studies/phase279_technicolor_walking_electroweak_scale_source_audit_001/output/technicolor_walking_electroweak_scale_source_audit.json": "8587045c646496fa9337fb2cf0fa8085a1bc048267df10a35bf0e9a446cae426",
         "studies/phase279_technicolor_walking_electroweak_scale_source_audit_001/output/technicolor_walking_electroweak_scale_source_audit_summary.json": "f7ad9a9099671e7827b5b74cae940ff36df7abbc84d1acc725568fc9a6486a37"
@@ -1182,7 +1182,7 @@
     },
     "281": {
       "schemaVersion": 1,
-      "inputFingerprint": "f710954ee2025c006cdd24045e775caf3b57c88af74f396f2c3448232dfb5c8e",
+      "inputFingerprint": "72f1468a7cdfe7c3083b8fae8f4f78d47b1c2728130239617b4a74cc964e4b23",
       "outputs": {
         "studies/phase281_geometric_refractive_unification_source_audit_001/output/geometric_refractive_unification_source_audit.json": "e342c1bcc1d8ae9b4a1d4ad3f876e9309bb973ed416819c74e3a375d25887b17",
         "studies/phase281_geometric_refractive_unification_source_audit_001/output/geometric_refractive_unification_source_audit_summary.json": "f828e95321a25578efca5e7ff43c908f037319d5e9f42dc0ff1e490f919c8d81"
@@ -1238,7 +1238,7 @@
     },
     "288": {
       "schemaVersion": 1,
-      "inputFingerprint": "a6e969defcf57537721972079e7b5296c0574636e735ee6667006033e3f6b0a7",
+      "inputFingerprint": "5f9f50f4a3871003e29c579c02a82256e72012fccdac98a900818394e4ce96a9",
       "outputs": {
         "studies/phase288_parameter_source_contract_candidate_scan_001/output/parameter_source_contract_candidate_scan.json": "f7ad29336012944edb0cbc0cf4f6ca0eab3ab510d04a9087dda73fe88971e921",
         "studies/phase288_parameter_source_contract_candidate_scan_001/output/parameter_source_contract_candidate_scan_summary.json": "e1527a780f9d3b3d81086507a0341e2e9b9ed31dcb22be7ad37deeaa33244866"
@@ -1246,10 +1246,10 @@
     },
     "289": {
       "schemaVersion": 1,
-      "inputFingerprint": "51bcecc929a13fc2bdd2b919ff4a05590af5c5464b74b5e47db28ea5d29fd627",
+      "inputFingerprint": "7af65fc774ce5da5557811ed554edd1767e6012bc0f75f8d2c3b94db3f8852b0",
       "outputs": {
-        "studies/phase289_phase288_coverage_false_negative_audit_001/output/phase288_coverage_false_negative_audit.json": "f2b454a2abc4b86378647c81f5ca4d0346790aa927b49350e564b2b894e12d9b",
-        "studies/phase289_phase288_coverage_false_negative_audit_001/output/phase288_coverage_false_negative_audit_summary.json": "74f374cebb93503d83c08b8072390fddf2bcee35997388a65818cdcfd907d0bf"
+        "studies/phase289_phase288_coverage_false_negative_audit_001/output/phase288_coverage_false_negative_audit.json": "784151cbfc22fabdb33d07c54d6718738f1b155c8ca8ee77b64ba18548a9b04c",
+        "studies/phase289_phase288_coverage_false_negative_audit_001/output/phase288_coverage_false_negative_audit_summary.json": "7dd54e0207fc7e045a01ae91076f4f1b923c45418396564b0f181dd33e3c10f3"
       }
     },
     "290": {
@@ -1270,7 +1270,7 @@
     },
     "292": {
       "schemaVersion": 1,
-      "inputFingerprint": "19f8524f24d073b97cb228bea3153a1aa02ed9413734cb6554ce1049cc051305",
+      "inputFingerprint": "cd7e6f8df9765cb28d04f592c9a898418231a90d0708ddd9ad426c211a43fb11",
       "outputs": {
         "studies/phase292_electromagnetic_alpha_source_audit_001/output/electromagnetic_alpha_source_audit.json": "40f4e0e1b03d32ffa9d9adc7cf45a99d2d817d3b18ea907e9ff0f2a2d9bcf2e4",
         "studies/phase292_electromagnetic_alpha_source_audit_001/output/electromagnetic_alpha_source_audit_summary.json": "50910767a9d2f74d7a231d6818175f94547e8a303306769afb44b25eda4fb65b"
@@ -1278,7 +1278,7 @@
     },
     "293": {
       "schemaVersion": 1,
-      "inputFingerprint": "6d240f34859bd2d0d0257bb6709aa04c99ebd18186737026a74ea5fc8548d200",
+      "inputFingerprint": "d42adcf8cd2159fb0db039482b689562fc9de1c816ca957e9990d7e3adc8e95e",
       "outputs": {
         "studies/phase293_fermi_vev_source_audit_001/output/fermi_vev_source_audit.json": "9dce468568fb1951ee2eaaf8585fa8f97021fb73e84ca0ba6a283800b0a657bc",
         "studies/phase293_fermi_vev_source_audit_001/output/fermi_vev_source_audit_summary.json": "3527bde908ecd544a9da5a81b890a6acdcc21b3cf34367287f2e8941421afc18"
@@ -1286,31 +1286,31 @@
     },
     "294": {
       "schemaVersion": 1,
-      "inputFingerprint": "9a323ac95764ec7978ce5b89b869fb18a5fe29a8cc9fb97c16264242238a9bff",
+      "inputFingerprint": "4289c250383aea75160a15a480ce25ed58d46e43fcd0e0c0309aba2bd2783536",
       "outputs": {
-        "studies/phase294_rg_scheme_transport_source_audit_001/output/rg_scheme_transport_source_audit.json": "25c7d47c8b5108359226030d04de2792e12c85bcebda48e0a1e8fe3465ab95b8",
-        "studies/phase294_rg_scheme_transport_source_audit_001/output/rg_scheme_transport_source_audit_summary.json": "dca31127208d49ac08d02f2ce416b26ef45b8d744ec4266dfd9515d953da7bfd"
+        "studies/phase294_rg_scheme_transport_source_audit_001/output/rg_scheme_transport_source_audit.json": "ced6d4a624c78c49b5830e1f4e89761d1791e8e501d8731c795b9b72c255027c",
+        "studies/phase294_rg_scheme_transport_source_audit_001/output/rg_scheme_transport_source_audit_summary.json": "5f9e0fdaa129232a3652849568e47662e2efdec06d58b61513c6c1720eec3c0d"
       }
     },
     "295": {
       "schemaVersion": 1,
-      "inputFingerprint": "32a9d4081eb99df4c49e66f386cf209f5f6161f6bc41933e2ce1d76c544d01b0",
+      "inputFingerprint": "fd1c1bcdc60acf409baf3ee59fef24674fb2663508db8e401f257a3c89e8e97b",
       "outputs": {
-        "studies/phase295_observed_field_extraction_contract_candidate_scan_001/output/observed_field_extraction_contract_candidate_scan.json": "efb1baf67cd7d4b64a77f9eb6aa31c653c7204d8a9bf623bb5b639190f8a85bf",
-        "studies/phase295_observed_field_extraction_contract_candidate_scan_001/output/observed_field_extraction_contract_candidate_scan_summary.json": "5cd72dd09099f519ca11980024b99b3d38815421d72c5574662dfa660ee77c63"
+        "studies/phase295_observed_field_extraction_contract_candidate_scan_001/output/observed_field_extraction_contract_candidate_scan.json": "b05cb9f014eaf4c5b8a1b2db3615b4680001047c79ee00074d3133a11cb27af2",
+        "studies/phase295_observed_field_extraction_contract_candidate_scan_001/output/observed_field_extraction_contract_candidate_scan_summary.json": "92b476c9649d7fddbacaa8b3e9801c894f21ca9624a3938406b8a0d7b9cb7fc3"
       }
     },
     "296": {
       "schemaVersion": 1,
-      "inputFingerprint": "1d440fa72559f94f1f0c384624c50213116336841613bfcaa0c1c09c1a0c3386",
+      "inputFingerprint": "58d010a8c9db8246dbc910de89ba533eb4310ddf2c75586c4c712a2f2e4f9885",
       "outputs": {
-        "studies/phase296_source_lineage_contract_field_candidate_scan_001/output/source_lineage_contract_field_candidate_scan.json": "18d90336e69a6b82317d32f1c12c5cd0f42a7583a3f9455d8e385e95904d97a9",
-        "studies/phase296_source_lineage_contract_field_candidate_scan_001/output/source_lineage_contract_field_candidate_scan_summary.json": "1a054711b2a466229a1aa763d2e72964a63de824bf6b5aed859b27cafbd32c69"
+        "studies/phase296_source_lineage_contract_field_candidate_scan_001/output/source_lineage_contract_field_candidate_scan.json": "b2e06d4d9cf1ae39f7df24ac9a2bb93963e9144c9383c523426b767f7fcc563b",
+        "studies/phase296_source_lineage_contract_field_candidate_scan_001/output/source_lineage_contract_field_candidate_scan_summary.json": "d884f8b63ca8d70bf42dd0c31f09ba676e40f6aa6a6aafedc83a20dd9ee28acc"
       }
     },
     "297": {
       "schemaVersion": 1,
-      "inputFingerprint": "a44bd83e06ac84ebc532a92a0ea2cc7d53aec52d2f9e1ac5b886e9236c465a74",
+      "inputFingerprint": "d97f79f2495ee1cc6619fe5454183379d8302510bdb9b50fe861ee6ab84c1ab2",
       "outputs": {
         "studies/phase297_wz_direct_bridge_source_contract_application_audit_001/output/wz_direct_bridge_source_contract_application_audit.json": "674939aac525590906b5eafb3e91bc765f17f8346a4643736ce3fe0156821a67",
         "studies/phase297_wz_direct_bridge_source_contract_application_audit_001/output/wz_direct_bridge_source_contract_application_audit_summary.json": "1fc21acc8a8d269aa866e5de90e8f0da70f1122cab1a042d5a94615c8c64f84b"
@@ -1428,7 +1428,7 @@
     },
     "311": {
       "schemaVersion": 1,
-      "inputFingerprint": "3b90f389b6e4937871b254d40aa7f55ba17da84e7e2626beb494a45249a8a1b4",
+      "inputFingerprint": "b9803b5cf61f0f62682fe04d247deb137b0ebe77ed6eed5bc97b6313aaf7c4ce",
       "outputs": {
         "studies/phase311_completion_observed_sector_wz_row_selector_audit_001/output/completion_observed_sector_wz_row_selector_audit.json": "ec91e699665fa727e4b3a669a319c2d88aa61aa0e804e078ca0bca46df60212f",
         "studies/phase311_completion_observed_sector_wz_row_selector_audit_001/output/completion_observed_sector_wz_row_selector_audit_summary.json": "145bce2a097dfe76406c93fe7aa5caf1da25f6e4baf27baaeff351e32c136b6a"
@@ -1444,7 +1444,7 @@
     },
     "313": {
       "schemaVersion": 1,
-      "inputFingerprint": "7f76ac6c0aa98c526b9317f842050cc9ae98008bc948772870654fecec18b61c",
+      "inputFingerprint": "6cd97f1c53f3974b1dd72d567c4b9bc83b8656c6348b9fdaf98f1392f1228a2f",
       "outputs": {
         "studies/phase313_official_draft_electroweak_projection_map_audit_001/output/official_draft_electroweak_projection_map_audit.json": "17fdc83c15ca67aff5aaae4f1c7500295790b213f78f48518210e0d6ec53d7a1",
         "studies/phase313_official_draft_electroweak_projection_map_audit_001/output/official_draft_electroweak_projection_map_audit_summary.json": "4c1af6a2d24b07aa5fe39d2526af833e7281e7f9668bb628afa9e41114b4ef61"
@@ -1508,7 +1508,7 @@
     },
     "321": {
       "schemaVersion": 1,
-      "inputFingerprint": "3c97a2dbebaf181fb5cd17b1b1227a28f3dd5cc03a8629d69286828adda94b7e",
+      "inputFingerprint": "4ebdae9d047a29e5506b72e0d1da6e8c7a587d3e7d37f415fad5ab613e0c1bb1",
       "outputs": {
         "studies/phase321_neutral_electroweak_mixing_source_audit_001/output/neutral_electroweak_mixing_source_audit.json": "6b71656a96f8f4727c360e875a5531a64fc6c8c90e57d68d5c83fa952c75e96b",
         "studies/phase321_neutral_electroweak_mixing_source_audit_001/output/neutral_electroweak_mixing_source_audit_summary.json": "6b71656a96f8f4727c360e875a5531a64fc6c8c90e57d68d5c83fa952c75e96b"
@@ -1516,7 +1516,7 @@
     },
     "322": {
       "schemaVersion": 1,
-      "inputFingerprint": "3e59bdb3974a60270fde067aeaa1fa48454144d424edaf6307bd20229e6570df",
+      "inputFingerprint": "6cd47f436a9c30b1317a19887552cbecd4a418ee23278c83d1fc71b15c9413a1",
       "outputs": {
         "studies/phase322_higgs_upsilon_scalar_source_boundary_audit_001/output/higgs_upsilon_scalar_source_boundary_audit.json": "5fb1f1dbef96921aa3bc4fae0c22034ed7c61349f3e445d5c4e35ae73594c052",
         "studies/phase322_higgs_upsilon_scalar_source_boundary_audit_001/output/higgs_upsilon_scalar_source_boundary_audit_summary.json": "5fb1f1dbef96921aa3bc4fae0c22034ed7c61349f3e445d5c4e35ae73594c052"
@@ -1524,7 +1524,7 @@
     },
     "323": {
       "schemaVersion": 1,
-      "inputFingerprint": "9a6f65a7f121c2560aa45f04a90db38fc6c800574d1aa3728066ba8e9eca072b",
+      "inputFingerprint": "a444103efcfc2c163840788099953698173ec5bfa71c00babb5b640815596002",
       "outputs": {
         "studies/phase323_coupled_yang_mills_higgs_mass_extraction_audit_001/output/coupled_yang_mills_higgs_mass_extraction_audit.json": "56f361a2f2258a0829975abadfb8a7cb9e62bb22c40be225e9ac6cb66acac44b",
         "studies/phase323_coupled_yang_mills_higgs_mass_extraction_audit_001/output/coupled_yang_mills_higgs_mass_extraction_audit_summary.json": "56f361a2f2258a0829975abadfb8a7cb9e62bb22c40be225e9ac6cb66acac44b"
@@ -1532,7 +1532,7 @@
     },
     "324": {
       "schemaVersion": 1,
-      "inputFingerprint": "6cd910a4eb93ea5f415d5634eca4e4ccf3d4019912d8f27cfca796b65c59dbf5",
+      "inputFingerprint": "9ac0ccd09384d7186c77954c641f241c82b167955c68f0ee078a599c36f16691",
       "outputs": {
         "studies/phase324_custodial_rho_parameter_source_audit_001/output/custodial_rho_parameter_source_audit.json": "9824f55e551513e08f364fb3542c0ad135dc2ee79983bbacc327b3b4ff1f1fe2",
         "studies/phase324_custodial_rho_parameter_source_audit_001/output/custodial_rho_parameter_source_audit_summary.json": "9824f55e551513e08f364fb3542c0ad135dc2ee79983bbacc327b3b4ff1f1fe2"
@@ -1540,7 +1540,7 @@
     },
     "325": {
       "schemaVersion": 1,
-      "inputFingerprint": "1c8f24e8ab08416c736709f238305966f6c4c314984c1393e50d653a9737856d",
+      "inputFingerprint": "15a14f0738320daa9030d987745dccb8b59c32d3f5bbd0ab629bbb76b253470b",
       "outputs": {
         "studies/phase325_electroweak_unitarity_scattering_source_audit_001/output/electroweak_unitarity_scattering_source_audit.json": "d737203702f4c601af5a6666ca3846d9ef28853d88fc541901cd020a7c9cc592",
         "studies/phase325_electroweak_unitarity_scattering_source_audit_001/output/electroweak_unitarity_scattering_source_audit_summary.json": "d737203702f4c601af5a6666ca3846d9ef28853d88fc541901cd020a7c9cc592"
@@ -1548,7 +1548,7 @@
     },
     "326": {
       "schemaVersion": 1,
-      "inputFingerprint": "e8d512187774691065cc5ac8d2fc8de8bb0f823c0a8a820d3e49aafa07bbea81",
+      "inputFingerprint": "0bc27a499f0f381be755c543b2fbe9c61079732dfa53298021c68216305ed918",
       "outputs": {
         "studies/phase326_anomaly_hypercharge_source_audit_001/output/anomaly_hypercharge_source_audit.json": "c007e047a3c11e6a763305ee000dae612793e2ebd3bb026c0e664098bf961e20",
         "studies/phase326_anomaly_hypercharge_source_audit_001/output/anomaly_hypercharge_source_audit_summary.json": "c007e047a3c11e6a763305ee000dae612793e2ebd3bb026c0e664098bf961e20"
@@ -1556,7 +1556,7 @@
     },
     "327": {
       "schemaVersion": 1,
-      "inputFingerprint": "be114f5ac37811c008d38007c8f16bc60cb90f5a9b4c14db4974f2643d8057fe",
+      "inputFingerprint": "6d44f68f73ee36caa968c94645507135be7e4e1ce85c37fab011f1e805fb5c0c",
       "outputs": {
         "studies/phase327_oblique_precision_electroweak_source_audit_001/output/oblique_precision_electroweak_source_audit.json": "ddf955952d84110be4fa617e780dd60da2f95b4e1d81b0dc0993b64e3555dfa3",
         "studies/phase327_oblique_precision_electroweak_source_audit_001/output/oblique_precision_electroweak_source_audit_summary.json": "ddf955952d84110be4fa617e780dd60da2f95b4e1d81b0dc0993b64e3555dfa3"
@@ -1692,7 +1692,7 @@
     },
     "344": {
       "schemaVersion": 1,
-      "inputFingerprint": "4a188573bd475d361f0a856c5f5879c744dca18549ebe0db946781cd16eb4c47",
+      "inputFingerprint": "1f47684a0f0ddc2fe794b3a66e245f5205a09d820d28c6ac21444321e22bb7b5",
       "outputs": {
         "studies/phase344_fms_gauge_invariant_spectrum_source_audit_001/output/fms_gauge_invariant_spectrum_source_audit.json": "4ea3f9ec815b2501d3d55ca5e0d86f434f21aeed0aef538dcfa0364835cbb9e1",
         "studies/phase344_fms_gauge_invariant_spectrum_source_audit_001/output/fms_gauge_invariant_spectrum_source_audit_summary.json": "cd7f499b9369d9d7f93919ace679b2a143642221714ff144b9215cf2bc9b7715"
@@ -1700,7 +1700,7 @@
     },
     "345": {
       "schemaVersion": 1,
-      "inputFingerprint": "e82cfe0c62b15da996146ec4c335f5cdae0b7c45847641bb02c674efdc66161b",
+      "inputFingerprint": "a374a7a18f25644c7c693336c9e402001d030b399ba6a58dbcfdba9dcd351570",
       "outputs": {
         "studies/phase345_fradkin_shenker_complementarity_source_audit_001/output/fradkin_shenker_complementarity_source_audit.json": "0f2871ad0a721409f5a9711b1d1aa4f92bb641df6859f955c2f8b8cbe9cc9557",
         "studies/phase345_fradkin_shenker_complementarity_source_audit_001/output/fradkin_shenker_complementarity_source_audit_summary.json": "a022c6e696bd68f334463d644f29cbc2ec9710bab5a7256bc63b5c0340e612ff"
@@ -1708,7 +1708,7 @@
     },
     "346": {
       "schemaVersion": 1,
-      "inputFingerprint": "f64e0543df00d53f50a4b9bb3113cfa0597ecc00992a0d1a0f4b0b3bf691d8bd",
+      "inputFingerprint": "69649818651b9211272205a38df196c1327bbfdcac19b72f168086e6070937ad",
       "outputs": {
         "studies/phase346_nielsen_pole_mass_gauge_independence_source_audit_001/output/nielsen_pole_mass_gauge_independence_source_audit.json": "165de38d0535a4808a1c2cafc96fe777a431a9031c3de91768c95455d0f25e57",
         "studies/phase346_nielsen_pole_mass_gauge_independence_source_audit_001/output/nielsen_pole_mass_gauge_independence_source_audit_summary.json": "05c240cabdae4c9a28ce14c52456404d39540d7ee7bdf856714ccc84f7d20e2d"
@@ -1868,7 +1868,7 @@
     },
     "366": {
       "schemaVersion": 1,
-      "inputFingerprint": "1182f3f0619ea0aa1fdf4cdb594481582d7a0fe3e77238307a6083bbd566ca02",
+      "inputFingerprint": "0f57f70fffb62dd4cacb0d4511fc8290c6d9b6b9ad9aeb42bcc8e2cc548b814d",
       "outputs": {
         "studies/phase366_bost_connes_arithmetic_gauge_coupling_source_audit_001/output/bost_connes_arithmetic_gauge_coupling_source_audit.json": "63c02f49590de588548d67e8eaaf022c1481cf0b9811d8a00b7b0bc3691f136f",
         "studies/phase366_bost_connes_arithmetic_gauge_coupling_source_audit_001/output/bost_connes_arithmetic_gauge_coupling_source_audit_summary.json": "03880e2f22013e9b11d20efd0d29b90c20f7b6795c6f4a00457f041ce618d615"
@@ -1900,7 +1900,7 @@
     },
     "370": {
       "schemaVersion": 1,
-      "inputFingerprint": "87c4bc90b4f06cb255965d078d4f5c47a9b5a615a4ac76684ed02cdf2605792e",
+      "inputFingerprint": "35e81c29fa947a361eeac6d728b592e04c6a5807579dc438922e69d33ad63f9e",
       "outputs": {
         "studies/phase370_completion_fermionic_yukawa_higgs_mixed_linearization_source_audit_001/output/completion_fermionic_yukawa_higgs_mixed_linearization_source_audit.json": "21310db86b2885afa36d8a1b0d75c4a6d685521cc98e3f2948dd9c3d7c550e48",
         "studies/phase370_completion_fermionic_yukawa_higgs_mixed_linearization_source_audit_001/output/completion_fermionic_yukawa_higgs_mixed_linearization_source_audit_summary.json": "ebd6e896cb503387c77ba626f7bd4ddddbb2c09e46f444261714d374ca26ade0"
@@ -2112,7 +2112,7 @@
     },
     "380": {
       "schemaVersion": 1,
-      "inputFingerprint": "962a5d8fb02834209aa69e7362794c3af5a2265720e990b69c6f35bfcf772c8c",
+      "inputFingerprint": "89b2b15c94982f6d0b2198d28a2db6672d4b551995027407ba49f8f715329ce6",
       "outputs": {
         "studies/phase380_response_image_wz_contract_application_audit_001/output/response_image_wz_contract_application_audit.json": "cdbbefecdeb428ff34059f3c1bde7e6cc90fca60e34f8d93bcd4ede9cf401b62",
         "studies/phase380_response_image_wz_contract_application_audit_001/output/response_image_wz_contract_application_audit_summary.json": "65d910f353ec6bd2fbabeeaea523e9be9948b99fc175d83da8efd341584b298c"
@@ -2128,9 +2128,9 @@
     },
     "382": {
       "schemaVersion": 1,
-      "inputFingerprint": "55f29bd6b0b0d0b438640078c4f24747ac5d642f1e327656b6f8085880966863",
+      "inputFingerprint": "8d6cdf12d0c52218313f40edd08000672dd6b77ae8bc990e5256eecdf1b0fa66",
       "outputs": {
-        "studies/phase382_response_image_observed_projection_requirement_audit_001/output/response_image_observed_projection_requirement_audit.json": "55cd5a6c76e5cc5b32470a64ff43421abe0fa1cf0da8eaad1b3de0afc4010be8",
+        "studies/phase382_response_image_observed_projection_requirement_audit_001/output/response_image_observed_projection_requirement_audit.json": "a61b731ecee41b70d16c06183fb6fa1178f8b6c0142085656eff451f19833092",
         "studies/phase382_response_image_observed_projection_requirement_audit_001/output/response_image_observed_projection_requirement_audit_summary.json": "b8f17f942141a0f9b54d985268490e90bfa63b12b4a246dab3195f923a7adb8d"
       }
     },
@@ -2226,8 +2226,8 @@
       "schemaVersion": 1,
       "inputFingerprint": "3856cd7bb8faa4e7cb4d7363aeb1e2e2ca7ac2b26acba0372f90e9c338eb43fe",
       "outputs": {
-        "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/compute_spectrum_bg-phase12-bg-a-20260315212202.log": "56edf49d720366227e743560e80d5b7c1e13a8c123fb399990a08ae2775bfca3",
-        "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/compute_spectrum_bg-phase12-bg-b-20260315212202.log": "8d4973079facc1673b937cdb0e78d5a0f0a87ad0daa4cda82e6277f260a55c9b",
+        "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/compute_spectrum_bg-phase12-bg-a-20260315212202.log": "8dc3b52fa25bff4be88d6746f2ade1f120996c944bfdb17f41b5f082e03de62d",
+        "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/compute_spectrum_bg-phase12-bg-b-20260315212202.log": "3873e3fe6a142cb0417ad290c521c7f1359b58b0b27028e208d8fa783e8e8931",
         "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir/atlas.json": "d7610e7a36c2d8ac223b83cf2495b176a8f32b97de1246512a540ad96e6d103e",
         "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir/background_records/bg-phase12-bg-a-20260315212202.json": "51b507e81f8964417fce74a1718bfc919e7a0f6a0dacf5f2e0bef867024c6eea",
         "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir/background_records/bg-phase12-bg-b-20260315212202.json": "e960ddb1d918bca4c0ec6ed1019cb35c92bf4e9d7f54ac049131958a23292278",
@@ -2554,8 +2554,8 @@
         "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir/observables/mode_signatures/bg-phase12-bg-b-20260315212202-mode-99.json": "ea099097fd91e4212384c6342222ffdf57f5cd4984e5c03d66f007b16fee9f83",
         "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir/reports/boson_atlas.json": "17fbcc37453a8194b776fb0af2b066bd6c5f998bf32aabd4490c1ffe3ad11021",
         "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir/reports/boson_atlas.md": "04f5293db8c461d55794c5b61ed7f43fc4167d81b9a29a42cf058f3bbf21b0d5",
-        "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir/spectra/bg-phase12-bg-a-20260315212202_spectrum.json": "77625399bb34566ed7154b578f0d7ec6068ac4da6955904f42a6a39856d35120",
-        "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir/spectra/bg-phase12-bg-b-20260315212202_spectrum.json": "57e6b32c44e6cd07919a53ab24f6e9539495647cc6465586160d52d3166ad041",
+        "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir/spectra/bg-phase12-bg-a-20260315212202_spectrum.json": "ca53d2a9f6a71686c5903ff49cb7062f31bea6e4aac433f21877f2d4952a9e80",
+        "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir/spectra/bg-phase12-bg-b-20260315212202_spectrum.json": "95024b28deea32b66e9b49afc083c083e94146f3858412825450e13762fa5ee0",
         "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir/spectra/modes/bg-phase12-bg-a-20260315212202-mode-0.json": "cc9d62346f21ebe18f37e5f350927cc8e0545f6ccea4b12fa82c6d2154ce0fa8",
         "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir/spectra/modes/bg-phase12-bg-a-20260315212202-mode-1.json": "6bd2fe19bdf10e611128673257d9ba6874f7188452406dcea2f7fdc2ed3203ee",
         "studies/phase394_positive_bosonic_spectrum_backreaction_construction_001/output/family_workdir/spectra/modes/bg-phase12-bg-a-20260315212202-mode-10.json": "c4d76723409edc580f98d32e336fb7d426c29549fd4b82f06f2803bb13abec27",
@@ -2882,7 +2882,7 @@
     },
     "396": {
       "schemaVersion": 1,
-      "inputFingerprint": "de601a2abcbd769636fae63046f17ec8d124dd40fe9715e9f57b73209faf23a2",
+      "inputFingerprint": "5d0e22337a5b4cd296405d3f0666df0824d1e680a8eea140c7646a3e22af54ed",
       "outputs": {
         "studies/phase396_gauge_invariant_neutral_charged_sector_separation_probe_001/output/gauge_invariant_neutral_charged_sector_separation_probe.json": "23b459ad5f08247071a1b5b16ba88032f268d3fa77f0dbd86f2f2596194c2bc1",
         "studies/phase396_gauge_invariant_neutral_charged_sector_separation_probe_001/output/gauge_invariant_neutral_charged_sector_separation_probe_summary.json": "23b459ad5f08247071a1b5b16ba88032f268d3fa77f0dbd86f2f2596194c2bc1"
@@ -2906,7 +2906,7 @@
     },
     "399": {
       "schemaVersion": 1,
-      "inputFingerprint": "187746ad48b4ed0f5d092bd7aa43a6d5e9ac7799623b94784bd4fefa86bb1713",
+      "inputFingerprint": "cf757e567f3b44715be9baf20f885db67bdc8b5857d55b2fe98077212e8d0397",
       "outputs": {
         "studies/phase399_quadratic_model_coupled_critical_point_solve_001/output/quadratic_model_coupled_critical_point_solve.json": "d3b02ddf82c171e04268866e67f7c8902f5d9525c34a70055bcf5542e251987a",
         "studies/phase399_quadratic_model_coupled_critical_point_solve_001/output/quadratic_model_coupled_critical_point_solve_summary.json": "d3b02ddf82c171e04268866e67f7c8902f5d9525c34a70055bcf5542e251987a"
@@ -2914,7 +2914,7 @@
     },
     "400": {
       "schemaVersion": 1,
-      "inputFingerprint": "fd62eda6dc13c7648988cb24c992c78cd43467703a7c5db7eca7470f58945031",
+      "inputFingerprint": "c899bf8400a57c33d3fb0e207d49185b18c0f51b1f5b5171e2737c18e1584cc2",
       "outputs": {
         "studies/phase400_full_bosonic_action_flat_direction_lift_probe_001/output/full_bosonic_action_flat_direction_lift_probe.json": "f84ffcc6451af016770841cf1a2847cc5130a96f0cf6b9b4926bac52a62396d4",
         "studies/phase400_full_bosonic_action_flat_direction_lift_probe_001/output/full_bosonic_action_flat_direction_lift_probe_summary.json": "f84ffcc6451af016770841cf1a2847cc5130a96f0cf6b9b4926bac52a62396d4"
@@ -2922,7 +2922,7 @@
     },
     "401": {
       "schemaVersion": 1,
-      "inputFingerprint": "19772f689bbf8bfab7abd3301d6ccd598ad762468a5fe8d0f4f98959160a96ce",
+      "inputFingerprint": "c4e8a93eaa78a54a6879adc474eb1b3e48e46244b61c574af8e38607989ad2d1",
       "outputs": {
         "studies/phase401_full_quartic_action_coupled_critical_point_construction_001/output/full_quartic_action_coupled_critical_point_construction.json": "6abba764aacf7efde4080bc1087a86c049275f269ff732fc0dee5c57449160de",
         "studies/phase401_full_quartic_action_coupled_critical_point_construction_001/output/full_quartic_action_coupled_critical_point_construction_summary.json": "6abba764aacf7efde4080bc1087a86c049275f269ff732fc0dee5c57449160de"
@@ -2930,7 +2930,7 @@
     },
     "402": {
       "schemaVersion": 1,
-      "inputFingerprint": "d9ef40f9aa62b60a26037dbc6da359fcdc71c3db04c390f73daa206983051d77",
+      "inputFingerprint": "2ae75cd59dab5707c4db52f57a5d213c7820a7cffb4a60beacfed83a9dbe9175",
       "outputs": {
         "studies/phase402_gu_draft_scalar_route_dictionary_audit_001/output/gu_draft_scalar_route_dictionary_audit.json": "324215d2598067f0503f1d4c52fe66e44bd1c46d929cce3cabb4f679123a9bc6",
         "studies/phase402_gu_draft_scalar_route_dictionary_audit_001/output/gu_draft_scalar_route_dictionary_audit_summary.json": "324215d2598067f0503f1d4c52fe66e44bd1c46d929cce3cabb4f679123a9bc6"
@@ -3066,7 +3066,7 @@
     },
     "419": {
       "schemaVersion": 1,
-      "inputFingerprint": "1f36600f6c686577c59b2a7a013a5ffb6864fe94cf5d521b0e6611fb099bc010",
+      "inputFingerprint": "3ea2116c2aa24c6c9c116df7362e21fbe8c49a92a42b27afa96b38c1f67706a1",
       "outputs": {
         "studies/phase419_observed_field_symbolic_extraction_template_001/output/observed_field_symbolic_extraction_template.json": "2be8db5e2d31a0af0cae39734a841ebf36c4e5a7f6e6b0e42396147f815047bc",
         "studies/phase419_observed_field_symbolic_extraction_template_001/output/observed_field_symbolic_extraction_template_map.json": "637b6791a6b1fc213d9c8da558d11df20554f7bc2c7e74fc7e9e6aea292bc784",
@@ -3387,7 +3387,7 @@
     },
     "459": {
       "schemaVersion": 1,
-      "inputFingerprint": "f45f01890aec5e6680fc8e4a94ab7e4c962e0e3838e41c1bc93aa8b5086b3fbf",
+      "inputFingerprint": "a300e9f18a50364c10c0c838ec4f56e2a6b469313d1c4d2cc97b83f81f41fbc4",
       "outputs": {
         "studies/phase459_spectroscopy_record_attestation_001/output/spectroscopy_record_attestation.json": "577ed75ee4e4323268fc4f043a83ac0592781357fa42551b3ddfbf319b2aae06",
         "studies/phase459_spectroscopy_record_attestation_001/output/spectroscopy_record_attestation_summary.json": "577ed75ee4e4323268fc4f043a83ac0592781357fa42551b3ddfbf319b2aae06"
@@ -3395,7 +3395,7 @@
     },
     "460": {
       "schemaVersion": 1,
-      "inputFingerprint": "6f9d8bb895082b3eaba88eea5001a29293f4567296f1c14d7c9620bbb10caeea",
+      "inputFingerprint": "7346c867f54886e74e9c0625fcba4ae5ae8034b8cb68b2f1a1612aba72006718",
       "outputs": {
         "studies/phase460_source_corpus_units_equivariance_kernel_001/output/source_corpus_units_equivariance_kernel.json": "f03b5384eb4e68235ec5bfb177f01df98a4086305590bf61e545f660b62d7f63",
         "studies/phase460_source_corpus_units_equivariance_kernel_001/output/source_corpus_units_equivariance_kernel_summary.json": "2783e0b2aacaa7439be56b95e0013e967b1fd4a64c0f0ec97b7ec33c6293ae71"
@@ -3403,7 +3403,7 @@
     },
     "461": {
       "schemaVersion": 1,
-      "inputFingerprint": "85398fccb0bee307aca541240ecc2066a21c714b1dcffe74aeefd723930f60dc",
+      "inputFingerprint": "23a1d752ad65617722332444a7290d08418de3042f73231b709e247bfae0a470",
       "outputs": {
         "studies/phase461_dimensional_transmutation_reading_menu_001/output/dimensional_transmutation_reading_menu.json": "e0505dc8e6aa26e1abbb5c8440bcc3030cf24ee571a3ec88f805991115e76f7e",
         "studies/phase461_dimensional_transmutation_reading_menu_001/output/dimensional_transmutation_reading_menu_summary.json": "1a839e0dbb1410c3bc3e7b56294ad42c63c09ec7b7184a8e14c735712539b500"
@@ -3567,6 +3567,30 @@
       "outputs": {
         "studies/phase486_committed_evidence_sensitivity_triage_001/output/committed_evidence_sensitivity_triage.json": "c90876cfe98bcc0c10e0701af8d69b6204824be2e46d566d97c672a498855195",
         "studies/phase486_committed_evidence_sensitivity_triage_001/output/committed_evidence_sensitivity_triage_summary.json": "c90876cfe98bcc0c10e0701af8d69b6204824be2e46d566d97c672a498855195"
+      }
+    },
+    "487": {
+      "schemaVersion": 1,
+      "inputFingerprint": "051cf4adc0bb757671b2973773a28df1148f52bf1d970161e9d5633233664912",
+      "outputs": {
+        "studies/phase487_independent_so3_haar_measure_control_001/output/independent_so3_haar_measure_control.json": "4ecd554ff2fb3137caf34c4b2e114ae2827ef894287f250f486502c9ab6d0755",
+        "studies/phase487_independent_so3_haar_measure_control_001/output/independent_so3_haar_measure_control_summary.json": "4ecd554ff2fb3137caf34c4b2e114ae2827ef894287f250f486502c9ab6d0755"
+      }
+    },
+    "488": {
+      "schemaVersion": 1,
+      "inputFingerprint": "2eccee878bb303c7a643beb91e554420e7e253a0e56c453c411c1903ac448801",
+      "outputs": {
+        "studies/phase488_haar_proposal_invariance_control_001/output/haar_proposal_invariance_control.json": "00a8825b2b08d59bd5a9e0d0c6375d0bb04624695f367dde3f92e4a73ec60276",
+        "studies/phase488_haar_proposal_invariance_control_001/output/haar_proposal_invariance_control_summary.json": "00a8825b2b08d59bd5a9e0d0c6375d0bb04624695f367dde3f92e4a73ec60276"
+      }
+    },
+    "489": {
+      "schemaVersion": 1,
+      "inputFingerprint": "f1bc8249fd405e679493883171de59a10815542268fb00a63ee937e3a12b859b",
+      "outputs": {
+        "studies/phase489_reduced_sampler_restart_equivalence_001/output/reduced_sampler_restart_equivalence.json": "86cec0387d362d24ced41e2c681f56c06680ab36a392798ac4b64bddab73b720",
+        "studies/phase489_reduced_sampler_restart_equivalence_001/output/reduced_sampler_restart_equivalence_summary.json": "86cec0387d362d24ced41e2c681f56c06680ab36a392798ac4b64bddab73b720"
       }
     }
   }

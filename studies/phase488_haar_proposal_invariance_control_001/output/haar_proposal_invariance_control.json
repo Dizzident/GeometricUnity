@@ -1,0 +1,274 @@
+{
+  "phaseId": "phase488-haar-proposal-invariance-control",
+  "generatedAt": "2026-07-15T17:50:49.835285+00:00",
+  "terminalStatus": "haar-proposal-invariance-control-passed-exploration-only",
+  "verdictKind": "all-four-families-within-frozen-tolerances",
+  "applicationSubjectKind": "haar-proposal-invariance-control",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A6; CONVENTION_ROBUSTNESS_TRANCHE_PLAN_2026-07-15 Phase488",
+  "phase487SummaryPath": "studies/phase487_independent_so3_haar_measure_control_001/output/independent_so3_haar_measure_control_summary.json",
+  "phase487PrecursorPassed": true,
+  "proposalInvarianceControlPassed": true,
+  "explorationOnly": true,
+  "prospectivelyFrozen": true,
+  "frozenContractSha256": "466e2fcbe40765be1133472945873227e8874e63743233cd7a4754f43662b010",
+  "configuration": {
+    "sampleCount": 200000,
+    "detailedBalanceBins": 8,
+    "detailedBalanceBinDefinition": "eight equal-probability bins under F(theta)=(theta-sin(theta))/pi",
+    "inversionBins": 10,
+    "targetMeasure": "normalized SO(3) Haar measure; zero action",
+    "acceptanceRule": "all proposals accepted under the zero-action Haar target",
+    "analyticMoments": {
+      "meanTrace": 0,
+      "meanTraceSquared": 1,
+      "meanCosTheta": -0.5,
+      "meanCosThetaSquared": 0.5,
+      "matrixEntryMean": 0,
+      "matrixEntrySquared": 0.3333333333333333
+    },
+    "tolerances": {
+      "meanTrace": 0.012,
+      "meanTraceSquared": 0.025,
+      "meanCosTheta": 0.01,
+      "meanCosThetaSquared": 0.01,
+      "matrixEntryMean": 0.01,
+      "matrixEntrySquared": 0.01,
+      "equalHaarBinOccupancy": 0.006,
+      "maxInversionZ": 5.75,
+      "maxDetailedBalanceZ": 5.75
+    },
+    "families": [
+      {
+        "name": "uniform-quaternion-independence",
+        "seed": 2026071501,
+        "kind": "QuaternionIndependence"
+      },
+      {
+        "name": "left-composition",
+        "seed": 2026071502,
+        "kind": "LeftComposition"
+      },
+      {
+        "name": "right-composition",
+        "seed": 2026071503,
+        "kind": "RightComposition"
+      },
+      {
+        "name": "direct-axis-angle-radial-law",
+        "seed": 2026071504,
+        "kind": "DirectAxisAngle"
+      }
+    ]
+  },
+  "familyResults": [
+    {
+      "family": "uniform-quaternion-independence",
+      "seed": 2026071501,
+      "sampleCount": 200000,
+      "acceptance": 1,
+      "moments": {
+        "meanTrace": 0.0012585312753364173,
+        "meanTraceSquared": 1.0033788424215229,
+        "meanCosTheta": -0.4993707343623251,
+        "meanCosThetaSquared": 0.5002154449677035,
+        "maxAbsMatrixMean": 0.0018982572919450272,
+        "maxAbsMatrixSquaredError": 0.0013654958410954654
+      },
+      "leftComposedMoments": {
+        "meanTrace": 0.0014849367347180254,
+        "meanTraceSquared": 1.0021345584836148,
+        "meanCosTheta": -0.49925753163264497,
+        "meanCosThetaSquared": 0.49979117125354855,
+        "maxAbsMatrixMean": 0.0017042012841832774,
+        "maxAbsMatrixSquaredError": 0.001422775156056988
+      },
+      "rightComposedMoments": {
+        "meanTrace": 0.00014336052971253274,
+        "meanTraceSquared": 1.003324964033552,
+        "meanCosTheta": -0.4999283197351399,
+        "meanCosThetaSquared": 0.5007595607435291,
+        "maxAbsMatrixMean": 0.0014507777716066851,
+        "maxAbsMatrixSquaredError": 0.0013989608373515816
+      },
+      "angleBinOccupancy": [
+        25172,
+        25079,
+        24673,
+        24909,
+        25190,
+        25010,
+        24923,
+        25044
+      ],
+      "maxOccupancyError": 0.0016349999999999976,
+      "maxInversionZ": 2.088290846773459,
+      "maxDetailedBalanceZ": 2.0909116608484544,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "family": "left-composition",
+      "seed": 2026071502,
+      "sampleCount": 200000,
+      "acceptance": 1,
+      "moments": {
+        "meanTrace": -0.0004606411558820668,
+        "meanTraceSquared": 1.0010445056333477,
+        "meanCosTheta": -0.5002303205779369,
+        "meanCosThetaSquared": 0.5004914469862748,
+        "maxAbsMatrixMean": 0.0021257042706075723,
+        "maxAbsMatrixSquaredError": 0.0005005899467169783
+      },
+      "leftComposedMoments": {
+        "meanTrace": -0.0014051749324116313,
+        "meanTraceSquared": 0.9964966055314103,
+        "meanCosTheta": -0.5007025874662085,
+        "meanCosThetaSquared": 0.4998267388490558,
+        "maxAbsMatrixMean": 0.002641768856991689,
+        "maxAbsMatrixSquaredError": 0.0010845446017663796
+      },
+      "rightComposedMoments": {
+        "meanTrace": 0.0023135230234792472,
+        "meanTraceSquared": 1.002207905969986,
+        "meanCosTheta": -0.49884323848826984,
+        "meanCosThetaSquared": 0.49939521498076395,
+        "maxAbsMatrixMean": 0.0020819085776199713,
+        "maxAbsMatrixSquaredError": 0.0004866807218973923
+      },
+      "angleBinOccupancy": [
+        25066,
+        24974,
+        24913,
+        25003,
+        24868,
+        25047,
+        24952,
+        25177
+      ],
+      "maxOccupancyError": 0.0008849999999999969,
+      "maxInversionZ": 1.6067912949858023,
+      "maxDetailedBalanceZ": 2.496873547066443,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "family": "right-composition",
+      "seed": 2026071503,
+      "sampleCount": 200000,
+      "acceptance": 1,
+      "moments": {
+        "meanTrace": 0.0003454759349336419,
+        "meanTraceSquared": 0.9989295505027193,
+        "meanCosTheta": -0.4998272620325326,
+        "meanCosThetaSquared": 0.4995596496582049,
+        "maxAbsMatrixMean": 0.0019301761774521099,
+        "maxAbsMatrixSquaredError": 0.0008458218550707608
+      },
+      "leftComposedMoments": {
+        "meanTrace": -0.00011760965586277806,
+        "meanTraceSquared": 1.0020527697030825,
+        "meanCosTheta": -0.5000588048279316,
+        "meanCosThetaSquared": 0.5005719972537108,
+        "maxAbsMatrixMean": 0.0015773401757552333,
+        "maxAbsMatrixSquaredError": 0.0016124445987153457
+      },
+      "rightComposedMoments": {
+        "meanTrace": 0.0007160973141192568,
+        "meanTraceSquared": 1.0015371277965057,
+        "meanCosTheta": -0.4996419513429404,
+        "meanCosThetaSquared": 0.5000262332920661,
+        "maxAbsMatrixMean": 0.0017993775375149397,
+        "maxAbsMatrixSquaredError": 0.0011050949127294762
+      },
+      "angleBinOccupancy": [
+        24944,
+        24929,
+        25158,
+        25128,
+        24984,
+        24987,
+        25033,
+        24837
+      ],
+      "maxOccupancyError": 0.0008149999999999963,
+      "maxInversionZ": 1.8060336875558116,
+      "maxDetailedBalanceZ": 1.9231974876216886,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "family": "direct-axis-angle-radial-law",
+      "seed": 2026071504,
+      "sampleCount": 200000,
+      "acceptance": 1,
+      "moments": {
+        "meanTrace": -0.0007878231026433863,
+        "meanTraceSquared": 0.9968661914365814,
+        "meanCosTheta": -0.5003939115513303,
+        "meanCosThetaSquared": 0.4996104594104656,
+        "maxAbsMatrixMean": 0.002650279908018135,
+        "maxAbsMatrixSquaredError": 0.0015316973195575456
+      },
+      "leftComposedMoments": {
+        "meanTrace": -0.000308425919998407,
+        "meanTraceSquared": 0.9962024905655561,
+        "meanCosTheta": -0.5001542129600008,
+        "meanCosThetaSquared": 0.49920483560139306,
+        "maxAbsMatrixMean": 0.0026430974589171587,
+        "maxAbsMatrixSquaredError": 0.0009293772473672468
+      },
+      "rightComposedMoments": {
+        "meanTrace": -0.0009873839053307924,
+        "meanTraceSquared": 0.9981140329675104,
+        "meanCosTheta": -0.5004936919526675,
+        "meanCosThetaSquared": 0.5000222001945315,
+        "maxAbsMatrixMean": 0.003477841610066311,
+        "maxAbsMatrixSquaredError": 0.0013104070117971878
+      },
+      "angleBinOccupancy": [
+        24969,
+        24964,
+        24925,
+        25169,
+        24997,
+        25109,
+        24901,
+        24966
+      ],
+      "maxOccupancyError": 0.0008450000000000124,
+      "maxInversionZ": 2.356836160148194,
+      "maxDetailedBalanceZ": 1.3218677733946225,
+      "passed": true,
+      "failures": []
+    }
+  ],
+  "negativeTaxonomy": [
+    "independent-measure-precursor-inadmissible",
+    "analytic-stationary-moment-failure",
+    "proposal-inversion-symmetry-failure",
+    "left-invariance-failure",
+    "right-invariance-failure",
+    "acceptance-or-stationarity-failure",
+    "binned-detailed-balance-failure"
+  ],
+  "failures": [],
+  "humanRulingAuthored": false,
+  "o4Discharged": false,
+  "satisfiesPhase458G4": false,
+  "satisfiesPhase458G5": false,
+  "phase458EvaluationAuthorized": false,
+  "binderLaunchAuthorized": false,
+  "productionAuthorized": false,
+  "sourceContractApplicationAllowed": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "noGevPromotion": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "decision": "All four independently constructed proposal/sampling families satisfy the prospectively frozen reduced Haar controls. This is exploration-lane evidence only and authorizes no ruling, gate evaluation, production run, or physical-unit claim."
+}

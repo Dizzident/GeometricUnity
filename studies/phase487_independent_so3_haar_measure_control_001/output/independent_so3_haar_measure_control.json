@@ -1,0 +1,159 @@
+{
+  "phaseId": "phase487-independent-so3-haar-measure-control",
+  "generatedAt": "2026-07-15T17:50:48.8940516+00:00",
+  "terminalStatus": "independent-so3-haar-measure-control-passed-all-batteries-exploration-only",
+  "allowedTerminalStatuses": [
+    "independent-so3-haar-measure-control-passed-all-batteries-exploration-only",
+    "independent-so3-haar-measure-control-failed-one-or-more-batteries-exploration-only"
+  ],
+  "verdictKind": "all-independent-haar-batteries-passed",
+  "applicationSubjectKind": "independent-so3-haar-measure-control",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A6; CONVENTION_ROBUSTNESS_TRANCHE_PLAN_2026-07-15 Phase487",
+  "lane": "exploration",
+  "explorationOnly": true,
+  "retrospectiveConfirmationRelabelingAllowed": false,
+  "independentOfPhase450Utilities": true,
+  "phase450ProjectReferenceCount": 0,
+  "deterministic": true,
+  "quadrature": {
+    "thetaOrder": 96,
+    "axisZOrder": 24,
+    "axisPhiCount": 64,
+    "totalSo3Nodes": 147456
+  },
+  "analyticRadialLaw": {
+    "density": "p(theta)=(1-cos(theta))/pi, 0\u003C=theta\u003C=pi",
+    "cdf": "F(theta)=(theta-sin(theta))/pi",
+    "normalization": 0.9999999999999996,
+    "cdfMaxError": 4.440892098500626E-16,
+    "moments": {
+      "numericalMeanTheta": 2.2074160991624776,
+      "analyticMeanTheta": 2.207416099162478,
+      "numericalMeanThetaSquared": 5.289868133696452,
+      "analyticMeanThetaSquared": 5.289868133696453,
+      "numericalMeanCosTheta": -0.49999999999999983,
+      "analyticMeanCosTheta": -0.5,
+      "numericalMeanCosThetaSquared": 0.49999999999999967,
+      "analyticMeanCosThetaSquared": 0.5
+    },
+    "tolerance": 2E-13,
+    "passed": true
+  },
+  "characters": {
+    "convention": "chi_l(theta)=1\u002B2*sum_{k=1}^l cos(k theta)",
+    "characterMaxL": 4,
+    "means": [
+      0.9999999999999996,
+      2.0990154059319366E-16,
+      -2.6400322900022033E-16,
+      1.951563910473908E-16,
+      1.0343288725511712E-16
+    ],
+    "gram": [
+      [
+        0.9999999999999996,
+        2.0990154059319366E-16,
+        -2.6400322900022033E-16,
+        1.951563910473908E-16,
+        1.0343288725511712E-16
+      ],
+      [
+        2.0990154059319366E-16,
+        0.9999999999999997,
+        2.2681509448396753E-16,
+        -2.2811613709095013E-16,
+        -1.6349768761081407E-16
+      ],
+      [
+        -2.6400322900022033E-16,
+        2.2681509448396753E-16,
+        0.9999999999999998,
+        -1.1655173354219173E-16,
+        -4.597017211338539E-17
+      ],
+      [
+        1.951563910473908E-16,
+        -2.2811613709095013E-16,
+        -1.1655173354219173E-16,
+        0.9999999999999998,
+        -4.132978681514743E-16
+      ],
+      [
+        1.0343288725511712E-16,
+        -1.6349768761081407E-16,
+        -4.597017211338539E-17,
+        -4.132978681514743E-16,
+        0.9999999999999996
+      ]
+    ],
+    "meanMaxError": 4.440892098500626E-16,
+    "gramMaxError": 4.440892098500626E-16,
+    "tolerance": 2E-12,
+    "passed": true
+  },
+  "matrixMoments": {
+    "analyticFirstMoment": "E[R_ij]=0",
+    "analyticSecondMoment": "E[R_ij R_kl]=delta_ik delta_jl/3",
+    "firstMomentMaxError": 3.769337868433146E-15,
+    "secondMomentMaxError": 3.3861802251067274E-14,
+    "tolerance": 3E-13,
+    "passed": true
+  },
+  "compositionInvariance": {
+    "fixedLeftQuaternion": {
+      "w": 0.9339451697594033,
+      "x": 0.1559892669586623,
+      "y": -0.3119785339173246,
+      "z": 0.07799463347933115
+    },
+    "fixedRightQuaternion": {
+      "w": 0.8427094757934073,
+      "x": -0.10558276727980552,
+      "y": 0.31674830183941655,
+      "z": 0.4223310691192221
+    },
+    "leftFirstMomentMaxError": 8.719706295428714E-16,
+    "leftSecondMomentMaxError": 8.493206138382448E-15,
+    "rightFirstMomentMaxError": 1.266299174988251E-15,
+    "rightSecondMomentMaxError": 6.161737786669619E-15,
+    "leftFirstDifference": 4.458702210296289E-15,
+    "leftSecondDifference": 3.752553823233029E-14,
+    "rightFirstDifference": 4.6688699971676064E-15,
+    "rightSecondDifference": 3.752553823233029E-14,
+    "tolerance": 5E-13,
+    "passed": true
+  },
+  "boundaryCases": {
+    "identityMaxError": 0,
+    "piTraceError": 0,
+    "piDeterminantError": 2.220446049250313E-16,
+    "piOrthogonalityError": 2.220446049250313E-16,
+    "piAxisAndQuaternionRepresentativeMaxError": 2.220446049250313E-16,
+    "cdfBoundaryError": 0,
+    "densityBoundaryError": 0,
+    "tolerance": 2E-14,
+    "passed": true
+  },
+  "allBatteriesPassed": true,
+  "failedBatteryCount": 0,
+  "humanRulingAuthored": false,
+  "o4Discharged": false,
+  "satisfiesPhase458G4": false,
+  "satisfiesPhase458G5": false,
+  "phase458EvaluationAuthorized": false,
+  "binderLaunchAuthorized": false,
+  "productionAuthorized": false,
+  "sourceContractApplicationAllowed": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "noGevPromotion": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "decision": "The independent deterministic SO(3) Haar theorem/quadrature batteries pass. This is exploration-only robustness evidence; it does not author a human ruling, discharge O4, satisfy Phase458, or authorize production.",
+  "runtimeSeconds": 0.2705116
+}

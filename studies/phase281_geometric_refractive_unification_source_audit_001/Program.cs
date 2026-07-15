@@ -574,6 +574,9 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath.Contains("studies/phase484_exploratory_lane_governance_firewall_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase485_o4_assumption_falsifier_census_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase486_committed_evidence_sensitivity_triage_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase487_independent_so3_haar_measure_control_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase488_haar_proposal_invariance_control_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase489_reduced_sampler_restart_equivalence_001/", StringComparison.Ordinal)
     || normalizedPath == "studies/phase101_boson_prediction_package_001/Program.cs"
     || normalizedPath == "studies/phase202_boson_objective_completion_audit_001/Program.cs"
     || normalizedPath == "studies/phase204_boson_source_lineage_candidate_scan_001/Program.cs"
@@ -654,7 +657,11 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P484.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P485.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P486.md"
-    || normalizedPath == "docs/Phases/EXPLORATORY_SELF_AUDIT_PLAN_2026-07-15.md";
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P487.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P488.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P489.md"
+    || normalizedPath == "docs/Phases/EXPLORATORY_SELF_AUDIT_PLAN_2026-07-15.md"
+    || normalizedPath == "docs/Phases/CONVENTION_ROBUSTNESS_TRANCHE_PLAN_2026-07-15.md";
 
 static bool? JsonBool(JsonElement element, string propertyName) =>
     element.TryGetProperty(propertyName, out var value) && (value.ValueKind == JsonValueKind.True || value.ValueKind == JsonValueKind.False)

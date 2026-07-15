@@ -126,3 +126,20 @@ and preserve negative results. Confirmation still requires prospective
 freezing. Promotion still requires independent review or a later, explicitly
 amended substitute such as a convention-invariance theorem or independent
 reproduction. `promotedPhysicalMassClaimCount=0` throughout.
+
+## A6 — Convention-robustness tranche (phases 487–489)
+
+The first three Phase486 priorities are allocated as one batched exploratory
+checkpoint. Phase487 independently derives and tests the normalized SO(3)
+Haar measure without importing the Phase450 quaternion helpers. Phase488
+compares independently constructed Haar-preserving proposal families against
+prospectively frozen analytic moments and detailed-balance checks. Phase489
+uses a reduced deterministic workload to compare validated proposal families
+and uninterrupted versus serialized/resumed execution.
+
+All three phases are exploration-lane evidence under Phase484. They may
+falsify or expose convention sensitivity, but they cannot author an O4 ruling,
+modify a committed upstream artifact, satisfy Phase458, authorize production,
+fill a source contract, or be relabeled as confirmatory after inspection. A
+surviving result may motivate a new prospective confirmation checkpoint only.
+Every terminal retains `promotedPhysicalMassClaimCount=0`.
