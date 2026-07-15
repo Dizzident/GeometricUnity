@@ -9,6 +9,8 @@ cd "$ROOT"
 # been incorporated; otherwise the human-review blast radius can silently lag
 # the committed artifacts.
 node scripts/o4_register/generate.js --check
+node scripts/o4_register/coverage_test.js
+node scripts/o4_register/synthetic_overturn_test.js --check
 
 node <<'NODE'
 const fs = require("fs");
@@ -5787,7 +5789,7 @@ if (sourceLineageMissing) {
   assert(phase101Package?.b2ClosureLedger?.b2ClosureLedgerBuilt === true, "Phase101 must include the Phase471 block.");
   // Phases477-483 -- Amendment A4 ordered fail-closed skeleton checkpoint.
   const a4Skeletons = [
-    [phase477, 477, 1, "o4-adjudication-infrastructure", "infrastructure-skeleton-awaiting-implementation"],
+    [phase477, 477, 1, "o4-adjudication-infrastructure", "infrastructure-ready-pending-human-ruling"],
     [phase478, 478, 2, "phase458-gate-specification-closure", "specification-skeleton-awaiting-implementation"],
     [phase479, 479, 3, "phase457-post-ruling-readiness", "readiness-skeleton-awaiting-implementation"],
     [phase480, 480, 4, "o4-physicist-adjudication-intake", "awaiting-external-physicist-ruling"],
@@ -5806,6 +5808,15 @@ if (sourceLineageMissing) {
     assert(phase.sourceContractApplicationAllowed === false && phase.canFillPhase201WzContract === false && phase.canFillPhase201HiggsContract === false && phase.canFillPhase256ObservedFieldExtractionContract === false, `Phase${phaseNumber} cannot fill source contracts.`);
     assert(phase.routePromotesWzMasses === false && phase.routePromotesHiggsMass === false && phase.routeCompletesBosonPredictions === false, `Phase${phaseNumber} cannot promote boson predictions.`);
   }
+  assert(phase477.infrastructureReady === true && phase477.exactCoveragePassed === true, "Phase477 exact O4 infrastructure readiness must be green.");
+  assert(phase477.recursivePendingArtifactCount === 31 && phase477.coverageEntryCount === 31, "Phase477 must exactly cover all 31 recursively review-pending artifacts.");
+  assert(phase477.unmappedPendingArtifactCount === 0 && phase477.ambiguousCoverageArtifactCount === 0, "Phase477 cannot leave an unmapped or ambiguous pending artifact.");
+  assert(phase477.mandatoryRulingIdCount === 13 && phase477.coverageSchemaTemplateRulingIdsEqual === true, "Phase477 coverage, schema, template, and dependency ruling IDs must agree exactly.");
+  assert(phase477.memoTemplateInertAndProductionInvalid === true && phase477.humanRulingReadOrAuthored === false && phase477.rulingAuthoredOrInferred === false, "Phase477 must keep the memo template inert and cannot author or consume a ruling.");
+  assert(phase477.syntheticOverturn?.declaredEdgeCount === 94 && phase477.syntheticOverturn?.exercisedEdgeCount === 94 && phase477.syntheticOverturn?.exactEdgeMutationCoverage === true && phase477.syntheticOverturn?.syntheticOverturnBatteryPassed === true, "Phase477 must exercise all 94 pre-registered dependency edges.");
+  assert(phase477.syntheticOverturn?.failedEdgeMutationCount === 0 && phase477.syntheticOverturn?.unintendedBranchMutationCount === 0 && phase477.syntheticOverturn?.failedSemanticCaseCount === 0, "Phase477 synthetic overturn battery cannot miss an edge, mutate an unrelated branch, or fail a semantic case.");
+  assert(phase477.syntheticOverturn?.canonicalArtifactMutationCount === 0 && phase477.syntheticOverturn?.candidatePathMutationCount === 0 && phase477.syntheticOverturn?.candidatePathWriteCount === 0, "Phase477 synthetic tests cannot mutate artifacts or write a Phase457 candidate path.");
+  assert(phase477.syntheticOverturn?.syntheticRulingAcceptedAsRealCount === 0 && phase477.syntheticOverturn?.legacyMinimalRulingAcceptedAsRealCount === 0, "Phase477 must reject synthetic and legacy-minimal ruling envelopes as real.");
   const a4PackageBlocks = [
     phase101Package?.o4AdjudicationInfrastructure,
     phase101Package?.phase458GateSpecificationClosure,

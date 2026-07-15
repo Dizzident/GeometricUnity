@@ -1,0 +1,263 @@
+{
+  "schemaVersion": 1,
+  "reviewItems": [
+    { "id": "O4-F1-INVARIANT-RAYS", "title": "Invariant-ray convention" },
+    { "id": "O4-F1-COLLECTIVE-COORDINATE", "title": "Collective-coordinate convention" },
+    { "id": "O4-F1-FP-NORMALIZATION", "title": "Faddeev-Popov normalization convention" },
+    { "id": "O4-F2-POSITIVE-MODE-IR", "title": "Positive-mode IR rule" },
+    { "id": "O4-F3-THETA-HAAR", "title": "Theta-Haar measure" },
+    { "id": "O4-F4-SADDLE-BACKGROUNDS", "title": "Saddle and beyond-ray background conventions" },
+    { "id": "O4-E1-P447-SOFT-FLOOR", "title": "Phase447 soft-floor convention" },
+    { "id": "O4-E2-P453-UNIFORM-LADDER", "title": "Phase453 uniform-ladder convention" },
+    { "id": "O4-P455-ZERO-MODE", "title": "Phase455 zero-mode convention" },
+    { "id": "O4-P455-SB-MODEL", "title": "Phase455 S_B workbench-model choice" },
+    { "id": "O4-C1-COMPACT-REAL-FORM", "title": "Compact-real-form adjudication" },
+    { "id": "O4-C2-YHALF-BOOKKEEPING", "title": "Y/2 bookkeeping adjudication" },
+    { "id": "O4-C3-WS3-MPROBE-SCOPE", "title": "WS3 M-probe scope" }
+  ],
+  "entries": [
+    {
+      "phaseId": "phase444-mode-volume-scaled-saturation-probe",
+      "summaryPath": "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json",
+      "disposition": "pending-marker-no-direct-review",
+      "reviewItems": [],
+      "pendingPointers": ["/authorizedPlatformChange/physicistReviewPending", "/recordedBoundary/physicistReviewPending"],
+      "predicates": [{ "pointer": "/recordedBoundary/minimalImageBivectorsOnPeriodicMeshes", "op": "equals", "value": true }],
+      "note": "Nested-only pending artifact; its exact minimal-image flag is covered without inventing a memo ruling mapping."
+    },
+    {
+      "phaseId": "phase445-rg-improved-joint-potential-probe",
+      "summaryPath": "studies/phase445_rg_improved_joint_potential_probe_001/output/rg_improved_joint_potential_probe_summary.json",
+      "disposition": "direct-review", "reviewItems": ["O4-F1-FP-NORMALIZATION"],
+      "pendingPointers": ["/physicistReviewPending", "/recordedBoundary/physicistReviewPending"],
+      "predicates": [{ "pointer": "/recordedBoundary/rgPrescriptionIsWorkbenchConvention", "op": "equals", "value": true }],
+      "note": "Exact structured RG workbench marker."
+    },
+    {
+      "phaseId": "phase446-rg-scheme-dependence-resolution-probe",
+      "summaryPath": "studies/phase446_rg_scheme_dependence_resolution_probe_001/output/rg_scheme_dependence_resolution_probe_summary.json",
+      "disposition": "direct-review", "reviewItems": ["O4-F1-FP-NORMALIZATION"],
+      "pendingPointers": ["/physicistReviewPending", "/recordedBoundary/physicistReviewPending"],
+      "predicates": [{ "pointer": "/recordedBoundary/rgPrescriptionIsWorkbenchConvention", "op": "equals", "value": true }],
+      "note": "Exact structured RG workbench marker."
+    },
+    {
+      "phaseId": "phase447-two-loop-saturation-probe",
+      "summaryPath": "studies/phase447_two_loop_saturation_probe_001/output/two_loop_saturation_probe_summary.json",
+      "disposition": "direct-review", "reviewItems": ["O4-F2-POSITIVE-MODE-IR", "O4-E1-P447-SOFT-FLOOR"],
+      "pendingPointers": ["/physicistReviewPending", "/recordedBoundary/physicistReviewPending"],
+      "predicates": [
+        { "pointer": "/twoLoopConventionIsWorkbenchConvention", "op": "equals", "value": true },
+        { "pointer": "/floorSweepStable", "op": "equals", "value": false }
+      ],
+      "note": "Two-loop workbench and recorded unstable floor sweep."
+    },
+    {
+      "phaseId": "phase448-torus-mode-volume-saturation-probe",
+      "summaryPath": "studies/phase448_torus_mode_volume_saturation_probe_001/output/torus_mode_volume_saturation_probe_summary.json",
+      "disposition": "direct-review", "reviewItems": ["O4-F1-INVARIANT-RAYS", "O4-F1-COLLECTIVE-COORDINATE"],
+      "pendingPointers": ["/physicistReviewPending", "/recordedBoundary/physicistReviewPending"],
+      "predicates": [{ "pointer": "/invariantRayConventionRecorded", "op": "equals", "value": true }],
+      "note": "Exact invariant-ray marker."
+    },
+    {
+      "phaseId": "phase449-variational-gaussian-effective-potential-probe",
+      "summaryPath": "studies/phase449_variational_gaussian_effective_potential_probe_001/output/variational_gaussian_effective_potential_probe_summary.json",
+      "disposition": "direct-review", "reviewItems": ["O4-F2-POSITIVE-MODE-IR"],
+      "pendingPointers": ["/physicistReviewPending", "/recordedBoundary/physicistReviewPending"],
+      "predicates": [{ "pointer": "/recordedBoundary/gaussianAnsatzIsWorkbenchConvention", "op": "equals", "value": true }],
+      "note": "Exact Gaussian-ansatz workbench marker."
+    },
+    {
+      "phaseId": "phase450-constraint-effective-potential-hmc-probe",
+      "summaryPath": "studies/phase450_constraint_effective_potential_hmc_probe_001/output/constraint_effective_potential_hmc_probe_summary.json",
+      "disposition": "direct-review", "reviewItems": ["O4-F3-THETA-HAAR"],
+      "pendingPointers": ["/physicistReviewPending", "/recordedBoundary/physicistReviewPending"],
+      "predicates": [
+        { "pointer": "/recordedBoundary/cepConventionsAreWorkbenchConventions", "op": "equals", "value": true },
+        { "pointer": "/recordedBoundary/epsilonRealization", "op": "equals", "value": "independent-theta-dof-haar-sampled" }
+      ],
+      "note": "Theta-Haar is classified only from typed boundary fields."
+    },
+    {
+      "phaseId": "phase452-scalar-channel-spectroscopy-probe",
+      "summaryPath": "studies/phase452_scalar_channel_spectroscopy_probe_001/output/scalar_channel_spectroscopy_probe_summary.json",
+      "disposition": "direct-review", "reviewItems": ["O4-F3-THETA-HAAR"],
+      "pendingPointers": ["/physicistReviewPending", "/recordedBoundary/physicistReviewPending"],
+      "predicates": [
+        { "pointer": "/thetaHaarMeasureUsed", "op": "equals", "value": true },
+        { "pointer": "/theta0SliceIsSamplerDemoOnly", "op": "equals", "value": true }
+      ],
+      "note": "Explicit theta-Haar measurement flags."
+    },
+    {
+      "phaseId": "phase453-wham-parity-error-model-repair",
+      "summaryPath": "studies/phase453_wham_parity_error_model_repair_001/output/wham_parity_error_model_repair_summary.json",
+      "disposition": "direct-review", "reviewItems": ["O4-F3-THETA-HAAR", "O4-E2-P453-UNIFORM-LADDER"],
+      "pendingPointers": ["/physicistReviewPending", "/recordedBoundary/physicistReviewPending"],
+      "predicates": [
+        { "pointer": "/recordedBoundary/cepConventionsAreWorkbenchConventions", "op": "equals", "value": true },
+        { "pointer": "/recordedBoundary/epsilonRealization", "op": "equals", "value": "independent-theta-dof-haar-sampled" },
+        { "pointer": "/correctedLadder/productionSubLadderDropped", "op": "equals", "value": true },
+        { "pointer": "/correctedLadder/productionWindowCenters", "op": "equals", "value": [-2.5, -2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2, 2.5] },
+        { "pointer": "/correctedLadder/productionWindowSprings", "op": "array-all-equal", "value": 16, "count": 11 }
+      ],
+      "note": "Independent exact evidence for Haar and uniform-ladder review items."
+    },
+    {
+      "phaseId": "phase454-beyond-ray-quadratic-certificate-probe",
+      "summaryPath": "studies/phase454_beyond_ray_quadratic_certificate_probe_001/output/beyond_ray_quadratic_certificate_probe_summary.json",
+      "disposition": "direct-review", "reviewItems": ["O4-F4-SADDLE-BACKGROUNDS"],
+      "pendingPointers": ["/physicistReviewPending", "/recordedBoundary/physicistReviewPending"],
+      "predicates": [{ "pointer": "/certificateConventionsAreWorkbenchConventions", "op": "equals", "value": true }],
+      "note": "Beyond-ray certificate workbench conventions."
+    },
+    {
+      "phaseId": "phase455-exact-fermionic-backreaction-probe",
+      "summaryPath": "studies/phase455_exact_fermionic_backreaction_probe_001/output/exact_fermionic_backreaction_probe_summary.json",
+      "disposition": "direct-review", "reviewItems": ["O4-P455-ZERO-MODE", "O4-P455-SB-MODEL"],
+      "pendingPointers": ["/committedConventions/zeroModeAxis/physicistReviewPending", "/physicistReviewPending"],
+      "predicates": [{ "pointer": "/o4QueueItems", "op": "array-exact-set", "value": ["zero-mode-convention-flip-axis", "sb-workbench-model-choice-w430"] }],
+      "note": "Exact queue-item set; prose mentions do not classify."
+    },
+    {
+      "phaseId": "phase456-consolidated-n4-launch",
+      "summaryPath": "studies/phase456_consolidated_n4_launch_001/output/consolidated_n4_launch_summary.json",
+      "disposition": "dependent-output", "reviewItems": ["O4-F3-THETA-HAAR", "O4-P455-ZERO-MODE", "O4-P455-SB-MODEL"],
+      "pendingPointers": ["/productionAuthorization/physicistReviewPending", "/physicistReviewPending", "/recordedBoundary/physicistReviewPending"],
+      "predicates": [{ "pointer": "/recordedBoundary/o4PhysicistRuling", "op": "equals", "value": false }],
+      "note": "Production output consumes pending upstream conventions; risk renewal is not a ruling."
+    },
+    {
+      "phaseId": "phase457-upsilon-portal-stage-a",
+      "summaryPath": "studies/phase457_upsilon_portal_stage_a_001/output/upsilon_portal_stage_a_summary.json",
+      "disposition": "direct-review", "reviewItems": ["O4-C3-WS3-MPROBE-SCOPE"],
+      "pendingPointers": ["/physicistReviewPending", "/recordedBoundary/physicistReviewPending"],
+      "predicates": [
+        { "pointer": "/firewall/keyedToPhase", "op": "equals", "value": "phase466" },
+        { "pointer": "/firewall/schemaPinSatisfied", "op": "equals", "value": true },
+        { "pointer": "/firewall/o4MProbeRulingPresent", "op": "equals", "value": false },
+        { "pointer": "/firewall/firewallOpen", "op": "equals", "value": false }
+      ],
+      "note": "M-probe only; ensemble-format prose cannot classify theta-Haar."
+    },
+    {
+      "phaseId": "phase458-binder-go-no-go-gate",
+      "summaryPath": "studies/phase458_binder_go_no_go_gate_001/output/binder_go_no_go_gate_summary.json",
+      "disposition": "administrative-zero-compute", "reviewItems": [],
+      "pendingPointers": ["/physicistReviewPending", "/recordedBoundary/physicistReviewPending"],
+      "predicates": [{ "pointer": "/zeroPhysicsCompute", "op": "equals", "value": true }],
+      "note": "Blocked gate skeleton; no direct convention consumed."
+    },
+    {
+      "phaseId": "phase459-spectroscopy-record-attestation",
+      "summaryPath": "studies/phase459_spectroscopy_record_attestation_001/output/spectroscopy_record_attestation_summary.json",
+      "disposition": "dependent-output", "reviewItems": ["O4-F3-THETA-HAAR"],
+      "pendingPointers": ["/physicistReviewPending", "/recordedBoundary/physicistReviewPending"],
+      "predicates": [{ "pointer": "/zeroPhysicsCompute", "op": "equals", "value": true }],
+      "note": "Attests the Phase452 record."
+    },
+    {
+      "phaseId": "phase460-source-corpus-units-equivariance-kernel",
+      "summaryPath": "studies/phase460_source_corpus_units_equivariance_kernel_001/output/source_corpus_units_equivariance_kernel_summary.json",
+      "disposition": "pending-marker-no-direct-review", "reviewItems": [], "pendingPointers": ["/physicistReviewPending"], "predicates": [],
+      "note": "Standing pending marker; no structured direct O4 topic in this artifact."
+    },
+    {
+      "phaseId": "phase461-dimensional-transmutation-reading-menu",
+      "summaryPath": "studies/phase461_dimensional_transmutation_reading_menu_001/output/dimensional_transmutation_reading_menu_summary.json",
+      "disposition": "pending-marker-no-direct-review", "reviewItems": [], "pendingPointers": ["/physicistReviewPending"], "predicates": [],
+      "note": "Standing pending marker; no structured direct O4 topic in this artifact."
+    },
+    {
+      "phaseId": "phase462-blocking-set-resolution",
+      "summaryPath": "studies/phase462_blocking_set_resolution_001/output/blocking_set_resolution_summary.json",
+      "disposition": "direct-review", "reviewItems": ["O4-C1-COMPACT-REAL-FORM", "O4-C2-YHALF-BOOKKEEPING"], "pendingPointers": ["/physicistReviewPending"], "predicates": [],
+      "note": "Separate decoy-guarded human adjudication packet."
+    },
+    {
+      "phaseId": "phase463-transport-structure-theorems",
+      "summaryPath": "studies/phase463_transport_structure_theorems_001/output/transport_structure_theorems_summary.json",
+      "disposition": "dependent-output", "reviewItems": ["O4-C1-COMPACT-REAL-FORM", "O4-C2-YHALF-BOOKKEEPING"], "pendingPointers": ["/physicistReviewPending"], "predicates": [],
+      "note": "Downstream adjudication dependency."
+    },
+    {
+      "phaseId": "phase464-anchor-adjudication-contract",
+      "summaryPath": "studies/phase464_anchor_adjudication_contract_001/output/anchor_adjudication_contract_summary.json",
+      "disposition": "dependent-output", "reviewItems": ["O4-C1-COMPACT-REAL-FORM", "O4-C2-YHALF-BOOKKEEPING"], "pendingPointers": ["/physicistReviewPending"], "predicates": [],
+      "note": "Downstream adjudication dependency."
+    },
+    {
+      "phaseId": "phase465-anomaly-consistency-variety-kernel",
+      "summaryPath": "studies/phase465_anomaly_consistency_variety_kernel_001/output/anomaly_consistency_variety_kernel_summary.json",
+      "disposition": "pending-marker-no-direct-review", "reviewItems": [], "pendingPointers": ["/physicistReviewPending"], "predicates": [],
+      "note": "Exact arithmetic result carrying the standing pending marker."
+    },
+    {
+      "phaseId": "phase466-ws3-vev-completion-contract",
+      "summaryPath": "studies/phase466_ws3_vev_completion_contract_001/output/ws3_vev_completion_contract_summary.json",
+      "disposition": "dependent-output", "reviewItems": ["O4-C3-WS3-MPROBE-SCOPE"], "pendingPointers": ["/physicistReviewPending"], "predicates": [],
+      "note": "Schema half of the M-probe conjunction."
+    },
+    {
+      "phaseId": "phase467-derived-operator-stabilizer-ray-census",
+      "summaryPath": "studies/phase467_derived_operator_stabilizer_ray_census_001/output/derived_operator_stabilizer_ray_census_summary.json",
+      "disposition": "direct-review", "reviewItems": ["O4-F1-INVARIANT-RAYS", "O4-F1-COLLECTIVE-COORDINATE"], "pendingPointers": ["/physicistReviewPending"],
+      "predicates": [
+        { "pointer": "/fieldOfDefinitionArm/fieldOfDefinitionArmPassed", "op": "equals", "value": true },
+        { "pointer": "/exactCommutant/compactCommutantExact", "op": "equals", "value": true }
+      ],
+      "note": "Exact field-of-definition arm plus ray census."
+    },
+    {
+      "phaseId": "phase471-b2-closure-ledger",
+      "summaryPath": "studies/phase471_b2_closure_ledger_001/output/b2_closure_ledger_summary.json",
+      "disposition": "dependent-output",
+      "reviewItems": ["O4-F2-POSITIVE-MODE-IR", "O4-E1-P447-SOFT-FLOOR", "O4-F1-INVARIANT-RAYS", "O4-F3-THETA-HAAR", "O4-E2-P453-UNIFORM-LADDER", "O4-F4-SADDLE-BACKGROUNDS", "O4-P455-ZERO-MODE", "O4-P455-SB-MODEL", "O4-C3-WS3-MPROBE-SCOPE"],
+      "pendingPointers": ["/physicistReviewPending", "/recordedBoundary/physicistReviewPending"], "predicates": [],
+      "note": "Closure ledger depends on the convention-bearing limbs it records."
+    },
+    {
+      "phaseId": "phase477-o4-adjudication-infrastructure",
+      "summaryPath": "studies/phase477_o4_adjudication_infrastructure_001/output/o4_adjudication_infrastructure_summary.json",
+      "disposition": "administrative-zero-compute", "reviewItems": [], "pendingPointers": ["/physicistReviewPending"],
+      "predicates": [{ "pointer": "/zeroPhysicsCompute", "op": "equals", "value": true }], "note": "A4 infrastructure output; no ruling content."
+    },
+    {
+      "phaseId": "phase478-phase458-gate-specification-closure",
+      "summaryPath": "studies/phase478_phase458_gate_specification_closure_001/output/phase458_gate_specification_closure_summary.json",
+      "disposition": "administrative-zero-compute", "reviewItems": [], "pendingPointers": ["/physicistReviewPending"],
+      "predicates": [{ "pointer": "/zeroPhysicsCompute", "op": "equals", "value": true }], "note": "A4 specification output; no ruling content."
+    },
+    {
+      "phaseId": "phase479-phase457-post-ruling-readiness",
+      "summaryPath": "studies/phase479_phase457_post_ruling_readiness_001/output/phase457_post_ruling_readiness_summary.json",
+      "disposition": "administrative-zero-compute", "reviewItems": [], "pendingPointers": ["/physicistReviewPending"],
+      "predicates": [{ "pointer": "/zeroPhysicsCompute", "op": "equals", "value": true }], "note": "A4 readiness output; no ruling content."
+    },
+    {
+      "phaseId": "phase480-o4-physicist-adjudication-intake",
+      "summaryPath": "studies/phase480_o4_physicist_adjudication_intake_001/output/o4_physicist_adjudication_intake_summary.json",
+      "disposition": "administrative-zero-compute", "reviewItems": [], "pendingPointers": ["/physicistReviewPending"],
+      "predicates": [{ "pointer": "/zeroPhysicsCompute", "op": "equals", "value": true }], "note": "Human-input intake boundary; no ruling currently present."
+    },
+    {
+      "phaseId": "phase481-phase456-prospective-repair-preregistration",
+      "summaryPath": "studies/phase481_phase456_prospective_repair_preregistration_001/output/phase456_prospective_repair_preregistration_summary.json",
+      "disposition": "administrative-zero-compute", "reviewItems": [], "pendingPointers": ["/physicistReviewPending"],
+      "predicates": [{ "pointer": "/zeroPhysicsCompute", "op": "equals", "value": true }], "note": "Prospective preregistration boundary; no sampling."
+    },
+    {
+      "phaseId": "phase482-a5-theorem-scout",
+      "summaryPath": "studies/phase482_a5_theorem_scout_001/output/a5_theorem_scout_summary.json",
+      "disposition": "administrative-zero-compute", "reviewItems": [], "pendingPointers": ["/physicistReviewPending"],
+      "predicates": [{ "pointer": "/zeroPhysicsCompute", "op": "equals", "value": true }], "note": "Theorem scout boundary; not a theorem."
+    },
+    {
+      "phaseId": "phase483-source-defined-reopening-intake",
+      "summaryPath": "studies/phase483_source_defined_reopening_intake_001/output/source_defined_reopening_intake_summary.json",
+      "disposition": "administrative-zero-compute", "reviewItems": [], "pendingPointers": ["/physicistReviewPending"],
+      "predicates": [{ "pointer": "/zeroPhysicsCompute", "op": "equals", "value": true }], "note": "Source-input boundary; no source supplied."
+    }
+  ]
+}

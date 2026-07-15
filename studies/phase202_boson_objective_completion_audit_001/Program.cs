@@ -6744,8 +6744,18 @@ var o4AdjudicationInfrastructureMaterialized = phase477 is not null;
 var o4AdjudicationInfrastructurePassed = o4AdjudicationInfrastructureMaterialized
     && JsonBool(phase477!.RootElement, "skeletonBuilt") is true
     && JsonString(phase477.RootElement, "applicationSubjectKind") == "o4-adjudication-infrastructure"
-    && JsonString(phase477.RootElement, "interimTerminal") == "infrastructure-skeleton-awaiting-implementation"
-    && JsonString(phase477.RootElement, "verdictKind") == "infrastructure-skeleton-awaiting-implementation"
+    && JsonString(phase477.RootElement, "interimTerminal") == "infrastructure-ready-pending-human-ruling"
+    && JsonString(phase477.RootElement, "verdictKind") == "infrastructure-ready-pending-human-ruling"
+    && JsonBool(phase477.RootElement, "infrastructureReady") is true
+    && JsonBool(phase477.RootElement, "exactCoveragePassed") is true
+    && JsonInt(phase477.RootElement, "recursivePendingArtifactCount") == 31
+    && JsonInt(phase477.RootElement, "unmappedPendingArtifactCount") == 0
+    && JsonInt(phase477.RootElement, "ambiguousCoverageArtifactCount") == 0
+    && JsonInt(phase477.RootElement, "mandatoryRulingIdCount") == 13
+    && JsonBool(phase477.RootElement, "coverageSchemaTemplateRulingIdsEqual") is true
+    && JsonBool(phase477.RootElement, "memoTemplateInertAndProductionInvalid") is true
+    && JsonBool(phase477.RootElement, "humanRulingReadOrAuthored") is false
+    && JsonBool(phase477.RootElement, "awaitingImplementation") is false
     && JsonString(phase477.RootElement, "planSection") == "WAVE2_AMENDMENTS_2026-07-12 A4"
     && JsonInt(phase477.RootElement, "waveOrder") == 1
     && JsonBool(phase477.RootElement, "targetBlindConstruction") is true
@@ -9618,11 +9628,11 @@ var checklist = new[]
             : "Phase471 artifact not materialized",
         Phase471Path),
     new ObjectiveChecklistItem(
-        "o4-adjudication-infrastructure-skeleton-materialized",
-        "Wave-order item 1: materialize the target-blind O4 adjudication-infrastructure skeleton while preserving the external physicist-ruling boundary and every non-promotion firewall.",
+        "o4-adjudication-infrastructure-ready",
+        "Wave-order item 1: require exact recursive O4 coverage, an inert 13-ruling human memo contract, and a mutation-complete synthetic-overturn protocol while preserving the external physicist-ruling boundary and every non-promotion firewall.",
         o4AdjudicationInfrastructurePassed ? "passed" : "failed",
         o4AdjudicationInfrastructureMaterialized
-            ? $"skeletonBuilt={JsonBool(phase477!.RootElement, "skeletonBuilt")}; interimTerminal={JsonString(phase477.RootElement, "interimTerminal")}; applicationSubjectKind={JsonString(phase477.RootElement, "applicationSubjectKind")}; waveOrder={JsonInt(phase477.RootElement, "waveOrder")}; promotedPhysicalMassClaimCount={JsonInt(phase477.RootElement, "promotedPhysicalMassClaimCount")}; decision={JsonString(phase477.RootElement, "decision")}"
+            ? $"infrastructureReady={JsonBool(phase477!.RootElement, "infrastructureReady")}; interimTerminal={JsonString(phase477.RootElement, "interimTerminal")}; recursivePendingArtifactCount={JsonInt(phase477.RootElement, "recursivePendingArtifactCount")}; mandatoryRulingIdCount={JsonInt(phase477.RootElement, "mandatoryRulingIdCount")}; promotedPhysicalMassClaimCount={JsonInt(phase477.RootElement, "promotedPhysicalMassClaimCount")}; decision={JsonString(phase477.RootElement, "decision")}"
             : "Phase477 artifact not materialized",
         Phase477Path),
     new ObjectiveChecklistItem(

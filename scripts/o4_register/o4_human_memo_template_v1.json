@@ -1,0 +1,139 @@
+{
+  "schemaId": "o4-human-physicist-memo-v1",
+  "schemaVersion": 1,
+  "templateOnly": true,
+  "documentKind": "template",
+  "memoId": "REPLACE-WITH-FINAL-MEMO-ID",
+  "issuedAt": "REPLACE-WITH-RFC3339-UTC",
+  "reviewer": {
+    "reviewerRegistryId": "REPLACE-WITH-PRE-PINNED-REVIEWER-ID",
+    "fullName": "REPLACE-WITH-HUMAN-PHYSICIST-NAME",
+    "professionalRole": "other-qualified-physicist",
+    "institution": null,
+    "qualifications": ["REPLACE-WITH-FACTUAL-QUALIFICATION"],
+    "persistentIdentifier": null
+  },
+  "repositoryBinding": {
+    "commitSha": "REPLACE-WITH-40-HEX-COMMIT",
+    "dossierPath": "docs/Phases/Adjudication/O4_CONVENTIONS_REGISTER.md",
+    "dossierSha256": "REPLACE-WITH-64-HEX-SHA256",
+    "coverageManifestPath": "scripts/o4_register/o4_exact_coverage_manifest_v1.json",
+    "coverageManifestSha256": "REPLACE-WITH-64-HEX-SHA256",
+    "schemaSha256": "REPLACE-WITH-64-HEX-SHA256",
+    "reviewerRegistryRecordSha256": "REPLACE-WITH-64-HEX-SHA256"
+  },
+  "authorshipAttestations": {
+    "humanAuthoredRulings": false,
+    "machineGeneratedRulings": false,
+    "independentProfessionalJudgment": false,
+    "riskAcceptanceIsNotPhysicistRuling": true,
+    "noPhysicalMassOrGevClaim": true
+  },
+  "rulings": [
+    {
+      "rulingId": "O4-F1-INVARIANT-RAYS",
+      "disposition": "insufficient-basis",
+      "selectedOption": "defer",
+      "registeredCaveatIds": [],
+      "rationale": "TEMPLATE ONLY - replace with the external physicist's own rationale.",
+      "reviewedArtifactSha256": []
+    },
+    {
+      "rulingId": "O4-F1-COLLECTIVE-COORDINATE",
+      "disposition": "insufficient-basis",
+      "selectedOption": "defer",
+      "registeredCaveatIds": [],
+      "rationale": "TEMPLATE ONLY - replace with the external physicist's own rationale.",
+      "reviewedArtifactSha256": []
+    },
+    {
+      "rulingId": "O4-F1-FP-NORMALIZATION",
+      "disposition": "insufficient-basis",
+      "selectedOption": "defer",
+      "registeredCaveatIds": [],
+      "rationale": "TEMPLATE ONLY - replace with the external physicist's own rationale.",
+      "reviewedArtifactSha256": []
+    },
+    {
+      "rulingId": "O4-F2-POSITIVE-MODE-IR",
+      "disposition": "insufficient-basis",
+      "selectedOption": "defer",
+      "registeredCaveatIds": [],
+      "rationale": "TEMPLATE ONLY - replace with the external physicist's own rationale.",
+      "reviewedArtifactSha256": []
+    },
+    {
+      "rulingId": "O4-F3-THETA-HAAR",
+      "disposition": "insufficient-basis",
+      "selectedOption": "defer",
+      "registeredCaveatIds": [],
+      "rationale": "TEMPLATE ONLY - replace with the external physicist's own rationale.",
+      "reviewedArtifactSha256": []
+    },
+    {
+      "rulingId": "O4-F4-SADDLE-BACKGROUNDS",
+      "disposition": "insufficient-basis",
+      "selectedOption": "defer",
+      "registeredCaveatIds": [],
+      "rationale": "TEMPLATE ONLY - replace with the external physicist's own rationale.",
+      "reviewedArtifactSha256": []
+    },
+    {
+      "rulingId": "O4-E1-P447-SOFT-FLOOR",
+      "disposition": "insufficient-basis",
+      "selectedOption": "defer",
+      "registeredCaveatIds": [],
+      "rationale": "TEMPLATE ONLY - replace with the external physicist's own rationale.",
+      "reviewedArtifactSha256": []
+    },
+    {
+      "rulingId": "O4-E2-P453-UNIFORM-LADDER",
+      "disposition": "insufficient-basis",
+      "selectedOption": "defer",
+      "registeredCaveatIds": [],
+      "rationale": "TEMPLATE ONLY - replace with the external physicist's own rationale.",
+      "reviewedArtifactSha256": []
+    },
+    {
+      "rulingId": "O4-P455-ZERO-MODE",
+      "disposition": "insufficient-basis",
+      "selectedOption": "defer",
+      "registeredCaveatIds": [],
+      "rationale": "TEMPLATE ONLY - replace with the external physicist's own rationale.",
+      "reviewedArtifactSha256": []
+    },
+    {
+      "rulingId": "O4-P455-SB-MODEL",
+      "disposition": "insufficient-basis",
+      "selectedOption": "defer",
+      "registeredCaveatIds": [],
+      "rationale": "TEMPLATE ONLY - replace with the external physicist's own rationale.",
+      "reviewedArtifactSha256": []
+    },
+    {
+      "rulingId": "O4-C1-COMPACT-REAL-FORM",
+      "disposition": "insufficient-basis",
+      "selectedOption": "defer",
+      "registeredCaveatIds": [],
+      "rationale": "TEMPLATE ONLY - replace with the external physicist's own rationale.",
+      "reviewedArtifactSha256": []
+    },
+    {
+      "rulingId": "O4-C2-YHALF-BOOKKEEPING",
+      "disposition": "insufficient-basis",
+      "selectedOption": "defer",
+      "registeredCaveatIds": [],
+      "rationale": "TEMPLATE ONLY - replace with the external physicist's own rationale.",
+      "reviewedArtifactSha256": []
+    },
+    {
+      "rulingId": "O4-C3-WS3-MPROBE-SCOPE",
+      "disposition": "insufficient-basis",
+      "selectedOption": "defer",
+      "registeredCaveatIds": [],
+      "rationale": "TEMPLATE ONLY - replace with the external physicist's own rationale.",
+      "reviewedArtifactSha256": []
+    }
+  ],
+  "globalCaveats": "TEMPLATE ONLY - no ruling content and no signature. Production intake must reject this file."
+}

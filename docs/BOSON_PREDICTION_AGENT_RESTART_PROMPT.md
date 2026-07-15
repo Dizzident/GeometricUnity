@@ -61,15 +61,20 @@ follows. The measured 0.1137 CPU-week cost supplies Phase458/G2 within budget.
 Phase458 remains `blocked-inputs-incomplete`: G1 and G2 are available, G3 and
 G4 are absent, G5 is incomplete, and G6 is unevaluated. Phase471 remains open
 L5/L6/L8 with L7 withheld. The O4 engagement remains the human critical path.
-Phase101 stays blocked, Phase202 is 264/3 after targeted validation, the
+Phase101 stays blocked, Phase202 is 271/3 after targeted validation, the
 missing-field counts remain 15/14, and `promotedPhysicalMassClaimCount=0`.
 
-O4 REGISTER CURRENCY (2026-07-14): the derived overlay is current at 23
-review-pending outputs and now includes Phase467 plus the committed Phase456/
-457 terminals. `verify_boson_claim_integrity.sh` runs
-`node scripts/o4_register/generate.js --check` first, so future register drift
-fails the main integrity gate. This is tooling only: no O4 memo or ruling
-exists, and no `physicistReviewPending` value was changed.
+O4 INFRASTRUCTURE (2026-07-15, Phase477): the exact coverage register is
+current at 31 recursively review-pending outputs. The former phase-name/prose
+heuristic is retired; a 31-entry typed contract distinguishes direct physics
+rulings, transitive dependents, separate pending packets, and administrative
+zero-compute rows. The inert memo schema/template and dependency map share
+exactly 13 ruling IDs. The synthetic-overturn battery exercises all 94
+dependency edges with zero unrelated-branch changes, canonical mutations, or
+Phase457 candidate-path writes. The integrity verifier runs register currency,
+exact-coverage, and overturn checks on every pass. This is tooling only: no O4
+memo or ruling exists, no pending flag changed, and Phase477 rests at
+`infrastructure-ready-pending-human-ruling`.
 
 Current gate status after the Phase448 work (plus the 2026-06-12 platform
 fix - GPU parity defect root-caused and discharged - and the 2026-07-01
@@ -877,9 +882,11 @@ scout; 483 source-defined reopening intake. Their initial skeletons perform
 zero physics computation and cannot satisfy a scientific gate. Phase480 stays
 human-input gated; Phase481 cannot sample or mutate/reinterpret Phase456;
 Phase482 cannot claim a theorem from a partial scout; Phase483 cannot invent
-source fields. The original Phase457 hold, Phase458 G1-G6 gate, and Phase471
-firewall remain unchanged. Registry 477-483 is allocated; 484+ remains
-unassigned.
+source fields. Phase477 is now substantively complete at exact coverage 31/31,
+13 memo ruling IDs, and 94/94 synthetic dependency edges, while remaining
+human-ruling pending. The original Phase457 hold, Phase458 G1-G6 gate, and
+Phase471 firewall remain unchanged. Registry 477-483 is allocated; 484+
+remains unassigned.
 
 WAVE-2 C-LINEAGE MACHINE RESULTS (2026-07-14, incremental validation green:
 82 ran / 260 skipped, integrity verified): PHASE467 reconstructs the exact

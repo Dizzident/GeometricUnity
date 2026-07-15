@@ -20405,3 +20405,49 @@ The mandatory incremental cascade passed with 87 steps run and 264 skipped.
 The final integrity verifier reported the O4 register current, 15 W/Z and 14
 Higgs source-lineage fields missing, and
 `promotedPhysicalMassClaimCount=0`.
+
+## 2026-07-15 - Phase477: exact O4 infrastructure ready; human ruling still absent
+
+The substantive Phase477 audit confirmed that the prior O4 Markdown overlay
+was not safe as a ruling contract. It inspected only a top-level pending flag,
+so it omitted Phase444's nested-only markers; it classified families from
+phase names and subject strings, so the explicit theta-Haar consumers were
+not reliably mapped; and its blanket sign-off wording did not distinguish the
+new administrative skeletons from physics-bearing artifacts. A separate audit
+also confirmed that Phase457's legacy two-field M-probe candidate shape is too
+permissive for future real-memo consumption. Phase477 does not modify that
+later-phase path; Phase479 remains responsible for replacing it.
+
+The overlay generator now consumes an exact typed coverage contract. Recursive
+discovery finds 31 pending artifacts and requires every pending JSON pointer,
+structured evidence predicate, phase identity, path, and disposition to match.
+The live split is 13 direct-review rows, 6 transitive dependents, 4 pending
+markers outside direct O4 review, and 8 administrative zero-compute rows.
+Malformed JSON, contradictory markers, a duplicate/missing/unmapped phase, an
+unknown pointer, or predicate drift makes the coverage check red. The rendered
+Markdown is display-only and cannot drive a ruling.
+
+The unsigned template, production memo schema, coverage contract, and
+dependency map share exactly 13 mandatory ruling IDs. The template is
+deliberately invalid for production intake: it is marked template-only, has no
+signature, and records every item as `insufficient-basis` / `defer`. No trust
+key or ruling is supplied by the software.
+
+The plan-required synthetic-overturn test evaluates rulings only in memory. It
+exercises all 94 declared edges over 28 shadow branches, proves zero missed
+edges and zero unrelated-branch changes, passes 15 semantic cases, snapshots
+19 canonical artifacts byte-for-byte, and records zero canonical mutations,
+zero Phase457 candidate-path writes, and zero synthetic or legacy-minimal
+envelopes accepted as real. Integrity now runs register currency, exact
+coverage, and this battery on every pass.
+
+Phase477 therefore reaches
+`infrastructure-ready-pending-human-ruling`, not a physics verdict. All review
+flags remain pending; no memo was read, authored, inferred, or simulated into
+production state; no source contract, ledger limb, sampling authorization, or
+physical/GeV claim follows. Targeted propagation leaves Phase101 blocked,
+Phase202 at 271/3, the source deficits at 15/14, and
+`promotedPhysicalMassClaimCount=0`. The mandatory incremental checkpoint
+passed with 56 steps run and 295 skipped; its final integrity gate repeated
+exact coverage 31/31, synthetic dependency edges 94/94, current-register
+status, the 15/14 deficits, and zero promoted physical-mass claims.
