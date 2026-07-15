@@ -20369,3 +20369,39 @@ with 41 steps run / 303 skipped. The final integrity verifier reported the O4
 register current, 15/14 missing fields, and
 `promotedPhysicalMassClaimCount=0`. No output from the terminated duplicate is
 used as evidence.
+
+## 2026-07-15 - Amendment A4: phases477-483 registered and batched as fail-closed skeletons
+
+After the Phase456 invalid terminal, three independent read-only agent audits
+ranked the remaining legal work. Their common recommendation was to repair the
+machine infrastructure around the human O4 boundary first, then freeze the
+Phase458 gate contract and harden the Phase457 post-ruling path; no audit found
+a compliant post-hoc recovery of the invalid Phase456 result. The user directed
+that the seven ranked items become phases in that order and that the execution
+loop resume.
+
+Labeled Amendment A4 and the phase registry now allocate 477 through 483 in
+strict execution-priority order: O4 adjudication infrastructure, Phase458 gate
+specification closure, Phase457 post-ruling readiness, genuine O4 physicist
+adjudication intake, prospective Phase456 repair preregistration, A5 theorem
+scouting, and source-defined reopening intake. The contingent Phase472-476
+n=5/Binder reservation is unchanged; 484+ remains unassigned.
+
+The first checkpoint deliberately materializes zero-compute skeletons only.
+Each carries its exact fail-closed interim terminal, target-blind boundary,
+all source-contract and promotion routes false, `noGevPromotion=true`, and
+`promotedPhysicalMassClaimCount=0`. In particular, Phase480 remains
+`awaiting-external-physicist-ruling`: no ruling was authored, inferred, or
+simulated. Phase481 neither samples nor alters the frozen Phase456 pack;
+Phase482 claims no theorem; Phase483 invents no source content.
+
+All seven directories were wired together across the generator, traversal,
+eight broad scanners, Phase101, Phase202, the integrity verifier, and their
+implementation records. The derived O4 register was regenerated after it
+correctly became stale on the new review-pending artifacts. Targeted execution
+produced the seven exact skeleton terminals, rebuilt Phase101 in its blocked
+state, and raised the Phase202 checklist to 271 passed / 3 standing failures.
+The mandatory incremental cascade passed with 87 steps run and 264 skipped.
+The final integrity verifier reported the O4 register current, 15 W/Z and 14
+Higgs source-lineage fields missing, and
+`promotedPhysicalMassClaimCount=0`.

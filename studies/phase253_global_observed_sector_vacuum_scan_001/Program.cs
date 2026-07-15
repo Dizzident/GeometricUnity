@@ -71,6 +71,20 @@ var excludedPathFragments = new[]
     "studies/phase469_c_lift_representation_bookkeeping_gate_001/",
     "studies/phase470_c_permanence_five_limb_ledger_001/",
     "studies/phase471_b2_closure_ledger_001/",
+    "studies/phase477_o4_adjudication_infrastructure_001/",
+    "studies/phase478_phase458_gate_specification_closure_001/",
+    "studies/phase479_phase457_post_ruling_readiness_001/",
+    "studies/phase480_o4_physicist_adjudication_intake_001/",
+    "studies/phase481_phase456_prospective_repair_preregistration_001/",
+    "studies/phase482_a5_theorem_scout_001/",
+    "studies/phase483_source_defined_reopening_intake_001/",
+    "docs/Phases/Implementation/IMPLEMENTATION_P477.md",
+    "docs/Phases/Implementation/IMPLEMENTATION_P478.md",
+    "docs/Phases/Implementation/IMPLEMENTATION_P479.md",
+    "docs/Phases/Implementation/IMPLEMENTATION_P480.md",
+    "docs/Phases/Implementation/IMPLEMENTATION_P481.md",
+    "docs/Phases/Implementation/IMPLEMENTATION_P482.md",
+    "docs/Phases/Implementation/IMPLEMENTATION_P483.md",
 };
 
 var dimension4Pattern = new Regex("""

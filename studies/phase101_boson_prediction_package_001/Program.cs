@@ -319,6 +319,13 @@ const string Phase468TwoLoopContentRowClosureFilterPath = "studies/phase468_two_
 const string Phase469CLiftRepresentationBookkeepingGatePath = "studies/phase469_c_lift_representation_bookkeeping_gate_001/output/c_lift_representation_bookkeeping_gate_summary.json";
 const string Phase470CPermanenceFiveLimbLedgerPath = "studies/phase470_c_permanence_five_limb_ledger_001/output/c_permanence_five_limb_ledger_summary.json";
 const string Phase471B2ClosureLedgerPath = "studies/phase471_b2_closure_ledger_001/output/b2_closure_ledger_summary.json";
+const string Phase477O4AdjudicationInfrastructurePath = "studies/phase477_o4_adjudication_infrastructure_001/output/o4_adjudication_infrastructure_summary.json";
+const string Phase478Phase458GateSpecificationClosurePath = "studies/phase478_phase458_gate_specification_closure_001/output/phase458_gate_specification_closure_summary.json";
+const string Phase479Phase457PostRulingReadinessPath = "studies/phase479_phase457_post_ruling_readiness_001/output/phase457_post_ruling_readiness_summary.json";
+const string Phase480O4PhysicistAdjudicationIntakePath = "studies/phase480_o4_physicist_adjudication_intake_001/output/o4_physicist_adjudication_intake_summary.json";
+const string Phase481Phase456ProspectiveRepairPreregistrationPath = "studies/phase481_phase456_prospective_repair_preregistration_001/output/phase456_prospective_repair_preregistration_summary.json";
+const string Phase482A5TheoremScoutPath = "studies/phase482_a5_theorem_scout_001/output/a5_theorem_scout_summary.json";
+const string Phase483SourceDefinedReopeningIntakePath = "studies/phase483_source_defined_reopening_intake_001/output/source_defined_reopening_intake_summary.json";
 const string Phase444ModeVolumeScaledSaturationProbePath = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443JointEffectivePotentialSaturationProbePath = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442JointOmegaThetaHessianDegreeProbePath = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -678,6 +685,13 @@ using var phase468 = TryParseJson(Phase468TwoLoopContentRowClosureFilterPath);
 using var phase469 = TryParseJson(Phase469CLiftRepresentationBookkeepingGatePath);
 using var phase470 = TryParseJson(Phase470CPermanenceFiveLimbLedgerPath);
 using var phase471 = TryParseJson(Phase471B2ClosureLedgerPath);
+using var phase477 = TryParseJson(Phase477O4AdjudicationInfrastructurePath);
+using var phase478 = TryParseJson(Phase478Phase458GateSpecificationClosurePath);
+using var phase479 = TryParseJson(Phase479Phase457PostRulingReadinessPath);
+using var phase480 = TryParseJson(Phase480O4PhysicistAdjudicationIntakePath);
+using var phase481 = TryParseJson(Phase481Phase456ProspectiveRepairPreregistrationPath);
+using var phase482 = TryParseJson(Phase482A5TheoremScoutPath);
+using var phase483 = TryParseJson(Phase483SourceDefinedReopeningIntakePath);
 using var phase282 = TryParseJson(Phase282BranchLocalDirectInvariantCensusPath);
 using var phase283 = TryParseJson(Phase283LegacyElectroweakBridgeSourceSurvivabilityAuditPath);
 using var phase284 = TryParseJson(Phase284PredictedRatioAlphaGfExternalClosureDiagnosticPath);
@@ -8699,6 +8713,174 @@ var package = new
             routePromotesHiggsMass = JsonBool(phase471.RootElement, "routePromotesHiggsMass"),
             routeCompletesBosonPredictions = JsonBool(phase471.RootElement, "routeCompletesBosonPredictions"),
             decision = JsonString(phase471.RootElement, "decision"),
+        }
+        : null,
+    o4AdjudicationInfrastructure = phase477 is not null
+        ? new
+        {
+            status = JsonString(phase477.RootElement, "terminalStatus"),
+            skeletonBuilt = JsonBool(phase477.RootElement, "skeletonBuilt"),
+            interimTerminal = JsonString(phase477.RootElement, "interimTerminal"),
+            verdictKind = JsonString(phase477.RootElement, "verdictKind"),
+            applicationSubjectKind = JsonString(phase477.RootElement, "applicationSubjectKind"),
+            planSection = JsonString(phase477.RootElement, "planSection"),
+            waveOrder = JsonInt(phase477.RootElement, "waveOrder"),
+            targetBlindConstruction = JsonBool(phase477.RootElement, "targetBlindConstruction"),
+            physicalTargetsConsultedForConstruction = JsonBool(phase477.RootElement, "physicalTargetsConsultedForConstruction"),
+            noGevPromotion = JsonBool(phase477.RootElement, "noGevPromotion"),
+            promotedPhysicalMassClaimCount = JsonInt(phase477.RootElement, "promotedPhysicalMassClaimCount"),
+            sourceContractApplicationAllowed = JsonBool(phase477.RootElement, "sourceContractApplicationAllowed"),
+            canFillPhase201WzContract = JsonBool(phase477.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase477.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase477.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            routePromotesWzMasses = JsonBool(phase477.RootElement, "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonBool(phase477.RootElement, "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonBool(phase477.RootElement, "routeCompletesBosonPredictions"),
+            decision = JsonString(phase477.RootElement, "decision"),
+        }
+        : null,
+    phase458GateSpecificationClosure = phase478 is not null
+        ? new
+        {
+            status = JsonString(phase478.RootElement, "terminalStatus"),
+            skeletonBuilt = JsonBool(phase478.RootElement, "skeletonBuilt"),
+            interimTerminal = JsonString(phase478.RootElement, "interimTerminal"),
+            verdictKind = JsonString(phase478.RootElement, "verdictKind"),
+            applicationSubjectKind = JsonString(phase478.RootElement, "applicationSubjectKind"),
+            planSection = JsonString(phase478.RootElement, "planSection"),
+            waveOrder = JsonInt(phase478.RootElement, "waveOrder"),
+            targetBlindConstruction = JsonBool(phase478.RootElement, "targetBlindConstruction"),
+            physicalTargetsConsultedForConstruction = JsonBool(phase478.RootElement, "physicalTargetsConsultedForConstruction"),
+            noGevPromotion = JsonBool(phase478.RootElement, "noGevPromotion"),
+            promotedPhysicalMassClaimCount = JsonInt(phase478.RootElement, "promotedPhysicalMassClaimCount"),
+            sourceContractApplicationAllowed = JsonBool(phase478.RootElement, "sourceContractApplicationAllowed"),
+            canFillPhase201WzContract = JsonBool(phase478.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase478.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase478.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            routePromotesWzMasses = JsonBool(phase478.RootElement, "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonBool(phase478.RootElement, "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonBool(phase478.RootElement, "routeCompletesBosonPredictions"),
+            decision = JsonString(phase478.RootElement, "decision"),
+        }
+        : null,
+    phase457PostRulingReadiness = phase479 is not null
+        ? new
+        {
+            status = JsonString(phase479.RootElement, "terminalStatus"),
+            skeletonBuilt = JsonBool(phase479.RootElement, "skeletonBuilt"),
+            interimTerminal = JsonString(phase479.RootElement, "interimTerminal"),
+            verdictKind = JsonString(phase479.RootElement, "verdictKind"),
+            applicationSubjectKind = JsonString(phase479.RootElement, "applicationSubjectKind"),
+            planSection = JsonString(phase479.RootElement, "planSection"),
+            waveOrder = JsonInt(phase479.RootElement, "waveOrder"),
+            targetBlindConstruction = JsonBool(phase479.RootElement, "targetBlindConstruction"),
+            physicalTargetsConsultedForConstruction = JsonBool(phase479.RootElement, "physicalTargetsConsultedForConstruction"),
+            noGevPromotion = JsonBool(phase479.RootElement, "noGevPromotion"),
+            promotedPhysicalMassClaimCount = JsonInt(phase479.RootElement, "promotedPhysicalMassClaimCount"),
+            sourceContractApplicationAllowed = JsonBool(phase479.RootElement, "sourceContractApplicationAllowed"),
+            canFillPhase201WzContract = JsonBool(phase479.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase479.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase479.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            routePromotesWzMasses = JsonBool(phase479.RootElement, "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonBool(phase479.RootElement, "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonBool(phase479.RootElement, "routeCompletesBosonPredictions"),
+            decision = JsonString(phase479.RootElement, "decision"),
+        }
+        : null,
+    o4PhysicistAdjudicationIntake = phase480 is not null
+        ? new
+        {
+            status = JsonString(phase480.RootElement, "terminalStatus"),
+            skeletonBuilt = JsonBool(phase480.RootElement, "skeletonBuilt"),
+            interimTerminal = JsonString(phase480.RootElement, "interimTerminal"),
+            verdictKind = JsonString(phase480.RootElement, "verdictKind"),
+            applicationSubjectKind = JsonString(phase480.RootElement, "applicationSubjectKind"),
+            planSection = JsonString(phase480.RootElement, "planSection"),
+            waveOrder = JsonInt(phase480.RootElement, "waveOrder"),
+            targetBlindConstruction = JsonBool(phase480.RootElement, "targetBlindConstruction"),
+            physicalTargetsConsultedForConstruction = JsonBool(phase480.RootElement, "physicalTargetsConsultedForConstruction"),
+            noGevPromotion = JsonBool(phase480.RootElement, "noGevPromotion"),
+            promotedPhysicalMassClaimCount = JsonInt(phase480.RootElement, "promotedPhysicalMassClaimCount"),
+            sourceContractApplicationAllowed = JsonBool(phase480.RootElement, "sourceContractApplicationAllowed"),
+            canFillPhase201WzContract = JsonBool(phase480.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase480.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase480.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            routePromotesWzMasses = JsonBool(phase480.RootElement, "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonBool(phase480.RootElement, "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonBool(phase480.RootElement, "routeCompletesBosonPredictions"),
+            decision = JsonString(phase480.RootElement, "decision"),
+        }
+        : null,
+    phase456ProspectiveRepairPreregistration = phase481 is not null
+        ? new
+        {
+            status = JsonString(phase481.RootElement, "terminalStatus"),
+            skeletonBuilt = JsonBool(phase481.RootElement, "skeletonBuilt"),
+            interimTerminal = JsonString(phase481.RootElement, "interimTerminal"),
+            verdictKind = JsonString(phase481.RootElement, "verdictKind"),
+            applicationSubjectKind = JsonString(phase481.RootElement, "applicationSubjectKind"),
+            planSection = JsonString(phase481.RootElement, "planSection"),
+            waveOrder = JsonInt(phase481.RootElement, "waveOrder"),
+            targetBlindConstruction = JsonBool(phase481.RootElement, "targetBlindConstruction"),
+            physicalTargetsConsultedForConstruction = JsonBool(phase481.RootElement, "physicalTargetsConsultedForConstruction"),
+            noGevPromotion = JsonBool(phase481.RootElement, "noGevPromotion"),
+            promotedPhysicalMassClaimCount = JsonInt(phase481.RootElement, "promotedPhysicalMassClaimCount"),
+            sourceContractApplicationAllowed = JsonBool(phase481.RootElement, "sourceContractApplicationAllowed"),
+            canFillPhase201WzContract = JsonBool(phase481.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase481.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase481.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            routePromotesWzMasses = JsonBool(phase481.RootElement, "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonBool(phase481.RootElement, "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonBool(phase481.RootElement, "routeCompletesBosonPredictions"),
+            decision = JsonString(phase481.RootElement, "decision"),
+        }
+        : null,
+    a5TheoremScout = phase482 is not null
+        ? new
+        {
+            status = JsonString(phase482.RootElement, "terminalStatus"),
+            skeletonBuilt = JsonBool(phase482.RootElement, "skeletonBuilt"),
+            interimTerminal = JsonString(phase482.RootElement, "interimTerminal"),
+            verdictKind = JsonString(phase482.RootElement, "verdictKind"),
+            applicationSubjectKind = JsonString(phase482.RootElement, "applicationSubjectKind"),
+            planSection = JsonString(phase482.RootElement, "planSection"),
+            waveOrder = JsonInt(phase482.RootElement, "waveOrder"),
+            targetBlindConstruction = JsonBool(phase482.RootElement, "targetBlindConstruction"),
+            physicalTargetsConsultedForConstruction = JsonBool(phase482.RootElement, "physicalTargetsConsultedForConstruction"),
+            noGevPromotion = JsonBool(phase482.RootElement, "noGevPromotion"),
+            promotedPhysicalMassClaimCount = JsonInt(phase482.RootElement, "promotedPhysicalMassClaimCount"),
+            sourceContractApplicationAllowed = JsonBool(phase482.RootElement, "sourceContractApplicationAllowed"),
+            canFillPhase201WzContract = JsonBool(phase482.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase482.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase482.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            routePromotesWzMasses = JsonBool(phase482.RootElement, "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonBool(phase482.RootElement, "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonBool(phase482.RootElement, "routeCompletesBosonPredictions"),
+            decision = JsonString(phase482.RootElement, "decision"),
+        }
+        : null,
+    sourceDefinedReopeningIntake = phase483 is not null
+        ? new
+        {
+            status = JsonString(phase483.RootElement, "terminalStatus"),
+            skeletonBuilt = JsonBool(phase483.RootElement, "skeletonBuilt"),
+            interimTerminal = JsonString(phase483.RootElement, "interimTerminal"),
+            verdictKind = JsonString(phase483.RootElement, "verdictKind"),
+            applicationSubjectKind = JsonString(phase483.RootElement, "applicationSubjectKind"),
+            planSection = JsonString(phase483.RootElement, "planSection"),
+            waveOrder = JsonInt(phase483.RootElement, "waveOrder"),
+            targetBlindConstruction = JsonBool(phase483.RootElement, "targetBlindConstruction"),
+            physicalTargetsConsultedForConstruction = JsonBool(phase483.RootElement, "physicalTargetsConsultedForConstruction"),
+            noGevPromotion = JsonBool(phase483.RootElement, "noGevPromotion"),
+            promotedPhysicalMassClaimCount = JsonInt(phase483.RootElement, "promotedPhysicalMassClaimCount"),
+            sourceContractApplicationAllowed = JsonBool(phase483.RootElement, "sourceContractApplicationAllowed"),
+            canFillPhase201WzContract = JsonBool(phase483.RootElement, "canFillPhase201WzContract"),
+            canFillPhase201HiggsContract = JsonBool(phase483.RootElement, "canFillPhase201HiggsContract"),
+            canFillPhase256ObservedFieldExtractionContract = JsonBool(phase483.RootElement, "canFillPhase256ObservedFieldExtractionContract"),
+            routePromotesWzMasses = JsonBool(phase483.RootElement, "routePromotesWzMasses"),
+            routePromotesHiggsMass = JsonBool(phase483.RootElement, "routePromotesHiggsMass"),
+            routeCompletesBosonPredictions = JsonBool(phase483.RootElement, "routeCompletesBosonPredictions"),
+            decision = JsonString(phase483.RootElement, "decision"),
         }
         : null,
     branchLocalDirectInvariantCensus = phase282 is not null

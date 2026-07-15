@@ -353,6 +353,13 @@ dotnet run --no-build -c Release --project studies/phase468_two_loop_content_row
 dotnet run --no-build -c Release --project studies/phase469_c_lift_representation_bookkeeping_gate_001/Phase469CLiftRepresentationBookkeepingGate.csproj
 dotnet run --no-build -c Release --project studies/phase470_c_permanence_five_limb_ledger_001/Phase470CPermanenceFiveLimbLedger.csproj
 dotnet run --no-build -c Release --project studies/phase471_b2_closure_ledger_001/Phase471B2ClosureLedger.csproj
+dotnet run --no-build -c Release --project studies/phase477_o4_adjudication_infrastructure_001/Phase477O4AdjudicationInfrastructure.csproj
+dotnet run --no-build -c Release --project studies/phase478_phase458_gate_specification_closure_001/Phase478Phase458GateSpecificationClosure.csproj
+dotnet run --no-build -c Release --project studies/phase479_phase457_post_ruling_readiness_001/Phase479Phase457PostRulingReadiness.csproj
+dotnet run --no-build -c Release --project studies/phase480_o4_physicist_adjudication_intake_001/Phase480O4PhysicistAdjudicationIntake.csproj
+dotnet run --no-build -c Release --project studies/phase481_phase456_prospective_repair_preregistration_001/Phase481Phase456ProspectiveRepairPreregistration.csproj
+dotnet run --no-build -c Release --project studies/phase482_a5_theorem_scout_001/Phase482A5TheoremScout.csproj
+dotnet run --no-build -c Release --project studies/phase483_source_defined_reopening_intake_001/Phase483SourceDefinedReopeningIntake.csproj
 dotnet run --no-build -c Release --project studies/phase101_boson_prediction_package_001/Phase101BosonPredictionPackage.csproj
 dotnet run --no-build -c Release --project studies/phase202_boson_objective_completion_audit_001/Phase202BosonObjectiveCompletionAudit.csproj
 

@@ -601,6 +601,13 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath.Contains("studies/phase468_two_loop_content_row_closure_filter_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase469_c_lift_representation_bookkeeping_gate_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase470_c_permanence_five_limb_ledger_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase477_o4_adjudication_infrastructure_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase478_phase458_gate_specification_closure_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase479_phase457_post_ruling_readiness_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase480_o4_physicist_adjudication_intake_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase481_phase456_prospective_repair_preregistration_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase482_a5_theorem_scout_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase483_source_defined_reopening_intake_001/", StringComparison.Ordinal)
     || normalizedPath == "studies/phase101_boson_prediction_package_001/Program.cs"
     || normalizedPath == "studies/phase202_boson_objective_completion_audit_001/Program.cs"
     || normalizedPath == "studies/phase204_boson_source_lineage_candidate_scan_001/Program.cs"
@@ -615,6 +622,13 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P468.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P469.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P470.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P477.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P478.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P479.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P480.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P481.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P482.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P483.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P327.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P328.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P338.md"

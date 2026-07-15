@@ -11,7 +11,7 @@ phase id / subject kind; it mutates nothing. The committed phase JSONs stay
 byte-identical and remain authoritative. Regenerate with
 `node scripts/o4_register/generate.js`; assert currency with `--check`.
 
-Total review-pending phase outputs: **23**.
+Total review-pending phase outputs: **30**.
 
 ## Invariant rays (2)
 
@@ -20,12 +20,13 @@ Total review-pending phase outputs: **23**.
 | phase454-beyond-ray-quadratic-certificate-probe | beyond-ray-quadratic-certificate-probe | beyond-ray-quadratic-certificate-probe-passed-beyond-ray-instability-candidate-found | `studies/phase454_beyond_ray_quadratic_certificate_probe_001/output/beyond_ray_quadratic_certificate_probe_summary.json` |
 | phase467-derived-operator-stabilizer-ray-census | derived-operator-stabilizer-ray-census | derived-operator-stabilizer-ray-census-all-symmetric-non-y-route-closed | `studies/phase467_derived_operator_stabilizer_ray_census_001/output/derived_operator_stabilizer_ray_census_summary.json` |
 
-## Positive-mode IR rule (2)
+## Positive-mode IR rule (3)
 
 | phaseId | subjectKind | terminalStatus | source (DERIVED) |
 |---------|-------------|----------------|------------------|
 | phase449-variational-gaussian-effective-potential-probe | variational-gaussian-effective-potential-probe | variational-gaussian-effective-potential-probe-passed-gap-equation-breakdown-recorded | `studies/phase449_variational_gaussian_effective_potential_probe_001/output/variational_gaussian_effective_potential_probe_summary.json` |
 | phase450-constraint-effective-potential-hmc-probe | constraint-effective-potential-hmc-probe | constraint-effective-potential-hmc-probe-passed-inconclusive-gates-failed-recorded | `studies/phase450_constraint_effective_potential_hmc_probe_001/output/constraint_effective_potential_hmc_probe_summary.json` |
+| phase481-phase456-prospective-repair-preregistration | phase456-prospective-repair-preregistration | phase456-prospective-repair-preregistration-preregistration-skeleton-awaiting-implementation | `studies/phase481_phase456_prospective_repair_preregistration_001/output/phase456_prospective_repair_preregistration_summary.json` |
 
 ## Theta-Haar measure (0)
 
@@ -49,7 +50,7 @@ _none_
 |---------|-------------|----------------|------------------|
 | phase453-wham-parity-error-model-repair | wham-parity-error-model-repair | wham-parity-error-model-repair-passed-symmetric-phase-null-single-well | `studies/phase453_wham_parity_error_model_repair_001/output/wham_parity_error_model_repair_summary.json` |
 
-## Unclassified (pending) (17)
+## Unclassified (pending) (23)
 
 | phaseId | subjectKind | terminalStatus | source (DERIVED) |
 |---------|-------------|----------------|------------------|
@@ -70,6 +71,12 @@ _none_
 | phase465-anomaly-consistency-variety-kernel | anomaly-consistency-variety-kernel | anomaly-consistency-variety-kernel-anomaly-variety-positive-dimensional-route-closed | `studies/phase465_anomaly_consistency_variety_kernel_001/output/anomaly_consistency_variety_kernel_summary.json` |
 | phase466-ws3-vev-completion-contract | ws3-vev-completion-contract | ws3-vev-completion-contract-schema-committed | `studies/phase466_ws3_vev_completion_contract_001/output/ws3_vev_completion_contract_summary.json` |
 | phase471-b2-closure-ledger | b2-closure-ledger | b2-closure-ledger-closure-not-decidable-open-limbs-named | `studies/phase471_b2_closure_ledger_001/output/b2_closure_ledger_summary.json` |
+| phase477-o4-adjudication-infrastructure | o4-adjudication-infrastructure | o4-adjudication-infrastructure-infrastructure-skeleton-awaiting-implementation | `studies/phase477_o4_adjudication_infrastructure_001/output/o4_adjudication_infrastructure_summary.json` |
+| phase478-phase458-gate-specification-closure | phase458-gate-specification-closure | phase458-gate-specification-closure-specification-skeleton-awaiting-implementation | `studies/phase478_phase458_gate_specification_closure_001/output/phase458_gate_specification_closure_summary.json` |
+| phase479-phase457-post-ruling-readiness | phase457-post-ruling-readiness | phase457-post-ruling-readiness-readiness-skeleton-awaiting-implementation | `studies/phase479_phase457_post_ruling_readiness_001/output/phase457_post_ruling_readiness_summary.json` |
+| phase480-o4-physicist-adjudication-intake | o4-physicist-adjudication-intake | o4-physicist-adjudication-intake-awaiting-external-physicist-ruling | `studies/phase480_o4_physicist_adjudication_intake_001/output/o4_physicist_adjudication_intake_summary.json` |
+| phase482-a5-theorem-scout | a5-theorem-scout | a5-theorem-scout-theorem-scout-skeleton-awaiting-implementation | `studies/phase482_a5_theorem_scout_001/output/a5_theorem_scout_summary.json` |
+| phase483-source-defined-reopening-intake | source-defined-reopening-intake | source-defined-reopening-intake-intake-skeleton-awaiting-source-input | `studies/phase483_source_defined_reopening_intake_001/output/source_defined_reopening_intake_summary.json` |
 
 ---
 

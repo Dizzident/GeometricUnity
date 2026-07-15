@@ -868,6 +868,19 @@ renewal. The only remaining machine queue item is Phase458, and it must not
 execute until all G1-G6 inputs exist; production supplies G2 but explicitly
 does not supply G3.
 
+WAVE-2 LABELED AMENDMENT A4 allocates phases 477-483 as a fail-closed
+blocker-resolution extension in strict execution-priority order: 477 O4
+adjudication infrastructure; 478 Phase458 gate-specification closure; 479
+Phase457 post-ruling readiness; 480 genuine external physicist-adjudication
+intake; 481 prospective Phase456 repair pre-registration; 482 A5 theorem
+scout; 483 source-defined reopening intake. Their initial skeletons perform
+zero physics computation and cannot satisfy a scientific gate. Phase480 stays
+human-input gated; Phase481 cannot sample or mutate/reinterpret Phase456;
+Phase482 cannot claim a theorem from a partial scout; Phase483 cannot invent
+source fields. The original Phase457 hold, Phase458 G1-G6 gate, and Phase471
+firewall remain unchanged. Registry 477-483 is allocated; 484+ remains
+unassigned.
+
 WAVE-2 C-LINEAGE MACHINE RESULTS (2026-07-14, incremental validation green:
 82 ran / 260 skipped, integrity verified): PHASE467 reconstructs the exact
 four-dimensional `u(1)+su(2)_R` commutant in both the compact arithmetic
@@ -881,10 +894,12 @@ witness, and finds every row outside the honest threshold band; terminal
 `full-menu-out-of-band-scoped-exhaustion`, supplying C-PERMANENCE P4 only
 at the declared conditional scalar-proxy/full-interval scope. Neither
 phase supplies a coupling normalization, scale, pole, or prediction;
-`promotedPhysicalMassClaimCount=0`. Remaining machine queue: phase458 only
-when its G1-G6 inputs exist. Phase456 production completed under explicit
-written risk renewal and supplies G2 only; its invalid-analysis terminal cannot
-supply G3. C-LIFT 469 and C-PERMANENCE 470 are complete.
+`promotedPhysicalMassClaimCount=0`. Phase458 remains executable only when its
+G1-G6 inputs exist. The A4 phases 477-483 are ordered infrastructure, intake,
+pre-registration, and scout work; their skeletons do not bypass that gate.
+Phase456 production completed under explicit written risk renewal and supplies
+G2 only; its invalid-analysis terminal cannot supply G3. C-LIFT 469 and
+C-PERMANENCE 470 are complete.
 
 WAVE-2 PLAN ADOPTED (2026-07-12, binding):
 docs/Phases/WAVE2_ACTION_PLAN_2026-07-12.md is the current execution

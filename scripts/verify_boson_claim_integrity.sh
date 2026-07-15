@@ -248,6 +248,13 @@ const paths = {
   phase469: "studies/phase469_c_lift_representation_bookkeeping_gate_001/output/c_lift_representation_bookkeeping_gate_summary.json",
   phase470: "studies/phase470_c_permanence_five_limb_ledger_001/output/c_permanence_five_limb_ledger_summary.json",
   phase471: "studies/phase471_b2_closure_ledger_001/output/b2_closure_ledger_summary.json",
+  phase477: "studies/phase477_o4_adjudication_infrastructure_001/output/o4_adjudication_infrastructure_summary.json",
+  phase478: "studies/phase478_phase458_gate_specification_closure_001/output/phase458_gate_specification_closure_summary.json",
+  phase479: "studies/phase479_phase457_post_ruling_readiness_001/output/phase457_post_ruling_readiness_summary.json",
+  phase480: "studies/phase480_o4_physicist_adjudication_intake_001/output/o4_physicist_adjudication_intake_summary.json",
+  phase481: "studies/phase481_phase456_prospective_repair_preregistration_001/output/phase456_prospective_repair_preregistration_summary.json",
+  phase482: "studies/phase482_a5_theorem_scout_001/output/a5_theorem_scout_summary.json",
+  phase483: "studies/phase483_source_defined_reopening_intake_001/output/source_defined_reopening_intake_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -561,6 +568,13 @@ const phase468 = requireFile(paths.phase468);
 const phase469 = requireFile(paths.phase469);
 const phase470 = requireFile(paths.phase470);
 const phase471 = requireFile(paths.phase471);
+const phase477 = requireFile(paths.phase477);
+const phase478 = requireFile(paths.phase478);
+const phase479 = requireFile(paths.phase479);
+const phase480 = requireFile(paths.phase480);
+const phase481 = requireFile(paths.phase481);
+const phase482 = requireFile(paths.phase482);
+const phase483 = requireFile(paths.phase483);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -5771,6 +5785,38 @@ if (sourceLineageMissing) {
   assert(Array.isArray(phase471.openLimbs) && ["L5","L6","L8"].every((l) => phase471.openLimbs.includes(l)), "Phase471 must name L5/L6/L8 as open limbs.");
   assert(Array.isArray(phase471.withheldLimbs) && phase471.withheldLimbs.includes("L7"), "Phase471 must name L7 as withheld.");
   assert(phase101Package?.b2ClosureLedger?.b2ClosureLedgerBuilt === true, "Phase101 must include the Phase471 block.");
+  // Phases477-483 -- Amendment A4 ordered fail-closed skeleton checkpoint.
+  const a4Skeletons = [
+    [phase477, 477, 1, "o4-adjudication-infrastructure", "infrastructure-skeleton-awaiting-implementation"],
+    [phase478, 478, 2, "phase458-gate-specification-closure", "specification-skeleton-awaiting-implementation"],
+    [phase479, 479, 3, "phase457-post-ruling-readiness", "readiness-skeleton-awaiting-implementation"],
+    [phase480, 480, 4, "o4-physicist-adjudication-intake", "awaiting-external-physicist-ruling"],
+    [phase481, 481, 5, "phase456-prospective-repair-preregistration", "preregistration-skeleton-awaiting-implementation"],
+    [phase482, 482, 6, "a5-theorem-scout", "theorem-scout-skeleton-awaiting-implementation"],
+    [phase483, 483, 7, "source-defined-reopening-intake", "intake-skeleton-awaiting-source-input"],
+  ];
+  for (const [phase, phaseNumber, waveOrder, subjectKind, terminal] of a4Skeletons) {
+    assert(phase.skeletonBuilt === true && phase.zeroPhysicsCompute === true, `Phase${phaseNumber} must remain a zero-compute A4 skeleton at this checkpoint.`);
+    assert(phase.applicationSubjectKind === subjectKind, `Phase${phaseNumber} applicationSubjectKind drifted.`);
+    assert(phase.waveOrder === waveOrder, `Phase${phaseNumber} must retain A4 wave order ${waveOrder}.`);
+    assert(phase.interimTerminal === terminal && phase.verdictKind === terminal, `Phase${phaseNumber} must retain its fail-closed skeleton terminal.`);
+    assert(phase.planSection === "WAVE2_AMENDMENTS_2026-07-12 A4", `Phase${phaseNumber} must cite Amendment A4.`);
+    assert(phase.targetBlindConstruction === true && phase.physicalTargetsConsultedForConstruction === false, `Phase${phaseNumber} must remain target-blind.`);
+    assert(phase.noGevPromotion === true && phase.promotedPhysicalMassClaimCount === 0, `Phase${phaseNumber} must preserve the no-GeV boundary.`);
+    assert(phase.sourceContractApplicationAllowed === false && phase.canFillPhase201WzContract === false && phase.canFillPhase201HiggsContract === false && phase.canFillPhase256ObservedFieldExtractionContract === false, `Phase${phaseNumber} cannot fill source contracts.`);
+    assert(phase.routePromotesWzMasses === false && phase.routePromotesHiggsMass === false && phase.routeCompletesBosonPredictions === false, `Phase${phaseNumber} cannot promote boson predictions.`);
+  }
+  const a4PackageBlocks = [
+    phase101Package?.o4AdjudicationInfrastructure,
+    phase101Package?.phase458GateSpecificationClosure,
+    phase101Package?.phase457PostRulingReadiness,
+    phase101Package?.o4PhysicistAdjudicationIntake,
+    phase101Package?.phase456ProspectiveRepairPreregistration,
+    phase101Package?.a5TheoremScout,
+    phase101Package?.sourceDefinedReopeningIntake,
+  ];
+  assert(a4PackageBlocks.every((block) => block?.skeletonBuilt === true), "Phase101 must include every Phase477-483 A4 skeleton block.");
+  assert(a4PackageBlocks.every((block) => block?.noGevPromotion === true && block?.promotedPhysicalMassClaimCount === 0), "Phase101 A4 blocks must preserve the no-GeV boundary.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
   assert(phase282.theoremClaimed === false, "Phase282 cannot claim a W/Z theorem from numerical invariants.");

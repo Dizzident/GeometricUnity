@@ -470,7 +470,21 @@ static bool IsGeneratedAuditOrImplementationJson(string path) =>
     || path.Contains("studies/phase468_", StringComparison.Ordinal)
     || path.Contains("studies/phase469_", StringComparison.Ordinal)
     || path.Contains("studies/phase470_", StringComparison.Ordinal)
-    || path.Contains("studies/phase471_", StringComparison.Ordinal);
+    || path.Contains("studies/phase471_", StringComparison.Ordinal)
+    || path.Contains("studies/phase477_o4_adjudication_infrastructure_001/", StringComparison.Ordinal)
+    || path.Contains("studies/phase478_phase458_gate_specification_closure_001/", StringComparison.Ordinal)
+    || path.Contains("studies/phase479_phase457_post_ruling_readiness_001/", StringComparison.Ordinal)
+    || path.Contains("studies/phase480_o4_physicist_adjudication_intake_001/", StringComparison.Ordinal)
+    || path.Contains("studies/phase481_phase456_prospective_repair_preregistration_001/", StringComparison.Ordinal)
+    || path.Contains("studies/phase482_a5_theorem_scout_001/", StringComparison.Ordinal)
+    || path.Contains("studies/phase483_source_defined_reopening_intake_001/", StringComparison.Ordinal)
+    || path.Contains("docs/Phases/Implementation/IMPLEMENTATION_P477.md", StringComparison.Ordinal)
+    || path.Contains("docs/Phases/Implementation/IMPLEMENTATION_P478.md", StringComparison.Ordinal)
+    || path.Contains("docs/Phases/Implementation/IMPLEMENTATION_P479.md", StringComparison.Ordinal)
+    || path.Contains("docs/Phases/Implementation/IMPLEMENTATION_P480.md", StringComparison.Ordinal)
+    || path.Contains("docs/Phases/Implementation/IMPLEMENTATION_P481.md", StringComparison.Ordinal)
+    || path.Contains("docs/Phases/Implementation/IMPLEMENTATION_P482.md", StringComparison.Ordinal)
+    || path.Contains("docs/Phases/Implementation/IMPLEMENTATION_P483.md", StringComparison.Ordinal);
 
 sealed record ScanCandidate(
     string Path,

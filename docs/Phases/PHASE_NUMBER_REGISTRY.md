@@ -11,7 +11,8 @@ back, NO new phase directory may be created outside this table.
 | 459-464 | Team A-anchor (dimensionful-anchor elimination) | 459-464 DONE; the A block is EXHAUSTED |
 | 465-470 | Team C-lineage (quantum-number/coupling lineage elimination) | 465-470 DONE; block exhausted |
 | 471-476 | Team B-scale (extension, 2026-07-12 Wave-2 plan) | 471 DONE (closure theorem-of-record ledger); next free: 472, reserved for contingent n=5 escalation + Binder production |
-| 477+ | Unassigned - extend this registry before use | - |
+| 477-483 | Shared Wave-2 blocker-resolution extension (A4) | 477-483 allocated in strict execution-priority order to the seven A4 fail-closed infrastructure/intake/scout phases; no number in this block may be repurposed |
+| 484+ | Unassigned - extend this registry before use | - |
 
 Rules: (1) a team takes the LOWEST free number in its own block;
 (2) cross-team phases take the number of the OWNING team per the

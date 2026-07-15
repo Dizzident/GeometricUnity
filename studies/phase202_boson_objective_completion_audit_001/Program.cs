@@ -228,6 +228,13 @@ const string Phase468Path = "studies/phase468_two_loop_content_row_closure_filte
 const string Phase469Path = "studies/phase469_c_lift_representation_bookkeeping_gate_001/output/c_lift_representation_bookkeeping_gate_summary.json";
 const string Phase470Path = "studies/phase470_c_permanence_five_limb_ledger_001/output/c_permanence_five_limb_ledger_summary.json";
 const string Phase471Path = "studies/phase471_b2_closure_ledger_001/output/b2_closure_ledger_summary.json";
+const string Phase477Path = "studies/phase477_o4_adjudication_infrastructure_001/output/o4_adjudication_infrastructure_summary.json";
+const string Phase478Path = "studies/phase478_phase458_gate_specification_closure_001/output/phase458_gate_specification_closure_summary.json";
+const string Phase479Path = "studies/phase479_phase457_post_ruling_readiness_001/output/phase457_post_ruling_readiness_summary.json";
+const string Phase480Path = "studies/phase480_o4_physicist_adjudication_intake_001/output/o4_physicist_adjudication_intake_summary.json";
+const string Phase481Path = "studies/phase481_phase456_prospective_repair_preregistration_001/output/phase456_prospective_repair_preregistration_summary.json";
+const string Phase482Path = "studies/phase482_a5_theorem_scout_001/output/a5_theorem_scout_summary.json";
+const string Phase483Path = "studies/phase483_source_defined_reopening_intake_001/output/source_defined_reopening_intake_summary.json";
 const string Phase444Path = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443Path = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442Path = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -507,6 +514,13 @@ using var phase468 = File.Exists(Phase468Path) ? JsonDocument.Parse(File.ReadAll
 using var phase469 = File.Exists(Phase469Path) ? JsonDocument.Parse(File.ReadAllText(Phase469Path)) : null;
 using var phase470 = File.Exists(Phase470Path) ? JsonDocument.Parse(File.ReadAllText(Phase470Path)) : null;
 using var phase471 = File.Exists(Phase471Path) ? JsonDocument.Parse(File.ReadAllText(Phase471Path)) : null;
+using var phase477 = File.Exists(Phase477Path) ? JsonDocument.Parse(File.ReadAllText(Phase477Path)) : null;
+using var phase478 = File.Exists(Phase478Path) ? JsonDocument.Parse(File.ReadAllText(Phase478Path)) : null;
+using var phase479 = File.Exists(Phase479Path) ? JsonDocument.Parse(File.ReadAllText(Phase479Path)) : null;
+using var phase480 = File.Exists(Phase480Path) ? JsonDocument.Parse(File.ReadAllText(Phase480Path)) : null;
+using var phase481 = File.Exists(Phase481Path) ? JsonDocument.Parse(File.ReadAllText(Phase481Path)) : null;
+using var phase482 = File.Exists(Phase482Path) ? JsonDocument.Parse(File.ReadAllText(Phase482Path)) : null;
+using var phase483 = File.Exists(Phase483Path) ? JsonDocument.Parse(File.ReadAllText(Phase483Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -6726,6 +6740,139 @@ var b2ClosureLedgerPassed = b2ClosureLedgerMaterialized
     && JsonBool(phase471.RootElement, "routePromotesWzMasses") is false
     && JsonBool(phase471.RootElement, "routePromotesHiggsMass") is false
     && JsonBool(phase471.RootElement, "routeCompletesBosonPredictions") is false;
+var o4AdjudicationInfrastructureMaterialized = phase477 is not null;
+var o4AdjudicationInfrastructurePassed = o4AdjudicationInfrastructureMaterialized
+    && JsonBool(phase477!.RootElement, "skeletonBuilt") is true
+    && JsonString(phase477.RootElement, "applicationSubjectKind") == "o4-adjudication-infrastructure"
+    && JsonString(phase477.RootElement, "interimTerminal") == "infrastructure-skeleton-awaiting-implementation"
+    && JsonString(phase477.RootElement, "verdictKind") == "infrastructure-skeleton-awaiting-implementation"
+    && JsonString(phase477.RootElement, "planSection") == "WAVE2_AMENDMENTS_2026-07-12 A4"
+    && JsonInt(phase477.RootElement, "waveOrder") == 1
+    && JsonBool(phase477.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase477.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && JsonBool(phase477.RootElement, "noGevPromotion") is true
+    && JsonInt(phase477.RootElement, "promotedPhysicalMassClaimCount") == 0
+    && JsonBool(phase477.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase477.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase477.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase477.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase477.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase477.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase477.RootElement, "routeCompletesBosonPredictions") is false;
+var phase458GateSpecificationClosureMaterialized = phase478 is not null;
+var phase458GateSpecificationClosurePassed = phase458GateSpecificationClosureMaterialized
+    && JsonBool(phase478!.RootElement, "skeletonBuilt") is true
+    && JsonString(phase478.RootElement, "applicationSubjectKind") == "phase458-gate-specification-closure"
+    && JsonString(phase478.RootElement, "interimTerminal") == "specification-skeleton-awaiting-implementation"
+    && JsonString(phase478.RootElement, "verdictKind") == "specification-skeleton-awaiting-implementation"
+    && JsonString(phase478.RootElement, "planSection") == "WAVE2_AMENDMENTS_2026-07-12 A4"
+    && JsonInt(phase478.RootElement, "waveOrder") == 2
+    && JsonBool(phase478.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase478.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && JsonBool(phase478.RootElement, "noGevPromotion") is true
+    && JsonInt(phase478.RootElement, "promotedPhysicalMassClaimCount") == 0
+    && JsonBool(phase478.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase478.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase478.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase478.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase478.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase478.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase478.RootElement, "routeCompletesBosonPredictions") is false;
+var phase457PostRulingReadinessMaterialized = phase479 is not null;
+var phase457PostRulingReadinessPassed = phase457PostRulingReadinessMaterialized
+    && JsonBool(phase479!.RootElement, "skeletonBuilt") is true
+    && JsonString(phase479.RootElement, "applicationSubjectKind") == "phase457-post-ruling-readiness"
+    && JsonString(phase479.RootElement, "interimTerminal") == "readiness-skeleton-awaiting-implementation"
+    && JsonString(phase479.RootElement, "verdictKind") == "readiness-skeleton-awaiting-implementation"
+    && JsonString(phase479.RootElement, "planSection") == "WAVE2_AMENDMENTS_2026-07-12 A4"
+    && JsonInt(phase479.RootElement, "waveOrder") == 3
+    && JsonBool(phase479.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase479.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && JsonBool(phase479.RootElement, "noGevPromotion") is true
+    && JsonInt(phase479.RootElement, "promotedPhysicalMassClaimCount") == 0
+    && JsonBool(phase479.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase479.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase479.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase479.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase479.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase479.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase479.RootElement, "routeCompletesBosonPredictions") is false;
+var o4PhysicistAdjudicationIntakeMaterialized = phase480 is not null;
+var o4PhysicistAdjudicationIntakePassed = o4PhysicistAdjudicationIntakeMaterialized
+    && JsonBool(phase480!.RootElement, "skeletonBuilt") is true
+    && JsonString(phase480.RootElement, "applicationSubjectKind") == "o4-physicist-adjudication-intake"
+    && JsonString(phase480.RootElement, "interimTerminal") == "awaiting-external-physicist-ruling"
+    && JsonString(phase480.RootElement, "verdictKind") == "awaiting-external-physicist-ruling"
+    && JsonString(phase480.RootElement, "planSection") == "WAVE2_AMENDMENTS_2026-07-12 A4"
+    && JsonInt(phase480.RootElement, "waveOrder") == 4
+    && JsonBool(phase480.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase480.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && JsonBool(phase480.RootElement, "noGevPromotion") is true
+    && JsonInt(phase480.RootElement, "promotedPhysicalMassClaimCount") == 0
+    && JsonBool(phase480.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase480.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase480.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase480.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase480.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase480.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase480.RootElement, "routeCompletesBosonPredictions") is false;
+var phase456ProspectiveRepairPreregistrationMaterialized = phase481 is not null;
+var phase456ProspectiveRepairPreregistrationPassed = phase456ProspectiveRepairPreregistrationMaterialized
+    && JsonBool(phase481!.RootElement, "skeletonBuilt") is true
+    && JsonString(phase481.RootElement, "applicationSubjectKind") == "phase456-prospective-repair-preregistration"
+    && JsonString(phase481.RootElement, "interimTerminal") == "preregistration-skeleton-awaiting-implementation"
+    && JsonString(phase481.RootElement, "verdictKind") == "preregistration-skeleton-awaiting-implementation"
+    && JsonString(phase481.RootElement, "planSection") == "WAVE2_AMENDMENTS_2026-07-12 A4"
+    && JsonInt(phase481.RootElement, "waveOrder") == 5
+    && JsonBool(phase481.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase481.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && JsonBool(phase481.RootElement, "noGevPromotion") is true
+    && JsonInt(phase481.RootElement, "promotedPhysicalMassClaimCount") == 0
+    && JsonBool(phase481.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase481.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase481.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase481.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase481.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase481.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase481.RootElement, "routeCompletesBosonPredictions") is false;
+var a5TheoremScoutMaterialized = phase482 is not null;
+var a5TheoremScoutPassed = a5TheoremScoutMaterialized
+    && JsonBool(phase482!.RootElement, "skeletonBuilt") is true
+    && JsonString(phase482.RootElement, "applicationSubjectKind") == "a5-theorem-scout"
+    && JsonString(phase482.RootElement, "interimTerminal") == "theorem-scout-skeleton-awaiting-implementation"
+    && JsonString(phase482.RootElement, "verdictKind") == "theorem-scout-skeleton-awaiting-implementation"
+    && JsonString(phase482.RootElement, "planSection") == "WAVE2_AMENDMENTS_2026-07-12 A4"
+    && JsonInt(phase482.RootElement, "waveOrder") == 6
+    && JsonBool(phase482.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase482.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && JsonBool(phase482.RootElement, "noGevPromotion") is true
+    && JsonInt(phase482.RootElement, "promotedPhysicalMassClaimCount") == 0
+    && JsonBool(phase482.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase482.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase482.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase482.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase482.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase482.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase482.RootElement, "routeCompletesBosonPredictions") is false;
+var sourceDefinedReopeningIntakeMaterialized = phase483 is not null;
+var sourceDefinedReopeningIntakePassed = sourceDefinedReopeningIntakeMaterialized
+    && JsonBool(phase483!.RootElement, "skeletonBuilt") is true
+    && JsonString(phase483.RootElement, "applicationSubjectKind") == "source-defined-reopening-intake"
+    && JsonString(phase483.RootElement, "interimTerminal") == "intake-skeleton-awaiting-source-input"
+    && JsonString(phase483.RootElement, "verdictKind") == "intake-skeleton-awaiting-source-input"
+    && JsonString(phase483.RootElement, "planSection") == "WAVE2_AMENDMENTS_2026-07-12 A4"
+    && JsonInt(phase483.RootElement, "waveOrder") == 7
+    && JsonBool(phase483.RootElement, "targetBlindConstruction") is true
+    && JsonBool(phase483.RootElement, "physicalTargetsConsultedForConstruction") is false
+    && JsonBool(phase483.RootElement, "noGevPromotion") is true
+    && JsonInt(phase483.RootElement, "promotedPhysicalMassClaimCount") == 0
+    && JsonBool(phase483.RootElement, "sourceContractApplicationAllowed") is false
+    && JsonBool(phase483.RootElement, "canFillPhase201WzContract") is false
+    && JsonBool(phase483.RootElement, "canFillPhase201HiggsContract") is false
+    && JsonBool(phase483.RootElement, "canFillPhase256ObservedFieldExtractionContract") is false
+    && JsonBool(phase483.RootElement, "routePromotesWzMasses") is false
+    && JsonBool(phase483.RootElement, "routePromotesHiggsMass") is false
+    && JsonBool(phase483.RootElement, "routeCompletesBosonPredictions") is false;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -9470,6 +9617,62 @@ var checklist = new[]
             ? $"b2ClosureLedgerBuilt={JsonBool(phase471!.RootElement, "b2ClosureLedgerBuilt")}; interimTerminal={JsonString(phase471.RootElement, "interimTerminal")}; planSection={JsonString(phase471.RootElement, "planSection")}; physicistReviewPending={JsonBool(phase471.RootElement, "physicistReviewPending")}; noGevPromotion={JsonBool(phase471.RootElement, "noGevPromotion")}; decision={JsonString(phase471.RootElement, "decision")}"
             : "Phase471 artifact not materialized",
         Phase471Path),
+    new ObjectiveChecklistItem(
+        "o4-adjudication-infrastructure-skeleton-materialized",
+        "Wave-order item 1: materialize the target-blind O4 adjudication-infrastructure skeleton while preserving the external physicist-ruling boundary and every non-promotion firewall.",
+        o4AdjudicationInfrastructurePassed ? "passed" : "failed",
+        o4AdjudicationInfrastructureMaterialized
+            ? $"skeletonBuilt={JsonBool(phase477!.RootElement, "skeletonBuilt")}; interimTerminal={JsonString(phase477.RootElement, "interimTerminal")}; applicationSubjectKind={JsonString(phase477.RootElement, "applicationSubjectKind")}; waveOrder={JsonInt(phase477.RootElement, "waveOrder")}; promotedPhysicalMassClaimCount={JsonInt(phase477.RootElement, "promotedPhysicalMassClaimCount")}; decision={JsonString(phase477.RootElement, "decision")}"
+            : "Phase477 artifact not materialized",
+        Phase477Path),
+    new ObjectiveChecklistItem(
+        "phase458-gate-specification-closure-skeleton-materialized",
+        "Wave-order item 2: materialize the target-blind Phase458 gate-specification-closure skeleton without evaluating incomplete G1-G6 inputs or authorizing a launch.",
+        phase458GateSpecificationClosurePassed ? "passed" : "failed",
+        phase458GateSpecificationClosureMaterialized
+            ? $"skeletonBuilt={JsonBool(phase478!.RootElement, "skeletonBuilt")}; interimTerminal={JsonString(phase478.RootElement, "interimTerminal")}; applicationSubjectKind={JsonString(phase478.RootElement, "applicationSubjectKind")}; waveOrder={JsonInt(phase478.RootElement, "waveOrder")}; promotedPhysicalMassClaimCount={JsonInt(phase478.RootElement, "promotedPhysicalMassClaimCount")}; decision={JsonString(phase478.RootElement, "decision")}"
+            : "Phase478 artifact not materialized",
+        Phase478Path),
+    new ObjectiveChecklistItem(
+        "phase457-post-ruling-readiness-skeleton-materialized",
+        "Wave-order item 3: materialize the target-blind Phase457 post-ruling-readiness skeleton while leaving the ruling-dependent verdict path closed.",
+        phase457PostRulingReadinessPassed ? "passed" : "failed",
+        phase457PostRulingReadinessMaterialized
+            ? $"skeletonBuilt={JsonBool(phase479!.RootElement, "skeletonBuilt")}; interimTerminal={JsonString(phase479.RootElement, "interimTerminal")}; applicationSubjectKind={JsonString(phase479.RootElement, "applicationSubjectKind")}; waveOrder={JsonInt(phase479.RootElement, "waveOrder")}; promotedPhysicalMassClaimCount={JsonInt(phase479.RootElement, "promotedPhysicalMassClaimCount")}; decision={JsonString(phase479.RootElement, "decision")}"
+            : "Phase479 artifact not materialized",
+        Phase479Path),
+    new ObjectiveChecklistItem(
+        "o4-physicist-adjudication-intake-skeleton-materialized",
+        "Wave-order item 4: materialize the O4 physicist-adjudication intake skeleton in its awaiting-external-ruling state; no machine-generated ruling is accepted.",
+        o4PhysicistAdjudicationIntakePassed ? "passed" : "failed",
+        o4PhysicistAdjudicationIntakeMaterialized
+            ? $"skeletonBuilt={JsonBool(phase480!.RootElement, "skeletonBuilt")}; interimTerminal={JsonString(phase480.RootElement, "interimTerminal")}; applicationSubjectKind={JsonString(phase480.RootElement, "applicationSubjectKind")}; waveOrder={JsonInt(phase480.RootElement, "waveOrder")}; promotedPhysicalMassClaimCount={JsonInt(phase480.RootElement, "promotedPhysicalMassClaimCount")}; decision={JsonString(phase480.RootElement, "decision")}"
+            : "Phase480 artifact not materialized",
+        Phase480Path),
+    new ObjectiveChecklistItem(
+        "phase456-prospective-repair-preregistration-skeleton-materialized",
+        "Wave-order item 5: materialize the Phase456 prospective-repair preregistration skeleton without reinterpreting the committed invalid production artifact or authorizing a rerun.",
+        phase456ProspectiveRepairPreregistrationPassed ? "passed" : "failed",
+        phase456ProspectiveRepairPreregistrationMaterialized
+            ? $"skeletonBuilt={JsonBool(phase481!.RootElement, "skeletonBuilt")}; interimTerminal={JsonString(phase481.RootElement, "interimTerminal")}; applicationSubjectKind={JsonString(phase481.RootElement, "applicationSubjectKind")}; waveOrder={JsonInt(phase481.RootElement, "waveOrder")}; promotedPhysicalMassClaimCount={JsonInt(phase481.RootElement, "promotedPhysicalMassClaimCount")}; decision={JsonString(phase481.RootElement, "decision")}"
+            : "Phase481 artifact not materialized",
+        Phase481Path),
+    new ObjectiveChecklistItem(
+        "a5-theorem-scout-skeleton-materialized",
+        "Wave-order item 6: materialize the target-blind A5 theorem-scout skeleton without treating an unproved theorem route as an analytic closure.",
+        a5TheoremScoutPassed ? "passed" : "failed",
+        a5TheoremScoutMaterialized
+            ? $"skeletonBuilt={JsonBool(phase482!.RootElement, "skeletonBuilt")}; interimTerminal={JsonString(phase482.RootElement, "interimTerminal")}; applicationSubjectKind={JsonString(phase482.RootElement, "applicationSubjectKind")}; waveOrder={JsonInt(phase482.RootElement, "waveOrder")}; promotedPhysicalMassClaimCount={JsonInt(phase482.RootElement, "promotedPhysicalMassClaimCount")}; decision={JsonString(phase482.RootElement, "decision")}"
+            : "Phase482 artifact not materialized",
+        Phase482Path),
+    new ObjectiveChecklistItem(
+        "source-defined-reopening-intake-skeleton-materialized",
+        "Wave-order item 7: materialize the source-defined reopening-intake skeleton while requiring genuine external source input before any closed route can reopen.",
+        sourceDefinedReopeningIntakePassed ? "passed" : "failed",
+        sourceDefinedReopeningIntakeMaterialized
+            ? $"skeletonBuilt={JsonBool(phase483!.RootElement, "skeletonBuilt")}; interimTerminal={JsonString(phase483.RootElement, "interimTerminal")}; applicationSubjectKind={JsonString(phase483.RootElement, "applicationSubjectKind")}; waveOrder={JsonInt(phase483.RootElement, "waveOrder")}; promotedPhysicalMassClaimCount={JsonInt(phase483.RootElement, "promotedPhysicalMassClaimCount")}; decision={JsonString(phase483.RootElement, "decision")}"
+            : "Phase483 artifact not materialized",
+        Phase483Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",
