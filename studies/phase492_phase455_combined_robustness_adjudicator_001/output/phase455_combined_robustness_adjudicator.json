@@ -1,0 +1,155 @@
+{
+  "phaseId": "phase492-phase455-combined-robustness-adjudicator",
+  "generatedAt": "2026-07-15T18:20:58.6920079+00:00",
+  "terminalStatus": "phase455-combined-robustness-adjudicator-localized-assumption-dependence",
+  "verdictKind": "localized-assumption-dependence",
+  "applicationSubjectKind": "phase455-combined-robustness-adjudicator",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A7; PHASE455_CONVENTION_CLOSURE_PLAN_2026-07-15 Phase492",
+  "zeroPhysicsCompute": true,
+  "prospectiveAdjudicator": true,
+  "explorationLane": true,
+  "explorationOnly": true,
+  "confirmationEvidence": false,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "decisionContract": {
+    "schemaId": "phase492-a7-combined-adjudicator-v1",
+    "canonical": "phase492-a7-v1|precedence=invalid-precursor\u003Estable-null\u003Estable-candidate-well\u003Elocalized-assumption-dependence\u003Eunderdetermined-external-interpretation|stable-null=unique-admissible-quotient\u0026\u0026all-admissible-branches-null|stable-candidate-well=unique-admissible-quotient\u0026\u0026all-admissible-branches-candidate-well|localized=named-assumption-partitions-outcomes|otherwise=underdetermined|exploration-only-no-gate-translation",
+    "sha256": "9208a3f45c69f55ad4e3a596a60201b98eb1ef8754bcda8787178d4a73d92433",
+    "precedence": [
+      "invalid-precursor",
+      "stable-null",
+      "stable-candidate-well",
+      "localized-assumption-dependence",
+      "underdetermined-external-interpretation"
+    ],
+    "phase490RequiredFields": [
+      "phaseId",
+      "terminalStatus",
+      "verdictKind",
+      "inputsValid",
+      "quotientClassification",
+      "uniqueAdmissibleQuotient",
+      "decisionContractSha256"
+    ],
+    "phase491RequiredFields": [
+      "phaseId",
+      "terminalStatus",
+      "verdictKind",
+      "inputsValid",
+      "sensitivityClassification",
+      "admissibleBranchCount",
+      "allAdmissibleBranchesNull",
+      "allAdmissibleBranchesCandidateWell",
+      "namedAssumptionPartitionsOutcomes",
+      "namedOutcomePartitionAssumptions",
+      "decisionContractSha256",
+      "frozenSensitivityContractSha256",
+      "sensitivityTable",
+      "summary"
+    ],
+    "quotientTaxonomy": [
+      "unique-quotient-derived",
+      "quotient-family-derived",
+      "quotient-underdetermined",
+      "invalid-committed-inputs"
+    ],
+    "sensitivityTaxonomy": [
+      "stable-null",
+      "stable-candidate-well",
+      "model-convention-fragile",
+      "invalid-inputs"
+    ],
+    "decisionPrecedenceExact": true
+  },
+  "frozenPrecursors": {
+    "phase490": {
+      "path": "studies/phase490_zero_mode_quotient_audit_001/output/zero_mode_quotient_audit_summary.json",
+      "present": true,
+      "sha256FrozenBeforeConsumption": "e63028c55e348646674c95512c42059745407a2f37263940cc6ba189c520d015",
+      "sha256AfterConsumption": "e63028c55e348646674c95512c42059745407a2f37263940cc6ba189c520d015",
+      "byteCount": 16759,
+      "hashStable": true,
+      "schemaValid": true,
+      "decisionContractSha256": "4ebf1c3e49a352b34c288d36e9b2be87327e232b67abcf741dadbcc5ffefbdc4"
+    },
+    "phase491": {
+      "path": "studies/phase491_committed_bosonic_model_family_sensitivity_001/output/committed_bosonic_model_family_sensitivity_summary.json",
+      "present": true,
+      "sha256FrozenBeforeConsumption": "1b4fb9d490f9fd49dedaba15c341a62a00f27ad559172a36142bb28f91b7e906",
+      "sha256AfterConsumption": "1b4fb9d490f9fd49dedaba15c341a62a00f27ad559172a36142bb28f91b7e906",
+      "byteCount": 44393,
+      "hashStable": true,
+      "schemaValid": true,
+      "frozenSensitivityContractSha256": "f38efd7771cbbf1c4cbcb1edaa899df6b5fa194ab816cd73d6cd6a4554dfb62e"
+    }
+  },
+  "precursorSemantics": {
+    "phase490": {
+      "inputsValid": true,
+      "quotientClassification": "quotient-underdetermined",
+      "uniqueAdmissibleQuotient": false,
+      "decisionContractSha256": "4ebf1c3e49a352b34c288d36e9b2be87327e232b67abcf741dadbcc5ffefbdc4"
+    },
+    "phase491": {
+      "inputsValid": true,
+      "sensitivityClassification": "model-convention-fragile",
+      "admissibleBranchCount": 24,
+      "allAdmissibleBranchesNull": false,
+      "allAdmissibleBranchesCandidateWell": false,
+      "namedAssumptionPartitionsOutcomes": true,
+      "namedOutcomePartitionAssumptions": [
+        "bosonic-model",
+        "zero-mode-treatment",
+        "fermionic-normalization",
+        "axis-orbit"
+      ],
+      "decisionContractSha256": "f38efd7771cbbf1c4cbcb1edaa899df6b5fa194ab816cd73d6cd6a4554dfb62e"
+    },
+    "invalidPrecursor": false,
+    "uniqueAdmissibleQuotient": false,
+    "stableNull": false,
+    "stableCandidateWell": false,
+    "namedAssumptionPartition": true,
+    "inputErrors": []
+  },
+  "adjudication": {
+    "classification": "localized-assumption-dependence",
+    "namedAssumptionPartitions": [
+      "bosonic-model",
+      "zero-mode-treatment",
+      "fermionic-normalization",
+      "axis-orbit"
+    ],
+    "externalInterpretationStillRequired": true,
+    "gateBearingUseRequiresNewProspectiveConfirmation": true,
+    "phase455Mapping": "forbidden",
+    "phase458Mapping": "forbidden"
+  },
+  "upstreamMutationCount": 0,
+  "phase455TerminalMutated": false,
+  "phase455T1OrT2Emitted": false,
+  "phase458G3Satisfied": false,
+  "phase458G5Satisfied": false,
+  "humanRulingAuthored": false,
+  "o4Discharged": false,
+  "phase458EvaluationAuthorized": false,
+  "binderLaunchAuthorized": false,
+  "phase458GateSatisfied": false,
+  "samplingAuthorized": false,
+  "productionAuthorized": false,
+  "sourceContractApplicationAllowed": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256Contract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "acceptedContractFieldCount": 0,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "noGevPromotion": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "a7BoundaryHeld": true,
+  "decision": "The exploratory outcome changes across explicitly named assumption partitions. The dependence is localized but not externally adjudicated."
+}

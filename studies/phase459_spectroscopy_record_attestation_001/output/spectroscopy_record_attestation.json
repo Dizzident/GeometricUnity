@@ -1,6 +1,6 @@
 {
   "phaseId": "phase459-spectroscopy-record-attestation",
-  "generatedAt": "2026-07-15T17:50:47.6959693+00:00",
+  "generatedAt": "2026-07-15T18:20:56.6329806+00:00",
   "terminalStatus": "spectroscopy-record-attestation-passed-record-reconciled-canonical",
   "spectroscopyRecordAttestationPassed": true,
   "applicationSubjectKind": "spectroscopy-record-attestation",
@@ -273,7 +273,7 @@
     "baseSignature": "Cl(4,0)-euclidean-slice",
     "spinorUsedAsShiabCarrierNotFiber": true
   },
-  "runtimeSeconds": 0.0296966,
+  "runtimeSeconds": 0.0302922,
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
   "targetBlindConstructionHash": "218aeb42f63ea4a8a2e7b98a111d700aeda9d7944e9377d27d67204fe49a9a68",

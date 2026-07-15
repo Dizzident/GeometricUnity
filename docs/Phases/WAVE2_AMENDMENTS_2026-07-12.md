@@ -143,3 +143,23 @@ modify a committed upstream artifact, satisfy Phase458, authorize production,
 fill a source contract, or be relabeled as confirmatory after inspection. A
 surviving result may motivate a new prospective confirmation checkpoint only.
 Every terminal retains `promotedPhysicalMassClaimCount=0`.
+
+## A7 — Phase455 convention-closure exploration (phases 490–492)
+
+The next machine-executable blocker is Phase455's T3 convention fragility.
+Phase490 classifies the committed zero-momentum eigenspaces and asks whether
+the repository supplies enough generator/projector evidence to derive a
+determinant-prime quotient rather than choose Za, Zb, or Zc. Phase491 evaluates
+the Phase455 terminal over only algebraically reconstructible committed
+bosonic alternatives and records every model, zero-mode, IR, and normalization
+branch. Phase492 consumes the exact prior artifacts under a frozen four-way
+taxonomy: stable null, stable candidate well, dependence localized to named
+assumptions, or underdetermined without external interpretation.
+
+Failure to derive a unique quotient or admissible model family is a valid
+negative result, never an invitation to invent one. All three phases remain in
+Phase484's exploration lane. They do not rewrite Phase455, satisfy Phase458
+G3/G5, author O4 rulings, authorize sampling or production, fill source
+contracts, or support physical-unit claims. Any gate-bearing use requires a
+new prospective confirmation checkpoint and the still-binding Phase458/O4
+contracts. `promotedPhysicalMassClaimCount=0` on every branch.

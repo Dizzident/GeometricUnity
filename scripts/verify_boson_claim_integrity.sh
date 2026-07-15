@@ -264,6 +264,9 @@ const paths = {
   phase487: "studies/phase487_independent_so3_haar_measure_control_001/output/independent_so3_haar_measure_control_summary.json",
   phase488: "studies/phase488_haar_proposal_invariance_control_001/output/haar_proposal_invariance_control_summary.json",
   phase489: "studies/phase489_reduced_sampler_restart_equivalence_001/output/reduced_sampler_restart_equivalence_summary.json",
+  phase490: "studies/phase490_zero_mode_quotient_audit_001/output/zero_mode_quotient_audit_summary.json",
+  phase491: "studies/phase491_committed_bosonic_model_family_sensitivity_001/output/committed_bosonic_model_family_sensitivity_summary.json",
+  phase492: "studies/phase492_phase455_combined_robustness_adjudicator_001/output/phase455_combined_robustness_adjudicator_summary.json",
   phase282: "studies/phase282_branch_local_direct_invariant_census_001/output/branch_local_direct_invariant_census_summary.json",
   phase283: "studies/phase283_legacy_electroweak_bridge_source_survivability_audit_001/output/legacy_electroweak_bridge_source_survivability_audit_summary.json",
   phase284: "studies/phase284_predicted_ratio_alpha_gf_external_closure_diagnostic_001/output/predicted_ratio_alpha_gf_external_closure_diagnostic_summary.json",
@@ -590,6 +593,9 @@ const phase486 = requireFile(paths.phase486);
 const phase487 = requireFile(paths.phase487);
 const phase488 = requireFile(paths.phase488);
 const phase489 = requireFile(paths.phase489);
+const phase490 = requireFile(paths.phase490);
+const phase491 = requireFile(paths.phase491);
+const phase492 = requireFile(paths.phase492);
 const phase282 = requireFile(paths.phase282);
 const phase283 = requireFile(paths.phase283);
 const phase284 = requireFile(paths.phase284);
@@ -5854,6 +5860,25 @@ if (sourceLineageMissing) {
     assert(phase.noGevPromotion === true && phase.promotedPhysicalMassClaimCount === 0, "A6 phases must preserve the zero-promotion boundary.");
   }
   assert(phase101Package?.exploratorySelfAudit?.independentHaarMeasure?.allBatteriesPassed === true && phase101Package?.exploratorySelfAudit?.proposalInvariance?.phase487PrecursorPassed === true && phase101Package?.exploratorySelfAudit?.restartEquivalence?.controlsValid === true, "Phase101 must mirror the A6 robustness tranche.");
+  // Phases490-492 -- Amendment A7 localizes Phase455 fragility without gate translation.
+  assert(phase490.terminalStatus === "zero-mode-quotient-audit-quotient-underdetermined" && phase490.verdictKind === "quotient-underdetermined" && phase490.quotientClassification === "quotient-underdetermined", "Phase490 must preserve the valid underdetermined quotient terminal.");
+  assert(phase490.inputsValid === true && phase490.inputValidation?.spectraReconstructed === true && phase490.reconstruction?.vanishingSineMomentumCount === 4 && phase490.reconstruction?.geometricZeroMomentumCount === 1 && phase490.reconstruction?.latticeDoublerVanishingSineCount === 3, "Phase490 input or independent spectrum reconstruction drifted.");
+  assert(phase490.compatibleGeneratorImageMapCount === 0 && phase490.compatibleK0ProjectorCount === 0 && phase490.generatorImageClassifiedDirectionCount === 0 && phase490.exactButUnclassifiedZeroModeDirectionCountAtGeometricK0 === 56 && phase490.uniqueAdmissibleQuotient === false && phase490.forceUniquenessAttempted === false, "Phase490 must not infer a unique quotient from unclassified kernels.");
+  assert(phase491.terminalStatus === "committed-bosonic-model-family-sensitivity-model-convention-fragile" && phase491.verdictKind === "model-convention-fragile" && phase491.sensitivityClassification === "model-convention-fragile", "Phase491 must preserve its model/convention-fragile terminal.");
+  assert(phase491.inputsValid === true && phase491.committedBosonicModelFamilySensitivityPassed === true && phase491.independentlyRecomputedFromCommittedFormulae === true && phase491.phase455VerdictConsumedAsAnswer === false, "Phase491 input or independent-recomputation boundary drifted.");
+  assert(phase491.admissibleBranchCount === 24 && phase491.summary?.totalRows === 60 && phase491.summary?.validRows === 24 && phase491.summary?.invalidRows === 36 && phase491.summary?.nullRows === 7 && phase491.summary?.candidateWellRows === 17, "Phase491 sensitivity table aggregate drifted.");
+  assert(phase491.allAdmissibleBranchesNull === false && phase491.allAdmissibleBranchesCandidateWell === false && phase491.namedAssumptionPartitionsOutcomes === true && Array.isArray(phase491.namedOutcomePartitionAssumptions) && phase491.namedOutcomePartitionAssumptions.join("|") === "bosonic-model|zero-mode-treatment|fermionic-normalization|axis-orbit", "Phase491 named outcome partition drifted.");
+  assert(phase492.terminalStatus === "phase455-combined-robustness-adjudicator-localized-assumption-dependence" && phase492.verdictKind === "localized-assumption-dependence" && phase492.adjudication?.classification === "localized-assumption-dependence", "Phase492 combined adjudication drifted.");
+  assert(phase492.frozenPrecursors?.phase490?.hashStable === true && phase492.frozenPrecursors?.phase490?.schemaValid === true && phase492.frozenPrecursors?.phase491?.hashStable === true && phase492.frozenPrecursors?.phase491?.schemaValid === true && phase492.precursorSemantics?.invalidPrecursor === false, "Phase492 precursor binding must remain exact and valid.");
+  assert(phase492.precursorSemantics?.uniqueAdmissibleQuotient === false && phase492.precursorSemantics?.stableNull === false && phase492.precursorSemantics?.stableCandidateWell === false && phase492.precursorSemantics?.namedAssumptionPartition === true && phase492.adjudication?.externalInterpretationStillRequired === true, "Phase492 precedence or external-underdetermination boundary drifted.");
+  for (const phase of [phase490, phase491, phase492]) {
+    assert(phase.humanRulingAuthored === false && phase.o4Discharged === false && phase.phase458G3Satisfied === false && phase.phase458G5Satisfied === false && phase.phase458EvaluationAuthorized === false, "A7 phases cannot author O4 or satisfy Phase458.");
+    assert(phase.binderLaunchAuthorized === false && phase.samplingAuthorized === false && phase.productionAuthorized === false, "A7 phases cannot authorize sampling or production.");
+    assert(phase.targetBlindConstruction === true && phase.physicalTargetsConsultedForConstruction === false && phase.sourceContractApplicationAllowed === false && phase.canFillPhase201WzContract === false && phase.canFillPhase201HiggsContract === false && phase.canFillPhase256ObservedFieldExtractionContract === false, "A7 phases must preserve target-blind source-contract closure.");
+    assert(phase.routePromotesWzMasses === false && phase.routePromotesHiggsMass === false && phase.routeCompletesBosonPredictions === false && phase.noGevPromotion === true && phase.promotedPhysicalMassClaimCount === 0, "A7 phases must preserve the zero-promotion boundary.");
+  }
+  assert(phase492.a7BoundaryHeld === true && phase492.phase455TerminalMutated === false && phase492.phase455T1OrT2Emitted === false && phase492.upstreamMutationCount === 0, "Phase492 must preserve the A7 mutation and translation firewall.");
+  assert(phase101Package?.exploratorySelfAudit?.zeroModeQuotientAudit?.quotientClassification === "quotient-underdetermined" && phase101Package?.exploratorySelfAudit?.committedBosonicModelFamilySensitivity?.sensitivityClassification === "model-convention-fragile" && phase101Package?.exploratorySelfAudit?.phase455CombinedRobustnessAdjudicator?.a7BoundaryHeld === true, "Phase101 must mirror the A7 convention-closure tranche.");
   // Phase480 -- implemented fail-closed external human memo intake; no memo is present.
   assert(phase480.skeletonBuilt === false && phase480.zeroPhysicsCompute === true && phase480.intakeImplemented === true && phase480.awaitingImplementation === false, "Phase480 must be the implemented zero-compute external memo intake.");
   assert(phase480.applicationSubjectKind === "o4-physicist-adjudication-intake" && phase480.waveOrder === 4, "Phase480 identity or wave order drifted.");

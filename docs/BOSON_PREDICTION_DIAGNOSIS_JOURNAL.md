@@ -20634,3 +20634,48 @@ the synthetic overturn battery remains 94/94, source deficits remain 15/14,
 and `promotedPhysicalMassClaimCount=0`. External review is still required;
 O4 and Phase458 remain closed, and no sampling or production authorization
 follows.
+
+## 2026-07-15 - Amendment A7: Phase455 convention dependence localized, not closed
+
+The user authorized the next three blocker-resolution experiments as one
+agent-parallel checkpoint. Phase490 independently reconstructed the committed
+fundamental and adjoint spectra to a maximum residual of `4.44e-16`. It found
+four vanishing-sine momentum tuples, of which only `(0,0)` is geometric zero
+momentum and three are lattice doublers. Across the alternative T/D/S
+axis-sector audits, 56 geometric-k0 directions are exact but unclassified.
+The repository contains connection-space generator/projector machinery and a
+fermion-projector consumer, but no compatible generator-image map or k0
+projector for the Phase455 determinant state spaces. Za, Zb, and Zc therefore
+remain scheme, regulator, or algebraic prescriptions. Phase490 records the
+valid negative terminal `quotient-underdetermined`; it does not infer gauge
+status from spectral nullity.
+
+Phase491 admitted only two algebraically reconstructible bosonic restrictions:
+the normalized Phase430 transverse one-loop determinant and the committed
+mixed tree quartic restricted to a single rank-one ray, where that quartic is
+identically zero. It rejected arbitrary determinant rescaling, an invented
+single-ray quartic, the unimplemented control-branch Hessian determinant, and
+a purported source-defined determinant. The frozen target-blind recomputation
+contains 24 valid branches across model, Za/Zc, two committed fermionic
+normalizations, and T/D/S: 7 are null and 17 contain a candidate well. It also
+preserves 36 Zb soft-floor branches as invalid because the committed Phase455
+formula does not define how Phase447's Hessian-relative floor acts on its
+determinant factors. The terminal is
+`committed-bosonic-model-family-sensitivity-model-convention-fragile`.
+
+Phase492 froze and rechecked both precursor byte hashes, validated their
+taxonomies and Phase491 table aggregates, and applied its prospective
+precedence. Because the quotient is underdetermined and the valid sensitivity
+outcomes partition by bosonic model, zero-mode treatment, fermionic
+normalization, and axis orbit, it records
+`phase455-combined-robustness-adjudicator-localized-assumption-dependence`.
+This localizes the blocker but does not resolve the required interpretation.
+
+Targeted traversal and gate validation pass. The mandatory incremental
+checkpoint also passes with 87 steps run and 273 skipped. Phase101 remains
+blocked and Phase202 moves to 280 passed / 3 standing failures. O4 coverage remains 31/31,
+the synthetic overturn battery remains 94/94, source deficits remain 15/14,
+and `promotedPhysicalMassClaimCount=0`. Amendment A7 does not rewrite
+Phase455, satisfy Phase458 G3/G5, discharge O4, authorize Binder/sampling/
+production, fill a source contract, or support any physical-unit claim. Any
+gate-bearing reuse requires a new prospective confirmation checkpoint.

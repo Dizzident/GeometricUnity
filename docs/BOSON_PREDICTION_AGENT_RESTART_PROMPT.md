@@ -65,7 +65,7 @@ input is invalid or drifted. G6 projects 1.5044386598 CPU-weeks under its
 committed n=3..6 n^4-volume model and therefore selects the CPU route; that is
 scheduling eligibility only and authorizes no launch. Phase471 remains open
 L5/L6/L8 with L7 withheld. The O4 engagement remains the human critical path.
-Phase101 stays blocked, Phase202 is 271/3 after targeted validation, the
+Phase101 stays blocked, Phase202 is 280/3 after targeted A7 validation, the
 missing-field counts remain 15/14, and `promotedPhysicalMassClaimCount=0`.
 
 O4 INFRASTRUCTURE (2026-07-15, Phase477): the exact coverage register is
@@ -107,7 +107,30 @@ artifacts, satisfy Phase458, authorize production, fill a source contract, or
 support a physical-unit claim. A surviving result may motivate a new
 prospective confirmation checkpoint but cannot be retrospectively relabeled. Binding plan:
 `docs/Phases/CONVENTION_ROBUSTNESS_TRANCHE_PLAN_2026-07-15.md`. Registry
-487-489 is allocated; 490+ remains unassigned.
+487-489 is allocated; its former 490+ frontier is superseded by Amendment A7
+below.
+
+PHASE455 CONVENTION-CLOSURE EXPLORATION (2026-07-15, Amendment A7;
+Phases490-492): Phase490 independently reconstructs the committed k=0 spectra
+but finds no compatible generator-image map or projector that classifies the
+determinant kernels as gauge volume. It therefore records
+`quotient-underdetermined`, not a forced quotient. Phase491 admits only two
+reconstructible bosonic restrictions and evaluates 24 valid target-blind
+branches: 7 are null and 17 contain a candidate well. Another 36 advertised
+soft-floor rows remain explicitly invalid because no committed map applies
+the Phase447 Hessian-relative floor to the determinant factors. Its terminal
+is `model-convention-fragile`, with outcome dependence localized to bosonic
+model, zero-mode treatment, fermionic normalization, and axis orbit. Phase492
+binds both exact artifacts and records `localized-assumption-dependence`.
+These are valid negative exploratory terminals: they do not rewrite Phase455,
+satisfy Phase458 G3/G5, discharge O4, authorize sampling/production, fill a
+source contract, or support a physical-unit claim. Gate-bearing reuse requires
+a new prospective confirmation checkpoint and the still-binding external
+interpretation. Binding plan:
+`docs/Phases/PHASE455_CONVENTION_CLOSURE_PLAN_2026-07-15.md`. Registry 490-492
+is allocated; 493+ remains unassigned. Mandatory incremental validation passed
+with 87 steps run and 273 skipped; Phase202 is 280/3 and integrity preserves
+the 15/14 deficits and zero promoted claims.
 
 PHASE458 CONTRACT (2026-07-15, Phase478): the G1-G6 four-state schema, exact
 upstream terminal allowlists, source bindings, outcome precedence, and G6

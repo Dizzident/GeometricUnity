@@ -241,6 +241,9 @@ const string Phase486Path = "studies/phase486_committed_evidence_sensitivity_tri
 const string Phase487Path = "studies/phase487_independent_so3_haar_measure_control_001/output/independent_so3_haar_measure_control_summary.json";
 const string Phase488Path = "studies/phase488_haar_proposal_invariance_control_001/output/haar_proposal_invariance_control_summary.json";
 const string Phase489Path = "studies/phase489_reduced_sampler_restart_equivalence_001/output/reduced_sampler_restart_equivalence_summary.json";
+const string Phase490Path = "studies/phase490_zero_mode_quotient_audit_001/output/zero_mode_quotient_audit_summary.json";
+const string Phase491Path = "studies/phase491_committed_bosonic_model_family_sensitivity_001/output/committed_bosonic_model_family_sensitivity_summary.json";
+const string Phase492Path = "studies/phase492_phase455_combined_robustness_adjudicator_001/output/phase455_combined_robustness_adjudicator_summary.json";
 const string Phase444Path = "studies/phase444_mode_volume_scaled_saturation_probe_001/output/mode_volume_scaled_saturation_probe_summary.json";
 const string Phase443Path = "studies/phase443_joint_effective_potential_saturation_probe_001/output/joint_effective_potential_saturation_probe_summary.json";
 const string Phase442Path = "studies/phase442_joint_omega_theta_hessian_degree_probe_001/output/joint_omega_theta_hessian_degree_probe_summary.json";
@@ -533,6 +536,9 @@ using var phase486 = File.Exists(Phase486Path) ? JsonDocument.Parse(File.ReadAll
 using var phase487 = File.Exists(Phase487Path) ? JsonDocument.Parse(File.ReadAllText(Phase487Path)) : null;
 using var phase488 = File.Exists(Phase488Path) ? JsonDocument.Parse(File.ReadAllText(Phase488Path)) : null;
 using var phase489 = File.Exists(Phase489Path) ? JsonDocument.Parse(File.ReadAllText(Phase489Path)) : null;
+using var phase490 = File.Exists(Phase490Path) ? JsonDocument.Parse(File.ReadAllText(Phase490Path)) : null;
+using var phase491 = File.Exists(Phase491Path) ? JsonDocument.Parse(File.ReadAllText(Phase491Path)) : null;
+using var phase492 = File.Exists(Phase492Path) ? JsonDocument.Parse(File.ReadAllText(Phase492Path)) : null;
 using var phase282 = File.Exists(Phase282Path) ? JsonDocument.Parse(File.ReadAllText(Phase282Path)) : null;
 using var phase283 = File.Exists(Phase283Path) ? JsonDocument.Parse(File.ReadAllText(Phase283Path)) : null;
 using var phase284 = File.Exists(Phase284Path) ? JsonDocument.Parse(File.ReadAllText(Phase284Path)) : null;
@@ -6974,6 +6980,26 @@ var reducedSamplerRestartEquivalencePassed = phase489 is not null
     && JsonBool(phase489CrossProposal, "crossProposalAgreement") is true
     && JsonBool(phase489.RootElement, "o4Discharged") is false
     && JsonInt(phase489.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var zeroModeQuotientAuditPassed = phase490 is not null
+    && JsonBool(phase490.RootElement, "inputsValid") is true
+    && JsonString(phase490.RootElement, "quotientClassification") is "unique-quotient-derived" or "quotient-family-derived" or "quotient-underdetermined"
+    && JsonBool(phase490.RootElement, "o4Discharged") is false
+    && JsonBool(phase490.RootElement, "phase458EvaluationAuthorized") is false
+    && JsonInt(phase490.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var committedBosonicModelFamilySensitivityPassed = phase491 is not null
+    && JsonBool(phase491.RootElement, "inputsValid") is true
+    && JsonInt(phase491.RootElement, "admissibleBranchCount") > 0
+    && JsonString(phase491.RootElement, "sensitivityClassification") is "stable-null" or "stable-candidate-well" or "model-convention-fragile"
+    && JsonBool(phase491.RootElement, "o4Discharged") is false
+    && JsonBool(phase491.RootElement, "phase458EvaluationAuthorized") is false
+    && JsonInt(phase491.RootElement, "promotedPhysicalMassClaimCount") == 0;
+var phase455CombinedRobustnessAdjudicatorPassed = phase492 is not null
+    && JsonString(phase492.RootElement, "verdictKind") is "stable-null" or "stable-candidate-well" or "localized-assumption-dependence" or "underdetermined-external-interpretation"
+    && JsonBool(phase492.RootElement, "a7BoundaryHeld") is true
+    && JsonBool(phase492.RootElement, "o4Discharged") is false
+    && JsonBool(phase492.RootElement, "phase458G3Satisfied") is false
+    && JsonBool(phase492.RootElement, "phase458G5Satisfied") is false
+    && JsonInt(phase492.RootElement, "promotedPhysicalMassClaimCount") == 0;
 var branchLocalDirectInvariantCensusMaterialized = phase282 is not null;
 var branchLocalDirectInvariantCensusPassed = branchLocalDirectInvariantCensusMaterialized
     && JsonBool(phase282!.RootElement, "branchLocalInvariantCensusPassed") is true
@@ -9780,6 +9806,9 @@ var checklist = new[]
     new ObjectiveChecklistItem("independent-so3-haar-measure-control", "Check the normalized SO(3) measure with an independent deterministic construction without discharging O4.", independentSo3HaarMeasureControlPassed ? "passed" : "failed", phase487 is null ? "Phase487 artifact not materialized" : JsonString(phase487.RootElement, "decision") ?? "missing decision", Phase487Path),
     new ObjectiveChecklistItem("haar-proposal-invariance-control", "Compare four independently constructed reduced proposal families against frozen invariance and detailed-balance controls.", haarProposalInvarianceControlPassed ? "passed" : "failed", phase488 is null ? "Phase488 artifact not materialized" : JsonString(phase488.RootElement, "decision") ?? "missing decision", Phase488Path),
     new ObjectiveChecklistItem("reduced-sampler-restart-equivalence", "Require exact deterministic restart equality separately from cross-proposal statistical agreement.", reducedSamplerRestartEquivalencePassed ? "passed" : "failed", phase489 is null ? "Phase489 artifact not materialized" : JsonString(phase489.RootElement, "decision") ?? "missing decision", Phase489Path),
+    new ObjectiveChecklistItem("zero-mode-quotient-audit", "Classify whether committed zero-mode evidence derives a quotient without inventing a symmetry interpretation.", zeroModeQuotientAuditPassed ? "passed" : "failed", phase490 is null ? "Phase490 artifact not materialized" : JsonString(phase490.RootElement, "decision") ?? "missing decision", Phase490Path),
+    new ObjectiveChecklistItem("committed-bosonic-model-family-sensitivity", "Recompute the target-blind terminal over only reconstructible committed bosonic-model branches while preserving invalid rows.", committedBosonicModelFamilySensitivityPassed ? "passed" : "failed", phase491 is null ? "Phase491 artifact not materialized" : JsonString(phase491.RootElement, "decision") ?? "missing decision", Phase491Path),
+    new ObjectiveChecklistItem("phase455-combined-robustness-adjudicator", "Apply the frozen A7 precedence without translating exploration into Phase455, Phase458, or O4 evidence.", phase455CombinedRobustnessAdjudicatorPassed ? "passed" : "failed", phase492 is null ? "Phase492 artifact not materialized" : JsonString(phase492.RootElement, "decision") ?? "missing decision", Phase492Path),
     new ObjectiveChecklistItem(
         "branch-local-direct-invariant-census-materialized",
         "Search repaired branch-local direct invariants for a missed target-independent W/Z source candidate.",

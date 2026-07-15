@@ -577,6 +577,9 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath.Contains("studies/phase487_independent_so3_haar_measure_control_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase488_haar_proposal_invariance_control_001/", StringComparison.Ordinal)
     || normalizedPath.Contains("studies/phase489_reduced_sampler_restart_equivalence_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase490_zero_mode_quotient_audit_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase491_committed_bosonic_model_family_sensitivity_001/", StringComparison.Ordinal)
+    || normalizedPath.Contains("studies/phase492_phase455_combined_robustness_adjudicator_001/", StringComparison.Ordinal)
     || normalizedPath == "studies/phase101_boson_prediction_package_001/Program.cs"
     || normalizedPath == "studies/phase202_boson_objective_completion_audit_001/Program.cs"
     || normalizedPath == "studies/phase204_boson_source_lineage_candidate_scan_001/Program.cs"
@@ -660,8 +663,12 @@ static bool IsGeneratedOrCurrentPhaseFile(string normalizedPath) =>
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P487.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P488.md"
     || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P489.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P490.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P491.md"
+    || normalizedPath == "docs/Phases/Implementation/IMPLEMENTATION_P492.md"
     || normalizedPath == "docs/Phases/EXPLORATORY_SELF_AUDIT_PLAN_2026-07-15.md"
-    || normalizedPath == "docs/Phases/CONVENTION_ROBUSTNESS_TRANCHE_PLAN_2026-07-15.md";
+    || normalizedPath == "docs/Phases/CONVENTION_ROBUSTNESS_TRANCHE_PLAN_2026-07-15.md"
+    || normalizedPath == "docs/Phases/PHASE455_CONVENTION_CLOSURE_PLAN_2026-07-15.md";
 
 static bool? JsonBool(JsonElement element, string propertyName) =>
     element.TryGetProperty(propertyName, out var value) && (value.ValueKind == JsonValueKind.True || value.ValueKind == JsonValueKind.False)

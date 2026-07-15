@@ -14,7 +14,8 @@ back, NO new phase directory may be created outside this table.
 | 477-483 | Shared Wave-2 blocker-resolution extension (A4) | 477-483 allocated in strict execution-priority order to the seven A4 fail-closed infrastructure/intake/scout phases; no number in this block may be repurposed |
 | 484-486 | Shared exploratory self-audit extension (A5) | 484 governance firewall; 485 assumption/falsifier census; 486 committed-evidence sensitivity triage |
 | 487-489 | Shared convention-robustness extension (A6) | 487 independent SO(3) Haar measure control; 488 proposal invariance control; 489 reduced sampler restart equivalence |
-| 490+ | Unassigned - extend this registry before use | - |
+| 490-492 | Shared Phase455 convention-closure extension (A7) | 490 zero-mode quotient audit; 491 committed bosonic-model family sensitivity; 492 prospective combined robustness adjudicator |
+| 493+ | Unassigned - extend this registry before use | - |
 
 Rules: (1) a team takes the LOWEST free number in its own block;
 (2) cross-team phases take the number of the OWNING team per the

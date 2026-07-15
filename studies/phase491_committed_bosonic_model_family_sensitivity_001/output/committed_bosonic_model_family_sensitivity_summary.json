@@ -1,0 +1,1252 @@
+{
+  "phaseId": "phase491-committed-bosonic-model-family-sensitivity",
+  "generatedAt": "2026-07-15T18:20:58.3772747+00:00",
+  "terminalStatus": "committed-bosonic-model-family-sensitivity-model-convention-fragile",
+  "verdictKind": "model-convention-fragile",
+  "inputsValid": true,
+  "sensitivityClassification": "model-convention-fragile",
+  "admissibleBranchCount": 24,
+  "allAdmissibleBranchesNull": false,
+  "allAdmissibleBranchesCandidateWell": false,
+  "namedAssumptionPartitionsOutcomes": true,
+  "namedOutcomePartitionAssumptions": [
+    "bosonic-model",
+    "zero-mode-treatment",
+    "fermionic-normalization",
+    "axis-orbit"
+  ],
+  "decisionContractSha256": "f38efd7771cbbf1c4cbcb1edaa899df6b5fa194ab816cd73d6cd6a4554dfb62e",
+  "taxonomy": [
+    "stable-null",
+    "stable-candidate-well",
+    "model-convention-fragile",
+    "invalid-inputs"
+  ],
+  "committedBosonicModelFamilySensitivityPassed": true,
+  "frozenSensitivityContractSha256": "f38efd7771cbbf1c4cbcb1edaa899df6b5fa194ab816cd73d6cd6a4554dfb62e",
+  "frozenConfiguration": {
+    "derivedFundamentalCount": 4,
+    "scanIntervals": 40000,
+    "bisectionIterations": 70,
+    "domainLower": 1E-07,
+    "zeroTolerance": 1E-18,
+    "derivativeZeroTolerance": 1E-09,
+    "rootMergeTolerance": 1E-06,
+    "depthTolerance": 1E-08,
+    "axes": [
+      "T",
+      "D",
+      "S"
+    ],
+    "targetBlindTerminalDefinition": "candidate iff an interior stationary point changes dV/dt from negative to positive and V(t*)-V(0)\u003C-depthTolerance; otherwise null; nonfinite or unresolved rows remain invalid"
+  },
+  "committedInputChecks": [
+    {
+      "id": "file-present:studies/phase428_fermion_loop_block_selection_no_go_probe_001/Program.cs",
+      "passed": true,
+      "detail": "present"
+    },
+    {
+      "id": "file-present:studies/phase430_net_one_loop_direction_selection_probe_001/Program.cs",
+      "passed": true,
+      "detail": "present"
+    },
+    {
+      "id": "file-present:studies/phase455_exact_fermionic_backreaction_probe_001/Program.cs",
+      "passed": true,
+      "detail": "present"
+    },
+    {
+      "id": "file-present:studies/phase428_fermion_loop_block_selection_no_go_probe_001/output/fermion_loop_block_selection_no_go_probe_summary.json",
+      "passed": true,
+      "detail": "present"
+    },
+    {
+      "id": "file-present:studies/phase430_net_one_loop_direction_selection_probe_001/output/net_one_loop_direction_selection_probe_summary.json",
+      "passed": true,
+      "detail": "present"
+    },
+    {
+      "id": "file-present:studies/phase455_exact_fermionic_backreaction_probe_001/output/exact_fermionic_backreaction_probe_summary.json",
+      "passed": true,
+      "detail": "present"
+    },
+    {
+      "id": "phase428-fermion-prefactor",
+      "passed": true,
+      "detail": "committed -1/2 formula"
+    },
+    {
+      "id": "phase430-boson-polarizations",
+      "passed": true,
+      "detail": "committed \u002B1/2 x 2 formula"
+    },
+    {
+      "id": "phase430-rank-one-tree-restriction",
+      "passed": true,
+      "detail": "committed mixed quartic formula"
+    },
+    {
+      "id": "phase455-derived-count",
+      "passed": true,
+      "detail": "derived active fundamental count"
+    },
+    {
+      "id": "phase455-floor-not-implemented",
+      "passed": true,
+      "detail": "floor declaration has no determinant-specific value implementation"
+    },
+    {
+      "id": "artifact-phase-ids",
+      "passed": true,
+      "detail": "exact phase identities; verdict fields not consumed"
+    },
+    {
+      "id": "committed-byte-hashes",
+      "passed": true,
+      "detail": "all six prospectively pinned source/artifact hashes match"
+    }
+  ],
+  "committedInputHashes": {
+    "phase428SourceSha256": "9d273970eb10675db02d474f3ca62e36a07788ea6c665414f93bae1e3181e998",
+    "phase430SourceSha256": "890c3748b0f1b5b389ed87ea0a1826e57020940176531293791943b4a27908f0",
+    "phase455SourceSha256": "6278d7c502d613c3f5c87fe9db13c54bc0f740b00978d0c0688c23e401589994",
+    "phase428ArtifactSha256": "0b3361ab34e925e75e3b722bc25293e8ed935a35697cb19c9a657c6db26596bb",
+    "phase430ArtifactSha256": "b60b28eb46e55d5978c8cc372f3dc62a5e453dca3ab8243f25c1506bccc0e42e",
+    "phase455ArtifactSha256": "021d3b92ff25cd86003c08590f8c7943ca74b070473f056bf47e43d1e749bfbc"
+  },
+  "modelAdmissibility": {
+    "admitted": [
+      {
+        "id": "phase430-transverse-one-loop-determinant",
+        "bosonCoefficient": 1,
+        "admitted": true,
+        "provenance": "Phase430 Program.cs:228-244; \u002B1/2 times two polarizations gives \u002B1 per log factor; adjoint squared masses are explicit."
+      },
+      {
+        "id": "phase430-mixed-tree-quartic-rank-one-restriction",
+        "bosonCoefficient": 0,
+        "admitted": true,
+        "provenance": "Phase430 Program.cs:423-478; kappa*(a*b)^2*||[U,V]||^2 with kappa=1 is identically zero on either single rank-one axis."
+      }
+    ],
+    "rejected": [
+      {
+        "id": "arbitrary-rescaling-of-phase430-determinant",
+        "reason": "No alternate bosonic determinant prefactor is committed."
+      },
+      {
+        "id": "invented-positive-single-ray-quartic",
+        "reason": "The committed mixed quartic is proportional to (a*b)^2 and vanishes on a single ray; no t^4 coefficient is supplied."
+      },
+      {
+        "id": "control-branch-hessian-determinant",
+        "reason": "Phase430 explicitly records bosonicMassModelTiedToControlBranchHessian=false."
+      },
+      {
+        "id": "source-defined-bosonic-fluctuation-determinant",
+        "reason": "Phase430 explicitly records sourceDefinesBosonicFluctuationDeterminant=false."
+      }
+    ],
+    "rule": "admit only a bosonic formula and normalization reconstructible from committed Phase428/430/455 source or artifacts"
+  },
+  "zeroModeAndIrMenu": {
+    "independentlyExpressible": [
+      {
+        "id": "Za",
+        "includeZeroMomentum": false,
+        "definition": "exclude every eps^2=0 momentum symmetrically from bosonic and fermionic sums",
+        "independentlyExpressible": true
+      },
+      {
+        "id": "Zc",
+        "includeZeroMomentum": true,
+        "definition": "keep eps^2=0 and exclude only exact factors at the 1e-18 threshold",
+        "independentlyExpressible": true
+      }
+    ],
+    "preservedInvalidFloorRows": [
+      {
+        "zeroMode": "Zb",
+        "floorRel": 1E-05,
+        "status": "invalid",
+        "reason": "the committed code does not define how this Hessian-relative floor acts on determinant log factors"
+      },
+      {
+        "zeroMode": "Zb",
+        "floorRel": 0.0001,
+        "status": "invalid",
+        "reason": "the committed code does not define how this Hessian-relative floor acts on determinant log factors"
+      },
+      {
+        "zeroMode": "Zb",
+        "floorRel": 0.001,
+        "status": "invalid",
+        "reason": "the committed code does not define how this Hessian-relative floor acts on determinant log factors"
+      }
+    ]
+  },
+  "fermionicNormalizationTable": [
+    {
+      "id": "committed-minus-one-half",
+      "prefactor": -0.5,
+      "provenance": "Phase428:327-344 and Phase430:219-225"
+    },
+    {
+      "id": "phase455-preregistration-literal-minus-one",
+      "prefactor": -1,
+      "provenance": "Phase455:30-38 records this explicit normalization robustness arm"
+    }
+  ],
+  "sensitivityTable": [
+    {
+      "modelId": "phase430-transverse-one-loop-determinant",
+      "zeroMode": "Za",
+      "floorRel": null,
+      "fermionicNormalization": "committed-minus-one-half",
+      "axis": "T",
+      "status": "null",
+      "tMax": 1.99,
+      "stationaryPointCount": 2,
+      "stationaryPoints": [
+        {
+          "t": 0.9317318998285895,
+          "kind": "maximum",
+          "relativePotential": 11.313148474287289,
+          "negativeDepthMinimum": false
+        },
+        {
+          "t": 1.6190031173081891,
+          "kind": "minimum",
+          "relativePotential": 1.9204495186765032,
+          "negativeDepthMinimum": false
+        }
+      ],
+      "hasNegativeDepthWell": false,
+      "invalidReason": null
+    },
+    {
+      "modelId": "phase430-transverse-one-loop-determinant",
+      "zeroMode": "Za",
+      "floorRel": null,
+      "fermionicNormalization": "committed-minus-one-half",
+      "axis": "D",
+      "status": "null",
+      "tMax": 1.99,
+      "stationaryPointCount": 2,
+      "stationaryPoints": [
+        {
+          "t": 0.9317318998285895,
+          "kind": "maximum",
+          "relativePotential": 11.313148474287289,
+          "negativeDepthMinimum": false
+        },
+        {
+          "t": 1.6190031173081891,
+          "kind": "minimum",
+          "relativePotential": 1.9204495186765032,
+          "negativeDepthMinimum": false
+        }
+      ],
+      "hasNegativeDepthWell": false,
+      "invalidReason": null
+    },
+    {
+      "modelId": "phase430-transverse-one-loop-determinant",
+      "zeroMode": "Za",
+      "floorRel": null,
+      "fermionicNormalization": "committed-minus-one-half",
+      "axis": "S",
+      "status": "null",
+      "tMax": 1.73,
+      "stationaryPointCount": 2,
+      "stationaryPoints": [
+        {
+          "t": 0.9760055572296362,
+          "kind": "maximum",
+          "relativePotential": 11.604893287203662,
+          "negativeDepthMinimum": false
+        },
+        {
+          "t": 1.4176724559055538,
+          "kind": "minimum",
+          "relativePotential": 9.144623161037376,
+          "negativeDepthMinimum": false
+        }
+      ],
+      "hasNegativeDepthWell": false,
+      "invalidReason": null
+    },
+    {
+      "modelId": "phase430-transverse-one-loop-determinant",
+      "zeroMode": "Za",
+      "floorRel": null,
+      "fermionicNormalization": "phase455-preregistration-literal-minus-one",
+      "axis": "T",
+      "status": "candidate-well",
+      "tMax": 1.99,
+      "stationaryPointCount": 2,
+      "stationaryPoints": [
+        {
+          "t": 0.6658685754686655,
+          "kind": "maximum",
+          "relativePotential": 6.350779038906198,
+          "negativeDepthMinimum": false
+        },
+        {
+          "t": 1.698300188210148,
+          "kind": "minimum",
+          "relativePotential": -45.86072441357378,
+          "negativeDepthMinimum": true
+        }
+      ],
+      "hasNegativeDepthWell": true,
+      "invalidReason": null
+    },
+    {
+      "modelId": "phase430-transverse-one-loop-determinant",
+      "zeroMode": "Za",
+      "floorRel": null,
+      "fermionicNormalization": "phase455-preregistration-literal-minus-one",
+      "axis": "D",
+      "status": "candidate-well",
+      "tMax": 1.99,
+      "stationaryPointCount": 2,
+      "stationaryPoints": [
+        {
+          "t": 0.6658685754686655,
+          "kind": "maximum",
+          "relativePotential": 6.350779038906198,
+          "negativeDepthMinimum": false
+        },
+        {
+          "t": 1.698300188210148,
+          "kind": "minimum",
+          "relativePotential": -45.86072441357378,
+          "negativeDepthMinimum": true
+        }
+      ],
+      "hasNegativeDepthWell": true,
+      "invalidReason": null
+    },
+    {
+      "modelId": "phase430-transverse-one-loop-determinant",
+      "zeroMode": "Za",
+      "floorRel": null,
+      "fermionicNormalization": "phase455-preregistration-literal-minus-one",
+      "axis": "S",
+      "status": "candidate-well",
+      "tMax": 1.73,
+      "stationaryPointCount": 2,
+      "stationaryPoints": [
+        {
+          "t": 0.6719778859865522,
+          "kind": "maximum",
+          "relativePotential": 6.3856238940586625,
+          "negativeDepthMinimum": false
+        },
+        {
+          "t": 1.513956337002523,
+          "kind": "minimum",
+          "relativePotential": -22.162475999992857,
+          "negativeDepthMinimum": true
+        }
+      ],
+      "hasNegativeDepthWell": true,
+      "invalidReason": null
+    },
+    {
+      "modelId": "phase430-transverse-one-loop-determinant",
+      "zeroMode": "Zc",
+      "floorRel": null,
+      "fermionicNormalization": "committed-minus-one-half",
+      "axis": "T",
+      "status": "candidate-well",
+      "tMax": 1.99,
+      "stationaryPointCount": 1,
+      "stationaryPoints": [
+        {
+          "t": 1.758137356533949,
+          "kind": "minimum",
+          "relativePotential": -18.408321664481644,
+          "negativeDepthMinimum": true
+        }
+      ],
+      "hasNegativeDepthWell": true,
+      "invalidReason": null
+    },
+    {
+      "modelId": "phase430-transverse-one-loop-determinant",
+      "zeroMode": "Zc",
+      "floorRel": null,
+      "fermionicNormalization": "committed-minus-one-half",
+      "axis": "D",
+      "status": "candidate-well",
+      "tMax": 1.99,
+      "stationaryPointCount": 1,
+      "stationaryPoints": [
+        {
+          "t": 1.758137356533949,
+          "kind": "minimum",
+          "relativePotential": -18.408321664481644,
+          "negativeDepthMinimum": true
+        }
+      ],
+      "hasNegativeDepthWell": true,
+      "invalidReason": null
+    },
+    {
+      "modelId": "phase430-transverse-one-loop-determinant",
+      "zeroMode": "Zc",
+      "floorRel": null,
+      "fermionicNormalization": "committed-minus-one-half",
+      "axis": "S",
+      "status": "null",
+      "tMax": 1.73,
+      "stationaryPointCount": 1,
+      "stationaryPoints": [
+        {
+          "t": 1.6304201273050172,
+          "kind": "minimum",
+          "relativePotential": 60.26220999024437,
+          "negativeDepthMinimum": false
+        }
+      ],
+      "hasNegativeDepthWell": false,
+      "invalidReason": null
+    },
+    {
+      "modelId": "phase430-transverse-one-loop-determinant",
+      "zeroMode": "Zc",
+      "floorRel": null,
+      "fermionicNormalization": "phase455-preregistration-literal-minus-one",
+      "axis": "T",
+      "status": "candidate-well",
+      "tMax": 1.99,
+      "stationaryPointCount": 1,
+      "stationaryPoints": [
+        {
+          "t": 1.8059168357697835,
+          "kind": "minimum",
+          "relativePotential": -97.01239157817822,
+          "negativeDepthMinimum": true
+        }
+      ],
+      "hasNegativeDepthWell": true,
+      "invalidReason": null
+    },
+    {
+      "modelId": "phase430-transverse-one-loop-determinant",
+      "zeroMode": "Zc",
+      "floorRel": null,
+      "fermionicNormalization": "phase455-preregistration-literal-minus-one",
+      "axis": "D",
+      "status": "candidate-well",
+      "tMax": 1.99,
+      "stationaryPointCount": 1,
+      "stationaryPoints": [
+        {
+          "t": 1.8059168357697835,
+          "kind": "minimum",
+          "relativePotential": -97.01239157817822,
+          "negativeDepthMinimum": true
+        }
+      ],
+      "hasNegativeDepthWell": true,
+      "invalidReason": null
+    },
+    {
+      "modelId": "phase430-transverse-one-loop-determinant",
+      "zeroMode": "Zc",
+      "floorRel": null,
+      "fermionicNormalization": "phase455-preregistration-literal-minus-one",
+      "axis": "S",
+      "status": "null",
+      "tMax": 1.73,
+      "stationaryPointCount": 1,
+      "stationaryPoints": [
+        {
+          "t": 1.64540791827109,
+          "kind": "minimum",
+          "relativePotential": 62.89294381337932,
+          "negativeDepthMinimum": false
+        }
+      ],
+      "hasNegativeDepthWell": false,
+      "invalidReason": null
+    },
+    {
+      "modelId": "phase430-mixed-tree-quartic-rank-one-restriction",
+      "zeroMode": "Za",
+      "floorRel": null,
+      "fermionicNormalization": "committed-minus-one-half",
+      "axis": "T",
+      "status": "candidate-well",
+      "tMax": 1.99,
+      "stationaryPointCount": 1,
+      "stationaryPoints": [
+        {
+          "t": 1.747870265009361,
+          "kind": "minimum",
+          "relativePotential": -49.0392598815351,
+          "negativeDepthMinimum": true
+        }
+      ],
+      "hasNegativeDepthWell": true,
+      "invalidReason": null
+    },
+    {
+      "modelId": "phase430-mixed-tree-quartic-rank-one-restriction",
+      "zeroMode": "Za",
+      "floorRel": null,
+      "fermionicNormalization": "committed-minus-one-half",
+      "axis": "D",
+      "status": "candidate-well",
+      "tMax": 1.99,
+      "stationaryPointCount": 1,
+      "stationaryPoints": [
+        {
+          "t": 1.747870265009361,
+          "kind": "minimum",
+          "relativePotential": -49.0392598815351,
+          "negativeDepthMinimum": true
+        }
+      ],
+      "hasNegativeDepthWell": true,
+      "invalidReason": null
+    },
+    {
+      "modelId": "phase430-mixed-tree-quartic-rank-one-restriction",
+      "zeroMode": "Za",
+      "floorRel": null,
+      "fermionicNormalization": "committed-minus-one-half",
+      "axis": "S",
+      "status": "candidate-well",
+      "tMax": 1.73,
+      "stationaryPointCount": 2,
+      "stationaryPoints": [
+        {
+          "t": 5.506273971124803E-06,
+          "kind": "degenerate-or-unresolved",
+          "relativePotential": 7.993605777301127E-15,
+          "negativeDepthMinimum": false
+        },
+        {
+          "t": 1.5603462381410518,
+          "kind": "minimum",
+          "relativePotential": -32.50884362360141,
+          "negativeDepthMinimum": true
+        }
+      ],
+      "hasNegativeDepthWell": true,
+      "invalidReason": null
+    },
+    {
+      "modelId": "phase430-mixed-tree-quartic-rank-one-restriction",
+      "zeroMode": "Za",
+      "floorRel": null,
+      "fermionicNormalization": "phase455-preregistration-literal-minus-one",
+      "axis": "T",
+      "status": "candidate-well",
+      "tMax": 1.99,
+      "stationaryPointCount": 1,
+      "stationaryPoints": [
+        {
+          "t": 1.747870265009361,
+          "kind": "minimum",
+          "relativePotential": -98.0785197630702,
+          "negativeDepthMinimum": true
+        }
+      ],
+      "hasNegativeDepthWell": true,
+      "invalidReason": null
+    },
+    {
+      "modelId": "phase430-mixed-tree-quartic-rank-one-restriction",
+      "zeroMode": "Za",
+      "floorRel": null,
+      "fermionicNormalization": "phase455-preregistration-literal-minus-one",
+      "axis": "D",
+      "status": "candidate-well",
+      "tMax": 1.99,
+      "stationaryPointCount": 1,
+      "stationaryPoints": [
+        {
+          "t": 1.747870265009361,
+          "kind": "minimum",
+          "relativePotential": -98.0785197630702,
+          "negativeDepthMinimum": true
+        }
+      ],
+      "hasNegativeDepthWell": true,
+      "invalidReason": null
+    },
+    {
+      "modelId": "phase430-mixed-tree-quartic-rank-one-restriction",
+      "zeroMode": "Za",
+      "floorRel": null,
+      "fermionicNormalization": "phase455-preregistration-literal-minus-one",
+      "axis": "S",
+      "status": "candidate-well",
+      "tMax": 1.73,
+      "stationaryPointCount": 2,
+      "stationaryPoints": [
+        {
+          "t": 5.506273971124803E-06,
+          "kind": "degenerate-or-unresolved",
+          "relativePotential": 1.5987211554602254E-14,
+          "negativeDepthMinimum": false
+        },
+        {
+          "t": 1.5603462381410518,
+          "kind": "minimum",
+          "relativePotential": -65.01768724720282,
+          "negativeDepthMinimum": true
+        }
+      ],
+      "hasNegativeDepthWell": true,
+      "invalidReason": null
+    },
+    {
+      "modelId": "phase430-mixed-tree-quartic-rank-one-restriction",
+      "zeroMode": "Zc",
+      "floorRel": null,
+      "fermionicNormalization": "committed-minus-one-half",
+      "axis": "T",
+      "status": "candidate-well",
+      "tMax": 1.99,
+      "stationaryPointCount": 1,
+      "stationaryPoints": [
+        {
+          "t": 1.837621079321528,
+          "kind": "minimum",
+          "relativePotential": -79.90186181357176,
+          "negativeDepthMinimum": true
+        }
+      ],
+      "hasNegativeDepthWell": true,
+      "invalidReason": null
+    },
+    {
+      "modelId": "phase430-mixed-tree-quartic-rank-one-restriction",
+      "zeroMode": "Zc",
+      "floorRel": null,
+      "fermionicNormalization": "committed-minus-one-half",
+      "axis": "D",
+      "status": "candidate-well",
+      "tMax": 1.99,
+      "stationaryPointCount": 1,
+      "stationaryPoints": [
+        {
+          "t": 1.837621079321528,
+          "kind": "minimum",
+          "relativePotential": -79.90186181357176,
+          "negativeDepthMinimum": true
+        }
+      ],
+      "hasNegativeDepthWell": true,
+      "invalidReason": null
+    },
+    {
+      "modelId": "phase430-mixed-tree-quartic-rank-one-restriction",
+      "zeroMode": "Zc",
+      "floorRel": null,
+      "fermionicNormalization": "committed-minus-one-half",
+      "axis": "S",
+      "status": "null",
+      "tMax": 1.73,
+      "stationaryPointCount": 1,
+      "stationaryPoints": [
+        {
+          "t": 1.6565144502538214,
+          "kind": "minimum",
+          "relativePotential": 2.273886444603348,
+          "negativeDepthMinimum": false
+        }
+      ],
+      "hasNegativeDepthWell": false,
+      "invalidReason": null
+    },
+    {
+      "modelId": "phase430-mixed-tree-quartic-rank-one-restriction",
+      "zeroMode": "Zc",
+      "floorRel": null,
+      "fermionicNormalization": "phase455-preregistration-literal-minus-one",
+      "axis": "T",
+      "status": "candidate-well",
+      "tMax": 1.99,
+      "stationaryPointCount": 1,
+      "stationaryPoints": [
+        {
+          "t": 1.837621079321528,
+          "kind": "minimum",
+          "relativePotential": -159.8037236271435,
+          "negativeDepthMinimum": true
+        }
+      ],
+      "hasNegativeDepthWell": true,
+      "invalidReason": null
+    },
+    {
+      "modelId": "phase430-mixed-tree-quartic-rank-one-restriction",
+      "zeroMode": "Zc",
+      "floorRel": null,
+      "fermionicNormalization": "phase455-preregistration-literal-minus-one",
+      "axis": "D",
+      "status": "candidate-well",
+      "tMax": 1.99,
+      "stationaryPointCount": 1,
+      "stationaryPoints": [
+        {
+          "t": 1.837621079321528,
+          "kind": "minimum",
+          "relativePotential": -159.8037236271435,
+          "negativeDepthMinimum": true
+        }
+      ],
+      "hasNegativeDepthWell": true,
+      "invalidReason": null
+    },
+    {
+      "modelId": "phase430-mixed-tree-quartic-rank-one-restriction",
+      "zeroMode": "Zc",
+      "floorRel": null,
+      "fermionicNormalization": "phase455-preregistration-literal-minus-one",
+      "axis": "S",
+      "status": "null",
+      "tMax": 1.73,
+      "stationaryPointCount": 1,
+      "stationaryPoints": [
+        {
+          "t": 1.6565144502538214,
+          "kind": "minimum",
+          "relativePotential": 4.547772889206696,
+          "negativeDepthMinimum": false
+        }
+      ],
+      "hasNegativeDepthWell": false,
+      "invalidReason": null
+    },
+    {
+      "modelId": "phase430-transverse-one-loop-determinant",
+      "zeroMode": "Zb",
+      "floorRel": 1E-05,
+      "fermionicNormalization": "committed-minus-one-half",
+      "axis": "T",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-transverse-one-loop-determinant",
+      "zeroMode": "Zb",
+      "floorRel": 1E-05,
+      "fermionicNormalization": "committed-minus-one-half",
+      "axis": "D",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-transverse-one-loop-determinant",
+      "zeroMode": "Zb",
+      "floorRel": 1E-05,
+      "fermionicNormalization": "committed-minus-one-half",
+      "axis": "S",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-transverse-one-loop-determinant",
+      "zeroMode": "Zb",
+      "floorRel": 1E-05,
+      "fermionicNormalization": "phase455-preregistration-literal-minus-one",
+      "axis": "T",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-transverse-one-loop-determinant",
+      "zeroMode": "Zb",
+      "floorRel": 1E-05,
+      "fermionicNormalization": "phase455-preregistration-literal-minus-one",
+      "axis": "D",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-transverse-one-loop-determinant",
+      "zeroMode": "Zb",
+      "floorRel": 1E-05,
+      "fermionicNormalization": "phase455-preregistration-literal-minus-one",
+      "axis": "S",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-transverse-one-loop-determinant",
+      "zeroMode": "Zb",
+      "floorRel": 0.0001,
+      "fermionicNormalization": "committed-minus-one-half",
+      "axis": "T",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-transverse-one-loop-determinant",
+      "zeroMode": "Zb",
+      "floorRel": 0.0001,
+      "fermionicNormalization": "committed-minus-one-half",
+      "axis": "D",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-transverse-one-loop-determinant",
+      "zeroMode": "Zb",
+      "floorRel": 0.0001,
+      "fermionicNormalization": "committed-minus-one-half",
+      "axis": "S",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-transverse-one-loop-determinant",
+      "zeroMode": "Zb",
+      "floorRel": 0.0001,
+      "fermionicNormalization": "phase455-preregistration-literal-minus-one",
+      "axis": "T",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-transverse-one-loop-determinant",
+      "zeroMode": "Zb",
+      "floorRel": 0.0001,
+      "fermionicNormalization": "phase455-preregistration-literal-minus-one",
+      "axis": "D",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-transverse-one-loop-determinant",
+      "zeroMode": "Zb",
+      "floorRel": 0.0001,
+      "fermionicNormalization": "phase455-preregistration-literal-minus-one",
+      "axis": "S",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-transverse-one-loop-determinant",
+      "zeroMode": "Zb",
+      "floorRel": 0.001,
+      "fermionicNormalization": "committed-minus-one-half",
+      "axis": "T",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-transverse-one-loop-determinant",
+      "zeroMode": "Zb",
+      "floorRel": 0.001,
+      "fermionicNormalization": "committed-minus-one-half",
+      "axis": "D",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-transverse-one-loop-determinant",
+      "zeroMode": "Zb",
+      "floorRel": 0.001,
+      "fermionicNormalization": "committed-minus-one-half",
+      "axis": "S",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-transverse-one-loop-determinant",
+      "zeroMode": "Zb",
+      "floorRel": 0.001,
+      "fermionicNormalization": "phase455-preregistration-literal-minus-one",
+      "axis": "T",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-transverse-one-loop-determinant",
+      "zeroMode": "Zb",
+      "floorRel": 0.001,
+      "fermionicNormalization": "phase455-preregistration-literal-minus-one",
+      "axis": "D",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-transverse-one-loop-determinant",
+      "zeroMode": "Zb",
+      "floorRel": 0.001,
+      "fermionicNormalization": "phase455-preregistration-literal-minus-one",
+      "axis": "S",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-mixed-tree-quartic-rank-one-restriction",
+      "zeroMode": "Zb",
+      "floorRel": 1E-05,
+      "fermionicNormalization": "committed-minus-one-half",
+      "axis": "T",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-mixed-tree-quartic-rank-one-restriction",
+      "zeroMode": "Zb",
+      "floorRel": 1E-05,
+      "fermionicNormalization": "committed-minus-one-half",
+      "axis": "D",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-mixed-tree-quartic-rank-one-restriction",
+      "zeroMode": "Zb",
+      "floorRel": 1E-05,
+      "fermionicNormalization": "committed-minus-one-half",
+      "axis": "S",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-mixed-tree-quartic-rank-one-restriction",
+      "zeroMode": "Zb",
+      "floorRel": 1E-05,
+      "fermionicNormalization": "phase455-preregistration-literal-minus-one",
+      "axis": "T",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-mixed-tree-quartic-rank-one-restriction",
+      "zeroMode": "Zb",
+      "floorRel": 1E-05,
+      "fermionicNormalization": "phase455-preregistration-literal-minus-one",
+      "axis": "D",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-mixed-tree-quartic-rank-one-restriction",
+      "zeroMode": "Zb",
+      "floorRel": 1E-05,
+      "fermionicNormalization": "phase455-preregistration-literal-minus-one",
+      "axis": "S",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-mixed-tree-quartic-rank-one-restriction",
+      "zeroMode": "Zb",
+      "floorRel": 0.0001,
+      "fermionicNormalization": "committed-minus-one-half",
+      "axis": "T",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-mixed-tree-quartic-rank-one-restriction",
+      "zeroMode": "Zb",
+      "floorRel": 0.0001,
+      "fermionicNormalization": "committed-minus-one-half",
+      "axis": "D",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-mixed-tree-quartic-rank-one-restriction",
+      "zeroMode": "Zb",
+      "floorRel": 0.0001,
+      "fermionicNormalization": "committed-minus-one-half",
+      "axis": "S",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-mixed-tree-quartic-rank-one-restriction",
+      "zeroMode": "Zb",
+      "floorRel": 0.0001,
+      "fermionicNormalization": "phase455-preregistration-literal-minus-one",
+      "axis": "T",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-mixed-tree-quartic-rank-one-restriction",
+      "zeroMode": "Zb",
+      "floorRel": 0.0001,
+      "fermionicNormalization": "phase455-preregistration-literal-minus-one",
+      "axis": "D",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-mixed-tree-quartic-rank-one-restriction",
+      "zeroMode": "Zb",
+      "floorRel": 0.0001,
+      "fermionicNormalization": "phase455-preregistration-literal-minus-one",
+      "axis": "S",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-mixed-tree-quartic-rank-one-restriction",
+      "zeroMode": "Zb",
+      "floorRel": 0.001,
+      "fermionicNormalization": "committed-minus-one-half",
+      "axis": "T",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-mixed-tree-quartic-rank-one-restriction",
+      "zeroMode": "Zb",
+      "floorRel": 0.001,
+      "fermionicNormalization": "committed-minus-one-half",
+      "axis": "D",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-mixed-tree-quartic-rank-one-restriction",
+      "zeroMode": "Zb",
+      "floorRel": 0.001,
+      "fermionicNormalization": "committed-minus-one-half",
+      "axis": "S",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-mixed-tree-quartic-rank-one-restriction",
+      "zeroMode": "Zb",
+      "floorRel": 0.001,
+      "fermionicNormalization": "phase455-preregistration-literal-minus-one",
+      "axis": "T",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-mixed-tree-quartic-rank-one-restriction",
+      "zeroMode": "Zb",
+      "floorRel": 0.001,
+      "fermionicNormalization": "phase455-preregistration-literal-minus-one",
+      "axis": "D",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    },
+    {
+      "modelId": "phase430-mixed-tree-quartic-rank-one-restriction",
+      "zeroMode": "Zb",
+      "floorRel": 0.001,
+      "fermionicNormalization": "phase455-preregistration-literal-minus-one",
+      "axis": "S",
+      "status": "invalid",
+      "tMax": null,
+      "stationaryPointCount": 0,
+      "stationaryPoints": [],
+      "hasNegativeDepthWell": false,
+      "invalidReason": "non-reconstructible-floor-map: Phase455 declares the sweep but ValueV/SB/VF contain no floor parameter; Phase447\u0027s floor is relative to a different Hessian spectrum"
+    }
+  ],
+  "summary": {
+    "totalRows": 60,
+    "validRows": 24,
+    "invalidRows": 36,
+    "nullRows": 7,
+    "candidateWellRows": 17,
+    "candidateModels": [
+      "phase430-mixed-tree-quartic-rank-one-restriction",
+      "phase430-transverse-one-loop-determinant"
+    ],
+    "candidateZeroModes": [
+      "Za",
+      "Zc"
+    ],
+    "candidateNormalizations": [
+      "committed-minus-one-half",
+      "phase455-preregistration-literal-minus-one"
+    ],
+    "candidateAxes": [
+      "D",
+      "S",
+      "T"
+    ]
+  },
+  "phase455VerdictConsumedAsAnswer": false,
+  "independentlyRecomputedFromCommittedFormulae": true,
+  "explorationOnly": true,
+  "confirmationEvidence": false,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "humanRulingAuthored": false,
+  "o4Discharged": false,
+  "phase458EvaluationAuthorized": false,
+  "phase458GateSatisfied": false,
+  "binderLaunchAuthorized": false,
+  "phase458G3Satisfied": false,
+  "phase458G5Satisfied": false,
+  "productionAuthorized": false,
+  "samplingAuthorized": false,
+  "sourceContractApplicationAllowed": false,
+  "phase201TemplateMutated": false,
+  "fieldsAppliedToPhase201TemplateCount": 0,
+  "acceptedContractFieldCount": 0,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256Contract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "noGevPromotion": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "decision": "The independently recomputed candidate-well classification changes across named reconstructible bosonic, zero-mode, IR, or normalization branches. Fragility is preserved; no upstream terminal changes."
+}

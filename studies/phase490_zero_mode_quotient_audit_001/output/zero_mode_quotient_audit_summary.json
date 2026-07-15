@@ -1,0 +1,429 @@
+{
+  "phaseId": "phase490-zero-mode-quotient-audit",
+  "generatedAt": "2026-07-15T18:20:57.6194497+00:00",
+  "terminalStatus": "zero-mode-quotient-audit-quotient-underdetermined",
+  "verdictKind": "quotient-underdetermined",
+  "quotientClassification": "quotient-underdetermined",
+  "allowedQuotientClassifications": [
+    "unique-quotient-derived",
+    "quotient-family-derived",
+    "quotient-underdetermined",
+    "invalid-committed-inputs"
+  ],
+  "decisionContract": "phase490-a7-v1|invalid-if-required-input-missing-malformed-or-committed-spectrum-check-red|unique-only-if-one-compatible-generator-image-projector-determines-all-removals|family-only-if-compatible-generator-image-evidence-determines-more-than-one-admissible-quotient|otherwise-valid-inputs-underdetermined|spectral-nullity-never-implies-gauge-status",
+  "decisionContractSha256": "4ebf1c3e49a352b34c288d36e9b2be87327e232b67abcf741dadbcc5ffefbdc4",
+  "applicationSubjectKind": "zero-mode-quotient-audit",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A7; PHASE455_CONVENTION_CLOSURE_PLAN_2026-07-15 Phase490",
+  "lane": "exploration",
+  "explorationOnly": true,
+  "inputsValid": true,
+  "inputValidation": {
+    "allFilesPresent": true,
+    "summariesValid": true,
+    "summaryValidationDetail": "all three committed summary terminals and spectrum batteries match",
+    "sourceFormulaPinsValid": true,
+    "spectraReconstructed": true,
+    "maximumSpectrumResidual": 4.440892098500626E-16,
+    "tolerance": 2E-12
+  },
+  "inputEvidenceCount": 12,
+  "inputEvidence": [
+    {
+      "path": "studies/phase428_fermion_loop_block_selection_no_go_probe_001/Program.cs",
+      "role": "primary-spectrum-and-source",
+      "present": true,
+      "byteCount": 35074,
+      "sha256": "9d273970eb10675db02d474f3ca62e36a07788ea6c665414f93bae1e3181e998"
+    },
+    {
+      "path": "studies/phase428_fermion_loop_block_selection_no_go_probe_001/output/fermion_loop_block_selection_no_go_probe_summary.json",
+      "role": "primary-spectrum-and-source",
+      "present": true,
+      "byteCount": 11178,
+      "sha256": "0b3361ab34e925e75e3b722bc25293e8ed935a35697cb19c9a657c6db26596bb"
+    },
+    {
+      "path": "studies/phase430_net_one_loop_direction_selection_probe_001/Program.cs",
+      "role": "primary-spectrum-and-source",
+      "present": true,
+      "byteCount": 40920,
+      "sha256": "890c3748b0f1b5b389ed87ea0a1826e57020940176531293791943b4a27908f0"
+    },
+    {
+      "path": "studies/phase430_net_one_loop_direction_selection_probe_001/output/net_one_loop_direction_selection_probe_summary.json",
+      "role": "primary-spectrum-and-source",
+      "present": true,
+      "byteCount": 13445,
+      "sha256": "b60b28eb46e55d5978c8cc372f3dc62a5e453dca3ab8243f25c1506bccc0e42e"
+    },
+    {
+      "path": "studies/phase455_exact_fermionic_backreaction_probe_001/Program.cs",
+      "role": "primary-spectrum-and-source",
+      "present": true,
+      "byteCount": 56969,
+      "sha256": "6278d7c502d613c3f5c87fe9db13c54bc0f740b00978d0c0688c23e401589994"
+    },
+    {
+      "path": "studies/phase455_exact_fermionic_backreaction_probe_001/output/exact_fermionic_backreaction_probe_summary.json",
+      "role": "primary-spectrum-and-source",
+      "present": true,
+      "byteCount": 29291,
+      "sha256": "021d3b92ff25cd86003c08590f8c7943ca74b070473f056bf47e43d1e749bfbc"
+    },
+    {
+      "path": "src/Gu.Phase3.GaugeReduction/GaugeActionLinearization.cs",
+      "role": "supporting-generator-projector-domain",
+      "present": true,
+      "byteCount": 2945,
+      "sha256": "02e2dc4d0b46eec5ee9f1dafa2702e070fa77fda53e2cd908cb5fd950d32b7ae"
+    },
+    {
+      "path": "src/Gu.Phase3.GaugeReduction/GaugeProjector.cs",
+      "role": "supporting-generator-projector-domain",
+      "present": true,
+      "byteCount": 7472,
+      "sha256": "3eb3883a7396f4952bc29d76b822f08e7d3fb08484f803a8482b1e811724af24"
+    },
+    {
+      "path": "src/Gu.Phase3.Spectra/LinearizedOperatorBundle.cs",
+      "role": "supporting-generator-projector-domain",
+      "present": true,
+      "byteCount": 4750,
+      "sha256": "d79bd4ea876ab37fe19e23886c96c2f6243f5f0f562b65f1ecfebc9ec50f1eca"
+    },
+    {
+      "path": "src/Gu.Phase3.Spectra/PhysicalModeFormulation.cs",
+      "role": "supporting-generator-projector-domain",
+      "present": true,
+      "byteCount": 766,
+      "sha256": "dc59630bf65db613d7ef290be388eb838761a3ebfff70e638150ae172b3a6437"
+    },
+    {
+      "path": "src/Gu.Phase4.Dirac/DiracGaugeReductionProjector.cs",
+      "role": "supporting-generator-projector-domain",
+      "present": true,
+      "byteCount": 7202,
+      "sha256": "4fdc4423fa05de443012ad094a2cc8c5d334f90c9f123fce732875c92b11349d"
+    },
+    {
+      "path": "studies/phase97_identity_fermion_lift_quotient_derivation_001/output/identity_fermion_lift_connection_quotient_derivation.json",
+      "role": "supporting-generator-projector-domain",
+      "present": true,
+      "byteCount": 8653,
+      "sha256": "5b544125185f78c43d5a6aa32b270ce74b21e71847ce8f55fff3456f02570e8b"
+    }
+  ],
+  "reconstruction": {
+    "independentlyConstructedGellMannHalfBasis": true,
+    "independentlyConstructedAdjointCommutatorGramOperator": true,
+    "axes": [
+      {
+        "id": "T",
+        "fundamentalEigenvalues": [
+          -0.5,
+          0,
+          0.5
+        ],
+        "adjointEigenvaluesSquared": [
+          0,
+          0,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          1,
+          1
+        ],
+        "fundamentalSpectrumResidual": 0,
+        "adjointSpectrumResidual": 0,
+        "fundamentalNullity": 1,
+        "adjointNullity": 2,
+        "fundamentalFermionKernelDimension": 4,
+        "adjointFermionKernelDimension": 8,
+        "bosonKernelDimension": 4
+      },
+      {
+        "id": "D",
+        "fundamentalEigenvalues": [
+          -0.5,
+          0,
+          0.5
+        ],
+        "adjointEigenvaluesSquared": [
+          0,
+          0,
+          0.25,
+          0.25,
+          0.25,
+          0.25,
+          1,
+          1.0000000000000004
+        ],
+        "fundamentalSpectrumResidual": 0,
+        "adjointSpectrumResidual": 4.440892098500626E-16,
+        "fundamentalNullity": 1,
+        "adjointNullity": 2,
+        "fundamentalFermionKernelDimension": 4,
+        "adjointFermionKernelDimension": 8,
+        "bosonKernelDimension": 4
+      },
+      {
+        "id": "S",
+        "fundamentalEigenvalues": [
+          -0.5773502691896258,
+          0.2886751345948129,
+          0.2886751345948129
+        ],
+        "adjointEigenvaluesSquared": [
+          0,
+          0,
+          0,
+          0,
+          0.7500000000000003,
+          0.7500000000000003,
+          0.7500000000000003,
+          0.7500000000000003
+        ],
+        "fundamentalSpectrumResidual": 0,
+        "adjointSpectrumResidual": 3.3306690738754696E-16,
+        "fundamentalNullity": 0,
+        "adjointNullity": 4,
+        "fundamentalFermionKernelDimension": 0,
+        "adjointFermionKernelDimension": 16,
+        "bosonKernelDimension": 8
+      }
+    ],
+    "latticeSize": 4,
+    "vanishingSineMomentumCount": 4,
+    "vanishingSineMomenta": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "geometricZeroMomentumCount": 1,
+    "latticeDoublerVanishingSineCount": 3,
+    "genericBackgroundParameterCondition": "t is nonzero and lies below the committed first crossing"
+  },
+  "zeroModeSectorCount": 9,
+  "zeroModeSectors": [
+    {
+      "axis": "T",
+      "sector": "fundamental-fermion",
+      "stateDimensionPerMomentum": 12,
+      "exactKernelDimensionPerMomentumAtGenericNonzeroT": 4,
+      "exactKernelDimensionAcrossAllVanishingSineMomenta": 16,
+      "generatorImageClassifiedDimension": 0,
+      "classification": "exact-but-unclassified"
+    },
+    {
+      "axis": "T",
+      "sector": "adjoint-fermion",
+      "stateDimensionPerMomentum": 32,
+      "exactKernelDimensionPerMomentumAtGenericNonzeroT": 8,
+      "exactKernelDimensionAcrossAllVanishingSineMomenta": 32,
+      "generatorImageClassifiedDimension": 0,
+      "classification": "exact-but-unclassified"
+    },
+    {
+      "axis": "T",
+      "sector": "bosonic-adjoint-two-polarization-workbench",
+      "stateDimensionPerMomentum": 16,
+      "exactKernelDimensionPerMomentumAtGenericNonzeroT": 4,
+      "exactKernelDimensionAcrossAllVanishingSineMomenta": 16,
+      "generatorImageClassifiedDimension": 0,
+      "classification": "exact-but-unclassified"
+    },
+    {
+      "axis": "D",
+      "sector": "fundamental-fermion",
+      "stateDimensionPerMomentum": 12,
+      "exactKernelDimensionPerMomentumAtGenericNonzeroT": 4,
+      "exactKernelDimensionAcrossAllVanishingSineMomenta": 16,
+      "generatorImageClassifiedDimension": 0,
+      "classification": "exact-but-unclassified"
+    },
+    {
+      "axis": "D",
+      "sector": "adjoint-fermion",
+      "stateDimensionPerMomentum": 32,
+      "exactKernelDimensionPerMomentumAtGenericNonzeroT": 8,
+      "exactKernelDimensionAcrossAllVanishingSineMomenta": 32,
+      "generatorImageClassifiedDimension": 0,
+      "classification": "exact-but-unclassified"
+    },
+    {
+      "axis": "D",
+      "sector": "bosonic-adjoint-two-polarization-workbench",
+      "stateDimensionPerMomentum": 16,
+      "exactKernelDimensionPerMomentumAtGenericNonzeroT": 4,
+      "exactKernelDimensionAcrossAllVanishingSineMomenta": 16,
+      "generatorImageClassifiedDimension": 0,
+      "classification": "exact-but-unclassified"
+    },
+    {
+      "axis": "S",
+      "sector": "fundamental-fermion",
+      "stateDimensionPerMomentum": 12,
+      "exactKernelDimensionPerMomentumAtGenericNonzeroT": 0,
+      "exactKernelDimensionAcrossAllVanishingSineMomenta": 0,
+      "generatorImageClassifiedDimension": 0,
+      "classification": "no-exact-kernel"
+    },
+    {
+      "axis": "S",
+      "sector": "adjoint-fermion",
+      "stateDimensionPerMomentum": 32,
+      "exactKernelDimensionPerMomentumAtGenericNonzeroT": 16,
+      "exactKernelDimensionAcrossAllVanishingSineMomenta": 64,
+      "generatorImageClassifiedDimension": 0,
+      "classification": "exact-but-unclassified"
+    },
+    {
+      "axis": "S",
+      "sector": "bosonic-adjoint-two-polarization-workbench",
+      "stateDimensionPerMomentum": 16,
+      "exactKernelDimensionPerMomentumAtGenericNonzeroT": 8,
+      "exactKernelDimensionAcrossAllVanishingSineMomenta": 32,
+      "generatorImageClassifiedDimension": 0,
+      "classification": "exact-but-unclassified"
+    }
+  ],
+  "generatorProjectorEvidenceCount": 5,
+  "generatorProjectorEvidence": [
+    {
+      "id": "phase3-connection-generator-image",
+      "evidencePath": "src/Gu.Phase3.GaugeReduction/GaugeActionLinearization.cs",
+      "domain": "vertex-valued gauge parameters",
+      "codomain": "edge-major connection-one-form coefficients",
+      "compatibleWithPhase455DeterminantStateSpace": false,
+      "classificationAuthority": false,
+      "reason": "an explicit map exists, but no committed intertwiner identifies its image with the audited fundamental/adjoint determinant mode bases"
+    },
+    {
+      "id": "phase3-connection-projector",
+      "evidencePath": "src/Gu.Phase3.GaugeReduction/GaugeProjector.cs",
+      "domain": "edge-major connection-one-form coefficients",
+      "codomain": "edge-major connection-one-form coefficients",
+      "compatibleWithPhase455DeterminantStateSpace": false,
+      "classificationAuthority": false,
+      "reason": "the projector is explicit in connection space only; Phase455\u0027s ray determinant does not consume it"
+    },
+    {
+      "id": "phase4-fermion-projector-consumer",
+      "evidencePath": "src/Gu.Phase4.Dirac/DiracGaugeReductionProjector.cs",
+      "domain": "supplied persisted fermion projector matrix",
+      "codomain": "projected explicit Dirac matrix",
+      "compatibleWithPhase455DeterminantStateSpace": false,
+      "classificationAuthority": false,
+      "reason": "the code validates and applies a supplied projector but does not derive one from a symmetry generator image"
+    },
+    {
+      "id": "phase97-domain-separation",
+      "evidencePath": "studies/phase97_identity_fermion_lift_quotient_derivation_001/output/identity_fermion_lift_connection_quotient_derivation.json",
+      "domain": "connection quotient with identity fermion lift",
+      "codomain": "persisted fermion coefficients",
+      "compatibleWithPhase455DeterminantStateSpace": false,
+      "classificationAuthority": false,
+      "reason": "the committed artifact explicitly does not claim a nontrivial gauge quotient on fermion states"
+    },
+    {
+      "id": "phase3-quotient-aware-scaffold",
+      "evidencePath": "src/Gu.Phase3.Spectra/LinearizedOperatorBundle.cs",
+      "domain": "Phase3 spectral bundle",
+      "codomain": "quotient-aware generalized eigenproblem",
+      "compatibleWithPhase455DeterminantStateSpace": false,
+      "classificationAuthority": false,
+      "reason": "the quotient-aware formulation throws NotSupportedException and is not an implemented quotient"
+    }
+  ],
+  "explicitGeneratorImageEvidenceCount": 1,
+  "explicitProjectorOrConsumerEvidenceCount": 2,
+  "compatibleGeneratorImageMapCount": 0,
+  "compatibleK0ProjectorCount": 0,
+  "generatorImageClassifiedDirectionCount": 0,
+  "exactButUnclassifiedZeroModeDirectionCountAtGeometricK0": 56,
+  "directionCountAggregation": "sum over the nine audited axis-sector rows; T, D, and S are alternative ray axes, not simultaneous subspaces",
+  "regulatorChoiceCount": 3,
+  "candidateTreatments": [
+    {
+      "id": "Za",
+      "treatment": "remove every vanishing-sine momentum block from both sectors",
+      "removesGeometricK0": true,
+      "removesThreeAdditionalLatticeDoublerBlocks": true,
+      "removesNonzeroEigenvalueModesAtGenericNonzeroT": true,
+      "derivedFromCompatibleGeneratorImage": false,
+      "kind": "regulator-or-scheme-choice"
+    },
+    {
+      "id": "Zb",
+      "treatment": "retain all momentum blocks and apply a relative soft floor in value evaluation",
+      "removesGeometricK0": false,
+      "removesThreeAdditionalLatticeDoublerBlocks": false,
+      "removesNonzeroEigenvalueModesAtGenericNonzeroT": false,
+      "derivedFromCompatibleGeneratorImage": false,
+      "kind": "regulator-choice"
+    },
+    {
+      "id": "Zc",
+      "treatment": "retain all momentum blocks and omit eigenvalues below the committed exact-zero tolerance",
+      "removesGeometricK0": false,
+      "removesThreeAdditionalLatticeDoublerBlocks": false,
+      "removesNonzeroEigenvalueModesAtGenericNonzeroT": false,
+      "derivedFromCompatibleGeneratorImage": false,
+      "kind": "algebraic-prime-prescription-with-unclassified-kernel"
+    }
+  ],
+  "uniqueAdmissibleQuotient": false,
+  "uniqueQuotientDerived": false,
+  "quotientFamilyDerived": false,
+  "quotientUnderdetermined": true,
+  "invalidCommittedInputs": false,
+  "underdeterminationIsValidGreenScientificTerminal": true,
+  "forceUniquenessAttempted": false,
+  "physicalOrGaugeStatusInferredFromNames": false,
+  "phase428ArtifactMutated": false,
+  "phase430ArtifactMutated": false,
+  "phase455ArtifactMutated": false,
+  "humanRulingAuthored": false,
+  "o4Discharged": false,
+  "satisfiesPhase458G3": false,
+  "satisfiesPhase458G5": false,
+  "phase458G3Satisfied": false,
+  "phase458G5Satisfied": false,
+  "phase458EvaluationAuthorized": false,
+  "binderLaunchAuthorized": false,
+  "samplingAuthorized": false,
+  "productionAuthorized": false,
+  "sourceContractApplicationAllowed": false,
+  "canFillPhase201WzContract": false,
+  "canFillPhase201HiggsContract": false,
+  "canFillPhase256ObservedFieldExtractionContract": false,
+  "routePromotesWzMasses": false,
+  "routePromotesHiggsMass": false,
+  "routeCompletesBosonPredictions": false,
+  "targetBlindConstruction": true,
+  "physicalTargetsConsultedForConstruction": false,
+  "noGevPromotion": true,
+  "promotedPhysicalMassClaimCount": 0,
+  "decision": "The committed spectra determine exact k=0 and lattice-doubler kernels, but no committed generator image and compatible projector classify those determinant directions as gauge volume. Za, Zb, and Zc remain regulator or algebraic prescriptions rather than a derived unique quotient.",
+  "limitations": [
+    "The audit classifies only the committed reduced ray determinant state spaces at generic nonzero t.",
+    "The four vanishing-sine momentum tuples include three naive-lattice doubler tuples and must not all be called geometric k=0.",
+    "Connection-space gauge projectors are not transferred to fermion or bosonic determinant modes without a committed intertwiner.",
+    "Exact spectral nullity does not by itself determine physical, gauge-volume, collective-coordinate, or regulator status."
+  ],
+  "runtimeSeconds": 0.0232968
+}
