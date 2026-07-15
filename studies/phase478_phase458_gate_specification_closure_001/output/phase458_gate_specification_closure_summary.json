@@ -1,29 +1,123 @@
 {
   "phaseId": "phase478-phase458-gate-specification-closure",
-  "generatedAt": "2026-07-15T15:39:00.6080213+00:00",
-  "terminalStatus": "phase458-gate-specification-closure-specification-skeleton-awaiting-implementation",
-  "interimTerminal": "specification-skeleton-awaiting-implementation",
-  "verdictKind": "specification-skeleton-awaiting-implementation",
+  "generatedAt": "2026-07-15T16:25:29.999044+00:00",
+  "terminalStatus": "phase458-gate-specification-closure-gate-specification-closed-phase458-inputs-incomplete",
+  "interimTerminal": "gate-specification-closed-phase458-inputs-incomplete",
+  "verdictKind": "gate-specification-closed-phase458-inputs-incomplete",
   "applicationSubjectKind": "phase458-gate-specification-closure",
   "planSection": "WAVE2_AMENDMENTS_2026-07-12 A4",
   "waveOrder": 2,
-  "skeletonBuilt": true,
+  "skeletonBuilt": false,
   "zeroPhysicsCompute": true,
-  "awaitingImplementation": true,
-  "executionPriorityDependencies": [
-    "phase477"
+  "awaitingImplementation": false,
+  "specificationClosed": true,
+  "contractPath": "studies/phase478_phase458_gate_specification_closure_001/preregistration/phase458_gate_contract_v1.json",
+  "contractSha256": "d2bd1aa491ec7a9fc680c8f367fbed353b4abde040d7511671fe417dfba894f0",
+  "schemaShapeValid": true,
+  "gateStateEnumExact": true,
+  "gateOrderExact": true,
+  "outcomeTaxonomyExact": true,
+  "outcomePrecedenceExact": true,
+  "gateStates": [
+    {
+      "gateId": "G1",
+      "state": "available-false",
+      "reason": "A5 obstruction record is exact; no theorem closure."
+    },
+    {
+      "gateId": "G2",
+      "state": "available-true",
+      "reason": "Operational n=4 cost is exact and independent of the invalid science rows."
+    },
+    {
+      "gateId": "G3",
+      "state": "missing",
+      "reason": "Invalid Phase456 diagnostics and convention-fragile Phase455 cannot supply motivation."
+    },
+    {
+      "gateId": "G4",
+      "state": "missing",
+      "reason": "Exact infrastructure exists, but no genuine signed external physicist memo has been validated."
+    },
+    {
+      "gateId": "G5",
+      "state": "missing",
+      "reason": "Phase455, Phase456, and Phase457 have not all reached exact admissible resolved terminals."
+    },
+    {
+      "gateId": "G6",
+      "state": "available-true",
+      "reason": "Pinned projection is 1.5044386597816015 CPU-weeks; route=cpu-route."
+    }
   ],
-  "gatesToSpecify": [
-    "G1",
-    "G2",
-    "G3",
-    "G4",
-    "G5",
-    "G6"
-  ],
-  "g2PermittedInput": "committed measured n=4 cost only",
-  "g6Scope": "pinned projection for possible future Binder work; no acceleration or production authorization",
+  "currentAvailableTrueGateCount": 2,
+  "currentAvailableFalseGateCount": 1,
+  "currentMissingGateCount": 3,
+  "currentInvalidOrDriftedGateCount": 0,
+  "currentPhase458RestingState": "blocked-inputs-incomplete",
+  "phase458Evaluated": false,
   "phase458EvaluationAuthorized": false,
+  "binderLaunchAuthorized": false,
+  "accelerationAuthorized": false,
+  "productionAuthorized": false,
+  "g1": {
+    "state": "available-false",
+    "a5Path": "studies/phase456_consolidated_n4_launch_001/preregistration/a5_gaussian_domination_stage_a.json",
+    "a5Sha256": "b31ab07942ea08c83abbd0dc913d8213aa173bedf3b2c71833929ce604f58974",
+    "a5HashGreen": true,
+    "a5ObstructionExact": true,
+    "theoremClosed": false
+  },
+  "g2": {
+    "state": "available-true",
+    "sourcePath": "studies/phase456_consolidated_n4_launch_001/output/consolidated_n4_launch_summary.json",
+    "measuredCpuWeeks": 0.11371015556660466,
+    "budgetCpuWeeks": 2,
+    "withinBudget": true,
+    "g2EvidenceValid": true
+  },
+  "g3": {
+    "state": "missing",
+    "p456MotivationEligible": false,
+    "p456Motivated": false,
+    "p455Resolved": false,
+    "p455Motivated": false,
+    "invalidScienceCannotMotivate": true
+  },
+  "g4": {
+    "state": "missing",
+    "phase477InfrastructureGreen": true,
+    "phase480GenuineMemoGreen": false,
+    "genuineHumanMemoRequired": true,
+    "infrastructureAloneNeverSatisfies": true
+  },
+  "g5": {
+    "state": "missing",
+    "a5Resolved": true,
+    "phase455Resolved": false,
+    "phase456Resolved": false,
+    "phase457Resolved": false,
+    "verdictWithheldNeverCounts": true
+  },
+  "g6": {
+    "state": "available-true",
+    "formulaId": "n4-measured-cost-volume4-workload-v1",
+    "measuredN4CpuWeeks": 0.11371015556660466,
+    "projectedCpuWeeks": 1.5044386597816015,
+    "recomputedProjectedCpuWeeks": 1.5044386597816013,
+    "cudaTriggerBudgetCpuWeeks": 2,
+    "route": "cpu-route",
+    "g6SpecificationValid": true,
+    "inc0Plus1OnlyIfTriggered": true,
+    "productionOperatorParityRequired": true
+  },
+  "batteries": {
+    "outcomeBatteryPassed": true,
+    "outcomeCaseCount": 8,
+    "numericBoundaryBatteryPassed": true,
+    "invalidScienceCannotMotivateBatteryPassed": true,
+    "unknownOrDriftedInputFailsClosed": true
+  },
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
   "physicistReviewPending": true,
@@ -45,6 +139,6 @@
   "routeCompletesBosonPredictions": false,
   "noGevPromotion": true,
   "promotedPhysicalMassClaimCount": 0,
-  "decision": "A4 zero-compute specification skeleton only. It emits no Phase458 gate result; all G1-G6 inputs must exist before the gate may execute.",
-  "runtimeSeconds": 2.14E-05
+  "decision": "The G1-G6 schemas, exact allowlists, fail-closed states, outcome precedence, and G6 projection are frozen. Phase458 is not evaluated: G3/G4/G5 remain incomplete, no human ruling is inferred, and no launch is authorized.",
+  "runtimeSeconds": 0.0255604
 }

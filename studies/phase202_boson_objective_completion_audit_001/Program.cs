@@ -6771,10 +6771,22 @@ var o4AdjudicationInfrastructurePassed = o4AdjudicationInfrastructureMaterialize
     && JsonBool(phase477.RootElement, "routeCompletesBosonPredictions") is false;
 var phase458GateSpecificationClosureMaterialized = phase478 is not null;
 var phase458GateSpecificationClosurePassed = phase458GateSpecificationClosureMaterialized
-    && JsonBool(phase478!.RootElement, "skeletonBuilt") is true
+    && JsonBool(phase478!.RootElement, "skeletonBuilt") is false
+    && JsonBool(phase478.RootElement, "specificationClosed") is true
+    && JsonBool(phase478.RootElement, "zeroPhysicsCompute") is true
+    && JsonBool(phase478.RootElement, "awaitingImplementation") is false
     && JsonString(phase478.RootElement, "applicationSubjectKind") == "phase458-gate-specification-closure"
-    && JsonString(phase478.RootElement, "interimTerminal") == "specification-skeleton-awaiting-implementation"
-    && JsonString(phase478.RootElement, "verdictKind") == "specification-skeleton-awaiting-implementation"
+    && JsonString(phase478.RootElement, "interimTerminal") == "gate-specification-closed-phase458-inputs-incomplete"
+    && JsonString(phase478.RootElement, "verdictKind") == "gate-specification-closed-phase458-inputs-incomplete"
+    && JsonString(phase478.RootElement, "contractSha256") == "d2bd1aa491ec7a9fc680c8f367fbed353b4abde040d7511671fe417dfba894f0"
+    && JsonInt(phase478.RootElement, "currentAvailableTrueGateCount") == 2
+    && JsonInt(phase478.RootElement, "currentAvailableFalseGateCount") == 1
+    && JsonInt(phase478.RootElement, "currentMissingGateCount") == 3
+    && JsonInt(phase478.RootElement, "currentInvalidOrDriftedGateCount") == 0
+    && JsonString(phase478.RootElement, "currentPhase458RestingState") == "blocked-inputs-incomplete"
+    && JsonBool(phase478.RootElement, "phase458Evaluated") is false
+    && JsonBool(phase478.RootElement, "phase458EvaluationAuthorized") is false
+    && JsonBool(phase478.RootElement, "binderLaunchAuthorized") is false
     && JsonString(phase478.RootElement, "planSection") == "WAVE2_AMENDMENTS_2026-07-12 A4"
     && JsonInt(phase478.RootElement, "waveOrder") == 2
     && JsonBool(phase478.RootElement, "targetBlindConstruction") is true
@@ -9637,10 +9649,10 @@ var checklist = new[]
         Phase477Path),
     new ObjectiveChecklistItem(
         "phase458-gate-specification-closure-skeleton-materialized",
-        "Wave-order item 2: materialize the target-blind Phase458 gate-specification-closure skeleton without evaluating incomplete G1-G6 inputs or authorizing a launch.",
+        "Wave-order item 2: freeze the target-blind Phase458 G1-G6 contract and projection without evaluating incomplete inputs or authorizing a launch.",
         phase458GateSpecificationClosurePassed ? "passed" : "failed",
         phase458GateSpecificationClosureMaterialized
-            ? $"skeletonBuilt={JsonBool(phase478!.RootElement, "skeletonBuilt")}; interimTerminal={JsonString(phase478.RootElement, "interimTerminal")}; applicationSubjectKind={JsonString(phase478.RootElement, "applicationSubjectKind")}; waveOrder={JsonInt(phase478.RootElement, "waveOrder")}; promotedPhysicalMassClaimCount={JsonInt(phase478.RootElement, "promotedPhysicalMassClaimCount")}; decision={JsonString(phase478.RootElement, "decision")}"
+            ? $"specificationClosed={JsonBool(phase478!.RootElement, "specificationClosed")}; interimTerminal={JsonString(phase478.RootElement, "interimTerminal")}; availableTrue={JsonInt(phase478.RootElement, "currentAvailableTrueGateCount")}; availableFalse={JsonInt(phase478.RootElement, "currentAvailableFalseGateCount")}; missing={JsonInt(phase478.RootElement, "currentMissingGateCount")}; phase458EvaluationAuthorized={JsonBool(phase478.RootElement, "phase458EvaluationAuthorized")}; promotedPhysicalMassClaimCount={JsonInt(phase478.RootElement, "promotedPhysicalMassClaimCount")}; decision={JsonString(phase478.RootElement, "decision")}"
             : "Phase478 artifact not materialized",
         Phase478Path),
     new ObjectiveChecklistItem(

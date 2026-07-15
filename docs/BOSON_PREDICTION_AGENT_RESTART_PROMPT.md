@@ -58,8 +58,12 @@ dispersion mass rows are non-finite. The any-invalid-row firewall withholds the
 family-wise threshold and emits `production-analysis-invalid`; no G3
 motivation, n=5 escalation, L6/L8 closure, spectrum characterization, or claim
 follows. The measured 0.1137 CPU-week cost supplies Phase458/G2 within budget.
-Phase458 remains `blocked-inputs-incomplete`: G1 and G2 are available, G3 and
-G4 are absent, G5 is incomplete, and G6 is unevaluated. Phase471 remains open
+Phase478 has now frozen the exact Phase458 contract. Phase458 remains
+`blocked-inputs-incomplete`: G1 is available-false (the exact A5 obstruction,
+not a theorem), G2 and G6 are available-true, G3/G4/G5 are missing, and no
+input is invalid or drifted. G6 projects 1.5044386598 CPU-weeks under its
+committed n=3..6 n^4-volume model and therefore selects the CPU route; that is
+scheduling eligibility only and authorizes no launch. Phase471 remains open
 L5/L6/L8 with L7 withheld. The O4 engagement remains the human critical path.
 Phase101 stays blocked, Phase202 is 271/3 after targeted validation, the
 missing-field counts remain 15/14, and `promotedPhysicalMassClaimCount=0`.
@@ -75,6 +79,16 @@ Phase457 candidate-path writes. The integrity verifier runs register currency,
 exact-coverage, and overturn checks on every pass. This is tooling only: no O4
 memo or ruling exists, no pending flag changed, and Phase477 rests at
 `infrastructure-ready-pending-human-ruling`.
+
+PHASE458 CONTRACT (2026-07-15, Phase478): the G1-G6 four-state schema, exact
+upstream terminal allowlists, source bindings, outcome precedence, and G6
+projection are committed and machine-checked. The projection uses one
+Phase456-default-equivalent five-column workload at n=3,4,5,6, n^4 volume
+scaling, and a 1.5 safety factor, yielding 1.5044386598 CPU-weeks against the
+inclusive 2.0 CPU-week CPU boundary. Current counts are 2 available-true, 1
+available-false, 3 missing, and 0 invalid/drifted. Phase478 did not evaluate
+Phase458, infer an O4 ruling, or authorize Binder/CUDA/production work; its
+terminal is `gate-specification-closed-phase458-inputs-incomplete`.
 
 Current gate status after the Phase448 work (plus the 2026-06-12 platform
 fix - GPU parity defect root-caused and discharged - and the 2026-07-01
@@ -884,9 +898,9 @@ human-input gated; Phase481 cannot sample or mutate/reinterpret Phase456;
 Phase482 cannot claim a theorem from a partial scout; Phase483 cannot invent
 source fields. Phase477 is now substantively complete at exact coverage 31/31,
 13 memo ruling IDs, and 94/94 synthetic dependency edges, while remaining
-human-ruling pending. The original Phase457 hold, Phase458 G1-G6 gate, and
-Phase471 firewall remain unchanged. Registry 477-483 is allocated; 484+
-remains unassigned.
+human-ruling pending. Phase478 is substantively complete but Phase458 remains
+blocked on G3/G4/G5. The original Phase457 hold and Phase471 firewall remain
+unchanged. Registry 477-483 is allocated; 484+ remains unassigned.
 
 WAVE-2 C-LINEAGE MACHINE RESULTS (2026-07-14, incremental validation green:
 82 ran / 260 skipped, integrity verified): PHASE467 reconstructs the exact

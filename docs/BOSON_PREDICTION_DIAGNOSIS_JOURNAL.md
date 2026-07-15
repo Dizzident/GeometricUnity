@@ -20451,3 +20451,44 @@ Phase202 at 271/3, the source deficits at 15/14, and
 passed with 56 steps run and 295 skipped; its final integrity gate repeated
 exact coverage 31/31, synthetic dependency edges 94/94, current-register
 status, the 15/14 deficits, and zero promoted physical-mass claims.
+
+## 2026-07-15 - Phase478: Phase458 gate contract frozen; evaluation remains blocked
+
+Three independent read-only audits agreed that the original Phase458 skeleton
+was too loose to evaluate safely: it named G1-G6 but did not distinguish
+missing inputs from invalid inputs or available negative evidence, froze no
+exact terminal allowlists, and left G6 without a projection formula. They also
+agreed that Phase456's valid operational cost must remain isolated from its
+invalid science rows, and that O4 register currency alone can never satisfy
+G4.
+
+Phase478 now commits `phase458_gate_contract_v1.json`. It freezes four states
+(`missing`, `invalid-or-drifted`, `available-false`, `available-true`), exact
+paths and admissible terminal sets, and eight ordered Phase458 outcomes. Only a
+fully gated future Phase482 theorem may close L8. Invalid Phase456 Binder or
+susceptibility diagnostics cannot motivate G3; Phase455 T3 cannot masquerade
+as T2; a genuine signed external Phase480 memo remains mandatory for G4; and
+every withheld, awaiting, invalid, refused, or convention-fragile upstream
+state fails G5 closed.
+
+G6 is now a pinned scheduling calculation. It applies n^4 volume scaling to
+one Phase456-default-equivalent five-column workload at each n=3,4,5,6 and a
+1.5 safety factor. Recomputing from the measured n=4 cost
+`0.11371015556660466` gives `1.5044386597816015` CPU-weeks. The CPU route is
+selected at or below 2.0 CPU-weeks; only a strict exceedance could fund Inc
+0+1, and production-operator bit-exact parity would still precede every CUDA
+trajectory. The projection is not scientific evidence and authorizes neither
+acceleration nor sampling.
+
+The executable exercises all eight outcome branches and threshold boundaries.
+The current typed snapshot is G1 available-false (the exact A5 obstruction,
+not theorem closure), G2/G6 available-true, G3/G4/G5 missing, and zero invalid
+inputs. The terminal is therefore
+`gate-specification-closed-phase458-inputs-incomplete`: the specification is
+closed, but Phase458 was not evaluated and no Binder launch is authorized.
+Phase478 performs zero physics compute, consumes no human ruling, fills no
+source contract, and keeps `promotedPhysicalMassClaimCount=0`. The mandatory
+incremental checkpoint passed with 69 steps run and 282 skipped. Phase202
+remained 271/3; the final integrity gate reported current O4 coverage, all
+94/94 synthetic dependency edges, the standing 15/14 source deficits, and zero
+promoted physical-mass claims.

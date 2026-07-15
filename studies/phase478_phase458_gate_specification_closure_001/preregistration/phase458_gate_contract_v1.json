@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase458-gate-contract-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A4",
+  "gateStateEnum": [
+    "missing",
+    "invalid-or-drifted",
+    "available-false",
+    "available-true"
+  ],
+  "gateOrder": [
+    "G1",
+    "G2",
+    "G3",
+    "G4",
+    "G5",
+    "G6"
+  ],
+  "gates": {
+    "G1": {
+      "meaning": "A5 theorem state",
+      "currentSourcePath": "studies/phase456_consolidated_n4_launch_001/preregistration/a5_gaussian_domination_stage_a.json",
+      "currentSourceSha256": "b31ab07942ea08c83abbd0dc913d8213aa173bedf3b2c71833929ce604f58974",
+      "requiredCurrentPackItem": "A5_stage_a_gaussian_domination_attempt",
+      "currentObstructionTerminal": "a5-stage-a-gaussian-domination-not-provable-obstruction-recorded",
+      "phase482AllowedVerdictKinds": [
+        "no-go-theorem-closed",
+        "obstructions-survive-no-theorem",
+        "counterexample-refutes-proposed-no-go"
+      ],
+      "theoremClosureRequires": [
+        "phase482 exact terminal is no-go-theorem-closed",
+        "theoremClaimed is true",
+        "closesLimbL8 is true",
+        "all three obstruction-family proof gates are true",
+        "committed action and workbench scope are unchanged"
+      ]
+    },
+    "G2": {
+      "meaning": "measured n=4 operational cost",
+      "sourcePath": "studies/phase456_consolidated_n4_launch_001/output/consolidated_n4_launch_summary.json",
+      "requiredPhaseId": "phase456-consolidated-n4-launch",
+      "requiredJsonPointers": [
+        "/productionArtifactConsumed",
+        "/productionAnalysis/productionDefaultsVerified",
+        "/productionAnalysis/packHashVerified",
+        "/productionAnalysis/perSiteStorageVerified",
+        "/productionAnalysis/measuredRuntimeSeconds",
+        "/productionAnalysis/measuredCpuWeeks",
+        "/productionAnalysis/cpuWeekBudget",
+        "/productionAnalysis/g2WithinBudget"
+      ],
+      "budgetCpuWeeks": 2.0,
+      "budgetComparison": "measuredCpuWeeks <= budgetCpuWeeks",
+      "scientificInvalidityDoesNotEraseOperationalCost": true
+    },
+    "G3": {
+      "meaning": "predeclared workbench motivation only; never scientific evidence",
+      "booleanRule": "valid Phase456 Binder-or-susceptibility absolute z >= 2 OR O4-resolved Phase455 T2",
+      "phase456RequiredValidVerdictKinds": [
+        "t1-quasi-free-compatible-at-probed-volume",
+        "t2-coherent-distinct-irrep-departure-n5-mandatory",
+        "mixed-row-outcome-no-coherent-distinct-irrep-departure"
+      ],
+      "phase456MotivationRowIds": [
+        "binder-gaussian-null",
+        "susceptibility-gaussian-control"
+      ],
+      "absoluteSigmaThresholdInclusive": 2.0,
+      "phase455T2VerdictKind": "radiative-well-candidate",
+      "invalidPhase456DiagnosticsAreNonEvidence": true,
+      "phase455ConventionFragileIsNonSatisfying": true
+    },
+    "G4": {
+      "meaning": "machine-derived admissibility of the Binder-dependent O4 subset",
+      "phase477SourcePath": "studies/phase477_o4_adjudication_infrastructure_001/output/o4_adjudication_infrastructure_summary.json",
+      "phase480SourcePath": "studies/phase480_o4_physicist_adjudication_intake_001/output/o4_physicist_adjudication_intake_summary.json",
+      "requiredRulingIds": [
+        "O4-F1-INVARIANT-RAYS",
+        "O4-F1-COLLECTIVE-COORDINATE",
+        "O4-F1-FP-NORMALIZATION",
+        "O4-F2-POSITIVE-MODE-IR",
+        "O4-F3-THETA-HAAR",
+        "O4-F4-SADDLE-BACKGROUNDS",
+        "O4-E1-P447-SOFT-FLOOR",
+        "O4-E2-P453-UNIFORM-LADDER",
+        "O4-P455-ZERO-MODE",
+        "O4-P455-SB-MODEL",
+        "O4-C1-COMPACT-REAL-FORM",
+        "O4-C2-YHALF-BOOKKEEPING",
+        "O4-C3-WS3-MPROBE-SCOPE"
+      ],
+      "requiresGenuineSignedExternalMemo": true,
+      "infrastructureAloneNeverSatisfies": true,
+      "adverseRulingInvalidatesOnlyDeclaredDependents": true
+    },
+    "G5": {
+      "meaning": "exact upstream terminal resolution",
+      "phase455AllowedVerdictKinds": [
+        "fermionic-backreaction-null",
+        "radiative-well-candidate"
+      ],
+      "phase456AllowedVerdictKinds": [
+        "t1-quasi-free-compatible-at-probed-volume",
+        "t2-coherent-distinct-irrep-departure-n5-mandatory",
+        "mixed-row-outcome-no-coherent-distinct-irrep-departure"
+      ],
+      "phase457AllowedVerdictKinds": [
+        "portal-measure-nonexistent-at-workbench-scope",
+        "portal-null-measured",
+        "portal-scale-candidate"
+      ],
+      "a5AllowedStates": [
+        "obstruction-recorded-sampling-route-remains",
+        "no-go-theorem-closed"
+      ],
+      "explicitlyRejectedFragments": [
+        "awaiting",
+        "batteries-failed",
+        "convention-fragile",
+        "invalid",
+        "refused",
+        "skeleton",
+        "withheld"
+      ],
+      "allNamedUpstreamsRequired": true
+    },
+    "G6": {
+      "meaning": "pinned CPU projection and CUDA Inc 0+1 trigger only",
+      "formulaId": "n4-measured-cost-volume4-workload-v1",
+      "formula": "measuredN4CpuWeeks * safetyFactor * sum((n/4)^4 * n4EquivalentWorkloads[n])",
+      "latticeSizes": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "n4EquivalentWorkloads": {
+        "3": 1.0,
+        "4": 1.0,
+        "5": 1.0,
+        "6": 1.0
+      },
+      "volumeScalingExponent": 4.0,
+      "safetyFactor": 1.5,
+      "measuredN4CpuWeeks": 0.11371015556660466,
+      "projectedCpuWeeks": 1.5044386597816015,
+      "cudaTriggerBudgetCpuWeeks": 2.0,
+      "cpuRouteComparison": "projectedCpuWeeks <= cudaTriggerBudgetCpuWeeks",
+      "cudaTriggerComparison": "projectedCpuWeeks > cudaTriggerBudgetCpuWeeks",
+      "projectionScope": "one phase456-default-equivalent five-column workload at each n; two 16000+2000 interacting columns and three 10000+2000 exact-control columns",
+      "projectionIsSchedulingOnly": true,
+      "cudaTriggerFundsOnly": "Inc 0+1",
+      "productionOperatorBitExactParityRequiredBeforeCudaTrajectory": true,
+      "genericOrSyntheticParityNeverSatisfies": true,
+      "authorizesAcceleration": false,
+      "authorizesSampling": false
+    }
+  },
+  "outcomePrecedence": [
+    "blocked-input-invalid-or-drifted",
+    "blocked-inputs-incomplete",
+    "blocked-upstream-invalidated-by-o4",
+    "no-go-theorem-closed",
+    "no-launch-motivation-not-met",
+    "cuda-inc0-plus1-required-production-not-authorized",
+    "eligible-for-binder-preregistration-cpu-route",
+    "eligible-for-binder-preregistration-cuda-parity-green"
+  ],
+  "standingBoundary": {
+    "phase478PerformsPhysicsCompute": false,
+    "phase478EvaluatesPhase458": false,
+    "gateGreenIsNotScientificEvidence": true,
+    "latticeAndWorkbenchScopeOnly": true,
+    "sourceContractApplicationAllowed": false,
+    "promotedPhysicalMassClaimCount": 0
+  }
+}

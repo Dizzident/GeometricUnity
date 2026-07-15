@@ -5787,10 +5787,8 @@ if (sourceLineageMissing) {
   assert(Array.isArray(phase471.openLimbs) && ["L5","L6","L8"].every((l) => phase471.openLimbs.includes(l)), "Phase471 must name L5/L6/L8 as open limbs.");
   assert(Array.isArray(phase471.withheldLimbs) && phase471.withheldLimbs.includes("L7"), "Phase471 must name L7 as withheld.");
   assert(phase101Package?.b2ClosureLedger?.b2ClosureLedgerBuilt === true, "Phase101 must include the Phase471 block.");
-  // Phases477-483 -- Amendment A4 ordered fail-closed skeleton checkpoint.
+  // Phases479-483 -- remaining Amendment A4 fail-closed skeletons.
   const a4Skeletons = [
-    [phase477, 477, 1, "o4-adjudication-infrastructure", "infrastructure-ready-pending-human-ruling"],
-    [phase478, 478, 2, "phase458-gate-specification-closure", "specification-skeleton-awaiting-implementation"],
     [phase479, 479, 3, "phase457-post-ruling-readiness", "readiness-skeleton-awaiting-implementation"],
     [phase480, 480, 4, "o4-physicist-adjudication-intake", "awaiting-external-physicist-ruling"],
     [phase481, 481, 5, "phase456-prospective-repair-preregistration", "preregistration-skeleton-awaiting-implementation"],
@@ -5817,6 +5815,24 @@ if (sourceLineageMissing) {
   assert(phase477.syntheticOverturn?.failedEdgeMutationCount === 0 && phase477.syntheticOverturn?.unintendedBranchMutationCount === 0 && phase477.syntheticOverturn?.failedSemanticCaseCount === 0, "Phase477 synthetic overturn battery cannot miss an edge, mutate an unrelated branch, or fail a semantic case.");
   assert(phase477.syntheticOverturn?.canonicalArtifactMutationCount === 0 && phase477.syntheticOverturn?.candidatePathMutationCount === 0 && phase477.syntheticOverturn?.candidatePathWriteCount === 0, "Phase477 synthetic tests cannot mutate artifacts or write a Phase457 candidate path.");
   assert(phase477.syntheticOverturn?.syntheticRulingAcceptedAsRealCount === 0 && phase477.syntheticOverturn?.legacyMinimalRulingAcceptedAsRealCount === 0, "Phase477 must reject synthetic and legacy-minimal ruling envelopes as real.");
+  // Phase478 -- exact Phase458 G1-G6 specification; no evaluation or launch.
+  assert(phase478.skeletonBuilt === false && phase478.zeroPhysicsCompute === true && phase478.awaitingImplementation === false, "Phase478 must be the implemented zero-compute specification, not its skeleton.");
+  assert(phase478.applicationSubjectKind === "phase458-gate-specification-closure" && phase478.waveOrder === 2, "Phase478 identity or wave order drifted.");
+  assert(phase478.terminalStatus === "phase458-gate-specification-closure-gate-specification-closed-phase458-inputs-incomplete" && phase478.specificationClosed === true, "Phase478 must close the specification while retaining incomplete Phase458 inputs.");
+  assert(phase478.contractSha256 === "d2bd1aa491ec7a9fc680c8f367fbed353b4abde040d7511671fe417dfba894f0", "Phase478 gate contract hash drifted.");
+  assert(phase478.schemaShapeValid === true && phase478.gateStateEnumExact === true && phase478.gateOrderExact === true && phase478.outcomeTaxonomyExact === true && phase478.outcomePrecedenceExact === true, "Phase478 contract schema and outcome taxonomy must be exact.");
+  assert(Array.isArray(phase478.gateStates) && phase478.gateStates.length === 6, "Phase478 must emit exactly six typed gate states.");
+  assert(phase478.currentAvailableTrueGateCount === 2 && phase478.currentAvailableFalseGateCount === 1 && phase478.currentMissingGateCount === 3 && phase478.currentInvalidOrDriftedGateCount === 0, "Phase478 current G1-G6 readiness counts drifted.");
+  assert(phase478.g1?.state === "available-false" && phase478.g1?.theoremClosed === false && phase478.g1?.a5HashGreen === true, "Phase478 G1 must preserve the exact A5 obstruction without theorem closure.");
+  assert(phase478.g2?.state === "available-true" && phase478.g2?.g2EvidenceValid === true && phase478.g2?.measuredCpuWeeks === 0.11371015556660466 && phase478.g2?.budgetCpuWeeks === 2, "Phase478 G2 must consume only the exact verified operational n=4 cost.");
+  assert(phase478.g3?.state === "missing" && phase478.g3?.p456MotivationEligible === false && phase478.g3?.p456Motivated === false && phase478.g3?.invalidScienceCannotMotivate === true, "Phase478 G3 must reject invalid Phase456 diagnostics as motivation.");
+  assert(phase478.g4?.state === "missing" && phase478.g4?.phase477InfrastructureGreen === true && phase478.g4?.phase480GenuineMemoGreen === false && phase478.g4?.infrastructureAloneNeverSatisfies === true, "Phase478 G4 must require a genuine external physicist memo beyond infrastructure.");
+  assert(phase478.g5?.state === "missing" && phase478.g5?.verdictWithheldNeverCounts === true, "Phase478 G5 must remain incomplete and reject verdict-withheld.");
+  assert(phase478.g6?.state === "available-true" && phase478.g6?.formulaId === "n4-measured-cost-volume4-workload-v1" && phase478.g6?.projectedCpuWeeks === 1.5044386597816015 && phase478.g6?.cudaTriggerBudgetCpuWeeks === 2 && phase478.g6?.route === "cpu-route" && phase478.g6?.g6SpecificationValid === true, "Phase478 G6 pinned projection or CPU/CUDA boundary drifted.");
+  assert(phase478.batteries?.outcomeBatteryPassed === true && phase478.batteries?.outcomeCaseCount === 8 && phase478.batteries?.numericBoundaryBatteryPassed === true && phase478.batteries?.invalidScienceCannotMotivateBatteryPassed === true, "Phase478 fail-closed outcome and boundary batteries must pass.");
+  assert(phase478.currentPhase458RestingState === "blocked-inputs-incomplete" && phase478.phase458Evaluated === false && phase478.phase458EvaluationAuthorized === false && phase478.binderLaunchAuthorized === false && phase478.accelerationAuthorized === false && phase478.productionAuthorized === false, "Phase478 cannot evaluate Phase458 or authorize launch, acceleration, or production.");
+  assert(phase478.targetBlindConstruction === true && phase478.physicalTargetsConsultedForConstruction === false && phase478.physicistReviewPending === true, "Phase478 must remain target-blind and human-ruling pending.");
+  assert(phase478.noGevPromotion === true && phase478.promotedPhysicalMassClaimCount === 0 && phase478.sourceContractApplicationAllowed === false, "Phase478 must preserve the no-claim boundary.");
   const a4PackageBlocks = [
     phase101Package?.o4AdjudicationInfrastructure,
     phase101Package?.phase458GateSpecificationClosure,
@@ -5826,7 +5842,8 @@ if (sourceLineageMissing) {
     phase101Package?.a5TheoremScout,
     phase101Package?.sourceDefinedReopeningIntake,
   ];
-  assert(a4PackageBlocks.every((block) => block?.skeletonBuilt === true), "Phase101 must include every Phase477-483 A4 skeleton block.");
+  assert(a4PackageBlocks.every((block) => block != null), "Phase101 must include every Phase477-483 A4 block.");
+  assert(phase101Package?.phase458GateSpecificationClosure?.specificationClosed === true && phase101Package?.phase458GateSpecificationClosure?.phase458EvaluationAuthorized === false, "Phase101 must mirror Phase478 specification closure without authorizing Phase458.");
   assert(a4PackageBlocks.every((block) => block?.noGevPromotion === true && block?.promotedPhysicalMassClaimCount === 0), "Phase101 A4 blocks must preserve the no-GeV boundary.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");
