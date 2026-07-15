@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 1,
+  "contractId": "phase457-post-ruling-contract-v1",
+  "planSection": "WAVE2_AMENDMENTS_2026-07-12 A4",
+  "phase466Pin": {
+    "summaryPath": "studies/phase466_ws3_vev_completion_contract_001/output/ws3_vev_completion_contract_summary.json",
+    "requiredPhaseId": "phase466-ws3-vev-completion-contract",
+    "schemaId": "ws3-vev-completion-contract-schema-v1",
+    "schemaHash": "7159ea49a45e3044c4393542b24a5db596f5d1423150020b072849ec8cb322b9",
+    "requiredPredicates": [
+      "/terminalStatus=ws3-vev-completion-contract-schema-committed",
+      "/verdictKind=schema-committed",
+      "/ws3VevCompletionContractSchemaCommitted=true",
+      "sha256(/schema/schemaCanonicalPreimage)=/schema/schemaHash",
+      "/schema/pins/phase434HashMatches=true",
+      "/schema/pins/templateIdMatches=true",
+      "/schema/partition/partitionMatches=true",
+      "/schema/o8CapAssertedOnAllLineage=true",
+      "/schema/fixtureBattery/allFixturesPassed=true",
+      "/schema/phase256TemplateMutated=false"
+    ]
+  },
+  "rulingConsumption": {
+    "onlySourcePath": "studies/phase480_o4_physicist_adjudication_intake_001/output/o4_physicist_adjudication_intake_summary.json",
+    "requiredPhaseId": "phase480-o4-physicist-adjudication-intake",
+    "requiredTerminalStatus": "o4-physicist-adjudication-intake-validated-external-physicist-ruling",
+    "requiredMemoSchemaId": "o4-human-physicist-memo-v1",
+    "requiredMemoSchemaSha256": "989a49b6b70e839db6858a6ea26a93146860c0c109facdb276e56d4e3467d82a",
+    "requiredRulingId": "O4-C3-WS3-MPROBE-SCOPE",
+    "acceptedDispositions": [
+      "accept-at-declared-scope",
+      "accept-with-registered-caveats"
+    ],
+    "requiredSelectedOption": "accept-labeled-probe-only-no-lineage",
+    "requiredScopeAssertions": {
+      "mIsSourceDefined": false,
+      "singletGapOnly": true,
+      "noNamedScalarIdentification": true,
+      "noLineageFill": true,
+      "latticeUnitsOnly": true
+    },
+    "requiredIntakePredicates": [
+      "externalMemoValidated=true",
+      "humanAuthorshipValidated=true",
+      "repositoryBindingValidated=true",
+      "signedPayloadHashValidated=true",
+      "signatureProvenanceValidated=true",
+      "signatureVerificationStatus in {cryptographically-verified,witnessed-document-verified}",
+      "syntheticOrTemplateInput=false",
+      "rulingContentMachineAuthoredOrInferred=false"
+    ],
+    "legacyCandidatePathsAccepted": false,
+    "legacyTwoFieldShapeAccepted": false,
+    "riskAcceptanceCountsAsRuling": false,
+    "registerCurrencyCountsAsRuling": false
+  },
+  "armQ": {
+    "launchGateOrder": [
+      "G-Q1",
+      "G-Q2",
+      "G-Q3"
+    ],
+    "G-Q1": "phase466 exact schema pin AND Phase480 genuine accepted O4-C3 derivative",
+    "G-Q2": {
+      "meaning": "committed eligible seed-regenerated ensemble",
+      "requiredFormatId": "phase457-arm-q-ensemble-v1",
+      "requiredFields": [
+        "ensembleId",
+        "configSha256",
+        "generatorCommitSha",
+        "seedManifestSha256",
+        "memberId",
+        "torusSize",
+        "couplingVector",
+        "portalConvention",
+        "actionCellId",
+        "thetaHaarMeasureUsed",
+        "perSampleFields",
+        "precursorBatteryStatus",
+        "environmentOverrideCount",
+        "productionArtifactSha256"
+      ],
+      "requiredPerSampleFields": [
+        "S_B",
+        "Phi",
+        "M_squared"
+      ],
+      "thetaHaarMeasureUsed": true,
+      "environmentOverrideCount": 0,
+      "precursorBatteryStatus": "green",
+      "phase456WindowReuseAllowed": false,
+      "syntheticSelfTestCountsAsEnsemble": false
+    },
+    "G-Q3": {
+      "meaning": "base-measure RNG independence",
+      "allowedModes": [
+        "stream-neutrality",
+        "fresh-independent"
+      ],
+      "streamNeutrality": {
+        "errorModelId": "aligned-block-jackknife-autocorrelation-aware-v1",
+        "blockLengthRule": "ceil(2*max(tauInt_SB,tauInt_Phi))",
+        "minimumAlignedBlockCount": 20,
+        "sigmaThresholdInclusive": 4.0,
+        "requiredMarginals": [
+          "S_B",
+          "Phi"
+        ],
+        "onlyMStreamMayChange": true,
+        "bothMarginalsMustPass": true
+      },
+      "freshIndependent": {
+        "requiredLabel": "FRESH",
+        "allBaseAndMSeedsDisjoint": true,
+        "sharedTrajectoryCount": 0,
+        "independentArtifactHashesRequired": true,
+        "piggybackAllowed": false
+      }
+    },
+    "actionCellGate": {
+      "selectedByHumanRuling": false,
+      "allowedStageAVerdicts": [
+        "BOUNDED-BELOW",
+        "CONDITIONAL-CRITICAL-SUBCRITICAL-BRANCH"
+      ],
+      "unboundedCellAllowed": false,
+      "conditionalMagRequiresMachineVerifiedStrictSubcriticalInequality": true,
+      "tabledAllCellsUnboundedRelaxationAllowed": false,
+      "couplingVectorAndPortalConventionMustBePreregistered": true
+    },
+    "motivationPreregistration": {
+      "requiredBeforeRealEnsembleGeneration": true,
+      "requiredFields": [
+        "comparatorArtifactPath",
+        "comparatorArtifactSha256",
+        "estimatorId",
+        "nullDefinition",
+        "effectRows",
+        "autocorrelationErrorModelId",
+        "multiplicityCalibrationId",
+        "appliedThreshold",
+        "minimumEffectiveSampleSize",
+        "minimumPower",
+        "invalidRowPolicy",
+        "terminalTaxonomy"
+      ],
+      "requiredEffectRows": [
+        "mean-M-squared",
+        "connected-M-squared-susceptibility"
+      ],
+      "minimumEffectiveSampleSizePerVerdictRow": 100,
+      "allRowsFiniteRequired": true,
+      "anyInvalidRowTerminal": "arm-q-measurement-invalid",
+      "underpoweredTerminal": "arm-q-underpowered",
+      "motivationNotMetTerminal": "arm-q-motivation-not-met-stage-b-not-authorized",
+      "motivationGreenTerminal": "arm-q-motivation-green-stage-b-preregistration-required",
+      "phase466O5ThreeSigmaGuardMayNotBeSilentlyReused": true,
+      "currentPhase457IidStandardErrorMayNotBeUsedForRealHmc": true,
+      "currentSpecificationStatus": "required-future-preregistration-not-yet-present"
+    },
+    "measurementScope": {
+      "observables": [
+        "mean-M-squared",
+        "connected-M-squared-susceptibility"
+      ],
+      "motivationOnly": true,
+      "stageBBuiltOnlyAfterMotivationGreen": true,
+      "stageBRequiresSeparatePreregistration": true,
+      "automaticRunWithoutManualSelectionWhenGQ1ThroughGQ3Green": true
+    }
+  },
+  "teamCCosignature": {
+    "requiredOnlyForDeadlineTerminals": true,
+    "deadlineTerminals": [
+      "deadline-no-eligible-ensemble",
+      "deadline-arm-q-incomplete",
+      "deadline-stage-b-incomplete"
+    ],
+    "requiredFields": [
+      "cosignerRegistryId",
+      "professionalRole",
+      "signedAt",
+      "terminal",
+      "reviewedArtifactSha256",
+      "attestationSha256",
+      "signatureVerificationStatus"
+    ],
+    "deadlineWithoutValidCosignatureTerminal": "deadline-withheld-awaiting-team-c-cosignature",
+    "deadlineNeverClosesL7": true,
+    "deadlineNeverSatisfiesPhase458G5": true,
+    "deadlineAuthorizesStageB": false,
+    "deadlineFillsSourceContract": false,
+    "nonDeadlineScientificTerminalRequiresTeamCCosignature": false
+  },
+  "terminals": {
+    "preUnlock": [
+      "verdict-withheld-firewall-closed",
+      "awaiting-measurement",
+      "measurement-recorded-verdict-withheld"
+    ],
+    "postUnlockScientific": [
+      "portal-measure-nonexistent-at-workbench-scope",
+      "portal-null-measured",
+      "portal-scale-candidate"
+    ],
+    "deadline": [
+      "deadline-no-eligible-ensemble",
+      "deadline-arm-q-incomplete",
+      "deadline-stage-b-incomplete",
+      "deadline-withheld-awaiting-team-c-cosignature"
+    ]
+  },
+  "standingBoundary": {
+    "phase479PerformsStageBWork": false,
+    "phase479ConsumesHumanRuling": false,
+    "phase479LiftsHold": false,
+    "mIsLabeledProbeConventionOnly": true,
+    "singletGapNeverNamesElectroweakScalar": true,
+    "lineageRowsEverCompletableByWS3": false,
+    "latticeUnitsOnly": true,
+    "sourceContractApplicationAllowed": false,
+    "promotedPhysicalMassClaimCount": 0
+  }
+}

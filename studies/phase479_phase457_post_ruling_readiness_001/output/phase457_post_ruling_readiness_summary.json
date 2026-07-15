@@ -1,28 +1,85 @@
 {
   "phaseId": "phase479-phase457-post-ruling-readiness",
-  "generatedAt": "2026-07-15T15:39:00.9149408+00:00",
-  "terminalStatus": "phase457-post-ruling-readiness-readiness-skeleton-awaiting-implementation",
-  "interimTerminal": "readiness-skeleton-awaiting-implementation",
-  "verdictKind": "readiness-skeleton-awaiting-implementation",
+  "generatedAt": "2026-07-15T16:43:53.8973656+00:00",
+  "terminalStatus": "phase457-post-ruling-readiness-post-ruling-readiness-contract-closed-hold-remains",
+  "interimTerminal": "post-ruling-readiness-contract-closed-hold-remains",
+  "verdictKind": "post-ruling-readiness-contract-closed-hold-remains",
   "applicationSubjectKind": "phase457-post-ruling-readiness",
   "planSection": "WAVE2_AMENDMENTS_2026-07-12 A4",
   "waveOrder": 3,
-  "skeletonBuilt": true,
+  "skeletonBuilt": false,
   "zeroPhysicsCompute": true,
-  "awaitingImplementation": true,
-  "executionPriorityDependencies": [
-    "phase477",
-    "phase478"
-  ],
-  "readinessItems": [
-    "phase466 schema pin",
-    "genuine M-probe ruling-schema consumption",
-    "Arm-Q ensemble prerequisite",
-    "RNG-neutrality or FRESH labeling",
-    "Team-C co-signature semantics"
-  ],
+  "awaitingImplementation": false,
+  "contractClosed": true,
+  "contractPath": "studies/phase479_phase457_post_ruling_readiness_001/preregistration/phase457_post_ruling_contract_v1.json",
+  "contractSha256": "2bb7cbea70cb16bf58a4abc5215ff3e3b8e0133adac75aa0edd4a9de91e42ee0",
+  "phase466": {
+    "summaryPath": "studies/phase466_ws3_vev_completion_contract_001/output/ws3_vev_completion_contract_summary.json",
+    "summarySha256": "65699eb88de010126166e3fafc99632b03b61c6d6ed18c5297c5648ebdabf330",
+    "schemaId": "ws3-vev-completion-contract-schema-v1",
+    "schemaHash": "7159ea49a45e3044c4393542b24a5db596f5d1423150020b072849ec8cb322b9",
+    "canonicalPreimageHashRecomputed": "7159ea49a45e3044c4393542b24a5db596f5d1423150020b072849ec8cb322b9",
+    "phase466PinSatisfied": true
+  },
+  "memoInterface": {
+    "onlySourcePath": "studies/phase480_o4_physicist_adjudication_intake_001/output/o4_physicist_adjudication_intake_summary.json",
+    "memoBindingPathsExist": true,
+    "requiredMemoSchemaSha256": "989a49b6b70e839db6858a6ea26a93146860c0c109facdb276e56d4e3467d82a",
+    "phase477InfrastructureGreen": true,
+    "phase457LegacyInterfaceRetired": true,
+    "legacyCandidatePathsAccepted": false,
+    "legacyTwoFieldShapeAccepted": false,
+    "rawMemoAccepted": false,
+    "riskAcceptanceCountsAsRuling": false,
+    "registerCurrencyCountsAsRuling": false,
+    "c3DerivativeAccepted": false,
+    "rulingConsumed": false,
+    "humanRulingReadOrAuthored": false
+  },
+  "hold": {
+    "phase466SchemaConjunctSatisfied": true,
+    "humanMProbeConjunctSatisfied": false,
+    "verdictFirewallConjunctionSatisfied": false,
+    "holdLifted": false,
+    "currentState": "closed-human-ruling-absent",
+    "tabledAllCellsUnboundedRelaxationUsed": false
+  },
+  "armQReadiness": {
+    "armQContractExact": true,
+    "eligibleRealArmQEnsemblePresent": false,
+    "phase456WindowReuseAllowed": false,
+    "syntheticSelfTestCountsAsEnsemble": false,
+    "rngNeutralityOrFreshProvenanceGreen": false,
+    "motivationPreregistrationPresent": false,
+    "currentIidEstimatorEligibleForRealHmc": false,
+    "armQReady": false,
+    "armQRun": false,
+    "armQMeasurementRecorded": false,
+    "stageBPreregistrationPresent": false,
+    "stageBBuiltOrRun": false,
+    "portalVerdictEligible": false
+  },
+  "teamC": {
+    "teamCCosignatureSemanticsExact": true,
+    "signerRegistryPresent": false,
+    "appliesOnlyToDeadlineTerminal": true,
+    "deadlineTerminalRequested": false,
+    "deadlineTerminalEmitted": false,
+    "deadlineClosesL7": false
+  },
+  "batteries": {
+    "rulingBatteryPassed": true,
+    "rulingCaseCount": 7,
+    "phase466MutationBatteryPassed": true,
+    "phase466CaseCount": 4,
+    "teamCBatteryPassed": true,
+    "teamCCaseCount": 3,
+    "canonicalArtifactMutationCount": 0,
+    "candidatePathWriteCount": 0
+  },
   "stageBBuiltOrRun": false,
   "holdLifted": false,
+  "l7Closure": "WITHHELD",
   "targetBlindConstruction": true,
   "physicalTargetsConsultedForConstruction": false,
   "physicistReviewPending": true,
@@ -44,6 +101,6 @@
   "routeCompletesBosonPredictions": false,
   "noGevPromotion": true,
   "promotedPhysicalMassClaimCount": 0,
-  "decision": "A4 zero-compute readiness skeleton only. It neither consumes a ruling nor builds Stage B; the Phase457 conjunction hold remains closed.",
-  "runtimeSeconds": 1.92E-05
+  "decision": "The Phase457 post-ruling interface is frozen and the unsafe legacy two-field parser is retired. Phase466 is exact, but no verified Phase480 C3 derivative, real Arm-Q ensemble, RNG/FRESH provenance, or motivation preregistration exists. The hold stays closed; no ruling is consumed and no Arm Q, Stage B, L7 closure, or claim is authorized.",
+  "runtimeSeconds": 0.0338539
 }

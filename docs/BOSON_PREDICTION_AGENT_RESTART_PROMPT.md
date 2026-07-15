@@ -90,6 +90,18 @@ available-false, 3 missing, and 0 invalid/drifted. Phase478 did not evaluate
 Phase458, infer an O4 ruling, or authorize Binder/CUDA/production work; its
 terminal is `gate-specification-closed-phase458-inputs-incomplete`.
 
+PHASE457 READINESS (2026-07-15, Phase479): the unsafe legacy parser that
+accepted a two-field boolean/signer JSON at three candidate paths is retired.
+Phase457 now consumes only a verified normalized Phase480 C3 derivative with
+the exact probe-only option and five scope assertions. The memo schema's stale
+nonexistent coverage-manifest path was repaired to the actual exact coverage
+contract; the current schema/template hashes are `989a49b6...d82a` and
+`50106013...2a4b`. The full Phase466 pin is green, but no human C3 derivative,
+eligible real Arm-Q ensemble, RNG/FRESH provenance, or prospective motivation
+pack exists. The hold remains closed, Arm Q and Stage B remain unrun, and L7
+remains withheld. Phase479's terminal is
+`post-ruling-readiness-contract-closed-hold-remains`.
+
 Current gate status after the Phase448 work (plus the 2026-06-12 platform
 fix - GPU parity defect root-caused and discharged - and the 2026-07-01
 |Y|=1/2 calibration defect fix in the Phase411/417 informational SM
@@ -881,11 +893,10 @@ MANDATORY; A5 Gaussian-domination NOT provable at Stage A, three
 obstructions recorded, beta ladders live -> feeds 458 G1) and
 phase457 Stage-A (all seven portal cells certified exactly, closed
 form g_crit = sqrt(2*lambda); verdict firewall machine-checked CLOSED
-pending the O4 M-probe ruling; Arm Q gated off). The new-directory C queue and
-C-LIFT are complete. Phase456 production completed under explicit written risk
-renewal. The only remaining machine queue item is Phase458, and it must not
-execute until all G1-G6 inputs exist; production supplies G2 but explicitly
-does not supply G3.
+pending the verified Phase480 O4 M-probe derivative; Arm Q gated off). The
+new-directory C queue and C-LIFT are complete. Phase456 production completed
+under explicit written risk renewal. Phase458 must not execute until all G1-G6
+inputs exist; production supplies G2 but explicitly does not supply G3.
 
 WAVE-2 LABELED AMENDMENT A4 allocates phases 477-483 as a fail-closed
 blocker-resolution extension in strict execution-priority order: 477 O4
@@ -899,8 +910,10 @@ Phase482 cannot claim a theorem from a partial scout; Phase483 cannot invent
 source fields. Phase477 is now substantively complete at exact coverage 31/31,
 13 memo ruling IDs, and 94/94 synthetic dependency edges, while remaining
 human-ruling pending. Phase478 is substantively complete but Phase458 remains
-blocked on G3/G4/G5. The original Phase457 hold and Phase471 firewall remain
-unchanged. Registry 477-483 is allocated; 484+ remains unassigned.
+blocked on G3/G4/G5. Phase479 is substantively complete: the exact Phase480
+derivative, Arm-Q provenance, and Team-C deadline interfaces are frozen, while
+the Phase457 hold remains closed and Phase471's firewall remains unchanged.
+Registry 477-483 is allocated; 484+ remains unassigned.
 
 WAVE-2 C-LINEAGE MACHINE RESULTS (2026-07-14, incremental validation green:
 82 ran / 260 skipped, integrity verified): PHASE467 reconstructs the exact

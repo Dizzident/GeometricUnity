@@ -1,6 +1,6 @@
 {
   "phaseId": "phase457-upsilon-portal-stage-a",
-  "generatedAt": "2026-07-12T13:11:01.6279041+00:00",
+  "generatedAt": "2026-07-15T16:43:52.617232+00:00",
   "terminalStatus": "upsilon-portal-stage-a-stage-a-certificates-committed",
   "interimTerminal": "stage-a-certificates-committed",
   "priorInterimTerminal": "awaiting-stage-a",
@@ -175,28 +175,12 @@
     "observedSchemaId": "ws3-vev-completion-contract-schema-v1",
     "observedSchemaHash": "7159ea49a45e3044c4393542b24a5db596f5d1423150020b072849ec8cb322b9",
     "schemaPinSatisfied": true,
-    "o4MProbeRulingCandidatePaths": [
-      "docs/Phases/Adjudication/O4_MPROBE_RULING.json",
-      "scripts/o4_register/o4_mprobe_ruling.json",
-      "studies/phase457_upsilon_portal_stage_a_001/o4_mprobe_ruling.json"
-    ],
-    "o4MProbeRulingSearched": [
-      {
-        "path": "docs/Phases/Adjudication/O4_MPROBE_RULING.json",
-        "exists": false,
-        "validRecord": false
-      },
-      {
-        "path": "scripts/o4_register/o4_mprobe_ruling.json",
-        "exists": false,
-        "validRecord": false
-      },
-      {
-        "path": "studies/phase457_upsilon_portal_stage_a_001/o4_mprobe_ruling.json",
-        "exists": false,
-        "validRecord": false
-      }
-    ],
+    "phase480DerivativePath": "studies/phase480_o4_physicist_adjudication_intake_001/output/o4_physicist_adjudication_intake_summary.json",
+    "requiredPhase480Terminal": "o4-physicist-adjudication-intake-validated-external-physicist-ruling",
+    "requiredMemoSchemaSha256": "989a49b6b70e839db6858a6ea26a93146860c0c109facdb276e56d4e3467d82a",
+    "phase480DerivativeStatus": "present-nonsatisfying",
+    "legacyCandidatePathsAccepted": false,
+    "legacyTwoFieldShapeAccepted": false,
     "o4MProbeRulingPresent": false,
     "o4RulingPathFound": null,
     "firewallOpen": false,
@@ -239,12 +223,15 @@
       }
     ],
     "firewallMachineChecked": true,
-    "note": "No verdict-bearing summary field is emitted unless the on-disk phase466 {schemaId, schemaHash} matches the pinned pair AND an o4MProbeRuling record exists. It does not; the portal verdict is withheld."
+    "note": "No verdict-bearing summary field is emitted unless the on-disk phase466 {schemaId, schemaHash} matches the pinned pair AND the exact Phase480 verified C3 derivative is accepted. It is not; the portal verdict is withheld."
   },
   "armQ": {
     "implemented": true,
     "gatedOff": true,
     "mayRun": false,
+    "eligibleEnsemblePresent": false,
+    "rngOrFreshProvenanceGreen": false,
+    "motivationPreregistrationPresent": false,
     "launchConditions": [
       "G-Q1: firewallOpen (phase466 schema pinned AND o4MProbeRuling present)",
       "G-Q2: a committed seed-regenerated ensemble in the phase450/453 HMC format with precursor batteries green",
@@ -335,5 +322,5 @@
     "standingClaimBoundaryIntact": true
   },
   "decision": "Stage A commits exhaustive-cell boundedness-below certificates for the Upsilon-portal action class: 2 bounded, 4 unbounded, 1 conditional-critical, over a disjoint exhaustive sign-cell menu (exact mathematics; control-branch identity ||F||^2 = 2 S_B fixes g_crit = sqrt(2 lambda)). The null-hash firewall keyed to phase466 is CLOSED (schema pins but no o4MProbeRuling record exists), so the portal verdict is WITHHELD; Arm Q is implemented and GATED OFF. Terminal stage-a-certificates-committed. Nothing is measured or promoted; promotedPhysicalMassClaimCount remains 0.",
-  "runtimeSeconds": 0.0209888
+  "runtimeSeconds": 0.0253024
 }

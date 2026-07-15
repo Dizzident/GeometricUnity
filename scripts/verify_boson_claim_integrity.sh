@@ -5614,6 +5614,8 @@ if (sourceLineageMissing) {
   assert(phase457.verdictKind === "stage-a-certificates-committed", "Phase457 verdictKind must equal stage-a-certificates-committed.");
   assert(phase457.stageA?.allCellsCertified === true, "Phase457 must certify every portal-action cell (2 bounded / 4 unbounded-named / 1 conditional-critical).");
   assert(phase457.firewall?.firewallOpen === false && phase457.firewall?.firewallMachineChecked === true, "Phase457 verdict firewall must be machine-checked and CLOSED (no O4 M-probe ruling exists; the WS3 hold's second half).");
+  assert(phase457.firewall?.phase480DerivativePath === "studies/phase480_o4_physicist_adjudication_intake_001/output/o4_physicist_adjudication_intake_summary.json" && phase457.firewall?.legacyCandidatePathsAccepted === false && phase457.firewall?.legacyTwoFieldShapeAccepted === false, "Phase457 must consume only the exact Phase480 derivative and reject the retired candidate-path/two-field interface.");
+  assert(phase457.armQ?.eligibleEnsemblePresent === false && phase457.armQ?.rngOrFreshProvenanceGreen === false && phase457.armQ?.motivationPreregistrationPresent === false && phase457.armQ?.mayRun === false, "Phase457 cannot run Arm Q without the full Phase479 readiness conjunction.");
   assert(phase457.armQ?.gatedOff === true, "Phase457 Arm Q must remain gated off pre-unlock.");
   assert(phase457.planSection === "WAVE2_ACTION_PLAN_2026-07-12 item 10", "Phase457 must cite its plan item.");
   assert(phase457.targetBlindConstruction === true, "Phase457 must be target-blind.");
@@ -5787,9 +5789,8 @@ if (sourceLineageMissing) {
   assert(Array.isArray(phase471.openLimbs) && ["L5","L6","L8"].every((l) => phase471.openLimbs.includes(l)), "Phase471 must name L5/L6/L8 as open limbs.");
   assert(Array.isArray(phase471.withheldLimbs) && phase471.withheldLimbs.includes("L7"), "Phase471 must name L7 as withheld.");
   assert(phase101Package?.b2ClosureLedger?.b2ClosureLedgerBuilt === true, "Phase101 must include the Phase471 block.");
-  // Phases479-483 -- remaining Amendment A4 fail-closed skeletons.
+  // Phases480-483 -- remaining Amendment A4 fail-closed skeletons.
   const a4Skeletons = [
-    [phase479, 479, 3, "phase457-post-ruling-readiness", "readiness-skeleton-awaiting-implementation"],
     [phase480, 480, 4, "o4-physicist-adjudication-intake", "awaiting-external-physicist-ruling"],
     [phase481, 481, 5, "phase456-prospective-repair-preregistration", "preregistration-skeleton-awaiting-implementation"],
     [phase482, 482, 6, "a5-theorem-scout", "theorem-scout-skeleton-awaiting-implementation"],
@@ -5833,6 +5834,23 @@ if (sourceLineageMissing) {
   assert(phase478.currentPhase458RestingState === "blocked-inputs-incomplete" && phase478.phase458Evaluated === false && phase478.phase458EvaluationAuthorized === false && phase478.binderLaunchAuthorized === false && phase478.accelerationAuthorized === false && phase478.productionAuthorized === false, "Phase478 cannot evaluate Phase458 or authorize launch, acceleration, or production.");
   assert(phase478.targetBlindConstruction === true && phase478.physicalTargetsConsultedForConstruction === false && phase478.physicistReviewPending === true, "Phase478 must remain target-blind and human-ruling pending.");
   assert(phase478.noGevPromotion === true && phase478.promotedPhysicalMassClaimCount === 0 && phase478.sourceContractApplicationAllowed === false, "Phase478 must preserve the no-claim boundary.");
+  // Phase479 -- exact post-ruling interface; hold remains closed.
+  assert(phase479.skeletonBuilt === false && phase479.zeroPhysicsCompute === true && phase479.awaitingImplementation === false && phase479.contractClosed === true, "Phase479 must be the implemented zero-compute readiness contract.");
+  assert(phase479.terminalStatus === "phase457-post-ruling-readiness-post-ruling-readiness-contract-closed-hold-remains" && phase479.verdictKind === "post-ruling-readiness-contract-closed-hold-remains", "Phase479 must close only its readiness contract while retaining the hold.");
+  assert(phase479.contractSha256 === "2bb7cbea70cb16bf58a4abc5215ff3e3b8e0133adac75aa0edd4a9de91e42ee0", "Phase479 readiness contract hash drifted.");
+  assert(phase479.phase466?.phase466PinSatisfied === true && phase479.phase466?.schemaHash === "7159ea49a45e3044c4393542b24a5db596f5d1423150020b072849ec8cb322b9" && phase479.phase466?.canonicalPreimageHashRecomputed === phase479.phase466?.schemaHash, "Phase479 must validate the full Phase466 schema pin and canonical preimage.");
+  assert(phase479.memoInterface?.memoBindingPathsExist === true && phase479.memoInterface?.requiredMemoSchemaSha256 === "989a49b6b70e839db6858a6ea26a93146860c0c109facdb276e56d4e3467d82a", "Phase479 memo bindings and repaired schema hash must be current.");
+  assert(phase479.memoInterface?.phase457LegacyInterfaceRetired === true && phase479.memoInterface?.legacyCandidatePathsAccepted === false && phase479.memoInterface?.legacyTwoFieldShapeAccepted === false && phase479.memoInterface?.rawMemoAccepted === false, "Phase479 must retire every raw/legacy ruling interface.");
+  assert(phase479.memoInterface?.c3DerivativeAccepted === false && phase479.memoInterface?.rulingConsumed === false && phase479.memoInterface?.humanRulingReadOrAuthored === false, "Phase479 cannot consume, infer, or author the missing human C3 ruling.");
+  assert(phase479.hold?.phase466SchemaConjunctSatisfied === true && phase479.hold?.humanMProbeConjunctSatisfied === false && phase479.hold?.verdictFirewallConjunctionSatisfied === false && phase479.hold?.holdLifted === false && phase479.hold?.tabledAllCellsUnboundedRelaxationUsed === false, "Phase479 must preserve the strict two-conjunct WS3 hold and tabled relaxation boundary.");
+  assert(phase479.armQReadiness?.armQContractExact === true && phase479.armQReadiness?.eligibleRealArmQEnsemblePresent === false && phase479.armQReadiness?.phase456WindowReuseAllowed === false && phase479.armQReadiness?.syntheticSelfTestCountsAsEnsemble === false, "Phase479 Arm-Q ensemble contract must be exact and reject Phase456/synthetic reuse.");
+  assert(phase479.armQReadiness?.rngNeutralityOrFreshProvenanceGreen === false && phase479.armQReadiness?.motivationPreregistrationPresent === false && phase479.armQReadiness?.currentIidEstimatorEligibleForRealHmc === false && phase479.armQReadiness?.armQReady === false && phase479.armQReadiness?.armQRun === false, "Phase479 must keep Arm Q blocked without real provenance and prospective statistics.");
+  assert(phase479.armQReadiness?.stageBPreregistrationPresent === false && phase479.armQReadiness?.stageBBuiltOrRun === false && phase479.armQReadiness?.portalVerdictEligible === false, "Phase479 cannot preregister/run Stage B or emit a portal verdict.");
+  assert(phase479.teamC?.teamCCosignatureSemanticsExact === true && phase479.teamC?.appliesOnlyToDeadlineTerminal === true && phase479.teamC?.deadlineClosesL7 === false, "Phase479 Team-C co-signature semantics must remain administrative and L7-withheld.");
+  assert(phase479.batteries?.rulingBatteryPassed === true && phase479.batteries?.rulingCaseCount === 7 && phase479.batteries?.phase466MutationBatteryPassed === true && phase479.batteries?.teamCBatteryPassed === true, "Phase479 ruling, Phase466, and Team-C batteries must pass.");
+  assert(phase479.batteries?.canonicalArtifactMutationCount === 0 && phase479.batteries?.candidatePathWriteCount === 0, "Phase479 batteries cannot mutate artifacts or write candidate rulings.");
+  assert(phase479.stageBBuiltOrRun === false && phase479.holdLifted === false && phase479.l7Closure === "WITHHELD", "Phase479 cannot lift the hold, run Stage B, or close L7.");
+  assert(phase479.noGevPromotion === true && phase479.promotedPhysicalMassClaimCount === 0 && phase479.sourceContractApplicationAllowed === false, "Phase479 must preserve the no-claim boundary.");
   const a4PackageBlocks = [
     phase101Package?.o4AdjudicationInfrastructure,
     phase101Package?.phase458GateSpecificationClosure,
@@ -5844,6 +5862,7 @@ if (sourceLineageMissing) {
   ];
   assert(a4PackageBlocks.every((block) => block != null), "Phase101 must include every Phase477-483 A4 block.");
   assert(phase101Package?.phase458GateSpecificationClosure?.specificationClosed === true && phase101Package?.phase458GateSpecificationClosure?.phase458EvaluationAuthorized === false, "Phase101 must mirror Phase478 specification closure without authorizing Phase458.");
+  assert(phase101Package?.phase457PostRulingReadiness?.contractClosed === true && phase101Package?.phase457PostRulingReadiness?.holdLifted === false && phase101Package?.phase457PostRulingReadiness?.stageBBuiltOrRun === false, "Phase101 must mirror Phase479 readiness closure without lifting the hold or running Stage B.");
   assert(a4PackageBlocks.every((block) => block?.noGevPromotion === true && block?.promotedPhysicalMassClaimCount === 0), "Phase101 A4 blocks must preserve the no-GeV boundary.");
   assert(phase282.branchLocalInvariantCensusPassed === true, "Phase282 branch-local direct invariant census must pass while preserving non-promotional status.");
   assert(phase282.targetObservablesUsedForSearch === false, "Phase282 cannot use W/Z target values for invariant search ordering or stability.");

@@ -162,7 +162,7 @@ function validateRealRulingEnvelope(map, envelope) {
     const binding = envelope.repositoryBinding;
     assert(binding && /^[0-9a-f]{40}$/.test(binding.commitSha), "invalid repository commit binding");
     assert(binding.dossierPath === "docs/Phases/Adjudication/O4_CONVENTIONS_REGISTER.md", "invalid dossier path");
-    assert(binding.coverageManifestPath === "scripts/o4_register/o4_exact_coverage_manifest_v1.json", "invalid coverage manifest path");
+    assert(binding.coverageManifestPath === "scripts/o4_register/coverage_contract.json", "invalid coverage contract path");
     for (const key of ["dossierSha256", "coverageManifestSha256", "schemaSha256", "reviewerRegistryRecordSha256"]) assert(sha256(binding[key]), `invalid ${key}`);
     const attest = envelope.authorshipAttestations;
     assert(attest?.humanAuthoredRulings === true && attest.machineGeneratedRulings === false && attest.independentProfessionalJudgment === true, "invalid human-authorship attestations");

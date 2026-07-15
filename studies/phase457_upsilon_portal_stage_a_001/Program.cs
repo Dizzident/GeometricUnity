@@ -53,17 +53,13 @@ const string Phase466SummaryPath = "studies/phase466_ws3_vev_completion_contract
 const string PinnedSchemaId = "ws3-vev-completion-contract-schema-v1";
 const string PinnedSchemaHash = "7159ea49a45e3044c4393542b24a5db596f5d1423150020b072849ec8cb322b9";
 
-// --- O4 M-probe ruling: pre-registered candidate locations + required shape.
-// A ruling record must carry wsThreeMProbeScopeSignedOff = true and a signer.
-// None exists yet (the O4 register is only a DERIVED pending-review
-// enumeration, not a ruling), so this conjunct is false and the portal verdict
-// stays withheld.
-string[] O4MProbeRulingCandidatePaths =
-{
-    "docs/Phases/Adjudication/O4_MPROBE_RULING.json",
-    "scripts/o4_register/o4_mprobe_ruling.json",
-    "studies/phase457_upsilon_portal_stage_a_001/o4_mprobe_ruling.json",
-};
+// --- O4 M-probe ruling derivative: one exact Phase480 output, never raw memo.
+// Phase479 retired the legacy two-field candidate-path interface. Only a
+// cryptographically/witness-verified Phase480 derivative with the exact C3
+// option and five scope assertions may satisfy this conjunct.
+const string Phase480DerivativePath = "studies/phase480_o4_physicist_adjudication_intake_001/output/o4_physicist_adjudication_intake_summary.json";
+const string RequiredPhase480Terminal = "o4-physicist-adjudication-intake-validated-external-physicist-ruling";
+const string RequiredMemoSchemaSha256 = "989a49b6b70e839db6858a6ea26a93146860c0c109facdb276e56d4e3467d82a";
 
 var outputDir = Environment.GetEnvironmentVariable("PHASE457_OUTPUT_DIR") ?? DefaultOutputDir;
 Directory.CreateDirectory(outputDir);
@@ -224,29 +220,58 @@ static bool SchemaPinSatisfied(string? id, string? hash, string pinId, string pi
 
 bool schemaPinSatisfied = SchemaPinSatisfied(observedSchemaId, observedSchemaHash, PinnedSchemaId, PinnedSchemaHash);
 
-// Look for an o4MProbeRuling record at the pre-registered candidate paths.
-var o4Searched = new List<object>();
+// Consume only the normalized Phase480 derivative. Raw memo files, the O4
+// register, risk acceptance, synthetic fixtures, and the retired two-field
+// candidate shape are deliberately invisible to this predicate.
 bool o4MProbeRulingPresent = false;
 string? o4RulingPathFound = null;
-foreach (var path in O4MProbeRulingCandidatePaths)
+string phase480DerivativeStatus = "absent";
+if (File.Exists(Phase480DerivativePath))
 {
-    bool exists = File.Exists(path);
-    bool validRecord = false;
-    if (exists)
+    try
     {
-        try
+        using var doc = JsonDocument.Parse(File.ReadAllText(Phase480DerivativePath));
+        var root = doc.RootElement;
+        bool intakeEnvelopeGreen =
+            root.TryGetProperty("phaseId", out var phaseId) && phaseId.GetString() == "phase480-o4-physicist-adjudication-intake" &&
+            root.TryGetProperty("terminalStatus", out var status) && status.GetString() == RequiredPhase480Terminal &&
+            root.TryGetProperty("externalMemoValidated", out var memoValid) && memoValid.ValueKind == JsonValueKind.True &&
+            root.TryGetProperty("humanAuthorshipValidated", out var human) && human.ValueKind == JsonValueKind.True &&
+            root.TryGetProperty("repositoryBindingValidated", out var repository) && repository.ValueKind == JsonValueKind.True &&
+            root.TryGetProperty("signedPayloadHashValidated", out var payload) && payload.ValueKind == JsonValueKind.True &&
+            root.TryGetProperty("signatureProvenanceValidated", out var provenance) && provenance.ValueKind == JsonValueKind.True &&
+            root.TryGetProperty("signatureVerificationStatus", out var signatureStatus) &&
+                signatureStatus.GetString() is "cryptographically-verified" or "witnessed-document-verified" &&
+            root.TryGetProperty("memoSchemaSha256", out var schemaSha) && schemaSha.GetString() == RequiredMemoSchemaSha256 &&
+            root.TryGetProperty("syntheticOrTemplateInput", out var synthetic) && synthetic.ValueKind == JsonValueKind.False &&
+            root.TryGetProperty("rulingContentMachineAuthoredOrInferred", out var inferred) && inferred.ValueKind == JsonValueKind.False;
+        bool c3Green = false;
+        if (intakeEnvelopeGreen && root.TryGetProperty("normalizedRulings", out var rulings) && rulings.ValueKind == JsonValueKind.Array)
         {
-            using var doc = JsonDocument.Parse(File.ReadAllText(path));
-            validRecord = doc.RootElement.TryGetProperty("wsThreeMProbeScopeSignedOff", out var s)
-                && s.ValueKind == JsonValueKind.True
-                && doc.RootElement.TryGetProperty("signer", out var sg)
-                && sg.ValueKind == JsonValueKind.String
-                && !string.IsNullOrWhiteSpace(sg.GetString());
+            var c3 = rulings.EnumerateArray().Where(r => r.TryGetProperty("rulingId", out var id) && id.GetString() == "O4-C3-WS3-MPROBE-SCOPE").ToArray();
+            if (c3.Length == 1)
+            {
+                var ruling = c3[0];
+                bool dispositionGreen = ruling.TryGetProperty("disposition", out var disposition) &&
+                    disposition.GetString() is "accept-at-declared-scope" or "accept-with-registered-caveats";
+                bool optionGreen = ruling.TryGetProperty("selectedOption", out var option) && option.GetString() == "accept-labeled-probe-only-no-lineage";
+                bool scopeGreen = ruling.TryGetProperty("scopeAssertions", out var scope) &&
+                    scope.TryGetProperty("mIsSourceDefined", out var sourced) && sourced.ValueKind == JsonValueKind.False &&
+                    scope.TryGetProperty("singletGapOnly", out var singlet) && singlet.ValueKind == JsonValueKind.True &&
+                    scope.TryGetProperty("noNamedScalarIdentification", out var named) && named.ValueKind == JsonValueKind.True &&
+                    scope.TryGetProperty("noLineageFill", out var lineage) && lineage.ValueKind == JsonValueKind.True &&
+                    scope.TryGetProperty("latticeUnitsOnly", out var lattice) && lattice.ValueKind == JsonValueKind.True;
+                c3Green = dispositionGreen && optionGreen && scopeGreen;
+            }
         }
-        catch { validRecord = false; }
+        o4MProbeRulingPresent = intakeEnvelopeGreen && c3Green;
+        o4RulingPathFound = o4MProbeRulingPresent ? Phase480DerivativePath : null;
+        phase480DerivativeStatus = o4MProbeRulingPresent ? "validated-c3-accepted" : "present-nonsatisfying";
     }
-    o4Searched.Add(new { path, exists, validRecord });
-    if (validRecord) { o4MProbeRulingPresent = true; o4RulingPathFound = path; }
+    catch
+    {
+        phase480DerivativeStatus = "malformed";
+    }
 }
 
 bool firewallOpen = schemaPinSatisfied && o4MProbeRulingPresent;
@@ -306,7 +331,13 @@ bool firewallMachineChecked = firewallBatteryPassed;
 // below executes only a SYNTHETIC PLUMBING SELF-TEST (zero physics), exactly as
 // phase450 exercises WHAM on synthetic Gaussians.
 
-bool armQMayRun = firewallOpen; // plus G-Q2..G-Q4 at launch; false here.
+// Phase479 freezes these as separate artifact-backed predicates. No real
+// ensemble or prospective motivation pack exists in this checkpoint.
+bool armQEligibleEnsemblePresent = false;
+bool armQRngOrFreshProvenanceGreen = false;
+bool armQMotivationPreregistrationPresent = false;
+bool armQMayRun = firewallOpen && armQEligibleEnsemblePresent &&
+    armQRngOrFreshProvenanceGreen && armQMotivationPreregistrationPresent;
 
 // -- Measurement (pure function over an ensemble of (sB, phi, mSquared) samples).
 static (double MSquaredMean, double MSquaredStdErr, double Susceptibility) ArmQMeasure(
@@ -504,8 +535,12 @@ var result = new
         observedSchemaId,
         observedSchemaHash,
         schemaPinSatisfied,
-        o4MProbeRulingCandidatePaths = O4MProbeRulingCandidatePaths,
-        o4MProbeRulingSearched = o4Searched,
+        phase480DerivativePath = Phase480DerivativePath,
+        requiredPhase480Terminal = RequiredPhase480Terminal,
+        requiredMemoSchemaSha256 = RequiredMemoSchemaSha256,
+        phase480DerivativeStatus,
+        legacyCandidatePathsAccepted = false,
+        legacyTwoFieldShapeAccepted = false,
         o4MProbeRulingPresent,
         o4RulingPathFound,
         firewallOpen,
@@ -513,7 +548,7 @@ var result = new
         battery = firewallBattery,
         firewallMachineChecked,
         note = "No verdict-bearing summary field is emitted unless the on-disk phase466 {schemaId, schemaHash} " +
-               "matches the pinned pair AND an o4MProbeRuling record exists. It does not; the portal verdict is withheld.",
+               "matches the pinned pair AND the exact Phase480 verified C3 derivative is accepted. It is not; the portal verdict is withheld.",
     },
 
     // ---- (3) Arm Q (gated OFF) ----
@@ -522,6 +557,9 @@ var result = new
         implemented = true,
         gatedOff = true,
         mayRun = armQMayRun,
+        eligibleEnsemblePresent = armQEligibleEnsemblePresent,
+        rngOrFreshProvenanceGreen = armQRngOrFreshProvenanceGreen,
+        motivationPreregistrationPresent = armQMotivationPreregistrationPresent,
         launchConditions = new[]
         {
             "G-Q1: firewallOpen (phase466 schema pinned AND o4MProbeRuling present)",

@@ -74,13 +74,11 @@ that **constrain the probe design**, not physics claims.
 No verdict-bearing summary field is emitted unless the on-disk phase466 schema
 `{schemaId, schemaHash}` matches the pinned pair
 (`ws3-vev-completion-contract-schema-v1`,
-`7159ea49a45e3044c4393542b24a5db596f5d1423150020b072849ec8cb322b9`) AND an
-`o4MProbeRuling` record exists. The record does **not** exist (the O4 register
-is only a derived pending-review enumeration), so the portal verdict is
-withheld. Machine-checked by a battery: a synthetic wrong `schemaHash` and a
-synthetic wrong `schemaId` must block; a synthetic `o4MProbeRuling` must open
-the conjunction (proving the gate is not stuck-closed and requires the full
-conjunction).
+`7159ea49a45e3044c4393542b24a5db596f5d1423150020b072849ec8cb322b9`) AND the
+single Phase480 derivative contains a verified, accepted C3 probe-only ruling.
+The derivative does **not** exist, so the portal verdict is withheld. The old
+three-candidate-path interface and its two-field boolean/signer shape are
+retired and cannot open the conjunction.
 
 ## (3) Arm Q — motivation-gate measurement code, IMPLEMENTED and GATED OFF
 
@@ -92,7 +90,8 @@ deleted; FRESH-labeled arm is the alternative). Execution is gated behind
 `G-Q1` firewallOpen, `G-Q2` a committed ensemble with green precursors, `G-Q3`
 the neutrality battery passing, `G-Q4` Team C co-signature for any deadline
 terminal (never closes L7). The committed default runs Arm Q once `G-Q1..G-Q3`
-hold. Here they do not, so only a synthetic plumbing self-test runs (zero
+and the Phase479 prospective motivation pack hold. Here they do not, so only a
+synthetic plumbing self-test runs (zero
 physics; positive control neutral, negative control contaminated — the battery
 has teeth).
 

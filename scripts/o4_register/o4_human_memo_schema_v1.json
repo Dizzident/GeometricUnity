@@ -103,7 +103,7 @@
         "commitSha": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
         "dossierPath": { "const": "docs/Phases/Adjudication/O4_CONVENTIONS_REGISTER.md" },
         "dossierSha256": { "$ref": "#/$defs/sha256" },
-        "coverageManifestPath": { "const": "scripts/o4_register/o4_exact_coverage_manifest_v1.json" },
+        "coverageManifestPath": { "const": "scripts/o4_register/coverage_contract.json" },
         "coverageManifestSha256": { "$ref": "#/$defs/sha256" },
         "schemaSha256": { "$ref": "#/$defs/sha256" },
         "reviewerRegistryRecordSha256": { "$ref": "#/$defs/sha256" }

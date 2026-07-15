@@ -73,7 +73,7 @@ function productionShapeFixture(map) {
       commitSha: "0".repeat(40),
       dossierPath: "docs/Phases/Adjudication/O4_CONVENTIONS_REGISTER.md",
       dossierSha256: zero,
-      coverageManifestPath: "scripts/o4_register/o4_exact_coverage_manifest_v1.json",
+      coverageManifestPath: "scripts/o4_register/coverage_contract.json",
       coverageManifestSha256: zero,
       schemaSha256: zero,
       reviewerRegistryRecordSha256: zero,

@@ -20492,3 +20492,52 @@ incremental checkpoint passed with 69 steps run and 282 skipped. Phase202
 remained 271/3; the final integrity gate reported current O4 coverage, all
 94/94 synthetic dependency edges, the standing 15/14 source deficits, and zero
 promoted physical-mass claims.
+
+## 2026-07-15 - Phase479: post-ruling interface closed; Phase457 hold remains
+
+Three independent audits found that Phase457 was not safe for a future human
+ruling. Its parser accepted any JSON at one of three candidate paths containing
+only `wsThreeMProbeScopeSignedOff=true` and a nonempty signer. It verified no
+memo schema, C3 ruling ID, option, scope assertions, repository binding,
+reviewer identity, signed payload, or signature. The same audit found that the
+Phase477 memo schema named a coverage-manifest path that did not exist, making
+strict Phase480 repository verification impossible.
+
+Both defects are repaired fail-closed. The memo schema/template and validator
+now bind the actual exact `coverage_contract.json`; their hashes are
+`989a49b6...d82a` and `50106013...2a4b`, and the 31/31 coverage plus 94/94
+overturn batteries remain green. Phase457's candidate search is removed. Its
+only ruling input is the normalized Phase480 output, and its C3 conjunct
+requires a genuine human-authored, repository-bound, payload-hash-validated,
+cryptographically or witnessed verified memo; exact probe-only acceptance;
+and all five no-source/no-name/lattice-unit scope assertions. Risk acceptance,
+register currency, raw memo prose, templates, synthetic fixtures, and
+shape-valid/signature-unverified envelopes cannot satisfy it.
+
+Phase479's contract also prevents an accepted C3 ruling from being mistaken
+for launch readiness. The full Phase466 pin recomputes the canonical preimage
+hash and checks its pins, partition, fixtures, O8/O5 guards, and mutation
+boundary. Arm Q then separately requires a bounded or verified-subcritical
+action cell, an environment-clean real `(S_B,Phi,M_squared)` ensemble off the
+Phase456 window, and either autocorrelation-aware aligned-block neutrality or
+fully disjoint FRESH provenance. The current iid estimator and synthetic
+self-test are explicitly ineligible for real HMC. A prospective motivation
+pack must still freeze its comparator, null, estimator, multiplicity,
+threshold, N_eff/power gates, invalid-row policy, and terminal taxonomy before
+real generation.
+
+Team-C co-signature is now restricted to three exact administrative deadline
+terminals. It can never replace O4, authorize Stage B, satisfy Phase458 G5, or
+close L7. In-memory batteries reject the legacy shape, reject/defer, a scope
+bit flip, signature-unverified and synthetic derivatives; mutate Phase466's
+identity/hash/preimage; and exercise the Team-C branches without writing any
+candidate path.
+
+The current Phase466 conjunct is green, but the human C3 conjunct, real
+ensemble, RNG/FRESH provenance, and motivation pack are absent. Phase479 emits
+`post-ruling-readiness-contract-closed-hold-remains`; it consumes no ruling,
+runs no Arm Q or Stage B, leaves L7 withheld, fills no contract, and preserves
+`promotedPhysicalMassClaimCount=0`. Mandatory incremental validation passed
+with 73 steps run and 278 skipped. Phase202 remained 271/3; the final integrity
+gate repeated exact O4 coverage 31/31, synthetic dependency coverage 94/94,
+the 15/14 source deficits, and zero promoted physical-mass claims.

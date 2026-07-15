@@ -24,10 +24,9 @@ Stage-A mathematics was written.
    No sampling; no HMC.
 2. **The null-hash firewall keyed to phase466**: no verdict-bearing summary
    field is emitted unless the on-disk phase466 `{schemaId, schemaHash}` matches
-   the pinned pair AND an `o4MProbeRuling` record exists. The record does not
-   exist, so the portal verdict is WITHHELD. A battery machine-checks it
-   (synthetic wrong `schemaHash` / wrong `schemaId` block; a synthetic
-   `o4MProbeRuling` opens the conjunction).
+   the pinned pair AND an exact verified Phase480 C3 derivative exists. The
+   derivative does not exist, so the portal verdict is WITHHELD. Phase479
+   retires the permissive candidate-path/two-field ruling shape.
 3. **Arm Q motivation-gate measurement code — implemented and GATED OFF**: the
    seed-regenerated-ensemble portal statistic plus the RNG-stream-neutrality
    battery, executable later via the committed default once the launch gates

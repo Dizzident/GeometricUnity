@@ -1,6 +1,6 @@
 {
   "phaseId": "phase477-o4-adjudication-infrastructure",
-  "generatedAt": "2026-07-15T16:09:11.9255558+00:00",
+  "generatedAt": "2026-07-15T16:43:53.3017572+00:00",
   "terminalStatus": "o4-adjudication-infrastructure-infrastructure-ready-pending-human-ruling",
   "interimTerminal": "infrastructure-ready-pending-human-ruling",
   "verdictKind": "infrastructure-ready-pending-human-ruling",
@@ -28,8 +28,8 @@
   "humanRulingReadOrAuthored": false,
   "coverageContractSha256": "8fcc4a42045ed343244dd79181bba3f48787d3eba93d1222fabae76aa3f7b480",
   "dependencyMapSha256": "076c0dcb4466864652faf25143cd30d5ae792ab8f26d4013c39ae7787f21cda0",
-  "memoSchemaSha256": "4d5cccc82d352369956b71a9b58a11ca459628dc7cec51fd3bb1f76d5e0d14b2",
-  "memoTemplateSha256": "809cdd360c54ffcbe02e360e4884179eb5d540bc422e41566ddfbd88920c4c57",
+  "memoSchemaSha256": "989a49b6b70e839db6858a6ea26a93146860c0c109facdb276e56d4e3467d82a",
+  "memoTemplateSha256": "501060130031b04e88a61cb2ea8e3070211f0185e7dcfeb8d7ad7c4bf1902a4b",
   "syntheticOverturn": {
     "schemaVersion": "o4-synthetic-overturn-report-v1",
     "dependencyMapSha256": "076c0dcb4466864652faf25143cd30d5ae792ab8f26d4013c39ae7787f21cda0",
@@ -46,7 +46,7 @@
     "semanticCaseCount": 15,
     "failedSemanticCaseCount": 0,
     "canonicalArtifactCount": 19,
-    "canonicalSnapshotSha256": "d284b6f88a07a26ba372d5a056cb8dca07c80024c3bed1bb93ca1cb885066b5c",
+    "canonicalSnapshotSha256": "cb57d0dd9ed08a64718fd0eaa7094dd7ec9ef37acc8e2471c4dfe09803734f53",
     "canonicalArtifactMutationCount": 0,
     "candidatePathCount": 3,
     "candidatePathMutationCount": 0,
@@ -541,5 +541,5 @@
   "noGevPromotion": true,
   "promotedPhysicalMassClaimCount": 0,
   "decision": "Exact O4 coverage, an inert 13-item human-memo schema/template, and the 94-edge synthetic-overturn protocol are machine-green. This is infrastructure readiness only: no human ruling exists or is inferred, every review-pending flag remains pending, and no downstream scientific terminal changes.",
-  "runtimeSeconds": 0.103069
+  "runtimeSeconds": 0.1001244
 }

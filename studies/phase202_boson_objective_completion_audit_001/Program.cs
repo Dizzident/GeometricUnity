@@ -6802,10 +6802,17 @@ var phase458GateSpecificationClosurePassed = phase458GateSpecificationClosureMat
     && JsonBool(phase478.RootElement, "routeCompletesBosonPredictions") is false;
 var phase457PostRulingReadinessMaterialized = phase479 is not null;
 var phase457PostRulingReadinessPassed = phase457PostRulingReadinessMaterialized
-    && JsonBool(phase479!.RootElement, "skeletonBuilt") is true
+    && JsonBool(phase479!.RootElement, "skeletonBuilt") is false
+    && JsonBool(phase479.RootElement, "contractClosed") is true
+    && JsonBool(phase479.RootElement, "zeroPhysicsCompute") is true
+    && JsonBool(phase479.RootElement, "awaitingImplementation") is false
     && JsonString(phase479.RootElement, "applicationSubjectKind") == "phase457-post-ruling-readiness"
-    && JsonString(phase479.RootElement, "interimTerminal") == "readiness-skeleton-awaiting-implementation"
-    && JsonString(phase479.RootElement, "verdictKind") == "readiness-skeleton-awaiting-implementation"
+    && JsonString(phase479.RootElement, "interimTerminal") == "post-ruling-readiness-contract-closed-hold-remains"
+    && JsonString(phase479.RootElement, "verdictKind") == "post-ruling-readiness-contract-closed-hold-remains"
+    && JsonString(phase479.RootElement, "contractSha256") == "2bb7cbea70cb16bf58a4abc5215ff3e3b8e0133adac75aa0edd4a9de91e42ee0"
+    && JsonBool(phase479.RootElement, "stageBBuiltOrRun") is false
+    && JsonBool(phase479.RootElement, "holdLifted") is false
+    && JsonString(phase479.RootElement, "l7Closure") == "WITHHELD"
     && JsonString(phase479.RootElement, "planSection") == "WAVE2_AMENDMENTS_2026-07-12 A4"
     && JsonInt(phase479.RootElement, "waveOrder") == 3
     && JsonBool(phase479.RootElement, "targetBlindConstruction") is true
@@ -9656,11 +9663,11 @@ var checklist = new[]
             : "Phase478 artifact not materialized",
         Phase478Path),
     new ObjectiveChecklistItem(
-        "phase457-post-ruling-readiness-skeleton-materialized",
-        "Wave-order item 3: materialize the target-blind Phase457 post-ruling-readiness skeleton while leaving the ruling-dependent verdict path closed.",
+        "phase457-post-ruling-readiness-contract-closed",
+        "Wave-order item 3: freeze the exact Phase457 post-ruling interface, Arm-Q provenance gates, and Team-C deadline semantics while leaving the human-ruling hold closed.",
         phase457PostRulingReadinessPassed ? "passed" : "failed",
         phase457PostRulingReadinessMaterialized
-            ? $"skeletonBuilt={JsonBool(phase479!.RootElement, "skeletonBuilt")}; interimTerminal={JsonString(phase479.RootElement, "interimTerminal")}; applicationSubjectKind={JsonString(phase479.RootElement, "applicationSubjectKind")}; waveOrder={JsonInt(phase479.RootElement, "waveOrder")}; promotedPhysicalMassClaimCount={JsonInt(phase479.RootElement, "promotedPhysicalMassClaimCount")}; decision={JsonString(phase479.RootElement, "decision")}"
+            ? $"contractClosed={JsonBool(phase479!.RootElement, "contractClosed")}; interimTerminal={JsonString(phase479.RootElement, "interimTerminal")}; holdLifted={JsonBool(phase479.RootElement, "holdLifted")}; stageBBuiltOrRun={JsonBool(phase479.RootElement, "stageBBuiltOrRun")}; l7Closure={JsonString(phase479.RootElement, "l7Closure")}; promotedPhysicalMassClaimCount={JsonInt(phase479.RootElement, "promotedPhysicalMassClaimCount")}; decision={JsonString(phase479.RootElement, "decision")}"
             : "Phase479 artifact not materialized",
         Phase479Path),
     new ObjectiveChecklistItem(

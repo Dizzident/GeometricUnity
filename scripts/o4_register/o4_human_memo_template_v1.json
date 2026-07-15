@@ -17,7 +17,7 @@
     "commitSha": "REPLACE-WITH-40-HEX-COMMIT",
     "dossierPath": "docs/Phases/Adjudication/O4_CONVENTIONS_REGISTER.md",
     "dossierSha256": "REPLACE-WITH-64-HEX-SHA256",
-    "coverageManifestPath": "scripts/o4_register/o4_exact_coverage_manifest_v1.json",
+    "coverageManifestPath": "scripts/o4_register/coverage_contract.json",
     "coverageManifestSha256": "REPLACE-WITH-64-HEX-SHA256",
     "schemaSha256": "REPLACE-WITH-64-HEX-SHA256",
     "reviewerRegistryRecordSha256": "REPLACE-WITH-64-HEX-SHA256"
